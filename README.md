@@ -26,6 +26,7 @@ att datan går att skära, och sedan iterera på det som faktiskt funkar.
 |-----|-----|
 | `docs/naming-convention.md` | Namnsystemet — hur varje annons döps så datan går att analysera |
 | `docs/ad-tracker.md` | **Live-dokumentet** — varje annons, hypotes, vem som tror på den, resultat, lärdom |
+| `docs/winning-lines.md` | **Punchline-banken** — analys av dina top spenders + vinnande lines för statics |
 | `docs/bof-concepts.md` | BOF-research (konkurrentanalys) + de första annonskoncepten för Mastern |
 | `docs/playbook.md` | Spelboken — vinnande angles/format/hooks som vi bevisat över tid |
 
