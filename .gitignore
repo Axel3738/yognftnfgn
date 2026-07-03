@@ -1,0 +1,4 @@
+node_modules/
+pipeline/output/
+*.log
+.env
