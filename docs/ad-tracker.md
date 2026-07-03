@@ -9,9 +9,31 @@ varför, vad datan sa, och vad vi lärde oss.
 
 ---
 
-## Aktiva tester
+## Kontext
 
-_Inga annonser byggda än. Första vågen läggs in här så fort vi valt brand + mål._
+- **Brand:** Grillkliniken · **Produkt:** Mastern (elektrisk grillborste, 999 kr)
+- **Ad account:** SnarkLös (`1346450049878358`, SEK) — OBS: kontonamn ≠ brand
+- **Funnel-fokus just nu:** BOF (bottom of funnel)
+- Full research + resonemang: se `bof-concepts.md`
+
+## Pipeline — BOF-koncept (idéstadie, ej byggda)
+
+Koncept från BOF-researchen. `Min tro` = 🤖 Claudes conviction. `Din tro` fylls i av dig.
+Status 💡 = idé, ej byggd (väntar Higgsfield + ditt go).
+
+| # | Ad-namn | Angle | Format | Min tro 🤖 | Din tro 🧑 | Status |
+|---|---------|-------|--------|-----------|-----------|--------|
+| A | `GRILL_mastern_pain_comparison_bristle_v1` | pain (rädsla) | comparison | 🟢 hög — konkurrentbevisad + svensk lokal twist (Jula/Biltema) | _?_ | 💡 |
+| B | `GRILL_mastern_authority_textheavy_specsheet_v1` | authority | textheavy | 🟢 hög — konkurrentens #1 scaler, billigast att göra | _?_ | 💡 |
+| C | `GRILL_mastern_benefit_beforeafter_90sec_v1` | benefit | beforeafter | 🟡 medel — stark men vill vara video | _?_ | 💡 |
+| D | `GRILL_mastern_offer_textheavy_garanti_v1` | authority/offer | textheavy | 🟡 medel — modifierare, inte huvudkrok | _?_ | 💡 |
+| E | `GRILL_mastern_benefit_comparison_10sasonger_v1` | benefit | comparison | 🟡 medel — kirurgisk mot "för dyr" | _?_ | 💡 |
+| F | `GRILL_mastern_offer_product_bundle_v1` | offer | product | ⚪ håll igen — bara mot cart-abandoners | _?_ | 💡 |
+| G | `GRILL_mastern_identity_lifestyle_legend_v1` | identity | lifestyle | ⚪ skeptisk som BOF — snarare TOF | _?_ | 💡 |
+
+## Aktiva tester (live med data)
+
+_Inga annonser publicerade än._
 
 <!--
 Kopiera blocket nedan per annons:

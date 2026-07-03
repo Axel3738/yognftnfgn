@@ -26,18 +26,21 @@ att datan går att skära, och sedan iterera på det som faktiskt funkar.
 |-----|-----|
 | `docs/naming-convention.md` | Namnsystemet — hur varje annons döps så datan går att analysera |
 | `docs/ad-tracker.md` | **Live-dokumentet** — varje annons, hypotes, vem som tror på den, resultat, lärdom |
+| `docs/bof-concepts.md` | BOF-research (konkurrentanalys) + de första annonskoncepten för Mastern |
 | `docs/playbook.md` | Spelboken — vinnande angles/format/hooks som vi bevisat över tid |
 
-## Konton
+## Aktivt setup
 
-| Brand | Ad account ID | Status | Valuta |
-|-------|---------------|--------|--------|
-| MagiBorsten | 1867947880635861 | ✅ redo (betalmetod) | SEK |
-| SnarkLös | 1346450049878358 | ✅ redo (betalmetod) | SEK |
-| Matstrumpor.se | 730973156224390 | ⚠️ UNSETTLED (går ej att köra) | SEK |
+- **Brand:** Grillkliniken (grillkliniken.se) · brand-kod `GRILL`
+- **Produkt vi kör ads för:** **Mastern** — elektrisk grillborste, 999 kr (enda produkten just nu)
+- **Ad account:** SnarkLös (`1346450049878358`, SEK) — kontonamnet ≠ brandnamnet
+- **Funnel-fokus:** BOF (bottom of funnel)
 
-Shopify-butik kopplad i sessionen: **Grillkliniken** (grillkliniken.se)
+Övriga tillgängliga konton (ej i bruk): MagiBorsten `1867947880635861`,
+Matstrumpor.se `730973156224390` (⚠️ UNSETTLED).
 
 ## Status
 
-🟡 Ramverk uppsatt. Väntar på: vilket brand vi kör först + primärt mål (sälj/trafik/etc).
+🟢 Ramverk + BOF-research klar. 7 koncept loggade i trackern (idéstadie).
+⏭️ Nästa: din "tro" på koncepten + Higgsfield-koppling → bygg första vågen (A + B).
+📥 Parallellt: du skickar egna annonser → vi döper + bedömer dem i trackern.
