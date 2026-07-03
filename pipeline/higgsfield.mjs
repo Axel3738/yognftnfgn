@@ -15,17 +15,17 @@ async function getClient() {
 }
 
 // Genererar en bas-bild och returnerar URL till första resultatet.
-export async function generateBase(prompt, { seed } = {}) {
+export async function generateBase(prompt, { seed: seedVal } = {}) {
   const client = await getClient();
-  const helpers = await import('@higgsfield/client/helpers');
-  const { SoulQuality, SoulSize, BatchSize } = helpers;
+  const mod = await import('@higgsfield/client'); // helpers exporteras från huvudmodulen
+  const { SoulQuality, SoulSize, BatchSize, seed } = mod;
   const params = {
     prompt,
     width_and_height: SoulSize.PORTRAIT_1536x2048, // 3:4, croppas till 4:5 i compose
     quality: SoulQuality.HD,
     batch_size: BatchSize.SINGLE,
   };
-  if (seed != null && helpers.seed) params.seed = helpers.seed(seed);
+  if (seedVal != null && seed) params.seed = seed(seedVal);
   const jobSet = await client.generate('/v1/text2image/soul', params, { withPolling: true });
   if (!jobSet.isCompleted) throw new Error('Higgsfield-jobbet blev inte klart.');
   const url = jobSet.jobs?.[0]?.results?.raw?.url;

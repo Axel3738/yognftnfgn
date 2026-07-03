@@ -9,11 +9,17 @@ import { generateBase } from './higgsfield.mjs';
 const args = process.argv.slice(2);
 const dry = args.includes('--dry');
 const waveArg = (args.find(a => a.startsWith('--wave=')) || '--wave=01').split('=')[1];
+const limitArg = args.find(a => a.startsWith('--limit='));
+const limit = limitArg ? parseInt(limitArg.split('=')[1], 10) : Infinity;
+const onlyArg = args.find(a => a.startsWith('--only='));
+const only = onlyArg ? onlyArg.split('=')[1] : null;
 
 const outDir = new URL(`./output/wave-${waveArg}/`, import.meta.url);
 await mkdir(outDir, { recursive: true });
 
-const { ads } = await import(`./waves/wave-${waveArg}.mjs`);
+const { ads: allAds } = await import(`./waves/wave-${waveArg}.mjs`);
+let ads = only ? allAds.filter(a => a.name.includes(only)) : allAds;
+ads = ads.slice(0, limit);
 console.log(`Wave ${waveArg}: ${ads.length} statics ${dry ? '(DRY — ingen Higgsfield)' : ''}`);
 
 async function fetchToBuffer(url) {
