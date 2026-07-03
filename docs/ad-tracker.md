@@ -23,7 +23,8 @@ Status 💡 = idé, ej byggd (väntar Higgsfield + ditt go).
 
 | # | Ad-namn | Angle | Format | Min tro 🤖 | Din tro 🧑 | Status |
 |---|---------|-------|--------|-----------|-----------|--------|
-| A | `GRILL_mastern_pain_comparison_bristle_v1` | pain (rädsla) | comparison | 🟢 hög — konkurrentbevisad + svensk lokal twist (Jula/Biltema) | _?_ | 💡 |
+| A | `GRILL_mastern_pain_comparison_ruinsgrill_v1` | pain (investering) | comparison | 🟢 hög — whitespace, "stålborsten förstör grillen" (⚠️ verifiera huvudmaterial) | _?_ | 💡 |
+| ~~A0~~ | ~~`GRILL_mastern_pain_comparison_bristle_v1`~~ | ~~pain (rädsla)~~ | ~~comparison~~ | 🔴 pensionerad — säkerhetsvinkeln mättad efter recall-vågen | 🧑 håller med | 💀 |
 | B | `GRILL_mastern_authority_textheavy_specsheet_v1` | authority | textheavy | 🟢 hög — konkurrentens #1 scaler, billigast att göra | _?_ | 💡 |
 | C | `GRILL_mastern_benefit_beforeafter_90sec_v1` | benefit | beforeafter | 🟡 medel — stark men vill vara video | _?_ | 💡 |
 | D | `GRILL_mastern_offer_textheavy_garanti_v1` | authority/offer | textheavy | 🟡 medel — modifierare, inte huvudkrok | _?_ | 💡 |

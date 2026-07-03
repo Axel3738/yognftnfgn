@@ -24,11 +24,32 @@ Andra i nischen bekräftade mönstret: **CARA** ("BEFORE/AFTER"), **Tocady** ("C
 Grill with Just One Press"), **Wamoma** ("Slay the Grease Dragon"), och en annonsör med
 ren riskreversering ("Can't get it clean? Get a full refund!").
 
-**Nyckelinsikt:** de två mest skalade konkurrentvinklarna — *wire bristles* och *spec sheet*
-— är **exakt** det din Mastern-sida redan leder med (Weber/Nexgrill-återkallningen på 13 milj.
-borstar + "roterande huvud utan lösa borststrån" + feature-listan + "byggd för 10 säsonger" +
-"30 dagars öppet köp"). Vi behöver inte uppfinna vinklar. Vi ska **förstärka det som redan finns**
-och som konkurrenten redan bevisat.
+**Nyckelinsikt:** Grillhamsters mest skalade, längst körda koncept är **"Spec Sheet"** —
+inte säkerhetsvinkeln. Deras "Stop Eating Wire Bristles" är deras **äldre** annonser; den
+färska rotationen är Spec Sheet + Legend + 2-min-demo.
+
+---
+
+## Vad som fungerar HOS KONKURRENTERNA NU (uppdaterad 2026-07-03)
+
+Ärlig läsning av datan just nu:
+
+| Vinkel | Vem kör den | Status |
+|--------|-------------|--------|
+| **Spec sheet / ren fakta** | Grillhamster (#1 scaler, längst runtime) | 🟢 Starkast evergreen |
+| **Speed-demo / före-efter** | Tocady "one press", CARA "before/after", Grillhamster "2 min" | 🟢 Funkar brett |
+| **Status / identitet** | Grillhamster "Look Like A Legend" (färsk) | 🟢 På uppgång |
+| **Automation** | Grillbots "Make Grill Cleanup Automatic" | 🟡 Emerging |
+| **Offer / säsong** | "Summer BBQ Sale –50%" | 🟡 Säsongsdriven |
+| ~~**Säkerhet / borststrån i maten**~~ | Alla efter Weber/Nexgrill-återkallningen | 🔴 **MÄTTAD — pensionerad** |
+
+**Varför säkerhetsvinkeln dog:** efter CPSC-återkallningarna (13 milj. borstar) kastade sig
+*hela* marknaden på "bristle-free efter recall" (Grill Sync m.fl.). Vinkeln är utspelad —
+och den närmaste konkurrenten har själv rört sig bort från den. Din instinkt bekräftad.
+
+**Whitespace:** ingen i min scan äger explicit vinkeln **"stålborsten förstör din grill"**
+(river emaljen → rost → dött galler). Det är investeringsskydd, inte hälsoskräck — och det
+passar 999-kr-premiumpriset bättre. Det blir vår nya hjältevinkel (A nedan).
 
 ---
 
@@ -36,12 +57,14 @@ och som konkurrenten redan bevisat.
 
 Legend conviction: 🟢 hög · 🟡 medel · ⚪ situationsanpassad/håll igen
 
-### 🟢 A — "Var tog borststråna vägen?" (säkerhet/rädsla)
-- **Namn:** `GRILL_mastern_pain_comparison_bristle_v1`
-- **Vinkel/format:** pain (rädsla) · comparison / textheavy
-- **Krok:** Nyhetskroken — *"Feb 2026: Weber återkallade 3,2 milj. stålborstar. Nexgrill 10,2 milj. till. I Sverige sitter de kvar på Jula & Biltema."* → lös metalltråd i maten vs Mastern "fysiskt omöjligt".
-- **Varför jag tror på den:** Grillhamsters "Stop Eating Wire Bristles" är en av deras två mest skalade. Det finns en **svensk lokal twist** ingen annan kör (Jula/Biltema). Rädsla + nyhetsförankring + konkret lösning = klassisk BOF-stängare för den som tvekade.
-- **Vad jag INTE tror:** att den funkar utan trovärdig visuell proof. Behöver en riktig bild på ett borststrå / återkallningsrubrik, annars läses den som scare-tactic.
+### 🟢 A — "Stålborsten förstör din grill" (investeringsskydd) ← NY HJÄLTEVINKEL
+- **Namn:** `GRILL_mastern_pain_comparison_ruinsgrill_v1`
+- **Vinkel/format:** pain (förlust/investering) · comparison / beforeafter
+- **Mekanismen (bevisad):** stålborsten sliter porslinsemaljen på gallret med mekaniskt tryck → bar metall exponeras → **rost** → gallret vittrar → du byter galler (eller grill). En Weber-gallersats kostar 500–1000+ kr; en grill flera tusen.
+- **Krok:** *"Du skrubbar inte bort fettet. Du skrubbar bort grillen."* Närbild på repad/rostig emalj efter stålborste vs skinande galler efter Mastern. Reframe: en 999-kr-borste som **räddar** en grill värd 5 000 kr.
+- **Varför jag tror på den:** (1) Whitespace — ingen konkurrent äger den. (2) Förlust/skydd-vinkel biter hårdare än hälsoskräck på en varm publik som redan investerat i en dyr grill. (3) Passar premiumpriset — du köper inte en borste, du skyddar en investering. (4) Din instinkt + datan pekar åt samma håll.
+- **⚠️ MÅSTE VERIFIERAS FÖRST:** vad är Masterns roterande huvud gjort av? Om det är **nylon/icke-repande** → vinkeln är vattentät ("repar inte emaljen"). Om huvudet självt är **stål** → vi kan INTE påstå "repar inte gallret" (då river vi ju också). Då kör vi en säkrare variant: "byggd för 10 säsonger" + skonsam rotation vs aggressiv handskrubbning. **Berätta materialet så låser jag copyn.**
+- **Vad jag INTE tror:** att vinkeln håller om produktsanningen inte backar den. Vi bygger inget påstående vi inte kan bevisa.
 
 ### 🟢 B — "Ingen marknadsföring. Bara specen." (spec sheet)
 - **Namn:** `GRILL_mastern_authority_textheavy_specsheet_v1`
@@ -83,7 +106,7 @@ Legend conviction: 🟢 hög · 🟡 medel · ⚪ situationsanpassad/håll igen
 
 ## Min rekommendation (var vi börjar)
 
-1. **Bygg A + B först.** Båda är (a) bevisade av närmaste konkurrenten och (b) redan inbakade i din produktpositionering. Lägst risk, högst signalvärde.
+1. **Bygg A + B först.** B (spec sheet) är konkurrentens bevisade #1 scaler → lägst risk. A (förstör grillen) är whitespace ingen äger → högst *uppsida* om den träffar. Att köra dem mot varandra är ett perfekt första test: bevisad vinkel vs ny vinkel.
 2. **Lägg D (garanti) som overlay-variant** på A och B — billigt att testa om riskreversering lyfter CVR.
 3. **C (före-efter)** så fort vi kan köra rörligt via Higgsfield — troligen den starkaste men vill vara video.
 4. **E** som riktad prisförsvars-annons mot "för dyr"-segmentet.
