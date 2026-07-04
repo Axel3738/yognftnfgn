@@ -49,7 +49,13 @@ if (val('--text')) {
     const files = (await readdir(new URL(`./scripts/${ad}/`, import.meta.url)))
       .filter((f) => f.endsWith('.txt'))
       .filter((f) => !only || f.includes(only))
-      .sort();
+      // Naturlig ordning: H1, H2 … H10, sen body sist.
+      .sort((a, b) => {
+        const isBody = (f) => /^body/i.test(f);
+        if (isBody(a) !== isBody(b)) return isBody(a) ? 1 : -1;
+        const key = (f) => f.replace(/\d+/, (n) => n.padStart(4, '0'));
+        return key(a).localeCompare(key(b), 'sv');
+      });
     for (const file of files) {
       const name = file.replace(/\.txt$/, '');
       const text = (await readFile(new URL(`./scripts/${ad}/${file}`, import.meta.url), 'utf8')).trim();

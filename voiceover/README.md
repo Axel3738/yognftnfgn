@@ -30,17 +30,20 @@ Output speglar mappstrukturen: `output/<annons>/<klipp>.mp3` + ett `output/_mani
 
 ## Struktur — en mapp per annons
 Varje `.txt` är ett klipp; filnamnet blir mp3-namnet. Hooksen heter `H1`, `H2`… och
-brödtexten `body`.
+brödtexten `body`. Texten är **svenska verbatim ur creative-briefen** (round 2).
 ```
 scripts/
-├── A_pain_ruinsgrill/        H1  H2  H3  body   ← "stålborsten förstör din grill"
-├── B_authority_specsheet/    H1  H2  H3  body   ← "ingen marknadsföring, bara specen"
-├── C_benefit_beforeafter/    H1  H2  H3  body   ← "90 sek: svart → skinande"
-├── D_offer_garanti/          H1  H2  H3  body   ← "30 dagars öppet köp"
-├── E_benefit_10sasonger/     H1  H2  H3  body   ← "byggd för 10 säsonger"
-└── F_offer_bundle/           H1  H2  H3  body   ← "borste + polerhuvud på köpet"
+├── C1_220_discovery-authority/   H1–H10  body   ← "vem uppfann den här / grillproffs"
+├── C2_221_wire-brush-2026/       H1–H8   body   ← "använder du fortfarande stålborste 2026?"
+├── C3_222_amazement/             H1–H15  body   ← "helt otrolig!" (brief: text-on-screen)
+├── C4_223_villain/               H1–H12  body   ← skurk-borsten monolog + SafeCore-hjälte
+├── C5_224_social-proof/          H1–H11  body   ← "din granne använder redan den här"
+├── C6_225_hack-reveal/           H1–H10  body   ← "knepet som förändrade allt"
+└── C8_227_wrong-tool/            H1–H10  body   ← "du har använt fel borste hela tiden"
 ```
-Annonserna motsvarar koncepten A–F i `docs/ad-tracker.md` (G/legend hoppas över — TOF).
+Annonserna är creatives #1–#8 ur PDF:en. **Creative #7 (226, torture-test) är utelämnad**
+enligt önskemål. `C3` är i briefen text-on-screen utan VO — manuset ligger här ändå ifall
+du vill lägga röst på det.
 
 | Fil | Vad |
 |-----|-----|
