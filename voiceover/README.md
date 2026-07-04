@@ -19,25 +19,37 @@ Röst-ID:t för `Svensk Martin` slås upp automatiskt på namn — inget att hå
 
 ## Kör
 ```bash
-npm run voices                       # lista rösterna på ditt konto (namn + id)
-npm run vo:dry                       # förhandsgranska manus + teckenantal UTAN API
-npm run vo                           # skarpt: genererar mp3 för hela vågen
-node vo.mjs --wave=01                # välj manus-fil (scripts/vo-01.mjs)
-node vo.mjs --only=VO-01             # bara klipp vars namn matchar
-node vo.mjs --limit=2                # bara N första
+npm run voices                            # lista rösterna på ditt konto (namn + id)
+npm run vo:dry                            # förhandsgranska ALLA manus + teckenantal UTAN API
+npm run vo                                # skarpt: genererar mp3 för alla annonser
+node vo.mjs --ad=B_authority_specsheet    # bara en annons (matchar på delsträng)
+node vo.mjs --only=H1                      # bara klipp vars filnamn matchar (t.ex. alla H1)
 node vo.mjs --text="Hej [glad] där" --name=test   # engångsklipp utan manus-fil
 ```
-Output hamnar i `output/vo-XX/` + ett `_manifest.json`.
+Output speglar mappstrukturen: `output/<annons>/<klipp>.mp3` + ett `output/_manifest.json`.
 
-## Struktur
+## Struktur — en mapp per annons
+Varje `.txt` är ett klipp; filnamnet blir mp3-namnet. Hooksen heter `H1`, `H2`… och
+brödtexten `body`.
+```
+scripts/
+├── A_pain_ruinsgrill/        H1  H2  H3  body   ← "stålborsten förstör din grill"
+├── B_authority_specsheet/    H1  H2  H3  body   ← "ingen marknadsföring, bara specen"
+├── C_benefit_beforeafter/    H1  H2  H3  body   ← "90 sek: svart → skinande"
+├── D_offer_garanti/          H1  H2  H3  body   ← "30 dagars öppet köp"
+├── E_benefit_10sasonger/     H1  H2  H3  body   ← "byggd för 10 säsonger"
+└── F_offer_bundle/           H1  H2  H3  body   ← "borste + polerhuvud på köpet"
+```
+Annonserna motsvarar koncepten A–F i `docs/ad-tracker.md` (G/legend hoppas över — TOF).
+
 | Fil | Vad |
 |-----|-----|
 | `elevenlabs.mjs` | Tunn wrapper mot ElevenLabs TTS → mp3-Buffer. Slår upp röst-ID på namn. |
-| `vo.mjs` | Runner: kör en manus-våg, sparar MP3:er. |
-| `scripts/vo-01.mjs` | En manus-våg: `name` + `text` per klipp. |
+| `vo.mjs` | Runner: går igenom `scripts/<annons>/*.txt`, sparar MP3:er. |
+| `scripts/<annons>/*.txt` | Ett klipp per fil — själva manuset (det som läses upp). |
 
-## Att lägga till en voiceover
-Lägg ett objekt i en `scripts/vo-XX.mjs` med `name` och `text` (svenska — det som
-ska läsas upp; audio-tags i `[hakparentes]` färgar leveransen men läses inte upp).
-Valfritt `voice`/`model` per klipp om du vill avvika från default. Max ~3000 tecken
-per klipp (eleven_v3).
+## Att lägga till / ändra
+Skapa en mapp under `scripts/` för annonsen och lägg `.txt`-filer i den (`H1.txt`,
+`body.txt` osv). Innehållet är svenskan som läses upp; audio-tags i `[hakparentes]`
+(`[paus]`, `[allvarligt]`, `[glad]`) färgar leveransen men läses inte upp. Max ~3000
+tecken per klipp (eleven_v3).
