@@ -1,0 +1,12 @@
+{
+  "name": "voiceover-elevenlabs",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "Fristående voiceover-verktyg: genererar tal (mp3) med ElevenLabs (Svensk Martin + eleven_v3).",
+  "scripts": {
+    "vo": "node vo.mjs",
+    "vo:dry": "node vo.mjs --dry",
+    "voices": "node vo.mjs --list-voices"
+  }
+}
