@@ -38,10 +38,11 @@ scripts/
 ├── C4_223_villain/               H1–H12  body   ← skurk-borsten monolog + SafeCore-hjälte
 ├── C5_224_social-proof/          H1–H11  body   ← "din granne använder redan den här"
 ├── C6_225_hack-reveal/           H1–H10  body   ← "knepet som förändrade allt"
+├── C7_226_torture-test/          H1–H8   body   ← "vi smutsade ner med flit → blänkande rent"
 └── C8_227_wrong-tool/            H1–H10  body   ← "du har använt fel borste hela tiden"
 ```
-Annonserna är creatives #1–#8 ur PDF:en. **Creative #3 (222) och #7 (226) är utelämnade**
-enligt önskemål (#3 var text-on-screen utan VO, #7 torture-test).
+Annonserna är creatives #1–#8 ur PDF:en. **Creative #3 (222) är utelämnad** (var
+text-on-screen utan VO). C7 kördes med en egen röst (annan än övrigas Martin).
 
 | Fil | Vad |
 |-----|-----|
