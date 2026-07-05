@@ -34,6 +34,7 @@ const scriptsDir = new URL('./scripts/', import.meta.url);
 const outRoot = new URL('./output/', import.meta.url);
 const adFilter = val('--ad');
 const only = val('--only');
+const modelOverride = val('--model'); // t.ex. --model=eleven_turbo_v2_5 (annars eleven_v3)
 
 // Bygg listan av klipp: { ad, name, text }.
 let clips = [];
@@ -65,7 +66,7 @@ if (val('--text')) {
 }
 
 console.log(
-  `Voiceover: ${clips.length} klipp · röst "${DEFAULTS.voiceName}" · ${DEFAULTS.modelId}` +
+  `Voiceover: ${clips.length} klipp · röst "${process.env.ELEVEN_VOICE_ID || DEFAULTS.voiceName}" · ${modelOverride || DEFAULTS.modelId}` +
   `${dry ? ' (DRY — inget API-anrop)' : ''}`
 );
 
@@ -88,7 +89,7 @@ for (const clip of clips) {
   await mkdir(adOut, { recursive: true });
   const out = new URL(`${clip.name}.mp3`, adOut).pathname;
   try {
-    const audio = await generateVoiceover(clip.text);
+    const audio = await generateVoiceover(clip.text, modelOverride ? { modelId: modelOverride } : {});
     await writeFile(out, audio);
     console.log(`    ✓ ${clip.name}  (${chars} tecken → ${(audio.length / 1024).toFixed(0)} kB)`);
     results.push({ ad: clip.ad, name: clip.name, status: 'ok', file: out, chars });
