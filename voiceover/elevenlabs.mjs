@@ -8,7 +8,7 @@
 const API_BASE = 'https://api.elevenlabs.io/v1';
 
 export const DEFAULTS = {
-  voiceName: 'Svensk Martin',
+  voiceName: 'Martin - Warm, Confident and Relatable',
   modelId: 'eleven_v3',
   outputFormat: 'mp3_44100_128',
   // eleven_v3 tolkar stability i steg: 0.0 (Creative), 0.5 (Natural), 1.0 (Robust).
