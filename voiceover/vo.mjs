@@ -35,6 +35,7 @@ const outRoot = new URL('./output/', import.meta.url);
 const adFilter = val('--ad');
 const only = val('--only');
 const modelOverride = val('--model'); // t.ex. --model=eleven_turbo_v2_5 (annars eleven_v3)
+const speedOverride = val('--speed') ? parseFloat(val('--speed')) : null; // 0.7–1.2 (v2.5-modeller)
 
 // Bygg listan av klipp: { ad, name, text }.
 let clips = [];
@@ -89,7 +90,10 @@ for (const clip of clips) {
   await mkdir(adOut, { recursive: true });
   const out = new URL(`${clip.name}.mp3`, adOut).pathname;
   try {
-    const audio = await generateVoiceover(clip.text, modelOverride ? { modelId: modelOverride } : {});
+    const opts = {};
+    if (modelOverride) opts.modelId = modelOverride;
+    if (speedOverride != null) opts.voiceSettings = { ...DEFAULTS.voiceSettings, speed: speedOverride };
+    const audio = await generateVoiceover(clip.text, opts);
     await writeFile(out, audio);
     console.log(`    ✓ ${clip.name}  (${chars} tecken → ${(audio.length / 1024).toFixed(0)} kB)`);
     results.push({ ad: clip.ad, name: clip.name, status: 'ok', file: out, chars });
