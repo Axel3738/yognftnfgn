@@ -35,15 +35,13 @@ brödtexten `body`. Texten är **svenska verbatim ur creative-briefen** (round 2
 scripts/
 ├── C1_220_discovery-authority/   H1–H10  body   ← "vem uppfann den här / grillproffs"
 ├── C2_221_wire-brush-2026/       H1–H8   body   ← "använder du fortfarande stålborste 2026?"
-├── C3_222_amazement/             H1–H15  body   ← "helt otrolig!" (brief: text-on-screen)
 ├── C4_223_villain/               H1–H12  body   ← skurk-borsten monolog + SafeCore-hjälte
 ├── C5_224_social-proof/          H1–H11  body   ← "din granne använder redan den här"
 ├── C6_225_hack-reveal/           H1–H10  body   ← "knepet som förändrade allt"
 └── C8_227_wrong-tool/            H1–H10  body   ← "du har använt fel borste hela tiden"
 ```
-Annonserna är creatives #1–#8 ur PDF:en. **Creative #7 (226, torture-test) är utelämnad**
-enligt önskemål. `C3` är i briefen text-on-screen utan VO — manuset ligger här ändå ifall
-du vill lägga röst på det.
+Annonserna är creatives #1–#8 ur PDF:en. **Creative #3 (222) och #7 (226) är utelämnade**
+enligt önskemål (#3 var text-on-screen utan VO, #7 torture-test).
 
 | Fil | Vad |
 |-----|-----|
