@@ -45,8 +45,24 @@ _(Uppdateras med riktiga siffror så fort vi dragit kontots insights.)_
 - Auktoritet funkar med **expert-foto + makrobild på smutsig springa**.
 - Social proof funkar som **citat-kort**.
 - Problem funkar som **before/after** på gallret.
+- **Kommentarssvar-formatet** (177, skalvinnare jul 2026): hooken är en riktig kundkommentar
+  på skärmen ("Sänk priset så köper jag den") och annonsen är *svaret* ("Vi har redan gjort
+  det"). Känns som community-interaktion, inte reklam — och gör invändningen till kroken.
 
 ## Vad som inte funkar (eller är förbrukat)
 - **Säkerhet / borststrån i maten** som *huvudkrok* — mättad marknad efter recall-vågen. Lever kvar som *bevis-rad* (B4), inte hook.
-- **"Tre anledningar" / ren mekanism** (145) — svagast ROAS (1,36). Nedprioritera.
-- **Rabatt som huvudvinkel** — syns inte bland vinnarna; håll priset.
+- **"Tre anledningar" / ren mekanism** (145) — svagast ROAS (1,36). Nedprioritera. *(Men: 145-remake med ny hook körde 2,25 — vinkeln är svag, inte omöjlig.)*
+- **Listicles / strukturerad copy** — 146 H2 (0,74), 150 (0,65), 151 (1,36→0,55). Story slår struktur, bevisat i 3 oberoende tester.
+- **Rabatt som huvudvinkel** — håller *som regel*, men med ett **bevisat undantag (177, 32k · 2,14)**:
+  rabatten funkar när den är **svaret på en kunds prisinvändning** (kommentarssvar-format), inte
+  brandets utspel. Skillnaden: "REA 40%" = desperation; "'Den är för dyr.' — Vi hörde er." =
+  lyssnande brand + social proof + offer i ett. Prisinvändningen ÄR ju BOF-invändning #1 på
+  en 999-kr-produkt. Kör den som *closer* på varma, inte som huvudvinkel mot kalla.
+
+## Hooken avgör (kontodata, jul 2026)
+Samma body, olika hook = helt olika liv. Bevis:
+- 110 H2: 70k spend · 1,95 — 110 H3: **0,25**
+- 146 H2: **0,74** — 146 H3: **2,84**
+- 101 H3: 2,11–2,47 — 101 H1: 0,75
+**Regel:** döm aldrig en vinkel på ett hook-test. Testa alltid ≥2–3 hooks innan en body döms ut
+— och en död annons med rätt vinkel kan återuppstå med ny hook (se 145).

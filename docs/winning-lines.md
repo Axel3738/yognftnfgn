@@ -72,6 +72,24 @@ Varje static = **1 hook** (störst text) + ev. **1 bevis** + **1 mekanism/CTA**.
 | C2 | **"30 dagars öppet köp. Inga krångel."** | 049 | riskreversering |
 | C3 | **"Priset gäller inte för evigt — se om den finns kvar."** | 088/050/014 | fomo/CTA |
 
+### 💬 KOMMENTARSSVAR — invändningen som hook (177, skalvinnare jul 2026: 32k · 2,14)
+Formatet: en riktig kundkommentar visas på skärmen, annonsen är svaret. Invändningen ÄR kroken.
+| # | Line | Från | Vinkel |
+|---|------|------|--------|
+| K1 | **(kommentar) "Sänk priset så köper jag den." — Vi har redan gjort det.** | 177 L H2 (bästa varianten) | offer-som-svar |
+| K2 | **(kommentar) "Den är för dyr." — Vi hörde er.** | 177 | offer-som-svar |
+| K3 | **"Så du får bara en borste? Nej. Du får hela kitet."** | 177 body | värdestapling |
+| K4 | **"Det där låter för bra, ni kommer förlora pengar."** | 177 body (inbyggd skeptiker) | trust/anti-hype |
+| K5 | **"När folk väl testat går de aldrig tillbaka till stålborsten."** | 177 body | social proof |
+
+**Varför 177 vinner (analys):** den staplar allt på 40 sekunder — invändning som hook
+(mönsterbrott), offer (40 % + fri frakt), värdeomramning (kit ≠ borste), mekanism (400 varv →
+springorna), benefit (stekytan tillbaka, bismaken borta), inbyggd skeptiker-hantering, social
+proof och riskreversering. Rabatten känns *förtjänad* (brandet lyssnade) istället för desperat.
+Det är F-konceptet (offer/bundle) ur `bof-concepts.md` — exekverat utan att urholka
+premium-positioneringen. Notera: 177 H2 *utan* L körde bara 1,21 — varianten avgjorde, inte
+bodyn ensam.
+
 ---
 
 ## Första staticsen att bygga (kombos, namngivna enligt konvention)
