@@ -71,6 +71,7 @@ Varje static = **1 hook** (störst text) + ev. **1 bevis** + **1 mekanism/CTA**.
 | C1 | **"Du får exakt vad du ser på bilden. Vi svarar när du hör av dig. Vi skickar direkt."** | 049 | trust |
 | C2 | **"30 dagars öppet köp. Inga krångel."** | 049 | riskreversering |
 | C3 | **"Priset gäller inte för evigt — se om den finns kvar."** | 088/050/014 | fomo/CTA |
+| C4 | **"Livstidsgaranti — går den sönder, får du en ny. Punkt."** | NY produktsanning (Axel 2026-07-07) — starkare än C2, använd som primär riskreversering i ny copy | riskreversering |
 
 ### 💬 KOMMENTARSSVAR — invändningen som hook (177, skalvinnare jul 2026: 32k · 2,14)
 Formatet: en riktig kundkommentar visas på skärmen, annonsen är svaret. Invändningen ÄR kroken.
