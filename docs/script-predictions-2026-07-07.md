@@ -65,4 +65,59 @@ grill" — snyggaste cinematiska, samma reservation som 094).
 3. **Den bevisade smak-/bismak-vinkeln** bär även i ny förpackning — allt med "det var inte köttet" i kärnan hamnar övre halvan.
 4. **Cinematiska storyboards (092–094) underpresterar sin kvalitet** — för polerade för att kännas native i feeden.
 
-_Facit fylls i här när Axel avslöjar sanningen → träffar/missar → lärdomar till `playbook.md`._
+---
+
+# FACIT — rättat mot kontodata samma dag (SnarkLös, last 90d: 8 apr–6 jul 2026)
+
+Jag drog datan själv via ADsmanager. Viktig upptäckt först: **de flesta av mina topp-picks
+har inte fått spend än** (107, 154, 179, 152, 094, 147, 149 ligger på ~0 kr — nylanserade).
+Blindtestet kan bara rättas på manus som faktiskt har data. Ads under ~800 kr spend räknas
+som inkonklusiva.
+
+## Rättning av gissningar SOM HAR DATA
+
+| Manus | Min gissning | Facit (spend · ROAS) | Utfall |
+|-------|--------------|----------------------|--------|
+| **075** Weber-callout | 🏆 #8 sleeper | 14 616 kr · **2,11** | ✅ **TRÄFF** — skalad med vinst |
+| **100** farfar-evolution | 🏆 #3 | 4 060 kr · 1,72 | 🟡 halvmiss — mediokert, fick aldrig skala |
+| **112** bismaken (UGC) | 🏆 #6 | 2 108 kr · **0,47** | ❌ **MISS** — död |
+| **148** gallret bytte färg | 🏆 #9 | 982 kr · 1,63 | 🟡 inkonklusiv (för lite spend) |
+| **155** manlig KitchenAid | wildcard medium | 7,4k · 1,42 + 7,1k · 2,12 | ✅ träff (blandad, precis som sagt) |
+| **151** ekonomi/15 000 kr | nedprioriterad (under 152/147) | 29k · 1,36 + 11k · 1,10 + 5,5k · 0,55 | ✅ träff — förlorare trots stor spend |
+| **150** failed solutions | "listande underpresterar" | 6,1k · **0,65** + 1,1k · 1,49 | ✅ träff — död |
+| **146** restaurang-listicle | 💀 förlorare | H2: 4,1k · **0,74** — men H3: 1,4k · **2,84**! | ✅ träff på H2, ⚠️ H3 motbevisar delvis |
+| **093** cinematisk "Förra veckans grill" | metapred: underpresterar | 959 kr · **1,04** | ✅ träff |
+| **092** cinematisk "Svaga länken" | metapred: underpresterar | 2,7k (NO) · 1,49 | ✅ träff |
+| **055** borststrån-hook | 💀 (mättad vinkel) | 3,7k · 1,57 | ✅ träff-ish — mediokert, dog |
+| **076** | ingen gissning (oläsbar) | 1 950 kr (NO) · **0,64** | 💀 död |
+| **102** | ingen gissning (oläsbar) | 2 318 kr · **0,43** | 💀 död |
+| **121** | ingen gissning (oläsbar) | 25,6k · 1,08–1,71 | 🟡 mid-svag |
+| **177** | ingen gissning (oläsbar fil!) | **L H2: 32 178 kr · 2,14** + H3 9,7k · 2,01 | 🏆 **KONTOTS NYA SKALVINNARE** |
+
+**Scorecard på ads med data: 8 träffar, 1 halvmiss, 1 miss, 1 inkonklusiv.**
+
+## Metaprediktionerna mot facit
+
+1. **"Story slår struktur" — BEKRÄFTAD.** Listicles brann: 146 H2 (0,74), 150 (0,65), 151
+   (1,36→0,55). Story-manusen bär kontot (101/110/088/177).
+2. **"Bekännelse slår pekpinne" — otestad ännu** (153/154/179 har inte spend).
+3. **"Det var inte köttet-kärnan hamnar övre halvan" — MOTBEVISAD i ett fall:** 112 hade
+   exakt den kärnan och dog (0,47). Lärdom: kärnan räcker inte — 112:s hook var mjuk
+   ("om ditt kött aldrig smakar rätt...") och kroppen saknade auktoritet/story. Vinkeln
+   bär bara med en hård hook ovanpå.
+4. **"Cinematiska storyboards underpresterar sin kvalitet" — BEKRÄFTAD.** 092: 1,49 ·
+   093: 1,04. Polerat ≠ native.
+
+## Det viktigaste kontot lärde mig (utöver gissningarna)
+
+- **Hooken avgör ALLT — samma body, olika liv:** 110 H2 = 70k spend · 1,95 medan 110 H3 =
+  0,25 ROAS. 146 H2 = 0,74 men 146 H3 = 2,84. 101 H3 = 2,11–2,47 men 101 H1 = 0,75.
+  Hook-second-regeln i `creative-strategy.md` är inte teori — den syns rakt i kontodatan.
+- **177 är den aktuella skalvinnaren** (32k · 2,14 och stigande) — och det är filen jag
+  inte kunde läsa. Axel: exportera om 177 så den kommer in i punchline-banken!
+- **145 fick revansch i ny variant:** 145 H2-remake 9,4k · 2,25 (originalet 1,36). Även
+  "dåliga" vinklar kan räddas av rätt hook/klipp.
+- Småspend-outliers värda att bevaka: "088+001 UT H1" (4,4k · **4,04**), B71 LISTICLE
+  (1,3k · 4,56), "testat allt" (1,1k · 3,56), NO B008 (5,6k · 3,22), "Fjärde" (11,9k · **3,09**).
+- Ads med <~800 kr spend är brus — facit för 107/154/179/152/094/147/149/153/157/159–174
+  kommer först när de fått budget. **Mina topp-picks är fortfarande olästa av marknaden.**
