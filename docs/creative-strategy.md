@@ -97,7 +97,14 @@ samma film, olika 3-sek-hook.
 
 ---
 
-## 7. Definition of done (innan vi spenderar på generering)
+## 7. Leveransregel: alltid svenska + engelska (Axel 2026-07-07)
+
+Varje manus levereras i **två versioner i samma dokument**: svensk (det som körs i annonsen)
+och engelsk (arbetsreferens för redigerarna, som inte läser svenska). Gäller hooks, body/VO,
+captions och shot-listor. Shot-listan och redigeringsnoter skrivs alltid på engelska i
+EN-sektionen. Samma mönster som manusbiblioteket redan använder ("English version"-sektioner).
+
+## 8. Definition of done (innan vi spenderar på generering)
 
 Ett koncept är redo att generera (live) först när `--dry` producerat och du godkänt:
 

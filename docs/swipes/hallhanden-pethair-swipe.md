@@ -58,6 +58,66 @@ Sluta bjuda folk på ditt gamla fett.
 | Offer | 28–38s | Kitet utlagt · text-overlay: "Livstidsgaranti" |
 | CTA | 38–43s | Tillbaka till talking head: "Sluta bjuda folk på ditt gamla fett." |
 
+---
+
+# ENGLISH VERSION (for the editors)
+
+**Target ad:** `GRILL_mastern_pain_video_hallhanden_v1` — TOF, 9:16 vertical.
+**Tone (critical):** condescending but affectionate, deadpan, never aggressive. He should
+sound like he *feels sorry for you* — a friend delivering bad news gently. Wrong tone kills
+the concept.
+
+## Hooks (test all three — one ad per hook)
+
+- **H1:** "I'm going to hold your hand while I tell you this. If a wire brush is your only grill tool — your grill is disgusting."
+- **H2:** "Come here. Sit down. We need to talk about your grill. It's disgusting, and you don't know it."
+- **H3:** "This is going to sting, so I'll say it kindly: your grate hasn't been clean in years."
+
+## Body (VO, ~45 sec)
+
+If you own a grill and you only use a wire brush, your grill is disgusting — and you don't
+know it.
+
+Burnt-on grease doesn't sit on top. It's packed two, three layers deep in the gaps between
+the bars, with old food residue burnt into every layer. Your guests are eating years of
+reheated old grease every time they come over. You just don't see it.
+
+I ran this across a grate I had *just* scrubbed with a wire brush. [DEMO] Look. All of that
+was still there — after the cleaning. Same with the lid. Same with my buddy's "clean" Weber.
+
+Rotating head. Four hundred revolutions per minute. Around the whole bar, down into the gap —
+pulls up what your wire brush has been missing for years.
+
+You get the complete kit: an extra brush head, the Brush-Safe head that never sheds bristles
+into your food, and protective gloves. Free shipping. And a lifetime warranty — if it breaks,
+you get a new one. Period.
+
+Stop serving people your old grease.
+
+[gentle music]
+
+## Shot list
+
+| Beat | Time | Visual |
+|------|------|--------|
+| Hook | 0–3s | Talking head straight to camera, almost whispering, deadpan |
+| Problem | 3–10s | Macro on the gap between bars (layer on layer) · cut: guests grabbing food at the grill |
+| Demo | 10–20s | **The core beat:** wire brush scrubs → "done" → the Master runs across the SAME grate → black gunk lifts row by row. Real time, no cuts |
+| Mechanism | 20–28s | Close-up of the rotating head + brush dipped in a bowl of water → water turns black instantly |
+| Offer | 28–38s | Kit laid out: brush, both heads, gloves · text overlay: "Lifetime warranty" |
+| CTA | 38–43s | Back to talking head, deadpan: "Stop serving people your old grease." |
+
+## Editor notes
+
+- The demo beat (cleaned-with-wire-brush → the Master finds more) is the whole ad. It must
+  be real time and uncut — speeding it up destroys the proof.
+- ElevenLabs voice direction: "calm, dry, almost affectionate Swedish male voice — a friend
+  delivering bad news gently. No salesman energy. No build-up."
+- The Swedish version above is what actually runs; this English version is the working
+  reference for edit/pacing decisions.
+
+---
+
 ## Noter
 
 - **Livstidsgaranti är NY produktsanning** (Axel 2026-07-07) — ersätter "30 dagars öppet köp"
