@@ -29,6 +29,16 @@ att datan går att skära, och sedan iterera på det som faktiskt funkar.
 | `docs/winning-lines.md` | **Punchline-banken** — analys av dina top spenders + vinnande lines för statics |
 | `docs/bof-concepts.md` | BOF-research (konkurrentanalys) + de första annonskoncepten för Mastern |
 | `docs/playbook.md` | Spelboken — vinnande angles/format/hooks som vi bevisat över tid |
+| `docs/creative-strategy.md` | **Creative strat** — hur en bevisad insikt blir ett video-manus (5 beats) |
+
+## Pipelines
+
+| Mapp | Vad | Kör |
+|------|-----|-----|
+| `pipeline/` | **Statics** — Higgsfield Soul (bakgrund) + skarp textoverlay (4:5) | `npm run dry` / `npm run gen` |
+| `video/` | **Video** — Higgsfield-rörelse + brända captions (9:16 Reels) | `npm run dry` / `npm run gen` |
+
+Båda kör `--dry` för att förhandsgranska kreativet **gratis** (0 API-anrop) innan generering.
 
 ## Aktivt setup
 
@@ -43,5 +53,6 @@ Matstrumpor.se `730973156224390` (⚠️ UNSETTLED).
 ## Status
 
 🟢 Ramverk + BOF-research klar. 7 koncept loggade i trackern (idéstadie).
-⏭️ Nästa: din "tro" på koncepten + Higgsfield-koppling → bygg första vågen (A + B).
+🟢 Static-pipeline (`pipeline/`) + video-pipeline (`video/`) byggda. Video-wave 01 = 3 koncept (C/A/B) i storyboard.
+⏭️ Nästa: din "tro" på koncepten + Higgsfield-koppling → generera första vågen (statics A+B, video C).
 📥 Parallellt: du skickar egna annonser → vi döper + bedömer dem i trackern.

@@ -67,6 +67,10 @@ det är det som gör datan grupperbar. Ny variant = bumpa `v{N}`. Ny idé = nytt
 | `textheavy` | Grafik med stor rubriktext |
 | `comparison` | Vi vs dem / gammalt vs nytt |
 | `collage` | Flera bilder/feature-callouts |
+| `video` | Rörligt klipp (generisk) — Reels/Stories 9:16 |
+| `demo` | Video: produkten i användning / mekanism |
+
+> Video kör placement `reels`. Manus-strukturen (5 beats) finns i `creative-strategy.md`.
 
 ### HOOK — den primära kroken (kort slug, fritt men konsekvent)
 Det första ögat/hjärnan fastnar på. Håll det till 1–2 ord: `stains`, `2sec`,

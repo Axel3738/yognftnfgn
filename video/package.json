@@ -1,0 +1,15 @@
+{
+  "name": "grillkliniken-video-pipeline",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "Genererar video-annonser för Mastern: Higgsfield-rörelse + skarpa brända captions (9:16 Reels).",
+  "scripts": {
+    "dry": "node run.mjs --dry",
+    "gen": "node run.mjs"
+  },
+  "dependencies": {
+    "@higgsfield/client": "^0.2.1",
+    "sharp": "^0.33.5"
+  }
+}
