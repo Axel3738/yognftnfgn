@@ -59,117 +59,120 @@ och rättas mot data vartefter TOF-vågorna körs. Vinnande kombos flyttar in i 
 
 ---
 
-## De 90 idéerna (T × D, med bäst passande struggle invävd)
+## De 90 idéerna — V2 (T konkretiserad)
+
+> **V2-revision samma dag:** Axels styrning — *"T är extremt viktig."* I TOF är topicen själva
+> videon: struggle öppnar dörren, outcome är löftet, men det tittaren stannar för är den
+> konkreta lektionen. V1:s vaga "här är varför..." ersatta med namngivna, demonstrerbara
+> teach-points (geometri, siffror, tester, story-beats) som går att storyboarda direkt.
 
 ### T1 — Därför blir ditt galler aldrig rent
-1. (S4→D1) Kämpar du med att köttet aldrig får riktig yta? Här är varför gallret aldrig blir rent hur du än skrubbar — så att du kan få stekytan som på restaurang.
-2. (S1→D2) Kämpar du med att skrubbandet stjäl kvällen? Här är varför tryck aldrig funkar på runda stavar — så att du kan sätta dig med gästerna på 60 sekunder.
-3. (S5→D3) Kämpar du med skammen när locket lyfts? Här är den verkliga anledningen till att ditt galler ser ut så — så att du kan lyfta locket med stolthet.
-4. (S6→D4) Kämpar du med känslan att du inte vet vad som följer med maten? Här är vad som faktiskt sitter kvar efter "rengöringen" — så att du kan servera familjen lugnt.
-5. (S8→D5) Kämpar du med att grillen ser sliten ut i förtid? Här är varför ytlig skrubbning låter fettet fräta vidare — så att grillen håller i 15 år.
-6. (S2→D6) Kämpar du med att rengöringen känns hopplös? Här är varför det inte är dig det är fel på utan verktyget — så att du slipper skrubbandet för alltid.
-7. (S7→D7) Kämpar du med att grillen aldrig är redo? Här är varför "jag tar det sen" är inbyggt i metoden — så att du kan spontangrilla när som helst.
-8. (S10→D8) Kämpar du med att grannens kött alltid vinner? Här är den svagaste länken i din setup — så att det blir din grillning alla pratar om.
-9. (S3→D9) Kämpar du med att vissa grillningar bara blir sämre? Här är variabeln du aldrig kontrollerat — så att du får samma resultat varje gång.
-10. (S10→D10) Kämpar du med att allt annat är proffsigt utom gallret? Här är varför just den detaljen kräver rotation — så att hela setupen håller måttet.
+1. (S4→D1) Kämpar du med att köttet aldrig får riktig yta? Här är geometrin ingen visat dig — en gallerstav är rund och en platt borste når bara femtedelen på toppen — så att du kan få searen som på restaurang.
+2. (S1→D2) Kämpar du med att skrubbandet stjäl kvällen? Här är varför 20 minuters tryck gör *mindre* än 60 sekunders rotation (trycket plattar borsten — den tappar greppet i samma sekund du tar i) — så att du sitter med gästerna medan ölen fortfarande är kall.
+3. (S5→D3) Kämpar du med skammen när locket lyfts? Här är "torka-disken-testet": att skrapa ytan på gallret är som att torka av tallriken utan att ta bort maten först — så att du förstår varför det ser ut som det gör, och kan fixa det på riktigt.
+4. (S6→D4) Kämpar du med vad som följer med maten? Här är närbilden på springan mellan stängerna — där 4/5 av fettet sitter kvar efter varje "rengöring" — så att du kan servera från ett galler som är rent hela vägen runt.
+5. (S8→D5) Kämpar du med att grillen ser sliten ut i förtid? Här är vad som händer under det du inte når: fettet i springorna ligger kvar och arbetar mot metallen året runt — så att din grill håller i 15 år.
+6. (S2→D6) Kämpar du med att rengöringen känns hopplös? Här är beviset att det aldrig var dig det var fel på — samma stålborst-mekanism i varenda borste i butikshyllan, oavsett pris — så att du slipper skrubbandet för alltid.
+7. (S7→D7) Kämpar du med att grillen aldrig är redo? Här är matten som förklarar din prokrastinering: 20 minuter × varje grillning = ett projekt, och projekt skjuts upp — så att du kan byta till något som blir en vana istället.
+8. (S10→D8) Kämpar du med att grannens kött alltid vinner? Här är den enda mekaniska skillnaden mellan er: rotation når runt staven, armkraft gör det inte — så att nästa jämförelse slutar annorlunda.
+9. (S3→D9) Kämpar du med att vissa grillningar bara blir sämre? Här är variabeln som ändras utan att du ser det — fettlagret som växer i springorna för varje tändning — så att du får samma resultat varje gång.
+10. (S10→D10) Kämpar du med att allt är proffsigt utom gallret? Här är 400-varv-principen: det som krävs för att bryta inbränt fett är inte kraft utan varvtal — så att sista detaljen i din setup håller samma klass som resten.
 
 ### T2 — Bismakens anatomi
-11. (S3→D1) Kämpar du med bismaken du inte kan placera? Här är hur förra veckans fett sätter smak på dagens kött — så att du får restaurangytan hemma.
-12. (S1→D2) Kämpar du med att skrubba länge och ändå få konstig smak? Här är varför smaken inte sitter i arbetsinsatsen — så att du kan lägga tiden vid bordet istället.
-13. (S5→D3) Kämpar du med att gäster äter artigt men tyst? Här är vad de känner men inte säger — så att du kan servera med stolthet.
-14. (S6→D4) Kämpar du med att barnen inte äter upp grillat? Här är vad gammalt fett gör med smaken — så att familjen äter upp utan tjat.
-15. (S8→D5) Kämpar du med att köttet "smakar grill" på fel sätt? Här är skillnaden mellan röksmak och härsket fett — och varför den skillnaden också avgör hur länge grillen lever.
-16. (S9→D6) Kämpar du med att inget du provar förbättrar smaken? Här är varför lösningen tar 60 sekunder, inte 30 minuter — så att du slipper skrubba dig till besvikelse.
-17. (S7→D7) Kämpar du med att första grillningen efter vintern alltid smakar illa? Här är varför — så att grillen alltid är smak-redo.
-18. (S10→D8) Kämpar du med att ditt kött aldrig får grannens reaktion? Här är 34 %-studien som förklarar gapet — så att din grillning blir snacket.
-19. (S3→D9) Kämpar du med att samma recept blir olika gott? Här är den dolda variabeln på gallret — så att resultatet blir förutsägbart.
-20. (S10→D10) Kämpar du med att du gör allt rätt och det ändå inte blir rätt? Här är det sista proffsen kollar — så att hela kedjan håller.
+11. (S3→D1) Kämpar du med bismaken du inte kan placera? Här är siffran som förklarar den: inbränt fett försämrar smakämnena med upp till 34 % (Journal of Food Science 2024) — så att ditt kött äntligen smakar som råvaran förtjänar.
+12. (S1→D2) Kämpar du med att skrubba länge och ändå få konstig smak? Här är vad som faktiskt händer vid 250 grader: gammalt fett smälter, ryker och lägger sig som en hinna på det nya köttet — så att du kan sluta jaga smaken med mer armkraft.
+13. (S5→D3) Kämpar du med att gäster äter artigt men tyst? Här är "det artiga gott"-fenomenet — bismaken de känner men aldrig säger — så att nästa middag får den riktiga reaktionen.
+14. (S6→D4) Kämpar du med att barnen inte äter upp grillat? Här är vad de känner som du vant dig vid: förra månadens fett som bränns om i varje tugga — så att tallrikarna äntligen blir tomma.
+15. (S8→D5) Kämpar du med "grillsmak" på fel sätt? Här är skillnaden på molekylnivå mellan röksmak och härsket omvärmt fett — så att du kan behålla den ena och bli av med den andra.
+16. (S9→D6) Kämpar du med att inget förbättrar smaken? Här är varför problemet aldrig satt i kryddan, marinaden eller köttet — utan i de 34 procenten på gallret — så att en 60-sekundersfix slår varje nytt recept.
+17. (S7→D7) Kämpar du med att första grillningen efter vintern alltid smakar illa? Här är vad åtta månaders härskning gör med fettet i springorna — så att säsongens första kött smakar som säsongens bästa.
+18. (S10→D8) Kämpar du med att ditt kött aldrig får grannens reaktion? Här är smak-gapet i siffror — 34 % skiljer ett rent galler från ett "rengjort" — så att din grillning blir den det pratas om.
+19. (S3→D9) Kämpar du med att samma recept blir olika gott? Här är den dolda variabeln: mängden gammalt fett som bränns om varierar med varje tändning — så att resultatet blir förutsägbart när den nollställs.
+20. (S10→D10) Kämpar du med att du gör allt rätt och det ändå inte blir rätt? Här är det sista steget proffsen aldrig hoppar över — ytan köttet faktiskt rör — så att hela din kedja från butik till tallrik håller.
 
 ### T3 — Så dör en grill i förtid
-21. (S4→D1) Kämpar du med att stekytan blir sämre år för år? Här är hur rost i springorna förstör värmeöverföringen — så att köttet får yta som dag ett.
-22. (S1→D2) Kämpar du med att underhållet känns som ett heltidsjobb? Här är det enda som faktiskt förlänger grillens liv — så att skötseln tar en minut, inte en helg.
-23. (S5→D3) Kämpar du med en grill du skäms över? Här är varför den åldrats i förtid — så att du kan visa upp den igen.
-24. (S6→D4) Kämpar du med flagor och rost på gallret? Här är vad de betyder för maten — så att du kan servera utan baktanke.
-25. (S8→D5) Kämpar du med tanken att grillen för 15 000 redan känns halvdöd? Här är vad som äter den inifrån — så att den håller sina 15 år.
-26. (S2→D6) Kämpar du med att skrubba hårdare ju äldre grillen blir? Här är varför det förvärrar skadan — så att du kan sluta slita både på dig och gallret.
-27. (S7→D7) Kämpar du med en grill som aldrig känns värd att tända? Här är hur 60 sekunder efter varje grillning vänder det — så att den alltid är redo.
-28. (S10→D8) Kämpar du med att grannens äldre grill ser nyare ut än din? Här är hans osynliga vana — så att din blir kvarterets referens.
-29. (S3→D9) Kämpar du med att grillen presterar ojämnt? Här är hur fettlagret stör värmen — så att varje grillning blir som den bästa.
-30. (S8→D10) Kämpar du med att du vårdar allt utom det viktigaste? Här är varför gallret är grillens motor — så att hela investeringen är skyddad.
+21. (S4→D1) Kämpar du med att stekytan blir sämre år för år? Här är rostens väg in i ditt galler: fett → fukt → missfärgning → korrosion — så att du kan stoppa den vid steg ett och grilla på som dag ett.
+22. (S1→D2) Kämpar du med att underhållet känns som ett heltidsjobb? Här är det enda momentet som faktiskt förlänger grillens liv (och det tar 60 sekunder) — så att du kan skippa resten med gott samvete.
+23. (S5→D3) Kämpar du med en grill du skäms över? Här är varför den åldrats dubbelt så fort som grannens — inbränt fett är frätande och äter metall underifrån — så att din nästa säsong vänder kurvan.
+24. (S6→D4) Kämpar du med flagor och rost på gallret? Här är vad flagorna faktiskt är (emalj som spjälkat av korrosion) och vad de betyder för maten — så att du kan agera innan de hamnar på tallriken.
+25. (S8→D5) Kämpar du med tanken att grillen för 15 000 redan känns halvdöd? Här är 15-mot-7-regeln: en Napoleon byggd för 15 år håller 7 med smutsigt galler — så att din når hela livslängden.
+26. (S2→D6) Kämpar du med att skrubba hårdare ju äldre grillen blir? Här är varför hårt tryck + stålborst river emaljen och öppnar för rosten — så att du slutar skada det du försöker rädda.
+27. (S7→D7) Kämpar du med en grill som aldrig känns värd att tända? Här är kostnadskalkylen — nytt galler 500–1 000 kr, ny grill 15 000, 60 sekunder efter varje grillning: gratis — så att den alltid känns värd det.
+28. (S10→D8) Kämpar du med att grannens äldre grill ser nyare ut än din? Här är hans osynliga vana (rengöring medan gallret fortfarande är varmt — då släpper fettet) — så att din blir kvarterets referens.
+29. (S3→D9) Kämpar du med att grillen presterar ojämnt? Här är hur fettlagret isolerar stängerna och stjäl värmen där du behöver den — så att varje grillning får full effekt.
+30. (S8→D10) Kämpar du med att du vårdar kapellet men inte gallret? Här är varför regnet aldrig var hotet — det är fettet inifrån som dödar grillar — så att du skyddar rätt sak.
 
 ### T4 — Ånga-tricket
-31. (S4→D1) Kämpar du med yta som aldrig blir som på steakhouse? Här är ånga-tricket som ger ren metall mot köttet — så att du får den riktiga searen.
-32. (S1→D2) Kämpar du med att rengöringen tar halva kvällen? Här är tricket där värmen och vattnet gör jobbet — så att du sitter ner igen på en minut.
-33. (S5→D3) Kämpar du med att gäster ser ett svart galler? Här är tricket du kör medan grillen värms upp — så att locket kan lyftas utan ursäkter.
-34. (S6→D4) Kämpar du med osäkerheten kring vad som sitter kvar? Här är hur ångan lyfter det du inte ser — så att maten landar på rent.
-35. (S8→D5) Kämpar du med inbränt som "aldrig går bort"? Här är fysiken som löser det utan frätande medel — så att gallret överlever varje säsong.
-36. (S2→D6) Kämpar du med skrubbandet som aldrig tar slut? Här är tricket som gör att du aldrig skrubbar igen — på riktigt.
-37. (S7→D7) Kämpar du med att förberedelsen dödar spontaniteten? Här är 60-sekunderstricket vid uppvärmning — så att beslutet "vi grillar ikväll" räcker.
-38. (S10→D8) Kämpar du med att aldrig ha ett eget grill-ess? Här är tricket som får folk att fråga "hur gjorde du där?" — så att du blir den som lär ut.
-39. (S3→D9) Kämpar du med ojämna resultat? Här är rutinen som nollställer gallret varje gång — så att utgångsläget alltid är detsamma.
-40. (S10→D10) Kämpar du med känslan av att improvisera skötseln? Här är proffsens standardmoment — så att din rutin känns lika proffsig som resten.
+31. (S4→D1) Kämpar du med yta som aldrig blir som på steakhouse? Här är ånga-tricket steg för steg: värm gallret, doppa borsten i vatten, låt ångan lösa fettet — så att köttet möter ren metall och searen kommer av sig själv.
+32. (S1→D2) Kämpar du med att rengöringen tar halva kvällen? Här är fysiken som jobbar gratis: värme gör fettet flytande, ångan lyfter det — så att du är klar på 60 sekunder istället för 30 minuter.
+33. (S5→D3) Kämpar du med att gäster ser ett svart galler? Här är tricket du hinner köra medan grillen ändå värms upp — så att locket lyfts inför gästerna utan en enda ursäkt.
+34. (S6→D4) Kämpar du med osäkerheten kring vad som sitter kvar? Här är svart-vatten-beviset: doppa borsten i en skål efter draget och se vad som faktiskt satt i ditt "rena" galler — så att du vet, istället för hoppas.
+35. (S8→D5) Kämpar du med inbränt som "aldrig går bort"? Här är varför ånga slår frätande medel (den löser bindningen istället för att bränna ytan) — så att gallret blir rent utan att ta stryk.
+36. (S2→D6) Kämpar du med skrubbandet som aldrig tar slut? Här är kombon som pensionerar stålborsten: värme + vatten + rotation — så att du aldrig skrubbar igen.
+37. (S7→D7) Kämpar du med att förberedelsen dödar spontaniteten? Här är 60-sekunderstricket som körs *under* uppvärmningen — noll extra tid — så att "vi grillar ikväll" räcker som beslut.
+38. (S10→D8) Kämpar du med att aldrig ha ett eget grill-ess? Här är tricket som får folk att fråga "vänta, vad gjorde du nu?" — så att du blir den som lär ut i ditt gäng.
+39. (S3→D9) Kämpar du med ojämna resultat? Här är nollställningen: samma varma galler + samma blöta borste = samma utgångsläge varje gång — så att slumpen försvinner ur din grillning.
+40. (S10→D10) Kämpar du med att skötseln känns improviserad? Här är proffsens sekvens i tre steg (värm, doppa, dra) — så att din rutin är lika systematisk som resten av din setup.
 
 ### T5 — Restaurangens hemlighet
-41. (S4→D1) Kämpar du med att hemmagrillat aldrig når restaurangnivå? Här är kökets första regel om ytan — så att din entrecôte får deras stekyta.
-42. (S1→D2) Kämpar du med att lägga mer tid på städning än matlagning? Här är varför proffs aldrig skrubbar — så att du jobbar som de och blir klar på en minut.
-43. (S5→D3) Kämpar du med nervositeten när du grillar för folk? Här är proffsens förberedelse före service — så att du kan bjuda in utan att tänka på gallret.
-44. (S6→D4) Kämpar du med vad "grillsmak" egentligen innehåller? Här är restaurangernas hygienregel — så att familjen får det köket skulle godkänna.
-45. (S8→D5) Kämpar du med utrustning som slits fort? Här är varför proffsens galler överlever tusentals servicar — så att ditt gör detsamma.
-46. (S9→D6) Kämpar du med att rengöring känns som ett straff? Här är varför proffsen lägger sekunder, inte minuter — så att du slipper straffet helt.
-47. (S7→D7) Kämpar du med att grillen aldrig är "service-redo"? Här är kökets mise en place för grill — så att du alltid kan säga ja till grillkväll.
-48. (S10→D8) Kämpar du med att aldrig imponera på den som "kan mat"? Här är detaljen kockar kollar först — så att även svågern blir tyst.
-49. (S3→D9) Kämpar du med att inte veta varför det blir bra ibland? Här är proffsens konsekvens-hemlighet — så att bra blir standard.
-50. (S10→D10) Kämpar du med amatörkänslan? Här är skillnaden mellan att ha grejer och ha ordning — så att din setup andas proffs.
+41. (S4→D1) Kämpar du med att hemmagrillat aldrig når restaurangnivå? Här är kökets första regel: searen sitter i direktkontakt mellan kött och ren metall — inte i temperaturen — så att din entrecôte får deras yta.
+42. (S1→D2) Kämpar du med att lägga mer tid på städning än matlagning? Här är varför en restaurang aldrig skrubbar i 20 minuter (rutin mellan varje service, sekunder per gång) — så att du blir klar som de.
+43. (S5→D3) Kämpar du med nervositeten när du grillar för folk? Här är proffsens mise en place för grill — allt redo *innan* gästerna kommer, gallret först — så att du kan vara värd istället för städare.
+44. (S6→D4) Kämpar du med vad "grillsmak" egentligen innehåller? Här är hygienregeln varje kök följer men ingen hemma-grillare hört: ytan som rör maten rengörs alltid, direkt, medan den är varm — så att familjen får det ett kök skulle godkänna.
+45. (S8→D5) Kämpar du med utrustning som slits fort? Här är varför ett restauranggaller överlever tusen servicar men ditt spjälkar efter fem säsonger — fettet får aldrig ligga kvar över natten — så att ditt håller lika länge.
+46. (S9→D6) Kämpar du med att rengöring känns som ett straff? Här är proffsens omformulering: det är inte städning, det är förberedelse av nästa stekyta — så att momentet byter sida i huvudet.
+47. (S7→D7) Kämpar du med att grillen aldrig är "service-redo"? Här är kökets standard: ytan lämnas ren, alltid, så att nästa pass börjar på noll — så att din grill alltid kan säga ja.
+48. (S10→D8) Kämpar du med att aldrig imponera på den som "kan mat"? Här är det första en kock tittar på vid en grill (inte märket — gallret) — så att även svågern blir tyst.
+49. (S3→D9) Kämpar du med att inte veta varför det blir bra ibland? Här är proffsens tråkiga sanning: konsekvens kommer från ren yta, inte talang — så att "bra" blir din standard.
+50. (S10→D10) Kämpar du med amatörkänslan? Här är skillnaden mellan att äga grejer och driva ett kök: system för varje moment, gallret först — så att din setup andas proffs.
 
 ### T6 — 60-sekundersrutinen
-51. (S4→D1) Kämpar du med att ytan aldrig sitter? Här är rutinen som ger ren kontakt varje gång — så att searen kommer av sig själv.
-52. (S1→D2) Kämpar du med att kvällen slutar vid diskbänken? Här är rutinen som är klar innan ölen hunnit bli varm — så att du får kvällen tillbaka.
-53. (S5→D3) Kämpar du med panikstädning när gäster kommer? Här är rutinen som gör att det aldrig behövs — så att locket alltid tål att lyftas.
-54. (S6→D4) Kämpar du med oro för det osynliga? Här är rutinen som tar det du inte ser — så att du kan servera utan tvekan.
-55. (S8→D5) Kämpar du med att skjuta upp underhållet tills skadan är skedd? Här är rutinen som hinner före rosten — så att grillen håller.
-56. (S7→D6) Kämpar du med att 30 minuter aldrig blir en vana? Här är varför 60 sekunder blir det — så att skrubbandet försvinner ur ditt liv.
-57. (S7→D7) Kämpar du med tröskeln att ens börja? Här är rutinen som tar bort beslutet — så att grillen alltid är redo när suget kommer.
-58. (S10→D8) Kämpar du med att aldrig ha något att visa? Här är before/after-rutinen folk inte kan sluta titta på — så att din grill blir innehållet.
-59. (S3→D9) Kämpar du med att resultatet beror på dagsformen? Här är rutinen som gör dagsformen irrelevant — så att varje grillning levererar.
-60. (S10→D10) Kämpar du med halvfärdiga vanor? Här är den enda grillvanan med noll friktion — så att skötseln äntligen håller proffsnivå.
+51. (S4→D1) Kämpar du med att ytan aldrig sitter? Här är rutinen i realtid — 60 sekunder från svart till blankt, ofilmat och oklippt — så att du ser exakt vad ren kontakt gör med searen.
+52. (S1→D2) Kämpar du med att kvällen slutar vid diskbänken? Här är rutinen som är klar innan ölen hunnit bli varm (bokstavligen — vi tog tid) — så att du får kvällen tillbaka.
+53. (S5→D3) Kämpar du med panikstädning när gäster ska komma? Här är varför den som kör 60-sekundersrutinen aldrig panikstädar — gallret är aldrig mer än en grillning från rent — så att locket alltid tål att lyftas.
+54. (S6→D4) Kämpar du med oro för det osynliga? Här är vad rutinen tar som ögat missar — fettet i springorna som ser ut som "patina" — så att du kan servera utan tvekan.
+55. (S8→D5) Kämpar du med att skjuta upp underhållet tills skadan är skedd? Här är tajmingen som avgör allt: direkt efter grillningen, medan gallret är varmt och fettet mjukt — så att rosten aldrig får sitt försprång.
+56. (S7→D6) Kämpar du med att 30 minuter aldrig blir en vana? Här är vanepsykologin i en mening — under 2 minuter blir rutin, över 20 blir projekt — så att skrubbandet försvinner ur ditt liv av sig självt.
+57. (S7→D7) Kämpar du med tröskeln att ens börja? Här är regeln som tar bort beslutet: borsten hänger vid grillen, körs innan locket stängs, punkt — så att grillen alltid är redo när suget kommer.
+58. (S10→D8) Kämpar du med att aldrig ha något att visa? Här är before/after-formatet folk inte kan scrolla förbi — rad för rad blir svart till blankt — så att din grill blir innehållet.
+59. (S3→D9) Kämpar du med att resultatet beror på dagsformen? Här är rutinen som gör dagsformen irrelevant — samma 60 sekunder, samma utgångsläge, varje gång — så att varje grillning levererar.
+60. (S10→D10) Kämpar du med halvfärdiga vanor? Här är den enda grillvanan med noll friktion — en knapp, medan du ändå står där — så att den här faktiskt fastnar.
 
 ### T7 — Grillteknikern (story)
-61. (S4→D1) Kämpar du med stekytan? Grillteknikern som öppnat tusentals grillar visar det första han kollar — så att ditt kött får kontakten det kräver.
-62. (S1→D2) Kämpar du med evighetsskrubbandet? Här är varför teknikern aldrig ser att det hjälpt — så att du kan sluta slösa kvällarna.
-63. (S5→D3) Kämpar du med gallret du helst döljer? Här är vad teknikern ser på fem sekunder — så att du vågar visa ditt öppet.
-64. (S6→D4) Kämpar du med vad familjen faktiskt får i sig? Här är det teknikern hittar i "rena" galler — så att du kan lita på ditt.
-65. (S8→D5) Kämpar du med en grill som åldras fort? Här är teknikerns förklaring till varför vissa grillar dör vid år 7 — så att din når 15.
-66. (S9→D6) Kämpar du med att inget verktyg bitit? Här är varför teknikern dömer ut hela borsthyllan — så att du köper rätt en gång istället för fel varje år.
-67. (S7→D7) Kämpar du med att grillen aldrig känns klar att användas? Här är teknikerns 60-sekundersstandard — så att din alltid är det.
-68. (S10→D8) Kämpar du med att vara näst bäst i kvarteret? Här är yrkesblicken som lyfter dig förbi — så att frågorna ställs till dig.
-69. (S3→D9) Kämpar du med ojämna grillningar? Här är det enda teknikern säger spelar roll varje gång — så att du får konsekvens.
-70. (S10→D10) Kämpar du med detaljerna som skiljer proffs från amatör? Här är teknikerns checklista — så att din setup klarar inspektionen.
+61. (S4→D1) Kämpar du med stekytan? Här är det första en tekniker med tusentals öppnade grillar tittar på — aldrig brännarna, alltid gallret — så att du kollar rätt sak innan du byter kött.
+62. (S1→D2) Kämpar du med evighetsskrubbandet? Här är vad teknikern ser efter att ägaren "precis gjort rent": ytan skrapad, springorna orörda — så att du slutar betala i tid för ett jobb som inte blir gjort.
+63. (S5→D3) Kämpar du med gallret du helst döljer? Här är teknikerns 10-sekunderstest som avslöjar varje galler ("din grill ser ren ut — det är den inte, och jag kan bevisa det") — så att du kan klara testet själv.
+64. (S6→D4) Kämpar du med vad familjen faktiskt får i sig? Här är vad Weber själva skriver på sin supportsida — borststrån lossnar vid normal användning — så att du vet vad teknikern vet innan du serverar.
+65. (S8→D5) Kämpar du med en grill som åldras fort? Här är teknikerns förklaring till varför han dömer ut grillar vid år 7 som var byggda för 15 — fettet i springorna gjorde jobbet — så att din inte blir en av dem.
+66. (S9→D6) Kämpar du med att inget verktyg bitit? Här är varför teknikern dömer ut hela borsthyllan på Jula med en mening ("samma mekanism, olika förpackning") — så att du köper rätt en gång istället för fel varje säsong.
+67. (S7→D7) Kämpar du med att grillen aldrig känns klar att användas? Här är teknikerns standard efter 30 år i branschen: gallret rengörs efter varje användning, på under två minuter, annars görs det inte alls — så att din alltid är redo.
+68. (S10→D8) Kämpar du med att vara näst bäst i kvarteret? Här är yrkesblicken i tre punkter — springor, emalj, hörn — så att du ser din grill som ett proffs och grillar därefter.
+69. (S3→D9) Kämpar du med ojämna grillningar? Här är det enda teknikern säger spelar roll varje gång, oavsett grillmärke och prisklass — ytan mot köttet — så att du får konsekvens där det räknas.
+70. (S10→D10) Kämpar du med detaljerna som skiljer proffs från amatör? Här är teknikerns hela checklista före säsong (och varför punkt ett alltid är gallret) — så att din setup klarar en inspektion.
 
 ### T8 — Farfars kunskap (story)
-71. (S3→D1) Kämpar du med smak som aldrig blir som förr? Här är vad farfar visste om fett och metall — så att köttet smakar som det ska igen.
-72. (S1→D2) Kämpar du med att skötseln tar längre än middagen? Här är den gamla skolans regel: rätt metod slår hårt arbete — så att du är klar medan kolen glöder.
-73. (S10→D3) Kämpar du med att inte leva upp till "grillkillen" du vill vara? Här är generationskunskapen som ger dig ryggen rak — så att du bjuder in utan nerver.
-74. (S6→D4) Kämpar du med vad som följer med maten? Här är varför farfar sniffade på gallret — så att du vet innan du serverar.
-75. (S8→D5) Kämpar du med prylar som inte håller? Här är varför gamla verktyg höll i 40 år — och hur samma tänk räddar din grill.
-76. (S9→D6) Kämpar du med att skrubba som din farsa gjorde på 90-talet? Här är varför metoden dog med stålborsten — så att du slipper ärva slitet.
-77. (S7→D7) Kämpar du med att grillen känns som ett projekt? Här är farfars princip om att ta hand om saker direkt — så att den alltid är redo.
-78. (S10→D8) Kämpar du med att ingen frågar dig om råd? Här är kunskapen som gör dig till den som förklarar — så att du blir kvarterets referens.
-79. (S3→D9) Kämpar du med slumpen i resultaten? Här är varför farfars generation aldrig gissade — så att du heller inte behöver.
-80. (S10→D10) Kämpar du med känslan att något saknas i din setup? Här är detaljen den gamla skolan aldrig hoppade över — så att din håller hela vägen.
+71. (S3→D1) Kämpar du med smak som aldrig blir som förr? Här är vad farfar — rörmokare i 40 år — såg när han sniffade på gallret: "det är därför det smakar som det gör" — så att köttet smakar som det ska igen.
+72. (S1→D2) Kämpar du med att skötseln tar längre än middagen? Här är den gamla skolans regel farfar levde efter: rätt metod slår hårt arbete, varje gång — så att du är klar medan kolen fortfarande glöder.
+73. (S10→D3) Kämpar du med att inte leva upp till "grillkillen" du vill vara? Här är vad 40 år av öppnade rör och ventilationskanaler lärde farfar om fett i springor ingen ser — så att du kan bjuda in med ryggen rak.
+74. (S6→D4) Kämpar du med vad som följer med maten? Här är varför farfar alltid luktade på gallret före maten — härsket fett avslöjar sig för näsan långt innan tungan — så att du också vet innan du serverar.
+75. (S8→D5) Kämpar du med prylar som inte håller? Här är farfars verktygsprincip — ta hand om det direkt efter användning, så håller det i 40 år — så att samma tänk räddar din grill.
+76. (S9→D6) Kämpar du med att skrubba som din farsa gjorde på 90-talet? Här är varför metoden borde dött med stålborsten (den var fel redan då — det fanns bara inget bättre) — så att du slipper ärva slitet.
+77. (S7→D7) Kämpar du med att grillen känns som ett projekt? Här är farfars enda underhållsregel: gör det litet och direkt, aldrig stort och sen — så att grillen alltid är redo utan viljestyrka.
+78. (S10→D8) Kämpar du med att ingen frågar dig om råd? Här är generationskunskapen om fett, värme och metall som nästan försvann — så att du blir den i kvarteret som förklarar.
+79. (S3→D9) Kämpar du med slumpen i resultaten? Här är varför farfars generation aldrig gissade — de kände sina ytor och höll dem rena — så att du heller inte behöver gissa.
+80. (S10→D10) Kämpar du med känslan att något saknas i din setup? Här är detaljen den gamla skolan aldrig hoppade över men varenda modern grillguide glömmer — så att din setup blir hel.
 
 ### T9 — "Jag gjorde fel i 20 år" (story)
-81. (S3→D1) Kämpar du med kött som aldrig blir som du föreställt dig? Jag skyllde på köttet i 20 år — här är vad det faktiskt var, så att din nästa entrecôte blir den bästa.
-82. (S1→D2) Kämpar du med halvtimmesskrubbandet? Jag trodde det ingick i att grilla — här är dagen jag fattade att det inte gör det, så att du får kvällarna tillbaka.
-83. (S5→D3) Kämpar du med att hoppas att ingen tittar för noga? Jag var "killen som kunde grilla" med kvarterets smutsigaste galler — här är vad som ändrade det, så att du kan lyfta locket först.
-84. (S6→D4) Kämpar du med att inte veta vad du serverar? Jag ville inte se det som lossnade från mitt "rena" galler — här är varför du måste, så att din familj slipper det min åt.
-85. (S8→D5) Kämpar du med en grill som slits fortare än den borde? Jag höll på att förstöra en grill för 15 000 med en borste för 99 — här är vad jag önskar att någon sagt, så att din överlever.
-86. (S9→D6) Kämpar du med att ha provat allt? Lök, folie, dyra borstar — jag med. Här är varför alla misslyckades på samma sätt, så att du slipper prova ett år till.
-87. (S7→D7) Kämpar du med att alltid skjuta upp det? Jag sköt upp det i tjugo år — här är varför det aldrig var lathet, så att din grill alltid är redo utan viljestyrka.
-88. (S10→D8) Kämpar du med att svågern alltid grillar bättre? Min blev tyst när han såg mitt galler — här är vad han såg, så att nästa tystnad är på din altan.
-89. (S3→D9) Kämpar du med att bra grillningar känns som tur? Jag trodde vissa kvällar bara "blev bra" — här är variabeln jag missade i 20 år, så att varje kväll blir en bra kväll.
-90. (S10→D10) Kämpar du med känslan att du borde kunna det här vid det här laget? Det tog mig 20 år att fixa det mest grundläggande — här är genvägen, så att din setup blir komplett den här säsongen.
-
----
+81. (S3→D1) Kämpar du med kött som aldrig blir som du föreställt dig? Här är ögonblicket jag slutade skylla på köttet — kompisen drog sin borste över mitt "rena" galler och jag ville inte se vad som lossnade — så att din nästa entrecôte blir den bästa du gjort.
+82. (S1→D2) Kämpar du med halvtimmesskrubbandet? Här är dagen jag fattade att det aldrig ingick i att grilla — 20 år av söndagar, borta i onödan — så att du får dina kvällar tillbaka nu istället för om 20 år.
+83. (S5→D3) Kämpar du med att hoppas att ingen tittar för noga? Här är bekännelsen: jag var "killen som kunde grilla" i mitt gäng, med gängets smutsigaste galler — så att du kan lyfta locket först istället för sist.
+84. (S6→D4) Kämpar du med att inte veta vad du serverar? Här är det som lossnade från gallret jag serverat min familj från i åratal (jag filmade det — jag ville inte tro det själv) — så att din familj slipper det min åt.
+85. (S8→D5) Kämpar du med en grill som slits fortare än den borde? Här är misstaget som nästan kostade mig en grill för 15 000 — jag "vårdade" den med en borste för 99 kr som rev emaljen — så att din överlever mig.
+86. (S9→D6) Kämpar du med att ha provat allt? Lök, folie, bränna av, dyra Weber-borsten — här är felet alla fyra delar (de jobbar på ytan, fettet bor i springorna) — så att du slipper prova ett femte år.
+87. (S7→D7) Kämpar du med att alltid skjuta upp det? Här är vad som faktiskt låg bakom mina 20 år av "jag tar det sen" — metoden var för jobbig för att bli vana, inte jag för lat — så att din grill blir redo utan att du blir en ny människa.
+88. (S10→D8) Kämpar du med att svågern alltid grillar bättre? Här är vad som fick min att bli tyst och fråga var jag köpt den — han såg gallret före maten — så att nästa tystnad uppstår på din altan.
+89. (S3→D9) Kämpar du med att bra grillningar känns som tur? Här är variabeln jag missade i 20 år medan jag jagade recept och termometrar — så att varje kväll blir en bra kväll, inte var tredje.
+90. (S10→D10) Kämpar du med känslan att du borde kunna det här vid det här laget? Här är genvägen som tog mig 20 år att hitta (och 60 sekunder att köra) — så att din setup blir komplett den här säsongen, inte nästa decennium.
 
 ## Hur banken används
 
