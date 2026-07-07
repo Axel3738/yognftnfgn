@@ -164,3 +164,124 @@ Tap below and give it a shot. Great meat starts with a clean grate.
   1. **"Håll min hand"** — skam + demo, attackerar stålborsten (TOF)
   2. **"Två vatten"** — parallelltest, attackerar billiga elborstar (MOF/BOF)
   3. **"Tre misstag"** — edu/curiosity, attackerar tittarens egna vanor (TOF, mjukast intro)
+
+---
+---
+
+# VARIANT B — "Teknikerns tre misstag" (110-vinkeln, Axels idé 2026-07-07)
+
+**Mål:** `GRILL_mastern_authority_video_teknikermisstag_v1` — samma "3 misstag"-struktur,
+men berättad av **grillteknikern från 110** (kontots mest köpta persona). Varje misstag blir
+en yrkesobservation ("jag ser det i varenda grill") istället för en bekännelse. Bevisad
+persona × bevisad edu-struktur.
+
+**Varför varianten är stark:** 110-vinkeln ger misstagen *vittnesbörd* — han gissar inte vad
+du gör fel, han ser det varje dag. Dessutom kan misstag 2 bära hela 110:ans stakes-paket
+(frätande fett, 15 år → 7, Weber-erkännandet) utan att kännas påklistrat.
+
+## SVENSK VERSION
+
+### Hooks
+- **H1:** "Jag har öppnat tusentals grillar. Här är de tre misstagen jag ser i nästan varenda en."
+- **H2:** "Efter trettio år som grilltekniker kan jag säga exakt vilka tre misstag som förstör din grill. Du gör minst ett av dem."
+- **H3:** "Din grill ser ren ut. Det är den inte. Här är de tre misstagen som lurar dig — jag ser dem varje dag på jobbet."
+
+### Body (VO, ~60 sek)
+
+Som grilltekniker har jag öppnat tusentals grillar. Ägaren säger nästan alltid samma sak:
+"den är ren, jag sköter den." Sen lyfter jag på gallret. Här är de tre misstagen jag ser i
+nästan varenda grill.
+
+Misstag ett: att skrubba hårdare. Jag ser resultatet direkt — lösa borststrån på gallret.
+Tunna metalltrådar, omöjliga att se mot mörk metall, som följer med köttet. Weber erkänner
+det själva på sin supportsida: strån lossnar vid normal användning. Och trycket? Det plattar
+borsten så den rengör ännu sämre. Hårdare är inte renare.
+
+Misstag två: att lita på ögat. Gallret ser rent ut ovanifrån. Men jag vänder på det och
+tittar i springorna — där sitter fett som är säsonger gammalt. Det värms upp igen varje gång
+du grillar. Det ryker, sätter smak och saboterar stekytan. Och värre: inbränt fett är
+frätande. Det bryter ner metallen underifrån. En Napoleon ska hålla i femton år — med ett
+smutsigt galler håller den kanske sju.
+
+Misstag tre: hacksen. Lökhalvan. Folien. Bränna-av-metoden. Jag hör dem varje vecka. De tar
+det lösa på ytan — fettet i springorna rör de inte. Det är att städa runt problemet.
+
+Det är därför jag bytte till Grillklinikens Master. Huvudet snurrar fyrahundra varv i
+minuten och når runt hela staven, ner i springorna — och doppar du den i vatten på ett varmt
+galler gör ångan halva jobbet. Brush-Safe-huvudet tappar aldrig ett strå. Sextio sekunder
+efter varje grillning — det är hela skillnaden mellan grillarna jag dömer ut vid år sju och
+de som håller i femton.
+
+Gör den inte ditt galler blankt får du pengarna tillbaka — trettio dagars öppet köp. Och
+livstidsgaranti på borsten.
+
+Tryck nedan. Din grill ser ren ut — nu vet du vad du ska kolla.
+
+[lugn musik]
+
+## ENGLISH VERSION (for the editors)
+
+**Target ad:** `GRILL_mastern_authority_video_teknikermisstag_v1` — the 3-mistakes edu
+format voiced by the grill technician persona from winning ad 110. ~60 sec, 9:16.
+**Tone:** the calm professional who's seen it all. Never lecturing — *reporting*.
+
+### Hooks
+- **H1:** "I've opened thousands of grills. Here are the three mistakes I see in almost every single one."
+- **H2:** "After thirty years as a grill technician, I can tell you exactly which three mistakes ruin your grill. You're making at least one."
+- **H3:** "Your grill looks clean. It isn't. Here are the three mistakes fooling you — I see them every day at work."
+
+### Body (VO, ~60 sec)
+
+As a grill technician, I've opened thousands of grills. The owner almost always says the
+same thing: "it's clean, I take care of it." Then I lift the grate. Here are the three
+mistakes I see in almost every grill.
+
+Mistake one: scrubbing harder. I see the result immediately — loose bristles on the grate.
+Thin metal strands, impossible to spot against dark metal, that end up in the meat. Weber
+admits it themselves on their support page: bristles come loose during normal use. And the
+pressure? It flattens the brush so it cleans even worse. Harder is not cleaner.
+
+Mistake two: trusting your eyes. The grate looks clean from above. But I flip it over and
+look in the gaps — and there's grease that's seasons old. It reheats every time you grill.
+It smokes, it flavors the food, it kills the sear. And worse: burnt-on grease is corrosive.
+It breaks the metal down from underneath. A Napoleon should last fifteen years — with a
+dirty grate it lasts maybe seven.
+
+Mistake three: the hacks. The onion half. The foil ball. The burn-it-off method. I hear
+them every week. They take the loose stuff on the surface — the grease in the gaps they
+never touch. That's cleaning around the problem.
+
+That's why I switched to Grillkliniken's Master. The head spins at four hundred RPM and
+reaches around the whole bar, down into the gaps — and if you dip it in water on a hot
+grate, the steam does half the work. The Brush-Safe head never sheds a single bristle.
+Sixty seconds after every cookout — that's the entire difference between the grills I write
+off at year seven and the ones that make it to fifteen.
+
+If it doesn't leave your grate gleaming, you get your money back — thirty-day return
+policy. And a lifetime warranty on the brush.
+
+Tap below. Your grill looks clean — now you know what to check.
+
+[gentle music]
+
+### Shot list
+
+| Beat | Time | Visual |
+|------|------|--------|
+| Hook | 0–4s | The technician (50s, work clothes) at an open grill, real backyard, straight to camera — same casting/scene language as ad 110 |
+| Setup | 4–9s | He lifts a grate that "looks clean," turns it over. Beat of silence |
+| Mistake 1 | 9–20s | Macro: shed bristles on dark grate · brush flattening under pressure. Text: "MISSTAG 1 — hårdare är inte renare" |
+| Mistake 2 | 20–34s | Grate flip, camera into the gap: seasons-old buildup → smoke on reheat → rust/flaking enamel. Text: "MISSTAG 2 — 15 år blir 7" |
+| Mistake 3 | 34–42s | Onion, foil, flames — quick montage, he shakes his head. Text: "MISSTAG 3 — städar runt problemet" |
+| Pivot + mechanism | 42–52s | He runs the Master: rotation into the gap, steam on hot grate, Brush-Safe close-up. Real time |
+| Guarantee + CTA | 52–60s | Kit + "30 dagars öppet köp" / "Livstidsgaranti". Close to camera: "Din grill ser ren ut — nu vet du vad du ska kolla." |
+
+### Editor notes
+- **Use the same actor/persona as the running 110 ads if at all possible** — warm audiences
+  already recognize and trust him; this becomes a sequel, not a new character.
+- The grate-flip (mistake two) is the authority moment — his hands, his routine, ten
+  seconds of professional certainty. Let it breathe.
+- The closing line is a deliberate callback to 110's own hook ("Din grill ser ren ut. Det
+  är den inte.") — keep it word-for-word adjacent.
+- Test design vs Variant A (curiosity-voice): same structure, different angle — a clean
+  angle test per the naming convention (curiosity vs authority).
