@@ -57,6 +57,7 @@ Varje static = **1 hook** (störst text) + ev. **1 bevis** + **1 mekanism/CTA**.
 | M2 | **"En knapp. 60 sekunder. Rent på riktigt."** | 101/108 | USP |
 | M3 | **"Du behöver inte mer tryck. Du behöver rotation."** | 145 | mekanism |
 | M4 | **"Inga lösa borststrån i maten. Borsthuvudet lossnar inte."** | 049 | säkerhet |
+| M5 | **"Grovhuvudet har en låsmekanism med stänger som låser fast metallen. Polerhuvudet har ingen metall alls."** | NY produktsanning (Axel 2026-07-08) — mekanismen BAKOM inga-strån-claimet, Stage 3-guld | säkerhet/mekanism |
 
 ### 💬 SOCIAL PROOF — citat-kort
 | # | Line | Från | Vinkel |

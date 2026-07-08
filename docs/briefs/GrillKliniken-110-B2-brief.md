@@ -33,21 +33,21 @@
 
 As a grill technician, I've opened thousands of grills that look clean on the surface. The first thing I do is always the same: I flip the grate and look in the gaps. That's where the truth is.
 
-And let me say one thing right away — black is not the problem. A smooth, even, black surface is seasoning. It's supposed to be there. But black that flakes, builds up in the gaps and feels like crust? That's old carbonized grease. And that's a different thing entirely.
+And let me say one thing right away — the grate being black is not the problem. A smooth, even, black surface is completely normal. It's supposed to be there. But black that flakes, builds up in the gaps and feels like crust? That's old carbonized grease. And that's a different thing entirely.
 
 That grease reheats every time you grill. It smokes, it flavors the meat, and it blocks the direct contact between meat and metal that creates the perfect sear. The damage is done before you've even put the meat on.
 
 "Just burn it off," everyone says. I get the idea — but the heat carbonizes the grease, it doesn't remove it. That's why the grate looks the same after the burn-off. And if you own a ceramic grill, you don't even dare run it that hot — you'll wreck the gasket.
 
-So you grab the wire brush and press harder. Two things happen: the brush flattens and loses its grip — and the risk shoots up that it sheds bristles straight onto the grate. Weber admits this in writing on their own support page. Thin metal strands, impossible to see against dark metal. That come along with the meat you serve your family. I've heard the stories. That was enough for me.
+So you grab the wire brush and press harder. Two things happen: the brush flattens and loses its grip, and the risk shoots up that it sheds bristles straight onto the grate. Weber admits this in writing on their own support page. Thin metal strands, impossible to see against dark metal. That come along with the meat you serve your family. I've heard the stories. That was enough for me.
 
-But the worst part is what happens in the meantime. Burnt-on grease is corrosive. It slowly breaks the metal down from underneath — discoloration becomes rust, rust becomes a grate that flakes and burners that seize. A Napoleon should last fifteen years. With a dirty grate, it lasts maybe seven. You've invested fifteen thousand in your grill. The only thing standing between that investment and a rusty scrap heap is what you do after every cookout.
+But the worst part is what happens in the meantime. Burnt-on grease is corrosive. It slowly breaks the metal down from underneath — discoloration becomes rust, rust becomes a grate that flakes and burners that seize. An expensive grill should last fifteen years. With a dirty grate, it lasts maybe seven. You've invested fifteen thousand in your grill. The only thing standing between that investment and a rusty scrap heap is what you do after every cookout.
 
-That's why I switched to Grillkliniken's Master. And here's the thing — I scrub less now, not more. Sixty seconds while the grate is still hot: the head spins at four hundred RPM, reaches around the whole bar and down into the gaps, and if I dip it in water, the steam does half the work. Then I sit down. That's the entire routine.
+That's why I switched to Grillkliniken's Master. And here's the thing — I scrub less now. One quick pass while the grate is still hot, sixty seconds, then it's done: the trick is that the head spins at four hundred RPM, reaches around the whole bar and down into the gaps. And if you want to deep-clean the grill, grab a bowl of water and dip the brush head — the steam does half the work. Then I sit back down. That's the entire routine.
 
-It's a complete kit — coarse head, polishing head, and the Brush Safe head built to never shed a single bristle. Nothing comes loose, nothing ends up in the food. Works on every grill type. Quiet enough not to bother the neighbors.
+It's a complete kit — a coarse head and a polishing head, both built to never shed a single bristle. The coarse head has a special locking mechanism with rods inside that lock the metal in place. The polishing head contains no metal at all. So nothing comes loose, nothing ends up in the food. Works on every grill type. Quiet enough not to bother the neighbors.
 
-Right now you get the complete kit at up to forty percent off during the season sale. Thirty-day return policy — and a lifetime warranty: if it breaks, you get a new one. Period.
+Right now you get the complete kit at up to forty percent off during the season sale, with a lifetime warranty: if it breaks, you get a new one. Period. And Grillkliniken is a Swedish company that follows EU law — unlike those sites that look Swedish but aren't. You always have the right to return, and we offer not 14 but 30 days of open purchase. If you're not happy after a month, you get your money back. Completely risk-free.
 
 Fifteen years or seven. It's decided in sixty seconds after every cookout. Click below.
 
@@ -72,24 +72,25 @@ Fifteen years or seven. It's decided in sixty seconds after every cookout. Click
 
 Som grilltekniker har jag öppnat tusentals grillar som ser rena ut på ytan. Det första jag gör är alltid samma sak: jag vänder på gallret och tittar i springorna. Där sitter sanningen.
 
-Och låt mig säga en sak direkt — svart är inte problemet. En slät, jämn, svart yta är seasoning. Den ska vara där. Men svart som flagar, bygger på sig i springorna och känns som skorpa? Det är gammalt förkolnat fett. Och det är en helt annan sak.
+Och låt mig säga en sak direkt, att gallret är svart är inte problemet. En slät, jämn, svart yta är helt normalt. Den ska vara där. Men svart som flagnar, bygger på sig i springorna och känns som skorpa? Det är gammalt förkolnat fett. Och det är en helt annan sak.
 
 Det fettet värms upp på nytt varje gång du grillar. Det ryker, sätter smak på köttet och blockerar den direktkontakt mellan kött och metall som ger den perfekta stekytan. Skadan är gjord innan du ens lagt på köttet.
 
-"Bränn bara av det", säger alla. Jag förstår tanken — men värmen förkolnar fettet, den tar inte bort det. Det är därför gallret ser likadant ut efter avbränningen. Och har du en keramikgrill vågar du inte ens köra så hett — då förstör du packningen.
+"Bränn bara av det", säger alla. Jag förstår tanken, men värmen förkolnar fettet, den tar inte bort det. Det är därför gallret ser likadant ut efter avbränningen. Och har du en keramikgrill vågar du inte ens köra så hett, då förstör du packningen.
 
-Så du tar stålborsten och trycker hårdare. Då händer två saker: borsten plattas ut och tappar greppet — och risken ökar markant att den tappar borststrån direkt på gallret. Weber erkänner det själva skriftligt på sin egen supportsida. Tunna metalltrådar, omöjliga att se mot mörk metall. Som följer med köttet du serverar din familj. Jag har hört historierna. Det räckte för mig.
+Så du tar stålborsten och trycker hårdare. Då händer två saker: borsten plattas ut och tappar greppet, och risken ökar markant att den tappar borststrån direkt på gallret. Weber erkänner det själva skriftligt på sin egen supportsida. Tunna metalltrådar, omöjliga att se mot mörk metall. Som följer med köttet du serverar din familj. Jag har hört historierna. Det räckte för mig.
 
-Men det värsta är vad som händer under tiden. Inbränt fett är frätande. Det bryter långsamt ner metallen underifrån — missfärgning blir rost, rost blir ett galler som spjälkar och brännare som kärvar. En Napoleon ska hålla i femton år. Med ett smutsigt galler håller den kanske sju. Du har investerat femton tusen i din grill. Det enda som står mellan den investeringen och en rostig skrothög är vad du gör efter varje grillning.
+Men det värsta är vad som händer under tiden. Inbränt fett är frätande. Det bryter långsamt ner metallen underifrån, missfärgning blir rost, rost blir ett galler som spjälkar och brännare som kärvar. En dyr grill ska hålla i femton år. Med ett smutsigt galler håller den kanske sju. Du har investerat femton tusen i din grill. Det enda som står mellan den investeringen och en rostig skrothög är vad du gör efter varje grillning.
 
-Det är därför jag bytte till Grillklinikens Master. Och här är grejen — jag skrubbar mindre nu, inte mer. Sextio sekunder medan gallret ändå är varmt: huvudet snurrar fyrahundra varv i minuten, når runt hela staven och ner i springorna, och doppar jag det i vatten gör ångan halva jobbet. Sen sätter jag mig. Det är hela rutinen.
+Det är därför jag bytte till Grillklinikens Master. Och här är grejen, jag skrubbar mindre nu. Ett snabbt drag medan gallret ändå är varmt, sextio sekunder, sen är det klart: tricket är att huvudet snurrar fyrahundra varv i minuten, når runt hela staven och ner i springorna. Och om du vill grovstäda grillen, så ta en skål med vatten och doppa borsthuvudet, då gör ångan halva jobbet. Sen sätter jag mig igen. Det är hela rutinen.
 
-Det är ett komplett kit — grovhuvud, polerhuvud och Brush Safe-huvudet som är byggt för att aldrig tappa ett strå. Ingenting lossnar, ingenting följer med maten. Fungerar på alla grilltyper. Tyst nog att inte störa grannen.
+Det är ett komplett kit, grovhuvud och polerhuvud, som båda är byggda för att aldrig tappa ett strå. Grovhuvudet har en speciell låsmekanism med stänger inuti som låser fast metallen. Polerhuvudet har ingen metall alls. Så ingenting lossnar, ingenting följer med maten. Fungerar på alla grilltyper. Tyst nog att inte störa grannen.
 
-Just nu får du hela kitet med upp till fyrtio procents rabatt under säsongskampanjen. Trettio dagars öppet köp — och livstidsgaranti: går den sönder får du en ny. Punkt.
+Just nu får du hela kitet med upp till fyrtio procents rabatt under säsongskampanjen och livstidsgaranti: går den sönder får du en ny. Punkt. Och Grillkliniken är ett svenskt företag som följer EU:s lagar — till skillnad från de där sajterna som ser svenska ut men inte är det. Du har alltid rätt att göra retur, och vi erbjuder inte 14 utan 30 dagars öppet köp. Är du inte nöjd efter en månad får du pengarna tillbaka. Helt utan risk.
 
 Femton år eller sju. Det avgörs på sextio sekunder efter varje grillning. Klicka nedan.
 
+---
 ---
 
 ## KEY VISUAL BEATS (visuals must follow and reinforce every voice line)
