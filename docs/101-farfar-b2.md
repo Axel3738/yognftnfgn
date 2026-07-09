@@ -47,6 +47,16 @@ Restaurangen valdes för att den knyter ihop planteringen från hooken.
 - Loggad idé: egen story-annons om Journal of Food Science-studien ("sen ska vi göra en story
   om dom") — passar som T-topic (intresse/auktoritet) i 101-formatet.
 
+## Hooks (låsta 2026-07-09) — 101 B2 H1–H4
+
+1. "Jag frågade min farfar varför mitt kött aldrig smakar som på restaurang. Han skrattade och visade mig något på min grill."
+2. "Farfar tittade på min grill i 2 sekunder och sa: det är därför köttet smakar som det gör." (visuell inspo-video i Drive, länk i 233-dokumentet)
+3. "Jag misslyckades med att imponera på min granne med mitt kött i 10 år, men min farfar fixade det med ett enda sniff."
+4. "Det finns en anledning till att ditt kött aldrig blir som på restaurang, jag gissade fel i flera år. Tills farfar öppnade locket på min grill."
+
+Prediktion före test: H2 > H1 > H4 > H3 (men hooks har överraskat förr — kör alla fyra).
+Leverans-dokument: "233 Creative - Farfar 101 B2" i Drive-mappen (id 1vSJ2Fbz1eteFwbvNwEcom-1y5xp9M35tfItImdExx80).
+
 ---
 
 ## Body 101 B2 — SVENSKA (körs i annons)
@@ -83,7 +93,7 @@ Farfar hade jobbat med gasolgrillar i över trettio år. Han hade öppnat tusent
 
 Han kom över en lördag. Tittade på min grill. Lyfte locket. Såg ner på gallret.
 
-Han sa ingenting på tio sekunder. Det enda han behövde göra var en snabb sniff på gallret.
+Han sa ingenting på tio sekunder. Det enda han behövde göra var att ta en snabb sniff på gallret.
 
 Jag sa att jag rengjorde det. Han tittade på mig och frågade: "Med en stålborste?" Ja. Han skakade på huvudet. Då har du inte rengjort det. Du har skrapat ytan och trott att det var samma sak.
 
@@ -99,7 +109,7 @@ Och där föll allting på plats. Studien hade sagt vad: trettiofyra procent av 
 
 Jag förstod nu varför ingenting jag provat hade funkat.
 
-Första problemet: En stålborste tar tjugo minuter och når ändå inte ner i springorna. Det är ett projekt — och projekt skjuter man upp. Så gallret rengörs när det behövs snarare än varje gång. Och fettet byggs på. Säsong efter säsong.
+Första problemet: En stålborste tar tjugo minuter och når ändå inte ner i springorna. Det är ett projekt — och projekt skjuter man upp. Så gallret rengörs när jag känner för det snarare än varje gång. Och fettet byggs på. Säsong efter säsong.
 
 Andra problemet: Borsten du skrubbar med når inte dit fettet sitter. Den skrapar på ytan och du tror att jobbet är gjort. Det är det inte.
 
@@ -159,7 +169,7 @@ Grandpa had worked with gas grills for over thirty years. He had opened thousand
 
 He came over one Saturday. Looked at my grill. Lifted the lid. Looked down at the grate.
 
-He said nothing for ten seconds. All he needed was one quick sniff of the grate.
+He said nothing for ten seconds. All he needed to do was take one quick sniff of the grate.
 
 I said I cleaned it. He looked at me and asked: "With a wire brush?" Yes. He shook his head. Then you haven't cleaned it. You've scraped the surface and thought it was the same thing.
 
@@ -175,7 +185,7 @@ And that's when it all clicked. The study had said what: thirty-four percent of 
 
 Now I understood why nothing I'd tried had worked.
 
-Problem one: A wire brush takes twenty minutes and still doesn't reach into the gaps. It's a project — and projects get postponed. So the grate gets cleaned "when it needs it" instead of every time. And the grease builds. Season after season.
+Problem one: A wire brush takes twenty minutes and still doesn't reach into the gaps. It's a project — and projects get postponed. So the grate gets cleaned when I feel like it instead of every time. And the grease builds. Season after season.
 
 Problem two: The brush you're scrubbing with doesn't reach where the grease sits. It scrapes the surface and you think the job is done. It isn't.
 
