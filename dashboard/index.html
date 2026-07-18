@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grillkliniken · Kostnad & Marginal</title>
+</head>
+<body>
+<style>
+  :root{
+    --bg:#FBF7F0; --panel:#FFFFFF; --panel-2:#F5EEE3; --line:#E7DDCC;
+    --ink:#241C15; --ink-2:#6B5D50; --ink-3:#96897A;
+    --ember:#D8501F; --ember-soft:#F6E2D6; --steel:#4E626B;
+    --good:#159A63; --good-bg:#E4F1E9; --warn:#C77D14; --warn-bg:#F7ECD6; --low:#C0392B; --low-bg:#F6E0DD;
+    --shadow:0 1px 2px rgba(60,40,20,.05),0 8px 24px -12px rgba(60,40,20,.18);
+    --r:14px; --r-sm:9px;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --sans:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#171310; --panel:#211B15; --panel-2:#2A231B; --line:#3A3025;
+      --ink:#F3EADD; --ink-2:#B6A794; --ink-3:#847661;
+      --ember:#F0743D; --ember-soft:#3A2318; --steel:#8FA6AF;
+      --good:#33B57C; --good-bg:#16301F; --warn:#E0A03B; --warn-bg:#332512; --low:#E4574C; --low-bg:#331A17;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#FBF7F0; --panel:#FFFFFF; --panel-2:#F5EEE3; --line:#E7DDCC;
+    --ink:#241C15; --ink-2:#6B5D50; --ink-3:#96897A;
+    --ember:#D8501F; --steel:#4E626B; --ember-soft:#F6E2D6;
+    --good:#159A63; --good-bg:#E4F1E9; --warn:#C77D14; --warn-bg:#F7ECD6; --low:#C0392B; --low-bg:#F6E0DD;
+    --shadow:0 1px 2px rgba(60,40,20,.05),0 8px 24px -12px rgba(60,40,20,.18);
+  }
+  :root[data-theme="dark"]{
+    --bg:#171310; --panel:#211B15; --panel-2:#2A231B; --line:#3A3025;
+    --ink:#F3EADD; --ink-2:#B6A794; --ink-3:#847661;
+    --ember:#F0743D; --steel:#8FA6AF; --ember-soft:#3A2318;
+    --good:#33B57C; --good-bg:#16301F; --warn:#E0A03B; --warn-bg:#332512; --low:#E4574C; --low-bg:#331A17;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.7);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1180px;margin:0 auto;padding:26px 20px 80px;}
+  .tnum{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1;}
+
+  /* ---- header ---- */
+  header.top{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-end;justify-content:space-between;margin-bottom:22px;}
+  .brand{display:flex;align-items:center;gap:13px;}
+  .flame{width:42px;height:42px;border-radius:11px;background:
+      radial-gradient(120% 120% at 50% 120%,var(--ember),#8f2f10 70%);
+      display:grid;place-items:center;box-shadow:var(--shadow);flex:none;}
+  .flame svg{width:22px;height:22px;}
+  .brand h1{margin:0;font-size:21px;font-weight:800;letter-spacing:-.02em;line-height:1.05;}
+  .brand .sub{margin:2px 0 0;font-size:12.5px;color:var(--ink-2);letter-spacing:.01em;}
+  .toolbar{display:flex;gap:9px;flex-wrap:wrap;align-items:center;}
+  .seg{display:flex;background:var(--panel-2);border:1px solid var(--line);border-radius:var(--r-sm);padding:3px;gap:2px;}
+  .seg button{font:inherit;font-size:12.5px;font-weight:600;color:var(--ink-2);background:none;border:0;
+    padding:6px 11px;border-radius:6px;cursor:pointer;white-space:nowrap;}
+  .seg button[aria-pressed="true"]{background:var(--panel);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08);}
+  .btn{font:inherit;font-size:12.5px;font-weight:600;color:var(--ink);background:var(--panel);
+    border:1px solid var(--line);border-radius:var(--r-sm);padding:7px 13px;cursor:pointer;box-shadow:var(--shadow);
+    display:inline-flex;align-items:center;gap:7px;}
+  .btn:hover{border-color:var(--ember);}
+  .btn svg{width:14px;height:14px;}
+
+  /* ---- kpis ---- */
+  .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:20px;}
+  @media(max-width:860px){.kpis{grid-template-columns:repeat(2,1fr);}}
+  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:15px 16px;box-shadow:var(--shadow);position:relative;overflow:hidden;}
+  .kpi .lab{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);margin-bottom:9px;}
+  .kpi .val{font-size:27px;font-weight:800;letter-spacing:-.02em;line-height:1;}
+  .kpi .val small{font-size:15px;font-weight:700;color:var(--ink-2);margin-left:2px;}
+  .kpi .note{font-size:11.5px;color:var(--ink-2);margin-top:6px;}
+  .kpi.accent::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--ember);}
+
+  /* ---- panels ---- */
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);margin-bottom:20px;}
+  .panel-h{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:15px 18px;border-bottom:1px solid var(--line);}
+  .panel-h h2{margin:0;font-size:15px;font-weight:800;letter-spacing:-.01em;}
+  .panel-h .hint{font-size:12px;color:var(--ink-2);}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink-2);}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .dot{width:10px;height:10px;border-radius:3px;flex:none;}
+
+  /* ---- ranking bars ---- */
+  .bars{padding:8px 18px 16px;max-height:430px;overflow:auto;}
+  .bar-row{display:grid;grid-template-columns:minmax(150px,1.4fr) 1fr auto;gap:14px;align-items:center;padding:7px 0;border-bottom:1px solid var(--line);}
+  .bar-row:last-child{border-bottom:0;}
+  .bar-name{font-size:13px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .bar-name .var{color:var(--ink-3);font-weight:500;font-size:11.5px;}
+  .track{position:relative;height:15px;background:var(--panel-2);border-radius:5px;overflow:hidden;}
+  .fill{position:absolute;left:0;top:0;bottom:0;border-radius:5px 4px 4px 5px;min-width:3px;}
+  .bar-val{font-family:var(--mono);font-size:12.5px;font-weight:600;text-align:right;white-space:nowrap;}
+  .bar-val .kr{color:var(--ink-3);font-size:11px;margin-left:7px;}
+
+  /* ---- table ---- */
+  .tablewrap{overflow-x:auto;}
+  table{border-collapse:collapse;width:100%;font-size:13px;}
+  thead th{position:sticky;top:0;background:var(--panel-2);color:var(--ink-2);font-size:11px;text-transform:uppercase;
+    letter-spacing:.05em;font-weight:700;text-align:left;padding:11px 12px;white-space:nowrap;cursor:pointer;user-select:none;border-bottom:1px solid var(--line);}
+  thead th.num{text-align:right;}
+  thead th .ar{opacity:.35;font-size:9px;margin-left:3px;}
+  thead th[aria-sort] .ar{opacity:1;color:var(--ember);}
+  tbody td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:middle;}
+  tbody tr:hover{background:var(--panel-2);}
+  td.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;}
+  .pname{font-weight:600;}
+  .pvar{color:var(--ink-3);font-size:11.5px;}
+  .pill{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap;}
+  .pill.good{background:var(--good-bg);color:var(--good);}
+  .pill.warn{background:var(--warn-bg);color:var(--warn);}
+  .pill.low{background:var(--low-bg);color:var(--low);}
+  .pill.na{background:var(--panel-2);color:var(--ink-3);}
+  .status-tag{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-3);}
+  .status-tag.un{color:var(--warn);}
+  .search{font:inherit;font-size:13px;background:var(--panel-2);border:1px solid var(--line);border-radius:var(--r-sm);
+    padding:8px 12px;color:var(--ink);min-width:190px;}
+  .search::placeholder{color:var(--ink-3);}
+  .empty{padding:34px;text-align:center;color:var(--ink-3);font-size:13.5px;}
+
+  /* ---- tooltip ---- */
+  #tt{position:fixed;z-index:50;pointer-events:none;background:var(--ink);color:var(--bg);
+    padding:9px 11px;border-radius:9px;font-size:12px;line-height:1.45;box-shadow:0 8px 24px rgba(0,0,0,.3);
+    max-width:250px;opacity:0;transition:opacity .1s;}
+  #tt b{color:var(--ember);}
+  #tt .r{display:flex;justify-content:space-between;gap:16px;}
+  #tt .r span:last-child{font-family:var(--mono);}
+
+  footer{margin-top:26px;font-size:12px;color:var(--ink-2);line-height:1.6;}
+  footer .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;box-shadow:var(--shadow);}
+  footer b{color:var(--ink);}
+  code{font-family:var(--mono);font-size:11.5px;background:var(--panel-2);padding:1px 5px;border-radius:4px;}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <div class="flame">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2c1 3 4 4 4 8a4 4 0 0 1-8 0c0-1 .3-2 .8-2.6C9 8 9.5 9 10 9c-.2-2 1-4 2-7Z" fill="#fff"/><path d="M12 22a5 5 0 0 0 5-5c0-3-2.5-4.5-3-7-.4 3-2 3.2-2 5.5 0-1.2-.7-2-1.4-2.5C10 10 9 11.5 9 13.5A5 5 0 0 0 12 22Z" fill="#FFD9A0"/></svg>
+      </div>
+      <div>
+        <h1>Kostnad &amp; Marginal</h1>
+        <p class="sub">Grillkliniken · inpriser kopplade till varje produkt</p>
+      </div>
+    </div>
+    <div class="toolbar">
+      <div class="seg" id="vatSeg" role="group" aria-label="Momsläge">
+        <button data-vat="incl" aria-pressed="true">Pris ink. moms</button>
+        <button data-vat="excl" aria-pressed="false">Marginal ex. moms</button>
+      </div>
+      <button class="btn" id="csvBtn" title="Ladda ner alla rader som CSV">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+        Exportera CSV
+      </button>
+      <button class="btn" id="themeBtn" title="Byt tema" aria-label="Byt tema">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6 19 19M19 5l-1.4 1.4M6.4 17.6 5 19"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <section class="kpis" id="kpis"></section>
+
+  <section class="panel">
+    <div class="panel-h">
+      <div><h2>Marginal per produkt</h2></div>
+      <div class="legend">
+        <span><i class="dot" style="background:var(--good)"></i>Hög ≥ 60%</span>
+        <span><i class="dot" style="background:var(--warn)"></i>Medel 45–60%</span>
+        <span><i class="dot" style="background:var(--low)"></i>Låg &lt; 45%</span>
+      </div>
+    </div>
+    <div class="bars" id="bars"></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-h">
+      <div><h2>Alla produkter</h2> <span class="hint" id="tblCount"></span></div>
+      <div class="toolbar">
+        <div class="seg" id="statusSeg" role="group" aria-label="Status">
+          <button data-st="all" aria-pressed="true">Alla</button>
+          <button data-st="Active" aria-pressed="false">Aktiva</button>
+          <button data-st="Unlisted" aria-pressed="false">Olistade</button>
+        </div>
+        <input class="search" id="search" type="search" placeholder="Sök produkt, SKU, handle…" />
+      </div>
+    </div>
+    <div class="tablewrap">
+      <table id="tbl">
+        <thead><tr id="thead"></tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="empty" hidden>Inga produkter matchar filtret.</div>
+  </section>
+
+  <footer>
+    <div class="card">
+      <b>Så läser du dashboarden.</b> Varje rad är en produktvariant från offertbladet. <b>Inpris (SEK)</b> = landat inköp (produkt + frakt), omräknat från USD med kursen
+      <code id="rateTxt"></code>. <b>Marginal</b> = försäljningspris − inpris. Slå om till <em>ex. moms</em> för att räkna marginalen mot faktisk intäkt (pris ÷ 1,25) — det är den siffra din vinst faktiskt bygger på.
+      9 produkter saknar ännu inpris i offertbladet (t.ex. Knivset, Portabel Utomhusgrill) och visas som <span class="pill na">–</span>.
+    </div>
+  </footer>
+</div>
+
+<div id="tt"></div>
+
+<script>
+const DATA = {"rate": 9.6376, "recs": [{"p": "BBQ Grillborste Ultra", "v": null, "sku": null, "h": "bbq-grillborste-ultra", "st": "Active", "rp": 149.0, "uu": 0.6, "su": 5.6, "w": 0.1, "tu": 6.6, "c": 63.61, "n": null}, {"p": "BBQ – Redskapsset för Grillen 3, 5 eller 9 delar", "v": "3 pcs - To Go", "sku": "20595#KZ1777274381-3-PieceSet", "h": "bbq-redskapsset-for-grillen", "st": "Active", "rp": 299.0, "uu": 2.8, "su": 6.7, "w": 0.17, "tu": 9.5, "c": 91.56, "n": null}, {"p": "BBQ – Redskapsset för Grillen 3, 5 eller 9 delar", "v": "5 pcs - Amateur", "sku": "20595#KZ1777274381-5-PieceSet", "h": "bbq-redskapsset-for-grillen", "st": "Active", "rp": 349.0, "uu": 3.8, "su": 6.9, "w": 0.25, "tu": 10.7, "c": 103.12, "n": null}, {"p": "BBQ – Redskapsset för Grillen 3, 5 eller 9 delar", "v": "9 pcs - Grill Master", "sku": "20595#KZ1777274381-9-PieceSet", "h": "bbq-redskapsset-for-grillen", "st": "Active", "rp": 399.0, "uu": 4.1, "su": 10.1, "w": 0.67, "tu": 14.2, "c": 136.85, "n": null}, {"p": "Borst + PolérHuvud", "v": null, "sku": null, "h": "borst-poler-huvud", "st": "Active", "rp": 249.0, "uu": 3.0, "su": 7.7, "w": 0.4, "tu": 10.7, "c": 103.12, "n": null}, {"p": "Borsthuvud", "v": null, "sku": null, "h": "borst-huvud", "st": "Unlisted", "rp": 200.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "This product is not only for sale"}, {"p": "Brush Safe Huvud", "v": null, "sku": null, "h": "polerhuvud", "st": "Unlisted", "rp": 200.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "This product is not only for sale"}, {"p": "Flipgrill", "v": null, "sku": null, "h": "flipgrill", "st": "Active", "rp": 2800.0, "uu": 42.8, "su": 56.9, "w": 7.7, "tu": 99.7, "c": 960.87, "n": "The item is too large and exceeds the size limit, incurring an additional charge. The total price is $122.40."}, {"p": "Förkläde - Enormt tränad man", "v": null, "sku": null, "h": "forklade-enormt-tranad-man", "st": "Active", "rp": 149.0, "uu": 1.5, "su": 6.1, "w": 0.17, "tu": 7.6, "c": 73.25, "n": null}, {"p": "Förkläde - Grill Master", "v": null, "sku": null, "h": "forklade-grill-master", "st": "Active", "rp": 149.0, "uu": 2.5, "su": 6.1, "w": 0.17, "tu": 8.6, "c": 82.88, "n": null}, {"p": "Förkläde - Kiss and bring him beer", "v": null, "sku": null, "h": "forklade-kiss-and-bring-him-beer", "st": "Active", "rp": 149.0, "uu": 2.5, "su": 6.1, "w": 0.17, "tu": 8.6, "c": 82.88, "n": null}, {"p": "Förkläde - Kvinna i bikini", "v": null, "sku": null, "h": "forklade-kvinna-i-bikini", "st": "Active", "rp": 149.0, "uu": 1.5, "su": 6.1, "w": 0.17, "tu": 7.6, "c": 73.25, "n": null}, {"p": "Förkläde - MC knutt", "v": null, "sku": null, "h": "forklade-mc-knutt", "st": "Active", "rp": 149.0, "uu": 1.5, "su": 6.1, "w": 0.17, "tu": 7.6, "c": 73.25, "n": null}, {"p": "Förkläde - Ölmage", "v": null, "sku": null, "h": "forklade-olmage", "st": "Active", "rp": 149.0, "uu": 1.5, "su": 6.1, "w": 0.17, "tu": 7.6, "c": 73.25, "n": null}, {"p": "Förkläde - Premium Läder", "v": "Brown", "sku": "20595#AB1781058563-brown", "h": "forklade-lader", "st": "Active", "rp": 499.0, "uu": 9.4, "su": 10.7, "w": 0.8, "tu": 20.1, "c": 193.72, "n": null}, {"p": "Förkläde - Premium Läder", "v": "Black", "sku": "20595#AB1781058563-black", "h": "forklade-lader", "st": "Active", "rp": 499.0, "uu": 9.4, "su": 10.7, "w": 0.8, "tu": 20.1, "c": 193.72, "n": null}, {"p": "Förkläde - Sailor Moon", "v": null, "sku": null, "h": "forklade-sailor-moon", "st": "Active", "rp": 149.0, "uu": 1.5, "su": 6.1, "w": 0.17, "tu": 7.6, "c": 73.25, "n": null}, {"p": "Förklade - Slitstarkt, flera färger", "v": "Brown", "sku": null, "h": "forklade-slitstarkt-flera-farger", "st": "Active", "rp": 299.0, "uu": 2.6, "su": 8.4, "w": 0.43, "tu": 11, "c": 106.01, "n": null}, {"p": "Förklade - Slitstarkt, flera färger", "v": "Black", "sku": null, "h": "forklade-slitstarkt-flera-farger", "st": "Active", "rp": 299.0, "uu": 2.6, "su": 8.4, "w": 0.43, "tu": 11, "c": 106.01, "n": null}, {"p": "Förklade - Slitstarkt, flera färger", "v": "Blue", "sku": null, "h": "forklade-slitstarkt-flera-farger", "st": "Active", "rp": 299.0, "uu": 2.6, "su": 8.4, "w": 0.43, "tu": 11, "c": 106.01, "n": null}, {"p": "Förklade - Slitstarkt, flera färger", "v": "Grey", "sku": null, "h": "forklade-slitstarkt-flera-farger", "st": "Active", "rp": 299.0, "uu": 2.6, "su": 8.4, "w": 0.43, "tu": 11, "c": 106.01, "n": null}, {"p": "Förkläde - The Grillfather", "v": null, "sku": null, "h": "forklade-the-grillfather", "st": "Active", "rp": 149.0, "uu": 2.5, "su": 6.1, "w": 0.17, "tu": 8.6, "c": 82.88, "n": null}, {"p": "Förkläde - Tränad manlig kropp", "v": null, "sku": null, "h": "forklade-tranad-manlig-kropp", "st": "Active", "rp": 149.0, "uu": 1.5, "su": 6.1, "w": 0.17, "tu": 7.6, "c": 73.25, "n": null}, {"p": "Förkläde – MästerKOCK", "v": null, "sku": null, "h": "forklade-masterkock", "st": "Active", "rp": 299.0, "uu": 3.4, "su": 6.5, "w": 0.23, "tu": 9.9, "c": 95.41, "n": null}, {"p": "Garanti för säker frakt", "v": null, "sku": null, "h": "garanti-for-saker-frakt", "st": "Unlisted", "rp": 35.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": null}, {"p": "Greatgrill", "v": "No handle", "sku": null, "h": "roterande-grillkorg-i-rostfritt-stal-perfekt-for-gronsaker-kott-tillbehor", "st": "Active", "rp": 320.0, "uu": 1.9, "su": 9.5, "w": 0.21, "tu": 11.4, "c": 109.87, "n": "size similar"}, {"p": "Greatgrill", "v": "With handle", "sku": null, "h": "roterande-grillkorg-i-rostfritt-stal-perfekt-for-gronsaker-kott-tillbehor", "st": "Active", "rp": 350.0, "uu": 2.2, "su": 10.1, "w": 0.3, "tu": 12.3, "c": 118.54, "n": "size similar"}, {"p": "Grillblåsaren Turbo", "v": null, "sku": null, "h": "grillblasaren-turbo", "st": "Unlisted", "rp": 699.0, "uu": 5.1, "su": 11.6, "w": 0.35, "tu": 16.7, "c": 160.95, "n": "With bag"}, {"p": "Grillborste – Lätt & enkel", "v": null, "sku": null, "h": "stalborste-for-grill", "st": "Active", "rp": 99.0, "uu": 0.8, "su": 8.2, "w": 0.15, "tu": 9, "c": 86.74, "n": "28*15cm"}, {"p": "Grillklubbor - Golf Grill Kit", "v": "Green", "sku": "20595#DZ1775027907-green", "h": "golf-grill-kit", "st": "Active", "rp": 799.0, "uu": 9.5, "su": 24.8, "w": 2.45, "tu": 34.3, "c": 330.57, "n": null}, {"p": "Grillklubbor - Golf Grill Kit", "v": "Black", "sku": "20595#DZ1775027907-black", "h": "golf-grill-kit", "st": "Active", "rp": 799.0, "uu": 9.5, "su": 24.8, "w": 2.45, "tu": 34.3, "c": 330.57, "n": null}, {"p": "Grillplatta / Stekbord i rostfritt stål", "v": null, "sku": null, "h": "stekbord", "st": "Active", "rp": 1999.0, "uu": 20.8, "su": 35.7, "w": 4.05, "tu": 56.5, "c": 544.52, "n": "43*32.5*5.6CM"}, {"p": "Grillrengöringsspray", "v": null, "sku": null, "h": "grillrengoringsspray", "st": "Active", "rp": 299.0, "uu": 2.1, "su": 7.1, "w": 0.2, "tu": 9.2, "c": 88.67, "n": null}, {"p": "Grillrengöringssten", "v": null, "sku": null, "h": "grillrengoringssten", "st": "Active", "rp": 149.0, "uu": 0.8, "su": 6.7, "w": 0.22, "tu": 7.5, "c": 72.28, "n": "10*7*4cm"}, {"p": "Grillspett Premium 6 Pack", "v": null, "sku": null, "h": "grillspett-premium-rostfritt-stal", "st": "Active", "rp": 399.0, "uu": 4.5, "su": 10.3, "w": 0.65, "tu": 14.8, "c": 142.64, "n": null}, {"p": "Grilltänger – Flera storlekar", "v": "39cm Red", "sku": "20595#AS1778227407-red-39cm", "h": "grilltanger", "st": "Active", "rp": 99.0, "uu": 1.9, "su": 6.3, "w": 0.12, "tu": 8.2, "c": 79.03, "n": null}, {"p": "Grilltänger – Flera storlekar", "v": "34cm Red", "sku": "20595#AS1778227407-red-12", "h": "grilltanger", "st": "Active", "rp": 99.0, "uu": 1.8, "su": 6.0, "w": 0.11, "tu": 7.8, "c": 75.17, "n": null}, {"p": "Grilltänger – Flera storlekar", "v": "27cm Red", "sku": "20595#AS1778227407-red-9", "h": "grilltanger", "st": "Active", "rp": 99.0, "uu": 1.7, "su": 5.8, "w": 0.09, "tu": 7.5, "c": 72.28, "n": null}, {"p": "Grilltänger – Flera storlekar", "v": "39cm Black", "sku": "20595#AS1778227407-black-39cm", "h": "grilltanger", "st": "Active", "rp": 99.0, "uu": 1.9, "su": 6.3, "w": 0.12, "tu": 8.2, "c": 79.03, "n": null}, {"p": "Grilltänger – Flera storlekar", "v": "34cm Black", "sku": "20595#AS1778227407-black-34cm", "h": "grilltanger", "st": "Active", "rp": 99.0, "uu": 1.8, "su": 6.0, "w": 0.11, "tu": 7.8, "c": 75.17, "n": null}, {"p": "Grilltänger – Flera storlekar", "v": "27cm Black", "sku": "20595#AS1778227407-black-27cm", "h": "grilltanger", "st": "Active", "rp": 99.0, "uu": 1.7, "su": 5.8, "w": 0.09, "tu": 7.5, "c": 72.28, "n": null}, {"p": "Hamburgerpress i gjutjärn", "v": null, "sku": null, "h": "hamburgerpress-i-gjutjarn", "st": "Active", "rp": 399.0, "uu": 3.0, "su": 12.3, "w": 1.0, "tu": 15.3, "c": 147.46, "n": null}, {"p": "Knivset 6-pack – Premium", "v": null, "sku": null, "h": "6-pack-knivset", "st": "Active", "rp": 1499.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "I need the size of every knife"}, {"p": "Knivslip 4-stegs", "v": null, "sku": null, "h": "knivsliop", "st": "Active", "rp": 179.0, "uu": 0.7, "su": 6.9, "w": 0.15, "tu": 7.6, "c": 73.25, "n": null}, {"p": "KorvGubben", "v": null, "sku": null, "h": "korvgubben", "st": "Active", "rp": 199.0, "uu": 1.1, "su": 5.4, "w": 0.06, "tu": 6.5, "c": 62.64, "n": "similar"}, {"p": "Majskolvshållare - 10 Pack", "v": null, "sku": null, "h": "majskolvshallare-10-pack", "st": "Active", "rp": 99.0, "uu": 0.8, "su": 5.3, "w": 0.03, "tu": 6.1, "c": 58.79, "n": "without box"}, {"p": "Mastern - Hela Mastern Kittet", "v": null, "sku": null, "h": "mastern-hela-mastern-kittet", "st": "Unlisted", "rp": 1600.0, "uu": 11.0, "su": 12.97, "w": 0.8, "tu": 23.97, "c": 231.01, "n": null}, {"p": "Mastern — Elektrisk grillborste", "v": null, "sku": null, "h": "elektrisk-grillborste", "st": "Active", "rp": 999.0, "uu": 11.0, "su": 12.97, "w": 0.8, "tu": 23.97, "c": 231.01, "n": null}, {"p": "Polérhuvud", "v": null, "sku": null, "h": "polerhuvud-1", "st": "Active", "rp": 200.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "This product is not only for sale"}, {"p": "Portabel Utomhusgrill", "v": "Large", "sku": null, "h": "portabel-utomhusgrill", "st": "Active", "rp": 599.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "Tomorrow"}, {"p": "Portabel Utomhusgrill", "v": "Small", "sku": null, "h": "portabel-utomhusgrill", "st": "Active", "rp": 499.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "Tomorrow"}, {"p": "Potatisskruv skärare", "v": null, "sku": null, "h": "potatisskruv-skarare", "st": "Active", "rp": 149.0, "uu": 1.3, "su": 5.6, "w": 0.05, "tu": 6.9, "c": 66.5, "n": "with opp bag"}, {"p": "Premium Biffknivar 6-pack", "v": null, "sku": null, "h": "premium-biffknivar-i-rostfritt-stal-6-pack-med-elegant-forvaringslada", "st": "Active", "rp": 999.0, "uu": 16.6, "su": 14.5, "w": 0.8, "tu": 31.1, "c": 299.73, "n": null}, {"p": "Premium Grill- & Smashburger Kit – 25 delar", "v": null, "sku": null, "h": "aa", "st": "Active", "rp": 1399.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "similar"}, {"p": "Skärbräda i ändträ – Premium valnötsträ", "v": null, "sku": null, "h": "skarbrada-i-andtra-premium-valnotstra-36-x-24-x-2-5-cm", "st": "Active", "rp": 699.0, "uu": 7.5, "su": 12.3, "w": 1.05, "tu": 19.8, "c": 190.82, "n": "38*28*1.8cm"}, {"p": "Skyddshandskar", "v": null, "sku": null, "h": "skyddshandskar", "st": "Unlisted", "rp": 80.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "NO"}]};
+
+/* ---------- state ---------- */
+let vatMode = "incl";     // incl | excl
+let statusFilter = "all";
+let query = "";
+let sortKey = "marginPct";
+let sortDir = -1;
+
+const VAT = 1.25;
+const fmt0 = n => n==null?"–":Math.round(n).toLocaleString("sv-SE");
+const fmt1 = n => n==null?"–":n.toLocaleString("sv-SE",{minimumFractionDigits:1,maximumFractionDigits:1});
+const kr = n => n==null?"–":Math.round(n).toLocaleString("sv-SE")+" kr";
+
+function derive(r){
+  const hasCost = r.c!=null && r.rp!=null;
+  const rev = vatMode==="excl" ? (r.rp!=null? r.rp/VAT : null) : r.rp;
+  const marginKr = hasCost ? rev - r.c : null;
+  const marginPct = hasCost && rev>0 ? (marginKr/rev*100) : null;
+  const markup = hasCost && r.c>0 ? (rev/r.c) : null;
+  let band="na";
+  if(marginPct!=null){ band = marginPct>=60?"good":marginPct>=45?"warn":"low"; }
+  return {...r, hasCost, rev, marginKr, marginPct, markup, band};
+}
+function rows(){ return DATA.recs.map(derive); }
+
+/* ---------- KPIs ---------- */
+function renderKpis(){
+  const all = rows();
+  const withCost = all.filter(r=>r.hasCost);
+  const missing = all.length - withCost.length;
+  const pcts = withCost.map(r=>r.marginPct).sort((a,b)=>a-b);
+  const mean = pcts.reduce((a,b)=>a+b,0)/pcts.length;
+  const median = pcts.length%2 ? pcts[(pcts.length-1)/2] : (pcts[pcts.length/2-1]+pcts[pcts.length/2])/2;
+  const lowCount = withCost.filter(r=>r.band==="low").length;
+  const totalCost = withCost.reduce((a,b)=>a+b.c,0);
+  const modeTxt = vatMode==="excl" ? "på pris ex. moms" : "på pris ink. moms";
+  const k = [
+    {lab:"Produkter m. inpris", val:withCost.length, sub:`av ${all.length} rader · ${missing} saknar`, accent:true},
+    {lab:"Snittmarginal", val:fmt0(mean), unit:"%", sub:modeTxt},
+    {lab:"Median­marginal", val:fmt0(median), unit:"%", sub:modeTxt},
+    {lab:"Låg marginal", val:lowCount, sub:"produkter under 45%"},
+    {lab:"Totalt inköpsvärde", val:fmt0(totalCost), unit:"kr", sub:"summa alla inpriser (1 st/rad)"},
+  ];
+  document.getElementById("kpis").innerHTML = k.map(x=>`
+    <div class="kpi${x.accent?' accent':''}">
+      <div class="lab">${x.lab}</div>
+      <div class="val tnum">${x.val}${x.unit?`<small>${x.unit}</small>`:""}</div>
+      <div class="note">${x.sub}</div>
+    </div>`).join("");
+}
+
+/* ---------- ranking bars ---------- */
+function bandColor(b){ return b==="good"?"var(--good)":b==="warn"?"var(--warn)":"var(--low)"; }
+function renderBars(){
+  const list = rows().filter(r=>r.hasCost).sort((a,b)=>b.marginPct-a.marginPct);
+  const max = Math.max(...list.map(r=>r.marginPct));
+  document.getElementById("bars").innerHTML = list.map(r=>`
+    <div class="bar-row" data-tip='${tipData(r)}'>
+      <div class="bar-name" title="${esc(r.p)}${r.v?" · "+esc(r.v):""}">${esc(r.p)}${r.v?` <span class="var">${esc(r.v)}</span>`:""}</div>
+      <div class="track"><div class="fill" style="width:${Math.max(2,r.marginPct/max*100)}%;background:${bandColor(r.band)}"></div></div>
+      <div class="bar-val tnum">${fmt0(r.marginPct)}%<span class="kr">${kr(r.marginKr)}</span></div>
+    </div>`).join("");
+}
+
+/* ---------- table ---------- */
+const COLS = [
+  {k:"p", lab:"Produkt", num:false},
+  {k:"st", lab:"Status", num:false},
+  {k:"rp", lab:"Pris", num:true},
+  {k:"c", lab:"Inpris", num:true},
+  {k:"su_sek", lab:"Varav frakt", num:true},
+  {k:"marginKr", lab:"Marginal kr", num:true},
+  {k:"marginPct", lab:"Marginal %", num:true},
+];
+function renderHead(){
+  document.getElementById("thead").innerHTML = COLS.map(c=>{
+    const active = sortKey===c.k;
+    const ar = active ? (sortDir<0?"▼":"▲") : "▲";
+    return `<th class="${c.num?'num':''}" data-k="${c.k}" ${active?`aria-sort="${sortDir<0?'descending':'ascending'}"`:""}>${c.lab}<span class="ar">${ar}</span></th>`;
+  }).join("");
+}
+function sortVal(r,k){
+  if(k==="su_sek") return r.su!=null ? r.su*DATA.rate : -1;
+  if(k==="p") return (r.p+(r.v||"")).toLowerCase();
+  if(k==="st") return r.st;
+  const v = r[k];
+  return v==null ? -Infinity : v;
+}
+function renderTable(){
+  let list = rows();
+  if(statusFilter!=="all") list = list.filter(r=>r.st===statusFilter);
+  if(query){
+    const q=query.toLowerCase();
+    list = list.filter(r=>(r.p+" "+(r.v||"")+" "+(r.sku||"")+" "+(r.h||"")).toLowerCase().includes(q));
+  }
+  list.sort((a,b)=>{
+    const va=sortVal(a,sortKey), vb=sortVal(b,sortKey);
+    if(va<vb) return -1*sortDir; if(va>vb) return 1*sortDir; return 0;
+  });
+  const tb = document.getElementById("tbody");
+  document.getElementById("empty").hidden = list.length>0;
+  document.getElementById("tblCount").textContent = `${list.length} rader`;
+  tb.innerHTML = list.map(r=>{
+    const frakt = r.su!=null ? r.su*DATA.rate : null;
+    const pill = r.hasCost
+      ? `<span class="pill ${r.band}">${fmt0(r.marginPct)}%</span>`
+      : `<span class="pill na">–</span>`;
+    const stCls = r.st==="Unlisted"?"un":"";
+    return `<tr data-tip='${tipData(r)}'>
+      <td><div class="pname">${esc(r.p)}</div>${r.v?`<div class="pvar">${esc(r.v)}</div>`:""}</td>
+      <td><span class="status-tag ${stCls}">${r.st==="Unlisted"?"Olistad":"Aktiv"}</span></td>
+      <td class="num">${kr(r.rp)}</td>
+      <td class="num">${kr(r.c)}</td>
+      <td class="num">${frakt!=null?kr(frakt):"–"}</td>
+      <td class="num">${r.marginKr!=null?kr(r.marginKr):"–"}</td>
+      <td class="num">${pill}</td>
+    </tr>`;
+  }).join("");
+}
+
+/* ---------- tooltip ---------- */
+function tipData(r){
+  const o = {p:r.p,v:r.v,st:r.st,rp:r.rp,c:r.c,uu:r.uu,su:r.su,mk:r.marginKr,mp:r.marginPct,mu:r.markup,n:r.n};
+  return esc(JSON.stringify(o));
+}
+const tt = document.getElementById("tt");
+function showTip(e,json){
+  const d = JSON.parse(json);
+  const row=(a,b)=>`<div class="r"><span>${a}</span><span>${b}</span></div>`;
+  let h = `<div style="font-weight:700;margin-bottom:5px">${escText(d.p)}${d.v?` · ${escText(d.v)}`:""}</div>`;
+  h += row("Pris", kr(d.rp));
+  if(d.c!=null){
+    h += row("Inpris (landat)", kr(d.c));
+    h += row("· produkt", d.uu!=null?`$${d.uu}`:"–");
+    h += row("· frakt", d.su!=null?`$${d.su}`:"–");
+    h += row(`<b>Marginal (${vatMode==='excl'?'ex':'ink'}. moms)</b>`, `<b>${kr(d.mk)} · ${fmt0(d.mp)}%</b>`);
+    if(d.mu!=null) h += row("Påslag", `${fmt1(d.mu)}×`);
+  } else {
+    h += `<div style="margin-top:4px;color:var(--ember)">Saknar inpris i offertbladet</div>`;
+  }
+  if(d.n) h += `<div style="margin-top:5px;opacity:.7;font-size:11px">${escText(d.n)}</div>`;
+  tt.innerHTML = h; tt.style.opacity="1"; moveTip(e);
+}
+function moveTip(e){
+  const pad=14, w=tt.offsetWidth, h=tt.offsetHeight;
+  let x=e.clientX+pad, y=e.clientY+pad;
+  if(x+w>innerWidth-8) x=e.clientX-w-pad;
+  if(y+h>innerHeight-8) y=e.clientY-h-pad;
+  tt.style.left=x+"px"; tt.style.top=y+"px";
+}
+document.addEventListener("mouseover",e=>{const el=e.target.closest("[data-tip]"); if(el) showTip(e,el.dataset.tip);});
+document.addEventListener("mousemove",e=>{ if(tt.style.opacity==="1"){const el=e.target.closest("[data-tip]"); if(el) moveTip(e); else {tt.style.opacity="0";}}});
+document.addEventListener("mouseout",e=>{ if(!e.relatedTarget||!e.relatedTarget.closest||!e.relatedTarget.closest("[data-tip]")) tt.style.opacity="0";});
+
+/* ---------- helpers ---------- */
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/'/g,"&#39;").replace(/"/g,"&quot;");}
+function escText(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+/* ---------- CSV ---------- */
+function exportCsv(){
+  const head=["Produkt","Variant","SKU","Handle","Status","Pris_SEK","Inpris_SEK","Frakt_SEK","Marginal_kr_"+vatMode,"Marginal_pct_"+vatMode];
+  const lines=[head.join(";")];
+  rows().forEach(r=>{
+    const frakt = r.su!=null? (r.su*DATA.rate).toFixed(2):"";
+    const cell=v=>{v=v==null?"":String(v); return /[;"\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;};
+    lines.push([r.p,r.v||"",r.sku||"",r.h||"",r.st,r.rp,r.c==null?"":r.c,frakt,
+      r.marginKr==null?"":r.marginKr.toFixed(2), r.marginPct==null?"":r.marginPct.toFixed(1)].map(cell).join(";"));
+  });
+  const blob=new Blob(["﻿"+lines.join("\n")],{type:"text/csv;charset=utf-8"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob);
+  a.download=`grillkliniken-kostnader-${vatMode}.csv`; a.click(); URL.revokeObjectURL(a.href);
+}
+
+/* ---------- events ---------- */
+document.getElementById("vatSeg").addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b) return;
+  vatMode=b.dataset.vat;
+  [...e.currentTarget.children].forEach(x=>x.setAttribute("aria-pressed", x===b));
+  renderAll();
+});
+document.getElementById("statusSeg").addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b) return;
+  statusFilter=b.dataset.st;
+  [...e.currentTarget.children].forEach(x=>x.setAttribute("aria-pressed", x===b));
+  renderTable();
+});
+document.getElementById("search").addEventListener("input",e=>{query=e.target.value.trim(); renderTable();});
+document.getElementById("thead").addEventListener("click",e=>{
+  const th=e.target.closest("th"); if(!th) return;
+  const k=th.dataset.k;
+  if(sortKey===k) sortDir*=-1; else {sortKey=k; sortDir = (k==="p"||k==="st")?1:-1;}
+  renderHead(); renderTable();
+});
+document.getElementById("csvBtn").addEventListener("click",exportCsv);
+document.getElementById("themeBtn").addEventListener("click",()=>{
+  const cur=document.documentElement.getAttribute("data-theme");
+  const isDark = cur ? cur==="dark" : matchMedia("(prefers-color-scheme:dark)").matches;
+  document.documentElement.setAttribute("data-theme", isDark?"light":"dark");
+});
+
+function renderAll(){ renderKpis(); renderBars(); renderTable(); }
+document.getElementById("rateTxt").textContent = `1 USD = ${DATA.rate} SEK`;
+renderHead(); renderAll();
+</script>
+
+</body>
+</html>
