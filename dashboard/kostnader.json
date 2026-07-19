@@ -13,7 +13,10 @@
    "weight_kg": 0.1,
    "total_usd": 6.6,
    "cost_sek": 63.61,
-   "note": null
+   "note": null,
+   "target_price": 159,
+   "cur_margin": 57.3,
+   "new_margin": 60.0
   },
   {
    "product": "BBQ – Redskapsset för Grillen 3, 5 eller 9 delar",
@@ -27,7 +30,10 @@
    "weight_kg": 0.17,
    "total_usd": 9.5,
    "cost_sek": 91.56,
-   "note": null
+   "note": null,
+   "target_price": 299.0,
+   "cur_margin": 69.4,
+   "new_margin": 69.4
   },
   {
    "product": "BBQ – Redskapsset för Grillen 3, 5 eller 9 delar",
@@ -41,7 +47,10 @@
    "weight_kg": 0.25,
    "total_usd": 10.7,
    "cost_sek": 103.12,
-   "note": null
+   "note": null,
+   "target_price": 349.0,
+   "cur_margin": 70.5,
+   "new_margin": 70.5
   },
   {
    "product": "BBQ – Redskapsset för Grillen 3, 5 eller 9 delar",
@@ -55,7 +64,10 @@
    "weight_kg": 0.67,
    "total_usd": 14.2,
    "cost_sek": 136.85,
-   "note": null
+   "note": null,
+   "target_price": 399.0,
+   "cur_margin": 65.7,
+   "new_margin": 65.7
   },
   {
    "product": "Borst + PolérHuvud",
@@ -69,7 +81,10 @@
    "weight_kg": 0.4,
    "total_usd": 10.7,
    "cost_sek": 103.12,
-   "note": null
+   "note": null,
+   "target_price": 259,
+   "cur_margin": 58.6,
+   "new_margin": 60.2
   },
   {
    "product": "Borsthuvud",
@@ -83,7 +98,10 @@
    "weight_kg": null,
    "total_usd": null,
    "cost_sek": null,
-   "note": "This product is not only for sale"
+   "note": "This product is not only for sale",
+   "target_price": null,
+   "cur_margin": null,
+   "new_margin": null
   },
   {
    "product": "Brush Safe Huvud",
@@ -97,7 +115,10 @@
    "weight_kg": null,
    "total_usd": null,
    "cost_sek": null,
-   "note": "This product is not only for sale"
+   "note": "This product is not only for sale",
+   "target_price": null,
+   "cur_margin": null,
+   "new_margin": null
   },
   {
    "product": "Flipgrill",
@@ -111,7 +132,10 @@
    "weight_kg": 7.7,
    "total_usd": 99.7,
    "cost_sek": 960.87,
-   "note": "The item is too large and exceeds the size limit, incurring an additional charge. The total price is $122.40."
+   "note": "The item is too large and exceeds the size limit, incurring an additional charge. The total price is $122.40.",
+   "target_price": 2800.0,
+   "cur_margin": 65.7,
+   "new_margin": 65.7
   },
   {
    "product": "Förkläde - Enormt tränad man",
@@ -125,7 +149,10 @@
    "weight_kg": 0.17,
    "total_usd": 7.6,
    "cost_sek": 73.25,
-   "note": null
+   "note": null,
+   "target_price": 189,
+   "cur_margin": 50.8,
+   "new_margin": 61.2
   },
   {
    "product": "Förkläde - Grill Master",
@@ -139,7 +166,10 @@
    "weight_kg": 0.17,
    "total_usd": 8.6,
    "cost_sek": 82.88,
-   "note": null
+   "note": null,
+   "target_price": 209,
+   "cur_margin": 44.4,
+   "new_margin": 60.3
   },
   {
    "product": "Förkläde - Kiss and bring him beer",
@@ -153,7 +183,10 @@
    "weight_kg": 0.17,
    "total_usd": 8.6,
    "cost_sek": 82.88,
-   "note": null
+   "note": null,
+   "target_price": 209,
+   "cur_margin": 44.4,
+   "new_margin": 60.3
   },
   {
    "product": "Förkläde - Kvinna i bikini",
@@ -167,7 +200,10 @@
    "weight_kg": 0.17,
    "total_usd": 7.6,
    "cost_sek": 73.25,
-   "note": null
+   "note": null,
+   "target_price": 189,
+   "cur_margin": 50.8,
+   "new_margin": 61.2
   },
   {
    "product": "Förkläde - MC knutt",
@@ -181,7 +217,10 @@
    "weight_kg": 0.17,
    "total_usd": 7.6,
    "cost_sek": 73.25,
-   "note": null
+   "note": null,
+   "target_price": 189,
+   "cur_margin": 50.8,
+   "new_margin": 61.2
   },
   {
    "product": "Förkläde - Ölmage",
@@ -195,7 +234,10 @@
    "weight_kg": 0.17,
    "total_usd": 7.6,
    "cost_sek": 73.25,
-   "note": null
+   "note": null,
+   "target_price": 189,
+   "cur_margin": 50.8,
+   "new_margin": 61.2
   },
   {
    "product": "Förkläde - Premium Läder",
@@ -209,7 +251,10 @@
    "weight_kg": 0.8,
    "total_usd": 20.1,
    "cost_sek": 193.72,
-   "note": null
+   "note": null,
+   "target_price": 499.0,
+   "cur_margin": 61.2,
+   "new_margin": 61.2
   },
   {
    "product": "Förkläde - Premium Läder",
@@ -223,7 +268,10 @@
    "weight_kg": 0.8,
    "total_usd": 20.1,
    "cost_sek": 193.72,
-   "note": null
+   "note": null,
+   "target_price": 499.0,
+   "cur_margin": 61.2,
+   "new_margin": 61.2
   },
   {
    "product": "Förkläde - Sailor Moon",
@@ -237,7 +285,10 @@
    "weight_kg": 0.17,
    "total_usd": 7.6,
    "cost_sek": 73.25,
-   "note": null
+   "note": null,
+   "target_price": 189,
+   "cur_margin": 50.8,
+   "new_margin": 61.2
   },
   {
    "product": "Förklade - Slitstarkt, flera färger",
@@ -251,7 +302,10 @@
    "weight_kg": 0.43,
    "total_usd": 11,
    "cost_sek": 106.01,
-   "note": null
+   "note": null,
+   "target_price": 299.0,
+   "cur_margin": 64.5,
+   "new_margin": 64.5
   },
   {
    "product": "Förklade - Slitstarkt, flera färger",
@@ -265,7 +319,10 @@
    "weight_kg": 0.43,
    "total_usd": 11,
    "cost_sek": 106.01,
-   "note": null
+   "note": null,
+   "target_price": 299.0,
+   "cur_margin": 64.5,
+   "new_margin": 64.5
   },
   {
    "product": "Förklade - Slitstarkt, flera färger",
@@ -279,7 +336,10 @@
    "weight_kg": 0.43,
    "total_usd": 11,
    "cost_sek": 106.01,
-   "note": null
+   "note": null,
+   "target_price": 299.0,
+   "cur_margin": 64.5,
+   "new_margin": 64.5
   },
   {
    "product": "Förklade - Slitstarkt, flera färger",
@@ -293,7 +353,10 @@
    "weight_kg": 0.43,
    "total_usd": 11,
    "cost_sek": 106.01,
-   "note": null
+   "note": null,
+   "target_price": 299.0,
+   "cur_margin": 64.5,
+   "new_margin": 64.5
   },
   {
    "product": "Förkläde - The Grillfather",
@@ -307,7 +370,10 @@
    "weight_kg": 0.17,
    "total_usd": 8.6,
    "cost_sek": 82.88,
-   "note": null
+   "note": null,
+   "target_price": 209,
+   "cur_margin": 44.4,
+   "new_margin": 60.3
   },
   {
    "product": "Förkläde - Tränad manlig kropp",
@@ -321,7 +387,10 @@
    "weight_kg": 0.17,
    "total_usd": 7.6,
    "cost_sek": 73.25,
-   "note": null
+   "note": null,
+   "target_price": 189,
+   "cur_margin": 50.8,
+   "new_margin": 61.2
   },
   {
    "product": "Förkläde – MästerKOCK",
@@ -335,7 +404,10 @@
    "weight_kg": 0.23,
    "total_usd": 9.9,
    "cost_sek": 95.41,
-   "note": null
+   "note": null,
+   "target_price": 299.0,
+   "cur_margin": 68.1,
+   "new_margin": 68.1
   },
   {
    "product": "Garanti för säker frakt",
@@ -349,7 +421,10 @@
    "weight_kg": null,
    "total_usd": null,
    "cost_sek": null,
-   "note": null
+   "note": null,
+   "target_price": null,
+   "cur_margin": null,
+   "new_margin": null
   },
   {
    "product": "Greatgrill",
@@ -363,7 +438,10 @@
    "weight_kg": 0.21,
    "total_usd": 11.4,
    "cost_sek": 109.87,
-   "note": "size similar"
+   "note": "size similar",
+   "target_price": 320.0,
+   "cur_margin": 65.7,
+   "new_margin": 65.7
   },
   {
    "product": "Greatgrill",
@@ -377,7 +455,10 @@
    "weight_kg": 0.3,
    "total_usd": 12.3,
    "cost_sek": 118.54,
-   "note": "size similar"
+   "note": "size similar",
+   "target_price": 350.0,
+   "cur_margin": 66.1,
+   "new_margin": 66.1
   },
   {
    "product": "Grillblåsaren Turbo",
@@ -391,7 +472,10 @@
    "weight_kg": 0.35,
    "total_usd": 16.7,
    "cost_sek": 160.95,
-   "note": "With bag"
+   "note": "With bag",
+   "target_price": 699.0,
+   "cur_margin": 77.0,
+   "new_margin": 77.0
   },
   {
    "product": "Grillborste – Lätt & enkel",
@@ -405,7 +489,10 @@
    "weight_kg": 0.15,
    "total_usd": 9,
    "cost_sek": 86.74,
-   "note": "28*15cm"
+   "note": "28*15cm",
+   "target_price": 219,
+   "cur_margin": 12.4,
+   "new_margin": 60.4
   },
   {
    "product": "Grillklubbor - Golf Grill Kit",
@@ -419,7 +506,10 @@
    "weight_kg": 2.45,
    "total_usd": 34.3,
    "cost_sek": 330.57,
-   "note": null
+   "note": null,
+   "target_price": 829,
+   "cur_margin": 58.6,
+   "new_margin": 60.1
   },
   {
    "product": "Grillklubbor - Golf Grill Kit",
@@ -433,7 +523,10 @@
    "weight_kg": 2.45,
    "total_usd": 34.3,
    "cost_sek": 330.57,
-   "note": null
+   "note": null,
+   "target_price": 829,
+   "cur_margin": 58.6,
+   "new_margin": 60.1
   },
   {
    "product": "Grillplatta / Stekbord i rostfritt stål",
@@ -447,7 +540,10 @@
    "weight_kg": 4.05,
    "total_usd": 56.5,
    "cost_sek": 544.52,
-   "note": "43*32.5*5.6CM"
+   "note": "43*32.5*5.6CM",
+   "target_price": 1999.0,
+   "cur_margin": 72.8,
+   "new_margin": 72.8
   },
   {
    "product": "Grillrengöringsspray",
@@ -461,7 +557,10 @@
    "weight_kg": 0.2,
    "total_usd": 9.2,
    "cost_sek": 88.67,
-   "note": null
+   "note": null,
+   "target_price": 299.0,
+   "cur_margin": 70.3,
+   "new_margin": 70.3
   },
   {
    "product": "Grillrengöringssten",
@@ -475,7 +574,10 @@
    "weight_kg": 0.22,
    "total_usd": 7.5,
    "cost_sek": 72.28,
-   "note": "10*7*4cm"
+   "note": "10*7*4cm",
+   "target_price": 189,
+   "cur_margin": 51.5,
+   "new_margin": 61.8
   },
   {
    "product": "Grillspett Premium 6 Pack",
@@ -489,7 +591,10 @@
    "weight_kg": 0.65,
    "total_usd": 14.8,
    "cost_sek": 142.64,
-   "note": null
+   "note": null,
+   "target_price": 399.0,
+   "cur_margin": 64.3,
+   "new_margin": 64.3
   },
   {
    "product": "Grilltänger – Flera storlekar",
@@ -503,7 +608,10 @@
    "weight_kg": 0.12,
    "total_usd": 8.2,
    "cost_sek": 79.03,
-   "note": null
+   "note": null,
+   "target_price": 199,
+   "cur_margin": 20.2,
+   "new_margin": 60.3
   },
   {
    "product": "Grilltänger – Flera storlekar",
@@ -517,7 +625,10 @@
    "weight_kg": 0.11,
    "total_usd": 7.8,
    "cost_sek": 75.17,
-   "note": null
+   "note": null,
+   "target_price": 189,
+   "cur_margin": 24.1,
+   "new_margin": 60.2
   },
   {
    "product": "Grilltänger – Flera storlekar",
@@ -531,7 +642,10 @@
    "weight_kg": 0.09,
    "total_usd": 7.5,
    "cost_sek": 72.28,
-   "note": null
+   "note": null,
+   "target_price": 189,
+   "cur_margin": 27.0,
+   "new_margin": 61.8
   },
   {
    "product": "Grilltänger – Flera storlekar",
@@ -545,7 +659,10 @@
    "weight_kg": 0.12,
    "total_usd": 8.2,
    "cost_sek": 79.03,
-   "note": null
+   "note": null,
+   "target_price": 199,
+   "cur_margin": 20.2,
+   "new_margin": 60.3
   },
   {
    "product": "Grilltänger – Flera storlekar",
@@ -559,7 +676,10 @@
    "weight_kg": 0.11,
    "total_usd": 7.8,
    "cost_sek": 75.17,
-   "note": null
+   "note": null,
+   "target_price": 189,
+   "cur_margin": 24.1,
+   "new_margin": 60.2
   },
   {
    "product": "Grilltänger – Flera storlekar",
@@ -573,7 +693,10 @@
    "weight_kg": 0.09,
    "total_usd": 7.5,
    "cost_sek": 72.28,
-   "note": null
+   "note": null,
+   "target_price": 189,
+   "cur_margin": 27.0,
+   "new_margin": 61.8
   },
   {
    "product": "Hamburgerpress i gjutjärn",
@@ -587,7 +710,10 @@
    "weight_kg": 1.0,
    "total_usd": 15.3,
    "cost_sek": 147.46,
-   "note": null
+   "note": null,
+   "target_price": 399.0,
+   "cur_margin": 63.0,
+   "new_margin": 63.0
   },
   {
    "product": "Knivset 6-pack – Premium",
@@ -601,7 +727,10 @@
    "weight_kg": null,
    "total_usd": null,
    "cost_sek": null,
-   "note": "I need the size of every knife"
+   "note": "I need the size of every knife",
+   "target_price": null,
+   "cur_margin": null,
+   "new_margin": null
   },
   {
    "product": "Knivslip 4-stegs",
@@ -615,7 +744,10 @@
    "weight_kg": 0.15,
    "total_usd": 7.6,
    "cost_sek": 73.25,
-   "note": null
+   "note": null,
+   "target_price": 189,
+   "cur_margin": 59.1,
+   "new_margin": 61.2
   },
   {
    "product": "KorvGubben",
@@ -629,7 +761,10 @@
    "weight_kg": 0.06,
    "total_usd": 6.5,
    "cost_sek": 62.64,
-   "note": "similar"
+   "note": "similar",
+   "target_price": 199.0,
+   "cur_margin": 68.5,
+   "new_margin": 68.5
   },
   {
    "product": "Majskolvshållare - 10 Pack",
@@ -643,7 +778,10 @@
    "weight_kg": 0.03,
    "total_usd": 6.1,
    "cost_sek": 58.79,
-   "note": "without box"
+   "note": "without box",
+   "target_price": 149,
+   "cur_margin": 40.6,
+   "new_margin": 60.5
   },
   {
    "product": "Mastern - Hela Mastern Kittet",
@@ -657,7 +795,10 @@
    "weight_kg": 0.8,
    "total_usd": 23.97,
    "cost_sek": 231.01,
-   "note": null
+   "note": null,
+   "target_price": 1600.0,
+   "cur_margin": 85.6,
+   "new_margin": 85.6
   },
   {
    "product": "Mastern — Elektrisk grillborste",
@@ -671,7 +812,10 @@
    "weight_kg": 0.8,
    "total_usd": 23.97,
    "cost_sek": 231.01,
-   "note": null
+   "note": null,
+   "target_price": 999.0,
+   "cur_margin": 76.9,
+   "new_margin": 76.9
   },
   {
    "product": "Polérhuvud",
@@ -685,7 +829,10 @@
    "weight_kg": null,
    "total_usd": null,
    "cost_sek": null,
-   "note": "This product is not only for sale"
+   "note": "This product is not only for sale",
+   "target_price": null,
+   "cur_margin": null,
+   "new_margin": null
   },
   {
    "product": "Portabel Utomhusgrill",
@@ -699,7 +846,10 @@
    "weight_kg": null,
    "total_usd": null,
    "cost_sek": null,
-   "note": "Tomorrow"
+   "note": "Tomorrow",
+   "target_price": null,
+   "cur_margin": null,
+   "new_margin": null
   },
   {
    "product": "Portabel Utomhusgrill",
@@ -713,7 +863,10 @@
    "weight_kg": null,
    "total_usd": null,
    "cost_sek": null,
-   "note": "Tomorrow"
+   "note": "Tomorrow",
+   "target_price": null,
+   "cur_margin": null,
+   "new_margin": null
   },
   {
    "product": "Potatisskruv skärare",
@@ -727,7 +880,10 @@
    "weight_kg": 0.05,
    "total_usd": 6.9,
    "cost_sek": 66.5,
-   "note": "with opp bag"
+   "note": "with opp bag",
+   "target_price": 169,
+   "cur_margin": 55.4,
+   "new_margin": 60.7
   },
   {
    "product": "Premium Biffknivar 6-pack",
@@ -741,7 +897,10 @@
    "weight_kg": 0.8,
    "total_usd": 31.1,
    "cost_sek": 299.73,
-   "note": null
+   "note": null,
+   "target_price": 999.0,
+   "cur_margin": 70.0,
+   "new_margin": 70.0
   },
   {
    "product": "Premium Grill- & Smashburger Kit – 25 delar",
@@ -755,7 +914,10 @@
    "weight_kg": null,
    "total_usd": null,
    "cost_sek": null,
-   "note": "similar"
+   "note": "similar",
+   "target_price": null,
+   "cur_margin": null,
+   "new_margin": null
   },
   {
    "product": "Skärbräda i ändträ – Premium valnötsträ",
@@ -769,7 +931,10 @@
    "weight_kg": 1.05,
    "total_usd": 19.8,
    "cost_sek": 190.82,
-   "note": "38*28*1.8cm"
+   "note": "38*28*1.8cm",
+   "target_price": 699.0,
+   "cur_margin": 72.7,
+   "new_margin": 72.7
   },
   {
    "product": "Skyddshandskar",
@@ -783,7 +948,10 @@
    "weight_kg": null,
    "total_usd": null,
    "cost_sek": null,
-   "note": "NO"
+   "note": "NO",
+   "target_price": null,
+   "cur_margin": null,
+   "new_margin": null
   }
  ]
 }

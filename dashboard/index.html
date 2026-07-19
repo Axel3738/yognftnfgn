@@ -143,13 +143,13 @@
       </div>
       <div>
         <h1>Kostnad &amp; Marginal</h1>
-        <p class="sub">Grillkliniken · inpriser kopplade till varje produkt</p>
+        <p class="sub">Grillkliniken · inpriser &amp; marginal per produkt · priser utan moms</p>
       </div>
     </div>
     <div class="toolbar">
-      <div class="seg" id="vatSeg" role="group" aria-label="Momsläge">
-        <button data-vat="incl" aria-pressed="true">Pris ink. moms</button>
-        <button data-vat="excl" aria-pressed="false">Marginal ex. moms</button>
+      <div class="seg" id="priceSeg" role="group" aria-label="Prisläge">
+        <button data-mode="current" aria-pressed="true">Nuvarande priser</button>
+        <button data-mode="target" aria-pressed="false">Målpris 60 %</button>
       </div>
       <button class="btn" id="csvBtn" title="Ladda ner alla rader som CSV">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
@@ -199,7 +199,7 @@
   <footer>
     <div class="card">
       <b>Så läser du dashboarden.</b> Varje rad är en produktvariant från offertbladet. <b>Inpris (SEK)</b> = landat inköp (produkt + frakt), omräknat från USD med kursen
-      <code id="rateTxt"></code>. <b>Marginal</b> = försäljningspris − inpris. Slå om till <em>ex. moms</em> för att räkna marginalen mot faktisk intäkt (pris ÷ 1,25) — det är den siffra din vinst faktiskt bygger på.
+      <code id="rateTxt"></code>. Priserna räknas <b>utan moms</b>, så <b>marginal</b> = pris − inpris rakt av. Slå om till <em>Målpris 60 %</em> för att se vilket pris varje produkt behöver för minst 60 % marginal (inpris ÷ 0,4, avrundat uppåt) — <b>24 produkter</b> behöver höjas, resten ligger redan över.
       9 produkter saknar ännu inpris i offertbladet (t.ex. Knivset, Portabel Utomhusgrill) och visas som <span class="pill na">–</span>.
     </div>
   </footer>
@@ -208,29 +208,30 @@
 <div id="tt"></div>
 
 <script>
-const DATA = {"rate": 9.6376, "recs": [{"p": "BBQ Grillborste Ultra", "v": null, "sku": null, "h": "bbq-grillborste-ultra", "st": "Active", "rp": 149.0, "uu": 0.6, "su": 5.6, "w": 0.1, "tu": 6.6, "c": 63.61, "n": null}, {"p": "BBQ – Redskapsset för Grillen 3, 5 eller 9 delar", "v": "3 pcs - To Go", "sku": "20595#KZ1777274381-3-PieceSet", "h": "bbq-redskapsset-for-grillen", "st": "Active", "rp": 299.0, "uu": 2.8, "su": 6.7, "w": 0.17, "tu": 9.5, "c": 91.56, "n": null}, {"p": "BBQ – Redskapsset för Grillen 3, 5 eller 9 delar", "v": "5 pcs - Amateur", "sku": "20595#KZ1777274381-5-PieceSet", "h": "bbq-redskapsset-for-grillen", "st": "Active", "rp": 349.0, "uu": 3.8, "su": 6.9, "w": 0.25, "tu": 10.7, "c": 103.12, "n": null}, {"p": "BBQ – Redskapsset för Grillen 3, 5 eller 9 delar", "v": "9 pcs - Grill Master", "sku": "20595#KZ1777274381-9-PieceSet", "h": "bbq-redskapsset-for-grillen", "st": "Active", "rp": 399.0, "uu": 4.1, "su": 10.1, "w": 0.67, "tu": 14.2, "c": 136.85, "n": null}, {"p": "Borst + PolérHuvud", "v": null, "sku": null, "h": "borst-poler-huvud", "st": "Active", "rp": 249.0, "uu": 3.0, "su": 7.7, "w": 0.4, "tu": 10.7, "c": 103.12, "n": null}, {"p": "Borsthuvud", "v": null, "sku": null, "h": "borst-huvud", "st": "Unlisted", "rp": 200.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "This product is not only for sale"}, {"p": "Brush Safe Huvud", "v": null, "sku": null, "h": "polerhuvud", "st": "Unlisted", "rp": 200.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "This product is not only for sale"}, {"p": "Flipgrill", "v": null, "sku": null, "h": "flipgrill", "st": "Active", "rp": 2800.0, "uu": 42.8, "su": 56.9, "w": 7.7, "tu": 99.7, "c": 960.87, "n": "The item is too large and exceeds the size limit, incurring an additional charge. The total price is $122.40."}, {"p": "Förkläde - Enormt tränad man", "v": null, "sku": null, "h": "forklade-enormt-tranad-man", "st": "Active", "rp": 149.0, "uu": 1.5, "su": 6.1, "w": 0.17, "tu": 7.6, "c": 73.25, "n": null}, {"p": "Förkläde - Grill Master", "v": null, "sku": null, "h": "forklade-grill-master", "st": "Active", "rp": 149.0, "uu": 2.5, "su": 6.1, "w": 0.17, "tu": 8.6, "c": 82.88, "n": null}, {"p": "Förkläde - Kiss and bring him beer", "v": null, "sku": null, "h": "forklade-kiss-and-bring-him-beer", "st": "Active", "rp": 149.0, "uu": 2.5, "su": 6.1, "w": 0.17, "tu": 8.6, "c": 82.88, "n": null}, {"p": "Förkläde - Kvinna i bikini", "v": null, "sku": null, "h": "forklade-kvinna-i-bikini", "st": "Active", "rp": 149.0, "uu": 1.5, "su": 6.1, "w": 0.17, "tu": 7.6, "c": 73.25, "n": null}, {"p": "Förkläde - MC knutt", "v": null, "sku": null, "h": "forklade-mc-knutt", "st": "Active", "rp": 149.0, "uu": 1.5, "su": 6.1, "w": 0.17, "tu": 7.6, "c": 73.25, "n": null}, {"p": "Förkläde - Ölmage", "v": null, "sku": null, "h": "forklade-olmage", "st": "Active", "rp": 149.0, "uu": 1.5, "su": 6.1, "w": 0.17, "tu": 7.6, "c": 73.25, "n": null}, {"p": "Förkläde - Premium Läder", "v": "Brown", "sku": "20595#AB1781058563-brown", "h": "forklade-lader", "st": "Active", "rp": 499.0, "uu": 9.4, "su": 10.7, "w": 0.8, "tu": 20.1, "c": 193.72, "n": null}, {"p": "Förkläde - Premium Läder", "v": "Black", "sku": "20595#AB1781058563-black", "h": "forklade-lader", "st": "Active", "rp": 499.0, "uu": 9.4, "su": 10.7, "w": 0.8, "tu": 20.1, "c": 193.72, "n": null}, {"p": "Förkläde - Sailor Moon", "v": null, "sku": null, "h": "forklade-sailor-moon", "st": "Active", "rp": 149.0, "uu": 1.5, "su": 6.1, "w": 0.17, "tu": 7.6, "c": 73.25, "n": null}, {"p": "Förklade - Slitstarkt, flera färger", "v": "Brown", "sku": null, "h": "forklade-slitstarkt-flera-farger", "st": "Active", "rp": 299.0, "uu": 2.6, "su": 8.4, "w": 0.43, "tu": 11, "c": 106.01, "n": null}, {"p": "Förklade - Slitstarkt, flera färger", "v": "Black", "sku": null, "h": "forklade-slitstarkt-flera-farger", "st": "Active", "rp": 299.0, "uu": 2.6, "su": 8.4, "w": 0.43, "tu": 11, "c": 106.01, "n": null}, {"p": "Förklade - Slitstarkt, flera färger", "v": "Blue", "sku": null, "h": "forklade-slitstarkt-flera-farger", "st": "Active", "rp": 299.0, "uu": 2.6, "su": 8.4, "w": 0.43, "tu": 11, "c": 106.01, "n": null}, {"p": "Förklade - Slitstarkt, flera färger", "v": "Grey", "sku": null, "h": "forklade-slitstarkt-flera-farger", "st": "Active", "rp": 299.0, "uu": 2.6, "su": 8.4, "w": 0.43, "tu": 11, "c": 106.01, "n": null}, {"p": "Förkläde - The Grillfather", "v": null, "sku": null, "h": "forklade-the-grillfather", "st": "Active", "rp": 149.0, "uu": 2.5, "su": 6.1, "w": 0.17, "tu": 8.6, "c": 82.88, "n": null}, {"p": "Förkläde - Tränad manlig kropp", "v": null, "sku": null, "h": "forklade-tranad-manlig-kropp", "st": "Active", "rp": 149.0, "uu": 1.5, "su": 6.1, "w": 0.17, "tu": 7.6, "c": 73.25, "n": null}, {"p": "Förkläde – MästerKOCK", "v": null, "sku": null, "h": "forklade-masterkock", "st": "Active", "rp": 299.0, "uu": 3.4, "su": 6.5, "w": 0.23, "tu": 9.9, "c": 95.41, "n": null}, {"p": "Garanti för säker frakt", "v": null, "sku": null, "h": "garanti-for-saker-frakt", "st": "Unlisted", "rp": 35.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": null}, {"p": "Greatgrill", "v": "No handle", "sku": null, "h": "roterande-grillkorg-i-rostfritt-stal-perfekt-for-gronsaker-kott-tillbehor", "st": "Active", "rp": 320.0, "uu": 1.9, "su": 9.5, "w": 0.21, "tu": 11.4, "c": 109.87, "n": "size similar"}, {"p": "Greatgrill", "v": "With handle", "sku": null, "h": "roterande-grillkorg-i-rostfritt-stal-perfekt-for-gronsaker-kott-tillbehor", "st": "Active", "rp": 350.0, "uu": 2.2, "su": 10.1, "w": 0.3, "tu": 12.3, "c": 118.54, "n": "size similar"}, {"p": "Grillblåsaren Turbo", "v": null, "sku": null, "h": "grillblasaren-turbo", "st": "Unlisted", "rp": 699.0, "uu": 5.1, "su": 11.6, "w": 0.35, "tu": 16.7, "c": 160.95, "n": "With bag"}, {"p": "Grillborste – Lätt & enkel", "v": null, "sku": null, "h": "stalborste-for-grill", "st": "Active", "rp": 99.0, "uu": 0.8, "su": 8.2, "w": 0.15, "tu": 9, "c": 86.74, "n": "28*15cm"}, {"p": "Grillklubbor - Golf Grill Kit", "v": "Green", "sku": "20595#DZ1775027907-green", "h": "golf-grill-kit", "st": "Active", "rp": 799.0, "uu": 9.5, "su": 24.8, "w": 2.45, "tu": 34.3, "c": 330.57, "n": null}, {"p": "Grillklubbor - Golf Grill Kit", "v": "Black", "sku": "20595#DZ1775027907-black", "h": "golf-grill-kit", "st": "Active", "rp": 799.0, "uu": 9.5, "su": 24.8, "w": 2.45, "tu": 34.3, "c": 330.57, "n": null}, {"p": "Grillplatta / Stekbord i rostfritt stål", "v": null, "sku": null, "h": "stekbord", "st": "Active", "rp": 1999.0, "uu": 20.8, "su": 35.7, "w": 4.05, "tu": 56.5, "c": 544.52, "n": "43*32.5*5.6CM"}, {"p": "Grillrengöringsspray", "v": null, "sku": null, "h": "grillrengoringsspray", "st": "Active", "rp": 299.0, "uu": 2.1, "su": 7.1, "w": 0.2, "tu": 9.2, "c": 88.67, "n": null}, {"p": "Grillrengöringssten", "v": null, "sku": null, "h": "grillrengoringssten", "st": "Active", "rp": 149.0, "uu": 0.8, "su": 6.7, "w": 0.22, "tu": 7.5, "c": 72.28, "n": "10*7*4cm"}, {"p": "Grillspett Premium 6 Pack", "v": null, "sku": null, "h": "grillspett-premium-rostfritt-stal", "st": "Active", "rp": 399.0, "uu": 4.5, "su": 10.3, "w": 0.65, "tu": 14.8, "c": 142.64, "n": null}, {"p": "Grilltänger – Flera storlekar", "v": "39cm Red", "sku": "20595#AS1778227407-red-39cm", "h": "grilltanger", "st": "Active", "rp": 99.0, "uu": 1.9, "su": 6.3, "w": 0.12, "tu": 8.2, "c": 79.03, "n": null}, {"p": "Grilltänger – Flera storlekar", "v": "34cm Red", "sku": "20595#AS1778227407-red-12", "h": "grilltanger", "st": "Active", "rp": 99.0, "uu": 1.8, "su": 6.0, "w": 0.11, "tu": 7.8, "c": 75.17, "n": null}, {"p": "Grilltänger – Flera storlekar", "v": "27cm Red", "sku": "20595#AS1778227407-red-9", "h": "grilltanger", "st": "Active", "rp": 99.0, "uu": 1.7, "su": 5.8, "w": 0.09, "tu": 7.5, "c": 72.28, "n": null}, {"p": "Grilltänger – Flera storlekar", "v": "39cm Black", "sku": "20595#AS1778227407-black-39cm", "h": "grilltanger", "st": "Active", "rp": 99.0, "uu": 1.9, "su": 6.3, "w": 0.12, "tu": 8.2, "c": 79.03, "n": null}, {"p": "Grilltänger – Flera storlekar", "v": "34cm Black", "sku": "20595#AS1778227407-black-34cm", "h": "grilltanger", "st": "Active", "rp": 99.0, "uu": 1.8, "su": 6.0, "w": 0.11, "tu": 7.8, "c": 75.17, "n": null}, {"p": "Grilltänger – Flera storlekar", "v": "27cm Black", "sku": "20595#AS1778227407-black-27cm", "h": "grilltanger", "st": "Active", "rp": 99.0, "uu": 1.7, "su": 5.8, "w": 0.09, "tu": 7.5, "c": 72.28, "n": null}, {"p": "Hamburgerpress i gjutjärn", "v": null, "sku": null, "h": "hamburgerpress-i-gjutjarn", "st": "Active", "rp": 399.0, "uu": 3.0, "su": 12.3, "w": 1.0, "tu": 15.3, "c": 147.46, "n": null}, {"p": "Knivset 6-pack – Premium", "v": null, "sku": null, "h": "6-pack-knivset", "st": "Active", "rp": 1499.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "I need the size of every knife"}, {"p": "Knivslip 4-stegs", "v": null, "sku": null, "h": "knivsliop", "st": "Active", "rp": 179.0, "uu": 0.7, "su": 6.9, "w": 0.15, "tu": 7.6, "c": 73.25, "n": null}, {"p": "KorvGubben", "v": null, "sku": null, "h": "korvgubben", "st": "Active", "rp": 199.0, "uu": 1.1, "su": 5.4, "w": 0.06, "tu": 6.5, "c": 62.64, "n": "similar"}, {"p": "Majskolvshållare - 10 Pack", "v": null, "sku": null, "h": "majskolvshallare-10-pack", "st": "Active", "rp": 99.0, "uu": 0.8, "su": 5.3, "w": 0.03, "tu": 6.1, "c": 58.79, "n": "without box"}, {"p": "Mastern - Hela Mastern Kittet", "v": null, "sku": null, "h": "mastern-hela-mastern-kittet", "st": "Unlisted", "rp": 1600.0, "uu": 11.0, "su": 12.97, "w": 0.8, "tu": 23.97, "c": 231.01, "n": null}, {"p": "Mastern — Elektrisk grillborste", "v": null, "sku": null, "h": "elektrisk-grillborste", "st": "Active", "rp": 999.0, "uu": 11.0, "su": 12.97, "w": 0.8, "tu": 23.97, "c": 231.01, "n": null}, {"p": "Polérhuvud", "v": null, "sku": null, "h": "polerhuvud-1", "st": "Active", "rp": 200.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "This product is not only for sale"}, {"p": "Portabel Utomhusgrill", "v": "Large", "sku": null, "h": "portabel-utomhusgrill", "st": "Active", "rp": 599.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "Tomorrow"}, {"p": "Portabel Utomhusgrill", "v": "Small", "sku": null, "h": "portabel-utomhusgrill", "st": "Active", "rp": 499.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "Tomorrow"}, {"p": "Potatisskruv skärare", "v": null, "sku": null, "h": "potatisskruv-skarare", "st": "Active", "rp": 149.0, "uu": 1.3, "su": 5.6, "w": 0.05, "tu": 6.9, "c": 66.5, "n": "with opp bag"}, {"p": "Premium Biffknivar 6-pack", "v": null, "sku": null, "h": "premium-biffknivar-i-rostfritt-stal-6-pack-med-elegant-forvaringslada", "st": "Active", "rp": 999.0, "uu": 16.6, "su": 14.5, "w": 0.8, "tu": 31.1, "c": 299.73, "n": null}, {"p": "Premium Grill- & Smashburger Kit – 25 delar", "v": null, "sku": null, "h": "aa", "st": "Active", "rp": 1399.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "similar"}, {"p": "Skärbräda i ändträ – Premium valnötsträ", "v": null, "sku": null, "h": "skarbrada-i-andtra-premium-valnotstra-36-x-24-x-2-5-cm", "st": "Active", "rp": 699.0, "uu": 7.5, "su": 12.3, "w": 1.05, "tu": 19.8, "c": 190.82, "n": "38*28*1.8cm"}, {"p": "Skyddshandskar", "v": null, "sku": null, "h": "skyddshandskar", "st": "Unlisted", "rp": 80.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "NO"}]};
+const DATA = {"rate": 9.6376, "recs": [{"p": "BBQ Grillborste Ultra", "v": null, "sku": null, "h": "bbq-grillborste-ultra", "st": "Active", "rp": 149.0, "uu": 0.6, "su": 5.6, "w": 0.1, "tu": 6.6, "c": 63.61, "n": null, "tp": 159}, {"p": "BBQ – Redskapsset för Grillen 3, 5 eller 9 delar", "v": "3 pcs - To Go", "sku": "20595#KZ1777274381-3-PieceSet", "h": "bbq-redskapsset-for-grillen", "st": "Active", "rp": 299.0, "uu": 2.8, "su": 6.7, "w": 0.17, "tu": 9.5, "c": 91.56, "n": null, "tp": 299.0}, {"p": "BBQ – Redskapsset för Grillen 3, 5 eller 9 delar", "v": "5 pcs - Amateur", "sku": "20595#KZ1777274381-5-PieceSet", "h": "bbq-redskapsset-for-grillen", "st": "Active", "rp": 349.0, "uu": 3.8, "su": 6.9, "w": 0.25, "tu": 10.7, "c": 103.12, "n": null, "tp": 349.0}, {"p": "BBQ – Redskapsset för Grillen 3, 5 eller 9 delar", "v": "9 pcs - Grill Master", "sku": "20595#KZ1777274381-9-PieceSet", "h": "bbq-redskapsset-for-grillen", "st": "Active", "rp": 399.0, "uu": 4.1, "su": 10.1, "w": 0.67, "tu": 14.2, "c": 136.85, "n": null, "tp": 399.0}, {"p": "Borst + PolérHuvud", "v": null, "sku": null, "h": "borst-poler-huvud", "st": "Active", "rp": 249.0, "uu": 3.0, "su": 7.7, "w": 0.4, "tu": 10.7, "c": 103.12, "n": null, "tp": 259}, {"p": "Borsthuvud", "v": null, "sku": null, "h": "borst-huvud", "st": "Unlisted", "rp": 200.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "This product is not only for sale", "tp": null}, {"p": "Brush Safe Huvud", "v": null, "sku": null, "h": "polerhuvud", "st": "Unlisted", "rp": 200.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "This product is not only for sale", "tp": null}, {"p": "Flipgrill", "v": null, "sku": null, "h": "flipgrill", "st": "Active", "rp": 2800.0, "uu": 42.8, "su": 56.9, "w": 7.7, "tu": 99.7, "c": 960.87, "n": "The item is too large and exceeds the size limit, incurring an additional charge. The total price is $122.40.", "tp": 2800.0}, {"p": "Förkläde - Enormt tränad man", "v": null, "sku": null, "h": "forklade-enormt-tranad-man", "st": "Active", "rp": 149.0, "uu": 1.5, "su": 6.1, "w": 0.17, "tu": 7.6, "c": 73.25, "n": null, "tp": 189}, {"p": "Förkläde - Grill Master", "v": null, "sku": null, "h": "forklade-grill-master", "st": "Active", "rp": 149.0, "uu": 2.5, "su": 6.1, "w": 0.17, "tu": 8.6, "c": 82.88, "n": null, "tp": 209}, {"p": "Förkläde - Kiss and bring him beer", "v": null, "sku": null, "h": "forklade-kiss-and-bring-him-beer", "st": "Active", "rp": 149.0, "uu": 2.5, "su": 6.1, "w": 0.17, "tu": 8.6, "c": 82.88, "n": null, "tp": 209}, {"p": "Förkläde - Kvinna i bikini", "v": null, "sku": null, "h": "forklade-kvinna-i-bikini", "st": "Active", "rp": 149.0, "uu": 1.5, "su": 6.1, "w": 0.17, "tu": 7.6, "c": 73.25, "n": null, "tp": 189}, {"p": "Förkläde - MC knutt", "v": null, "sku": null, "h": "forklade-mc-knutt", "st": "Active", "rp": 149.0, "uu": 1.5, "su": 6.1, "w": 0.17, "tu": 7.6, "c": 73.25, "n": null, "tp": 189}, {"p": "Förkläde - Ölmage", "v": null, "sku": null, "h": "forklade-olmage", "st": "Active", "rp": 149.0, "uu": 1.5, "su": 6.1, "w": 0.17, "tu": 7.6, "c": 73.25, "n": null, "tp": 189}, {"p": "Förkläde - Premium Läder", "v": "Brown", "sku": "20595#AB1781058563-brown", "h": "forklade-lader", "st": "Active", "rp": 499.0, "uu": 9.4, "su": 10.7, "w": 0.8, "tu": 20.1, "c": 193.72, "n": null, "tp": 499.0}, {"p": "Förkläde - Premium Läder", "v": "Black", "sku": "20595#AB1781058563-black", "h": "forklade-lader", "st": "Active", "rp": 499.0, "uu": 9.4, "su": 10.7, "w": 0.8, "tu": 20.1, "c": 193.72, "n": null, "tp": 499.0}, {"p": "Förkläde - Sailor Moon", "v": null, "sku": null, "h": "forklade-sailor-moon", "st": "Active", "rp": 149.0, "uu": 1.5, "su": 6.1, "w": 0.17, "tu": 7.6, "c": 73.25, "n": null, "tp": 189}, {"p": "Förklade - Slitstarkt, flera färger", "v": "Brown", "sku": null, "h": "forklade-slitstarkt-flera-farger", "st": "Active", "rp": 299.0, "uu": 2.6, "su": 8.4, "w": 0.43, "tu": 11, "c": 106.01, "n": null, "tp": 299.0}, {"p": "Förklade - Slitstarkt, flera färger", "v": "Black", "sku": null, "h": "forklade-slitstarkt-flera-farger", "st": "Active", "rp": 299.0, "uu": 2.6, "su": 8.4, "w": 0.43, "tu": 11, "c": 106.01, "n": null, "tp": 299.0}, {"p": "Förklade - Slitstarkt, flera färger", "v": "Blue", "sku": null, "h": "forklade-slitstarkt-flera-farger", "st": "Active", "rp": 299.0, "uu": 2.6, "su": 8.4, "w": 0.43, "tu": 11, "c": 106.01, "n": null, "tp": 299.0}, {"p": "Förklade - Slitstarkt, flera färger", "v": "Grey", "sku": null, "h": "forklade-slitstarkt-flera-farger", "st": "Active", "rp": 299.0, "uu": 2.6, "su": 8.4, "w": 0.43, "tu": 11, "c": 106.01, "n": null, "tp": 299.0}, {"p": "Förkläde - The Grillfather", "v": null, "sku": null, "h": "forklade-the-grillfather", "st": "Active", "rp": 149.0, "uu": 2.5, "su": 6.1, "w": 0.17, "tu": 8.6, "c": 82.88, "n": null, "tp": 209}, {"p": "Förkläde - Tränad manlig kropp", "v": null, "sku": null, "h": "forklade-tranad-manlig-kropp", "st": "Active", "rp": 149.0, "uu": 1.5, "su": 6.1, "w": 0.17, "tu": 7.6, "c": 73.25, "n": null, "tp": 189}, {"p": "Förkläde – MästerKOCK", "v": null, "sku": null, "h": "forklade-masterkock", "st": "Active", "rp": 299.0, "uu": 3.4, "su": 6.5, "w": 0.23, "tu": 9.9, "c": 95.41, "n": null, "tp": 299.0}, {"p": "Garanti för säker frakt", "v": null, "sku": null, "h": "garanti-for-saker-frakt", "st": "Unlisted", "rp": 35.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": null, "tp": null}, {"p": "Greatgrill", "v": "No handle", "sku": null, "h": "roterande-grillkorg-i-rostfritt-stal-perfekt-for-gronsaker-kott-tillbehor", "st": "Active", "rp": 320.0, "uu": 1.9, "su": 9.5, "w": 0.21, "tu": 11.4, "c": 109.87, "n": "size similar", "tp": 320.0}, {"p": "Greatgrill", "v": "With handle", "sku": null, "h": "roterande-grillkorg-i-rostfritt-stal-perfekt-for-gronsaker-kott-tillbehor", "st": "Active", "rp": 350.0, "uu": 2.2, "su": 10.1, "w": 0.3, "tu": 12.3, "c": 118.54, "n": "size similar", "tp": 350.0}, {"p": "Grillblåsaren Turbo", "v": null, "sku": null, "h": "grillblasaren-turbo", "st": "Unlisted", "rp": 699.0, "uu": 5.1, "su": 11.6, "w": 0.35, "tu": 16.7, "c": 160.95, "n": "With bag", "tp": 699.0}, {"p": "Grillborste – Lätt & enkel", "v": null, "sku": null, "h": "stalborste-for-grill", "st": "Active", "rp": 99.0, "uu": 0.8, "su": 8.2, "w": 0.15, "tu": 9, "c": 86.74, "n": "28*15cm", "tp": 219}, {"p": "Grillklubbor - Golf Grill Kit", "v": "Green", "sku": "20595#DZ1775027907-green", "h": "golf-grill-kit", "st": "Active", "rp": 799.0, "uu": 9.5, "su": 24.8, "w": 2.45, "tu": 34.3, "c": 330.57, "n": null, "tp": 829}, {"p": "Grillklubbor - Golf Grill Kit", "v": "Black", "sku": "20595#DZ1775027907-black", "h": "golf-grill-kit", "st": "Active", "rp": 799.0, "uu": 9.5, "su": 24.8, "w": 2.45, "tu": 34.3, "c": 330.57, "n": null, "tp": 829}, {"p": "Grillplatta / Stekbord i rostfritt stål", "v": null, "sku": null, "h": "stekbord", "st": "Active", "rp": 1999.0, "uu": 20.8, "su": 35.7, "w": 4.05, "tu": 56.5, "c": 544.52, "n": "43*32.5*5.6CM", "tp": 1999.0}, {"p": "Grillrengöringsspray", "v": null, "sku": null, "h": "grillrengoringsspray", "st": "Active", "rp": 299.0, "uu": 2.1, "su": 7.1, "w": 0.2, "tu": 9.2, "c": 88.67, "n": null, "tp": 299.0}, {"p": "Grillrengöringssten", "v": null, "sku": null, "h": "grillrengoringssten", "st": "Active", "rp": 149.0, "uu": 0.8, "su": 6.7, "w": 0.22, "tu": 7.5, "c": 72.28, "n": "10*7*4cm", "tp": 189}, {"p": "Grillspett Premium 6 Pack", "v": null, "sku": null, "h": "grillspett-premium-rostfritt-stal", "st": "Active", "rp": 399.0, "uu": 4.5, "su": 10.3, "w": 0.65, "tu": 14.8, "c": 142.64, "n": null, "tp": 399.0}, {"p": "Grilltänger – Flera storlekar", "v": "39cm Red", "sku": "20595#AS1778227407-red-39cm", "h": "grilltanger", "st": "Active", "rp": 99.0, "uu": 1.9, "su": 6.3, "w": 0.12, "tu": 8.2, "c": 79.03, "n": null, "tp": 199}, {"p": "Grilltänger – Flera storlekar", "v": "34cm Red", "sku": "20595#AS1778227407-red-12", "h": "grilltanger", "st": "Active", "rp": 99.0, "uu": 1.8, "su": 6.0, "w": 0.11, "tu": 7.8, "c": 75.17, "n": null, "tp": 189}, {"p": "Grilltänger – Flera storlekar", "v": "27cm Red", "sku": "20595#AS1778227407-red-9", "h": "grilltanger", "st": "Active", "rp": 99.0, "uu": 1.7, "su": 5.8, "w": 0.09, "tu": 7.5, "c": 72.28, "n": null, "tp": 189}, {"p": "Grilltänger – Flera storlekar", "v": "39cm Black", "sku": "20595#AS1778227407-black-39cm", "h": "grilltanger", "st": "Active", "rp": 99.0, "uu": 1.9, "su": 6.3, "w": 0.12, "tu": 8.2, "c": 79.03, "n": null, "tp": 199}, {"p": "Grilltänger – Flera storlekar", "v": "34cm Black", "sku": "20595#AS1778227407-black-34cm", "h": "grilltanger", "st": "Active", "rp": 99.0, "uu": 1.8, "su": 6.0, "w": 0.11, "tu": 7.8, "c": 75.17, "n": null, "tp": 189}, {"p": "Grilltänger – Flera storlekar", "v": "27cm Black", "sku": "20595#AS1778227407-black-27cm", "h": "grilltanger", "st": "Active", "rp": 99.0, "uu": 1.7, "su": 5.8, "w": 0.09, "tu": 7.5, "c": 72.28, "n": null, "tp": 189}, {"p": "Hamburgerpress i gjutjärn", "v": null, "sku": null, "h": "hamburgerpress-i-gjutjarn", "st": "Active", "rp": 399.0, "uu": 3.0, "su": 12.3, "w": 1.0, "tu": 15.3, "c": 147.46, "n": null, "tp": 399.0}, {"p": "Knivset 6-pack – Premium", "v": null, "sku": null, "h": "6-pack-knivset", "st": "Active", "rp": 1499.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "I need the size of every knife", "tp": null}, {"p": "Knivslip 4-stegs", "v": null, "sku": null, "h": "knivsliop", "st": "Active", "rp": 179.0, "uu": 0.7, "su": 6.9, "w": 0.15, "tu": 7.6, "c": 73.25, "n": null, "tp": 189}, {"p": "KorvGubben", "v": null, "sku": null, "h": "korvgubben", "st": "Active", "rp": 199.0, "uu": 1.1, "su": 5.4, "w": 0.06, "tu": 6.5, "c": 62.64, "n": "similar", "tp": 199.0}, {"p": "Majskolvshållare - 10 Pack", "v": null, "sku": null, "h": "majskolvshallare-10-pack", "st": "Active", "rp": 99.0, "uu": 0.8, "su": 5.3, "w": 0.03, "tu": 6.1, "c": 58.79, "n": "without box", "tp": 149}, {"p": "Mastern - Hela Mastern Kittet", "v": null, "sku": null, "h": "mastern-hela-mastern-kittet", "st": "Unlisted", "rp": 1600.0, "uu": 11.0, "su": 12.97, "w": 0.8, "tu": 23.97, "c": 231.01, "n": null, "tp": 1600.0}, {"p": "Mastern — Elektrisk grillborste", "v": null, "sku": null, "h": "elektrisk-grillborste", "st": "Active", "rp": 999.0, "uu": 11.0, "su": 12.97, "w": 0.8, "tu": 23.97, "c": 231.01, "n": null, "tp": 999.0}, {"p": "Polérhuvud", "v": null, "sku": null, "h": "polerhuvud-1", "st": "Active", "rp": 200.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "This product is not only for sale", "tp": null}, {"p": "Portabel Utomhusgrill", "v": "Large", "sku": null, "h": "portabel-utomhusgrill", "st": "Active", "rp": 599.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "Tomorrow", "tp": null}, {"p": "Portabel Utomhusgrill", "v": "Small", "sku": null, "h": "portabel-utomhusgrill", "st": "Active", "rp": 499.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "Tomorrow", "tp": null}, {"p": "Potatisskruv skärare", "v": null, "sku": null, "h": "potatisskruv-skarare", "st": "Active", "rp": 149.0, "uu": 1.3, "su": 5.6, "w": 0.05, "tu": 6.9, "c": 66.5, "n": "with opp bag", "tp": 169}, {"p": "Premium Biffknivar 6-pack", "v": null, "sku": null, "h": "premium-biffknivar-i-rostfritt-stal-6-pack-med-elegant-forvaringslada", "st": "Active", "rp": 999.0, "uu": 16.6, "su": 14.5, "w": 0.8, "tu": 31.1, "c": 299.73, "n": null, "tp": 999.0}, {"p": "Premium Grill- & Smashburger Kit – 25 delar", "v": null, "sku": null, "h": "aa", "st": "Active", "rp": 1399.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "similar", "tp": null}, {"p": "Skärbräda i ändträ – Premium valnötsträ", "v": null, "sku": null, "h": "skarbrada-i-andtra-premium-valnotstra-36-x-24-x-2-5-cm", "st": "Active", "rp": 699.0, "uu": 7.5, "su": 12.3, "w": 1.05, "tu": 19.8, "c": 190.82, "n": "38*28*1.8cm", "tp": 699.0}, {"p": "Skyddshandskar", "v": null, "sku": null, "h": "skyddshandskar", "st": "Unlisted", "rp": 80.0, "uu": null, "su": null, "w": null, "tu": null, "c": null, "n": "NO", "tp": null}]};
 
 /* ---------- state ---------- */
-let vatMode = "incl";     // incl | excl
+let priceMode = "current";   // current | target  (priser räknas UTAN moms)
 let statusFilter = "all";
 let query = "";
 let sortKey = "marginPct";
 let sortDir = -1;
 
-const VAT = 1.25;
 const fmt0 = n => n==null?"–":Math.round(n).toLocaleString("sv-SE");
 const fmt1 = n => n==null?"–":n.toLocaleString("sv-SE",{minimumFractionDigits:1,maximumFractionDigits:1});
 const kr = n => n==null?"–":Math.round(n).toLocaleString("sv-SE")+" kr";
 
 function derive(r){
   const hasCost = r.c!=null && r.rp!=null;
-  const rev = vatMode==="excl" ? (r.rp!=null? r.rp/VAT : null) : r.rp;
-  const marginKr = hasCost ? rev - r.c : null;
-  const marginPct = hasCost && rev>0 ? (marginKr/rev*100) : null;
-  const markup = hasCost && r.c>0 ? (rev/r.c) : null;
+  // säljs utan moms → marginal räknas rakt på priset
+  const price = priceMode==="target" && r.tp!=null ? r.tp : r.rp;
+  const marginKr = hasCost ? price - r.c : null;
+  const marginPct = hasCost && price>0 ? (marginKr/price*100) : null;
+  const markup = hasCost && r.c>0 ? (price/r.c) : null;
+  const willRaise = r.tp!=null && r.rp!=null && r.tp>r.rp;
   let band="na";
   if(marginPct!=null){ band = marginPct>=60?"good":marginPct>=45?"warn":"low"; }
-  return {...r, hasCost, rev, marginKr, marginPct, markup, band};
+  return {...r, hasCost, price, marginKr, marginPct, markup, band, willRaise};
 }
 function rows(){ return DATA.recs.map(derive); }
 
@@ -242,15 +243,16 @@ function renderKpis(){
   const pcts = withCost.map(r=>r.marginPct).sort((a,b)=>a-b);
   const mean = pcts.reduce((a,b)=>a+b,0)/pcts.length;
   const median = pcts.length%2 ? pcts[(pcts.length-1)/2] : (pcts[pcts.length/2-1]+pcts[pcts.length/2])/2;
-  const lowCount = withCost.filter(r=>r.band==="low").length;
+  const under60 = withCost.filter(r=>r.marginPct<60).length;
   const totalCost = withCost.reduce((a,b)=>a+b.c,0);
-  const modeTxt = vatMode==="excl" ? "på pris ex. moms" : "på pris ink. moms";
+  const raiseCount = all.filter(r=>r.willRaise).length;
+  const modeTxt = priceMode==="target" ? "vid målpris 60 %" : "på nuvarande pris";
   const k = [
     {lab:"Produkter m. inpris", val:withCost.length, sub:`av ${all.length} rader · ${missing} saknar`, accent:true},
     {lab:"Snittmarginal", val:fmt0(mean), unit:"%", sub:modeTxt},
     {lab:"Median­marginal", val:fmt0(median), unit:"%", sub:modeTxt},
-    {lab:"Låg marginal", val:lowCount, sub:"produkter under 45%"},
-    {lab:"Totalt inköpsvärde", val:fmt0(totalCost), unit:"kr", sub:"summa alla inpriser (1 st/rad)"},
+    {lab:"Under 60 %", val:under60, sub:priceMode==="target"?"kvar under mål":"produkter att höja"},
+    {lab:priceMode==="target"?"Höjs till mål":"Totalt inköpsvärde", val:priceMode==="target"?raiseCount:fmt0(totalCost), unit:priceMode==="target"?"":"kr", sub:priceMode==="target"?"produkter får nytt pris":"summa alla inpriser (1 st/rad)"},
   ];
   document.getElementById("kpis").innerHTML = k.map(x=>`
     <div class="kpi${x.accent?' accent':''}">
@@ -277,7 +279,8 @@ function renderBars(){
 const COLS = [
   {k:"p", lab:"Produkt", num:false},
   {k:"st", lab:"Status", num:false},
-  {k:"rp", lab:"Pris", num:true},
+  {k:"rp", lab:"Pris nu", num:true},
+  {k:"tp", lab:"Nypris 60 %", num:true},
   {k:"c", lab:"Inpris", num:true},
   {k:"su_sek", lab:"Varav frakt", num:true},
   {k:"marginKr", lab:"Marginal kr", num:true},
@@ -317,10 +320,14 @@ function renderTable(){
       ? `<span class="pill ${r.band}">${fmt0(r.marginPct)}%</span>`
       : `<span class="pill na">–</span>`;
     const stCls = r.st==="Unlisted"?"un":"";
+    const tpCell = r.tp==null ? "–" : (r.willRaise
+        ? `<span style="color:var(--ember);font-weight:700">${kr(r.tp)}</span>`
+        : `<span style="color:var(--ink-3)">${kr(r.tp)}</span>`);
     return `<tr data-tip='${tipData(r)}'>
       <td><div class="pname">${esc(r.p)}</div>${r.v?`<div class="pvar">${esc(r.v)}</div>`:""}</td>
       <td><span class="status-tag ${stCls}">${r.st==="Unlisted"?"Olistad":"Aktiv"}</span></td>
       <td class="num">${kr(r.rp)}</td>
+      <td class="num">${tpCell}</td>
       <td class="num">${kr(r.c)}</td>
       <td class="num">${frakt!=null?kr(frakt):"–"}</td>
       <td class="num">${r.marginKr!=null?kr(r.marginKr):"–"}</td>
@@ -331,7 +338,7 @@ function renderTable(){
 
 /* ---------- tooltip ---------- */
 function tipData(r){
-  const o = {p:r.p,v:r.v,st:r.st,rp:r.rp,c:r.c,uu:r.uu,su:r.su,mk:r.marginKr,mp:r.marginPct,mu:r.markup,n:r.n};
+  const o = {p:r.p,v:r.v,st:r.st,rp:r.rp,tp:r.tp,price:r.price,c:r.c,uu:r.uu,su:r.su,mk:r.marginKr,mp:r.marginPct,mu:r.markup,n:r.n,wr:r.willRaise};
   return esc(JSON.stringify(o));
 }
 const tt = document.getElementById("tt");
@@ -339,12 +346,13 @@ function showTip(e,json){
   const d = JSON.parse(json);
   const row=(a,b)=>`<div class="r"><span>${a}</span><span>${b}</span></div>`;
   let h = `<div style="font-weight:700;margin-bottom:5px">${escText(d.p)}${d.v?` · ${escText(d.v)}`:""}</div>`;
-  h += row("Pris", kr(d.rp));
+  h += row(priceMode==="target"?"Pris (mål)":"Pris", kr(d.price));
+  if(d.wr && priceMode==="target") h += row("Var tidigare", kr(d.rp));
   if(d.c!=null){
     h += row("Inpris (landat)", kr(d.c));
     h += row("· produkt", d.uu!=null?`$${d.uu}`:"–");
     h += row("· frakt", d.su!=null?`$${d.su}`:"–");
-    h += row(`<b>Marginal (${vatMode==='excl'?'ex':'ink'}. moms)</b>`, `<b>${kr(d.mk)} · ${fmt0(d.mp)}%</b>`);
+    h += row(`<b>Marginal</b>`, `<b>${kr(d.mk)} · ${fmt0(d.mp)}%</b>`);
     if(d.mu!=null) h += row("Påslag", `${fmt1(d.mu)}×`);
   } else {
     h += `<div style="margin-top:4px;color:var(--ember)">Saknar inpris i offertbladet</div>`;
@@ -369,23 +377,23 @@ function escText(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/<
 
 /* ---------- CSV ---------- */
 function exportCsv(){
-  const head=["Produkt","Variant","SKU","Handle","Status","Pris_SEK","Inpris_SEK","Frakt_SEK","Marginal_kr_"+vatMode,"Marginal_pct_"+vatMode];
+  const head=["Produkt","Variant","SKU","Handle","Status","Pris_nu_SEK","Nypris_60_SEK","Inpris_SEK","Frakt_SEK","Marginal_kr","Marginal_pct","Aktivt_prislage"];
   const lines=[head.join(";")];
   rows().forEach(r=>{
     const frakt = r.su!=null? (r.su*DATA.rate).toFixed(2):"";
     const cell=v=>{v=v==null?"":String(v); return /[;"\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;};
-    lines.push([r.p,r.v||"",r.sku||"",r.h||"",r.st,r.rp,r.c==null?"":r.c,frakt,
-      r.marginKr==null?"":r.marginKr.toFixed(2), r.marginPct==null?"":r.marginPct.toFixed(1)].map(cell).join(";"));
+    lines.push([r.p,r.v||"",r.sku||"",r.h||"",r.st,r.rp,r.tp==null?"":r.tp,r.c==null?"":r.c,frakt,
+      r.marginKr==null?"":r.marginKr.toFixed(2), r.marginPct==null?"":r.marginPct.toFixed(1), priceMode].map(cell).join(";"));
   });
   const blob=new Blob(["﻿"+lines.join("\n")],{type:"text/csv;charset=utf-8"});
   const a=document.createElement("a"); a.href=URL.createObjectURL(blob);
-  a.download=`grillkliniken-kostnader-${vatMode}.csv`; a.click(); URL.revokeObjectURL(a.href);
+  a.download=`grillkliniken-kostnader-${priceMode}.csv`; a.click(); URL.revokeObjectURL(a.href);
 }
 
 /* ---------- events ---------- */
-document.getElementById("vatSeg").addEventListener("click",e=>{
+document.getElementById("priceSeg").addEventListener("click",e=>{
   const b=e.target.closest("button"); if(!b) return;
-  vatMode=b.dataset.vat;
+  priceMode=b.dataset.mode;
   [...e.currentTarget.children].forEach(x=>x.setAttribute("aria-pressed", x===b));
   renderAll();
 });

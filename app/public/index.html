@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grillkliniken · Live P&L</title>
+<style>
+  :root{
+    --bg:#FBF7F0; --panel:#fff; --panel-2:#F5EEE3; --line:#E7DDCC;
+    --ink:#241C15; --ink-2:#6B5D50; --ink-3:#96897A;
+    --ember:#D8501F; --good:#159A63; --low:#C0392B; --steel:#4E626B;
+    --cogs:#4E626B; --fees:#C77D14; --meta:#2F6FB0; --google:#C0392B;
+    --shadow:0 1px 2px rgba(60,40,20,.05),0 8px 24px -12px rgba(60,40,20,.18);
+    --r:14px; --r-sm:9px;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --sans:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --bg:#171310; --panel:#211B15; --panel-2:#2A231B; --line:#3A3025;
+    --ink:#F3EADD; --ink-2:#B6A794; --ink-3:#847661; --ember:#F0743D;
+    --good:#33B57C; --low:#E4574C; --cogs:#8FA6AF; --fees:#E0A03B; --meta:#5CA0E0; --google:#E4574C;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.7);
+  }}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:26px 20px 80px}
+  .tnum{font-variant-numeric:tabular-nums}
+  header.top{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between;margin-bottom:22px}
+  .brand{display:flex;align-items:center;gap:13px}
+  .flame{width:42px;height:42px;border-radius:11px;background:radial-gradient(120% 120% at 50% 120%,var(--ember),#8f2f10 70%);display:grid;place-items:center;flex:none;box-shadow:var(--shadow)}
+  .flame svg{width:22px;height:22px}
+  h1{margin:0;font-size:21px;font-weight:800;letter-spacing:-.02em}
+  .sub{margin:2px 0 0;font-size:12.5px;color:var(--ink-2)}
+  .controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  input[type=date]{font:inherit;font-size:13px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-sm);padding:7px 10px;color:var(--ink)}
+  .btn{font:inherit;font-size:12.5px;font-weight:600;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:var(--r-sm);padding:8px 13px;cursor:pointer;box-shadow:var(--shadow)}
+  .btn:hover{border-color:var(--ember)}
+  .btn.primary{background:var(--ember);color:#fff;border-color:var(--ember)}
+  .sources{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+  .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;padding:6px 11px;border-radius:20px;border:1px solid var(--line);background:var(--panel)}
+  .badge .d{width:8px;height:8px;border-radius:50%}
+  .badge.on .d{background:var(--good)} .badge.off .d{background:var(--ink-3)} .badge.err .d{background:var(--low)}
+  .badge small{color:var(--ink-3);font-weight:500}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+  @media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}}
+  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .kpi .lab{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);margin-bottom:9px}
+  .kpi .val{font-size:26px;font-weight:800;letter-spacing:-.02em;line-height:1}
+  .kpi .val small{font-size:14px;font-weight:700;color:var(--ink-2)}
+  .kpi .note{font-size:11.5px;color:var(--ink-2);margin-top:6px}
+  .kpi.hero .val{color:var(--good)} .kpi.hero.neg .val{color:var(--low)}
+  .kpi.hero::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--ember)}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:18px;margin-bottom:20px}
+  .panel h2{margin:0 0 14px;font-size:15px;font-weight:800}
+  .waterfall{display:flex;flex-direction:column;gap:10px}
+  .wf-row{display:grid;grid-template-columns:130px 1fr 110px;gap:12px;align-items:center;font-size:13px}
+  .wf-row .name{font-weight:600}
+  .wf-row .name small{display:block;color:var(--ink-3);font-weight:500;font-size:11px}
+  .wf-track{height:20px;background:var(--panel-2);border-radius:5px;overflow:hidden}
+  .wf-fill{height:100%;border-radius:5px}
+  .wf-amt{text-align:right;font-family:var(--mono);font-weight:600}
+  .wf-row.total{border-top:1px dashed var(--line);padding-top:10px;margin-top:2px}
+  .wf-row.total .wf-amt{font-size:15px}
+  footer{font-size:12px;color:var(--ink-2);line-height:1.6}
+  .loading{opacity:.5}
+  code{font-family:var(--mono);font-size:11.5px;background:var(--panel-2);padding:1px 5px;border-radius:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <div class="flame"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c1 3 4 4 4 8a4 4 0 0 1-8 0c0-1 .3-2 .8-2.6C9 8 9.5 9 10 9c-.2-2 1-4 2-7Z" fill="#fff"/><path d="M12 22a5 5 0 0 0 5-5c0-3-2.5-4.5-3-7-.4 3-2 3.2-2 5.5 0-1.2-.7-2-1.4-2.5C10 10 9 11.5 9 13.5A5 5 0 0 0 12 22Z" fill="#FFD9A0"/></svg></div>
+      <div><h1>Live P&amp;L</h1><p class="sub">Grillkliniken · intäkt − alla utgifter = nettovinst</p></div>
+    </div>
+    <div class="controls">
+      <input type="date" id="from"><span style="color:var(--ink-3)">–</span><input type="date" id="to">
+      <button class="btn primary" id="run">Uppdatera</button>
+    </div>
+  </header>
+
+  <div class="sources" id="sources"></div>
+  <div class="kpis" id="kpis"></div>
+
+  <section class="panel">
+    <h2>Vart pengarna tar vägen</h2>
+    <div class="waterfall" id="waterfall"></div>
+  </section>
+
+  <footer>
+    Intäkt hämtas från Shopify (ex. moms). <b>Utgifter</b> = sålda varors inpris (COGS) + Shopify-avgifter + Meta + Google Ads.
+    <b>MER</b> = intäkt ÷ annonskostnad. Källor som visar <em>ej kopplad</em> räknas som 0 tills nycklar läggs i <code>.env</code> – se <code>app/README.md</code>.
+  </footer>
+</div>
+
+<script>
+const kr = n => n==null ? "–" : Math.round(n).toLocaleString("sv-SE")+" kr";
+const pct = n => n==null ? "–" : n.toLocaleString("sv-SE",{maximumFractionDigits:1})+" %";
+
+function badge(name, s){
+  let cls="off", txt="ej kopplad";
+  if(s.error){cls="err";txt="fel";}
+  else if(s.available){cls="on";txt="live";}
+  const extra = s.error ? ` <small title="${(s.error||'').replace(/"/g,'')}">${s.error.slice(0,40)}</small>`
+    : (s.unknownCogsItems ? ` <small>${s.unknownCogsItems} rader utan inpris</small>` : "");
+  return `<span class="badge ${cls}"><span class="d"></span>${name}: ${txt}${extra}</span>`;
+}
+
+function render(d){
+  document.getElementById("sources").innerHTML =
+    badge("Shopify", d.sources.shopify) + badge("Meta", d.sources.meta) + badge("Google Ads", d.sources.google);
+
+  const neg = d.netProfit < 0;
+  const kpis = [
+    {cls:"hero"+(neg?" neg":""), lab:"Nettovinst", val:kr(d.netProfit), note:`${d.period.from} – ${d.period.to}`},
+    {lab:"Intäkt", val:kr(d.revenue), note:`${d.orders} ordrar · AOV ${kr(d.aov)}`},
+    {lab:"Nettomarginal", val:pct(d.netMarginPct), note:"av intäkt"},
+    {lab:"MER", val:d.mer==null?"–":d.mer.toLocaleString("sv-SE",{maximumFractionDigits:2})+"×", note:"intäkt ÷ annonskostnad"},
+  ];
+  document.getElementById("kpis").innerHTML = kpis.map(k=>`
+    <div class="kpi ${k.cls||''}"><div class="lab">${k.lab}</div>
+      <div class="val tnum">${k.val}</div><div class="note">${k.note}</div></div>`).join("");
+
+  const c=d.costs;
+  const items=[
+    {n:"Intäkt", s:"Shopify", v:d.revenue, col:"var(--good)"},
+    {n:"Inpris (COGS)", s:"sålda varor", v:-c.cogs, col:"var(--cogs)"},
+    {n:"Shopify-avgifter", s:"betal/transaktion", v:-c.fees, col:"var(--fees)"},
+    {n:"Meta Ads", s:"annonskostnad", v:-c.meta, col:"var(--meta)"},
+    {n:"Google Ads", s:"annonskostnad", v:-c.google, col:"var(--google)"},
+    {n:"Nettovinst", s:"kvar", v:d.netProfit, col:d.netProfit<0?"var(--low)":"var(--good)", total:true},
+  ];
+  const max=Math.max(d.revenue, 1);
+  document.getElementById("waterfall").innerHTML = items.map(it=>`
+    <div class="wf-row ${it.total?'total':''}">
+      <div class="name">${it.n}<small>${it.s}</small></div>
+      <div class="wf-track"><div class="wf-fill" style="width:${Math.min(100,Math.abs(it.v)/max*100)}%;background:${it.col}"></div></div>
+      <div class="wf-amt" style="color:${it.v<0?'var(--ink-2)':it.col}">${it.v<0?'−':''}${kr(Math.abs(it.v))}</div>
+    </div>`).join("");
+}
+
+async function load(){
+  const f=document.getElementById("from").value, t=document.getElementById("to").value;
+  document.body.classList.add("loading");
+  const r=await fetch(`/api/pnl?from=${f}&to=${t}`);
+  render(await r.json());
+  document.body.classList.remove("loading");
+}
+// default: senaste 30 dagar
+const today=new Date(), ago=new Date(today.getTime()-29*864e5);
+const iso=d=>d.toISOString().slice(0,10);
+document.getElementById("to").value=iso(today);
+document.getElementById("from").value=iso(ago);
+document.getElementById("run").addEventListener("click",load);
+load();
+</script>
+</body>
+</html>
