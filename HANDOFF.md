@@ -31,3 +31,28 @@ Each ad set holds hooks H1–H10 (ad names `<prefix> H<n>`).
 - Note: 219 listicle H9 was recreated once to correct a link (originally pointed at the product page).
 
 All 140 ads are PAUSED — ready to review and launch.
+
+---
+
+# Batch 2 — VSL concepts (199, 235, 236, 237, 238, 240)
+
+Same account/campaign (`act_1346450049878358`, campaign `120242897371730074`, CBO,
+OFFSITE_CONVERSIONS, SE 18–65, pixel `776922878287560`). 12 new ad sets (base + listicle
+per concept), naming `<concept> BASE` / `<concept> LISTICLE`. All ads PAUSED.
+
+| Concept | Listicle | LISTICLE URL | BASE adset | LIST adset | Hooks |
+|--------|----------|--------------|-----------|-----------|-------|
+| 199 #14 | #5 | /pages/landing-page-blank-jul-2-16-42-31 | 120248277953030074 | 120248277953870074 | H1–H10 (10) |
+| 235 | 110 | /pages/110 | 120248277954980074 | 120248277956400074 | H2,H3 (2)* |
+| 236 | 136 | /pages/136 | 120248277958240074 | 120248277959310074 | H1–H3 (3) |
+| 237 | 114 | /pages/113 | 120248277961190074 | 120248277962380074 | H1–H4 (4) |
+| 238 | #7 | /pages/landing-page-blank-jul-2-20-04-17 | 120248277963690074 | 120248277965610074 | H1–H5 (5) |
+| 240 | #4 | /pages/landing-page-blank-jul-2-08-13-08 | 120248277967470074 | 120248277969830074 | V1,V2H2,V2H3 (3)** |
+
+Total batch 2: 27 videos × 2 sides = **54 ads**.
+
+\* 235: only H2 and H3 were uploaded/processed — **H1 and H4 were missing** from the ad account.
+\** 240: only VERSION 1, V2 HOOK 2, V2 HOOK 3 were available — **V2 HOOK 1 was missing**.
+Re-run those hooks once the videos finish processing.
+
+Note: the sheet's "114" row maps to the URL `/pages/113` — used as given.
