@@ -7,6 +7,11 @@ Fullständiga sheets som Google Docs i creatives-mappen (18aM0fauSLoJikspmIrnCE8
 2. **Veteranen Lennart (55–75)** — doc id 1xNHj-IWobASc48YZhbVLX5VkNB5fHTZGRuc8tnK0uWQ
 3. **Presentköparen Maria (45–65)** — doc id 1C95vxUgymqiMcffRsHkAFK5XcCx_LvsGnLmkA8pYobc
 
+Engelska versioner (2026-07-24, för redigerarna — Maria uppdaterad med smak-drivkraften):
+- Fredrik EN — doc id 1IQs-h34_hZlElha6IJTyTT6VzvlzJCIcf4Gn8RuPxac
+- Lennart EN — doc id 1LB9o5yc4Scr4uF-oH1mBZtr-GAwf9RiYaKEHZbNL48E
+- Maria EN — doc id 19FYnQXY87PL5BNXqXg5GEIhhn8MUxH_FW12hZ5uEGDE
+
 ## Snabbjämförelse
 
 | | Fredrik 35–50 | Lennart 55–75 | Maria 45–65 |
@@ -16,7 +21,7 @@ Fullständiga sheets som Google Docs i creatives-mappen (18aM0fauSLoJikspmIrnCE8
 | CTR | 2,5–2,9 % | 3,7 % (65+, högst) | 3,97 % (klickar mest) |
 | Roll | Lönsamhetsmotor | Volymmotor | Högtidsfönster |
 | Huvudpain | Skam ("artiga gott") + tid | Grillens åldrande + strån-historier | Strån i maten hon serverar |
-| Huvudmotiv | Restaurangyta + smart-lat | Grillen ska hålla livet ut | Trygghet + träffsäker present |
+| Huvudmotiv | Restaurangyta + smart-lat | Grillen ska hålla livet ut | Trygghet + ge honom smak-vinsten han jagar |
 | Format | 60–90 sek, callout, demo, 177 | **Long-form/VSL**, story, auktoritet | Kvinnlig UGC "köpte till honom" |
 | Bevisade vinklar | 128, 177, S3/S4 | 110, 101, 049, 128, 233/VSL | S5 + trygghetsblock |
 | Undvik | Anklagelse, pensionärskod, VSL | Slang, hets, rabatt-först | Kvinnlig grillpersona (CARLA!), teknik-copy |
