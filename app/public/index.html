@@ -257,6 +257,8 @@ function badge(name, s){
   let cls="off", txt="ej kopplad";
   if(s.demo){cls="demo";txt="demo";}
   else if(s.error){cls="err";txt="fel";}
+  else if(s.estimated){cls="demo";txt="estimat via ROAS";}
+  else if(s.snapshot){cls="on";txt=`riktig spend (snapshot ${s.fetchedAt||""})`;}
   else if(s.available){cls="on";txt="live";}
   const extra = s.error ? ` <small>${String(s.error).slice(0,44)}</small>`
     : (s.unknownCogsItems ? ` <small>${s.unknownCogsItems} rader utan inpris</small>` : "");
@@ -268,7 +270,7 @@ function renderKpis(d){
   const neg = d.netProfit < 0;
   const ks = [
     {cls:"hero"+(neg?" neg":""), lab:"Nettovinst", val:kr(d.netProfit), note:`${d.period.from} – ${d.period.to}`},
-    {lab:"Intäkt", val:kr(d.revenue), note:`${d.orders} ordrar · AOV ${kr(d.aov)}`},
+    {lab:d.revenueEstimated?"Intäkt (estimat)":"Intäkt", val:kr(d.revenue), note:d.revenueEstimated?`Meta-spend × ROAS · ~${d.orders} ordrar`:`${d.orders} ordrar · AOV ${kr(d.aov)}`},
     {lab:"Utgifter totalt", val:kr(d.totalCost), note:`${d.revenue?Math.round(d.totalCost/d.revenue*100):0} % av intäkt`},
     {lab:"Nettomarginal", val:pct(d.netMarginPct), note:"vinst ÷ intäkt"},
     {lab:"MER", val:d.mer==null?"–":d.mer.toLocaleString("sv-SE",{maximumFractionDigits:2})+"×", note:`annonser ${kr(d.adSpend)}`},

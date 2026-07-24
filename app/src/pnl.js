@@ -3,8 +3,39 @@ import { getMeta } from './meta.js';
 import { getGoogleAds } from './googleads.js';
 import { loadSettings } from './settings.js';
 import { demoSources } from './demo.js';
+import { loadCogs } from './cogs.js';
 
 const round = n => Math.round(n * 100) / 100;
+
+// Mastern står för ~99 % av annonseringen → intäktsestimatet räknar med
+// Masterns pris och inpris tills riktig Shopify-data finns.
+const EST_AOV = 999;
+const EST_HANDLE = 'elektrisk-grillborste';
+
+/**
+ * Estimerar Shopify-utfall från Meta-snapshotens dagliga spend × ROAS
+ * (attribuerad intäkt). Används ENBART när Shopify inte är kopplad och
+ * flaggas `estimated:true` hela vägen ut i UI:t.
+ */
+async function estimateShopifyFromMeta(meta) {
+  const cogsData = await loadCogs();
+  const unitCost = cogsData.byHandle.get(EST_HANDLE) ?? 231;
+  const daily = {};
+  let revenue = 0, orders = 0, cogs = 0;
+  for (const [d, spend] of Object.entries(meta.daily || {})) {
+    const roas = meta.roasDaily?.[d] ?? 0;
+    const rev = spend * roas;
+    const ord = Math.round(rev / EST_AOV);
+    const dayCogs = ord * unitCost;
+    daily[d] = { revenue: rev, cogs: dayCogs, fees: 0, refunds: 0, orders: ord };
+    revenue += rev; orders += ord; cogs += dayCogs;
+  }
+  return {
+    available: true, estimated: true, revenue, cogs, fees: 0, refunds: 0, orders, daily,
+    unknownCogsItems: 0,
+    reason: `estimat: Meta-spend × ROAS (AOV ${EST_AOV} kr, inpris ${round(unitCost)} kr)`,
+  };
+}
 
 /** Alla datum (YYYY-MM-DD) i intervallet, inklusive ändarna. */
 function enumerateDays(from, to) {
@@ -35,7 +66,13 @@ export async function buildPnl(from, to, { demo = false } = {}) {
           getGoogleAds(from, to).then(v => ['google', v]),
         ])),
       );
-  const { shopify, meta, google } = sources;
+  let { shopify, meta, google } = sources;
+
+  // Ingen Shopify men riktig Meta-spend med ROAS → estimera intäktssidan
+  // (tydligt flaggat; ersätts automatiskt när butiken kopplas).
+  if (!demo && !shopify.available && meta.available && meta.roasDaily) {
+    shopify = await estimateShopifyFromMeta(meta);
+  }
 
   const revenue = shopify.revenue || 0;
   const orders = shopify.orders || 0;
@@ -100,9 +137,10 @@ export async function buildPnl(from, to, { demo = false } = {}) {
     adSpend: round(adSpend),
     daily,
     settings,
+    revenueEstimated: Boolean(shopify.estimated),
     sources: {
-      shopify: { available: shopify.available, demo: shopify.demo, reason: shopify.reason, error: shopify.error, unknownCogsItems: shopify.unknownCogsItems || 0 },
-      meta: { available: meta.available, demo: meta.demo, reason: meta.reason, error: meta.error },
+      shopify: { available: shopify.available, demo: shopify.demo, estimated: shopify.estimated, reason: shopify.reason, error: shopify.error, unknownCogsItems: shopify.unknownCogsItems || 0 },
+      meta: { available: meta.available, demo: meta.demo, snapshot: meta.snapshot, fetchedAt: meta.fetchedAt, reason: meta.reason, error: meta.error },
       google: { available: google.available, demo: google.demo, reason: google.reason, error: google.error },
     },
   };

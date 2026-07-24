@@ -5,6 +5,7 @@ import { config } from './src/config.js';
 import { buildPnl } from './src/pnl.js';
 import { loadCogs } from './src/cogs.js';
 import { loadSettings, saveSettings } from './src/settings.js';
+import { metaHasActuals } from './src/meta.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -33,7 +34,8 @@ app.get('/api/pnl', async (req, res) => {
   const from = /^\d{4}-\d{2}-\d{2}$/.test(req.query.from || '') ? req.query.from : def.from;
   const to = /^\d{4}-\d{2}-\d{2}$/.test(req.query.to || '') ? req.query.to : def.to;
   const mode = String(req.query.demo ?? 'auto');
-  const demo = mode === '1' || (mode !== '0' && !anySourceEnabled());
+  const hasAnySource = anySourceEnabled() || (await metaHasActuals());
+  const demo = mode === '1' || (mode !== '0' && !hasAnySource);
   try {
     res.json(await buildPnl(from, to, { demo }));
   } catch (err) {
@@ -59,9 +61,13 @@ app.get('/api/products', async (_req, res) => {
 
 app.use(express.static(join(__dirname, 'public')));
 
-app.listen(config.port, () => {
+app.listen(config.port, async () => {
   const on = s => (s ? 'kopplad' : 'ej kopplad');
   console.log(`Grillkliniken P&L → http://localhost:${config.port}`);
   console.log(`  Shopify: ${on(config.shopify.enabled)} · Meta: ${on(config.meta.enabled)} · Google Ads: ${on(config.google.enabled)}`);
-  if (!anySourceEnabled()) console.log('  Inga källor kopplade → demo-data visas tills nycklar läggs i .env');
+  if (!anySourceEnabled()) {
+    console.log((await metaHasActuals())
+      ? '  Kör på Meta-snapshot (riktig spend) + ROAS-estimat för intäkt tills nycklar läggs i .env'
+      : '  Inga källor kopplade → demo-data visas tills nycklar läggs i .env');
+  }
 });

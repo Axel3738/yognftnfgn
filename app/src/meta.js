@@ -1,13 +1,47 @@
+import { readFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
 import { config } from './config.js';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+// Snapshot med riktig spend hämtad via Claude-sessionen (Meta MCP) –
+// används som källa tills ett eget API-token läggs i .env.
+const ACTUALS_PATH = join(__dirname, '..', 'data', 'meta-actuals.json');
+
+async function readActuals() {
+  try {
+    return JSON.parse(await readFile(ACTUALS_PATH, 'utf-8'));
+  } catch {
+    return null;
+  }
+}
+
+/** true om en sparad Meta-snapshot finns (styr demo-läget i servern). */
+export async function metaHasActuals() {
+  return (await readActuals()) != null;
+}
 
 /**
  * Hämtar Meta-annonskostnad per dag för perioden (Marketing API insights,
- * time_increment=1). Returnerar {available, spend, impressions, clicks, daily, error?}
- * där daily = { 'YYYY-MM-DD': spend }.
+ * time_increment=1). Utan API-token används den sparade snapshoten i stället
+ * (flaggad `snapshot:true`, med roasDaily för intäktsestimat).
+ * Returnerar {available, spend, impressions, clicks, daily, roasDaily?, error?}.
  */
 export async function getMeta(from, to) {
   const base = { available: false, spend: 0, impressions: 0, clicks: 0, daily: {} };
-  if (!config.meta.enabled) return { ...base, reason: 'ej kopplad' };
+  if (!config.meta.enabled) {
+    const act = await readActuals();
+    if (!act) return { ...base, reason: 'ej kopplad' };
+    const daily = {}, roasDaily = {};
+    let spend = 0;
+    for (const [d, v] of Object.entries(act.daily || {})) {
+      if (d < from || d > to) continue;
+      daily[d] = v.spend;
+      roasDaily[d] = v.roas;
+      spend += v.spend;
+    }
+    return { ...base, available: true, snapshot: true, fetchedAt: act.fetchedAt, spend, daily, roasDaily, reason: `snapshot ${act.fetchedAt}` };
+  }
 
   try {
     const acct = config.meta.account.startsWith('act_') ? config.meta.account : `act_${config.meta.account}`;
