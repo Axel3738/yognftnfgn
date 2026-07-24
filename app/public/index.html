@@ -6,64 +6,135 @@
 <title>Grillkliniken · Live P&L</title>
 <style>
   :root{
-    --bg:#FBF7F0; --panel:#fff; --panel-2:#F5EEE3; --line:#E7DDCC;
+    color-scheme: light;
+    --bg:#FBF7F0; --panel:#FFFFFF; --panel-2:#F5EEE3; --line:#E7DDCC;
     --ink:#241C15; --ink-2:#6B5D50; --ink-3:#96897A;
-    --ember:#D8501F; --good:#159A63; --low:#C0392B; --steel:#4E626B;
-    --cogs:#4E626B; --fees:#C77D14; --meta:#2F6FB0; --google:#C0392B;
+    --ember:#D8501F; --good:#159A63; --low:#C0392B;
+    /* validerade kategorislots (ljus) – ordningen är adjacency-ordningen i donuten */
+    --c-cogs:#2a78d6; --c-meta:#008300; --c-google:#e87ba4; --c-fees:#eda100;
+    --c-refunds:#1baf7a; --c-plan:#eb6834; --c-tools:#4a3aa7; --c-perorder:#e34948;
     --shadow:0 1px 2px rgba(60,40,20,.05),0 8px 24px -12px rgba(60,40,20,.18);
     --r:14px; --r-sm:9px;
     --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
     --sans:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
   }
-  @media (prefers-color-scheme:dark){:root{
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --bg:#171310; --panel:#211B15; --panel-2:#2A231B; --line:#3A3025;
+      --ink:#F3EADD; --ink-2:#B6A794; --ink-3:#847661;
+      --ember:#F0743D; --good:#33B57C; --low:#E4574C;
+      --c-cogs:#3987e5; --c-meta:#008300; --c-google:#d55181; --c-fees:#c98500;
+      --c-refunds:#199e70; --c-plan:#d95926; --c-tools:#9085e9; --c-perorder:#e66767;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
     --bg:#171310; --panel:#211B15; --panel-2:#2A231B; --line:#3A3025;
-    --ink:#F3EADD; --ink-2:#B6A794; --ink-3:#847661; --ember:#F0743D;
-    --good:#33B57C; --low:#E4574C; --cogs:#8FA6AF; --fees:#E0A03B; --meta:#5CA0E0; --google:#E4574C;
+    --ink:#F3EADD; --ink-2:#B6A794; --ink-3:#847661;
+    --ember:#F0743D; --good:#33B57C; --low:#E4574C;
+    --c-cogs:#3987e5; --c-meta:#008300; --c-google:#d55181; --c-fees:#c98500;
+    --c-refunds:#199e70; --c-plan:#d95926; --c-tools:#9085e9; --c-perorder:#e66767;
     --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.7);
-  }}
+  }
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1080px;margin:0 auto;padding:26px 20px 80px}
-  .tnum{font-variant-numeric:tabular-nums}
-  header.top{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between;margin-bottom:22px}
-  .brand{display:flex;align-items:center;gap:13px}
+  .wrap{max-width:1180px;margin:0 auto;padding:24px 20px 80px}
+  .tnum{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+
+  header.top{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-bottom:16px}
+  .brand{display:flex;align-items:center;gap:12px}
   .flame{width:42px;height:42px;border-radius:11px;background:radial-gradient(120% 120% at 50% 120%,var(--ember),#8f2f10 70%);display:grid;place-items:center;flex:none;box-shadow:var(--shadow)}
   .flame svg{width:22px;height:22px}
-  h1{margin:0;font-size:21px;font-weight:800;letter-spacing:-.02em}
+  h1{margin:0;font-size:20px;font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:9px}
   .sub{margin:2px 0 0;font-size:12.5px;color:var(--ink-2)}
+  .demo-badge{font-size:10.5px;font-weight:800;letter-spacing:.06em;color:#fff;background:var(--ember);border-radius:6px;padding:3px 8px;text-transform:uppercase}
   .controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-  input[type=date]{font:inherit;font-size:13px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-sm);padding:7px 10px;color:var(--ink)}
-  .btn{font:inherit;font-size:12.5px;font-weight:600;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:var(--r-sm);padding:8px 13px;cursor:pointer;box-shadow:var(--shadow)}
+  .seg{display:flex;background:var(--panel-2);border:1px solid var(--line);border-radius:var(--r-sm);padding:3px;gap:2px}
+  .seg button{font:inherit;font-size:12.5px;font-weight:600;color:var(--ink-2);background:none;border:0;padding:6px 11px;border-radius:6px;cursor:pointer;white-space:nowrap}
+  .seg button[aria-pressed="true"]{background:var(--panel);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+  input[type=date]{font:inherit;font-size:12.5px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-sm);padding:6px 9px;color:var(--ink)}
+  .btn{font:inherit;font-size:12.5px;font-weight:600;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:var(--r-sm);padding:7px 12px;cursor:pointer;box-shadow:var(--shadow);display:inline-flex;align-items:center;gap:7px}
   .btn:hover{border-color:var(--ember)}
   .btn.primary{background:var(--ember);color:#fff;border-color:var(--ember)}
-  .sources{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
-  .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;padding:6px 11px;border-radius:20px;border:1px solid var(--line);background:var(--panel)}
+  .btn svg{width:14px;height:14px}
+
+  .sources{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+  .badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;padding:5px 11px;border-radius:20px;border:1px solid var(--line);background:var(--panel)}
   .badge .d{width:8px;height:8px;border-radius:50%}
-  .badge.on .d{background:var(--good)} .badge.off .d{background:var(--ink-3)} .badge.err .d{background:var(--low)}
+  .badge.on .d{background:var(--good)} .badge.off .d{background:var(--ink-3)} .badge.err .d{background:var(--low)} .badge.demo .d{background:var(--ember)}
   .badge small{color:var(--ink-3);font-weight:500}
-  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
-  @media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}}
-  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-  .kpi .lab{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);margin-bottom:9px}
-  .kpi .val{font-size:26px;font-weight:800;letter-spacing:-.02em;line-height:1}
+
+  .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:18px}
+  @media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}}
+  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:15px 16px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .kpi .lab{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);margin-bottom:8px}
+  .kpi .val{font-size:25px;font-weight:800;letter-spacing:-.02em;line-height:1}
   .kpi .val small{font-size:14px;font-weight:700;color:var(--ink-2)}
   .kpi .note{font-size:11.5px;color:var(--ink-2);margin-top:6px}
-  .kpi.hero .val{color:var(--good)} .kpi.hero.neg .val{color:var(--low)}
   .kpi.hero::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--ember)}
-  .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:18px;margin-bottom:20px}
-  .panel h2{margin:0 0 14px;font-size:15px;font-weight:800}
-  .waterfall{display:flex;flex-direction:column;gap:10px}
-  .wf-row{display:grid;grid-template-columns:130px 1fr 110px;gap:12px;align-items:center;font-size:13px}
-  .wf-row .name{font-weight:600}
-  .wf-row .name small{display:block;color:var(--ink-3);font-weight:500;font-size:11px}
-  .wf-track{height:20px;background:var(--panel-2);border-radius:5px;overflow:hidden}
-  .wf-fill{height:100%;border-radius:5px}
-  .wf-amt{text-align:right;font-family:var(--mono);font-weight:600}
-  .wf-row.total{border-top:1px dashed var(--line);padding-top:10px;margin-top:2px}
-  .wf-row.total .wf-amt{font-size:15px}
-  footer{font-size:12px;color:var(--ink-2);line-height:1.6}
-  .loading{opacity:.5}
+  .kpi.hero .val{color:var(--good)} .kpi.hero.neg .val{color:var(--low)}
+
+  .grid{display:grid;grid-template-columns:minmax(300px,5fr) minmax(320px,7fr);gap:16px;margin-bottom:16px}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:18px;margin-bottom:0}
+  .panel h2{margin:0 0 6px;font-size:15px;font-weight:800;letter-spacing:-.01em}
+  .panel .hint{font-size:12px;color:var(--ink-2);margin:0 0 12px}
+
+  .donut-wrap{display:grid;place-items:center;position:relative;padding:8px 0 4px}
+  .donut-center{position:absolute;text-align:center;pointer-events:none}
+  .donut-center .lab{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+  .donut-center .amt{font-size:26px;font-weight:800;letter-spacing:-.02em;color:var(--good)}
+  .donut-center .amt.neg{color:var(--low)}
+  .donut-center .pct{font-size:12px;color:var(--ink-2)}
+  .donut svg{display:block}
+  .donut circle.segment{cursor:pointer;transition:opacity .12s}
+  .donut.dim circle.segment{opacity:.25}
+  .donut.dim circle.segment.hot{opacity:1}
+
+  .costlist{display:flex;flex-direction:column}
+  .cost-row{display:grid;grid-template-columns:14px minmax(120px,1fr) auto auto;gap:10px;align-items:center;padding:8px 4px;border-bottom:1px solid var(--line);font-size:13px;cursor:default}
+  .cost-row:last-child{border-bottom:0}
+  .cost-row .dot{width:10px;height:10px;border-radius:3px}
+  .cost-row .nm{font-weight:600}
+  .cost-row .nm small{display:block;font-weight:500;color:var(--ink-3);font-size:11px}
+  .cost-row .amt{font-family:var(--mono);font-weight:600;text-align:right}
+  .cost-row .pct{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);text-align:right;min-width:52px}
+  .cost-row.total{border-top:2px solid var(--line);margin-top:2px}
+  .cost-row.total .amt{font-size:14px}
+  .cost-row.profit .amt{color:var(--good)} .cost-row.profit.neg .amt{color:var(--low)}
+  .cost-row:hover{background:var(--panel-2);border-radius:6px}
+
+  .chart-card{margin-bottom:16px}
+  .chart-legend{display:flex;gap:16px;font-size:12px;color:var(--ink-2);margin-bottom:6px}
+  .chart-legend span{display:inline-flex;align-items:center;gap:6px}
+  .chart-legend i{width:10px;height:10px;border-radius:3px}
+  #chart{width:100%;height:auto;display:block}
+
+  /* settings drawer */
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .18s;z-index:40}
+  .drawer{position:fixed;top:0;right:0;bottom:0;width:min(430px,94vw);background:var(--panel);border-left:1px solid var(--line);box-shadow:-12px 0 40px rgba(0,0,0,.2);transform:translateX(102%);transition:transform .2s ease;z-index:41;display:flex;flex-direction:column}
+  body.drawer-open .scrim{opacity:1;pointer-events:auto}
+  body.drawer-open .drawer{transform:none}
+  .drawer header{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid var(--line)}
+  .drawer header h3{margin:0;font-size:15px;font-weight:800}
+  .drawer .body{padding:16px 18px;overflow:auto;flex:1}
+  .drawer .foot{padding:14px 18px;border-top:1px solid var(--line);display:flex;gap:8px;justify-content:flex-end}
+  .fgroup{margin-bottom:20px}
+  .fgroup>label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-3);margin-bottom:8px}
+  .frow{display:grid;grid-template-columns:1fr 110px 30px;gap:8px;margin-bottom:8px;align-items:center}
+  .frow input{font:inherit;font-size:13px;background:var(--panel-2);border:1px solid var(--line);border-radius:7px;padding:7px 10px;color:var(--ink);width:100%}
+  .frow .del{background:none;border:0;color:var(--ink-3);cursor:pointer;font-size:16px;padding:0}
+  .frow .del:hover{color:var(--low)}
+  .addbtn{font:inherit;font-size:12px;font-weight:600;color:var(--ember);background:none;border:1px dashed var(--line);border-radius:7px;padding:7px 12px;cursor:pointer;width:100%}
+  .payrow{display:flex;gap:10px;align-items:center;font-size:13px;flex-wrap:wrap}
+  .payrow input[type=number]{width:80px;font:inherit;font-size:13px;background:var(--panel-2);border:1px solid var(--line);border-radius:7px;padding:7px 10px;color:var(--ink)}
+  .checkline{display:flex;gap:8px;align-items:center;font-size:12.5px;color:var(--ink-2);margin-top:10px}
+
+  footer.note{font-size:12px;color:var(--ink-2);line-height:1.6}
   code{font-family:var(--mono);font-size:11.5px;background:var(--panel-2);padding:1px 5px;border-radius:4px}
+  .loading .kpi .val,.loading .cost-row .amt{opacity:.4}
 </style>
 </head>
 <body>
@@ -71,87 +142,334 @@
   <header class="top">
     <div class="brand">
       <div class="flame"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c1 3 4 4 4 8a4 4 0 0 1-8 0c0-1 .3-2 .8-2.6C9 8 9.5 9 10 9c-.2-2 1-4 2-7Z" fill="#fff"/><path d="M12 22a5 5 0 0 0 5-5c0-3-2.5-4.5-3-7-.4 3-2 3.2-2 5.5 0-1.2-.7-2-1.4-2.5C10 10 9 11.5 9 13.5A5 5 0 0 0 12 22Z" fill="#FFD9A0"/></svg></div>
-      <div><h1>Live P&amp;L</h1><p class="sub">Grillkliniken · intäkt − alla utgifter = nettovinst</p></div>
+      <div>
+        <h1>Live P&amp;L <span class="demo-badge" id="demoBadge" hidden>Demo-data</span></h1>
+        <p class="sub">Grillkliniken · intäkt − alla utgifter = nettovinst</p>
+      </div>
     </div>
     <div class="controls">
-      <input type="date" id="from"><span style="color:var(--ink-3)">–</span><input type="date" id="to">
+      <div class="seg" id="presetSeg" role="group" aria-label="Period">
+        <button data-p="today">Idag</button>
+        <button data-p="7d">7 dgr</button>
+        <button data-p="30d" aria-pressed="true">30 dgr</button>
+        <button data-p="month">Denna månad</button>
+      </div>
+      <input type="date" id="from" aria-label="Från">
+      <input type="date" id="to" aria-label="Till">
       <button class="btn primary" id="run">Uppdatera</button>
+      <button class="btn" id="settingsBtn" title="Kostnadsinställningar" aria-label="Kostnadsinställningar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="btn" id="themeBtn" title="Byt tema" aria-label="Byt tema">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6 19 19M19 5l-1.4 1.4M6.4 17.6 5 19"/></svg>
+      </button>
     </div>
   </header>
 
   <div class="sources" id="sources"></div>
   <div class="kpis" id="kpis"></div>
 
-  <section class="panel">
-    <h2>Vart pengarna tar vägen</h2>
-    <div class="waterfall" id="waterfall"></div>
+  <div class="grid">
+    <section class="panel">
+      <h2>Vart utgifterna går</h2>
+      <p class="hint" id="donutHint"></p>
+      <div class="donut-wrap">
+        <div class="donut" id="donut"></div>
+        <div class="donut-center" id="donutCenter"></div>
+      </div>
+    </section>
+    <section class="panel">
+      <h2>Alla kostnader</h2>
+      <p class="hint">Andel av intäkten per kategori. Ändra fasta kostnader via kugghjulet.</p>
+      <div class="costlist" id="costlist"></div>
+    </section>
+  </div>
+
+  <section class="panel chart-card">
+    <h2>Per dag</h2>
+    <div class="chart-legend">
+      <span><i style="background:var(--panel-2);border:1px solid var(--line)"></i>Intäkt</span>
+      <span><i style="background:var(--good)"></i>Vinst</span>
+      <span><i style="background:var(--low)"></i>Förlust</span>
+    </div>
+    <svg id="chart" viewBox="0 0 1000 260" preserveAspectRatio="none" role="img" aria-label="Intäkt och vinst per dag"></svg>
   </section>
 
-  <footer>
-    Intäkt hämtas från Shopify (ex. moms). <b>Utgifter</b> = sålda varors inpris (COGS) + Shopify-avgifter + Meta + Google Ads.
-    <b>MER</b> = intäkt ÷ annonskostnad. Källor som visar <em>ej kopplad</em> räknas som 0 tills nycklar läggs i <code>.env</code> – se <code>app/README.md</code>.
+  <footer class="note">
+    Intäkt hämtas från Shopify (Grillkliniken säljer utan moms). <b>Utgifter</b> = COGS (inpris per såld vara) + betalavgifter +
+    returer + Meta + Google Ads + Shopify-plan + appar/verktyg + emballage. Fasta månadskostnader prorateras per dag (belopp ÷ 30).
+    Källor märkta <em>demo</em> visar exempeldata tills nycklar läggs i <code>.env</code> — se <code>app/README.md</code>.
   </footer>
 </div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Kostnadsinställningar">
+  <header><h3>Kostnadsinställningar</h3><button class="btn" id="closeDrawer">Stäng</button></header>
+  <div class="body">
+    <div class="fgroup">
+      <label>Shopify-plan (kr/mån)</label>
+      <div class="frow" style="grid-template-columns:1fr"><input type="number" id="planInput" min="0" step="1"></div>
+    </div>
+    <div class="fgroup">
+      <label>Fasta kostnader (kr/mån)</label>
+      <div id="fixedRows"></div>
+      <button class="addbtn" id="addFixed">+ Lägg till fast kostnad</button>
+    </div>
+    <div class="fgroup">
+      <label>Kostnad per order (kr/order)</label>
+      <div id="perOrderRows"></div>
+      <button class="addbtn" id="addPerOrder">+ Lägg till per-order-kostnad</button>
+    </div>
+    <div class="fgroup">
+      <label>Betalavgifter (när API-avgifter saknas)</label>
+      <div class="payrow">
+        <input type="number" id="payPct" min="0" step="0.1"> % av intäkt +
+        <input type="number" id="payFixed" min="0" step="0.5"> kr/order
+      </div>
+      <label class="checkline"><input type="checkbox" id="useApiFees"> Använd riktiga avgifter från Shopify när de finns</label>
+    </div>
+  </div>
+  <div class="foot">
+    <button class="btn" id="cancelDrawer">Avbryt</button>
+    <button class="btn primary" id="saveDrawer">Spara & räkna om</button>
+  </div>
+</aside>
 
 <script>
 const kr = n => n==null ? "–" : Math.round(n).toLocaleString("sv-SE")+" kr";
 const pct = n => n==null ? "–" : n.toLocaleString("sv-SE",{maximumFractionDigits:1})+" %";
+const iso = d => d.toISOString().slice(0,10);
+const COLORS = {cogs:"var(--c-cogs)",meta:"var(--c-meta)",google:"var(--c-google)",fees:"var(--c-fees)",
+                refunds:"var(--c-refunds)",plan:"var(--c-plan)",tools:"var(--c-tools)",perorder:"var(--c-perorder)"};
 
+let state = { preset:"30d", from:null, to:null, settings:null };
+
+function presetRange(p){
+  const today = new Date();
+  if(p==="today") return {from:iso(today), to:iso(today)};
+  if(p==="7d")    return {from:iso(new Date(today.getTime()-6*864e5)), to:iso(today)};
+  if(p==="month") return {from:iso(new Date(Date.UTC(today.getUTCFullYear(),today.getUTCMonth(),1))), to:iso(today)};
+  return {from:iso(new Date(today.getTime()-29*864e5)), to:iso(today)};
+}
+
+/* ---------- källor ---------- */
 function badge(name, s){
   let cls="off", txt="ej kopplad";
-  if(s.error){cls="err";txt="fel";}
+  if(s.demo){cls="demo";txt="demo";}
+  else if(s.error){cls="err";txt="fel";}
   else if(s.available){cls="on";txt="live";}
-  const extra = s.error ? ` <small title="${(s.error||'').replace(/"/g,'')}">${s.error.slice(0,40)}</small>`
+  const extra = s.error ? ` <small>${String(s.error).slice(0,44)}</small>`
     : (s.unknownCogsItems ? ` <small>${s.unknownCogsItems} rader utan inpris</small>` : "");
   return `<span class="badge ${cls}"><span class="d"></span>${name}: ${txt}${extra}</span>`;
 }
 
-function render(d){
-  document.getElementById("sources").innerHTML =
-    badge("Shopify", d.sources.shopify) + badge("Meta", d.sources.meta) + badge("Google Ads", d.sources.google);
-
+/* ---------- KPI ---------- */
+function renderKpis(d){
   const neg = d.netProfit < 0;
-  const kpis = [
+  const ks = [
     {cls:"hero"+(neg?" neg":""), lab:"Nettovinst", val:kr(d.netProfit), note:`${d.period.from} – ${d.period.to}`},
     {lab:"Intäkt", val:kr(d.revenue), note:`${d.orders} ordrar · AOV ${kr(d.aov)}`},
-    {lab:"Nettomarginal", val:pct(d.netMarginPct), note:"av intäkt"},
-    {lab:"MER", val:d.mer==null?"–":d.mer.toLocaleString("sv-SE",{maximumFractionDigits:2})+"×", note:"intäkt ÷ annonskostnad"},
+    {lab:"Utgifter totalt", val:kr(d.totalCost), note:`${d.revenue?Math.round(d.totalCost/d.revenue*100):0} % av intäkt`},
+    {lab:"Nettomarginal", val:pct(d.netMarginPct), note:"vinst ÷ intäkt"},
+    {lab:"MER", val:d.mer==null?"–":d.mer.toLocaleString("sv-SE",{maximumFractionDigits:2})+"×", note:`annonser ${kr(d.adSpend)}`},
   ];
-  document.getElementById("kpis").innerHTML = kpis.map(k=>`
-    <div class="kpi ${k.cls||''}"><div class="lab">${k.lab}</div>
+  document.getElementById("kpis").innerHTML = ks.map(k=>`
+    <div class="kpi ${k.cls||""}"><div class="lab">${k.lab}</div>
       <div class="val tnum">${k.val}</div><div class="note">${k.note}</div></div>`).join("");
-
-  const c=d.costs;
-  const items=[
-    {n:"Intäkt", s:"Shopify", v:d.revenue, col:"var(--good)"},
-    {n:"Inpris (COGS)", s:"sålda varor", v:-c.cogs, col:"var(--cogs)"},
-    {n:"Shopify-avgifter", s:"betal/transaktion", v:-c.fees, col:"var(--fees)"},
-    {n:"Meta Ads", s:"annonskostnad", v:-c.meta, col:"var(--meta)"},
-    {n:"Google Ads", s:"annonskostnad", v:-c.google, col:"var(--google)"},
-    {n:"Nettovinst", s:"kvar", v:d.netProfit, col:d.netProfit<0?"var(--low)":"var(--good)", total:true},
-  ];
-  const max=Math.max(d.revenue, 1);
-  document.getElementById("waterfall").innerHTML = items.map(it=>`
-    <div class="wf-row ${it.total?'total':''}">
-      <div class="name">${it.n}<small>${it.s}</small></div>
-      <div class="wf-track"><div class="wf-fill" style="width:${Math.min(100,Math.abs(it.v)/max*100)}%;background:${it.col}"></div></div>
-      <div class="wf-amt" style="color:${it.v<0?'var(--ink-2)':it.col}">${it.v<0?'−':''}${kr(Math.abs(it.v))}</div>
-    </div>`).join("");
 }
 
+/* ---------- donut ---------- */
+function renderDonut(d){
+  const segs = d.breakdown.filter(x=>x.amount>0);
+  const total = segs.reduce((a,x)=>a+x.amount,0);
+  const R=86, C=2*Math.PI*R, gap = segs.length>1 ? C*0.008 : 0;
+  let offset = -C/4; // start kl 12
+  const circles = segs.map(x=>{
+    const len = Math.max(0, C*(x.amount/total) - gap);
+    const el = `<circle class="segment" data-key="${x.key}" r="${R}" cx="110" cy="110" fill="none"
+      stroke="${COLORS[x.key]||'var(--ink-3)'}" stroke-width="30"
+      stroke-dasharray="${len} ${C-len}" stroke-dashoffset="${-offset}">
+      <title>${x.label}: ${kr(x.amount)} (${total?Math.round(x.amount/total*100):0} % av utgifterna)</title></circle>`;
+    offset += C*(x.amount/total);
+    return el;
+  }).join("");
+  document.getElementById("donut").innerHTML =
+    `<svg width="220" height="220" viewBox="0 0 220 220">${circles}</svg>`;
+  const neg = d.netProfit<0;
+  document.getElementById("donutCenter").innerHTML =
+    `<div class="lab">Nettovinst</div>
+     <div class="amt tnum ${neg?'neg':''}">${kr(d.netProfit)}</div>
+     <div class="pct tnum">${pct(d.netMarginPct)} marginal</div>`;
+  document.getElementById("donutHint").textContent =
+    `Utgifter ${kr(d.totalCost)} av intäkt ${kr(d.revenue)}.`;
+
+  // hover-koppling donut ↔ lista
+  const donut = document.getElementById("donut");
+  donut.querySelectorAll("circle.segment").forEach(c=>{
+    c.addEventListener("mouseenter",()=>highlight(c.dataset.key,true));
+    c.addEventListener("mouseleave",()=>highlight(null,false));
+  });
+}
+function highlight(key,on){
+  const donut = document.getElementById("donut");
+  donut.classList.toggle("dim",on);
+  donut.querySelectorAll("circle.segment").forEach(c=>c.classList.toggle("hot",on&&c.dataset.key===key));
+  document.querySelectorAll(".cost-row[data-key]").forEach(r=>{
+    r.style.background = on && r.dataset.key===key ? "var(--panel-2)" : "";
+  });
+}
+
+/* ---------- kostnadslista ---------- */
+function renderCostList(d){
+  const rev = d.revenue||0;
+  const rows = d.breakdown.map(x=>{
+    const sub = x.items && x.items.length ? x.items.filter(i=>i.amount>0).map(i=>i.name).join(" · ") : (x.estimated?"uppskattad":"");
+    return `<div class="cost-row" data-key="${x.key}">
+      <span class="dot" style="background:${COLORS[x.key]}"></span>
+      <span class="nm">${x.label}${sub?`<small>${sub}</small>`:""}</span>
+      <span class="amt tnum">−${kr(x.amount)}</span>
+      <span class="pct tnum">${rev?Math.round(x.amount/rev*100):0} %</span>
+    </div>`;
+  }).join("");
+  const neg = d.netProfit<0;
+  document.getElementById("costlist").innerHTML =
+    `<div class="cost-row"><span class="dot" style="background:var(--ink-3)"></span>
+       <span class="nm">Intäkt</span><span class="amt tnum">${kr(d.revenue)}</span><span class="pct tnum">100 %</span></div>`
+    + rows +
+    `<div class="cost-row total profit ${neg?'neg':''}"><span class="dot" style="background:${neg?'var(--low)':'var(--good)'}"></span>
+       <span class="nm">Nettovinst</span><span class="amt tnum">${neg?'−':''}${kr(Math.abs(d.netProfit))}</span>
+       <span class="pct tnum">${rev?Math.round(d.netProfit/rev*100):0} %</span></div>`;
+  document.querySelectorAll(".cost-row[data-key]").forEach(r=>{
+    r.addEventListener("mouseenter",()=>highlight(r.dataset.key,true));
+    r.addEventListener("mouseleave",()=>highlight(null,false));
+  });
+}
+
+/* ---------- daglig graf ---------- */
+function renderChart(d){
+  const svg = document.getElementById("chart");
+  const days = d.daily;
+  if(!days.length){ svg.innerHTML=""; return; }
+  const W=1000,H=260,padL=8,padR=8,padT=12,padB=26;
+  const iw=W-padL-padR, ih=H-padT-padB;
+  const maxRev = Math.max(...days.map(x=>x.revenue), 1);
+  const minProfit = Math.min(0, ...days.map(x=>x.profit));
+  const maxVal = Math.max(maxRev, 1);
+  const y = v => padT + ih*(1 - (v - minProfit)/(maxVal - minProfit));
+  const bw = iw/days.length;
+  let bars="", line="", dots="";
+  days.forEach((x,i)=>{
+    const cx = padL + bw*i;
+    const barW = Math.max(2, bw*0.62);
+    bars += `<rect x="${(cx+bw/2-barW/2).toFixed(1)}" y="${y(x.revenue).toFixed(1)}" width="${barW.toFixed(1)}"
+      height="${Math.max(0,(y(0)-y(x.revenue))).toFixed(1)}" fill="var(--panel-2)" stroke="var(--line)" stroke-width="1">
+      <title>${x.date}\nIntäkt ${kr(x.revenue)}\nVinst ${kr(x.profit)}\n${x.orders} ordrar</title></rect>`;
+    const px = (cx+bw/2).toFixed(1), py = y(x.profit).toFixed(1);
+    line += (i?"L":"M")+px+","+py;
+    dots += `<circle cx="${px}" cy="${py}" r="3" fill="${x.profit<0?'var(--low)':'var(--good)'}"><title>${x.date}: vinst ${kr(x.profit)}</title></circle>`;
+  });
+  // x-etiketter (max ~8 st)
+  const step = Math.max(1, Math.ceil(days.length/8));
+  let labels="";
+  days.forEach((x,i)=>{
+    if(i%step) return;
+    labels += `<text x="${(padL+bw*i+bw/2).toFixed(1)}" y="${H-8}" font-size="11" fill="var(--ink-3)" text-anchor="middle" style="font-variant-numeric:tabular-nums">${x.date.slice(5)}</text>`;
+  });
+  const zero = `<line x1="${padL}" x2="${W-padR}" y1="${y(0).toFixed(1)}" y2="${y(0).toFixed(1)}" stroke="var(--line)" stroke-width="1"/>`;
+  svg.innerHTML = bars + zero + `<path d="${line}" fill="none" stroke="var(--good)" stroke-width="2.5" stroke-linejoin="round"/>` + dots + labels;
+}
+
+/* ---------- settings-drawer ---------- */
+function rowTemplate(item, listId){
+  const div=document.createElement("div"); div.className="frow";
+  div.innerHTML=`<input type="text" value="${(item.name||"").replace(/"/g,"&quot;")}" placeholder="Namn">
+    <input type="number" min="0" step="1" value="${item.amount||0}">
+    <button class="del" title="Ta bort">×</button>`;
+  div.querySelector(".del").addEventListener("click",()=>div.remove());
+  document.getElementById(listId).appendChild(div);
+}
+function openDrawer(){
+  const s = state.settings; if(!s) return;
+  document.getElementById("planInput").value = s.shopifyPlanMonthly;
+  document.getElementById("fixedRows").innerHTML="";
+  document.getElementById("perOrderRows").innerHTML="";
+  s.fixedMonthly.forEach(x=>rowTemplate(x,"fixedRows"));
+  s.perOrder.forEach(x=>rowTemplate(x,"perOrderRows"));
+  document.getElementById("payPct").value = s.payment.pct;
+  document.getElementById("payFixed").value = s.payment.fixedPerOrder;
+  document.getElementById("useApiFees").checked = s.payment.useApiFeesIfAvailable;
+  document.body.classList.add("drawer-open");
+}
+function collectRows(listId){
+  return [...document.getElementById(listId).querySelectorAll(".frow")].map(r=>{
+    const [nm,amt]=r.querySelectorAll("input");
+    return {name:nm.value.trim()||"Övrigt", amount:Number(amt.value)||0};
+  });
+}
+async function saveDrawer(){
+  const body = {
+    shopifyPlanMonthly: Number(document.getElementById("planInput").value)||0,
+    fixedMonthly: collectRows("fixedRows"),
+    perOrder: collectRows("perOrderRows"),
+    payment: {
+      pct: Number(document.getElementById("payPct").value)||0,
+      fixedPerOrder: Number(document.getElementById("payFixed").value)||0,
+      useApiFeesIfAvailable: document.getElementById("useApiFees").checked,
+    },
+  };
+  const res = await fetch("/api/settings",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+  state.settings = await res.json();
+  document.body.classList.remove("drawer-open");
+  load();
+}
+
+/* ---------- ladda & rendera ---------- */
 async function load(){
-  const f=document.getElementById("from").value, t=document.getElementById("to").value;
   document.body.classList.add("loading");
-  const r=await fetch(`/api/pnl?from=${f}&to=${t}`);
-  render(await r.json());
+  const r = await fetch(`/api/pnl?from=${state.from}&to=${state.to}`);
+  const d = await r.json();
+  state.settings = d.settings;
+  document.getElementById("demoBadge").hidden = !d.demo;
+  document.getElementById("sources").innerHTML =
+    badge("Shopify", d.sources.shopify)+badge("Meta", d.sources.meta)+badge("Google Ads", d.sources.google);
+  renderKpis(d); renderDonut(d); renderCostList(d); renderChart(d);
   document.body.classList.remove("loading");
 }
-// default: senaste 30 dagar
-const today=new Date(), ago=new Date(today.getTime()-29*864e5);
-const iso=d=>d.toISOString().slice(0,10);
-document.getElementById("to").value=iso(today);
-document.getElementById("from").value=iso(ago);
-document.getElementById("run").addEventListener("click",load);
+
+/* ---------- events ---------- */
+document.getElementById("presetSeg").addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b) return;
+  state.preset=b.dataset.p;
+  [...e.currentTarget.children].forEach(x=>x.setAttribute("aria-pressed",x===b));
+  const r=presetRange(state.preset);
+  state.from=r.from; state.to=r.to;
+  document.getElementById("from").value=r.from;
+  document.getElementById("to").value=r.to;
+  load();
+});
+document.getElementById("run").addEventListener("click",()=>{
+  state.from=document.getElementById("from").value;
+  state.to=document.getElementById("to").value;
+  [...document.getElementById("presetSeg").children].forEach(x=>x.setAttribute("aria-pressed","false"));
+  load();
+});
+document.getElementById("settingsBtn").addEventListener("click",openDrawer);
+document.getElementById("closeDrawer").addEventListener("click",()=>document.body.classList.remove("drawer-open"));
+document.getElementById("cancelDrawer").addEventListener("click",()=>document.body.classList.remove("drawer-open"));
+document.getElementById("scrim").addEventListener("click",()=>document.body.classList.remove("drawer-open"));
+document.getElementById("saveDrawer").addEventListener("click",saveDrawer);
+document.getElementById("addFixed").addEventListener("click",()=>rowTemplate({name:"",amount:0},"fixedRows"));
+document.getElementById("addPerOrder").addEventListener("click",()=>rowTemplate({name:"",amount:0},"perOrderRows"));
+document.getElementById("themeBtn").addEventListener("click",()=>{
+  const cur=document.documentElement.getAttribute("data-theme");
+  const isDark = cur ? cur==="dark" : matchMedia("(prefers-color-scheme:dark)").matches;
+  document.documentElement.setAttribute("data-theme", isDark?"light":"dark");
+});
+
+const r0 = presetRange("30d");
+state.from=r0.from; state.to=r0.to;
+document.getElementById("from").value=r0.from;
+document.getElementById("to").value=r0.to;
 load();
 </script>
 </body>

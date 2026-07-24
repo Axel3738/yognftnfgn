@@ -1,0 +1,32 @@
+{
+  "shopifyPlanMonthly": 349,
+  "fixedMonthly": [
+    {
+      "name": "Shopify-appar",
+      "amount": 250
+    },
+    {
+      "name": "Verktyg & software (Klaviyo m.m.)",
+      "amount": 0
+    },
+    {
+      "name": "Domän & e-post",
+      "amount": 30
+    },
+    {
+      "name": "Bokföring / redovisning",
+      "amount": 0
+    }
+  ],
+  "perOrder": [
+    {
+      "name": "Emballage & pack",
+      "amount": 0
+    }
+  ],
+  "payment": {
+    "pct": 2.9,
+    "fixedPerOrder": 3,
+    "useApiFeesIfAvailable": true
+  }
+}

@@ -19,17 +19,16 @@ async function getAccessToken() {
 }
 
 /**
- * Hämtar Google Ads-kostnad för perioden via GAQL search.
- * Kostnad rapporteras i "micros" (1 000 000 = 1 SEK).
- * Returnerar {available, spend, error?}.
+ * Hämtar Google Ads-kostnad per dag via GAQL (cost_micros; 1e6 = 1 SEK).
+ * Returnerar {available, spend, daily, error?} där daily = { 'YYYY-MM-DD': spend }.
  */
 export async function getGoogleAds(from, to) {
-  const base = { available: false, spend: 0 };
+  const base = { available: false, spend: 0, daily: {} };
   if (!config.google.enabled) return { ...base, reason: 'ej kopplad' };
 
   try {
     const accessToken = await getAccessToken();
-    const gaql = `SELECT metrics.cost_micros FROM customer WHERE segments.date BETWEEN '${from}' AND '${to}'`;
+    const gaql = `SELECT segments.date, metrics.cost_micros FROM customer WHERE segments.date BETWEEN '${from}' AND '${to}'`;
     const headers = {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${accessToken}`,
@@ -42,9 +41,15 @@ export async function getGoogleAds(from, to) {
     const json = await res.json();
     if (json.error) throw new Error(json.error.message || 'Google Ads-fel');
 
-    let micros = 0;
-    for (const row of json.results || []) micros += Number(row.metrics?.costMicros || 0);
-    return { available: true, spend: micros / 1e6 };
+    const daily = {};
+    let spend = 0;
+    for (const row of json.results || []) {
+      const d = row.segments?.date;
+      const s = Number(row.metrics?.costMicros || 0) / 1e6;
+      if (d) daily[d] = (daily[d] || 0) + s;
+      spend += s;
+    }
+    return { available: true, spend, daily };
   } catch (err) {
     return { ...base, error: String(err.message || err) };
   }

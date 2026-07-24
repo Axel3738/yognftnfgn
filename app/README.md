@@ -1,18 +1,29 @@
 # Grillkliniken · Live P&L
 
-En liten hostad app som slår ihop **ALLA utgifter** till en riktig nettovinst:
+En hostad app i Juicy-stil (donutdiagram + kostnadslista + daglig graf) som slår
+ihop **ALLA utgifter** till en riktig nettovinst:
 
 ```
 Intäkt (Shopify)
- − Inpris / COGS (sålda varor, från kostnads-dashboarden)
- − Shopify-avgifter (betal/transaktion)
- − Meta Ads (annonskostnad)
- − Google Ads (annonskostnad)
+ − COGS (inpris per såld vara, från kostnads-dashboarden)
+ − Betalavgifter (riktiga från Shopify, annars % + kr/order)
+ − Returer & refunds
+ − Meta Ads (per dag)
+ − Google Ads (per dag)
+ − Shopify-plan (prorateras per dag)
+ − Appar & verktyg m.fl. fasta kostnader (redigerbara i UI:t)
+ − Emballage & pack (kr/order, redigerbart)
  = Nettovinst  ·  Nettomarginal  ·  MER
 ```
 
-Appen startar **även utan nycklar** – varje källa som saknar credentials körs i
-`ej kopplad`-läge (0 kr) och flaggas i gränssnittet. Fyll på källorna en i taget.
+UI: nettovinst i mitten av donuten, kostnadslista med andel av intäkt,
+intäkt/vinst per dag, periodval (idag / 7 dgr / 30 dgr / månad / eget spann)
+och en inställningspanel (kugghjulet) där fasta kostnader och betalavgifts-
+regler redigeras och sparas till `data/costs.json`.
+
+Appen startar **även utan nycklar** – då visas deterministisk **demo-data**
+(märkt "Demo-data") så dashboarden aldrig är tom. `?demo=0` tvingar live,
+`?demo=1` tvingar demo. Fyll på källorna en i taget.
 
 ## Kör lokalt
 
@@ -27,8 +38,9 @@ npm start                 # → http://localhost:3000
 
 | Route | Vad |
 |-------|-----|
-| `GET /` | Dashboarden (period-väljare, KPI:er, "vart pengarna tar vägen") |
-| `GET /api/pnl?from=YYYY-MM-DD&to=YYYY-MM-DD` | P&L som JSON (default senaste 30 dagarna) |
+| `GET /` | Dashboarden (donut, kostnadslista, daglig graf, KPI:er) |
+| `GET /api/pnl?from=YYYY-MM-DD&to=YYYY-MM-DD&demo=auto|0|1` | P&L som JSON, inkl. breakdown + daglig serie |
+| `GET/POST /api/settings` | Kostnadsinställningar (fasta kostnader, per order, betalavgift) |
 | `GET /api/products` | Produktinpriser (samma data som kostnads-dashboarden) |
 | `GET /api/health` | Vilka källor som är kopplade |
 
