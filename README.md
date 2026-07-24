@@ -28,20 +28,29 @@ att datan går att skära, och sedan iterera på det som faktiskt funkar.
 | `docs/ad-tracker.md` | **Live-dokumentet** — varje annons, hypotes, vem som tror på den, resultat, lärdom |
 | `docs/winning-lines.md` | **Punchline-banken** — analys av dina top spenders + vinnande lines för statics |
 | `docs/bof-concepts.md` | BOF-research (konkurrentanalys) + de första annonskoncepten för Mastern |
+| `docs/sushi-strumpor-concepts.md` | Sushi strumpor — research + första koncepten för Matstrumpor.se |
 | `docs/playbook.md` | Spelboken — vinnande angles/format/hooks som vi bevisat över tid |
 
 ## Aktivt setup
 
+**Spår 1 — Grillkliniken**
 - **Brand:** Grillkliniken (grillkliniken.se) · brand-kod `GRILL`
-- **Produkt vi kör ads för:** **Mastern** — elektrisk grillborste, 999 kr (enda produkten just nu)
+- **Produkt:** **Mastern** — elektrisk grillborste, 999 kr
 - **Ad account:** SnarkLös (`1346450049878358`, SEK) — kontonamnet ≠ brandnamnet
 - **Funnel-fokus:** BOF (bottom of funnel)
 
+**Spår 2 — Sushi strumpor (nytt 2026-07-24)**
+- **Brand:** Matstrumpor.se · brand-kod `MATSTRUMP` · produkt-kod `sushi`
+- **Ad account:** förslag **"Sushi kanske?"** (`1550615276530638`, SEK) — ⚠️ saknar betalmetod.
+  Gamla kontot "nya kungen" (`730973156224390`) är UNSETTLED.
+- **Funnel-fokus:** TOF — impuls-/presentprodukt
+
 Övriga tillgängliga konton (ej i bruk): MagiBorsten `1867947880635861`,
-Matstrumpor.se `730973156224390` (⚠️ UNSETTLED).
+NYC Grill `1023341917138110` (USD).
 
 ## Status
 
-🟢 Ramverk + BOF-research klar. 7 koncept loggade i trackern (idéstadie).
-⏭️ Nästa: din "tro" på koncepten + Higgsfield-koppling → bygg första vågen (A + B).
+🟢 Ramverk + BOF-research klar. 7 GRILL-koncept + 6 MATSTRUMP-koncept loggade i trackern.
+⏭️ Nästa GRILL: din "tro" på koncepten → bygg första vågen (A + B).
+⏭️ Nästa MATSTRUMP: betalmetod på "Sushi kanske?" + svar på öppna frågor i `sushi-strumpor-concepts.md`.
 📥 Parallellt: du skickar egna annonser → vi döper + bedömer dem i trackern.
