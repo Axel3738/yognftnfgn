@@ -2,3 +2,10 @@ node_modules/
 pipeline/output/
 *.log
 .env
+
+# whop-downloader — aldrig committa session, manifest eller nedladdat material
+whop-downloader/whop_state.json
+whop-downloader/manifest.json
+whop-downloader/output/
+whop-downloader/.venv/
+__pycache__/
