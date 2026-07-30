@@ -27,3 +27,13 @@ Dan/Täby (grillen rostade sönder = investeringsbeviset i verkligheten)
 (doc id 1pt5n64h1KwqC8CrAC036O-PnkgbnqPGPbLRh8E048XA):
 235 H5–H7 hook swaps · 236 COMMENT · 237 MISTAKES · 238 QUOTES (5 statics, vilande
 tillstånd) · 239 ASMR · 240 GIFT. Prioritetsordning: 4 → 1 → 2 → 5 → 3 → 6.
+
+## UPPDATERING samma dag: 245–250 ersätter som prio
+Axel ville nya FORMAT på samma vinkel (235:s vinkel = grillen dör i förtid,
+desire = skydda det du äger). Nytt prio-dokument i Drive:
+"EDITOR TASKS — 245–250" (doc id 1WDNe_wMzgvWaC0lBEgpAsM55mj5OUlkubGe8AqBFZ_c):
+245 Obduktionen (reality-demo) · 246 Kvittot (static) · 247 Fem anledningar
+(listicle = LP-trailern) · 248 Två framtider (split static) · 249 Kommentaren om
+priset (comment-reply) · 250 Investerings-VSL (VILANDE — script efter resan).
+Ordning: 246, 248 → 249, 247, 245. Gamla task-dokumentet = backlog.
+241–244 reserverade av Axel.
