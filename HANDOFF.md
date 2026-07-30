@@ -56,3 +56,33 @@ Total batch 2: 27 videos × 2 sides = **54 ads**.
 Re-run those hooks once the videos finish processing.
 
 Note: the sheet's "114" row maps to the URL `/pages/113` — used as given.
+
+---
+
+# Batch 3 — Master campaign ("Mastern")
+
+Same account/page/pixel. Loaded into the **master campaign** `120242897371730074`
+("Mastern", CBO, OFFSITE_CONVERSIONS, SE 18–65, pixel `776922878287560`).
+10 concepts, each tested **base + listicle** → 20 new ad sets, **68 ads**, all PAUSED.
+Naming `<concept> BASE` / `<concept> LISTICLE`, hooks `<prefix> H<n>`.
+
+| Concept | Listicle | LISTICLE URL | BASE adset | LIST adset |
+|--------|----------|--------------|-----------|-----------|
+| 234 | 110 | /pages/110 | 120248436130740074 | 120248436135540074 |
+| 239 | 30-dagars (Erik) | /pages/vi-testade-i-30-dagar | 120248436142770074 | 120248436146670074 |
+| 241 | 149 | /pages/149 | 120248436149490074 | 120248436152700074 |
+| 242 | review | /pages/landing-page-blank-jul-5-10-55-52 | 120248436154880074 | 120248436157180074 |
+| 243 | 110 | /pages/110 | 120248436162640074 | 120248436166210074 |
+| 244 | 149 | /pages/149 | 120248436169390074 | 120248436174190074 |
+| S1 | 110 | /pages/110 | 120248436176550074 | 120248436180820074 |
+| S3 | 110 | /pages/110 | 120248436183260074 | 120248436184950074 |
+| s4 | 112 | /pages/112 | 120248436188710074 | 120248436191440074 |
+| s7 | 149 | /pages/149 | 120248436195090074 | 120248436198780074 |
+
+Every creative carries a video thumbnail (`image_url`), Standard Enhancements OPT_OUT,
+CTA = SHOP_NOW. All 68 ads PAUSED — ready to review and launch.
+
+## Still outstanding (from batch 2)
+- **235**: hooks H1 and H4 never built — videos still not in the ad-account library.
+- **240**: V2 HOOK 1 never built — video still not in the library.
+Re-run those three once they finish processing in Meta.
