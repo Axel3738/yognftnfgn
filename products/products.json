@@ -1,0 +1,20 @@
+{
+  "comment": "Per-produkt-konfig för brief-kvoten. Uppdatera daily_budget_sek när budgeten ändras (P5-prompten gör det åt dig). target_cpa_sek sätts av ägaren, inte av Claude.",
+  "products": [
+    {
+      "id": "mastern",
+      "name": "Mastern (Grillkliniken)",
+      "brand": "Grillkliniken",
+      "ad_account_id": "1346450049878358",
+      "campaign_ids": [
+        "120242897371730074",
+        "120248579155540074"
+      ],
+      "daily_budget_sek": 18000,
+      "target_cpa_sek": 500,
+      "cycle_start": "2026-08-04",
+      "status": "aktiv",
+      "launches": []
+    }
+  ]
+}

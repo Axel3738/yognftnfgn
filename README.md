@@ -1,3 +1,9 @@
+# Bäverbutiken – Creative OS
+
+> **Ny här? Börja i [`docs/os/ACTIONPLAN.md`](docs/os/ACTIONPLAN.md)** — planen,
+> SOP:erna (`docs/os/`) och prompterna managern klistrar in (`prompts/`).
+> Brief-kvoten (mål nr 1): `node pipeline/quota.mjs`.
+
 # Image Ad Pipeline
 
 Ett system för att bygga bildannonser (Meta/Facebook/Instagram), namnge dem smart så
