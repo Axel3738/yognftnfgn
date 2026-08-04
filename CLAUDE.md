@@ -36,15 +36,22 @@ från `prompts/`-mappen. Ditt jobb är att följa dem exakt.
 | SOP: UGC-pipeline och deadlines | `docs/os/SOP-03-ugc-pipeline.md` |
 | SOP: daglig check-in / grönmarkering | `docs/os/SOP-04-daily-checkin.md` |
 | SOP: när Claude inte lyssnar | `docs/os/SOP-05-nar-claude-inte-lyssnar.md` |
+| SOP: produkttest-pipeline (Bäverbutiken) | `docs/os/SOP-06-produkttest.md` |
 | Prompter managern klistrar in | `prompts/` |
 | Produkt-konfig + launch-logg | `products/products.json` |
 | Kvot-skriptet | `pipeline/quota.mjs` |
 | Ad-tracker, playbook, naming | `docs/` |
 
-## Aktivt setup
+## Aktivt setup — TVÅ separata verksamheter, blanda aldrig ihop dem
 
-- **Butik:** Bäverbutiken (general store, Shopify). Aktivt brand just nu:
-  Grillkliniken (grillkliniken.se), produkt **Mastern** (999 kr).
-- **Ad account:** SnarkLös `1346450049878358` (SEK).
+| | **Bäverbutiken** | **Grillkliniken** |
+|---|---|---|
+| Vad | General store (bäverbutiken.se), många testprodukter | Eget brand (grillkliniken.se), produkt **Mastern** (999 kr) |
+| Ad account | **MagiBorsten** `1867947880635861` (SEK) | **SnarkLös** `1346450049878358` (SEK) |
+| Flöde | Produkttest enligt SOP-06 → vinnare in i batch-loopen | Batch-loopen (SOP-01) direkt |
+
+Aktiva produkter och deras kampanjer står alltid i `products/products.json` —
+lita på den, inte på minnet. Kör aldrig en produkts analys i fel ad account.
+
 - **Team:** filippinska videoredigerare + VA (engelska), en UGC-outreach-ansvarig,
   managern kör Claude-sessionerna.

@@ -6,13 +6,34 @@ Axels enda kvarvarande beslut: target-CPA, budgetändringar, kill/skala och peng
 
 ## Läget just nu (verklig data 2026-08-04)
 
-- Mastern: 15 000 kr/dag (+ "Anders Johansson" 3 000 kr/dag) = 18 000 kr/dag aktiv budget
+**Två verksamheter i systemet** (rättat 4/8 — Mastern hör till Grillkliniken/SnarkLös,
+Bäverbutiken.se ligger i MagiBorsten `1867947880635861`):
+
+*Grillkliniken (SnarkLös):*
+- Mastern: 15 000 kr/dag (+ "Anders Johansson" 3 000 kr/dag) = 18 000 kr/dag
 - Senaste 7 dagarna: 112 640 kr spend · 217 köp · CPA 519 kr · ROAS 1,94
-- **Kvoten med target-CPA 500 kr: 22 creatives per 3-dagarscykel (~7/dag)** — det är
-  ambitiöst och kräver att kapaciteten (redigerare + UGC-råmaterial) räknas hem, se SOP-02.
-- ⚠️ `target_cpa_sek: 500` i `products/products.json` är min placeholder utifrån
-  nuvarande CPA. **Axel: sätt riktig target-CPA (baserat på COGS/break-even) — det
-  är ratten som styr hela kvoten.**
+- Kvot med target-CPA 500: **22 creatives per 3-dagarscykel (~7/dag)**
+
+*Bäverbutiken (MagiBorsten), aktiva tester senaste 7 dagarna:*
+
+| Produkt | Budget/dag | Köp | CPA | ROAS | Kommentar |
+|---------|-----------|-----|-----|------|-----------|
+| Motorhöljet | 6 000 kr | 98 | 140 kr | 2,77 | Stark vinnare — skalningskandidat |
+| Axelbältet | 2 000 kr | 47 | 324 kr | 1,74 | Volym finns, ROAS tunn |
+| Sätesöverdragaren | 1 500 kr | 32 | 299 kr | 2,33 | Bra |
+| Strandtofflorna | 1 000 kr | 40 | 170 kr | 2,53 | Bra |
+| AI Smarta Glasögon | 1 000 kr | 2 | 1 208 kr | 1,55 | Svag — kill-kandidat om trend står sig |
+| Väggfästet | 500 kr | 9 | 329 kr | 2,08 | OK för testbudget |
+
+- ⚠️ **Alla `target_cpa_sek` i `products/products.json` är mina placeholders**
+  (avrundade från nuvarande CPA). **Axel: sätt riktiga target-CPA per produkt
+  (COGS/break-even) — det är ratten som styr hela kvoten.** Notera att formeln
+  ger HÖG kvot för produkter med låg CPA (Motorhöljet: 20 % × 6 000 / 150 × 3 =
+  24 creatives/cykel) — det är rimligt (vinnare förtjänar mest kreativt bränsle)
+  men kräver kapacitetsbeslut.
+- Bäverbutikens produkttest-flöde är nu SOP-06 + prompten P7 (textversion av
+  "Product testing document"-PDF:en). Delar av processen är fast i Loom-videor —
+  luckorna listas i SOP-06 och bör transkriberas vecka 1.
 
 ## Veckoplan
 

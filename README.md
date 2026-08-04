@@ -43,8 +43,10 @@ att datan går att skära, och sedan iterera på det som faktiskt funkar.
 - **Ad account:** SnarkLös (`1346450049878358`, SEK) — kontonamnet ≠ brandnamnet
 - **Funnel-fokus:** BOF (bottom of funnel)
 
-Övriga tillgängliga konton (ej i bruk): MagiBorsten `1867947880635861`,
-Matstrumpor.se `730973156224390` (⚠️ UNSETTLED).
+**Bäverbutiken.se** (general store) kör i **MagiBorsten** `1867947880635861` —
+produkttester enligt `docs/os/SOP-06-produkttest.md`, aktiva produkter i
+`products/products.json`. Övrigt konto (ej i bruk): Matstrumpor.se
+`730973156224390` (⚠️ UNSETTLED).
 
 ## Status
 

@@ -1,17 +1,86 @@
 {
-  "comment": "Per-produkt-konfig för brief-kvoten. Uppdatera daily_budget_sek när budgeten ändras (P5-prompten gör det åt dig). target_cpa_sek sätts av ägaren, inte av Claude.",
+  "comment": "Per-produkt-konfig för brief-kvoten. Uppdatera daily_budget_sek när budgeten ändras (P4/P5-prompterna gör det åt dig). target_cpa_sek sätts av ägaren, inte av Claude. OBS: Bäverbutiken.se = ad account MagiBorsten 1867947880635861. Grillkliniken/Mastern = SnarkLös 1346450049878358 (separat brand).",
   "products": [
     {
       "id": "mastern",
       "name": "Mastern (Grillkliniken)",
       "brand": "Grillkliniken",
       "ad_account_id": "1346450049878358",
-      "campaign_ids": [
-        "120242897371730074",
-        "120248579155540074"
-      ],
+      "campaign_ids": ["120242897371730074", "120248579155540074"],
       "daily_budget_sek": 18000,
       "target_cpa_sek": 500,
+      "cycle_start": "2026-08-04",
+      "status": "aktiv",
+      "launches": []
+    },
+    {
+      "id": "motorholjet",
+      "name": "Motorhöljet (Bäverbutiken)",
+      "brand": "Bäverbutiken",
+      "ad_account_id": "1867947880635861",
+      "campaign_ids": ["120249435814310291"],
+      "daily_budget_sek": 6000,
+      "target_cpa_sek": 150,
+      "cycle_start": "2026-08-04",
+      "status": "aktiv",
+      "launches": []
+    },
+    {
+      "id": "ai-glasogon",
+      "name": "AI Smarta Glasögon (Bäverbutiken)",
+      "brand": "Bäverbutiken",
+      "ad_account_id": "1867947880635861",
+      "campaign_ids": ["120249435303040291"],
+      "daily_budget_sek": 1000,
+      "target_cpa_sek": 1200,
+      "cycle_start": "2026-08-04",
+      "status": "aktiv",
+      "launches": []
+    },
+    {
+      "id": "vaggfastet",
+      "name": "Väggfästet (Bäverbutiken)",
+      "brand": "Bäverbutiken",
+      "ad_account_id": "1867947880635861",
+      "campaign_ids": ["120249427546700291"],
+      "daily_budget_sek": 500,
+      "target_cpa_sek": 330,
+      "cycle_start": "2026-08-04",
+      "status": "aktiv",
+      "launches": []
+    },
+    {
+      "id": "strandtofflorna",
+      "name": "Strandtofflorna (Bäverbutiken)",
+      "brand": "Bäverbutiken",
+      "ad_account_id": "1867947880635861",
+      "campaign_ids": ["120249220414220291"],
+      "daily_budget_sek": 1000,
+      "target_cpa_sek": 170,
+      "cycle_start": "2026-08-04",
+      "status": "aktiv",
+      "launches": []
+    },
+    {
+      "id": "axelbaltet",
+      "name": "Axelbältet (Bäverbutiken)",
+      "brand": "Bäverbutiken",
+      "ad_account_id": "1867947880635861",
+      "campaign_ids": ["120249192013870291"],
+      "daily_budget_sek": 2000,
+      "target_cpa_sek": 325,
+      "cycle_start": "2026-08-04",
+      "status": "aktiv",
+      "launches": []
+    },
+    {
+      "id": "satesoverdragaren",
+      "name": "Sätesöverdragaren (Bäverbutiken)",
+      "brand": "Bäverbutiken",
+      "ad_account_id": "1867947880635861",
+      "campaign_ids": ["120249122415680291"],
+      "daily_budget_sek": 1500,
+      "target_cpa_sek": 300,
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": []
