@@ -22,11 +22,19 @@ De fyra annonser som faktiskt slår target-CPA har tillsammans fått 21 % av spe
 
 ---
 
-## Effektivitetsindex: andel av köpen / andel av spenden
+## Så läser vi CPA (rättad 2026-08-05)
 
-Det här är måttet vi rankar på, inte ROAS. ROAS på 36 kr spend är en enda konvertering och säger
-ingenting. Index >1,0 = annonsen levererar mer än den kostar. **Läs alltid index tillsammans med
-antal köp** — index på 1 köp är brus, index på 17 köp är en dom.
+**Grundregeln: CPA mätt på olika spendnivåer är inte jämförbara.** En annons som fått 400 kr har
+bara fått Metas billigaste och varmaste visningar. En annons som fått 14 000 kr har tvingats ut i
+dyrare auktioner mot kallare publik. Låg CPA på låg spend är därför systematiskt smickrad, inte
+bevisad.
+
+Ett tidigare försök att ranka på "effektivitetsindex" (kampanjens CPA delat med annonsens CPA)
+föll på precis det: det rankade PD_1_H3 under annonser som aldrig testats i närheten av dess
+spendnivå. Indexet står kvar nedan som referens, men **det är inte ett rankningsmått.**
+
+**Rätt läsning:** en annons är bevisad först när den hållit sin CPA vid den spend den faktiskt ska
+köras på. Just nu är `PD_1_H3` den enda som klarat det.
 
 | Annons | Spend | Köp | Index | Tolkning |
 |---|---|---|---|---|
@@ -35,18 +43,26 @@ antal köp** — index på 1 köp är brus, index på 17 köp är en dom.
 | PD_EXTRA | 773 kr | 8 | 1,63 | Bästa index bland tillförlitliga |
 | SO_1_H2 | 379 kr | 4 | 1,67 | Högst index, minst urval av vinnarna. Aldrig itererad förrän nu |
 | SP_1_H2 | 163 kr | 1 | 0,97 | Brus |
-| **PD_1_H3** | **14 185 kr** | **83** | **0,92** | **Volymdrivaren underpresterar sin spend** |
+| **PD_1_H3** | **14 185 kr** | **83** | **0,92** | **Volymvinnaren. Enda annonsen bevisad i skala. Indexet är missvisande här: den betalar priset för att vara den som faktiskt skalats** |
 | SO_1_H1 | 1 932 kr | 11 | 0,90 | Sämst av de skalade |
 | SO_5_1 | 342 kr | 1 | 0,46 | Sämsta med riktig spend |
 | SO_4_H1 / PD_7_H1 / SP_5_H1 | 36–63 kr | 1 var | 2,5–4,4 | **Brus.** Ett köp vardera, indexet svänger på en konvertering |
 
-**Den viktigaste raden:** PD_1_H3 tar 65 % av budgeten och ger 60 % av köpen. Den betalar inte för
-sin plats. Varje krona som flyttas därifrån till SP_1_H1, SO_2, PD_EXTRA eller SO_1_H2 sänker
-kampanjens CPA.
+**Om PD_1_H3:** den tar 65 % av budgeten och ger 60 % av köpen, och den är lönsam (ROAS 2,34,
+ca 33 000 kr intäkt). Den gick från CPA 120 kr till 171 kr när den skalades, vilket är vad som
+händer med varje annons som skalas, inte ett tecken på förfall. Meta la budgeten där för att den
+håller under press. **Den ska inte bort. Den ska förbättras** — och eftersom den bär två
+tredjedelar av budgeten är 10 % lägre CPA där värt mer än att perfekta en annons som spenderat
+773 kr.
 
-**Regel härifrån:** nya koncept med ett enda köp får **en** iteration, inte fyra. Bygg fleet först
-när det finns ≥3 köp eller ledande indikatorer (hook, completion, kostnad per LPV) som håller
-oberoende av konverteringarna.
+**Två regler härifrån:**
+1. Ranka aldrig annonser mot varandra över olika spendnivåer utan att säga det högt. En CPA på
+   400 kr spend är en hypotes, inte en dom.
+2. Nya koncept med ett enda köp får **en** iteration, inte fyra. Bygg flotta först vid ≥3 köp
+   eller ledande indikatorer (hook, completion, kostnad per LPV) som håller oberoende av
+   konverteringarna.
+3. **Iterationer viktas efter var pengarna ligger**, inte efter vilken annons som har snyggast
+   nyckeltal. Volymbäraren får flest hookvarianter.
 
 ## Winning DNA (bevisat med data, ≥300 kr spend och ≥3 köp)
 

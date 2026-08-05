@@ -95,7 +95,7 @@ håller vid riktig spend är det ett DNA-skifte. Prioriteras i batch #4.
 ## Batch #4 — 2026-08-05 (27 creatives, briefade)
 
 Kvot: 27 per 3-dagarscykel (6 000 kr/dag, target-CPA 135 kr). Läge före batchen: **-27 efter plan**.
-Briefer: `products/motorholjet/batch-04/` (16 video + 11 statiska) + två zip.
+Briefer: `products/motorholjet/batch-04/` (20 video + 7 statiska efter två revideringar) + två zip.
 Status: **briefade, ej launchade** — utfall fylls i vid nästa `/cs`.
 
 **Strategisk grund:** kampanjens CPA är 158 kr mot target 135 kr. PD_1_H3 tar 65 % av budgeten till
@@ -149,6 +149,30 @@ Fel prioritering, och den syns direkt när man rankar på effektivitetsindex i s
 | **Ny** | Enginecover_SP_8_H4 | Hook-fix på SP_1_H1 (17 köp, index 1,35, största tillförlitliga urvalet) |
 
 Fortfarande 27 creatives: **17 video + 10 statiska.**
+
+### Revidering 2 — 2026-08-05 (viktning mot volymbäraren)
+
+Första revideringen rättade vattentestet men missade ett större fel: **noll av 27 creatives
+iterade på `Motorhölje_PD_1_H3`**, annonsen som står för 83 av 139 köp och två tredjedelar av
+budgeten. PD_EXTRA fick fyra hookvarianter på 773 kr underlag, volymbäraren fick inga.
+
+Orsaken var samma tankefel som med vattentestet: jag rankade på CPA över olika spendnivåer.
+PD_1_H3:s CPA på 171 kr är mätt på 14 185 kr; de andras låga CPA är mätt på 379–1 985 kr, där
+Meta bara serverar de billigaste visningarna. De siffrorna är inte jämförbara, och volymbäraren
+straffades för att vara den enda som faktiskt testats i skala.
+
+| Åtgärd | Annons | Skäl |
+|---|---|---|
+| **Ny** | Enginecover_PD_1_H5 | Hook: direkt tilltal, på volymbärarens body |
+| **Ny** | Enginecover_PD_1_H6 | Hook: dragskon som mekanism |
+| **Ny** | Enginecover_PD_1_H7 | Hook: tre fiender, komprimerat |
+| **Ny** | Enginecover_PD_1_H8 | Hook: tio sekunder |
+| **Struken** | Enginecover_SP_8_H3 | Tredje VO-varianten på samma dekompositionstest, två räcker |
+| **Struken** | Enginecover_SO_11_2 | Endast hierarkitweak av SO_11_1 |
+| **Struken** | Enginecover_SO_12_2 | Endast hierarkitweak av SO_12_1 |
+| **Struken** | Enginecover_SP_10_2 | Endast layouttweak av SP_10_1 |
+
+Fortfarande 27 creatives: **20 video + 7 statiska.**
 
 **Att göra vid launch (viktigt):**
 - Lägg batchen i **ABO-testkampanj med lika budget per annons i 48 h**, inte i den befintliga CBO:n.
