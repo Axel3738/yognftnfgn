@@ -94,89 +94,58 @@ håller vid riktig spend är det ett DNA-skifte. Prioriteras i batch #4.
 
 ## Batch #4 — 2026-08-05 (27 creatives, briefade)
 
-Kvot: 27 per 3-dagarscykel (6 000 kr/dag, target-CPA 135 kr). Läge före batchen: **-27 efter plan**.
-Briefer: `products/motorholjet/batch-04/` (20 video + 7 statiska efter två revideringar) + två zip.
-Status: **briefade, ej launchade** — utfall fylls i vid nästa `/cs`.
+Kvot: 27 per 3-dagarscykel. Läge före batchen: **-27 efter plan**.
+Briefer: `products/motorholjet/batch-04/` · 15 video + 12 bild/karusell + två zip.
+Status: **briefade, ej launchade.**
 
-**Strategisk grund:** kampanjens CPA är 158 kr mot target 135 kr. PD_1_H3 tar 65 % av budgeten till
-CPA 170,90 kr medan de fyra annonser som slår target får 21 %. Batchen attackerar det på tre sätt:
-fler varianter av de billiga vinnarna, en ren hooktest på den bästa bodyn, och en ärlig reason-why
-som ersätter den urgency som fällde SO_1_H1.
+**Diagnosen batchen bygger på:** kampanjens CPA är 159 kr mot target 135 kr, men problemet är inte
+hooken. PD_1_H3 köper kampanjens billigaste klick (6,65 kr per utgående klick) och konverterar dem
+sämst (9,2 % LPV→ATC, 4,4 % LPV→köp) medan SP_1_H1 köper de dyraste och konverterar dubbelt så bra.
+Läckan sitter i klickets kvalitet och i steget till varukorgen. Med sex storleksintervall och noll
+annonser som förklarar vilket som passar är passform den mest sannolika orsaken.
 
-| # | Annons | Format | Isolerad variabel | Hypotes |
+**Fördelning:** 15 video (varav 4 rena hooktester och 5 creator-UGC), 3 karuseller (nytt format i
+kontot), 9 statiska.
+
+| # | Annons | Format | Vinkel / isolerad variabel | Hypotes |
 |---|---|---|---|---|
-| 1 | Enginecover_PD_13_H1 | Video | Hook: pris-anchor | Pris-kontrasten (1:100) höjer hook över 41,4 % och sänker CPA under 90 kr |
-| 2 | Enginecover_PD_13_H2 | Video | Hook: vattenbevis | Bevis-öppningen från batch #3 på vinnarbodyn slår båda föräldrarna |
-| 3 | Enginecover_PD_13_H3 | Video | Hook: tio sekunder | Friktionsborttagning som öppning ger CTR ≥ 5,5 % med bibehållen CPA |
-| 4 | Enginecover_PD_13_H4 | Video | Hook: försäkrings-reframe | Batch #3:s bästa tidiga ROAS överförd till bevisad body håller CPA < 96 kr |
-| 5 | Enginecover_SP_8_H1 | Video | Ljudspår: social proof-VO | SP-vinkelns CVR + PD_EXTRA:s CTR ger CPA < 90 kr |
-| 6 | Enginecover_SP_8_H2 | Video | Ljudspår: skeptiker-VO | Invändningen uttalad inifrån kundens huvud ger CVR > 10 % |
-| 7 | Enginecover_SP_8_H3 | Video | Hook: stormfråga | Frågan de redan ställer ger CTR ≥ 3 % utan CVR-tapp |
-| 8 | Enginecover_SP_9_H1 | UGC | Hook = invändningen först | Objection-first UGC ger LPV→köp > 10 % |
-| 9 | Enginecover_SP_6_H1 | UGC | Story i stället för demo | Narrativ ger hold p50 > 20 % och CPA < 135 kr *(backlog B2)* |
-| 10 | Enginecover_SO_8_H1 | Video | Struktur: offer först | Synligt prisbevis i sek 0–3 håller SO_1_H2:s CPA vid 3× spend |
-| 11 | Enginecover_SO_8_H2 | Video | Värde-reframe + VO | Värdeankare konverterar utan rabattjakt, CPA < 110 kr |
-| 12 | Enginecover_SO_8_H3 | Video | Öppning: garanti först | Riskreversering först ger CVR ≥ 6 % även med lägre CTR |
-| 13 | Enginecover_SO_3_H1 | Video | Hook: kostnadskontrast | Kåp-kostnad vs 299 kr ger offer-vinkeln ett skäl att existera *(backlog B1)* |
-| 14 | Enginecover_SO_9_H1 | Video | Reason-why: överlager | Ärligt skäl slår oförklarad rabatt, CPA ≤ 120 kr *(backlog B3)* |
-| 15 | Enginecover_PD_14_H1 | Video | Bevis: vattentest v2 | Eskalerat bevis ger hook > 41 % och CPA < 100 kr |
-| 16 | Enginecover_SO_8_H4 | Video | Hook på SO_1_H2 | Hook-fix på bästa köp-per-krona ger CPA ≤ 95 kr vid 3–5× spend |
-| 17 | Enginecover_SO_10_1 | Statisk | Prisblock som hjälte | Skarpare prisbevis håller SO_2:s CPA 125,58 kr vid 2–3× spend |
-| 18 | Enginecover_SO_10_2 | Statisk | Hjälte: färger i stället för pris | Valfrihet når en annan köpargrupp, CPA ≤ 135 kr |
-| 19 | Enginecover_SO_11_1 | Statisk | Försäkrings-reframe som statisk | Vinkeln överlever utan video, CPA ≤ 135 kr |
-| 20 | Enginecover_SO_11_2 | Statisk | Hjälte: garanti-badge | Riskreversering först ger CVR ≥ 6 % |
-| 21 | Enginecover_SO_12_1 | Statisk | Reason-why: överlager | Ärligt skäl slår oförklarad rabatt (statisk motsvarighet till #14) |
-| 22 | Enginecover_SO_12_2 | Statisk | Hierarki: pris dominant | Snabbare läsning i feed utan att tappa trovärdigheten |
-| 23 | Enginecover_PD_15_1 | Statisk | Bevis: split vatten/torrt | Visat bevis i en blick ger CTR ≥ 4 % |
-| 24 | Enginecover_SP_8_H4 | Video | Hook på SP_1_H1 | Mekanismen visad höjer CTR mot 3 % med CVR-golv 9 % |
-| 25 | Enginecover_SP_10_1 | Statisk | SP-vinkeln som statisk v2 | SP-CVR:n överlever i statiskt format, CPA ≤ 135 kr |
-| 26 | Enginecover_SP_10_2 | Statisk | Layout: quote-card | Citattecken som grafiskt element höjer CTR utan CVR-tapp |
-| 27 | Enginecover_PD_16_1 | Statisk | 3-stegs sekvens | Enkelhet visad som sekvens ger CTR ≥ 4 % |
+| 1 | Enginecover_PD_6_C1 | **Karusell** | Storleksguide, ett kort per hk-intervall | Kvalificering i annonsen höjer LPV→ATC över 15 % |
+| 2 | Enginecover_PD_6_1 | Statisk | Alla sex storlekar i en bild | Samma ATC-lyft som karusellen till lägre produktion |
+| 3 | Enginecover_PD_6_H1 | Video | Hitta hk-numret på egna motorn | Kvalificerat klick, färre men bättre |
+| 4 | Enginecover_PD_6_2 | Statisk | Riktad till 40 hk och uppåt | Segmentspecifik copy slår generisk där köparna faktiskt finns |
+| 5 | Enginecover_PD_13_H1 | Video | Samma hölje på minsta och största motorn | Bevisad passform i stället för påstådd |
+| 6 | Enginecover_PD_13_C1 | **Karusell** | En invändning per kort | Kort-avhopp visar vilken invändning som är verklig |
+| 7 | Enginecover_SP_8_H1 | UGC | Creator säger sin egen motorstorlek | Specificitet slår allmän tillit i bäst konverterande vinkeln |
+| 8 | Enginecover_PD_1_H5 | Video | Hook: kvalificera på motorstorlek | Färre men bättre klick, LPV→ATC ≥ 13 % |
+| 9 | Enginecover_PD_1_H6 | Video | Hook: kvalificera på situation | Konkret ögonblick höjer klickkvaliteten |
+| 10 | Enginecover_PD_1_H7 | Video | Hook: kvalificera på värde | Talar till ägaren av dyr motor |
+| 11 | Enginecover_PD_1_H8 | Video | Hook: kvalificera på identitet | Rekryterar den som redan sköter båten. Risk: engagemang utan köpintention |
+| 12 | Enginecover_PD_14_H1 | Video | Presenning vs hölje | Argumentera mot det folk faktiskt gör, inte mot ingenting |
+| 13 | Enginecover_PD_14_1 | Statisk | Samma jämförelse, split | Köpet blir ett val i stället för en utgift |
+| 14 | Enginecover_PD_14_2 | Statisk | "Tre sätt att skydda motorn", rankad lista | Educational framing sänker CPM · trafiktest för listicle-LP:n |
+| 15 | Enginecover_SP_9_H1 | UGC | Skeptikern, påstående-öppning | Invändning inifrån kundens huvud ger CVR > 10 % |
+| 16 | Enginecover_SP_9_H2 | UGC | Samma creator, fråge-öppning | Ren A/B på hur tvivlet väcks |
+| 17 | Enginecover_SP_10_H1 | UGC | Story: två motorer, samma brygga | Narrativ ger hold p50 > 20 % |
+| 18 | Enginecover_SP_10_1 | Statisk | SP-vinkeln som quote-card | Överlever vinkeln utan video? |
+| 19 | Enginecover_SO_8_H1 | Video | Överlager-reason-why + VO | Ärligt skäl slår oförklarad rabatt, CPA ≤ 120 kr |
+| 20 | Enginecover_SO_8_1 | Statisk | Samma story, statisk | → listicle-LP |
+| 21 | Enginecover_SO_9_1 | Statisk | Iteration på SO_2 (bästa statiska) | Håller SO_2:s CPA vid högre spend |
+| 22 | Enginecover_SO_9_C1 | **Karusell** | Pris → passform → mekanism → garanti | Hela argumentet i en annons |
+| 23 | Enginecover_SO_10_H1 | Video | **Retargeting:** riskreversering | Billigaste outnyttjade volymen i kontot |
+| 24 | Enginecover_SO_10_1 | Statisk | **Retargeting:** garantin, lugnt | Ingen press, ingen fejkad deadline |
+| 25 | Enginecover_SP_11_H1 | UGC | **Retargeting:** passformstvivlet | Är övergivna varukorgar en passformsfråga? |
+| 26 | Enginecover_SO_11_H1 | Video | **Säsong:** skydd under förvaringen | Upptagningen är ett verkligt köptillfälle |
+| 27 | Enginecover_SO_11_1 | Statisk | **Säsong:** samma | Redo veckan båtarna tas upp |
 
-### Revidering 2026-08-05 (efter spend-normaliserad genomgång)
-
-Den första versionen av batchen la **4 av 27 creatives** på vattentestet (PD_14_H1/H2 + PD_15_1/2),
-byggt på PD_7_H1: **ett** köp på 56 kr. Två av dem innehöll dessutom en literangivelse som ingen mätt.
-Fel prioritering, och den syns direkt när man rankar på effektivitetsindex i stället för ROAS.
-
-| Åtgärd | Annons | Skäl |
-|---|---|---|
-| **Struken** | Enginecover_PD_14_H2 | Ren hookvariant på ett obevisat koncept. Vattentestet får en creative, inte två |
-| **Struken** | Enginecover_PD_15_2 | Byggde hela sitt claim på ett omätt tal |
-| **Rensad** | Enginecover_PD_14_H1 | `[X] liter` borttaget, claimet säger nu bara det filmen visar |
-| **Rensad** | Enginecover_PD_15_1 | Ingen kvantifiering kvar |
-| **Ny** | Enginecover_SO_8_H4 | Hook-fix på SO_1_H2 (index 1,67, bästa köp per krona vid dömbart urval, aldrig itererad) |
-| **Ny** | Enginecover_SP_8_H4 | Hook-fix på SP_1_H1 (17 köp, index 1,35, största tillförlitliga urvalet) |
-
-Fortfarande 27 creatives: **17 video + 10 statiska.**
-
-### Revidering 2 — 2026-08-05 (viktning mot volymbäraren)
-
-Första revideringen rättade vattentestet men missade ett större fel: **noll av 27 creatives
-iterade på `Motorhölje_PD_1_H3`**, annonsen som står för 83 av 139 köp och två tredjedelar av
-budgeten. PD_EXTRA fick fyra hookvarianter på 773 kr underlag, volymbäraren fick inga.
-
-Orsaken var samma tankefel som med vattentestet: jag rankade på CPA över olika spendnivåer.
-PD_1_H3:s CPA på 171 kr är mätt på 14 185 kr; de andras låga CPA är mätt på 379–1 985 kr, där
-Meta bara serverar de billigaste visningarna. De siffrorna är inte jämförbara, och volymbäraren
-straffades för att vara den enda som faktiskt testats i skala.
-
-| Åtgärd | Annons | Skäl |
-|---|---|---|
-| **Ny** | Enginecover_PD_1_H5 | Hook: direkt tilltal, på volymbärarens body |
-| **Ny** | Enginecover_PD_1_H6 | Hook: dragskon som mekanism |
-| **Ny** | Enginecover_PD_1_H7 | Hook: tre fiender, komprimerat |
-| **Ny** | Enginecover_PD_1_H8 | Hook: tio sekunder |
-| **Struken** | Enginecover_SP_8_H3 | Tredje VO-varianten på samma dekompositionstest, två räcker |
-| **Struken** | Enginecover_SO_11_2 | Endast hierarkitweak av SO_11_1 |
-| **Struken** | Enginecover_SO_12_2 | Endast hierarkitweak av SO_12_1 |
-| **Struken** | Enginecover_SP_10_2 | Endast layouttweak av SP_10_1 |
-
-Fortfarande 27 creatives: **20 video + 7 statiska.**
-
-**Att göra vid launch (viktigt):**
-- Lägg batchen i **ABO-testkampanj med lika budget per annons i 48 h**, inte i den befintliga CBO:n.
-  Batch #2 bevisade problemet: 16 av 17 statiska fick under 30 kr och blev odömbara.
-- Inga omätta tal kvar i batchen. Mäts vattenmängden under inspelningen kan siffran läggas till i efterhand.
-- SO_9_H1, SO_12_1 och SO_12_2 ska peka på lagerrensnings-LP:n, inte produktsidan.
+**Grindar vid launch:**
+- **Kör i ABO-testkampanj, lika budget per annons i 48 h.** Batch #2 bevisade varför: 16 av 17
+  statiska fick under 30 kr i CBO:n och blev odömbara.
+- **#23, #24, #25 kräver en retargeting-adset** (ATC senaste 14-30 dagarna, exkl. köpare). Den
+  finns inte i dag — kampanjen är 100 % kall.
+- **#26 och #27 launchas tidigast 1 september.** Att köra säsongsslut i högsommar är exakt misstaget
+  som fällde SO_1_H1.
+- **#14 och #20 pekar på listicle-LP:n**, inte produktsidan.
 - Logga launchen: `node pipeline/quota.mjs log motorholjet <antal>`.
+
+**Ersätter:** ett tidigare utkast till batch #4 (27 creatives, 20 video varav mestadels
+hookvarianter) som förkastades — för videotungt, för mycket variation och för lite ny vinkel.

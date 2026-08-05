@@ -5,7 +5,11 @@ Markeras `[använd i batch #N]` när de plockas in i en batch.
 
 ## Väntar
 
-_(tomt — allt plockat in i batch #4)_
+| # | Idé | Källa | Status |
+|---|-----|-------|--------|
+| B4 | **2-pack / bundle.** Shopify visar att ca 16 % köper mer än ett hölje. Kräver butiksändring innan det får nämnas i annons. | Ordermönster | BLOCKER: ägarbeslut |
+| B5 | **Recensioner.** Ingen reviews-app är nåbar. Så fort verifierade recensioner finns kan SP-statiskorna byta produktclaim mot äkta citat. | DNA-lucka | Väntar |
+| B6 | **Mintgrön och Grön har sålt noll.** Överväg att avpublicera dem eller sluta lagerföra. | Variantdata 2026-08-05 | Ägarbeslut |
 
 ## Avklarade
 

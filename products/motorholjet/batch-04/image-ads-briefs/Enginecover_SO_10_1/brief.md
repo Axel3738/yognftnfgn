@@ -1,44 +1,44 @@
-# Enginecover_SO_10_1 — Price-proof static (scales the account's best static)
+# Enginecover_SO_10_1 — Retargeting static: the guarantee, calmly
 
-**Type:** Offer static. Direct iteration of `Motorhölje_SO_2` (CPA 125,58 kr, ROAS 3,37 on 1 381 kr — the account's proven static winner).
-**Hypothesis:** A sharper, bigger price block on the same proven offer layout lifts CTR without diluting intent, holding CPA at or under SO_2's 125,58 kr at 2–3× the spend, because visible price proof is the single element that separated winning offer ads from losing ones in this account.
-**Kept:** SO_2's offer angle, reassurance stack and guarantee badge.
-**Changed (isolated variable):** Price block hierarchy only — it becomes the dominant element on the canvas.
+**Type:** Retargeting static. Pure risk reversal.
+**Hypothesis:** Someone who added to cart and left has one unresolved doubt. The guarantee, stated calmly and without pressure, resolves it → recovered purchases at a CPA well below the cold-traffic average.
+**Kept:** The guarantee and fit claims.
+**Changed (isolated variable):** Audience: warm instead of cold.
 
-**Format:** Static, 1:1 (1080×1080) + 4:5 (1080×1350). Production level: **Simple**.
-**Ad set:** Motorhölje SO · **CTA:** Handla nu
+**Format:** Static, 1:1 (1080×1080) + 4:5 (1080×1350) · **Production level:** **Simple**
+**Ad set:** **New retargeting ad set required** (add-to-cart last 14-30 days, excluding purchasers) · **CTA:** Handla nu · **Landing page:** https://baverbutiken.se/products/marin-motorholje-420d-universellt-skydd
+
+## Why this ad exists
+The campaign is 100 % cold prospecting. The volume ad alone produced 177 add-to-carts against 84 purchases, so roughly 93 carts from that ad were left behind and nothing speaks to those people. This is the cheapest unclaimed volume in the account.
 
 ## Design brief
-- Base: hero product photo (covered engine on transom, clean light background or in-situ on the boat).
-- Layout top→bottom: kicker · product image (≈55 % of canvas) · **price block as the hero element** (367 kr struck through, 299 kr at roughly 2× its size) · three reassurance lines · guarantee badge.
-- Keep all text inside the centre-safe area; test legibility at 300 px wide.
+- The guarantee badge is the dominant element, centred.
+- Supporting lines beneath, product photo calm and clean.
+- **No urgency styling of any kind.** No countdown, no "din varukorg väntar", no red.
 
 ## Exact text (Swedish word-for-word, do not re-translate)
 | Element | Swedish (use this) | English meaning |
 |---|---|---|
-| Kicker | Marin Motorhölje 420D | Marine engine cover 420D |
-| Price, struck through | 367 kr | 367 kr (crossed out) |
-| Price, hero | 299 kr | 299 kr |
-| Reassurance 1 | Passar 6–250 hk | Fits 6–250 hp |
-| Reassurance 2 | Dragsko runt hela kanten | Drawstring around the whole edge |
-| Reassurance 3 | Skyddar mot sol, regn och salt | Protects against sun, rain and salt |
-| Badge | 30 dagars nöjd-kund-garanti | 30-day satisfaction guarantee |
+| Dominant headline | 30 dagars nöjd-kund-garanti | 30-day satisfaction guarantee |
+| Subheadline | Passar den inte din motor får du pengarna tillbaka. | If it does not fit your engine, you get your money back. |
+| Support | Passar 6–250 hk | Fits 6-250 hp |
+| Product claim | 420D Oxfordtyg. Dragsko runt hela kanten. | 420D Oxford fabric. Drawstring around the whole edge. |
 
 ## Ad copy
 Primary text:
-> Skydda utombordaren mot sol, regn och salt.
-> 420D Oxfordtyg, tåligt och pålitligt.
-> Passar 6–250 hk, dragsko runt hela kanten.
-> 299 kr istället för 367 kr, så länge lagret räcker.
-> 30 dagars nöjd-kund-garanti. 👇
+> 30 dagars nöjd-kund-garanti.
+> Passar den inte din motor får du pengarna tillbaka.
+> 420D Oxfordtyg. Dragsko runt hela kanten.
+> Inget att förlora. 👇
 
-Headline: `Motorhölje 299 kr (ord. 367 kr)`
+Headline: `30 dagars nöjd-kund-garanti`
 
-**Price integrity:** 299 kr / 367 kr verified against the store. If the store price changes, update BOTH numbers before launch.
+**Size accuracy:** the six ranges exactly as they exist in the store: 6 - 18 hk · 20 - 30 hk · 40 - 60 hk · 60 - 90 hk · 100 - 150 hk · 175 - 250 hk. Do not round, merge or invent.
 
+**Claim discipline:** verify the return policy before launch — "får du pengarna tillbaka" must match what the store actually does. Never imply we know what is in someone's cart, never invent a deadline.
 
 ## Primary KPI
-CPA (target ≤ 125 kr at ≥ 300 kr spend), CTR as diagnosis only.
+Retargeting CPA (should be well under 135 kr) and recovered add-to-carts. If the audience is too small to spend, report that rather than widening it.
 
 ## What we learn regardless of outcome
-Whether the winning static's result came from the offer angle or from its layout — decides how much budget statics deserve.
+Whether the account has been leaving cheap volume on the table by running cold traffic only.

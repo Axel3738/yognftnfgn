@@ -4,7 +4,7 @@
 **LP:** https://baverbutiken.se/products/marin-motorholje-420d-universellt-skydd
 **Konto:** MagiBorsten `1867947880635861` (SEK) · Kampanj `120249435814310291` · CBO 6 000 kr/dag
 **Target-CPA:** 135 kr
-**Senast uppdaterad:** 2026-08-05 (retroaktiv upphämtning av 37 annonser, hela livstiden)
+**Senast uppdaterad:** 2026-08-05, andra körningen (/cs → funnelanalys + butiksvarianter)
 
 ---
 
@@ -21,6 +21,44 @@
 De fyra annonser som faktiskt slår target-CPA har tillsammans fått 21 % av spenden.
 
 ---
+
+## FUNNELN: var läckan faktiskt sitter (viktigaste fyndet hittills)
+
+CPA per annons döljer att annonserna köper helt olika sorters trafik. Bryter man ner funneln:
+
+| Annons | kr/utgående klick | LPV→ATC | ATC→köp | LPV→köp |
+|---|---|---|---|---|
+| PD_1_H3 (volymbäraren) | **6,65 kr (billigast)** | **9,2 % (sämst)** | 47,5 % | **4,4 % (sämst)** |
+| SP_1_H1 | 11,22 kr (dyrast) | 16,0 % | **68,0 %** | **10,9 % (bäst)** |
+| SO_1_H2 | 6,89 kr | **17,3 %** | 44,4 % | 7,7 % |
+| SO_2 (statisk) | 9,87 kr | 12,9 % | 68,8 % | 8,9 % |
+| SO_1_H1 (förlorare) | 7,52 kr | 13,7 % | 39,3 % | 5,4 % |
+
+**Slutsats:** PD_1_H3 köper kampanjens billigaste klick och konverterar dem sämst. SP_1_H1 köper de
+dyraste och konverterar dem dubbelt så bra. Problemet är alltså inte hooken, det är **vem klicket
+är** och **steget LPV→ATC**.
+
+**Den mest sannolika orsaken till ATC-läckan:** produkten säljs i sex storleksintervall och ingen
+annons har någonsin förklarat vilket som passar. Köparen kommer till sidan och vet inte vad hen ska
+välja. Det är hypotesen batch #4 testar på flera sätt.
+
+**Regel härifrån:** optimera mot LPV→ATC och LPV→köp, inte mot CTR. En annons som får färre men
+bättre klick är ett framsteg även om CTR faller.
+
+## VAD BUTIKSDATAN SÄGER (hämtad 2026-08-05)
+
+**Storlekar:** 6 - 18 hk · 20 - 30 hk · 40 - 60 hk · 60 - 90 hk · 100 - 150 hk · 175 - 250 hk.
+Försäljningen koncentreras till **40 hk och uppåt** (40-60, 100-150 och 175-250 säljer mest;
+6-18 rör sig knappt). Annonserna talar i dag till en generisk "båtägare" — köparen har en större
+och dyrare motor än så, vilket gör värdeargumentet bokstavligen sannare för dem.
+
+**Färger:** Svart, Blå, Grå, Grön, Mintgrön. **Svart står för den stora majoriteten av
+försäljningen. Mintgrön och Grön har sålt noll.** Färgutbud är alltså inte en säljvinkel, och
+tidigare idéer om färg-som-hjälte är avfärdade av datan. Använd svart i bildmaterialet.
+
+**Trafiktyp:** 100 % kall prospektering. Ingen retargeting finns. PD_1_H3 ensam har genererat
+177 lägg-i-varukorg mot 84 köp, alltså ca 93 övergivna varukorgar från en enda annons som
+ingenting i kontot talar till.
 
 ## Så läser vi CPA (rättad 2026-08-05)
 

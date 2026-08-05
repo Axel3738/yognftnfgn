@@ -1,27 +1,29 @@
-# Enginecover_PD_1_H7 — Compressed three-enemy hook
+# Enginecover_PD_1_H7 — Qualify by value (hook-only test on the volume winner)
 
-**Type:** Hook-only iteration of `Motorhölje_PD_1_H3`, **the account's volume winner: 83 of 139 purchases (60 %) and 14 185 kr of spend.** One of four hook variants sharing an identical body.
-**Hypothesis:** The three named enemies are what the winning body already leans on, but the current opening takes several seconds to say it. Compressing it into a hard three-word rhythm should lift hook rate above 35,5 % without changing the message at all.
-**Kept:** Everything from second 3 onward: the entire PD_1_H3 edit, its pacing, grade, sound and existing overlays. Primary text and headline are the proven ones, unchanged.
-**Changed (isolated variable):** ONLY the first 3 seconds. The proven angle, compressed: three words, then the consequence.
+**Type:** Hook-only iteration of `Motorhölje_PD_1_H3`, the account's volume winner: 84 of 140 purchases and about two thirds of all spend. One of four hooks sharing an identical body.
+**Hypothesis:** The value framing speaks to the owner of an expensive engine, which is who actually buys. It should qualify harder than a generic weather hook and improve LPV→ATC.
+**Kept:** Everything from second 3 onward: the entire PD_1_H3 edit, pacing, grade, sound and existing overlays. Primary text and headline are the proven ones.
+**Changed (isolated variable):** ONLY the first 3 seconds. Qualify by value.
 
-**Format:** Video, source length, 9:16 (1080×1920) + 4:5 (1080×1350) · **Production level:** **Simple** (re-edit, no new filming)
-**Ad set:** Motorhölje PD · **CTA:** Handla nu
-**Source footage:** `Motorhölje_PD_1_H3` video ID **1407582261223436** (83 purchases, CPA 170,90 kr, ROAS 2,34, hook 35,5 %, hold 22,4 %, avg watch 7 s).
+**Format:** Video, source length, 9:16 + 4:5 · **Production level:** **Simple** (re-edit, no new filming)
+**Ad set:** Motorhölje PD · **CTA:** Handla nu · **Landing page:** https://baverbutiken.se/products/marin-motorholje-420d-universellt-skydd
+**Source footage:** `Motorhölje_PD_1_H3` video ID **1407582261223436** (84 purchases, CPA 170,96 kr, 66 % of campaign spend).
 
-## Why this ad matters most in the batch
-PD_1_H3 carries about two thirds of the campaign budget. It is also the only creative in the account that has proven it converts at volume — every other ad's CPA was measured at a small fraction of this spend, where Meta serves only the cheapest, warmest impressions. A hook that takes even 10 % off this ad's CPA is worth more than perfecting an ad that has spent 773 kr. That is why it gets four hook variants and everything else gets fewer.
+## Why this ad exists
+This ad carries most of the budget, so a hook that improves it is worth more than perfecting any small-spend ad. But the goal here is **not** more clicks: PD_1_H3 already buys the cheapest clicks in the account and converts them at half the rate of the social-proof ad. These four hooks are qualification tests. A lower CTR with a higher add-to-cart rate is the outcome we want.
 
-## Shot list / overlays (Swedish word-for-word, do not re-translate)
+## Shot list / overlays (Swedish word-for-word)
 | Time | Shot | Swedish overlay (use this) | English meaning |
 |---|---|---|---|
-| 0:00–0:01,5 | Three fast cuts: sun glare on the cowling, salt spray, rain on the engine | Sol. Salt. Regn. | Sun. Salt. Rain. |
-| 0:01,5–0:03 | Wide shot of the uncovered engine taking all three | Sliter på motorn dagligen | Wears on the engine daily |
+| 0:00–0:01,5 | Wide shot: large outboard, boat visible behind | Din motor kostade mycket | Your engine cost a lot |
+| 0:01,5–0:03 | Cut to the cover in hand | Skydda investeringen | Protect the investment |
 | 0:03–end | Source PD_1_H3 edit, untouched | (existing overlays unchanged) | — |
 
-**Voiceover:** none. Overlays and existing sound design only.
+**Voiceover:** none.
 
-## Ad copy (unchanged from the winner)
+**Do not re-time, re-grade or re-cut anything after second 3.** If the body changes, the test is unreadable.
+
+## Ad copy
 Primary text:
 > Regn, sol och salt sliter på din motor varje dag ⛵
 > Det här höljet skyddar mot väder och rost.
@@ -31,17 +33,8 @@ Primary text:
 
 Headline: `Skydda din motor – år efter år`
 
-**Price integrity:** no price appears in this ad. If one is added later it must be exactly 299 kr (367 kr struck through). Never a discount percentage.
-
-## Editing direction
-- Hard cut into the hook, no fade, no logo intro. Product in frame at 0,0 s.
-- **Do not re-time, re-grade or re-cut anything after second 3.** This is a controlled test on a working ad — if the body changes, the result is unreadable.
-- Burned-in Swedish captions, centre-safe (nothing in the top 250 px / bottom 300 px of 9:16).
-- Deliver as `Enginecover_PD_1_H7_<length>s.mp4`.
-
 ## Primary KPI
-CPA against PD_1_H3's own 170,90 kr, at comparable spend. Secondary: hook rate (p25/plays) against its own 35,5 %.
-**Judge these four against each other and against the parent, never against small-spend ads** — a CPA measured at 400 kr is not comparable to one measured at 14 000 kr.
+**LPV→ATC rate first** (target ≥ 13 %, the parent sits at 9,2 %), CPA second (parent 170,96 kr). Judge the four against each other and against the parent, never against ads that have spent a fraction as much.
 
 ## What we learn regardless of outcome
-Whether pace alone improves a proven message — the cheapest possible optimisation if it works, and it applies to every ad we own.
+Which qualification axis (size, situation, value, identity) buys better traffic on the ad that carries the budget.

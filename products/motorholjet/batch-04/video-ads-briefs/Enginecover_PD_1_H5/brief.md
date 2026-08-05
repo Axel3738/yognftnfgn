@@ -1,27 +1,29 @@
-# Enginecover_PD_1_H5 — Direct-address hook
+# Enginecover_PD_1_H5 — Qualify by engine size (hook-only test on the volume winner)
 
-**Type:** Hook-only iteration of `Motorhölje_PD_1_H3`, **the account's volume winner: 83 of 139 purchases (60 %) and 14 185 kr of spend.** One of four hook variants sharing an identical body.
-**Hypothesis:** Speaking directly to the owner whose engine is sitting unprotected right now converts the passive scroller into someone checking their own boat in their head, lifting hook rate above 35,5 % and pulling CPA below 155 kr at full delivery.
-**Kept:** Everything from second 3 onward: the entire PD_1_H3 edit, its pacing, grade, sound and existing overlays. Primary text and headline are the proven ones, unchanged.
-**Changed (isolated variable):** ONLY the first 3 seconds. Direct address to the owner, at the dock, right now.
+**Type:** Hook-only iteration of `Motorhölje_PD_1_H3`, the account's volume winner: 84 of 140 purchases and about two thirds of all spend. One of four hooks sharing an identical body.
+**Hypothesis:** Naming the horsepower band makes owners of 40 hk and up (where the store's sales are concentrated) self-identify, and makes everyone else scroll past. Fewer but better clicks should raise LPV→ATC above the ad's current 9,2 % even if CTR falls.
+**Kept:** Everything from second 3 onward: the entire PD_1_H3 edit, pacing, grade, sound and existing overlays. Primary text and headline are the proven ones.
+**Changed (isolated variable):** ONLY the first 3 seconds. Qualify by engine size.
 
-**Format:** Video, source length, 9:16 (1080×1920) + 4:5 (1080×1350) · **Production level:** **Simple** (re-edit, no new filming)
-**Ad set:** Motorhölje PD · **CTA:** Handla nu
-**Source footage:** `Motorhölje_PD_1_H3` video ID **1407582261223436** (83 purchases, CPA 170,90 kr, ROAS 2,34, hook 35,5 %, hold 22,4 %, avg watch 7 s).
+**Format:** Video, source length, 9:16 + 4:5 · **Production level:** **Simple** (re-edit, no new filming)
+**Ad set:** Motorhölje PD · **CTA:** Handla nu · **Landing page:** https://baverbutiken.se/products/marin-motorholje-420d-universellt-skydd
+**Source footage:** `Motorhölje_PD_1_H3` video ID **1407582261223436** (84 purchases, CPA 170,96 kr, 66 % of campaign spend).
 
-## Why this ad matters most in the batch
-PD_1_H3 carries about two thirds of the campaign budget. It is also the only creative in the account that has proven it converts at volume — every other ad's CPA was measured at a small fraction of this spend, where Meta serves only the cheapest, warmest impressions. A hook that takes even 10 % off this ad's CPA is worth more than perfecting an ad that has spent 773 kr. That is why it gets four hook variants and everything else gets fewer.
+## Why this ad exists
+This ad carries most of the budget, so a hook that improves it is worth more than perfecting any small-spend ad. But the goal here is **not** more clicks: PD_1_H3 already buys the cheapest clicks in the account and converts them at half the rate of the social-proof ad. These four hooks are qualification tests. A lower CTR with a higher add-to-cart rate is the outcome we want.
 
-## Shot list / overlays (Swedish word-for-word, do not re-translate)
+## Shot list / overlays (Swedish word-for-word)
 | Time | Shot | Swedish overlay (use this) | English meaning |
 |---|---|---|---|
-| 0:00–0:01,5 | Tight shot of a bare, uncovered cowling on a moored boat | Står din motor oskyddad? | Is your engine unprotected? |
-| 0:01,5–0:03 | Slow pan along the dock, other boats behind | Vid bryggan, just nu | At the dock, right now |
+| 0:00–0:01,5 | Tight on a larger outboard on the transom | 40 hk eller mer? | 40 hp or more? |
+| 0:01,5–0:03 | Cover going on that same engine | Det här är för dig | This one is for you |
 | 0:03–end | Source PD_1_H3 edit, untouched | (existing overlays unchanged) | — |
 
-**Voiceover:** none. Overlays and existing sound design only.
+**Voiceover:** none.
 
-## Ad copy (unchanged from the winner)
+**Do not re-time, re-grade or re-cut anything after second 3.** If the body changes, the test is unreadable.
+
+## Ad copy
 Primary text:
 > Regn, sol och salt sliter på din motor varje dag ⛵
 > Det här höljet skyddar mot väder och rost.
@@ -31,17 +33,8 @@ Primary text:
 
 Headline: `Skydda din motor – år efter år`
 
-**Price integrity:** no price appears in this ad. If one is added later it must be exactly 299 kr (367 kr struck through). Never a discount percentage.
-
-## Editing direction
-- Hard cut into the hook, no fade, no logo intro. Product in frame at 0,0 s.
-- **Do not re-time, re-grade or re-cut anything after second 3.** This is a controlled test on a working ad — if the body changes, the result is unreadable.
-- Burned-in Swedish captions, centre-safe (nothing in the top 250 px / bottom 300 px of 9:16).
-- Deliver as `Enginecover_PD_1_H5_<length>s.mp4`.
-
 ## Primary KPI
-CPA against PD_1_H3's own 170,90 kr, at comparable spend. Secondary: hook rate (p25/plays) against its own 35,5 %.
-**Judge these four against each other and against the parent, never against small-spend ads** — a CPA measured at 400 kr is not comparable to one measured at 14 000 kr.
+**LPV→ATC rate first** (target ≥ 13 %, the parent sits at 9,2 %), CPA second (parent 170,96 kr). Judge the four against each other and against the parent, never against ads that have spent a fraction as much.
 
 ## What we learn regardless of outcome
-Whether a personal, present-tense opening beats a descriptive one on our highest-volume asset — the single most reusable finding available to us.
+Which qualification axis (size, situation, value, identity) buys better traffic on the ad that carries the budget.

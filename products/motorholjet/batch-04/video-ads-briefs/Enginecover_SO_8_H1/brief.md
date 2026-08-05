@@ -1,44 +1,57 @@
-# Enginecover_SO_8_H1 — Offer-first cut, price proof as the hook
+# Enginecover_SO_8_H1 — Overstock story (matches the listicle landing page)
 
-**Type:** Iteration of `Motorhölje_SO_1_H2` (CPA 94,67 kr, ROAS 3,68 — the best CPA among judgeable ads), restructured so the price proof leads.
-**Hypothesis:** Putting the real numbers (367 struck through, 299 kr) on screen in seconds 0–3 keeps SO_1_H2's CPA while making the ad legible in one second, so it survives the CBO's delivery pressure → CPA ≤ 95 kr at 3× the spend.
-**Kept:** SO_1_H2's offer angle and its guarantee close.
-**Changed (isolated variable):** Structure: the offer is shown first with real numbers instead of being claimed later.
+**Type:** New offer concept with a true reason-why, built to match the overstock landing page.
+**Hypothesis:** An honest, stated reason for the price converts better than an unexplained discount → CPA under 120 kr with LPV→purchase above 6 %, because a believable reason removes the "what is the catch" hesitation that killed the previous offer ad.
+**Kept:** Real price proof and the guarantee.
+**Changed (isolated variable):** The reason-why: stock overage instead of an unexplained campaign price.
 
-**Format:** Video ~15 s, 9:16 + 4:5 · **Production level:** **Simple** (re-edit + overlays)
-**Ad set:** Motorhölje SO · **CTA:** Handla nu
-**Source footage:** `Motorhölje_PD_EXTRA` video ID **2210430979804731** (best ad in the account: CPA 96,59 kr, ROAS 4,18, CTR 5,48 %, hook 41,4 %, completion 10,3 %).
+**Format:** Video 20 s, 9:16 + 4:5 · **Production level:** **Medium** (warehouse or stacked-product footage + voiceover)
+**Ad set:** Motorhölje SO · **CTA:** Handla nu · **Landing page:** the overstock listicle page (see `docs/listicle-map.md`), NOT the plain product page
+**Source footage:** new warehouse footage if available, otherwise `Motorhölje_PD_EXTRA` video ID **2210430979804731** (CPA 97,07 kr, CTR 5,46 %, hook 41,4 %).
 
-## Shot list / overlays (Swedish word-for-word, do not re-translate)
+## Why this ad exists
+`Motorhölje_SO_1_H1` claimed a campaign price without showing numbers and produced the worst cost per purchase in the account (175,66 kr) on high CTR: curiosity clicks. `Motorhölje_SO_1_H2` and the SO_2 static showed real numbers and are among the best. This ad adds the missing piece: a reason the price exists. The landing page already tells this story and currently receives no traffic.
+
+## Shot list / overlays (Swedish word-for-word)
 | Time | Shot | Swedish overlay (use this) | English meaning |
 |---|---|---|---|
-| 0:00–0:03 | Product hero shot, price graphic slams in as the biggest element on screen | 3̶6̶7̶ ̶k̶r̶ 299 kr | 367 kr struck through, 299 kr |
-| 0:03–0:06 | Quick montage: cover fitted on a small outboard, then a large one | Passar 6–250 hk | Fits 6–250 hp |
-| 0:06–0:09 | Covered engine in rain, sun and sea spray b-roll | Skyddar mot sol, regn och salt | Protects against sun, rain and salt |
-| 0:09–0:11 | Close-up of the fabric texture | 420D Oxfordtyg | 420D Oxford fabric |
-| 0:11–0:13 | Hands pulling the drawstring tight around the base | Dragsko runt hela kanten | Drawstring around the whole edge |
-| 0:13–0:15 | End card: price and guarantee badge | 30 dagars nöjd-kund-garanti | 30-day satisfaction guarantee |
+| 0:00–0:03 | Warehouse shelves packed with boxed covers | Vi beställde för många. | We ordered too many. |
+| 0:03–0:06 | Staff member looking at the stacked boxes | Lagret är fullt. | The warehouse is full. |
+| 0:06–0:09 | Price graphic: 367 kr struck through, 299 kr large | 367 kr blir 299 kr. | 367 kr becomes 299 kr. |
+| 0:09–0:12 | Close-up of the fabric and drawstring | 420D Oxfordtyg. Dragsko runt hela kanten. | 420D Oxford fabric. Drawstring around the whole edge. |
+| 0:12–0:15 | Hands putting the cover on an outboard, fast | Enkel att sätta på och ta av. | Easy to put on and take off. |
+| 0:15–0:18 | Guarantee badge | 30 dagars nöjd-kund-garanti. | 30-day satisfaction guarantee. |
+| 0:18–0:20 | Product shot, CTA | Handla nu. Så länge lagret räcker. | Shop now. While stock lasts. |
 
-**Voiceover:** none. Overlays and sound design only.
+## Voiceover script (record exactly, plain and unhurried)
+| # | Time | Swedish (use this) | English meaning |
+|---|---|---|---|
+| 1 | 0:00–0:03 | Vi beställde för många motorhöljen. | We ordered too many engine covers. |
+| 2 | 0:03–0:06 | Nu är lagret fullt. | Now the warehouse is full. |
+| 3 | 0:06–0:09 | Därför säljer vi dem för 299 kr i stället för 367 kr. | So we are selling them for 299 kr instead of 367 kr. |
+| 4 | 0:09–0:12 | 420D Oxfordtyg med dragsko runt hela kanten. | 420D Oxford fabric with a drawstring around the whole edge. |
+| 5 | 0:12–0:15 | Enkel att sätta på och ta av. | Easy to put on and take off. |
+| 6 | 0:15–0:18 | 30 dagars nöjd-kund-garanti. | 30-day satisfaction guarantee. |
+| 7 | 0:18–0:20 | Handla nu, så länge lagret räcker. | Shop now, while stock lasts. |
+
+**Do not fake a warehouse.** If no warehouse footage exists, a simple stacked-product shot on a table works.
 
 ## Ad copy
 Primary text:
-> Nu 299 kr (ord. 367 kr).
-> 420D Oxfordtyg. Dragsko runt hela kanten.
-> Passar 6–250 hk. Skyddar mot sol, regn och salt.
+> Vi beställde för många motorhöljen.
+> Nu är lagret fullt.
+> Därför säljer vi dem för 299 kr i stället för 367 kr.
 > 30 dagars nöjd-kund-garanti.
-> Handla nu 👇
+> Så länge lagret räcker 👇
 
-Headline: `299 kr istället för 367 kr`
+Headline: `299 kr i stället för 367 kr`
 
-**Price integrity:** 299 kr / 367 kr verified against the store. If the store price changes, update BOTH numbers before launch. Never a discount percentage (299/367 is ~19 %, so any "30 %" claim would be false).
+**Price integrity:** 299 kr with 367 kr as the struck-through ordinary price. Verified in the store 2026-08-05. Never a discount percentage (299/367 is about 19 %).
 
-## Editing direction
-- The price overlay IS the hook: make it the largest element on screen for the full first three seconds.
-- Clean cuts, no music dependency, captions centre-safe.
+**Urgency discipline:** "så länge lagret räcker" is the only urgency allowed and it must be true. Never "innan lagret tar slut" (the store is on continue-selling), never a countdown.
 
 ## Primary KPI
-CPA (≤ 95 kr at ≥ 500 kr spend) with CVR check (LPV→purchase ≥ 6 %). **High CTR alone is a fail** — that was the SO_1_H1 trap (CTR 4,70 %, CPA 175,62 kr).
+CPA (≤ 120 kr) with LPV→purchase ≥ 6 %. High CTR alone is a fail — that was the SO_1_H1 trap.
 
 ## What we learn regardless of outcome
-Whether the best-CPA offer ad keeps its efficiency when the offer leads instead of closes.
+Whether a stated reason-why rescues the offer angle that failed without one. This also decides whether the listicle landing page earns traffic.

@@ -1,43 +1,43 @@
-# Enginecover_PD_13_H1 — Price anchor hook on the winning demo body
+# Enginecover_PD_13_H1 — One cover, both extremes (universal-fit proof)
 
-**Type:** Near iteration of the account's best ad, `Motorhölje_PD_EXTRA`. One of four hook variants sharing the same body — the cleanest possible hook test.
-**Hypothesis:** Price-contrast in the hook lifts hook rate above PD_EXTRA's 41,4 % and pulls CPA under 90 kr, because the 1:100 value ratio is the account's strongest unproven persuasion mechanism.
-**Kept:** Everything from second 3 onward: the entire PD_EXTRA edit, its pacing, grade and sound. Primary text and headline unchanged from the proven PD copy.
-**Changed (isolated variable):** ONLY the first 3 seconds. Contrasts the engine's value against 299 kr in the first three seconds.
+**Type:** New concept, proof of the "universell passform" claim that both winning copy batches lean on but no creative has ever shown.
+**Hypothesis:** Showing the same cover on the smallest and the largest engine proves the universal-fit claim visually, lifting LPV→ATC above 15 % because the doubt it removes is the one the funnel data says is blocking carts.
+**Kept:** The proven "universell passform" message.
+**Changed (isolated variable):** It is demonstrated instead of stated.
 
-**Format:** Video, source length, 9:16 (1080×1920) + 4:5 (1080×1350) · **Production level:** **Simple** (re-edit, no new filming)
-**Ad set:** Motorhölje PD · **CTA:** Handla nu
-**Source footage:** `Motorhölje_PD_EXTRA` video ID **2210430979804731** (best ad in the account: CPA 96,59 kr, ROAS 4,18, CTR 5,48 %, hook 41,4 %, completion 10,3 %).
+**Format:** Video 15 s, 9:16 + 4:5 · **Production level:** **Medium** (needs access to one small and one large outboard)
+**Ad set:** Motorhölje PD · **CTA:** Handla nu · **Landing page:** https://baverbutiken.se/products/marin-motorholje-420d-universellt-skydd
+**Source footage:** newly filmed. Existing b-roll may fill the end card.
 
-## Shot list / overlays (Swedish word-for-word, do not re-translate)
+## Why this ad exists
+"Universell passform" appears in the copy of every winning ad, but no creative has ever proven it. For a product sold in six size ranges, an unproven fit claim is exactly the kind of thing that stalls a buyer on the product page.
+
+## Shot list / overlays (Swedish word-for-word)
 | Time | Shot | Swedish overlay (use this) | English meaning |
 |---|---|---|---|
-| 0:00–0:01,5 | Slow push-in on the covered engine, premium framing | Din motor: tiotusentals kronor värd | Your engine: worth tens of thousands of kronor |
-| 0:01,5–0:03 | Hard cut to a tight shot of the cover, price graphic lands | Skyddet: bara 299 kr | The cover: just 299 kr |
-| 0:03–end | Source PD_EXTRA edit, untouched | (existing overlays unchanged) | — |
+| 0:00–0:03 | Small outboard on a dinghy, cover going on | Samma hölje... | The same cover... |
+| 0:03–0:06 | Drawstring cinched, close-up on the small engine | ...passar 6–18 hk | ...fits 6-18 hp |
+| 0:06–0:09 | Cut to a large outboard on a bigger boat, cover going on | ...och 175–250 hk | ...and 175-250 hp |
+| 0:09–0:12 | Split screen: both covered engines side by side | Ett hölje, sex storlekar | One cover, six sizes |
+| 0:12–0:15 | Product shot, end card | 420D Oxfordtyg. Handla nu. | 420D Oxford fabric. Shop now. |
 
-**Voiceover:** none. Overlays and sound design only.
+**Voiceover:** none. Overlays only.
+
+**Honesty note:** the two engines must genuinely be at opposite ends of the range, and each must wear the size sold for it. This is a fit proof, not a stretch test.
 
 ## Ad copy
 Primary text:
-> Regn, sol och salt sliter på din motor varje dag ⛵
-> Höljet skyddar mot sol, regn och salt.
-> Enkel att sätta på och ta av, med dragsko runt hela kanten.
-> 420D Oxfordtyg och 30 dagars nöjd-kund-garanti.
-> Skydda din motor redan idag 👇
+> Liten motor eller stor, det spelar ingen roll.
+> Samma hölje, sex storlekar, 6–250 hk.
+> 420D Oxfordtyg med dragsko runt hela kanten.
+> Perfekt passform oavsett motor 👇
 
-Headline: `Skydda din motor – år efter år`
+Headline: `Ett hölje. Alla motorstorlekar.`
 
-**Price integrity:** 299 kr / 367 kr verified against the store. If the store price changes, update BOTH numbers before launch. Never a discount percentage (299/367 is ~19 %, so any "30 %" claim would be false).
-
-## Editing direction
-- Hard cut into the hook, no fade, no logo intro. Product in frame at 0,0 s.
-- Do not re-time or re-grade the source body — the isolated variable must stay isolated.
-- Burned-in Swedish captions, centre-safe (no text in the top 250 px / bottom 300 px of 9:16).
-- Deliver as `Enginecover_PD_13_H1_<length>s.mp4`.
+**Size accuracy:** the six ranges are exactly as they appear in the store: 6 - 18 hk · 20 - 30 hk · 40 - 60 hk · 60 - 90 hk · 100 - 150 hk · 175 - 250 hk. Do not round, merge or invent ranges beyond what a brief explicitly states.
 
 ## Primary KPI
-Hook rate (p25/plays) vs PD_EXTRA's 41,4 %, then CPA vs 96,59 kr. Judge all four H-variants against each other, not against the campaign average.
+LPV→ATC (≥ 15 %) then CPA. Compare directly against PD_6_H1 — both attack the same leak from different angles.
 
 ## What we learn regardless of outcome
-Which of four hook mechanisms (price anchor / proof / speed / insurance) earns attention on an identical body — the answer sets the default opening for every future demo video in the store.
+Whether the fit doubt is best answered by teaching the buyer to measure (PD_6_H1) or by showing the range works (this one).

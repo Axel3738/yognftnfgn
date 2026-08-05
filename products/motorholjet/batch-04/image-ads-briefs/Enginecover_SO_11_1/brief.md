@@ -1,42 +1,47 @@
-# Enginecover_SO_11_1 — Insurance reframe static
+# Enginecover_SO_11_1 — Season-end static: protection through storage
 
-**Type:** Value-reframe static. Format transfer of `Enginecover_SO_4_H1` (video), the strongest early signal in batch #3 (ROAS 9,73 on 36 kr — not yet judgeable).
-**Hypothesis:** Framing 299 kr against the engine's value converts price-hesitant buyers without discount-hunting behaviour → CPA ≤ 135 kr, because the value anchor does the discounting psychologically instead of the price tag.
-**Kept:** The SO_4_H1 angle and its guarantee close.
-**Changed (isolated variable):** Medium: video → static (this is the cheap test of whether the angle needs to be filmed).
+**Type:** Seasonal static. **Written now, launches from 1 September.**
+**Hypothesis:** The lift-out is a natural buying trigger: the engine goes from "in use" to "stored for months". Naming that moment should convert at CPA under 135 kr in September without any manufactured urgency.
+**Kept:** The protection message and the offer.
+**Changed (isolated variable):** The occasion: storage instead of daily use.
 
-**Format:** Static, 1:1 (1080×1080) + 4:5 (1080×1350). Production level: **Simple**.
-**Ad set:** Motorhölje SO · **CTA:** Handla nu
+**Format:** Static, 1:1 (1080×1080) + 4:5 (1080×1350) · **Production level:** **Simple**
+**Ad set:** Motorhölje SO · **CTA:** Handla nu · **Landing page:** https://baverbutiken.se/products/marin-motorholje-420d-universellt-skydd
+
+## Why this ad exists
+The original launch ran "innan vintern" as a deadline in August, which was season-wrong and is logged in the DNA as a losing element. The season shift itself is real, it was just six weeks early. This asset is ready the week boats start coming up.
 
 ## Design brief
-- Base: product photo of the covered engine on the boat, slightly wide so the boat context reads as "valuable asset".
-- Main claim across the upper third, the contrast line under it, price and guarantee at the bottom.
-- Never illustrate an actual insurance document or policy — the framing stays verbal and metaphorical.
+- Base: engine on a trailer or in storage, covered. Autumn light, not winter.
+- Eyebrow, headline, feature lines, price block, guarantee badge.
 
 ## Exact text (Swedish word-for-word, do not re-translate)
 | Element | Swedish (use this) | English meaning |
 |---|---|---|
-| Headline | Motorn är värd tiotusentals kronor | The engine is worth tens of thousands of kronor |
-| Line 1 | Höljet kostar nästan inget | The cover costs almost nothing |
-| Price, struck through | 367 kr | 367 kr (crossed out) |
-| Price, hero | 299 kr | 299 kr |
+| Eyebrow | Säsongen tar snart slut | The season is ending soon |
+| Headline | Skydda motorn under förvaringen | Protect the engine through storage |
+| Subheadline | Skyddar mot sol, regn och salt | Protects against sun, rain and salt |
+| Feature 1 | 420D Oxfordtyg | 420D Oxford fabric |
+| Feature 2 | Dragsko runt hela kanten | Drawstring around the whole edge |
+| Price | 299 kr (ord. 367 kr) | 299 kr (was 367 kr) |
 | Badge | 30 dagars nöjd-kund-garanti | 30-day satisfaction guarantee |
 
 ## Ad copy
 Primary text:
-> Din utombordare är värd tiotusentals kronor.
-> Motorhöljet kostar en bråkdel av det.
-> 420D Oxfordtyg skyddar mot sol, regn och salt.
-> 299 kr istället för 367 kr, så länge lagret räcker.
-> 30 dagars nöjd-kund-garanti. 👇
+> Säsongen tar slut snart.
+> Skydda motorn under förvaringen.
+> 420D Oxfordtyg. Dragsko runt hela kanten.
+> 299 kr i stället för 367 kr.
+> 30 dagars nöjd-kund-garanti 👇
 
-Headline: `Billigaste skyddet för din motor`
+Headline: `Skydda motorn under förvaringen`
 
-**Claim discipline:** "tiotusentals kronor" stays unspecific. Never state a figure for the engine, a repair, or a replacement cowling — we have no source for any of those numbers. Never imply the cover IS an insurance policy.
+**Price integrity:** 299 kr with 367 kr struck through. Verified 2026-08-05. Never a discount percentage (299/367 is about 19 %).
 
+**LAUNCH GATE: do not launch before 1 September 2026.** Season-end messaging in high summer is exactly the mistake logged against `Motorhölje_SO_1_H1`. Never use "innan vintern" as a deadline.
 
 ## Primary KPI
-CPA (≤ 135 kr) with CVR floor (LPV→purchase ≥ 6 %).
+CPA (≤ 135 kr) measured in September against the same period's other ads.
 
 ## What we learn regardless of outcome
-Whether the insurance reframe survives without video — decides if the angle scales cheaply or needs production.
+Whether the storage occasion is a stronger trigger than in-season weather protection.

@@ -1,7 +1,7 @@
-# Enginecover_SP_9_H1 — UGC: the skeptic
+# Enginecover_SP_9_H2 — UGC: the skeptic, question-first opening
 
 **Type:** Creator UGC in the SP angle.
-**Hypothesis:** A creator voicing the fit objection and disproving it on camera converts the doubters that the funnel data shows are stalling at the product page → LPV→purchase above 10 %.
+**Hypothesis:** Opening with the doubt as a direct question to camera, before any product is shown, should stop the exact viewer who is hesitating, giving a higher hook rate than the statement opening at the same conversion quality.
 **Kept:** The SP angle and the guarantee close.
 **Changed (isolated variable):** New creator-filmed asset.
 
@@ -15,25 +15,25 @@ The social-proof angle converts at 10,9 % of landing-page visitors against 4,4 %
 ## Creator script (Swedish word-for-word)
 | Beat | Time | Swedish (use this) | English meaning |
 |---|---|---|---|
-| Hook | 0:00–0:04 | "De flesta universalhöljen sitter som en säck." | "Most universal covers fit like a sack." |
+| Hook | 0:00–0:04 | "Passar den verkligen din motor?" | "Does it really fit your engine?" |
 | Product | 0:04–0:09 | "Det här är 420D Oxfordtyg." | "This is 420D Oxford fabric." |
-| Fitting | 0:09–0:16 | "Dragsko runt hela kanten. Jag drar åt, så här." | "Drawstring around the whole edge. I pull it tight, like this." |
-| Proof | 0:16–0:22 | "Sitter still. Ingen säckform." | "Stays put. No sack shape." |
-| Guarantee | 0:22–0:27 | "Passar den inte din motor? 30 dagars nöjd-kund-garanti." | "Does it not fit your engine? 30-day satisfaction guarantee." |
+| Fitting | 0:09–0:16 | "Dragsko runt hela kanten. Du drar åt själv." | "Drawstring around the whole edge. You tighten it yourself." |
+| Ease | 0:16–0:22 | "Enkel att sätta på och ta av. Tar tio sekunder." | "Easy to put on and take off. Takes ten seconds." |
+| Guarantee | 0:22–0:27 | "Passar den inte? 30 dagars nöjd-kund-garanti." | "Does it not fit? 30-day satisfaction guarantee." |
 | CTA | 0:27–0:30 | "Handla nu." | "Shop now." |
 
 **Creator direction:** 35-65, genuinely owns a boat. Dressed normally, no studio feel. Dry, honest, slightly amused. Product in frame within 4 seconds. Raw UGC grade, jump cuts on beat changes, captions always on.
 
-The fit objection must be stated in the creator's own words and then disproven on camera in one unbroken take. If the cover does not sit well on the day, do not shoot around it — reshoot with the correct size.
+Same creator, same shoot, same location as SP_9_H1 — only the opening differs, so the two are a clean A/B on how the doubt is raised.
 
 ## Ad copy
 Primary text:
-> De flesta universalhöljen sitter som en säck.
-> Det här har dragsko runt hela kanten.
-> 420D Oxfordtyg. Skyddar mot sol, regn och salt.
-> 30 dagars nöjd-kund-garanti om det inte passar. 👇
+> Passar den verkligen din motor?
+> Dragsko runt hela kanten. Du drar åt själv.
+> 420D Oxfordtyg. Enkel att sätta på och ta av.
+> 30 dagars nöjd-kund-garanti. 👇
 
-Headline: `Sitter det verkligen? Se själv.`
+Headline: `Passar den din motor? Testa själv.`
 
 **No fabricated proof:** no customer names, no star ratings, no review counts. We have no verified reviews.
 
