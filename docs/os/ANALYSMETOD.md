@@ -2,6 +2,11 @@
 
 Detta dokument finns för att Claude har dömt vinnare som förlorare två gånger:
 först på ROAS ensam, sedan på CPA ensam. **Enmetriks-domar är förbjudna.**
+
+**Två halvor, båda obligatoriska:** steg 1–6 rangordnar med siffror (vem tjänade
+pengar). Steg 6b river isär creativen (vad i den orsakade det). Siffrorna talar
+om vad du ska göra mer av — bara teardownet talar om hur nästa brief ska skrivas.
+En analys som stannar vid tabeller är inte creative strategy, den är bokföring.
 Alla kommandon som bedömer annonser (`/cs`, `/forsta-batch`, `/checkin`) MÅSTE
 följa stegen nedan i ordning, och visa tabellerna i sitt svar.
 
@@ -111,26 +116,78 @@ spenden är algoritmens dom, byggd på fler datapunkter än du har.
   (jämför 7d mot 14d) innan du drar slutsatsen — det är utmattning, inte att
   creativen var dålig.
 
-## Steg 6 — Diagnostisera VARFÖR (det är här creative strategy börjar)
+## Steg 6 — Metrik-diagnos: VAR tappar den (snabb, video-tung)
 
-Rangordningen säger vad som funkar. Detta steget säger varför — och det är det
-enda som gör nästa batch bättre. Gå igenom kedjan per bedömbar annons:
-
-| Steg | Metrik | Vad ett lågt värde betyder |
-|------|--------|----------------------------|
-| Stoppar scrollen | hook rate = `video_play_actions` / `impressions` | Hooken/första bilden fungerar inte |
-| Håller kvar | hold = `video_p50_watched_actions` / `video_play_actions` | Manuset tappar dem — var? |
-| Skapar klick | `ctr` | Löftet är inte tillräckligt starkt |
+| Steg | Metrik | Lågt värde betyder |
+|------|--------|--------------------|
+| Stoppar scrollen | hook rate = `video_play_actions` / `impressions` | Första sekunden/bilden fungerar inte |
+| Håller kvar | hold = `video_p50_watched_actions` / `video_play_actions` | Manuset tappar dem |
+| Skapar klick | `ctr` | Löftet är för svagt |
 | Konverterar | köp / klick | Annons ≠ landningssida, eller fel publik |
 | Kostar att nå | `cpm` | Kreativ trötthet eller smal publik |
 
-Peka alltid ut **var i kedjan** en förlorare tappar. "Sämre hook" är inte en
-analys — "hook rate 0,52 mot vinnarens 0,95, alltså stoppar den inte scrollen"
-är en analys. Först då kan nästa batch isolera rätt variabel.
+⚠️ **Detta steg är otillräckligt ensamt.** Bildannonser saknar hook/hold helt,
+och för video säger metriken bara *var* det tappar — aldrig *vad i creativen*
+som orsakade det. Steg 6 är en pekare, inte en slutsats. Gå alltid vidare till
+steg 6b — det är där creative strategy faktiskt sker.
 
-Exempel ur datan ovan: `Motorhölje_SP_1_H1` har CTR 1,75 % mot `PD_EXTRA`s
-5,66 % — men bättre CPA än flera med högre CTR. Hög CTR utan köp är
-nyfikenhetsklick; optimera aldrig mot CTR ensamt.
+## Steg 6b — Creative-teardown: VAD i creativen orsakade utfallet (OBLIGATORISKT)
+
+**Detta är det tyngst vägande steget i hela analysen.** Metriken rangordnar;
+teardownet är det enda som gör nästa brief bättre. Hoppas det över är analysen
+värdelös oavsett hur snygga tabellerna är.
+
+### Titta på creativen på riktigt
+
+- **Bildannonser:** ladda ner bilden och **granska den visuellt** — beskriv
+  layout, vad ögat träffar först, textmängd och hierarki, produktens plats i
+  bilden, kontrast, om erbjudandet syns, om texten är läsbar i mobilfeed.
+  Detta går alltid att göra och är därför obligatoriskt för varje bedömbar bild.
+- **Videoannonser:** manuset finns redan i **vår egen brief** (`products/<id>/`
+  eller Notion-itemet) — läs den i stället för att gissa. Saknas briefen: be om
+  transkript, transkribera aldrig på gissning. Granska även thumbnailen.
+
+### Tagga variablerna och koppla dem till vinstbidraget
+
+Varje bedömbar annons taggas med variablerna nedan. Sedan grupperas
+vinstbidraget per variabelvärde — det är så mönster syns över flera annonser
+i stället för anekdoter per annons.
+
+| Variabel | Exempelvärden |
+|----------|---------------|
+| Vinkel | problem/lösning · rädsla för kostnad · bekvämlighet · status · nyfikenhet |
+| Hook-typ | fråga · påstående · siffra/pris · före-efter · negation ("sluta…") |
+| Format | UGC-tal · voiceover+broll · rå leverantörsvideo · listicle-bild · jämförelse · testimonial · offer-grafik |
+| Proof | recension · demo · siffra · myndighet/expert · inget |
+| Offer i creativen | pris syns · rabatt · frakt · ingen offer |
+| Visuell stil (bild) | textfri produktbild · text-tung · split/före-efter · kollage · grafik+produkt |
+| Textmängd (bild) | ingen · ≤5 ord · rubrik+underrubrik · lång listicle |
+| Talare | ingen · creator kvinna · creator man · röst utan ansikte |
+
+Leverera denna tabell — det är den som styr nästa batch:
+
+| Variabelvärde | Antal annonser | Total spend | **Vinstbidrag** | Slutsats |
+|---------------|----------------|-------------|-----------------|----------|
+
+### Skriv slutsatsen på briefnivå, inte på metriknivå
+
+Fel: *"PD_1_H3 har hook rate 0,95, bra hook."*
+Rätt: *"PD_1_H3 öppnar med prisjämförelse i bild inom 1 sek och visar produkten
+monterad före sek 3 — de två bilderna som saknar produktdemo i första rutan
+ligger båda i förlusthögen. Hypotes: produkten i användning tidigt är den
+bärande variabeln, inte hook-texten. Nästa batch isolerar det."*
+
+Slutsatsen ska gå att skriva in i en brief. Kan den inte det är den värdelös.
+
+### Regler
+
+1. Varje bedömbar annons får ett teardown — ingen får bara en metrikrad.
+2. Bilder granskas visuellt, alltid. "Kunde inte bedöma bilden" är inte
+   acceptabelt när bild-ID finns i kontot.
+3. Minst **3 variabelmönster** ska pekas ut per analys, var och en kopplad till
+   vinstbidrag och märkt **bevisad** (≥2 annonser, ≥3 köp vardera) eller
+   **hypotes**.
+4. Varje mönster ska översättas till en konkret instruktion i nästa brief.
 
 ## Steg 7 — Skriv slutsatsen så den går att ifrågasätta
 
@@ -153,5 +210,10 @@ ut osäkerheten: "76 köp — stabilt" vs "1 köp — ingen slutsats möjlig".
 - [ ] Vinstbidragstabellen visad, sorterad på vinst — inte på ROAS eller CPA
 - [ ] Break-even-CPA använd för kill-beslut, target-CPA för skalning
 - [ ] Top spendern behandlad som benchmark
-- [ ] Diagnos per bedömbar annons: var i kedjan den tappar
+- [ ] Metrik-diagnos: var i kedjan varje bedömbar annons tappar
+- [ ] **Creative-teardown gjort per bedömbar annons** — bilder visuellt granskade,
+      videomanus lästa ur våra egna briefer
+- [ ] **Variabeltabellen visad** (vinstbidrag grupperat per vinkel/hook/format/proof/visuell stil)
+- [ ] Minst 3 variabelmönster utpekade, märkta bevisad/hypotes, var och en översatt
+      till en konkret instruktion i nästa brief
 - [ ] Data skild från hypotes, antal köp angivet bakom varje dom

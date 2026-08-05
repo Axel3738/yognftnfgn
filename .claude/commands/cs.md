@@ -49,14 +49,23 @@ har dödat vinnare två gånger. Kortversion av kraven:
 - Kill-beslut mot **break-even-CPA**, skalningsbeslut mot **target-CPA**. Över
   target är aldrig i sig ett skäl att pausa.
 - Top spendern är benchmark — alla andra jämförs mot den, inte tvärtom.
-- Diagnostisera var i kedjan varje bedömbar annons tappar (hook rate → hold →
-  CTR → CVR → CPM). "Sämre hook" är inte en analys.
+- Metrik-diagnos: var i kedjan varje bedömbar annons tappar (hook rate → hold →
+  CTR → CVR → CPM).
+- **Creative-teardown (steg 6b — tyngst vägande):** ladda ner och granska varje
+  bedömbar bildannons visuellt, läs videomanusen ur våra egna briefer, tagga
+  variablerna (vinkel, hook-typ, format, proof, offer, visuell stil, textmängd,
+  talare) och gruppera vinstbidraget per variabelvärde. Peka ut minst 3 mönster,
+  märk bevisad/hypotes, och översätt vart och ett till en instruktion i nästa
+  brief. Hook/hold ensamt duger inte — bilder saknar dem helt.
 - **Stäm av mot hypoteserna i batch-log.md:** för varje annons i förra batchen, skriv utfallet — höll hypotesen eller inte, och varför (data, inte tyckande).
 - **Uppdatera `products/<id>/dna.md`:** flytta bekräftade mönster till Winning/Losing DNA, markera vad som fortfarande är hypotes. DNA-filen är produktens ackumulerade minne — skriv den så att nästa session förstår utan kontext.
 
 ### 3. Bygg nästa batch
 - Antal = minst kvoten per 3-dagarscykel för produkten.
 - Mix: iterationer på vinnarna (isolerad variabel per iteration) + nya koncept från Losing DNA-lärdomar + **alla väntande items i backlog.md** (markera dem `[använd i batch #N]`) + det jag skickade med i argumenten ovan.
+- **Varje brief taggar sina variabler** (vinkel, hook-typ, format, proof, offer,
+  visuell stil, textmängd, talare) i en rad högst upp — utan taggar kan nästa
+  `/cs` inte gruppera vinstbidrag per variabel och lärandet dör.
 - Varje annons: hypotes, vad som behålls/ändras, format, exakt hook, komplett brief enligt leveransformatet i `.claude/commands/forsta-batch.md` (engelska briefer, `Swedish (use this) | English meaning`-tabeller, naming-strukturen, upptagna AD-ID:n avlästa i kontot).
 
 ### 4. Modellpolicy (obligatorisk)
@@ -67,7 +76,7 @@ har dödat vinnare två gånger. Kortversion av kraven:
 - Rapport: kort feedbackloop-sammanfattning (vad lärde vi oss), sedan batchen.
 - Zip-paketera brieferna (video + image) som i forsta-batch-kommandot.
 - Lägg batchen i Notion exakt enligt `docs/os/NOTION-FORMAT.md`: ett item per annons, namn = annonsnamnet, status Draft, tag `Video - Pending Approval` (även bilder), briefen inklistrad i itemet + Drive-länk.
-- Skriv batchen i `products/<id>/batch-log.md` med datum + hypotes per annons.
+- Skriv batchen i `products/<id>/batch-log.md` med datum + hypotes + **variabeltaggar** per annons (utfallet fylls i av nästa `/cs`).
 - Committa och pusha alla ändringar i `products/`.
 
 ## DEFINITION OF DONE (markera ✅/❌ sist)
@@ -75,6 +84,8 @@ har dödat vinnare två gånger. Kortversion av kraven:
 - [ ] Minnesfilerna fanns — eller upphämtning (1b) kördes och redovisades
 - [ ] **ANALYSMETOD.md:s snabbchecklista avbockad punkt för punkt i svaret**
 - [ ] Vinstbidragstabellen visad — ranking på vinst, inte på ROAS/CPA
+- [ ] Creative-teardown gjort: bilder visuellt granskade, variabeltabell visad,
+      ≥3 mönster utpekade och översatta till briefinstruktioner
 - [ ] Feedbackloop körd: varje annons i förra batchen har fått sitt utfall loggat i batch-log.md
 - [ ] dna.md uppdaterad (data skild från hypotes)
 - [ ] Backlog-items inkluderade och markerade som använda
