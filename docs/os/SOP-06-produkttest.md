@@ -6,8 +6,8 @@ den versionerade textversionen; Loomarna länkas nedan tills innehållet är
 transkriberat).
 
 Bäverbutiken är en general store: vi launchar många billiga produkter, testar med
-en första ads-batch, och skalar det som visar köpsignal. Grillkliniken/Mastern är
-ett separat brand och följer SOP-01 direkt.
+en första ads-batch, och skalar det som visar köpsignal. Allt sker i ad account
+**MagiBorsten `1867947880635861`**.
 
 ## Källor (source of truth)
 
@@ -33,7 +33,7 @@ ett separat brand och följer SOP-01 direkt.
    inte redo att launchas.
 4. **När en testprodukt visar köpsignal** (håller target-CPA efter ≥300 kr spend
    / 3 köp): flytta produkten till winners-mappen i Drive, registrera den i
-   `products/products.json` (P7 gör det), och kör därefter batch-loopen (SOP-01)
+   `products/products.json` (`/ny-produkt` gör det), och kör därefter batch-loopen (SOP-01)
    var 3:e dag som för alla aktiva produkter.
 5. **När ett test dödas:** pausa kampanjen, sätt status i products.json till
    `"pausad"`, skriv en rad i product sheetets Note-kolumn om varför (så vi inte
@@ -46,10 +46,10 @@ ett separat brand och följer SOP-01 direkt.
    "Ads to do" ifylld. Saknas något → fixa först.
 3. Skapa/kontrollera Drive-mappen (`SKU Referensnamn`), lägg allt material i
    `Batch #1`.
-4. Kör `prompts/P7-new-product-test.md` — Claude bygger första testbatchen
-   (research-driven, ingen performance-data finns ju än) + de 2 extra adsen,
-   och registrerar produkten i kvotsystemet.
-5. Launcha, logga med P5, och låt dagliga check-inen (P4) ta över.
+4. Skriv `/ny-produkt Produktnamn <budget>` i en ny Claude Code-session — Claude
+   bygger första testbatchen (research-driven, ingen performance-data finns ju än)
+   + de 2 extra adsen, och registrerar produkten i kvotsystemet.
+5. Launcha, logga med `/logga`, och låt dagliga check-inen (`/checkin`) ta över.
 
 ## ⚠️ Luckor att stänga (innehåll fast i Loom-video)
 

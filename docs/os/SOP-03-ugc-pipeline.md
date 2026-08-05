@@ -1,6 +1,6 @@
 # SOP-03: UGC-pipeline — från outreach till färdig annons
 
-**Ägare:** UGC-outreach-ansvarig (outreach) + managern (planering via P6).
+**Ägare:** UGC-outreach-ansvarig (outreach) + managern (planering via `/ugc`).
 
 ## Flödet
 
@@ -17,13 +17,13 @@ Allt trackas i en Notion-databas ("UGC Pipeline") med en rad per creator-deal:
 | Status (enligt flödet ovan) | Outreach t.o.m. "Levererad", sen managern |
 | Deal (pris / gratis produkt / provision) | Outreach |
 | Produkt skickad-datum | Outreach |
-| Beräknad leverans råmaterial | Claude (P6) |
-| Deadline råmaterial | Claude (P6) |
-| Deadline färdig annons | Claude (P6) |
+| Beräknad leverans råmaterial | Claude (`/ugc`) |
+| Deadline råmaterial | Claude (`/ugc`) |
+| Deadline färdig annons | Claude (`/ugc`) |
 | Ansvarig redigerare | Managern |
-| Länk till brief | Claude (P6) |
+| Länk till brief | Claude (`/ugc`) |
 
-## Deadline-regler (default, kan overridas i P6)
+## Deadline-regler (default, kan overridas i `/ugc`)
 
 - Beräknad leverans = produkt skickad + 3 dagar frakt + 7 dagar filmtid
 - Deadline råmaterial = beräknad leverans + 2 dagars buffert
@@ -33,11 +33,11 @@ Allt trackas i en Notion-databas ("UGC Pipeline") med en rad per creator-deal:
 
 1. **Outreach-ansvarig** uppdaterar Notion-raden så fort något händer (bekräftelse,
    skickad produkt, leverans) och skriver det i Slack.
-2. **Managern** kör `prompts/P6-ugc-plan.md` vid varje förändring (~2 min). Claude
+2. **Managern** skriver `/ugc produkt-id <ny info>` vid varje förändring (~2 min). Claude
    räknar deadlines, skapar redigerings-tasken i förväg och visar hela pipelinen
    med förseningar rödmarkerade.
-3. **Daglig check-in (P4)** larmar automatiskt om passerade deadlines, så inget
-   ligger och ruttnar även om ingen kört P6.
+3. **Daglig check-in (`/checkin`)** larmar automatiskt om passerade deadlines, så inget
+   ligger och ruttnar även om ingen kört `/ugc`.
 
 ## Mål för outreach (sätts per månad av ägaren)
 

@@ -12,7 +12,7 @@ som tvingar fram (1) kvotläget, (2) kvalitetskontroll av allt redigerarna lever
 ## Rutinen
 
 1. Öppna en ny Claude Code-session i detta repo.
-2. Öppna `prompts/P4-daily-checkin.md`, fyll i produktnamnet, klistra in.
+2. Skriv `/checkin produkt-id` (produkt-id:n står i `products/products.json`).
 3. Claude gör jobbet: kvot, Slack-genomgång med kontrollfrågor, Notion-uppdatering,
    performance-larm, UGC-koll — och slutar med en sammanfattningstabell.
 4. Managern gör bara två saker:
@@ -28,7 +28,7 @@ som tvingar fram (1) kvotläget, (2) kvalitetskontroll av allt redigerarna lever
 - Inga obesvarade underkännanden äldre än 1 dag
 - Inga UGC-deadlines passerade utan åtgärd
 
-## Kontrollfrågorna (samma lista som i P4 — ändra HÄR om reglerna ändras, och uppdatera P4)
+## Kontrollfrågorna (samma lista som i `/checkin`-kommandot — ändra HÄR om reglerna ändras, och uppdatera `.claude/commands/checkin.md`)
 
 1. Filnamn följer naming-strukturen exakt
 2. Exportformat kompletta (video 9:16 + 4:5 · bild 1:1 + 1080×1350)

@@ -1,48 +1,63 @@
-# SOP-01: Batch-loopen — ny batch ads för en produkt
+# SOP-01: Första batchen efter produktlaunch (+ produktens chatt)
 
-**Ägare:** Managern. **Frekvens:** Var gång kvoten (SOP-02) kräver en ny batch, normalt var 3:e dag per aktiv produkt.
-**Tid:** ~30 min egen tid + Claude jobbar själv däremellan.
+**Ägare:** Managern. **När:** EN gång per produkt — efter att produkten launchats
+med original-adsen (SOP-06) och samlat data, när det är dags för första riktiga
+iterations-batchen.
 
-Detta är v2 av "Sop creative strategy new product" — samma flöde, men prompterna
-ligger nu versionerade i `prompts/`-mappen i detta repo i stället för i Google Docs,
-och varje prompt slutar med en checklista som Claude måste bocka av. Ändras en
-prompt: ändra filen i repot, committa — då kör alla framtida sessioner den nya versionen.
+**Syftet är dubbelt:** (1) bygga Batch #2 utifrån verklig data, och (2) skapa
+**produktens Claude-chatt** som sedan används för allt löpande arbete med produkten
+— framför allt creative strategy. Chatten är hemmabasen, men allt minne (Creative
+DNA, batch-logg, idé-backlog) skrivs till `products/<id>/` i repot, så om chatten
+tappas bort går inget förlorat — en ny session läser upp läget själv.
 
 ## Steg
 
-**1. Starta analysen.**
-Öppna en ny Claude Code-session (Fable, high) i detta repo. Öppna `prompts/P1-strategist-os.md`,
-fyll i produktnamn/URL/kampanjnamn/batch-nummer, klistra in. Claude kör hela kedjan själv.
-→ *Fortsätt med steg 2 medan Claude jobbar.*
+**1. Starta produkt-chatten.**
+Ny Claude Code-session i detta repo (Fable 5 high). Skriv:
+```
+/forsta-batch Produktnamn
+```
+Claude slår själv upp landningssida, kampanj och product sheet-raden, och kör hela
+analysen + bygger brieferna. → *Fortsätt med steg 2 medan Claude jobbar.*
 
 **2. Ordna Drive-mappen.**
-Gå till produktmappen i Drive ([produktmappar](https://drive.google.com/drive/folders/16rA1SxQRevd9FNb8fnh4vRsukmVPEm4e?usp=sharing)).
-Är produkten en vinnare: flytta den till winners-mappen. Skapa `Batch #1`, `Batch #2` osv.
-Lägg allt befintligt material i `Batch #1`.
+[Produktmapparna i Drive](https://drive.google.com/drive/folders/16rA1SxQRevd9FNb8fnh4vRsukmVPEm4e?usp=sharing).
+Vinnare? Flytta produktmappen till winners-mappen. Skapa `Batch #1` och `Batch #2`,
+lägg allt befintligt material i `Batch #1`.
 
-**3. Granska Claudes leverans mot checklistan.**
-När Claude är klar ska svaret sluta med "Definition of done"-checklistan, allt ✅.
-Något ❌ eller saknas? Svara: *"Checklistan i prompten är inte uppfylld. Fixa punkt X."*
-Ladda INTE ner något förrän checklistan är grön.
+**3. Granska mot checklistan.**
+Claudes svar ska sluta med "Definition of done", allt ✅. Något ❌?
+Svara: *"Checklistan är inte uppfylld. Fixa punkt X."* Ladda inte ner något innan
+den är grön.
 
 **4. Ladda upp till Drive.**
-Ladda ner rapport + zip-filer, packa upp och lägg i `Batch #2`-mappen
-(exempel: [Loom](https://www.loom.com/share/9c82d1c1d90a45b68616a3f4bfd0ffd3)).
-Dela mappen med editor-behörighet.
+Ladda ner rapport + zip-filer, packa upp i `Batch #2`-mappen
+([exempel-Loom](https://www.loom.com/share/9c82d1c1d90a45b68616a3f4bfd0ffd3)).
+Dela mappen som editor.
 
-**5. Notion.**
-Öppna `prompts/P2-notion-upload.md`, fyll i Notion-namn + Batch-mappens länk,
-klistra in i SAMMA session. Kontrollera checklistan.
+**5. Notion.** I samma chatt:
+```
+/notion Databasens namn, [länk till Batch #2-mappen]
+```
 
-**6. Tracking-sheet.**
-Klistra in `prompts/P3-tracking-sheet.md` i samma session. Importera den levererade
-xlsx-filen till Google Sheets, dela som editor, lägg länken i produktens Notion.
+**6. Tracking-sheet.** I samma chatt:
+```
+/sheet produkt-id
+```
+Importera xlsx-filen till Google Sheets, dela som editor, länka i produktens Notion.
 
-**7. Logga kvoten.**
-När annonserna sen faktiskt launchas i Ads Manager: kör `prompts/P5-quota-update.md`.
-Batchen räknas inte förrän annonserna är live — briefer på hög är inte kvotuppfyllnad.
+**7. Logga när annonserna launchas.**
+```
+/logga produkt-id antal
+```
+Batchen räknas mot kvoten först när annonserna är live i Ads Manager.
 
-## Om Claude strular
+## Efter detta: det löpande arbetet i produkt-chatten
 
-Se `docs/os/SOP-05-nar-claude-inte-lyssnar.md`. Kortversionen: peka på prompten och
-checklistan, be aldrig om "gör om allt" — be om den specifika punkten.
+| Vad du vill | Skriv |
+|-------------|-------|
+| Ny CS-runda på senaste annonserna (var 3:e dag) | `/cs produkt-id` + ev. egna idéer |
+| Slänga in ett koncept eller en swipe till nästa batch | `/koncept produkt-id idén...` (`AKUT` sist om den ska göras direkt) |
+| Daglig koll | `/checkin produkt-id` |
+
+Strular Claude: `docs/os/SOP-05-nar-claude-inte-lyssnar.md`.

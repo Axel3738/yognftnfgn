@@ -10,19 +10,20 @@ briefer, mer research) är sekundärt.
 kvot per 3-dagarscykel = (daglig budget × 20 %) ÷ target-CPA × 3
 ```
 
-Exempel Mastern idag: 18 000 kr/dag → 3 600 kr ÷ 500 kr × 3 = **21,6 → 22 creatives
-per 3-dagarscykel** (~7 per dag). Skalar budgeten upp, skalar kravet upp automatiskt.
+Exempel Motorhöljet idag: 6 000 kr/dag → 1 200 kr ÷ 150 kr × 3 = **24 creatives
+per 3-dagarscykel** (8 per dag). Skalar budgeten upp, skalar kravet upp automatiskt —
+och vinnare med låg CPA får högst krav, vilket är rätt: de förtjänar mest kreativt bränsle.
 
 ## Hur den följs
 
 - Konfig + logg ligger i `products/products.json`. Skriptet `pipeline/quota.mjs`
   räknar ut läget:
   - `node pipeline/quota.mjs` → 🟢/🔴 och exakt hur många creatives före/efter plan vi ligger.
-  - `node pipeline/quota.mjs log mastern 4` → logga 4 launchade creatives.
-- **Varje daglig check-in (P4) börjar med kvoten** och hämtar färsk budget från
+  - `node pipeline/quota.mjs log motorholjet 4` → logga 4 launchade creatives.
+- **Varje daglig check-in (`/checkin`) börjar med kvoten** och hämtar färsk budget från
   Ads Manager, så siffran aldrig bygger på gammal budget.
-- **P1-batcharna dimensioneras av kvoten:** testplanen i varje batch måste innehålla
-  minst kvotens antal annonser (står i P1:s checklista).
+- **Batcharna dimensioneras av kvoten:** testplanen i varje `/forsta-batch`- och
+  `/cs`-batch måste innehålla minst kvotens antal annonser (står i kommandonas checklistor).
 - En creative räknas när den är **live eller schemalagd i Ads Manager** — inte när
   briefen är skriven, inte när redigeraren levererat filen.
 

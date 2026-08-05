@@ -1,119 +1,125 @@
 # Actionplan: outsourca Axel ur Bäverbutiken senast 31 augusti
 
-**Skriven:** 2026-08-04 · **Deadline:** 2026-08-31 (4 veckor)
-**Slutmål:** Managern kör hela creative-maskinen med prompterna i detta repo.
-Axels enda kvarvarande beslut: target-CPA, budgetändringar, kill/skala och pengar.
+**Skriven:** 2026-08-04 · **Uppdaterad:** 2026-08-05 (Mastern/SnarkLös utlyft — detta
+OS gäller endast Bäverbutiken/MagiBorsten; prompter ersatta med slash-kommandon)
+**Deadline:** 2026-08-31 · **Slutmål:** Managern kör hela creative-maskinen med
+kommandona i `.claude/commands/`. Axels enda kvarvarande beslut: target-CPA,
+budgetändringar, kill/skala och pengar.
 
-## Läget just nu (verklig data 2026-08-04)
+## Så hänger systemet ihop (managerns vardag)
 
-**Två verksamheter i systemet** (rättat 4/8 — Mastern hör till Grillkliniken/SnarkLös,
-Bäverbutiken.se ligger i MagiBorsten `1867947880635861`):
+1. **Ny testprodukt:** `/ny-produkt` → första testbatchen + registrering (SOP-06).
+2. **Efter launch, när data finns:** `/forsta-batch` → full analys + Batch #2 +
+   produktens minnesfiler i `products/<id>/` (SOP-01). Detta skapar produktens chatt.
+3. **Sen rullar loopen:** `/cs` var 3:e dag per produkt — feedbackloop på senaste
+   annonserna (hypotes → utfall loggas), uppdaterat Creative DNA, nästa batch
+   enligt kvoten. Egna idéer skickas med direkt i kommandot.
+4. **Idéer när som helst:** `/koncept` lägger dem i backloggen; nästa `/cs` tar
+   med dem. `AKUT` = briefen byggs direkt.
+5. **Varje morgon:** `/checkin` per produkt — kvot, Slack-kontrollfrågor,
+   grönmarkering, larm. `/logga` när annonser launchas. `/ugc` vid creator-nytt.
 
-*Grillkliniken (SnarkLös):*
-- Mastern: 15 000 kr/dag (+ "Anders Johansson" 3 000 kr/dag) = 18 000 kr/dag
-- Senaste 7 dagarna: 112 640 kr spend · 217 köp · CPA 519 kr · ROAS 1,94
-- Kvot med target-CPA 500: **22 creatives per 3-dagarscykel (~7/dag)**
+**Modellpolicy (fast regel i CLAUDE.md):** strategi/analys körs alltid på
+Fable 5/Opus; slutgiltig ad copy och voiceovers skrivs av sonnet/haiku-subagenter.
 
-*Bäverbutiken (MagiBorsten), aktiva tester senaste 7 dagarna:*
+## Läget just nu (verklig data 2026-08-04, MagiBorsten)
 
-| Produkt | Budget/dag | Köp | CPA | ROAS | Kommentar |
-|---------|-----------|-----|-----|------|-----------|
+| Produkt | Budget/dag | Köp 7d | CPA | ROAS | Kommentar |
+|---------|-----------|--------|-----|------|-----------|
 | Motorhöljet | 6 000 kr | 98 | 140 kr | 2,77 | Stark vinnare — skalningskandidat |
 | Axelbältet | 2 000 kr | 47 | 324 kr | 1,74 | Volym finns, ROAS tunn |
 | Sätesöverdragaren | 1 500 kr | 32 | 299 kr | 2,33 | Bra |
 | Strandtofflorna | 1 000 kr | 40 | 170 kr | 2,53 | Bra |
-| AI Smarta Glasögon | 1 000 kr | 2 | 1 208 kr | 1,55 | Svag — kill-kandidat om trend står sig |
+| AI Smarta Glasögon | 1 000 kr | 2 | 1 208 kr | 1,55 | Svag — kill-kandidat om trenden står sig |
 | Väggfästet | 500 kr | 9 | 329 kr | 2,08 | OK för testbudget |
 
-- ⚠️ **Alla `target_cpa_sek` i `products/products.json` är mina placeholders**
-  (avrundade från nuvarande CPA). **Axel: sätt riktiga target-CPA per produkt
-  (COGS/break-even) — det är ratten som styr hela kvoten.** Notera att formeln
-  ger HÖG kvot för produkter med låg CPA (Motorhöljet: 20 % × 6 000 / 150 × 3 =
-  24 creatives/cykel) — det är rimligt (vinnare förtjänar mest kreativt bränsle)
-  men kräver kapacitetsbeslut.
-- Bäverbutikens produkttest-flöde är nu SOP-06 + prompten P7 (textversion av
-  "Product testing document"-PDF:en). Delar av processen är fast i Loom-videor —
-  luckorna listas i SOP-06 och bör transkriberas vecka 1.
+- ⚠️ **Alla `target_cpa_sek` i `products/products.json` är placeholders**
+  (avrundade från nuvarande CPA). **Axel: sätt riktiga target-CPA per produkt** —
+  det är ratten som styr hela kvoten. Formeln ger hög kvot åt vinnare med låg CPA
+  (Motorhöljet: 24 creatives/cykel) — rimligt, men kräver kapacitetsbeslut.
+- Delar av produkttest-processen är fast i Loom-videor — luckorna listas i SOP-06
+  och bör skrivas ner i text vecka 1.
 
 ## Veckoplan
 
 ### Vecka 1 (4–10 aug): Kärnloopen körs av Axel, med systemet
-- [x] System i repo: SOP-01–05, prompter P1–P6, kvotskript, CLAUDE.md (klart i denna commit)
-- [ ] Axel sätter riktig target-CPA i `products/products.json`
-- [ ] Axel kör EN hel batch-loop (SOP-01) själv med de nya prompterna och rättar
-      allt som skaver — varje friktion blir en promptändring, committad
-- [ ] Sätt upp Notion-databaserna: "Creative Tasks" + "UGC Pipeline" (kolumner i SOP-03)
-- [ ] Bestäm Slack-kanalstruktur: en kanal per produkt för redigerarna + en för UGC
+- [x] System i repo: SOP-01–06, kommandon, kvotskript, CLAUDE.md
+- [x] Prompter → slash-kommandon; Mastern/SnarkLös utlyft ur OS:et
+- [ ] Axel sätter riktiga target-CPA i `products/products.json`
+- [ ] Transkribera Loom-luckorna i SOP-06 (2-extra-ads-regeln m.m.)
+- [ ] Axel kör `/forsta-batch` på Motorhöljet (vinnaren) — varje friktion blir en
+      kommandoändring, committad
+- [ ] Sätt upp Notion-databaserna: "Creative Tasks" + "UGC Pipeline" (SOP-03)
+      och koppla Notion-MCP:n till sessionerna
+- [ ] Bestäm Slack-kanalstruktur: en kanal per produkt + en för UGC
 
 ### Vecka 2 (11–17 aug): Managern kör, Axel tittar på
-- [ ] Managern kör daglig check-in (P4) varje dag, Axel granskar efteråt (15 min/dag)
-- [ ] Managern kör sin första batch-loop (SOP-01) med Axel i rummet
-- [ ] UGC-ansvarig börjar rapportera enligt SOP-03; managern kör P6 vid varje förändring
+- [ ] Managern kör `/checkin` varje dag, Axel granskar efteråt (15 min/dag)
+- [ ] Managern kör sin första `/cs`-runda med Axel i rummet
+- [ ] UGC-ansvarig rapporterar enligt SOP-03; managern kör `/ugc` vid varje förändring
 - [ ] Första kapacitetsmätningen: hur många creatives/dag klarar redigerarna faktiskt?
 
 ### Vecka 3 (18–24 aug): Managern kör själv, Axel svarar bara på eskaleringar
-- [ ] Managern kör allt (P1–P6) utan hjälp; Axel svarar bara på eskaleringar i Slack
-- [ ] Dashboard v1 byggs (nu — inte tidigare — när datat och rutinerna finns):
-      Claude-artifact som läser products.json + Notion + Ads Manager och visar
-      kvotläge, redigerar-KPI:er och UGC-pipeline per produkt
-- [ ] Skriv delegationsregler: vid vilka CPA-nivåer managern själv får killa/skala
-      utan att fråga Axel
+- [ ] Managern kör allt utan hjälp; Axel svarar bara i Slack
+- [ ] Dashboard v1 byggs (nu — när datat och rutinerna finns): läser products.json +
+      Notion + Ads Manager, visar kvotläge, redigerar-KPI:er och UGC-pipeline
+- [ ] Delegationsregler: vid vilka CPA-nivåer managern själv får killa/skala
 
 ### Vecka 4 (25–31 aug): Överlämning
-- [ ] Axel rör ingenting på 5 arbetsdagar; allt som ändå landar hos honom skrivs upp
-      och får en SOP eller promptändring
-- [ ] Genomgång av listan → sista justeringar → **31 aug: överlämnat**
+- [ ] Axel rör ingenting på 5 arbetsdagar; allt som ändå landar hos honom får en
+      SOP eller kommandoändring
+- [ ] Genomgång → sista justeringar → **31 aug: överlämnat**
 
-## Mina tanker och idéer
+## Tankar och idéer
 
-1. **Prompterna i repot är hela tricket.** Gamla SOP:en länkade Google Docs — de
-   driftar, saknar checklista och Claude ser dem inte automatiskt. Nu ligger de i
-   repot, varje session i repot läser CLAUDE.md med reglerna, och varje prompt
-   slutar med en Definition of done som managern bara behöver kontrollera är grön.
-   "Claude lyssnar inte"-problemet attackeras från tre håll: regler i CLAUDE.md,
-   checklistor i prompterna, och SOP-05 som gör varje misstag till en promptändring.
-2. **Kvoten är nu en siffra, inte en ambition.** `node pipeline/quota.mjs` svarar
-   på sekunden: 🔴 −19 eller 🟢 +3. Den hänger med när budgeten ändras eftersom P4
-   hämtar färsk budget varje morgon. Extremt tydligt plus/minus — som du bad om.
-3. **En creative räknas vid launch, inte vid brief.** Annars optimerar teamet på
-   att skriva briefer som ingen producerar. Kvoten mäter det som spenderar pengar.
-4. **Dashboarden medvetet i vecka 3.** Byggs den först blir den en snygg fasad över
-   tomma rutiner. När P4 körts dagligen i två veckor finns strukturerad data att visa.
-5. **Managern behöver aldrig "kunna AI".** Hela jobbet är: öppna promptfil → fyll i
-   klamrar → klistra in → kontrollera att checklistan är grön → godkänn Slack-utkast.
-   Det är närmare HR/Excel-arbete än AI-arbete, vilket matchar hennes profil.
+1. **Kommandona är gränssnittet.** Managern skriver `/cs motorholjet` — inga filer
+   att öppna, inget att klistra in. Varje kommando slutar med en Definition of done
+   som hon bara kontrollerar är grön. "Claude lyssnar inte" attackeras från tre
+   håll: regler i CLAUDE.md (läses automatiskt varje session), checklistor i
+   kommandona, och SOP-05 som gör varje misstag till en kommandoändring.
+2. **Minnet ligger i repot, inte i chatten.** `products/<id>/dna.md` + batch-log +
+   backlog gör att vilken session som helst kan ta vid. Produkt-chatten är bekväm,
+   inte kritisk — tappas den bort går inget förlorat.
+3. **Feedbackloopen är inbyggd i `/cs`:** varje batchs hypoteser stäms av mot
+   utfallet innan nästa batch byggs. Det är det som gör det till strategi och inte
+   bara innehållsproduktion.
+4. **Kvoten är en siffra, inte en ambition.** `node pipeline/quota.mjs` → 🔴 −24
+   eller 🟢 +3, med färsk budget varje morgon via `/checkin`.
+5. **En creative räknas vid launch, inte vid brief** — kvoten mäter det som
+   spenderar pengar.
+6. **Dashboarden medvetet i vecka 3** — efter två veckors `/checkin`-data finns
+   något riktigt att visa.
 
 ## Möjligheter
 
-- **Skalning utan Axel:** när budgeten höjs räknar systemet självt upp kvoten —
-  flaskhalsen blir kapacitet (redigerare/UGC), och den är billig att köpa i Manila.
-- **Ny produkt = kopiera ett JSON-objekt** i products.json + kör P1. Hela maskinen
-  (kvot, check-in, UGC, Notion) funkar direkt för produkt nr 2, 3, 4.
-- **Tracking-sheetet (P3) blir en flerårig databas** av vad som funkat per angle/
-  format/hook — varje ny batch startar smartare än den förra.
-- **På sikt:** schemalagd daglig check-in (Routine som kör P4 automatiskt varje
-  morgon och postar sammanfattningen i Slack) — managern granskar i stället för
-  att initiera. Bygg det när rutinen suttit manuellt i 2+ veckor.
+- **Skalning utan Axel:** höjd budget → kvoten räknas upp automatiskt; flaskhalsen
+  blir redigerarkapacitet, som är billig att utöka i Manila.
+- **Ny produkt = `/ny-produkt`** — hela maskinen (kvot, check-in, UGC, Notion)
+  funkar direkt för produkt nr 7, 8, 9.
+- **Tracking-sheetet (`/sheet`) blir en flerårig databas** över vad som funkar per
+  angle/format/hook.
+- **På sikt:** schemalagd `/checkin` (Routine varje vardagmorgon som postar
+  sammanfattningen i Slack) — managern granskar i stället för att initiera.
+  Byggs när rutinen suttit manuellt 2+ veckor.
 
-## Bottlenecks (rangordnade) och vad som redan är gjort åt dem
+## Bottlenecks (rangordnade) och vad som är gjort åt dem
 
-1. **Redigerarkapacitet vs kvot.** 7/dag för Mastern är mycket. → Kapacitetscheck i
-   SOP-02; mät verklig kapacitet vecka 2; höj bemanning eller statics-andel om 🔴.
-2. **UGC-råmaterial tar slut.** Iterationsbatcher kräver nytt råmaterial. → SOP-03:s
-   regel "minst 2 deals i status Filmar per produkt" + P4 larmar på deadlines.
-3. **Claude-kvalitet varierar.** → CLAUDE.md + checklistor + SOP-05. Kvarstående
-   risk: video-transkript kan inte hämtas via API — managern måste klistra in
-   transkript för vinnare/förlorare (står i P1 FAS 0).
-4. **Managern är single point of failure.** Sjuk/borta = ingen check-in. → Rutinerna
-   är så enkla att Axel (eller VA:n) kan täcka upp med samma promptfiler; på sikt
-   schemalagd P4.
-5. **Feedback-loopen mot redigerarna.** Underkännanden som inte följs upp. → P4:s
-   regel: inga obesvarade underkännanden äldre än 1 dag, annars ingen grön dag.
-6. **Target-CPA saknas per produkt.** Utan den är kvoten fel. → Axel sätter den
-   vecka 1; P1 ber om COGS när break-even saknas.
-7. **Behörigheter.** Manager + Claude behöver: Ads Manager, Shopify, Notion, Slack,
-   Drive (editor). → Kör en access-koll första gången managern kör P4; allt som
-   saknas fixas då, en gång.
+1. **Redigerarkapacitet vs kvot.** Motorhöljet ensam kräver 8/dag. → Kapacitetscheck
+   i SOP-02; mät verklig kapacitet vecka 2; höj bemanning eller statics-andel.
+2. **UGC-råmaterial tar slut.** → SOP-03: minst 2 deals i "Filmar" per produkt;
+   `/checkin` larmar på deadlines.
+3. **Claude-kvalitet varierar.** → CLAUDE.md + checklistor + SOP-05. Kvarstående:
+   video-transkript kan inte hämtas via API — managern klistrar in transkript för
+   vinnare/förlorare när `/forsta-batch`/`/cs` ber om det.
+4. **Managern är single point of failure.** → Kommandona är så enkla att Axel eller
+   VA:n kan täcka upp; på sikt schemalagd `/checkin`.
+5. **Feedback-loopen mot redigerarna.** → `/checkin`-regeln: inga obesvarade
+   underkännanden äldre än 1 dag, annars ingen grön dag.
+6. **Target-CPA saknas per produkt.** → Axel sätter dem vecka 1.
+7. **Behörigheter.** Manager + Claude behöver Ads Manager, Shopify, Notion, Slack,
+   Drive (editor). Notion-MCP:n var t.ex. inte ansluten i denna session. → Kör en
+   access-koll första `/checkin`; fixa allt som saknas en gång.
+8. **Loom-inlåst processkunskap.** → Luckolistan i SOP-06; transkribera vecka 1.
 
 ## Kända problem (fylls på löpande — se SOP-05)
 

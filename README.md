@@ -1,10 +1,14 @@
 # Bäverbutiken – Creative OS
 
 > **Ny här? Börja i [`docs/os/ACTIONPLAN.md`](docs/os/ACTIONPLAN.md)** — planen,
-> SOP:erna (`docs/os/`) och prompterna managern klistrar in (`prompts/`).
+> SOP:erna (`docs/os/`) och managerns slash-kommandon (`.claude/commands/`).
 > Brief-kvoten (mål nr 1): `node pipeline/quota.mjs`.
 
-# Image Ad Pipeline
+# Image Ad Pipeline (LEGACY — annat brand)
+
+> ⚠️ Allt nedanför denna rad är äldre Grillkliniken/Mastern-arbete och ingår INTE
+> i Bäverbutiken-OS:et. Behålls som referens. Bäverbutikens system ligger i
+> `docs/os/`, `.claude/commands/` och `products/`.
 
 Ett system för att bygga bildannonser (Meta/Facebook/Instagram), namnge dem smart så
 att datan går att skära, och sedan iterera på det som faktiskt funkar.

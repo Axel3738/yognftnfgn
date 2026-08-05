@@ -17,7 +17,7 @@ att kunna något om AI.
    Prompterna är byggda för att köras om — det kostar bara minuter.
 4. **Ändra prompten, inte bara samtalet.** Gör Claude samma fel två batcher i rad
    är det promptens fel. Säg till ägaren eller be Claude själv:
-   > *"Du gjorde fel X igen. Uppdatera prompts/P1-strategist-os.md så att felet
+   > *"Du gjorde fel X igen. Uppdatera kommandofilen i .claude/commands/ så att felet
    > inte kan hända igen, committa och pusha."*
    Så blir varje misstag en permanent förbättring i stället för ett återkommande gräl.
 
