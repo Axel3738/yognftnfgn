@@ -145,6 +145,12 @@ Copy skriven av sonnet-subagent (modellpolicy). Alla priser 599/678/79 kr.
 
 Backlog-item **kompatibilitets-creative** `[använd i batch #4]`.
 
+**Notion:** 7 items skapade i databasen "Trimmer belt creative hub"
+(collection 2f1270ab-908c-820a-9a08-07b73d53710b), alla Status `Draft`,
+Typ `Video - Pending Approval`, hela briefen inklistrad i itemet.
+Drive-mapp för batchen: https://drive.google.com/drive/folders/1nj5crmX0cPglQFO20C2RbHglJUXRGbbF
+(skapad, ej fylld — brieferna ligger i Notion och som zip i chatten).
+
 ## Åtgärder och öppna punkter 2026-08-05 (uppdaterad)
 
 - ✅ SO_6_1 pausad — kill-regeln uppfylld (570 kr spend, CPA över break-even 326).
