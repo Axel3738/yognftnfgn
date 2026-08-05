@@ -38,8 +38,9 @@ Fable 5/Opus; slutgiltig ad copy och voiceovers skrivs av sonnet/haiku-subagente
   AI Glasögon 930. ⚠️ **Sätesöverdragaren står kvar på placeholder 300 kr — sätt
   den.** Formeln ger hög kvot åt vinnare med låg CPA (Motorhöljet: 27
   creatives/cykel = 9/dag) — rimligt, men kräver kapacitetsbeslut vecka 2.
-- Delar av produkttest-processen är fast i Loom-videor — luckorna listas i SOP-06
-  och bör skrivas ner i text vecka 1.
+- 2-extra-ads-regeln är nu i text (SOP-06): rå leverantörsvideo utan voiceover/text
+  + textfri produktbild, båda PD, alltid ovanpå batchen. Kvar i Loom: processteg
+  pt 1–3 och "what product is next"-kriterierna.
 
 ## Veckoplan
 
@@ -47,9 +48,10 @@ Fable 5/Opus; slutgiltig ad copy och voiceovers skrivs av sonnet/haiku-subagente
 - [x] System i repo: SOP-01–06, kommandon, kvotskript, CLAUDE.md
 - [x] Prompter → slash-kommandon; Mastern/SnarkLös utlyft ur OS:et
 - [x] Axel sätter riktiga target-CPA i `products/products.json` (5/8; Sätesöverdragaren återstår)
-- [ ] Transkribera Loom-luckorna i SOP-06 (2-extra-ads-regeln m.m.)
-- [ ] Axel kör `/forsta-batch` på Motorhöljet (vinnaren) — varje friktion blir en
-      kommandoändring, committad
+- [x] 2-extra-ads-regeln transkriberad in i SOP-06 (5/8). Kvar: Loom pt 1–3 +
+      "what product is next"-kriterierna
+- [ ] Axel kör `/cs motorholjet` (batch 4) — `/cs` bygger produktminnet från
+      kontohistoriken först. Varje friktion blir en kommandoändring, committad
 - [ ] Sätt upp Notion-databaserna: "Creative Tasks" + "UGC Pipeline" (SOP-03)
       och koppla Notion-MCP:n till sessionerna
 - [ ] Bestäm Slack-kanalstruktur: en kanal per produkt + en för UGC
@@ -122,7 +124,11 @@ Fable 5/Opus; slutgiltig ad copy och voiceovers skrivs av sonnet/haiku-subagente
    tracking-sheetet ska uppdateras live av `/logga` (utan den: xlsx + import).
    Notion-MCP:n var t.ex. inte ansluten i denna session. → Kör en access-koll
    första `/checkin`; fixa allt som saknas en gång.
-8. **Loom-inlåst processkunskap.** → Luckolistan i SOP-06; transkribera vecka 1.
+8. **Loom-inlåst processkunskap.** → 2-extra-ads-regeln klar 5/8; resterande
+   luckor listade i SOP-06.
+9. **Produkter utan produktminne.** De flesta produkter kördes igång innan OS:et
+   fanns. → `/cs` steg 1b bygger `products/<id>/` retroaktivt från kontodatan
+   första gången, och markerar tydligt vilka hypoteser som är rekonstruerade.
 
 ## Kända problem (fylls på löpande — se SOP-05)
 

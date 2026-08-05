@@ -4,6 +4,11 @@
 med original-adsen (SOP-06) och samlat data, när det är dags för första riktiga
 iterations-batchen.
 
+> **Produkten är redan förbi sin första batch?** (Motorhöljet t.ex. är på batch 4.)
+> Kör inte `/forsta-batch` — kör `/cs produkt-id` direkt. Saknas produktens
+> minnesfiler bygger `/cs` dem själv från hela kontohistoriken först (steg 1b i
+> kommandot), och fortsätter sedan som vanligt.
+
 **Syftet är dubbelt:** (1) bygga Batch #2 utifrån verklig data, och (2) skapa
 **produktens Claude-chatt** som sedan används för allt löpande arbete med produkten
 — framför allt creative strategy. Chatten är hemmabasen, men allt minne (Creative

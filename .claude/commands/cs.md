@@ -9,8 +9,28 @@ Detta är kärnloopen: körs återkommande (normalt var 3:e dag per produkt) i p
 
 ### 1. Läs läget
 - Produktens rad i `products/products.json` (ad account = **MagiBorsten 1867947880635861**, kampanjer, budget, target-CPA).
-- `products/<id>/dna.md` (Creative DNA), `products/<id>/batch-log.md` (tidigare batcher + hypoteser), `products/<id>/backlog.md` (väntande koncept/swipes). Saknas filerna: skapa dem nu.
+- `products/<id>/dna.md` (Creative DNA), `products/<id>/batch-log.md` (tidigare batcher + hypoteser), `products/<id>/backlog.md` (väntande koncept/swipes).
 - Kör `node pipeline/quota.mjs` — kvoten bestämmer batchstorleken.
+
+### 1b. Saknas minnesfilerna? Kör upphämtning FÖRST (engångsjobb per produkt)
+
+Produkter som redan kört flera batcher innan OS:et fanns har inget `products/<id>/`.
+Skapa det då från kontodatan innan du går vidare — hoppa aldrig över detta och
+bygg aldrig en batch på tom historik:
+
+- Hämta **alla** annonser för produkten i MagiBorsten (hela livstiden, inte bara
+  senaste perioden) med spend, köp, CPA, ROAS, CTR, hook rate, hold + creatives
+  (copy, rubrik, format, bild-/video-ID). Granska de statiska bilderna visuellt.
+- Gruppera dem i batcher efter launchdatum och namngivning så gott det går, och
+  skriv `batch-log.md` retroaktivt. **Markera tydligt att hypoteserna inte
+  loggades i förväg** — skriv `hypotes: ej loggad (retroaktiv rekonstruktion)`
+  i stället för att gissa vad någon tänkte. Utfallen är däremot riktig data.
+- Bygg `dna.md` av det: Winning DNA / Losing DNA / obevisat, med data skild från
+  hypotes. Detta blir produktens startminne.
+- Skapa en tom `backlog.md`.
+- Säg i svaret att upphämtning kördes och för hur många annonser.
+
+Nästa `/cs` på produkten hoppar över detta steg och kör den vanliga loopen.
 
 ### 2. Feedbackloop på senaste annonserna (detta är poängen med kommandot)
 - Hämta performance från Ads Manager för alla annonser sedan senaste batch-loggen: spend, köp, CPA, ROAS, CTR, hook rate, hold. Färsk daglig budget hämtas samtidigt — uppdatera products.json om den ändrats.
@@ -36,6 +56,7 @@ Detta är kärnloopen: körs återkommande (normalt var 3:e dag per produkt) i p
 
 ## DEFINITION OF DONE (markera ✅/❌ sist)
 
+- [ ] Minnesfilerna fanns — eller upphämtning (1b) kördes och redovisades
 - [ ] Feedbackloop körd: varje annons i förra batchen har fått sitt utfall loggat i batch-log.md
 - [ ] dna.md uppdaterad (data skild från hypotes)
 - [ ] Backlog-items inkluderade och markerade som använda
