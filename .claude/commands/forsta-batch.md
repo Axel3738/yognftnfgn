@@ -29,6 +29,10 @@ Ditt uppdrag: analysera verklig performance-data, förklara varför vissa annons
 
 - **FAS 0 – Kontrollera tillgång (gör, låtsas inte):** redovisa i tabell vad du faktiskt nådde: Meta Ads-data (kampanj/adset/annons + creatives), statiska bilder (ladda ner och GRANSKA visuellt), video (kan inte öppnas – be om transkript för vinnare/förlorare, transkribera aldrig på gissning), landningssida, Shopify-försäljning (korsvalidera mot Meta), recensioner (lucka om otillgängligt), Meta Ad Library (svenska söktermer).
 - **FAS 1 – Kampanjöversikt:** kampanj/konto/period, objective, attribution, budget, spend, CPM, CTR, funnel LPV→ATC→IC→köp, CPA, ROAS, struktur, trafiktyp. Var läcker funneln (kreativ, LP eller kassa)?
+**FAS 1–4 körs enligt `docs/os/ANALYSMETOD.md` — läs den och bocka av dess
+checklista i svaret. Rangordning sker på vinstbidrag, aldrig på ROAS eller CPA
+ensamt; kill-beslut mot break-even-CPA, inte target-CPA.**
+
 - **FAS 2 – Klassificera:** tabell över alla annonser med klassificering, spend, köp, CPA, ROAS, CTR, hook rate, hold. Vilka 20 % driver resultatet, vilken är största budgetläckan?
 - **FAS 3 – Djupanalys av toppannonser:** copy + (när transkript finns) rad-för-rad med psykologisk mekanism kopplad till retention. Hook-formler. Attention/Persuasion/Conversion. Data skild från hypotes.
 - **FAS 4 – Förlorarna:** exakt vad som är sämre än vinnarna. Tabell: Element/Vinnare/Förlorare/Trolig påverkan/Nästa test. Pausa, iterera eller stryk.
@@ -58,6 +62,7 @@ Varje annons: hypotes, vad som behålls/ändras, format, exakt hook, fullständi
 
 - [ ] FAS 0-tabellen visar vad som faktiskt verifierades
 - [ ] Ingen dom under 300 kr / 3 köp
+- [ ] ANALYSMETOD.md följd: vinstbidragstabell visad, break-even använd för kill
 - [ ] Priser dubbelkollade mot landningssidan
 - [ ] Testplanen ≥ kvoten (quota-output visad)
 - [ ] Copy/voiceover via sonnet/haiku-subagent, strategi i huvudsessionen

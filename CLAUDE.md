@@ -20,6 +20,12 @@ inte; äldre Mastern-material i `docs/` och `pipeline/` (utom `pipeline/quota.mj
    punkt, ✅/❌. Är något ❌: fixa det, eller skriv exakt varför det inte gick.
 3. **Hitta aldrig på data.** Ingen dom över en annons under 300 kr spend eller
    3 köp. Saknas data: säg det rakt ut och leverera resten.
+3b. **Analysmetoden är obligatorisk.** Ska annonser bedömas: följ
+   `docs/os/ANALYSMETOD.md` till punkt och pricka och bocka av dess checklista i
+   svaret. **Enmetriks-domar är förbjudna** — rangordna alltid på vinstbidrag
+   `(break-even-CPA − CPA) × köp`, aldrig på ROAS eller CPA ensamt. Top spendern
+   är benchmark, inte en kandidat att döma mot småannonser. Kill-beslut mäts mot
+   `break_even_cpa_sek`, aldrig mot `target_cpa_sek`.
 4. **Brief-kvoten är mål nr 1.** Varje session som launchar/loggar creatives kör
    `node pipeline/quota.mjs` och visar plus/minus-läget. Loggning:
    `node pipeline/quota.mjs log <produkt-id> <antal>`.
@@ -71,6 +77,7 @@ inte; äldre Mastern-material i `docs/` och `pipeline/` (utom `pipeline/quota.mj
 | SOP: daglig check-in / grönmarkering | `docs/os/SOP-04-daily-checkin.md` |
 | SOP: när Claude inte lyssnar | `docs/os/SOP-05-nar-claude-inte-lyssnar.md` |
 | SOP: produkttest-pipeline | `docs/os/SOP-06-produkttest.md` |
+| **Analysmetoden (obligatorisk vid all bedömning)** | **`docs/os/ANALYSMETOD.md`** |
 | Notion-formatet för briefer (exakt spec) | `docs/os/NOTION-FORMAT.md` |
 | Produkt-konfig + launch-logg | `products/products.json` |
 | Produktminne (DNA, batch-logg, backlog) | `products/<id>/` |

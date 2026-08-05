@@ -33,8 +33,24 @@ bygg aldrig en batch på tom historik:
 Nästa `/cs` på produkten hoppar över detta steg och kör den vanliga loopen.
 
 ### 2. Feedbackloop på senaste annonserna (detta är poängen med kommandot)
-- Hämta performance från Ads Manager för alla annonser sedan senaste batch-loggen: spend, köp, CPA, ROAS, CTR, hook rate, hold. Färsk daglig budget hämtas samtidigt — uppdatera products.json om den ändrats.
-- Klassificera: Bevisad vinnare / Lovande / Osäker (<300 kr spend eller <3 köp — ingen dom) / Förlorare.
+
+**Följ `docs/os/ANALYSMETOD.md` steg för steg — läs den nu, korta inte ner den.**
+Den är obligatorisk och finns för att enmetriks-domar (ROAS ensam, CPA ensam)
+har dödat vinnare två gånger. Kortversion av kraven:
+
+- Hämta **hela kampanjen** sorterad på spend, med de verifierade fältnamnen.
+  Färsk daglig budget hämtas samtidigt — uppdatera products.json om den ändrats.
+- Kör datakvalitetskontrollen (`spend × ROAS` vs `omni_purchase_values` — fältet
+  är trasigt i detta konto) och flagga trasiga rader.
+- Signifikansgrind först: <300 kr spend eller <3 köp = **"för tidigt", ingen dom,
+  ingen plats i rankingen**.
+- **Rangordna på vinstbidrag** `(break-even-CPA − CPA) × köp` — aldrig på ROAS
+  eller CPA ensamt. Visa tabellen med spendandel och vinstandel.
+- Kill-beslut mot **break-even-CPA**, skalningsbeslut mot **target-CPA**. Över
+  target är aldrig i sig ett skäl att pausa.
+- Top spendern är benchmark — alla andra jämförs mot den, inte tvärtom.
+- Diagnostisera var i kedjan varje bedömbar annons tappar (hook rate → hold →
+  CTR → CVR → CPM). "Sämre hook" är inte en analys.
 - **Stäm av mot hypoteserna i batch-log.md:** för varje annons i förra batchen, skriv utfallet — höll hypotesen eller inte, och varför (data, inte tyckande).
 - **Uppdatera `products/<id>/dna.md`:** flytta bekräftade mönster till Winning/Losing DNA, markera vad som fortfarande är hypotes. DNA-filen är produktens ackumulerade minne — skriv den så att nästa session förstår utan kontext.
 
@@ -57,6 +73,8 @@ Nästa `/cs` på produkten hoppar över detta steg och kör den vanliga loopen.
 ## DEFINITION OF DONE (markera ✅/❌ sist)
 
 - [ ] Minnesfilerna fanns — eller upphämtning (1b) kördes och redovisades
+- [ ] **ANALYSMETOD.md:s snabbchecklista avbockad punkt för punkt i svaret**
+- [ ] Vinstbidragstabellen visad — ranking på vinst, inte på ROAS/CPA
 - [ ] Feedbackloop körd: varje annons i förra batchen har fått sitt utfall loggat i batch-log.md
 - [ ] dna.md uppdaterad (data skild från hypotes)
 - [ ] Backlog-items inkluderade och markerade som använda
