@@ -1,4 +1,14 @@
-# Image Ad Pipeline
+# Bäverbutiken – Creative OS
+
+> **Ny här? Börja i [`docs/os/ACTIONPLAN.md`](docs/os/ACTIONPLAN.md)** — planen,
+> SOP:erna (`docs/os/`) och managerns slash-kommandon (`.claude/commands/`).
+> Brief-kvoten (mål nr 1): `node pipeline/quota.mjs`.
+
+# Image Ad Pipeline (LEGACY — annat brand)
+
+> ⚠️ Allt nedanför denna rad är äldre Grillkliniken/Mastern-arbete och ingår INTE
+> i Bäverbutiken-OS:et. Behålls som referens. Bäverbutikens system ligger i
+> `docs/os/`, `.claude/commands/` och `products/`.
 
 Ett system för att bygga bildannonser (Meta/Facebook/Instagram), namnge dem smart så
 att datan går att skära, och sedan iterera på det som faktiskt funkar.
@@ -37,8 +47,10 @@ att datan går att skära, och sedan iterera på det som faktiskt funkar.
 - **Ad account:** SnarkLös (`1346450049878358`, SEK) — kontonamnet ≠ brandnamnet
 - **Funnel-fokus:** BOF (bottom of funnel)
 
-Övriga tillgängliga konton (ej i bruk): MagiBorsten `1867947880635861`,
-Matstrumpor.se `730973156224390` (⚠️ UNSETTLED).
+**Bäverbutiken.se** (general store) kör i **MagiBorsten** `1867947880635861` —
+produkttester enligt `docs/os/SOP-06-produkttest.md`, aktiva produkter i
+`products/products.json`. Övrigt konto (ej i bruk): Matstrumpor.se
+`730973156224390` (⚠️ UNSETTLED).
 
 ## Status
 
