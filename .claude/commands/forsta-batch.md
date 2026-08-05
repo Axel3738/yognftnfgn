@@ -14,25 +14,27 @@ Ditt uppdrag: analysera verklig performance-data, förklara varför vissa annons
 ## ARBETSREGLER
 
 1. Gissa aldrig vilken annons som är en vinnare utan att kontrollera performance-data.
-2. Hög ROAS ensam räcker inte. Väg in spend, antal köp, CPA, CTR, CVR, CPM, hook rate, hold rate, frequency och körtid.
+2. **Ingen enmetriks-dom.** Varken ROAS eller CPA ensamt får avgöra något. Rangordna på vinstbidrag `(break-even-CPA − CPA) × köp` och väg in spendandel, antal köp, CTR, CVR, CPM, hook rate, hold rate, frequency och körtid. Se ANALYSMETOD.md.
 3. Skilj alltid mellan: Bevisade vinnare / Lovande / Osäkra (för lite data) / Förlorare. **Döm ingen annons under ~300 kr spend eller 3 köp** – klassa den som osäker och säg det rakt ut.
 4. Hitta inte på siffror, kundinsikter, transkriberingar eller konkurrentresultat. Om något saknas: skriv exakt vad som saknas, leverera allt annat, och be om minsta möjliga komplettering.
 5. Kopiera inte konkurrenters annonser – extrahera kundproblem, hooks, positionering, proof, offers, story-strukturer, format och objection handling.
 6. Varje idé ska ha en konkret hypotes och en isolerad variabel. Prioritera annonser som går snabbt att producera.
 7. **Offer-integritet:** Priser i annonser MÅSTE matcha landningssidan exakt. Glapp = kritiskt fel, använd sidans pris. Erbjudanden som kräver butiksändringar (bundle, rabattkod) markeras BLOCKER tills de finns i Shopify.
 8. **Kvalitetskontroll:** granska befintliga bilder/manus för stavfel och faktafel och flagga dem.
-9. Optimera aldrig mot CTR ensamt. Primära beslutsmetrik är CPA/ROAS, med hook/hold som diagnos.
+9. Optimera aldrig mot CTR ensamt — hög CTR med låg CVR är nyfikenhetsklick. **Primär beslutsmetrik är vinstbidrag**, med CPA/ROAS som effektivitetsmått och hook/hold som diagnos.
 10. Vänta inte på mig mellan faserna. Kör hela kedjan. Fråga bara när ett beslut kräver ägaren.
 11. **Modellpolicy:** all slutgiltig ad copy, svenska manusrader och voiceovers skrivs av en subagent via Agent-verktyget med `model: "sonnet"` (`"haiku"` för bulkvarianter). Strategi, analys och briefstruktur görs av huvudsessionen (Fable/Opus). Subagenten får DNA + hypotes + hook + formatkrav och skriver bara text.
 
 ## FASERNA
 
+> **FAS 1–4 körs enligt `docs/os/ANALYSMETOD.md`** — läs den innan du bedömer en
+> enda annons och bocka av dess checklista i svaret. Rangordning sker på
+> vinstbidrag, aldrig på ROAS eller CPA ensamt; kill-beslut mot break-even-CPA,
+> inte target-CPA; top spendern är benchmark.
+
+
 - **FAS 0 – Kontrollera tillgång (gör, låtsas inte):** redovisa i tabell vad du faktiskt nådde: Meta Ads-data (kampanj/adset/annons + creatives), statiska bilder (ladda ner och GRANSKA visuellt), video (kan inte öppnas – be om transkript för vinnare/förlorare, transkribera aldrig på gissning), landningssida, Shopify-försäljning (korsvalidera mot Meta), recensioner (lucka om otillgängligt), Meta Ad Library (svenska söktermer).
 - **FAS 1 – Kampanjöversikt:** kampanj/konto/period, objective, attribution, budget, spend, CPM, CTR, funnel LPV→ATC→IC→köp, CPA, ROAS, struktur, trafiktyp. Var läcker funneln (kreativ, LP eller kassa)?
-**FAS 1–4 körs enligt `docs/os/ANALYSMETOD.md` — läs den och bocka av dess
-checklista i svaret. Rangordning sker på vinstbidrag, aldrig på ROAS eller CPA
-ensamt; kill-beslut mot break-even-CPA, inte target-CPA.**
-
 - **FAS 2 – Klassificera:** tabell över alla annonser med klassificering, spend, köp, CPA, ROAS, CTR, hook rate, hold. Vilka 20 % driver resultatet, vilken är största budgetläckan?
 - **FAS 3 – Djupanalys av toppannonser:** copy + (när transkript finns) rad-för-rad med psykologisk mekanism kopplad till retention. Hook-formler. Attention/Persuasion/Conversion. Data skild från hypotes.
 - **FAS 4 – Förlorarna:** exakt vad som är sämre än vinnarna. Tabell: Element/Vinnare/Förlorare/Trolig påverkan/Nästa test. Pausa, iterera eller stryk.
@@ -41,7 +43,7 @@ ensamt; kill-beslut mot break-even-CPA, inte target-CPA.**
 - **FAS 7 – Variationer:** 3 per vinnare (nära iteration / format transfer / ny persuasion-angle).
 - **FAS 8 – Nya videokoncept:** 3 st med olika persuasion-mekanismer, inspelningsklara manus.
 - **FAS 9 – Nya statiska koncept:** 6 st (demo, jämförelse, testimonial, listicle, offer, risk/cost-of-inaction).
-- **FAS 10 – Testplan:** Tier 1/2/3. Ingen dom <300 kr/3 köp; kill vid CPA >2× break-even vid 500 kr (be om COGS om break-even saknas). "Gör innan spend"-lista. **Testplanen ska minst matcha kvoten: kör `node pipeline/quota.mjs`.**
+- **FAS 10 – Testplan:** Tier 1/2/3. Ingen dom <300 kr/3 köp; kill när CPA överstiger **break-even-CPA** (`break_even_cpa_sek` i products.json) efter ≥500 kr spend — inte när den överstiger target-CPA. "Gör innan spend"-lista. **Testplanen ska minst matcha kvoten: kör `node pipeline/quota.mjs`.**
 
 Varje annons: hypotes, vad som behålls/ändras, format, exakt hook, fullständigt manus/designbrief, shot list med tidskoder, exakta text-overlays, creator direction, editing direction, CTA, produktionsnivå, primärt KPI, "vad vi lär oss oavsett utfall".
 
