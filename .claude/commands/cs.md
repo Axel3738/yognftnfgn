@@ -30,7 +30,7 @@ Detta är kärnloopen: körs återkommande (normalt var 3:e dag per produkt) i p
 ### 5. Leverera och logga
 - Rapport: kort feedbackloop-sammanfattning (vad lärde vi oss), sedan batchen.
 - Zip-paketera brieferna (video + image) som i forsta-batch-kommandot.
-- Lägg batchen i Notion som Draft – Pending approval (om Notion-MCP saknas i sessionen: säg det och leverera resten).
+- Lägg batchen i Notion exakt enligt `docs/os/NOTION-FORMAT.md`: ett item per annons, namn = annonsnamnet, status Draft, tag `Video - Pending Approval` (även bilder), briefen inklistrad i itemet + Drive-länk.
 - Skriv batchen i `products/<id>/batch-log.md` med datum + hypotes per annons.
 - Committa och pusha alla ändringar i `products/`.
 

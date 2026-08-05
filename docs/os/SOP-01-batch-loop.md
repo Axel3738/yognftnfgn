@@ -37,8 +37,10 @@ Dela mappen som editor.
 
 **5. Notion.** I samma chatt:
 ```
-/notion Databasens namn, [länk till Batch #2-mappen]
+/notion Produktens Notion-sida, [länk till Batch #2-mappen]
 ```
+Formatet är låst i `docs/os/NOTION-FORMAT.md` — ett item per annons, Draft,
+tag `Video - Pending Approval`, briefen läsbar i itemet.
 
 **6. Tracking-sheet.** I samma chatt:
 ```

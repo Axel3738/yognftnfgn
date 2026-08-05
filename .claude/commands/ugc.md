@@ -8,7 +8,7 @@ Exempel: `/ugc strandtofflorna creator @annaxyz bekräftad, produkt skickas 7/8,
    - Beräknad leverans råmaterial = produkt skickad + 3 dagar frakt + creatorns filmtid (default 7 dagar)
    - Deadline råmaterial = beräknad leverans + 2 dagars buffert
    - Deadline färdig annons = deadline råmaterial + 3 dagar redigering
-3. Råmaterial väntas inom 7 dagar → skapa redigerings-task i creative-databasen (Draft – Pending approval) kopplad till en brief. Saknas brief: skriv UGC-briefen direkt utifrån `products/<id>/dna.md` — **copy/voiceover via subagent med `model: "sonnet"`**.
+3. Råmaterial väntas inom 7 dagar → skapa redigerings-task på produktens Notion-sida enligt `docs/os/NOTION-FORMAT.md` (Draft, tag `Video - Pending Approval`, brief i itemet). Saknas brief: skriv UGC-briefen direkt utifrån `products/<id>/dna.md` — **copy/voiceover via subagent med `model: "sonnet"`**.
 4. Visa hela pipelinen som tabell, sorterad på närmaste deadline, 🔴 på förseningar.
 
 ## DEFINITION OF DONE

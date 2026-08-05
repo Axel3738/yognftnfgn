@@ -50,7 +50,7 @@ inte; äldre Mastern-material i `docs/` och `pipeline/` (utom `pipeline/quota.mj
 | `/cs <id> [egna idéer]` | **Kärnloopen:** CS på senaste annonserna, feedbackloop, nästa batch enligt kvoten |
 | `/koncept <id> <idé> [AKUT]` | Släng in koncept/swipe i backloggen (AKUT = bygg briefen nu) |
 | `/checkin <id>` | Daglig check-in: kvot, Slack-kontroll, grönmarkering, larm |
-| `/logga <id> <antal>` | Logga launchade creatives mot kvoten |
+| `/logga <id> <antal>` | Launch-avstämning: kvot + Notion-sync + tracking-sheet |
 | `/notion <db>, <mapplänk>` | Ladda upp batchens briefer till Notion |
 | `/sheet <id>` | Fyll i tracking-sheetet (xlsx) |
 | `/ugc <id> <ny info>` | Uppdatera UGC-plan och deadlines |
@@ -66,6 +66,7 @@ inte; äldre Mastern-material i `docs/` och `pipeline/` (utom `pipeline/quota.mj
 | SOP: daglig check-in / grönmarkering | `docs/os/SOP-04-daily-checkin.md` |
 | SOP: när Claude inte lyssnar | `docs/os/SOP-05-nar-claude-inte-lyssnar.md` |
 | SOP: produkttest-pipeline | `docs/os/SOP-06-produkttest.md` |
+| Notion-formatet för briefer (exakt spec) | `docs/os/NOTION-FORMAT.md` |
 | Produkt-konfig + launch-logg | `products/products.json` |
 | Produktminne (DNA, batch-logg, backlog) | `products/<id>/` |
 | Kvot-skriptet | `pipeline/quota.mjs` |

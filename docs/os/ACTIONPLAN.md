@@ -118,8 +118,10 @@ Fable 5/Opus; slutgiltig ad copy och voiceovers skrivs av sonnet/haiku-subagente
    underkännanden äldre än 1 dag, annars ingen grön dag.
 6. **Target-CPA saknas per produkt.** → Axel sätter dem vecka 1.
 7. **Behörigheter.** Manager + Claude behöver Ads Manager, Shopify, Notion, Slack,
-   Drive (editor). Notion-MCP:n var t.ex. inte ansluten i denna session. → Kör en
-   access-koll första `/checkin`; fixa allt som saknas en gång.
+   Drive (editor) — och en **Google Sheets-connector med skrivaccess** om
+   tracking-sheetet ska uppdateras live av `/logga` (utan den: xlsx + import).
+   Notion-MCP:n var t.ex. inte ansluten i denna session. → Kör en access-koll
+   första `/checkin`; fixa allt som saknas en gång.
 8. **Loom-inlåst processkunskap.** → Luckolistan i SOP-06; transkribera vecka 1.
 
 ## Kända problem (fylls på löpande — se SOP-05)
