@@ -21,6 +21,25 @@ att kunna något om AI.
    > inte kan hända igen, committa och pusha."*
    Så blir varje misstag en permanent förbättring i stället för ett återkommande gräl.
 
+## "Unknown command: /cs" — kommandon i en gammal eller fel-branchad chatt
+
+Slash-kommandona är filer i `.claude/commands/` på branchen
+`claude/bäverbutiken-creative-kpi-0g4dn9`. En chatt som startades innan de fanns,
+eller på en annan branch, känner inte igen dem. Lösning: klistra in detta i chatten
+(en gång per chatt):
+
+> Hämta Bäverbutiken-OS:et till denna session: kör
+> `git fetch origin claude/bäverbutiken-creative-kpi-0g4dn9` och merga in den i
+> nuvarande branch (eller checka ut den). Läs sedan CLAUDE.md och bekräfta att
+> `.claude/commands/` finns. Från och med nu: när jag skriver `/cs`, `/koncept`,
+> `/checkin`, `/logga`, `/notion`, `/sheet`, `/ugc`, `/ny-produkt` eller
+> `/forsta-batch` — läs motsvarande fil i `.claude/commands/` och följ den exakt,
+> med texten efter kommandonamnet som argument.
+
+Efter det fungerar kommandona i den chatten även om klienten inte visar dem i
+/-menyn (Claude läser filen och kör den). Nya sessioner: starta på branchen
+`claude/bäverbutiken-creative-kpi-0g4dn9` tills OS:et ligger på default-branchen.
+
 ## Vanliga fel och exakta svar
 
 | Fel | Skriv detta |

@@ -40,6 +40,11 @@ inte; äldre Mastern-material i `docs/` och `pipeline/` (utom `pipeline/quota.mj
    på svenska.
 9. **Fråga bara när ett beslut kräver ägaren** (prisändring, rabatt i Shopify,
    ny target-CPA). Allt annat: kör.
+10. **Om användaren skriver ett `/kommando` som klienten inte känner igen** (eller
+    skriver t.ex. "kör /cs motorholjet" som vanlig text): läs motsvarande fil i
+    `.claude/commands/` och följ den exakt, med texten efter kommandonamnet som
+    argument. Kommandona är filer — de fungerar även när klienten inte
+    registrerat dem.
 
 ## Kommandona (managerns gränssnitt)
 
