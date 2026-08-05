@@ -20,6 +20,12 @@ inte; äldre Mastern-material i `docs/` och `pipeline/` (utom `pipeline/quota.mj
    punkt, ✅/❌. Är något ❌: fixa det, eller skriv exakt varför det inte gick.
 3. **Hitta aldrig på data.** Ingen dom över en annons under 300 kr spend eller
    3 köp. Saknas data: säg det rakt ut och leverera resten.
+3b. **Analysmetoden är obligatorisk.** Ska annonser bedömas: följ
+   `docs/os/ANALYSMETOD.md` till punkt och pricka och bocka av dess checklista i
+   svaret. **Enmetriks-domar är förbjudna** — rangordna alltid på vinstbidrag
+   `(break-even-CPA − CPA) × köp`, aldrig på ROAS eller CPA ensamt. Top spendern
+   är benchmark, inte en kandidat att döma mot småannonser. Kill-beslut mäts mot
+   `break_even_cpa_sek`, aldrig mot `target_cpa_sek`.
 4. **Brief-kvoten är mål nr 1.** Varje session som launchar/loggar creatives kör
    `node pipeline/quota.mjs` och visar plus/minus-läget. Loggning:
    `node pipeline/quota.mjs log <produkt-id> <antal>`.
@@ -51,7 +57,7 @@ inte; äldre Mastern-material i `docs/` och `pipeline/` (utom `pipeline/quota.mj
 | Kommando | Vad |
 |----------|-----|
 | `/ny-produkt <namn> <budget>` | Första testbatchen för ny produkt (ingen data än) — SOP-06 |
-| `/forsta-batch <namn>` | Första riktiga batchen efter launch; skapar produktens chatt + minnesfiler — SOP-01 |
+| `/forsta-batch <namn>` | Full CS-analys från noll i en NY chatt (när `/cs` inte har chatthistorik att läsa) |
 | `/cs <id> [egna idéer]` | **Kärnloopen:** CS på senaste annonserna, feedbackloop, nästa batch enligt kvoten |
 | `/koncept <id> <idé> [AKUT]` | Släng in koncept/swipe i backloggen (AKUT = bygg briefen nu) |
 | `/checkin <id>` | Daglig check-in: kvot, Slack-kontroll, grönmarkering, larm |
@@ -65,12 +71,13 @@ inte; äldre Mastern-material i `docs/` och `pipeline/` (utom `pipeline/quota.mj
 | Vad | Var |
 |-----|-----|
 | Actionplan + bottlenecks | `docs/os/ACTIONPLAN.md` |
-| SOP: första batchen + produkt-chatten | `docs/os/SOP-01-batch-loop.md` |
+| SOP: CS-loopen på en produkt som går bra | `docs/os/SOP-01-batch-loop.md` |
 | SOP: brief-kvoten (mål nr 1) | `docs/os/SOP-02-brief-quota.md` |
 | SOP: UGC-pipeline och deadlines | `docs/os/SOP-03-ugc-pipeline.md` |
 | SOP: daglig check-in / grönmarkering | `docs/os/SOP-04-daily-checkin.md` |
 | SOP: när Claude inte lyssnar | `docs/os/SOP-05-nar-claude-inte-lyssnar.md` |
 | SOP: produkttest-pipeline | `docs/os/SOP-06-produkttest.md` |
+| **Analysmetoden (obligatorisk vid all bedömning)** | **`docs/os/ANALYSMETOD.md`** |
 | Notion-formatet för briefer (exakt spec) | `docs/os/NOTION-FORMAT.md` |
 | Produkt-konfig + launch-logg | `products/products.json` |
 | Produktminne (DNA, batch-logg, backlog) | `products/<id>/` |

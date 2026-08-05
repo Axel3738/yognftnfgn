@@ -51,6 +51,10 @@ Efter det fungerar kommandona i den chatten även om klienten inte visar dem i
 | Zip-filer saknas | "Leveransformat punkt 4: två zip-filer med README. Leverera dem." |
 | Återanvända AD-ID:n | "Naming-regeln: läs av upptagna ID:n i kontot först. Numrera om." |
 | Claude dömer annons på 100 kr spend | "Regel 3: ingen dom under 300 kr / 3 köp. Klassa om som osäker." |
+| **Claude säger att top spendern är dålig** | "Läs docs/os/ANALYSMETOD.md. Rangordna på vinstbidrag (break-even-CPA − CPA) × köp och visa tabellen. Top spendern är benchmark, inte en kandidat att döma mot småannonser." |
+| **Claude vill pausa en annons över target-CPA** | "Target-CPA är inte kill-linjen. Kill mäts mot break_even_cpa_sek. Räkna om vinstbidraget och ge nytt besked." |
+| **Claude jämför bara CPA (eller bara ROAS)** | "Enmetriks-dom är förbjuden enligt CLAUDE.md regel 3b. Kör hela ANALYSMETOD.md och bocka av dess checklista." |
+| Absurda intäktssiffror (AOV på 4 kr) | "omni_purchase_values är trasigt i detta konto. Använd spend × ROAS och flagga raderna. Se ANALYSMETOD.md steg 1." |
 
 ## Eskalering
 
