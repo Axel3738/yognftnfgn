@@ -1,5 +1,5 @@
 {
-  "comment": "Per-produkt-konfig för brief-kvoten. Endast Bäverbutiken.se — ad account MagiBorsten 1867947880635861. Uppdatera daily_budget_sek när budgeten ändras (/checkin gör det åt dig). target_cpa_sek sätts av ägaren, inte av Claude.",
+  "comment": "Per-produkt-konfig för brief-kvoten. Endast Bäverbutiken.se — ad account MagiBorsten 1867947880635861. Uppdatera daily_budget_sek när budgeten ändras (/checkin gör det åt dig). target_cpa_sek sätts av ägaren, inte av Claude — nuvarande värden = max CPA vid 25 % nettomarginal efter kortavgift (2,9 %) och EU-tull (27,95 kr/order), beräknat 2026-08-05 på uppmätt ordervärde och COGS senaste 7 dagarna.",
   "products": [
     {
       "id": "motorholjet",
@@ -8,7 +8,7 @@
       "ad_account_id": "1867947880635861",
       "campaign_ids": ["120249435814310291"],
       "daily_budget_sek": 6000,
-      "target_cpa_sek": 150,
+      "target_cpa_sek": 135,
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": []
@@ -20,7 +20,7 @@
       "ad_account_id": "1867947880635861",
       "campaign_ids": ["120249435303040291"],
       "daily_budget_sek": 1000,
-      "target_cpa_sek": 1200,
+      "target_cpa_sek": 930,
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": []
@@ -32,7 +32,7 @@
       "ad_account_id": "1867947880635861",
       "campaign_ids": ["120249427546700291"],
       "daily_budget_sek": 500,
-      "target_cpa_sek": 330,
+      "target_cpa_sek": 170,
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": []
@@ -44,7 +44,7 @@
       "ad_account_id": "1867947880635861",
       "campaign_ids": ["120249220414220291"],
       "daily_budget_sek": 1000,
-      "target_cpa_sek": 170,
+      "target_cpa_sek": 145,
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": []
@@ -56,7 +56,7 @@
       "ad_account_id": "1867947880635861",
       "campaign_ids": ["120249192013870291"],
       "daily_budget_sek": 2000,
-      "target_cpa_sek": 325,
+      "target_cpa_sek": 185,
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": []
