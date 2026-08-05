@@ -20,6 +20,34 @@ Ingen dom sätts på annons under 300 kr spend eller 3 köp.
 
 Target-CPA: **145 kr**. Vi ligger 27 % över på livstid, men batch 2 landade på 154 kr — nästan på target. Riktningen är rätt, drivet av statics.
 
+### Allt bedöms relativt spend `DATA`
+
+Absoluta köpsiffror säger ingenting — en annons med 33 köp kan vara sämre än en med 5. Måttet är **CPA-index = annonsens CPA ÷ target-CPA (145 kr)**. Under 1,00 = tjänar pengar snabbare än vi kräver.
+
+| Annons | Andel av spend | Andel av köp | CPA | CPA-index |
+|---|---:|---:|---:|---:|
+| PD_2_3 (våt flat-lay) | 2,3 % | 8,5 % | 49 kr | **0,34** |
+| PD_13_2 (khaki piedestal) | 0,6 % | 1,7 % | 70 kr | **0,48** |
+| SO_5_1 (offer-layout) | 0,4 % | 1,7 % | 49 kr | **0,34** |
+| PD_8_1 (sulan) | 1,7 % | 3,4 % | 93 kr | **0,64** |
+| PD_1_H2 (video) | 1,1 % | 1,7 % | 120 kr | 0,82 |
+| **PD_13_1 (piedestal)** | **52,7 %** | 55,9 % | 174 kr | 1,20 |
+| **PD_2_2 (torr flat-lay)** | **24,8 %** | 22,0 % | 208 kr | 1,43 |
+| SP_1_H2 (video) | 5,0 % | 3,4 % | 271 kr | 1,87 |
+| PD_1_H1 (video) | 8,2 % | 1,7 % | 895 kr | 6,17 |
+
+**Kärnproblemet:** de fyra annonser som slår target-CPA delar på **5,0 % av spenden**. De två som äter **77,5 %** ligger båda över target. Vi skalar alltså det som fungerar näst bäst, inte det som fungerar bäst.
+`HYPOTES`: CBO fördelar på volym och tidig signalstyrka, inte på CPA-index. Motmedlet är fler creatives i de effektiva spåren så att auktionen får något bättre att välja mellan — inte manuell budgetstyrning.
+
+### Statics vs video per spenderad krona `DATA`
+
+| | Spend | Andel | Köp | CPA | CPA-index |
+|---|---:|---:|---:|---:|---:|
+| **Statics** | 9 222 kr | 84,7 % | 55 | **168 kr** | 1,16 |
+| **Video** | 1 672 kr | 15,3 % | 4 | **418 kr** | 2,88 |
+
+Video kostar **2,5× mer per köp** än statics på den här produkten. Skillnaden är för stor för att vara brus — den håller över tre batcher och elva videoannonser.
+
 ---
 
 ## WINNING DNA
@@ -81,6 +109,10 @@ Snittittartid över alla videor: 3–9 sekunder på klipp som är 21–42 sekund
 ---
 
 ## REGLER FÖR NÄSTA BATCH
+
+**Formatmix: minst 75 % statiska bilder.** Beslutat av ägaren 2026-08-05, uppbackat av datan ovan (statics CPA-index 1,16 mot videons 2,88). Av en batch på 8 blir det minst 6 statics. Kvarvarande ~25 % video körs bara som iterationer på videokoncept som redan visat hold över 15 % — aldrig som nya långa koncept.
+
+**Bedöm alltid mot CPA-index, aldrig mot absoluta köp.** En annons med 5 köp på 247 kr slår en med 33 köp på 5 744 kr. Rangordna nya idéer efter vilket spår de tillhör: prioritera det som har index under 1,00 men låg spendandel.
 
 **Behåll alltid:** textfri eller nästan textfri produktbild · svart camo som primär färg · vått underlag som kontext · sulan synlig · PD-copyn med problem-hook och de tre ytorna · 349 kr (aldrig 339).
 
