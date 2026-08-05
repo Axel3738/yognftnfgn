@@ -1,48 +1,53 @@
-# Enginecover_PD_6_C1 — Size-finder carousel (new format for this account)
+# Enginecover_PD_6_C1 — Size-finder carousel (format never run in this account)
 
-**Type:** **Carousel — a format this account has never tested.** Funnel repair: answers the size question card by card.
-**Hypothesis:** A swipeable size finder lets the buyer resolve fit inside the ad instead of on the product page, lifting LPV→ATC above 15 % and cutting unqualified clicks. Carousel also gives Meta more creative surface per impression than a single image.
-**Kept:** The proven fit claim "Passar 6–250 hk".
-**Changed (isolated variable):** Format (single image → carousel) and the job the ad does (persuade → qualify).
+**VARIABELTAGGAR:** vinkel=`passform/invändning` · hook-typ=`fråga` · format=`karusell` · proof=`inget` · offer-i-creativen=`pris syns (299)` · visuell stil=`grafik+produkt` · textmängd=`≤5 ord per kort` · talare=`ingen`
+*(Dessa taggar läses av nästa `/cs` för att gruppera vinstbidrag per variabelvärde. Ändra dem inte utan att ändra creativen.)*
+
+**Type:** **Carousel — a format this account has never tested.** Size finder, one card per range.
+**Hypothesis:** A swipeable size finder resolves fit inside the ad instead of on the product page, lifting LPV→ATC above 15 %. Carousel also gives Meta more creative surface per impression than a single image.
+**Kept:** The fit claim and the offer.
+**Changed (isolated variable):** Format entirely, and the ad's job: qualify instead of persuade.
 
 **Format:** Carousel, 7 cards, 1:1 (1080×1080) · **Production level:** **Simple** (existing product photos + type)
 **Ad set:** Motorhölje PD · **CTA:** Handla nu · **Landing page:** https://baverbutiken.se/products/marin-motorholje-420d-universellt-skydd
 
-## Why this ad exists
-The campaign's biggest leak is qualification, not attention. The volume ad buys the cheapest clicks in the account and converts only 9,2 % of landing-page visitors into carts, while the better ads reach 16-17 %. With six size ranges to choose from, the most likely blocker is that a buyer cannot tell which one fits their engine. A carousel is the natural format for that: one card per size range, and the buyer swipes to their own engine.
+## Why this ad exists (from the 2026-08-05 teardown)
+Two untested things at once, both cheap: the carousel format, and answering the size question that the funnel data points at.
 
 ## Design brief
-- One card per size range, each with the same product photo treatment so the range is the only thing that changes.
-- Card 1 is the question, cards 2-6 the ranges, card 7 the offer and CTA.
-- Oversized hk numbers: the range must be readable at 300 px wide.
-- Same colour cover on every card (black, the best seller) so nothing competes with the number.
+- Same photo treatment on every card so the size range is the only thing that changes.
+- Oversized hk numbers, readable at 300 px.
+- Black cover throughout.
 
 ## Exact text (Swedish word-for-word, do not re-translate)
-| Card | Swedish (use this) | Swedish subline (use this) | English meaning |
+| Card | Swedish headline (use this) | Swedish subline (use this) | English meaning |
 |---|---|---|---|
-| 1 | Vilken storlek passar din motor? | Svep för att hitta din. | Which size fits your engine? / Swipe to find yours. |
-| 2 | 6–18 hk: din storlek | Perfekt för mindre utombordare. | 6-18 hp / Perfect for smaller outboards. |
-| 3 | 20–30 hk: din storlek | För dig med mellanstor motor. | 20-30 hp / For a mid-size engine. |
-| 4 | 40–90 hk: din storlek | Täcker både 40–60 och 60–90 hk. | 40-90 hp / Covers both 40-60 and 60-90 hp. |
-| 5 | 100–150 hk: din storlek | Byggd för kraftfulla motorer. | 100-150 hp / Built for powerful engines. |
-| 6 | 175–250 hk: din storlek | Skydd för de största motorerna. | 175-250 hp / Protection for the largest engines. |
-| 7 | Passar 6–250 hk | 299 kr. 30 dagars nöjd-kund-garanti. | Fits 6-250 hp / 299 kr, 30-day satisfaction guarantee. |
+| 1 | Vilken storlek passar din? | Sex storlekar, ett hölje | Which size fits yours? / Six sizes, one cover |
+| 2 | 6–18 hk eller 20–30 hk | Mindre utombordare, samma skydd | 6-18 or 20-30 hp / Smaller outboards, same protection |
+| 3 | 40–60 hk | Perfekt för mellanstora motorer | 40-60 hp / Perfect for mid-size engines |
+| 4 | 60–90 hk | Kraftfull motor, tätt skydd | 60-90 hp / Powerful engine, snug protection |
+| 5 | 100–150 hk | Stor motor, full täckning | 100-150 hp / Big engine, full coverage |
+| 6 | 175–250 hk | Maximal storlek, maximalt skydd | 175-250 hp / Maximum size, maximum protection |
+| 7 | Hittade du din storlek? | 299 kr. Handla nu. | Found your size? / 299 kr. Shop now. |
 
 ## Ad copy
 Primary text:
-> Vet du hur många hk din motor har?
-> Vi har ett motorhölje som passar exakt din storlek.
-> 420D Oxfordtyg. Dragsko runt hela kanten.
-> Svep och hitta din storlek 👇
+> Vet du vilken storlek du behöver?
+> Vi har hölje för 6–250 hk.
+> 420D Oxfordtyg med dragsko runt hela kanten.
+> Swipe och hitta din.
+> 299 kr. Handla nu 👇
 
 Headline: `Vilken storlek har din motor?`
 
 **Size accuracy:** the six ranges exactly as they exist in the store: 6 - 18 hk · 20 - 30 hk · 40 - 60 hk · 60 - 90 hk · 100 - 150 hk · 175 - 250 hk. Do not round, merge or invent.
 
-**Price integrity:** 299 kr with 367 kr struck through. Verified 2026-08-05. Never a discount percentage (299/367 is about 19 %).
+**Price integrity:** 299 kr with 367 kr as the struck-through ordinary price, verified in the store 2026-08-05. Never a discount percentage (299/367 is about 19 %).
+
+**Use the black cover in the imagery.** Store data shows black carries almost all sales; two colours have sold nothing. Colour is not a selling angle here.
 
 ## Primary KPI
-LPV→ATC (≥ 15 %, volume ad sits at 9,2 %). Secondary: CPA and carousel card engagement — which card gets swiped to tells us where the buyers are.
+LPV→ATC (≥ 15 %) and **card-level drop-off** — which card people swipe to tells us which engine sizes the responsive audience owns.
 
 ## What we learn regardless of outcome
-Two things at once: whether carousel works in this account at all, and which engine sizes the responsive audience actually owns.
+Whether carousel works here at all, plus a free read on the audience's engine sizes.

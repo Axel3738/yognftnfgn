@@ -1,46 +1,55 @@
-# Enginecover_SP_9_H1 — UGC: the skeptic
+# Enginecover_SP_9_H1 — Best-converting copy on the highest-CTR footage
 
-**Type:** Creator UGC in the SP angle.
-**Hypothesis:** A creator voicing the fit objection and disproving it on camera converts the doubters that the funnel data shows are stalling at the product page → LPV→purchase above 10 %.
-**Kept:** The SP angle and the guarantee close.
-**Changed (isolated variable):** New creator-filmed asset.
+**VARIABELTAGGAR:** vinkel=`social proof/tillit` · hook-typ=`påstående` · format=`video, kort demo-body + VO` · proof=`inget (produktclaim)` · offer-i-creativen=`ingen offer` · talare=`röst utan ansikte`
+*(Läses av nästa `/cs` för att gruppera vinstbidrag per variabelvärde.)*
 
-**Format:** Video, filmed 9:16, delivered 9:16 + 4:5 · **Production level:** **Advanced** (creator with boat access)
+**Type:** Decomposition test: the SP copy laid over PD_EXTRA's footage.
+**Hypothesis:** The SP copy converts clicks at 6,4 % and the PD_EXTRA footage earns the account's highest CTR at 5,46 %. Each one's weakness is the other's strength, so pairing them should beat both parents on CPA.
+**Kept:** PD_EXTRA's footage and cut rhythm — no visual changes at all.
+**Changed (isolated variable):** Audio track and copy angle only: demo → social proof.
+
+**Format:** Video, source length, 9:16 + 4:5 · **Production level:** **Medium** (new Swedish voiceover, re-synced overlays, no new filming)
 **Ad set:** Motorhölje SP · **CTA:** Handla nu · **Landing page:** https://baverbutiken.se/products/marin-motorholje-420d-universellt-skydd
-**Source footage:** newly filmed by the creator.
+**Source footage:** `Motorhölje_PD_EXTRA` video ID **2210430979804731** (CTR 5,46 %, kontots högsta; 1 431 kr vinst per 1 000 kr spend men bara 777 kr spend).
 
-## Why this ad exists
-The social-proof angle converts at 10,9 % of landing-page visitors against 4,4 % for the volume ad, and its add-to-cart rate is 16 % against 9,2 %. It is the best-converting angle we own and it is under-supplied with assets.
+## Why this ad exists (from the 2026-08-05 teardown)
+The teardown's second proven pattern: click quality is a copy property. The SP copy converts nearly three times better per click than the PD copy, but it has only ever run on one asset and it earns few clicks. Putting it on the footage that earns the most clicks is the cleanest experiment available.
 
-## Creator script (Swedish word-for-word)
-| Beat | Time | Swedish (use this) | English meaning |
+## Voiceover script (record exactly; conversational, one boat owner telling another, never announcer-style)
+| # | Time | Swedish (use this) | English meaning |
 |---|---|---|---|
-| Hook | 0:00–0:04 | "De flesta universalhöljen sitter som en säck." | "Most universal covers fit like a sack." |
-| Product | 0:04–0:09 | "Det här är 420D Oxfordtyg." | "This is 420D Oxford fabric." |
-| Fitting | 0:09–0:16 | "Dragsko runt hela kanten. Jag drar åt, så här." | "Drawstring around the whole edge. I pull it tight, like this." |
-| Proof | 0:16–0:22 | "Sitter still. Ingen säckform." | "Stays put. No sack shape." |
-| Guarantee | 0:22–0:27 | "Passar den inte din motor? 30 dagars nöjd-kund-garanti." | "Does it not fit your engine? 30-day satisfaction guarantee." |
-| CTA | 0:27–0:30 | "Handla nu." | "Shop now." |
+| 1 | 0:00–0:04 | Båtägare snackar om det här höljet just nu. | Boat owners are talking about this cover right now. |
+| 2 | 0:04–0:08 | Det sitter kvar även i storm och blåst. | It stays on even in storm and heavy wind. |
+| 3 | 0:08–0:12 | Motorn hålls helt torr och skyddad därunder. | The engine stays completely dry and protected underneath. |
+| 4 | 0:12–0:16 | Passar den inte din motor? 30 dagars nöjd-kund-garanti. | Does it not fit your engine? 30-day satisfaction guarantee. |
+| 5 | 0:16–0:19 | Se själv, handla nu. | See for yourself, shop now. |
 
-**Creator direction:** 35-65, genuinely owns a boat. Dressed normally, no studio feel. Dry, honest, slightly amused. Product in frame within 4 seconds. Raw UGC grade, jump cuts on beat changes, captions always on.
+## Overlays (sparse, max two)
+| Swedish (use this) | English meaning |
+|---|---|
+| 420D Oxfordtyg | 420D Oxford fabric |
+| 30 dagars nöjd-kund-garanti | 30-day satisfaction guarantee |
 
-The fit objection must be stated in the creator's own words and then disproven on camera in one unbroken take. If the cover does not sit well on the day, do not shoot around it — reshoot with the correct size.
+**Footage unchanged.** Re-time existing overlays to the voiceover; add no new visual elements.
 
 ## Ad copy
 Primary text:
-> De flesta universalhöljen sitter som en säck.
-> Det här har dragsko runt hela kanten.
-> 420D Oxfordtyg. Skyddar mot sol, regn och salt.
-> 30 dagars nöjd-kund-garanti om det inte passar. 👇
+> Båtägare pratar om det här höljet just nu 🌊
+> Sitter kvar även i storm och blåst.
+> Håller motorn helt torr och skyddad.
+> 30 dagars nöjd-kund-garanti om den inte passar.
+> Se varför själv 👇
 
-Headline: `Sitter det verkligen? Se själv.`
+Headline: `Motorskyddet båtägare litar på`
 
-**No fabricated proof:** no customer names, no star ratings, no review counts. We have no verified reviews.
+**Claim discipline:** the original SP copy carried "Hundratals nöjda kunder", which cannot be verified and is retired account-wide. The guarantee replaces it. Do not reinstate it.
 
-**Size accuracy:** the six ranges are exactly as they appear in the store: 6 - 18 hk · 20 - 30 hk · 40 - 60 hk · 60 - 90 hk · 100 - 150 hk · 175 - 250 hk. Do not round, merge or invent ranges beyond what a brief explicitly states.
+## Editing direction
+- Conversational read. Not announcer-style.
+- Captions always on, centre-safe.
 
 ## Primary KPI
-LPV→purchase (> 10 %), hold p50 (> 20 %) as diagnosis.
+CPA against both parents: PD_EXTRA 97,08 kr and SP_1_H1 118,52 kr. Secondary: click-to-purchase (target ≥ 6 %).
 
 ## What we learn regardless of outcome
-Whether creator-led proof outperforms edited demo in the angle that already converts best.
+Whether click quality travels with the copy or with the footage. The cleanest available decomposition of the two best assets we own.

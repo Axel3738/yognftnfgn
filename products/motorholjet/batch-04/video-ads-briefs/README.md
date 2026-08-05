@@ -1,41 +1,86 @@
-# VIDEO ADS — BATCH #4 — GLOBAL RULES (read before opening any brief)
+# Video ads — Batch #4 — Marine Engine Cover (Bäverbutiken)
 
-Product: **Marin Motorhölje 420D – Universellt Skydd** · baverbutiken.se
-Ad account: MagiBorsten `1867947880635861` · Campaign `120249435814310291`
+6 briefs. Each folder is self-contained: you can cut any one of them without
+reading any other file. Read this README once, then work from the brief.
 
-## Non-negotiable rules
-1. **Price: 299 kr, ordinary 367 kr.** Struck-through 367 allowed. **Never a discount percentage** — 299/367 is about 19 %, so "30 %" would be false.
-2. **The six size ranges are exactly:** 6 - 18 hk · 20 - 30 hk · 40 - 60 hk · 60 - 90 hk · 100 - 150 hk · 175 - 250 hk. Do not round, merge or invent.
-3. **Product visible before second 4.** No logo intros, no mood openers.
-4. **Swedish word-for-word** from the `Swedish (use this)` column. Do not re-translate.
-5. **Export 9:16 (1080×1920) + 4:5 (1080×1350).** Text inside centre-safe area: nothing in the top 250 px / bottom 300 px of 9:16.
-6. **Never use:** `Hundratals nöjda kunder`, customer counts, star ratings, review counts, `innan vintern`, `innan lagret tar slut`, invented repair or replacement prices, unmeasured numbers, fabricated testimonials.
-   **Allowed:** `420D Oxfordtyg`, `Passar 6–250 hk`, `30 dagars nöjd-kund-garanti`, `Skyddar mot sol, regn och salt`, `Enkel att sätta på och ta av`, `Dragsko runt hela kanten`.
-   **Only allowed urgency:** `så länge lagret räcker` (true — the shop over-ordered). No countdowns.
-7. **Spelling (exact):** `motorhölje`, `utombordare`, `nöjd-kund-garanti`, `Oxfordtyg`, `hk` (lowercase), `passform`, `dragsko`, `kåpa`, `gelcoat`, `presenning`.
-8. **CTA: "Handla nu"** on every ad.
-9. **Creators must state their own real engine size.** If the creator owns a 60 hk, change every number in that brief. Never have someone state a size they do not own.
-
-## Two launch gates
-- `Enginecover_SO_11_H1` — **do not launch before 1 September 2026** (season-end messaging).
-- `Enginecover_SP_11_H1`, `Enginecover_SO_10_H1` — **need a retargeting ad set** (add-to-cart last 14-30 days, excluding purchasers). The campaign is currently 100 % cold prospecting.
-
-## Source footage
-| Internal name | Meta video ID | Note |
+| Folder | Length | One-line job |
 |---|---|---|
-| Motorhölje_PD_1_H3 | 1407582261223436 | **Volume winner:** 84 of 140 purchases, two thirds of spend. Base for the four hook tests. |
-| Motorhölje_PD_EXTRA | 2210430979804731 | Best CPA (97,07 kr), best hook (41,4 %). Re-edit source. |
-| Motorhölje_SP_1_H1 | 1340819151089579 | Best-converting angle (10,9 % of LPV buy). |
-| Motorhölje_SO_1_H1 | 1690834205484249 | **B-roll only.** Losing structure. |
+| `Enginecover_PD_1_H5` | same as source | New hook on the volume ad: qualify by engine size |
+| `Enginecover_PD_1_H6` | same as source | New hook on the volume ad: qualify by value |
+| `Enginecover_SP_9_H1` | ≤ 20 s | The best-converting copy laid over the highest-CTR footage |
+| `Enginecover_SP_10_H1` | ≤ 25 s | Creator story UGC: two engines, same jetty. Shoot 3 hook variants. |
+| `Enginecover_SO_10_H1` | ≤ 20 s | Retargeting: pure risk reversal (account has never run retargeting) |
+| `Enginecover_SO_11_H1` | ≤ 25 s | Season-end concept — **do not launch before 1 September** |
 
-## What this batch is actually testing
-The campaign's problem is **not** attention. It is qualification. The volume ad buys the cheapest clicks in the account (6,65 kr per outbound click) and converts them worst: only **9,2 %** of its landing-page visitors add to cart, against **16–17 %** for the better ads, and 4,4 % buy against 10,9 %.
+`PD_1_H5` and `PD_1_H6` are **hook-only edits**. Everything after the first
+3 seconds stays byte-identical to the existing `Motorhölje_PD_1_H3`. If you
+change one frame of the body, the test is dead — we will not know whether the
+hook or your edit moved the number.
 
-So most of this batch attacks the click quality and the add-to-cart step, not the hook:
-- **PD_6 / PD_13 (fit and size):** answer "which size fits my engine" before the click.
-- **PD_1_H5–H8 (four hooks):** the only pure hook test, and even these are qualification hooks. A lower CTR with a higher add-to-cart rate is a **win**.
-- **PD_14 (tarp comparison):** argue against what owners actually do today, not against doing nothing.
-- **SP_8/9/10/11 (creator UGC):** supply the best-converting angle, which is the least supplied.
-- **SO_8/9 (offer):** the offer works when the numbers are visible; SO_8 adds the missing reason-why.
-- **SO_10 (retargeting):** cheapest unclaimed volume in the account.
-- **SO_11 (season):** ready for the lift-out, not launched early this time.
+---
+
+## Global rules — these apply to every video in this folder
+
+**1. Price is exactly 299 kr, compare-at exactly 367 kr.**
+Never another number, never a percentage other than 19 %. The landing page says
+299 / 367. Several briefs deliberately show no price at all — follow the brief.
+
+**2. Product on screen before second 4.** No exceptions. A hook that talks for
+five seconds before showing the cover loses the viewer we paid for.
+
+**3. Swedish lines are copied word for word from the brief.**
+Every brief has a table `Swedish (use this) | English meaning`. The left column
+is what gets recorded and what gets burned in as text. Never translate the right
+column yourself, never rephrase, never fix what looks like a typo — ask instead.
+
+| Correct | Wrong |
+|---|---|
+| motorhölje | motorhölge, motorhölj |
+| utombordare | utombordaren (when it should be indefinite) |
+| hästkrafter / hk | HK, Hk |
+| 6–250 hk (en dash) | 6-250 hk (hyphen) |
+| 420D Oxfordtyg | 420d oxford, 420D-oxford |
+| Bäverbutiken | Baverbutiken, Bäverbutiket |
+
+**4. Captions are mandatory and word-for-word.** Burned in, Swedish, matching the
+voiceover exactly — not auto-generated, not paraphrased. Most of this audience
+watches on mute. Å, Ä, Ö must render; check the caption font before you start.
+
+**5. Banned claims — never in voiceover, never in on-screen text.**
+- "Hundratals nöjda kunder" or any customer count. We have no reviews.
+- "innan vintern", "innan kylan", any winter deadline — it is August. This
+  exact mistake is what killed our worst-performing ad.
+- "innan lagret tar slut" as a hard deadline.
+- Any invented testimonial, name, star rating or review quote.
+- Any price or percentage other than 299 / 367 / 19 %.
+
+Only permitted urgency: **"så länge lagret räcker"**, and only where the brief
+asks for it.
+
+**6. Exports.** Every video ships as **9:16 (1080×1920)** and **4:5 (1080×1350)**,
+H.264 MP4, 30 fps, under 100 MB, audio at −14 LUFS. Re-frame the 4:5 properly —
+do not centre-crop the 9:16 and hope the captions survive.
+
+**7. Safe area.** Keep captions and key text inside the middle 80 % vertically.
+Meta's UI eats the bottom ~14 % of a 9:16 frame.
+
+**8. Colour.** Black cover in all footage unless the brief says otherwise. Black
+is the overwhelming majority of real sales.
+
+**9. Cut for retention, not for beauty.** Cut on the beat, never hold a static
+frame longer than ~2 s in the first 10 s, and never open on a logo or a title
+card. Hook rate above ~35 % is the bar our converting ads clear.
+
+**10. Deliver, then stop.** No extra variants, no added music stingers, no
+"limited time" flashes the brief does not ask for. Each brief is one controlled
+test — anything you add on your own makes the result unreadable.
+
+---
+
+## Missing source material
+
+Voiceover scripts for the original batch-#1 videos (`PD_1_H3`, `PD_EXTRA`,
+`SP_1_H1`, `SO_1_H1`, `SO_1_H2`) are not in the repo — those ads were launched
+before this system existed. Where a brief refers to "the existing body", use the
+actual published video from Ads Manager as your source, not a reconstruction.
+Do not transcribe from memory and do not guess a line.

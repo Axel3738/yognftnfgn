@@ -1,27 +1,28 @@
-# Enginecover_PD_1_H6 — Qualify by situation (hook-only test on the volume winner)
+# Enginecover_PD_1_H6 — Qualify by value (hook-only test)
 
-**Type:** Hook-only iteration of `Motorhölje_PD_1_H3`, the account's volume winner: 84 of 140 purchases and about two thirds of all spend. One of four hooks sharing an identical body.
-**Hypothesis:** Anchoring in the moment the engine is actually exposed makes the problem concrete and present, which should lift both hook rate and the quality of the click.
-**Kept:** Everything from second 3 onward: the entire PD_1_H3 edit, pacing, grade, sound and existing overlays. Primary text and headline are the proven ones.
-**Changed (isolated variable):** ONLY the first 3 seconds. Qualify by situation.
+**VARIABELTAGGAR:** vinkel=`problem/lösning + kvalificering` · hook-typ=`fråga` · format=`video, lång demo-body` · proof=`demo` · offer-i-creativen=`ingen offer` · talare=`okänt (manus saknas)`
+*(Läses av nästa `/cs` för att gruppera vinstbidrag per variabelvärde.)*
 
-**Format:** Video, source length, 9:16 + 4:5 · **Production level:** **Simple** (re-edit, no new filming)
+**Type:** Hook-only iteration of the volume carrier. Pair with PD_1_H5, different qualifying axis.
+**Hypothesis:** Qualifying on the engine's value rather than its size reaches the same buyer through a different door and should also lift click-to-purchase above 2,3 %. Running both isolates which axis works.
+**Kept:** Everything from second 3 onward, plus copy and headline.
+**Changed (isolated variable):** ONLY the first 3 seconds.
+
+**Format:** Video, source length, 9:16 + 4:5 · **Production level:** **Simple**
 **Ad set:** Motorhölje PD · **CTA:** Handla nu · **Landing page:** https://baverbutiken.se/products/marin-motorholje-420d-universellt-skydd
-**Source footage:** `Motorhölje_PD_1_H3` video ID **1407582261223436** (84 purchases, CPA 170,96 kr, 66 % of campaign spend).
+**Source footage:** `Motorhölje_PD_1_H3` video ID **1407582261223436** (85 köp, CPA 170,75 kr, 64 % av kampanjens spend, 49 % av vinstbidraget).
 
-## Why this ad exists
-This ad carries most of the budget, so a hook that improves it is worth more than perfecting any small-spend ad. But the goal here is **not** more clicks: PD_1_H3 already buys the cheapest clicks in the account and converts them at half the rate of the social-proof ad. These four hooks are qualification tests. A lower CTR with a higher add-to-cart rate is the outcome we want.
+## Why this ad exists (from the 2026-08-05 teardown)
+**Proven pattern behind this ad:** the PD copy converts clicks at 2,3 % in **both** of its ads, while the SP copy reaches 6,4 %. Two completely different videos, identical conversion rate, means the weakness sits in the words, not the edit. These hooks test whether qualifying the click fixes it. **A lower CTR with a higher add-to-cart rate is the outcome we want.**
 
 ## Shot list / overlays (Swedish word-for-word)
 | Time | Shot | Swedish overlay (use this) | English meaning |
 |---|---|---|---|
-| 0:00–0:01,5 | Boat at the dock, engine bare, nobody around | Båten vid bryggan igen? | Boat back at the dock? |
-| 0:01,5–0:03 | Slow push-in on the uncovered cowling | Motorn står helt oskyddad | The engine sits completely unprotected |
+| 0:00–0:01,5 | Wide shot: large outboard, boat visible behind | Har du en dyr motor? | Do you have an expensive engine? |
+| 0:01,5–0:03 | Cut to the cover in hand | Då förtjänar den skydd | Then it deserves protection |
 | 0:03–end | Source PD_1_H3 edit, untouched | (existing overlays unchanged) | — |
 
-**Voiceover:** none.
-
-**Do not re-time, re-grade or re-cut anything after second 3.** If the body changes, the test is unreadable.
+**Voiceover:** none added.
 
 ## Ad copy
 Primary text:
@@ -33,8 +34,14 @@ Primary text:
 
 Headline: `Skydda din motor – år efter år`
 
+**Claim discipline:** never put a figure on the engine's value. "Dyr motor" is the ceiling — we have no source for what any given engine costs.
+
+## Editing direction
+- Same rules as H5: hard cut in, nothing after second 3 touched, captions centre-safe.
+- Deliver as `Enginecover_PD_1_H6_<length>s.mp4`.
+
 ## Primary KPI
-**LPV→ATC rate first** (target ≥ 13 %, the parent sits at 9,2 %), CPA second (parent 170,96 kr). Judge the four against each other and against the parent, never against ads that have spent a fraction as much.
+Click-to-purchase against 2,3 %, head-to-head with H5.
 
 ## What we learn regardless of outcome
-Which qualification axis (size, situation, value, identity) buys better traffic on the ad that carries the budget.
+Which qualifying axis, size or value, buys better traffic on the ad that carries the budget.
