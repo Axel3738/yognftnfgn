@@ -33,10 +33,11 @@ Fable 5/Opus; slutgiltig ad copy och voiceovers skrivs av sonnet/haiku-subagente
 | AI Smarta Glasögon | 1 000 kr | 2 | 1 208 kr | 1,55 | Svag — kill-kandidat om trenden står sig |
 | Väggfästet | 500 kr | 9 | 329 kr | 2,08 | OK för testbudget |
 
-- ⚠️ **Alla `target_cpa_sek` i `products/products.json` är placeholders**
-  (avrundade från nuvarande CPA). **Axel: sätt riktiga target-CPA per produkt** —
-  det är ratten som styr hela kvoten. Formeln ger hög kvot åt vinnare med låg CPA
-  (Motorhöljet: 24 creatives/cykel) — rimligt, men kräver kapacitetsbeslut.
+- ✅ Target-CPA satta av Axel 5/8 (25 % nettomarginal efter kortavgift + EU-tull):
+  Motorhöljet 135 · Strandtofflorna 145 · Väggfästet 170 · Axelbältet 185 ·
+  AI Glasögon 930. ⚠️ **Sätesöverdragaren står kvar på placeholder 300 kr — sätt
+  den.** Formeln ger hög kvot åt vinnare med låg CPA (Motorhöljet: 27
+  creatives/cykel = 9/dag) — rimligt, men kräver kapacitetsbeslut vecka 2.
 - Delar av produkttest-processen är fast i Loom-videor — luckorna listas i SOP-06
   och bör skrivas ner i text vecka 1.
 
@@ -45,7 +46,7 @@ Fable 5/Opus; slutgiltig ad copy och voiceovers skrivs av sonnet/haiku-subagente
 ### Vecka 1 (4–10 aug): Kärnloopen körs av Axel, med systemet
 - [x] System i repo: SOP-01–06, kommandon, kvotskript, CLAUDE.md
 - [x] Prompter → slash-kommandon; Mastern/SnarkLös utlyft ur OS:et
-- [ ] Axel sätter riktiga target-CPA i `products/products.json`
+- [x] Axel sätter riktiga target-CPA i `products/products.json` (5/8; Sätesöverdragaren återstår)
 - [ ] Transkribera Loom-luckorna i SOP-06 (2-extra-ads-regeln m.m.)
 - [ ] Axel kör `/forsta-batch` på Motorhöljet (vinnaren) — varje friktion blir en
       kommandoändring, committad
