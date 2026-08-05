@@ -143,9 +143,11 @@ värdelös oavsett hur snygga tabellerna är.
   layout, vad ögat träffar först, textmängd och hierarki, produktens plats i
   bilden, kontrast, om erbjudandet syns, om texten är läsbar i mobilfeed.
   Detta går alltid att göra och är därför obligatoriskt för varje bedömbar bild.
-- **Videoannonser:** manuset finns redan i **vår egen brief** (`products/<id>/`
-  eller Notion-itemet) — läs den i stället för att gissa. Saknas briefen: be om
-  transkript, transkribera aldrig på gissning. Granska även thumbnailen.
+- **Videoannonser:** manuset finns redan i **vår egen brief** — normalt längre upp
+  i samma chatt där CS-rundan gjordes, annars i `products/<id>/` eller
+  Notion-itemet. Läs den i stället för att gissa. Saknas den helt: lista vilka
+  videor det gäller och be om manusen i en samlad fråga — transkribera aldrig på
+  gissning. Granska även thumbnailen.
 
 ### Tagga variablerna och koppla dem till vinstbidraget
 

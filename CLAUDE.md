@@ -57,7 +57,7 @@ inte; äldre Mastern-material i `docs/` och `pipeline/` (utom `pipeline/quota.mj
 | Kommando | Vad |
 |----------|-----|
 | `/ny-produkt <namn> <budget>` | Första testbatchen för ny produkt (ingen data än) — SOP-06 |
-| `/forsta-batch <namn>` | Första riktiga batchen efter launch; skapar produktens chatt + minnesfiler — SOP-01 |
+| `/forsta-batch <namn>` | Full CS-analys från noll i en NY chatt (när `/cs` inte har chatthistorik att läsa) |
 | `/cs <id> [egna idéer]` | **Kärnloopen:** CS på senaste annonserna, feedbackloop, nästa batch enligt kvoten |
 | `/koncept <id> <idé> [AKUT]` | Släng in koncept/swipe i backloggen (AKUT = bygg briefen nu) |
 | `/checkin <id>` | Daglig check-in: kvot, Slack-kontroll, grönmarkering, larm |
@@ -71,7 +71,7 @@ inte; äldre Mastern-material i `docs/` och `pipeline/` (utom `pipeline/quota.mj
 | Vad | Var |
 |-----|-----|
 | Actionplan + bottlenecks | `docs/os/ACTIONPLAN.md` |
-| SOP: första batchen + produkt-chatten | `docs/os/SOP-01-batch-loop.md` |
+| SOP: CS-loopen på en produkt som går bra | `docs/os/SOP-01-batch-loop.md` |
 | SOP: brief-kvoten (mål nr 1) | `docs/os/SOP-02-brief-quota.md` |
 | SOP: UGC-pipeline och deadlines | `docs/os/SOP-03-ugc-pipeline.md` |
 | SOP: daglig check-in / grönmarkering | `docs/os/SOP-04-daily-checkin.md` |

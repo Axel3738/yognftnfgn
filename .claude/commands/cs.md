@@ -3,34 +3,52 @@
 Argument: `$ARGUMENTS` — produkt-id (från `products/products.json`), och valfritt egna idéer/instruktioner efter produkt-id:t.
 Exempel: `/cs motorholjet` eller `/cs motorholjet testa en vinkel mot båtägare, och gör en variant av vinnaren med äldre man`.
 
-Detta är kärnloopen: körs återkommande (normalt var 3:e dag per produkt) i produktens chatt eller en ny session — allt minne ligger i `products/<id>/`, inte i chatten.
+## Så här ser arbetsflödet ut (viktigt — anta inget annat)
+
+1. Produkten launchas med ~12 annonser (Axels egen process).
+2. Går produkten bra öppnar Axel en Claude Code-chatt och gör **den första
+   riktiga CS-rundan där** — briefarna från den rundan ligger alltså i
+   **den här chattens historik**.
+3. `/cs` körs sedan **i samma chatt**, om och om igen: analysera det som
+   launchats, leverera nya briefer baserat på faktisk data.
+
+**Därför:** briefarna du behöver för att förstå vad varje annons ÄR finns
+normalt redan här i chatten. Läs chatthistoriken först — det är den primära
+källan. Bygg aldrig en analys på gissningar när materialet står längre upp.
 
 ## Gör följande, hela kedjan utan att invänta godkännande
 
 ### 1. Läs läget
-- Produktens rad i `products/products.json` (ad account = **MagiBorsten 1867947880635861**, kampanjer, budget, target-CPA).
-- `products/<id>/dna.md` (Creative DNA), `products/<id>/batch-log.md` (tidigare batcher + hypoteser), `products/<id>/backlog.md` (väntande koncept/swipes).
+- **Chatthistoriken:** hitta briefarna/manusen från de senaste CS-rundorna i
+  denna chatt — vilka annonser byggdes, med vilken hypotes, vilken vinkel,
+  vilket manus, vilken designbrief. Detta är underlaget för creative-teardownet.
+- Produktens rad i `products/products.json` (ad account = **MagiBorsten 1867947880635861**, kampanjer, budget, target-CPA, break-even-CPA).
+- `products/<id>/dna.md`, `batch-log.md`, `backlog.md` om de finns — de är
+  komplement till chatten, inte ersättning för den.
 - Kör `node pipeline/quota.mjs` — kvoten bestämmer batchstorleken.
 
-### 1b. Saknas minnesfilerna? Kör upphämtning FÖRST (engångsjobb per produkt)
+### 1b. Saknas underlaget helt? (varken i chatten eller i `products/<id>/`)
 
-Produkter som redan kört flera batcher innan OS:et fanns har inget `products/<id>/`.
-Skapa det då från kontodatan innan du går vidare — hoppa aldrig över detta och
-bygg aldrig en batch på tom historik:
+Gäller bara när `/cs` körs i en **ny** chatt utan CS-historik. Kör då en
+upphämtning först — hoppa aldrig över det och bygg aldrig en batch på tom historik:
 
-- Hämta **alla** annonser för produkten i MagiBorsten (hela livstiden, inte bara
-  senaste perioden) med spend, köp, CPA, ROAS, CTR, hook rate, hold + creatives
-  (copy, rubrik, format, bild-/video-ID). Granska de statiska bilderna visuellt.
-- Gruppera dem i batcher efter launchdatum och namngivning så gott det går, och
-  skriv `batch-log.md` retroaktivt. **Markera tydligt att hypoteserna inte
-  loggades i förväg** — skriv `hypotes: ej loggad (retroaktiv rekonstruktion)`
-  i stället för att gissa vad någon tänkte. Utfallen är däremot riktig data.
-- Bygg `dna.md` av det: Winning DNA / Losing DNA / obevisat, med data skild från
-  hypotes. Detta blir produktens startminne.
-- Skapa en tom `backlog.md`.
-- Säg i svaret att upphämtning kördes och för hur många annonser.
+- Hämta **alla** annonser för produkten i MagiBorsten (hela livstiden) med spend,
+  köp, CPA, ROAS, CTR, hook rate, hold + creatives (copy, rubrik, format,
+  bild-/video-ID). Granska de statiska bilderna visuellt.
+- Gruppera i batcher efter launchdatum och namngivning, skriv `batch-log.md`
+  retroaktivt. **Hypoteser som inte loggades i förväg skrivs
+  `hypotes: ej loggad (retroaktiv rekonstruktion)`** — gissa aldrig vad någon
+  tänkte. Utfallen är däremot riktig data.
+- Videomanus går inte att läsa ur kontot: lista vilka videor som saknar manus
+  och be om dem i EN samlad fråga i slutet, i stället för att gissa.
+- Bygg `dna.md` av det, skapa tom `backlog.md`, och säg i svaret att upphämtning
+  kördes och för hur många annonser.
 
-Nästa `/cs` på produkten hoppar över detta steg och kör den vanliga loopen.
+### 1c. Skriv alltid tillbaka till repot
+
+Oavsett var underlaget kom ifrån: efter analysen ska `products/<id>/dna.md` och
+`batch-log.md` vara uppdaterade med vad chatten kom fram till. Chatten är bekväm
+men kan tappas bort — repot är minnet som överlever.
 
 ### 2. Feedbackloop på senaste annonserna (detta är poängen med kommandot)
 
@@ -81,7 +99,8 @@ har dödat vinnare två gånger. Kortversion av kraven:
 
 ## DEFINITION OF DONE (markera ✅/❌ sist)
 
-- [ ] Minnesfilerna fanns — eller upphämtning (1b) kördes och redovisades
+- [ ] Chatthistorikens briefer lästa och använda i teardownet — eller upphämtning (1b)
+      körd och redovisad om chatten saknade dem
 - [ ] **ANALYSMETOD.md:s snabbchecklista avbockad punkt för punkt i svaret**
 - [ ] Vinstbidragstabellen visad — ranking på vinst, inte på ROAS/CPA
 - [ ] Creative-teardown gjort: bilder visuellt granskade, variabeltabell visad,
@@ -92,4 +111,4 @@ har dödat vinnare två gånger. Kortversion av kraven:
 - [ ] Batchstorlek ≥ kvoten (quota-output visad)
 - [ ] Copy/voiceover skriven av sonnet/haiku-subagent, strategi av huvudmodellen
 - [ ] Briefer på engelska, naming korrekt, zip-paketerade
-- [ ] Batch-log + ev. budgetändring committad och pushad
+- [ ] dna.md + batch-log.md uppdaterade i repot (inte bara i chatten) och pushade
