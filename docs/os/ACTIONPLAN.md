@@ -132,4 +132,15 @@ Fable 5/Opus; slutgiltig ad copy och voiceovers skrivs av sonnet/haiku-subagente
 
 ## Kända problem (fylls på löpande — se SOP-05)
 
-- (tomt ännu)
+- **2026-08-05 — Chattar dömde vinnare som förlorare.** Först på ROAS ensam
+  ("top spendern har låg ROAS = dålig"), sedan på CPA ensam ("över target-CPA =
+  dålig"). Verifierat i datan: `Motorhölje_PD_1_H3` har lägst ROAS av de
+  bedömbara men står för 66 % av spenden och **51 % av allt vinstbidrag** —
+  att pausa den hade halverat vinsten. Annonsen med ROAS 9,22 har ett enda köp.
+  → **Åtgärdat** med `docs/os/ANALYSMETOD.md` (obligatorisk 7-stegsmetod),
+  CLAUDE.md regel 3b, `break_even_cpa_sek` i products.json och nya rader i
+  SOP-05:s felsökningstabell. Följ upp att nästa `/cs` faktiskt visar
+  vinstbidragstabellen.
+- **2026-08-05 — Databugg i Meta-API:t.** `omni_purchase_values` returnerade
+  intäkten 100× för lågt på 5 av 8 annonsrader. Summering av fältet ger skräp.
+  → Obligatorisk kontroll (`spend × ROAS` vs `values`) i ANALYSMETOD.md steg 1.
