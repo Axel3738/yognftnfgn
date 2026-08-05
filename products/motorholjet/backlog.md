@@ -17,10 +17,18 @@ Markeras `[använd i batch #N]` när de plockas in i en batch.
 
 | # | Idé | Källa | Använd i |
 |---|-----|-------|----------|
-| B1 | Offer-först, prisbevis som hook | Briefsats 2026-08-02 | **batch #4** som `Enginecover_SO_8_1` + `SO_8_2`. Omarbetad från video till ett **kontrollerat statiskt par** — teardownet visade att format, inte hook, är den bevisade hävstången, och paret isolerar dessutom om prisbevis i bild verkligen är mekanismen bakom SO_2 |
-| B2 | Story-UGC "två motorer, samma brygga" | Briefsats 2026-08-02 | **batch #4** som `Enginecover_SP_10_H1` (creator-UGC, tre hookvarianter) |
+| B1 | Offer-först, prisbevis som hook | Briefsats 2026-08-02 | **Redan i produktion** som `Enginecover_SO_3_H1` (Notion: "In progress 2"). Prisbevis-mekanismen isoleras dessutom i **batch #4** av det statiska paret `SO_8_1`/`SO_8_2` |
+| B2 | Story-UGC "två motorer, samma brygga" | Briefsats 2026-08-02 | **Redan inspelad och levererad** som `Enginecover_SP_6_H1` (Notion: "Creative strat review", färdig ad i Drive). **batch #4** lägger till `SP_10_H1` = tre hookvarianter **omklippta ur samma material**, ingen ny inspelning |
 | B3 | Annonser som matchar lagerrensnings-LP:n | LP-bygge 2026-08-05 | **batch #4** som `SO_8_1`, `SO_8_2` (statiska) och `SO_9_C1` (karusell) |
 
-> **Rättelse 2026-08-05:** B1–B3 stod tidigare som använda i ett utkast till batch #4 som sedan
-> förkastades, med annonsnamn som aldrig briefades (`SO_3_H1`, `SP_6_H1`, `SO_9_H1`, `SO_12_1/2`).
-> Raderna ovan pekar nu på briefer som faktiskt finns i `batch-04/`.
+> **Rättelse 2026-08-05 (kontrollerad mot Notion-boardet):** B1 och B2 stod som "väntande"
+> respektive "använda i ett förkastat utkast". Boardet visar att båda redan är i produktion —
+> `SO_3_H1` pågår och `SP_6_H1` är inspelad med färdig ad i Drive. Ingen av dem behövde briefas om.
+> Lärdom: **läs Notion-boardet innan backloggen skrivs**, annars beställs arbete som redan är gjort.
+
+## Redo att launchas (producerade, ligger inte i kontot)
+
+| Annons | Notion-status | Åtgärd |
+|---|---|---|
+| `Enginecover_SP_6_H1` | Creative strat review — **färdig ad i Drive** | Kan launchas nu. Ingen annons i kontot bär denna vinkel. |
+| `Enginecover_SO_3_H1` | In progress 2 | Vänta in leverans, launcha sedan. |

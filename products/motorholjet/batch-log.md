@@ -136,7 +136,7 @@ samma brygga") → `SP_10_H1`. B3 (annonser som matchar lagerrensnings-LP:n) →
 | 12 | Enginecover_PD_1_H5 | Video, hook-edit | **Bara hooken:** kvalificera på motorstorlek | Färre men bättre klick. LPV→ATC ≥ 13 % mot dagens 9,2 % |
 | 13 | Enginecover_PD_1_H6 | Video, hook-edit | **Bara hooken:** kvalificera på värde | Samma mål, annan kvalificeringsaxel. Ren A/B mot #12 |
 | 14 | Enginecover_SP_9_H1 | Video ≤20 s | SP-copyns VO på PD_EXTRA:s footage | Dekomponeringstest: bästa CVR-copy + bästa CTR-footage |
-| 15 | Enginecover_SP_10_H1 | Creator-UGC ≤25 s | SP-vinkeln som berättelse i stället för lista | Hold p50 > 20 %. Reser vinkeln till en ny talare, eller satt den i den enda annonsen? |
+| 15 | Enginecover_SP_10_H1 | **Omklipp**, ≤25 s | Tre hookvarianter på SP_6_H1:s **befintliga** material | Kortare cut håller bättre p50 än 30–40 s-versionen. **Ingen ny inspelning** |
 | 16 | Enginecover_SO_10_H1 | Video ≤20 s | **Retargeting:** riskreversering | Kontots billigaste outnyttjade volym — ~90 övergivna varukorgar |
 | 17 | Enginecover_SO_11_H1 | Video ≤25 s | **Säsong:** skydd under förvaringen | Upptagningen är ett verkligt köptillfälle |
 
@@ -150,6 +150,9 @@ samma brygga") → `SP_10_H1`. B3 (annonser som matchar lagerrensnings-LP:n) →
 - **#1, #2 och #10 pekar på lagerrensnings-LP:n**, inte produktsidan.
 - **#12 och #13 är hook-only.** Ändras en enda bildruta i bodyn är testet dött.
 - Logga launchen: `node pipeline/quota.mjs log motorholjet <antal>`.
+- **Notion:** alla 17 items skapade 2026-08-05 i "Boat cover 420D creative hub", Status `Draft`,
+  Typ `Video - Pending Approval` enligt NOTION-FORMAT.md, hela briefen inklistrad i varje item.
+  Drive-länk saknas — ingen mapp angavs för denna batch.
 
 **Ersätter:** två tidigare utkast till batch #4 (båda 27 creatives, båda video- och hooktunga) som
 förkastades. Det första på att det byggde på en ROAS-ranking, det andra på att det byggde på ett

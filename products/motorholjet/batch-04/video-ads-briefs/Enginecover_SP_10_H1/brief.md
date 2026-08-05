@@ -1,10 +1,24 @@
-# Enginecover_SP_10_H1 — Story UGC: two engines, same jetty
+# Enginecover_SP_10_H1 — Hook variants on the existing "two engines" footage
 
-**VARIABELTAGGAR:** vinkel=`social proof/tillit` · hook-typ=`jämförelse` · format=`video, creator-UGC story` · proof=`egen erfarenhet` · offer-i-creativen=`ingen offer` · visuell stil=`handhållen UGC på brygga` · textmängd=`≤5 ord per overlay` · talare=`creator i bild`
+**VARIABELTAGGAR:** vinkel=`social proof/tillit` · hook-typ=`jämförelse` · format=`video, creator-UGC story (omklipp)` · proof=`egen erfarenhet` · offer-i-creativen=`ingen offer` · visuell stil=`handhållen UGC på brygga` · textmängd=`≤5 ord per overlay` · talare=`creator i bild`
 *(Läses av nästa `/cs` för att gruppera vinstbidrag per variabelvärde.)*
 
-**Type:** Creator-led story UGC. Comes from the backlog (item B2) and is the only
-narrative-format ad in this batch.
+**Type:** **Edit job, not a shoot.** Three hook variants cut from footage that already
+exists.
+
+---
+
+## 0. Read this first — do not book a shoot
+
+`Enginecover_SP_6_H1` is the same angle ("Två motorer. Samma brygga.") and it is
+**already filmed and delivered** — the finished ad is linked from its Notion item.
+Do not shoot this again.
+
+This brief asks for one thing: **three new openings cut from that existing
+footage**, plus a shorter overall cut. Everything else already exists.
+
+If the existing footage does not contain enough usable material for the three
+openings below, say so in Slack before you shoot anything new.
 
 ---
 
@@ -12,20 +26,21 @@ narrative-format ad in this batch.
 
 The social-proof copy is the best converter in the account: it turns 6,4 % of
 landing-page visits into purchases, against 2,3 % for the product-demo copy. That
-is nearly triple. But it has only ever run as **one** ad, one video, one voice.
+is nearly triple. But it has only ever run as **one** ad, one execution.
 
-This brief is that voice in a format it has never had: a real owner telling a
-short story instead of listing features.
+`SP_6_H1` runs 30–40 s. This brief cuts the same story to **max 25 s** and gives it
+three different openings, so we learn two things from footage we have already paid
+for: whether the shorter cut wins (kort demo beats lång demo in this account,
+1 430 kr vs 393 kr profit per 1 000 kr spend), and which opening earns the click.
 
-**Hypothesis:** a narrative comparison holds attention past second 10 better than
-a feature list, and produces the same high-quality clicks as the existing
-social-proof ad. Target: hold at p50 above 20 % and LPV→purchase above 6 %.
+**Hypothesis:** the shorter cut holds better at p50 than the 30–40 s version, and at
+least one of the three hooks beats the original opening. Target: hold p50 above
+20 % (account best is 23,9 %), LPV→purchase above 6 %.
 
 **What we learn either way:** whether the social-proof advantage lives in the
-*words* or in the *speaker*. If this ad converts like the original, the angle
-travels and we can scale it across creators. If it does not, the original ad's
-performance was about that one execution and we stop assuming the angle is
-portable.
+*words* or in the *speaker*. If this converts like the original SP ad, the angle
+travels and we scale it across creators. If not, that ad's performance was one
+execution and we stop assuming the angle is portable.
 
 ---
 
@@ -33,36 +48,27 @@ portable.
 
 | | |
 |---|---|
-| Length | **Max 25 seconds.** Do not run over. |
+| Length | **Max 25 seconds.** The source cut is 30–40 s — this is a tightening pass. |
+| Deliverables | **3 files**, identical from 00:03 onward, differing only in the opening |
 | Ratios | 9:16 (1080×1920) **and** 4:5 (1080×1350), both re-framed properly |
 | Codec | H.264 MP4, 30 fps, under 100 MB, audio −14 LUFS |
-| Sound | Creator's real voice, recorded on location. No studio VO, no music bed over the dialogue — a low ambient marina track under it is fine. |
+| Sound | Creator's real voice from the original recording. No studio VO, no music over the dialogue; low ambient marina under it is fine. |
 | Captions | Burned in, Swedish, **word for word** matching the spoken lines below |
-| Product on screen | **Before second 4.** The camera is already near the motor when the first word lands. |
+| Product on screen | **Before second 4.** The cover is in the first shot. |
 | Colour | Black cover only |
 
----
-
-## 3. Casting and location
-
-**Creator:** a Swedish-speaking man or woman who plausibly owns a boat, roughly
-35–65. Ordinary clothes, no branded gear, no polished presenter energy. They must
-sound like they are pointing something out to a friend, not delivering a line.
-
-**Location:** a real jetty or small marina with at least two outboard motors
-visible — one with our cover on it, one bare. This contrast is the entire ad. If
-you cannot get two motors in one shot, shoot them separately and cut between them,
-but the bare motor must be a real uncovered engine, not a staged prop.
-
-**Camera:** handheld, phone-quality is correct and preferred. Slight movement,
-natural light, no gimbal smoothness, no colour grade beyond basic correction.
+**If a hook line was not recorded on the shoot:** do not fake it and do not
+substitute a similar line. Ask for a pickup recording of just that line — it is
+three seconds of audio and the creator can send it from a phone.
 
 ---
 
-## 4. Script — record these lines word for word
+## 3. Script — these lines, word for word
 
-Do not rephrase, do not translate the right column yourself, do not "fix" the
-Swedish. If something looks like a typo, ask before changing it.
+This is the script the finished cut must carry. It is the same story as `SP_6_H1`,
+tightened to 25 seconds. Match the captions to it exactly. Do not rephrase, do not
+translate the right column yourself, do not "fix" the Swedish. If something looks
+like a typo, ask before changing it.
 
 | Time | Swedish (use this) | English meaning |
 |---|---|---|
@@ -74,11 +80,13 @@ Swedish. If something looks like a typo, ask before changing it.
 | 00:17–00:20 | Håller borta sol, salt, regn och damm mellan turerna. | Keeps out sun, salt, rain and dust between trips. |
 | 00:20–00:25 | Testa det på din motor – vi ger dig 30 dagars nöjd-kund-garanti. | Try it on your engine — we give you a 30-day satisfaction guarantee. |
 
-### Hook variants — record all three
+### The three hooks — one finished file each
 
-Shoot the same opening moment three times with these three lines. We will cut
-three versions and test the hook separately. Everything from 00:03 onward is
-identical across the three.
+Cut three versions, one per line below. **Everything from 00:03 onward must be
+byte-identical across the three** — same cuts, same captions, same audio levels. If
+they differ anywhere else, the hook test is dead and we learn nothing.
+
+Variant 1 is the original opening and is the control.
 
 | Swedish (use this) | English meaning |
 |---|---|
@@ -88,21 +96,26 @@ identical across the three.
 
 ---
 
-## 5. Shot list
+---
 
-| Time | Shot |
+## 4. Edit map (source: the existing SP_6_H1 footage)
+
+| Time | What to cut to |
 |---|---|
-| 00:00–00:03 | Creator in frame at the jetty, both motors behind them — the covered one and the bare one. They gesture at the two as they speak. **The cover is visible in this first shot.** |
-| 00:03–00:07 | Cut to the bare motor. Hold on it. Let the viewer see sun on bare cowling, salt haze, dust. No commentary shot needed, the line carries it. |
-| 00:07–00:11 | Cut to our covered motor. Same angle as the previous shot if possible, so the comparison reads instantly. |
-| 00:11–00:14 | Back to creator, half-smile on "vem gör det?". This is the honesty beat — they are admitting something the viewer also does. |
-| 00:14–00:17 | Close on the fabric. Creator's hand rubs the material. If you have water, a light splash beading off the surface here is strong — but only real footage, no VFX. |
-| 00:17–00:20 | Cover coming off and going back on in one motion, showing how fast it is. Elastic hem and strap visible. |
-| 00:20–00:25 | Creator back in frame, direct to camera for the CTA. End on the covered motor. |
+| 00:00–00:03 | Creator in frame at the jetty, both motors behind them. **The cover must be visible in this first shot** — if the original opening does not show it, pick a later frame that does. |
+| 00:03–00:07 | The bare motor. Hold on it: sun on bare cowling, salt haze, dust. |
+| 00:07–00:11 | Our covered motor. Match the angle of the previous shot as closely as the footage allows — the comparison has to read instantly. |
+| 00:11–00:14 | Creator, on "vem gör det?". This is the honesty beat. Use the take with the half-smile if there is one. |
+| 00:14–00:17 | Close on the fabric, creator's hand on the material. |
+| 00:17–00:20 | Cover coming off and going back on, elastic hem and strap visible. |
+| 00:20–00:25 | Creator direct to camera for the CTA. End on the covered motor. |
+
+**The cut is tight on purpose.** Trim the pauses that make the 30–40 s version
+breathe — that breathing room is what we are testing away.
 
 ---
 
-## 6. On-screen text overlays
+## 5. On-screen text overlays
 
 Max four. Do not add more.
 
@@ -118,20 +131,21 @@ check the font before you set a single word.
 
 ---
 
-## 7. Editing direction
+## 6. Editing direction
 
 - Cut on the line, not after it. No breathing room between sentences — this ad has
-  25 seconds and seven lines.
+  25 seconds and seven lines. This tightening is the point of the edit.
 - Never hold a static frame longer than ~2 s in the first 10 seconds.
 - No logo card, no title card, no intro. First frame is the creator and the motors.
-- The comparison shots at 00:03 and 00:07 must be framed alike. If the angles do
-  not match, the whole ad falls apart.
+- The comparison shots at 00:03 and 00:07 must be framed alike. If the source
+  footage does not have two matching angles, pick the closest pair you have and
+  flag it in Slack.
 - No zoom punches, no whoosh SFX, no trending audio. This ad's credibility is its
   only asset.
 
 ---
 
-## 8. Ad copy (goes in Ads Manager, not in the video)
+## 7. Ad copy (goes in Ads Manager, not in the video)
 
 **Primary text:**
 
@@ -149,7 +163,7 @@ https://baverbutiken.se/products/marin-motorholje-420d-universellt-skydd
 
 ---
 
-## 9. Hard rules for this ad
+## 8. Hard rules for this ad
 
 - **No price anywhere.** Not spoken, not on screen, not implied. This ad tests the
   angle without an offer.
@@ -171,7 +185,7 @@ https://baverbutiken.se/products/marin-motorholje-420d-universellt-skydd
 
 ---
 
-## 10. Primary KPI
+## 9. Primary KPI
 
 **Hold at p50.** Everything else is secondary for this ad — we already know the
 angle converts, what we do not know is whether a story holds attention. Target

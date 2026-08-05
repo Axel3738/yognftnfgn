@@ -12,7 +12,7 @@
 **Ad set:** Motorhölje SO · **CTA:** Handla nu · **Landing page:** https://baverbutiken.se/products/marin-motorholje-420d-universellt-skydd
 
 ## Why this ad exists (from the 2026-08-05 teardown)
-The single judgeable static in the account (`Motorhölje_SO_2`) returns **964 kr profit per 1 000 kr spend** against **504 kr for the videos** — and it runs the **exact same copy, headline and CTA** as `Motorhölje_SO_1_H1`, the weakest judgeable video (343 kr per 1 000 kr). Same words, roughly triple the return. That makes format, not copy, the biggest untested lever in the account. One static is not proof, so this batch adds more.
+The single judgeable static in the account (`Motorhölje_SO_2`) returns **1 117 kr profit per 1 000 kr spend** against **512 kr averaged across the videos** — and it runs the **exact same copy, headline and CTA** as `Motorhölje_SO_1_H1`, the weakest judgeable video (343 kr per 1 000 kr). Same words, more than triple the return. That makes format, not copy, the biggest untested lever in the account. One static is not proof, so this batch adds more.
 
 On top of that: **no judgeable ad in this account has ever shown the actual price in the creative.** A previous DNA note claimed SO_2 had "pris i bild" — that was never verified and the image cannot be opened from this environment, so it is removed as unfounded. This pair tests the variable properly for the first time.
 
@@ -48,7 +48,7 @@ Headline: `299 kr, ordinarie pris 367 kr`
 **Use the black cover in the imagery.** Store data shows black carries almost all sales; two colours have sold nothing. Colour is not a selling angle here.
 
 ## Primary KPI
-CPA against SO_2's 120,16 kr, and **head-to-head against SO_8_2**. The pair must run in the same ad set with comparable budget or the test is void.
+CPA against SO_2's 111,45 kr, and **head-to-head against SO_8_2**. The pair must run in the same ad set with comparable budget or the test is void.
 
 ## What we learn regardless of outcome
 Whether visible price proof is worth anything, or whether the offer angle works on the claim alone. Either answer changes every offer creative we make.

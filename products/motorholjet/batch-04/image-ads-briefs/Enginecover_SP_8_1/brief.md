@@ -12,7 +12,7 @@
 **Ad set:** Motorhölje SP · **CTA:** Handla nu · **Landing page:** https://baverbutiken.se/products/marin-motorholje-420d-universellt-skydd
 
 ## Why this ad exists (from the 2026-08-05 teardown)
-The single judgeable static in the account (`Motorhölje_SO_2`) returns **964 kr profit per 1 000 kr spend** against **504 kr for the videos** — and it runs the **exact same copy, headline and CTA** as `Motorhölje_SO_1_H1`, the weakest judgeable video (343 kr per 1 000 kr). Same words, roughly triple the return. That makes format, not copy, the biggest untested lever in the account. One static is not proof, so this batch adds more.
+The single judgeable static in the account (`Motorhölje_SO_2`) returns **1 117 kr profit per 1 000 kr spend** against **512 kr averaged across the videos** — and it runs the **exact same copy, headline and CTA** as `Motorhölje_SO_1_H1`, the weakest judgeable video (343 kr per 1 000 kr). Same words, more than triple the return. That makes format, not copy, the biggest untested lever in the account. One static is not proof, so this batch adds more.
 
 And separately: the SP copy is the account's best converter per click but has run on exactly one asset. It is the most under-supplied thing we own.
 

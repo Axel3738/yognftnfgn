@@ -12,7 +12,7 @@
 **Ad set:** Motorhölje SO · **CTA:** Handla nu · **Landing page:** https://baverbutiken.se/products/marin-motorholje-420d-universellt-skydd
 
 ## Why this ad exists (from the 2026-08-05 teardown)
-The single judgeable static in the account (`Motorhölje_SO_2`) returns **964 kr profit per 1 000 kr spend** against **504 kr for the videos** — and it runs the **exact same copy, headline and CTA** as `Motorhölje_SO_1_H1`, the weakest judgeable video (343 kr per 1 000 kr). Same words, roughly triple the return. That makes format, not copy, the biggest untested lever in the account. One static is not proof, so this batch adds more.
+The single judgeable static in the account (`Motorhölje_SO_2`) returns **1 117 kr profit per 1 000 kr spend** against **512 kr averaged across the videos** — and it runs the **exact same copy, headline and CTA** as `Motorhölje_SO_1_H1`, the weakest judgeable video (343 kr per 1 000 kr). Same words, more than triple the return. That makes format, not copy, the biggest untested lever in the account. One static is not proof, so this batch adds more.
 
 The offer angle is the one we understand best, which makes it the cleanest place to test a brand-new format.
 
@@ -45,7 +45,7 @@ Headline: `299 kr just nu`
 **Use the black cover in the imagery.** Store data shows black carries almost all sales; two colours have sold nothing. Colour is not a selling angle here.
 
 ## Primary KPI
-CPA against SO_2 (120,16 kr) and LPV→ATC. Compare with SO_8_1, which carries the same offer as a single image.
+CPA against SO_2 (111,45 kr) and LPV→ATC. Compare with SO_8_1, which carries the same offer as a single image.
 
 ## What we learn regardless of outcome
 Whether carousel adds anything over a strong single image when the angle is already proven.
