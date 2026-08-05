@@ -120,7 +120,7 @@ som ersätter den urgency som fällde SO_1_H1.
 | 13 | Enginecover_SO_3_H1 | Video | Hook: kostnadskontrast | Kåp-kostnad vs 299 kr ger offer-vinkeln ett skäl att existera *(backlog B1)* |
 | 14 | Enginecover_SO_9_H1 | Video | Reason-why: överlager | Ärligt skäl slår oförklarad rabatt, CPA ≤ 120 kr *(backlog B3)* |
 | 15 | Enginecover_PD_14_H1 | Video | Bevis: vattentest v2 | Eskalerat bevis ger hook > 41 % och CPA < 100 kr |
-| 16 | Enginecover_PD_14_H2 | Video | Hook: text först | Påstått bevis vs visat bevis, samma body |
+| 16 | Enginecover_SO_8_H4 | Video | Hook på SO_1_H2 | Hook-fix på bästa köp-per-krona ger CPA ≤ 95 kr vid 3–5× spend |
 | 17 | Enginecover_SO_10_1 | Statisk | Prisblock som hjälte | Skarpare prisbevis håller SO_2:s CPA 125,58 kr vid 2–3× spend |
 | 18 | Enginecover_SO_10_2 | Statisk | Hjälte: färger i stället för pris | Valfrihet når en annan köpargrupp, CPA ≤ 135 kr |
 | 19 | Enginecover_SO_11_1 | Statisk | Försäkrings-reframe som statisk | Vinkeln överlever utan video, CPA ≤ 135 kr |
@@ -128,15 +128,31 @@ som ersätter den urgency som fällde SO_1_H1.
 | 21 | Enginecover_SO_12_1 | Statisk | Reason-why: överlager | Ärligt skäl slår oförklarad rabatt (statisk motsvarighet till #14) |
 | 22 | Enginecover_SO_12_2 | Statisk | Hierarki: pris dominant | Snabbare läsning i feed utan att tappa trovärdigheten |
 | 23 | Enginecover_PD_15_1 | Statisk | Bevis: split vatten/torrt | Visat bevis i en blick ger CTR ≥ 4 % |
-| 24 | Enginecover_PD_15_2 | Statisk | Layout: text-tung | Kvantifierat påstående vs visat bevis |
+| 24 | Enginecover_SP_8_H4 | Video | Hook på SP_1_H1 | Mekanismen visad höjer CTR mot 3 % med CVR-golv 9 % |
 | 25 | Enginecover_SP_10_1 | Statisk | SP-vinkeln som statisk v2 | SP-CVR:n överlever i statiskt format, CPA ≤ 135 kr |
 | 26 | Enginecover_SP_10_2 | Statisk | Layout: quote-card | Citattecken som grafiskt element höjer CTR utan CVR-tapp |
 | 27 | Enginecover_PD_16_1 | Statisk | 3-stegs sekvens | Enkelhet visad som sekvens ger CTR ≥ 4 % |
 
+### Revidering 2026-08-05 (efter spend-normaliserad genomgång)
+
+Den första versionen av batchen la **4 av 27 creatives** på vattentestet (PD_14_H1/H2 + PD_15_1/2),
+byggt på PD_7_H1: **ett** köp på 56 kr. Två av dem innehöll dessutom en literangivelse som ingen mätt.
+Fel prioritering, och den syns direkt när man rankar på effektivitetsindex i stället för ROAS.
+
+| Åtgärd | Annons | Skäl |
+|---|---|---|
+| **Struken** | Enginecover_PD_14_H2 | Ren hookvariant på ett obevisat koncept. Vattentestet får en creative, inte två |
+| **Struken** | Enginecover_PD_15_2 | Byggde hela sitt claim på ett omätt tal |
+| **Rensad** | Enginecover_PD_14_H1 | `[X] liter` borttaget, claimet säger nu bara det filmen visar |
+| **Rensad** | Enginecover_PD_15_1 | Ingen kvantifiering kvar |
+| **Ny** | Enginecover_SO_8_H4 | Hook-fix på SO_1_H2 (index 1,67, bästa köp per krona vid dömbart urval, aldrig itererad) |
+| **Ny** | Enginecover_SP_8_H4 | Hook-fix på SP_1_H1 (17 köp, index 1,35, största tillförlitliga urvalet) |
+
+Fortfarande 27 creatives: **17 video + 10 statiska.**
+
 **Att göra vid launch (viktigt):**
 - Lägg batchen i **ABO-testkampanj med lika budget per annons i 48 h**, inte i den befintliga CBO:n.
   Batch #2 bevisade problemet: 16 av 17 statiska fick under 30 kr och blev odömbara.
-- Två briefer innehåller `[X] liter vatten` (PD_14_H1/H2, PD_15_2). **Blocker tills siffran mäts
-  eller tas bort.**
+- Inga omätta tal kvar i batchen. Mäts vattenmängden under inspelningen kan siffran läggas till i efterhand.
 - SO_9_H1, SO_12_1 och SO_12_2 ska peka på lagerrensnings-LP:n, inte produktsidan.
 - Logga launchen: `node pipeline/quota.mjs log motorholjet <antal>`.

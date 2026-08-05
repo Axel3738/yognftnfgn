@@ -14,7 +14,7 @@ Ad account: MagiBorsten `1867947880635861` · Campaign `120249435814310291`
    The only allowed urgency: `så länge lagret räcker`.
 6. **Swedish spelling traps** (exact): `motorhölje`, `utombordare`, `nöjd-kund-garanti`, `Oxfordtyg`, `hk` (lowercase), `dragsko`, `passform`, `kåpa`. A typo in a rendered ad image is a campaign-stopper — proof every file before delivery.
 7. Keep text under about 20 % of the image area. High contrast, mobile-first: **test legibility at 300 px wide.**
-8. **`[X]` placeholder in `Enginecover_PD_15_2` is a BLOCKER.** Fill in the measured amount of water or remove the number from the image, the headline and the copy.
+8. **No unmeasured numbers.** `Enginecover_PD_15_1` shows the water test without claiming a volume. Do not add a litre figure unless someone measures it during the shoot.
 9. Quotation marks in `Enginecover_SP_10_2` are a graphic device around a **product claim**. Never attribute them to a named or pictured person — we have no verified reviews.
 
 ## Reference assets

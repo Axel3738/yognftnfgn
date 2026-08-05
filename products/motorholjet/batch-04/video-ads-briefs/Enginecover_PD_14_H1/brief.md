@@ -12,7 +12,7 @@
 ## Shot list / overlays (Swedish word-for-word, do not re-translate)
 | Time | Shot | Swedish overlay (use this) | English meaning |
 |---|---|---|---|
-| 0:00–0:04 | Garden hose blasting water onto the covered engine from second one, water pooling and running off | [X] liter vatten | [X] litres of water |
+| 0:00–0:04 | Garden hose blasting water onto the covered engine from second one, water pooling and running off | Vi sprutade vatten på den | We sprayed water on it |
 | 0:04–0:09 | Spray continues, wide angle, water beading off the full fabric surface | 420D Oxfordtyg | 420D Oxford fabric |
 | 0:09–0:14 | ONE unbroken take: hands loosen the drawstring and lift the cover straight off | Enkel att sätta på och ta av | Easy to put on and take off |
 | 0:14–0:17 | Close-up: a hand wipes across the cowling | Helt torr | Completely dry |
@@ -22,7 +22,7 @@
 
 ## Ad copy
 Primary text:
-> Vi sprutade vatten på den. Mycket vatten.
+> Vi sprutade vatten på höljet.
 > 420D Oxfordtyg höll motorn torr.
 > Enkel att sätta på och ta av.
 > 299 kr (ord. 367 kr). 30 dagars nöjd-kund-garanti.
@@ -32,7 +32,7 @@ Headline: `Testad med vattenslang. Helt torr.`
 
 **Price integrity:** 299 kr / 367 kr verified against the store. If the store price changes, update BOTH numbers before launch. Never a discount percentage (299/367 is ~19 %, so any "30 %" claim would be false).
 
-**BLOCKER — claim discipline:** `[X]` is a placeholder. Fill in the amount of water actually used, in the overlay AND the primary text. If nobody measured it, delete the number everywhere and use "Vi sprutade vatten på den" instead. Never claim a figure that was not measured.
+**Claim discipline:** no quantified water claim anywhere. An earlier draft carried an `[X] liter` placeholder — it was removed because nobody measured the amount and an unmeasured number is not a claim we can stand behind. Say only what the footage shows: water was sprayed, the cowling stayed dry. If someone does measure the volume during the shoot, the number can be added afterwards.
 
 ## Editing direction
 - The reveal is the money shot: film it in ONE unbroken take so it cannot look edited or faked.

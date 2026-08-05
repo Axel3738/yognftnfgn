@@ -15,7 +15,7 @@ Ad account: MagiBorsten `1867947880635861` · Campaign `120249435814310291`
 6. **Swedish spelling traps** (exact): `motorhölje`, `utombordare`, `nöjd-kund-garanti`, `Oxfordtyg`, `hk` (lowercase), `passform`, `dragsko`, `kåpa`, `gelcoat`.
 7. **CTA in Ads Manager: "Handla nu"** on every ad.
 8. Subtitles on by default — assume sound-off on Facebook feed, sound-on on Reels.
-9. **`[X]` placeholders are BLOCKERS.** Two briefs contain `[X] liter vatten`. Fill in the real measured amount or remove the number entirely. Never ship the placeholder.
+9. **No unmeasured numbers.** An earlier draft of the water-test briefs carried an `[X] liter vatten` placeholder. It is gone: we do not put a figure on anything nobody measured. `Enginecover_PD_14_H1` now claims only what the footage shows.
 
 ## Source footage
 | Internal name | Meta video ID | Note |
@@ -38,4 +38,5 @@ Final ad name = folder name. Deliver files as `<AdName>_<length>s.mp4`, e.g. `En
 - **PD_13_H1–H4:** four hooks on one identical proven body. The cleanest hook test we have run. Judge them against each other.
 - **SP_8_H1–H3:** the social-proof angle on the best-CTR footage — does angle or footage drive performance?
 - **SO_8_H1–H3 + SO_3_H1 + SO_9_H1:** five structural variants of the offer, including the first honest reason-why (overstock).
-- **PD_14_H1/H2 + SP_9_H1 + SP_6_H1:** the three new mechanisms that produced every purchase in batch #3, now at production quality.
+- **PD_14_H1 + SP_9_H1 + SP_6_H1:** the three new mechanisms from batch #3, one creative each — they each rest on a single purchase, so they get a fair test, not a fleet.
+- **SO_8_H4 + SP_8_H4:** hook-only fixes on the two ads with the best measured purchases-per-krona at a real sample (SO_1_H2 and SP_1_H1).
