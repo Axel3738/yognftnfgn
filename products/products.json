@@ -1,5 +1,5 @@
 {
-  "comment": "Per-produkt-konfig för brief-kvoten. Endast Bäverbutiken.se — ad account MagiBorsten 1867947880635861. Uppdatera daily_budget_sek när budgeten ändras (/checkin gör det åt dig). target_cpa_sek sätts av ägaren, inte av Claude — nuvarande värden = max CPA vid 30 % nettomarginal efter kortavgift (2,9 %) och EU-tull (27,95 kr/order), beräknat 2026-08-05 på uppmätt ordervärde och COGS senaste 7 dagarna. break_even_cpa_sek = täckningsbidrag per order = target_cpa + 0,30 x AOV. Axel 2026-08-05: haller vi target-CPA pa snittkopet har vi alltid 30 % vinstmarginal. AOV harledd ur kontodata - AXEL: bekrafta mot verklig COGS. KILL-beslut mäts mot break_even_cpa_sek, INTE mot target_cpa_sek. Se docs/os/ANALYSMETOD.md.",
+  "comment": "Per-produkt-konfig for brief-kvoten. Endast Baverbutiken.se - ad account MagiBorsten 1867947880635861. daily_budget_sek uppdateras av /checkin. aov_sek = VERKLIG AOV fran Shopify analytics. target_cpa_sek satts av agaren. VARNING: break_even_cpa_sek ar HARLEDD (target_cpa + 0,30 x AOV) och INTE bekraftad - produktsheetets kostnadskolumner ar tomma, sa ingen riktig COGS finns. Fyll i Unit price + Shipping i sheetet, da kan break-even raknas pa riktigt. KILL-beslut mats mot break_even_cpa_sek. Se docs/os/ANALYSMETOD.md.",
   "products": [
     {
       "id": "motorholjet",
@@ -14,8 +14,10 @@
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": [],
-      "break_even_cpa_sek": 256,
-      "aov_sek_harledd": 404
+      "break_even_cpa_sek": 238,
+      "aov_sek": 342,
+      "aov_kalla": "Shopify analytics 14d (2026-08-05)",
+      "break_even_status": "HARLEDD ur 30%-antagandet - ej bekraftad mot COGS"
     },
     {
       "id": "ai-glasogon",
@@ -31,7 +33,9 @@
       "status": "aktiv",
       "launches": [],
       "break_even_cpa_sek": 1491,
-      "aov_sek_harledd": 1869
+      "aov_sek": 1869,
+      "aov_kalla": "Shopify analytics 14d (2026-08-05)",
+      "break_even_status": "HARLEDD ur 30%-antagandet - ej bekraftad mot COGS"
     },
     {
       "id": "vaggfastet",
@@ -46,8 +50,10 @@
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": [],
-      "break_even_cpa_sek": 375,
-      "aov_sek_harledd": 684
+      "break_even_cpa_sek": 341,
+      "aov_sek": 569,
+      "aov_kalla": "Shopify analytics 14d (2026-08-05)",
+      "break_even_status": "HARLEDD ur 30%-antagandet - ej bekraftad mot COGS"
     },
     {
       "id": "strandtofflorna",
@@ -62,8 +68,10 @@
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": [],
-      "break_even_cpa_sek": 274,
-      "aov_sek_harledd": 430
+      "break_even_cpa_sek": 268,
+      "aov_sek": 411,
+      "aov_kalla": "Shopify analytics 14d (2026-08-05)",
+      "break_even_status": "HARLEDD ur 30%-antagandet - ej bekraftad mot COGS"
     },
     {
       "id": "axelbaltet",
@@ -78,8 +86,10 @@
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": [],
-      "break_even_cpa_sek": 355,
-      "aov_sek_harledd": 566
+      "break_even_cpa_sek": 339,
+      "aov_sek": 514,
+      "aov_kalla": "Shopify analytics 14d (2026-08-05)",
+      "break_even_status": "HARLEDD ur 30%-antagandet - ej bekraftad mot COGS"
     },
     {
       "id": "satesoverdragaren",
@@ -94,8 +104,10 @@
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": [],
-      "break_even_cpa_sek": 509,
-      "aov_sek_harledd": 697
+      "break_even_cpa_sek": 511,
+      "aov_sek": 702,
+      "aov_kalla": "Shopify analytics 14d (2026-08-05)",
+      "break_even_status": "HARLEDD ur 30%-antagandet - ej bekraftad mot COGS"
     }
   ]
 }

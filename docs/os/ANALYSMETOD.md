@@ -70,8 +70,13 @@ Motorhöljet: target 135 kr, **break-even 256 kr**. En annons på CPA 161 kr lig
 över target men tjänar **95 kr per order** — den ska skalas, inte dödas.
 "Över target-CPA" är ALDRIG i sig ett skäl att pausa.
 
-Break-even härleds som `target-CPA + 0,30 × AOV` (eftersom target-CPA per
-definition ger 30 % marginal på snittköpet). Värdena ligger i products.json.
+⚠️ **Break-even-värdena är HÄRLEDDA, inte beräknade.** Produktsheetets
+kostnadskolumner (Unit price, Shipping, Total cost) är tomma på samtliga rader —
+leverantören har aldrig fyllt i dem, så ingen verklig COGS finns. Värdena i
+products.json är `target-CPA + 0,30 × AOV`, där AOV är verklig från Shopify men
+30 %-antagandet är obekräftat. Använd dem, men behandla ett kill-beslut som
+ligger nära gränsen som osäkert och säg det. **Riktig break-even kräver att
+Unit price + Shipping fylls i sheetet.**
 
 Kill-regeln: CPA > break-even-CPA, efter ≥500 kr spend, och trenden håller i sig.
 

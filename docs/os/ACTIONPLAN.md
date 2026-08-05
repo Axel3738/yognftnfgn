@@ -132,6 +132,15 @@ Fable 5/Opus; slutgiltig ad copy och voiceovers skrivs av sonnet/haiku-subagente
 
 ## Kända problem (fylls på löpande — se SOP-05)
 
+- **2026-08-05 — Ingen COGS finns någonstans.** Produktsheetets gula kolumner
+  (Unit price USD, Shipping cost USD, Total cost, Totalkostnad SEK) och Retail
+  price är **tomma på alla ~110 rader** — leverantören har aldrig fyllt i dem.
+  Konsekvens: break-even-CPA, som styr varje kill-beslut, är härledd ur ett
+  obekräftat marginalantagande i stället för räknad. AOV är däremot verklig
+  (Shopify analytics). → **Axel: få leverantören att fylla i sheetet, eller
+  skriv in inköpspris + frakt för de 6 aktiva produkterna manuellt.** Det är
+  en timmes jobb och gör hela kill/skala-logiken korrekt.
+
 - **2026-08-05 — Chattar dömde vinnare som förlorare.** Först på ROAS ensam
   ("top spendern har låg ROAS = dålig"), sedan på CPA ensam ("över target-CPA =
   dålig"). Verifierat i datan: `Motorhölje_PD_1_H3` har lägst ROAS av de
