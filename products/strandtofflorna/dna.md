@@ -20,35 +20,44 @@ Ingen dom sätts på annons under 300 kr spend eller 3 köp.
 
 Target-CPA: **145 kr**. Vi ligger 27 % över på livstid, men batch 2 landade på 154 kr — nästan på target. Riktningen är rätt, drivet av statics.
 
-### Vinnare = mest profit. Inte lägst CPA. `DATA`
+### Ranking enligt ANALYSMETOD.md `DATA`
 
-**Ägarens definition (2026-08-05): en vinnare är annonsen som genererar mest vinst i kronor.** Låg CPA på en annons som bara kan absorbera 250 kr är en fotnot; en annons strax över target som lägger beslag på halva budgeten lönsamt *är* verksamheten.
+Räknat 2026-08-05 enligt `docs/os/ANALYSMETOD.md`. **break-even-CPA 252 kr** · target-CPA 145 kr · AOV 430 kr.
 
-Profit = intäkt × bidragsmarginal − spend. Bidragsmarginalen **58,4 %** är härledd ur target-CPA-definitionen i `products.json` (145 kr = 25 % nettomarginal efter kortavgift och EU-tull) vid AOV 435 kr. `HYPOTES` — exakt COGS per par finns inte i OS:et; be ägaren om den så blir tabellen exakt i stället för härledd.
+**Datakvalitet (steg 1):** `omni_purchase_values` är trasigt även i den här kampanjen — PD_2_3 rapporterar 17,84 kr intäkt på 5 köp, PD_8_1 6,98 kr på 2 köp. Intäkt är därför räknad som `amount_spent × purchase_roas` genomgående. PD_13_1 stämmer mot fältet (15 251 kr) och validerar metoden.
 
-| Annons | Spend | Intäkt | **Profit** | Profit/spendad kr | CPA-index |
-|---|---:|---:|---:|---:|---:|
-| **PD_13_1** (piedestal, svart camo) | 5 744 kr | 15 251 kr | **3 154 kr** | 0,55 | 1,20 |
-| PD_2_3 (våt flat-lay) | 247 kr | 1 784 kr | **794 kr** | **3,21** | 0,34 |
-| PD_2_2 (torr flat-lay) | 2 701 kr | 5 865 kr | **721 kr** | 0,27 | 1,43 |
-| PD_8_1 (sulan) | 187 kr | 698 kr | 220 kr | 1,18 | 0,64 |
-| SO_5_1 (offer-layout) | 49 kr | 349 kr | 155 kr | 3,16 | 0,34 |
-| PD_13_2 (piedestal, khaki) | 70 kr | 349 kr | 134 kr | 1,92 | 0,48 |
-| PD_1_H2 (video) | 120 kr | 339 kr | 78 kr | 0,66 | 0,82 |
-| SP_1_H2 (video) | 543 kr | 678 kr | **−147 kr** | −0,27 | 1,87 |
-| PD_1_H1 (video) | 895 kr | 339 kr | **−697 kr** | −0,78 | 6,17 |
-| Övriga (0 köp) | 333 kr | 0 kr | −333 kr | −1,00 | – |
+**Signifikansgrind (steg 2): endast två annonser är bedömbara** (≥300 kr spend OCH ≥3 köp). Allt annat är "för tidigt" och får ingen dom, ingen ranking, inga slutsatser om vinkel eller hook.
 
-**Total profit: 4 079 kr på 10 889 kr spend. PD_13_1 ensam står för 77 % av all vinst.**
+#### Bedömbara — rangordnade på vinstbidrag `(252 − CPA) × köp`
 
-Den är produktens vinnare med bred marginal, och den enda annons som bevisat att den **bär budget** — 5 744 kr utan att CPA:n sprack. Det är formeln vi mångfaldigar.
+| Annons | Spend | Andel spend | Köp | CPA | ROAS | **Vinstbidrag** | Andel vinst |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| **PD_13_1** (piedestal, svart camo) | 5 744 kr | 52,7 % | 33 | 174 kr | 2,65 | **2 574 kr** | **82 %** |
+| PD_2_2 (torr flat-lay, 4 färger) | 2 701 kr | 24,8 % | 13 | 208 kr | 2,17 | **572 kr** | 18 % |
 
-**Så används måtten tillsammans:**
-- **Profit rankar vinnare** — det är vad vi bygger fler av.
-- **Profit per spendad krona säger vad som är redo att skalas.** PD_2_3 ligger på 3,21 mot PD_13_1:s 0,55, men bara på 247 kr. Kandidat nummer ett till att bli nästa PD_13_1 — inte en vinnare i sig än.
-- **CPA-index är en diagnos, aldrig en ranking.** Det säger om en annons *kan* skala lönsamt, inte hur mycket den tjänat.
+**PD_13_1 står för 82 % av allt vinstbidrag.** Den är produktens vinnare och kampanjens **benchmark** — alla andra annonser jämförs mot den, aldrig tvärtom.
 
-`HYPOTES`: PD_13_1:s överlägsenhet beror på att den ensam klarar hög spend utan att tappa CPA. Övriga annonser har aldrig prövats över 250 kr, så deras tak är okänt.
+**Båda ligger under break-even och tjänar pengar per order:** PD_13_1 78 kr, PD_2_2 44 kr. Att de ligger över target-CPA (145 kr) är en skalningssignal, **aldrig ett skäl att pausa**.
+
+#### För tidigt — ingen dom möjlig
+
+| Annons | Spend | Köp | Varför utesluten |
+|---|---:|---:|---|
+| PD_2_3 (våt flat-lay) | 247 kr | 5 | Under 300 kr spend |
+| PD_8_1 (sulan) | 187 kr | 2 | Under båda gränserna |
+| PD_13_2 · SO_5_1 · PD_1_H2 | 49–120 kr | 1 var | Under båda gränserna |
+| PD_13_3 · SP_5_1 · 15 andra | < 82 kr | 0 | Ingen konvertering att mäta |
+
+⚠️ Dessa får **inte** användas som jämförelsenorm mot PD_13_1. En annons med ROAS 7,2 på 247 kr är en **skalningskandidat att testa**, inte en vinnare — höga kvoter på låg spend är delvis tur och delvis att den bästa publiken nås först. Räkna med regression när de får volym.
+
+#### Kill-beslut (steg 3 — mäts mot break-even 252 kr, aldrig mot target)
+
+| Annons | Spend | Köp | CPA | Beslut |
+|---|---:|---:|---:|---|
+| PD_1_H1 (video) | 895 kr | 1 | 895 kr | **Pausa.** CPA 3,6× break-even efter långt över 500 kr spend. För få köp för att rankas, men kill-regeln är uppfylld. |
+| SP_1_H2 (video) | 543 kr | 2 | 271 kr | Redan pausad. Marginellt över break-even. |
+
+`HYPOTES`: PD_13_1:s överlägsenhet beror på att den ensam klarat hög spend utan att CPA:n sprack. Ingen annan annons har prövats över 250 kr, så deras tak är okänt.
 
 <details><summary>Tidigare CPA-index-tabell (behållen som diagnos)</summary>
 
@@ -140,7 +149,7 @@ Snittittartid över alla videor: 3–9 sekunder på klipp som är 21–42 sekund
 
 **Formatmix: minst 75 % statiska bilder.** Beslutat av ägaren 2026-08-05, uppbackat av datan ovan (statics CPA-index 1,16 mot videons 2,88). Av en batch på 8 blir det minst 6 statics. Kvarvarande ~25 % video körs bara som iterationer på videokoncept som redan visat hold över 15 % — aldrig som nya långa koncept.
 
-**Rangordna alltid efter profit i kronor.** Inte lägst CPA, inte flest köp, inte högst ROAS. En annons som tjänar 3 154 kr slår en som tjänar 794 kr, även om den senare har en fjärdedel av CPA:n. CPA-index används bara för att avgöra om en liten annons är värd ett skalningsförsök.
+**Rangordna alltid på vinstbidrag `(252 − CPA) × köp`** enligt `docs/os/ANALYSMETOD.md` — aldrig på ROAS eller CPA ensamt, aldrig på antal köp. Kör signifikansgrinden först: under 300 kr spend eller 3 köp får annonsen ingen dom alls. Kill mäts mot break-even 252 kr, aldrig mot target 145 kr.
 
 **Bygg majoriteten av varje batch på den formel som tjänar mest just nu.** Idag är det PD_13: enskilt par svart camo, upphöjt på piedestal, premium studio, ingen text. Variera en parameter åt gången inom formeln — vinkel, ljus, underlag, produktorientering, beskärning — i stället för att sprida batchen över obeprövade koncept.
 
