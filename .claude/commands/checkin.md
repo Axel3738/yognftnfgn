@@ -21,7 +21,10 @@ Kontrollfrågor per leverans:
 5. Produkt i bild före sekund 4 (video)?
 
 ## 3. Performance-larm
-- Gårdagens siffror för produktens aktiva annonser. Flagga: CPA >2× target med >500 kr spend (kill-kandidat), CPA under target med ≥3 köp (skalningskandidat). Ingen dom under 300 kr / 3 köp.
+- Gårdagens siffror för produktens aktiva annonser, enligt `docs/os/ANALYSMETOD.md`.
+- **Kill-kandidat:** CPA över **break-even-CPA** (`break_even_cpa_sek`) efter ≥500 kr spend. Över target-CPA är INTE ett kill-skäl.
+- **Skalningskandidat:** CPA under target-CPA med ≥3 köp.
+- Ingen dom under 300 kr / 3 köp. Rangordna på vinstbidrag, aldrig på ROAS eller CPA ensamt — en top spender med lägre ROAS än en småannons är normalt och oftast din vinstmotor.
 
 ## 4. UGC-läget
 - UGC-databasen i Notion (se `docs/os/SOP-03-ugc-pipeline.md`): deadlines passerade? Lista med antal dagar försenade.

@@ -25,9 +25,9 @@ en första ads-batch, och skalar det som visar köpsignal. Allt sker i ad accoun
 1. **Drive-mappens namn = SKU + referensnamn på slutet.**
    Exempel: `TEMU-601100461940399 Lastnät`. Alltid — det är så redigerare och
    Claude hittar rätt material utan att kunna svenska produktnamn utantill.
-2. **Varje produkttest får 2 extra ads utöver allt annat** (enligt "2 extra
-   ads"-Loomen). Dessa räknas in i kvoten men får aldrig strykas för att
-   batchen "redan är stor".
+2. **Varje produkttest får 2 extra ads utöver allt annat** — se
+   "De 2 extra adsen" nedan. De räknas in i kvoten men får aldrig strykas för
+   att batchen "redan är stor", och de ersätter aldrig en planerad annons.
 3. **Product sheetets kolumner "AD ideas", "Ads to do:" och "Finished ads" hålls
    uppdaterade** — det är testköns minne. En produkt utan ifylld "Ads to do" är
    inte redo att launchas.
@@ -51,12 +51,39 @@ en första ads-batch, och skalar det som visar köpsignal. Allt sker i ad accoun
    + de 2 extra adsen, och registrerar produkten i kvotsystemet.
 5. Launcha, logga med `/logga`, och låt dagliga check-inen (`/checkin`) ta över.
 
-## ⚠️ Luckor att stänga (innehåll fast i Loom-video)
+## De 2 extra adsen (transkriberat från Loomen 2026-08-05)
 
-Claude kan inte se Loom-videor. Nästa gång någon tittar på dem: skriv ner
-nyckelstegen här (eller be Claude i sessionen: "här är vad Loomen säger: …
-uppdatera SOP-06"). Tills dess är dessa regler ofullständiga i text:
+Utöver alla planerade annonser ska varje produkttest **alltid** ha dessa två.
+De ligger ovanpå batchen — de tar aldrig en plats från en planerad annons.
 
-- [ ] Exakt vilka de "2 extra adsen" är (format/vinkel)
+### Extra #1 — Rå leverantörsvideo ("Temu-rippen")
+
+- Ladda ner en av leverantörens egna produktvideor (Temu/AliExpress-listningen)
+  **exakt som den är**: originalmusiken kvar, **ingen voiceover, ingen pålagd
+  text, ingen redigering**. Den enda "produktionen" är nedladdning + export i
+  rätt format.
+- Klassificeras **alltid som PD** (product demo) i namngivningen, eftersom det är
+  ren produktdemo med musik. Exempel: `Enginecover_PD_7_H1`.
+- Poängen: den är gratis att producera och råa leverantörsklipp presterar ofta
+  förvånansvärt bra — ingen anledning att inte ha den i varje test.
+
+### Extra #2 — Ren produktbild utan text
+
+- En statisk bild som visar produkten exakt som den är, **helt utan text-overlay**
+  — bara produkten (och gärna vad den gör/används till).
+- Tas normalt direkt från leverantörens/butikens produktbilder.
+- Klassificeras som **PD** med variantsiffra, t.ex. `Enginecover_PD_8_1`.
+
+**Regel för briefen:** båda får en minimal brief (källfil/länk + exportformat +
+annonsnamn). Ingen copy-produktion behövs — och därför ingen sonnet-subagent.
+Skriv i briefen uttryckligen "NO text overlay, NO voiceover, use as-is" så att
+en redigerare inte "hjälper till" och lägger på text.
+
+## ⚠️ Luckor som fortfarande är fast i Loom-video
+
+Claude kan inte se Loom-videor. Titta på dem och klistra in vad de säger i en
+session ("här är vad Loomen säger: … uppdatera SOP-06"), så skrivs de in här.
+
+- [x] Exakt vilka de "2 extra adsen" är — **klart 2026-08-05**, se ovan
 - [ ] Processtegen i pt 1–3 som inte täcks av stegen ovan
 - [ ] Kriterierna i "What product is next?"

@@ -1,65 +1,42 @@
-# SOP-01: Första batchen efter produktlaunch (+ produktens chatt)
+# SOP-01: CS-loopen på en produkt som går bra
 
-**Ägare:** Managern. **När:** EN gång per produkt — efter att produkten launchats
-med original-adsen (SOP-06) och samlat data, när det är dags för första riktiga
-iterations-batchen.
+**Ägare:** Managern (och Axel för produkter han själv startat).
 
-**Syftet är dubbelt:** (1) bygga Batch #2 utifrån verklig data, och (2) skapa
-**produktens Claude-chatt** som sedan används för allt löpande arbete med produkten
-— framför allt creative strategy. Chatten är hemmabasen, men allt minne (Creative
-DNA, batch-logg, idé-backlog) skrivs till `products/<id>/` i repot, så om chatten
-tappas bort går inget förlorat — en ny session läser upp läget själv.
+## Arbetsflödet
 
-## Steg
+1. Produkten launchas med ~12 annonser — **Axels egen process**, ingen SOP här.
+2. Går produkten bra: öppna en Claude Code-chatt och gör **första riktiga
+   CS-rundan** där. Detta blir produktens chatt.
+3. Därefter körs `/cs <produkt-id>` **i samma chatt**, var 3:e dag. Kommandot
+   analyserar det som launchats och levererar nya briefer på faktisk data.
 
-**1. Starta produkt-chatten.**
-Ny Claude Code-session i detta repo (Fable 5 high). Skriv:
+Briefarna från runda 1 ligger kvar i chatten, så `/cs` kan läsa exakt vad varje
+annons var — det är underlaget för creative-teardownet. Kommandot skriver ändå
+alltid tillbaka till `products/<id>/` så inget går förlorat om chatten tappas.
+
+## Varje `/cs`-runda
+
 ```
-/forsta-batch Produktnamn
+/cs motorholjet
+/cs motorholjet + ev. egna idéer direkt i kommandot
 ```
-Claude slår själv upp landningssida, kampanj och product sheet-raden, och kör hela
-analysen + bygger brieferna. → *Fortsätt med steg 2 medan Claude jobbar.*
 
-**2. Ordna Drive-mappen.**
-[Produktmapparna i Drive](https://drive.google.com/drive/folders/16rA1SxQRevd9FNb8fnh4vRsukmVPEm4e?usp=sharing).
-Vinnare? Flytta produktmappen till winners-mappen. Skapa `Batch #1` och `Batch #2`,
-lägg allt befintligt material i `Batch #1`.
+Claude: läser chattens briefer och kontodatan → rangordnar på vinstbidrag →
+river isär creativen (bilder granskas visuellt, videomanus läses ur briefarna) →
+kopplar variabler till vinst → bygger nästa batch enligt kvoten.
+Detaljerna: `.claude/commands/cs.md` + `docs/os/ANALYSMETOD.md`.
 
-**3. Granska mot checklistan.**
-Claudes svar ska sluta med "Definition of done", allt ✅. Något ❌?
-Svara: *"Checklistan är inte uppfylld. Fixa punkt X."* Ladda inte ner något innan
-den är grön.
-
-**4. Ladda upp till Drive.**
-Ladda ner rapport + zip-filer, packa upp i `Batch #2`-mappen
-([exempel-Loom](https://www.loom.com/share/9c82d1c1d90a45b68616a3f4bfd0ffd3)).
-Dela mappen som editor.
-
-**5. Notion.** I samma chatt:
-```
-/notion Produktens Notion-sida, [länk till Batch #2-mappen]
-```
-Formatet är låst i `docs/os/NOTION-FORMAT.md` — ett item per annons, Draft,
-tag `Video - Pending Approval`, briefen läsbar i itemet.
-
-**6. Tracking-sheet.** I samma chatt:
-```
-/sheet produkt-id
-```
-Importera xlsx-filen till Google Sheets, dela som editor, länka i produktens Notion.
-
-**7. Logga när annonserna launchas.**
-```
-/logga produkt-id antal
-```
-Batchen räknas mot kvoten först när annonserna är live i Ads Manager.
-
-## Efter detta: det löpande arbetet i produkt-chatten
+## Runt loopen
 
 | Vad du vill | Skriv |
 |-------------|-------|
-| Ny CS-runda på senaste annonserna (var 3:e dag) | `/cs produkt-id` + ev. egna idéer |
-| Slänga in ett koncept eller en swipe till nästa batch | `/koncept produkt-id idén...` (`AKUT` sist om den ska göras direkt) |
-| Daglig koll | `/checkin produkt-id` |
+| Slänga in ett koncept eller en swipe | `/koncept <id> <idén>` (`AKUT` = brief direkt) |
+| Ladda upp batchen till Notion | `/notion <produktsida>, <Drive-länk>` |
+| Fylla tracking-sheetet | `/sheet <id>` |
+| Stämma av vid launch (kvot + Notion + sheet) | `/logga <id> <antal>` |
+| Daglig koll | `/checkin <id>` |
+
+Kvoten räknas per produkt: **20 %** av dagsbudgeten under 5 000 kr/dag,
+**10 %** vid 5 000 kr och över, delat på target-CPA, gånger 3 (SOP-02).
 
 Strular Claude: `docs/os/SOP-05-nar-claude-inte-lyssnar.md`.

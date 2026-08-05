@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-// Brief-kvoten: 20% av daglig budget / target-CPA × 3 = creatives som ska launchas var 3:e dag.
+// Brief-kvoten: andel av daglig budget / target-CPA × 3 = creatives som ska launchas var 3:e dag.
+// Andelen är 20 % upp till 5 000 kr/dag, 10 % däröver (på hög skala räcker färre nya creatives).
 // Läser products/products.json och skriver ut plus/minus-läget per produkt.
 //
 //   node pipeline/quota.mjs                  → statusrapport
@@ -12,6 +13,8 @@ import { dirname, join } from 'node:path';
 
 const FILE = join(dirname(fileURLToPath(import.meta.url)), '..', 'products', 'products.json');
 const CYCLE_DAYS = 3;
+const HIGH_SPEND_THRESHOLD_SEK = 5000; // över denna dagsbudget räcker 10 % i stället för 20 %
+const testShare = budget => (budget >= HIGH_SPEND_THRESHOLD_SEK ? 0.10 : 0.20);
 
 const db = JSON.parse(readFileSync(FILE, 'utf8'));
 
@@ -33,7 +36,8 @@ const today = new Date(new Date().toISOString().slice(0, 10));
 const lines = [];
 
 for (const p of db.products.filter(x => x.status === 'aktiv')) {
-  const perCycle = Math.ceil((p.daily_budget_sek * 0.2 / p.target_cpa_sek) * CYCLE_DAYS);
+  const share = testShare(p.daily_budget_sek);
+  const perCycle = Math.ceil((p.daily_budget_sek * share / p.target_cpa_sek) * CYCLE_DAYS);
   const start = new Date(p.cycle_start);
   const daysElapsed = Math.max(0, Math.floor((today - start) / 86400000));
   const cyclesDue = Math.floor(daysElapsed / CYCLE_DAYS) + 1; // innevarande cykel räknas
@@ -45,7 +49,7 @@ for (const p of db.products.filter(x => x.status === 'aktiv')) {
 
   lines.push([
     `${icon} ${p.name}`,
-    `   Budget: ${p.daily_budget_sek.toLocaleString('sv-SE')} kr/dag · Target-CPA: ${p.target_cpa_sek} kr`,
+    `   Budget: ${p.daily_budget_sek.toLocaleString('sv-SE')} kr/dag · Target-CPA: ${p.target_cpa_sek} kr · Testandel: ${share * 100} %`,
     `   Kvot: ${perCycle} creatives per 3-dagarscykel (${(perCycle / CYCLE_DAYS).toFixed(1)}/dag) · Dag ${inCycleDay} av 3 i cykel ${cyclesDue}`,
     `   Skulle ha launchat t.o.m. denna cykel: ${due} · Faktiskt launchat: ${launched}`,
     `   LÄGE: ${balance >= 0 ? '+' : ''}${balance} creatives ${balance >= 0 ? 'FÖRE' : 'EFTER'} plan`,

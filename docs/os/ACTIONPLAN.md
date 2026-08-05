@@ -38,8 +38,9 @@ Fable 5/Opus; slutgiltig ad copy och voiceovers skrivs av sonnet/haiku-subagente
   AI Glasögon 930. ⚠️ **Sätesöverdragaren står kvar på placeholder 300 kr — sätt
   den.** Formeln ger hög kvot åt vinnare med låg CPA (Motorhöljet: 27
   creatives/cykel = 9/dag) — rimligt, men kräver kapacitetsbeslut vecka 2.
-- Delar av produkttest-processen är fast i Loom-videor — luckorna listas i SOP-06
-  och bör skrivas ner i text vecka 1.
+- 2-extra-ads-regeln är nu i text (SOP-06): rå leverantörsvideo utan voiceover/text
+  + textfri produktbild, båda PD, alltid ovanpå batchen. Kvar i Loom: processteg
+  pt 1–3 och "what product is next"-kriterierna.
 
 ## Veckoplan
 
@@ -47,9 +48,10 @@ Fable 5/Opus; slutgiltig ad copy och voiceovers skrivs av sonnet/haiku-subagente
 - [x] System i repo: SOP-01–06, kommandon, kvotskript, CLAUDE.md
 - [x] Prompter → slash-kommandon; Mastern/SnarkLös utlyft ur OS:et
 - [x] Axel sätter riktiga target-CPA i `products/products.json` (5/8; Sätesöverdragaren återstår)
-- [ ] Transkribera Loom-luckorna i SOP-06 (2-extra-ads-regeln m.m.)
-- [ ] Axel kör `/forsta-batch` på Motorhöljet (vinnaren) — varje friktion blir en
-      kommandoändring, committad
+- [x] 2-extra-ads-regeln transkriberad in i SOP-06 (5/8). Kvar: Loom pt 1–3 +
+      "what product is next"-kriterierna
+- [ ] Axel kör `/cs motorholjet` (batch 4) — `/cs` bygger produktminnet från
+      kontohistoriken först. Varje friktion blir en kommandoändring, committad
 - [ ] Sätt upp Notion-databaserna: "Creative Tasks" + "UGC Pipeline" (SOP-03)
       och koppla Notion-MCP:n till sessionerna
 - [ ] Bestäm Slack-kanalstruktur: en kanal per produkt + en för UGC
@@ -122,8 +124,23 @@ Fable 5/Opus; slutgiltig ad copy och voiceovers skrivs av sonnet/haiku-subagente
    tracking-sheetet ska uppdateras live av `/logga` (utan den: xlsx + import).
    Notion-MCP:n var t.ex. inte ansluten i denna session. → Kör en access-koll
    första `/checkin`; fixa allt som saknas en gång.
-8. **Loom-inlåst processkunskap.** → Luckolistan i SOP-06; transkribera vecka 1.
+8. **Loom-inlåst processkunskap.** → 2-extra-ads-regeln klar 5/8; resterande
+   luckor listade i SOP-06.
+9. **Produkter utan produktminne.** De flesta produkter kördes igång innan OS:et
+   fanns. → `/cs` steg 1b bygger `products/<id>/` retroaktivt från kontodatan
+   första gången, och markerar tydligt vilka hypoteser som är rekonstruerade.
 
 ## Kända problem (fylls på löpande — se SOP-05)
 
-- (tomt ännu)
+- **2026-08-05 — Chattar dömde vinnare som förlorare.** Först på ROAS ensam
+  ("top spendern har låg ROAS = dålig"), sedan på CPA ensam ("över target-CPA =
+  dålig"). Verifierat i datan: `Motorhölje_PD_1_H3` har lägst ROAS av de
+  bedömbara men står för 66 % av spenden och **51 % av allt vinstbidrag** —
+  att pausa den hade halverat vinsten. Annonsen med ROAS 9,22 har ett enda köp.
+  → **Åtgärdat** med `docs/os/ANALYSMETOD.md` (obligatorisk 7-stegsmetod),
+  CLAUDE.md regel 3b, `break_even_cpa_sek` i products.json och nya rader i
+  SOP-05:s felsökningstabell. Följ upp att nästa `/cs` faktiskt visar
+  vinstbidragstabellen.
+- **2026-08-05 — Databugg i Meta-API:t.** `omni_purchase_values` returnerade
+  intäkten 100× för lågt på 5 av 8 annonsrader. Summering av fältet ger skräp.
+  → Obligatorisk kontroll (`spend × ROAS` vs `values`) i ANALYSMETOD.md steg 1.

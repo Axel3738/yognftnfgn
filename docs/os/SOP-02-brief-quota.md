@@ -7,12 +7,20 @@ briefer, mer research) är sekundärt.
 ## Formeln
 
 ```
-kvot per 3-dagarscykel = (daglig budget × 20 %) ÷ target-CPA × 3
+kvot per 3-dagarscykel = (daglig budget × testandel) ÷ target-CPA × 3
+
+testandel = 20 %  vid daglig budget under 5 000 kr
+testandel = 10 %  vid daglig budget 5 000 kr och över
 ```
 
-Exempel Motorhöljet idag: 6 000 kr/dag → 1 200 kr ÷ 150 kr × 3 = **24 creatives
-per 3-dagarscykel** (8 per dag). Skalar budgeten upp, skalar kravet upp automatiskt —
-och vinnare med låg CPA får högst krav, vilket är rätt: de förtjänar mest kreativt bränsle.
+På hög skala räcker en mindre andel: 10 % av 20 000 kr är fortfarande mer
+testbudget i kronor än 20 % av 4 000 kr, och antalet nya creatives som behövs
+växer inte linjärt med budgeten.
+
+Exempel Motorhöljet idag: 6 000 kr/dag (≥5 000 → 10 %) → 600 kr ÷ 135 kr × 3 =
+**14 creatives per 3-dagarscykel** (~4,5 per dag). Skalar budgeten upp, skalar
+kravet upp — och vinnare med låg CPA får högst krav, vilket är rätt: de förtjänar
+mest kreativt bränsle.
 
 ## Hur den följs
 
