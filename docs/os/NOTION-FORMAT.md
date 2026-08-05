@@ -1,7 +1,9 @@
 # Notion-formatet för briefer — gäller ALLA produkter, alltid likadant
 
-Varje produkt har en egen Notion-sida (samma mall för alla produkter, t.ex.
-"Boat cover 420D") med flikarna **Guidelines & SOPs** och **Pending Approval**.
+Varje produkt har en egen Notion-databas (samma mall för alla produkter) med
+flikarna **Guidelines & SOPs** och **Pending Approval**. Exempel som finns idag:
+**"Boat cover 420D creative hub"** (Motorhöljet). Sök på produktnamnet i Notion
+för att hitta rätt databas.
 Brieferna ligger som items i Pending Approval-vyn.
 
 ## Varje annons = ETT item, exakt så här

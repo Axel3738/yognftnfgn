@@ -64,11 +64,14 @@ Detta är den vanligaste källan till felaktiga kill-beslut:
 | Linje | Vad den betyder | Vad den används till |
 |-------|-----------------|----------------------|
 | **Break-even-CPA** (`break_even_cpa_sek`) | Täckningsbidrag per order. Över denna = förlust. | **Kill-beslut.** Enda linjen som får döda en annons. |
-| **Target-CPA** (`target_cpa_sek`) | CPA vid 25 % nettomarginal — ambitionsnivå. | Budgetallokering och skalningsbeslut. |
+| **Target-CPA** (`target_cpa_sek`) | CPA vid 30 % nettomarginal — ambitionsnivå. Håller vi den på snittköpet har vi alltid 30 % marginal. | Budgetallokering och skalningsbeslut. |
 
-Motorhöljet: target 135 kr, **break-even 236 kr**. En annons på CPA 161 kr ligger
-över target men tjänar **75 kr per order** — den ska skalas, inte dödas.
+Motorhöljet: target 135 kr, **break-even 256 kr**. En annons på CPA 161 kr ligger
+över target men tjänar **95 kr per order** — den ska skalas, inte dödas.
 "Över target-CPA" är ALDRIG i sig ett skäl att pausa.
+
+Break-even härleds som `target-CPA + 0,30 × AOV` (eftersom target-CPA per
+definition ger 30 % marginal på snittköpet). Värdena ligger i products.json.
 
 Kill-regeln: CPA > break-even-CPA, efter ≥500 kr spend, och trenden håller i sig.
 
@@ -91,10 +94,10 @@ en tiondel av vinsten. Vinstbidraget är det som betalar dina räkningar.
 
 | Annons | Spend | Köp | CPA | ROAS | Vinstbidrag |
 |--------|-------|-----|-----|------|-------------|
-| `Motorhölje_PD_1_H3` | 12 240 kr (66 %) | 76 | 161 kr | 2,51 | **5 692 kr (51 %)** |
-| `Motorhölje_SP_1_H1` | 1 738 kr | 15 | 116 kr | 3,51 | 1 802 kr |
-| `Motorhölje_PD_EXTRA` | 712 kr | 8 | 89 kr | 4,53 | 1 175 kr |
-| `Enginecover_SO_5_1` | 38 kr | 1 | 38 kr | **9,22** | 198 kr (för tidigt) |
+| `Motorhölje_PD_1_H3` | 12 240 kr (66 %) | 76 | 161 kr | 2,51 | **7 220 kr (53 %)** |
+| `Motorhölje_SP_1_H1` | 1 738 kr | 15 | 116 kr | 3,51 | 2 100 kr |
+| `Motorhölje_PD_EXTRA` | 712 kr | 8 | 89 kr | 4,53 | 1 336 kr |
+| `Enginecover_SO_5_1` | 38 kr | 1 | 38 kr | **9,22** | 218 kr (för tidigt) |
 
 Annonsen med lägst ROAS av de bedömbara är den som tjänar **mer än hälften av
 alla pengar**. Att pausa den hade halverat vinsten. Annonsen med ROAS 9,22 —

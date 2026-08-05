@@ -1,5 +1,5 @@
 {
-  "comment": "Per-produkt-konfig för brief-kvoten. Endast Bäverbutiken.se — ad account MagiBorsten 1867947880635861. Uppdatera daily_budget_sek när budgeten ändras (/checkin gör det åt dig). target_cpa_sek sätts av ägaren, inte av Claude — nuvarande värden = max CPA vid 25 % nettomarginal efter kortavgift (2,9 %) och EU-tull (27,95 kr/order), beräknat 2026-08-05 på uppmätt ordervärde och COGS senaste 7 dagarna. break_even_cpa_sek = täckningsbidrag per order = target_cpa + 0,25 x AOV (härledd ur kontodata 2026-08-05, AXEL: bekräfta mot verklig COGS). KILL-beslut mäts mot break_even_cpa_sek, INTE mot target_cpa_sek. Se docs/os/ANALYSMETOD.md.",
+  "comment": "Per-produkt-konfig för brief-kvoten. Endast Bäverbutiken.se — ad account MagiBorsten 1867947880635861. Uppdatera daily_budget_sek när budgeten ändras (/checkin gör det åt dig). target_cpa_sek sätts av ägaren, inte av Claude — nuvarande värden = max CPA vid 30 % nettomarginal efter kortavgift (2,9 %) och EU-tull (27,95 kr/order), beräknat 2026-08-05 på uppmätt ordervärde och COGS senaste 7 dagarna. break_even_cpa_sek = täckningsbidrag per order = target_cpa + 0,30 x AOV. Axel 2026-08-05: haller vi target-CPA pa snittkopet har vi alltid 30 % vinstmarginal. AOV harledd ur kontodata - AXEL: bekrafta mot verklig COGS. KILL-beslut mäts mot break_even_cpa_sek, INTE mot target_cpa_sek. Se docs/os/ANALYSMETOD.md.",
   "products": [
     {
       "id": "motorholjet",
@@ -14,7 +14,7 @@
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": [],
-      "break_even_cpa_sek": 236,
+      "break_even_cpa_sek": 256,
       "aov_sek_harledd": 404
     },
     {
@@ -30,7 +30,7 @@
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": [],
-      "break_even_cpa_sek": 1397,
+      "break_even_cpa_sek": 1491,
       "aov_sek_harledd": 1869
     },
     {
@@ -46,7 +46,7 @@
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": [],
-      "break_even_cpa_sek": 341,
+      "break_even_cpa_sek": 375,
       "aov_sek_harledd": 684
     },
     {
@@ -62,7 +62,7 @@
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": [],
-      "break_even_cpa_sek": 252,
+      "break_even_cpa_sek": 274,
       "aov_sek_harledd": 430
     },
     {
@@ -78,7 +78,7 @@
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": [],
-      "break_even_cpa_sek": 326,
+      "break_even_cpa_sek": 355,
       "aov_sek_harledd": 566
     },
     {
@@ -94,7 +94,7 @@
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": [],
-      "break_even_cpa_sek": 474,
+      "break_even_cpa_sek": 509,
       "aov_sek_harledd": 697
     }
   ]
