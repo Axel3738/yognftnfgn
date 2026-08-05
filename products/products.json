@@ -1,5 +1,5 @@
 {
-  "comment": "Per-produkt-konfig for brief-kvoten. Endast Baverbutiken.se - ad account MagiBorsten 1867947880635861. daily_budget_sek uppdateras av /checkin. aov_sek = VERKLIG AOV fran Shopify analytics. target_cpa_sek satts av agaren. VARNING: break_even_cpa_sek ar HARLEDD (target_cpa + 0,30 x AOV) och INTE bekraftad - produktsheetets kostnadskolumner ar tomma, sa ingen riktig COGS finns. Fyll i Unit price + Shipping i sheetet, da kan break-even raknas pa riktigt. KILL-beslut mats mot break_even_cpa_sek. Se docs/os/ANALYSMETOD.md.",
+  "comment": "Per-produkt-konfig for brief-kvoten. Endast Baverbutiken.se - MagiBorsten 1867947880635861. aov_sek = verklig AOV fran Shopify analytics. break_even_roas / target_roas_25pct = Axels COGS-berakning 2026-08-05 - ANVAND ROAS-tröskeln i forsta hand, den drivar inte nar AOV rors. break_even_cpa_sek = aov_sek / break_even_roas (rakna om nar AOV andras). KILL-beslut mats mot break-even, ALDRIG mot target. Se docs/os/ANALYSMETOD.md.",
   "products": [
     {
       "id": "motorholjet",
@@ -14,10 +14,13 @@
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": [],
-      "break_even_cpa_sek": 238,
+      "break_even_cpa_sek": 210,
       "aov_sek": 342,
       "aov_kalla": "Shopify analytics 14d (2026-08-05)",
-      "break_even_status": "HARLEDD ur 30%-antagandet - ej bekraftad mot COGS"
+      "break_even_status": "Fran Axels COGS-berakning 2026-08-05 (break-even-ROAS). CPA = AOV / break_even_roas.",
+      "break_even_roas": 1.63,
+      "target_roas_25pct": 2.74,
+      "target_cpa_25pct_harledd": 125
     },
     {
       "id": "ai-glasogon",
@@ -32,10 +35,13 @@
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": [],
-      "break_even_cpa_sek": 1491,
+      "break_even_cpa_sek": 1395,
       "aov_sek": 1869,
       "aov_kalla": "Shopify analytics 14d (2026-08-05)",
-      "break_even_status": "HARLEDD ur 30%-antagandet - ej bekraftad mot COGS"
+      "break_even_status": "Fran Axels COGS-berakning 2026-08-05 (break-even-ROAS). CPA = AOV / break_even_roas.",
+      "break_even_roas": 1.34,
+      "target_roas_25pct": 2.01,
+      "target_cpa_25pct_harledd": 930
     },
     {
       "id": "vaggfastet",
@@ -50,10 +56,13 @@
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": [],
-      "break_even_cpa_sek": 341,
+      "break_even_cpa_sek": 284,
       "aov_sek": 569,
       "aov_kalla": "Shopify analytics 14d (2026-08-05)",
-      "break_even_status": "HARLEDD ur 30%-antagandet - ej bekraftad mot COGS"
+      "break_even_status": "Fran Axels COGS-berakning 2026-08-05 (break-even-ROAS). CPA = AOV / break_even_roas.",
+      "break_even_roas": 2.0,
+      "target_roas_25pct": 4.0,
+      "target_cpa_25pct_harledd": 142
     },
     {
       "id": "strandtofflorna",
@@ -68,10 +77,13 @@
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": [],
-      "break_even_cpa_sek": 268,
+      "break_even_cpa_sek": 242,
       "aov_sek": 411,
       "aov_kalla": "Shopify analytics 14d (2026-08-05)",
-      "break_even_status": "HARLEDD ur 30%-antagandet - ej bekraftad mot COGS"
+      "break_even_status": "Fran Axels COGS-berakning 2026-08-05 (break-even-ROAS). CPA = AOV / break_even_roas.",
+      "break_even_roas": 1.7,
+      "target_roas_25pct": 2.97,
+      "target_cpa_25pct_harledd": 138
     },
     {
       "id": "axelbaltet",
@@ -86,10 +98,13 @@
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": [],
-      "break_even_cpa_sek": 339,
+      "break_even_cpa_sek": 299,
       "aov_sek": 514,
       "aov_kalla": "Shopify analytics 14d (2026-08-05)",
-      "break_even_status": "HARLEDD ur 30%-antagandet - ej bekraftad mot COGS"
+      "break_even_status": "Fran Axels COGS-berakning 2026-08-05 (break-even-ROAS). CPA = AOV / break_even_roas.",
+      "break_even_roas": 1.72,
+      "target_roas_25pct": 3.03,
+      "target_cpa_25pct_harledd": 170
     },
     {
       "id": "satesoverdragaren",
@@ -104,10 +119,13 @@
       "cycle_start": "2026-08-04",
       "status": "aktiv",
       "launches": [],
-      "break_even_cpa_sek": 511,
+      "break_even_cpa_sek": 478,
       "aov_sek": 702,
       "aov_kalla": "Shopify analytics 14d (2026-08-05)",
-      "break_even_status": "HARLEDD ur 30%-antagandet - ej bekraftad mot COGS"
+      "break_even_status": "Fran Axels COGS-berakning 2026-08-05 (break-even-ROAS). CPA = AOV / break_even_roas.",
+      "break_even_roas": 1.47,
+      "target_roas_25pct": 2.32,
+      "target_cpa_25pct_harledd": 303
     }
   ]
 }

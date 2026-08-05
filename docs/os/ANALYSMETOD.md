@@ -63,22 +63,32 @@ Detta är den vanligaste källan till felaktiga kill-beslut:
 
 | Linje | Vad den betyder | Vad den används till |
 |-------|-----------------|----------------------|
-| **Break-even-CPA** (`break_even_cpa_sek`) | Täckningsbidrag per order. Över denna = förlust. | **Kill-beslut.** Enda linjen som får döda en annons. |
-| **Target-CPA** (`target_cpa_sek`) | CPA vid 30 % nettomarginal — ambitionsnivå. Håller vi den på snittköpet har vi alltid 30 % marginal. | Budgetallokering och skalningsbeslut. |
+| **Break-even-ROAS** (`break_even_roas`) | Under denna gör annonsen förlust. | **Kill-beslut.** Enda linjen som får döda en annons. |
+| **Target-ROAS** (`target_roas_25pct`) | ROAS vid 25 % nettomarginal — ambitionsnivå. | Budgetallokering och skalningsbeslut. |
 
-Motorhöljet: target 135 kr, **break-even 256 kr**. En annons på CPA 161 kr ligger
-över target men tjänar **95 kr per order** — den ska skalas, inte dödas.
-"Över target-CPA" är ALDRIG i sig ett skäl att pausa.
+**Använd ROAS-tröskeln i första hand.** Den kommer ur COGS-strukturen och driver
+inte när AOV rör sig. CPA-motsvarigheten (`break_even_cpa_sek` = `aov_sek /
+break_even_roas`) är bekväm men måste räknas om varje gång AOV ändras — räkna om
+den själv om AOV i products.json är äldre än analysperioden.
 
-⚠️ **Break-even-värdena är HÄRLEDDA, inte beräknade.** Produktsheetets
-kostnadskolumner (Unit price, Shipping, Total cost) är tomma på samtliga rader —
-leverantören har aldrig fyllt i dem, så ingen verklig COGS finns. Värdena i
-products.json är `target-CPA + 0,30 × AOV`, där AOV är verklig från Shopify men
-30 %-antagandet är obekräftat. Använd dem, men behandla ett kill-beslut som
-ligger nära gränsen som osäkert och säg det. **Riktig break-even kräver att
-Unit price + Shipping fylls i sheetet.**
+Nivåerna per produkt (Axels COGS-beräkning 2026-08-05):
 
-Kill-regeln: CPA > break-even-CPA, efter ≥500 kr spend, och trenden håller i sig.
+| Produkt | Break-even-ROAS | Target-ROAS (25 %) | Break-even-CPA |
+|---------|-----------------|--------------------|----------------|
+| Motorhöljet | 1,63× | 2,74× | 210 kr |
+| Axelbältet | 1,72× | 3,03× | 299 kr |
+| Sätesöverdragaren | 1,47× | 2,32× | 478 kr |
+| Strandtofflorna | 1,70× | 2,97× | 242 kr |
+| Väggfästet | 2,00× | 4,00× | 284 kr |
+| AI Glasögon | 1,34× | 2,01× | 1 395 kr |
+
+Motorhöljet: break-even 1,63× / 210 kr, target 2,74× / 135 kr. En annons på
+CPA 161 kr (ROAS 2,51) ligger sämre än target men klart över break-even och
+tjänar **49 kr per order** — den ska skalas, inte dödas. **"Under target" är
+ALDRIG i sig ett skäl att pausa.**
+
+Kill-regeln: ROAS < break-even-ROAS (eller CPA > break-even-CPA), efter ≥500 kr
+spend, och trenden håller i sig.
 
 ## Steg 4 — Rangordna på vinstbidrag, aldrig på en kvot
 
@@ -99,10 +109,12 @@ en tiondel av vinsten. Vinstbidraget är det som betalar dina räkningar.
 
 | Annons | Spend | Köp | CPA | ROAS | Vinstbidrag |
 |--------|-------|-----|-----|------|-------------|
-| `Motorhölje_PD_1_H3` | 12 240 kr (66 %) | 76 | 161 kr | 2,51 | **7 220 kr (53 %)** |
-| `Motorhölje_SP_1_H1` | 1 738 kr | 15 | 116 kr | 3,51 | 2 100 kr |
-| `Motorhölje_PD_EXTRA` | 712 kr | 8 | 89 kr | 4,53 | 1 336 kr |
-| `Enginecover_SO_5_1` | 38 kr | 1 | 38 kr | **9,22** | 218 kr (för tidigt) |
+| `Motorhölje_PD_1_H3` | 12 240 kr (66 %) | 76 | 161 kr | 2,51 | **3 724 kr (47 %)** |
+| `Motorhölje_SP_1_H1` | 1 738 kr | 15 | 116 kr | 3,51 | 1 410 kr |
+| `Motorhölje_PD_EXTRA` | 712 kr | 8 | 89 kr | 4,53 | 968 kr |
+| `Enginecover_SO_5_1` | 38 kr | 1 | 38 kr | **9,22** | 172 kr (för tidigt) |
+
+(Räknat med break-even-CPA 210 kr. Totalt vinstbidrag i kampanjen: ~7 900 kr / 14 dagar.)
 
 Annonsen med lägst ROAS av de bedömbara är den som tjänar **mer än hälften av
 alla pengar**. Att pausa den hade halverat vinsten. Annonsen med ROAS 9,22 —

@@ -25,7 +25,7 @@ inte; äldre Mastern-material i `docs/` och `pipeline/` (utom `pipeline/quota.mj
    svaret. **Enmetriks-domar är förbjudna** — rangordna alltid på vinstbidrag
    `(break-even-CPA − CPA) × köp`, aldrig på ROAS eller CPA ensamt. Top spendern
    är benchmark, inte en kandidat att döma mot småannonser. Kill-beslut mäts mot
-   `break_even_cpa_sek`, aldrig mot `target_cpa_sek`.
+   `break_even_roas` (eller `break_even_cpa_sek`), aldrig mot target-nivån.
 4. **Brief-kvoten är mål nr 1.** Varje session som launchar/loggar creatives kör
    `node pipeline/quota.mjs` och visar plus/minus-läget. Loggning:
    `node pipeline/quota.mjs log <produkt-id> <antal>`.
