@@ -80,15 +80,20 @@ Utfall: **30 kr · 0 köp** — alldeles för tidigt, ingen dom.
 
 ---
 
-## Batch 4 — 2026-08-05 · 6 statics · *briefad, ej producerad*
+## Batch 4 — 2026-08-05 · 7 statics · *briefad, ej producerad*
 
-Se `backlog.md` för hypoteserna. Uppdatera den här sektionen med utfall vid nästa `/cs`.
+**Omskriven samma dag efter ägarbeslut:** vinnare rankas på profit i kronor, inte på CPA. PD_13_1 står för 77 % av all vinst, så batchen är sex kontrollerade varianter av just den bilden plus ett skalningstest på tvåan. Första utkastet (spritt över sex olika koncept) förkastades — se `backlog.md` för de idéer som lades tillbaka.
 
-| Annons | Hypotes |
-|---|---|
-| Beachslippers_PD_13_4 | Volymvinnarens komposition + vått underlag = attention från PD_13 och konvertering från PD_2_3 i samma bild |
-| Beachslippers_PD_2_4 | Ett par i stället för fyra på blött däck — PD_13-lärdomen applicerad på effektivitetsvinnaren |
-| Beachslippers_PD_8_2 | Rubrikvariant "Grepp som ett däckmönster." isolerar copyn på sulmotivet |
-| Beachslippers_PD_8_3 | Rubrikvariant "Byggd för blöta altaner." — samma isolering |
-| Beachslippers_PD_14_1 | Visa vattnet pressas ur sulmönstret: mekaniken som *händelse* i stället för stillbild höjer CVR över PD_8_1 |
-| Beachslippers_SP_6_1 | Native lo-fi (3,17 % CTR) + sula, garanti och pris = behåller uppmärksamheten men kvalificerar klicket |
+Formeln som skyddas i alla sex: ett par, svart camo, upphöjt på piedestal, premium studio, ingen text. En parameter ändras per annons.
+
+| Annons | Ändrad parameter | Hypotes |
+|---|---|---|
+| Beachslippers_PD_13_4 | torrt → vått | Vinnarkompositionen i den kontext som gav PD_2_3 bäst konvertering. Högst förväntat värde i batchen. |
+| Beachslippers_PD_13_5 | kameravinkel | Låg hjältevinkel gör den tjocka sulan till silhuett — produktens hela löfte blir dominant form. |
+| Beachslippers_PD_13_6 | produktorientering | Sulan vänd mot kameran. Slår ihop PD_13:s ram med PD_8:s bevisade sulbevis. |
+| Beachslippers_PD_13_7 | bakgrund + ljus | Mörk studio med rim-ljus separerar camo-mönstret som idag delvis försvinner mot grått. |
+| Beachslippers_PD_13_8 | studio → verklig miljö | Samma iscensättning på blött trädäck. Svarar på om det är studion eller stagingen som gör jobbet. |
+| Beachslippers_PD_13_9 | beskärning | Tight crop på det upphöjda paret. Billigast att producera — kan tas ur befintlig shoot. |
+| Beachslippers_PD_2_4 | fyra par → ett | Skalningstest på tvåan (794 kr profit på 247 kr spend). Frågan är om CPA:n håller förbi 300 kr. |
+
+Ingen ny copy skrevs för batchen — samtliga sju är textfria och återanvänder befintlig PD-copy ordagrant.
