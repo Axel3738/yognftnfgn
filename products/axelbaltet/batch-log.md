@@ -30,18 +30,31 @@ Kampanj 120249192013870291 · MagiBorsten 1867947880635861 · Target-CPA 185 kr.
 
 ## Batch #3 – 2026-08-05 (denna /cs-körning) – 8 briefer
 
-Kvot: 7 per 3-dagarscykel → batch = 8. Copy skriven av sonnet-subagent (modellpolicy). Briefer: `briefs/batch-3/` (zip levererad i chatten).
+**Två korrigeringar gjorda 2026-08-05 efter första leveransen:**
+1. **Pris:** ägaren höjde priset 509 → **599 kr** (jämförpris 678 kr, spara 79 kr = 11,65 %). All copy skrevs om av sonnet-subagent. 509 kr / 636 kr / "20 %" är nu förbjudna siffror.
+2. **Namnstruktur:** korrigerad till `PRODUKTNAMN_KONCEPT_ADID_ADVARIANT_HID` (t.ex. `Trimmerbelt_SO_1_1_H4`). De sex videorna bytte namn; de två statiska var redan korrekta.
+
+Kvot: 7 per 3-dagarscykel → batch = 8. Copy skriven av sonnet-subagent (modellpolicy).
+Briefer: Drive-mappen **"Batch #3 – KORRIGERAD 599 kr"** (https://drive.google.com/drive/folders/1Q8zldJ5mBD_LKrPRPxZ4wXLDfHBXBj8w).
 
 | Annons | Typ | Hypotes | Isolerad variabel |
 |---|---|---|---|
-| Trimmerbelt_SO_2_5 | Statisk (rotation av vinnaren) | Vinnarstatiskans budskap i ny formulering ("SPARA 20 % NU") förlänger vinnarens livslängd innan fatigue | Endast text-formulering |
-| Trimmerbelt_PD_2_3 | Statisk (native foto i gräs) | PD_2_2-signalen (ROAS ~11 på 44 kr): native utan overlay skalar när copyn bär säljet | Overlay vs native (variant 3 på AD-ID PD_2) |
-| Trimmerbelt_SO_3_H1 | Video (ny hook på fatigad vinnare) | Rotation: ny hook ("En klick – och armen slutar skaka") återställer vinnarens CPA < 185 | Endast 0–3 s |
-| Trimmerbelt_SO_3_H2 | Video 15s cutdown | Kortare → p100 ≥ 10 % → CPA −15 % | Endast längd |
-| Trimmerbelt_SO_4_H1 | Video (pris-anchor close) | 636→509-endcard slår "specialpris" på LPV→köp | Endast close |
-| Trimmerbelt_PD_3_H1 | Video mekanismdemo 20s | Demonstration closar problem aware-trafiken som PD_1_H1 fångar men tappar | Ny persuasion-mekanism |
-| Trimmerbelt_SP_3_H1 | UGC 25–27s skeptiker | Skepsis-ram + äkta 4,75/5 öppnar social proof-spåret som aldrig fått budget | Ny persuasion-mekanism |
-| Trimmerbelt_SP_4_H1 | Video story 60+ | Identitet/självständighet + kvinnlig creator når segment nuvarande ads missar | Ny målgruppsram |
+| Trimmerbelt_SO_1_1_H4 | Video 25s | Ny hook återställer den fatigade vinnaren (CPA 328 → under 185) | Endast hook (H4 på SO ad 1) |
+| Trimmerbelt_SO_1_2_H2 | Video 15s | Kortare → p100 ≥ 10 % → CPA −15 % | Endast längd (variant 2, samma hook) |
+| Trimmerbelt_SO_1_3_H2 | Video 25s | 678→599-endcard slår vagt "specialpris" på LPV→köp | Endast close (variant 3, samma hook) |
+| Trimmerbelt_PD_3_1_H1 | Video 20s | Mekanismdemo closar problem aware-trafiken som PD ad 1 fångar men tappar | Ny persuasion-mekanism |
+| Trimmerbelt_SP_3_1_H1 | UGC 25–27s | Skeptiker-ram + äkta 4,75/5 öppnar social proof-spåret | Ny persuasion-mekanism |
+| Trimmerbelt_SP_4_1_H1 | Video 30s | Identitet/självständighet + kvinnlig creator når segment vi missar | Ny målgruppsram |
+| Trimmerbelt_SO_2_5 | Statisk | Vinnarstatiskans budskap i ny formulering förlänger livslängden — OCH rättar det felaktiga 20 %-claimet | Endast textformulering (variant 5) |
+| Trimmerbelt_PD_2_3 | Statisk | Native foto utan overlay skalar när copyn bär säljet | Overlay vs native (variant 3) |
 
-Åtgärder utförda i kontot 2026-08-05: SO_6_1 pausad (kill-regel). Rekommenderat till manager: pausa även PD_2_1 + SF_2_1 (DO_NOT_REUSE, dryper fortfarande några kr), och ge batch #3 en egen ABO-testcell (~600 kr/dag) så CBO inte svälter den.
+## Åtgärder och öppna punkter 2026-08-05
+
+- ✅ SO_6_1 pausad (kill-regel: 568 kr spend, CPA 568 kr, ROAS 1,05).
+- ⚠️ **KRITISKT – ägarbeslut krävs:** live-vinnaren SO ad 2 variant 1 har **"FÅ 20 % RABATT IDAG" inbränt i bilden**. Efter prishöjningen är det ett falskt claim mot produktsidan (verklig besparing 79 kr = 11,65 %). Den är kontots bästa annons (CPA 155 kr) — att pausa kostar intäkt, att låta gå är en offer-integritetsrisk. Rekommendation: producera SO_2_5 omgående och byt.
+- ⚠️ Två creatives skapade i kontot 2026-07-29 har fel pris inbränt och får INTE launchas: creative 2178753102691194 ("636 kr → 509 kr") och 1324700059732480 ("FÅ 20 % RABATT"). Samma gäller de 6 statiska PNG:erna som genererades 29/7.
+- ⚠️ Target-CPA i products.json (185 kr) är satt utifrån det gamla priset 509 kr. Högre pris = högre tillåten CPA. **Ägaren sätter target-CPA, inte Claude** — behöver räknas om.
+- Rekommenderat: egen ABO-testcell (~600 kr/dag) för batch #3, annars svälter CBO den (7/13 i batch 1 och 6/9 i batch 2 fick <300 kr).
+- Notion-upload ej gjord: Notion-MCP:n är inte auktoriserad i sessionen.
+
 Launch ej loggad ännu – kör `/logga axelbaltet <antal>` när teamet launchat.
