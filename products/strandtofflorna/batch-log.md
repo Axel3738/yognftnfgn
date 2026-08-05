@@ -80,7 +80,18 @@ Utfall: **30 kr · 0 köp** — alldeles för tidigt, ingen dom.
 
 ---
 
-## Batch 4 — 2026-08-05 · 7 statics · *briefad, ej producerad*
+## Batch 4 — 2026-08-05 · 9 statics · *briefad, ej producerad*
+
+**Utökad till 9 efter creative-teardownet enligt ANALYSMETOD.md steg 6b.** Teardownet visade att PD_13_1 och PD_2_2 skiljer sig på tre variabler samtidigt, vilket gör "ett par slår fyra par" till en obevisad slutsats — därför tillkom `PD_13_10` som kontroll. Kvotens testandel (20 % vid 1 000 kr/dag) var dessutom otillsatt — därför tillkom `SP_6_1` som batchens enda explorativa slot.
+
+| Tillägg | Variabel som isoleras | Hypotes |
+|---|---|---|
+| Beachslippers_PD_13_10 | **antal par** (komposition + studio konstant) | Kontrolltest: presterar den som PD_13_1 är det piedestal-stagingen som gör jobbet; presterar den som PD_2_2 är det enskilda hjälteparet. Endera vägen dödas ett felaktigt antagande. |
+| Beachslippers_SP_6_1 | native lo-fi **+ konverteringselement** | SP_5_1 har kampanjens högsta CTR (4,91 %) men noll köp — formatet fångar men ger ingen köpanledning. Testslot, inte skalningsbet. |
+
+Samtliga nio briefer bär nu en `Variabeltaggar:`-rad så att nästa `/cs` kan gruppera vinstbidrag per variabel.
+
+### Ursprunglig batch 4 (7 statics)
 
 **Omskriven samma dag efter ägarbeslut:** vinnare rankas på profit i kronor, inte på CPA. PD_13_1 står för 77 % av all vinst, så batchen är sex kontrollerade varianter av just den bilden plus ett skalningstest på tvåan. Första utkastet (spritt över sex olika koncept) förkastades — se `backlog.md` för de idéer som lades tillbaka.
 

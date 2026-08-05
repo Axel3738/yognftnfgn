@@ -87,6 +87,54 @@ Video kostar **2,5× mer per köp** än statics på den här produkten. Skillnad
 
 ---
 
+## Metrik-diagnos + creative-teardown (2026-08-05)
+
+### Steg 6 — var i kedjan tappar de bedömbara?
+
+Båda är bildannonser, så hook rate och hold existerar inte för dem.
+
+| | CTR | CPM | Frekvens | Köp per klick |
+|---|---:|---:|---:|---:|
+| PD_13_1 | **2,99 %** | **95,63 kr** | 1,62 | 1,81 % |
+| PD_2_2 | 1,81 % | 103,30 kr | **1,73** | **2,74 %** |
+
+`DATA`: PD_2_2 övertygar bättre per klick (2,74 % mot 1,81 %) men fångar färre — lägre CTR, högre CPM, högst frekvens i kampanjen. **Dess svaghet sitter i uppmärksamheten, inte i övertygelsen.**
+
+### Steg 6b — teardown av de två bedömbara
+
+Båda granskade visuellt (bildfilerna nedladdade ur kontot).
+
+**PD_13_1** — ett svart camo-par, ena skon upphöjd på vit piedestal, grå seamless studio, premium "sneaker drop"-ljus. Ögat träffar den upphöjda skon först; sulprofilen syns i siluett. Noll text, noll pris, noll proof. Läses som produktlansering, inte som annons.
+
+**PD_2_2** — fyra par (svart camo, khaki camo, svart, vit) i flat-lay på beige studiobakgrund, uppifrån. Ögat sprids över fyra objekt utan tydlig hjälte. Sortimentsbredd är budskapet. Noll text, noll pris, noll proof.
+
+### Variabeltabell — vinstbidrag grupperat per variabelvärde
+
+| Variabelvärde | Annonser | Spend | Vinstbidrag | Andel |
+|---|---:|---:|---:|---:|
+| Textfri produktbild | 2 | 8 534 kr | 3 058 kr | 100 % |
+| Torr studio | 2 | 8 534 kr | 3 058 kr | 100 % |
+| Ingen proof i bild | 2 | 8 534 kr | 3 058 kr | 100 % |
+| Ingen offer i bild | 2 | 8 534 kr | 3 058 kr | 100 % |
+| **Ett par (hjälte) + piedestal + svart camo** | 1 | 5 824 kr | **2 492 kr** | **81 %** |
+| **Fyra par + flat-lay + alla färger** | 1 | 2 710 kr | 566 kr | 19 % |
+
+### Tre mönster
+
+**1 — Textfri produktbild är den enda visuella stil som nått bedömbarhet. `HYPOTES` (starkt indicium)**
+Båda bedömbara annonserna är textfria. Varje text-tung variant (PD_2_1 textoverlay, PD_9_1 jämförelse, PD_12_1 tabell, SO_4_1 prisankare) ligger kvar på 5–9 kr spend — auktionen vägrar leverera dem. Kan inte märkas *bevisad*: det finns ingen text-variant som fått spend att jämföra mot.
+→ **Briefinstruktion:** textfritt är default i alla hjältebilder. Ska påståendet bevisas måste en text-variant tvingas fram i eget ad set med egen budget.
+
+**2 — "Ett par slår fyra par" är en obevisad slutsats — tre variabler ändras samtidigt. `HYPOTES`**
+PD_13_1 och PD_2_2 skiljer sig på antal par, komposition (piedestal vs flat-lay) OCH färgfokus (svart ensam vs alla fyra). Vinstbidraget 81/19 kan inte tillskrivas någon av dem. Detta är den viktigaste luckan i vår kunskap just nu.
+→ **Briefinstruktion:** `PD_13_10` byggd i batch 4 som kontroll — exakt PD_13_1-uppställningen men fyra par. Isolerar antalet med komposition och studio konstant.
+
+**3 — PD_2_2 tappar på uppmärksamhet, inte på övertygelse. `DATA` (13 respektive 33 köp bakom)**
+Högre köp-per-klick men lägre CTR, högre CPM och högst frekvens (1,73).
+→ **Briefinstruktion:** nya varianter ska förändra det som fångar ögat — komposition, underlag, ljus, beskärning. Lägg **inte** till säljargument, text eller proof; det är inte där den tappar.
+
+---
+
 ## WINNING DNA
 
 ### Format: statics dominerar totalt `DATA`
