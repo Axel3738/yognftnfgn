@@ -12,7 +12,7 @@
 //   node vo.mjs --list-voices                     -> lista rösterna på kontot
 //   node vo.mjs --text="Hej" --name=test          -> engångsklipp utan manus-fil
 import { readdir, readFile, writeFile, mkdir } from 'node:fs/promises';
-import { generateVoiceover, listVoices, DEFAULTS, MAX_CHARS } from './elevenlabs.mjs';
+import { generateVoiceover, listVoices, DEFAULTS, limitFor } from './elevenlabs.mjs';
 
 const args = process.argv.slice(2);
 const has = (f) => args.includes(f);
@@ -79,7 +79,8 @@ for (const clip of clips) {
     console.log(`\n  ${currentAd}`);
   }
   const chars = clip.text.length;
-  const over = chars > MAX_CHARS ? `  ⚠️ över ${MAX_CHARS} tecken` : '';
+  const maxChars = limitFor(modelOverride || DEFAULTS.modelId);
+  const over = chars > maxChars ? `  ⚠️ över ${maxChars} tecken` : '';
   if (dry) {
     console.log(`    • ${clip.name}  (${chars} tecken)${over}`);
     console.log(`        "${clip.text.replace(/\s+/g, ' ').slice(0, 84)}${chars > 84 ? '…' : ''}"`);

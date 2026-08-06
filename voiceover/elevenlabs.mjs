@@ -15,8 +15,15 @@ export const DEFAULTS = {
   voiceSettings: { stability: 0.5, similarity_boost: 0.75, use_speaker_boost: true },
 };
 
-// eleven_v3 tar max ~3000 tecken per anrop.
-export const MAX_CHARS = 3000;
+// Teckengräns per anrop skiljer sig mellan modellerna.
+const MODEL_LIMITS = {
+  eleven_v3: 3000,
+  eleven_multilingual_v2: 10000,
+  eleven_turbo_v2_5: 40000,
+  eleven_flash_v2_5: 40000,
+};
+export const MAX_CHARS = MODEL_LIMITS.eleven_v3; // default
+export const limitFor = (modelId) => MODEL_LIMITS[modelId] ?? MAX_CHARS;
 
 function getApiKey() {
   const key = process.env.ELEVENLABS_API_KEY || process.env.XI_API_KEY;
@@ -83,8 +90,9 @@ export async function generateVoiceover(text, opts = {}) {
   } = opts;
 
   if (!text || !text.trim()) throw new Error('Tom text — inget att läsa upp.');
-  if (text.length > MAX_CHARS) {
-    throw new Error(`Texten är ${text.length} tecken; ${modelId} tar max ${MAX_CHARS}. Dela upp den.`);
+  const limit = limitFor(modelId);
+  if (text.length > limit) {
+    throw new Error(`Texten är ${text.length} tecken; ${modelId} tar max ${limit}. Dela upp den.`);
   }
 
   const voiceId = opts.voiceId || (await resolveVoiceId(voiceName));
