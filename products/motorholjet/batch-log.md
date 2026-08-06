@@ -92,12 +92,12 @@ håller vid riktig spend är det ett DNA-skifte. Prioriteras i batch #4.
 
 ---
 
-## Batch #4 — 2026-08-05 (17 creatives, briefade)
+## Batch #4 — 2026-08-05 (17 creatives) — **LAUNCHAD 5–6 aug**
 
 Kvot: **14 per 3-dagarscykel** (`node pipeline/quota.mjs`). Läge före batchen: **-14 efter plan**.
 Levererat: **17** (11 bild/karusell + 6 video) — över kvoten.
 Briefer: `products/motorholjet/batch-04/` + `image-ads-briefs.zip` och `video-ads-briefs.zip`.
-Status: **briefade, ej launchade.**
+Status: **11 bild launchade 5 aug 21:04–21:05. De 6 videorna är INTE launchade.**
 
 **Diagnosen batchen bygger på (creative-teardown, se `dna.md`):**
 De sex dömbara annonserna kör bara **tre** copy-set. `Motorhölje_SO_2` (statisk) och
@@ -193,3 +193,104 @@ Alla fyra köp i batchen kom från de tre **nya koncepten**, noll från hook-ite
 vinnarna (PD_1_H4, SP_1_H4). Det är samma mönster som förra körningen, nu med en konvertering till.
 **Fortfarande observation, inte dom** — ingen av dem har 300 kr spend. Men det är en av anledningarna
 till att batch #4 bara innehåller två rena hooktester.
+
+
+---
+
+## Feedbackloop 2026-08-06 (fjärde /cs) — utfall batch #4
+
+### Processfyndet som överskuggar allt annat
+
+**Ingen av de 17 launchade annonserna kör den briefade copyn.** Verifierat mot `body` och `title`
+i kontot, annons för annons. Alla ärvde ett av tre gamla textblock från batch #1.
+
+Följder:
+1. Förbjudna claims ligger live: `Skydda din motor – innan vintern` + `Beställ innan lagret tar
+   slut` på fem annonser, `Hundratals nöjda kunder redan.` på tre.
+2. **Alla isolerade variabler i batchen är döda.** SO_8_1/SO_8_2 (pris i bild) och
+   PD_13_1/PD_13_2 (kvalificerande rad) kör identisk copy. Testerna mäter ingenting.
+3. **Karusellerna är inte karuseller.** PD_6_C1, SO_9_C1 och PD_15_C1 ligger som `object_type:
+   SHARE` med ett `image_hash` och inga `child_attachments` — enkla bilder. Karusellformatet är
+   fortfarande otestat.
+4. Tre dubbletter döpta `... RÅKADE BLI VIDEO` kör parallellt, två med fel CTA.
+
+Åtgärdslista: `products/motorholjet/batch-05/COPY-FIX.md`.
+
+### Utfall per annons
+
+| # | Annons | Spend | Köp | CPA | Hypotesen höll? |
+|---|---|---|---|---|---|
+| 1 | Enginecover_SO_8_1 | 117 kr | 1 | 117,21 | **Ej mätbar** — fel copy, testparet dött. För tidigt ändå. |
+| 2 | Enginecover_SO_8_2 | 3 kr | 0 | – | **Ej mätbar** — fel copy, ingen leverans. |
+| 3 | Enginecover_SP_8_1 | 3 kr | 0 | – | **Ej mätbar** — fel copy (kör förbjudet kundantal). |
+| 4 | Enginecover_SP_8_2 | 0 kr | 0 | – | **Ej mätbar** — fick 4 impressions. |
+| 5 | Enginecover_PD_13_1 | 4 kr | 0 | – | **Ej mätbar** — fel copy, testparet dött. |
+| 6 | Enginecover_PD_13_2 | 5 kr | 0 | – | **Ej mätbar** — fel copy, testparet dött. |
+| 7 | Enginecover_PD_6_1 | 29 kr | 1 | 28,32 | För tidigt. Storleksguiden har nu fått 29 kr på tre försök. |
+| 8 | Enginecover_PD_14_1 | 3 kr | 0 | – | För tidigt. |
+| 9 | Enginecover_PD_6_C1 | **528 kr** | **3** | **176,01** | **NEJ — hypotesen föll.** Se nedan. |
+| 10 | Enginecover_SO_9_C1 | 6 kr | 0 | – | Ej mätbar — gick som enkel bild, inte karusell. |
+| 11 | Enginecover_PD_15_C1 | 1 kr | 0 | – | Ej mätbar — gick som enkel bild, inte karusell. |
+| 12–17 | PD_1_H5, PD_1_H6, SP_9_H1, SP_10_H1, SO_10_H1, SO_11_H1 | – | – | – | **Ej launchade.** Ligger kvar som briefer. |
+
+**PD_6_C1 — den enda dömbara ur batch #4.** Hypotesen var att PD-copyn i statiskt format skulle
+ärva formatfördelen och lyfta LPV→ATC över 15 %. Utfall: **LPV→ATC 6,5 %**, sämre än
+PD_1_H3:s 9,4 %, och CPA 176,01 mot videons 166,55. **Formattransfern hjälpte inte.**
+Två slutsatser: PD-copyns svaghet följer med till nya format (→ bodyn skrivs om i batch #5), och
+"statisk slår video" som generell regel är falsifierad.
+
+### Vad som hände med de andra hypoteserna
+
+**`Enginecover_SO_5_1` blev dömbar och räddade sig själv.** Förra körningen stod den på 464 kr och
+1 köp med noteringen "vid 500 kr spend med fortsatt CPA över break-even är den ett killbeslut".
+Den fick 1 894 kr, 10 köp och CPA 189,39 — **under break-even 236**. Killbeslutet är avblåst.
+Lärdomen: en annons med ett enda köp har ingen dom, och den grinden fungerade som den skulle.
+
+**`Enginecover_SP_5_H1` blev dömbar och är en vinnare.** 687 kr, 7 köp, CPA 98,15, 1 405 kr vinst
+per 1 000 kr — näst bäst i kontot. Skeptiker-UGC stod som "starkast ledande signal" i batch #3 och
+den signalen höll hela vägen till dömbar nivå. Den kör dock det förbjudna kundantalet.
+
+**Statisk-hypotesen från 2026-08-05 är falsifierad.** Se `dna.md`, mönster 1: fyra annonser med
+identisk copy spänner 246–1 493 kr per 1 000 kr. Spridningen inom format är större än mellan
+format.
+
+---
+
+## Batch #5 — 2026-08-06 (14 creatives, briefade)
+
+Kvot: **14 per 3-dagarscykel**. Läge före batchen: **-14 efter plan**.
+Levererat: **14** (11 bild/karusell + 3 video). Briefer: `products/motorholjet/batch-05/`.
+Status: **briefade, ej launchade.**
+
+**Diagnosen batchen bygger på:** SP-copyn konverterar 11,3 % av landningssidebesöken mot PD:s
+4,6 %, ger 1 145 kr vinst per 1 000 kr — och har 11 % av spenden. PD-copyn bär 61 % av spenden med
+kontots sämsta klickkvalitet i tre annonser och två format. Och den största enskilda variabeln är
+**bilden**: fyra annonser med identisk copy skiljer fyrfaldigt i avkastning.
+
+| # | Annons | Format | Isolerad variabel | Hypotes |
+|---|---|---|---|---|
+| 1 | Enginecover_SP_12_1 | Statisk | **Bilden:** wide | Bilden är den dominerande variabeln — trion separerar trots identisk copy |
+| 2 | Enginecover_SP_12_2 | Statisk | **Bilden:** närbild på tyget | Materialdetalj bygger mer tillit än miljö |
+| 3 | Enginecover_SP_12_3 | Statisk | **Bilden:** med/utan hölje | Jämförelsen läses snabbast av alla tre |
+| 4 | Enginecover_SP_14_1 | Statisk | Quote-card-layout | Citattecken lånar trovärdighet utan att påstå ett omdöme |
+| 5 | Enginecover_PD_16_1 | Statisk | **Omskriven PD-body**, kvalificerar på storlek | LPV→köp från 4,6 % mot 8 %. CTR väntas falla — det är bytet vi vill ha |
+| 6 | Enginecover_PD_17_1 | Statisk | Omskriven PD-body, kvalificerar på värde | Annan dörr till samma köpare |
+| 7 | Enginecover_SO_14_1 | Statisk | **367→299 syns i bild** | Prisbevis i bild är värt något |
+| 8 | Enginecover_SO_14_2 | Statisk | **Kontroll:** inga siffror i bild | Omgörning av SO_8-paret som dog på fel copy |
+| 9 | Enginecover_SO_15_1 | Statisk | **Visuell stil:** foto-lett i miljö | Foto slår grafik i offer-blocket |
+| 10 | Enginecover_SO_13_C1 | **Karusell, 4 kort** | Formatet — på riktigt denna gång | Sekvensen låter en annons göra fyras jobb |
+| 11 | Enginecover_PD_18_C1 | **Karusell, 5 kort** | Storleksfinnare | LPV→ATC över 15 %. Tredje försöket på samma fråga |
+| 12 | Enginecover_SP_13_H1 | Video 20 s | **Talaren:** ny creator | Vinkeln är portabel — LPV→köp över 10 % med en tredje person |
+| 13 | Enginecover_SP_15_H1 | Video, **omklipp** | SP-copy på PD_EXTRA:s footage | Bästa copy + bästa footage slår båda föräldrarna. Omgörning av SP_9_H1 |
+| 14 | Enginecover_PD_16_H1 | Video 20 s | Omskriven PD-body i video | Fungerar rewriten i båda formaten? |
+
+**Grindar vid launch:**
+- **`COPY-FIX.md` först.** Att rätta de 17 live-annonserna är värt mer än hela denna batch.
+- **Läs tillbaka primärtext och rubrik på varje ny annons** mot briefens copy card. Två minuter
+  för 14 annonser. Batch #4 kostade oss ett helt testtillfälle för att det inte gjordes.
+- **#10 och #11 måste byggas som karusellformat**, en bildfil per kort. Kontrollera
+  `child_attachments` i kontot efter launch.
+- **#1–#3 måste ha identisk copy, rubrik och CTA.** Skiljer något annat är trevägstestet dött.
+- **#7 och #8 måste ligga i samma adset med jämförbar budget.**
+- **#13 är ett omklipp** — footagen får inte röras.
+- Logga launchen: `node pipeline/quota.mjs log motorholjet <antal>`.
