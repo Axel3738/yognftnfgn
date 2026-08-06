@@ -56,7 +56,7 @@ try {
       const missing = missingReports(S.loadTeam(), S.loadReports(), TODAY);
       console.log(`\nBEHÖVER DIN UPPMÄRKSAMHET (${o.attention.length})`);
       if (o.attention.length === 0) console.log('  (inget — allt rullar)');
-      for (const a of o.attention) console.log(`  ${STATUSES[a.task.status].icon} ${a.task.id.padEnd(8)} ${a.task.assignedEditorId.padEnd(7)} ${a.why}`);
+      for (const a of o.attention) console.log(`  ${STATUSES[a.task.status].icon} ${a.task.id.padEnd(8)} ${(a.task.assignedEditorId ?? "ingen").padEnd(7)} ${a.why}`);
       if (missing.length) console.log(`\nSAKNAD SLUTRAPPORT: ${missing.map(m => m.name).join(', ')}`);
       console.log();
       break;
@@ -73,9 +73,9 @@ try {
       if (plan?.managerNotes) console.log(`Note from manager: ${plan.managerNotes}`);
       console.log();
       const order = { high: 0, normal: 1, low: 2 };
-      for (const t of tasks.sort((a, b) => order[a.priority] - order[b.priority] || a.dueDate.localeCompare(b.dueDate))) {
+      for (const t of tasks.sort((a, b) => order[a.priority] - order[b.priority] || (a.dueDate ?? '9999').localeCompare(b.dueDate ?? '9999'))) {
         console.log(`  ${STATUSES[t.status].icon} ${t.id}  ${t.title}`);
-        console.log(`      ${TASK_TYPES[t.taskType]} · ${t.plannedCreativeCount} creatives · due ${t.dueDate}${isLate(t, TODAY) ? '  ⚠ LATE' : ''}`);
+        console.log(`      ${TASK_TYPES[t.taskType]} · ${t.plannedCreativeCount} creatives · due ${t.dueDate ?? '–'}${isLate(t, TODAY) ? '  ⚠ LATE' : ''}`);
         console.log(`      brief: ${t.briefLink}`);
         if (t.status === 'blocked') console.log(`      ■ BLOCKED: ${t.blockerReason}`);
         if (t.feedbackHistory.length) console.log(`      ↺ feedback: ${t.feedbackHistory.at(-1).feedback}`);
@@ -118,7 +118,7 @@ try {
         estimatedMinutes: Number(flag('minutes', 60)),
         sourceMaterialLink: flag('source', ''),
       });
-      console.log(`✓ ${t.id} skapad → ${t.assignedEditorId} (${t.plannedCreativeCount} creatives, due ${t.dueDate})`);
+      console.log(`✓ ${t.id} skapad → ${t.assignedEditorId} (${t.plannedCreativeCount} creatives, due ${t.dueDate ?? '–'})`);
       break;
     }
 

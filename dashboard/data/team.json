@@ -1,135 +1,15 @@
 {
   "users": [
-    {
-      "id": "anna",
-      "name": "Anna Odhner",
-      "email": "anna@baverbutiken.se",
-      "slackUserId": "U_ANNA",
-      "role": "manager",
-      "timezone": "Europe/Stockholm",
-      "active": true
-    },
-    {
-      "id": "axel",
-      "name": "Axel Odhner",
-      "email": "axel@baverbutiken.se",
-      "slackUserId": "U_AXEL",
-      "role": "admin",
-      "timezone": "Europe/Stockholm",
-      "active": true
-    },
-    {
-      "id": "maria",
-      "name": "Maria Santos",
-      "email": "maria@editors.ph",
-      "slackUserId": "U_MARIA",
-      "role": "editor",
-      "timezone": "Asia/Manila",
-      "active": true,
-      "profile": {
-        "defaultDailyCreativeTarget": 4,
-        "workingDays": [
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "workdayStart": "09:00",
-        "workdayEnd": "18:00",
-        "middayCheckTime": "13:30",
-        "endOfDayReportTime": "17:30",
-        "skills": [
-          "UGC edit",
-          "subtitles",
-          "hooks"
-        ],
-        "notes": "Snabbast på hook-iterationer."
-      }
-    },
-    {
-      "id": "jomar",
-      "name": "Jomar Reyes",
-      "email": "jomar@editors.ph",
-      "slackUserId": "U_JOMAR",
-      "role": "editor",
-      "timezone": "Asia/Manila",
-      "active": true,
-      "profile": {
-        "defaultDailyCreativeTarget": 3,
-        "workingDays": [
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "workdayStart": "09:00",
-        "workdayEnd": "18:00",
-        "middayCheckTime": "13:30",
-        "endOfDayReportTime": "17:30",
-        "skills": [
-          "motion graphics",
-          "statics"
-        ],
-        "notes": "Tar de svåraste briefarna — högre revisionsgrad är väntat."
-      }
-    },
-    {
-      "id": "ellen",
-      "name": "Ellen Cruz",
-      "email": "ellen@editors.ph",
-      "slackUserId": "U_ELLEN",
-      "role": "editor",
-      "timezone": "Asia/Manila",
-      "active": true,
-      "profile": {
-        "defaultDailyCreativeTarget": 4,
-        "workingDays": [
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "workdayStart": "08:00",
-        "workdayEnd": "17:00",
-        "middayCheckTime": "12:30",
-        "endOfDayReportTime": "16:30",
-        "skills": [
-          "voice-over",
-          "B-roll"
-        ],
-        "notes": ""
-      }
-    },
-    {
-      "id": "paolo",
-      "name": "Paolo Aquino",
-      "email": "paolo@editors.ph",
-      "slackUserId": "U_PAOLO",
-      "role": "editor",
-      "timezone": "Asia/Manila",
-      "active": true,
-      "profile": {
-        "defaultDailyCreativeTarget": 3,
-        "workingDays": [
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "workdayStart": "09:00",
-        "workdayEnd": "18:00",
-        "middayCheckTime": "13:30",
-        "endOfDayReportTime": "17:30",
-        "skills": [
-          "statics",
-          "listicle"
-        ],
-        "notes": "Ny sedan 3 veckor."
-      }
-    }
+    { "id": "anna", "name": "Anna Odhner", "role": "manager", "timezone": "Europe/Stockholm", "active": true,
+      "email": "", "slackUserId": "", "notionUserId": "" },
+    { "id": "axel", "name": "Axel Odhner", "role": "admin", "timezone": "Europe/Stockholm", "active": true,
+      "email": "axelodhner.business@gmail.com", "slackUserId": "U0BK2P1N3AQ",
+      "notionUserId": "332d872b-594c-815b-92e8-0002f9c93383" },
+    { "id": "josh", "name": "Josh Naelga", "role": "editor", "timezone": "Asia/Manila", "active": true,
+      "email": "joshnaelga146@gmail.com", "slackUserId": "",
+      "notionUserId": "50fdc7d9-a491-45b9-bac4-5315788a616b",
+      "profile": { "defaultDailyCreativeTarget": 4, "workingDays": [1,2,3,4,5],
+        "workdayStart": "09:00", "workdayEnd": "18:00", "middayCheckTime": "13:30",
+        "endOfDayReportTime": "17:30", "skills": [], "notes": "" } }
   ]
 }

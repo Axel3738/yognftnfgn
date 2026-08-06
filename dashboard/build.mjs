@@ -24,15 +24,14 @@ const team = S.loadTeam();
 const products = S.loadProducts();
 const reports = S.loadReports();
 const plans = S.loadPlans();
-const snap = (() => { try { return JSON.parse(
-  readFileSync(join(HERE, 'data', 'notion-snapshot.json'), 'utf8')); } catch { return null; } })();
+
 
 const editors = team.users.filter(u => u.role === 'editor' && u.active);
 const o = overview(tasks, events, products, FROM, TO, DATE);
 const missing = missingReports(team, reports, DATE);
 
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const nameOf = id => team.users.find(u => u.id === id)?.name ?? id;
+const nameOf = id => team.users.find(u => u.id === id)?.name ?? id ?? '–';
 const prodName = id => products.find(p => p.id === id)?.name?.replace(' (Bäverbutiken)', '') ?? id;
 
 /** Status som text + ikon + färg — aldrig färg ensamt. */
@@ -62,9 +61,9 @@ const taskRow = (t, { showEditor = true } = {}) => `
     <td class="prio prio-${t.priority}">${t.priority === 'high' ? '▲ High' : t.priority === 'low' ? '▽ Low' : '– Normal'}</td>
     <td><strong>${esc(t.id)}</strong><br><span class="muted">${esc(t.title)}</span></td>
     <td>${esc(prodName(t.productId))}</td>
-    ${showEditor ? `<td>${esc(nameOf(t.assignedEditorId).split(' ')[0])}</td>` : ''}
+    ${showEditor ? `<td>${t.assignedEditorId ? esc(nameOf(t.assignedEditorId).split(' ')[0]) : '<span class="muted">ingen</span>'}</td>` : ''}
     <td class="num">${t.deliveredCreativeCount}/${t.plannedCreativeCount}</td>
-    <td>${esc(t.dueDate)}</td>
+    <td>${t.dueDate ? esc(t.dueDate) : '<span class="muted">–</span>'}</td>
     <td>${t.status === 'blocked' ? `<span class="blocker">${esc(t.blockerReason)}</span>` : t.feedbackHistory.length ? `<span class="muted">↺ v${t.currentRevision}</span>` : ''}</td>
     <td><a href="${esc(t.briefLink)}" target="_blank" rel="noopener">Brief</a>${t.deliveryLink ? ` · <a href="${esc(t.deliveryLink)}" target="_blank" rel="noopener">Delivery</a>` : ''}</td>
   </tr>`;
@@ -140,7 +139,7 @@ const todoSection = `
   <p class="lede">Sorterad på prioritet och deadline.</p>
   ${table(
     tasks.filter(t => t.plannedDate === DATE || ['in_progress', 'blocked', 'changes', 'in_review'].includes(t.status))
-      .sort((a, b) => ({ high: 0, normal: 1, low: 2 }[a.priority] - { high: 0, normal: 1, low: 2 }[b.priority]) || a.dueDate.localeCompare(b.dueDate))
+      .sort((a, b) => ({ high: 0, normal: 1, low: 2 }[a.priority] - { high: 0, normal: 1, low: 2 }[b.priority]) || (a.dueDate ?? '9999').localeCompare(b.dueDate ?? '9999'))
       .map(t => taskRow(t)),
     ['Status', 'Prio', 'Task', 'Produkt', 'Redigerare', 'Creatives', 'Deadline', 'Blocker / rev', 'Länkar'])}
 </section>`;
@@ -250,42 +249,52 @@ const historySection = `
 </section>`;
 
 
-const notionSection = !snap ? '' : (() => {
+const notionSection = (() => {
+  const openStatuses = ['planned', 'in_progress', 'in_review'];
   const rows = o.products.map(p => {
-    const s = snap.products[p.productId]; if (!s) return '';
     const prod = products.find(x => x.id === p.productId);
-    const assigned = Object.entries(s.byEditor).filter(([k]) => k !== 'unassigned');
-    const unass = s.byEditor.unassigned ?? 0;
+    const mine = tasks.filter(t => t.productId === p.productId);
+    const open = mine.filter(t => openStatuses.includes(t.status));
+    const unass = mine.filter(t => !t.assignedEditorId).length;
     return `<tr>
       <td><strong>${esc(p.name.replace(' (Bäverbutiken)', ''))}</strong><br>
-          <a href="${esc(prod.notion.url)}" target="_blank" rel="noopener">${esc(prod.notion.name)}</a></td>
-      <td class="num">${s.total}</td>
-      <td class="num">${s.byStatus.Approved ?? 0}</td>
-      <td class="num">${(s.byStatus['In progress'] ?? 0) + (s.byStatus['In progress 2'] ?? 0)}</td>
-      <td class="num">${(s.byStatus['In Review'] ?? 0) + (s.byStatus['Creative strat review'] ?? 0) + (s.byStatus['To be Reviewed'] ?? 0)}</td>
-      <td class="num">${s.byStatus.Draft ?? 0}</td>
-      <td>${assigned.length ? assigned.map(([id, n]) =>
-            `${esc((snap.notionUsers[id] ?? id).split(' ')[0])} ${n}`).join(' · ') : '–'}</td>
+          <a href="${esc(prod.notion?.url ?? '#')}" target="_blank" rel="noopener">${esc(prod.notion?.name ?? '–')}</a></td>
+      <td class="num">${mine.length}</td>
+      <td class="num">${mine.filter(t => t.status === 'approved').length}</td>
+      <td class="num">${mine.filter(t => t.status === 'in_progress').length}</td>
+      <td class="num">${mine.filter(t => t.status === 'in_review').length}</td>
+      <td class="num">${mine.filter(t => t.status === 'planned').length}</td>
+      <td class="num"><strong>${open.length}</strong></td>
       <td class="num">${unass ? `<span class="badge danger"><span aria-hidden="true">⚠</span> ${unass}</span>` : '0'}</td>
     </tr>`;
   });
-  const totBriefs = Object.values(snap.products).reduce((s, x) => s + x.total, 0);
-  const totUnass = Object.values(snap.products).reduce((s, x) => s + (x.byEditor.unassigned ?? 0), 0);
+  const open = tasks.filter(t => openStatuses.includes(t.status));
+  const unass = tasks.filter(t => !t.assignedEditorId).length;
   return `
 <section id="notion">
-  <h2>Notion · creative hubs</h2>
-  <p class="lede">Läst direkt ur produkternas Notion-databaser ${esc(snap.syncedAt.slice(0, 16).replace('T', ' '))}.
-     Notion är där briefarna bor — den här vyn visar vad som finns och vem som står som Ansvarig.</p>
+  <h2>Öppet arbete · direkt ur Notion</h2>
+  <p class="lede">Läst ur de fyra creative hubs ${esc((tasks[0]?.updatedAt ?? '').slice(0, 16).replace('T', ' '))}.
+     Notion är sanningen för vad som finns och vilken status det har.</p>
   <div class="tiles">
-    ${kpiTile('Briefer totalt', totBriefs, 'i de 4 skalningsprodukterna')}
-    ${kpiTile('Godkända', Object.values(snap.products).reduce((s, x) => s + (x.byStatus.Approved ?? 0), 0))}
-    ${kpiTile('Utan Ansvarig', totUnass, `${Math.round(totUnass / totBriefs * 100)} % av alla briefer`,
-      'Ingen står som ansvarig i Notion — då går det inte att mäta vem som gjort vad.')}
+    ${kpiTile('Annonser totalt', tasks.length, 'i de 4 skalningsprodukterna')}
+    ${kpiTile('Godkända', tasks.filter(t => t.status === 'approved').length)}
+    ${kpiTile('Kvar att göra', open.length, 'draft + pågår + granskning')}
+    ${kpiTile('Utan Ansvarig', unass, `${Math.round(unass / tasks.length * 100)} % av alla`,
+      'Ingen står som Ansvarig i Notion — då går det inte att mäta vem som gjort vad.')}
   </div>
-  ${totUnass ? `<p class="warnline"><strong>${totUnass} av ${totBriefs} briefer saknar Ansvarig i Notion.</strong>
-     Så länge fältet är tomt kan systemet inte visa hur mycket varje redigerare jobbar. Det är den
-     enda ändringen som krävs i Notion för att KPI:erna ska bli verkliga.</p>` : ''}
-  ${table(rows, ['Produkt / Notion-databas', 'Briefer', 'Godkända', 'Pågår', 'I granskning', 'Draft', 'Ansvarig i Notion', 'Utan ansvarig'])}
+  ${table(rows, ['Produkt / Notion-databas', 'Totalt', 'Godkända', 'Pågår', 'Granskning', 'Draft', 'Kvar', 'Utan ansvarig'])}
+
+  <h3>Varje öppen annons</h3>
+  ${table(open.sort((a, b) => a.productId.localeCompare(b.productId) || a.title.localeCompare(b.title)).map(t => `
+    <tr>
+      <td>${badge(t)}</td>
+      <td><strong>${esc(t.title)}</strong></td>
+      <td>${esc(prodName(t.productId))}</td>
+      <td><span class="muted">${esc(t.notionStatus ?? '')}</span></td>
+      <td>${t.assignedEditorId ? esc(nameOf(t.assignedEditorId).split(' ')[0])
+            : '<span class="badge danger"><span aria-hidden="true">⚠</span> ingen</span>'}</td>
+      <td><a href="${esc(t.notionUrl ?? '#')}" target="_blank" rel="noopener">Öppna i Notion</a></td>
+    </tr>`), ['Status', 'Annons', 'Produkt', 'Notion-status', 'Ansvarig', 'Länk'])}
 </section>`;
 })();
 
@@ -293,7 +302,7 @@ const nav = `
 <nav class="tabs" role="tablist">
   <button class="tab active" data-target="attention">Uppmärksamhet <span class="count">${o.attention.length}</span></button>
   <button class="tab" data-target="overview">Översikt</button>
-  <button class="tab" data-target="notion">Notion</button>
+  <button class="tab" data-target="notion">Öppet arbete</button>
   <button class="tab" data-target="todo">Dagens lista</button>
   <button class="tab" data-target="review">Review-kö <span class="count">${o.inReview}</span></button>
   ${editors.map(e => `<button class="tab" data-target="editor-${e.id}">${esc(e.name.split(' ')[0])}</button>`).join('')}
