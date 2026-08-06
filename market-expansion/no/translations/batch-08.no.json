@@ -1,0 +1,239 @@
+{
+ "batch": 8,
+ "products": [
+  {
+   "handle": "led-ljusramp-10-20-tum-combo-beam-offroad",
+   "no": {
+    "title": "LED-lysbøyle 10/20 Tommer – Combo Beam Offroad",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Lys opp veien og terrenget</h2>\n<p>Når du kjører i mørket eller i terrenget, trenger du å se langt og bredt på samme tid. Vanlige lys strekker sjelden til når det virkelig gjelder.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/c7b44ae3-2910-4fe1-80ee-ceee2eb66378.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"LED-lysbøyle 10/20 tommer\"></p>\n<h3 style=\"font-size:19px;\">Combo beam for best mulig sikt</h3>\n<p>Denne lysbøylen finnes i 10 og 20 tommer og har combo beam som lyser både langt og bredt. Den drives av 12V eller 24V og passer de fleste kjøretøy.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/5af4b448-2674-42fe-8f85-952c27ce27eb.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Lysbøyle tent\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Combo beam – lyser langt og bredt</li>\n<li>Finnes i 10 og 20 tommer</li>\n<li>Drives av 12V eller 24V</li>\n<li>Robust og værbestandig</li>\n<li>Passer SUV, lastebil, båt og traktor</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/01f4d6f2-2ece-48cc-bfdc-529c25d20dc5.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Lysbøyle detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Belysning",
+    "tags": ["Arbeidslys", "Belysning", "Kjøretøy", "LED", "Offroad"],
+    "options": [{"name": "Title", "values": ["Default Title"]}],
+    "variants": [{"id": "gid://shopify/ProductVariant/65028799267165", "title": "Default Title", "selectedOptions": [{"name": "Title", "value": "Default Title"}]}],
+    "imagesAlt": ["LED-lysbøyle 10/20 tommer", "", "", "", ""],
+    "seo": {"title": "LED-lysbøyle 10/20 Tommer – Combo Beam Offroad", "description": "Kraftig LED-lysbøyle med combo beam som lyser langt og bredt. 12V/24V, tåler vær og vind. Passer bil, båt og traktor."}
+   },
+   "flags": ["JURIDISK GRANSKNING: Innehåller garantilöfte (\"30 dagars nöjd-kund-garanti\") – granska mot norsk angrerett/forbrukerkjøpslov."]
+  },
+  {
+   "handle": "led-ljuslist-20-4-pods-komplett-offroad-kit",
+   "no": {
+    "title": "LED-lyslist 20\" + 4\" Pods – Komplett Offroad-Kit",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Komplett lyspakke for terrenget</h2>\n<p>Å kjøre i mørket eller i terrenget krever skikkelig med lys rundt hele kjøretøyet. Å kjøpe alt separat blir både dyrt og tungvint.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/8b40c5b9-09d8-4c78-980e-22029b7b07b2.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"LED-lyslist 20 tommer med pods\"></p>\n<h3 style=\"font-size:19px;\">Lyslist og pods i ett kit</h3>\n<p>Dette kittet inneholder en 20 tommers lyslist og to 4 tommers pods med kabling og bryter. Du får både hovedlys og ekstralys i én og samme pakke.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/a6079f14-3b16-4572-9138-4b64f3d5462b.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Lyslist og pods\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>20 tommers lyslist og to 4 tommers pods</li>\n<li>Kabling og bryter inkludert</li>\n<li>Sterkt og tydelig LED-lys</li>\n<li>Robust for terrengbruk</li>\n<li>Passer terrengkjøretøy, UTV, lastebil og båt</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/e45d46c5-9f9d-4596-881a-f978d3004685.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Lyskit detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Belysning",
+    "tags": ["Arbeidslys", "Belysning", "Kjøretøy", "LED", "Offroad"],
+    "options": [{"name": "Title", "values": ["Default Title"]}],
+    "variants": [{"id": "gid://shopify/ProductVariant/65028799463773", "title": "Default Title", "selectedOptions": [{"name": "Title", "value": "Default Title"}]}],
+    "imagesAlt": ["LED-lyslist 20 tommer med pods", "", "", "", ""],
+    "seo": {"title": "LED-lyslist 20\"+4\" Pods – Komplett Offroad-Kit", "description": "Komplett lyspakke med 20\" lyslist og to 4\" pods, kabling og bryter inkludert. Sterkt LED-lys for terrengkjøretøy og lastebil."}
+   },
+   "flags": ["JURIDISK GRANSKNING: Innehåller garantilöfte (\"30 dagars nöjd-kund-garanti\") – granska mot norsk angrerett/forbrukerkjøpslov."]
+  },
+  {
+   "handle": "bensindunk-3l-lasbar-reservtank-for-mc",
+   "no": {
+    "title": "Bensinkanne 3L Låsbar – Reservetank for MC",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Slipp å stå stille med tom tank</h2>\n<p>Å gå tom for bensin på motorsykkelen er både stressende og kan ødelegge hele turen. En reservetank gir trygghet når nærmeste bensinstasjon er langt unna.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/6d664920-57c4-40ef-965b-06bf7a743e65.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Bensinkanne 3L låsbar\"></p>\n<h3 style=\"font-size:19px;\">3 liter reserve som kan låses</h3>\n<p>Denne slanke bensinkannen rommer 3 liter og er låsbar for bedre sikkerhet. Den er bærbar og passer å ta med på lengre turer.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/6c845d75-f622-4cb3-ba69-5bb24708c47e.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Bensinkanne i bruk\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Rommer 3 liter</li>\n<li>Låsbar for bedre sikkerhet</li>\n<li>Slank og bærbar design</li>\n<li>Antistatisk beholder</li>\n<li>God reserve for motorsykkel og lengre turer</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/6304ec1c-bc01-4511-91fb-8867eb7685e6.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Bensinkanne detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Kjøretøy",
+    "tags": ["Bensinkanne", "Kjøretøy", "MC", "Motorsykkel", "Reservetank"],
+    "options": [{"name": "Title", "values": ["Default Title"]}],
+    "variants": [{"id": "gid://shopify/ProductVariant/65028799955293", "title": "Default Title", "selectedOptions": [{"name": "Title", "value": "Default Title"}]}],
+    "imagesAlt": ["Bensinkanne 3L låsbar", "", "", "", ""],
+    "seo": {"title": "Bensinkanne 3L Låsbar – Reservetank for MC", "description": "Låsbar 3-liters bensinkanne som reserve for motorsykkel. Slank, bærbar og antistatisk – trygghet når du er langt fra stasjonen."}
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Innehåller garantilöfte (\"30 dagars nöjd-kund-garanti\") – granska mot norsk angrerett/forbrukerkjøpslov.",
+    "JURIDISK GRANSKNING: Innehåller säkerhetspåstående (\"bättre säkerhet\") i produkttexten – verifiera innan publicering."
+   ]
+  },
+  {
+   "handle": "mc-led-blinkers-4-pack-micro-amber-12v",
+   "no": {
+    "title": "MC LED-blinklys 4-Pakning – Micro Amber 12V",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Bli tydelig sett i trafikken</h2>\n<p>Små eller ødelagte blinklys gjør at andre trafikanter ikke ser når du svinger. Tydelige blinklys er en enkel, men viktig sikkerhetsdetalj.</p>\n<p><img src=\"https://img.kwcdn.com/product/open/89e6bca5adba4059984fcc3bccf9290c-goods.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"MC LED-blinklys 4-pakning\"></p>\n<h3 style=\"font-size:19px;\">Sterke LED-blinklys i 4-pakning</h3>\n<p>Disse blinklysene har sterke amber-lysende LED og kommer i en 4-pakning. De er små og stilige og passer de fleste motorsykler med 12V.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/71b8888a-5990-434d-b9e5-8d93d6d4bcf0.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Blinklys tent\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Sterkt amber LED-lys</li>\n<li>4-pakning – foran og bak</li>\n<li>Små og stilige</li>\n<li>Passer 12V</li>\n<li>Universelle for de fleste motorsykler</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/open/81f07ab330ca4ec6a502efdae2959471-goods.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Blinklys detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Belysning",
+    "tags": ["Belysning", "Blinklys", "Kjøretøy", "LED", "Motorsykkel"],
+    "options": [{"name": "Title", "values": ["Default Title"]}],
+    "variants": [{"id": "gid://shopify/ProductVariant/65028801200477", "title": "Default Title", "selectedOptions": [{"name": "Title", "value": "Default Title"}]}],
+    "imagesAlt": ["MC LED-blinklys 4-pakning", "", "", "", ""],
+    "seo": {"title": "MC LED-blinklys 4-Pakning – Micro Amber 12V", "description": "Sterke amber LED-blinklys i 4-pakning for motorsykkel. Kompakte og lett synlige – passer de fleste MC med 12V."}
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Innehåller garantilöfte (\"30 dagars nöjd-kund-garanti\") – granska mot norsk angrerett/forbrukerkjøpslov.",
+    "JURIDISK GRANSKNING: Innehåller säkerhetspåstående (\"viktig säkerhetsdetalj\") i produkttexten – verifiera innan publicering."
+   ]
+  },
+  {
+   "handle": "arbetsljusramp-120w-7-led-spot-flood",
+   "no": {
+    "title": "Arbeidslysbøyle 120W – 7 LED Spot & Flood",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Sterkt arbeidslys når du trenger det</h2>\n<p>Å jobbe eller kjøre i mørket uten skikkelig lys er både vanskelig og utrygt. Et godt arbeidslys gjør stor forskjell i terrenget og på gården.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/5ec7cdff-6d00-47db-a4a4-4ef944242d84.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Arbeidslysbøyle 120W 7 LED\"></p>\n<h3 style=\"font-size:19px;\">120W med spot og flood</h3>\n<p>Denne arbeidslysbøylen har 7 LED og 120W effekt med både spot- og floodlys. Den lyser sterkt og passer terrengkjøretøy, SUV og lastebil.</p>\n<p><img src=\"https://img.kwcdn.com/product/open/2023-04-20/1681956597937-9fb1e34a3d4642fdaf770057f8251efb-goods.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Arbeidslys tent\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>120W med 7 LED</li>\n<li>Kombinerer spot- og floodlys</li>\n<li>Sterkt og tydelig lys</li>\n<li>Robust for terrengbruk</li>\n<li>Passer terrengkjøretøy, SUV og lastebil</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/open/2023-04-20/1681956598453-9fabed7ef14642c5b2a17dcf49d069e9-goods.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Arbeidslys detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Belysning",
+    "tags": ["Arbeidslys", "Belysning", "Kjøretøy", "LED", "Offroad"],
+    "options": [{"name": "Title", "values": ["Default Title"]}],
+    "variants": [{"id": "gid://shopify/ProductVariant/65028801790301", "title": "Default Title", "selectedOptions": [{"name": "Title", "value": "Default Title"}]}],
+    "imagesAlt": ["Arbeidslysbøyle 120W 7 LED", "", "", "", ""],
+    "seo": {"title": "Arbeidslysbøyle 120W – 7 LED Spot & Flood", "description": "Kraftig 120W arbeidslys med spot og flood i én bøyle. Sterkt, tydelig lys for terrengkjøretøy, SUV og lastebil."}
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Innehåller garantilöfte (\"30 dagars nöjd-kund-garanti\") – granska mot norsk angrerett/forbrukerkjøpslov.",
+    "JURIDISK GRANSKNING: Innehåller säkerhetspåstående (\"osäkert\" utan lys) i produkttexten – verifiera innan publicering."
+   ]
+  },
+  {
+   "handle": "led-arbetsbelysning-4-pack-3-3-spotlight-12-24v",
+   "no": {
+    "title": "LED-arbeidsbelysning 4-Pakning – 3,3\" Spotlight 12/24V",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Ekstralys rundt hele kjøretøyet</h2>\n<p>Ett enkelt lys er sjelden nok til å lyse opp alt rundt kjøretøyet. Med flere mindre lamper får du lys akkurat der du trenger det.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/a8db1f18-cb1c-44f6-a661-aaa86ff88dd3.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"LED-arbeidsbelysning 4-pakning\"></p>\n<h3 style=\"font-size:19px;\">Fire kompakte spotlights</h3>\n<p>Denne 4-pakningen med 3,3 tommers LED-lamper gir sterkt spotlys og drives av 12V eller 24V. De er små, robuste og enkle å montere på flere steder.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/145f179e-7afe-4492-9429-5e6954cbbe51.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Arbeidsbelysning tent\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>4-pakning med 3,3 tommers LED-lamper</li>\n<li>Sterkt spotlys</li>\n<li>Drives av 12V eller 24V</li>\n<li>Vanntette og robuste</li>\n<li>Passer jeep, lastebil, 4x4 og SUV</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/122b2a12-28cd-4a3e-98ab-3199cd50dc33.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Arbeidsbelysning detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Belysning",
+    "tags": ["Arbeidslys", "Belysning", "Kjøretøy", "LED", "Offroad"],
+    "options": [{"name": "Title", "values": ["Default Title"]}],
+    "variants": [{"id": "gid://shopify/ProductVariant/65028801986909", "title": "Default Title", "selectedOptions": [{"name": "Title", "value": "Default Title"}]}],
+    "imagesAlt": ["LED-arbeidsbelysning 4-pakning", "", "", "", ""],
+    "seo": {"title": "LED-arbeidsbelysning 4-Pakning – 3,3\" Spotlight", "description": "4-pakning med kompakte 3,3\" LED-spotlys. Vanntette og robuste, drives av 12V eller 24V. Passer jeep, 4x4, SUV og lastebil."}
+   },
+   "flags": ["JURIDISK GRANSKNING: Innehåller garantilöfte (\"30 dagars nöjd-kund-garanti\") – granska mot norsk angrerett/forbrukerkjøpslov."]
+  },
+  {
+   "handle": "grilllampor-led-3-pack-ytmonterade-12v",
+   "no": {
+    "title": "LED-grillelys 3-Pakning – Utenpåmontert 12V",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Ekstra lys i grillen på kjøretøyet</h2>\n<p>Grillelys og markeringslys gjør kjøretøyet både penere og mer synlig. Slitte eller manglende lys trekker ned både utseende og sikkerhet.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/cd3a7716-fecc-4b43-96a3-4780e2c040f1.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"LED-grillelys 3-pakning\"></p>\n<h3 style=\"font-size:19px;\">Tre lys som er enkle å montere</h3>\n<p>Denne 3-pakningen med utenpåmonterte LED-lys drives av 12V og er enkel å installere. De gir et tydelig lys og passer de fleste kjøretøy.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/4b336c42-9e4f-4fe6-8538-804814669d11.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Grillelys tent\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>3-pakning utenpåmonterte LED-lys</li>\n<li>Drives av 12V</li>\n<li>Enkle å montere</li>\n<li>Tydelig og jevnt lys</li>\n<li>Egner seg som grille- og markeringslys</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/ca15d936-b3ec-45e6-b48f-82593752b906.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Grillelys detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Belysning",
+    "tags": ["Belysning", "Ekstralys", "Kjøretøy", "Grill", "LED"],
+    "options": [{"name": "Title", "values": ["Default Title"]}],
+    "variants": [{"id": "gid://shopify/ProductVariant/65028802249053", "title": "Default Title", "selectedOptions": [{"name": "Title", "value": "Default Title"}]}],
+    "imagesAlt": ["LED-grillelys 3-pakning", "", "", "", ""],
+    "seo": {"title": "LED-grillelys 3-Pakning – Utenpåmontert 12V", "description": "3-pakning utenpåmonterte LED-grillelys for 12V. Enkle å montere, gir tydelig lys og gjør kjøretøyet mer synlig."}
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Innehåller garantilöfte (\"30 dagars nöjd-kund-garanti\") – granska mot norsk angrerett/forbrukerkjøpslov.",
+    "JURIDISK GRANSKNING: Innehåller säkerhetspåstående (\"säkerhet\" utan lampor) i produkttexten – verifiera innan publicering."
+   ]
+  },
+  {
+   "handle": "led-arbetslampor-90w-7-9-for-lastbil-traktor",
+   "no": {
+    "title": "LED-arbeidslys 90W – 7–9\" for Lastebil & Traktor",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Kraftig lys for tunge kjøretøy</h2>\n<p>Lastebiler, traktorer og båter trenger sterkt lys for å jobbe trygt i mørket. Svake lys gjør både arbeidet og kjøringen vanskeligere.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/efe37e19-dd26-4082-bac2-097eb4300a4b.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"LED-arbeidslys 90W\"></p>\n<h3 style=\"font-size:19px;\">90W sterkt lys i 7–9 tommer</h3>\n<p>Disse arbeidslysene har 90W effekt og finnes i 7 til 9 tommer. De gir et kraftig lyskasterlys og drives av 24V – perfekt for tunge kjøretøy.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/c525bb1d-0268-414d-8cb3-9f8f377872f6.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Arbeidslys tent\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>90W kraftig lys</li>\n<li>Finnes i 7 til 9 tommer</li>\n<li>Drives av 24V</li>\n<li>Robust og værbestandig</li>\n<li>Passer lastebil, traktor, båt og jeep</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/cb71c301-6ec0-45d6-8747-6a4547384960.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Arbeidslys detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Belysning",
+    "tags": ["Arbeidslys", "Belysning", "Kjøretøy", "Lastebil", "LED"],
+    "options": [{"name": "Title", "values": ["Default Title"]}],
+    "variants": [{"id": "gid://shopify/ProductVariant/65028802609501", "title": "Default Title", "selectedOptions": [{"name": "Title", "value": "Default Title"}]}],
+    "imagesAlt": ["LED-arbeidslys 90W", "", "", "", ""],
+    "seo": {"title": "LED-arbeidslys 90W – 7–9\" for Lastebil & Traktor", "description": "Kraftige 90W LED-arbeidslys i 7–9\", drives av 24V. Sterkt lyskasterlys for lastebil, traktor, båt og jeep."}
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Innehåller garantilöfte (\"30 dagars nöjd-kund-garanti\") – granska mot norsk angrerett/forbrukerkjøpslov.",
+    "JURIDISK GRANSKNING: Innehåller säkerhetspåstående (\"jobba säkert i mörker\") i produkttexten – verifiera innan publicering."
+   ]
+  },
+  {
+   "handle": "varningsljusramp-38-barnstens-vit-for-lastbil",
+   "no": {
+    "title": "Varsellysbøyle 38\" – Rav/Hvit for Lastebil",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Bli sett og varsle på arbeidsplassen</h2>\n<p>På byggeplassen og i trafikken er det viktig at tunge kjøretøy er tydelig synlige. Gode varsellys øker sikkerheten for både fører og omgivelser.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/125fa2b7-f544-4173-bc47-4cce5cf02298.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Varsellysbøyle 38 tommer\"></p>\n<h3 style=\"font-size:19px;\">38 tommer med rav og hvitt lys</h3>\n<p>Denne lyslisten er 38 tommer lang og lyser i både ravfarge og hvitt. Den er laget for bygg- og sikkerhetsbelysning på lastebiler.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/4fb99208-dc5b-4b02-b939-f4bd32082d82.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Varsellys tent\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>38 tommer lang lyslist</li>\n<li>Ravfarget og hvitt lys</li>\n<li>For bygg- og sikkerhetsbelysning</li>\n<li>Robust og værbestandig</li>\n<li>Passer lastebil og arbeidskjøretøy</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/43589d95-6f4f-42cd-808e-cb4060f0e6e3.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Varsellys detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Belysning",
+    "tags": ["Belysning", "Kjøretøy", "Lastebil", "LED", "Varsellys"],
+    "options": [{"name": "Title", "values": ["Default Title"]}],
+    "variants": [{"id": "gid://shopify/ProductVariant/65028805394781", "title": "Default Title", "selectedOptions": [{"name": "Title", "value": "Default Title"}]}],
+    "imagesAlt": ["Varsellysbøyle 38 tommer", "", "", "", ""],
+    "seo": {"title": "Varsellysbøyle 38\" – Rav/Hvit for Lastebil", "description": "38\" varsellysbøyle med rav og hvitt lys for bygg- og sikkerhetsbelysning. Robust og værbestandig – gjør kjøretøy godt synlige."}
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Innehåller garantilöfte (\"30 dagars nöjd-kund-garanti\") – granska mot norsk angrerett/forbrukerkjøpslov.",
+    "JURIDISK GRANSKNING: Innehåller flera säkerhetspåståenden (\"ökar säkerheten\", säkerhetsbelysning) i produkttexten – verifiera innan publicering."
+   ]
+  },
+  {
+   "handle": "sidoljus-led-4-pack-extraljus-for-lastbil",
+   "no": {
+    "title": "Sidelys LED 4-Pakning – Ekstralys for Lastebil",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Tydelige sidelys for lastebilen</h2>\n<p>Små ekstralys gjør lastebilen både penere og mer synlig i mørket. Manglende eller ødelagte lys trekker ned både utseende og sikkerhet.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/b9927c12-9041-4b3a-9e8f-e35a35ad0fa5.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sidelys LED 4-pakning\"></p>\n<h3 style=\"font-size:19px;\">Fire lys i rødt, hvitt og gult</h3>\n<p>Denne 4-pakningen med doble LED gir et tydelig skinn i flere farger. De er små, robuste og enkle å montere på lastebiler og terrengkjøretøy.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/29af6294-c520-4c63-ad97-8653e3fb603f.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sidelys tent\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>4-pakning med doble LED</li>\n<li>Tydelig skinn i flere farger</li>\n<li>Små og robuste</li>\n<li>Enkle å montere</li>\n<li>Passer lastebil og terrengkjøretøy</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/b00e0d5b-a906-4e61-911a-4cc37609880a.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sidelys detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Belysning",
+    "tags": ["Belysning", "Kjøretøy", "Lastebil", "LED", "Markeringslys"],
+    "options": [{"name": "Title", "values": ["Default Title"]}],
+    "variants": [{"id": "gid://shopify/ProductVariant/65028805689693", "title": "Default Title", "selectedOptions": [{"name": "Title", "value": "Default Title"}]}],
+    "imagesAlt": ["Sidelys LED 4-pakning", "", "", "", ""],
+    "seo": {"title": "Sidelys LED 4-Pakning – Ekstralys for Lastebil", "description": "4-pakning doble LED-sidelys i rødt, hvitt og gult. Robuste og enkle å montere – gjør lastebilen mer synlig i mørket."}
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Innehåller garantilöfte (\"30 dagars nöjd-kund-garanti\") – granska mot norsk angrerett/forbrukerkjøpslov.",
+    "JURIDISK GRANSKNING: Innehåller säkerhetspåstående (\"säkerhet\" utan lampor) i produkttexten – verifiera innan publicering."
+   ]
+  },
+  {
+   "handle": "sidomarkeringsljus-led-20-pack-12v-for-bil-lastbil",
+   "no": {
+    "title": "Sidemarkeringslys LED 20-Pakning – 12V for Bil & Lastebil",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Fullt sett med markeringslys</h2>\n<p>Markeringslys gjør kjøretøyet synlig fra siden og øker sikkerheten. Å kjøpe dem ett og ett blir både dyrt og tidkrevende.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/299d36cf-fe2c-4439-a4c9-e40a4b8600d7.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sidemarkeringslys LED 20-pakning\"></p>\n<h3 style=\"font-size:19px;\">20 lys i én pakke</h3>\n<p>Denne 20-pakningen med runde 12V LED-lys rekker til hele kjøretøyet. De er små, robuste og enkle å montere på bil, lastebil og tilhenger.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/2eb56dae-bee1-4742-ab69-73d98923a8a0.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Markeringslys tent\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>20-pakning runde LED-lys</li>\n<li>Drives av 12V</li>\n<li>Små og robuste</li>\n<li>Enkle å montere</li>\n<li>Passer bil, lastebil og tilhenger</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/90f364f3-ee84-48da-82a1-35d8cfe1d54e.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Markeringslys detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Belysning",
+    "tags": ["Belysning", "Kjøretøy", "Lastebil", "LED", "Markeringslys"],
+    "options": [{"name": "Title", "values": ["Default Title"]}],
+    "variants": [{"id": "gid://shopify/ProductVariant/65028806050141", "title": "Default Title", "selectedOptions": [{"name": "Title", "value": "Default Title"}]}],
+    "imagesAlt": ["Sidemarkeringslys LED 20-pakning", "", "", "", ""],
+    "seo": {"title": "Sidemarkeringslys LED 20-Pakning – 12V", "description": "20-pakning runde 12V LED-markeringslys. Robuste og enkle å montere på bil, lastebil og tilhenger – mer synlig kjøretøy."}
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Innehåller garantilöfte (\"30 dagars nöjd-kund-garanti\") – granska mot norsk angrerett/forbrukerkjøpslov.",
+    "JURIDISK GRANSKNING: Innehåller säkerhetspåstående (\"ökar säkerheten\") i produkttexten – verifiera innan publicering."
+   ]
+  },
+  {
+   "handle": "cargoshorts-3-pack-avslappnade-herrshorts-med-fickor",
+   "no": {
+    "title": "Cargoshorts 3-Pakning – Avslappede Herreshorts med Lommer",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Tre par gode shorts – klare for sommeren</h2>\n<p>Gode hverdagsshorts går fort tomt for i garderoben. Å finne et par som både sitter godt og tåler litt mer, er vanskeligere enn man skulle tro.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/89b3b75e-340b-4027-b043-f6496877f18d.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Cargoshorts 3-pakning herre\"></p>\n<h3 style=\"font-size:19px;\">Slitesterkt stoff med god plass til lommer</h3>\n<p>Disse cargoshortsene kommer i en 3-pakning og er laget av et slitesterkt og strukturert stoff. De romslige lommene gjør dem både praktiske og behagelige for hverdag og friluftsliv.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/a0a6d209-c313-4e75-a135-e01d0da682de.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Cargoshorts detalj\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>3 par i ett kjøp</li>\n<li>Slitesterkt og strukturert stoff</li>\n<li>Flere romslige lommer</li>\n<li>Avslappet passform</li>\n<li>Perfekte for sommer og hverdag</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/c05ae665-3de4-477d-8ab4-c87c82ed7232.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Cargoshorts lommer\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Klær",
+    "tags": ["Cargoshorts", "Herre", "Klær", "Shorts", "Sommer"],
+    "options": [{"name": "Størrelse", "values": ["3XL", "2XL", "XL", "L", "M", "S"]}],
+    "variants": [
+     {"id": "gid://shopify/ProductVariant/65429025522013", "title": "3XL", "selectedOptions": [{"name": "Størrelse", "value": "3XL"}]},
+     {"id": "gid://shopify/ProductVariant/65429025554781", "title": "2XL", "selectedOptions": [{"name": "Størrelse", "value": "2XL"}]},
+     {"id": "gid://shopify/ProductVariant/65429025587549", "title": "XL", "selectedOptions": [{"name": "Størrelse", "value": "XL"}]},
+     {"id": "gid://shopify/ProductVariant/65429025620317", "title": "L", "selectedOptions": [{"name": "Størrelse", "value": "L"}]},
+     {"id": "gid://shopify/ProductVariant/65429025653085", "title": "M", "selectedOptions": [{"name": "Størrelse", "value": "M"}]},
+     {"id": "gid://shopify/ProductVariant/65429025685853", "title": "S", "selectedOptions": [{"name": "Størrelse", "value": "S"}]}
+    ],
+    "imagesAlt": ["Cargoshorts 3-pakning herre", "", "", "", ""],
+    "seo": {"title": "Cargoshorts 3-Pakning – Avslappede Herreshorts", "description": "3-pakning slitesterke cargoshorts med romslige lommer og avslappet passform. Perfekte for sommer og hverdag."}
+   },
+   "flags": ["JURIDISK GRANSKNING: Innehåller garantilöfte (\"30 dagars nöjd-kund-garanti\") – granska mot norsk angrerett/forbrukerkjøpslov."]
+  },
+  {
+   "handle": "lattviktsryggsack-vandringsvaska-med-stavfaste",
+   "no": {
+    "title": "Lettvektsryggsekk – Turveske med Stavfeste",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">En lett ryggsekk for lange turer</h2>\n<p>På tur vil du ha med det du trenger uten å slepe på unødvendig vekt. En tung eller ubekvem ryggsekk gjør turen mer slitsom enn den trenger å være.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/27939899-96d8-4b61-8a59-8fb3ae5e27bb.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Lettvektsryggsekk vandring\"></p>\n<h3 style=\"font-size:19px;\">Lett, romslig og gjennomtenkt</h3>\n<p>Denne ryggsekken er lett å bære, men rommer likevel mye. Den har feste for turstaver og flere rom som holder orden på pakkingen.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/26224ddc-9e30-4600-91bb-5bf16defce42.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Ryggsekk detalj\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Lett å bære selv fullpakket</li>\n<li>Feste for turstaver</li>\n<li>Flere rom for god orden</li>\n<li>Behagelige skulderstropper</li>\n<li>Passer vandring, klatring og friluftsliv</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/0b745bba-7873-4943-8822-90a1c79b9264.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Ryggsekk rom\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Vesker",
+    "tags": ["Camping", "Friluftsliv", "Ryggsekk", "Vandring", "Veske"],
+    "options": [{"name": "Farge", "values": ["Blå", "Grønn", "Oransje", "Svart", "Rød", "Marineblå"]}],
+    "variants": [
+     {"id": "gid://shopify/ProductVariant/65483066212701", "title": "Blå", "selectedOptions": [{"name": "Farge", "value": "Blå"}]},
+     {"id": "gid://shopify/ProductVariant/65483066245469", "title": "Grønn", "selectedOptions": [{"name": "Farge", "value": "Grønn"}]},
+     {"id": "gid://shopify/ProductVariant/65483066311005", "title": "Oransje", "selectedOptions": [{"name": "Farge", "value": "Oransje"}]},
+     {"id": "gid://shopify/ProductVariant/65483066343773", "title": "Svart", "selectedOptions": [{"name": "Farge", "value": "Svart"}]},
+     {"id": "gid://shopify/ProductVariant/65483066376541", "title": "Rød", "selectedOptions": [{"name": "Farge", "value": "Rød"}]},
+     {"id": "gid://shopify/ProductVariant/65483125915997", "title": "Marineblå", "selectedOptions": [{"name": "Farge", "value": "Marineblå"}]}
+    ],
+    "imagesAlt": ["Lettvektsryggsekk vandring", "", "", "", ""],
+    "seo": {"title": "Lettvektsryggsekk – Turveske med Stavfeste", "description": "Lett og romslig turryggsekk med feste for turstaver og flere rom. Behagelige stropper – perfekt for vandring og friluftsliv."}
+   },
+   "flags": ["JURIDISK GRANSKNING: Innehåller garantilöfte (\"30 dagars nöjd-kund-garanti\") – granska mot norsk angrerett/forbrukerkjøpslov."]
+  },
+  {
+   "handle": "tvattpase-for-skor-skyddar-sneakers-i-maskinen",
+   "no": {
+    "title": "Vaskepose for Sko – Beskytter Sneakers i Maskinen",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Vask skoene – uten å ødelegge maskinen</h2>\n<p>Å vaske sko løst i maskinen gjør at de slår hardt mot trommelen. Det sliter både på skoene og på vaskemaskinen.</p>\n<p><img src=\"https://img.kwcdn.com/product/open/0189276f3ee74de4a50705d3663a4a85-goods.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Vaskepose for sko\"></p>\n<h3 style=\"font-size:19px;\">Beskytter både sko og maskin</h3>\n<p>Denne vaskeposen har et beskyttende innermateriale og en glidelås som holder skoene på plass. Både skoene og maskinen skånes mens de blir rene.</p>\n<p><img src=\"https://img.kwcdn.com/product/201365d3714/96432b3f-9d7f-4702-bcaa-ea450c120eb9_1000x1000.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Vaskepose detalj\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Beskyttende innermateriale</li>\n<li>Glidelås som holder skoene på plass</li>\n<li>Skåner både sko og maskin</li>\n<li>Passer de fleste skotyper</li>\n<li>Gjenbrukbar og holdbar</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/201365d3714/92d2af54-53af-49d8-ba3f-53be00264340_1000x1000.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Vaskepose med sko\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Vasketilbehør",
+    "tags": ["Husholdning", "Sko", "Sneakers", "Vask", "Vaskepose"],
+    "options": [{"name": "Title", "values": ["Default Title"]}],
+    "variants": [{"id": "gid://shopify/ProductVariant/65337501843805", "title": "Default Title", "selectedOptions": [{"name": "Title", "value": "Default Title"}]}],
+    "imagesAlt": ["Vaskepose for sko", "", "", "", ""],
+    "seo": {"title": "Vaskepose for Sko – Beskytter Sneakers i Maskinen", "description": "Vaskepose med beskyttende innermateriale og glidelås. Skåner både sko og vaskemaskin – passer de fleste skotyper."}
+   },
+   "flags": ["JURIDISK GRANSKNING: Innehåller garantilöfte (\"30 dagars nöjd-kund-garanti\") – granska mot norsk angrerett/forbrukerkjøpslov."]
+  }
+ ]
+}

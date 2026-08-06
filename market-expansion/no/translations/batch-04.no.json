@@ -1,0 +1,361 @@
+{
+  "batch": 4,
+  "products": [
+    {
+      "handle": "spolklamma-for-batmotor-testvattenklamma",
+      "no": {
+        "title": "Spyleklemme for Båtmotor – Testvannsklemme",
+        "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Spyl motoren ren – enkelt og på land</h2>\n<p>Salt, sand og alger sliter hardt på en båtmotors kjølesystem. Å ikke skylle motoren etter sjøen er en av de vanligste årsakene til dyre reparasjoner.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/3c12e84b-6e72-4fff-a771-5a93143813f7.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Spyleklemme for båtmotor\"></p>\n<h3 style=\"font-size:19px;\">Koble på slangen og start motoren</h3>\n<p>Spyleklemmen festes enkelt over motorens vanninntak og kobles til hageslangen. Da kan du spyle kjølesystemet rent med ferskvann direkte på land, helt uten å sjøsette båten.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/e37c105c-4a4d-424f-8f7e-87964c120ae9.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Spyleklemme i bruk\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Gjør det enkelt å skylle motoren med ferskvann</li>\n<li>Kobles direkte til vanlig hageslange</li>\n<li>Beskytter kjølesystemet mot salt og korrosjon</li>\n<li>Passer de fleste utenbordsmotorer og klemmes godt fast</li>\n<li>Forlenger motorens levetid</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/b60c2e2d-2ca3-469e-8cc6-ba1be3eac13e.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Spyleklemme detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så ordner vi det – uten krøll.</p>\n</div>",
+        "productType": "Båt & Marin",
+        "tags": ["Båt", "Marin", "Motor", "Spyling", "Vedlikehold"],
+        "options": [{"name": "Title", "values": ["Default Title"]}],
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/65028507730269",
+            "title": "Default Title",
+            "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+          }
+        ],
+        "imagesAlt": ["Spyleklemme for båtmotor", "", "", "", ""],
+        "seo": {
+          "title": "Spyleklemme for Båtmotor – Skyll Kjølesystemet",
+          "description": "Skyll båtmotorens kjølesystem rent med ferskvann uten å sjøsette båten. Enkel montering som beskytter mot salt og korrosjon."
+        }
+      },
+      "flags": ["JURIDISK GRANSKNING: garantiløfte (30 dagers fornøyd-kunde-garanti) i produktbeskrivelsen"]
+    },
+    {
+      "handle": "borstset-6-delar-mjuka-borstar-for-bil-bat-hem",
+      "no": {
+        "title": "Børstesett 6 Deler – Myke Børster for Bil, Båt & Hjem",
+        "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Nå inn i hver krik og krok – uten å ripe</h2>\n<p>Ventiler, felger, sømmer og trange hjørner er nesten umulig å få rene med en klut. Og feil børste kan lett ripe opp lakk og sensitive overflater.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/0000e2df-9390-43b5-bfaa-011068263133.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Børstesett 6 deler\"></p>\n<h3 style=\"font-size:19px;\">Seks børster for alle overflater</h3>\n<p>Settet inneholder seks myke børster i ulike størrelser med forlengelsestilbehør. De myke bustene rengjør effektivt uten å skade lakk, interiør eller plast. Perfekt for bil, båt, sko, kjøkken og vinduer.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/7a871de4-e4ed-44a3-ab23-d7a7b2d3c0c2.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Børster i ulike størrelser\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Seks børster i ulike størrelser for alle overflater</li>\n<li>Myke buster som ikke riper lakk og plast</li>\n<li>Forlengelsestilbehør for vanskelig tilgjengelige steder</li>\n<li>For bil, båt, seter, matter, sko og vinduer</li>\n<li>Behagelige grep som gjør rengjøringen enklere</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/7ec112e0-0ce4-4e86-adab-ecbb1d07ba85.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Børstesett detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så ordner vi det – uten krøll.</p>\n</div>",
+        "productType": "Rengjøring",
+        "tags": ["Bil", "Børste", "Båt", "Detailing", "Rengjøring"],
+        "options": [{"name": "Title", "values": ["Default Title"]}],
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/65028523852125",
+            "title": "Default Title",
+            "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+          }
+        ],
+        "imagesAlt": ["Børstesett 6 deler", "", "", "", ""],
+        "seo": {
+          "title": "Børstesett 6 Deler – Myke Børster for Bil & Båt",
+          "description": "Seks myke børster i ulike størrelser rengjør skånsomt uten å ripe lakk, interiør eller plast. Perfekt for bil, båt og hjem."
+        }
+      },
+      "flags": ["JURIDISK GRANSKNING: garantiløfte (30 dagers fornøyd-kunde-garanti) i produktbeskrivelsen"]
+    },
+    {
+      "handle": "motorholje-for-utombordare-taligt-skydd",
+      "no": {
+        "title": "Motortrekk for Utenbordsmotor – Slitesterk Beskyttelse",
+        "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Beskytt motoren mellom turene</h2>\n<p>Sol, regn og støv sliter på utenbordsmotoren når den står ubrukt. Et ubeskyttet motordeksel blir raskt blekt, skittent og utsatt for fukt.</p>\n<p><img src=\"https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/5356038fe3c34db47ab9c207eff55e6e.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Motortrekk utenbordsmotor\"></p>\n<h3 style=\"font-size:19px;\">Slitesterkt stoff som holder tett</h3>\n<p>Motortrekket er sydd i tykt, vanntett polyesterstoff som beskytter mot vær og vind. Den elastiske kanten holder trekket på plass selv i vind og gjør det enkelt å ta av og på.</p>\n<p><img src=\"https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/b5b9f0ca0b7dc24dcca0e6d56b2dce81.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Motortrekk på motor\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Tykt og vanntett polyesterstoff</li>\n<li>Beskytter mot sol, regn, støv og fukt</li>\n<li>Elastisk kant som sitter godt fast i vind</li>\n<li>Passer motorer i flere størrelser</li>\n<li>Lett å ta av og på ved bruk</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/7e95b916-ec39-464a-990c-737ffa20ae7e.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Motortrekk detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så ordner vi det – uten krøll.</p>\n</div>",
+        "productType": "Båt & Marin",
+        "tags": ["Båt", "Oppbevaring", "Marin", "Motor", "Beskyttelse"],
+        "options": [{"name": "Title", "values": ["Default Title"]}],
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/65028537975133",
+            "title": "Default Title",
+            "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+          }
+        ],
+        "imagesAlt": ["Motortrekk utenbordsmotor", "", "", "", ""],
+        "seo": {
+          "title": "Motortrekk for Utenbordsmotor – Slitesterk Beskyttelse",
+          "description": "Beskytt utenbordsmotoren mot sol, regn og fukt med et slitesterkt polyestertrekk som sitter godt fast selv i vind."
+        }
+      },
+      "flags": ["JURIDISK GRANSKNING: garantiløfte (30 dagers fornøyd-kunde-garanti) i produktbeskrivelsen"]
+    },
+    {
+      "handle": "batsitsoverdrag-210d-vadertaligt-stolsskydd",
+      "no": {
+        "title": "Båtsetetrekk 210D – Værbestandig Setebeskyttelse",
+        "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Hold båtsetet som nytt</h2>\n<p>Sol og regn bryter raskt ned båtens seter. Stoffet blekner, og setet blir slitt allerede etter én sesong ute.</p>\n<p><img src=\"https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/c063a45aa6255095347f0a9b94df50ac.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Båtsetetrekk 210D\"></p>\n<h3 style=\"font-size:19px;\">Slitesterkt 210D-stoff som beskytter</h3>\n<p>Trekket er laget av kraftig 210D-stoff som tåler både sol og fukt. Det trekkes enkelt over setet og holder det rent, tørt og beskyttet mellom turene.</p>\n<p><img src=\"https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/ea2592c3d5b65f7be1a9349b680e6ff2.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Setetrekk på sete\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Kraftig 210D-stoff som tåler vær og vind</li>\n<li>Beskytter mot sol, regn, støv og fugleskitt</li>\n<li>Trekkes enkelt på og av</li>\n<li>Passer de fleste båt- og yachtseter</li>\n<li>Forlenger setets levetid</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/310533df49e71f1a5871038c8dabbe32.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Setetrekk detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så ordner vi det – uten krøll.</p>\n</div>",
+        "productType": "Båt & Marin",
+        "tags": ["Båt", "Marin", "Setetrekk", "Beskyttelse", "Sete"],
+        "options": [{"name": "Title", "values": ["Default Title"]}],
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/65028567204189",
+            "title": "Default Title",
+            "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+          }
+        ],
+        "imagesAlt": ["Båtsetetrekk 210D", "", "", "", ""],
+        "seo": {
+          "title": "Båtsetetrekk 210D – Værbestandig Setebeskyttelse",
+          "description": "Slitesterkt 210D-stoff beskytter båtsetet mot sol, regn og fugleskitt. Enkelt å trekke på og av mellom turene."
+        }
+      },
+      "flags": ["JURIDISK GRANSKNING: garantiløfte (30 dagers fornøyd-kunde-garanti) i produktbeskrivelsen"]
+    },
+    {
+      "handle": "nano-coating-vax-keramiskt-skydd-for-bil-bat",
+      "no": {
+        "title": "Nano Coating Voks – Keramisk Beskyttelse for Bil & Båt",
+        "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Glans og beskyttelse i ett steg</h2>\n<p>Vanlig voks slipper taket etter noen vasker, og lakken blir raskt matt igjen. Smuss og vann fester seg lett, og bilen ser kjedelig ut.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/11c4b17a-8942-408a-bbf3-182635519e41.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Nano coating voks\"></p>\n<h3 style=\"font-size:19px;\">Keramisk beskyttelse som varer</h3>\n<p>Den keramiske nano-formelen bygger et blankt og vannavvisende sjikt på lakken. Vann perler av, og smuss får vanskeligere for å feste seg, slik at bilen holder seg ren lenger.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/31beb04b-6c72-4c59-9031-935da69cbce1.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Voks påført\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Keramisk beskyttelse med høy glans</li>\n<li>Vannavvisende – vann perler av</li>\n<li>Gjør det vanskeligere for smuss å feste seg</li>\n<li>For bil, båt, bobil og yacht</li>\n<li>Enkel å påføre i ett steg</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/4a00fcf5-ddb5-4e19-8364-f804fdf57561.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Voks detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så ordner vi det – uten krøll.</p>\n</div>",
+        "productType": "Detailing",
+        "tags": ["Bil", "Båt", "Detailing", "Beskyttelse", "Voks"],
+        "options": [{"name": "Title", "values": ["Default Title"]}],
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/65028577100125",
+            "title": "Default Title",
+            "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+          }
+        ],
+        "imagesAlt": ["Nano coating voks", "", "", "", ""],
+        "seo": {
+          "title": "Nano Coating Voks – Keramisk Bilbeskyttelse",
+          "description": "Keramisk nano-voks gir høy glans og vannavvisende overflate som holder bilen ren lenger. For bil, båt og bobil."
+        }
+      },
+      "flags": ["JURIDISK GRANSKNING: garantiløfte (30 dagers fornøyd-kunde-garanti) i produktbeskrivelsen"]
+    },
+    {
+      "handle": "anti-slip-tejp-6m-halkskydd-for-trappor-bat",
+      "no": {
+        "title": "Antiskli-tape 5m – Sklisikring for Trapper & Båt",
+        "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Slutt å skli på glatte overflater</h2>\n<p>Våte trapper, badekar og båtdekk blir lett glatte og farlige. Det holder med ett feiltrinn for at det skal gå galt.</p>\n<p><img src=\"https://img.kwcdn.com/product/open/da367100cba54ac68430e76029a4044b-goods.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Antiskli-tape\"></p>\n<h3 style=\"font-size:19px;\">Klistre på – få grep med en gang</h3>\n<p>Den selvklebende sklisikringstapen gir et ru og sikkert grep på glatte overflater. Du klipper bare til riktig lengde og trykker den fast – den sitter godt selv når det er vått.</p>\n<p><img src=\"https://img.kwcdn.com/product/open/95cc7fa4ed9d41febe84f10a4d949c1c-goods.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sklisikringstape på trapp\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Selvklebende – enkel å sette opp</li>\n<li>Ru grep selv på våte overflater</li>\n<li>6 meter – rekker til mange trinn</li>\n<li>For trapper, badekar, båtdekk og ramper</li>\n<li>Klippes enkelt til riktig lengde</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/open/5fcad666cc0c48829f9a325a2e94c317-goods.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sklisikringstape detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så ordner vi det – uten krøll.</p>\n</div>",
+        "productType": "Sikkerhet",
+        "tags": ["Bad", "Båt", "Sklisikring", "Sikkerhet", "Trapp"],
+        "options": [{"name": "Antiskli-tape 10m – Sklisikring for Trapper & Båt", "values": ["10 meter"]}],
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/65483101569373",
+            "title": "10 meter",
+            "selectedOptions": [{"name": "Antiskli-tape 10m – Sklisikring for Trapper & Båt", "value": "10 meter"}]
+          }
+        ],
+        "imagesAlt": ["Antiskli-tape", "", "", "", ""],
+        "seo": {
+          "title": "Antiskli-tape – Sklisikring for Trapper & Båt",
+          "description": "Selvklebende sklisikringstape gir sikkert grep på våte trapper, båtdekk og badekar. Klippes enkelt til riktig lengde."
+        }
+      },
+      "flags": [
+        "JURIDISK GRANSKNING: garantiløfte (30 dagers fornøyd-kunde-garanti) i produktbeskrivelsen",
+        "OBS: avvikende lengdeangivelser i kildedata (tittel oppgir 5 m, brødtekst 6 meter, variant/opsjon 10 meter) – bør avklares før publisering"
+      ]
+    },
+    {
+      "handle": "fiskespohallare-4-pack-kraftig-forvaring",
+      "no": {
+        "title": "Fiskestangholder 4-pakning – Kraftig Oppbevaring",
+        "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Hold orden på stengene</h2>\n<p>Løse fiskestenger floker seg lett sammen og tar plass i båten og garasjen. Snører og agn setter seg fast i hverandre, og det blir rotete.</p>\n<p><img src=\"https://img.kwcdn.com/product/open/f2de88e716d940b6b6aa240f1c3f19fc-goods.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Fiskestangholder 4-pakning\"></p>\n<h3 style=\"font-size:19px;\">Fire holdere som holder orden</h3>\n<p>Med fire kraftige holdere får hver stang sin egen plass. De monteres enkelt på vegg eller i båten og holder stengene trygt på plass.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/a6881e1e-2916-4597-b66b-1e325b195164.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Stangholder montert\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Fire holdere i ett sett</li>\n<li>Kraftig konstruksjon som holder stengene stødig</li>\n<li>Monteres på vegg eller i båten</li>\n<li>For strand, sjø og båtfiske</li>\n<li>Passer både proffer og nybegynnere</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/1d426b7a-cfe0-49df-8b44-03c3aabbc326.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Stangholder detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så ordner vi det – uten krøll.</p>\n</div>",
+        "productType": "Fiske",
+        "tags": ["Båt", "Fiske", "Friluftsliv", "Oppbevaring", "Stangholder"],
+        "options": [{"name": "Title", "values": ["Default Title"]}],
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/65028598858077",
+            "title": "Default Title",
+            "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+          }
+        ],
+        "imagesAlt": ["Fiskestangholder 4-pakning", "", "", "", ""],
+        "seo": {
+          "title": "Fiskestangholder 4-pakning – Kraftig Oppbevaring",
+          "description": "Fire kraftige holdere gir hver fiskestang sin egen plass. Enkel montering på vegg eller i båten – hold orden på utstyret."
+        }
+      },
+      "flags": ["JURIDISK GRANSKNING: garantiløfte (30 dagers fornøyd-kunde-garanti) i produktbeskrivelsen"]
+    },
+    {
+      "handle": "batskydd-420d-slittaligt-skydd-for-uppblasbar-bat",
+      "no": {
+        "title": "Båttrekk 420D – Slitesterkt Trekk for Oppblåsbar Båt",
+        "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Beskytt båten året rundt</h2>\n<p>En oppblåsbar båt tar stor skade av sol og regn når den ligger ubeskyttet. Materialet blekner og tørker ut raskere enn man tror.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/c3053ed9-a5f2-4e5e-931c-1b1104a8e5dd.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Båttrekk 420D\"></p>\n<h3 style=\"font-size:19px;\">Kraftig 420D-stoff</h3>\n<p>Trekket er laget av slitesterkt 420D-stoff som motstår både bleking og rifter. Det dekker båten helt og holder den tørr og ren mellom turene.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/d96fd930-ba5a-4ed9-8c8d-00ada71a670f.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Båttrekk på båt\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Slitesterkt 420D-stoff</li>\n<li>Blekings- og rivebestandig</li>\n<li>Beskytter mot sol, regn og støv</li>\n<li>Finnes i flere størrelser</li>\n<li>Holder båten tørr og ren</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/3a80d60a-5344-44d8-98af-ca78de52b808.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Båttrekk detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så ordner vi det – uten krøll.</p>\n</div>",
+        "productType": "Båt & Marin",
+        "tags": ["Båt", "Oppbevaring", "Marin", "Presenning", "Beskyttelse"],
+        "options": [{"name": "Title", "values": ["Default Title"]}],
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/65028607246685",
+            "title": "Default Title",
+            "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+          }
+        ],
+        "imagesAlt": ["Båttrekk 420D", "", "", "", ""],
+        "seo": {
+          "title": "Båttrekk 420D – Slitesterkt Trekk for Oppblåsbar Båt",
+          "description": "Slitesterkt 420D-stoff beskytter den oppblåsbare båten mot sol, regn og bleking hele året. Finnes i flere størrelser."
+        }
+      },
+      "flags": ["JURIDISK GRANSKNING: garantiløfte (30 dagers fornøyd-kunde-garanti) i produktbeskrivelsen"]
+    },
+    {
+      "handle": "marin-motorholje-420d-universellt-skydd",
+      "no": {
+        "title": "Marint Motortrekk 420D – Universell Beskyttelse",
+        "descriptionHtml": "<div style=\"max-width: 720px; margin: 0 auto; font-family: sans-serif; line-height: 1.6; color: #1a1a1a;\">\n<h2 style=\"font-size: 22px;\">Beskytt motoren i all slags vær</h2>\n<p>En ubeskyttet marinmotor utsettes stadig for sol, regn og salt. Det gjør at den eldes raskere og mister verdi.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/f42097e4-160f-48e8-920d-15a08b4e5da9.jpg\" style=\"max-width: 100%; border-radius: 10px;\" alt=\"Marint motortrekk 420D\"></p>\n<h3 style=\"font-size: 19px;\">Allværsbeskyttelse i 420D-stoff</h3>\n<p>Motortrekket er laget av kraftig 420D Oxfordstoff som gir god beskyttelse hele året. Det passer de fleste marinmotorer og sitter stødig på plass.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/bf9b83da-bca3-4655-8d1e-7cb1517631e7.jpg\" style=\"max-width: 100%; border-radius: 10px;\" alt=\"Motortrekk på motor\"></p>\n<h3 style=\"font-size: 19px;\">Funksjoner</h3>\n<ul>\n<li>Kraftig 420D Oxfordstoff</li>\n<li>Allværsbeskyttelse mot sol, regn og salt</li>\n<li>Passer marinmotorer fra 6 til 250 hk</li>\n<li>Finnes i flere farger</li>\n<li>Sitter stødig og er enkel å ta av</li>\n</ul>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/download.gif?v=1785867765\" alt=\"\" width=\"557\" height=\"557\"></p>\n<p style=\"background: #f3f7f3; padding: 14px 18px; border-radius: 10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så ordner vi det – uten krøll.</p>\n</div>",
+        "productType": "Båt & Marin",
+        "tags": ["Båt", "Oppbevaring", "Marin", "Motor", "Beskyttelse"],
+        "options": [
+          {"name": "Farge", "values": ["Svart", "Blå", "Mintgrønn", "Grå", "Grønn"]},
+          {"name": "Størrelse", "values": ["6 - 18 hk", "20 - 30 hk", "40 - 60 hk", "60 - 90 hk", "100 - 150 hk", "175 - 250 hk"]}
+        ],
+        "variants": [
+          {"id": "gid://shopify/ProductVariant/65427100565853", "title": "Svart / 6 - 18 hk", "selectedOptions": [{"name": "Farge", "value": "Svart"}, {"name": "Størrelse", "value": "6 - 18 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427100598621", "title": "Svart / 20 - 30 hk", "selectedOptions": [{"name": "Farge", "value": "Svart"}, {"name": "Størrelse", "value": "20 - 30 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427100631389", "title": "Svart / 40 - 60 hk", "selectedOptions": [{"name": "Farge", "value": "Svart"}, {"name": "Størrelse", "value": "40 - 60 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427100664157", "title": "Svart / 60 - 90 hk", "selectedOptions": [{"name": "Farge", "value": "Svart"}, {"name": "Størrelse", "value": "60 - 90 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427100696925", "title": "Svart / 100 - 150 hk", "selectedOptions": [{"name": "Farge", "value": "Svart"}, {"name": "Størrelse", "value": "100 - 150 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427100729693", "title": "Svart / 175 - 250 hk", "selectedOptions": [{"name": "Farge", "value": "Svart"}, {"name": "Størrelse", "value": "175 - 250 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427100762461", "title": "Blå / 6 - 18 hk", "selectedOptions": [{"name": "Farge", "value": "Blå"}, {"name": "Størrelse", "value": "6 - 18 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427100795229", "title": "Blå / 20 - 30 hk", "selectedOptions": [{"name": "Farge", "value": "Blå"}, {"name": "Størrelse", "value": "20 - 30 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427100827997", "title": "Blå / 40 - 60 hk", "selectedOptions": [{"name": "Farge", "value": "Blå"}, {"name": "Størrelse", "value": "40 - 60 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427100860765", "title": "Blå / 60 - 90 hk", "selectedOptions": [{"name": "Farge", "value": "Blå"}, {"name": "Størrelse", "value": "60 - 90 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427100893533", "title": "Blå / 100 - 150 hk", "selectedOptions": [{"name": "Farge", "value": "Blå"}, {"name": "Størrelse", "value": "100 - 150 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427100926301", "title": "Blå / 175 - 250 hk", "selectedOptions": [{"name": "Farge", "value": "Blå"}, {"name": "Størrelse", "value": "175 - 250 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427100959069", "title": "Mintgrønn / 6 - 18 hk", "selectedOptions": [{"name": "Farge", "value": "Mintgrønn"}, {"name": "Størrelse", "value": "6 - 18 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427100991837", "title": "Mintgrønn / 20 - 30 hk", "selectedOptions": [{"name": "Farge", "value": "Mintgrønn"}, {"name": "Størrelse", "value": "20 - 30 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427101024605", "title": "Mintgrønn / 40 - 60 hk", "selectedOptions": [{"name": "Farge", "value": "Mintgrønn"}, {"name": "Størrelse", "value": "40 - 60 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427101057373", "title": "Mintgrønn / 60 - 90 hk", "selectedOptions": [{"name": "Farge", "value": "Mintgrønn"}, {"name": "Størrelse", "value": "60 - 90 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427101090141", "title": "Mintgrønn / 100 - 150 hk", "selectedOptions": [{"name": "Farge", "value": "Mintgrønn"}, {"name": "Størrelse", "value": "100 - 150 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427101122909", "title": "Mintgrønn / 175 - 250 hk", "selectedOptions": [{"name": "Farge", "value": "Mintgrønn"}, {"name": "Størrelse", "value": "175 - 250 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427101155677", "title": "Grå / 6 - 18 hk", "selectedOptions": [{"name": "Farge", "value": "Grå"}, {"name": "Størrelse", "value": "6 - 18 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427101188445", "title": "Grå / 20 - 30 hk", "selectedOptions": [{"name": "Farge", "value": "Grå"}, {"name": "Størrelse", "value": "20 - 30 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427101221213", "title": "Grå / 40 - 60 hk", "selectedOptions": [{"name": "Farge", "value": "Grå"}, {"name": "Størrelse", "value": "40 - 60 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427101253981", "title": "Grå / 60 - 90 hk", "selectedOptions": [{"name": "Farge", "value": "Grå"}, {"name": "Størrelse", "value": "60 - 90 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427101286749", "title": "Grå / 100 - 150 hk", "selectedOptions": [{"name": "Farge", "value": "Grå"}, {"name": "Størrelse", "value": "100 - 150 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427101319517", "title": "Grå / 175 - 250 hk", "selectedOptions": [{"name": "Farge", "value": "Grå"}, {"name": "Størrelse", "value": "175 - 250 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427101352285", "title": "Grønn / 6 - 18 hk", "selectedOptions": [{"name": "Farge", "value": "Grønn"}, {"name": "Størrelse", "value": "6 - 18 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427101385053", "title": "Grønn / 20 - 30 hk", "selectedOptions": [{"name": "Farge", "value": "Grønn"}, {"name": "Størrelse", "value": "20 - 30 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427101417821", "title": "Grønn / 40 - 60 hk", "selectedOptions": [{"name": "Farge", "value": "Grønn"}, {"name": "Størrelse", "value": "40 - 60 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427101450589", "title": "Grønn / 60 - 90 hk", "selectedOptions": [{"name": "Farge", "value": "Grønn"}, {"name": "Størrelse", "value": "60 - 90 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427101483357", "title": "Grønn / 100 - 150 hk", "selectedOptions": [{"name": "Farge", "value": "Grønn"}, {"name": "Størrelse", "value": "100 - 150 hk"}]},
+          {"id": "gid://shopify/ProductVariant/65427101516125", "title": "Grønn / 175 - 250 hk", "selectedOptions": [{"name": "Farge", "value": "Grønn"}, {"name": "Størrelse", "value": "175 - 250 hk"}]}
+        ],
+        "imagesAlt": ["Marint motortrekk 420D", "", "", "", ""],
+        "seo": {
+          "title": "Marint Motortrekk 420D – Universell Beskyttelse",
+          "description": "Kraftig 420D Oxfordstoff beskytter marinmotoren mot sol, regn og salt hele året. Passer motorer fra 6 til 250 hk."
+        }
+      },
+      "flags": ["JURIDISK GRANSKNING: garantiløfte (30 dagers fornøyd-kunde-garanti) i produktbeskrivelsen"]
+    },
+    {
+      "handle": "battrailer-vinschrem-kraftig-med-krok-12000-lbs",
+      "no": {
+        "title": "Båthenger Vinsjstropp – Kraftig med Krok 12000 lbs",
+        "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Dra båten trygt opp på hengeren</h2>\n<p>En slitt eller for svak vinsjstropp er både usikker og stressende ved sjøsetting. Du vil kunne stole på at stroppen tåler hele vekten.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/26ed2b3f-1298-46f2-9170-37b8ec3117be.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Båthenger vinsjstropp\"></p>\n<h3 style=\"font-size:19px;\">Sterk stropp med trekkraft på 12000 lbs</h3>\n<p>Den kraftige vinsjstroppen tåler opptil 12000 lbs og har en solid krok. Den passer de fleste båthengere og gjør både opptak og sjøsetting enklere.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/0ebade6e-0497-4394-b279-b257c9298961.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Vinsjstropp med krok\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Trekkraft opptil 12000 lbs</li>\n<li>Solid krok i metall</li>\n<li>Slitesterk stropp som tåler hard bruk</li>\n<li>Passer de fleste båthengere</li>\n<li>Bra også ved buksering og nødberging</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/bf8fd06b-9c50-4235-8f2c-20366a38fd8d.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Vinsjstropp detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så ordner vi det – uten krøll.</p>\n</div>",
+        "productType": "Båt & Marin",
+        "tags": ["Buksering", "Båt", "Marin", "Tilhenger", "Vinsj"],
+        "options": [{"name": "Title", "values": ["Default Title"]}],
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/65028629299549",
+            "title": "Default Title",
+            "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+          }
+        ],
+        "imagesAlt": ["Båthenger vinsjstropp", "", "", "", ""],
+        "seo": {
+          "title": "Vinsjstropp for Båthenger – Krok 12000 lbs",
+          "description": "Kraftig vinsjstropp med trekkraft opptil 12000 lbs og solid krok. Gjør opptak og sjøsetting av båten tryggere og enklere."
+        }
+      },
+      "flags": ["JURIDISK GRANSKNING: garantiløfte (30 dagers fornøyd-kunde-garanti) i produktbeskrivelsen"]
+    },
+    {
+      "handle": "avstangningsrep-for-yamaha-sakerhetslina",
+      "no": {
+        "title": "Nødstoppsnor for Yamaha – Sikkerhetsline",
+        "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">En liten detalj som kan redde liv</h2>\n<p>Faller føreren over bord, skal motoren stanses umiddelbart. En slitt eller manglende nødstoppsnor er en risiko man ikke vil ta på sjøen.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/31bb6b5f-de73-4ca3-9f72-21024991cf85.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Nødstoppsnor Yamaha\"></p>\n<h3 style=\"font-size:19px;\">Reserve som alltid bør være om bord</h3>\n<p>Denne nødstoppsnoren med håndleddsstropp passer Yamaha utenbordsmotorer og erstatter EW2-68348-00-00. Ha alltid en ekstra om bord for sikkerhets skyld.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/7db27a7a-e5ff-4d76-a04f-9321201049fc.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Nødstoppsnor i bruk\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Stanser motoren hvis føreren faller over bord</li>\n<li>Med praktisk håndleddsstropp</li>\n<li>Passer Yamaha utenbordsmotorer</li>\n<li>Erstatter EW2-68348-00-00</li>\n<li>Bra å ha som reserve om bord</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/b57817df-f5c7-4894-b683-ff81cfcfc12d.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Nødstoppsnor detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så ordner vi det – uten krøll.</p>\n</div>",
+        "productType": "Båt & Marin",
+        "tags": ["Båt", "Marin", "Motor", "Sikkerhet", "Yamaha"],
+        "options": [{"name": "Title", "values": ["Default Title"]}],
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/65028640866653",
+            "title": "Default Title",
+            "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+          }
+        ],
+        "imagesAlt": ["Nødstoppsnor Yamaha", "", "", "", ""],
+        "seo": {
+          "title": "Nødstoppsnor for Yamaha – Sikkerhetsline",
+          "description": "Nødstoppsnor med håndleddsstropp for Yamaha utenbordsmotor. Stanser motoren automatisk om føreren faller over bord."
+        }
+      },
+      "flags": [
+        "JURIDISK GRANSKNING: garantiløfte (30 dagers fornøyd-kunde-garanti) i produktbeskrivelsen",
+        "JURIDISK GRANSKNING: sikkerhetspåstand (\"kan redde liv\") i produktbeskrivelsen bør kvalitetssikres"
+      ]
+    },
+    {
+      "handle": "borrbitshallare-med-sparrhake-snabbfaste",
+      "no": {
+        "title": "Bitsholder med Sperrehake – Hurtigfeste",
+        "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Raskt bytte av bits</h2>\n<p>Å skru fast og løsne bits for hånd tar tid og er tungvint. Små deler mistes lett midt i arbeidet.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/4e47deb5-1c4b-485b-988d-b08eb4236a01.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Bitsholder med sperrehake\"></p>\n<h3 style=\"font-size:19px;\">Sperrehake som gjør jobben rask</h3>\n<p>Med sperrehaken bytter du bits raskt og enkelt med én hånd. Den er liten, smidig og får plass i verktøykassen eller lommen.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/162c777b-51de-4a87-b530-1d021b5cbd89.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sperrehake i bruk\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Raskt bytte av bits</li>\n<li>Sperrehake for enkel håndtering</li>\n<li>Liten og smidig å oppbevare</li>\n<li>Bra for garasje, bobil og verksted</li>\n<li>Slitesterkt materiale</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/32175315-7f03-4cc4-9a16-cc20b2684a38.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sperrehake detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så ordner vi det – uten krøll.</p>\n</div>",
+        "productType": "Verktøy",
+        "tags": ["Bor", "DIY", "Garasje", "Sperrehake", "Verktøy"],
+        "options": [{"name": "Title", "values": ["Default Title"]}],
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/65028658528605",
+            "title": "Default Title",
+            "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+          }
+        ],
+        "imagesAlt": ["Bitsholder med sperrehake", "", "", "", ""],
+        "seo": {
+          "title": "Bitsholder med Sperrehake – Hurtigfeste",
+          "description": "Bytt bits raskt med én hånd takket være sperrehaken. Liten og smidig – får plass i verktøykassen eller lommen."
+        }
+      },
+      "flags": ["JURIDISK GRANSKNING: garantiløfte (30 dagers fornøyd-kunde-garanti) i produktbeskrivelsen"]
+    },
+    {
+      "handle": "handdriven-kedjeslip-slipverktyg-for-motorsag",
+      "no": {
+        "title": "Hånddrevet Kjedesliper – Slipeverktøy for Motorsag",
+        "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">En skarp kjede gjør hele forskjellen</h2>\n<p>Et sløvt sagkjede sliter på både motorsagen og armene. Sagingen går tregt, og resultatet blir uforutsigbart.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/c037b5a5-5001-4da8-92a2-388f9cb061da.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Hånddrevet kjedesliper\"></p>\n<h3 style=\"font-size:19px;\">Slip kjeden hvor som helst</h3>\n<p>Med denne hånddrevne kjedesliperen sliper du kjeden raskt uten strøm. Den er liten og passer å ta med ut i skogen eller til hytta.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/cc233bef-1f1a-44ff-bde6-fdf304b8b202.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Kjedesliper i bruk\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Sliper sagkjedet raskt og jevnt</li>\n<li>Hånddrevet – ingen strøm nødvendig</li>\n<li>Liten og enkel å ta med</li>\n<li>Passer de fleste motorsagkjeder</li>\n<li>Gjør sagingen lettere og tryggere</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/a450d36f-0bfe-47c9-8082-c4c54a46bcf4.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Kjedesliper detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så ordner vi det – uten krøll.</p>\n</div>",
+        "productType": "Verktøy",
+        "tags": ["Kjede", "Motorsag", "Sliping", "Hage", "Verktøy"],
+        "options": [{"name": "Title", "values": ["Default Title"]}],
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/65028674060637",
+            "title": "Default Title",
+            "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+          }
+        ],
+        "imagesAlt": ["Hånddrevet kjedesliper", "", "", "", ""],
+        "seo": {
+          "title": "Hånddrevet Kjedesliper – Slipeverktøy for Motorsag",
+          "description": "Slip motorsagkjedet raskt og jevnt uten strøm. Liten og bærbar – perfekt til skogen eller hytta."
+        }
+      },
+      "flags": ["JURIDISK GRANSKNING: garantiløfte (30 dagers fornøyd-kunde-garanti) i produktbeskrivelsen"]
+    },
+    {
+      "handle": "drickoppnare-med-dragflik-skonsam-for-naglarna",
+      "no": {
+        "title": "Boksåpner med Pilltapp – Skånsom for Neglene",
+        "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Åpne boksen uten å brekke neglene</h2>\n<p>Å få opp en kapsel eller pilltapp med fingrene er både tungvint og hardt for neglene. For mange er det dessuten ganske vanskelig.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/1bcc4730-f76a-4b9c-aa49-0d175782f0d9.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Boksåpner med pilltapp\"></p>\n<h3 style=\"font-size:19px;\">En liten hjelper i lommen</h3>\n<p>Denne åpneren løfter pilltappen for deg på et øyeblikk. Den er liten, lett og har en metallring, så du kan ha den på nøkkelknippen.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/4a40187c-e833-4902-9797-899be85b777a.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Åpner i bruk\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Løfter pilltappen uten å skade neglene</li>\n<li>Liten og lett å ha med seg</li>\n<li>Metallring for nøkkelknippen</li>\n<li>Bra for alle som synes bokser er vanskelige</li>\n<li>Slitesterkt materiale</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/ffb1577a-33fc-4413-a94c-5a924014497b.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Åpner detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så ordner vi det – uten krøll.</p>\n</div>",
+        "productType": "Kjøkkenredskap",
+        "tags": ["Kjøkkenredskap", "Praktisk", "Tilbehør", "Hverdag", "Åpner"],
+        "options": [{"name": "Title", "values": ["Default Title"]}],
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/65028696637789",
+            "title": "Default Title",
+            "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+          }
+        ],
+        "imagesAlt": ["Boksåpner med pilltapp", "", "", "", ""],
+        "seo": {
+          "title": "Boksåpner med Pilltapp – Skånsom for Neglene",
+          "description": "Løft pilltappen enkelt uten å skade neglene. Liten åpner med nøkkelring – alltid lett tilgjengelig i lommen."
+        }
+      },
+      "flags": ["JURIDISK GRANSKNING: garantiløfte (30 dagers fornøyd-kunde-garanti) i produktbeskrivelsen"]
+    }
+  ]
+}
