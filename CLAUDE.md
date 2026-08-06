@@ -44,9 +44,12 @@ inte; äldre Mastern-material i `docs/` och `pipeline/` (utom `pipeline/quota.mj
 8. **Briefer på engelska** (redigerarna är engelsktalande), svenska manusrader i
    tabell `Swedish (use this) | English meaning`. SOP:er och svar till managern
    på svenska.
-9. **Fråga bara när ett beslut kräver ägaren** (prisändring, rabatt i Shopify,
+9. **En task är aldrig klar för att någon säger det.** Levererat och godkänt är
+   två olika saker. Godkännande kräver grön checklista (eller override med skriven
+   motivering), och bara godkända creatives räknas mot kvoten. Se `dashboard/README.md`.
+10. **Fråga bara när ett beslut kräver ägaren** (prisändring, rabatt i Shopify,
    ny target-CPA). Allt annat: kör.
-10. **Om användaren skriver ett `/kommando` som klienten inte känner igen** (eller
+11. **Om användaren skriver ett `/kommando` som klienten inte känner igen** (eller
     skriver t.ex. "kör /cs motorholjet" som vanlig text): läs motsvarande fil i
     `.claude/commands/` och följ den exakt, med texten efter kommandonamnet som
     argument. Kommandona är filer — de fungerar även när klienten inte
@@ -65,6 +68,10 @@ inte; äldre Mastern-material i `docs/` och `pipeline/` (utom `pipeline/quota.mj
 | `/notion <db>, <mapplänk>` | Ladda upp batchens briefer till Notion |
 | `/sheet <id>` | Fyll i tracking-sheetet (xlsx) |
 | `/ugc <id> <ny info>` | Uppdatera UGC-plan och deadlines |
+| `/plan [datum]` | **Redigerarna:** lägg dagens plan, skapa tasks, morgonmeddelanden |
+| `/dashboard [datum]` | Bygg och läs redigerardashboarden |
+| `/rapport <namn>: <text>` | Tolka en slutrapport från Slack (bekräftas innan den sparas) |
+| `/granska [id]` | Beta av review-kön: checklista → godkänn eller skicka tillbaka |
 
 ## Var saker finns
 
@@ -77,11 +84,14 @@ inte; äldre Mastern-material i `docs/` och `pipeline/` (utom `pipeline/quota.mj
 | SOP: daglig check-in / grönmarkering | `docs/os/SOP-04-daily-checkin.md` |
 | SOP: när Claude inte lyssnar | `docs/os/SOP-05-nar-claude-inte-lyssnar.md` |
 | SOP: produkttest-pipeline | `docs/os/SOP-06-produkttest.md` |
+| SOP: redigerardashboarden (managerns dag) | `docs/os/SOP-07-dashboard.md` |
+| Editor SOP (engelska, till redigerarna) | `docs/os/EDITOR-SOP.md` |
 | **Analysmetoden (obligatorisk vid all bedömning)** | **`docs/os/ANALYSMETOD.md`** |
 | Notion-formatet för briefer (exakt spec) | `docs/os/NOTION-FORMAT.md` |
 | Produkt-konfig + launch-logg | `products/products.json` |
 | Produktminne (DNA, batch-logg, backlog) | `products/<id>/` |
 | Kvot-skriptet | `pipeline/quota.mjs` |
+| Dashboard (kod, data, README) | `dashboard/` |
 
 - **Team:** filippinska videoredigerare + VA (engelska), en UGC-outreach-ansvarig,
   managern kör Claude-sessionerna.

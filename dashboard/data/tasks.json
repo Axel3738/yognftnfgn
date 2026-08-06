@@ -1,0 +1,4558 @@
+{
+  "tasks": [
+    {
+      "id": "AXE-001",
+      "title": "Hook test: pain-first opener",
+      "description": "",
+      "productId": "axelbaltet",
+      "assignedEditorId": "maria",
+      "createdBy": "anna",
+      "taskType": "new_creative",
+      "priority": "high",
+      "status": "approved",
+      "plannedDate": "2026-07-24",
+      "startDate": "2026-07-24",
+      "dueDate": "2026-07-24",
+      "completedAt": "2026-07-24T16:30:00.000Z",
+      "approvedAt": "2026-07-24T18:00:00.000Z",
+      "estimatedMinutes": 135,
+      "plannedCreativeCount": 3,
+      "deliveredCreativeCount": 3,
+      "briefLink": "https://notion.so/brief/AXE-001",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/axelbaltet-footage",
+      "deliveryLink": "https://drive.google.com/drive/folders/AXE-001-delivery",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "version_count",
+          "item": "All requested versions delivered",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "distinct_hooks",
+          "item": "Each version has a clearly different hook",
+          "required": true,
+          "question": "Which hook did you use for each version?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "main_angle",
+          "item": "Main angle stated",
+          "required": true,
+          "question": "What is the main angle of this creative?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "real_variation",
+          "item": "Real variations, not cosmetic tweaks",
+          "required": true,
+          "question": "What is actually different between the versions?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "cta_present",
+          "item": "CTA present",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "subtitles",
+          "item": "Swedish subtitles present, word-for-word from brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "product_early",
+          "item": "Product visible before second 4",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-07-23T08:00:00.000Z",
+      "updatedAt": "2026-07-24T18:00:00.000Z"
+    },
+    {
+      "id": "MOT-001",
+      "title": "Listicle static: 5 reasons",
+      "description": "",
+      "productId": "motorholjet",
+      "assignedEditorId": "jomar",
+      "createdBy": "anna",
+      "taskType": "new_creative",
+      "priority": "normal",
+      "status": "approved",
+      "plannedDate": "2026-07-24",
+      "startDate": "2026-07-24",
+      "dueDate": "2026-07-24",
+      "completedAt": "2026-07-24T16:30:00.000Z",
+      "approvedAt": "2026-07-24T18:00:00.000Z",
+      "estimatedMinutes": 90,
+      "plannedCreativeCount": 2,
+      "deliveredCreativeCount": 2,
+      "briefLink": "https://notion.so/brief/MOT-001",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/motorholjet-footage",
+      "deliveryLink": "https://drive.google.com/drive/folders/MOT-001-delivery",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "version_count",
+          "item": "All requested versions delivered",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "distinct_hooks",
+          "item": "Each version has a clearly different hook",
+          "required": true,
+          "question": "Which hook did you use for each version?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "main_angle",
+          "item": "Main angle stated",
+          "required": true,
+          "question": "What is the main angle of this creative?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "real_variation",
+          "item": "Real variations, not cosmetic tweaks",
+          "required": true,
+          "question": "What is actually different between the versions?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "cta_present",
+          "item": "CTA present",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "subtitles",
+          "item": "Swedish subtitles present, word-for-word from brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        },
+        {
+          "key": "product_early",
+          "item": "Product visible before second 4",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-24T16:00:00.000Z"
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-07-23T08:00:00.000Z",
+      "updatedAt": "2026-07-24T18:00:00.000Z"
+    },
+    {
+      "id": "STR-001",
+      "title": "Swedish VO v2 for beach angle",
+      "description": "",
+      "productId": "strandtofflorna",
+      "assignedEditorId": "ellen",
+      "createdBy": "anna",
+      "taskType": "new_vo",
+      "priority": "normal",
+      "status": "approved",
+      "plannedDate": "2026-07-25",
+      "startDate": "2026-07-25",
+      "dueDate": "2026-07-25",
+      "completedAt": "2026-07-25T16:30:00.000Z",
+      "approvedAt": "2026-07-25T18:00:00.000Z",
+      "estimatedMinutes": 90,
+      "plannedCreativeCount": 2,
+      "deliveredCreativeCount": 2,
+      "briefLink": "https://notion.so/brief/STR-001",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/strandtofflorna-footage",
+      "deliveryLink": "https://drive.google.com/drive/folders/STR-001-delivery",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-25T16:00:00.000Z"
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-25T16:00:00.000Z"
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-25T16:00:00.000Z"
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-25T16:00:00.000Z"
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-25T16:00:00.000Z"
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-25T16:00:00.000Z"
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-25T16:00:00.000Z"
+        },
+        {
+          "key": "vo_script",
+          "item": "Voice-over matches the Swedish script word-for-word",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-25T16:00:00.000Z"
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-07-24T08:00:00.000Z",
+      "updatedAt": "2026-07-25T18:00:00.000Z"
+    },
+    {
+      "id": "AXE-002",
+      "title": "Hook iteration on winner AXE-001",
+      "description": "",
+      "productId": "axelbaltet",
+      "assignedEditorId": "maria",
+      "createdBy": "anna",
+      "taskType": "hook_iteration",
+      "priority": "high",
+      "status": "approved",
+      "plannedDate": "2026-07-25",
+      "startDate": "2026-07-25",
+      "dueDate": "2026-07-25",
+      "completedAt": "2026-07-25T16:30:00.000Z",
+      "approvedAt": "2026-07-25T18:00:00.000Z",
+      "estimatedMinutes": 135,
+      "plannedCreativeCount": 3,
+      "deliveredCreativeCount": 3,
+      "briefLink": "https://notion.so/brief/AXE-002",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/axelbaltet-footage",
+      "deliveryLink": "https://drive.google.com/drive/folders/AXE-002-delivery",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-25T16:00:00.000Z"
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-25T16:00:00.000Z"
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-25T16:00:00.000Z"
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-25T16:00:00.000Z"
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-25T16:00:00.000Z"
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-25T16:00:00.000Z"
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-25T16:00:00.000Z"
+        },
+        {
+          "key": "hook_only",
+          "item": "Only the hook changed — rest is identical to control",
+          "required": true,
+          "question": "What exactly did you change compared to the control ad?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-25T16:00:00.000Z"
+        },
+        {
+          "key": "version_count",
+          "item": "All requested hook variants delivered",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-25T16:00:00.000Z"
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-07-24T08:00:00.000Z",
+      "updatedAt": "2026-07-25T18:00:00.000Z"
+    },
+    {
+      "id": "MOT-002",
+      "title": "Price-anchor static",
+      "description": "",
+      "productId": "motorholjet",
+      "assignedEditorId": "paolo",
+      "createdBy": "anna",
+      "taskType": "new_creative",
+      "priority": "normal",
+      "status": "approved",
+      "plannedDate": "2026-07-26",
+      "startDate": "2026-07-26",
+      "dueDate": "2026-07-26",
+      "completedAt": "2026-07-26T16:30:00.000Z",
+      "approvedAt": "2026-07-26T18:00:00.000Z",
+      "estimatedMinutes": 90,
+      "plannedCreativeCount": 2,
+      "deliveredCreativeCount": 2,
+      "briefLink": "https://notion.so/brief/MOT-002",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/motorholjet-footage",
+      "deliveryLink": "https://drive.google.com/drive/folders/MOT-002-delivery",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 1,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-26T16:00:00.000Z"
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-26T16:00:00.000Z"
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-26T16:00:00.000Z"
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-26T16:00:00.000Z"
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-26T16:00:00.000Z"
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-26T16:00:00.000Z"
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-26T16:00:00.000Z"
+        },
+        {
+          "key": "version_count",
+          "item": "All requested versions delivered",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-26T16:00:00.000Z"
+        },
+        {
+          "key": "distinct_hooks",
+          "item": "Each version has a clearly different hook",
+          "required": true,
+          "question": "Which hook did you use for each version?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-26T16:00:00.000Z"
+        },
+        {
+          "key": "main_angle",
+          "item": "Main angle stated",
+          "required": true,
+          "question": "What is the main angle of this creative?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-26T16:00:00.000Z"
+        },
+        {
+          "key": "real_variation",
+          "item": "Real variations, not cosmetic tweaks",
+          "required": true,
+          "question": "What is actually different between the versions?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-26T16:00:00.000Z"
+        },
+        {
+          "key": "cta_present",
+          "item": "CTA present",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-26T16:00:00.000Z"
+        },
+        {
+          "key": "subtitles",
+          "item": "Swedish subtitles present, word-for-word from brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-26T16:00:00.000Z"
+        },
+        {
+          "key": "product_early",
+          "item": "Product visible before second 4",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-26T16:00:00.000Z"
+        }
+      ],
+      "feedbackHistory": [
+        {
+          "round": 1,
+          "feedback": "Versions were too similar — the hooks need to differ, not just the text colour.",
+          "by": "anna",
+          "at": "2026-07-26T18:00:00.000Z"
+        }
+      ],
+      "createdAt": "2026-07-25T08:00:00.000Z",
+      "updatedAt": "2026-07-26T18:00:00.000Z"
+    },
+    {
+      "id": "AXE-003",
+      "title": "B-roll variation: outdoor use",
+      "description": "",
+      "productId": "axelbaltet",
+      "assignedEditorId": "jomar",
+      "createdBy": "anna",
+      "taskType": "broll_variation",
+      "priority": "low",
+      "status": "approved",
+      "plannedDate": "2026-07-26",
+      "startDate": "2026-07-26",
+      "dueDate": "2026-07-26",
+      "completedAt": "2026-07-26T16:30:00.000Z",
+      "approvedAt": "2026-07-26T18:00:00.000Z",
+      "estimatedMinutes": 90,
+      "plannedCreativeCount": 2,
+      "deliveredCreativeCount": 2,
+      "briefLink": "https://notion.so/brief/AXE-003",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/axelbaltet-footage",
+      "deliveryLink": "https://drive.google.com/drive/folders/AXE-003-delivery",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 2,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-26T16:00:00.000Z"
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-26T16:00:00.000Z"
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-26T16:00:00.000Z"
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-26T16:00:00.000Z"
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-26T16:00:00.000Z"
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-26T16:00:00.000Z"
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-26T16:00:00.000Z"
+        }
+      ],
+      "feedbackHistory": [
+        {
+          "round": 2,
+          "feedback": "Versions were too similar — the hooks need to differ, not just the text colour.",
+          "by": "anna",
+          "at": "2026-07-26T18:00:00.000Z"
+        }
+      ],
+      "createdAt": "2026-07-25T08:00:00.000Z",
+      "updatedAt": "2026-07-26T18:00:00.000Z"
+    },
+    {
+      "id": "MOT-003",
+      "title": "Storm-proof demo video",
+      "description": "",
+      "productId": "motorholjet",
+      "assignedEditorId": "ellen",
+      "createdBy": "anna",
+      "taskType": "new_creative",
+      "priority": "high",
+      "status": "approved",
+      "plannedDate": "2026-07-27",
+      "startDate": "2026-07-27",
+      "dueDate": "2026-07-27",
+      "completedAt": "2026-07-27T16:30:00.000Z",
+      "approvedAt": "2026-07-27T18:00:00.000Z",
+      "estimatedMinutes": 135,
+      "plannedCreativeCount": 3,
+      "deliveredCreativeCount": 3,
+      "briefLink": "https://notion.so/brief/MOT-003",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/motorholjet-footage",
+      "deliveryLink": "https://drive.google.com/drive/folders/MOT-003-delivery",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-27T16:00:00.000Z"
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-27T16:00:00.000Z"
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-27T16:00:00.000Z"
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-27T16:00:00.000Z"
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-27T16:00:00.000Z"
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-27T16:00:00.000Z"
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-27T16:00:00.000Z"
+        },
+        {
+          "key": "version_count",
+          "item": "All requested versions delivered",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-27T16:00:00.000Z"
+        },
+        {
+          "key": "distinct_hooks",
+          "item": "Each version has a clearly different hook",
+          "required": true,
+          "question": "Which hook did you use for each version?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-27T16:00:00.000Z"
+        },
+        {
+          "key": "main_angle",
+          "item": "Main angle stated",
+          "required": true,
+          "question": "What is the main angle of this creative?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-27T16:00:00.000Z"
+        },
+        {
+          "key": "real_variation",
+          "item": "Real variations, not cosmetic tweaks",
+          "required": true,
+          "question": "What is actually different between the versions?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-27T16:00:00.000Z"
+        },
+        {
+          "key": "cta_present",
+          "item": "CTA present",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-27T16:00:00.000Z"
+        },
+        {
+          "key": "subtitles",
+          "item": "Swedish subtitles present, word-for-word from brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-27T16:00:00.000Z"
+        },
+        {
+          "key": "product_early",
+          "item": "Product visible before second 4",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-27T16:00:00.000Z"
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-07-26T08:00:00.000Z",
+      "updatedAt": "2026-07-27T18:00:00.000Z"
+    },
+    {
+      "id": "STR-002",
+      "title": "Subtitle sync fix on STR-002",
+      "description": "",
+      "productId": "strandtofflorna",
+      "assignedEditorId": "maria",
+      "createdBy": "anna",
+      "taskType": "subtitle_fix",
+      "priority": "low",
+      "status": "approved",
+      "plannedDate": "2026-07-27",
+      "startDate": "2026-07-27",
+      "dueDate": "2026-07-27",
+      "completedAt": "2026-07-27T16:30:00.000Z",
+      "approvedAt": "2026-07-27T18:00:00.000Z",
+      "estimatedMinutes": 45,
+      "plannedCreativeCount": 1,
+      "deliveredCreativeCount": 1,
+      "briefLink": "https://notion.so/brief/STR-002",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/strandtofflorna-footage",
+      "deliveryLink": "https://drive.google.com/drive/folders/STR-002-delivery",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-27T16:00:00.000Z"
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-27T16:00:00.000Z"
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-27T16:00:00.000Z"
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-27T16:00:00.000Z"
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-27T16:00:00.000Z"
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-27T16:00:00.000Z"
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-27T16:00:00.000Z"
+        },
+        {
+          "key": "sub_sync",
+          "item": "Subtitles synced and spell-checked",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-27T16:00:00.000Z"
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-07-26T08:00:00.000Z",
+      "updatedAt": "2026-07-27T18:00:00.000Z"
+    },
+    {
+      "id": "AXE-004",
+      "title": "Comparison static: us vs generic strap",
+      "description": "",
+      "productId": "axelbaltet",
+      "assignedEditorId": "paolo",
+      "createdBy": "anna",
+      "taskType": "new_creative",
+      "priority": "normal",
+      "status": "approved",
+      "plannedDate": "2026-07-28",
+      "startDate": "2026-07-28",
+      "dueDate": "2026-07-28",
+      "completedAt": "2026-07-28T16:30:00.000Z",
+      "approvedAt": "2026-07-28T18:00:00.000Z",
+      "estimatedMinutes": 90,
+      "plannedCreativeCount": 2,
+      "deliveredCreativeCount": 2,
+      "briefLink": "https://notion.so/brief/AXE-004",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/axelbaltet-footage",
+      "deliveryLink": "https://drive.google.com/drive/folders/AXE-004-delivery",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 1,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-28T16:00:00.000Z"
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-28T16:00:00.000Z"
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-28T16:00:00.000Z"
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-28T16:00:00.000Z"
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-28T16:00:00.000Z"
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-28T16:00:00.000Z"
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-28T16:00:00.000Z"
+        },
+        {
+          "key": "version_count",
+          "item": "All requested versions delivered",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-28T16:00:00.000Z"
+        },
+        {
+          "key": "distinct_hooks",
+          "item": "Each version has a clearly different hook",
+          "required": true,
+          "question": "Which hook did you use for each version?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-28T16:00:00.000Z"
+        },
+        {
+          "key": "main_angle",
+          "item": "Main angle stated",
+          "required": true,
+          "question": "What is the main angle of this creative?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-28T16:00:00.000Z"
+        },
+        {
+          "key": "real_variation",
+          "item": "Real variations, not cosmetic tweaks",
+          "required": true,
+          "question": "What is actually different between the versions?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-28T16:00:00.000Z"
+        },
+        {
+          "key": "cta_present",
+          "item": "CTA present",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-28T16:00:00.000Z"
+        },
+        {
+          "key": "subtitles",
+          "item": "Swedish subtitles present, word-for-word from brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-28T16:00:00.000Z"
+        },
+        {
+          "key": "product_early",
+          "item": "Product visible before second 4",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-07-28T16:00:00.000Z"
+        }
+      ],
+      "feedbackHistory": [
+        {
+          "round": 1,
+          "feedback": "Versions were too similar — the hooks need to differ, not just the text colour.",
+          "by": "anna",
+          "at": "2026-07-28T18:00:00.000Z"
+        }
+      ],
+      "createdAt": "2026-07-27T08:00:00.000Z",
+      "updatedAt": "2026-07-28T18:00:00.000Z"
+    },
+    {
+      "id": "MOT-004",
+      "title": "New CTA variant: free shipping",
+      "description": "",
+      "productId": "motorholjet",
+      "assignedEditorId": "jomar",
+      "createdBy": "anna",
+      "taskType": "new_cta",
+      "priority": "normal",
+      "status": "approved",
+      "plannedDate": "2026-07-28",
+      "startDate": "2026-07-28",
+      "dueDate": "2026-07-28",
+      "completedAt": "2026-07-28T16:30:00.000Z",
+      "approvedAt": "2026-07-28T18:00:00.000Z",
+      "estimatedMinutes": 90,
+      "plannedCreativeCount": 2,
+      "deliveredCreativeCount": 2,
+      "briefLink": "https://notion.so/brief/MOT-004",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/motorholjet-footage",
+      "deliveryLink": "https://drive.google.com/drive/folders/MOT-004-delivery",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-28T16:00:00.000Z"
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-28T16:00:00.000Z"
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-28T16:00:00.000Z"
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-28T16:00:00.000Z"
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-28T16:00:00.000Z"
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-28T16:00:00.000Z"
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-28T16:00:00.000Z"
+        },
+        {
+          "key": "cta_present",
+          "item": "New CTA present and readable",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-28T16:00:00.000Z"
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-07-27T08:00:00.000Z",
+      "updatedAt": "2026-07-28T18:00:00.000Z"
+    },
+    {
+      "id": "STR-003",
+      "title": "UGC-style walk test",
+      "description": "",
+      "productId": "strandtofflorna",
+      "assignedEditorId": "ellen",
+      "createdBy": "anna",
+      "taskType": "new_creative",
+      "priority": "normal",
+      "status": "approved",
+      "plannedDate": "2026-07-29",
+      "startDate": "2026-07-29",
+      "dueDate": "2026-07-29",
+      "completedAt": "2026-07-29T16:30:00.000Z",
+      "approvedAt": "2026-07-29T18:00:00.000Z",
+      "estimatedMinutes": 135,
+      "plannedCreativeCount": 3,
+      "deliveredCreativeCount": 3,
+      "briefLink": "https://notion.so/brief/STR-003",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/strandtofflorna-footage",
+      "deliveryLink": "https://drive.google.com/drive/folders/STR-003-delivery",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        },
+        {
+          "key": "version_count",
+          "item": "All requested versions delivered",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        },
+        {
+          "key": "distinct_hooks",
+          "item": "Each version has a clearly different hook",
+          "required": true,
+          "question": "Which hook did you use for each version?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        },
+        {
+          "key": "main_angle",
+          "item": "Main angle stated",
+          "required": true,
+          "question": "What is the main angle of this creative?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        },
+        {
+          "key": "real_variation",
+          "item": "Real variations, not cosmetic tweaks",
+          "required": true,
+          "question": "What is actually different between the versions?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        },
+        {
+          "key": "cta_present",
+          "item": "CTA present",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        },
+        {
+          "key": "subtitles",
+          "item": "Swedish subtitles present, word-for-word from brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        },
+        {
+          "key": "product_early",
+          "item": "Product visible before second 4",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-07-28T08:00:00.000Z",
+      "updatedAt": "2026-07-29T18:00:00.000Z"
+    },
+    {
+      "id": "MOT-005",
+      "title": "Revision: reduce text density",
+      "description": "",
+      "productId": "motorholjet",
+      "assignedEditorId": "maria",
+      "createdBy": "anna",
+      "taskType": "revision",
+      "priority": "high",
+      "status": "approved",
+      "plannedDate": "2026-07-29",
+      "startDate": "2026-07-29",
+      "dueDate": "2026-07-29",
+      "completedAt": "2026-07-29T16:30:00.000Z",
+      "approvedAt": "2026-07-29T18:00:00.000Z",
+      "estimatedMinutes": 90,
+      "plannedCreativeCount": 2,
+      "deliveredCreativeCount": 2,
+      "briefLink": "https://notion.so/brief/MOT-005",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/motorholjet-footage",
+      "deliveryLink": "https://drive.google.com/drive/folders/MOT-005-delivery",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 1,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        },
+        {
+          "key": "feedback_read",
+          "item": "Previous feedback read and confirmed",
+          "required": true,
+          "question": "What feedback did you receive, and how did you address it?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        },
+        {
+          "key": "all_points",
+          "item": "Every feedback point addressed",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-29T16:00:00.000Z"
+        }
+      ],
+      "feedbackHistory": [
+        {
+          "round": 1,
+          "feedback": "Versions were too similar — the hooks need to differ, not just the text colour.",
+          "by": "anna",
+          "at": "2026-07-29T18:00:00.000Z"
+        }
+      ],
+      "createdAt": "2026-07-28T08:00:00.000Z",
+      "updatedAt": "2026-07-29T18:00:00.000Z"
+    },
+    {
+      "id": "AXE-005",
+      "title": "Testimonial-style creative",
+      "description": "",
+      "productId": "axelbaltet",
+      "assignedEditorId": "maria",
+      "createdBy": "anna",
+      "taskType": "new_creative",
+      "priority": "high",
+      "status": "approved",
+      "plannedDate": "2026-07-31",
+      "startDate": "2026-07-31",
+      "dueDate": "2026-07-31",
+      "completedAt": "2026-07-31T16:30:00.000Z",
+      "approvedAt": "2026-07-31T18:00:00.000Z",
+      "estimatedMinutes": 135,
+      "plannedCreativeCount": 3,
+      "deliveredCreativeCount": 3,
+      "briefLink": "https://notion.so/brief/AXE-005",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/axelbaltet-footage",
+      "deliveryLink": "https://drive.google.com/drive/folders/AXE-005-delivery",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-31T16:00:00.000Z"
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-31T16:00:00.000Z"
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-31T16:00:00.000Z"
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-31T16:00:00.000Z"
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-31T16:00:00.000Z"
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-31T16:00:00.000Z"
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-31T16:00:00.000Z"
+        },
+        {
+          "key": "version_count",
+          "item": "All requested versions delivered",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-31T16:00:00.000Z"
+        },
+        {
+          "key": "distinct_hooks",
+          "item": "Each version has a clearly different hook",
+          "required": true,
+          "question": "Which hook did you use for each version?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-31T16:00:00.000Z"
+        },
+        {
+          "key": "main_angle",
+          "item": "Main angle stated",
+          "required": true,
+          "question": "What is the main angle of this creative?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-31T16:00:00.000Z"
+        },
+        {
+          "key": "real_variation",
+          "item": "Real variations, not cosmetic tweaks",
+          "required": true,
+          "question": "What is actually different between the versions?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-31T16:00:00.000Z"
+        },
+        {
+          "key": "cta_present",
+          "item": "CTA present",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-31T16:00:00.000Z"
+        },
+        {
+          "key": "subtitles",
+          "item": "Swedish subtitles present, word-for-word from brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-31T16:00:00.000Z"
+        },
+        {
+          "key": "product_early",
+          "item": "Product visible before second 4",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-07-31T16:00:00.000Z"
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-07-30T08:00:00.000Z",
+      "updatedAt": "2026-07-31T18:00:00.000Z"
+    },
+    {
+      "id": "MOT-006",
+      "title": "Reformat winner to 4:5",
+      "description": "",
+      "productId": "motorholjet",
+      "assignedEditorId": "jomar",
+      "createdBy": "anna",
+      "taskType": "format_change",
+      "priority": "normal",
+      "status": "approved",
+      "plannedDate": "2026-07-31",
+      "startDate": "2026-07-31",
+      "dueDate": "2026-07-31",
+      "completedAt": "2026-07-31T16:30:00.000Z",
+      "approvedAt": "2026-07-31T18:00:00.000Z",
+      "estimatedMinutes": 90,
+      "plannedCreativeCount": 2,
+      "deliveredCreativeCount": 2,
+      "briefLink": "https://notion.so/brief/MOT-006",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/motorholjet-footage",
+      "deliveryLink": "https://drive.google.com/drive/folders/MOT-006-delivery",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-31T16:00:00.000Z"
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-31T16:00:00.000Z"
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-31T16:00:00.000Z"
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-31T16:00:00.000Z"
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-31T16:00:00.000Z"
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-31T16:00:00.000Z"
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-31T16:00:00.000Z"
+        },
+        {
+          "key": "all_formats",
+          "item": "All requested formats exported",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-07-31T16:00:00.000Z"
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-07-30T08:00:00.000Z",
+      "updatedAt": "2026-07-31T18:00:00.000Z"
+    },
+    {
+      "id": "MOT-007",
+      "title": "Winter storage angle",
+      "description": "",
+      "productId": "motorholjet",
+      "assignedEditorId": "ellen",
+      "createdBy": "anna",
+      "taskType": "new_creative",
+      "priority": "normal",
+      "status": "approved",
+      "plannedDate": "2026-08-01",
+      "startDate": "2026-08-01",
+      "dueDate": "2026-08-01",
+      "completedAt": "2026-08-01T16:30:00.000Z",
+      "approvedAt": "2026-08-01T18:00:00.000Z",
+      "estimatedMinutes": 135,
+      "plannedCreativeCount": 3,
+      "deliveredCreativeCount": 3,
+      "briefLink": "https://notion.so/brief/MOT-007",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/motorholjet-footage",
+      "deliveryLink": "https://drive.google.com/drive/folders/MOT-007-delivery",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "version_count",
+          "item": "All requested versions delivered",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "distinct_hooks",
+          "item": "Each version has a clearly different hook",
+          "required": true,
+          "question": "Which hook did you use for each version?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "main_angle",
+          "item": "Main angle stated",
+          "required": true,
+          "question": "What is the main angle of this creative?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "real_variation",
+          "item": "Real variations, not cosmetic tweaks",
+          "required": true,
+          "question": "What is actually different between the versions?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "cta_present",
+          "item": "CTA present",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "subtitles",
+          "item": "Swedish subtitles present, word-for-word from brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "product_early",
+          "item": "Product visible before second 4",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-07-31T08:00:00.000Z",
+      "updatedAt": "2026-08-01T18:00:00.000Z"
+    },
+    {
+      "id": "STR-004",
+      "title": "Garden-use static set",
+      "description": "",
+      "productId": "strandtofflorna",
+      "assignedEditorId": "paolo",
+      "createdBy": "anna",
+      "taskType": "new_creative",
+      "priority": "low",
+      "status": "approved",
+      "plannedDate": "2026-08-01",
+      "startDate": "2026-08-01",
+      "dueDate": "2026-08-01",
+      "completedAt": "2026-08-01T16:30:00.000Z",
+      "approvedAt": "2026-08-01T18:00:00.000Z",
+      "estimatedMinutes": 90,
+      "plannedCreativeCount": 2,
+      "deliveredCreativeCount": 2,
+      "briefLink": "https://notion.so/brief/STR-004",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/strandtofflorna-footage",
+      "deliveryLink": "https://drive.google.com/drive/folders/STR-004-delivery",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 2,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "version_count",
+          "item": "All requested versions delivered",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "distinct_hooks",
+          "item": "Each version has a clearly different hook",
+          "required": true,
+          "question": "Which hook did you use for each version?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "main_angle",
+          "item": "Main angle stated",
+          "required": true,
+          "question": "What is the main angle of this creative?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "real_variation",
+          "item": "Real variations, not cosmetic tweaks",
+          "required": true,
+          "question": "What is actually different between the versions?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "cta_present",
+          "item": "CTA present",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "subtitles",
+          "item": "Swedish subtitles present, word-for-word from brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        },
+        {
+          "key": "product_early",
+          "item": "Product visible before second 4",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "paolo",
+          "answeredAt": "2026-08-01T16:00:00.000Z"
+        }
+      ],
+      "feedbackHistory": [
+        {
+          "round": 2,
+          "feedback": "Versions were too similar — the hooks need to differ, not just the text colour.",
+          "by": "anna",
+          "at": "2026-08-01T18:00:00.000Z"
+        }
+      ],
+      "createdAt": "2026-07-31T08:00:00.000Z",
+      "updatedAt": "2026-08-01T18:00:00.000Z"
+    },
+    {
+      "id": "AXE-006",
+      "title": "Hook: \"Slipp ont i axlarna\"",
+      "description": "",
+      "productId": "axelbaltet",
+      "assignedEditorId": "maria",
+      "createdBy": "anna",
+      "taskType": "hook_iteration",
+      "priority": "high",
+      "status": "approved",
+      "plannedDate": "2026-08-02",
+      "startDate": "2026-08-02",
+      "dueDate": "2026-08-02",
+      "completedAt": "2026-08-02T16:30:00.000Z",
+      "approvedAt": "2026-08-02T18:00:00.000Z",
+      "estimatedMinutes": 135,
+      "plannedCreativeCount": 3,
+      "deliveredCreativeCount": 3,
+      "briefLink": "https://notion.so/brief/AXE-006",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/axelbaltet-footage",
+      "deliveryLink": "https://drive.google.com/drive/folders/AXE-006-delivery",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-02T16:00:00.000Z"
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-02T16:00:00.000Z"
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-02T16:00:00.000Z"
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-02T16:00:00.000Z"
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-02T16:00:00.000Z"
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-02T16:00:00.000Z"
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-02T16:00:00.000Z"
+        },
+        {
+          "key": "hook_only",
+          "item": "Only the hook changed — rest is identical to control",
+          "required": true,
+          "question": "What exactly did you change compared to the control ad?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-02T16:00:00.000Z"
+        },
+        {
+          "key": "version_count",
+          "item": "All requested hook variants delivered",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-02T16:00:00.000Z"
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-08-01T08:00:00.000Z",
+      "updatedAt": "2026-08-02T18:00:00.000Z"
+    },
+    {
+      "id": "AXE-007",
+      "title": "Mechanism-led: how the padding works",
+      "description": "",
+      "productId": "axelbaltet",
+      "assignedEditorId": "jomar",
+      "createdBy": "anna",
+      "taskType": "new_creative",
+      "priority": "normal",
+      "status": "changes",
+      "plannedDate": "2026-08-02",
+      "startDate": "2026-08-02",
+      "dueDate": "2026-08-02",
+      "completedAt": null,
+      "approvedAt": null,
+      "estimatedMinutes": 90,
+      "plannedCreativeCount": 2,
+      "deliveredCreativeCount": 0,
+      "briefLink": "https://notion.so/brief/AXE-007",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/axelbaltet-footage",
+      "deliveryLink": "",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 1,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "version_count",
+          "item": "All requested versions delivered",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "distinct_hooks",
+          "item": "Each version has a clearly different hook",
+          "required": true,
+          "question": "Which hook did you use for each version?",
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "main_angle",
+          "item": "Main angle stated",
+          "required": true,
+          "question": "What is the main angle of this creative?",
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "real_variation",
+          "item": "Real variations, not cosmetic tweaks",
+          "required": true,
+          "question": "What is actually different between the versions?",
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "cta_present",
+          "item": "CTA present",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "subtitles",
+          "item": "Swedish subtitles present, word-for-word from brief",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "product_early",
+          "item": "Product visible before second 4",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        }
+      ],
+      "feedbackHistory": [
+        {
+          "round": 1,
+          "feedback": "Padding close-up is out of focus from 0:04. Reshoot that shot and keep everything else.",
+          "by": "anna",
+          "at": "2026-08-02T18:00:00.000Z"
+        }
+      ],
+      "createdAt": "2026-08-01T08:00:00.000Z",
+      "updatedAt": "2026-08-02T18:00:00.000Z"
+    },
+    {
+      "id": "MOT-008",
+      "title": "Cost-of-inaction static",
+      "description": "",
+      "productId": "motorholjet",
+      "assignedEditorId": "paolo",
+      "createdBy": "anna",
+      "taskType": "new_creative",
+      "priority": "normal",
+      "status": "in_progress",
+      "plannedDate": "2026-08-03",
+      "startDate": "2026-08-03",
+      "dueDate": "2026-08-05",
+      "completedAt": null,
+      "approvedAt": null,
+      "estimatedMinutes": 90,
+      "plannedCreativeCount": 2,
+      "deliveredCreativeCount": 0,
+      "briefLink": "https://notion.so/brief/MOT-008",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/motorholjet-footage",
+      "deliveryLink": "",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "version_count",
+          "item": "All requested versions delivered",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "distinct_hooks",
+          "item": "Each version has a clearly different hook",
+          "required": true,
+          "question": "Which hook did you use for each version?",
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "main_angle",
+          "item": "Main angle stated",
+          "required": true,
+          "question": "What is the main angle of this creative?",
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "real_variation",
+          "item": "Real variations, not cosmetic tweaks",
+          "required": true,
+          "question": "What is actually different between the versions?",
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "cta_present",
+          "item": "CTA present",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "subtitles",
+          "item": "Swedish subtitles present, word-for-word from brief",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "product_early",
+          "item": "Product visible before second 4",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-08-02T08:00:00.000Z",
+      "updatedAt": "2026-08-03T18:00:00.000Z"
+    },
+    {
+      "id": "STR-005",
+      "title": "UGC iteration from creator @annaxyz",
+      "description": "",
+      "productId": "strandtofflorna",
+      "assignedEditorId": "ellen",
+      "createdBy": "anna",
+      "taskType": "ugc_iteration",
+      "priority": "normal",
+      "status": "in_progress",
+      "plannedDate": "2026-08-04",
+      "startDate": "2026-08-04",
+      "dueDate": "2026-08-05",
+      "completedAt": null,
+      "approvedAt": null,
+      "estimatedMinutes": 135,
+      "plannedCreativeCount": 3,
+      "deliveredCreativeCount": 0,
+      "briefLink": "https://notion.so/brief/STR-005",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/strandtofflorna-footage",
+      "deliveryLink": "",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "creator_credit",
+          "item": "Correct creator footage used",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-08-03T08:00:00.000Z",
+      "updatedAt": "2026-08-04T18:00:00.000Z"
+    },
+    {
+      "id": "AXE-008",
+      "title": "Voice-over for AXE-hook set",
+      "description": "",
+      "productId": "axelbaltet",
+      "assignedEditorId": "maria",
+      "createdBy": "anna",
+      "taskType": "new_vo",
+      "priority": "high",
+      "status": "blocked",
+      "plannedDate": "2026-08-05",
+      "startDate": "2026-08-05",
+      "dueDate": "2026-08-06",
+      "completedAt": null,
+      "approvedAt": null,
+      "estimatedMinutes": 90,
+      "plannedCreativeCount": 2,
+      "deliveredCreativeCount": 0,
+      "briefLink": "https://notion.so/brief/AXE-008",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/axelbaltet-footage",
+      "deliveryLink": "",
+      "blockerReason": "Missing the new Swedish voice-over file — the brief links to a Drive folder that is empty.",
+      "blockerReportedAt": "2026-08-05T11:00:00.000Z",
+      "blockerNeeds": "Someone to upload the VO file or approve using the old one.",
+      "blockerOwner": "anna",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "vo_script",
+          "item": "Voice-over matches the Swedish script word-for-word",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-08-04T08:00:00.000Z",
+      "updatedAt": "2026-08-05T18:00:00.000Z"
+    },
+    {
+      "id": "MOT-009",
+      "title": "Boat-owner angle video",
+      "description": "",
+      "productId": "motorholjet",
+      "assignedEditorId": "jomar",
+      "createdBy": "anna",
+      "taskType": "new_creative",
+      "priority": "high",
+      "status": "blocked",
+      "plannedDate": "2026-08-05",
+      "startDate": "2026-08-05",
+      "dueDate": "2026-08-06",
+      "completedAt": null,
+      "approvedAt": null,
+      "estimatedMinutes": 135,
+      "plannedCreativeCount": 3,
+      "deliveredCreativeCount": 0,
+      "briefLink": "https://notion.so/brief/MOT-009",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/motorholjet-footage",
+      "deliveryLink": "",
+      "blockerReason": "Source footage folder has no boat b-roll, only engine close-ups.",
+      "blockerReportedAt": "2026-08-05T11:00:00.000Z",
+      "blockerNeeds": "B-roll of a boat on a trailer, or approval to use stock.",
+      "blockerOwner": "anna",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "version_count",
+          "item": "All requested versions delivered",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "distinct_hooks",
+          "item": "Each version has a clearly different hook",
+          "required": true,
+          "question": "Which hook did you use for each version?",
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "main_angle",
+          "item": "Main angle stated",
+          "required": true,
+          "question": "What is the main angle of this creative?",
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "real_variation",
+          "item": "Real variations, not cosmetic tweaks",
+          "required": true,
+          "question": "What is actually different between the versions?",
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "cta_present",
+          "item": "CTA present",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "subtitles",
+          "item": "Swedish subtitles present, word-for-word from brief",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "product_early",
+          "item": "Product visible before second 4",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-08-04T08:00:00.000Z",
+      "updatedAt": "2026-08-05T18:00:00.000Z"
+    },
+    {
+      "id": "STR-006",
+      "title": "Comfort-first static set",
+      "description": "",
+      "productId": "strandtofflorna",
+      "assignedEditorId": "paolo",
+      "createdBy": "anna",
+      "taskType": "new_creative",
+      "priority": "normal",
+      "status": "blocked",
+      "plannedDate": "2026-08-06",
+      "startDate": "2026-08-06",
+      "dueDate": "2026-08-07",
+      "completedAt": null,
+      "approvedAt": null,
+      "estimatedMinutes": 90,
+      "plannedCreativeCount": 2,
+      "deliveredCreativeCount": 0,
+      "briefLink": "https://notion.so/brief/STR-006",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/strandtofflorna-footage",
+      "deliveryLink": "",
+      "blockerReason": "Product page price says 349 kr but the brief says 399 kr.",
+      "blockerReportedAt": "2026-08-06T11:00:00.000Z",
+      "blockerNeeds": "Confirmation of the correct price before I add the price overlay.",
+      "blockerOwner": "axel",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "version_count",
+          "item": "All requested versions delivered",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "distinct_hooks",
+          "item": "Each version has a clearly different hook",
+          "required": true,
+          "question": "Which hook did you use for each version?",
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "main_angle",
+          "item": "Main angle stated",
+          "required": true,
+          "question": "What is the main angle of this creative?",
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "real_variation",
+          "item": "Real variations, not cosmetic tweaks",
+          "required": true,
+          "question": "What is actually different between the versions?",
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "cta_present",
+          "item": "CTA present",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "subtitles",
+          "item": "Swedish subtitles present, word-for-word from brief",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "product_early",
+          "item": "Product visible before second 4",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-08-05T08:00:00.000Z",
+      "updatedAt": "2026-08-06T18:00:00.000Z"
+    },
+    {
+      "id": "AXE-009",
+      "title": "Problem/solution: heavy trimmer",
+      "description": "",
+      "productId": "axelbaltet",
+      "assignedEditorId": "maria",
+      "createdBy": "anna",
+      "taskType": "new_creative",
+      "priority": "high",
+      "status": "in_review",
+      "plannedDate": "2026-08-06",
+      "startDate": "2026-08-06",
+      "dueDate": "2026-08-06",
+      "completedAt": "2026-08-06T16:30:00.000Z",
+      "approvedAt": null,
+      "estimatedMinutes": 135,
+      "plannedCreativeCount": 3,
+      "deliveredCreativeCount": 3,
+      "briefLink": "https://notion.so/brief/AXE-009",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/axelbaltet-footage",
+      "deliveryLink": "https://drive.google.com/drive/folders/AXE-009-delivery",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "version_count",
+          "item": "All requested versions delivered",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "distinct_hooks",
+          "item": "Each version has a clearly different hook",
+          "required": true,
+          "question": "Which hook did you use for each version?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "main_angle",
+          "item": "Main angle stated",
+          "required": true,
+          "question": "What is the main angle of this creative?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "real_variation",
+          "item": "Real variations, not cosmetic tweaks",
+          "required": true,
+          "question": "What is actually different between the versions?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "cta_present",
+          "item": "CTA present",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "subtitles",
+          "item": "Swedish subtitles present, word-for-word from brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "product_early",
+          "item": "Product visible before second 4",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-08-05T08:00:00.000Z",
+      "updatedAt": "2026-08-06T18:00:00.000Z"
+    },
+    {
+      "id": "MOT-010",
+      "title": "Hook iteration on top spender",
+      "description": "",
+      "productId": "motorholjet",
+      "assignedEditorId": "maria",
+      "createdBy": "anna",
+      "taskType": "hook_iteration",
+      "priority": "high",
+      "status": "in_review",
+      "plannedDate": "2026-08-06",
+      "startDate": "2026-08-06",
+      "dueDate": "2026-08-06",
+      "completedAt": "2026-08-06T16:30:00.000Z",
+      "approvedAt": null,
+      "estimatedMinutes": 90,
+      "plannedCreativeCount": 2,
+      "deliveredCreativeCount": 2,
+      "briefLink": "https://notion.so/brief/MOT-010",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/motorholjet-footage",
+      "deliveryLink": "https://drive.google.com/drive/folders/MOT-010-delivery",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "hook_only",
+          "item": "Only the hook changed — rest is identical to control",
+          "required": true,
+          "question": "What exactly did you change compared to the control ad?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "version_count",
+          "item": "All requested hook variants delivered",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "maria",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-08-05T08:00:00.000Z",
+      "updatedAt": "2026-08-06T18:00:00.000Z"
+    },
+    {
+      "id": "MOT-011",
+      "title": "Mechanism-led: 420D fabric",
+      "description": "",
+      "productId": "motorholjet",
+      "assignedEditorId": "jomar",
+      "createdBy": "anna",
+      "taskType": "new_creative",
+      "priority": "normal",
+      "status": "in_review",
+      "plannedDate": "2026-08-06",
+      "startDate": "2026-08-06",
+      "dueDate": "2026-08-06",
+      "completedAt": "2026-08-06T16:30:00.000Z",
+      "approvedAt": null,
+      "estimatedMinutes": 90,
+      "plannedCreativeCount": 2,
+      "deliveredCreativeCount": 2,
+      "briefLink": "https://notion.so/brief/MOT-011",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/motorholjet-footage",
+      "deliveryLink": "https://drive.google.com/drive/folders/MOT-011-delivery",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "version_count",
+          "item": "All requested versions delivered",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "distinct_hooks",
+          "item": "Each version has a clearly different hook",
+          "required": true,
+          "question": "Which hook did you use for each version?",
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "main_angle",
+          "item": "Main angle stated",
+          "required": true,
+          "question": "What is the main angle of this creative?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "real_variation",
+          "item": "Real variations, not cosmetic tweaks",
+          "required": true,
+          "question": "What is actually different between the versions?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "cta_present",
+          "item": "CTA present",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "subtitles",
+          "item": "Swedish subtitles present, word-for-word from brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "product_early",
+          "item": "Product visible before second 4",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "jomar",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-08-05T08:00:00.000Z",
+      "updatedAt": "2026-08-06T18:00:00.000Z"
+    },
+    {
+      "id": "STR-007",
+      "title": "Non-slip demo on wet deck",
+      "description": "",
+      "productId": "strandtofflorna",
+      "assignedEditorId": "ellen",
+      "createdBy": "anna",
+      "taskType": "new_creative",
+      "priority": "normal",
+      "status": "in_review",
+      "plannedDate": "2026-08-06",
+      "startDate": "2026-08-06",
+      "dueDate": "2026-08-06",
+      "completedAt": "2026-08-06T16:30:00.000Z",
+      "approvedAt": null,
+      "estimatedMinutes": 135,
+      "plannedCreativeCount": 3,
+      "deliveredCreativeCount": 3,
+      "briefLink": "https://notion.so/brief/STR-007",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/strandtofflorna-footage",
+      "deliveryLink": "https://drive.google.com/drive/folders/STR-007-delivery",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "version_count",
+          "item": "All requested versions delivered",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "distinct_hooks",
+          "item": "Each version has a clearly different hook",
+          "required": true,
+          "question": "Which hook did you use for each version?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "main_angle",
+          "item": "Main angle stated",
+          "required": true,
+          "question": "What is the main angle of this creative?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "real_variation",
+          "item": "Real variations, not cosmetic tweaks",
+          "required": true,
+          "question": "What is actually different between the versions?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "cta_present",
+          "item": "CTA present",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "subtitles",
+          "item": "Swedish subtitles present, word-for-word from brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "product_early",
+          "item": "Product visible before second 4",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-08-05T08:00:00.000Z",
+      "updatedAt": "2026-08-06T18:00:00.000Z"
+    },
+    {
+      "id": "AXE-010",
+      "title": "Revision: stronger CTA end card",
+      "description": "",
+      "productId": "axelbaltet",
+      "assignedEditorId": "ellen",
+      "createdBy": "anna",
+      "taskType": "revision",
+      "priority": "normal",
+      "status": "in_review",
+      "plannedDate": "2026-08-06",
+      "startDate": "2026-08-06",
+      "dueDate": "2026-08-06",
+      "completedAt": "2026-08-06T16:30:00.000Z",
+      "approvedAt": null,
+      "estimatedMinutes": 90,
+      "plannedCreativeCount": 2,
+      "deliveredCreativeCount": 2,
+      "briefLink": "https://notion.so/brief/AXE-010",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/axelbaltet-footage",
+      "deliveryLink": "https://drive.google.com/drive/folders/AXE-010-delivery",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 1,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "feedback_read",
+          "item": "Previous feedback read and confirmed",
+          "required": true,
+          "question": "What feedback did you receive, and how did you address it?",
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "key": "all_points",
+          "item": "Every feedback point addressed",
+          "required": true,
+          "answer": "yes",
+          "passed": true,
+          "answeredBy": "ellen",
+          "answeredAt": "2026-08-06T16:00:00.000Z"
+        }
+      ],
+      "feedbackHistory": [
+        {
+          "round": 1,
+          "feedback": "Versions were too similar — the hooks need to differ, not just the text colour.",
+          "by": "anna",
+          "at": "2026-08-06T18:00:00.000Z"
+        }
+      ],
+      "createdAt": "2026-08-05T08:00:00.000Z",
+      "updatedAt": "2026-08-06T18:00:00.000Z"
+    },
+    {
+      "id": "AXE-011",
+      "title": "B-roll variation: forest work",
+      "description": "",
+      "productId": "axelbaltet",
+      "assignedEditorId": "jomar",
+      "createdBy": "anna",
+      "taskType": "broll_variation",
+      "priority": "low",
+      "status": "in_progress",
+      "plannedDate": "2026-08-06",
+      "startDate": "2026-08-06",
+      "dueDate": "2026-08-07",
+      "completedAt": null,
+      "approvedAt": null,
+      "estimatedMinutes": 90,
+      "plannedCreativeCount": 2,
+      "deliveredCreativeCount": 0,
+      "briefLink": "https://notion.so/brief/AXE-011",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/axelbaltet-footage",
+      "deliveryLink": "",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-08-05T08:00:00.000Z",
+      "updatedAt": "2026-08-06T18:00:00.000Z"
+    },
+    {
+      "id": "MOT-012",
+      "title": "Export & upload approved batch",
+      "description": "",
+      "productId": "motorholjet",
+      "assignedEditorId": "paolo",
+      "createdBy": "anna",
+      "taskType": "export_upload",
+      "priority": "normal",
+      "status": "in_progress",
+      "plannedDate": "2026-08-06",
+      "startDate": "2026-08-06",
+      "dueDate": "2026-08-06",
+      "completedAt": null,
+      "approvedAt": null,
+      "estimatedMinutes": 45,
+      "plannedCreativeCount": 1,
+      "deliveredCreativeCount": 0,
+      "briefLink": "https://notion.so/brief/MOT-012",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/motorholjet-footage",
+      "deliveryLink": "",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-08-05T08:00:00.000Z",
+      "updatedAt": "2026-08-06T18:00:00.000Z"
+    },
+    {
+      "id": "MOT-013",
+      "title": "New 2-sec intro for winner",
+      "description": "",
+      "productId": "motorholjet",
+      "assignedEditorId": "ellen",
+      "createdBy": "anna",
+      "taskType": "new_intro",
+      "priority": "normal",
+      "status": "planned",
+      "plannedDate": "2026-08-06",
+      "startDate": null,
+      "dueDate": "2026-08-07",
+      "completedAt": null,
+      "approvedAt": null,
+      "estimatedMinutes": 90,
+      "plannedCreativeCount": 2,
+      "deliveredCreativeCount": 0,
+      "briefLink": "https://notion.so/brief/MOT-013",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/motorholjet-footage",
+      "deliveryLink": "",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-08-05T08:00:00.000Z",
+      "updatedAt": "2026-08-06T18:00:00.000Z"
+    },
+    {
+      "id": "STR-008",
+      "title": "Beach-day lifestyle set",
+      "description": "",
+      "productId": "strandtofflorna",
+      "assignedEditorId": "maria",
+      "createdBy": "anna",
+      "taskType": "new_creative",
+      "priority": "normal",
+      "status": "planned",
+      "plannedDate": "2026-08-06",
+      "startDate": null,
+      "dueDate": "2026-08-07",
+      "completedAt": null,
+      "approvedAt": null,
+      "estimatedMinutes": 135,
+      "plannedCreativeCount": 3,
+      "deliveredCreativeCount": 0,
+      "briefLink": "https://notion.so/brief/STR-008",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/strandtofflorna-footage",
+      "deliveryLink": "",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "version_count",
+          "item": "All requested versions delivered",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "distinct_hooks",
+          "item": "Each version has a clearly different hook",
+          "required": true,
+          "question": "Which hook did you use for each version?",
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "main_angle",
+          "item": "Main angle stated",
+          "required": true,
+          "question": "What is the main angle of this creative?",
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "real_variation",
+          "item": "Real variations, not cosmetic tweaks",
+          "required": true,
+          "question": "What is actually different between the versions?",
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "cta_present",
+          "item": "CTA present",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "subtitles",
+          "item": "Swedish subtitles present, word-for-word from brief",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "product_early",
+          "item": "Product visible before second 4",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-08-05T08:00:00.000Z",
+      "updatedAt": "2026-08-06T18:00:00.000Z"
+    },
+    {
+      "id": "AXE-012",
+      "title": "Offer static: bundle price",
+      "description": "",
+      "productId": "axelbaltet",
+      "assignedEditorId": "paolo",
+      "createdBy": "anna",
+      "taskType": "new_creative",
+      "priority": "low",
+      "status": "planned",
+      "plannedDate": "2026-08-07",
+      "startDate": null,
+      "dueDate": "2026-08-08",
+      "completedAt": null,
+      "approvedAt": null,
+      "estimatedMinutes": 90,
+      "plannedCreativeCount": 2,
+      "deliveredCreativeCount": 0,
+      "briefLink": "https://notion.so/brief/AXE-012",
+      "sourceMaterialLink": "https://drive.google.com/drive/folders/axelbaltet-footage",
+      "deliveryLink": "",
+      "blockerReason": null,
+      "blockerReportedAt": null,
+      "blockerNeeds": "",
+      "blockerOwner": "",
+      "currentRevision": 0,
+      "requiresManagerReview": true,
+      "checklist": [
+        {
+          "key": "delivery_link",
+          "item": "Delivery link works and is accessible",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "right_product",
+          "item": "Correct product",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "brief_followed",
+          "item": "Matches the brief",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "file_naming",
+          "item": "File names follow the naming convention",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "aspect_ratio",
+          "item": "Correct aspect ratios (video 9:16 + 4:5)",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "clean_export",
+          "item": "No watermark, audio correct",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "prev_feedback",
+          "item": "Previous feedback implemented",
+          "required": false,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "version_count",
+          "item": "All requested versions delivered",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "distinct_hooks",
+          "item": "Each version has a clearly different hook",
+          "required": true,
+          "question": "Which hook did you use for each version?",
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "main_angle",
+          "item": "Main angle stated",
+          "required": true,
+          "question": "What is the main angle of this creative?",
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "real_variation",
+          "item": "Real variations, not cosmetic tweaks",
+          "required": true,
+          "question": "What is actually different between the versions?",
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "cta_present",
+          "item": "CTA present",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "subtitles",
+          "item": "Swedish subtitles present, word-for-word from brief",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        },
+        {
+          "key": "product_early",
+          "item": "Product visible before second 4",
+          "required": true,
+          "answer": null,
+          "passed": null,
+          "answeredBy": null,
+          "answeredAt": null
+        }
+      ],
+      "feedbackHistory": [],
+      "createdAt": "2026-08-06T08:00:00.000Z",
+      "updatedAt": "2026-08-07T18:00:00.000Z"
+    }
+  ]
+}

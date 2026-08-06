@@ -1,0 +1,44 @@
+{
+  "plans": [
+    {
+      "id": "PLAN-maria-2026-08-06",
+      "editorId": "maria",
+      "date": "2026-08-06",
+      "plannedTaskCount": 3,
+      "plannedCreativeCount": 8,
+      "managerNotes": "Start with AXE-013 — it ships first.",
+      "publishedAt": "2026-08-06T07:00:00.000Z",
+      "acknowledgedAt": "2026-08-06T09:00:00.000Z"
+    },
+    {
+      "id": "PLAN-jomar-2026-08-06",
+      "editorId": "jomar",
+      "date": "2026-08-06",
+      "plannedTaskCount": 2,
+      "plannedCreativeCount": 4,
+      "managerNotes": "",
+      "publishedAt": "2026-08-06T07:00:00.000Z",
+      "acknowledgedAt": "2026-08-06T09:00:00.000Z"
+    },
+    {
+      "id": "PLAN-ellen-2026-08-06",
+      "editorId": "ellen",
+      "date": "2026-08-06",
+      "plannedTaskCount": 3,
+      "plannedCreativeCount": 7,
+      "managerNotes": "",
+      "publishedAt": "2026-08-06T07:00:00.000Z",
+      "acknowledgedAt": "2026-08-06T09:00:00.000Z"
+    },
+    {
+      "id": "PLAN-paolo-2026-08-06",
+      "editorId": "paolo",
+      "date": "2026-08-06",
+      "plannedTaskCount": 2,
+      "plannedCreativeCount": 3,
+      "managerNotes": "",
+      "publishedAt": "2026-08-06T07:00:00.000Z",
+      "acknowledgedAt": null
+    }
+  ]
+}
