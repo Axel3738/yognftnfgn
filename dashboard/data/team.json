@@ -1,17 +1,14 @@
 {
   "slack": {
-    "workspace": "stonebite",
-    "comment": "Kanalerna dit redigerarna skickar. slackUserId nedan ar TOMMA tills Claude-kopplingen ar auktoriserad pa stonebite - U0BK2P1N3AQ pa axel kommer fran ett annat workspace (cwd-yqg1304) och gar inte att anvanda har.",
-    "reportChannel": "#rapporter",
+    "workspace": "stonebiteworkspace",
+    "comment": "Verifierat mot stonebite 2026-08-06. #baver-scaling-products ar kanalen for de 4 skalningsprodukterna - dar ligger dagsrapporterna. #video-editors ar hela redigerarteamet inkl. produkter utanfor detta OS.",
+    "reportChannel": "#bäver-scaling-products",
+    "reportChannelId": "C0BNJC83DMF",
     "reportDeadline": "21:30",
-    "productChannels": {
-      "motorholjet": "",
-      "axelbaltet": "",
-      "strandtofflorna": "",
-      "satesoverdragaren": ""
-    },
-    "ugcChannel": "#ugc",
-    "connected": false
+    "editorsChannel": "#video-editors",
+    "editorsChannelId": "C0BGQBGDZBQ",
+    "ugcChannel": "",
+    "connected": true
   },
   "users": [
     {
@@ -45,7 +42,8 @@
       "timezone": "Europe/Stockholm",
       "active": true,
       "email": "axelodhner.business@gmail.com",
-      "slackUserId": "",
+      "slackUserId": "U0B3MADDQR5",
+      "slackHandle": "@axel.odhner",
       "notionUserId": "332d872b-594c-815b-92e8-0002f9c93383"
     },
     {
@@ -55,8 +53,10 @@
       "timezone": "Europe/Stockholm",
       "active": true,
       "email": "joshnaelga146@gmail.com",
-      "slackUserId": "",
+      "slackUserId": "U0BHPPC8X16",
+      "slackHandle": "@joshnaelga146",
       "notionUserId": "50fdc7d9-a491-45b9-bac4-5315788a616b",
+      "inScalingChannel": true,
       "profile": {
         "defaultDailyCreativeTarget": 4,
         "workingDays": [
@@ -72,6 +72,90 @@
         "endOfDayReportTime": "21:30",
         "skills": [],
         "notes": ""
+      }
+    },
+    {
+      "id": "annabelle",
+      "name": "Annabelle Gonzales",
+      "role": "editor",
+      "timezone": "Europe/Stockholm",
+      "active": true,
+      "email": "annagonzales120629@gmail.com",
+      "slackUserId": "U0BGP6ERDV1",
+      "slackHandle": "@annagonzales120629",
+      "notionUserId": "",
+      "inScalingChannel": true,
+      "profile": {
+        "defaultDailyCreativeTarget": 4,
+        "workingDays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "workdayStart": "",
+        "workdayEnd": "",
+        "middayCheckTime": "18:30",
+        "endOfDayReportTime": "21:30",
+        "skills": [],
+        "notes": "Slack-namnet visar 'Anna' - INTE Anna Odhner (managern). Saknas i Notion, darfor kan inga briefer tilldelas henne an."
+      }
+    },
+    {
+      "id": "gilz",
+      "name": "Gilz Bruce Biazon",
+      "role": "editor",
+      "timezone": "Europe/Stockholm",
+      "active": true,
+      "email": "i.gilzbrucebiazon@gmail.com",
+      "slackUserId": "U0BGVDLRH42",
+      "slackHandle": "@i.gilzbrucebiazon",
+      "notionUserId": "",
+      "inScalingChannel": false,
+      "profile": {
+        "defaultDailyCreativeTarget": 4,
+        "workingDays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "workdayStart": "",
+        "workdayEnd": "",
+        "middayCheckTime": "18:30",
+        "endOfDayReportTime": "21:30",
+        "skills": [],
+        "notes": "Ar i #video-editors men inte i #baver-scaling-products. Saknas i Notion."
+      }
+    },
+    {
+      "id": "carl",
+      "name": "Carl Vicente",
+      "role": "editor",
+      "timezone": "Europe/Stockholm",
+      "active": true,
+      "email": "carlvicente.working@gmail.com",
+      "slackUserId": "U0BGVDQH7PU",
+      "slackHandle": "@carlvicente.working",
+      "notionUserId": "",
+      "inScalingChannel": false,
+      "profile": {
+        "defaultDailyCreativeTarget": 4,
+        "workingDays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "workdayStart": "",
+        "workdayEnd": "",
+        "middayCheckTime": "18:30",
+        "endOfDayReportTime": "21:30",
+        "skills": [],
+        "notes": "Ar i #video-editors men inte i #baver-scaling-products. Saknas i Notion."
       }
     }
   ]

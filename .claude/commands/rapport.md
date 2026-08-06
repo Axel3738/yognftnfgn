@@ -1,9 +1,9 @@
 # /rapport – Ta emot en slutrapport från Slack
 
-**Var rapporterna kommer ifrån:** `#rapporter` i stonebite-workspacet, en per
-redigerare per dag, senast 21:30. Managern kopierar meddelandet därifrån.
-Så länge `slack.connected` är `false` i `dashboard/data/team.json` kan Claude inte
-läsa kanalen själv — rapporten måste klistras in.
+**Var rapporterna kommer ifrån:** `#bäver-scaling-products` i Stonebite
+(`C0BNJC83DMF`), en per redigerare per dag, senast 21:30. Claude kan läsa kanalen
+själv — kör `slack_read_channel` istället för att be managern klistra in.
+Kommandot funkar ändå med inklistrad text om Slack skulle strula.
 
 Argument: `$ARGUMENTS` — redigerarens namn + rapporttexten (klistra in Slack-meddelandet rakt av).
 Exempel:

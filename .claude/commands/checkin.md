@@ -10,11 +10,11 @@ Kör daglig check-in för produkten. Allt gäller **Bäverbutiken / MagiBorsten 
 - Kör `node pipeline/quota.mjs` och visa outputen. 🔴 EFTER plan: räkna ut exakt hur många briefer som måste levereras idag/imorgon för att komma ikapp, och lista vilka Notion-items som är närmast klara.
 
 ## 2. Redigerarnas läge (Slack + Notion)
-- Slutrapporterna ligger i **`#rapporter`** i stonebite-workspacet (en per redigerare
-  per dag, senast 21:30). Blockers och leveranslänkar ligger i produktens egen kanal.
-- Läs meddelandena därifrån sedan igår. Kan Claude inte nå stonebite
-  (`slack.connected: false` i `dashboard/data/team.json`): säg det rakt ut och be
-  managern klistra in rapporterna via `/rapport` istället för att hoppa över steget.
+- Allt för skalningsprodukterna ligger i **`#bäver-scaling-products`** i Stonebite
+  (`C0BNJC83DMF`) — rapporter, blockers och leveranslänkar. Läs kanalen sedan igår
+  med `slack_read_channel`. Kanal-ID:n finns i `dashboard/data/team.json` under `slack`.
+- `#video-editors` (`C0BGQBGDZBQ`) är hela teamet inklusive produkter utanför detta
+  OS — läs den bara om något i skalningskanalen pekar dit.
 - För varje rapporterat klar task: kör kontrollfrågorna. Allt OK → Notion-itemet till **Klar – Godkänd (grön)**. Något saknas → skriv Slack-svar som UTKAST (engelska) med exakt vad som saknas; skicka inte utan godkännande.
 
 Kontrollfrågor per leverans:

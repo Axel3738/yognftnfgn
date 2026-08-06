@@ -5,16 +5,15 @@ Written for the video editors. English throughout.
 Everything you need is in the dashboard your manager sends you. You never need to
 guess what to work on, and you never lose credit for work you finished.
 
-## Where things go in Slack (workspace: stonebite)
+## Where things go in Slack (workspace: Stonebite)
 
 | Channel | What goes there |
 |---------|-----------------|
-| `#rapporter` | **Your end-of-day report. Every workday, before 21:30 CET.** |
-| One channel per product | Briefs, questions, blockers, delivery links for that product |
-| `#ugc` | UGC outreach only |
+| `#bäver-scaling-products` | Everything for the four scaling products: briefs, questions, delivery links, blockers — **and your end-of-day report, before 21:30 CET.** |
+| `#video-editors` | The whole editing team, everything outside the scaling products |
 
-Blockers go in the **product channel immediately** when they happen — do not save
-them for the end-of-day report.
+Blockers go in `#bäver-scaling-products` **immediately** when they happen — do not
+save them for the end-of-day report.
 
 ## The day in five steps
 
@@ -90,9 +89,9 @@ what the ad account rewards.
 
 ### 6. End-of-day report
 
-**Where: `#rapporter` in the stonebite Slack. One message, once per day, before
-21:30 CET.** Not in the product channels — those are for briefs and questions.
-One report per person per day, even if you worked on several products.
+**Where: `#bäver-scaling-products` in the Stonebite Slack. One message, once per
+day, before 21:30 CET.** One report per person per day, even if you worked on
+several products.
 
 Copy this template every day:
 
