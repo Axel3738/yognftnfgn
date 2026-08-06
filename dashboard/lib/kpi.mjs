@@ -117,6 +117,9 @@ export function productStatus(product, tasks, from, to) {
 }
 
 /** Managerns översikt: allt som kräver åtgärd, inte allt som är grönt. */
+/** Redigerardashboarden gäller BARA produkter vi skalar — testprodukter hör hemma i /ny-produkt. */
+export const scalingProducts = products => products.filter(p => p.status === 'aktiv' && p.scaling === true);
+
 export function overview(tasks, events, products, from, to, today) {
   const range = tasksInRange(tasks, from, to);
   const byStatus = s => range.filter(t => t.status === s);
@@ -144,7 +147,7 @@ export function overview(tasks, events, products, from, to, today) {
     creativesPlanned: range.reduce((s, t) => s + t.plannedCreativeCount, 0),
     creativesDelivered: range.filter(t => t.completedAt).reduce((s, t) => s + t.deliveredCreativeCount, 0),
     creativesApproved: range.filter(t => t.approvedAt).reduce((s, t) => s + t.deliveredCreativeCount, 0),
-    products: products.filter(p => p.status === 'aktiv').map(p => productStatus(p, tasks, from, to)),
+    products: scalingProducts(products).map(p => productStatus(p, tasks, from, to)),
     attention,
   };
 }
