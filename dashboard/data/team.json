@@ -1,15 +1,64 @@
 {
   "users": [
-    { "id": "anna", "name": "Anna Odhner", "role": "manager", "timezone": "Europe/Stockholm", "active": true,
-      "email": "", "slackUserId": "", "notionUserId": "" },
-    { "id": "axel", "name": "Axel Odhner", "role": "admin", "timezone": "Europe/Stockholm", "active": true,
-      "email": "axelodhner.business@gmail.com", "slackUserId": "U0BK2P1N3AQ",
-      "notionUserId": "332d872b-594c-815b-92e8-0002f9c93383" },
-    { "id": "josh", "name": "Josh Naelga", "role": "editor", "timezone": "Asia/Manila", "active": true,
-      "email": "joshnaelga146@gmail.com", "slackUserId": "",
+    {
+      "id": "anna",
+      "name": "Anna Odhner",
+      "role": "manager",
+      "timezone": "Europe/Stockholm",
+      "active": true,
+      "email": "",
+      "slackUserId": "",
+      "notionUserId": "",
+      "profile": {
+        "workdayStart": "15:00",
+        "workdayEnd": "22:00",
+        "middayCheckTime": "18:30",
+        "endOfDayReportTime": "21:30",
+        "workingDays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "defaultDailyCreativeTarget": 4
+      }
+    },
+    {
+      "id": "axel",
+      "name": "Axel Odhner",
+      "role": "admin",
+      "timezone": "Europe/Stockholm",
+      "active": true,
+      "email": "axelodhner.business@gmail.com",
+      "slackUserId": "U0BK2P1N3AQ",
+      "notionUserId": "332d872b-594c-815b-92e8-0002f9c93383"
+    },
+    {
+      "id": "josh",
+      "name": "Josh Naelga",
+      "role": "editor",
+      "timezone": "Europe/Stockholm",
+      "active": true,
+      "email": "joshnaelga146@gmail.com",
+      "slackUserId": "",
       "notionUserId": "50fdc7d9-a491-45b9-bac4-5315788a616b",
-      "profile": { "defaultDailyCreativeTarget": 4, "workingDays": [1,2,3,4,5],
-        "workdayStart": "09:00", "workdayEnd": "18:00", "middayCheckTime": "13:30",
-        "endOfDayReportTime": "17:30", "skills": [], "notes": "" } }
+      "profile": {
+        "defaultDailyCreativeTarget": 4,
+        "workingDays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "workdayStart": "15:00",
+        "workdayEnd": "22:00",
+        "middayCheckTime": "18:30",
+        "endOfDayReportTime": "21:30",
+        "skills": [],
+        "notes": ""
+      }
+    }
   ]
 }
