@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Delar upp källkatalogen i översättningsbatchar för beverkobling.no.
+// Delar upp källkatalogen i översättningsbatchar för beverbutikken.no.
 // Urval: alla ACTIVE + fraktskydds-upsellen (UNLISTED "Garanti för säker frakt").
 // Exkluderas: DRAFT, ARCHIVED, app-produkten "Blanda & Spara".
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';

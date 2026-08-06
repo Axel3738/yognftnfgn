@@ -1,4 +1,4 @@
-# beverkobling.no — uppsättning & import
+# beverbutikken.no — uppsättning & import
 
 ## Innehåll i det här paketet
 
@@ -18,7 +18,7 @@
   slutar redan på 9. Vill du ha annan faktor: ändra i `build/build-catalog.mjs` och kör om.
 - **SKU:** `BEVER-<KAT>-<NNN>[-<V>]` — KAT ∈ HAGE/BIL/CAMP/LAND/MARIN/KJT/DIV/SERV.
   Temu-SKU:n bevaras som `supplier_sku` i JSON (läggs som metafält vid API-push).
-- **Vendor:** `Beverkobling` på allt. Bäver-produkterna heter Beverkobling/Beverlampe/Bevertrakt.
+- **Vendor:** `Beverbutikken` på allt. Bäver-produkterna heter Beverkobling/Beverlampe/Bevertrakt.
 - **Status:** allt importeras som DRAFT. Aktivering sker efter ditt godkännande.
 - **Lager:** negativa saldon klampade till 0, policy deny.
 - **Bilder:** källbutikens CDN-URL:er återanvänds (Shopify kopierar filerna vid import).
@@ -26,7 +26,7 @@
 ## Två vägar in i butiken
 
 **A. Direkt via API (rekommenderas — jag gör allt):** koppla sessionens
-Shopify-anslutning till beverkobling.no (jag kör `switch-shop`, du godkänner
+Shopify-anslutning till beverbutikken.no (jag kör `switch-shop`, du godkänner
 auktoriseringen). Därefter skapar jag produkter, kollektioner, menyer och sidor
 programmatiskt och lägger supplier-SKU som metafält.
 
@@ -43,13 +43,13 @@ eller via väg A.
    från utlandet — ditt ansvar, `[JURIDISK GRANSKNING]`. Utan VOEC måste frakt-/prislöften skrivas om.
 4. **Betalning:** Shopify Payments + ev. Klarna/Vipps — aktiveras av dig (identitetsverifiering).
 5. **E-postmallar:** norska texter (orderbekräftelse m.m.) — utkast tas fram efter att butiken kopplats.
-6. **Domän:** beverkobling.no kopplas i Settings → Domains. Supportmail kundesupport@beverkobling.no.
+6. **Domän:** beverbutikken.no kopplas i Settings → Domains. Supportmail kundesupport@beverbutikken.no.
 7. **Tema:** beslut krävs (rättighetsfrågan för trevligtradgard-exporten är öppen) —
    tills vidare rekommenderas gratis-temat Horizon i norsk version.
 
 ## Nästa steg (i ordning)
 
-1. Du: bekräfta att beverkobling.no-butiken finns och godkänn Shopify-kopplingen när jag växlar.
+1. Du: bekräfta att beverbutikken.no-butiken finns och godkänn Shopify-kopplingen när jag växlar.
 2. Jag: pushar katalog (draft) + kollektioner + menyer + sidor, konfigurerar marknad/frakt/moms-grund.
 3. Du: stickprovsgranskar ~10 produkter + policysidorna, beslutar fraktpriser, aktiverar betalning.
 4. Jag: QA-svep av hela kundresan, felrapport, lanseringschecklistan gås igenom.

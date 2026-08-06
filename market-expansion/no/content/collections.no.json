@@ -1,5 +1,5 @@
 {
-  "note": "Norska kollektioner för beverkobling.no. sourceHandle refererar källbutikens kollektion — produktmedlemskap återskapas via source-export/collections.json + handle-mappningen i output/catalog.no.json.",
+  "note": "Norska kollektioner för beverbutikken.no. sourceHandle refererar källbutikens kollektion — produktmedlemskap återskapas via source-export/collections.json + handle-mappningen i output/catalog.no.json.",
   "collections": [
     {
       "sourceHandle": "frontpage",

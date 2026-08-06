@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Monterar norska katalogen för beverkobling.no:
+// Monterar norska katalogen för beverbutikken.no:
 //   batches/*.json (källdata) + translations/*.no.json (norsk copy)
 //   -> output/catalog.no.json  (komplett norsk katalog, API-vänlig)
 //   -> output/shopify-import.csv (Shopify produktimport, status=draft)
@@ -91,7 +91,7 @@ for (const { src, no, flags } of products) {
     category: cat,
     title: no.title,
     descriptionHtml: no.descriptionHtml,
-    vendor: 'Beverkobling',
+    vendor: 'Beverbutikken',
     productType: no.productType,
     tags: no.tags,
     status: 'DRAFT',
