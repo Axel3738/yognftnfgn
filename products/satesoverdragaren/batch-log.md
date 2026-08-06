@@ -66,15 +66,26 @@ data, ingen dom möjlig. Bedöms i nästa `/cs`.
 
 ---
 
-## Batch #4 — INTE byggd denna runda (2026-08-06), medvetet beslut
+## Batch #4 — byggd 2026-08-06 (4 annonser)
 
-Kvoten var redan **+9 före plan** innan denna runda (+12 efter att batch 3
-loggades). 15 av kontots 24 annonser (batch 2 + 3) är fortfarande under
-signifikansgränsen — ingen av dem har hunnit bevisa eller motbevisa sin
-hypotes än. Att bygga ytterligare 3 nya koncept idag skulle fragmentera CBO:n
-ännu mer utan att tillföra ny inlärning just nu — samma logik som
-ANALYSMETOD.md använder mot att döma annonser för tidigt gäller även mot att
-*starta* för många samtidigt. Flaggat som öppen fråga #5 till Axel i dna.md:
-fortsätta bygga varje runda oavsett kvotläge, eller pausa nya koncept tills
-batch 2/3 hunnit mogna (uppskattningsvis 3–5 dagar till vid nuvarande takt,
-baserat på hur snabbt PD_1_3_H1 och SO_1_1_H1 nådde signifikans i juli).
+Byggd på Axels begäran: han vill ha buffert med briefer till nästa analys, inte
+en motivering till varför färre räcker. Notering till framtida sessioner:
+**kvotläget är ett golv, inte ett tak** — när managern ber om mer material
+levereras det, och kvoten används bara för att garantera minimum.
+
+Två av fyra (`PD_13_H1` + `PD_15_H1`) är ett **parat hooktest på samma
+videokropp**: samma vinnarmaterial från sekund 4, olika 0–4s-öppningar
+(beteende-callout vs siffer-kontrast). Klipp kroppen EN gång, producera två
+öppningar — annars är jämförelsen värdelös.
+
+| Annons | Hypotes | Vinkel · Hook-typ · Format · Talare | Utfall |
+|---|---|---|---|
+| `Seatcover_PD_13_H1` | Alla hooks hittills namnger *problemet* (blött säte). Ingen namnger **workaroundet ägaren redan använder** (handduken på sätet). Att peka ut ett befintligt beteende är en starkare igenkänningstrigger än att beskriva ett tillstånd. Isolerad variabel: hook-innehåll (beteende-callout vs tillståndspåstående). | problem/misstag-callout · fråga/observation · rå video m. captions · ingen | Ej launchad än |
+| `Seatcover_PD_15_H1` | "Under 60 sekunder" ligger på sekund 16–18 i vinnaren — efter att halva publiken redan fallit av (tapp 3→9,5s). Kontots starkaste konkreta siffra flyttad till hooken som tidskontrast (år av att stå ut vs under en minut att fixa) stoppar scrollen på specificitet i stället för empati. Isolerad variabel: hook-typ (siffra/tidskontrast). | bekvämlighet/tid · siffra/tidskontrast · rå video m. captions · ingen | Ej launchad än |
+| `Seatcover_PD_14_1` | Kontots statiker säljer känsla, jämförelse eller pris. Ingen svarar på den enklaste förköpsfrågan för en 649 kr-produkt online: *vad kommer fysiskt i paketet?* Att göra konstruktionen läsbar i ett ögonkast minskar osäkerheten som stoppar ett varmt klick från att konvertera. Isolerad variabel: konkret värde-inramning. | konkret värde/innehåll · påstående+pris · statisk m. callouts · ingen | Ej launchad än |
+| `Seatcover_SO_4_1` | SO-spåret konverterar bäst per besök men har hittills varit tidlöst inramat ("nytt säte kostar tusenlappar"). Ett **säsongsskäl att agera nu** — månader av höstregn framför sig, skydda dynan i stället för att byta säte till våren — ger samma ankare en naturlig deadline utan påhittad rea. Isolerad variabel: temporal inramning. | kostnad av att vänta/säsong · påstående (säsong) · offer-grafik · ingen | Ej launchad än |
+
+**Produktionsanmärkningar inbyggda i brieferna:** `SO_4_1` och `PD_14_1` bär
+båda den explicita QA-regeln mot "överstruket"-buggen (riktig genomstrykningslinje
+krävs). `SO_4_1` har uttrycklig spärr mot påhittad rea/nedräkning/slutdatum —
+649/811 är hela erbjudandet. Ingen annons i batchen innehåller testimonials.
