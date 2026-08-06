@@ -93,7 +93,11 @@ har dödat vinnare två gånger. Kortversion av kraven:
 ### 5. Leverera och logga
 - Rapport: kort feedbackloop-sammanfattning (vad lärde vi oss), sedan batchen.
 - Zip-paketera brieferna (video + image) som i forsta-batch-kommandot.
-- Lägg batchen i Notion exakt enligt `docs/os/NOTION-FORMAT.md`: ett item per annons, namn = annonsnamnet, status Draft, tag `Video - Pending Approval` (även bilder), briefen inklistrad i itemet + Drive-länk.
+- **Skapa Drive-strukturen själv — fråga aldrig managern efter mappar.** Lägg en
+  mapp `Batch #N` under samma förälder som förra batchen (så delningen ärvs), en
+  undermapp per annons döpt `NN_<annonsnamn>` plus `reference-assets`, och ladda
+  upp varje brief-fil i sin mapp. Managern ska bara behöva klicka på en länk.
+- Lägg batchen i Notion exakt enligt `docs/os/NOTION-FORMAT.md`: ett item per annons, namn = annonsnamnet, status Draft, tag `Video - Pending Approval` (även bilder). **Itemet innehåller bara Drive-länken till annonsens mapp — ingen brieftext.**
 - Skriv batchen i `products/<id>/batch-log.md` med datum + hypotes + **variabeltaggar** per annons (utfallet fylls i av nästa `/cs`).
 - Committa och pusha alla ändringar i `products/`.
 
@@ -111,4 +115,5 @@ har dödat vinnare två gånger. Kortversion av kraven:
 - [ ] Batchstorlek ≥ kvoten (quota-output visad)
 - [ ] Copy/voiceover skriven av sonnet/haiku-subagent, strategi av huvudmodellen
 - [ ] Briefer på engelska, naming korrekt, zip-paketerade
+- [ ] Drive-mapp per annons skapad + brief uppladdad, och länken inlagd i Notion-itemet
 - [ ] dna.md + batch-log.md uppdaterade i repot (inte bara i chatten) och pushade
