@@ -33,7 +33,17 @@ node dashboard/build.mjs          # bygger dashboard/index.html
 npm test                          # 17 tester på de kritiska reglerna
 ```
 
-Öppna sedan `dashboard/index.html` i webbläsaren. Inga env-variabler krävs.
+### Var du faktiskt ser den
+
+`dashboard/index.html` är incheckad i repot, så den går att öppna på tre sätt:
+
+1. **Be Claude publicera den** — `/dashboard` bygger om och kan publicera den som
+   en delbar länk. Enklast för managern, funkar på mobilen.
+2. **Ladda ner från GitHub** — öppna filen i repot, tryck "Download raw file",
+   dubbelklicka. Inget behöver installeras.
+3. **Lokalt** — `node dashboard/build.mjs` och öppna filen.
+
+Inga env-variabler krävs.
 
 **Skarp start:** ersätt `dashboard/data/team.json` med de riktiga personerna,
 töm `tasks.json`/`events.json`/`daily-plans.json`/`daily-reports.json` till

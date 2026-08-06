@@ -13,7 +13,10 @@ Exempel: `/dashboard` · `/dashboard 2026-08-01` · `/dashboard vecka` · `/dash
    - Vilka redigerare som ligger efter, och om det beror på blockers eller kapacitet.
    - Vem som saknar slutrapport.
    - En rad: **vad hon ska göra härnäst**.
-4. Säg var filen ligger: `dashboard/index.html` — öppnas direkt i webbläsaren.
+4. **Publicera den som en delbar länk** (Artifact) så managern kan öppna den på
+   mobilen utan att ladda ner något. Filen ligger också i repot som
+   `dashboard/index.html` om hon hellre laddar ner den från GitHub.
+5. Committa och pusha den ombyggda filen.
 
 Hitta aldrig på siffror. Allt kommer ur `dashboard/data/` och `products/products.json`.
 

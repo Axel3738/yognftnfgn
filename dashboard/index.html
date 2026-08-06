@@ -1,0 +1,2494 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bäverbutiken · Redigerardashboard 2026-08-06</title>
+<style>
+:root{
+  --paper:#faf9f7; --raise:#f2f0ec; --ink:#15171c; --ink-2:#3d424d; --muted:#6f7480;
+  --line:#e2ded7; --marine:#1d4e78;
+  --moss:#2c6a44; --moss-bg:#e8f1ea; --amber:#8a5c0b; --amber-bg:#faf1de;
+  --rust:#9a3227; --rust-bg:#fbebe8; --steel:#2d5580; --steel-bg:#e9f0f7;
+  --shadow:0 1px 2px rgba(21,23,28,.05);
+}
+@media (prefers-color-scheme:dark){:root{
+  --paper:#14161b; --raise:#1c1f26; --ink:#e8eaee; --ink-2:#b9bec8; --muted:#8b919d;
+  --line:#2b2f38; --marine:#8ab4e8;
+  --moss:#6cc78f; --moss-bg:#14301f; --amber:#e0b264; --amber-bg:#302510;
+  --rust:#ef9086; --rust-bg:#361715; --steel:#8fb6e0; --steel-bg:#152840;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+}}
+:root[data-theme="dark"]{
+  --paper:#14161b; --raise:#1c1f26; --ink:#e8eaee; --ink-2:#b9bec8; --muted:#8b919d;
+  --line:#2b2f38; --marine:#8ab4e8;
+  --moss:#6cc78f; --moss-bg:#14301f; --amber:#e0b264; --amber-bg:#302510;
+  --rust:#ef9086; --rust-bg:#361715; --steel:#8fb6e0; --steel-bg:#152840;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+}
+:root[data-theme="light"]{
+  --paper:#faf9f7; --raise:#f2f0ec; --ink:#15171c; --ink-2:#3d424d; --muted:#6f7480;
+  --line:#e2ded7; --marine:#1d4e78;
+  --moss:#2c6a44; --moss-bg:#e8f1ea; --amber:#8a5c0b; --amber-bg:#faf1de;
+  --rust:#9a3227; --rust-bg:#fbebe8; --steel:#2d5580; --steel-bg:#e9f0f7;
+  --shadow:0 1px 2px rgba(21,23,28,.05);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font:15px/1.55 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased}
+.num,td.num,.tile-value,table{font-variant-numeric:tabular-nums}
+
+header{padding:22px 18px 14px;border-bottom:1px solid var(--line)}
+h1{margin:0;font-size:19px;font-weight:650;letter-spacing:-.01em;text-wrap:balance}
+.sub{margin:5px 0 0;color:var(--muted);font-size:13px}
+
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:10px 18px;border-bottom:1px solid var(--line);
+  position:sticky;top:0;background:var(--paper);z-index:20;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.tab{flex:0 0 auto;min-height:40px;padding:7px 14px;border:1px solid var(--line);background:var(--raise);
+  color:var(--ink-2);border-radius:8px;font:inherit;font-size:13.5px;cursor:pointer;white-space:nowrap;
+  display:inline-flex;align-items:center;gap:7px}
+.tab:hover{border-color:var(--muted)}
+.tab:focus-visible{outline:2px solid var(--marine);outline-offset:2px}
+.tab.active{background:var(--ink);color:var(--paper);border-color:var(--ink);font-weight:600}
+.tab.active .count{background:transparent;border-color:currentColor;color:inherit}
+
+main{padding:18px;max-width:1360px;margin:0 auto}
+section{display:none} section.visible{display:block}
+h2{font-size:20px;font-weight:650;letter-spacing:-.01em;margin:22px 0 3px;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;text-wrap:balance}
+h3{font-size:15px;font-weight:650;margin:22px 0 6px;
+  text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.lede{color:var(--muted);font-size:13.5px;margin:0 0 14px;max-width:70ch}
+.count{background:var(--raise);border:1px solid var(--line);border-radius:99px;
+  padding:1px 8px;font-size:12.5px;font-weight:600;color:var(--ink-2)}
+
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:10px;margin:14px 0}
+.tile{background:var(--raise);border:1px solid var(--line);border-radius:10px;padding:12px 14px;box-shadow:var(--shadow)}
+.tile-label{font-size:10.5px;font-weight:650;color:var(--muted);text-transform:uppercase;letter-spacing:.09em}
+.tile-value{font-size:27px;font-weight:680;line-height:1.1;margin-top:3px;letter-spacing:-.02em}
+.tile-sub{font-size:12px;color:var(--muted);margin-top:1px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(296px,1fr));gap:12px}
+.card,.review-card{background:var(--raise);border:1px solid var(--line);border-left:4px solid var(--muted);
+  border-radius:10px;padding:14px 15px;box-shadow:var(--shadow)}
+.card.blocker,.card.late{border-left-color:var(--rust)}
+.card.review,.review-card{border-left-color:var(--amber)}
+.review-card{margin-bottom:12px}
+.card h3,.review-card h3{margin:7px 0 0;font-size:15.5px;font-weight:650;
+  text-transform:none;letter-spacing:-.005em;color:var(--ink)}
+.card-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.why{margin:7px 0 0;font-weight:600;font-size:14px}
+.needs{margin:7px 0 0;font-size:13.5px;color:var(--ink-2)}
+.meta,.context{color:var(--muted);font-size:12.5px;margin:7px 0 0}
+.context{max-width:80ch;line-height:1.5}
+.actions{margin:9px 0 0;font-size:13.5px}
+.cmd{margin:9px 0 0;font-size:11.5px;color:var(--muted);line-height:1.7}
+code{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:1px 5px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;word-break:break-all}
+
+.badge{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:650;
+  border-radius:6px;padding:3px 8px;white-space:nowrap;letter-spacing:.01em}
+.badge.ok{background:var(--moss-bg);color:var(--moss)}
+.badge.warn{background:var(--amber-bg);color:var(--amber)}
+.badge.danger{background:var(--rust-bg);color:var(--rust)}
+.badge.info{background:var(--steel-bg);color:var(--steel)}
+.badge.neutral{background:var(--raise);color:var(--muted);border:1px solid var(--line)}
+.pill{display:inline-block;font-size:12.5px;font-weight:650;border-radius:99px;padding:3px 11px}
+.pill.ok{background:var(--moss-bg);color:var(--moss)}
+.pill.warn{background:var(--amber-bg);color:var(--amber)}
+.pill.danger{background:var(--rust-bg);color:var(--rust)}
+
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;margin:10px 0;background:var(--raise)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:740px}
+th{text-align:left;font-size:10.5px;font-weight:650;text-transform:uppercase;letter-spacing:.09em;
+  color:var(--muted);padding:10px 11px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:10px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:var(--paper)}
+.num{text-align:right;white-space:nowrap}
+.muted{color:var(--muted);font-size:12.5px}
+.prio{font-size:12.5px;white-space:nowrap}
+.prio-high{color:var(--rust);font-weight:650} .prio-low{color:var(--muted)}
+.blocker{color:var(--rust);font-size:12.5px}
+
+.empty{background:var(--raise);border:1px dashed var(--line);border-radius:10px;
+  padding:26px 20px;text-align:center;color:var(--muted);font-size:13.5px}
+.warnline{background:var(--amber-bg);color:var(--amber);border-radius:8px;
+  padding:11px 14px;font-size:13.5px;margin-top:14px}
+.note{background:var(--steel-bg);color:var(--steel);border-radius:8px;padding:11px 14px;font-size:13.5px}
+.prev-feedback{background:var(--amber-bg);color:var(--amber);border-radius:7px;
+  padding:9px 12px;font-size:13.5px;margin:9px 0 0}
+
+details{margin:11px 0 0} summary{cursor:pointer;font-weight:600;font-size:13.5px;padding:4px 0}
+summary:focus-visible{outline:2px solid var(--marine);outline-offset:2px}
+.checklist{list-style:none;padding:0;margin:8px 0 0}
+.checklist li{padding:6px 0;font-size:13.5px;border-bottom:1px solid var(--line);
+  display:flex;gap:8px;align-items:flex-start}
+.checklist li:last-child{border-bottom:none}
+.checklist li.pass{color:var(--moss)} .checklist li.fail{color:var(--rust)} .checklist li.todo{color:var(--muted)}
+.question{color:var(--amber);font-size:12.5px;font-style:italic;display:block;margin-top:3px}
+
+.progress-wrap{margin:14px 0}
+.progress-label{font-size:13.5px;font-weight:650;margin-bottom:6px}
+.progress{background:var(--raise);border:1px solid var(--line);border-radius:99px;height:12px;overflow:hidden}
+.progress-bar{background:var(--moss);height:100%;border-radius:99px}
+.src{font-size:10.5px;font-weight:600;border-radius:4px;padding:2px 6px;
+  background:var(--paper);border:1px solid var(--line);color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+a{color:var(--marine);text-underline-offset:2px}
+a:focus-visible{outline:2px solid var(--marine);outline-offset:2px}
+footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);
+  margin-top:32px;line-height:1.8}
+@media(max-width:640px){
+  main{padding:14px} .tabs{padding:9px 14px} header{padding:18px 14px 12px}
+  .tile-value{font-size:23px} h2{font-size:18px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Bäverbutiken · Redigerardashboard</h1>
+  <p class="sub">2026-08-06 · 4 redigerare · 6 produkter · genererad 2026-08-06 10:54</p>
+</header>
+
+<nav class="tabs" role="tablist">
+  <button class="tab active" data-target="attention">Uppmärksamhet <span class="count">11</span></button>
+  <button class="tab" data-target="overview">Översikt</button>
+  <button class="tab" data-target="todo">Dagens lista</button>
+  <button class="tab" data-target="review">Review-kö <span class="count">5</span></button>
+  <button class="tab" data-target="editor-maria">Maria</button><button class="tab" data-target="editor-jomar">Jomar</button><button class="tab" data-target="editor-ellen">Ellen</button><button class="tab" data-target="editor-paolo">Paolo</button>
+  <button class="tab" data-target="product-motorholjet">Motorhöljet</button><button class="tab" data-target="product-ai-glasogon">AI Smarta Glasögon</button><button class="tab" data-target="product-vaggfastet">Väggfästet</button><button class="tab" data-target="product-strandtofflorna">Strandtofflorna</button><button class="tab" data-target="product-axelbaltet">Axelbältet</button><button class="tab" data-target="product-satesoverdragaren">Sätesöverdragaren</button>
+  <button class="tab" data-target="history">Historik</button>
+</nav>
+<main>
+
+<section id="attention">
+  <h2>Behöver din uppmärksamhet <span class="count">11</span></h2>
+  <p class="lede">Börja här. Allt annat rullar på utan dig.</p>
+  
+  <div class="cards">
+    
+      <article class="card blocker">
+        <div class="card-top"><span class="badge danger"><span aria-hidden="true">■</span> Blocked</span><span class="muted">Axelbältet</span></div>
+        <h3>AXE-008 · Voice-over for AXE-hook set</h3>
+        <p class="why">Blocked: Missing the new Swedish voice-over file — the brief links to a Drive folder that is empty.</p>
+        <p class="needs"><strong>Behöver:</strong> Someone to upload the VO file or approve using the old one. <em>(Anna Odhner)</em></p>
+        <p class="meta">Maria Santos · due 2026-08-06</p>
+        <p class="actions">
+          <a href="https://notion.so/brief/AXE-008" target="_blank" rel="noopener">Öppna brief</a>
+          
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs history AXE-008</code></p>
+      </article>
+      <article class="card blocker">
+        <div class="card-top"><span class="badge danger"><span aria-hidden="true">■</span> Blocked</span><span class="muted">Motorhöljet</span></div>
+        <h3>MOT-009 · Boat-owner angle video</h3>
+        <p class="why">Blocked: Source footage folder has no boat b-roll, only engine close-ups.</p>
+        <p class="needs"><strong>Behöver:</strong> B-roll of a boat on a trailer, or approval to use stock. <em>(Anna Odhner)</em></p>
+        <p class="meta">Jomar Reyes · due 2026-08-06</p>
+        <p class="actions">
+          <a href="https://notion.so/brief/MOT-009" target="_blank" rel="noopener">Öppna brief</a>
+          
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs history MOT-009</code></p>
+      </article>
+      <article class="card blocker">
+        <div class="card-top"><span class="badge danger"><span aria-hidden="true">■</span> Blocked</span><span class="muted">Strandtofflorna</span></div>
+        <h3>STR-006 · Comfort-first static set</h3>
+        <p class="why">Blocked: Product page price says 349 kr but the brief says 399 kr.</p>
+        <p class="needs"><strong>Behöver:</strong> Confirmation of the correct price before I add the price overlay. <em>(Axel Odhner)</em></p>
+        <p class="meta">Paolo Aquino · due 2026-08-07</p>
+        <p class="actions">
+          <a href="https://notion.so/brief/STR-006" target="_blank" rel="noopener">Öppna brief</a>
+          
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs history STR-006</code></p>
+      </article>
+      <article class="card late">
+        <div class="card-top"><span class="badge warn"><span aria-hidden="true">↺</span> Changes required</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span><span class="muted">Axelbältet</span></div>
+        <h3>AXE-007 · Mechanism-led: how the padding works</h3>
+        <p class="why">Overdue since 2026-08-02</p>
+        
+        <p class="meta">Jomar Reyes · due 2026-08-02</p>
+        <p class="actions">
+          <a href="https://notion.so/brief/AXE-007" target="_blank" rel="noopener">Öppna brief</a>
+          
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs history AXE-007</code></p>
+      </article>
+      <article class="card late">
+        <div class="card-top"><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span><span class="muted">Motorhöljet</span></div>
+        <h3>MOT-008 · Cost-of-inaction static</h3>
+        <p class="why">Overdue since 2026-08-05</p>
+        
+        <p class="meta">Paolo Aquino · due 2026-08-05</p>
+        <p class="actions">
+          <a href="https://notion.so/brief/MOT-008" target="_blank" rel="noopener">Öppna brief</a>
+          
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs history MOT-008</code></p>
+      </article>
+      <article class="card late">
+        <div class="card-top"><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span><span class="muted">Strandtofflorna</span></div>
+        <h3>STR-005 · UGC iteration from creator @annaxyz</h3>
+        <p class="why">Overdue since 2026-08-05</p>
+        
+        <p class="meta">Ellen Cruz · due 2026-08-05</p>
+        <p class="actions">
+          <a href="https://notion.so/brief/STR-005" target="_blank" rel="noopener">Öppna brief</a>
+          
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs history STR-005</code></p>
+      </article>
+      <article class="card review">
+        <div class="card-top"><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span><span class="muted">Axelbältet</span></div>
+        <h3>AXE-009 · Problem/solution: heavy trimmer</h3>
+        <p class="why">Waiting for your review</p>
+        
+        <p class="meta">Maria Santos · due 2026-08-06</p>
+        <p class="actions">
+          <a href="https://notion.so/brief/AXE-009" target="_blank" rel="noopener">Öppna brief</a>
+           · <a href="https://drive.google.com/drive/folders/AXE-009-delivery" target="_blank" rel="noopener">Öppna leverans</a>
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs approve AXE-009 --as anna</code></p>
+      </article>
+      <article class="card review">
+        <div class="card-top"><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span><span class="muted">Motorhöljet</span></div>
+        <h3>MOT-010 · Hook iteration on top spender</h3>
+        <p class="why">Waiting for your review</p>
+        
+        <p class="meta">Maria Santos · due 2026-08-06</p>
+        <p class="actions">
+          <a href="https://notion.so/brief/MOT-010" target="_blank" rel="noopener">Öppna brief</a>
+           · <a href="https://drive.google.com/drive/folders/MOT-010-delivery" target="_blank" rel="noopener">Öppna leverans</a>
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs approve MOT-010 --as anna</code></p>
+      </article>
+      <article class="card review">
+        <div class="card-top"><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span><span class="muted">Motorhöljet</span></div>
+        <h3>MOT-011 · Mechanism-led: 420D fabric</h3>
+        <p class="why">Waiting for your review</p>
+        
+        <p class="meta">Jomar Reyes · due 2026-08-06</p>
+        <p class="actions">
+          <a href="https://notion.so/brief/MOT-011" target="_blank" rel="noopener">Öppna brief</a>
+           · <a href="https://drive.google.com/drive/folders/MOT-011-delivery" target="_blank" rel="noopener">Öppna leverans</a>
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs approve MOT-011 --as anna</code></p>
+      </article>
+      <article class="card review">
+        <div class="card-top"><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span><span class="muted">Strandtofflorna</span></div>
+        <h3>STR-007 · Non-slip demo on wet deck</h3>
+        <p class="why">Waiting for your review</p>
+        
+        <p class="meta">Ellen Cruz · due 2026-08-06</p>
+        <p class="actions">
+          <a href="https://notion.so/brief/STR-007" target="_blank" rel="noopener">Öppna brief</a>
+           · <a href="https://drive.google.com/drive/folders/STR-007-delivery" target="_blank" rel="noopener">Öppna leverans</a>
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs approve STR-007 --as anna</code></p>
+      </article>
+      <article class="card review">
+        <div class="card-top"><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span><span class="muted">Axelbältet</span></div>
+        <h3>AXE-010 · Revision: stronger CTA end card</h3>
+        <p class="why">Waiting for your review</p>
+        
+        <p class="meta">Ellen Cruz · due 2026-08-06</p>
+        <p class="actions">
+          <a href="https://notion.so/brief/AXE-010" target="_blank" rel="noopener">Öppna brief</a>
+           · <a href="https://drive.google.com/drive/folders/AXE-010-delivery" target="_blank" rel="noopener">Öppna leverans</a>
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs approve AXE-010 --as anna</code></p>
+      </article>
+  </div>
+  <p class="warnline"><strong>Saknad slutrapport idag:</strong> Maria Santos, Jomar Reyes, Ellen Cruz, Paolo Aquino</p>
+</section>
+
+<section id="overview">
+  <h2>Översikt · 2026-08-06</h2>
+  <div class="tiles">
+    
+  <div class="tile">
+    <div class="tile-label">Tasks i perioden</div>
+    <div class="tile-value">10</div>
+    
+  </div>
+    
+  <div class="tile" title="Tasks som passerat granskning med grön checklista.">
+    <div class="tile-label">Godkända</div>
+    <div class="tile-value">0</div>
+    
+  </div>
+    
+  <div class="tile">
+    <div class="tile-label">Pågår</div>
+    <div class="tile-value">2</div>
+    
+  </div>
+    
+  <div class="tile" title="Redigeraren kan inte fortsätta utan hjälp.">
+    <div class="tile-label">Blockerade</div>
+    <div class="tile-value">3</div>
+    
+  </div>
+    
+  <div class="tile" title="Deadline passerad och inte godkänd.">
+    <div class="tile-label">Sena</div>
+    <div class="tile-value">3</div>
+    
+  </div>
+    
+  <div class="tile" title="Levererat, men inte godkänt än.">
+    <div class="tile-label">Väntar granskning</div>
+    <div class="tile-value">5</div>
+    
+  </div>
+  </div>
+  <div class="tiles">
+    
+  <div class="tile">
+    <div class="tile-label">Creatives planerade</div>
+    <div class="tile-value">22</div>
+    
+  </div>
+    
+  <div class="tile" title="Redigeraren har lämnat in — inte samma sak som godkänt.">
+    <div class="tile-label">Creatives levererade</div>
+    <div class="tile-value">12</div>
+    
+  </div>
+    
+  <div class="tile" title="Det enda som räknas mot kvoten.">
+    <div class="tile-label">Creatives godkända</div>
+    <div class="tile-value">0</div>
+    
+  </div>
+    
+  <div class="tile">
+    <div class="tile-label">Plan mot utfall</div>
+    <div class="tile-value">-22</div>
+    <div class="tile-sub">godkända − planerade</div>
+  </div>
+  </div>
+
+  <h3>Produkter mot creative-målet</h3>
+  <p class="lede">Kvoten kommer från samma formel som resten av systemet: 20 % av dagsbudgeten (10 % över 5 000 kr) ÷ target-CPA × 3.</p>
+  <div class="scroll"><table><thead><tr><th>Produkt</th><th>Budget/dag</th><th>Testandel</th><th>Kvot/cykel</th><th>Mål i perioden</th><th>I produktion</th><th>Levererat</th><th>Godkänt</th><th>Läge</th></tr></thead><tbody><tr>
+      <td><strong>Motorhöljet</strong></td>
+      <td class="num">6 000 kr</td>
+      <td class="num">10 %</td>
+      <td class="num">14</td>
+      <td class="num">5</td>
+      <td class="num">3</td>
+      <td class="num">4</td>
+      <td class="num">0</td>
+      <td><span class="pill danger">🔴 -5 mot mål</span></td>
+    </tr><tr>
+      <td><strong>AI Smarta Glasögon</strong></td>
+      <td class="num">1 000 kr</td>
+      <td class="num">20 %</td>
+      <td class="num">1</td>
+      <td class="num">1</td>
+      <td class="num">0</td>
+      <td class="num">0</td>
+      <td class="num">0</td>
+      <td><span class="pill danger">🔴 -1 mot mål</span></td>
+    </tr><tr>
+      <td><strong>Väggfästet</strong></td>
+      <td class="num">500 kr</td>
+      <td class="num">20 %</td>
+      <td class="num">2</td>
+      <td class="num">1</td>
+      <td class="num">0</td>
+      <td class="num">0</td>
+      <td class="num">0</td>
+      <td><span class="pill danger">🔴 -1 mot mål</span></td>
+    </tr><tr>
+      <td><strong>Strandtofflorna</strong></td>
+      <td class="num">1 000 kr</td>
+      <td class="num">20 %</td>
+      <td class="num">5</td>
+      <td class="num">2</td>
+      <td class="num">2</td>
+      <td class="num">3</td>
+      <td class="num">0</td>
+      <td><span class="pill danger">🔴 -2 mot mål</span></td>
+    </tr><tr>
+      <td><strong>Axelbältet</strong></td>
+      <td class="num">2 000 kr</td>
+      <td class="num">20 %</td>
+      <td class="num">7</td>
+      <td class="num">3</td>
+      <td class="num">3</td>
+      <td class="num">5</td>
+      <td class="num">0</td>
+      <td><span class="pill danger">🔴 -3 mot mål</span></td>
+    </tr><tr>
+      <td><strong>Sätesöverdragaren</strong></td>
+      <td class="num">1 500 kr</td>
+      <td class="num">20 %</td>
+      <td class="num">3</td>
+      <td class="num">1</td>
+      <td class="num">0</td>
+      <td class="num">0</td>
+      <td class="num">0</td>
+      <td><span class="pill danger">🔴 -1 mot mål</span></td>
+    </tr></tbody></table></div>
+</section>
+
+<section id="todo">
+  <h2>Dagens lista · alla redigerare</h2>
+  <p class="lede">Sorterad på prioritet och deadline.</p>
+  <div class="scroll"><table><thead><tr><th>Status</th><th>Prio</th><th>Task</th><th>Produkt</th><th>Redigerare</th><th>Creatives</th><th>Deadline</th><th>Blocker / rev</th><th>Länkar</th></tr></thead><tbody>
+  <tr>
+    <td><span class="badge danger"><span aria-hidden="true">■</span> Blocked</span></td>
+    <td class="prio prio-high">▲ High</td>
+    <td><strong>AXE-008</strong><br><span class="muted">Voice-over for AXE-hook set</span></td>
+    <td>Axelbältet</td>
+    <td>Maria</td>
+    <td class="num">0/2</td>
+    <td>2026-08-06</td>
+    <td><span class="blocker">Missing the new Swedish voice-over file — the brief links to a Drive folder that is empty.</span></td>
+    <td><a href="https://notion.so/brief/AXE-008" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge danger"><span aria-hidden="true">■</span> Blocked</span></td>
+    <td class="prio prio-high">▲ High</td>
+    <td><strong>MOT-009</strong><br><span class="muted">Boat-owner angle video</span></td>
+    <td>Motorhöljet</td>
+    <td>Jomar</td>
+    <td class="num">0/3</td>
+    <td>2026-08-06</td>
+    <td><span class="blocker">Source footage folder has no boat b-roll, only engine close-ups.</span></td>
+    <td><a href="https://notion.so/brief/MOT-009" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span></td>
+    <td class="prio prio-high">▲ High</td>
+    <td><strong>AXE-009</strong><br><span class="muted">Problem/solution: heavy trimmer</span></td>
+    <td>Axelbältet</td>
+    <td>Maria</td>
+    <td class="num">3/3</td>
+    <td>2026-08-06</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/AXE-009" target="_blank" rel="noopener">Brief</a> · <a href="https://drive.google.com/drive/folders/AXE-009-delivery" target="_blank" rel="noopener">Delivery</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span></td>
+    <td class="prio prio-high">▲ High</td>
+    <td><strong>MOT-010</strong><br><span class="muted">Hook iteration on top spender</span></td>
+    <td>Motorhöljet</td>
+    <td>Maria</td>
+    <td class="num">2/2</td>
+    <td>2026-08-06</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/MOT-010" target="_blank" rel="noopener">Brief</a> · <a href="https://drive.google.com/drive/folders/MOT-010-delivery" target="_blank" rel="noopener">Delivery</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge warn"><span aria-hidden="true">↺</span> Changes required</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>AXE-007</strong><br><span class="muted">Mechanism-led: how the padding works</span></td>
+    <td>Axelbältet</td>
+    <td>Jomar</td>
+    <td class="num">0/2</td>
+    <td>2026-08-02</td>
+    <td><span class="muted">↺ v1</span></td>
+    <td><a href="https://notion.so/brief/AXE-007" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>MOT-008</strong><br><span class="muted">Cost-of-inaction static</span></td>
+    <td>Motorhöljet</td>
+    <td>Paolo</td>
+    <td class="num">0/2</td>
+    <td>2026-08-05</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/MOT-008" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>STR-005</strong><br><span class="muted">UGC iteration from creator @annaxyz</span></td>
+    <td>Strandtofflorna</td>
+    <td>Ellen</td>
+    <td class="num">0/3</td>
+    <td>2026-08-05</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/STR-005" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>MOT-011</strong><br><span class="muted">Mechanism-led: 420D fabric</span></td>
+    <td>Motorhöljet</td>
+    <td>Jomar</td>
+    <td class="num">2/2</td>
+    <td>2026-08-06</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/MOT-011" target="_blank" rel="noopener">Brief</a> · <a href="https://drive.google.com/drive/folders/MOT-011-delivery" target="_blank" rel="noopener">Delivery</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>STR-007</strong><br><span class="muted">Non-slip demo on wet deck</span></td>
+    <td>Strandtofflorna</td>
+    <td>Ellen</td>
+    <td class="num">3/3</td>
+    <td>2026-08-06</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/STR-007" target="_blank" rel="noopener">Brief</a> · <a href="https://drive.google.com/drive/folders/STR-007-delivery" target="_blank" rel="noopener">Delivery</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>AXE-010</strong><br><span class="muted">Revision: stronger CTA end card</span></td>
+    <td>Axelbältet</td>
+    <td>Ellen</td>
+    <td class="num">2/2</td>
+    <td>2026-08-06</td>
+    <td><span class="muted">↺ v1</span></td>
+    <td><a href="https://notion.so/brief/AXE-010" target="_blank" rel="noopener">Brief</a> · <a href="https://drive.google.com/drive/folders/AXE-010-delivery" target="_blank" rel="noopener">Delivery</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>MOT-012</strong><br><span class="muted">Export &amp; upload approved batch</span></td>
+    <td>Motorhöljet</td>
+    <td>Paolo</td>
+    <td class="num">0/1</td>
+    <td>2026-08-06</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/MOT-012" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge danger"><span aria-hidden="true">■</span> Blocked</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>STR-006</strong><br><span class="muted">Comfort-first static set</span></td>
+    <td>Strandtofflorna</td>
+    <td>Paolo</td>
+    <td class="num">0/2</td>
+    <td>2026-08-07</td>
+    <td><span class="blocker">Product page price says 349 kr but the brief says 399 kr.</span></td>
+    <td><a href="https://notion.so/brief/STR-006" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>MOT-013</strong><br><span class="muted">New 2-sec intro for winner</span></td>
+    <td>Motorhöljet</td>
+    <td>Ellen</td>
+    <td class="num">0/2</td>
+    <td>2026-08-07</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/MOT-013" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>STR-008</strong><br><span class="muted">Beach-day lifestyle set</span></td>
+    <td>Strandtofflorna</td>
+    <td>Maria</td>
+    <td class="num">0/3</td>
+    <td>2026-08-07</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/STR-008" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td class="prio prio-low">▽ Low</td>
+    <td><strong>AXE-011</strong><br><span class="muted">B-roll variation: forest work</span></td>
+    <td>Axelbältet</td>
+    <td>Jomar</td>
+    <td class="num">0/2</td>
+    <td>2026-08-07</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/AXE-011" target="_blank" rel="noopener">Brief</a></td>
+  </tr></tbody></table></div>
+</section>
+
+<section id="review">
+  <h2>Review-kö <span class="count">5</span></h2>
+  <p class="lede">En task blir aldrig godkänd bara för att någon säger att den är klar. Checklistan måste vara grön — annars krävs en skriven override.</p>
+  
+      <article class="review-card">
+        <div class="card-top">
+          <h3>AXE-009 · Problem/solution: heavy trimmer</h3>
+          <span class="pill ok">✓ Checklistan klar</span>
+        </div>
+        <p class="meta">Maria Santos · Axelbältet · 3 creatives · levererad 2026-08-06 16:30</p>
+        
+        <details>
+          <summary>Checklista (13/13 gröna)</summary>
+          <ul class="checklist">
+            <li class="pass">
+              <span aria-hidden="true">✓</span>
+              Delivery link works and is accessible
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Correct product
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Matches the brief
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              File names follow the naming convention
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Correct aspect ratios (video 9:16 + 4:5)
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              No watermark, audio correct
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Previous feedback implemented <em>(valfri)</em>
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              All requested versions delivered
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Each version has a clearly different hook
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Main angle stated
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Real variations, not cosmetic tweaks
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              CTA present
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Swedish subtitles present, word-for-word from brief
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Product visible before second 4
+              
+            </li>
+          </ul>
+        </details>
+        <p class="actions"><a href="https://drive.google.com/drive/folders/AXE-009-delivery" target="_blank" rel="noopener">Öppna leverans</a> · <a href="https://notion.so/brief/AXE-009" target="_blank" rel="noopener">Öppna brief</a></p>
+        <p class="cmd">Godkänn: <code>node dashboard/cli.mjs approve AXE-009 --as anna</code><br>
+           Skicka tillbaka: <code>node dashboard/cli.mjs changes AXE-009 --as anna --feedback "..."</code></p>
+      </article>
+      <article class="review-card">
+        <div class="card-top">
+          <h3>MOT-010 · Hook iteration on top spender</h3>
+          <span class="pill ok">✓ Checklistan klar</span>
+        </div>
+        <p class="meta">Maria Santos · Motorhöljet · 2 creatives · levererad 2026-08-06 16:30</p>
+        
+        <details>
+          <summary>Checklista (8/8 gröna)</summary>
+          <ul class="checklist">
+            <li class="pass">
+              <span aria-hidden="true">✓</span>
+              Delivery link works and is accessible
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Correct product
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Matches the brief
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              File names follow the naming convention
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Correct aspect ratios (video 9:16 + 4:5)
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              No watermark, audio correct
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Previous feedback implemented <em>(valfri)</em>
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Only the hook changed — rest is identical to control
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              All requested hook variants delivered
+              
+            </li>
+          </ul>
+        </details>
+        <p class="actions"><a href="https://drive.google.com/drive/folders/MOT-010-delivery" target="_blank" rel="noopener">Öppna leverans</a> · <a href="https://notion.so/brief/MOT-010" target="_blank" rel="noopener">Öppna brief</a></p>
+        <p class="cmd">Godkänn: <code>node dashboard/cli.mjs approve MOT-010 --as anna</code><br>
+           Skicka tillbaka: <code>node dashboard/cli.mjs changes MOT-010 --as anna --feedback "..."</code></p>
+      </article>
+      <article class="review-card">
+        <div class="card-top">
+          <h3>MOT-011 · Mechanism-led: 420D fabric</h3>
+          <span class="pill warn">⚠ 1 punkter kvar</span>
+        </div>
+        <p class="meta">Jomar Reyes · Motorhöljet · 2 creatives · levererad 2026-08-06 16:30</p>
+        
+        <details open>
+          <summary>Checklista (12/13 gröna)</summary>
+          <ul class="checklist">
+            <li class="pass">
+              <span aria-hidden="true">✓</span>
+              Delivery link works and is accessible
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Correct product
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Matches the brief
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              File names follow the naming convention
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Correct aspect ratios (video 9:16 + 4:5)
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              No watermark, audio correct
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Previous feedback implemented <em>(valfri)</em>
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              All requested versions delivered
+              
+            </li><li class="todo">
+              <span aria-hidden="true">○</span>
+              Each version has a clearly different hook
+              <br><span class="question">Fråga redigeraren: Which hook did you use for each version?</span>
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Main angle stated
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Real variations, not cosmetic tweaks
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              CTA present
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Swedish subtitles present, word-for-word from brief
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Product visible before second 4
+              
+            </li>
+          </ul>
+        </details>
+        <p class="actions"><a href="https://drive.google.com/drive/folders/MOT-011-delivery" target="_blank" rel="noopener">Öppna leverans</a> · <a href="https://notion.so/brief/MOT-011" target="_blank" rel="noopener">Öppna brief</a></p>
+        <p class="cmd">Godkänn: <code>node dashboard/cli.mjs approve MOT-011 --as anna</code><br>
+           Skicka tillbaka: <code>node dashboard/cli.mjs changes MOT-011 --as anna --feedback "..."</code></p>
+      </article>
+      <article class="review-card">
+        <div class="card-top">
+          <h3>STR-007 · Non-slip demo on wet deck</h3>
+          <span class="pill ok">✓ Checklistan klar</span>
+        </div>
+        <p class="meta">Ellen Cruz · Strandtofflorna · 3 creatives · levererad 2026-08-06 16:30</p>
+        
+        <details>
+          <summary>Checklista (13/13 gröna)</summary>
+          <ul class="checklist">
+            <li class="pass">
+              <span aria-hidden="true">✓</span>
+              Delivery link works and is accessible
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Correct product
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Matches the brief
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              File names follow the naming convention
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Correct aspect ratios (video 9:16 + 4:5)
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              No watermark, audio correct
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Previous feedback implemented <em>(valfri)</em>
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              All requested versions delivered
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Each version has a clearly different hook
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Main angle stated
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Real variations, not cosmetic tweaks
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              CTA present
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Swedish subtitles present, word-for-word from brief
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Product visible before second 4
+              
+            </li>
+          </ul>
+        </details>
+        <p class="actions"><a href="https://drive.google.com/drive/folders/STR-007-delivery" target="_blank" rel="noopener">Öppna leverans</a> · <a href="https://notion.so/brief/STR-007" target="_blank" rel="noopener">Öppna brief</a></p>
+        <p class="cmd">Godkänn: <code>node dashboard/cli.mjs approve STR-007 --as anna</code><br>
+           Skicka tillbaka: <code>node dashboard/cli.mjs changes STR-007 --as anna --feedback "..."</code></p>
+      </article>
+      <article class="review-card">
+        <div class="card-top">
+          <h3>AXE-010 · Revision: stronger CTA end card</h3>
+          <span class="pill ok">✓ Checklistan klar</span>
+        </div>
+        <p class="meta">Ellen Cruz · Axelbältet · 2 creatives · levererad 2026-08-06 16:30</p>
+        <p class="prev-feedback"><strong>Tidigare feedback (runda 1):</strong> Versions were too similar — the hooks need to differ, not just the text colour.</p>
+        <details>
+          <summary>Checklista (8/8 gröna)</summary>
+          <ul class="checklist">
+            <li class="pass">
+              <span aria-hidden="true">✓</span>
+              Delivery link works and is accessible
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Correct product
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Matches the brief
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              File names follow the naming convention
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Correct aspect ratios (video 9:16 + 4:5)
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              No watermark, audio correct
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Previous feedback implemented <em>(valfri)</em>
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Previous feedback read and confirmed
+              
+            </li><li class="pass">
+              <span aria-hidden="true">✓</span>
+              Every feedback point addressed
+              
+            </li>
+          </ul>
+        </details>
+        <p class="actions"><a href="https://drive.google.com/drive/folders/AXE-010-delivery" target="_blank" rel="noopener">Öppna leverans</a> · <a href="https://notion.so/brief/AXE-010" target="_blank" rel="noopener">Öppna brief</a></p>
+        <p class="cmd">Godkänn: <code>node dashboard/cli.mjs approve AXE-010 --as anna</code><br>
+           Skicka tillbaka: <code>node dashboard/cli.mjs changes AXE-010 --as anna --feedback "..."</code></p>
+      </article>
+</section>
+
+  <section id="editor-maria" class="editor-page">
+    <h2>Maria Santos</h2>
+    <p class="lede">UGC edit · subtitles · hooks — Snabbast på hook-iterationer.</p>
+    <div class="progress-wrap">
+      <div class="progress-label">5 av 8 creatives levererade idag</div>
+      <div class="progress" role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar" style="width:63%"></div>
+      </div>
+    </div>
+    <p class="note"><strong>Från managern:</strong> Start with AXE-013 — it ships first.</p>
+    <div class="tiles">
+      
+  <div class="tile">
+    <div class="tile-label">Creatives idag</div>
+    <div class="tile-value">5</div>
+    
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">Creatives 7 dagar</div>
+    <div class="tile-value">11</div>
+    
+  </div>
+      
+  <div class="tile" title="Andel leveranser inlämnade senast deadline.">
+    <div class="tile-label">On-time rate</div>
+    <div class="tile-value">100 %</div>
+    
+  </div>
+      
+  <div class="tile" title="Godkänd utan en enda revisionsrunda.">
+    <div class="tile-label">First-pass approval</div>
+    <div class="tile-value">100 %</div>
+    
+  </div>
+      
+  <div class="tile" title="Läs mot snitt creatives/task — svårare tasks ger fler revisioner.">
+    <div class="tile-label">Revision rate</div>
+    <div class="tile-value">0 %</div>
+    
+  </div>
+      
+  <div class="tile" title="Nuvarande arbetsbelastning.">
+    <div class="tile-label">Öppna tasks</div>
+    <div class="tile-value">2</div>
+    
+  </div>
+    </div>
+    <p class="context">Kontext: snitt 2.7 creatives per task, 0 revisionsrundor i snitt, 1 blockers rapporterade. <strong>KPI:er ska läsas mot svårighetsgraden — inte som en topplista.</strong></p>
+    <div class="scroll"><table><thead><tr><th>Status</th><th>Prio</th><th>Task</th><th>Produkt</th><th>Creatives</th><th>Deadline</th><th>Blocker / rev</th><th>Länkar</th></tr></thead><tbody>
+  <tr>
+    <td><span class="badge danger"><span aria-hidden="true">■</span> Blocked</span></td>
+    <td class="prio prio-high">▲ High</td>
+    <td><strong>AXE-008</strong><br><span class="muted">Voice-over for AXE-hook set</span></td>
+    <td>Axelbältet</td>
+    
+    <td class="num">0/2</td>
+    <td>2026-08-06</td>
+    <td><span class="blocker">Missing the new Swedish voice-over file — the brief links to a Drive folder that is empty.</span></td>
+    <td><a href="https://notion.so/brief/AXE-008" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span></td>
+    <td class="prio prio-high">▲ High</td>
+    <td><strong>AXE-009</strong><br><span class="muted">Problem/solution: heavy trimmer</span></td>
+    <td>Axelbältet</td>
+    
+    <td class="num">3/3</td>
+    <td>2026-08-06</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/AXE-009" target="_blank" rel="noopener">Brief</a> · <a href="https://drive.google.com/drive/folders/AXE-009-delivery" target="_blank" rel="noopener">Delivery</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span></td>
+    <td class="prio prio-high">▲ High</td>
+    <td><strong>MOT-010</strong><br><span class="muted">Hook iteration on top spender</span></td>
+    <td>Motorhöljet</td>
+    
+    <td class="num">2/2</td>
+    <td>2026-08-06</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/MOT-010" target="_blank" rel="noopener">Brief</a> · <a href="https://drive.google.com/drive/folders/MOT-010-delivery" target="_blank" rel="noopener">Delivery</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>STR-008</strong><br><span class="muted">Beach-day lifestyle set</span></td>
+    <td>Strandtofflorna</td>
+    
+    <td class="num">0/3</td>
+    <td>2026-08-07</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/STR-008" target="_blank" rel="noopener">Brief</a></td>
+  </tr></tbody></table></div>
+  </section>
+  <section id="editor-jomar" class="editor-page">
+    <h2>Jomar Reyes</h2>
+    <p class="lede">motion graphics · statics — Tar de svåraste briefarna — högre revisionsgrad är väntat.</p>
+    <div class="progress-wrap">
+      <div class="progress-label">2 av 4 creatives levererade idag</div>
+      <div class="progress" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar" style="width:50%"></div>
+      </div>
+    </div>
+    
+    <div class="tiles">
+      
+  <div class="tile">
+    <div class="tile-label">Creatives idag</div>
+    <div class="tile-value">2</div>
+    
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">Creatives 7 dagar</div>
+    <div class="tile-value">4</div>
+    
+  </div>
+      
+  <div class="tile" title="Andel leveranser inlämnade senast deadline.">
+    <div class="tile-label">On-time rate</div>
+    <div class="tile-value">100 %</div>
+    
+  </div>
+      
+  <div class="tile" title="Godkänd utan en enda revisionsrunda.">
+    <div class="tile-label">First-pass approval</div>
+    <div class="tile-value">100 %</div>
+    
+  </div>
+      
+  <div class="tile" title="Läs mot snitt creatives/task — svårare tasks ger fler revisioner.">
+    <div class="tile-label">Revision rate</div>
+    <div class="tile-value">50 %</div>
+    
+  </div>
+      
+  <div class="tile" title="Nuvarande arbetsbelastning.">
+    <div class="tile-label">Öppna tasks</div>
+    <div class="tile-value">3</div>
+    
+  </div>
+    </div>
+    <p class="context">Kontext: snitt 2.2 creatives per task, 0 revisionsrundor i snitt, 1 blockers rapporterade. <strong>KPI:er ska läsas mot svårighetsgraden — inte som en topplista.</strong></p>
+    <div class="scroll"><table><thead><tr><th>Status</th><th>Prio</th><th>Task</th><th>Produkt</th><th>Creatives</th><th>Deadline</th><th>Blocker / rev</th><th>Länkar</th></tr></thead><tbody>
+  <tr>
+    <td><span class="badge warn"><span aria-hidden="true">↺</span> Changes required</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>AXE-007</strong><br><span class="muted">Mechanism-led: how the padding works</span></td>
+    <td>Axelbältet</td>
+    
+    <td class="num">0/2</td>
+    <td>2026-08-02</td>
+    <td><span class="muted">↺ v1</span></td>
+    <td><a href="https://notion.so/brief/AXE-007" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge danger"><span aria-hidden="true">■</span> Blocked</span></td>
+    <td class="prio prio-high">▲ High</td>
+    <td><strong>MOT-009</strong><br><span class="muted">Boat-owner angle video</span></td>
+    <td>Motorhöljet</td>
+    
+    <td class="num">0/3</td>
+    <td>2026-08-06</td>
+    <td><span class="blocker">Source footage folder has no boat b-roll, only engine close-ups.</span></td>
+    <td><a href="https://notion.so/brief/MOT-009" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>MOT-011</strong><br><span class="muted">Mechanism-led: 420D fabric</span></td>
+    <td>Motorhöljet</td>
+    
+    <td class="num">2/2</td>
+    <td>2026-08-06</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/MOT-011" target="_blank" rel="noopener">Brief</a> · <a href="https://drive.google.com/drive/folders/MOT-011-delivery" target="_blank" rel="noopener">Delivery</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td class="prio prio-low">▽ Low</td>
+    <td><strong>AXE-011</strong><br><span class="muted">B-roll variation: forest work</span></td>
+    <td>Axelbältet</td>
+    
+    <td class="num">0/2</td>
+    <td>2026-08-07</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/AXE-011" target="_blank" rel="noopener">Brief</a></td>
+  </tr></tbody></table></div>
+  </section>
+  <section id="editor-ellen" class="editor-page">
+    <h2>Ellen Cruz</h2>
+    <p class="lede">voice-over · B-roll</p>
+    <div class="progress-wrap">
+      <div class="progress-label">5 av 7 creatives levererade idag</div>
+      <div class="progress" role="progressbar" aria-valuenow="71" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar" style="width:71%"></div>
+      </div>
+    </div>
+    
+    <div class="tiles">
+      
+  <div class="tile">
+    <div class="tile-label">Creatives idag</div>
+    <div class="tile-value">5</div>
+    
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">Creatives 7 dagar</div>
+    <div class="tile-value">8</div>
+    
+  </div>
+      
+  <div class="tile" title="Andel leveranser inlämnade senast deadline.">
+    <div class="tile-label">On-time rate</div>
+    <div class="tile-value">100 %</div>
+    
+  </div>
+      
+  <div class="tile" title="Godkänd utan en enda revisionsrunda.">
+    <div class="tile-label">First-pass approval</div>
+    <div class="tile-value">100 %</div>
+    
+  </div>
+      
+  <div class="tile" title="Läs mot snitt creatives/task — svårare tasks ger fler revisioner.">
+    <div class="tile-label">Revision rate</div>
+    <div class="tile-value">33 %</div>
+    
+  </div>
+      
+  <div class="tile" title="Nuvarande arbetsbelastning.">
+    <div class="tile-label">Öppna tasks</div>
+    <div class="tile-value">2</div>
+    
+  </div>
+    </div>
+    <p class="context">Kontext: snitt 2.6 creatives per task, 0 revisionsrundor i snitt, 0 blockers rapporterade. <strong>KPI:er ska läsas mot svårighetsgraden — inte som en topplista.</strong></p>
+    <div class="scroll"><table><thead><tr><th>Status</th><th>Prio</th><th>Task</th><th>Produkt</th><th>Creatives</th><th>Deadline</th><th>Blocker / rev</th><th>Länkar</th></tr></thead><tbody>
+  <tr>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>STR-005</strong><br><span class="muted">UGC iteration from creator @annaxyz</span></td>
+    <td>Strandtofflorna</td>
+    
+    <td class="num">0/3</td>
+    <td>2026-08-05</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/STR-005" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>STR-007</strong><br><span class="muted">Non-slip demo on wet deck</span></td>
+    <td>Strandtofflorna</td>
+    
+    <td class="num">3/3</td>
+    <td>2026-08-06</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/STR-007" target="_blank" rel="noopener">Brief</a> · <a href="https://drive.google.com/drive/folders/STR-007-delivery" target="_blank" rel="noopener">Delivery</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>AXE-010</strong><br><span class="muted">Revision: stronger CTA end card</span></td>
+    <td>Axelbältet</td>
+    
+    <td class="num">2/2</td>
+    <td>2026-08-06</td>
+    <td><span class="muted">↺ v1</span></td>
+    <td><a href="https://notion.so/brief/AXE-010" target="_blank" rel="noopener">Brief</a> · <a href="https://drive.google.com/drive/folders/AXE-010-delivery" target="_blank" rel="noopener">Delivery</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>MOT-013</strong><br><span class="muted">New 2-sec intro for winner</span></td>
+    <td>Motorhöljet</td>
+    
+    <td class="num">0/2</td>
+    <td>2026-08-07</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/MOT-013" target="_blank" rel="noopener">Brief</a></td>
+  </tr></tbody></table></div>
+  </section>
+  <section id="editor-paolo" class="editor-page">
+    <h2>Paolo Aquino</h2>
+    <p class="lede">statics · listicle — Ny sedan 3 veckor.</p>
+    <div class="progress-wrap">
+      <div class="progress-label">0 av 3 creatives levererade idag</div>
+      <div class="progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar" style="width:0%"></div>
+      </div>
+    </div>
+    
+    <div class="tiles">
+      
+  <div class="tile">
+    <div class="tile-label">Creatives idag</div>
+    <div class="tile-value">0</div>
+    
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">Creatives 7 dagar</div>
+    <div class="tile-value">2</div>
+    
+  </div>
+      
+  <div class="tile" title="Andel leveranser inlämnade senast deadline.">
+    <div class="tile-label">On-time rate</div>
+    <div class="tile-value">100 %</div>
+    
+  </div>
+      
+  <div class="tile" title="Godkänd utan en enda revisionsrunda.">
+    <div class="tile-label">First-pass approval</div>
+    <div class="tile-value">0 %</div>
+    
+  </div>
+      
+  <div class="tile" title="Läs mot snitt creatives/task — svårare tasks ger fler revisioner.">
+    <div class="tile-label">Revision rate</div>
+    <div class="tile-value">100 %</div>
+    
+  </div>
+      
+  <div class="tile" title="Nuvarande arbetsbelastning.">
+    <div class="tile-label">Öppna tasks</div>
+    <div class="tile-value">4</div>
+    
+  </div>
+    </div>
+    <p class="context">Kontext: snitt 1.8 creatives per task, 2 revisionsrundor i snitt, 1 blockers rapporterade. <strong>KPI:er ska läsas mot svårighetsgraden — inte som en topplista.</strong></p>
+    <div class="scroll"><table><thead><tr><th>Status</th><th>Prio</th><th>Task</th><th>Produkt</th><th>Creatives</th><th>Deadline</th><th>Blocker / rev</th><th>Länkar</th></tr></thead><tbody>
+  <tr>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>MOT-008</strong><br><span class="muted">Cost-of-inaction static</span></td>
+    <td>Motorhöljet</td>
+    
+    <td class="num">0/2</td>
+    <td>2026-08-05</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/MOT-008" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge danger"><span aria-hidden="true">■</span> Blocked</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>STR-006</strong><br><span class="muted">Comfort-first static set</span></td>
+    <td>Strandtofflorna</td>
+    
+    <td class="num">0/2</td>
+    <td>2026-08-07</td>
+    <td><span class="blocker">Product page price says 349 kr but the brief says 399 kr.</span></td>
+    <td><a href="https://notion.so/brief/STR-006" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>MOT-012</strong><br><span class="muted">Export &amp; upload approved batch</span></td>
+    <td>Motorhöljet</td>
+    
+    <td class="num">0/1</td>
+    <td>2026-08-06</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/MOT-012" target="_blank" rel="noopener">Brief</a></td>
+  </tr></tbody></table></div>
+  </section>
+
+  <section id="product-motorholjet" class="product-page">
+    <h2>Motorhöljet <span class="pill danger">🔴 -5 mot mål</span></h2>
+    <div class="tiles">
+      
+  <div class="tile">
+    <div class="tile-label">Kvot per 3-dagarscykel</div>
+    <div class="tile-value">14</div>
+    <div class="tile-sub">4.7/dag</div>
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">Mål i perioden</div>
+    <div class="tile-value">5</div>
+    
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">I backlog</div>
+    <div class="tile-value">1</div>
+    
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">I produktion</div>
+    <div class="tile-value">3</div>
+    
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">Levererat</div>
+    <div class="tile-value">4</div>
+    
+  </div>
+      
+  <div class="tile" title="Bara godkända creatives räknas mot kvoten.">
+    <div class="tile-label">Godkänt</div>
+    <div class="tile-value">0</div>
+    
+  </div>
+    </div>
+    <p class="context">Budget 6 000 kr/dag · testandel 10 % · target-CPA 135 kr · break-even-ROAS 1.63 · target-ROAS 2.74</p>
+    <p class="actions">Redigerare på produkten: Paolo, Jomar, Ellen · blockers 1</p>
+    <div class="scroll"><table><thead><tr><th>Status</th><th>Prio</th><th>Task</th><th>Produkt</th><th>Redigerare</th><th>Creatives</th><th>Deadline</th><th>Blocker / rev</th><th>Länkar</th></tr></thead><tbody>
+  <tr>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>MOT-008</strong><br><span class="muted">Cost-of-inaction static</span></td>
+    <td>Motorhöljet</td>
+    <td>Paolo</td>
+    <td class="num">0/2</td>
+    <td>2026-08-05</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/MOT-008" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge danger"><span aria-hidden="true">■</span> Blocked</span></td>
+    <td class="prio prio-high">▲ High</td>
+    <td><strong>MOT-009</strong><br><span class="muted">Boat-owner angle video</span></td>
+    <td>Motorhöljet</td>
+    <td>Jomar</td>
+    <td class="num">0/3</td>
+    <td>2026-08-06</td>
+    <td><span class="blocker">Source footage folder has no boat b-roll, only engine close-ups.</span></td>
+    <td><a href="https://notion.so/brief/MOT-009" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span></td>
+    <td class="prio prio-high">▲ High</td>
+    <td><strong>MOT-010</strong><br><span class="muted">Hook iteration on top spender</span></td>
+    <td>Motorhöljet</td>
+    <td>Maria</td>
+    <td class="num">2/2</td>
+    <td>2026-08-06</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/MOT-010" target="_blank" rel="noopener">Brief</a> · <a href="https://drive.google.com/drive/folders/MOT-010-delivery" target="_blank" rel="noopener">Delivery</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>MOT-011</strong><br><span class="muted">Mechanism-led: 420D fabric</span></td>
+    <td>Motorhöljet</td>
+    <td>Jomar</td>
+    <td class="num">2/2</td>
+    <td>2026-08-06</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/MOT-011" target="_blank" rel="noopener">Brief</a> · <a href="https://drive.google.com/drive/folders/MOT-011-delivery" target="_blank" rel="noopener">Delivery</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>MOT-012</strong><br><span class="muted">Export &amp; upload approved batch</span></td>
+    <td>Motorhöljet</td>
+    <td>Paolo</td>
+    <td class="num">0/1</td>
+    <td>2026-08-06</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/MOT-012" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>MOT-013</strong><br><span class="muted">New 2-sec intro for winner</span></td>
+    <td>Motorhöljet</td>
+    <td>Ellen</td>
+    <td class="num">0/2</td>
+    <td>2026-08-07</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/MOT-013" target="_blank" rel="noopener">Brief</a></td>
+  </tr></tbody></table></div>
+  </section>
+  <section id="product-ai-glasogon" class="product-page">
+    <h2>AI Smarta Glasögon <span class="pill danger">🔴 -1 mot mål</span></h2>
+    <div class="tiles">
+      
+  <div class="tile">
+    <div class="tile-label">Kvot per 3-dagarscykel</div>
+    <div class="tile-value">1</div>
+    <div class="tile-sub">0.3/dag</div>
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">Mål i perioden</div>
+    <div class="tile-value">1</div>
+    
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">I backlog</div>
+    <div class="tile-value">0</div>
+    
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">I produktion</div>
+    <div class="tile-value">0</div>
+    
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">Levererat</div>
+    <div class="tile-value">0</div>
+    
+  </div>
+      
+  <div class="tile" title="Bara godkända creatives räknas mot kvoten.">
+    <div class="tile-label">Godkänt</div>
+    <div class="tile-value">0</div>
+    
+  </div>
+    </div>
+    <p class="context">Budget 1 000 kr/dag · testandel 20 % · target-CPA 930 kr · break-even-ROAS 1.34 · target-ROAS 2.01</p>
+    <p class="actions">Redigerare på produkten: – · blockers 0</p>
+    <p class="empty">Nothing here. That is a good sign — nothing needs your attention in this list.</p>
+  </section>
+  <section id="product-vaggfastet" class="product-page">
+    <h2>Väggfästet <span class="pill danger">🔴 -1 mot mål</span></h2>
+    <div class="tiles">
+      
+  <div class="tile">
+    <div class="tile-label">Kvot per 3-dagarscykel</div>
+    <div class="tile-value">2</div>
+    <div class="tile-sub">0.7/dag</div>
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">Mål i perioden</div>
+    <div class="tile-value">1</div>
+    
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">I backlog</div>
+    <div class="tile-value">0</div>
+    
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">I produktion</div>
+    <div class="tile-value">0</div>
+    
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">Levererat</div>
+    <div class="tile-value">0</div>
+    
+  </div>
+      
+  <div class="tile" title="Bara godkända creatives räknas mot kvoten.">
+    <div class="tile-label">Godkänt</div>
+    <div class="tile-value">0</div>
+    
+  </div>
+    </div>
+    <p class="context">Budget 500 kr/dag · testandel 20 % · target-CPA 170 kr · break-even-ROAS 2 · target-ROAS 4</p>
+    <p class="actions">Redigerare på produkten: – · blockers 0</p>
+    <p class="empty">Nothing here. That is a good sign — nothing needs your attention in this list.</p>
+  </section>
+  <section id="product-strandtofflorna" class="product-page">
+    <h2>Strandtofflorna <span class="pill danger">🔴 -2 mot mål</span></h2>
+    <div class="tiles">
+      
+  <div class="tile">
+    <div class="tile-label">Kvot per 3-dagarscykel</div>
+    <div class="tile-value">5</div>
+    <div class="tile-sub">1.7/dag</div>
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">Mål i perioden</div>
+    <div class="tile-value">2</div>
+    
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">I backlog</div>
+    <div class="tile-value">1</div>
+    
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">I produktion</div>
+    <div class="tile-value">2</div>
+    
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">Levererat</div>
+    <div class="tile-value">3</div>
+    
+  </div>
+      
+  <div class="tile" title="Bara godkända creatives räknas mot kvoten.">
+    <div class="tile-label">Godkänt</div>
+    <div class="tile-value">0</div>
+    
+  </div>
+    </div>
+    <p class="context">Budget 1 000 kr/dag · testandel 20 % · target-CPA 145 kr · break-even-ROAS 1.7 · target-ROAS 2.97</p>
+    <p class="actions">Redigerare på produkten: Ellen, Paolo, Maria · blockers 1</p>
+    <div class="scroll"><table><thead><tr><th>Status</th><th>Prio</th><th>Task</th><th>Produkt</th><th>Redigerare</th><th>Creatives</th><th>Deadline</th><th>Blocker / rev</th><th>Länkar</th></tr></thead><tbody>
+  <tr>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>STR-005</strong><br><span class="muted">UGC iteration from creator @annaxyz</span></td>
+    <td>Strandtofflorna</td>
+    <td>Ellen</td>
+    <td class="num">0/3</td>
+    <td>2026-08-05</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/STR-005" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge danger"><span aria-hidden="true">■</span> Blocked</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>STR-006</strong><br><span class="muted">Comfort-first static set</span></td>
+    <td>Strandtofflorna</td>
+    <td>Paolo</td>
+    <td class="num">0/2</td>
+    <td>2026-08-07</td>
+    <td><span class="blocker">Product page price says 349 kr but the brief says 399 kr.</span></td>
+    <td><a href="https://notion.so/brief/STR-006" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>STR-007</strong><br><span class="muted">Non-slip demo on wet deck</span></td>
+    <td>Strandtofflorna</td>
+    <td>Ellen</td>
+    <td class="num">3/3</td>
+    <td>2026-08-06</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/STR-007" target="_blank" rel="noopener">Brief</a> · <a href="https://drive.google.com/drive/folders/STR-007-delivery" target="_blank" rel="noopener">Delivery</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>STR-008</strong><br><span class="muted">Beach-day lifestyle set</span></td>
+    <td>Strandtofflorna</td>
+    <td>Maria</td>
+    <td class="num">0/3</td>
+    <td>2026-08-07</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/STR-008" target="_blank" rel="noopener">Brief</a></td>
+  </tr></tbody></table></div>
+  </section>
+  <section id="product-axelbaltet" class="product-page">
+    <h2>Axelbältet <span class="pill danger">🔴 -3 mot mål</span></h2>
+    <div class="tiles">
+      
+  <div class="tile">
+    <div class="tile-label">Kvot per 3-dagarscykel</div>
+    <div class="tile-value">7</div>
+    <div class="tile-sub">2.3/dag</div>
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">Mål i perioden</div>
+    <div class="tile-value">3</div>
+    
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">I backlog</div>
+    <div class="tile-value">1</div>
+    
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">I produktion</div>
+    <div class="tile-value">3</div>
+    
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">Levererat</div>
+    <div class="tile-value">5</div>
+    
+  </div>
+      
+  <div class="tile" title="Bara godkända creatives räknas mot kvoten.">
+    <div class="tile-label">Godkänt</div>
+    <div class="tile-value">0</div>
+    
+  </div>
+    </div>
+    <p class="context">Budget 2 000 kr/dag · testandel 20 % · target-CPA 185 kr · break-even-ROAS 1.72 · target-ROAS 3.03</p>
+    <p class="actions">Redigerare på produkten: Jomar, Maria, Paolo · blockers 1</p>
+    <div class="scroll"><table><thead><tr><th>Status</th><th>Prio</th><th>Task</th><th>Produkt</th><th>Redigerare</th><th>Creatives</th><th>Deadline</th><th>Blocker / rev</th><th>Länkar</th></tr></thead><tbody>
+  <tr>
+    <td><span class="badge warn"><span aria-hidden="true">↺</span> Changes required</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>AXE-007</strong><br><span class="muted">Mechanism-led: how the padding works</span></td>
+    <td>Axelbältet</td>
+    <td>Jomar</td>
+    <td class="num">0/2</td>
+    <td>2026-08-02</td>
+    <td><span class="muted">↺ v1</span></td>
+    <td><a href="https://notion.so/brief/AXE-007" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge danger"><span aria-hidden="true">■</span> Blocked</span></td>
+    <td class="prio prio-high">▲ High</td>
+    <td><strong>AXE-008</strong><br><span class="muted">Voice-over for AXE-hook set</span></td>
+    <td>Axelbältet</td>
+    <td>Maria</td>
+    <td class="num">0/2</td>
+    <td>2026-08-06</td>
+    <td><span class="blocker">Missing the new Swedish voice-over file — the brief links to a Drive folder that is empty.</span></td>
+    <td><a href="https://notion.so/brief/AXE-008" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span></td>
+    <td class="prio prio-high">▲ High</td>
+    <td><strong>AXE-009</strong><br><span class="muted">Problem/solution: heavy trimmer</span></td>
+    <td>Axelbältet</td>
+    <td>Maria</td>
+    <td class="num">3/3</td>
+    <td>2026-08-06</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/AXE-009" target="_blank" rel="noopener">Brief</a> · <a href="https://drive.google.com/drive/folders/AXE-009-delivery" target="_blank" rel="noopener">Delivery</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span></td>
+    <td class="prio prio-normal">– Normal</td>
+    <td><strong>AXE-010</strong><br><span class="muted">Revision: stronger CTA end card</span></td>
+    <td>Axelbältet</td>
+    <td>Ellen</td>
+    <td class="num">2/2</td>
+    <td>2026-08-06</td>
+    <td><span class="muted">↺ v1</span></td>
+    <td><a href="https://notion.so/brief/AXE-010" target="_blank" rel="noopener">Brief</a> · <a href="https://drive.google.com/drive/folders/AXE-010-delivery" target="_blank" rel="noopener">Delivery</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td class="prio prio-low">▽ Low</td>
+    <td><strong>AXE-011</strong><br><span class="muted">B-roll variation: forest work</span></td>
+    <td>Axelbältet</td>
+    <td>Jomar</td>
+    <td class="num">0/2</td>
+    <td>2026-08-07</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/AXE-011" target="_blank" rel="noopener">Brief</a></td>
+  </tr>
+  <tr>
+    <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span></td>
+    <td class="prio prio-low">▽ Low</td>
+    <td><strong>AXE-012</strong><br><span class="muted">Offer static: bundle price</span></td>
+    <td>Axelbältet</td>
+    <td>Paolo</td>
+    <td class="num">0/2</td>
+    <td>2026-08-08</td>
+    <td></td>
+    <td><a href="https://notion.so/brief/AXE-012" target="_blank" rel="noopener">Brief</a></td>
+  </tr></tbody></table></div>
+  </section>
+  <section id="product-satesoverdragaren" class="product-page">
+    <h2>Sätesöverdragaren <span class="pill danger">🔴 -1 mot mål</span></h2>
+    <div class="tiles">
+      
+  <div class="tile">
+    <div class="tile-label">Kvot per 3-dagarscykel</div>
+    <div class="tile-value">3</div>
+    <div class="tile-sub">1/dag</div>
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">Mål i perioden</div>
+    <div class="tile-value">1</div>
+    
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">I backlog</div>
+    <div class="tile-value">0</div>
+    
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">I produktion</div>
+    <div class="tile-value">0</div>
+    
+  </div>
+      
+  <div class="tile">
+    <div class="tile-label">Levererat</div>
+    <div class="tile-value">0</div>
+    
+  </div>
+      
+  <div class="tile" title="Bara godkända creatives räknas mot kvoten.">
+    <div class="tile-label">Godkänt</div>
+    <div class="tile-value">0</div>
+    
+  </div>
+    </div>
+    <p class="context">Budget 1 500 kr/dag · testandel 20 % · target-CPA 300 kr · break-even-ROAS 1.47 · target-ROAS 2.32</p>
+    <p class="actions">Redigerare på produkten: – · blockers 0</p>
+    <p class="empty">Nothing here. That is a good sign — nothing needs your attention in this list.</p>
+  </section>
+
+<section id="history">
+  <h2>Historik</h2>
+  <p class="lede">Varje ändring loggas: vem, vad, när och varifrån (dashboard, Slack, AI eller CLI).</p>
+  <div class="scroll"><table><thead><tr><th>Tid</th><th>Task</th><th>Vem</th><th>Händelse</th><th>Status</th><th>Varifrån</th><th>Detalj</th></tr></thead><tbody>
+    <tr>
+      <td class="muted">2026-08-06 08:00</td>
+      <td>AXE-012</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Offer static: bundle price</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-05 08:00</td>
+      <td>STR-008</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Beach-day lifestyle set</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-05 08:00</td>
+      <td>MOT-013</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">New 2-sec intro for winner</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-06 09:20</td>
+      <td>MOT-012</td>
+      <td>Paolo</td>
+      <td>status_changed</td>
+      <td>planned → in_progress</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted"></td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-05 08:00</td>
+      <td>MOT-012</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Export &amp; upload approved batch</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-06 09:20</td>
+      <td>AXE-011</td>
+      <td>Jomar</td>
+      <td>status_changed</td>
+      <td>planned → in_progress</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted"></td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-05 08:00</td>
+      <td>AXE-011</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">B-roll variation: forest work</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-06 17:01</td>
+      <td>AXE-010</td>
+      <td>Anna</td>
+      <td>review</td>
+      <td>in_review → changes</td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Changes required</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-06 16:30</td>
+      <td>AXE-010</td>
+      <td>Ellen</td>
+      <td>submitted_for_review</td>
+      <td>in_progress → in_review</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted">2 creatives</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-06 09:20</td>
+      <td>AXE-010</td>
+      <td>Ellen</td>
+      <td>status_changed</td>
+      <td>planned → in_progress</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted"></td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-05 08:00</td>
+      <td>AXE-010</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Revision: stronger CTA end card</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-06 16:30</td>
+      <td>STR-007</td>
+      <td>Ellen</td>
+      <td>submitted_for_review</td>
+      <td>in_progress → in_review</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted">3 creatives</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-06 09:20</td>
+      <td>STR-007</td>
+      <td>Ellen</td>
+      <td>status_changed</td>
+      <td>planned → in_progress</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted"></td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-05 08:00</td>
+      <td>STR-007</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Non-slip demo on wet deck</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-06 16:30</td>
+      <td>MOT-011</td>
+      <td>Jomar</td>
+      <td>submitted_for_review</td>
+      <td>in_progress → in_review</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted">2 creatives</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-06 09:20</td>
+      <td>MOT-011</td>
+      <td>Jomar</td>
+      <td>status_changed</td>
+      <td>planned → in_progress</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted"></td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-05 08:00</td>
+      <td>MOT-011</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Mechanism-led: 420D fabric</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-06 16:30</td>
+      <td>MOT-010</td>
+      <td>Maria</td>
+      <td>submitted_for_review</td>
+      <td>in_progress → in_review</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted">2 creatives</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-06 09:20</td>
+      <td>MOT-010</td>
+      <td>Maria</td>
+      <td>status_changed</td>
+      <td>planned → in_progress</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted"></td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-05 08:00</td>
+      <td>MOT-010</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Hook iteration on top spender</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-06 16:30</td>
+      <td>AXE-009</td>
+      <td>Maria</td>
+      <td>submitted_for_review</td>
+      <td>in_progress → in_review</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted">3 creatives</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-06 09:20</td>
+      <td>AXE-009</td>
+      <td>Maria</td>
+      <td>status_changed</td>
+      <td>planned → in_progress</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted"></td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-05 08:00</td>
+      <td>AXE-009</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Problem/solution: heavy trimmer</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-06 11:00</td>
+      <td>STR-006</td>
+      <td>Paolo</td>
+      <td>blocker_reported</td>
+      <td>in_progress → blocked</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted">Product page price says 349 kr but the brief says 399 kr.</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-06 09:20</td>
+      <td>STR-006</td>
+      <td>Paolo</td>
+      <td>status_changed</td>
+      <td>planned → in_progress</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted"></td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-05 08:00</td>
+      <td>STR-006</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Comfort-first static set</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-05 11:00</td>
+      <td>MOT-009</td>
+      <td>Jomar</td>
+      <td>blocker_reported</td>
+      <td>in_progress → blocked</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted">Source footage folder has no boat b-roll, only engine close-ups.</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-05 09:20</td>
+      <td>MOT-009</td>
+      <td>Jomar</td>
+      <td>status_changed</td>
+      <td>planned → in_progress</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted"></td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-04 08:00</td>
+      <td>MOT-009</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Boat-owner angle video</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-05 11:00</td>
+      <td>AXE-008</td>
+      <td>Maria</td>
+      <td>blocker_reported</td>
+      <td>in_progress → blocked</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted">Missing the new Swedish voice-over file — the brief links to a Drive folder that is empty.</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-05 09:20</td>
+      <td>AXE-008</td>
+      <td>Maria</td>
+      <td>status_changed</td>
+      <td>planned → in_progress</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted"></td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-04 08:00</td>
+      <td>AXE-008</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Voice-over for AXE-hook set</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-04 09:20</td>
+      <td>STR-005</td>
+      <td>Ellen</td>
+      <td>status_changed</td>
+      <td>planned → in_progress</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted"></td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-03 08:00</td>
+      <td>STR-005</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">UGC iteration from creator @annaxyz</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-03 09:20</td>
+      <td>MOT-008</td>
+      <td>Paolo</td>
+      <td>status_changed</td>
+      <td>planned → in_progress</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted"></td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-02 08:00</td>
+      <td>MOT-008</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Cost-of-inaction static</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-02 17:01</td>
+      <td>AXE-007</td>
+      <td>Anna</td>
+      <td>review</td>
+      <td>in_review → changes</td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Changes required</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-02 09:20</td>
+      <td>AXE-007</td>
+      <td>Jomar</td>
+      <td>status_changed</td>
+      <td>planned → in_progress</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted"></td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-01 08:00</td>
+      <td>AXE-007</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Mechanism-led: how the padding works</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-02 18:00</td>
+      <td>AXE-006</td>
+      <td>Anna</td>
+      <td>review</td>
+      <td>in_review → approved</td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Approved</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-02 16:30</td>
+      <td>AXE-006</td>
+      <td>Maria</td>
+      <td>submitted_for_review</td>
+      <td>in_progress → in_review</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted">3 creatives</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-02 09:20</td>
+      <td>AXE-006</td>
+      <td>Maria</td>
+      <td>status_changed</td>
+      <td>planned → in_progress</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted"></td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-01 08:00</td>
+      <td>AXE-006</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Hook: &quot;Slipp ont i axlarna&quot;</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-01 18:00</td>
+      <td>STR-004</td>
+      <td>Anna</td>
+      <td>review</td>
+      <td>in_review → approved</td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Approved</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-01 17:02</td>
+      <td>STR-004</td>
+      <td>Anna</td>
+      <td>review</td>
+      <td>in_review → changes</td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Changes required</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-01 17:01</td>
+      <td>STR-004</td>
+      <td>Anna</td>
+      <td>review</td>
+      <td>in_review → changes</td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Changes required</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-01 16:30</td>
+      <td>STR-004</td>
+      <td>Paolo</td>
+      <td>submitted_for_review</td>
+      <td>in_progress → in_review</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted">2 creatives</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-01 09:20</td>
+      <td>STR-004</td>
+      <td>Paolo</td>
+      <td>status_changed</td>
+      <td>planned → in_progress</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted"></td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-31 08:00</td>
+      <td>STR-004</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Garden-use static set</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-01 18:00</td>
+      <td>MOT-007</td>
+      <td>Anna</td>
+      <td>review</td>
+      <td>in_review → approved</td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Approved</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-01 16:30</td>
+      <td>MOT-007</td>
+      <td>Ellen</td>
+      <td>submitted_for_review</td>
+      <td>in_progress → in_review</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted">3 creatives</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-08-01 09:20</td>
+      <td>MOT-007</td>
+      <td>Ellen</td>
+      <td>status_changed</td>
+      <td>planned → in_progress</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted"></td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-31 08:00</td>
+      <td>MOT-007</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Winter storage angle</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-31 18:00</td>
+      <td>MOT-006</td>
+      <td>Anna</td>
+      <td>review</td>
+      <td>in_review → approved</td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Approved</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-31 16:30</td>
+      <td>MOT-006</td>
+      <td>Jomar</td>
+      <td>submitted_for_review</td>
+      <td>in_progress → in_review</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted">2 creatives</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-31 09:20</td>
+      <td>MOT-006</td>
+      <td>Jomar</td>
+      <td>status_changed</td>
+      <td>planned → in_progress</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted"></td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-30 08:00</td>
+      <td>MOT-006</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Reformat winner to 4:5</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-31 18:00</td>
+      <td>AXE-005</td>
+      <td>Anna</td>
+      <td>review</td>
+      <td>in_review → approved</td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Approved</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-31 16:30</td>
+      <td>AXE-005</td>
+      <td>Maria</td>
+      <td>submitted_for_review</td>
+      <td>in_progress → in_review</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted">3 creatives</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-31 09:20</td>
+      <td>AXE-005</td>
+      <td>Maria</td>
+      <td>status_changed</td>
+      <td>planned → in_progress</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted"></td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-30 08:00</td>
+      <td>AXE-005</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Testimonial-style creative</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-29 18:00</td>
+      <td>MOT-005</td>
+      <td>Anna</td>
+      <td>review</td>
+      <td>in_review → approved</td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Approved</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-29 17:01</td>
+      <td>MOT-005</td>
+      <td>Anna</td>
+      <td>review</td>
+      <td>in_review → changes</td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Changes required</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-29 16:30</td>
+      <td>MOT-005</td>
+      <td>Maria</td>
+      <td>submitted_for_review</td>
+      <td>in_progress → in_review</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted">2 creatives</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-29 09:20</td>
+      <td>MOT-005</td>
+      <td>Maria</td>
+      <td>status_changed</td>
+      <td>planned → in_progress</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted"></td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-28 08:00</td>
+      <td>MOT-005</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Revision: reduce text density</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-29 18:00</td>
+      <td>STR-003</td>
+      <td>Anna</td>
+      <td>review</td>
+      <td>in_review → approved</td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Approved</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-29 16:30</td>
+      <td>STR-003</td>
+      <td>Ellen</td>
+      <td>submitted_for_review</td>
+      <td>in_progress → in_review</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted">3 creatives</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-29 09:20</td>
+      <td>STR-003</td>
+      <td>Ellen</td>
+      <td>status_changed</td>
+      <td>planned → in_progress</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted"></td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-28 08:00</td>
+      <td>STR-003</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">UGC-style walk test</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-28 18:00</td>
+      <td>MOT-004</td>
+      <td>Anna</td>
+      <td>review</td>
+      <td>in_review → approved</td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Approved</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-28 16:30</td>
+      <td>MOT-004</td>
+      <td>Jomar</td>
+      <td>submitted_for_review</td>
+      <td>in_progress → in_review</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted">2 creatives</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-28 09:20</td>
+      <td>MOT-004</td>
+      <td>Jomar</td>
+      <td>status_changed</td>
+      <td>planned → in_progress</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted"></td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-27 08:00</td>
+      <td>MOT-004</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">New CTA variant: free shipping</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-28 18:00</td>
+      <td>AXE-004</td>
+      <td>Anna</td>
+      <td>review</td>
+      <td>in_review → approved</td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Approved</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-28 17:01</td>
+      <td>AXE-004</td>
+      <td>Anna</td>
+      <td>review</td>
+      <td>in_review → changes</td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Changes required</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-28 16:30</td>
+      <td>AXE-004</td>
+      <td>Paolo</td>
+      <td>submitted_for_review</td>
+      <td>in_progress → in_review</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted">2 creatives</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-28 09:20</td>
+      <td>AXE-004</td>
+      <td>Paolo</td>
+      <td>status_changed</td>
+      <td>planned → in_progress</td>
+      <td><span class="src src-slack">slack</span></td>
+      <td class="muted"></td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-27 08:00</td>
+      <td>AXE-004</td>
+      <td>Anna</td>
+      <td>task_created</td>
+      <td></td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Comparison static: us vs generic strap</td>
+    </tr>
+    <tr>
+      <td class="muted">2026-07-27 18:00</td>
+      <td>STR-002</td>
+      <td>Anna</td>
+      <td>review</td>
+      <td>in_review → approved</td>
+      <td><span class="src src-dashboard">dashboard</span></td>
+      <td class="muted">Approved</td>
+    </tr></tbody></table></div>
+</section>
+</main>
+<footer>
+  Bygg om efter varje ändring: <code>node dashboard/build.mjs</code> ·
+  Visa annat datum: <code>node dashboard/build.mjs --date 2026-08-01</code> ·
+  Period: <code>--from 2026-07-29 --to 2026-08-05</code><br>
+  Godkända creatives är det enda som räknas mot kvoten. Levererad ≠ godkänd.
+</footer>
+<script>
+const tabs=[...document.querySelectorAll('.tab')],secs=[...document.querySelectorAll('section')];
+function show(id){secs.forEach(s=>s.classList.toggle('visible',s.id===id));
+  tabs.forEach(t=>t.classList.toggle('active',t.dataset.target===id));
+  history.replaceState(null,'','#'+id);}
+tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.target)));
+show(location.hash.slice(1)||'attention');
+</script>
+</body>
+</html>

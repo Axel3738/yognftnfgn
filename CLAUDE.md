@@ -95,3 +95,6 @@ inte; äldre Mastern-material i `docs/` och `pipeline/` (utom `pipeline/quota.mj
 
 - **Team:** filippinska videoredigerare + VA (engelska), en UGC-outreach-ansvarig,
   managern kör Claude-sessionerna.
+- **Slack-workspace:** **stonebite** — en kanal per produkt för redigerarna, en för UGC.
+- **Dashboarden:** `dashboard/index.html` (incheckad, byggs med `node dashboard/build.mjs`).
+  `/dashboard` bygger om den och publicerar den som delbar länk åt managern.

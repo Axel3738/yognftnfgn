@@ -79,7 +79,12 @@ Dagen är grön när:
 - Inga obesvarade underkännanden är äldre än ett dygn.
 - Kvotläget är 0 eller plus — eller så finns en konkret ikappkörningsplan.
 
-## Slack-mallar
+## Slack
+
+Workspace: **stonebite**. En kanal per produkt för redigerarna, plus en för UGC.
+Claude läser och skriver där via Slack-anslutningen — ingen egen app behövs.
+
+### Mallar
 
 **Morgon** (en per redigerare):
 > Good morning, Maria. You have 4 tasks today for Axelbältet and Motorhöljet.

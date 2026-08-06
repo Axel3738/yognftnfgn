@@ -2,6 +2,3 @@ node_modules/
 pipeline/output/
 *.log
 .env
-
-# Genererad dashboard — byggs om med: node dashboard/build.mjs
-dashboard/index.html
