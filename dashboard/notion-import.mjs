@@ -17,8 +17,8 @@ const DATA = join(HERE, 'data');
 /** Notions Status → dashboardens status. */
 export const STATUS_MAP = {
   'Draft':                 'planned',
-  'In progress':           'in_progress',
-  'In progress 2':         'in_progress',
+  'In progress':           'in_progress',   // forsta versionen, inte levererad an
+  'In progress 2':         'in_progress',   // REVISION - har fatt feedback och gor om
   'To be translated':      'in_progress',
   'Creative strat review': 'in_review',
   'To be Reviewed':        'in_review',
@@ -87,7 +87,10 @@ for (const [productId, items] of Object.entries(raw.items)) {
       sourceMaterialLink: '',
       deliveryLink: ['in_review', 'approved'].includes(status) ? it.url : '',
       blockerReason: null, blockerReportedAt: null, blockerNeeds: '', blockerOwner: '',
-      currentRevision: 0,
+      // "In progress 2" i Notion betyder att annonsen redan varit inne, fatt
+      // feedback och gors om. Det ar en revisionsrunda och maste synas i KPI:erna.
+      currentRevision: it.status === 'In progress 2' ? 1 : 0,
+      isRevision: it.status === 'In progress 2',
       requiresManagerReview: true,
       checklist: checklistFor(taskTypeFor(it.namn, it.typ)).map(c =>
         status === 'approved' ? { ...c, passed: true, answer: 'from Notion', answeredBy: 'axel' } : c),

@@ -7,7 +7,7 @@
       "productId": "motorholjet",
       "assignedEditorId": "josh",
       "createdBy": "axel",
-      "taskType": "hook_iteration",
+      "taskType": "revision",
       "priority": "normal",
       "status": "in_progress",
       "plannedDate": "2026-08-05",
@@ -25,7 +25,7 @@
       "blockerReportedAt": null,
       "blockerNeeds": "",
       "blockerOwner": "",
-      "currentRevision": 0,
+      "currentRevision": 1,
       "requiresManagerReview": true,
       "checklist": [
         {
@@ -117,7 +117,8 @@
       "notionType": "Video - Pending Approval",
       "createdAt": "2026-08-05 14:51:00Z",
       "updatedAt": "2026-08-06T12:20:15+00:00",
-      "dueTime": "18:00"
+      "dueTime": "18:00",
+      "isRevision": true
     },
     {
       "id": "MOT-002",
@@ -363,7 +364,7 @@
       "productId": "motorholjet",
       "assignedEditorId": "josh",
       "createdBy": "axel",
-      "taskType": "hook_iteration",
+      "taskType": "revision",
       "priority": "normal",
       "status": "in_progress",
       "plannedDate": "2026-08-05",
@@ -381,7 +382,7 @@
       "blockerReportedAt": null,
       "blockerNeeds": "",
       "blockerOwner": "",
-      "currentRevision": 0,
+      "currentRevision": 1,
       "requiresManagerReview": true,
       "checklist": [
         {
@@ -473,7 +474,8 @@
       "notionType": "Video - Pending Approval",
       "createdAt": "2026-08-05 14:49:44Z",
       "updatedAt": "2026-08-06T12:20:15+00:00",
-      "dueTime": "18:00"
+      "dueTime": "18:00",
+      "isRevision": true
     },
     {
       "id": "MOT-005",
@@ -482,7 +484,7 @@
       "productId": "motorholjet",
       "assignedEditorId": "josh",
       "createdBy": "axel",
-      "taskType": "hook_iteration",
+      "taskType": "revision",
       "priority": "normal",
       "status": "in_progress",
       "plannedDate": "2026-08-05",
@@ -500,7 +502,7 @@
       "blockerReportedAt": null,
       "blockerNeeds": "",
       "blockerOwner": "",
-      "currentRevision": 0,
+      "currentRevision": 1,
       "requiresManagerReview": true,
       "checklist": [
         {
@@ -592,7 +594,8 @@
       "notionType": "Video - Pending Approval",
       "createdAt": "2026-08-05 14:49:44Z",
       "updatedAt": "2026-08-06T12:20:15+00:00",
-      "dueTime": "18:00"
+      "dueTime": "18:00",
+      "isRevision": true
     },
     {
       "id": "MOT-006",
@@ -601,7 +604,7 @@
       "productId": "motorholjet",
       "assignedEditorId": "josh",
       "createdBy": "axel",
-      "taskType": "hook_iteration",
+      "taskType": "revision",
       "priority": "normal",
       "status": "in_progress",
       "plannedDate": "2026-08-05",
@@ -619,7 +622,7 @@
       "blockerReportedAt": null,
       "blockerNeeds": "",
       "blockerOwner": "",
-      "currentRevision": 0,
+      "currentRevision": 1,
       "requiresManagerReview": true,
       "checklist": [
         {
@@ -711,7 +714,8 @@
       "notionType": "Video - Pending Approval",
       "createdAt": "2026-08-05 14:49:44Z",
       "updatedAt": "2026-08-06T12:20:15+00:00",
-      "dueTime": "18:00"
+      "dueTime": "18:00",
+      "isRevision": true
     },
     {
       "id": "MOT-007",
@@ -720,7 +724,7 @@
       "productId": "motorholjet",
       "assignedEditorId": "josh",
       "createdBy": "axel",
-      "taskType": "new_creative",
+      "taskType": "revision",
       "priority": "normal",
       "status": "in_progress",
       "plannedDate": "2026-08-05",
@@ -738,7 +742,7 @@
       "blockerReportedAt": null,
       "blockerNeeds": "",
       "blockerOwner": "",
-      "currentRevision": 0,
+      "currentRevision": 1,
       "requiresManagerReview": true,
       "checklist": [
         {
@@ -877,7 +881,8 @@
       "notionType": "Video - Pending Approval",
       "createdAt": "2026-08-05 14:48:33Z",
       "updatedAt": "2026-08-06T12:20:15+00:00",
-      "dueTime": "18:00"
+      "dueTime": "18:00",
+      "isRevision": true
     },
     {
       "id": "MOT-008",
@@ -886,7 +891,7 @@
       "productId": "motorholjet",
       "assignedEditorId": "josh",
       "createdBy": "axel",
-      "taskType": "new_creative",
+      "taskType": "revision",
       "priority": "normal",
       "status": "in_progress",
       "plannedDate": "2026-08-05",
@@ -904,7 +909,7 @@
       "blockerReportedAt": null,
       "blockerNeeds": "",
       "blockerOwner": "",
-      "currentRevision": 0,
+      "currentRevision": 1,
       "requiresManagerReview": true,
       "checklist": [
         {
@@ -1043,7 +1048,8 @@
       "notionType": "Video - Pending Approval",
       "createdAt": "2026-08-05 14:48:33Z",
       "updatedAt": "2026-08-06T12:20:15+00:00",
-      "dueTime": "18:00"
+      "dueTime": "18:00",
+      "isRevision": true
     },
     {
       "id": "MOT-009",
@@ -1052,7 +1058,7 @@
       "productId": "motorholjet",
       "assignedEditorId": "josh",
       "createdBy": "axel",
-      "taskType": "new_creative",
+      "taskType": "revision",
       "priority": "normal",
       "status": "in_progress",
       "plannedDate": "2026-08-05",
@@ -1070,7 +1076,7 @@
       "blockerReportedAt": null,
       "blockerNeeds": "",
       "blockerOwner": "",
-      "currentRevision": 0,
+      "currentRevision": 1,
       "requiresManagerReview": true,
       "checklist": [
         {
@@ -1209,7 +1215,8 @@
       "notionType": "Video - Pending Approval",
       "createdAt": "2026-08-05 14:48:33Z",
       "updatedAt": "2026-08-06T12:20:15+00:00",
-      "dueTime": "18:00"
+      "dueTime": "18:00",
+      "isRevision": true
     },
     {
       "id": "MOT-010",
@@ -1218,7 +1225,7 @@
       "productId": "motorholjet",
       "assignedEditorId": "josh",
       "createdBy": "axel",
-      "taskType": "hook_iteration",
+      "taskType": "revision",
       "priority": "normal",
       "status": "in_progress",
       "plannedDate": "2026-08-03",
@@ -1236,7 +1243,7 @@
       "blockerReportedAt": null,
       "blockerNeeds": "",
       "blockerOwner": "",
-      "currentRevision": 0,
+      "currentRevision": 1,
       "requiresManagerReview": true,
       "checklist": [
         {
@@ -1328,7 +1335,8 @@
       "notionType": "Video - Pending Approval",
       "createdAt": "2026-08-03 02:41:07Z",
       "updatedAt": "2026-08-06T12:20:15+00:00",
-      "dueTime": "18:00"
+      "dueTime": "18:00",
+      "isRevision": true
     },
     {
       "id": "MOT-011",
@@ -1337,7 +1345,7 @@
       "productId": "motorholjet",
       "assignedEditorId": "josh",
       "createdBy": "axel",
-      "taskType": "hook_iteration",
+      "taskType": "revision",
       "priority": "normal",
       "status": "in_progress",
       "plannedDate": "2026-08-03",
@@ -1355,7 +1363,7 @@
       "blockerReportedAt": null,
       "blockerNeeds": "",
       "blockerOwner": "",
-      "currentRevision": 0,
+      "currentRevision": 1,
       "requiresManagerReview": true,
       "checklist": [
         {
@@ -1447,7 +1455,8 @@
       "notionType": "Video - Pending Approval",
       "createdAt": "2026-08-03 02:41:07Z",
       "updatedAt": "2026-08-06T12:20:15+00:00",
-      "dueTime": "18:00"
+      "dueTime": "18:00",
+      "isRevision": true
     },
     {
       "id": "MOT-012",

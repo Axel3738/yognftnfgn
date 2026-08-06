@@ -39,6 +39,7 @@ const badge = (t) => {
   const s = STATUSES[t.status];
   const late = isLate(t, DATE);
   return `<span class="badge ${s.tone}"><span aria-hidden="true">${s.icon}</span> ${s.label}</span>` +
+         (t.isRevision ? ` <span class="badge warn"><span aria-hidden="true">↺</span> Revision</span>` : '') +
          (late ? ` <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span>` : '');
 };
 
