@@ -80,7 +80,42 @@ Utfall: **30 kr · 0 köp** — alldeles för tidigt, ingen dom.
 
 ---
 
-## Batch 4 — 2026-08-05 · 9 statics · *briefad, ej producerad*
+## Batch 5 — 2026-08-05 (kväll) · 7 briefer · *briefad, ej producerad*
+
+Kvoten var **grön (+4 före plan)** när batchen skrevs — den byggdes för nästa cykel, inte för att täcka ett underskott. Backlog tömd: PD_8_2, PD_8_3 och PD_14_1 inkluderade.
+
+| Annons | Ändrad variabel | Hypotes |
+|---|---|---|
+| PD_13_11 | bakgrund (mörk studio) | Omtag på PD_13_7 som levererades off-brief. Camo-mönstret separerar mot mörk bakgrund; grått äter det. |
+| PD_13_12 | bildformat 9:16 | Alla statics har varit 1:1/4:5 — Reels/Stories har bara fått våra videor, som kostar 2,5× mer per köp. Öppnar en yta vi aldrig testat med formatet som konverterar. |
+| PD_13_13 | färg (khaki på mörk bakgrund) | Khaki dömdes på grå bakgrund där den försvinner. Isolerar om färgen eller kontrasten var problemet. Läses mot PD_13_11. |
+| PD_15_1 | mänsklig närvaro (fot i toffeln) | *Explorativ.* Ingen av 40+ creatives visar produkten buren. Ger skala och passform utan copy. |
+| PD_16_1 | objection: storlek | *Explorativ.* Storleksoro är obeprövad köpspärr. Första annonsen som adresserar den. Enda i batchen med text. |
+| PD_8_2 / PD_8_3 | rubrik på sulmotivet | Från backlog. Isolerar copyn på PD_8. Billiga (textväxling) men betalar sig först när PD_8 får leverans. |
+| PD_14_1 | bevisform (vattnet pressas ur sulan) | Från backlog. Mekaniken som händelse i stället för stillbild. |
+
+---
+
+## Batch 4 — 2026-08-05 · 9 statics · **PRODUCERAD OCH LAUNCHAD samma dag**
+
+Alla nio ligger live i två nya ad sets (`120249549204190291` PD, `120249549205050291` SP). Loggade mot kvoten (`node pipeline/quota.mjs log strandtofflorna 9`) → läget gick från −5 till **+4 före plan**.
+
+**Utfall: ingen dom möjlig på någon av dem.** Tillsammans ~37 kr spend på ungefär fem timmar (0,77–18,42 kr styck). Samtliga ligger långt under signifikansgrinden.
+
+⚠️ `PD_13_10` visar CPA 2,20 kr och ROAS 158,6 på **ett** köp och 2,20 kr spend. Det är precis den sortens tal ANALYSMETOD.md steg 2 finns för att stoppa — **brus, inte en vinnare.** Får inte användas som jämförelsenorm.
+
+**Visuell kvalitetskontroll (4 av 9 granskade):**
+
+| Annons | Enligt brief? | Kommentar |
+|---|---|---|
+| PD_13_4 | ✅ | Vattendroppar på skon, våt sheen på piedestal och golv, droppar rinner nedför blocket. Exakt enligt spec. |
+| PD_13_10 | ✅ | Hjälteparet på blocket, sortimentet runt om, samma studio. Kontrolltestet korrekt byggt. |
+| PD_2_4 | ✅ | Ett svart camo-par på blött trädäck uppifrån, sulan synlig. Exakt enligt spec. |
+| PD_13_7 | ❌ | **Off-brief.** Skulle byta enbart bakgrund men levererades med tre svävande skor ovanför piedestalen — bakgrund, komposition och antal ändrade samtidigt. Testet är förstört; resultatet går inte att tillskriva något. Omtag ligger i batch 5 som `PD_13_11`. |
+
+---
+
+## Batch 4 — briefunderlag (som det skrevs)
 
 **Utökad till 9 efter creative-teardownet enligt ANALYSMETOD.md steg 6b.** Teardownet visade att PD_13_1 och PD_2_2 skiljer sig på tre variabler samtidigt, vilket gör "ett par slår fyra par" till en obevisad slutsats — därför tillkom `PD_13_10` som kontroll. Kvotens testandel (20 % vid 1 000 kr/dag) var dessutom otillsatt — därför tillkom `SP_6_1` som batchens enda explorativa slot.
 

@@ -32,12 +32,22 @@ Räknat 2026-08-05 enligt `docs/os/ANALYSMETOD.md`. **break-even-CPA 252 kr** ·
 
 | Annons | Spend | Andel spend | Köp | CPA | ROAS | **Vinstbidrag** | Andel vinst |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| **PD_13_1** (piedestal, svart camo) | 5 744 kr | 52,7 % | 33 | 174 kr | 2,65 | **2 574 kr** | **82 %** |
-| PD_2_2 (torr flat-lay, 4 färger) | 2 701 kr | 24,8 % | 13 | 208 kr | 2,17 | **572 kr** | 18 % |
+| **PD_13_1** (piedestal, svart camo) | 6 662 kr | 55,3 % | 40 | 167 kr | 2,79 | **3 418 kr** | **88 %** |
+| PD_2_2 (torr flat-lay, 4 färger) | 2 806 kr | 23,3 % | 13 | 216 kr | 2,09 | **470 kr** | 12 % |
 
-**PD_13_1 står för 82 % av allt vinstbidrag.** Den är produktens vinnare och kampanjens **benchmark** — alla andra annonser jämförs mot den, aldrig tvärtom.
+**PD_13_1 står för 88 % av allt vinstbidrag** och är kampanjens **benchmark** — alla andra jämförs mot den, aldrig tvärtom.
 
-**Båda ligger under break-even och tjänar pengar per order:** PD_13_1 78 kr, PD_2_2 44 kr. Att de ligger över target-CPA (145 kr) är en skalningssignal, **aldrig ett skäl att pausa**.
+**Båda ligger under break-even och tjänar pengar per order:** PD_13_1 85 kr, PD_2_2 36 kr. Att de ligger över target-CPA (145 kr) är en skalningssignal, **aldrig ett skäl att pausa**.
+
+#### Rörelsen sedan mätningen tidigare samma dag `DATA` — viktigast i hela filen
+
+| | Spend | Köp | CPA | Frekvens | Vinstbidrag |
+|---|---|---|---|---|---|
+| **PD_13_1** | 5 744 → **6 662 kr** | 33 → **40** | 176 → **167 kr** ↓ | 1,62 → 1,65 | 2 492 → **3 418 kr** |
+| **PD_2_2** | 2 710 → **2 806 kr** | 13 → **13** | 208 → **216 kr** ↑ | 1,73 → **1,75** | 566 → **470 kr** |
+
+**Vinnaren accelererar, tvåan har stannat.** PD_13_1 tog 918 kr mer spend och levererade 7 nya köp till *lägre* CPA — den blir billigare ju mer den får, vilket är ovanligt och betyder att taket inte är nått. PD_2_2 tog 96 kr och gav **noll** nya köp; CPA upp, frekvens högst i kampanjen.
+`HYPOTES`: PD_2_2 är creative fatigue, inte ett dåligt koncept — den har helt enkelt bränt sin publik. Det är den som ska ersättas, inte PD_13_1 som ska skyddas.
 
 #### För tidigt — ingen dom möjlig
 
@@ -119,7 +129,21 @@ Båda granskade visuellt (bildfilerna nedladdade ur kontot).
 | **Ett par (hjälte) + piedestal + svart camo** | 1 | 5 824 kr | **2 492 kr** | **81 %** |
 | **Fyra par + flat-lay + alla färger** | 1 | 2 710 kr | 566 kr | 19 % |
 
-### Tre mönster
+### Mönster tillagda 2026-08-05 (andra körningen)
+
+**4 — PD_13-formeln har inte nått sitt tak; PD_2_2 har nått sitt. `DATA`** (40 respektive 13 köp bakom)
+Se rörelsetabellen ovan. PD_13_1 sänker sin CPA när den får mer budget; PD_2_2 slutade konvertera helt.
+→ **Briefinstruktion:** fortsätt mångfaldiga PD_13-formeln utan oro för mättnad. Ersättare ska byggas för PD_2-spåret (flat-lay), inte för PD_13.
+
+**5 — Nya creatives får ingen leverans så länge de delar kampanj med en dominerande vinnare. `DATA`**
+Batch 4:s nio annonser gick live och fick tillsammans **~37 kr på ungefär fem timmar** (0,77–18,42 kr styck), trots egna ad sets. PD_13_1 tog samma period 918 kr. CBO fördelar till bevisad konvertering, inte till obeprövade creatives.
+→ **Briefinstruktion / strukturåtgärd:** att producera fler creatives löser inte detta — det är en budgetfråga, inte en produktionsfråga. Testbudget måste separeras från skalningsbudget (egen kampanj eller ABO), annars kan ingen ny creative någonsin nå de 300 kr som krävs för en dom. **Detta är produktens främsta flaskhals just nu, före allt annat i den här filen.**
+
+**6 — En brief som ändrar mer än en variabel förstör sitt eget test. `DATA`**
+`PD_13_7` skulle byta enbart bakgrund men levererades med tre svävande skor: bakgrund, komposition och antal ändrades samtidigt. Utfallet går inte att tillskriva något.
+→ **Briefinstruktion:** skriv ut explicit i varje brief vad som INTE får ändras, inte bara vad som ska ändras. `PD_13_11` i batch 5 är samma test korrekt isolerat.
+
+### Tre mönster (första körningen)
 
 **1 — Textfri produktbild är den enda visuella stil som nått bedömbarhet. `HYPOTES` (starkt indicium)**
 Båda bedömbara annonserna är textfria. Varje text-tung variant (PD_2_1 textoverlay, PD_9_1 jämförelse, PD_12_1 tabell, SO_4_1 prisankare) ligger kvar på 5–9 kr spend — auktionen vägrar leverera dem. Kan inte märkas *bevisad*: det finns ingen text-variant som fått spend att jämföra mot.
