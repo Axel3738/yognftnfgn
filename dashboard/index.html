@@ -149,11 +149,11 @@ footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px soli
 <body>
 <header>
   <h1>Bäverbutiken · Redigerardashboard</h1>
-  <p class="sub">2026-08-06 · 1 redigerare · 4 produkter vi skalar · genererad 2026-08-06 12:21</p>
+  <p class="sub">2026-08-06 · 1 redigerare · 4 produkter vi skalar · genererad 2026-08-06 12:26</p>
 </header>
 
 <nav class="tabs" role="tablist">
-  <button class="tab active" data-target="attention">Uppmärksamhet <span class="count">1</span></button>
+  <button class="tab active" data-target="attention">Uppmärksamhet <span class="count">16</span></button>
   <button class="tab" data-target="overview">Översikt</button>
   <button class="tab" data-target="notion">Öppet arbete</button>
   <button class="tab" data-target="todo">Dagens lista</button>
@@ -165,22 +165,202 @@ footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px soli
 <main>
 
 <section id="attention">
-  <h2>Behöver din uppmärksamhet <span class="count">1</span></h2>
+  <h2>Behöver din uppmärksamhet <span class="count">16</span></h2>
   <p class="lede">Börja här. Allt annat rullar på utan dig.</p>
   
   <div class="cards">
     
-      <article class="card review">
-        <div class="card-top"><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span><span class="muted">Motorhöljet</span></div>
-        <h3>MOT-003 · Enginecover_SO_10_H1</h3>
-        <p class="why">Waiting for your review</p>
+      <article class="card late">
+        <div class="card-top"><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span><span class="muted">Motorhöljet</span></div>
+        <h3>MOT-001 · Enginecover_SO_11_H1</h3>
+        <p class="why">Overdue since 2026-08-05</p>
         
-        <p class="meta">– · due </p>
+        <p class="meta">– · due 2026-08-05</p>
+        <p class="actions">
+          <a href="https://app.notion.com/3b3270ab908c817c8fdcc57192b4dfdc" target="_blank" rel="noopener">Öppna brief</a>
+          
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs history MOT-001</code></p>
+      </article>
+      <article class="card late">
+        <div class="card-top"><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span><span class="muted">Motorhöljet</span></div>
+        <h3>MOT-002 · Enginecover_SP_10_H1</h3>
+        <p class="why">Overdue since 2026-08-05</p>
+        
+        <p class="meta">– · due 2026-08-05</p>
+        <p class="actions">
+          <a href="https://app.notion.com/3b3270ab908c81fa9805d333e542305c" target="_blank" rel="noopener">Öppna brief</a>
+          
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs history MOT-002</code></p>
+      </article>
+      <article class="card late">
+        <div class="card-top"><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span><span class="muted">Motorhöljet</span></div>
+        <h3>MOT-003 · Enginecover_SO_10_H1</h3>
+        <p class="why">Overdue since 2026-08-05</p>
+        
+        <p class="meta">– · due 2026-08-05</p>
         <p class="actions">
           <a href="https://app.notion.com/3b3270ab908c81b1a179fa0574565aff" target="_blank" rel="noopener">Öppna brief</a>
            · <a href="https://app.notion.com/3b3270ab908c81b1a179fa0574565aff" target="_blank" rel="noopener">Öppna leverans</a>
         </p>
-        <p class="cmd">Kommando: <code>node dashboard/cli.mjs approve MOT-003 --as anna</code></p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs history MOT-003</code></p>
+      </article>
+      <article class="card late">
+        <div class="card-top"><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span><span class="muted">Motorhöljet</span></div>
+        <h3>MOT-004 · Enginecover_PD_1_H6</h3>
+        <p class="why">Overdue since 2026-08-05</p>
+        
+        <p class="meta">– · due 2026-08-05</p>
+        <p class="actions">
+          <a href="https://app.notion.com/3b3270ab908c81baab2eddc8c9ad44c7" target="_blank" rel="noopener">Öppna brief</a>
+          
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs history MOT-004</code></p>
+      </article>
+      <article class="card late">
+        <div class="card-top"><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span><span class="muted">Motorhöljet</span></div>
+        <h3>MOT-005 · Enginecover_PD_1_H5</h3>
+        <p class="why">Overdue since 2026-08-05</p>
+        
+        <p class="meta">– · due 2026-08-05</p>
+        <p class="actions">
+          <a href="https://app.notion.com/3b3270ab908c81f3bc8ee76dfbf9881a" target="_blank" rel="noopener">Öppna brief</a>
+          
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs history MOT-005</code></p>
+      </article>
+      <article class="card late">
+        <div class="card-top"><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span><span class="muted">Motorhöljet</span></div>
+        <h3>MOT-006 · Enginecover_SP_9_H1</h3>
+        <p class="why">Overdue since 2026-08-05</p>
+        
+        <p class="meta">– · due 2026-08-05</p>
+        <p class="actions">
+          <a href="https://app.notion.com/3b3270ab908c81b9baffec31f7e07a97" target="_blank" rel="noopener">Öppna brief</a>
+          
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs history MOT-006</code></p>
+      </article>
+      <article class="card late">
+        <div class="card-top"><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span><span class="muted">Motorhöljet</span></div>
+        <h3>MOT-007 · Enginecover_SO_9_C1</h3>
+        <p class="why">Overdue since 2026-08-05</p>
+        
+        <p class="meta">– · due 2026-08-05</p>
+        <p class="actions">
+          <a href="https://app.notion.com/3b3270ab908c8123804ccb7cac18c981" target="_blank" rel="noopener">Öppna brief</a>
+          
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs history MOT-007</code></p>
+      </article>
+      <article class="card late">
+        <div class="card-top"><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span><span class="muted">Motorhöljet</span></div>
+        <h3>MOT-008 · Enginecover_PD_15_C1</h3>
+        <p class="why">Overdue since 2026-08-05</p>
+        
+        <p class="meta">– · due 2026-08-05</p>
+        <p class="actions">
+          <a href="https://app.notion.com/3b3270ab908c81658527ea5d625e41c3" target="_blank" rel="noopener">Öppna brief</a>
+          
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs history MOT-008</code></p>
+      </article>
+      <article class="card late">
+        <div class="card-top"><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span><span class="muted">Motorhöljet</span></div>
+        <h3>MOT-009 · Enginecover_PD_6_C1</h3>
+        <p class="why">Overdue since 2026-08-05</p>
+        
+        <p class="meta">– · due 2026-08-05</p>
+        <p class="actions">
+          <a href="https://app.notion.com/3b3270ab908c81efaa22f3868dee6934" target="_blank" rel="noopener">Öppna brief</a>
+          
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs history MOT-009</code></p>
+      </article>
+      <article class="card late">
+        <div class="card-top"><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span><span class="muted">Motorhöljet</span></div>
+        <h3>MOT-010 · Enginecover_SP_6_H1</h3>
+        <p class="why">Overdue since 2026-08-05</p>
+        
+        <p class="meta">– · due 2026-08-05</p>
+        <p class="actions">
+          <a href="https://app.notion.com/3b1270ab908c81998defe26393b21e2a" target="_blank" rel="noopener">Öppna brief</a>
+          
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs history MOT-010</code></p>
+      </article>
+      <article class="card late">
+        <div class="card-top"><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span><span class="muted">Motorhöljet</span></div>
+        <h3>MOT-011 · Enginecover_SO_3_H1</h3>
+        <p class="why">Overdue since 2026-08-05</p>
+        
+        <p class="meta">– · due 2026-08-05</p>
+        <p class="actions">
+          <a href="https://app.notion.com/3b1270ab908c81c89b36c674aac10bb9" target="_blank" rel="noopener">Öppna brief</a>
+          
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs history MOT-011</code></p>
+      </article>
+      <article class="card late">
+        <div class="card-top"><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span><span class="muted">Axelbältet</span></div>
+        <h3>AXE-001 · Trimmerbelt_PD_7_1</h3>
+        <p class="why">Overdue since 2026-08-05</p>
+        
+        <p class="meta">– · due 2026-08-05</p>
+        <p class="actions">
+          <a href="https://app.notion.com/3b3270ab908c811eb045d9e41d5a2659" target="_blank" rel="noopener">Öppna brief</a>
+          
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs history AXE-001</code></p>
+      </article>
+      <article class="card late">
+        <div class="card-top"><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span><span class="muted">Axelbältet</span></div>
+        <h3>AXE-002 · Trimmerbelt_PD_1_1_H4</h3>
+        <p class="why">Overdue since 2026-08-05</p>
+        
+        <p class="meta">– · due 2026-08-05</p>
+        <p class="actions">
+          <a href="https://app.notion.com/3b3270ab908c81718193fe24b9e33d4d" target="_blank" rel="noopener">Öppna brief</a>
+          
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs history AXE-002</code></p>
+      </article>
+      <article class="card late">
+        <div class="card-top"><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span><span class="muted">Axelbältet</span></div>
+        <h3>AXE-003 · Trimmerbelt_PD_1_3_H1</h3>
+        <p class="why">Overdue since 2026-08-05</p>
+        
+        <p class="meta">– · due 2026-08-05</p>
+        <p class="actions">
+          <a href="https://app.notion.com/3b3270ab908c81929cacc848aac9fe6b" target="_blank" rel="noopener">Öppna brief</a>
+          
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs history AXE-003</code></p>
+      </article>
+      <article class="card late">
+        <div class="card-top"><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span><span class="muted">Axelbältet</span></div>
+        <h3>AXE-004 · Trimmerbelt_PD_1_2_H1</h3>
+        <p class="why">Overdue since 2026-08-05</p>
+        
+        <p class="meta">– · due 2026-08-05</p>
+        <p class="actions">
+          <a href="https://app.notion.com/3b3270ab908c81bc8fb9e812df06cd38" target="_blank" rel="noopener">Öppna brief</a>
+          
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs history AXE-004</code></p>
+      </article>
+      <article class="card late">
+        <div class="card-top"><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span><span class="muted">Axelbältet</span></div>
+        <h3>AXE-005 · Trimmerbelt_PD_1_1_H5</h3>
+        <p class="why">Overdue since 2026-08-05</p>
+        
+        <p class="meta">– · due 2026-08-05</p>
+        <p class="actions">
+          <a href="https://app.notion.com/3b3270ab908c8146b316f25a854595d8" target="_blank" rel="noopener">Öppna brief</a>
+          
+        </p>
+        <p class="cmd">Kommando: <code>node dashboard/cli.mjs history AXE-005</code></p>
       </article>
   </div>
   <p class="warnline"><strong>Saknad slutrapport idag:</strong> Josh Naelga</p>
@@ -216,7 +396,7 @@ footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px soli
     
   <div class="tile" title="Deadline passerad och inte godkänd.">
     <div class="tile-label">Sena</div>
-    <div class="tile-value">0</div>
+    <div class="tile-value">16</div>
     
   </div>
     
@@ -373,7 +553,7 @@ footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px soli
   <h3>Varje öppen annons</h3>
   <div class="scroll"><table><thead><tr><th>Status</th><th>Annons</th><th>Produkt</th><th>Notion-status</th><th>Ansvarig</th><th>Länk</th></tr></thead><tbody>
     <tr>
-      <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span></td>
+      <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
       <td><strong>Trimmerbelt_PD_1_1_H4</strong></td>
       <td>Axelbältet</td>
       <td><span class="muted">Draft</span></td>
@@ -381,7 +561,7 @@ footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px soli
       <td><a href="https://app.notion.com/3b3270ab908c81718193fe24b9e33d4d" target="_blank" rel="noopener">Öppna i Notion</a></td>
     </tr>
     <tr>
-      <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span></td>
+      <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
       <td><strong>Trimmerbelt_PD_1_1_H5</strong></td>
       <td>Axelbältet</td>
       <td><span class="muted">Draft</span></td>
@@ -389,7 +569,7 @@ footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px soli
       <td><a href="https://app.notion.com/3b3270ab908c8146b316f25a854595d8" target="_blank" rel="noopener">Öppna i Notion</a></td>
     </tr>
     <tr>
-      <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span></td>
+      <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
       <td><strong>Trimmerbelt_PD_1_2_H1</strong></td>
       <td>Axelbältet</td>
       <td><span class="muted">Draft</span></td>
@@ -397,7 +577,7 @@ footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px soli
       <td><a href="https://app.notion.com/3b3270ab908c81bc8fb9e812df06cd38" target="_blank" rel="noopener">Öppna i Notion</a></td>
     </tr>
     <tr>
-      <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span></td>
+      <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
       <td><strong>Trimmerbelt_PD_1_3_H1</strong></td>
       <td>Axelbältet</td>
       <td><span class="muted">Draft</span></td>
@@ -405,7 +585,7 @@ footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px soli
       <td><a href="https://app.notion.com/3b3270ab908c81929cacc848aac9fe6b" target="_blank" rel="noopener">Öppna i Notion</a></td>
     </tr>
     <tr>
-      <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+      <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
       <td><strong>Trimmerbelt_PD_7_1</strong></td>
       <td>Axelbältet</td>
       <td><span class="muted">In progress</span></td>
@@ -413,7 +593,7 @@ footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px soli
       <td><a href="https://app.notion.com/3b3270ab908c811eb045d9e41d5a2659" target="_blank" rel="noopener">Öppna i Notion</a></td>
     </tr>
     <tr>
-      <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+      <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
       <td><strong>Enginecover_PD_1_H5</strong></td>
       <td>Motorhöljet</td>
       <td><span class="muted">In progress 2</span></td>
@@ -421,7 +601,7 @@ footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px soli
       <td><a href="https://app.notion.com/3b3270ab908c81f3bc8ee76dfbf9881a" target="_blank" rel="noopener">Öppna i Notion</a></td>
     </tr>
     <tr>
-      <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+      <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
       <td><strong>Enginecover_PD_1_H6</strong></td>
       <td>Motorhöljet</td>
       <td><span class="muted">In progress 2</span></td>
@@ -429,7 +609,7 @@ footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px soli
       <td><a href="https://app.notion.com/3b3270ab908c81baab2eddc8c9ad44c7" target="_blank" rel="noopener">Öppna i Notion</a></td>
     </tr>
     <tr>
-      <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+      <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
       <td><strong>Enginecover_PD_15_C1</strong></td>
       <td>Motorhöljet</td>
       <td><span class="muted">In progress 2</span></td>
@@ -437,7 +617,7 @@ footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px soli
       <td><a href="https://app.notion.com/3b3270ab908c81658527ea5d625e41c3" target="_blank" rel="noopener">Öppna i Notion</a></td>
     </tr>
     <tr>
-      <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+      <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
       <td><strong>Enginecover_PD_6_C1</strong></td>
       <td>Motorhöljet</td>
       <td><span class="muted">In progress 2</span></td>
@@ -445,7 +625,7 @@ footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px soli
       <td><a href="https://app.notion.com/3b3270ab908c81efaa22f3868dee6934" target="_blank" rel="noopener">Öppna i Notion</a></td>
     </tr>
     <tr>
-      <td><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span></td>
+      <td><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
       <td><strong>Enginecover_SO_10_H1</strong></td>
       <td>Motorhöljet</td>
       <td><span class="muted">Creative strat review</span></td>
@@ -453,7 +633,7 @@ footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px soli
       <td><a href="https://app.notion.com/3b3270ab908c81b1a179fa0574565aff" target="_blank" rel="noopener">Öppna i Notion</a></td>
     </tr>
     <tr>
-      <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+      <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
       <td><strong>Enginecover_SO_11_H1</strong></td>
       <td>Motorhöljet</td>
       <td><span class="muted">In progress 2</span></td>
@@ -461,7 +641,7 @@ footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px soli
       <td><a href="https://app.notion.com/3b3270ab908c817c8fdcc57192b4dfdc" target="_blank" rel="noopener">Öppna i Notion</a></td>
     </tr>
     <tr>
-      <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+      <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
       <td><strong>Enginecover_SO_3_H1</strong></td>
       <td>Motorhöljet</td>
       <td><span class="muted">In progress 2</span></td>
@@ -469,7 +649,7 @@ footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px soli
       <td><a href="https://app.notion.com/3b1270ab908c81c89b36c674aac10bb9" target="_blank" rel="noopener">Öppna i Notion</a></td>
     </tr>
     <tr>
-      <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+      <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
       <td><strong>Enginecover_SO_9_C1</strong></td>
       <td>Motorhöljet</td>
       <td><span class="muted">In progress 2</span></td>
@@ -477,7 +657,7 @@ footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px soli
       <td><a href="https://app.notion.com/3b3270ab908c8123804ccb7cac18c981" target="_blank" rel="noopener">Öppna i Notion</a></td>
     </tr>
     <tr>
-      <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span></td>
+      <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
       <td><strong>Enginecover_SP_10_H1</strong></td>
       <td>Motorhöljet</td>
       <td><span class="muted">Draft</span></td>
@@ -485,7 +665,7 @@ footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px soli
       <td><a href="https://app.notion.com/3b3270ab908c81fa9805d333e542305c" target="_blank" rel="noopener">Öppna i Notion</a></td>
     </tr>
     <tr>
-      <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+      <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
       <td><strong>Enginecover_SP_6_H1</strong></td>
       <td>Motorhöljet</td>
       <td><span class="muted">In progress 2</span></td>
@@ -493,7 +673,7 @@ footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px soli
       <td><a href="https://app.notion.com/3b1270ab908c81998defe26393b21e2a" target="_blank" rel="noopener">Öppna i Notion</a></td>
     </tr>
     <tr>
-      <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+      <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
       <td><strong>Enginecover_SP_9_H1</strong></td>
       <td>Motorhöljet</td>
       <td><span class="muted">In progress 2</span></td>
@@ -507,123 +687,123 @@ footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px soli
   <p class="lede">Sorterad på prioritet och deadline.</p>
   <div class="scroll"><table><thead><tr><th>Status</th><th>Prio</th><th>Task</th><th>Produkt</th><th>Redigerare</th><th>Creatives</th><th>Deadline</th><th>Blocker / rev</th><th>Länkar</th></tr></thead><tbody>
   <tr>
-    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>MOT-001</strong><br><span class="muted">Enginecover_SO_11_H1</span></td>
     <td>Motorhöljet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c817c8fdcc57192b4dfdc" target="_blank" rel="noopener">Brief</a></td>
   </tr>
   <tr>
-    <td><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span></td>
+    <td><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>MOT-003</strong><br><span class="muted">Enginecover_SO_10_H1</span></td>
     <td>Motorhöljet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">1/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c81b1a179fa0574565aff" target="_blank" rel="noopener">Brief</a> · <a href="https://app.notion.com/3b3270ab908c81b1a179fa0574565aff" target="_blank" rel="noopener">Delivery</a></td>
   </tr>
   <tr>
-    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>MOT-004</strong><br><span class="muted">Enginecover_PD_1_H6</span></td>
     <td>Motorhöljet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c81baab2eddc8c9ad44c7" target="_blank" rel="noopener">Brief</a></td>
   </tr>
   <tr>
-    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>MOT-005</strong><br><span class="muted">Enginecover_PD_1_H5</span></td>
     <td>Motorhöljet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c81f3bc8ee76dfbf9881a" target="_blank" rel="noopener">Brief</a></td>
   </tr>
   <tr>
-    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>MOT-006</strong><br><span class="muted">Enginecover_SP_9_H1</span></td>
     <td>Motorhöljet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c81b9baffec31f7e07a97" target="_blank" rel="noopener">Brief</a></td>
   </tr>
   <tr>
-    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>MOT-007</strong><br><span class="muted">Enginecover_SO_9_C1</span></td>
     <td>Motorhöljet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c8123804ccb7cac18c981" target="_blank" rel="noopener">Brief</a></td>
   </tr>
   <tr>
-    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>MOT-008</strong><br><span class="muted">Enginecover_PD_15_C1</span></td>
     <td>Motorhöljet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c81658527ea5d625e41c3" target="_blank" rel="noopener">Brief</a></td>
   </tr>
   <tr>
-    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>MOT-009</strong><br><span class="muted">Enginecover_PD_6_C1</span></td>
     <td>Motorhöljet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c81efaa22f3868dee6934" target="_blank" rel="noopener">Brief</a></td>
   </tr>
   <tr>
-    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>MOT-010</strong><br><span class="muted">Enginecover_SP_6_H1</span></td>
     <td>Motorhöljet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b1270ab908c81998defe26393b21e2a" target="_blank" rel="noopener">Brief</a></td>
   </tr>
   <tr>
-    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>MOT-011</strong><br><span class="muted">Enginecover_SO_3_H1</span></td>
     <td>Motorhöljet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b1270ab908c81c89b36c674aac10bb9" target="_blank" rel="noopener">Brief</a></td>
   </tr>
   <tr>
-    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>AXE-001</strong><br><span class="muted">Trimmerbelt_PD_7_1</span></td>
     <td>Axelbältet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c811eb045d9e41d5a2659" target="_blank" rel="noopener">Brief</a></td>
   </tr></tbody></table></div>
@@ -784,123 +964,123 @@ footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px soli
     <p class="actions">Redigerare på produkten: – · blockers 0</p>
     <div class="scroll"><table><thead><tr><th>Status</th><th>Prio</th><th>Task</th><th>Produkt</th><th>Redigerare</th><th>Creatives</th><th>Deadline</th><th>Blocker / rev</th><th>Länkar</th></tr></thead><tbody>
   <tr>
-    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>MOT-001</strong><br><span class="muted">Enginecover_SO_11_H1</span></td>
     <td>Motorhöljet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c817c8fdcc57192b4dfdc" target="_blank" rel="noopener">Brief</a></td>
   </tr>
   <tr>
-    <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span></td>
+    <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>MOT-002</strong><br><span class="muted">Enginecover_SP_10_H1</span></td>
     <td>Motorhöljet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c81fa9805d333e542305c" target="_blank" rel="noopener">Brief</a></td>
   </tr>
   <tr>
-    <td><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span></td>
+    <td><span class="badge warn"><span aria-hidden="true">◆</span> Ready for review</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>MOT-003</strong><br><span class="muted">Enginecover_SO_10_H1</span></td>
     <td>Motorhöljet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">1/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c81b1a179fa0574565aff" target="_blank" rel="noopener">Brief</a> · <a href="https://app.notion.com/3b3270ab908c81b1a179fa0574565aff" target="_blank" rel="noopener">Delivery</a></td>
   </tr>
   <tr>
-    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>MOT-004</strong><br><span class="muted">Enginecover_PD_1_H6</span></td>
     <td>Motorhöljet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c81baab2eddc8c9ad44c7" target="_blank" rel="noopener">Brief</a></td>
   </tr>
   <tr>
-    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>MOT-005</strong><br><span class="muted">Enginecover_PD_1_H5</span></td>
     <td>Motorhöljet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c81f3bc8ee76dfbf9881a" target="_blank" rel="noopener">Brief</a></td>
   </tr>
   <tr>
-    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>MOT-006</strong><br><span class="muted">Enginecover_SP_9_H1</span></td>
     <td>Motorhöljet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c81b9baffec31f7e07a97" target="_blank" rel="noopener">Brief</a></td>
   </tr>
   <tr>
-    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>MOT-007</strong><br><span class="muted">Enginecover_SO_9_C1</span></td>
     <td>Motorhöljet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c8123804ccb7cac18c981" target="_blank" rel="noopener">Brief</a></td>
   </tr>
   <tr>
-    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>MOT-008</strong><br><span class="muted">Enginecover_PD_15_C1</span></td>
     <td>Motorhöljet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c81658527ea5d625e41c3" target="_blank" rel="noopener">Brief</a></td>
   </tr>
   <tr>
-    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>MOT-009</strong><br><span class="muted">Enginecover_PD_6_C1</span></td>
     <td>Motorhöljet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c81efaa22f3868dee6934" target="_blank" rel="noopener">Brief</a></td>
   </tr>
   <tr>
-    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>MOT-010</strong><br><span class="muted">Enginecover_SP_6_H1</span></td>
     <td>Motorhöljet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b1270ab908c81998defe26393b21e2a" target="_blank" rel="noopener">Brief</a></td>
   </tr>
   <tr>
-    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>MOT-011</strong><br><span class="muted">Enginecover_SO_3_H1</span></td>
     <td>Motorhöljet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b1270ab908c81c89b36c674aac10bb9" target="_blank" rel="noopener">Brief</a></td>
   </tr></tbody></table></div>
@@ -993,57 +1173,57 @@ footer{padding:24px 18px;color:var(--muted);font-size:12.5px;border-top:1px soli
     <p class="actions">Redigerare på produkten: – · blockers 0</p>
     <div class="scroll"><table><thead><tr><th>Status</th><th>Prio</th><th>Task</th><th>Produkt</th><th>Redigerare</th><th>Creatives</th><th>Deadline</th><th>Blocker / rev</th><th>Länkar</th></tr></thead><tbody>
   <tr>
-    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span></td>
+    <td><span class="badge info"><span aria-hidden="true">◕</span> In progress</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>AXE-001</strong><br><span class="muted">Trimmerbelt_PD_7_1</span></td>
     <td>Axelbältet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c811eb045d9e41d5a2659" target="_blank" rel="noopener">Brief</a></td>
   </tr>
   <tr>
-    <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span></td>
+    <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>AXE-002</strong><br><span class="muted">Trimmerbelt_PD_1_1_H4</span></td>
     <td>Axelbältet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c81718193fe24b9e33d4d" target="_blank" rel="noopener">Brief</a></td>
   </tr>
   <tr>
-    <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span></td>
+    <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>AXE-003</strong><br><span class="muted">Trimmerbelt_PD_1_3_H1</span></td>
     <td>Axelbältet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c81929cacc848aac9fe6b" target="_blank" rel="noopener">Brief</a></td>
   </tr>
   <tr>
-    <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span></td>
+    <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>AXE-004</strong><br><span class="muted">Trimmerbelt_PD_1_2_H1</span></td>
     <td>Axelbältet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c81bc8fb9e812df06cd38" target="_blank" rel="noopener">Brief</a></td>
   </tr>
   <tr>
-    <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span></td>
+    <td><span class="badge neutral"><span aria-hidden="true">◔</span> Planned</span> <span class="badge danger"><span aria-hidden="true">⚠</span> Late</span></td>
     <td class="prio prio-normal">– Normal</td>
     <td><strong>AXE-005</strong><br><span class="muted">Trimmerbelt_PD_1_1_H5</span></td>
     <td>Axelbältet</td>
     <td><span class="muted">ingen</span></td>
     <td class="num">0/1</td>
-    <td><span class="muted">–</span></td>
+    <td>2026-08-05</td>
     <td></td>
     <td><a href="https://app.notion.com/3b3270ab908c8146b316f25a854595d8" target="_blank" rel="noopener">Brief</a></td>
   </tr></tbody></table></div>

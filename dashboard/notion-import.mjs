@@ -39,6 +39,8 @@ function taskTypeFor(namn = '', typ = '') {
   return 'new_creative';
 }
 
+const yesterday = new Date(Date.now() - 864e5).toISOString().slice(0, 10);
+
 const raw = JSON.parse(readFileSync(join(DATA, 'notion-raw.json'), 'utf8'));
 const team = JSON.parse(readFileSync(join(DATA, 'team.json'), 'utf8'));
 const byNotionId = Object.fromEntries(
@@ -73,7 +75,9 @@ for (const [productId, items] of Object.entries(raw.items)) {
       status,
       plannedDate: day,
       startDate: status === 'planned' ? null : day,
-      dueDate: null,   // Notion har inget deadline-falt - managern satter det i dashboarden
+      // Notion saknar deadline-fält. Öppna briefer är per definition arbete som
+      // skulle varit klart — de får gårdagens datum tills managern sätter ett eget.
+      dueDate: ['in_review', 'approved'].includes(status) ? null : yesterday,
       completedAt: ['in_review', 'approved'].includes(status) ? `${day}T16:00:00.000Z` : null,
       approvedAt: status === 'approved' ? `${day}T18:00:00.000Z` : null,
       estimatedMinutes: 60,
