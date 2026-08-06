@@ -1,0 +1,82 @@
+{
+  "note": "Norska kollektioner för beverkobling.no. sourceHandle refererar källbutikens kollektion — produktmedlemskap återskapas via source-export/collections.json + handle-mappningen i output/catalog.no.json.",
+  "collections": [
+    {
+      "sourceHandle": "frontpage",
+      "title": "Forside",
+      "handle": "frontpage",
+      "descriptionHtml": "",
+      "sortOrder": "BEST_SELLING"
+    },
+    {
+      "sourceHandle": "tradgard-utomhus",
+      "title": "Hage & Utendørs",
+      "handle": "hage-utendors",
+      "descriptionHtml": "<p>Produkter for hagen, uteplassen og livet utendørs.</p>",
+      "sortOrder": "BEST_SELLING"
+    },
+    {
+      "sourceHandle": "bil-verktyg-garage",
+      "title": "Bil, Verktøy & Garasje",
+      "handle": "bil-verktoy-garasje",
+      "descriptionHtml": "<p>Produkter for bilen, verkstedet og garasjen.</p>",
+      "sortOrder": "BEST_SELLING"
+    },
+    {
+      "sourceHandle": "camping-friluft",
+      "title": "Camping & Friluft",
+      "handle": "camping-friluft",
+      "descriptionHtml": "<p>Utstyr for camping, fjelltur og friluftsliv.</p>",
+      "sortOrder": "BEST_SELLING"
+    },
+    {
+      "sourceHandle": "lantbruk-djur",
+      "title": "Landbruk & Dyr",
+      "handle": "landbruk-dyr",
+      "descriptionHtml": "<p>Produkter for gård, innhegning, stall og husdyr.</p>",
+      "sortOrder": "BEST_SELLING"
+    },
+    {
+      "sourceHandle": "bat-marin",
+      "title": "Båt & Marine",
+      "handle": "bat-marine",
+      "descriptionHtml": "<p>Tilbehør og vedlikehold for båt, motor og maritimt bruk – beskyttelse, rengjøring, fortøyning og fiske.</p>",
+      "sortOrder": "BEST_SELLING"
+    },
+    {
+      "sourceHandle": "tillbehor-ovrigt",
+      "title": "Tilbehør & Annet",
+      "handle": "tilbehor-annet",
+      "descriptionHtml": "<p>Praktisk tilbehør og smarte produkter for hverdagen.</p>",
+      "sortOrder": "BEST_SELLING"
+    },
+    {
+      "sourceHandle": "fordon-belysning",
+      "title": "Kjøretøy & Belysning",
+      "handle": "kjoretoy-belysning",
+      "descriptionHtml": "<p>Tilbehør og LED-belysning for bil, motorsykkel, ATV og lastebil – arbeidslys, lyslister og kjøretøytilbehør.</p>",
+      "sortOrder": "BEST_SELLING"
+    }
+  ],
+  "menus": {
+    "main-menu": [
+      { "title": "Forside", "target": "/" },
+      { "title": "Hage & Utendørs", "target": "collection:hage-utendors" },
+      { "title": "Bil, Verktøy & Garasje", "target": "collection:bil-verktoy-garasje" },
+      { "title": "Camping & Friluft", "target": "collection:camping-friluft" },
+      { "title": "Båt & Marine", "target": "collection:bat-marine" },
+      { "title": "Kjøretøy & Belysning", "target": "collection:kjoretoy-belysning" },
+      { "title": "Alle produkter", "target": "/collections/all" },
+      { "title": "Kontakt oss", "target": "page:kontakt" }
+    ],
+    "footer": [
+      { "title": "Om oss", "target": "page:om-oss" },
+      { "title": "Kontakt oss", "target": "page:kontakt" },
+      { "title": "FAQ – ofte stilte spørsmål", "target": "page:faq" },
+      { "title": "Fraktinformasjon", "target": "page:fraktinformasjon" },
+      { "title": "Retur & angrerett", "target": "page:retur-og-angrerett" },
+      { "title": "Kjøpsvilkår", "target": "page:kjopsvilkar" },
+      { "title": "Personvernerklæring", "target": "policy:privacy" }
+    ]
+  }
+}

@@ -4,8 +4,10 @@ Underlag för att bygga upp en komplett Shopify-butik för en ny marknad, med ut
 i en befintlig butik. Skapat 2026-08-06 utifrån en läs-inventering av den Shopify-butik
 som är kopplad till sessionen: **Bäverbutiken.se**.
 
-**Status: väntar på svar på definitionsfrågorna i `07-fragor-att-besvara.md`.**
-Inga ändringar har gjorts i någon butik — allt hittills är läsning och dokumentation.
+**Status: GROVJOBB PÅGÅR.** Beslut: källa = Bäverbutiken.se, mål = **beverkobling.no**
+(Norge, bokmål, NOK). Se `BESLUT.md`. Full export klar (`source-export/`), norsk katalog
+och norskt butiksinnehåll byggs i `no/`. Inga ändringar har gjorts i källbutiken —
+allt är läsning, och inget publiceras i målbutiken utan uttryckligt GO.
 
 | Fil | Innehåll |
 |-----|----------|
