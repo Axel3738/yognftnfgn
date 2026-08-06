@@ -10,7 +10,11 @@ Kör daglig check-in för produkten. Allt gäller **Bäverbutiken / MagiBorsten 
 - Kör `node pipeline/quota.mjs` och visa outputen. 🔴 EFTER plan: räkna ut exakt hur många briefer som måste levereras idag/imorgon för att komma ikapp, och lista vilka Notion-items som är närmast klara.
 
 ## 2. Redigerarnas läge (Slack + Notion)
-- Läs senaste meddelandena i redigerarnas Slack-kanal(er) sedan igår.
+- Slutrapporterna ligger i **`#rapporter`** i stonebite-workspacet (en per redigerare
+  per dag, senast 21:30). Blockers och leveranslänkar ligger i produktens egen kanal.
+- Läs meddelandena därifrån sedan igår. Kan Claude inte nå stonebite
+  (`slack.connected: false` i `dashboard/data/team.json`): säg det rakt ut och be
+  managern klistra in rapporterna via `/rapport` istället för att hoppa över steget.
 - För varje rapporterat klar task: kör kontrollfrågorna. Allt OK → Notion-itemet till **Klar – Godkänd (grön)**. Något saknas → skriv Slack-svar som UTKAST (engelska) med exakt vad som saknas; skicka inte utan godkännande.
 
 Kontrollfrågor per leverans:

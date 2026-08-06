@@ -1,4 +1,18 @@
 {
+  "slack": {
+    "workspace": "stonebite",
+    "comment": "Kanalerna dit redigerarna skickar. slackUserId nedan ar TOMMA tills Claude-kopplingen ar auktoriserad pa stonebite - U0BK2P1N3AQ pa axel kommer fran ett annat workspace (cwd-yqg1304) och gar inte att anvanda har.",
+    "reportChannel": "#rapporter",
+    "reportDeadline": "21:30",
+    "productChannels": {
+      "motorholjet": "",
+      "axelbaltet": "",
+      "strandtofflorna": "",
+      "satesoverdragaren": ""
+    },
+    "ugcChannel": "#ugc",
+    "connected": false
+  },
   "users": [
     {
       "id": "anna",
@@ -31,7 +45,7 @@
       "timezone": "Europe/Stockholm",
       "active": true,
       "email": "axelodhner.business@gmail.com",
-      "slackUserId": "U0BK2P1N3AQ",
+      "slackUserId": "",
       "notionUserId": "332d872b-594c-815b-92e8-0002f9c93383"
     },
     {

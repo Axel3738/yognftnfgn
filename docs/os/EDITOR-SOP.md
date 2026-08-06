@@ -5,6 +5,17 @@ Written for the video editors. English throughout.
 Everything you need is in the dashboard your manager sends you. You never need to
 guess what to work on, and you never lose credit for work you finished.
 
+## Where things go in Slack (workspace: stonebite)
+
+| Channel | What goes there |
+|---------|-----------------|
+| `#rapporter` | **Your end-of-day report. Every workday, before 21:30 CET.** |
+| One channel per product | Briefs, questions, blockers, delivery links for that product |
+| `#ugc` | UGC outreach only |
+
+Blockers go in the **product channel immediately** when they happen — do not save
+them for the end-of-day report.
+
 ## The day in five steps
 
 ### 1. Find your tasks
@@ -79,16 +90,35 @@ what the ad account rewards.
 
 ### 6. End-of-day report
 
-Before you log off, send:
-- Which tasks you finished
-- How many creatives you delivered
-- What is not done, and why
-- Anything blocked
-- Your delivery links
-- What you will start with tomorrow
+**Where: `#rapporter` in the stonebite Slack. One message, once per day, before
+21:30 CET.** Not in the product channels — those are for briefs and questions.
+One report per person per day, even if you worked on several products.
 
-Plain language is fine — the system reads it and matches it to your tasks. It will
-show you what it understood and ask you to confirm before anything is saved.
+Copy this template every day:
+
+```
+RAPPORT <date> — <your name>
+
+DONE
+- <TASK-ID> — <n> creatives — <delivery link>
+- <TASK-ID> — <n> creatives — <delivery link>
+
+NOT DONE
+- <TASK-ID> — <why, in one line>
+
+BLOCKED
+- <TASK-ID> — <what you need, and who has to act>   (or: none)
+
+TOMORROW
+- <what you start with>
+```
+
+If you finished nothing, send the report anyway with `DONE: none` and the reason.
+A missing report reads as a missing day in your numbers — an empty report does not.
+
+Plain language inside the fields is fine — the system reads it and matches it to
+your tasks. It will show you what it understood and ask you to confirm before
+anything is saved.
 
 ## What happens after you deliver
 
