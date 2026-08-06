@@ -1,23 +1,32 @@
 # Creative DNA – Axelbältet (axelbaltet)
 
-Uppdaterad: **2026-08-05 (/cs-körning nr 2, enligt ANALYSMETOD.md)**. Kampanj 120249192013870291 · MagiBorsten 1867947880635861.
+Uppdaterad: **2026-08-06 (/cs-körning nr 3, enligt ANALYSMETOD.md)**. Kampanj 120249192013870291 · MagiBorsten 1867947880635861.
 **Budget 2 000 kr/dag · target-CPA 185 kr · break-even-CPA 326 kr** (kill mäts mot break-even, aldrig mot target).
 Produktfakta (verifierat i Shopify 2026-08-05): **599 kr, jämförpris 678 kr = spara 79 kr (11,65 %)**, fri frakt, 30 dagars öppet köp, 4,75/5 (8 recensioner).
 **PRISÄNDRING 2026-08-05: 509 → 599 kr.** Siffrorna 509 kr, 636 kr och "20 %" är FÖRBJUDNA i all ny copy och creative.
 LP: baverbutiken.se/products/axelbalte-for-trimmer-justerbart-nylonbalte
 
-Kampanjtotal livstid: 25 095 kr spend · 91 köp · CPA 276 kr · ROAS 2,08 · frekvens 2,72.
+Kampanjtotal livstid: **26 913 kr spend · 91+ köp** · break-even 326 kr.
+⚠️ Target-CPA 185 och break-even 326 är räknade på gamla priset 509 kr — båda
+är för lågt satta vid 599 kr. Ägaren räknar om. Tills dess är alla vinstsiffror
+nedan **konservativa**.
 
 ---
 
 ## WINNING DNA (data — vinstbidrag, inte kvoter)
 
 - **Smärt-/problemvinkeln med frågehook är den mest lönsamma vinkeln.** PD ad 1
-  ("Ont i axlarna efter en dag i trädgården?", 40 s video): **+3 000 kr vinstbidrag
-  = 54 % av kampanjens nettovinst**, 34 köp, CPA 238 kr. 371 kr vinst per 1 000 kr spend.
+  ("Ont i axlarna efter en dag i trädgården?", 40 s video): **+3 940 kr vinstbidrag
+  = 65 % av kampanjens nettovinst**, 39 köp, CPA 225 kr. 449 kr vinst per 1 000 kr spend.
+  **Och den accelererar:** marginal-CPA på senaste 690 kr är **138 kr** — långt
+  under target. Detta är annonsen som ska få mer budget.
 - **Statiskt offer-format är mest vinsteffektivt per krona.** SO ad 2 variant 1:
-  **597 kr vinst per 1 000 kr spend** (+1 341 kr på 11 köp, CPA 204 kr) — högsta
-  effektiviteten i kontot, men får bara 9 % av spenden.
+  **516 kr vinst per 1 000 kr spend** (+1 221 kr på 11 köp, CPA 215 kr) — högsta
+  effektiviteten i kontot, men får bara 10 % av spenden.
+- **Marginal-CPA är det enda måttet som ser fatigue i tid.** Livstids-CPA döljer
+  den. SO ad 1 hook 2 ser lönsam ut livstid (+1 496 kr) men har **marginal-CPA
+  602 kr** — nästan 2× break-even. PD ad 1 har 138 kr. Samma vecka, samma konto.
+  → Räkna alltid Δspend/Δköp mellan två /cs-körningar innan budget flyttas.
 - **Video bär volymen.** De två videorna står för 73 % av spenden och 86 % av
   nettovinsten. Statics ger effektivitet, video ger skala. Båda behövs.
 - **Statiskans layout avgör utfallet — inte budskapet.** Se LOSING DNA nedan.
@@ -40,10 +49,27 @@ Kampanjtotal livstid: 25 095 kr spend · 91 köp · CPA 276 kr · ROAS 2,08 · f
   Förloraren hade lägst CPM i hela kontot (94 kr) — **billig räckvidd kvalificerar
   inte köpare.** Detta var en Claude-genererad design; originalet var teamets.
 - **Video-vinnare fatigar.** SO ad 1 hook 2: CPA 230 (period 1) → 328 (period 2).
-  Har **passerat break-even 326 kr i det senaste 7-dagarsfönstret.** Rotation
-  krävs — bygg alltid nästa hook INNAN vinnaren dör.
+  → **marginal-CPA 602 kr (period 3, 2026-08-06)**. Kurvan är monoton nedåt.
+  Rotation krävs — bygg alltid nästa hook INNAN vinnaren dör.
 - AI-genererade personbilder (PD_2_1, SF_2_1): DO_NOT_REUSE (artefakter resp.
   fabricerat kundcitat).
+- **Text ovanpå produkten sänker läsbarheten.** SO_2_6 (live 2026-08-05) har
+  rätt pris och rätt layout i övrigt, men prisblocket ligger över selens remmar.
+  Vinnaren SO_2_1 har all text i fri yta. HYPOTES tills SO_2_7 mäter den.
+  → Regel: text ligger aldrig ovanpå produkten.
+
+## PROCESSFEL SOM KOSTAR MÄTNING (2026-08-06)
+
+- 🔴 **Briefad copy nådde inte kontot.** De 6 annonser som launchades 2026-08-05
+  fick återanvänd batch-#1-primärtext i stället för den briefade. Kreativen var
+  rätt, texten var fel — vilket **tyst avbröt varje copytest i batchen**
+  (pris-framing, smärtvinkel i text, kompatibilitets-invändning).
+  → Varje brief innehåller nu regeln *"Use the primary text and headline exactly
+  as written in this brief"*, och varje /cs kontrollerar creative-texten mot
+  briefen innan utfall bedöms.
+- 🔴 **De fyra rena variabeltesterna på vinstledaren (PD_1_1_H4, H5, PD_1_2_H1,
+  PD_1_3_H1) launchades aldrig** — teamet tog batch #3:s creatives i stället.
+  De enda isolerade testerna på annonsen som står för 65 % av vinsten står still.
 
 ## FALSIFIERAT — tidigare slutsatser som datan inte stöder
 
@@ -91,6 +117,15 @@ Kampanjtotal livstid: 25 095 kr spend · 91 köp · CPA 276 kr · ROAS 2,08 · f
 - Kvinnlig creator/målgrupp: noll kvinnofrontade creatives hittills.
 - Native produktfoto utan overlay (PD_2_2: 2 köp på 119 kr — brus med riktning).
 
+## KONCENTRATIONSRISK
+
+- **65 % av nettovinsten sitter i ETT asset** (PD ad 1, hook 1). Den är dessutom
+  den enda annonsen med sjunkande marginal-CPA. Dör den, dör kampanjens marginal.
+- Motmedlet är inte fler hooks på samma film — det är **samma vinkel i ett annat
+  utförande**. Batch #5 öppnar `PD_8` (UGC första person i stället för
+  voiceover + b-roll) med hook-bänk H1/H2 för att testa om det är *vinkeln* eller
+  *filmen* som är drivaren.
+
 ## STRUKTURLÄRDOM
 
 - **CBO svälter nya tester** — bekräftat tre gånger: 7/13 i batch 1, 6/9 i batch 2,
@@ -106,6 +141,6 @@ Kampanjtotal livstid: 25 095 kr spend · 91 köp · CPA 276 kr · ROAS 2,08 · f
 `Trimmerbelt_PD_2_4` (statisk, ingen hook-del).
 - AD ID = vilket nummer annonsen är inom konceptet · AD VARIANT = variant av den
   annonsen · H ID = vilken hook från den annonsen.
-- Upptagna AD-ID:n: SO 1, 2, 6, 7 · PD 1, 2, 3, 4, 5, 6, 7 · SP 3, 4, 5 · SF 1, 2
+- Upptagna AD-ID:n: SO 1, 2, 3, 4, 6, 7 · PD 1–11 · SP 3, 4, 5 · SF 1, 2
   (SF = äldre benämning på social proof, räknas ihop med SP vid numrering).
 - Äldre annonser med data döps aldrig om.

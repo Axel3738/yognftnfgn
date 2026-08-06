@@ -77,7 +77,12 @@
       "target_cpa_sek": 185,
       "cycle_start": "2026-08-04",
       "status": "aktiv",
-      "launches": [],
+      "launches": [
+        {
+          "date": "2026-08-06",
+          "count": 6
+        }
+      ],
       "break_even_cpa_sek": 326,
       "aov_sek_harledd": 566
     },

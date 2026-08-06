@@ -168,3 +168,114 @@ Drive-mapp för batchen: https://drive.google.com/drive/folders/1nj5crmX0cPglQFO
   vinstledaren. Kör batch #4 först om produktionskapaciteten är begränsad.
 - Rekommenderat: egen ABO-testcell (~600 kr/dag) — CBO har svält nya tester tre
   batcher i rad.
+
+---
+
+## Feedbackloop 2026-08-06 (/cs nr 3, enligt ANALYSMETOD.md)
+
+Hela kampanjen hämtad sorterad på spend. Budget verifierad: 2 000 kr/dag (oförändrad).
+Break-even 326 kr. Kampanjtotal livstid: **26 913 kr spend · 91+ köp**.
+
+**Datakvalitet:** `omni_purchase_values` fortsatt 100× för lågt på samma 4 rader
+(SO_2_4, SO_6_1, SF_1_H1, PD_2_2) — intäkt räknad som `amount_spent × purchase_roas`.
+CPA-fältet stämde mot `spend / köp` på samtliga rader. SO_2_6:s rad kontrollräknad
+och ren (61,33 × 13,85 = 849,7 ≈ 849,71).
+
+**Bedömbara (≥300 kr spend OCH ≥3 köp) — rangordnade på vinstbidrag:**
+
+| Annons | Spend | Andel spend | Köp | CPA | Vinstbidrag | Andel vinst | Vinst/1 000 kr |
+|---|---|---|---|---|---|---|---|
+| Axelbälte_PD_1_H1 | 8 774 kr | 36 % | 39 | 225 kr | **+3 940 kr** | **65 %** | 449 kr |
+| Axelbälte_SO_1_H2 | 10 892 kr | 45 % | 38 | 287 kr | +1 496 kr | 25 % | 137 kr |
+| Axelbälte_SO_2_1 | 2 365 kr | 10 % | 11 | 215 kr | +1 221 kr | 20 % | 516 kr |
+| Trimmerbelt_SO_2_4 (pausad) | 2 210 kr | 9 % | 5 | 442 kr | −580 kr | −10 % | −262 kr |
+
+Netto bedömbara: **+6 077 kr** (upp från +5 534 kr vid /cs nr 2).
+
+**Marginalutveckling sedan /cs nr 2 — det viktigaste fyndet denna körning:**
+
+| Annons | Δ spend | Δ köp | **Marginal-CPA** | Tolkning |
+|---|---|---|---|---|
+| PD_1_H1 | +690 kr | +5 | **138 kr** | Accelererar — långt under target 185, ska skalas |
+| SO_1_H2 | +603 kr | +1 | **602 kr** | Avtar — nästan 2× break-even på marginalen |
+| SO_2_1 | +120 kr | 0 | – | För lite ny spend för dom |
+
+Livstids-CPA döljer detta: SO_1_H2 ser fortfarande lönsam ut livstid (+1 496 kr)
+men **varje ny krona i den förlorar pengar**. PD_1_H1 gör tvärtom.
+→ Slutsats: flytta budget från SO ad 1 till PD ad 1 och dess iterationer.
+
+**För tidigt (ingen dom):** de 6 annonser som launchades 2026-08-05 20:49–20:53
+(Trimmerbelt_SO_2_6, SO_4_H1, SO_3_H2, PD_3_H1, PD_2_4, SP_4_H1) ligger samtliga
+under signifikansgrinden. Loggade i kvoten (−7 → **−1**).
+
+### Hypotesavstämning – batch #4
+
+| Annons | Hypotes | Utfall |
+|---|---|---|
+| PD_2_4 (smärta i vinnande statiskt format) | Vinkel × format-korsning lönsam | ⏳ För tidigt. Visuellt granskad: **följer briefen** (smärtrubrik, hel produkt, fotobakgrund, vit CTA-pill). |
+| SO_2_6 (kronor-anchor, ersätter 20 %-claimet) | Kronor slår procent | ⏳ För tidigt. Visuellt granskad: rätt pris (678→599 / "Spara 79 kr – fri frakt idag"), hel produkt, fotobakgrund — **men prisblocket överlappar selens remmar**. Rättas av `SO_2_7`. |
+| PD_1_1_H4 / H5 / PD_1_2_H1 / PD_1_3_H1 | Hook-, offer- och längdtester på vinstledaren | ❌ **Ej launchade.** Teamet launchade i stället SO_4_H1, SO_3_H2, PD_3_H1, SP_4_H1 från batch #3. De fyra rena PD-testerna står kvar. |
+
+### KRITISKT FYND – copyn matchar inte briefen
+
+Creatives på de 6 nya annonserna kontrollerade mot brieferna: **primärtexten är
+återanvänd batch-#1-copy, inte den briefade copyn.** Konsekvens: copytesterna
+(pris-framing, smärtvinkel i text, kompatibilitets-invändning) **kör inte** — vi
+betalar för trafiken men mäter ingenting. Kreativen är rätt, texten är fel.
+→ Åtgärd: regel 6 i batch #5:s globala regler, versalt i varje brief:
+*"Use the primary text and headline exactly as written in this brief."*
+→ Åtgärd till teamet: uppdatera primärtexten på de 6 live-annonserna nu.
+
+### Mönster (denna körning)
+
+1. **BEVISAD** — *Livstids-CPA döljer fatigue; marginal-CPA visar den.* PD 138 kr
+   vs SO 602 kr på senaste ~600 kr styck. → **Briefinstruktion:** batch #5 bygger
+   på PD-spåret, inte SO-spåret; SO får bara en creative (`SO_2_7`, en ren fix).
+2. **BEVISAD** — *Vinstmotorn är ETT enda asset.* PD_1_H1 = 65 % av nettovinsten
+   och den enda annonsen med sjunkande marginal-CPA. Det är en
+   koncentrationsrisk. → **Briefinstruktion:** batch #5 öppnar `PD_8` — samma
+   vinkel, helt annat utförande (UGC första person i stället för voiceover+b-roll),
+   med hook-bänk H1/H2. Håller vinkeln, byter exekvering.
+3. **BEVISAD** — *Briefad copy når inte kontot.* Se ovan. → **Briefinstruktion:**
+   copy-låsningsregeln i varje brief.
+4. **HYPOTES** — *Text ovanpå produkten sänker läsbarheten.* SO_2_6:s prisblock
+   ligger över remmarna; vinnaren SO_2_1 har text i fri yta. → `SO_2_7` isolerar
+   enbart textplacering.
+
+## Batch #5 – 2026-08-06 – 7 briefer (kvot 7)
+
+Copy skriven av sonnet-subagent (modellpolicy). Alla priser 599/678/79 kr,
+maskinkontrollerade mot förbjudna siffror (509/636/"20 %") — 0 träffar.
+2 video + 5 bild (varav 1 karusell).
+
+| Annons | Typ | Hypotes | Isolerad variabel | Variabeltaggar |
+|---|---|---|---|---|
+| Trimmerbelt_PD_8_1_H1 | UGC-video | Smärtvinkeln bär i ett helt annat utförande → vinkeln är drivaren, inte PD_1:s footage | Exekvering (vinkel konstant) | smärta · fråga · UGC-tal · demo · pris syns · creator man 45–65 |
+| Trimmerbelt_PD_8_1_H2 | UGC-video | "Dagen efter"-hook når samma publik bredare | Endast hook (sek 3–30 identiska) | smärta · påstående (dagen efter) · UGC-tal · demo · pris syns · creator man 45–65 |
+| Trimmerbelt_PD_2_5 | Statisk | Smärthook som kvalificerar + pris som closar slår varje halva för sig | Pris tillagt på smärtstatiskan | smärta · fråga · statisk · inget proof · pris syns · hel produkt+foto |
+| Trimmerbelt_SO_2_7 | Statisk | Pristext i fri yta höjer läsbarheten → CVR mot vinnarens 2,94 % | Endast textplacering | pris/deal · siffra · statisk · inget proof · pris syns · hel produkt+foto |
+| Trimmerbelt_PD_9_1 | Statisk | Kostnaden formulerad som kvällen efter når köpare som inte upplever själva jobbet som smärtsamt | Tidsram för smärtan | konsekvens · fråga · statisk · inget proof · ingen offer · hel produkt+foto |
+| Trimmerbelt_PD_10_1 | Statisk | Mekanismen visad som diagram closar den som måste förstå *varför* | Mekanism visad vs uttalad | mekanism/utbildning · påstående · statisk+pilar · demo (diagram) · ingen offer · hel produkt+foto |
+| Trimmerbelt_PD_11_1 | Karusell | Beprövad copystruktur i tre kort slår samma struktur pressad i en bild | Format (nytt i kontot) | smärta · fråga · **karusell** · demo · pris syns (kort 3) · hel produkt+foto |
+
+Backlog: inga väntande items togs in — de tre kvarvarande är blockerade
+(Judge.me-texter, bundle-pris = ägarbeslut, kvinnlig creator väntar på SP_4-utfall).
+
+**Notion:** 7 items skapade i "Trimmer belt creative hub"
+(data source 2f1270ab-908c-820a-9a08-07b73d53710b), Status `Draft`,
+Typ `Video - Pending Approval`, hela briefen inklistrad.
+
+## Åtgärder och öppna punkter 2026-08-06
+
+- 🔴 **Copyn på de 6 live-annonserna matchar inte brieferna** — copytesterna kör
+  inte. Uppdatera primärtext + rubrik enligt respektive brief. Högsta prioritet.
+- 🔴 **Flytta budget från SO ad 1 till PD ad 1.** Marginal-CPA 602 vs 138 kr.
+- 🟡 **SO_2_6:s prisblock överlappar remmarna** — `SO_2_7` är fixen.
+- 🟡 **De fyra PD_1-testerna från batch #4 är fortfarande inte launchade** —
+  det var de enda rena variabeltesterna på vinstledaren.
+- ✅ SO_2_1:s falska "20 %"-claim: `SO_2_6` är nu live med korrekt pris, så
+  SO_2_1 kan pausas utan att lämna offer-spåret tomt. **Ägarbeslut.**
+- ⚠️ **Target-CPA 185 kr och break-even 326 kr är båda räknade på gamla priset
+  509 kr.** Vid 599 kr är båda för lågt satta — hela vinstbidragstabellen är
+  alltså konservativ. **Ägaren räknar om.**
+- Rekommenderat (fjärde gången): egen ABO-testcell ~600 kr/dag.
