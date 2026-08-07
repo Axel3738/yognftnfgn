@@ -8,8 +8,11 @@ const API = 'https://api.heygen.com';
 const UPLOAD = 'https://upload.heygen.com';
 
 function apiKey() {
-  const k = process.env.HEYGEN_API_KEY;
-  if (!k) throw new Error('Saknar HEYGEN_API_KEY i miljön.');
+  const k = process.env.HEYGEN_API_KEY || process.env.KEY;
+  if (!k) throw new Error('Saknar HEYGEN_API_KEY i miljön. Skapa nyckeln på app.heygen.com → Settings → API.');
+  if (!process.env.HEYGEN_API_KEY) {
+    console.warn('⚠️  Hittade nyckeln i env-variabeln KEY — döp om den till HEYGEN_API_KEY i environment-inställningarna.');
+  }
   return k;
 }
 
@@ -23,6 +26,12 @@ async function call(base, path, opts = {}) {
     throw new Error(`HeyGen ${path} → HTTP ${res.status}: ${JSON.stringify(body?.error ?? body)}`);
   }
   return body;
+}
+
+// Verifierar att nyckeln funkar — returnerar kontots kvar-kvot.
+export async function checkQuota() {
+  const body = await call(API, '/v1/user/remaining_quota');
+  return body?.data ?? body;
 }
 
 // Målspråk som Video Translate stödjer (språknamn i klartext, t.ex. "Norwegian").

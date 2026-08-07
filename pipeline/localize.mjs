@@ -3,6 +3,7 @@
 // Proofread-steget (lokaliseringen) görs i HeyGens UI innan rendering — detta skript
 // hanterar transporten runt omkring.
 //
+//   node localize.mjs check
 //   node localize.mjs langs
 //   node localize.mjs submit --file=../input/annons.mp4 --lang=Norwegian [--title=namn]
 //   node localize.mjs submit --url=https://.../annons.mp4 --lang=Norwegian
@@ -11,7 +12,7 @@
 import { mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import {
-  listTargetLanguages, uploadAsset, submitTranslate, getTranslateStatus, downloadResult,
+  checkQuota, listTargetLanguages, uploadAsset, submitTranslate, getTranslateStatus, downloadResult,
 } from './heygen.mjs';
 
 const [cmd, ...rest] = process.argv.slice(2);
@@ -26,6 +27,13 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function main() {
   switch (cmd) {
+    case 'check': {
+      const quota = await checkQuota();
+      console.log('✅ HeyGen-kopplingen funkar.');
+      console.log(`   Kvar-kvot: ${JSON.stringify(quota)}`);
+      break;
+    }
+
     case 'langs': {
       const langs = await listTargetLanguages();
       console.log(langs.join('\n'));
@@ -73,12 +81,15 @@ async function main() {
     }
 
     default:
-      console.log('Kommandon: langs | submit | status | download  (se kommentaren överst i filen)');
+      console.log('Kommandon: check | langs | submit | status | download  (se kommentaren överst i filen)');
       process.exitCode = cmd ? 1 : 0;
   }
 }
 
 main().catch((err) => {
   console.error(err.message ?? err);
+  if (/fetch failed|CONNECT|allowlist|403|407/i.test(String(err.cause ?? err.message))) {
+    console.error('   (Nätverksfel — kontrollera att api.heygen.com och upload.heygen.com är tillåtna i environmentets nätverkspolicy.)');
+  }
   process.exitCode = 1;
 });

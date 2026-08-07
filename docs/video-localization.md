@@ -71,8 +71,18 @@ Filen döps likadant: `GRILL_mastern_pain_comparison_ruinsgrill_no_v1.mp4`.
   OBS: API:t kan skicka och hämta översättningar men proofread-redigeringen görs i UI:t.
 - **Veed:** UI. Auto-subtitles + styling + export enligt steg 5.
 
+**Krav i Claude Code-environmentet** (för att skriptet ska funka i webbsessioner):
+
+1. Miljövariabel `HEYGEN_API_KEY` = nyckeln från app.heygen.com → Settings → API
+   (EN variabel: namnet i namn-fältet, nyckeln i värde-fältet).
+2. Nätverkspolicyn (network egress) måste tillåta `api.heygen.com` och
+   `upload.heygen.com`. Nedladdningslänkarna för färdiga videor ligger på HeyGens
+   resurs-domäner (`*.heygen.ai`) — blockeras en nedladdning, lägg till hosten
+   som felmeddelandet visar.
+
 ```bash
 cd pipeline
+node localize.mjs check                                  # verifiera nyckeln + kvot
 node localize.mjs langs                                  # vilka målspråk HeyGen stödjer
 node localize.mjs submit --file=../input/annons.mp4 --lang=Norwegian
 node localize.mjs status --id=<video_translate_id>
