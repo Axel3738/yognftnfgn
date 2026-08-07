@@ -29,8 +29,9 @@ async function call(base, path, opts = {}) {
 }
 
 // Verifierar att nyckeln funkar — returnerar kontots kvar-kvot.
+// (v2-endpointen är legacy t.o.m. 2026-10-31 — byt mot efterträdaren i nya HeyGen-API:t då.)
 export async function checkQuota() {
-  const body = await call(API, '/v1/user/remaining_quota');
+  const body = await call(API, '/v2/user/remaining_quota');
   return body?.data ?? body;
 }
 

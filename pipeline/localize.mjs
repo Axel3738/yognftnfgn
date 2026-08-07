@@ -11,6 +11,18 @@
 //   node localize.mjs download --id=<video_translate_id> [--out=output/localized/]
 import { mkdir } from 'node:fs/promises';
 import path from 'node:path';
+
+// I Claude Codes webbmiljö går utgående HTTPS via en proxy som Nodes fetch inte
+// plockar upp från miljön automatiskt — starta i så fall om med proxy-stödet påslaget.
+if ((process.env.HTTPS_PROXY || process.env.https_proxy) && !process.env.NODE_USE_ENV_PROXY) {
+  const { spawnSync } = await import('node:child_process');
+  const { existsSync } = await import('node:fs');
+  const env = { ...process.env, NODE_USE_ENV_PROXY: '1' };
+  const ca = '/root/.ccr/ca-bundle.crt';
+  if (!env.NODE_EXTRA_CA_CERTS && existsSync(ca)) env.NODE_EXTRA_CA_CERTS = ca;
+  const r = spawnSync(process.execPath, ['--no-warnings', ...process.argv.slice(1)], { stdio: 'inherit', env });
+  process.exit(r.status ?? 1);
+}
 import {
   checkQuota, listTargetLanguages, uploadAsset, submitTranslate, getTranslateStatus, downloadResult,
 } from './heygen.mjs';
