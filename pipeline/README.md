@@ -36,6 +36,8 @@ Output hamnar i `output/wave-XX/` + ett `_manifest.json`.
 | `compose.mjs` | Lägger scrim + rubrik + badge + footer som SVG-text |
 | `brand.mjs` | Färger, typsnitt, canvas-storlek — ändra här |
 | `run.mjs` | Kör hela vågen, sparar PNG:er |
+| `heygen.mjs` | HeyGen Video Translate-API: upload, submit, status, nedladdning (kräver `HEYGEN_API_KEY`) |
+| `localize.mjs` | CLI för video-lokaliseringen — se `docs/video-localization.md` |
 
 ## Att lägga till en ny annons
 Lägg ett objekt i en `waves/wave-XX.mjs` med `name` (enligt namnkonventionen),

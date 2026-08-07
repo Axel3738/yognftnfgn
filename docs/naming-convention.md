@@ -33,9 +33,13 @@ Exempel: `broad_advplus_purchase` eller `LAL1-purchasers_reels_purchase`
 
 ### Ad  ← här bor testandet
 ```
-{BRAND}_{PRODUCT}_{ANGLE}_{FORMAT}_{HOOK}_v{N}
+{BRAND}_{PRODUCT}_{ANGLE}_{FORMAT}_{HOOK}[_{MARKET}]_v{N}
 ```
 Exempel: `MAGI_brush_pain_beforeafter_stains_v1`
+
+- **MARKET** (valfritt) — ISO-landskod i gemener för lokaliserade varianter: `no`, `dk`,
+  `fi`, `de` … Utelämnas för svenska original. Sätts av lokaliserings­processen i
+  `video-localization.md`. Exempel: `GRILL_mastern_pain_comparison_ruinsgrill_no_v1`.
 
 Varje fält kommer från en **kontrollerad vokabulär** nedan. Håll dig till listorna —
 det är det som gör datan grupperbar. Ny variant = bumpa `v{N}`. Ny idé = nytt hook.
