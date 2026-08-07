@@ -6,7 +6,8 @@
   "description": "Genererar bildannonser för Mastern: Higgsfield Soul (bakgrund) + skarp textoverlay.",
   "scripts": {
     "gen": "node run.mjs",
-    "dry": "node run.mjs --dry"
+    "dry": "node run.mjs --dry",
+    "ads": "node ads.mjs"
   },
   "dependencies": {
     "@higgsfield/client": "^0.2.1",

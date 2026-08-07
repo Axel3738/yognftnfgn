@@ -34,11 +34,15 @@ att datan går att skära, och sedan iterera på det som faktiskt funkar.
 
 - **Brand:** Grillkliniken (grillkliniken.se) · brand-kod `GRILL`
 - **Produkt vi kör ads för:** **Mastern** — elektrisk grillborste, 999 kr (enda produkten just nu)
-- **Ad account:** SnarkLös (`1346450049878358`, SEK) — kontonamnet ≠ brandnamnet
+- **Ad accounts:**
+  - SnarkLös (`1346450049878358`, SEK) — kontonamnet ≠ brandnamnet
+  - MagiBorsten (`1867947880635861`) — aktiverat för API-push: `node pipeline/ads.mjs ... --account=magi`
 - **Funnel-fokus:** BOF (bottom of funnel)
 
-Övriga tillgängliga konton (ej i bruk): MagiBorsten `1867947880635861`,
-Matstrumpor.se `730973156224390` (⚠️ UNSETTLED).
+Övriga tillgängliga konton (ej i bruk): Matstrumpor.se `730973156224390` (⚠️ UNSETTLED).
+
+Ads laddas upp och styrs direkt härifrån via Meta Marketing API — se
+`pipeline/README.md` → "Koppla Meta" (token som secret) och "Styr Ads Manager".
 
 ## Status
 
