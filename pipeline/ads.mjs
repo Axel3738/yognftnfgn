@@ -33,7 +33,9 @@ async function push() {
   // Copy per annons hämtas från vågens `copy`-fält; flaggor/defaults fyller luckorna.
   const { ads: waveAds } = await import(`./waves/wave-${wave}.mjs`);
   const outDir = new URL(`./output/wave-${wave}/`, import.meta.url);
-  const files = (await readdir(outDir.pathname)).filter(f => f.endsWith('.png'));
+  const files = await readdir(outDir.pathname).catch(() => {
+    throw new Error(`Ingen output för wave ${wave} — generera först: node run.mjs --wave=${wave}`);
+  }).then(fs => fs.filter(f => f.endsWith('.png')));
   let queue = only ? files.filter(f => f.includes(only)) : files;
   console.log(`Push wave ${wave} → ${acct.label}: ${queue.length} statics ${dry ? '(DRY — inget skickas)' : `→ adset ${adsetId}`}`);
 
