@@ -13,6 +13,24 @@
 
 16 produkter tillhör ingen kategorikollektion (samma som i källbutiken — nya vågen från 1 aug + legacy + fraktgaranti). De syns under "Alle produkter".
 
+## ✅ Tema (2026-08-07)
+
+Svenska temat (Impulse, "theme-export-baverbutiken-se-theme-export-trev") uppladdat av Axel
+och komplett norskifierat via API i det OPUBLICERADE temat (gid …193356562807):
+- Startsida: hero "Tøfler – Heavy Duty" + "Kjøp nå" → norsk produkt, hero-bild kopierad från
+  svenska CDN, 7 kategorirutor → norska kollektioner, nyhetsbrev + kontaktskjema på norska.
+- settings_data: vit Beverbutikken-logga i header/sidfot, svart i kassan, norska banners
+  (FRI FRAKT över 300 kr `[JURIDISK GRANSKNING – måste matcha faktisk fraktinställning]`,
+  Klarna-banner), BEVERKLUBBEN, firmatext STONEBITE ECOM AB, valutaväljare av.
+- 14 mallar norskifierade (produktsida inkl. säljargument + "i Norge", kollektion, cart,
+  404, blogg, kontakt, FAQ, password m.fl.).
+- Default theme content: alla 551 locale-nycklar översatta till bokmål och skrivna till
+  sv.json + en.default.json + nb.json (verifierat). Kopia i output/theme-locale-nb.json.
+
+**Återstår för Axel: förhandsgranska temat och klicka Publish** (spärrat för API, med flit).
+Kvarlämnat medvetet: GemPages-sektioner/-mallar (kampanjsidor, svenska) — används ej av
+startsidan; städas eller översätts vid behov.
+
 ## 🟡 Att slipa (Axel eller nästa arbetspass)
 
 1. **Butiksnamn**: butiken heter "Beverkobling.no" i Shopify — byt till **Beverbutikken** i Settings → General (ingen API-mutation finns för detta).
