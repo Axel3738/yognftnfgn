@@ -75,10 +75,12 @@ Filen döps likadant: `GRILL_mastern_pain_comparison_ruinsgrill_no_v1.mp4`.
 
 1. Miljövariabel `HEYGEN_API_KEY` = nyckeln från app.heygen.com → Settings → API
    (EN variabel: namnet i namn-fältet, nyckeln i värde-fältet).
-2. Nätverkspolicyn (network egress) måste tillåta `api.heygen.com` och
-   `upload.heygen.com`. Nedladdningslänkarna för färdiga videor ligger på HeyGens
-   resurs-domäner (`*.heygen.ai`) — blockeras en nedladdning, lägg till hosten
-   som felmeddelandet visar.
+2. Miljövariabel `FAL_KEY` = nyckeln från fal.ai → Dashboard → Keys (för Veeds
+   Subtitle API, som körs via fal.ai; kostar ca $0.10/min video).
+3. Nätverkspolicyn (network egress) måste tillåta `api.heygen.com`,
+   `upload.heygen.com`, `queue.fal.run` och `fal.media`. Nedladdningslänkar för
+   färdiga videor ligger på `*.heygen.ai` resp. `*.fal.media` — blockeras en
+   nedladdning, lägg till hosten som felmeddelandet visar.
 
 ```bash
 cd pipeline
@@ -87,7 +89,14 @@ node localize.mjs langs                                  # vilka målspråk HeyG
 node localize.mjs submit --file=../input/annons.mp4 --lang=Norwegian
 node localize.mjs status --id=<video_translate_id>
 node localize.mjs download --id=<video_translate_id> --out=output/localized/
+node localize.mjs captions --id=<video_translate_id> --srt=redigerad.srt   # Veed burn-in
 ```
+
+**Captions-steget via API:** `captions` tar HeyGen-jobbets färdiga video + SRT
+(HeyGens egen, eller en lokalt redigerad med proofread-ändringarna via `--srt=`)
+och skickar dem till Veeds Subtitle API — SRT:n gör att Veed hoppar över egen
+transkribering, så texten matchar dubben exakt. Veeds UI (steg 5 ovan) är kvar
+som manuellt alternativ när man vill handstyla.
 
 ## Körningar (logg)
 

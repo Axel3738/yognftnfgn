@@ -9,6 +9,9 @@
 //   node localize.mjs submit --url=https://.../annons.mp4 --lang=Norwegian
 //   node localize.mjs status --id=<video_translate_id> [--wait]
 //   node localize.mjs download --id=<video_translate_id> [--out=output/localized/]
+//   node localize.mjs captions --id=<video_translate_id> [--srt=fil.srt] [--preset=whisper] [--name=adnamn]
+//     ↳ tar HeyGen-jobbets video + SRT (eller din redigerade --srt) och bränner in
+//       captions via Veeds Subtitle API (fal.ai, kräver FAL_KEY)
 import { mkdir } from 'node:fs/promises';
 import path from 'node:path';
 
@@ -26,6 +29,9 @@ if ((process.env.HTTPS_PROXY || process.env.https_proxy) && !process.env.NODE_US
 import {
   checkQuota, listTargetLanguages, uploadAsset, submitTranslate, getTranslateStatus, downloadResult,
 } from './heygen.mjs';
+import {
+  submitSubtitles, getSubtitlesStatus, getSubtitlesResult, downloadUrl,
+} from './veed.mjs';
 
 const [cmd, ...rest] = process.argv.slice(2);
 const args = Object.fromEntries(
@@ -92,8 +98,46 @@ async function main() {
       break;
     }
 
+    case 'captions': {
+      if (!args.id) throw new Error('Ange --id=<video_translate_id> (HeyGen-jobbet vars video ska textas).');
+      const data = await getTranslateStatus(args.id);
+      if (data.status !== 'success') throw new Error(`HeyGen-jobbet är inte klart (status: ${data.status}).`);
+
+      let srtContent;
+      if (typeof args.srt === 'string') {
+        const { readFile } = await import('node:fs/promises');
+        srtContent = await readFile(args.srt, 'utf8');
+      } else if (data.caption_url) {
+        const res = await fetch(data.caption_url);
+        if (!res.ok) throw new Error(`Kunde inte hämta HeyGens SRT: HTTP ${res.status}`);
+        srtContent = await res.text();
+      }
+
+      console.log('Skickar till Veed Subtitle API …');
+      const reqId = await submitSubtitles({
+        videoUrl: data.url,
+        srtContent,
+        preset: typeof args.preset === 'string' ? args.preset : undefined,
+      });
+      let st = await getSubtitlesStatus(reqId);
+      while (st.status !== 'COMPLETED') {
+        if (st.status === 'FAILED' || st.status === 'ERROR') throw new Error(`Veed-jobbet misslyckades: ${JSON.stringify(st)}`);
+        console.log(`veed: ${st.status} … väntar 15s`);
+        await sleep(15_000);
+        st = await getSubtitlesStatus(reqId);
+      }
+      const resultUrl = await getSubtitlesResult(reqId);
+      const outDir = typeof args.out === 'string' ? args.out : 'output/localized';
+      await mkdir(outDir, { recursive: true });
+      const name = (args.name ?? data.title ?? args.id).replace(/[^\w.-]+/g, '_');
+      const outPath = path.join(outDir, `${name}-captions.mp4`);
+      await downloadUrl(resultUrl, outPath);
+      console.log(`✅ Färdig video med inbrända captions: ${outPath}`);
+      break;
+    }
+
     default:
-      console.log('Kommandon: check | langs | submit | status | download  (se kommentaren överst i filen)');
+      console.log('Kommandon: check | langs | submit | status | download | captions  (se kommentaren överst i filen)');
       process.exitCode = cmd ? 1 : 0;
   }
 }
