@@ -20,6 +20,21 @@ export HF_SECRET="din_key_secret"
 ```
 Nycklar skapas på cloud.higgsfield.ai → dashboard → API.
 
+### Koppla HeyGen (video-lokalisering)
+Sätt nyckeln i miljön (skapas på app.heygen.com → Settings → API):
+```bash
+export HEYGEN_API_KEY="sk_..."
+```
+Körs i Claude Codes moln-environment? Lägg då även till `api.heygen.com` i
+environmentets nätverkspolicy (network egress), annars blockeras anropen.
+
+```bash
+node localize.mjs check                       # verifiera kopplingen
+node localize.mjs langs                       # lista språk som stöds
+node localize.mjs translate <videoUrl> <språk>
+node localize.mjs status <id>
+```
+
 ## Kör
 ```bash
 npm run dry            # förhandsgranska layout/typografi UTAN Higgsfield (charcoal-bakgrund)
