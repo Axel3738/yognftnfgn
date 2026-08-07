@@ -4,7 +4,8 @@
 
 | Del | Resultat |
 |-----|----------|
-| Produkter | **134/134 skapade, status DRAFT**, 0 fel. Norsk copy, BEVER-SKU:er, NOK-priser, supplier-SKU som metafält (custom.supplier_sku), bilder kopierade från käll-CDN |
+| Produkter | **134/134 skapade och AKTIVA**, 0 fel. Norsk copy, BEVER-SKU:er, NOK-priser, supplier-SKU som metafält (custom.supplier_sku), bilder kopierade till butikens CDN |
+| Kanalpublicering | **Alla 134 produkter + 8 kollektioner publicerade till Onlinebutik-kanalen ("Webbshop")** 2026-08-07. Obs: API-skapade objekt hamnar INTE i kanalen automatiskt — det var därför sajten först såg tom ut |
 | Kollektioner | 8 st: Forside (2), Hage & Utendørs (20), Bil Verktøy & Garasje (25), Camping & Friluft (28), Landbruk & Dyr (5), Båt & Marine (10), Tilbehør & Annet (10), Kjøretøy & Belysning (20) |
 | Kollektionskontroll | Stämmer mot källan — Landbruk 5 (ej 6: arkiverad fågeldrickare exkluderad korrekt), Marine 10 (ej 11: Marin Polish var draft i källan, exkluderad korrekt) |
 | Sidor | Om oss, FAQ, Kontakt, Fraktinformasjon, Retur & angrerett, Kjøpsvilkår — publicerade (butiken är ej live) |
