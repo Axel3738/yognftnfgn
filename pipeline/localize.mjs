@@ -9,9 +9,10 @@
 //   node localize.mjs submit --url=https://.../annons.mp4 --lang=Norwegian
 //   node localize.mjs status --id=<video_translate_id> [--wait]
 //   node localize.mjs download --id=<video_translate_id> [--out=output/localized/]
+//   node localize.mjs burn --video=fil.mp4 --srt=fil.srt [--out=...]
+//     ↳ bränner in stylade captions lokalt med ffmpeg — gratis, inget konto behövs
 //   node localize.mjs captions --id=<video_translate_id> [--srt=fil.srt] [--preset=whisper] [--name=adnamn]
-//     ↳ tar HeyGen-jobbets video + SRT (eller din redigerade --srt) och bränner in
-//       captions via Veeds Subtitle API (fal.ai, kräver FAL_KEY)
+//     ↳ alternativ: Veeds Subtitle API via fal.ai (kräver FAL_KEY, ~$0.10/min)
 import { mkdir } from 'node:fs/promises';
 import path from 'node:path';
 
@@ -98,6 +99,27 @@ async function main() {
       break;
     }
 
+    case 'burn': {
+      if (!args.video || !args.srt) throw new Error('Ange --video=<mp4> och --srt=<srt-fil>.');
+      const { spawnSync } = await import('node:child_process');
+      const outPath = typeof args.out === 'string'
+        ? args.out
+        : args.video.replace(/\.mp4$/i, '') + '-captions.mp4';
+      // Vit fet text på halvtransparent mörk platta, centrerad i nedre delen med
+      // marginal ovanför Reels/Stories-UI:t. Justera force_style här vid behov.
+      const style = "FontName=Liberation Sans,Bold=1,FontSize=13,PrimaryColour=&H00FFFFFF,BorderStyle=4,BackColour=&H80101010,Outline=1,Shadow=0,MarginV=35,Alignment=2";
+      const srtEscaped = args.srt.replace(/([:'\\])/g, '\\$1');
+      const r = spawnSync('ffmpeg', [
+        '-y', '-v', 'error', '-i', args.video,
+        '-vf', `subtitles=${srtEscaped}:force_style='${style}'`,
+        '-c:a', 'copy', outPath,
+      ], { stdio: 'inherit' });
+      if (r.error?.code === 'ENOENT') throw new Error('ffmpeg saknas — installera med: apt-get install -y ffmpeg');
+      if (r.status !== 0) throw new Error(`ffmpeg misslyckades (exit ${r.status}).`);
+      console.log(`✅ Färdig video med inbrända captions: ${outPath}`);
+      break;
+    }
+
     case 'captions': {
       if (!args.id) throw new Error('Ange --id=<video_translate_id> (HeyGen-jobbet vars video ska textas).');
       const data = await getTranslateStatus(args.id);
@@ -137,7 +159,7 @@ async function main() {
     }
 
     default:
-      console.log('Kommandon: check | langs | submit | status | download | captions  (se kommentaren överst i filen)');
+      console.log('Kommandon: check | langs | submit | status | download | burn | captions  (se kommentaren överst i filen)');
       process.exitCode = cmd ? 1 : 0;
   }
 }

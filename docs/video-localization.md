@@ -42,15 +42,27 @@ Det här är det viktigaste steget. Gå igenom **varje mening** i transkriptet o
 Regel: **ändra hellre till något generellt än att gissa marknadsfakta.** Vet vi inte
 norska fraktvillkor → skriv inget om frakt.
 
-## Steg 5 — captions i Veed
+## Steg 5 — captions (burn-in)
 
-1. Ladda upp den färdigöversatta mp4:n från HeyGen.
-2. `Subtitles → Auto Subtitles` → välj **målspråket** (inte svenska).
-3. Granska texten rad för rad — auto-transkribering stavar ofta fel på egennamn
-   (`Mastern`, `Grillkliniken`) och på siffror/valuta. Rätta mot proofread-transkriptet.
-4. Styla: vit text, mörk bakgrundsplatta/scrim, placering i nedre tredjedelen men **ovanför**
-   Reels/Stories-UI:t (safe zone), max 2 rader per caption.
-5. Exportera med **inbrända** captions (burned-in) — vi litar inte på plattformarnas cc.
+**Standardväg — lokalt med ffmpeg (gratis, inget konto):** HeyGen levererar en SRT
+med exakta tidkoder. Uppdatera den med proofread-ändringarna och bränn in:
+
+```bash
+node localize.mjs burn --video=output/localized/ad.mp4 --srt=output/localized/ad.srt
+```
+
+Stylingen (vit fet text, mörk platta, safe zone ovanför Reels/Stories-UI:t) ligger i
+`burn`-kommandot i `localize.mjs` — justera `force_style` där.
+
+**Alternativ när man vill handstyla — Veeds UI:**
+
+1. Ladda upp mp4:n → `Subtitles → Upload subtitle file` (använd SRT:n — auto-subtitles
+   stavar fel på egennamn som `Mastern`) eller `Auto Subtitles` på målspråket.
+2. Granska rad för rad, styla, exportera med **inbrända** captions (kräver betalplan
+   för export utan vattenstämpel).
+
+**Alternativ för bulk — Veeds Subtitle API** (`captions`-kommandot, via fal.ai,
+betala-per-användning ~$0.10/min, kräver `FAL_KEY`).
 
 ## Namngivning
 
