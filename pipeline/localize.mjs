@@ -105,9 +105,10 @@ async function main() {
       const outPath = typeof args.out === 'string'
         ? args.out
         : args.video.replace(/\.mp4$/i, '') + '-captions.mp4';
-      // Vit fet text på halvtransparent mörk platta, centrerad i nedre delen med
-      // marginal ovanför Reels/Stories-UI:t. Justera force_style här vid behov.
-      const style = "FontName=Liberation Sans,Bold=1,FontSize=13,PrimaryColour=&H00FFFFFF,BorderStyle=4,BackColour=&H80101010,Outline=1,Shadow=0,MarginV=35,Alignment=2";
+      // Vit fet text på halvtransparent mörk platta. MarginV håller texten inom
+      // mitt-4:5 av en 9:16-video — Meta croppar till ~4:5 i feed, så captions
+      // närmare botten klipps bort. Justera force_style här vid behov.
+      const style = "FontName=Liberation Sans,Bold=1,FontSize=10,PrimaryColour=&H00FFFFFF,BorderStyle=4,BackColour=&H80101010,Outline=1,Shadow=0,MarginV=68,Alignment=2";
       const srtEscaped = args.srt.replace(/([:'\\])/g, '\\$1');
       const r = spawnSync('ffmpeg', [
         '-y', '-v', 'error', '-i', args.video,
