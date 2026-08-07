@@ -93,7 +93,7 @@ node localize.mjs download --id=<video_translate_id> --out=output/localized/
 
 | Källannons | Marknad/språk | HeyGen | Proofread | Veed captions | Levererad | Anteckning |
 |------------|---------------|--------|-----------|---------------|-----------|------------|
-| _–_ | _–_ | _–_ | _–_ | _–_ | _–_ | _första körningen loggas här_ |
+| `GRILL_mastern_video_ad01` (sv) | no / Norwegian Bokmål | ✅ 2026-08-07 | ⏳ 3 ändringar föreslagna (rad 1, 3, 7) | ⏳ | ⏳ v1-dubben skickad för lyssning | job `3fb4a887…-nb_nb-NO` · inga geo/pris-referenser i källan |
 
 Status per kolumn: ⏳ pågår · ✅ klar · ❌ fail. När en lokaliserad annons går live
 loggas den dessutom som vanligt i `ad-tracker.md` (den är ett eget test).
