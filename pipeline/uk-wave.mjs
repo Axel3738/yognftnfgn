@@ -116,6 +116,20 @@ function extractThumb(file) {
   return out;
 }
 
+// Miniatyr: ffmpeg om det finns, annars Metas egna genererade thumbnails.
+async function thumbFor(file, videoId) {
+  try { return { image_hash: await uploadImage(extractThumb(file)) }; }
+  catch {
+    for (let i = 0; i < 24; i++) {
+      const t = await api(`${videoId}/thumbnails`);
+      const best = t.data?.find(x => x.is_preferred) || t.data?.[0];
+      if (best?.uri) return { image_url: best.uri };
+      await sleep(5000);
+    }
+    throw new Error('Ingen thumbnail tillgänglig för videon.');
+  }
+}
+
 async function uploadVideo(file) {
   const form = new FormData();
   form.append('source', new Blob([readFileSync(file)]), basename(file));
@@ -177,9 +191,9 @@ for (const [code, list] of Object.entries(plan)) {
         const videoId = await uploadVideo(file);
         console.log(`  ↑ video ${basename(file)} (${videoId}) — väntar på processing…`);
         await waitVideoReady(videoId, basename(file));
-        const thumbHash = await uploadImage(extractThumb(file));
+        const thumb = await thumbFor(file, videoId);
         spec = { page_id: PAGE_ID, video_data: {
-          video_id: videoId, image_hash: thumbHash,
+          video_id: videoId, ...thumb,
           message: c.message, title: c.headline, link_description: c.description,
           call_to_action: { type: 'SHOP_NOW', value: { link: LINK } },
         }};
