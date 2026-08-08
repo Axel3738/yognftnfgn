@@ -139,7 +139,7 @@ som manuellt alternativ när man vill handstyla.
 
 | Källannons | Marknad/språk | HeyGen | Proofread | Veed captions | Levererad | Anteckning |
 |------------|---------------|--------|-----------|---------------|-----------|------------|
-| `GRILL_mastern_video_ad01` (sv) | no / Norwegian Bokmål | ✅ 2026-08-07 | ⏳ 3 ändringar föreslagna (rad 1, 3, 7) | ⏳ | ⏳ v1-dubben skickad för lyssning | job `3fb4a887…-nb_nb-NO` · inga geo/pris-referenser i källan |
+| `GRILL_mastern_video_ad01` (sv) | no / Norwegian Bokmål | ✅ 2026-08-08 | ✅ 3 rättningar (gjerne/bust/Mastern) via proofread-API | ✅ ffmpeg burn-in | ✅ levererad | proofread `fed87570…` → render `02a09df7…-nb` · inga geo/pris-referenser i källan · kostnad ~84 enheter (v1-felrendern oräknad) |
 
 Status per kolumn: ⏳ pågår · ✅ klar · ❌ fail. När en lokaliserad annons går live
 loggas den dessutom som vanligt i `ad-tracker.md` (den är ett eget test).
