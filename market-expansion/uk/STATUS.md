@@ -30,6 +30,20 @@ Den tekniska orsaken: butikens **enda språk är `sv`** (primärt och publicerat
 
 Spärren hänvisar uttryckligen till att en människa ska publicera utkastet manuellt.
 
+### Mätning: utkast vs live
+
+Jag hämtade båda temana och räknade bilder i HTML-svaret:
+
+| | Utkast (rätt) | Live (norskt) |
+|---|---|---|
+| Unika riktiga bilder | **30** | 4 |
+| BeaverShop-logga | ✅ | ❌ |
+| Hero-bild | ✅ `hero-slippers-heavy-duty.png` | ❌ |
+| Platshållar-block | **0** | **19** |
+
+De 19 platshållarna i live-temat är Shopifys demoinnehåll — det är dem du ser som grå
+väskor och skor med texten "Eksempelprodukt $29" och "Eksempelkolleksjon".
+
 ### Bevis på att en klick räcker
 
 Jag hämtade arbetskopians förhandsvisning (`?preview_theme_id=188488778108`) och sökte igenom
@@ -99,6 +113,16 @@ Två av namnen var tvetydiga (butiken har tre motorhöljen och tre sätesöverdr
 Axel. Jämförpriset togs bort på axelbältet (£51.99) och marinhöljet (£27.99) eftersom det nya
 priset låg över det gamla jämförpriset och annars hade renderats som ett trasigt reapris.
 Åkgräsklipparens jämförpris £61.99 ligger kvar och fungerar mot £59.
+
+## ✅ Bilder
+
+- **Produkter:** alla 134 aktiva produkter har minst en bild. Median 5 bilder, högst 12
+  (Ride-On Mower Seat Cover). Noll produkter utan bild — kontrollerat via `mediaCount`
+  på hela den aktiva katalogen.
+- **Kollektioner:** samtliga 8 UK-kollektioner + "Home page" saknade bild (`image: null`)
+  och visade grå platshållare på katalogsidorna. **Åtgärdat 2026-08-08** — varje kollektion
+  har fått en representativ bild från sin första produkt, med alt-text satt till
+  kollektionens namn.
 
 ## ✅ Kollektioner (8 st)
 
