@@ -22,15 +22,18 @@ varumärkesnamn). Beslut om omrendering tas per annons — varje render drar Hey
 
 ## Flödet
 
+**Järnregel: rendera ALDRIG före proofread.** Varje HeyGen-rendering drar krediter —
+proofread-sessionen är gratis. Fel ordning = dubbla renderingar = dubbla krediter.
+
 ```
 1. VÄLJ         → vilka mp4:or + målspråk/marknad (loggas i tabellen nedan)
-2. HEYGEN       → ladda upp mp4:n i HeyGen Video Translate, välj målspråk,
-                  slå PÅ "Proofread" så översättningen stannar för granskning
-3. PROOFREAD    → gå igenom hela transkriptet mot checklistan nedan och
-                  uppdatera allt som är Sverige-specifikt till målmarknaden
-4. RENDERA      → godkänn proofread → HeyGen dubbar (röstklon + lip-sync) → ladda ner mp4
-5. VEED         → ladda upp den översatta mp4:n i Veed → auto-subtitles på målspråket
-                  → granska texten → styla → bränn in → exportera
+2. PROOFREAD    → `localize.mjs proofread` — HeyGen transkriberar + översätter
+                  UTAN att rendera (0 krediter) och SRT:n laddas ner
+3. LOKALISERA   → gå igenom SRT:n mot checklistan nedan, rätta allt som är
+                  Sverige-specifikt + varumärkes-/språkfel → `apply-srt` (0 krediter)
+4. RENDERA      → `render` — HeyGen dubbar från det godkända transkriptet
+                  (röstklon + lip-sync). ENDA steget som drar krediter. → ladda ner mp4
+5. CAPTIONS     → `burn` — bränn in den rättade SRT:n med ffmpeg (gratis)
 6. LEVERERA     → döp filen enligt namnkonventionen (med marknadsfält) →
                   skicka till Axel → logga i tabellen nedan + ad-trackern
 ```
@@ -110,11 +113,21 @@ Filen döps likadant: `GRILL_mastern_pain_comparison_ruinsgrill_no_v1.mp4`.
 cd pipeline
 node localize.mjs check                                  # verifiera nyckeln + kvot
 node localize.mjs langs                                  # vilka målspråk HeyGen stödjer
-node localize.mjs submit --file=../input/annons.mp4 --lang=Norwegian
-node localize.mjs status --id=<video_translate_id>
-node localize.mjs download --id=<video_translate_id> --out=output/localized/
-node localize.mjs captions --id=<video_translate_id> --srt=redigerad.srt   # Veed burn-in
+
+# Standardflödet (proofread FÖRE render — se järnregeln ovan):
+node localize.mjs proofread --file=annons.mp4 --lang="Norwegian Bokmål (Norway)"
+#  → rätta den nedladdade SRT:en enligt checklistan
+node localize.mjs apply-srt --id=<proofread_id> --srt=rättad.srt
+node localize.mjs render --id=<proofread_id>             # ⚠️ drar krediter
+node localize.mjs status --id=<video_translation_id> --wait
+node localize.mjs download --id=<video_translation_id>
+node localize.mjs burn --video=nedladdad.mp4 --srt=rättad.srt
 ```
+
+`submit` finns kvar men renderar direkt utan proofread — använd bara när transkriptet
+inte behöver granskas. Det finns även ett officiellt HeyGen-CLI
+(`curl -fsSL https://static.heygen.ai/cli/install.sh | bash`) med samma proofread-flöde
+(`heygen video-translate proofreads …`) — bra som referens/felsökning.
 
 **Captions-steget via API:** `captions` tar HeyGen-jobbets färdiga video + SRT
 (HeyGens egen, eller en lokalt redigerad med proofread-ändringarna via `--srt=`)

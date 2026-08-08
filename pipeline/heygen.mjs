@@ -72,6 +72,67 @@ export async function getTranslateStatus(id) {
   return body?.data ?? {};
 }
 
+// --- Proofread-flödet (kreditsnålt: granska/rätta transkriptet FÖRE rendering) ---
+
+// Skapar en proofread-session: transkriberar + översätter utan att rendera video.
+export async function proofreadCreate({ videoUrl, outputLanguage, title }) {
+  const body = await call(API, '/v2/video_translate/proofread', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ video_url: videoUrl, output_language: outputLanguage, title }),
+  });
+  const id = body?.data?.proofread_id ?? body?.data?.id;
+  if (!id) throw new Error(`Inget proofread_id i svaret: ${JSON.stringify(body)}`);
+  return id;
+}
+
+export async function proofreadStatus(id) {
+  const body = await call(API, `/v3/video-translations/proofreads/${id}`);
+  return body?.data ?? {};
+}
+
+// Hämtar transkriptet: { original_srt_url (källspråket), srt_url (översättningen) }.
+// OBS: filerna ligger bakom CDN med cache — hämta med no-cache-headers.
+export async function proofreadGetSrt(id) {
+  const body = await call(API, `/v3/video-translations/proofreads/${id}/srt`);
+  return body?.data ?? {};
+}
+
+export async function fetchFresh(url) {
+  const res = await fetch(url, { headers: { 'Cache-Control': 'no-cache', Pragma: 'no-cache' } });
+  if (!res.ok) throw new Error(`Kunde inte hämta ${url}: HTTP ${res.status}`);
+  return res.text();
+}
+
+// Ersätter proofread-transkriptet med en rättad SRT (laddas upp som asset först).
+export async function proofreadUploadSrt(id, srtContent) {
+  const up = await call(UPLOAD, '/v1/asset', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-subrip' },
+    body: srtContent,
+  });
+  const url = up?.data?.url;
+  if (!url) throw new Error(`Ingen asset-URL i svaret: ${JSON.stringify(up)}`);
+  const body = await call(API, `/v3/video-translations/proofreads/${id}/srt`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ srt: { type: 'url', url } }),
+  });
+  return body?.data ?? body;
+}
+
+// Renderar slutvideon från den godkända proofread-versionen. DETTA steg drar krediter.
+export async function proofreadGenerate(id) {
+  const body = await call(API, `/v3/video-translations/proofreads/${id}/generate`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ captions: false }),
+  });
+  const vid = body?.data?.video_translation_id ?? body?.data?.id;
+  if (!vid) throw new Error(`Inget video_translation_id i svaret: ${JSON.stringify(body)}`);
+  return vid;
+}
+
 export async function downloadResult(id, outPath) {
   const data = await getTranslateStatus(id);
   if (data.status !== 'success') {

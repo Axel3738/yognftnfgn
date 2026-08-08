@@ -1,14 +1,18 @@
 // CLI för video-lokaliseringen (docs/video-localization.md).
-// Skickar mp4:or till HeyGen Video Translate, kollar status och laddar ner resultat.
-// Proofread-steget (lokaliseringen) görs i HeyGens UI innan rendering — detta skript
-// hanterar transporten runt omkring.
 //
-//   node localize.mjs check
-//   node localize.mjs langs
-//   node localize.mjs submit --file=../input/annons.mp4 --lang=Norwegian [--title=namn]
-//   node localize.mjs submit --url=https://.../annons.mp4 --lang=Norwegian
+// STANDARDFLÖDE (kreditsnålt — rendera ALDRIG före proofread):
+//   node localize.mjs proofread --file=annons.mp4 --lang="Norwegian Bokmål (Norway)"   # 0 krediter
+//     ↳ transkriberar + översätter UTAN att rendera; laddar ner SRT för granskning
+//   (gör lokaliseringsrättningarna i SRT-filen)
+//   node localize.mjs apply-srt --id=<proofread_id> --srt=rättad.srt                   # 0 krediter
+//   node localize.mjs render --id=<proofread_id>                                       # DRAR krediter
 //   node localize.mjs status --id=<video_translate_id> [--wait]
 //   node localize.mjs download --id=<video_translate_id> [--out=output/localized/]
+//
+// Övriga kommandon:
+//   node localize.mjs check
+//   node localize.mjs langs
+//   node localize.mjs submit --file=... --lang=...   # ⚠️ renderar DIREKT utan proofread
 //   node localize.mjs burn --video=fil.mp4 --srt=fil.srt [--out=...]
 //     ↳ bränner in stylade captions lokalt med ffmpeg — gratis, inget konto behövs
 //   node localize.mjs captions --id=<video_translate_id> [--srt=fil.srt] [--preset=whisper] [--name=adnamn]
@@ -29,6 +33,7 @@ if ((process.env.HTTPS_PROXY || process.env.https_proxy) && !process.env.NODE_US
 }
 import {
   checkQuota, listTargetLanguages, uploadAsset, submitTranslate, getTranslateStatus, downloadResult,
+  proofreadCreate, proofreadStatus, proofreadGetSrt, proofreadUploadSrt, proofreadGenerate, fetchFresh,
 } from './heygen.mjs';
 import {
   submitSubtitles, getSubtitlesStatus, getSubtitlesResult, downloadUrl,
@@ -59,7 +64,66 @@ async function main() {
       break;
     }
 
+    case 'proofread': {
+      if (!args.lang) throw new Error('Ange --lang=<målspråk> (se `node localize.mjs langs`).');
+      let videoUrl = args.url;
+      if (!videoUrl) {
+        if (!args.file) throw new Error('Ange --file=<lokal mp4> eller --url=<publik mp4-URL>.');
+        console.log(`Laddar upp ${args.file} …`);
+        videoUrl = await uploadAsset(args.file);
+      }
+      const title = args.title ?? (args.file ? path.basename(args.file, path.extname(args.file)) : undefined);
+      const pid = await proofreadCreate({ videoUrl, outputLanguage: args.lang, title });
+      console.log(`Proofread-session skapad (0 krediter): ${pid}`);
+      let st = await proofreadStatus(pid);
+      while (!['completed', 'success', 'failed'].includes(st.status)) {
+        console.log(`status: ${st.status} … väntar 15s`);
+        await sleep(15_000);
+        st = await proofreadStatus(pid);
+      }
+      if (st.status === 'failed') throw new Error(`Proofread misslyckades: ${JSON.stringify(st)}`);
+      const { srt_url, original_srt_url } = await proofreadGetSrt(pid);
+      const outDir = typeof args.out === 'string' ? args.out : 'output/localized';
+      await mkdir(outDir, { recursive: true });
+      const { writeFile } = await import('node:fs/promises');
+      const base = path.join(outDir, (title ?? pid).replace(/[^\w.-]+/g, '_'));
+      await writeFile(`${base}-translated.srt`, await fetchFresh(srt_url));
+      if (original_srt_url) await writeFile(`${base}-original.srt`, await fetchFresh(original_srt_url));
+      console.log(`SRT nedladdad: ${base}-translated.srt`);
+      console.log('Nästa steg: gör lokaliseringsrättningarna i SRT:en, sen:');
+      console.log(`  node localize.mjs apply-srt --id=${pid} --srt=<rättad.srt>`);
+      console.log(`  node localize.mjs render --id=${pid}`);
+      break;
+    }
+
+    case 'apply-srt': {
+      if (!args.id || typeof args.srt !== 'string') throw new Error('Ange --id=<proofread_id> och --srt=<rättad srt-fil>.');
+      const { readFile } = await import('node:fs/promises');
+      const content = await readFile(args.srt, 'utf8');
+      await proofreadUploadSrt(args.id, content);
+      const { srt_url } = await proofreadGetSrt(args.id);
+      const live = await fetchFresh(srt_url);
+      if (live.trim() !== content.trim()) {
+        console.warn('⚠️  Verifiering: innehållet på servern matchar inte filen exakt — dubbelkolla innan render.');
+      } else {
+        console.log('✅ Rättad SRT uppladdad och verifierad.');
+      }
+      console.log(`Rendera när du är redo (DRAR krediter): node localize.mjs render --id=${args.id}`);
+      break;
+    }
+
+    case 'render': {
+      if (!args.id) throw new Error('Ange --id=<proofread_id>.');
+      const before = await checkQuota();
+      const vid = await proofreadGenerate(args.id);
+      console.log(`Rendering startad: ${vid}`);
+      console.log(`Kvot före render: ${JSON.stringify(before?.remaining_quota ?? before)}`);
+      console.log(`Följ med: node localize.mjs status --id=${vid} --wait`);
+      break;
+    }
+
     case 'submit': {
+      console.warn('⚠️  submit renderar DIREKT utan proofread — använd `proofread` för det kreditsnåla flödet.');
       if (!args.lang) throw new Error('Ange --lang=<målspråk> (se `node localize.mjs langs`).');
       let videoUrl = args.url;
       if (!videoUrl) {
@@ -160,7 +224,7 @@ async function main() {
     }
 
     default:
-      console.log('Kommandon: check | langs | submit | status | download | burn | captions  (se kommentaren överst i filen)');
+      console.log('Kommandon: proofread | apply-srt | render | status | download | burn | check | langs | submit | captions  (se kommentaren överst i filen)');
       process.exitCode = cmd ? 1 : 0;
   }
 }
