@@ -1,48 +1,22 @@
 #!/usr/bin/env node
-// uk-wave.mjs — Motorhöljet UK: ny kampanj på Magiborsten UK-kontot.
-// Media hämtas från kontots mediabibliotek (redan uppladdat som UK_*).
+// uk-wave.mjs — generisk kampanj-uppladdare för Magiborsten UK.
+// Media hämtas från annonskontots mediabibliotek (redan uppladdat som UK_*).
 //
-//   node uk-wave.mjs [--dry]
+//   node uk-wave.mjs waves/uk-motorholje.config.mjs [--dry]
 //
-// CBO-kampanj 1000 kr/dag (PAUSAD) → 3 adsets per koncept (SO/SP/PD, UK broad)
-// → creatives med copy per koncept, ALLA enhancements OPT_OUT → annonser döpta
-// efter filnamnen. Kampanjen skapas PAUSAD — slå på manuellt i Ads Manager.
+// Konfigfilen beskriver kampanjen: namn, länk, produkt-filter, copy per koncept.
+// Skapar: CBO-kampanj (PAUSAD) → adsets per koncept (UK broad) → creatives med
+// ALLA enhancements OPT_OUT → annonser döpta efter filnamnen. Idempotent:
+// befintlig kampanj/adsets/annonser återanvänds — bara det som saknas skapas.
 
 const API = 'https://graph.facebook.com/v23.0';
 const TOKEN = process.env.META_ACCESS_TOKEN;
 const ACT = 'act_1107817401910319'; // Magiborsten UK (SEK)
 
 const PAGE_ID = '678639638662543';   // Bäverbutiken.se (enda page på tokenen)
-const PIXEL_ID = '1554276343018184'; // Bäverbutiken.se-pixeln (finns på UK-kontot)
-const LINK = 'https://beavershop.co.uk/products/marine-motor-cover-420d-universal-protection?_pos=1&_psq=420d&_psid=f0d02e612&_ss=e';
-const CAMPAIGN_NAME = 'Motorhöljet UK';
-const DAILY_BUDGET = '100000'; // öre = 1000 kr/dag (CBO på kampanjnivå)
+const PIXEL_ID = '1554276343018184'; // Bäverbutiken.se-pixeln
 
-// Bara motorhöljes-media (biblioteket innehåller även andra produkter)
-const PRODUCT_RE = /enginecover|motorholje|motorhölje|marin/i;
-const CONCEPT_RE = /(?:^|[_\s])(SO|SP|PD)(?:[_\s.]|$)/i;
-
-// Copy per koncept (från copy_1.docx)
-const CONCEPTS = {
-  PD: {
-    adset: 'Motorhölje UK - PD',
-    message: 'Rain, sun and salt wear down your engine every day ⛵ This cover protects it from weather and rust. Universal fit — works with most outboards. Easy to put on and take off. Protect your engine today 👇',
-    headline: 'Protect Your Engine — Year After Year',
-    description: 'Heavy-duty 420D fabric against rain, sun and salt.',
-  },
-  SP: {
-    adset: 'Motorhölje UK - SP',
-    message: 'Boat owners are talking about this cover right now 🌊 Stays put even in storms and heavy wind. Keeps your engine completely dry and protected. Hundreds of happy customers already. See why for yourself 👇',
-    headline: 'The Engine Cover Boat Owners Trust',
-    description: 'Rated 5 out of 5 by verified customers.',
-  },
-  SO: {
-    adset: 'Motorhölje UK - SO',
-    message: 'Your engine is worth too much to leave unprotected ⚓ Shield it from rain, sun, salt and rust. Universal fit, easy to put on. On sale right now. Order before stock runs out 👇',
-    headline: 'Protect Your Engine — Before Winter',
-    description: 'Limited-time sale price — now.',
-  },
-};
+const CONCEPT_RE = /(?:^|[_\s])(SO|SP|PD|SF)(?:[_\s.]|$)/i;
 
 // "Inga jävla bs meta tillägg": exakt samma OPT_OUT-lista som kontots SE-creatives
 // (avläst från creative 1035280906146910), inkl. inline_comment på OPT_IN.
@@ -70,8 +44,14 @@ const NO_ENHANCEMENTS = JSON.stringify({
   },
 });
 
-const DRY = process.argv.includes('--dry');
+const args = process.argv.slice(2);
+const DRY = args.includes('--dry');
+const configPath = args.find(a => !a.startsWith('--'));
 if (!TOKEN) die('META_ACCESS_TOKEN saknas.');
+if (!configPath) die('Ange konfig: node uk-wave.mjs waves/<kampanj>.config.mjs [--dry]');
+
+const cfg = (await import(new URL(configPath, `file://${process.cwd()}/`))).default;
+// cfg: { campaignName, link, dailyBudget (öre), productRe, concepts: {SO/SP/PD: {adset, message, headline, description}}, aliases?: {SF:'SP'}, forceConcept?: {filnamn: kod} }
 
 function die(msg) { console.error(`✗ ${msg}`); process.exit(1); }
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -101,32 +81,44 @@ async function api(path, { method = 'GET', form, params } = {}) {
   }
 }
 
+function conceptFor(name) {
+  const base = name.replace(/\.\w+$/, '');
+  if (cfg.forceConcept?.[base]) return cfg.forceConcept[base];
+  const m = name.match(CONCEPT_RE);
+  if (!m) return null;
+  const code = m[1].toUpperCase();
+  return cfg.aliases?.[code] || (cfg.concepts[code] ? code : null);
+}
+
 // ---- hämta media ur biblioteket och gruppera per koncept ----
 const images = (await api(`${ACT}/adimages`, { params: { fields: 'name,hash', limit: '500' } })).data || [];
 const videos = (await api(`${ACT}/advideos`, { params: { fields: 'title,id,status', limit: '500' } })).data || [];
 
-const plan = { SO: [], SP: [], PD: [] };
+const plan = Object.fromEntries(Object.keys(cfg.concepts).map(k => [k, []]));
+const skipped = [];
 for (const i of images) {
-  if (!i.name?.startsWith('UK') || !PRODUCT_RE.test(i.name)) continue;
-  const m = i.name.match(CONCEPT_RE);
-  if (m) plan[m[1].toUpperCase()].push({ type: 'image', name: i.name.replace(/\.\w+$/, ''), hash: i.hash });
+  if (!i.name?.startsWith('UK') || !cfg.productRe.test(i.name)) continue;
+  const c = conceptFor(i.name);
+  if (c) plan[c].push({ type: 'image', name: i.name.replace(/\.\w+$/, ''), hash: i.hash });
+  else skipped.push(i.name);
 }
 for (const v of videos) {
   const t = v.title || '';
-  if (!t.startsWith('UK') || !PRODUCT_RE.test(t)) continue;
-  const m = t.match(CONCEPT_RE);
-  if (!m) continue;
+  if (!t.startsWith('UK') || !cfg.productRe.test(t)) continue;
+  const c = conceptFor(t);
+  if (!c) { skipped.push(t); continue; }
   if (v.status?.video_status !== 'ready') { console.log(`⚠️ ${t} är inte ready (${v.status?.video_status}) — hoppas över`); continue; }
-  plan[m[1].toUpperCase()].push({ type: 'video', name: t.replace(/\.\w+$/, ''), videoId: v.id });
+  plan[c].push({ type: 'video', name: t.replace(/\.\w+$/, ''), videoId: v.id });
 }
 
-console.log('Plan (från mediabiblioteket):');
+console.log(`Plan — ${cfg.campaignName}:`);
 let total = 0;
 for (const [c, list] of Object.entries(plan)) {
-  console.log(`  ${c} — ${CONCEPTS[c].adset}: ${list.length} st`);
+  console.log(`  ${c} — ${cfg.concepts[c].adset}: ${list.length} st`);
   for (const it of list) console.log(`     · [${it.type}] ${it.name}`);
   total += list.length;
 }
+if (skipped.length) console.log(`  ⚠️ Utan känt koncept (hoppas över): ${skipped.join(', ')}`);
 if (!total) die('Hittade ingen matchande media i biblioteket.');
 if (DRY) { console.log('\n--dry: inget skapas.'); process.exit(0); }
 
@@ -140,18 +132,18 @@ async function videoThumb(videoId, name) {
   throw new Error(`Ingen thumbnail för ${name}.`);
 }
 
-// ---- kampanj + adsets ----
+// ---- kampanj + adsets (idempotent) ----
 const existing = await api(`${ACT}/campaigns`, { params: { fields: 'name,status', limit: '200' } });
-let campaign = existing.data?.find(c => c.name === CAMPAIGN_NAME);
+let campaign = existing.data?.find(c => c.name === cfg.campaignName);
 if (campaign) {
-  console.log(`\n· Återanvänder kampanj: ${CAMPAIGN_NAME} (${campaign.id}, ${campaign.status})`);
+  console.log(`\n· Återanvänder kampanj: ${cfg.campaignName} (${campaign.id}, ${campaign.status})`);
 } else {
   campaign = await api(`${ACT}/campaigns`, { method: 'POST', form: {
-    name: CAMPAIGN_NAME, objective: 'OUTCOME_SALES', status: 'PAUSED',
+    name: cfg.campaignName, objective: 'OUTCOME_SALES', status: 'PAUSED',
     special_ad_categories: '[]',
-    daily_budget: DAILY_BUDGET, bid_strategy: 'LOWEST_COST_WITHOUT_CAP',
+    daily_budget: cfg.dailyBudget, bid_strategy: 'LOWEST_COST_WITHOUT_CAP',
   }});
-  console.log(`\n✓ Kampanj (PAUSED, CBO 1000 kr/dag): ${CAMPAIGN_NAME} (${campaign.id})`);
+  console.log(`\n✓ Kampanj (PAUSED, CBO ${cfg.dailyBudget / 100} kr/dag): ${cfg.campaignName} (${campaign.id})`);
 }
 
 const priorAdsets = (await api(`${campaign.id}/adsets`, { params: { fields: 'name', limit: '50' } })).data || [];
@@ -159,7 +151,7 @@ const priorAds = (await api(`${campaign.id}/ads`, { params: { fields: 'name', li
 const priorAdNames = new Set(priorAds.map(a => a.name));
 
 const adsetIds = {};
-for (const [code, c] of Object.entries(CONCEPTS)) {
+for (const [code, c] of Object.entries(cfg.concepts)) {
   if (!plan[code].length) continue;
   const prior = priorAdsets.find(a => a.name === c.adset);
   if (prior) { adsetIds[code] = prior.id; console.log(`· Återanvänder adset: ${c.adset} (${prior.id})`); continue; }
@@ -181,7 +173,7 @@ for (const [code, c] of Object.entries(CONCEPTS)) {
 // ---- creatives + ads ----
 let ok = 0, failed = 0;
 for (const [code, list] of Object.entries(plan)) {
-  const c = CONCEPTS[code];
+  const c = cfg.concepts[code];
   for (const it of list) {
     if (priorAdNames.has(it.name)) { console.log(`· [${code}] ${it.name} finns redan — hoppar`); continue; }
     try {
@@ -191,21 +183,19 @@ for (const [code, list] of Object.entries(plan)) {
         spec = { page_id: PAGE_ID, video_data: {
           video_id: it.videoId, image_url: thumb,
           message: c.message, title: c.headline, link_description: c.description,
-          call_to_action: { type: 'SHOP_NOW', value: { link: LINK } },
+          call_to_action: { type: 'SHOP_NOW', value: { link: cfg.link } },
         }};
       } else {
         spec = { page_id: PAGE_ID, link_data: {
-          image_hash: it.hash, link: LINK,
+          image_hash: it.hash, link: cfg.link,
           message: c.message, name: c.headline, description: c.description,
-          call_to_action: { type: 'SHOP_NOW', value: { link: LINK } },
+          call_to_action: { type: 'SHOP_NOW', value: { link: cfg.link } },
         }};
       }
       const creative = await api(`${ACT}/adcreatives`, { method: 'POST', form: {
         name: `${it.name}_creative`,
         object_story_spec: JSON.stringify(spec),
         degrees_of_freedom_spec: NO_ENHANCEMENTS,
-        // UK-kontot saknar tillgång till pagens IG-konto → kör IG under pagens identitet
-        use_page_actor_override: 'true',
       }});
       const ad = await api(`${ACT}/ads`, { method: 'POST', form: {
         name: it.name, adset_id: adsetIds[code],
