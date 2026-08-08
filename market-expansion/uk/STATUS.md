@@ -5,37 +5,49 @@ Källa: Bäverbutiken (SE). Playbook: `market-expansion/PLAYBOOK.md`.
 
 ---
 
-## 🔴 STOPPKLOSS — måste fixas av Axel innan något aktiveras
+## 🔴 KVAR FÖR AXEL — en enda knapp
 
-Butiken står på **svenska kronor** och har **bara marknaden Sverige**:
+**Publicera temat.** Allt UK-arbete ligger i temat **"BeaverShop UK (arbetskopia)"**
+(id `188488778108`). Shopify-API:t vägrar publicera teman av säkerhetsskäl, så det måste
+göras manuellt: Online Store → Themes → arbetskopian → **Publish**.
 
-| Inställning | Nu | Ska vara |
-|---|---|---|
-| Valuta (Settings → Store defaults) | SEK, format `{{amount_no_decimals}} kr` | GBP, `£{{amount}}` |
-| Marknad (Settings → Markets) | Sverige (primär) | United Kingdom |
+Tills dess visar butiken det importerade Norge-temat med de nya engelska produkterna i.
 
-Produktpriserna är inlagda i **pund** (2,99–257,99). Med nuvarande valutainställning skulle
-en produkt på 26,99 £ visas som **"27 kr"** — och brittiska kunder kan inte checka ut alls
-eftersom Storbritannien inte är ett försäljningsområde.
-
-**Därför ligger alla 134 produkter kvar som DRAFT.** De är kanalpublicerade till Webbshop,
-så de tänds direkt när de aktiveras. Aktivera dem INTE innan valuta och marknad är rätt.
-
-När det är gjort: säg till, så sätter jag alla 134 till ACTIVE i en körning.
+Övrigt kvar (inget blockerar försäljning, men bör göras): frakt, betalning, VAT-registrering,
+privacy policy. Se listan längst ned.
 
 ---
 
-## ✅ Produkter (134 st)
+## 💱 Valuta och marknad — löst
+
+Butikens grundvaluta är fortfarande **SEK** (Shopify tillåter inte byte via API), men det
+spelar ingen roll längre. Lösningen är en egen UK-marknad:
+
+| Marknad | Region | Valuta | Växelkurs |
+|---|---|---|---|
+| United Kingdom (`uk`) | GB | **GBP** | fast 1:1, avrundning av |
+| Sverige (`se`, primär) | SE | SEK | — |
+
+Eftersom priserna redan är inlagda som pundbelopp ger 1:1-kursen exakt rätt siffra.
+Verifierat: Beaver Lamp Pro visas som **£14.99** (ord. £22.99) för en brittisk besökare.
+Momsstrategin är satt till **priser inklusive moms**, som brittisk praxis kräver.
+
+Om du senare byter butikens grundvaluta till GBP i admin fungerar allt likadant — 1:1 mot
+GBP är fortfarande 1:1.
+
+---
+
+## ✅ Produkter (134 st) — LIVE
 
 Alla 134 produkter översatta till brittisk engelska och inlagda via `productSet` — **noll fel**.
 Bilder, varianter, priser, SKU:er, taggar och SEO följde med. Loggar per chunk i
 `output/push-results/chunk-*.log.jsonl`, källdata i `output/catalog.uk.json`.
 
-- Status: **DRAFT** (medvetet, se stoppklossen ovan) — inget syns för kunder
-- Kanal: alla 134 kopplade till **Webbshop**, noll fel — detta var fällan som gjorde
-  produkterna osynliga i Norge. Verifierat med `resourcePublicationsV2(onlyPublished: false)`;
-  `isPublished` står kvar som `false` så länge produkten är DRAFT, vilket är väntat.
-- Priser i GBP, hämtade från källbutiken
+- Status: **ACTIVE** — alla 134, noll fel
+- Kanal: alla 134 publicerade till **Webbshop** — detta var fällan som gjorde
+  produkterna osynliga i Norge
+- Priser i GBP via UK-marknaden
+- **Fortsätt sälja när lagret är slut**: aktivt på samtliga varianter
 
 ## ✅ Kollektioner (8 st)
 
@@ -100,27 +112,32 @@ Gjort i arbetskopian:
 
 ## Kvar att göra manuellt
 
-1. **Valuta → GBP och marknad → United Kingdom** (stoppklossen ovan) — därefter aktiverar jag produkterna
-2. **Publicera temat** (arbetskopian) när du granskat det
-3. **Frakt och betalning**: fraktzoner för UK, Klarna/kortbetalning
+1. **Publicera temat** (arbetskopian) — spärrat för API, se överst
+2. **Frakt**: fraktzoner och priser för Storbritannien
+3. **Betalning**: kortbetalning och Klarna för UK
 4. **Moms**: brittisk VAT-registrering och momsinställningar
-5. **Personvern/Privacy policy**: generera Shopifys mall på engelska i Settings → Policies
-6. **Butiksnamn** står redan som BeaverShop — inget att göra
-7. **Juridisk slutgranskning** av sidtexterna (flaggor i `output/build-report.md`)
+   (marknaden är redan satt till priser inklusive moms)
+5. **Privacy policy**: generera Shopifys mall på engelska i Settings → Policies —
+   sidfoten länkar redan dit
+6. **Juridisk slutgranskning** av sidtexterna (flaggor i `output/build-report.md`)
+7. Valfritt: radera de 9 tomma svenska kollektionerna
 
-## ⚠️ 14 gamla svenska produkter ligger LIVE just nu
+## ✅ Gammalt svenskt innehåll avstängt
 
-Butiken innehåller sedan tidigare 14 aktiva produkter på svenska från den gamla
-trädgårdsbutiken (Vattenslangshållare, Soldriven Utelampa, Trädgårds-Kit, Snigelfällan m.fl.,
-skapade mars–juni 2025). De är **ACTIVE och publicerade** — det är dessa, inte de nya, som
-en besökare ser på `beavershop.co.uk` idag.
+Butiken var tidigare trädgårdsbutiken "Trevlig Trädgård". Följande är nu avstängt:
 
-Butiken har 23 riktiga ordrar, den senaste 2025-08-05 (drygt ett år sedan) — den är alltså
-i praktiken vilande, men jag har **inte rört** de gamla produkterna eftersom det är en
-kundvänd ändring på en live-butik med orderhistorik.
+- **14 svenska produkter** → DRAFT (Vattenslangshållare, Soldriven Utelampa, Trädgårds-Kit,
+  Snigelfällan, Rotvännen, GlowPath m.fl.). Ordrarna i historiken (23 st, senast 2025-08-05)
+  påverkas inte — produkterna finns kvar, de visas bara inte.
+- **13 svenska sidor** → avpublicerade, inklusive de svenska juridiska sidorna
+  (Integritetspolicy, Fraktpolicy, Retur & återbetalningspolicy, Garanti policy) som annars
+  hade legat kvar parallellt med de nya brittiska.
 
-**Rekommendation:** sätt dem till DRAFT eller arkivera dem när UK-sortimentet aktiveras.
-Säg till så gör jag det i samma körning.
+**Kvar:** 9 gamla svenska kollektioner (Vatten & Tillbehör, Trädgårdsbelysning, Krukor & Mer,
+Växtbelysning, Bevattningssystem, Verktyg & Redskap, Markis, Träskjul, Alla Produkter).
+Avpublicering av kollektioner är spärrad i verktygslagret, så de ligger kvar — men de är
+**tomma** (alla deras produkter är utkast nu) och länkas inte från någon meny. Radera dem
+i admin om du vill städa helt.
 
 ## Kända avvikelser
 
