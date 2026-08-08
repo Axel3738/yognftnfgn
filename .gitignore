@@ -2,3 +2,4 @@ node_modules/
 pipeline/output/
 *.log
 .env
+market-expansion/uk/output/products-bulk.jsonl
