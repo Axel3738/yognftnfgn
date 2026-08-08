@@ -230,7 +230,7 @@
     }
   },
   "date_formats": {
-    "month_day_year": "%b %d, %Y"
+    "month_day_year": "%d %b %Y"
   },
   "gempages": {
     "Carousel": {
@@ -439,7 +439,7 @@
   },
   "shopify": {
     "links": {
-      "powered_by_shopify": "© 2023 xoxo. All rights reserved."
+      "powered_by_shopify": "© 2026 BeaverShop. All rights reserved."
     },
     "checkout": {
       "shop_policies": {
@@ -499,7 +499,7 @@
           "line_item_limit_reached": "Maximum number of items reached."
         },
         "full_price": "Total:",
-        "all_rights_reserved": "© 2023 Hahahhaha. All rights reserved.",
+        "all_rights_reserved": "© 2026 BeaverShop. All rights reserved.",
         "print_policies_link_label": "Print"
       },
       "contact": {
