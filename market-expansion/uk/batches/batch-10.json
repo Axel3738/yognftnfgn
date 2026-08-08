@@ -1,0 +1,405 @@
+{
+ "batch": 10,
+ "products": [
+  {
+   "handle": "tofflor-ergonomiska-tjocksulade-for-inne-ute",
+   "legacyId": "16380215394653",
+   "status": "ACTIVE",
+   "vendor": "Bäverbutiken",
+   "productType": "Skor",
+   "tags": [
+    "Bekvämt",
+    "Hem",
+    "Skor",
+    "Tofflor"
+   ],
+   "title": "Tofflor Ergonomiska – Tjocksulade för Inne & Ute",
+   "descriptionHtml": "<h3>Trötta fötter efter en dag hemma? Då är det fel tofflor.</h3><p>Tunna, platta tofflor gör jobbet mot dig – varje steg landar hårt på hälar och knän. Det märks inte direkt. Det märks på kvällen.</p><!-- GIF: foten sjunker ner i tjock sula --><h3>Lösningen: som att gå på moln</h3><p>Tjock, stötdämpande sula som tar emot varje steg och avlastar leder och rygg. Sköna inne – och halkfria nog för altanen och gårdsplan.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ce963fd939ae7017637863a3d0a0ec07.jpg\" alt=\"Ergonomiska tofflor med tjock sula\"></p><h3>Funktioner</h3><ul>\n<li>Tjock ergonomisk sula med stötdämpning</li>\n<li>Halkfria – inne och ute</li>\n<li>Lätta och luftiga – torkar snabbt</li>\n<li>Unisex i flera storlekar</li>\n<li>Perfekta för hem, altan och sommarstuga</li>\n</ul><!-- BILD: närbild på sulan --><h3>Vår garanti</h3><p>30 dagars nöjd-kund-garanti – gillar du dem inte får du pengarna tillbaka. Snabb leverans och trygg betalning med Klarna. 🦫</p>",
+   "seo": {
+    "title": null,
+    "description": null
+   },
+   "collection": null,
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/65430120890717",
+     "title": "Default Title",
+     "sku": "TEMU-601100379316292",
+     "price": "309.00",
+     "compareAtPrice": null,
+     "inventoryQuantity": 0,
+     "selectedOptions": [
+      {
+       "name": "Title",
+       "value": "Default Title"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ce963fd939ae7017637863a3d0a0ec07.jpg?v=1785594071",
+     "altText": "Ergonomiska tofflor med tjock sula"
+    }
+   ]
+  },
+  {
+   "handle": "fritidsskor-herr-laga-latta-med-halkfri-sula",
+   "legacyId": "16380215525725",
+   "status": "ACTIVE",
+   "vendor": "Bäverbutiken",
+   "productType": "Skor",
+   "tags": [
+    "Fritid",
+    "Herr",
+    "Skor",
+    "Vandring"
+   ],
+   "title": "Fritidsskor Herr – Låga & Lätta med Halkfri Sula",
+   "descriptionHtml": "<h3>En sko för promenaden. En för jobbet. En för skogen. Eller?</h3><p>Skohyllan svämmar över, men ändå blir det alltid fel par. För tunga, för varma, för hala.</p><!-- GIF: skon böjs/flexas i handen --><h3>Lösningen: en sko som klarar allt</h3><p>Extremt lätta fritidsskor med halkfri sula som ger fotfäste på blöta underlag. Snygga nog för stan, tåliga nog för skogsstigen – året om.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b1d1d71d-c0b4-40d4-ad6d-a2a3c1d3cc73.jpg\" alt=\"Lätta fritidsskor för herr\"></p><h3>Funktioner</h3><ul>\n<li>Extremt lätta – tröttar inte ut fötterna</li>\n<li>Halkfri sula för alla underlag</li>\n<li>Andningsbart material</li>\n<li>Grå med röda detaljer</li>\n<li>Finns i stora storlekar</li>\n</ul><!-- BILD: sulan/greppet underifrån --><h3>Vår garanti</h3><p>30 dagars nöjd-kund-garanti – gillar du dem inte får du pengarna tillbaka. Snabb leverans och trygg betalning med Klarna. 🦫</p>",
+   "seo": {
+    "title": null,
+    "description": null
+   },
+   "collection": null,
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/65430121152861",
+     "title": "Default Title",
+     "sku": "TEMU-601102200064735",
+     "price": "309.00",
+     "compareAtPrice": null,
+     "inventoryQuantity": 0,
+     "selectedOptions": [
+      {
+       "name": "Title",
+       "value": "Default Title"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b1d1d71d-c0b4-40d4-ad6d-a2a3c1d3cc73.jpg?v=1785594074",
+     "altText": "Lätta fritidsskor för herr"
+    }
+   ]
+  },
+  {
+   "handle": "mobilskal-magnetiskt-med-stall-iphone-12-17",
+   "legacyId": "16380215656797",
+   "status": "ACTIVE",
+   "vendor": "Bäverbutiken",
+   "productType": "Mobiltillbehör",
+   "tags": [
+    "iPhone",
+    "Magnetiskt",
+    "Mobilskal",
+    "Tillbehör"
+   ],
+   "title": "Mobilskal Magnetiskt med Ställ – iPhone 12–17",
+   "descriptionHtml": "<h3>Nytt skal varje gång du tappar telefonen? Dyrt.</h3><p>Spruckna hörn, repig lins och ett ställ som aldrig finns när du vill kolla en video. Känns det bekant?</p><!-- GIF: skalet snäpper fast på magnetladdare --><h3>Lösningen: skydd, ställ och magnet – i ett</h3><p>Ett stötsäkert skal med förhöjd kant som skyddar skärm och kamera, magnetfäste som snäpper fast på laddare och hållare, och ett inbyggt ställ för film och samtal.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/912694ed-892f-4142-b051-5b31980c0a2d.jpg\" alt=\"Magnetiskt mobilskal med ställ\"></p><h3>Funktioner</h3><ul>\n<li>Passar iPhone 12–17 (inkl. Pro Max, Air och 16e)</li>\n<li>Magnetfäste – kompatibelt med trådlös laddning</li>\n<li>Inbyggt ställ för film och videosamtal</li>\n<li>Stötsäkert med förhöjd skärmkant</li>\n<li>Matt yta – repbeständig och fri från fingeravtryck</li>\n</ul><!-- BILD: stället utfällt på bord --><h3>Vår garanti</h3><p>30 dagars nöjd-kund-garanti – gillar du det inte får du pengarna tillbaka. Snabb leverans och trygg betalning med Klarna. 🦫</p>",
+   "seo": {
+    "title": null,
+    "description": null
+   },
+   "collection": null,
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/65430121283933",
+     "title": "Default Title",
+     "sku": "TEMU-601103799817572",
+     "price": "219.00",
+     "compareAtPrice": null,
+     "inventoryQuantity": 0,
+     "selectedOptions": [
+      {
+       "name": "Title",
+       "value": "Default Title"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/912694ed-892f-4142-b051-5b31980c0a2d.jpg?v=1785594132",
+     "altText": "Magnetiskt mobilskal med ställ"
+    }
+   ]
+  },
+  {
+   "handle": "surfplattestall-roterande-justerbart",
+   "legacyId": "16380215886173",
+   "status": "ACTIVE",
+   "vendor": "Bäverbutiken",
+   "productType": "Tillbehör",
+   "tags": [
+    "iPad",
+    "Kontor",
+    "Ställ",
+    "Surfplatta"
+   ],
+   "title": "Surfplatteställ – Roterande & Justerbart",
+   "descriptionHtml": "<h3>Paddan lutad mot kaffekoppen. Igen.</h3><p>Recept i köket, film i sängen, videosamtal vid skrivbordet – och alltid samma balansakt med plattan mot något som välter.</p><!-- GIF: stället roteras och vinklas --><h3>Lösningen: rätt vinkel, varje gång</h3><p>Ett stabilt aluminiumställ som håller din iPad eller telefon exakt där du vill ha den – roterbart 360° och steglöst justerbart i vinkel och höjd.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/73c6e9cb-6221-4086-8e99-3c009a14c8ae.jpg\" alt=\"Roterande surfplatteställ\"></p><h3>Funktioner</h3><ul>\n<li>360° roterande fot – stående eller liggande läge</li>\n<li>Steglöst justerbar vinkel och höjd</li>\n<li>Stabil aluminiumkonstruktion med halkskydd</li>\n<li>Passar surfplattor och telefoner i alla storlekar</li>\n<li>Perfekt för kök, kontor och sängbord</li>\n</ul><!-- BILD: stället med platta i köksmiljö --><h3>Vår garanti</h3><p>30 dagars nöjd-kund-garanti – gillar du det inte får du pengarna tillbaka. Snabb leverans och trygg betalning med Klarna. 🦫</p>",
+   "seo": {
+    "title": null,
+    "description": null
+   },
+   "collection": null,
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/65430121775453",
+     "title": "Default Title",
+     "sku": "TEMU-601102197280712",
+     "price": "279.00",
+     "compareAtPrice": null,
+     "inventoryQuantity": 0,
+     "selectedOptions": [
+      {
+       "name": "Title",
+       "value": "Default Title"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/73c6e9cb-6221-4086-8e99-3c009a14c8ae.jpg?v=1785594134",
+     "altText": "Roterande surfplatteställ"
+    }
+   ]
+  },
+  {
+   "handle": "14-i-1-multiverktygshammare-camping-nodlage",
+   "legacyId": "16380216672605",
+   "status": "ACTIVE",
+   "vendor": "Bäverbutiken",
+   "productType": "Verktyg",
+   "tags": [
+    "Camping",
+    "Multiverktyg",
+    "Present",
+    "Verktyg"
+   ],
+   "title": "14-i-1 Multiverktygshammare – Camping & Nödläge",
+   "descriptionHtml": "<h3>Mitt i naturen. Fel verktyg hemma. Klassiker.</h3><p>Tältpinnen behöver slås ner, grenen ska bort och något ska skruvas – men verktygslådan står i garaget tio mil bort.</p><!-- GIF: verktyget fälls ut funktion för funktion --><h3>Lösningen: 14 verktyg i fickformat</h3><p>Hammare, tång, såg, kniv och skruvmejslar – allt i ett kompakt verktyg som bor i campingpackningen, båten eller bilens nödkit. Alltid med. Alltid redo.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3f2e2bf8-883d-41ef-87b9-47e26e53dc20.jpg\" alt=\"14-i-1 multiverktygshammare\"></p><h3>Funktioner</h3><ul>\n<li>14 funktioner: hammare, tång, såg, kniv, mejslar m.m.</li>\n<li>Robust konstruktion som tål riktig användning</li>\n<li>Levereras med skyddande fodral</li>\n<li>Kompakt – får plats i handskfacket</li>\n<li>Perfekt present till honom som har allt</li>\n</ul><!-- BILD: alla funktioner utfällda --><h3>Vår garanti</h3><p>30 dagars nöjd-kund-garanti – gillar du det inte får du pengarna tillbaka. Snabb leverans och trygg betalning med Klarna. 🦫</p>",
+   "seo": {
+    "title": null,
+    "description": null
+   },
+   "collection": null,
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/65430124757341",
+     "title": "Default Title",
+     "sku": "TEMU-601101921250503",
+     "price": "349.00",
+     "compareAtPrice": null,
+     "inventoryQuantity": 0,
+     "selectedOptions": [
+      {
+       "name": "Title",
+       "value": "Default Title"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3f2e2bf8-883d-41ef-87b9-47e26e53dc20.jpg?v=1785594140",
+     "altText": "14-i-1 multiverktygshammare"
+    }
+   ]
+  },
+  {
+   "handle": "grasklippartacke-600d-oxford-med-dragsko",
+   "legacyId": "16380217033053",
+   "status": "ACTIVE",
+   "vendor": "Bäverbutiken",
+   "productType": "Trädgård & Utomhus",
+   "tags": [
+    "Gräsklippare",
+    "Skydd",
+    "Trädgård",
+    "Utomhus"
+   ],
+   "title": "Gräsklippartäcke 600D Oxford – med Dragsko",
+   "descriptionHtml": "<h3>Din gräsklippare kostade tusenlappar. Regnet bryr sig inte.</h3><p>Sol bleker lacken, regn rostar bladen och löven samlas i motorn. En oskyddad klippare åldras dubbelt så fort – helt i onödan.</p><!-- GIF: täcket dras över klipparen --><h3>Lösningen: dra över, dra åt – klart</h3><p>Ett tåligt täcke i 600D Oxford – samma slitstarka material som våra sätesöverdrag – med dragsko som ger tät passform runt maskinen. Torr, ren och redo när du är det.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/5661b1e5a1d0413497069942ef7bf1ae-goods.jpg\" alt=\"Gräsklippartäcke i 600D Oxford\"></p><h3>Funktioner</h3><ul>\n<li>Kraftigt 600D Oxford-tyg</li>\n<li>Dragsko i kanten för tät passform</li>\n<li>Skyddar mot regn, UV, damm och löv</li>\n<li>Passar de flesta gräsklippare och åkgräsklippare</li>\n<li>Svart – diskret vid förvaring ute</li>\n</ul><!-- BILD: täcket på klippare i trädgård --><h3>Vår garanti</h3><p>30 dagars nöjd-kund-garanti – gillar du det inte får du pengarna tillbaka. Snabb leverans och trygg betalning med Klarna. 🦫</p>",
+   "seo": {
+    "title": null,
+    "description": null
+   },
+   "collection": null,
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Svart"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/65430125117789",
+     "title": "Svart",
+     "sku": "TEMU-605510862498229",
+     "price": "329.00",
+     "compareAtPrice": null,
+     "inventoryQuantity": 0,
+     "selectedOptions": [
+      {
+       "name": "Title",
+       "value": "Svart"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/5661b1e5a1d0413497069942ef7bf1ae-goods.jpg?v=1785594141",
+     "altText": "Gräsklippartäcke 600D Oxford"
+    }
+   ]
+  },
+  {
+   "handle": "fiskespohallare-for-bat-2-pack-i-kraftig-nylon",
+   "legacyId": "16380217295197",
+   "status": "ACTIVE",
+   "vendor": "Bäverbutiken",
+   "productType": "Båt & Marin",
+   "tags": [
+    "Båt",
+    "Fiske",
+    "Marin",
+    "Spöhållare"
+   ],
+   "title": "Fiskespöhållare för Båt – 2-pack i Kraftig Nylon",
+   "descriptionHtml": "<h3>Ett spö i handen, ett mellan knäna, ett på durken</h3><p>Att fiska med flera spön från båt utan hållare är en cirkusakt – och det är alltid när det hugger som spöt ligger där det inte ska.</p><!-- GIF: spöt sätts i hållaren på relingen --><h3>Lösningen: fasta platser för spöna</h3><p>Två rejäla hållare i kraftig nylon som monteras på relingen. Spöna sitter säkert i rätt vinkel – och du har händerna fria tills det verkligen händer.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/afa5554aaa164c7bbdbbb4264a12a532-goods.jpg\" alt=\"Fiskespöhållare för båt\"></p><h3>Funktioner</h3><ul>\n<li>2-pack – två hållare per köp</li>\n<li>Kraftig plastnylon som tål väder och UV</li>\n<li>Enkel montering på båtens reling</li>\n<li>Håller spöt stadigt i rätt vinkel</li>\n<li>Passar de flesta spötjocklekar</li>\n</ul><!-- BILD: båda hållarna monterade --><h3>Vår garanti</h3><p>30 dagars nöjd-kund-garanti – gillar du dem inte får du pengarna tillbaka. Snabb leverans och trygg betalning med Klarna. 🦫</p>",
+   "seo": {
+    "title": null,
+    "description": null
+   },
+   "collection": null,
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "2-pack"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/65430125838685",
+     "title": "2-pack",
+     "sku": "TEMU-601099792244573",
+     "price": "269.00",
+     "compareAtPrice": null,
+     "inventoryQuantity": 0,
+     "selectedOptions": [
+      {
+       "name": "Title",
+       "value": "2-pack"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/afa5554aaa164c7bbdbbb4264a12a532-goods.jpg?v=1785594185",
+     "altText": "Fiskespöhållare för båt"
+    }
+   ]
+  },
+  {
+   "handle": "hattgalge-smart-forvaring-for-8-kepsar",
+   "legacyId": "16380217393501",
+   "status": "ACTIVE",
+   "vendor": "Bäverbutiken",
+   "productType": "Förvaring",
+   "tags": [
+    "Förvaring",
+    "Garderob",
+    "Hem",
+    "Kepsar"
+   ],
+   "title": "Hattgalge – Smart Förvaring för 8 Kepsar",
+   "descriptionHtml": "<h3>Kepshögen på hatthyllan. Vi behöver prata om den.</h3><p>Tio kepsar i en hög betyder tio tillplattade skärmar – och att favoriten alltid ligger längst ner.</p><!-- GIF: kepsar hängs upp en efter en --><h3>Lösningen: en galge, åtta kepsar</h3><p>Häng galgen i garderoben och ge varje keps sin egen plats. Skärmarna håller formen, du ser hela samlingen på en sekund – och hatthyllan får andas igen.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/d8dd15a8-ecc7-436d-9e8c-69d6daf2ada4.jpg\" alt=\"Hattgalge för 8 kepsar\"></p><h3>Funktioner</h3><ul>\n<li>Rymmer upp till 8 kepsar per galge</li>\n<li>Skonsam mot skärmen – kepsarna behåller passformen</li>\n<li>Passar alla standardgarderober</li>\n<li>Snabb överblick över hela samlingen</li>\n<li>Perfekt för hall, garderob och studentrum</li>\n</ul><!-- BILD: galgen full med kepsar i garderob --><h3>Vår garanti</h3><p>30 dagars nöjd-kund-garanti – gillar du den inte får du pengarna tillbaka. Snabb leverans och trygg betalning med Klarna. 🦫</p>",
+   "seo": {
+    "title": null,
+    "description": null
+   },
+   "collection": null,
+   "options": [
+    {
+     "name": "Title",
+     "values": [
+      "Default Title"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/65430125936989",
+     "title": "Default Title",
+     "sku": "TEMU-601100497255951",
+     "price": "179.00",
+     "compareAtPrice": null,
+     "inventoryQuantity": 0,
+     "selectedOptions": [
+      {
+       "name": "Title",
+       "value": "Default Title"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/d8dd15a8-ecc7-436d-9e8c-69d6daf2ada4.jpg?v=1785594142",
+     "altText": "Hattgalge för 8 kepsar"
+    }
+   ]
+  }
+ ]
+}
