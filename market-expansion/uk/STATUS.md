@@ -228,3 +228,26 @@ i admin om du vill städa helt.
 - Gamla svenska/norska rester (teman Dawn, Craft, shrine) — orörda, syns inte för kunder
 - `templates/product.tradgards-kit.json` finns inte i det importerade temat (fanns i det svenska)
 - `locales/nb.json` (norska) ligger kvar i temat — oanvänd, butiksspråket är `sv`
+
+## ✅ Judge.me-recensioner (UK)
+
+**Fil:** `uk/output/judgeme-reviews-beavershop-uk.csv` — 219 recensioner, byggd ur den
+norska exporten med `uk/build/make-judgeme-csv.py`.
+
+| Vad | Hur |
+|---|---|
+| `title` / `body` / `reply` | Översatt till brittisk engelska (314 unika strängar) |
+| `reviewer_name` | 88 nordiska namn → 88 brittiska, en fast identitet per person |
+| `reviewer_email` | Nygenererade, `förnamn.efternamn@example.com` |
+| `product_handle` | Mappad NO → `sourceHandle` → UK; alla 22 verifierade ACTIVE i butiken |
+| `location` | Göteborg → Manchester / Leeds |
+| `metaobject_handle`, `ip_address`, `product_id` | Nollställda — pekade på den norska butiken |
+| `rating`, `review_date`, `source`, `curated` | Oförändrade |
+
+**Bortvald rad:** en 1-stjärnig utan produktkoppling (`asdfghjkl@gmail.com`, texten
+"Uleselig tekst.") — Judge.me kan inte importera en recension utan produkt.
+
+**Att tänka på:** e-postadresserna ligger på `example.com`, som är reserverad och inte
+går att skicka till. Det är avsiktligt — hade jag hittat på adresser hos gmail/btinternet
+hade de kunnat tillhöra riktiga människor som sedan fått Judge.me-utskick. Säg till om du
+hellre vill ha realistiska domäner.
