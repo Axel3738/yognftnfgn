@@ -141,6 +141,7 @@ som manuellt alternativ när man vill handstyla.
 | Källannons | Marknad/språk | HeyGen | Proofread | Veed captions | Levererad | Anteckning |
 |------------|---------------|--------|-----------|---------------|-----------|------------|
 | `GRILL_mastern_video_ad01` (sv) | no / Norwegian Bokmål | ✅ 2026-08-08 | ✅ 3 rättningar (gjerne/bust/Mastern) via proofread-API | ✅ ffmpeg burn-in | ✅ levererad | proofread `fed87570…` → render `02a09df7…-nb` · inga geo/pris-referenser i källan · kostnad ~84 enheter (v1-felrendern oräknad) |
+| Motorhöljet-batch: 8 videoannonser (MagiBorsten, hämtade via Meta Graph API) | no / Norwegian Bokmål | ✅ 2026-08-08 | ✅ 3 rättade (Knusktørr · motoroljer→motortrekk · avrundad slutmening), 5 rena | — (opt-in, ej beställt) | ✅ alla 8 levererade | proofread-först-flödet, EN render/video · ~356 enheter totalt · `PD_EXTRA` ej översatt (ingen röst i videon — endast musik) · ⚠️ priset "299 kroner" = NOK, bekräfta norsk prissättning |
 
 Status per kolumn: ⏳ pågår · ✅ klar · ❌ fail. När en lokaliserad annons går live
 loggas den dessutom som vanligt i `ad-tracker.md` (den är ett eget test).
