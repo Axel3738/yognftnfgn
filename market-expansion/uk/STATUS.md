@@ -47,7 +47,9 @@ Bilder, varianter, priser, SKU:er, taggar och SEO följde med. Loggar per chunk 
 - Kanal: alla 134 publicerade till **Webbshop** — detta var fällan som gjorde
   produkterna osynliga i Norge
 - Priser i GBP via UK-marknaden
-- **Fortsätt sälja när lagret är slut**: aktivt på samtliga varianter
+- **Fortsätt sälja när lagret är slut**: verifierat på **alla 282 varianter** (`CONTINUE`,
+  noll undantag). 98 varianter har lagersaldo 0 men är ändå säljbara tack vare detta —
+  inga lagersaldon har rörts.
 
 ## ✅ Kollektioner (8 st)
 
