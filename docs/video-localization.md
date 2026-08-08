@@ -8,6 +8,18 @@ och sedan bränna in captions i **Veed** innan leverans.
 > "används mycket i Sverige" till en norsk tittare är en sämre annons. Proofread-steget
 > är där vi gör om innehållet så att det stämmer för målmarknaden — *innan* videon renderas.
 
+## Så beställer du (dump-flödet)
+
+Starta en session på repot, bifoga mp4-filerna (eller klistra Drive-länkar med
+"alla med länken kan visa") och skriv målspråket — t.ex. *"översätt dessa till norska"*.
+Claude kör då hela kedjan per video och levererar tillbaka färdiga filer med captions,
+plus en proofread-logg per annons.
+
+OBS för API-körningar: HeyGen renderar direkt utan proofread-paus. Claude granskar
+därför transkripten i efterhand, rättar captions-texten automatiskt och flaggar de
+annonser där även **ljudet** behöver en omrendering i HeyGens UI (t.ex. felöversatta
+varumärkesnamn). Beslut om omrendering tas per annons — varje render drar HeyGen-krediter.
+
 ## Flödet
 
 ```
