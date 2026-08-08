@@ -5,3 +5,8 @@ assets/theme.css	OK	URL
 assets/theme.js	OK	URL	
 assets/theme.min.js	FEL	TEXT	Innehåll för stort (115 854 tecken, ~78k tokens minifierad JS) för att överföras säkert via verktygsgränssnittet utan risk för trunkering/korruption; källan levererade text (ej URL); hämtning lyckades men upsert kunde inte utföras säkert
 assets/vendor-scripts-v10.js	FEL	TEXT	Innehåll för stort (143 785 tecken JS) för att överföras säkert via verktygsgränssnittet utan risk för trunkering/korruption; källan levererade text (ej URL); hämtning lyckades men upsert kunde inte utföras säkert
+assets/ico-select-drawer.svg	OK	TEXT	
+assets/ico-select-drawer.svg.liquid	OK	TEXT	
+assets/ico-select-footer.svg	OK	TEXT	
+assets/ico-select-footer.svg.liquid	OK	TEXT	
+assets/ico-select-menu.svg	OK	TEXT	
