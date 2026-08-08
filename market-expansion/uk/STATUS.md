@@ -31,8 +31,10 @@ Alla 134 produkter översatta till brittisk engelska och inlagda via `productSet
 Bilder, varianter, priser, SKU:er, taggar och SEO följde med. Loggar per chunk i
 `output/push-results/chunk-*.log.jsonl`, källdata i `output/catalog.uk.json`.
 
-- Status: **DRAFT** (medvetet, se stoppklossen ovan)
-- Kanal: publicerade till **Webbshop** — detta var fällan som gjorde produkterna osynliga i Norge
+- Status: **DRAFT** (medvetet, se stoppklossen ovan) — inget syns för kunder
+- Kanal: alla 134 kopplade till **Webbshop**, noll fel — detta var fällan som gjorde
+  produkterna osynliga i Norge. Verifierat med `resourcePublicationsV2(onlyPublished: false)`;
+  `isPublished` står kvar som `false` så länge produkten är DRAFT, vilket är väntat.
 - Priser i GBP, hämtade från källbutiken
 
 ## ✅ Kollektioner (8 st)
@@ -106,8 +108,31 @@ Gjort i arbetskopian:
 6. **Butiksnamn** står redan som BeaverShop — inget att göra
 7. **Juridisk slutgranskning** av sidtexterna (flaggor i `output/build-report.md`)
 
+## ⚠️ 14 gamla svenska produkter ligger LIVE just nu
+
+Butiken innehåller sedan tidigare 14 aktiva produkter på svenska från den gamla
+trädgårdsbutiken (Vattenslangshållare, Soldriven Utelampa, Trädgårds-Kit, Snigelfällan m.fl.,
+skapade mars–juni 2025). De är **ACTIVE och publicerade** — det är dessa, inte de nya, som
+en besökare ser på `beavershop.co.uk` idag.
+
+Butiken har 23 riktiga ordrar, den senaste 2025-08-05 (drygt ett år sedan) — den är alltså
+i praktiken vilande, men jag har **inte rört** de gamla produkterna eftersom det är en
+kundvänd ändring på en live-butik med orderhistorik.
+
+**Rekommendation:** sätt dem till DRAFT eller arkivera dem när UK-sortimentet aktiveras.
+Säg till så gör jag det i samma körning.
+
 ## Kända avvikelser
 
 - Två skräpsträngar från källtemat (`© 2023 xoxo`, `© 2023 Hahahhaha`) rättade till BeaverShop
-- Gamla svenska/norska rester i butiken (äldre teman Dawn, Craft, shrine) — orörda, syns inte för kunder
+- Datumformat ändrat till brittisk ordning (`%d %b %Y`)
+- Hela standardtemat (Impulse 5.0.0) är genomgående engelskt — all kundtext går via
+  språknycklar. Liquid-skanning av 119 filer hittade **ingen** hårdkodad norsk text.
+- **GemPages-rester**: 8 maskingenererade `sections/gp-section-*.liquid` innehåller svensk
+  annonstext, e-postadressen `kundsupport@baverbutiken.se` och länkar till `baverbutiken.se`.
+  De är medvetet orörda: filerna är märkta "SHOULD NOT modify", texten ligger i schema-defaults
+  som skrivs över av mall-JSON, och **ingen sida i butiken använder dem idag**. Städa eller
+  översätt via GemPages-editorn om de ska användas.
+- Gamla svenska/norska rester (teman Dawn, Craft, shrine) — orörda, syns inte för kunder
 - `templates/product.tradgards-kit.json` finns inte i det importerade temat (fanns i det svenska)
+- `locales/nb.json` (norska) ligger kvar i temat — oanvänd, butiksspråket är `sv`
