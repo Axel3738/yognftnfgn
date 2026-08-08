@@ -19,3 +19,66 @@ snippets/footer-custom-text.liquid	OK	TEXT
 snippets/footer-logo.liquid	OK	TEXT	
 snippets/footer-menu.liquid	OK	TEXT	
 snippets/footer-newsletter.liquid	OK	TEXT	
+snippets/gp-head.liquid	OK	TEXT	
+snippets/header-desktop-nav.liquid	OK	TEXT	
+snippets/header-icons.liquid	OK	TEXT	
+snippets/header-logo-block.liquid	OK	TEXT	
+snippets/header-split-nav.liquid	OK	TEXT	
+snippets/media.liquid	OK	TEXT	
+snippets/multi-selectors.liquid	OK	TEXT	
+snippets/newsletter-form.liquid	OK	TEXT	
+snippets/pagination.liquid	OK	TEXT	
+snippets/photoswipe-template.liquid	OK	TEXT	
+snippets/product-description.liquid	OK	TEXT	
+snippets/product-form.liquid	OK	TEXT	
+snippets/product-grid-item.liquid	OK	TEXT	
+snippets/product-images.liquid	OK	TEXT	
+snippets/product-inventory.liquid	OK	TEXT	
+snippets/product-template-variables.liquid	OK	TEXT	
+snippets/product-template.liquid	OK	TEXT	
+snippets/promo-video.liquid	OK	TEXT	
+snippets/promo-grid.liquid	OK	TEXT	
+snippets/quantity-input.liquid	OK	TEXT	
+snippets/quick-shop-modal.liquid	OK	TEXT	
+snippets/search-bar.liquid	OK	TEXT	
+snippets/seo-title.liquid	OK	TEXT	
+snippets/sidebar-drawer.liquid	OK	TEXT	
+snippets/social-meta-tags.liquid	OK	TEXT	
+snippets/social-sharing.liquid	OK	TEXT	
+snippets/sub-collections.liquid	OK	TEXT	
+snippets/subcollection-list.liquid	OK	TEXT	
+snippets/subcollections.liquid	OK	TEXT	
+snippets/tab-contact.liquid	OK	TEXT	
+snippets/tab.liquid	OK	TEXT	
+snippets/toolbar.liquid	OK	TEXT	
+snippets/variant-button.liquid	OK	TEXT	
+snippets/variant-dropdown.liquid	OK	TEXT	
+snippets/video-div.liquid	OK	TEXT	
+snippets/video-modal.liquid	OK	TEXT	
+templates/404.json	FEL	TEXT	Filnamnet 404 finns redan med ändelsen liquid; sektion main-404 saknas i måltemat
+templates/article.json	FEL	TEXT	Filnamnet article finns redan med ändelsen liquid
+templates/blog.json	FEL	TEXT	Filnamnet blog finns redan med ändelsen liquid
+templates/cart.ajax.liquid	OK	TEXT	
+templates/cart.json	FEL	TEXT	Filnamnet cart finns redan med ändelsen liquid; sektioner main-cart/recently-viewed saknas i måltemat
+templates/collection.json	FEL	TEXT	Filnamnet collection finns redan med ändelsen liquid i måltemat
+templates/index.json	FEL	TEXT	Filnamnet index finns redan med ändelsen liquid i måltemat
+templates/list-collections.json	FEL	TEXT	Filnamnet list-collections finns redan med ändelsen liquid i måltemat
+templates/page.json	FEL	TEXT	Filnamnet page finns redan med ändelsen liquid i måltemat
+templates/password.json	FEL	TEXT	Filnamnet password finns redan med ändelsen liquid i måltemat
+templates/product.json	FEL	TEXT	Filnamnet product finns redan med ändelsen liquid i måltemat
+templates/search.json	FEL	TEXT	Filnamnet search finns redan med ändelsen liquid i måltemat
+templates/collection.collection-landing.json	FEL	TEXT	Sektionerna main-collection/promo-grid saknas i måltemat
+templates/collection.gem-1771928027-template.json	FEL	TEXT	Sektionerna main-collection/promo-grid saknas i måltemat
+templates/collection.gem-backup-default.json	FEL	TEXT	Sektionerna main-collection/promo-grid saknas i måltemat
+templates/collection.gp-template-bk-default.json	FEL	TEXT	Sektionerna main-collection/promo-grid saknas i måltemat
+templates/collection.no-promos.json	FEL	TEXT	Sektionen main-collection saknas i måltemat
+templates/collection.no-sidebar.json	FEL	TEXT	Sektionerna main-collection/promo-grid saknas i måltemat
+templates/customers/account.liquid	OK	TEXT	
+templates/customers/activate_account.liquid	OK	TEXT	
+templates/customers/addresses.liquid	OK	TEXT	
+templates/customers/login.liquid	OK	TEXT	
+templates/customers/order.liquid	OK	TEXT	
+templates/customers/register.liquid	OK	TEXT	
+templates/customers/reset_password.liquid	OK	TEXT	
+templates/gift_card.liquid	OK	TEXT	
+templates/index.gem-1771928024-template.json	FEL	TEXT	Sektioner (slideshow, newsletter, text-and-image, rich-text, map) saknas i måltemat
