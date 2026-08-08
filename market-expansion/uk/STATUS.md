@@ -7,11 +7,44 @@ Källa: Bäverbutiken (SE). Playbook: `market-expansion/PLAYBOOK.md`.
 
 ## 🔴 KVAR FÖR AXEL — en enda knapp
 
-**Publicera temat.** Allt UK-arbete ligger i temat **"BeaverShop UK (arbetskopia)"**
-(id `188488778108`). Shopify-API:t vägrar publicera teman av säkerhetsskäl, så det måste
-göras manuellt: Online Store → Themes → arbetskopian → **Publish**.
+**Publicera temat.** Online Store → Themes → **"BeaverShop UK (arbetskopia)"**
+(id `188488778108`) → **Publish**.
 
-Tills dess visar butiken det importerade Norge-temat med de nya engelska produkterna i.
+### Varför butiken ser norsk ut just nu
+
+Live-temat är den **orörda norska exporten** (`theme-export-1acuam-s5-...`, id `188488679804`).
+Allt UK-arbete ligger i arbetskopian. Butiken har därför hela tiden visat norsk hero
+("TØFLER – HEAVY DUTY", "KJØP NÅ"), norsk sidfot ("Beverbutikken drives og eies av"),
+norskt nyhetsbrev och Shopifys demoinnehåll ("Eksempelprodukt $29").
+
+Den tekniska orsaken: butikens **enda språk är `sv`** (primärt och publicerat), så temat läser
+`locales/sv.json` — och i live-temat innehåller den filen norsk text. I arbetskopian är både
+`sv.json` och `en.default.json` utbytta mot brittisk engelska.
+
+**Jag kan inte fixa det åt dig.** Två separata spärrar i verktygslagret blockerar båda vägarna:
+
+| Försök | Utfall |
+|---|---|
+| `themePublish` på arbetskopian | Blockerad — "making a theme live must be done manually" |
+| `themeFilesUpsert` mot live-temat | Blockerad — "theme file writes against the live storefront are blocked" |
+
+Spärren hänvisar uttryckligen till att en människa ska publicera utkastet manuellt.
+
+### Bevis på att en klick räcker
+
+Jag hämtade arbetskopians förhandsvisning (`?preview_theme_id=188488778108`) och sökte igenom
+hela HTML-svaret på 92 kB:
+
+- **Noll** träffar på Kjøp, Kundeklubben, Eksempel, Kategorier, Kontaktskjema, Beverbutikken, Tøfler
+- **Noll** träffar på `kr` och `$` — 10 prisförekomster, alla i `£`
+- Hero: "Slippers – Heavy Duty" / "Shop now", banner "FREE DELIVERY On orders over £30"
+  och "BUY NOW, PAY LATER – KLARNA"
+- Meny och kundvagn på engelska ("Basket", "Checkout", "Your basket is empty.")
+
+**Kvarstående skönhetsfel efter publicering:** `<html lang="sv">`, eftersom butikens språk
+heter `sv` även om innehållet är engelskt. Det påverkar inte vad kunden ser, men är fel för
+SEO. API:t kan inte byta primärspråk (`ShopLocaleInput` har inga sådana fält) — det görs i
+Settings → Languages → ändra standardspråk till English.
 
 Övrigt kvar (inget blockerar försäljning, men bör göras): frakt, betalning, VAT-registrering,
 privacy policy. Se listan längst ned.
@@ -50,6 +83,22 @@ Bilder, varianter, priser, SKU:er, taggar och SEO följde med. Loggar per chunk 
 - **Fortsätt sälja när lagret är slut**: verifierat på **alla 282 varianter** (`CONTINUE`,
   noll undantag). 98 varianter har lagersaldo 0 men är ändå säljbara tack vare detta —
   inga lagersaldon har rörts.
+
+### Manuellt satta priser (2026-08-08)
+
+| Produkt | Svensk källtitel | Före | Efter |
+|---|---|---|---|
+| Men's Beach Sandals – Non-Slip Garden Shoes (36 var.) | Strandtofflor för Herr | £26.99 | **£29** |
+| Trimmer Shoulder Strap – Adjustable Nylon Harness | Axelbälte för Trimmer | £45.99 | **£59** |
+| Marine Motor Cover 420D – Universal Protection (30 var.) | Marin Motorhölje 420D | £22.99 | **£29** |
+| Ride-On Mower Seat Cover – 600D Oxford (4 var.) | Sätesöverdrag för Åkgräsklippare | £49.99 | **£59** |
+
+Verifierat mot live-storefronten: 2900, 5900, 2900, 5900.
+
+Två av namnen var tvetydiga (butiken har tre motorhöljen och tre sätesöverdrag) och valdes av
+Axel. Jämförpriset togs bort på axelbältet (£51.99) och marinhöljet (£27.99) eftersom det nya
+priset låg över det gamla jämförpriset och annars hade renderats som ett trasigt reapris.
+Åkgräsklipparens jämförpris £61.99 ligger kvar och fungerar mot £59.
 
 ## ✅ Kollektioner (8 st)
 
