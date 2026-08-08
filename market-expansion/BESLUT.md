@@ -19,6 +19,13 @@
 | 9 | Supportmail: kundesupport@beverbutikken.no | Städar bort de tre olika adresserna i källan |
 | 10 | "Alltid fri frakt"-löftet vidareförs INTE automatiskt | Motsade källans egen fraktpolicy; beslut om fraktpriser krävs |
 
+## Från Axel (2026-08-08) — nästa marknad: UK
+- **Brand UK:** BeaverShop, domän **beavershop.co.uk** (Axels val).
+- Ej påbörjat — väntar på att UK-butiken skapas och kopplas till Shopify-MCP:n.
+- Att besluta vid start: valutaregel GBP (förslag: SEK ÷ 13, avrunda till .99), supportmail
+  (förslag: support@beavershop.co.uk), konsumentlag UK (Consumer Contracts Regulations,
+  14 dagars ångerrätt; UK är inte EU — momsregler/UK VAT i stället för OSS).
+
 ## Öppna beslut som väntar på Axel
 - Finns beverbutikken.no som Shopify-butik? Koppling/auktorisering krävs för API-push.
 - Fraktpriser för Norge (förslag: 79 NOK, fritt över 999 NOK).
