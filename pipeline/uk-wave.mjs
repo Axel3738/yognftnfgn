@@ -156,7 +156,7 @@ for (const [code, c] of Object.entries(cfg.concepts)) {
   const prior = priorAdsets.find(a => a.name === c.adset);
   if (prior) { adsetIds[code] = prior.id; console.log(`· Återanvänder adset: ${c.adset} (${prior.id})`); continue; }
   const adset = await api(`${ACT}/adsets`, { method: 'POST', form: {
-    name: c.adset, campaign_id: campaign.id, status: 'ACTIVE',
+    name: c.adset, campaign_id: campaign.id, status: cfg.adsetStatus || 'ACTIVE',
     billing_event: 'IMPRESSIONS', optimization_goal: 'OFFSITE_CONVERSIONS',
     destination_type: 'WEBSITE',
     promoted_object: JSON.stringify({ pixel_id: PIXEL_ID, custom_event_type: 'PURCHASE' }),
@@ -199,7 +199,7 @@ for (const [code, list] of Object.entries(plan)) {
       }});
       const ad = await api(`${ACT}/ads`, { method: 'POST', form: {
         name: it.name, adset_id: adsetIds[code],
-        creative: JSON.stringify({ creative_id: creative.id }), status: 'ACTIVE',
+        creative: JSON.stringify({ creative_id: creative.id }), status: cfg.adStatus || 'ACTIVE',
       }});
       console.log(`✓ [${code}] ${it.name} (${ad.id})`);
       ok++;
