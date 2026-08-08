@@ -169,10 +169,19 @@ async function main() {
       const outPath = typeof args.out === 'string'
         ? args.out
         : args.video.replace(/\.mp4$/i, '') + '-captions.mp4';
-      // Vit fet text på halvtransparent mörk platta. MarginV håller texten inom
-      // mitt-4:5 av en 9:16-video — Meta croppar till ~4:5 i feed, så captions
-      // närmare botten klipps bort. Justera force_style här vid behov.
-      const style = "FontName=Liberation Sans,Bold=1,FontSize=10,PrimaryColour=&H00FFFFFF,BorderStyle=4,BackColour=&H80101010,Outline=1,Shadow=0,MarginV=68,Alignment=2";
+      // Två stilar (välj med --style=clean|cover):
+      //  clean (default): vit fet text på halvtransparent mörk platta. MarginV håller
+      //    texten inom mitt-4:5 av en 9:16-video — Meta croppar till ~4:5 i feed.
+      //  cover: svart text på HELT OGENOMSKINLIG vit platta, placerad där källvideornas
+      //    inbrända svenska captions sitter (~75 % ner) så att de täcks helt. Använd
+      //    tillsammans med en lucklös SRT (förläng varje block till nästa blocks start)
+      //    så plattan inte blinkar bort medan svensk text syns under.
+      const styles = {
+        clean: "FontName=Liberation Sans,Bold=1,FontSize=10,PrimaryColour=&H00FFFFFF,BorderStyle=4,BackColour=&H80101010,Outline=1,Shadow=0,MarginV=68,Alignment=2",
+        cover: "FontName=Liberation Sans,Bold=1,FontSize=10,PrimaryColour=&H00000000,OutlineColour=&H00FFFFFF,BackColour=&H00FFFFFF,BorderStyle=4,Outline=2,Shadow=0,MarginV=72,MarginL=20,MarginR=20,Alignment=2",
+      };
+      const style = styles[typeof args.style === 'string' ? args.style : 'clean'];
+      if (!style) throw new Error(`Okänd --style: ${args.style} (välj ${Object.keys(styles).join('|')}).`);
       const srtEscaped = args.srt.replace(/([:'\\])/g, '\\$1');
       const r = spawnSync('ffmpeg', [
         '-y', '-v', 'error', '-i', args.video,
