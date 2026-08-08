@@ -3,6 +3,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "judge_me_reviews_preview_badge_nrUig7": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
         "price": {
           "type": "price",
           "settings": {}
@@ -24,27 +28,27 @@
         },
         "sales_point_pAqwJ8": {
           "type": "sales_point",
+          "disabled": true,
           "settings": {
             "icon": "checkmark",
             "text": "Sitter på kannen. Søler aldri."
-          },
-          "disabled": true
+          }
         },
         "sales_point_rj9NaB": {
           "type": "sales_point",
+          "disabled": true,
           "settings": {
             "icon": "checkmark",
             "text": "Styrer drivstoffet dit det skal."
-          },
-          "disabled": true
+          }
         },
         "sales_point_xdmm3f": {
           "type": "sales_point",
+          "disabled": true,
           "settings": {
             "icon": "checkmark",
             "text": "Bytt ut tuten som alltid lekker."
-          },
-          "disabled": true
+          }
         },
         "separator_tKiicL": {
           "type": "separator",
@@ -93,6 +97,7 @@
         }
       },
       "block_order": [
+        "judge_me_reviews_preview_badge_nrUig7",
         "price",
         "separator",
         "2a440565-4e58-46a5-b7d5-dc06ac285d67",
@@ -120,8 +125,22 @@
         "product_video_style": "muted"
       }
     },
-    "1772287365e753dc4b": {
+    "1786103372bce3c86b": {
       "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_WEbALV": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_WEbALV"
+      ],
       "settings": {}
     },
     "contact_form_Ak9e7i": {
@@ -243,7 +262,7 @@
   },
   "order": [
     "main",
-    "1772287365e753dc4b",
+    "1786103372bce3c86b",
     "contact_form_Ak9e7i",
     "sub",
     "background-image-text",

@@ -15,3 +15,7 @@ snippets/comment.liquid	OK	TEXT
 snippets/css-variables.liquid	OK	TEXT	
 snippets/drawer-menu.liquid	OK	TEXT	
 snippets/font-face.liquid	OK	TEXT	
+snippets/footer-custom-text.liquid	OK	TEXT	
+snippets/footer-logo.liquid	OK	TEXT	
+snippets/footer-menu.liquid	OK	TEXT	
+snippets/footer-newsletter.liquid	OK	TEXT	

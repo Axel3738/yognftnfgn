@@ -3,6 +3,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "judge_me_reviews_preview_badge_eh7Pca": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
         "price": {
           "type": "price",
           "settings": {}
@@ -24,27 +28,27 @@
         },
         "sales_point_pAqwJ8": {
           "type": "sales_point",
+          "disabled": true,
           "settings": {
             "icon": "checkmark",
             "text": "Sitter på kannen. Søler aldri."
-          },
-          "disabled": true
+          }
         },
         "sales_point_rj9NaB": {
           "type": "sales_point",
+          "disabled": true,
           "settings": {
             "icon": "checkmark",
             "text": "Styrer drivstoffet dit det skal."
-          },
-          "disabled": true
+          }
         },
         "sales_point_xdmm3f": {
           "type": "sales_point",
+          "disabled": true,
           "settings": {
             "icon": "checkmark",
             "text": "Bytt ut tuten som alltid lekker."
-          },
-          "disabled": true
+          }
         },
         "separator_tKiicL": {
           "type": "separator",
@@ -87,6 +91,7 @@
         }
       },
       "block_order": [
+        "judge_me_reviews_preview_badge_eh7Pca",
         "price",
         "separator",
         "2a440565-4e58-46a5-b7d5-dc06ac285d67",
@@ -112,6 +117,24 @@
         "enable_video_looping": true,
         "product_video_style": "muted"
       }
+    },
+    "1786103514686d1bcb": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_HhTn3d": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_HhTn3d"
+      ],
+      "settings": {}
     },
     "1772287365e753dc4b": {
       "type": "apps",
@@ -236,6 +259,7 @@
   },
   "order": [
     "main",
+    "1786103514686d1bcb",
     "1772287365e753dc4b",
     "contact_form_Ak9e7i",
     "sub",
