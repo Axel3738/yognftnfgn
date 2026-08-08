@@ -13,7 +13,7 @@ const API = 'https://graph.facebook.com/v23.0';
 const TOKEN = process.env.META_ACCESS_TOKEN;
 const ACT = 'act_1107817401910319'; // Magiborsten UK (SEK)
 
-const PAGE_ID = '678639638662543';   // Bäverbutiken.se (enda page på tokenen)
+const PAGE_ID = '1305042582683792';  // BeaverShop (UK-pagen — ingen IG-koppling, matchar beavershop.co.uk)
 const PIXEL_ID = '1554276343018184'; // Bäverbutiken.se-pixeln
 
 const CONCEPT_RE = /(?:^|[_\s])(SO|SP|PD|SF)(?:[_\s.]|$)/i;
@@ -35,7 +35,7 @@ const NO_ENHANCEMENTS = JSON.stringify({
        'multi_photo_to_video', 'pac_relaxation', 'product_browsing', 'product_extensions',
        'product_metadata_automation', 'profile_card', 'replace_media_text',
        'reveal_details_over_time', 'show_destination_blurbs', 'show_summary', 'site_extensions',
-       'standard_enhancements', 'standard_enhancements_catalog', 'text_optimizations',
+       'text_optimizations',
        'text_translation', 'translate_voiceover', 'video_auto_crop', 'video_filtering',
        'video_highlight', 'video_highlights', 'video_to_image', 'video_uncrop',
        'wa_mm_image_filtering'].map(f => [f, { enroll_status: 'OPT_OUT' }])
@@ -71,7 +71,13 @@ async function api(path, { method = 'GET', form, params } = {}) {
     const json = await res.json().catch(() => ({}));
     if (res.ok && !json.error) return json;
     const e = json.error || {};
+    const rateLimited = e.code === 17 || /request limit/i.test(e.message || '');
     const transient = e.is_transient || e.code === 2 || res.status >= 500;
+    if (rateLimited && attempt < 8) {
+      console.log(`  … rate limit på ${path} (försök ${attempt}), väntar 60s`);
+      await sleep(60_000);
+      continue;
+    }
     if (transient && attempt < 5) {
       console.log(`  … transient fel på ${path} (försök ${attempt}), väntar ${2 ** attempt}s`);
       await sleep(2 ** attempt * 1000);
