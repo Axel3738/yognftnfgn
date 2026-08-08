@@ -33,7 +33,8 @@ proofread-sessionen är gratis. Fel ordning = dubbla renderingar = dubbla kredit
                   Sverige-specifikt + varumärkes-/språkfel → `apply-srt` (0 krediter)
 4. RENDERA      → `render` — HeyGen dubbar från det godkända transkriptet
                   (röstklon + lip-sync). ENDA steget som drar krediter. → ladda ner mp4
-5. CAPTIONS     → `burn` — bränn in den rättade SRT:n med ffmpeg (gratis)
+5. CAPTIONS     → ENDAST när Axel uttryckligen ber om det: `burn` — bränn in den
+                  rättade SRT:n med ffmpeg (gratis). Default = leverera UTAN captions.
 6. LEVERERA     → döp filen enligt namnkonventionen (med marknadsfält) →
                   skicka till Axel → logga i tabellen nedan + ad-trackern
 ```
