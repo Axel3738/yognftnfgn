@@ -1,0 +1,7 @@
+filnamn	status	metod	fel
+assets/currency-flags.css	FEL	TEXT	Innehåll för stort för att överföra säkert via verktygsgränssnittet (~112k tokens, base64-bilder inbäddade i CSS) utan risk för trunkering/korruption; hämtning lyckades men upsert kunde inte utföras säkert
+assets/gp-global.css	FEL	TEXT	Innehåll för stort (69 647 tecken, ~47k tokens minifierad CSS) för att överföras säkert via verktygsgränssnittet utan risk för trunkering/korruption; hämtning lyckades men upsert kunde inte utföras säkert
+assets/theme.css	OK	URL	
+assets/theme.js	OK	URL	
+assets/theme.min.js	FEL	TEXT	Innehåll för stort (115 854 tecken, ~78k tokens minifierad JS) för att överföras säkert via verktygsgränssnittet utan risk för trunkering/korruption; källan levererade text (ej URL); hämtning lyckades men upsert kunde inte utföras säkert
+assets/vendor-scripts-v10.js	FEL	TEXT	Innehåll för stort (143 785 tecken JS) för att överföras säkert via verktygsgränssnittet utan risk för trunkering/korruption; källan levererade text (ej URL); hämtning lyckades men upsert kunde inte utföras säkert

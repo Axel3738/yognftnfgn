@@ -1,0 +1,17 @@
+filnamn	status	metod	fel
+snippets/announcement-bar.liquid	OK	TEXT	
+snippets/article-grid-item.liquid	OK	TEXT	
+snippets/breadcrumbs.liquid	OK	TEXT	
+snippets/cart-drawer.liquid	OK	TEXT	
+snippets/cart-item.liquid	OK	TEXT	
+snippets/collapsible-icons-alt.liquid	OK	TEXT	
+snippets/collapsible-icons.liquid	OK	TEXT	
+snippets/collection-grid-item.liquid	OK	TEXT	
+snippets/collection-sidebar-filter-trigger.liquid	OK	TEXT	
+snippets/collection-sidebar-filters.liquid	OK	TEXT	
+snippets/collection-sidebar.liquid	OK	TEXT	
+snippets/collection-template.liquid	OK	TEXT	
+snippets/comment.liquid	OK	TEXT	
+snippets/css-variables.liquid	OK	TEXT	
+snippets/drawer-menu.liquid	OK	TEXT	
+snippets/font-face.liquid	OK	TEXT	
