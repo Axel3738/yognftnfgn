@@ -1,26 +1,26 @@
 #!/usr/bin/env node
-// uk-wave.mjs — Motorhöljet UK: ny kampanj på MagiBorsten-kontot.
+// uk-wave.mjs — Motorhöljet UK: ny kampanj på Magiborsten UK-kontot.
+// Media hämtas från kontots mediabibliotek (redan uppladdat som UK_*).
 //
-//   node uk-wave.mjs <mapp-med-filer> [--dry]
+//   node uk-wave.mjs [--dry]
 //
-// Gör: CBO-kampanj 1000 kr/dag (PAUSAD) → 3 adsets per koncept (SO/SP/PD, UK broad)
-// → laddar upp png/mp4 → creatives med copy per koncept, ALLA enhancements OPT_OUT
-// → annonser döpta efter filnamn. Kampanjen skapas PAUSAD — slå på manuellt.
-
-import { readFileSync, readdirSync, statSync } from 'node:fs';
-import { basename, join, extname } from 'node:path';
-import { execFileSync } from 'node:child_process';
-import { tmpdir } from 'node:os';
+// CBO-kampanj 1000 kr/dag (PAUSAD) → 3 adsets per koncept (SO/SP/PD, UK broad)
+// → creatives med copy per koncept, ALLA enhancements OPT_OUT → annonser döpta
+// efter filnamnen. Kampanjen skapas PAUSAD — slå på manuellt i Ads Manager.
 
 const API = 'https://graph.facebook.com/v23.0';
 const TOKEN = process.env.META_ACCESS_TOKEN;
-const ACT = 'act_1867947880635861'; // MagiBorsten
+const ACT = 'act_1107817401910319'; // Magiborsten UK (SEK)
 
-const PAGE_ID = '678639638662543';
-const PIXEL_ID = '1554276343018184';
+const PAGE_ID = '678639638662543';   // Bäverbutiken.se (enda page på tokenen)
+const PIXEL_ID = '1554276343018184'; // Bäverbutiken.se-pixeln (finns på UK-kontot)
 const LINK = 'https://beavershop.co.uk/products/marine-motor-cover-420d-universal-protection?_pos=1&_psq=420d&_psid=f0d02e612&_ss=e';
 const CAMPAIGN_NAME = 'Motorhöljet UK';
 const DAILY_BUDGET = '100000'; // öre = 1000 kr/dag (CBO på kampanjnivå)
+
+// Bara motorhöljes-media (biblioteket innehåller även andra produkter)
+const PRODUCT_RE = /enginecover|motorholje|motorhölje|marin/i;
+const CONCEPT_RE = /(?:^|[_\s])(SO|SP|PD)(?:[_\s.]|$)/i;
 
 // Copy per koncept (från copy_1.docx)
 const CONCEPTS = {
@@ -55,114 +55,99 @@ const NO_ENHANCEMENTS = JSON.stringify({
   ),
 });
 
-const args = process.argv.slice(2);
-const DRY = args.includes('--dry');
-const dir = args.find(a => !a.startsWith('--'));
+const DRY = process.argv.includes('--dry');
 if (!TOKEN) die('META_ACCESS_TOKEN saknas.');
-if (!dir) die('Ange mapp: node uk-wave.mjs <mapp> [--dry]');
 
 function die(msg) { console.error(`✗ ${msg}`); process.exit(1); }
-
-async function api(path, { method = 'GET', form } = {}) {
-  const url = new URL(`${API}/${path}`);
-  let body;
-  if (method === 'GET') url.searchParams.set('access_token', TOKEN);
-  else { body = form instanceof FormData ? form : new URLSearchParams(form); body.append('access_token', TOKEN); }
-  const res = await fetch(url, { method, body });
-  const json = await res.json().catch(() => ({}));
-  if (!res.ok || json.error) {
-    const e = json.error || {};
-    throw new Error(`${path} → ${e.type || res.status}: ${e.message || res.statusText}${e.error_user_msg ? ` — ${e.error_user_msg}` : ''}`);
-  }
-  return json;
-}
-
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-// ---- samla filer och gruppera per koncept ----
-const files = readdirSync(dir)
-  .filter(f => ['.png', '.jpg', '.jpeg', '.mp4', '.mov'].includes(extname(f).toLowerCase()))
-  .map(f => join(dir, f));
-if (!files.length) die(`Inga bild/videofiler i ${dir}`);
+async function api(path, { method = 'GET', form, params } = {}) {
+  const url = new URL(`${API}/${path}`);
+  let body;
+  if (method === 'GET') {
+    url.searchParams.set('access_token', TOKEN);
+    for (const [k, v] of Object.entries(params || {})) url.searchParams.set(k, v);
+  } else {
+    body = new URLSearchParams(form);
+    body.append('access_token', TOKEN);
+  }
+  for (let attempt = 1; ; attempt++) {
+    const res = await fetch(url, { method, body });
+    const json = await res.json().catch(() => ({}));
+    if (res.ok && !json.error) return json;
+    const e = json.error || {};
+    const transient = e.is_transient || e.code === 2 || res.status >= 500;
+    if (transient && attempt < 5) {
+      console.log(`  … transient fel på ${path} (försök ${attempt}), väntar ${2 ** attempt}s`);
+      await sleep(2 ** attempt * 1000);
+      continue;
+    }
+    throw new Error(`${path} → ${e.type || res.status}: ${e.message || res.statusText}${e.error_user_msg ? ` — ${e.error_user_msg}` : ''}`);
+  }
+}
+
+// ---- hämta media ur biblioteket och gruppera per koncept ----
+const images = (await api(`${ACT}/adimages`, { params: { fields: 'name,hash', limit: '500' } })).data || [];
+const videos = (await api(`${ACT}/advideos`, { params: { fields: 'title,id,status', limit: '500' } })).data || [];
 
 const plan = { SO: [], SP: [], PD: [] };
-const unmatched = [];
-for (const f of files) {
-  const m = basename(f).match(/(?:^|[_\s])(SO|SP|PD)(?:[_\s.]|$)/i);
-  if (m) plan[m[1].toUpperCase()].push(f);
-  else unmatched.push(f);
+for (const i of images) {
+  if (!i.name?.startsWith('UK') || !PRODUCT_RE.test(i.name)) continue;
+  const m = i.name.match(CONCEPT_RE);
+  if (m) plan[m[1].toUpperCase()].push({ type: 'image', name: i.name.replace(/\.\w+$/, ''), hash: i.hash });
 }
-console.log('Plan:');
+for (const v of videos) {
+  const t = v.title || '';
+  if (!t.startsWith('UK') || !PRODUCT_RE.test(t)) continue;
+  const m = t.match(CONCEPT_RE);
+  if (!m) continue;
+  if (v.status?.video_status !== 'ready') { console.log(`⚠️ ${t} är inte ready (${v.status?.video_status}) — hoppas över`); continue; }
+  plan[m[1].toUpperCase()].push({ type: 'video', name: t.replace(/\.\w+$/, ''), videoId: v.id });
+}
+
+console.log('Plan (från mediabiblioteket):');
+let total = 0;
 for (const [c, list] of Object.entries(plan)) {
-  console.log(`  ${c} (${CONCEPTS[c].adset}): ${list.length} filer`);
-  for (const f of list) console.log(`     · ${basename(f)}`);
+  console.log(`  ${c} — ${CONCEPTS[c].adset}: ${list.length} st`);
+  for (const it of list) console.log(`     · [${it.type}] ${it.name}`);
+  total += list.length;
 }
-if (unmatched.length) {
-  console.log(`  ⚠️ Matchar inget koncept (hoppas över): ${unmatched.map(basename).join(', ')}`);
-}
+if (!total) die('Hittade ingen matchande media i biblioteket.');
 if (DRY) { console.log('\n--dry: inget skapas.'); process.exit(0); }
 
-// ---- media-uppladdning ----
-async function uploadImage(file) {
-  const form = new FormData();
-  form.append('filename', new Blob([readFileSync(file)]), basename(file));
-  const res = await api(`${ACT}/adimages`, { method: 'POST', form });
-  return Object.values(res.images)[0].hash;
-}
-
-function extractThumb(file) {
-  const out = join(tmpdir(), basename(file).replace(/\.\w+$/, '_thumb.jpg'));
-  execFileSync('ffmpeg', ['-y', '-i', file, '-vf', 'select=eq(n\\,0)', '-frames:v', '1', '-q:v', '2', out], { stdio: 'pipe' });
-  return out;
-}
-
-// Miniatyr: ffmpeg om det finns, annars Metas egna genererade thumbnails.
-async function thumbFor(file, videoId) {
-  try { return { image_hash: await uploadImage(extractThumb(file)) }; }
-  catch {
-    for (let i = 0; i < 24; i++) {
-      const t = await api(`${videoId}/thumbnails`);
-      const best = t.data?.find(x => x.is_preferred) || t.data?.[0];
-      if (best?.uri) return { image_url: best.uri };
-      await sleep(5000);
-    }
-    throw new Error('Ingen thumbnail tillgänglig för videon.');
-  }
-}
-
-async function uploadVideo(file) {
-  const form = new FormData();
-  form.append('source', new Blob([readFileSync(file)]), basename(file));
-  const res = await api(`${ACT}/advideos`, { method: 'POST', form });
-  return res.id;
-}
-
-async function waitVideoReady(id, name) {
-  for (let i = 0; i < 60; i++) {
-    const v = await api(`${id}?fields=status`);
-    const s = v.status?.video_status;
-    if (s === 'ready') return;
-    if (s === 'error') throw new Error(`Video ${name} fick status error hos Meta.`);
+async function videoThumb(videoId, name) {
+  for (let i = 0; i < 12; i++) {
+    const t = await api(`${videoId}/thumbnails`);
+    const best = t.data?.find(x => x.is_preferred) || t.data?.[0];
+    if (best?.uri) return best.uri;
     await sleep(5000);
   }
-  throw new Error(`Video ${name} blev inte klar i tid.`);
+  throw new Error(`Ingen thumbnail för ${name}.`);
 }
 
 // ---- kampanj + adsets ----
-const existing = await api(`${ACT}/campaigns?fields=name&limit=200`);
-if (existing.data?.some(c => c.name === CAMPAIGN_NAME))
-  die(`Kampanjen "${CAMPAIGN_NAME}" finns redan — döp om eller ta bort den först.`);
+const existing = await api(`${ACT}/campaigns`, { params: { fields: 'name,status', limit: '200' } });
+let campaign = existing.data?.find(c => c.name === CAMPAIGN_NAME);
+if (campaign) {
+  console.log(`\n· Återanvänder kampanj: ${CAMPAIGN_NAME} (${campaign.id}, ${campaign.status})`);
+} else {
+  campaign = await api(`${ACT}/campaigns`, { method: 'POST', form: {
+    name: CAMPAIGN_NAME, objective: 'OUTCOME_SALES', status: 'PAUSED',
+    special_ad_categories: '[]',
+    daily_budget: DAILY_BUDGET, bid_strategy: 'LOWEST_COST_WITHOUT_CAP',
+  }});
+  console.log(`\n✓ Kampanj (PAUSED, CBO 1000 kr/dag): ${CAMPAIGN_NAME} (${campaign.id})`);
+}
 
-const campaign = await api(`${ACT}/campaigns`, { method: 'POST', form: {
-  name: CAMPAIGN_NAME, objective: 'OUTCOME_SALES', status: 'PAUSED',
-  special_ad_categories: '[]',
-  daily_budget: DAILY_BUDGET, bid_strategy: 'LOWEST_COST_WITHOUT_CAP',
-}});
-console.log(`\n✓ Kampanj (PAUSED, CBO 1000 kr/dag): ${CAMPAIGN_NAME} (${campaign.id})`);
+const priorAdsets = (await api(`${campaign.id}/adsets`, { params: { fields: 'name', limit: '50' } })).data || [];
+const priorAds = (await api(`${campaign.id}/ads`, { params: { fields: 'name', limit: '200' } })).data || [];
+const priorAdNames = new Set(priorAds.map(a => a.name));
 
 const adsetIds = {};
 for (const [code, c] of Object.entries(CONCEPTS)) {
   if (!plan[code].length) continue;
+  const prior = priorAdsets.find(a => a.name === c.adset);
+  if (prior) { adsetIds[code] = prior.id; console.log(`· Återanvänder adset: ${c.adset} (${prior.id})`); continue; }
   const adset = await api(`${ACT}/adsets`, { method: 'POST', form: {
     name: c.adset, campaign_id: campaign.id, status: 'ACTIVE',
     billing_event: 'IMPRESSIONS', optimization_goal: 'OFFSITE_CONVERSIONS',
@@ -182,42 +167,39 @@ for (const [code, c] of Object.entries(CONCEPTS)) {
 let ok = 0, failed = 0;
 for (const [code, list] of Object.entries(plan)) {
   const c = CONCEPTS[code];
-  for (const file of list) {
-    const adName = basename(file).replace(/\.\w+$/, '');
+  for (const it of list) {
+    if (priorAdNames.has(it.name)) { console.log(`· [${code}] ${it.name} finns redan — hoppar`); continue; }
     try {
-      const isVideo = ['.mp4', '.mov'].includes(extname(file).toLowerCase());
       let spec;
-      if (isVideo) {
-        const videoId = await uploadVideo(file);
-        console.log(`  ↑ video ${basename(file)} (${videoId}) — väntar på processing…`);
-        await waitVideoReady(videoId, basename(file));
-        const thumb = await thumbFor(file, videoId);
+      if (it.type === 'video') {
+        const thumb = await videoThumb(it.videoId, it.name);
         spec = { page_id: PAGE_ID, video_data: {
-          video_id: videoId, ...thumb,
+          video_id: it.videoId, image_url: thumb,
           message: c.message, title: c.headline, link_description: c.description,
           call_to_action: { type: 'SHOP_NOW', value: { link: LINK } },
         }};
       } else {
-        const hash = await uploadImage(file);
         spec = { page_id: PAGE_ID, link_data: {
-          image_hash: hash, link: LINK,
+          image_hash: it.hash, link: LINK,
           message: c.message, name: c.headline, description: c.description,
           call_to_action: { type: 'SHOP_NOW', value: { link: LINK } },
         }};
       }
       const creative = await api(`${ACT}/adcreatives`, { method: 'POST', form: {
-        name: `${adName}_creative`,
+        name: `${it.name}_creative`,
         object_story_spec: JSON.stringify(spec),
         degrees_of_freedom_spec: NO_ENHANCEMENTS,
+        // UK-kontot saknar tillgång till pagens IG-konto → kör IG under pagens identitet
+        use_page_actor_override: 'true',
       }});
       const ad = await api(`${ACT}/ads`, { method: 'POST', form: {
-        name: adName, adset_id: adsetIds[code],
+        name: it.name, adset_id: adsetIds[code],
         creative: JSON.stringify({ creative_id: creative.id }), status: 'ACTIVE',
       }});
-      console.log(`✓ [${code}] ${adName} (${ad.id})`);
+      console.log(`✓ [${code}] ${it.name} (${ad.id})`);
       ok++;
     } catch (e) {
-      console.error(`✗ [${code}] ${adName}: ${e.message}`);
+      console.error(`✗ [${code}] ${it.name}: ${e.message}`);
       failed++;
     }
   }
