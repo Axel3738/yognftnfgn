@@ -44,15 +44,30 @@ const CONCEPTS = {
   },
 };
 
-// "Inga jävla bs meta tillägg": alla standard enhancements av.
+// "Inga jävla bs meta tillägg": exakt samma OPT_OUT-lista som kontots SE-creatives
+// (avläst från creative 1035280906146910), inkl. inline_comment på OPT_IN.
 const NO_ENHANCEMENTS = JSON.stringify({
-  creative_features_spec: Object.fromEntries(
-    ['standard_enhancements', 'image_touchups', 'image_brightness_and_contrast', 'enhance_cta',
-     'text_generation', 'text_optimizations', 'inline_comment', 'image_templates',
-     'media_order', 'product_extensions', 'add_text_overlay', 'site_extensions',
-     'video_auto_crop', 'image_uncrop', 'image_background_gen', 'adapt_to_placement',
-     'media_type_automation', 'pac_relaxation'].map(f => [f, { enroll_status: 'OPT_OUT' }])
-  ),
+  creative_features_spec: {
+    ...Object.fromEntries(
+      ['adapt_to_placement', 'add_text_overlay', 'ads_with_benefits', 'advantage_plus_creative',
+       'app_highlights', 'audio', 'biz_ai', 'carousel_to_video', 'catalog_feed_tag',
+       'creative_stickers', 'cv_transformation', 'description_automation', 'dha_optimization',
+       'dynamic_partner_content', 'enable_ncs_testimonials', 'enhance_cta',
+       'feed_caption_optimization', 'generate_cta', 'hide_price', 'ig_glados_feed',
+       'ig_video_native_subtitle', 'image_animation', 'image_auto_crop', 'image_background_gen',
+       'image_brightness_and_contrast', 'image_enhancement', 'image_templates',
+       'image_text_translation', 'image_touchups', 'image_uncrop', 'local_store_extension',
+       'media_liquidity_animated_image', 'media_order', 'media_type_automation',
+       'multi_photo_to_video', 'pac_relaxation', 'product_browsing', 'product_extensions',
+       'product_metadata_automation', 'profile_card', 'replace_media_text',
+       'reveal_details_over_time', 'show_destination_blurbs', 'show_summary', 'site_extensions',
+       'standard_enhancements', 'standard_enhancements_catalog', 'text_optimizations',
+       'text_translation', 'translate_voiceover', 'video_auto_crop', 'video_filtering',
+       'video_highlight', 'video_highlights', 'video_to_image', 'video_uncrop',
+       'wa_mm_image_filtering'].map(f => [f, { enroll_status: 'OPT_OUT' }])
+    ),
+    inline_comment: { enroll_status: 'OPT_IN' },
+  },
 });
 
 const DRY = process.argv.includes('--dry');
