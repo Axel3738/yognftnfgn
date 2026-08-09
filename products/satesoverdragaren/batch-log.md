@@ -57,12 +57,14 @@ som ändrar bedömningen sedan runda 2. Två QC-avvikelser kvarstår olösta
 
 | Annons | Hypotes (loggad i förväg 2026-08-05) | Vinkel · Hook-typ · Format · Talare | Utfall (2026-08-06, samma dag) |
 |---|---|---|---|
-| `Seatcover_PD_11_1` | Kvalitet/hållbarhet är en helt otestad vinkel (allt hittills argumenterar komfort/pris). Isolerad variabel: persuasion-mekanism. | material/kvalitet · jämförelse · statisk, split · ingen | **För tidigt.** 8 kr, 0 köp. **QC: visuellt verifierad korrekt** — inga konkurrentloggor, rätt pris. |
-| `Seatcover_SO_3_1` | Omramning som present till annan person kan expandera köparbasen bortom självköpare. Medvetet ingen påhittad högtid/brådska. | identity/gift · påstående · statisk · ingen | **För tidigt.** 23 kr, 0 köp. **QC: visuellt verifierad korrekt** — ingen påhittad gåvohögtid, rätt pris. |
-| `Seatcover_PD_12_H1` | POV-textkortformat (aldrig testat) kan höja hook-rate genom att kännas mindre som en annons. Isolerad variabel: hook-KONVENTION, inte hook-innehåll. Kroppen är vinnarens bevisade material. | bekvämlighet · POV/fråga · rå video, nativ stil · ingen | **För tidigt.** 104 kr, 0 köp. **QC:** öppningsbilden matchar briefen (blöt/daggig säte-closeup); kunde inte verifiera det bokstavliga "POV:"-textkortet från en enda stillbild. |
+| `Seatcover_PD_11_1` | Kvalitet/hållbarhet är en helt otestad vinkel (allt hittills argumenterar komfort/pris). Isolerad variabel: persuasion-mekanism. | material/kvalitet · jämförelse · statisk, split · ingen | **För tidigt.** 31 kr, 0 köp (2026-08-09). Svälts av CBO. |
+| `Seatcover_SO_3_1` | Omramning som present till annan person kan expandera köparbasen bortom självköpare. Medvetet ingen påhittad högtid/brådska. | identity/gift · påstående · statisk · ingen | **För tidigt.** 52 kr, 0 köp (2026-08-09). CTR bara 0,39 % — svagaste i kontot, tidig varningssignal men långt under dombar nivå. |
+| `Seatcover_PD_12_H1` | POV-textkortformat (aldrig testat) kan höja hook-rate genom att kännas mindre som en annons. Isolerad variabel: hook-KONVENTION, inte hook-innehåll. Kroppen är vinnarens bevisade material. | bekvämlighet · POV/fråga · rå video, nativ stil · ingen | **För tidigt men bäst av de nya:** 315 kr spend, **1 köp**, CPA 315 kr, ROAS 2,06 (2026-08-09). Passerade spendgränsen men bara 1 köp → ingen dom. Enda annonsen ur batch 2–3 som gett ett köp. Värd att låta rulla. |
 
-**Sammanfattning batch #3:** Launchad samma dag som denna runda — noll timmars
-data, ingen dom möjlig. Bedöms i nästa `/cs`.
+**Sammanfattning batch #3 (uppdaterad 2026-08-09):** `PD_12_H1` är den enda av 15
+annonser i batch 2+3 som producerat ett köp. De statiska svälts hårt av CBO
+(8–52 kr spend vardera). Se den strukturella observationen i dna.md — problemet
+är budgetfördelning, inte creativen.
 
 ---
 
@@ -89,3 +91,21 @@ videokropp**: samma vinnarmaterial från sekund 4, olika 0–4s-öppningar
 båda den explicita QA-regeln mot "överstruket"-buggen (riktig genomstrykningslinje
 krävs). `SO_4_1` har uttrycklig spärr mot påhittad rea/nedräkning/slutdatum —
 649/811 är hela erbjudandet. Ingen annons i batchen innehåller testimonials.
+
+**Status 2026-08-09:** ingen av batch 4:s fyra annonser är launchad än.
+
+---
+
+## Batch #5 — byggd 2026-08-09 (4 annonser)
+
+Byggd ur rundans skarpaste fynd: prisankaret (`SO_1_1_H1`) är nu bevisat och
+**lika lönsamt per spendkrona som vinnaren** (0,63 kr vs 0,63 kr) men får bara
+5,6 % av budgeten eftersom dess CTR är hälften så hög. Två av fyra briefer
+attackerar exakt den svagheten från motsatta håll.
+
+| Annons | Hypotes | Vinkel · Hook-typ · Format · Talare | Utfall |
+|---|---|---|---|
+| `Seatcover_SO_5_1` | Prisankarets enda svaghet är stoppkraft, inte budskap. Samma erbjudande i färre/större/mer kontrastrika ord ska höja CTR från 1,43 % utan att tappa 6,6 % CVR. Isolerad variabel: typografisk stoppkraft. **Avgörande diagnos: CTR.** | pris-anker · siffra/prischock · offer-grafik, jättetypografi · ingen | Ej launchad |
+| `Seatcover_SO_6_1` | Samma CTR-problem, motsatt lösning: SO-spåret har bara körts som studiografik, vilket läser som butiksskylt. Kontots bevisade DNA är dokumentär realism. Äkta utomhusfoto i stället för render. Isolerad variabel: studiografik vs verkligt miljöfoto. **Partest mot SO_5_1** — SO_5 testar att skrika högre, SO_6 att låta äkta. | pris-anker · påstående (ägarobservation) · äkta miljöfoto · ingen | Ej launchad |
+| `Seatcover_PD_16_H1` | Riskhantering, inte kreativitet: vinnaren bär 92 % av vinsten och kontot har ingen andra skalbar tillgång. Samma bevisade manusstruktur på **nytt råmaterial** ger en testad backup innan den behövs. Isolerad variabel: råmaterialet (manus, captions, USP-ordning och CTA hålls konstanta). | bekvämlighet/problem-lösning · fråga · rå video m. captions, NYTT material · ingen | Ej launchad |
+| `Seatcover_PD_17_1` | Karusell är aldrig testat i kontot. Videon stoppar många men konverterar 2,5 %; statiken konverterar 6,6 % men stoppar få. Karusellen är enda formatet som kan göra båda jobben i en enhet — och ger en diagnos inget annat format ger: **var folk slutar swipa**. Isolerad variabel: format. | problem→lösning→proof→offer · påstående · KARUSELL 5 kort · ingen | Ej launchad |
