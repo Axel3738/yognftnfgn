@@ -22,7 +22,7 @@ export default {
     },
     SO: {
       adset: 'Beachslippers UK - SO',
-      message: 'Stop slipping on wet surfaces this summer ☀️ These beach sandals grip securely on the patio, the lawn and by the pool. ✅ Soft, lightweight EVA material ✅ Quick-drying and easy to clean ✅ Free shipping over 300 kr + Klarna Now 339 kr — limited stock 👇',
+      message: 'Stop slipping on wet surfaces this summer ☀️ These beach sandals grip securely on the patio, the lawn and by the pool. ✅ Soft, lightweight EVA material ✅ Quick-drying and easy to clean ✅ Free shipping + Klarna Now £29 — limited stock 👇',
       headline: 'Non-Slip Shoes for Summer Adventures',
       description: '29 pounds, free shipping and a 30-day guarantee.',
     },
