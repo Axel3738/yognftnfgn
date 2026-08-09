@@ -1,4 +1,4 @@
-cat > .claude/settings.json <<'EOF'
+
 {
   "permissions": {
     "defaultMode": "bypassPermissions",
@@ -18,5 +18,4 @@ cat > .claude/settings.json <<'EOF'
     ]
   }
 }
-EOF
-git add .claude/settings.json && git commit -m "bypassPermissions + allowlist" && git push
+
