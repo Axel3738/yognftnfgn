@@ -1,7 +1,21 @@
 {
   "permissions": {
+    "defaultMode": "acceptEdits",
     "allow": [
-      "mcp__Shopify__graphql_mutation"
+      "mcp__Shopify",
+      "mcp__github",
+      "Bash(git *)",
+      "Bash(python3 *)",
+      "Bash(node *)",
+      "Bash(npm *)",
+      "Bash(pip *)",
+      "Bash(pip3 *)",
+      "Bash(curl *)",
+      "Bash(mkdir *)",
+      "Bash(ls *)",
+      "Bash(jq *)",
+      "WebFetch(domain:beavershop.co.uk)",
+      "WebFetch(domain:beverbutikken.no)"
     ]
   }
 }
