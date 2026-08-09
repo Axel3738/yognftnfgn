@@ -100,7 +100,27 @@ Kvoten var **grön (+4 före plan)** när batchen skrevs — den byggdes för n�
 
 Alla nio ligger live i två nya ad sets (`120249549204190291` PD, `120249549205050291` SP). Loggade mot kvoten (`node pipeline/quota.mjs log strandtofflorna 9`) → läget gick från −5 till **+4 före plan**.
 
-**Utfall: ingen dom möjlig på någon av dem.** Tillsammans ~37 kr spend på ungefär fem timmar (0,77–18,42 kr styck). Samtliga ligger långt under signifikansgrinden.
+### Utfall avläst 2026-08-09 (fyra dagar efter launch) — feedbackloop
+
+Ad settet fick **2 003 kr** totalt. **En annons tog 94 % av det.**
+
+| Annons | Ändrad variabel | Spend | Köp | CPA | Utfall mot hypotesen |
+|---|---|---:|---:|---:|---|
+| **PD_13_6** | produktorientering (sulan mot kameran) | **1 886 kr** | **10** | **189 kr** | ✅ **Hypotesen höll.** "Slår ihop PD_13:s ram med PD_8:s sulbevis" — CTR 3,03 % (högst av alla bedömbara studiobilder), vinstbidrag 634 kr. Batchens enda vinnare, och den enda som fick en chans. |
+| PD_13_10 | antal par (kontrolltest) | 40 kr | 1 | – | ❌ Ingen dom. Kontrolltestet mot "ett par slår fyra par" är **fortfarande obesvarat** — den fick aldrig budget. |
+| PD_13_8 | studio → verklig miljö | 29 kr | 0 | – | ❌ Ingen dom. |
+| PD_2_4 | fyra par → ett | 16 kr | 0 | – | ❌ Ingen dom. Skalningstestet på tvåan aldrig utfört. |
+| PD_13_5 | kameravinkel | 12 kr | 0 | – | ❌ Ingen dom. |
+| PD_13_7 | bakgrund + ljus | 10 kr | 0 | – | ❌ Ingen dom, och testet var redan förstört (off-brief, se nedan). |
+| PD_13_9 | beskärning | 7 kr | 0 | – | ❌ Ingen dom. Beskärningsfrågan förblir öppen → `PD_13_15` i batch 6. |
+| PD_13_4 | torrt → vått | 2 kr | 0 | – | ❌ Ingen dom. **Mest kostsamma missen:** vått underlag är nu bevisat som vår starkaste hävstång, och just den varianten fick 2 kr. |
+
+**Lärdom:** nio creatives i samma ad set ger en dom och åtta frågetecken. Meta väljer
+vinnare inom timmar och slutar utforska. Max 2–3 nya per ad set framöver (se dna.md
+mönster 5, omskrivet).
+
+⚠️ `PD_13_10` visade tidigt CPA 2,20 kr och ROAS 158,6 på **ett** köp. Det är precis den
+sortens tal ANALYSMETOD.md steg 2 finns för att stoppa — brus, inte en vinnare.
 
 ⚠️ `PD_13_10` visar CPA 2,20 kr och ROAS 158,6 på **ett** köp och 2,20 kr spend. Det är precis den sortens tal ANALYSMETOD.md steg 2 finns för att stoppa — **brus, inte en vinnare.** Får inte användas som jämförelsenorm.
 
@@ -143,3 +163,36 @@ Formeln som skyddas i alla sex: ett par, svart camo, upphöjt på piedestal, pre
 | Beachslippers_PD_2_4 | fyra par → ett | Skalningstest på tvåan (794 kr profit på 247 kr spend). Frågan är om CPA:n håller förbi 300 kr. |
 
 Ingen ny copy skrevs för batchen — samtliga sju är textfria och återanvänder befintlig PD-copy ordagrant.
+
+---
+
+## Batch 6 — 2026-08-09 · 6 statics · *briefad, ej producerad*
+
+Kvoten stod på **−1 före plan** (9 av 10 launchade i cykel 2). Batchen är 6 st, alltså över
+kvoten på 5. **100 % statics** — videospåret har levererat 4 köp på 1 672 kr över tre
+batcher och elva annonser, så 75 %-regeln är uppfylld med marginal.
+
+Byggd på tre fynd från mätningen samma dag: vått underlag bevisat (PD_2_3 63 kr vs PD_2_2
+228 kr på identisk bild), sulan mot kameran bevisad (PD_13_6), och beskärning identifierad
+som den enda oisolerade variabeln mellan vinnaren och trean.
+
+**Varje brief namnger en parent och ändrar exakt en variabel mot den.**
+
+| Annons | Parent | Ändrad variabel | Hypotes |
+|---|---|---|---|
+| PD_13_14 | PD_13_6 | **underlag** → blött mörkt trädäck | Bevisad hävstång × bevisad formel. Om vått underlag är en egenskap hos *ytan* och inte hos den enda bilden blir detta kontots bästa creative. Högst förväntat värde i batchen. |
+| PD_13_15 | PD_13_6 | **beskärning** → tight | Isolerar den enda oisolerade skillnaden mot PD_13_1. Ren beskärning, ingen omfotografering. |
+| PD_13_16 | PD_13_1 | **sulan mot kameran** | Lägger PD_13_6:s bevisade element i vinnarramen. Bevakas på CPM — PD_13_1:s 89,50 kr är kontots lägsta och får inte offras. Fixar även propplådan med spegelvänd text. |
+| PD_2_5 | PD_2_3 | **sulorientering** → alla fyra sulorna upp | Fyra sulmönster på vått däck. Om sulan kvalificerar klicket är detta den starkaste enskilda rutan vi kan bygga. |
+| PD_2_6 | PD_2_3 | **färgmix** → endast svart | Halva bildytan går idag till khaki och vit (1 respektive 0 köp). Motargument loggat: färgspridningen kan signalera valfrihet, vilket är ett giltigt skäl att klicka. |
+| SP_7_1 | PD_13_1 | **social proof-badge** (explorativ slot) | Enda annonsen med text. Prövar vad text kostar i CPM mot vad proof ger i CVR. Siffran "100+" är nedrundad från 115 verkliga Shopify-ordrar 90 dagar — inget påhittat omdöme, inga stjärnor. |
+
+Copy: fem av sex är textfria och återanvänder PD-copyn ordagrant. SP_7_1:s svenska
+overlay-rader skrivna av sonnet-subagent enligt CLAUDE.md regel 5.
+
+**Strukturåtgärd som ska ske innan batch 6 launchas:** ge `PD_13_4`, `PD_2_4` och
+`PD_13_10` — redan producerade, aldrig levererade — ett eget litet ad set. De testar det
+nu bevisade vått-underlag-mönstret och kostar ingenting att köra.
+
+**⚠️ Produktionsskuld: 13 briefer (batch 5: 7, batch 6: 6) är skrivna men oproducerade.**
+Nästa `/cs` ska räkna hur många som blivit bilder innan den skriver fler.

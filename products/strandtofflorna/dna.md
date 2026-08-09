@@ -2,14 +2,74 @@
 
 Produkt: Strandtofflor för Herr – Halkfria Trädgårdsskor · 349 kr · [produktsida](https://baverbutiken.se/products/strandtofflor-for-herr-halkfria-tradgardsskor)
 Ad account: MagiBorsten `1867947880635861` · Kampanj: `120249220414220291`
-Senast uppdaterad: **2026-08-05** (upphämtning + första feedbackloopen, 33 annonser)
+Senast uppdaterad: **2026-08-09** (tredje feedbackloopen, 43 annonser i kampanjen)
 
 **Läsanvisning:** `DATA` = uppmätt i kontot. `HYPOTES` = strategisk tolkning, ej bevisad.
 Ingen dom sätts på annons under 300 kr spend eller 3 köp.
 
 ---
 
-## Läget i siffror (livstid 23 juli – 5 augusti 2026)
+## MÄTNING 2026-08-09 — det som gäller nu
+
+Livstid, hela kampanjen, 43 annonser. **break-even-CPA 252 kr** · target 145 kr · AOV 430 kr.
+Totalt **18 733 kr spend · 104 köp · CPA 180 kr**.
+
+**Datakvalitet (steg 1):** `omni_purchase_values` stämmer den här gången mot
+`amount_spent × purchase_roas` på samtliga bedömbara rader (PD_13_1 27 525 vs 27 524,96 kr;
+PD_2_2 6 214; PD_13_6 3 970; PD_2_3 1 784). **Inga trasiga rader denna mätning** — till
+skillnad från 5 augusti. `amount_spent / köp` stämmer också mot `cost_per_omni_purchase`
+på alla fyra. Korskontroll mot Shopify: 115 ordrar på produkten senaste 90 dagarna mot
+Metas 104 köp i kampanjen — konsistent.
+
+### Bedömbara (≥300 kr OCH ≥3 köp) — rangordnade på vinstbidrag `(252 − CPA) × köp`
+
+| Annons | Spend | Andel spend | Köp | CPA | ROAS | CTR | CPM | **Vinstbidrag** | Andel vinst |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| **PD_13_1** (piedestal, tight crop) | 10 196 kr | 54,4 % | 61 | 167 kr | 2,70 | 2,68 % | **89,50 kr** | **5 177 kr** | **73 %** |
+| **PD_2_3** (våt flat-lay, 4 färger) | 316 kr | 1,7 % | 5 | **63 kr** | 5,64 | **4,00 %** | 94,32 kr | **944 kr** | 13 % |
+| **PD_13_6** (sulan mot kameran) | 1 886 kr | 10,1 % | 10 | 189 kr | 2,10 | 3,03 % | 95,16 kr | **634 kr** | 9 % |
+| PD_2_2 (torr flat-lay, 4 färger) | 3 196 kr | 17,1 % | 14 | 228 kr | 1,94 | 1,78 % | 107,10 kr | **332 kr** | 5 % |
+
+Summa vinstbidrag **7 086 kr**. PD_13_1 är fortsatt **benchmark** — alla andra jämförs mot den.
+
+**Två annonser passerade grinden sedan förra mätningen:** `PD_13_6` (batch 4) och `PD_2_3`
+(låg på 247 kr, ligger nu på 316 kr). Båda får för första gången en riktig dom.
+
+### Marginell CPA — den viktigaste tabellen `DATA`
+
+Vad de *senaste* kronorna köpte, inte livstidssnittet:
+
+| | Spend 5 aug → 9 aug | Nya köp | **Marginell CPA** | Tolkning |
+|---|---|---:|---:|---|
+| **PD_13_1** | 6 662 → 10 196 kr | **+21** | **168 kr** | Identisk med livstids-CPA. **Ingen utmattning** trots frekvens 1,82. Taket är inte nått. |
+| **PD_2_2** | 2 806 → 3 196 kr | **+1** | **390 kr** | 1,5× break-even. De sista 390 kronorna gick med förlust. |
+
+`DATA`: PD_13_1 har nu tagit 3 533 kr extra utan att tappa en krona i effektivitet — det
+starkaste enskilda faktumet i filen. PD_2_2 är däremot färdig: livstids-CPA (228 kr) ser
+fortfarande lönsam ut, men den döljer att marginalen är negativ.
+`HYPOTES`: PD_2_2:s ersättare finns redan och heter PD_2_3 — samma bild, vått underlag.
+
+### För tidigt — ingen dom möjlig (urval)
+
+| Annons | Spend | Köp | Varför utesluten |
+|---|---:|---:|---|
+| PD_8_1 (sulan + rubrik) | 426 kr | 2 | Över spendgränsen men under 3 köp |
+| SP_5_1 · SO_5_1 · SP_4_H1 · PD_1_H2 | 120–225 kr | 1–2 | Under båda gränserna |
+| "Strandtofflor hemmagjord UGC" | 112 kr | 1 | Ny annons, ej i någon batchlogg. Under båda gränserna |
+| PD_13_10 · PD_13_2 | 40–80 kr | 1 | Brus. ROAS 8,65 respektive 4,38 säger **ingenting** |
+| PD_13_4 · 13_5 · 13_7 · 13_8 · 13_9 · PD_2_4 | 2–29 kr | 0 | Aldrig levererade (se mönster 5) |
+
+### Kill-beslut (mot break-even 252 kr)
+
+| Annons | Spend | Köp | CPA | Beslut |
+|---|---:|---:|---:|---|
+| PD_1_H1 (video) | 895 kr | 1 | 895 kr | Redan pausad. Kill-regeln uppfylld. |
+| SP_1_H2 (video) | 543 kr | 2 | 271 kr | Redan pausad. |
+| PD_2_2 | 3 196 kr | 14 | 228 kr | **Pausa INTE ännu** — livstids-CPA är under break-even. **Trigger:** om ytterligare ~400 kr ger färre än 2 köp är marginalen bekräftat negativ över två mätningar, och då pausas den. |
+
+---
+
+## Läget i siffror (livstid 23 juli – 5 augusti 2026) — historik
 
 | | Spend | Köp | CPA | ROAS |
 |---|---:|---:|---:|---:|
@@ -129,15 +189,81 @@ Båda granskade visuellt (bildfilerna nedladdade ur kontot).
 | **Ett par (hjälte) + piedestal + svart camo** | 1 | 5 824 kr | **2 492 kr** | **81 %** |
 | **Fyra par + flat-lay + alla färger** | 1 | 2 710 kr | 566 kr | 19 % |
 
+### Mönster tillagda 2026-08-09 (tredje körningen)
+
+Alla fyra bedömbara annonser granskade visuellt (bildfilerna nedladdade ur kontot).
+
+**Teardown per annons:**
+
+- **PD_13_1** — ett svart camo-par på vita block, grå gradientstudio, kamera i nästan
+  marknivå, **beskuren så hårt att främre skons framfot går ur bild**. Den grova
+  mellansulan bildar ett dominerande band över nedre tredjedelen. Sulmönstret syns
+  aldrig rakt framifrån. Textfri. *Defekt:* en propplåda i bakgrunden har spegelvänd
+  text ("Hey,") — uppenbarligen inte skadligt, men ska bort i nästa version.
+- **PD_13_6** — samma grundidé men i **varm beige studio**: en sko upprätt, en lutad
+  mot blocket med **hela sulan mot kameran**, hårt riktljus med tydlig slagskugga.
+  Sulan är bildens största enskilda form. Mer negativt utrymme än PD_13_1.
+- **PD_2_3** — fyra skor (två svarta, en khaki, en vit) uppifrån på **regnvått mörkt
+  trädäck**. Hög kontrast, vatten syns i springorna. En av de svarta ligger så att
+  sulkanten syns.
+- **PD_2_2** — exakt samma fyrskosuppställning på **torr beige seamless**. Ingen sula
+  synlig alls, mjuka skuggor, låg kontrast.
+
+**7 — Blött mörkt underlag slår torr beige. Samma bild, en variabel. `BEVISAD`**
+(PD_2_3 5 köp / PD_2_2 14 köp — båda över grinden, identisk komposition)
+CPA 63 kr mot 228 kr. Detta var en hypotes 5 augusti när PD_2_3 låg på 247 kr; nu när
+den passerat grinden är det ett kontrollerat A/B med en enda ändrad variabel.
+*Reservation:* PD_2_3 har 316 kr mot PD_2_2:s 3 196 kr — räkna med regression uppåt.
+→ **Briefinstruktion:** vått mörkt underlag är default-kontexten i alla nya hjältebilder.
+Torr beige seamless byggs inte längre.
+
+**8 — Sulan mot kameran fungerar och höjer klickfrekvensen. `BEVISAD`**
+(PD_13_6 10 köp, PD_13_1 61 köp)
+`PD_13_6` slog ihop PD_13-ramen med PD_8:s sulbevis och blev batch 4:s enda vinnare:
+CTR 3,03 % mot PD_13_1:s 2,68 %, CPA 189 kr, 634 kr vinstbidrag. Hypotesen i briefen höll.
+→ **Briefinstruktion:** sulan synlig rakt mot kameran är nu ett godkänt element i
+PD_13-formeln, inte bara i PD_8-närbilderna.
+
+**9 — Låg CPM följer textfrihet och hög kontrast, inte format. `DATA`**
+De tre lägsta CPM:erna bland bedömbara är PD_13_1 (89,50), PD_2_3 (94,32) och
+PD_13_6 (95,16) — alla textfria, alla hög kontrast. De två dyraste är PD_2_2 (107,10;
+frekvens 1,81, äldst i kontot) och PD_8_1 (116,93 — **enda annonsen med textoverlay**).
+→ **Briefinstruktion:** textfritt förblir default. `SP_7_1` i batch 6 är det kontrollerade
+undantaget som prövar vad text faktiskt kostar i CPM.
+
+**10 — Hård beskärning är den enda oisolerade variabeln mellan #1 och #3. `HYPOTES`**
+PD_13_1 fyller bildytan; PD_13_6 lämnar en tredjedel tom. Ingen har testat det.
+→ **Briefinstruktion:** `PD_13_15` i batch 6 är en ren beskärning av PD_13_6 — ingen
+omfotografering, inget annat ändrat.
+
 ### Mönster tillagda 2026-08-05 (andra körningen)
 
 **4 — PD_13-formeln har inte nått sitt tak; PD_2_2 har nått sitt. `DATA`** (40 respektive 13 köp bakom)
 Se rörelsetabellen ovan. PD_13_1 sänker sin CPA när den får mer budget; PD_2_2 slutade konvertera helt.
 → **Briefinstruktion:** fortsätt mångfaldiga PD_13-formeln utan oro för mättnad. Ersättare ska byggas för PD_2-spåret (flat-lay), inte för PD_13.
 
-**5 — Nya creatives får ingen leverans så länge de delar kampanj med en dominerande vinnare. `DATA`**
-Batch 4:s nio annonser gick live och fick tillsammans **~37 kr på ungefär fem timmar** (0,77–18,42 kr styck), trots egna ad sets. PD_13_1 tog samma period 918 kr. CBO fördelar till bevisad konvertering, inte till obeprövade creatives.
-→ **Briefinstruktion / strukturåtgärd:** att producera fler creatives löser inte detta — det är en budgetfråga, inte en produktionsfråga. Testbudget måste separeras från skalningsbudget (egen kampanj eller ABO), annars kan ingen ny creative någonsin nå de 300 kr som krävs för en dom. **Detta är produktens främsta flaskhals just nu, före allt annat i den här filen.**
+**5 — Leveransen är vinnaren-tar-allt INOM ett ad set, inte kampanjsvält. `DATA` — OMSKRIVEN 2026-08-09**
+
+⚠️ **Rättelse.** Formuleringen 5 augusti — "ingen ny creative kan någonsin nå de 300 kr
+som krävs för en dom" — visade sig fel. Batch 4:s ad set fick **2 003 kr på fyra dagar**,
+och `PD_13_6` nådde 1 886 kr, 10 köp och en riktig dom. Kampanjen svälter alltså inte nya
+ad sets.
+
+Det som faktiskt händer är snävare: **inom ad settet tog PD_13_6 94 % av budgeten.** De
+åtta andra fick 2–40 kr styck och står kvar utan dom fyra dagar senare. Meta väljer en
+vinnare per ad set inom några timmar och slutar utforska.
+
+| Batch 4, per annons | Spend | Köp |
+|---|---:|---:|
+| PD_13_6 | 1 886 kr | 10 |
+| PD_13_10 · 13_8 · PD_2_4 · 13_5 · 13_7 · 13_9 · 13_4 | 2–40 kr | 0–1 |
+
+→ **Strukturåtgärd:** problemet löses inte med en separat testkampanj för hela batchen —
+det löses med **färre annonser per ad set**. 2–3 creatives per ad set i stället för nio, så
+att utforskningen fördelas över fler auktioner. Redan producerade men aldrig levererade
+statics (`PD_13_4` vått piedestal, `PD_2_4` ett par på vått däck, `PD_13_10` kontrolltestet)
+ska få en ny chans i egna små ad set innan något nytt fotograferas — de testar exakt det
+vått-underlag-mönstret som nu är bevisat, och de finns redan som färdiga filer.
 
 **6 — En brief som ändrar mer än en variabel förstör sitt eget test. `DATA`**
 `PD_13_7` skulle byta enbart bakgrund men levererades med tre svävande skor: bakgrund, komposition och antal ändrades samtidigt. Utfallet går inte att tillskriva något.
@@ -225,10 +351,22 @@ Snittittartid över alla videor: 3–9 sekunder på klipp som är 21–42 sekund
 
 **Bygg majoriteten av varje batch på den formel som tjänar mest just nu.** Idag är det PD_13: enskilt par svart camo, upphöjt på piedestal, premium studio, ingen text. Variera en parameter åt gången inom formeln — vinkel, ljus, underlag, produktorientering, beskärning — i stället för att sprida batchen över obeprövade koncept.
 
-**Behåll alltid:** textfri eller nästan textfri produktbild · svart camo som primär färg · vått underlag som kontext · sulan synlig · PD-copyn med problem-hook och de tre ytorna · 349 kr (aldrig 339).
+**Max 2–3 nya creatives per ad set.** `DATA 2026-08-09`: nio annonser i samma ad set gav
+en annons 94 % av budgeten och åtta annonser ingen dom alls. Fler, mindre ad set är
+skillnaden mellan att lära sig något och att bara producera.
+
+**Behåll alltid:** textfri eller nästan textfri produktbild · svart camo som primär färg · **blött mörkt underlag som kontext (bevisat 2026-08-09: CPA 63 vs 228 kr på identisk bild)** · sulan synlig · PD-copyn med problem-hook och de tre ytorna · 349 kr (aldrig 339).
 
 **Testa kontrollerat (en variabel åt gången):** antal par i bild · torrt vs vått underlag · studio vs verklig miljö · rubrik på sulbilden · native lo-fi med vs utan konverteringselement.
 
 **Undvik:** videor över 25 sekunder · företagsröst ("vi tog fram") · problemet efter lösningen · stora textblock i bild · rabatter under 10 % · vit och khaki som huvudfärg i hjältebilden.
 
-**Bevaka:** frekvensen kryper uppåt på de två volymannonserna (PD_2_2: 1,73 · PD_13_1: 1,61). Creative-diversitet är motmedlet — det är därför kvoten finns.
+**Bevaka:** frekvens 2026-08-09 — PD_13_1 1,82 · PD_2_2 1,81 · PD_13_6 1,30. Frekvensen
+ensam varnar inte: PD_13_1 ligger på samma nivå som PD_2_2 men har noll utmattning i
+marginell CPA. **Mät marginell CPA mellan två mätningar, inte frekvens** — det är det enda
+som skilde de två åt.
+
+**Produktionen är nu flaskhalsen, inte briefandet.** Per 2026-08-09 ligger 13 briefer
+(batch 5: 7, batch 6: 6) skrivna men oproducerade. Nästa `/cs` ska kontrollera hur många
+som faktiskt blivit bilder innan den skriver fler — kvoten mäter launchade creatives, och
+en växande briefhög är slöseri, inte försprång.
