@@ -298,7 +298,13 @@ Alla har inträffat på riktigt.
 10. **Temu-SKU:er, negativa lager, blandade supportmail** i källdatan — städregler i
     `build-catalog.mjs`.
 11. **`productUpdate(input:)` är deprecated** → använd `productUpdate(product:)`.
-12. **Kontexten tar slut mitt i arbetet.** Allt state ligger i repot och butiken. En ny
+12. **Produktmallarnas fraktrad ärver källmarknadens fri frakt-löfte** — DK-körningen
+    översatte "fri frakt" rakt in i fem mallar innan frakten fanns. Fas 9-kontrollen
+    måste täcka mallarnas sales points/fraktrader, inte bara banners.
+13. **Agenter kan dö tyst mitt i ett flerstegsjobb** — DK-körningens aktiverings-agent
+    dog efter steg 1 utan rapport. Lita aldrig på att en agent blev klar: kör grinden
+    mot butiken och relansera resten (gör stegen idempotenta så omkörning är riskfri).
+14. **Kontexten tar slut mitt i arbetet.** Allt state ligger i repot och butiken. En ny
     session behöver bara denna fil och rätt butik kopplad.
 
 ---
