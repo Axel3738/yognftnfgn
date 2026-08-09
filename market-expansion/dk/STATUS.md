@@ -27,11 +27,25 @@ hade gjort sortimentet ~55 % dyrare i Danmark.
   8/8 kollektionsbilder med alt-text, stickprov `publishedOnPublication: true`
 - 6 sidor + 2 menyer live (huvudmeny 8 poster, sidfot 7)
 
-## 🔄 Pågår (tema-agenter)
+## ✅ Fas 7 komplett — tema (utkast 204226199897, live-temat orört)
 
-- Locale-filer → danska (sv.json + da.json + en.default.json)
-- index.json + settings_data.json (danska kollektionsrutor, logga, enbart sanna banners)
-- Övriga mallar inkl. de 4 specialmallarna, Judge.me/Kaching-block bevarade
+- Locale: 551 nycklar → danska i sv.json + da.json + en.default.json (temat läser sv.json
+  eftersom primärspråket är sv — UK-fällan stängd by design)
+- index.json: hero "TØFLER – HEAVY DUTY"/"KØB NU", 7 danska kategorirutor, Bestsellere →
+  frontpage, döda svenska produktlänkar rensade
+- settings_data.json: vit logga i header, svart i checkout, favicon, sanna banners
+  ("14 DAGES FORTRYDELSESRET" + "2 ÅRS REKLAMATIONSRET"), STONEBITE-sidfot
+- 14 mallar daniserade inkl. alla 4 specialmallar; Judge.me/Kaching-block byte-identiska
+- Fas 9-rättelse: "fri fragt i Danmark" (ärvt ur svenska mallen) borttaget ur 5 produktmallar
+  → "Levering: 5-10 hverdage"
+- Hero-bilden kopierad till butikens Files via fileCreate
+
+### Slutgrind (förhandsvisning, 141 kB HTML)
+
+- Svenska ord: **0** i butiksinnehållet (enda träffen ligger i Judge.me-appens widgetkonfig)
+- Danska ankare: KØB NU, TØFLER, Indkøbskurv, Bestsellere, Bæverbutikken, fortrydelsesret ✓
+- 26 riktiga produktbilder, logga renderad, DKK-priser, 0 grå platshållare
+- Exempelprodukten "Sladdhållare" (0 kr) borttagen ur Forside-kollektionen
 
 ## 🔴 FRAKT — samma fälla som UK, ännu inte löst
 
@@ -43,13 +57,17 @@ eller enbart fast pris. Temats banner måste stämma med beslutet (Fas 9).
 
 ## Kvar
 
-- Fas 7: tema — utkast `theme-export-baverbutiken-se-...` id `204226199897` (opublicerat, korrekt).
-  Startsida, settings, locale-filer (sv.json + da.json + en.default.json — primärspråket är `sv`!),
-  mallar med Judge.me/Kaching-block bevarade, temabilder via fileCreate, logga till Files.
-- Fas 9: sanningskontroll av banners (fri frakt/Klarna) mot faktisk konfiguration.
-- Fas 10 (Axel): publicera tema, importera Judge.me-CSV, Kaching-bundles, frakt, betalning,
-  moms (OSS), domänkoppling, primärspråk → danska om möjligt, juridisk granskning av
-  build-report-flaggorna (134 st) + 17 AXEL-flaggor i sidorna.
+- Fas 10 (Axel), i prioritetsordning:
+  1. **Frakt** — besluta tröskel (förslag: fri över 299 DKK, annars 39 DKK) och sätt upp
+     DK-zonen; idag 299 SEK ur ärvd zon
+  2. **Publicera temat** — Themes → utkastet → Publish
+  3. **Judge.me**: importera dk/output/judgeme-reviews-baeverbutikken-dk.csv + byt appens
+     widgetspråk till danska (widgetkonfigen är på svenska: "Köp nu", "Visningsnamn")
+  4. Kaching-bundles
+  5. Arkivera exempelprodukten "Sladdhållare" (ACTIVE, 0 kr — borttagen ur Forside men köpbar via URL)
+  6. Primärspråk → danska om möjligt (Settings → Languages), betalning, moms (OSS), domän
+  7. Juridisk granskning: 138 flaggor i build-report.md + 17 AXEL-flaggor i sidorna
+     + e-postadressen kundeservice@baeverbutiken.dk måste skapas/verifieras
 
 ## Noteringar
 
