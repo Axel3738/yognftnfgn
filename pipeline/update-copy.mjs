@@ -66,6 +66,8 @@ for (const ad of ads) {
     const data = spec.video_data || spec.link_data;
     if (data.message === target) { console.log(`· ${ad.name}: redan rätt text`); skipped++; continue; }
     data.message = target;
+    // Meta läser ut både image_url och image_hash för video-thumbnails men accepterar bara en
+    if (spec.video_data && data.image_hash && data.image_url) delete data.image_url;
     const dof = ad.creative.degrees_of_freedom_spec || {};
     for (const dead of ['standard_enhancements', 'standard_enhancements_catalog'])
       delete dof.creative_features_spec?.[dead];
