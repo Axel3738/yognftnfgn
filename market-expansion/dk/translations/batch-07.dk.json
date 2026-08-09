@@ -1,0 +1,356 @@
+{
+ "products": [
+  {
+   "handle": "skuggnat-uv-bestandigt-solskydd-for-uteplats",
+   "da": {
+    "title": "Skyggenet UV-Bestandigt – Solafskærmning til Terrassen",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Kølig skygge på terrassen</h2>\n<p>Stegende sol gør det svært at sidde ude midt på dagen. Planter og pool lider også under den stærke sol.</p>\n<p><img src=\"https://img.kwcdn.com/product/open/2024-10-11/1728668380419-c1aabd34ea7648c0a935292e94176b26-goods.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Skyggenet UV-bestandigt\"></p>\n<h3 style=\"font-size:19px;\">UV-bestandigt og slidstærkt</h3>\n<p>Dette skyggenet er UV-bestandigt og tåler vejr og vind sæson efter sæson. Det lukker luft igennem, men giver samtidig dejlig skygge, hvor du har brug for det.</p>\n<p><img src=\"https://img.kwcdn.com/product/open/2024-10-11/1728668366206-44a12854cb414993a10db0e29f715087-goods.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Skyggenet opsat\"></p>\n<h3 style=\"font-size:19px;\">Funktioner</h3>\n<ul>\n<li>UV-bestandigt og slidstærkt</li>\n<li>Giver kølig skygge til terrasse og planter</li>\n<li>Lukker luft igennem</li>\n<li>Fås i flere størrelser</li>\n<li>Godt til altan, pool og have</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/open/2024-10-11/1728668368327-7ec40ddc46df4162bf233a00e7501b6c-goods.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Skyggenet detalje\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dages tilfreds-kunde-garanti.</strong> Ikke helt tilfreds? Kontakt os inden for 30 dage, så løser vi det – uden besvær.</p>\n</div>",
+    "productType": "Have",
+    "tags": ["Pool", "Skygge", "Solafskærmning", "Have", "Udendørs"],
+    "seo": {
+     "title": "Skyggenet UV-bestandigt – hold terrassen kølig",
+     "description": "Beskyt terrasse, planter og pool mod stærk sol med et slidstærkt skyggenet. UV-bestandigt, luftgennemtrængeligt og nemt at sætte op."
+    },
+    "options": [{"name": "Title"}],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028787208541",
+      "title": "Default Title",
+      "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+     }
+    ],
+    "imagesAlt": ["Skyggenet UV-bestandigt", "", "", "", ""]
+   },
+   "flags": ["JURIDISK GRANSKNING: 30 dages tilfreds-kunde-garanti – verifiera mot købeloven og forbrugeraftaleloven (14 dages fortrydelsesret, 2 års reklamationsret)"]
+  },
+  {
+   "handle": "uppblasbar-luftsoffa-barbar-loungesack",
+   "da": {
+    "title": "Oppustelig Luftsofa – Bærbar Loungesæk",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Behagelig loungeplads, hvor du vil</h2>\n<p>På stranden, festivalen eller i parken er det dejligt at have noget blødt at sidde på. Men at slæbe rundt på stole og hynder er både tungt og besværligt.</p>\n<p><img src=\"https://img.kwcdn.com/product/open/68500873a68b4598ae8cfbbb6e284f95-goods.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Oppustelig luftsofa\"></p>\n<h3 style=\"font-size:19px;\">Fyldes med luft på få sekunder</h3>\n<p>Denne luftsofa fyldes ved, at du svinger den gennem luften – der skal ingen pumpe til. Den bærer op til 200 kg og foldes sammen til lille størrelse, når du er færdig.</p>\n<p><img src=\"https://img.kwcdn.com/product/open/7500878047554a439085017ee89208c7-goods.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Luftsofa i brug\"></p>\n<h3 style=\"font-size:19px;\">Funktioner</h3>\n<ul>\n<li>Fyldes med luft uden pumpe</li>\n<li>Bærer op til 200 kg</li>\n<li>Foldbar og let at bære</li>\n<li>Med opbevaringstaske og pude</li>\n<li>Godt til strand, camping og park</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/open/c375eea3c907417c8f8235b95f76745a-goods.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Luftsofa detalje\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dages tilfreds-kunde-garanti.</strong> Ikke helt tilfreds? Kontakt os inden for 30 dage, så løser vi det – uden besvær.</p>\n</div>",
+    "productType": "Camping",
+    "tags": ["Camping", "Friluftsliv", "Luftsofa", "Strand", "Udendørs"],
+    "seo": {
+     "title": "Oppustelig luftsofa – bærbar loungesæk til stranden",
+     "description": "Fyldes med luft på sekunder uden pumpe. Bærer op til 200 kg, foldes lille sammen og er perfekt til strand, camping og park."
+    },
+    "options": [{"name": "Title"}],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028790813021",
+      "title": "Default Title",
+      "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+     }
+    ],
+    "imagesAlt": ["Oppustelig luftsofa", "", "", "", ""]
+   },
+   "flags": ["JURIDISK GRANSKNING: 30 dages tilfreds-kunde-garanti – verifiera mot købeloven og forbrugeraftaleloven (14 dages fortrydelsesret, 2 års reklamationsret)"]
+  },
+  {
+   "handle": "herrshorts-3-pack-snabbtorkande-traningsshorts",
+   "da": {
+    "title": "Herreshorts 3-Pak – Hurtigtørrende Træningsshorts",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Tre par behagelige shorts – i ét køb</h2>\n<p>Gode træningsshorts løber hurtigere tør i garderoben, end man tror. At lede efter rene, tørre shorts hver morgen er både spild af tid og stressende.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/9507ca9b-3c74-4d2e-941e-c314257fb2bf.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Herreshorts 3-pak\"></p>\n<h3 style=\"font-size:19px;\">Lette og hurtigtørrende</h3>\n<p>Disse shorts kommer i et 3-pak og er lavet af let og åndbart stof. De tørrer hurtigt og har en praktisk lynlåslomme.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/6780a066-4575-4922-be8e-29d7724c4d63.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Herreshorts detalje\"></p>\n<h3 style=\"font-size:19px;\">Funktioner</h3>\n<ul>\n<li>3 par i ét køb</li>\n<li>Let og åndbart stof</li>\n<li>Hurtigtørrende</li>\n<li>Praktisk lynlåslomme</li>\n<li>Godt til løb, træningscenter og hverdag</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/8282b0b0-8462-46c6-b500-0eacc74278b7.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Herreshorts par\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dages tilfreds-kunde-garanti.</strong> Ikke helt tilfreds? Kontakt os inden for 30 dage, så løser vi det – uden besvær.</p>\n</div>",
+    "productType": "Tøj",
+    "tags": ["Camping", "Friluftsliv", "Tøj", "Shorts", "Træning"],
+    "seo": {
+     "title": "Herreshorts 3-pak – hurtigtørrende træningsshorts",
+     "description": "Tre par lette, åndbare træningsshorts med lynlåslomme. Hurtigtørrende og behagelige til løb, træningscenter og hverdag."
+    },
+    "options": [{"name": "Størrelse"}],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65388700598621",
+      "title": "S",
+      "selectedOptions": [{"name": "Størrelse", "value": "S"}]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65388700631389",
+      "title": "M",
+      "selectedOptions": [{"name": "Størrelse", "value": "M"}]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65388700664157",
+      "title": "L",
+      "selectedOptions": [{"name": "Størrelse", "value": "L"}]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65388700696925",
+      "title": "XL",
+      "selectedOptions": [{"name": "Størrelse", "value": "XL"}]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65388700729693",
+      "title": "XXL",
+      "selectedOptions": [{"name": "Størrelse", "value": "XXL"}]
+     }
+    ],
+    "imagesAlt": ["Herreshorts 3-pak", "", "", "", ""]
+   },
+   "flags": ["JURIDISK GRANSKNING: 30 dages tilfreds-kunde-garanti – verifiera mot købeloven og forbrugeraftaleloven (14 dages fortrydelsesret, 2 års reklamationsret)"]
+  },
+  {
+   "handle": "sugkoppskrokar-vindtata-taltkrokar-multipack",
+   "da": {
+    "title": "Sugekopkroge – Vindtætte Teltkroge (Multipak)",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Hæng ting op – uden at bore</h2>\n<p>Det er praktisk at kunne hænge ting op i teltet, bilen eller hjemme. Men man vil ikke altid bore huller eller sætte permanente kroge op.</p>\n<p><img src=\"https://img.kwcdn.com/product/open/f86246b7234444f783fb8bac2020e166-goods.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sugekopkroge\"></p>\n<h3 style=\"font-size:19px;\">Stærkt greb med sugekop</h3>\n<p>Disse kroge fæstner med sugekop og sidder solidt på glatte overflader. De er vindtætte og holdbare og kan flyttes lige så mange gange, du vil.</p>\n<p><img src=\"https://img.kwcdn.com/product/open/bbe8ea1dfb554a2ca865917f658ff6ae-goods.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sugekopkrog i brug\"></p>\n<h3 style=\"font-size:19px;\">Funktioner</h3>\n<ul>\n<li>Fæstner med sugekop – ingen huller</li>\n<li>Sidder solidt på glatte overflader</li>\n<li>Vindtætte og holdbare</li>\n<li>Kan flyttes og genbruges</li>\n<li>Godt til telt, bil og hjem</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/open/2e13a3d245a44f1aabbe2dc1f4c64e0f-goods.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sugekopkroge detalje\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dages tilfreds-kunde-garanti.</strong> Ikke helt tilfreds? Kontakt os inden for 30 dage, så løser vi det – uden besvær.</p>\n</div>",
+    "productType": "Camping",
+    "tags": ["Camping", "Friluftsliv", "Opbevaring", "Kroge", "Telt"],
+    "seo": {
+     "title": "Sugekopkroge – vindtætte teltkroge i multipak",
+     "description": "Hæng ting op uden at bore huller. Sugekopkrogene sidder solidt på glatte flader og kan flyttes og genbruges igen og igen."
+    },
+    "options": [{"name": "Title"}],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028793041245",
+      "title": "Default Title",
+      "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+     }
+    ],
+    "imagesAlt": ["Sugekopkroge", "", "", "", ""]
+   },
+   "flags": ["JURIDISK GRANSKNING: 30 dages tilfreds-kunde-garanti – verifiera mot købeloven og forbrugeraftaleloven (14 dages fortrydelsesret, 2 års reklamationsret)"]
+  },
+  {
+   "handle": "sadelvaskor-for-fyrhjuling-forvaring-for-atv",
+   "da": {
+    "title": "Sadeltasker til ATV – Opbevaring til Quad",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Tag mere med på ATV'en</h2>\n<p>På jagten, jobbet eller turen har du ofte brug for at have både værktøj og udstyr med. Uden opbevaring bliver det svært at have alt det nødvendige med.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/5aa084ab-f6e9-479b-90f2-eb084901d6f2.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sadeltasker ATV\"></p>\n<h3 style=\"font-size:19px;\">Rummelige tasker, der sidder solidt</h3>\n<p>Disse sadeltasker monteres nemt på ATV'en og giver masser af opbevaringsplads. De er lavet af holdbart materiale og holder dine ting på plads under turen.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/dece66b5-f40c-4a94-b180-9bde4d1c30cb.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sadeltasker monteret\"></p>\n<h3 style=\"font-size:19px;\">Funktioner</h3>\n<ul>\n<li>Rummelig opbevaring til værktøj og udstyr</li>\n<li>Monteres nemt på ATV'en</li>\n<li>Holdbart materiale</li>\n<li>Flere rum til god orden</li>\n<li>Godt til ATV, UTV og snescooter</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/c59c90eb-a411-4772-9546-6daa88bc3947.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sadeltasker detalje\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dages tilfreds-kunde-garanti.</strong> Ikke helt tilfreds? Kontakt os inden for 30 dage, så løser vi det – uden besvær.</p>\n</div>",
+    "productType": "Køretøj",
+    "tags": ["ATV", "Køretøj", "Quad", "Opbevaring", "Taske"],
+    "seo": {
+     "title": "Sadeltasker til ATV – rummelig opbevaring på turen",
+     "description": "Tag værktøj og udstyr med på farten. Holdbare sadeltasker med flere rum, der monteres nemt på ATV, UTV og snescooter."
+    },
+    "options": [{"name": "Title"}],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028793663837",
+      "title": "Default Title",
+      "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+     }
+    ],
+    "imagesAlt": ["Sadeltasker ATV", "", "", "", ""]
+   },
+   "flags": ["JURIDISK GRANSKNING: 30 dages tilfreds-kunde-garanti – verifiera mot købeloven og forbrugeraftaleloven (14 dages fortrydelsesret, 2 års reklamationsret)"]
+  },
+  {
+   "handle": "mc-handvarmare-vindtata-greppoverdrag",
+   "da": {
+    "title": "MC Håndvarmere – Vindtætte Grebsovertræk",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Hold hænderne varme under kørslen</h2>\n<p>Kolde hænder på motorcyklen eller snescooteren gør kørslen både ubehagelig og usikker. Tynde handsker slår sjældent til, når det blæser koldt.</p>\n<p><img src=\"https://img.kwcdn.com/product/open/031160974c664478bd27573105cedf8c-goods.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"MC håndvarmere\"></p>\n<h3 style=\"font-size:19px;\">Vindtætte overtræk direkte på styret</h3>\n<p>Disse håndvarmere trækkes på styret og beskytter hænderne mod vind og kulde. De har en lynlåslomme og passer til de fleste motorcykler og snescootere.</p>\n<p><img src=\"https://img.kwcdn.com/product/open/cf86c3dc54a84de88fb3996524377eb0-goods.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Håndvarmere på styret\"></p>\n<h3 style=\"font-size:19px;\">Funktioner</h3>\n<ul>\n<li>Vindtætte og varmende</li>\n<li>Trækkes nemt på styret</li>\n<li>Med praktisk lynlåslomme</li>\n<li>Én størrelse passer de fleste</li>\n<li>Godt til motorcykel, knallert og snescooter</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/open/d667fc8d2799447a977c2f0c14d00f5b-goods.jpeg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Håndvarmere detalje\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dages tilfreds-kunde-garanti.</strong> Ikke helt tilfreds? Kontakt os inden for 30 dage, så løser vi det – uden besvær.</p>\n</div>",
+    "productType": "Køretøj",
+    "tags": ["Køretøj", "Håndvarmere", "Motorcykel", "Scooter", "Vinter"],
+    "seo": {
+     "title": "MC håndvarmere – vindtætte grebsovertræk",
+     "description": "Hold hænderne varme på motorcyklen eller scooteren. Vindtætte håndvarmere med lynlåslomme, der passer de fleste styr."
+    },
+    "options": [{"name": "Title"}],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028794024285",
+      "title": "Default Title",
+      "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+     }
+    ],
+    "imagesAlt": ["MC håndvarmere", "", "", ""]
+   },
+   "flags": ["JURIDISK GRANSKNING: 30 dages tilfreds-kunde-garanti – verifiera mot købeloven og forbrugeraftaleloven (14 dages fortrydelsesret, 2 års reklamationsret)"]
+  },
+  {
+   "handle": "motocross-handskydd-universella-i-pp-plast",
+   "da": {
+    "title": "Motocross Håndbeskyttere – Universelle i PP-Plast",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Beskyt hænderne i terrænet</h2>\n<p>I terrænet flyver grene, sten og mudder mod hænderne. Uden håndbeskyttere er det nemt at slå sig eller miste grebet.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/f66a2d5d-a707-480f-bd40-09b1f10cfc36.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Motocross håndbeskyttere\"></p>\n<h3 style=\"font-size:19px;\">Holdbar PP-plastbeskyttelse</h3>\n<p>Disse håndbeskyttere er lavet af holdbar PP-plast og monteres på styret. De beskytter hænderne mod grene, sten og kulde og passer til de fleste motorcykler.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/799e799f-1fda-4189-9f28-6f238c2de1e0.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Håndbeskyttere monteret\"></p>\n<h3 style=\"font-size:19px;\">Funktioner</h3>\n<ul>\n<li>Holdbar PP-plast</li>\n<li>Beskytter mod grene, sten og kulde</li>\n<li>Monteres nemt på styret</li>\n<li>Universel pasform</li>\n<li>Godt til motocross og terrænkørsel</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/24eaaf98-d19f-4af0-a1de-08bf53fc0f76.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Håndbeskyttere detalje\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dages tilfreds-kunde-garanti.</strong> Ikke helt tilfreds? Kontakt os inden for 30 dage, så løser vi det – uden besvær.</p>\n</div>",
+    "productType": "Køretøj",
+    "tags": ["Køretøj", "Håndbeskyttere", "MC", "Motocross", "Motorcykel"],
+    "seo": {
+     "title": "Motocross håndbeskyttere i holdbar PP-plast",
+     "description": "Beskyt hænderne mod grene, sten og kulde i terrænet. Universelle håndbeskyttere, der nemt monteres på styret."
+    },
+    "options": [{"name": "Title"}],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028794319197",
+      "title": "Default Title",
+      "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+     }
+    ],
+    "imagesAlt": ["Motocross håndbeskyttere", "", "", "", ""]
+   },
+   "flags": ["JURIDISK GRANSKNING: 30 dages tilfreds-kunde-garanti – verifiera mot købeloven og forbrugeraftaleloven (14 dages fortrydelsesret, 2 års reklamationsret)"]
+  },
+  {
+   "handle": "slapvagnsrem-150-tum-slitstark-nylonrem",
+   "da": {
+    "title": "Trailerrem 150 Tommer – Slidstærk Nylonrem",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">En rem, du kan stole på</h2>\n<p>En svag eller slidt rem er en risiko, når du skal sikre eller bugsere tung last. Du vil være sikker på, at den holder hele vejen.</p>\n<p><img src=\"https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/26e714bd68e18e9ffdaafd7a5790a1ff.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Trailerrem 150 tommer\"></p>\n<h3 style=\"font-size:19px;\">Slidstærk nylon med god bæreevne</h3>\n<p>Denne rem er 150 tommer lang og lavet af slidstærk nylon. Den passer til både lastsikring og nødsituationer og leveres med en praktisk opbevaringstaske.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/d7998bd3-0142-4636-87b4-e104bf77f3b8.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Trailerrem i brug\"></p>\n<h3 style=\"font-size:19px;\">Funktioner</h3>\n<ul>\n<li>150 tommer lang</li>\n<li>Slidstærk nylon med god bæreevne</li>\n<li>Opbevaringstaske medfølger</li>\n<li>Godt til lastsikring og bugsering</li>\n<li>Kompakt at opbevare i bilen</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/94fa3beb-aba1-41fa-8978-21c01c341472.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Trailerrem detalje\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dages tilfreds-kunde-garanti.</strong> Ikke helt tilfreds? Kontakt os inden for 30 dage, så løser vi det – uden besvær.</p>\n</div>",
+    "productType": "Transport",
+    "tags": ["Bil", "Lastsikring", "Rem", "Trailer", "Transport"],
+    "seo": {
+     "title": "Trailerrem 150 tommer – slidstærk nylonrem",
+     "description": "En rem du kan stole på ved lastsikring og bugsering. Slidstærk nylon med god bæreevne og medfølgende opbevaringstaske."
+    },
+    "options": [{"name": "Title"}],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028795957597",
+      "title": "Default Title",
+      "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+     }
+    ],
+    "imagesAlt": ["Trailerrem 150 tommer", "", "", "", ""]
+   },
+   "flags": ["JURIDISK GRANSKNING: 30 dages tilfreds-kunde-garanti – verifiera mot købeloven og forbrugeraftaleloven (14 dages fortrydelsesret, 2 års reklamationsret)"]
+  },
+  {
+   "handle": "batterifranskiljare-huvudstrombrytare-12-24v",
+   "da": {
+    "title": "Batteriafbryder – Hovedstrømafbryder 12/24V",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Beskyt batteriet, når køretøjet holder stille</h2>\n<p>Står bilen, båden eller autocamperen ubrugt i længere tid, bliver batteriet let afladet. Det er både irriterende og kan skade batteriet.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/ddb18f28-317a-4c67-93fb-facfe4ccb8d0.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Batteriafbryder\"></p>\n<h3 style=\"font-size:19px;\">Afbryd strømmen med et greb</h3>\n<p>Med denne afbryder afbryder du strømmen helt med et enkelt greb. Det forhindrer afladning og fungerer også som tyverisikring. Den passer til 12V og 24V.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/38a92e50-982b-4809-bdbd-74e780e0ff8b.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Afbryder i brug\"></p>\n<h3 style=\"font-size:19px;\">Funktioner</h3>\n<ul>\n<li>Afbryder strømmen helt med et greb</li>\n<li>Forhindrer afladning ved lang stilstand</li>\n<li>Fungerer som enkel tyverisikring</li>\n<li>Passer til 12V og 24V</li>\n<li>Godt til bil, båd, autocamper og lastbil</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/39d1cbfb-c44c-48fd-8956-e8d9ff912d90.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Afbryder detalje\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dages tilfreds-kunde-garanti.</strong> Ikke helt tilfreds? Kontakt os inden for 30 dage, så løser vi det – uden besvær.</p>\n</div>",
+    "productType": "Biltilbehør",
+    "tags": ["Batteri", "Bil", "Båd", "Garage", "Strømafbryder"],
+    "seo": {
+     "title": "Batteriafbryder 12/24V – beskyt batteriet",
+     "description": "Afbryd strømmen med ét greb og undgå afladning, når bilen, båden eller autocamperen holder stille. Fungerer også som tyverisikring."
+    },
+    "options": [{"name": "Title"}],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028796678493",
+      "title": "Default Title",
+      "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+     }
+    ],
+    "imagesAlt": ["Batteriafbryder", "", "", "", ""]
+   },
+   "flags": ["JURIDISK GRANSKNING: 30 dages tilfreds-kunde-garanti – verifiera mot købeloven og forbrugeraftaleloven (14 dages fortrydelsesret, 2 års reklamationsret)"]
+  },
+  {
+   "handle": "styrhandtag-atv-anti-skid-i-aluminium-22mm",
+   "da": {
+    "title": "Styrgreb ATV – Skridsikkert i Aluminium 22mm",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Bedre greb – bedre kontrol</h2>\n<p>Slidte eller glatte greb gør det svært at styre sikkert i terrænet. Med dårligt greb lider både kørslen og sikkerheden.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/ca3a6c9f-18c8-468a-b260-b02ba527bf12.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Styrgreb ATV skridsikkert\"></p>\n<h3 style=\"font-size:19px;\">Solidt greb i aluminium</h3>\n<p>Disse styrgreb er lavet af aluminiumslegering med et skridsikkert greb. De passer til 7/8 tommer (22 mm) styr og giver bedre kontrol i alle situationer.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/ed01e5e1-3306-4dc1-996a-52993eedceb7.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Styrgreb monteret\"></p>\n<h3 style=\"font-size:19px;\">Funktioner</h3>\n<ul>\n<li>Skridsikkert greb for bedre kontrol</li>\n<li>Holdbar aluminiumslegering</li>\n<li>Passer til 7/8 tommer (22 mm) styr</li>\n<li>Nemme at montere</li>\n<li>Godt til ATV, MC og terrængående køretøjer</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/9ba9c296-e831-4719-91f7-b62c5458f1db.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Styrgreb detalje\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dages tilfreds-kunde-garanti.</strong> Ikke helt tilfreds? Kontakt os inden for 30 dage, så løser vi det – uden besvær.</p>\n</div>",
+    "productType": "Køretøj",
+    "tags": ["ATV", "Køretøj", "MC", "Styrgreb", "Tilbehør"],
+    "seo": {
+     "title": "Styrgreb til ATV – skridsikkert i aluminium 22mm",
+     "description": "Få bedre greb og kontrol i terrænet med styrgreb i holdbar aluminiumslegering. Skridsikre og nemme at montere."
+    },
+    "options": [{"name": "Title"}],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028797202781",
+      "title": "Default Title",
+      "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+     }
+    ],
+    "imagesAlt": ["Styrgreb ATV skridsikkert", "", "", "", ""]
+   },
+   "flags": ["JURIDISK GRANSKNING: 30 dages tilfreds-kunde-garanti – verifiera mot købeloven og forbrugeraftaleloven (14 dages fortrydelsesret, 2 års reklamationsret)"]
+  },
+  {
+   "handle": "led-ljusramp-spot-flood-12-24v-arbetsljus",
+   "da": {
+    "title": "LED Lysbjælke Spot/Flood – 12/24V Arbejdslys",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Se mere, når mørket falder på</h2>\n<p>Standardforlygter rækker sjældent til på mørke veje og i terrænet. Dårligt udsyn gør kørslen både langsom og usikker.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/f19af744-5f87-4030-b5f4-373a3251a63f.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"LED lysbjælke spot flood\"></p>\n<h3 style=\"font-size:19px;\">Kraftfuldt lys med spot og flood</h3>\n<p>Denne lysbjælke kombinerer spot- og floodlys for både lang rækkevidde og bredt lys. Den passer til 12V og 24V og lyser vejen op foran dig.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/1390c9e0-e3d3-42ec-bf81-67e43b73aa6a.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"LED lysbjælke tændt\"></p>\n<h3 style=\"font-size:19px;\">Funktioner</h3>\n<ul>\n<li>Kombinerer spot- og floodlys</li>\n<li>Passer til 12V og 24V</li>\n<li>Kraftfuldt og energibesparende LED-lys</li>\n<li>Holdbar konstruktion til terrænbrug</li>\n<li>Godt til bil, lastbil, 4x4 og båd</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/ac4fc1bc-aa8c-45c0-aae6-89fbe675f8db.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"LED lysbjælke detalje\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dages tilfreds-kunde-garanti.</strong> Ikke helt tilfreds? Kontakt os inden for 30 dage, så løser vi det – uden besvær.</p>\n</div>",
+    "productType": "Belysning",
+    "tags": ["Arbejdslys", "Belysning", "Køretøj", "LED", "Offroad"],
+    "seo": {
+     "title": "LED lysbjælke spot/flood 12/24V arbejdslys",
+     "description": "Se mere, når mørket falder på. Kraftfuld LED-lysbjælke med spot- og floodlys, der passer til bil, lastbil, 4x4 og båd."
+    },
+    "options": [{"name": "Størrelse"}],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65360809689437",
+      "title": "34 cm",
+      "selectedOptions": [{"name": "Størrelse", "value": "34 cm"}]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65360809722205",
+      "title": "57 cm",
+      "selectedOptions": [{"name": "Størrelse", "value": "57 cm"}]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65360809754973",
+      "title": "82 cm",
+      "selectedOptions": [{"name": "Størrelse", "value": "82 cm"}]
+     }
+    ],
+    "imagesAlt": ["LED lysbjælke spot flood", "", "", "", ""]
+   },
+   "flags": ["JURIDISK GRANSKNING: 30 dages tilfreds-kunde-garanti – verifiera mot købeloven og forbrugeraftaleloven (14 dages fortrydelsesret, 2 års reklamationsret)"]
+  },
+  {
+   "handle": "mc-led-stralkastare-extraljus-dimljus-12v",
+   "da": {
+    "title": "MC LED-Forlygte – Ekstralys & Tågelys 12V",
+    "descriptionHtml": "<div style=\"max-width: 720px; margin: 0 auto; font-family: sans-serif; line-height: 1.6; color: #1a1a1a;\">\n<h2 style=\"font-size: 22px;\">Bedre udsyn og synlighed på motorcyklen</h2>\n<p>På mørke veje rækker motorcyklens almindelige lys ofte ikke. Bedre belysning gør, at du både ser mere og bliver set bedre.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/Namnlosdesign-2026-07-12T204755.239.png?v=1783882083\" alt=\"\"></p>\n<h3 style=\"font-size: 19px;\">Stærkt LED-lys som ekstralys</h3>\n<p>Denne LED-forlygte fungerer som ekstralys, tågelys eller spotlight. Den giver et stærkt og tydeligt lys og passer til de fleste motorcykler med 12V.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/dbdba301-121b-42d9-931e-eb397bba3cf7.jpg\" style=\"max-width: 100%; border-radius: 10px;\" alt=\"LED-forlygte tændt\"></p>\n<h3 style=\"font-size: 19px;\">Funktioner</h3>\n<ul>\n<li>Fungerer som ekstralys, tågelys eller spotlight</li>\n<li>Stærkt og tydeligt LED-lys</li>\n<li>Passer til 12V</li>\n<li>Holdbar og vejrbestandig</li>\n<li>Godt til motorcykel, knallert og ATV</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/9e66d6d1-0b11-48d5-83ce-cb21e3ce9e02.jpg\" style=\"max-width: 100%; border-radius: 10px;\" alt=\"LED-forlygte detalje\"></p>\n<p style=\"background: #f3f7f3; padding: 14px 18px; border-radius: 10px;\"><strong>30 dages tilfreds-kunde-garanti.</strong> Ikke helt tilfreds? Kontakt os inden for 30 dage, så løser vi det – uden besvær.</p>\n</div>",
+    "productType": "Belysning",
+    "tags": ["Belysning", "Ekstralys", "Køretøj", "LED", "Motorcykel"],
+    "seo": {
+     "title": "MC LED-forlygte – ekstralys og tågelys 12V",
+     "description": "Bedre udsyn og synlighed på motorcyklen. Kraftfuldt LED-lys som ekstralys, tågelys eller spotlight til 12V-systemer."
+    },
+    "options": [{"name": "Title"}],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028798021981",
+      "title": "Default Title",
+      "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+     }
+    ],
+    "imagesAlt": ["", "", "", "", ""]
+   },
+   "flags": ["JURIDISK GRANSKNING: 30 dages tilfreds-kunde-garanti – verifiera mot købeloven og forbrugeraftaleloven (14 dages fortrydelsesret, 2 års reklamationsret)"]
+  },
+  {
+   "handle": "styrlas-hjalmlas-combo-stoldskydd-i-aluminium",
+   "da": {
+    "title": "Styrlås & Hjelmlås Combo – Tyverisikring i Aluminium",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Beskyt hojen og hjelmen</h2>\n<p>Motorcykler og hjelme er desværre populære mål for tyve. En god lås giver tryghed, når du parkerer og forlader køretøjet.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/840da806-ceb3-4963-a9ca-43b2b2811b36.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Styrlås hjelmlås combo\"></p>\n<h3 style=\"font-size:19px;\">Kraftig lås i aluminiumslegering</h3>\n<p>Denne combolås fungerer både som styrlås og hjelmlås. Den er lavet af solid aluminiumslegering og giver en solid beskyttelse mod tyveri.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/fc1a2cb6-fb4f-48a7-bd1b-188efcb14620.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Lås i brug\"></p>\n<h3 style=\"font-size:19px;\">Funktioner</h3>\n<ul>\n<li>Fungerer som styrlås og hjelmlås</li>\n<li>Solid aluminiumslegering</li>\n<li>Solid beskyttelse mod tyveri</li>\n<li>Passer til motorcykel, scooter og cykel</li>\n<li>Kompakt og let at tage med</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/384abc81-cd68-4202-ab5d-0e08de6393c2.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Lås detalje\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dages tilfreds-kunde-garanti.</strong> Ikke helt tilfreds? Kontakt os inden for 30 dage, så løser vi det – uden besvær.</p>\n</div>",
+    "productType": "Køretøj",
+    "tags": ["Køretøj", "Lås", "Motorcykel", "Tyverisikring", "Sikkerhed"],
+    "seo": {
+     "title": "Styrlås & hjelmlås combo – tyverisikring i aluminium",
+     "description": "Beskyt motorcyklen og hjelmen mod tyveri. Kraftig combolås i solid aluminiumslegering – kompakt og let at have med."
+    },
+    "options": [{"name": "Title"}],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028798546269",
+      "title": "Default Title",
+      "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+     }
+    ],
+    "imagesAlt": ["Styrlås hjelmlås combo", "", "", "", ""]
+   },
+   "flags": ["JURIDISK GRANSKNING: 30 dages tilfreds-kunde-garanti – verifiera mot købeloven og forbrugeraftaleloven (14 dages fortrydelsesret, 2 års reklamationsret)"]
+  },
+  {
+   "handle": "mc-satesoverdrag-camo-ventilerande-skydd",
+   "da": {
+    "title": "MC Sædebetræk Camo – Ventilerende Beskyttelse",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Kølig sidde­plads og beskyttet sæde</h2>\n<p>Et motorcykelsæde bliver både varmt og slidt af sol og brug. På varme dage kan sædet blive ubehageligt at sidde på.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/a53c19df-3d3a-4eb7-b267-5cb7855a1a7a.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"MC sædebetræk camo\"></p>\n<h3 style=\"font-size:19px;\">Ventilerende betræk i camo</h3>\n<p>Dette sædebetræk ventilerer varmen bort og beskytter sædet mod slitage. Det sættes nemt på med elastisk kant og giver et flot camo-look.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/25c0c3b0-f243-4166-bc24-53489493018b.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sædebetræk på motorcykel\"></p>\n<h3 style=\"font-size:19px;\">Funktioner</h3>\n<ul>\n<li>Ventilerer varmen bort</li>\n<li>Beskytter sædet mod slitage</li>\n<li>Elastisk kant til nem montering</li>\n<li>Flot camo-design</li>\n<li>Slidstærkt polyestermateriale</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/afa50ab3-c588-4b36-9cc0-48ac1141cf07.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sædebetræk detalje\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dages tilfreds-kunde-garanti.</strong> Ikke helt tilfreds? Kontakt os inden for 30 dage, så løser vi det – uden besvær.</p>\n</div>",
+    "productType": "Køretøj",
+    "tags": ["Camo", "Køretøj", "Motorcykel", "Beskyttelse", "Sædebetræk"],
+    "seo": {
+     "title": "MC sædebetræk camo – ventilerende beskyttelse",
+     "description": "Hold sædet køligt og beskyttet mod slitage. Ventilerende sædebetræk i camo med elastisk kant – nem at montere."
+    },
+    "options": [{"name": "Title"}],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028799037789",
+      "title": "Default Title",
+      "selectedOptions": [{"name": "Title", "value": "Default Title"}]
+     }
+    ],
+    "imagesAlt": ["MC sædebetræk camo", "", "", "", ""]
+   },
+   "flags": ["JURIDISK GRANSKNING: 30 dages tilfreds-kunde-garanti – verifiera mot købeloven og forbrugeraftaleloven (14 dages fortrydelsesret, 2 års reklamationsret)"]
+  }
+ ]
+}
