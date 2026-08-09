@@ -11,10 +11,6 @@
 
 const API = 'https://graph.facebook.com/v23.0';
 const TOKEN = process.env.META_ACCESS_TOKEN;
-const ACT = 'act_1107817401910319'; // Magiborsten UK (SEK)
-
-const PAGE_ID = '1305042582683792';  // BeaverShop (UK-pagen — ingen IG-koppling, matchar beavershop.co.uk)
-const PIXEL_ID = '1554276343018184'; // Bäverbutiken.se-pixeln
 
 const CONCEPT_RE = /(?:^|[_\s])(SO|SP|PD|SF)(?:[_\s.]|$)/i;
 
@@ -51,7 +47,15 @@ if (!TOKEN) die('META_ACCESS_TOKEN saknas.');
 if (!configPath) die('Ange konfig: node uk-wave.mjs waves/<kampanj>.config.mjs [--dry]');
 
 const cfg = (await import(new URL(configPath, `file://${process.cwd()}/`))).default;
-// cfg: { campaignName, link, dailyBudget (öre), productRe, concepts: {SO/SP/PD: {adset, message, headline, description}}, aliases?: {SF:'SP'}, forceConcept?: {filnamn: kod} }
+// cfg: { campaignName, link, dailyBudget (öre), productRe, concepts: {SO/SP/PD: {adset, message, headline, description}},
+//        aliases?: {SF:'SP'}, forceConcept?: {filnamn: kod},
+//        act?, page?, pixel?, country?, prefix?, adsetStatus?, adStatus? } — default: Magiborsten UK
+
+const ACT = cfg.act || 'act_1107817401910319';           // Magiborsten UK (SEK)
+const PAGE_ID = cfg.page || '1305042582683792';          // BeaverShop (ingen IG-koppling)
+const PIXEL_ID = cfg.pixel || '1554276343018184';        // Bäverbutiken.se-pixeln
+const COUNTRY = cfg.country || 'GB';
+const PREFIX = cfg.prefix || 'UK';
 
 function die(msg) { console.error(`✗ ${msg}`); process.exit(1); }
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -103,14 +107,14 @@ const videos = (await api(`${ACT}/advideos`, { params: { fields: 'title,id,statu
 const plan = Object.fromEntries(Object.keys(cfg.concepts).map(k => [k, []]));
 const skipped = [];
 for (const i of images) {
-  if (!i.name?.startsWith('UK') || !cfg.productRe.test(i.name)) continue;
+  if (!i.name?.startsWith(PREFIX) || !cfg.productRe.test(i.name)) continue;
   const c = conceptFor(i.name);
   if (c) plan[c].push({ type: 'image', name: i.name.replace(/\.\w+$/, ''), hash: i.hash });
   else skipped.push(i.name);
 }
 for (const v of videos) {
   const t = v.title || '';
-  if (!t.startsWith('UK') || !cfg.productRe.test(t)) continue;
+  if (!t.startsWith(PREFIX) || !cfg.productRe.test(t)) continue;
   const c = conceptFor(t);
   if (!c) { skipped.push(t); continue; }
   if (v.status?.video_status !== 'ready') { console.log(`⚠️ ${t} är inte ready (${v.status?.video_status}) — hoppas över`); continue; }
@@ -168,12 +172,12 @@ for (const [code, c] of Object.entries(cfg.concepts)) {
     promoted_object: JSON.stringify({ pixel_id: PIXEL_ID, custom_event_type: 'PURCHASE' }),
     targeting: JSON.stringify({
       age_min: 18, age_max: 65,
-      geo_locations: { countries: ['GB'], location_types: ['home', 'recent'] },
+      geo_locations: { countries: [COUNTRY], location_types: ['home', 'recent'] },
       targeting_automation: { advantage_audience: 0 },
     }),
   }});
   adsetIds[code] = adset.id;
-  console.log(`✓ Adset: ${c.adset} (${adset.id}) — UK broad, Advantage+ audience AV`);
+  console.log(`✓ Adset: ${c.adset} (${adset.id}) — ${COUNTRY} broad, Advantage+ audience AV`);
 }
 
 // ---- creatives + ads ----
