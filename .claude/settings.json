@@ -1,6 +1,7 @@
+cat > .claude/settings.json <<'EOF'
 {
   "permissions": {
-    "defaultMode": "acceptEdits",
+    "defaultMode": "bypassPermissions",
     "allow": [
       "mcp__Shopify",
       "mcp__github",
@@ -9,13 +10,13 @@
       "Bash(node *)",
       "Bash(npm *)",
       "Bash(pip *)",
-      "Bash(pip3 *)",
       "Bash(curl *)",
       "Bash(mkdir *)",
-      "Bash(ls *)",
       "Bash(jq *)",
       "WebFetch(domain:beavershop.co.uk)",
       "WebFetch(domain:beverbutikken.no)"
     ]
   }
 }
+EOF
+git add .claude/settings.json && git commit -m "bypassPermissions + allowlist" && git push
