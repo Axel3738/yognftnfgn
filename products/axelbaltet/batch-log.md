@@ -279,3 +279,159 @@ Typ `Video - Pending Approval`, hela briefen inklistrad.
   509 kr.** Vid 599 kr är båda för lågt satta — hela vinstbidragstabellen är
   alltså konservativ. **Ägaren räknar om.**
 - Rekommenderat (fjärde gången): egen ABO-testcell ~600 kr/dag.
+
+---
+
+## Feedbackloop 2026-08-09 (/cs nr 4, enligt ANALYSMETOD.md)
+
+Hela kampanjen hämtad sorterad på spend. Budget verifierad: **2 000 kr/dag (oförändrad, CBO)**.
+Break-even 326 kr. Kampanjtotal livstid: **33 334 kr spend · 115 köp · CPA 290 kr · ROAS 2,00 · frekvens 3,00**.
+Pris omverifierat i Shopify samma dag: 599 kr / jämförpris 678 kr → spara 79 kr (11,65 %). Oförändrat.
+
+**Datakvalitet:** `omni_purchase_values` fortsatt trasigt på samma rader (SO_2_4, SO_6_1, SF_1_H1,
+PD_2_2) — intäkt räknad som `amount_spent × purchase_roas`. CPA stämde mot `spend / köp` på alla rader.
+
+**6 nya annonser launchade 2026-08-09 07:26** i en ny adset `Axelbälte PD Batch 4` — de fyra
+PD_1-tester som saknades från batch #4 (`PD_1_1_H4`, `PD_1_1_H5`, `PD_1_2_H1`, `PD_1_3_H1`),
+plus `PD_7_1` och `PD_8_1_H2` (den första från batch #5). Loggade: kvot −8 → **−2**.
+
+### Vinstbidrag (bedömbara: ≥300 kr spend OCH ≥3 köp)
+
+| Annons | Spend | Andel spend | Köp | CPA | Vinstbidrag | Andel vinst | Vinst/1 000 kr |
+|---|---|---|---|---|---|---|---|
+| Axelbälte_PD_1_H1 | 11 748 kr | 40 % | 46 | 255 kr | **+3 249 kr** | **57 %** | 277 kr |
+| Axelbälte_SO_1_H2 | 11 944 kr | 41 % | 41 | 291 kr | +1 421 kr | 25 % | 119 kr |
+| Axelbälte_SO_2_1 | 2 504 kr | 9 % | 12 | 209 kr | +1 408 kr | 25 % | **562 kr** |
+| Trimmerbelt_PD_3_H1 (NY) | 827 kr | 3 % | 3 | 276 kr | +151 kr | 3 % | 183 kr |
+| Trimmerbelt_SO_2_4 (pausad) | 2 210 kr | 8 % | 5 | 442 kr | −580 kr | −10 % | −262 kr |
+
+Netto bedömbara: **+5 649 kr**.
+
+### KORRIGERING av /cs nr 3
+
+/cs nr 3 rapporterade PD_1_H1 marginal-CPA **138 kr** ("accelererar") och SO_1_H2 **602 kr**
+("avtar"), och rekommenderade att flytta budget SO → PD. **Med tre dygn mer data vänder bilden:**
+
+| Annons | Δ spend sedan /cs nr 3 | Δ köp | Marginal-CPA |
+|---|---|---|---|
+| PD_1_H1 | +2 974 kr | +7 | **425 kr** (över break-even) |
+| SO_1_H2 | +1 052 kr | +3 | **351 kr** (över break-even) |
+| SO_2_1 | +139 kr | +1 | 139 kr — under grinden, ingen dom |
+
+**Varför förra mätningen blev fel:** de två snapshotsen låg mindre än ett dygn isär, och köp
+attribueras bakåt i tiden efter att ett snapshot tagits. Sena köp från den äldre perioden
+hamnar då i det nya fönstret och gör det senaste dygnet konstlat billigt.
+**Metodregel härefter: marginal-CPA räknas bara mellan snapshots med ≥3 dygns mellanrum och
+≥5 inkrementella köp.** Signifikansgrinden gäller deltat, inte bara livstiden.
+
+**Vad som faktiskt gäller:** båda videovinnarna ligger nu **över break-even på marginalen**
+och kampanjfrekvensen har gått 2,72 → **3,00**. Kampanjen fatigar. Rotation är inte längre en
+förbättring utan ett krav.
+
+### Creative-teardown (visuell granskning i Ads Manager 2026-08-09)
+
+**Det största fyndet i hela loggen: vinnaren är äkta UGC, inte en producerad video.**
+Granskning av `PD_1_H1` visar rå mobilfilm — en verklig man i ett verkligt garage med verktyg
+och en cykel i bakgrunden, inbränd svensk undertext i vit rundad ruta ("Det här bältet").
+Ingen studio, ingen färgläggning. Tidigare loggar beskrev den som "40 s video med voiceover
+och b-roll" — det var fel, och det är därför ingen brief hittills har bett om äkta UGC.
+
+**Samtliga videor producerade efter den är AI-genererade.** Och där finns nu data på båda sidor:
+
+| Visuell stil | Annons | Utfall |
+|---|---|---|
+| Äkta människa, mobilfilmat | PD_1_H1 | **+3 249 kr = 57 % av all vinst**, 277 kr/1 000 kr |
+| AI **utan ansikte** (händer, produkt, trädgård) | PD_3_H1 | CPA 276 kr, **lönsam**, CVR 3,23 % (näst högst i kontot), p100 7,3 % |
+| AI **med ansikte** | PD_2_1, SF_2_1 | Båda dödade (artefakter, fabricerat citat) |
+| AI med ansikte (nya) | PD_1_2_H1, PD_8_1_H2 | För tidigt — men bryter mot mönstret ovan |
+
+`PD_8_1_H2` briefades i batch #5 som **äkta kvinnlig/manlig creator, mobilfilmat**. Det som
+producerades är en AI-genererad man som sitter på en säng. Briefen följdes inte på den punkt
+som betyder mest.
+
+### Variabelgruppering (vinstbidrag per variabelvärde)
+
+| Variabel | Värde | Spend | Vinst | Vinst/1 000 kr |
+|---|---|---|---|---|
+| Format | Video | 24 519 kr | +4 821 kr | 197 kr |
+| Format | **Statisk (hel produkt + foto)** | 2 504 kr | +1 408 kr | **562 kr** |
+| Format | Statisk (beskuren + gradient) | 2 210 kr | −580 kr | −262 kr |
+| Vinkel | **Smärta/problem** | 12 574 kr | +3 400 kr | **270 kr** |
+| Vinkel | Säsong/offer | 16 658 kr | +2 249 kr | 135 kr |
+| Visuell stil | Äkta UGC | 11 748 kr | +3 249 kr | 277 kr |
+| Visuell stil | AI utan ansikte | 827 kr | +151 kr | 183 kr |
+| Visuell stil | Studio/produktvideo | 11 944 kr | +1 421 kr | 119 kr |
+
+Smärta ger **dubbla** vinsten per krona mot säsong/offer. Statics i rätt layout ger **tre gånger**
+video — och får 14 % av spenden.
+
+### Metrik-diagnos (var i kedjan varje bedömbar annons tappar)
+
+| Annons | CTR | Hook rate | Hold (thruplay) | p100 | CVR (köp/klick) | CPM |
+|---|---|---|---|---|---|---|
+| PD_1_H1 | 2,46 % | 95,6 % | 16,0 % | 2,2 % | 2,76 % | 129 kr |
+| SO_1_H2 | 2,04 % | 95,1 % | 11,4 % | 5,4 % | 2,79 % | 126 kr |
+| SO_2_1 | 2,07 % | – | – | – | **3,85 %** | 127 kr |
+| PD_3_H1 | 2,31 % | 95,8 % | 10,0 % | **7,3 %** | 3,23 % | 127 kr |
+| SO_2_4 | 1,52 % | – | – | – | 1,85 % | 94 kr |
+
+PD_1_H1 och SO_1_H2 har **identisk CVR** — skillnaden mellan dem sitter helt i övre tratten
+(CTR 2,46 vs 2,04 %). SO_2_4 tappar i båda ändar trots kontots lägsta CPM.
+
+### Copyfyndet, preciserat
+
+Alla 12 annonser från 2026-08-05 och 2026-08-09 kontrollerade mot brieferna. Kontot kör exakt
+**två primärtexter**, tilldelade efter koncept: block A (alla PD-annonser) och block B (alla
+SO-statics). Ingen briefad copyvariant har någonsin nått kontot.
+
+Det har en nyttig sidoeffekt: video-interna variabler (hook, längd, offer i filmen) har testats
+mot en perfekt kontrollerad copykonstant. Och en dyr: **efter 33 334 kr spend och 115 köp har
+kontot aldrig kört ett enda copytest.** Batch #6 kör det (`PD_1_4_H1`, oförändrad vinnarvideo).
+
+### Hypotesavstämning – batch #4 och #5
+
+| Annons | Hypotes | Utfall |
+|---|---|---|
+| PD_3_H1 | Mekanismvideo bär | ✅ **Håller.** 827 kr, 3 köp, CPA 276, +151 kr. Näst högst CVR, högst p100. Skalas i batch #6 (`PD_3_2_H1`). |
+| PD_1_1_H4 / H5 / PD_1_2_H1 / PD_1_3_H1 | Hook-, offer- och längdtest på vinstledaren | ⏳ Launchade 2026-08-09, alla < 80 kr. För tidigt. Men samtliga är **AI-producerade** — hook- och längdtesterna körs, medan "äkta UGC"-egenskapen som vann tappats bort. |
+| PD_7_1 | Kompatibilitets-invändningen | ⏳ 101 kr. För tidigt. Copyn i kontot är block A, inte den briefade kompatibilitetscopyn → **invändningen testas inte i text**. |
+| PD_2_4 | Smärta i vinnande statiskt format | ⏳ 199 kr, 0 köp. För tidigt. |
+| SO_2_6 | Kronor slår procent | ⏳ 585 kr, 2 köp. Under grinden. Prisblocket överlappar fortfarande remmarna. |
+| PD_8_1_H2 (batch #5) | Smärtvinkeln bär i äkta UGC-utförande | ❌ **Testas inte.** Producerad som AI-man på en säng, inte som äkta creator. Hypotesen står kvar obesvarad → byggs om i batch #6 (`PD_12_1_H1/H2`). |
+| PD_8_1_H1, PD_2_5, SO_2_7, PD_9_1, PD_10_1, PD_11_1 | (batch #5) | ⏳ Briefade, ej launchade. |
+
+## Batch #6 – 2026-08-09 – 7 briefer (kvot 7)
+
+Copy skriven av sonnet-subagent (modellpolicy). Priser maskinkontrollerade: 0 felaktiga claims.
+4 video + 3 bild.
+
+| Annons | Typ | Hypotes | Isolerad variabel | Variabeltaggar |
+|---|---|---|---|---|
+| Trimmerbelt_PD_12_1_H1 | Äkta UGC-video | Drivaren i PD_1_H1 är äktheten i utförandet, inte den specifika filmen | Talang (ny person, nytt kön) | smärta · påstående · äkta UGC · demo · ingen offer · rått telefonfilmat · **kvinnlig creator 45–65** |
+| Trimmerbelt_PD_12_1_H2 | Äkta UGC-video | "Dagen efter" når samma köpare genom en annan dörr | Endast hook | smärta · påstående (dagen efter) · äkta UGC · demo · ingen offer · kvinnlig creator |
+| Trimmerbelt_PD_3_2_H1 | AI-video utan ansikte | Den ansiktslösa mekanismnärbilden är en repeterbar produktionsbana | Hook + mekanismbetoning | mekanism · påstående · voiceover+närbild · demo · ingen offer · **AI utan ansikte** |
+| Trimmerbelt_PD_1_4_H1 | Copytest | Primärtext är en materiell CVR-spak | **Endast primärtext** (filmen oförändrad) | smärta · fråga · video (oförändrad) · betyg · ingen offer · äkta UGC |
+| Trimmerbelt_SO_2_8 | Statisk | Effektiviteten i SO_2_1 sitter i layouten och offerns placering, inte i rabattens storlek | Claimet (falska 20 % → sanna 79 kr) | pris/deal · siffra · statisk · inget proof · pris syns · hel produkt+foto |
+| Trimmerbelt_PD_13_1 | Statisk | Smärtvinkeln i den vinnande layouten slår offer-vinkeln i samma layout | Vinkel på den effektivaste ytan | smärta · fråga · statisk · betyg i copy · ingen offer · hel produkt+foto |
+| Trimmerbelt_PD_14_1 | Statisk | Produkt buren besvarar passforms-invändningen och lyfter CVR över produkt-ensam | Produkt ensam → produkt buren | invändning/passform · påstående · statisk · demo · ingen offer · **AI utan ansikte** |
+
+Backlog: **kvinnlig creator-UGC** togs in `[använd i batch #6]` i `PD_12_1_H1/H2`. Övriga två
+items är fortsatt blockerade (Judge.me-texter, bundle-pris = ägarbeslut).
+
+**Notion:** 7 items i "Trimmer belt creative hub", Status `Draft`, Typ `Video - Pending Approval`,
+hela briefen inklistrad.
+
+## Åtgärder och öppna punkter 2026-08-09
+
+- 🔴 **`SO_2_1` kör fortfarande "FÅ 20% RABATT IDAG"** vid 599 kr (verklig rabatt 79 kr = 11,65 %).
+  Flaggat i tre /cs-körningar i rad, fortfarande live och fortfarande kontots effektivaste
+  annons. `SO_2_8` är den ärliga ersättaren — pausa `SO_2_1` när den är live. **Ägarbeslut.**
+- 🔴 **Äkta UGC måste tillbaka i produktionen.** 57 % av vinsten kommer från en enda rå mobilfilm;
+  allt som producerats sedan dess är AI. `PD_12_1` är den bygget.
+- 🔴 **Regel till teamet: AI-genererade ansikten är förbjudna.** AI utan ansikte fungerar
+  (`PD_3_H1`); AI med ansikte har dött två gånger och två nya är just launchade.
+- 🟡 **Copyn i kontot måste matcha briefen.** Aldrig ett copytest på 33 334 kr spend.
+- 🟡 **Statics är underfinansierade** — 562 kr vinst per 1 000 kr, 14 % av spenden. Egen ABO-cell
+  ~600 kr/dag (rekommenderat fjärde gången).
+- ⚠️ **Target-CPA 185 och break-even 326 är fortfarande räknade på gamla priset 509 kr.**
+  Vid 599 kr är båda för lågt satta → alla vinstsiffror ovan är konservativa. **Ägaren räknar om.**
