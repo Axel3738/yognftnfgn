@@ -21,11 +21,17 @@ Källa: Bäverbutiken (SE). Framework: `market-expansion/PLAYBOOK.md`. Körning 
 Exempel: 350 SEK → 229 DKK, 199 → 139, 649 → 429. Motiv: 1 DKK ≈ 1,55 SEK; Norges 1:1
 hade gjort sortimentet ~55 % dyrare i Danmark.
 
-## 🔄 Pågår (agenter)
+## ✅ Fas 4 komplett (verifierat)
 
-- Aktivering DRAFT→ACTIVE av alla 134 + kanalpublicering till Webbshop
-  (`gid://shopify/Publication/326577619289`) + kollektionsbilder med alt-text
-- pageCreate ×6 + menuUpdate ×2 (huvudmeny + sidfot)
+- 134/134 aktiverade (ACTIVE), 142/142 kanalpublicerade (produkter + kollektioner),
+  8/8 kollektionsbilder med alt-text, stickprov `publishedOnPublication: true`
+- 6 sidor + 2 menyer live (huvudmeny 8 poster, sidfot 7)
+
+## 🔄 Pågår (tema-agenter)
+
+- Locale-filer → danska (sv.json + da.json + en.default.json)
+- index.json + settings_data.json (danska kollektionsrutor, logga, enbart sanna banners)
+- Övriga mallar inkl. de 4 specialmallarna, Judge.me/Kaching-block bevarade
 
 ## 🔴 FRAKT — samma fälla som UK, ännu inte löst
 
