@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "defaultMode": "bypassPermissions",
+    "allow": [
+      "mcp__Shopify",
+      "mcp__github",
+      "Bash(git *)",
+      "Bash(python3 *)",
+      "Bash(node *)",
+      "Bash(npm *)",
+      "Bash(pip *)",
+      "Bash(curl *)",
+      "Bash(mkdir *)",
+      "Bash(jq *)",
+      "WebFetch(domain:beavershop.co.uk)",
+      "WebFetch(domain:beverbutikken.no)"
+    ]
+  }
+}
