@@ -7,19 +7,19 @@ export default {
   concepts: {
     PD: {
       adset: 'Motorhölje UK - PD',
-      message: 'Rain, sun and salt wear down your engine every day ⛵ This cover protects it from weather and rust. Universal fit — works with most outboards. Easy to put on and take off. Protect your engine today 👇',
+      message: 'Rain, sun and salt wear down your engine every day ⛵\n\nThis cover protects it from weather and rust.\nUniversal fit — works with most outboards.\nEasy to put on and take off.\n\nProtect your engine today 👇',
       headline: 'Protect Your Engine — Year After Year',
       description: 'Heavy-duty 420D fabric against rain, sun and salt.',
     },
     SP: {
       adset: 'Motorhölje UK - SP',
-      message: 'Boat owners are talking about this cover right now 🌊 Stays put even in storms and heavy wind. Keeps your engine completely dry and protected. Hundreds of happy customers already. See why for yourself 👇',
+      message: 'Boat owners are talking about this cover right now 🌊\n\nStays put even in storms and heavy wind.\nKeeps your engine completely dry and protected.\nHundreds of happy customers already.\n\nSee why for yourself 👇',
       headline: 'The Engine Cover Boat Owners Trust',
       description: 'Rated 5 out of 5 by verified customers.',
     },
     SO: {
       adset: 'Motorhölje UK - SO',
-      message: 'Your engine is worth too much to leave unprotected ⚓ Shield it from rain, sun, salt and rust. Universal fit, easy to put on. On sale right now. Order before stock runs out 👇',
+      message: 'Your engine is worth too much to leave unprotected ⚓\n\nShield it from rain, sun, salt and rust.\nUniversal fit, easy to put on.\n\nOn sale right now. Order before stock runs out 👇',
       headline: 'Protect Your Engine — Before Winter',
       description: 'Limited-time sale price — now.',
     },

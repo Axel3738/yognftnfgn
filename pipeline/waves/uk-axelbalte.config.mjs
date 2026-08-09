@@ -11,19 +11,19 @@ export default {
   concepts: {
     PD: {
       adset: 'Axelbälte UK - PD',
-      message: "Sore shoulders after a day in the garden? 😩\nThis belt spreads the trimmer's weight evenly across your shoulder. Less strain on your arms, neck and back. Adjustable for a fit that's right for you.\nTrim longer, without the ache. 👇 Order yours today.",
+      message: "Sore shoulders after a day in the garden? 😩\n\nThis belt spreads the trimmer's weight evenly across your shoulder.\nLess strain on your arms, neck and back.\nAdjustable for a fit that's right for you.\n\nTrim longer, without the ache.\n👇 Order yours today.",
       headline: 'Trim Without the Shoulder Pain',
       description: 'Padded, adjustable shoulder belt for trimmers.',
     },
     SP: {
       adset: 'Axelbälte UK - SP',
-      message: '"Best thing I\'ve bought for the garden this year." ⭐⭐⭐⭐⭐\nThousands of happy customers already trust this shoulder belt. Spreads the trimmer\'s weight — saves your shoulders and back. Adjustable, padded and built to last.\nSee why so many choose it. 👇',
+      message: '"Best thing I\'ve bought for the garden this year." ⭐⭐⭐⭐⭐\n\nThousands of happy customers already trust this shoulder belt.\nSpreads the trimmer\'s weight — saves your shoulders and back.\nAdjustable, padded and built to last.\n\nSee why so many choose it. 👇',
       headline: 'Trim Without the Shoulder Pain',
       description: 'Trusted by thousands of gardeners.',
     },
     SO: {
       adset: 'Axelbälte UK - SO',
-      message: "Garden season is here 🌿\nStop carrying the trimmer's full weight yourself. This belt spreads the pressure evenly across your shoulder. Adjustable — fits you, whatever your size.\nOn sale now. Order before stock runs out. 👇",
+      message: "Garden season is here 🌿\n\nStop carrying the trimmer's full weight yourself.\nThis belt spreads the pressure evenly across your shoulder.\nAdjustable — fits you, whatever your size.\n\nOn sale now. Order before stock runs out. 👇",
       headline: 'Trim Without the Shoulder Pain',
       description: 'Special price right now — limited stock.',
     },

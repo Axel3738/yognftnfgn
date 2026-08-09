@@ -1,7 +1,7 @@
 // Kampanj: Sätesöverdraget UK — ride-on mower seat cover 600D
 // OBS: samma copy på alla ads (per Axels instruktion), ads skapas PAUSADE (utkast).
 const COPY = {
-  message: "Your riding mower seat is soaked every morning and scorching every afternoon. 😩\nOur seat cover slips straight over your existing cushion: ✅ Water-repellent 600D Oxford — a dry seat even after rain ✅ Padded inside, so it takes the bumps for you ✅ Adjustable straps that won't slip, even on rough ground ✅ On in under 60 seconds — no tools needed Fits most riding mowers and garden tractors. Four colours.\n👉 Tap the link and see how easily it goes on.",
+  message: "Your riding mower seat is soaked every morning and scorching every afternoon. 😩\n\nOur seat cover slips straight over your existing cushion:\n✅ Water-repellent 600D Oxford — a dry seat even after rain\n✅ Padded inside, so it takes the bumps for you\n✅ Adjustable straps that won't slip, even on rough ground\n✅ On in under 60 seconds — no tools needed\n\nFits most riding mowers and garden tractors. Four colours.\n\n👉 Tap the link and see how easily it goes on.",
   headline: 'Dry, Comfortable Seat — All Season Long',
   description: 'Universal fit. Installs in under a minute.',
 };
