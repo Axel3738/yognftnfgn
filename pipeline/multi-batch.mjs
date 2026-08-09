@@ -205,7 +205,8 @@ for (const camp of cfg.campaigns) {
             call_to_action: { type: 'SHOP_NOW', value: { link: copy.link } },
           }});
         } else {
-          form.object_story_spec = JSON.stringify({ page_id: cfg.page });
+          form.object_story_spec = JSON.stringify({ page_id: cfg.page,
+            ...(cfg.instagram ? { instagram_user_id: cfg.instagram } : {}) });
           form.asset_feed_spec = JSON.stringify(assetFeedFor(r.variants, copy));
         }
         const creative = await api(`${cfg.act}/adcreatives`, { method: 'POST', form });

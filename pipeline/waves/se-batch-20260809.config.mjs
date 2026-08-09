@@ -4,6 +4,7 @@
 export default {
   act: 'act_1867947880635861', // MagiBorsten (SE)
   page: '678639638662543',     // Bäverbutiken.se
+  instagram: '17841474144960111', // Bäverbutiken-IG — krävs av placeringsanpassade annonser
   pixel: '1554276343018184',
   targeting: {
     age_min: 18, age_max: 65,
