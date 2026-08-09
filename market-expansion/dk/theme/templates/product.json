@@ -1,0 +1,326 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "price": {
+          "type": "price",
+          "disabled": true,
+          "settings": {}
+        },
+        "separator": {
+          "type": "separator",
+          "disabled": true,
+          "settings": {}
+        },
+        "2a440565-4e58-46a5-b7d5-dc06ac285d67": {
+          "type": "trust_badge",
+          "disabled": true,
+          "settings": {}
+        },
+        "judge_me_reviews_preview_badge_4rTrgy": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "color_swatches": false
+          }
+        },
+        "quantity_selector_RcFFzQ": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "sales_point_pAqwJ8": {
+          "type": "sales_point",
+          "settings": {
+            "icon": "checkmark",
+            "text": "Holder fast. Hver gang."
+          }
+        },
+        "sales_point_rj9NaB": {
+          "type": "sales_point",
+          "settings": {
+            "icon": "checkmark",
+            "text": "Intet værktøj. Ingen lodning."
+          }
+        },
+        "sales_point_xdmm3f": {
+          "type": "sales_point",
+          "settings": {
+            "icon": "checkmark",
+            "text": "Klaret på fem sekunder."
+          }
+        },
+        "separator_tKiicL": {
+          "type": "separator",
+          "disabled": true,
+          "settings": {}
+        },
+        "kaching_bundles_app_block_nbzJm4": {
+          "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
+          "settings": {
+            "product": "{{product}}",
+            "manual_deal_block_id": ""
+          }
+        },
+        "83aaa908-70b0-4be6-b824-7bff7d71dce4": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "surface_pickup_enable": true
+          }
+        },
+        "sales_point": {
+          "type": "sales_point",
+          "settings": {
+            "icon": "truck",
+            "text": "5-10 hverdage – fri fragt i Danmark"
+          }
+        },
+        "tab_tRn9mP": {
+          "type": "tab",
+          "settings": {
+            "title": " Tekniske specifikationer",
+            "content": "<h3></h3><ul><li>Passer til kabelareal: <strong>0,34–0,82 mm²</strong></li><li>Lederdiameter: <strong>0,64–1,02 mm</strong></li><li>Kablets udvendige diameter: <strong>1,6–2,0 mm</strong></li></ul>",
+            "page": ""
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "is_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "price",
+        "separator",
+        "2a440565-4e58-46a5-b7d5-dc06ac285d67",
+        "judge_me_reviews_preview_badge_4rTrgy",
+        "variant_picker",
+        "quantity_selector_RcFFzQ",
+        "sales_point_pAqwJ8",
+        "sales_point_rj9NaB",
+        "sales_point_xdmm3f",
+        "separator_tKiicL",
+        "kaching_bundles_app_block_nbzJm4",
+        "83aaa908-70b0-4be6-b824-7bff7d71dce4",
+        "sales_point",
+        "tab_tRn9mP",
+        "description"
+      ],
+      "settings": {
+        "sku_enable": false,
+        "image_position": "left",
+        "image_size": "medium",
+        "product_zoom_enable": true,
+        "thumbnail_position": "beside",
+        "thumbnail_arrows": false,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    },
+    "rich_text_EiwYRN": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_AzNePB": {
+          "type": "heading",
+          "settings": {
+            "title": "Certifikater & EU-overensstemmelse"
+          }
+        }
+      },
+      "block_order": [
+        "heading_AzNePB"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "text_and_image_R7LUjR": {
+      "type": "text-and-image",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/Namnlos_design_-_2026-02-28T151050.237.png",
+        "image2": "shopify://shop_images/WhatsApp_Image_2026-03-02_at_03.05.51.jpg",
+        "image_width": 700,
+        "subtitle": "",
+        "title": "",
+        "text": "",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "layout": "right",
+        "divider": false
+      }
+    },
+    "1782019494ec669301": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_DbUHMw": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_DbUHMw"
+      ],
+      "settings": {}
+    },
+    "contact_form_Ak9e7i": {
+      "type": "contact-form",
+      "name": "Contact form",
+      "settings": {
+        "title": "Kontakt os",
+        "text": "",
+        "show_phone": false,
+        "narrow_column": true
+      }
+    },
+    "sub": {
+      "type": "product-full-width",
+      "disabled": true,
+      "settings": {
+        "max_width": true
+      }
+    },
+    "background-image-text": {
+      "type": "background-image-text",
+      "disabled": true,
+      "settings": {
+        "subtitle": "Impressive",
+        "title": "About your brand",
+        "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.</p>",
+        "button_label": "",
+        "button_link": "",
+        "focal_point": "center",
+        "layout": "left",
+        "height": 550,
+        "framed": true,
+        "parallax": false
+      }
+    },
+    "text-and-image2": {
+      "type": "text-and-image",
+      "disabled": true,
+      "settings": {
+        "image_width": 700,
+        "subtitle": "",
+        "title": "About your brand",
+        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "layout": "left",
+        "divider": false
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonials-0": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author's name",
+            "author_info": "Los Angeles, CA"
+          }
+        },
+        "testimonials-1": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author's name",
+            "author_info": "Los Angeles, CA"
+          }
+        },
+        "testimonials-2": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author's name",
+            "author_info": "Los Angeles, CA"
+          }
+        }
+      },
+      "block_order": [
+        "testimonials-0",
+        "testimonials-1",
+        "testimonials-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Testimonials",
+        "align_text": "center",
+        "round_images": true,
+        "color_background": "#f9f9f9",
+        "color_text": "#1c1d1d"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_heading": "Du vil måske også kunne lide",
+        "related_count": 5
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "settings": {
+        "recent_count": 5
+      }
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "settings": {}
+    },
+    "loox-product-reviews-app-section": {
+      "type": "apps",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_EiwYRN",
+    "text_and_image_R7LUjR",
+    "1782019494ec669301",
+    "contact_form_Ak9e7i",
+    "sub",
+    "background-image-text",
+    "text-and-image2",
+    "testimonials",
+    "product-recommendations",
+    "recently-viewed",
+    "collection-return",
+    "loox-product-reviews-app-section"
+  ]
+}
