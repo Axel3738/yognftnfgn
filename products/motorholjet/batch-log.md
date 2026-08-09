@@ -260,7 +260,8 @@ format.
 
 Kvot: **14 per 3-dagarscykel**. Läge före batchen: **-14 efter plan**.
 Levererat: **14** (11 bild/karusell + 3 video). Briefer: `products/motorholjet/batch-05/`.
-Status: **briefade, ej launchade.**
+Status: **3 av 14 launchade 7 aug — endast videorna. De 11 statiska byggdes aldrig.**
+Rättat 2026-08-09 mot kontot; stod tidigare "briefade, ej launchade".
 
 **Diagnosen batchen bygger på:** SP-copyn konverterar 11,3 % av landningssidebesöken mot PD:s
 4,6 %, ger 1 145 kr vinst per 1 000 kr — och har 11 % av spenden. PD-copyn bär 61 % av spenden med
@@ -293,4 +294,115 @@ kontots sämsta klickkvalitet i tre annonser och två format. Och den största e
 - **#1–#3 måste ha identisk copy, rubrik och CTA.** Skiljer något annat är trevägstestet dött.
 - **#7 och #8 måste ligga i samma adset med jämförbar budget.**
 - **#13 är ett omklipp** — footagen får inte röras.
+- Logga launchen: `node pipeline/quota.mjs log motorholjet <antal>`.
+
+---
+
+## Feedbackloop 2026-08-09 (femte /cs) — utfall batch #5 och omvärdering av batch #1–#4
+
+### Det som överskuggar allt: copy-problemet är inte åtgärdat, men rotorsaken är hittad
+
+`COPY-FIX.md` levererades 2026-08-06. Ingenting i den är gjort. De tre batch-#5-videor som
+launchades 7 augusti ärvde alla ett gammalt textblock, precis som batch #4.
+
+**Men vi vet nu varför.** Texten fylls i automatiskt från ett sparat block som väljs på
+vinkelprefixet i annonsnamnet (`PD_`, `SP_`, `SO_`). Det är en mall, inte slarv annons för annons.
+Därmed är rättningen **tre ändringar, inte sjutton** — byt innehållet i de tre blocken. Se
+`batch-06/START-HERE.md` punkt 1.
+
+### Det näst viktigaste: allt tappar effektivitet när det skalas
+
+Nio annonser mättes om mot sina egna siffror från 2026-08-06. Alla föll utom `PD_1_H3`, som låg
+still medan den tog 2 972 kr till. `SP_5_H1` gick från 1 405 till **77** kr per 1 000 kr på
+1 505 extra kronor. `PD_6_C1` gick från 341 till **−242** på 4 456 extra kronor.
+
+Det gör om hela strategin: uppgiften är inte att hitta en creative med hög avkastning på låg spend
+— vi hittar sådana varje batch och de dör varje gång. Uppgiften är att hitta en till som **klarar
+volym**. Batch #6 riktar fyra creatives direkt mot den frågan.
+
+### Utfall per annons — batch #5
+
+| # | Annons | Launchad? | Utfall | Höll hypotesen? |
+|---|---|---|---|---|
+| 1–4 | `SP_12_1`, `SP_12_2`, `SP_12_3`, `SP_14_1` | **Nej** | Byggdes aldrig | Otestad. Bildtestet görs om i batch #6 som `SO_16_1`–`SO_16_4` |
+| 5–6 | `PD_16_1`, `PD_17_1` | **Nej** | Byggdes aldrig | Otestad. PD-omskrivningen görs om från bildsidan i batch #6 |
+| 7–8 | `SO_14_1`, `SO_14_2` | **Nej** | Byggdes aldrig | Prisbevis i bild otestat för tredje gången. Görs om som `SO_17_1` mot `SO_16_1` |
+| 9 | `SO_15_1` | **Nej** | Byggdes aldrig | Otestad |
+| 10–11 | `SO_13_C1`, `PD_18_C1` | **Nej** | Byggdes aldrig | Karusellformatet fortfarande aldrig kört. Tredje försöket i batch #6 |
+| 12 | `Enginecover_SP_13_H1` | Ja, 7 aug, 3 öppningar | 127 kr totalt, 0 köp. **Adsetet pausades vid 718 kr och 2 köp.** Ärvde SP-blocket med förbjudet kundantal | **Ingen dom** — under grinden, och testet avbröts innan det kunde läsas |
+| 13 | `Enginecover_SP_15_H1` | Ja, 7 aug | 26 kr, 0 köp. Samma pausade adset | **Ingen dom** — dekompositionstestet är fortfarande obesvarat |
+| 14 | `Enginecover_PD_16_H1` | Ja, 7 aug | **683 kr, 0 köp.** CTR 1,59 %, hold 14,5 % | **Ingen dom** (under 3 köp). Och den ärvde **det gamla PD-blocket** — omskrivningen den skulle testa kördes aldrig, så nollan säger inget om hypotesen |
+
+**Slutsats om batch #5:** ingen av de fjorton hypoteserna kunde besvaras. Elva byggdes inte, tre
+launchades med fel copy varav två pausades under grinden. Detta är tredje batchen i rad utan ett
+enda läsbart kontrollerat test.
+
+### Nya dömbara annonser från äldre batcher
+
+| Annons | Batch | Spend | Köp | CPA | kr/1 000 kr | Dom |
+|---|---|---|---|---|---|---|
+| `Enginecover_PD_8_1` | #2 | 642 kr | 4 | 160,40 | 471 | **Lönsam.** Kontots lägsta CTR (1,15 %) och näst bästa köp per klick (5,8 %) — bekräftar mönster 3 |
+| `Enginecover_SO_8_1` | #4 | 910 kr | 4 | 227,44 | 38 | **Marginell.** Senaste 7 dygn CPA 262 → över break-even. Pausa |
+| `Enginecover_PD_7_H1` | #3 | 1 141 kr | 4 | 285,36 | **−173** | **Förlorar pengar på livstid**, men senaste 7 dygn 226 → under break-even. Trenden håller inte. Lämna, läs av om tre dagar |
+
+### Vad som hände med hypoteserna från 2026-08-06
+
+- **"SP-blocket ska skalas" (backlog B10): FALSIFIERAD.** Blocket halverades från 1 145 till 550
+  kr/1 000 kr när `SP_5_H1` fick pengar. Rekommendationen byggde på två annonser varav en hade
+  687 kr spend. Struken i `dna.md`.
+- **"Format är inte huvudvariabeln" (mönster 1): STÄRKT.** Femte annonsen på identisk SO-copy kom
+  in på 38 kr/1 000 kr. Spridningen inom identisk copy är nu 34-faldig.
+- **"Billiga klick konverterar sämst" (mönster 3): STÄRKT.** Håller på tolv annonser, tredje
+  körningen i rad.
+- **"PD-bodyn ska skrivas om, inte hookas om" (B7): FORTFARANDE OBESVARAD.** Omskrivningen har
+  briefats två gånger och kört noll gånger.
+
+---
+
+## Batch #6 — 2026-08-09 (18 creatives, briefade)
+
+Kampanjens dagsbudget visade sig vara **4 000 kr/dag**, inte 6 000 som `products.json` sa. Rättat.
+Det höjde kvoten i stället för att sänka den — testandelen går från 10 % till 20 % vid den
+budgetnivån, så **kvoten är 18 per 3-dagarscykel**, inte 14. Läge före batchen: **−36 efter plan.**
+Levererat: **18** (12 bild/karusell + 6 video). Briefer: `products/motorholjet/batch-06/`.
+
+**Designprincipen:** varje annons i batchen isolerar **bilden eller filmen**, aldrig orden. Om hela
+batchen ärver samma felaktiga copy-block skiljer sig annonserna ändå bara på det vi ville testa,
+och jämförelsen går fortfarande att läsa. Det är avsiktligt efter tre förstörda batcher — men
+brieferna kräver ändå att copy-cardet klistras in.
+
+| # | Annons | Format | Isolerad variabel | Hypotes |
+|---|---|---|---|---|
+| 1 | Enginecover_SO_16_1 | Statisk | **Bilden:** vidbild i miljö | Bilden är den dominerande variabeln — fyran separerar trots identisk copy |
+| 2 | Enginecover_SO_16_2 | Statisk | **Bilden:** makro på tyg | Materialdetalj bygger mer tillit än miljö |
+| 3 | Enginecover_SO_16_3 | Statisk | **Bilden:** split med/utan | Jämförelsen läses snabbast av de fyra |
+| 4 | Enginecover_SO_16_4 | Statisk | **Bilden:** ren produkt på vitt | Kontroll — om den vinner gjorde miljön aldrig något jobb |
+| 5 | Enginecover_SO_17_1 | Statisk | **Prisbevis i bild**, samma foto som #1 | Tredje försöket. Kontrollen ligger redan i adsetet |
+| 6 | Enginecover_PD_19_1 | Statisk | Storleksfinnare som bild | Kvalificering före klicket lyfter köp/klick över 2,4 % |
+| 7 | Enginecover_PD_19_2 | Statisk | Värderamning | Samma läcka, annan dörr |
+| 8 | Enginecover_SO_18_C1 | **Karusell, 4 kort** | Formatet — tredje försöket | Sekvens slår enkel bild i samma block |
+| 9 | Enginecover_PD_20_C1 | **Karusell, 5 kort** | Storleksfinnare som sekvens | Fjärde försöket på storlekskvalificering |
+| 10 | Enginecover_PD_21_H1 | Video 20 s | **PD_1_H3:s struktur, ny footage** | Hållbarheten sitter i formatet, inte i filen |
+| 11 | Enginecover_PD_22_H1 | Video 35 s | **Längden**, samma inspelning som #10 | Mer innehåll per annons bromsar tappet |
+| 12 | Enginecover_SP_16_H1 | Video 20 s | **Talaren:** tredje creatorn | Vinkeln är portabel mellan personer |
+| 13 | Enginecover_SP_17_H1 | Video 20 s | **Inget ansikte i bild** | Förtroendet sitter i orden, inte i personen — då kan blocket produceras i volym |
+| 14 | Enginecover_SO_19_H1 | Video 15 s | **Publiken:** retargeting | **BLOCKERAD** tills adsetet finns (B8) |
+| 15 | Enginecover_SO_16_5 | Statisk | **Bilden:** person i bild | Femte armen i bildtestet. Person i stillbild är aldrig testat |
+| 16 | Enginecover_SO_20_1 | Statisk | **Produktionsnivå:** råfoto | Ostylat mobilfoto slår producerad bild i offer-blocket |
+| 17 | Enginecover_SP_18_1 | Statisk | **Formatet:** SP-blocket som bild | SP har bara någonsin körts som video. Klarar klickkvaliteten en stillbild? |
+| 18 | Enginecover_PD_23_H1 | Video 15 s | **Längden:** kortaste demon | Syskon till PD_EXTRA så formatet kan skaltestas utan att riskera originalet |
+
+**Tre längder av samma demo:** #18 (15 s), #10 (20 s) och #11 (35 s) spelas in i samma session med
+samma röst och samma båt. Det är den renaste avläsningen av längd kontot någonsin haft.
+
+**Grindar vid launch:**
+- **`START-HERE.md` punkt 1 först.** Byt de tre sparade copy-blocken. Tre ändringar fixar allt.
+- **#1–#4 måste ligga i samma adset med jämförbar budget och vara identiska i allt utom bilden.**
+  Skiljer något annat är fyravägstestet dött.
+- **#5 måste använda exakt samma fotografi som #1.** Bara prisblocket tillkommer.
+- **#8 och #9 måste byggas som karusell, en bildfil per kort.** Kontrollera `child_attachments`
+  efter launch — två tidigare försök gick in som enkla bilder.
+- **#10 och #11 spelas in i samma session, samma båt, samma röst.** Annars mäter #11 inte längden.
+- **#14 får inte launchas i ett kallt adset.** Det hände `SO_10_H1` och gav 156 kr oläsbar data.
+- **Ingen dom under 300 kr och 3 köp — per annons, inte per adset.**
 - Logga launchen: `node pipeline/quota.mjs log motorholjet <antal>`.
