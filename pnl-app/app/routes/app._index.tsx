@@ -23,7 +23,7 @@ import {
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { compute, rangeWindow } from "../lib/pnl.server";
-import { fetchProductMix, fetchSales, fetchSessions, fetchShopToday } from "../lib/shopify-data.server";
+import { fetchOrderData, fetchShopInfo } from "../lib/shopify-data.server";
 import { getSpend } from "../lib/meta.server";
 
 const RANGES: Record<string, string> = {
@@ -39,7 +39,8 @@ export async function loader({ request }: LoaderFunctionArgs) {
   const url = new URL(request.url);
   const rangeKey = url.searchParams.get("range") ?? "30d";
 
-  const today = await fetchShopToday(admin);
+  const shopInfo = await fetchShopInfo(admin);
+  const today = shopInfo.today;
   const [from, to] = rangeWindow(rangeKey, today, {
     from: url.searchParams.get("from") ?? today,
     to: url.searchParams.get("to") ?? today,
@@ -51,13 +52,14 @@ export async function loader({ request }: LoaderFunctionArgs) {
     update: {},
   });
 
-  // Shopify-anropen är oberoende av varandra — kör dem parallellt.
-  const [sales, sessions, products, costChanges] = await Promise.all([
-    fetchSales(admin, from, to),
-    fetchSessions(admin, from, to),
-    fetchProductMix(admin, from, to),
+  const [orderData, costChanges] = await Promise.all([
+    fetchOrderData(admin, from, to, shopInfo.timezone),
     prisma.costChange.findMany({ where: { shop: session.shop } }),
   ]);
+  const { sales, products } = orderData;
+  /* Sessioner/CVR finns inte i det publika Admin-API:t — analytics-ytan är
+     intern hos Shopify. Tom serie => "—" i panelen. */
+  const sessions: never[] = [];
 
   const spend = await getSpend(
     session.shop,
@@ -113,7 +115,7 @@ export default function Dashboard() {
   const kpis: { label: string; value: string; sub: string; tone?: "critical" | "success" }[] = [
     { label: "Försäljning", value: money(t.totalSales), sub: `varav frakt ${money(t.shipping)}` },
     { label: "Ordrar", value: nf.format(t.orders), sub: `snittorder ${money(t.aov)}` },
-    { label: "Sessioner", value: nf.format(t.sessions), sub: `CVR ${pct(t.cvr)}` },
+    { label: "Sessioner", value: t.sessions ? nf.format(t.sessions) : "—", sub: "kräver Shopify-analytics" },
     {
       label: "Annonskostnad",
       value: money(t.spend),

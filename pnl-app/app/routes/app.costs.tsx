@@ -34,7 +34,7 @@ import { fetchVariantCosts, setUnitCost } from "../lib/shopify-data.server";
 export async function loader({ request }: LoaderFunctionArgs) {
   const { admin } = await authenticate.admin(request);
   const costs = await fetchVariantCosts(admin);
-  const rows = [...costs.values()].sort((a, b) => {
+  const rows = [...costs.all].sort((a, b) => {
     // Saknade kostnader först — det är dem man är här för att fixa.
     if ((a.unitCost == null) !== (b.unitCost == null)) return a.unitCost == null ? -1 : 1;
     return a.productTitle.localeCompare(b.productTitle, "sv");
@@ -72,7 +72,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
   for (const row of parsed) {
     // Tom varianttitel = alla varianter i produkten.
-    const targets = [...catalog.values()].filter(
+    const targets = catalog.all.filter(
       (v) =>
         v.productTitle.toLowerCase() === row.product.toLowerCase() &&
         (row.variant === "" || v.variantTitle.toLowerCase() === row.variant.toLowerCase()),
