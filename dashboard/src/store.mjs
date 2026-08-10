@@ -16,7 +16,15 @@ export const EVENT_TYPES = [
   'revision_requested',  // granskaren vill ha ändringar
   'approved',            // godkänd, klar
   'cancelled',           // nedlagd
+  'observed',            // "så här såg statusen ut när vi tittade" — se nedan
 ];
+
+// `observed` finns för att kunna importera ett befintligt system utan att ljuga.
+// Notion sparar ingen statushistorik: vi vet att en task ÄR godkänd, men inte NÄR
+// den blev det. En `observed` sätter därför tillståndet utan att påstå någon
+// tidpunkt — den räknas aldrig som en leverans och ger aldrig en ledtid.
+// Riktiga tider börjar samlas först när pollern ser en statusövergång ske.
+const OBSERVED_STATES = ['assigned', 'in_progress', 'in_review', 'revision', 'approved', 'cancelled'];
 
 const REQUIRED = ['ts', 'type', 'task_id'];
 
@@ -103,6 +111,7 @@ export function foldTasks(events) {
         approvedAt: null, cancelledAt: null,
         deliveries: [], revisions: [],
         state: 'assigned',
+        observedAt: null, observedStatus: null, estimated: false,
         source: ev.source || null,
       };
       tasks.set(ev.task_id, t);
@@ -150,6 +159,17 @@ export function foldTasks(events) {
       case 'cancelled':
         t.cancelledAt = ev.ts;
         t.state = 'cancelled';
+        break;
+
+      case 'observed':
+        if (!OBSERVED_STATES.includes(ev.state)) {
+          throw new Error(`observed-händelse för ${ev.task_id} har okänt state "${ev.state}"`);
+        }
+        // Sätter tillståndet, men inga tidsstämplar — vi vet inte när det hände.
+        t.state = ev.state;
+        t.observedAt = ev.ts;
+        t.observedStatus = ev.raw_status || null;
+        t.estimated = true;
         break;
     }
   }

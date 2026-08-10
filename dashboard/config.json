@@ -36,22 +36,27 @@
   },
 
   "notion": {
-    "databaseId": "",
+    "databaseId": "36f270ab908c803b8949ff2326f4f76c",
+    "_databaseName": "Creative Hub master",
+    "_otherHubs": {
+      "Boat cover 420D creative hub": "3b0270ab908c80a78793fa11d8c0f6e4",
+      "Trimmer belt creative hub": "3aa270ab908c808b9d87d1f1a0d70cbc"
+    },
     "propertyMap": {
-      "title": "Uppgiftsnamn",
-      "assignee": "Tilldelad",
+      "title": "Namn",
+      "assignee": "Ansvarig",
       "status": "Status",
-      "due": "Förfallodatum",
+      "due": "Godkänd datum",
       "type": "Typ",
-      "brand": "Brand"
+      "brand": "Kategori"
     },
     "statusMap": {
-      "assigned": ["Not started", "To-do", "Att göra"],
-      "started": ["In progress", "Pågår"],
-      "delivered": ["In review", "Granskning", "Klar för review"],
-      "revision_requested": ["Revision", "Ändringar", "Changes requested"],
-      "approved": ["Done", "Klar", "Godkänd"],
-      "cancelled": ["Cancelled", "Avbruten"]
+      "assigned": ["Draft"],
+      "started": ["In progress", "To be translated"],
+      "delivered": ["Creative strat review", "To be Reviewed", "In Review", "Translation in review", "Hereer to be rewied"],
+      "revision_requested": ["In progress 2"],
+      "approved": ["Approved", "Archived", "Translation archived"],
+      "cancelled": ["Not used"]
     }
   }
 }

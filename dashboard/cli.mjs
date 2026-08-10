@@ -160,6 +160,34 @@ async function cmdIngest() {
     return;
   }
 
+  if (kind === 'notion-rows') {
+    if (!arg) die('Användning: node cli.mjs ingest notion-rows <uttag.json>');
+    const { rowsToEvents } = await import('./src/ingest/notion-rows.mjs');
+    const raw = JSON.parse(readFileSync(resolve(arg), 'utf8'));
+    const rows = Array.isArray(raw) ? raw : raw.rows;
+    if (!Array.isArray(rows)) die('Filen saknar en "rows"-array.');
+
+    const { events: incoming, unknownStatuses, skipped } = rowsToEvents(rows, editors, raw.hub || 'notion');
+    const existing = readEvents(P.events);
+    const { merged, added } = mergeEvents(existing, incoming);
+
+    if (unknownStatuses.length) {
+      say(`⚠ Okända statusar (mappas inte): ${unknownStatuses.join(', ')}`);
+      say('  Lägg till dem i STATE_BY_STATUS i src/ingest/notion-rows.mjs.');
+    }
+    if (skipped) say(`⚠ Hoppade över ${skipped} rader utan giltig createdTime.`);
+
+    if (flags['dry-run']) {
+      say(`(dry-run) ${rows.length} rader → ${incoming.length} händelser · ${added} nya.`);
+      return;
+    }
+    writeEvents(P.events, merged);
+    say(`✔ Importerade ${added} händelser från ${rows.length} Notion-rader (${raw.hub || 'notion'}).`);
+    say('  Endast tilldelningstid är äkta. Nuvarande status bokförs utan tidpunkt —');
+    say('  ledtider börjar mätas när `ingest notion` ser övergångar ske.');
+    return;
+  }
+
   if (kind === 'notion') {
     const { pollNotion } = await import('./src/ingest/notion.mjs');
     const token = process.env.NOTION_TOKEN;

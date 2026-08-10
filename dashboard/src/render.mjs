@@ -15,6 +15,14 @@ const SERIES = {
   dark:  ['#3987e5', '#d95926', '#199e70', '#c98500', '#d55181', '#008300', '#9085e9', '#e66767'],
 };
 
+// Statusarna är ett flöde, inte identiteter — därför en ordinal enhuesramp
+// (ljus → mörk i ljust läge, mörk → ljus i mörkt), inte kategoriska färger.
+// Stegen är valda så det ljusaste/mörkaste ändå klarar 2:1 mot ytan.
+const PIPELINE = {
+  light: { assigned: '#86b6ef', in_progress: '#5598e7', in_review: '#2a78d6', revision: '#1c5cab', approved: '#104281', cancelled: '#c3c2b7' },
+  dark:  { assigned: '#184f95', in_progress: '#256abf', in_review: '#3987e5', revision: '#6da7ec', approved: '#9ec5f4', cancelled: '#52514e' },
+};
+
 export function renderDashboard({ config, editors, byPeriod, defaultPeriod, demo }) {
   const payload = {
     config: {
@@ -30,6 +38,7 @@ export function renderDashboard({ config, editors, byPeriod, defaultPeriod, demo
     defaultPeriod,
     demo,
     series: SERIES,
+    pipeline: PIPELINE,
   };
 
   return `<!doctype html>
@@ -255,6 +264,7 @@ function colorOf(id) {
   return c[(i == null ? 0 : i) % c.length];
 }
 function nameOf(id) {
+  if (!id) return 'Ingen ansvarig';
   const e = P.editors.find(x => x.id === id);
   return e ? e.name : id;
 }
@@ -552,7 +562,9 @@ function render() {
       el('div', { class: 'sub', text: CFG.team + ' · arbetstid ' + CFG.workday + ' ' + CFG.timezone +
         ' · uppdaterad ' + new Date(M.generatedAt).toLocaleString('sv-SE', { dateStyle: 'medium', timeStyle: 'short' }) }),
     ]),
-    el('div', { class: 'controls' }, [periodBtns]),
+    // Periodväxlaren styr bara tidsbaserade mätetal — göm den när det inte
+    // finns några, annars ser den ut att vara trasig.
+    M.team.deliveries > 0 ? el('div', { class: 'controls' }, [periodBtns]) : null,
   ]));
 
   if (P.demo) {
@@ -564,19 +576,151 @@ function render() {
     ]));
   }
 
+  const snap = M.snapshot || { timedTasks: 0, estimatedTasks: 0, totalTasks: 0, editors: [] };
+  const hasTiming = M.team.deliveries > 0;
+
+  if (!hasTiming && snap.estimatedTasks > 0) {
+    app.appendChild(el('div', { class: 'banner' }, [
+      el('span', { text: '⏳' }),
+      el('div', { html:
+        '<b>Ledtider saknas ännu — och det är inte ett fel i panelen.</b> ' +
+        'Datan är importerad från Notion, som inte sparar statushistorik: vi vet vilket läge varje task ' +
+        '<i>är</i> i, men inte <i>när</i> den kom dit. Fältet <code>Godkänd datum</code> är ifyllt på 2 av 199 rader. ' +
+        'Panelen vägrar räkna ledtid på gissade tidpunkter. ' +
+        'Nulägesvyn nedan är däremot helt äkta, och riktiga ledtider börjar mätas så fort ' +
+        '<code>ingest notion</code> körts ett par gånger och sett en status ändras.' }),
+    ]));
+  }
+
   /* --- alla mätetal förklaras i tid som räknas i arbetstimmar --- */
-  app.appendChild(tilesSection(M));
-  app.appendChild(dailySection(M));
-  app.appendChild(compareSection(M));
-  app.appendChild(leaderboardSection(M));
+  if (snap.editors.length) app.appendChild(snapshotSection(M));
+  if (hasTiming) {
+    app.appendChild(tilesSection(M));
+    app.appendChild(dailySection(M));
+    app.appendChild(compareSection(M));
+    app.appendChild(leaderboardSection(M));
+  }
   app.appendChild(flagsSection(M));
-  app.appendChild(tasksSection(M));
+  if (hasTiming) app.appendChild(tasksSection(M));
 
   app.appendChild(el('footer', { class: 'foot', html:
     'Alla ledtider räknas i <b>arbetstid</b> (' + CFG.workday + ', mån–fre) — inte kalendertid. ' +
     'Nätter och helger räknas inte mot någon. ' +
     'Perioden filtrerar på <b>leveransdatum</b>, så historiken flyttar sig inte när gamla tasks godkänns. ' +
     'Beläggning är en <b>uppskattning</b> ur handpåläggningstid, inte tidrapportering.' }));
+}
+
+const STATE_TEXT = {
+  assigned: 'Ej påbörjad', in_progress: 'Pågår', in_review: 'I granskning',
+  revision: 'Omgörning', approved: 'Klar', cancelled: 'Nedlagd',
+};
+
+function pipelineColor(state) {
+  return (isDark() ? P.pipeline.dark : P.pipeline.light)[state];
+}
+
+/* Nuläge: var varje persons tasks står just nu. Kräver ingen tidshistorik. */
+function snapshotSection(M) {
+  const snap = M.snapshot;
+  const states = snap.states;
+  const rows = snap.editors;
+
+  const W = 640, rowH = 40, padL = 150, padR = 52, padT = 4;
+  const H = padT + rows.length * rowH + 8;
+  const maxTotal = Math.max(1, ...rows.map(r => r.total));
+  const wrap = el('div', { class: 'chart-wrap' });
+  const svg = s('svg', { width: '100%', height: H, viewBox: '0 0 ' + W + ' ' + H,
+    preserveAspectRatio: 'xMinYMin meet', role: 'img', 'aria-label': 'Tasks per redigerare, fördelat på status' });
+  const tip = attachTooltip(wrap);
+  const barH = 22, GAP = 2;
+
+  rows.forEach((r, i) => {
+    const yTop = padT + i * rowH + (rowH - barH) / 2;
+    const scale = (W - padL - padR) / maxTotal;
+    let x = padL;
+
+    svg.appendChild(s('text', { class: 'cat-label', x: padL - 10, y: yTop + barH / 2 + 4,
+      'text-anchor': 'end', text: r.name }));
+
+    const segs = states.map(st => ({ st, v: r.byState[st] || 0 })).filter(sg => sg.v > 0);
+    segs.forEach((sg, si) => {
+      const full = sg.v * scale;
+      const w = Math.max(1, full - (si < segs.length - 1 ? GAP : 0));
+      const isLast = si === segs.length - 1;
+      svg.appendChild(s('path', {
+        d: isLast ? roundedEndBar(x, yTop, w, barH, 4) : roundedEndBar(x, yTop, w, barH, 0),
+        fill: pipelineColor(sg.st),
+      }));
+      x += full;
+    });
+
+    svg.appendChild(s('text', { class: 'val-label', x: padL + r.total * scale + 8,
+      y: yTop + barH / 2 + 4, text: String(r.total) }));
+
+    const hit = s('rect', { class: 'hit', x: 0, y: padT + i * rowH, width: W, height: rowH });
+    hit.addEventListener('mousemove', ev => {
+      const bb = wrap.getBoundingClientRect();
+      const lines = segs.map(sg =>
+        '<div class="tt-row"><span class="l"><span class="k" style="background:' + pipelineColor(sg.st) + '"></span>' +
+        STATE_TEXT[sg.st] + '</span><span class="v">' + sg.v + '</span></div>').join('');
+      tip.show(ev.clientX - bb.left, ev.clientY - bb.top,
+        '<div class="tt-head">' + escapeHtml(r.name) + ' · ' + r.total + ' tasks</div>' + lines +
+        '<div class="tt-row"><span class="l">Äldsta öppna</span><span class="v">' + dur(r.oldestOpenMin) + '</span></div>');
+    });
+    hit.addEventListener('mouseleave', tip.hide);
+    svg.appendChild(hit);
+  });
+
+  svg.appendChild(s('line', { class: 'axis-line', x1: padL, x2: padL, y1: padT, y2: H - 8 }));
+  wrap.appendChild(svg);
+
+  const legend = el('ul', { class: 'legend' }, states.map(st =>
+    el('li', {}, [
+      el('span', { class: 'key', style: 'background:' + pipelineColor(st) }),
+      el('span', { text: STATE_TEXT[st] }),
+    ])));
+
+  const table = el('table', {}, [
+    el('thead', {}, [el('tr', {}, ['Redigerare', ...states.map(st => STATE_TEXT[st]), 'Totalt', 'Öppna', 'Äldsta öppna']
+      .map(h => el('th', { text: h, scope: 'col' })))]),
+    el('tbody', {}, rows.map(r => el('tr', {}, [
+      el('td', {}, [el('div', { class: 'who' }, [
+        el('span', { class: 'key', style: 'background:' + colorOf(r.id) }),
+        el('span', { text: r.name }),
+      ])]),
+      ...states.map(st => el('td', { class: 'num', text: num(r.byState[st] || 0) })),
+      el('td', { class: 'num', text: num(r.total) }),
+      el('td', { class: 'num', text: num(r.open) }),
+      el('td', { class: 'num', text: dur(r.oldestOpenMin) }),
+    ]))),
+  ]);
+
+  const tiles = [
+    { label: 'Tasks totalt', value: num(snap.totalTasks), hero: true },
+    { label: 'Utan ansvarig', value: num(snap.unassigned),
+      note: snap.totalTasks ? pct(snap.unassigned / snap.totalTasks) + ' av allt' : '' },
+    { label: 'Öppna just nu', value: num(snap.editors.reduce((a, e) => a + e.open, 0)) },
+    { label: 'Med mätbar ledtid', value: num(snap.timedTasks),
+      note: snap.timedTasks === 0 ? 'ingen tidshistorik ännu' : '' },
+  ];
+
+  return el('section', {}, [
+    el('div', { class: 'tiles' }, tiles.map(t => el('div', { class: 'tile' }, [
+      el('div', { class: 'label', text: t.label }),
+      el('div', { class: 'value' + (t.hero ? ' hero' : ''), text: t.value }),
+      el('div', { class: 'delta', text: t.note || '' }),
+    ]))),
+    el('div', { class: 'card', style: 'margin-top:16px' }, [
+      el('h2', { text: 'Nuläge per redigerare' }),
+      el('p', { class: 'hint', text: 'Var varje persons tasks står just nu. Bygger bara på tilldelning och nuvarande status — inga uppskattade tider.' }),
+      legend,
+      wrap,
+      el('details', { class: 'tableview' }, [
+        el('summary', { text: 'Visa som tabell' }),
+        el('div', { class: 'table-scroll' }, [table]),
+      ]),
+    ]),
+  ]);
 }
 
 function tilesSection(M) {
@@ -785,20 +929,38 @@ function leaderboardSection(M) {
 
 function flagsSection(M) {
   const ICON = { critical: '■', serious: '▲', warning: '▲' };
-  const items = M.flags.slice(0, 25).map(f => el('li', {}, [
+  const SHOWN = 25;
+  const items = M.flags.slice(0, SHOWN).map(f => el('li', {}, [
     el('span', { class: 'icon', style: 'color:' + STATUS[f.severity].color, text: ICON[f.severity] || '·' }),
     el('div', {}, [
-      el('div', { class: 'who-line', text: nameOf(f.editor) + ' · ' + f.task }),
-      el('div', { class: 'detail', text: f.detail + ' — ' + f.title }),
+      el('div', { class: 'who-line', text: f.title }),
+      el('div', { class: 'detail', text: nameOf(f.editor) + ' · ' + f.detail +
+        (f.approximate ? ' · tid räknad från när tasken skapades' : '') }),
     ]),
     el('div', { class: 'when', text: dur(f.minutes) }),
   ]));
+
+  // Sammanfattning per typ — annars döljer en lång lista att det egentligen
+  // är två eller tre problem, inte femtio.
+  const byKind = {};
+  for (const f of M.flags) byKind[f.detail] = (byKind[f.detail] || 0) + 1;
+  const summary = Object.entries(byKind).sort((a, b) => b[1] - a[1])
+    .map(([detail, n]) => el('li', {}, [
+      // Neutral prick: det här är antal per typ, inte en statusbedömning.
+      el('span', { class: 'key', style: 'background:var(--text-muted)' }),
+      el('span', { text: detail + ': ' + n }),
+    ]));
 
   return el('section', {}, [
     el('div', { class: 'card' }, [
       el('h2', { text: 'Behöver en knuff' }),
       el('p', { class: 'hint', text: 'Öppna tasks som står still, har passerat deadline eller väntar på en obesvarad revision. Detta är exakt vad Slack-digesten skickar ut.' }),
+      M.flags.length ? el('ul', { class: 'legend' }, summary) : null,
       items.length ? el('ul', { class: 'flags' }, items) : el('div', { class: 'empty', text: 'Inget som skräpar. Allt rör sig.' }),
+      M.flags.length > SHOWN
+        ? el('p', { class: 'hint', style: 'margin-top:12px;margin-bottom:0',
+            text: 'Visar de ' + SHOWN + ' som legat längst av ' + M.flags.length + '.' })
+        : null,
     ]),
   ]);
 }

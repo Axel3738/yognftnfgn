@@ -1,7 +1,56 @@
 [
-  { "id": "marcus",  "name": "Marcus L.",  "role": "Video",        "slack": "U0000MARCUS", "started": "2024-03-01" },
-  { "id": "sofia",   "name": "Sofia K.",   "role": "Video/Static", "slack": "U0000SOFIA",  "started": "2024-09-15" },
-  { "id": "jonte",   "name": "Jonte R.",   "role": "Static",       "slack": "U0000JONTE",  "started": "2025-01-08" },
-  { "id": "amina",   "name": "Amina B.",   "role": "Video",        "slack": "U0000AMINA",  "started": "2025-11-03" },
-  { "id": "viktor",  "name": "Viktor S.",  "role": "Static",       "slack": "U0000VIKTOR", "started": "2026-05-20" }
+  {
+    "id": "e-2cad",
+    "name": "Redigerare 2cad",
+    "role": "Video",
+    "notionId": "2cad872b-594c-8168-ba6d-0002611779b8",
+    "slack": null,
+    "_note": "Namn okänt — Notion-kopplingen i den här sessionen kan inte slå upp gästanvändare. Fyll i namn och slack-id här."
+  },
+  {
+    "id": "josh",
+    "name": "Josh Naelga",
+    "role": "Video",
+    "notionId": "50fdc7d9-a491-45b9-bac4-5315788a616b",
+    "slack": null
+  },
+  {
+    "id": "e-1a4d",
+    "name": "Redigerare 1a4d",
+    "role": "Video",
+    "notionId": "1a4d872b-594c-81d8-adf3-0002a95f9e7f",
+    "slack": null,
+    "_note": "Namn okänt — fyll i."
+  },
+  {
+    "id": "e-24ed",
+    "name": "Redigerare 24ed",
+    "role": "Video",
+    "notionId": "24ed872b-594c-8102-b94d-0002bde1d55a",
+    "slack": null,
+    "_note": "Namn okänt — fyll i."
+  },
+  {
+    "id": "axel",
+    "name": "Axel Odhner",
+    "role": "Creative direction",
+    "notionId": "332d872b-594c-815b-92e8-0002f9c93383",
+    "slack": null
+  },
+  {
+    "id": "e-367d",
+    "name": "Redigerare 367d",
+    "role": null,
+    "notionId": "367d872b-594c-81ec-93cc-000270722c31",
+    "slack": null,
+    "_note": "Namn okänt — 1 task."
+  },
+  {
+    "id": "e-285d",
+    "name": "Redigerare 285d",
+    "role": null,
+    "notionId": "285d872b-594c-8178-b6d7-0002a0bf8bfe",
+    "slack": null,
+    "_note": "Namn okänt — 1 task."
+  }
 ]

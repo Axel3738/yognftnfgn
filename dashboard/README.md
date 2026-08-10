@@ -5,11 +5,14 @@ belastning. Kopplad till Slack för lägesrapport och personliga knuffar.
 
 ```bash
 cd dashboard
-node cli.mjs seed --force     # demodata så du ser hur den beter sig
-node cli.mjs build            # → dist/dashboard.html
-node cli.mjs stats            # samma siffror i terminalen
-node test.mjs                 # 25 tester
+node cli.mjs ingest notion-rows data/notion-export-2026-08-10.json   # riktig data
+node cli.mjs build                                                   # → dist/dashboard.html
+node cli.mjs stats                                                   # samma siffror i terminalen
+node test.mjs                                                        # 25 tester
 ```
+
+Vill du i stället se hur panelen ser ut med full tidshistorik:
+`node cli.mjs seed --force && node cli.mjs build` (demodata, tydligt märkt).
 
 Öppna `dist/dashboard.html`. Inga beroenden, ingen server, inga CDN:er — en
 enda fil som funkar offline och går att maila eller lägga på en statisk host.
@@ -79,7 +82,51 @@ fel, men de som gör det går riktigt fel).
 Datan är en append-only händelselogg i `data/events.jsonl`. Allt annat härleds
 därifrån, så det spelar ingen roll var händelserna kommer ifrån.
 
-### Alternativ 1 — Notion (rekommenderat)
+### Vad som faktiskt finns i er Notion idag
+
+Kartlagt 2026-08-10. Tre creative hubs med identiskt schema:
+`Creative Hub master` (199 rader), `Boat cover 420D creative hub`,
+`Trimmer belt creative hub`.
+
+| Fält | Ifyllt | Duger till |
+|---|---|---|
+| `createdTime` (system) | 100% | tilldelningstid — äkta |
+| `Status` | ~100% | nuläge — men **ingen historik** |
+| `Ansvarig` | 138 av 199 | vem som äger vad |
+| `Godkänd datum` | **2 av 199** | i praktiken inget |
+| `Skapad` | 8 av 199 | inget |
+| `Feedback` | 1 av 199 | inget |
+
+**Slutsatsen som gäller:** ledtider går inte att räkna ut retroaktivt. Notion
+sparar ingen statushistorik, och de datumfält som skulle kunna ersätta den är
+tomma. Panelen hittar inte på tider — den visar nuläget, som är äkta, och
+börjar mäta ledtider från den dag pollern körs.
+
+Statusflödet mappas så här (`config.json` → `notion.statusMap`):
+
+| Notion-status | Betyder |
+|---|---|
+| Draft | tilldelad, ej påbörjad |
+| In progress · To be translated | pågår |
+| Creative strat review · To be Reviewed · In Review | inlämnad, väntar granskning |
+| **In progress 2** | omgörning efter review — det är den som ger revisionsgraden |
+| Approved · Archived · Translation archived | klar |
+| Not used | nedlagd |
+
+### Alternativ 0 — engångsuttag (redan gjort)
+
+`data/notion-export-2026-08-10.json` är 100 rader hämtade ur Creative Hub
+master. Importeras med:
+
+```bash
+node cli.mjs ingest notion-rows data/notion-export-2026-08-10.json
+```
+
+Den bokför bara det som är sant: `assigned` vid `createdTime`, och nuvarande
+status som en `observed`-händelse **utan tidpunkt**. En `observed` räknas
+aldrig som en leverans och ger aldrig en ledtid.
+
+### Alternativ 1 — Notion-pollern (rekommenderat framåt)
 
 Notions API ger bara nuläget, inte statushistorik. Lösningen är en poller som
 jämför mot förra körningen och bokför varje statusändring.

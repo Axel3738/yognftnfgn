@@ -90,28 +90,32 @@ function openTaskFlags(tasks, cfg, thresholds, tz, now) {
       });
     }
 
-    // Tilldelad men aldrig påbörjad.
-    if (t.assignedAt && !t.startedAt) {
-      const idle = businessMinutes(t.assignedAt, now, cfg, tz);
-      if (idle >= thresholds.idleAfterBusinessHours * 60) {
+    // Högst EN aktivitetsflagga per task — annars flaggas samma sak två gånger
+    // och listan fylls av dubbletter i stället för av verkliga problem.
+    // (Deadline-flaggan ovan är en annan sak och får ligga kvar bredvid.)
+    const lastMove = t.lastDelivery ?? t.startedAt ?? t.assignedAt;
+    const idleMin = lastMove ? businessMinutes(lastMove, now, cfg, tz) : null;
+
+    if (idleMin == null) continue;
+
+    if (t.state === 'assigned') {
+      // Ligger i inkorgen och har aldrig rört sig.
+      if (idleMin >= thresholds.idleAfterBusinessHours * 60) {
         flags.push({
           kind: 'not_started', severity: 'warning', task: t.id, editor: t.editor, title: t.title,
-          detail: 'Tilldelad men aldrig påbörjad', minutes: idle,
+          detail: 'Tilldelad men aldrig påbörjad', minutes: idleMin,
         });
       }
-    }
-
-    // Påbörjad men inget levererat på länge.
-    const lastMove = t.lastDelivery ?? t.startedAt ?? t.assignedAt;
-    if (lastMove) {
-      const stale = businessMinutes(lastMove, now, cfg, tz);
-      if (stale >= thresholds.staleAfterBusinessHours * 60 && t.state !== 'assigned') {
-        flags.push({
-          kind: 'stale', severity: 'serious', task: t.id, editor: t.editor, title: t.title,
-          detail: t.state === 'revision' ? 'Revision obesvarad' : 'Ingen rörelse',
-          minutes: stale,
-        });
-      }
+    } else if (idleMin >= thresholds.staleAfterBusinessHours * 60) {
+      flags.push({
+        kind: 'stale', severity: 'serious', task: t.id, editor: t.editor, title: t.title,
+        detail: t.state === 'revision' ? 'Revision obesvarad'
+          : t.state === 'in_review' ? 'Väntar på granskning'
+          : 'Ingen rörelse',
+        minutes: idleMin,
+        // Importerad data: vi vet inte när statusen sattes, bara när tasken skapades.
+        approximate: t.estimated === true,
+      });
     }
   }
   return flags.sort((a, b) => b.minutes - a.minutes);
@@ -275,11 +279,46 @@ export function computeMetrics({ tasks: rawTasks, config, periodDays, now = Date
 
   const flags = openTaskFlags(all, cfg, config.thresholds, tz, nowMs);
 
+  // Nulägesvy: fungerar även när tidshistoriken saknas (importerad data där vi
+  // vet VAD som gäller men inte NÄR det hände). Räknar allt, inte bara perioden.
+  const STATE_ORDER = ['assigned', 'in_progress', 'in_review', 'revision', 'approved', 'cancelled'];
+  const snapshotEditors = [...new Set(all.map(t => t.editor).filter(Boolean))].map(id => {
+    const mine = all.filter(t => t.editor === id);
+    const byState = Object.fromEntries(STATE_ORDER.map(s => [s, mine.filter(t => t.state === s).length]));
+    const open = mine.filter(t => !['approved', 'cancelled'].includes(t.state));
+    const ages = open.map(t => businessMinutes(t.assignedAt, nowMs, cfg, tz)).filter(Number.isFinite);
+    const meta = knownEditors.find(e => e.id === id);
+    return {
+      id,
+      name: meta?.name || id,
+      role: meta?.role || null,
+      total: mine.length,
+      byState,
+      open: open.length,
+      oldestOpenMin: ages.length ? Math.max(...ages) : null,
+      medianOpenAgeMin: median(ages),
+      timedTasks: mine.filter(t => t.turnaroundMin != null).length,
+    };
+  }).sort((a, b) => b.total - a.total);
+
+  const unassigned = all.filter(t => !t.editor).length;
+  const snapshot = {
+    editors: snapshotEditors,
+    states: STATE_ORDER,
+    totalTasks: all.length,
+    unassigned,
+    // Hur stor del av datan som faktiskt har mätbara tider. Är den låg är
+    // ledtidssiffrorna inte att lita på, och det ska synas i UI:t.
+    timedTasks: all.filter(t => t.turnaroundMin != null).length,
+    estimatedTasks: all.filter(t => t.estimated).length,
+  };
+
   return {
     generatedAt: new Date(nowMs).toISOString(),
     periodDays,
     timezone: tz,
     team: { ...team, previous: teamPrev, daily: teamDaily },
+    snapshot,
     editors: perEditor.sort((a, b) => b.stats.deliveries - a.stats.deliveries),
     flags,
     tasks: cur.tasks.map(t => ({
