@@ -1,4 +1,9 @@
-FROM node:20-alpine
+# Debian, inte Alpine: Prismas motor länkar mot OpenSSL/glibc och kraschar på
+# musl med "Could not parse schema engine response".
+FROM node:20-slim
+RUN apt-get update -qq && apt-get install -y --no-install-recommends openssl ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /app
 EXPOSE 3000
 
