@@ -47,20 +47,23 @@ hade gjort sortimentet ~55 % dyrare i Danmark.
 - 26 riktiga produktbilder, logga renderad, DKK-priser, 0 grå platshållare
 - Exempelprodukten "Sladdhållare" (0 kr) borttagen ur Forside-kollektionen
 
-## 🔴 FRAKT — samma fälla som UK, ännu inte löst
+## ✅ FRAKT — löst 2026-08-09 (via API, deliveryProfileUpdate)
 
-`draftOrderCalculate` mot Rådhuspladsen 1, København: frakt **"Standard" 299 SEK** ur den
-ärvda internationella zonen. Måste åtgärdas innan lansering.
+Egen zon **"Danmark"** i Allmän profil (DK borttaget ur EU-zonen):
+- **Fri fragt** vid ordervärde ≥ 400 SEK (villkoret utvärderas i SEK till VERKLIG kurs,
+  inte marknadens 1:1 — därför 400, inte 299: ger kursbuffert så att löftet
+  "fri fragt over 299 kr." aldrig kan brytas; idag blir frakten fri från ~273 DKK)
+- **Standardlevering** 60 SEK ≈ 41 DKK under tröskeln
 
-**Beslut som är Axels:** fri frakt-tröskel (förslag: fri över 299 DKK, annars 39 DKK)
-eller enbart fast pris. Temats banner måste stämma med beslutet (Fas 9).
+Grind verifierad mot Rådhuspladsen: 198 DKK-order → 40,92 DKK frakt; 297 DKK-order → 0 kr.
+Banner uppdaterad i temautkastet: "FRI FRAGT / Ved køb over 299 kr." — nu SANN.
+⚠️ Kvartalskoll: om SEK/DKK-kursen rör sig ±10 % bör 400-gränsen ses över.
+Tröskel/pris valda enligt tidigare förslag som Axel inte invänt mot — säg till för justering.
 
 ## Kvar
 
 - Fas 10 (Axel), i prioritetsordning:
-  1. **Frakt** — besluta tröskel (förslag: fri över 299 DKK, annars 39 DKK) och sätt upp
-     DK-zonen; idag 299 SEK ur ärvd zon
-  2. **Publicera temat** — Themes → utkastet → Publish
+  1. **Publicera temat** — Themes → utkastet → Publish
   3. **Judge.me**: importera dk/output/judgeme-reviews-baeverbutikken-dk.csv + byt appens
      widgetspråk till danska (widgetkonfigen är på svenska: "Köp nu", "Visningsnamn")
   4. Kaching-bundles
