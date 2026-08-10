@@ -1,7 +1,11 @@
 # Bäverbutiken – Creative OS
 
-> **Ny här? Börja i [`docs/os/ACTIONPLAN.md`](docs/os/ACTIONPLAN.md)** — planen,
-> SOP:erna (`docs/os/`) och managerns slash-kommandon (`.claude/commands/`).
+> **Ny session eller nytt konto? Börja i [`HANDOFF.md`](HANDOFF.md)** — vad som är
+> byggt, vad som återstår, vilka regler som inte får brytas och vilka connectors
+> som måste kopplas.
+>
+> Därefter: [`CLAUDE.md`](CLAUDE.md) → [`docs/os/ACTIONPLAN.md`](docs/os/ACTIONPLAN.md).
+> SOP:erna ligger i `docs/os/`, managerns kommandon i `.claude/commands/`.
 > Brief-kvoten (mål nr 1): `node pipeline/quota.mjs`.
 
 # Image Ad Pipeline (LEGACY — annat brand)
