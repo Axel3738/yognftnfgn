@@ -13,4 +13,4 @@ RUN npm prune --omit=dev
 
 ENV NODE_ENV=production
 # Migrationer körs vid start så att en deploy aldrig hamnar före schemat.
-CMD ["sh", "-c", "npx prisma migrate deploy && npm run start"]
+CMD ["sh", "-c", "npx prisma migrate deploy && exec npm run start"]

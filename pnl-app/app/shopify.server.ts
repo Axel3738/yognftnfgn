@@ -1,3 +1,4 @@
+import "./env.server";   // validerar miljön innan något annat laddas
 import "@shopify/shopify-app-remix/adapters/node";
 import {
   AppDistribution,
