@@ -1,0 +1,29 @@
+# Fyll i client_id från Partners → Appdistribution → din app.
+# application_url sätts till hostingens URL (t.ex. https://pnl.fly.dev).
+name = "P&L"
+handle = "pnl"
+client_id = ""
+application_url = ""
+embedded = true
+
+[access_scopes]
+# read_reports krävs för ShopifyQL. write_inventory krävs för att skriva unitCost.
+scopes = "read_products,read_orders,read_inventory,read_reports,write_inventory"
+
+[auth]
+redirect_urls = [ "https://REPLACE.fly.dev/auth/callback" ]
+
+[webhooks]
+api_version = "2025-01"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks"
+
+  # Obligatoriska för App Store-granskning.
+  [[webhooks.subscriptions]]
+  topics = [ "customers/data_request", "customers/redact", "shop/redact" ]
+  uri = "/webhooks"
+
+[build]
+automatically_update_urls_on_dev = true

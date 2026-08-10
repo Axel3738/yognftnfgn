@@ -1,0 +1,85 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// Krävs av @shopify/shopify-app-remix — en rad per installerad butik.
+model Session {
+  id            String    @id
+  shop          String
+  state         String
+  isOnline      Boolean   @default(false)
+  scope         String?
+  expires       DateTime?
+  accessToken   String
+  userId        BigInt?
+  firstName     String?
+  lastName      String?
+  email         String?
+  accountOwner  Boolean   @default(false)
+  locale        String?
+  collaborator  Boolean?  @default(false)
+  emailVerified Boolean?  @default(false)
+
+  @@index([shop])
+}
+
+/// Per-butiksinställningar. Skapas med defaults vid installation.
+model ShopSettings {
+  shop            String   @id
+  /// Tull per ORDER (inte per styck) i butikens valuta.
+  tariffPerOrder  Decimal  @default(27.50) @db.Decimal(10, 2)
+  /// Transaktionsavgift som andel av totalt ordervärde.
+  feeRate         Decimal  @default(0.029) @db.Decimal(6, 4)
+  /// Målmarginal som max-CPA räknas mot.
+  targetMargin    Decimal  @default(0.25) @db.Decimal(6, 4)
+  metaAdAccountId String?
+  /// Long-lived Meta-token. Kryptera i produktion — se lib/crypto.server.ts.
+  metaAccessToken String?
+  currency        String   @default("SEK")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  costChanges CostChange[]
+}
+
+/// Datumsatt kostnadsändring. Shopifys unitCost har bara ETT värde och ingen
+/// historik — den håller alltid *nuvarande* kostnad. Vill man räkna gårdagens
+/// vinst på gårdagens kostnad behövs det här lagret ovanpå.
+model CostChange {
+  id            String   @id @default(cuid())
+  shop          String
+  /// Shopify variant-GID. Null = gäller alla varianter i produkten.
+  variantGid    String?
+  /// Shopify produkt-GID.
+  productGid    String
+  /// Vara + frakt, utan tull.
+  unitCost      Decimal  @db.Decimal(10, 2)
+  /// Gäller från och med detta datum (inklusive).
+  effectiveFrom DateTime @db.Date
+  note          String?
+  createdAt     DateTime @default(now())
+
+  settings ShopSettings @relation(fields: [shop], references: [shop], onDelete: Cascade)
+
+  @@index([shop, productGid, effectiveFrom])
+}
+
+/// Cachad annonskostnad per dag. Meta har hårda rate limits, så dagar som redan
+/// är stängda hämtas en gång och sparas. Dagens siffra hämtas om varje gång.
+model DailySpend {
+  id          String   @id @default(cuid())
+  shop        String
+  day         DateTime @db.Date
+  spend       Decimal  @db.Decimal(12, 2)
+  impressions Int      @default(0)
+  clicks      Int      @default(0)
+  fetchedAt   DateTime @default(now())
+
+  @@unique([shop, day])
+  @@index([shop, day])
+}
