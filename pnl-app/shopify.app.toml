@@ -14,7 +14,7 @@ scopes = "read_products,read_orders,read_inventory,read_reports,write_inventory"
 redirect_urls = [ "https://REPLACE.fly.dev/auth/callback" ]
 
 [webhooks]
-api_version = "2025-01"
+api_version = "2026-07"
 
   [[webhooks.subscriptions]]
   topics = [ "app/uninstalled" ]
