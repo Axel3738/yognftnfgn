@@ -69,6 +69,18 @@ eller enbart fast pris. Temats banner måste stämma med beslutet (Fas 9).
   7. Juridisk granskning: 138 flaggor i build-report.md + 17 AXEL-flaggor i sidorna
      + e-postadressen kundeservice@baeverbutiken.dk måste skapas/verifieras
 
+## Manuellt satta priser (2026-08-09, Axels beslut — annonsmatchning)
+
+| Produkt | Före | Efter |
+|---|---|---|
+| Skulderrem til Trimmer | 399 / ~~449~~ | **429 / ~~489~~** |
+| Sædebetræk til Havetraktor (4 var.) | 429 / ~~529~~ | **449 / ~~559~~** |
+| Marint Motorbetræk 420D (30 var.) | 199 / ~~239~~ | **259 / ~~329~~** |
+| Strandsandaler til Herre (36 var.) | 229 | **289** (inget jämförpris) |
+
+Alla verifierade i mutationssvaren, 0 fel. OBS: annonsen för skulderremmen lovar
+"fri fragt i dag" — osant tills DK-fraktzonen finns (Fas 10 punkt 1).
+
 ## Noteringar
 
 - Butikens gamla exempelprodukt ("Sladdhållare…", 0 kr, ACTIVE) bör arkiveras av Axel.
