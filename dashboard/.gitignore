@@ -1,0 +1,7 @@
+# Driftdata och byggartefakter — hör inte hemma i git.
+# Händelseloggen är levande data (och skulle ge merge-konflikter varje dag).
+data/events.jsonl
+data/notion-snapshot.json
+dist/
+node_modules/
+.env

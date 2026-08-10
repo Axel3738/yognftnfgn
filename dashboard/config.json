@@ -1,0 +1,57 @@
+{
+  "team": "Grillkliniken – Creative",
+  "timezone": "Europe/Stockholm",
+
+  "workday": {
+    "days": [1, 2, 3, 4, 5],
+    "start": "09:00",
+    "end": "18:00",
+    "lunchStart": "12:00",
+    "lunchMinutes": 60
+  },
+
+  "targets": {
+    "turnaroundHours": 8,
+    "revisionTurnaroundHours": 4,
+    "pickupHours": 2,
+    "revisionRate": 0.25,
+    "deliveriesPerActiveDay": 2,
+    "onTimeRate": 0.85
+  },
+
+  "thresholds": {
+    "revisionRateWarning": 0.3,
+    "revisionRateCritical": 0.45,
+    "staleAfterBusinessHours": 24,
+    "idleAfterBusinessHours": 16
+  },
+
+  "periods": [7, 14, 30, 90],
+  "defaultPeriodDays": 30,
+
+  "slack": {
+    "channel": "#creative",
+    "digestSchedule": "0 7 * * 1-5",
+    "mentionOnFlags": true
+  },
+
+  "notion": {
+    "databaseId": "",
+    "propertyMap": {
+      "title": "Uppgiftsnamn",
+      "assignee": "Tilldelad",
+      "status": "Status",
+      "due": "Förfallodatum",
+      "type": "Typ",
+      "brand": "Brand"
+    },
+    "statusMap": {
+      "assigned": ["Not started", "To-do", "Att göra"],
+      "started": ["In progress", "Pågår"],
+      "delivered": ["In review", "Granskning", "Klar för review"],
+      "revision_requested": ["Revision", "Ändringar", "Changes requested"],
+      "approved": ["Done", "Klar", "Godkänd"],
+      "cancelled": ["Cancelled", "Avbruten"]
+    }
+  }
+}

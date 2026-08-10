@@ -1,0 +1,843 @@
+// Bygger dashboarden som EN självständig HTML-fil. Ingen server, inga CDN:er,
+// inget som kan sluta ladda. Öppna filen — den funkar. Perioden byts i webbläsaren
+// eftersom alla perioder är förberäknade och bakade i filen.
+
+import { minutesPerWorkday } from './time.mjs';
+
+const esc = s => String(s ?? '')
+  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;');
+
+// Kategoriska slots i fast ordning (validerad palett — se dataviz/palette.md).
+// Ordningen är CVD-säkerhetsmekanismen, inte dekoration: rotera den inte.
+const SERIES = {
+  light: ['#2a78d6', '#eb6834', '#1baf7a', '#eda100', '#e87ba4', '#008300', '#4a3aa7', '#e34948'],
+  dark:  ['#3987e5', '#d95926', '#199e70', '#c98500', '#d55181', '#008300', '#9085e9', '#e66767'],
+};
+
+export function renderDashboard({ config, editors, byPeriod, defaultPeriod, demo }) {
+  const payload = {
+    config: {
+      team: config.team,
+      timezone: config.timezone,
+      targets: config.targets,
+      thresholds: config.thresholds,
+      minutesPerWorkday: minutesPerWorkday(config.workday),
+      workday: `${config.workday.start}–${config.workday.end}`,
+    },
+    editors,
+    byPeriod,
+    defaultPeriod,
+    demo,
+    series: SERIES,
+  };
+
+  return `<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redigerarpanel – ${esc(config.team)}</title>
+<style>
+${STYLE}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script id="payload" type="application/json">${JSON.stringify(payload).replace(/</g, '\\u003c')}</script>
+<script>
+${CLIENT}
+</script>
+</body>
+</html>`;
+}
+
+const STYLE = `
+:root {
+  color-scheme: light;
+  --page:           #f9f9f7;
+  --surface:        #fcfcfb;
+  --text-primary:   #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted:     #898781;
+  --grid:           #e1e0d9;
+  --axis:           #c3c2b7;
+  --border:         rgba(11,11,11,0.10);
+  --good:           #0ca30c;
+  --warning:        #fab219;
+  --serious:        #ec835a;
+  --critical:       #d03b3b;
+  --delta-good:     #006300;
+  --delta-bad:      #b02c2c;
+  --track:          #eceae4;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --page:           #0d0d0d;
+    --surface:        #1a1a19;
+    --text-primary:   #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted:     #898781;
+    --grid:           #2c2c2a;
+    --axis:           #383835;
+    --border:         rgba(255,255,255,0.10);
+    --delta-good:     #0ca30c;
+    --delta-bad:      #e66767;
+    --track:          #262624;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page:           #0d0d0d;
+  --surface:        #1a1a19;
+  --text-primary:   #ffffff;
+  --text-secondary: #c3c2b7;
+  --text-muted:     #898781;
+  --grid:           #2c2c2a;
+  --axis:           #383835;
+  --border:         rgba(255,255,255,0.10);
+  --delta-good:     #0ca30c;
+  --delta-bad:      #e66767;
+  --track:          #262624;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text-primary);
+  font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+#app { max-width: 1320px; margin: 0 auto; padding: 28px 20px 72px; }
+
+header.top { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; justify-content: space-between; margin-bottom: 8px; }
+h1 { font-size: 22px; font-weight: 650; margin: 0; letter-spacing: -0.01em; }
+.sub { color: var(--text-secondary); font-size: 13px; margin-top: 4px; }
+
+.banner {
+  margin: 16px 0 0; padding: 10px 14px; border-radius: 10px;
+  border: 1px solid var(--border); background: var(--surface);
+  color: var(--text-secondary); font-size: 13px;
+  display: flex; gap: 10px; align-items: flex-start;
+}
+.banner b { color: var(--text-primary); font-weight: 600; }
+
+.controls { display: flex; gap: 6px; align-items: center; }
+.seg { display: inline-flex; background: var(--surface); border: 1px solid var(--border); border-radius: 9px; padding: 3px; }
+.seg button {
+  appearance: none; border: 0; background: transparent; color: var(--text-secondary);
+  font: inherit; font-size: 13px; padding: 5px 12px; border-radius: 6px; cursor: pointer;
+}
+.seg button[aria-pressed="true"] { background: var(--page); color: var(--text-primary); font-weight: 600; box-shadow: 0 0 0 1px var(--border); }
+.seg button:hover:not([aria-pressed="true"]) { color: var(--text-primary); }
+
+section { margin-top: 28px; }
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 18px 20px;
+}
+h2 { font-size: 15px; font-weight: 600; margin: 0 0 2px; }
+.hint { color: var(--text-muted); font-size: 12.5px; margin: 0 0 16px; }
+
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+.tile { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; }
+.tile .label { color: var(--text-secondary); font-size: 12.5px; }
+.tile .value { font-size: 30px; font-weight: 620; margin-top: 6px; letter-spacing: -0.02em; line-height: 1.1; }
+.tile .value.hero { font-size: 48px; }
+.tile .delta { font-size: 12.5px; margin-top: 6px; color: var(--text-muted); }
+.tile .delta .up { color: var(--delta-bad); }
+.tile .delta .down { color: var(--delta-good); }
+.tile .delta .flat { color: var(--text-muted); }
+.tile .spark { margin-top: 10px; display: block; }
+
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 16px; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 14px; margin: 0 0 14px; padding: 0; list-style: none; }
+.legend li { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--text-secondary); }
+.legend .key { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.legend button { appearance: none; background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; display: flex; align-items: center; gap: 7px; }
+.legend button[aria-pressed="false"] { opacity: 0.38; }
+
+.chart-wrap { position: relative; overflow-x: auto; }
+svg { display: block; }
+svg text { fill: var(--text-muted); font-size: 11px; }
+svg .axis-line { stroke: var(--axis); stroke-width: 1; }
+svg .grid-line { stroke: var(--grid); stroke-width: 1; }
+svg .val-label { fill: var(--text-secondary); font-size: 11.5px; font-weight: 600; font-variant-numeric: tabular-nums; }
+svg .cat-label { fill: var(--text-secondary); font-size: 12px; }
+svg .target-line { stroke: var(--text-muted); stroke-width: 1; stroke-dasharray: 0; opacity: 0.55; }
+svg .hit { fill: transparent; cursor: pointer; }
+svg .hit:hover ~ .hl, svg .col-hl { pointer-events: none; }
+
+.tooltip {
+  position: absolute; pointer-events: none; z-index: 20; opacity: 0;
+  transform: translate(-50%, -100%); transition: opacity .09s linear;
+  background: var(--surface); color: var(--text-primary);
+  border: 1px solid var(--border); border-radius: 10px;
+  padding: 9px 11px; font-size: 12.5px; min-width: 130px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.14);
+}
+.tooltip .tt-head { font-weight: 650; margin-bottom: 6px; }
+.tooltip .tt-row { display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+.tooltip .tt-row .l { display: flex; align-items: center; gap: 6px; color: var(--text-secondary); }
+.tooltip .tt-row .k { width: 8px; height: 8px; border-radius: 2px; flex: none; }
+.tooltip .tt-row .v { font-variant-numeric: tabular-nums; font-weight: 600; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { text-align: right; padding: 9px 10px; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+th {
+  color: var(--text-muted); font-weight: 600; font-size: 12px; cursor: pointer;
+  position: sticky; top: 0; background: var(--surface);
+}
+th[aria-sort="descending"]::after { content: " ↓"; }
+th[aria-sort="ascending"]::after { content: " ↑"; }
+td.num { font-variant-numeric: tabular-nums; }
+tbody tr:hover { background: color-mix(in srgb, var(--text-primary) 4%, transparent); }
+.who { display: flex; align-items: center; gap: 9px; }
+.who .key { width: 9px; height: 9px; border-radius: 3px; flex: none; }
+.who .role { color: var(--text-muted); font-size: 11.5px; }
+.table-scroll { overflow-x: auto; max-height: 620px; overflow-y: auto; }
+
+.pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 2px 8px; border-radius: 999px; font-size: 11.5px; font-weight: 600;
+  border: 1px solid var(--border);
+}
+.pill .dot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
+
+.flags { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.flags li {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center;
+  padding: 11px 13px; border: 1px solid var(--border); border-radius: 11px; background: var(--page);
+}
+.flags .icon { width: 18px; text-align: center; font-size: 13px; }
+.flags .who-line { font-weight: 600; }
+.flags .detail { color: var(--text-secondary); font-size: 12.5px; }
+.flags .when { color: var(--text-muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.empty { color: var(--text-muted); font-size: 13px; padding: 14px 0; }
+
+details.tableview { margin-top: 14px; }
+details.tableview summary { cursor: pointer; color: var(--text-secondary); font-size: 12.5px; }
+details.tableview[open] summary { margin-bottom: 10px; }
+
+footer.foot { margin-top: 36px; color: var(--text-muted); font-size: 12px; border-top: 1px solid var(--grid); padding-top: 14px; }
+@media (max-width: 640px) {
+  .grid2 { grid-template-columns: 1fr; }
+  .tile .value.hero { font-size: 38px; }
+}
+`;
+
+const CLIENT = String.raw`
+const P = JSON.parse(document.getElementById('payload').textContent);
+const CFG = P.config;
+const NS = 'http://www.w3.org/2000/svg';
+
+const state = {
+  period: P.defaultPeriod,
+  hidden: new Set(),
+  sort: { key: 'deliveries', dir: -1 },
+};
+
+function isDark() {
+  const stamp = document.documentElement.getAttribute('data-theme');
+  if (stamp) return stamp === 'dark';
+  return matchMedia('(prefers-color-scheme: dark)').matches;
+}
+function seriesColors() { return isDark() ? P.series.dark : P.series.light; }
+
+const editorIndex = new Map(P.editors.map((e, i) => [e.id, i]));
+function colorOf(id) {
+  const c = seriesColors();
+  const i = editorIndex.get(id);
+  return c[(i == null ? 0 : i) % c.length];
+}
+function nameOf(id) {
+  const e = P.editors.find(x => x.id === id);
+  return e ? e.name : id;
+}
+
+/* ---------- format ---------- */
+const nf = new Intl.NumberFormat('sv-SE');
+const nf1 = new Intl.NumberFormat('sv-SE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+
+function dur(min) {
+  if (min == null || !isFinite(min)) return '–';
+  if (min < 60) return Math.round(min) + 'm';
+  if (min < CFG.minutesPerWorkday) {
+    const h = Math.floor(min / 60), m = Math.round(min % 60);
+    return m ? h + 'h ' + m + 'm' : h + 'h';
+  }
+  return nf1.format(min / CFG.minutesPerWorkday) + ' d';
+}
+function pct(x, digits) {
+  if (x == null || !isFinite(x)) return '–';
+  return (x * 100).toFixed(digits == null ? 0 : digits).replace('.', ',') + '%';
+}
+function num(x, d) {
+  if (x == null || !isFinite(x)) return '–';
+  return d ? nf1.format(x) : nf.format(Math.round(x));
+}
+function shortDate(iso) {
+  const d = new Date(iso + 'T12:00:00Z');
+  return d.toLocaleDateString('sv-SE', { day: 'numeric', month: 'short' });
+}
+function el(tag, attrs, kids) {
+  const n = document.createElement(tag);
+  for (const k in (attrs || {})) {
+    if (k === 'class') n.className = attrs[k];
+    else if (k === 'html') n.innerHTML = attrs[k];
+    else if (k === 'text') n.textContent = attrs[k];
+    else if (k.startsWith('on')) n.addEventListener(k.slice(2), attrs[k]);
+    else if (attrs[k] != null) n.setAttribute(k, attrs[k]);
+  }
+  for (const kid of (kids || [])) if (kid) n.appendChild(kid);
+  return n;
+}
+function s(tag, attrs, kids) {
+  const n = document.createElementNS(NS, tag);
+  for (const k in (attrs || {})) {
+    if (k === 'text') n.textContent = attrs[k];
+    else if (k.startsWith('on')) n.addEventListener(k.slice(2), attrs[k]);
+    else if (attrs[k] != null) n.setAttribute(k, attrs[k]);
+  }
+  for (const kid of (kids || [])) if (kid) n.appendChild(kid);
+  return n;
+}
+
+/* ---------- tooltip ---------- */
+function attachTooltip(wrap) {
+  const tip = el('div', { class: 'tooltip' });
+  wrap.appendChild(tip);
+  return {
+    show(x, y, html) {
+      tip.innerHTML = html;
+      tip.style.left = x + 'px';
+      tip.style.top = (y - 10) + 'px';
+      tip.style.opacity = '1';
+    },
+    hide() { tip.style.opacity = '0'; },
+  };
+}
+
+/* ---------- staplat dagsdiagram ---------- */
+function stackedDaily(daily, editorIds) {
+  const wrap = el('div', { class: 'chart-wrap' });
+  const visible = editorIds.filter(id => !state.hidden.has(id));
+
+  const H = 260, padL = 34, padR = 12, padT = 12, padB = 30;
+  const n = daily.length;
+  const slot = Math.max(14, Math.min(38, 900 / Math.max(n, 1)));
+  const W = Math.max(560, padL + padR + slot * n);
+  const barW = Math.min(24, slot - 6);
+  const GAP = 2; // ytgapet som separerar segmenten
+
+  let maxV = 0;
+  for (const d of daily) {
+    let sum = 0;
+    for (const id of visible) sum += d[id] || 0;
+    maxV = Math.max(maxV, sum);
+  }
+  maxV = Math.max(maxV, 1);
+  const ticks = niceTicks(maxV, 4);
+  const top = ticks[ticks.length - 1];
+  const y = v => padT + (H - padT - padB) * (1 - v / top);
+
+  const svg = s('svg', { width: W, height: H, viewBox: '0 0 ' + W + ' ' + H, role: 'img',
+    'aria-label': 'Leveranser per dag, staplat per redigerare' });
+
+  for (const t of ticks) {
+    svg.appendChild(s('line', { class: 'grid-line', x1: padL, x2: W - padR, y1: y(t), y2: y(t) }));
+    svg.appendChild(s('text', { x: padL - 8, y: y(t) + 4, 'text-anchor': 'end', text: nf.format(t) }));
+  }
+  svg.appendChild(s('line', { class: 'axis-line', x1: padL, x2: W - padR, y1: y(0), y2: y(0) }));
+
+  const tip = attachTooltip(wrap);
+  const everyN = Math.ceil(n / 14);
+
+  daily.forEach((d, i) => {
+    const x = padL + i * slot + (slot - barW) / 2;
+    let acc = 0;
+    const segs = visible.map(id => ({ id, v: d[id] || 0 })).filter(sg => sg.v > 0);
+
+    segs.forEach((sg, si) => {
+      const y0 = y(acc), y1 = y(acc + sg.v);
+      acc += sg.v;
+      const isTop = si === segs.length - 1;
+      let h = y0 - y1;
+      // Ytgap mellan segment: kapa nederkant utom på det understa.
+      const gapBottom = si > 0 ? GAP : 0;
+      h = Math.max(1, h - gapBottom);
+      const r = isTop ? Math.min(4, h / 2, barW / 2) : 0;
+      svg.appendChild(s('path', {
+        d: roundedTopRect(x, y1, barW, h, r),
+        fill: colorOf(sg.id),
+      }));
+    });
+
+    if (i % everyN === 0) {
+      svg.appendChild(s('text', { x: x + barW / 2, y: H - padB + 16, 'text-anchor': 'middle', text: shortDate(d.date) }));
+    }
+
+    const total = segs.reduce((a, b) => a + b.v, 0);
+    const hit = s('rect', { class: 'hit', x: padL + i * slot, y: padT, width: slot, height: H - padT - padB });
+    hit.addEventListener('mousemove', ev => {
+      const r = wrap.getBoundingClientRect();
+      const rows = segs.slice().reverse().map(sg =>
+        '<div class="tt-row"><span class="l"><span class="k" style="background:' + colorOf(sg.id) + '"></span>' +
+        escapeHtml(nameOf(sg.id)) + '</span><span class="v">' + sg.v + '</span></div>').join('');
+      tip.show(ev.clientX - r.left, ev.clientY - r.top,
+        '<div class="tt-head">' + shortDate(d.date) + ' · ' + total + ' leverans' + (total === 1 ? '' : 'er') + '</div>' +
+        (rows || '<div class="tt-row"><span class="l">Inget levererat</span></div>'));
+    });
+    hit.addEventListener('mouseleave', tip.hide);
+    svg.appendChild(hit);
+  });
+
+  wrap.appendChild(svg);
+  return wrap;
+}
+
+function roundedTopRect(x, y, w, h, r) {
+  if (r <= 0) return 'M' + x + ' ' + y + 'h' + w + 'v' + h + 'h' + (-w) + 'Z';
+  return 'M' + x + ' ' + (y + r) +
+    'a' + r + ' ' + r + ' 0 0 1 ' + r + ' ' + (-r) +
+    'h' + (w - 2 * r) +
+    'a' + r + ' ' + r + ' 0 0 1 ' + r + ' ' + r +
+    'v' + (h - r) + 'h' + (-w) + 'Z';
+}
+function roundedEndBar(x, y, w, h, r) {
+  const rr = Math.min(r, w, h / 2);
+  if (rr <= 0) return 'M' + x + ' ' + y + 'h' + w + 'v' + h + 'h' + (-w) + 'Z';
+  return 'M' + x + ' ' + y + 'h' + (w - rr) +
+    'a' + rr + ' ' + rr + ' 0 0 1 ' + rr + ' ' + rr +
+    'v' + (h - 2 * rr) +
+    'a' + rr + ' ' + rr + ' 0 0 1 ' + (-rr) + ' ' + rr +
+    'h' + (-(w - rr)) + 'Z';
+}
+
+function niceTicks(max, count) {
+  const raw = max / count;
+  const mag = Math.pow(10, Math.floor(Math.log10(raw || 1)));
+  const step = [1, 2, 2.5, 5, 10].map(m => m * mag).find(v => v >= raw) || mag * 10;
+  const out = [];
+  for (let v = 0; v <= max + step * 0.999; v += step) out.push(Math.round(v * 100) / 100);
+  return out;
+}
+
+/* ---------- horisontella staplar ---------- */
+function hbars(rows, opts) {
+  // rows: [{id, label, value, color, valueText, note}]
+  const wrap = el('div', { class: 'chart-wrap' });
+  const rowH = 34, padL = 116, padR = 62, padT = 6, padB = 26;
+  const W = 560, H = padT + padB + rows.length * rowH;
+  const maxV = Math.max(opts.target || 0, ...rows.map(r => r.value || 0), 1) * 1.08;
+  const x = v => padL + (W - padL - padR) * (v / maxV);
+
+  const svg = s('svg', { width: '100%', height: H, viewBox: '0 0 ' + W + ' ' + H,
+    preserveAspectRatio: 'xMinYMin meet', role: 'img', 'aria-label': opts.aria || '' });
+
+  if (opts.target) {
+    svg.appendChild(s('line', { class: 'target-line', x1: x(opts.target), x2: x(opts.target), y1: padT, y2: H - padB }));
+    svg.appendChild(s('text', { x: x(opts.target), y: H - padB + 15, 'text-anchor': 'middle',
+      text: 'mål ' + opts.targetLabel }));
+  }
+
+  const tip = attachTooltip(wrap);
+  const barH = Math.min(24, rowH - 12);
+
+  rows.forEach((r, i) => {
+    const yTop = padT + i * rowH + (rowH - barH) / 2;
+    const w = Math.max(2, x(r.value || 0) - padL);
+
+    svg.appendChild(s('text', { class: 'cat-label', x: padL - 10, y: yTop + barH / 2 + 4,
+      'text-anchor': 'end', text: r.label }));
+    svg.appendChild(s('path', { d: roundedEndBar(padL, yTop, w, barH, 4), fill: r.color }));
+    svg.appendChild(s('text', { class: 'val-label', x: padL + w + 8, y: yTop + barH / 2 + 4, text: r.valueText }));
+
+    const hit = s('rect', { class: 'hit', x: 0, y: padT + i * rowH, width: W, height: rowH });
+    hit.addEventListener('mousemove', ev => {
+      const bb = wrap.getBoundingClientRect();
+      tip.show(ev.clientX - bb.left, ev.clientY - bb.top,
+        '<div class="tt-head">' + escapeHtml(r.label) + '</div>' +
+        '<div class="tt-row"><span class="l">' + escapeHtml(opts.measure) + '</span><span class="v">' + escapeHtml(r.valueText) + '</span></div>' +
+        (r.note ? '<div class="tt-row"><span class="l">' + escapeHtml(r.note) + '</span></div>' : ''));
+    });
+    hit.addEventListener('mouseleave', tip.hide);
+    svg.appendChild(hit);
+  });
+
+  svg.appendChild(s('line', { class: 'axis-line', x1: padL, x2: padL, y1: padT, y2: H - padB }));
+  wrap.appendChild(svg);
+  return wrap;
+}
+
+/* ---------- sparkline ---------- */
+function sparkline(series, color) {
+  const W = 92, H = 24, pad = 2;
+  const max = Math.max(1, ...series);
+  const step = series.length > 1 ? (W - pad * 2) / (series.length - 1) : 0;
+  const pts = series.map((v, i) => [pad + i * step, H - pad - (H - pad * 2) * (v / max)]);
+  const d = pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ');
+  const last = pts[pts.length - 1];
+  return s('svg', { width: W, height: H, viewBox: '0 0 ' + W + ' ' + H, class: 'spark', 'aria-hidden': 'true' }, [
+    s('path', { d: d, fill: 'none', stroke: color, 'stroke-width': 2, 'stroke-linecap': 'round', 'stroke-linejoin': 'round', opacity: 0.75 }),
+    last ? s('circle', { cx: last[0], cy: last[1], r: 3, fill: color, stroke: 'var(--surface)', 'stroke-width': 2 }) : null,
+  ]);
+}
+
+function escapeHtml(x) {
+  return String(x ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+}
+
+/* ---------- status ---------- */
+function revSeverity(rate) {
+  if (rate == null) return 'unknown';
+  if (rate >= CFG.thresholds.revisionRateCritical) return 'critical';
+  if (rate >= CFG.thresholds.revisionRateWarning) return 'warning';
+  return 'good';
+}
+const STATUS = {
+  good:     { color: 'var(--good)',     hex: '#0ca30c', icon: '●', label: 'Inom mål' },
+  warning:  { color: 'var(--warning)',  hex: '#fab219', icon: '▲', label: 'Över mål' },
+  serious:  { color: 'var(--serious)',  hex: '#ec835a', icon: '▲', label: 'Släpar' },
+  critical: { color: 'var(--critical)', hex: '#d03b3b', icon: '■', label: 'Kritisk' },
+  unknown:  { color: 'var(--text-muted)', hex: '#898781', icon: '·', label: 'Ingen data' },
+};
+function statusPill(sev, text) {
+  const st = STATUS[sev];
+  return el('span', { class: 'pill', title: st.label }, [
+    el('span', { class: 'dot', style: 'background:' + st.color }),
+    el('span', { text: text + ' · ' + st.label }),
+  ]);
+}
+
+/* ---------- delta ---------- */
+function deltaLine(value, opts) {
+  // lowerIsBetter: uppgång = dåligt
+  if (value == null || !isFinite(value)) return el('div', { class: 'delta', text: 'ingen jämförelse' });
+  const rounded = Math.abs(value) < 0.005 ? 0 : value;
+  const dir = rounded > 0 ? 'up' : rounded < 0 ? 'down' : 'flat';
+  const bad = opts.lowerIsBetter ? rounded > 0 : rounded < 0;
+  const cls = rounded === 0 ? 'flat' : (bad ? 'up' : 'down');
+  const arrow = rounded > 0 ? '↑' : rounded < 0 ? '↓' : '→';
+  const text = opts.points
+    ? (rounded > 0 ? '+' : '') + (rounded * 100).toFixed(0) + ' p.e.'
+    : (rounded > 0 ? '+' : '') + (rounded * 100).toFixed(0) + '%';
+  return el('div', { class: 'delta' }, [
+    el('span', { class: cls, text: arrow + ' ' + text }),
+    el('span', { text: ' mot föreg. ' + state.period + ' d' }),
+  ]);
+}
+
+/* ---------- render ---------- */
+function render() {
+  const M = P.byPeriod[state.period];
+  const app = document.getElementById('app');
+  app.innerHTML = '';
+
+  /* header */
+  const periodBtns = el('div', { class: 'seg' },
+    Object.keys(P.byPeriod).map(Number).sort((a, b) => a - b).map(d =>
+      el('button', {
+        text: d + ' d', 'aria-pressed': String(d === state.period),
+        onclick: () => { state.period = d; render(); },
+      })));
+
+  app.appendChild(el('header', { class: 'top' }, [
+    el('div', {}, [
+      el('h1', { text: 'Redigerarpanel' }),
+      el('div', { class: 'sub', text: CFG.team + ' · arbetstid ' + CFG.workday + ' ' + CFG.timezone +
+        ' · uppdaterad ' + new Date(M.generatedAt).toLocaleString('sv-SE', { dateStyle: 'medium', timeStyle: 'short' }) }),
+    ]),
+    el('div', { class: 'controls' }, [periodBtns]),
+  ]));
+
+  if (P.demo) {
+    app.appendChild(el('div', { class: 'banner' }, [
+      el('span', { text: '⚠' }),
+      el('div', { html: '<b>Demodata.</b> Den här vyn körs på genererad exempeldata så du kan se hur panelen ' +
+        'beter sig. Koppla in riktig data med <code>node cli.mjs ingest notion</code> eller <code>ingest csv</code>, ' +
+        'och rensa demoraderna med <code>node cli.mjs purge-demo</code>.' }),
+    ]));
+  }
+
+  /* --- alla mätetal förklaras i tid som räknas i arbetstimmar --- */
+  app.appendChild(tilesSection(M));
+  app.appendChild(dailySection(M));
+  app.appendChild(compareSection(M));
+  app.appendChild(leaderboardSection(M));
+  app.appendChild(flagsSection(M));
+  app.appendChild(tasksSection(M));
+
+  app.appendChild(el('footer', { class: 'foot', html:
+    'Alla ledtider räknas i <b>arbetstid</b> (' + CFG.workday + ', mån–fre) — inte kalendertid. ' +
+    'Nätter och helger räknas inte mot någon. ' +
+    'Perioden filtrerar på <b>leveransdatum</b>, så historiken flyttar sig inte när gamla tasks godkänns. ' +
+    'Beläggning är en <b>uppskattning</b> ur handpåläggningstid, inte tidrapportering.' }));
+}
+
+function tilesSection(M) {
+  const t = M.team, prev = t.previous;
+  const rel = (a, b) => (b ? (a - b) / b : null);
+
+  const teamSpark = M.team.daily.map(d => d.total);
+
+  const tiles = [
+    { label: 'Leveranser i perioden', value: num(t.deliveries), hero: true,
+      delta: deltaLine(rel(t.deliveries, prev.deliveries), { lowerIsBetter: false }),
+      spark: teamSpark },
+    { label: 'Median ledtid (tilldelad → levererad)', value: dur(t.medianTurnaround),
+      delta: deltaLine(rel(t.medianTurnaround, prev.medianTurnaround), { lowerIsBetter: true }) },
+    { label: 'Revisionsgrad', value: pct(t.revisionRate),
+      delta: deltaLine(t.revisionRate != null && prev.revisionRate != null ? t.revisionRate - prev.revisionRate : null,
+        { lowerIsBetter: true, points: true }) },
+    { label: 'Median revisionstid', value: dur(t.medianRevisionTurnaround),
+      delta: deltaLine(rel(t.medianRevisionTurnaround, prev.medianRevisionTurnaround), { lowerIsBetter: true }) },
+    { label: 'Levererat i tid', value: pct(t.onTimeRate),
+      delta: deltaLine(t.onTimeRate != null && prev.onTimeRate != null ? t.onTimeRate - prev.onTimeRate : null,
+        { lowerIsBetter: false, points: true }) },
+    { label: 'Öppna tasks just nu', value: num(M.editors.reduce((a, e) => a + e.wip, 0)),
+      delta: el('div', { class: 'delta', text: M.flags.length + ' flaggade' }) },
+  ];
+
+  return el('section', {}, [
+    el('div', { class: 'tiles' }, tiles.map(x => {
+      const kids = [
+        el('div', { class: 'label', text: x.label }),
+        el('div', { class: 'value' + (x.hero ? ' hero' : ''), text: x.value }),
+        x.delta,
+      ];
+      const node = el('div', { class: 'tile' }, kids);
+      if (x.spark) node.appendChild(sparkline(x.spark, seriesColors()[0]));
+      return node;
+    })),
+  ]);
+}
+
+function dailySection(M) {
+  const ids = M.editors.map(e => e.id);
+  const legend = el('ul', { class: 'legend' }, ids.map(id =>
+    el('li', {}, [
+      el('button', {
+        'aria-pressed': String(!state.hidden.has(id)),
+        onclick: () => {
+          if (state.hidden.has(id)) state.hidden.delete(id); else state.hidden.add(id);
+          render();
+        },
+      }, [
+        el('span', { class: 'key', style: 'background:' + colorOf(id) }),
+        el('span', { text: nameOf(id) }),
+      ]),
+    ])));
+
+  const tableRows = M.team.daily.slice().reverse().map(d =>
+    el('tr', {}, [el('td', { text: shortDate(d.date) })]
+      .concat(ids.map(id => el('td', { class: 'num', text: num(d[id] || 0) })))
+      .concat([el('td', { class: 'num', text: num(d.total) })])));
+
+  return el('section', {}, [
+    el('div', { class: 'card' }, [
+      el('h2', { text: 'Output per dag' }),
+      el('p', { class: 'hint', text: 'Varje inlämning räknas — även omgjorda. Klicka i förklaringen för att filtrera.' }),
+      legend,
+      stackedDaily(M.team.daily, ids),
+      el('details', { class: 'tableview' }, [
+        el('summary', { text: 'Visa som tabell' }),
+        el('div', { class: 'table-scroll' }, [
+          el('table', {}, [
+            el('thead', {}, [el('tr', {}, [el('th', { text: 'Dag' })]
+              .concat(ids.map(id => el('th', { text: nameOf(id) })))
+              .concat([el('th', { text: 'Totalt' })]))]),
+            el('tbody', {}, tableRows),
+          ]),
+        ]),
+      ]),
+    ]),
+  ]);
+}
+
+function compareSection(M) {
+  const withData = M.editors.filter(e => e.stats.deliveries > 0);
+
+  const turn = withData.slice()
+    .sort((a, b) => (a.stats.medianTurnaround ?? 1e9) - (b.stats.medianTurnaround ?? 1e9))
+    .map(e => ({
+      id: e.id, label: e.name, value: e.stats.medianTurnaround || 0,
+      color: colorOf(e.id), valueText: dur(e.stats.medianTurnaround),
+      note: 'p90: ' + dur(e.stats.p90Turnaround) + ' · pickup: ' + dur(e.stats.medianPickup),
+    }));
+
+  const rev = withData.slice()
+    .sort((a, b) => (b.stats.revisionRate ?? -1) - (a.stats.revisionRate ?? -1))
+    .map(e => {
+      const sev = revSeverity(e.stats.revisionRate);
+      return {
+        id: e.id, label: e.name, value: (e.stats.revisionRate || 0) * 100,
+        color: STATUS[sev].hex,
+        valueText: STATUS[sev].icon + ' ' + pct(e.stats.revisionRate),
+        note: num(e.stats.avgRevisionsPerTask, 1) + ' rundor/task · ' + STATUS[sev].label,
+      };
+    });
+
+  return el('section', { class: 'grid2' }, [
+    el('div', { class: 'card' }, [
+      el('h2', { text: 'Median ledtid per redigerare' }),
+      el('p', { class: 'hint', text: 'Tilldelad → första leverans, räknat i arbetstimmar. Kortare är bättre.' }),
+      hbars(turn, {
+        target: CFG.targets.turnaroundHours * 60,
+        targetLabel: CFG.targets.turnaroundHours + 'h',
+        measure: 'Median ledtid',
+        aria: 'Median ledtid per redigerare',
+      }),
+    ]),
+    el('div', { class: 'card' }, [
+      el('h2', { text: 'Revisionsgrad' }),
+      el('p', { class: 'hint', text: 'Andel tasks som fick minst en ändringsbegäran. Ikon + text bär statusen, inte färgen ensam.' }),
+      hbars(rev, {
+        target: CFG.targets.revisionRate * 100,
+        targetLabel: pct(CFG.targets.revisionRate),
+        measure: 'Revisionsgrad',
+        aria: 'Revisionsgrad per redigerare',
+      }),
+      el('ul', { class: 'legend' }, ['good', 'warning', 'critical'].map(k =>
+        el('li', {}, [
+          el('span', { class: 'key', style: 'background:' + STATUS[k].hex }),
+          el('span', { text: STATUS[k].icon + ' ' + STATUS[k].label }),
+        ]))),
+    ]),
+  ]);
+}
+
+const COLUMNS = [
+  { key: 'name', label: 'Redigerare', get: e => e.name, type: 'text' },
+  { key: 'deliveries', label: 'Leveranser', get: e => e.stats.deliveries, fmt: v => num(v) },
+  { key: 'approved', label: 'Godkända', get: e => e.stats.approved, fmt: v => num(v) },
+  { key: 'perDay', label: 'Per aktiv dag', get: e => e.stats.deliveriesPerActiveDay, fmt: v => num(v, 1) },
+  { key: 'turnaround', label: 'Median ledtid', get: e => e.stats.medianTurnaround, fmt: dur },
+  { key: 'p90', label: 'p90 ledtid', get: e => e.stats.p90Turnaround, fmt: dur },
+  { key: 'pickup', label: 'Pickup', get: e => e.stats.medianPickup, fmt: dur },
+  { key: 'revrate', label: 'Revisionsgrad', get: e => e.stats.revisionRate, fmt: v => pct(v) },
+  { key: 'revtime', label: 'Revisionstid', get: e => e.stats.medianRevisionTurnaround, fmt: dur },
+  { key: 'rework', label: 'Omgjort', get: e => e.stats.reworkShare, fmt: v => pct(v) },
+  { key: 'ontime', label: 'I tid', get: e => e.stats.onTimeRate, fmt: v => pct(v) },
+  { key: 'util', label: 'Beläggning*', get: e => e.utilisation, fmt: v => pct(v) },
+  { key: 'wip', label: 'Öppna', get: e => e.wip, fmt: v => num(v) },
+];
+
+function leaderboardSection(M) {
+  const col = COLUMNS.find(c => c.key === state.sort.key) || COLUMNS[1];
+  const rows = M.editors.slice().sort((a, b) => {
+    const av = col.get(a), bv = col.get(b);
+    if (col.type === 'text') return String(av).localeCompare(String(bv), 'sv') * state.sort.dir * -1;
+    const an = av == null ? -Infinity : av, bn = bv == null ? -Infinity : bv;
+    return (an - bn) * state.sort.dir;
+  });
+
+  const head = el('tr', {}, COLUMNS.map(c => el('th', {
+    text: c.label,
+    scope: 'col',
+    'aria-sort': state.sort.key === c.key ? (state.sort.dir === -1 ? 'descending' : 'ascending') : 'none',
+    onclick: () => {
+      if (state.sort.key === c.key) state.sort.dir *= -1;
+      else { state.sort.key = c.key; state.sort.dir = -1; }
+      render();
+    },
+  })).concat([el('th', { text: 'Trend' })]));
+
+  const body = rows.map(e => {
+    const tds = COLUMNS.map(c => {
+      if (c.key === 'name') {
+        return el('td', {}, [el('div', { class: 'who' }, [
+          el('span', { class: 'key', style: 'background:' + colorOf(e.id) }),
+          el('div', {}, [
+            el('div', { text: e.name }),
+            el('div', { class: 'role', text: e.role || '' }),
+          ]),
+        ])]);
+      }
+      if (c.key === 'revrate') {
+        const sev = revSeverity(e.stats.revisionRate);
+        const td = el('td', { class: 'num' });
+        td.appendChild(statusPill(sev, pct(e.stats.revisionRate)));
+        return td;
+      }
+      return el('td', { class: 'num', text: c.fmt(c.get(e)) });
+    });
+    const spark = el('td', {});
+    spark.appendChild(sparkline(e.daily.map(d => d.count), colorOf(e.id)));
+    tds.push(spark);
+    return el('tr', {}, tds);
+  });
+
+  return el('section', {}, [
+    el('div', { class: 'card' }, [
+      el('h2', { text: 'Per redigerare' }),
+      el('p', { class: 'hint', text: 'Klicka på en kolumnrubrik för att sortera. * Beläggning = uppskattad handpåläggning delat med tillgänglig arbetstid — grovt mått, inte tidrapport.' }),
+      el('div', { class: 'table-scroll' }, [
+        el('table', {}, [el('thead', {}, [head]), el('tbody', {}, body)]),
+      ]),
+    ]),
+  ]);
+}
+
+function flagsSection(M) {
+  const ICON = { critical: '■', serious: '▲', warning: '▲' };
+  const items = M.flags.slice(0, 25).map(f => el('li', {}, [
+    el('span', { class: 'icon', style: 'color:' + STATUS[f.severity].color, text: ICON[f.severity] || '·' }),
+    el('div', {}, [
+      el('div', { class: 'who-line', text: nameOf(f.editor) + ' · ' + f.task }),
+      el('div', { class: 'detail', text: f.detail + ' — ' + f.title }),
+    ]),
+    el('div', { class: 'when', text: dur(f.minutes) }),
+  ]));
+
+  return el('section', {}, [
+    el('div', { class: 'card' }, [
+      el('h2', { text: 'Behöver en knuff' }),
+      el('p', { class: 'hint', text: 'Öppna tasks som står still, har passerat deadline eller väntar på en obesvarad revision. Detta är exakt vad Slack-digesten skickar ut.' }),
+      items.length ? el('ul', { class: 'flags' }, items) : el('div', { class: 'empty', text: 'Inget som skräpar. Allt rör sig.' }),
+    ]),
+  ]);
+}
+
+const STATE_LABEL = {
+  assigned: 'Tilldelad', in_progress: 'Pågår', in_review: 'I granskning',
+  revision: 'Revision', approved: 'Godkänd', cancelled: 'Avbruten',
+};
+
+function tasksSection(M) {
+  const rows = M.tasks.slice(0, 400).map(t => el('tr', {}, [
+    el('td', { text: t.id }),
+    el('td', {}, [el('div', { class: 'who' }, [
+      el('span', { class: 'key', style: 'background:' + colorOf(t.editor) }),
+      el('span', { text: nameOf(t.editor) }),
+    ])]),
+    el('td', { text: t.title }),
+    el('td', { text: STATE_LABEL[t.state] || t.state }),
+    el('td', { class: 'num', text: dur(t.turnaroundMin) }),
+    el('td', { class: 'num', text: dur(t.cycleMin) }),
+    el('td', { class: 'num', text: num(t.revisionCount) }),
+    el('td', { class: 'num', text: t.onTime == null ? '–' : (t.onTime ? 'Ja' : 'Nej') }),
+  ]));
+
+  return el('section', {}, [
+    el('div', { class: 'card' }, [
+      el('h2', { text: 'Tasks i perioden' }),
+      el('p', { class: 'hint', text: 'Rådata bakom siffrorna ovan — så att ingen siffra behöver tas på förtroende.' }),
+      el('div', { class: 'table-scroll' }, [
+        el('table', {}, [
+          el('thead', {}, [el('tr', {}, ['Task', 'Redigerare', 'Titel', 'Status', 'Ledtid', 'Total cykel', 'Rev.', 'I tid']
+            .map(h => el('th', { text: h, scope: 'col' })))]),
+          el('tbody', {}, rows),
+        ]),
+      ]),
+    ]),
+  ]);
+}
+
+render();
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', render);
+`;

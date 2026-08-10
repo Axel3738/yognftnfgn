@@ -1,0 +1,7 @@
+[
+  { "id": "marcus",  "name": "Marcus L.",  "role": "Video",        "slack": "U0000MARCUS", "started": "2024-03-01" },
+  { "id": "sofia",   "name": "Sofia K.",   "role": "Video/Static", "slack": "U0000SOFIA",  "started": "2024-09-15" },
+  { "id": "jonte",   "name": "Jonte R.",   "role": "Static",       "slack": "U0000JONTE",  "started": "2025-01-08" },
+  { "id": "amina",   "name": "Amina B.",   "role": "Video",        "slack": "U0000AMINA",  "started": "2025-11-03" },
+  { "id": "viktor",  "name": "Viktor S.",  "role": "Static",       "slack": "U0000VIKTOR", "started": "2026-05-20" }
+]
