@@ -49,7 +49,9 @@ if (!configPath) die('Ange konfig: node uk-wave.mjs waves/<kampanj>.config.mjs [
 const cfg = (await import(new URL(configPath, `file://${process.cwd()}/`))).default;
 // cfg: { campaignName, link, dailyBudget (öre), productRe, concepts: {SO/SP/PD: {adset, message, headline, description}},
 //        aliases?: {SF:'SP'}, forceConcept?: {filnamn: kod},
-//        act?, page?, pixel?, country?, prefix?, adsetStatus?, adStatus? } — default: Magiborsten UK
+//        act?, page?, pixel?, country?, prefix?, adsetStatus?, adStatus?,
+//        dsaBeneficiary?/dsaPayor? (krävs i EU), structureOnly? (bygg bara kampanj+adsets) }
+//        — default: Magiborsten UK
 
 const ACT = cfg.act || 'act_1107817401910319';           // Magiborsten UK (SEK)
 const PAGE_ID = cfg.page || '1305042582683792';          // BeaverShop (ingen IG-koppling)
@@ -170,6 +172,9 @@ for (const [code, c] of Object.entries(cfg.concepts)) {
     billing_event: 'IMPRESSIONS', optimization_goal: 'OFFSITE_CONVERSIONS',
     destination_type: 'WEBSITE',
     promoted_object: JSON.stringify({ pixel_id: PIXEL_ID, custom_event_type: 'PURCHASE' }),
+    // DSA: EU kräver att annonsör/betalare anges
+    ...(cfg.dsaBeneficiary ? { dsa_beneficiary: cfg.dsaBeneficiary } : {}),
+    ...(cfg.dsaPayor ? { dsa_payor: cfg.dsaPayor } : {}),
     targeting: JSON.stringify({
       age_min: 18, age_max: 65,
       geo_locations: { countries: [COUNTRY], location_types: ['home', 'recent'] },
@@ -181,6 +186,11 @@ for (const [code, c] of Object.entries(cfg.concepts)) {
 }
 
 // ---- creatives + ads ----
+if (cfg.structureOnly) {
+  console.log('\nstructureOnly: kampanj + adsets klara. Annonser skapas när sida/länk finns.');
+  process.exit(0);
+}
+
 let ok = 0, failed = 0;
 for (const [code, list] of Object.entries(plan)) {
   const c = cfg.concepts[code];
