@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
-    "dev": "shopify app dev",
+    "dev": "npx -y @shopify/cli app dev",
     "start": "remix-serve ./build/server/index.js",
     "setup": "prisma generate && prisma migrate deploy",
     "typecheck": "tsc --noEmit",
-    "seed:costs": "node scripts/seed-costs.mjs"
+    "config:link": "npx -y @shopify/cli app config link"
   },
   "dependencies": {
     "@prisma/client": "^5.22.0",
@@ -26,10 +26,11 @@
   },
   "devDependencies": {
     "@remix-run/dev": "^2.15.0",
-    "@shopify/cli": "^3.71.0",
     "prisma": "^5.22.0",
     "typescript": "^5.7.2",
     "vite": "^5.4.11"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }
