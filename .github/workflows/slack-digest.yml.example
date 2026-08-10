@@ -1,0 +1,56 @@
+# Schemalagda Slack-utskick från redigerar-dashboarden.
+#
+# Så här tar du den i bruk:
+#   1. Döp om filen till slack-digest.yml
+#   2. Lägg SLACK_BOT_TOKEN (eller SLACK_WEBHOOK_URL) som repository secret
+#   3. Se till att data/events.jsonl finns i repot ELLER byt ut steget "Hämta data"
+#      mot det som hämtar er riktiga eventlogg
+#
+# Tiderna är i UTC — 06:30 UTC = 08:30 svensk sommartid.
+
+name: Slack - redigerarrapport
+
+on:
+  schedule:
+    - cron: '30 6 * * 1-5' # dagligt läge, vardagar
+    - cron: '0 13 * * 5' # veckorapport, fredag
+  workflow_dispatch:
+    inputs:
+      kind:
+        description: 'daily | weekly | nudge'
+        required: true
+        default: daily
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # Byt ut mot ert sätt att hämta eventloggen om den inte ligger i repot,
+      # t.ex. nedladdning från S3 eller export från task-systemet.
+      - name: Hämta data
+        run: test -f dashboard/data/events.jsonl || echo "ingen eventlogg — rapporten blir tom"
+
+      - name: Välj rapporttyp
+        id: kind
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "kind=${{ inputs.kind }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "0 13 * * 5" ]; then
+            echo "kind=weekly" >> "$GITHUB_OUTPUT"
+          else
+            echo "kind=daily" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Skicka till Slack
+        working-directory: dashboard
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL: '#redigering'
+          DASHBOARD_URL: ${{ vars.DASHBOARD_URL }}
+        run: node edash.mjs slack ${{ steps.kind.outputs.kind }}

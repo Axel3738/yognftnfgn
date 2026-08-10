@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Redigerar-dashboard · Grillkliniken</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>"
+    />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar__title">
+        <h1>Redigering</h1>
+        <p id="range-label" class="muted">Laddar…</p>
+      </div>
+      <div class="topbar__actions">
+        <button id="theme-toggle" class="ghost" type="button" aria-label="Byt tema">◐</button>
+      </div>
+    </header>
+
+    <!-- En filterrad som styr allt nedanför. -->
+    <section class="filters" aria-label="Filter">
+      <div class="filters__group" role="group" aria-label="Period">
+        <button class="chip" data-range="7">7 dagar</button>
+        <button class="chip is-active" data-range="30">30 dagar</button>
+        <button class="chip" data-range="90">90 dagar</button>
+        <button class="chip" data-range="mtd">Denna månad</button>
+      </div>
+      <div class="filters__group">
+        <label class="field">
+          <span>Från</span>
+          <input type="date" id="from" />
+        </label>
+        <label class="field">
+          <span>Till</span>
+          <input type="date" id="to" />
+        </label>
+        <label class="field">
+          <span>Typ</span>
+          <select id="kind"><option value="">Alla</option></select>
+        </label>
+        <label class="field">
+          <span>Redigerare</span>
+          <select id="editor"><option value="">Alla</option></select>
+        </label>
+      </div>
+    </section>
+
+    <main id="main">
+      <section class="hero card" aria-labelledby="hero-label">
+        <div class="hero__figure">
+          <p id="hero-label" class="tile__label">Levererad output i perioden</p>
+          <p class="hero__value" id="hero-value">—</p>
+          <p class="hero__meta" id="hero-meta"></p>
+        </div>
+        <div class="hero__tiles" id="tiles"></div>
+      </section>
+
+      <section id="insights" class="insights" aria-label="Observationer"></section>
+
+      <section class="grid">
+        <article class="card chart-card" id="card-output">
+          <header class="card__head">
+            <div>
+              <h2>Output per dag</h2>
+              <p class="muted">Komplexitetsviktade poäng per första leverans, staplat per redigerare.</p>
+            </div>
+            <button class="ghost toggle-table" data-target="output" type="button">Tabell</button>
+          </header>
+          <div class="chart" id="chart-output"></div>
+          <div class="table-view" id="table-output" hidden></div>
+        </article>
+
+        <article class="card chart-card" id="card-lead">
+          <header class="card__head">
+            <div>
+              <h2>Ledtid till första leverans</h2>
+              <p class="muted">Median arbetstimmar per vecka. Nätter, helger och röda dagar räknas inte.</p>
+            </div>
+            <button class="ghost toggle-table" data-target="lead" type="button">Tabell</button>
+          </header>
+          <div class="chart" id="chart-lead"></div>
+          <div class="table-view" id="table-lead" hidden></div>
+        </article>
+
+        <article class="card chart-card" id="card-revisions">
+          <header class="card__head">
+            <div>
+              <h2>Omgörningar</h2>
+              <p class="muted">
+                Andel tasks som fick minst en revision — uppdelat på utförande och på sådant vi själva
+                orsakade (brief, scope, smakändring).
+              </p>
+            </div>
+            <button class="ghost toggle-table" data-target="revisions" type="button">Tabell</button>
+          </header>
+          <div class="chart" id="chart-revisions"></div>
+          <div class="table-view" id="table-revisions" hidden></div>
+        </article>
+
+        <article class="card chart-card" id="card-quadrant">
+          <header class="card__head">
+            <div>
+              <h2>Fart mot träffsäkerhet</h2>
+              <p class="muted">Uppe till vänster = snabb och rätt första gången. Punktstorlek = levererad output.</p>
+            </div>
+            <button class="ghost toggle-table" data-target="quadrant" type="button">Tabell</button>
+          </header>
+          <div class="chart" id="chart-quadrant"></div>
+          <div class="table-view" id="table-quadrant" hidden></div>
+        </article>
+      </section>
+
+      <section class="card" aria-labelledby="league-title">
+        <header class="card__head">
+          <div>
+            <h2 id="league-title">Per redigerare</h2>
+            <p class="muted">Klicka på en rad för att se tasksen bakom siffrorna.</p>
+          </div>
+        </header>
+        <div class="table-scroll">
+          <table class="league" id="league">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div id="drilldown" class="drilldown" hidden></div>
+      </section>
+
+      <section class="card" aria-labelledby="queue-title">
+        <header class="card__head">
+          <div>
+            <h2 id="queue-title">Kön just nu</h2>
+            <p class="muted">Det som Slack-utskicken handlar om.</p>
+          </div>
+        </header>
+        <div class="queue" id="queue"></div>
+      </section>
+
+      <section class="card" aria-labelledby="dq-title">
+        <header class="card__head">
+          <div>
+            <h2 id="dq-title">Datakvalitet</h2>
+            <p class="muted">Vad siffrorna ovan inte vet.</p>
+          </div>
+        </header>
+        <ul class="dq" id="dq"></ul>
+      </section>
+    </main>
+
+    <footer class="footer muted">
+      <span id="generated"></span>
+    </footer>
+
+    <div id="tooltip" class="tooltip" role="status" aria-live="polite" hidden></div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

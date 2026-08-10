@@ -2,3 +2,7 @@ node_modules/
 pipeline/output/
 *.log
 .env
+
+# Dashboardens eventlogg — riktig data hör inte hemma i repot,
+# och demodata genereras med "node edash.mjs seed".
+dashboard/data/

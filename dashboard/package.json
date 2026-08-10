@@ -1,0 +1,19 @@
+{
+  "name": "grillkliniken-editor-dashboard",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Dashboard som mäter redigerarnas output, ledtider, revisions-rate och belastning — med Slack-utskick.",
+  "bin": {
+    "edash": "./edash.mjs"
+  },
+  "scripts": {
+    "start": "node edash.mjs serve",
+    "seed": "node edash.mjs seed --days 60",
+    "report": "node edash.mjs report",
+    "test": "node --test test/"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

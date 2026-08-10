@@ -29,6 +29,7 @@ att datan går att skära, och sedan iterera på det som faktiskt funkar.
 | `docs/winning-lines.md` | **Punchline-banken** — analys av dina top spenders + vinnande lines för statics |
 | `docs/bof-concepts.md` | BOF-research (konkurrentanalys) + de första annonskoncepten för Mastern |
 | `docs/playbook.md` | Spelboken — vinnande angles/format/hooks som vi bevisat över tid |
+| `dashboard/` | **Redigerar-dashboarden** — output, ledtider, omgörningar och Slack-utskick |
 
 ## Aktivt setup
 
@@ -39,6 +40,20 @@ att datan går att skära, och sedan iterera på det som faktiskt funkar.
 
 Övriga tillgängliga konton (ej i bruk): MagiBorsten `1867947880635861`,
 Matstrumpor.se `730973156224390` (⚠️ UNSETTLED).
+
+## Redigerar-dashboarden
+
+Produktionssidan av loopen: vem levererar vad, hur snabbt, och hur ofta det måste
+göras om. Mäter i **arbetstid** (inte väggklocka), skiljer på redigerarens tid och
+vår granskningstid, och skiljer omgörningar orsakade av utförandet från dem vi
+själva orsakade med otydliga briefs. Skickar dagsläge, veckorapport och personliga
+påminnelser till Slack.
+
+```bash
+cd dashboard && node edash.mjs seed && node edash.mjs serve   # → localhost:4173
+```
+
+Full dokumentation: [`dashboard/README.md`](dashboard/README.md).
 
 ## Status
 
