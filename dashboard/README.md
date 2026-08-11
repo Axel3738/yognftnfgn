@@ -141,10 +141,17 @@ Det tar ungefär tre minuter.
    - ❌ Insert/Update content behövs inte — panelen skriver aldrig något
 5. Klicka **Save**, sedan **Show** vid *Internal Integration Secret* och kopiera.
    Den börjar med `ntn_` (äldre konton: `secret_`).
-6. **Släpp in integrationen i varje hub.** Öppna databasen i Notion →
-   `•••` uppe till höger → **Connections** → **Connect to** → `Redigerarpanel`.
-   Görs en gång per creative hub. Ansluter du den till teamspacets toppsida
-   ärver sidorna under den kopplingen.
+6. **Släpp in integrationen där datan finns.** Det här är det steg alla missar:
+   *att skapa integrationen ger den noll tillgång.* Den måste dessutom bjudas
+   in. Två vägar, samma resultat:
+
+   - **Från integrationssidan** (enklast): fliken **Åtkomst till innehåll**
+     högst upp → välj de sidor/databaser den ska få läsa.
+   - **Från Notion**: öppna databasen → `•••` uppe till höger →
+     **Connections** / **Anslutningar** → välj integrationen.
+
+   Kopplar du in den på teamspacets toppsida ärver allt under den åtkomsten,
+   så slipper du göra det per hub.
 7. Lägg token i miljön:
 
 ```bash
@@ -153,11 +160,16 @@ echo 'NOTION_TOKEN=ntn_din_token_här' > .env      # .env är gitignorerad
 export $(cat .env | xargs)
 ```
 
-Testa att den funkar:
+Testa att allt sitter ihop:
 
 ```bash
-node cli.mjs ingest notion-all --dry-run
+node cli.mjs check-notion
 ```
+
+Den svarar rad för rad: är token giltig, får den läsa användare, får den läsa
+kommentarer, och — viktigast — vilka av dina fem hubbar den faktiskt släpps in
+i. En hub som svarar `404` betyder alltid samma sak: integrationen är inte
+inbjuden dit ännu. Kommandot skriver ut exakt vad du ska klicka på.
 
 **Token:en är ett lösenord.** Den ligger i `.env`, som är gitignorerad — den
 ska aldrig committas eller klistras in i en chatt. Blir den läckt: gå tillbaka

@@ -5,6 +5,8 @@
 //   node cli.mjs seed [--days 90]      generera demodata
 //   node cli.mjs purge-demo            rensa alla demorader
 //   node cli.mjs log <task> <event>    logga en händelse för hand
+//   node cli.mjs check-notion          testa token + att varje hub är insläppt
+//   node cli.mjs ingest notion-all     hämta alla rader OCH alla kommentarer
 //   node cli.mjs ingest notion         polla Notion och bokför statusändringar
 //   node cli.mjs ingest csv <fil>      importera CSV
 //   node cli.mjs slack digest          posta lägesrapport i kanalen
@@ -357,6 +359,90 @@ async function cmdSlack() {
   die('Användning: node cli.mjs slack <digest|nudge> [--dry-run] [--channel #kanal] [--url <dashboard-url>]');
 }
 
+/* ----------------------------------------------------------- check-notion */
+
+// Svarar på "har jag gjort steg 5 rätt?" utan att man behöver gissa.
+// Testar token, varje hub var för sig, och om kommentarer går att läsa.
+async function cmdCheckNotion() {
+  const token = process.env.NOTION_TOKEN;
+  if (!token) {
+    die('NOTION_TOKEN är inte satt i den här terminalen.\n' +
+        '  Gjorde du `export $(cat .env | xargs)`? Den gäller bara i det fönstret.');
+  }
+  say(`\n  Token hittad (${token.slice(0, 7)}…${token.slice(-4)})\n`);
+
+  const call = async (path, init) => {
+    const res = await fetch(`https://api.notion.com/v1${path}`, {
+      ...init,
+      headers: {
+        authorization: `Bearer ${token}`,
+        'notion-version': '2022-06-28',
+        'content-type': 'application/json',
+        ...(init?.headers || {}),
+      },
+    });
+    return { status: res.status, body: await res.json() };
+  };
+
+  // 1. Duger token:en över huvud taget?
+  const me = await call('/users/me');
+  if (me.status === 401) die('Token:en avvisas (401). Den är fel, eller så har den återkallats. Kopiera en ny från integrations-sidan.');
+  if (me.status !== 200) die(`Oväntat svar från Notion: ${me.status} ${JSON.stringify(me.body)}`);
+  say(`  ✔ Token giltig — integrationen heter "${me.body.name || me.body.bot?.owner?.type || 'okänd'}"`);
+
+  // 2. Får den läsa användare?
+  const users = await call('/users?page_size=1');
+  say(users.status === 200
+    ? '  ✔ Får läsa användare (namnen kan slås upp)'
+    : `  ✖ Får INTE läsa användare — bocka i "Read user information" i integrationens Capabilities`);
+
+  // 3. Varje hub för sig. Det är HÄR steg 5 syns.
+  say('\n  Hubbar:');
+  let connected = 0, total = 0, commentsOk = null;
+  for (const ws of config.workspaces || []) {
+    for (const hub of ws.hubs || []) {
+      total++;
+      const db = await call(`/databases/${hub.databaseId}`);
+      const label = `${ws.name} / ${hub.name}`;
+      if (db.status === 200) {
+        connected++;
+        say(`   ✔ ${label}`);
+
+        // 4. Testa kommentarsläsning på en sida i den första hub som funkar.
+        if (commentsOk === null) {
+          const q = await call(`/databases/${hub.databaseId}/query`, {
+            method: 'POST', body: JSON.stringify({ page_size: 1 }),
+          });
+          const pageId = q.body?.results?.[0]?.id;
+          if (pageId) {
+            const c = await call(`/comments?block_id=${pageId}&page_size=1`);
+            commentsOk = c.status === 200;
+            if (!commentsOk) {
+              say(`      ⚠ Kommentarer går inte att läsa (${c.status}: ${c.body?.message || ''})`);
+            }
+          }
+        }
+      } else if (db.status === 404) {
+        say(`   ✖ ${label}`);
+        say('        Integrationen är inte insläppt här. Öppna databasen i Notion,');
+        say('        klicka ••• uppe till höger → Connections → Connect to → Redigerarpanel.');
+      } else {
+        say(`   ✖ ${label} — ${db.status}: ${db.body?.message || ''}`);
+      }
+    }
+  }
+
+  if (commentsOk === true) say('\n  ✔ Kommentarer går att läsa — det är de som ger ledtiderna.');
+  if (commentsOk === false) say('\n  ✖ Kommentarer går INTE att läsa. Bocka i "Read comments" i Capabilities.');
+
+  say(`\n  ${connected} av ${total} hubbar anslutna.`);
+  if (connected === total && commentsOk) {
+    say('  Allt klart. Kör: node cli.mjs ingest notion-all\n');
+  } else {
+    say('  Fixa raderna med ✖ ovan och kör det här kommandot igen.\n');
+  }
+}
+
 /* ------------------------------------------------------------------ stats */
 
 function cmdStats() {
@@ -407,6 +493,7 @@ const COMMANDS = {
   'purge-demo': cmdPurgeDemo,
   log: cmdLog,
   ingest: cmdIngest,
+  'check-notion': cmdCheckNotion,
   slack: cmdSlack,
   stats: cmdStats,
 };
