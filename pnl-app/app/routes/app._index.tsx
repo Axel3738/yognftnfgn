@@ -38,6 +38,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
   const { admin, session } = await authenticate.admin(request);
   const url = new URL(request.url);
   const rangeKey = url.searchParams.get("range") ?? "30d";
+  try {
 
   const shopInfo = await fetchShopInfo(admin);
   const today = shopInfo.today;
@@ -93,17 +94,43 @@ export async function loader({ request }: LoaderFunctionArgs) {
   });
 
   return json({
+    fatal: null as string | null,
     result,
     rangeKey,
     currency: settings.currency,
     spendError: spend.error ?? null,
     targetMargin: Number(settings.targetMargin),
   });
+  } catch (e) {
+    /* Remix maskerar kastade fel i produktion till "Application Error" utan
+       detaljer. Här fångas de och visas i klartext — utan feltexten på skärmen
+       blir varje felsökningsrunda en gissningslek. */
+    console.error("Loader-fel /app:", e);
+    return json({
+      fatal: e instanceof Error ? `${e.message}` : String(e),
+      result: null,
+      rangeKey,
+      currency: "SEK",
+      spendError: null,
+      targetMargin: 0.25,
+    });
+  }
 }
 
 export default function Dashboard() {
-  const { result, rangeKey, currency, spendError, targetMargin } = useLoaderData<typeof loader>();
+  const { fatal, result, rangeKey, currency, spendError, targetMargin } =
+    useLoaderData<typeof loader>();
   const [, setParams] = useSearchParams();
+  if (fatal || !result) {
+    return (
+      <Page title="Vinst">
+        <Banner tone="critical" title="Panelen kunde inte hämta data">
+          <p style={{ fontFamily: "monospace", whiteSpace: "pre-wrap" }}>{fatal ?? "okänt fel"}</p>
+          <p>Skicka en skärmbild av det här meddelandet — det pekar ut exakt var det stannar.</p>
+        </Banner>
+      </Page>
+    );
+  }
   const t = result.totals;
 
   const nf = new Intl.NumberFormat("sv-SE", { maximumFractionDigits: 0 });
