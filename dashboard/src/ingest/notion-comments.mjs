@@ -32,7 +32,8 @@ export function commentsToEvents(payload, editors, tasksById = new Map()) {
   const rounds = new Map();
 
   for (const c of comments) {
-    const taskId = `N-${String(c.page).replace(/-/g, '')}`;
+    // Samma id-funktion som raderna använder — annars matchar de inte.
+    const taskId = taskIdFromUrl(c.page);
     const task = tasksById.get(taskId);
     const owner = task?.editor ?? null;
     const author = byNotionId.get(c.author) || `notion-${String(c.author).slice(0, 8)}`;

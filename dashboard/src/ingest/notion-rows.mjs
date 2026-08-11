@@ -40,9 +40,15 @@ const STATE_BY_STATUS = {
  * sekunder isär), så ett kapat id slår ihop olika tasks till en.
  */
 export function taskIdFromUrl(url) {
-  const id = String(url).split('/').pop().replace(/\?.*$/, '').replace(/-/g, '');
-  if (id.length < 32) throw new Error(`Oväntat kort Notion-id i url: ${url}`);
-  return `N-${id}`;
+  // Notion-URL:er har två former och båda måste ge SAMMA id:
+  //   https://app.notion.com/3b8270ab908c80b3…        (bara id:t)
+  //   https://www.notion.so/Approved-music-36f270ab…  (titeln + id:t)
+  // Tar man bara sista segmentet hamnar sidans titel i id:t, och då matchar
+  // inte raderna sina egna kommentarer — vilket tyst nollställer alla ledtider.
+  // Därför: plocka de 32 sista hex-tecknen, aldrig hela segmentet.
+  const hex = String(url).replace(/\?.*$/, '').replace(/-/g, '').match(/[0-9a-f]{32}$/i);
+  if (!hex) throw new Error(`Hittar inget Notion-id i url: ${url}`);
+  return `N-${hex[0].toLowerCase()}`;
 }
 
 function parseAssignee(raw) {

@@ -9,6 +9,7 @@ import { businessMinutes, minutesPerWorkday, formatDuration, localDate, dateRang
 import { foldTasks, mergeEvents, eventKey } from './src/store.mjs';
 import { enrichTask, computeMetrics, median, percentile, revisionSeverity } from './src/metrics.mjs';
 import { parseCSV } from './src/ingest/csv.mjs';
+import { taskIdFromUrl } from './src/ingest/notion-rows.mjs';
 import { buildDigest, buildNudges } from './src/slack.mjs';
 
 const TZ = 'Europe/Stockholm';
@@ -221,6 +222,20 @@ test('parsern klarar citat, komman och semikolon', () => {
   assert.deepEqual(rows, [['a', 'b', 'c'], ['1', 'två, med komma', '3']]);
   assert.deepEqual(parseCSV('a;b\n1;2\n'), [['a', 'b'], ['1', '2']]);
   assert.deepEqual(parseCSV('a\n"säger ""hej"""\n'), [['a'], ['säger "hej"']]);
+});
+
+console.log('\nNotion-id');
+
+test('titel i URL:en ändrar inte task-id:t', () => {
+  // Notions API ger URL:er med titeln inbakad, SQL-vyn ger bara id:t. Skiljer de
+  // sig åt kopplas inte kommentarerna till sina tasks och ledtiderna blir tomma.
+  const bart = taskIdFromUrl('https://app.notion.com/36f270ab908c80aaa89ffade93ea9cb4');
+  const medTitel = taskIdFromUrl('https://www.notion.so/Approved-music-36f270ab908c80aaa89ffade93ea9cb4');
+  const medStreck = taskIdFromUrl('https://www.notion.so/36f270ab-908c-80aa-a89f-fade93ea9cb4');
+  assert.equal(bart, 'N-36f270ab908c80aaa89ffade93ea9cb4');
+  assert.equal(medTitel, bart, 'titeln får inte hamna i id:t');
+  assert.equal(medStreck, bart, 'bindestreck får inte ändra id:t');
+  assert.throws(() => taskIdFromUrl('https://www.notion.so/inget-id-har'));
 });
 
 console.log('\nSlack');
