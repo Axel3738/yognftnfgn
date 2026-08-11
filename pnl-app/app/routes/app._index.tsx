@@ -3,14 +3,15 @@
  * siffrorna — ingen spinner, inget "hämtar" som i artifact-versionen.
  */
 
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import type { LoaderFunctionArgs } from "@remix-run/node";
 import { defer } from "@remix-run/node";
-import { Await, useLoaderData, useSearchParams } from "@remix-run/react";
+import { Await, Link, useFetcher, useLoaderData, useSearchParams } from "@remix-run/react";
 import {
   Badge,
   BlockStack,
   Banner,
+  Button,
   Card,
   DataTable,
   InlineGrid,
@@ -19,6 +20,7 @@ import {
   Page,
   Spinner,
   Text,
+  TextField,
 } from "@shopify/polaris";
 
 import { authenticate } from "../shopify.server";
@@ -118,8 +120,70 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
     },
   });
 
+  /* Jämförelse: samma antal dagar direkt före perioden. Hämtas EFTER huvud-
+     perioden (bulk-kön är en i taget) och får misslyckas tyst — en panel utan
+     jämförelsesiffror är bättre än en som inte laddar. */
+  let comparison: { totalSales: number; orders: number; spend: number; netProfit: number } | null = null;
+  try {
+    const shift = (iso: string, days: number) => {
+      const dd = new Date(iso + "T12:00:00Z");
+      dd.setUTCDate(dd.getUTCDate() + days);
+      return dd.toISOString().slice(0, 10);
+    };
+    const dayCount = result.days.length;
+    const prevTo = shift(from, -1);
+    const prevFrom = shift(prevTo, -(dayCount - 1));
+    const prevKey = `${prevFrom}:${prevTo}`;
+    const prevCached = await prisma.pnlCache.findUnique({
+      where: { shop_key: { shop, key: prevKey } },
+    });
+    let prevData: Awaited<ReturnType<typeof fetchOrderData>>;
+    if (prevCached && Date.now() - prevCached.fetchedAt.getTime() < 60 * 60 * 1000) {
+      prevData = prevCached.payload as unknown as Awaited<ReturnType<typeof fetchOrderData>>;
+    } else {
+      prevData = await fetchOrderData(admin, prevFrom, prevTo, shopInfo.timezone, shop);
+      await prisma.pnlCache.upsert({
+        where: { shop_key: { shop, key: prevKey } },
+        create: { shop, key: prevKey, payload: prevData as any },
+        update: { payload: prevData as any, fetchedAt: new Date() },
+      });
+    }
+    const prevSpend = await getSpend(
+      shop,
+      metaConfigured
+        ? { adAccountId: settings.metaAdAccountId!, accessToken: settings.metaAccessToken! }
+        : null,
+      prevFrom, prevTo, today,
+    );
+    const prev = compute({
+      from: prevFrom, to: prevTo,
+      spendReliable: metaConfigured && !prevSpend.error,
+      fixedMonthlyTotal,
+      sales: prevData.sales, sessions: [], spend: prevSpend.days, products: prevData.products,
+      costChanges: costChanges.map((c) => ({
+        productGid: c.productGid, variantGid: c.variantGid, unitCost: Number(c.unitCost),
+        effectiveFrom: c.effectiveFrom.toISOString().slice(0, 10), note: c.note,
+      })),
+      settings: {
+        tariffPerOrder: Number(settings.tariffPerOrder),
+        feeRate: Number(settings.feeRate),
+        targetMargin: Number(settings.targetMargin),
+      },
+    });
+    if (prev.totals.orders > 0) {
+      comparison = {
+        totalSales: prev.totals.totalSales, orders: prev.totals.orders,
+        spend: prev.totals.spend, netProfit: prev.totals.netProfit,
+      };
+    }
+  } catch (e) {
+    console.error("Jämförelseperioden kunde inte hämtas:", e);
+  }
+
   return {
     fatal: null as string | null,
+    comparison,
+    fixedCount: fixedRows.length,
     result,
     rangeKey,
     currency: settings.currency,
@@ -133,6 +197,8 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
     console.error("Loader-fel /app:", e);
     return {
       fatal: e instanceof Error ? `${e.message}` : String(e),
+      comparison: null as { totalSales: number; orders: number; spend: number; netProfit: number } | null,
+      fixedCount: 0,
       result: null as ReturnType<typeof compute> | null,
       rangeKey,
       currency: "SEK",
@@ -190,6 +256,13 @@ const SLICE_COLORS = {
   profit: "#008300",   // grön — nettovinst
 } as const;
 
+const TIP_STYLE: React.CSSProperties = {
+  position: "absolute", pointerEvents: "none", transform: "translate(-50%, -115%)",
+  background: "#202223", color: "#ffffff", padding: "8px 10px", borderRadius: 8,
+  fontSize: 12, lineHeight: 1.45, whiteSpace: "nowrap", zIndex: 10,
+  boxShadow: "0 2px 8px rgba(0,0,0,0.25)",
+};
+
 function Donut({
   t,
   money,
@@ -197,6 +270,8 @@ function Donut({
   t: NonNullable<PageData["result"]>["totals"];
   money: (v: number | null) => string;
 }) {
+  const [tip, setTip] = useState<{ x: number; y: number; key: string } | null>(null);
+
   const parts = [
     { key: "cogs", label: "Produktkostnad", value: t.cogs },
     { key: "spend", label: "Annonser", value: t.spend },
@@ -221,38 +296,170 @@ function Donut({
     const xi0 = C + r * Math.cos(a0), yi0 = C + r * Math.sin(a0);
     return {
       ...p,
-      pct: p.value / total,
+      /* procent av omsättningen — det användaren frågar sig vid hovring */
+      ofRevenue: t.totalSales > 0 ? p.value / t.totalSales : 0,
       d: `M ${x0} ${y0} A ${R} ${R} 0 ${large} 1 ${x1} ${y1} L ${xi1} ${yi1} A ${r} ${r} 0 ${large} 0 ${xi0} ${yi0} Z`,
     };
   });
 
+  const hovered = tip ? arcs.find((a) => a.key === tip.key) ?? null : null;
+  const pctStr = (v: number) => `${(v * 100).toFixed(1).replace(".", ",")} %`;
+
   return (
-    <BlockStack gap="300" inlineAlign="center">
-      <svg viewBox="0 0 200 200" style={{ width: 220, maxWidth: "100%" }} role="img" aria-label="Fördelning av omsättningen">
-        {arcs.map((a) => (
-          <path key={a.key} d={a.d} fill={SLICE_COLORS[a.key as keyof typeof SLICE_COLORS]} stroke="#ffffff" strokeWidth="2">
-            <title>{`${a.label}: ${money(a.value)} (${Math.round(a.pct * 100)} %)`}</title>
-          </path>
-        ))}
-        <text x="100" y="94" textAnchor="middle" fontSize="11" fill="#6d7175">Omsättning</text>
-        <text x="100" y="112" textAnchor="middle" fontSize="14" fontWeight="700" fill="#202223">{money(t.totalSales)}</text>
-      </svg>
-      <InlineStack gap="300" wrap align="center">
-        {arcs.map((a) => (
-          <InlineStack key={a.key} gap="100" blockAlign="center">
-            <span style={{ width: 10, height: 10, borderRadius: 5, background: SLICE_COLORS[a.key as keyof typeof SLICE_COLORS], display: "inline-block" }} />
-            <Text as="span" variant="bodySm" tone="subdued">{a.label}</Text>
-          </InlineStack>
-        ))}
-      </InlineStack>
-    </BlockStack>
+    <div
+      style={{ position: "relative" }}
+      onMouseLeave={() => setTip(null)}
+      onMouseMove={(e) => {
+        if (!tip) return;
+        const rct = e.currentTarget.getBoundingClientRect();
+        setTip({ ...tip, x: e.clientX - rct.left, y: e.clientY - rct.top });
+      }}
+    >
+      <BlockStack gap="300" inlineAlign="center">
+        <svg viewBox="0 0 200 200" style={{ width: 230, maxWidth: "100%" }} role="img" aria-label="Fördelning av omsättningen">
+          {arcs.map((a) => (
+            <path
+              key={a.key}
+              d={a.d}
+              fill={SLICE_COLORS[a.key as keyof typeof SLICE_COLORS]}
+              stroke="#ffffff"
+              strokeWidth="2"
+              opacity={tip && tip.key !== a.key ? 0.4 : 1}
+              style={{ transition: "opacity 120ms", cursor: "default" }}
+              onMouseEnter={(e) => {
+                const rct = (e.currentTarget.ownerSVGElement!.parentElement as HTMLElement)
+                  .closest("div")!.getBoundingClientRect();
+                setTip({ key: a.key, x: e.clientX - rct.left, y: e.clientY - rct.top });
+              }}
+            />
+          ))}
+          {hovered ? (
+            <>
+              <text x="100" y="88" textAnchor="middle" fontSize="11" fill="#6d7175">{hovered.label}</text>
+              <text x="100" y="106" textAnchor="middle" fontSize="15" fontWeight="700"
+                fill={SLICE_COLORS[hovered.key as keyof typeof SLICE_COLORS]}>
+                {pctStr(hovered.ofRevenue)}
+              </text>
+              <text x="100" y="122" textAnchor="middle" fontSize="10" fill="#6d7175">av omsättningen</text>
+            </>
+          ) : (
+            <>
+              <text x="100" y="94" textAnchor="middle" fontSize="11" fill="#6d7175">Omsättning</text>
+              <text x="100" y="112" textAnchor="middle" fontSize="14" fontWeight="700" fill="#202223">{money(t.totalSales)}</text>
+            </>
+          )}
+        </svg>
+        <InlineStack gap="300" wrap align="center">
+          {arcs.map((a) => (
+            <InlineStack key={a.key} gap="100" blockAlign="center">
+              <span style={{ width: 10, height: 10, borderRadius: 5, background: SLICE_COLORS[a.key as keyof typeof SLICE_COLORS], display: "inline-block" }} />
+              <Text as="span" variant="bodySm" tone="subdued">{a.label}</Text>
+            </InlineStack>
+          ))}
+        </InlineStack>
+      </BlockStack>
+      {hovered && tip ? (
+        <div style={{ ...TIP_STYLE, left: tip.x, top: tip.y }}>
+          <strong>{hovered.label}</strong>
+          <br />
+          {money(hovered.value)} · {pctStr(hovered.ofRevenue)} av omsättningen
+        </div>
+      ) : null}
+    </div>
   );
 }
 
-function BreakdownRow({ label, value, bold, colorKey, money }: {
+/**
+ * Vinst per dag. COGS, avgifter och tull fördelas per dag i proportion till
+ * dagens omsättning/ordrar — produktmixen finns bara aggregerad för perioden,
+ * så per-dag-vinsten är en välgrundad uppskattning, inte bokföring.
+ */
+function ProfitBars({
+  result,
+  money,
+}: {
+  result: NonNullable<PageData["result"]>;
+  money: (v: number | null) => string;
+}) {
+  const [tip, setTip] = useState<{ x: number; y: number; i: number } | null>(null);
+  const t = result.totals;
+  const days = result.sales;
+  if (days.length < 2) return null;
+
+  const fixedDaily = t.fixedCosts / days.length;
+  const rows = days.map((d) => {
+    const spend = result.spendByDay[d.day]?.spend ?? 0;
+    const cogs = t.netSales > 0 ? t.cogs * (d.netSales / t.netSales) : 0;
+    const fees = t.totalSales > 0 ? t.fees * (d.totalSales / t.totalSales) : 0;
+    const tariff = t.orders > 0 ? t.tariff * (d.orders / t.orders) : 0;
+    return { day: d.day, revenue: d.totalSales, spend, profit: d.totalSales - cogs - fees - tariff - spend - fixedDaily };
+  });
+
+  const W = 860, H = 150, padL = 8, padB = 18;
+  const maxV = Math.max(...rows.map((r) => r.profit), 1);
+  const minV = Math.min(...rows.map((r) => r.profit), 0);
+  const span = maxV - minV || 1;
+  const y = (v: number) => 6 + (H - padB - 12) * (1 - (v - minV) / span);
+  const bw = (W - padL * 2) / rows.length;
+  const zero = y(0);
+  const lbl = (iso: string) => `${+iso.slice(8, 10)}/${+iso.slice(5, 7)}`;
+  const every = Math.max(1, Math.ceil(rows.length / 8));
+
+  return (
+    <div style={{ position: "relative" }} onMouseLeave={() => setTip(null)}>
+      <svg viewBox={`0 0 ${W} ${H}`} style={{ width: "100%" }} role="img" aria-label="Vinst per dag">
+        <line x1={padL} x2={W - padL} y1={zero} y2={zero} stroke="#d2d5d8" strokeWidth="1" />
+        {rows.map((r, i) => {
+          const x = padL + i * bw + 1;
+          const w = Math.max(bw - 2, 1.5);
+          const top = Math.min(y(r.profit), zero);
+          const h = Math.max(Math.abs(y(r.profit) - zero), 1);
+          return (
+            <rect
+              key={r.day}
+              x={x} y={top} width={w} height={h} rx={3}
+              fill={r.profit >= 0 ? "#008300" : "#b3261e"}
+              opacity={tip && tip.i !== i ? 0.45 : 0.9}
+              onMouseEnter={(e) => {
+                const rct = (e.currentTarget.ownerSVGElement!.parentElement as HTMLElement).getBoundingClientRect();
+                setTip({ i, x: e.clientX - rct.left, y: e.clientY - rct.top });
+              }}
+              onMouseMove={(e) => {
+                const rct = (e.currentTarget.ownerSVGElement!.parentElement as HTMLElement).getBoundingClientRect();
+                setTip({ i, x: e.clientX - rct.left, y: e.clientY - rct.top });
+              }}
+            />
+          );
+        })}
+        {rows.map((r, i) =>
+          i % every === 0 || i === rows.length - 1 ? (
+            <text key={r.day} x={padL + i * bw + bw / 2} y={H - 4} textAnchor="middle" fontSize="10" fill="#6d7175">
+              {lbl(r.day)}
+            </text>
+          ) : null,
+        )}
+      </svg>
+      {tip ? (
+        <div style={{ ...TIP_STYLE, left: tip.x, top: tip.y }}>
+          <strong>{lbl(rows[tip.i].day)}</strong>
+          <br />
+          Försäljning: {money(rows[tip.i].revenue)}
+          <br />
+          Annonser: {money(rows[tip.i].spend)}
+          <br />
+          Vinst: {money(rows[tip.i].profit)}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function BreakdownRow({ label, value, bold, colorKey, money, ofRevenue }: {
   label: string; value: number; bold?: boolean;
   colorKey?: keyof typeof SLICE_COLORS;
   money: (v: number | null) => string;
+  /** Andel av omsättningen — visas dämpat efter beloppet. */
+  ofRevenue?: number;
 }) {
   return (
     <InlineStack align="space-between" blockAlign="center">
@@ -262,15 +469,73 @@ function BreakdownRow({ label, value, bold, colorKey, money }: {
         ) : null}
         <Text as="span" variant={bold ? "headingSm" : "bodyMd"}>{label}</Text>
       </InlineStack>
-      <Text as="span" variant={bold ? "headingSm" : "bodyMd"}>
-        {value < 0 ? `−${money(-value)}` : money(value)}
-      </Text>
+      <InlineStack gap="150" blockAlign="center">
+        {ofRevenue != null ? (
+          <Text as="span" variant="bodySm" tone="subdued">
+            {`${(Math.abs(ofRevenue) * 100).toFixed(1).replace(".", ",")} %`}
+          </Text>
+        ) : null}
+        <Text as="span" variant={bold ? "headingSm" : "bodyMd"}>
+          {value < 0 ? `−${money(-value)}` : money(value)}
+        </Text>
+      </InlineStack>
     </InlineStack>
   );
 }
 
+
+/**
+ * Frågar efter månadskostnaderna direkt på förstasidan tills minst en finns.
+ * En flik man måste leta upp är en flik ingen fyller i — utan fasta kostnader
+ * ljuger nettovinsten uppåt, så panelen ber aktivt om dem.
+ */
+function QuickFixedCosts() {
+  const fetcher = useFetcher();
+  const [name, setName] = useState("");
+  const [amount, setAmount] = useState("");
+  const busy = fetcher.state !== "idle";
+  const add = () => {
+    if (!name.trim() || !amount.trim()) return;
+    fetcher.submit(
+      { intent: "add", name, monthlyAmount: amount },
+      { method: "POST", action: "/app/fixed" },
+    );
+    setName("");
+    setAmount("");
+  };
+  return (
+    <Card background="bg-surface-secondary">
+      <BlockStack gap="300">
+        <Text as="h2" variant="headingMd">
+          Vad kostar din butik per månad? 💸
+        </Text>
+        <Text as="p" tone="subdued">
+          Shopify-abonnemang, appar, anställda, bokföring … Lägg in dem här så dras de från
+          nettovinsten automatiskt, utslagna per dag. Utan dem visar panelen mer vinst än du har.
+        </Text>
+        <InlineStack gap="300" blockAlign="end" wrap>
+          <div style={{ minWidth: 200, flex: 1 }}>
+            <TextField label="Namn" labelHidden placeholder="t.ex. Shopify-abonnemang"
+              value={name} onChange={setName} autoComplete="off" />
+          </div>
+          <div style={{ minWidth: 130 }}>
+            <TextField label="Kr/månad" labelHidden placeholder="kr/månad" suffix="kr/mån"
+              value={amount} onChange={setAmount} autoComplete="off" />
+          </div>
+          <Button variant="primary" onClick={add} loading={busy}>Lägg till</Button>
+        </InlineStack>
+        <InlineStack gap="200">
+          <Link to="/app/fixed">
+            <Text as="span" variant="bodySm">Visa alla fasta kostnader →</Text>
+          </Link>
+        </InlineStack>
+      </BlockStack>
+    </Card>
+  );
+}
+
 function DashboardView({ d }: { d: PageData }) {
-  const { fatal, result, rangeKey, currency, spendError, targetMargin } = d;
+  const { fatal, result, rangeKey, currency, spendError, targetMargin, comparison, fixedCount } = d;
   const [, setParams] = useSearchParams();
   if (fatal || !result) {
     return (
@@ -289,15 +554,22 @@ function DashboardView({ d }: { d: PageData }) {
   const pct = (v: number | null) =>
     v == null ? "—" : `${(v * 100).toFixed(1).replace(".", ",")} %`;
   const mult = (v: number | null) => (v == null ? "—" : `${v.toFixed(2).replace(".", ",")}×`);
+  /* Delta mot föregående period, som text i KPI-undertexten. */
+  const delta = (now: number, prev: number | undefined) => {
+    if (prev == null || Math.abs(prev) < 0.5) return "";
+    const ch = (now - prev) / Math.abs(prev);
+    const arrow = ch >= 0 ? "▲" : "▼";
+    return ` · ${arrow} ${Math.abs(ch * 100).toFixed(0)} % vs förra`;
+  };
 
   const kpis: { label: string; value: string; sub: string; tone?: "critical" | "success" }[] = [
-    { label: "Försäljning", value: money(t.totalSales), sub: `varav frakt ${money(t.shipping)}` },
-    { label: "Ordrar", value: nf.format(t.orders), sub: `snittorder ${money(t.aov)}` },
+    { label: "Försäljning", value: money(t.totalSales), sub: `varav frakt ${money(t.shipping)}${delta(t.totalSales, comparison?.totalSales)}` },
+    { label: "Ordrar", value: nf.format(t.orders), sub: `snittorder ${money(t.aov)}${delta(t.orders, comparison?.orders)}` },
     { label: "Fasta kostnader", value: money(t.fixedCosts), sub: "utslagna per dag" },
     {
       label: "Annonskostnad",
       value: money(t.spend),
-      sub: t.spendComplete ? `CPA ${money(t.cpa)}` : `⚠ saknas ${t.missingSpendDays.length} dagar`,
+      sub: t.spendComplete ? `CPA ${money(t.cpa)}${delta(t.spend, comparison?.spend)}` : `⚠ saknas ${t.missingSpendDays.length} dagar`,
       tone: t.spendComplete ? undefined : "critical",
     },
     {
@@ -312,7 +584,7 @@ function DashboardView({ d }: { d: PageData }) {
       label: "Nettovinst",
       value: money(t.netProfit),
       sub: t.spendComplete
-        ? `max CPA @ ${Math.round(targetMargin * 100)} %: ${money(t.maxCpaAtTarget)}`
+        ? `max CPA @ ${Math.round(targetMargin * 100)} %: ${money(t.maxCpaAtTarget)}${delta(t.netProfit, comparison?.netProfit)}`
         : "för hög — annonsdata saknas",
       tone: t.spendComplete && t.netProfit >= 0 ? "success" : "critical",
     },
@@ -340,6 +612,8 @@ function DashboardView({ d }: { d: PageData }) {
                 </Badge>
               ))}
             </InlineStack>
+
+            {fixedCount === 0 ? <QuickFixedCosts /> : null}
 
             {spendError ? <Banner tone="warning">{spendError}</Banner> : null}
 
@@ -396,30 +670,43 @@ function DashboardView({ d }: { d: PageData }) {
                 <BlockStack gap="300">
                   <Text as="h2" variant="headingMd">Detaljerad uppdelning</Text>
                   <BreakdownRow label="Omsättning" value={t.totalSales} bold money={money} />
-                  <BreakdownRow label="Produktkostnad" value={-t.cogs} colorKey="cogs" money={money} />
-                  <BreakdownRow label="Tull" value={-t.tariff} colorKey="tariff" money={money} />
-                  <BreakdownRow label="Transaktionsavgifter" value={-t.fees} colorKey="fees" money={money} />
-                  <BreakdownRow label="Bruttovinst" value={t.grossProfit} bold money={money} />
-                  <BreakdownRow label="Annonser" value={-t.spend} colorKey="spend" money={money} />
-                  <BreakdownRow label="Fasta kostnader" value={-t.fixedCosts} colorKey="fixed" money={money} />
-                  <BreakdownRow label="Nettovinst" value={t.netProfit} bold colorKey="profit" money={money} />
+                  <BreakdownRow label="Produktkostnad" value={-t.cogs} colorKey="cogs" money={money} ofRevenue={t.totalSales > 0 ? t.cogs / t.totalSales : undefined} />
+                  <BreakdownRow label="Tull" value={-t.tariff} colorKey="tariff" money={money} ofRevenue={t.totalSales > 0 ? t.tariff / t.totalSales : undefined} />
+                  <BreakdownRow label="Transaktionsavgifter" value={-t.fees} colorKey="fees" money={money} ofRevenue={t.totalSales > 0 ? t.fees / t.totalSales : undefined} />
+                  <BreakdownRow label="Bruttovinst" value={t.grossProfit} bold money={money} ofRevenue={t.totalSales > 0 ? t.grossProfit / t.totalSales : undefined} />
+                  <BreakdownRow label="Annonser" value={-t.spend} colorKey="spend" money={money} ofRevenue={t.totalSales > 0 ? t.spend / t.totalSales : undefined} />
+                  <BreakdownRow label="Fasta kostnader" value={-t.fixedCosts} colorKey="fixed" money={money} ofRevenue={t.totalSales > 0 ? t.fixedCosts / t.totalSales : undefined} />
+                  <BreakdownRow label="Nettovinst" value={t.netProfit} bold colorKey="profit" money={money} ofRevenue={t.totalSales > 0 ? t.netProfit / t.totalSales : undefined} />
                 </BlockStack>
               </Card>
             </InlineGrid>
+
+            {result.sales.length > 1 ? (
+              <Card>
+                <BlockStack gap="200">
+                  <Text as="h2" variant="headingMd">Vinst per dag</Text>
+                  <Text as="span" variant="bodySm" tone="subdued">
+                    COGS, avgifter och tull fördelade per dags omsättning — uppskattning, inte bokföring.
+                  </Text>
+                  <ProfitBars result={result} money={money} />
+                </BlockStack>
+              </Card>
+            ) : null}
           </BlockStack>
         </Layout.Section>
 
         <Layout.Section>
           <Card padding="0">
             <DataTable
-              columnContentTypes={["text", "numeric", "numeric", "numeric", "numeric", "numeric"]}
-              headings={["Produkt", "Enheter", "Netto", "COGS", "TB", "Multipel"]}
+              columnContentTypes={["text", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"]}
+              headings={["Produkt", "Enheter", "Netto", "COGS", "TB", "Marginal", "Multipel"]}
               rows={result.products.map((p) => [
                 p.variantTitle ? `${p.title} · ${p.variantTitle}` : p.title,
                 nf.format(p.units),
                 money(p.netSales),
                 p.cogs == null ? "saknas" : money(p.cogs) + (p.blend ? " ✦" : ""),
                 p.contribution == null ? "—" : money(p.contribution),
+                p.margin == null ? "—" : pct(p.margin),
                 p.multiple == null ? "—" : mult(p.multiple),
               ])}
             />
