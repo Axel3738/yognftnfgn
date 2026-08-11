@@ -86,7 +86,7 @@
       "brand": "Kategori"
     },
     "//excludeTypes": "Hubbarna innehåller både tasks och dokumentation. Sidor med de här Typ-värdena är inte arbete och ska inte mätas eller flaggas.",
-    "excludeTypes": ["SOP", "Guideline", "Feedback"],
+    "excludeTypes": ["SOP", "Guideline", "Feedback", "Winning Creative"],
     "statusMap": {
       "assigned": ["Draft"],
       "started": ["In progress", "To be translated"],

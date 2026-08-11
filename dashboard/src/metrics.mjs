@@ -99,7 +99,17 @@ function openTaskFlags(tasks, thresholds, now, workdayFor) {
 
     if (idleMin == null) continue;
 
-    if (t.state === 'assigned') {
+    if (!t.editor) {
+      // Ingen äger den. Att kalla det "aldrig påbörjad" pekar finger åt någon
+      // som inte finns — det här är ett annat problem, och det är beställarens
+      // att lösa, inte redigerarnas.
+      if (idleMin >= thresholds.idleAfterBusinessHours * 60) {
+        flags.push({
+          kind: 'unassigned', severity: 'warning', task: t.id, editor: null, title: t.title,
+          detail: 'Saknar ansvarig', minutes: idleMin,
+        });
+      }
+    } else if (t.state === 'assigned') {
       // Ligger i inkorgen och har aldrig rört sig.
       if (idleMin >= thresholds.idleAfterBusinessHours * 60) {
         flags.push({
