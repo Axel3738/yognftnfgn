@@ -234,25 +234,38 @@ async function cmdIngest() {
 
     const bundles = await fetchEverything({ token, workspaces: config.workspaces || [], onProgress: say });
 
-    let events = readEvents(P.events);
-    let addedTotal = 0;
+    // Hela Notion hämtas om varje körning, så de härledda händelserna byggs om
+    // från grunden i stället för att staplas ovanpå gamla. Annars lever fel
+    // kvar för alltid: en felklassad kommentar, en redigerad text, en borttagen
+    // kommentar — allt skulle ligga kvar och räknas. Händelser från andra
+    // källor (pollern, CSV, manuell loggning) rörs inte.
+    const previous = readEvents(P.events);
+    const DERIVED = new Set(['notion-import', 'notion-comment']);
+    let events = previous.filter(e => !DERIVED.has(e.source));
+    const dropped = previous.length - events.length;
+    if (dropped) say(`  Bygger om ${dropped} härledda händelser från grunden.`);
+
     for (const b of bundles) {
       const rowRes = rowsToEvents(b.rows, editors, b.hub, b.workspace);
-      let merged = mergeEvents(events, rowRes.events);
-      events = merged.merged; addedTotal += merged.added;
+      events = mergeEvents(events, rowRes.events).merged;
 
-      // Kommentarerna behöver veta vem som äger tasken → vecka först.
+      // Kommentarerna behöver veta vem som äger tasken → vecka raderna först.
       const tasksById = new Map(foldTasks(events).map(t => [t.id, t]));
       const comRes = commentsToEvents(
         { comments: b.comments, checkedPages: b.checkedPages }, editors, tasksById);
-      merged = mergeEvents(events, comRes.events);
-      events = merged.merged; addedTotal += merged.added;
+      events = mergeEvents(events, comRes.events).merged;
 
+      const orphans = comRes.events.filter(e => !e.editor).length;
       say(`  ${b.hub}: ${b.rows.length} rader, ${b.comments.length} kommentarer`);
+      if (orphans) {
+        say(`  ⚠ ${orphans} kommentar(er) kunde inte kopplas till en ansvarig —`);
+        say('     de räknas som ändringsbegäran, inte som leveranser.');
+      }
       if (rowRes.unknownStatuses.length) {
         say(`  ⚠ Okända statusar: ${rowRes.unknownStatuses.join(', ')}`);
       }
     }
+    const addedTotal = events.length - (previous.length - dropped);
 
     if (flags['dry-run']) { say(`(dry-run) ${addedTotal} nya händelser skulle sparas.`); return; }
     writeEvents(P.events, events);
@@ -388,7 +401,8 @@ async function cmdCheckNotion() {
   const me = await call('/users/me');
   if (me.status === 401) die('Token:en avvisas (401). Den är fel, eller så har den återkallats. Kopiera en ny från integrations-sidan.');
   if (me.status !== 200) die(`Oväntat svar från Notion: ${me.status} ${JSON.stringify(me.body)}`);
-  say(`  ✔ Token giltig — integrationen heter "${me.body.name || me.body.bot?.owner?.type || 'okänd'}"`);
+  const integrationName = me.body.name || me.body.bot?.owner?.type || 'din integration';
+  say(`  ✔ Token giltig — integrationen heter "${integrationName}"`);
 
   // 2. Får den läsa användare?
   const users = await call('/users?page_size=1');
@@ -424,8 +438,9 @@ async function cmdCheckNotion() {
         }
       } else if (db.status === 404) {
         say(`   ✖ ${label}`);
-        say('        Integrationen är inte insläppt här. Öppna databasen i Notion,');
-        say('        klicka ••• uppe till höger → Connections → Connect to → Redigerarpanel.');
+        say(`        Integrationen "${integrationName}" är inte insläppt här.`);
+        say('        Enklast: integrationens sida → fliken "Åtkomst till innehåll" → lägg till');
+        say('        teamspacet, så ärver alla databaser under det åtkomsten.');
       } else {
         say(`   ✖ ${label} — ${db.status}: ${db.body?.message || ''}`);
       }
