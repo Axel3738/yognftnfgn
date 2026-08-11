@@ -85,8 +85,8 @@
       "type": "Typ",
       "brand": "Kategori"
     },
-    "//excludeTypes": "Hubbarna innehåller både tasks och dokumentation. Sidor med de här Typ-värdena är inte arbete och ska inte mätas eller flaggas.",
-    "excludeTypes": ["SOP", "Guideline", "Feedback", "Winning Creative"],
+    "//includeTypes": "Bara de här Typ-värdena är riktiga annonser och mäts. Allt annat i hubbarna är dokumentation, arkiv eller stödsidor. Enligt Axel 2026-08-11: allt som faktiskt är en annons har Typ 'Video - Pending Approval' — det är sedan STATUS som avgör var i flödet den ligger. Lägg till 'Image - Pending Approval' här om bildannonser också ska räknas.",
+    "includeTypes": ["Video - Pending Approval"],
     "statusMap": {
       "assigned": ["Draft"],
       "started": ["In progress", "To be translated"],

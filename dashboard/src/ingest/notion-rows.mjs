@@ -75,12 +75,13 @@ function toIso(ts) {
  * @param editors data/editors.json — mappar Notion-user-id → vårt editor-id
  * @param hub     namn på hubben raderna kommer från
  */
-export function rowsToEvents(rows, editors, hub = 'notion', workspace = null, excludeTypes = []) {
-  // En creative hub rymmer både arbete och dokumentation — SOP:ar, guidelines
-  // och rapporter ligger i samma databas som tasksen. De har ingen ansvarig och
-  // rör sig aldrig, så utan filtret hamnar "Brand Voice Tone Guidelines" i
-  // listan över saker som står still sedan 52 dagar. Det är brus, inte ett problem.
-  const skipType = new Set(excludeTypes.map(t => t.toLowerCase()));
+export function rowsToEvents(rows, editors, hub = 'notion', workspace = null, includeTypes = []) {
+  // En creative hub rymmer mycket mer än arbete: SOP:ar, guidelines, arkiv över
+  // vinnande annonser, lösa anteckningar. Att lista upp vad som ska bort blir en
+  // kapplöpning man aldrig vinner — nya sorters sidor dyker upp hela tiden.
+  // Därför tvärtom: bara de Typ-värden som faktiskt är annonser mäts. Tom lista
+  // = ta med allt.
+  const keepType = new Set(includeTypes.map(t => t.toLowerCase()));
   const byNotionId = new Map(editors.filter(e => e.notionId).map(e => [e.notionId, e.id]));
   const events = [];
   const unknownStatuses = new Set();
@@ -90,7 +91,7 @@ export function rowsToEvents(rows, editors, hub = 'notion', workspace = null, ex
   for (const row of rows) {
     const createdAt = toIso(row.createdTime);
     if (!createdAt) { skipped++; continue; }
-    if (row.Typ && skipType.has(String(row.Typ).toLowerCase())) { excluded++; continue; }
+    if (keepType.size && !keepType.has(String(row.Typ || '').toLowerCase())) { excluded++; continue; }
 
     const status = (row.Status || '').trim();
     const state = STATE_BY_STATUS[status.toLowerCase()];
