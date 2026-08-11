@@ -98,7 +98,7 @@ export function fetchOrderData(
   const key = `${shopKey}:${from}:${to}`;
   const existing = inflight.get(key);
   if (existing) return existing;
-  const p = doFetchOrderData(admin, from, to, timezone).finally(() => inflight.delete(key));
+  const p = doFetchOrderData(admin, from, to, timezone, shopKey).finally(() => inflight.delete(key));
   inflight.set(key, p);
   return p;
 }
@@ -108,6 +108,7 @@ async function doFetchOrderData(
   from: string,
   to: string,
   timezone: string,
+  shopKey = "",
 ): Promise<OrderData> {
   const jsonl = await runOrdersBulk(admin, shiftIso(from, -1), shiftIso(to, 1));
 
@@ -164,7 +165,7 @@ async function doFetchOrderData(
     }
   }
 
-  const costs = await fetchVariantCosts(admin);
+  const costs = await fetchVariantCosts(admin, shopKey);
   const products: ProductRow[] = [...productBy.values()].map((p) => {
     const hit =
       (p.variantGid ? costs.byGid.get(p.variantGid) : undefined) ??
@@ -287,8 +288,22 @@ export interface VariantCatalog {
   all: VariantCost[];
 }
 
+/* Katalogen ändras sällan men hämtades på varje sidladdning — flera sekunder
+   i onödan. 5 min minnescache; kostnadsskrivningar invaliderar direkt. */
+const catalogCache = new Map<string, { cat: VariantCatalog; at: number }>();
+export function invalidateVariantCosts(cacheKey: string) {
+  catalogCache.delete(cacheKey);
+}
+
 /** Alla varianter med sin nuvarande unitCost. Paginerar tills allt är hämtat. */
-export async function fetchVariantCosts(admin: AdminApiContext): Promise<VariantCatalog> {
+export async function fetchVariantCosts(
+  admin: AdminApiContext,
+  cacheKey = "",
+): Promise<VariantCatalog> {
+  if (cacheKey) {
+    const hit = catalogCache.get(cacheKey);
+    if (hit && Date.now() - hit.at < 5 * 60 * 1000) return hit.cat;
+  }
   const byGid = new Map<string, VariantCost>();
   const byTitle = new Map<string, VariantCost>();
   let after: string | null = null;
@@ -328,7 +343,9 @@ export async function fetchVariantCosts(admin: AdminApiContext): Promise<Variant
     if (!conn.pageInfo?.hasNextPage) break;
     after = conn.pageInfo.endCursor;
   }
-  return { byGid, byTitle, all: [...byGid.values()] };
+  const cat: VariantCatalog = { byGid, byTitle, all: [...byGid.values()] };
+  if (cacheKey) catalogCache.set(cacheKey, { cat, at: Date.now() });
+  return cat;
 }
 
 /** Skriver unitCost på en variant. Kostnaden ska vara vara + frakt, utan tull. */

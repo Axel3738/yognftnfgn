@@ -29,11 +29,11 @@ import {
 
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
-import { fetchVariantCosts, setUnitCost } from "../lib/shopify-data.server";
+import { fetchVariantCosts, invalidateVariantCosts, setUnitCost } from "../lib/shopify-data.server";
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  const { admin } = await authenticate.admin(request);
-  const costs = await fetchVariantCosts(admin);
+  const { admin, session } = await authenticate.admin(request);
+  const costs = await fetchVariantCosts(admin, session.shop);
   const rows = [...costs.all].sort((a, b) => {
     // Saknade kostnader först — det är dem man är här för att fixa.
     if ((a.unitCost == null) !== (b.unitCost == null)) return a.unitCost == null ? -1 : 1;
@@ -118,6 +118,7 @@ export async function action({ request }: ActionFunctionArgs) {
     }
   }
 
+  invalidateVariantCosts(session.shop);
   return json({
     ok: true,
     message:

@@ -59,15 +59,36 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
     update: {},
   });
 
-  /* Bulk-exporten tar 20–60 s — cachea färdiga aggregat per intervall så att
-     bara första laddningen betalar det priset. 10 min TTL. */
+  /* Stale-while-revalidate: finns det EN sparad version serveras den direkt
+     (<2 s), och en färsk export körs i bakgrunden till nästa besök. Att vänta
+     30–60 s på exporten vid varje inträde gjorde appen oanvändbar — hellre
+     minuter gamla siffror nu och färska strax, än färska siffror om en minut. */
   const cacheKey = `${from}:${to}`;
   const cached = await prisma.pnlCache.findUnique({
     where: { shop_key: { shop, key: cacheKey } },
   });
+  const refreshCache = async (f: string, t: string, key: string) => {
+    try {
+      const freshData = await fetchOrderData(admin, f, t, shopInfo.timezone, shop);
+      await prisma.pnlCache.upsert({
+        where: { shop_key: { shop, key } },
+        create: { shop, key, payload: freshData as any },
+        update: { payload: freshData as any, fetchedAt: new Date() },
+      });
+    } catch (e) {
+      console.error("Bakgrundsuppdatering misslyckades:", e);
+    }
+  };
   let orderData: Awaited<ReturnType<typeof fetchOrderData>>;
-  if (cached && Date.now() - cached.fetchedAt.getTime() < 10 * 60 * 1000) {
+  let dataAgeMin = 0;
+  let refreshing = false;
+  if (cached) {
     orderData = cached.payload as unknown as Awaited<ReturnType<typeof fetchOrderData>>;
+    dataAgeMin = Math.round((Date.now() - cached.fetchedAt.getTime()) / 60000);
+    if (Date.now() - cached.fetchedAt.getTime() > 3 * 60 * 1000) {
+      refreshing = true;
+      void refreshCache(from, to, cacheKey); // medvetet inget await
+    }
   } else {
     orderData = await fetchOrderData(admin, from, to, shopInfo.timezone, shop);
     await prisma.pnlCache.upsert({
@@ -137,16 +158,15 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
     const prevCached = await prisma.pnlCache.findUnique({
       where: { shop_key: { shop, key: prevKey } },
     });
-    let prevData: Awaited<ReturnType<typeof fetchOrderData>>;
-    if (prevCached && Date.now() - prevCached.fetchedAt.getTime() < 60 * 60 * 1000) {
-      prevData = prevCached.payload as unknown as Awaited<ReturnType<typeof fetchOrderData>>;
-    } else {
-      prevData = await fetchOrderData(admin, prevFrom, prevTo, shopInfo.timezone, shop);
-      await prisma.pnlCache.upsert({
-        where: { shop_key: { shop, key: prevKey } },
-        create: { shop, key: prevKey, payload: prevData as any },
-        update: { payload: prevData as any, fetchedAt: new Date() },
-      });
+    /* Bara cache — saknas jämförelsedatan fylls den i bakgrunden och syns
+       vid nästa besök. Den får aldrig kosta en synlig sekund. */
+    if (!prevCached) {
+      void refreshCache(prevFrom, prevTo, prevKey);
+      throw new Error("jämförelsen fylls i bakgrunden");
+    }
+    const prevData = prevCached.payload as unknown as Awaited<ReturnType<typeof fetchOrderData>>;
+    if (Date.now() - prevCached.fetchedAt.getTime() > 60 * 60 * 1000) {
+      void refreshCache(prevFrom, prevTo, prevKey);
     }
     const prevSpend = await getSpend(
       shop,
@@ -177,13 +197,15 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
       };
     }
   } catch (e) {
-    console.error("Jämförelseperioden kunde inte hämtas:", e);
+    // väntat när jämförelsen ännu inte cachats — den fylls i bakgrunden
   }
 
   return {
     fatal: null as string | null,
     comparison,
     fixedCount: fixedRows.length,
+    dataAgeMin,
+    refreshing,
     result,
     rangeKey,
     currency: settings.currency,
@@ -199,6 +221,8 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
       fatal: e instanceof Error ? `${e.message}` : String(e),
       comparison: null as { totalSales: number; orders: number; spend: number; netProfit: number } | null,
       fixedCount: 0,
+      dataAgeMin: 0,
+      refreshing: false,
       result: null as ReturnType<typeof compute> | null,
       rangeKey,
       currency: "SEK",
@@ -535,7 +559,7 @@ function QuickFixedCosts() {
 }
 
 function DashboardView({ d }: { d: PageData }) {
-  const { fatal, result, rangeKey, currency, spendError, targetMargin, comparison, fixedCount } = d;
+  const { fatal, result, rangeKey, currency, spendError, targetMargin, comparison, fixedCount, dataAgeMin, refreshing } = d;
   const [, setParams] = useSearchParams();
   if (fatal || !result) {
     return (
@@ -612,6 +636,12 @@ function DashboardView({ d }: { d: PageData }) {
                 </Badge>
               ))}
             </InlineStack>
+
+            {dataAgeMin > 0 ? (
+              <Text as="span" variant="bodySm" tone="subdued">
+                {`Siffrorna uppdaterades för ${dataAgeMin} min sedan${refreshing ? " — ny hämtning pågår i bakgrunden, ladda om strax" : ""}.`}
+              </Text>
+            ) : null}
 
             {fixedCount === 0 ? <QuickFixedCosts /> : null}
 

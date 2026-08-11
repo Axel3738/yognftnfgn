@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "smatter-v9", db });
+  return json({ ok: true, build: "swr-v10", db });
 }
