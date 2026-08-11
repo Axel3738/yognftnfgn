@@ -388,7 +388,8 @@ async function cmdCheckNotion() {
   const me = await call('/users/me');
   if (me.status === 401) die('Token:en avvisas (401). Den är fel, eller så har den återkallats. Kopiera en ny från integrations-sidan.');
   if (me.status !== 200) die(`Oväntat svar från Notion: ${me.status} ${JSON.stringify(me.body)}`);
-  say(`  ✔ Token giltig — integrationen heter "${me.body.name || me.body.bot?.owner?.type || 'okänd'}"`);
+  const integrationName = me.body.name || me.body.bot?.owner?.type || 'din integration';
+  say(`  ✔ Token giltig — integrationen heter "${integrationName}"`);
 
   // 2. Får den läsa användare?
   const users = await call('/users?page_size=1');
@@ -424,8 +425,9 @@ async function cmdCheckNotion() {
         }
       } else if (db.status === 404) {
         say(`   ✖ ${label}`);
-        say('        Integrationen är inte insläppt här. Öppna databasen i Notion,');
-        say('        klicka ••• uppe till höger → Connections → Connect to → Redigerarpanel.');
+        say(`        Integrationen "${integrationName}" är inte insläppt här.`);
+        say('        Enklast: integrationens sida → fliken "Åtkomst till innehåll" → lägg till');
+        say('        teamspacet, så ärver alla databaser under det åtkomsten.');
       } else {
         say(`   ✖ ${label} — ${db.status}: ${db.body?.message || ''}`);
       }
