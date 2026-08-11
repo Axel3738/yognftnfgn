@@ -67,7 +67,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
   if (cached && Date.now() - cached.fetchedAt.getTime() < 10 * 60 * 1000) {
     orderData = cached.payload as unknown as Awaited<ReturnType<typeof fetchOrderData>>;
   } else {
-    orderData = await fetchOrderData(admin, from, to, shopInfo.timezone);
+    orderData = await fetchOrderData(admin, from, to, shopInfo.timezone, shop);
     await prisma.pnlCache.upsert({
       where: { shop_key: { shop, key: cacheKey } },
       create: { shop, key: cacheKey, payload: orderData as any },

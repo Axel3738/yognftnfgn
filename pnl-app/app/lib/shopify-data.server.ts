@@ -82,7 +82,28 @@ export interface OrderData {
  * - Returer bokförs på ORDERNS dag, inte återbetalningsdagen.
  * - Radrabatter ingår i discountedTotal; orderrabatter fördelas inte per rad.
  */
-export async function fetchOrderData(
+const inflight = new Map<string, Promise<OrderData>>();
+
+export function fetchOrderData(
+  admin: AdminApiContext,
+  from: string,
+  to: string,
+  timezone: string,
+  shopKey = "",
+): Promise<OrderData> {
+  /* Shopify tillåter EN bulk-operation per butik. Utan samordning krockar två
+     samtidiga sidladdningar (t.ex. 30d-vyn som fortfarande exporterar när
+     användaren klickar 90d) med "already in progress". Samma intervall delar
+     promise; olika intervall köar via retry-logiken i runOrdersBulk. */
+  const key = `${shopKey}:${from}:${to}`;
+  const existing = inflight.get(key);
+  if (existing) return existing;
+  const p = doFetchOrderData(admin, from, to, timezone).finally(() => inflight.delete(key));
+  inflight.set(key, p);
+  return p;
+}
+
+async function doFetchOrderData(
   admin: AdminApiContext,
   from: string,
   to: string,
@@ -184,7 +205,8 @@ async function runOrdersBulk(
   }`;
 
   // En bulk-operation i taget per butik — vänta ut en pågående innan start.
-  for (let attempt = 0; attempt < 3; attempt++) {
+  let lastErr = "";
+  for (let attempt = 0; attempt < 6; attempt++) {
     const res = await admin.graphql(
       `#graphql
        mutation Run($q: String!) {
@@ -197,13 +219,19 @@ async function runOrdersBulk(
     );
     const body = await res.json();
     const errs = body?.data?.bulkOperationRunQuery?.userErrors ?? [];
-    if (!errs.length) break;
-    const msg = errs.map((e: any) => e.message).join("; ");
-    if (/already in progress/i.test(msg) && attempt < 2) {
-      await waitForBulk(admin, 60_000).catch(() => {});
+    if (!errs.length) { lastErr = ""; break; }
+    lastErr = errs.map((e: any) => e.message).join("; ");
+    if (/already in progress/i.test(lastErr)) {
+      // Någon annans export (annat intervall) kör — vänta ut den och försök igen.
+      await waitForBulk(admin, 120_000).catch(() => {});
       continue;
     }
-    throw new Error(`Kunde inte starta orderexporten: ${msg}`);
+    throw new Error(`Kunde inte starta orderexporten: ${lastErr}`);
+  }
+  if (lastErr) {
+    throw new Error(
+      "En annan orderexport pågår fortfarande — vänta en halv minut och ladda om sidan.",
+    );
   }
 
   const url = await waitForBulk(admin, 90_000);
