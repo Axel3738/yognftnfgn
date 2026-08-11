@@ -4,8 +4,8 @@
  */
 
 import { Suspense, useState } from "react";
-import type { LoaderFunctionArgs } from "@remix-run/node";
-import { defer } from "@remix-run/node";
+import type { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
+import { defer, json } from "@remix-run/node";
 import { Await, Link, useFetcher, useLoaderData, useSearchParams } from "@remix-run/react";
 import {
   Badge,
@@ -118,6 +118,18 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
   );
 
   const metaConfigured = Boolean(settings.metaAdAccountId && settings.metaAccessToken);
+
+  /* Kom igång-läget. En ny butik installerar appen och ser siffror som ser
+     riktiga ut men ljuger — noll inköpspriser ger full marginal, saknad
+     Meta-koppling ger noll annonskostnad. Checklistan säger rakt ut vad som
+     fattas i just den här butiken istället för att låta handlaren gissa. */
+  const setup = {
+    dismissed: Boolean(settings.setupDismissedAt),
+    meta: metaConfigured && !spend.error,
+    fixed: fixedRows.length > 0,
+    settings: Boolean(settings.settingsSavedAt),
+  };
+
   const result = compute({
     from,
     to,
@@ -203,6 +215,9 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
   return {
     fatal: null as string | null,
     comparison,
+    setup: setup as {
+      dismissed: boolean; meta: boolean; fixed: boolean; settings: boolean;
+    } | null,
     fixedCount: fixedRows.length,
     dataAgeMin,
     refreshing,
@@ -220,6 +235,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
     return {
       fatal: e instanceof Error ? `${e.message}` : String(e),
       comparison: null as { totalSales: number; orders: number; spend: number; netProfit: number } | null,
+      setup: null as { dismissed: boolean; meta: boolean; fixed: boolean; settings: boolean } | null,
       fixedCount: 0,
       dataAgeMin: 0,
       refreshing: false,
@@ -240,6 +256,18 @@ export async function loader({ request }: LoaderFunctionArgs) {
   const rangeKey = url.searchParams.get("range") ?? "30d";
   // Medvetet inget await — promiset strömmas till klienten via defer.
   return defer({ page: loadPage(admin, session.shop, rangeKey, url) });
+}
+
+export async function action({ request }: ActionFunctionArgs) {
+  const { session } = await authenticate.admin(request);
+  const form = await request.formData();
+  if (String(form.get("intent")) === "dismiss-setup") {
+    await prisma.shopSettings.update({
+      where: { shop: session.shop },
+      data: { setupDismissedAt: new Date() },
+    });
+  }
+  return json({ ok: true });
 }
 
 export default function Dashboard() {
@@ -513,7 +541,7 @@ function BreakdownRow({ label, value, bold, colorKey, money, ofRevenue }: {
  * En flik man måste leta upp är en flik ingen fyller i — utan fasta kostnader
  * ljuger nettovinsten uppåt, så panelen ber aktivt om dem.
  */
-function QuickFixedCosts() {
+function FixedCostQuickAdd() {
   const fetcher = useFetcher();
   const [name, setName] = useState("");
   const [amount, setAmount] = useState("");
@@ -528,30 +556,143 @@ function QuickFixedCosts() {
     setAmount("");
   };
   return (
+    <InlineStack gap="300" blockAlign="end" wrap>
+      <div style={{ minWidth: 200, flex: 1 }}>
+        <TextField label="Namn" labelHidden placeholder="t.ex. Shopify-abonnemang"
+          value={name} onChange={setName} autoComplete="off" />
+      </div>
+      <div style={{ minWidth: 130 }}>
+        <TextField label="Kr/månad" labelHidden placeholder="kr/månad" suffix="kr/mån"
+          value={amount} onChange={setAmount} autoComplete="off" />
+      </div>
+      <Button variant="primary" onClick={add} loading={busy}>Lägg till</Button>
+    </InlineStack>
+  );
+}
+
+/**
+ * Kom igång-checklista.
+ *
+ * En nyinstallerad butik visar siffror som ser färdiga ut men är fel: utan
+ * inköpspriser är marginalen 100 %, utan Meta-koppling är annonskostnaden noll.
+ * Checklistan pekar ut exakt vad som fattas i den butiken och länkar dit.
+ * Fasta kostnader har formuläret direkt i listan — ett steg som kräver ett
+ * fliksbyte är ett steg som inte blir gjort.
+ */
+function SetupChecklist({
+  setup,
+  costsDone,
+  costsHint,
+}: {
+  setup: NonNullable<PageData["setup"]>;
+  costsDone: boolean;
+  costsHint: string;
+}) {
+  const dismisser = useFetcher();
+  const steps = [
+    {
+      key: "costs",
+      done: costsDone,
+      title: "Lägg in inköpspriser",
+      hint: costsHint,
+      to: "/app/costs",
+      cta: "Till Kostnader",
+    },
+    {
+      key: "meta",
+      done: setup.meta,
+      title: "Koppla annonskontot",
+      hint: setup.meta
+        ? "Annonskostnaden hämtas automatiskt varje dag."
+        : "Utan koppling räknas annonskostnaden som noll och vinsten blir för hög.",
+      to: "/app/settings",
+      cta: "Till Inställningar",
+    },
+    {
+      key: "fixed",
+      done: setup.fixed,
+      title: "Fyll i fasta månadskostnader",
+      hint: setup.fixed
+        ? "Dras från nettovinsten, utslagna per dag."
+        : "Abonnemang, appar, anställda — allt som kostar oavsett försäljning.",
+      to: "/app/fixed",
+      cta: "Visa alla",
+    },
+    {
+      key: "settings",
+      done: setup.settings,
+      title: "Granska tull och transaktionsavgift",
+      hint: setup.settings
+        ? "Sparat för den här butiken."
+        : "Kör på standardvärden (27,50 kr tull per order, 2,9 % avgift). Stämmer de för den här butiken?",
+      to: "/app/settings",
+      cta: "Till Inställningar",
+    },
+  ];
+  const doneCount = steps.filter((s) => s.done).length;
+
+  return (
     <Card background="bg-surface-secondary">
-      <BlockStack gap="300">
-        <Text as="h2" variant="headingMd">
-          Vad kostar din butik per månad? 💸
-        </Text>
-        <Text as="p" tone="subdued">
-          Shopify-abonnemang, appar, anställda, bokföring … Lägg in dem här så dras de från
-          nettovinsten automatiskt, utslagna per dag. Utan dem visar panelen mer vinst än du har.
-        </Text>
-        <InlineStack gap="300" blockAlign="end" wrap>
-          <div style={{ minWidth: 200, flex: 1 }}>
-            <TextField label="Namn" labelHidden placeholder="t.ex. Shopify-abonnemang"
-              value={name} onChange={setName} autoComplete="off" />
-          </div>
-          <div style={{ minWidth: 130 }}>
-            <TextField label="Kr/månad" labelHidden placeholder="kr/månad" suffix="kr/mån"
-              value={amount} onChange={setAmount} autoComplete="off" />
-          </div>
-          <Button variant="primary" onClick={add} loading={busy}>Lägg till</Button>
+      <BlockStack gap="400">
+        <InlineStack align="space-between" blockAlign="center" wrap={false}>
+          <Text as="h2" variant="headingMd">Kom igång 🚀</Text>
+          <Badge tone={doneCount === steps.length ? "success" : "attention"}>
+            {`${doneCount} av ${steps.length} klart`}
+          </Badge>
         </InlineStack>
-        <InlineStack gap="200">
-          <Link to="/app/fixed">
-            <Text as="span" variant="bodySm">Visa alla fasta kostnader →</Text>
-          </Link>
+        <Text as="p" tone="subdued">
+          Panelen räknar redan — men den blir sann först när de här fyra är ifyllda.
+        </Text>
+
+        <BlockStack gap="300">
+          {steps.map((s) => (
+            <BlockStack key={s.key} gap="200">
+              <InlineStack gap="300" blockAlign="start" wrap={false}>
+                <span
+                  aria-hidden
+                  style={{
+                    flex: "0 0 auto", width: 20, height: 20, borderRadius: 10, marginTop: 2,
+                    display: "inline-flex", alignItems: "center", justifyContent: "center",
+                    background: s.done ? "#008300" : "#ffffff",
+                    border: s.done ? "none" : "2px solid #babec3",
+                    color: "#ffffff", fontSize: 12, fontWeight: 700, lineHeight: 1,
+                  }}
+                >
+                  {s.done ? "✓" : ""}
+                </span>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <BlockStack gap="050">
+                    <Text as="span" variant="bodyMd" fontWeight={s.done ? "regular" : "semibold"}
+                      tone={s.done ? "subdued" : undefined}>
+                      {s.title}
+                    </Text>
+                    <Text as="span" variant="bodySm" tone="subdued">{s.hint}</Text>
+                  </BlockStack>
+                </div>
+                {s.done ? null : (
+                  <Link to={s.to}>
+                    <Text as="span" variant="bodySm">{s.cta} →</Text>
+                  </Link>
+                )}
+              </InlineStack>
+              {/* Formuläret ligger i listan just för att slippa fliksbytet. */}
+              {s.key === "fixed" && !s.done ? (
+                <div style={{ paddingLeft: 32 }}>
+                  <FixedCostQuickAdd />
+                </div>
+              ) : null}
+            </BlockStack>
+          ))}
+        </BlockStack>
+
+        <InlineStack align="end">
+          <Button
+            variant="plain"
+            loading={dismisser.state !== "idle"}
+            onClick={() => dismisser.submit({ intent: "dismiss-setup" }, { method: "POST" })}
+          >
+            Dölj checklistan
+          </Button>
         </InlineStack>
       </BlockStack>
     </Card>
@@ -559,7 +700,7 @@ function QuickFixedCosts() {
 }
 
 function DashboardView({ d }: { d: PageData }) {
-  const { fatal, result, rangeKey, currency, spendError, targetMargin, comparison, fixedCount, dataAgeMin, refreshing } = d;
+  const { fatal, result, rangeKey, currency, spendError, targetMargin, comparison, setup, dataAgeMin, refreshing } = d;
   const [, setParams] = useSearchParams();
   if (fatal || !result) {
     return (
@@ -572,6 +713,18 @@ function DashboardView({ d }: { d: PageData }) {
     );
   }
   const t = result.totals;
+
+  /* Kostnadssteget kan bara bedömas mot faktiskt sålda enheter — en butik utan
+     ordrar i perioden har inget att stämma av mot, och kvitteras inte. */
+  const costsDone = t.orders > 0 && t.unitsWithoutCost === 0;
+  const costsHint =
+    t.orders === 0
+      ? "Inga ordrar i perioden än. Steget kvitteras när sålda produkter har inköpspris."
+      : t.unitsWithoutCost > 0
+        ? `${t.unitsWithoutCost} sålda enheter saknar inköpspris och räknas som gratis.`
+        : "Alla sålda enheter har inköpspris.";
+  const setupAllDone =
+    Boolean(setup) && costsDone && setup!.meta && setup!.fixed && setup!.settings;
 
   const nf = new Intl.NumberFormat("sv-SE", { maximumFractionDigits: 0 });
   const money = (v: number | null) => (v == null ? "—" : `${nf.format(Math.round(v))} ${currency}`);
@@ -643,7 +796,9 @@ function DashboardView({ d }: { d: PageData }) {
               </Text>
             ) : null}
 
-            {fixedCount === 0 ? <QuickFixedCosts /> : null}
+            {setup && !setup.dismissed && !setupAllDone ? (
+              <SetupChecklist setup={setup} costsDone={costsDone} costsHint={costsHint} />
+            ) : null}
 
             {spendError ? <Banner tone="warning">{spendError}</Banner> : null}
 

@@ -41,6 +41,11 @@ model ShopSettings {
   /// Long-lived Meta-token. Kryptera i produktion — se lib/crypto.server.ts.
   metaAccessToken String?
   currency        String   @default("SEK")
+  /// Sätts när handlaren sparat inställningarna minst en gång. Skiljer
+  /// "har granskat tull och avgifter" från "kör fortfarande på defaults".
+  settingsSavedAt DateTime?
+  /// Sätts när kom igång-checklistan dolts manuellt.
+  setupDismissedAt DateTime?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 

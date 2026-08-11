@@ -43,6 +43,8 @@ export async function action({ request }: ActionFunctionArgs) {
       metaAdAccountId: String(f.get("metaAdAccountId") ?? "") || null,
       // Tomt fält = behåll befintlig token, radera den inte av misstag.
       ...(token ? { metaAccessToken: token } : {}),
+      // Kvitterar kom igång-checklistans steg om tull och avgifter.
+      settingsSavedAt: new Date(),
     },
   });
   // Cachad spend bygger på det gamla kontot — släng den så inget blandas ihop.

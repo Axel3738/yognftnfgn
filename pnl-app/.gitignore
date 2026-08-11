@@ -4,3 +4,4 @@ build
 .env
 .shopify
 /prisma/*.db
+package-lock.json
