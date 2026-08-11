@@ -189,7 +189,7 @@ async function cmdIngest() {
     const rows = Array.isArray(raw) ? raw : raw.rows;
     if (!Array.isArray(rows)) die('Filen saknar en "rows"-array.');
 
-    const { events: incoming, unknownStatuses, skipped } = rowsToEvents(rows, editors, raw.hub || 'notion', raw.workspace || null, config.notion.excludeTypes || []);
+    const { events: incoming, unknownStatuses, skipped } = rowsToEvents(rows, editors, raw.hub || 'notion', raw.workspace || null, config.notion.includeTypes || []);
     const existing = readEvents(P.events);
     const { merged, added } = mergeEvents(existing, incoming);
 
@@ -246,7 +246,7 @@ async function cmdIngest() {
     if (dropped) say(`  Bygger om ${dropped} härledda händelser från grunden.`);
 
     for (const b of bundles) {
-      const rowRes = rowsToEvents(b.rows, editors, b.hub, b.workspace, config.notion.excludeTypes || []);
+      const rowRes = rowsToEvents(b.rows, editors, b.hub, b.workspace, config.notion.includeTypes || []);
       events = mergeEvents(events, rowRes.events).merged;
 
       // Kommentarerna behöver veta vem som äger tasken → vecka raderna först.
@@ -260,7 +260,7 @@ async function cmdIngest() {
         say(`     ${comRes.notes} kommentar(er) lästes som anteckningar, inte ändringsbegäran.`);
       }
       say(`  ${b.hub}: ${b.rows.length} rader, ${b.comments.length} kommentarer` +
-          (rowRes.excluded ? ` (${rowRes.excluded} dokumentationssidor utelämnade)` : ''));
+          (rowRes.excluded ? ` (${rowRes.excluded} icke-annonssidor utelämnade)` : ''));
       if (orphans) {
         say(`  ⚠ ${orphans} kommentar(er) kunde inte kopplas till en ansvarig —`);
         say('     de räknas som ändringsbegäran, inte som leveranser.');
