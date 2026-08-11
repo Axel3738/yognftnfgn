@@ -76,10 +76,11 @@ export function enrichTask(task, cfg, tz) {
 }
 
 /** Öppna tasks som ligger och skräpar just nu. Oberoende av vald period. */
-function openTaskFlags(tasks, cfg, thresholds, tz, now) {
+function openTaskFlags(tasks, thresholds, now, workdayFor) {
   const flags = [];
   for (const t of tasks) {
     if (t.state === 'approved' || t.state === 'cancelled') continue;
+    const { cfg, tz } = workdayFor(t.editor);
 
     const overdue = t.dueAt && toMs(t.dueAt) < now;
     if (overdue) {
@@ -198,7 +199,18 @@ export function computeMetrics({ tasks: rawTasks, config, periodDays, now = Date
   const cfg = config.workday;
   const nowMs = toMs(now);
 
-  const all = rawTasks.map(t => enrichTask(t, cfg, tz));
+  // Arbetsfönster per person. Teamet sitter inte i samma tidszon som kontoret:
+  // mäter man alla mot Stockholm 09–18 hamnar halva deras arbetsdag utanför
+  // fönstret och ledtiderna blir nonsens. Varje redigerare kan därför ha egen
+  // timezone/workday i data/editors.json; saknas den används kontorets.
+  const workdayByEditor = new Map(
+    editors.map(e => [e.id, { cfg: e.workday || cfg, tz: e.timezone || tz }]));
+  const workdayFor = id => workdayByEditor.get(id) || { cfg, tz };
+
+  const all = rawTasks.map(t => {
+    const w = workdayFor(t.editor);
+    return enrichTask(t, w.cfg, w.tz);
+  });
 
   const periodStart = nowMs - periodDays * 86_400_000;
   const prevStart = nowMs - 2 * periodDays * 86_400_000;
@@ -227,8 +239,9 @@ export function computeMetrics({ tasks: rawTasks, config, periodDays, now = Date
     const prevTasks = prev.tasks.filter(t => t.editor === ed.id);
     const prevDel = prev.deliveries.filter(d => d.editor === ed.id);
 
-    const stats = aggregate(curTasks, curDel, cfg, config.targets, tz);
-    const before = aggregate(prevTasks, prevDel, cfg, config.targets, tz);
+    const w = workdayFor(ed.id);
+    const stats = aggregate(curTasks, curDel, w.cfg, config.targets, w.tz);
+    const before = aggregate(prevTasks, prevDel, w.cfg, config.targets, w.tz);
 
     const open = all.filter(t => t.editor === ed.id && !['approved', 'cancelled'].includes(t.state));
 
@@ -248,7 +261,8 @@ export function computeMetrics({ tasks: rawTasks, config, periodDays, now = Date
         id: t.id, title: t.title, state: t.state, dueAt: t.dueAt,
         revisionCount: t.revisionCount,
       })),
-      utilisation: utilisation(stats.touchMinutes, stats.activeDays, cfg, tz, periodStart, nowMs),
+      timezone: w.tz,
+      utilisation: utilisation(stats.touchMinutes, stats.activeDays, w.cfg, w.tz, periodStart, nowMs),
       delta: {
         deliveries: before.deliveries ? (stats.deliveries - before.deliveries) / before.deliveries : null,
         medianTurnaround: before.medianTurnaround && stats.medianTurnaround
@@ -277,7 +291,7 @@ export function computeMetrics({ tasks: rawTasks, config, periodDays, now = Date
     teamDaily[i].total += 1;
   }
 
-  const flags = openTaskFlags(all, cfg, config.thresholds, tz, nowMs);
+  const flags = openTaskFlags(all, config.thresholds, nowMs, workdayFor);
 
   // Nulägesvy: fungerar även när tidshistoriken saknas (importerad data där vi
   // vet VAD som gäller men inte NÄR det hände). Räknar allt, inte bara perioden.
@@ -286,12 +300,14 @@ export function computeMetrics({ tasks: rawTasks, config, periodDays, now = Date
     const mine = all.filter(t => t.editor === id);
     const byState = Object.fromEntries(STATE_ORDER.map(s => [s, mine.filter(t => t.state === s).length]));
     const open = mine.filter(t => !['approved', 'cancelled'].includes(t.state));
-    const ages = open.map(t => businessMinutes(t.assignedAt, nowMs, cfg, tz)).filter(Number.isFinite);
+    const w = workdayFor(id);
+    const ages = open.map(t => businessMinutes(t.assignedAt, nowMs, w.cfg, w.tz)).filter(Number.isFinite);
     const meta = knownEditors.find(e => e.id === id);
     return {
       id,
       name: meta?.name || id,
       role: meta?.role || null,
+      timezone: w.tz,
       total: mine.length,
       byState,
       open: open.length,

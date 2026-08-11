@@ -188,6 +188,35 @@ async function cmdIngest() {
     return;
   }
 
+  if (kind === 'notion-comments') {
+    if (!arg) die('Användning: node cli.mjs ingest notion-comments <kommentarer.json>');
+    const { commentsToEvents } = await import('./src/ingest/notion-comments.mjs');
+    const payload = JSON.parse(readFileSync(resolve(arg), 'utf8'));
+
+    // Kommentarerna behöver veta vem som äger tasken — den kopplingen finns i
+    // händelserna som redan importerats från raderna.
+    const existing = readEvents(P.events);
+    const tasksById = new Map(foldTasks(existing).map(t => [t.id, t]));
+
+    const { events: incoming, coverage, checkedPages, pagesWithComments } =
+      commentsToEvents(payload, editors, tasksById);
+    const { merged, added } = mergeEvents(existing, incoming);
+
+    if (flags['dry-run']) {
+      say(`(dry-run) ${incoming.length} händelser ur ${payload.comments.length} kommentarer · ${added} nya.`);
+      for (const e of incoming) say(`   ${e.ts}  ${e.type.padEnd(19)} ${e.editor ?? '?'}  ${e.title}`);
+      return;
+    }
+    writeEvents(P.events, merged);
+    say(`✔ ${added} händelser ur kommentarer (${pagesWithComments} av ${checkedPages} sidor hade kommentarer).`);
+    say('  Täckning per person — låg täckning = siffror att ta med en nypa salt:');
+    for (const c of coverage) {
+      const ed = editors.find(e => e.id === c.editor);
+      say(`   ${(ed?.name || c.editor).padEnd(20)} ${c.tasks} task(s), ${c.comments} kommentar(er)`);
+    }
+    return;
+  }
+
   if (kind === 'notion') {
     const { pollNotion } = await import('./src/ingest/notion.mjs');
     const token = process.env.NOTION_TOKEN;

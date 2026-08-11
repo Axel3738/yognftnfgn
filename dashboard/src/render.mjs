@@ -559,7 +559,8 @@ function render() {
   app.appendChild(el('header', { class: 'top' }, [
     el('div', {}, [
       el('h1', { text: 'Redigerarpanel' }),
-      el('div', { class: 'sub', text: CFG.team + ' · arbetstid ' + CFG.workday + ' ' + CFG.timezone +
+      el('div', { class: 'sub', text: CFG.team + ' · arbetstid ' + CFG.workday +
+        ' i varje persons egen tidszon' +
         ' · uppdaterad ' + new Date(M.generatedAt).toLocaleString('sv-SE', { dateStyle: 'medium', timeStyle: 'short' }) }),
     ]),
     // Periodväxlaren styr bara tidsbaserade mätetal — göm den när det inte
@@ -681,7 +682,7 @@ function snapshotSection(M) {
     ])));
 
   const table = el('table', {}, [
-    el('thead', {}, [el('tr', {}, ['Redigerare', ...states.map(st => STATE_TEXT[st]), 'Totalt', 'Öppna', 'Äldsta öppna']
+    el('thead', {}, [el('tr', {}, ['Redigerare', ...states.map(st => STATE_TEXT[st]), 'Totalt', 'Öppna', 'Äldsta öppna', 'Mätbara', 'Tidszon']
       .map(h => el('th', { text: h, scope: 'col' })))]),
     el('tbody', {}, rows.map(r => el('tr', {}, [
       el('td', {}, [el('div', { class: 'who' }, [
@@ -692,8 +693,29 @@ function snapshotSection(M) {
       el('td', { class: 'num', text: num(r.total) }),
       el('td', { class: 'num', text: num(r.open) }),
       el('td', { class: 'num', text: dur(r.oldestOpenMin) }),
+      el('td', { class: 'num', text: num(r.timedTasks) + ' / ' + num(r.total) }),
+      el('td', { text: (r.timezone || '').replace(/^\w+\//, '') }),
     ]))),
   ]);
+
+  // Mättäckning per person. Utan den ser den som kommenterar flitigt ut som den
+  // enda som jobbar — vilket vore en direkt felaktig slutsats att dra.
+  const measured = rows.filter(r => r.timedTasks > 0);
+  const unmeasured = rows.filter(r => r.timedTasks === 0 && r.total > 0);
+  const coverageNote = unmeasured.length
+    ? el('div', { class: 'banner', style: 'margin:0 0 16px' }, [
+        el('span', { text: '⚖' }),
+        el('div', { html:
+          '<b>Läs ledtiderna med det här i huvudet.</b> Tiderna kommer från kommentarer, ' +
+          'och alla kommenterar inte. ' +
+          measured.map(r => escapeHtml(r.name) + ' (' + r.timedTasks + ' av ' + r.total + ' mätbara)').join(', ') +
+          ' går att mäta. ' +
+          unmeasured.map(r => escapeHtml(r.name)).join(', ') +
+          ' har <b>noll</b> mätbara tasks — det betyder <i>inte</i> att de är långsamma, ' +
+          'det betyder att de aldrig skriver i kommentarsfältet. ' +
+          'Jämför dem först när pollern samlat egna statusövergångar.' }),
+      ])
+    : null;
 
   const tiles = [
     { label: 'Tasks totalt', value: num(snap.totalTasks), hero: true },
@@ -710,7 +732,8 @@ function snapshotSection(M) {
       el('div', { class: 'value' + (t.hero ? ' hero' : ''), text: t.value }),
       el('div', { class: 'delta', text: t.note || '' }),
     ]))),
-    el('div', { class: 'card', style: 'margin-top:16px' }, [
+    coverageNote ? el('div', { style: 'margin-top:16px' }, [coverageNote]) : null,
+    el('div', { class: 'card', style: coverageNote ? '' : 'margin-top:16px' }, [
       el('h2', { text: 'Nuläge per redigerare' }),
       el('p', { class: 'hint', text: 'Var varje persons tasks står just nu. Bygger bara på tilldelning och nuvarande status — inga uppskattade tider.' }),
       legend,
