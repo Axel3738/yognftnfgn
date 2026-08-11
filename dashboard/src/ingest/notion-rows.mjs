@@ -75,15 +75,22 @@ function toIso(ts) {
  * @param editors data/editors.json — mappar Notion-user-id → vårt editor-id
  * @param hub     namn på hubben raderna kommer från
  */
-export function rowsToEvents(rows, editors, hub = 'notion', workspace = null) {
+export function rowsToEvents(rows, editors, hub = 'notion', workspace = null, excludeTypes = []) {
+  // En creative hub rymmer både arbete och dokumentation — SOP:ar, guidelines
+  // och rapporter ligger i samma databas som tasksen. De har ingen ansvarig och
+  // rör sig aldrig, så utan filtret hamnar "Brand Voice Tone Guidelines" i
+  // listan över saker som står still sedan 52 dagar. Det är brus, inte ett problem.
+  const skipType = new Set(excludeTypes.map(t => t.toLowerCase()));
   const byNotionId = new Map(editors.filter(e => e.notionId).map(e => [e.notionId, e.id]));
   const events = [];
   const unknownStatuses = new Set();
   let skipped = 0;
 
+  let excluded = 0;
   for (const row of rows) {
     const createdAt = toIso(row.createdTime);
     if (!createdAt) { skipped++; continue; }
+    if (row.Typ && skipType.has(String(row.Typ).toLowerCase())) { excluded++; continue; }
 
     const status = (row.Status || '').trim();
     const state = STATE_BY_STATUS[status.toLowerCase()];
@@ -117,7 +124,7 @@ export function rowsToEvents(rows, editors, hub = 'notion', workspace = null) {
     }
   }
 
-  return { events, unknownStatuses: [...unknownStatuses], skipped };
+  return { events, unknownStatuses: [...unknownStatuses], skipped, excluded };
 }
 
 export { STATE_BY_STATUS };

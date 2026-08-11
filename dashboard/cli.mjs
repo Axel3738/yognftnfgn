@@ -189,7 +189,7 @@ async function cmdIngest() {
     const rows = Array.isArray(raw) ? raw : raw.rows;
     if (!Array.isArray(rows)) die('Filen saknar en "rows"-array.');
 
-    const { events: incoming, unknownStatuses, skipped } = rowsToEvents(rows, editors, raw.hub || 'notion', raw.workspace || null);
+    const { events: incoming, unknownStatuses, skipped } = rowsToEvents(rows, editors, raw.hub || 'notion', raw.workspace || null, config.notion.excludeTypes || []);
     const existing = readEvents(P.events);
     const { merged, added } = mergeEvents(existing, incoming);
 
@@ -246,7 +246,7 @@ async function cmdIngest() {
     if (dropped) say(`  Bygger om ${dropped} härledda händelser från grunden.`);
 
     for (const b of bundles) {
-      const rowRes = rowsToEvents(b.rows, editors, b.hub, b.workspace);
+      const rowRes = rowsToEvents(b.rows, editors, b.hub, b.workspace, config.notion.excludeTypes || []);
       events = mergeEvents(events, rowRes.events).merged;
 
       // Kommentarerna behöver veta vem som äger tasken → vecka raderna först.
@@ -256,7 +256,8 @@ async function cmdIngest() {
       events = mergeEvents(events, comRes.events).merged;
 
       const orphans = comRes.events.filter(e => !e.editor).length;
-      say(`  ${b.hub}: ${b.rows.length} rader, ${b.comments.length} kommentarer`);
+      say(`  ${b.hub}: ${b.rows.length} rader, ${b.comments.length} kommentarer` +
+          (rowRes.excluded ? ` (${rowRes.excluded} dokumentationssidor utelämnade)` : ''));
       if (orphans) {
         say(`  ⚠ ${orphans} kommentar(er) kunde inte kopplas till en ansvarig —`);
         say('     de räknas som ändringsbegäran, inte som leveranser.');
