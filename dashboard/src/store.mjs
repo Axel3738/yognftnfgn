@@ -106,6 +106,7 @@ export function foldTasks(events) {
         title: ev.title || ev.task_id,
         type: ev.task_type || null,
         brand: ev.brand || null,
+        workspace: ev.workspace || null,
         priority: ev.priority || null,
         assignedAt: null, startedAt: null, dueAt: null,
         approvedAt: null, cancelledAt: null,
@@ -121,6 +122,7 @@ export function foldTasks(events) {
     if (ev.title) t.title = ev.title;
     if (ev.task_type) t.type = ev.task_type;
     if (ev.brand) t.brand = ev.brand;
+    if (ev.workspace) t.workspace = ev.workspace;
     if (ev.priority) t.priority = ev.priority;
     if (ev.due) t.dueAt = ev.due;
     if (ev.source) t.source = ev.source;

@@ -69,7 +69,7 @@ function toIso(ts) {
  * @param editors data/editors.json — mappar Notion-user-id → vårt editor-id
  * @param hub     namn på hubben raderna kommer från
  */
-export function rowsToEvents(rows, editors, hub = 'notion') {
+export function rowsToEvents(rows, editors, hub = 'notion', workspace = null) {
   const byNotionId = new Map(editors.filter(e => e.notionId).map(e => [e.notionId, e.id]));
   const events = [];
   const unknownStatuses = new Set();
@@ -94,6 +94,7 @@ export function rowsToEvents(rows, editors, hub = 'notion') {
       title: row.Namn || '(namnlös)',
       task_type: row.Typ || null,
       brand: hub,
+      workspace,
       priority: row.Prioritet || null,
       source: 'notion-import',
       notion_url: row.url,

@@ -23,7 +23,7 @@ const PIPELINE = {
   dark:  { assigned: '#184f95', in_progress: '#256abf', in_review: '#3987e5', revision: '#6da7ec', approved: '#9ec5f4', cancelled: '#52514e' },
 };
 
-export function renderDashboard({ config, editors, byPeriod, defaultPeriod, demo }) {
+export function renderDashboard({ config, editors, byWorkspace, spaces, defaultWorkspace, defaultPeriod, demo }) {
   const payload = {
     config: {
       team: config.team,
@@ -34,7 +34,9 @@ export function renderDashboard({ config, editors, byPeriod, defaultPeriod, demo
       workday: `${config.workday.start}–${config.workday.end}`,
     },
     editors,
-    byPeriod,
+    byWorkspace,
+    spaces,
+    defaultWorkspace,
     defaultPeriod,
     demo,
     series: SERIES,
@@ -132,6 +134,34 @@ h1 { font-size: 22px; font-weight: 650; margin: 0; letter-spacing: -0.01em; }
   display: flex; gap: 10px; align-items: flex-start;
 }
 .banner b { color: var(--text-primary); font-weight: 600; }
+
+/* Flikrad per teamspace. Vald flik bär en 2px understrykning i accentfärgen —
+   färg ensam räcker inte, så den valda är också fetstilt och aria-selected. */
+.tabs {
+  display: flex; flex-wrap: wrap; gap: 2px; margin-top: 20px;
+  border-bottom: 1px solid var(--grid);
+}
+.tabs .tab {
+  appearance: none; border: 0; background: transparent; cursor: pointer;
+  font: inherit; font-size: 13.5px; color: var(--text-secondary);
+  padding: 9px 14px; border-bottom: 2px solid transparent; margin-bottom: -1px;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.tabs .tab:hover { color: var(--text-primary); }
+.tabs .tab[aria-selected="true"] {
+  color: var(--text-primary); font-weight: 650;
+  border-bottom-color: #2a78d6;
+}
+:root[data-theme="dark"] .tabs .tab[aria-selected="true"] { border-bottom-color: #3987e5; }
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) .tabs .tab[aria-selected="true"] { border-bottom-color: #3987e5; }
+}
+.tabs .tab-count {
+  font-size: 11.5px; font-variant-numeric: tabular-nums;
+  color: var(--text-muted); background: var(--surface);
+  border: 1px solid var(--border); border-radius: 999px; padding: 1px 7px;
+}
+.tabs .tab:focus-visible { outline: 2px solid #2a78d6; outline-offset: -2px; }
 
 .controls { display: flex; gap: 6px; align-items: center; }
 .seg { display: inline-flex; background: var(--surface); border: 1px solid var(--border); border-radius: 9px; padding: 3px; }
@@ -245,6 +275,7 @@ const CFG = P.config;
 const NS = 'http://www.w3.org/2000/svg';
 
 const state = {
+  workspace: P.defaultWorkspace,
   period: P.defaultPeriod,
   hidden: new Set(),
   sort: { key: 'deliveries', dir: -1 },
@@ -544,13 +575,14 @@ function deltaLine(value, opts) {
 
 /* ---------- render ---------- */
 function render() {
-  const M = P.byPeriod[state.period];
+  const spaceData = P.byWorkspace[state.workspace] || P.byWorkspace[P.spaces[0].id];
+  const M = spaceData[state.period];
   const app = document.getElementById('app');
   app.innerHTML = '';
 
   /* header */
   const periodBtns = el('div', { class: 'seg' },
-    Object.keys(P.byPeriod).map(Number).sort((a, b) => a - b).map(d =>
+    Object.keys(spaceData).map(Number).sort((a, b) => a - b).map(d =>
       el('button', {
         text: d + ' d', 'aria-pressed': String(d === state.period),
         onclick: () => { state.period = d; render(); },
@@ -567,6 +599,21 @@ function render() {
     // finns några, annars ser den ut att vara trasig.
     M.team.deliveries > 0 ? el('div', { class: 'controls' }, [periodBtns]) : null,
   ]));
+
+  if (P.spaces.length > 1) {
+    app.appendChild(el('nav', { class: 'tabs', 'aria-label': 'Teamspace' },
+      P.spaces.map(sp => {
+        const m30 = (P.byWorkspace[sp.id] || {})[state.period];
+        const count = m30 ? m30.snapshot.totalTasks : 0;
+        return el('button', {
+          class: 'tab', 'aria-selected': String(sp.id === state.workspace),
+          onclick: () => { state.workspace = sp.id; render(); },
+        }, [
+          el('span', { text: sp.name }),
+          el('span', { class: 'tab-count', text: String(count) }),
+        ]);
+      })));
+  }
 
   if (P.demo) {
     app.appendChild(el('div', { class: 'banner' }, [
@@ -596,7 +643,8 @@ function render() {
   /* --- alla mätetal förklaras i tid som räknas i arbetstimmar --- */
   if (snap.editors.length) app.appendChild(snapshotSection(M));
   if (hasTiming) {
-    app.appendChild(tilesSection(M));
+    // Exakt en hero-siffra per vy: har nulägesvyn redan en, tar den inte en till.
+    app.appendChild(tilesSection(M, !snap.editors.length));
     app.appendChild(dailySection(M));
     app.appendChild(compareSection(M));
     app.appendChild(leaderboardSection(M));
@@ -746,14 +794,14 @@ function snapshotSection(M) {
   ]);
 }
 
-function tilesSection(M) {
+function tilesSection(M, allowHero) {
   const t = M.team, prev = t.previous;
   const rel = (a, b) => (b ? (a - b) / b : null);
 
   const teamSpark = M.team.daily.map(d => d.total);
 
   const tiles = [
-    { label: 'Leveranser i perioden', value: num(t.deliveries), hero: true,
+    { label: 'Leveranser i perioden', value: num(t.deliveries), hero: allowHero,
       delta: deltaLine(rel(t.deliveries, prev.deliveries), { lowerIsBetter: false }),
       spark: teamSpark },
     { label: 'Median ledtid (tilldelad → levererad)', value: dur(t.medianTurnaround),

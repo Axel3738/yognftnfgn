@@ -29,6 +29,41 @@
   "periods": [7, 14, 30, 90],
   "defaultPeriodDays": 30,
 
+  "//workspaces": "En flik per teamspace i panelen. Lägg till en hub här så dyker den upp i rätt flik — inget annat behöver ändras.",
+  "workspaces": [
+    {
+      "id": "grillkliniken",
+      "name": "Grillkliniken",
+      "teamspaceId": "332270ab-908c-8138-8581-0042819eeea0",
+      "hubs": [
+        { "name": "Creative Hub master", "databaseId": "36f270ab908c803b8949ff2326f4f76c" },
+        { "name": "Creative hub prank apron", "databaseId": "3aa270ab908c8036b0cdfb49f6f37289" },
+        { "name": "Creative hub golf grill kit", "databaseId": "3aa270ab908c801385d6cd8548c015b2" }
+      ]
+    },
+    {
+      "id": "baverbutiken",
+      "name": "Bäverbutiken",
+      "teamspaceId": "3a9270ab-908c-81a8-a48c-004222d195e7",
+      "hubs": [
+        { "name": "Boat cover 420D creative hub", "databaseId": "3b0270ab908c80a78793fa11d8c0f6e4" },
+        { "name": "Trimmer belt creative hub", "databaseId": "3aa270ab908c808b9d87d1f1a0d70cbc" }
+      ]
+    },
+    {
+      "id": "matstrumpor",
+      "name": "Matstrumpor",
+      "teamspaceId": "3a9270ab-908c-81f8-b806-00421f2a98e3",
+      "hubs": []
+    },
+    {
+      "id": "ploomi",
+      "name": "Ploomi.se",
+      "teamspaceId": "3a9270ab-908c-8102-8898-0042961d58cb",
+      "hubs": []
+    }
+  ],
+
   "slack": {
     "channel": "#creative",
     "digestSchedule": "0 7 * * 1-5",

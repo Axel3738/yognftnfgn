@@ -126,6 +126,59 @@ Den bokför bara det som är sant: `assigned` vid `createdTime`, och nuvarande
 status som en `observed`-händelse **utan tidpunkt**. En `observed` räknas
 aldrig som en leverans och ger aldrig en ledtid.
 
+### Så skaffar du en Notion-token
+
+En "integration token" är ett lösenord som låter ett program läsa din Notion.
+Det tar ungefär tre minuter.
+
+1. Gå till **https://www.notion.so/profile/integrations**
+2. Klicka **New integration**
+3. Namn: `Redigerarpanel`. Välj rätt workspace. Type: **Internal**.
+4. Under **Capabilities**, bocka i:
+   - ✅ Read content
+   - ✅ Read comments ← **den här är lätt att missa och utan den blir det inga ledtider**
+   - ✅ Read user information including email addresses
+   - ❌ Insert/Update content behövs inte — panelen skriver aldrig något
+5. Klicka **Save**, sedan **Show** vid *Internal Integration Secret* och kopiera.
+   Den börjar med `ntn_` (äldre konton: `secret_`).
+6. **Släpp in integrationen i varje hub.** Öppna databasen i Notion →
+   `•••` uppe till höger → **Connections** → **Connect to** → `Redigerarpanel`.
+   Görs en gång per creative hub. Ansluter du den till teamspacets toppsida
+   ärver sidorna under den kopplingen.
+7. Lägg token i miljön:
+
+```bash
+cd dashboard
+echo 'NOTION_TOKEN=ntn_din_token_här' > .env      # .env är gitignorerad
+export $(cat .env | xargs)
+```
+
+Testa att den funkar:
+
+```bash
+node cli.mjs ingest notion-all --dry-run
+```
+
+**Token:en är ett lösenord.** Den ligger i `.env`, som är gitignorerad — den
+ska aldrig committas eller klistras in i en chatt. Blir den läckt: gå tillbaka
+till integrations-sidan och klicka **Refresh** på hemligheten, så slutar den
+gamla gälla direkt.
+
+### Hämta allt på en gång
+
+```bash
+node cli.mjs ingest notion-all
+```
+
+Går igenom varje hub i `config.json` → `workspaces`, hämtar **alla** rader och
+**alla** kommentarer, och skriver händelser. Den slår också upp riktiga namn
+på användarna och säger till om någon saknas i `data/editors.json` — det är så
+du får bort "Okänd (367d)".
+
+Kommandot stryper sig själv till Notions takt (~3 anrop/s) och backar av vid
+429, så det tar några minuter för ett par hundra sidor. Det är idempotent:
+kör det hur ofta du vill.
+
 ### Alternativ 1 — Notion-pollern (rekommenderat framåt)
 
 Notions API ger bara nuläget, inte statushistorik. Lösningen är en poller som

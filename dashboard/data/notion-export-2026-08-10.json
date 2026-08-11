@@ -1,5 +1,6 @@
 {
   "hub": "Creative Hub master",
+  "workspace": "grillkliniken",
   "dataSource": "collection://36f270ab-908c-8057-b785-000b2730f096",
   "exportedAt": "2026-08-10",
   "note": "Engångsuttag av de 100 senast skapade raderna (av 199 totalt). Hämtat via Notion-kopplingen 2026-08-10. createdTime är Notions systemtid och alltid korrekt. Status är nuläget — Notion sparar ingen historik, så det finns ingen tidpunkt för när statusen sattes. 'Godkänd datum' är ifyllt på 2 av 199 rader och 'Skapad' på 8, därför används de inte här.",

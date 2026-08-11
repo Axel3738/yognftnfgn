@@ -41,6 +41,8 @@ export function commentsToEvents(payload, editors, tasksById = new Map()) {
       task_id: taskId,
       editor: owner,
       title: task?.title || c.task || taskId,
+      workspace: task?.workspace || null,
+      brand: task?.brand || null,
       source: 'notion-comment',
       comment_by: author,
     };

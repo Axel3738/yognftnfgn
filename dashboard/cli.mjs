@@ -78,12 +78,31 @@ function cmdBuild() {
   if (!events.length) die('Inga händelser i data/events.jsonl. Kör `node cli.mjs seed` för demodata, eller mata in riktig data med `ingest`.');
 
   const now = Date.now();
-  const byPeriod = {};
-  for (const d of config.periods) byPeriod[d] = computeMetrics({ tasks, config, periodDays: d, now, editors });
+
+  // En flik per teamspace, plus "Alla". Bara teamspaces som faktiskt har data
+  // får en flik — tomma flikar är brus.
+  const spaces = [{ id: 'all', name: 'Alla' }];
+  for (const ws of config.workspaces || []) {
+    if (tasks.some(t => t.workspace === ws.id)) spaces.push({ id: ws.id, name: ws.name });
+  }
+  // Tasks utan teamspace ska inte försvinna tyst.
+  if (tasks.some(t => !t.workspace)) spaces.push({ id: 'unassigned', name: 'Utan teamspace' });
+
+  const byWorkspace = {};
+  for (const space of spaces) {
+    const subset = space.id === 'all' ? tasks
+      : space.id === 'unassigned' ? tasks.filter(t => !t.workspace)
+      : tasks.filter(t => t.workspace === space.id);
+    byWorkspace[space.id] = {};
+    for (const d of config.periods) {
+      byWorkspace[space.id][d] = computeMetrics({ tasks: subset, config, periodDays: d, now, editors });
+    }
+  }
 
   const demo = events.some(e => e.source === 'demo');
   const html = renderDashboard({
-    config, editors, byPeriod,
+    config, editors, byWorkspace, spaces,
+    defaultWorkspace: spaces.length > 1 ? spaces[0].id : spaces[0].id,
     defaultPeriod: config.defaultPeriodDays,
     demo,
   });
@@ -91,9 +110,10 @@ function cmdBuild() {
   mkdirSync(dirname(P.out), { recursive: true });
   writeFileSync(P.out, html, 'utf8');
 
-  const m = byPeriod[config.defaultPeriodDays];
+  const m = byWorkspace.all[config.defaultPeriodDays];
   say(`✔ Byggde ${P.out}`);
   say(`  ${events.length} händelser · ${tasks.length} tasks · ${m.editors.length} redigerare · ${m.flags.length} flaggor`);
+  say(`  Flikar: ${spaces.map(s => s.name).join(' · ')}`);
   if (demo) say('  ⚠ Datan innehåller demorader (source:"demo").');
 }
 
@@ -167,7 +187,7 @@ async function cmdIngest() {
     const rows = Array.isArray(raw) ? raw : raw.rows;
     if (!Array.isArray(rows)) die('Filen saknar en "rows"-array.');
 
-    const { events: incoming, unknownStatuses, skipped } = rowsToEvents(rows, editors, raw.hub || 'notion');
+    const { events: incoming, unknownStatuses, skipped } = rowsToEvents(rows, editors, raw.hub || 'notion', raw.workspace || null);
     const existing = readEvents(P.events);
     const { merged, added } = mergeEvents(existing, incoming);
 
@@ -185,6 +205,56 @@ async function cmdIngest() {
     say(`✔ Importerade ${added} händelser från ${rows.length} Notion-rader (${raw.hub || 'notion'}).`);
     say('  Endast tilldelningstid är äkta. Nuvarande status bokförs utan tidpunkt —');
     say('  ledtider börjar mätas när `ingest notion` ser övergångar ske.');
+    return;
+  }
+
+  if (kind === 'notion-all') {
+    const token = process.env.NOTION_TOKEN;
+    if (!token) die('NOTION_TOKEN saknas. Se README → "Så skaffar du en Notion-token".');
+
+    const { fetchEverything, fetchUsers } = await import('./src/ingest/notion-fetch.mjs');
+    const { rowsToEvents } = await import('./src/ingest/notion-rows.mjs');
+    const { commentsToEvents } = await import('./src/ingest/notion-comments.mjs');
+
+    // Slå upp riktiga namn först — API:t ser gästanvändare som MCP-kopplingen missar.
+    const people = await fetchUsers(token);
+    const unknown = people.filter(p => !editors.some(e => e.notionId === p.id));
+    if (unknown.length) {
+      say(`ℹ ${unknown.length} person(er) i Notion saknas i data/editors.json:`);
+      for (const p of unknown) say(`   ${p.id}  ${p.name}${p.email ? '  <' + p.email + '>' : ''}`);
+    }
+    for (const ed of editors) {
+      const hit = people.find(p => p.id === ed.notionId);
+      if (hit && hit.name && ed.name !== hit.name) {
+        say(`ℹ Notion kallar ${ed.name} för "${hit.name}" — uppdatera gärna editors.json.`);
+      }
+    }
+
+    const bundles = await fetchEverything({ token, workspaces: config.workspaces || [], onProgress: say });
+
+    let events = readEvents(P.events);
+    let addedTotal = 0;
+    for (const b of bundles) {
+      const rowRes = rowsToEvents(b.rows, editors, b.hub, b.workspace);
+      let merged = mergeEvents(events, rowRes.events);
+      events = merged.merged; addedTotal += merged.added;
+
+      // Kommentarerna behöver veta vem som äger tasken → vecka först.
+      const tasksById = new Map(foldTasks(events).map(t => [t.id, t]));
+      const comRes = commentsToEvents(
+        { comments: b.comments, checkedPages: b.checkedPages }, editors, tasksById);
+      merged = mergeEvents(events, comRes.events);
+      events = merged.merged; addedTotal += merged.added;
+
+      say(`  ${b.hub}: ${b.rows.length} rader, ${b.comments.length} kommentarer`);
+      if (rowRes.unknownStatuses.length) {
+        say(`  ⚠ Okända statusar: ${rowRes.unknownStatuses.join(', ')}`);
+      }
+    }
+
+    if (flags['dry-run']) { say(`(dry-run) ${addedTotal} nya händelser skulle sparas.`); return; }
+    writeEvents(P.events, events);
+    say(`✔ ${addedTotal} nya händelser sparade. Kör \`node cli.mjs build\`.`);
     return;
   }
 
