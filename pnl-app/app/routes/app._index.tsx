@@ -74,7 +74,11 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
       update: { payload: orderData as any, fetchedAt: new Date() },
     });
   }
-  const costChanges = await prisma.costChange.findMany({ where: { shop } });
+  const [costChanges, fixedRows] = await Promise.all([
+    prisma.costChange.findMany({ where: { shop } }),
+    prisma.fixedCost.findMany({ where: { shop } }),
+  ]);
+  const fixedMonthlyTotal = fixedRows.reduce((a, r) => a + Number(r.monthlyAmount), 0);
   const { sales, products } = orderData;
   /* Sessioner/CVR finns inte i det publika Admin-API:t — analytics-ytan är
      intern hos Shopify. Tom serie => "—" i panelen. */
@@ -95,6 +99,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
     from,
     to,
     spendReliable: metaConfigured && !spend.error,
+    fixedMonthlyTotal,
     sales,
     sessions,
     spend: spend.days,
@@ -170,6 +175,100 @@ export default function Dashboard() {
   );
 }
 
+
+/* ============ Visuell uppdelning ============
+   Del-av-helhet: omsättningen delas i kostnadsposter + nettovinst.
+   Paletten är validerad med dataviz-skillens sex kontroller (CVD-säker,
+   fast ordning). Tabellen bredvid är den obligatoriska avlastningen för
+   segment med låg kontrast (gul, magenta). */
+const SLICE_COLORS = {
+  cogs: "#4a3aa7",     // violett — produktkostnad
+  spend: "#eb6834",    // orange — annonser
+  fees: "#2a78d6",     // blå — transaktionsavgifter
+  tariff: "#eda100",   // gul — tull
+  fixed: "#e87ba4",    // magenta — fasta kostnader
+  profit: "#008300",   // grön — nettovinst
+} as const;
+
+function Donut({
+  t,
+  money,
+}: {
+  t: NonNullable<PageData["result"]>["totals"];
+  money: (v: number | null) => string;
+}) {
+  const parts = [
+    { key: "cogs", label: "Produktkostnad", value: t.cogs },
+    { key: "spend", label: "Annonser", value: t.spend },
+    { key: "fees", label: "Transaktionsavgifter", value: t.fees },
+    { key: "tariff", label: "Tull", value: t.tariff },
+    { key: "fixed", label: "Fasta kostnader", value: t.fixedCosts },
+    { key: "profit", label: "Nettovinst", value: Math.max(t.netProfit, 0) },
+  ].filter((p) => p.value > 0.5);
+  const total = parts.reduce((a, p) => a + p.value, 0);
+  if (total <= 0) return null;
+
+  const R = 80, r = 48, C = 100;
+  let angle = -Math.PI / 2;
+  const arcs = parts.map((p) => {
+    const sweep = (p.value / total) * Math.PI * 2;
+    const a0 = angle, a1 = angle + sweep;
+    angle = a1;
+    const large = sweep > Math.PI ? 1 : 0;
+    const x0 = C + R * Math.cos(a0), y0 = C + R * Math.sin(a0);
+    const x1 = C + R * Math.cos(a1), y1 = C + R * Math.sin(a1);
+    const xi1 = C + r * Math.cos(a1), yi1 = C + r * Math.sin(a1);
+    const xi0 = C + r * Math.cos(a0), yi0 = C + r * Math.sin(a0);
+    return {
+      ...p,
+      pct: p.value / total,
+      d: `M ${x0} ${y0} A ${R} ${R} 0 ${large} 1 ${x1} ${y1} L ${xi1} ${yi1} A ${r} ${r} 0 ${large} 0 ${xi0} ${yi0} Z`,
+    };
+  });
+
+  return (
+    <BlockStack gap="300" inlineAlign="center">
+      <svg viewBox="0 0 200 200" style={{ width: 220, maxWidth: "100%" }} role="img" aria-label="Fördelning av omsättningen">
+        {arcs.map((a) => (
+          <path key={a.key} d={a.d} fill={SLICE_COLORS[a.key as keyof typeof SLICE_COLORS]} stroke="#ffffff" strokeWidth="2">
+            <title>{`${a.label}: ${money(a.value)} (${Math.round(a.pct * 100)} %)`}</title>
+          </path>
+        ))}
+        <text x="100" y="94" textAnchor="middle" fontSize="11" fill="#6d7175">Omsättning</text>
+        <text x="100" y="112" textAnchor="middle" fontSize="14" fontWeight="700" fill="#202223">{money(t.totalSales)}</text>
+      </svg>
+      <InlineStack gap="300" wrap align="center">
+        {arcs.map((a) => (
+          <InlineStack key={a.key} gap="100" blockAlign="center">
+            <span style={{ width: 10, height: 10, borderRadius: 5, background: SLICE_COLORS[a.key as keyof typeof SLICE_COLORS], display: "inline-block" }} />
+            <Text as="span" variant="bodySm" tone="subdued">{a.label}</Text>
+          </InlineStack>
+        ))}
+      </InlineStack>
+    </BlockStack>
+  );
+}
+
+function BreakdownRow({ label, value, bold, colorKey, money }: {
+  label: string; value: number; bold?: boolean;
+  colorKey?: keyof typeof SLICE_COLORS;
+  money: (v: number | null) => string;
+}) {
+  return (
+    <InlineStack align="space-between" blockAlign="center">
+      <InlineStack gap="150" blockAlign="center">
+        {colorKey ? (
+          <span style={{ width: 8, height: 8, borderRadius: 4, background: SLICE_COLORS[colorKey], display: "inline-block" }} />
+        ) : null}
+        <Text as="span" variant={bold ? "headingSm" : "bodyMd"}>{label}</Text>
+      </InlineStack>
+      <Text as="span" variant={bold ? "headingSm" : "bodyMd"}>
+        {value < 0 ? `−${money(-value)}` : money(value)}
+      </Text>
+    </InlineStack>
+  );
+}
+
 function DashboardView({ d }: { d: PageData }) {
   const { fatal, result, rangeKey, currency, spendError, targetMargin } = d;
   const [, setParams] = useSearchParams();
@@ -194,7 +293,7 @@ function DashboardView({ d }: { d: PageData }) {
   const kpis: { label: string; value: string; sub: string; tone?: "critical" | "success" }[] = [
     { label: "Försäljning", value: money(t.totalSales), sub: `varav frakt ${money(t.shipping)}` },
     { label: "Ordrar", value: nf.format(t.orders), sub: `snittorder ${money(t.aov)}` },
-    { label: "Sessioner", value: t.sessions ? nf.format(t.sessions) : "—", sub: "kräver Shopify-analytics" },
+    { label: "Fasta kostnader", value: money(t.fixedCosts), sub: "utslagna per dag" },
     {
       label: "Annonskostnad",
       value: money(t.spend),
@@ -210,12 +309,12 @@ function DashboardView({ d }: { d: PageData }) {
     { label: "Tull", value: money(t.tariff), sub: `${nf.format(t.orders)} ordrar` },
     { label: "MER", value: mult(t.mer), sub: `break-even ${mult(t.breakEvenMer)}` },
     {
-      label: "Täckningsbidrag",
-      value: money(t.netContribution),
+      label: "Nettovinst",
+      value: money(t.netProfit),
       sub: t.spendComplete
         ? `max CPA @ ${Math.round(targetMargin * 100)} %: ${money(t.maxCpaAtTarget)}`
-        : "för högt — annonsdata saknas",
-      tone: t.spendComplete && t.netContribution >= 0 ? "success" : "critical",
+        : "för hög — annonsdata saknas",
+      tone: t.spendComplete && t.netProfit >= 0 ? "success" : "critical",
     },
   ];
 
@@ -284,6 +383,28 @@ function DashboardView({ d }: { d: PageData }) {
                   </BlockStack>
                 </Card>
               ))}
+            </InlineGrid>
+
+            <InlineGrid columns={{ xs: 1, md: 2 }} gap="300">
+              <Card>
+                <BlockStack gap="300">
+                  <Text as="h2" variant="headingMd">Visuell uppdelning</Text>
+                  <Donut t={t} money={money} />
+                </BlockStack>
+              </Card>
+              <Card>
+                <BlockStack gap="300">
+                  <Text as="h2" variant="headingMd">Detaljerad uppdelning</Text>
+                  <BreakdownRow label="Omsättning" value={t.totalSales} bold money={money} />
+                  <BreakdownRow label="Produktkostnad" value={-t.cogs} colorKey="cogs" money={money} />
+                  <BreakdownRow label="Tull" value={-t.tariff} colorKey="tariff" money={money} />
+                  <BreakdownRow label="Transaktionsavgifter" value={-t.fees} colorKey="fees" money={money} />
+                  <BreakdownRow label="Bruttovinst" value={t.grossProfit} bold money={money} />
+                  <BreakdownRow label="Annonser" value={-t.spend} colorKey="spend" money={money} />
+                  <BreakdownRow label="Fasta kostnader" value={-t.fixedCosts} colorKey="fixed" money={money} />
+                  <BreakdownRow label="Nettovinst" value={t.netProfit} bold colorKey="profit" money={money} />
+                </BlockStack>
+              </Card>
             </InlineGrid>
           </BlockStack>
         </Layout.Section>

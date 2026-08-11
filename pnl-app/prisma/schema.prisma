@@ -95,3 +95,15 @@ model PnlCache {
 
   @@unique([shop, key])
 }
+
+/// Fasta månadskostnader — abonnemang, anställda, appavgifter. Summeras och
+/// slås ut per dag i kalkylen: (summa × 12) / 365 per dag.
+model FixedCost {
+  id            String   @id @default(cuid())
+  shop          String
+  name          String
+  monthlyAmount Decimal  @db.Decimal(12, 2)
+  createdAt     DateTime @default(now())
+
+  @@index([shop])
+}

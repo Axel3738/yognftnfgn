@@ -71,6 +71,8 @@ export interface ComputeInput {
    * källan saknas eller felade — då är TB för högt och ska flaggas.
    */
   spendReliable?: boolean;
+  /** Summa av alla fasta månadskostnader (abonnemang, löner). Slås ut per dag. */
+  fixedMonthlyTotal?: number;
   sales: SalesDay[];
   sessions: SessionDay[];
   spend: SpendDay[];
@@ -134,6 +136,13 @@ export interface Totals {
   breakEvenRoas: number | null;
   /** Max CPA för att nå målmarginalen. */
   maxCpaAtTarget: number | null;
+
+  /** Fasta kostnader för perioden: (månadssumma × 12 / 365) × antal dagar. */
+  fixedCosts: number;
+  /** Omsättning − COGS − tull − avgifter. Före annonser och fasta. */
+  grossProfit: number;
+  /** Det som faktiskt blir kvar: bruttovinst − annonser − fasta kostnader. */
+  netProfit: number;
 
   unitsWithoutCost: number;
   /** Dagar med försäljning men utan annonsdata. TB blir för högt när den inte är tom. */
@@ -269,6 +278,10 @@ export function compute(input: ComputeInput): ComputeResult {
   const variableCost = cogs + tariff + fees;
   const grossContribution = totalSales - variableCost;
 
+  const dayCount = sales.length;
+  const fixedCosts = ((input.fixedMonthlyTotal ?? 0) * 12 / 365) * dayCount;
+  const grossProfit = totalSales - cogs - tariff - fees;
+
   const missingSpendDays = input.spendReliable
     ? []
     : sales.filter((s) => s.totalSales > 0 && !spendByDay[s.day]).map((s) => s.day);
@@ -309,6 +322,10 @@ export function compute(input: ComputeInput): ComputeResult {
       orders > 0
         ? (totalSales * (1 - settings.targetMargin - settings.feeRate) - cogs - tariff) / orders
         : null,
+
+    fixedCosts,
+    grossProfit,
+    netProfit: grossProfit - spend - fixedCosts,
 
     unitsWithoutCost,
     missingSpendDays,
