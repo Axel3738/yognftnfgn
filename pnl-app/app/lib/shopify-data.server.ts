@@ -72,15 +72,15 @@ export interface OrderData {
 }
 
 /**
- * En genomläsning av ordrarna i fönstret ger både dagsserien och produktmixen.
+ * Ordrarna hämtas via Shopifys bulk-export (bulkOperationRunQuery) — den
+ * paginerade vägen stryps av API:ts kostnadsmodell: varje sida med orderrader
+ * kostar ~900 poäng och budgeten tar slut efter ett par sidor, varpå resten
+ * droppar i väntetakt. 30 dagar tog minuter. Bulk-exporten är asynkron, utan
+ * kostnadstak, och levererar allt som JSONL på 20–60 sekunder.
  *
  * Approximationer, medvetna och synliga:
  * - Returer bokförs på ORDERNS dag, inte återbetalningsdagen.
  * - Radrabatter ingår i discountedTotal; orderrabatter fördelas inte per rad.
- * - Ordrar med fler än 20 rader trunkeras (nästan alla ordrar har 1–3).
- *
- * Fönstret hämtas med en dags marginal åt båda håll och filtreras sedan på
- * butikens tidszon — Shopifys created_at-filter tolkar datum i UTC.
  */
 export async function fetchOrderData(
   admin: AdminApiContext,
@@ -88,6 +88,8 @@ export async function fetchOrderData(
   to: string,
   timezone: string,
 ): Promise<OrderData> {
+  const jsonl = await runOrdersBulk(admin, shiftIso(from, -1), shiftIso(to, 1));
+
   const salesBy = new Map<string, SalesDay>();
   for (let d = from; d <= to; d = shiftIso(d, 1)) {
     salesBy.set(d, {
@@ -99,81 +101,46 @@ export async function fetchOrderData(
   interface Agg { productGid: string; variantGid: string | null; title: string;
     variantTitle: string | null; units: number; netSales: number; }
   const productBy = new Map<string, Agg>();
+  /* Ordrar som räknas — radrader vars förälder skippats (avbruten/test/utanför
+     fönstret) ska inte in i mixen. */
+  const counted = new Set<string>();
 
-  const search = `created_at:>='${shiftIso(from, -1)}' AND created_at:<='${shiftIso(to, 1)}'`;
-  let after: string | null = null;
-
-  for (let page = 0; page < 60; page++) {
-    const res: Response = await admin.graphql(
-      `#graphql
-       query Orders($q: String!, $after: String) {
-         orders(first: 40, after: $after, query: $q, sortKey: CREATED_AT) {
-           pageInfo { hasNextPage endCursor }
-           nodes {
-             createdAt cancelledAt test
-             totalPriceSet { shopMoney { amount } }
-             subtotalPriceSet { shopMoney { amount } }
-             totalDiscountsSet { shopMoney { amount } }
-             totalShippingPriceSet { shopMoney { amount } }
-             totalRefundedSet { shopMoney { amount } }
-             lineItems(first: 20) {
-               nodes {
-                 title variantTitle quantity
-                 discountedTotalSet { shopMoney { amount } }
-                 product { id }
-                 variant { id }
-               }
-             }
-           }
-         }
-       }`,
-      { variables: { q: search, after } },
-    );
-    const body = await res.json();
-    if (body?.errors?.length) {
-      throw new Error(`Orders-frågan misslyckades: ${body.errors.map((e: any) => e.message).join("; ")}`);
-    }
-    const conn = body?.data?.orders;
-    if (!conn) break;
-
-    for (const o of (conn.nodes ?? []) as OrderNode[]) {
-      if (o.cancelledAt || o.test) continue;
-      const day = dayInTz(new Date(o.createdAt), timezone);
+  for (const line of jsonl) {
+    if (!line.__parentId) {
+      // Orderrad
+      if (line.cancelledAt || line.test) continue;
+      const day = dayInTz(new Date(line.createdAt), timezone);
       const bucket = salesBy.get(day);
-      if (!bucket) continue; // marginaldag utanför fönstret
+      if (!bucket) continue;
+      counted.add(line.id);
 
-      const subtotal = num(o.subtotalPriceSet?.shopMoney?.amount);
-      const discounts = num(o.totalDiscountsSet?.shopMoney?.amount);
-      const refunded = num(o.totalRefundedSet?.shopMoney?.amount);
-      const shipping = num(o.totalShippingPriceSet?.shopMoney?.amount);
-      const total = num(o.totalPriceSet?.shopMoney?.amount);
+      const subtotal = num(line.subtotalPriceSet?.shopMoney?.amount);
+      const discounts = num(line.totalDiscountsSet?.shopMoney?.amount);
+      const refunded = num(line.totalRefundedSet?.shopMoney?.amount);
 
       bucket.orders += 1;
-      bucket.grossSales += subtotal + discounts; // subtotal är efter rabatt, före frakt
-      bucket.discounts -= 0; bucket.discounts += -discounts;
+      bucket.grossSales += subtotal + discounts;
+      bucket.discounts += -discounts;
       bucket.returns += -refunded;
       bucket.netSales += subtotal - refunded;
-      bucket.totalSales += total - refunded;
-      bucket.shippingCharges += shipping;
-
-      for (const li of o.lineItems?.nodes ?? []) {
-        const key = li.variant?.id ?? `${li.title}|${li.variantTitle ?? ""}`;
-        const agg = productBy.get(key) ?? {
-          productGid: li.product?.id ?? "",
-          variantGid: li.variant?.id ?? null,
-          title: li.title,
-          variantTitle: li.variantTitle === "Default Title" ? null : li.variantTitle,
-          units: 0,
-          netSales: 0,
-        };
-        agg.units += li.quantity;
-        agg.netSales += num(li.discountedTotalSet?.shopMoney?.amount);
-        productBy.set(key, agg);
-      }
+      bucket.totalSales += num(line.totalPriceSet?.shopMoney?.amount) - refunded;
+      bucket.shippingCharges += num(line.totalShippingPriceSet?.shopMoney?.amount);
+    } else {
+      // Orderrad-artikel
+      if (!counted.has(line.__parentId)) continue;
+      const key = line.variant?.id ?? `${line.title}|${line.variantTitle ?? ""}`;
+      const agg = productBy.get(key) ?? {
+        productGid: line.product?.id ?? "",
+        variantGid: line.variant?.id ?? null,
+        title: line.title,
+        variantTitle: line.variantTitle === "Default Title" ? null : line.variantTitle,
+        units: 0,
+        netSales: 0,
+      };
+      agg.units += line.quantity ?? 0;
+      agg.netSales += num(line.discountedTotalSet?.shopMoney?.amount);
+      productBy.set(key, agg);
     }
-
-    if (!conn.pageInfo?.hasNextPage) break;
-    after = conn.pageInfo.endCursor;
   }
 
   const costs = await fetchVariantCosts(admin);
@@ -185,6 +152,92 @@ export async function fetchOrderData(
   });
 
   return { sales: [...salesBy.values()], products };
+}
+
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+/** Startar bulk-exporten, väntar in den och returnerar parsade JSONL-rader. */
+async function runOrdersBulk(
+  admin: AdminApiContext,
+  fromExclusive: string,
+  toInclusive: string,
+): Promise<any[]> {
+  const inner = `{
+    orders(query: "created_at:>='${fromExclusive}' AND created_at:<='${toInclusive}'") {
+      edges { node {
+        id createdAt cancelledAt test
+        totalPriceSet { shopMoney { amount } }
+        subtotalPriceSet { shopMoney { amount } }
+        totalDiscountsSet { shopMoney { amount } }
+        totalShippingPriceSet { shopMoney { amount } }
+        totalRefundedSet { shopMoney { amount } }
+        lineItems {
+          edges { node {
+            id title variantTitle quantity
+            discountedTotalSet { shopMoney { amount } }
+            product { id }
+            variant { id }
+          } }
+        }
+      } }
+    }
+  }`;
+
+  // En bulk-operation i taget per butik — vänta ut en pågående innan start.
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const res = await admin.graphql(
+      `#graphql
+       mutation Run($q: String!) {
+         bulkOperationRunQuery(query: $q) {
+           bulkOperation { id status }
+           userErrors { field message }
+         }
+       }`,
+      { variables: { q: inner } },
+    );
+    const body = await res.json();
+    const errs = body?.data?.bulkOperationRunQuery?.userErrors ?? [];
+    if (!errs.length) break;
+    const msg = errs.map((e: any) => e.message).join("; ");
+    if (/already in progress/i.test(msg) && attempt < 2) {
+      await waitForBulk(admin, 60_000).catch(() => {});
+      continue;
+    }
+    throw new Error(`Kunde inte starta orderexporten: ${msg}`);
+  }
+
+  const url = await waitForBulk(admin, 90_000);
+  if (!url) return []; // export klar men noll objekt
+
+  const dl = await fetch(url);
+  if (!dl.ok) throw new Error(`Kunde inte hämta exportfilen (HTTP ${dl.status}).`);
+  const text = await dl.text();
+  return text
+    .split("\n")
+    .filter((l) => l.trim())
+    .map((l) => JSON.parse(l));
+}
+
+/** Pollar tills bulk-operationen är klar. Returnerar nedladdnings-URL (null = tomt resultat). */
+async function waitForBulk(admin: AdminApiContext, timeoutMs: number): Promise<string | null> {
+  const start = Date.now();
+  for (;;) {
+    await sleep(2500);
+    const res = await admin.graphql(
+      `#graphql
+       { currentBulkOperation { id status errorCode url objectCount } }`,
+    );
+    const body = await res.json();
+    const op = body?.data?.currentBulkOperation;
+    if (!op) throw new Error("Ingen bulk-operation hittades.");
+    if (op.status === "COMPLETED") return op.url ?? null;
+    if (op.status === "FAILED" || op.status === "CANCELED") {
+      throw new Error(`Orderexporten misslyckades: ${op.errorCode ?? op.status}`);
+    }
+    if (Date.now() - start > timeoutMs) {
+      throw new Error("Orderexporten tog för lång tid — prova att ladda om om en stund.");
+    }
+  }
 }
 
 const titleKey = (product: string, variant: string) =>

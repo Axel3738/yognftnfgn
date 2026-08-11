@@ -83,3 +83,15 @@ model DailySpend {
   @@unique([shop, day])
   @@index([shop, day])
 }
+
+/// Färdigräknade aggregat per (butik, intervall). Bulk-exporten tar 20–60 s;
+/// utan cache betalar varje sidladdning det priset igen.
+model PnlCache {
+  id        String   @id @default(cuid())
+  shop      String
+  key       String
+  payload   Json
+  fetchedAt DateTime @default(now())
+
+  @@unique([shop, key])
+}

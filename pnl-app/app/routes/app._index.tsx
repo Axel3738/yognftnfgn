@@ -57,10 +57,24 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
     update: {},
   });
 
-  const [orderData, costChanges] = await Promise.all([
-    fetchOrderData(admin, from, to, shopInfo.timezone),
-    prisma.costChange.findMany({ where: { shop } }),
-  ]);
+  /* Bulk-exporten tar 20–60 s — cachea färdiga aggregat per intervall så att
+     bara första laddningen betalar det priset. 10 min TTL. */
+  const cacheKey = `${from}:${to}`;
+  const cached = await prisma.pnlCache.findUnique({
+    where: { shop_key: { shop, key: cacheKey } },
+  });
+  let orderData: Awaited<ReturnType<typeof fetchOrderData>>;
+  if (cached && Date.now() - cached.fetchedAt.getTime() < 10 * 60 * 1000) {
+    orderData = cached.payload as unknown as Awaited<ReturnType<typeof fetchOrderData>>;
+  } else {
+    orderData = await fetchOrderData(admin, from, to, shopInfo.timezone);
+    await prisma.pnlCache.upsert({
+      where: { shop_key: { shop, key: cacheKey } },
+      create: { shop, key: cacheKey, payload: orderData as any },
+      update: { payload: orderData as any, fetchedAt: new Date() },
+    });
+  }
+  const costChanges = await prisma.costChange.findMany({ where: { shop } });
   const { sales, products } = orderData;
   /* Sessioner/CVR finns inte i det publika Admin-API:t — analytics-ytan är
      intern hos Shopify. Tom serie => "—" i panelen. */

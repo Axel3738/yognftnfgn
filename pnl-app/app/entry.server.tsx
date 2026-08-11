@@ -36,6 +36,8 @@ export default async function handleRequest(
         },
       },
     );
-    setTimeout(abort, 5000);
+    // Deferred data (bulk-exporten) kan ta uppåt en minut — 5 s klippte strömmen
+    // innan resultatet hann fram och spinnern satt kvar för evigt.
+    setTimeout(abort, 120_000);
   });
 }
