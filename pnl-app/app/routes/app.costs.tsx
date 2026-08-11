@@ -52,18 +52,30 @@ export async function action({ request }: ActionFunctionArgs) {
   const csv = String(form.get("csv") ?? "");
   const effectiveFrom = String(form.get("effectiveFrom") ?? "");
 
-  const parsed = csv
+  /* Tålig radtolkning: semikolon är formatet, men text som passerat Excel
+     kommer med tabbar och kommadecimaler. Sista kolumnen är alltid kostnaden. */
+  const parseLine = (line: string) => {
+    let parts = line.split(/[;\t]/).map((x) => x.trim());
+    if (parts.length < 2) parts = line.split(/\s{2,}/).map((x) => x.trim());
+    const cost = parseFloat((parts[parts.length - 1] ?? "").replace(",", "."));
+    return {
+      product: parts[0] ?? "",
+      variant: parts.length >= 3 ? parts.slice(1, -1).join(" ").trim() : "",
+      cost,
+    };
+  };
+  const rawLines = csv
     .split(/\r?\n/)
     .map((l) => l.trim())
-    .filter((l) => l && !l.startsWith("#"))
-    .map((line) => {
-      const [product, variant, cost] = line.split(";").map((s) => (s ?? "").trim());
-      return { product, variant, cost: parseFloat((cost ?? "").replace(",", ".")) };
-    })
-    .filter((r) => r.product && Number.isFinite(r.cost));
+    .filter((l) => l && !l.startsWith("#") && !/^B[äa]verbutiken inköpspriser/i.test(l));
+  const parsed = rawLines.map(parseLine).filter((r) => r.product && Number.isFinite(r.cost));
 
   if (!parsed.length) {
-    return json({ ok: false, message: "Hittade inga giltiga rader i CSV:n." }, { status: 400 });
+    const sample = rawLines[0] ? ` Första raden tolkades som: ${JSON.stringify(parseLine(rawLines[0]))}` : "";
+    return json(
+      { ok: false, message: `Hittade inga giltiga rader i CSV:n.${sample}` },
+      { status: 400 },
+    );
   }
 
   const catalog = await fetchVariantCosts(admin);
