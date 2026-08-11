@@ -28,6 +28,21 @@ const OBSERVED_STATES = ['assigned', 'in_progress', 'in_review', 'revision', 'ap
 
 const REQUIRED = ['ts', 'type', 'task_id'];
 
+/**
+ * Lagade task-id:n vid inläsning.
+ *
+ * En tidigare version lät sidtiteln följa med in i id:t när Notion-URL:en
+ * innehöll den ("N-Approvedmusic36f270ab…" i stället för "N-36f270ab…").
+ * Redan sparade loggar bär de trasiga id:na, och eftersom kommentarerna då
+ * pekar på ett annat id än raderna blir alla ledtider tomma utan att något
+ * felmeddelande syns. Normaliseringen här läker gammal data vid läsning, så
+ * ingen behöver hämta om allt eller rensa loggen för hand.
+ */
+function normaliseTaskId(id) {
+  const m = String(id).match(/([0-9a-f]{32})$/i);
+  return m ? `N-${m[1].toLowerCase()}` : id;
+}
+
 export function readEvents(path) {
   if (!existsSync(path)) return [];
   const out = [];
@@ -50,6 +65,7 @@ export function readEvents(path) {
     if (!Number.isFinite(toMs(ev.ts))) {
       throw new Error(`Ogiltig tidsstämpel "${ev.ts}" i ${path} rad ${i + 1}`);
     }
+    if (String(ev.task_id).startsWith('N-')) ev.task_id = normaliseTaskId(ev.task_id);
     out.push(ev);
   });
   return out.sort((a, b) => toMs(a.ts) - toMs(b.ts));
