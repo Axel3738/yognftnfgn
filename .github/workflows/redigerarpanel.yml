@@ -1,0 +1,96 @@
+name: Redigerarpanel
+
+# Hämtar Notion, bygger panelen och publicerar den. Ingen terminal behövs —
+# token:en ligger som ett GitHub-secret och allt körs här uppe.
+#
+# Kör: varje timme mellan 06 och 20 svensk tid, samt när du trycker på knappen.
+
+on:
+  schedule:
+    - cron: '0 4-18 * * 1-5'   # UTC. 04-18 UTC = 06-20 svensk sommartid, mån-fre.
+  workflow_dispatch:            # "Run workflow"-knappen i Actions-fliken
+
+permissions:
+  contents: write   # för att kunna spara händelseloggen mellan körningar
+  pages: write
+  id-token: write
+
+concurrency:
+  group: redigerarpanel
+  cancel-in-progress: false
+
+jobs:
+  bygg:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Kontrollera Notion-kopplingen
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: |
+          if [ -z "$NOTION_TOKEN" ]; then
+            echo "::error::Hemligheten NOTION_TOKEN saknas. Settings → Secrets and variables → Actions → New repository secret."
+            exit 1
+          fi
+          cd dashboard && node cli.mjs check-notion
+
+      - name: Hämta allt från Notion
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: cd dashboard && node cli.mjs ingest notion-all
+
+      - name: Bygg panelen
+        # index.html också — annars serverar Pages en tom katalog.
+        run: |
+          cd dashboard
+          node cli.mjs build
+          cp dist/dashboard.html dist/index.html
+
+      - name: Sammanfattning
+        run: cd dashboard && node cli.mjs stats >> $GITHUB_STEP_SUMMARY
+
+      # Händelseloggen måste överleva mellan körningar — det är den som gör att
+      # ledtiderna byggs upp över tid. Utan det här börjar mätningen om varje gång.
+      - name: Spara händelseloggen
+        run: |
+          git config user.name "Redigerarpanel"
+          git config user.email "actions@github.com"
+          git add -f dashboard/data/events.jsonl
+          git diff --staged --quiet || git commit -m "Uppdatera händelselogg [skip ci]"
+          git push
+
+      # Går alltid att ladda ner från körningen, även utan Pages.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dashboard
+          path: dashboard/dist/dashboard.html
+
+      - uses: actions/configure-pages@v5
+        continue-on-error: true
+        id: pages
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.pages.outcome == 'success'
+        with:
+          path: dashboard/dist
+
+  publicera:
+    needs: bygg
+    runs-on: ubuntu-latest
+    if: always() && needs.bygg.result == 'success'
+    continue-on-error: true
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
