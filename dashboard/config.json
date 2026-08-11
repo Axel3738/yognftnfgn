@@ -1,0 +1,97 @@
+{
+  "team": "Grillkliniken – Creative",
+  "timezone": "Europe/Stockholm",
+
+  "workday": {
+    "days": [1, 2, 3, 4, 5],
+    "start": "09:00",
+    "end": "18:00",
+    "lunchStart": "12:00",
+    "lunchMinutes": 60
+  },
+
+  "targets": {
+    "turnaroundHours": 8,
+    "revisionTurnaroundHours": 4,
+    "pickupHours": 2,
+    "revisionRate": 0.25,
+    "deliveriesPerActiveDay": 2,
+    "onTimeRate": 0.85
+  },
+
+  "thresholds": {
+    "revisionRateWarning": 0.3,
+    "revisionRateCritical": 0.45,
+    "staleAfterBusinessHours": 24,
+    "idleAfterBusinessHours": 16
+  },
+
+  "periods": [7, 14, 30, 90],
+  "defaultPeriodDays": 30,
+
+  "//workspaces": "En flik per teamspace i panelen. Lägg till en hub här så dyker den upp i rätt flik — inget annat behöver ändras.",
+  "workspaces": [
+    {
+      "id": "grillkliniken",
+      "name": "Grillkliniken",
+      "teamspaceId": "332270ab-908c-8138-8581-0042819eeea0",
+      "hubs": [
+        { "name": "Creative Hub master", "databaseId": "36f270ab908c803b8949ff2326f4f76c" },
+        { "name": "Creative hub prank apron", "databaseId": "3aa270ab908c8036b0cdfb49f6f37289" },
+        { "name": "Creative hub golf grill kit", "databaseId": "3aa270ab908c801385d6cd8548c015b2" }
+      ]
+    },
+    {
+      "id": "baverbutiken",
+      "name": "Bäverbutiken",
+      "teamspaceId": "3a9270ab-908c-81a8-a48c-004222d195e7",
+      "hubs": [
+        { "name": "Boat cover 420D creative hub", "databaseId": "3b0270ab908c80a78793fa11d8c0f6e4" },
+        { "name": "Trimmer belt creative hub", "databaseId": "3aa270ab908c808b9d87d1f1a0d70cbc" }
+      ]
+    },
+    {
+      "id": "matstrumpor",
+      "name": "Matstrumpor",
+      "teamspaceId": "3a9270ab-908c-81f8-b806-00421f2a98e3",
+      "hubs": []
+    },
+    {
+      "id": "ploomi",
+      "name": "Ploomi.se",
+      "teamspaceId": "3a9270ab-908c-8102-8898-0042961d58cb",
+      "hubs": []
+    }
+  ],
+
+  "slack": {
+    "channel": "#creative",
+    "digestSchedule": "0 7 * * 1-5",
+    "mentionOnFlags": true
+  },
+
+  "notion": {
+    "databaseId": "36f270ab908c803b8949ff2326f4f76c",
+    "_databaseName": "Creative Hub master",
+    "_otherHubs": {
+      "Boat cover 420D creative hub": "3b0270ab908c80a78793fa11d8c0f6e4",
+      "Trimmer belt creative hub": "3aa270ab908c808b9d87d1f1a0d70cbc"
+    },
+    "propertyMap": {
+      "title": "Namn",
+      "assignee": "Ansvarig",
+      "status": "Status",
+      "due": "Godkänd datum",
+      "type": "Typ",
+      "brand": "Kategori"
+    },
+    "statusMap": {
+      "assigned": ["Draft"],
+      "started": ["In progress", "To be translated"],
+      "delivered": ["Creative strat review", "To be Reviewed", "In Review", "Translation in review", "Hereer to be rewied"],
+      "revision_requested": ["In progress 2"],
+      "approved": ["Approved", "Archived", "Translation archived"],
+      "cancelled": ["Not used"]
+    }
+  }
+}

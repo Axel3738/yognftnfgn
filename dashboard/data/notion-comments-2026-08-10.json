@@ -1,0 +1,65 @@
+{
+  "hub": "Creative Hub master",
+  "workspace": "grillkliniken",
+  "exportedAt": "2026-08-10",
+  "note": "Kommentarer hämtade per sida. Detta är den enda källan i Notion som har ÄKTA tidsstämplar på arbetsflödet. En kommentar från den ansvariga ('Kindly check!') är en leverans. En kommentar från någon annan är en ändringsbegäran. 12 sidor kontrollerade, 7 hade kommentarer.",
+  "checkedPages": [
+    "3b2270ab908c80be8142fc53df4b8c4d", "3b2270ab908c80798884c21d77e9dd4a",
+    "3ac270ab908c80c2b94bd1cb283d24a8", "3ad270ab908c80baaabad46b7022e17a",
+    "3ad270ab908c8050bb9ed26860d5dbd7", "3b1270ab908c80368fc2e65746480349",
+    "3b3270ab908c8056afaaedf57dbcb3f7", "3b3270ab908c803e9b49f571c716f676",
+    "3ad270ab908c8086a583e8171f55f451", "3b1270ab908c80a4a1cac9a72752234a",
+    "3b2270ab908c8033abd5c4b3e050e143"
+  ],
+  "comments": [
+    {
+      "page": "3b2270ab908c80be8142fc53df4b8c4d",
+      "task": "128 b2",
+      "author": "332d872b-594c-815b-92e8-0002f9c93383",
+      "datetime": "2026-08-05T12:49:27.371Z",
+      "text": "H5 cuts off too fast. H1 should be like the original for H3 on 128 same visuals exactly like this one."
+    },
+    {
+      "page": "3b2270ab908c80798884c21d77e9dd4a",
+      "task": "257",
+      "author": "1a4d872b-594c-81d8-adf3-0002a95f9e7f",
+      "datetime": "2026-08-06T22:51:16.709Z",
+      "text": "Kindly check!"
+    },
+    {
+      "page": "3ac270ab908c80c2b94bd1cb283d24a8",
+      "task": "245",
+      "author": "1a4d872b-594c-81d8-adf3-0002a95f9e7f",
+      "datetime": "2026-08-03T20:54:03.136Z",
+      "text": "Kindly check!"
+    },
+    {
+      "page": "3ad270ab908c80baaabad46b7022e17a",
+      "task": "248",
+      "author": "1a4d872b-594c-81d8-adf3-0002a95f9e7f",
+      "datetime": "2026-07-31T05:49:04.548Z",
+      "text": "Kindly check!"
+    },
+    {
+      "page": "3ad270ab908c8050bb9ed26860d5dbd7",
+      "task": "246",
+      "author": "1a4d872b-594c-81d8-adf3-0002a95f9e7f",
+      "datetime": "2026-07-31T02:01:25.845Z",
+      "text": "kindly check. Thanks!"
+    },
+    {
+      "page": "3b1270ab908c80368fc2e65746480349",
+      "task": "250 - 235 hook swap",
+      "author": "332d872b-594c-815b-92e8-0002f9c93383",
+      "datetime": "2026-08-04T03:08:07.016Z",
+      "text": "Good job on H6. But after some thought we will have to change hook 5 and 7. Because of the weak copy + weak visuals i dont think we should test those. Instead we will take these ones."
+    },
+    {
+      "page": "3b3270ab908c8056afaaedf57dbcb3f7",
+      "task": "277/279",
+      "author": "1a4d872b-594c-81d8-adf3-0002a95f9e7f",
+      "datetime": "2026-08-10T02:54:55.787Z",
+      "text": "kindly check!"
+    }
+  ]
+}

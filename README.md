@@ -29,6 +29,7 @@ att datan går att skära, och sedan iterera på det som faktiskt funkar.
 | `docs/winning-lines.md` | **Punchline-banken** — analys av dina top spenders + vinnande lines för statics |
 | `docs/bof-concepts.md` | BOF-research (konkurrentanalys) + de första annonskoncepten för Mastern |
 | `docs/playbook.md` | Spelboken — vinnande angles/format/hooks som vi bevisat över tid |
+| `dashboard/` | **Redigerarpanelen** — output, ledtider, revisionsgrad och belastning per redigerare, med Slack-utskick |
 
 ## Aktivt setup
 

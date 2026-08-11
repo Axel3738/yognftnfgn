@@ -1,0 +1,328 @@
+# Redigerarpanel
+
+Dashboard över redigerarnas output, ledtider, revisionsgrad och faktisk
+belastning. Kopplad till Slack för lägesrapport och personliga knuffar.
+
+```bash
+cd dashboard
+node cli.mjs ingest notion-rows data/notion-export-2026-08-10.json   # riktig data
+node cli.mjs build                                                   # → dist/dashboard.html
+node cli.mjs stats                                                   # samma siffror i terminalen
+node test.mjs                                                        # 25 tester
+```
+
+Vill du i stället se hur panelen ser ut med full tidshistorik:
+`node cli.mjs seed --force && node cli.mjs build` (demodata, tydligt märkt).
+
+Öppna `dist/dashboard.html`. Inga beroenden, ingen server, inga CDN:er — en
+enda fil som funkar offline och går att maila eller lägga på en statisk host.
+
+---
+
+## Vad den faktiskt mäter
+
+Fem frågor, fem mätetal. Alla tider räknas i **arbetstid**, inte kalendertid.
+
+| Frågan du ställde | Mätetal | Definition |
+|---|---|---|
+| Vad producerar de per dag? | **Leveranser** + **per aktiv dag** | Varje inlämning räknas, även omgjorda rundor |
+| Hur lång tid tar en task? | **Median ledtid** + **p90** | Tilldelad → första leverans |
+| Hur lång tid tar revisioner? | **Median revisionstid** | Ändringsbegäran → nästa inlämning |
+| Hur noggranna är de? | **Revisionsgrad** + **omgjort-andel** | Andel tasks som fick minst en ändringsbegäran / andel av alla inlämningar som var omgörningar |
+| Jobbar de egentligen? | **Pickup**, **beläggning**, **aktiva dagar**, **öppna tasks** | Se nedan |
+
+### Arbetstid, inte kalendertid
+
+Det här är den viktigaste designbesluten i hela verktyget, och den vanligaste
+anledningen till att såna här paneler ljuger.
+
+En task som lämnas ut **fredag 16:45** och levereras **måndag 09:15** tog
+**1h 30m** — inte 64 timmar. Räknar man kalendertid ser alla ut som sölkorvar
+över helger, alla ser snabba ut på tisdagar, och den som får sina tasks på
+eftermiddagen straffas systematiskt. Arbetsfönstret sätts i `config.json`
+(default 09:00–18:00, mån–fre, lunch 12:00–13:00, Europe/Stockholm) och
+sommartid hanteras korrekt.
+
+### "Jobbar de egentligen?" — vad siffrorna kan och inte kan svara på
+
+Fyra signaler, i ordning efter hur mycket de är värda:
+
+1. **Pickup** — tilldelad → påbörjad. Hur länge en task ligger orörd innan
+   någon ens öppnar den. Den här är hård och svår att bortförklara.
+2. **Leveranser per aktiv dag** — hur mycket som kommer ut de dagar de
+   levererar något alls.
+3. **Aktiva dagar** — hur många dagar i perioden det kom ut något.
+4. **Beläggning** — uppskattad handpåläggningstid delat med tillgänglig
+   arbetstid.
+
+Beläggning är **en uppskattning, inte en tidrapport**. Den summerar
+påbörjad→levererad för varje task och kan bli över 100% om någon jobbar på
+flera tasks parallellt (vilket alla gör). Använd den som en grov indikation,
+aldrig som bevis. Panelen märker den med `*` av just det skälet.
+
+Det som **inte** går att få ut av en task-logg: om någon satt och surfade,
+hur svår en enskild task var, eller om långsamhet beror på lathet eller på en
+usel brief. Panelen mäter genomströmning — inte människor.
+
+### Revisionsgrad ≠ omgjort-andel
+
+Två olika saker som ofta blandas ihop:
+
+- **Revisionsgrad** räknas *per task*: hur ofta något behöver göras om alls.
+- **Omgjort-andel** räknas *per inlämning*: hur stor del av allt arbete som är
+  omgörning.
+
+En redigerare kan ha låg revisionsgrad men hög omgjort-andel (få tasks går
+fel, men de som gör det går riktigt fel).
+
+---
+
+## Koppla in riktig data
+
+Datan är en append-only händelselogg i `data/events.jsonl`. Allt annat härleds
+därifrån, så det spelar ingen roll var händelserna kommer ifrån.
+
+### Vad som faktiskt finns i er Notion idag
+
+Kartlagt 2026-08-10. Tre creative hubs med identiskt schema:
+`Creative Hub master` (199 rader), `Boat cover 420D creative hub`,
+`Trimmer belt creative hub`.
+
+| Fält | Ifyllt | Duger till |
+|---|---|---|
+| `createdTime` (system) | 100% | tilldelningstid — äkta |
+| `Status` | ~100% | nuläge — men **ingen historik** |
+| `Ansvarig` | 138 av 199 | vem som äger vad |
+| `Godkänd datum` | **2 av 199** | i praktiken inget |
+| `Skapad` | 8 av 199 | inget |
+| `Feedback` | 1 av 199 | inget |
+
+**Slutsatsen som gäller:** ledtider går inte att räkna ut retroaktivt. Notion
+sparar ingen statushistorik, och de datumfält som skulle kunna ersätta den är
+tomma. Panelen hittar inte på tider — den visar nuläget, som är äkta, och
+börjar mäta ledtider från den dag pollern körs.
+
+Statusflödet mappas så här (`config.json` → `notion.statusMap`):
+
+| Notion-status | Betyder |
+|---|---|
+| Draft | tilldelad, ej påbörjad |
+| In progress · To be translated | pågår |
+| Creative strat review · To be Reviewed · In Review | inlämnad, väntar granskning |
+| **In progress 2** | omgörning efter review — det är den som ger revisionsgraden |
+| Approved · Archived · Translation archived | klar |
+| Not used | nedlagd |
+
+### Alternativ 0 — engångsuttag (redan gjort)
+
+`data/notion-export-2026-08-10.json` är 100 rader hämtade ur Creative Hub
+master. Importeras med:
+
+```bash
+node cli.mjs ingest notion-rows data/notion-export-2026-08-10.json
+```
+
+Den bokför bara det som är sant: `assigned` vid `createdTime`, och nuvarande
+status som en `observed`-händelse **utan tidpunkt**. En `observed` räknas
+aldrig som en leverans och ger aldrig en ledtid.
+
+### Så skaffar du en Notion-token
+
+En "integration token" är ett lösenord som låter ett program läsa din Notion.
+Det tar ungefär tre minuter.
+
+1. Gå till **https://www.notion.so/profile/integrations**
+2. Klicka **New integration**
+3. Namn: `Redigerarpanel`. Välj rätt workspace. Type: **Internal**.
+4. Under **Capabilities**, bocka i:
+   - ✅ Read content
+   - ✅ Read comments ← **den här är lätt att missa och utan den blir det inga ledtider**
+   - ✅ Read user information including email addresses
+   - ❌ Insert/Update content behövs inte — panelen skriver aldrig något
+5. Klicka **Save**, sedan **Show** vid *Internal Integration Secret* och kopiera.
+   Den börjar med `ntn_` (äldre konton: `secret_`).
+6. **Släpp in integrationen där datan finns.** Det här är det steg alla missar:
+   *att skapa integrationen ger den noll tillgång.* Den måste dessutom bjudas
+   in. Två vägar, samma resultat:
+
+   - **Från integrationssidan** (enklast): fliken **Åtkomst till innehåll**
+     högst upp → välj de sidor/databaser den ska få läsa.
+   - **Från Notion**: öppna databasen → `•••` uppe till höger →
+     **Connections** / **Anslutningar** → välj integrationen.
+
+   Kopplar du in den på teamspacets toppsida ärver allt under den åtkomsten,
+   så slipper du göra det per hub.
+7. Lägg token i miljön:
+
+```bash
+cd dashboard
+echo 'NOTION_TOKEN=ntn_din_token_här' > .env      # .env är gitignorerad
+export $(cat .env | xargs)
+```
+
+Testa att allt sitter ihop:
+
+```bash
+node cli.mjs check-notion
+```
+
+Den svarar rad för rad: är token giltig, får den läsa användare, får den läsa
+kommentarer, och — viktigast — vilka av dina fem hubbar den faktiskt släpps in
+i. En hub som svarar `404` betyder alltid samma sak: integrationen är inte
+inbjuden dit ännu. Kommandot skriver ut exakt vad du ska klicka på.
+
+**Token:en är ett lösenord.** Den ligger i `.env`, som är gitignorerad — den
+ska aldrig committas eller klistras in i en chatt. Blir den läckt: gå tillbaka
+till integrations-sidan och klicka **Refresh** på hemligheten, så slutar den
+gamla gälla direkt.
+
+### Hämta allt på en gång
+
+```bash
+node cli.mjs ingest notion-all
+```
+
+Går igenom varje hub i `config.json` → `workspaces`, hämtar **alla** rader och
+**alla** kommentarer, och skriver händelser. Den slår också upp riktiga namn
+på användarna och säger till om någon saknas i `data/editors.json` — det är så
+du får bort "Okänd (367d)".
+
+Kommandot stryper sig själv till Notions takt (~3 anrop/s) och backar av vid
+429, så det tar några minuter för ett par hundra sidor. Det är idempotent:
+kör det hur ofta du vill.
+
+### Alternativ 1 — Notion-pollern (rekommenderat framåt)
+
+Notions API ger bara nuläget, inte statushistorik. Lösningen är en poller som
+jämför mot förra körningen och bokför varje statusändring.
+
+1. Skapa en Notion-integration, dela task-databasen med den.
+2. `export NOTION_TOKEN=secret_...`
+3. Fyll i `config.json` → `notion.databaseId` och kolumnnamnen i
+   `propertyMap` / `statusMap`.
+4. Testa: `node cli.mjs ingest notion --dry-run`
+5. Kör skarpt: `node cli.mjs ingest notion`
+
+Kör den **var 15:e minut** via cron. Ju oftare den kör, desto exaktare
+tidsstämplar. Kör den sällan och tidsstämplarna blir trubbiga — aldrig fel,
+bara grovkorniga.
+
+Första körningen skapar en baslinje från `created_time` / `last_edited_time`,
+så du har något att titta på direkt. Riktiga ledtider börjar samlas från och
+med körning två.
+
+### Alternativ 2 — CSV
+
+Två format, det detekterar självt vilket du gav det:
+
+```csv
+task_id,editor,event,ts,round,reason,due,title,type,brand
+T-1001,marcus,assigned,2026-08-01T09:00:00+02:00,,,2026-08-02T17:00:00+02:00,Mastern_PD_3,video,Mastern
+T-1001,marcus,delivered,2026-08-01T13:30:00+02:00,1,,,,,
+```
+
+```csv
+task_id,editor,title,type,assigned_at,started_at,delivered_at,revision_requested_at,revision_delivered_at,approved_at,due_at
+```
+
+```bash
+node cli.mjs ingest csv historik.csv --dry-run
+node cli.mjs ingest csv historik.csv
+```
+
+### Alternativ 3 — för hand
+
+```bash
+node cli.mjs log T-1042 assigned --editor marcus --title "Mastern hook-cut" --due 2026-08-12T17:00:00+02:00
+node cli.mjs log T-1042 started  --editor marcus
+node cli.mjs log T-1042 delivered --editor marcus --round 1
+node cli.mjs log T-1042 revision_requested --editor marcus --reason "Fel logga"
+node cli.mjs log T-1042 approved --editor marcus
+```
+
+Ingest är idempotent — samma händelse två gånger blir en. Polla hur ofta du vill.
+
+### Rensa demodatan
+
+```bash
+node cli.mjs purge-demo
+```
+
+---
+
+## Slack
+
+Två lägen, inga npm-beroenden:
+
+| Vad | Kräver | Kan |
+|---|---|---|
+| Incoming webhook | `SLACK_WEBHOOK_URL` | posta i en kanal |
+| Bot-token | `SLACK_BOT_TOKEN` (`xoxb-…`) | posta i valfri kanal **och** DM:a enskilda |
+
+```bash
+node cli.mjs slack digest --dry-run              # se exakt vad som skulle skickas
+node cli.mjs slack digest --url https://.../panel
+node cli.mjs slack nudge --dry-run               # personliga knuffar
+node cli.mjs slack nudge
+```
+
+**Digest** (till kanalen): läget i stort, en rad per redigerare, och listan
+över det som står still. **Nudge** (DM): bara till den som faktiskt har något
+liggande, med en rad coaching om revisionsgraden eller pickup-tiden ligger
+över målet.
+
+För DM krävs scopes `chat:write` och `im:write`, och slack-id per person i
+`data/editors.json`. Saknas id:t hoppas personen över med en varning i stället
+för att krascha.
+
+Ingenting skickas utan att du ber om det. `--dry-run` skriver ut JSON:en.
+
+### Schemalägg
+
+```cron
+*/15 8-18 * * 1-5  cd /sökväg/dashboard && node cli.mjs ingest notion
+0 8 * * 1-5        cd /sökväg/dashboard && node cli.mjs build && node cli.mjs slack digest
+0 14 * * 1-5       cd /sökväg/dashboard && node cli.mjs slack nudge
+```
+
+---
+
+## Konfiguration
+
+Allt i `config.json`:
+
+- `workday` — arbetsfönster, dagar, lunch, tidszon
+- `targets` — vad som räknas som bra (mållinjerna i diagrammen)
+- `thresholds` — när något blir gult respektive rött, och när en task räknas
+  som stillastående
+- `periods` — vilka perioder som förberäknas (växlas i webbläsaren)
+- `notion` — databas-id och kolumnmappning
+
+Tröskelvärdena är **absoluta, inte relativa**. Den sämsta i gruppen blir inte
+röd för att den är sämst — den blir röd när den passerar en gräns du satt.
+Annars är alltid någon röd, och panelen blir ett mobbningsverktyg i stället
+för ett styrverktyg.
+
+---
+
+## Filer
+
+| Fil | Vad |
+|---|---|
+| `cli.mjs` | Alla kommandon |
+| `src/time.mjs` | Arbetstidsmatematiken — DST, helger, lunch |
+| `src/store.mjs` | Händelselogg + veckning till tasks |
+| `src/metrics.mjs` | Alla nyckeltal |
+| `src/render.mjs` | Dashboarden (en självständig HTML-fil) |
+| `src/slack.mjs` | Block Kit + utskick |
+| `src/ingest/notion.mjs` | Notion-poller med statusdiff |
+| `src/ingest/csv.mjs` | CSV-import |
+| `src/seed.mjs` | Demodatagenerator |
+| `test.mjs` | 25 tester, tyngdpunkt på tidsmatematiken |
+
+## Design
+
+Diagrammen följer en validerad palett: färgordningen är kontrollerad för
+färgblindhet (deuteran/protan/tritan) i både ljust och mörkt läge, status bärs
+alltid av ikon **och** text — aldrig färg ensam, varje diagram har tabellvy,
+och panelen följer systemets tema.
