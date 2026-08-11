@@ -90,9 +90,11 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
     today,
   );
 
+  const metaConfigured = Boolean(settings.metaAdAccountId && settings.metaAccessToken);
   const result = compute({
     from,
     to,
+    spendReliable: metaConfigured && !spend.error,
     sales,
     sessions,
     spend: spend.days,

@@ -65,6 +65,12 @@ export interface Settings {
 export interface ComputeInput {
   from: string;
   to: string;
+  /**
+   * true = annonskällan svarade utan fel, så dagar utan spendrad är äkta
+   * nollor (Meta rapporterar inga rader för dagar utan leverans). false =
+   * källan saknas eller felade — då är TB för högt och ska flaggas.
+   */
+  spendReliable?: boolean;
   sales: SalesDay[];
   sessions: SessionDay[];
   spend: SpendDay[];
@@ -263,7 +269,9 @@ export function compute(input: ComputeInput): ComputeResult {
   const variableCost = cogs + tariff + fees;
   const grossContribution = totalSales - variableCost;
 
-  const missingSpendDays = sales.filter((s) => s.totalSales > 0 && !spendByDay[s.day]).map((s) => s.day);
+  const missingSpendDays = input.spendReliable
+    ? []
+    : sales.filter((s) => s.totalSales > 0 && !spendByDay[s.day]).map((s) => s.day);
 
   const totals: Totals = {
     orders,
