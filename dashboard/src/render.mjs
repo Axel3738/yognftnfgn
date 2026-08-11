@@ -1022,9 +1022,26 @@ function flagsSection(M) {
       el('span', { text: detail + ': ' + n }),
     ]));
 
+  // Vems bord bollen ligger på. Utan den här uppdelningen läses varje
+  // stillastående task som att redigeraren är sen — och då pekar panelen åt
+  // fel håll, vilket är sämre än att inte peka alls.
+  const COURT_TEXT = {
+    editor: { label: 'Hos redigeraren', hint: 'Ska göras eller göras om' },
+    reviewer: { label: 'Hos granskaren', hint: 'Inlämnat, väntar på svar' },
+    unassigned: { label: 'Saknar ansvarig', hint: 'Ingen har fått den' },
+  };
+  const courts = (M.courts || []).filter(c => c.count > 0);
+  const courtTiles = courts.length ? el('div', { class: 'tiles', style: 'margin-bottom:16px' },
+    courts.map(c => el('div', { class: 'tile' }, [
+      el('div', { class: 'label', text: COURT_TEXT[c.court].label }),
+      el('div', { class: 'value', text: num(c.count) }),
+      el('div', { class: 'delta', text: COURT_TEXT[c.court].hint + ' · äldsta ' + c.oldestDays + ' d' }),
+    ]))) : null;
+
   return el('section', {}, [
     el('div', { class: 'card' }, [
       el('h2', { text: 'Behöver en knuff' }),
+      courtTiles,
       el('p', { class: 'hint', text: 'Öppna tasks som står still, har passerat deadline eller väntar på en obesvarad revision. Detta är exakt vad Slack-digesten skickar ut.' }),
       M.flags.length ? el('ul', { class: 'legend' }, summary) : null,
       items.length ? el('ul', { class: 'flags' }, items) : el('div', { class: 'empty', text: 'Inget som skräpar. Allt rör sig.' }),

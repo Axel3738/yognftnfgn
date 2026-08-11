@@ -75,6 +75,23 @@ export function enrichTask(task, cfg, tz) {
   };
 }
 
+/**
+ * Vems bord ligger bollen på?
+ *
+ * Utan den här uppdelningen läses varje stillastående task som att redigeraren
+ * är sen. Men en task som är inlämnad och väntar på granskning ligger inte hos
+ * redigeraren alls — den ligger hos den som ska titta på den. Att blanda ihop
+ * de två gör att panelen pekar åt fel håll, vilket är värre än att inte peka.
+ */
+const COURT = {
+  'Väntar på granskning': 'reviewer',
+  'Revision obesvarad': 'editor',
+  'Ingen rörelse': 'editor',
+  'Tilldelad men aldrig påbörjad': 'editor',
+  'Saknar ansvarig': 'unassigned',
+};
+const courtOf = detail => COURT[detail] || (String(detail).startsWith('Deadline') ? 'editor' : 'editor');
+
 /** Öppna tasks som ligger och skräpar just nu. Oberoende av vald period. */
 function openTaskFlags(tasks, thresholds, now, workdayFor) {
   const flags = [];
@@ -129,7 +146,7 @@ function openTaskFlags(tasks, thresholds, now, workdayFor) {
       });
     }
   }
-  return flags.sort((a, b) => b.minutes - a.minutes);
+  return flags.map(f => ({ ...f, court: courtOf(f.detail) })).sort((a, b) => b.minutes - a.minutes);
 }
 
 /** Aggregerar en uppsättning tasks till nyckeltal. */
@@ -303,6 +320,18 @@ export function computeMetrics({ tasks: rawTasks, config, periodDays, now = Date
 
   const flags = openTaskFlags(all, config.thresholds, nowMs, workdayFor);
 
+  // Summering per bord: antal och hur mycket väntan som samlats där.
+  const perDay = minutesPerWorkday(cfg);
+  const courts = ['editor', 'reviewer', 'unassigned'].map(court => {
+    const mine = flags.filter(f => f.court === court);
+    return {
+      court,
+      count: mine.length,
+      waitingDays: Math.round(mine.reduce((a, f) => a + f.minutes, 0) / perDay),
+      oldestDays: mine.length ? Math.round(Math.max(...mine.map(f => f.minutes)) / perDay) : 0,
+    };
+  });
+
   // Nulägesvy: fungerar även när tidshistoriken saknas (importerad data där vi
   // vet VAD som gäller men inte NÄR det hände). Räknar allt, inte bara perioden.
   const STATE_ORDER = ['assigned', 'in_progress', 'in_review', 'revision', 'approved', 'cancelled'];
@@ -347,6 +376,7 @@ export function computeMetrics({ tasks: rawTasks, config, periodDays, now = Date
     snapshot,
     editors: perEditor.sort((a, b) => b.stats.deliveries - a.stats.deliveries),
     flags,
+    courts,
     tasks: cur.tasks.map(t => ({
       id: t.id, title: t.title, editor: t.editor, type: t.type, state: t.state,
       assignedAt: t.assignedAt, firstDelivery: t.firstDelivery, approvedAt: t.approvedAt,
