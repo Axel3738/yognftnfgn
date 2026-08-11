@@ -102,7 +102,7 @@ function openTaskFlags(tasks, thresholds, now, workdayFor) {
     const overdue = t.dueAt && toMs(t.dueAt) < now;
     if (overdue) {
       flags.push({
-        kind: 'overdue', severity: 'critical', task: t.id, editor: t.editor, title: t.title,
+        kind: 'overdue', severity: 'critical', task: t.id, editor: t.editor, title: t.title, url: t.url,
         detail: `Deadline passerad (${localDate(t.dueAt, tz)})`,
         minutes: businessMinutes(t.dueAt, now, cfg, tz),
       });
@@ -122,7 +122,7 @@ function openTaskFlags(tasks, thresholds, now, workdayFor) {
       // att lösa, inte redigerarnas.
       if (idleMin >= thresholds.idleAfterBusinessHours * 60) {
         flags.push({
-          kind: 'unassigned', severity: 'warning', task: t.id, editor: null, title: t.title,
+          kind: 'unassigned', severity: 'warning', task: t.id, editor: null, title: t.title, url: t.url,
           detail: 'Saknar ansvarig', minutes: idleMin,
         });
       }
@@ -130,13 +130,13 @@ function openTaskFlags(tasks, thresholds, now, workdayFor) {
       // Ligger i inkorgen och har aldrig rört sig.
       if (idleMin >= thresholds.idleAfterBusinessHours * 60) {
         flags.push({
-          kind: 'not_started', severity: 'warning', task: t.id, editor: t.editor, title: t.title,
+          kind: 'not_started', severity: 'warning', task: t.id, editor: t.editor, title: t.title, url: t.url,
           detail: 'Tilldelad men aldrig påbörjad', minutes: idleMin,
         });
       }
     } else if (idleMin >= thresholds.staleAfterBusinessHours * 60) {
       flags.push({
-        kind: 'stale', severity: 'serious', task: t.id, editor: t.editor, title: t.title,
+        kind: 'stale', severity: 'serious', task: t.id, editor: t.editor, title: t.title, url: t.url,
         detail: t.state === 'revision' ? 'Revision obesvarad'
           : t.state === 'in_review' ? 'Väntar på granskning'
           : 'Ingen rörelse',

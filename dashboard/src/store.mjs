@@ -129,6 +129,7 @@ export function foldTasks(events) {
         deliveries: [], revisions: [],
         state: 'assigned',
         observedAt: null, observedStatus: null, estimated: false,
+        url: ev.notion_url || null,
         source: ev.source || null,
       };
       tasks.set(ev.task_id, t);
@@ -142,6 +143,7 @@ export function foldTasks(events) {
     if (ev.priority) t.priority = ev.priority;
     if (ev.due) t.dueAt = ev.due;
     if (ev.source) t.source = ev.source;
+    if (ev.notion_url) t.url = ev.notion_url;
 
     switch (ev.type) {
       case 'assigned':
