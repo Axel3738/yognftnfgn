@@ -238,6 +238,25 @@ test('titel i URL:en ändrar inte task-id:t', () => {
   assert.throws(() => taskIdFromUrl('https://www.notion.so/inget-id-har'));
 });
 
+test('en naken länk är inte en ändringsbegäran', async () => {
+  const { commentsToEvents } = await import('./src/ingest/notion-comments.mjs');
+  const page = '36f270ab908c80aaa89ffade93ea9cb4';
+  const tasks = new Map([['N-' + page, { id: 'N-' + page, editor: 'a', title: 'T' }]]);
+  const eds = [{ id: 'a', notionId: 'UA' }, { id: 'granskare', notionId: 'UR' }];
+
+  const res = commentsToEvents({ comments: [
+    { page, author: 'UR', datetime: '2026-08-01T09:00:00Z', text: 'Kolla briefen först' },   // före leverans → brief
+    { page, author: 'UA', datetime: '2026-08-01T12:00:00Z', text: 'Kindly check!' },          // leverans
+    { page, author: 'UR', datetime: '2026-08-01T13:00:00Z', text: 'https://facebook.com/x' }, // bara länk
+    { page, author: 'UR', datetime: '2026-08-01T14:00:00Z', text: 'Hooken är för svag i 0-2s' }, // riktig
+  ] }, eds, tasks);
+
+  const types = res.events.map(e => e.type);
+  assert.deepEqual(types, ['delivered', 'revision_requested']);
+  assert.equal(res.notes, 2, 'briefen och länken ska inte bokföras');
+  assert.match(res.events[1].reason, /Hooken/);
+});
+
 console.log('\nSlack');
 
 test('digesten är giltig Block Kit och nämner rätt saker', () => {
