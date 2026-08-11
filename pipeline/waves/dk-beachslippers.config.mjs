@@ -1,17 +1,16 @@
 // Kampanj: Strandtofflorna DK — Magiborsten DK. UGC-videon → SP (som i NO).
 export default {
   act: 'act_915422744950975',
-  page: null,
+  page: '1324465810740336', // Bæverbutiken (DK)
   pixel: '1554276343018184',
   country: 'DK',
   prefix: 'DK',
   dsaBeneficiary: 'Axel Odhner',
   dsaPayor: 'Axel Odhner',
-  structureOnly: true,
   adsetStatus: 'PAUSED',
   adStatus: 'PAUSED',
   campaignName: 'Strandtofflorna DK',
-  link: '', // TODO: dansk produktlänk
+  link: 'https://baeverbutiken.dk/products/strandsandaler-til-herre-skridsikre-havesko',
   dailyBudget: '100000',
   productRe: /beachslippers|strandtofflor/i,
   forceConcept: { 'DK_Strandtofflor': 'PD', 'DK_Strandtofflor_UGC_1': 'SP' },

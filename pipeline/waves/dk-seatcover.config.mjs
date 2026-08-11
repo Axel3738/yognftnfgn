@@ -7,17 +7,16 @@ const COPY = {
 
 export default {
   act: 'act_915422744950975',
-  page: null,
+  page: '1324465810740336', // Bæverbutiken (DK)
   pixel: '1554276343018184',
   country: 'DK',
   prefix: 'DK',
   dsaBeneficiary: 'Axel Odhner',
   dsaPayor: 'Axel Odhner',
-  structureOnly: true,
   adsetStatus: 'PAUSED',
   adStatus: 'PAUSED',
   campaignName: 'Sätesöverdraget DK',
-  link: '', // TODO: dansk produktlänk
+  link: 'https://baeverbutiken.dk/products/saedebetraek-til-havetraktor-slidstaerkt-600d-oxford',
   dailyBudget: '100000',
   productRe: /seatcover|sätesöverdrag|satesoverdrag/i,
   concepts: {

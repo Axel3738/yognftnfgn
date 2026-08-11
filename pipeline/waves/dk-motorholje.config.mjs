@@ -1,17 +1,16 @@
 // Kampanj: Motorhöljet DK — Magiborsten DK. Struktur byggd, annonser väntar på FB-sida + DK-länk.
 export default {
   act: 'act_915422744950975', // Magiborsten DK
-  page: null,                 // TODO: dansk FB-sida saknas ännu
+  page: '1324465810740336',   // Bæverbutiken (DK)
   pixel: '1554276343018184',
   country: 'DK',
   prefix: 'DK',
   dsaBeneficiary: 'Axel Odhner', // EU-krav, samma som SE-kontot
   dsaPayor: 'Axel Odhner',
-  structureOnly: true,        // sätt false när sida + länk finns
   adsetStatus: 'PAUSED',
   adStatus: 'PAUSED',
   campaignName: 'Motorhöljet DK',
-  link: '', // TODO: dansk produktlänk
+  link: 'https://baeverbutiken.dk/products/marint-motorbetraek-420d-universel-beskyttelse',
   dailyBudget: '100000', // öre = 1000 kr/dag
   productRe: /enginecover|motorholje|motorhölje|marin/i,
   concepts: {
