@@ -26,6 +26,7 @@ import { generateSeed } from './src/seed.mjs';
 import { buildDigest, buildNudges, postWebhook, postApi } from './src/slack.mjs';
 import { importCSV } from './src/ingest/csv.mjs';
 import { formatDuration } from './src/time.mjs';
+import { trackOf } from './src/track.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const P = {
@@ -81,20 +82,39 @@ function cmdBuild() {
 
   const now = Date.now();
 
-  // En flik per teamspace, plus "Alla". Bara teamspaces som faktiskt har data
-  // får en flik — tomma flikar är brus.
-  const spaces = [{ id: 'all', name: 'Alla' }];
+  // Flikar = teamspace × spår. Produktion och översättning är två olika
+  // arbeten med olika folk och olika tempo; mäts de ihop döljer de varandra.
+  // Översättningarna får därför egna flikar i stället för att blandas in.
+  const track = new Map(tasks.map(t => [t.id, trackOf(t)]));
+  const has = (wsId, tr) => tasks.some(t =>
+    (wsId === 'all' ? true : wsId === 'unassigned' ? !t.workspace : t.workspace === wsId) &&
+    track.get(t.id) === tr);
+
+  const spaces = [{ id: 'all', name: 'Alla annonser' }];
   for (const ws of config.workspaces || []) {
-    if (tasks.some(t => t.workspace === ws.id)) spaces.push({ id: ws.id, name: ws.name });
+    if (has(ws.id, 'production')) spaces.push({ id: ws.id, name: ws.name });
   }
-  // Tasks utan teamspace ska inte försvinna tyst.
-  if (tasks.some(t => !t.workspace)) spaces.push({ id: 'unassigned', name: 'Utan teamspace' });
+  if (has('unassigned', 'production')) spaces.push({ id: 'unassigned', name: 'Utan teamspace' });
+  // Översättningsflikarna sist, så det vanliga arbetet ligger först.
+  for (const ws of config.workspaces || []) {
+    if (has(ws.id, 'translation')) {
+      spaces.push({ id: ws.id + ':translation', name: ws.name + ' · Översättning', track: 'translation' });
+    }
+  }
+  if (has('unassigned', 'translation')) {
+    spaces.push({ id: 'unassigned:translation', name: 'Utan teamspace · Översättning', track: 'translation' });
+  }
 
   const byWorkspace = {};
   for (const space of spaces) {
-    const subset = space.id === 'all' ? tasks
-      : space.id === 'unassigned' ? tasks.filter(t => !t.workspace)
-      : tasks.filter(t => t.workspace === space.id);
+    const wantTrack = space.track || 'production';
+    const wsId = space.id.replace(/:translation$/, '');
+    const subset = tasks.filter(t => {
+      if (track.get(t.id) !== wantTrack) return false;
+      if (wsId === 'all') return true;
+      if (wsId === 'unassigned') return !t.workspace;
+      return t.workspace === wsId;
+    });
     byWorkspace[space.id] = {};
     for (const d of config.periods) {
       byWorkspace[space.id][d] = computeMetrics({ tasks: subset, config, periodDays: d, now, editors });
