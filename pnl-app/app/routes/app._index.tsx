@@ -3,10 +3,10 @@
  * siffrorna — ingen spinner, inget "hämtar" som i artifact-versionen.
  */
 
-import { useState } from "react";
+import { Suspense } from "react";
 import type { LoaderFunctionArgs } from "@remix-run/node";
-import { json } from "@remix-run/node";
-import { useLoaderData, useSearchParams } from "@remix-run/react";
+import { defer } from "@remix-run/node";
+import { Await, useLoaderData, useSearchParams } from "@remix-run/react";
 import {
   Badge,
   BlockStack,
@@ -17,6 +17,7 @@ import {
   InlineStack,
   Layout,
   Page,
+  Spinner,
   Text,
 } from "@shopify/polaris";
 
@@ -34,10 +35,13 @@ const RANGES: Record<string, string> = {
   "90d": "90 dagar",
 };
 
-export async function loader({ request }: LoaderFunctionArgs) {
-  const { admin, session } = await authenticate.admin(request);
-  const url = new URL(request.url);
-  const rangeKey = url.searchParams.get("range") ?? "30d";
+/**
+ * Det tunga jobbet bor i ett promise som INTE awaitas i loadern: skalet
+ * renderas direkt och datan strömmas in när den är klar. 30 dagar = ~750
+ * ordrar i sekventiella API-anrop, 10–30 sekunder — utan defer är iframen
+ * spikvit hela den tiden och ser trasig ut.
+ */
+async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
   try {
 
   const shopInfo = await fetchShopInfo(admin);
@@ -48,14 +52,14 @@ export async function loader({ request }: LoaderFunctionArgs) {
   });
 
   const settings = await prisma.shopSettings.upsert({
-    where: { shop: session.shop },
-    create: { shop: session.shop },
+    where: { shop },
+    create: { shop },
     update: {},
   });
 
   const [orderData, costChanges] = await Promise.all([
     fetchOrderData(admin, from, to, shopInfo.timezone),
-    prisma.costChange.findMany({ where: { shop: session.shop } }),
+    prisma.costChange.findMany({ where: { shop } }),
   ]);
   const { sales, products } = orderData;
   /* Sessioner/CVR finns inte i det publika Admin-API:t — analytics-ytan är
@@ -63,7 +67,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
   const sessions: never[] = [];
 
   const spend = await getSpend(
-    session.shop,
+    shop,
     settings.metaAdAccountId && settings.metaAccessToken
       ? { adAccountId: settings.metaAdAccountId, accessToken: settings.metaAccessToken }
       : null,
@@ -93,33 +97,65 @@ export async function loader({ request }: LoaderFunctionArgs) {
     },
   });
 
-  return json({
+  return {
     fatal: null as string | null,
     result,
     rangeKey,
     currency: settings.currency,
     spendError: spend.error ?? null,
     targetMargin: Number(settings.targetMargin),
-  });
+  };
   } catch (e) {
     /* Remix maskerar kastade fel i produktion till "Application Error" utan
        detaljer. Här fångas de och visas i klartext — utan feltexten på skärmen
        blir varje felsökningsrunda en gissningslek. */
     console.error("Loader-fel /app:", e);
-    return json({
+    return {
       fatal: e instanceof Error ? `${e.message}` : String(e),
-      result: null,
+      result: null as ReturnType<typeof compute> | null,
       rangeKey,
       currency: "SEK",
-      spendError: null,
+      spendError: null as string | null,
       targetMargin: 0.25,
-    });
+    };
   }
 }
 
+type PageData = Awaited<ReturnType<typeof loadPage>>;
+
+export async function loader({ request }: LoaderFunctionArgs) {
+  const { admin, session } = await authenticate.admin(request);
+  const url = new URL(request.url);
+  const rangeKey = url.searchParams.get("range") ?? "30d";
+  // Medvetet inget await — promiset strömmas till klienten via defer.
+  return defer({ page: loadPage(admin, session.shop, rangeKey, url) });
+}
+
 export default function Dashboard() {
-  const { fatal, result, rangeKey, currency, spendError, targetMargin } =
-    useLoaderData<typeof loader>();
+  const { page } = useLoaderData<typeof loader>();
+  return (
+    <Suspense
+      fallback={
+        <Page title="Vinst">
+          <Card>
+            <BlockStack gap="300" inlineAlign="center">
+              <Spinner accessibilityLabel="Hämtar ordrar" size="large" />
+              <Text as="p" tone="subdued">
+                Hämtar ordrar från Shopify — 30-dagarsvyn läser hela orderhistoriken och kan ta
+                upp till en halv minut.
+              </Text>
+            </BlockStack>
+          </Card>
+        </Page>
+      }
+    >
+      <Await resolve={page}>{(d) => <DashboardView d={d as PageData} />}</Await>
+    </Suspense>
+  );
+}
+
+function DashboardView({ d }: { d: PageData }) {
+  const { fatal, result, rangeKey, currency, spendError, targetMargin } = d;
   const [, setParams] = useSearchParams();
   if (fatal || !result) {
     return (

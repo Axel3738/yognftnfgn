@@ -28,7 +28,7 @@ export interface ShopInfo {
 
 /** Butikens tidszon avgör vad "idag" och dygnsgränserna betyder — aldrig serverns klocka. */
 export async function fetchShopInfo(admin: AdminApiContext): Promise<ShopInfo> {
-  const res = await admin.graphql(`#graphql { shop { ianaTimezone currencyCode } }`);
+  const res = await admin.graphql(`#graphql\n    { shop { ianaTimezone currencyCode } }`);
   const body = await res.json();
   const timezone = body?.data?.shop?.ianaTimezone ?? "UTC";
   const currency = body?.data?.shop?.currencyCode ?? "SEK";
