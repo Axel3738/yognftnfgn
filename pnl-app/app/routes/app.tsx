@@ -5,12 +5,29 @@ import { AppProvider } from "@shopify/shopify-app-remix/react";
 import { NavMenu } from "@shopify/app-bridge-react";
 import polarisStyles from "@shopify/polaris/build/esm/styles.css?url";
 import { boundary } from "@shopify/shopify-app-remix/server";
-import { authenticate } from "../shopify.server";
+import {
+  authenticate,
+  billingEnabled,
+  billingExemptShops,
+  STANDARD_PLAN,
+} from "../shopify.server";
 
 export const links = () => [{ rel: "stylesheet", href: polarisStyles }];
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  await authenticate.admin(request);
+  const { billing, session } = await authenticate.admin(request);
+
+  /* Betalvägg för App Store-versionen. Egna/undantagna butiker och
+     custom-deployments (BILLING_ENABLED osatt) passerar fritt. Utan aktiv
+     prenumeration skickas handlaren till Shopifys godkännandesida — Shopify
+     sköter debitering, kvitton och avslut. */
+  if (billingEnabled && !billingExemptShops.has(session.shop.toLowerCase())) {
+    await billing.require({
+      plans: [STANDARD_PLAN],
+      onFailure: () => billing.request({ plan: STANDARD_PLAN }),
+    });
+  }
+
   return json({ apiKey: process.env.SHOPIFY_API_KEY || "" });
 }
 
