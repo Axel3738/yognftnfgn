@@ -256,6 +256,9 @@ async function cmdIngest() {
       events = mergeEvents(events, comRes.events).merged;
 
       const orphans = comRes.events.filter(e => !e.editor).length;
+      if (comRes.notes) {
+        say(`     ${comRes.notes} kommentar(er) lästes som anteckningar, inte ändringsbegäran.`);
+      }
       say(`  ${b.hub}: ${b.rows.length} rader, ${b.comments.length} kommentarer` +
           (rowRes.excluded ? ` (${rowRes.excluded} dokumentationssidor utelämnade)` : ''));
       if (orphans) {

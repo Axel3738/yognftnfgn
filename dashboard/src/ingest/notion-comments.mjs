@@ -20,10 +20,32 @@ import { taskIdFromUrl } from './notion-rows.mjs';
 /** Text som betyder "jag är klar, titta på den" snarare än en fråga. */
 const HANDOFF = /kindly check|please check|check this|klar|done|for review|to review|ready/i;
 
+/**
+ * Är granskarens kommentar en begäran om ändring — eller bara en anteckning?
+ *
+ * Långt ifrån allt granskaren skriver betyder "gör om det här". En stor del av
+ * kommentarerna är Axel som klistrar in länken till den publicerade annonsen.
+ * Räknas de som ändringsbegäran hamnar revisionsgraden på 83–100%, vilket är
+ * uppenbart fel och gör hela måttet obrukbart.
+ *
+ * Två villkor, båda måste hålla:
+ *   1. Det ska finnas text kvar när länkarna räknats bort. En naken URL är
+ *      en anteckning, inte en instruktion.
+ *   2. Något ska redan ha levererats. En kommentar innan första inlämningen är
+ *      en brief eller ett förtydligande — det går inte att göra om något som
+ *      ännu inte lämnats in.
+ */
+function isChangeRequest(text, deliveriesSoFar) {
+  if (deliveriesSoFar < 1) return false;
+  const words = String(text || '').replace(/https?:\/\/\S+/g, ' ').trim();
+  return words.length >= 15;
+}
+
 export function commentsToEvents(payload, editors, tasksById = new Map()) {
   const byNotionId = new Map(editors.filter(e => e.notionId).map(e => [e.notionId, e.id]));
   const events = [];
   const coverage = new Map();
+  let notes = 0;
 
   const comments = [...(payload.comments || [])]
     .sort((a, b) => Date.parse(a.datetime) - Date.parse(b.datetime));
@@ -57,13 +79,16 @@ export function commentsToEvents(payload, editors, tasksById = new Map()) {
         ...base,
         ...(HANDOFF.test(c.text) ? {} : { weak_signal: true }),
       });
-    } else {
-      // Någon annan kommenterar → ändringsbegäran.
+    } else if (isChangeRequest(c.text, rounds.get(taskId) || 0)) {
+      // Granskaren ber om en ändring på något som redan lämnats in.
       events.push({
         ts: c.datetime, type: 'revision_requested',
         reason: (c.text || '').slice(0, 200),
         ...base,
       });
+    } else {
+      // Anteckning — bokförs inte som något. Räknas bara för rapporteringen.
+      notes++;
     }
 
     if (owner) {
@@ -76,6 +101,7 @@ export function commentsToEvents(payload, editors, tasksById = new Map()) {
 
   return {
     events,
+    notes,
     coverage: [...coverage.entries()].map(([editor, c]) => ({
       editor, comments: c.comments, tasks: c.tasks.size,
     })),
