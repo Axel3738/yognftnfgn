@@ -1,0 +1,7 @@
+node_modules
+build
+.cache
+.env
+.shopify
+/prisma/*.db
+package-lock.json

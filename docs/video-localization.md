@@ -1,0 +1,152 @@
+# Video-lokalisering — mp4-annonser → HeyGen → Veed
+
+Processen för att ta en färdig mp4-annons (t.ex. en vinnande Mastern-video på svenska),
+översätta den till ett valt språk i **HeyGen**, lokalisera innehållet i proofread-steget,
+och sedan bränna in captions i **Veed** innan leverans.
+
+> Kärnprincipen: **översättning ≠ lokalisering.** En rakt översatt annons som säger
+> "används mycket i Sverige" till en norsk tittare är en sämre annons. Proofread-steget
+> är där vi gör om innehållet så att det stämmer för målmarknaden — *innan* videon renderas.
+
+## Så beställer du (dump-flödet)
+
+Starta en session på repot, bifoga mp4-filerna (eller klistra Drive-länkar med
+"alla med länken kan visa") och skriv målspråket — t.ex. *"översätt dessa till norska"*.
+Claude kör då hela kedjan per video och levererar tillbaka färdiga filer med captions,
+plus en proofread-logg per annons.
+
+OBS för API-körningar: HeyGen renderar direkt utan proofread-paus. Claude granskar
+därför transkripten i efterhand, rättar captions-texten automatiskt och flaggar de
+annonser där även **ljudet** behöver en omrendering i HeyGens UI (t.ex. felöversatta
+varumärkesnamn). Beslut om omrendering tas per annons — varje render drar HeyGen-krediter.
+
+## Flödet
+
+**Järnregel: rendera ALDRIG före proofread.** Varje HeyGen-rendering drar krediter —
+proofread-sessionen är gratis. Fel ordning = dubbla renderingar = dubbla krediter.
+
+```
+1. VÄLJ         → vilka mp4:or + målspråk/marknad (loggas i tabellen nedan)
+2. PROOFREAD    → `localize.mjs proofread` — HeyGen transkriberar + översätter
+                  UTAN att rendera (0 krediter) och SRT:n laddas ner
+3. LOKALISERA   → gå igenom SRT:n mot checklistan nedan, rätta allt som är
+                  Sverige-specifikt + varumärkes-/språkfel → `apply-srt` (0 krediter)
+4. RENDERA      → `render` — HeyGen dubbar från det godkända transkriptet
+                  (röstklon + lip-sync). ENDA steget som drar krediter. → ladda ner mp4
+5. CAPTIONS     → ENDAST när Axel uttryckligen ber om det: `burn` — bränn in den
+                  rättade SRT:n med ffmpeg (gratis). Default = leverera UTAN captions.
+6. LEVERERA     → döp filen enligt namnkonventionen (med marknadsfält) →
+                  skicka till Axel → logga i tabellen nedan + ad-trackern
+```
+
+## Steg 3 — lokaliserings-checklistan (proofread)
+
+Det här är det viktigaste steget. Gå igenom **varje mening** i transkriptet och fråga:
+*"stämmer det här för någon i målmarknaden?"* Ändra direkt i HeyGens proofread-läge.
+
+| Kolla | Exempel på ändring |
+|-------|--------------------|
+| **Geo-referenser** | "den här grillborsten används mycket i Sverige" → "används mycket i till exempel Norge" |
+| **Valuta & pris** | "999 kr" → rätt valuta OCH rätt prispunkt för marknaden (inte bara kursomräknat) |
+| **Butik / domän** | grillkliniken.se → målmarknadens domän om den finns, annars ta bort/generalisera |
+| **Social proof** | "10 000 svenska grillägare" → generalisera ("10 000 nöjda kunder") eller byt land om siffran håller |
+| **Frakt & leverans** | "fri frakt i hela Sverige", "levereras på 2 dagar" → marknadens faktiska villkor |
+| **Säsong & högtider** | midsommar, kräftskiva → målmarknadens motsvarigheter (eller neutralt "grillsäsongen") |
+| **Juridik & garantier** | garanti-/ånger-claims måste stämma med målmarknadens regler |
+| **Produktnamn & uttal** | kolla att "Mastern"/"Grillkliniken" inte betyder något konstigt på målspråket och uttalas rimligt i dubben |
+
+Regel: **ändra hellre till något generellt än att gissa marknadsfakta.** Vet vi inte
+norska fraktvillkor → skriv inget om frakt.
+
+## Steg 5 — captions (burn-in)
+
+**Standardväg — lokalt med ffmpeg (gratis, inget konto):** HeyGen levererar en SRT
+med exakta tidkoder. Uppdatera den med proofread-ändringarna och bränn in:
+
+```bash
+node localize.mjs burn --video=output/localized/ad.mp4 --srt=output/localized/ad.srt
+```
+
+Stylingen (vit fet text, mörk platta, safe zone ovanför Reels/Stories-UI:t) ligger i
+`burn`-kommandot i `localize.mjs` — justera `force_style` där.
+
+**Alternativ när man vill handstyla — Veeds UI:**
+
+1. Ladda upp mp4:n → `Subtitles → Upload subtitle file` (använd SRT:n — auto-subtitles
+   stavar fel på egennamn som `Mastern`) eller `Auto Subtitles` på målspråket.
+2. Granska rad för rad, styla, exportera med **inbrända** captions (kräver betalplan
+   för export utan vattenstämpel).
+
+**Alternativ för bulk — Veeds Subtitle API** (`captions`-kommandot, via fal.ai,
+betala-per-användning ~$0.10/min, kräver `FAL_KEY`).
+
+## Namngivning
+
+Lokaliserade varianter får marknadsfältet enligt `naming-convention.md`:
+
+```
+GRILL_mastern_pain_comparison_ruinsgrill_no_v1
+                                         └─ marknad (ISO-landskod, utelämnas för SE-original)
+```
+
+Filen döps likadant: `GRILL_mastern_pain_comparison_ruinsgrill_no_v1.mp4`.
+
+## Verktyg & automation
+
+- **HeyGen:** UI:t är huvudvägen eftersom proofread-steget (obligatoriskt i den här
+  processen) görs där. För att lista språk, kolla jobb-status och ladda ner färdiga
+  videor i bulk finns `pipeline/localize.mjs` (HeyGens API — kräver `HEYGEN_API_KEY`).
+  OBS: API:t kan skicka och hämta översättningar men proofread-redigeringen görs i UI:t.
+- **Veed:** UI. Auto-subtitles + styling + export enligt steg 5.
+
+**Krav i Claude Code-environmentet** (för att skriptet ska funka i webbsessioner):
+
+1. Miljövariabel `HEYGEN_API_KEY` = nyckeln från app.heygen.com → Settings → API
+   (EN variabel: namnet i namn-fältet, nyckeln i värde-fältet).
+2. Miljövariabel `FAL_KEY` = nyckeln från fal.ai → Dashboard → Keys (för Veeds
+   Subtitle API, som körs via fal.ai; kostar ca $0.10/min video).
+3. Nätverkspolicyn (network egress) måste tillåta `api.heygen.com`,
+   `upload.heygen.com`, `queue.fal.run` och `fal.media`. Nedladdningslänkar för
+   färdiga videor ligger på `*.heygen.ai` resp. `*.fal.media` — blockeras en
+   nedladdning, lägg till hosten som felmeddelandet visar.
+
+```bash
+cd pipeline
+node localize.mjs check                                  # verifiera nyckeln + kvot
+node localize.mjs langs                                  # vilka målspråk HeyGen stödjer
+
+# Standardflödet (proofread FÖRE render — se järnregeln ovan):
+node localize.mjs proofread --file=annons.mp4 --lang="Norwegian Bokmål (Norway)"
+#  → rätta den nedladdade SRT:en enligt checklistan
+node localize.mjs apply-srt --id=<proofread_id> --srt=rättad.srt
+node localize.mjs render --id=<proofread_id>             # ⚠️ drar krediter
+node localize.mjs status --id=<video_translation_id> --wait
+node localize.mjs download --id=<video_translation_id>
+node localize.mjs burn --video=nedladdad.mp4 --srt=rättad.srt
+```
+
+`submit` finns kvar men renderar direkt utan proofread — använd bara när transkriptet
+inte behöver granskas. Det finns även ett officiellt HeyGen-CLI
+(`curl -fsSL https://static.heygen.ai/cli/install.sh | bash`) med samma proofread-flöde
+(`heygen video-translate proofreads …`) — bra som referens/felsökning.
+
+**Captions-steget via API:** `captions` tar HeyGen-jobbets färdiga video + SRT
+(HeyGens egen, eller en lokalt redigerad med proofread-ändringarna via `--srt=`)
+och skickar dem till Veeds Subtitle API — SRT:n gör att Veed hoppar över egen
+transkribering, så texten matchar dubben exakt. Veeds UI (steg 5 ovan) är kvar
+som manuellt alternativ när man vill handstyla.
+
+## Körningar (logg)
+
+| Källannons | Marknad/språk | HeyGen | Proofread | Veed captions | Levererad | Anteckning |
+|------------|---------------|--------|-----------|---------------|-----------|------------|
+| `GRILL_mastern_video_ad01` (sv) | no / Norwegian Bokmål | ✅ 2026-08-08 | ✅ 3 rättningar (gjerne/bust/Mastern) via proofread-API | ✅ ffmpeg burn-in | ✅ levererad | proofread `fed87570…` → render `02a09df7…-nb` · inga geo/pris-referenser i källan · kostnad ~84 enheter (v1-felrendern oräknad) |
+| Motorhöljet-batch: 8 videoannonser (MagiBorsten, hämtade via Meta Graph API) | no / Norwegian Bokmål | ✅ 2026-08-08 | ✅ 3 rättade (Knusktørr · motoroljer→motortrekk · avrundad slutmening), 5 rena | — (opt-in, ej beställt) | ✅ alla 8 levererade | proofread-först-flödet, EN render/video · ~356 enheter totalt · `PD_EXTRA` ej översatt (ingen röst i videon — endast musik) · ⚠️ priset "299 kroner" = NOK, bekräfta norsk prissättning |
+| Axelbältet-batch: 4 videoannonser (hämtade via Meta Graph API) | no / Norwegian Bokmål | ✅ 2026-08-08 | ✅ 2 rättade (babbutiken.se→beverbutikken.no · pris→599 kroner), 2 rena | ✅ cover-captions (vit bård) | ✅ zip levererad | proofread-först · 2 omrenderingar efter Axels domän/pris-svar · Motorhöljet-prisfrågan (299) fortfarande öppen |
+| Sätesöverdragaren-batch: 2 av 3 videoannonser (Meta Graph API) | no / Norwegian Bokmål | ✅ 2026-08-08 | ✅ 2 rättade i PD_1_3 (kjølerom→kjølelomme · angrer-meningen), PD_2_1 ren | ✅ blur-cover (kvadratformat, text utan platta) | ✅ zip levererad | PD_1_1 EJ dubbad — endast musik/sång, inget tal (0 krediter slösade) |
+| Strandtofflor UGC (30MB .mov, bifogad i chatt) | no / Norwegian Bokmål | ✅ 2026-08-08 | ✅ 1 rättning (talspråksfiller) — fin UGC-norska f.ö. | — (utan captions, källan hade inga) | ✅ levererad (komprimerad till 26MB för chattgränsen) | .mov→mp4-konvertering före upload · HeyGen-output 42MB krävde omkodning för leverans |
+| UK-batch: alla 15 talannonser från NO-körningarna (Mastern 1 · Motorhöljet 8 · Axelbältet 4 · Seatcover 2 · Strandtofflor 1) | uk / English (UK) | ✅ 2026-08-08 | ✅ 9 rättade (varumärke, Bone dry, £-priser 29/59, babbutiken→our online store, m.m.), 7 rena | ✅ per kampanjstil (box/bård/blur/clean) | ✅ alla 15 levererade (PD_7 släppt ur moderering efter ~1h) | £-priser från Axel · UK-engelskan höll hög klass ("does what it says on the tin") |
+| DK-batch: alla 16 talannonser | dk / Danish (Denmark) | ✅ 2026-08-10 | ✅ 10 rättade (gerne, løg+folie, Mastern, Knastør, priser 259/429 DKK, i balance, kølelomme, webshop, m.m.), 5 rena | ✅ per kampanjstil | ✅ alla 16 levererade (2 släppta ur moderering — v2-API:t visade fel status, v3 hade rätt) | OBS: proofread-SRT måste ha samma antal block som originalet · dansk domän kvarstår som fråga |
+
+Status per kolumn: ⏳ pågår · ✅ klar · ❌ fail. När en lokaliserad annons går live
+loggas den dessutom som vanligt i `ad-tracker.md` (den är ett eget test).

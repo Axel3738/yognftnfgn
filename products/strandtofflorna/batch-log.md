@@ -1,0 +1,198 @@
+# Batch-logg – Strandtofflorna (Bäverbutiken)
+
+Kampanj `120249220414220291` · ad account MagiBorsten `1867947880635861` · target-CPA 145 kr
+Siffror avlästa **2026-08-05** (livstid). Ingen dom under 300 kr spend eller 3 köp.
+
+---
+
+## Batch 1 — 2026-07-23 · 14 annonser · launchbatch
+
+**hypotes: ej loggad (retroaktiv rekonstruktion)** — batchen kördes innan OS:et fanns.
+Strukturen visar avsikten: tre koncept-adsets (PD = problem-direkt, SP = social proof, SO = offer),
+varje videokoncept i tre hookvarianter (H1/H2/H3), plus statics.
+
+Utfall: **4 386 kr · 17 köp · CPA 258 kr · ROAS 1,74**
+
+| Annons | Format | Spend | Köp | CPA | ROAS | CTR | Utfall |
+|---|---|---:|---:|---:|---:|---:|---|
+| Strandtofflor_PD_2_2 | Statisk, 4 färger flat-lay, textfri | 2 701 kr | 13 | 208 kr | 2,17 | 1,12 % | **Bevisad vinnare.** Bar batchen. Frekvens uppe i 1,73 — tröttnar. |
+| Strandtofflor_PD_1_H1 | Video 41,5 s, problem-direkt | 895 kr | 1 | 895 kr | **0,38** | 2,02 % | **Bevisad förlorare.** Snittittartid 4 s, hold 6,9 %. Näst högsta CTR i kampanjen, sämsta ekonomin. |
+| Strandtofflor_SP_1_H2 | Video 38,8 s, testimonial | 543 kr | 2 | 271 kr | 1,25 | 2,25 % | Förlorare vid skala. Bäst hold av batch 1 (11,1 %), snittittartid 8 s. **Pausad av teamet.** |
+| Strandtofflor_PD_1_H2 | Video 42,5 s | 120 kr | 1 | 120 kr | 2,84 | 1,34 % | Osäker (<300 kr). Hold 8,3 %, dubbelt PD_1_H1 — hookvarianten är bättre. |
+| Strandtofflor_SO_2_1 | Statisk, pris 349→339 | 39 kr | 0 | – | – | – | Osäker. Ingen leverans. |
+| Strandtofflor_PD_1_H3 | Video 41,4 s | 32 kr | 0 | – | – | 1,35 % | Osäker. |
+| Strandtofflor_SO_1_H2 | Video, offer | 19 kr | 0 | – | – | 1,47 % | Osäker. |
+| Strandtofflor_SP_1_H1 | Video | 8 kr | 0 | – | – | – | Osäker. |
+| Strandtofflor_SO_1_H3 | Video, offer | 7 kr | 0 | – | – | – | Osäker. |
+| Strandtofflor_SO_1_H1 | Video, offer | 7 kr | 0 | – | – | – | Osäker. |
+| Strandtofflor_PD_3_H1 | Video | 6 kr | 0 | – | – | – | Osäker. |
+| Strandtofflor_PD_2_1 | Statisk m. textoverlay | 6 kr | 0 | – | – | – | Osäker. **Stavfel i rubriken: "GRIPPER".** Får ej återanvändas. |
+| Strandtofflor_SP_1_H3 | Video | 5 kr | 0 | – | – | – | Osäker. |
+| Strandtofflor_SP_2_1 | Statisk, pool + citat | 0 kr | 0 | – | – | – | Ingen leverans alls. |
+
+**Lärdomar in i DNA:** textfri produktbild vinner auktionen · lång brand-voice-video förlorar pengar · CTR är en fälla · SO-setet lovade 339 kr mot sidans 349 kr (prisglapp, ej åtgärdat i annonstexten än).
+
+---
+
+## Batch 2 — 2026-07-29 · 15 annonser
+
+**hypotes: delvis loggad.** Tio av annonserna byggdes på briefer med uttalad hypotes (creative strategy-analys 2026-07-27). PD_13-serien kom från teamet utan loggad hypotes — markerad nedan.
+
+Utfall: **6 472 kr · 42 köp · CPA 154 kr · ROAS 2,79** — CPA nästan halverad mot batch 1.
+
+| Annons | Hypotes | Spend | Köp | CPA | ROAS | Utfall mot hypotesen |
+|---|---|---:|---:|---:|---:|---|
+| Beachslippers_PD_13_1 | *ej loggad (teamets koncept)* | 5 744 kr | **33** | 174 kr | 2,65 | **Bevisad vinnare.** Enskilt par på piedestal, textfri studio. 56 % av kampanjens alla köp. CPM 96 kr. CPA 20 % över target. |
+| Beachslippers_PD_2_3 | Vått underlag kopplar bilden till mekaniken (grepp) → högre CVR utan att tappa native-CPM | 247 kr | 5 | **49 kr** | 7,22 | **Hypotesen höll — starkast i kampanjen.** CPM 95 kr (bibehållen), CPA 49 kr mot 208 kr för samma bild torr. Formellt osäker (<300 kr) men riktningen är entydig. **Underbudgeterad: 4 % av spend.** |
+| Beachslippers_PD_8_1 | Sulan är enda unika beviset; mekanism i bild kvalificerar klicket → lägre CTR men bättre CPA | 187 kr | 2 | 93 kr | 3,73 | **Hypotesen höll.** CTR 1,39 % (lägre, som väntat), CPA 93 kr (bättre). Rubrikvarianterna aldrig producerade. |
+| Beachslippers_PD_13_2 | *ej loggad* | 70 kr | 1 | 70 kr | 5,01 | Osäker. Khaki-variant. CPM 84 kr — lägst i kampanjen. |
+| Beachslippers_SO_5_1 | Offer-layout (swipe) | 49 kr | 1 | 49 kr | 7,13 | Osäker (1 köp = brus). **Kör fortfarande "339 kr"-copyn — prisglappet lever.** |
+| Beachslippers_SP_5_1 | Max native lo-fi → billigare uppmärksamhet | 52 kr | 0 | – | – | **Halva hypotesen höll:** kampanjens **högsta CTR, 3,17 %**. Men 0 köp. Bilden saknar sula, pris och garanti — inget kvalificerar klicket. Se backlog. |
+| Beachslippers_PD_13_3 | *ej loggad* | 81 kr | 0 | – | – | Osäker. Vit variant — sämst av de tre färgerna. |
+| Beachslippers_PD_12_1 | Comparison-tabell (swipe) | 9 kr | 0 | – | – | Osäker. Ingen leverans. |
+| Beachslippers_SO_4_1 | Cost-of-inaction + prisankare | 9 kr | 0 | – | – | Osäker. Ingen leverans. |
+| Beachslippers_PD_9_1 | Två sulor, comparison | 7 kr | 0 | – | – | Osäker. Ingen leverans. |
+| Beachslippers_PD_10_1 | Färgkollage + familj (swipe) | 6 kr | 0 | – | – | Osäker. Ingen leverans. |
+| Beachslippers_SO_3_1 | Bundle 2 par 598 kr | 5 kr | 0 | – | – | Osäker. **BLOCKERAD** — rabatten ej verifierad i Shopify. |
+| Beachslippers_PD_7_1 | Karusell, en yta per kort | 3 kr | 0 | – | – | Osäker. Ingen leverans. |
+| Beachslippers_PD_11_1 | Livsstil, fot på blött däck (swipe) | 2 kr | 0 | – | – | Osäker. Ingen leverans. |
+| Beachslippers_SP_2_2 | Testimonial-static | 1 kr | 0 | – | – | Osäker. Ingen leverans. |
+
+**Lärdomar in i DNA:** vått underlag är den starkaste enskilda hävstången · sulan som bevis fungerar · svart camo >> khaki >> vit · native lo-fi fångar uppmärksamhet men konverterar inte utan konverteringselement · CBO svälter allt utanför topp-2, så nio av femton annonser fick aldrig en chans.
+
+---
+
+## Batch 3 — 2026-08-04 · 5 videoannonser
+
+Videor producerade på brieferna från 2026-08-01 (`video-ads-briefs.zip`). Uppladdade och lanserade 4 aug i två nya ad sets (`Strandtofflor PD Videos`, `Strandtofflor SP Videos`).
+
+Utfall: **30 kr · 0 köp** — alldeles för tidigt, ingen dom.
+
+| Annons | Hypotes | Spend | Snittittartid | Hold (p50) | Tidig signal |
+|---|---|---:|---:|---:|---|
+| Beachslippers_SP_3_H2 | 20-sek-omklipp: flytta garanti + pris dit tittarna faktiskt är → högre hold och CVR | 10 kr | 9 s | **21,9 %** | **Bäst hold i hela kampanjen** (mot 11,1 % för originalet SP_1_H2). CTR 3,03 %. Hypotesen ser ut att hålla — men 33 impressions. |
+| Beachslippers_SP_4_H1 | UGC, identitetsmatch (villaägare) höjer klickkvaliteten | 11 kr | 5 s | 16,1 % | Näst bäst hold. 57 impressions. |
+| Beachslippers_PD_6_H1 | Mechanism-led: förstå *varför* du halkar → högst CVR | 5 kr | 3 s | 6,9 % | Svag hold hittills. |
+| Beachslippers_PD_4_H1 | Proof-led demo: visa greppet före sekund 3 → hook rate > 40 % | 4 kr | 3 s | 4,3 % | Svagast hold hittills. Öppningen ska visa "fel sko" enligt brief — kontrollera att vår produkt hinner bli hjälte. |
+| Beachslippers_PD_5_H1 | Objection-led: säg invändningen högt → rekryterar skeptikerna | 1 kr | 5 s | – | 7 impressions. |
+
+**Öppen anmärkning:** videornas bildinnehåll är inte verifierat mot brieferna. Första bildrutan i PD_4 och PD_6 visar en annan sko (kan vara den avsedda kontrastbilden), PD_5 öppnar utan produkt i bild, och SP_3_H2 är en helt ny film i inomhusmiljö i stället för det omklipp som briefades. **Kontrollera innan mer budget läggs på PD-videorna.**
+
+---
+
+## Batch 5 — 2026-08-05 (kväll) · 7 briefer · *briefad, ej producerad*
+
+Kvoten var **grön (+4 före plan)** när batchen skrevs — den byggdes för nästa cykel, inte för att täcka ett underskott. Backlog tömd: PD_8_2, PD_8_3 och PD_14_1 inkluderade.
+
+| Annons | Ändrad variabel | Hypotes |
+|---|---|---|
+| PD_13_11 | bakgrund (mörk studio) | Omtag på PD_13_7 som levererades off-brief. Camo-mönstret separerar mot mörk bakgrund; grått äter det. |
+| PD_13_12 | bildformat 9:16 | Alla statics har varit 1:1/4:5 — Reels/Stories har bara fått våra videor, som kostar 2,5× mer per köp. Öppnar en yta vi aldrig testat med formatet som konverterar. |
+| PD_13_13 | färg (khaki på mörk bakgrund) | Khaki dömdes på grå bakgrund där den försvinner. Isolerar om färgen eller kontrasten var problemet. Läses mot PD_13_11. |
+| PD_15_1 | mänsklig närvaro (fot i toffeln) | *Explorativ.* Ingen av 40+ creatives visar produkten buren. Ger skala och passform utan copy. |
+| PD_16_1 | objection: storlek | *Explorativ.* Storleksoro är obeprövad köpspärr. Första annonsen som adresserar den. Enda i batchen med text. |
+| PD_8_2 / PD_8_3 | rubrik på sulmotivet | Från backlog. Isolerar copyn på PD_8. Billiga (textväxling) men betalar sig först när PD_8 får leverans. |
+| PD_14_1 | bevisform (vattnet pressas ur sulan) | Från backlog. Mekaniken som händelse i stället för stillbild. |
+
+---
+
+## Batch 4 — 2026-08-05 · 9 statics · **PRODUCERAD OCH LAUNCHAD samma dag**
+
+Alla nio ligger live i två nya ad sets (`120249549204190291` PD, `120249549205050291` SP). Loggade mot kvoten (`node pipeline/quota.mjs log strandtofflorna 9`) → läget gick från −5 till **+4 före plan**.
+
+### Utfall avläst 2026-08-09 (fyra dagar efter launch) — feedbackloop
+
+Ad settet fick **2 003 kr** totalt. **En annons tog 94 % av det.**
+
+| Annons | Ändrad variabel | Spend | Köp | CPA | Utfall mot hypotesen |
+|---|---|---:|---:|---:|---|
+| **PD_13_6** | produktorientering (sulan mot kameran) | **1 886 kr** | **10** | **189 kr** | ✅ **Hypotesen höll.** "Slår ihop PD_13:s ram med PD_8:s sulbevis" — CTR 3,03 % (högst av alla bedömbara studiobilder), vinstbidrag 634 kr. Batchens enda vinnare, och den enda som fick en chans. |
+| PD_13_10 | antal par (kontrolltest) | 40 kr | 1 | – | ❌ Ingen dom. Kontrolltestet mot "ett par slår fyra par" är **fortfarande obesvarat** — den fick aldrig budget. |
+| PD_13_8 | studio → verklig miljö | 29 kr | 0 | – | ❌ Ingen dom. |
+| PD_2_4 | fyra par → ett | 16 kr | 0 | – | ❌ Ingen dom. Skalningstestet på tvåan aldrig utfört. |
+| PD_13_5 | kameravinkel | 12 kr | 0 | – | ❌ Ingen dom. |
+| PD_13_7 | bakgrund + ljus | 10 kr | 0 | – | ❌ Ingen dom, och testet var redan förstört (off-brief, se nedan). |
+| PD_13_9 | beskärning | 7 kr | 0 | – | ❌ Ingen dom. Beskärningsfrågan förblir öppen → `PD_13_15` i batch 6. |
+| PD_13_4 | torrt → vått | 2 kr | 0 | – | ❌ Ingen dom. **Mest kostsamma missen:** vått underlag är nu bevisat som vår starkaste hävstång, och just den varianten fick 2 kr. |
+
+**Lärdom:** nio creatives i samma ad set ger en dom och åtta frågetecken. Meta väljer
+vinnare inom timmar och slutar utforska. Max 2–3 nya per ad set framöver (se dna.md
+mönster 5, omskrivet).
+
+⚠️ `PD_13_10` visade tidigt CPA 2,20 kr och ROAS 158,6 på **ett** köp. Det är precis den
+sortens tal ANALYSMETOD.md steg 2 finns för att stoppa — brus, inte en vinnare.
+
+⚠️ `PD_13_10` visar CPA 2,20 kr och ROAS 158,6 på **ett** köp och 2,20 kr spend. Det är precis den sortens tal ANALYSMETOD.md steg 2 finns för att stoppa — **brus, inte en vinnare.** Får inte användas som jämförelsenorm.
+
+**Visuell kvalitetskontroll (4 av 9 granskade):**
+
+| Annons | Enligt brief? | Kommentar |
+|---|---|---|
+| PD_13_4 | ✅ | Vattendroppar på skon, våt sheen på piedestal och golv, droppar rinner nedför blocket. Exakt enligt spec. |
+| PD_13_10 | ✅ | Hjälteparet på blocket, sortimentet runt om, samma studio. Kontrolltestet korrekt byggt. |
+| PD_2_4 | ✅ | Ett svart camo-par på blött trädäck uppifrån, sulan synlig. Exakt enligt spec. |
+| PD_13_7 | ❌ | **Off-brief.** Skulle byta enbart bakgrund men levererades med tre svävande skor ovanför piedestalen — bakgrund, komposition och antal ändrade samtidigt. Testet är förstört; resultatet går inte att tillskriva något. Omtag ligger i batch 5 som `PD_13_11`. |
+
+---
+
+## Batch 4 — briefunderlag (som det skrevs)
+
+**Utökad till 9 efter creative-teardownet enligt ANALYSMETOD.md steg 6b.** Teardownet visade att PD_13_1 och PD_2_2 skiljer sig på tre variabler samtidigt, vilket gör "ett par slår fyra par" till en obevisad slutsats — därför tillkom `PD_13_10` som kontroll. Kvotens testandel (20 % vid 1 000 kr/dag) var dessutom otillsatt — därför tillkom `SP_6_1` som batchens enda explorativa slot.
+
+| Tillägg | Variabel som isoleras | Hypotes |
+|---|---|---|
+| Beachslippers_PD_13_10 | **antal par** (komposition + studio konstant) | Kontrolltest: presterar den som PD_13_1 är det piedestal-stagingen som gör jobbet; presterar den som PD_2_2 är det enskilda hjälteparet. Endera vägen dödas ett felaktigt antagande. |
+| Beachslippers_SP_6_1 | native lo-fi **+ konverteringselement** | SP_5_1 har kampanjens högsta CTR (4,91 %) men noll köp — formatet fångar men ger ingen köpanledning. Testslot, inte skalningsbet. |
+
+Samtliga nio briefer bär nu en `Variabeltaggar:`-rad så att nästa `/cs` kan gruppera vinstbidrag per variabel.
+
+### Ursprunglig batch 4 (7 statics)
+
+**Omskriven samma dag efter ägarbeslut:** vinnare rankas på profit i kronor, inte på CPA. PD_13_1 står för 77 % av all vinst, så batchen är sex kontrollerade varianter av just den bilden plus ett skalningstest på tvåan. Första utkastet (spritt över sex olika koncept) förkastades — se `backlog.md` för de idéer som lades tillbaka.
+
+Formeln som skyddas i alla sex: ett par, svart camo, upphöjt på piedestal, premium studio, ingen text. En parameter ändras per annons.
+
+| Annons | Ändrad parameter | Hypotes |
+|---|---|---|
+| Beachslippers_PD_13_4 | torrt → vått | Vinnarkompositionen i den kontext som gav PD_2_3 bäst konvertering. Högst förväntat värde i batchen. |
+| Beachslippers_PD_13_5 | kameravinkel | Låg hjältevinkel gör den tjocka sulan till silhuett — produktens hela löfte blir dominant form. |
+| Beachslippers_PD_13_6 | produktorientering | Sulan vänd mot kameran. Slår ihop PD_13:s ram med PD_8:s bevisade sulbevis. |
+| Beachslippers_PD_13_7 | bakgrund + ljus | Mörk studio med rim-ljus separerar camo-mönstret som idag delvis försvinner mot grått. |
+| Beachslippers_PD_13_8 | studio → verklig miljö | Samma iscensättning på blött trädäck. Svarar på om det är studion eller stagingen som gör jobbet. |
+| Beachslippers_PD_13_9 | beskärning | Tight crop på det upphöjda paret. Billigast att producera — kan tas ur befintlig shoot. |
+| Beachslippers_PD_2_4 | fyra par → ett | Skalningstest på tvåan (794 kr profit på 247 kr spend). Frågan är om CPA:n håller förbi 300 kr. |
+
+Ingen ny copy skrevs för batchen — samtliga sju är textfria och återanvänder befintlig PD-copy ordagrant.
+
+---
+
+## Batch 6 — 2026-08-09 · 6 statics · *briefad, ej producerad*
+
+Kvoten stod på **−1 före plan** (9 av 10 launchade i cykel 2). Batchen är 6 st, alltså över
+kvoten på 5. **100 % statics** — videospåret har levererat 4 köp på 1 672 kr över tre
+batcher och elva annonser, så 75 %-regeln är uppfylld med marginal.
+
+Byggd på tre fynd från mätningen samma dag: vått underlag bevisat (PD_2_3 63 kr vs PD_2_2
+228 kr på identisk bild), sulan mot kameran bevisad (PD_13_6), och beskärning identifierad
+som den enda oisolerade variabeln mellan vinnaren och trean.
+
+**Varje brief namnger en parent och ändrar exakt en variabel mot den.**
+
+| Annons | Parent | Ändrad variabel | Hypotes |
+|---|---|---|---|
+| PD_13_14 | PD_13_6 | **underlag** → blött mörkt trädäck | Bevisad hävstång × bevisad formel. Om vått underlag är en egenskap hos *ytan* och inte hos den enda bilden blir detta kontots bästa creative. Högst förväntat värde i batchen. |
+| PD_13_15 | PD_13_6 | **beskärning** → tight | Isolerar den enda oisolerade skillnaden mot PD_13_1. Ren beskärning, ingen omfotografering. |
+| PD_13_16 | PD_13_1 | **sulan mot kameran** | Lägger PD_13_6:s bevisade element i vinnarramen. Bevakas på CPM — PD_13_1:s 89,50 kr är kontots lägsta och får inte offras. Fixar även propplådan med spegelvänd text. |
+| PD_2_5 | PD_2_3 | **sulorientering** → alla fyra sulorna upp | Fyra sulmönster på vått däck. Om sulan kvalificerar klicket är detta den starkaste enskilda rutan vi kan bygga. |
+| PD_2_6 | PD_2_3 | **färgmix** → endast svart | Halva bildytan går idag till khaki och vit (1 respektive 0 köp). Motargument loggat: färgspridningen kan signalera valfrihet, vilket är ett giltigt skäl att klicka. |
+| SP_7_1 | PD_13_1 | **social proof-badge** (explorativ slot) | Enda annonsen med text. Prövar vad text kostar i CPM mot vad proof ger i CVR. Siffran "100+" är nedrundad från 115 verkliga Shopify-ordrar 90 dagar — inget påhittat omdöme, inga stjärnor. |
+
+Copy: fem av sex är textfria och återanvänder PD-copyn ordagrant. SP_7_1:s svenska
+overlay-rader skrivna av sonnet-subagent enligt CLAUDE.md regel 5.
+
+**Strukturåtgärd som ska ske innan batch 6 launchas:** ge `PD_13_4`, `PD_2_4` och
+`PD_13_10` — redan producerade, aldrig levererade — ett eget litet ad set. De testar det
+nu bevisade vått-underlag-mönstret och kostar ingenting att köra.
+
+**⚠️ Produktionsskuld: 13 briefer (batch 5: 7, batch 6: 6) är skrivna men oproducerade.**
+Nästa `/cs` ska räkna hur många som blivit bilder innan den skriver fler.

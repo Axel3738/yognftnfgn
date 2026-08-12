@@ -133,6 +133,10 @@ som står skrivet. Därför är det inte valfritt att uppdatera dem.
 | Vad som hände i varje batch | `products/<id>/batch-log.md` | Varje launch och varje avläsning |
 | Idéer som väntar | `products/<id>/backlog.md` | När ett koncept dyker upp eller plockas |
 
+Tre produkter har eget minne i dag: `motorholjet`, `satesoverdragaren`,
+`strandtofflorna`. Saknar en produkt `dna.md` är den inte briefad ännu — skapa den
+med `/ny-produkt` i stället för att gissa.
+
 **Regeln som gör att det faktiskt lär sig:** ett koncept får aldrig födas ur tomma
 intet. Det ska kunna peka på en av tre källor — en playbook-vinnare, en winning line
 som redan spenderat pengar bra, eller en konkurrent-signal ur `docs/swipes/`. Kan det
@@ -144,10 +148,23 @@ uppdatera den sist, och skriv ut datum + vilken körning i ordningen det var.
 
 ---
 
-## De fyra verktygsmapparna
+## Verktygsmapparna
 
 Varje mapp är ett eget litet projekt med egen `package.json`. Kör alltid
-kommandon **inifrån mappen**. Allt är ESM (`.mjs`).
+kommandon **inifrån mappen**. Allt är ESM (`.mjs`) om inget annat sägs.
+
+### `video/` — videoannonser (9:16 för Reels/Stories)
+Speglar bild-pipelinen: modellen renderar **rörelsen**, vi bränner **skarpa
+captions** ovanpå med ffmpeg. Manus-tänket bor i `docs/creative-strategy.md` — läs
+det först, koden är bara verktyget.
+
+```bash
+cd video && npm install
+export HF_API_KEY="..." HF_SECRET="..."   # samma nycklar som pipeline/
+node run.mjs --dry                        # storyboard utan att generera
+```
+Kräver `ffmpeg` + `ffprobe` i PATH för skarp körning. Ett koncept = ett objekt i
+`video/waves/wave-XX.mjs`, och det ska peka på sin källa i en kommentar.
 
 ### `pipeline/` — bildannonser
 Två steg, för att bildmodeller är dåliga på text: Higgsfield Soul genererar en
@@ -189,6 +206,20 @@ att mejla. Läser Notion via `notion-import.mjs`. Kräver `NOTION_TOKEN`.
 ### `market-expansion/` — nya marknader (DK m.fl.)
 Rena arbetsdokument, ingen kod. Börja i `market-expansion/README.md` och
 `BESLUT.md`. Batcherna ligger i `<land>/batches/`.
+
+### `pnl-app/` — P&L som Shopify-app
+Riktig applikation, inte ett skript: Remix + Prisma + Docker, kopplad till både
+Shopify och Meta. Visar täckningsbidrag per produkt. TypeScript, inte `.mjs`.
+Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
+
+### Övrigt
+| Mapp/fil | Vad |
+|---|---|
+| `pipeline/ads.mjs`, `batch.mjs`, `multi-batch.mjs`, `meta.mjs` | Laddar upp creatives till Meta som **PAUSED** |
+| `pipeline/waves/*.config.mjs` | Vågkonfig per marknad — `se-`, `dk-`, `no-`, `uk-` |
+| `pipeline/localize.mjs`, `heygen.mjs`, `veed.mjs`, `cover-srt.py` | Översätter färdiga videoannonser till nya språk (`docs/video-localization.md`) |
+| `schema/` | Genererar arbetsschema som `.ics` |
+| `whop-downloader/` | Python-verktyg, laddar ner kursmaterial |
 
 ---
 
