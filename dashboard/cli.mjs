@@ -26,6 +26,7 @@ import { generateSeed } from './src/seed.mjs';
 import { buildDigest, buildNudges, postWebhook, postApi } from './src/slack.mjs';
 import { importCSV } from './src/ingest/csv.mjs';
 import { computePayout, projectMonth } from './src/payout.mjs';
+import { rankByStake } from './src/priority.mjs';
 import { formatDuration } from './src/time.mjs';
 import { trackOf } from './src/track.mjs';
 
@@ -84,6 +85,21 @@ const die = msg => { console.error(`\n✖ ${msg}\n`); process.exit(1); };
  * Returnerar null när det inte finns något Meta-uttag — då byggs allt precis
  * som förut, bara utan pengar.
  */
+function loadMetaRows() {
+  if (!existsSync(P.meta)) return [];
+  try { return JSON.parse(readFileSync(P.meta, 'utf8')).rows || []; }
+  catch { return []; }
+}
+
+/**
+ * Ordnar om flaggorna så att det som kostar mest att låta ligga hamnar först.
+ * Utan Meta-data lämnas ordningen som den var — äldst först.
+ */
+function prioritise(metrics, tasks, metaRows) {
+  if (!metaRows.length) return metrics;
+  return { ...metrics, flags: rankByStake({ flags: metrics.flags, tasks, metaRows }) };
+}
+
 function loadPayout(tasks) {
   if (!existsSync(P.meta)) return null;
   try {
@@ -140,6 +156,8 @@ function cmdBuild() {
     spaces.push({ id: 'unassigned:translation', name: 'Utan teamspace · Översättning', track: 'translation' });
   }
 
+  const metaRows = loadMetaRows();
+
   const byWorkspace = {};
   for (const space of spaces) {
     const wantTrack = space.track || 'production';
@@ -152,7 +170,8 @@ function cmdBuild() {
     });
     byWorkspace[space.id] = {};
     for (const d of config.periods) {
-      byWorkspace[space.id][d] = computeMetrics({ tasks: subset, config, periodDays: d, now, editors });
+      byWorkspace[space.id][d] = prioritise(
+        computeMetrics({ tasks: subset, config, periodDays: d, now, editors }), tasks, metaRows);
     }
   }
 
@@ -447,7 +466,9 @@ async function cmdSlack() {
   const [kind] = rest;
   const period = Number(flags.period || config.defaultPeriodDays);
   const { tasks } = loadState();
-  const metrics = computeMetrics({ tasks, config, periodDays: period, now: Date.now(), editors });
+  const metrics = prioritise(
+    computeMetrics({ tasks, config, periodDays: period, now: Date.now(), editors }),
+    tasks, loadMetaRows());
   const payout = loadPayout(tasks);
   const dry = flags['dry-run'] === true || flags['dry-run'] === 'true';
 

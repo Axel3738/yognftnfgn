@@ -275,6 +275,8 @@ tbody tr:hover { background: color-mix(in srgb, var(--text-primary) 4%, transpar
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 .flags .detail { color: var(--text-secondary); font-size: 12.5px; margin-top: 2px; }
+/* Pengarna bakom en liggande sak ska gå att se utan att läsa hela raden. */
+.flags .stake { color: var(--text-primary); font-weight: 600; }
 .flags .detail .sev { font-weight: 600; }
 .flags .when {
   color: var(--text-secondary); font-size: 12.5px; font-variant-numeric: tabular-nums;
@@ -1381,6 +1383,11 @@ function flagsSection(M) {
             text: (ICON[f.severity] || '·') + ' ' + f.detail }),
           el('span', { text: ' · ' + nameOf(f.editor) +
             (f.approximate ? ' · tid räknad från när tasken skapades' : '') }),
+          // Vad väntan kostar. Utan den här raden ser en översättning av en
+          // annons som drar 9 000 kr/dag likadan ut som en som drar noll.
+          f.stake ? el('span', { class: 'stake',
+            text: ' · originalet drar ' + kr(f.stake.perDay) + '/dag, ROAS ' +
+              nf1.format(f.stake.roas) }) : null,
         ]),
       ]),
       el('div', { class: 'when', text: dur(f.minutes) }),
@@ -1430,7 +1437,10 @@ function flagsSection(M) {
     el('div', { class: 'card' }, [
       el('h2', { text: 'Behöver en knuff' }),
       courtTiles,
-      el('p', { class: 'hint', text: 'Tryck på en rad för att öppna den i Notion. Ringen bockar av den åt dig — den sparas i din webbläsare och ändrar inget för någon annan.' }),
+      el('p', { class: 'hint', text: (filtered.some(f => f.stake)
+        ? 'Sorterat efter vad väntan kostar, inte efter ålder: en översättning av en annons som drar 9 000 kr om dagen ligger före en som drar noll, även om den andra legat längre. '
+        : '') +
+        'Tryck på en rad för att öppna den i Notion. Ringen bockar av den åt dig — den sparas i din webbläsare och ändrar inget för någon annan.' }),
       M.flags.length ? chips : null,
       filtered.length ? el('ul', { class: 'legend' }, summary) : null,
       items.length ? el('ul', { class: 'flags' }, items) : el('div', { class: 'empty', text: 'Inget som skräpar. Allt rör sig.' }),

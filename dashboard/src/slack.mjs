@@ -69,12 +69,18 @@ export function buildDigest(metrics, config, opts = {}) {
   if (top.length) {
     const flagLines = top.map(f => {
       const who = mention(f.editor, metrics, config);
-      return `${ICON[f.severity] || ':white_circle:'} ${who} · \`${f.task}\` ${f.detail} — *${formatDuration(f.minutes, wd)}*`;
+      const what = f.url ? `<${f.url}|${f.title || 'namnlös'}>` : `*${f.title || f.task}*`;
+      // Vad väntan kostar, när det går att veta. Det är den raden som gör
+      // skillnad på "gammal" och "dyr".
+      const stake = f.stake
+        ? ` · :chart_with_upwards_trend: originalet drar ${kr(f.stake.perDay)}/dag, ROAS ${f.stake.roas.toFixed(1).replace('.', ',')}`
+        : '';
+      return `${ICON[f.severity] || ':white_circle:'} ${who} · ${what} — ${f.detail}, *${formatDuration(f.minutes, wd)}*${stake}`;
     });
     blocks.push({ type: 'divider' });
     blocks.push({
       type: 'section',
-      text: { type: 'mrkdwn', text: `*Behöver en knuff (${metrics.flags.length} st)*\n${flagLines.join('\n')}` },
+      text: { type: 'mrkdwn', text: `*Knuffa i den här ordningen (${metrics.flags.length} ligger)*\n${flagLines.join('\n')}` },
     });
     if (metrics.flags.length > top.length) {
       blocks.push({
@@ -135,6 +141,10 @@ function payoutLines(payout) {
 }
 
 function mention(editorId, metrics, config) {
+  // Saknad ansvarig är ett eget läge, inte ett namn. Utan det här skrevs det
+  // ut som "*null*" i kanalen — vilket är precis de sakerna som behöver
+  // uppmärksamhet mest, eftersom ingen känner sig träffad av dem.
+  if (!editorId) return '_ingen ansvarig_';
   const ed = metrics.editors.find(e => e.id === editorId);
   if (ed?.slack && config.slack?.mentionOnFlags) return `<@${ed.slack}>`;
   return `*${ed?.name || editorId}*`;
@@ -154,7 +164,8 @@ export function buildNudges(metrics, config, opts = {}) {
     // är en uppgift till; en länk är ett klick.
     const items = mine.slice(0, 6).map(f => {
       const title = f.url ? `<${f.url}|${f.title || 'namnlös'}>` : (f.title || f.task);
-      return `${ICON[f.severity] || ':white_circle:'} ${title}\n     ${f.detail} — ligger ${formatDuration(f.minutes, wd)}`;
+      const stake = f.stake ? ` · originalet drar ${kr(f.stake.perDay)}/dag` : '';
+      return `${ICON[f.severity] || ':white_circle:'} ${title}\n     ${f.detail} — ligger ${formatDuration(f.minutes, wd)}${stake}`;
     });
 
     const sev = revisionSeverity(ed.stats.revisionRate, config.thresholds);

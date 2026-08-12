@@ -12,6 +12,7 @@ import { parseCSV } from './src/ingest/csv.mjs';
 import { taskIdFromUrl } from './src/ingest/notion-rows.mjs';
 import { buildDigest, buildNudges } from './src/slack.mjs';
 import { computePayout } from './src/payout.mjs';
+import { rankByStake } from './src/priority.mjs';
 import { buildMatcher, adNumber, structuredKey, PAYABLE_TIERS } from './src/match.mjs';
 
 const TZ = 'Europe/Stockholm';
@@ -303,6 +304,48 @@ test('knuffen länkar till Notion-sidan när den finns', () => {
   });
   const json = JSON.stringify(buildNudges(m, CONFIG));
   assert.ok(json.includes('<https://app.notion.com/p/med-lank-abc|Med länk>'));
+});
+
+test('en flagga utan ansvarig skrivs inte ut som "null"', () => {
+  const openEvents = [
+    { ts: '2026-08-03T09:00:00+02:00', type: 'assigned', task_id: 'T-NOBODY', editor: null, title: 'Herrelös' },
+  ];
+  const m = computeMetrics({
+    tasks: foldTasks([...EVENTS, ...openEvents]), config: CONFIG, periodDays: 30, now: NOW,
+    editors: [{ id: 'a', name: 'Alfa', slack: 'UA' }],
+  });
+  const json = JSON.stringify(buildDigest(m, CONFIG, {}));
+  assert.ok(!json.includes('null*'));
+  assert.ok(json.includes('ingen ansvarig'));
+});
+
+console.log('\nKnuffordning');
+
+test('det som kostar mest att låta ligga hamnar först', () => {
+  const flags = [
+    { task: 'gammal', title: '900', minutes: 99999, detail: 'Ingen rörelse' },
+    { task: 'dyr', title: '145 Translation to Norwegian', minutes: 100, detail: 'Saknar ansvarig' },
+  ];
+  const tasks = [
+    { id: 'gammal', title: '900' },
+    { id: 'dyr', title: '145 Translation to Norwegian' },
+  ];
+  const metaRows = [
+    { date: '2026-08-10', adName: 'NO 145 H1', spend: 5000, revenue: 10000, purchases: 10 },
+    { date: '2026-08-11', adName: 'NO 145 H1', spend: 5000, revenue: 10000, purchases: 10 },
+    { date: '2026-08-10', adName: '900 H1', spend: 1, revenue: 0, purchases: 0 },
+  ];
+  const r = rankByStake({ flags, tasks, metaRows, now: Date.parse('2026-08-12T12:00:00Z') });
+  assert.equal(r[0].task, 'dyr');
+  assert.equal(r[0].stake.perDay, 5000);
+  assert.equal(r[0].stake.roas, 2);
+});
+
+test('utan Meta-data lämnas ordningen orörd', () => {
+  const flags = [{ task: 'a', title: 'x', minutes: 5 }, { task: 'b', title: 'y', minutes: 500 }];
+  const r = rankByStake({ flags, tasks: [], metaRows: [] });
+  assert.deepEqual(r.map(f => f.task), ['a', 'b']);
+  assert.equal(r[0].stake, null);
 });
 
 console.log('\nMatchning annons → task');
