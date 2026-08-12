@@ -2,14 +2,54 @@
 
 Produkt: Strandtofflor för Herr – Halkfria Trädgårdsskor · 349 kr · [produktsida](https://baverbutiken.se/products/strandtofflor-for-herr-halkfria-tradgardsskor)
 Ad account: MagiBorsten `1867947880635861` · Kampanj: `120249220414220291`
-Senast uppdaterad: **2026-08-09** (tredje feedbackloopen, 43 annonser i kampanjen)
+Senast uppdaterad: **2026-08-09 (kväll)** (fjärde feedbackloopen, 51 annonser i kampanjen)
 
 **Läsanvisning:** `DATA` = uppmätt i kontot. `HYPOTES` = strategisk tolkning, ej bevisad.
 Ingen dom sätts på annons under 300 kr spend eller 3 köp.
 
 ---
 
-## MÄTNING 2026-08-09 — det som gäller nu
+## MÄTNING 2026-08-09 KVÄLL — det som gäller nu
+
+Batch 5 launchades kl 19:35–19:58 (8 annonser). 51 annonser i kampanjen.
+**break-even-CPA 252 kr** · target 145 kr. Datakvalitet: `spend × ROAS` stämmer mot
+`omni_purchase_values` på alla fem bedömbara — **inga trasiga rader**.
+
+### Bedömbara — rangordnade på vinstbidrag `(252 − CPA) × köp`
+
+| Annons | Spend | Andel spend | Köp | CPA | ROAS | CTR | CPM | **Vinstbidrag** | Andel vinst |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| **PD_13_1** | 11 147 kr | 43,5 % | 69 | 162 kr | 2,81 | 2,64 % | 88,52 | **6 240 kr** | **64 %** |
+| **PD_13_6** | 4 140 kr | 16,2 % | 24 | 173 kr | 2,37 | 2,87 % | **84,09** | **1 908 kr** | 20 % |
+| **PD_2_3** | 328 kr | 1,3 % | 5 | **66 kr** | 5,44 | 3,90 % | 94,00 | **932 kr** | 10 % |
+| **SP_5_1** (lo-fi post-it) | 400 kr | 1,6 % | 3 | 133 kr | 3,22 | 3,55 % | 181,75 | **356 kr** | 4 % |
+| PD_2_2 | 3 275 kr | 12,8 % | 14 | 234 kr | 1,90 | 1,78 % | 107,48 | **253 kr** | 3 % |
+
+Summa **9 690 kr**. Fem bedömbara nu (var två för fyra dagar sedan).
+
+### Marginell CPA sedan mätningen samma dag kl 15:38 `DATA`
+
+| | Spend | Nya köp | **Marginell CPA** |
+|---|---|---:|---:|
+| **PD_13_1** | 10 196 → 11 147 kr | +8 | **119 kr** — bättre än livstid. Fortfarande ingen utmattning vid frekvens 1,88. |
+| **PD_13_6** | 1 886 → 4 140 kr | **+14** | **161 kr** — mer än fördubblad spend, CPA sjönk från 189 till 173. **Skalar snabbare än PD_13_1 gjorde vid samma punkt.** |
+| PD_2_2 | 3 196 → 3 275 kr | **0** | **∞** — noll köp på 79 kr. |
+
+`DATA`: PD_2_2 har nu gett **1 köp på 469 kr** sedan 5 augusti (marginell CPA 469 kr,
+1,9× break-even) över **två separata mätningar**. Livstids-CPA har stigit 216 → 228 →
+234 kr och närmar sig break-even. **Triggern jag satte i förra mätningen är uppfylld.**
+
+### Kill-beslut
+
+| Annons | Spend | Köp | CPA | Beslut |
+|---|---:|---:|---:|---|
+| **PD_8_1** | 583 kr | 2 | **292 kr** | **PAUSA.** Kill-regeln uppfylld: CPA över break-even, spend över 500 kr, och 0 nya köp på de senaste 157 kr. Rubrikvarianterna PD_8_2/8_3 är just launchade — de får avgöra om motivet duger. |
+| **PD_2_2** | 3 275 kr | 14 | 234 kr | **PAUSA.** Formella kill-regeln är *inte* uppfylld (livstids-CPA under break-even) — detta är ett allokeringsbeslut: marginalen är negativ över två mätningar och ersättaren (PD_2_3, samma bild vått) går på 66 kr. I en CBO går budget inte att flytta utan att pausa. |
+| PD_1_H1 · SP_1_H2 | 895 / 543 kr | 1 / 2 | 895 / 271 kr | Redan pausade. |
+
+---
+
+## MÄTNING 2026-08-09 eftermiddag — historik
 
 Livstid, hela kampanjen, 43 annonser. **break-even-CPA 252 kr** · target 145 kr · AOV 430 kr.
 Totalt **18 733 kr spend · 104 köp · CPA 180 kr**.
@@ -189,7 +229,46 @@ Båda granskade visuellt (bildfilerna nedladdade ur kontot).
 | **Ett par (hjälte) + piedestal + svart camo** | 1 | 5 824 kr | **2 492 kr** | **81 %** |
 | **Fyra par + flat-lay + alla färger** | 1 | 2 710 kr | 566 kr | 19 % |
 
-### Mönster tillagda 2026-08-09 (tredje körningen)
+### Mönster tillagda 2026-08-09 kväll (fjärde körningen)
+
+**11 — Native lo-fi KONVERTERAR. Tidigare slutsats var för tidig. `BEVISAD (svagt, 3 köp)`**
+
+⚠️ **Rättelse.** 5 augusti skrev jag om `SP_5_1`: *"Bilden saknar sula, pris och garanti —
+inget kvalificerar klicket"*, och la formatet under ÄNNU OBEVISAT. Den bedömningen byggde
+på 52 kr spend och 0 köp — under grinden, alltså en dom jag inte hade rätt att sätta.
+Nu: **400 kr, 3 köp, CPA 133 kr** — bättre än vår champion. Formatet konverterar.
+
+Teardown av bilden: mobilfotat ovanifrån, **daggvått grönt gräs** med synliga droppar på
+klöverbladen, ett svart camo-par i mitten sett uppifrån, omgivet av ~8 andra par som är
+**beskurna i bildkanterna** så gruppen läses som större än bilden. På hjälteparet ligger
+en gul post-it med **handskriven** text: "Gå halkfritt i sommar!". Ingen sula syns.
+Notera att blött underlag återkommer även här — mönster 7 igen, i lo-fi-förpackning.
+
+→ **Briefinstruktion:** lo-fi är nu en andra formelfamilj vid sidan av studiobilderna och
+ska itereras (batch 7). Handskriven lapp, aldrig satt text.
+
+**12 — SP_5_1 är inget rent test: bild OCH copy skiljer sig. `HYPOTES — måste avgöras`**
+SP-copyn innehåller ett kundcitat, "Hundratals män har redan bytt" och 30 dagars garanti.
+PD-copyn har inget av det. Vi vet alltså inte om det är bilden eller copyn som konverterar.
+→ **Briefinstruktion:** `SP_5_2` (lo-fi bild + PD-copy) och `SP_8_1` (studiobild + SP-copy)
+i batch 7 avgör detta. De ska launchas samtidigt, i samma ad set. Blir `SP_8_1` bäst är
+fyndet en **copy**-upptäckt, inte en fotoupptäckt — och då är det den billigaste vinsten
+vi har, eftersom ingen ny fotografering krävs.
+
+**13 — CPM straffar lo-fi hårt, men det lönar sig ändå. `DATA`**
+`SP_5_1` har CPM 181,75 kr — mer än dubbelt mot `PD_13_6`:s 84,09 kr, som är kontots
+lägsta. Trots det är CPA lägre än champions. Dyr uppmärksamhet kan alltså vara värd det
+om klicket är rätt kvalificerat.
+→ **Briefinstruktion:** döm aldrig lo-fi på CPM. Mät bara vinstbidrag.
+
+**14 — Vinnaren-tar-allt bekräftat en andra gång, inom timmar. `BEVISAD`**
+Batch 5:s åtta annonser launchades i **ett enda ad set** (`120249639437850291`). Efter ett
+par timmar hade `PD_8_2` tagit 215 kr av ad settets ~262 kr — **82 %**. Exakt samma
+mönster som batch 4 (PD_13_6 tog 94 %). Detta förutsades i förra `/cs` och inträffade.
+→ **Strukturåtgärd:** batch 6 och 7 ska spridas över minst tre ad set vardera, 2–3
+annonser i varje. Det är den enda åtgärd som faktiskt ändrar utfallet.
+
+### Mönster tillagda 2026-08-09 eftermiddag (tredje körningen)
 
 Alla fyra bedömbara annonser granskade visuellt (bildfilerna nedladdade ur kontot).
 
@@ -301,6 +380,17 @@ De tre lägsta CPM:erna i kampanjen är alla textfria produktfoton: PD_13_2 (84 
 `PD_2_3` (fyra färger på regnvått trädäck): 247 kr, 5 köp, **CPA 49 kr**, ROAS 7,22. Samma uppställning torr (PD_2_2) ger CPA 208 kr. Enda skillnaden är underlaget.
 Under 300 kr spend ⇒ formellt ingen dom, men det är kampanjens starkaste signal och den är underbudgeterad.
 
+### Native lo-fi konverterar — andra formelfamiljen `DATA` (3 köp — svagt men över grinden)
+`SP_5_1` (mobilfoto, nio par på daggvått gräs, handskriven post-it): 400 kr, 3 köp,
+**CPA 133 kr**, CTR 3,55 %. Lägre CPA än champion trots dubbel CPM. Helt annat visuellt
+språk än studiobilderna. **Obs:** copyn skiljer sig också (citat + garanti) — batch 7
+avgör vilket av de två som gör jobbet. Se mönster 11 och 12.
+
+### Sulan mot kameran — snabbast skalande formeln `DATA`
+`PD_13_6`: 4 140 kr, 24 köp, CPA 173 kr, **CPM 84 kr (kontots lägsta)**. Fördubblade sin
+spend på några timmar och sänkte samtidigt CPA från 189 till 173 kr. Skalar snabbare än
+`PD_13_1` gjorde vid samma punkt.
+
 ### Sulan som bevis fungerar `DATA`
 `PD_8_1` (extrem närbild av sulmönstret + rubrik "Sulan som greppar blött trä."): 187 kr, 2 köp, CPA 93 kr, ROAS 3,73. Lägre CTR (1,39 %) än snittet men klicken konverterar — precis det utfall som var hypotesen.
 
@@ -337,7 +427,7 @@ Snittittartid över alla videor: 3–9 sekunder på klipp som är 21–42 sekund
 
 - **Videorna i batch 3** (PD_4/PD_5/PD_6/SP_3/SP_4) — 30 kr spend totalt. Ingen som helst dom möjlig.
 - **Karusell** (`PD_7_1`, 2,64 kr) och **jämförelseformat** (`PD_9_1`, `PD_12_1`, båda under 10 kr).
-- **Native lo-fi-formatet**: `SP_5_1` (post-it på blöt gräsmatta) har kampanjens **högsta CTR, 3,17 %**, men 0 köp på 52 kr. Formatet fångar uppmärksamhet — obevisat om det kan konvertera. Bilden saknar sula, pris och garanti, dvs. inget som kvalificerar klicket. `HYPOTES`: native + ett konverteringselement är den obeprövade kombinationen med högst potential.
+- ~~**Native lo-fi-formatet**~~ — **AVGJORT 2026-08-09 kväll, flyttat till WINNING DNA.** `SP_5_1` gick från 0 köp på 52 kr till 3 köp på 400 kr, CPA 133 kr. Se mönster 11.
 - **Bundle** (`SO_3_1`, 4,72 kr) — **BLOCKERAD**: 2-för-598-rabatten är inte verifierad i Shopify. Annonsen får inte skalas förrän erbjudandet finns.
 - **Livsstilsformat** (`PD_11_1`) och **familjekollage** (`PD_10_1`), båda under 6 kr.
 

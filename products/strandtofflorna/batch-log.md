@@ -196,3 +196,57 @@ nu bevisade vått-underlag-mönstret och kostar ingenting att köra.
 
 **⚠️ Produktionsskuld: 13 briefer (batch 5: 7, batch 6: 6) är skrivna men oproducerade.**
 Nästa `/cs` ska räkna hur många som blivit bilder innan den skriver fler.
+
+---
+
+## Batch 5 — LAUNCHAD 2026-08-09 kl 19:35–19:58 · 8 annonser
+
+Alla åtta ligger live i **ett enda ad set** (`120249639437850291`). Loggade mot kvoten
+(`node pipeline/quota.mjs log strandtofflorna 8`) → läget gick från **−6 till +2 före plan**.
+
+⚠️ **Samma strukturfel som batch 4.** Åtta annonser i ett ad set. Efter ett par timmar hade
+`PD_8_2` tagit 215 kr av ad settets ~262 kr — **82 %**. De övriga sju ligger på 0,25–20 kr.
+Detta förutsades i `/cs` samma eftermiddag och inträffade inom timmar.
+
+| Annons | Spend | Köp | Status |
+|---|---:|---:|---|
+| PD_8_2 (rubrikvariant "Grepp som ett däckmönster") | 215 kr | 0 | Får all leverans. Ingen dom än. |
+| PD_16_1 (storleksreferens) | 21 kr | 0 | Ingen dom. |
+| PD_13_11 (mörk studio, omtag på 13_7) | 7 kr | 0 | Ingen dom. |
+| PD_13_12 (9:16) | 6 kr | 0 | Ingen dom. |
+| PD_15_1 (fot i toffeln) | 5 kr | 0 | Ingen dom. |
+| PD_8_3 (rubrikvariant "Byggd för blöta altaner") | 5 kr | 0 | Ingen dom. |
+| PD_13_13 (khaki på mörk bakgrund) | 3 kr | 0 | Ingen dom. CTR 12,12 % på 33 impressions = **brus**. |
+| PD_14_1 (vattnet pressas ur sulan) | 0,25 kr | 0 | Ingen dom. |
+
+**Åtgärd:** flytta ut 4–5 av dem i egna ad set, annars blir sju av åtta aldrig bedömda.
+
+---
+
+## Batch 7 — 2026-08-09 (kväll) · 5 statics · *briefad, ej producerad*
+
+Kvoten **grön, +2 före plan** efter att batch 5 loggats. Batchen är 5 = exakt kvoten.
+
+Byggd på ett enda fynd: **`SP_5_1` har passerat grinden.** Den lo-fi-annons som 5 augusti
+låg på 0 köp och som jag då avfärdade ("inget kvalificerar klicket") ligger nu på
+400 kr / 3 köp / CPA 133 kr — lägre än championens 162 kr. Det är kontots första bevis
+för att ett helt annat visuellt språk än studiobild säljer, och den har aldrig itererats.
+
+| Annons | Parent | Ändrad variabel | Hypotes |
+|---|---|---|---|
+| SP_5_2 | SP_5_1 | **copy** → PD-copy | SP_5_1 skiljer sig från PD-annonserna på både bild och copy. Denna håller bilden och byter copy. Håller CPA:n ≈133 kr är **bilden** tillgången. |
+| SP_8_1 | PD_13_6 | **copy** → SP-copy | Spegeltestet. Slår den PD_13_6:s 173 kr är fyndet en **copy**-upptäckt — den billigaste vinsten vi kan göra, ingen fotografering krävs. |
+| SP_5_3 | SP_5_1 | **underlag** → blött mörkt trädäck | Blött däck är bevisat (PD_2_3 66 vs PD_2_2 234 kr). SP_5_1 står på vått *gräs* — enda våta underlaget vi aldrig isolerat. Däcket får dessutom svart camo att lyfta i stället för att smälta in i grönt. |
+| SP_5_4 | SP_5_1 | **proof** → en sula vänd uppåt i högen | Lägger in det bevisade sulmotivet utan att bryta lo-fi-illusionen. Faller den är gränsen hittad: formatet fungerar *för att* det inte ser tillrättalagt ut. |
+| SP_5_5 | SP_5_1 | **lapptexten** | Billigaste variabeln vi äger — en penna och en post-it. Fyra nya rader, version 1 byggs först. Skrivna av sonnet-subagent enligt regel 5. |
+
+`SP_5_2` och `SP_8_1` är **ett experiment i två halvor** och måste launchas samtidigt i
+samma ad set, annars är jämförelsen värdelös.
+
+**⚠️ Två påståenden i den LEVANDE SP-copyn kräver ägarbeslut:**
+- **"Hundratals män har redan bytt"** — Shopify visar 115 ordrar på 90 dagar, och
+  produkten finns inte bland topp 5 på 12 månader. "Hundratals" täcks inte av vår data.
+- **"30 dagars nöjd-kund-garanti"** — inte verifierad mot butikens faktiska policy.
+
+Brieferna återanvänder copyn **som den körs idag** för att hålla testet rent. Att rätta
+påståendena är ett separat beslut.
