@@ -4,7 +4,11 @@ Koncept/swipes som väntar på att tas in i en batch. Markera `[använd i batch 
 
 ## Väntande
 
-- **Judge.me-citatstatisk (SP)** – BLOCKERAD: kräver att managern exporterar recensionstexterna (8 st) från Judge.me-admin. När texterna finns: statisk med äkta citat + 4,75/5. (Från 28/7-rapporten.)
+- **Judge.me-citatstatisk (SP)** – FORTFARANDE BLOCKERAD för *citaten*: kräver att managern
+  exporterar recensionstexterna (8 st) från Judge.me-admin.
+  **Delvis upplåst 2026-08-12:** det verifierade snittbetyget (4,75/5, 8 recensioner) kräver
+  ingen export och används i `Trimmerbelt_SP_6_1` `[delvis använd i batch #7]`. Citatstatiken
+  med riktiga recensionstexter väntar fortfarande.
 - **Bundle-vinkel med Dubbel Axelrem (579 kr)** – jämförelse enkel/dubbel sele, fångar premium-köparen. BLOCKER om bundle-pris krävs i Shopify (ägarbeslut).
 Inga items togs in i batch #5 (2026-08-06): alla tre var blockerade eller väntade på data.
 

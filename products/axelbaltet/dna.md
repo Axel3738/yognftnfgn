@@ -1,12 +1,12 @@
 # Creative DNA – Axelbältet (axelbaltet)
 
-Uppdaterad: **2026-08-09 (/cs-körning nr 4, enligt ANALYSMETOD.md)**. Kampanj 120249192013870291 · MagiBorsten 1867947880635861.
+Uppdaterad: **2026-08-12 (/cs-körning nr 5, enligt ANALYSMETOD.md)**. Kampanj 120249192013870291 · MagiBorsten 1867947880635861.
 **Budget 2 000 kr/dag · target-CPA 185 kr · break-even-CPA 326 kr** (kill mäts mot break-even, aldrig mot target).
 Produktfakta (omverifierat i Shopify 2026-08-09): **599 kr, jämförpris 678 kr = spara 79 kr (11,65 %)**, fri frakt, 30 dagars öppet köp, 4,75/5 (8 recensioner).
 **PRISÄNDRING 2026-08-05: 509 → 599 kr.** Siffrorna 509 kr, 636 kr och "20 %" är FÖRBJUDNA i all ny copy och creative.
 LP: baverbutiken.se/products/axelbalte-for-trimmer-justerbart-nylonbalte
 
-Kampanjtotal livstid: **33 334 kr spend · 115 köp · CPA 290 kr · ROAS 2,00 · frekvens 3,00**.
+Kampanjtotal livstid: **37 459 kr spend · 127 köp · CPA 295 kr · ROAS 1,98 · frekvens 3,09**.
 ⚠️ Target-CPA 185 och break-even 326 är räknade på gamla priset 509 kr — båda
 är för lågt satta vid 599 kr. Ägaren räknar om. Tills dess är alla vinstsiffror
 nedan **konservativa**.
@@ -18,21 +18,26 @@ nedan **konservativa**.
 - **Vinnaren är ÄKTA UGC, inte en producerad video.** Visuell granskning 2026-08-09:
   `PD_1_H1` är rå mobilfilm — en verklig man i ett verkligt garage med verktyg och
   cykel i bakgrunden, inbränd svensk undertext i vit rundad ruta. Ingen studio,
-  ingen färgläggning. **+3 249 kr = 57 % av kampanjens nettovinst**, 46 köp,
-  CPA 255 kr, 277 kr vinst per 1 000 kr. Tidigare DNA-versioner beskrev den som
+  ingen färgläggning. **+3 473 kr = 62 % av kampanjens nettovinst**, 53 köp,
+  CPA 260 kr, 252 kr vinst per 1 000 kr. Tidigare DNA-versioner beskrev den som
   "40 s video med voiceover och b-roll" — det var fel, och därför bad ingen brief
   om äkta UGC förrän batch #6.
-- **Smärt-/problemvinkeln ger dubbla vinsten per krona mot säsong/offer.**
-  Smärta: 12 574 kr spend → +3 400 kr (270 kr/1 000). Säsong/offer: 16 658 kr →
-  +2 249 kr (135 kr/1 000).
-- **Statisk i rätt layout är den effektivaste ytan i kontot.** SO ad 2 variant 1:
-  **562 kr vinst per 1 000 kr** (+1 408 kr, 12 köp, CPA 209 kr, CVR 3,85 %) —
-  tre gånger video, och får 9 % av spenden.
-- **AI fungerar utan ansikten och dör med dem.** `PD_3_H1` (AI, bara händer,
-  produkt och trädgård, inga ansikten): CPA 276 kr, +151 kr, **CVR 3,23 %
-  (näst högst i kontot)** och **p100 7,3 % (högst av alla videor)**.
-  `PD_2_1` och `SF_2_1` (AI med ansikte): båda dödade.
-  → Regel: AI-material får visa händer, produkt och miljö — aldrig ett ansikte.
+- **Smärt-/problemvinkeln ger ungefär dubbla vinsten per krona mot säsong/offer.**
+  Smärta: 14 809 kr → +3 447 kr (233 kr/1 000). Säsong/offer: 18 349 kr →
+  +2 189 kr (119 kr/1 000). Håller tredje körningen i rad.
+- **Statisk i rätt layout är den effektivaste ytan i kontot.** Alla statics i den
+  beprövade layouten: **383 kr vinst per 1 000 kr mot videons 177**. SO ad 2
+  variant 1 ensam: 446 kr/1 000 (+1 206 kr, 12 köp, CPA 225 kr). Håller tredje
+  körningen i rad — det stabilaste mönstret i kontot.
+- **Statiskproduktionen fungerar; videoproduktionen gör det inte.** De fyra statics
+  som launchades 2026-08-09 (`PD_2_5`, `SO_2_7`, `PD_9_1`, `PD_10_1`) byggdes
+  **exakt enligt brief** — hel produkt, fotobakgrund, text i fri yta, rätt priser.
+  Första gången i kontots historia. Den enda briefade äkta UGC-videon producerades
+  däremot som AI. → Lägg volymen i statics medan videokön rensas.
+- **AI med ansikte dödar en creative.** `PD_2_1` och `SF_2_1` båda dödade
+  (artefakter resp. fabricerat citat). → Regel: inga AI-genererade ansikten.
+  Att AI **utan** ansikte skulle fungera är däremot inte längre bevisat — se
+  ÄNNU OBEVISAT.
 - Copystruktur som konverterar: hook → mekanism i EN mening ("fördelar vikten
   jämnt över axeln") → invändning ("justerbart, passar precis dig") → close.
 - Produkt i bild < 4 s. SHOP_NOW/Handla nu. Grön utomhusmiljö + orange accent.
@@ -51,15 +56,15 @@ nedan **konservativa**.
 
   Förloraren hade lägst CPM i hela kontot (94 kr) — **billig räckvidd kvalificerar
   inte köpare.** Detta var en Claude-genererad design; originalet var teamets.
-- **BÅDA videovinnarna är nu över break-even på marginalen (2026-08-09).**
-  Marginal-CPA sedan förra mätningen: `PD_1_H1` **425 kr** (+2 974 kr / +7 köp),
-  `SO_1_H2` **351 kr** (+1 052 kr / +3 köp). Kampanjfrekvensen har gått
-  2,72 → **3,00**. Kampanjen fatigar som helhet — rotation är ett krav, inte
-  en förbättring.
+- **Videovinnarna pendlar runt break-even på marginalen.** `PD_1_H1`:
+  marginal-CPA 425 kr (08-09) → **294 kr (08-12, +2 057 kr / +7 köp)** — tillbaka
+  under break-even, men bara 32 kr marginal per order. `SO_1_H2` har bara 2
+  inkrementella köp och får därför ingen dom. Kampanjfrekvensen har gått
+  2,72 → 3,00 → **3,09**. Rätt beskrivning: vinnarna varken skalar eller dör —
+  de går på tomgång medan publiken mättas. Rotation OCH ny målgruppsram krävs.
 - **AI-genererade ansikten dödar en creative.** PD_2_1 och SF_2_1: DO_NOT_REUSE
   (artefakter resp. fabricerat kundcitat). Två nya AI-ansiktsvideor launchades
-  2026-08-09 (`PD_1_2_H1`, `PD_8_1_H2`) trots detta. AI **utan** ansikte är
-  däremot bevisat lönsamt — se WINNING DNA.
+  2026-08-09 (`PD_1_2_H1`, `PD_8_1_H2`) trots detta — båda under grinden ännu.
 - **Text ovanpå produkten sänker läsbarheten.** SO_2_6 (live 2026-08-05) har
   rätt pris och rätt layout i övrigt, men prisblocket ligger över selens remmar.
   Vinnaren SO_2_1 har all text i fri yta. HYPOTES tills SO_2_7 mäter den.
@@ -83,6 +88,14 @@ nedan **konservativa**.
   (`Axelbälte PD Batch 4`) — första gången nya tester fått en egen cell.
 
 ## FALSIFIERAT — tidigare slutsatser som datan inte stöder
+
+- ❌ **"AI utan ansikte fungerar" (skrivet som BEVISAD i /cs nr 4).** Byggt på
+  `PD_3_H1`: 827 kr, **exakt 3 köp**, CPA 276 kr, +151 kr. Tre dygn senare:
+  1 004 kr, fortfarande 3 köp, CPA 335 kr, **−26 kr** — noll köp på 178 kr ny
+  spend, och CVR ned från 3,23 till 2,48 %. Domen byggde på signifikansgrindens
+  absoluta minimum och föll direkt.
+  **Metodregel: en annons som precis passerat grinden (3–4 köp) får en PRELIMINÄR
+  dom som måste överleva nästa körning innan den skrivs in i Winning/Losing DNA.**
 
 - ❌ **"Kort video (25 s) slår lång (40 s)."** Byggd på p100-retention i ett
   veckofönster. Livstidsdata säger tvärtom: 40 s-videon ger **371 kr vinst per
@@ -126,13 +139,26 @@ nedan **konservativa**.
 kompatibilitets-invändningen (`PD_7_1`) · smärta i vinnande statiskt format (`PD_2_4`) ·
 kronor vs procent (`SO_2_6`).
 
-**Nästa (batch #6):**
+**Pågår (launchade 2026-08-09 kväll, alla under grinden):** smärta+pris korsade
+(`PD_2_5`) · pristext i fri yta (`SO_2_7`) · kvällen-efter-ramen (`PD_9_1`) ·
+mekanismdiagram (`PD_10_1`).
+
+**Briefat, ej producerat (batch #6):**
 - **Primärtext isolerat** — aldrig testat i kontot (`PD_1_4_H1`, vinnarvideon oförändrad).
 - **Äkta creator vs AI** i samma vinkel och utförande (`PD_12_1_H1`).
 - **Kvinnlig creator** — noll kvinnofrontade creatives hittills (`PD_12_1_H1/H2`).
 - **AI-utan-ansikte som produktionsbana** (`PD_3_2_H1`, `PD_14_1`).
 - **Sant offer-claim vs falskt** i identisk layout (`SO_2_8` mot `SO_2_1`).
 - **Produkt ensam vs produkt buren** i statisk (`PD_14_1`).
+
+**Nästa (batch #7, 2026-08-12):**
+- **Social proof som kvalificerare** med det äkta betyget 4,75/5 (`SP_6_1`).
+- **Jämförelse utan/med bälte** — mekanismen visad i en blick (`PD_15_1`).
+- **Kompatibilitets-invändningen i bilden** (`PD_7_2`) — den nådde aldrig `PD_7_1`:s copy.
+- **Ny målgruppsram: röjsåg, hel arbetsdag** (`PD_16_1`) — motmedel mot frekvens 3,09.
+- **Smärtrad ovanför priset** (`SO_2_9`) — CTR-fix på SO_2_6:s funnelform.
+- **Delar utpekade** (`PD_17_1`) — iteration på `PD_4_1` (CPA 278, närmast grinden).
+- **Copytest #2, offer först** (`PD_1_5_H1`) — noll produktion.
 
 ## ÄNNU OBEVISAT (hypoteser)
 
@@ -142,7 +168,18 @@ kronor vs procent (`SO_2_6`).
   ej producerade).
 - Kvinnlig creator/målgrupp: noll kvinnofrontade creatives hittills.
   → tas in i batch #6 (`PD_12_1_H1/H2`).
-- Native produktfoto utan overlay (PD_2_2: 2 köp på 119 kr — brus med riktning).
+- Native produktfoto utan overlay (PD_2_2: 3 köp på 207 kr — under spendgrinden,
+  men CPA 69 kr är kontots lägsta. Bevakas.)
+- **AI utan ansikte som produktionsbana.** `PD_3_H1` gick från +151 kr till −26 kr
+  på tre dygn. Frågan är öppen, inte avgjord. Batch #6:s `PD_3_2_H1` och `PD_14_1`
+  skrevs som "skala en bevisad bana" — de **testar en hypotes**, och den
+  formuleringen i brieferna är för stark.
+- **Pris överst i bilden filtrerar hårt men kvalificerar.** `SO_2_6`: kontots
+  lägsta CTR (1,30 %) och högsta CVR (4,55 %), +147 kr på exakt 3 köp — preliminärt.
+  `SO_2_9` (batch #7) testar om en smärtrad ovanför priset köper klicket utan
+  att tappa CVR.
+- **Publikmättnad.** Frekvens 3,09 och stigande. `PD_16_1` (batch #7) byter
+  målgruppsram till röjsåg/hel arbetsdag i stället för fler hooks mot samma publik.
 
 ## KONCENTRATIONSRISK
 
@@ -164,8 +201,10 @@ kronor vs procent (`SO_2_6`).
   tester fått under en hel vecka i CBO. Fortsätt så.
 - Meta har koncentrerat 81 % av spenden på de två stora videorna. Båda är lönsamma
   livstid — men båda är nu över break-even på marginalen.
-- **Statics får 14 % av spenden och ger 562 kr vinst per 1 000 kr.** Den snedheten
-  är kampanjens största outnyttjade hävstång.
+- **Statics får ~11 % av spenden och ger 383 kr vinst per 1 000 kr mot videons 177.**
+  Den snedheten är kampanjens största outnyttjade hävstång.
+- **Flaskhalsen har flyttat från briefande till produktion.** 16 briefer ligger i kö
+  (2 från batch #5, 7 från #6, 7 från #7). Fler briefer löser inget förrän kön minskar.
 - Kampanjfrekvens **3,00** livstid → kreativ rotation väger nu tyngre än nya koncept.
 
 ## NAMNSTRUKTUR
@@ -174,6 +213,6 @@ kronor vs procent (`SO_2_6`).
 `Trimmerbelt_PD_2_4` (statisk, ingen hook-del).
 - AD ID = vilket nummer annonsen är inom konceptet · AD VARIANT = variant av den
   annonsen · H ID = vilken hook från den annonsen.
-- Upptagna AD-ID:n: SO 1, 2, 3, 4, 6, 7 · PD 1–14 · SP 3, 4, 5 · SF 1, 2
+- Upptagna AD-ID:n: SO 1, 2, 3, 4, 6, 7 · PD 1–17 · SP 3, 4, 5, 6 · SF 1, 2
   (SF = äldre benämning på social proof, räknas ihop med SP vid numrering).
 - Äldre annonser med data döps aldrig om.

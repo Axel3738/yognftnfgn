@@ -435,3 +435,173 @@ hela briefen inklistrad.
   ~600 kr/dag (rekommenderat fjärde gången).
 - ⚠️ **Target-CPA 185 och break-even 326 är fortfarande räknade på gamla priset 509 kr.**
   Vid 599 kr är båda för lågt satta → alla vinstsiffror ovan är konservativa. **Ägaren räknar om.**
+
+---
+
+## Feedbackloop 2026-08-12 (/cs nr 5, enligt ANALYSMETOD.md)
+
+Hela kampanjen sorterad på spend. Budget verifierad: **2 000 kr/dag (oförändrad, CBO)**.
+Kampanjtotal livstid: **37 459 kr spend · 127 köp · CPA 295 kr · ROAS 1,98 · frekvens 3,09**.
+
+**Datakvalitet:** `omni_purchase_values` fortsatt trasigt på SO_2_4, SO_6_1, SF_1_H1, PD_2_2 —
+intäkt räknad som `amount_spent × purchase_roas`. CPA stämde mot `spend / köp` på alla rader.
+
+**4 nya annonser launchade 2026-08-09 19:46** (batch #5:s statics: `PD_2_5`, `SO_2_7`, `PD_9_1`,
+`PD_10_1`) i två nya adsets. Loggade: kvot −9 → **−5**.
+
+### Vinstbidrag (bedömbara: ≥300 kr spend OCH ≥3 köp)
+
+| Annons | Spend | Andel spend | Köp | CPA | Vinstbidrag | Andel vinst | Vinst/1 000 kr |
+|---|---|---|---|---|---|---|---|
+| Axelbälte_PD_1_H1 | 13 805 kr | 42 % | 53 | 260 kr | **+3 473 kr** | **62 %** | 252 kr |
+| Axelbälte_SO_1_H2 | 12 602 kr | 38 % | 43 | 293 kr | +1 416 kr | 25 % | 112 kr |
+| Axelbälte_SO_2_1 | 2 706 kr | 8 % | 12 | 225 kr | +1 206 kr | 21 % | **446 kr** |
+| Trimmerbelt_SO_2_6 (NY) | 831 kr | 3 % | 3 | 277 kr | +147 kr | 3 % | 177 kr |
+| Trimmerbelt_PD_3_H1 | 1 004 kr | 3 % | 3 | 335 kr | **−26 kr** | −0,5 % | −26 kr |
+| Trimmerbelt_SO_2_4 (pausad) | 2 210 kr | 7 % | 5 | 442 kr | −580 kr | −10 % | −262 kr |
+
+Netto bedömbara: **+5 636 kr**.
+
+### Marginal-CPA (första mätningen enligt den nya regeln: ≥3 dygn, ≥5 inkrementella köp)
+
+| Annons | Δ spend | Δ köp | Marginal-CPA | Giltig? |
+|---|---|---|---|---|
+| PD_1_H1 | +2 057 kr | +7 | **294 kr** | ✅ passerar båda kraven |
+| SO_1_H2 | +657 kr | +2 | (329 kr) | ❌ under 5 köp — ingen dom |
+| SO_2_1 | +202 kr | 0 | – | ❌ under grinden |
+
+PD_1_H1 har alltså **återhämtat sig** från marginal-CPA 425 kr till 294 kr — under break-even 326,
+men bara med 32 kr marginal per order på 7 köp. Rätt beskrivning är **"pendlar runt break-even"**,
+inte "accelererar" och inte "döende". Med 7 köp är osäkerheten fortfarande stor; regeln fångar
+riktningen, inte precisionen.
+
+### KORRIGERING: "AI utan ansikte fungerar" var för tidigt sagt
+
+/cs nr 4 flyttade detta till **WINNING DNA som bevisad** på grundval av `PD_3_H1`:
+827 kr, 3 köp, CPA 276 kr, +151 kr. Tre dygn senare: **1 004 kr, fortfarande 3 köp,
+CPA 335 kr, −26 kr.** Noll köp på 178 kr ny spend. Vinstbidraget har gått från plus till minus.
+
+Slutsatsen byggde på **exakt 3 köp** — signifikansgrindens absoluta minimum. En dom där är
+skör, och den föll. Nedgraderad till HYPOTES i dna.md.
+
+**Konsekvens för batch #6:** `PD_3_2_H1` och `PD_14_1` skrevs som "skala en bevisad bana".
+De är fortfarande värda att köra — frågan är öppen och båda är billiga — men de **testar en
+hypotes, de skalar inte ett bevis**. Formuleringen i brieferna är för stark.
+
+**Metodregel tillagd:** en annons som precis passerat grinden (3–4 köp) får en **preliminär**
+dom som ska omprövas nästa körning innan den skrivs in i WINNING/LOSING DNA. Samma försiktighet
+gäller `SO_2_6` nedan.
+
+### Creative-teardown — statiskproduktionen fungerar nu
+
+De fyra statics som launchades 2026-08-09 laddades ner i full upplösning och granskades:
+
+| Annons | Följer briefen? | Iakttagelse |
+|---|---|---|
+| `SO_2_7` | ✅ **Exakt** | 678 kr överstruket → 599 kr, "Spara 79 kr – fri frakt ingår", "Handla nu" i vit text. Hel produkt, fotografisk bokeh, **all text i fri yta** — precis den fix som briefades mot SO_2_6:s överlapp. |
+| `PD_2_5` | ✅ Exakt | "Ont i axlarna igen?" + mekanismrad + 599 kr, hel produkt, fotobakgrund, text i fri yta. |
+| `PD_9_1` | ✅ Exakt | "Fortfarande öm i axlarna till kvällen?" mot kvällsljus-bakgrund. Rätt tidsram, rätt layout. |
+| `PD_10_1` | ✅ Exakt | Mekanismdiagram med två orange pilar, "Vikten flyttas – inte armarna". Endast hårfina pillinjer korsar produkten. |
+
+**Detta är första gången i kontots historia att briefad creative nått kontot oförändrad.**
+Alla fyra använder samma urklippta produktbild på olika bakgrunder — konsekvent och korrekt.
+
+⚠️ **Primärtexten kunde inte läsas** för dessa fyra: creativen är av typen `SHARE` (page-post),
+och `body`/`title` returneras inte av API:t för den typen. Ingen slutsats dras om copyn — den
+får kontrolleras manuellt i Ads Manager.
+
+### Metrik-diagnos
+
+| Annons | CTR | Hook rate | Hold (thruplay) | p100 | CVR (köp/klick) | CPM | Frekvens |
+|---|---|---|---|---|---|---|---|
+| PD_1_H1 | 2,34 % | 95,7 % | 16,3 % | 2,3 % | 2,69 % | 124 kr | 1,63 |
+| SO_1_H2 | 2,03 % | 95,0 % | 11,3 % | 5,4 % | 2,77 % | 126 kr | 2,00 |
+| SO_2_1 | 2,03 % | – | – | – | 3,40 % | 125 kr | 2,16 |
+| SO_2_6 | **1,30 %** | – | – | – | **4,55 %** | 116 kr | 2,60 |
+| PD_3_H1 | 2,35 % | 95,2 % | 10,1 % | 7,5 % | 2,48 % | 126 kr | 1,33 |
+| SO_2_4 | 1,52 % | – | – | – | 1,85 % | 94 kr | 1,81 |
+
+**Nytt mönster:** `SO_2_6` har kontots **lägsta CTR (1,30 %)** och **högsta CVR (4,55 %)**.
+Pris överst i bilden stöter bort nästan alla och konverterar nästan alla som blir kvar.
+`PD_3_H1`:s CVR har samtidigt fallit 3,23 → 2,48 % — hela dess tidigare försprång var brus.
+
+### Variabelgruppering (vinstbidrag per variabelvärde)
+
+| Variabel | Värde | Spend | Vinst | Vinst/1 000 kr |
+|---|---|---|---|---|
+| Format | Statisk (hel produkt + foto) | 3 537 kr | +1 353 kr | **383 kr** |
+| Format | Video | 27 411 kr | +4 863 kr | 177 kr |
+| Format | Statisk (beskuren + gradient) | 2 210 kr | −580 kr | −262 kr |
+| Vinkel | Smärta/problem | 14 809 kr | +3 447 kr | 233 kr |
+| Vinkel | Säsong/offer | 18 349 kr | +2 189 kr | 119 kr |
+| Visuell stil | Äkta UGC | 13 805 kr | +3 473 kr | 252 kr |
+| Visuell stil | Studio/produktvideo | 12 602 kr | +1 416 kr | 112 kr |
+| Visuell stil | AI utan ansikte | 1 004 kr | −26 kr | −26 kr |
+
+Statics i rätt layout: **383 kr/1 000 kr mot videons 177**. Smärta slår säsong ~2:1. Båda
+mönstren har nu hållit i tre körningar i rad och är de stabilaste i kontot.
+
+### Hypotesavstämning
+
+| Annons | Hypotes | Utfall |
+|---|---|---|
+| SO_2_6 | Kronor slår procent | ⚠️ **Preliminärt ja.** 831 kr, 3 köp, CPA 277, +147 kr. Men exakt 3 köp — omprövas nästa körning. Notera den extrema funnelformen (CTR 1,30 / CVR 4,55). |
+| PD_3_H1 | Mekanismvideo bär | ❌ **Föll.** +151 kr → −26 kr på tre dygn, 0 nya köp på 178 kr. Se korrigeringen ovan. |
+| PD_2_5, SO_2_7, PD_9_1, PD_10_1 | (batch #5-statics) | ⏳ 26–82 kr styck. För tidigt. Men **alla fyra byggda exakt enligt brief** — produktionsledet är löst. |
+| PD_1_1_H4 / H5 / PD_1_2_H1 / PD_1_3_H1 | Hook-, offer- och längdtest | ⏳ 11–120 kr. För tidigt. PD_1_2_H1 har 1 köp på 103 kr — under grinden. |
+| PD_7_1 | Kompatibilitets-invändningen | ⏳ 130 kr, 0 köp. Och copyn i kontot är fortfarande block A → **invändningen testas inte i text**. Byggs om som statisk i batch #7 (`PD_7_2`). |
+| PD_2_4 | Smärta i vinnande statiskt format | ⏳ 321 kr, 0 köp. Passerat spendgrinden men inte köpgrinden. Bevakas. |
+| PD_8_1_H2 | Smärtvinkeln i äkta UGC | ❌ Testas inte — producerad som AI. Byggs om i batch #6 (`PD_12_1`), ännu ej producerad. |
+| PD_4_1 | Annoterad demo | ⏳ 557 kr, 2 köp, CPA 278. Närmast grinden av alla obedömda, och bäst CPA bland dem. Itereras i batch #7 (`PD_17_1`). |
+| Batch #6 (7 briefer) | – | ⏳ Ingen launchad ännu. |
+
+### Mönster (denna körning)
+
+1. **BEVISAD** — *Statisk i den beprövade layouten är kontots effektivaste yta.* 383 kr/1 000 kr
+   mot videons 177, tredje körningen i rad. → **Briefinstruktion:** batch #7 är 6 av 7 statics.
+2. **BEVISAD** — *Statiskproduktionen är löst; videoproduktionen är det inte.* Fyra statics
+   levererade exakt enligt brief; den enda briefade äkta UGC-videon producerades som AI.
+   → **Briefinstruktion:** lägg volymen där utförandet är pålitligt medan videokön rensas.
+3. **HYPOTES** — *Pris överst filtrerar hårt men kvalificerar.* CTR 1,30 / CVR 4,55 på SO_2_6.
+   → `SO_2_9` lägger en kort smärtrad ovanför priset för att köpa klicket utan att tappa CVR.
+4. **HYPOTES** — *Publiken mättas.* Frekvens 2,72 → 3,00 → 3,09, båda videovinnarna nära
+   break-even på marginalen. → `PD_16_1` byter målgruppsram (röjsåg, hel arbetsdag) i stället
+   för att lägga fler hooks på en mättad publik.
+
+## Batch #7 – 2026-08-12 – 7 briefer (kvot 7)
+
+Copy skriven av sonnet-subagent. Priser maskinkontrollerade: 0 felaktiga claims.
+**6 bild + 1 video** (videon kräver noll produktion).
+
+| Annons | Typ | Hypotes | Isolerad variabel | Variabeltaggar |
+|---|---|---|---|---|
+| Trimmerbelt_SP_6_1 | Statisk | Social proof fungerar som kvalificerare, inte som hook | Prooftyp (betyg vs inget) | social proof · siffra · statisk · **äkta betyg** · ingen offer · hel produkt+foto |
+| Trimmerbelt_PD_15_1 | Statisk | Kontrast förmedlar mekanismen snabbare än en rubrik kan påstå den | Jämförelselayout vs enskilt objekt | smärta (jämförelse) · kontrast · jämförelsestatisk · demo · ingen offer · delad bild |
+| Trimmerbelt_PD_7_2 | Statisk | Kompatibilitet är en blockerare, inte en hook — höjer CVR utan CTR | Invändningen uttalad i creativen | invändning · fråga · statisk · demo (krok) · ingen offer · hel produkt+foto |
+| Trimmerbelt_PD_16_1 | Statisk | Ny målgruppsram når publik som nuvarande set inte når | Målgruppsram | uthållighet/arbetsdag · fråga · statisk · demo · ingen offer · hel produkt+foto |
+| Trimmerbelt_SO_2_9 | Statisk | En smärtrad ovanför priset köper klicket utan att tappa kvalificeringen | En tillagd rad | pris+smärta · fråga→siffra · statisk · inget proof · pris syns · hel produkt+foto |
+| Trimmerbelt_PD_17_1 | Statisk | Featuretydlighet konverterar den som fattat nyttan men inte kan föreställa sig föremålet | Delar utpekade vs produkt oannoterad | produkt/feature · påstående · annoterad statisk · demo · ingen offer · hel produkt+foto |
+| Trimmerbelt_PD_1_5_H1 | Video (0 produktion) | Pris först i texten kvalificerar läsaren före tittandet | **Endast primärtext** | pris i text · fråga (oförändrad) · video (oförändrad) · offer först · äkta UGC |
+
+Backlog: **Judge.me-citatstatiken delvis upplåst** — det verifierade snittbetyget (4,75/5,
+8 recensioner) kräver ingen export och används i `SP_6_1` `[delvis använd i batch #7]`.
+Citatstatiken med recensionstexter är fortfarande blockerad. Bundle-vinkeln fortsatt ägarbeslut.
+
+**Notion:** 7 items i "Trimmer belt creative hub", Status `Draft`, Typ `Video - Pending Approval`.
+
+## Åtgärder och öppna punkter 2026-08-12
+
+- 🔴 **Produktionskön är nu flaskhalsen, inte briefandet.** Obyggt/olaunchat: batch #5:s
+  `PD_8_1_H1` och `PD_11_1`, hela batch #6 (7 st), hela batch #7 (7 st) = **16 briefer i kö**.
+  Prioritetsordning: (1) `PD_12_1_H1/H2` äkta creator-UGC — kontots största hål,
+  (2) `PD_1_4_H1` + `PD_1_5_H1` copytesterna — fem minuters bygge var,
+  (3) batch #7:s statics — produktionsledet som bevisligen fungerar.
+- 🔴 **`SO_2_1` kör fortfarande "FÅ 20% RABATT IDAG"** vid 599 kr. Fjärde körningen i rad.
+  `SO_2_7` är nu **live med korrekt pris i identisk layout** — ersättaren finns, så det finns
+  inget kvar som talar för att låta det felaktiga claimet ligga kvar. **Ägarbeslut.**
+- 🟡 **Bevaka `PD_2_4`** (321 kr, 0 köp) och **`PD_4_1`** (557 kr, 2 köp, CPA 278) — båda
+  strax under grinden, PD_4_1 med den bästa CPA:n bland obedömda.
+- 🟡 **Frekvens 3,09 och stigande.** `PD_16_1` är motmedlet; om det når ny publik ska vinkeln
+  byggas i video också.
+- ⚠️ **Target-CPA 185 och break-even 326 är fortfarande räknade på gamla priset 509 kr.**
+  Alla vinstsiffror ovan är därmed konservativa. **Ägaren räknar om.**
