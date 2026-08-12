@@ -65,6 +65,7 @@ inte; äldre Mastern-material i `docs/` och `pipeline/` (utom `pipeline/quota.mj
 | `/notion <db>, <mapplänk>` | Ladda upp batchens briefer till Notion |
 | `/sheet <id>` | Fyll i tracking-sheetet (xlsx) |
 | `/ugc <id> <ny info>` | Uppdatera UGC-plan och deadlines |
+| `/listicle <id> [vinkel]` | Bygg en advertorial-listicle (klonad mall, aldrig från tomt blad) |
 
 ## Var saker finns
 
@@ -79,6 +80,7 @@ inte; äldre Mastern-material i `docs/` och `pipeline/` (utom `pipeline/quota.mj
 | SOP: produkttest-pipeline | `docs/os/SOP-06-produkttest.md` |
 | **Analysmetoden (obligatorisk vid all bedömning)** | **`docs/os/ANALYSMETOD.md`** |
 | Notion-formatet för briefer (exakt spec) | `docs/os/NOTION-FORMAT.md` |
+| **Listicle-frameworket (advertorials)** | **`docs/os/LISTICLE-FRAMEWORK.md`** |
 | Produkt-konfig + launch-logg | `products/products.json` |
 | Produktminne (DNA, batch-logg, backlog) | `products/<id>/` |
 | Kvot-skriptet | `pipeline/quota.mjs` |
