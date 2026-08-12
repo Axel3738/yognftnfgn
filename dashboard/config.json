@@ -53,6 +53,14 @@
         {
           "name": "Creative hub golf grill kit",
           "databaseId": "3aa270ab908c801385d6cd8548c015b2"
+        },
+        {
+          "name": "Beach crocs creative hub",
+          "databaseId": "3aa270ab908c802ba7a4eb74d08d7eb7"
+        },
+        {
+          "name": "Mower seat creative hub",
+          "databaseId": "3aa270ab908c80c088aacb4935db8f33"
         }
       ]
     },
@@ -75,7 +83,12 @@
       "id": "matstrumpor",
       "name": "Matstrumpor",
       "teamspaceId": "3a9270ab-908c-81f8-b806-00421f2a98e3",
-      "hubs": []
+      "hubs": [
+        {
+          "name": "Matstrumpor creative hub",
+          "databaseId": "3a7270ab908c80d29f35e73e51e457ff"
+        }
+      ]
     },
     {
       "id": "ploomi",
