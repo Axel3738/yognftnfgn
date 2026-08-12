@@ -75,6 +75,23 @@ export function enrichTask(task, cfg, tz) {
   };
 }
 
+/**
+ * Vems bord ligger bollen på?
+ *
+ * Utan den här uppdelningen läses varje stillastående task som att redigeraren
+ * är sen. Men en task som är inlämnad och väntar på granskning ligger inte hos
+ * redigeraren alls — den ligger hos den som ska titta på den. Att blanda ihop
+ * de två gör att panelen pekar åt fel håll, vilket är värre än att inte peka.
+ */
+const COURT = {
+  'Väntar på granskning': 'reviewer',
+  'Revision obesvarad': 'editor',
+  'Ingen rörelse': 'editor',
+  'Tilldelad men aldrig påbörjad': 'editor',
+  'Saknar ansvarig': 'unassigned',
+};
+const courtOf = detail => COURT[detail] || (String(detail).startsWith('Deadline') ? 'editor' : 'editor');
+
 /** Öppna tasks som ligger och skräpar just nu. Oberoende av vald period. */
 function openTaskFlags(tasks, thresholds, now, workdayFor) {
   const flags = [];
@@ -85,7 +102,7 @@ function openTaskFlags(tasks, thresholds, now, workdayFor) {
     const overdue = t.dueAt && toMs(t.dueAt) < now;
     if (overdue) {
       flags.push({
-        kind: 'overdue', severity: 'critical', task: t.id, editor: t.editor, title: t.title,
+        kind: 'overdue', severity: 'critical', task: t.id, editor: t.editor, title: t.title, url: t.url,
         detail: `Deadline passerad (${localDate(t.dueAt, tz)})`,
         minutes: businessMinutes(t.dueAt, now, cfg, tz),
       });
@@ -105,7 +122,7 @@ function openTaskFlags(tasks, thresholds, now, workdayFor) {
       // att lösa, inte redigerarnas.
       if (idleMin >= thresholds.idleAfterBusinessHours * 60) {
         flags.push({
-          kind: 'unassigned', severity: 'warning', task: t.id, editor: null, title: t.title,
+          kind: 'unassigned', severity: 'warning', task: t.id, editor: null, title: t.title, url: t.url,
           detail: 'Saknar ansvarig', minutes: idleMin,
         });
       }
@@ -113,13 +130,13 @@ function openTaskFlags(tasks, thresholds, now, workdayFor) {
       // Ligger i inkorgen och har aldrig rört sig.
       if (idleMin >= thresholds.idleAfterBusinessHours * 60) {
         flags.push({
-          kind: 'not_started', severity: 'warning', task: t.id, editor: t.editor, title: t.title,
+          kind: 'not_started', severity: 'warning', task: t.id, editor: t.editor, title: t.title, url: t.url,
           detail: 'Tilldelad men aldrig påbörjad', minutes: idleMin,
         });
       }
     } else if (idleMin >= thresholds.staleAfterBusinessHours * 60) {
       flags.push({
-        kind: 'stale', severity: 'serious', task: t.id, editor: t.editor, title: t.title,
+        kind: 'stale', severity: 'serious', task: t.id, editor: t.editor, title: t.title, url: t.url,
         detail: t.state === 'revision' ? 'Revision obesvarad'
           : t.state === 'in_review' ? 'Väntar på granskning'
           : 'Ingen rörelse',
@@ -129,7 +146,7 @@ function openTaskFlags(tasks, thresholds, now, workdayFor) {
       });
     }
   }
-  return flags.sort((a, b) => b.minutes - a.minutes);
+  return flags.map(f => ({ ...f, court: courtOf(f.detail) })).sort((a, b) => b.minutes - a.minutes);
 }
 
 /** Aggregerar en uppsättning tasks till nyckeltal. */
@@ -303,6 +320,18 @@ export function computeMetrics({ tasks: rawTasks, config, periodDays, now = Date
 
   const flags = openTaskFlags(all, config.thresholds, nowMs, workdayFor);
 
+  // Summering per bord: antal och hur mycket väntan som samlats där.
+  const perDay = minutesPerWorkday(cfg);
+  const courts = ['editor', 'reviewer', 'unassigned'].map(court => {
+    const mine = flags.filter(f => f.court === court);
+    return {
+      court,
+      count: mine.length,
+      waitingDays: Math.round(mine.reduce((a, f) => a + f.minutes, 0) / perDay),
+      oldestDays: mine.length ? Math.round(Math.max(...mine.map(f => f.minutes)) / perDay) : 0,
+    };
+  });
+
   // Nulägesvy: fungerar även när tidshistoriken saknas (importerad data där vi
   // vet VAD som gäller men inte NÄR det hände). Räknar allt, inte bara perioden.
   const STATE_ORDER = ['assigned', 'in_progress', 'in_review', 'revision', 'approved', 'cancelled'];
@@ -327,6 +356,58 @@ export function computeMetrics({ tasks: rawTasks, config, periodDays, now = Date
     };
   }).sort((a, b) => b.total - a.total);
 
+  // PRODUKTION — huvudmåttet. Antal annonser en person faktiskt fått färdiga.
+  //
+  // Det tidigare måttet räknade "leveranser" härledda ur Notion-kommentarer, och
+  // mätte därför vem som skriver "Kindly check!" snarare än vem som producerar.
+  // Gilz kommenterar på varje task, Carl på nästan ingen — måttet gav Gilz 19
+  // och Carl 2, medan färdiga annonser är 4 mot 8. Rakt motsatt slutsats.
+  //
+  // Period: godkännandet saknar tidsstämpel i importerad data (Notion sparar
+  // ingen historik), så månadsfördelningen utgår från när annonsen SKAPADES.
+  // Det är en approximation och heter så i gränssnittet.
+  const monthOf = ts => (ts ? localDate(ts, tz).slice(0, 7) : null);
+  const productionEditors = knownEditors.map(ed => {
+    const mine = all.filter(t => t.editor === ed.id);
+    // Notions egen status är sanningen om vad som är klart. Det härledda
+    // `state` beror på i vilken ordning händelser vecktes, och den ordningen
+    // har visat sig kunna ge motsatt svar: Gilz stod på 4 klara mot Carls 8,
+    // medan Notion säger 17 mot 10. Rå status först, härlett tillstånd bara
+    // när status saknas.
+    const isDone = t => (t.observedStatus
+      ? /^(approved|archived|translation archived)$/i.test(t.observedStatus)
+      : t.state === 'approved');
+    const done = mine.filter(isDone);
+    const byMonth = {};
+    for (const t of done) {
+      const m = monthOf(t.assignedAt);
+      if (m) byMonth[m] = (byMonth[m] || 0) + 1;
+    }
+    return {
+      id: ed.id,
+      name: ed.name || ed.id,
+      produced: done.length,
+      open: mine.filter(t => !isDone(t) && t.state !== 'cancelled').length,
+      assigned: mine.length,
+      byMonth,
+      // Kvar för jämförelse, men aldrig som huvudsiffra.
+      commentDeliveries: mine.reduce((a, t) => a + t.deliveries.length, 0),
+    };
+  }).filter(e => e.assigned > 0).sort((a, b) => b.produced - a.produced);
+
+  const months = [...new Set(productionEditors.flatMap(e => Object.keys(e.byMonth)))].sort();
+  const orphan = all.filter(t => !t.editor);
+  const production = {
+    editors: productionEditors,
+    months,
+    total: productionEditors.reduce((a, e) => a + e.produced, 0),
+    // Annonser utan ansvarig redovisas, men aldrig som ett problem: de flesta är
+    // färdiga. Att flagga dem vore att larma om arbete som redan är gjort.
+    orphanTotal: orphan.length,
+    orphanApproved: orphan.filter(t => t.state === 'approved').length,
+    orphanOpen: orphan.filter(t => !['approved', 'cancelled'].includes(t.state)).length,
+  };
+
   const unassigned = all.filter(t => !t.editor).length;
   const snapshot = {
     editors: snapshotEditors,
@@ -347,6 +428,7 @@ export function computeMetrics({ tasks: rawTasks, config, periodDays, now = Date
     snapshot,
     editors: perEditor.sort((a, b) => b.stats.deliveries - a.stats.deliveries),
     flags,
+    courts,
     tasks: cur.tasks.map(t => ({
       id: t.id, title: t.title, editor: t.editor, type: t.type, state: t.state,
       assignedAt: t.assignedAt, firstDelivery: t.firstDelivery, approvedAt: t.approvedAt,

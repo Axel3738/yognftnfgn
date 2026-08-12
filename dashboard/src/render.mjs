@@ -247,15 +247,55 @@ tbody tr:hover { background: color-mix(in srgb, var(--text-primary) 4%, transpar
 }
 .pill .dot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
 
+/* Åtgärdslistan — den enda delen man faktiskt jobbar I, så den är byggd för
+   tumme och telefon: hela raden är ett tryckyta mot Notion, kryssrutan är
+   44px och ligger på motsatt sida från länken så man inte råkar öppna fel. */
 .flags { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .flags li {
-  display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center;
-  padding: 11px 13px; border: 1px solid var(--border); border-radius: 11px; background: var(--page);
+  display: grid; grid-template-columns: auto 1fr auto; gap: 4px 12px; align-items: center;
+  border: 1px solid var(--border); border-radius: 12px; background: var(--page);
+  transition: opacity .15s ease, background .15s ease;
 }
-.flags .icon { width: 18px; text-align: center; font-size: 13px; }
-.flags .who-line { font-weight: 600; }
-.flags .detail { color: var(--text-secondary); font-size: 12.5px; }
-.flags .when { color: var(--text-muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.flags li.done { opacity: 0.4; }
+.flags .tick {
+  appearance: none; border: 0; background: none; cursor: pointer;
+  width: 44px; height: 44px; display: grid; place-items: center;
+  border-radius: 12px 0 0 12px; color: var(--text-muted); font-size: 16px;
+}
+.flags .tick:hover { color: var(--text-primary); background: color-mix(in srgb, var(--text-primary) 6%, transparent); }
+.flags .tick[aria-pressed="true"] { color: var(--good); }
+.flags .body {
+  display: block; text-decoration: none; color: inherit;
+  padding: 10px 0; min-width: 0;
+}
+.flags .body:hover .who-line { text-decoration: underline; }
+.flags .who-line {
+  font-weight: 600; font-size: 14px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.flags .detail { color: var(--text-secondary); font-size: 12.5px; margin-top: 2px; }
+.flags .detail .sev { font-weight: 600; }
+.flags .when {
+  color: var(--text-secondary); font-size: 12.5px; font-variant-numeric: tabular-nums;
+  padding-right: 14px; white-space: nowrap; font-weight: 600;
+}
+
+/* Filterchips */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; padding: 0; list-style: none; }
+.chip {
+  appearance: none; cursor: pointer; font: inherit; font-size: 12.5px;
+  border: 1px solid var(--border); background: var(--page); color: var(--text-secondary);
+  border-radius: 999px; padding: 6px 12px; display: inline-flex; align-items: center; gap: 6px;
+}
+.chip[aria-pressed="true"] { background: var(--text-primary); color: var(--surface); border-color: var(--text-primary); }
+.chip .n { font-variant-numeric: tabular-nums; opacity: 0.7; }
+
+.rowbtn {
+  appearance: none; cursor: pointer; font: inherit; font-size: 12.5px;
+  border: 1px solid var(--border); background: var(--page); color: var(--text-secondary);
+  border-radius: 8px; padding: 6px 11px;
+}
+.rowbtn:hover { color: var(--text-primary); }
 .empty { color: var(--text-muted); font-size: 13px; padding: 14px 0; }
 
 details.tableview { margin-top: 14px; }
@@ -263,9 +303,58 @@ details.tableview summary { cursor: pointer; color: var(--text-secondary); font-
 details.tableview[open] summary { margin-bottom: 10px; }
 
 footer.foot { margin-top: 36px; color: var(--text-muted); font-size: 12px; border-top: 1px solid var(--grid); padding-top: 14px; }
-@media (max-width: 640px) {
+/* --- Telefon ------------------------------------------------------------
+   Panelen läses oftare i handen än vid skrivbordet, så mobilen är inte ett
+   undantagsfall utan det normala. Tabeller blir kort (en tabell som scrollar
+   i sidled läser ingen på en telefon), rubriken och flikarna fastnar i toppen
+   så man alltid vet var man är, och botten får plats för hemknappsområdet. */
+@media (max-width: 720px) {
+  #app { padding: 16px 14px calc(48px + env(safe-area-inset-bottom)); }
+  h1 { font-size: 19px; }
+  .sub { font-size: 12px; }
   .grid2 { grid-template-columns: 1fr; }
-  .tile .value.hero { font-size: 38px; }
+  .tiles { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; }
+  .tile { padding: 13px 14px; border-radius: 12px; }
+  .tile .value { font-size: 24px; }
+  .tile .value.hero { font-size: 36px; }
+  .card { padding: 15px 14px; border-radius: 12px; }
+  section { margin-top: 18px; }
+
+  /* Flikraden fastnar i toppen och scrollar i sidled i stället för att radbryta. */
+  .tabs {
+    position: sticky; top: 0; z-index: 30;
+    background: var(--page); margin: 14px -14px 0; padding: 0 14px;
+    flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tabs .tab { white-space: nowrap; padding: 11px 12px; }
+
+  /* Tabell → kort. Varje cell får sin rubrik framför sig via data-label. */
+  .table-scroll { max-height: none; overflow: visible; }
+  .as-cards thead { display: none; }
+  .as-cards, .as-cards tbody, .as-cards tr, .as-cards td { display: block; width: 100%; }
+  .as-cards tr {
+    border: 1px solid var(--border); border-radius: 12px;
+    padding: 12px 14px; margin-bottom: 8px; background: var(--page);
+  }
+  .as-cards td {
+    border: 0; padding: 3px 0; text-align: left;
+    display: flex; justify-content: space-between; gap: 12px; align-items: baseline;
+  }
+  .as-cards td::before {
+    content: attr(data-label); color: var(--text-muted); font-size: 12px;
+    flex: none;
+  }
+  .as-cards td:first-child { padding-bottom: 8px; }
+  .as-cards td:first-child::before { content: none; }
+
+  .flags .who-line { white-space: normal; }
+  .flags li { grid-template-columns: auto 1fr; }
+  .flags .when { grid-column: 2; padding: 0 14px 10px 0; }
+
+  /* Den klistrade flikraden ligger ovanpå sidan. Utan marginal här hamnar det
+     man just scrollat till under den, och trycket landar på fliken i stället. */
+  .flags li, section, .card, .chip { scroll-margin-top: 56px; }
 }
 `;
 
@@ -274,8 +363,21 @@ const P = JSON.parse(document.getElementById('payload').textContent);
 const CFG = P.config;
 const NS = 'http://www.w3.org/2000/svg';
 
+// Avbockningar sparas i webbläsaren. De rör aldrig Notion — det är en
+// arbetslista för egen del, inte en statusändring för teamet.
+const DONE_KEY = 'redigerarpanel.hanterade';
+function loadDone() {
+  try { return new Set(JSON.parse(localStorage.getItem(DONE_KEY) || '[]')); }
+  catch { return new Set(); }
+}
+function saveDone() {
+  try { localStorage.setItem(DONE_KEY, JSON.stringify([...state.done])); } catch {}
+}
+
 const state = {
   workspace: P.defaultWorkspace,
+  court: 'all',
+  done: loadDone(),
   period: P.defaultPeriod,
   hidden: new Set(),
   sort: { key: 'deliveries', dir: -1 },
@@ -529,6 +631,13 @@ function sparkline(series, color) {
   ]);
 }
 
+/* Ger varje cell sin kolumnrubrik, så tabellen kan bli kort på mobilen
+   utan att siffrorna tappar betydelse. */
+function labelCells(tr, headers) {
+  [...tr.children].forEach((td, i) => { if (headers[i]) td.setAttribute('data-label', headers[i]); });
+  return tr;
+}
+
 function escapeHtml(x) {
   return String(x ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 }
@@ -729,10 +838,10 @@ function snapshotSection(M) {
       el('span', { text: STATE_TEXT[st] }),
     ])));
 
-  const table = el('table', {}, [
+  const table = el('table', { class: 'as-cards' }, [
     el('thead', {}, [el('tr', {}, ['Redigerare', ...states.map(st => STATE_TEXT[st]), 'Totalt', 'Öppna', 'Äldsta öppna', 'Mätbara', 'Tidszon']
       .map(h => el('th', { text: h, scope: 'col' })))]),
-    el('tbody', {}, rows.map(r => el('tr', {}, [
+    el('tbody', {}, rows.map(r => labelCells(el('tr', {}, [
       el('td', {}, [el('div', { class: 'who' }, [
         el('span', { class: 'key', style: 'background:' + colorOf(r.id) }),
         el('span', { text: r.name }),
@@ -743,7 +852,7 @@ function snapshotSection(M) {
       el('td', { class: 'num', text: dur(r.oldestOpenMin) }),
       el('td', { class: 'num', text: num(r.timedTasks) + ' / ' + num(r.total) }),
       el('td', { text: (r.timezone || '').replace(/^\w+\//, '') }),
-    ]))),
+    ]), ['Redigerare', ...states.map(st => STATE_TEXT[st]), 'Totalt', 'Öppna', 'Äldsta öppna', 'Mätbara', 'Tidszon']))),
   ]);
 
   // Mättäckning per person. Utan den ser den som kommenterar flitigt ut som den
@@ -984,7 +1093,7 @@ function leaderboardSection(M) {
     const spark = el('td', {});
     spark.appendChild(sparkline(e.daily.map(d => d.count), colorOf(e.id)));
     tds.push(spark);
-    return el('tr', {}, tds);
+    return labelCells(el('tr', {}, tds), [...COLUMNS.map(c => c.label), 'Trend']);
   });
 
   return el('section', {}, [
@@ -992,7 +1101,7 @@ function leaderboardSection(M) {
       el('h2', { text: 'Per redigerare' }),
       el('p', { class: 'hint', text: 'Klicka på en kolumnrubrik för att sortera. * Beläggning = uppskattad handpåläggning delat med tillgänglig arbetstid — grovt mått, inte tidrapport.' }),
       el('div', { class: 'table-scroll' }, [
-        el('table', {}, [el('thead', {}, [head]), el('tbody', {}, body)]),
+        el('table', { class: 'as-cards' }, [el('thead', {}, [head]), el('tbody', {}, body)]),
       ]),
     ]),
   ]);
@@ -1000,21 +1109,67 @@ function leaderboardSection(M) {
 
 function flagsSection(M) {
   const ICON = { critical: '■', serious: '▲', warning: '▲' };
-  const SHOWN = 25;
-  const items = M.flags.slice(0, SHOWN).map(f => el('li', {}, [
-    el('span', { class: 'icon', style: 'color:' + STATUS[f.severity].color, text: ICON[f.severity] || '·' }),
-    el('div', {}, [
-      el('div', { class: 'who-line', text: f.title }),
-      el('div', { class: 'detail', text: nameOf(f.editor) + ' · ' + f.detail +
-        (f.approximate ? ' · tid räknad från när tasken skapades' : '') }),
-    ]),
-    el('div', { class: 'when', text: dur(f.minutes) }),
-  ]));
+  const SHOWN = 40;
+
+  // Vems bord bollen ligger på. Utan den här uppdelningen läses varje
+  // stillastående task som att redigeraren är sen — och då pekar panelen åt
+  // fel håll, vilket är sämre än att inte peka alls.
+  const COURT_TEXT = {
+    editor: { label: 'Hos redigeraren', hint: 'Ska göras eller göras om' },
+    reviewer: { label: 'Hos granskaren', hint: 'Inlämnat, väntar på svar' },
+    unassigned: { label: 'Saknar ansvarig', hint: 'Ingen har fått den' },
+  };
+  const courts = (M.courts || []).filter(c => c.count > 0);
+
+  // Filtrera på vems bord. Chipsen visar antal, så man ser vad man väljer bort.
+  const filtered = state.court === 'all' ? M.flags : M.flags.filter(f => f.court === state.court);
+  const chips = el('ul', { class: 'chips' }, [
+    ['all', 'Allt', M.flags.length],
+    ...courts.map(c => [c.court, COURT_TEXT[c.court].label, c.count]),
+  ].map(([id, label, n]) => el('li', {}, [
+    el('button', {
+      class: 'chip', 'aria-pressed': String(state.court === id),
+      onclick: () => { state.court = id; render(); },
+    }, [el('span', { text: label }), el('span', { class: 'n', text: String(n) })]),
+  ])));
+
+  // Hela raden är en länk till Notion-sidan. På telefonen öppnar det appen,
+  // så man går från "den här står still" till att kunna göra något åt det
+  // med ett tryck. Kryssrutan är avbockning för egen del och sparas i
+  // webbläsaren — den rör inte Notion och syns inte för någon annan.
+  const items = filtered.slice(0, SHOWN).map(f => {
+    const done = state.done.has(f.task);
+    const li = el('li', { class: done ? 'done' : '' }, [
+      el('button', {
+        class: 'tick', 'aria-pressed': String(done),
+        'aria-label': done ? 'Markera som ej hanterad' : 'Markera som hanterad',
+        title: 'Bockas av lokalt i din webbläsare — ändrar inget i Notion',
+        onclick: () => {
+          if (state.done.has(f.task)) state.done.delete(f.task); else state.done.add(f.task);
+          saveDone(); render();
+        },
+      }, [el('span', { text: done ? '✓' : '○' })]),
+      el(f.url ? 'a' : 'div', {
+        class: 'body', href: f.url || null,
+        target: f.url ? '_blank' : null, rel: f.url ? 'noreferrer' : null,
+      }, [
+        el('div', { class: 'who-line', text: f.title }),
+        el('div', { class: 'detail' }, [
+          el('span', { class: 'sev', style: 'color:' + STATUS[f.severity].color,
+            text: (ICON[f.severity] || '·') + ' ' + f.detail }),
+          el('span', { text: ' · ' + nameOf(f.editor) +
+            (f.approximate ? ' · tid räknad från när tasken skapades' : '') }),
+        ]),
+      ]),
+      el('div', { class: 'when', text: dur(f.minutes) }),
+    ]);
+    return li;
+  });
 
   // Sammanfattning per typ — annars döljer en lång lista att det egentligen
   // är två eller tre problem, inte femtio.
   const byKind = {};
-  for (const f of M.flags) byKind[f.detail] = (byKind[f.detail] || 0) + 1;
+  for (const f of filtered) byKind[f.detail] = (byKind[f.detail] || 0) + 1;
   const summary = Object.entries(byKind).sort((a, b) => b[1] - a[1])
     .map(([detail, n]) => el('li', {}, [
       // Neutral prick: det här är antal per typ, inte en statusbedömning.
@@ -1022,15 +1177,45 @@ function flagsSection(M) {
       el('span', { text: detail + ': ' + n }),
     ]));
 
+  // Kopiera listan som text — klar att klistra in i Slack.
+  const copyBtn = el('button', {
+    class: 'rowbtn', style: 'margin-top:12px',
+    onclick: async ev => {
+      const lines = filtered.slice(0, SHOWN)
+        .filter(f => !state.done.has(f.task))
+        .map(f => '• ' + f.title + ' — ' + f.detail + ', ' + nameOf(f.editor) +
+          ', ligger ' + dur(f.minutes) + (f.url ? '\n  ' + f.url : ''));
+      const text = 'Står still (' + lines.length + ' st):\n' + lines.join('\n');
+      try {
+        await navigator.clipboard.writeText(text);
+        ev.target.textContent = 'Kopierat ✓';
+      } catch {
+        ev.target.textContent = 'Kunde inte kopiera — markera texten manuellt';
+      }
+      setTimeout(() => { ev.target.textContent = 'Kopiera listan'; }, 2500);
+    },
+    text: 'Kopiera listan',
+  });
+
+  const courtTiles = courts.length ? el('div', { class: 'tiles', style: 'margin-bottom:16px' },
+    courts.map(c => el('div', { class: 'tile' }, [
+      el('div', { class: 'label', text: COURT_TEXT[c.court].label }),
+      el('div', { class: 'value', text: num(c.count) }),
+      el('div', { class: 'delta', text: COURT_TEXT[c.court].hint + ' · äldsta ' + c.oldestDays + ' d' }),
+    ]))) : null;
+
   return el('section', {}, [
     el('div', { class: 'card' }, [
       el('h2', { text: 'Behöver en knuff' }),
-      el('p', { class: 'hint', text: 'Öppna tasks som står still, har passerat deadline eller väntar på en obesvarad revision. Detta är exakt vad Slack-digesten skickar ut.' }),
-      M.flags.length ? el('ul', { class: 'legend' }, summary) : null,
+      courtTiles,
+      el('p', { class: 'hint', text: 'Tryck på en rad för att öppna den i Notion. Ringen bockar av den åt dig — den sparas i din webbläsare och ändrar inget för någon annan.' }),
+      M.flags.length ? chips : null,
+      filtered.length ? el('ul', { class: 'legend' }, summary) : null,
       items.length ? el('ul', { class: 'flags' }, items) : el('div', { class: 'empty', text: 'Inget som skräpar. Allt rör sig.' }),
-      M.flags.length > SHOWN
+      items.length ? copyBtn : null,
+      filtered.length > SHOWN
         ? el('p', { class: 'hint', style: 'margin-top:12px;margin-bottom:0',
-            text: 'Visar de ' + SHOWN + ' som legat längst av ' + M.flags.length + '.' })
+            text: 'Visar de ' + SHOWN + ' som legat längst av ' + filtered.length + '.' })
         : null,
     ]),
   ]);

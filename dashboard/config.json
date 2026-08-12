@@ -1,15 +1,19 @@
 {
   "team": "Grillkliniken – Creative",
   "timezone": "Europe/Stockholm",
-
   "workday": {
-    "days": [1, 2, 3, 4, 5],
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
     "start": "09:00",
     "end": "18:00",
     "lunchStart": "12:00",
     "lunchMinutes": 60
   },
-
   "targets": {
     "turnaroundHours": 8,
     "revisionTurnaroundHours": 4,
@@ -18,17 +22,19 @@
     "deliveriesPerActiveDay": 2,
     "onTimeRate": 0.85
   },
-
   "thresholds": {
     "revisionRateWarning": 0.3,
     "revisionRateCritical": 0.45,
     "staleAfterBusinessHours": 24,
     "idleAfterBusinessHours": 16
   },
-
-  "periods": [7, 14, 30, 90],
+  "periods": [
+    7,
+    14,
+    30,
+    90
+  ],
   "defaultPeriodDays": 30,
-
   "//workspaces": "En flik per teamspace i panelen. Lägg till en hub här så dyker den upp i rätt flik — inget annat behöver ändras.",
   "workspaces": [
     {
@@ -36,9 +42,26 @@
       "name": "Grillkliniken",
       "teamspaceId": "332270ab-908c-8138-8581-0042819eeea0",
       "hubs": [
-        { "name": "Creative Hub master", "databaseId": "36f270ab908c803b8949ff2326f4f76c" },
-        { "name": "Creative hub prank apron", "databaseId": "3aa270ab908c8036b0cdfb49f6f37289" },
-        { "name": "Creative hub golf grill kit", "databaseId": "3aa270ab908c801385d6cd8548c015b2" }
+        {
+          "name": "Creative Hub master",
+          "databaseId": "36f270ab908c803b8949ff2326f4f76c"
+        },
+        {
+          "name": "Creative hub prank apron",
+          "databaseId": "3aa270ab908c8036b0cdfb49f6f37289"
+        },
+        {
+          "name": "Creative hub golf grill kit",
+          "databaseId": "3aa270ab908c801385d6cd8548c015b2"
+        },
+        {
+          "name": "Beach crocs creative hub",
+          "databaseId": "3aa270ab908c802ba7a4eb74d08d7eb7"
+        },
+        {
+          "name": "Mower seat creative hub",
+          "databaseId": "3aa270ab908c80c088aacb4935db8f33"
+        }
       ]
     },
     {
@@ -46,15 +69,26 @@
       "name": "Bäverbutiken",
       "teamspaceId": "3a9270ab-908c-81a8-a48c-004222d195e7",
       "hubs": [
-        { "name": "Boat cover 420D creative hub", "databaseId": "3b0270ab908c80a78793fa11d8c0f6e4" },
-        { "name": "Trimmer belt creative hub", "databaseId": "3aa270ab908c808b9d87d1f1a0d70cbc" }
+        {
+          "name": "Boat cover 420D creative hub",
+          "databaseId": "3b0270ab908c80a78793fa11d8c0f6e4"
+        },
+        {
+          "name": "Trimmer belt creative hub",
+          "databaseId": "3aa270ab908c808b9d87d1f1a0d70cbc"
+        }
       ]
     },
     {
       "id": "matstrumpor",
       "name": "Matstrumpor",
       "teamspaceId": "3a9270ab-908c-81f8-b806-00421f2a98e3",
-      "hubs": []
+      "hubs": [
+        {
+          "name": "Matstrumpor creative hub",
+          "databaseId": "3a7270ab908c80d29f35e73e51e457ff"
+        }
+      ]
     },
     {
       "id": "ploomi",
@@ -63,13 +97,11 @@
       "hubs": []
     }
   ],
-
   "slack": {
     "channel": "#creative",
     "digestSchedule": "0 7 * * 1-5",
     "mentionOnFlags": true
   },
-
   "notion": {
     "databaseId": "36f270ab908c803b8949ff2326f4f76c",
     "_databaseName": "Creative Hub master",
@@ -86,14 +118,42 @@
       "brand": "Kategori"
     },
     "//includeTypes": "Bara de här Typ-värdena är riktiga annonser och mäts. Allt annat i hubbarna är dokumentation, arkiv eller stödsidor. Enligt Axel 2026-08-11: allt som faktiskt är en annons har Typ 'Video - Pending Approval' — det är sedan STATUS som avgör var i flödet den ligger. Lägg till 'Image - Pending Approval' här om bildannonser också ska räknas.",
-    "includeTypes": ["Video - Pending Approval"],
+    "includeTypes": [
+      "Video - Pending Approval"
+    ],
     "statusMap": {
-      "assigned": ["Draft"],
-      "started": ["In progress", "To be translated"],
-      "delivered": ["Creative strat review", "To be Reviewed", "In Review", "Translation in review", "Hereer to be rewied"],
-      "revision_requested": ["In progress 2"],
-      "approved": ["Approved", "Archived", "Translation archived"],
-      "cancelled": ["Not used"]
+      "assigned": [
+        "Draft"
+      ],
+      "started": [
+        "In progress",
+        "To be translated"
+      ],
+      "delivered": [
+        "Creative strat review",
+        "To be Reviewed",
+        "In Review",
+        "Translation in review",
+        "Hereer to be rewied"
+      ],
+      "revision_requested": [
+        "In progress 2"
+      ],
+      "approved": [
+        "Approved",
+        "Archived",
+        "Translation archived"
+      ],
+      "cancelled": [
+        "Not used"
+      ]
     }
+  },
+  "meta": {
+    "//": "Ersättning: varje redigerare får payoutRate av adspenden på de annonser hen gjort. Kopplingen går via annonsnamnet, som är detsamma i Meta som i Notion.",
+    "payoutRate": 0.004,
+    "historyDays": 120,
+    "currency": "SEK",
+    "accounts": []
   }
 }

@@ -26,6 +26,7 @@ import { generateSeed } from './src/seed.mjs';
 import { buildDigest, buildNudges, postWebhook, postApi } from './src/slack.mjs';
 import { importCSV } from './src/ingest/csv.mjs';
 import { formatDuration } from './src/time.mjs';
+import { trackOf } from './src/track.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const P = {
@@ -33,6 +34,7 @@ const P = {
   events: join(HERE, 'data', 'events.jsonl'),
   editors: join(HERE, 'data', 'editors.json'),
   snapshot: join(HERE, 'data', 'notion-snapshot.json'),
+  meta: join(HERE, 'data', 'meta-ads.json'),
   out: join(HERE, 'dist', 'dashboard.html'),
 };
 
@@ -81,20 +83,39 @@ function cmdBuild() {
 
   const now = Date.now();
 
-  // En flik per teamspace, plus "Alla". Bara teamspaces som faktiskt har data
-  // får en flik — tomma flikar är brus.
-  const spaces = [{ id: 'all', name: 'Alla' }];
+  // Flikar = teamspace × spår. Produktion och översättning är två olika
+  // arbeten med olika folk och olika tempo; mäts de ihop döljer de varandra.
+  // Översättningarna får därför egna flikar i stället för att blandas in.
+  const track = new Map(tasks.map(t => [t.id, trackOf(t)]));
+  const has = (wsId, tr) => tasks.some(t =>
+    (wsId === 'all' ? true : wsId === 'unassigned' ? !t.workspace : t.workspace === wsId) &&
+    track.get(t.id) === tr);
+
+  const spaces = [{ id: 'all', name: 'Alla annonser' }];
   for (const ws of config.workspaces || []) {
-    if (tasks.some(t => t.workspace === ws.id)) spaces.push({ id: ws.id, name: ws.name });
+    if (has(ws.id, 'production')) spaces.push({ id: ws.id, name: ws.name });
   }
-  // Tasks utan teamspace ska inte försvinna tyst.
-  if (tasks.some(t => !t.workspace)) spaces.push({ id: 'unassigned', name: 'Utan teamspace' });
+  if (has('unassigned', 'production')) spaces.push({ id: 'unassigned', name: 'Utan teamspace' });
+  // Översättningsflikarna sist, så det vanliga arbetet ligger först.
+  for (const ws of config.workspaces || []) {
+    if (has(ws.id, 'translation')) {
+      spaces.push({ id: ws.id + ':translation', name: ws.name + ' · Översättning', track: 'translation' });
+    }
+  }
+  if (has('unassigned', 'translation')) {
+    spaces.push({ id: 'unassigned:translation', name: 'Utan teamspace · Översättning', track: 'translation' });
+  }
 
   const byWorkspace = {};
   for (const space of spaces) {
-    const subset = space.id === 'all' ? tasks
-      : space.id === 'unassigned' ? tasks.filter(t => !t.workspace)
-      : tasks.filter(t => t.workspace === space.id);
+    const wantTrack = space.track || 'production';
+    const wsId = space.id.replace(/:translation$/, '');
+    const subset = tasks.filter(t => {
+      if (track.get(t.id) !== wantTrack) return false;
+      if (wsId === 'all') return true;
+      if (wsId === 'unassigned') return !t.workspace;
+      return t.workspace === wsId;
+    });
     byWorkspace[space.id] = {};
     for (const d of config.periods) {
       byWorkspace[space.id][d] = computeMetrics({ tasks: subset, config, periodDays: d, now, editors });
@@ -189,7 +210,7 @@ async function cmdIngest() {
     const rows = Array.isArray(raw) ? raw : raw.rows;
     if (!Array.isArray(rows)) die('Filen saknar en "rows"-array.');
 
-    const { events: incoming, unknownStatuses, skipped } = rowsToEvents(rows, editors, raw.hub || 'notion', raw.workspace || null, config.notion.includeTypes || []);
+    const { events: incoming, unknownStatuses, skipped } = rowsToEvents(rows, editors, raw.hub || 'notion', raw.workspace || null, config.notion.includeTypes || [], raw.exportedAt ? raw.exportedAt + 'T23:59:00Z' : undefined);
     const existing = readEvents(P.events);
     const { merged, added } = mergeEvents(existing, incoming);
 
@@ -239,6 +260,7 @@ async function cmdIngest() {
     // kvar för alltid: en felklassad kommentar, en redigerad text, en borttagen
     // kommentar — allt skulle ligga kvar och räknas. Händelser från andra
     // källor (pollern, CSV, manuell loggning) rörs inte.
+    const fetchedAt = new Date().toISOString();
     const previous = readEvents(P.events);
     const DERIVED = new Set(['notion-import', 'notion-comment']);
     let events = previous.filter(e => !DERIVED.has(e.source));
@@ -246,7 +268,7 @@ async function cmdIngest() {
     if (dropped) say(`  Bygger om ${dropped} härledda händelser från grunden.`);
 
     for (const b of bundles) {
-      const rowRes = rowsToEvents(b.rows, editors, b.hub, b.workspace, config.notion.includeTypes || []);
+      const rowRes = rowsToEvents(b.rows, editors, b.hub, b.workspace, config.notion.includeTypes || [], fetchedAt);
       events = mergeEvents(events, rowRes.events).merged;
 
       // Kommentarerna behöver veta vem som äger tasken → vecka raderna först.
@@ -274,6 +296,33 @@ async function cmdIngest() {
     if (flags['dry-run']) { say(`(dry-run) ${addedTotal} nya händelser skulle sparas.`); return; }
     writeEvents(P.events, events);
     say(`✔ ${addedTotal} nya händelser sparade. Kör \`node cli.mjs build\`.`);
+    return;
+  }
+
+  if (kind === 'meta') {
+    const token = process.env.META_ACCESS_TOKEN;
+    if (!token) die('META_ACCESS_TOKEN saknas. Lägg den som repository secret i GitHub.');
+    const { fetchAccounts, fetchAllAccounts } = await import('./src/ingest/meta.mjs');
+
+    // Vilka konton? Config vinner; annars alla token:en når.
+    let accounts = (config.meta?.accounts || []).map(a => ({ id: String(a.id), name: a.name, brand: a.brand }));
+    if (!accounts.length) {
+      const found = await fetchAccounts(token);
+      accounts = found.map(a => ({ id: a.account_id, name: a.name }));
+      say(`  Inga konton i config — använder alla ${accounts.length} som token:en når.`);
+    }
+
+    const days = Number(flags.days || config.meta?.historyDays || 120);
+    const until = new Date(Date.now()).toISOString().slice(0, 10);
+    const since = new Date(Date.now() - days * 86400000).toISOString().slice(0, 10);
+
+    const rows = await fetchAllAccounts({ token, accounts, since, until, onProgress: say });
+    if (flags['dry-run']) { say(`(dry-run) ${rows.length} annons-dagar ${since} → ${until}.`); return; }
+
+    mkdirSync(dirname(P.meta), { recursive: true });
+    writeFileSync(P.meta, JSON.stringify({ since, until, fetchedAt: new Date().toISOString(), rows }), 'utf8');
+    const spend = rows.reduce((s, r) => s + r.spend, 0);
+    say(`✔ ${rows.length} annons-dagar sparade (${since} → ${until}), total spend ${Math.round(spend).toLocaleString('sv-SE')}.`);
     return;
   }
 

@@ -152,16 +152,43 @@ export function toMs(x) {
   return Date.parse(x);
 }
 
-/** 95 min → "1h 35m", 620 min → "1,3 dagar" (arbetsdagar). */
+/**
+ * Skriver en varaktighet så att den går att läsa högt utan att stanna upp.
+ *
+ * "3,6 d" säger ingenting — d för vad? Kalenderdagar? Arbetsdagar? Decimalen
+ * gör det värre: ingen har en känsla för vad 0,6 dagar är. Därför skrivs
+ * enheten ut, och en arbetsdag är åtta timmar mån–fre.
+ *
+ *    45  → "45 min"
+ *   300  → "5 timmar"
+ *   480  → "1 arbetsdag"
+ *  1730  → "3,5 arbetsdagar"
+ *  6000  → "2,5 veckor"        (en vecka = 5 arbetsdagar)
+ */
 export function formatDuration(minutes, cfg) {
   if (minutes == null || !Number.isFinite(minutes)) return '–';
   const perDay = minutesPerWorkday(cfg);
-  if (minutes < 60) return `${Math.round(minutes)}m`;
+  const nice = n => (Math.round(n * 10) / 10).toString().replace('.', ',');
+
+  if (minutes < 60) return `${Math.round(minutes)} min`;
   if (minutes < perDay) {
-    const h = Math.floor(minutes / 60);
-    const m = Math.round(minutes % 60);
-    return m ? `${h}h ${m}m` : `${h}h`;
+    const h = minutes / 60;
+    return h < 1.05 ? '1 timme' : `${nice(h)} timmar`;
   }
   const days = minutes / perDay;
-  return `${days.toFixed(1).replace('.', ',')} d`;
+  if (days < 10) return days < 1.05 ? '1 arbetsdag' : `${nice(days)} arbetsdagar`;
+  const weeks = days / 5;
+  return weeks < 1.05 ? '1 vecka' : `${nice(weeks)} veckor`;
+}
+
+/** Kort variant för trånga tabellceller. Samma enheter, färre tecken. */
+export function formatDurationShort(minutes, cfg) {
+  if (minutes == null || !Number.isFinite(minutes)) return '–';
+  const perDay = minutesPerWorkday(cfg);
+  const nice = n => (Math.round(n * 10) / 10).toString().replace('.', ',');
+  if (minutes < 60) return `${Math.round(minutes)} min`;
+  if (minutes < perDay) return `${nice(minutes / 60)} tim`;
+  const days = minutes / perDay;
+  if (days < 10) return `${nice(days)} dgr`;
+  return `${nice(days / 5)} v`;
 }
