@@ -25,6 +25,7 @@ import { renderDashboard } from './src/render.mjs';
 import { generateSeed } from './src/seed.mjs';
 import { buildDigest, buildNudges, postWebhook, postApi } from './src/slack.mjs';
 import { importCSV } from './src/ingest/csv.mjs';
+import { computePayout, projectMonth } from './src/payout.mjs';
 import { formatDuration } from './src/time.mjs';
 import { trackOf } from './src/track.mjs';
 
@@ -122,12 +123,32 @@ function cmdBuild() {
     }
   }
 
+  // Ersättningen: 0,4% av adspenden på de annonser man gjort. Finns inget
+  // Meta-uttag byggs panelen precis som förut, bara utan lönefliken.
+  let payout = null;
+  if (existsSync(P.meta)) {
+    try {
+      const meta = JSON.parse(readFileSync(P.meta, 'utf8'));
+      const rows = meta.rows || [];
+      if (rows.length) {
+        payout = computePayout({
+          metaRows: rows, tasks, editors,
+          rate: config.meta?.payoutRate ?? 0.004,
+        });
+        payout.fetchedAt = meta.fetchedAt || null;
+        payout.currency = config.meta?.currency || 'SEK';
+      }
+    } catch (err) {
+      say(`  ⚠ Kunde inte läsa Meta-uttaget: ${err.message}`);
+    }
+  }
+
   const demo = events.some(e => e.source === 'demo');
   const html = renderDashboard({
     config, editors, byWorkspace, spaces,
     defaultWorkspace: spaces.length > 1 ? spaces[0].id : spaces[0].id,
     defaultPeriod: config.defaultPeriodDays,
-    demo,
+    demo, payout,
   });
 
   mkdirSync(dirname(P.out), { recursive: true });
