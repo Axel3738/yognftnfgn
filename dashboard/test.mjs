@@ -72,11 +72,14 @@ test('dateRange är inklusiv i båda ändar', () => {
   assert.deepEqual(r, ['2026-08-10', '2026-08-11', '2026-08-12', '2026-08-13', '2026-08-14']);
 });
 
-test('formatDuration byter enhet vid rätt gränser', () => {
-  assert.equal(formatDuration(45, WD), '45m');
-  assert.equal(formatDuration(90, WD), '1h 30m');
-  assert.equal(formatDuration(120, WD), '2h');
-  assert.equal(formatDuration(720, WD), '1,5 d');
+test('formatDuration skriver ut enheten i klartext', () => {
+  // "3,6 d" gick inte att läsa högt utan att undra vad d betydde.
+  assert.equal(formatDuration(45, WD), '45 min');
+  assert.equal(formatDuration(60, WD), '1 timme');
+  assert.equal(formatDuration(300, WD), '5 timmar');
+  assert.equal(formatDuration(480, WD), '1 arbetsdag');
+  assert.equal(formatDuration(720, WD), '1,5 arbetsdagar');
+  assert.equal(formatDuration(4800, WD), '2 veckor');
   assert.equal(formatDuration(null, WD), '–');
 });
 

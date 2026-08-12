@@ -34,6 +34,7 @@ const P = {
   events: join(HERE, 'data', 'events.jsonl'),
   editors: join(HERE, 'data', 'editors.json'),
   snapshot: join(HERE, 'data', 'notion-snapshot.json'),
+  meta: join(HERE, 'data', 'meta-ads.json'),
   out: join(HERE, 'dist', 'dashboard.html'),
 };
 
@@ -294,6 +295,33 @@ async function cmdIngest() {
     if (flags['dry-run']) { say(`(dry-run) ${addedTotal} nya händelser skulle sparas.`); return; }
     writeEvents(P.events, events);
     say(`✔ ${addedTotal} nya händelser sparade. Kör \`node cli.mjs build\`.`);
+    return;
+  }
+
+  if (kind === 'meta') {
+    const token = process.env.META_ACCESS_TOKEN;
+    if (!token) die('META_ACCESS_TOKEN saknas. Lägg den som repository secret i GitHub.');
+    const { fetchAccounts, fetchAllAccounts } = await import('./src/ingest/meta.mjs');
+
+    // Vilka konton? Config vinner; annars alla token:en når.
+    let accounts = (config.meta?.accounts || []).map(a => ({ id: String(a.id), name: a.name, brand: a.brand }));
+    if (!accounts.length) {
+      const found = await fetchAccounts(token);
+      accounts = found.map(a => ({ id: a.account_id, name: a.name }));
+      say(`  Inga konton i config — använder alla ${accounts.length} som token:en når.`);
+    }
+
+    const days = Number(flags.days || config.meta?.historyDays || 120);
+    const until = new Date(Date.now()).toISOString().slice(0, 10);
+    const since = new Date(Date.now() - days * 86400000).toISOString().slice(0, 10);
+
+    const rows = await fetchAllAccounts({ token, accounts, since, until, onProgress: say });
+    if (flags['dry-run']) { say(`(dry-run) ${rows.length} annons-dagar ${since} → ${until}.`); return; }
+
+    mkdirSync(dirname(P.meta), { recursive: true });
+    writeFileSync(P.meta, JSON.stringify({ since, until, fetchedAt: new Date().toISOString(), rows }), 'utf8');
+    const spend = rows.reduce((s, r) => s + r.spend, 0);
+    say(`✔ ${rows.length} annons-dagar sparade (${since} → ${until}), total spend ${Math.round(spend).toLocaleString('sv-SE')}.`);
     return;
   }
 

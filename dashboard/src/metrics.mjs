@@ -356,6 +356,50 @@ export function computeMetrics({ tasks: rawTasks, config, periodDays, now = Date
     };
   }).sort((a, b) => b.total - a.total);
 
+  // PRODUKTION — huvudmåttet. Antal annonser en person faktiskt fått färdiga.
+  //
+  // Det tidigare måttet räknade "leveranser" härledda ur Notion-kommentarer, och
+  // mätte därför vem som skriver "Kindly check!" snarare än vem som producerar.
+  // Gilz kommenterar på varje task, Carl på nästan ingen — måttet gav Gilz 19
+  // och Carl 2, medan färdiga annonser är 4 mot 8. Rakt motsatt slutsats.
+  //
+  // Period: godkännandet saknar tidsstämpel i importerad data (Notion sparar
+  // ingen historik), så månadsfördelningen utgår från när annonsen SKAPADES.
+  // Det är en approximation och heter så i gränssnittet.
+  const monthOf = ts => (ts ? localDate(ts, tz).slice(0, 7) : null);
+  const productionEditors = knownEditors.map(ed => {
+    const mine = all.filter(t => t.editor === ed.id);
+    const done = mine.filter(t => t.state === 'approved');
+    const byMonth = {};
+    for (const t of done) {
+      const m = monthOf(t.assignedAt);
+      if (m) byMonth[m] = (byMonth[m] || 0) + 1;
+    }
+    return {
+      id: ed.id,
+      name: ed.name || ed.id,
+      produced: done.length,
+      open: mine.filter(t => !['approved', 'cancelled'].includes(t.state)).length,
+      assigned: mine.length,
+      byMonth,
+      // Kvar för jämförelse, men aldrig som huvudsiffra.
+      commentDeliveries: mine.reduce((a, t) => a + t.deliveries.length, 0),
+    };
+  }).filter(e => e.assigned > 0).sort((a, b) => b.produced - a.produced);
+
+  const months = [...new Set(productionEditors.flatMap(e => Object.keys(e.byMonth)))].sort();
+  const orphan = all.filter(t => !t.editor);
+  const production = {
+    editors: productionEditors,
+    months,
+    total: productionEditors.reduce((a, e) => a + e.produced, 0),
+    // Annonser utan ansvarig redovisas, men aldrig som ett problem: de flesta är
+    // färdiga. Att flagga dem vore att larma om arbete som redan är gjort.
+    orphanTotal: orphan.length,
+    orphanApproved: orphan.filter(t => t.state === 'approved').length,
+    orphanOpen: orphan.filter(t => !['approved', 'cancelled'].includes(t.state)).length,
+  };
+
   const unassigned = all.filter(t => !t.editor).length;
   const snapshot = {
     editors: snapshotEditors,
