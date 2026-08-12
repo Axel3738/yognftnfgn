@@ -22,11 +22,25 @@ API, som svarar `NEED_LOGIN` / `request illegal` utan inloggning och giltig
 anti-bot-token.
 
 Testat och avfärdat:
-- `curl` mot produktsidan, mobilsidan (`m.temu.com`) och `?_bg_fs=1` → 0 bilder, 0 pris
-- Temus API-endpoints (`/api/oak/…`, `/api/poppy/…`, `/api/oakstar/…`) → 403
+- Produktsidan med tre User-Agents (desktop, mobil, Googlebot) → 0 träffar på
+  `skuList`, `specName`, `specValue`, `skuId`. De ~47 CDN-länkarna i HTML:en är
+  UI-ikoner och JS-buntar, inte produktbilder.
+- **JSON-LD** (`application/ld+json`, strukturerad data för Google) → finns inte.
+- Temus API med riktig cookie-session → `NEED_LOGIN` / `request illegal` / 403.
 - **Playwright/Chromium** → går inte att använda alls i den här miljön: webbläsaren
   når inget över nätet (`ERR_CONNECTION_RESET` även mot `example.com`, med och utan
   proxy). `curl` fungerar däremot, så det är webbläsaren som är avskuren.
+
+**Den enda väg som återstår:** `/api/oak/integration/render` svarar
+`GOODS_NOT_EXIST` på fel `goods_id` men `NEED_LOGIN` på rätt. Endpointen fungerar
+alltså och känner igen produkten – det som saknas är ett inloggat Temu-konto. Med
+Axels Temu-cookies går varianter och bilder att hämta automatiskt.
+Testverktyg: `api-test.mjs`, `varianter.mjs`.
+
+⚠️ **Och även med inloggning: varianterna ska inte tas från Temu.** Temu är där
+produkten hittades, CWD är leverantören som faktiskt levererar. Gräsklippartäcket
+säger "en mängd färger" på Temu men `ONLY BLACK, MOQ 10PCS!` i CWD-offerten. Temu
+ger produktidé och bilder; **CWD-offerten ger varianterna.** Se `VARIANTPLAN.md`.
 
 Däremot: **Temus CDN (`img.kwcdn.com`, `aimg.kwcdn.com`) är nåbart.** Har man bara
 bild-URL:erna går de att hämta och ladda upp utan problem.
@@ -107,3 +121,24 @@ Shopify behåller animationen (`mimeType` förblir `image/gif`) – verifiera ä
 - **`options` är obligatoriskt** i `create-product` så fort `variants` anges.
 - **Produkter hamnar inte automatiskt i någon kollektion.** Hela 2026-08-01-vågen
   låg utanför alla kollektioner och syntes därför inte i menyn.
+
+---
+
+## `lankar.mjs` – läser Temu-länkarna ur Axels xlsx-lista
+
+```bash
+node temu/lankar.mjs "Next_up_products.xlsx"
+```
+Ger `goods_id` + slug per produkt. Länkarna ligger som hyperlänkar i
+`xl/worksheets/_rels/sheet1.xml.rels`, inte som celltext – de syns alltså inte om
+man bara läser cellerna. Kolumnen "View product" är länkbärare.
+
+## `varianter.mjs` / `analysera.mjs` / `api-test.mjs` – undersökningsverktyg
+
+```bash
+node temu/varianter.mjs <goods_id> [<goods_id> ...]   # og-taggar, JSON-LD, variantsignaler
+node temu/analysera.mjs "<temu-länk>"                 # vad sidan lämnar ut totalt
+node temu/api-test.mjs <goods_id>                     # testar 5 API-endpoints med cookie-session
+```
+Kör `api-test.mjs` igen den dag Temu-inloggning finns – då är det den snabbaste
+vägen till varianter och bilder.
