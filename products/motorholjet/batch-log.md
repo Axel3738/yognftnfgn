@@ -365,6 +365,8 @@ Kampanjens dagsbudget visade sig vara **4 000 kr/dag**, inte 6 000 som `products
 Det höjde kvoten i stället för att sänka den — testandelen går från 10 % till 20 % vid den
 budgetnivån, så **kvoten är 18 per 3-dagarscykel**, inte 14. Läge före batchen: **−36 efter plan.**
 Levererat: **18** (12 bild/karusell + 6 video). Briefer: `products/motorholjet/batch-06/`.
+**Status 2026-08-12: inga av de 18 är byggda.** Adseten `Motorhölje SO/SP/PD Batch 6` finns i
+kontot men innehåller **batch #5:s statiska**, inte batch #6:s creatives.
 
 **Designprincipen:** varje annons i batchen isolerar **bilden eller filmen**, aldrig orden. Om hela
 batchen ärver samma felaktiga copy-block skiljer sig annonserna ändå bara på det vi ville testa,
@@ -405,4 +407,116 @@ samma röst och samma båt. Det är den renaste avläsningen av längd kontot n�
 - **#10 och #11 spelas in i samma session, samma båt, samma röst.** Annars mäter #11 inte längden.
 - **#14 får inte launchas i ett kallt adset.** Det hände `SO_10_H1` och gav 156 kr oläsbar data.
 - **Ingen dom under 300 kr och 3 köp — per annons, inte per adset.**
+- Logga launchen: `node pipeline/quota.mjs log motorholjet <antal>`.
+
+---
+
+## Feedbackloop 2026-08-12 (sjätte /cs) — kampanjen har passerat break-even
+
+### Läget som överskuggar allt
+
+| Fönster | Spend | Köp | CPA | Mot break-even 236 kr |
+|---|---|---|---|---|
+| Livstid | 54 788 kr | 275 | 199 kr | lönsam |
+| Senaste 7 dygn | 36 186 kr | 151 | 240 kr | på gränsen |
+| **Senaste 3 dygn** | **13 084 kr** | **45** | **291 kr** | **−55 kr per order** |
+
+Vinstbidraget för de dömbara annonserna sjönk från **14 075 kr till 11 675 kr** medan spenden växte
+med 9 950 kr. Marginell CPA på den nya spenden: **311 kr**. Frekvens 2,83 livstid, 1,89 på tre dygn.
+
+**Ny ledande hypotes: publikuttömning, inte creative-trötthet.** Alla tolv omätta annonser föll
+samtidigt. Se mönster 6 i `dna.md`.
+
+### Utfall per annons — batch #6
+
+Kvot 18, levererat 18 den 9 augusti. **Noll byggda.** Adseten `Motorhölje SO/SP/PD Batch 6` finns i
+kontot men innehåller batch #5:s statiska. Samtliga 18 hypoteser är obesvarade.
+
+### Utfall per annons — batch #5
+
+9 av 11 statiska launchades 9 augusti, i adseten som heter "Batch 6".
+
+| Annons | Spend | Köp | Utfall |
+|---|---|---|---|
+| `SP_12_1` | **5,70 kr** | 0 | Trevägstestet är dött. 29× budgetskillnad mot SP_12_3 |
+| `SP_12_2` | **5,52 kr** | 0 | Samma |
+| `SP_12_3` | 159,76 kr | 0 | Samma. Under grinden |
+| `SP_14_1` | 9,88 kr | 1 | Under grinden. ROAS 55 på 51 impressions är brus, ingen dom |
+| `PD_16_1` | 18,94 kr | 0 | PD-omskrivningen fick aldrig en chans |
+| `PD_17_1` | 3,73 kr | 0 | Samma |
+| `SO_14_1` | 3,06 kr | 0 | Prisbevis-testet dött för tredje gången |
+| `SO_14_2` | 20,60 kr | 0 | Samma |
+| `SO_15_1` | 97,00 kr | 0 | Under grinden |
+| `SO_13_C1`, `PD_18_C1` | – | – | **Aldrig byggda.** Karusellen otestad efter tre försök |
+
+**Copy:** de nio heter `Enginecover_SP_12_1_creative 2026-08-09-…` i stället för att bära det gamla
+copy-blockprefixet, vilket tyder på att de byggdes från grunden. **Går inte att bekräfta** — de är
+byggda på sidoinlägg, så body och rubrik exponeras inte på creative-objektet.
+
+**Slutsats:** fjärde batchen i rad utan ett enda läsbart kontrollerat test. Orsaken är inte
+creativen — det är att de svälter i CBO:n bredvid `PD_1_H3`, som tar 42 % av spenden.
+
+### Tre nya dömbara annonser
+
+| Annons | Spend | Köp | CPA | kr/1 000 | Dom |
+|---|---|---|---|---|---|
+| **`Enginecover_SO_4_H1`** | 434 kr | 5 | **86,75** | **1 721** | **Kontots bästa annons.** 11,9 % köp per klick. Har 0,8 % av spenden och har aldrig itererats. Batch #7 gör det |
+| `Enginecover_PD_6_1` | 2 470 kr | 7 | 352,92 | −331 | **Storleksguiden förlorar pengar.** Första riktiga domen på storlekskvalificering efter fyra försök — negativ |
+| `Enginecover_PD_16_H1` | 1 174 kr | 3 | 391,26 | −397 | Förlorar pengar. **Men den ärvde det gamla PD-blocket**, så den mäter inte omskrivningen den skulle testa |
+
+### Vad som hände med hypoteserna från 2026-08-09
+
+- **"PD_1_H3 är den enda annonsen som inte tappar vid skala": FALSIFIERAD.** Den gick 431 → 340 och
+  CPA 164,90 → 176,14 på 2 538 kr ny spend. Slutsatsen drogs på två mätpunkter. Struken i `dna.md`.
+- **"Pausa SO_5_1": FEL.** Den pausades inte och gjorde sedan 7 köp till CPA 188, under break-even.
+  Kill-beslut på tre dygns trend håller inte.
+- **"Pausa SO_8_1": RÄTT.** 508 kr sedan dess, noll köp. Fortfarande aktiv, ska pausas.
+- **"Billiga klick konverterar sämst" (mönster 3): STÄRKT KRAFTIGT.** De fyra lägsta
+  CTR-annonserna är nu de fyra bästa konverterarna, utan undantag, på femton annonser.
+- **"Hold korrelerar med hållbarhet": FALSIFIERAD.** `SO_4_H1` har kontots sämsta hold (11,2 %) och
+  bästa vinst per krona (1 721).
+
+---
+
+## Batch #7 — 2026-08-12 (18 creatives, briefade)
+
+Kvot: **18 per 3-dagarscykel**. Läge före batchen: **−54 efter plan**. Levererat: **18**
+(8 bild + 10 video). Briefer: `products/motorholjet/batch-07/`.
+
+**Diagnosen batchen bygger på:** kampanjen ligger 55 kr över break-even per order, frekvensen är
+2,83, och allt föll samtidigt. Batchen gör två saker: iterera de två bästa annonser vi äger och som
+aldrig itererats, och nå nya människor.
+
+| # | Annons | Format | Isolerad variabel | Hypotes |
+|---|---|---|---|---|
+| 1 | Enginecover_SO_21_H1 | Video 20 s | **Footagen** — SO_4_H1-syskon | Kontots bästa resultat går att reproducera |
+| 2 | Enginecover_SO_21_H2 | Video 20 s, **2 filer** | **Första 4 sek** | Första rena hooktestet i kontots historia |
+| 3 | Enginecover_SO_21_H3 | Video 10 s | **Längden** | Kort slår långt när båda får volym |
+| 4 | Enginecover_SO_21_H4 | Video 20 s | **Ansikte i bild i offer-vinkeln** | Ansikte når andra människor — aldrig kört i SO |
+| 5 | Enginecover_SP_19_H1 | Video 20 s | **Footagen** — SP_1_H1-syskon | SP-blocket är reproducerbart |
+| 6 | Enginecover_SP_19_H2 | Video 20 s, **2 filer** | **Första 4 sek** | Hooktest i andra vinkeln |
+| 7 | Enginecover_SP_19_H3 | Video 10 s | **Längden** | Längd beter sig lika i två vinklar |
+| 8 | Enginecover_SP_20_H1 | Video 25 s, **Reels-native** | **Creative-formen** | Ny form → ny publik. Mäts på frekvens |
+| 9 | Enginecover_PD_25_H1 | Video 25 s, **Reels-native** | **How-to-formen** | Innehållsform lyfter PD:s klickkvalitet |
+| 10 | Enginecover_PD_26_H1 | Video 10 s, **omklipp** | **Längd + klipp på PD_1_H3:s footage** | Volymdrivaren går att fräscha upp utan inspelning |
+| 11 | Enginecover_SO_22_1 | Statisk | **Situation:** båt på trailer | Ny scen når nya människor |
+| 12 | Enginecover_SO_22_2 | Statisk | **Situation:** småbåtshamn | Samma, annan scen |
+| 13 | Enginecover_PD_24_1 | Statisk | **Målgrupp:** ny båtägare | Namngiven målgrupp slår generisk |
+| 14 | Enginecover_PD_24_2 | Statisk | **Invändning:** blåser det av? | Invändningssvar slår produktförklaring |
+| 15 | Enginecover_PD_24_3 | Statisk | **Invändning:** duger tyget? | Andra dörren till samma svaghet |
+| 16 | Enginecover_SO_23_1 | Statisk | **Publiken:** retargeting, pris | **BLOCKERAD** tills adsetet finns |
+| 17 | Enginecover_SO_23_2 | Statisk | **Publiken:** retargeting, riskavlastning | Pris eller tvivel — varför lämnade de? |
+| 18 | Enginecover_SO_24_1 | Statisk | **Bilden leder med överlager-skälet** | Offer-vinkelns styrka som bild |
+
+**Grindar vid launch:**
+- **Launcha i en separat ABO-kampanj med lika dagsbudget per annons**, cirka 100–150 kr per annons
+  per dygn i tre dygn. Fjärde gången i CBO:n ger samma svält som batch #2 och #5.
+  **Går det inte: launcha färre annonser med mer budget var.**
+- **#1–#4 i samma adset, lika budget.** #2 kräver att allt från 00:04 är identiskt med #1.
+- **#5–#7 i samma adset, lika budget.** #6 kräver samma sak mot #5.
+- **#3 och #7 spelas in i samma session som #1 respektive #5**, annars mäter de inte längden.
+- **#8, #9, #11, #12, #13 mäts på reach och frekvens vid jämförbar spend**, inte i första hand CPA.
+- **#16 och #17 får inte launchas i ett kallt adset.** Det hände `SO_10_H1` och gav 240 kr oläsbar data.
+- **#10 ska inte ersätta `PD_1_H3`** — den ligger bredvid. PD_1_H3 är 63 % av vinsten.
+- **Ingen dom under 300 kr och 3 köp. Ingen vinnare under 2 000 kr.**
 - Logga launchen: `node pipeline/quota.mjs log motorholjet <antal>`.
