@@ -1,10 +1,16 @@
 # CLAUDE.md
 
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
 Det här är Axels arbetsrepo. Du läser den här filen först, varje session.
+`main` är default-branch och den enda som gäller — den här filen bor där.
 
 Den som kör sessionen är oftast **Axel själv, och han är inte utvecklare.**
 Förklara enkelt, kör klart uppgiften, och lämna aldrig över halvfärdigt arbete
 med en instruktion om vad han "bara behöver göra själv". Svara på svenska.
+
+Vidare läsning i ordning: `HANDOFF.md` (vad som är byggt, vad som återstår,
+vilka connectors som måste kopplas) → `docs/os/ACTIONPLAN.md`.
 
 ---
 
@@ -16,12 +22,16 @@ Det här är det farligaste misstaget i repot — fel annonskonto kostar riktiga
 |---|---|---|
 | Sajt | bäverbutiken.se (Shopify general store) | grillkliniken.se |
 | Ad account | MagiBorsten `1867947880635861` (SEK) | SnarkLös `1346450049878358` (SEK) |
-| Produkter | flera, se `products/products.json` | Mastern (elgrillborste, 999 kr) |
-| Styrs av | slash-kommandona nedan | `pipeline/waves/` + `docs/` |
+| Produkter | 6 st, se `products/products.json` | Mastern (elgrillborste, 999 kr) |
+| Styrs av | slash-kommandona nedan | `pipeline/waves/` + `docs/` (legacy) |
 
 Kontonamnet är aldrig samma som brandnamnet. Kolla `ad_account_id` innan du rör
 något i Meta. Övriga konton finns men används inte: Matstrumpor.se
 `730973156224390` (⚠️ UNSETTLED).
+
+**Creative Strategy OS:et är bara Bäverbutiken.** Grillkliniken/Mastern-materialet
+i `docs/` och `pipeline/` (utom `pipeline/quota.mjs`) är legacy referens och ska
+inte röras utan att Axel ber om det.
 
 ---
 
@@ -33,16 +43,19 @@ något i Meta. Övriga konton finns men används inte: Matstrumpor.se
 2. **Avsluta alltid med kommandots "Definition of done"-checklista** — punkt för
    punkt, ✅/❌. Är något ❌: fixa det, eller skriv exakt varför det inte gick.
 3. **Hitta aldrig på data.** Ingen dom över en annons under 300 kr spend eller
-   3 köp. Saknas data: säg det rakt ut och leverera resten.
+   3 köp. Saknas data: säg det rakt ut och leverera resten. Alla siffror kommer ur
+   Notion, Meta, Shopify eller `products/products.json` — aldrig ur huvudet.
 4. **Analysmetoden är obligatorisk.** Ska annonser bedömas: följ
    `docs/os/ANALYSMETOD.md` till punkt och pricka och bocka av dess checklista i
    svaret. **Enmetriks-domar är förbjudna** — rangordna alltid på vinstbidrag
    `(break-even-CPA − CPA) × köp`, aldrig på ROAS eller CPA ensamt. Top spendern är
    benchmark, inte en kandidat att döma mot småannonser. Kill-beslut mäts mot
    `break_even_roas` (eller `break_even_cpa_sek`), aldrig mot target-nivån.
+   *(Regeln finns för att en tidigare chatt dömde ut top spendern för låg ROAS —
+   den stod för ~50 % av all vinst.)*
 5. **Brief-kvoten är mål nr 1.** Varje session som launchar/loggar creatives kör
    `node pipeline/quota.mjs` och visar plus/minus-läget. Loggning:
-   `node pipeline/quota.mjs log <produkt-id> <antal>`.
+   `node pipeline/quota.mjs log <produkt-id> <antal> [YYYY-MM-DD]`.
 6. **Modellpolicy:** all slutgiltig ad copy, svenska manusrader och voiceovers
    skrivs av en subagent via Agent-verktyget med `model: "sonnet"` (eller `"haiku"`
    för bulkvarianter) — subagenten får DNA + hypotes + hook + formatkrav **+
@@ -70,10 +83,13 @@ något i Meta. Övriga konton finns men används inte: Matstrumpor.se
     `.claude/commands/` och följ den exakt, med texten efter kommandonamnet som
     argument. Kommandona är filer — de fungerar även när klienten inte
     registrerat dem.
+13. **Korta svar.** Inga bibelsvar. Axel har sagt det två gånger.
 
 ---
 
 ## Kommandona (Axels gränssnitt)
+
+13 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
 
 | Kommando | Vad |
 |----------|-----|
@@ -93,6 +109,28 @@ något i Meta. Övriga konton finns men används inte: Matstrumpor.se
 
 ---
 
+## Kommandon i terminalen
+
+Roten är ett eget npm-projekt (Node ≥20, **noll externa beroenden** — inget att
+installera för OS:et). Kör dessa **från repo-roten**:
+
+```bash
+npm run quota      # node pipeline/quota.mjs      — brief-kvoten (mål nr 1)
+npm run dash       # node dashboard/build.mjs     — bygger dashboard/index.html
+npm run status     # node dashboard/cli.mjs status
+npm run review     # node dashboard/cli.mjs review-queue
+npm run seed       # node dashboard/seed.mjs --force  (⚠️ skriver över testdata)
+npm test           # node --test dashboard/test/*.test.mjs — 17 tester, ska vara gröna
+```
+
+Enskilt test: `node --test --test-name-pattern "<del av testnamnet>" dashboard/test/rules.test.mjs`
+
+Notion-import (kräver `NOTION_TOKEN`): `node dashboard/notion-import.mjs`
+
+Det finns ingen linter och ingen byggkedja i OS:et — `npm test` är hela grinden.
+
+---
+
 ## Var saker finns
 
 | Vad | Var |
@@ -106,19 +144,53 @@ något i Meta. Övriga konton finns men används inte: Matstrumpor.se
 | Swipes från konkurrenter | `docs/swipes/` |
 | TOF-idébank | `docs/tof-idea-bank.md` |
 | Actionplan + bottlenecks | `docs/os/ACTIONPLAN.md` |
-| SOP 01–07 (batch-loop, kvot, UGC, check-in, produkttest, dashboard) | `docs/os/SOP-0*.md` |
-| SOP: när Claude inte lyssnar | `docs/os/SOP-05-nar-claude-inte-lyssnar.md` |
+| SOP 01–07 (batch-loop, kvot, UGC, check-in, "när Claude inte lyssnar", produkttest, dashboard) | `docs/os/SOP-0*.md` |
 | Editor SOP (engelska, till redigerarna) | `docs/os/EDITOR-SOP.md` |
-| Notion-formatet för briefer (exakt spec) | `docs/os/NOTION-FORMAT.md` |
+| Notion-formatet för briefer (exakt spec + statustabell) | `docs/os/NOTION-FORMAT.md` |
 | Produkt-konfig + launch-logg | `products/products.json` |
 | Produktminne per produkt | `products/<id>/` |
 | Kvot-skriptet | `pipeline/quota.mjs` |
 | Namnkonventionen | `docs/naming-convention.md` |
 | Punchline-bank + vinnande lines | `docs/winning-lines.md` |
 | Ad-tracker (hypotes → utfall → lärdom) | `docs/ad-tracker.md` |
+| Färdiga briefer + rådata från kontot | `docs/briefs/`, `docs/source/` |
 
-- **Team:** filippinska videoredigerare + VA (engelska), en UGC-outreach-ansvarig.
-- **Slack-workspace:** **stonebite** — en kanal per produkt för redigerarna, en för UGC.
+### Produkterna (`products/products.json`)
+
+Sex produkter, alla på MagiBorsten. `scaling: true` = ingår i redigerardashboarden
+och har en egen Notion creative hub. `scaling: false` = testprodukt, utanför
+redigerarnas arbetsflöde.
+
+| id | Skalar | Dagsbudget | Break-even-ROAS |
+|---|---|---|---|
+| `motorholjet` | ✅ | 6 000 kr | 1,63 |
+| `axelbaltet` | ✅ | 2 000 kr | 1,72 |
+| `satesoverdragaren` | ✅ | 1 500 kr | 1,47 |
+| `strandtofflorna` | ✅ | 1 000 kr | 1,70 |
+| `ai-glasogon` | ❌ | 1 000 kr | 1,34 |
+| `vaggfastet` | ❌ | 500 kr | 2,00 |
+
+Break-even-talen kommer ur Axels COGS-beräkning 2026-08-05 och är verkliga.
+⚠️ `satesoverdragaren` har `target_cpa_sek: 300` som är en **gissning** från en
+tidigare chatt — kvoten för den produkten räknas alltså på fel tal tills Axel
+ger rätt siffra.
+
+### Människorna och kanalerna
+
+Slack-workspace: **stonebite**. Team: filippinska videoredigerare + VA (engelska),
+en UGC-outreach-ansvarig. Full tabell med Slack-ID:n finns i `HANDOFF.md`.
+
+| Kanal | ID | Vad |
+|---|---|---|
+| `#bäver-scaling-products` | `C0BNJC83DMF` | De 4 skalningsprodukterna + dagsrapporter före 21:30 |
+| `#video-editors` | `C0BGQBGDZBQ` | Hela redigerarteamet, även produkter utanför detta OS |
+
+⚠️ **Annabelle Gonzales heter "Anna" i Slack. Hon är INTE Anna Odhner** (managern
+som ska ta över systemet). Två olika personer — och den ena ska godkänna den
+andras arbete.
+
+⚠️ Fel Slack-workspace ger **tyst noll träffar**, inte ett felmeddelande.
+Verifiera med en sökning på "bäver" — får du inget svar sitter du på fel workspace.
 
 ---
 
@@ -153,8 +225,45 @@ uppdatera den sist, och skriv ut datum + vilken körning i ordningen det var.
 
 ## Verktygsmapparna
 
-Varje mapp är ett eget litet projekt med egen `package.json`. Kör alltid
-kommandon **inifrån mappen**. Allt är ESM (`.mjs`) om inget annat sägs.
+`pipeline/`, `video/`, `voiceover/` och `pnl-app/` har **egen `package.json`** — kör
+alltid deras kommandon inifrån mappen. `dashboard/` och `schema/` har det inte; de
+körs från roten via npm-scripten ovan. Allt är ESM (`.mjs`) om inget annat sägs.
+
+### `dashboard/` — redigerarpanelen
+Spårningslagret. Notion är sanningen för *vad* som finns; dashboarden lägger på
+*vem, när, hur mycket*.
+
+```bash
+node dashboard/notion-import.mjs   # Notion-rader → tasks (kräver NOTION_TOKEN)
+node dashboard/build.mjs           # bygger dashboard/index.html
+node dashboard/cli.mjs status      # läget i terminalen
+```
+`index.html` är självbärande — inga CDN:er, funkar offline, går att mejla.
+`cli.mjs` har ~18 underkommandon (status, today, review-queue, new, deliver,
+approve, kpi, export-csv …) — hela listan står som kommentar högst upp i filen.
+**`cli.mjs` har ingen `build`** — HTML:en byggs av `build.mjs`.
+Logiken bor i `lib/kpi.mjs`, `lib/model.mjs`, `lib/store.mjs`; datan i `data/*.json`.
+
+### `pipeline/` — bildannonser
+Två steg, för att bildmodeller är dåliga på text: Higgsfield Soul genererar en
+fotorealistisk bas med medvetet mörk tomyta → `compose.mjs` lägger rubrik/badge/
+footer som skarp vektortext ovanpå med `sharp`.
+
+```bash
+cd pipeline && npm install
+export HF_API_KEY="..." HF_SECRET="..."
+npm run dry                      # förhandsgranska layout utan Higgsfield
+node run.mjs --wave=01 --limit=2 # skarpt
+```
+Ny annons = ett objekt i `waves/wave-XX.mjs`. Färger/typsnitt/canvas ändras på ett
+ställe: `brand.mjs`.
+
+**Vid sidan av vågsystemet ligger fyra fristående engångsskript** som *inte* läser
+`brand.mjs` och hårdkodar egen layout: `b020-format.mjs` (kontots bäst presterande
+format, ROAS 2,53 — värt att utgå från), `swipe.mjs`, `swipe2.mjs`, `grab.mjs`.
+Ändrar du brandkittet slår det alltså inte igenom där.
+⚠️ `swipe.mjs` och `swipe2.mjs` importerar `axios` utan att det står i
+`package.json` — det funkar bara på en lyckträff. Deklarera det om du rör dem.
 
 ### `video/` — videoannonser (9:16 för Reels/Stories)
 Speglar bild-pipelinen: modellen renderar **rörelsen**, vi bränner **skarpa
@@ -166,53 +275,36 @@ cd video && npm install
 export HF_API_KEY="..." HF_SECRET="..."   # samma nycklar som pipeline/
 node run.mjs --dry                        # storyboard utan att generera
 ```
-Kräver `ffmpeg` + `ffprobe` i PATH för skarp körning. Ett koncept = ett objekt i
-`video/waves/wave-XX.mjs`, och det ska peka på sin källa i en kommentar.
-
-### `pipeline/` — bildannonser
-Två steg, för att bildmodeller är dåliga på text: Higgsfield Soul genererar en
-fotorealistisk bas med medvetet mörk tomyta → `compose.mjs` lägger rubrik/badge/
-footer som skarp vektortext ovanpå med `sharp`.
-
-```bash
-npm install
-npm run dry                      # förhandsgranska layout utan Higgsfield
-node run.mjs --wave=01 --limit=2 # skarpt
-```
-Kräver `HF_API_KEY` + `HF_SECRET`. Ny annons = ett objekt i `waves/wave-XX.mjs`.
-Färger/typsnitt/canvas ändras på ett ställe: `brand.mjs`.
-
-**Vid sidan av vågsystemet ligger fyra fristående engångsskript** som *inte* läser
-`brand.mjs` och hårdkodar egen layout: `b020-format.mjs` (kontots bäst presterande
-format, ROAS 2,53 — värt att utgå från), `swipe.mjs`, `swipe2.mjs`, `grab.mjs`.
-Ändrar du brandkittet slår det alltså inte igenom där.
-⚠️ `swipe.mjs` och `swipe2.mjs` importerar `axios` utan att det står i
-`package.json` — det funkar bara på en lyckträff. Deklarera det om du rör dem.
+Kräver `ffmpeg` + `ffprobe` i PATH för skarp körning (`compose.mjs` kollar det och
+felar tydligt). Ett koncept = ett objekt i `video/waves/wave-XX.mjs`, och det ska
+peka på sin källa i en kommentar.
 
 ### `voiceover/` — ElevenLabs
 Fristående, **inga npm-beroenden** (använder inbyggda `fetch`).
 ```bash
+cd voiceover
 export ELEVENLABS_API_KEY="..."
 npm run vo:dry                   # se alla manus + teckenantal utan att bränna API
 npm run vo                       # generera mp3
+npm run voices                   # lista tillgängliga röster
 ```
 Default: rösten `Svensk Martin` + modellen `eleven_v3` (förstår taggar som
 `[paus]`, `[viskar]` mitt i texten). Manus ligger i `voiceover/scripts/<annons>/`.
 
-### `dashboard/` — redigerarpanelen
-```bash
-node cli.mjs build
-```
-Bygger `index.html` — en självständig fil utan CDN:er som funkar offline och går
-att mejla. Läser Notion via `notion-import.mjs`. Kräver `NOTION_TOKEN`.
-
-### `market-expansion/` — nya marknader (DK m.fl.)
+### `market-expansion/` — nya marknader (DK, NO, UK)
 Rena arbetsdokument, ingen kod. Börja i `market-expansion/README.md` och
 `BESLUT.md`. Batcherna ligger i `<land>/batches/`.
 
 ### `pnl-app/` — P&L som Shopify-app
 Riktig applikation, inte ett skript: Remix + Prisma + Docker, kopplad till både
 Shopify och Meta. Visar täckningsbidrag per produkt. TypeScript, inte `.mjs`.
+```bash
+cd pnl-app && npm install
+npm run setup       # prisma generate && prisma migrate deploy
+npm run dev         # Shopify CLI app dev
+npm run typecheck   # tsc --noEmit
+npm run build
+```
 Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 
 ### Övrigt
@@ -221,13 +313,19 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 | `pipeline/ads.mjs`, `batch.mjs`, `multi-batch.mjs`, `meta.mjs` | Laddar upp creatives till Meta som **PAUSED** |
 | `pipeline/waves/*.config.mjs` | Vågkonfig per marknad — `se-`, `dk-`, `no-`, `uk-` |
 | `pipeline/localize.mjs`, `heygen.mjs`, `veed.mjs`, `cover-srt.py` | Översätter färdiga videoannonser till nya språk (`docs/video-localization.md`) |
-| `schema/` | Genererar arbetsschema som `.ics` |
+| `schema/generate.mjs` | Genererar arbetsschema som `.ics` |
 | `whop-downloader/` | Python-verktyg, laddar ner kursmaterial |
 
 ---
 
 ## Saker som är lätta att göra fel
 
+- **Meta-fältnamnen är exakta:** `amount_spent`, `actions:omni_purchase`,
+  `cost_per_omni_purchase`, `purchase_roas`. INTE `spend`/`purchases`.
+  ⚠️ `omni_purchase_values` är buggig — den returnerade intäkt **100× för lågt på
+  5 av 8 rader**. Korskolla alltid mot `amount_spent × purchase_roas`.
+- **Notion-status `In progress 2` betyder REVISION** — annonsen underkändes och
+  görs om. Det betyder INTE "längre kommen". Full tabell i `docs/os/NOTION-FORMAT.md`.
 - **Notion har ingen statushistorik.** Det är den enda anledningen till att
   ledtider är svåra. `Godkänd datum` är ifyllt på 2 av 199 rader. **Hitta aldrig
   på en tidsstämpel för att fylla ett tomt fält** — hellre tomt än påhittat. De
@@ -247,12 +345,21 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 
 ---
 
+## Connectors som måste vara kopplade
+
+Följer **inte** med repot. Utan dem går det att bygga och testa koden, men inte att
+hämta data: **Notion** (de 4 creative hub-databaserna), **Slack** (workspace
+Stonebite), **Meta Ads** (MagiBorsten `1867947880635861`), **Shopify**
+(bäverbutiken.se, för verklig AOV).
+
+---
+
 ## Om repots grenar
 
-Repot har ~26 grenar från tidigare sessioner och **`main` är den enda som gäller.**
-Den här filen bor här. Om du behöver något som inte finns i trädet ligger det
-troligen kvar på en gammal gren — leta med `git log --all --oneline -- <fil>` i
-stället för att bygga om det från början.
+Repot har ~28 grenar från tidigare sessioner. **`main` är default-branch och den
+enda som gäller.** Om du behöver något som inte finns i trädet ligger det troligen
+kvar på en gammal gren — leta med `git log --all --oneline -- <fil>` i stället för
+att bygga om det från början.
 
 En sak ligger medvetet kvar utanför `main`: grenen
 `claude/initial-setup-87a4dh` innehåller en **andra, separat redigerarpanel** för

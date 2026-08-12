@@ -12,12 +12,11 @@ Läs detta först, sedan `CLAUDE.md`, sedan `docs/os/ACTIONPLAN.md`.
 | | |
 |---|---|
 | Repo | `Axel3738/yognftnfgn` |
-| Branch | `claude/bäverbutiken-creative-kpi-0g4dn9` |
-| Default-branch | **finns inte** — repot har 22 branches, alla `claude/*`. Checka alltid ut branchen ovan explicit. |
+| Branch | **`main`** — allt samlat arbete ligger här |
+| Övriga branches | ~28 gamla `claude/*`-grenar från tidigare sessioner. Historik, inte arbetsytor. |
 
 ```bash
-git clone <repo> && cd yognftnfgn
-git checkout claude/bäverbutiken-creative-kpi-0g4dn9
+git clone <repo> && cd yognftnfgn   # main checkas ut automatiskt
 ```
 
 Node 22, **noll npm-beroenden**. Inget att installera.
@@ -157,10 +156,9 @@ Processteg 1–3 och kriterierna för "vilken produkt testar vi härnäst" sakna
 de fanns i en Loom-inspelning som aldrig skrevs ner.
 → Fråga Axel, skriv in i `docs/os/SOP-06-produkttest.md`.
 
-### 5. Ingen `main`-branch 🟡
-22 branches, alla `claude/*`. Varje ny session måste få branchnamnet manuellt.
-Axel har fått förslaget att skapa `main` men inte svarat ännu.
-→ **Skapa inte `main` utan att fråga honom först.**
+### 5. ~~Ingen `main`-branch~~ ✅ LÖST 2026-08-12
+`main` finns och är default-branch. Allt samlat arbete ligger där, och `CLAUDE.md`
+i `main` är den enda källan en ny session behöver starta i.
 
 ### 6. Systemet har aldrig körts skarpt av managern 🔴
 Ingen har gått igenom en hel dag: `/plan` → redigerarna jobbar → `/rapport` →
@@ -197,7 +195,7 @@ committa den; publicera bara om Axel ber om det.
 
 ## 9. När arbetet är klart på det andra kontot
 
-Committa och pusha till `claude/bäverbutiken-creative-kpi-0g4dn9`.
+Committa och pusha till `main`.
 Skriv sedan här i filen, under en ny rubrik **"Ändrat i session <datum>"**:
 vad som gjordes, vad som återstår, och vad nästa session behöver veta.
 
