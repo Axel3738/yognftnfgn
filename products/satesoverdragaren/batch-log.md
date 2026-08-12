@@ -82,10 +82,10 @@ videokropp**: samma vinnarmaterial från sekund 4, olika 0–4s-öppningar
 
 | Annons | Hypotes | Vinkel · Hook-typ · Format · Talare | Utfall |
 |---|---|---|---|
-| `Seatcover_PD_13_H1` | Alla hooks hittills namnger *problemet* (blött säte). Ingen namnger **workaroundet ägaren redan använder** (handduken på sätet). Att peka ut ett befintligt beteende är en starkare igenkänningstrigger än att beskriva ett tillstånd. Isolerad variabel: hook-innehåll (beteende-callout vs tillståndspåstående). | problem/misstag-callout · fråga/observation · rå video m. captions · ingen | Ej launchad än |
-| `Seatcover_PD_15_H1` | "Under 60 sekunder" ligger på sekund 16–18 i vinnaren — efter att halva publiken redan fallit av (tapp 3→9,5s). Kontots starkaste konkreta siffra flyttad till hooken som tidskontrast (år av att stå ut vs under en minut att fixa) stoppar scrollen på specificitet i stället för empati. Isolerad variabel: hook-typ (siffra/tidskontrast). | bekvämlighet/tid · siffra/tidskontrast · rå video m. captions · ingen | Ej launchad än |
-| `Seatcover_PD_14_1` | Kontots statiker säljer känsla, jämförelse eller pris. Ingen svarar på den enklaste förköpsfrågan för en 649 kr-produkt online: *vad kommer fysiskt i paketet?* Att göra konstruktionen läsbar i ett ögonkast minskar osäkerheten som stoppar ett varmt klick från att konvertera. Isolerad variabel: konkret värde-inramning. | konkret värde/innehåll · påstående+pris · statisk m. callouts · ingen | Ej launchad än |
-| `Seatcover_SO_4_1` | SO-spåret konverterar bäst per besök men har hittills varit tidlöst inramat ("nytt säte kostar tusenlappar"). Ett **säsongsskäl att agera nu** — månader av höstregn framför sig, skydda dynan i stället för att byta säte till våren — ger samma ankare en naturlig deadline utan påhittad rea. Isolerad variabel: temporal inramning. | kostnad av att vänta/säsong · påstående (säsong) · offer-grafik · ingen | Ej launchad än |
+| `Seatcover_PD_13_H1` | Alla hooks hittills namnger *problemet* (blött säte). Ingen namnger **workaroundet ägaren redan använder** (handduken på sätet). Att peka ut ett befintligt beteende är en starkare igenkänningstrigger än att beskriva ett tillstånd. Isolerad variabel: hook-innehåll (beteende-callout vs tillståndspåstående). | problem/misstag-callout · fråga/observation · rå video m. captions · ingen | **Launchad 2026-08-09. Bedömbar redan efter 3 dygn (2026-08-12):** 2 064 kr, 6 köp, CPA 344 kr, ROAS 1,89, vinstbidrag 804 kr — kampanjens näst lönsammaste video. **3s-hook 55,4 % mot vinnarens 41,2 %** — högst i kampanjen, hypotesen håller på hook-nivå. Svagheten ligger efter klicket: LPV→köp 1,7 % mot vinnarens 2,7 %. |
+| `Seatcover_PD_15_H1` | "Under 60 sekunder" ligger på sekund 16–18 i vinnaren — efter att halva publiken redan fallit av (tapp 3→9,5s). Kontots starkaste konkreta siffra flyttad till hooken som tidskontrast (år av att stå ut vs under en minut att fixa) stoppar scrollen på specificitet i stället för empati. Isolerad variabel: hook-typ (siffra/tidskontrast). | bekvämlighet/tid · siffra/tidskontrast · rå video m. captions · ingen | **Launchad 2026-08-09. För tidigt** (138 kr, 823 impressions, 0 köp 2026-08-12). 3s-hook 36,2 % — under partnern PD_13. Svälts av CBO; parjämförelsen går inte att avgöra än. |
+| `Seatcover_PD_14_1` | Kontots statiker säljer känsla, jämförelse eller pris. Ingen svarar på den enklaste förköpsfrågan för en 649 kr-produkt online: *vad kommer fysiskt i paketet?* Att göra konstruktionen läsbar i ett ögonkast minskar osäkerheten som stoppar ett varmt klick från att konvertera. Isolerad variabel: konkret värde-inramning. | konkret värde/innehåll · påstående+pris · statisk m. callouts · ingen | **Launchad. För tidigt** (203 kr, 0 köp 2026-08-12). |
+| `Seatcover_SO_4_1` | SO-spåret konverterar bäst per besök men har hittills varit tidlöst inramat ("nytt säte kostar tusenlappar"). Ett **säsongsskäl att agera nu** — månader av höstregn framför sig, skydda dynan i stället för att byta säte till våren — ger samma ankare en naturlig deadline utan påhittad rea. Isolerad variabel: temporal inramning. | kostnad av att vänta/säsong · påstående (säsong) · offer-grafik · ingen | Ingen spend registrerad 2026-08-12 — syns inte i kampanjens insights. |
 
 **Produktionsanmärkningar inbyggda i brieferna:** `SO_4_1` och `PD_14_1` bär
 båda den explicita QA-regeln mot "överstruket"-buggen (riktig genomstrykningslinje
@@ -93,6 +93,18 @@ krävs). `SO_4_1` har uttrycklig spärr mot påhittad rea/nedräkning/slutdatum 
 649/811 är hela erbjudandet. Ingen annons i batchen innehåller testimonials.
 
 **Status 2026-08-09:** ingen av batch 4:s fyra annonser är launchad än.
+
+**Avläsning 2026-08-12 (ad-level insights, livstid 20 juli–12 aug):** tre av fyra
+är launchade 2026-08-09. `PD_13_H1` passerade signifikansgränsen på tre dygn och är
+nu kampanjens **näst lönsammaste annons** (804 kr vinstbidrag, 4,5 % av totalen) —
+första gången sedan batch 1 som något annat än `PD_1_3_H1` bidrar mätbart.
+Beteende-callout-hooken är därmed den starkaste hook-signalen i produktens historia
+(3s-hook 55,4 %), men ännu inte bevisad enligt regeln om ≥2 annonser — `PD_15_H1`
+(parjämförelsen) har bara 138 kr spend och kan varken bekräfta eller motbevisa den.
+Kampanjen totalt: 31 214 kr spend · 99 köp · 69 636 kr intäkt · ROAS 2,23 ·
+vinstbidrag 18 006 kr, varav vinnaren `PD_1_3_H1` fortfarande står för 92,4 %.
+Datakvalitetskontrollen ren (0 avvikande rader mellan `spend × ROAS` och `action_values`).
+Ingen creative-teardown gjord i denna avläsning — den var en ren vinstranking, inte en `/cs`-runda.
 
 ---
 
