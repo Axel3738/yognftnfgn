@@ -53,6 +53,18 @@ export default {
         { name: 'Motorhölje SO Batch 7 (ABO)', copy: COPY_SO, link: LP,
           dailyBudget: '30000', // 300 kr/dag
           motifs: ['Enginecover_SO_22_1', 'Enginecover_SO_22_2', 'Enginecover_SO_24_1'] },
+
+        // Retargeting — briefens spärr uppfylld: publiken finns nu (sidbesökare 180 dagar).
+        // Advantage+ audience AV, annars expanderar Meta ut ur retargeting-poolen.
+        { name: 'Motorhölje Retargeting', copy: COPY_SO, link: LP,
+          dailyBudget: '30000', // 300 kr/dag
+          targeting: {
+            age_min: 18, age_max: 65,
+            geo_locations: { countries: ['SE'], location_types: ['home', 'recent'] },
+            custom_audiences: [{ id: '120249703629180291' }],
+            targeting_automation: { advantage_audience: 0 },
+          },
+          motifs: ['Enginecover_SO_23_1', 'Enginecover_SO_23_2'] },
       ],
     },
   ],
