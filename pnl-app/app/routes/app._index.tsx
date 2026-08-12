@@ -53,11 +53,21 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
     to: url.searchParams.get("to") ?? today,
   });
 
-  const settings = await prisma.shopSettings.upsert({
+  let settings = await prisma.shopSettings.upsert({
     where: { shop },
-    create: { shop },
+    create: { shop, currency: shopInfo.currency },
     update: {},
   });
+
+  /* Butiken kan byta valuta, och installationer gjorda innan valutan lästes in
+     ligger kvar på default. Skriv bara när den faktiskt skiljer sig — annars
+     blir det en databasskrivning per sidladdning i onödan. */
+  if (shopInfo.currency && settings.currency !== shopInfo.currency) {
+    settings = await prisma.shopSettings.update({
+      where: { shop },
+      data: { currency: shopInfo.currency },
+    });
+  }
 
   /* Stale-while-revalidate: finns det EN sparad version serveras den direkt
      (<2 s), och en färsk export körs i bakgrunden till nästa besök. Att vänta
@@ -115,6 +125,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
     from,
     to,
     today,
+    shopInfo.currency,
   );
 
   const metaConfigured = Boolean(settings.metaAdAccountId && settings.metaAccessToken);
@@ -185,7 +196,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
       metaConfigured
         ? { adAccountId: settings.metaAdAccountId!, accessToken: settings.metaAccessToken! }
         : null,
-      prevFrom, prevTo, today,
+      prevFrom, prevTo, today, shopInfo.currency,
     );
     const prev = compute({
       from: prevFrom, to: prevTo,
@@ -225,7 +236,9 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
     rangeKey,
     currency: settings.currency,
     spendError: spend.error ?? null,
+    spendCurrencyMismatch: spend.currencyMismatch ?? null,
     targetMargin: Number(settings.targetMargin),
+    tariffPerOrder: Number(settings.tariffPerOrder),
   };
   } catch (e) {
     /* Remix maskerar kastade fel i produktion till "Application Error" utan
@@ -243,7 +256,9 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
       rangeKey,
       currency: "SEK",
       spendError: null as string | null,
+      spendCurrencyMismatch: null as { spend: string; shop: string } | null,
       targetMargin: 0.25,
+      tariffPerOrder: 27.5,
     };
   }
 }
@@ -583,10 +598,14 @@ function SetupChecklist({
   setup,
   costsDone,
   costsHint,
+  currency,
+  tariffPerOrder,
 }: {
   setup: NonNullable<PageData["setup"]>;
   costsDone: boolean;
   costsHint: string;
+  currency: string;
+  tariffPerOrder: number;
 }) {
   const dismisser = useFetcher();
   const steps = [
@@ -624,7 +643,9 @@ function SetupChecklist({
       title: "Granska tull och transaktionsavgift",
       hint: setup.settings
         ? "Sparat för den här butiken."
-        : "Kör på standardvärden (27,50 kr tull per order, 2,9 % avgift). Stämmer de för den här butiken?",
+        : `Kör fortfarande på standardvärdena (${tariffPerOrder
+            .toFixed(2)
+            .replace(".", ",")} ${currency} per order, 2,9 %). Stämmer de för den här butiken?`,
       to: "/app/settings",
       cta: "Till Inställningar",
     },
@@ -700,7 +721,7 @@ function SetupChecklist({
 }
 
 function DashboardView({ d }: { d: PageData }) {
-  const { fatal, result, rangeKey, currency, spendError, targetMargin, comparison, setup, dataAgeMin, refreshing } = d;
+  const { fatal, result, rangeKey, currency, spendError, spendCurrencyMismatch, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing } = d;
   const [, setParams] = useSearchParams();
   if (fatal || !result) {
     return (
@@ -797,10 +818,25 @@ function DashboardView({ d }: { d: PageData }) {
             ) : null}
 
             {setup && !setup.dismissed && !setupAllDone ? (
-              <SetupChecklist setup={setup} costsDone={costsDone} costsHint={costsHint} />
+              <SetupChecklist
+                setup={setup}
+                costsDone={costsDone}
+                costsHint={costsHint}
+                currency={currency}
+                tariffPerOrder={tariffPerOrder}
+              />
             ) : null}
 
             {spendError ? <Banner tone="warning">{spendError}</Banner> : null}
+
+            {spendCurrencyMismatch ? (
+              <Banner tone="critical" title="Annonskontot har en annan valuta än butiken">
+                Annonskostnaden redovisas i {spendCurrencyMismatch.spend}, försäljningen i{" "}
+                {spendCurrencyMismatch.shop}. Beloppen räknas ihop som om de vore samma valuta, så
+                nettovinst, MER och CPA stämmer inte. Använd ett annonskonto i{" "}
+                {spendCurrencyMismatch.shop} för den här butiken.
+              </Banner>
+            ) : null}
 
             {!t.spendComplete ? (
               <Banner tone="critical" title="Täckningsbidraget är för högt">

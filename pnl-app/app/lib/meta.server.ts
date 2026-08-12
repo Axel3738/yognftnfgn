@@ -20,6 +20,8 @@ interface Insight {
   spend?: string;
   impressions?: string;
   clicks?: string;
+  /** Meta redovisar alltid i ANNONSKONTOTS valuta, inte butikens. */
+  account_currency?: string;
 }
 
 export class MetaError extends Error {
@@ -35,7 +37,7 @@ export class MetaError extends Error {
 async function fetchInsights(cfg: MetaConfig, since: string, until: string): Promise<Insight[]> {
   const account = cfg.adAccountId.startsWith("act_") ? cfg.adAccountId : `act_${cfg.adAccountId}`;
   const url = new URL(`${GRAPH}/${account}/insights`);
-  url.searchParams.set("fields", "spend,impressions,clicks");
+  url.searchParams.set("fields", "spend,impressions,clicks,account_currency");
   url.searchParams.set("time_range", JSON.stringify({ since, until }));
   url.searchParams.set("time_increment", "1");
   url.searchParams.set("level", "account");
@@ -67,7 +69,15 @@ export async function getSpend(
   from: string,
   to: string,
   today: string,
-): Promise<{ days: { day: string; spend: number; impressions: number; clicks: number }[]; error?: string }> {
+  shopCurrency?: string,
+): Promise<{
+  days: { day: string; spend: number; impressions: number; clicks: number }[];
+  error?: string;
+  /* Sätts när annonskontot redovisar i en annan valuta än butiken. Beloppen
+     räknas ändå ihop — men de går inte att lita på, och det måste synas. Att
+     räkna om kräver en växelkurs vi inte har någon sanningskälla för. */
+  currencyMismatch?: { spend: string; shop: string };
+}> {
   const cached = await prisma.dailySpend.findMany({
     where: { shop, day: { gte: new Date(from), lte: new Date(to) } },
     orderBy: { day: "asc" },
@@ -96,9 +106,15 @@ export async function getSpend(
     if (!cachedRow || recent) stale.push(d);
   }
 
+  let currencyMismatch: { spend: string; shop: string } | undefined;
+
   if (stale.length) {
     try {
       const rows = await fetchInsights(cfg, stale[0], stale[stale.length - 1]);
+      const spendCurrency = rows.find((r) => r.account_currency)?.account_currency;
+      if (spendCurrency && shopCurrency && spendCurrency !== shopCurrency) {
+        currencyMismatch = { spend: spendCurrency, shop: shopCurrency };
+      }
       for (const r of rows) {
         const day = r.date_start;
         const rec = {
@@ -141,6 +157,7 @@ export async function getSpend(
       impressions: r.impressions,
       clicks: r.clicks,
     })),
+    currencyMismatch,
   };
 }
 

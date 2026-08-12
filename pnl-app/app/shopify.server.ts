@@ -46,13 +46,27 @@ const shopify = shopifyApp({
   },
   future: { unstable_newEmbeddedAuthStrategy: true, removeRest: true },
   hooks: {
-    /** Varje ny butik får sina inställningar direkt, med svenska defaults. */
-    afterAuth: async ({ session }) => {
+    /** Varje ny butik får sina inställningar direkt, med butikens egen valuta. */
+    afterAuth: async ({ session, admin }) => {
       await shopify.registerWebhooks({ session });
+
+      /* Valutan måste komma från butiken, inte från en default. En norsk butik
+         med "SEK" efter varje siffra är inte ett skönhetsfel — den får dig att
+         läsa NOK-belopp som kronor och räkna fel på marginalen. Slår det fel
+         får installationen ändå gå igenom; valutan synkas om vid varje besök. */
+      let currency: string | undefined;
+      try {
+        const res = await admin.graphql(`#graphql\n    { shop { currencyCode } }`);
+        const body = await res.json();
+        currency = body?.data?.shop?.currencyCode ?? undefined;
+      } catch (e) {
+        console.error("Kunde inte läsa butikens valuta vid installation:", e);
+      }
+
       await prisma.shopSettings.upsert({
         where: { shop: session.shop },
-        create: { shop: session.shop },
-        update: {},
+        create: { shop: session.shop, ...(currency ? { currency } : {}) },
+        update: currency ? { currency } : {},
       });
     },
   },
