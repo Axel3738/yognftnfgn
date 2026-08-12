@@ -14,6 +14,7 @@
 //   node cli.mjs stats                 skriv ut nyckeltalen i terminalen
 //
 // Flaggor: --period <dagar>  --dry-run  --force  --config <fil>  --out <fil>
+//          --fragment  (bygg utan html/head/body — för värdar med eget skelett)
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
@@ -185,6 +186,7 @@ function cmdBuild() {
     defaultWorkspace: spaces.length > 1 ? spaces[0].id : spaces[0].id,
     defaultPeriod: config.defaultPeriodDays,
     demo, payout,
+    fragment: flags.fragment === true || flags.fragment === 'true',
   });
 
   mkdirSync(dirname(P.out), { recursive: true });

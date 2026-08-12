@@ -23,7 +23,13 @@ const PIPELINE = {
   dark:  { assigned: '#184f95', in_progress: '#256abf', in_review: '#3987e5', revision: '#6da7ec', approved: '#9ec5f4', cancelled: '#52514e' },
 };
 
-export function renderDashboard({ config, editors, byWorkspace, spaces, defaultWorkspace, defaultPeriod, demo, payout = null }) {
+/**
+ * @param fragment  utan <!doctype>/<html>/<head>/<body> — för värdar som
+ *                  lägger in sidan i ett eget skelett. Innehållet är exakt
+ *                  detsamma; panelen är självförsörjande och hämtar aldrig
+ *                  något utifrån, så den fungerar likadant i båda formerna.
+ */
+export function renderDashboard({ config, editors, byWorkspace, spaces, defaultWorkspace, defaultPeriod, demo, payout = null, fragment = false }) {
   const payload = {
     config: {
       team: config.team,
@@ -44,6 +50,20 @@ export function renderDashboard({ config, editors, byWorkspace, spaces, defaultW
     pipeline: PIPELINE,
   };
 
+  const body = `<div id="app"></div>
+<script id="payload" type="application/json">${JSON.stringify(payload).replace(/</g, '\\u003c')}</script>
+<script>
+${CLIENT}
+</script>`;
+
+  if (fragment) {
+    return `<title>Redigerarpanel</title>
+<style>
+${STYLE}
+</style>
+${body}`;
+  }
+
   return `<!doctype html>
 <html lang="sv">
 <head>
@@ -55,11 +75,7 @@ ${STYLE}
 </style>
 </head>
 <body>
-<div id="app"></div>
-<script id="payload" type="application/json">${JSON.stringify(payload).replace(/</g, '\\u003c')}</script>
-<script>
-${CLIENT}
-</script>
+${body}
 </body>
 </html>`;
 }
