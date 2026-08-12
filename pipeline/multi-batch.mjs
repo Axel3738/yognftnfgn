@@ -138,7 +138,7 @@ function assetFeedFor(variants, copy) {
     images, asset_customization_rules: rules,
     bodies: [{ text: copy.message }], titles: [{ text: copy.headline }],
     ...(copy.description ? { descriptions: [{ text: copy.description }] } : {}),
-    ad_formats: ['SINGLE_IMAGE'], call_to_action_types: ['SHOP_NOW'],
+    ad_formats: ['SINGLE_IMAGE'], call_to_action_types: [copy.cta || 'SHOP_NOW'],
     link_urls: [{ website_url: copy.link }],
   };
 }
@@ -217,7 +217,7 @@ for (const camp of cfg.campaigns) {
             video_id: r.videoId, image_url: thumb,
             message: copy.message, title: copy.headline,
             ...(copy.description ? { link_description: copy.description } : {}),
-            call_to_action: { type: 'SHOP_NOW', value: { link: copy.link } },
+            call_to_action: { type: copy.cta || 'SHOP_NOW', value: { link: copy.link } },
           }});
         } else if (Object.keys(r.variants).length === 1) {
           const hash = Object.values(r.variants)[0];
@@ -225,7 +225,7 @@ for (const camp of cfg.campaigns) {
             image_hash: hash, link: copy.link,
             message: copy.message, name: copy.headline,
             ...(copy.description ? { description: copy.description } : {}),
-            call_to_action: { type: 'SHOP_NOW', value: { link: copy.link } },
+            call_to_action: { type: copy.cta || 'SHOP_NOW', value: { link: copy.link } },
           }});
         } else {
           form.object_story_spec = JSON.stringify({ page_id: cfg.page,
