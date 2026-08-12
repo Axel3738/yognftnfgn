@@ -162,21 +162,28 @@ for (const camp of cfg.campaigns) {
 
   for (const adsetCfg of camp.adsets) {
     // explicit briefad copy vinner alltid över att ärva från ett befintligt adset
-    let copy;
+    let adsetCopy;
     if (adsetCfg.copy) {
-      copy = { ...adsetCfg.copy, fromAd: 'brief' };
+      adsetCopy = { ...adsetCfg.copy, fromAd: 'brief' };
       console.log(`  copy: briefad (${adsetCfg.copy.headline})`);
+    } else if (adsetCfg.motifs.every(m => typeof m === 'object' && m.copy)) {
+      adsetCopy = { link: adsetCfg.link || cfg.link, fromAd: 'brief per annons' };
+      console.log('  copy: egen briefad copy per annons');
     } else {
       const src = priorAdsets.find(a => a.name === adsetCfg.copyFrom);
       if (!src) { console.log(`✗ käll-adset "${adsetCfg.copyFrom}" saknas — hoppar ${adsetCfg.name}`); continue; }
-      copy = await copyFrom(src.id, adsetCfg.copyFrom);
-      console.log(`  copy från ${adsetCfg.copyFrom} / ${copy.fromAd}`);
+      adsetCopy = await copyFrom(src.id, adsetCfg.copyFrom);
+      console.log(`  copy från ${adsetCfg.copyFrom} / ${adsetCopy.fromAd}`);
     }
 
+    // motiv får vara en sträng eller { name, copy } när varje annons har egen briefad copy
+    const motifs = adsetCfg.motifs.map(m => typeof m === 'string' ? { name: m } : m);
+
     if (DRY) {
-      for (const m of adsetCfg.motifs) {
-        const r = resolveMotif(m);
-        console.log(`  · ${m}: ${r ? (r.kind === 'video' ? 'video' : 'bild [' + Object.keys(r.variants).join('+') + ']') : 'SAKNAS'}`);
+      for (const m of motifs) {
+        const r = resolveMotif(m.name);
+        const c = m.copy ? ` · egen copy: ${m.copy.headline}` : '';
+        console.log(`  · ${m.name}: ${r ? (r.kind === 'video' ? 'video' : 'bild [' + Object.keys(r.variants).join('+') + ']') : 'SAKNAS'}${c}`);
       }
       continue;
     }
@@ -196,7 +203,9 @@ for (const camp of cfg.campaigns) {
     }
 
     const finnsIAdset = adsPerAdset.get(adsetId) || new Set();
-    for (const motif of adsetCfg.motifs) {
+    for (const m of motifs) {
+      const motif = m.name;
+      const copy = m.copy ? { ...adsetCopy, ...m.copy } : adsetCopy;
       if (finnsIAdset.has(motif)) { console.log(`  · ${motif} finns redan i adsetet — hoppar`); continue; }
       try {
         const r = resolveMotif(motif);
