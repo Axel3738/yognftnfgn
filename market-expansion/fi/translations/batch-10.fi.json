@@ -1,0 +1,220 @@
+{
+ "products": [
+  {
+   "handle": "tofflor-ergonomiska-tjocksulade-for-inne-ute",
+   "fi": {
+    "title": "Ergonomiset Tossut – Paksupohjaiset Sisä- ja Ulkokäyttöön",
+    "descriptionHtml": "<h3>Väsyneet jalat kotipäivän jälkeen? Silloin tossut ovat vääränlaiset.</h3><p>Ohuet, litteät tossut tekevät työtä sinua vastaan – jokainen askel osuu kovaa kantapäihin ja polviin. Sitä ei huomaa heti. Sen huomaa illalla.</p><!-- GIF: foten sjunker ner i tjock sula --><h3>Ratkaisu: kuin kävelisi pilvillä</h3><p>Paksu, iskuja vaimentava pohja ottaa vastaan jokaisen askeleen ja helpottaa nivelten ja selän rasitusta. Mukavat sisällä – ja tarpeeksi liukumattomat terassille ja pihalle.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ce963fd939ae7017637863a3d0a0ec07.jpg\" alt=\"Ergonomiset tossut, joissa paksu pohja\"></p><h3>Ominaisuudet</h3><ul>\n<li>Paksu ergonominen pohja iskunvaimennuksella</li>\n<li>Liukumattomat – sisä- ja ulkokäyttöön</li>\n<li>Kevyet ja ilmavat – kuivuvat nopeasti</li>\n<li>Unisex-malli useissa koissa</li>\n<li>Täydelliset kotiin, terassille ja kesämökille</li>\n</ul><!-- BILD: närbild på sulan --><h3>Takuumme</h3><p>30 päivän tyytyväisyystakuu – jos et pidä niistä, saat rahasi takaisin. Nopea toimitus ja turvallinen maksaminen Klarnalla. 🦫</p>",
+    "productType": "Kengät",
+    "tags": ["Mukava", "Koti", "Kengät", "Tossut"],
+    "seo": {
+     "title": "Ergonomiset tossut – mukavat jalat kotona ja ulkona",
+     "description": "Paksupohjaiset, liukumattomat tossut jotka hemmottelevat väsyneitä jalkoja. Sopivat sisälle ja ulos. Nopea toimitus."
+    },
+    "options": [
+     { "name": "Title" }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65430120890717",
+      "title": "Default Title",
+      "selectedOptions": [
+       { "name": "Title", "value": "Default Title" }
+      ]
+     }
+    ],
+    "imagesAlt": ["Ergonomiset tossut, joissa paksu pohja"]
+   },
+   "flags": ["JURIDISK GRANSKNING: 30 dagars nöjd-kund-garanti med pengarna tillbaka – verifiera mot kuluttajansuojalaki (14 päivän peruuttamisoikeus; HUOM: Suomessa ei ole kiinteää 2 vuoden takuuta, virhevastuu määräytyy tuotteen odotetun käyttöiän mukaan)"]
+  },
+  {
+   "handle": "fritidsskor-herr-laga-latta-med-halkfri-sula",
+   "fi": {
+    "title": "Vapaa-ajan Kengät Miehille – Matalat ja Kevyet, Liukumattomalla Pohjalla",
+    "descriptionHtml": "<h3>Kengät kävelylle. Kengät töihin. Kengät metsään. Vai sittenkin yhdet?</h3><p>Kenkähylly on täynnä, mutta väärä pari tulee valituksi joka kerta. Liian raskaat, liian kuumat, liian liukkaat.</p><!-- GIF: skon böjs/flexas i handen --><h3>Ratkaisu: kenkä, joka kestää kaiken</h3><p>Erittäin kevyet vapaa-ajan kengät liukumattomalla pohjalla, joka pitää jalansijan märälläkin alustalla. Tyylikkäät kaupungille, kestävät metsäpolulle – ympäri vuoden.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b1d1d71d-c0b4-40d4-ad6d-a2a3c1d3cc73.jpg\" alt=\"Kevyet vapaa-ajan kengät miehille\"></p><h3>Ominaisuudet</h3><ul>\n<li>Erittäin kevyet – eivät väsytä jalkoja</li>\n<li>Liukumaton pohja kaikille alustoille</li>\n<li>Hengittävä materiaali</li>\n<li>Harmaat, punaisin yksityiskohdin</li>\n<li>Saatavilla isoissa koissa</li>\n</ul><!-- BILD: sulan/greppet underifrån --><h3>Takuumme</h3><p>30 päivän tyytyväisyystakuu – jos et pidä niistä, saat rahasi takaisin. Nopea toimitus ja turvallinen maksaminen Klarnalla. 🦫</p>",
+    "productType": "Kengät",
+    "tags": ["Vapaa-aika", "Miehet", "Kengät", "Vaellus"],
+    "seo": {
+     "title": "Kevyet vapaa-ajan kengät miehille – liukumaton pohja",
+     "description": "Erittäin kevyet ja hengittävät kengät, jotka pitävät jalansijan kaikissa olosuhteissa. Tyylikkäät ja kestävät joka päivä."
+    },
+    "options": [
+     { "name": "Title" }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65430121152861",
+      "title": "Default Title",
+      "selectedOptions": [
+       { "name": "Title", "value": "Default Title" }
+      ]
+     }
+    ],
+    "imagesAlt": ["Kevyet vapaa-ajan kengät miehille"]
+   },
+   "flags": ["JURIDISK GRANSKNING: 30 dagars nöjd-kund-garanti med pengarna tillbaka – verifiera mot kuluttajansuojalaki (14 päivän peruuttamisoikeus; HUOM: Suomessa ei ole kiinteää 2 vuoden takuuta, virhevastuu määräytyy tuotteen odotetun käyttöiän mukaan)"]
+  },
+  {
+   "handle": "mobilskal-magnetiskt-med-stall-iphone-12-17",
+   "fi": {
+    "title": "Magneettinen Puhelinkotelo Tuella – iPhone 12–17",
+    "descriptionHtml": "<h3>Uusi kotelo joka kerta kun puhelin tippuu? Kallista.</h3><p>Halkeilleet kulmat, naarmuuntunut linssi ja tuki, jota ei koskaan löydy silloin kun haluat katsoa videon. Kuulostaako tutulta?</p><!-- GIF: skalet snäpper fast på magnetladdare --><h3>Ratkaisu: suoja, tuki ja magneetti – yhdessä</h3><p>Iskunkestävä kotelo, jonka korotettu reuna suojaa näyttöä ja kameraa, magneettikiinnitys, joka napsahtaa kiinni latureihin ja pidikkeisiin, sekä sisäänrakennettu tuki elokuvien katseluun ja puheluihin.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/912694ed-892f-4142-b051-5b31980c0a2d.jpg\" alt=\"Magneettinen puhelinkotelo tuella\"></p><h3>Ominaisuudet</h3><ul>\n<li>Sopii iPhone 12–17 -malleihin (mukaan lukien Pro Max, Air ja 16e)</li>\n<li>Magneettikiinnitys – yhteensopiva langattoman latauksen kanssa</li>\n<li>Sisäänrakennettu tuki elokuville ja videopuheluille</li>\n<li>Iskunkestävä, korotettu näytön reuna</li>\n<li>Matta pinta – naarmuuntumaton ja sormenjälkiä hylkivä</li>\n</ul><!-- BILD: stället utfällt på bord --><h3>Takuumme</h3><p>30 päivän tyytyväisyystakuu – jos et pidä siitä, saat rahasi takaisin. Nopea toimitus ja turvallinen maksaminen Klarnalla. 🦫</p>",
+    "productType": "Matkapuhelintarvikkeet",
+    "tags": ["iPhone", "Magneettinen", "Puhelinkotelo", "Lisätarvikkeet"],
+    "seo": {
+     "title": "Magneettinen puhelinkotelo tuella – iPhone 12–17",
+     "description": "Iskunkestävä kotelo magneettikiinnityksellä ja sisäänrakennetulla tuella. Suojaa näytön ja kameran, sopii langattomaan lataukseen."
+    },
+    "options": [
+     { "name": "Title" }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65430121283933",
+      "title": "Default Title",
+      "selectedOptions": [
+       { "name": "Title", "value": "Default Title" }
+      ]
+     }
+    ],
+    "imagesAlt": ["Magneettinen puhelinkotelo tuella"]
+   },
+   "flags": ["JURIDISK GRANSKNING: 30 dagars nöjd-kund-garanti med pengarna tillbaka – verifiera mot kuluttajansuojalaki (14 päivän peruuttamisoikeus; HUOM: Suomessa ei ole kiinteää 2 vuoden takuuta, virhevastuu määräytyy tuotteen odotetun käyttöiän mukaan)"]
+  },
+  {
+   "handle": "surfplattestall-roterande-justerbart",
+   "fi": {
+    "title": "Tablettiteline – Pyörivä ja Säädettävä",
+    "descriptionHtml": "<h3>Tabletti nojaamassa kahvikuppiin. Taas.</h3><p>Resepti keittiössä, elokuva sängyssä, videopuhelu työpöydällä – ja aina sama tasapainoilu tabletin kanssa jotain kaatuvaa vasten.</p><!-- GIF: stället roteras och vinklas --><h3>Ratkaisu: oikea kulma joka kerta</h3><p>Tukeva alumiiniteline pitää iPadisi tai puhelimesi juuri siinä, missä haluat – pyörii 360° ja on portaattomasti säädettävissä kulman ja korkeuden osalta.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/73c6e9cb-6221-4086-8e99-3c009a14c8ae.jpg\" alt=\"Pyörivä tablettiteline\"></p><h3>Ominaisuudet</h3><ul>\n<li>360° pyörivä jalusta – pysty- tai vaaka-asento</li>\n<li>Portaattomasti säädettävä kulma ja korkeus</li>\n<li>Tukeva alumiinirakenne liukuestolla</li>\n<li>Sopii kaikenkokoisille tableteille ja puhelimille</li>\n<li>Täydellinen keittiöön, toimistoon ja yöpöydälle</li>\n</ul><!-- BILD: stället med platta i köksmiljö --><h3>Takuumme</h3><p>30 päivän tyytyväisyystakuu – jos et pidä siitä, saat rahasi takaisin. Nopea toimitus ja turvallinen maksaminen Klarnalla. 🦫</p>",
+    "productType": "Lisätarvikkeet",
+    "tags": ["iPad", "Toimisto", "Teline", "Tabletti"],
+    "seo": {
+     "title": "Tablettiteline – pyörivä ja säädettävä alumiiniteline",
+     "description": "Tukeva alumiiniteline iPadille ja puhelimelle. Pyörii 360° ja säätyy portaattomasti. Täydellinen keittiöön ja toimistoon."
+    },
+    "options": [
+     { "name": "Title" }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65430121775453",
+      "title": "Default Title",
+      "selectedOptions": [
+       { "name": "Title", "value": "Default Title" }
+      ]
+     }
+    ],
+    "imagesAlt": ["Pyörivä tablettiteline"]
+   },
+   "flags": ["JURIDISK GRANSKNING: 30 dagars nöjd-kund-garanti med pengarna tillbaka – verifiera mot kuluttajansuojalaki (14 päivän peruuttamisoikeus; HUOM: Suomessa ei ole kiinteää 2 vuoden takuuta, virhevastuu määräytyy tuotteen odotetun käyttöiän mukaan)"]
+  },
+  {
+   "handle": "14-i-1-multiverktygshammare-camping-nodlage",
+   "fi": {
+    "title": "14-in-1 Monitoimivasara – Retkeilyyn ja Hätätilanteisiin",
+    "descriptionHtml": "<h3>Keskellä luontoa. Väärä työkalu kotona. Klassikko.</h3><p>Telttavaarna pitäisi lyödä maahan, oksa poistaa ja jotain ruuvata – mutta työkalulaatikko on sadan kilometrin päässä autotallissa.</p><!-- GIF: verktyget fälls ut funktion för funktion --><h3>Ratkaisu: 14 työkalua taskukoossa</h3><p>Vasara, pihdit, saha, veitsi ja ruuvimeisselit – kaikki yhdessä kompaktissa työkalussa, joka kulkee retkipakkauksessa, veneessä tai auton hätäpakkauksessa. Aina mukana. Aina valmiina.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3f2e2bf8-883d-41ef-87b9-47e26e53dc20.jpg\" alt=\"14-in-1-monitoimivasara\"></p><h3>Ominaisuudet</h3><ul>\n<li>14 toimintoa: vasara, pihdit, saha, veitsi, taltat ym.</li>\n<li>Tukeva rakenne, joka kestää oikeaa käyttöä</li>\n<li>Toimitetaan suojaavassa kotelossa</li>\n<li>Kompakti – mahtuu hansikaslokeroon</li>\n<li>Täydellinen lahja hänelle, jolla on jo kaikkea</li>\n</ul><!-- BILD: alla funktioner utfällda --><h3>Takuumme</h3><p>30 päivän tyytyväisyystakuu – jos et pidä siitä, saat rahasi takaisin. Nopea toimitus ja turvallinen maksaminen Klarnalla. 🦫</p>",
+    "productType": "Työkalut",
+    "tags": ["Retkeily", "Monitoimityökalu", "Lahja", "Työkalut"],
+    "seo": {
+     "title": "14-in-1 monitoimivasara – retkeilyyn ja hätätilanteisiin",
+     "description": "Vasara, pihdit, saha, veitsi ja ruuvimeisselit yhdessä kompaktissa työkalussa. Aina mukana, aina valmiina. Loistava lahja."
+    },
+    "options": [
+     { "name": "Title" }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65430124757341",
+      "title": "Default Title",
+      "selectedOptions": [
+       { "name": "Title", "value": "Default Title" }
+      ]
+     }
+    ],
+    "imagesAlt": ["14-in-1-monitoimivasara"]
+   },
+   "flags": ["JURIDISK GRANSKNING: 30 dagars nöjd-kund-garanti med pengarna tillbaka – verifiera mot kuluttajansuojalaki (14 päivän peruuttamisoikeus; HUOM: Suomessa ei ole kiinteää 2 vuoden takuuta, virhevastuu määräytyy tuotteen odotetun käyttöiän mukaan)"]
+  },
+  {
+   "handle": "grasklippartacke-600d-oxford-med-dragsko",
+   "fi": {
+    "title": "Ruohonleikkurin Suoja 600D Oxford – Vetonarulla",
+    "descriptionHtml": "<h3>Ruohonleikkurisi maksoi tuhansia. Sade ei välitä siitä.</h3><p>Aurinko haalistaa maalin, sade ruostuttaa terät ja lehdet kertyvät moottoriin. Suojaamaton leikkuri vanhenee tuplavauhtia – täysin turhaan.</p><!-- GIF: täcket dras över klipparen --><h3>Ratkaisu: vedä päälle, kiristä – valmista</h3><p>Kestävä 600D Oxford -suoja – samaa kulutusta kestävää materiaalia kuin istuinsuojissamme – jossa on vetonaru tiiviin istuvuuden varmistamiseksi koneen ympärille. Kuiva, puhdas ja valmis silloin kun sinäkin olet.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/5661b1e5a1d0413497069942ef7bf1ae-goods.jpg\" alt=\"Ruohonleikkurin suoja 600D Oxford -materiaalista\"></p><h3>Ominaisuudet</h3><ul>\n<li>Kestävä 600D Oxford -kangas</li>\n<li>Vetonaru reunassa tiivistä istuvuutta varten</li>\n<li>Suojaa sateelta, UV-säteilyltä, pölyltä ja lehdiltä</li>\n<li>Sopii useimpiin ruohonleikkureihin ja ajettaviin ruohonleikkureihin</li>\n<li>Musta – huomaamaton ulkosäilytyksessä</li>\n</ul><!-- BILD: täcket på klippare i trädgård --><h3>Takuumme</h3><p>30 päivän tyytyväisyystakuu – jos et pidä siitä, saat rahasi takaisin. Nopea toimitus ja turvallinen maksaminen Klarnalla. 🦫</p>",
+    "productType": "Puutarha & Ulkoilu",
+    "tags": ["Ruohonleikkuri", "Suoja", "Puutarha", "Ulkoilu"],
+    "seo": {
+     "title": "Ruohonleikkurin suoja 600D Oxford – vetonarulla",
+     "description": "Kestävä ja säänkestävä suoja suojaa leikkurisi sateelta, auringolta ja lehdiltä. Tiivis istuvuus vetonarulla."
+    },
+    "options": [
+     { "name": "Title" }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65430125117789",
+      "title": "Musta",
+      "selectedOptions": [
+       { "name": "Title", "value": "Musta" }
+      ]
+     }
+    ],
+    "imagesAlt": ["Ruohonleikkurin suoja 600D Oxford"]
+   },
+   "flags": ["JURIDISK GRANSKNING: 30 dagars nöjd-kund-garanti med pengarna tillbaka – verifiera mot kuluttajansuojalaki (14 päivän peruuttamisoikeus; HUOM: Suomessa ei ole kiinteää 2 vuoden takuuta, virhevastuu määräytyy tuotteen odotetun käyttöiän mukaan)"]
+  },
+  {
+   "handle": "fiskespohallare-for-bat-2-pack-i-kraftig-nylon",
+   "fi": {
+    "title": "Kalastusvapateline Veneeseen – 2 kpl Kestävää Nailonia",
+    "descriptionHtml": "<h3>Yksi vapa kädessä, toinen polvien välissä, kolmas kannella</h3><p>Usealla vavalla kalastaminen veneestä ilman telinettä on sirkustemppu – ja juuri silloin kun kala nykäisee, vapa on väärässä paikassa.</p><!-- GIF: spöt sätts i hållaren på relingen --><h3>Ratkaisu: kiinteät paikat vavoille</h3><p>Kaksi tukevaa nailonista telinettä, jotka kiinnitetään kaiteeseen. Vavat pysyvät tukevasti oikeassa kulmassa – ja kätesi ovat vapaat, kunnes jotain todella tapahtuu.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/afa5554aaa164c7bbdbbb4264a12a532-goods.jpg\" alt=\"Kalastusvapateline veneeseen\"></p><h3>Ominaisuudet</h3><ul>\n<li>2 kpl – kaksi telinettä per ostos</li>\n<li>Kestävää muovinailonia, joka kestää säätä ja UV-säteilyä</li>\n<li>Helppo asentaa veneen kaiteeseen</li>\n<li>Pitää vavan tukevasti oikeassa kulmassa</li>\n<li>Sopii useimpiin vapapaksuuksiin</li>\n</ul><!-- BILD: båda hållarna monterade --><h3>Takuumme</h3><p>30 päivän tyytyväisyystakuu – jos et pidä niistä, saat rahasi takaisin. Nopea toimitus ja turvallinen maksaminen Klarnalla. 🦫</p>",
+    "productType": "Vene & Merenkulku",
+    "tags": ["Vene", "Kalastus", "Merenkulku", "Vapateline"],
+    "seo": {
+     "title": "Kalastusvapateline veneeseen – 2 kpl kestävää nailonia",
+     "description": "Kaksi tukevaa vapatelinettä veneen kaiteeseen. Pitää vavat tukevasti paikallaan – kädet vapaana kalastukseen."
+    },
+    "options": [
+     { "name": "Title" }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65430125838685",
+      "title": "2 kpl",
+      "selectedOptions": [
+       { "name": "Title", "value": "2 kpl" }
+      ]
+     }
+    ],
+    "imagesAlt": ["Kalastusvapateline veneeseen"]
+   },
+   "flags": ["JURIDISK GRANSKNING: 30 dagars nöjd-kund-garanti med pengarna tillbaka – verifiera mot kuluttajansuojalaki (14 päivän peruuttamisoikeus; HUOM: Suomessa ei ole kiinteää 2 vuoden takuuta, virhevastuu määräytyy tuotteen odotetun käyttöiän mukaan)"]
+  },
+  {
+   "handle": "hattgalge-smart-forvaring-for-8-kepsar",
+   "fi": {
+    "title": "Lippisripustin – Fiksu Säilytys 8 Lippikselle",
+    "descriptionHtml": "<h3>Lippispino hattuhyllyllä. Siitä täytyy puhua.</h3><p>Kymmenen lippistä pinossa tarkoittaa kymmentä litistynyttä lippaa – ja että suosikki on aina alimmaisena.</p><!-- GIF: kepsar hängs upp en efter en --><h3>Ratkaisu: yksi ripustin, kahdeksan lippistä</h3><p>Ripusta teline vaatekaappiin ja anna jokaiselle lippikselle oma paikkansa. Liput säilyttävät muotonsa, näet koko kokoelman yhdellä silmäyksellä – ja hattuhylly saa taas hengittää.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/d8dd15a8-ecc7-436d-9e8c-69d6daf2ada4.jpg\" alt=\"Lippisripustin 8 lippikselle\"></p><h3>Ominaisuudet</h3><ul>\n<li>Tilaa jopa 8 lippikselle per ripustin</li>\n<li>Hellävarainen lipalle – lippikset säilyttävät muotonsa</li>\n<li>Sopii kaikkiin vakiokokoisiin vaatekaappeihin</li>\n<li>Nopea yleiskuva koko kokoelmasta</li>\n<li>Täydellinen eteiseen, vaatekaappiin ja opiskelija-asuntoon</li>\n</ul><!-- BILD: galgen full med kepsar i garderob --><h3>Takuumme</h3><p>30 päivän tyytyväisyystakuu – jos et pidä siitä, saat rahasi takaisin. Nopea toimitus ja turvallinen maksaminen Klarnalla. 🦫</p>",
+    "productType": "Säilytys",
+    "tags": ["Säilytys", "Vaatekaappi", "Koti", "Lippikset"],
+    "seo": {
+     "title": "Lippisripustin – fiksu säilytys 8 lippikselle",
+     "description": "Ripusta lippikset omille paikoilleen ja säilytä lippa siistinä. Sopii kaikkiin vakiokokoisiin vaatekaappeihin."
+    },
+    "options": [
+     { "name": "Title" }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65430125936989",
+      "title": "Default Title",
+      "selectedOptions": [
+       { "name": "Title", "value": "Default Title" }
+      ]
+     }
+    ],
+    "imagesAlt": ["Lippisripustin 8 lippikselle"]
+   },
+   "flags": ["JURIDISK GRANSKNING: 30 dagars nöjd-kund-garanti med pengarna tillbaka – verifiera mot kuluttajansuojalaki (14 päivän peruuttamisoikeus; HUOM: Suomessa ei ole kiinteää 2 vuoden takuuta, virhevastuu määräytyy tuotteen odotetun käyttöiän mukaan)"]
+  }
+ ]
+}
