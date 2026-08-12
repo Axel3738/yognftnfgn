@@ -23,7 +23,7 @@ const PIPELINE = {
   dark:  { assigned: '#184f95', in_progress: '#256abf', in_review: '#3987e5', revision: '#6da7ec', approved: '#9ec5f4', cancelled: '#52514e' },
 };
 
-export function renderDashboard({ config, editors, byWorkspace, spaces, defaultWorkspace, defaultPeriod, demo }) {
+export function renderDashboard({ config, editors, byWorkspace, spaces, defaultWorkspace, defaultPeriod, demo, payout = null }) {
   const payload = {
     config: {
       team: config.team,
@@ -39,6 +39,7 @@ export function renderDashboard({ config, editors, byWorkspace, spaces, defaultW
     defaultWorkspace,
     defaultPeriod,
     demo,
+    payout,
     series: SERIES,
     pipeline: PIPELINE,
   };
@@ -366,6 +367,7 @@ const NS = 'http://www.w3.org/2000/svg';
 // Avbockningar sparas i webbläsaren. De rör aldrig Notion — det är en
 // arbetslista för egen del, inte en statusändring för teamet.
 const DONE_KEY = 'redigerarpanel.hanterade';
+const PAYOUT_TAB = '__ersattning';
 function loadDone() {
   try { return new Set(JSON.parse(localStorage.getItem(DONE_KEY) || '[]')); }
   catch { return new Set(); }
@@ -684,6 +686,7 @@ function deltaLine(value, opts) {
 
 /* ---------- render ---------- */
 function render() {
+  const onPayout = state.workspace === PAYOUT_TAB && P.payout;
   const spaceData = P.byWorkspace[state.workspace] || P.byWorkspace[P.spaces[0].id];
   const M = spaceData[state.period];
   const app = document.getElementById('app');
@@ -705,23 +708,34 @@ function render() {
         ' · uppdaterad ' + new Date(M.generatedAt).toLocaleString('sv-SE', { dateStyle: 'medium', timeStyle: 'short' }) }),
     ]),
     // Periodväxlaren styr bara tidsbaserade mätetal — göm den när det inte
-    // finns några, annars ser den ut att vara trasig.
-    M.team.deliveries > 0 ? el('div', { class: 'controls' }, [periodBtns]) : null,
+    // finns några, annars ser den ut att vara trasig. På lönefliken styr den
+    // ingenting alls.
+    !onPayout && M.team.deliveries > 0 ? el('div', { class: 'controls' }, [periodBtns]) : null,
   ]));
 
-  if (P.spaces.length > 1) {
+  // Ersättningen ligger som en egen flik sist: den handlar om pengar, inte om
+  // ett teamspace, och ska inte blandas ihop med arbetsmätningen.
+  const tabs = P.spaces.slice();
+  if (P.payout) tabs.push({ id: PAYOUT_TAB, name: 'Ersättning', payout: true });
+
+  if (tabs.length > 1) {
     app.appendChild(el('nav', { class: 'tabs', 'aria-label': 'Teamspace' },
-      P.spaces.map(sp => {
+      tabs.map(sp => {
         const m30 = (P.byWorkspace[sp.id] || {})[state.period];
-        const count = m30 ? m30.snapshot.totalTasks : 0;
+        const count = sp.payout ? null : (m30 ? m30.snapshot.totalTasks : 0);
         return el('button', {
           class: 'tab', 'aria-selected': String(sp.id === state.workspace),
           onclick: () => { state.workspace = sp.id; render(); },
         }, [
           el('span', { text: sp.name }),
-          el('span', { class: 'tab-count', text: String(count) }),
+          count == null ? null : el('span', { class: 'tab-count', text: String(count) }),
         ]);
       })));
+  }
+
+  if (onPayout) {
+    app.appendChild(payoutView());
+    return;
   }
 
   if (P.demo) {
@@ -1105,6 +1119,202 @@ function leaderboardSection(M) {
       ]),
     ]),
   ]);
+}
+
+/* ------------------------------------------------------------ ersättning */
+
+function kr(x) {
+  if (x == null || !isFinite(x)) return '–';
+  return nf.format(Math.round(x)) + ' kr';
+}
+
+function monthName(m) {
+  const d = new Date(m + '-01T12:00:00Z');
+  return d.toLocaleDateString('sv-SE', { month: 'long', year: 'numeric' });
+}
+
+/**
+ * Så här mycket blir det om resten av månaden går som de dagar som gått.
+ * Räknas i klienten så siffran är rätt även om panelen byggdes i går.
+ */
+function project(spentSoFar, month) {
+  const now = new Date();
+  const cur = now.toISOString().slice(0, 7);
+  if (month !== cur) return null;
+  const day = now.getUTCDate();
+  const days = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, 0)).getUTCDate();
+  if (day >= days) return null;
+  return { value: spentSoFar * (days / day), day: day, days: days };
+}
+
+function payoutView() {
+  const P0 = P.payout;
+  const months = P0.months.slice().sort();
+  const month = months[months.length - 1];
+  const rate = P0.rate;
+
+  // Rader utan känd person filtreras bort: en "Okänd (367d)" med 2 kr i
+  // ersättning är brus, och det finns ingen att betala den till.
+  const known = P0.editors.filter(function (e) { return e.name.indexOf('Okänd') !== 0; });
+
+  const rows = known
+    .map(function (e) {
+      const m = e.byMonth[month] || { spend: 0, payout: 0, purchases: 0, revenue: 0 };
+      return { e: e, m: m, proj: project(m.payout, month) };
+    })
+    .sort(function (a, b) { return b.m.payout - a.m.payout; });
+
+  const teamMonth = rows.reduce(function (s, r) { return s + r.m.payout; }, 0);
+  const teamProj = project(teamMonth, month);
+
+  const out = el('div', {});
+
+  /* Vad det är, i en mening som inte går att missförstå. */
+  out.appendChild(el('section', {}, [
+    el('div', { class: 'tiles' }, [
+      el('div', { class: 'tile' }, [
+        el('div', { class: 'label', text: 'Att betala ut för ' + monthName(month) + ' hittills' }),
+        el('div', { class: 'value hero', text: kr(teamMonth) }),
+        el('div', { class: 'delta', text: teamProj
+          ? 'Blir ' + kr(teamProj.value) + ' om resten av månaden går likadant'
+          : 'Månaden är slut – det här är hela summan' }),
+      ]),
+      el('div', { class: 'tile' }, [
+        el('div', { class: 'label', text: 'Adspend som ligger bakom' }),
+        el('div', { class: 'value', text: kr(rows.reduce(function (s, r) { return s + r.m.spend; }, 0)) }),
+        el('div', { class: 'delta', text: pct(rate, 1) + ' av spenden går till den som gjort annonsen' }),
+      ]),
+      el('div', { class: 'tile' }, [
+        el('div', { class: 'label', text: 'Köp från annonserna i månaden' }),
+        el('div', { class: 'value', text: num(rows.reduce(function (s, r) { return s + (r.m.purchases || 0); }, 0)) }),
+        el('div', { class: 'delta', text: 'Intäkt ' + kr(rows.reduce(function (s, r) { return s + (r.m.revenue || 0); }, 0)) }),
+      ]),
+    ]),
+  ]));
+
+  /* Per person: den siffra de själva vill se. */
+  const head = el('tr', {}, [
+    el('th', { text: 'Redigerare', scope: 'col' }),
+    el('th', { text: monthName(month) + ' hittills', scope: 'col' }),
+    el('th', { text: 'Blir i månaden', scope: 'col' }),
+    el('th', { text: 'Adspend i månaden', scope: 'col' }),
+    el('th', { text: 'Annonser som spenderar', scope: 'col' }),
+    el('th', { text: 'Totalt sedan ' + monthName(months[0]), scope: 'col' }),
+  ]);
+
+  const labels = ['Redigerare', monthName(month) + ' hittills', 'Blir i månaden',
+    'Adspend i månaden', 'Annonser som spenderar', 'Totalt'];
+
+  const body = rows.map(function (r) {
+    const tds = [
+      el('td', {}, [el('div', { class: 'who' }, [
+        el('span', { class: 'key', style: 'background:' + colorOf(r.e.id) }),
+        el('div', {}, [el('div', { text: r.e.name })]),
+      ])]),
+      el('td', { class: 'num' }, [el('b', { text: kr(r.m.payout) })]),
+      el('td', { class: 'num', text: r.proj ? kr(r.proj.value) : '–' }),
+      el('td', { class: 'num', text: kr(r.m.spend) }),
+      el('td', { class: 'num', text: num(r.e.ads) }),
+      el('td', { class: 'num', text: kr(r.e.totalPayout) }),
+    ];
+    return labelCells(el('tr', {}, tds), labels);
+  });
+
+  const monthCols = months.slice().reverse().map(function (m) {
+    const sum = known.reduce(function (s, e) { return s + ((e.byMonth[m] || {}).payout || 0); }, 0);
+    return monthName(m) + ': ' + kr(sum);
+  }).join('   ·   ');
+
+  out.appendChild(el('section', {}, [
+    el('div', { class: 'card' }, [
+      el('h2', { text: 'Ersättning per redigerare' }),
+      el('p', { class: 'hint', text: 'Var och en får ' + pct(rate, 1) + ' av adspenden på de annonser hen gjort. ' +
+        '"Blir i månaden" är en gissning på slutsumman om de sista dagarna går som de första — inte ett beslut. ' +
+        'Månad för månad: ' + monthCols }),
+      el('div', { class: 'table-scroll' }, [
+        el('table', { class: 'as-cards' }, [el('thead', {}, [head]), el('tbody', {}, body)]),
+      ]),
+    ]),
+  ]));
+
+  /* Vinnarna – vilka annonser som faktiskt drar. */
+  const winners = P0.ads.filter(function (a) { return a.spend >= 500; }).slice(0, 15);
+  if (winners.length) {
+    const wHead = el('tr', {}, ['Annons', 'Konto', 'Spend', 'Köp', 'ROAS', 'Gjord av'].map(function (h) {
+      return el('th', { text: h, scope: 'col' });
+    }));
+    const wBody = winners.map(function (a) {
+      const name = a.url
+        ? el('td', {}, [el('a', { href: a.url, target: '_blank', rel: 'noopener', text: a.adName })])
+        : el('td', { text: a.adName });
+      return labelCells(el('tr', {}, [
+        name,
+        el('td', { text: a.account || '–' }),
+        el('td', { class: 'num', text: kr(a.spend) }),
+        el('td', { class: 'num', text: num(a.purchases) }),
+        el('td', { class: 'num', text: a.roas == null ? '–' : nf1.format(a.roas) }),
+        el('td', { text: a.editorName || '— ingen vet' }),
+      ]), ['Annons', 'Konto', 'Spend', 'Köp', 'ROAS', 'Gjord av']);
+    });
+    out.appendChild(el('section', {}, [
+      el('div', { class: 'card' }, [
+        el('h2', { text: 'Annonserna som drar mest pengar' }),
+        el('p', { class: 'hint', text: 'ROAS = intäkt per spenderad krona. Under 1,0 betyder att annonsen går back.' }),
+        el('div', { class: 'table-scroll' }, [
+          el('table', { class: 'as-cards' }, [el('thead', {}, [wHead]), el('tbody', {}, wBody)]),
+        ]),
+      ]),
+    ]));
+  }
+
+  /* Luckan – och den är stor. Den ska synas, inte gömmas. */
+  const cov = P0.coverage;
+  if (cov.unmatchedSpend > 0) {
+    out.appendChild(el('div', { class: 'banner' }, [
+      el('span', { text: '⚠' }),
+      el('div', { html: '<b>' + pct(1 - cov.share) + ' av spenden (' + escapeHtml(kr(cov.unmatchedSpend)) +
+        ') går inte att knyta till någon.</b> Annonsen finns i Meta men inte i Notion, eller så saknar ' +
+        'Notion-tasken ansvarig. De pengarna betalas inte ut till någon — panelen gissar aldrig. ' +
+        'Listan nedan är de största; känner du igen vem som gjort en, sätt ansvarig på tasken i Notion så ' +
+        'flyttas den hit av sig själv.' }),
+    ]));
+
+    const uHead = el('tr', {}, ['Annons', 'Konto', 'Spend', 'Skulle ge', 'Köp', 'ROAS', 'Kördes'].map(function (h) {
+      return el('th', { text: h, scope: 'col' });
+    }));
+    const uLabels = ['Annons', 'Konto', 'Spend', 'Skulle ge', 'Köp', 'ROAS', 'Kördes'];
+    const uBody = cov.topUnmatched.map(function (u) {
+      return labelCells(el('tr', {}, [
+        el('td', { text: u.adName }),
+        el('td', { text: u.account || '–' }),
+        el('td', { class: 'num' }, [el('b', { text: kr(u.spend) })]),
+        el('td', { class: 'num', text: kr(u.payout) }),
+        el('td', { class: 'num', text: num(u.purchases) }),
+        el('td', { class: 'num', text: u.roas == null ? '–' : nf1.format(u.roas) }),
+        el('td', { text: shortDate(u.firstDate) + '–' + shortDate(u.lastDate) }),
+      ]), uLabels);
+    });
+
+    out.appendChild(el('section', {}, [
+      el('div', { class: 'card' }, [
+        el('h2', { text: 'Ingen får betalt för de här' }),
+        el('p', { class: 'hint', text: '"Skulle ge" är vad ' + pct(rate, 1) + ' av spenden hade blivit om annonsen ' +
+          'hade en ansvarig i Notion.' }),
+        el('div', { class: 'table-scroll' }, [
+          el('table', { class: 'as-cards' }, [el('thead', {}, [uHead]), el('tbody', {}, uBody)]),
+        ]),
+      ]),
+    ]));
+  }
+
+  out.appendChild(el('footer', { class: 'foot', text:
+    'Siffrorna kommer från Meta Ads och uppdateras varje timme. Kopplingen annons → person går via ' +
+    'annonsnamnet: exakt namn, strukturerat namn (Produkt_Vinkel_nr) eller annonsnummer. Är namnet tvetydigt ' +
+    'betalas ingen — hellre en synlig lucka än fel person.' +
+    (P0.fetchedAt ? ' Senast hämtat ' + new Date(P0.fetchedAt).toLocaleString('sv-SE',
+      { dateStyle: 'medium', timeStyle: 'short' }) + '.' : '') }));
+
+  return out;
 }
 
 function flagsSection(M) {

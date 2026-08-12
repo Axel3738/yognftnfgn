@@ -10,6 +10,7 @@
 // en utbetalning byggd på en gissning.
 
 import { normaliseAdName } from './ingest/meta.mjs';
+import { buildMatcher, PAYABLE_TIERS } from './match.mjs';
 
 /** ISO-datum → 'YYYY-MM'. */
 const monthOf = date => String(date).slice(0, 7);
@@ -20,14 +21,17 @@ const monthOf = date => String(date).slice(0, 7);
  * @param rate      andel av spend, t.ex. 0.004 för 0,4%
  */
 export function computePayout({ metaRows, tasks, rate, editors = [] }) {
-  const owner = new Map();
-  for (const t of tasks) {
-    if (!t.editor) continue;
-    const key = normaliseAdName(t.title);
-    // Samma namn kan förekomma flera gånger; första ägaren vinner, men vi
-    // noterar krockar så de går att reda ut i stället för att gömmas.
-    if (!owner.has(key)) owner.set(key, { editor: t.editor, taskId: t.id, url: t.url });
-  }
+  // Namnen är "samma" för ögat men inte för en sträng-jämförelse: Meta bär
+  // marknadsprefix och hook-suffix (NO 101 H1) där Notion bara har numret.
+  // Exakt matchning ensam träffar 7% av spenden; nivåerna i match.mjs träffar
+  // knappt hälften. Bara nivåer med känd säkerhet får bli pengar.
+  const matcher = buildMatcher(tasks);
+  const ownerOf = adName => {
+    const hit = matcher.match(adName);
+    if (!hit || !hit.task || !PAYABLE_TIERS.has(hit.tier)) return null;
+    if (!hit.task.editor) return null;
+    return { editor: hit.task.editor, taskId: hit.task.id, url: hit.task.url, tier: hit.tier };
+  };
 
   const nameOf = id => editors.find(e => e.id === id)?.name || id;
 
@@ -39,7 +43,7 @@ export function computePayout({ metaRows, tasks, rate, editors = [] }) {
 
   for (const r of metaRows) {
     const key = normaliseAdName(r.adName);
-    const hit = owner.get(key);
+    const hit = ownerOf(r.adName);
     const month = monthOf(r.date);
     months.add(month);
 
@@ -62,7 +66,17 @@ export function computePayout({ metaRows, tasks, rate, editors = [] }) {
 
     if (!hit) {
       unmatchedSpend += r.spend;
-      unmatchedAds.set(key, (unmatchedAds.get(key) || 0) + r.spend);
+      const u = unmatchedAds.get(key) || {
+        adName: r.adName, spend: 0, purchases: 0, revenue: 0,
+        account: r.accountName || null, campaign: r.campaign || null,
+        firstDate: r.date, lastDate: r.date,
+      };
+      u.spend += r.spend;
+      u.purchases += r.purchases;
+      u.revenue += r.revenue;
+      if (r.date < u.firstDate) u.firstDate = r.date;
+      if (r.date > u.lastDate) u.lastDate = r.date;
+      unmatchedAds.set(key, u);
       continue;
     }
     matchedSpend += r.spend;
@@ -130,9 +144,22 @@ export function computePayout({ metaRows, tasks, rate, editors = [] }) {
       matchedSpend: Math.round(matchedSpend),
       unmatchedSpend: Math.round(unmatchedSpend),
       share: totalSpend > 0 ? matchedSpend / totalSpend : null,
-      topUnmatched: [...unmatchedAds.entries()]
-        .sort((a, b) => b[1] - a[1]).slice(0, 20)
-        .map(([name, spend]) => ({ adName: name, spend: Math.round(spend) })),
+      // Vilka annonser pengarna ligger i. Namnet + kontot räcker för att en
+      // människa ska kunna säga "den där gjorde X" — vilket är enda sättet att
+      // få dem betalda, eftersom panelen aldrig gissar.
+      topUnmatched: [...unmatchedAds.values()]
+        .sort((a, b) => b.spend - a.spend).slice(0, 25)
+        .map(u => ({
+          adName: u.adName,
+          spend: Math.round(u.spend),
+          payout: Math.round(u.spend * rate * 100) / 100,
+          purchases: u.purchases,
+          roas: u.spend > 0 ? Math.round((u.revenue / u.spend) * 100) / 100 : null,
+          account: u.account,
+          campaign: u.campaign,
+          firstDate: u.firstDate,
+          lastDate: u.lastDate,
+        })),
     },
   };
 }
