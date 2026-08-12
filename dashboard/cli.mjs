@@ -14,6 +14,7 @@
 //   node cli.mjs stats                 skriv ut nyckeltalen i terminalen
 //
 // Flaggor: --period <dagar>  --dry-run  --force  --config <fil>  --out <fil>
+//          --fragment  (bygg utan html/head/body — för värdar med eget skelett)
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
@@ -26,6 +27,7 @@ import { generateSeed } from './src/seed.mjs';
 import { buildDigest, buildNudges, postWebhook, postApi } from './src/slack.mjs';
 import { importCSV } from './src/ingest/csv.mjs';
 import { computePayout, projectMonth } from './src/payout.mjs';
+import { rankByStake } from './src/priority.mjs';
 import { formatDuration } from './src/time.mjs';
 import { trackOf } from './src/track.mjs';
 
@@ -76,6 +78,54 @@ function metricsFor(periodDays, now = Date.now()) {
 const say = (...a) => console.log(...a);
 const die = msg => { console.error(`\n✖ ${msg}\n`); process.exit(1); };
 
+/**
+ * Ersättningsunderlaget: Meta-uttaget matchat mot Notion-taskarna.
+ *
+ * Både panelen och Slack-utskicken går genom den här, så att en redigerare
+ * aldrig kan få en siffra i chatten och en annan i panelen samma dag.
+ * Returnerar null när det inte finns något Meta-uttag — då byggs allt precis
+ * som förut, bara utan pengar.
+ */
+function loadMetaRows() {
+  if (!existsSync(P.meta)) return [];
+  try { return JSON.parse(readFileSync(P.meta, 'utf8')).rows || []; }
+  catch { return []; }
+}
+
+/**
+ * Ordnar om flaggorna så att det som kostar mest att låta ligga hamnar först.
+ * Utan Meta-data lämnas ordningen som den var — äldst först.
+ */
+function prioritise(metrics, tasks, metaRows) {
+  if (!metaRows.length) return metrics;
+  return { ...metrics, flags: rankByStake({ flags: metrics.flags, tasks, metaRows }) };
+}
+
+function loadPayout(tasks) {
+  if (!existsSync(P.meta)) return null;
+  try {
+    const meta = JSON.parse(readFileSync(P.meta, 'utf8'));
+    const rows = meta.rows || [];
+    if (!rows.length) return null;
+
+    const ownersPath = join(HERE, 'data', 'ad-owners.json');
+    const manualOwners = existsSync(ownersPath)
+      ? JSON.parse(readFileSync(ownersPath, 'utf8'))
+      : null;
+
+    const payout = computePayout({
+      metaRows: rows, tasks, editors, manualOwners,
+      rate: config.meta?.payoutRate ?? 0.004,
+    });
+    payout.fetchedAt = meta.fetchedAt || null;
+    payout.currency = config.meta?.currency || 'SEK';
+    return payout;
+  } catch (err) {
+    say(`  ⚠ Kunde inte läsa Meta-uttaget: ${err.message}`);
+    return null;
+  }
+}
+
 /* ------------------------------------------------------------------ build */
 
 function cmdBuild() {
@@ -107,6 +157,8 @@ function cmdBuild() {
     spaces.push({ id: 'unassigned:translation', name: 'Utan teamspace · Översättning', track: 'translation' });
   }
 
+  const metaRows = loadMetaRows();
+
   const byWorkspace = {};
   for (const space of spaces) {
     const wantTrack = space.track || 'production';
@@ -119,29 +171,14 @@ function cmdBuild() {
     });
     byWorkspace[space.id] = {};
     for (const d of config.periods) {
-      byWorkspace[space.id][d] = computeMetrics({ tasks: subset, config, periodDays: d, now, editors });
+      byWorkspace[space.id][d] = prioritise(
+        computeMetrics({ tasks: subset, config, periodDays: d, now, editors }), tasks, metaRows);
     }
   }
 
   // Ersättningen: 0,4% av adspenden på de annonser man gjort. Finns inget
   // Meta-uttag byggs panelen precis som förut, bara utan lönefliken.
-  let payout = null;
-  if (existsSync(P.meta)) {
-    try {
-      const meta = JSON.parse(readFileSync(P.meta, 'utf8'));
-      const rows = meta.rows || [];
-      if (rows.length) {
-        payout = computePayout({
-          metaRows: rows, tasks, editors,
-          rate: config.meta?.payoutRate ?? 0.004,
-        });
-        payout.fetchedAt = meta.fetchedAt || null;
-        payout.currency = config.meta?.currency || 'SEK';
-      }
-    } catch (err) {
-      say(`  ⚠ Kunde inte läsa Meta-uttaget: ${err.message}`);
-    }
-  }
+  const payout = loadPayout(tasks);
 
   const demo = events.some(e => e.source === 'demo');
   const html = renderDashboard({
@@ -149,6 +186,7 @@ function cmdBuild() {
     defaultWorkspace: spaces.length > 1 ? spaces[0].id : spaces[0].id,
     defaultPeriod: config.defaultPeriodDays,
     demo, payout,
+    fragment: flags.fragment === true || flags.fragment === 'true',
   });
 
   mkdirSync(dirname(P.out), { recursive: true });
@@ -429,7 +467,11 @@ async function cmdIngest() {
 async function cmdSlack() {
   const [kind] = rest;
   const period = Number(flags.period || config.defaultPeriodDays);
-  const metrics = metricsFor(period);
+  const { tasks } = loadState();
+  const metrics = prioritise(
+    computeMetrics({ tasks, config, periodDays: period, now: Date.now(), editors }),
+    tasks, loadMetaRows());
+  const payout = loadPayout(tasks);
   const dry = flags['dry-run'] === true || flags['dry-run'] === 'true';
 
   const webhook = process.env.SLACK_WEBHOOK_URL;
@@ -439,6 +481,7 @@ async function cmdSlack() {
   if (kind === 'digest') {
     const payload = buildDigest(metrics, config, {
       dashboardUrl: (flags.url && flags.url !== true) ? flags.url : undefined,
+      payout,
     });
     if (dry) { say(JSON.stringify(payload, null, 2)); return; }
     if (token) {
@@ -456,7 +499,7 @@ async function cmdSlack() {
   }
 
   if (kind === 'nudge') {
-    const nudges = buildNudges(metrics, config);
+    const nudges = buildNudges(metrics, config, { payout });
     if (!nudges.length) { say('Inget att knuffa — inga öppna flaggor.'); return; }
     if (dry) { say(JSON.stringify(nudges, null, 2)); return; }
     if (!token) die('DM kräver SLACK_BOT_TOKEN (scopes: chat:write, im:write). Kör med --dry-run för att se meddelandena.');

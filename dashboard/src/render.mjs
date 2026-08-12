@@ -23,7 +23,13 @@ const PIPELINE = {
   dark:  { assigned: '#184f95', in_progress: '#256abf', in_review: '#3987e5', revision: '#6da7ec', approved: '#9ec5f4', cancelled: '#52514e' },
 };
 
-export function renderDashboard({ config, editors, byWorkspace, spaces, defaultWorkspace, defaultPeriod, demo, payout = null }) {
+/**
+ * @param fragment  utan <!doctype>/<html>/<head>/<body> — för värdar som
+ *                  lägger in sidan i ett eget skelett. Innehållet är exakt
+ *                  detsamma; panelen är självförsörjande och hämtar aldrig
+ *                  något utifrån, så den fungerar likadant i båda formerna.
+ */
+export function renderDashboard({ config, editors, byWorkspace, spaces, defaultWorkspace, defaultPeriod, demo, payout = null, fragment = false }) {
   const payload = {
     config: {
       team: config.team,
@@ -44,6 +50,20 @@ export function renderDashboard({ config, editors, byWorkspace, spaces, defaultW
     pipeline: PIPELINE,
   };
 
+  const body = `<div id="app"></div>
+<script id="payload" type="application/json">${JSON.stringify(payload).replace(/</g, '\\u003c')}</script>
+<script>
+${CLIENT}
+</script>`;
+
+  if (fragment) {
+    return `<title>Redigerarpanel</title>
+<style>
+${STYLE}
+</style>
+${body}`;
+  }
+
   return `<!doctype html>
 <html lang="sv">
 <head>
@@ -55,11 +75,7 @@ ${STYLE}
 </style>
 </head>
 <body>
-<div id="app"></div>
-<script id="payload" type="application/json">${JSON.stringify(payload).replace(/</g, '\\u003c')}</script>
-<script>
-${CLIENT}
-</script>
+${body}
 </body>
 </html>`;
 }
@@ -275,6 +291,8 @@ tbody tr:hover { background: color-mix(in srgb, var(--text-primary) 4%, transpar
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 .flags .detail { color: var(--text-secondary); font-size: 12.5px; margin-top: 2px; }
+/* Pengarna bakom en liggande sak ska gå att se utan att läsa hela raden. */
+.flags .stake { color: var(--text-primary); font-weight: 600; }
 .flags .detail .sev { font-weight: 600; }
 .flags .when {
   color: var(--text-secondary); font-size: 12.5px; font-variant-numeric: tabular-nums;
@@ -1237,6 +1255,18 @@ function payoutView() {
     ]),
   ]));
 
+  /* Vad som vilar på ett påstående i stället för på en koppling. */
+  if (P0.coverage.manualSpend > 0) {
+    const manualKr = P0.coverage.manualSpend * rate;
+    out.appendChild(el('div', { class: 'banner' }, [
+      el('span', { text: 'ⓘ' }),
+      el('div', { text: kr(manualKr) + ' av ersättningen bygger på att ' +
+        (P0.coverage.statedBy || 'någon') + ' själv sagt vem som gjort annonserna' +
+        (P0.coverage.statedAt ? ' (' + P0.coverage.statedAt + ')' : '') +
+        ' — de annonserna finns inte i Notion, så panelen kan inte kontrollera det. Resten är matchad mot Notion.' }),
+    ]));
+  }
+
   /* Vinnarna – vilka annonser som faktiskt drar. */
   const winners = P0.ads.filter(function (a) { return a.spend >= 500; }).slice(0, 15);
   if (winners.length) {
@@ -1369,6 +1399,11 @@ function flagsSection(M) {
             text: (ICON[f.severity] || '·') + ' ' + f.detail }),
           el('span', { text: ' · ' + nameOf(f.editor) +
             (f.approximate ? ' · tid räknad från när tasken skapades' : '') }),
+          // Vad väntan kostar. Utan den här raden ser en översättning av en
+          // annons som drar 9 000 kr/dag likadan ut som en som drar noll.
+          f.stake ? el('span', { class: 'stake',
+            text: ' · originalet drar ' + kr(f.stake.perDay) + '/dag, ROAS ' +
+              nf1.format(f.stake.roas) }) : null,
         ]),
       ]),
       el('div', { class: 'when', text: dur(f.minutes) }),
@@ -1418,7 +1453,10 @@ function flagsSection(M) {
     el('div', { class: 'card' }, [
       el('h2', { text: 'Behöver en knuff' }),
       courtTiles,
-      el('p', { class: 'hint', text: 'Tryck på en rad för att öppna den i Notion. Ringen bockar av den åt dig — den sparas i din webbläsare och ändrar inget för någon annan.' }),
+      el('p', { class: 'hint', text: (filtered.some(f => f.stake)
+        ? 'Sorterat efter vad väntan kostar, inte efter ålder: en översättning av en annons som drar 9 000 kr om dagen ligger före en som drar noll, även om den andra legat längre. '
+        : '') +
+        'Tryck på en rad för att öppna den i Notion. Ringen bockar av den åt dig — den sparas i din webbläsare och ändrar inget för någon annan.' }),
       M.flags.length ? chips : null,
       filtered.length ? el('ul', { class: 'legend' }, summary) : null,
       items.length ? el('ul', { class: 'flags' }, items) : el('div', { class: 'empty', text: 'Inget som skräpar. Allt rör sig.' }),

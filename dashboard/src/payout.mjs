@@ -20,7 +20,45 @@ const monthOf = date => String(date).slice(0, 7);
  * @param tasks     Notion-tasks (behöver .title och .editor)
  * @param rate      andel av spend, t.ex. 0.004 för 0,4%
  */
-export function computePayout({ metaRows, tasks, rate, editors = [] }) {
+/**
+ * Handpålagda ägare: regler som en människa skrivit för annonser Notion inte
+ * kan knyta till någon. Första träffen vinner, '*' matchar allt som blir över.
+ * Skilt från namnmatchningen på ett sätt som syns i panelen — en uppgift någon
+ * påstått är inte samma sak som en koppling systemet kunnat bevisa.
+ */
+function manualOwnerOf(adName, rules, adStarted) {
+  const name = String(adName || '').toLowerCase();
+  for (const r of rules) {
+    if (!r || !r.editor) continue;
+    // `until` binder regeln till det man faktiskt visste när man skrev den.
+    //
+    // Utan det blir ett "resten är mina" en stående order som betalar samma
+    // person för varenda framtida annons som råkar sakna Notion-task — även
+    // när det är någon annan som gjort den. Regeln gäller därför bara
+    // annonser som redan fanns den dagen påståendet gjordes; nya annonser
+    // måste förtjäna sin koppling på nytt.
+    if (r.until && (!adStarted || adStarted > r.until)) continue;
+    if (r.match === '*' || name.includes(String(r.match).toLowerCase())) {
+      return { editor: r.editor, tier: 'manual', note: r.note || null };
+    }
+  }
+  return null;
+}
+
+/** Första dagen varje annons syns i Meta-datan. */
+function firstSeenByAd(metaRows) {
+  const first = new Map();
+  for (const r of metaRows) {
+    const key = normaliseAdName(r.adName);
+    const prev = first.get(key);
+    if (!prev || r.date < prev) first.set(key, r.date);
+  }
+  return first;
+}
+
+export function computePayout({ metaRows, tasks, rate, editors = [], manualOwners = null }) {
+  const manualRules = manualOwners?.rules || [];
+  const firstSeen = manualRules.length ? firstSeenByAd(metaRows) : new Map();
   // Namnen är "samma" för ögat men inte för en sträng-jämförelse: Meta bär
   // marknadsprefix och hook-suffix (NO 101 H1) där Notion bara har numret.
   // Exakt matchning ensam träffar 7% av spenden; nivåerna i match.mjs träffar
@@ -28,9 +66,11 @@ export function computePayout({ metaRows, tasks, rate, editors = [] }) {
   const matcher = buildMatcher(tasks);
   const ownerOf = adName => {
     const hit = matcher.match(adName);
-    if (!hit || !hit.task || !PAYABLE_TIERS.has(hit.tier)) return null;
-    if (!hit.task.editor) return null;
-    return { editor: hit.task.editor, taskId: hit.task.id, url: hit.task.url, tier: hit.tier };
+    if (hit && hit.task && PAYABLE_TIERS.has(hit.tier) && hit.task.editor) {
+      return { editor: hit.task.editor, taskId: hit.task.id, url: hit.task.url, tier: hit.tier };
+    }
+    // Notion vet inte — men Axel gjorde det, och sa det.
+    return manualOwnerOf(adName, manualRules, firstSeen.get(normaliseAdName(adName)));
   };
 
   const nameOf = id => editors.find(e => e.id === id)?.name || id;
@@ -38,7 +78,7 @@ export function computePayout({ metaRows, tasks, rate, editors = [] }) {
   const perEditor = new Map();
   const perAd = new Map();
   const months = new Set();
-  let matchedSpend = 0, unmatchedSpend = 0;
+  let matchedSpend = 0, unmatchedSpend = 0, manualSpend = 0;
   const unmatchedAds = new Map();
 
   for (const r of metaRows) {
@@ -80,8 +120,10 @@ export function computePayout({ metaRows, tasks, rate, editors = [] }) {
       continue;
     }
     matchedSpend += r.spend;
+    if (hit.tier === 'manual') manualSpend += r.spend;
 
-    const e = perEditor.get(hit.editor) || { id: hit.editor, name: nameOf(hit.editor), byMonth: {}, spend: 0, ads: new Set() };
+    const e = perEditor.get(hit.editor) || { id: hit.editor, name: nameOf(hit.editor), byMonth: {}, spend: 0, manual: 0, ads: new Set() };
+    if (hit.tier === 'manual') e.manual += r.spend;
     e.byMonth[month] = e.byMonth[month] || { spend: 0, purchases: 0, revenue: 0, days: new Set() };
     e.byMonth[month].spend += r.spend;
     e.byMonth[month].purchases += r.purchases;
@@ -97,6 +139,9 @@ export function computePayout({ metaRows, tasks, rate, editors = [] }) {
     name: e.name,
     totalSpend: Math.round(e.spend),
     totalPayout: Math.round(e.spend * rate * 100) / 100,
+    // Hur mycket av summan som vilar på ett påstående i stället för på en
+    // koppling systemet kunnat bevisa. Ska gå att se, inte gömmas i totalen.
+    manualSpend: Math.round(e.manual || 0),
     ads: e.ads.size,
     byMonth: Object.fromEntries(Object.entries(e.byMonth).map(([m, v]) => [m, {
       spend: Math.round(v.spend),
@@ -142,6 +187,9 @@ export function computePayout({ metaRows, tasks, rate, editors = [] }) {
     // är utbetalningssiffrorna för låga, och det ska synas — inte döljas.
     coverage: {
       matchedSpend: Math.round(matchedSpend),
+      manualSpend: Math.round(manualSpend),
+      statedBy: manualOwners?.statedBy || null,
+      statedAt: manualOwners?.statedAt || null,
       unmatchedSpend: Math.round(unmatchedSpend),
       share: totalSpend > 0 ? matchedSpend / totalSpend : null,
       // Vilka annonser pengarna ligger i. Namnet + kontot räcker för att en

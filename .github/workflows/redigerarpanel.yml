@@ -52,7 +52,16 @@ jobs:
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
         run: |
           if [ -z "$META_ACCESS_TOKEN" ]; then
-            echo "::warning::META_ACCESS_TOKEN saknas — hoppar över spend och ersättning."
+            echo "::warning::META_ACCESS_TOKEN saknas — spend och ersättning uppdateras inte."
+            {
+              echo "## ⚠ Ersättningen står stilla"
+              echo ""
+              echo "Hemligheten \`META_ACCESS_TOKEN\` är inte satt, så inga nya siffror hämtas från Meta."
+              echo "Panelen visar fortfarande de dagar som redan är sparade, men de blir aldrig nyare."
+              echo ""
+              echo "Lägg in den: **Settings → Secrets and variables → Actions → New repository secret**,"
+              echo "namn \`META_ACCESS_TOKEN\`."
+            } >> $GITHUB_STEP_SUMMARY
             exit 0
           fi
           cd dashboard && node cli.mjs ingest meta
@@ -87,6 +96,27 @@ jobs:
       - uses: actions/configure-pages@v5
         continue-on-error: true
         id: pages
+
+      # Det här steget hoppades tyst över i 18 körningar i rad medan hela
+      # körningen lyste grönt, eftersom continue-on-error gör att ett
+      # misslyckat configure-pages ändå redovisas som lyckat. Resultatet: en
+      # panel som ingen kunde öppna, och ingenting som sa det.
+      - name: Säg till om Pages inte är påslaget
+        if: steps.pages.outcome != 'success'
+        run: |
+          echo "::warning::Panelen publicerades INTE. GitHub Pages är inte påslaget för det här repot."
+          {
+            echo "## ⚠ Panelen ligger inte på webben"
+            echo ""
+            echo "Slå på den: **Settings → Pages → Source: GitHub Actions**. Sedan blir den nåbar på"
+            echo "<https://axel3738.github.io/yognftnfgn/> vid nästa körning."
+            echo ""
+            echo "Obs: det här repot är **publikt**. Slår du på Pages kan vem som helst med länken"
+            echo "läsa adspend, ROAS och vad varje redigerare tjänar. Vill du slippa det, gör repot"
+            echo "privat först (Settings → General → Danger Zone → Change visibility)."
+            echo ""
+            echo "Så länge Pages är av: ladda ner panelen under **Artifacts** längst ner på den här sidan."
+          } >> $GITHUB_STEP_SUMMARY
 
       - uses: actions/upload-pages-artifact@v3
         if: steps.pages.outcome == 'success'
