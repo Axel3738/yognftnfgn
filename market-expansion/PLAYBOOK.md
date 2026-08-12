@@ -315,10 +315,21 @@ Alla har inträffat på riktigt.
 15. **Parallella push-agenter kolliderar i scratchpad.** Två agenter skrev hjälpskript
     till samma sökväg och skrev över varandra mitt i körningen. Instruera alltid unika
     filnamn per agent (t.ex. `log-<chunk>.py`).
-16. **Agenter kan dö tyst mitt i ett flerstegsjobb** — DK-körningens aktiverings-agent
+16. **`productSet` är INTE idempotent på handle.** Utan `id` i inputen skapar den alltid
+    en ny produkt; en omkörning ger "handle används redan" istället för uppdatering.
+    Måste en chunk köras om: skicka med `id` (finns i push-loggen).
+17. **Push-agenter gör transkriberingsfel.** De måste skriva av ~1,5 kB prosa per produkt
+    ordagrant in i verktygsanropet. I FI-körningen introducerade 3 av 5 agenter stavfel;
+    en fjärde hittades först av efterkontrollen ("riitää" i stället för "riittää").
+    **Kör alltid en teckenexakt efterkontroll** av `descriptionHtml` mot katalogen.
+18. **`bulkOperationRunQuery` FUNGERAR** (till skillnad från `bulkOperationRunMutation`,
+    som är blockerad). Exportera alla produkters fält till JSONL och ladda ner filen —
+    då passerar inga stora svar agentens kontext. Det gör efterkontrollen i punkt 17 billig:
+    hela verifieringen av 134 produkter tog under 3 minuter.
+19. **Agenter kan dö tyst mitt i ett flerstegsjobb** — DK-körningens aktiverings-agent
     dog efter steg 1 utan rapport. Lita aldrig på att en agent blev klar: kör grinden
     mot butiken och relansera resten (gör stegen idempotenta så omkörning är riskfri).
-17. **Kontexten tar slut mitt i arbetet.** Allt state ligger i repot och butiken. En ny
+20. **Kontexten tar slut mitt i arbetet.** Allt state ligger i repot och butiken. En ny
     session behöver bara denna fil och rätt butik kopplad.
 
 ---
