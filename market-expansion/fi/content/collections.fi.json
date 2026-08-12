@@ -1,0 +1,82 @@
+{
+  "note": "Finska kollektioner för Majavakauppa. sourceHandle refererar källbutikens kollektion — produktmedlemskap återskapas via source-export/collections.json + handle-mappningen i output/catalog.fi.json.",
+  "collections": [
+    {
+      "sourceHandle": "frontpage",
+      "title": "Etusivu",
+      "handle": "frontpage",
+      "descriptionHtml": "",
+      "sortOrder": "BEST_SELLING"
+    },
+    {
+      "sourceHandle": "tradgard-utomhus",
+      "title": "Puutarha & Piha",
+      "handle": "puutarha-piha",
+      "descriptionHtml": "<p>Tuotteet puutarhaan, terassille ja pihatöihin.</p>",
+      "sortOrder": "BEST_SELLING"
+    },
+    {
+      "sourceHandle": "bil-verktyg-garage",
+      "title": "Auto, Työkalut & Autotalli",
+      "handle": "auto-tyokalut-autotalli",
+      "descriptionHtml": "<p>Tuotteet autoon, verstaaseen ja autotalliin.</p>",
+      "sortOrder": "BEST_SELLING"
+    },
+    {
+      "sourceHandle": "camping-friluft",
+      "title": "Retkeily & Ulkoilu",
+      "handle": "retkeily-ulkoilu",
+      "descriptionHtml": "<p>Varusteet retkeilyyn, vaellukselle ja mökille.</p>",
+      "sortOrder": "BEST_SELLING"
+    },
+    {
+      "sourceHandle": "lantbruk-djur",
+      "title": "Maatalous & Eläimet",
+      "handle": "maatalous-elaimet",
+      "descriptionHtml": "<p>Tuotteet maatilalle, aitaukseen, talliin ja kotieläimille.</p>",
+      "sortOrder": "BEST_SELLING"
+    },
+    {
+      "sourceHandle": "bat-marin",
+      "title": "Vene & Meri",
+      "handle": "vene-meri",
+      "descriptionHtml": "<p>Tarvikkeet ja huolto veneeseen, moottoriin ja merenkulkuun – suojaus, puhdistus, kiinnitys ja kalastus.</p>",
+      "sortOrder": "BEST_SELLING"
+    },
+    {
+      "sourceHandle": "tillbehor-ovrigt",
+      "title": "Tarvikkeet & Muut",
+      "handle": "tarvikkeet-muut",
+      "descriptionHtml": "<p>Käytännölliset tarvikkeet ja fiksut tuotteet arkeen.</p>",
+      "sortOrder": "BEST_SELLING"
+    },
+    {
+      "sourceHandle": "fordon-belysning",
+      "title": "Ajoneuvot & Valaistus",
+      "handle": "ajoneuvot-valaistus",
+      "descriptionHtml": "<p>Tarvikkeet ja LED-valaistus autoon, moottoripyörään, mönkijään ja kuorma-autoon – työvalot, valopaneelit ja ajoneuvotarvikkeet.</p>",
+      "sortOrder": "BEST_SELLING"
+    }
+  ],
+  "menus": {
+    "main-menu": [
+      { "title": "Etusivu", "target": "/" },
+      { "title": "Puutarha & Piha", "target": "collection:puutarha-piha" },
+      { "title": "Auto, Työkalut & Autotalli", "target": "collection:auto-tyokalut-autotalli" },
+      { "title": "Retkeily & Ulkoilu", "target": "collection:retkeily-ulkoilu" },
+      { "title": "Vene & Meri", "target": "collection:vene-meri" },
+      { "title": "Ajoneuvot & Valaistus", "target": "collection:ajoneuvot-valaistus" },
+      { "title": "Kaikki tuotteet", "target": "/collections/all" },
+      { "title": "Ota yhteyttä", "target": "page:ota-yhteytta" }
+    ],
+    "footer": [
+      { "title": "Meistä", "target": "page:meista" },
+      { "title": "Ota yhteyttä", "target": "page:ota-yhteytta" },
+      { "title": "UKK – usein kysytyt kysymykset", "target": "page:ukk" },
+      { "title": "Toimitustiedot", "target": "page:toimitustiedot" },
+      { "title": "Palautukset & peruuttamisoikeus", "target": "page:palautukset-ja-peruuttamisoikeus" },
+      { "title": "Toimitusehdot", "target": "page:toimitusehdot" },
+      { "title": "Tietosuojaseloste", "target": "policy:privacy" }
+    ]
+  }
+}
