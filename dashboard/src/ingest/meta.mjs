@@ -117,14 +117,30 @@ export function normaliseAdName(name) {
     .trim();
 }
 
-/** Hämtar allt för de konton som anges i config. */
+/**
+ * Hämtar allt för de konton som anges i config.
+ *
+ * Ett konto som fallerar får inte sänka de andra. Meta spärrar av på taktgräns
+ * och svarar med fel på ett enskilt konto — förr innebar det att hela uttaget
+ * kastades och filen skrevs tom, alltså att all spend försvann ur panelen.
+ * Nu rapporteras vilka konton som gick fel så att anroparen kan behålla den
+ * gamla datan för just dem.
+ */
 export async function fetchAllAccounts({ token, accounts, since, until, onProgress = () => {} }) {
   const all = [];
+  const ok = [];
+  const failed = [];
   for (const acc of accounts) {
     onProgress(`Meta: hämtar ${acc.name || acc.id} …`);
-    const rows = await fetchAdDays({ token, accountId: acc.id, since, until });
-    onProgress(`  ${rows.length} annons-dagar, ${new Set(rows.map(r => r.adName)).size} unika annonser`);
-    all.push(...rows.map(r => ({ ...r, accountName: acc.name || acc.id, brand: acc.brand || null })));
+    try {
+      const rows = await fetchAdDays({ token, accountId: acc.id, since, until });
+      onProgress(`  ${rows.length} annons-dagar, ${new Set(rows.map(r => r.adName)).size} unika annonser`);
+      all.push(...rows.map(r => ({ ...r, accountName: acc.name || acc.id, brand: acc.brand || null })));
+      ok.push(String(acc.id));
+    } catch (err) {
+      onProgress(`  ⚠ ${acc.name || acc.id} gick inte att hämta: ${err.message}`);
+      failed.push({ id: String(acc.id), name: acc.name || acc.id, error: err.message });
+    }
   }
-  return all;
+  return { rows: all, ok, failed };
 }

@@ -152,8 +152,20 @@
   "meta": {
     "//": "Ersättning: varje redigerare får payoutRate av adspenden på de annonser hen gjort. Kopplingen går via annonsnamnet, som är detsamma i Meta som i Notion.",
     "payoutRate": 0.004,
+    "//historyDays": "Hur långt bak panelen sparar. Ändras sällan.",
     "historyDays": 120,
+    "//refreshDays": "Hur långt bak varje körning FRÅGAR Meta. Färdiga dagar ändrar sig inte, så det räcker med de senaste — och det är skillnaden mellan att bli spärrad varje timme och att inte bli det. Backfill görs manuellt: node cli.mjs ingest meta --days=120",
+    "refreshDays": 14,
     "currency": "SEK",
-    "accounts": []
+    "//accounts": "Bara konton som faktiskt spenderar. Tomma konton (Axel Odhner, NYC Grill, Magiborsten FI, SNarklös FI) kostar lika mycket att fråga om som de andra men ger noll rader. Lämnas listan tom frågar vi om alla konton token:en når — det var det som spärrade oss.",
+    "accounts": [
+      { "id": "1346450049878358", "name": "SnarkLös" },
+      { "id": "1867947880635861", "name": "MagiBorsten" },
+      { "id": "1550615276530638", "name": "Sushi kanske?" },
+      { "id": "1050941584152547", "name": "Magiborsten NO" },
+      { "id": "1107817401910319", "name": "Magiborsten UK" },
+      { "id": "915422744950975", "name": "Magiborsten DK" },
+      { "id": "730973156224390", "name": "nya kungen" }
+    ]
   }
 }

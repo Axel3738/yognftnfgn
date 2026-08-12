@@ -312,17 +312,43 @@ async function cmdIngest() {
       say(`  Inga konton i config — använder alla ${accounts.length} som token:en når.`);
     }
 
-    const days = Number(flags.days || config.meta?.historyDays || 120);
+    // Två fönster, inte ett:
+    //   refreshDays  = hur långt bak vi frågar Meta den här körningen
+    //   historyDays  = hur långt bak vi SPARAR
+    // Att fråga om 120 dagar × 11 konton varje timme är vad som spärrade oss.
+    // Färdiga dagar ändrar sig ändå inte — det räcker att fråga om de senaste,
+    // och lägga dem ovanpå det vi redan har.
+    const keepDays = Number(config.meta?.historyDays || 120);
+    const days = Number(flags.days || config.meta?.refreshDays || 14);
     const until = new Date(Date.now()).toISOString().slice(0, 10);
     const since = new Date(Date.now() - days * 86400000).toISOString().slice(0, 10);
+    const cutoff = new Date(Date.now() - keepDays * 86400000).toISOString().slice(0, 10);
 
-    const rows = await fetchAllAccounts({ token, accounts, since, until, onProgress: say });
-    if (flags['dry-run']) { say(`(dry-run) ${rows.length} annons-dagar ${since} → ${until}.`); return; }
+    const { rows: fresh, ok, failed } = await fetchAllAccounts({ token, accounts, since, until, onProgress: say });
+    if (flags['dry-run']) { say(`(dry-run) ${fresh.length} annons-dagar ${since} → ${until}.`); return; }
+
+    // Gammal data behålls: dels dagar äldre än fönstret vi just frågade om,
+    // dels allt från konton som Meta vägrade svara om den här gången. Annars
+    // skulle en enda taktgräns radera månader av spend.
+    let previous = [];
+    if (existsSync(P.meta)) {
+      try { previous = JSON.parse(readFileSync(P.meta, 'utf8')).rows || []; } catch { previous = []; }
+    }
+    const refreshed = new Set(ok);
+    const kept = previous.filter(r => r.date >= cutoff && !(refreshed.has(String(r.accountId)) && r.date >= since));
+    // Dagar utan spend är dagar då annonsen låg stilla — de säger ingenting om
+    // vare sig ersättning eller vinnare, och de är hälften av alla rader.
+    const rows = [...kept, ...fresh.filter(r => r.date >= cutoff && r.spend > 0)];
 
     mkdirSync(dirname(P.meta), { recursive: true });
-    writeFileSync(P.meta, JSON.stringify({ since, until, fetchedAt: new Date().toISOString(), rows }), 'utf8');
+    const oldest = rows.reduce((m, r) => (r.date < m ? r.date : m), until);
+    // En rad per textrad. Filen sparas varje timme; skrivs allt på EN rad kan
+    // git inte se att 99 % är oförändrat och lagrar 4 MB på nytt varje gång.
+    const head = JSON.stringify({ since: oldest, until, fetchedAt: new Date().toISOString() }).slice(0, -1);
+    writeFileSync(P.meta, `${head},"rows":[\n${rows.map(r => JSON.stringify(r)).join(',\n')}\n]}`, 'utf8');
     const spend = rows.reduce((s, r) => s + r.spend, 0);
-    say(`✔ ${rows.length} annons-dagar sparade (${since} → ${until}), total spend ${Math.round(spend).toLocaleString('sv-SE')}.`);
+    say(`✔ ${rows.length} annons-dagar sparade (${oldest} → ${until}), varav ${fresh.length} nyhämtade, total spend ${Math.round(spend).toLocaleString('sv-SE')}.`);
+    if (failed.length) say(`  ⚠ Behöll gammal data för ${failed.map(f => f.name).join(', ')} (Meta svarade inte).`);
     return;
   }
 
