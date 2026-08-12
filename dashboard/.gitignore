@@ -2,6 +2,7 @@
 # Händelseloggen är levande data (och skulle ge merge-konflikter varje dag).
 data/events.jsonl
 data/notion-snapshot.json
+data/meta-ads.json
 dist/
 node_modules/
 .env
