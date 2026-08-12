@@ -306,10 +306,19 @@ Alla har inträffat på riktigt.
     UK 7 %, DK 2 % oöversatta. Skriv explicit i översättarprompten: *"attributens
     STRUKTUR bevaras, men `alt`-textens INNEHÅLL ska översättas"*. Grind: jämför
     inline-alt mot källan — identisk sträng = oöversatt.
-14. **Agenter kan dö tyst mitt i ett flerstegsjobb** — DK-körningens aktiverings-agent
+14. **Produktbeskrivningarna hänger på Temus CDN.** 312 av 338 inline-bilder pekar på
+    `img.kwcdn.com` — 117 av 134 produkter i UK/DK/FI, 103 i NO. Slutar Temu servera
+    dem (hotlink-skydd, URL-rotation) tappar produktsidorna sina bilder i ALLA marknader
+    samtidigt. Produktens egna `files` ligger korrekt på Shopify-CDN; det är bara
+    brödtextens bilder som är externa. Åtgärd: kopiera dem till Shopify med `fileCreate`
+    och skriv om `descriptionHtml`. Felet finns i källdatan och ärvs av varje ny marknad.
+15. **Parallella push-agenter kolliderar i scratchpad.** Två agenter skrev hjälpskript
+    till samma sökväg och skrev över varandra mitt i körningen. Instruera alltid unika
+    filnamn per agent (t.ex. `log-<chunk>.py`).
+16. **Agenter kan dö tyst mitt i ett flerstegsjobb** — DK-körningens aktiverings-agent
     dog efter steg 1 utan rapport. Lita aldrig på att en agent blev klar: kör grinden
     mot butiken och relansera resten (gör stegen idempotenta så omkörning är riskfri).
-15. **Kontexten tar slut mitt i arbetet.** Allt state ligger i repot och butiken. En ny
+17. **Kontexten tar slut mitt i arbetet.** Allt state ligger i repot och butiken. En ny
     session behöver bara denna fil och rätt butik kopplad.
 
 ---
