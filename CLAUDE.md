@@ -95,7 +95,13 @@ något i Meta. Övriga konton finns men används inte: Matstrumpor.se
 
 | Vad | Var |
 |-----|-----|
+| **Creative strategy: insikt → manus (hjärnan i video-pipelinen)** | **`docs/creative-strategy.md`** |
 | **Analysmetoden (obligatorisk vid all bedömning)** | **`docs/os/ANALYSMETOD.md`** |
+| Playbook — vinklar/hooks/format som bevisats över tid | `docs/playbook.md` |
+| Hook-regeln (visuellt) | `docs/hook-visual-rule-2026-08-04.md` |
+| Avatar-research + VoC (Reddit) | `docs/avatar-research-*.md`, `docs/voc-reddit-*.md` |
+| Swipes från konkurrenter | `docs/swipes/` |
+| TOF-idébank | `docs/tof-idea-bank.md` |
 | Actionplan + bottlenecks | `docs/os/ACTIONPLAN.md` |
 | SOP 01–07 (batch-loop, kvot, UGC, check-in, produkttest, dashboard) | `docs/os/SOP-0*.md` |
 | SOP: när Claude inte lyssnar | `docs/os/SOP-05-nar-claude-inte-lyssnar.md` |
@@ -110,6 +116,31 @@ något i Meta. Övriga konton finns men används inte: Matstrumpor.se
 
 - **Team:** filippinska videoredigerare + VA (engelska), en UGC-outreach-ansvarig.
 - **Slack-workspace:** **stonebite** — en kanal per produkt för redigerarna, en för UGC.
+
+---
+
+## Så lär sig systemet (läs det här innan du briefar något)
+
+Minnet ligger i **filer**, aldrig i chatten. En ny session vet ingenting utom det
+som står skrivet. Därför är det inte valfritt att uppdatera dem.
+
+**Tre nivåer, från långsammast till snabbast:**
+
+| Nivå | Fil | Ändras när |
+|---|---|---|
+| Vad som funkar generellt | `docs/playbook.md`, `docs/creative-strategy.md` | En vinkel bevisats i ≥2 tester |
+| Vad som funkar för *den här produkten* | `products/<id>/dna.md` | Varje `/cs`-körning |
+| Vad som hände i varje batch | `products/<id>/batch-log.md` | Varje launch och varje avläsning |
+| Idéer som väntar | `products/<id>/backlog.md` | När ett koncept dyker upp eller plockas |
+
+**Regeln som gör att det faktiskt lär sig:** ett koncept får aldrig födas ur tomma
+intet. Det ska kunna peka på en av tre källor — en playbook-vinnare, en winning line
+som redan spenderat pengar bra, eller en konkurrent-signal ur `docs/swipes/`. Kan det
+inte det är det en gissning, och då ska det märkas som en gissning.
+
+`dna.md` är den viktigaste filen i hela repot. Den bär inte bara siffror utan
+**rotorsaker** — t.ex. varför kontots copy inte matchar briefarna. Läs den först,
+uppdatera den sist, och skriv ut datum + vilken körning i ordningen det var.
 
 ---
 
