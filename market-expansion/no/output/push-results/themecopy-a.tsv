@@ -1,0 +1,36 @@
+filnamn	status	metod	fel
+assets/currency-flags.css	FEL	TEXT	Innehåll för stort för att överföra säkert via verktygsgränssnittet (~112k tokens, base64-bilder inbäddade i CSS) utan risk för trunkering/korruption; hämtning lyckades men upsert kunde inte utföras säkert
+assets/gp-global.css	FEL	TEXT	Innehåll för stort (69 647 tecken, ~47k tokens minifierad CSS) för att överföras säkert via verktygsgränssnittet utan risk för trunkering/korruption; hämtning lyckades men upsert kunde inte utföras säkert
+assets/theme.css	OK	URL	
+assets/theme.js	OK	URL	
+assets/theme.min.js	FEL	TEXT	Innehåll för stort (115 854 tecken, ~78k tokens minifierad JS) för att överföras säkert via verktygsgränssnittet utan risk för trunkering/korruption; källan levererade text (ej URL); hämtning lyckades men upsert kunde inte utföras säkert
+assets/vendor-scripts-v10.js	FEL	TEXT	Innehåll för stort (143 785 tecken JS) för att överföras säkert via verktygsgränssnittet utan risk för trunkering/korruption; källan levererade text (ej URL); hämtning lyckades men upsert kunde inte utföras säkert
+assets/ico-select-drawer.svg	OK	TEXT	
+assets/ico-select-drawer.svg.liquid	OK	TEXT	
+assets/ico-select-footer.svg	OK	TEXT	
+assets/ico-select-footer.svg.liquid	OK	TEXT	
+assets/ico-select-menu.svg	OK	TEXT	
+assets/ico-select-menu.svg.liquid	OK	TEXT	
+assets/ico-select-white.svg	OK	TEXT	
+assets/ico-select-white.svg.liquid	OK	TEXT	
+assets/ico-select.svg	OK	TEXT	
+assets/ico-select.svg.liquid	OK	TEXT	
+assets/password-page-background.jpg	OK	URL	
+assets/theme.css.liquid	OK	URL	
+config/markets.json	OK	TEXT	
+config/settings_schema.json	OK	TEXT	
+config/settings_data.json	OK	TEXT	
+layout/gift_card.liquid	OK	TEXT	
+layout/password.liquid	OK	TEXT	
+layout/theme.gem-layout-none.liquid	OK	TEXT	
+layout/theme.gempages.blank.liquid	OK	TEXT	
+layout/theme.gempages.footer.liquid	OK	TEXT	
+layout/theme.gempages.header.liquid	OK	TEXT	
+layout/theme.liquid	OK	TEXT	
+locales/en.default.json	OK	TEXT	
+locales/de.json	OK	TEXT	
+locales/es.json	OK	TEXT	
+locales/fr.json	OK	TEXT	
+locales/pt-BR.json	OK	TEXT	
+locales/pt-PT.json	OK	TEXT	
+locales/nb.json	OK	TEXT	

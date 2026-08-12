@@ -1,0 +1,30 @@
+{
+  "comment": "Mapping för kollektionstilldelning i BeaverShop UK. sourceCollections: källbutikens kollektions-handle -> UK-kollektionens GID. categoryFallback: används när produkten saknar källkollektion (collection=null i catalog.uk.json). SERV (fraktskydds-upsell) läggs medvetet INTE i någon browsbar kollektion.",
+  "sourceCollections": {
+    "tradgard-utomhus": "gid://shopify/Collection/699662631292",
+    "bil-verktyg-garage": "gid://shopify/Collection/699662664060",
+    "camping-friluft": "gid://shopify/Collection/699662696828",
+    "lantbruk-djur": "gid://shopify/Collection/699662729596",
+    "bat-marin": "gid://shopify/Collection/699662762364",
+    "fordon-belysning": "gid://shopify/Collection/699662827900",
+    "tillbehor-ovrigt": "gid://shopify/Collection/699662795132"
+  },
+  "categoryFallback": {
+    "MISC": "gid://shopify/Collection/699662795132",
+    "CAMP": "gid://shopify/Collection/699662696828",
+    "CAR": "gid://shopify/Collection/699662664060",
+    "GARD": "gid://shopify/Collection/699662631292",
+    "MARINE": "gid://shopify/Collection/699662762364",
+    "SERV": null
+  },
+  "ukCollections": {
+    "garden-outdoors": "gid://shopify/Collection/699662631292",
+    "car-tools-garage": "gid://shopify/Collection/699662664060",
+    "camping-outdoor-life": "gid://shopify/Collection/699662696828",
+    "farming-animals": "gid://shopify/Collection/699662729596",
+    "boat-marine": "gid://shopify/Collection/699662762364",
+    "accessories-more": "gid://shopify/Collection/699662795132",
+    "vehicles-lighting": "gid://shopify/Collection/699662827900",
+    "frontpage": "gid://shopify/Collection/699662598524"
+  }
+}

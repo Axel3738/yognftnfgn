@@ -1,0 +1,82 @@
+{
+  "note": "Danska kollektioner för Bæverbutikken (bæverbutiken.dk). sourceHandle refererar källbutikens kollektion — produktmedlemskap återskapas via source-export/collections.json + handle-mappningen i output/catalog.dk.json.",
+  "collections": [
+    {
+      "sourceHandle": "frontpage",
+      "title": "Forside",
+      "handle": "frontpage",
+      "descriptionHtml": "",
+      "sortOrder": "BEST_SELLING"
+    },
+    {
+      "sourceHandle": "tradgard-utomhus",
+      "title": "Have & Udendørs",
+      "handle": "have-udendoers",
+      "descriptionHtml": "<p>Produkter til haven, terrassen og livet udendørs.</p>",
+      "sortOrder": "BEST_SELLING"
+    },
+    {
+      "sourceHandle": "bil-verktyg-garage",
+      "title": "Bil, Værktøj & Garage",
+      "handle": "bil-vaerktoej-garage",
+      "descriptionHtml": "<p>Produkter til bilen, værkstedet og garagen.</p>",
+      "sortOrder": "BEST_SELLING"
+    },
+    {
+      "sourceHandle": "camping-friluft",
+      "title": "Camping & Friluftsliv",
+      "handle": "camping-friluftsliv",
+      "descriptionHtml": "<p>Udstyr til camping, vandreture og friluftsliv.</p>",
+      "sortOrder": "BEST_SELLING"
+    },
+    {
+      "sourceHandle": "lantbruk-djur",
+      "title": "Landbrug & Dyr",
+      "handle": "landbrug-dyr",
+      "descriptionHtml": "<p>Produkter til gård, indhegning, stald og husdyr.</p>",
+      "sortOrder": "BEST_SELLING"
+    },
+    {
+      "sourceHandle": "bat-marin",
+      "title": "Båd & Marine",
+      "handle": "baad-marine",
+      "descriptionHtml": "<p>Tilbehør og vedligeholdelse til båd, motor og maritim brug – beskyttelse, rengøring, fortøjning og fiskeri.</p>",
+      "sortOrder": "BEST_SELLING"
+    },
+    {
+      "sourceHandle": "tillbehor-ovrigt",
+      "title": "Tilbehør & Andet",
+      "handle": "tilbehoer-andet",
+      "descriptionHtml": "<p>Praktisk tilbehør og smarte produkter til hverdagen.</p>",
+      "sortOrder": "BEST_SELLING"
+    },
+    {
+      "sourceHandle": "fordon-belysning",
+      "title": "Køretøjer & Belysning",
+      "handle": "koeretoejer-belysning",
+      "descriptionHtml": "<p>Tilbehør og LED-belysning til bil, motorcykel, ATV og lastbil – arbejdslys, lysbarer og køretøjstilbehør.</p>",
+      "sortOrder": "BEST_SELLING"
+    }
+  ],
+  "menus": {
+    "main-menu": [
+      { "title": "Forside", "target": "/" },
+      { "title": "Have & Udendørs", "target": "collection:have-udendoers" },
+      { "title": "Bil, Værktøj & Garage", "target": "collection:bil-vaerktoej-garage" },
+      { "title": "Camping & Friluftsliv", "target": "collection:camping-friluftsliv" },
+      { "title": "Båd & Marine", "target": "collection:baad-marine" },
+      { "title": "Køretøjer & Belysning", "target": "collection:koeretoejer-belysning" },
+      { "title": "Alle produkter", "target": "/collections/all" },
+      { "title": "Kontakt os", "target": "page:kontakt" }
+    ],
+    "footer": [
+      { "title": "Om os", "target": "page:om-os" },
+      { "title": "Kontakt os", "target": "page:kontakt" },
+      { "title": "FAQ – ofte stillede spørgsmål", "target": "page:faq" },
+      { "title": "Fragtinformation", "target": "page:fragtinformation" },
+      { "title": "Retur & fortrydelsesret", "target": "page:retur-og-fortrydelsesret" },
+      { "title": "Handelsbetingelser", "target": "page:handelsbetingelser" },
+      { "title": "Privatlivspolitik", "target": "policy:privacy" }
+    ]
+  }
+}

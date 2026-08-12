@@ -1,0 +1,601 @@
+{
+ "batch": 2,
+ "products": [
+  {
+   "handle": "batteridriven-branslepump-barbar-vatskepump-med-flodeskontroll",
+   "no": {
+    "title": "Batteridrevet Drivstoffpumpe – Bærbar Væskepumpe med Strømningskontroll",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Søl og bensinsprut hver gang du fyller?</h2>\n<p>Å helle bensin, diesel eller olje fra kanne til tank for hånd blir fort en våt, illeluktende affære – med søl på bakken, hendene og klærne. Og en hevert orker du knapt å suge i gang.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/4a9f039a-6171-447c-a7a2-577d20aa40a2.jpg\" alt=\"Bærbar væskepumpe\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Pump rent – med et tastetrykk</h2>\n<p>Den batteridrevne pumpen flytter bensin, diesel og olje raskt og rent med opptil 2,4 gallon/minutt. Munstykket med strømningskontroll stopper automatisk slik at du slipper søl – ingen hender i drivstoffet, ikke noe søl.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/7771cd69-220f-4f05-9f3f-1afd5101f455.jpg\" alt=\"Pumpe med strømningskontroll\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Funksjoner</h2>\n<ul>\n<li>\n<strong>Batteridrevet</strong> – ingen ledning, ikke noe suging. (Batteri følger ikke med.)</li>\n<li>\n<strong>Opptil 2,4 gallon/min</strong> – tømmer kannen raskt.</li>\n<li>\n<strong>Munstykke med strømningskontroll</strong> – stopper søl automatisk.</li>\n<li><strong>For bensin, diesel og olje.</strong></li>\n<li>\n<strong>Bærbar og kompakt</strong> – passer i garasjen eller båten.</li>\n</ul>\n<h2>30 dagers fornøyd-kunde-garanti</h2>\n<p>Ikke fornøyd innen 30 dager? Pengene tilbake – ingen risiko for deg.</p>\n</div>",
+    "productType": "Bil, Verktøy & Garasje",
+    "tags": [
+     "bil",
+     "drivstoff",
+     "garasje",
+     "pumpe",
+     "test",
+     "verktøy"
+    ],
+    "options": [
+     {
+      "name": "Antall",
+      "values": ["1 stk"]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65027638395229",
+      "title": "1 stk",
+      "selectedOptions": [
+       {"name": "Antall", "value": "1 stk"}
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Batteridrevet drivstoffpumpe",
+     "Bærbar væskepumpe",
+     "Pumpe med strømningskontroll",
+     "Drivstoffpumpe munstykke",
+     "Pumpe i bruk",
+     "Drivstoffpumpe detalj"
+    ],
+    "seo": {
+     "title": "Batteridrevet Drivstoffpumpe – Rask og Ren Pumping",
+     "description": "Batteridrevet pumpe for bensin, diesel og olje. Stopper automatisk og hindrer søl. Rask og bærbar løsning til garasjen."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Inneholder garantiløfte (30 dagers pengene-tilbake) – bør verifiseres mot norsk forbrukerkjøpslov før publisering."
+   ]
+  },
+  {
+   "handle": "led-garagebelysning-14-pack-hexagonala-taklampor-6500k",
+   "no": {
+    "title": "LED Garasjebelysning 14-pack – Sekskantede Taklamper 6500K",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Mørkt og trist i garasjen?</h2>\n<p>En ensom lyspære i taket holder ikke når du skal skru, male eller finne riktig verktøy. Skygger og svake lamper gjør jobben treg, sliter på øynene og skjuler detaljer.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/15124fc3-9255-4e71-a71b-bc5194c17a94.jpg\" alt=\"Honeycomb-taklampe\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Gjør garasjen om til et proffverksted</h2>\n<p>Denne 14-pakningen med sekskantede LED-lamper gir 72 420 lumen knivskarpt 6500K-lys – som å jobbe i dagslys. Klikk dem sammen i valgfritt mønster, monter enkelt og få et jevnt, skyggefritt lys over hele flaten.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/de72b2ae-3836-478c-b3fc-1a79d6200c99.jpg\" alt=\"Garasjebelysning montert\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Funksjoner</h2>\n<ul>\n<li>\n<strong>14 lamper, 72 420 lm</strong> – dagslys over hele garasjen.</li>\n<li>\n<strong>6500K kaldhvitt</strong> – skarpt arbeidslys uten skygger.</li>\n<li>\n<strong>Modulært mønster</strong> – sett sammen som du vil.</li>\n<li>\n<strong>Enkel montering</strong> – ingen elektrikerkunnskaper nødvendig.</li>\n<li>\n<strong>Energisparende LED</strong> – mer lys, lavere strømregning.</li>\n</ul>\n<h2>30 dagers fornøyd-kunde-garanti</h2>\n<p>Ikke fornøyd innen 30 dager? Pengene tilbake – ingen risiko for deg.</p>\n</div>",
+    "productType": "Bil, Verktøy & Garasje",
+    "tags": [
+     "belysning",
+     "garasje",
+     "led",
+     "test",
+     "verksted"
+    ],
+    "options": [
+     {
+      "name": "Antall",
+      "values": ["14-pack"]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65027641868637",
+      "title": "14-pack",
+      "selectedOptions": [
+       {"name": "Antall", "value": "14-pack"}
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "LED-garasjebelysning sekskantet",
+     "Honeycomb-taklampe",
+     "Garasjebelysning montert",
+     "LED-lamper kaldt hvitt lys"
+    ],
+    "seo": {
+     "title": "LED Garasjebelysning 14-pack – 6500K Arbeidslys",
+     "description": "14 sekskantede LED-lamper gir 72 420 lumen dagslys i garasjen. Enkel montering, skyggefritt arbeidslys."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Inneholder garantiløfte (30 dagers pengene-tilbake) – bør verifiseres mot norsk forbrukerkjøpslov før publisering."
+   ]
+  },
+  {
+   "handle": "1080p-inspektionskamera-endoskop-ip67-for-bil-ror-motor",
+   "no": {
+    "title": "1080p Inspeksjonskamera / Endoskop – IP67 for Bil, Rør & Motor",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Kommer du ikke til feilen du leter etter?</h2>\n<p>Bak motorblokken, inne i avløpsrøret, i ventilasjonen eller bak veggen – de vanskeligste feilene sitter alltid der øyet ikke når. Å gjette, demontere og håpe fører bare til mer jobb.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/119ddf0d-768c-4dfd-9dc9-c545b37d6c91.jpg\" alt=\"Endoskop IP67-kamera\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Se inn i det skjulte – i skarp 1080p</h2>\n<p>Det vanntette (IP67) endoskopkameraet kommer seg inn i trange, mørke rom og viser alt i knivskarp 1080p med innebygd LED-belysning. Finn feilen med en gang – i bilen, røret eller motoren – uten å demontere noe.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/c09a2c18-fd3a-4125-8be2-666b72405b0d.jpg\" alt=\"Inspeksjonskamera i bruk\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Funksjoner</h2>\n<ul>\n<li>\n<strong>1080p HD</strong> – skarpt bilde ned til minste detalj.</li>\n<li>\n<strong>IP67 vanntett</strong> – tåler rør, væske og smuss.</li>\n<li>\n<strong>Innebygd LED</strong> – ser selv i beksvart mørke.</li>\n<li>\n<strong>Fleksibel kabel</strong> – når inn i trange rom.</li>\n<li><strong>Oppladbart litiumbatteri.</strong></li>\n</ul>\n<h2>30 dagers fornøyd-kunde-garanti</h2>\n<p>Ikke fornøyd innen 30 dager? Pengene tilbake – ingen risiko for deg.</p>\n</div>",
+    "productType": "Bil, Verktøy & Garasje",
+    "tags": [
+     "bil",
+     "endoskop",
+     "garasje",
+     "inspeksjonskamera",
+     "test",
+     "verktøy"
+    ],
+    "options": [
+     {
+      "name": "Antall",
+      "values": ["1 stk"]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65027642360157",
+      "title": "1 stk",
+      "selectedOptions": [
+       {"name": "Antall", "value": "1 stk"}
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "1080p inspeksjonskamera endoskop",
+     "Endoskop IP67-kamera",
+     "Inspeksjonskamera i bruk"
+    ],
+    "seo": {
+     "title": "1080p Inspeksjonskamera – Vanntett IP67 Endoskop",
+     "description": "Vanntett endoskopkamera i 1080p med LED-lys. Finn feil i bil, rør og motor uten å demontere."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Inneholder garantiløfte (30 dagers pengene-tilbake) – bør verifiseres mot norsk forbrukerkjøpslov før publisering."
+   ]
+  },
+  {
+   "handle": "uppblasbar-liggunderlag-tpu-ultralatt-sovdyna-for-camping",
+   "no": {
+    "title": "Oppblåsbart Liggeunderlag TPU – Ultralett Sovematte for Camping",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Sover du dårlig på hard, kald mark?</h2>\n<p>Et tynt liggeunderlag slipper gjennom hver eneste stein og trekker kulde rett opp fra bakken. Du våkner stiv, frossen og unødvendig sliten – midt i det som skulle vært en fin campingtur.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/98e11b97-f9fc-4c4a-bb5b-3902416eac72.jpg\" alt=\"Oppblåsbar sovematte\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Myk, varm seng – uansett hvor du slår leir</h2>\n<p>Den oppblåsbare TPU-madrassen gir et tykt, fjærende lag mellom deg og bakken som isolerer mot kulde og jevner ut underlaget. Den blåses opp på noen åndedrag, tåler fukt og veier nesten ingenting i sekken.</p>\n<h2>Funksjoner</h2>\n<ul>\n<li>\n<strong>Ultralett TPU</strong> – knapt merkbar i pakningen.</li>\n<li>\n<strong>Isolerer mot kulde</strong> – varmere og bedre søvn.</li>\n<li>\n<strong>Rask oppblåsing</strong> – klar på noen åndedrag.</li>\n<li>\n<strong>Fuktbestandig</strong> – tåler dugg og våt mark.</li>\n<li>\n<strong>Kompakt</strong> – sammenrullet tar den liten plass.</li>\n</ul>\n<h2>30 dagers fornøyd-kunde-garanti</h2>\n<p>Ikke fornøyd innen 30 dager? Pengene tilbake – ingen risiko for deg.</p>\n</div>",
+    "productType": "Camping & Friluftsliv",
+    "tags": [
+     "camping",
+     "friluftsliv",
+     "liggeunderlag",
+     "sovematte",
+     "test",
+     "vandring"
+    ],
+    "options": [
+     {
+      "name": "Antall",
+      "values": ["1 stk"]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65027646456157",
+      "title": "1 stk",
+      "selectedOptions": [
+       {"name": "Antall", "value": "1 stk"}
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Oppblåsbar sovematte for camping"
+    ],
+    "seo": {
+     "title": "Oppblåsbart Liggeunderlag TPU – Ultralett for Camping",
+     "description": "Ultralett oppblåsbart liggeunderlag som isolerer mot kulde. Rask oppblåsing, tåler fukt, liten plass i sekken."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Inneholder garantiløfte (30 dagers pengene-tilbake) – bør verifiseres mot norsk forbrukerkjøpslov før publisering."
+   ]
+  },
+  {
+   "handle": "tradlos-dackpump-150-psi-smart-luftkompressor-med-led-display",
+   "no": {
+    "title": "Trådløs Dekkpumpe 150 PSI – Smart Luftkompressor med LED-display",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Flatt dekk – og ingen pumpe i nærheten?</h2>\n<p>Et dekk som har mistet luft en kald morgen eller midt i en utflukt, setter en stopper for hele dagen. Og slangepumpen på bensinstasjonen er ofte ødelagt eller opptatt akkurat når du trenger den.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/7320b9b1-2349-4963-8564-ee5ee5487293.jpg\" alt=\"Trådløs dekkpumpe\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Riktig trykk – hvor som helst, med et tastetrykk</h2>\n<p>Still inn ønsket trykk, trykk på knappen, og pumpen stopper automatisk når dekket er klart. Trådløs og USB-ladet tar du den med overalt – til bilen, sykkelen, MC-en eller ballen. 150 psi og 3x raskere enn vanlige minipumper.</p>\n<h2>Funksjoner</h2>\n<ul>\n<li>\n<strong>150 psi, 3x raskere</strong> – pumper bildekk på minutter.</li>\n<li>\n<strong>Auto-stopp</strong> – stopper ved innstilt trykk.</li>\n<li>\n<strong>LED-display</strong> – nøyaktig trykkavlesning.</li>\n<li>\n<strong>Trådløs &amp; USB-ladet</strong> – ingen ledning, alltid med.</li>\n<li><strong>For bil, sykkel, MC og baller.</strong></li>\n</ul>\n<h2>30 dagers fornøyd-kunde-garanti</h2>\n<p>Ikke fornøyd innen 30 dager? Pengene tilbake – ingen risiko for deg.</p>\n</div>",
+    "productType": "Bil, Verktøy & Garasje",
+    "tags": [
+     "bil",
+     "dekkpumpe",
+     "garasje",
+     "luftkompressor",
+     "test",
+     "verktøy"
+    ],
+    "options": [
+     {
+      "name": "Antall",
+      "values": ["1 stk"]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65027647504733",
+      "title": "1 stk",
+      "selectedOptions": [
+       {"name": "Antall", "value": "1 stk"}
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Trådløs dekkpumpe 150 psi"
+    ],
+    "seo": {
+     "title": "Trådløs Dekkpumpe 150 PSI med LED-display",
+     "description": "Smart luftkompressor som stopper automatisk ved riktig trykk. Trådløs, USB-ladet og 3x raskere enn vanlige pumper."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Inneholder garantiløfte (30 dagers pengene-tilbake) – bør verifiseres mot norsk forbrukerkjøpslov før publisering."
+   ]
+  },
+  {
+   "handle": "snabba-tradkopplingar-inline-splice-50-pack-for-alla-kretsar",
+   "no": {
+    "title": "Raske Trådkoblinger Inline Splice – 50-pack for Alle Kretser",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Rot og glapp når du skjøter kabler?</h2>\n<p>Å tvinne sammen kabler, tape og håpe på god kontakt ender ofte med glapp, kortslutning eller en loddebolt du ikke orker å finne frem. Og en dårlig skjøt kan skape store problemer i bilen eller hjemme.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/83530a0e-8c18-4ad6-acc6-f051f00cb282.jpg\" alt=\"Trådkoblinger inline splice\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Sikker skjøt på noen sekunder</h2>\n<p>Legg kablene i, trykk ned spaken – ferdig. Koblingene gir en stabil, isolert forbindelse uten lodding eller avskrelling. Perfekt for bil, bobil, båt og hjemmeelektronikk, for ulike tykkelser (AWG 20–40).</p>\n<h2>Funksjoner</h2>\n<ul>\n<li>\n<strong>Snapp-i-funksjon</strong> – sikker skjøt uten loddebolt.</li>\n<li>\n<strong>50 koblinger</strong> – rekker til mange prosjekter.</li>\n<li>\n<strong>Isolert forbindelse</strong> – ingen glapp, ingen kortslutning.</li>\n<li>\n<strong>For AWG 20–40</strong> – passer de fleste kabler.</li>\n</ul>\n<h2>30 dagers fornøyd-kunde-garanti</h2>\n<p>Ikke fornøyd innen 30 dager? Pengene tilbake – ingen risiko for deg.</p>\n</div>",
+    "productType": "Bil, Verktøy & Garasje",
+    "tags": [
+     "bil",
+     "elektronikk",
+     "garasje",
+     "test",
+     "trådkobling",
+     "verktøy"
+    ],
+    "options": [
+     {
+      "name": "Antall",
+      "values": ["50-pack"]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65027661070685",
+      "title": "50-pack",
+      "selectedOptions": [
+       {"name": "Antall", "value": "50-pack"}
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Trådkoblinger inline splice 50-pack"
+    ],
+    "seo": {
+     "title": "Raske Trådkoblinger Inline Splice 50-pack",
+     "description": "50 skjøtekoblinger for sikker kabelskjøting uten lodding. Passer AWG 20–40, for bil, bobil og hjemmeelektronikk."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Inneholder garantiløfte (30 dagers pengene-tilbake) – bør verifiseres mot norsk forbrukerkjøpslov før publisering."
+   ]
+  },
+  {
+   "handle": "vaggmonterade-slang-sladdhallare-5-pack-for-garage-tradgard",
+   "no": {
+    "title": "Veggmonterte Slange- & Ledningsholdere – 5-pack for Garasje & Hage",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Slanger og ledninger i en eneste røre?</h2>\n<p>Hageslangen, skjøteledningen og laderne havner i en floket haug på garasjegulvet. Du snubler, leter og drar i feil ende – og alt slites ut før tiden.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/open/cf9fbd0010a94913bf48322d29f5f54a-goods.jpeg\" alt=\"Slange- og ledningsholder\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Heng opp alt – få orden med en gang</h2>\n<p>De solide, veggmonterte holderne holder slanger, ledninger og tau pent opphengt og lett tilgjengelig. Sklisikker overflate og justerbart bånd gjør at alt sitter på plass – i garasjen, verkstedet eller på terrasseveggen.</p>\n<h2>Funksjoner</h2>\n<ul>\n<li>\n<strong>5 holdere</strong> – organiser hele garasjen.</li>\n<li>\n<strong>Solide &amp; justerbare</strong> – for slange, ledning og tau.</li>\n<li>\n<strong>Sklisikker overflate</strong> – alt sitter i ro.</li>\n<li><strong>Enkel veggmontering.</strong></li>\n</ul>\n<h2>30 dagers fornøyd-kunde-garanti</h2>\n<p>Ikke fornøyd innen 30 dager? Pengene tilbake – ingen risiko for deg.</p>\n</div>",
+    "productType": "Bil, Verktøy & Garasje",
+    "tags": [
+     "oppbevaring",
+     "garasje",
+     "test",
+     "hage",
+     "verktøy"
+    ],
+    "options": [
+     {
+      "name": "Antall",
+      "values": ["5-pack"]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65027673260381",
+      "title": "5-pack",
+      "selectedOptions": [
+       {"name": "Antall", "value": "5-pack"}
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Veggmonterte slange- og ledningsholdere 5-pack"
+    ],
+    "seo": {
+     "title": "Veggmonterte Slange- & Ledningsholdere 5-pack",
+     "description": "5 solide holdere som gir orden på slanger, ledninger og tau i garasjen eller hagen. Sklisikker og enkel å montere."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Inneholder garantiløfte (30 dagers pengene-tilbake) – bør verifiseres mot norsk forbrukerkjøpslov før publisering."
+   ]
+  },
+  {
+   "handle": "plastsvets-for-bilreparation-stotfangare-fordonsplast-med-haftklamrar",
+   "no": {
+    "title": "Plastsveis for Bilreparasjon – Støtfanger & Kjøretøyplast med Heftestifter",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Sprukket støtfanger som koster tusenlapper å fikse?</h2>\n<p>En knekt støtfanger, ødelagt plastdel eller sprukket holder i bilen betyr som regel dyrt verksted eller en helt ny del. Tape og lim holder sjelden – sprekken kommer tilbake.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/d9a06937-cb1e-4a7c-8483-8c0973b5a9a5.jpg\" alt=\"Plastsveis for bilreparasjon\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Sveis plasten sammen – sterkere enn ny</h2>\n<p>Plastsveisen smelter inn heftestifter tvers over sprekken og binder plasten sammen på dypet. Resultatet blir en sterk, holdbar reparasjon av støtfangere, paneler og feste – på noen minutter, hjemme i garasjen.</p>\n<h2>Funksjoner</h2>\n<ul>\n<li>\n<strong>Sterk reparasjon</strong> – heftestifter forsterker plasten.</li>\n<li>\n<strong>For all kjøretøyplast</strong> – støtfangere, paneler, feste.</li>\n<li>\n<strong>Komplett sett</strong> – sveis + stifter inkludert.</li>\n<li>\n<strong>Raskt &amp; enkelt</strong> – klart på minutter.</li>\n</ul>\n<h2>30 dagers fornøyd-kunde-garanti</h2>\n<p>Ikke fornøyd innen 30 dager? Pengene tilbake – ingen risiko for deg.</p>\n</div>",
+    "productType": "Bil, Verktøy & Garasje",
+    "tags": [
+     "bil",
+     "garasje",
+     "plastsveis",
+     "reparasjon",
+     "test",
+     "verktøy"
+    ],
+    "options": [
+     {
+      "name": "Antall",
+      "values": ["1 sett"]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65027683582301",
+      "title": "1 sett",
+      "selectedOptions": [
+       {"name": "Antall", "value": "1 sett"}
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Plastsveis for bilreparasjon"
+    ],
+    "seo": {
+     "title": "Plastsveis for Bilreparasjon – Støtfanger & Plast",
+     "description": "Reparer sprukket støtfanger og kjøretøyplast selv med heftestifter. Sterkt og holdbart resultat på minutter."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Inneholder garantiløfte (30 dagers pengene-tilbake) – bør verifiseres mot norsk forbrukerkjøpslov før publisering."
+   ]
+  },
+  {
+   "handle": "momentlas-for-stangsel-lattinstallerat-grindlas-for-bete-hage",
+   "no": {
+    "title": "Momentlås for Gjerde – Lettmontert Portlås for Beite & Hage",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Vrien port som dyrene lærer å åpne?</h2>\n<p>En dårlig portlås glipper, seg fast og – verst av alt – kan åpnes av nysgjerrige dyr. Å jage løse dyr over eiendommen er det siste du vil holde på med en morgen.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/8b435d56-319c-44ee-bab8-dd824424dee4.jpg\" alt=\"Momentlås for gjerde\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Sikker port – åpne og lukke med én hånd</h2>\n<p>Momentlåsen smekker igjen automatisk og holder porten stødig lukket, mens du selv åpner den enkelt med én hånd. Lettmontert på de fleste beite- og hagegjerder, bygget for å tåle alt slags vær.</p>\n<h2>Funksjoner</h2>\n<ul>\n<li>\n<strong>Selvlukkende</strong> – porten låser seg selv.</li>\n<li>\n<strong>Dyresikkert</strong> – holder hester, sauer og geiter inne.</li>\n<li>\n<strong>Enhåndsåpning</strong> – praktisk når hendene er fulle.</li>\n<li>\n<strong>Tåler vær og vind</strong> – for utendørsbruk hele året.</li>\n</ul>\n<h2>30 dagers fornøyd-kunde-garanti</h2>\n<p>Ikke fornøyd innen 30 dager? Pengene tilbake – ingen risiko for deg.</p>\n</div>",
+    "productType": "Landbruk & Dyr",
+    "tags": [
+     "dyr",
+     "portlås",
+     "hage",
+     "landbruk",
+     "gjerde",
+     "test"
+    ],
+    "options": [
+     {
+      "name": "Antall",
+      "values": ["1 stk"]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65027718545757",
+      "title": "1 stk",
+      "selectedOptions": [
+       {"name": "Antall", "value": "1 stk"}
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Momentlås portlås for gjerde"
+    ],
+    "seo": {
+     "title": "Momentlås for Gjerde – Selvlukkende Portlås",
+     "description": "Selvlukkende portlås som holder dyrene trygt inne. Enkel enhåndsåpning og lettmontert på beite- og hagegjerder."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Inneholder garantiløfte (30 dagers pengene-tilbake) – bør verifiseres mot norsk forbrukerkjøpslov før publisering."
+   ]
+  },
+  {
+   "handle": "stangseltradsspannare-30-pack-spannhandtag-komplett-set",
+   "no": {
+    "title": "Gjerdetrådstrammer 30-pack + Strammehåndtak – Komplett Sett",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Slakk gjerdetråd som dyrene slipper forbi?</h2>\n<p>Med tiden slakner gjerdetråden, henger og mister spensten – og et løst gjerde holder verken dyrene inne eller rovdyrene ute. Å stramme for hånd er tungt og tar evigheter.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fmket/56e2dba6376d79da42c61e9d0276ab2b.jpg\" alt=\"Gjerdetrådstrammer sett\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Stram hele gjerdet – raskt og stødig</h2>\n<p>Settet inneholder 30 trådstrammere og et strammehåndtak som drar tråden stramt og låser den på plass. Du får et stramt, sikkert gjerde rundt hele hagen – uten spesialverktøy og uten å slite ut ryggen.</p>\n<h2>Funksjoner</h2>\n<ul>\n<li>\n<strong>30 strammere + håndtak</strong> – rekker til hele hagen.</li>\n<li>\n<strong>Strammer tråden hardt</strong> – stødig gjerde som holder.</li>\n<li>\n<strong>Enkel betjening</strong> – ikke noe tungt håndarbeid.</li>\n<li>\n<strong>Tåler vær og vind</strong> – for utendørsbruk hele året.</li>\n</ul>\n<h2>30 dagers fornøyd-kunde-garanti</h2>\n<p>Ikke fornøyd innen 30 dager? Pengene tilbake – ingen risiko for deg.</p>\n</div>",
+    "productType": "Landbruk & Dyr",
+    "tags": [
+     "dyr",
+     "hage",
+     "landbruk",
+     "gjerde",
+     "test",
+     "trådstrammer"
+    ],
+    "options": [
+     {
+      "name": "Antall",
+      "values": ["30-pack + håndtak"]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65027741024605",
+      "title": "30-pack + håndtak",
+      "selectedOptions": [
+       {"name": "Antall", "value": "30-pack + håndtak"}
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Gjerdetrådstrammer 30-pack med håndtak"
+    ],
+    "seo": {
+     "title": "Gjerdetrådstrammer 30-pack + Strammehåndtak",
+     "description": "Komplett sett med 30 trådstrammere og håndtak for et stramt, sikkert gjerde. Enkel betjening uten tungt arbeid."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Inneholder garantiløfte (30 dagers pengene-tilbake) – bør verifiseres mot norsk forbrukerkjøpslov før publisering."
+   ]
+  },
+  {
+   "handle": "stangselstrackare-tradstrackare-kraftig-for-tradgard-hage",
+   "no": {
+    "title": "Gjerdestrammer / Trådstrammer – Kraftig for Hage & Beite",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Umulig å få gjerdetråden riktig stram?</h2>\n<p>Å dra gjerdetråd stram for hånd er tungt, glatt og ender som regel med en slakk line som henger etter første vinter. Et løst gjerde betyr dyr på rømmen og stadige reparasjoner.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/295e506f-0ac0-4204-9b8a-db82618b9ae5.jpg\" alt=\"Trådstrammer i bruk\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Stram tråden knallhardt – med hevstangskraft</h2>\n<p>Den kraftige strammeren gir deg hevstangskraften til å dra gjerdetråden virkelig stram og låse den på plass. Resultatet blir et stødig, jevnt strammet gjerde rundt hele hagen eller beitet – som holder sesong etter sesong.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/4d505681-e0cf-4dc1-910f-10d987cadc2b.jpg\" alt=\"Kraftig gjerdestrammer\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Funksjoner</h2>\n<ul>\n<li>\n<strong>Kraftig hevstang</strong> – strammer tråden hardt uten håndkraft.</li>\n<li>\n<strong>Holdbar konstruksjon</strong> – tåler tøff bruk.</li>\n<li><strong>For hage- og beitegjerder.</strong></li>\n<li>\n<strong>Stabilt grep</strong> – glir ikke under spenning.</li>\n</ul>\n<h2>30 dagers fornøyd-kunde-garanti</h2>\n<p>Ikke fornøyd innen 30 dager? Pengene tilbake – ingen risiko for deg.</p>\n</div>",
+    "productType": "Landbruk & Dyr",
+    "tags": [
+     "dyr",
+     "landbruk",
+     "gjerde",
+     "test",
+     "trådstrammer",
+     "verktøy"
+    ],
+    "options": [
+     {
+      "name": "Antall",
+      "values": ["1 stk"]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65027812032861",
+      "title": "1 stk",
+      "selectedOptions": [
+       {"name": "Antall", "value": "1 stk"}
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Gjerdestrammer trådstrammer",
+     "Trådstrammer i bruk",
+     "Kraftig gjerdestrammer"
+    ],
+    "seo": {
+     "title": "Gjerdestrammer / Trådstrammer – Kraftig og Holdbar",
+     "description": "Kraftig strammer med hevstangskraft for et stramt, sikkert gjerde rundt hage og beite. Holdbar og stabil i bruk."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Inneholder garantiløfte (30 dagers pengene-tilbake) – bør verifiseres mot norsk forbrukerkjøpslov før publisering."
+   ]
+  },
+  {
+   "handle": "ateranvandbar-tradgardssack-med-handtag-kraftig-for-lov-gras",
+   "no": {
+    "title": "Gjenbrukbar Hagesekk med Håndtak – Kraftig for Løv & Gress",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Tynne søppelsekker som sprekker av løv og grener?</h2>\n<p>Vanlige plastsekker går i stykker midt i rakingen, velter og kan ikke gjenbrukes. Du står der med løv over hele plenen og en ødelagt sekk i hånden.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/8e9287e2-5ba0-428b-8de0-01a5833eaf00.jpg\" alt=\"Gjenbrukbar hagesekk\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>En sekk som holder – år etter år</h2>\n<p>Den kraftige hagesekken står stødig oppreist med solide håndtak, sluker løv, gress og grener uten å sprekke og felles sammen flatt for oppbevaring. Bruk den om og om igjen gjennom hele hagesesongen.</p>\n<h2>Funksjoner</h2>\n<ul>\n<li>\n<strong>Kraftig, rivsterkt materiale</strong> – sprekker ikke som plastsekker.</li>\n<li>\n<strong>Solide håndtak</strong> – lett å bære og tømme.</li>\n<li>\n<strong>Står oppreist</strong> – fyll med begge hender.</li>\n<li>\n<strong>Flere størrelser</strong> – 60, 120 og 300 liter.</li>\n<li>\n<strong>Sammenleggbar</strong> – tar ingen plass i oppbevaring.</li>\n</ul>\n<h2>30 dagers fornøyd-kunde-garanti</h2>\n<p>Ikke fornøyd innen 30 dager? Pengene tilbake – ingen risiko for deg.</p>\n</div>",
+    "productType": "Hage & Utendørs",
+    "tags": [
+     "løv",
+     "test",
+     "hage",
+     "hagesekk",
+     "utendørs"
+    ],
+    "options": [
+     {
+      "name": "Størrelse",
+      "values": ["60 L", "120 L", "300 L"]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65027825566045",
+      "title": "60 L",
+      "selectedOptions": [
+       {"name": "Størrelse", "value": "60 L"}
+      ]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65027825598813",
+      "title": "120 L",
+      "selectedOptions": [
+       {"name": "Størrelse", "value": "120 L"}
+      ]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65027825631581",
+      "title": "300 L",
+      "selectedOptions": [
+       {"name": "Størrelse", "value": "300 L"}
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Gjenbrukbar hagesekk med håndtak"
+    ],
+    "seo": {
+     "title": "Gjenbrukbar Hagesekk med Håndtak – 60–300 L",
+     "description": "Kraftig, gjenbrukbar hagesekk for løv, gress og grener. Står oppreist, sammenleggbar og fås i tre størrelser."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Inneholder garantiløfte (30 dagers pengene-tilbake) – bør verifiseres mot norsk forbrukerkjøpslov før publisering."
+   ]
+  },
+  {
+   "handle": "ibc-tank-kranadapter-kit-anslutning-for-vattentank-tradgard",
+   "no": {
+    "title": "IBC-tank Kranadapter Kit – Tilkobling for Vanntank & Hage",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Vrient å koble slange til IBC-tanken?</h2>\n<p>IBC-tankens grovgjengede utløp passer ikke vanlige hageslanger – så du står der med feil gjenge, lekkasje og ingen enkel måte å tappe vann til vanning eller dyr.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/37b22396-1e6c-41b0-b0ca-1a7c11ac93d2.jpg\" alt=\"IBC-kranadapter\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Koble på – tapp vann direkte</h2>\n<p>Adaptersettet gjør om IBC-tankens utløp til en vanlig kran- og slangetilkobling som passer både europeiske og amerikanske gjengestandarder. Koble til slange, kran eller vanningssystem på sekunder – tett og lekkasjefritt.</p>\n<h2>Funksjoner</h2>\n<ul>\n<li>\n<strong>Passer standard IBC-tanker</strong> – enkel påskruing.</li>\n<li>\n<strong>EU- &amp; US-gjengestandard</strong> – passer de fleste slanger.</li>\n<li>\n<strong>Lekkasjefri tilkobling</strong> – tetter godt.</li>\n<li><strong>For vanning, dyr og husholdning.</strong></li>\n</ul>\n<h2>30 dagers fornøyd-kunde-garanti</h2>\n<p>Ikke fornøyd innen 30 dager? Pengene tilbake – ingen risiko for deg.</p>\n</div>",
+    "productType": "Hage & Utendørs",
+    "tags": [
+     "vanning",
+     "ibc",
+     "test",
+     "hage",
+     "utendørs",
+     "vanntank"
+    ],
+    "options": [
+     {
+      "name": "Antall",
+      "values": ["1 sett"]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65027913613661",
+      "title": "1 sett",
+      "selectedOptions": [
+       {"name": "Antall", "value": "1 sett"}
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "IBC-tank kranadapter kit"
+    ],
+    "seo": {
+     "title": "IBC-tank Kranadapter Kit – Enkel Vanntilkobling",
+     "description": "Adaptersett som gjør om IBC-tankens utløp til vanlig kran- og slangetilkobling. Lekkasjefritt og enkelt å montere."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Inneholder garantiløfte (30 dagers pengene-tilbake) – bør verifiseres mot norsk forbrukerkjøpslov før publisering."
+   ]
+  },
+  {
+   "handle": "gethalsband-med-kopparklocka-justerbart-for-smaboskap",
+   "no": {
+    "title": "Geitehalsbånd med Kobberbjelle – Justerbart for Småfe",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Mister du oversikten over dyrene på beite?</h2>\n<p>Geiter, sauer og småfe beveger seg raskt og gjemmer seg gjerne i kratt og terreng. Uten lyd er de vanskelige å holde styr på – og en bortkommen geit kan ta timevis å finne.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/92157ad1-5b71-4d65-bcb5-b29352928088.jpg\" alt=\"Geitehalsbånd med kobberbjelle\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Hør hvor dyrene er – hele tiden</h2>\n<p>Halsbåndet med kobberbjelle gjør at du alltid hører hvor dyret befinner seg, selv utenfor synsvidde. Det justerbare, slitesterke polyesterbåndet sitter komfortabelt og sikkert på geiter, sauer og andre mindre husdyr.</p>\n<h2>Funksjoner</h2>\n<ul>\n<li>\n<strong>Kobberbjelle</strong> – tydelig lyd, hør dyret på avstand.</li>\n<li>\n<strong>Justerbart</strong> – passer ulike halsstørrelser.</li>\n<li>\n<strong>Slitesterk polyester</strong> – tåler vær og vind.</li>\n<li><strong>For geiter, sauer og småfe.</strong></li>\n</ul>\n<h2>30 dagers fornøyd-kunde-garanti</h2>\n<p>Ikke fornøyd innen 30 dager? Pengene tilbake – ingen risiko for deg.</p>\n</div>",
+    "productType": "Landbruk & Dyr",
+    "tags": [
+     "dyr",
+     "geit",
+     "halsbånd",
+     "landbruk",
+     "test"
+    ],
+    "options": [
+     {
+      "name": "Antall",
+      "values": ["1 stk"]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65027931242845",
+      "title": "1 stk",
+      "selectedOptions": [
+       {"name": "Antall", "value": "1 stk"}
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Geitehalsbånd med kobberbjelle"
+    ],
+    "seo": {
+     "title": "Geitehalsbånd med Kobberbjelle – Justerbart",
+     "description": "Halsbånd med kobberbjelle som gjør det enkelt å høre hvor geiter og sauer er på beite. Justerbart og slitesterkt."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Inneholder garantiløfte (30 dagers pengene-tilbake) – bør verifiseres mot norsk forbrukerkjøpslov før publisering."
+   ]
+  }
+ ]
+}

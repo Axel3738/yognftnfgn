@@ -1,0 +1,246 @@
+{
+  "current": {
+    "color_body_bg": "#ffffff",
+    "color_body_text": "#000000",
+    "color_price": "#000000",
+    "color_savings_text": "#dd1d1d",
+    "color_borders": "#e8e8e1",
+    "color_button": "#dd1d1d",
+    "color_button_text": "#ffffff",
+    "color_sale_tag": "#dd1d1d",
+    "color_cart_dot": "#916264",
+    "color_small_image_bg": "#ffffff",
+    "color_large_image_bg": "#000000",
+    "color_header": "#000000",
+    "color_header_text": "#ffffff",
+    "color_announcement": "#dd1d1d",
+    "color_announcement_text": "#000000",
+    "color_footer": "#000000",
+    "color_footer_text": "#ffffff",
+    "color_drawer_background": "#000000",
+    "color_drawer_text": "#ffffff",
+    "color_drawer_border": "#e8e8e1",
+    "color_drawer_button": "#dd1d1d",
+    "color_drawer_button_text": "#ffffff",
+    "color_modal_overlays": "#e6e6e6",
+    "color_image_overlay": "#000000",
+    "color_image_overlay_text_shadow": 20,
+    "type_header_font_family": "anton_n4",
+    "type_header_spacing": "0",
+    "type_header_base_size": 36,
+    "type_header_line_height": 1,
+    "type_header_capitalize": true,
+    "type_headers_align_text": true,
+    "type_base_font_family": "anton_n4",
+    "type_base_spacing": "25",
+    "type_base_size": 18,
+    "type_base_line_height": 1.4,
+    "type_body_align_text": true,
+    "type_navigation_style": "body",
+    "type_navigation_size": 16,
+    "type_navigation_capitalize": true,
+    "type_product_style": "body",
+    "type_collection_font": "body",
+    "type_collection_size": 20,
+    "button_style": "square",
+    "icon_weight": "2px",
+    "icon_linecaps": "miter",
+    "quick_shop_text": "Quick view",
+    "product_grid_image_size": "natural",
+    "product_hover_image": false,
+    "collection_grid_style": "overlaid-box",
+    "collection_grid_shape": "square",
+    "collection_grid_image": "product",
+    "collection_grid_text_align": "center",
+    "collection_grid_tint": "#000000",
+    "collection_grid_opacity": 10,
+    "collection_grid_gutter": true,
+    "cart_type": "drawer",
+    "cart_notes_enable": false,
+    "cart_terms_conditions_enable": false,
+    "breadcrumb": false,
+    "checkout_accent_color": "#111111",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_button_color": "#dd1d1d",
+    "checkout_error_color": "#ff6d6d",
+    "checkout_input_background_color_mode": "white",
+    "checkout_logo_image": "shopify://shop_images/beavershop-logo.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "medium",
+    "checkout_sidebar_background_color": "#fafafa",
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "1524770292306": {
+            "type": "announcement",
+            "settings": {
+              "text": "FREE DELIVERY",
+              "link_text": "On orders over £30",
+              "link": ""
+            }
+          },
+          "1524770296206": {
+            "type": "announcement",
+            "settings": {
+              "text": "BUY NOW, PAY LATER - KLARNA",
+              "link_text": "Available on all UK orders",
+              "link": ""
+            }
+          },
+          "1524770014057": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify://shop_images/beavershop-logo-white.png",
+              "desktop_logo_width": 270,
+              "mobile_logo_width": 170
+            }
+          }
+        },
+        "block_order": [
+          "1524770292306",
+          "1524770296206",
+          "1524770014057"
+        ],
+        "settings": {
+          "main_menu_link_list": "main-menu",
+          "mega_menu_images": true,
+          "main_menu_alignment": "center-split",
+          "header_style": "sticky",
+          "sticky_index": false,
+          "sticky_collection": false,
+          "announcement_compact": true,
+          "announcement_above_header": false,
+          "toolbar_menu": "",
+          "toolbar_social": true,
+          "show_locale_selector": false,
+          "show_currency_selector": false,
+          "show_currency_flags": false
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "1494301487049": {
+            "type": "menu",
+            "settings": {
+              "show_footer_title": false,
+              "menu": "footer",
+              "container_width": 25
+            }
+          },
+          "1494292487693": {
+            "type": "newsletter",
+            "settings": {
+              "show_footer_title": false,
+              "title": "THE BEAVER CLUB",
+              "text": "<p>Join our customer club for exclusive discounts and offers!</p>",
+              "container_width": 46
+            }
+          },
+          "custom_6fi8YE": {
+            "type": "custom",
+            "settings": {
+              "show_footer_title": true,
+              "title": "Company",
+              "text": "<p>BeaverShop is operated and owned by<br/>STONEBITE ECOM AB<br/>Company reg. no: 5595762401</p>",
+              "container_width": 25
+            }
+          },
+          "1494301487048": {
+            "type": "logo_social",
+            "settings": {
+              "desktop_logo_height": 79,
+              "container_width": 95
+            }
+          }
+        },
+        "block_order": [
+          "1494301487049",
+          "1494292487693",
+          "custom_6fi8YE",
+          "1494301487048"
+        ],
+        "settings": {
+          "show_locale_selector": false,
+          "show_currency_selector": false,
+          "show_currency_flags": false,
+          "show_payment_icons": false,
+          "show_copyright": false,
+          "copyright_text": ""
+        }
+      },
+      "newsletter-popup": {
+        "type": "newsletter-popup",
+        "settings": {
+          "mode": "disabled",
+          "popup_seconds": 5,
+          "popup_days": 30,
+          "popup_title": "Sign up and save",
+          "popup_text": "<p>Join our newsletter for exclusive discounts and offers.</p>",
+          "close_text": "No thanks",
+          "enable_newsletter": true,
+          "button_label": "Optional button",
+          "button_link": "",
+          "enable_button": false
+        }
+      },
+      "collection-header": {
+        "type": "collection-header",
+        "settings": {
+          "enable": true,
+          "collection_image_enable": true,
+          "parallax": true
+        }
+      },
+      "footer-promotions": {
+        "type": "footer-promotions",
+        "blocks": {
+          "footer-promotions-0": {
+            "type": "promotion",
+            "disabled": true,
+            "settings": {
+              "enable_image": true,
+              "title": "Site-wide promotion",
+              "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
+              "button_label": "Optional button",
+              "button_link": ""
+            }
+          },
+          "footer-promotions-1": {
+            "type": "promotion",
+            "disabled": true,
+            "settings": {
+              "enable_image": true,
+              "title": "Site-wide promotion",
+              "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
+              "button_label": "Optional button",
+              "button_link": ""
+            }
+          },
+          "footer-promotions-2": {
+            "type": "promotion",
+            "disabled": true,
+            "settings": {
+              "enable_image": true,
+              "title": "Site-wide promotion",
+              "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
+              "button_label": "Optional button",
+              "button_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "footer-promotions-0",
+          "footer-promotions-1",
+          "footer-promotions-2"
+        ],
+        "settings": {
+          "hide_homepage": false,
+          "image_size": "wide"
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}

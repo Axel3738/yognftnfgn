@@ -1,0 +1,807 @@
+{
+ "batch": 2,
+ "products": [
+  {
+   "handle": "batteridriven-branslepump-barbar-vatskepump-med-flodeskontroll",
+   "legacyId": "16268063113565",
+   "status": "ACTIVE",
+   "vendor": "Bäverbutiken",
+   "productType": "Bil, Verktyg & Garage",
+   "tags": [
+    "bil",
+    "bränsle",
+    "garage",
+    "pump",
+    "test",
+    "verktyg"
+   ],
+   "title": "Batteridriven Bränslepump – Bärbar Vätskepump med Flödeskontroll",
+   "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Spill och bensinstänk varje gång du tankar om?</h2>\n<p>Att hälla bensin, diesel eller olja från dunk till tank för hand blir lätt en blöt, luktande historia – med spill på marken, händerna och kläderna. Och en hävert orkar du knappt suga igång.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/4a9f039a-6171-447c-a7a2-577d20aa40a2.jpg\" alt=\"Bärbar vätskepump\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Pumpa rent – med ett knapptryck</h2>\n<p>Den batteridrivna pumpen flyttar bensin, diesel och olja snabbt och rent med upp till 2,4 gallon/minut. Flödeskontrollmunstycket stoppar automatiskt så att du slipper spill – inga händer i bränslet, inget kladd.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/7771cd69-220f-4f05-9f3f-1afd5101f455.jpg\" alt=\"Pump med flödeskontroll\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Funktioner</h2>\n<ul>\n<li>\n<strong>Batteridriven</strong> – ingen sladd, inget sug. (Batteri ingår ej.)</li>\n<li>\n<strong>Upp till 2,4 gallon/min</strong> – tömmer dunken snabbt.</li>\n<li>\n<strong>Flödeskontrollmunstycke</strong> – stoppar spill automatiskt.</li>\n<li><strong>För bensin, diesel och olja.</strong></li>\n<li>\n<strong>Bärbar och kompakt</strong> – passar i garaget eller båten.</li>\n</ul>\n<h2>30 dagars nöjd-kund-garanti</h2>\n<p>Inte nöjd inom 30 dagar? Pengarna tillbaka – ingen risk för dig.</p>\n</div>",
+   "seo": {
+    "title": null,
+    "description": null
+   },
+   "collection": "bil-verktyg-garage",
+   "options": [
+    {
+     "name": "Antal",
+     "values": [
+      "1 st"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/65027638395229",
+     "title": "1 st",
+     "sku": "BRANSLEPUMP",
+     "price": "469.00",
+     "compareAtPrice": "586.25",
+     "inventoryQuantity": 16,
+     "selectedOptions": [
+      {
+       "name": "Antal",
+       "value": "1 st"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/186a9b93-c445-4b16-9949-3044e46e3443.jpg?v=1782027345",
+     "altText": "Batteridriven bränslepump"
+    },
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/4a9f039a-6171-447c-a7a2-577d20aa40a2.jpg?v=1782027343",
+     "altText": "Bärbar vätskepump"
+    },
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/7771cd69-220f-4f05-9f3f-1afd5101f455.jpg?v=1782027343",
+     "altText": "Pump med flödeskontroll"
+    },
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/2545a245-d0d0-4a12-8e44-fdfa9a155a4b.jpg?v=1782027343",
+     "altText": "Bränslepump munstycke"
+    },
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/db4339f5-b3d6-46c3-8bde-9927905c6ad2.jpg?v=1782027344",
+     "altText": "Pump i bruk"
+    },
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/4ac6a36f-2eb9-4a21-b64c-88382286d0c5.jpg?v=1782027343",
+     "altText": "Bränslepump detalj"
+    }
+   ]
+  },
+  {
+   "handle": "led-garagebelysning-14-pack-hexagonala-taklampor-6500k",
+   "legacyId": "16268064194909",
+   "status": "ACTIVE",
+   "vendor": "Bäverbutiken",
+   "productType": "Bil, Verktyg & Garage",
+   "tags": [
+    "belysning",
+    "garage",
+    "led",
+    "test",
+    "verkstad"
+   ],
+   "title": "LED Garagebelysning 14-pack – Hexagonala Taklampor 6500K",
+   "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Mörkt och dystert i garaget?</h2>\n<p>En ensam glödlampa i taket räcker inte när du ska meka, måla eller hitta rätt verktyg. Skuggor och svaga lampor gör jobbet långsamt, tröttar ögonen och döljer detaljer.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/15124fc3-9255-4e71-a71b-bc5194c17a94.jpg\" alt=\"Honeycomb taklampa\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Förvandla garaget till en proffsverkstad</h2>\n<p>Det här 14-paket av hexagonala LED-lampor ger 72 420 lumen knivskarpt 6500K-ljus – som att jobba i dagsljus. Klicka ihop dem i valfritt mönster, montera enkelt och få ett jämnt, skuggfritt ljus över hela ytan.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/de72b2ae-3836-478c-b3fc-1a79d6200c99.jpg\" alt=\"Garagebelysning monterad\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Funktioner</h2>\n<ul>\n<li>\n<strong>14 lampor, 72 420 lm</strong> – dagsljus över hela garaget.</li>\n<li>\n<strong>6500K kallvitt</strong> – skarpt arbetsljus utan skuggor.</li>\n<li>\n<strong>Modulärt mönster</strong> – sätt ihop som du vill.</li>\n<li>\n<strong>Enkel montering</strong> – inga elektrikerkunskaper behövs.</li>\n<li>\n<strong>Energibesparande LED</strong> – mer ljus, lägre elräkning.</li>\n</ul>\n<h2>30 dagars nöjd-kund-garanti</h2>\n<p>Inte nöjd inom 30 dagar? Pengarna tillbaka – ingen risk för dig.</p>\n</div>",
+   "seo": {
+    "title": null,
+    "description": null
+   },
+   "collection": "bil-verktyg-garage",
+   "options": [
+    {
+     "name": "Antal",
+     "values": [
+      "14-pack"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/65027641868637",
+     "title": "14-pack",
+     "sku": "LED-GARAGE-14PACK",
+     "price": "3349.00",
+     "compareAtPrice": "4186.25",
+     "inventoryQuantity": 19,
+     "selectedOptions": [
+      {
+       "name": "Antal",
+       "value": "14-pack"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1a25d723-b76a-44ee-b845-84c9cd017f50.jpg?v=1782027424",
+     "altText": "LED garagebelysning hexagonal"
+    },
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/15124fc3-9255-4e71-a71b-bc5194c17a94.jpg?v=1782027424",
+     "altText": "Honeycomb taklampa"
+    },
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/de72b2ae-3836-478c-b3fc-1a79d6200c99.jpg?v=1782027424",
+     "altText": "Garagebelysning monterad"
+    },
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/a1b80a18-5122-427f-a404-b91344d9868f.jpg?v=1782027423",
+     "altText": "LED-lampor kallt vitt ljus"
+    }
+   ]
+  },
+  {
+   "handle": "1080p-inspektionskamera-endoskop-ip67-for-bil-ror-motor",
+   "legacyId": "16268064522589",
+   "status": "ACTIVE",
+   "vendor": "Bäverbutiken",
+   "productType": "Bil, Verktyg & Garage",
+   "tags": [
+    "bil",
+    "endoskop",
+    "garage",
+    "inspektionskamera",
+    "test",
+    "verktyg"
+   ],
+   "title": "1080p Inspektionskamera / Endoskop – IP67 för Bil, Rör & Motor",
+   "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Kommer du inte åt felet du letar efter?</h2>\n<p>Bakom motorblocket, inne i avloppsröret, i ventilationen eller bakom väggen – de svåraste felen sitter alltid där ögat inte når. Att gissa, plocka isär och hoppas leder bara till mer jobb.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/119ddf0d-768c-4dfd-9dc9-c545b37d6c91.jpg\" alt=\"Endoskop IP67 kamera\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Se in i det dolda – i skarp 1080p</h2>\n<p>Den vattentäta (IP67) endoskopkameran tar sig in i trånga, mörka utrymmen och visar allt i knivskarp 1080p med inbyggd LED-belysning. Hitta felet direkt – i bilen, röret eller motorn – utan att plocka isär.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/c09a2c18-fd3a-4125-8be2-666b72405b0d.jpg\" alt=\"Inspektionskamera i bruk\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Funktioner</h2>\n<ul>\n<li>\n<strong>1080p HD</strong> – skarp bild på minsta detalj.</li>\n<li>\n<strong>IP67 vattentät</strong> – tål rör, vätska och smuts.</li>\n<li>\n<strong>Inbyggd LED</strong> – ser även i kolmörker.</li>\n<li>\n<strong>Böjlig kabel</strong> – når in i trånga utrymmen.</li>\n<li><strong>Uppladdningsbart litiumbatteri.</strong></li>\n</ul>\n<h2>30 dagars nöjd-kund-garanti</h2>\n<p>Inte nöjd inom 30 dagar? Pengarna tillbaka – ingen risk för dig.</p>\n</div>",
+   "seo": {
+    "title": null,
+    "description": null
+   },
+   "collection": "bil-verktyg-garage",
+   "options": [
+    {
+     "name": "Antal",
+     "values": [
+      "1 st"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/65027642360157",
+     "title": "1 st",
+     "sku": "ENDOSKOP-1080P",
+     "price": "699.00",
+     "compareAtPrice": "873.75",
+     "inventoryQuantity": 18,
+     "selectedOptions": [
+      {
+       "name": "Antal",
+       "value": "1 st"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/7a695ccf-8a4d-4a7c-8d42-478783c16d8c.jpg?v=1782027500",
+     "altText": "1080p inspektionskamera endoskop"
+    },
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/119ddf0d-768c-4dfd-9dc9-c545b37d6c91.jpg?v=1782027500",
+     "altText": "Endoskop IP67 kamera"
+    },
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/c09a2c18-fd3a-4125-8be2-666b72405b0d.jpg?v=1782027500",
+     "altText": "Inspektionskamera i bruk"
+    }
+   ]
+  },
+  {
+   "handle": "uppblasbar-liggunderlag-tpu-ultralatt-sovdyna-for-camping",
+   "legacyId": "16268065309021",
+   "status": "ACTIVE",
+   "vendor": "Bäverbutiken",
+   "productType": "Camping & Friluft",
+   "tags": [
+    "camping",
+    "friluft",
+    "liggunderlag",
+    "sovdyna",
+    "test",
+    "vandring"
+   ],
+   "title": "Uppblåsbar Liggunderlag TPU – Ultralätt Sovdyna för Camping",
+   "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Sover du dåligt på hård, kall mark?</h2>\n<p>Ett tunt liggunderlag släpper igenom varenda sten och drar kyla rakt upp från marken. Du vaknar stel, frusen och oönskat trött – mitt i det som skulle vara en skön campingtur.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/98e11b97-f9fc-4c4a-bb5b-3902416eac72.jpg\" alt=\"Uppblåsbar sovdyna\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Mjuk, varm bädd – var du än slår läger</h2>\n<p>Den uppblåsbara TPU-dynan ger ett tjockt, fjädrande lager mellan dig och marken som isolerar mot kyla och jämnar ut underlaget. Den blåses upp på några andetag, är fukttålig och väger nästan ingenting i ryggsäcken.</p>\n<h2>Funktioner</h2>\n<ul>\n<li>\n<strong>Ultralätt TPU</strong> – knappt märkbar i packningen.</li>\n<li>\n<strong>Isolerar mot kyla</strong> – varmare och skönare sömn.</li>\n<li>\n<strong>Snabb uppblåsning</strong> – klar på några andetag.</li>\n<li>\n<strong>Fukttålig</strong> – tål dagg och blöt mark.</li>\n<li>\n<strong>Kompakt</strong> – ihoprullad får den plats överallt.</li>\n</ul>\n<h2>30 dagars nöjd-kund-garanti</h2>\n<p>Inte nöjd inom 30 dagar? Pengarna tillbaka – ingen risk för dig.</p>\n</div>",
+   "seo": {
+    "title": null,
+    "description": null
+   },
+   "collection": "camping-friluft",
+   "options": [
+    {
+     "name": "Antal",
+     "values": [
+      "1 st"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/65027646456157",
+     "title": "1 st",
+     "sku": "SOVDYNA-TPU",
+     "price": "709.00",
+     "compareAtPrice": "886.25",
+     "inventoryQuantity": 19,
+     "selectedOptions": [
+      {
+       "name": "Antal",
+       "value": "1 st"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/98e11b97-f9fc-4c4a-bb5b-3902416eac72.jpg?v=1782027681",
+     "altText": "Uppblåsbar sovdyna för camping"
+    }
+   ]
+  },
+  {
+   "handle": "tradlos-dackpump-150-psi-smart-luftkompressor-med-led-display",
+   "legacyId": "16268065669469",
+   "status": "ACTIVE",
+   "vendor": "Bäverbutiken",
+   "productType": "Bil, Verktyg & Garage",
+   "tags": [
+    "bil",
+    "däckpump",
+    "garage",
+    "luftkompressor",
+    "test",
+    "verktyg"
+   ],
+   "title": "Trådlös Däckpump 150 PSI – Smart Luftkompressor med LED-display",
+   "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Platt däck – och ingen pump i närheten?</h2>\n<p>Ett däck som tappat luft en kall morgon eller mitt på en utflykt sätter stopp för hela dagen. Och slangpumpen på macken är ofta trasig eller upptagen precis när du behöver den.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/7320b9b1-2349-4963-8564-ee5ee5487293.jpg\" alt=\"Trådlös däckpump\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Rätt tryck – var som helst, på en knapptryckning</h2>\n<p>Ställ in önskat tryck, tryck på knappen och pumpen stannar automatiskt när däcket är klart. Trådlös och USB-laddad tar du den med dig överallt – till bilen, cykeln, mc:n eller bollen. 150 psi och 3x snabbare än vanliga minipumpar.</p>\n<h2>Funktioner</h2>\n<ul>\n<li>\n<strong>150 psi, 3x snabbare</strong> – pumpar bildäck på minuter.</li>\n<li>\n<strong>Auto-stopp</strong> – stannar vid inställt tryck.</li>\n<li>\n<strong>LED-display</strong> – exakt tryckavläsning.</li>\n<li>\n<strong>Trådlös &amp; USB-laddad</strong> – ingen sladd, alltid med.</li>\n<li><strong>För bil, cykel, mc och bollar.</strong></li>\n</ul>\n<h2>30 dagars nöjd-kund-garanti</h2>\n<p>Inte nöjd inom 30 dagar? Pengarna tillbaka – ingen risk för dig.</p>\n</div>",
+   "seo": {
+    "title": null,
+    "description": null
+   },
+   "collection": "bil-verktyg-garage",
+   "options": [
+    {
+     "name": "Antal",
+     "values": [
+      "1 st"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/65027647504733",
+     "title": "1 st",
+     "sku": "DACKPUMP-150PSI",
+     "price": "519.00",
+     "compareAtPrice": "648.75",
+     "inventoryQuantity": 19,
+     "selectedOptions": [
+      {
+       "name": "Antal",
+       "value": "1 st"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/7320b9b1-2349-4963-8564-ee5ee5487293.jpg?v=1782027755",
+     "altText": "Trådlös däckpump 150 psi"
+    }
+   ]
+  },
+  {
+   "handle": "snabba-tradkopplingar-inline-splice-50-pack-for-alla-kretsar",
+   "legacyId": "16268067307869",
+   "status": "ACTIVE",
+   "vendor": "Bäverbutiken",
+   "productType": "Bil, Verktyg & Garage",
+   "tags": [
+    "bil",
+    "elektronik",
+    "garage",
+    "test",
+    "trådkoppling",
+    "verktyg"
+   ],
+   "title": "Snabba Trådkopplingar Inline Splice – 50-pack för Alla Kretsar",
+   "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Trassel och glapp när du skarvar kablar?</h2>\n<p>Att tvinna ihop kablar, tejpa och hoppas på bra kontakt slutar ofta med glapp, kortslutning eller en lödkolv du inte orkar plocka fram. Och en dålig skarv kan ställa till det rejält i bilen eller hemmet.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/83530a0e-8c18-4ad6-acc6-f051f00cb282.jpg\" alt=\"Trådkopplingar inline splice\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Säker skarv på några sekunder</h2>\n<p>Lägg i kablarna, tryck ner spaken – klart. Kopplingarna ger en stadig, isolerad anslutning utan lödning eller skalning. Perfekt för bil, husbil, båt och hemelektronik, för olika grovlekar (AWG 20–40).</p>\n<h2>Funktioner</h2>\n<ul>\n<li>\n<strong>Snäpp-i-funktion</strong> – säker skarv utan lödkolv.</li>\n<li>\n<strong>50 kopplingar</strong> – räcker till många projekt.</li>\n<li>\n<strong>Isolerad anslutning</strong> – inget glapp, ingen kortslutning.</li>\n<li>\n<strong>För AWG 20–40</strong> – passar de flesta kablar.</li>\n</ul>\n<h2>30 dagars nöjd-kund-garanti</h2>\n<p>Inte nöjd inom 30 dagar? Pengarna tillbaka – ingen risk för dig.</p>\n</div>",
+   "seo": {
+    "title": null,
+    "description": null
+   },
+   "collection": "bil-verktyg-garage",
+   "options": [
+    {
+     "name": "Antal",
+     "values": [
+      "50-pack"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/65027661070685",
+     "title": "50-pack",
+     "sku": "TRADKOPPLING-50",
+     "price": "239.00",
+     "compareAtPrice": "186.25",
+     "inventoryQuantity": 18,
+     "selectedOptions": [
+      {
+       "name": "Antal",
+       "value": "50-pack"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/83530a0e-8c18-4ad6-acc6-f051f00cb282.jpg?v=1782028297",
+     "altText": "Trådkopplingar inline splice 50-pack"
+    }
+   ]
+  },
+  {
+   "handle": "vaggmonterade-slang-sladdhallare-5-pack-for-garage-tradgard",
+   "legacyId": "16268068323677",
+   "status": "ACTIVE",
+   "vendor": "Bäverbutiken",
+   "productType": "Bil, Verktyg & Garage",
+   "tags": [
+    "förvaring",
+    "garage",
+    "test",
+    "trädgård",
+    "verktyg"
+   ],
+   "title": "Väggmonterade Slang- & Sladdhållare – 5-pack för Garage & Trädgård",
+   "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Slangar och sladdar i en enda röra?</h2>\n<p>Trädgårdsslangen, förlängningssladden och laddarna hamnar i en trasslig hög på garagegolvet. Du snubblar, letar och drar i fel ände – och allt blir slitet i förtid.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/open/cf9fbd0010a94913bf48322d29f5f54a-goods.jpeg\" alt=\"Slang- och sladdhållare\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Häng upp allt – få ordning direkt</h2>\n<p>De kraftiga, väggmonterade hållarna håller slangar, sladdar och rep snyggt upphängda och lätt åtkomliga. Halkfri yta och justerbart band gör att allt sitter på plats – i garaget, verkstaden eller på altanväggen.</p>\n<h2>Funktioner</h2>\n<ul>\n<li>\n<strong>5 hållare</strong> – organisera hela garaget.</li>\n<li>\n<strong>Kraftiga &amp; justerbara</strong> – för slang, sladd och rep.</li>\n<li>\n<strong>Halkfri yta</strong> – allt sitter still.</li>\n<li><strong>Enkel väggmontering.</strong></li>\n</ul>\n<h2>30 dagars nöjd-kund-garanti</h2>\n<p>Inte nöjd inom 30 dagar? Pengarna tillbaka – ingen risk för dig.</p>\n</div>",
+   "seo": {
+    "title": null,
+    "description": null
+   },
+   "collection": "bil-verktyg-garage",
+   "options": [
+    {
+     "name": "Antal",
+     "values": [
+      "5-pack"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/65027673260381",
+     "title": "5-pack",
+     "sku": "SLADDHALLARE-5PACK",
+     "price": "299.00",
+     "compareAtPrice": "123.75",
+     "inventoryQuantity": 19,
+     "selectedOptions": [
+      {
+       "name": "Antal",
+       "value": "5-pack"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/cf9fbd0010a94913bf48322d29f5f54a-goods.jpg?v=1782028373",
+     "altText": "Väggmonterade slang- och sladdhållare 5-pack"
+    }
+   ]
+  },
+  {
+   "handle": "plastsvets-for-bilreparation-stotfangare-fordonsplast-med-haftklamrar",
+   "legacyId": "16268069634397",
+   "status": "ACTIVE",
+   "vendor": "Bäverbutiken",
+   "productType": "Bil, Verktyg & Garage",
+   "tags": [
+    "bil",
+    "garage",
+    "plastsvets",
+    "reparation",
+    "test",
+    "verktyg"
+   ],
+   "title": "Plastsvets för Bilreparation – Stötfångare & Fordonsplast med Häftklamrar",
+   "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Sprucken stötfångare som kostar tusenlappar att laga?</h2>\n<p>En knäckt stötfångare, trasig plastdetalj eller spräckt hållare i bilen brukar betyda dyr verkstad eller en helt ny del. Tejp och lim håller sällan – sprickan kommer tillbaka.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/d9a06937-cb1e-4a7c-8483-8c0973b5a9a5.jpg\" alt=\"Plastsvets för bilreparation\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Svetsa ihop plasten – starkare än ny</h2>\n<p>Plastsvetsen smälter in häftklamrar tvärs över sprickan och binder ihop plasten på djupet. Resultatet blir en stark, hållbar reparation av stötfångare, paneler och fästen – på några minuter, hemma i garaget.</p>\n<h2>Funktioner</h2>\n<ul>\n<li>\n<strong>Stark reparation</strong> – häftklamrar förstärker plasten.</li>\n<li>\n<strong>För all fordonsplast</strong> – stötfångare, paneler, fästen.</li>\n<li>\n<strong>Komplett set</strong> – svets + klamrar ingår.</li>\n<li>\n<strong>Snabbt &amp; enkelt</strong> – klart på minuter.</li>\n</ul>\n<h2>30 dagars nöjd-kund-garanti</h2>\n<p>Inte nöjd inom 30 dagar? Pengarna tillbaka – ingen risk för dig.</p>\n</div>",
+   "seo": {
+    "title": null,
+    "description": null
+   },
+   "collection": "bil-verktyg-garage",
+   "options": [
+    {
+     "name": "Antal",
+     "values": [
+      "1 set"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/65027683582301",
+     "title": "1 set",
+     "sku": "PLASTSVETS-SET",
+     "price": "499.00",
+     "compareAtPrice": "623.75",
+     "inventoryQuantity": 19,
+     "selectedOptions": [
+      {
+       "name": "Antal",
+       "value": "1 set"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/d9a06937-cb1e-4a7c-8483-8c0973b5a9a5.jpg?v=1782028448",
+     "altText": "Plastsvets för bilreparation"
+    }
+   ]
+  },
+  {
+   "handle": "momentlas-for-stangsel-lattinstallerat-grindlas-for-bete-hage",
+   "legacyId": "16268073664861",
+   "status": "ACTIVE",
+   "vendor": "Bäverbutiken",
+   "productType": "Lantbruk & Djur",
+   "tags": [
+    "djur",
+    "grindlås",
+    "hage",
+    "lantbruk",
+    "stängsel",
+    "test"
+   ],
+   "title": "Momentlås för Stängsel – Lättinstallerat Grindlås för Bete & Hage",
+   "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Krånglig grind som djuren lär sig öppna?</h2>\n<p>Ett dåligt grindlås glappar, kärvar och – värst av allt – kan öppnas av nyfikna djur. Att jaga lösa djur över ägorna är det sista du vill hålla på med en morgon.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/8b435d56-319c-44ee-bab8-dd824424dee4.jpg\" alt=\"Momentlås för stängsel\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Säker grind – öppna och stäng med en hand</h2>\n<p>Momentlåset snäpper igen automatiskt och håller grinden stadigt stängd, samtidigt som du själv öppnar den enkelt med en hand. Lättinstallerat på de flesta bete- och hagstängsel, byggt för att hålla i alla väder.</p>\n<h2>Funktioner</h2>\n<ul>\n<li>\n<strong>Självstängande</strong> – grinden låser sig själv.</li>\n<li>\n<strong>Djursäkert</strong> – håller hästar, får och getter inne.</li>\n<li>\n<strong>Enhandsöppning</strong> – smidigt när du har armarna fulla.</li>\n<li>\n<strong>Tål väder och vind</strong> – för utomhusbruk året runt.</li>\n</ul>\n<h2>30 dagars nöjd-kund-garanti</h2>\n<p>Inte nöjd inom 30 dagar? Pengarna tillbaka – ingen risk för dig.</p>\n</div>",
+   "seo": {
+    "title": null,
+    "description": null
+   },
+   "collection": "lantbruk-djur",
+   "options": [
+    {
+     "name": "Antal",
+     "values": [
+      "1 st"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/65027718545757",
+     "title": "1 st",
+     "sku": "GRINDLAS-STANGSEL",
+     "price": "339.00",
+     "compareAtPrice": "423.75",
+     "inventoryQuantity": 19,
+     "selectedOptions": [
+      {
+       "name": "Antal",
+       "value": "1 st"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/8b435d56-319c-44ee-bab8-dd824424dee4.jpg?v=1782028648",
+     "altText": "Momentlås grindlås för stängsel"
+    }
+   ]
+  },
+  {
+   "handle": "stangseltradsspannare-30-pack-spannhandtag-komplett-set",
+   "legacyId": "16268075565405",
+   "status": "ACTIVE",
+   "vendor": "Bäverbutiken",
+   "productType": "Lantbruk & Djur",
+   "tags": [
+    "djur",
+    "hage",
+    "lantbruk",
+    "stängsel",
+    "test",
+    "trådspännare"
+   ],
+   "title": "Stängseltrådsspännare 30-pack + Spännhandtag – Komplett Set",
+   "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Slak stängseltråd som djuren tar sig förbi?</h2>\n<p>Med tiden slaknar stängseltråden, hänger och tappar spänsten – och ett löst stängsel håller varken djuren inne eller rovdjuren ute. Att spänna om för hand är tungt och tar evigheter.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fmket/56e2dba6376d79da42c61e9d0276ab2b.jpg\" alt=\"Stängseltrådsspännare set\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Spänn hela stängslet – snabbt och stadigt</h2>\n<p>Setet innehåller 30 trådspännare och ett spännhandtag som drar tråden hårt och låser den på plats. Du får ett stramt, säkert stängsel runt hela hagen – utan specialverktyg och utan att slita ut ryggen.</p>\n<h2>Funktioner</h2>\n<ul>\n<li>\n<strong>30 spännare + handtag</strong> – räcker till hela hagen.</li>\n<li>\n<strong>Spänner tråden hårt</strong> – stadigt stängsel som håller.</li>\n<li>\n<strong>Enkel manövrering</strong> – inget tungt handarbete.</li>\n<li>\n<strong>Tål väder och vind</strong> – för utomhusbruk året runt.</li>\n</ul>\n<h2>30 dagars nöjd-kund-garanti</h2>\n<p>Inte nöjd inom 30 dagar? Pengarna tillbaka – ingen risk för dig.</p>\n</div>",
+   "seo": {
+    "title": null,
+    "description": null
+   },
+   "collection": "lantbruk-djur",
+   "options": [
+    {
+     "name": "Antal",
+     "values": [
+      "30-pack + handtag"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/65027741024605",
+     "title": "30-pack + handtag",
+     "sku": "TRADSPANNARE-30SET",
+     "price": "919.00",
+     "compareAtPrice": "1148.75",
+     "inventoryQuantity": 19,
+     "selectedOptions": [
+      {
+       "name": "Antal",
+       "value": "30-pack + handtag"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/56e2dba6376d79da42c61e9d0276ab2b.jpg?v=1782028718",
+     "altText": "Stängseltrådsspännare 30-pack med handtag"
+    }
+   ]
+  },
+  {
+   "handle": "stangselstrackare-tradstrackare-kraftig-for-tradgard-hage",
+   "legacyId": "16268083265885",
+   "status": "ACTIVE",
+   "vendor": "Bäverbutiken",
+   "productType": "Lantbruk & Djur",
+   "tags": [
+    "djur",
+    "lantbruk",
+    "stängsel",
+    "test",
+    "trådsträckare",
+    "verktyg"
+   ],
+   "title": "Stängselsträckare / Trådsträckare – Kraftig för Trädgård & Hage",
+   "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Omöjligt att få stängseltråden riktigt spänd?</h2>\n<p>Att dra stängseltråd stram för hand är tungt, halkigt och slutar oftast med en slak lina som hänger efter första vintern. Ett löst stängsel betyder djur på rymmen och ständiga lagningar.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/295e506f-0ac0-4204-9b8a-db82618b9ae5.jpg\" alt=\"Trådsträckare i bruk\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Spänn tråden stenhårt – med hävstångskraft</h2>\n<p>Den kraftiga sträckaren ger dig hävstångskraften att dra stängseltråden riktigt stram och låsa den på plats. Resultatet blir ett stadigt, jämnt spänt stängsel runt hela trädgården eller hagen – som håller säsong efter säsong.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/4d505681-e0cf-4dc1-910f-10d987cadc2b.jpg\" alt=\"Kraftig stängselsträckare\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Funktioner</h2>\n<ul>\n<li>\n<strong>Kraftig hävstång</strong> – spänner tråden hårt utan handkraft.</li>\n<li>\n<strong>Hållbar konstruktion</strong> – tål tungt bruk.</li>\n<li><strong>För trädgårds- och hagstängsel.</strong></li>\n<li>\n<strong>Stabilt grepp</strong> – glider inte under spänning.</li>\n</ul>\n<h2>30 dagars nöjd-kund-garanti</h2>\n<p>Inte nöjd inom 30 dagar? Pengarna tillbaka – ingen risk för dig.</p>\n</div>",
+   "seo": {
+    "title": null,
+    "description": null
+   },
+   "collection": "lantbruk-djur",
+   "options": [
+    {
+     "name": "Antal",
+     "values": [
+      "1 st"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/65027812032861",
+     "title": "1 st",
+     "sku": "TRADSTRACKARE",
+     "price": "999.00",
+     "compareAtPrice": "1248.75",
+     "inventoryQuantity": 19,
+     "selectedOptions": [
+      {
+       "name": "Antal",
+       "value": "1 st"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/a99cb6eb-8b0b-4e35-9a77-7cfb03f668d5.jpg?v=1782029107",
+     "altText": "Stängselsträckare trådsträckare"
+    },
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/295e506f-0ac0-4204-9b8a-db82618b9ae5.jpg?v=1782029107",
+     "altText": "Trådsträckare i bruk"
+    },
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/4d505681-e0cf-4dc1-910f-10d987cadc2b.jpg?v=1782029106",
+     "altText": "Kraftig stängselsträckare"
+    }
+   ]
+  },
+  {
+   "handle": "ateranvandbar-tradgardssack-med-handtag-kraftig-for-lov-gras",
+   "legacyId": "16268084838749",
+   "status": "ACTIVE",
+   "vendor": "Bäverbutiken",
+   "productType": "Trädgård & Utomhus",
+   "tags": [
+    "löv",
+    "test",
+    "trädgård",
+    "trädgårdssäck",
+    "utomhus"
+   ],
+   "title": "Återanvändbar Trädgårdssäck med Handtag – Kraftig för Löv & Gräs",
+   "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Tunna sopsäckar som spricker av löv och grenar?</h2>\n<p>Vanliga plastsäckar går sönder mitt i krattningen, välter omkull och går inte att återanvända. Du står där med löv över hela gräsmattan och en trasig säck i handen.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/8e9287e2-5ba0-428b-8de0-01a5833eaf00.jpg\" alt=\"Återanvändbar trädgårdssäck\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>En säck som håller – år efter år</h2>\n<p>Den kraftiga trädgårdssäcken står stadigt upprätt med stadiga handtag, sväljer löv, gräs och grenar utan att spricka och viks ihop platt för förvaring. Återanvänd den hela trädgårdssäsongen.</p>\n<h2>Funktioner</h2>\n<ul>\n<li>\n<strong>Kraftigt, rivtåligt material</strong> – spricker inte som plastsäckar.</li>\n<li>\n<strong>Stadiga handtag</strong> – lätt att bära och tömma.</li>\n<li>\n<strong>Står upprätt</strong> – fyll på med båda händerna.</li>\n<li>\n<strong>Flera storlekar</strong> – 60, 120 och 300 liter.</li>\n<li>\n<strong>Hopfällbar</strong> – tar ingen plats i förvaring.</li>\n</ul>\n<h2>30 dagars nöjd-kund-garanti</h2>\n<p>Inte nöjd inom 30 dagar? Pengarna tillbaka – ingen risk för dig.</p>\n</div>",
+   "seo": {
+    "title": null,
+    "description": null
+   },
+   "collection": "tradgard-utomhus",
+   "options": [
+    {
+     "name": "Storlek",
+     "values": [
+      "60 L",
+      "120 L",
+      "300 L"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/65027825566045",
+     "title": "60 L",
+     "sku": "TRGSACK-60L",
+     "price": "199.00",
+     "compareAtPrice": "123.75",
+     "inventoryQuantity": 16,
+     "selectedOptions": [
+      {
+       "name": "Storlek",
+       "value": "60 L"
+      }
+     ]
+    },
+    {
+     "id": "gid://shopify/ProductVariant/65027825598813",
+     "title": "120 L",
+     "sku": "TRGSACK-120L",
+     "price": "289.00",
+     "compareAtPrice": "186.25",
+     "inventoryQuantity": 15,
+     "selectedOptions": [
+      {
+       "name": "Storlek",
+       "value": "120 L"
+      }
+     ]
+    },
+    {
+     "id": "gid://shopify/ProductVariant/65027825631581",
+     "title": "300 L",
+     "sku": "TRGSACK-300L",
+     "price": "318.00",
+     "compareAtPrice": "286.25",
+     "inventoryQuantity": 12,
+     "selectedOptions": [
+      {
+       "name": "Storlek",
+       "value": "300 L"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/8e9287e2-5ba0-428b-8de0-01a5833eaf00.jpg?v=1782029194",
+     "altText": "Återanvändbar trädgårdssäck med handtag"
+    }
+   ]
+  },
+  {
+   "handle": "ibc-tank-kranadapter-kit-anslutning-for-vattentank-tradgard",
+   "legacyId": "16268095488349",
+   "status": "ACTIVE",
+   "vendor": "Bäverbutiken",
+   "productType": "Trädgård & Utomhus",
+   "tags": [
+    "bevattning",
+    "ibc",
+    "test",
+    "trädgård",
+    "utomhus",
+    "vattentank"
+   ],
+   "title": "IBC-tank Kranadapter Kit – Anslutning för Vattentank & Trädgård",
+   "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Krångligt att koppla slang till IBC-tanken?</h2>\n<p>IBC-tankens grovgängade utlopp passar inte vanliga trädgårdsslangar – så du står där med fel gänga, läckage och inget enkelt sätt att tappa vatten till bevattning eller djur.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/37b22396-1e6c-41b0-b0ca-1a7c11ac93d2.jpg\" alt=\"IBC kranadapter\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Koppla på – tappa vatten direkt</h2>\n<p>Adapterkitet förvandlar IBC-tankens utlopp till en vanlig kran- och slanganslutning som passar både europeiska och amerikanska gängstandarder. Anslut slang, kran eller bevattning på sekunder – tätt och läckagefritt.</p>\n<h2>Funktioner</h2>\n<ul>\n<li>\n<strong>Passar standard IBC-tankar</strong> – enkel påskruvning.</li>\n<li>\n<strong>EU- &amp; US-gängstandard</strong> – passar de flesta slangar.</li>\n<li>\n<strong>Läckagefri anslutning</strong> – tätar ordentligt.</li>\n<li><strong>För bevattning, djur och hushåll.</strong></li>\n</ul>\n<h2>30 dagars nöjd-kund-garanti</h2>\n<p>Inte nöjd inom 30 dagar? Pengarna tillbaka – ingen risk för dig.</p>\n</div>",
+   "seo": {
+    "title": null,
+    "description": null
+   },
+   "collection": "tradgard-utomhus",
+   "options": [
+    {
+     "name": "Antal",
+     "values": [
+      "1 set"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/65027913613661",
+     "title": "1 set",
+     "sku": "IBC-KRANADAPTER",
+     "price": "419.00",
+     "compareAtPrice": "523.75",
+     "inventoryQuantity": 19,
+     "selectedOptions": [
+      {
+       "name": "Antal",
+       "value": "1 set"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/37b22396-1e6c-41b0-b0ca-1a7c11ac93d2.jpg?v=1782029716",
+     "altText": "IBC-tank kranadapter kit"
+    }
+   ]
+  },
+  {
+   "handle": "gethalsband-med-kopparklocka-justerbart-for-smaboskap",
+   "legacyId": "16268097716573",
+   "status": "ACTIVE",
+   "vendor": "Bäverbutiken",
+   "productType": "Lantbruk & Djur",
+   "tags": [
+    "djur",
+    "get",
+    "halsband",
+    "lantbruk",
+    "test"
+   ],
+   "title": "Gethalsband med Kopparklocka – Justerbart för Småboskap",
+   "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;\">\n<h2>Tappar du bort djuren på betet?</h2>\n<p>Getter, får och småboskap rör sig snabbt och gömmer sig gärna i buskar och terräng. Utan ljud är de svåra att hålla koll på – och en bortsprungen get kan ta timmar att hitta.</p>\n<p style=\"text-align:center;\"><img src=\"https://img.kwcdn.com/product/fancy/92157ad1-5b71-4d65-bcb5-b29352928088.jpg\" alt=\"Gethalsband med kopparklocka\" style=\"max-width:100%;border-radius:12px;\"></p>\n<h2>Hör var djuren är – hela tiden</h2>\n<p>Halsbandet med kopparklocka gör att du alltid hör var djuret befinner sig, även utom synhåll. Det justerbara, slitstarka polyesterbandet sitter bekvämt och säkert på getter, får och andra mindre lantbruksdjur.</p>\n<h2>Funktioner</h2>\n<ul>\n<li>\n<strong>Kopparklocka</strong> – tydligt ljud, hör djuret på avstånd.</li>\n<li>\n<strong>Justerbart</strong> – passar olika halsstorlekar.</li>\n<li>\n<strong>Slitstark polyester</strong> – tål väder och vind.</li>\n<li><strong>För getter, får och småboskap.</strong></li>\n</ul>\n<h2>30 dagars nöjd-kund-garanti</h2>\n<p>Inte nöjd inom 30 dagar? Pengarna tillbaka – ingen risk för dig.</p>\n</div>",
+   "seo": {
+    "title": null,
+    "description": null
+   },
+   "collection": "lantbruk-djur",
+   "options": [
+    {
+     "name": "Antal",
+     "values": [
+      "1 st"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/65027931242845",
+     "title": "1 st",
+     "sku": "GETHALSBAND-KLOCKA",
+     "price": "169.00",
+     "compareAtPrice": "98.75",
+     "inventoryQuantity": 19,
+     "selectedOptions": [
+      {
+       "name": "Antal",
+       "value": "1 st"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/92157ad1-5b71-4d65-bcb5-b29352928088.jpg?v=1782029831",
+     "altText": "Gethalsband med kopparklocka"
+    }
+   ]
+  }
+ ]
+}

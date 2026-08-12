@@ -1,0 +1,357 @@
+{
+  "batch": 10,
+  "products": [
+    {
+      "handle": "tofflor-ergonomiska-tjocksulade-for-inne-ute",
+      "no": {
+        "title": "Tøfler Ergonomiske – Tykksålede for Inne & Ute",
+        "descriptionHtml": "<h3>Trøtte føtter etter en dag hjemme? Da er det feil tøfler.</h3><p>Tynne, flate tøfler jobber mot deg – hvert steg lander hardt på hæler og knær. Det merkes ikke med en gang. Det merkes om kvelden.</p><!-- GIF: foten synker ned i tykk såle --><h3>Løsningen: som å gå på skyer</h3><p>Tykk, støtdempende såle som tar imot hvert steg og avlaster ledd og rygg. Behagelige inne – og sklisikre nok for terrassen og gårdsplassen.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ce963fd939ae7017637863a3d0a0ec07.jpg\" alt=\"Ergonomiske tøfler med tykk såle\"></p><h3>Funksjoner</h3><ul>\n<li>Tykk ergonomisk såle med støtdemping</li>\n<li>Sklisikre – inne og ute</li>\n<li>Lette og luftige – tørker raskt</li>\n<li>Unisex i flere størrelser</li>\n<li>Perfekte for hjemmet, terrassen og hytta</li>\n</ul><!-- BILDE: nærbilde av sålen --><h3>Vår garanti</h3><p>30 dagers fornøyd-kunde-garanti – liker du dem ikke, får du pengene tilbake. Rask levering og trygg betaling med Klarna. 🦫</p>",
+        "productType": "Sko",
+        "tags": [
+          "Behagelig",
+          "Hjem",
+          "Sko",
+          "Tøfler"
+        ],
+        "options": [
+          {
+            "name": "Title",
+            "values": [
+              "Default Title"
+            ]
+          }
+        ],
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/65430120890717",
+            "title": "Default Title",
+            "selectedOptions": [
+              {
+                "name": "Title",
+                "value": "Default Title"
+              }
+            ]
+          }
+        ],
+        "imagesAlt": [
+          "Ergonomiske tøfler med tykk såle"
+        ],
+        "seo": {
+          "title": "Ergonomiske tøfler – tykk støtdempende såle",
+          "description": "Tykke, sklisikre tøfler som avlaster føtter, knær og rygg. Behagelige inne og ute – perfekt for hjemmet og hytta."
+        }
+      },
+      "flags": [
+        "JURIDISK GRANSKNING: Inneholder garantiløfte (30 dagers pengene-tilbake) og leveringspåstand (\"Rask levering\") – bør verifiseres mot norske forbrukerrettsregler og faktiske leveringstider før publisering."
+      ]
+    },
+    {
+      "handle": "fritidsskor-herr-laga-latta-med-halkfri-sula",
+      "no": {
+        "title": "Fritidssko Herre – Lave & Lette med Sklisikker Såle",
+        "descriptionHtml": "<h3>En sko for spaserturen. En for jobben. En for skogen. Eller?</h3><p>Skohyllen flyter over, men det blir likevel alltid feil par. For tunge, for varme, for glatte.</p><!-- GIF: skoen bøyes/flekses i hånden --><h3>Løsningen: en sko som takler alt</h3><p>Ekstremt lette fritidssko med sklisikker såle som gir godt fotfeste på våte underlag. Pene nok for byen, robuste nok for skogsstien – hele året.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b1d1d71d-c0b4-40d4-ad6d-a2a3c1d3cc73.jpg\" alt=\"Lette fritidssko for herre\"></p><h3>Funksjoner</h3><ul>\n<li>Ekstremt lette – sliter ikke ut føttene</li>\n<li>Sklisikker såle for alle underlag</li>\n<li>Pustende materiale</li>\n<li>Grå med røde detaljer</li>\n<li>Finnes i store størrelser</li>\n</ul><!-- BILDE: sålen/grepet nedenfra --><h3>Vår garanti</h3><p>30 dagers fornøyd-kunde-garanti – liker du dem ikke, får du pengene tilbake. Rask levering og trygg betaling med Klarna. 🦫</p>",
+        "productType": "Sko",
+        "tags": [
+          "Fritid",
+          "Herre",
+          "Sko",
+          "Vandring"
+        ],
+        "options": [
+          {
+            "name": "Title",
+            "values": [
+              "Default Title"
+            ]
+          }
+        ],
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/65430121152861",
+            "title": "Default Title",
+            "selectedOptions": [
+              {
+                "name": "Title",
+                "value": "Default Title"
+              }
+            ]
+          }
+        ],
+        "imagesAlt": [
+          "Lette fritidssko for herre"
+        ],
+        "seo": {
+          "title": "Fritidssko herre – lette med sklisikker såle",
+          "description": "Ekstremt lette fritidssko med sklisikker såle for godt fotfeste. Pustende og robuste – passer by og skogstur."
+        }
+      },
+      "flags": [
+        "JURIDISK GRANSKNING: Inneholder garantiløfte (30 dagers pengene-tilbake) og leveringspåstand (\"Rask levering\") – bør verifiseres mot norske forbrukerrettsregler og faktiske leveringstider før publisering."
+      ]
+    },
+    {
+      "handle": "mobilskal-magnetiskt-med-stall-iphone-12-17",
+      "no": {
+        "title": "Mobildeksel Magnetisk med Stativ – iPhone 12–17",
+        "descriptionHtml": "<h3>Nytt deksel hver gang du mister telefonen? Dyrt.</h3><p>Sprukne hjørner, ripete linse og et stativ som aldri er der når du vil se en video. Kjennes det kjent?</p><!-- GIF: dekselet klikker fast på magnetlader --><h3>Løsningen: beskyttelse, stativ og magnet – i ett</h3><p>Et støtsikkert deksel med hevet kant som beskytter skjerm og kamera, magnetfeste som klikker fast på ladere og holdere, og et innebygd stativ for film og samtaler.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/912694ed-892f-4142-b051-5b31980c0a2d.jpg\" alt=\"Magnetisk mobildeksel med stativ\"></p><h3>Funksjoner</h3><ul>\n<li>Passer iPhone 12–17 (inkl. Pro Max, Air og 16e)</li>\n<li>Magnetfeste – kompatibelt med trådløs lading</li>\n<li>Innebygd stativ for film og videosamtaler</li>\n<li>Støtsikkert med hevet skjermkant</li>\n<li>Matt overflate – ripebestandig og fri for fingeravtrykk</li>\n</ul><!-- BILDE: stativet utfelt på bord --><h3>Vår garanti</h3><p>30 dagers fornøyd-kunde-garanti – liker du det ikke, får du pengene tilbake. Rask levering og trygg betaling med Klarna. 🦫</p>",
+        "productType": "Mobiltilbehør",
+        "tags": [
+          "iPhone",
+          "Magnetisk",
+          "Mobildeksel",
+          "Tilbehør"
+        ],
+        "options": [
+          {
+            "name": "Title",
+            "values": [
+              "Default Title"
+            ]
+          }
+        ],
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/65430121283933",
+            "title": "Default Title",
+            "selectedOptions": [
+              {
+                "name": "Title",
+                "value": "Default Title"
+              }
+            ]
+          }
+        ],
+        "imagesAlt": [
+          "Magnetisk mobildeksel med stativ"
+        ],
+        "seo": {
+          "title": "Magnetisk mobildeksel med stativ – iPhone 12–17",
+          "description": "Støtsikkert deksel med magnetfeste og innebygd stativ. Passer iPhone 12–17, kompatibelt med trådløs lading."
+        }
+      },
+      "flags": [
+        "JURIDISK GRANSKNING: Inneholder garantiløfte (30 dagers pengene-tilbake) og leveringspåstand (\"Rask levering\") – bør verifiseres mot norske forbrukerrettsregler og faktiske leveringstider før publisering."
+      ]
+    },
+    {
+      "handle": "surfplattestall-roterande-justerbart",
+      "no": {
+        "title": "Nettbrettstativ – Roterbart & Justerbart",
+        "descriptionHtml": "<h3>Nettbrettet lent mot kaffekoppen. Igjen.</h3><p>Oppskrift på kjøkkenet, film i sengen, videosamtale ved skrivebordet – og alltid samme balansekunst med brettet mot noe som velter.</p><!-- GIF: stativet roteres og vinkles --><h3>Løsningen: riktig vinkel, hver gang</h3><p>Et stabilt aluminiumsstativ som holder iPaden eller telefonen din nøyaktig der du vil ha den – roterbart 360° og trinnløst justerbart i vinkel og høyde.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/73c6e9cb-6221-4086-8e99-3c009a14c8ae.jpg\" alt=\"Roterbart nettbrettstativ\"></p><h3>Funksjoner</h3><ul>\n<li>360° roterende fot – stående eller liggende posisjon</li>\n<li>Trinnløst justerbar vinkel og høyde</li>\n<li>Stabil aluminiumskonstruksjon med sklisikring</li>\n<li>Passer nettbrett og telefoner i alle størrelser</li>\n<li>Perfekt for kjøkken, kontor og nattbord</li>\n</ul><!-- BILDE: stativet med brett på kjøkkenet --><h3>Vår garanti</h3><p>30 dagers fornøyd-kunde-garanti – liker du det ikke, får du pengene tilbake. Rask levering og trygg betaling med Klarna. 🦫</p>",
+        "productType": "Tilbehør",
+        "tags": [
+          "iPad",
+          "Kontor",
+          "Stativ",
+          "Nettbrett"
+        ],
+        "options": [
+          {
+            "name": "Title",
+            "values": [
+              "Default Title"
+            ]
+          }
+        ],
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/65430121775453",
+            "title": "Default Title",
+            "selectedOptions": [
+              {
+                "name": "Title",
+                "value": "Default Title"
+              }
+            ]
+          }
+        ],
+        "imagesAlt": [
+          "Roterbart nettbrettstativ"
+        ],
+        "seo": {
+          "title": "Nettbrettstativ – roterbart og justerbart",
+          "description": "Stabilt aluminiumsstativ for iPad og telefon. 360° roterbart og justerbart i vinkel og høyde – for kjøkken og kontor."
+        }
+      },
+      "flags": [
+        "JURIDISK GRANSKNING: Inneholder garantiløfte (30 dagers pengene-tilbake) og leveringspåstand (\"Rask levering\") – bør verifiseres mot norske forbrukerrettsregler og faktiske leveringstider før publisering."
+      ]
+    },
+    {
+      "handle": "14-i-1-multiverktygshammare-camping-nodlage",
+      "no": {
+        "title": "14-i-1 Multiverktøyhammer – Camping & Nødsituasjon",
+        "descriptionHtml": "<h3>Midt i naturen. Feil verktøy hjemme. Klassiker.</h3><p>Teltpluggen må slås ned, grenen skal bort og noe skal skrus – men verktøykassen står i garasjen ti mil unna.</p><!-- GIF: verktøyet felles ut funksjon for funksjon --><h3>Løsningen: 14 verktøy i lommeformat</h3><p>Hammer, tang, sag, kniv og skrutrekkere – alt i ett kompakt verktøy som bor i campingsekken, båten eller bilens nødsett. Alltid med. Alltid klart.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3f2e2bf8-883d-41ef-87b9-47e26e53dc20.jpg\" alt=\"14-i-1 multiverktøyhammer\"></p><h3>Funksjoner</h3><ul>\n<li>14 funksjoner: hammer, tang, sag, kniv, skrutrekkere m.m.</li>\n<li>Robust konstruksjon som tåler ordentlig bruk</li>\n<li>Leveres med beskyttende etui</li>\n<li>Kompakt – får plass i hanskerommet</li>\n<li>Perfekt gave til ham som har alt</li>\n</ul><!-- BILDE: alle funksjonene utfelt --><h3>Vår garanti</h3><p>30 dagers fornøyd-kunde-garanti – liker du det ikke, får du pengene tilbake. Rask levering og trygg betaling med Klarna. 🦫</p>",
+        "productType": "Verktøy",
+        "tags": [
+          "Camping",
+          "Multiverktøy",
+          "Gave",
+          "Verktøy"
+        ],
+        "options": [
+          {
+            "name": "Title",
+            "values": [
+              "Default Title"
+            ]
+          }
+        ],
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/65430124757341",
+            "title": "Default Title",
+            "selectedOptions": [
+              {
+                "name": "Title",
+                "value": "Default Title"
+              }
+            ]
+          }
+        ],
+        "imagesAlt": [
+          "14-i-1 multiverktøyhammer"
+        ],
+        "seo": {
+          "title": "14-i-1 multiverktøyhammer – camping & nødutstyr",
+          "description": "Kompakt verktøy med hammer, tang, sag, kniv og skrutrekkere. Alltid med i sekken, båten eller bilens nødsett."
+        }
+      },
+      "flags": [
+        "JURIDISK GRANSKNING: Inneholder garantiløfte (30 dagers pengene-tilbake) og leveringspåstand (\"Rask levering\") – bør verifiseres mot norske forbrukerrettsregler og faktiske leveringstider før publisering."
+      ]
+    },
+    {
+      "handle": "grasklippartacke-600d-oxford-med-dragsko",
+      "no": {
+        "title": "Gressklipperdeksel 600D Oxford – med Strammesnor",
+        "descriptionHtml": "<h3>Gressklipperen din kostet mange tusenlapper. Regnet bryr seg ikke.</h3><p>Sol bleker lakken, regn ruster bladene og løvet samler seg i motoren. En ubeskyttet klipper eldes dobbelt så fort – helt unødvendig.</p><!-- GIF: dekselet trekkes over klipperen --><h3>Løsningen: trekk over, stram til – ferdig</h3><p>Et slitesterkt deksel i 600D Oxford – samme robuste materiale som våre seteovertrekk – med strammesnor som gir tett passform rundt maskinen. Tørr, ren og klar når du er det.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/5661b1e5a1d0413497069942ef7bf1ae-goods.jpg\" alt=\"Gressklipperdeksel i 600D Oxford\"></p><h3>Funksjoner</h3><ul>\n<li>Kraftig 600D Oxford-stoff</li>\n<li>Strammesnor i kanten for tett passform</li>\n<li>Beskytter mot regn, UV, støv og løv</li>\n<li>Passer de fleste gressklippere og ridende klippere</li>\n<li>Svart – diskré ved oppbevaring ute</li>\n</ul><!-- BILDE: dekselet på klipper i hagen --><h3>Vår garanti</h3><p>30 dagers fornøyd-kunde-garanti – liker du det ikke, får du pengene tilbake. Rask levering og trygg betaling med Klarna. 🦫</p>",
+        "productType": "Hage & Utendørs",
+        "tags": [
+          "Gressklipper",
+          "Beskyttelse",
+          "Hage",
+          "Utendørs"
+        ],
+        "options": [
+          {
+            "name": "Title",
+            "values": [
+              "Svart"
+            ]
+          }
+        ],
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/65430125117789",
+            "title": "Svart",
+            "selectedOptions": [
+              {
+                "name": "Title",
+                "value": "Svart"
+              }
+            ]
+          }
+        ],
+        "imagesAlt": [
+          "Gressklipperdeksel 600D Oxford"
+        ],
+        "seo": {
+          "title": "Gressklipperdeksel 600D Oxford med strammesnor",
+          "description": "Slitesterkt deksel som beskytter gressklipperen mot regn, UV, støv og løv. Strammesnor gir tett passform."
+        }
+      },
+      "flags": [
+        "JURIDISK GRANSKNING: Inneholder garantiløfte (30 dagers pengene-tilbake) og leveringspåstand (\"Rask levering\") – bør verifiseres mot norske forbrukerrettsregler og faktiske leveringstider før publisering."
+      ]
+    },
+    {
+      "handle": "fiskespohallare-for-bat-2-pack-i-kraftig-nylon",
+      "no": {
+        "title": "Fiskestangholder for Båt – 2-pak i Kraftig Nylon",
+        "descriptionHtml": "<h3>En stang i hånden, en mellom knærne, en på dekket</h3><p>Å fiske med flere stenger fra båt uten holder er en sirkusakt – og det er alltid når det napper at stangen ligger der den ikke skal.</p><!-- GIF: stengene settes i holderen på relingen --><h3>Løsningen: faste plasser for stengene</h3><p>To solide holdere i kraftig nylon som monteres på relingen. Stengene sitter trygt i riktig vinkel – og du har hendene fri til det virkelig skjer.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/afa5554aaa164c7bbdbbb4264a12a532-goods.jpg\" alt=\"Fiskestangholder for båt\"></p><h3>Funksjoner</h3><ul>\n<li>2-pak – to holdere per kjøp</li>\n<li>Kraftig plastnylon som tåler vær og UV</li>\n<li>Enkel montering på båtens reling</li>\n<li>Holder stangen stødig i riktig vinkel</li>\n<li>Passer de fleste stangtykkelser</li>\n</ul><!-- BILDE: begge holderne montert --><h3>Vår garanti</h3><p>30 dagers fornøyd-kunde-garanti – liker du dem ikke, får du pengene tilbake. Rask levering og trygg betaling med Klarna. 🦫</p>",
+        "productType": "Båt & Marint",
+        "tags": [
+          "Båt",
+          "Fiske",
+          "Marint",
+          "Stangholder"
+        ],
+        "options": [
+          {
+            "name": "Title",
+            "values": [
+              "2-pak"
+            ]
+          }
+        ],
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/65430125838685",
+            "title": "2-pak",
+            "selectedOptions": [
+              {
+                "name": "Title",
+                "value": "2-pak"
+              }
+            ]
+          }
+        ],
+        "imagesAlt": [
+          "Fiskestangholder for båt"
+        ],
+        "seo": {
+          "title": "Fiskestangholder for båt – 2-pak i nylon",
+          "description": "To solide stangholdere i kraftig nylon til relingen. Hold stengene trygt i riktig vinkel med hendene fri."
+        }
+      },
+      "flags": [
+        "JURIDISK GRANSKNING: Inneholder garantiløfte (30 dagers pengene-tilbake) og leveringspåstand (\"Rask levering\") – bør verifiseres mot norske forbrukerrettsregler og faktiske leveringstider før publisering."
+      ]
+    },
+    {
+      "handle": "hattgalge-smart-forvaring-for-8-kepsar",
+      "no": {
+        "title": "Capsholder – Smart Oppbevaring for 8 Caps",
+        "descriptionHtml": "<h3>Capshaugen på hattehyllen. Vi må snakke om den.</h3><p>Ti caps i en haug betyr ti flattrykte skjermer – og at favoritten alltid ligger nederst.</p><!-- GIF: caps henges opp en etter en --><h3>Løsningen: en holder, åtte caps</h3><p>Heng holderen i skapet og gi hver caps sin egen plass. Skjermene holder fasongen, du ser hele samlingen på et sekund – og hattehyllen får puste igjen.</p><p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/d8dd15a8-ecc7-436d-9e8c-69d6daf2ada4.jpg\" alt=\"Capsholder for 8 caps\"></p><h3>Funksjoner</h3><ul>\n<li>Har plass til opptil 8 caps per holder</li>\n<li>Skånsom mot skjermen – capsen beholder fasongen</li>\n<li>Passer alle standardskap</li>\n<li>Rask oversikt over hele samlingen</li>\n<li>Perfekt for gang, skap og studentrom</li>\n</ul><!-- BILDE: holderen full av caps i skapet --><h3>Vår garanti</h3><p>30 dagers fornøyd-kunde-garanti – liker du den ikke, får du pengene tilbake. Rask levering og trygg betaling med Klarna. 🦫</p>",
+        "productType": "Oppbevaring",
+        "tags": [
+          "Oppbevaring",
+          "Skap",
+          "Hjem",
+          "Caps"
+        ],
+        "options": [
+          {
+            "name": "Title",
+            "values": [
+              "Default Title"
+            ]
+          }
+        ],
+        "variants": [
+          {
+            "id": "gid://shopify/ProductVariant/65430125936989",
+            "title": "Default Title",
+            "selectedOptions": [
+              {
+                "name": "Title",
+                "value": "Default Title"
+              }
+            ]
+          }
+        ],
+        "imagesAlt": [
+          "Capsholder for 8 caps"
+        ],
+        "seo": {
+          "title": "Capsholder – oppbevaring for 8 caps",
+          "description": "Heng opp inntil 8 caps uten å flate ut skjermen. Rask oversikt og skånsom oppbevaring for skap og gang."
+        }
+      },
+      "flags": [
+        "JURIDISK GRANSKNING: Inneholder garantiløfte (30 dagers pengene-tilbake) og leveringspåstand (\"Rask levering\") – bør verifiseres mot norske forbrukerrettsregler og faktiske leveringstider før publisering."
+      ]
+    }
+  ]
+}
