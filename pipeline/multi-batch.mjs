@@ -151,7 +151,13 @@ for (const camp of cfg.campaigns) {
   const c = campaigns.find(x => x.name === camp.campaignName);
   if (!c) { console.log(`✗ Kampanjen "${camp.campaignName}" saknas — hoppar`); continue; }
   const priorAdsets = (await api(`${c.id}/adsets`, { params: { fields: 'name', limit: '100' } })).data || [];
-  const priorAds = new Set(((await api(`${c.id}/ads`, { params: { fields: 'name', limit: '500' } })).data || []).map(a => a.name));
+  // duplikatskydd per adset — samma annonsnamn i olika adsets är legitimt (BASE/LISTICLE,
+  // och gamla pausade batchar som ska byggas om med rätt copy)
+  const adsPerAdset = new Map();
+  for (const a of (await api(`${c.id}/ads`, { params: { fields: 'name,adset_id', limit: '500' } })).data || []) {
+    if (!adsPerAdset.has(a.adset_id)) adsPerAdset.set(a.adset_id, new Set());
+    adsPerAdset.get(a.adset_id).add(a.name);
+  }
   console.log(`\n### ${camp.campaignName} (${c.id})`);
 
   for (const adsetCfg of camp.adsets) {
@@ -189,8 +195,9 @@ for (const camp of cfg.campaigns) {
       console.log(`  ✓ adset (${cfg.adsetStatus || 'PAUSED'}): ${adsetCfg.name} (${adsetId})`);
     }
 
+    const finnsIAdset = adsPerAdset.get(adsetId) || new Set();
     for (const motif of adsetCfg.motifs) {
-      if (priorAds.has(motif)) { console.log(`  · ${motif} finns redan — hoppar`); continue; }
+      if (finnsIAdset.has(motif)) { console.log(`  · ${motif} finns redan i adsetet — hoppar`); continue; }
       try {
         const r = resolveMotif(motif);
         if (!r) throw new Error('media saknas i biblioteket');
