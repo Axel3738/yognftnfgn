@@ -321,7 +321,7 @@
      ],
      "sku": "MAJAVA-GARD-005-1",
      "supplier_sku": "MOWER-SEAT-GRA",
-     "price": "55.95",
+     "price": "64.95",
      "compareAtPrice": "70.95",
      "inventoryQuantity": 0
     },
@@ -336,7 +336,7 @@
      ],
      "sku": "MAJAVA-GARD-005-2",
      "supplier_sku": "MOWER-SEAT-SVART",
-     "price": "55.95",
+     "price": "64.95",
      "compareAtPrice": "70.95",
      "inventoryQuantity": 0
     },
@@ -351,7 +351,7 @@
      ],
      "sku": "MAJAVA-GARD-005-3",
      "supplier_sku": "MOWER-SEAT-GRON",
-     "price": "55.95",
+     "price": "64.95",
      "compareAtPrice": "70.95",
      "inventoryQuantity": 0
     },
@@ -366,7 +366,7 @@
      ],
      "sku": "MAJAVA-GARD-005-4",
      "supplier_sku": "MOWER-SEAT-LJUSGRA",
-     "price": "55.95",
+     "price": "64.95",
      "compareAtPrice": "70.95",
      "inventoryQuantity": 0
     }
@@ -2691,8 +2691,8 @@
      ],
      "sku": "MAJAVA-GARD-039",
      "supplier_sku": "TEMU-601101171339794",
-     "price": "51.95",
-     "compareAtPrice": "58.95",
+     "price": "59.95",
+     "compareAtPrice": null,
      "inventoryQuantity": 0
     }
    ],
@@ -2853,7 +2853,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-1",
      "supplier_sku": null,
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 0
     },
@@ -2872,7 +2872,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-2",
      "supplier_sku": null,
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 0
     },
@@ -2891,7 +2891,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-3",
      "supplier_sku": null,
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 0
     },
@@ -2910,7 +2910,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-4",
      "supplier_sku": null,
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 0
     },
@@ -2929,7 +2929,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-5",
      "supplier_sku": null,
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 0
     },
@@ -2948,7 +2948,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-6",
      "supplier_sku": null,
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 0
     },
@@ -2967,7 +2967,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-7",
      "supplier_sku": null,
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 0
     },
@@ -2986,7 +2986,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-8",
      "supplier_sku": null,
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 0
     },
@@ -3005,7 +3005,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-9",
      "supplier_sku": null,
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 0
     },
@@ -3024,7 +3024,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-10",
      "supplier_sku": null,
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 0
     },
@@ -3043,7 +3043,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-11",
      "supplier_sku": null,
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 0
     },
@@ -3062,7 +3062,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-12",
      "supplier_sku": null,
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 0
     },
@@ -3081,7 +3081,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-13",
      "supplier_sku": null,
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 0
     },
@@ -3100,7 +3100,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-14",
      "supplier_sku": null,
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 0
     },
@@ -3119,7 +3119,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-15",
      "supplier_sku": null,
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 0
     },
@@ -3138,7 +3138,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-16",
      "supplier_sku": "TEMU-601099573157236-41-SV",
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 14
     },
@@ -3157,7 +3157,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-17",
      "supplier_sku": "TEMU-601099573157236-41-KA",
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 18
     },
@@ -3176,7 +3176,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-18",
      "supplier_sku": "TEMU-601099573157236-41-VI",
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 19
     },
@@ -3195,7 +3195,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-19",
      "supplier_sku": "TEMU-601099573157236-42-SV",
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 5
     },
@@ -3214,7 +3214,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-20",
      "supplier_sku": "TEMU-601099573157236-42-KA",
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 19
     },
@@ -3233,7 +3233,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-21",
      "supplier_sku": "TEMU-601099573157236-42-VI",
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 19
     },
@@ -3252,7 +3252,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-22",
      "supplier_sku": "TEMU-601099573157236-43-SV",
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 9
     },
@@ -3271,7 +3271,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-23",
      "supplier_sku": "TEMU-601099573157236-43-KA",
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 13
     },
@@ -3290,7 +3290,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-24",
      "supplier_sku": "TEMU-601099573157236-43-VI",
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 19
     },
@@ -3309,7 +3309,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-25",
      "supplier_sku": "TEMU-601099573157236-44-SV",
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 6
     },
@@ -3328,7 +3328,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-26",
      "supplier_sku": "TEMU-601099573157236-44-KA",
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 17
     },
@@ -3347,7 +3347,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-27",
      "supplier_sku": "TEMU-601099573157236-44-VI",
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 19
     },
@@ -3366,7 +3366,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-28",
      "supplier_sku": "TEMU-601099573157236-45-SV",
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 9
     },
@@ -3385,7 +3385,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-29",
      "supplier_sku": "TEMU-601099573157236-45-KA",
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 17
     },
@@ -3404,7 +3404,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-30",
      "supplier_sku": "TEMU-601099573157236-45-VI",
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 19
     },
@@ -3423,7 +3423,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-31",
      "supplier_sku": "TEMU-601099573157236-46-SV",
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 13
     },
@@ -3442,7 +3442,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-32",
      "supplier_sku": "TEMU-601099573157236-46-KA",
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 14
     },
@@ -3461,7 +3461,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-33",
      "supplier_sku": "TEMU-601099573157236-46-VI",
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 19
     },
@@ -3480,7 +3480,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-34",
      "supplier_sku": null,
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 0
     },
@@ -3499,7 +3499,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-35",
      "supplier_sku": null,
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 0
     },
@@ -3518,7 +3518,7 @@
      ],
      "sku": "MAJAVA-CAMP-041-36",
      "supplier_sku": null,
-     "price": "29.95",
+     "price": "34.95",
      "compareAtPrice": null,
      "inventoryQuantity": 0
     }
@@ -4257,7 +4257,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-1",
      "supplier_sku": "TEMU-606445101752663",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4276,7 +4276,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-2",
      "supplier_sku": "TEMU-606445101752664",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4295,7 +4295,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-3",
      "supplier_sku": "TEMU-606445101752665",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4314,7 +4314,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-4",
      "supplier_sku": "TEMU-606445101752666",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4333,7 +4333,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-5",
      "supplier_sku": "TEMU-606445101752667",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4352,7 +4352,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-6",
      "supplier_sku": "TEMU-606445101752668",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4371,7 +4371,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-7",
      "supplier_sku": "TEMU-606445101752669",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4390,7 +4390,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-8",
      "supplier_sku": "TEMU-606445101752670",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4409,7 +4409,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-9",
      "supplier_sku": "TEMU-606445101752671",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4428,7 +4428,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-10",
      "supplier_sku": "TEMU-606445101752672",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4447,7 +4447,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-11",
      "supplier_sku": "TEMU-606445101752673",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4466,7 +4466,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-12",
      "supplier_sku": "TEMU-606445101752674",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4485,7 +4485,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-13",
      "supplier_sku": "TEMU-606445101752675",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4504,7 +4504,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-14",
      "supplier_sku": "TEMU-606445101752676",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4523,7 +4523,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-15",
      "supplier_sku": "TEMU-606445101752677",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4542,7 +4542,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-16",
      "supplier_sku": "TEMU-606445101752678",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4561,7 +4561,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-17",
      "supplier_sku": "TEMU-606445101752679",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4580,7 +4580,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-18",
      "supplier_sku": "TEMU-606445101752680",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4599,7 +4599,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-19",
      "supplier_sku": "TEMU-606445101752681",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4618,7 +4618,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-20",
      "supplier_sku": "TEMU-606445101752682",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4637,7 +4637,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-21",
      "supplier_sku": "TEMU-606445101752683",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4656,7 +4656,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-22",
      "supplier_sku": "TEMU-606445101752684",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4675,7 +4675,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-23",
      "supplier_sku": "TEMU-606445101752685",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4694,7 +4694,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-24",
      "supplier_sku": "TEMU-606445101752686",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4713,7 +4713,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-25",
      "supplier_sku": "TEMU-606445101752687",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4732,7 +4732,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-26",
      "supplier_sku": "TEMU-606445101752688",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4751,7 +4751,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-27",
      "supplier_sku": "TEMU-606445101752689",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4770,7 +4770,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-28",
      "supplier_sku": "TEMU-606445101752690",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4789,7 +4789,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-29",
      "supplier_sku": "TEMU-606445101752691",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     },
@@ -4808,7 +4808,7 @@
      ],
      "sku": "MAJAVA-MARINE-051-30",
      "supplier_sku": "TEMU-606445101752692",
-     "price": "25.95",
+     "price": "29.95",
      "compareAtPrice": "31.95",
      "inventoryQuantity": 0
     }

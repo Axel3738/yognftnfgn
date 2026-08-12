@@ -50,6 +50,16 @@ const eur = n => {
   return r.toFixed(2);
 };
 
+// Axels manuellt satta priser (2026-08-09) — hans marginalunderlag, kurs 10,9635 SEK/EUR
+// och uppåtrundning. Ligger 15–17 % över den generella regeln ovan; övriga 130 produkter
+// följer fortfarande regeln. Överlever ombyggnad.
+const PRICE_OVERRIDE_BY_SOURCE = {
+  'marin-motorholje-420d-universellt-skydd': '29.95',
+  'strandtofflor-for-herr-halkfria-tradgardsskor': '34.95',
+  'axelbalte-for-trimmer-justerbart-nylonbalte': '59.95',
+  'satesoverdrag-for-akgrasklippare-slittaligt-600d-oxford': '64.95',
+};
+
 const slug = s => s.toLowerCase()
   .replaceAll('ä', 'a').replaceAll('ö', 'o').replaceAll('å', 'a')
   .replaceAll('æ', 'ae').replaceAll('ø', 'o').replaceAll('é', 'e').replaceAll('è', 'e')
@@ -86,10 +96,11 @@ for (const { src, fi, flags } of products) {
   while (seen.has(handle)) handle += '-2';
   seen.add(handle);
 
+  const override = PRICE_OVERRIDE_BY_SOURCE[src.handle];
   const trVar = Object.fromEntries((fi.variants ?? []).map(v => [v.id, v]));
   const variants = src.variants.map((v, i) => {
     const tv = trVar[v.id];
-    const price = eur(v.price);
+    const price = override ?? eur(v.price);
     let compareAt = eur(v.compareAtPrice);
     if (compareAt != null && parseFloat(compareAt) <= parseFloat(price)) compareAt = null;
     // Shopifys tekniska sentinel får aldrig översättas
