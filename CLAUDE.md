@@ -24,10 +24,15 @@ Det här är det farligaste misstaget i repot — fel annonskonto kostar riktiga
 | Ad account | MagiBorsten `1867947880635861` (SEK) | SnarkLös `1346450049878358` (SEK) |
 | Produkter | 6 st, se `products/products.json` | Mastern (elgrillborste, 999 kr) |
 | Styrs av | slash-kommandona nedan | `pipeline/waves/` + `docs/` (legacy) |
+| Sida / pixel | `678639638662543` / `1554276343018184` | står inte i `main` — läs den ur en SnarkLös-vågkonfig |
 
 Kontonamnet är aldrig samma som brandnamnet. Kolla `ad_account_id` innan du rör
 något i Meta. Övriga konton finns men används inte: Matstrumpor.se
 `730973156224390` (⚠️ UNSETTLED).
+
+**Kopiera aldrig `page`/`pixel` mellan verksamheterna.** Fel pixel betyder att köpen
+bokförs på fel verksamhet och att all analys blir fel — och det syns inte som ett
+felmeddelande, bara som konstig data.
 
 **Creative Strategy OS:et är bara Bäverbutiken.** Grillkliniken/Mastern-materialet
 i `docs/` och `pipeline/` (utom `pipeline/quota.mjs`) är legacy referens och ska
@@ -76,14 +81,21 @@ inte röras utan att Axel ber om det.
 10. **En task är aldrig klar för att någon säger det.** Levererat och godkänt är
     två olika saker. Godkännande kräver grön checklista (eller override med
     skriven motivering), och bara godkända creatives räknas mot kvoten.
-11. **Fråga bara när ett beslut kräver ägaren** (prisändring, rabatt i Shopify, ny
+11. **Nya tester launchas i ett separat test-ABO med lika budget per annons.**
+    CBO används för skalning av bevisade vinnare — aldrig för tester. *(Axels beslut
+    2026-08-12. Mönster 5 i motorhöljets DNA, märkt `BEVISAD — tredje gången`: tre
+    batcher svalt ihjäl bredvid `PD_1_H3` som tar 42 % av spenden. Batch #2 fick 16
+    av 17 annonser under 30 kr; batch #5:s trevägstest med identisk copy gav
+    5,70 / 5,52 / 159,76 kr. Läggs nya creatives i skalningens CBO blir datan
+    oläsbar och kvoten meningslös.)*
+12. **Fråga bara när ett beslut kräver ägaren** (prisändring, rabatt i Shopify, ny
     target-CPA). Allt annat: kör.
-12. **Om Axel skriver ett `/kommando` som klienten inte känner igen** (eller skriver
+13. **Om Axel skriver ett `/kommando` som klienten inte känner igen** (eller skriver
     "kör /cs motorholjet" som vanlig text): läs motsvarande fil i
     `.claude/commands/` och följ den exakt, med texten efter kommandonamnet som
     argument. Kommandona är filer — de fungerar även när klienten inte
     registrerat dem.
-13. **Korta svar.** Inga bibelsvar. Axel har sagt det två gånger.
+14. **Korta svar.** Inga bibelsvar. Axel har sagt det två gånger.
 
 ---
 
@@ -154,6 +166,7 @@ Det finns ingen linter och ingen byggkedja i OS:et — `npm test` är hela grind
 | Punchline-bank + vinnande lines | `docs/winning-lines.md` |
 | Ad-tracker (hypotes → utfall → lärdom) | `docs/ad-tracker.md` |
 | Färdiga briefer + rådata från kontot | `docs/briefs/`, `docs/source/` |
+| Grillklinikens COGS, marginaler och moms (legacy) | `docs/grillkliniken-ekonomi.md` |
 
 ### Produkterna (`products/products.json`)
 
@@ -163,7 +176,7 @@ redigerarnas arbetsflöde.
 
 | id | Skalar | Dagsbudget | Break-even-ROAS |
 |---|---|---|---|
-| `motorholjet` | ✅ | 6 000 kr | 1,63 |
+| `motorholjet` | ✅ | 2 000 kr | 1,63 |
 | `axelbaltet` | ✅ | 2 000 kr | 1,72 |
 | `satesoverdragaren` | ✅ | 1 500 kr | 1,47 |
 | `strandtofflorna` | ✅ | 1 000 kr | 1,70 |
@@ -171,9 +184,24 @@ redigerarnas arbetsflöde.
 | `vaggfastet` | ❌ | 500 kr | 2,00 |
 
 Break-even-talen kommer ur Axels COGS-beräkning 2026-08-05 och är verkliga.
-⚠️ `satesoverdragaren` har `target_cpa_sek: 300` som är en **gissning** från en
-tidigare chatt — kvoten för den produkten räknas alltså på fel tal tills Axel
-ger rätt siffra.
+Dagsbudgetarna ändras ofta — **läs alltid `products.json`, citera aldrig tabellen
+ovan ur minnet.** Motorhöljet sänktes 6 000 → 2 000 kr/dag 2026-08-12.
+Under 5 000 kr/dag växlar kvotens testandel från 10 % till 20 %, så kvoten hoppar
+när en budget passerar den gränsen.
+
+⚠️ **Tre tal går inte att lita på ännu:**
+- `satesoverdragaren.target_cpa_sek: 300` är en **gissning** från en tidigare chatt.
+- `axelbaltet`: `products.json` säger break-even-CPA **299 kr**, `products/axelbaltet/dna.md`
+  säger **326 kr**. Kill-beslut mäts mot break-even — fråga Axel vilken som gäller.
+  Båda är dessutom räknade på gamla priset 509 kr och är för lågt satta vid 599 kr.
+- **Bäverbutikens momsläge står ingenstans i repot.** Fråga Axel, gissa inte.
+  Grillkliniken säljer *utan* moms — marginalen räknas rakt på priset (Mastern:
+  999 kr, inte 799 kr netto). Drar du reflexmässigt av 25 % ser lönsamma annonser
+  ut att gå med förlust.
+
+Alla `launches[]` i `products.json` är tomma. Kvotskriptet visar därför ett
+minusläge som speglar utebliven loggning, inte utebliven produktion — logga med
+`node pipeline/quota.mjs log <id> <antal>` så blir siffran sann.
 
 ### Människorna och kanalerna
 
@@ -192,6 +220,12 @@ andras arbete.
 ⚠️ Fel Slack-workspace ger **tyst noll träffar**, inte ett felmeddelande.
 Verifiera med en sökning på "bäver" — får du inget svar sitter du på fel workspace.
 
+⚠️ **Redigerarna sitter i Asia/Manila (UTC+8), inte i Stockholm.**
+`dashboard/data/team.json` säger `Europe/Stockholm` på Josh, Annabelle, Gilz och
+Carl — det är fel och ska inte litas på. Räkna deadlines, morgonmeddelanden och
+arbetstidsledtider i Manila-tid. 02–06 UTC i Notion-kommentarerna är förmiddag hos
+dem, inte natt.
+
 ---
 
 ## Så lär sig systemet (läs det här innan du briefar något)
@@ -208,9 +242,12 @@ som står skrivet. Därför är det inte valfritt att uppdatera dem.
 | Vad som hände i varje batch | `products/<id>/batch-log.md` | Varje launch och varje avläsning |
 | Idéer som väntar | `products/<id>/backlog.md` | När ett koncept dyker upp eller plockas |
 
-Tre produkter har eget minne i dag: `motorholjet`, `satesoverdragaren`,
-`strandtofflorna`. Saknar en produkt `dna.md` är den inte briefad ännu — skapa den
-med `/ny-produkt` i stället för att gissa.
+Fyra produkter har eget minne i dag: `motorholjet`, `satesoverdragaren`,
+`strandtofflorna` och `axelbaltet`. Saknar en produkt `dna.md` **och** träff i
+`git log --all` är den inte briefad ännu — skapa den med `/ny-produkt` i stället för
+att gissa. Kolla alltid historiken först: axelbältets minne (7 batcher, 5
+`/cs`-körningar, 37 459 kr spend, 127 köp) låg kvar på en gren i veckor medan
+CLAUDE.md sa att produkten var obriefad.
 
 **Regeln som gör att det faktiskt lär sig:** ett koncept får aldrig födas ur tomma
 intet. Det ska kunna peka på en av tre källor — en playbook-vinnare, en winning line
@@ -310,7 +347,8 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 ### Övrigt
 | Mapp/fil | Vad |
 |---|---|
-| `pipeline/ads.mjs`, `batch.mjs`, `multi-batch.mjs`, `meta.mjs` | Laddar upp creatives till Meta som **PAUSED** |
+| `pipeline/ads.mjs`, `meta.mjs` | Laddar upp creatives till Meta som **PAUSED** |
+| `pipeline/batch.mjs`, `multi-batch.mjs`, `uk-wave.mjs`, `mastern-batch.mjs` | ⚠️ Laddar **inte** upp som PAUSED — se regeln under "Saker som är lätta att göra fel" |
 | `pipeline/waves/*.config.mjs` | Vågkonfig per marknad — `se-`, `dk-`, `no-`, `uk-` |
 | `pipeline/localize.mjs`, `heygen.mjs`, `veed.mjs`, `cover-srt.py` | Översätter färdiga videoannonser till nya språk (`docs/video-localization.md`) |
 | `schema/generate.mjs` | Genererar arbetsschema som `.ics` |
@@ -320,12 +358,39 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 
 ## Saker som är lätta att göra fel
 
+- **"PAUSED" gäller bara `ads.mjs` och `meta.mjs`.** Verifierat i koden 2026-08-12:
+  `batch.mjs:158` och `multi-batch.mjs:215` sätter adsetet PAUSED men **annonsen
+  `ACTIVE`**. `uk-wave.mjs:171,222` sätter **båda ACTIVE** (bara kampanjen är PAUSED).
+  `mastern-batch.mjs:130,159` har **ingen default alls** — saknas fältet i konfigen
+  blir statusen `undefined`. Fem vågkonfigar sätter varken `adStatus` eller
+  `adsetStatus`: `se-axelbalte-batch4`, `se-batch-20260809`, `uk-axelbalte`,
+  `uk-beachslippers`, `uk-motorholje`. **Sätt båda fälten explicit i konfigen innan
+  du kör** — annars börjar annonserna spendera i samma sekund som något släpps loss.
+- **Priset hämtas från produktsidan vid varje körning**, aldrig ur en äldre brief
+  eller creative. Axelbältet höjdes 2026-08-05 från 509 → 599 kr (jämförpris 678 kr
+  = spara 79 kr, 11,65 %). **509 kr, 636 kr och "20 %" är förbjudna** i all ny copy.
+  Två creatives har gammalt pris inbränt och får inte launchas: `2178753102691194`
+  och `1324700059732480`.
 - **Meta-fältnamnen är exakta:** `amount_spent`, `actions:omni_purchase`,
   `cost_per_omni_purchase`, `purchase_roas`. INTE `spend`/`purchases`.
   ⚠️ `omni_purchase_values` är buggig — den returnerade intäkt **100× för lågt på
   5 av 8 rader**. Korskolla alltid mot `amount_spent × purchase_roas`.
 - **Notion-status `In progress 2` betyder REVISION** — annonsen underkändes och
   görs om. Det betyder INTE "längre kommen". Full tabell i `docs/os/NOTION-FORMAT.md`.
+- **Notion-hubbarna rymmer mer än annonser.** Bara rader med Typ `… Pending Approval`
+  är annonser. SOP, Guideline, Feedback och `Winning Creative` (arkiv) är
+  dokumentation och räknas aldrig. Filtrera på Typ vid **varje** hubbläsning, inte
+  bara i `/dashboard`, och filtrera på **inkludering** — aldrig uteslutning, då
+  smyger nya stödsidor in i mätningen.
+- **Kommentarer läses inte rakt av.** Ansvarigs kommentar = leverans. Någon annans
+  räknas som ändringsbegäran bara om ≥15 tecken text återstår när `https?://`-länkar
+  strippats **och** en leverans redan skett — annars gör Axels inklistrade
+  annonslänkar att revisionsgraden ser ut att vara 83–100 %. Alla kommenterar inte:
+  visa täckningsgrad per person bredvid siffrorna.
+- **Notion-åtkomst ges per sida, inte per konto.** Varje hub måste bjudas in
+  (`•••` → Connections; bjuder du in teamspacets toppsida ärver allt under den).
+  **404 från en hub betyder "inte inbjuden", inte "databasen saknas".** Utan
+  behörigheten "Read comments" finns inga äkta tider alls.
 - **Notion har ingen statushistorik.** Det är den enda anledningen till att
   ledtider är svåra. `Godkänd datum` är ifyllt på 2 av 199 rader. **Hitta aldrig
   på en tidsstämpel för att fylla ett tomt fält** — hellre tomt än påhittat. De
@@ -361,9 +426,15 @@ enda som gäller.** Om du behöver något som inte finns i trädet ligger det tr
 kvar på en gammal gren — leta med `git log --all --oneline -- <fil>` i stället för
 att bygga om det från början.
 
-En sak ligger medvetet kvar utanför `main`: grenen
-`claude/initial-setup-87a4dh` innehåller en **andra, separat redigerarpanel** för
-Grillkliniken (händelsestyrd, `dashboard/cli.mjs` + `src/`, med egen testsvit på
-27 tester och ett GitHub Actions-flöde). Den har samma mappnamn som dashboarden i
-`main` men är ett annat program — de går inte att slå ihop rakt av. Ska den
-återupplivas: hämta den till en egen mapp, inte ovanpå den befintliga.
+**Fyra olika program delar mappnamnet `dashboard/`:**
+
+| Gren | Vad |
+|---|---|
+| `main` | Redigerarpanelen — `build.mjs` + `cli.mjs` + `lib/` |
+| `claude/initial-setup-87a4dh` | Grillklinikens händelsestyrda panel, 27 tester, GitHub Actions (dubblett på `…-fa9ngu`) |
+| `claude/editor-performance-dashboard-kla86o` | `edash.mjs` — HTTP-server på port 4173, REST-API, `web/`, egen `config.json` |
+| `claude/kostnader-produkter-jbxijn` | Kostnad/marginal-panel, data inbäddad som `DATA`-konstant, ingen build |
+
+De går **inte** att slå ihop rakt av. Ska något återupplivas: hämta det till en
+**egen mapp** — annars försvinner redigerarpanelen och nästa `/dashboard` skriver
+över det du hämtade.

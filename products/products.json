@@ -9,7 +9,7 @@
       "campaign_ids": [
         "120249435814310291"
       ],
-      "daily_budget_sek": 6000,
+      "daily_budget_sek": 2000,
       "target_cpa_sek": 135,
       "cycle_start": "2026-08-04",
       "status": "aktiv",
@@ -68,8 +68,8 @@
       "aov_sek": 569,
       "aov_kalla": "Shopify analytics 14d (2026-08-05)",
       "break_even_status": "Fran Axels COGS-berakning 2026-08-05 (break-even-ROAS). CPA = AOV / break_even_roas.",
-      "break_even_roas": 2.0,
-      "target_roas_25pct": 4.0,
+      "break_even_roas": 2,
+      "target_roas_25pct": 4,
       "target_cpa_25pct_harledd": 142,
       "scaling": false
     },

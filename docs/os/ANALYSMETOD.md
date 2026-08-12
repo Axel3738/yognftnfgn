@@ -57,6 +57,32 @@ En annons med ROAS 9,2 på 38 kr spend och 1 köp är **brus, inte en vinnare** 
 den hör hemma i "för tidigt" och får aldrig användas som jämförelsenorm mot en
 annons med 76 köp. Detta var felet som fick top spendern att se dålig ut.
 
+### 2b — Marginal-CPA har en egen grind
+
+Marginal-CPA (deltat mellan två avläsningar) är känsligare än livstidssiffran, för
+Meta attribuerar köp bakåt i tiden. Det gör det senaste dygnet konstlat billigt.
+
+**Marginal-CPA får bara räknas mellan snapshots med ≥3 dygns mellanrum OCH ≥5
+inkrementella köp.** Signifikansgrinden gäller **deltat**, inte bara livstiden.
+
+> Varför: `/cs`-körning nr 3 på axelbältet rapporterade marginal-CPA 138 kr på
+> `PD_1_H1` ("accelererar, ska skalas") och 602 kr på `SO_1_H2`, och föreslog att
+> flytta budget. Tre dygn senare var de verkliga talen 425 respektive 351 kr —
+> **båda över break-even**, och rekommendationen var omvänd. Snapshotsen låg under
+> ett dygn isär.
+
+⚠️ Den här grinden bryts redan på flera håll i produktminnena — bland annat räknar
+`products/satesoverdragaren/dna.md` marginell CPA på ett enda dygn. Litar du på en
+befintlig marginal-CPA: kontrollera först hur långt isär mätningarna låg.
+
+### 2c — Domar på 3–4 köp är preliminära
+
+En annons som precis passerat grinden får en **preliminär** dom. Den måste överleva
+nästa körning innan den skrivs in i Winning eller Losing DNA.
+
+> Varför: "AI utan ansikte fungerar" skrevs in som BEVISAD på `PD_3_H1` med exakt
+> 3 köp (+151 kr). Tre dygn senare låg annonsen på −26 kr.
+
 ## Steg 3 — Två olika linjer, inte en
 
 Detta är den vanligaste källan till felaktiga kill-beslut:

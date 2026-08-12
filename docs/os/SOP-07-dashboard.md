@@ -108,6 +108,22 @@ Svarar någon *blockerad*, fråga alltid dessa fyra:
 **Ändringar krävs:**
 > AXE-013 needs changes: [feedbacken]. Please re-upload to the same folder and reply DONE.
 
+## Så läses redigerarsiffrorna rättvist
+
+Panelen är ett styrverktyg, inte ett mobbningsverktyg. Fyra regler gör skillnaden:
+
+1. **Median och p90 — aldrig medelvärde.** Ett enda monsterjobb ska inte kunna döma
+   ut en redigerare.
+2. **Under 5 bedömda tasks är siffran osäker** och ska märkas som osäker, inte
+   presenteras som sanning.
+3. **Ledtiden delas på ägare:** redigerartid kontra vår granskningstid. Ofta är
+   halva ledtiden vår. Mät den innan du klagar på deras.
+4. **Revision utan angiven orsak räknas som vår, inte redigerarens.** Annars blir
+   det gratis att underkänna utan motivering, och statistiken straffar fel person.
+
+⚠️ Redigerarna sitter i **Asia/Manila (UTC+8)**. `dashboard/data/team.json` säger
+`Europe/Stockholm` — det är fel. Ledtider räknas i deras arbetstid, inte vår.
+
 ## Om något går fel
 
 | Problem | Gör så här |
