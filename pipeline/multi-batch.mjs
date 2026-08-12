@@ -155,10 +155,17 @@ for (const camp of cfg.campaigns) {
   console.log(`\n### ${camp.campaignName} (${c.id})`);
 
   for (const adsetCfg of camp.adsets) {
-    const src = priorAdsets.find(a => a.name === adsetCfg.copyFrom);
-    if (!src) { console.log(`✗ käll-adset "${adsetCfg.copyFrom}" saknas — hoppar ${adsetCfg.name}`); continue; }
-    const copy = await copyFrom(src.id, adsetCfg.copyFrom);
-    console.log(`  copy från ${adsetCfg.copyFrom} / ${copy.fromAd}`);
+    // explicit briefad copy vinner alltid över att ärva från ett befintligt adset
+    let copy;
+    if (adsetCfg.copy) {
+      copy = { ...adsetCfg.copy, fromAd: 'brief' };
+      console.log(`  copy: briefad (${adsetCfg.copy.headline})`);
+    } else {
+      const src = priorAdsets.find(a => a.name === adsetCfg.copyFrom);
+      if (!src) { console.log(`✗ käll-adset "${adsetCfg.copyFrom}" saknas — hoppar ${adsetCfg.name}`); continue; }
+      copy = await copyFrom(src.id, adsetCfg.copyFrom);
+      console.log(`  copy från ${adsetCfg.copyFrom} / ${copy.fromAd}`);
+    }
 
     if (DRY) {
       for (const m of adsetCfg.motifs) {
