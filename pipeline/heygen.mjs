@@ -67,9 +67,18 @@ export async function submitTranslate({ videoUrl, outputLanguage, title }) {
 }
 
 // status: 'pending' | 'running' | 'success' | 'failed' — vid success finns data.url.
+// OBS: v2-endpointen kan rapportera "pending moderation" långt efter att videon
+// faktiskt är klar — v3 ger korrekt status. Fälten normaliseras till v2:s namn så
+// att anropande kod (download, status --wait, captions) fungerar oförändrat.
 export async function getTranslateStatus(id) {
-  const body = await call(API, `/v2/video_translate/${id}`);
-  return body?.data ?? {};
+  const body = await call(API, `/v3/video-translations/${id}`);
+  const d = body?.data ?? {};
+  return {
+    ...d,
+    status: d.status === 'completed' ? 'success' : d.status,
+    url: d.video_url ?? d.url,
+    caption_url: d.srt_caption_url ?? d.caption_url,
+  };
 }
 
 // --- Proofread-flödet (kreditsnålt: granska/rätta transkriptet FÖRE rendering) ---
