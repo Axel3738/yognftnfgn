@@ -131,8 +131,13 @@ function cmdBuild() {
       const meta = JSON.parse(readFileSync(P.meta, 'utf8'));
       const rows = meta.rows || [];
       if (rows.length) {
+        // Handpålagda ägare, om någon skrivit sådana.
+        let manualOwners = null;
+        const ownersPath = join(HERE, 'data', 'ad-owners.json');
+        if (existsSync(ownersPath)) manualOwners = JSON.parse(readFileSync(ownersPath, 'utf8'));
+
         payout = computePayout({
-          metaRows: rows, tasks, editors,
+          metaRows: rows, tasks, editors, manualOwners,
           rate: config.meta?.payoutRate ?? 0.004,
         });
         payout.fetchedAt = meta.fetchedAt || null;

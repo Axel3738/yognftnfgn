@@ -1,0 +1,22 @@
+{
+  "//": "Handpåläggning: annonser som Meta känner till men Notion inte kan knyta till någon. Panelen gissar aldrig själv — de här raderna finns för att en människa faktiskt VET vem som gjort annonsen och har sagt det. Reglerna prövas uppifrån och ner; första träffen vinner. '*' matchar allt som blir över.",
+  "statedBy": "Axel Odhner",
+  "statedAt": "2026-08-12",
+  "rules": [
+    {
+      "match": "motorhölje",
+      "editor": "josh",
+      "note": "Axel 2026-08-12: motorhöljeannonserna är Joshs."
+    },
+    {
+      "match": "enginecover",
+      "editor": "josh",
+      "note": "Samma produkt, engelskt namn."
+    },
+    {
+      "match": "*",
+      "editor": "axel",
+      "note": "Axel 2026-08-12: 'resten är jag faktiskt, jag har gjort alla'. Gäller bara annonser som ingen Notion-task äger — allt som har ansvarig i Notion tillhör den personen."
+    }
+  ]
+}

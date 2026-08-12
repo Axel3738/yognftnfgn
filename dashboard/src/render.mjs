@@ -1237,6 +1237,18 @@ function payoutView() {
     ]),
   ]));
 
+  /* Vad som vilar på ett påstående i stället för på en koppling. */
+  if (P0.coverage.manualSpend > 0) {
+    const manualKr = P0.coverage.manualSpend * rate;
+    out.appendChild(el('div', { class: 'banner' }, [
+      el('span', { text: 'ⓘ' }),
+      el('div', { text: kr(manualKr) + ' av ersättningen bygger på att ' +
+        (P0.coverage.statedBy || 'någon') + ' själv sagt vem som gjort annonserna' +
+        (P0.coverage.statedAt ? ' (' + P0.coverage.statedAt + ')' : '') +
+        ' — de annonserna finns inte i Notion, så panelen kan inte kontrollera det. Resten är matchad mot Notion.' }),
+    ]));
+  }
+
   /* Vinnarna – vilka annonser som faktiskt drar. */
   const winners = P0.ads.filter(function (a) { return a.spend >= 500; }).slice(0, 15);
   if (winners.length) {
