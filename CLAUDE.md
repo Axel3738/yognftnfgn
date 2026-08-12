@@ -105,6 +105,20 @@ En ny annons = ett objekt i `waves/wave-XX.mjs` med `name` (enligt namnkonventio
 Färger, typsnitt och canvas ändras på ett ställe: `brand.mjs`. Output hamnar i
 `output/wave-XX/` (gitignorerad) med ett `_manifest.json`.
 
+**Katalogen har två parallella stilar — blanda inte ihop dem.** Vågsystemet ovan är
+det generella; vid sidan av det ligger fyra fristående engångsskript som varken går
+via `run.mjs` eller läser `brand.mjs`, utan hårdkodar egen canvas, egen palett och en
+egen `wrap()`-hjälpare var:
+
+| Skript | Vad | Status |
+|---|---|---|
+| `b020-format.mjs` | Kontots bäst presterande static-format (ROAS 2,53). Egen CLI: `--left/--right/--headline/--footer/--pill/--out` | Värt att utgå från för nya varianter |
+| `swipe.mjs`, `swipe2.mjs` | Två layoutförsök för prishöjningsannonsen, hårdkodad copy | Engångs |
+| `grab.mjs` | Hämtar källbilder från Shopify-CDN till `assets/` + kontaktkarta | Hjälpskript |
+
+`compose.mjs` är den enda filen som importerar `brand.mjs`. En ändring i brandkittet
+slår alltså **inte** igenom i de fyra skripten ovan.
+
 ## Drift och gotchas
 
 - **`dashboard/data/events.jsonl` är gitignorerad men ändå spårad i git.** GitHub
@@ -121,3 +135,10 @@ Färger, typsnitt och canvas ändras på ett ställe: `brand.mjs`. Output hamnar
   några minuter — det är normalt, inte en hängning.
 - `data/editors.json` mappar Notion-användar-id → namn/roll/slack-id/tidszon.
   Saknas någon dyker "Okänd" upp i panelen; `ingest notion-all` skriver ut vilka.
+- **`swipe.mjs` och `swipe2.mjs` importerar `axios` utan att det står i
+  `pipeline/package.json`.** Det funkar bara för att `@higgsfield/client` drar in det
+  transitivt och npm hoistar det. Deklarera det explicit om du rör de filerna, annars
+  går de sönder den dag Higgsfield-klienten byter HTTP-bibliotek.
+- Färgordningen i `render.mjs` (`SERIES`, `PIPELINE`) är en färgblindhetsmekanism,
+  inte dekoration — rotera den inte. Status bärs alltid av ikon **och** text, aldrig
+  färg ensam, och varje diagram har en tabellvy.
