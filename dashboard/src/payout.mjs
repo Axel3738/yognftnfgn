@@ -26,10 +26,18 @@ const monthOf = date => String(date).slice(0, 7);
  * Skilt från namnmatchningen på ett sätt som syns i panelen — en uppgift någon
  * påstått är inte samma sak som en koppling systemet kunnat bevisa.
  */
-function manualOwnerOf(adName, rules) {
+function manualOwnerOf(adName, rules, adStarted) {
   const name = String(adName || '').toLowerCase();
   for (const r of rules) {
     if (!r || !r.editor) continue;
+    // `until` binder regeln till det man faktiskt visste när man skrev den.
+    //
+    // Utan det blir ett "resten är mina" en stående order som betalar samma
+    // person för varenda framtida annons som råkar sakna Notion-task — även
+    // när det är någon annan som gjort den. Regeln gäller därför bara
+    // annonser som redan fanns den dagen påståendet gjordes; nya annonser
+    // måste förtjäna sin koppling på nytt.
+    if (r.until && (!adStarted || adStarted > r.until)) continue;
     if (r.match === '*' || name.includes(String(r.match).toLowerCase())) {
       return { editor: r.editor, tier: 'manual', note: r.note || null };
     }
@@ -37,8 +45,20 @@ function manualOwnerOf(adName, rules) {
   return null;
 }
 
+/** Första dagen varje annons syns i Meta-datan. */
+function firstSeenByAd(metaRows) {
+  const first = new Map();
+  for (const r of metaRows) {
+    const key = normaliseAdName(r.adName);
+    const prev = first.get(key);
+    if (!prev || r.date < prev) first.set(key, r.date);
+  }
+  return first;
+}
+
 export function computePayout({ metaRows, tasks, rate, editors = [], manualOwners = null }) {
   const manualRules = manualOwners?.rules || [];
+  const firstSeen = manualRules.length ? firstSeenByAd(metaRows) : new Map();
   // Namnen är "samma" för ögat men inte för en sträng-jämförelse: Meta bär
   // marknadsprefix och hook-suffix (NO 101 H1) där Notion bara har numret.
   // Exakt matchning ensam träffar 7% av spenden; nivåerna i match.mjs träffar
@@ -50,7 +70,7 @@ export function computePayout({ metaRows, tasks, rate, editors = [], manualOwner
       return { editor: hit.task.editor, taskId: hit.task.id, url: hit.task.url, tier: hit.tier };
     }
     // Notion vet inte — men Axel gjorde det, och sa det.
-    return manualOwnerOf(adName, manualRules);
+    return manualOwnerOf(adName, manualRules, firstSeen.get(normaliseAdName(adName)));
   };
 
   const nameOf = id => editors.find(e => e.id === id)?.name || id;

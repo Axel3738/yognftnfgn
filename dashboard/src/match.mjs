@@ -43,6 +43,12 @@ export function adNumber(name) {
   // fristående numerisk identitet.
   if (/[a-z]{4,}_/i.test(String(name))) return null;
 
+  // Ett nummer som sitter fast i en bokstavsgrupp är ett nummer till, inte
+  // skräp: "NO 058 SE075" är samma annons i två marknader och bär alltså två
+  // identiteter. `\b` ser inte se075 som ett tal, så utan det här testet såg
+  // namnet ut att entydigt betyda 58 — och betalades ut på den tasken.
+  if (/[a-z]\d{2,}/.test(cleaned)) return null;
+
   const numbers = [...cleaned.matchAll(/\b(\d{1,4})\b/g)].map(m => Number(m[1]));
   if (numbers.length !== 1) return null;
   const n = numbers[0];

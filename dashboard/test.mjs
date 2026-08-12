@@ -11,6 +11,8 @@ import { enrichTask, computeMetrics, median, percentile, revisionSeverity } from
 import { parseCSV } from './src/ingest/csv.mjs';
 import { taskIdFromUrl } from './src/ingest/notion-rows.mjs';
 import { buildDigest, buildNudges } from './src/slack.mjs';
+import { computePayout } from './src/payout.mjs';
+import { buildMatcher, adNumber, structuredKey, PAYABLE_TIERS } from './src/match.mjs';
 
 const TZ = 'Europe/Stockholm';
 const WD = { days: [1, 2, 3, 4, 5], start: '09:00', end: '18:00', lunchStart: '12:00', lunchMinutes: 60 };
@@ -286,7 +288,107 @@ test('knuffar skickas bara till den som har något liggande', () => {
   assert.equal(n.length, 1);
   assert.equal(n[0].editor, 'a');
   assert.equal(n[0].slack, 'UA');
-  assert.ok(JSON.stringify(n[0].message).includes('T-OPEN'));
+  // Titeln, inte task-id:t: ett id är en uppgift till, en titel är begriplig.
+  assert.ok(JSON.stringify(n[0].message).includes('Ligger'));
+});
+
+test('knuffen länkar till Notion-sidan när den finns', () => {
+  const openEvents = [
+    { ts: '2026-08-03T09:00:00+02:00', type: 'assigned', task_id: 'T-URL', editor: 'a', title: 'Med länk',
+      notion_url: 'https://app.notion.com/p/med-lank-abc', due: '2026-08-04T17:00:00+02:00' },
+  ];
+  const m = computeMetrics({
+    tasks: foldTasks([...EVENTS, ...openEvents]), config: CONFIG, periodDays: 30, now: NOW,
+    editors: [{ id: 'a', name: 'Alfa', slack: 'UA' }],
+  });
+  const json = JSON.stringify(buildNudges(m, CONFIG));
+  assert.ok(json.includes('<https://app.notion.com/p/med-lank-abc|Med länk>'));
+});
+
+console.log('\nMatchning annons → task');
+
+test('numret är det som håller genom marknad och hook', () => {
+  assert.equal(adNumber('NO 101 H1'), 101);
+  assert.equal(adNumber('128 to norwegian'), 128);
+  assert.equal(adNumber('049'), 49);
+});
+
+test('två nummer eller inget nummer ger ingen gissning', () => {
+  assert.equal(adNumber('NO 058 SE075'), null);
+  assert.equal(adNumber('B66 LISTICLE'), null);
+  assert.equal(adNumber('Cargoshorts_PD_H3_3'), null);
+});
+
+test('strukturerade namn matchar över språkgränsen', () => {
+  assert.equal(structuredKey('Motorhölje_PD_1_H3'), structuredKey('Enginecover_PD_1_H1'));
+});
+
+test('samma nummer med olika ägare betalas inte ut till någon', () => {
+  const m = buildMatcher([
+    { id: 't1', title: '101', editor: 'a' },
+    { id: 't2', title: 'NO 101', editor: 'b' },
+  ]);
+  const hit = m.match('101 H2');
+  assert.equal(hit.tier, 'ambiguous');
+  assert.equal(hit.task, null);
+  assert.ok(!PAYABLE_TIERS.has('ambiguous'));
+});
+
+console.log('\nErsättning');
+
+const META = [
+  { date: '2026-08-01', adName: 'NO 101 H1', spend: 1000, purchases: 2, revenue: 3000, impressions: 10, clicks: 1, accountName: 'K', campaign: 'C' },
+  { date: '2026-08-02', adName: '101 H2', spend: 500, purchases: 1, revenue: 900, impressions: 5, clicks: 1, accountName: 'K', campaign: 'C' },
+  { date: '2026-08-02', adName: 'Okänd annons', spend: 250, purchases: 0, revenue: 0, impressions: 3, clicks: 0, accountName: 'K', campaign: 'C' },
+];
+const PTASKS = [{ id: 't1', title: '101', editor: 'a', url: 'https://notion.so/101' }];
+const PEDS = [{ id: 'a', name: 'Alfa' }, { id: 'z', name: 'Zeta' }];
+
+test('0,4% räknas per person och månad', () => {
+  const p = computePayout({ metaRows: META, tasks: PTASKS, rate: 0.004, editors: PEDS });
+  const alfa = p.editors.find(e => e.id === 'a');
+  assert.equal(alfa.totalSpend, 1500);
+  assert.equal(alfa.totalPayout, 6);
+  assert.equal(alfa.byMonth['2026-08'].payout, 6);
+});
+
+test('spend utan ägare skrivs aldrig ut på någon', () => {
+  const p = computePayout({ metaRows: META, tasks: PTASKS, rate: 0.004, editors: PEDS });
+  assert.equal(p.coverage.unmatchedSpend, 250);
+  assert.equal(p.coverage.topUnmatched[0].adName, 'Okänd annons');
+  const summa = p.editors.reduce((s, e) => s + e.totalSpend, 0);
+  assert.equal(summa, 1500);
+});
+
+test('handpålagd ägare fyller luckan men tar aldrig från Notion', () => {
+  const p = computePayout({
+    metaRows: META, tasks: PTASKS, rate: 0.004, editors: PEDS,
+    manualOwners: { rules: [{ match: '*', editor: 'z' }] },
+  });
+  assert.equal(p.editors.find(e => e.id === 'a').totalSpend, 1500);
+  assert.equal(p.editors.find(e => e.id === 'z').totalSpend, 250);
+  assert.equal(p.coverage.unmatchedSpend, 0);
+  assert.equal(p.coverage.manualSpend, 250);
+});
+
+test('en regel med until gäller inte annonser som startat efteråt', () => {
+  const senare = [...META, { date: '2026-09-01', adName: 'Helt ny annons', spend: 900, purchases: 0, revenue: 0, impressions: 1, clicks: 0 }];
+  const p = computePayout({
+    metaRows: senare, tasks: PTASKS, rate: 0.004, editors: PEDS,
+    manualOwners: { rules: [{ match: '*', editor: 'z', until: '2026-08-12' }] },
+  });
+  assert.equal(p.editors.find(e => e.id === 'z').totalSpend, 250);
+  assert.equal(p.coverage.unmatchedSpend, 900);
+});
+
+test('digesten bär pengarna när det finns ett underlag', () => {
+  const p = computePayout({ metaRows: META, tasks: PTASKS, rate: 0.004, editors: PEDS });
+  const m = computeMetrics({ tasks: foldTasks(EVENTS), config: CONFIG, periodDays: 30, now: NOW, editors: PEDS });
+  const utan = JSON.stringify(buildDigest(m, CONFIG, {}));
+  const med = JSON.stringify(buildDigest(m, CONFIG, { payout: p }));
+  assert.ok(!utan.includes('Intjänat'));
+  assert.ok(med.includes('Intjänat hittills i 2026-08'));
+  assert.ok(med.includes('6 kr'));
 });
 
 console.log(`\n${failed ? '✖' : '✔'} ${passed} godkända, ${failed} misslyckade\n`);

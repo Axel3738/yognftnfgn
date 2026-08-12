@@ -1,0 +1,73 @@
+name: Slack-utskick
+
+# Postar dagsläget i kanalen och knuffar var och en om det som ligger på
+# deras bord. Läser den data som Redigerarpanel-körningen redan sparat, så
+# den här behöver varken Notion- eller Meta-token.
+#
+# Kör: 07:00 svensk tid, mån–fre — innan folk hunnit börja. Plus knappen.
+
+on:
+  schedule:
+    - cron: '0 5 * * 1-5'   # 05 UTC = 07 svensk sommartid
+  workflow_dispatch:
+    inputs:
+      torrkorning:
+        description: 'Skriv ut vad som HADE skickats, utan att skicka'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: slack-utskick
+  cancel-in-progress: false
+
+jobs:
+  skicka:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # Utan hemlighet ska det synas TYDLIGT att inget skickades — inte se ut
+      # som en grön körning där allt gick bra.
+      - name: Kontrollera Slack-kopplingen
+        id: koll
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        run: |
+          if [ -n "$SLACK_BOT_TOKEN" ] || [ -n "$SLACK_WEBHOOK_URL" ]; then
+            echo "har=ja" >> $GITHUB_OUTPUT
+          else
+            echo "har=nej" >> $GITHUB_OUTPUT
+            echo "::warning::Ingen Slack-hemlighet satt — kör torrt. Lägg SLACK_WEBHOOK_URL (kanal) eller SLACK_BOT_TOKEN (DM) under Settings → Secrets and variables → Actions."
+          fi
+
+      - name: Dagsläget i kanalen
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          PAGES_URL: ${{ vars.PAGES_URL }}
+        run: |
+          cd dashboard
+          TORR=""
+          if [ "${{ steps.koll.outputs.har }}" != "ja" ] || [ "${{ inputs.torrkorning }}" = "true" ]; then TORR="--dry-run"; fi
+          node cli.mjs slack digest $TORR ${PAGES_URL:+--url "$PAGES_URL"} | tee -a $GITHUB_STEP_SUMMARY
+
+      # DM kräver bot-token; en webhook kan bara posta i sin egen kanal.
+      - name: Knuffa var och en
+        if: ${{ inputs.torrkorning != true }}
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        run: |
+          cd dashboard
+          if [ -z "$SLACK_BOT_TOKEN" ]; then
+            echo "::notice::Inga DM skickade — kräver SLACK_BOT_TOKEN med scopes chat:write och im:write."
+            node cli.mjs slack nudge --dry-run >> $GITHUB_STEP_SUMMARY
+          else
+            node cli.mjs slack nudge | tee -a $GITHUB_STEP_SUMMARY
+          fi

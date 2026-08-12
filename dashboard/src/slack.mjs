@@ -86,6 +86,14 @@ export function buildDigest(metrics, config, opts = {}) {
     blocks.push({ type: 'section', text: { type: 'mrkdwn', text: ':white_check_mark: *Inget som skräpar.* Allt rör sig.' } });
   }
 
+  // Pengarna. Det här är den enda siffran folk läser frivilligt, så den ska
+  // med varje dag — inte gömmas i en flik man måste klicka sig till.
+  const money = payoutLines(opts.payout);
+  if (money) {
+    blocks.push({ type: 'divider' });
+    blocks.push({ type: 'section', text: { type: 'mrkdwn', text: money } });
+  }
+
   blocks.push({
     type: 'context',
     elements: [{
@@ -97,6 +105,35 @@ export function buildDigest(metrics, config, opts = {}) {
   return { text: `Redigerarläget – ${t.deliveries} leveranser, ${metrics.flags.length} att knuffa`, blocks };
 }
 
+const kr = x => `${Math.round(x).toLocaleString('sv-SE')} kr`;
+
+/** Innevarande månad ur ett payout-underlag. */
+export function currentMonth(payout) {
+  if (!payout?.months?.length) return null;
+  return payout.months.slice().sort().pop();
+}
+
+/**
+ * "Så här mycket har du tjänat hittills i månaden" — en rad per person.
+ * Returnerar null när det inte finns något Meta-underlag, så digesten ser
+ * likadan ut som förut i stället för att visa nollor.
+ */
+function payoutLines(payout) {
+  const month = currentMonth(payout);
+  if (!month) return null;
+
+  const rows = payout.editors
+    .filter(e => !e.name.startsWith('Okänd'))
+    .map(e => ({ name: e.name, payout: (e.byMonth[month] || {}).payout || 0 }))
+    .filter(r => r.payout > 0)
+    .sort((a, b) => b.payout - a.payout);
+  if (!rows.length) return null;
+
+  const total = rows.reduce((s, r) => s + r.payout, 0);
+  const list = rows.map(r => `:moneybag: *${r.name}* — ${kr(r.payout)}`).join('\n');
+  return `*Intjänat hittills i ${month}* (${(payout.rate * 100).toFixed(1).replace('.', ',')}% av adspenden)\n${list}\n_Totalt ${kr(total)}._`;
+}
+
 function mention(editorId, metrics, config) {
   const ed = metrics.editors.find(e => e.id === editorId);
   if (ed?.slack && config.slack?.mentionOnFlags) return `<@${ed.slack}>`;
@@ -104,16 +141,21 @@ function mention(editorId, metrics, config) {
 }
 
 /** Personlig knuff — en per redigerare som har något öppet att göra. */
-export function buildNudges(metrics, config) {
+export function buildNudges(metrics, config, opts = {}) {
   const wd = config.workday;
   const out = [];
+  const month = currentMonth(opts.payout);
 
   for (const ed of metrics.editors) {
     const mine = metrics.flags.filter(f => f.editor === ed.id);
     if (!mine.length) continue;
 
-    const items = mine.slice(0, 6).map(f =>
-      `${ICON[f.severity] || ':white_circle:'} \`${f.task}\` ${f.title}\n     ${f.detail} — ligger ${formatDuration(f.minutes, wd)}`);
+    // Titeln länkas till Notion-sidan. Ett task-id att klistra in i en sökruta
+    // är en uppgift till; en länk är ett klick.
+    const items = mine.slice(0, 6).map(f => {
+      const title = f.url ? `<${f.url}|${f.title || 'namnlös'}>` : (f.title || f.task);
+      return `${ICON[f.severity] || ':white_circle:'} ${title}\n     ${f.detail} — ligger ${formatDuration(f.minutes, wd)}`;
+    });
 
     const sev = revisionSeverity(ed.stats.revisionRate, config.thresholds);
     const coaching = [];
@@ -123,6 +165,16 @@ export function buildNudges(metrics, config) {
     if (ed.stats.medianPickup != null && ed.stats.medianPickup > config.targets.pickupHours * 60) {
       coaching.push(`Du tar i snitt ${formatDuration(ed.stats.medianPickup, wd)} innan du ens startar en task (mål ${config.targets.pickupHours}h).`);
     }
+
+    // Egen intjäning sist: knuffen ska landa som "det här ligger, och så här
+    // mycket har du tjänat" — inte bara som en lista över det man inte gjort.
+    const mineMoney = month
+      ? (opts.payout.editors.find(e => e.id === ed.id)?.byMonth || {})[month]
+      : null;
+    const moneyBlock = mineMoney?.payout > 0
+      ? [{ type: 'context', elements: [{ type: 'mrkdwn',
+          text: `:moneybag: Du har tjänat *${kr(mineMoney.payout)}* på dina annonser hittills i ${month}.` }] }]
+      : [];
 
     const count = mine.length === 1 ? '1 sak' : `${mine.length} saker`;
     out.push({
@@ -134,6 +186,7 @@ export function buildNudges(metrics, config) {
           { type: 'section', text: { type: 'mrkdwn', text: `Hej ${ed.name.split(' ')[0]} — *${count}* på ditt bord som står still:` } },
           { type: 'section', text: { type: 'mrkdwn', text: items.join('\n') } },
           ...(coaching.length ? [{ type: 'context', elements: [{ type: 'mrkdwn', text: coaching.join(' ') }] }] : []),
+          ...moneyBlock,
         ],
       },
     });
