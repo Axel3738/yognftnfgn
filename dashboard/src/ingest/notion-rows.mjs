@@ -75,7 +75,7 @@ function toIso(ts) {
  * @param editors data/editors.json — mappar Notion-user-id → vårt editor-id
  * @param hub     namn på hubben raderna kommer från
  */
-export function rowsToEvents(rows, editors, hub = 'notion', workspace = null, includeTypes = []) {
+export function rowsToEvents(rows, editors, hub = 'notion', workspace = null, includeTypes = [], observedAt = new Date().toISOString()) {
   // En creative hub rymmer mycket mer än arbete: SOP:ar, guidelines, arkiv över
   // vinnande annonser, lösa anteckningar. Att lista upp vad som ska bort blir en
   // kapplöpning man aldrig vinner — nya sorters sidor dyker upp hela tiden.
@@ -121,7 +121,13 @@ export function rowsToEvents(rows, editors, hub = 'notion', workspace = null, in
     if (approved && state === 'approved') {
       events.push({ ts: approved, type: 'approved', ...base });
     } else if (state && state !== 'assigned') {
-      events.push({ ts: createdAt, type: 'observed', state, raw_status: status, ...base });
+      // Stämplas med när vi TITTADE, inte när sidan skapades.
+      //
+      // Statusen är ett nuläge. Stämplas den med createdTime hamnar den först i
+      // händelseordningen, och varje senare kommentar skriver över den: en task
+      // som står Approved i Notion slutade som 'revision' i panelen. Felet slog
+      // hårdast mot den som kommenterar mest — alltså tvärtemot verkligheten.
+      events.push({ ts: observedAt, type: 'observed', state, raw_status: status, ...base });
     }
   }
 

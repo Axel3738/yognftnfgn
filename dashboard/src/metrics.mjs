@@ -369,7 +369,15 @@ export function computeMetrics({ tasks: rawTasks, config, periodDays, now = Date
   const monthOf = ts => (ts ? localDate(ts, tz).slice(0, 7) : null);
   const productionEditors = knownEditors.map(ed => {
     const mine = all.filter(t => t.editor === ed.id);
-    const done = mine.filter(t => t.state === 'approved');
+    // Notions egen status är sanningen om vad som är klart. Det härledda
+    // `state` beror på i vilken ordning händelser vecktes, och den ordningen
+    // har visat sig kunna ge motsatt svar: Gilz stod på 4 klara mot Carls 8,
+    // medan Notion säger 17 mot 10. Rå status först, härlett tillstånd bara
+    // när status saknas.
+    const isDone = t => (t.observedStatus
+      ? /^(approved|archived|translation archived)$/i.test(t.observedStatus)
+      : t.state === 'approved');
+    const done = mine.filter(isDone);
     const byMonth = {};
     for (const t of done) {
       const m = monthOf(t.assignedAt);
@@ -379,7 +387,7 @@ export function computeMetrics({ tasks: rawTasks, config, periodDays, now = Date
       id: ed.id,
       name: ed.name || ed.id,
       produced: done.length,
-      open: mine.filter(t => !['approved', 'cancelled'].includes(t.state)).length,
+      open: mine.filter(t => !isDone(t) && t.state !== 'cancelled').length,
       assigned: mine.length,
       byMonth,
       // Kvar för jämförelse, men aldrig som huvudsiffra.

@@ -210,7 +210,7 @@ async function cmdIngest() {
     const rows = Array.isArray(raw) ? raw : raw.rows;
     if (!Array.isArray(rows)) die('Filen saknar en "rows"-array.');
 
-    const { events: incoming, unknownStatuses, skipped } = rowsToEvents(rows, editors, raw.hub || 'notion', raw.workspace || null, config.notion.includeTypes || []);
+    const { events: incoming, unknownStatuses, skipped } = rowsToEvents(rows, editors, raw.hub || 'notion', raw.workspace || null, config.notion.includeTypes || [], raw.exportedAt ? raw.exportedAt + 'T23:59:00Z' : undefined);
     const existing = readEvents(P.events);
     const { merged, added } = mergeEvents(existing, incoming);
 
@@ -260,6 +260,7 @@ async function cmdIngest() {
     // kvar för alltid: en felklassad kommentar, en redigerad text, en borttagen
     // kommentar — allt skulle ligga kvar och räknas. Händelser från andra
     // källor (pollern, CSV, manuell loggning) rörs inte.
+    const fetchedAt = new Date().toISOString();
     const previous = readEvents(P.events);
     const DERIVED = new Set(['notion-import', 'notion-comment']);
     let events = previous.filter(e => !DERIVED.has(e.source));
@@ -267,7 +268,7 @@ async function cmdIngest() {
     if (dropped) say(`  Bygger om ${dropped} härledda händelser från grunden.`);
 
     for (const b of bundles) {
-      const rowRes = rowsToEvents(b.rows, editors, b.hub, b.workspace, config.notion.includeTypes || []);
+      const rowRes = rowsToEvents(b.rows, editors, b.hub, b.workspace, config.notion.includeTypes || [], fetchedAt);
       events = mergeEvents(events, rowRes.events).merged;
 
       // Kommentarerna behöver veta vem som äger tasken → vecka raderna först.
