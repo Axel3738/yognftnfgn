@@ -1,0 +1,11 @@
+{
+  "name": "temu-import",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Importerar Temu-produkter till Baverbutiken.se",
+  "dependencies": {
+    "gifenc": "^1.0.3",
+    "sharp": "^0.35.3"
+  }
+}
