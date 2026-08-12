@@ -45,9 +45,11 @@ något i Meta. Övriga konton finns men används inte: Matstrumpor.se
    `node pipeline/quota.mjs log <produkt-id> <antal>`.
 6. **Modellpolicy:** all slutgiltig ad copy, svenska manusrader och voiceovers
    skrivs av en subagent via Agent-verktyget med `model: "sonnet"` (eller `"haiku"`
-   för bulkvarianter) — subagenten får DNA + hypotes + hook + formatkrav och
-   skriver bara text. Strategi, analys, klassificering och briefstruktur görs
-   alltid av huvudsessionen. Aldrig tvärtom.
+   för bulkvarianter) — subagenten får DNA + hypotes + hook + formatkrav **+
+   `docs/copy-regler.md`** och skriver bara text. Varje levererad rad ska klara
+   tre-frågorstestet i copy-reglerna (visualisera / falsifiera / ingen annan kan
+   säga det) och testet redovisas i leveransen. Strategi, analys, klassificering
+   och briefstruktur görs alltid av huvudsessionen. Aldrig tvärtom.
 7. **Produktminnet ligger i repot, inte i chatten:** `products/<id>/dna.md`
    (Creative DNA), `products/<id>/batch-log.md` (batcher + hypoteser + utfall),
    `products/<id>/backlog.md` (koncept som väntar). Läs dem innan du agerar,
@@ -96,6 +98,7 @@ något i Meta. Övriga konton finns men används inte: Matstrumpor.se
 | Vad | Var |
 |-----|-----|
 | **Creative strategy: insikt → manus (hjärnan i video-pipelinen)** | **`docs/creative-strategy.md`** |
+| **Copy-reglerna (obligatoriska för varje rad som skrivs)** | **`docs/copy-regler.md`** |
 | **Analysmetoden (obligatorisk vid all bedömning)** | **`docs/os/ANALYSMETOD.md`** |
 | Playbook — vinklar/hooks/format som bevisats över tid | `docs/playbook.md` |
 | Hook-regeln (visuellt) | `docs/hook-visual-rule-2026-08-04.md` |
