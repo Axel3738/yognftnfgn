@@ -1,4 +1,29 @@
-# Installera panelen på en andra butik (Grillkliniken)
+# Installera panelen på ytterligare en butik
+
+## Butikerna och deras värden
+
+| Butik | myshopify-domän | Valuta | Annonskonto | Status |
+| --- | --- | --- | --- | --- |
+| Bäverbutiken.se | `4snrw0-mg.myshopify.com` | SEK | MagiBorsten `1867947880635861` | installerad (PNL2) |
+| Beverbutikken.no | `1acuam-s5.myshopify.com` | **NOK** | — | ej installerad |
+| Grillkliniken | — | — | SnarkLös `1346450049878358` | ej installerad |
+
+Två saker gäller **bara** den norska butiken:
+
+- **Annonskontot måste redovisa i NOK.** Meta rapporterar alltid i annonskontots
+  valuta, inte butikens. Kopplar du ett SEK-konto till NOK-butiken drar panelen
+  SEK-belopp från NOK-intäkter. Den räknar inte om — den säger ifrån med en röd
+  banner, för en gissad växelkurs är samma fel fast osynligt.
+- **Tullen är inte 27,50.** Standardvärdet kommer från EU-tullen på $2,90, och
+  Norge är inte med i EU. Sätt det som faktiskt tas ut, i NOK.
+
+Installationslänk när app-registreringen är klar:
+
+```
+https://admin.shopify.com/store/1acuam-s5/oauth/install?client_id=<Client ID>
+```
+
+
 
 Koden är redan butiksseparerad: varje fråga mot databasen filtreras på `shop`,
 cachen är nycklad per butik, och katalogcachen i minnet likaså. Två butiker kan
@@ -17,11 +42,12 @@ Tidsåtgång: ~15 minuter. Kostnad: en extra Railway-tjänst, ca 5 USD/månad.
 
 `partners.shopify.com` → **Appar** → **Skapa app** → **Skapa app manuellt**.
 
-- Namn: `PNL3` (namnet syns bara för dig)
+- Namn: något som säger vilken butik det gäller — `PNL-NO`, `PNL-GRILL`.
+  Namnet syns bara för dig.
 - Kopiera **Client ID** och **Client secret** — de ska rakt in i Railways
   variabler i steg 2. Aldrig in i repot, aldrig in i en chatt.
-- **Distribution** → **Anpassad distribution** → ange Grillklinikens
-  `.myshopify.com`-domän. (Publik distribution kräver granskning innan appen får
+- **Distribution** → **Anpassad distribution** → ange butikens
+  `.myshopify.com`-domän ur tabellen ovan. (Publik distribution kräver granskning innan appen får
   installeras på en riktig butik — det var det som blockerade första försöket.)
 
 Låt URL-fälten stå tomma så länge; domänen finns inte förrän steg 2 är klart.
@@ -88,12 +114,13 @@ räknar ner allt eftersom och försvinner när den är klar.
 
 1. **Inköpspriser** — Kostnader-fliken. Skrivs till Shopifys egen `unitCost`, så
    de blir butikens egendom och syns även i Shopifys rapporter.
-2. **Annonskontot** — Inställningar. För Grillkliniken är det **SnarkLös,
-   `1346450049878358`**. Samma long-lived token som Bäverbutiken använder
-   fungerar, förutsatt att ditt Meta-konto har åtkomst till båda kontona.
+2. **Annonskontot** — Inställningar, kontot ur tabellen överst. Samma
+   long-lived token som Bäverbutiken använder fungerar, förutsatt att ditt
+   Meta-konto har åtkomst till kontot. Kontot måste redovisa i **samma valuta
+   som butiken** — annars flaggar panelen det.
 3. **Fasta kostnader** — formuläret ligger direkt i checklistan.
-4. **Tull och transaktionsavgift** — standardvärdena (27,50 kr per order,
-   2,9 %) är Bäverbutikens. Stämmer de inte för Grillkliniken, ändra dem.
+4. **Tull och transaktionsavgift** — standardvärdena (27,50 per order, 2,9 %)
+   är Bäverbutikens svenska. Stämmer de inte för den nya butiken, ändra dem.
 
 ## Om du senare vill lägga till en tredje butik
 
