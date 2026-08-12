@@ -150,4 +150,4 @@ som manuellt alternativ när man vill handstyla.
 
 Status per kolumn: ⏳ pågår · ✅ klar · ❌ fail. När en lokaliserad annons går live
 loggas den dessutom som vanligt i `ad-tracker.md` (den är ett eget test).
-| FI-batch: 12 av 16 talannonser (4 prisannonser pausade) | fi / Finnish (Finland) | ✅ 2026-08-12 | ✅ 6 rättade (Grillklinikenin Mastern, 420 D, tasapainossa, verkkokaupassamme, kadu-vändningen, filler), 6 rena | ✅ per kampanjstil | ✅ 12 levererade | Längdkoll mot videolängd: inget överspill trots finskans längre ord · prisannonser hålls tills euro-priser kommer (undviker omrendering) |
+| FI-batch: alla 16 talannonser | fi / Finnish (Finland) | ✅ 2026-08-12 | ✅ 6 rättade (Grillklinikenin Mastern, 420 D, tasapainossa, verkkokaupassamme, kadu-vändningen, filler), 6 rena | ✅ per kampanjstil | ✅ alla 16 levererade | Längdkoll: inget överspill trots finskans längre ord · tvåstegsleverans (prisfria först, prisannonser när €-priser kom) gav noll omrenderingar · Rutikuiva/Entä jos-fixar · priser 29,95 € / 59,95 € |
