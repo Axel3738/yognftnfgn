@@ -148,8 +148,23 @@ const campaigns = (await api(`${cfg.act}/campaigns`, { params: { fields: 'name',
 let ok = 0, failed = 0;
 
 for (const camp of cfg.campaigns) {
-  const c = campaigns.find(x => x.name === camp.campaignName);
+  let c = campaigns.find(x => x.name === camp.campaignName);
+  if (!c && camp.create) {
+    // ABO: ingen budget på kampanjnivå — den sätts per adset
+    if (DRY) { console.log(`### ${camp.campaignName} — SKAPAS (${camp.create.buyingType || 'ABO'})`); c = { id: 'DRY', name: camp.campaignName }; }
+    else {
+      const nyc = await api(`${cfg.act}/campaigns`, { method: 'POST', form: {
+        name: camp.campaignName, objective: camp.create.objective || 'OUTCOME_SALES',
+        status: camp.create.status || 'PAUSED', special_ad_categories: '[]',
+        // ABO utan budgetdelning — adseten ska ha lika budget, inte låna av varandra
+        is_adset_budget_sharing_enabled: String(camp.create.budgetSharing ?? false),
+      }});
+      c = { id: nyc.id, name: camp.campaignName };
+      console.log(`✓ Kampanj skapad (${camp.create.status || 'PAUSED'}, ABO): ${camp.campaignName} (${c.id})`);
+    }
+  }
   if (!c) { console.log(`✗ Kampanjen "${camp.campaignName}" saknas — hoppar`); continue; }
+  if (c.id === 'DRY') { for (const a of camp.adsets) { console.log(`  · adset ${a.name}: ${a.motifs.length} annonser`); } continue; }
   const priorAdsets = (await api(`${c.id}/adsets`, { params: { fields: 'name', limit: '100' } })).data || [];
   // duplikatskydd per adset — samma annonsnamn i olika adsets är legitimt (BASE/LISTICLE,
   // och gamla pausade batchar som ska byggas om med rätt copy)
@@ -196,7 +211,11 @@ for (const camp of cfg.campaigns) {
         billing_event: 'IMPRESSIONS', optimization_goal: 'OFFSITE_CONVERSIONS',
         destination_type: 'WEBSITE',
         promoted_object: JSON.stringify({ pixel_id: cfg.pixel, custom_event_type: 'PURCHASE' }),
-        targeting: JSON.stringify(cfg.targeting),
+        targeting: JSON.stringify(adsetCfg.targeting || cfg.targeting),
+        // ABO: budget och budstrategi hör ihop och sätts på adsetet
+        ...(adsetCfg.dailyBudget ? { daily_budget: adsetCfg.dailyBudget,
+              bid_strategy: adsetCfg.bidStrategy || 'LOWEST_COST_WITHOUT_CAP' } : {}),
+        ...(cfg.dsaBeneficiary ? { dsa_beneficiary: cfg.dsaBeneficiary, dsa_payor: cfg.dsaPayor || cfg.dsaBeneficiary } : {}),
       }});
       adsetId = adset.id;
       console.log(`  ✓ adset (${cfg.adsetStatus || 'PAUSED'}): ${adsetCfg.name} (${adsetId})`);
