@@ -1,0 +1,40 @@
+{
+  "exportedAt": "2026-08-13",
+  "shop": {
+    "id": "gid://shopify/Shop/94701748548",
+    "name": "Grillkliniken",
+    "domain": "grillkliniken.se",
+    "myshopifyFallback": "checkout-referens 94701748548",
+    "email": "kundsupport@grillkliniken.se",
+    "currency": "SEK",
+    "timezone": "Europe/Stockholm",
+    "plan": "Shopify",
+    "billingAddress": { "address1": "sjöhed 160", "city": "harestad", "zip": "44274", "country": "SE" }
+  },
+  "themes": [
+    { "id": "gid://shopify/OnlineStoreTheme/183618928964", "name": "wetransfer-theme-impulse-svenska-1-2025-06-22-0830", "role": "MAIN", "note": "Impulse — samma temafamilj som Bäverbutiken" },
+    { "id": "gid://shopify/OnlineStoreTheme/183549559108", "name": "Horizon", "role": "UNPUBLISHED", "themeStoreId": 2481 },
+    { "id": "gid://shopify/OnlineStoreTheme/183618896196", "name": "shrine-2", "role": "UNPUBLISHED" }
+  ],
+  "locations": [
+    { "id": "gid://shopify/Location/107518918980", "name": "sjöhed 160", "isActive": true }
+  ],
+  "markets": [
+    { "id": "gid://shopify/Market/102345802052", "name": "Sverige", "handle": "se", "enabled": true }
+  ],
+  "shopPolicies": [
+    { "type": "PRIVACY_POLICY", "title": "Integritetspolicy", "url": "https://checkout.shopify.com/94701748548/policies/49391272260.html?locale=sv" },
+    { "type": "REFUND_POLICY", "title": "Återbetalningspolicy", "url": "https://checkout.shopify.com/94701748548/policies/49611866436.html?locale=sv" },
+    { "type": "TERMS_OF_SERVICE", "title": "Användarvillkor", "url": "https://checkout.shopify.com/94701748548/policies/49611899204.html?locale=sv" }
+  ],
+  "blogs": [
+    { "id": "gid://shopify/Blog/117553692996", "title": "Nyheter", "handle": "nyheter", "articles": 0 }
+  ],
+  "notes": [
+    "36 ACTIVE + 6 UNLISTED produkter, 56 varianter, 92 bilder, 75 metafältrader",
+    "0 externa CDN-bilder i beskrivningarna (renare källdata än Bäverbutiken)",
+    "Specialmallar: grill-golf-kit (32 produkter), mastern (2), borst-polerhuvud (1), 7 utan",
+    "~35 sidor är GemPages-landningssidor (gp-template-*) med TOM body — innehållet ligger i GemPages-appen och kan INTE exporteras via Admin API",
+    "Vendors blandade: Grillkliniken 18, Grillverkstan 11, GrillaMer 9, Min butik 4"
+  ]
+}

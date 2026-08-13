@@ -1,0 +1,25 @@
+{
+  "exportedAt": "2026-08-13",
+  "profile": { "id": "gid://shopify/DeliveryProfile/128582582596", "name": "Allmän profil", "default": true },
+  "zones": [
+    {
+      "name": "Sverige",
+      "countries": ["SE"],
+      "methods": [
+        { "name": "Postnord", "price": "61 SEK", "conditions": "inga" },
+        { "name": "Postnord (fri)", "price": "0 SEK", "conditions": "TOTAL_PRICE >= 1 SEK (RateRangeCondition)", "note": "I praktiken fri frakt på allt ≥ 1 SEK — stämmer med användarvillkorens 'alltid fri frakt'" }
+      ]
+    },
+    {
+      "name": "EU (Europeiska Unionen)",
+      "countries": ["AT","BE","BG","HR","CY","CZ","DE","DK","EE","FI","FR","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES"],
+      "methods": [ { "name": "Standard", "price": "299 SEK", "conditions": "TOTAL_PRICE >= 0" } ]
+    },
+    {
+      "name": "Internationell",
+      "countries": ["AE","AU","CA","CH","GB","HK","IL","JP","KR","MY","NO","NZ","SG","US"],
+      "methods": [ { "name": "Standard", "price": "299 SEK", "conditions": "TOTAL_PRICE >= 0" } ],
+      "note": "MEXIKO (MX) FINNS INTE i någon zon — måste läggas till för MX-lansering (PLAYBOOK fälla 5: ärvd fraktzon)"
+    }
+  ]
+}

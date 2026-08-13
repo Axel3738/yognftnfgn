@@ -1,0 +1,38 @@
+{
+  "main-menu": {
+    "id": "gid://shopify/Menu/298326294852",
+    "title": "Huvudmeny",
+    "items": [
+      { "title": "Startsida", "type": "FRONTPAGE", "url": "/" },
+      { "title": "Golf Grill Kit", "type": "PRODUCT", "url": "/products/golf-grill-kit", "resourceId": "gid://shopify/Product/15513203048772" },
+      { "title": "Elektrisk grillborste", "type": "PRODUCT", "url": "/products/elektrisk-grillborste", "resourceId": "gid://shopify/Product/15536325427524" },
+      { "title": "Greatgrill", "type": "PRODUCT", "url": "/products/roterande-grillkorg-i-rostfritt-stal-perfekt-for-gronsaker-kott-tillbehor", "resourceId": "gid://shopify/Product/15290956054852" },
+      { "title": "Grillredskap", "type": "COLLECTION", "url": "/collections/grillredskap", "resourceId": "gid://shopify/Collection/651574673732" },
+      { "title": "Förkläden", "type": "COLLECTION", "url": "/collections/forkladen", "resourceId": "gid://shopify/Collection/651493212484" },
+      { "title": "Knivar & Skärbrädor", "type": "COLLECTION", "url": "/collections/knivar-bestick", "resourceId": "gid://shopify/Collection/651710923076" },
+      { "title": "Kontakta Oss", "type": "PAGE", "url": "/pages/contact", "resourceId": "gid://shopify/Page/150184198468" }
+    ]
+  },
+  "footer": {
+    "id": "gid://shopify/Menu/298326327620",
+    "title": "Sidfotsmeny",
+    "items": [
+      { "title": "Sökning", "type": "SEARCH", "url": "/search" },
+      { "title": "Integritetspolicy", "type": "PAGE", "url": "/pages/integritetspolicy", "resourceId": "gid://shopify/Page/150327198020" },
+      { "title": "Fraktpolicy", "type": "PAGE", "url": "/pages/fraktpolicy", "resourceId": "gid://shopify/Page/150327329092" },
+      { "title": "Retur & återbetalnings policy", "type": "PAGE", "url": "/pages/retur-aterbetalnings-policy", "resourceId": "gid://shopify/Page/150327296324" },
+      { "title": "Användarvillkor", "type": "PAGE", "url": "/pages/anvandarvillkor", "resourceId": "gid://shopify/Page/150473146692" },
+      { "title": "kundsupport@grillkliniken.se", "type": "FRONTPAGE", "url": "/" },
+      { "title": "Ångra Köp", "type": "HTTP", "url": "https://shopify.com/94701748548/account" },
+      { "title": "Garanti", "type": "PAGE", "url": "/pages/garanti", "resourceId": "gid://shopify/Page/155949793604" }
+    ]
+  },
+  "customer-account-main-menu": {
+    "id": "gid://shopify/Menu/298326360388",
+    "title": "Kundkontots huvudmeny",
+    "items": [
+      { "title": "Ordrar", "type": "CUSTOMER_ACCOUNT_PAGE", "url": "https://shopify.com/94701748548/account/orders" },
+      { "title": "Profil", "type": "CUSTOMER_ACCOUNT_PAGE", "url": "https://shopify.com/94701748548/account/profile" }
+    ]
+  }
+}
