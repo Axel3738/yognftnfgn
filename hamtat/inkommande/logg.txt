@@ -1,0 +1,5 @@
+fil-1.jpg  HTTP 200  image/jpeg  https://img.kwcdn.com/product/fancy/e7b71aa2-1f45-442d-a415-4343682380d4.jpg
+fil-2.html  HTTP 200  text/html  https://www.temu.com/se/ett-set-med-4-pvc-2d-tryckta-platta-tecknade-klisterm%C3%A4rken-l%C3%A4mpliga-f%C3%B6r-att-dekorera-hush%C3%A5llssoptunnor-med-en--%C3%A4nde-och-roliga-temadesigner-g-601102867393554.html
+fil-3.html  HTTP 200  text/html  https://www.walmart.com/ip/17699418724
+fil-4.bin  HTTP 200  application/gzip  https://us.amazon.com/Garbage-Stickers-Sticker-Adhesive-Decorative/dp/B0GVYQ9X1V
+fil-5.html  HTTP 200  text/html  https://us.amazon.com/Stickers-Cartoon-Waterproof-Adhesive-Decorative/dp/B0GXZ6YFFV
