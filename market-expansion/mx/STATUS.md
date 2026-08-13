@@ -37,10 +37,11 @@ Axels gamla FR/USA-experiment: 6 produkter, shrine som live-tema. Dessa RÖRS IN
 - Tema att bygga på: gid://shopify/OnlineStoreTheme/196491477332
 
 ## Kvar
-- [ ] Fas 3: översättning klar + build-report
-- [ ] Fas 4: produktpush (productSet med inventoryPolicy CONTINUE + templateSuffix direkt!), kanalpublicering, kollektionsbilder, sidor (MX-juridik), menyer
-- [ ] Fas 5: marketCreate Mexiko + MXN fast kurs 1:1
-- [ ] Fas 6: fraktzon Mexiko (finns inte!) + draftOrderCalculate-grind
+- [x] Fas 3: KLAR — 42/42 produkter es-MX, 15 juridiska flaggor (se build/out/*.es.json)
+      Patchat i JSONL: "Por 1399 kr"→"Por $2,659 MXN" (aa), EU-lagpåstående struket (elektrisk-grillborste)
+- [~] Fas 4: produktpush PÅGÅR (chunk 0,2,3 via agenter; chunk 1 blockerad av klassificeraren — skickas till färdig agent). Kvar: kanalpublicering, kollektionsbilder, sidor, menyer
+- [x] Fas 5: KLAR — Market México (gid://shopify/Market/116428079444), MXN, manuell kurs 1.0, moms i priset. OBS: unified markets → marketUpdate med currencySettings, INTE marketCurrencySettingsUpdate
+- [x] Fas 6: México-zon skapad i Allmän profil med 'Envío gratis' 0 (alla andra zoner var redan 0). Grind (draftOrderCalculate) körs när produkterna är inne
 - [ ] Fas 7: tema — upsert 464 filer från exporten + ÖVERSÄTT temafilerna (GemPages-sektionerna innehåller svensk säljtext!)
 - [ ] Fas 8: Judge.me-recensioner på es-MX
 - [ ] Fas 9: sanningskontroll (fri frakt-löften vs verklig fraktzon, betalmetoder)
