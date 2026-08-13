@@ -331,6 +331,19 @@ Alla har inträffat på riktigt.
     mot butiken och relansera resten (gör stegen idempotenta så omkörning är riskfri).
 20. **Kontexten tar slut mitt i arbetet.** Allt state ligger i repot och butiken. En ny
     session behöver bara denna fil och rätt butik kopplad.
+21. **Specialmallarna saknar variantväljare — Kaching ÄR väljaren.** I källbutiken har
+    `product.claudeprodukter/strandtofflor/snabbtrratter` inget `variant_picker`-block;
+    Kaching Bundles-blocket agerar variantväljare. I en ny marknad utan konfigurerade
+    Kaching-deals renderar blocket ingenting → **varianter (storlek/färg) går inte att
+    välja alls** på 17 produkter/165 varianter, trots att datan är korrekt. Åtgärd i
+    temautkastet: lägg in `{"type":"variant_picker","settings":{"variant_labels":true,
+    "picker_type":"button","color_swatches":false}}` i `blocks` + i `block_order` före
+    kvantitetsväljaren (blockdefinitionen finns i `product.json` som har den). Gäller
+    ALLA marknader tills Kaching-deals är konfigurerade; när deals väl finns kan det bli
+    dubbel väljare — ta då bort blocket igen eller låt Kaching ersätta det. Verifiera
+    serversidigt: `curl -c jar -b jar "<butik>/products/<handle>?preview_theme_id=<id>"`
+    (cookie-jar krävs — utan den svarar LIVE-temat och `Shopify.theme` visar fel id) och
+    räkna `variant-input-wrap`/`variant-input` i HTML:en.
 
 ---
 

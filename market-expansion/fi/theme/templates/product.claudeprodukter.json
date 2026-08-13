@@ -6,8 +6,7 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */
-{
+ */{
   "sections": {
     "main": {
       "type": "main-product",
@@ -97,6 +96,14 @@
           "settings": {
             "is_tab": false
           }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "color_swatches": false
+          }
         }
       },
       "block_order": [
@@ -104,6 +111,7 @@
         "price",
         "separator",
         "2a440565-4e58-46a5-b7d5-dc06ac285d67",
+        "variant_picker",
         "quantity_selector_RcFFzQ",
         "sales_point_pAqwJ8",
         "sales_point_rj9NaB",

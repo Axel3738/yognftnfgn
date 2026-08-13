@@ -68,6 +68,21 @@ Beslut: behåll, eller räkna om hela katalogen enligt Axels formel.
 10. **Juridisk granskning:** 134 flaggor i build-report + 31 AXEL-flaggor i sidorna
     + `asiakaspalvelu@majavakauppa.fi` måste skapas
 
+## ✅ Variantväljare tillagd 2026-08-13 (Axels rapport: "inga varianter syns")
+
+Rotorsak: specialmallarna `claudeprodukter/strandtofflor/snabbtrratter` saknar
+`variant_picker`-block i källbutiken — Kaching Bundles-blocket är variantväljaren där,
+och utan konfigurerade deals renderar det ingenting (PLAYBOOK fälla 21).
+17 produkter/165 varianter påverkades trots korrekt produktdata (verifierad 0 avvikelser).
+
+Åtgärd: `variant_picker` (knappar, etiketter på) inlagt före kvantitetsväljaren i alla
+tre mallarna, upsertat till utkastet `207980495197`, 0 fel. Serversidigt verifierat i
+förhandsvisningen: sandalerna visar Koko 36–47 + Väri (30 knappar), sätesöverdraget
+visar 4 färger, köpknappen kvar. **OBS:** samma fel finns i LIVE-temana i DK/UK/NO —
+API:t kan inte röra dem; Axel fixar i temaredigeraren (lägg till "Variant picker"-block
+i de tre mallarna) eller konfigurerar Kaching-deals enligt BUNDLE-PLAN.md. När Kaching-
+deals sedan läggs in i FI kan det bli dubbel väljare — ta då bort blocket igen.
+
 ## Noteringar
 
 - **16 produkter saknar kategorikollektion** (118 av 134 fördelade). Etusivu har bara 2 produkter.
