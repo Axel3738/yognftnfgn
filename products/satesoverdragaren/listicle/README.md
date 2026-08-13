@@ -39,26 +39,38 @@ Punkt 2 bär kontots starkaste mätta insikt: handduks-hooken (`PD_13_H1`, CTR
 3,87 %, högst i kontot). Punkt 4 landar i prisankaret, som är kontots
 bäst konverterande budskap (`SO_1_1_H1`, LPV→köp 6,33 %).
 
-## Prisramen (uppdaterad 2026-08-13)
+## Prisramen och berättelsen (uppdaterad 2026-08-13, andra revisionen)
 
-Axel har bekräftat att en **verklig lagerutförsäljning pågår**: syftet är att
-sälja ned befintligt lager och nuvarande priser är nedsatta mot ordinarie.
-Sidan bygger därför på samma reason-why-mekanik som källsidan. Följande block
-skrevs om: `h1`, `dek`, `hero_cta`, `summary`, `honesty_body`, `risk_body`,
-`risk_cta` och `solution_cta`.
+Ägaren har bekräftat förstahands att **vi råkade beställa in för många**: lagret
+är större än vi vill ha, det ska säljas ned, och det är därför utförsäljningen
+körs och priserna är nedsatta. Sidan bär den berättelsen från rubriken till sista
+knappen, precis som källsidan gör med sin.
 
-Gränserna som gäller ändå, och som `build.py` upprätthåller:
+Berättelsen som går igenom hela sidan: vi beställde för många → lagret blev
+större än planerat → vi behöver sälja ned det → därför lagerutförsäljning →
+därför nedsatt pris just nu.
+
+Omskrivna block: `h1`, `dek`, `hero_cta`, `summary`, `honesty_body`, `risk_body`,
+`risk_cta`, `solution_cta` och samtliga fem punkt-CTA:er (`p1_cta` till
+`p5_cta`), så att inget block säger något annat än de andra. De fem
+problempunkternas brödtext är oförändrad.
+
+### Priserna, verifierade live 2026-08-13
+
+`price` 649,00 kr mot `compareAtPrice` 811,25 kr, alltså exakt **20 %** nedsatt.
+`build.py` räknar själv ut procentsatsen ur `PRICE` och `COMPARE` och **stoppar
+bygget om texten innehåller något annat procenttal**, eller om samma tal nämns
+mer än en gång. Sidan använder i nuläget bara kronbeloppen; procentsatsen sparas
+till videomanuset där swipens struktur kräver den.
+
+**Ändras priset i butiken är siffrorna i `build.py` fel och sidan måste byggas
+om.** Det är den enda manuella kopplingen mellan Shopify och den här sidan.
 
 | Tillåtet | Inte tillåtet |
 |---|---|
-| "lagerutförsäljning", "nedsatta priser", "så långt lagret räcker" | Procentsatser. Vi skriver 649 mot ordinarie 811 kr, aldrig ett tal i procent |
-| 649 kr och 811 kr (`price` och `compareAtPrice` i Shopify) | Slutdatum, nedräkning, "sista chansen", "bara idag" |
-| Att vi säljer ned befintligt lager | **Varför** vi gör det. Källsidans "vi beställde in för många" är inte vårt skäl och används inte |
-| | Lagersiffror: "bara X kvar", "X sålda" |
-
-Ordinarie-priset 811 kr påstås vara vårt normalpris, vilket ägaren bekräftat.
-Sidan påstår däremot **inte** att priset historiskt tagits ut under någon viss
-period, eftersom det inte går att belägga ur underlaget.
+| Att vi beställde för många och sitter med överskottslager | Antal: "bara X kvar", "X sålda", "två pallar kvar" |
+| "lagerutförsäljning", "nedsatta priser", "så långt lagret räcker" | Slutdatum, nedräkning, "sista chansen", "bara idag" |
+| 649 kr och 811 kr, och 20 % en gång | Varje annan procentsats |
 
 ## Kontroller som körs vid varje bygge (build.py stoppar vid fel)
 
@@ -67,8 +79,11 @@ period, eftersom det inte går att belägga ur underlaget.
 - Ordet "överstruket" får inte finnas
 - Källproduktens ord (motorhölje, kåpa, båt, salt, vax, glans, 420D, hk,
   dragsko, 299 kr, 367 kr ...) måste vara 0
-- Obelagda påståenden i VÅR nya text måste vara 0: procentsatser, "sista
-  chansen", "bara idag", "gäller till", slutdatum, "bara X kvar", "X sålda"
+- Obelagda påståenden i VÅR nya text måste vara 0: "sista chansen", "bara idag",
+  "gäller till", slutdatum, "bara X kvar", "X sålda"
+- Varje procenttal måste vara lika med det uträknade (649/811,25 = 20 %) och får
+  förekomma högst en gång
+- Både 649 och 811 måste finnas i den nya texten
 - Alla gamla bild-URL:er borta, alla nya använda minst en gång
 - Gamla produktlänken 0 träffar, nya finns
 - Obligatoriska strängar: 649 kr, 811 kr, 600D, "OBS: Detta är reklam."

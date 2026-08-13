@@ -10,6 +10,12 @@ NEW_ID = '631451887748514777'          # ny sid-identitet så importen inte skri
 NEW_NAME = 'Sätesöverdrag för åkgräsklippare (listicle)'
 NEW_HANDLE = 'satesoverdrag-akgrasklippare'
 
+# Priser hämtade live ur Shopify 2026-08-13. Allt procenttal i texten kontrolleras
+# mot dessa: 649 / 811,25 = exakt 20 % nedsatt. Ändras priset i butiken måste
+# dessa siffror uppdateras innan sidan byggs om.
+PRICE, COMPARE = 649.00, 811.25
+PCT = round((1 - PRICE / COMPARE) * 100)
+
 OLD_LINK = '/products/marin-motorholje-420d-universellt-skydd'
 NEW_LINK = '/products/satesoverdrag-for-akgrasklippare-slittaligt-600d-oxford'
 
@@ -65,8 +71,9 @@ FORBIDDEN_WORDS = ['motorhölj', 'motorhöl', 'kåpa', 'kåpan', 'utombordar', '
 
 # Påståenden vi inte får göra ens under en verklig rea: exakta rabattsatser,
 # slutdatum, nedräkningar eller lagersiffror finns inte i underlaget.
-FORBIDDEN_CLAIMS = [r'\d+\s*%', r'\bsista chansen\b', r'\bbara idag\b', r'\bgäller till\b',
-                    r'\bslutar\s+\d', r'\bbara\s+\d+\s+kvar\b', r'\b\d+\s+sålda\b']
+FORBIDDEN_CLAIMS = [r'\bsista chansen\b', r'\bbara idag\b', r'\bgäller till\b',
+                    r'\bslutar\s+\d', r'\bbara\s+\d+\s+kvar\b', r'\b\d+\s+sålda\b',
+                    r'\b\d+\s*(?:st|stycken)\s+kvar\b']
 
 
 def collect(node, out):
@@ -176,6 +183,17 @@ def main():
     for pat in FORBIDDEN_CLAIMS:
         for m in set(re.findall(pat, ny_text, re.I)):
             fails.append(f'OTILLÅTET PÅSTÅENDE (ej belagt i underlaget): {m!r}')
+    # Procentsatser: bara den som faktiskt följer av priserna, och bara en gång.
+    pcts = re.findall(r'(\d+)\s*(?:%|procent)', ny_text)
+    for v in pcts:
+        if int(v) != PCT:
+            fails.append(f'PROCENTSATS STÄMMER INTE MED PRISDATAN: {v} %, uträknat {PCT} %')
+    if len(pcts) > 1:
+        fails.append(f'PROCENTSATSEN NÄMNS {len(pcts)} GÅNGER, max 1')
+    # Priserna i texten måste vara butikens.
+    for belopp, namn in ((PRICE, 'pris'), (COMPARE, 'ordinarie')):
+        if f'{int(belopp)} kr' not in ny_text and f'{int(belopp)} kronor' not in ny_text:
+            fails.append(f'{namn.upper()} {int(belopp)} saknas i den nya texten')
     for old in IMG:
         if old.split('?')[0] in body: fails.append(f'GAMMAL BILD kvar: {old[:50]}')
     if OLD_LINK in body: fails.append('GAMMAL PRODUKTLÄNK kvar')

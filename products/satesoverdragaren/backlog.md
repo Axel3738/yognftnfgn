@@ -24,30 +24,28 @@ Två saker bär den:
 2. **Inget adjektiv utan mekanism bakom.** "Hålen är utformade så att direkt
    låga och rök når varje bit mat" i stället för "bra grillkorg".
 
-### Uppdaterat 2026-08-13: lagerutförsäljningen är verklig
-Axel har bekräftat att en **verklig lagerutförsäljning pågår** i butikerna, att
-syftet är att sälja ned befintligt lager och att nuvarande priser är nedsatta mot
-ordinarie. Reason-why-hooken är därför tillbaka och manuset ligger nu mycket
-närmare originalet. Beat 1, 2, 3 och 11 omskrivna, plus 30-sekunderskortningen
-och annonstexten.
+### Uppdaterat 2026-08-13 (andra revisionen): hela reason-why-vinkeln är bekräftad
+Axel har bekräftat förstahands att **vi råkade beställa in för många**, att lagret
+är större än vi vill ha och ska säljas ned, och att det är därför utförsäljningen
+körs. Swipens öppning återges därför i sin helhet i stället för att bytas ut.
+Manuset är nu en trogen tillämpning av originalet, beat för beat.
 
-### Vad som fortfarande INTE kopieras, och varför
-- **Procentsatsen.** Originalet leder på 40 %. Vi skriver bara kronor: 649 mot
-  ordinarie 811. Axels underlag säger ~25 % i snitt över sortimentet men att
-  rabatten varierar per produkt och inte får anges mer exakt än produktens eget
-  underlag stödjer. 649/811 är dokumenterat i Shopify, en procentsats härledd ur
-  ett snitt är det inte.
-- **Skälet till utförsäljningen.** Originalet säger "vi råkade beställa för
-  många". Det skälet har vi aldrig fått. Vi säger att vi säljer ned befintligt
-  lager, inget mer.
-- **Slutdatum, nedräkning och lagersiffror.** Finns inte i underlaget.
-  "Så långt lagret räcker" är den enda knapphetsformulering som används.
-- **Livstidsgaranti.** Vi har 30 dagars öppet köp. Stängningen kombinerar nu
-  nollrisk och "så långt lagret räcker", som originalet.
-- **Talaren.** Originalet har en namngiven anställd. Manuset använder [NAMN] som
-  platshållare. **Måste fyllas med en riktig person hos Bäverbutiken innan
-  produktion.** Vi har redan två policyavvikelser i kontot från påhittade
-  personer (`SP_3_1_H1`, `SP_6_1`), det får inte bli en tredje.
+Omskrivet: beat 1, 2, 3, 9 och 11, plus 30-sekunderskortningen, annonstexten och
+rubriken. Tidsättning omräknad till 76 s ur faktiska ordantal.
+
+### Verifierat i Shopify 2026-08-13
+- `price` 649,00 kr mot `compareAtPrice` 811,25 kr = exakt **20 %** nedsatt.
+  Procentsatsen är därmed belagd och används en gång, i beat 3.
+- **Grön och ljusgrå är `availableForSale: false`.** Beat 9 nämner därför bara
+  grå och svart. Vi namnger aldrig en färg kunden inte kan köpa.
+
+### Vad som fortfarande INTE hittas på
+- Antal kvar i lager. Vi vet inte siffran.
+- Slutdatum eller nedräkning. Inget datum är angivet.
+- Någon annan procentsats än den som följer av produktens egna priser.
+- **Talaren.** [NAMN] måste bli en riktig person hos Bäverbutiken innan
+  produktion. Vi har redan två policyavvikelser i kontot från påhittade personer
+  (`SP_3_1_H1`, `SP_6_1`), det får inte bli en tredje.
 
 ### Nästa steg
 1. Axel skickar två extra hooks utöver originalhooken.
