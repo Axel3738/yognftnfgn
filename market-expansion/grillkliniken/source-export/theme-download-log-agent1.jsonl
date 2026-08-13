@@ -1,1 +1,13 @@
-{"filename": "templates/article.json", "expected": 169, "actual": 629, "ok": false}
+{"filename": "templates/article.json", "expected": 169, "actual": 629, "ok": false, "note": "api-returned banner+pretty-printed JSON; compact form matches expected size; content saved exactly as returned"}
+{"filename": "templates/page.json", "expected": 249, "actual": 747, "ok": false, "note": "api-returned banner+pretty-printed JSON; compact form matches expected size; content saved exactly as returned"}
+{"filename": "templates/page.gp-template-626533702947570475.json", "expected": 288, "actual": 730, "ok": false, "note": "api-returned banner+pretty-printed JSON; compact form matches expected size; content saved exactly as returned"}
+{"filename": "templates/page.gp-template-626648399864660651.json", "expected": 288, "actual": 730, "ok": false, "note": "api-returned banner+pretty-printed JSON; compact form matches expected size; content saved exactly as returned"}
+{"filename": "sections/main-404.liquid", "expected": 356, "actual": 356, "ok": true}
+{"filename": "sections/collection-return.liquid", "expected": 577, "actual": 577, "ok": true}
+{"filename": "assets/ico-select-white.svg.liquid", "expected": 837, "actual": 837, "ok": true}
+{"filename": "templates/page.about.json", "expected": 876, "actual": 1914, "ok": false, "note": "api-returned banner+pretty-printed JSON; compact form matches expected size; content saved exactly as returned"}
+{"filename": "snippets/search-bar.liquid", "expected": 926, "actual": 926, "ok": true}
+{"filename": "templates/customers/register.liquid", "expected": 1490, "actual": 1490, "ok": true}
+{"filename": "templates/collection.json", "expected": 3006, "actual": 4998, "ok": false}
+{"filename": "snippets/tab-contact.liquid", "expected": 3092, "actual": 3092, "ok": true}
+{"filename": "snippets/cart-drawer.liquid", "expected": 3833, "actual": 3833, "ok": true}

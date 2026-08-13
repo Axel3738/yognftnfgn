@@ -1,3 +1,7 @@
 {"filename": "assets/theme.css.liquid", "expected": 240878, "actual": 240878, "ok": true}
 {"filename": "assets/ico-select-menu.svg", "expected": 844, "actual": 844, "ok": true}
 {"filename": "layout/theme.gem-layout-none.liquid", "expected": 4392, "actual": 4392, "ok": true}
+{"filename": "locales/fr.json", "expected": 13183, "actual": 13549, "ok": false}
+{"filename": "locales/fr.json", "expected": 13183, "actual": 13183, "ok": true}
+{"filename": "sections/blog-posts.liquid", "expected": 4672, "actual": 4672, "ok": true}
+{"filename": "sections/featured-product.liquid", "expected": 10370, "actual": 10370, "ok": true}

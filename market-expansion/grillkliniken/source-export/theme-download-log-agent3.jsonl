@@ -1,3 +1,30 @@
 {"filename": "assets/ico-select-drawer.svg.liquid", "expected": 869, "actual": 869, "ok": true}
 {"filename": "sections/gp-section-619570878011081521.liquid", "expected": 168390, "actual": 168390, "ok": true}
 {"filename": "locales/de.json", "expected": 13036, "actual": 13402, "ok": false}
+{"filename": "locales/de.json", "expected": 13036, "actual": 13036, "ok": true, "md5_expected": "23c19e84cb7ec1275202d303acb0d2cf", "md5_actual": "23c19e84cb7ec1275202d303acb0d2cf"}
+{"filename": "assets/ico-select-drawer.svg.liquid", "expected": 869, "actual": 869, "ok": true, "md5_expected": "0aa4523328d4b3d6ff9bdfbe85897367", "md5_actual": "0aa4523328d4b3d6ff9bdfbe85897367"}
+{"filename": "sections/gp-section-619570878011081521.liquid", "expected": 168390, "actual": 168390, "ok": true, "md5_expected": "a9b3b5a840524107f83f6c4401b224a9", "md5_actual": "a9b3b5a840524107f83f6c4401b224a9"}
+{"filename": "config/settings_schema.json", "expected": 24159, "actual": 24159, "ok": true, "md5_expected": "e3703218d2b7bf5cb76488921021a6da", "md5_actual": "e3703218d2b7bf5cb76488921021a6da"}
+{"filename": "sections/gp-section-617120906476520427.liquid", "expected": 29559, "actual": 29559, "ok": true, "md5_expected": "ad950c32d59eac5995b0e8d9f0eb63e2", "md5_actual": "ad950c32d59eac5995b0e8d9f0eb63e2"}
+{"filename": "sections/gp-section-617120906761732768.liquid", "expected": 34228, "actual": 34228, "ok": true, "md5_expected": "7f8cbfc79794a45d6bf48c670c8fbf57", "md5_actual": "7f8cbfc79794a45d6bf48c670c8fbf57"}
+{"filename": "sections/gp-section-617167825118692292.liquid", "expected": 34103, "actual": 34103, "ok": true, "md5_expected": "54228418864ccd8ce2e554223ef0068a", "md5_actual": "54228418864ccd8ce2e554223ef0068a"}
+{"filename": "sections/gp-section-620302509214466719.liquid", "expected": 23837, "actual": 23837, "ok": true, "md5_expected": "44ea249f80089f6fdb0a331db7eb9b19", "md5_actual": "44ea249f80089f6fdb0a331db7eb9b19"}
+{"filename": "sections/gp-section-620302509214991007.liquid", "expected": 29700, "actual": 29700, "ok": true, "md5_expected": "b799b2df457722e710f4cd7bb429461c", "md5_actual": "b799b2df457722e710f4cd7bb429461c"}
+{"filename": "sections/gp-section-620621395672105959.liquid", "expected": 34327, "actual": 34327, "ok": true, "md5_expected": "5b1f122816370d02d39f025f43e776be", "md5_actual": "5b1f122816370d02d39f025f43e776be"}
+{"filename": "sections/gp-section-621065327820079775.liquid", "expected": 27534, "actual": 27534, "ok": true, "md5_expected": "650d47acd99523d01bf279c9639a4bf4", "md5_actual": "650d47acd99523d01bf279c9639a4bf4"}
+{"filename": "sections/gp-section-621092885521171103.liquid", "expected": 40236, "actual": 40236, "ok": true, "md5_expected": "db3263d61efb10871848857688abf726", "md5_actual": "db3263d61efb10871848857688abf726"}
+{"filename": "sections/gp-section-621092885521695391.liquid", "expected": 34647, "actual": 34647, "ok": true, "md5_expected": "aef94b7fdc71b6ce3befb26b5e73d611", "md5_actual": "aef94b7fdc71b6ce3befb26b5e73d611"}
+{"filename": "sections/gp-section-621105591729193930.liquid", "expected": 38053, "actual": 38053, "ok": true, "md5_expected": "14e98cfdde13f8693055939ac005d44e", "md5_actual": "14e98cfdde13f8693055939ac005d44e"}
+{"filename": "sections/gp-section-621645129698182090.liquid", "expected": 40236, "actual": 40236, "ok": true, "md5_expected": "5b0e78094f2d0e4346f492d5ba2ff88a", "md5_actual": "5b0e78094f2d0e4346f492d5ba2ff88a"}
+{"filename": "sections/gp-section-621645129698706378.liquid", "expected": 38295, "actual": 38295, "ok": true, "md5_expected": "316817dbe2350ba3a760f703f567dbd6", "md5_actual": "316817dbe2350ba3a760f703f567dbd6"}
+{"filename": "sections/gp-section-621654614210970211.liquid", "expected": 34339, "actual": 34339, "ok": true, "md5_expected": "fe63e1d1cb7ad2281a221d3091cc6c1a", "md5_actual": "fe63e1d1cb7ad2281a221d3091cc6c1a"}
+{"filename": "sections/gp-section-623149626862273304.liquid", "expected": 38190, "actual": 38190, "ok": true, "md5_expected": "d7823e2ba35a039636e7b88cc664fa5e", "md5_actual": "d7823e2ba35a039636e7b88cc664fa5e"}
+{"filename": "sections/gp-section-623151464218821400.liquid", "expected": 38208, "actual": 38208, "ok": true, "md5_expected": "56b082c10551a8da90d80d229a64a092", "md5_actual": "56b082c10551a8da90d80d229a64a092"}
+{"filename": "sections/gp-section-623152569568657953.liquid", "expected": 40236, "actual": 40236, "ok": true, "md5_expected": "1a34102f0b0759cb97d6d958abb14b3b", "md5_actual": "1a34102f0b0759cb97d6d958abb14b3b"}
+{"filename": "sections/gp-section-623152569569182241.liquid", "expected": 34749, "actual": 34749, "ok": true, "md5_expected": "40f281dce25a7fe880e3083749dbcd1f", "md5_actual": "40f281dce25a7fe880e3083749dbcd1f"}
+{"filename": "sections/gp-section-623154757401772577.liquid", "expected": 29422, "actual": 29422, "ok": true, "md5_expected": "272037b5670f42baf0903f9c6fe042e1", "md5_actual": "272037b5670f42baf0903f9c6fe042e1"}
+{"filename": "sections/gp-section-623155472379347736.liquid", "expected": 39849, "actual": 39849, "ok": true, "md5_expected": "93f4f91b2313ca2fae8fc43dd82e85ee", "md5_actual": "93f4f91b2313ca2fae8fc43dd82e85ee"}
+{"filename": "sections/gp-section-624267177822323446.liquid", "expected": 29177, "actual": 29177, "ok": true, "md5_expected": "51c90187ade3df1a476e1067fd259f4e", "md5_actual": "51c90187ade3df1a476e1067fd259f4e"}
+{"filename": "sections/gp-section-631303000543134470.liquid", "expected": 24014, "actual": 24014, "ok": true, "md5_expected": "91fc3ceae156dd98038b6e3a010f1978", "md5_actual": "91fc3ceae156dd98038b6e3a010f1978"}
+{"filename": "sections/gp-section-631303000543658758.liquid", "expected": 29709, "actual": 29709, "ok": true, "md5_expected": "014d6478697bdf5265b9269af36f3685", "md5_actual": "014d6478697bdf5265b9269af36f3685"}
+{"filename": "sections/gp-section-632042898200134313.liquid", "expected": 38221, "actual": 38221, "ok": true, "md5_expected": "cdbc1819990b64f78227d22f41a66187", "md5_actual": "cdbc1819990b64f78227d22f41a66187"}

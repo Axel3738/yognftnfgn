@@ -1,2 +1,6 @@
 {"filename": "assets/ico-select-footer.svg.liquid", "expected": 865, "actual": 865, "ok": true}
 {"filename": "assets/theme.css", "expected": 225364, "actual": 225364, "ok": true}
+{"filename": "layout/password.liquid", "expected": 7352, "actual": 7352, "ok": true}
+{"filename": "sections/gp-section-620302509214597791.liquid", "expected": 40236, "actual": 40236, "ok": true}
+{"filename": "sections/gp-section-626843926958965613.liquid", "expected": 221581, "actual": 221581, "ok": true}
+{"filename": "sections/gp-section-632042898200265385.liquid", "expected": 168044, "actual": 168044, "ok": true}

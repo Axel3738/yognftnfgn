@@ -1,0 +1,2 @@
+{"filename": "assets/ico-select-menu.svg.liquid", "expected": 869, "actual": 869, "md5": "3bf635b9afdccc6e0f4699453616c238", "md5_expected": "3bf635b9afdccc6e0f4699453616c238", "md5_ok": true, "ok": true}
+{"filename": "assets/theme.js", "expected": 229855, "actual": 229855, "md5": "58be9d14f847cc6a558065112752c545", "md5_expected": "58be9d14f847cc6a558065112752c545", "md5_ok": true, "ok": true}
