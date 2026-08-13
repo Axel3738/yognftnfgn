@@ -22,3 +22,10 @@
 {"filename": "assets/gp-global.css", "expected": 69647, "actual": 69647, "ok": true}
 {"filename": "sections/gp-section-623155472379216664.liquid", "expected": 12202, "actual": 12202, "ok": true}
 {"filename": "sections/gp-section-621092885521040031.liquid", "expected": 12293, "actual": 12293, "ok": true}
+{"filename": "sections/gp-section-621645129698051018.liquid", "expected": 12293, "actual": 12293, "ok": true}
+{"filename": "sections/gp-section-623152569568526881.liquid", "expected": 12293, "actual": 12293, "ok": true}
+{"filename": "sections/gp-section-621105591729062858.liquid", "expected": 12999, "actual": 12999, "ok": true}
+{"filename": "sections/gp-section-623151464218690328.liquid", "expected": 12999, "actual": 12999, "ok": true}
+{"filename": "sections/gp-section-631303000543527686.liquid", "expected": 12908, "actual": 12908, "ok": true}
+{"filename": "snippets/footer-newsletter.liquid", "expected": 14156, "actual": 14156, "ok": true}
+{"filename": "sections/gp-section-617120906694624196.liquid", "expected": 15232, "actual": 15232, "ok": true}

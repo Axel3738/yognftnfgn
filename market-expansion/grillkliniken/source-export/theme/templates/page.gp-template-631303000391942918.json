@@ -1,0 +1,182 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gp_section_631303000542937862": {
+      "settings": {
+        "checksum": "414d9f8ed45437381276697cfcef8f2aed079445daee357961909070b52b94c7_1_1_1_0__1",
+        "ggN_Y62y1x6_background_desktop_image_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/IMG_4290.jpg",
+        "ggN_Y62y1x6_background_mobile_image_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/IMG_4290.jpg",
+        "ggN_Y62y1x6_background_tablet_image_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/IMG_4290.jpg",
+        "ggaJsxiAN7L_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_1.png",
+        "ggaJsxiAN7L_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_1.png",
+        "ggaJsxiAN7L_srcSet_tablet_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_1.png",
+        "ggicEtHSQob_label": "<p>Se erbjudandet nu</p>"
+      },
+      "type": "gp-section-631303000542937862"
+    },
+    "gp_section_631303000543003398": {
+      "settings": {
+        "checksum": "b8ee909aaeb9dc9f53a2f470a55d823471cbc1b7af1e8df65432e5a88cb62c65_1_1_1_0__1",
+        "gg0aF2u8lyT_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_3.png",
+        "gg0aF2u8lyT_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_3.png",
+        "gg0aF2u8lyT_srcSet_tablet_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_3.png",
+        "ggQYsDDjz8q_label": "<p>Beställ Mastern — Fri frakt</p>",
+        "ggcSRSH48Jn_background_desktop_image_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/IMG_4286.jpg",
+        "ggcSRSH48Jn_background_tablet_image_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/IMG_4286.jpg",
+        "ggxMUIlaaZR_background_mobile_image_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/IMG_4286.jpg"
+      },
+      "type": "gp-section-631303000543003398"
+    },
+    "gp_section_631303000543068934": {
+      "settings": {
+        "checksum": "dc28bf2293c78b0acdfdf980c839e98baf94a4bba120fce92162d6141d2ce3ce_1_1_1_0__1",
+        "ggePKcDJ1a3_text": "<p>OBS: Detta är reklam.<br><a href=\"mailto:kundsupport@grillkliniken.se\">kundsupport@grillkliniken.se</a><br>Grillkliniken.se</p>",
+        "ggnjSBAEvhs_text": "<p>|</p>",
+        "ggwJwnj2Az7_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_4.png",
+        "ggwJwnj2Az7_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_4.png",
+        "ggwJwnj2Az7_srcSet_tablet_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_4.png"
+      },
+      "type": "gp-section-631303000543068934"
+    },
+    "gp_section_631303000543134470": {
+      "settings": {
+        "checksum": "f98ced20187739d606199e22412883b113f1e2c7918b802ec7924248831ade20_1_1_1_0__1",
+        "gg12G0kUpIa_text": "<p>De flesta tänker på sommaren som slitaget. Värmen, fettet, röken. Det är fel.</p><p>&nbsp;</p><p>Sommaren är synlig. Du ser gallret. Du grillar på det. Du har åtminstone en chans att märka när något är fel.</p><p>&nbsp;</p><p>Vintern är osynlig. Sex månader under ett lock, i dansk kyla och svensk fukt. Det organiska fettet i springorna absorberar fukt och börjar bryta ner metallytan kemiskt. Missfärgning kommer först, du ser den i april och tänker att det är ytligt. Det är det inte. Rosten har pågått sedan november.</p><p>&nbsp;</p><p>Som grilltekniker åker jag runt varje vår och lyfter på lock. Vissa grillar står där och väntar, redo för en ny sommar. Andra har rostat sönder, på ett halvår, under ett lock, utan att någon rört dem.</p><p>&nbsp;</p><p>Skillnaden avgjordes i september.</p>",
+        "gg3g8HZ9t2b_text": "SEX MÅNADER I FUKT OCH KYLA ÄR VÄRRE ÄN FEMTIO GRILLKVÄLLAR",
+        "gglGdc5Sduj_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Namnlos_design_75.png",
+        "gglGdc5Sduj_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/download_11.gif"
+      },
+      "type": "gp-section-631303000543134470"
+    },
+    "gp_section_631303000543200006": {
+      "settings": {
+        "checksum": "d48489249034132c86a2cdc770fb7eb7f702b0be028899116dd3093612497a57_1_1_1_0__1",
+        "ggLThU8b6u0_label": "<p>Byt ut borsten en gång för alla</p>",
+        "ggQ4xMGzK7h_text": "DIN STÅLBORSTE RENGJORDE ALDRIG DET SOM FAKTISKT SITTER KVAR",
+        "ggdzeecRZdG_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260515_060048_550c3444-485b-4d56-bd78-edceaec95db2.png",
+        "ggdzeecRZdG_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Weber_erkanner_A_few_brush_hairs_may_fall_off_during_the_process_1.png",
+        "ggj1ylP6WCi_text": "<p>Du rengjorde gallret i sommar. Det vet du. Stålborsten, tjugo minuter, armarna värkande.</p><p>&nbsp;</p><p>Men stålborsten skrapar ytan. Den når aldrig ner i springorna mellan gallerstängerna, dit det inbrända fettet faktiskt sitter. Gallret ser rent ut på toppen. I springorna sitter fettet kvar, lager på lager, säsong efter säsong.</p><p>&nbsp;</p><p>Det är det fettet som ligger mot metallen hela vintern. Det är det fettet som avgör om din grill överlever till nästa april.</p><p>&nbsp;</p><p>Du trodde att du underhöll grillen. Du rengjorde bara ytan av den.</p><p>&nbsp;</p><p>Weber erkänner det dessutom skriftligt på sin egen supportsida: borststrån lossnar under normal användning och följer med i maten. Den borste du använt hela sommaren har lämnat tunna metalltrådar på gallret, och nu ska den ligga kvar under ett lock i sex månader.</p>",
+        "ggzJY0t-gH4_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/download_9.gif"
+      },
+      "type": "gp-section-631303000543200006"
+    },
+    "gp_section_631303000543265542": {
+      "settings": {
+        "checksum": "d52ef17e946ffe41c64e06b219a3d61c635c4aac55f8bca43ba4c7e1b756766f_1_1_1_0__1",
+        "gg1Lydu5nRs_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/e_4.gif",
+        "gg1Lydu5nRs_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/e_4.gif",
+        "ggA904-0DfB_label": "<p>Se erbjudandet nu</p>",
+        "ggdcYl02jms_text": "<p>Det som faktiskt skyddar grillen tar sextio sekunder.</p><p>&nbsp;</p><p>Grillklinikens Master snurrar mot gallret istället för att skrapa. 400 varv per minut, runt hela staven och ner i springorna dit en vanlig borste aldrig når. Det frätande fettet som annars hade legat mot metallen hela vintern, borta.</p><p>&nbsp;</p><p>Ett extra trick inför vinterförvaring: värm upp gallret ordentligt, doppa borsthuvudet i en skål vatten och kör. Ångan tränger ner i springorna och luckrar upp det som suttit fast sedan maj. Fettet som en stålborste aldrig rört lossnar i ett enda drag.</p><p>&nbsp;</p><p>Sedan täcker du grillen. Och i april lyfter du locket på en grill som sett ut så här sedan september, inte en som rostat i sex månader under ett lock du aldrig öppnade.</p><p>&nbsp;</p><p>En grill för femton tusen ska hålla i femton år. Vintern är när de flesta förlorar dem. Den sista rengöringen i september är när du bestämmer dig för vilken sida du hamnar på.</p><p>&nbsp;</p><p>999 kr. Delat på tio säsonger. 99 kr per grillsommar, och livstidsgaranti. Går den sönder får du en ny.</p><p>&nbsp;</p><p>Prova den vid din egen grill innan locket går på. Om gallret inte är rent på sextio sekunder, full återbetalning utan ett enda frågetecken.</p><p>&nbsp;</p><p><i>Fungerar på Weber, Napoleon, Broil King, Traeger. Kol, gas och keramik.</i></p>",
+        "ggkk6_gC4qd_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/e_4.gif",
+        "ggkk6_gC4qd_srcSet_tablet_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/e_4.gif",
+        "ggp87Wb3FFa_text": "<strong>SEXTIO SEKUNDER I SEPTEMBER RÄDDAR FEMTON ÅRS INVESTERING</strong>"
+      },
+      "type": "gp-section-631303000543265542"
+    },
+    "gp_section_631303000543331078": {
+      "settings": {
+        "checksum": "890789fcfb8e0bd1cbfbc49cccffb1b44069378353ace886aed62107c424c9f2_1_1_1_0__1",
+        "gg42Me8D_t5_text": "DEN SISTA RENGÖRINGEN INNAN LOCKET GÅR PÅ ÄR SÄSONGENS VIKTIGASTE",
+        "gg8FQhJxsPM_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Fore.png",
+        "gg8FQhJxsPM_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Fore.png",
+        "ggnhVRgAr0d_text": "<p>Det finns en rengöring som är viktigare än alla andra under hela säsongen. Det är inte den du gör inför en grillkväll med gäster. Det är inte den du gör efter en sommarfest.</p><p>&nbsp;</p><p>Det är den sista du gör innan du täcker över grillen.</p><p>&nbsp;</p><p>Den avgör vad som ligger an mot metallen under sex månader. Den avgör om gallret blänker eller rostar när du lyfter locket i april. Den avgör om din Napoleon håller i femton år eller sju.</p><p>&nbsp;</p><p>Och det är den rengöringen de flesta hoppar över, för säsongen är över, det känns onödigt, och stålborsten i tjugo minuter är ett projekt man inte orkar med i september när grillandet börjar trappas ned.</p><p>&nbsp;</p><p>Det är det felet som kostar femton tusen kronor.</p>"
+      },
+      "type": "gp-section-631303000543331078"
+    },
+    "gp_section_631303000543396614": {
+      "settings": {
+        "checksum": "04832633ee4ae9c1e18c284386d7a36efbe6386b9f1f7a73c5845811255b607a_1_1_1_0__1",
+        "ggXVwZhmAuK_text": "<p><i><strong>Rent galler varje gång.</strong></i><br><br><i><strong>30 dagars öppet köp, inga frågor ställs.&nbsp;</strong></i><br><br><i><strong>Fri frakt inom Sverige.</strong></i></p>"
+      },
+      "type": "gp-section-631303000543396614"
+    },
+    "gp_section_631303000543462150": {
+      "settings": {
+        "checksum": "d7bcabad570cdf8ee726f79da6075ce32e06ac226ac4de3b1fa45f5dcd2ad784_1_1_1_0__1",
+        "gg4KQlTtUYv_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>- Mikael T.</strong></span></p>",
+        "gg5PSJ4Q-GY_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>En till stugan också</strong></span></p>",
+        "gg7NpbaGO4B_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>- Johan S.</strong></span></p>",
+        "ggArOemGYsb_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>Frun nöjd att borsten försvann</strong></span></p>",
+        "ggBgWMJwY3q_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>Perfekt start på säsongen</strong></span></p>",
+        "ggFSVFalSQB_text": "<p><strong>4.7 / </strong>60 recensioner</p>",
+        "ggFXZ2-NMIt_text": "<span style=\"background-color:#FF3B00;color:#FFFFFF;\">Kundrecensioner</span>",
+        "ggFlRB-uzyw_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\">Normalt ett jobb jag skjuter upp i en halvtimme. Nu tar det knappt en minut.</span></p>",
+        "ggJl5RX_A0Q_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>- Marcus A.</strong></span></p>",
+        "ggNo76XJh-k_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>- Peter N.</strong></span></p>",
+        "ggSHNHBn1Un_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\">Köpte en till stugan också. Enkelt funkar och inga konstigheter.</span></p>",
+        "ggS_u_DFeUK_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\">Tog fram grillen inför Valborg och gallret var ruttet efter vintern. En omgång med borsten och det var klart.</span></p>",
+        "ggV4zCx8JFi_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>Funkar på gjutjärn</strong></span></p>",
+        "ggVTB4Wo5dC_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>Skjuter inte upp rengöringen längre</strong></span></p>",
+        "ggVq9E-t-bu_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>Slängde stålborsten direkt</strong></span></p>",
+        "gg_NQzOCssC_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\">Förväntade mig ännu ett Kinapynt men den här känns robust. Motorn har kraft nog för inbränt fett.</span></p>",
+        "ggdqSjETRqH_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>Känns robust</strong></span></p>",
+        "ggeUbajTDbj_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\">Tog lite tid att vänja sig vid rätt vinkel men när man fått kläm går det snabbt. Frun är nöjd att stålborsten försvann.</span></p>",
+        "ggjLRRM2pbv_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>- Christer F.</strong></span></p>",
+        "ggo0FuGe01V_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>- Tomas W.</strong></span></p>",
+        "ggrYefE8m-M_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\">Hittade ett borststrå i hamburgaren förra sommaren och det var nog. Den här känns gedigen och inte något TV-shop-pynt.</span></p>",
+        "ggreutcPGpi_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>- Rickard B.</strong></span></p>",
+        "ggymToTtxGn_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\">Hade farhågor om att den skulle repa gjutjärnet på min Napoleon men det gick fint.</span></p>"
+      },
+      "type": "gp-section-631303000543462150"
+    },
+    "gp_section_631303000543527686": {
+      "settings": {
+        "checksum": "95c19edcc1402b690e672e67c846770ef0bfe8244a5bdd2a5f9a4563cdaacd6b_1_1_1_0__1",
+        "section_preload": "true"
+      },
+      "type": "gp-section-631303000543527686"
+    },
+    "gp_section_631303000543593222": {
+      "settings": {
+        "checksum": "fef8c9068a4640a83c3b84600c1e44a145c0a632e9578c306f2a3a5a60d0d7e2_1_1_1_0__1",
+        "gg5knyehVEx_text": "<p>Av <strong>Anders Johansson.</strong></p>",
+        "ggM51wRYsAX_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Namnlos_design_-_2026-08-04T060547.758.png",
+        "ggM51wRYsAX_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Namnlos_design_-_2026-08-04T060547.758.png",
+        "ggM51wRYsAX_srcSet_tablet_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260515_060630_b31d00e8-9061-44b0-aa3c-46e9db6cdfad.png",
+        "ggQqOoPJHpx_text": "<strong>5 ANLEDNINGAR TILL VARFÖR DIN GRILL DÖR I VINTER — OCH VARFÖR SKADAN AVGÖRS I SEPTEMBER</strong>",
+        "ggcRx4s-HQ4_text": "<p>Din grill tar mer skada under ett halvår under ett lock än under hela sommaren vid grillen. Det händer tyst, och det börjar nästa månad.</p>",
+        "gghBWMjoA6E_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Skarmbild_2026-05-15_085739.png",
+        "gghBWMjoA6E_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260217_124645_31eadc60-b0a9-464e-ab35-6677e400c118_1.webp?v=1777386791",
+        "gghBWMjoA6E_srcSet_tablet_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260217_124645_31eadc60-b0a9-464e-ab35-6677e400c118_1.webp?v=1777386791",
+        "ggyK8xEtS-K_label": "<p><strong>Läs innan du täcker över grillen →</strong></p><p>&nbsp;</p>",
+        "ggyzO0V7arV_text": "<p>Senast uppdaterad 3 Augusti 2026.</p>"
+      },
+      "type": "gp-section-631303000543593222"
+    },
+    "gp_section_631303000543658758": {
+      "settings": {
+        "checksum": "92ef78fdbba9bedcb54e014786be3dd9271512e7d1c5eeb9fc29f72e6065017f_1_1_1_0__1",
+        "gg5HKHt_pbr_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/2005/9307/files/Rectangle_41017.png",
+        "gg5HKHt_pbr_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Namnlos_design_75.png",
+        "ggC0xmYDikw_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260515_060630_b31d00e8-9061-44b0-aa3c-46e9db6cdfad.png",
+        "ggC0xmYDikw_srcSet_tablet_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260515_060630_b31d00e8-9061-44b0-aa3c-46e9db6cdfad.png",
+        "ggPDY2CMjIb_text": "VINTERN DÖDAR INTE DIN GRILL. FETTET DU LÄMNADE KVAR GÖR DET.",
+        "ggso_0gGOT3_text": "<p>Du täcker grillen i oktober. Ställer den mot väggen. Tänker inte mer på den förrän i april.</p><p>&nbsp;</p><p>Men under det locket pågår något du aldrig ser.</p><p>&nbsp;</p><p>Det inbrända fettet du lämnade i springorna när säsongen tog slut, det tar inte ledigt. Det är frätande. Det ligger an mot metallen dygnet runt, i fukt och kyla, utan att du någonsin öppnar och tittar. Sommarens grillningar sliter på ytan. Vinterns vila äter upp den underifrån.</p><p>&nbsp;</p><p>Grillen du täcker i oktober är inte samma grill du lyfter fram i april.</p><p>&nbsp;</p><p>Det är inte vädret som dödar svenska grillar. Det är fettet i springorna och den sista rengöringen du skjuter upp.</p>"
+      },
+      "type": "gp-section-631303000543658758"
+    }
+  },
+  "order": [
+    "gp_section_631303000543527686",
+    "gp_section_631303000543593222",
+    "gp_section_631303000543658758",
+    "gp_section_631303000543134470",
+    "gp_section_631303000543200006",
+    "gp_section_631303000543331078",
+    "gp_section_631303000543265542",
+    "gp_section_631303000543003398",
+    "gp_section_631303000543462150",
+    "gp_section_631303000542937862",
+    "gp_section_631303000543396614",
+    "gp_section_631303000543068934"
+  ],
+  "layout": "theme.gempages.blank"
+}
