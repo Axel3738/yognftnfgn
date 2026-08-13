@@ -39,39 +39,52 @@ bevis alls. Bara en anställd som förklarar. Vi kopierar det.
 
 ---
 
-## Vårt ärliga skäl, och exakt hur långt det räcker
+## Vinkeln: vi råkade beställa för många
 
-Bryn-annonsens ryggrad är erbjudandet plus det ärliga skälet. **Vi har båda
-delarna.** Bäverbutiken kör en verklig lagerutförsäljning: syftet är att sälja
-ned befintligt lager, och priserna kunderna ser nu är nedsatta mot ordinarie.
-Det är ingen påhittad kampanjvinkel, och därför får den sägas rakt ut.
+Bryn-annonsens ryggrad är erbjudandet plus det ärliga skälet, och **vi har exakt
+samma skäl som de**. Bäverbutiken beställde in fler produkter än vi behövde,
+lagret blev större än planerat, vi behöver frigöra lagerutrymme, och därför kör
+vi lagerutförsäljning till nedsatt pris.
 
-**Vad som får sägas om priset i den här annonsen:**
+Kedjan ska höras i den ordningen, aldrig baklänges:
+
+> vi råkade beställa för många → lagret blev större än planerat → vi behöver
+> sälja ned det → därför lagerutförsäljning → därför nedsatt pris
+
+Det är det som gör erbjudandet trovärdigt. En rabatt utan skäl är bara ännu en
+rea. Skälet är hela hooken, precis som i Bryn-annonsen.
+
+**Priset, verifierat i Shopify 2026-08-13:**
+
+| | |
+|---|---|
+| Utförsäljningspris | **349 kr** |
+| Ordinarie pris (`compareAtPrice`) | **420 kr** |
+
+Båda siffrorna står i butiken på samtliga varianter, så båda får skrivas ut.
 
 | ✅ Får skrivas | ❌ Får aldrig skrivas |
 |---|---|
-| "lagerutförsäljning", "vi säljer ut lagret" | Någon rabattsiffra eller procent |
-| "nedsatt pris", "priset är nedsatt" | Något ordinarie pris i kronor |
-| "349 kr" | Något slutdatum |
-| "så långt lagret räcker" | Antal par kvar i lager |
+| "vi beställde in för många", "överskottslager" | Rabattsiffra i procent |
+| "lagerutförsäljning", "utförsäljningspris" | Antal produkter kvar i lager |
+| "349 kr istället för 420 kr" | Slutdatum |
+| "så långt lagret räcker" | Nedräkning eller klocka |
 
-Vi har ingen verifierad rabattsats för just den här produkten, bara att en
-utförsäljning pågår och att priset är nedsatt. Därför nämner manuset varken
-procent eller jämförpris. **Knappheten uttrycks enbart som "så långt lagret
-räcker".** Det är hela knapphetsvokabulären, precis som i Bryn-annonsen där
-"bara så länge lagret räcker" gör hela jobbet.
+**Använd kronorna, aldrig procenten.** Det är också vad källannonsen gör i sin
+listicle-form ("299 kr istället för 367 kr"), och två konkreta belopp är
+starkare än en procentsats.
 
 Manuset finns i två versioner. Beat 2 och 4 till 9 är **ordagrant identiska** i
 båda, så samma inspelning täcker dem.
 
 | Version | Ad-namn | Beat 1, 3, 10 | Status |
 |---|---|---|---|
-| **A. Erbjudandeledd** | `Beachslippers_SO_6_H1` | Lagerutförsäljningen bär hooken | **Primär. Spela in denna.** |
+| **A. Erbjudandeledd** | `Beachslippers_SO_6_H1` | Överbeställningen bär hooken | **Primär. Spela in denna.** |
 | **B. Problemledd** | `Beachslippers_PD_17_H1` | Halkandet bär hooken, inget pris | Kontrollversion |
 
-Version A är den som faktiskt speglar swipen. **Version B är värd att spela in i
-samma tagning** eftersom den isolerar en variabel vi aldrig testat: om det är
-erbjudandet eller problemet som drar. Två extra minuter framför kameran.
+Version A är den som speglar swipen. **Version B är värd att spela in i samma
+tagning** eftersom den isolerar en variabel vi aldrig testat: drar erbjudandet
+eller drar problemet? Två extra minuter framför kameran.
 
 ---
 
@@ -87,8 +100,8 @@ pratar rakt in i kameran i beat 1 till 3 och beat 10, resten går som voiceover
 
 | Swedish (use this) | English meaning |
 |---|---|
-| Vi säljer ut lagret av de här strandtofflorna i butiken. | We are clearing out the stock of these slippers in the store. |
-| Därför är priset nedsatt till 349 kronor just nu. | That is why the price is reduced to 349 SEK right now. |
+| Vi beställde in för många strandtofflor till Bäverbutiken. | We ordered in too many beach slippers for Bäverbutiken. |
+| Det betyder att du kan få ett par till ett lägre pris. | That means you can get a pair at a lower price. |
 
 **Version B, problemledd**
 
@@ -112,9 +125,9 @@ pratar rakt in i kameran i beat 1 till 3 och beat 10, resten går som voiceover
 
 | Swedish (use this) | English meaning |
 |---|---|
-| Priset är 349 kronor. | The price is 349 SEK. |
-| Du får 30 dagars nöjd kund garanti. | You get a 30-day satisfaction guarantee. |
-| Det gäller så långt lagret räcker. | That applies while stock lasts. |
+| Just nu kostar de 349 kronor istället för 420. | Right now they cost 349 kronor instead of 420. |
+| Du har 30 dagars nöjd-kund-garanti om de inte känns rätt. | You have a 30-day satisfaction guarantee if they do not feel right. |
+| Det här gäller så långt lagret räcker. | This applies while stock lasts. |
 
 **Version B**
 
@@ -170,8 +183,8 @@ pratar rakt in i kameran i beat 1 till 3 och beat 10, resten går som voiceover
 
 | Swedish (use this) | English meaning |
 |---|---|
-| Vi säljer ut lagret av strandtofflorna i storlek 36 till 47, till 349 kronor. | We are clearing out the stock of the slippers in sizes 36 to 47, at 349 SEK. |
-| Beställ dina nu, så långt lagret räcker. | Order yours now, while stock lasts. |
+| Vi råkade beställa in för många, så nu får du strandtofflorna för 349 kronor istället för 420, i storlekar 36 till 47. | We happened to order in too many, so now you get the beach slippers for 349 kronor instead of 420, in sizes 36 to 47. |
+| Beställ dina idag. | Order yours today. |
 
 **Version B**
 
@@ -232,12 +245,14 @@ grinden som allt annat.
 - Ad-namn `Beachslippers_SO_6_H1` (version A, primär) och `Beachslippers_PD_17_H1`
   (version B, kontroll).
 
-⚠️ **Kontrollera landningssidan innan annonsen går live.** Annonsen säger
-"nedsatt pris", men produktsidan visar idag bara 349 kr utan överstruket
-ordinariepris (`compareAtPrice` ligger på 348,75 kr, alltså i praktiken inget
-jämförpris). Klickar någon in och ser en helt vanlig prislapp faller påståendet
-platt. Sätt ordinariepriset i Shopify så att utförsäljningen syns på sidan,
-eller peka annonsen på listiclen där skälet står i klartext.
+✅ **Landningssidan stämmer.** Produktsidan visar 349 kr med 420 kr överstruket
+på samtliga varianter (kontrollerat i Shopify 2026-08-13). Siffrorna i manuset
+är alltså desamma som kunden möter efter klicket.
+
+**Landningssida:** produktsidan, eller listiclen
+`/pages/strandtofflor-halkfria`, som nu bär samma överbeställningshistoria från
+första skärmen. Vill du testa listiclen mot produktsidan är den här annonsen
+rätt tillfälle, eftersom budskapet är identiskt på båda.
 - **Eget ad set, max 2 till 3 annonser i det.** Bekräftat två gånger nu att
   Meta ger en annons 82 till 94 procent av budgeten när fler ligger i samma set.
 - Hookvarianterna `H2` och `H3` läggs i samma ad set när de kommer.

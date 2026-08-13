@@ -9,31 +9,49 @@ Ingen dom sätts på annons under 300 kr spend eller 3 köp.
 
 ---
 
-## ERBJUDANDET: verklig lagerutförsäljning `ÄGARUPPGIFT 2026-08-13`
+## ERBJUDANDET: överbeställning och lagerutförsäljning `ÄGARUPPGIFT 2026-08-13`
 
-Bäverbutiken kör en **verklig lagerutförsäljning** i sina e-handelsbutiker.
-Syftet är att sälja ned befintligt lager. Priserna kunderna ser nu är nedsatta
-mot ordinarie. Detta är ingen påhittad kampanjvinkel och får kommuniceras rakt ut.
+Verifierad förstahandsuppgift från ägaren. Detta är faktagrunden för allt
+offer-material och ersätter tidigare formuleringar om att skälet var okänt.
 
-**Ordinarie ligger normalt omkring 25 % högre i verksamheten som helhet**, men
-det är inte en produktspecifik siffra för strandtofflorna och får därför aldrig
-skrivas ut i creative för den här produkten.
+**Bäverbutiken råkade beställa in för många produkter.** Lagret blev större än
+planerat, vi sitter med mer lager än vi vill behålla och behöver frigöra
+lagerutrymme. Därför kör vi lagerutförsäljning, och därför är priset nedsatt.
+
+Kedjan ska höras i den ordningen i allt material:
+
+> vi råkade beställa för många → lagret blev större än planerat → vi behöver
+> sälja ned det → därför lagerutförsäljning → därför nedsatt pris
+
+**Priset, verifierat i Shopify 2026-08-13 (uppdaterat av ägaren samma dag):**
+
+| | |
+|---|---|
+| Utförsäljningspris | **349 kr** |
+| Ordinarie (`compareAtPrice`) | **420 kr** |
+
+Samma på samtliga 36 varianter. Båda siffrorna får skrivas ut.
 
 | ✅ Får skrivas | ❌ Får aldrig skrivas |
 |---|---|
-| "lagerutförsäljning", "vi säljer ut lagret" | Rabattsiffra eller procent |
-| "nedsatt pris", "priset är nedsatt" | Ordinarie pris i kronor |
-| "349 kr" | Slutdatum |
-| "så långt lagret räcker" | Antal par i lager |
-| | Nedräkning eller klocka |
+| "vi råkade beställa in för många", "vi beställde fler än vi behövde" | Rabattsiffra i procent |
+| "överskottslager", "lagret blev större än planerat" | Antal produkter kvar i lager |
+| "lagerutförsäljning", "utförsäljningspris" | Slutdatum |
+| "349 kr istället för 420 kr" | Nedräkning eller klocka |
+| "så långt lagret räcker" | Falsk brådska av något slag |
 
-**Knappheten uttrycks enbart som "så långt lagret räcker".** Det är hela
-knapphetsvokabulären. Detta gäller alla SO-annonser, listiclen och videomanus.
+**Använd kronorna, aldrig procenten.** Två konkreta belopp slår en procentsats,
+och det är också vad källmaterialet gör. Knappheten uttrycks enbart som
+"så långt lagret räcker" — det är hela knapphetsvokabulären.
 
-🔴 **Produktsidan matchar inte påståendet än.** `compareAtPrice` ligger på
-348,75 kr mot priset 349 kr, alltså visas inget överstruket ordinariepris.
-Säger annonsen "nedsatt pris" och landningssidan visar en vanlig prislapp
-faller påståendet. **Ägaråtgärd: sätt ordinariepriset i Shopify.**
+**Priset ärligt åt båda håll:** materialet ska säga att 420 kr är vad de kostar
+i vanliga fall och att priset går tillbaka dit när lagret är slut. Det är en
+regel ur `docs/os/LISTICLE-FRAMEWORK.md` och den gäller även video.
+
+⚠️ **Lagernivå per variant är ojämn.** Flera storlekar i svart och kaki ligger på
+0 eller negativt saldo (t.ex. 38/Svart −5, 39/Svart −4). Det påverkar inte vad
+copyn får säga, men driver vi hård trafik mot en utsåld storlek betalar vi för
+klick som inte kan konvertera. Värt en kontroll före launch.
 
 ---
 
