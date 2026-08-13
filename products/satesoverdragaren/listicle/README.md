@@ -66,7 +66,9 @@ period, eftersom det inte går att belägga ur underlaget.
 - 0 em-dash, 0 tankstreck i löptext
 - Ordet "överstruket" får inte finnas
 - Källproduktens ord (motorhölje, kåpa, båt, salt, vax, glans, 420D, hk,
-  dragsko, lagerrensning, 299 kr, 367 kr ...) måste vara 0
+  dragsko, 299 kr, 367 kr ...) måste vara 0
+- Obelagda påståenden i VÅR nya text måste vara 0: procentsatser, "sista
+  chansen", "bara idag", "gäller till", slutdatum, "bara X kvar", "X sålda"
 - Alla gamla bild-URL:er borta, alla nya använda minst en gång
 - Gamla produktlänken 0 träffar, nya finns
 - Obligatoriska strängar: 649 kr, 811 kr, 600D, "OBS: Detta är reklam."
