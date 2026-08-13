@@ -151,16 +151,20 @@ for (const camp of cfg.campaigns) {
   let c = campaigns.find(x => x.name === camp.campaignName);
   if (!c && camp.create) {
     // ABO: ingen budget på kampanjnivå — den sätts per adset
-    if (DRY) { console.log(`### ${camp.campaignName} — SKAPAS (${camp.create.buyingType || 'ABO'})`); c = { id: 'DRY', name: camp.campaignName }; }
+    if (DRY) { console.log(`### ${camp.campaignName} — SKAPAS (${camp.create.dailyBudget ? 'CBO ' + camp.create.dailyBudget / 100 + ' kr/dag' : 'ABO'})`); c = { id: 'DRY', name: camp.campaignName }; }
     else {
+      const cbo = camp.create.dailyBudget;
       const nyc = await api(`${cfg.act}/campaigns`, { method: 'POST', form: {
         name: camp.campaignName, objective: camp.create.objective || 'OUTCOME_SALES',
         status: camp.create.status || 'PAUSED', special_ad_categories: '[]',
-        // ABO utan budgetdelning — adseten ska ha lika budget, inte låna av varandra
-        is_adset_budget_sharing_enabled: String(camp.create.budgetSharing ?? false),
+        ...(cbo
+          // CBO: budgeten ligger på kampanjen
+          ? { daily_budget: cbo, bid_strategy: camp.create.bidStrategy || 'LOWEST_COST_WITHOUT_CAP' }
+          // ABO utan budgetdelning — adseten ska ha lika budget, inte låna av varandra
+          : { is_adset_budget_sharing_enabled: String(camp.create.budgetSharing ?? false) }),
       }});
       c = { id: nyc.id, name: camp.campaignName };
-      console.log(`✓ Kampanj skapad (${camp.create.status || 'PAUSED'}, ABO): ${camp.campaignName} (${c.id})`);
+      console.log(`✓ Kampanj skapad (${camp.create.status || 'PAUSED'}, ${cbo ? `CBO ${cbo / 100} kr/dag` : 'ABO'}): ${camp.campaignName} (${c.id})`);
     }
   }
   if (!c) { console.log(`✗ Kampanjen "${camp.campaignName}" saknas — hoppar`); continue; }
