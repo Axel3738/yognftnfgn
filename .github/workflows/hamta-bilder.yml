@@ -1,0 +1,66 @@
+# Hämtar filer (produktsidor, bilder, giffar) via GitHub-runnern, som har
+# fritt internet till skillnad från Claude-sessionens sandlåda. Resultatet
+# committas till samma branch under hamtat/<mapp>/ så sessionen kan dra hem
+# och granska filerna med git.
+name: hamta-bilder
+
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "Radseparerade URL:er att hämta"
+        required: true
+        type: string
+      mapp:
+        description: "Målmapp under hamtat/"
+        required: false
+        default: "produkt"
+        type: string
+
+jobs:
+  hamta:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Hämta filerna
+        env:
+          URLS: ${{ inputs.urls }}
+          MAPP: ${{ inputs.mapp }}
+        run: |
+          set -u
+          mal="hamtat/${MAPP}"
+          mkdir -p "$mal"
+          i=0
+          printf '%s\n' "$URLS" | while IFS= read -r url; do
+            [ -z "$url" ] && continue
+            i=$((i+1))
+            tmp="$(mktemp)"
+            kod=$(curl -sSL --max-time 90 --retry 2 \
+              -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36" \
+              -H "Accept-Language: sv-SE,sv;q=0.9,en;q=0.8" \
+              -o "$tmp" -w "%{http_code}" "$url" || echo "000")
+            mime=$(file --mime-type -b "$tmp" 2>/dev/null || echo "okand")
+            case "$mime" in
+              image/gif)  ext="gif" ;;
+              image/png)  ext="png" ;;
+              image/webp) ext="webp" ;;
+              image/jpeg) ext="jpg" ;;
+              text/html)  ext="html" ;;
+              *)          ext="bin" ;;
+            esac
+            mv "$tmp" "$mal/fil-$i.$ext"
+            echo "fil-$i.$ext  HTTP $kod  $mime  $url" >> "$mal/logg.txt"
+          done
+          cat "$mal/logg.txt" || true
+
+      - name: Committa resultatet
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add hamtat/
+          git diff --cached --quiet && echo "Inget att committa" && exit 0
+          git commit -m "Hämtade filer via hamta-bilder-arbetsflödet"
+          git push
