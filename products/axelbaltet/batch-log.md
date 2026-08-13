@@ -605,3 +605,55 @@ Citatstatiken med recensionstexter är fortfarande blockerad. Bundle-vinkeln for
   byggas i video också.
 - ⚠️ **Target-CPA 185 och break-even 326 är fortfarande räknade på gamla priset 509 kr.**
   Alla vinstsiffror ovan är därmed konservativa. **Ägaren räknar om.**
+
+---
+
+## Listicle 2026-08-13 — `axelbalte-trimmer-listicle`
+
+Byggd enligt `docs/os/LISTICLE-FRAMEWORK.md` (branch `claude/meta-creative-strategist-os-mtkaqu`)
+genom att klona **Motorhölje – Lagerrensning**-sidans GemPages-export. Struktur, CSS, spacing och
+sektionsordning orörda; all text och alla produktbilder bytta 1:1. Copy skriven av sonnet-subagent.
+
+**Vinkelval:** H1 leder med **problemet**, inte med ett erbjudande. Motorhöljets H1 bar en
+lagerrensning; för axelbältet finns ingen verifierad lagerorsak, och smärtvinkeln ger dessutom
+~2× vinst per krona mot säsong/offer i annonsdatan. Priset ligger i stället i dek, sammanfattning,
+knappar och ärlighetssektionen.
+
+**De fem punkterna (rollordningen från frameworket, oförändrad):**
+
+| # | Roll | Axelbältets version |
+|---|---|---|
+| 1 | Förnekelse | Det gör inte ont medan du trimmar |
+| 2 | Falsk lösning A | Du har redan egna knep, och de hjälper nästan |
+| 3 | Oåterkallelighet | Sista biten blir aldrig klar den här helgen |
+| 4 | Ackumulerad kostnad | Det kostar dig inte en eftermiddag, det kostar dig hela säsongen (det här missar nästan alla) |
+| 5 | Falsk lösning B | Den billiga remmen du redan provat |
+
+Punkt 3 är omtolkad medvetet: motorhöljets oåterkallelighet var fysisk (blekt gelcoat går inte att
+polera tillbaka). För en kropp vore motsvarande ett **medicinskt claim**, vilket är förbjudet.
+Det oåterkalleliga är i stället **arbetet du inte hann göra** — gräset hinner växa igen.
+
+**Ärlighetssektionen: ingen påhittad orsak.** Motorhöljet hade ett äkta överlager. Det har vi inte
+verifierat här, så sidan påstår ingen lagerrensning, ingen utförsäljning och inget parti som tar
+slut. Den säger i stället rakt ut att det inte finns någon nedräkningsklocka och ingen påhittad
+rabattprocent, att 678 kr är ordinarie pris och 599 kr är priset nu. Den enda brådskan är
+kalenderfaktumet att trimningssäsongen har några veckor kvar.
+
+**Bilder:** Anders profilbild och Bäverbutikens logotyp behållna. Sju bilder bytta: fyra
+Shopify-produktfoton plus tre av batch #5:s statics (kvällsbilden, mekanismdiagrammet och
+prisbilden 678→599), uppladdade till Shopify-CDN så sidan får permanenta URL:er.
+
+**Verifieringsgrindar (alla gröna):** 27/27 textnycklar träffade · 0 tankstreck i löptext ·
+0 kvarlevor av källproduktens ord (motorhölje, kåpa, utombordare, båtägare, Oxford, brygga,
+299/367 kr) · 0 förbjudna priser (509/636/"20 %") · produktlänken bytt på 8 ställen ·
+alla 7 nya bilder använda.
+
+**Kvar att göra (ägare/manager):**
+- Polish-passet i GemPages efter import (frameworkets Del 4): typsnitt Anton/Inter, bild under
+  rubrik och CTA efter text i varje punkt, egen bild i ärlighetssektionen, vit footer.
+- Peka annonser hit. Enligt frameworket: *annonsens löfte = sidans första mening.* Sidans första
+  mening är smärtvinkeln, alltså är det **PD-blocket** som ska peka hit, inte SO-blocket.
+- Mätning: klick→köp för de annonser som pekar hit, mot samma annonser mot produktsidan.
+  Samma grind som annonser: 300 kr spend och 3 köp innan dom.
+- **Om det finns en äkta orsak till priset** (överlager, säsongsavslut, leverantörsparti) räcker
+  det med en mening från ägaren, så byts ärlighetssektionen ut. Den hittas aldrig på av Claude.
