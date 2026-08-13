@@ -1,0 +1,333 @@
+[
+ {
+  "handle": "portabel-utomhusgrill",
+  "id": "gid://shopify/Product/15284149027140",
+  "status": "ACTIVE",
+  "title": "Portabel Utomhusgrill – Liten & Stor modell",
+  "descriptionHtml": "<p data-start=\"223\" data-end=\"501\">Njut av grillade favoriter var du än är!<br data-start=\"263\" data-end=\"266\">Vår portabla utomhusgrill är perfekt för camping, picknick, stranden eller balkongen. Den kompakta designen gör den enkel att bära med sig, samtidigt som den robusta konstruktionen i stål ger lång hållbarhet och jämn värmefördelning.</p>\n<p data-start=\"503\" data-end=\"557\">Finns i två storlekar för att passa just ditt behov:</p>\n<ul data-start=\"559\" data-end=\"645\">\n<li data-start=\"559\" data-end=\"601\">\n<p data-start=\"561\" data-end=\"601\"><strong data-start=\"561\" data-end=\"577\">Stor modell:</strong> 43 cm x 29 cm x 23 cm</p>\n</li>\n<li data-start=\"602\" data-end=\"645\">\n<p data-start=\"604\" data-end=\"645\"><strong data-start=\"604\" data-end=\"621\">Liten modell:</strong> 35 cm x 27 cm x 20 cm</p>\n</li>\n</ul>\n<p data-start=\"647\" data-end=\"742\">Båda storlekarna är enkla att montera och använda – redo för grillning på bara några minuter.</p>\n<h4 data-start=\"744\" data-end=\"762\">Egenskaper:</h4>\n<ul data-start=\"763\" data-end=\"975\">\n<li data-start=\"763\" data-end=\"825\">\n<p data-start=\"765\" data-end=\"825\">Portabel design – perfekt för utflykter, camping &amp; balkong</p>\n</li>\n<li data-start=\"826\" data-end=\"856\">\n<p data-start=\"828\" data-end=\"856\">Stabil konstruktion i stål</p>\n</li>\n<li data-start=\"857\" data-end=\"899\">\n<p data-start=\"859\" data-end=\"899\">Enkel att montera, använda och rengöra</p>\n</li>\n<li data-start=\"900\" data-end=\"937\">\n<p data-start=\"902\" data-end=\"937\">Välj mellan liten och stor modell</p>\n</li>\n<li data-start=\"938\" data-end=\"975\">\n<p data-start=\"940\" data-end=\"975\">Passar kol för klassisk grillsmak</p>\n</li>\n</ul>\n<h4 data-start=\"977\" data-end=\"1015\">Varför välja en portabel grill?</h4>\n<p data-start=\"1016\" data-end=\"1286\">En portabel grill ger dig friheten att grilla när och var du vill. Den är lätt att bära, enkel att ställa upp och tar liten plats när den inte används. Perfekt för dig som inte vill kompromissa med grillat – oavsett om du är hemma, på resande fot eller mitt i naturen.</p>",
+  "seo": {
+   "title": null,
+   "description": null
+  },
+  "tags": [],
+  "productType": "",
+  "vendor": "GrillaMer",
+  "templateSuffix": "grill-golf-kit",
+  "options": [
+   {
+    "name": "Storlek",
+    "position": 1,
+    "values": [
+     "Stor",
+     "Liten"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "title": "Stor",
+    "sku": null,
+    "price_sek": "599.00",
+    "price_mxn": 1139,
+    "compareAt_sek": null,
+    "compareAt_mxn": null,
+    "selectedOptions": [
+     {
+      "name": "Storlek",
+      "value": "Stor"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   },
+   {
+    "title": "Liten",
+    "sku": null,
+    "price_sek": "499.00",
+    "price_mxn": 949,
+    "compareAt_sek": null,
+    "compareAt_mxn": null,
+    "selectedOptions": [
+     {
+      "name": "Storlek",
+      "value": "Liten"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   }
+  ],
+  "media": [
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Stor.png?v=1758044306",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Liten.png?v=1758044319",
+    "alt": null
+   }
+  ]
+ },
+ {
+  "handle": "majskolvshallare-10-pack",
+  "id": "gid://shopify/Product/15285248655684",
+  "status": "ACTIVE",
+  "title": "Majskolvshållare - 10 Pack",
+  "descriptionHtml": "<p data-end=\"357\" data-start=\"182\">Gör det enklare och roligare att äta majskolv!<br data-end=\"231\" data-start=\"228\">Med dessa praktiska majskolvshållare slipper du kladdiga händer och får ett bra grepp när du äter nygrillad eller kokt majs.</p>\n<h4 data-end=\"377\" data-start=\"359\">Egenskaper:</h4>\n<ul data-end=\"521\" data-start=\"378\">\n<li data-end=\"406\" data-start=\"378\">\n<p data-end=\"406\" data-start=\"380\">10-pack majskolvshållare</p>\n</li>\n<li data-end=\"444\" data-start=\"407\">\n<p data-end=\"444\" data-start=\"409\">Ger säkert grepp och mindre kladd</p>\n</li>\n<li data-end=\"487\" data-start=\"445\">\n<p data-end=\"487\" data-start=\"447\">Perfekt till grillkvällar och middagar</p>\n</li>\n<li data-end=\"521\" data-start=\"488\">\n<p data-end=\"521\" data-start=\"490\">Lätta att använda och rengöra</p>\n</li>\n</ul>\n<p data-end=\"584\" data-start=\"523\">Ett enkelt tillbehör som gör grillkvällen ännu bättre! </p>",
+  "seo": {
+   "title": null,
+   "description": null
+  },
+  "tags": [],
+  "productType": "",
+  "vendor": "GrillaMer",
+  "templateSuffix": "grill-golf-kit",
+  "options": [
+   {
+    "name": "Title",
+    "position": 1,
+    "values": [
+     "Default Title"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "title": "Default Title",
+    "sku": null,
+    "price_sek": "99.00",
+    "price_mxn": 189,
+    "compareAt_sek": null,
+    "compareAt_mxn": null,
+    "selectedOptions": [
+     {
+      "name": "Title",
+      "value": "Default Title"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   }
+  ],
+  "media": [
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/12deef1e-4f95-4f42-a976-1fd736598cf3.jpg?v=1758127417",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/f245c06a-589a-44fc-8bb8-f4ef0700d59b.jpg?v=1758127429",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/a75c0ac7-50bb-4af8-8e33-2920a3f87b0f.jpg?v=1758127438",
+    "alt": null
+   }
+  ]
+ },
+ {
+  "handle": "forklade-kvinna-i-bikini",
+  "id": "gid://shopify/Product/15286671311172",
+  "status": "ACTIVE",
+  "title": "Förkläde - Kvinna i bikini",
+  "descriptionHtml": "<p data-start=\"166\" data-end=\"333\">Ett kul och somrigt förkläde som garanterat väcker uppmärksamhet. Perfekt för grillkvällar, fester eller som en rolig present till någon som gillar skojiga detaljer.</p>\n<ul data-start=\"335\" data-end=\"431\">\n<li data-start=\"335\" data-end=\"361\">\n<p data-start=\"337\" data-end=\"361\">Färgglad bikini-design</p>\n</li>\n<li data-start=\"362\" data-end=\"392\">\n<p data-start=\"364\" data-end=\"392\">Skyddar kläderna mot spill</p>\n</li>\n<li data-start=\"393\" data-end=\"431\">\n<p data-start=\"395\" data-end=\"431\">Perfekt skämt- eller partyförkläde</p>\n</li>\n</ul>",
+  "seo": {
+   "title": null,
+   "description": null
+  },
+  "tags": [],
+  "productType": "",
+  "vendor": "Grillverkstan",
+  "templateSuffix": "grill-golf-kit",
+  "options": [
+   {
+    "name": "Title",
+    "position": 1,
+    "values": [
+     "Default Title"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "title": "Default Title",
+    "sku": null,
+    "price_sek": "149.00",
+    "price_mxn": 289,
+    "compareAt_sek": null,
+    "compareAt_mxn": null,
+    "selectedOptions": [
+     {
+      "name": "Title",
+      "value": "Default Title"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   }
+  ],
+  "media": [
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppBild2025-09-10kl.09.58.33_1f58d59d.jpg?v=1758263968",
+    "alt": null
+   }
+  ]
+ },
+ {
+  "handle": "premium-biffknivar-i-rostfritt-stal-6-pack-med-elegant-forvaringslada",
+  "id": "gid://shopify/Product/15291776041284",
+  "status": "ACTIVE",
+  "title": "Premium Biffknivar i Rostfritt Stål – 6-pack med elegant förvaringslåda",
+  "descriptionHtml": "<p data-start=\"237\" data-end=\"458\">Ge middagsbordet en lyxig känsla med vårt exklusiva set av biffknivar. Dessa knivar är tillverkade i högkvalitativt rostfritt stål med tandad egg som enkelt skär igenom kött, grillat och andra råvaror utan ansträngning.</p>\n<p data-start=\"460\" data-end=\"710\">De ergonomiska handtagen ger ett bekvämt grepp och den välbalanserade designen gör varje måltid till en upplevelse. Knivarna levereras i en elegant presentförpackning, vilket gör dem till ett perfekt val både för dig själv och som en exklusiv gåva.</p>\n<h4 data-start=\"712\" data-end=\"730\">Egenskaper:</h4>\n<ul data-start=\"731\" data-end=\"938\">\n<li data-start=\"731\" data-end=\"768\">\n<p data-start=\"733\" data-end=\"768\">6 st biffknivar i premiumkvalitet</p>\n</li>\n<li data-start=\"769\" data-end=\"809\">\n<p data-start=\"771\" data-end=\"809\">Skarpa tandade blad i rostfritt stål</p>\n</li>\n<li data-start=\"810\" data-end=\"853\">\n<p data-start=\"812\" data-end=\"853\">Ergonomiska handtag för maximal komfort</p>\n</li>\n<li data-start=\"854\" data-end=\"890\">\n<p data-start=\"856\" data-end=\"890\">Elegant presentförpackning ingår</p>\n</li>\n<li data-start=\"891\" data-end=\"938\">\n<p data-start=\"893\" data-end=\"938\">Perfekta för kött, grillat och festmiddagar</p>\n</li>\n</ul>",
+  "seo": {
+   "title": null,
+   "description": null
+  },
+  "tags": [],
+  "productType": "",
+  "vendor": "Grillkliniken",
+  "templateSuffix": "grill-golf-kit",
+  "options": [
+   {
+    "name": "Title",
+    "position": 1,
+    "values": [
+     "Default Title"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "title": "Default Title",
+    "sku": null,
+    "price_sek": "999.00",
+    "price_mxn": 1899,
+    "compareAt_sek": null,
+    "compareAt_mxn": null,
+    "selectedOptions": [
+     {
+      "name": "Title",
+      "value": "Default Title"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   }
+  ],
+  "media": [
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppBild2025-09-23kl.10.56.25_61a4d106.jpg?v=1758645049",
+    "alt": null
+   }
+  ]
+ },
+ {
+  "handle": "borst-huvud",
+  "id": "gid://shopify/Product/15537598988612",
+  "status": "UNLISTED",
+  "title": "Borsthuvud",
+  "descriptionHtml": "",
+  "seo": {
+   "title": null,
+   "description": null
+  },
+  "tags": [],
+  "productType": "",
+  "vendor": "Grillkliniken",
+  "templateSuffix": "",
+  "options": [
+   {
+    "name": "Title",
+    "position": 1,
+    "values": [
+     "Default Title"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "title": "Default Title",
+    "sku": null,
+    "price_sek": "200.00",
+    "price_mxn": 389,
+    "compareAt_sek": null,
+    "compareAt_mxn": null,
+    "selectedOptions": [
+     {
+      "name": "Title",
+      "value": "Default Title"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   }
+  ],
+  "media": [
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/CharBreaker_Accessories_1.webp?v=1776973079",
+    "alt": null
+   }
+  ]
+ },
+ {
+  "handle": "polerhuvud-1",
+  "id": "gid://shopify/Product/15558983254340",
+  "status": "ACTIVE",
+  "title": "Polérhuvud",
+  "descriptionHtml": "",
+  "seo": {
+   "title": null,
+   "description": null
+  },
+  "tags": [],
+  "productType": "",
+  "vendor": "Grillkliniken",
+  "templateSuffix": "",
+  "options": [
+   {
+    "name": "Title",
+    "position": 1,
+    "values": [
+     "Default Title"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "title": "Default Title",
+    "sku": null,
+    "price_sek": "200.00",
+    "price_mxn": 389,
+    "compareAt_sek": null,
+    "compareAt_mxn": null,
+    "selectedOptions": [
+     {
+      "name": "Title",
+      "value": "Default Title"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   }
+  ],
+  "media": [
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/CharBreaker_Accessories_3_4.jpg?v=1779438702",
+    "alt": null
+   }
+  ]
+ }
+]

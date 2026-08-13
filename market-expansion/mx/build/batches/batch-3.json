@@ -1,0 +1,472 @@
+[
+ {
+  "handle": "potatisskruv-skarare",
+  "id": "gid://shopify/Product/15284123271492",
+  "status": "ACTIVE",
+  "title": "Potatisskruv skärare – Gör chips & spiraler enkelt",
+  "descriptionHtml": "<p data-start=\"190\" data-end=\"454\">Skapa läckra potatisskruvar och chips på ett enkelt och roligt sätt!<br data-start=\"258\" data-end=\"261\">Med denna potatisskruv skärare kan du snabbt göra perfekta spiraler av potatis, gurka eller andra grönsaker – perfekt för fritering, grillning eller som ett roligt tillbehör på middagsbordet.</p>\n<ul data-start=\"456\" data-end=\"623\">\n<li data-start=\"456\" data-end=\"495\">\n<p data-start=\"458\" data-end=\"495\">Gör spiraler av potatis &amp; grönsaker</p>\n</li>\n<li data-start=\"496\" data-end=\"539\">\n<p data-start=\"498\" data-end=\"539\">Enkel att använda – bara trä och snurra</p>\n</li>\n<li data-start=\"540\" data-end=\"590\">\n<p data-start=\"542\" data-end=\"590\">Perfekt för chips, grilltillbehör eller snacks</p>\n</li>\n<li data-start=\"591\" data-end=\"623\">\n<p data-start=\"593\" data-end=\"623\">Slitstark och kompakt design</p>\n</li>\n</ul>\n<p data-start=\"625\" data-end=\"716\">Ett måste för dig som älskar att imponera på gästerna med snygga och krispiga snacks! 🥔</p>",
+  "seo": {
+   "title": null,
+   "description": null
+  },
+  "tags": [],
+  "productType": "",
+  "vendor": "Min butik",
+  "templateSuffix": "grill-golf-kit",
+  "options": [
+   {
+    "name": "Title",
+    "position": 1,
+    "values": [
+     "Default Title"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "title": "Default Title",
+    "sku": null,
+    "price_sek": "149.00",
+    "price_mxn": 289,
+    "compareAt_sek": null,
+    "compareAt_mxn": null,
+    "selectedOptions": [
+     {
+      "name": "Title",
+      "value": "Default Title"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   }
+  ],
+  "media": [
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/2469514bf9b748d7df2c5cefc6f83c271749711533850.webp?v=1758042819",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppBild2025-09-03kl.09.46.16_2b9a9d98.jpg?v=1758042832",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Namnlosdesign-2025-09-16T191500.884.png?v=1758042906",
+    "alt": null
+   }
+  ]
+ },
+ {
+  "handle": "grilltanger",
+  "id": "gid://shopify/Product/15285129445700",
+  "status": "ACTIVE",
+  "title": "Grilltänger – Flera storlekar",
+  "descriptionHtml": "<p data-start=\"256\" data-end=\"511\">En bra grilltång är ett måste för alla som älskar att grilla!<br data-start=\"317\" data-end=\"320\">\n Med dessa praktiska grilltänger kan du enkelt vända kött, grönsaker och tillbehör på grillen med bra kontroll. Silikonspetsarna ger ett säkert grepp och skyddar både maten och grillgallret.</p><p data-start=\"513\" data-end=\"637\">Finns i flera olika storlekar – välj den som passar bäst för din grillning eller kombinera flera för maximal flexibilitet.</p><p>\n\n</p><h4 data-start=\"639\" data-end=\"657\">Egenskaper:</h4>\n<ul data-start=\"658\" data-end=\"863\">\n <li data-start=\"658\" data-end=\"695\">\n  <p data-start=\"660\" data-end=\"695\">Slitstarka och tåliga grilltänger</p>\n<p></p>\n</li>\n <li data-start=\"696\" data-end=\"752\">\n  <p data-start=\"698\" data-end=\"752\">Silikonspetsar för säkert grepp och skydd av gallret</p>\n<p></p>\n</li>\n <li data-start=\"753\" data-end=\"796\">\n  <p data-start=\"755\" data-end=\"796\">Ergonomiskt handtag med halkfritt grepp</p>\n<p></p>\n</li>\n <li data-start=\"797\" data-end=\"835\">\n  <p data-start=\"799\" data-end=\"835\">Lätta att rengöra – tål diskmaskin</p>\n<p></p>\n</li>\n <li data-start=\"836\" data-end=\"863\">\n  <p data-start=\"838\" data-end=\"863\">Finns i flera storlekar</p>\n<p></p>\n</li>\n</ul>\n<h4 data-start=\"865\" data-end=\"914\">Varför välja grilltång med silikonspetsar?</h4>\n<p data-start=\"915\" data-end=\"1077\">Till skillnad från helt metalltänger är dessa mer skonsamma mot maten, ger bättre grepp och fungerar perfekt även för känsligare råvaror som fisk och grönsaker.</p><p data-start=\"1079\" data-end=\"1157\">Ett oumbärligt redskap för både vardagsgrillning och större grillkvällar!</p>",
+  "seo": {
+   "title": null,
+   "description": null
+  },
+  "tags": [],
+  "productType": "",
+  "vendor": "GrillaMer",
+  "templateSuffix": "grill-golf-kit",
+  "options": [
+   {
+    "name": "Storlek",
+    "position": 1,
+    "values": [
+     "39cm Röd",
+     "34cm Röd",
+     "27cm Röd",
+     "39cm Svart",
+     "34cm Svart",
+     "27cm Svart"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "title": "39cm Röd",
+    "sku": "20595#AS1778227407-red-39cm",
+    "price_sek": "99.00",
+    "price_mxn": 189,
+    "compareAt_sek": "0.00",
+    "compareAt_mxn": 9,
+    "selectedOptions": [
+     {
+      "name": "Storlek",
+      "value": "39cm Röd"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   },
+   {
+    "title": "34cm Röd",
+    "sku": "20595#AS1778227407-red-12",
+    "price_sek": "99.00",
+    "price_mxn": 189,
+    "compareAt_sek": "0.00",
+    "compareAt_mxn": 9,
+    "selectedOptions": [
+     {
+      "name": "Storlek",
+      "value": "34cm Röd"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   },
+   {
+    "title": "27cm Röd",
+    "sku": "20595#AS1778227407-red-9",
+    "price_sek": "99.00",
+    "price_mxn": 189,
+    "compareAt_sek": "0.00",
+    "compareAt_mxn": 9,
+    "selectedOptions": [
+     {
+      "name": "Storlek",
+      "value": "27cm Röd"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   },
+   {
+    "title": "39cm Svart",
+    "sku": "20595#AS1778227407-black-39cm",
+    "price_sek": "99.00",
+    "price_mxn": 189,
+    "compareAt_sek": "0.00",
+    "compareAt_mxn": 9,
+    "selectedOptions": [
+     {
+      "name": "Storlek",
+      "value": "39cm Svart"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   },
+   {
+    "title": "34cm Svart",
+    "sku": "20595#AS1778227407-black-34cm",
+    "price_sek": "99.00",
+    "price_mxn": 189,
+    "compareAt_sek": "0.00",
+    "compareAt_mxn": 9,
+    "selectedOptions": [
+     {
+      "name": "Storlek",
+      "value": "34cm Svart"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   },
+   {
+    "title": "27cm Svart",
+    "sku": "20595#AS1778227407-black-27cm",
+    "price_sek": "99.00",
+    "price_mxn": 189,
+    "compareAt_sek": "0.00",
+    "compareAt_mxn": 9,
+    "selectedOptions": [
+     {
+      "name": "Storlek",
+      "value": "27cm Svart"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   }
+  ],
+  "media": [
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Namnlosdesign-2025-09-17T163119.259.png?v=1758119500",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/17CM.png?v=1758119914",
+    "alt": null
+   }
+  ]
+ },
+ {
+  "handle": "forklade-sailor-moon",
+  "id": "gid://shopify/Product/15286670623044",
+  "status": "ACTIVE",
+  "title": "Förkläde - Sailor Moon",
+  "descriptionHtml": "<p data-start=\"158\" data-end=\"325\">Ett färgglatt och roligt förkläde med Sailor Moon-design. Perfekt för dig som vill skydda kläderna i köket eller vid grillen och samtidigt visa din nördigare sida.</p>\n<ul data-start=\"327\" data-end=\"419\">\n<li data-start=\"327\" data-end=\"354\">\n<p data-start=\"329\" data-end=\"354\">Unik Sailor Moon-design</p>\n</li>\n<li data-start=\"355\" data-end=\"386\">\n<p data-start=\"357\" data-end=\"386\">Skyddar mot spill och stänk</p>\n</li>\n<li data-start=\"387\" data-end=\"419\">\n<p data-start=\"389\" data-end=\"419\">Roligt presenttips till fans</p>\n</li>\n</ul>",
+  "seo": {
+   "title": null,
+   "description": null
+  },
+  "tags": [],
+  "productType": "",
+  "vendor": "Grillverkstan",
+  "templateSuffix": "grill-golf-kit",
+  "options": [
+   {
+    "name": "Title",
+    "position": 1,
+    "values": [
+     "Default Title"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "title": "Default Title",
+    "sku": null,
+    "price_sek": "149.00",
+    "price_mxn": 289,
+    "compareAt_sek": null,
+    "compareAt_mxn": null,
+    "selectedOptions": [
+     {
+      "name": "Title",
+      "value": "Default Title"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   }
+  ],
+  "media": [
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppBild2025-09-10kl.09.55.40_a2592290.jpg?v=1758263676",
+    "alt": null
+   }
+  ]
+ },
+ {
+  "handle": "roterande-grillkorg-i-rostfritt-stal-perfekt-for-gronsaker-kott-tillbehor",
+  "id": "gid://shopify/Product/15290956054852",
+  "status": "ACTIVE",
+  "title": "Greatgrill - Perfekt för Grönsaker, Kött & Tillbehör",
+  "descriptionHtml": "<div class=\"_chunkWrapper_6ta1u_30\">\n<p class=\"font-claude-response-body break-words whitespace-normal\"><strong>Folien räddar maten. Men den dödar smaken. Och du står ändå kvar vid grillen.</strong></p>\n<p class=\"font-claude-response-body break-words whitespace-normal\">Du känner igen det. Räkorna ramlar genom gallret, sparrisen fastnar och går av, paprikan blir svart på ena sidan och rå på den andra. Så du tar fram aluminiumfolie, en stekpanna eller en grillplatta för att rädda situationen.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\">Och visst, då faller ingenting ner. Men något annat går förlorat: maten slutar smaka grillat.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\">I folien ångkokas grönsakerna i sin egen vätska istället för att grillas. Stekpannan ger dig samma resultat som spisen inne, du kunde lika gärna ha struntat i grillen. Plattan stänger ute precis det som gör grillmat till grillmat: röken, lågan, den där ytan som inte går att fejka. Du står vid grillen, men maten smakar inte grill.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\">Och som om det inte räckte, du blir kvar där. Vänder tjugo småbitar en och en med tången medan köttet blir kallt, tillbehören blir klara vid fel tid och alla andra sitter och umgås utan dig.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\">Grönsaker är det svåraste av allt att grilla. Kött förlåter; en stek som ligger en minut för länge är fortfarande god. Men sparris, zucchini, svamp och räkor fastnar, faller sönder eller bränns på utsidan medan insidan är rå. Det är därför så många ger upp och serverar samma tråkiga grönsaker varje gång, eller skippar dem helt.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\">Det är inte du som är dålig på att grilla grönsaker. Det är metoden du tvingats använda som aldrig var byggd för jobbet.</p>\n</div>\n<div class=\"_chunkWrapper_6ta1u_30\">\n<p class=\"font-claude-response-body break-words whitespace-normal\"><span data-newtext-seq=\"79\" class=\"_animating_6ta1u_10\"><br><img alt=\"\" src=\"https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260616_125935_8ed8fee6-2c6f-4f3c-bed7-d87824289007.png?v=1781614856\"><br></span></p>\n<p class=\"font-claude-response-body break-words whitespace-normal\"><strong>Äntligen grönsaker som faktiskt smakar grillat – utan att du behöver passa dem.</strong></p>\n<p class=\"font-claude-response-body break-words whitespace-normal\">Grillkorgen gör det folien, pannan och plattan aldrig kunde: den håller varje liten bit på plats <em>och</em> släpper in röken, lågan och värmen från alla håll samtidigt.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\">Det betyder att sparrisen, räkorna och körsbärstomaterna får riktiga grillränder och den rökiga smaken som bara kommer av direkt kontakt med elden – utan att en enda bit ramlar ner. Inget ångkok. Ingen stekpannesmak. Ingen rå-på-insidan-bränd-på-utsidan.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\">Och du slutar passa. Du lägger i maten, stänger locket och rullar korgen några varv – hela satsen vänds i en enda rörelse, jämnt runt om, istället för bit för bit. Sätt den på grillen, rulla då och då, och gå och sätt dig med gästerna. Maten sköter sig.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\">Det blir grillat på riktigt. Godare än du trodde att grönsaker kunde bli – och enklare än du trodde var möjligt.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\"><strong style=\"font-size: 0.875rem;\"><img alt=\"\" src=\"https://cdn.shopify.com/s/files/1/0947/0174/8548/files/b9cc00ce-e41c-4f09-813e-da4cc3279972_720x720_5c4b8ad5-ec0c-4994-a660-8c0eccca442c.webp?v=1781615167\"></strong></p>\n<h4 class=\"font-claude-response-body break-words whitespace-normal\"><strong>Genomtänkt in i minsta detalj.</strong></h4>\n<h4 class=\"font-claude-response-body break-words whitespace-normal\">\n<strong>Säker låsmekanism</strong> – Locket stängs enkelt och håller maten på plats medan du rullar. Inga klämmor, inga verktyg. Öppna, fyll, lås.</h4>\n<p class=\"font-claude-response-body break-words whitespace-normal\"><strong>Finmaskigt nät</strong> – Tätt nog att hålla räkor, körsbärstomater och sparris kvar. Öppet nog att rök och låga ska nå maten från alla vinklar.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\"><strong>Krok medföljer</strong> – Lyft och flytta den heta korgen tryggt, utan extra verktyg vid grillen.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\"><strong>Rostfritt stål</strong> – Tål hög värme utan att rosta, missfärgas eller deformeras. Byggt för att hålla säsong efter säsong.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\"><strong>Tål diskmaskin</strong> – Klar med grillningen, klar med disken. Inget skrubbande, ingen blötläggning. Rakt in i maskinen.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\"><strong>Funkar på alla grillar</strong> – Gas, kol eller pellets. Lägg den på vilken grill som helst.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\"><strong>Slipp den billiga fällan.</strong> Du har kanske redan testat en korg från Amazon eller Temu som böjde sig, rostade eller bara inte funkade efter ett par gånger. Det här är inte den. Den är byggd för att användas på riktigt, om och om igen – och vi står bakom den.</p>\n<blockquote class=\"ml-2 border-l-4 border-[hsl(var(--border-300)/0.1)] pl-4 text-text-300\"></blockquote>\n<img src=\"https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Namnlosdesign-2025-09-22T184001.520_96efb5d9-b46b-4be2-83a4-2747ba1b5e2f.png?v=1781615333\" alt=\"\"><br>\n<h3 class=\"text-text-100 mt-3 -mb-1 text-[1.125rem] font-bold\">GARANTI</h3>\n<p class=\"font-claude-response-body break-words whitespace-normal\"><strong>Vi står bakom den. På riktigt.</strong></p>\n<p class=\"font-claude-response-body break-words whitespace-normal\">Den här korgen är byggd för att hålla i åratal, grillkväll efter grillkväll. Skulle något ändå gå fel ersätter vi den – inga frågor, inget krångel.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal\">✓ Fri frakt inom Sverige<br>✓ 30 dagars öppet köp – riskfritt<br>✓ Livstidsgaranti</p>\n<h3 class=\"font-claude-response-body break-words whitespace-normal\"><img src=\"https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260616_131041_d0c202dd-adc3-4b7e-85cf-dc48cbf6d0bb.png?v=1781621318\" alt=\"\"></h3>\n</div>",
+  "seo": {
+   "title": null,
+   "description": null
+  },
+  "tags": [],
+  "productType": "",
+  "vendor": "Grillkliniken",
+  "templateSuffix": "grill-golf-kit",
+  "options": [
+   {
+    "name": "Handtagstyp",
+    "position": 1,
+    "values": [
+     "Inget handtag",
+     "handtag"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "title": "Inget handtag",
+    "sku": null,
+    "price_sek": "320.00",
+    "price_mxn": 609,
+    "compareAt_sek": "449.00",
+    "compareAt_mxn": 859,
+    "selectedOptions": [
+     {
+      "name": "Handtagstyp",
+      "value": "Inget handtag"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   },
+   {
+    "title": "handtag",
+    "sku": null,
+    "price_sek": "350.00",
+    "price_mxn": 669,
+    "compareAt_sek": "449.00",
+    "compareAt_mxn": 859,
+    "selectedOptions": [
+     {
+      "name": "Handtagstyp",
+      "value": "handtag"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   }
+  ],
+  "media": [
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/1f94e684-868c-4e1d-a08d-9134d47252c8_720x720_0dda0830-c49d-40f6-8a45-36898d34c299.webp?v=1758558936",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Namnlosdesign-2026-06-16T200946.901.png?v=1781633395",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/b9cc00ce-e41c-4f09-813e-da4cc3279972_720x720_e7d85b0e-37e5-4ef6-9eec-ec79813c6d04.webp?v=1758558961",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/e8a8d988-9e60-4ae9-a4a1-291c5d38e8e1_720x720_d9129db2-b854-41ca-8e44-c6b5a640115b.webp?v=1758558963",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Namnlosdesign-2025-09-22T184001.520.png?v=1758559209",
+    "alt": null
+   }
+  ]
+ },
+ {
+  "handle": "elektrisk-grillborste",
+  "id": "gid://shopify/Product/15536325427524",
+  "status": "ACTIVE",
+  "title": "Mastern — Gallret skinande. Ölen kall.",
+  "descriptionHtml": "<div style=\"width:100%;max-width:100%;min-width:0;box-sizing:border-box;overflow-wrap:break-word;word-wrap:break-word;\">\n<h3>\nGästerna kommer om en timme.\n</h3>\n<p>Du gör allt rätt. Köttet från en riktig slaktare. Termometern. Vilan. Ändå blir det aldrig riktigt som på restaurang och gallret ser ut som det alltid gör: blankt på ytan, svart nere i sprinorna.</p>\n<p>Du plockar fram stålborsten. Skrubbar. Tjugo minuter senare ser det rent ut.</p>\n<p>Det är det inte. En stålborste når bara ytan. Fettet i springorna sitter kvar och ikväll värms det upp igen, ryker, och sätter smak på köttet du serverar.</p>\n<p>Och det är inte ens det dyraste problemet. Inbränt fett är frätande. Det bryter långsamt ner metallen underifrån. En grill för femton tusen ska hålla i femton år. Med ett smutsigt galler håller den kanske sju.</p>\n<p>Stålborsten då? I februari 2026 återkallade Weber 3,2 miljoner stålborstar i USA. \"Ett farligt konstruktionsfel,\" sa den amerikanska säkerhetsmyndigheten. Sex veckor senare drog Nexgrill tillbaka ytterligare 10,2 miljoner. I Sverige sitter de fortfarande kvar på hyllorna. På Jula. På Biltema. Bredvid din Weber.</p>\n<p><em><img alt=\"\" loading=\"lazy\" src=\"https://cdn.shopify.com/s/files/1/0947/0174/8548/files/download_7.gif?v=1776927092\" style=\"display:block;width:100%;max-width:100%;height:auto;margin:18px auto;\"></em></p>\n<h3><strong>Mastern gör rent gallret på riktigt. På sextio sekunder.</strong></h3>\n<p>Elektriskt roterande huvud som gör jobbet åt dig, runt hela staven och ner i springorna, dit en stålborste aldrig når. Grovhuvudet har en låsmekanism: inga strån kan lossna. Polerhuvudet har ingen metall alls. Du håller i handtaget, trycker på knappen och kör. Klart innan ölen hinner bli varm.</p>\n<img alt=\"\" loading=\"lazy\" src=\"https://cdn.shopify.com/s/files/1/0947/0174/8548/files/e_2.gif?v=1776927829\" style=\"display:block;width:100%;max-width:100%;height:auto;margin:18px auto;\">\n<p><strong>FUNKTIONER</strong></p>\n<p><strong>Två huvuden, noll kompromisser</strong> — grovhuvud med låsmekanism (fysiskt omöjligt att tappa strån i maten) + polerhuvud helt utan metall</p>\n<p><strong>60 sekunder</strong> — från \"ser rent ut\" till rent på riktigt, ner i springorna</p>\n<p><strong>Skyddar gallret istället för att slita på det</strong> — skillnaden mellan en grill som håller i sju år och en som håller i femton</p>\n<p><strong>Trådlös &amp; uppladdningsbar</strong> — 2600 mAh batteri, räcker 4–6 rengöringar per laddning</p>\n<p><strong>Passar alla vanliga grillar</strong> — Weber Spirit, Genesis &amp; Q, Napoleon Rogue &amp; Prestige, Broil King Regal och många fler.</p>\n<p><em><img alt=\"\" loading=\"lazy\" src=\"https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Skarmbild_2026-04-23_090814.png?v=1776928110\" style=\"display:block;width:100%;max-width:100%;height:auto;margin:18px auto;\"></em></p>\n<p><strong>Livstidsgaranti. Går den sönder får du en ny. Punkt.</strong></p>\n<p>Och 30 dagars öppet köp, inga frågor, ingen process. Testa Mastern hemma vid din egen grill. Om den inte levererar: full återbetalning. Det är vårt löfte, och det är EU-lag. Grillkliniken är ett svenskt företag: du får exakt vad du ser på bilden, vi svarar när du hör av dig, och vi skickar direkt.</p>\n<p>Du har lagt femton tusen på din grill. Femton år eller sju, det avgörs på sextio sekunder efter varje grillning.</p>\n</div>",
+  "seo": {
+   "title": null,
+   "description": null
+  },
+  "tags": [],
+  "productType": "",
+  "vendor": "Grillkliniken",
+  "templateSuffix": "mastern",
+  "options": [
+   {
+    "name": "Title",
+    "position": 1,
+    "values": [
+     "Default Title"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "title": "Default Title",
+    "sku": null,
+    "price_sek": "999.00",
+    "price_mxn": 1899,
+    "compareAt_sek": "1600.00",
+    "compareAt_mxn": 3049,
+    "selectedOptions": [
+     {
+      "name": "Title",
+      "value": "Default Title"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   }
+  ],
+  "media": [
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Namnlosdesign-2026-07-06T113034.467.png?v=1783330270",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppImage2026-04-13at10.08.29.jpg?v=1776862220",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_053932_274855d0-6200-477e-b94d-9253bb51021a.png?v=1776924348",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Jaghargrillati15arochhartestatvarendaborstepamarknaden.Stalborstarskramdemigefterattenvansvaldeettstra.Skraporrackteintetill.Minahandledervarslutavattskrubbavarje.png?v=1776926224",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_053920_89553003-6fbe-4990-ac4a-75b8cfe135b2.png?v=1776924358",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_062233_5b01b9d2-7444-4824-b577-a781dd3f0193.png?v=1776925823",
+    "alt": null
+   }
+  ]
+ },
+ {
+  "handle": "forklade-masterkock",
+  "id": "gid://shopify/Product/15549036495172",
+  "status": "ACTIVE",
+  "title": "Förkläde – MästerKOCK",
+  "descriptionHtml": "<p class=\"font-claude-response-body break-words whitespace-normal leading-[1.7]\"><em>Det roligaste förklädet på hela grillfesten!</em></p>\n<p class=\"font-claude-response-body break-words whitespace-normal leading-[1.7]\">Är du den självutnämnde grillmästaren hemma? Då är detta förklädet gjort för dig. Med sin busiga design är det garanterat konversationsstartaren på varje grillfest, grannarna kommer aldrig glömma den kvällen.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal leading-[1.7]\"><img src=\"https://cdn.shopify.com/s/files/1/0947/0174/8548/files/download_8.gif?v=1778571930\" alt=\"\" width=\"353\" height=\"353\"></p>\n<p class=\"font-claude-response-body break-words whitespace-normal leading-[1.7]\"><strong>Perfekt som present</strong> – oavsett om det är till en vän som tar sig själv lite för seriöst vid grillen, eller till den i sällskapet som alltid skrattar högst.</p>\n<p class=\"font-claude-response-body break-words whitespace-pre-wrap leading-[1.7]\">✅ Vattentåligt och fläcktåligt material</p>\n<p class=\"font-claude-response-body break-words whitespace-pre-wrap leading-[1.7]\">✅ Praktiska fickor</p>\n<p class=\"font-claude-response-body break-words whitespace-pre-wrap leading-[1.7]\">✅ Justerbart nackband </p>\n<p class=\"font-claude-response-body break-words whitespace-normal leading-[1.7]\"><strong>Obs!</strong> Innehåller 100% grillhumor och 0% filter.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal leading-[1.7]\"><em>Bästa presenten till grillälskaren, vi lovar att den ger skratt.</em></p>",
+  "seo": {
+   "title": null,
+   "description": null
+  },
+  "tags": [],
+  "productType": "",
+  "vendor": "Grillkliniken",
+  "templateSuffix": "grill-golf-kit",
+  "options": [
+   {
+    "name": "Title",
+    "position": 1,
+    "values": [
+     "Default Title"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "title": "Default Title",
+    "sku": null,
+    "price_sek": "299.00",
+    "price_mxn": 569,
+    "compareAt_sek": "400.00",
+    "compareAt_mxn": 769,
+    "selectedOptions": [
+     {
+      "name": "Title",
+      "value": "Default Title"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   }
+  ],
+  "media": [
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/a53fd91a-40f2-499f-b15d-c64edba8baa9_800x_775b3cd8-81dc-4760-90e9-2fff40e6058e.webp?v=1778567372",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/51kOTagkG5L._AC_SX679.jpg?v=1778567565",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/bfed7ddd2febde44368f6be0aca36250_823x_76f6470a-2148-465e-b29f-87b9bb7be78b.webp?v=1778567449",
+    "alt": null
+   }
+  ]
+ }
+]

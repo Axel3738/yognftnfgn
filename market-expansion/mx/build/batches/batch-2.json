@@ -1,0 +1,349 @@
+[
+ {
+  "handle": "grillrengoringssten",
+  "id": "gid://shopify/Product/15284121469252",
+  "status": "ACTIVE",
+  "title": "Grillrengöringssten – Skonsam & effektiv rengöring",
+  "descriptionHtml": "<p data-start=\"162\" data-end=\"410\">Håll grillen skinande ren med en grillrengöringssten.<br data-start=\"215\" data-end=\"218\">Stenen tar enkelt bort fastbrända matrester, fett och smuts utan att skada grillgallret. Ett perfekt alternativ till stålborstar och kemikalier – naturligt, effektivt och enkelt att använda.</p>\n<ul data-start=\"412\" data-end=\"554\">\n<li data-start=\"412\" data-end=\"446\">\n<p data-start=\"414\" data-end=\"446\">Effektiv mot fastbrända rester</p>\n</li>\n<li data-start=\"447\" data-end=\"483\">\n<p data-start=\"449\" data-end=\"483\">Skonsam mot gallret – inga repor</p>\n</li>\n<li data-start=\"484\" data-end=\"511\">\n<p data-start=\"486\" data-end=\"511\">Används utan kemikalier</p>\n</li>\n<li data-start=\"512\" data-end=\"554\">\n<p data-start=\"514\" data-end=\"554\">Lämplig för både kol- och gasolgrillar</p>\n</li>\n</ul>\n<p data-start=\"556\" data-end=\"666\">Ett smidigt verktyg för dig som vill rengöra grillen snabbt, miljövänligt och säkert inför nästa grillkväll.</p>",
+  "seo": {
+   "title": null,
+   "description": null
+  },
+  "tags": [],
+  "productType": "",
+  "vendor": "Min butik",
+  "templateSuffix": "grill-golf-kit",
+  "options": [
+   {
+    "name": "Title",
+    "position": 1,
+    "values": [
+     "Default Title"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "title": "Default Title",
+    "sku": null,
+    "price_sek": "149.00",
+    "price_mxn": 289,
+    "compareAt_sek": null,
+    "compareAt_mxn": null,
+    "selectedOptions": [
+     {
+      "name": "Title",
+      "value": "Default Title"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   }
+  ],
+  "media": [
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppBild2025-09-02kl.10.41.05_430a469e.jpg?v=1758042659",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppBild2025-09-02kl.10.41.05_ed26922f.jpg?v=1758042673",
+    "alt": null
+   }
+  ]
+ },
+ {
+  "handle": "hamburgerpress-i-gjutjarn",
+  "id": "gid://shopify/Product/15285107458372",
+  "status": "ACTIVE",
+  "title": "Hamburgerpress i gjutjärn – Perfekta burgare varje gång",
+  "descriptionHtml": "<p data-start=\"203\" data-end=\"422\">Ta dina burgare till nästa nivå med vår robusta hamburgerpress i gjutjärn!<br data-start=\"277\" data-end=\"280\">Perfekt för att forma klassiska burgare eller pressa fram riktigt krispiga och smakrika <strong data-start=\"368\" data-end=\"384\">smashburgare</strong> direkt på grillen eller stekbordet.</p>\n<p data-start=\"424\" data-end=\"551\">Det tunga gjutjärnet ger jämnt tryck och hjälper till att skapa en härlig karamellisering på ytan, precis som på restaurang.</p>\n<h4 data-start=\"553\" data-end=\"571\">Egenskaper:</h4>\n<ul data-start=\"572\" data-end=\"809\">\n<li data-start=\"572\" data-end=\"625\">\n<p data-start=\"574\" data-end=\"625\">Tillverkad i massivt gjutjärn för lång hållbarhet</p>\n</li>\n<li data-start=\"626\" data-end=\"679\">\n<p data-start=\"628\" data-end=\"679\">Perfekt för både klassiska burgare &amp; smashburgare</p>\n</li>\n<li data-start=\"680\" data-end=\"727\">\n<p data-start=\"682\" data-end=\"727\">Jämn tryckfördelning för en krispig stekyta</p>\n</li>\n<li data-start=\"728\" data-end=\"768\">\n<p data-start=\"730\" data-end=\"768\">Passar grill, stekpanna och stekbord</p>\n</li>\n<li data-start=\"769\" data-end=\"809\">\n<p data-start=\"771\" data-end=\"809\">Ergonomiskt handtag för enkelt grepp</p>\n</li>\n</ul>\n<h4 data-start=\"811\" data-end=\"838\">Varför smashburgare?</h4>\n<p data-start=\"839\" data-end=\"1059\">Smashburgare är tunna, krispiga och fulla av smak tack vare den intensiva stekytan som pressen skapar. Med en gjutjärnspress blir resultatet både saftigare och mer smakrikt – en riktig favorit bland burgarälskare! </p>",
+  "seo": {
+   "title": null,
+   "description": null
+  },
+  "tags": [],
+  "productType": "",
+  "vendor": "GrillaMer",
+  "templateSuffix": "grill-golf-kit",
+  "options": [
+   {
+    "name": "Title",
+    "position": 1,
+    "values": [
+     "Default Title"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "title": "Default Title",
+    "sku": null,
+    "price_sek": "399.00",
+    "price_mxn": 759,
+    "compareAt_sek": "499.00",
+    "compareAt_mxn": 949,
+    "selectedOptions": [
+     {
+      "name": "Title",
+      "value": "Default Title"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   }
+  ],
+  "media": [
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Namnlosdesign-2025-09-17T160715.986.png?v=1758118049",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppBild2025-09-08kl.11.10.16_87c33f8a.jpg?v=1758118091",
+    "alt": null
+   }
+  ]
+ },
+ {
+  "handle": "forklade-the-grillfather",
+  "id": "gid://shopify/Product/15286670229828",
+  "status": "ACTIVE",
+  "title": "Förkläde - The Grillfather",
+  "descriptionHtml": "<p data-start=\"165\" data-end=\"363\">Det ultimata förklädet för alla grillälskare som också uppskattar en bra ordvits. Med texten <em data-start=\"258\" data-end=\"277\">“The Grillfather”</em> är det här både praktiskt och roligt – perfekt till grillkvällar eller som present.</p>\n<ul data-start=\"365\" data-end=\"469\">\n<li data-start=\"365\" data-end=\"396\">\n<p data-start=\"367\" data-end=\"396\">Skyddar kläderna från spill</p>\n</li>\n<li data-start=\"397\" data-end=\"429\">\n<p data-start=\"399\" data-end=\"429\">Snygg och humoristisk design</p>\n</li>\n<li data-start=\"430\" data-end=\"469\">\n<p data-start=\"432\" data-end=\"469\">Perfekt present till grillfantasten</p>\n</li>\n</ul>",
+  "seo": {
+   "title": null,
+   "description": null
+  },
+  "tags": [],
+  "productType": "",
+  "vendor": "Grillverkstan",
+  "templateSuffix": "grill-golf-kit",
+  "options": [
+   {
+    "name": "Title",
+    "position": 1,
+    "values": [
+     "Default Title"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "title": "Default Title",
+    "sku": null,
+    "price_sek": "149.00",
+    "price_mxn": 289,
+    "compareAt_sek": null,
+    "compareAt_mxn": null,
+    "selectedOptions": [
+     {
+      "name": "Title",
+      "value": "Default Title"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   }
+  ],
+  "media": [
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppBild2025-09-09kl.11.43.40_035096ac.jpg?v=1758263561",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppBild2025-09-09kl.11.43.41_de39abfc.jpg?v=1758263571",
+    "alt": null
+   }
+  ]
+ },
+ {
+  "handle": "forklade-kiss-and-bring-him-beer",
+  "id": "gid://shopify/Product/15286676029764",
+  "status": "ACTIVE",
+  "title": "Förkläde - Kiss and bring him beer",
+  "descriptionHtml": "<p data-start=\"186\" data-end=\"416\">Det ultimata grillförklädet för den som gillar både humor och öl. Med texten <em data-start=\"263\" data-end=\"290\">“Kiss and bring him beer”</em> blir du garanterat kvällens snackis vid grillen. Perfekt som present eller för att sätta lite extra glädje på grillkvällen.</p>\n<ul data-start=\"418\" data-end=\"529\">\n<li data-start=\"418\" data-end=\"445\">\n<p data-start=\"420\" data-end=\"445\">Rolig design med öltema</p>\n</li>\n<li data-start=\"446\" data-end=\"486\">\n<p data-start=\"448\" data-end=\"486\">Skyddar kläderna mot spill och stänk</p>\n</li>\n<li data-start=\"487\" data-end=\"529\">\n<p data-start=\"489\" data-end=\"529\">Perfekt gåva till grill- och ölälskare</p>\n</li>\n</ul>",
+  "seo": {
+   "title": null,
+   "description": null
+  },
+  "tags": [],
+  "productType": "",
+  "vendor": "Grillverkstan",
+  "templateSuffix": "grill-golf-kit",
+  "options": [
+   {
+    "name": "Title",
+    "position": 1,
+    "values": [
+     "Default Title"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "title": "Default Title",
+    "sku": null,
+    "price_sek": "149.00",
+    "price_mxn": 289,
+    "compareAt_sek": null,
+    "compareAt_mxn": null,
+    "selectedOptions": [
+     {
+      "name": "Title",
+      "value": "Default Title"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   }
+  ],
+  "media": [
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppBild2025-09-10kl.10.04.02_1522f158.jpg?v=1758265091",
+    "alt": null
+   }
+  ]
+ },
+ {
+  "handle": "golf-grill-kit",
+  "id": "gid://shopify/Product/15513203048772",
+  "status": "ACTIVE",
+  "title": "Grillklubbor - Grillsetet som varje golfare vill ha.",
+  "descriptionHtml": "<p class=\"font-claude-response-body break-words whitespace-normal leading-[1.7]\">Du vet precis vem du köper till. Den personen som lever för banan, som pratar handicap vid middagsbordet och som förtjänar en present som faktiskt speglar vem de är. Golf Grill Kit är byggt för dig som tar båda sakerna på allvar, spelet och maten efter.<br></p><p class=\"font-claude-response-body break-words whitespace-normal leading-[1.7]\"><img src=\"https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260331_134313_30f63c8f-2dd5-465a-bd0c-535224eb7e9e.png?v=1774964655\" alt=\"\"><br><br>\n Slut på stressen att hitta \"rätt present.\" Golf Grill Kit kombinerar två av deras största intressen i ett enda snyggt paket, golf och grillning. Levereras i en elegant golfbag-väska, redo att ge bort direkt.<br><br><img src=\"https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260331_134241_73a330ae-6c0d-4f4b-885b-8fb57f2c9a03.png?v=1774964677\" alt=\"\"><br></p><p>\n\n</p><ul>\n <li class=\"whitespace-normal break-words pl-2\">8 verktyg i premiumkvalitet rostfritt stål</li>\n <li class=\"whitespace-normal break-words pl-2\">Ergonomiska handtag för ett tryggt grepp</li>\n <li class=\"whitespace-normal break-words pl-2\">Snygg golfbag-väska ingår — ingen inslagnig behövs</li>\n <li class=\"whitespace-normal break-words pl-2\">Inkluderar salt- och pepparkar</li>\n <li class=\"whitespace-normal break-words pl-2\">Lätt att rengöra och tålig för alla väder</li>\n</ul>\n<p><img src=\"https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260331_134248_5fab33c2-b00e-49a3-950f-04629cac5c94.png?v=1774964694\" alt=\"\"></p><p>Vi tror helhjärtat på den här produkten — precis som du tror på din present. Därför erbjuder vi <strong>30 dagars öppet köp</strong>, inga frågor ställda. Är du inte nöjd, löser vi det.</p>",
+  "seo": {
+   "title": null,
+   "description": null
+  },
+  "tags": [],
+  "productType": "",
+  "vendor": "Grillkliniken",
+  "templateSuffix": "",
+  "options": [
+   {
+    "name": "Färg",
+    "position": 1,
+    "values": [
+     "Grön",
+     "Svart"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "title": "Grön",
+    "sku": "20595#DZ1775027907-green",
+    "price_sek": "799.00",
+    "price_mxn": 1519,
+    "compareAt_sek": "1200.00",
+    "compareAt_mxn": 2289,
+    "selectedOptions": [
+     {
+      "name": "Färg",
+      "value": "Grön"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   },
+   {
+    "title": "Svart",
+    "sku": "20595#DZ1775027907-black",
+    "price_sek": "799.00",
+    "price_mxn": 1519,
+    "compareAt_sek": "1200.00",
+    "compareAt_mxn": 2289,
+    "selectedOptions": [
+     {
+      "name": "Färg",
+      "value": "Svart"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   }
+  ],
+  "media": [
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppImage2026-03-31at11.40.58_1.jpg?v=1774962165",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260331_093914_2f50f746-9eec-4ab8-842e-1dd409132646_1.png?v=1774962165",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/81iux5fCPDL._AC_SX679.jpg?v=1774962165",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/71vvfPBPImL._AC_SX679.jpg?v=1774962165",
+    "alt": null
+   },
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppImage2026-03-31at11.40.58.jpg?v=1774962092",
+    "alt": null
+   }
+  ]
+ },
+ {
+  "handle": "borst-poler-huvud",
+  "id": "gid://shopify/Product/15548306817348",
+  "status": "ACTIVE",
+  "title": "Borst + PolérHuvud",
+  "descriptionHtml": "",
+  "seo": {
+   "title": null,
+   "description": null
+  },
+  "tags": [],
+  "productType": "",
+  "vendor": "Grillkliniken",
+  "templateSuffix": "borst-polerhuvud",
+  "options": [
+   {
+    "name": "Title",
+    "position": 1,
+    "values": [
+     "Default Title"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "title": "Default Title",
+    "sku": null,
+    "price_sek": "250.00",
+    "price_mxn": 479,
+    "compareAt_sek": null,
+    "compareAt_mxn": null,
+    "selectedOptions": [
+     {
+      "name": "Title",
+      "value": "Default Title"
+     }
+    ],
+    "grams": {
+     "value": 0.0,
+     "unit": "KILOGRAMS"
+    }
+   }
+  ],
+  "media": [
+   {
+    "url": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260511_034602_3ce2d7ec-70ac-47a7-a49d-d5a7e53f8c79.png?v=1778471437",
+    "alt": null
+   }
+  ]
+ }
+]
