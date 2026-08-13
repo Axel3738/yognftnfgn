@@ -181,6 +181,8 @@ h1 { font-size: 22px; font-weight: 650; margin: 0; letter-spacing: -0.01em; }
 .tabs .tab:focus-visible { outline: 2px solid #2a78d6; outline-offset: -2px; }
 
 .controls { display: flex; gap: 6px; align-items: center; }
+/* En knapprad utan rubrik säger inte vad den styr. */
+.seg-label { color: var(--text-secondary); font-size: 12.5px; white-space: nowrap; }
 .seg { display: inline-flex; background: var(--surface); border: 1px solid var(--border); border-radius: 9px; padding: 3px; }
 .seg button {
   appearance: none; border: 0; background: transparent; color: var(--text-secondary);
@@ -293,6 +295,11 @@ tbody tr:hover { background: color-mix(in srgb, var(--text-primary) 4%, transpar
 .flags .detail { color: var(--text-secondary); font-size: 12.5px; margin-top: 2px; }
 /* Pengarna bakom en liggande sak ska gå att se utan att läsa hela raden. */
 .flags .stake { color: var(--text-primary); font-weight: 600; }
+
+/* Pengatabellen: spenden är huvudsiffran, andelen står under den. */
+table.money .spend { font-weight: 600; font-variant-numeric: tabular-nums; }
+table.money .cut { color: var(--text-secondary); font-size: 12px; font-variant-numeric: tabular-nums; }
+table.money tr.total td { border-top: 2px solid var(--border-strong, var(--border)); font-weight: 600; }
 .flags .detail .sev { font-weight: 600; }
 .flags .when {
   color: var(--text-secondary); font-size: 12.5px; font-variant-numeric: tabular-nums;
@@ -395,7 +402,10 @@ function saveDone() {
 }
 
 const state = {
-  workspace: P.defaultWorkspace,
+  // Öppnar på pengarna när det finns pengar att visa. Det är den frågan
+  // panelen faktiskt får varje dag.
+  workspace: P.payout ? PAYOUT_TAB : P.defaultWorkspace,
+  month: null,
   court: 'all',
   done: loadDone(),
   period: P.defaultPeriod,
@@ -711,8 +721,18 @@ function render() {
   app.innerHTML = '';
 
   /* header */
+  //
+  // Periodväxlaren visas bara när den faktiskt ändrar en synlig siffra.
+  // "7 d / 14 d / 30 d / 90 d" satt uppe i hörnet på varje vy och gjorde
+  // ingenting på de flesta av dem, eftersom nästan all data saknar
+  // leveransdatum — en kontroll som inte svarar när man trycker på den är
+  // värre än ingen kontroll alls.
+  const periods = Object.keys(spaceData).map(Number).sort((a, b) => a - b);
+  const changesSomething = periods.some(d =>
+    spaceData[d].team.deliveries !== spaceData[state.period].team.deliveries);
+
   const periodBtns = el('div', { class: 'seg' },
-    Object.keys(spaceData).map(Number).sort((a, b) => a - b).map(d =>
+    periods.map(d =>
       el('button', {
         text: d + ' d', 'aria-pressed': String(d === state.period),
         onclick: () => { state.period = d; render(); },
@@ -728,13 +748,17 @@ function render() {
     // Periodväxlaren styr bara tidsbaserade mätetal — göm den när det inte
     // finns några, annars ser den ut att vara trasig. På lönefliken styr den
     // ingenting alls.
-    !onPayout && M.team.deliveries > 0 ? el('div', { class: 'controls' }, [periodBtns]) : null,
+    !onPayout && changesSomething ? el('div', { class: 'controls' }, [
+      el('span', { class: 'seg-label', text: 'Leveranser senaste' }),
+      periodBtns,
+    ]) : null,
   ]));
 
-  // Ersättningen ligger som en egen flik sist: den handlar om pengar, inte om
-  // ett teamspace, och ska inte blandas ihop med arbetsmätningen.
+  // Ersättningen ligger FÖRST. Den låg sist, och på en telefon ryms bara två
+  // och en halv flik — så den flik som handlar om pengar var den enda man
+  // aldrig såg utan att veta att man skulle dra i sidled.
   const tabs = P.spaces.slice();
-  if (P.payout) tabs.push({ id: PAYOUT_TAB, name: 'Ersättning', payout: true });
+  if (P.payout) tabs.unshift({ id: PAYOUT_TAB, name: 'Pengar', payout: true });
 
   if (tabs.length > 1) {
     app.appendChild(el('nav', { class: 'tabs', 'aria-label': 'Teamspace' },
@@ -1168,7 +1192,9 @@ function project(spentSoFar, month) {
 function payoutView() {
   const P0 = P.payout;
   const months = P0.months.slice().sort();
-  const month = months[months.length - 1];
+  // Vilken månad man tittar på är ett eget val. Förut fanns bara den senaste,
+  // och "hur mycket drog vi i juli" gick inte att svara på i panelen.
+  const month = (state.month && months.includes(state.month)) ? state.month : months[months.length - 1];
   const rate = P0.rate;
 
   // Rader utan känd person filtreras bort: en "Okänd (367d)" med 2 kr i
@@ -1186,6 +1212,18 @@ function payoutView() {
   const teamProj = project(teamMonth, month);
 
   const out = el('div', {});
+
+  /* Månadsväljare. Den enda datumkontrollen i panelen som faktiskt ändrar
+     siffrorna man tittar på — och den står direkt ovanför dem. */
+  out.appendChild(el('section', {}, [
+    el('ul', { class: 'chips' }, months.slice().reverse().map(m =>
+      el('li', {}, [
+        el('button', {
+          class: 'chip', 'aria-pressed': String(m === month),
+          onclick: () => { state.month = m; render(); },
+        }, [el('span', { text: monthName(m) })]),
+      ]))),
+  ]));
 
   /* Vad det är, i en mening som inte går att missförstå. */
   out.appendChild(el('section', {}, [
@@ -1210,47 +1248,57 @@ function payoutView() {
     ]),
   ]));
 
-  /* Per person: den siffra de själva vill se. */
-  const head = el('tr', {}, [
-    el('th', { text: 'Redigerare', scope: 'col' }),
-    el('th', { text: monthName(month) + ' hittills', scope: 'col' }),
-    el('th', { text: 'Blir i månaden', scope: 'col' }),
-    el('th', { text: 'Adspend i månaden', scope: 'col' }),
-    el('th', { text: 'Annonser som spenderar', scope: 'col' }),
-    el('th', { text: 'Totalt sedan ' + monthName(months[0]), scope: 'col' }),
-  ]);
+  /* Adspend per person och månad — hela bilden i en tabell, inte en siffra i
+     taget. Varje ruta: hur mycket personens annonser drog, och vad det ger. */
+  const monthsDesc = months.slice().reverse();
 
-  const labels = ['Redigerare', monthName(month) + ' hittills', 'Blir i månaden',
-    'Adspend i månaden', 'Annonser som spenderar', 'Totalt'];
+  const head = el('tr', {}, [el('th', { text: 'Redigerare', scope: 'col' })]
+    .concat(monthsDesc.map(function (m) { return el('th', { text: monthName(m), scope: 'col' }); }))
+    .concat([el('th', { text: 'Totalt', scope: 'col' })]));
 
-  const body = rows.map(function (r) {
-    const tds = [
-      el('td', {}, [el('div', { class: 'who' }, [
-        el('span', { class: 'key', style: 'background:' + colorOf(r.e.id) }),
-        el('div', {}, [el('div', { text: r.e.name })]),
-      ])]),
-      el('td', { class: 'num' }, [el('b', { text: kr(r.m.payout) })]),
-      el('td', { class: 'num', text: r.proj ? kr(r.proj.value) : '–' }),
-      el('td', { class: 'num', text: kr(r.m.spend) }),
-      el('td', { class: 'num', text: num(r.e.ads) }),
-      el('td', { class: 'num', text: kr(r.e.totalPayout) }),
-    ];
-    return labelCells(el('tr', {}, tds), labels);
+  const labels = ['Redigerare'].concat(monthsDesc.map(monthName)).concat(['Totalt']);
+
+  const cell = function (spend, payout) {
+    return el('td', { class: 'num' }, [
+      el('div', { class: 'spend', text: kr(spend) }),
+      el('div', { class: 'cut', text: payout > 0 ? '→ ' + kr(payout) : '–' }),
+    ]);
+  };
+
+  const body = known.slice()
+    .sort(function (a, b) { return b.totalSpend - a.totalSpend; })
+    .map(function (e) {
+      const tds = [el('td', {}, [el('div', { class: 'who' }, [
+        el('span', { class: 'key', style: 'background:' + colorOf(e.id) }),
+        el('div', {}, [el('div', { text: e.name })]),
+      ])])];
+      monthsDesc.forEach(function (m) {
+        const v = e.byMonth[m] || { spend: 0, payout: 0 };
+        tds.push(cell(v.spend, v.payout));
+      });
+      tds.push(cell(e.totalSpend, e.totalPayout));
+      return labelCells(el('tr', {}, tds), labels);
+    });
+
+  // Summeringsrad: annars får man räkna ihop kolumnerna i huvudet.
+  const totalRow = [el('td', {}, [el('b', { text: 'Alla' })])];
+  monthsDesc.forEach(function (m) {
+    totalRow.push(cell(
+      known.reduce(function (s, e) { return s + ((e.byMonth[m] || {}).spend || 0); }, 0),
+      known.reduce(function (s, e) { return s + ((e.byMonth[m] || {}).payout || 0); }, 0)));
   });
-
-  const monthCols = months.slice().reverse().map(function (m) {
-    const sum = known.reduce(function (s, e) { return s + ((e.byMonth[m] || {}).payout || 0); }, 0);
-    return monthName(m) + ': ' + kr(sum);
-  }).join('   ·   ');
+  totalRow.push(cell(
+    known.reduce(function (s, e) { return s + e.totalSpend; }, 0),
+    known.reduce(function (s, e) { return s + e.totalPayout; }, 0)));
+  body.push(labelCells(el('tr', { class: 'total' }, totalRow), labels));
 
   out.appendChild(el('section', {}, [
     el('div', { class: 'card' }, [
-      el('h2', { text: 'Ersättning per redigerare' }),
-      el('p', { class: 'hint', text: 'Var och en får ' + pct(rate, 1) + ' av adspenden på de annonser hen gjort. ' +
-        '"Blir i månaden" är en gissning på slutsumman om de sista dagarna går som de första — inte ett beslut. ' +
-        'Månad för månad: ' + monthCols }),
+      el('h2', { text: 'Adspend per person och månad' }),
+      el('p', { class: 'hint', text: 'Stora siffran är hur mycket personens annonser drog i Meta den månaden. ' +
+        'Pilen under är vad hen får ut: ' + pct(rate, 1) + ' av den.' }),
       el('div', { class: 'table-scroll' }, [
-        el('table', { class: 'as-cards' }, [el('thead', {}, [head]), el('tbody', {}, body)]),
+        el('table', { class: 'as-cards money' }, [el('thead', {}, [head]), el('tbody', {}, body)]),
       ]),
     ]),
   ]));
