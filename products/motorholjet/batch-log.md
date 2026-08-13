@@ -406,3 +406,58 @@ samma röst och samma båt. Det är den renaste avläsningen av längd kontot n�
 - **#14 får inte launchas i ett kallt adset.** Det hände `SO_10_H1` och gav 156 kr oläsbar data.
 - **Ingen dom under 300 kr och 3 köp — per annons, inte per adset.**
 - Logga launchen: `node pipeline/quota.mjs log motorholjet <antal>`.
+
+---
+
+## Avläsning 2026-08-13 (ad hoc — vinnarfråga från Axel, ej full /cs)
+
+Fönster mot förra avläsningen: 2026-08-09 → 2026-08-13 (4 dygn — marginalgrinden 2b uppfylld
+för annonser med ≥5 inkrementella köp). Datakvalitet: `omni_purchase_values` reconcilierade
+mot `spend × ROAS` på samtliga dömbara rader (±5 %).
+
+### Två Motorhölje-kampanjer finns i kontot som INTE står i produktminnet
+
+1. **`Motorhöljet Lagerrensingsrea` `120249526366330291`** — ACTIVE, 17 238 kr spend, 80 köp
+   livstid, 9 annonser (dubbletter av batch #1-vinnarna, troligen mot lagerrensnings-LP:n).
+   Fanns redan före 09 aug (~9 900 kr/52 köp låg utanför den avläsningen) — **dna.md:s
+   livstidssiffror t.o.m. 08-09 täckte alltså bara huvudkampanjen.**
+   - `PD_1_H3` funkar även här: 11 470 kr, 58 köp, CPA 198, ROAS 1,89 (fönster: CPA 213,
+     ROAS 1,71 — precis över break-even 1,63. Bevaka).
+   - `SO_5_1` går BÄTTRE här än i huvudkampanjen: 943 kr, 6 köp, CPA 157, ROAS 2,42.
+   - `SP_1_H1` FÖRLORAR här: 2 614 kr, 9 köp, CPA 290, ROAS 1,27 — och fönstret är en kollaps
+     (1 157 kr, 1 köp). Kill-kandidat i denna kampanj (kill-regeln uppfylld: >500 kr, under
+     break-even, trenden håller i sig nedåt).
+2. **`Motorhöljet ABO-test 08-12` `120249703424590291`** — ACTIVE, 1 463 kr, 8 köp, 8 annonser
+   (`SO_22`–`SO_24`, `PD_24`). Test-ABO enligt regel 11. Ingen annons över signifikansgrinden än.
+
+### Ny dömbar vinnare sedan 08-09 (huvudkampanjen)
+
+| Annons | Spend | Köp | CPA | ROAS | Fönster 10–13/8 | Dom |
+|---|---:|---:|---:|---:|---|---|
+| `Enginecover_SO_4_H1` (försäkrings-reframe, batch #3) | 676 kr | 7 | 96,55 | 3,81 | 413 kr, 4 köp, CPA 103 | **Preliminär vinnare** (2c: ska överleva nästa körning; mönster 2: ingen kallas vinnare under 2 000 kr) |
+
+Batch #3-observationen ("alla köp kom från de nya koncepten, inte hook-iterationerna") höll
+alltså hela vägen till dömbar nivå för försäkrings-reframen — precis som skeptiker-UGC:n gjorde.
+
+### Starka tidiga signaler, INGEN dom (ABO-testet)
+
+`SO_23_1` 289 kr/4 köp/CPA 72/ROAS 4,82 (11 kr under spendgrinden) · `SO_22_2` 122 kr/2 köp ·
+`SO_24_1` 417 kr/2 köp. Alla tre är SO-block. Läs av igen vid ≥300 kr + ≥3 köp per annons.
+
+### Nya dömbara förlorare / kill-läge
+
+| Annons | Spend | Köp | CPA | ROAS | Beslut |
+|---|---:|---:|---:|---:|---|
+| `Enginecover_PD_6_1` | 2 472 kr | 7 | 353 | 1,06 | **Kill-regeln uppfylld** (fönster-CPA 283, fortsatt över break-even på 6 inkrementella köp) |
+| `Enginecover_SO_8_1` | 1 499 kr | 4 | 375 | 0,93 | Pausbeslut från 08-09 **fortfarande inte verkställt** — fick 480 kr till på 0 köp. Pausa |
+| `Enginecover_PD_7_H1` | 1 372 kr | 4 | 343 | 1,01 | 08-09 sas "trenden vänder" — den gjorde inte det (169 kr, 0 köp i fönstret). Kill |
+| `Enginecover_PD_16_H1` | 1 174 kr | 3 | 391 | 0,89 | Preliminär förlorare (3 köp). Fönstret ligger runt break-even — läs av igen |
+
+### Marginalläge på de etablerade (≥5 inkrementella köp)
+
+`PD_1_H3` huvudkampanj: +20 köp, marginal-CPA 165 — **fortsatt ingen drift**, femte mätningen.
+`SO_5_1`: +10 köp, marginal-CPA 205, ROAS 1,99 — lönsam, håller.
+`SO_2`: +5 köp, marginal-CPA 158 — håller.
+
+⚠️ Break-even-CPA-konflikt kvarstår: dna.md säger 236 kr, products.json 210 kr (AOV 342/1,63).
+Domarna ovan är fällda mot **break-even-ROAS 1,63**, som är oberoende av AOV-frågan.
