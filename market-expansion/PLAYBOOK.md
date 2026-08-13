@@ -344,6 +344,17 @@ Alla har inträffat på riktigt.
     serversidigt: `curl -c jar -b jar "<butik>/products/<handle>?preview_theme_id=<id>"`
     (cookie-jar krävs — utan den svarar LIVE-temat och `Shopify.theme` visar fel id) och
     räkna `variant-input-wrap`/`variant-input` i HTML:en.
+22. **Hela teman KAN exporteras via API** — `themes(roles:[MAIN]) { files }` ger filename +
+    size + `checksumMd5`; innehåll via `files(filenames:[...]) { body }` (Text/Base64/Url).
+    Snabbast: `bulkOperationRunQuery` över files-connectionen → en enda JSONL med allt.
+    Tre egenheter: (a) API:t injicerar en auto-genererad `/* ... */`-banner i JSON-filer
+    (363 B theme-editor-variant / 366 B language-editor-variant) som INTE ingår i size/md5;
+    (b) JSON-mallar returneras pretty-printade — lagrad form är oftast minifierad, ibland
+    med Go-escaping (`<` → `\u003c`, `>` → `\u003e`, `&` → `\u0026`) eller `\/`-escapade snedstreck —
+    rekonstruera och verifiera mot `checksumMd5`; (c) enstaka GemPages-mallar går inte att
+    återskapa byte-exakt (nyckelordning förlorad) — semantiskt identisk kopia räcker.
+    **Verifiera ALLTID md5, inte bara storlek** — vid Grillkliniken-exporten hade en fil
+    rätt bytelängd men fel innehåll (dolt avskriftsfel).
 
 ---
 

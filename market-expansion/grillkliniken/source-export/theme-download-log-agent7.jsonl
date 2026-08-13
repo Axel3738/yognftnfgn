@@ -51,3 +51,8 @@
 {"filename": "sections/gp-section-624267177821930230.liquid", "expected": 8489, "actual": 8489, "md5": "157fc94faf5fbc9a5ea73cd831bf74e8", "md5_expected": "157fc94faf5fbc9a5ea73cd831bf74e8", "md5_ok": true, "ok": true}
 {"filename": "sections/gp-section-625316722252972715.liquid", "expected": 20135, "actual": 20135, "md5": "fd7e315f8328d6cffbbc27adc1e47c03", "md5_expected": "fd7e315f8328d6cffbbc27adc1e47c03", "md5_ok": true, "ok": true}
 {"filename": "sections/gp-section-626633468461187949.liquid", "expected": 18122, "actual": 18122, "md5": "1a6fa784caa4c33d1a8bf1cfbb04618d", "md5_expected": "1a6fa784caa4c33d1a8bf1cfbb04618d", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-627713009917100644.liquid", "expected": 22215, "actual": 22215, "md5": "29a6da77add6100305cf57397957b8a7", "md5_expected": "29a6da77add6100305cf57397957b8a7", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-631303000543396614.liquid", "expected": 12171, "actual": 12171, "md5": "734b5234095ed67d3996c58aab5b7f08", "md5_expected": "734b5234095ed67d3996c58aab5b7f08", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-632042898199872169.liquid", "expected": 24581, "actual": 24581, "md5": "7f2d7a6eac8b0510bfecf52cae9a420f", "md5_expected": "7f2d7a6eac8b0510bfecf52cae9a420f", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-632042898200396457.liquid", "expected": 30557, "actual": 30557, "md5": "f3653098d88e417ff64ecbe64bfc08b0", "md5_expected": "f3653098d88e417ff64ecbe64bfc08b0", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-632042913333183426.liquid", "expected": 38421, "actual": 38421, "md5": "6b38db86b4bc379dc6d539b465ca999c", "md5_expected": "6b38db86b4bc379dc6d539b465ca999c", "md5_ok": true, "ok": true}
