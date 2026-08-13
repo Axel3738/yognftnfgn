@@ -1,0 +1,3 @@
+{"filename": "assets/theme.css.liquid", "expected": 240878, "actual": 240878, "ok": true}
+{"filename": "assets/ico-select-menu.svg", "expected": 844, "actual": 844, "ok": true}
+{"filename": "layout/theme.gem-layout-none.liquid", "expected": 4392, "actual": 4392, "ok": true}

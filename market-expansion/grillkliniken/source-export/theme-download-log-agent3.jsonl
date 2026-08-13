@@ -1,0 +1,3 @@
+{"filename": "assets/ico-select-drawer.svg.liquid", "expected": 869, "actual": 869, "ok": true}
+{"filename": "sections/gp-section-619570878011081521.liquid", "expected": 168390, "actual": 168390, "ok": true}
+{"filename": "locales/de.json", "expected": 13036, "actual": 13402, "ok": false}
