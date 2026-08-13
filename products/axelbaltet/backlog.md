@@ -21,3 +21,11 @@ Inga items togs in i batch #5 (2026-08-06): alla tre var blockerade eller vänta
 - Kompatibilitets-creative ("passar den min maskin?") — [använd i batch #4, 2026-08-05] → `Trimmerbelt_PD_7_1`
 
 - 15s-cutdown, ny hook på vinnaren, pris-anchor close, mekanismdemo, skeptiker-UGC, story 60+, native-foto, rotationsstatisk — [använd i batch #3, 2026-08-05]
+
+## Swipes
+
+- **Bryn grillkorg (reason-why offer, talande säljare)** — [använd 2026-08-13] → `Trimmerbelt_SO_8_1`
+  med hook-bänk H1/H2/H3. Strukturen (12 beats) kopierad rakt av; claimen utbytta eftersom modellens
+  fyra bärande påståenden (överlager, 40 % rabatt, livstidsgaranti, lagerscarcity) är falska eller
+  overifierade för oss. **Blockerad uppgradering:** finns en äkta prisorsak skrivs beat 1 och 3 om
+  och annonsen får tillbaka modellens ryggrad. Kräver en mening från ägaren.

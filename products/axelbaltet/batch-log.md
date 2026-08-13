@@ -657,3 +657,51 @@ alla 7 nya bilder använda.
   Samma grind som annonser: 300 kr spend och 3 köp innan dom.
 - **Om det finns en äkta orsak till priset** (överlager, säsongsavslut, leverantörsparti) räcker
   det med en mening från ägaren, så byts ärlighetssektionen ut. Den hittas aldrig på av Claude.
+
+---
+
+## Swipe 2026-08-13 — `Trimmerbelt_SO_8_1` (Bryn grillkorg)
+
+Ägaren skickade in ett vinnande svenskt manus från en annan kategori (grillkorg) för swipe.
+Strukturen bruten ner i **12 beats** och applicerad rakt av på axelbältet. Copy av sonnet-subagent.
+
+**Modellens spine:** ett erbjudande legitimerat av ett skäl. Överlager → 40 % rabatt →
+livstidsgaranti → så länge lagret räcker. Allt annat i annonsen hänger på den öppningen.
+
+**Fyra av modellens bärande claim kunde inte användas:**
+
+| Modellen | Vi | Varför utbytt |
+|---|---|---|
+| "Vi råkade beställa alldeles för många" | Overifierat | Ingen bekräftad överlagersituation |
+| "40 % rabatt" | Falskt | Verklig skillnad 678 → 599 kr = 11,65 % |
+| "Livstidsgaranti" | Falskt | Vi har 30 dagars öppet köp |
+| "Bara så länge lagret räcker" | Overifierat | Lagerscarcity vi inte kan stå för |
+| "Tusentals grillkvällar" | Overifierat | Inga hållbarhetstester att citera |
+
+Enda tillåtna brådskan i manuset: **kalenderfaktumet** att trimningssäsongen har några veckor kvar.
+
+**De 12 beatsen:** hook · insider-intro · offer stack · hyperspecifik smärta · mekanism · payoff ·
+namnge fienden · enkelhetsdemo · byggnad och passform · invändningsdödare · proof · identitets-callback
+och close. Beat 4 är den som oftast slarvas bort i en swipe: modellen säger inte "mat faller genom
+gallret" utan "du har sett räkor försvinna ner genom gallret". En bild, sinnlig, omedelbart
+igenkännbar. Vår motsvarighet: mannen mitt på gräsmattan som sätter ner trimmern för att skaka ut armen.
+
+**Hook-bänk (samma body, olika första 5 sekunder):**
+
+| Hook | Ram |
+|---|---|
+| H1 | Offer först (speglar modellen): priset, sedan varför du vill ha ett innan säsongen är slut |
+| H2 | Smärta först: axeln som ger vika innan gräsmattan är klar |
+| H3 | Fienden först: byter du hand hela tiden är det inte armarna det är fel på |
+
+**Två frågor annonsen besvarar som inget i kontot besvarat:**
+1. Fungerar en **offer-ledd video** överhuvudtaget? Alla videor hittills leder med smärta; offer
+   finns bara i statics, där det ger kontots högsta CVR.
+2. Slår en **namngiven säljare till kamera** en anonym voiceover?
+
+**Produktionsregel inskriven i briefen:** mobilfilmat, äkta människa, inga AI-ansikten. Kontots
+vinstledare är rå mobilfilm och samtliga AI-ansiktsvideor har antingen dödats eller inte levererat.
+
+**Blockerad uppgradering:** finns en äkta orsak till priset (parti beställt för stort, leverantörslot,
+verkligt säsongsavslut) blir beat 1 och 3 modellens riktiga ryggrad och annonsen blir väsentligt
+starkare. Den meningen skrivs inte av Claude. Kräver ett faktum från ägaren.
