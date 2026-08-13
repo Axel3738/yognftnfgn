@@ -4,6 +4,26 @@ Uppdaterad: **2026-08-12 (/cs-körning nr 5, enligt ANALYSMETOD.md)**. Kampanj 1
 **Budget 2 000 kr/dag · target-CPA 185 kr · break-even-CPA 326 kr** (kill mäts mot break-even, aldrig mot target).
 Produktfakta (omverifierat i Shopify 2026-08-09): **599 kr, jämförpris 678 kr = spara 79 kr (11,65 %)**, fri frakt, 30 dagars öppet köp, 4,75/5 (8 recensioner).
 **PRISÄNDRING 2026-08-05: 509 → 599 kr.** Siffrorna 509 kr, 636 kr och "20 %" är FÖRBJUDNA i all ny copy och creative.
+
+## LAGERUTFÖRSÄLJNING — stående faktum sedan 2026-08-13 (ägarbekräftat)
+
+Bäverbutiken kör en **verklig lagerutförsäljning** i sina butiker. Målet är att sälja ned befintligt
+lager, och nuvarande priser är faktiska nedsatta priser. Detta är inte en kampanjvinkel — det är sant.
+
+**Tillåtet att skriva:** "lagerutförsäljning" · "nedsatta priser" · "så långt lagret räcker".
+
+**Fortfarande förbjudet, och gränsen är skarp:**
+- ❌ **Ingen rabattprocent alls för denna produkt.** Ägaren anger ~25 % som ett generellt snitt över
+  butiken men säger uttryckligen att det varierar per produkt och inte får anges mer exakt än
+  produktens eget underlag stödjer. Axelbältets underlag i Shopify: **599 kr nu, 678 kr ordinarie,
+  79 kr i skillnad.** Skriv kronor, aldrig procent.
+- ❌ Påhittade lagernivåer ("bara 40 kvar"), påhittade slutdatum ("gäller till söndag"),
+  påhittade ordinariepriser.
+- ⚠️ Om det verkliga ordinariepriset för axelbältet är högre än 678 kr ska **jämförpriset i Shopify
+  uppdateras först**. En annons som lovar mer besparing än produktsidan visar är en missmatch
+  köparen ser på ett klick.
+- ⚠️ Live-annonsen `SO_2_1` med **"FÅ 20% RABATT IDAG"** blir inte korrekt av att utförsäljningen är
+  äkta. 20 % är en specifik sats som produktens underlag inte stödjer. Flaggan står kvar.
 LP: baverbutiken.se/products/axelbalte-for-trimmer-justerbart-nylonbalte
 
 Kampanjtotal livstid: **37 459 kr spend · 127 köp · CPA 295 kr · ROAS 1,98 · frekvens 3,09**.

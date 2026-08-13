@@ -705,3 +705,44 @@ vinstledare är rå mobilfilm och samtliga AI-ansiktsvideor har antingen dödats
 **Blockerad uppgradering:** finns en äkta orsak till priset (parti beställt för stort, leverantörslot,
 verkligt säsongsavslut) blir beat 1 och 3 modellens riktiga ryggrad och annonsen blir väsentligt
 starkare. Den meningen skrivs inte av Claude. Kräver ett faktum från ägaren.
+
+---
+
+## 2026-08-13 (kväll) — lagerutförsäljningen bekräftad, två leveranser uppdaterade
+
+Ägaren bekräftade att Bäverbutiken kör en **verklig lagerutförsäljning**: målet är att sälja ned
+befintligt lager och nuvarande priser är faktiska nedsatta priser. Det låser upp reason-why-vinkeln
+som både swipen och listiclen saknade, och som var det enda som höll dem tillbaka.
+
+**Gränsen ägaren satte, inskriven i dna.md:** ingen rabattprocent för denna produkt. ~25 % är ett
+generellt snitt över butiken som varierar per produkt, och axelbältets eget underlag är 599/678,
+alltså 79 kr. Kronor, aldrig procent. Inga påhittade lagernivåer, slutdatum eller ordinariepriser.
+
+### `Trimmerbelt_SO_8_1` — modellens ryggrad återställd
+
+Beat 1 och beat 3 bär nu skälet, precis som i förlagan. Alla tre hooks omskrivna så att
+lagerutförsäljningen finns i de första fem sekunderna. Beat 12 avslutar på utförsäljningen i stället
+för på kalendern. Två captions tillagda. Primärtext och rubrik öppnar nu på utförsäljningen.
+
+**H1 är det egentliga testet:** skälet först, erbjudandet faller ut ur det. Ingen video i kontot har
+någonsin lett med ett erbjudande, och de offer-ledda staticsen ger kontots högsta CVR (4,55 %).
+H2 och H3 är kontroller.
+
+Beats 4 till 11 (smärta, mekanism, fienden, enkelhet, byggnad, invändning, proof) är **oförändrade** —
+de hängde aldrig på erbjudandet.
+
+### Listiclen — ärlighetssektionen har äntligen ett skäl
+
+- **Dek** bär nu skälet, precis som motorhöljets dek gjorde. Det var den strukturella lucka som
+  uppstod när jag byggde utan bekräftad orsak.
+- **Sammanfattningen** öppnar på lagerutförsäljningen.
+- **Ärlighetssektionen** säger nu det den ska säga: vi säljer ut lagret, det är hela anledningen.
+  Fortfarande ärlig åt andra hållet (678 kr är vad det kostar i vanliga fall) och fortfarande
+  ingen procentsats och ingen nedräkning.
+- **Hero-CTA** → "Visa lagerutförsäljningen → 599 kr". **Slut-CTA** → "så långt lagret räcker".
+- H1 är kvar **smärtledd**. Smärta ger ~2× vinst per krona mot säsong/offer i annonsdatan, och
+  frameworkets slot 1 tillåter antingen problemet eller erbjudandet. Vill du att `SO_8` ska peka på
+  en sida vars första mening matchar annonsens löfte är en offer-ledd H1-variant ett litet byte.
+
+Verifieringsgrindarna kördes om på listiclen efter ändringen: 27/27 textnycklar, 0 tankstreck,
+0 kvarlevor, 0 förbjudna priser.
