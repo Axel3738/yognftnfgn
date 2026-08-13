@@ -39,19 +39,26 @@ Punkt 2 bär kontots starkaste mätta insikt: handduks-hooken (`PD_13_H1`, CTR
 3,87 %, högst i kontot). Punkt 4 landar i prisankaret, som är kontots
 bäst konverterande budskap (`SO_1_1_H1`, LPV→köp 6,33 %).
 
-## AVVIKELSE FRÅN KÄLLSIDAN, medveten
+## Prisramen (uppdaterad 2026-08-13)
 
-Källsidan säljer på **lagerrensning** ("vi beställde in för många"). Den ramen
-kunde inte återanvändas: vi har ingen överlagersituation på sätesöverdraget
-(lagersaldot i Shopify är till och med negativt). Att skriva en påhittad
-lagerrensning hade brutit både frameworkets egen regel om ärligt prisskäl och
-CLAUDE.md:s regel att aldrig hitta på data.
+Axel har bekräftat att en **verklig lagerutförsäljning pågår**: syftet är att
+sälja ned befintligt lager och nuvarande priser är nedsatta mot ordinarie.
+Sidan bygger därför på samma reason-why-mekanik som källsidan. Följande block
+skrevs om: `h1`, `dek`, `hero_cta`, `summary`, `honesty_body`, `risk_body`,
+`risk_cta` och `solution_cta`.
 
-Ärlighetssektionen säger därför sanningen i stället: 649 kr är vad överdraget
-kostar hos oss varje dag, 811 kr är ordinarie pris (verifierat som
-`compareAtPrice` i Shopify), och det verkliga argumentet är att du byter ett
-överdrag i stället för ett helt säte. Ingen "så länge lagret räcker" finns kvar
-på sidan.
+Gränserna som gäller ändå, och som `build.py` upprätthåller:
+
+| Tillåtet | Inte tillåtet |
+|---|---|
+| "lagerutförsäljning", "nedsatta priser", "så långt lagret räcker" | Procentsatser. Vi skriver 649 mot ordinarie 811 kr, aldrig ett tal i procent |
+| 649 kr och 811 kr (`price` och `compareAtPrice` i Shopify) | Slutdatum, nedräkning, "sista chansen", "bara idag" |
+| Att vi säljer ned befintligt lager | **Varför** vi gör det. Källsidans "vi beställde in för många" är inte vårt skäl och används inte |
+| | Lagersiffror: "bara X kvar", "X sålda" |
+
+Ordinarie-priset 811 kr påstås vara vårt normalpris, vilket ägaren bekräftat.
+Sidan påstår däremot **inte** att priset historiskt tagits ut under någon viss
+period, eftersom det inte går att belägga ur underlaget.
 
 ## Kontroller som körs vid varje bygge (build.py stoppar vid fel)
 

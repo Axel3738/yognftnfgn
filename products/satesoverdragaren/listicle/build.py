@@ -57,9 +57,16 @@ MARKERS = [
   ('Ja tack, ett hölje för 299 kr',                      'risk_cta',      'p'),
 ]
 
+# Källproduktens ord. 'lagerrens'/'lagerutförsäljning' är INTE förbjudna sedan
+# 2026-08-13: en verklig lagerutförsäljning pågår, bekräftad av ägaren.
 FORBIDDEN_WORDS = ['motorhölj', 'motorhöl', 'kåpa', 'kåpan', 'utombordar', 'båt', 'brygga',
                    'salt', 'vax', 'poler', 'glans', '420D', 'hk', 'dragsko', 'akterspegel',
-                   'sjösättning', 'lagerrens', '299 kr', '367 kr', 'stuvfack']
+                   'sjösättning', '299 kr', '367 kr', 'stuvfack']
+
+# Påståenden vi inte får göra ens under en verklig rea: exakta rabattsatser,
+# slutdatum, nedräkningar eller lagersiffror finns inte i underlaget.
+FORBIDDEN_CLAIMS = [r'\d+\s*%', r'\bsista chansen\b', r'\bbara idag\b', r'\bgäller till\b',
+                    r'\bslutar\s+\d', r'\bbara\s+\d+\s+kvar\b', r'\b\d+\s+sålda\b']
 
 
 def collect(node, out):
@@ -165,6 +172,10 @@ def main():
         pat = re.escape(w) if len(w) > 3 else r'\b' + re.escape(w) + r'\b'
         n = len(re.findall(pat, joined, re.I))
         if n: fails.append(f'KÄLLPRODUKTENS ORD kvar: {w!r} x{n}')
+    ny_text = re.sub(r'<[^>]+>', ' ', '\n'.join(M.values()))
+    for pat in FORBIDDEN_CLAIMS:
+        for m in set(re.findall(pat, ny_text, re.I)):
+            fails.append(f'OTILLÅTET PÅSTÅENDE (ej belagt i underlaget): {m!r}')
     for old in IMG:
         if old.split('?')[0] in body: fails.append(f'GAMMAL BILD kvar: {old[:50]}')
     if OLD_LINK in body: fails.append('GAMMAL PRODUKTLÄNK kvar')

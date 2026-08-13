@@ -24,25 +24,30 @@ Två saker bär den:
 2. **Inget adjektiv utan mekanism bakom.** "Hålen är utformade så att direkt
    låga och rök når varje bit mat" i stället för "bra grillkorg".
 
-### Vad som INTE kunde kopieras, och varför
-- **Lagerrensningen.** Vi har ingen överlagersituation (lagersaldot i Shopify är
-  negativt). Prisjämförelsen "ett nytt säte kostar flera tusenlappar, det här
-  kostar 649 kr" sattes i den sloten i stället. Den behåller
-  offer-first-mekaniken och är dessutom kontots bäst konverterande budskap
-  (`SO_1_1_H1`, LPV→köp 6,33 %).
-- **40 % rabatt.** Vår skillnad 811 → 649 kr är 20 %. Ingen procentsiffra
-  används i manuset.
-- **Livstidsgaranti.** Vi har 30 dagars öppet köp. Stängningen bygger på
-  nollrisk i stället för på knapphet.
+### Uppdaterat 2026-08-13: lagerutförsäljningen är verklig
+Axel har bekräftat att en **verklig lagerutförsäljning pågår** i butikerna, att
+syftet är att sälja ned befintligt lager och att nuvarande priser är nedsatta mot
+ordinarie. Reason-why-hooken är därför tillbaka och manuset ligger nu mycket
+närmare originalet. Beat 1, 2, 3 och 11 omskrivna, plus 30-sekunderskortningen
+och annonstexten.
+
+### Vad som fortfarande INTE kopieras, och varför
+- **Procentsatsen.** Originalet leder på 40 %. Vi skriver bara kronor: 649 mot
+  ordinarie 811. Axels underlag säger ~25 % i snitt över sortimentet men att
+  rabatten varierar per produkt och inte får anges mer exakt än produktens eget
+  underlag stödjer. 649/811 är dokumenterat i Shopify, en procentsats härledd ur
+  ett snitt är det inte.
+- **Skälet till utförsäljningen.** Originalet säger "vi råkade beställa för
+  många". Det skälet har vi aldrig fått. Vi säger att vi säljer ned befintligt
+  lager, inget mer.
+- **Slutdatum, nedräkning och lagersiffror.** Finns inte i underlaget.
+  "Så långt lagret räcker" är den enda knapphetsformulering som används.
+- **Livstidsgaranti.** Vi har 30 dagars öppet köp. Stängningen kombinerar nu
+  nollrisk och "så långt lagret räcker", som originalet.
 - **Talaren.** Originalet har en namngiven anställd. Manuset använder [NAMN] som
   platshållare. **Måste fyllas med en riktig person hos Bäverbutiken innan
   produktion.** Vi har redan två policyavvikelser i kontot från påhittade
   personer (`SP_3_1_H1`, `SP_6_1`), det får inte bli en tredje.
-
-### Öppet beslut till Axel
-Vill du köra den **bokstavliga** lagerrensningsramen (riktig tidsbegränsad rabatt
-upplagd i Shopify) så byggs manuset om på den och blir närmare originalet. Det är
-ett ägarbeslut om pris, inte något Claude gör själv.
 
 ### Nästa steg
 1. Axel skickar två extra hooks utöver originalhooken.
