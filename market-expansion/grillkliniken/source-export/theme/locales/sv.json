@@ -1,0 +1,814 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "blogs": {
+    "article": {
+      "view_all": "Visa alla",
+      "tags": "Taggar",
+      "read_more": "Fortsätt läsa",
+      "back_to_blog": "Tillbaka till {{ title }}"
+    },
+    "comments": {
+      "title": "Lämna en kommentar",
+      "name": "Namn",
+      "email": "E-postadress",
+      "message": "Meddelande",
+      "post": "Lämna kommentar",
+      "moderated": "Vänligen notera att alla kommentarer måste godkännas innan de publiceras",
+      "success_moderated": "Din kommentar har skickats och är nu under granskning. Vi publicerar den så fort som möjligt!",
+      "success": "Din kommentar har skickats. Tack!",
+      "with_count": {
+        "one": "{{ count }} kommentar",
+        "other": "{{ count }} kommentarer"
+      }
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Varukorg",
+      "remove": "Ta bort",
+      "note": "Leveransnotering",
+      "subtotal": "Delsumma",
+      "discounts": "Rabatter",
+      "shipping_at_checkout": " ",
+      "update": "Uppdatera varukorg",
+      "checkout": "Till kassan",
+      "empty": "Din varukorg är tom.",
+      "continue_browsing_html": "<a href='{{ url }}'>Fortsätt handla</a>",
+      "close_cart": "Stäng varukorg",
+      "reduce_quantity": "Reducera produktkvantitet med en",
+      "increase_quantity": "Öka produktkvantitet med en",
+      "terms": "Jag godkänner användarvillkoren",
+      "terms_html": "Jag godkänner <a href='{{ url }}' target='_blank'>användarvillkoren</a>",
+      "terms_confirm": "Du måste godkänna våra användarvillkor för att slutföra din betalning"
+    },
+    "label": {
+      "price": "Pris",
+      "quantity": "Kvantitet",
+      "total": "Summa"
+    }
+  },
+  "collections": {
+    "general": {
+      "catalog_title": "Katalog",
+      "all_of_collection": "Visa alla",
+      "view_all_products_html": "Visa <br>{{ count }} produkter",
+      "see_more": "Visa mer",
+      "see_less": "Visa mindre",
+      "no_matches": "Ursäkta! Det finns inga produkter i den här kollektionen.",
+      "items_with_count": {
+        "one": "{{ count }} produkt",
+        "other": "{{ count }} produkter"
+      }
+    },
+    "sorting": {
+      "title": "Sortera"
+    },
+    "filters": {
+      "title_tags": "Filtrera",
+      "all_tags": "Alla produkter",
+      "categories_title": "Kategorier"
+    }
+  },
+  "contact": {
+    "form": {
+      "name": "Namn",
+      "email": "E-postadress",
+      "phone": "Mobilnummer",
+      "message": "Meddelande",
+      "send": "Skicka",
+      "post_success": "Tack för ditt mejl! Vi återkommer normalt inom 24 timmar."
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "My account",
+      "details": "Account details",
+      "view_addresses": "View addresses",
+      "return": "Return to account"
+    },
+    "activate_account": {
+      "title": "Activate account",
+      "subtext": "Create your password to activate your account.",
+      "password": "Password",
+      "password_confirm": "Confirm password",
+      "submit": "Activate account",
+      "cancel": "Decline invitation"
+    },
+    "addresses": {
+      "title": "Addresses",
+      "default": "Default",
+      "add_new": "Add address",
+      "edit_address": "Edit address",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "company": "Company",
+      "address1": "Address1",
+      "address2": "Address2",
+      "city": "City",
+      "country": "Country",
+      "province": "Province",
+      "zip": "Postal/Zip code",
+      "phone": "Phone",
+      "set_default": "Set as default address",
+      "add": "Add address",
+      "update": "Update address",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "delete_confirm": "Are you sure you wish to delete this address?"
+    },
+    "login": {
+      "title": "Login",
+      "email": "Email",
+      "password": "Password",
+      "forgot_password": "Forgot password?",
+      "sign_in": "Sign In",
+      "cancel": "Return to Store",
+      "guest_title": "Continue as a guest",
+      "guest_continue": "Continue"
+    },
+    "orders": {
+      "title": "Order History",
+      "order_number": "Order",
+      "date": "Date",
+      "payment_status": "Payment status",
+      "fulfillment_status": "Fulfillment status",
+      "total": "Total",
+      "none": "You haven't placed any orders yet."
+    },
+    "order": {
+      "title": "Order {{ name }}",
+      "date_html": "Placed on {{ date }}",
+      "cancelled_html": "Order cancelled on {{ date }}",
+      "cancelled_reason": "Reason: {{ reason }}",
+      "billing_address": "Billing address",
+      "payment_status": "Payment status",
+      "shipping_address": "Shipping address",
+      "fulfillment_status": "Fulfillment status",
+      "discount": "Discount",
+      "shipping": "Shipping",
+      "tax": "Tax",
+      "product": "Product",
+      "sku": "SKU",
+      "price": "Price",
+      "quantity": "Quantity",
+      "total": "Total",
+      "fulfilled_at_html": "Fulfilled {{ date }}",
+      "subtotal": "Subtotal"
+    },
+    "recover_password": {
+      "title": "Reset your password",
+      "email": "Email",
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "subtext": "We will send you an email to reset your password.",
+      "success": "We've sent you an email with a link to update your password."
+    },
+    "reset_password": {
+      "title": "Reset account password",
+      "subtext": "Enter a new password for {{ email }}",
+      "password": "Password",
+      "password_confirm": "Confirm Password",
+      "submit": "Reset Password"
+    },
+    "register": {
+      "title": "Create Account",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Create",
+      "cancel": "Return to Store"
+    }
+  },
+  "customer_accounts": {
+    "orders": {
+      "order_list": {
+        "no_filtered_results_description": "Ta bort eller justera filter för att se dina ordrar."
+      }
+    },
+    "navigation_and_structure": {
+      "contact_link": "Kontakta oss"
+    },
+    "order_details": {
+      "contact": "Kontakt",
+      "shipping": {
+        "method": "Fraktsätt"
+      }
+    },
+    "payment_methods": {
+      "title": "Betalningsmetod",
+      "add_payment_method_button": "Lägg till betalningsmetod",
+      "delete_payment_method_button": "Ta bort",
+      "delete_payment_method_button_accessibility_label": "Ta bort {{paymentMethodName}}",
+      "back_button": "Tillbaka",
+      "back_button_accessibility_label": "Tillbaka till {{paymentMethodStepTitle}}",
+      "generic_card": "Kort",
+      "expires_soon": "Detta kort utgår snart",
+      "expired": "Detta kort har utgått",
+      "card_update_consent": "Denna betalningsmetod sparas för framtida betalningar",
+      "payment_details": {
+        "title": "Betalningsdetaljer",
+        "credit_card_details_accessibility_label": "slutar med {{lastDigits}}",
+        "billing_title": "Faktureringsadress",
+        "card_info_title": "Kortinformation",
+        "payment_method_expiring_on": "Utgår {{expiryDate}}",
+        "payment_method_expired_on": "Utgick {{expiryDate}}",
+        "close_payment_modal": "Stäng"
+      }
+    },
+    "shop_policies": {
+      "shipping_policy": "Frakt-och leveranspolicy"
+    }
+  },
+  "date_formats": {
+    "month_day_year": "%b %d, %Y"
+  },
+  "gempages": {
+    "Carousel": {
+      "no_slider": "No Slider"
+    },
+    "CarouselV3": {
+      "no_slider": "No Slider"
+    },
+    "Newsletter": {
+      "err_msg_default": "Can’t send email. Please try again later.",
+      "success_msg_default": "Thanks for subscribing"
+    },
+    "IconListV2": {
+      "icons_not_found": "Icons not found"
+    },
+    "IconList": {
+      "icons_not_found": "Icons not found"
+    },
+    "IconListHoz": {
+      "icons_not_found": "Icons not found"
+    },
+    "Product": {
+      "product_not_found": "Product not found"
+    },
+    "ProductList": {
+      "product_not_found": "Product Not Found!",
+      "no_products_found": "No products found!",
+      "no_related_products": "No related products!"
+    },
+    "ProductListV3": {
+      "product_not_found": "Product Not Found!",
+      "no_products_found": "No products found!",
+      "no_related_products": "No related products!"
+    },
+    "ProductTitle": {
+      "product_not_found": "Product Not Found"
+    },
+    "ProductVariants": {
+      "please_select": "Please select an option"
+    },
+    "StockCounter": {
+      "let_buy_now": "<mark>HURRY!</mark> LET BUY NOW"
+    },
+    "Breadcrumb": {
+      "home": "Home"
+    }
+  },
+  "general": {
+    "404": {
+      "title": "404 Hoppsan! Den här sidan finns inte!",
+      "subtext_html": "<p>Sidan du letade efter finns inte! </p><p><a href='{{ url }}'>Fortsätt handla</a></p>"
+    },
+    "accessibility": {
+      "skip_to_content": "Se innehåll",
+      "close_modal": "Close (esc)",
+      "close": "Close",
+      "learn_more": "Läs mer"
+    },
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
+    "pagination": {
+      "previous": "Föregående",
+      "next": "Nästa"
+    },
+    "password_page": {
+      "login_form_heading": "Enter store using password",
+      "login_form_password_label": "Password",
+      "login_form_password_placeholder": "Your password",
+      "login_form_submit": "Enter",
+      "signup_form_email_label": "Email",
+      "signup_form_success": "We will send you an email right before we open!",
+      "admin_link_html": "Store owner? <a href=\"/admin\" class=\"text-link\">Log in here</a>",
+      "password_link": "Password",
+      "powered_by_shopify_html": "This shop will be powered by {{ shopify }}"
+    },
+    "breadcrumbs": {
+      "home": "Hem",
+      "home_link_title": "Tillbaka till startsidan"
+    },
+    "social": {
+      "share_on_facebook": "Dela",
+      "share_on_twitter": "Twittra",
+      "share_on_pinterest": "Dela på Pinterest",
+      "alt_text": {
+        "share_on_facebook": "Dela på Facebook",
+        "share_on_twitter": "Tweeta på Twitter",
+        "share_on_pinterest": "Pin på Pinterest"
+      }
+    },
+    "newsletter_form": {
+      "newsletter_email": "Ange din mejladress",
+      "newsletter_confirmation": "Tack för att ni prenumererar!",
+      "submit": "Prenumerera"
+    },
+    "search": {
+      "view_more": "Läs mer",
+      "collections": "Kollektioner:",
+      "pages": "Sidor:",
+      "articles": "Artiklar:",
+      "no_results_html": "Hoppsan! Din sökterm \"{{ terms }}\" gav inga träffar.",
+      "results_for_html": "Woohoo! Din sökterm \"{{ terms }}\" hittade följande:",
+      "title": "Sök",
+      "placeholder": "Sök på vår butik",
+      "submit": "Sök",
+      "result_count": {
+        "one": "{{ count }} resultat",
+        "other": "{{ count }} resultat"
+      }
+    },
+    "drawers": {
+      "navigation": "Sidonavigation",
+      "close_menu": "Stäng meny",
+      "expand_submenu": "Expandera sub-meny",
+      "collapse_submenu": "Stäng sub-meny"
+    },
+    "currency": {
+      "dropdown_label": "Valuta"
+    },
+    "language": {
+      "dropdown_label": "Språk"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title_html": "Här är ditt presentkort på {{ value }} för {{ shop }}!",
+      "subtext": "Här är ditt presentkort!",
+      "disabled": "Inaktiverad",
+      "expired": "Expired on {{ expiry }}",
+      "active": "Utgår {{ expiry }}",
+      "redeem": "Använd den här koden vid betalning för att lösa in ditt presentkort",
+      "shop_link": "Börja handla",
+      "print": "Skriv ut",
+      "add_to_apple_wallet": "Lägg till i Apple Wallet"
+    }
+  },
+  "home_page": {
+    "onboarding": {
+      "product_title": "Example product",
+      "product_description": "This area is used to describe your product’s details. Tell customers about the look, feel, and style of your product. Add details on color,  materials used, sizing, and where it was made.",
+      "collection_title": "Example collection",
+      "no_content": "This section doesn’t currently include any content. Add content to this section using the sidebar."
+    }
+  },
+  "layout": {
+    "cart": {
+      "title": "Varukorg"
+    },
+    "customer": {
+      "account": "Konto",
+      "log_out": "Logga ut",
+      "log_in": "Logga in",
+      "create_account": "Skapa ett konto"
+    },
+    "footer": {
+      "social_platform": "{{ name }} på {{ platform }}"
+    }
+  },
+  "products": {
+    "general": {
+      "color_swatch_trigger": "Färg",
+      "save_html": " ",
+      "collection_return": "Tillbaka till {{ collection }}",
+      "next_product": "Nästa: {{ title }}",
+      "sale": "Rea",
+      "sale_price": "Reapris",
+      "regular_price": "Ordinarie pris",
+      "from_text_html": "från {{ price }}",
+      "recent_products": "Nyss sedda",
+      "reviews": "Recensioner"
+    },
+    "product": {
+      "description": "Beskrivning",
+      "in_stock_label": "Finns i lager",
+      "stock_label": {
+        "one": "Lågt lager - {{ count }} produkt kvar",
+        "other": "Lågt lager - {{ count }} produkter kvar"
+      },
+      "sold_out": "Slutsåld",
+      "unavailable": "Otillgänglig",
+      "quantity": "Kvantitet",
+      "add_to_cart": "Lägg i varukorgen",
+      "preorder": "Förbeställ",
+      "include_taxes": " ",
+      "shipping_policy_html": " ",
+      "will_not_ship_until": "Redo att skickas {{ date }}",
+      "will_be_in_stock_after": "Tillbaka i lager {{ date }}",
+      "waiting_for_stock": "Lager påväg",
+      "view_in_space": "View in your space",
+      "view_in_space_label": "View in your space, loads item in augmented reality window"
+    }
+  },
+  "sections": {
+    "map": {
+      "get_directions": "Get directions",
+      "address_error": "Error looking up that address",
+      "address_no_results": "No results for that address",
+      "address_query_limit_html": "You have exceeded the Google API usage limit. Consider upgrading to a <a href=\"https://developers.google.com/maps/premium/usage-limits\">Premium Plan</a>.",
+      "auth_error_html": "There was a problem authenticating your Google Maps account. Create and enable the <a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">JavaScript API</a> and <a href=\"https://developers.google.com/maps/documentation/geocoding/get-api-key\">Geocoding API</a> permissions of your app."
+    },
+    "slideshow": {
+      "play_slideshow": "Play slideshow",
+      "pause_slideshow": "Pause slideshow"
+    }
+  },
+  "shopify": {
+    "links": {
+      "powered_by_shopify": "© 2023 xoxo. Alla rättigheter förbehållna."
+    },
+    "checkout": {
+      "shop_policies": {
+        "refund_policy": "Återbetalningspolicy",
+        "contact_information": "Kontaktinformation",
+        "privacy_policy": "Integritetspolicy",
+        "terms_of_service": "Användarvillkor",
+        "shipping_policy": "Frakt-och leveranspolicy"
+      },
+      "marketing": {
+        "sms": {
+          "disclaimer": {
+            "privacy_policy": "Integritetspolicy",
+            "terms_of_service": "Användarvillkor"
+          }
+        },
+        "accept_marketing_checkbox_label": "Mejla mig med nyheter och erbjudanden"
+      },
+      "general": {
+        "page_title": "Kassa",
+        "error_page_title": "Hoppsan! Ett fel har inträffat",
+        "skip_to_content": "Fortsätt till innehåll",
+        "continue_button_label": "Fortsätt",
+        "authenticate_purchase_button_label": "Autentisera betalning",
+        "edit_link_label": "Redigera",
+        "cart": "Varukorg",
+        "close_modal_label": "Stäng",
+        "close_notice_label": "Stäng",
+        "expand_notice_label": "Visa mer",
+        "continue_to_shipping_method": "Till kassan ",
+        "continue_to_payment_method": "Fortsätt till betalning",
+        "continue_to_review": "Granska beställning",
+        "back_to_cart": "Återgå till varukorg",
+        "back_to_contact_information": "Återgå till kontaktinformation",
+        "back_to_shipping_method": "Återgå till fraktsätt",
+        "back_to_payment_method": "Återgå till betalning",
+        "choose_shipping_method": "Välj ett fraktsätt",
+        "choose_payment_method": "Välj en betalningsmetod",
+        "choose_billing_address": "Välj en faktureringsadress",
+        "contact_us_html": "Kontakta oss för mer information",
+        "autocomplete_title": "Förslag",
+        "autocomplete_single_item": "1 artikel tillgänglig",
+        "autocomplete_multi_item": "{{number}} artikel tillgänglig",
+        "autocomplete_selection": "{{number}} av {{total}}",
+        "autocomplete_close": "Stäng förslag",
+        "forwarding_indicator": {
+          "new_window": "Öppnar i en ny flik",
+          "external": "Öppnar extern hemsida",
+          "external_and_new_window": "Öppnar extern hemsida i en ny flik"
+        },
+        "checkout_context": {
+          "step_one": "{{ shop_name }} - Kassa"
+        },
+        "tooltip_accessibility_label": "Mer information",
+        "errors": {
+          "session_identifier_not_unique_error": "Hoppsan, något gick fel! Vänligen försök igen.",
+          "line_item_limit_reached": "Max antal artiklar har nåtts."
+        },
+        "full_price": "Slutsumma:",
+        "all_rights_reserved": "© 2023 Hahahhaha. Alla rättigheter förbehållna.",
+        "print_policies_link_label": "Skriv ut"
+      },
+      "contact": {
+        "title": "Information",
+        "address_title": "Adress",
+        "shipping_address_title": "Leveransadress",
+        "delivery_option_title": "Fraktsätt",
+        "contact_method_title": "Kontaktinformation",
+        "email_label": "E-postadress",
+        "email_placeholder": "E-postadress",
+        "email_or_phone_label": "E-postadress eller telefonnummer",
+        "email_or_phone_placeholder": "E-postadress eller telefonnummer",
+        "stored_addresses_label": "Sparade adresser",
+        "new_address_label": "Använd en ny adress",
+        "first_name_label": "Förnamn",
+        "optional_first_name_label": "Förnamn (frivilligt)",
+        "last_name_label": "Efternamn",
+        "company_label": "Företag",
+        "optional_company_label": "Företag (frivilligt)",
+        "address1_label": "Adress",
+        "address2_label": "Lägenhetsnummer, suite, etc.",
+        "optional_address2_label": "Lägenhetsnummer, suite, etc. (frivilligt)",
+        "city_label": "Stad",
+        "country_label": "Land",
+        "country_code": "Riktnummer",
+        "province_label": "Provins",
+        "province_placeholder": "Provins",
+        "county_label": "Län",
+        "county_placeholder": "Län",
+        "state_label": "Stat",
+        "state_placeholder": "Stat",
+        "region_label": "Region",
+        "region_placeholder": "Region",
+        "region_none": "Ingen vald",
+        "phone_label": "Telefonnummer",
+        "optional_phone_label": "Telefonnummer (friviligt)",
+        "phone_placeholder": "Telefon",
+        "phone_tooltip": "Om vi behöver kontakta dig angående din order",
+        "zip_code_label": "Postnummer",
+        "zip_code_placeholder": "Postnummer",
+        "postal_code_label": "Postnummer",
+        "postal_code_placeholder": "Postnummer",
+        "postcode_label": "Postnummer",
+        "postcode_placeholder": "Postnummer",
+        "pincode_label": "Pinkod",
+        "pincode_placeholder": "Pinkod"
+      },
+      "delivery_options": {
+        "free_total_label": "Gratis",
+        "ship": "Frakt",
+        "shipping_address": "Leveransadress"
+      },
+      "customer_account": {
+        "not_user_label": "Inte {{ first_name }}?",
+        "have_an_account_label": "Har du redan ett konto?",
+        "sign_in_link_label": "Logga in",
+        "sign_out_link_label": "Logga ut",
+        "save_my_information_label": "Spara min information för framtida beställningar"
+      },
+      "stock": {
+        "title": "Slutsåld",
+        "items_unavailable_notice": "Några artiklar är inte längre tillgängliga. Din varukorg har uppdaterats.",
+        "product_column_header": "Produkter",
+        "quantity_column_header": "Antal",
+        "price_column_header": "Pris",
+        "status_column_header": "Status",
+        "removed_from_cart_notice": "Borttagen från varukorg",
+        "sold_out_label": "Slutsåld",
+        "reduced_label": "Prissänkt",
+        "remove_from_cart_button_label": "Ta bort från varukorg",
+        "continue_shopping_button_label": "Fortsätt",
+        "go_back_to_cart_button_label": "Återgå till varukorg"
+      },
+      "order_summary": {
+        "title": "Ordersammanfattning",
+        "order_name_label": "Beställning {{ name }}",
+        "shopping_cart_label": "Varukorg",
+        "discount_title": "Rabatt",
+        "discount_label": "Rabattkod",
+        "discount_placeholder": "Rabattkod",
+        "gift_card_title": "Presentkort",
+        "gift_card_label": "Presentkort",
+        "gift_card_placeholder": "Presentkort",
+        "gift_card_and_discount_title": "Presentkort eller rabattkod",
+        "gift_card_and_discount_label": "Presentkort eller rabattkod",
+        "gift_card_and_discount_placeholder": "Presentkort eller rabattkod",
+        "remove_gift_card_label": "Ta bort presentkort",
+        "remove_discount_label": "Ta bort presentkort",
+        "free_shipping_discount_label": "Fri frakt",
+        "applied_free_shipping_discount_label": "Tillgagd",
+        "apply_discount_button_label": "Använd",
+        "applied_discount_message": "{{ amount }} rabatt från delsumma",
+        "discount_has_been_applied": "Rabatt har använts",
+        "discount_has_been_removed": "Rabatt har tagits bort",
+        "gift_card_has_been_applied": "Presentkort har använts",
+        "gift_card_has_been_removed": "Presentkort har tagits bort",
+        "gift_card_subscriptions_notice": "Presentkort gäller bara på din första beställning",
+        "discount_already_applied": "En rabatt har redan använts för denna beställning. En till rabatt kan inte läggas till.",
+        "subtotal_label": "Delsumma",
+        "shipping_label": "Frakt",
+        "tip_label": "Dricks",
+        "order_total_label": "Summa",
+        "total_label": "Summa",
+        "partial_total_label": "Summa",
+        "free_total_label": "Gratis",
+        "payment_due_label": "Betalning förfaller",
+        "description_label": "Beskrivning",
+        "price_label": "Pris",
+        "quantity_label": "Antal",
+        "product_change_label": "Ändra",
+        "product_image_label": "Produktbild",
+        "scroll_order_summary": "Skrolla för fler artiklar",
+        "expand_order_summary": "Visa ordersammanfattning",
+        "collapse_order_summary": "Göm ordersammanfattning",
+        "original_price": "Ordinarie pris",
+        "sale_price": "Rabatterat pris",
+        "total_updated_label": "Uppdaterad delsumma:",
+        "order_total_updated_label": "Uppdaterad delsumma",
+        "multiple_shipping_lines_label": "Frakt delsumma",
+        "confirmation_number_label": "Bekräftelse #{{ confirmation_number }}",
+        "shipping_default_value": "Räknas ut vid nästa steg",
+        "vat_label_html": " "
+      },
+      "shipping": {
+        "title": "Leverans",
+        "shipping_method_title": "Leveranssätt",
+        "shipping_line_phone_label": "Mobilnummer (nödvändig)",
+        "shipping_line_phone": "Din kurir kan använda detta nummer för att kontakta dig.",
+        "shipping_line_delivery_phone_label": "Mobilnummer",
+        "shipping_line_delivery_phone": "Du kan bli kontaktad med uppdateringar på din beställning.",
+        "free_rate_label": "Gratis"
+      },
+      "payment": {
+        "billing_address_title": "Faktureringsadress",
+        "title": "Betalning",
+        "card_security_notice": "Alla transaktioner är säkra och enkrypterade.",
+        "klarna_pay_later_label": "Betala senare med Klarna",
+        "klarna_pay_now_label": "Betala nu med Klarna",
+        "klarna_slice_it_label": "Delbetala med Klarna",
+        "billing_address_description": "Välj adressen som stämmer överens med ditt kort eller betalningsmetod.",
+        "same_billing_address_label": "Samma som leveransadress",
+        "different_billing_address_label": "Använd en annan faktureringsadress",
+        "card_number_label": "Kortnummer",
+        "card_number_placeholder": "Kortnummer",
+        "card_expiry_label": "Utgångsdatum (MM / YY)",
+        "card_expiry_placeholder": "Utgångsdatum (MM / YY)",
+        "card_verification_value_label": "Säkerhetskod",
+        "card_verification_value_placeholder": "Säkerhetskod",
+        "card_verification_confirm": "För verifikationssyften, vänligen ange ditt korts säkerhetskod.",
+        "card_verification_value_explanation": "Tresiffrig kod som vanligen finns på baksidan av ditt kort. American Express kort har en fyrsiffrig kod på framsidan av kortet.",
+        "card_verification_value_explanation_amex": "Fyrsiffrig kod på framsidan av ditt kort",
+        "card_verification_value_explanation_other": "Tresiffrig kod på baksidan av ditt kort",
+        "name_on_card_label": "Kortinnehavarens namn",
+        "name_on_card_placeholder": "Kortinnehavarens namn",
+        "free_order_notice_html": "Din order är <strong>gratis</strong>. Ingen betalning krävs.",
+        "card_pay_with": "Betala med:",
+        "pay_with_payment_method": "Betala med {{ payment_method}}",
+        "offsite_gateway_redirect_hint": "När du har klickat på \"{{ button_label }}\" kommer du omdirigeras till {{ gateway_label }} för att slutföra ditt köp."
+      },
+      "contextual_availability": {
+        "title": {
+          "one": "Produkt otillgänglig",
+          "other": "Produkter otillgängliga"
+        },
+        "unavailable_label": "Otillgänglig"
+      },
+      "alternative_payment_method_banner": {
+        "express_checkout": "Snabbkassa",
+        "or": "ELLER"
+      },
+      "payment_gateway": {
+        "credit_card_label": "Kortbetalning"
+      },
+      "remember_me": {
+        "title": "Kom ihåg mig",
+        "label": "Spara min information för fortsatta beställningar"
+      },
+      "thank_you": {
+        "contact_information_title": "Kontaktinformation",
+        "thank_you_confirmed_order_with_missing": "Kontakta oss via mejl för att få en orderbekräftelse.",
+        "order_updates_description_html": "Uppdateringar skickas till {{ customer_contact }}",
+        "contact_us": "Kontakta oss",
+        "contact_us_lowercase": "kontakta oss",
+        "contact_us_html": "Behöver du hjälp? {{ contact_us }}",
+        "payment_method_title": "Betalningsmetod",
+        "shipping_method_title": "Fraktsätt",
+        "title": "Tack för din beställning!",
+        "page_title": "Tack {{ display_name }}!",
+        "page_title_no_name": "Tack!",
+        "thank_you_title": "Din beställning har bekräftats",
+        "thank_you_confirmed_order_with_email": "Du kommer få ett bekräftelsemejl med ditt ordernummer inom kort.",
+        "thank_you_confirmed_order_with_email_and_phone": "Du kommer få ett bekräftelsemejl med ditt ordernummer inom kort.",
+        "order_updates_title": "Uppdateringar",
+        "order_status_updates_with_email": "Du kommer få frakt- och leveransuppdateringar via e-post.",
+        "customer_information_title": "Kundinformation",
+        "shipping_address_title": "Leveransadress",
+        "billing_address_title": "Faktureringsadress",
+        "order_status_confirmed_order_with_email": "Du kommer få ett mejl när din beställning är redo.",
+        "order_status_confirmed_order_with_email_and_phone": "Du kommer få ett mejl när din beställning är redo.",
+        "marker": {
+          "shipping": "Leveransadress"
+        },
+        "return_to_store_link_label": "Fortsätt handla"
+      },
+      "review": {
+        "blocks": {
+          "contact_method_title": "Kontakt",
+          "change_contact_method_link_label": "Ändra kontaktinformation",
+          "shipping_address_title": "Levereras till",
+          "shipping_method_title": "Fraktsätt",
+          "payment_method_title": "Betalningsmetod",
+          "change_shipping_method_link_label": "Ändra fraktsätt",
+          "change_payment_method_link_label": "Ändra betalningsmetod",
+          "change_shipping_address_link_label": "Ändra leveransadress"
+        }
+      },
+      "field_errors": {
+        "credit_card_verification_value_blank": "Ange CVV eller säkerhetskod på ditt kort",
+        "handle_phone_invalid": "Vänligen ange ditt telefonnummer",
+        "address_phone_blank": "Vänligen ange ditt telefonnummer",
+        "shipping_line_phone_invalid": "Vänligen ange ditt telefonnummer för att använda den här leveransmetoden",
+        "handle_email_invalid": "Ange en giltig e-postadress",
+        "email_invalid": "Ange en giltig e-postadress",
+        "address_first_name_blank": "Ange ditt förnamn",
+        "address_last_name_blank": "Ange ditt efternamn",
+        "address_address1_blank": "Ange din adress",
+        "address_address2_blank": "Lägenhet, suite, etc...",
+        "address_city_blank": "Ange en stad",
+        "address_country_blank": "Välj ett land",
+        "address_zip_blank": "Ange ditt postnummer",
+        "credit_card_number_invalid": "Ange ett giltigt kortnummer",
+        "credit_card_expiry_invalid": "Ange ett giltigt utgångsdatum"
+      },
+      "customer_payment_methods": {
+        "page_title": "Betalningsmetoder",
+        "title": "Betalningsmetoder",
+        "update_card_button_label": "Uppdatera kort"
+      },
+      "processing": {
+        "wait": {
+          "short": "Det sägs att den som väntar på något gott, väntar aldrig för länge"
+        }
+      },
+      "payment_summary": {
+        "billing_address_title": "Faktureringsadress"
+      },
+      "payment_errors": {
+        "credit_card_processing": "Din betalning kunde inte slutföras på grund av tekniska problem. Försök igen om några minuter eller använd en annan betalningsmetod.",
+        "payment_processing": "Din betalning kunde inte slutföras på grund av tekniska problem. Försök igen eller använd en annan betalningsmetod.",
+        "payment_processing_no_retry": "Din betalning kunde inte slutföras på grund av tekniska problem. Vänligen använd en annan betalningsmetod."
+      }
+    },
+    "filters": {
+      "availability": {
+        "label": "Tillgänglighet",
+        "value": {
+          "in_stock": "I lager",
+          "out_of_stock": "Slutsåld"
+        }
+      },
+      "price": {
+        "label": "Pris"
+      },
+      "vendor": {
+        "label": "Märke"
+      },
+      "product_type": {
+        "label": "Produkttyp"
+      },
+      "boolean": {
+        "true_label": "Ja",
+        "false_label": "Nej"
+      },
+      "tags": {
+        "label": "Fler filter"
+      }
+    },
+    "collections": {
+      "sorting": {
+        "az": "Alfabetisk, A-Ö",
+        "za": "Alfabetisk, Ö-A",
+        "best_selling": "Bästsäljare",
+        "price_ascending": "Pris, lågt till högt",
+        "price_descending": "Pris, högt till lågt",
+        "date_ascending": "Datum, äldre till nyare",
+        "date_descending": "Datum, nyare till äldre",
+        "manual": "Utvalda"
+      }
+    },
+    "search": {
+      "sorting": {
+        "price_ascending": "Pris, lågt till högt",
+        "price_descending": "Pris, högt till lågt"
+      }
+    },
+    "sentence": {
+      "words_connector": ",",
+      "two_words_connector": "och",
+      "last_word_connector": "och"
+    }
+  },
+  "store_availability": {
+    "general": {
+      "view_store_info": "Visa butiksinformation",
+      "check_other_stores": "Visa tillgänglighet på andra butiker",
+      "pick_up_available": "Pickup available",
+      "pick_up_currently_unavailable": "Pickup currently unavailable",
+      "pick_up_available_at_html": "Pickup available at <strong>{{ location_name }}</strong>",
+      "pick_up_unavailable_at_html": "Pickup currently unavailable at <strong>{{ location_name }}</strong>"
+    }
+  }
+}
