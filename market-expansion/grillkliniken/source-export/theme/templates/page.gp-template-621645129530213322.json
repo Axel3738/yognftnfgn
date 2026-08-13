@@ -1,0 +1,182 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gp_section_621645129697985482": {
+      "settings": {
+        "checksum": "7495f56e8ced5dfbda0306af62c2df648e5090189303d71e844351c92f938a40_1_1_1_0__1",
+        "ggN_Y62y1x6_background_desktop_image_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/IMG_4290.jpg",
+        "ggN_Y62y1x6_background_mobile_image_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/IMG_4290.jpg",
+        "ggN_Y62y1x6_background_tablet_image_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/IMG_4290.jpg",
+        "ggaJsxiAN7L_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_1.png",
+        "ggaJsxiAN7L_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_1.png",
+        "ggaJsxiAN7L_srcSet_tablet_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_1.png",
+        "ggicEtHSQob_label": "<p>Se erbjudandet nu</p>"
+      },
+      "type": "gp-section-621645129697985482"
+    },
+    "gp_section_621645129698051018": {
+      "settings": {
+        "checksum": "c65271e84c2b14df34f2fe2a848e33736d7c4411610fe44d34b6d58482d5a398_1_1_1_0__1",
+        "ggXVwZhmAuK_text": "<p><i><strong>Rent galler varje gång. Inte bara när du orkar.&nbsp;</strong></i><br><br><i><strong>30 dagars öppet köp, inga frågor ställs.&nbsp;</strong></i><br><br><i><strong>Fri frakt inom Sverige.</strong></i></p>"
+      },
+      "type": "gp-section-621645129698051018"
+    },
+    "gp_section_621645129698116554": {
+      "settings": {
+        "checksum": "6c1832dcc046f47fa683fc0da139e13aa55d86ba5475db412034d8ec1041af03_1_1_1_0__1",
+        "gg4KQlTtUYv_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>- Mikael T.</strong></span></p>",
+        "gg5PSJ4Q-GY_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>En till stugan också</strong></span></p>",
+        "gg7NpbaGO4B_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>- Johan S.</strong></span></p>",
+        "ggArOemGYsb_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>Frun nöjd att borsten försvann</strong></span></p>",
+        "ggBgWMJwY3q_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>Perfekt start på säsongen</strong></span></p>",
+        "ggFSVFalSQB_text": "<p><strong>4.7 / </strong>60 recensioner</p>",
+        "ggFXZ2-NMIt_text": "<span style=\"background-color:#FF3B00;color:#FFFFFF;\">Kundrecensioner</span>",
+        "ggFlRB-uzyw_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\">Normalt ett jobb jag skjuter upp i en halvtimme. Nu tar det knappt en minut.</span></p>",
+        "ggJl5RX_A0Q_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>- Marcus A.</strong></span></p>",
+        "ggNo76XJh-k_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>- Peter N.</strong></span></p>",
+        "ggSHNHBn1Un_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\">Köpte en till stugan också. Enkelt funkar och inga konstigheter.</span></p>",
+        "ggS_u_DFeUK_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\">Tog fram grillen inför Valborg och gallret var ruttet efter vintern. En omgång med borsten och det var klart.</span></p>",
+        "ggV4zCx8JFi_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>Funkar på gjutjärn</strong></span></p>",
+        "ggVTB4Wo5dC_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>Skjuter inte upp rengöringen längre</strong></span></p>",
+        "ggVq9E-t-bu_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>Slängde stålborsten direkt</strong></span></p>",
+        "gg_NQzOCssC_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\">Förväntade mig ännu ett Kinapynt men den här känns robust. Motorn har kraft nog för inbränt fett.</span></p>",
+        "ggdqSjETRqH_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>Känns robust</strong></span></p>",
+        "ggeUbajTDbj_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\">Tog lite tid att vänja sig vid rätt vinkel men när man fått kläm går det snabbt. Frun är nöjd att stålborsten försvann.</span></p>",
+        "ggjLRRM2pbv_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>- Christer F.</strong></span></p>",
+        "ggo0FuGe01V_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>- Tomas W.</strong></span></p>",
+        "ggrYefE8m-M_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\">Hittade ett borststrå i hamburgaren förra sommaren och det var nog. Den här känns gedigen och inte något TV-shop-pynt.</span></p>",
+        "ggreutcPGpi_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>- Rickard B.</strong></span></p>",
+        "ggymToTtxGn_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\">Hade farhågor om att den skulle repa gjutjärnet på min Napoleon men det gick fint.</span></p>"
+      },
+      "type": "gp-section-621645129698116554"
+    },
+    "gp_section_621645129698182090": {
+      "settings": {
+        "checksum": "f495b7398172b09a0aa4f30338a8a4bb0463f0beef84ee5dd3ccff96db01a6b1_1_1_1_0__1",
+        "gg0aF2u8lyT_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_3.png",
+        "gg0aF2u8lyT_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_3.png",
+        "gg0aF2u8lyT_srcSet_tablet_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_3.png",
+        "ggQYsDDjz8q_label": "<p>Beställ Mastern — Fri frakt</p>",
+        "ggcSRSH48Jn_background_desktop_image_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/IMG_4286.jpg",
+        "ggcSRSH48Jn_background_tablet_image_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/IMG_4286.jpg",
+        "ggxMUIlaaZR_background_mobile_image_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/IMG_4286.jpg"
+      },
+      "type": "gp-section-621645129698182090"
+    },
+    "gp_section_621645129698247626": {
+      "settings": {
+        "checksum": "e0b484532ba539fafbd316553daa99666e7b177ea1ff912fc0a6a3ea3e07faa0_1_1_1_0__1",
+        "section_preload": "true"
+      },
+      "type": "gp-section-621645129698247626"
+    },
+    "gp_section_621645129698313162": {
+      "settings": {
+        "checksum": "d4405d58850098367c676d5bc3499fc353760cc6d160581a80c54239fd6026f2_1_1_1_0__1",
+        "ggePKcDJ1a3_text": "<p>OBS: Detta är reklam.<br><a href=\"mailto:kundsupport@grillkliniken.se\">kundsupport@grillkliniken.se</a><br>Grillkliniken.se</p>",
+        "ggnjSBAEvhs_text": "<p>|</p>",
+        "ggwJwnj2Az7_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_4.png",
+        "ggwJwnj2Az7_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_4.png",
+        "ggwJwnj2Az7_srcSet_tablet_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_4.png"
+      },
+      "type": "gp-section-621645129698313162"
+    },
+    "gp_section_621645129698378698": {
+      "settings": {
+        "checksum": "1745b550e1b0b13cc1e5bd6d7490abca993055444b5309c1cc389a261a593485_1_1_1_0__1",
+        "gg12G0kUpIa_text": "<p>Det är den vanligaste missuppfattningen farfar såg i hela sin karriär som grillreparatör. Folk tänder grillen, kör upp värmen och tänker: det bränner av sig. Hög värme löser allt.</p><p>&nbsp;</p><p>Det gör det inte.</p><p>&nbsp;</p><p>När du kör upp värmen börjar det gamla inbrända fettet brytas ner och bilda rök. All den röken du möts av varje gång du öppnar grillocket — det är inte vad du tror.</p><p>&nbsp;</p><p>I den röken finns PAH, polycykliska aromatiska kolväten. Det låter krångligt men det betyder en sak: cancerframkallande ämnen som fastnar direkt i köttet du ska servera din familj. NCI — cancerinstitutet — klassar dem som sannolikt cancerframkallande hos människor.</p><p>&nbsp;</p><p>Du försökte lösa problemet. Du gjorde det värre.</p>",
+        "gg3g8HZ9t2b_text": "DU TRODDE ATT HÖG VÄRME LÖSTE DET — DET GÖR DET INTE",
+        "gglGdc5Sduj_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/just-got-my-new-to-me-22-weber-charcoal-grill-and-looking-v0-76fvb0sm010d1.webp",
+        "gglGdc5Sduj_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/download_11.gif"
+      },
+      "type": "gp-section-621645129698378698"
+    },
+    "gp_section_621645129698444234": {
+      "settings": {
+        "checksum": "38cbdb4094b3c23fdfddd97f1e5ac1897a28f14a5e7d7c9fdb08ae78144a5676_1_1_1_0__1",
+        "ggLThU8b6u0_label": "<p>Byt ut borsten en gång för alla</p>",
+        "ggQ4xMGzK7h_text": "DIN STÅLBORSTE DÖLJER PROBLEMET — DEN LÖSER DET INTE",
+        "ggdzeecRZdG_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260515_060048_550c3444-485b-4d56-bd78-edceaec95db2.png",
+        "ggdzeecRZdG_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Weber_erkanner_A_few_brush_hairs_may_fall_off_during_the_process_1.png",
+        "ggj1ylP6WCi_text": "<p>En vanlig stålborste skrapar på ytan. Den ser ut att göra ett jobb. Men fettet i springorna — det gamla fettet som sitter fast djupt mellan gallerstängerna — når den aldrig dit.</p><p>&nbsp;</p><p>Det är som att damma ett golv utan att sopa under soffan. Det ser städat ut. Det är det inte.</p><p>&nbsp;</p><p>Och det är inte ens det värsta. Weber erkänner det själva skriftligt på sin egen supportsida: borststrån lossnar under normal användning och följer med i maten. I februari 2026 återkallade Weber 3,2 miljoner stålborstar i USA. Sex veckor senare drog Nexgrill tillbaka ytterligare 10,2 miljoner. Tretton miljoner borstar bortplockade på fyra veckor.</p><p>&nbsp;</p><p>I Sverige sitter de fortfarande kvar. På Jula. På Biltema. Bredvid din Weber.</p>",
+        "ggzJY0t-gH4_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/download_9.gif"
+      },
+      "type": "gp-section-621645129698444234"
+    },
+    "gp_section_621645129698509770": {
+      "settings": {
+        "checksum": "570c538678d8c6ebb97bfba5996d7195089315a9aa74cf4de1961d22f0cdf1fd_1_1_1_0__1",
+        "gg5HKHt_pbr_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/2005/9307/files/Rectangle_41017.png",
+        "gg5HKHt_pbr_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/download_9.gif",
+        "ggC0xmYDikw_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260515_060630_b31d00e8-9061-44b0-aa3c-46e9db6cdfad.png",
+        "ggC0xmYDikw_srcSet_tablet_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260515_060630_b31d00e8-9061-44b0-aa3c-46e9db6cdfad.png",
+        "ggPDY2CMjIb_text": "DET VAR INTE KÖTTET",
+        "ggso_0gGOT3_text": "<p>Du har köpt från en riktig slaktare. Betalat mer. Bytt från gasol till kol. Skaffat termometer för att vara helt exakt på graden.</p><p>&nbsp;</p><p>Ändå, samma sak. En smak du inte riktigt kan sätta fingret på. Som att köttet smakar lite av... förra gången.</p><p>&nbsp;</p><p>Och det var precis vad det gjorde.</p><p>&nbsp;</p><p>Fettet från förra grillningen har sjunkit ner mellan gallerstängerna. Exakt som smutset i mugghållaren i bilen, du vet att det är där, du har alltid tänkt att du ska ta tag i det, men det sitter kvar. Och varje gång du lägger på nytt kött värms det gamla fettet upp igen. Det ryker. Det sätter smak. Det isolerar ytan och förstör den direktkontakt som ger den där perfekta stekytan.</p><p>&nbsp;</p><p>Journal of Food Science mätte det 2024: inbränt fett på grillgallret försämrar smaken på köttet med upp till 34 procent. Det är inte en liten detalj. Det är skillnaden mellan <i>gott</i> och <i>det här är det bästa jag ätit</i>.</p>"
+      },
+      "type": "gp-section-621645129698509770"
+    },
+    "gp_section_621645129698575306": {
+      "settings": {
+        "checksum": "238791c8a02adee93c4cdc31683c618f178d2fbddd4bd81fbd7997537d8ebd16_1_1_1_0__1",
+        "gg1Lydu5nRs_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/e_4.gif",
+        "gg1Lydu5nRs_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/e_4.gif",
+        "ggA904-0DfB_label": "<p>Se erbjudandet nu</p>",
+        "ggdcYl02jms_text": "<p>Grillklinikens Master snurrar mot gallret istället för att skrapa. Tänk skillnaden mellan att skruva med en vanlig skruvmejsel och en elskruvmejsel, samma jobb, en bråkdel av kraften, en bråkdel av tiden. Rotationen bryter loss fettet underifrån och upp, når ner i springorna där en vanlig borste aldrig kommer. Inga lösa borststrån. Inget hårt tryck.</p><p>&nbsp;</p><p>En knapp. Sextio sekunder.</p><p>&nbsp;</p><p>Direkt kontakt mellan köttet och gallret. Ingen gammal smak. Ingen rök från förra grillningen. Bara köttet och värmen, precis som på restaurangen.</p><p>&nbsp;</p><p>Marcus från Göteborg hade grillat på sin Napoleon i sju år. Han skriver: <i>\"Första gången jag använde den förstod jag att jag aldrig rengjort gallret på riktigt. Köttet smakar annorlunda. Det är inte placebo.\"</i></p><p>&nbsp;</p><p>Det är inte placebo. Det är vad som händer när du tar bort det som saboterade resultatet varje gång.</p><p>&nbsp;</p><p>999 kr. Delat på tio säsonger. Det är 99 kr per grillsommar, och det värsta som kan hända är att du slutar skrubba för hand.</p><p>&nbsp;</p><p>Inte nöjd, full återbetalning. Inga frågor. Inte ens ett höjt ögonbryn.</p>",
+        "ggkk6_gC4qd_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/e_4.gif",
+        "ggkk6_gC4qd_srcSet_tablet_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/e_4.gif",
+        "ggp87Wb3FFa_text": "<strong>MASTERN TAR BORT DET SOM SABOTERADE RESULTATET VARJE GÅNG</strong>"
+      },
+      "type": "gp-section-621645129698575306"
+    },
+    "gp_section_621645129698640842": {
+      "settings": {
+        "checksum": "e70b1e6a7e66cdbf454d5fe5cbfd2797e2688c15f49b60a2b20b925b2feb6c59_1_1_1_0__1",
+        "gg42Me8D_t5_text": "<strong>DU HAR PROVAT ALTERNATIVEN — DE FUNGERAR INTE HELLER</strong>",
+        "gg8FQhJxsPM_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Fore.png",
+        "gg8FQhJxsPM_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Fore.png",
+        "ggnhVRgAr0d_text": "<p>Lökhalvan — den som folk säger funkar. Den funkar halvdant på ett ljummet galler och ingenting alls på fett som suttit där en vecka.</p><p>&nbsp;</p><p>Aluminiumfolie — bra för att skrapa bort det värsta, men springorna når den aldrig.</p><p>&nbsp;</p><p>Dyrare borstar med grövre handtag — samma mekanism, samma resultat.</p><p>&nbsp;</p><p>Du kunde inte förstå hur du förväntade dig något annat när alla egentligen fungerade likadant.</p><p>&nbsp;</p><p>Men det var inte du som misslyckades. Det var att ingen hade byggt rätt verktyg.</p><p>&nbsp;</p><p>Tills nu.</p>"
+      },
+      "type": "gp-section-621645129698640842"
+    },
+    "gp_section_621645129698706378": {
+      "settings": {
+        "checksum": "f7f60820737a87a02cbe2299effa093d253d01169426eddf426461d87fd18627_1_1_1_0__1",
+        "gg5knyehVEx_text": "<p>Av <strong>Anders Johansson.</strong></p>",
+        "ggM51wRYsAX_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260515_060630_b31d00e8-9061-44b0-aa3c-46e9db6cdfad.png",
+        "ggM51wRYsAX_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Namnlos_design_74.png",
+        "ggM51wRYsAX_srcSet_tablet_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260515_060630_b31d00e8-9061-44b0-aa3c-46e9db6cdfad.png",
+        "ggQqOoPJHpx_text": "5 anledningar till varför ditt kött aldrig smakar som på restaurang — och vad du omedvetet gör som förvärrar det",
+        "ggcRx4s-HQ4_text": "<p><i>Du har gjort allt rätt. Bra kött, rätt temperatur, vilat köttet efteråt. Ändå är det alltid något. Det här är varför.</i></p>",
+        "gghBWMjoA6E_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Skarmbild_2026-05-15_085739.png",
+        "gghBWMjoA6E_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260217_124645_31eadc60-b0a9-464e-ab35-6677e400c118_1.webp?v=1777386791",
+        "gghBWMjoA6E_srcSet_tablet_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260217_124645_31eadc60-b0a9-464e-ab35-6677e400c118_1.webp?v=1777386791",
+        "ggyK8xEtS-K_label": "<p>Läs innan du tänder grillen</p><p>&nbsp;→</p>",
+        "ggyzO0V7arV_text": "<p>Senast uppdaterad 15 maj 2026.</p>"
+      },
+      "type": "gp-section-621645129698706378"
+    }
+  },
+  "order": [
+    "gp_section_621645129698247626",
+    "gp_section_621645129698706378",
+    "gp_section_621645129698509770",
+    "gp_section_621645129698378698",
+    "gp_section_621645129698444234",
+    "gp_section_621645129698640842",
+    "gp_section_621645129698575306",
+    "gp_section_621645129698182090",
+    "gp_section_621645129698116554",
+    "gp_section_621645129697985482",
+    "gp_section_621645129698051018",
+    "gp_section_621645129698313162"
+  ],
+  "layout": "theme.gempages.footer"
+}

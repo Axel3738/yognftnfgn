@@ -11,3 +11,6 @@
 {"filename": "templates/collection.json", "expected": 3006, "actual": 4998, "ok": false}
 {"filename": "snippets/tab-contact.liquid", "expected": 3092, "actual": 3092, "ok": true}
 {"filename": "snippets/cart-drawer.liquid", "expected": 3833, "actual": 3833, "ok": true}
+{"filename": "templates/product.grill-golf-kit.json", "expected": 4195, "actual": 6562, "ok": false}
+{"filename": "snippets/collection-template.liquid", "expected": 4943, "actual": 4943, "ok": true}
+{"filename": "layout/theme.gempages.header.liquid", "expected": 5092, "actual": 5092, "ok": true}

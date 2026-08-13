@@ -65,3 +65,12 @@
 {"filename": "templates/page.gp-template-626984950364635947.json", "expected": 288, "actual": 730, "ok": false}
 {"filename": "templates/product.brand-story.json", "expected": 1796, "actual": 3364, "ok": false}
 {"filename": "templates/product.modal.json", "expected": 91, "actual": 506, "ok": false}
+{"filename": "templates/cart.json", "expected": 262, "actual": 262, "ok": true}
+{"filename": "templates/page.full-width.json", "expected": 84, "actual": 84, "ok": true}
+{"filename": "templates/page.gp-template-621105591560963018.json", "expected": 19322, "actual": 19322, "ok": true}
+{"filename": "templates/page.gp-template-624267177721070326.json", "expected": 13519, "actual": 13519, "ok": true}
+{"filename": "templates/page.gp-template-626569055058264875.json", "expected": 288, "actual": 288, "ok": true}
+{"filename": "templates/page.gp-template-626984950364635947.json", "expected": 288, "actual": 288, "ok": true}
+{"filename": "templates/product.brand-story.json", "expected": 1796, "actual": 1796, "ok": true}
+{"filename": "templates/product.modal.json", "expected": 91, "actual": 91, "ok": true}
+{"filename": "assets/password-page-background.jpg", "expected": 1453344, "actual": 1453344, "ok": true}

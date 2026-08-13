@@ -1,0 +1,199 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gp_section_623155472379151128": {
+      "settings": {
+        "checksum": "b46479bd1e55a02765f4ca9473271eaa66fd8f04ae9c24ed10e7333e29f94c9f_1_1_1_0__1",
+        "ggN_Y62y1x6_background_desktop_image_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/IMG_4290.jpg",
+        "ggN_Y62y1x6_background_mobile_image_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/IMG_4290.jpg",
+        "ggN_Y62y1x6_background_tablet_image_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/IMG_4290.jpg",
+        "ggaJsxiAN7L_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_1.png",
+        "ggaJsxiAN7L_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_1.png",
+        "ggaJsxiAN7L_srcSet_tablet_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_1.png",
+        "ggicEtHSQob_label": "<p>Se erbjudandet nu</p>"
+      },
+      "type": "gp-section-623155472379151128"
+    },
+    "gp_section_623155472379216664": {
+      "settings": {
+        "checksum": "524d1630ca90fa17b3c468d2903c5af5f55099beeee2cb09bb91f74832204333_1_1_1_0__1",
+        "ggXVwZhmAuK_text": "<p><i><strong>Rent galler varje gång. Inte bara när du orkar.&nbsp;</strong></i><br><br><i><strong>30 dagars öppet köp, inga frågor ställs.&nbsp;</strong></i><br><br><i><strong>Fri frakt inom Sverige.</strong></i></p>"
+      },
+      "type": "gp-section-623155472379216664"
+    },
+    "gp_section_623155472379282200": {
+      "settings": {
+        "checksum": "5da2b810720dd63d21751cd74dd1383378c0242140e966c02d262de31b98bc4e_1_1_1_0__1",
+        "gg4KQlTtUYv_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>- Mikael T.</strong></span></p>",
+        "gg5PSJ4Q-GY_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>En till stugan också</strong></span></p>",
+        "gg7NpbaGO4B_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>- Johan S.</strong></span></p>",
+        "ggArOemGYsb_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>Frun nöjd att borsten försvann</strong></span></p>",
+        "ggBgWMJwY3q_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>Perfekt start på säsongen</strong></span></p>",
+        "ggFSVFalSQB_text": "<p><strong>4.7 / </strong>60 recensioner</p>",
+        "ggFXZ2-NMIt_text": "<span style=\"background-color:#FF3B00;color:#FFFFFF;\">Kundrecensioner</span>",
+        "ggFlRB-uzyw_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\">Normalt ett jobb jag skjuter upp i en halvtimme. Nu tar det knappt en minut.</span></p>",
+        "ggJl5RX_A0Q_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>- Marcus A.</strong></span></p>",
+        "ggNo76XJh-k_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>- Peter N.</strong></span></p>",
+        "ggSHNHBn1Un_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\">Köpte en till stugan också. Enkelt funkar och inga konstigheter.</span></p>",
+        "ggS_u_DFeUK_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\">Tog fram grillen inför Valborg och gallret var ruttet efter vintern. En omgång med borsten och det var klart.</span></p>",
+        "ggV4zCx8JFi_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>Funkar på gjutjärn</strong></span></p>",
+        "ggVTB4Wo5dC_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>Skjuter inte upp rengöringen längre</strong></span></p>",
+        "ggVq9E-t-bu_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>Slängde stålborsten direkt</strong></span></p>",
+        "gg_NQzOCssC_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\">Förväntade mig ännu ett Kinapynt men den här känns robust. Motorn har kraft nog för inbränt fett.</span></p>",
+        "ggdqSjETRqH_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>Känns robust</strong></span></p>",
+        "ggeUbajTDbj_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\">Tog lite tid att vänja sig vid rätt vinkel men när man fått kläm går det snabbt. Frun är nöjd att stålborsten försvann.</span></p>",
+        "ggjLRRM2pbv_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>- Christer F.</strong></span></p>",
+        "ggo0FuGe01V_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>- Tomas W.</strong></span></p>",
+        "ggrYefE8m-M_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\">Hittade ett borststrå i hamburgaren förra sommaren och det var nog. Den här känns gedigen och inte något TV-shop-pynt.</span></p>",
+        "ggreutcPGpi_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\"><strong>- Rickard B.</strong></span></p>",
+        "ggymToTtxGn_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);\">Hade farhågor om att den skulle repa gjutjärnet på min Napoleon men det gick fint.</span></p>"
+      },
+      "type": "gp-section-623155472379282200"
+    },
+    "gp_section_623155472379347736": {
+      "settings": {
+        "checksum": "c3d78aa4ae1611b28e8ebe182feaab08da403a349b33efa519752fe7889ef4b5_1_1_1_0__1",
+        "gg0aF2u8lyT_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_3.png",
+        "gg0aF2u8lyT_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_3.png",
+        "gg0aF2u8lyT_srcSet_tablet_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_3.png",
+        "ggQYsDDjz8q_label": "<p>Beställ Mastern — Fri frakt</p>",
+        "ggcSRSH48Jn_background_desktop_image_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/IMG_4286.jpg",
+        "ggcSRSH48Jn_background_tablet_image_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/IMG_4286.jpg",
+        "ggxMUIlaaZR_background_mobile_image_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/IMG_4286.jpg"
+      },
+      "type": "gp-section-623155472379347736"
+    },
+    "gp_section_623155472379413272": {
+      "settings": {
+        "checksum": "c57ef7f7b40350458154be2b1d4c7691124c21910f4f026deb9f244f5231fea7_1_1_1_0__1",
+        "section_preload": "true"
+      },
+      "type": "gp-section-623155472379413272"
+    },
+    "gp_section_623155472379478808": {
+      "settings": {
+        "checksum": "311c96e6caa6c8b0aa653506e846e4d1c1c7612db2b84e45e04fee4e2383099e_1_1_1_0__1",
+        "ggePKcDJ1a3_text": "<p>OBS: Detta är reklam.<br><a href=\"mailto:kundsupport@grillkliniken.se\">kundsupport@grillkliniken.se</a><br>Grillkliniken.se</p>",
+        "ggnjSBAEvhs_text": "<p>|</p>",
+        "ggwJwnj2Az7_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_4.png",
+        "ggwJwnj2Az7_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Kopia_av_Lagg_till_en_rubrik_3.png",
+        "ggwJwnj2Az7_srcSet_tablet_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Lagg_till_en_rubrik_4.png"
+      },
+      "type": "gp-section-623155472379478808"
+    },
+    "gp_section_623155472379544344": {
+      "settings": {
+        "checksum": "430a7f8247bd98551edfb6c3a9d3e1abe4728d7c997c80ae2f9dc35495b04cdc_1_1_1_0__1",
+        "gg5knyehVEx_text": "<p>Av <strong>Erik Lindgren.</strong></p>",
+        "ggQqOoPJHpx_text": "JAG TESTADE GRILLKLINIKENS MASTER I 30 DAGAR — HÄR ÄR DEN ÄRLIGA GENOMGÅNGEN",
+        "ggcRx4s-HQ4_text": "<p>Jag ska vara ärlig. Jag köpte den här i hopp om att &nbsp;slippa stå och skrubba gallret i vad som kändes som en evighet efter varje grillning, eftersom det gjorde mig irriterad.</p><p>&nbsp;</p><p>Inte för att jag trodde att den skulle göra något magiskt. Jag har sett tillräckligt med \"revolutionerande grillprylar\" på Facebook för att vara skeptisk. Men priset var min tveksamhet, de hade öppet köp, och jag var trött på armvärken.</p><p>&nbsp;</p><p>Det här är vad som faktiskt hände under trettio dagar.</p>",
+        "gghBWMjoA6E_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Skarmbild_2026-05-15_085739.png",
+        "gghBWMjoA6E_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/image_2.webp",
+        "gghBWMjoA6E_srcSet_tablet_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260217_124645_31eadc60-b0a9-464e-ab35-6677e400c118_1.webp?v=1777386791",
+        "ggyK8xEtS-K_label": "<p>Kolla vad som satt i mitt galler →</p>",
+        "ggyzO0V7arV_text": "<p>Senast uppdaterad 5 Juni 2026.</p>"
+      },
+      "type": "gp-section-623155472379544344"
+    },
+    "gp_section_623155472379609880": {
+      "settings": {
+        "checksum": "3dc80e00a25bd61b7886d1f07332d722f3d43c3401333ffb491ffdbd7e6c225d_1_1_1_0__1",
+        "gg5HKHt_pbr_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/2005/9307/files/Rectangle_41017.png",
+        "gg5HKHt_pbr_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/download_9.gif",
+        "ggC0xmYDikw_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260515_060630_b31d00e8-9061-44b0-aa3c-46e9db6cdfad.png",
+        "ggC0xmYDikw_srcSet_tablet_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260515_060630_b31d00e8-9061-44b0-aa3c-46e9db6cdfad.png",
+        "ggPDY2CMjIb_text": "BAKGRUNDEN: SJU ÅR MED FEL VERKTYG",
+        "ggso_0gGOT3_text": "<p>Jag har grillat på min Napoleon Prestige i sju år. Jag tar det på allvar, rätt temperatur, bra råvaror. Jag gör saker ordentligt.</p><p>&nbsp;</p><p>Men rengöringen har alltid varit ett problem. Inte för att jag är lat, utan för att ingen metod jag provat faktiskt funkat tillräckligt bra för att bli en vana.</p><p>&nbsp;</p><p>Weber-borsten med det bekvämare handtaget, bättre känsla i handen, exakt samma resultat på gallret. Lökhalvan som alla svär på, funkar halvdant på ett ljummet galler, ingenting alls på fett som suttit där en vecka. Jag hade accepterat att rengöringen var ett projekt man skjuter upp. Inte en rutin.</p><p>&nbsp;</p><p>Konsekvensen? Jag lyfte locket inför en grillkväll i maj och såg vad som faktiskt satt i springorna. Svart, inbränt fett, hårt som lack. Lager på lager från säsonger jag inte velat tänka på. Min Napoleon hade kostat över 20 000 kronor. Och jag hade behandlat gallret som en utgift snarare än en investering.</p><p>&nbsp;</p><p>Det var då jag beställde Mastern.</p>"
+      },
+      "type": "gp-section-623155472379609880"
+    },
+    "gp_section_623155472379675416": {
+      "settings": {
+        "checksum": "7ceab3423c97e8ba8bf1eb7e4b79ffe09734d7b6163c71bb13ee475cc7322506_1_1_1_0__1",
+        "gg12G0kUpIa_text": "<p>Paketet kom snabbare än jag förväntat mig.</p><p>&nbsp;</p><p>Första intrycket när jag öppnade kartongen: tyngre än jag trott. Det känns som ett riktigt verktyg, inte en TV-shop-pryl. Handtaget sitter bra i handen. Jag laddade den på natten och provade nästa dag.</p><p>&nbsp;</p><p>Dag ett var ingen uppenbarelse. Jag körde den kallt på gallret, lite osäker på rätt teknik och rätt vinkel. Det lossnade mer än med stålborsten, det är sant, men jag var inte överväldigad. Jag tänkte: okej, den är bättre. Men inte dramatiskt bättre.</p><p>&nbsp;</p><p>Jag lade den på hyllan och tänkte ge den en rättvis chans.</p>",
+        "gglGdc5Sduj_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/just-got-my-new-to-me-22-weber-charcoal-grill-and-looking-v0-76fvb0sm010d1.webp",
+        "gglGdc5Sduj_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260515_060048_550c3444-485b-4d56-bd78-edceaec95db2.png",
+        "ggnh-fI5pOz_text": "<strong>DAG 1: FÖRSTA INTRYCKET</strong>"
+      },
+      "type": "gp-section-623155472379675416"
+    },
+    "gp_section_623155472379740952": {
+      "settings": {
+        "checksum": "7e178bc67afcb5c3cf160dd65bcc98b2d31254ac001b3c9b05c80abd3a75afe3_1_1_1_0__1",
+        "ggHyJjHD0h4_text": "<strong>DAG 3–7: TEKNIKEN BÖRJAR SÄTTA SIG</strong>",
+        "ggLThU8b6u0_label": "<p>Byt ut borsten en gång för alla</p>",
+        "ggdzeecRZdG_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260515_060048_550c3444-485b-4d56-bd78-edceaec95db2.png",
+        "ggdzeecRZdG_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/download_11.gif",
+        "ggj1ylP6WCi_text": "<p>Under den första veckan använde jag den efter varje grillning. Jag såg faktist fram emot att rengöra grillen och varje kväll lärde jag mig lite mer om rätt vinkel och rätt tryck, inte för hårt, inte för lätt. Låta rotationen göra jobbet istället för att pressa mot gallret som med en vanlig borste.</p><p>&nbsp;</p><p>Dag fem märkte jag något. Gallret efter en grillning såg annorlunda ut än det brukat göra. Inte dramatiskt, men det fanns en skillnad i hur rent det faktiskt var, inte bara hur rent det såg ut på ytan.</p><p>&nbsp;</p><p>Min fru kommenterade det utan att jag bett om det. \"Ser bättre ut\", sa hon och gick in igen. Det är hennes högsta betyg.</p>",
+        "ggzJY0t-gH4_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/download_9.gif"
+      },
+      "type": "gp-section-623155472379740952"
+    },
+    "gp_section_623155472379806488": {
+      "settings": {
+        "checksum": "1b973f79e028ab3d4cf339ea56e02687009e6778beebc89449abd220131b80f1_1_1_1_0__1",
+        "gg42Me8D_t5_text": "DAG 10: <strong>MOTGÅNGEN</strong>",
+        "gg8FQhJxsPM_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Fore.png",
+        "gg8FQhJxsPM_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Fore.png",
+        "ggdcYl02jms_text": "<p>Jag ska inte låtsas att allt var perfekt.</p><p>&nbsp;</p><p>Dag tio försökte jag rengöra ett galler som inte värmts upp tillräckligt. Grillen hade stått kall i tre dagar och jag hade inte tänkt på att värma den ordentligt innan. Resultatet var sämre än vanligt, borsten fick inte riktigt fäste på det kalla fettet och jag behövde köra två omgångar.</p><p>&nbsp;</p><p>Lärdomen: Mastern fungerar bäst på ett varmt galler. Antingen direkt efter grillning medan det fortfarande är varmt, eller efter att du tänt grillen och låtit den gå upp i temperatur i fem minuter. Kall rengöring är möjlig men ger inte samma resultat.</p><p>&nbsp;</p><p>Det är ingen stor sak. Men det är värt att veta.</p>"
+      },
+      "type": "gp-section-623155472379806488"
+    },
+    "gp_section_623155472379872024": {
+      "settings": {
+        "checksum": "e41e250f02a07abe47f92edcc5798932dd52ca7b329343dc3411d6c766bb16cf_1_1_1_0__1",
+        "gg1Lydu5nRs_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/e_4.gif",
+        "gg1Lydu5nRs_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/e_4.gif",
+        "gg7gyYFCfu1_text": "DAG 30: SLUTSATSEN",
+        "gg8KRvfaNsC_text": "VAD JAG ÖNSKAR ATT JAG VISSTE FRÅN BÖRJAN",
+        "ggA904-0DfB_label": "<p>Se erbjudandet nu</p>",
+        "ggErr2Rb0AQ_text": "<p>Värm alltid upp gallret innan. Doppa alltid borsthuvudet i vatten. Låt rotationen göra jobbet. Gör det efter varje grillning, inte när du \"orkar\".</p><p>&nbsp;</p><p>Det är allt.</p>",
+        "ggISPUafoF4_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Fore.png",
+        "ggISPUafoF4_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/img_2001.webp",
+        "gg_Xc-F6M2U_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/2005/9307/files/image_demo.jpg",
+        "gg_Xc-F6M2U_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Namnlos_design_74.png",
+        "ggaFGP1kfmr_label": "<p>Beställ Mastern — Fri frakt</p>",
+        "ggkk6_gC4qd_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/e_4.gif",
+        "ggkk6_gC4qd_srcSet_tablet_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/e_4.gif",
+        "ggnhVRgAr0d_text": "<p>Dag fjorton hittade jag ett tips i en kommentar under en av Grillklinikens videos. Någon hade skrivit att de värmt upp gallret ordentligt innan rengöringen och sedan doppat borsthuvudet i en skål med vatten precis innan de körde.</p><p>&nbsp;</p><p>Jag var skeptisk. Det lät som ett onödigt extra steg.</p><p>&nbsp;</p><p>Jag testade ändå.</p><p>&nbsp;</p><p>Skillnaden var omedelbar och tydlig. När det varma gallret möter det vattendränkta borsthuvudet bildas ånga mot metallen. Den ångan tränger in under det inbrända fettet och luckrar upp bindningen innan rotationen bryter loss det. Fettet lossnar inte bara lättare, det lossnar i ett helt annat tempo.</p><p>&nbsp;</p><p>Det som tidigare tog sextio sekunder tog nu trettio. Och resultatet var märkbart bättre.</p><p>&nbsp;</p><p>Sedan dess gör jag alltid så. Värm upp gallret, doppa borsthuvudet i vatten, kör. Det blir dubbelt så bra resultat. Om du köper Mastern, gör det här från dag ett. Det är det enda jag önskar att jag vetat från början.</p>",
+        "ggp87Wb3FFa_text": "<strong>DAG 14: TIPSET SOM FÖRÄNDRADE ALLT</strong>",
+        "ggqzbrUF6mI_srcSet_desktop_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Fore.png",
+        "ggqzbrUF6mI_srcSet_mobile_src": "https://cdn.shopify.com/s/files/1/0947/0174/8548/files/IMG_4286.jpg",
+        "ggtvhcwrDyh_text": "<p>Min granne Marcus kom över för en grillkväll dag tjugoett. Han har en Weber Genesis och är lika noggrann som jag med råvaror och teknik.</p><p>&nbsp;</p><p>Han lyfte locket på min Napoleon när jag stod inne och hämtade öl. När jag kom ut stod han och tittade på gallret med ett uttryck jag inte sett förut.</p><p>&nbsp;</p><p>\"Hur länge har du haft den här grillen?\" frågade han.</p><p>&nbsp;</p><p>Sju år, sa jag.</p><p>&nbsp;</p><p>Han skakade på huvudet. \"Det ser ut som den är ny.\"</p><p>&nbsp;</p><p>Det var inte en artig kommentar. Det var genuint förvånad. Och köttet den kvällen fick en reaktion från hans sida som tog tre sekunder av tystnad innan han sa något. Den reaktionen hade jag väntat på länge.</p>",
+        "ggzGoxJJvGf_text": "DAG 21: REAKTIONEN VID GRANNSKAPET",
+        "ggzmgHl1qo__text": "<p>Trettio dagar. Tolv grillningar. Här är vad jag faktiskt märkt:</p><p>&nbsp;</p><p>Stekytan på köttet är annorlunda. Det är svårt att förklara exakt hur utan att låta pretentiös, men direktkontakten mellan köttet och ett rent galler ger en jämnare och kraftigare stekyta. Det är inte placebo, jag märkte det konsekvent från dag tio och framåt.</p><p>&nbsp;</p><p>Bismaken är borta. Den där smaken som jag inte riktigt kunde sätta fingret på men alltid var där, borta. Köttet smakar kött, inte förra veckans grillning.</p><p>&nbsp;</p><p>Rengöringen tar numera sextio sekunder. Med ångtricket ibland trettio. Det är inte längre ett projekt jag skjuter upp. Det är en del av grillkvällen, lika självklar som att vila köttet efteråt.</p><p>&nbsp;</p><p>Batteriet håller. Tolv grillningar och jag har laddat den en gång. Det är bättre än jag förväntade mig.</p><p>&nbsp;</p><p>Grillen ser ut som den gjort i år ett. Min Napoleon kostade 14 000 kronor. Det verktyg som skyddar den investeringen kostar 999 kronor. Delat på tio säsonger är det 99 kronor per grillsommar. Det är det enklaste köpet jag gjort för grillen på sju år.</p>"
+      },
+      "type": "gp-section-623155472379872024"
+    },
+    "gp_section_623205773912048632": {
+      "settings": {
+        "checksum": "f152cef950c4cb1d1f9a1f04cf414aa9c11ea8d5e251897f73d216cc930a203a_1_1_1_0__1"
+      },
+      "type": "gp-section-623205773912048632"
+    }
+  },
+  "order": [
+    "gp_section_623155472379413272",
+    "gp_section_623155472379544344",
+    "gp_section_623155472379609880",
+    "gp_section_623155472379675416",
+    "gp_section_623155472379740952",
+    "gp_section_623155472379806488",
+    "gp_section_623155472379872024",
+    "gp_section_623155472379347736",
+    "gp_section_623155472379282200",
+    "gp_section_623155472379151128",
+    "gp_section_623155472379216664",
+    "gp_section_623155472379478808",
+    "gp_section_623205773912048632"
+  ],
+  "layout": "theme.gempages.footer"
+}
