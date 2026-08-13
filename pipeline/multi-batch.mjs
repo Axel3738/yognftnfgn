@@ -242,8 +242,11 @@ for (const camp of cfg.campaigns) {
             ...(copy.description ? { link_description: copy.description } : {}),
             call_to_action: { type: copy.cta || 'SHOP_NOW', value: { link: copy.link } },
           }});
-        } else if (Object.keys(r.variants).length === 1) {
-          const hash = Object.values(r.variants)[0];
+        } else if (Object.keys(r.variants).length === 1 || cfg.noFormatCustomization) {
+          // Formatanpassning kräver en Instagram-identitet. Saknas den (t.ex. FI, där
+          // sidan inte har något IG-konto) bygger vi en vanlig enbildsannons i stället
+          // och väljer 4:5 — feedformatet — framför 1:1 och 9:16.
+          const hash = r.variants['4x5'] || r.variants['9x16'] || r.variants['1x1'];
           form.object_story_spec = JSON.stringify({ page_id: cfg.page, link_data: {
             image_hash: hash, link: copy.link,
             message: copy.message, name: copy.headline,

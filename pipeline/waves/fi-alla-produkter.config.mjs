@@ -22,8 +22,11 @@ const cbo = { objective: 'OUTCOME_SALES', status: 'PAUSED', dailyBudget: '100000
 
 export default {
   act: 'act_1619718346388201',   // Magiborsten FI (SEK)
-  page: '1317870104733246',      // Majavakauppa
+  page: '1317870104733246',      // Majavakauppa — har inget IG-konto kopplat
   pixel: '1554276343018184',
+  // Majavakauppa saknar Instagram-identitet, och Metas formatanpassning kräver en.
+  // Bildannonserna byggs därför som vanliga enbildsannonser på 4:5.
+  noFormatCustomization: true,
   dsaBeneficiary: 'Axel Odhner', // EU-krav
   targeting: {
     age_min: 18, age_max: 65,
