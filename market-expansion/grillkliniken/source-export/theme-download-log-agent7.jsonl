@@ -1,4 +1,6 @@
 {"filename": "assets/ico-select-menu.svg.liquid", "expected": 869, "actual": 869, "md5": "3bf635b9afdccc6e0f4699453616c238", "md5_expected": "3bf635b9afdccc6e0f4699453616c238", "md5_ok": true, "ok": true}
 {"filename": "assets/theme.js", "expected": 229855, "actual": 229855, "md5": "58be9d14f847cc6a558065112752c545", "md5_expected": "58be9d14f847cc6a558065112752c545", "md5_ok": true, "ok": true}
 {"filename": "layout/theme.gempages.blank.liquid", "expected": 4748, "actual": 4748, "md5": "8d3e1ab3798f0d685f21206e31669416", "md5_expected": "8d3e1ab3798f0d685f21206e31669416", "md5_ok": true, "ok": true}
-{"filename": "locales/pt-BR.json", "expected": 12636, "actual": 13002, "md5": "f1ef7bf96d589351515bbecf647492a0", "md5_expected": "9e78fb40b5ad26c6e5d6390ce34088ba", "md5_ok": false, "ok": false}
+{"filename": "locales/pt-BR.json", "expected": 12636, "actual": 12636, "md5": "9e78fb40b5ad26c6e5d6390ce34088ba", "md5_expected": "9e78fb40b5ad26c6e5d6390ce34088ba", "md5_ok": true, "ok": true}
+{"filename": "sections/blog-template.liquid", "expected": 3757, "actual": 3757, "md5": "6a7192966566d56875940479783d24fa", "md5_expected": "6a7192966566d56875940479783d24fa", "md5_ok": true, "ok": true}
+{"filename": "sections/featured-video.liquid", "expected": 1742, "actual": 1742, "md5": "ead788eaf1a9fc2a97c1a3c6d6782b69", "md5_expected": "ead788eaf1a9fc2a97c1a3c6d6782b69", "md5_ok": true, "ok": true}
