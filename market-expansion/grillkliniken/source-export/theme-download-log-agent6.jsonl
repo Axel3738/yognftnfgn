@@ -1,58 +1,58 @@
-{"filename": "assets/ico-select-menu.svg", "expected": 844, "actual": 844, "ok": true}
-{"filename": "assets/theme.css.liquid", "expected": 240878, "actual": 240878, "ok": true}
-{"filename": "layout/theme.gem-layout-none.liquid", "expected": 4392, "actual": 4392, "ok": true}
-{"filename": "locales/fr.json", "expected": 13183, "actual": 13183, "ok": true}
-{"filename": "sections/blog-posts.liquid", "expected": 4672, "actual": 4672, "ok": true}
-{"filename": "sections/featured-product.liquid", "expected": 10370, "actual": 10370, "ok": true}
-{"filename": "sections/gp-section-617120906644292289.liquid", "expected": 33575, "actual": 33575, "ok": true}
-{"filename": "sections/gp-section-617120906946282436.liquid", "expected": 92013, "actual": 92013, "ok": true}
-{"filename": "sections/gp-section-619570878010753841.liquid", "expected": 34143, "actual": 34143, "ok": true}
-{"filename": "sections/gp-section-619570878011278129.liquid", "expected": 29262, "actual": 29262, "ok": true}
-{"filename": "sections/gp-section-620302509214663327.liquid", "expected": 38218, "actual": 38218, "ok": true}
-{"filename": "sections/gp-section-620338208546358247.liquid", "expected": 168368, "actual": 168368, "ok": true}
-{"filename": "sections/gp-section-620338208546882535.liquid", "expected": 34665, "actual": 34665, "ok": true}
-{"filename": "sections/gp-section-620621395671778279.liquid", "expected": 23852, "actual": 23852, "ok": true}
-{"filename": "sections/gp-section-621065327819752095.liquid", "expected": 168368, "actual": 168368, "ok": true}
-{"filename": "sections/gp-section-621065327820276383.liquid", "expected": 38252, "actual": 38252, "ok": true}
-{"filename": "sections/gp-section-621092885521367711.liquid", "expected": 27534, "actual": 27534, "ok": true}
-{"filename": "sections/gp-section-621105591728866250.liquid", "expected": 168368, "actual": 168368, "ok": true}
-{"filename": "sections/gp-section-621105591729390538.liquid", "expected": 34842, "actual": 34842, "ok": true}
-{"filename": "sections/gp-section-621645129698378698.liquid", "expected": 24130, "actual": 24130, "ok": true}
-{"filename": "sections/gp-section-621654614210642531.liquid", "expected": 168368, "actual": 168368, "ok": true}
-{"filename": "sections/gp-section-621654614211166819.liquid", "expected": 24039, "actual": 24039, "ok": true}
-{"filename": "sections/gp-section-623149626861945624.liquid", "expected": 12999, "actual": 12999, "ok": true}
-{"filename": "sections/gp-section-623151464218493720.liquid", "expected": 12293, "actual": 12293, "ok": true}
-{"filename": "sections/gp-section-623151464219018008.liquid", "expected": 24565, "actual": 24565, "ok": true}
-{"filename": "sections/gp-section-623152569568854561.liquid", "expected": 27534, "actual": 27534, "ok": true}
-{"filename": "sections/gp-section-623154757401444897.liquid", "expected": 168368, "actual": 168368, "ok": true}
-{"filename": "sections/gp-section-623154757401969185.liquid", "expected": 23823, "actual": 23823, "ok": true}
-{"filename": "sections/gp-section-623155472379544344.liquid", "expected": 33469, "actual": 33469, "ok": true}
-{"filename": "sections/gp-section-624267177821799158.liquid", "expected": 27544, "actual": 27544, "ok": true}
-{"filename": "sections/gp-section-624271646215111414.liquid", "expected": 32146, "actual": 32146, "ok": true}
-{"filename": "sections/gp-section-626569097521398359.liquid", "expected": 18028, "actual": 18028, "ok": true}
-{"filename": "sections/gp-section-626984986771194539.liquid", "expected": 43415, "actual": 43415, "ok": true}
-{"filename": "sections/gp-section-631303000543331078.liquid", "expected": 23993, "actual": 23993, "ok": true}
-{"filename": "sections/gp-section-632042898199806633.liquid", "expected": 27436, "actual": 27436, "ok": true}
-{"filename": "sections/gp-section-632042898200330921.liquid", "expected": 12908, "actual": 12908, "ok": true}
-{"filename": "sections/gp-section-632042913333117890.liquid", "expected": 24515, "actual": 24515, "ok": true}
-{"filename": "sections/hero-video.liquid", "expected": 9789, "actual": 9789, "ok": true}
-{"filename": "sections/main-product.liquid", "expected": 9759, "actual": 9759, "ok": true}
-{"filename": "sections/promo-grid.liquid", "expected": 15770, "actual": 15770, "ok": true}
-{"filename": "snippets/announcement-bar.liquid", "expected": 2731, "actual": 2731, "ok": true}
-{"filename": "snippets/collection-sidebar-filter-trigger.liquid", "expected": 351, "actual": 351, "ok": true}
-{"filename": "snippets/footer-custom-text.liquid", "expected": 1667, "actual": 1667, "ok": true}
-{"filename": "snippets/header-icons.liquid", "expected": 3546, "actual": 3546, "ok": true}
-{"filename": "snippets/product-description.liquid", "expected": 410, "actual": 410, "ok": true}
-{"filename": "snippets/promo-video.liquid", "expected": 302, "actual": 302, "ok": true}
-{"filename": "snippets/sub-collections.liquid", "expected": 1291, "actual": 1291, "ok": true}
-{"filename": "snippets/video-div.liquid", "expected": 1414, "actual": 1414, "ok": true}
-{"filename": "templates/collection.gem-1777361827-template.json", "expected": 4651, "actual": 5014, "ok": false}
-{"filename": "templates/customers/addresses.liquid", "expected": 9396, "actual": 9396, "ok": true}
-{"filename": "templates/index.gp-template-bk-default.json", "expected": 12830, "actual": 12830, "ok": true}
-{"filename": "templates/page.gp-template-619570877842850609.json", "expected": 16874, "actual": 16420, "ok": false}
-{"filename": "templates/page.gp-template-621654614126625379.json", "expected": 18979, "actual": 18080, "ok": false}
-{"filename": "templates/page.gp-template-626525148932997803.json", "expected": 288, "actual": 730, "ok": false}
-{"filename": "templates/page.gp-template-626637778225988183.json", "expected": 288, "actual": 730, "ok": false}
-{"filename": "templates/page.gp-template-631303000391942918.json", "expected": 19591, "actual": 18517, "ok": false}
-{"filename": "templates/product.gem-backup-default.json", "expected": 6636, "actual": 6999, "ok": false}
-{"filename": "templates/product.product-landing.json", "expected": 2158, "actual": 4133, "ok": false}
+{"filename": "assets/ico-select-menu.svg", "expected": 844, "actual": 844, "md5": "19a36bc0b91079dc5ac0584151424600", "md5_ok": true, "ok": true}
+{"filename": "assets/theme.css.liquid", "expected": 240878, "actual": 240878, "md5": "a187605563fc4e7a6883989e48978f83", "md5_ok": true, "ok": true}
+{"filename": "layout/theme.gem-layout-none.liquid", "expected": 4392, "actual": 4392, "md5": "53cb4337e4048cf195dea19b38418a6a", "md5_ok": true, "ok": true}
+{"filename": "locales/fr.json", "expected": 13183, "actual": 13183, "md5": "145226643d26d401c172738201929572", "md5_ok": true, "ok": true}
+{"filename": "sections/blog-posts.liquid", "expected": 4672, "actual": 4672, "md5": "287dc7c4ef3dd6bd249f1784e5227f2c", "md5_ok": true, "ok": true}
+{"filename": "sections/featured-product.liquid", "expected": 10370, "actual": 10370, "md5": "14de2dc08ce1393a66bc31165f2e6437", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-617120906644292289.liquid", "expected": 33575, "actual": 33575, "md5": "291e935c8ad1cdc79b6281ac7e80d1cc", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-617120906946282436.liquid", "expected": 92013, "actual": 92013, "md5": "e77e07148c604ef506cd2276f0e0d30b", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-619570878010753841.liquid", "expected": 34143, "actual": 34143, "md5": "e2e508361eb1248e5903ca8bdeaafb83", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-619570878011278129.liquid", "expected": 29262, "actual": 29262, "md5": "aafea3238631efc2d587f21816676da5", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-620302509214663327.liquid", "expected": 38218, "actual": 38218, "md5": "94da2a192b2cb11e1ffdf28da1d96bf4", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-620338208546358247.liquid", "expected": 168368, "actual": 168368, "md5": "5dd07fb346df8e54d932d7c15f3c34fd", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-620338208546882535.liquid", "expected": 34665, "actual": 34665, "md5": "c0eeff644ea1f7e1fb039ae523b47a0e", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-620621395671778279.liquid", "expected": 23852, "actual": 23852, "md5": "51e1f8ce75bbc26030229514dab26198", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-621065327819752095.liquid", "expected": 168368, "actual": 168368, "md5": "52e4df9d04b8d7f2b0394a13d8767490", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-621065327820276383.liquid", "expected": 38252, "actual": 38252, "md5": "821d53265b146e55b2c84b7196a37ca7", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-621092885521367711.liquid", "expected": 27534, "actual": 27534, "md5": "d5e4e1285488ba79af510aac9ae99b09", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-621105591728866250.liquid", "expected": 168368, "actual": 168368, "md5": "58267d87cdfe6ff8e631b6fe891adf1c", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-621105591729390538.liquid", "expected": 34842, "actual": 34842, "md5": "e8566f3971f1f504114ded1df19a9b73", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-621645129698378698.liquid", "expected": 24130, "actual": 24130, "md5": "5e26f8ec41094b1a04b3abb1aa97945a", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-621654614210642531.liquid", "expected": 168368, "actual": 168368, "md5": "f4578c1090d2648edc0a5874b454ee9d", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-621654614211166819.liquid", "expected": 24039, "actual": 24039, "md5": "31bf0e8ade0236c5d2c58fd9f8c2613d", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-623149626861945624.liquid", "expected": 12999, "actual": 12999, "md5": "a044a00b222b6b8abd9a5d9d4e09e9c7", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-623151464218493720.liquid", "expected": 12293, "actual": 12293, "md5": "8f3799ec9bd0d04d7c74888dcd291a8e", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-623151464219018008.liquid", "expected": 24565, "actual": 24565, "md5": "2577e32a2fad5528a28ba5a1131cea4f", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-623152569568854561.liquid", "expected": 27534, "actual": 27534, "md5": "31837fd4262a9613d63d3523bfae0d92", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-623154757401444897.liquid", "expected": 168368, "actual": 168368, "md5": "34f25ad24050f5a52d34631c792fe08f", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-623154757401969185.liquid", "expected": 23823, "actual": 23823, "md5": "124f6903ea288c008b010bd5962d1d93", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-623155472379544344.liquid", "expected": 33469, "actual": 33469, "md5": "40b39067eb44cd41fb0575bbbf3d98aa", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-624267177821799158.liquid", "expected": 27544, "actual": 27544, "md5": "35fefb00a342114de28d770cb49b3923", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-624271646215111414.liquid", "expected": 32146, "actual": 32146, "md5": "11d118b651f93b4164bc37ecb6cd9de2", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-626569097521398359.liquid", "expected": 18028, "actual": 18028, "md5": "8893f824496e2621495ac00d2ad0289f", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-626984986771194539.liquid", "expected": 43415, "actual": 43415, "md5": "10069b59e295a1a67a9b9cb874ccc353", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-631303000543331078.liquid", "expected": 23993, "actual": 23993, "md5": "24a747da01b88642baf6f2cc0f0f2326", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-632042898199806633.liquid", "expected": 27436, "actual": 27436, "md5": "2e4146b07d22d0575583fe71bf99b508", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-632042898200330921.liquid", "expected": 12908, "actual": 12908, "md5": "09f99f16063a46f9076b1cd2c50b5d3f", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-632042913333117890.liquid", "expected": 24515, "actual": 24515, "md5": "eb3ef69ca6f5449a3c5f08a9ef379c09", "md5_ok": true, "ok": true}
+{"filename": "sections/hero-video.liquid", "expected": 9789, "actual": 9789, "md5": "64fb836d480989f3352df06f311ed99d", "md5_ok": true, "ok": true}
+{"filename": "sections/main-product.liquid", "expected": 9759, "actual": 9759, "md5": "cf4d09e9931e2ff8800f9e07da1f3a45", "md5_ok": true, "ok": true}
+{"filename": "sections/promo-grid.liquid", "expected": 15770, "actual": 15770, "md5": "ed95e50dee8c2bb8036b3b57f3a65d8e", "md5_ok": true, "ok": true}
+{"filename": "snippets/announcement-bar.liquid", "expected": 2731, "actual": 2731, "md5": "038cff6dd90c698b1efa19eeeed2283e", "md5_ok": true, "ok": true}
+{"filename": "snippets/collection-sidebar-filter-trigger.liquid", "expected": 351, "actual": 351, "md5": "e26ed3102e6d7691623696cefcdd27f3", "md5_ok": true, "ok": true}
+{"filename": "snippets/footer-custom-text.liquid", "expected": 1667, "actual": 1667, "md5": "c4f05b3a395cb7210d2cb35ff8ab9926", "md5_ok": true, "ok": true}
+{"filename": "snippets/header-icons.liquid", "expected": 3546, "actual": 3546, "md5": "375444bf028c00de054db677f42f0430", "md5_ok": true, "ok": true}
+{"filename": "snippets/product-description.liquid", "expected": 410, "actual": 410, "md5": "73dfbde6fadce52cac5fc583780dabe9", "md5_ok": true, "ok": true}
+{"filename": "snippets/promo-video.liquid", "expected": 302, "actual": 302, "md5": "99b2e55a89f45cce0b2ffc705718be5a", "md5_ok": true, "ok": true}
+{"filename": "snippets/sub-collections.liquid", "expected": 1291, "actual": 1291, "md5": "3f36b6d0588e8a9a86f1ba896355538d", "md5_ok": true, "ok": true}
+{"filename": "snippets/video-div.liquid", "expected": 1414, "actual": 1414, "md5": "f6b66227f9fdfc6bc2a7e365cdceced0", "md5_ok": true, "ok": true}
+{"filename": "templates/collection.gem-1777361827-template.json", "expected": 4651, "actual": 4651, "md5": "13914de9dfd05fd4ab108856b3366a37", "md5_ok": true, "ok": true}
+{"filename": "templates/customers/addresses.liquid", "expected": 9396, "actual": 9396, "md5": "b0bea30a3d86bfae20e5fc96e0c0a612", "md5_ok": true, "ok": true}
+{"filename": "templates/index.gp-template-bk-default.json", "expected": 12830, "actual": 12830, "md5": "ecaf4a553d2f1e81c190fe6d5901d421", "md5_ok": true, "ok": true}
+{"filename": "templates/page.gp-template-619570877842850609.json", "expected": 16874, "actual": 16057, "md5": "7eea1944916d86115ccdec7fccd6129e", "md5_ok": false, "ok": false, "note": "semantiskt identisk, ej byte-exakt (API normaliserar JSON-mallens serialisering; size/checksum avser originalbytes som ej exponeras via API)"}
+{"filename": "templates/page.gp-template-621654614126625379.json", "expected": 18979, "actual": 17717, "md5": "5fe236e04caba80a08ddad5ecfb656d5", "md5_ok": false, "ok": false, "note": "semantiskt identisk, ej byte-exakt (API normaliserar JSON-mallens serialisering; size/checksum avser originalbytes som ej exponeras via API)"}
+{"filename": "templates/page.gp-template-626525148932997803.json", "expected": 288, "actual": 288, "md5": "341cf9493995bc8ac066ddcf932f65a3", "md5_ok": true, "ok": true}
+{"filename": "templates/page.gp-template-626637778225988183.json", "expected": 288, "actual": 288, "md5": "0c3929aa672df6f9e36ab602a89a3ee3", "md5_ok": true, "ok": true}
+{"filename": "templates/page.gp-template-631303000391942918.json", "expected": 19591, "actual": 18154, "md5": "01ca0dbef342f03bb1a6a41ab344a804", "md5_ok": false, "ok": false, "note": "semantiskt identisk, ej byte-exakt (API normaliserar JSON-mallens serialisering; size/checksum avser originalbytes som ej exponeras via API)"}
+{"filename": "templates/product.gem-backup-default.json", "expected": 6636, "actual": 6636, "md5": "fcd82e74596530225a62ac1c3f999c6b", "md5_ok": true, "ok": true}
+{"filename": "templates/product.product-landing.json", "expected": 2158, "actual": 2158, "md5": "0f0ec9817ec51bbb0310e259d4cfaf4f", "md5_ok": true, "ok": true}

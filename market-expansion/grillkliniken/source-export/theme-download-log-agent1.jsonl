@@ -29,3 +29,5 @@
 {"filename": "sections/gp-section-631303000543527686.liquid", "expected": 12908, "actual": 12908, "ok": true}
 {"filename": "snippets/footer-newsletter.liquid", "expected": 14156, "actual": 14156, "ok": true}
 {"filename": "sections/gp-section-617120906694624196.liquid", "expected": 15232, "actual": 15232, "ok": true}
+{"filename": "templates/page.gp-template-620621395537167335.json", "expected": 17232, "actual": 16813, "ok": false}
+{"filename": "sections/gp-section-626641446698484589.liquid", "expected": 18126, "actual": 18126, "ok": true}
