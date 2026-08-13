@@ -36,4 +36,7 @@
 {"filename": "templates/page.gp-template-626527357989028523.json", "expected": 288, "actual": 288, "md5": "2d1136503500143398a4933b938ab701", "md5_expected": "2d1136503500143398a4933b938ab701", "md5_ok": true, "ok": true}
 {"filename": "templates/page.gp-template-626641406886150955.json", "expected": 288, "actual": 288, "md5": "ff08343a11442d91a3298ed36bc715b3", "md5_expected": "ff08343a11442d91a3298ed36bc715b3", "md5_ok": true, "ok": true}
 {"filename": "templates/index.json", "expected": 8524, "actual": 8524, "md5": "52c24faa95196be8210c3d0e8925082d", "md5_expected": "52c24faa95196be8210c3d0e8925082d", "md5_ok": true, "ok": true}
-{"filename": "templates/page.gp-template-620302509063275167.json", "expected": 17520, "actual": 15495, "md5": "81f14453b8a67d342540b4fffae8c559", "md5_expected": "9215b277773c2c95498b98532451455c", "md5_ok": false, "ok": false}
+{"filename": "templates/page.gp-template-620302509063275167.json", "expected": 17520, "actual": 17520, "md5": "9215b277773c2c95498b98532451455c", "md5_expected": "9215b277773c2c95498b98532451455c", "md5_ok": true, "ok": true}
+{"filename": "templates/page.gp-template-623149626727334680.json", "expected": 18322, "actual": 18322, "md5": "816869c10cfdc416980b2ccde4788abc", "md5_expected": "816869c10cfdc416980b2ccde4788abc", "md5_ok": true, "ok": true}
+{"filename": "templates/page.gp-template-632042898082235049.json", "expected": 22902, "actual": 22902, "md5": "8cd3466989c3cb925ecf075f8da2bb3b", "md5_expected": "8cd3466989c3cb925ecf075f8da2bb3b", "md5_ok": true, "ok": true}
+{"filename": "sections/gp-section-621065327820341919.liquid", "expected": 34789, "actual": 34789, "md5": "e02b9d14a93e254c0a745dae66ca4de4", "md5_expected": "e02b9d14a93e254c0a745dae66ca4de4", "md5_ok": true, "ok": true}
