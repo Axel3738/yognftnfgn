@@ -36,3 +36,4 @@
 {"filename": "templates/page.gp-template-626527357989028523.json", "expected": 288, "actual": 288, "md5": "2d1136503500143398a4933b938ab701", "md5_expected": "2d1136503500143398a4933b938ab701", "md5_ok": true, "ok": true}
 {"filename": "templates/page.gp-template-626641406886150955.json", "expected": 288, "actual": 288, "md5": "ff08343a11442d91a3298ed36bc715b3", "md5_expected": "ff08343a11442d91a3298ed36bc715b3", "md5_ok": true, "ok": true}
 {"filename": "templates/index.json", "expected": 8524, "actual": 8524, "md5": "52c24faa95196be8210c3d0e8925082d", "md5_expected": "52c24faa95196be8210c3d0e8925082d", "md5_ok": true, "ok": true}
+{"filename": "templates/page.gp-template-620302509063275167.json", "expected": 17520, "actual": 15495, "md5": "81f14453b8a67d342540b4fffae8c559", "md5_expected": "9215b277773c2c95498b98532451455c", "md5_ok": false, "ok": false}
