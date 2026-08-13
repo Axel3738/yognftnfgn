@@ -746,3 +746,56 @@ de hängde aldrig på erbjudandet.
 
 Verifieringsgrindarna kördes om på listiclen efter ändringen: 27/27 textnycklar, 0 tankstreck,
 0 kvarlevor, 0 förbjudna priser.
+
+---
+
+## 2026-08-13 (sent) — orsaken bekräftad och priserna rättade
+
+Två korrigeringar från ägaren, båda förstahandsuppgifter, båda styrande.
+
+**1. Orsaken är specifik, inte generisk.** Inte "en utförsäljning pågår" utan **"vi råkade beställa
+för många"**. Det är en starkare och mer mänsklig vinkel än en rea, och det är förlagans egen vinkel.
+Hela berättelsekedjan är nu: vi råkade beställa för många → lagret blev större än planerat → vi
+behöver sälja ned det → därför lagerutförsäljning → därför nedsatt pris just nu.
+
+**2. Jämförpriset rättat i Shopify: 678 → 789 kr.** Verklig nedsättning är alltså **190 kr**, inte
+79 kr. Produktsidan är källan för exakta prisclaims, och den säger nu 599/789.
+
+### `Trimmerbelt_SO_8_1` — omskriven kring misstaget
+
+Alla tre hooks bär nu misstaget; de skiljer sig bara i vad de öppnar på (misstaget, smärtan, eller
+tittarens eget knep). Beat 3 och beat 12 omskrivna med 599/789/190. Nya captions. Primärtext och
+rubrik öppnar på misstaget.
+
+**Leveransanvisning inskriven i briefen:** det här är ett erkännande, inte ett utrop. Anders ska säga
+det som man berättar för en granne att man beställde för mycket ved. Torrt, inte ursäktande, inte
+uppspelt. I samma sekund det spelas som en säljreplik försvinner det som gör priset trovärdigt.
+
+Beats 4 till 11 oförändrade. De hängde aldrig på erbjudandet.
+
+### Listiclen — berättelsen bär från första skärmen
+
+- **H1** är nu berättelsen: "Vi beställde av misstag för många axelbälten till trimmers och röjsågar,
+  så nu säljer vi ut lagret till ett nedsatt pris." Tidigare smärtledd; ägaren instruerade uttryckligen
+  att sidan ska bära samma historia som annonsen från första skärmen, så att annons och sida inte
+  berättar två olika saker.
+- **Dek** förklarar varför priset är lägre just nu.
+- **Sammanfattningen** öppnar på misstaget och de nya priserna.
+- **Ärlighetssektionen** säger det rakt ut: vi beställde fler än vi behövde, nu har vi mer i lager än
+  planerat, så vi säljer det vi redan har billigare. Det är hela anledningen.
+- **Alla åtta CTA:er** omskrivna och konsekventa med berättelsen.
+- De fem punkternas brödtext är **oförändrad**. Berättelsen ramar sidan, punkterna gör övertygandet,
+  och de var aldrig beroende av erbjudandet.
+
+Grindarna kördes om med 678 kr och 79 kr tillagda som förbjudna siffror: 27/27 nycklar, 0 tankstreck,
+0 kvarlevor, 0 förbjudna priser.
+
+### Materialskuld som uppstod av priskorrigeringen
+
+`SO_2_6` och `SO_2_7` är **live med 678 kr inbränt i bilden** och underskattar nu erbjudandet med
+111 kr. Samma gäller varje brief i batch #6 och #7 som bär ett pris. De behöver göras om mot
+599/789/190 innan något mer produceras från dem.
+
+**Flaggan på `SO_2_1` är stängd.** "FÅ 20% RABATT IDAG" har flaggats som falskt claim i fyra
+körningar i rad. Vid 789 → 599 kr är den verkliga nedsättningen större än 20 %, så annonsen lovar
+mindre än kunden får. Inte längre ett compliance-problem.

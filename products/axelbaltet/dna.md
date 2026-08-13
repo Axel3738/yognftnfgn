@@ -2,28 +2,41 @@
 
 Uppdaterad: **2026-08-12 (/cs-körning nr 5, enligt ANALYSMETOD.md)**. Kampanj 120249192013870291 · MagiBorsten 1867947880635861.
 **Budget 2 000 kr/dag · target-CPA 185 kr · break-even-CPA 326 kr** (kill mäts mot break-even, aldrig mot target).
-Produktfakta (omverifierat i Shopify 2026-08-09): **599 kr, jämförpris 678 kr = spara 79 kr (11,65 %)**, fri frakt, 30 dagars öppet köp, 4,75/5 (8 recensioner).
+Produktfakta (omverifierat i Shopify 2026-08-13): **599 kr, jämförpris 789 kr = 190 kr lägre**, fri frakt, 30 dagars öppet köp, 4,75/5 (8 recensioner).
 **PRISÄNDRING 2026-08-05: 509 → 599 kr.** Siffrorna 509 kr, 636 kr och "20 %" är FÖRBJUDNA i all ny copy och creative.
 
-## LAGERUTFÖRSÄLJNING — stående faktum sedan 2026-08-13 (ägarbekräftat)
+## LAGERUTFÖRSÄLJNING — stående faktum sedan 2026-08-13 (ägarbekräftat, förstahandsuppgift)
 
-Bäverbutiken kör en **verklig lagerutförsäljning** i sina butiker. Målet är att sälja ned befintligt
-lager, och nuvarande priser är faktiska nedsatta priser. Detta är inte en kampanjvinkel — det är sant.
+**Bäverbutiken beställde in för många produkter.** Lagret är därför större än man vill behålla, och
+det är hela anledningen till att en verklig lagerutförsäljning pågår. Nuvarande priser är faktiska
+nedsatta priser. Detta är inte en kampanjvinkel — det är sant och får byggas kommunikation kring.
 
-**Tillåtet att skriva:** "lagerutförsäljning" · "nedsatta priser" · "så långt lagret räcker".
+**Vinkeln, i den ordning den ska berättas:** vi råkade beställa för många → lagret blev större än
+planerat → vi behöver sälja ned det → därför lagerutförsäljning → därför nedsatt pris just nu.
 
-**Fortfarande förbjudet, och gränsen är skarp:**
-- ❌ **Ingen rabattprocent alls för denna produkt.** Ägaren anger ~25 % som ett generellt snitt över
-  butiken men säger uttryckligen att det varierar per produkt och inte får anges mer exakt än
-  produktens eget underlag stödjer. Axelbältets underlag i Shopify: **599 kr nu, 678 kr ordinarie,
-  79 kr i skillnad.** Skriv kronor, aldrig procent.
-- ❌ Påhittade lagernivåer ("bara 40 kvar"), påhittade slutdatum ("gäller till söndag"),
-  påhittade ordinariepriser.
-- ⚠️ Om det verkliga ordinariepriset för axelbältet är högre än 678 kr ska **jämförpriset i Shopify
-  uppdateras först**. En annons som lovar mer besparing än produktsidan visar är en missmatch
-  köparen ser på ett klick.
-- ⚠️ Live-annonsen `SO_2_1` med **"FÅ 20% RABATT IDAG"** blir inte korrekt av att utförsäljningen är
-  äkta. 20 % är en specifik sats som produktens underlag inte stödjer. Flaggan står kvar.
+**Tillåtet:** "vi råkade beställa för många" · "överskottslager" · "lagerutförsäljning" ·
+"nedsatt pris" · "utförsäljningspris" · "så långt lagret räcker".
+
+**PRISKORRIGERING 2026-08-13: jämförpriset höjt 678 → 789 kr.** Ordinariepriserna i Shopify har
+rättats där de behövde det. Aktuella siffror för axelbältet, och de enda som får användas:
+
+| | |
+|---|---|
+| Nu | **599 kr** |
+| Ordinarie | **789 kr** |
+| Kunden sparar | **190 kr** |
+
+- ❌ **Ingen procentsats.** Skriv kronor. 190 kr är en stor konkret siffra som klarar sig själv.
+- ❌ **678 kr och "spara 79 kr" är döda siffror.** Allt material som fortfarande bär dem
+  underskattar erbjudandet och stämmer inte med produktsidan.
+- ❌ Påhittade lagernivåer, slutdatum, nedräkningar eller andra ordinariepriser än 789 kr.
+- ✅ **Flaggan på `SO_2_1` ("FÅ 20% RABATT IDAG") är stängd.** Vid 789 → 599 kr är den verkliga
+  nedsättningen större än 20 %, så annonsen lovar mindre än kunden faktiskt får. Inte längre ett
+  falskt claim. Värd att byta ändå eftersom den lämnar värde på bordet, men inte ett compliance-problem.
+
+⚠️ **Materialskuld:** batch #5:s live-statics `SO_2_6` och `SO_2_7` samt varje brief i batch #6 och #7
+som bär ett pris är byggda på 678/79 kr och behöver göras om mot 599/789/190 innan de produceras.
+
 LP: baverbutiken.se/products/axelbalte-for-trimmer-justerbart-nylonbalte
 
 Kampanjtotal livstid: **37 459 kr spend · 127 köp · CPA 295 kr · ROAS 1,98 · frekvens 3,09**.
