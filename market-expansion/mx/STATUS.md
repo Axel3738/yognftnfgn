@@ -1,4 +1,4 @@
-# Mexiko (GrillForge Co) — STATUS
+# Mexiko (La Clínica del Asador) — STATUS
 
 **Butik:** grillforgeco.com (Shop-plan, basvaluta USD, ägs sedan tidigare — innehåller
 Axels gamla FR/USA-experiment: 6 produkter, shrine som live-tema. Dessa RÖRS INTE.)
@@ -9,7 +9,7 @@ Axels gamla FR/USA-experiment: 6 produkter, shrine som live-tema. Dessa RÖRS IN
 
 | Parameter | Värde | Status |
 |---|---|---|
-| Brand | **GrillForge Co** (matchar domänen) | ⚠️ default, ej bekräftad |
+| Brand | **La Clínica del Asador** (Axels val 2026-08-13, domän laclinicadelasador.mx köpt) | ✅ bekräftad |
 | Språk | mexikansk spanska (es-MX) | ok |
 | Valuta | MXN via egen marknad, bas USD | ok |
 | Prisregel | **SEK × 1,9 → närmaste …9 uppåt** (199→379, 299→569, 349→669) | ⚠️ default, ej bekräftad |
@@ -50,7 +50,11 @@ Axels gamla FR/USA-experiment: 6 produkter, shrine som live-tema. Dessa RÖRS IN
 - [x] Fas 5: KLAR — Market México (gid://shopify/Market/116428079444), MXN, manuell kurs 1.0, moms i priset. OBS: unified markets → marketUpdate med currencySettings, INTE marketCurrencySettingsUpdate
 - [x] Fas 6: KLAR OCH VERIFIERAD — draftOrderCalculate mot CDMX-adress (06600):
   2× grilltanger = 378 MXN, frakt 'Envío gratis' 0. Valuta/pris/frakt fungerar hela vägen ✓
-- [ ] Fas 7: tema — upsert 464 filer från exporten + ÖVERSÄTT temafilerna (GemPages-sektionerna innehåller svensk säljtext!)
+- [x] Fas 7 (kärnan): tema synkat (464/464), lokaliserat till es-MX (settings + 10 mallar, 0 svenska strängar),
+      logga La Clínica del Asador i header/footer/checkout/favicon. KVAR: GemPages-landningssidorna (beslut med Axel)
+- [x] REBRAND 2026-08-13: GrillForge Co → La Clínica del Asador ÖVERALLT (42 produkter, 6 sidor, 4 kollektioner,
+      tema, logga, e-post contact@laclinicadelasador.mx). Verifierat: 0 "GrillForge"/grillforgeco.com kvar.
+      Mastern prissatt 1699 MXN (Axels beslut). Basvaluta numera MXN, endast México-marknaden aktiv, es primärspråk.
 - [ ] Fas 8: Judge.me-recensioner på es-MX
 - [ ] Fas 9: sanningskontroll (fri frakt-löften vs verklig fraktzon, betalmetoder)
 
