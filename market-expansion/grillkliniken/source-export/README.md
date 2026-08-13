@@ -12,7 +12,8 @@ tagen inför Mexiko-kloningen. Allt hämtat via Admin API (bulkOperationRunQuery
 | `pages.bulk.jsonl` | 43 sidor — 6 med innehåll (Om Oss, Integritetspolicy, Retur, Frakt, Användarvillkor, Garanti), 37 GemPages-referenser |
 | `files.bulk.jsonl` | 230 filer i Files-sektionen (loggor, herobilder, annonsbilder) med CDN-URL:er |
 | `images/` | **Alla 228 unika bilder nedladdade som binärer** (296 MB), `manifest.json` mappar URL → lokal fil |
-| `theme/` | Live-temat (Impulse, id 183618928964) fil för fil — ~464 filer inkl. ~230 GemPages-sektioner |
+| `theme/` | Live-temat (Impulse, id 183618928964) — **alla 464 filer, 100 % byte-exakta** (MD5-verifierade mot Shopifys `checksumMd5`, se `VERIFICATION.md`), inkl. ~230 GemPages-sektioner |
+| `VERIFICATION.md` + `verification-final.jsonl` | Slutverifieringens rapport: 464/464 MD5-match, 25 JSON-filer rekonstruerade från API:ts dekorerade form |
 | `menus.json` | Huvudmeny, sidfot, kundkonto-meny |
 | `shipping.json` | Fraktprofil: SE Postnord 61 kr + fri ≥1 kr, EU/Internationell 299 kr. **MX saknas!** |
 | `shop-info.json` | Butiksdata, teman, marknader, policies, noteringar |
