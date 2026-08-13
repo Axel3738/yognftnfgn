@@ -9,6 +9,34 @@ Ingen dom sätts på annons under 300 kr spend eller 3 köp.
 
 ---
 
+## ERBJUDANDET: verklig lagerutförsäljning `ÄGARUPPGIFT 2026-08-13`
+
+Bäverbutiken kör en **verklig lagerutförsäljning** i sina e-handelsbutiker.
+Syftet är att sälja ned befintligt lager. Priserna kunderna ser nu är nedsatta
+mot ordinarie. Detta är ingen påhittad kampanjvinkel och får kommuniceras rakt ut.
+
+**Ordinarie ligger normalt omkring 25 % högre i verksamheten som helhet**, men
+det är inte en produktspecifik siffra för strandtofflorna och får därför aldrig
+skrivas ut i creative för den här produkten.
+
+| ✅ Får skrivas | ❌ Får aldrig skrivas |
+|---|---|
+| "lagerutförsäljning", "vi säljer ut lagret" | Rabattsiffra eller procent |
+| "nedsatt pris", "priset är nedsatt" | Ordinarie pris i kronor |
+| "349 kr" | Slutdatum |
+| "så långt lagret räcker" | Antal par i lager |
+| | Nedräkning eller klocka |
+
+**Knappheten uttrycks enbart som "så långt lagret räcker".** Det är hela
+knapphetsvokabulären. Detta gäller alla SO-annonser, listiclen och videomanus.
+
+🔴 **Produktsidan matchar inte påståendet än.** `compareAtPrice` ligger på
+348,75 kr mot priset 349 kr, alltså visas inget överstruket ordinariepris.
+Säger annonsen "nedsatt pris" och landningssidan visar en vanlig prislapp
+faller påståendet. **Ägaråtgärd: sätt ordinariepriset i Shopify.**
+
+---
+
 ## MÄTNING 2026-08-09 KVÄLL — det som gäller nu
 
 Batch 5 launchades kl 19:35–19:58 (8 annonser). 51 annonser i kampanjen.

@@ -39,26 +39,39 @@ bevis alls. Bara en anställd som förklarar. Vi kopierar det.
 
 ---
 
-## ⚠️ Skillnaden mot vår situation, läs innan du spelar in
+## Vårt ärliga skäl, och exakt hur långt det räcker
 
-Bryn-annonsens ryggrad är erbjudandet plus det ärliga skälet. **Vi har inget
-erbjudande.** Strandtofflorna kostar 349 kr, `compareAtPrice` ligger på 348,75 kr,
-alltså finns inget verkligt jämförpris. Jag hittar inte på en rabattsiffra.
+Bryn-annonsens ryggrad är erbjudandet plus det ärliga skälet. **Vi har båda
+delarna.** Bäverbutiken kör en verklig lagerutförsäljning: syftet är att sälja
+ned befintligt lager, och priserna kunderna ser nu är nedsatta mot ordinarie.
+Det är ingen påhittad kampanjvinkel, och därför får den sägas rakt ut.
 
-Därför finns manuset i **två versioner**, och beats 2 och 4 till 9 är identiska
-i båda. Bara beat 1, 3 och 10 skiljer.
+**Vad som får sägas om priset i den här annonsen:**
 
-| Version | Ad-namn | Kräver | Status |
+| ✅ Får skrivas | ❌ Får aldrig skrivas |
+|---|---|
+| "lagerutförsäljning", "vi säljer ut lagret" | Någon rabattsiffra eller procent |
+| "nedsatt pris", "priset är nedsatt" | Något ordinarie pris i kronor |
+| "349 kr" | Något slutdatum |
+| "så långt lagret räcker" | Antal par kvar i lager |
+
+Vi har ingen verifierad rabattsats för just den här produkten, bara att en
+utförsäljning pågår och att priset är nedsatt. Därför nämner manuset varken
+procent eller jämförpris. **Knappheten uttrycks enbart som "så långt lagret
+räcker".** Det är hela knapphetsvokabulären, precis som i Bryn-annonsen där
+"bara så länge lagret räcker" gör hela jobbet.
+
+Manuset finns i två versioner. Beat 2 och 4 till 9 är **ordagrant identiska** i
+båda, så samma inspelning täcker dem.
+
+| Version | Ad-namn | Beat 1, 3, 10 | Status |
 |---|---|---|---|
-| **A. Erbjudandeledd** | `Beachslippers_SO_6_H1` | Att Axel sätter ett kampanjpris i Shopify | Blockerad tills priset finns |
-| **B. Problemledd** | `Beachslippers_PD_17_H1` | Ingenting | **Klar att spelas in idag** |
+| **A. Erbjudandeledd** | `Beachslippers_SO_6_H1` | Lagerutförsäljningen bär hooken | **Primär. Spela in denna.** |
+| **B. Problemledd** | `Beachslippers_PD_17_H1` | Halkandet bär hooken, inget pris | Kontrollversion |
 
-Det ärliga skälet i version A är sant och kontrollerat: sommarsäsongen tar slut
-om några veckor och det ligger **157 par** kvar i lager. Det enda som saknas är
-priset. `{PRIS}` i manuset nedan är en platshållare, inte en formulering.
-
-**Spela in version B nu.** Kommer priset senare spelas beat 1, 3 och 10 om, resten
-av materialet kan återanvändas rakt av.
+Version A är den som faktiskt speglar swipen. **Version B är värd att spela in i
+samma tagning** eftersom den isolerar en variabel vi aldrig testat: om det är
+erbjudandet eller problemet som drar. Två extra minuter framför kameran.
 
 ---
 
@@ -74,8 +87,8 @@ pratar rakt in i kameran i beat 1 till 3 och beat 10, resten går som voiceover
 
 | Swedish (use this) | English meaning |
 |---|---|
-| Om några veckor är sommaren över, och vi har bara 157 par kvar på hyllan. | In a few weeks summer is over, and we only have 157 pairs left on the shelf. |
-| Därför säljer vi dem nu för {PRIS}. | That's why we're selling them now for {PRICE}. |
+| Vi säljer ut lagret av de här strandtofflorna i butiken. | We are clearing out the stock of these slippers in the store. |
+| Därför är priset nedsatt till 349 kronor just nu. | That is why the price is reduced to 349 SEK right now. |
 
 **Version B, problemledd**
 
@@ -99,9 +112,9 @@ pratar rakt in i kameran i beat 1 till 3 och beat 10, resten går som voiceover
 
 | Swedish (use this) | English meaning |
 |---|---|
-| Just nu kostar de {PRIS}. | Right now they cost {PRICE}. |
+| Priset är 349 kronor. | The price is 349 SEK. |
 | Du får 30 dagars nöjd kund garanti. | You get a 30-day satisfaction guarantee. |
-| Sommaren tar snart slut, så det här gäller så länge lagret räcker. | Summer is ending soon, so this offer lasts while stock lasts. |
+| Det gäller så långt lagret räcker. | That applies while stock lasts. |
 
 **Version B**
 
@@ -157,8 +170,8 @@ pratar rakt in i kameran i beat 1 till 3 och beat 10, resten går som voiceover
 
 | Swedish (use this) | English meaning |
 |---|---|
-| Just nu får du dem för {PRIS}, för att vi vill tömma hyllan innan sommaren är slut. | Right now you get them for {PRICE}, because we want to clear the shelf before summer ends. |
-| Beställ dina strandtofflor idag, i storlek 36 till 47. | Order your beach slippers today, in sizes 36 to 47. |
+| Vi säljer ut lagret av strandtofflorna i storlek 36 till 47, till 349 kronor. | We are clearing out the stock of the slippers in sizes 36 to 47, at 349 SEK. |
+| Beställ dina nu, så långt lagret räcker. | Order yours now, while stock lasts. |
 
 **Version B**
 
@@ -176,7 +189,7 @@ mot en polerad look.
 
 | Beat | Bild |
 |---|---|
-| 1 | **Version A:** Anders framför en hylla eller en kartong med tofflor. **Version B:** närbild på en fot som glider på blött trädäck, filmat i marknivå. Det ska hända inom första sekunden. |
+| 1 | **Version A:** Anders framför en hylla eller en öppen kartong med tofflor, gärna flera par synliga. Lagret ska synas, det är det hooken påstår. **Version B:** närbild på en fot som glider på blött trädäck, filmat i marknivå. Det ska hända inom första sekunden. |
 | 2 | Anders rakt i kameran, utomhus, dagsljus. |
 | 3 | Anders håller upp ett par svart camo mot kameran. |
 | 4 | Broll: blött trädäck efter regn, hala stenar ner mot vatten. Ingen produkt än. |
@@ -216,7 +229,15 @@ grinden som allt annat.
 
 ## Ad setup
 
-- Ad-namn `Beachslippers_PD_17_H1` (version B) eller `Beachslippers_SO_6_H1` (version A).
+- Ad-namn `Beachslippers_SO_6_H1` (version A, primär) och `Beachslippers_PD_17_H1`
+  (version B, kontroll).
+
+⚠️ **Kontrollera landningssidan innan annonsen går live.** Annonsen säger
+"nedsatt pris", men produktsidan visar idag bara 349 kr utan överstruket
+ordinariepris (`compareAtPrice` ligger på 348,75 kr, alltså i praktiken inget
+jämförpris). Klickar någon in och ser en helt vanlig prislapp faller påståendet
+platt. Sätt ordinariepriset i Shopify så att utförsäljningen syns på sidan,
+eller peka annonsen på listiclen där skälet står i klartext.
 - **Eget ad set, max 2 till 3 annonser i det.** Bekräftat två gånger nu att
   Meta ger en annons 82 till 94 procent av budgeten när fler ligger i samma set.
 - Hookvarianterna `H2` och `H3` läggs i samma ad set när de kommer.

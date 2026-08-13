@@ -31,25 +31,43 @@ Strukturen förstås, och dessutom:
   rubriker, nytt innehåll.
 - **"OBS: Detta är reklam."** i footern. Tas aldrig bort.
 
-## Avsteget från källan: det finns ingen rea
+## Erbjudandet: verklig lagerutförsäljning
 
-Motorhölje-sidan är byggd runt ett överlager: 299 kr istället för 367 kr, med
-överlagret som det ärliga skälet. **Strandtofflorna har ingen sådan historia.**
-Priset är 349 kr, `compareAtPrice` ligger på 348,75 kr, alltså finns inget
-verkligt jämförpris.
+Uppgivet av ägaren 2026-08-13: Bäverbutiken kör en **verklig lagerutförsäljning**
+i sina e-handelsbutiker. Syftet är att sälja ned befintligt lager, och priserna
+kunderna ser nu är nedsatta mot ordinarie. Det är ingen påhittad kampanjvinkel,
+och sidan kommunicerar den därför rakt ut, precis som Motorhölje-sidan gör med
+sitt överlager.
 
-Frameworket tillåter H1 att bära *hela problemet* i stället för *hela
-erbjudandet*, så sidan är byggd problemledd. Ärlighetssektionen behåller sin
-funktion (avväpna skepsis genom att säga det obekväma rakt ut) men handlar om
-något annat:
+**Sidan är byggd erbjudandeledd.** H1, dek, sammanfattning, ärlighetssektionen
+och hero-knappen bär utförsäljningen. Punkt 1 till 5, lösningen och
+riskavlastningen är oförändrat problemledda.
 
-1. 349 kr är priset, det är inget kampanjpris och vi låtsas inte om det.
-2. Vad tofflorna **inte** är: inte skyddsskor, inte gjorda för långa sträckor.
-3. Därför är 30-dagarsgarantin det som gör att köparen inte riskerar något.
+### Vad copyn får och inte får säga om priset
 
-**Vill du ha rea-versionen** behöver du först sätta priset i Shopify. Säg till
-med vilket pris, så byter jag fyra strängar i `copy_sv.py` (H1, sammanfattning,
-ärlighetssektionen, hero-knappen) och bygger om. Jag sätter inte ett pris själv.
+Vi har **ingen verifierad rabattsats för just den här produkten**, bara att en
+utförsäljning pågår och att priset är nedsatt. Ordinarie ligger normalt omkring
+25 procent högre i verksamheten som helhet, men det är inte en produktspecifik
+siffra och står därför ingenstans på sidan.
+
+| ✅ Används | ❌ Används aldrig |
+|---|---|
+| "vi säljer ut lagret" | Rabattsiffra eller procent |
+| "nedsatt pris" | Ordinarie pris i kronor |
+| "349 kr" | Slutdatum |
+| "så långt lagret räcker" | Antal par i lager |
+| | Nedräkning eller klocka |
+
+Knappheten uttrycks **enbart** som "så långt lagret räcker". Det är hela
+knapphetsvokabulären.
+
+### ⚠️ Produktsidan matchar inte påståendet än
+
+Sidan säger "nedsatt pris". Produktsidan visar idag bara 349 kr utan överstruket
+ordinariepris: `compareAtPrice` ligger på 348,75 kr, alltså i praktiken inget
+jämförpris. **Klickar en läsare vidare och möter en helt vanlig prislapp faller
+hela ärlighetssektionen.** Sätt ordinariepriset i Shopify så att utförsäljningen
+syns även där. Det är en ägaråtgärd, inte något jag gör åt dig.
 
 ## Verifierade produktfakta som copyn bygger på
 

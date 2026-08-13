@@ -17,13 +17,13 @@ M = {
 
     # ---------------------------------------------------------------- 1. H1
     'Vi beställde in för många motorhöljen och nu får du ditt för 299 kr istället för 367 kr så länge lagret räcker':
-        'Du halkar till på den våta altanen, griper efter räcket och tänker att du var slarvig. '
-        'Det är inte du. Det är skorna du har på dig.',
+        'Vi säljer ut lagret av halkfria strandtofflor för herr, därför kostar de nu bara 349 kr '
+        'så långt lagret räcker.',
 
     # ---------------------------------------------------------------- 2. Dek
     '<p>Vår senaste beställning blev större än planerat och lagret är fullpackat. Din motor, och dess andrahandsvärde, tjänar på det.</p>':
-        '<p>Den här sidan finns för att förklara varför fötterna glider på blöta ytor, '
-        'och vad som faktiskt löser det.</p>',
+        '<p>Bäverbutiken säljer just nu ut lagret av strandtofflorna, och det nedsatta priset '
+        'gäller så långt lagret räcker.</p>',
 
     # ---------------------------------------------------------------- 4. Datum
     '<p>Senast uppdaterad 4 augusti 2026.</p>':
@@ -31,11 +31,11 @@ M = {
 
     # ---------------------------------------------------------------- 5. Sammanfattning
     '<p><span style="color:#000000;"><strong>Sammanfattning:</strong> Vår senaste beställning blev större än planerat och lagret är helt fullpackat. Därför rear vi ut motorhöljena: 299 kr istället för ordinarie 367 kr, så länge lagret räcker.&nbsp;</span><br><span style="color:#000000;">Om din kåpa redan börjat blekna, eller om du vill vara säker på att den aldrig gör det, är det här lösningen. Ett hölje som håller motorn i originalskick. Och originalskick är det som håller värdet den dag båten ska säljas.</span></p>':
-        '<p><span style="color:#000000;"><strong>Sammanfattning:</strong> Det här är halkfria '
-        'strandtofflor för herr som kostar 349 kr, byggda med en tjock, mönstrad sula för blöta '
-        'underlag som altan, brygga, pool och strand.&nbsp;</span><br><span style="color:#000000;">'
-        'Sidan är för dig som redan halkat till hemma eller på semester och är trött på att lita '
-        'på gamla skor som inte är gjorda för vatten.</span></p>',
+        '<p><span style="color:#000000;"><strong>Sammanfattning:</strong> Vi säljer ut lagret av '
+        'halkfria strandtofflor för herr, och just nu kostar de 349 kr så långt lagret '
+        'räcker.&nbsp;</span><br><span style="color:#000000;">De här är för dig som halkar till på '
+        'altanen, bryggan eller poolkanten och vill ha något som greppar ordentligt under '
+        'foten.</span></p>',
 
     # ---------------------------------------------------------------- Punkt 1
     '1. Din kåpa ser fin ut. Det gör den inte länge till.':
@@ -139,14 +139,14 @@ M = {
 
     # ---------------------------------------------------------------- Ärlighetssektionen
     '<p>vi köpte in för mycket. Inför säsongen tog vi hem ett större parti motorhöljen än vi någonsin beställt, och nu står pallarna kvar på lagret medan sommaren rullar på. Istället för att låta dem samla damm gör vi det enkelt: 299 kr istället för ordinarie 367 kr, tills partiet är slut.</p><p>&nbsp;</p><p>Det är hela anledningen till priset. Ingen påhittad jätterabatt och ingen klocka som räknar ner. Vi har helt enkelt fler höljen än hyllplats, och din motor har mer nytta av ett av dem än vårt lager har.</p><p>&nbsp;</p><p>Och priset är ärligt åt andra hållet också: 367 kr är vad höljet kostar hos oss i vanliga fall. När partiet är slut går det tillbaka dit.</p>':
-        '<p>349 kr är vad de här tofflorna kostar. Inget kampanjpris, ingen rea, inget jämförpris '
-        'som råkar vara högre än det borde. Det är helt enkelt priset.</p><p>&nbsp;</p><p>Och de är '
-        'inte allt. De är inte skyddsskor och ska inte användas som sådana, och de är inte gjorda '
-        'för att gå långa sträckor i. De är tofflor du kliver i och ur, tänkta för altanen, '
-        'trädgården, stranden, poolen, båten och campingen, inte för en löptur eller en '
-        'byggarbetsplats.</p><p>&nbsp;</p><p>Just därför lägger vi 30 dagars nöjd-kund-garanti på '
-        'köpet. Passar de inte dig eller din vardag, hör av dig inom 30 dagar, så löser vi det. Du '
-        'riskerar ingenting genom att testa dem.</p>',
+        '<p>vi säljer just nu ut lagret av de här strandtofflorna i vår butik. Det är hela '
+        'anledningen till att priset är nedsatt just nu, inget annat.</p><p>&nbsp;</p><p>Men jag '
+        'vill vara ärlig åt andra hållet också: det är ingen påhittad jätterabatt och ingen klocka '
+        'som räknar ner. När lagret är slut är det slut, helt enkelt. Och för att vara tydlig: de '
+        'här är inte skyddsskor och inte gjorda för att gå långa sträckor i. De är gjorda för '
+        'altanen, bryggan och poolkanten.</p><p>&nbsp;</p><p>Känns tofflorna inte rätt har du 30 '
+        'dagars nöjd-kund-garanti på dem. Då tar vi tillbaka dem, du behöver inte sitta fast med '
+        'ett köp du ångrar.</p>',
 
     # ---------------------------------------------------------------- Riskavlastning
     '<p>Vill du ha ett är det bara att trycka på knappen här nedanför. Passar det inte din motor har du 30 dagar på dig att ångra köpet, så du riskerar ingenting. Men det gäller bara så länge lagret räcker.</p>':
@@ -154,9 +154,9 @@ M = {
         '30 dagar på dig att höra av dig, helt utan krångel. Storlek 36 till 47 finns i lager.</p>',
 
     '<p>Ja tack, ett hölje för 299 kr → 30 dagars garanti</p>':
-        '<p>Testa riskfritt med 30 dagars garanti →</p>',
+        '<p>Beställ tryggt med 30 dagars garanti →</p>',
 
     # ---------------------------------------------------------------- Hero-knapp
     '<p>Visa lagerrensningen → 299 kr</p>':
-        '<p>Se strandtofflorna som greppar →</p>',
+        '<p>Handla strandtofflorna för 349 kr →</p>',
 }
