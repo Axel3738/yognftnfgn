@@ -39,9 +39,17 @@ Axels gamla FR/USA-experiment: 6 produkter, shrine som live-tema. Dessa RÖRS IN
 ## Kvar
 - [x] Fas 3: KLAR — 42/42 produkter es-MX, 15 juridiska flaggor (se build/out/*.es.json)
       Patchat i JSONL: "Por 1399 kr"→"Por $2,659 MXN" (aa), EU-lagpåstående struket (elektrisk-grillborste)
-- [~] Fas 4: produktpush PÅGÅR (chunk 0,2,3 via agenter; chunk 1 blockerad av klassificeraren — skickas till färdig agent). Kvar: kanalpublicering, kollektionsbilder, sidor, menyer
+- [x] Fas 4: KLAR OCH VERIFIERAD
+  - 42/42 produkter pushade (productSet, 0 fel). OBS: borst-poler-huvud → handle `borst-poler-huvud-mx` (krock med gammal FR-produkt)
+  - Kanalpublicering: 42 produkter + 4 kollektioner → Webbshop (0 fel)
+  - Kollektioner: frontpage 1, herramientas 14, delantales 12, cuchillos 5 produkter + bilder på alla 4
+  - compareAtPrice-bugg fixad: käll-"0.00" blev 9 MXN → nollad på 11 varianter (forklade-lader, grilltanger, bbq-redskapsset)
+  - 6 sidor på es-MX med LFPC/PROFECO/LFPDPPP-juridik (se build/pages-report.md)
+  - Menyer: huvudmeny (3 kollektioner + Sobre Nosotros) + sidfot (6 juridiksidor)
+  - GRIND: productsCount active vendor:'GrillForge Co' = 42 ✓
 - [x] Fas 5: KLAR — Market México (gid://shopify/Market/116428079444), MXN, manuell kurs 1.0, moms i priset. OBS: unified markets → marketUpdate med currencySettings, INTE marketCurrencySettingsUpdate
-- [x] Fas 6: México-zon skapad i Allmän profil med 'Envío gratis' 0 (alla andra zoner var redan 0). Grind (draftOrderCalculate) körs när produkterna är inne
+- [x] Fas 6: KLAR OCH VERIFIERAD — draftOrderCalculate mot CDMX-adress (06600):
+  2× grilltanger = 378 MXN, frakt 'Envío gratis' 0. Valuta/pris/frakt fungerar hela vägen ✓
 - [ ] Fas 7: tema — upsert 464 filer från exporten + ÖVERSÄTT temafilerna (GemPages-sektionerna innehåller svensk säljtext!)
 - [ ] Fas 8: Judge.me-recensioner på es-MX
 - [ ] Fas 9: sanningskontroll (fri frakt-löften vs verklig fraktzon, betalmetoder)

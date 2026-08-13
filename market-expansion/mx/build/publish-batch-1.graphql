@@ -1,0 +1,25 @@
+mutation {
+p0: publishablePublish(id: "gid://shopify/Product/15680289571156", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+p1: publishablePublish(id: "gid://shopify/Product/15680289931604", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+p2: publishablePublish(id: "gid://shopify/Product/15680290586964", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+p3: publishablePublish(id: "gid://shopify/Product/15680292028756", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+p4: publishablePublish(id: "gid://shopify/Product/15680293273940", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+p5: publishablePublish(id: "gid://shopify/Product/15680294322516", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+p6: publishablePublish(id: "gid://shopify/Product/15680295043412", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+p7: publishablePublish(id: "gid://shopify/Product/15680296288596", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+p8: publishablePublish(id: "gid://shopify/Product/15680297238868", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+p9: publishablePublish(id: "gid://shopify/Product/15680297566548", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+p10: publishablePublish(id: "gid://shopify/Product/15680298058068", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+p11: publishablePublish(id: "gid://shopify/Product/15680289833300", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+p12: publishablePublish(id: "gid://shopify/Product/15680290619732", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+p13: publishablePublish(id: "gid://shopify/Product/15680292389204", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+p14: publishablePublish(id: "gid://shopify/Product/15680293175636", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+p15: publishablePublish(id: "gid://shopify/Product/15680293699924", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+p16: publishablePublish(id: "gid://shopify/Product/15680289800532", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+p17: publishablePublish(id: "gid://shopify/Product/15680290554196", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+p18: publishablePublish(id: "gid://shopify/Product/15680292258132", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+p19: publishablePublish(id: "gid://shopify/Product/15680293208404", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+p20: publishablePublish(id: "gid://shopify/Product/15680293798228", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+p21: publishablePublish(id: "gid://shopify/Collection/712480915796", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+p22: publishablePublish(id: "gid://shopify/Collection/712481177940", input: {publicationId: "gid://shopify/Publication/310433808724"}) { userErrors { field message } }
+}
