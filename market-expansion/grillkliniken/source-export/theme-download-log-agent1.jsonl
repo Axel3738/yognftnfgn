@@ -16,3 +16,9 @@
 {"filename": "layout/theme.gempages.header.liquid", "expected": 5092, "actual": 5092, "ok": true}
 {"filename": "sections/newsletter-popup.liquid", "expected": 5689, "actual": 5689, "ok": true}
 {"filename": "snippets/product-images.liquid", "expected": 7120, "actual": 7120, "ok": true}
+{"filename": "snippets/media.liquid", "expected": 7794, "actual": 7794, "ok": true}
+{"filename": "sections/footer.liquid", "expected": 8716, "actual": 8716, "ok": true}
+{"filename": "assets/vendor-scripts-v10.js", "expected": 143785, "actual": 143785, "ok": true}
+{"filename": "assets/gp-global.css", "expected": 69647, "actual": 69647, "ok": true}
+{"filename": "sections/gp-section-623155472379216664.liquid", "expected": 12202, "actual": 12202, "ok": true}
+{"filename": "sections/gp-section-621092885521040031.liquid", "expected": 12293, "actual": 12293, "ok": true}
