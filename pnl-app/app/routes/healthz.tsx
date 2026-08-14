@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "currency-v12", db });
+  return json({ ok: true, build: "cogs-v13", db });
 }

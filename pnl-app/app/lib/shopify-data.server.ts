@@ -166,14 +166,27 @@ async function doFetchOrderData(
   }
 
   const costs = await fetchVariantCosts(admin, shopKey);
-  const products: ProductRow[] = [...productBy.values()].map((p) => {
+  return {
+    sales: [...salesBy.values()],
+    products: applyCurrentCosts([...productBy.values()] as ProductRow[], costs),
+  };
+}
+
+/**
+ * Slår om produktradernas unitCost mot en färsk katalog.
+ *
+ * Aggregaten cachas i timmar, och bar tidigare den kostnad som gällde när de
+ * hämtades. Följden: man skrev in ett inköpspris, laddade om, och panelen sa
+ * fortfarande "saknar inköpspris" — importen såg trasig ut fast den lyckats.
+ * Kostnaden hör inte hemma i cachen; den läses om vid varje sidladdning.
+ */
+export function applyCurrentCosts(products: ProductRow[], costs: VariantCatalog): ProductRow[] {
+  return products.map((p) => {
     const hit =
       (p.variantGid ? costs.byGid.get(p.variantGid) : undefined) ??
       costs.byTitle.get(titleKey(p.title, p.variantTitle ?? "Default Title"));
     return { ...p, unitCost: hit?.unitCost ?? null };
   });
-
-  return { sales: [...salesBy.values()], products };
 }
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));

@@ -26,7 +26,7 @@ import {
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { compute, rangeWindow } from "../lib/pnl.server";
-import { fetchOrderData, fetchShopInfo } from "../lib/shopify-data.server";
+import { applyCurrentCosts, fetchOrderData, fetchShopInfo, fetchVariantCosts } from "../lib/shopify-data.server";
 import { getSpend } from "../lib/meta.server";
 
 const RANGES: Record<string, string> = {
@@ -112,7 +112,13 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
     prisma.fixedCost.findMany({ where: { shop } }),
   ]);
   const fixedMonthlyTotal = fixedRows.reduce((a, r) => a + Number(r.monthlyAmount), 0);
-  const { sales, products } = orderData;
+
+  /* Kostnaden läses om ur katalogen (5 min minnescache) istället för att tas
+     ur det cachade aggregatet — annars syns ett nyss inskrivet inköpspris
+     först när hela orderexporten körts om, och importen ser trasig ut. */
+  const catalog = await fetchVariantCosts(admin, shop);
+  const sales = orderData.sales;
+  const products = applyCurrentCosts(orderData.products, catalog);
   /* Sessioner/CVR finns inte i det publika Admin-API:t — analytics-ytan är
      intern hos Shopify. Tom serie => "—" i panelen. */
   const sessions: never[] = [];
@@ -202,7 +208,8 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
       from: prevFrom, to: prevTo,
       spendReliable: metaConfigured && !prevSpend.error,
       fixedMonthlyTotal,
-      sales: prevData.sales, sessions: [], spend: prevSpend.days, products: prevData.products,
+      sales: prevData.sales, sessions: [], spend: prevSpend.days,
+      products: applyCurrentCosts(prevData.products, catalog),
       costChanges: costChanges.map((c) => ({
         productGid: c.productGid, variantGid: c.variantGid, unitCost: Number(c.unitCost),
         effectiveFrom: c.effectiveFrom.toISOString().slice(0, 10), note: c.note,
