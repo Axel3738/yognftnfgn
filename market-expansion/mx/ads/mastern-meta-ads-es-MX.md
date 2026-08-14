@@ -78,3 +78,21 @@ $1,699 con envío gratis. Garantía de por vida.
 - Citatet i vinkel 3 är en riktig recension ur importen (Héctor = lokaliserat namn).
 - Priser hårdkodade: uppdatera annonserna om priset ändras från 1699/3049.
 - Recensionsantalet "+400" täcks av de 434 importerade recensionerna (varav 77 på Mastern specifikt — vill du vara strikt per produkt: skriv "+75 parrilleros").
+
+---
+
+## Vinkel 5 — 1:1-översättning av Axels körande svenska annons (Ads Library id 1320910376175975)
+
+**Primary text:**
+¿Sigues posponiendo la limpieza del asador desde el verano pasado?
+
+El cepillo eléctrico de La Clínica del Asador hace el trabajo por ti: aprietas un botón y la parrilla queda limpia en minutos. Sin tallar, cero esfuerzo.
+
+✔ Inalámbrico y recargable
+✔ Gira 180° — llega a todos los rincones
+✔ Cabezales intercambiables, fáciles de lavar
+
+Haz clic en el enlace y pide el tuyo hoy.
+
+**Rubrik:** Parrilla limpia en minutos — sin una sola cerda  *(47 tkn; kortvariant: "Parrilla limpia en minutos, sin cerdas" = 38)*
+**Beskrivning:** Cepillo eléctrico para asador con cabezales intercambiables. Inalámbrico, recargable y fácil de usar. Pídelo hoy.
