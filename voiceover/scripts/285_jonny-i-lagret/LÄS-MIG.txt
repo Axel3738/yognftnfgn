@@ -1,0 +1,5 @@
+Inspelningsmanus, INTE VO att generera.
+
+Briefen kräver en riktig person (Jonny) som talar till kameran i EN tagning med rå audio,
+och förbjuder AI-människor. En syntetisk röst skulle dessutom desynka mot hans mun.
+Filerna ligger därför som .manus — kör dem som teleprompter vid inspelningen i lagret.
