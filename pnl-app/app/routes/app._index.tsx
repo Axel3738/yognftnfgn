@@ -132,6 +132,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
     to,
     today,
     shopInfo.currency,
+    settings.spendCurrency,
   );
 
   const metaConfigured = Boolean(settings.metaAdAccountId && settings.metaAccessToken);
@@ -202,7 +203,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
       metaConfigured
         ? { adAccountId: settings.metaAdAccountId!, accessToken: settings.metaAccessToken! }
         : null,
-      prevFrom, prevTo, today, shopInfo.currency,
+      prevFrom, prevTo, today, shopInfo.currency, settings.spendCurrency,
     );
     const prev = compute({
       from: prevFrom, to: prevTo,

@@ -45,6 +45,9 @@ export async function action({ request }: ActionFunctionArgs) {
       ...(token ? { metaAccessToken: token } : {}),
       // Kvitterar kom igång-checklistans steg om tull och avgifter.
       settingsSavedAt: new Date(),
+      // Nytt konto kan ha annan valuta — läs om den istället för att lita på
+      // den gamla, annars jämförs butiken mot fel valuta.
+      spendCurrency: null,
     },
   });
   // Cachad spend bygger på det gamla kontot — släng den så inget blandas ihop.

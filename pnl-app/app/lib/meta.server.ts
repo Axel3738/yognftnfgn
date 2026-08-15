@@ -56,6 +56,27 @@ async function fetchInsights(cfg: MetaConfig, since: string, until: string): Pro
 }
 
 /**
+ * Annonskontots valuta, hämtad direkt från kontot.
+ *
+ * Den gick tidigare bara att läsa ur insights-raderna, vilket gjorde
+ * upptäckten beroende av att det fanns leverans i fönstret och att panelen
+ * råkade hämta färska dagar. Ett konto utan visningar såg då korrekt ut.
+ */
+async function fetchAccountCurrency(cfg: MetaConfig): Promise<string | undefined> {
+  const account = cfg.adAccountId.startsWith("act_") ? cfg.adAccountId : `act_${cfg.adAccountId}`;
+  const url = new URL(`${GRAPH}/${account}`);
+  url.searchParams.set("fields", "currency");
+  url.searchParams.set("access_token", cfg.accessToken);
+  try {
+    const res = await fetch(url);
+    const body = await res.json();
+    return res.ok ? (body?.currency ?? undefined) : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+/**
  * Returnerar spend per dag för fönstret. Cachade dagar läses från databasen;
  * bara det som saknas eller kan ha ändrats hämtas från Meta.
  *
@@ -70,6 +91,7 @@ export async function getSpend(
   to: string,
   today: string,
   shopCurrency?: string,
+  storedSpendCurrency?: string | null,
 ): Promise<{
   days: { day: string; spend: number; impressions: number; clicks: number }[];
   error?: string;
@@ -106,15 +128,26 @@ export async function getSpend(
     if (!cachedRow || recent) stale.push(d);
   }
 
-  let currencyMismatch: { spend: string; shop: string } | undefined;
+  /* Valutan lagras första gången den är känd och jämförs sedan vid varje
+     laddning. Utan lagringen syntes krocken bara de gånger panelen råkade
+     hämta färska dagar — och försvann så fort allt låg i cachen. */
+  let spendCurrency = storedSpendCurrency;
+  if (!spendCurrency) {
+    spendCurrency = await fetchAccountCurrency(cfg);
+    if (spendCurrency) {
+      await prisma.shopSettings
+        .update({ where: { shop }, data: { spendCurrency } })
+        .catch(() => {});
+    }
+  }
+  const currencyMismatch =
+    spendCurrency && shopCurrency && spendCurrency !== shopCurrency
+      ? { spend: spendCurrency, shop: shopCurrency }
+      : undefined;
 
   if (stale.length) {
     try {
       const rows = await fetchInsights(cfg, stale[0], stale[stale.length - 1]);
-      const spendCurrency = rows.find((r) => r.account_currency)?.account_currency;
-      if (spendCurrency && shopCurrency && spendCurrency !== shopCurrency) {
-        currencyMismatch = { spend: spendCurrency, shop: shopCurrency };
-      }
       for (const r of rows) {
         const day = r.date_start;
         const rec = {
@@ -142,6 +175,7 @@ export async function getSpend(
           clicks: r.clicks,
         })),
         error: msg,
+        currencyMismatch,
       };
     }
   }

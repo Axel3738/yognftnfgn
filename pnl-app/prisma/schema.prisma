@@ -38,6 +38,9 @@ model ShopSettings {
   /// Målmarginal som max-CPA räknas mot.
   targetMargin    Decimal  @default(0.25) @db.Decimal(6, 4)
   metaAdAccountId String?
+  /// Annonskontots valuta, läst från Meta. Lagras för att kunna jämföras mot
+  /// butikens valuta vid varje sidladdning utan att kosta ett API-anrop.
+  spendCurrency   String?
   /// Long-lived Meta-token. Kryptera i produktion — se lib/crypto.server.ts.
   metaAccessToken String?
   currency        String   @default("SEK")
