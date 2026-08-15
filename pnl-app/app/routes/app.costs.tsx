@@ -13,7 +13,7 @@
 import { useState } from "react";
 import type { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { useFetcher, useLoaderData } from "@remix-run/react";
+import { Link, useFetcher, useLoaderData } from "@remix-run/react";
 import {
   Badge,
   BlockStack,
@@ -153,6 +153,24 @@ export default function Costs() {
               <Banner tone="success">Alla varianter har inköpspris.</Banner>
             )}
 
+            <Card background="bg-surface-secondary">
+              <BlockStack gap="200">
+                <Text as="h2" variant="headingMd">Så här gör du 📋</Text>
+                <Text as="p" tone="subdued">
+                  <strong>1.</strong> Ladda ner mallen nedan — den innehåller butikens alla
+                  produkter med rätt titlar.<br />
+                  <strong>2.</strong> Fyll i kostnadskolumnen. Filen går att skicka vidare till
+                  leverantören, bokföringen eller en AI som fyller i den åt dig.<br />
+                  <strong>3.</strong> Släpp tillbaka filen här. Alla kostnader skrivs till Shopify
+                  på en gång.<br />
+                  <strong>4.</strong> Klicka på en produkt i listan längst ner för att lägga till
+                  <em> daterade poster</em> — vara och frakt var för sig, med datumet de började
+                  gälla. Ändras ett pris lägger du till en ny post istället för att skriva över,
+                  så förblir gammal statistik sann.
+                </Text>
+              </BlockStack>
+            </Card>
+
             <Card>
               <BlockStack gap="400">
                 <BlockStack gap="200">
@@ -253,7 +271,9 @@ export default function Costs() {
               columnContentTypes={["text", "text", "numeric", "numeric", "text"]}
               headings={["Produkt", "Variant", "Pris", "Inköp", "Multipel"]}
               rows={rows.map((r) => [
-                r.productTitle,
+                <Link key={r.variantGid} to={`/app/costs/${r.productGid.split("/").pop()}`}>
+                  {r.productTitle}
+                </Link>,
                 r.variantTitle === "Default Title" ? "—" : r.variantTitle,
                 nf.format(r.price),
                 r.unitCost == null ? "—" : nf.format(r.unitCost),

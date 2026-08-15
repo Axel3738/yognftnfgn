@@ -65,8 +65,13 @@ model CostChange {
   variantGid    String?
   /// Shopify produkt-GID.
   productGid    String
-  /// Vara + frakt, utan tull.
+  /// Vara + frakt, utan tull. Summan av de två fälten nedan när de är ifyllda.
   unitCost      Decimal  @db.Decimal(10, 2)
+  /// Varan själv, utan frakt. Den delen förhandlas separat och ändras sällan.
+  productCost   Decimal? @db.Decimal(10, 2)
+  /// Frakten per enhet. Den dominerar kostnaden och är den som sjunker vid
+  /// flerpack — därför måste den gå att se och ändra för sig.
+  shippingCost  Decimal? @db.Decimal(10, 2)
   /// Gäller från och med detta datum (inklusive).
   effectiveFrom DateTime @db.Date
   note          String?
