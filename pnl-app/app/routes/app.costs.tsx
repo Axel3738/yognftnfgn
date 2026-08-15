@@ -21,6 +21,8 @@ import {
   Button,
   Card,
   DataTable,
+  DropZone,
+  InlineStack,
   Layout,
   Page,
   Text,
@@ -49,7 +51,9 @@ export async function loader({ request }: LoaderFunctionArgs) {
 export async function action({ request }: ActionFunctionArgs) {
   const { admin, session } = await authenticate.admin(request);
   const form = await request.formData();
-  const csv = String(form.get("csv") ?? "");
+  // Excel och vår egen mall skriver BOM först i filen — annars ser rad ett ut
+  // som data istället för kommentar och tolkningen börjar snett.
+  const csv = String(form.get("csv") ?? "").replace(/^﻿/, "");
   const effectiveFrom = String(form.get("effectiveFrom") ?? "");
 
   /* Tålig radtolkning: semikolon är formatet, men text som passerat Excel
@@ -131,6 +135,7 @@ export default function Costs() {
   const { rows, missing, total } = useLoaderData<typeof loader>();
   const fetcher = useFetcher<typeof action>();
   const [csv, setCsv] = useState("");
+  const [fileName, setFileName] = useState<string | null>(null);
   const [effectiveFrom, setEffectiveFrom] = useState("");
 
   const nf = new Intl.NumberFormat("sv-SE", { minimumFractionDigits: 2 });
@@ -149,23 +154,72 @@ export default function Costs() {
             )}
 
             <Card>
-              <BlockStack gap="300">
-                <Text as="h2" variant="headingMd">
-                  Importera
-                </Text>
-                <Text as="p" tone="subdued">
-                  En rad per produkt: <code>produkttitel;varianttitel;kostnad</code>. Lämna
-                  varianttiteln tom för att sätta samma kostnad på alla varianter. Kostnaden ska
-                  vara vara + frakt <em>utan</em> tull — tullen är per order och ligger i
-                  Inställningar.
-                </Text>
+              <BlockStack gap="400">
+                <BlockStack gap="200">
+                  <Text as="h2" variant="headingMd">
+                    Importera inköpspriser
+                  </Text>
+                  <Text as="p" tone="subdued">
+                    Ladda ner mallen — den innehåller butikens exakta produkttitlar. Fyll i
+                    kostnadskolumnen, eller skicka filen vidare till den som sitter på
+                    inköpspriserna, och släpp den tillbaka här. Kostnaden är vara + frakt{" "}
+                    <em>utan</em> tull; tullen är per order och ligger i Inställningar.
+                  </Text>
+                  <InlineStack>
+                    {/* Vanlig länk, inte Polaris Button: knappen renderas som Remix-länk och
+                        försöker klientnavigera till en rutt som svarar med en filnedladdning. */}
+                    <a
+                      href="/app/costs/mall"
+                      download
+                      style={{ color: "#005bd3", fontSize: 14, textDecoration: "none" }}
+                    >
+                      ⬇ Ladda ner mall med dina produkter
+                    </a>
+                  </InlineStack>
+                </BlockStack>
+
+                <DropZone
+                  accept=".csv,text/csv"
+                  type="file"
+                  allowMultiple={false}
+                  onDrop={(_all, accepted) => {
+                    const file = accepted[0];
+                    if (!file) return;
+                    file.text().then((text) => {
+                      setCsv(text);
+                      setFileName(file.name);
+                    });
+                  }}
+                >
+                  {csv ? (
+                    <div style={{ padding: 16 }}>
+                      <BlockStack gap="100">
+                        <Text as="p" fontWeight="semibold">
+                          {fileName ?? "Inklistrad text"}
+                        </Text>
+                        <Text as="p" tone="subdued" variant="bodySm">
+                          {`${csv.split(/\r?\n/).filter((l) => l.trim() && !l.startsWith("#")).length} rader redo att skrivas`}
+                        </Text>
+                      </BlockStack>
+                    </div>
+                  ) : (
+                    <DropZone.FileUpload
+                      actionTitle="Välj CSV-fil"
+                      actionHint="eller dra filen hit"
+                    />
+                  )}
+                </DropZone>
+
                 <TextField
-                  label="CSV"
+                  label="…eller klistra in raderna direkt"
                   value={csv}
-                  onChange={setCsv}
-                  multiline={8}
+                  onChange={(v) => {
+                    setCsv(v);
+                    setFileName(null);
+                  }}
+                  multiline={6}
                   autoComplete="off"
-                  placeholder={"Marin Motorhölje 420D – Universellt Skydd;Svart / 40 - 60 hk;81.92\nStrandtofflor för Herr – Halkfria Trädgårdsskor;;103.16"}
+                  placeholder={"Marin Motorhölje 420D – Universellt Skydd;Svart / 40 - 60 hk;81.92\nStrandtofflor för Herr – Halkfria Trädgårdsskor;;148.42"}
                 />
                 <TextField
                   label="Gäller från (valfritt)"
@@ -173,10 +227,11 @@ export default function Costs() {
                   value={effectiveFrom}
                   onChange={setEffectiveFrom}
                   autoComplete="off"
-                  helpText="Sätts ett datum sparas ändringen i historiken, så att perioder före datumet räknas på den gamla kostnaden."
+                  helpText="Sätts ett datum sparas ändringen i historiken, så att perioder före datumet räknas på den gamla kostnaden. Släpp in en ny version av filen när priserna ändras och sätt datumet då de började gälla."
                 />
                 <Button
                   variant="primary"
+                  disabled={!csv.trim()}
                   loading={fetcher.state !== "idle"}
                   onClick={() => fetcher.submit({ csv, effectiveFrom }, { method: "POST" })}
                 >
