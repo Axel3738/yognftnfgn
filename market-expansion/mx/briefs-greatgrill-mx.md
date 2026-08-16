@@ -201,3 +201,150 @@ Source: these 8 scripts are Mexican adaptations of a proven competitor library (
 - Never show or mock the foil-wrapped cebollita/potato tradition — the villain is foil on shrimp/veg/anything that deserves fire.
 - Captions: burn in the Spanish VO as subtitles. Keep the overlay texts exactly as written.
 - End-card: product on grill + bundle tiers + "HASTA 42% DE DESCUENTO · ENVÍO GRATIS A TODO MÉXICO · GARANTÍA DE POR VIDA".
+
+---
+
+# HOOK VARIANTS — 3 hooks per ad (added 2026-08-16)
+
+Each concept ships as ONE body + THREE hook front-ends (first ~5 seconds swapped). Hook A = the original opening already in each script above. B and C below replace the script's opening lines and hand off into the existing body at the noted line. Ad name changes ONLY in the hook slug.
+
+## Ad 1 — foilstop / vaporadentro / cebollita
+**B — `clin_greatgrill_pain_ugc_vaporadentro_v1`**
+| Español (use this) | English meaning |
+|---|---|
+| En cuanto cierras ese paquete de aluminio, adentro pasa algo que no tiene nada que ver con asar. | The second you seal that foil packet, something happens inside that has nothing to do with grilling. |
+| Se hace una cosa: vapor. | One thing happens: steam. |
+
+Visual: sealing a foil packet close-up → wisp of steam when peeled open · Overlay: "ADENTRO DEL PAQUETE: PURO VAPOR" · Handoff: script line 2.
+
+**C — `clin_greatgrill_pain_ugc_cebollita_v1`**
+| Español (use this) | English meaning |
+|---|---|
+| El aluminio es para la cebollita. No para tus camarones. | Foil is for the onion. Not for your shrimp. |
+| Ese es el error que estás cometiendo cada carne asada. | That's the mistake you're making at every carne asada. |
+
+Visual: split — onion cozy in foil vs shrimp being wrapped, red X freeze · Overlay: "EL ALUMINIO ES PARA LA CEBOLLITA, NO PARA EL CAMARÓN" · Handoff: script line 2.
+
+## Ad 2 — familia / alvapor / esposa
+**B — `clin_greatgrill_pain_ugc_alvapor_v1`**
+| Español (use this) | English meaning |
+|---|---|
+| Por años les serví a mi familia camarones cocidos al vapor... y yo creía que los estaba asando. | For years I served my family steamed shrimp... and I thought I was grilling them. |
+| Hasta que un día me di cuenta. | Until one day I realized it. |
+
+Visual: talking head → memory-style clip of foil packets at the family table · Overlay: "AÑOS SIRVIENDO CAMARONES AL VAPOR — CREYENDO QUE LOS ASABA" · Handoff: script line 3.
+
+**C — `clin_greatgrill_pain_ugc_esposa_v1`**
+| Español (use this) | English meaning |
+|---|---|
+| Compré esta canasta como regalo para mi esposa... y terminé usándola yo cada fin de semana. | I bought this basket as a gift for my wife... and ended up using it myself every weekend. |
+| Así fue como dejé el aluminio para siempre. | That's how I quit foil for good. |
+
+Visual: gift handover, wife smiling, cut to him grilling with it · Overlay: "SE LA REGALÉ A MI ESPOSA... Y ME LA ROBÉ" · Handoff: script line 2.
+
+## Ad 3 — crudoquemado / otravez / orgullo
+**B — `clin_greatgrill_curiosity_ugc_otravez_v1`**
+| Español (use this) | English meaning |
+|---|---|
+| Quemadas por fuera. Crudas por dentro. Otra vez. | Burnt outside. Raw inside. Again. |
+| Le diste una mordida a tu verdura y ahí estaba: cruda en el centro. | You bit into your vegetable and there it was: raw in the middle. |
+
+Visual: bite reveal of raw center, visible wince · Overlay: "QUEMADAS POR FUERA, CRUDAS POR DENTRO. OTRA VEZ." · Handoff: script line 3.
+⭐ Copy-agentens bedömning: starkaste nya hooken i hela batchen.
+
+**C — `clin_greatgrill_curiosity_ugc_orgullo_v1`**
+| Español (use this) | English meaning |
+|---|---|
+| Puedes clavar el punto exacto de tu corte favorito... | You can nail the perfect doneness on your favorite cut... |
+| pero las verduras siempre te bajan del trono. | but the vegetables always knock you off your throne. |
+
+Visual: perfect steak sear → burnt/raw veg, deflated reaction · Overlay: "LA CARNE TE SALE PERFECTA. LAS VERDURAS TE HUMILLAN." · Handoff: script line 2.
+
+## Ad 4 — plancha / tallar / humopagado
+**B — `clin_greatgrill_pain_comparison_tallar_v1`**
+| Español (use this) | English meaning |
+|---|---|
+| Cocinaste veinte minutos. Vas a tallar la plancha otros diez. | You cooked for twenty minutes. You're about to scrub the plancha for another ten. |
+| Un tercio de tu tiempo en el asador se va nomás en limpiar fierro. | A third of your grilling time goes to scrubbing iron. |
+
+Visual: split-screen clock (cook vs scrub) · Overlay: "20 MIN COCINANDO. 10 MIN TALLANDO." · Handoff: script line 2.
+
+**C — `clin_greatgrill_pain_comparison_humopagado_v1`**
+| Español (use this) | English meaning |
+|---|---|
+| Compraste el carbón. Pagaste por ese humo. | You bought the charcoal. You paid for that smoke. |
+| Y la plancha no deja que le llegue ni una gota a tu comida. | And the plancha doesn't let a drop of it reach your food. |
+
+Visual: glowing coals, smoke blocked by flat plancha · Overlay: "PAGASTE POR EL HUMO. LA PLANCHA NO LO DEJA PASAR." · Handoff: script line 3.
+
+## Ad 5 — quickrec / pov / oferta
+**B — `clin_greatgrill_benefit_ugc_pov_v1`**
+| Español (use this) | English meaning |
+|---|---|
+| Esto es lo que le recomiendo a todos los que asan camarones y verduras chicas. | This is what I recommend to everyone grilling shrimp and small veggies. |
+| Una canasta giratoria. | A rolling basket. |
+
+Visual: direct-to-camera, holding basket · Overlay: "LO QUE LE RECOMIENDO A TODO MUNDO" · Handoff: script line 3.
+
+**C — `clin_greatgrill_offer_ugc_oferta_v1`**
+| Español (use this) | English meaning |
+|---|---|
+| Hasta 42% de descuento en la canasta que te da rayas de asador de verdad y nunca deja que se te caiga nada. | Up to 42% off the basket that gives real grill marks and never lets anything fall through. |
+| Así de fácil. | It's that simple. |
+
+Visual: hero shot + discount graphic → load onto flames · Overlay: "HASTA 42% · RAYAS DE VERDAD · NADA SE CAE" · Handoff: script line 3.
+
+## Ad 6 — top3 / dosdetres / antesdecomprar
+**B — `clin_greatgrill_curiosity_comparison_dosdetres_v1`**
+| Español (use this) | English meaning |
+|---|---|
+| Dos de estas tres herramientas te están arruinando el asado. | Two of these three tools are ruining your grilling. |
+| Y seguro tienes las dos en tu cocina ahorita mismo. | And you probably have both in your kitchen right now. |
+
+Visual: pan across three items, red X lands on two · Overlay: "2 DE 3 TE ESTÁN ARRUINANDO EL ASADO" · Handoff: script line 2.
+
+**C — `clin_greatgrill_fomo_comparison_antesdecomprar_v1`**
+| Español (use this) | English meaning |
+|---|---|
+| No compres nada para tu asador antes de ver esto. | Don't buy anything for your grill before you see this. |
+| Te ahorro el dinero en dos herramientas que no sirven. | I'll save you money on two tools that don't work. |
+
+Visual: hand mid-checkout on phone, freeze, pull back to three items · Overlay: "NO COMPRES NADA PARA TU ASADOR ANTES DE VER ESTO" · Handoff: script line 2.
+
+## Ad 7 — dinero / diezpesos / asadorcome
+**B — `clin_greatgrill_pain_ugc_diezpesos_v1`**
+| Español (use this) | English meaning |
+|---|---|
+| Cada camarón que se te cae por el asador son como diez pesos que se quedan en las brasas. | Every shrimp that falls through the grates is about ten pesos left in the coals. |
+| Y en una sola carne asada se te caen más de los que crees. | And in one carne asada, more fall than you think. |
+
+Visual: slow-mo shrimp through grates + peso-coin graphic fading into flame · Overlay: "CADA CAMARÓN QUE SE CAE = COMO $10 EN LAS BRASAS" · Handoff: script line 2.
+
+**C — `clin_greatgrill_pain_ugc_asadorcome_v1`**
+| Español (use this) | English meaning |
+|---|---|
+| Tu asador come más que tus invitados. | Your grill eats more than your guests do. |
+| Y no le vas a cobrar renta por comerse tus camarones. | And you're not charging it rent for eating your shrimp. |
+
+Visual: comedic flare-up as shrimp drops, guests eyeing empty plate · Overlay: "TU ASADOR COME MÁS QUE TUS INVITADOS" · Handoff: script line 2.
+
+## Ad 8 — sazon / miraparrilla / fuegosabor
+**B — `clin_greatgrill_curiosity_ugc_miraparrilla_v1`**
+| Español (use this) | English meaning |
+|---|---|
+| Voltea tu brocheta y mira la parrilla. | Flip your skewer and look at the grate. |
+| Ahí está la mitad de tu sazón, pegada al fierro. | There's half your seasoning, stuck to the iron. |
+
+Visual: flip skewer → camera drops to grate showing seasoning residue · Overlay: "AHÍ SE QUEDÓ LA MITAD DE TU SAZÓN" · Handoff: script line 2.
+
+**C — `clin_greatgrill_curiosity_ugc_fuegosabor_v1`**
+| Español (use this) | English meaning |
+|---|---|
+| El fuego se queda con el sabor, no tú. | The fire keeps the flavor, not you. |
+| Cada vez que volteas una brocheta, se lo estás regalando a las brasas. | Every time you flip a skewer, you're giving it away to the coals. |
+
+Visual: seasoning flecks falling into flare-up, close on flame · Overlay: "EL FUEGO SE QUEDA CON EL SABOR, NO TÚ" · Handoff: script line 2.
+
+## Launch structure (rule: tests in separate ABO, equal budget per ad)
+
+Launch per concept: one ABO with the concept's 3 hook variants at equal budget. Do NOT launch all 24 in one adset. Production: editors deliver 1 body + 3 hook front-ends per concept.
