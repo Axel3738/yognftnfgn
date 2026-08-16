@@ -56,5 +56,5 @@ Mapp: https://drive.google.com/drive/folders/1bngbhLtel48RGevXrNhlqOqZgyqx8tJZ
 - [x] Spanska VO-manus från copy-subagent (sonnet, tre-frågorstestet redovisat per manus) → inlagda i brieferna
 - [x] Briefer på engelska till redigerarna: `briefs-greatgrill-mx.md`
 - [x] Handtaget bekräftat avskruvbart → beat i brief 4 & 8 + produktsidesbullet live
-- [ ] Listicle-SIDORNA (advertorials) — separat swipe när Axel skickar URL:erna
+- [ ] Listicle-SIDORNA: 5 st från bryngrill.se (artikel 8, 1, 11, 22, 13) — källor hämtas till `listicles/source/`, mexikanska versioner byggs som HTML/text för inklistring i GemPages (".gempages"-filformat finns inte). **Skribentpersona: Andrés Jiménez** (Axels beslut 2026-08-16, mexikanisering av "Anders Johansson" — foto finns hos Axel, be om det när sidorna byggs).
 - [ ] Snapchat-annonsen från SE/NO — läggs in som extra koncept när Axel skickar den
