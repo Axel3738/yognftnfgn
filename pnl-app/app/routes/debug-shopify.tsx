@@ -21,6 +21,13 @@ export async function loader({ request }: LoaderFunctionArgs) {
     return json({ error: "ange ?shop=xxx.myshopify.com" }, { status: 400 });
   }
 
+  /* &clear=1 raderar butikens sessioner så nästa anrop tvingar fram ett nytt
+     token via token exchange — vägen från evig nyckel till utgående. */
+  if (url.searchParams.get("clear") === "1") {
+    const borttagna = await prisma.session.deleteMany({ where: { shop } });
+    return json({ shop, cleared: borttagna.count });
+  }
+
   const sessions = await prisma.session.findMany({ where: { shop } });
   const rapport: any = {
     shop,

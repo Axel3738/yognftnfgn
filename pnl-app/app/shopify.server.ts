@@ -48,7 +48,7 @@ const shopify = shopifyApp({
       trialDays: 1,
     },
   },
-  future: { unstable_newEmbeddedAuthStrategy: true, removeRest: true },
+  // v5: token exchange och REST-borttagning är standard — inga flaggor behövs.
   hooks: {
     /** Varje ny butik får sina inställningar direkt, med butikens egen valuta. */
     afterAuth: async ({ session, admin }) => {
