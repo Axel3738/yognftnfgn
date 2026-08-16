@@ -13,7 +13,7 @@ Kampanj vid launch: `CLIN_SALES_YYYYMMDD`, adset `broad_advplus_purchase`.
 3. **Kärnsmärtan på spanska:** "crudo por dentro, quemado por fuera" (ordagrann VoC) används där källan säger "bränd på ena sidan, rå på den andra".
 4. **Erbjudandet:** "hasta 42% de descuento + envío gratis a todo México + garantía de por vida". Aldrig "40 %" (matchar inte vårt offer).
 5. **Social proof:** "4.8 estrellas, más de 240 reseñas" — aldrig Bryns "50 000 användare".
-6. **Handtaget:** Bryns manus 4 & 8 har "skruva av handtaget"-beatet. UTELÄMNAT tills Axel bekräftat att vårt handtag är avskruvbart — läggs tillbaka i v2 om ja.
+6. **Handtaget:** BEKRÄFTAT avskruvbart av Axel 2026-08-16. Beatet inlagt i brief 4 (rad 6) och brief 8 (rad 7.5), och "Mango desmontable"-bullet tillagd på produktsidan.
 
 ## De 8 swiparna
 
@@ -38,8 +38,8 @@ Kampanj vid launch: `CLIN_SALES_YYYYMMDD`, adset `broad_advplus_purchase`.
 
 ## Kvar att göra
 
-- [ ] Spanska VO-manus från copy-subagent → in i brieferna
-- [ ] Briefer på engelska till redigerarna (`briefs-greatgrill-mx.md`)
-- [ ] Axel bekräftar: är handtaget avskruvbart? (påverkar brief 4 & 8, v2)
+- [x] Spanska VO-manus från copy-subagent (sonnet, tre-frågorstestet redovisat per manus) → inlagda i brieferna
+- [x] Briefer på engelska till redigerarna: `briefs-greatgrill-mx.md`
+- [x] Handtaget bekräftat avskruvbart → beat i brief 4 & 8 + produktsidesbullet live
 - [ ] Listicle-SIDORNA (advertorials) — separat swipe när Axel skickar URL:erna
 - [ ] Snapchat-annonsen från SE/NO — läggs in som extra koncept när Axel skickar den
