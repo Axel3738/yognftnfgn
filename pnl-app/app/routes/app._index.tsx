@@ -13,6 +13,7 @@ import {
   Banner,
   Button,
   Card,
+  Checkbox,
   DataTable,
   InlineGrid,
   InlineStack,
@@ -28,6 +29,7 @@ import prisma from "../db.server";
 import { compute, rangeWindow } from "../lib/pnl.server";
 import { applyCurrentCosts, fetchOrderData, fetchShopInfo, fetchVariantCosts } from "../lib/shopify-data.server";
 import { getSpend } from "../lib/meta.server";
+import { summeraGrupp } from "../lib/group.server";
 
 const RANGES: Record<string, string> = {
   today: "Idag",
@@ -231,9 +233,23 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
     // väntat när jämförelsen ännu inte cachats — den fylls i bakgrunden
   }
 
+  /* Gemensam vy över flera butiker. Bara när handlaren kryssat i den —
+     summan kostar ett antal databasfrågor och de flesta vill se sin egen
+     butik. Antalet medlemmar räknas alltid, för kryssrutan ska bara finnas
+     när det faktiskt finns något att summera. */
+  const groupSize = settings.groupId
+    ? await prisma.shopSettings.count({ where: { groupId: settings.groupId } })
+    : 1;
+  const visaAlla = url.searchParams.get("all") === "1" && groupSize > 1;
+  const group = visaAlla
+    ? await summeraGrupp(settings.groupId!, cacheKey, from, to, settings.currency)
+    : null;
+
   return {
     fatal: null as string | null,
     comparison,
+    groupSize,
+    group,
     setup: setup as {
       dismissed: boolean; meta: boolean; fixed: boolean; settings: boolean;
     } | null,
@@ -257,6 +273,8 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
     return {
       fatal: e instanceof Error ? `${e.message}` : String(e),
       comparison: null as { totalSales: number; orders: number; spend: number; netProfit: number } | null,
+      groupSize: 1,
+      group: null as Awaited<ReturnType<typeof summeraGrupp>> | null,
       setup: null as { dismissed: boolean; meta: boolean; fixed: boolean; settings: boolean } | null,
       fixedCount: 0,
       dataAgeMin: 0,
@@ -731,8 +749,8 @@ function SetupChecklist({
 }
 
 function DashboardView({ d }: { d: PageData }) {
-  const { fatal, result, rangeKey, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing } = d;
-  const [, setParams] = useSearchParams();
+  const { fatal, result, rangeKey, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing, groupSize, group } = d;
+  const [params, setParams] = useSearchParams();
   if (fatal || !result) {
     return (
       <Page title="Vinst">
@@ -820,6 +838,72 @@ function DashboardView({ d }: { d: PageData }) {
                 </Badge>
               ))}
             </InlineStack>
+
+            {groupSize > 1 ? (
+              <Card background="bg-surface-secondary">
+                <BlockStack gap="300">
+                  <Checkbox
+                    label={`Summera alla ${groupSize} butiker`}
+                    helpText={`Räknar ihop alla ihopkopplade butiker till en kalkyl i ${currency}, med dagskurs.`}
+                    checked={Boolean(group)}
+                    onChange={(v) => {
+                      const nya = new URLSearchParams(params);
+                      if (v) nya.set("all", "1");
+                      else nya.delete("all");
+                      setParams(nya);
+                    }}
+                  />
+
+                  {group ? (
+                    <BlockStack gap="300">
+                      <InlineGrid columns={{ xs: 2, sm: 4 }} gap="300">
+                        {[
+                          { label: "Försäljning", value: money(group.totals.totalSales) },
+                          { label: "Ordrar", value: nf.format(group.totals.orders) },
+                          { label: "Annonskostnad", value: money(group.totals.spend) },
+                          { label: "Nettovinst", value: money(group.totals.netProfit) },
+                        ].map((k) => (
+                          <Card key={k.label}>
+                            <BlockStack gap="100">
+                              <Text as="span" variant="bodySm" tone="subdued">{k.label}</Text>
+                              <Text as="span" variant="headingLg"
+                                tone={k.label === "Nettovinst" ? (group.totals.netProfit >= 0 ? "success" : "critical") : undefined}>
+                                {k.value}
+                              </Text>
+                            </BlockStack>
+                          </Card>
+                        ))}
+                      </InlineGrid>
+
+                      <Card padding="0">
+                        <DataTable
+                          columnContentTypes={["text", "text", "numeric", "numeric", "numeric"]}
+                          headings={["Butik", "Valuta", "Försäljning", "Annonser", "Nettovinst"]}
+                          rows={group.rows.map((r) => [
+                            r.shop.replace(/\.myshopify\.com$/, ""),
+                            r.currency,
+                            money(r.totalSales),
+                            money(r.spend),
+                            money(r.netProfit),
+                          ])}
+                          totals={["", "", money(group.totals.totalSales), money(group.totals.spend), money(group.totals.netProfit)]}
+                        />
+                      </Card>
+
+                      {group.missing.length ? (
+                        <Banner tone="warning" title={`${group.missing.length} butik(er) är inte med i summan`}>
+                          {group.missing.map((m) => (
+                            <p key={m.shop}>
+                              {m.shop.replace(/\.myshopify\.com$/, "")}: {m.reason}
+                            </p>
+                          ))}
+                        </Banner>
+                      ) : null}
+                    </BlockStack>
+                  ) : null}
+                </BlockStack>
+              </Card>
+            ) : null}
 
             {dataAgeMin > 0 ? (
               <Text as="span" variant="bodySm" tone="subdued">

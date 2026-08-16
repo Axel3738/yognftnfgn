@@ -39,6 +39,7 @@ export default function App() {
         <Link to="/app" rel="home">Vinst</Link>
         <Link to="/app/costs">Kostnader</Link>
         <Link to="/app/fixed">Fasta kostnader</Link>
+        <Link to="/app/butiker">Butiker</Link>
         <Link to="/app/settings">Inställningar</Link>
       </NavMenu>
       <Outlet />

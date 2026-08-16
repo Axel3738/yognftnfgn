@@ -49,10 +49,31 @@ model ShopSettings {
   settingsSavedAt DateTime?
   /// Sätts när kom igång-checklistan dolts manuellt.
   setupDismissedAt DateTime?
+  /// Butiker med samma groupId hör till samma ägare och får summeras ihop.
+  /// Sätts bara genom att lösa in en kod från en butik man redan är inne i —
+  /// aldrig automatiskt, hur gärna databasen än skulle kunna gissa rätt.
+  groupId         String?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 
   costChanges CostChange[]
+
+  @@index([groupId])
+}
+
+/// Engångskod för att koppla ihop två butiker. Kortlivad med flit: koden är
+/// det enda som skiljer "mina butiker" från "någon annans siffror".
+model StoreLinkCode {
+  code      String   @id
+  /// Gruppen den inlösande butiken hamnar i.
+  groupId   String
+  /// Butiken som skapade koden, för spårbarhet.
+  createdBy String
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime @default(now())
+
+  @@index([groupId])
 }
 
 /// Datumsatt kostnadsändring. Shopifys unitCost har bara ETT värde och ingen
