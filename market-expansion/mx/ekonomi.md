@@ -51,7 +51,25 @@ Break-even-CPA per köp = bidraget per order på den nivå kunden köper.
 2. **Nuläge (återställt):** Sin asa $609 / Con asa $669, compare $859, option "Tipo de asa" (Sin asa först). ⚠️ Sin asa-varianten har NYTT variant-ID (56810748641620) — verifiera att bundle-appen mappar rätt.
 3. Bundle-appens rabatter (härledda): 2x = 25 % · 4x = 45,25 %.
 
-## Axels mål: BE-ROAS ≤ 1,5 på mittenalternativet (2x)
+## BESLUT 2026-08-16 (Axel): mitten får ligga på BE-ROAS 1,55 — inte högre
+
+Verklig kurs hämtad 2026-08-16: **17.02 MXN/USD** (open.er-api.com) — inte 18.50 som först antogs. Det gör COGS i MXN lägre: första korgen 192/208 MXN (sin/con), extra korg 133/148 MXN.
+
+**Slutgiltigt upplägg (baspriser oförändrade $609/$669, compare $859):**
+
+| Nivå | Kaching-inställning | Pris sin/con | BE-ROAS | Bidrag/order |
+|---|---|---|---|---|
+| 1x | 0 % | 609 / 669 | 1.45–1.46 | 417–461 MXN |
+| 2x | **25 %** (rör ej — 899/999 bryter taket) | 913.50 / 1,003.50 | **1.55** = taket | 588–648 MXN |
+| 4x | **fast pris** | **1,349 / 1,499** | 1.77–1.78 | 758–847 MXN |
+
+Etiketter: 2x "El favorito de los parrilleros" · 4x "Para la carne asada en grande" · ev. gåva på 4x.
+Kaching går inte att nå via API — Axel ställer in nivå 3 (fast pris) + etiketter själv; instruktioner givna 2026-08-16.
+4x-nivåns BE 1,78 är OK per analysmetoden: bidraget per order (758–847 MXN) är högst av alla nivåer — pesos betalar annonserna, inte kvoten.
+
+⚠️ **FX-risk:** COGS i USD, intäkt i MXN. Vid kurs 18+ bryter mitten 1,55-taket. Motmedel: förhandla −$2.80 USD på tvåkorgsfrakten med agenten (15.90 → 13.10) — återställer hela bufferten.
+
+## Tidigare mål (ersatt): BE-ROAS ≤ 1,5 på mittenalternativet (2x)
 
 BE 1,5 kräver pris ≥ 3× COGS. 2x con asa COGS $20.90 → 2x-pris ≥ ~$1,160 MXN (sin asa: ≥ ~$1,060).
 
