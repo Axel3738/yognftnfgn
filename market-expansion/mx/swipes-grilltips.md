@@ -40,17 +40,18 @@ Kampanj vid launch: `CLIN_SALES_YYYYMMDD`, adset `broad_advplus_purchase`.
 
 Mapp: https://drive.google.com/drive/folders/1bngbhLtel48RGevXrNhlqOqZgyqx8tJZ
 
-| Ad | Doc |
+| Ad | Doc (v2 — hooks A/B/C i varje dokument) |
 |---|---|
-| 1 foilstop | https://docs.google.com/document/d/13shxi2-s89moruD11jpq6TdJofQjGgfhEMYZ5RDB_L4 |
-| 2 familia | https://docs.google.com/document/d/109-b5Uhy-wdDkQ27D3eRAHSCn9sQHK4b_B04xIza8ZQ |
-| 3 crudoquemado ⭐ | https://docs.google.com/document/d/1bXlmKgILBbAcNAxm7Am5zRtMl_tHzakerKzATp6sn-0 |
-| 4 plancha | https://docs.google.com/document/d/1I2cWnVxr43bGqLBGHGk4IozsNwsGIy-50WIjCL5WR0E |
-| 5 quickrec | https://docs.google.com/document/d/1RW7pX5RD_HTRO0xwnnCQmjleKUJB84kL4vBarDRWZVY |
-| 6 top3 | https://docs.google.com/document/d/1pOARsyiuWA2QPEB8SWG64BK4H49fSjNL7WC7XTABs34 |
-| 7 dinero | https://docs.google.com/document/d/1OeSB3jPbhP_UCSudIoXjq-vVTf7WJzARoshvRCQhJ1I |
-| 8 sazon | https://docs.google.com/document/d/1xa3aPNkT502n0UPAvI9qqKW_PwRwf_dZx-ZLZ5py-20 |
-| Hooks (alla 8, B/C-varianter) | https://docs.google.com/document/d/1WIPPxEy7tEpCMHQtLExQJVGeSXJcLrgJhRYB5IIFnRo |
+| 1 foilstop | https://docs.google.com/document/d/11vXhz7RL_NTjDomXtOKnAvzNXEZXPLY5neUpWTaEnBE |
+| 2 familia | https://docs.google.com/document/d/1YbN0VuPXlOOCDDK5605AI2bl8LtX6chehS6C8J24JKw |
+| 3 crudoquemado ⭐ | https://docs.google.com/document/d/1rBDG2gBsQm8gHisL83ogmsFrJ5nyzSkUKI4ThDdDUN0 |
+| 4 plancha | https://docs.google.com/document/d/1xmR6yk_PgZfGdEfBMGSljmx8YId6aP27hVRjSXNL41U |
+| 5 quickrec | https://docs.google.com/document/d/1qkUJhj9GvJpcBjUCJ4vdptx4nEKrhWnQIwMct2qyMbI |
+| 6 top3 | https://docs.google.com/document/d/1eFZo3tUHFEQHKKcM6Z22SIr5Ps1KVr6rFsBAZkivjrw |
+| 7 dinero | https://docs.google.com/document/d/1v3Hfd63YTG80nkR-aC9j85K73ulniA26L4XCCt37fGU |
+| 8 sazon | https://docs.google.com/document/d/1O1abXLWRs-4K4e1wihFIxzZQiGOg--hZtNd1VY5DAN8 |
+
+(2026-08-16: v1-dokumenten + separat hooks-doc slängda i papperskorgen på Axels begäran — hooksen ligger nu i respektive annons-dokument.)
 
 Listicle-mapp: https://drive.google.com/drive/folders/126StGFqxHyuiSzz-deWLBI1xDobBMJYa
 
