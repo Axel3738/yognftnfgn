@@ -72,6 +72,23 @@ om.** Det är den enda manuella kopplingen mellan Shopify och den här sidan.
 | "lagerutförsäljning", "nedsatta priser", "så långt lagret räcker" | Slutdatum, nedräkning, "sista chansen", "bara idag" |
 | 649 kr och 811 kr, och 20 % en gång | Varje annan procentsats |
 
+## Paketformatet, fyra fel som stoppade importen en gång
+
+Första paketet importerades inte i GemPages. Orsaken var att exportstrukturen
+inte var återskapad exakt. Fyra saker måste stämma, och `build.py` kontrollerar
+dem numera automatiskt mot originalexporten innan filen skrivs:
+
+| Krav | Vad som var fel |
+|---|---|
+| Inre filnamn heter `1_<sid-id>.zip` och `1_<sid-id>.json` | Prefixet `1_` saknades, filerna hette bara `<sid-id>` |
+| Alla zip-poster är DEFLATE-komprimerade | Yttre arkivet var lagrat okomprimerat |
+| `manifest.json` är byte-identisk med originalets | `image_url_count` var satt till 7 i stället för 0, och radbrytningen på slutet saknades |
+| JSON skrivs kompakt, utan mellanslag efter kolon och komma | Skrevs med Pythons standardformat |
+
+`manifest.json` kopieras nu ordagrant ur källexporten, eftersom ingenting i den
+beskriver vår sida. Bygget avbryts om paketets filnamn, komprimering eller
+metadata avviker från originalet.
+
 ## Kontroller som körs vid varje bygge (build.py stoppar vid fel)
 
 - Varje textnyckel måste träffa exakt en källsträng, annars stopp
@@ -87,6 +104,7 @@ om.** Det är den enda manuella kopplingen mellan Shopify och den här sidan.
 - Alla gamla bild-URL:er borta, alla nya använda minst en gång
 - Gamla produktlänken 0 träffar, nya finns
 - Obligatoriska strängar: 649 kr, 811 kr, 600D, "OBS: Detta är reklam."
+- Paketets filnamn, komprimering och metadata jämförs mot originalexporten
 
 ## Otestat
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Bygger sätesöverdrags-listiclen genom att klona motorhölje-listiclen och byta
 allt innehåll, aldrig strukturen. Följer docs/os/LISTICLE-FRAMEWORK.md del 3."""
-import json, re, sys, zipfile, shutil, os
+import io, json, re, sys, zipfile, os
 
 SRC_DIR = os.path.dirname(os.path.abspath(__file__))
 SRC_JSON = os.path.join(SRC_DIR, 'ex_1_631451887748514611.zip/1_631451887748514611.json')
@@ -207,28 +207,64 @@ def main():
         print('\nBYGGET STOPPAT:'); print('\n'.join(' ! ' + f for f in fails)); sys.exit(1)
     print('alla kontroller OK')
 
-    # --- steg 5: paketera tillbaka ----------------------------------------
-    out_json = f'{NEW_ID}.json'
-    open(os.path.join(SRC_DIR, out_json), 'w').write(json.dumps(data, ensure_ascii=False))
-    inner = os.path.join(SRC_DIR, f'{NEW_ID}.zip')
+    # --- steg 5: paketera tillbaka -----------------------------------------
+    # Paketet MÅSTE spegla originalexportens struktur exakt, annars vägrar
+    # GemPages importen. Fyra saker är kritiska och har alla gått fel en gång:
+    #   1. inre filnamn har prefixet "1_" (index_sidid), inte bara sid-id:t
+    #   2. alla zip-poster är DEFLATE-komprimerade, inte lagrade
+    #   3. manifest.json är byte-identisk med originalets, image_url_count = 0
+    #   4. JSON skrivs kompakt utan mellanslag efter kolon och komma
+    J = dict(ensure_ascii=False, separators=(',', ':'))
+    stem = f'1_{NEW_ID}'
+
+    out_json = os.path.join(SRC_DIR, f'{stem}.json')
+    open(out_json, 'w', encoding='utf-8').write(json.dumps(data, **J))
+
+    inner = os.path.join(SRC_DIR, f'{stem}.zip')
     with zipfile.ZipFile(inner, 'w', zipfile.ZIP_DEFLATED) as z:
-        z.write(os.path.join(SRC_DIR, out_json), out_json)
-    pages_info = json.dumps([{"id": int(NEW_ID), "name": NEW_NAME, "type": "GP_STATIC"}], ensure_ascii=False)
-    open(os.path.join(SRC_DIR, 'pages_info.json'), 'w').write(pages_info)
+        z.write(out_json, f'{stem}.json')
+
+    # Originalet avslutar båda metadatafilerna med radbrytning. Behåll den.
+    pages_info = os.path.join(SRC_DIR, 'pages_info.json')
+    open(pages_info, 'w', encoding='utf-8').write(
+        json.dumps([{"id": int(NEW_ID), "name": NEW_NAME, "type": "GP_STATIC"}], **J) + '\n')
     pi = os.path.join(SRC_DIR, 'pages_info_new.zip')
     with zipfile.ZipFile(pi, 'w', zipfile.ZIP_DEFLATED) as z:
-        z.write(os.path.join(SRC_DIR, 'pages_info.json'), 'pages_info.json')
-    manifest = json.dumps({"export_version": "export_v2", "theme_page_count": 1,
-                           "theme_section_count": 0, "image_url_count": len(IMG),
-                           "shop_curr_version": 337000602})
-    open(os.path.join(SRC_DIR, 'manifest_new.json'), 'w').write(manifest)
+        z.write(pages_info, 'pages_info.json')
+
+    # manifest.json kopieras ordagrant ur originalexporten. Inget i den beskriver
+    # vår sida, och varje avvikelse har visat sig kunna få importen att vägra.
+    manifest = os.path.join(SRC_DIR, 'manifest_new.json')
+    with zipfile.ZipFile(os.path.join(SRC_DIR, 'file.zip')) as z:
+        open(manifest, 'wb').write(z.read('manifest.json'))
 
     out = os.path.join(SRC_DIR, 'Satesoverdrag_listicle.gempages')
-    with zipfile.ZipFile(out, 'w', zipfile.ZIP_STORED) as z:
-        z.write(inner, f'{NEW_ID}.zip')
-        z.write(os.path.join(SRC_DIR, 'manifest_new.json'), 'manifest.json')
+    with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED) as z:
+        z.write(inner, f'{stem}.zip')
+        z.write(manifest, 'manifest.json')
         z.write(pi, 'pages_info.zip')
     print('skrev', out, os.path.getsize(out), 'bytes')
+
+    # --- steg 6: strukturkontroll mot originalexporten ----------------------
+    src_pkg = os.path.join(SRC_DIR, 'file.zip')
+    if os.path.exists(src_pkg):
+        def shape(path, rename=None):
+            with zipfile.ZipFile(path) as z:
+                return sorted((rename(i.filename) if rename else i.filename, i.compress_type)
+                              for i in z.infolist())
+        ren = lambda n: n.replace(OLD_ID, 'ID').replace(NEW_ID, 'ID')
+        a, b = shape(src_pkg, ren), shape(out, ren)
+        if a != b:
+            print('\nPAKETSTRUKTUREN AVVIKER FRÅN ORIGINALET:')
+            print('  original:', a); print('  min:     ', b); sys.exit(1)
+        with zipfile.ZipFile(src_pkg) as za, zipfile.ZipFile(out) as zb:
+            if za.read('manifest.json') != zb.read('manifest.json'):
+                print('\nmanifest.json skiljer sig från originalets'); sys.exit(1)
+            ta = zipfile.ZipFile(io.BytesIO(za.read('pages_info.zip'))).read('pages_info.json')
+            tb = zipfile.ZipFile(io.BytesIO(zb.read('pages_info.zip'))).read('pages_info.json')
+            if ta.endswith(b'\n') != tb.endswith(b'\n'):
+                print('\npages_info.json har fel radslut'); sys.exit(1)
+        print('paketstruktur och metadata identiska med originalexporten')
 
 
 if __name__ == '__main__':
