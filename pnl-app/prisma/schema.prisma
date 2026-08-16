@@ -88,7 +88,13 @@ model DailySpend {
   id          String   @id @default(cuid())
   shop        String
   day         DateTime @db.Date
+  /// Alltid i BUTIKENS valuta. Är annonskontot i en annan valuta har beloppet
+  /// räknats om med dagskursen nedan.
   spend       Decimal  @db.Decimal(12, 2)
+  /// Ursprungsbeloppet i annonskontots valuta, sparat för spårbarhet.
+  spendRaw    Decimal? @db.Decimal(12, 2)
+  /// Kursen som användes. Null = ingen omräkning behövdes.
+  fxRate      Decimal? @db.Decimal(18, 8)
   impressions Int      @default(0)
   clicks      Int      @default(0)
   fetchedAt   DateTime @default(now())

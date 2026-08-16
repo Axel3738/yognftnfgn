@@ -56,6 +56,47 @@ async function fetchInsights(cfg: MetaConfig, since: string, until: string): Pro
 }
 
 /**
+ * Dagskurser från Frankfurter (ECB:s publicerade kurser). Gratis, utan nyckel.
+ *
+ * Historiska dagar räknas om med kursen som gällde DEN dagen, inte dagens —
+ * annars ändras gårdagens vinst varje gång kronan rör sig, och en jämförelse
+ * mot förra veckan mäter valutamarknaden istället för butiken.
+ */
+async function fetchRates(
+  base: string,
+  quote: string,
+  from: string,
+  to: string,
+): Promise<Map<string, number>> {
+  const out = new Map<string, number>();
+  try {
+    const res = await fetch(
+      `https://api.frankfurter.dev/v1/${from}..${to}?base=${base}&symbols=${quote}`,
+    );
+    if (!res.ok) return out;
+    const body = await res.json();
+    for (const [day, r] of Object.entries(body?.rates ?? {})) {
+      const v = (r as Record<string, number>)?.[quote];
+      if (typeof v === "number") out.set(day, v);
+    }
+  } catch {
+    /* Nätverksfel: tom karta → ingen omräkning, och panelen säger ifrån. */
+  }
+  return out;
+}
+
+/** Kurs för en dag. Helger och helgdagar saknar notering — gå bakåt till senaste. */
+function rateFor(rates: Map<string, number>, day: string): number | undefined {
+  let d = day;
+  for (let i = 0; i < 10; i++) {
+    const hit = rates.get(d);
+    if (hit) return hit;
+    d = shiftIso(d, -1);
+  }
+  return undefined;
+}
+
+/**
  * Annonskontots valuta, hämtad direkt från kontot.
  *
  * Den gick tidigare bara att läsa ur insights-raderna, vilket gjorde
@@ -95,10 +136,12 @@ export async function getSpend(
 ): Promise<{
   days: { day: string; spend: number; impressions: number; clicks: number }[];
   error?: string;
-  /* Sätts när annonskontot redovisar i en annan valuta än butiken. Beloppen
-     räknas ändå ihop — men de går inte att lita på, och det måste synas. Att
-     räkna om kräver en växelkurs vi inte har någon sanningskälla för. */
+  /* Sätts när annonskontot redovisar i en annan valuta än butiken OCH
+     omräkningen misslyckades. Beloppen räknas då ihop som om de vore samma
+     valuta — fel, och det måste synas. */
   currencyMismatch?: { spend: string; shop: string };
+  /* Sätts när omräkningen lyckades. Informerar, varnar inte. */
+  converted?: { from: string; to: string };
 }> {
   const cached = await prisma.dailySpend.findMany({
     where: { shop, day: { gte: new Date(from), lte: new Date(to) } },
@@ -120,14 +163,6 @@ export async function getSpend(
     };
   }
 
-  // Dagar utan cache, plus de två senaste (kan efterjusteras av Meta).
-  const stale: string[] = [];
-  for (let d = from; d <= to; d = shiftIso(d, 1)) {
-    const cachedRow = byDay.get(d);
-    const recent = d >= shiftIso(today, -1);
-    if (!cachedRow || recent) stale.push(d);
-  }
-
   /* Valutan lagras första gången den är känd och jämförs sedan vid varje
      laddning. Utan lagringen syntes krocken bara de gånger panelen råkade
      hämta färska dagar — och försvann så fort allt låg i cachen. */
@@ -140,18 +175,37 @@ export async function getSpend(
         .catch(() => {});
     }
   }
-  const currencyMismatch =
-    spendCurrency && shopCurrency && spendCurrency !== shopCurrency
-      ? { spend: spendCurrency, shop: shopCurrency }
-      : undefined;
+  const needsFx = Boolean(spendCurrency && shopCurrency && spendCurrency !== shopCurrency);
+
+  // Dagar utan cache, plus de två senaste (kan efterjusteras av Meta). Dagar
+  // som sparats före omräkningen fanns saknar kurs och måste hämtas om.
+  const stale: string[] = [];
+  for (let d = from; d <= to; d = shiftIso(d, 1)) {
+    const cachedRow = byDay.get(d);
+    const recent = d >= shiftIso(today, -1);
+    const oräknad = needsFx && cachedRow && cachedRow.fxRate == null;
+    if (!cachedRow || recent || oräknad) stale.push(d);
+  }
+
+  let fxOk = !needsFx;
 
   if (stale.length) {
     try {
       const rows = await fetchInsights(cfg, stale[0], stale[stale.length - 1]);
+
+      const rates = needsFx
+        ? await fetchRates(spendCurrency!, shopCurrency!, stale[0], stale[stale.length - 1])
+        : new Map<string, number>();
+      if (needsFx && rates.size) fxOk = true;
+
       for (const r of rows) {
         const day = r.date_start;
+        const raw = Number(r.spend ?? 0);
+        const rate = needsFx ? rateFor(rates, day) : undefined;
         const rec = {
-          spend: Number(r.spend ?? 0),
+          spend: rate ? raw * rate : raw,
+          spendRaw: needsFx ? raw : null,
+          fxRate: rate ?? null,
           impressions: parseInt(r.impressions ?? "0", 10) || 0,
           clicks: parseInt(r.clicks ?? "0", 10) || 0,
         };
@@ -175,7 +229,7 @@ export async function getSpend(
           clicks: r.clicks,
         })),
         error: msg,
-        currencyMismatch,
+        ...fxStatus(needsFx, fxOk, spendCurrency, shopCurrency),
       };
     }
   }
@@ -191,8 +245,16 @@ export async function getSpend(
       impressions: r.impressions,
       clicks: r.clicks,
     })),
-    currencyMismatch,
+    ...fxStatus(needsFx, fxOk, spendCurrency, shopCurrency),
   };
+}
+
+/** Omräkning lyckad → informera. Behövdes men gick inte → varna. */
+function fxStatus(needsFx: boolean, ok: boolean, from?: string, to?: string) {
+  if (!needsFx || !from || !to) return {};
+  return ok
+    ? { converted: { from, to } }
+    : { currencyMismatch: { spend: from, shop: to } };
 }
 
 function shiftIso(iso: string, days: number): string {

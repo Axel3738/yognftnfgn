@@ -245,6 +245,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
     currency: settings.currency,
     spendError: spend.error ?? null,
     spendCurrencyMismatch: spend.currencyMismatch ?? null,
+    spendConverted: spend.converted ?? null,
     targetMargin: Number(settings.targetMargin),
     tariffPerOrder: Number(settings.tariffPerOrder),
   };
@@ -265,6 +266,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
       currency: "SEK",
       spendError: null as string | null,
       spendCurrencyMismatch: null as { spend: string; shop: string } | null,
+      spendConverted: null as { from: string; to: string } | null,
       targetMargin: 0.25,
       tariffPerOrder: 27.5,
     };
@@ -729,7 +731,7 @@ function SetupChecklist({
 }
 
 function DashboardView({ d }: { d: PageData }) {
-  const { fatal, result, rangeKey, currency, spendError, spendCurrencyMismatch, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing } = d;
+  const { fatal, result, rangeKey, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing } = d;
   const [, setParams] = useSearchParams();
   if (fatal || !result) {
     return (
@@ -838,12 +840,18 @@ function DashboardView({ d }: { d: PageData }) {
             {spendError ? <Banner tone="warning">{spendError}</Banner> : null}
 
             {spendCurrencyMismatch ? (
-              <Banner tone="critical" title="Annonskontot har en annan valuta än butiken">
-                Annonskostnaden redovisas i {spendCurrencyMismatch.spend}, försäljningen i{" "}
-                {spendCurrencyMismatch.shop}. Beloppen räknas ihop som om de vore samma valuta, så
-                nettovinst, MER och CPA stämmer inte. Använd ett annonskonto i{" "}
-                {spendCurrencyMismatch.shop} för den här butiken.
+              <Banner tone="critical" title="Annonskostnaden kunde inte räknas om">
+                Annonskontot redovisar i {spendCurrencyMismatch.spend}, butiken i{" "}
+                {spendCurrencyMismatch.shop}, och växelkursen gick inte att hämta just nu.
+                Beloppen räknas därför ihop som om de vore samma valuta — nettovinst, MER och CPA
+                stämmer inte förrän kursen är tillgänglig igen. Ladda om om en stund.
               </Banner>
+            ) : null}
+
+            {spendConverted ? (
+              <Text as="span" variant="bodySm" tone="subdued">
+                {`Annonskostnaden betalas i ${spendConverted.from} och räknas om till ${spendConverted.to} med kursen för respektive dag.`}
+              </Text>
             ) : null}
 
             {!t.spendComplete ? (
