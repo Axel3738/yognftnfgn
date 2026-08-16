@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "fxconv-v17", db });
+  return json({ ok: true, build: "mall-v18", db });
 }

@@ -137,6 +137,35 @@ export default function Costs() {
   const [csv, setCsv] = useState("");
   const [fileName, setFileName] = useState<string | null>(null);
   const [effectiveFrom, setEffectiveFrom] = useState("");
+  const [visaMall, setVisaMall] = useState(false);
+
+  /* Mallen byggs i webbläsaren av datan som redan finns på sidan.
+     En serverrutt hade varit renare, men en vanlig länknavigering inifrån
+     Shopifys iframe bär ingen sessionstoken — resultatet blev att man laddade
+     ner inloggningssidan istället för filen. */
+  const safe = (s: string) => s.replace(/;/g, ",").trim();
+  const mallText = [
+    "# Inköpspriser — produkttitel;varianttitel;kostnad",
+    "# Kostnaden är vara + frakt, UTAN tull. Tullen är per order och ligger i Inställningar.",
+    "# Lämna varianttiteln tom för att sätta samma kostnad på alla varianter.",
+    "# Ändra inte titlarna — de matchas mot butiken.",
+    ...rows.map(
+      (r) =>
+        `${safe(r.productTitle)};${r.variantTitle === "Default Title" ? "" : safe(r.variantTitle)};${r.unitCost ?? ""}`,
+    ),
+  ].join("\n");
+
+  const laddaNerMall = () => {
+    const blob = new Blob(["﻿" + mallText + "\n"], { type: "text/csv;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "inkopspriser.csv";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  };
 
   const nf = new Intl.NumberFormat("sv-SE", { minimumFractionDigits: 2 });
 
@@ -183,17 +212,24 @@ export default function Costs() {
                     inköpspriserna, och släpp den tillbaka här. Kostnaden är vara + frakt{" "}
                     <em>utan</em> tull; tullen är per order och ligger i Inställningar.
                   </Text>
-                  <InlineStack>
-                    {/* Vanlig länk, inte Polaris Button: knappen renderas som Remix-länk och
-                        försöker klientnavigera till en rutt som svarar med en filnedladdning. */}
-                    <a
-                      href="/app/costs/mall"
-                      download
-                      style={{ color: "#005bd3", fontSize: 14, textDecoration: "none" }}
-                    >
-                      ⬇ Ladda ner mall med dina produkter
-                    </a>
+                  <InlineStack gap="300" blockAlign="center" wrap>
+                    <Button onClick={laddaNerMall}>⬇ Ladda ner mall med dina produkter</Button>
+                    <Button variant="plain" onClick={() => setVisaMall((x) => !x)}>
+                      {visaMall ? "Dölj mallen" : "eller visa som text"}
+                    </Button>
                   </InlineStack>
+
+                  {visaMall ? (
+                    <TextField
+                      label="Mall att kopiera"
+                      value={mallText}
+                      onChange={() => {}}
+                      multiline={10}
+                      autoComplete="off"
+                      readOnly
+                      helpText="Markera allt och kopiera om nedladdningen blockeras av webbläsaren."
+                    />
+                  ) : null}
                 </BlockStack>
 
                 <DropZone
