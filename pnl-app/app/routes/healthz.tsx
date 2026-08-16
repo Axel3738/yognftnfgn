@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "respfel-v30", db });
+  return json({ ok: true, build: "apiver-v31", db });
 }

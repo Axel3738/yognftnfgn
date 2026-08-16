@@ -1,9 +1,9 @@
 import "./env.server";   // validerar miljön innan något annat laddas
 import "@shopify/shopify-app-remix/adapters/node";
 import {
+  ApiVersion,
   AppDistribution,
   BillingInterval,
-  LATEST_API_VERSION,
   shopifyApp,
 } from "@shopify/shopify-app-remix/server";
 import { PrismaSessionStorage } from "@shopify/shopify-app-session-storage-prisma";
@@ -29,7 +29,11 @@ export const billingEnabled = process.env.BILLING_ENABLED === "1";
 const shopify = shopifyApp({
   apiKey: process.env.SHOPIFY_API_KEY!,
   apiSecretKey: process.env.SHOPIFY_API_SECRET!,
-  apiVersion: LATEST_API_VERSION,
+  /* Bibliotekets LATEST_API_VERSION är 2025-07 — en version vars stöd löpte
+     ut i juli 2026. Äldre installationer puttas vidare av Shopify, men nya
+     App Store-appar fick blank 403 på varenda anrop. Versionen låses därför
+     explicit till samma som webhook-konfigurationen. */
+  apiVersion: "2026-07" as ApiVersion,
   scopes: process.env.SCOPES?.split(","),
   appUrl: process.env.SHOPIFY_APP_URL!,
   authPathPrefix: "/auth",
