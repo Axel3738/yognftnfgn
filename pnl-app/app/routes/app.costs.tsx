@@ -35,6 +35,11 @@ import { fetchVariantCosts, invalidateVariantCosts, setUnitCost } from "../lib/s
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const { admin, session } = await authenticate.admin(request);
+  const settings = await prisma.shopSettings.upsert({
+    where: { shop: session.shop },
+    create: { shop: session.shop },
+    update: {},
+  });
   const costs = await fetchVariantCosts(admin, session.shop);
   const rows = [...costs.all].sort((a, b) => {
     // Saknade kostnader först — det är dem man är här för att fixa.
@@ -45,6 +50,9 @@ export async function loader({ request }: LoaderFunctionArgs) {
     rows,
     missing: rows.filter((r) => r.unitCost == null).length,
     total: rows.length,
+    tariffPerOrder: Number(settings.tariffPerOrder),
+    feeRate: Number(settings.feeRate),
+    currency: settings.currency,
   });
 }
 
@@ -137,7 +145,7 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 export default function Costs() {
-  const { rows, missing, total } = useLoaderData<typeof loader>();
+  const { rows, missing, total, tariffPerOrder, feeRate, currency } = useLoaderData<typeof loader>();
   const fetcher = useFetcher<typeof action>();
   const [csv, setCsv] = useState("");
   const [fileName, setFileName] = useState<string | null>(null);
@@ -174,6 +182,16 @@ export default function Costs() {
   };
 
   const nf = new Intl.NumberFormat("sv-SE", { minimumFractionDigits: 2 });
+
+  /* Täckningsbidrag och break-even ROAS per styck.
+     Tullen tas ut per ORDER, inte per styck — här räknas den som om ordern
+     innehåller en enhet, vilket är det försiktiga fallet. Ett tvåpack bär
+     tullen en gång och har därför bättre siffror än vad som visas här. */
+  const perStyck = (pris: number, kostnad: number | null) => {
+    if (kostnad == null) return null;
+    const tb = pris - kostnad - tariffPerOrder - pris * feeRate;
+    return { tb, beRoas: tb > 0 ? pris / tb : null };
+  };
 
   return (
     <Page title="Kostnader" subtitle={`${total - missing} av ${total} varianter har inköpspris`}>
@@ -310,8 +328,8 @@ export default function Costs() {
         <Layout.Section>
           <Card padding="0">
             <DataTable
-              columnContentTypes={["text", "text", "numeric", "numeric", "text"]}
-              headings={["Produkt", "Variant", "Pris", "Inköp", "Multipel"]}
+              columnContentTypes={["text", "text", "numeric", "numeric", "numeric", "numeric"]}
+              headings={["Produkt", "Variant", "Pris", "Inköp", `TB/st (${currency})`, "BE ROAS"]}
               rows={rows.map((r) => [
                 <Link key={r.variantGid} to={`/app/costs/${r.productGid.split("/").pop()}`}>
                   {r.productTitle}
@@ -319,11 +337,27 @@ export default function Costs() {
                 r.variantTitle === "Default Title" ? "—" : r.variantTitle,
                 nf.format(r.price),
                 r.unitCost == null ? "—" : nf.format(r.unitCost),
-                r.unitCost == null || r.unitCost === 0 ? (
-                  <Badge tone="critical">saknas</Badge>
-                ) : (
-                  `${(r.price / r.unitCost).toFixed(2).replace(".", ",")}×`
-                ),
+                (() => {
+                  const k = perStyck(r.price, r.unitCost);
+                  if (!k) return <Badge key={`tb${r.variantGid}`} tone="critical">saknas</Badge>;
+                  return (
+                    <Text key={`tb${r.variantGid}`} as="span" tone={k.tb > 0 ? undefined : "critical"}>
+                      {nf.format(k.tb)}
+                    </Text>
+                  );
+                })(),
+                (() => {
+                  const k = perStyck(r.price, r.unitCost);
+                  if (!k) return "—";
+                  if (k.beRoas == null)
+                    return <Badge key={`be${r.variantGid}`} tone="critical">olönsam</Badge>;
+                  return (
+                    <Text key={`be${r.variantGid}`} as="span"
+                      tone={k.beRoas <= 2 ? "success" : k.beRoas <= 3 ? undefined : "critical"}>
+                      {`${k.beRoas.toFixed(2).replace(".", ",")}×`}
+                    </Text>
+                  );
+                })(),
               ])}
             />
           </Card>
