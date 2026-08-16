@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "trial-v26", db });
+  return json({ ok: true, build: "redact-v27", db });
 }

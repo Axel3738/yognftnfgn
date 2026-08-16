@@ -18,9 +18,17 @@ export async function action({ request }: ActionFunctionArgs) {
       break;
 
     case "SHOP_REDACT":
+      /* ALLT som hör till butiken ska bort — en radering som lämnar cacher
+         och kopplingskoder kvar är ingen radering. Det här är också vad vi
+         intygat i dataskyddsdeklarationen. */
       await prisma.$transaction([
         prisma.dailySpend.deleteMany({ where: { shop } }),
         prisma.costChange.deleteMany({ where: { shop } }),
+        prisma.pnlCache.deleteMany({ where: { shop } }),
+        prisma.catalogCache.deleteMany({ where: { shop } }),
+        prisma.fixedCost.deleteMany({ where: { shop } }),
+        prisma.storeLinkCode.deleteMany({ where: { createdBy: shop } }),
+        prisma.session.deleteMany({ where: { shop } }),
         prisma.shopSettings.deleteMany({ where: { shop } }),
       ]);
       break;
