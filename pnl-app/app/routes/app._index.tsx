@@ -27,7 +27,7 @@ import {
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { compute, rangeWindow } from "../lib/pnl.server";
-import { applyCurrentCosts, fetchOrderData, fetchShopInfo, fetchVariantCosts } from "../lib/shopify-data.server";
+import { applyCurrentCosts, dayInTz, fetchOrderData, fetchShopInfo, loadCatalog } from "../lib/shopify-data.server";
 import { getSpend } from "../lib/meta.server";
 import { summeraGrupp } from "../lib/group.server";
 import { decrypt } from "../lib/crypto.server";
@@ -49,28 +49,41 @@ const RANGES: Record<string, string> = {
 async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
   try {
 
-  const shopInfo = await fetchShopInfo(admin);
-  const today = shopInfo.today;
+  let settings = await prisma.shopSettings.upsert({
+    where: { shop },
+    create: { shop },
+    update: {},
+  });
+
+  /* Butiksinfo kostade ett GraphQL-anrop på varje sidladdning. Tidszonen
+     ändras i praktiken aldrig, så när den är känd räknas "idag" fram lokalt
+     och anropet hoppas över helt. Är den okänd hämtas den en gång och sparas.
+     Valutan kan ändras i efterhand, så den läses om i bakgrunden en gång per
+     dygn — utan att någon behöver vänta på det. */
+  let timezone = settings.timezone;
+  if (!timezone) {
+    const info = await fetchShopInfo(admin);
+    timezone = info.timezone;
+    settings = await prisma.shopSettings.update({
+      where: { shop },
+      data: { timezone, currency: info.currency },
+    });
+  } else if (Date.now() - settings.updatedAt.getTime() > 24 * 60 * 60 * 1000) {
+    void fetchShopInfo(admin)
+      .then((info) =>
+        prisma.shopSettings.update({
+          where: { shop },
+          data: { timezone: info.timezone, currency: info.currency },
+        }),
+      )
+      .catch(() => {});
+  }
+
+  const today = dayInTz(new Date(), timezone);
   const [from, to] = rangeWindow(rangeKey, today, {
     from: url.searchParams.get("from") ?? today,
     to: url.searchParams.get("to") ?? today,
   });
-
-  let settings = await prisma.shopSettings.upsert({
-    where: { shop },
-    create: { shop, currency: shopInfo.currency },
-    update: {},
-  });
-
-  /* Butiken kan byta valuta, och installationer gjorda innan valutan lästes in
-     ligger kvar på default. Skriv bara när den faktiskt skiljer sig — annars
-     blir det en databasskrivning per sidladdning i onödan. */
-  if (shopInfo.currency && settings.currency !== shopInfo.currency) {
-    settings = await prisma.shopSettings.update({
-      where: { shop },
-      data: { currency: shopInfo.currency },
-    });
-  }
 
   /* Stale-while-revalidate: finns det EN sparad version serveras den direkt
      (<2 s), och en färsk export körs i bakgrunden till nästa besök. Att vänta
@@ -82,7 +95,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
   });
   const refreshCache = async (f: string, t: string, key: string) => {
     try {
-      const freshData = await fetchOrderData(admin, f, t, shopInfo.timezone, shop);
+      const freshData = await fetchOrderData(admin, f, t, timezone, shop);
       await prisma.pnlCache.upsert({
         where: { shop_key: { shop, key } },
         create: { shop, key, payload: freshData as any },
@@ -103,23 +116,28 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
       void refreshCache(from, to, cacheKey); // medvetet inget await
     }
   } else {
-    orderData = await fetchOrderData(admin, from, to, shopInfo.timezone, shop);
+    orderData = await fetchOrderData(admin, from, to, timezone, shop);
     await prisma.pnlCache.upsert({
       where: { shop_key: { shop, key: cacheKey } },
       create: { shop, key: cacheKey, payload: orderData as any },
       update: { payload: orderData as any, fetchedAt: new Date() },
     });
   }
-  const [costChanges, fixedRows] = await Promise.all([
+  /* Allt nedan är oberoende av varandra — sekventiellt blev det fyra
+     väntningar i rad där en räcker. */
+  const [costChanges, fixedRows, catalog, groupSize] = await Promise.all([
     prisma.costChange.findMany({ where: { shop } }),
     prisma.fixedCost.findMany({ where: { shop } }),
+    loadCatalog(admin, shop, prisma),
+    settings.groupId
+      ? prisma.shopSettings.count({ where: { groupId: settings.groupId } })
+      : Promise.resolve(1),
   ]);
   const fixedMonthlyTotal = fixedRows.reduce((a, r) => a + Number(r.monthlyAmount), 0);
 
   /* Kostnaden läses om ur katalogen (5 min minnescache) istället för att tas
      ur det cachade aggregatet — annars syns ett nyss inskrivet inköpspris
      först när hela orderexporten körts om, och importen ser trasig ut. */
-  const catalog = await fetchVariantCosts(admin, shop);
   const sales = orderData.sales;
   const products = applyCurrentCosts(orderData.products, catalog);
   /* Sessioner/CVR finns inte i det publika Admin-API:t — analytics-ytan är
@@ -134,7 +152,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
     from,
     to,
     today,
-    shopInfo.currency,
+    settings.currency,
     settings.spendCurrency,
   );
 
@@ -206,7 +224,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
       metaConfigured
         ? { adAccountId: settings.metaAdAccountId!, accessToken: decrypt(settings.metaAccessToken)! }
         : null,
-      prevFrom, prevTo, today, shopInfo.currency, settings.spendCurrency,
+      prevFrom, prevTo, today, settings.currency, settings.spendCurrency,
     );
     const prev = compute({
       from: prevFrom, to: prevTo,
@@ -238,9 +256,6 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
      summan kostar ett antal databasfrågor och de flesta vill se sin egen
      butik. Antalet medlemmar räknas alltid, för kryssrutan ska bara finnas
      när det faktiskt finns något att summera. */
-  const groupSize = settings.groupId
-    ? await prisma.shopSettings.count({ where: { groupId: settings.groupId } })
-    : 1;
   const visaAlla = url.searchParams.get("all") === "1" && groupSize > 1;
   const group = visaAlla
     ? await summeraGrupp(settings.groupId!, cacheKey, from, to, settings.currency)

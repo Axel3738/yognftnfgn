@@ -44,6 +44,9 @@ model ShopSettings {
   /// Long-lived Meta-token. Kryptera i produktion — se lib/crypto.server.ts.
   metaAccessToken String?
   currency        String   @default("SEK")
+  /// Butikens tidszon. Cachad för att slippa ett GraphQL-anrop per sidladdning
+  /// — den ändras i praktiken aldrig, men avgör vad "idag" betyder.
+  timezone        String?
   /// Sätts när handlaren sparat inställningarna minst en gång. Skiljer
   /// "har granskat tull och avgifter" från "kör fortfarande på defaults".
   settingsSavedAt DateTime?
@@ -134,6 +137,15 @@ model PnlCache {
   fetchedAt DateTime @default(now())
 
   @@unique([shop, key])
+}
+
+/// Produktkatalogen med inköpspriser. Låg tidigare bara i processminnet, vilket
+/// betydde full ompaginering av alla varianter varje gång containern startats om
+/// — flera sekunder rakt in i sidladdningen. Databasen överlever omstarter.
+model CatalogCache {
+  shop      String   @id
+  payload   Json
+  fetchedAt DateTime @default(now())
 }
 
 /// Fasta månadskostnader — abonnemang, anställda, appavgifter. Summeras och

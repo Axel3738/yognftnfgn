@@ -35,7 +35,7 @@ export async function fetchShopInfo(admin: AdminApiContext): Promise<ShopInfo> {
   return { today: dayInTz(new Date(), timezone), timezone, currency };
 }
 
-const dayInTz = (d: Date, tz: string): string =>
+export const dayInTz = (d: Date, tz: string): string =>
   // sv-SE ger ISO-format (ÅÅÅÅ-MM-DD) direkt.
   new Intl.DateTimeFormat("sv-SE", { timeZone: tz, dateStyle: "short" }).format(d);
 
@@ -306,6 +306,69 @@ export interface VariantCatalog {
 const catalogCache = new Map<string, { cat: VariantCatalog; at: number }>();
 export function invalidateVariantCosts(cacheKey: string) {
   catalogCache.delete(cacheKey);
+}
+
+const DB_TTL = 30 * 60 * 1000;
+
+/** Bygger om uppslagstabellerna ur en lagrad lista. */
+function katalogAv(all: VariantCost[]): VariantCatalog {
+  const byGid = new Map<string, VariantCost>();
+  const byTitle = new Map<string, VariantCost>();
+  for (const v of all) {
+    byGid.set(v.variantGid, v);
+    byTitle.set(titleKey(v.productTitle, v.variantTitle), v);
+  }
+  return { byGid, byTitle, all };
+}
+
+/**
+ * Katalogen med två cachelager: processminne (snabbast) och databas
+ * (överlever omstarter). Minnescachen ensam gav flera sekunders ompaginering
+ * varje gång containern startats om, vilket för en Railway-tjänst är ofta.
+ *
+ * Är den lagrade kopian gammal serveras den ändå, och en färsk hämtning körs
+ * i bakgrunden — inköpspriser ändras i veckotakt, inte i sekundtakt, och att
+ * vänta på dem vore att betala samma pris som förut.
+ */
+export async function loadCatalog(
+  admin: AdminApiContext,
+  shop: string,
+  prisma: any,
+): Promise<VariantCatalog> {
+  const minne = catalogCache.get(shop);
+  if (minne && Date.now() - minne.at < 5 * 60 * 1000) return minne.cat;
+
+  const rad = await prisma.catalogCache.findUnique({ where: { shop } }).catch(() => null);
+  if (rad) {
+    const cat = katalogAv(rad.payload as VariantCost[]);
+    catalogCache.set(shop, { cat, at: Date.now() });
+    if (Date.now() - rad.fetchedAt.getTime() > DB_TTL) void uppdateraKatalog(admin, shop, prisma);
+    return cat;
+  }
+  return uppdateraKatalog(admin, shop, prisma);
+}
+
+async function uppdateraKatalog(
+  admin: AdminApiContext,
+  shop: string,
+  prisma: any,
+): Promise<VariantCatalog> {
+  const cat = await fetchVariantCosts(admin);
+  catalogCache.set(shop, { cat, at: Date.now() });
+  await prisma.catalogCache
+    .upsert({
+      where: { shop },
+      create: { shop, payload: cat.all as any },
+      update: { payload: cat.all as any, fetchedAt: new Date() },
+    })
+    .catch(() => {});
+  return cat;
+}
+
+/** Efter en kostnadsskrivning måste båda lagren bort, inte bara minnet. */
+export async function invalidateCatalog(shop: string, prisma: any) {
+  catalogCache.delete(shop);
+  await prisma.catalogCache.deleteMany({ where: { shop } }).catch(() => {});
 }
 
 /** Alla varianter med sin nuvarande unitCost. Paginerar tills allt är hämtat. */

@@ -32,7 +32,7 @@ import {
 
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
-import { fetchVariantCosts, invalidateVariantCosts, setUnitCost } from "../lib/shopify-data.server";
+import { fetchVariantCosts, invalidateCatalog, invalidateVariantCosts, loadCatalog, setUnitCost } from "../lib/shopify-data.server";
 
 const gid = (id: string) => `gid://shopify/Product/${id}`;
 const num = (v: FormDataEntryValue | null) => parseFloat(String(v ?? "").replace(",", "."));
@@ -41,7 +41,7 @@ export async function loader({ request, params }: LoaderFunctionArgs) {
   const { admin, session } = await authenticate.admin(request);
   const productGid = gid(String(params.id));
 
-  const catalog = await fetchVariantCosts(admin, session.shop);
+  const catalog = await loadCatalog(admin, session.shop, prisma);
   const variants = catalog.all.filter((v) => v.productGid === productGid);
   if (!variants.length) throw redirect("/app/costs");
 
@@ -95,7 +95,7 @@ export async function action({ request, params }: ActionFunctionArgs) {
   }
 
   const total = productCost + shippingCost;
-  const catalog = await fetchVariantCosts(admin, session.shop);
+  const catalog = await loadCatalog(admin, session.shop, prisma);
   const targets = catalog.all.filter(
     (v) => v.productGid === productGid && (variantGid === "" || v.variantGid === variantGid),
   );
@@ -120,6 +120,7 @@ export async function action({ request, params }: ActionFunctionArgs) {
   });
 
   invalidateVariantCosts(session.shop);
+  await invalidateCatalog(session.shop, prisma);
   return json({
     ok: !failed.length,
     message: failed.length
