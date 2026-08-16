@@ -45,6 +45,15 @@ Break-even-CPA per köp = bidraget per order på den nivå kunden köper.
 3. **Handtag:** +$0.90 i COGS, +$60 MXN i pris → lönsamt. Rekommendation (2026-08-16): gör handtaget standard, döda Sin asa/Con asa-förgreningen i bundle-väljaren, sälj "mango desmontable" som USP.
 4. **Prisförslag (ej beslutat):** 1x $599 / 2x $899 / 4x $1,299 → bidrag ≈374 / ≈512 / ≈665 MXN. Rundare priser, Bryn-liknande 2x-steg (+$300 för andra korgen).
 
+## Genomfört 2026-08-16 (på Axels order, via Shopify API)
+
+- **Sin asa-varianten raderad** + optionen "Tipo de asa" borttagen → en enda variant (med handtag).
+- **Nytt pris: $599.00** (från $669), compare-at $859 kvar (≈ Ahorra 30 %).
+- Bundle-appens rabatter (härledda ur gamla priser): 2x = 25 % · 4x = 45,25 % → nya auto-nivåer: 2x **$898.50**, 4x **$1,311.81**.
+- Nya bidrag/order (kurs 18.50, utan IVA): 1x ≈ 373 MXN (BE-ROAS 1.60) · 2x ≈ 512 (1.76) · 4x ≈ 603 (2.17).
+
+**Kvar för Axel i bundle-appen (går ej via API):** 4x → fast pris $1,299 · nivåetiketter ("El favorito de los parrilleros" / "Para la carne asada en grande") · ev. gratis-gåva på 4x. Ej rört: produkttexten (ev. "mango desmontable"-rad väntar på bekräftelse om handtaget är avskruvbart).
+
 ## ⚠️ Öppna frågor (fråga Axel, gissa inte)
 
 - **IVA 16 %:** ingår den i priset och ska redovisas ut, eller säljs det utan (som Grillkliniken SE)? Om IVA dras ur: bidraget sjunker med 16/116 av priset → BE-ROAS 1x ≈1.9 i stället för 1.51. **Alla tal ovan är räknade UTAN IVA-avdrag.**
