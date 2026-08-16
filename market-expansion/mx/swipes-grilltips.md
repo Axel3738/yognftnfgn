@@ -50,6 +50,17 @@ Mapp: https://drive.google.com/drive/folders/1bngbhLtel48RGevXrNhlqOqZgyqx8tJZ
 | 6 top3 | https://docs.google.com/document/d/1pOARsyiuWA2QPEB8SWG64BK4H49fSjNL7WC7XTABs34 |
 | 7 dinero | https://docs.google.com/document/d/1OeSB3jPbhP_UCSudIoXjq-vVTf7WJzARoshvRCQhJ1I |
 | 8 sazon | https://docs.google.com/document/d/1xa3aPNkT502n0UPAvI9qqKW_PwRwf_dZx-ZLZ5py-20 |
+| Hooks (alla 8, B/C-varianter) | https://docs.google.com/document/d/1WIPPxEy7tEpCMHQtLExQJVGeSXJcLrgJhRYB5IIFnRo |
+
+Listicle-mapp: https://drive.google.com/drive/folders/126StGFqxHyuiSzz-deWLBI1xDobBMJYa
+
+| Listicle | Doc |
+|---|---|
+| Artikel 8 MX (anti-aluminio) | https://docs.google.com/document/d/110AOoyPZ5CfiWQSpFPpTguArpx2aN1CoLHR9d8iiyLM |
+| Artikel 1 MX (7 razones) | https://docs.google.com/document/d/1kGF_AdewG9SNMdiusUMZh1Y0iuxJ5KNlhfh1I82fckQ |
+| Artikel 11 MX (frustration) | https://docs.google.com/document/d/1jnHEuxYkBKtIvUxbnOTZPE46HXFWvfIb9-eh-M12tm0 |
+| Artikel 22 MX (hierro fundido) | https://docs.google.com/document/d/1ko3Byg_CW243QVjodUcpFWjrhWzy1mkRTEXoBJp98I0 |
+| Artikel 13 MX (brochetas) | https://docs.google.com/document/d/1QaCOwdsiijMLpck7_zPEHxdfR4I26V4aOXcsrL1FVmk |
 
 ## Kvar att göra
 
