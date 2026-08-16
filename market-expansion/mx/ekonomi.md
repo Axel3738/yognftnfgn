@@ -45,14 +45,21 @@ Break-even-CPA per köp = bidraget per order på den nivå kunden köper.
 3. **Handtag:** +$0.90 i COGS, +$60 MXN i pris → lönsamt. Rekommendation (2026-08-16): gör handtaget standard, döda Sin asa/Con asa-förgreningen i bundle-väljaren, sälj "mango desmontable" som USP.
 4. **Prisförslag (ej beslutat):** 1x $599 / 2x $899 / 4x $1,299 → bidrag ≈374 / ≈512 / ≈665 MXN. Rundare priser, Bryn-liknande 2x-steg (+$300 för andra korgen).
 
-## Genomfört 2026-08-16 (på Axels order, via Shopify API)
+## Historik 2026-08-16
 
-- **Sin asa-varianten raderad** + optionen "Tipo de asa" borttagen → en enda variant (med handtag).
-- **Nytt pris: $599.00** (från $669), compare-at $859 kvar (≈ Ahorra 30 %).
-- Bundle-appens rabatter (härledda ur gamla priser): 2x = 25 % · 4x = 45,25 % → nya auto-nivåer: 2x **$898.50**, 4x **$1,311.81**.
-- Nya bidrag/order (kurs 18.50, utan IVA): 1x ≈ 373 MXN (BE-ROAS 1.60) · 2x ≈ 512 (1.76) · 4x ≈ 603 (2.17).
+1. **Först genomfört på Axels "fixa offret":** Sin asa raderad, en variant, pris $599. **ÅTERSTÄLLT samma dag** — Axel ville ha kvar båda varianterna (billig/dyr-anchoring) och påpekade korrekt att prissänkningen FÖRSÄMRADE break-even-ROAS (599 → BE 1.60/1.76/2.17). Lärdom: priset ned = BE upp, eftersom COGS ligger fast.
+2. **Nuläge (återställt):** Sin asa $609 / Con asa $669, compare $859, option "Tipo de asa" (Sin asa först). ⚠️ Sin asa-varianten har NYTT variant-ID (56810748641620) — verifiera att bundle-appen mappar rätt.
+3. Bundle-appens rabatter (härledda): 2x = 25 % · 4x = 45,25 %.
 
-**Kvar för Axel i bundle-appen (går ej via API):** 4x → fast pris $1,299 · nivåetiketter ("El favorito de los parrilleros" / "Para la carne asada en grande") · ev. gratis-gåva på 4x. Ej rört: produkttexten (ev. "mango desmontable"-rad väntar på bekräftelse om handtaget är avskruvbart).
+## Axels mål: BE-ROAS ≤ 1,5 på mittenalternativet (2x)
+
+BE 1,5 kräver pris ≥ 3× COGS. 2x con asa COGS $20.90 → 2x-pris ≥ ~$1,160 MXN (sin asa: ≥ ~$1,060).
+
+- **Prisspaken:** baspriser Sin asa $719 / Con asa $799 → 2x auto (25 %) = $1,078.50 / $1,198.50 → BE 1,47–1,49 ✓; 1x BE 1,39–1,41; 4x auto ~$1,575/$1,750 → BE 1,62–1,68.
+- **Fraktspaken:** på nuvarande priser räcker −$2.80 USD på tvåkorgsfrakten (15.90 → 13.10, ~18 %) för BE 1,5 i mitten. Förhandla med agenten; MX-lager/3PL är nästa nivå.
+- **Beslut väntar hos Axel** (prisändring = ägarbeslut). IVA-frågan måste lösas innan talen är verkliga.
+
+**Kvar i bundle-appen (går ej via API):** 4x fast pris · nivåetiketter · ev. gåva på 4x.
 
 ## ⚠️ Öppna frågor (fråga Axel, gissa inte)
 
