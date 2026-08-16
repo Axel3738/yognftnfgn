@@ -48,8 +48,10 @@ export async function loader({ request }: LoaderFunctionArgs) {
       })
     : [mig];
 
+  // Koden visas hela giltighetstiden, även efter första inlösningen — den
+  // återanvänds tills den går ut, så "använd" betyder inte "förbrukad".
   const aktivKod = await prisma.storeLinkCode.findFirst({
-    where: { createdBy: session.shop, usedAt: null, expiresAt: { gt: new Date() } },
+    where: { createdBy: session.shop, expiresAt: { gt: new Date() } },
     orderBy: { createdAt: "desc" },
   });
 
@@ -98,21 +100,50 @@ export async function action({ request }: ActionFunctionArgs) {
   if (intent === "los-in") {
     const kod = String(form.get("code") ?? "").trim().toUpperCase();
     const rad = await prisma.storeLinkCode.findUnique({ where: { code: kod } });
-    if (!rad || rad.usedAt || rad.expiresAt < new Date()) {
+    if (!rad || rad.expiresAt < new Date()) {
       return json(
-        { ok: false, message: "Koden gäller inte. Skapa en ny i den andra butiken — koden går ut efter 30 minuter och kan bara användas en gång." },
+        { ok: false, message: "Koden gäller inte längre. Skapa en ny — koden går ut efter 30 minuter." },
         { status: 400 },
       );
     }
     if (rad.createdBy === session.shop) {
-      return json({ ok: false, message: "Koden skapades i den här butiken. Lös in den i den andra." }, { status: 400 });
+      return json({ ok: false, message: "Koden skapades i den här butiken. Lös in den i en annan." }, { status: 400 });
     }
-    await prisma.shopSettings.update({
-      where: { shop: session.shop },
-      data: { groupId: rad.groupId },
+
+    const mig = await prisma.shopSettings.findUnique({ where: { shop: session.shop } });
+    let antal = 1;
+    if (mig?.groupId && mig.groupId !== rad.groupId) {
+      /* Butiken hör redan till en grupp. Att bara flytta den hade lämnat dess
+         tidigare sällskap ensamt kvar — vilket är precis vad som hände: man
+         lade till en butik, la till nästa, och den första försvann ur summan.
+         Hela gruppen följer med istället. */
+      const flyttade = await prisma.shopSettings.updateMany({
+        where: { groupId: mig.groupId },
+        data: { groupId: rad.groupId },
+      });
+      antal = flyttade.count;
+    } else if (mig?.groupId !== rad.groupId) {
+      await prisma.shopSettings.update({
+        where: { shop: session.shop },
+        data: { groupId: rad.groupId },
+      });
+    }
+
+    // usedAt är spårbarhet, inte spärr: samma kod ska räcka för alla butiker
+    // man håller på att koppla ihop under samma halvtimme.
+    if (!rad.usedAt) {
+      await prisma.storeLinkCode.update({ where: { code: kod }, data: { usedAt: new Date() } });
+    }
+
+    const total = await prisma.shopSettings.count({ where: { groupId: rad.groupId } });
+    return json({
+      ok: true,
+      message:
+        (antal > 1
+          ? `${antal} butiker slogs ihop med gruppen. `
+          : "Butiken är tillagd. ") +
+        `${total} butiker är nu ihopkopplade. Koden fungerar i fler butiker tills den går ut — lös in den i nästa direkt.`,
     });
-    await prisma.storeLinkCode.update({ where: { code: kod }, data: { usedAt: new Date() } });
-    return json({ ok: true, message: "Butikerna är ihopkopplade. Kryssrutan finns nu på Vinst-sidan." });
   }
 
   if (intent === "koppla-loss") {
@@ -158,9 +189,10 @@ export default function Butiker() {
             <BlockStack gap="300">
               <Text as="h2" variant="headingMd">Lägg till en butik</Text>
               <Text as="p" tone="subdued">
-                Gör så här: skapa en kod här, öppna appen i den andra butiken, gå till Butiker
-                och lös in koden där. Koden är enda beviset på att båda butikerna är dina —
-                därför kopplas ingenting ihop automatiskt.
+                Gör så här: skapa en kod här, öppna appen i nästa butik, gå till Butiker och lös
+                in koden där. <strong>Samma kod fungerar i alla butiker du hinner med på 30
+                minuter</strong> — skapa en, lös in den i tur och ordning. Koden är enda beviset
+                på att butikerna är dina, därför kopplas ingenting ihop automatiskt.
               </Text>
 
               <InlineStack gap="300" blockAlign="center" wrap>
