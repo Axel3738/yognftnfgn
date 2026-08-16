@@ -10,6 +10,7 @@ import { useFetcher, useLoaderData } from "@remix-run/react";
 import { Banner, BlockStack, Button, Card, Layout, Page, Text, TextField } from "@shopify/polaris";
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
+import { encrypt, encryptionAvailable } from "../lib/crypto.server";
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const { session } = await authenticate.admin(request);
@@ -24,6 +25,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
     targetMargin: Number(s.targetMargin),
     metaAdAccountId: s.metaAdAccountId ?? "",
     hasMetaToken: Boolean(s.metaAccessToken),
+    krypteringPa: encryptionAvailable(),
     currency: s.currency,
   });
 }
@@ -42,7 +44,7 @@ export async function action({ request }: ActionFunctionArgs) {
       targetMargin: dec("targetMargin") / 100,
       metaAdAccountId: String(f.get("metaAdAccountId") ?? "") || null,
       // Tomt fält = behåll befintlig token, radera den inte av misstag.
-      ...(token ? { metaAccessToken: token } : {}),
+      ...(token ? { metaAccessToken: encrypt(token) } : {}),
       // Kvitterar kom igång-checklistans steg om tull och avgifter.
       settingsSavedAt: new Date(),
       // Nytt konto kan ha annan valuta — läs om den istället för att lita på
@@ -126,6 +128,17 @@ export default function Settings() {
                 Utan Meta-koppling visas försäljning och COGS som vanligt, men täckningsbidraget
                 flaggas som ofullständigt istället för att räknas som om annonskostnaden vore noll.
               </Banner>
+              {d.krypteringPa ? (
+                <Text as="p" variant="bodySm" tone="subdued">
+                  🔒 Token krypteras innan den sparas.
+                </Text>
+              ) : (
+                <Banner tone="warning" title="Token sparas okrypterad">
+                  Miljövariabeln <code>TOKEN_ENCRYPTION_KEY</code> är inte satt på den här
+                  servern, så token lagras i klartext. Sätt den innan appen används av andra
+                  än dig — det är någon annans annonskonto som ligger i databasen.
+                </Banner>
+              )}
             </BlockStack>
           </Card>
         </Layout.Section>

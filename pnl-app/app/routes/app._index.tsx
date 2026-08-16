@@ -30,6 +30,7 @@ import { compute, rangeWindow } from "../lib/pnl.server";
 import { applyCurrentCosts, fetchOrderData, fetchShopInfo, fetchVariantCosts } from "../lib/shopify-data.server";
 import { getSpend } from "../lib/meta.server";
 import { summeraGrupp } from "../lib/group.server";
+import { decrypt } from "../lib/crypto.server";
 
 const RANGES: Record<string, string> = {
   today: "Idag",
@@ -128,7 +129,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
   const spend = await getSpend(
     shop,
     settings.metaAdAccountId && settings.metaAccessToken
-      ? { adAccountId: settings.metaAdAccountId, accessToken: settings.metaAccessToken }
+      ? { adAccountId: settings.metaAdAccountId, accessToken: decrypt(settings.metaAccessToken)! }
       : null,
     from,
     to,
@@ -203,7 +204,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
     const prevSpend = await getSpend(
       shop,
       metaConfigured
-        ? { adAccountId: settings.metaAdAccountId!, accessToken: settings.metaAccessToken! }
+        ? { adAccountId: settings.metaAdAccountId!, accessToken: decrypt(settings.metaAccessToken)! }
         : null,
       prevFrom, prevTo, today, shopInfo.currency, settings.spendCurrency,
     );

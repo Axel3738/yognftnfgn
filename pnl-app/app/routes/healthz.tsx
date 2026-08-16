@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "grupp-v20", db });
+  return json({ ok: true, build: "krypto-v21", db });
 }
