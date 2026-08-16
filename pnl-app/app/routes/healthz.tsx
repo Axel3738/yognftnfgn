@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "snabb-v23", db });
+  return json({ ok: true, build: "kolapp-v24", db });
 }

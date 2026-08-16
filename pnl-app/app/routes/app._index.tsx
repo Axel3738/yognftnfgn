@@ -6,7 +6,7 @@
 import { Suspense, useState } from "react";
 import type { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
 import { defer, json } from "@remix-run/node";
-import { Await, Link, useFetcher, useLoaderData, useSearchParams } from "@remix-run/react";
+import { Await, Link, useFetcher, useLoaderData, useRevalidator, useSearchParams } from "@remix-run/react";
 import {
   Badge,
   BlockStack,
@@ -31,6 +31,28 @@ import { applyCurrentCosts, dayInTz, fetchOrderData, fetchShopInfo, loadCatalog 
 import { getSpend } from "../lib/meta.server";
 import { summeraGrupp } from "../lib/group.server";
 import { decrypt } from "../lib/crypto.server";
+
+/* Shopify kör EN bulk-export åt gången per butik. Startar panelen en
+   bakgrundsuppdatering vid varje besök upptas den enda platsen, och nästa vy
+   som faktiskt behöver hämta får köa bakom den — det var därför ett byte
+   mellan Idag och 30 dagar tog tiotals sekunder trots att båda låg i cachen.
+   Högst en bakgrundshämtning per butik och minut. */
+const senasteBakgrund = new Map<string, number>();
+function farStartaBakgrund(shop: string): boolean {
+  const t = senasteBakgrund.get(shop) ?? 0;
+  if (Date.now() - t < 60_000) return false;
+  senasteBakgrund.set(shop, Date.now());
+  return true;
+}
+
+/* Hur gammal cachen får vara innan den uppdateras. Dagens siffror rör sig,
+   avslutade perioder gör det knappt — att hämta om 90 dagar för att de är
+   fyra minuter gamla är rent slöseri med den enda exportplatsen. */
+function farskhetMs(rangeKey: string): number {
+  return rangeKey === "today" || rangeKey === "yesterday"
+    ? 10 * 60 * 1000
+    : 6 * 60 * 60 * 1000;
+}
 
 const RANGES: Record<string, string> = {
   today: "Idag",
@@ -111,7 +133,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
   if (cached) {
     orderData = cached.payload as unknown as Awaited<ReturnType<typeof fetchOrderData>>;
     dataAgeMin = Math.round((Date.now() - cached.fetchedAt.getTime()) / 60000);
-    if (Date.now() - cached.fetchedAt.getTime() > 3 * 60 * 1000) {
+    if (Date.now() - cached.fetchedAt.getTime() > farskhetMs(rangeKey) && farStartaBakgrund(shop)) {
       refreshing = true;
       void refreshCache(from, to, cacheKey); // medvetet inget await
     }
@@ -212,11 +234,11 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
     /* Bara cache — saknas jämförelsedatan fylls den i bakgrunden och syns
        vid nästa besök. Den får aldrig kosta en synlig sekund. */
     if (!prevCached) {
-      void refreshCache(prevFrom, prevTo, prevKey);
+      if (farStartaBakgrund(shop)) void refreshCache(prevFrom, prevTo, prevKey);
       throw new Error("jämförelsen fylls i bakgrunden");
     }
     const prevData = prevCached.payload as unknown as Awaited<ReturnType<typeof fetchOrderData>>;
-    if (Date.now() - prevCached.fetchedAt.getTime() > 60 * 60 * 1000) {
+    if (Date.now() - prevCached.fetchedAt.getTime() > 24 * 60 * 60 * 1000 && farStartaBakgrund(shop)) {
       void refreshCache(prevFrom, prevTo, prevKey);
     }
     const prevSpend = await getSpend(
@@ -767,6 +789,7 @@ function SetupChecklist({
 function DashboardView({ d }: { d: PageData }) {
   const { fatal, result, rangeKey, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing, groupSize, group } = d;
   const [params, setParams] = useSearchParams();
+  const revalidator = useRevalidator();
   if (fatal || !result) {
     return (
       <Page title="Vinst">
@@ -836,7 +859,11 @@ function DashboardView({ d }: { d: PageData }) {
     <Page
       title="Vinst"
       subtitle={`${result.from} – ${result.to}`}
-      primaryAction={{ content: "Uppdatera", onAction: () => setParams((p) => p) }}
+      primaryAction={{
+        content: "Uppdatera",
+        loading: revalidator.state === "loading",
+        onAction: () => revalidator.revalidate(),
+      }}
     >
       <Layout>
         <Layout.Section>
