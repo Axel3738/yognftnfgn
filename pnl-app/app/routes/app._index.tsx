@@ -31,6 +31,7 @@ import { applyCurrentCosts, dayInTz, fetchOrderData, fetchShopInfo, loadCatalog 
 import { getSpend } from "../lib/meta.server";
 import { summeraGrupp } from "../lib/group.server";
 import { decrypt } from "../lib/crypto.server";
+import { asLang, localeOf, t, type Lang, type Texts } from "../lib/texts";
 
 /* Shopify kör EN bulk-export åt gången per butik. Startar panelen en
    bakgrundsuppdatering vid varje besök upptas den enda platsen, och nästa vy
@@ -54,13 +55,7 @@ function farskhetMs(rangeKey: string): number {
     : 6 * 60 * 60 * 1000;
 }
 
-const RANGES: Record<string, string> = {
-  today: "Idag",
-  yesterday: "Igår",
-  "7d": "7 dagar",
-  "30d": "30 dagar",
-  "90d": "90 dagar",
-};
+type SettingsRow = Awaited<ReturnType<typeof prisma.shopSettings.upsert>>;
 
 /**
  * Det tunga jobbet bor i ett promise som INTE awaitas i loadern: skalet
@@ -68,14 +63,11 @@ const RANGES: Record<string, string> = {
  * ordrar i sekventiella API-anrop, 10–30 sekunder — utan defer är iframen
  * spikvit hela den tiden och ser trasig ut.
  */
-async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
+async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, settings0: SettingsRow) {
+  const lang = asLang(settings0.language);
   try {
 
-  let settings = await prisma.shopSettings.upsert({
-    where: { shop },
-    create: { shop },
-    update: {},
-  });
+  let settings = settings0;
 
   /* Butiksinfo kostade ett GraphQL-anrop på varje sidladdning. Tidszonen
      ändras i praktiken aldrig, så när den är känd räknas "idag" fram lokalt
@@ -280,7 +272,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
      när det faktiskt finns något att summera. */
   const visaAlla = url.searchParams.get("all") === "1" && groupSize > 1;
   const group = visaAlla
-    ? await summeraGrupp(settings.groupId!, cacheKey, from, to, settings.currency)
+    ? await summeraGrupp(settings.groupId!, cacheKey, from, to, settings.currency, lang)
     : null;
 
   return {
@@ -335,8 +327,19 @@ export async function loader({ request }: LoaderFunctionArgs) {
   const { admin, session } = await authenticate.admin(request);
   const url = new URL(request.url);
   const rangeKey = url.searchParams.get("range") ?? "30d";
+  /* Språket behövs redan i Suspense-fallbacken, alltså före det tunga
+     promiset — därför läses inställningsraden synkront här (PK-uppslag,
+     millisekunder) och skickas vidare in i loadPage. */
+  const settings = await prisma.shopSettings.upsert({
+    where: { shop: session.shop },
+    create: { shop: session.shop },
+    update: {},
+  });
   // Medvetet inget await — promiset strömmas till klienten via defer.
-  return defer({ page: loadPage(admin, session.shop, rangeKey, url) });
+  return defer({
+    lang: asLang(settings.language),
+    page: loadPage(admin, session.shop, rangeKey, url, settings),
+  });
 }
 
 export async function action({ request }: ActionFunctionArgs) {
@@ -352,24 +355,24 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 export default function Dashboard() {
-  const { page } = useLoaderData<typeof loader>();
+  const { lang, page } = useLoaderData<typeof loader>();
+  const T = t(lang);
   return (
     <Suspense
       fallback={
-        <Page title="Vinst">
+        <Page title={T.dashboard.title}>
           <Card>
             <BlockStack gap="300" inlineAlign="center">
-              <Spinner accessibilityLabel="Hämtar ordrar" size="large" />
+              <Spinner accessibilityLabel={T.dashboard.loadingOrders} size="large" />
               <Text as="p" tone="subdued">
-                Hämtar ordrar från Shopify — 30-dagarsvyn läser hela orderhistoriken och kan ta
-                upp till en halv minut.
+                {T.dashboard.loadingText}
               </Text>
             </BlockStack>
           </Card>
         </Page>
       }
     >
-      <Await resolve={page}>{(d) => <DashboardView d={d as PageData} />}</Await>
+      <Await resolve={page}>{(d) => <DashboardView d={d as PageData} lang={lang} />}</Await>
     </Suspense>
   );
 }
@@ -397,21 +400,25 @@ const TIP_STYLE: React.CSSProperties = {
 };
 
 function Donut({
-  t,
+  t: totals,
   money,
+  T,
+  lang,
 }: {
   t: NonNullable<PageData["result"]>["totals"];
   money: (v: number | null) => string;
+  T: Texts;
+  lang: Lang;
 }) {
   const [tip, setTip] = useState<{ x: number; y: number; key: string } | null>(null);
 
   const parts = [
-    { key: "cogs", label: "Produktkostnad", value: t.cogs },
-    { key: "spend", label: "Annonser", value: t.spend },
-    { key: "fees", label: "Transaktionsavgifter", value: t.fees },
-    { key: "tariff", label: "Tull", value: t.tariff },
-    { key: "fixed", label: "Fasta kostnader", value: t.fixedCosts },
-    { key: "profit", label: "Nettovinst", value: Math.max(t.netProfit, 0) },
+    { key: "cogs", label: T.dashboard.productCost, value: totals.cogs },
+    { key: "spend", label: T.dashboard.ads, value: totals.spend },
+    { key: "fees", label: T.dashboard.txFees, value: totals.fees },
+    { key: "tariff", label: T.dashboard.kpi.duty, value: totals.tariff },
+    { key: "fixed", label: T.dashboard.kpi.fixedCosts, value: totals.fixedCosts },
+    { key: "profit", label: T.dashboard.kpi.netProfit, value: Math.max(totals.netProfit, 0) },
   ].filter((p) => p.value > 0.5);
   const total = parts.reduce((a, p) => a + p.value, 0);
   if (total <= 0) return null;
@@ -430,13 +437,16 @@ function Donut({
     return {
       ...p,
       /* procent av omsättningen — det användaren frågar sig vid hovring */
-      ofRevenue: t.totalSales > 0 ? p.value / t.totalSales : 0,
+      ofRevenue: totals.totalSales > 0 ? p.value / totals.totalSales : 0,
       d: `M ${x0} ${y0} A ${R} ${R} 0 ${large} 1 ${x1} ${y1} L ${xi1} ${yi1} A ${r} ${r} 0 ${large} 0 ${xi0} ${yi0} Z`,
     };
   });
 
   const hovered = tip ? arcs.find((a) => a.key === tip.key) ?? null : null;
-  const pctStr = (v: number) => `${(v * 100).toFixed(1).replace(".", ",")} %`;
+  const pctStr = (v: number) => {
+    const s = (v * 100).toFixed(1);
+    return `${lang === "sv" ? s.replace(".", ",") : s} %`;
+  };
 
   return (
     <div
@@ -449,7 +459,7 @@ function Donut({
       }}
     >
       <BlockStack gap="300" inlineAlign="center">
-        <svg viewBox="0 0 200 200" style={{ width: 230, maxWidth: "100%" }} role="img" aria-label="Fördelning av omsättningen">
+        <svg viewBox="0 0 200 200" style={{ width: 230, maxWidth: "100%" }} role="img" aria-label={T.dashboard.donutAria}>
           {arcs.map((a) => (
             <path
               key={a.key}
@@ -473,12 +483,12 @@ function Donut({
                 fill={SLICE_COLORS[hovered.key as keyof typeof SLICE_COLORS]}>
                 {pctStr(hovered.ofRevenue)}
               </text>
-              <text x="100" y="122" textAnchor="middle" fontSize="10" fill="#6d7175">av omsättningen</text>
+              <text x="100" y="122" textAnchor="middle" fontSize="10" fill="#6d7175">{T.dashboard.ofRevenue}</text>
             </>
           ) : (
             <>
-              <text x="100" y="94" textAnchor="middle" fontSize="11" fill="#6d7175">Omsättning</text>
-              <text x="100" y="112" textAnchor="middle" fontSize="14" fontWeight="700" fill="#202223">{money(t.totalSales)}</text>
+              <text x="100" y="94" textAnchor="middle" fontSize="11" fill="#6d7175">{T.dashboard.revenue}</text>
+              <text x="100" y="112" textAnchor="middle" fontSize="14" fontWeight="700" fill="#202223">{money(totals.totalSales)}</text>
             </>
           )}
         </svg>
@@ -495,7 +505,7 @@ function Donut({
         <div style={{ ...TIP_STYLE, left: tip.x, top: tip.y }}>
           <strong>{hovered.label}</strong>
           <br />
-          {money(hovered.value)} · {pctStr(hovered.ofRevenue)} av omsättningen
+          {money(hovered.value)} · {pctStr(hovered.ofRevenue)} {T.dashboard.ofRevenue}
         </div>
       ) : null}
     </div>
@@ -510,9 +520,11 @@ function Donut({
 function ProfitBars({
   result,
   money,
+  T,
 }: {
   result: NonNullable<PageData["result"]>;
   money: (v: number | null) => string;
+  T: Texts;
 }) {
   const [tip, setTip] = useState<{ x: number; y: number; i: number } | null>(null);
   const t = result.totals;
@@ -540,7 +552,7 @@ function ProfitBars({
 
   return (
     <div style={{ position: "relative" }} onMouseLeave={() => setTip(null)}>
-      <svg viewBox={`0 0 ${W} ${H}`} style={{ width: "100%" }} role="img" aria-label="Vinst per dag">
+      <svg viewBox={`0 0 ${W} ${H}`} style={{ width: "100%" }} role="img" aria-label={T.dashboard.profitPerDay}>
         <line x1={padL} x2={W - padL} y1={zero} y2={zero} stroke="#d2d5d8" strokeWidth="1" />
         {rows.map((r, i) => {
           const x = padL + i * bw + 1;
@@ -576,23 +588,25 @@ function ProfitBars({
         <div style={{ ...TIP_STYLE, left: tip.x, top: tip.y }}>
           <strong>{lbl(rows[tip.i].day)}</strong>
           <br />
-          Försäljning: {money(rows[tip.i].revenue)}
+          {T.dashboard.tipSales}: {money(rows[tip.i].revenue)}
           <br />
-          Annonser: {money(rows[tip.i].spend)}
+          {T.dashboard.tipAds}: {money(rows[tip.i].spend)}
           <br />
-          Vinst: {money(rows[tip.i].profit)}
+          {T.dashboard.tipProfit}: {money(rows[tip.i].profit)}
         </div>
       ) : null}
     </div>
   );
 }
 
-function BreakdownRow({ label, value, bold, colorKey, money, ofRevenue }: {
+function BreakdownRow({ label, value, bold, colorKey, money, ofRevenue, dec }: {
   label: string; value: number; bold?: boolean;
   colorKey?: keyof typeof SLICE_COLORS;
   money: (v: number | null) => string;
   /** Andel av omsättningen — visas dämpat efter beloppet. */
   ofRevenue?: number;
+  /** Decimaltecken efter språk. */
+  dec: (s: string) => string;
 }) {
   return (
     <InlineStack align="space-between" blockAlign="center">
@@ -605,7 +619,7 @@ function BreakdownRow({ label, value, bold, colorKey, money, ofRevenue }: {
       <InlineStack gap="150" blockAlign="center">
         {ofRevenue != null ? (
           <Text as="span" variant="bodySm" tone="subdued">
-            {`${(Math.abs(ofRevenue) * 100).toFixed(1).replace(".", ",")} %`}
+            {`${dec((Math.abs(ofRevenue) * 100).toFixed(1))} %`}
           </Text>
         ) : null}
         <Text as="span" variant={bold ? "headingSm" : "bodyMd"}>
@@ -622,7 +636,7 @@ function BreakdownRow({ label, value, bold, colorKey, money, ofRevenue }: {
  * En flik man måste leta upp är en flik ingen fyller i — utan fasta kostnader
  * ljuger nettovinsten uppåt, så panelen ber aktivt om dem.
  */
-function FixedCostQuickAdd() {
+function FixedCostQuickAdd({ T }: { T: Texts }) {
   const fetcher = useFetcher();
   const [name, setName] = useState("");
   const [amount, setAmount] = useState("");
@@ -639,14 +653,15 @@ function FixedCostQuickAdd() {
   return (
     <InlineStack gap="300" blockAlign="end" wrap>
       <div style={{ minWidth: 200, flex: 1 }}>
-        <TextField label="Namn" labelHidden placeholder="t.ex. Shopify-abonnemang"
+        <TextField label={T.dashboard.quickAdd.nameLabel} labelHidden placeholder={T.dashboard.quickAdd.namePlaceholder}
           value={name} onChange={setName} autoComplete="off" />
       </div>
       <div style={{ minWidth: 130 }}>
-        <TextField label="Kr/månad" labelHidden placeholder="kr/månad" suffix="kr/mån"
+        <TextField label={T.dashboard.quickAdd.amountLabel} labelHidden placeholder={T.dashboard.quickAdd.amountPlaceholder}
+          suffix={T.dashboard.quickAdd.amountSuffix}
           value={amount} onChange={setAmount} autoComplete="off" />
       </div>
-      <Button variant="primary" onClick={add} loading={busy}>Lägg till</Button>
+      <Button variant="primary" onClick={add} loading={busy}>{T.dashboard.quickAdd.add}</Button>
     </InlineStack>
   );
 }
@@ -666,54 +681,52 @@ function SetupChecklist({
   costsHint,
   currency,
   tariffPerOrder,
+  T,
+  dec,
 }: {
   setup: NonNullable<PageData["setup"]>;
   costsDone: boolean;
   costsHint: string;
   currency: string;
   tariffPerOrder: number;
+  T: Texts;
+  dec: (s: string) => string;
 }) {
   const dismisser = useFetcher();
   const steps = [
     {
       key: "costs",
       done: costsDone,
-      title: "Lägg in inköpspriser",
+      title: T.dashboard.setup.stepCosts,
       hint: costsHint,
       to: "/app/costs",
-      cta: "Till Kostnader",
+      cta: T.dashboard.setup.ctaCosts,
     },
     {
       key: "meta",
       done: setup.meta,
-      title: "Koppla annonskontot",
-      hint: setup.meta
-        ? "Annonskostnaden hämtas automatiskt varje dag."
-        : "Utan koppling räknas annonskostnaden som noll och vinsten blir för hög.",
+      title: T.dashboard.setup.stepMeta,
+      hint: setup.meta ? T.dashboard.setup.metaHintDone : T.dashboard.setup.metaHintTodo,
       to: "/app/settings",
-      cta: "Till Inställningar",
+      cta: T.dashboard.setup.ctaSettings,
     },
     {
       key: "fixed",
       done: setup.fixed,
-      title: "Fyll i fasta månadskostnader",
-      hint: setup.fixed
-        ? "Dras från nettovinsten, utslagna per dag."
-        : "Abonnemang, appar, anställda — allt som kostar oavsett försäljning.",
+      title: T.dashboard.setup.stepFixed,
+      hint: setup.fixed ? T.dashboard.setup.fixedHintDone : T.dashboard.setup.fixedHintTodo,
       to: "/app/fixed",
-      cta: "Visa alla",
+      cta: T.dashboard.setup.ctaFixed,
     },
     {
       key: "settings",
       done: setup.settings,
-      title: "Granska tull och transaktionsavgift",
+      title: T.dashboard.setup.stepSettings,
       hint: setup.settings
-        ? "Sparat för den här butiken."
-        : `Kör fortfarande på standardvärdena (${tariffPerOrder
-            .toFixed(2)
-            .replace(".", ",")} ${currency} per order, 2,9 %). Stämmer de för den här butiken?`,
+        ? T.dashboard.setup.settingsHintDone
+        : T.dashboard.setup.settingsHintTodo(dec(tariffPerOrder.toFixed(2)), currency),
       to: "/app/settings",
-      cta: "Till Inställningar",
+      cta: T.dashboard.setup.ctaSettings,
     },
   ];
   const doneCount = steps.filter((s) => s.done).length;
@@ -722,13 +735,13 @@ function SetupChecklist({
     <Card background="bg-surface-secondary">
       <BlockStack gap="400">
         <InlineStack align="space-between" blockAlign="center" wrap={false}>
-          <Text as="h2" variant="headingMd">Kom igång 🚀</Text>
+          <Text as="h2" variant="headingMd">{T.dashboard.setup.title}</Text>
           <Badge tone={doneCount === steps.length ? "success" : "attention"}>
-            {`${doneCount} av ${steps.length} klart`}
+            {T.dashboard.setup.progress(doneCount, steps.length)}
           </Badge>
         </InlineStack>
         <Text as="p" tone="subdued">
-          Panelen räknar redan — men den blir sann först när de här fyra är ifyllda.
+          {T.dashboard.setup.intro}
         </Text>
 
         <BlockStack gap="300">
@@ -765,7 +778,7 @@ function SetupChecklist({
               {/* Formuläret ligger i listan just för att slippa fliksbytet. */}
               {s.key === "fixed" && !s.done ? (
                 <div style={{ paddingLeft: 32 }}>
-                  <FixedCostQuickAdd />
+                  <FixedCostQuickAdd T={T} />
                 </div>
               ) : null}
             </BlockStack>
@@ -778,7 +791,7 @@ function SetupChecklist({
             loading={dismisser.state !== "idle"}
             onClick={() => dismisser.submit({ intent: "dismiss-setup" }, { method: "POST" })}
           >
-            Dölj checklistan
+            {T.dashboard.setup.dismiss}
           </Button>
         </InlineStack>
       </BlockStack>
@@ -786,81 +799,93 @@ function SetupChecklist({
   );
 }
 
-function DashboardView({ d }: { d: PageData }) {
+function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
   const { fatal, result, rangeKey, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing, groupSize, group } = d;
   const [params, setParams] = useSearchParams();
   const revalidator = useRevalidator();
+  const T = t(lang);
+  const dec = (s: string) => (lang === "sv" ? s.replace(".", ",") : s);
   if (fatal || !result) {
     return (
-      <Page title="Vinst">
-        <Banner tone="critical" title="Panelen kunde inte hämta data">
-          <p style={{ fontFamily: "monospace", whiteSpace: "pre-wrap" }}>{fatal ?? "okänt fel"}</p>
-          <p>Skicka en skärmbild av det här meddelandet — det pekar ut exakt var det stannar.</p>
+      <Page title={T.dashboard.title}>
+        <Banner tone="critical" title={T.dashboard.fatalTitle}>
+          <p style={{ fontFamily: "monospace", whiteSpace: "pre-wrap" }}>{fatal ?? T.dashboard.unknownError}</p>
+          <p>{T.dashboard.fatalHelp}</p>
         </Banner>
       </Page>
     );
   }
-  const t = result.totals;
+  const t2 = result.totals;
 
   /* Kostnadssteget kan bara bedömas mot faktiskt sålda enheter — en butik utan
      ordrar i perioden har inget att stämma av mot, och kvitteras inte. */
-  const costsDone = t.orders > 0 && t.unitsWithoutCost === 0;
+  const costsDone = t2.orders > 0 && t2.unitsWithoutCost === 0;
   const costsHint =
-    t.orders === 0
-      ? "Inga ordrar i perioden än. Steget kvitteras när sålda produkter har inköpspris."
-      : t.unitsWithoutCost > 0
-        ? `${t.unitsWithoutCost} sålda enheter saknar inköpspris och räknas som gratis.`
-        : "Alla sålda enheter har inköpspris.";
+    t2.orders === 0
+      ? T.dashboard.setup.costsHintNoOrders
+      : t2.unitsWithoutCost > 0
+        ? T.dashboard.setup.costsHintMissing(t2.unitsWithoutCost)
+        : T.dashboard.setup.costsHintDone;
   const setupAllDone =
     Boolean(setup) && costsDone && setup!.meta && setup!.fixed && setup!.settings;
 
-  const nf = new Intl.NumberFormat("sv-SE", { maximumFractionDigits: 0 });
+  const nf = new Intl.NumberFormat(localeOf(lang), { maximumFractionDigits: 0 });
   const money = (v: number | null) => (v == null ? "—" : `${nf.format(Math.round(v))} ${currency}`);
   const pct = (v: number | null) =>
-    v == null ? "—" : `${(v * 100).toFixed(1).replace(".", ",")} %`;
-  const mult = (v: number | null) => (v == null ? "—" : `${v.toFixed(2).replace(".", ",")}×`);
+    v == null ? "—" : `${dec((v * 100).toFixed(1))} %`;
+  const mult = (v: number | null) => (v == null ? "—" : `${dec(v.toFixed(2))}×`);
   /* Delta mot föregående period, som text i KPI-undertexten. */
   const delta = (now: number, prev: number | undefined) => {
     if (prev == null || Math.abs(prev) < 0.5) return "";
     const ch = (now - prev) / Math.abs(prev);
     const arrow = ch >= 0 ? "▲" : "▼";
-    return ` · ${arrow} ${Math.abs(ch * 100).toFixed(0)} % vs förra`;
+    return ` · ${arrow} ${Math.abs(ch * 100).toFixed(0)} % ${T.dashboard.kpi.vsPrev}`;
   };
 
+  const ranges: [string, string][] = [
+    ["today", T.dashboard.ranges.today],
+    ["yesterday", T.dashboard.ranges.yesterday],
+    ["7d", T.dashboard.ranges.d7],
+    ["30d", T.dashboard.ranges.d30],
+    ["90d", T.dashboard.ranges.d90],
+  ];
+
   const kpis: { label: string; value: string; sub: string; tone?: "critical" | "success" }[] = [
-    { label: "Försäljning", value: money(t.totalSales), sub: `varav frakt ${money(t.shipping)}${delta(t.totalSales, comparison?.totalSales)}` },
-    { label: "Ordrar", value: nf.format(t.orders), sub: `snittorder ${money(t.aov)}${delta(t.orders, comparison?.orders)}` },
-    { label: "Fasta kostnader", value: money(t.fixedCosts), sub: "utslagna per dag" },
+    { label: T.dashboard.kpi.sales, value: money(t2.totalSales), sub: `${T.dashboard.kpi.shippingOfWhich(money(t2.shipping))}${delta(t2.totalSales, comparison?.totalSales)}` },
+    { label: T.dashboard.kpi.orders, value: nf.format(t2.orders), sub: `${T.dashboard.kpi.avgOrder(money(t2.aov))}${delta(t2.orders, comparison?.orders)}` },
+    { label: T.dashboard.kpi.fixedCosts, value: money(t2.fixedCosts), sub: T.dashboard.kpi.perDay },
     {
-      label: "Annonskostnad",
-      value: money(t.spend),
-      sub: t.spendComplete ? `CPA ${money(t.cpa)}${delta(t.spend, comparison?.spend)}` : `⚠ saknas ${t.missingSpendDays.length} dagar`,
-      tone: t.spendComplete ? undefined : "critical",
+      label: T.dashboard.kpi.adSpend,
+      value: money(t2.spend),
+      sub: t2.spendComplete
+        ? `${T.dashboard.kpi.cpa(money(t2.cpa))}${delta(t2.spend, comparison?.spend)}`
+        : T.dashboard.kpi.missingDays(t2.missingSpendDays.length),
+      tone: t2.spendComplete ? undefined : "critical",
     },
     {
-      label: "COGS",
-      value: money(t.cogs),
-      sub: t.unitsWithoutCost ? `${t.unitsWithoutCost} enheter utan kostnad` : "alla enheter täckta",
-      tone: t.unitsWithoutCost ? "critical" : undefined,
+      label: T.dashboard.kpi.cogs,
+      value: money(t2.cogs),
+      sub: t2.unitsWithoutCost ? T.dashboard.kpi.unitsNoCost(t2.unitsWithoutCost) : T.dashboard.kpi.allUnitsCovered,
+      tone: t2.unitsWithoutCost ? "critical" : undefined,
     },
-    { label: "Tull", value: money(t.tariff), sub: `${nf.format(t.orders)} ordrar` },
-    { label: "MER", value: mult(t.mer), sub: `break-even ${mult(t.breakEvenMer)}` },
+    { label: T.dashboard.kpi.duty, value: money(t2.tariff), sub: T.dashboard.kpi.ordersCount(nf.format(t2.orders)) },
+    { label: T.dashboard.kpi.mer, value: mult(t2.mer), sub: T.dashboard.kpi.breakEven(mult(t2.breakEvenMer)) },
     {
-      label: "Nettovinst",
-      value: money(t.netProfit),
-      sub: t.spendComplete
-        ? `max CPA @ ${Math.round(targetMargin * 100)} %: ${money(t.maxCpaAtTarget)}${delta(t.netProfit, comparison?.netProfit)}`
-        : "för hög — annonsdata saknas",
-      tone: t.spendComplete && t.netProfit >= 0 ? "success" : "critical",
+      label: T.dashboard.kpi.netProfit,
+      value: money(t2.netProfit),
+      sub: t2.spendComplete
+        ? `${T.dashboard.kpi.maxCpa(Math.round(targetMargin * 100), money(t2.maxCpaAtTarget))}${delta(t2.netProfit, comparison?.netProfit)}`
+        : T.dashboard.kpi.profitTooHigh,
+      tone: t2.spendComplete && t2.netProfit >= 0 ? "success" : "critical",
     },
   ];
 
   return (
     <Page
-      title="Vinst"
+      title={T.dashboard.title}
       subtitle={`${result.from} – ${result.to}`}
       primaryAction={{
-        content: "Uppdatera",
+        content: T.dashboard.refresh,
         loading: revalidator.state === "loading",
         onAction: () => revalidator.revalidate(),
       }}
@@ -869,7 +894,7 @@ function DashboardView({ d }: { d: PageData }) {
         <Layout.Section>
           <BlockStack gap="400">
             <InlineStack gap="200">
-              {Object.entries(RANGES).map(([k, label]) => (
+              {ranges.map(([k, label]) => (
                 <Badge key={k} tone={k === rangeKey ? "info" : undefined}>
                   <button
                     type="button"
@@ -886,8 +911,8 @@ function DashboardView({ d }: { d: PageData }) {
               <Card background="bg-surface-secondary">
                 <BlockStack gap="300">
                   <Checkbox
-                    label={`Summera alla ${groupSize} butiker`}
-                    helpText={`Räknar ihop alla ihopkopplade butiker till en kalkyl i ${currency}, med dagskurs.`}
+                    label={T.dashboard.combineStores(groupSize)}
+                    helpText={T.dashboard.combineHelp(currency)}
                     checked={Boolean(group)}
                     onChange={(v) => {
                       const nya = new URLSearchParams(params);
@@ -901,16 +926,16 @@ function DashboardView({ d }: { d: PageData }) {
                     <BlockStack gap="300">
                       <InlineGrid columns={{ xs: 2, sm: 4 }} gap="300">
                         {[
-                          { label: "Försäljning", value: money(group.totals.totalSales) },
-                          { label: "Ordrar", value: nf.format(group.totals.orders) },
-                          { label: "Annonskostnad", value: money(group.totals.spend) },
-                          { label: "Nettovinst", value: money(group.totals.netProfit) },
+                          { key: "sales", label: T.dashboard.kpi.sales, value: money(group.totals.totalSales) },
+                          { key: "orders", label: T.dashboard.kpi.orders, value: nf.format(group.totals.orders) },
+                          { key: "spend", label: T.dashboard.kpi.adSpend, value: money(group.totals.spend) },
+                          { key: "profit", label: T.dashboard.kpi.netProfit, value: money(group.totals.netProfit) },
                         ].map((k) => (
-                          <Card key={k.label}>
+                          <Card key={k.key}>
                             <BlockStack gap="100">
                               <Text as="span" variant="bodySm" tone="subdued">{k.label}</Text>
                               <Text as="span" variant="headingLg"
-                                tone={k.label === "Nettovinst" ? (group.totals.netProfit >= 0 ? "success" : "critical") : undefined}>
+                                tone={k.key === "profit" ? (group.totals.netProfit >= 0 ? "success" : "critical") : undefined}>
                                 {k.value}
                               </Text>
                             </BlockStack>
@@ -921,7 +946,7 @@ function DashboardView({ d }: { d: PageData }) {
                       <Card padding="0">
                         <DataTable
                           columnContentTypes={["text", "text", "numeric", "numeric", "numeric"]}
-                          headings={["Butik", "Valuta", "Försäljning", "Annonser", "Nettovinst"]}
+                          headings={[T.dashboard.thStore, T.dashboard.thCurrency, T.dashboard.thSales, T.dashboard.thAds, T.dashboard.thNetProfit]}
                           rows={group.rows.map((r) => [
                             r.shop.replace(/\.myshopify\.com$/, ""),
                             r.currency,
@@ -934,7 +959,7 @@ function DashboardView({ d }: { d: PageData }) {
                       </Card>
 
                       {group.missing.length ? (
-                        <Banner tone="warning" title={`${group.missing.length} butik(er) är inte med i summan`}>
+                        <Banner tone="warning" title={T.dashboard.missingStores(group.missing.length)}>
                           {group.missing.map((m) => (
                             <p key={m.shop}>
                               {m.shop.replace(/\.myshopify\.com$/, "")}: {m.reason}
@@ -950,7 +975,7 @@ function DashboardView({ d }: { d: PageData }) {
 
             {dataAgeMin > 0 ? (
               <Text as="span" variant="bodySm" tone="subdued">
-                {`Siffrorna uppdaterades för ${dataAgeMin} min sedan${refreshing ? " — ny hämtning pågår i bakgrunden, ladda om strax" : ""}.`}
+                {T.dashboard.updatedAgo(dataAgeMin, refreshing)}
               </Text>
             ) : null}
 
@@ -961,47 +986,42 @@ function DashboardView({ d }: { d: PageData }) {
                 costsHint={costsHint}
                 currency={currency}
                 tariffPerOrder={tariffPerOrder}
+                T={T}
+                dec={dec}
               />
             ) : null}
 
             {spendError ? <Banner tone="warning">{spendError}</Banner> : null}
 
             {spendCurrencyMismatch ? (
-              <Banner tone="critical" title="Annonskostnaden kunde inte räknas om">
-                Annonskontot redovisar i {spendCurrencyMismatch.spend}, butiken i{" "}
-                {spendCurrencyMismatch.shop}, och växelkursen gick inte att hämta just nu.
-                Beloppen räknas därför ihop som om de vore samma valuta — nettovinst, MER och CPA
-                stämmer inte förrän kursen är tillgänglig igen. Ladda om om en stund.
+              <Banner tone="critical" title={T.dashboard.fxTitle}>
+                {T.dashboard.fxBody(spendCurrencyMismatch.spend, spendCurrencyMismatch.shop)}
               </Banner>
             ) : null}
 
             {spendConverted ? (
               <Text as="span" variant="bodySm" tone="subdued">
-                {`Annonskostnaden betalas i ${spendConverted.from} och räknas om till ${spendConverted.to} med kursen för respektive dag.`}
+                {T.dashboard.convertedNote(spendConverted.from, spendConverted.to)}
               </Text>
             ) : null}
 
-            {!t.spendComplete ? (
-              <Banner tone="critical" title="Täckningsbidraget är för högt">
-                Annonskostnad saknas för {t.missingSpendDays.join(", ")}. De dagarna räknas som noll
-                i annonskostnad, vilket gör vinsten missvisande.
+            {!t2.spendComplete ? (
+              <Banner tone="critical" title={T.dashboard.spendMissingTitle}>
+                {T.dashboard.spendMissingBody(t2.missingSpendDays.join(", "))}
               </Banner>
             ) : null}
 
-            {t.unitsWithoutCost > 0 ? (
-              <Banner tone="warning" title="Kostnad saknas">
-                {t.unitsWithoutCost} sålda enheter har ingen inköpskostnad i Shopify. De räknas som
-                gratis, så COGS är för låg och vinsten för hög. Fyll i under Kostnader.
+            {t2.unitsWithoutCost > 0 ? (
+              <Banner tone="warning" title={T.dashboard.costMissingTitle}>
+                {T.dashboard.costMissingBody(t2.unitsWithoutCost)}
               </Banner>
             ) : null}
 
             {result.appliedCostChanges.map((c) => (
               <Banner key={c.note} tone="info">
                 {c.weight >= 0.999
-                  ? `COGS: ${c.note}.`
-                  : `COGS: ${c.note} — perioden spänner över brytdatumet, kostnaden är vägd ` +
-                    `${Math.round(c.weight * 100)} % ny / ${Math.round((1 - c.weight) * 100)} % gammal ` +
-                    `efter omsättning per dag.`}
+                  ? T.dashboard.cogsChange(c.note)
+                  : T.dashboard.cogsChangeWeighted(c.note, Math.round(c.weight * 100), Math.round((1 - c.weight) * 100))}
               </Banner>
             ))}
 
@@ -1026,21 +1046,21 @@ function DashboardView({ d }: { d: PageData }) {
             <InlineGrid columns={{ xs: 1, md: 2 }} gap="300">
               <Card>
                 <BlockStack gap="300">
-                  <Text as="h2" variant="headingMd">Visuell uppdelning</Text>
-                  <Donut t={t} money={money} />
+                  <Text as="h2" variant="headingMd">{T.dashboard.visualTitle}</Text>
+                  <Donut t={t2} money={money} T={T} lang={lang} />
                 </BlockStack>
               </Card>
               <Card>
                 <BlockStack gap="300">
-                  <Text as="h2" variant="headingMd">Detaljerad uppdelning</Text>
-                  <BreakdownRow label="Omsättning" value={t.totalSales} bold money={money} />
-                  <BreakdownRow label="Produktkostnad" value={-t.cogs} colorKey="cogs" money={money} ofRevenue={t.totalSales > 0 ? t.cogs / t.totalSales : undefined} />
-                  <BreakdownRow label="Tull" value={-t.tariff} colorKey="tariff" money={money} ofRevenue={t.totalSales > 0 ? t.tariff / t.totalSales : undefined} />
-                  <BreakdownRow label="Transaktionsavgifter" value={-t.fees} colorKey="fees" money={money} ofRevenue={t.totalSales > 0 ? t.fees / t.totalSales : undefined} />
-                  <BreakdownRow label="Bruttovinst" value={t.grossProfit} bold money={money} ofRevenue={t.totalSales > 0 ? t.grossProfit / t.totalSales : undefined} />
-                  <BreakdownRow label="Annonser" value={-t.spend} colorKey="spend" money={money} ofRevenue={t.totalSales > 0 ? t.spend / t.totalSales : undefined} />
-                  <BreakdownRow label="Fasta kostnader" value={-t.fixedCosts} colorKey="fixed" money={money} ofRevenue={t.totalSales > 0 ? t.fixedCosts / t.totalSales : undefined} />
-                  <BreakdownRow label="Nettovinst" value={t.netProfit} bold colorKey="profit" money={money} ofRevenue={t.totalSales > 0 ? t.netProfit / t.totalSales : undefined} />
+                  <Text as="h2" variant="headingMd">{T.dashboard.detailTitle}</Text>
+                  <BreakdownRow label={T.dashboard.revenue} value={t2.totalSales} bold money={money} dec={dec} />
+                  <BreakdownRow label={T.dashboard.productCost} value={-t2.cogs} colorKey="cogs" money={money} dec={dec} ofRevenue={t2.totalSales > 0 ? t2.cogs / t2.totalSales : undefined} />
+                  <BreakdownRow label={T.dashboard.kpi.duty} value={-t2.tariff} colorKey="tariff" money={money} dec={dec} ofRevenue={t2.totalSales > 0 ? t2.tariff / t2.totalSales : undefined} />
+                  <BreakdownRow label={T.dashboard.txFees} value={-t2.fees} colorKey="fees" money={money} dec={dec} ofRevenue={t2.totalSales > 0 ? t2.fees / t2.totalSales : undefined} />
+                  <BreakdownRow label={T.dashboard.grossProfit} value={t2.grossProfit} bold money={money} dec={dec} ofRevenue={t2.totalSales > 0 ? t2.grossProfit / t2.totalSales : undefined} />
+                  <BreakdownRow label={T.dashboard.ads} value={-t2.spend} colorKey="spend" money={money} dec={dec} ofRevenue={t2.totalSales > 0 ? t2.spend / t2.totalSales : undefined} />
+                  <BreakdownRow label={T.dashboard.kpi.fixedCosts} value={-t2.fixedCosts} colorKey="fixed" money={money} dec={dec} ofRevenue={t2.totalSales > 0 ? t2.fixedCosts / t2.totalSales : undefined} />
+                  <BreakdownRow label={T.dashboard.kpi.netProfit} value={t2.netProfit} bold colorKey="profit" money={money} dec={dec} ofRevenue={t2.totalSales > 0 ? t2.netProfit / t2.totalSales : undefined} />
                 </BlockStack>
               </Card>
             </InlineGrid>
@@ -1048,11 +1068,11 @@ function DashboardView({ d }: { d: PageData }) {
             {result.sales.length > 1 ? (
               <Card>
                 <BlockStack gap="200">
-                  <Text as="h2" variant="headingMd">Vinst per dag</Text>
+                  <Text as="h2" variant="headingMd">{T.dashboard.profitPerDay}</Text>
                   <Text as="span" variant="bodySm" tone="subdued">
-                    COGS, avgifter och tull fördelade per dags omsättning — uppskattning, inte bokföring.
+                    {T.dashboard.profitPerDayNote}
                   </Text>
-                  <ProfitBars result={result} money={money} />
+                  <ProfitBars result={result} money={money} T={T} />
                 </BlockStack>
               </Card>
             ) : null}
@@ -1063,12 +1083,20 @@ function DashboardView({ d }: { d: PageData }) {
           <Card padding="0">
             <DataTable
               columnContentTypes={["text", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"]}
-              headings={["Produkt", "Enheter", "Netto", "COGS", "TB", "Marginal", "Multipel"]}
+              headings={[
+                T.dashboard.thProduct,
+                T.dashboard.thUnits,
+                T.dashboard.thNet,
+                T.dashboard.thCogs,
+                T.dashboard.thCm,
+                T.dashboard.thMargin,
+                T.dashboard.thMultiple,
+              ]}
               rows={result.products.map((p) => [
                 p.variantTitle ? `${p.title} · ${p.variantTitle}` : p.title,
                 nf.format(p.units),
                 money(p.netSales),
-                p.cogs == null ? "saknas" : money(p.cogs) + (p.blend ? " ✦" : ""),
+                p.cogs == null ? T.dashboard.missing : money(p.cogs) + (p.blend ? " ✦" : ""),
                 p.contribution == null ? "—" : money(p.contribution),
                 p.margin == null ? "—" : pct(p.margin),
                 p.multiple == null ? "—" : mult(p.multiple),

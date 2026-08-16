@@ -11,6 +11,8 @@ import {
   billingExemptShops,
   STANDARD_PLAN,
 } from "../shopify.server";
+import prisma from "../db.server";
+import { asLang, t } from "../lib/texts";
 
 export const links = () => [{ rel: "stylesheet", href: polarisStyles }];
 
@@ -28,19 +30,27 @@ export async function loader({ request }: LoaderFunctionArgs) {
     });
   }
 
-  return json({ apiKey: process.env.SHOPIFY_API_KEY || "" });
+  // Språket styr nav-menyns etiketter — upsert så att raden alltid finns.
+  const settings = await prisma.shopSettings.upsert({
+    where: { shop: session.shop },
+    create: { shop: session.shop },
+    update: {},
+  });
+
+  return json({ apiKey: process.env.SHOPIFY_API_KEY || "", lang: asLang(settings.language) });
 }
 
 export default function App() {
-  const { apiKey } = useLoaderData<typeof loader>();
+  const { apiKey, lang } = useLoaderData<typeof loader>();
+  const T = t(lang);
   return (
     <AppProvider isEmbeddedApp apiKey={apiKey}>
       <NavMenu>
-        <Link to="/app" rel="home">Vinst</Link>
-        <Link to="/app/costs">Kostnader</Link>
-        <Link to="/app/fixed">Fasta kostnader</Link>
-        <Link to="/app/butiker">Butiker</Link>
-        <Link to="/app/settings">Inställningar</Link>
+        <Link to="/app" rel="home">{T.nav.profit}</Link>
+        <Link to="/app/costs">{T.nav.costs}</Link>
+        <Link to="/app/fixed">{T.nav.fixedCosts}</Link>
+        <Link to="/app/butiker">{T.nav.stores}</Link>
+        <Link to="/app/settings">{T.nav.settings}</Link>
       </NavMenu>
       <Outlet />
     </AppProvider>

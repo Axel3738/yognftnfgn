@@ -240,11 +240,11 @@ async function runOrdersBulk(
       await waitForBulk(admin, 120_000).catch(() => {});
       continue;
     }
-    throw new Error(`Kunde inte starta orderexporten: ${lastErr}`);
+    throw new Error(`Could not start the order export: ${lastErr}`);
   }
   if (lastErr) {
     throw new Error(
-      "En annan orderexport pågår fortfarande — vänta en halv minut och ladda om sidan.",
+      "Another order export is still running — wait half a minute and reload the page.",
     );
   }
 
@@ -252,7 +252,7 @@ async function runOrdersBulk(
   if (!url) return []; // export klar men noll objekt
 
   const dl = await fetch(url);
-  if (!dl.ok) throw new Error(`Kunde inte hämta exportfilen (HTTP ${dl.status}).`);
+  if (!dl.ok) throw new Error(`Could not download the export file (HTTP ${dl.status}).`);
   const text = await dl.text();
   return text
     .split("\n")
@@ -271,13 +271,13 @@ async function waitForBulk(admin: AdminApiContext, timeoutMs: number): Promise<s
     );
     const body = await res.json();
     const op = body?.data?.currentBulkOperation;
-    if (!op) throw new Error("Ingen bulk-operation hittades.");
+    if (!op) throw new Error("No bulk operation found.");
     if (op.status === "COMPLETED") return op.url ?? null;
     if (op.status === "FAILED" || op.status === "CANCELED") {
-      throw new Error(`Orderexporten misslyckades: ${op.errorCode ?? op.status}`);
+      throw new Error(`The order export failed: ${op.errorCode ?? op.status}`);
     }
     if (Date.now() - start > timeoutMs) {
-      throw new Error("Orderexporten tog för lång tid — prova att ladda om om en stund.");
+      throw new Error("The order export took too long — try reloading in a moment.");
     }
   }
 }

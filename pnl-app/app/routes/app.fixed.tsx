@@ -22,15 +22,20 @@ import {
 
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
+import { asLang, localeOf, t } from "../lib/texts";
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const { session } = await authenticate.admin(request);
-  const rows = await prisma.fixedCost.findMany({
-    where: { shop: session.shop },
-    orderBy: { createdAt: "asc" },
-  });
+  const [rows, settings] = await Promise.all([
+    prisma.fixedCost.findMany({
+      where: { shop: session.shop },
+      orderBy: { createdAt: "asc" },
+    }),
+    prisma.shopSettings.findUnique({ where: { shop: session.shop } }),
+  ]);
   const monthlyTotal = rows.reduce((a, r) => a + Number(r.monthlyAmount), 0);
   return json({
+    lang: asLang(settings?.language),
     rows: rows.map((r) => ({ id: r.id, name: r.name, monthlyAmount: Number(r.monthlyAmount) })),
     monthlyTotal,
     dailyTotal: (monthlyTotal * 12) / 365,
@@ -53,7 +58,9 @@ export async function action({ request }: ActionFunctionArgs) {
   const name = String(f.get("name") ?? "").trim();
   const amount = parseFloat(String(f.get("monthlyAmount") ?? "").replace(",", "."));
   if (!name || !Number.isFinite(amount) || amount < 0) {
-    return json({ ok: false, message: "Ange ett namn och en kostnad i kronor per månad." }, { status: 400 });
+    // Felet visas i UI:t — hämta butikens språk för meddelandet.
+    const settings = await prisma.shopSettings.findUnique({ where: { shop: session.shop } });
+    return json({ ok: false, message: t(asLang(settings?.language)).fixed.errInvalid }, { status: 400 });
   }
   await prisma.fixedCost.create({
     data: { shop: session.shop, name, monthlyAmount: amount },
@@ -62,12 +69,13 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 export default function FixedCosts() {
-  const { rows, monthlyTotal, dailyTotal } = useLoaderData<typeof loader>();
+  const { lang, rows, monthlyTotal, dailyTotal } = useLoaderData<typeof loader>();
   const fetcher = useFetcher<typeof action>();
   const [name, setName] = useState("");
   const [amount, setAmount] = useState("");
+  const T = t(lang);
 
-  const nf = new Intl.NumberFormat("sv-SE", { maximumFractionDigits: 0 });
+  const nf = new Intl.NumberFormat(localeOf(lang), { maximumFractionDigits: 0 });
 
   const submit = () => {
     fetcher.submit({ intent: "add", name, monthlyAmount: amount }, { method: "POST" });
@@ -77,41 +85,40 @@ export default function FixedCosts() {
 
   return (
     <Page
-      title="Fasta kostnader"
-      subtitle={`${nf.format(monthlyTotal)} kr/månad → ${nf.format(dailyTotal)} kr/dag i kalkylen`}
+      title={T.fixed.title}
+      subtitle={T.fixed.subtitle(nf.format(monthlyTotal), nf.format(dailyTotal))}
     >
       <Layout>
         <Layout.Section>
           <Card>
             <BlockStack gap="300">
               <Text as="h2" variant="headingMd">
-                Lägg till kostnad
+                {T.fixed.addTitle}
               </Text>
               <Text as="p" tone="subdued">
-                Abonnemang, appar, anställda, bokföring — allt som kostar per månad oavsett
-                försäljning. Summan slås ut per dag och dras från nettovinsten.
+                {T.fixed.addBody}
               </Text>
               <InlineStack gap="300" blockAlign="end" wrap>
                 <div style={{ minWidth: 220, flex: 1 }}>
                   <TextField
-                    label="Namn"
+                    label={T.fixed.nameLabel}
                     value={name}
                     onChange={setName}
                     autoComplete="off"
-                    placeholder="t.ex. Shopify-abonnemang"
+                    placeholder={T.fixed.namePlaceholder}
                   />
                 </div>
                 <div style={{ minWidth: 140 }}>
                   <TextField
-                    label="Kostnad (kr/månad)"
+                    label={T.fixed.amountLabel}
                     value={amount}
                     onChange={setAmount}
                     autoComplete="off"
-                    placeholder="299"
+                    placeholder={T.fixed.amountPlaceholder}
                   />
                 </div>
                 <Button variant="primary" onClick={submit} loading={fetcher.state !== "idle"}>
-                  Lägg till
+                  {T.fixed.add}
                 </Button>
               </InlineStack>
               {fetcher.data && !fetcher.data.ok ? (
@@ -126,7 +133,7 @@ export default function FixedCosts() {
             {rows.length ? (
               <DataTable
                 columnContentTypes={["text", "numeric", "numeric", "text"]}
-                headings={["Namn", "Kr/månad", "Kr/dag", ""]}
+                headings={[T.fixed.thName, T.fixed.thMonthly, T.fixed.thDaily, ""]}
                 rows={rows.map((r) => [
                   r.name,
                   nf.format(r.monthlyAmount),
@@ -139,16 +146,15 @@ export default function FixedCosts() {
                       fetcher.submit({ intent: "delete", id: r.id }, { method: "POST" })
                     }
                   >
-                    Ta bort
+                    {T.fixed.remove}
                   </Button>,
                 ])}
-                totals={[`${rows.length} poster`, nf.format(monthlyTotal), nf.format(dailyTotal), ""]}
+                totals={[T.fixed.totalRows(rows.length), nf.format(monthlyTotal), nf.format(dailyTotal), ""]}
               />
             ) : (
               <div style={{ padding: 16 }}>
                 <Text as="p" tone="subdued">
-                  Inga fasta kostnader inlagda än. Nettovinsten räknas utan dem tills du lägger
-                  till några.
+                  {T.fixed.empty}
                 </Text>
               </div>
             )}

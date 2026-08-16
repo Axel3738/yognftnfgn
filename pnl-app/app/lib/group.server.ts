@@ -15,6 +15,7 @@
 import prisma from "../db.server";
 import { compute } from "./pnl.server";
 import { rate } from "./fx.server";
+import { t, type Lang } from "./texts";
 
 export interface GroupTotals {
   totalSales: number;
@@ -46,7 +47,10 @@ export async function summeraGrupp(
   from: string,
   to: string,
   visaValuta: string,
+  lang: Lang = "en",
 ): Promise<GroupResult> {
+  // Skälen i `missing` visas i UI:t — de följer den betraktande butikens språk.
+  const T = t(lang);
   const medlemmar = await prisma.shopSettings.findMany({ where: { groupId }, orderBy: { shop: "asc" } });
   const totals = noll();
   const rows: GroupResult["rows"] = [];
@@ -57,13 +61,13 @@ export async function summeraGrupp(
       where: { shop_key: { shop: m.shop, key: cacheKey } },
     });
     if (!cached) {
-      missing.push({ shop: m.shop, reason: "inga sparade siffror för perioden — öppna butikens panel en gång" });
+      missing.push({ shop: m.shop, reason: T.group.noCachedData });
       continue;
     }
 
     const kurs = await rate(m.currency, visaValuta);
     if (kurs == null) {
-      missing.push({ shop: m.shop, reason: `växelkurs ${m.currency}→${visaValuta} kunde inte hämtas` });
+      missing.push({ shop: m.shop, reason: T.group.fxUnavailable(m.currency, visaValuta) });
       continue;
     }
 

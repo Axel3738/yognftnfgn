@@ -29,6 +29,7 @@ import {
 
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
+import { asLang, t } from "../lib/texts";
 
 const KOD_MINUTER = 30;
 const namn = (shop: string) => shop.replace(/\.myshopify\.com$/, "");
@@ -56,6 +57,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
   });
 
   return json({
+    lang: asLang(mig.language),
     shop: session.shop,
     butiker: gruppen.map((g) => ({
       shop: g.shop,
@@ -71,9 +73,11 @@ export async function action({ request }: ActionFunctionArgs) {
   const { session } = await authenticate.admin(request);
   const form = await request.formData();
   const intent = String(form.get("intent"));
+  // Meddelandena visas i UI:t — hämta butikens språk först.
+  const mig = await prisma.shopSettings.findUnique({ where: { shop: session.shop } });
+  const T = t(asLang(mig?.language));
 
   if (intent === "kod") {
-    const mig = await prisma.shopSettings.findUnique({ where: { shop: session.shop } });
     // Först ut skapar gruppen; nästa butik ansluter till den.
     let groupId = mig?.groupId;
     if (!groupId) {
@@ -94,23 +98,19 @@ export async function action({ request }: ActionFunctionArgs) {
         expiresAt: new Date(Date.now() + KOD_MINUTER * 60 * 1000),
       },
     });
-    return json({ ok: true, message: `Kod skapad: ${kod}. Giltig i ${KOD_MINUTER} minuter.` });
+    return json({ ok: true, message: T.stores.codeCreated(kod, KOD_MINUTER) });
   }
 
   if (intent === "los-in") {
     const kod = String(form.get("code") ?? "").trim().toUpperCase();
     const rad = await prisma.storeLinkCode.findUnique({ where: { code: kod } });
     if (!rad || rad.expiresAt < new Date()) {
-      return json(
-        { ok: false, message: "Koden gäller inte längre. Skapa en ny — koden går ut efter 30 minuter." },
-        { status: 400 },
-      );
+      return json({ ok: false, message: T.stores.codeInvalid }, { status: 400 });
     }
     if (rad.createdBy === session.shop) {
-      return json({ ok: false, message: "Koden skapades i den här butiken. Lös in den i en annan." }, { status: 400 });
+      return json({ ok: false, message: T.stores.codeOwn }, { status: 400 });
     }
 
-    const mig = await prisma.shopSettings.findUnique({ where: { shop: session.shop } });
     let antal = 1;
     if (mig?.groupId && mig.groupId !== rad.groupId) {
       /* Butiken hör redan till en grupp. Att bara flytta den hade lämnat dess
@@ -138,47 +138,40 @@ export async function action({ request }: ActionFunctionArgs) {
     const total = await prisma.shopSettings.count({ where: { groupId: rad.groupId } });
     return json({
       ok: true,
-      message:
-        (antal > 1
-          ? `${antal} butiker slogs ihop med gruppen. `
-          : "Butiken är tillagd. ") +
-        `${total} butiker är nu ihopkopplade. Koden fungerar i fler butiker tills den går ut — lös in den i nästa direkt.`,
+      message: (antal > 1 ? T.stores.merged(antal) : T.stores.added) + T.stores.nowLinked(total),
     });
   }
 
   if (intent === "koppla-loss") {
     await prisma.shopSettings.update({ where: { shop: session.shop }, data: { groupId: null } });
-    return json({ ok: true, message: "Butiken är frånkopplad. Ingen data raderades." });
+    return json({ ok: true, message: T.stores.unlinked });
   }
 
-  return json({ ok: false, message: "Okänd åtgärd." }, { status: 400 });
+  return json({ ok: false, message: T.stores.unknownAction }, { status: 400 });
 }
 
 export default function Butiker() {
-  const { butiker, kopplad, aktivKod } = useLoaderData<typeof loader>();
+  const { lang, butiker, kopplad, aktivKod } = useLoaderData<typeof loader>();
   const fetcher = useFetcher<typeof action>();
   const [kod, setKod] = useState("");
   const busy = fetcher.state !== "idle";
+  const T = t(lang);
 
   return (
     <Page
-      title="Butiker"
-      subtitle={
-        kopplad
-          ? `${butiker.length} butiker ihopkopplade — summera dem på Vinst-sidan`
-          : "Koppla ihop dina butiker för att se dem i en gemensam kalkyl"
-      }
+      title={T.stores.title}
+      subtitle={kopplad ? T.stores.subtitleLinked(butiker.length) : T.stores.subtitleUnlinked}
     >
       <Layout>
         <Layout.Section>
           <Card padding="0">
             <DataTable
               columnContentTypes={["text", "text", "text"]}
-              headings={["Butik", "Valuta", ""]}
+              headings={[T.stores.thStore, T.stores.thCurrency, ""]}
               rows={butiker.map((b) => [
                 namn(b.shop),
                 b.currency,
-                b.jag ? <Badge key={b.shop} tone="info">den här</Badge> : "",
+                b.jag ? <Badge key={b.shop} tone="info">{T.stores.thisOne}</Badge> : "",
               ])}
             />
           </Card>
@@ -187,12 +180,9 @@ export default function Butiker() {
         <Layout.Section>
           <Card>
             <BlockStack gap="300">
-              <Text as="h2" variant="headingMd">Lägg till en butik</Text>
+              <Text as="h2" variant="headingMd">{T.stores.addTitle}</Text>
               <Text as="p" tone="subdued">
-                Gör så här: skapa en kod här, öppna appen i nästa butik, gå till Butiker och lös
-                in koden där. <strong>Samma kod fungerar i alla butiker du hinner med på 30
-                minuter</strong> — skapa en, lös in den i tur och ordning. Koden är enda beviset
-                på att butikerna är dina, därför kopplas ingenting ihop automatiskt.
+                {T.stores.addBody}
               </Text>
 
               <InlineStack gap="300" blockAlign="center" wrap>
@@ -200,7 +190,7 @@ export default function Butiker() {
                   loading={busy}
                   onClick={() => fetcher.submit({ intent: "kod" }, { method: "POST" })}
                 >
-                  Skapa kod
+                  {T.stores.createCode}
                 </Button>
                 {aktivKod ? (
                   <Text as="span" variant="headingLg">
@@ -209,11 +199,11 @@ export default function Butiker() {
                 ) : null}
               </InlineStack>
 
-              <Text as="h3" variant="headingSm">…eller lös in en kod härifrån</Text>
+              <Text as="h3" variant="headingSm">{T.stores.redeemTitle}</Text>
               <InlineStack gap="300" blockAlign="end" wrap>
                 <div style={{ minWidth: 180 }}>
                   <TextField
-                    label="Kod"
+                    label={T.stores.codeLabel}
                     labelHidden
                     value={kod}
                     onChange={(v) => setKod(v.toUpperCase())}
@@ -227,7 +217,7 @@ export default function Butiker() {
                   loading={busy}
                   onClick={() => fetcher.submit({ intent: "los-in", code: kod }, { method: "POST" })}
                 >
-                  Koppla ihop
+                  {T.stores.link}
                 </Button>
               </InlineStack>
 
@@ -242,10 +232,9 @@ export default function Butiker() {
           <Layout.Section>
             <Card>
               <BlockStack gap="300">
-                <Text as="h2" variant="headingMd">Koppla loss</Text>
+                <Text as="h2" variant="headingMd">{T.stores.unlinkTitle}</Text>
                 <Text as="p" tone="subdued">
-                  Tar bort den här butiken ur gruppen. Ingen data raderas — bara den gemensamma
-                  vyn slutar visa den.
+                  {T.stores.unlinkBody}
                 </Text>
                 <InlineStack>
                   <Button
@@ -253,7 +242,7 @@ export default function Butiker() {
                     loading={busy}
                     onClick={() => fetcher.submit({ intent: "koppla-loss" }, { method: "POST" })}
                   >
-                    Koppla loss den här butiken
+                    {T.stores.unlinkButton}
                   </Button>
                 </InlineStack>
               </BlockStack>

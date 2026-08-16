@@ -33,19 +33,19 @@ export default function Login() {
 
   return (
     <main style={{ fontFamily: "system-ui", maxWidth: 420, margin: "10vh auto", padding: 16 }}>
-      <h1 style={{ fontSize: 20 }}>Installera P&L</h1>
+      <h1 style={{ fontSize: 20 }}>Install P&L</h1>
       <p style={{ color: "#555" }}>
-        Ange butikens .myshopify.com-domän så skickas du till Shopifys godkännandesida.
+        Enter your store's .myshopify.com domain and you'll be sent to Shopify's approval page.
       </p>
       <Form method="post">
         <label style={{ display: "block", marginBottom: 8 }}>
-          Butiksdomän
+          Store domain
           <input
             type="text"
             name="shop"
             value={shop}
             onChange={(e) => setShop(e.target.value)}
-            placeholder="min-butik.myshopify.com"
+            placeholder="my-store.myshopify.com"
             style={{ display: "block", width: "100%", padding: 8, marginTop: 4 }}
           />
         </label>
@@ -53,7 +53,7 @@ export default function Login() {
           <p style={{ color: "#b00" }}>{(errors as { shop?: string }).shop}</p>
         ) : null}
         <button type="submit" style={{ padding: "8px 16px" }}>
-          Installera
+          Install
         </button>
       </Form>
     </main>

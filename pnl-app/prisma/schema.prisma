@@ -47,6 +47,9 @@ model ShopSettings {
   /// Butikens tidszon. Cachad för att slippa ett GraphQL-anrop per sidladdning
   /// — den ändras i praktiken aldrig, men avgör vad "idag" betyder.
   timezone        String?
+  /// UI-språk: "en" eller "sv". Engelska är standard för nya installationer
+  /// (App Store-krav i praktiken); befintliga butiker migrerades till "sv".
+  language        String   @default("en")
   /// Sätts när handlaren sparat inställningarna minst en gång. Skiljer
   /// "har granskat tull och avgifter" från "kör fortfarande på defaults".
   settingsSavedAt DateTime?

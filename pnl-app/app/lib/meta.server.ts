@@ -50,7 +50,7 @@ async function fetchInsights(cfg: MetaConfig, since: string, until: string): Pro
   if (!res.ok) {
     const err = body?.error ?? {};
     // 190 = token utgången/återkallad. Allt annat är oftast rate limit eller fel konto.
-    throw new MetaError(err.message ?? `Meta svarade ${res.status}`, err.code, err.code === 190);
+    throw new MetaError(err.message ?? `Meta responded ${res.status}`, err.code, err.code === 190);
   }
   return body?.data ?? [];
 }
@@ -159,7 +159,7 @@ export async function getSpend(
         impressions: r.impressions,
         clicks: r.clicks,
       })),
-      error: cached.length ? undefined : "Meta är inte kopplat — annonskostnad saknas.",
+      error: cached.length ? undefined : "Meta is not connected — ad spend is missing.",
     };
   }
 
@@ -219,8 +219,8 @@ export async function getSpend(
     } catch (e) {
       const msg =
         e instanceof MetaError && e.needsReauth
-          ? "Meta-token har gått ut — koppla om under Inställningar."
-          : `Kunde inte hämta annonskostnad: ${(e as Error).message}`;
+          ? "The Meta token has expired — reconnect under Settings."
+          : `Could not fetch ad spend: ${(e as Error).message}`;
       return {
         days: [...byDay.values()].map((r: any) => ({
           day: typeof r.day === "string" ? r.day : iso(r.day),
