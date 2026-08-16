@@ -1,29 +1,31 @@
-# Fyll i client_id från Partners → Appdistribution → din app.
-# application_url sätts till hostingens URL (t.ex. https://pnl.fly.dev).
-name = "P&L"
-handle = "pnl"
-client_id = ""
-application_url = ""
+# StonePNL — publika App Store-appen. Deployas med `shopify app deploy`;
+# efterlevnads-webhookarna kan bara konfigureras den här vägen.
+name = "StonePNL"
+client_id = "8200cbe4502be19ac6ebe75ac65e3ad2"
+application_url = "https://pnl-app-store-production.up.railway.app"
 embedded = true
 
 [access_scopes]
-# read_reports krävs för ShopifyQL. write_inventory krävs för att skriva unitCost.
 scopes = "read_products,read_orders,read_inventory,read_reports,write_inventory"
 
 [auth]
-redirect_urls = [ "https://REPLACE.fly.dev/auth/callback" ]
+redirect_urls = [
+  "https://pnl-app-store-production.up.railway.app/auth/callback",
+  "https://pnl-app-store-production.up.railway.app/auth/shopify/callback",
+  "https://pnl-app-store-production.up.railway.app/api/auth/callback"
+]
 
 [webhooks]
 api_version = "2026-07"
 
   [[webhooks.subscriptions]]
   topics = [ "app/uninstalled" ]
-  uri = "/webhooks"
+  uri = "https://pnl-app-store-production.up.railway.app/webhooks"
 
-  # Obligatoriska för App Store-granskning.
+  # Obligatoriska för App Store — dashboarden saknar UI för dessa.
   [[webhooks.subscriptions]]
-  topics = [ "customers/data_request", "customers/redact", "shop/redact" ]
-  uri = "/webhooks"
+  compliance_topics = [ "customers/data_request", "customers/redact", "shop/redact" ]
+  uri = "https://pnl-app-store-production.up.railway.app/webhooks"
 
 [build]
-automatically_update_urls_on_dev = true
+automatically_update_urls_on_dev = false
