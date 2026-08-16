@@ -36,6 +36,21 @@ Kampanj vid launch: `CLIN_SALES_YYYYMMDD`, adset `broad_advplus_purchase`.
 4. **#1 (foilstop)** — bred mönsterbrytare
 5. Därefter #7, #8, #4, #5
 
+## Google Docs till redigerarna (skapade 2026-08-16, ägare axelodhner.business@gmail.com)
+
+Mapp: https://drive.google.com/drive/folders/1bngbhLtel48RGevXrNhlqOqZgyqx8tJZ
+
+| Ad | Doc |
+|---|---|
+| 1 foilstop | https://docs.google.com/document/d/13shxi2-s89moruD11jpq6TdJofQjGgfhEMYZ5RDB_L4 |
+| 2 familia | https://docs.google.com/document/d/109-b5Uhy-wdDkQ27D3eRAHSCn9sQHK4b_B04xIza8ZQ |
+| 3 crudoquemado ⭐ | https://docs.google.com/document/d/1bXlmKgILBbAcNAxm7Am5zRtMl_tHzakerKzATp6sn-0 |
+| 4 plancha | https://docs.google.com/document/d/1I2cWnVxr43bGqLBGHGk4IozsNwsGIy-50WIjCL5WR0E |
+| 5 quickrec | https://docs.google.com/document/d/1RW7pX5RD_HTRO0xwnnCQmjleKUJB84kL4vBarDRWZVY |
+| 6 top3 | https://docs.google.com/document/d/1pOARsyiuWA2QPEB8SWG64BK4H49fSjNL7WC7XTABs34 |
+| 7 dinero | https://docs.google.com/document/d/1OeSB3jPbhP_UCSudIoXjq-vVTf7WJzARoshvRCQhJ1I |
+| 8 sazon | https://docs.google.com/document/d/1xa3aPNkT502n0UPAvI9qqKW_PwRwf_dZx-ZLZ5py-20 |
+
 ## Kvar att göra
 
 - [x] Spanska VO-manus från copy-subagent (sonnet, tre-frågorstestet redovisat per manus) → inlagda i brieferna
