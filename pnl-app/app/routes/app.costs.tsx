@@ -61,10 +61,15 @@ export async function action({ request }: ActionFunctionArgs) {
   const parseLine = (line: string) => {
     let parts = line.split(/[;\t]/).map((x) => x.trim());
     if (parts.length < 2) parts = line.split(/\s{2,}/).map((x) => x.trim());
-    const cost = parseFloat((parts[parts.length - 1] ?? "").replace(",", "."));
+    /* Mallen har fyra kolumner: titel;variant;kostnad;pris. Priset finns med
+       som referens — det gör mallen matchbar mellan butiker på olika språk,
+       där titeln inte hjälper — men det är kostnaden som ska skrivas.
+       Tre kolumner är det handskrivna formatet: sista kolumnen är kostnaden. */
+    const fyra = parts.length >= 4;
+    const cost = parseFloat((fyra ? parts[2] : parts[parts.length - 1] ?? "").replace(",", "."));
     return {
       product: parts[0] ?? "",
-      variant: parts.length >= 3 ? parts.slice(1, -1).join(" ").trim() : "",
+      variant: fyra ? parts[1] : parts.length >= 3 ? parts.slice(1, -1).join(" ").trim() : "",
       cost,
     };
   };
@@ -145,13 +150,14 @@ export default function Costs() {
      ner inloggningssidan istället för filen. */
   const safe = (s: string) => s.replace(/;/g, ",").trim();
   const mallText = [
-    "# Inköpspriser — produkttitel;varianttitel;kostnad",
+    "# Inköpspriser — produkttitel;varianttitel;kostnad;försäljningspris",
+    "# Fyll i KOSTNAD (tredje kolumnen). Priset sist är bara referens och ignoreras vid import.",
     "# Kostnaden är vara + frakt, UTAN tull. Tullen är per order och ligger i Inställningar.",
     "# Lämna varianttiteln tom för att sätta samma kostnad på alla varianter.",
     "# Ändra inte titlarna — de matchas mot butiken.",
     ...rows.map(
       (r) =>
-        `${safe(r.productTitle)};${r.variantTitle === "Default Title" ? "" : safe(r.variantTitle)};${r.unitCost ?? ""}`,
+        `${safe(r.productTitle)};${r.variantTitle === "Default Title" ? "" : safe(r.variantTitle)};${r.unitCost ?? ""};${r.price}`,
     ),
   ].join("\n");
 
