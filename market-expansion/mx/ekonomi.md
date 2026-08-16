@@ -67,6 +67,9 @@ Etiketter: 2x "El favorito de los parrilleros" · 4x "Para la carne asada en gra
 Kaching går inte att nå via API — Axel ställer in nivå 3 (fast pris) + etiketter själv; instruktioner givna 2026-08-16.
 4x-nivåns BE 1,78 är OK per analysmetoden: bidraget per order (758–847 MXN) är högst av alla nivåer — pesos betalar annonserna, inte kvoten.
 
+**Justering (Axel, 2026-08-16 kväll):** 2x satt till **25,3 %** i Kaching → con asa $999.50 (under tusenlappen, BE 1,55–1,56 = på taket, godkänt). 4x ska sättas till **44 %** (procent i st.f. fast pris — funkar för båda varianterna) → $1,364/$1,499, BE ~1,76–1,77.
+**Kostnad per artikel ifylld i Shopify** (via API, förstakorgens landade kostnad, kurs 17.02): Sin asa 192.30 MXN · Con asa 207.60 MXN. OBS: Shopify kan bara ha EN kostnad per variant — extra korgar i samma order kostar egentligen mindre (133/148), så Shopifys vinstrapport UNDERSKATTAR vinsten något på 2x/4x-ordrar. Verklig kalkyl = denna fil.
+
 ⚠️ **FX-risk:** COGS i USD, intäkt i MXN. Vid kurs 18+ bryter mitten 1,55-taket. Motmedel: förhandla −$2.80 USD på tvåkorgsfrakten med agenten (15.90 → 13.10) — återställer hela bufferten.
 
 ## Tidigare mål (ersatt): BE-ROAS ≤ 1,5 på mittenalternativet (2x)
