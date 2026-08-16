@@ -41,7 +41,7 @@ const shopify = shopifyApp({
         // ~100 SEK — App Store debiterar i USD.
         { amount: 9.99, currencyCode: "USD", interval: BillingInterval.Every30Days },
       ],
-      trialDays: 7,
+      trialDays: 1,
     },
   },
   future: { unstable_newEmbeddedAuthStrategy: true, removeRest: true },
