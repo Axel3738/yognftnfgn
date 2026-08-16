@@ -300,8 +300,22 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
        detaljer. Här fångas de och visas i klartext — utan feltexten på skärmen
        blir varje felsökningsrunda en gissningslek. */
     console.error("Loader-fel /app:", e);
+    /* Shopify-biblioteket kastar Response-objekt vid auktoriseringsfel.
+       Utan urpackning blev det "[object Response]" på skärmen — ett fel som
+       pekar ingenstans. Status, kropp och eventuell reauth-adress säger allt. */
+    let fatal: string;
+    if (e instanceof Response) {
+      const body = await e.text().catch(() => "");
+      const reauth = e.headers.get("X-Shopify-API-Request-Failure-Reauthorize-Url") ?? "";
+      fatal =
+        `HTTP ${e.status} ${e.statusText || ""}`.trim() +
+        (body ? ` — ${body.slice(0, 300)}` : "") +
+        (reauth ? ` (reauthorize: ${reauth})` : "");
+    } else {
+      fatal = e instanceof Error ? `${e.message}` : String(e);
+    }
     return {
-      fatal: e instanceof Error ? `${e.message}` : String(e),
+      fatal,
       comparison: null as { totalSales: number; orders: number; spend: number; netProfit: number } | null,
       groupSize: 1,
       group: null as Awaited<ReturnType<typeof summeraGrupp>> | null,
