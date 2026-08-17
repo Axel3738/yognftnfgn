@@ -45,8 +45,28 @@ ger produktidé och bilder; **CWD-offerten ger varianterna.** Se `VARIANTPLAN.md
 Däremot: **Temus CDN (`img.kwcdn.com`, `aimg.kwcdn.com`) är nåbart.** Har man bara
 bild-URL:erna går de att hämta och ladda upp utan problem.
 
-Slutsatsen är alltså inte "det går inte" utan: *bilder, pris och varianter måste
-komma från Axel, resten sköter systemet.*
+### Genombrottet 2026-08-17: DuckDuckGos bildsök läcker kwcdn-URL:erna
+
+Temu själva lämnar inte ut bilderna, men **DuckDuckGos bildsök har indexerat dem**
+och exponerar originalens `img.kwcdn.com/product/fancy/...`-URL:er i sin JSON
+(`duckduckgo.com/i.js`, kräver bara en vqd-token från förstasidan). Verktyget är
+`bildjakt.mjs`. Bing/Yandex/Google/WebFetch/archive.org testades också — bara DDG
+fungerade.
+
+**Obligatoriskt efterarbete: träffarna är söktraffar, inte produktens egna bilder.**
+Varje kandidat granskas visuellt (kontaktkarta → titta) innan den används, och regeln är:
+
+- **Vitmärkta prylar** (kamera, verktyg, hållare): använd bilden om den bevisligen
+  visar det beskrivningen lovar (dubbellins + 355°, kolfibervinge + buntband osv).
+- **Utseendeprodukter** (skor, kläder): använd ALDRIG en söktraff — kunden får en
+  synligt annan vara. Där krävs den exakta listningens bilder från Axel.
+- **Märkesprodukter i träffarna** (Lerutwis, PROBEROS, VEVOR …): aldrig — fel
+  varumärke på vår produktsida.
+- Räkna-bara-fel: säger beskrivningen "260 delar" och bilden "173 pcs" är det fel bild.
+
+Så slutsatsen numera: *pris och varianter måste komma från Axel (CWD-offerten);
+bilder går ofta att hämta själv för vitmärkta prylar — med visuell verifiering —
+men skor/kläder kräver fortfarande Axel.*
 
 ---
 
