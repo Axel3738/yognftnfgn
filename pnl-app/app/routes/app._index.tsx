@@ -3,7 +3,7 @@
  * siffrorna — ingen spinner, inget "hämtar" som i artifact-versionen.
  */
 
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import type { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
 import { defer, json } from "@remix-run/node";
 import { Await, Link, useFetcher, useLoaderData, useRevalidator, useSearchParams } from "@remix-run/react";
@@ -784,6 +784,21 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
   const [params, setParams] = useSearchParams();
   const revalidator = useRevalidator();
   const T = t(lang);
+
+  /* Saknas butiker i gruppsumman pågår en bakgrundshämtning på servern —
+     sidan laddar då om sig själv tills alla är med, istället för att be
+     handlaren trycka F5. Takbegränsat: en butik med död nyckel ska inte ge
+     en evig pollningsloop. */
+  const missingCount = d.group?.missing.length ?? 0;
+  const pollCount = useRef(0);
+  useEffect(() => {
+    if (missingCount === 0 || pollCount.current >= 10 || revalidator.state !== "idle") return;
+    const timer = setTimeout(() => {
+      pollCount.current += 1;
+      revalidator.revalidate();
+    }, 6000);
+    return () => clearTimeout(timer);
+  }, [missingCount, revalidator, revalidator.state]);
   const dec = (s: string) => (lang === "sv" ? s.replace(".", ",") : s);
   if (fatal || !result) {
     return (

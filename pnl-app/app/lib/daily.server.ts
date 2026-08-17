@@ -134,20 +134,31 @@ function adminFromToken(shop: string, accessToken: string) {
 }
 
 /**
- * Bakgrundsuppdatering av en annan butiks dagar. Misslyckas tyst — summan
- * visar under tiden vad som finns, och nästa sidladdning har raderna.
+ * Uppdatering av en annan butiks dagar med butikens egen sparade nyckel.
+ * Misslyckas tyst (false) — summan visar under tiden vad som finns.
+ *
+ * `force` hoppar över minutspärren: används när anroparen VÄNTAR på svaret
+ * (korta fönster via paginerings-snabbvägen, ett par sekunder) — dubbla
+ * samtidiga hämtningar av samma fönster slås ändå ihop i fetchOrderData.
  */
-export async function refreshShopDaily(shop: string, from: string, to: string): Promise<void> {
-  if (!farStartaBakgrund(shop)) return;
+export async function refreshShopDaily(
+  shop: string,
+  from: string,
+  to: string,
+  opts?: { force?: boolean },
+): Promise<boolean> {
+  if (!opts?.force && !farStartaBakgrund(shop)) return false;
   try {
     const [session, settings] = await Promise.all([
       prisma.session.findFirst({ where: { shop, isOnline: false } }),
       prisma.shopSettings.findUnique({ where: { shop } }),
     ]);
     const token = session?.accessToken ? decrypt(session.accessToken) : null;
-    if (!token) return;
+    if (!token) return false;
     await refreshDaily(adminFromToken(shop, token), shop, settings?.timezone ?? "UTC", from, to);
+    return true;
   } catch (e) {
     console.error(`Bakgrundshämtning för ${shop} misslyckades:`, e);
+    return false;
   }
 }

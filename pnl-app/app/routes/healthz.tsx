@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "dagar-v37", db });
+  return json({ ok: true, build: "auto-v38", db });
 }

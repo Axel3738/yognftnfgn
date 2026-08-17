@@ -16,7 +16,7 @@
 import prisma from "../db.server";
 import { compute } from "./pnl.server";
 import { rate } from "./fx.server";
-import { readDaily, refreshShopDaily } from "./daily.server";
+import { readDaily, refreshShopDaily, shiftIso } from "./daily.server";
 import { t, type Lang } from "./texts";
 
 export interface GroupTotals {
@@ -55,11 +55,32 @@ async function summeraButik(
   | { ok: true; shop: string; currency: string; totals: ReturnType<typeof compute>["totals"]; kurs: number }
   | { ok: false; shop: string; reason: string }
 > {
-  const daily = await readDaily(m.shop, from, to);
+  let daily = await readDaily(m.shop, from, to);
   if (daily.missingDays.length) {
-    /* Självläkning: fyll dagarna i bakgrunden med butikens egen nyckel. */
-    void refreshShopDaily(m.shop, daily.missingDays[0], daily.missingDays[daily.missingDays.length - 1]);
-    return { ok: false, shop: m.shop, reason: T.group.noCachedData };
+    const first = daily.missingDays[0];
+    const last = daily.missingDays[daily.missingDays.length - 1];
+    const spann = (Date.parse(last) - Date.parse(first)) / 86_400_000 + 1;
+    /* Korta luckor (Idag, 7 dagar) fylls SYNKRONT med butikens egen nyckel —
+       paginerings-snabbvägen tar ett par sekunder, och alla butiker hämtas
+       parallellt, så summan är komplett direkt istället för att be handlaren
+       ladda om. Långa luckor (första 90-dagarsbygget) tar bulk-exportens
+       halvminut per butik och får gå i bakgrunden; panelen laddar då om sig
+       själv tills alla är med. */
+    if (spann <= 7) {
+      const ok = await refreshShopDaily(m.shop, first, last, { force: true });
+      if (ok) daily = await readDaily(m.shop, from, to);
+    } else {
+      void refreshShopDaily(m.shop, first, last);
+    }
+    if (daily.missingDays.length) return { ok: false, shop: m.shop, reason: T.group.noCachedData };
+  } else {
+    /* Färskhet: dagens siffror rör sig. Är butikens senaste dag äldre än
+       10 min uppdateras den i bakgrunden — nästa omsummering har färska tal. */
+    const senast = daily.lastDayFetchedAt?.getTime() ?? 0;
+    const idagUtc = new Date().toISOString().slice(0, 10);
+    if (to >= shiftIso(idagUtc, -1) && Date.now() - senast > 10 * 60 * 1000) {
+      void refreshShopDaily(m.shop, shiftIso(to, -2), to);
+    }
   }
 
   const kurs = await rate(m.currency, visaValuta);
