@@ -45,9 +45,3 @@ Olika avatarer, olika adsets — CBO röstar om marknadsstorleken.
   framtida Grillbot-jämförelse. (Lars/ringlistan ville dessutom ha reversering —
   fortfarande inte samma sak som vinkling, claima aldrig reversering.)
 
-## RÖST-REGISTER (start 2026-08-17)
-- 293 ELTANDBORSTEN (UGC-test, Effektivitetsfamiljen): ElevenLabs voice id
-  LJGqDlSQqFnmhbStEO8I. Samma röst för alla tre hookarna (H1/H2/H3) och för
-  framtida UGC-testare i samma familj — igenkänning över annonser.
-- REGEL: UGC-testarens röst får ALDRIG vara samma som teknikern/Anders eller
-  farfar — en röst per persona, annars kollapsar budbärararkitekturen på ljudnivå.
