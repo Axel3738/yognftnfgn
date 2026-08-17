@@ -28,10 +28,16 @@ på Axels order: 30 produkter + 4 kollektioner + 4 sidor raderade. 132 ordrar OR
 - [x] Fas 0+2: parametrar + batchar (AUD-priser förberäknade, compareAt-0-buggen förebyggd)
 - [x] Fas 3: 42/42 produkter en-AU (7 agenter, 24 juridiska flaggor — se build/out/*.en.json)
 - [x] Fas 4.1: kollektioner (4, engelska)
-- [~] Fas 4.2: produktpush PÅGÅR (4 agenter, push-chunk-*.jsonl)
+- [x] Fas 4.2: 42/42 produkter pushade (4 agenter, 0 fel, inga handle-krockar)
+- [x] Fas 4.4: kanalpublicering 42 produkter + 4 kollektioner → Webbshop (0 fel)
+- [x] Fas 4.5: kollektionsbilder satta (frontpage 1, bbq-tools 13, aprons 12, knives 5 produkter)
+- [x] GRIND 1: productsCount active vendor:'The BBQ Clinic' = 42 ✓
+- [x] GRIND 2: draftOrderCalculate Sydney NSW 2000 → The Master $149.95 AUD, Free Shipping $0 ✓
 - [x] Fas 5: marknad Australia AUD ✓
 - [x] Fas 6 (zon): Australia "Free Shipping" 0 ✓ — draftOrderCalculate-grind körs efter push
-- [~] Fas 4.3: sidor (ACL/Privacy Act) PÅGÅR (agent)
+- [x] Fas 4.3: 6 sidor en-AU med ACL-juridik (obligatoriska "cannot be excluded"-formuleringen,
+      Privacy Act 1988/OAIC, GST 10 % inkl., ärlig leveranstid 10–20 business days) — se build/pages-report.md
+- [x] Fas 4.6: menyer (huvudmeny: 3 kollektioner + About Us; sidfot: 6 juridiksidor)
 - [ ] Kvar: kanalpublicering, kollektionsbilder, menyer, grindar, tema (themeCreate från export-zip + en-AU),
       BBQ Clinic-logga, Judge.me-CSV en-AU, Mastern-bilder en-AU, fas 9
 
