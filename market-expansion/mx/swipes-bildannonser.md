@@ -53,6 +53,11 @@ Spansk copy skriven av sonnet-subagent per modellpolicyn, förankrad i `voc-rese
 2. **Overstock-scarcity:** "Pedimos demasiadas canastas — hasta 42% mientras dure el inventario" (samma mekanik som Grillklinikens bevisade Brynis-overstock, mönster i eget kontos historik).
 3. **Vi-testade-5-jämförelse:** "Probamos las 5 herramientas más populares para asar…" (artikel 25 hos Bryn).
 
+## STATUS: ALLA 6 GODKÄNDA AV AXEL 2026-08-17
+
+Färdiga filer (1080×1350, Meta feed): `market-expansion/mx/ads/clin_greatgrill_*.png`
+Godkännandehistorik: 1, 2, 5 godkända i v1 · 4 i v2 (spec-chips i st.f. mätpilar) · 3 och 6 i v3 efter Axels feedback "produkten måste synas i bild" (3:an fick rotationsbilden, 6:an hjältebilden). Byggda med build_ads.py-metoden: godkända foton + Anton/DejaVu-vektortext via Pillow — ingen AI-genererad text.
+
 ## Produktion
 
 - Bilderna byggs med godkända foton + skarp vektortext ovanpå (aldrig AI-genererad text i bild — samma princip som pipeline/compose.mjs).
