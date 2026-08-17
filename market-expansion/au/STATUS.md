@@ -38,8 +38,11 @@ på Axels order: 30 produkter + 4 kollektioner + 4 sidor raderade. 132 ordrar OR
 - [x] Fas 4.3: 6 sidor en-AU med ACL-juridik (obligatoriska "cannot be excluded"-formuleringen,
       Privacy Act 1988/OAIC, GST 10 % inkl., ärlig leveranstid 10–20 business days) — se build/pages-report.md
 - [x] Fas 4.6: menyer (huvudmeny: 3 kollektioner + About Us; sidfot: 6 juridiksidor)
-- [ ] Kvar: kanalpublicering, kollektionsbilder, menyer, grindar, tema (themeCreate från export-zip + en-AU),
-      BBQ Clinic-logga, Judge.me-CSV en-AU, Mastern-bilder en-AU, fas 9
+- [x] Fas 7: tema bbq-clinic-au-dev (198538887551) — themeCreate från export-zip (NY SNABBVÄG!),
+      11 filer en-AU (0 svenska strängar), BBQ Clinic-logga i header/footer/checkout/favicon
+- [x] Fas 8: Judge.me-CSV en-AU klar (434 recensioner, validerad, levererad till Axel)
+- [x] Mastern-bilder: 5 st lokaliserade till engelska och UTBYTTA på produkten (verifierat: 6 media, gamla raderade)
+- [ ] Fas 9: sanningskontroll före lansering (körs när Axel gjort språkbyte + apparna)
 
 ## AU-fällor
 1. Basvaluta DKK + AUD-siffror i priserna → DK/SE-marknaderna MÅSTE förbli av (annars $29.95 = 29.95 DKK!).
