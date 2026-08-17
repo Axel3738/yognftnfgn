@@ -48,7 +48,11 @@ const shopify = shopifyApp({
       trialDays: 1,
     },
   },
-  // v5: token exchange och REST-borttagning är standard — inga flaggor behövs.
+  /* Shopify nekar nya appar eviga offline-nycklar, men biblioteket begär
+     ändå eviga som standard — utgående nycklar (med automatisk förnyelse
+     via refresh-token) måste väljas till uttryckligen. De gamla butikernas
+     befintliga nycklar påverkas inte; de byts först vid nästa ominstallation. */
+  future: { expiringOfflineAccessTokens: true },
   hooks: {
     /** Varje ny butik får sina inställningar direkt, med butikens egen valuta. */
     afterAuth: async ({ session, admin }) => {

@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "refresh-v34", db });
+  return json({ ok: true, build: "expiring-v35", db });
 }
