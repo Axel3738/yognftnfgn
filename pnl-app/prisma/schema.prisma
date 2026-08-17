@@ -25,6 +25,11 @@ model Session {
   collaborator  Boolean?  @default(false)
   emailVerified Boolean?  @default(false)
 
+  /* Utgående offline-nycklar (obligatoriska för nya appar) förnyas med en
+     refresh-token som sessionslagringen v10 förväntar sig kolumner för. */
+  refreshToken        String?
+  refreshTokenExpires DateTime?
+
   @@index([shop])
 }
 
