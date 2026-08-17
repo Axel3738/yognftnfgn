@@ -36,3 +36,11 @@ effektivitetsavataren (rik/stressad/optimerar allt).
 En annons får ALDRIG lova både snabbt och lugnt. Två separata familjer:
 Effektivitet (110/128/279, orörda) vs Stunden (290/291/292/001 B3).
 Olika avatarer, olika adsets — CBO röstar om marknadsstorleken.
+
+## PRODUKTFAKTA — bekräftade av Axel 2026-08-16 (nya i kanon)
+- Borsthuvudena tål DISKMASKIN (klicka av, lägg in). Dödar "borsten blir äcklig"-
+  invändningen; kontrast: stålborsten som hängt smutsig i fem år.
+- Huvudet VINKLAS 180 GRADER -> når hörn, kanter, undersida. Exakt det Grillbot-
+  recensionerna klagar på att roboten missar. Användning: 293 v2, 281a-tabellen,
+  framtida Grillbot-jämförelse. (Lars/ringlistan ville dessutom ha reversering —
+  fortfarande inte samma sak som vinkling, claima aldrig reversering.)
