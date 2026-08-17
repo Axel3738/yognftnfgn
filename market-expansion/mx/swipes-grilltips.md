@@ -50,6 +50,9 @@ Mapp: https://drive.google.com/drive/folders/1bngbhLtel48RGevXrNhlqOqZgyqx8tJZ
 | 6 top3 | https://docs.google.com/document/d/1eFZo3tUHFEQHKKcM6Z22SIr5Ps1KVr6rFsBAZkivjrw |
 | 7 dinero | https://docs.google.com/document/d/1v3Hfd63YTG80nkR-aC9j85K73ulniA26L4XCCt37fGU |
 | 8 sazon | https://docs.google.com/document/d/1O1abXLWRs-4K4e1wihFIxzZQiGOg--hZtNd1VY5DAN8 |
+| 9 esposa (VÅG 2) | https://docs.google.com/document/d/18V6VTNBWaNe9UnuZm5ZFNOz8LZzCQAsNIoSqn0l_eTk |
+| 10 porfinsesienta (VÅG 2) | https://docs.google.com/document/d/1zU9l8K60zPUxBa2V5PvbSNr0OkgyQMkBek73NCCrxF0 |
+| 11 trompo (VÅG 2) | https://docs.google.com/document/d/1dZrTVc0Zb-_P81AWYmHfjbXyWeJMINJpLaVLKgAKbfc |
 
 (2026-08-16: v1-dokumenten + separat hooks-doc slängda i papperskorgen på Axels begäran — hooksen ligger nu i respektive annons-dokument.)
 

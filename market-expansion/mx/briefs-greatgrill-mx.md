@@ -348,3 +348,16 @@ Visual: seasoning flecks falling into flare-up, close on flame · Overlay: "EL F
 ## Launch structure (rule: tests in separate ABO, equal budget per ad)
 
 Launch per concept: one ABO with the concept's 3 hook variants at equal budget. Do NOT launch all 24 in one adset. Production: editors deliver 1 body + 3 hook front-ends per concept.
+
+---
+
+# WAVE 2 — 3 nya videokoncept (2026-08-17)
+
+Källor per regeln "inget koncept ur tomma intet": Ad 9 = Bryns 3 bevisade fru-advertorials · Ad 10 = VoC-memet "Cuando por fin se sienta el wey..." (168 upvotes, r/mexico) · Ad 11 = trompo/al pastor-historiken ur voc-research.md (curiosity, omöjlig att kopiera för utländska konkurrenter).
+
+Fullständiga briefer med manus ligger i Google Docs (länkar i swipes-grilltips.md):
+- **Ad 9** `clin_greatgrill_social_ugc_esposa_v1` — fru-POV gåvostory → Artikel 8. Starkaste raden: "Callado. El señor que siempre tiene algo que decir."
+- **Ad 10** `clin_greatgrill_identity_ugc_porfinsesienta_v1` — grillaren får äntligen sitta → Artikel 11. Ankarrad = VoC-memet verbatim.
+- **Ad 11** `clin_greatgrill_curiosity_ugc_trompo_v1` — "El trompo es para el pastor. La canasta giratoria es para todo lo demás." → produktsidan. Respekt för taquero-hantverket: vi lånar principen, ersätter aldrig al pastor.
+
+Väntar på Axels ok: **overstock-konceptet (D)** — kräver bekräftelse att lagerstoryn är sann innan det byggs.
