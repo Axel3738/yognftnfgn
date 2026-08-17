@@ -138,7 +138,7 @@ function assetFeedFor(variants, copy) {
     images, asset_customization_rules: rules,
     bodies: [{ text: copy.message }], titles: [{ text: copy.headline }],
     ...(copy.description ? { descriptions: [{ text: copy.description }] } : {}),
-    ad_formats: ['SINGLE_IMAGE'], call_to_action_types: ['SHOP_NOW'],
+    ad_formats: ['SINGLE_IMAGE'], call_to_action_types: [copy.cta || 'SHOP_NOW'],
     link_urls: [{ website_url: copy.link }],
   };
 }
@@ -148,22 +148,61 @@ const campaigns = (await api(`${cfg.act}/campaigns`, { params: { fields: 'name',
 let ok = 0, failed = 0;
 
 for (const camp of cfg.campaigns) {
-  const c = campaigns.find(x => x.name === camp.campaignName);
+  let c = campaigns.find(x => x.name === camp.campaignName);
+  if (!c && camp.create) {
+    // ABO: ingen budget på kampanjnivå — den sätts per adset
+    if (DRY) { console.log(`### ${camp.campaignName} — SKAPAS (${camp.create.dailyBudget ? 'CBO ' + camp.create.dailyBudget / 100 + ' kr/dag' : 'ABO'})`); c = { id: 'DRY', name: camp.campaignName }; }
+    else {
+      const cbo = camp.create.dailyBudget;
+      const nyc = await api(`${cfg.act}/campaigns`, { method: 'POST', form: {
+        name: camp.campaignName, objective: camp.create.objective || 'OUTCOME_SALES',
+        status: camp.create.status || 'PAUSED', special_ad_categories: '[]',
+        ...(cbo
+          // CBO: budgeten ligger på kampanjen
+          ? { daily_budget: cbo, bid_strategy: camp.create.bidStrategy || 'LOWEST_COST_WITHOUT_CAP' }
+          // ABO utan budgetdelning — adseten ska ha lika budget, inte låna av varandra
+          : { is_adset_budget_sharing_enabled: String(camp.create.budgetSharing ?? false) }),
+      }});
+      c = { id: nyc.id, name: camp.campaignName };
+      console.log(`✓ Kampanj skapad (${camp.create.status || 'PAUSED'}, ${cbo ? `CBO ${cbo / 100} kr/dag` : 'ABO'}): ${camp.campaignName} (${c.id})`);
+    }
+  }
   if (!c) { console.log(`✗ Kampanjen "${camp.campaignName}" saknas — hoppar`); continue; }
+  if (c.id === 'DRY') { for (const a of camp.adsets) { console.log(`  · adset ${a.name}: ${a.motifs.length} annonser`); } continue; }
   const priorAdsets = (await api(`${c.id}/adsets`, { params: { fields: 'name', limit: '100' } })).data || [];
-  const priorAds = new Set(((await api(`${c.id}/ads`, { params: { fields: 'name', limit: '500' } })).data || []).map(a => a.name));
+  // duplikatskydd per adset — samma annonsnamn i olika adsets är legitimt (BASE/LISTICLE,
+  // och gamla pausade batchar som ska byggas om med rätt copy)
+  const adsPerAdset = new Map();
+  for (const a of (await api(`${c.id}/ads`, { params: { fields: 'name,adset_id', limit: '500' } })).data || []) {
+    if (!adsPerAdset.has(a.adset_id)) adsPerAdset.set(a.adset_id, new Set());
+    adsPerAdset.get(a.adset_id).add(a.name);
+  }
   console.log(`\n### ${camp.campaignName} (${c.id})`);
 
   for (const adsetCfg of camp.adsets) {
-    const src = priorAdsets.find(a => a.name === adsetCfg.copyFrom);
-    if (!src) { console.log(`✗ käll-adset "${adsetCfg.copyFrom}" saknas — hoppar ${adsetCfg.name}`); continue; }
-    const copy = await copyFrom(src.id, adsetCfg.copyFrom);
-    console.log(`  copy från ${adsetCfg.copyFrom} / ${copy.fromAd}`);
+    // explicit briefad copy vinner alltid över att ärva från ett befintligt adset
+    let adsetCopy;
+    if (adsetCfg.copy) {
+      adsetCopy = { ...adsetCfg.copy, fromAd: 'brief' };
+      console.log(`  copy: briefad (${adsetCfg.copy.headline})`);
+    } else if (adsetCfg.motifs.every(m => typeof m === 'object' && m.copy)) {
+      adsetCopy = { link: adsetCfg.link || cfg.link, fromAd: 'brief per annons' };
+      console.log('  copy: egen briefad copy per annons');
+    } else {
+      const src = priorAdsets.find(a => a.name === adsetCfg.copyFrom);
+      if (!src) { console.log(`✗ käll-adset "${adsetCfg.copyFrom}" saknas — hoppar ${adsetCfg.name}`); continue; }
+      adsetCopy = await copyFrom(src.id, adsetCfg.copyFrom);
+      console.log(`  copy från ${adsetCfg.copyFrom} / ${adsetCopy.fromAd}`);
+    }
+
+    // motiv får vara en sträng eller { name, copy } när varje annons har egen briefad copy
+    const motifs = adsetCfg.motifs.map(m => typeof m === 'string' ? { name: m } : m);
 
     if (DRY) {
-      for (const m of adsetCfg.motifs) {
-        const r = resolveMotif(m);
-        console.log(`  · ${m}: ${r ? (r.kind === 'video' ? 'video' : 'bild [' + Object.keys(r.variants).join('+') + ']') : 'SAKNAS'}`);
+      for (const m of motifs) {
+        const r = resolveMotif(m.name);
+        const c = m.copy ? ` · egen copy: ${m.copy.headline}` : '';
+        console.log(`  · ${m.name}: ${r ? (r.kind === 'video' ? 'video' : 'bild [' + Object.keys(r.variants).join('+') + ']') : 'SAKNAS'}${c}`);
       }
       continue;
     }
@@ -176,14 +215,21 @@ for (const camp of cfg.campaigns) {
         billing_event: 'IMPRESSIONS', optimization_goal: 'OFFSITE_CONVERSIONS',
         destination_type: 'WEBSITE',
         promoted_object: JSON.stringify({ pixel_id: cfg.pixel, custom_event_type: 'PURCHASE' }),
-        targeting: JSON.stringify(cfg.targeting),
+        targeting: JSON.stringify(adsetCfg.targeting || cfg.targeting),
+        // ABO: budget och budstrategi hör ihop och sätts på adsetet
+        ...(adsetCfg.dailyBudget ? { daily_budget: adsetCfg.dailyBudget,
+              bid_strategy: adsetCfg.bidStrategy || 'LOWEST_COST_WITHOUT_CAP' } : {}),
+        ...(cfg.dsaBeneficiary ? { dsa_beneficiary: cfg.dsaBeneficiary, dsa_payor: cfg.dsaPayor || cfg.dsaBeneficiary } : {}),
       }});
       adsetId = adset.id;
       console.log(`  ✓ adset (${cfg.adsetStatus || 'PAUSED'}): ${adsetCfg.name} (${adsetId})`);
     }
 
-    for (const motif of adsetCfg.motifs) {
-      if (priorAds.has(motif)) { console.log(`  · ${motif} finns redan — hoppar`); continue; }
+    const finnsIAdset = adsPerAdset.get(adsetId) || new Set();
+    for (const m of motifs) {
+      const motif = m.name;
+      const copy = m.copy ? { ...adsetCopy, ...m.copy } : adsetCopy;
+      if (finnsIAdset.has(motif)) { console.log(`  · ${motif} finns redan i adsetet — hoppar`); continue; }
       try {
         const r = resolveMotif(motif);
         if (!r) throw new Error('media saknas i biblioteket');
@@ -194,15 +240,18 @@ for (const camp of cfg.campaigns) {
             video_id: r.videoId, image_url: thumb,
             message: copy.message, title: copy.headline,
             ...(copy.description ? { link_description: copy.description } : {}),
-            call_to_action: { type: 'SHOP_NOW', value: { link: copy.link } },
+            call_to_action: { type: copy.cta || 'SHOP_NOW', value: { link: copy.link } },
           }});
-        } else if (Object.keys(r.variants).length === 1) {
-          const hash = Object.values(r.variants)[0];
+        } else if (Object.keys(r.variants).length === 1 || cfg.noFormatCustomization) {
+          // Formatanpassning kräver en Instagram-identitet. Saknas den (t.ex. FI, där
+          // sidan inte har något IG-konto) bygger vi en vanlig enbildsannons i stället
+          // och väljer 4:5 — feedformatet — framför 1:1 och 9:16.
+          const hash = r.variants['4x5'] || r.variants['9x16'] || r.variants['1x1'];
           form.object_story_spec = JSON.stringify({ page_id: cfg.page, link_data: {
             image_hash: hash, link: copy.link,
             message: copy.message, name: copy.headline,
             ...(copy.description ? { description: copy.description } : {}),
-            call_to_action: { type: 'SHOP_NOW', value: { link: copy.link } },
+            call_to_action: { type: copy.cta || 'SHOP_NOW', value: { link: copy.link } },
           }});
         } else {
           form.object_story_spec = JSON.stringify({ page_id: cfg.page,
