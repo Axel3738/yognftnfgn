@@ -137,6 +137,27 @@ model DailySpend {
 
 /// Färdigräknade aggregat per (butik, intervall). Bulk-exporten tar 20–60 s;
 /// utan cache betalar varje sidladdning det priset igen.
+/// En färdig rad per butik och dag. Varje datumintervall blir en summering av
+/// dagsrader (millisekunder) istället för en orderexport (halvminut). Dagen
+/// följer BUTIKENS tidszon. Rader skrivs även för dagar utan ordrar, så att
+/// "saknas" betyder "aldrig hämtad", inte "såldes inget".
+model DailyPnl {
+  shop            String
+  day             String // YYYY-MM-DD i butikens tidszon
+  orders          Int    @default(0)
+  grossSales      Float  @default(0)
+  discounts       Float  @default(0)
+  returns         Float  @default(0)
+  netSales        Float  @default(0)
+  totalSales      Float  @default(0)
+  shippingCharges Float  @default(0)
+  /// Dagens produktmix: [{productGid, variantGid, title, variantTitle, units, netSales, unitCost}]
+  products        Json
+  fetchedAt       DateTime @default(now())
+
+  @@id([shop, day])
+}
+
 model PnlCache {
   id        String   @id @default(cuid())
   shop      String

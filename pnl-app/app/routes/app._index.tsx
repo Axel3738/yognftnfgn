@@ -27,33 +27,12 @@ import {
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { compute, rangeWindow } from "../lib/pnl.server";
-import { applyCurrentCosts, dayInTz, fetchOrderData, fetchShopInfo, loadCatalog } from "../lib/shopify-data.server";
+import { applyCurrentCosts, dayInTz, fetchShopInfo, loadCatalog } from "../lib/shopify-data.server";
+import { farStartaBakgrund, readDaily, refreshDaily, shiftIso } from "../lib/daily.server";
 import { getSpend } from "../lib/meta.server";
 import { summeraGrupp } from "../lib/group.server";
 import { decrypt } from "../lib/crypto.server";
 import { asLang, localeOf, t, type Lang, type Texts } from "../lib/texts";
-
-/* Shopify kör EN bulk-export åt gången per butik. Startar panelen en
-   bakgrundsuppdatering vid varje besök upptas den enda platsen, och nästa vy
-   som faktiskt behöver hämta får köa bakom den — det var därför ett byte
-   mellan Idag och 30 dagar tog tiotals sekunder trots att båda låg i cachen.
-   Högst en bakgrundshämtning per butik och minut. */
-const senasteBakgrund = new Map<string, number>();
-function farStartaBakgrund(shop: string): boolean {
-  const t = senasteBakgrund.get(shop) ?? 0;
-  if (Date.now() - t < 60_000) return false;
-  senasteBakgrund.set(shop, Date.now());
-  return true;
-}
-
-/* Hur gammal cachen får vara innan den uppdateras. Dagens siffror rör sig,
-   avslutade perioder gör det knappt — att hämta om 90 dagar för att de är
-   fyra minuter gamla är rent slöseri med den enda exportplatsen. */
-function farskhetMs(rangeKey: string): number {
-  return rangeKey === "today" || rangeKey === "yesterday"
-    ? 10 * 60 * 1000
-    : 6 * 60 * 60 * 1000;
-}
 
 type SettingsRow = Awaited<ReturnType<typeof prisma.shopSettings.upsert>>;
 
@@ -99,43 +78,36 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     to: url.searchParams.get("to") ?? today,
   });
 
-  /* Stale-while-revalidate: finns det EN sparad version serveras den direkt
-     (<2 s), och en färsk export körs i bakgrunden till nästa besök. Att vänta
-     30–60 s på exporten vid varje inträde gjorde appen oanvändbar — hellre
-     minuter gamla siffror nu och färska strax, än färska siffror om en minut. */
-  const cacheKey = `${from}:${to}`;
-  const cached = await prisma.pnlCache.findUnique({
-    where: { shop_key: { shop, key: cacheKey } },
-  });
-  const refreshCache = async (f: string, t: string, key: string) => {
-    try {
-      const freshData = await fetchOrderData(admin, f, t, timezone, shop);
-      await prisma.pnlCache.upsert({
-        where: { shop_key: { shop, key } },
-        create: { shop, key, payload: freshData as any },
-        update: { payload: freshData as any, fetchedAt: new Date() },
-      });
-    } catch (e) {
-      console.error("Bakgrundsuppdatering misslyckades:", e);
-    }
-  };
-  let orderData: Awaited<ReturnType<typeof fetchOrderData>>;
-  let dataAgeMin = 0;
+  /* Dagslagret: intervallet läses som färdiga dagsrader ur databasen —
+     millisekunder oavsett datumval, det är hela snabbhetsmodellen. Bara dagar
+     som ALDRIG hämtats exporteras synkront: första besöket ever, och morgonens
+     nya dag (som tar snabbvägen via paginering, ett par sekunder). */
+  let daily = await readDaily(shop, from, to);
+  if (daily.missingDays.length) {
+    const first = daily.missingDays[0];
+    const last = daily.missingDays[daily.missingDays.length - 1];
+    await refreshDaily(admin, shop, timezone, first, last);
+    daily = await readDaily(shop, from, to);
+  }
+
+  /* Färskhet: intervallets sista dag är den som rör sig — äldre än 10 min
+     uppdateras dagens närmaste dagar i bakgrunden (billig, kort export).
+     Ligger någon dag i intervallet mer än 6 h bak (sena returer bokförs på
+     orderns dag) exporteras hela intervallet om, också i bakgrunden. */
+  const lastAt = daily.lastDayFetchedAt?.getTime() ?? 0;
+  const oldestAt = daily.oldestFetchedAt?.getTime() ?? 0;
+  const dataAgeMin = lastAt ? Math.round((Date.now() - lastAt) / 60000) : 0;
   let refreshing = false;
-  if (cached) {
-    orderData = cached.payload as unknown as Awaited<ReturnType<typeof fetchOrderData>>;
-    dataAgeMin = Math.round((Date.now() - cached.fetchedAt.getTime()) / 60000);
-    if (Date.now() - cached.fetchedAt.getTime() > farskhetMs(rangeKey) && farStartaBakgrund(shop)) {
-      refreshing = true;
-      void refreshCache(from, to, cacheKey); // medvetet inget await
-    }
-  } else {
-    orderData = await fetchOrderData(admin, from, to, timezone, shop);
-    await prisma.pnlCache.upsert({
-      where: { shop_key: { shop, key: cacheKey } },
-      create: { shop, key: cacheKey, payload: orderData as any },
-      update: { payload: orderData as any, fetchedAt: new Date() },
-    });
+  const refreshBg = (f: string, tt: string) => {
+    refreshing = true;
+    void refreshDaily(admin, shop, timezone, f, tt).catch((e) =>
+      console.error("Bakgrundsuppdatering misslyckades:", e),
+    );
+  };
+  if (to >= today && Date.now() - lastAt > 10 * 60 * 1000 && farStartaBakgrund(shop)) {
+    refreshBg(from > shiftIso(today, -2) ? from : shiftIso(today, -2), today);
+  } else if (Date.now() - oldestAt > 6 * 60 * 60 * 1000 && farStartaBakgrund(shop)) {
+    refreshBg(from, to);
   }
   /* Allt nedan är oberoende av varandra — sekventiellt blev det fyra
      väntningar i rad där en räcker. */
@@ -150,10 +122,10 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
   const fixedMonthlyTotal = fixedRows.reduce((a, r) => a + Number(r.monthlyAmount), 0);
 
   /* Kostnaden läses om ur katalogen (5 min minnescache) istället för att tas
-     ur det cachade aggregatet — annars syns ett nyss inskrivet inköpspris
+     ur det lagrade aggregatet — annars syns ett nyss inskrivet inköpspris
      först när hela orderexporten körts om, och importen ser trasig ut. */
-  const sales = orderData.sales;
-  const products = applyCurrentCosts(orderData.products, catalog);
+  const sales = daily.sales;
+  const products = applyCurrentCosts(daily.products, catalog);
   /* Sessioner/CVR finns inte i det publika Admin-API:t — analytics-ytan är
      intern hos Shopify. Tom serie => "—" i panelen. */
   const sessions: never[] = [];
@@ -211,27 +183,21 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
      jämförelsesiffror är bättre än en som inte laddar. */
   let comparison: { totalSales: number; orders: number; spend: number; netProfit: number } | null = null;
   try {
-    const shift = (iso: string, days: number) => {
-      const dd = new Date(iso + "T12:00:00Z");
-      dd.setUTCDate(dd.getUTCDate() + days);
-      return dd.toISOString().slice(0, 10);
-    };
     const dayCount = result.days.length;
-    const prevTo = shift(from, -1);
-    const prevFrom = shift(prevTo, -(dayCount - 1));
-    const prevKey = `${prevFrom}:${prevTo}`;
-    const prevCached = await prisma.pnlCache.findUnique({
-      where: { shop_key: { shop, key: prevKey } },
-    });
-    /* Bara cache — saknas jämförelsedatan fylls den i bakgrunden och syns
-       vid nästa besök. Den får aldrig kosta en synlig sekund. */
-    if (!prevCached) {
-      if (farStartaBakgrund(shop)) void refreshCache(prevFrom, prevTo, prevKey);
+    const prevTo = shiftIso(from, -1);
+    const prevFrom = shiftIso(prevTo, -(dayCount - 1));
+    const prevData = await readDaily(shop, prevFrom, prevTo);
+    /* Bara databasen — saknas jämförelsedagar fylls de i bakgrunden och syns
+       vid nästa besök. De får aldrig kosta en synlig sekund. */
+    if (prevData.missingDays.length) {
+      if (farStartaBakgrund(shop)) {
+        void refreshDaily(
+          admin, shop, timezone,
+          prevData.missingDays[0],
+          prevData.missingDays[prevData.missingDays.length - 1],
+        ).catch(() => {});
+      }
       throw new Error("jämförelsen fylls i bakgrunden");
-    }
-    const prevData = prevCached.payload as unknown as Awaited<ReturnType<typeof fetchOrderData>>;
-    if (Date.now() - prevCached.fetchedAt.getTime() > 24 * 60 * 60 * 1000 && farStartaBakgrund(shop)) {
-      void refreshCache(prevFrom, prevTo, prevKey);
     }
     const prevSpend = await getSpend(
       shop,
@@ -272,7 +238,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
      när det faktiskt finns något att summera. */
   const visaAlla = url.searchParams.get("all") === "1" && groupSize > 1;
   const group = visaAlla
-    ? await summeraGrupp(settings.groupId!, cacheKey, from, to, settings.currency, lang)
+    ? await summeraGrupp(settings.groupId!, from, to, settings.currency, lang)
     : null;
 
   return {

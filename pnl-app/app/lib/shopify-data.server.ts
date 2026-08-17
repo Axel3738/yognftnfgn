@@ -69,6 +69,8 @@ interface OrderNode {
 export interface OrderData {
   sales: SalesDay[];
   products: ProductRow[];
+  /** Mixen per dag — grunden för dagsraderna i DailyPnl. */
+  productsByDay: Record<string, ProductRow[]>;
 }
 
 /**
@@ -110,8 +112,34 @@ async function doFetchOrderData(
   timezone: string,
   shopKey = "",
 ): Promise<OrderData> {
-  const jsonl = await runOrdersBulk(admin, shiftIso(from, -1), shiftIso(to, 1));
+  /* Korta fönster (dagens siffror, morgonens nya dagar) går via vanlig
+     paginering: 1–2 sekunder istället för bulk-exportens halvminut, och de
+     upptar inte butikens enda bulk-plats. Långa fönster stryps av API:ts
+     kostnadsmodell och måste ta bulk-vägen. */
+  const dayCount = (Date.parse(to) - Date.parse(from)) / 86_400_000 + 1;
+  const jsonl =
+    dayCount <= 7
+      ? await runOrdersPaginated(admin, shiftIso(from, -1), shiftIso(to, 1))
+      : await runOrdersBulk(admin, shiftIso(from, -1), shiftIso(to, 1));
+  const data = parseOrderLines(jsonl, from, to, timezone);
 
+  const costs = await fetchVariantCosts(admin, shopKey);
+  return {
+    sales: data.sales,
+    products: applyCurrentCosts(data.products, costs),
+    productsByDay: Object.fromEntries(
+      Object.entries(data.productsByDay).map(([d, rows]) => [d, applyCurrentCosts(rows, costs)]),
+    ),
+  };
+}
+
+/** Bygger dags- och produktaggregat ur JSONL-rader (ordrar + radartiklar). */
+function parseOrderLines(
+  jsonl: any[],
+  from: string,
+  to: string,
+  timezone: string,
+): OrderData {
   const salesBy = new Map<string, SalesDay>();
   for (let d = from; d <= to; d = shiftIso(d, 1)) {
     salesBy.set(d, {
@@ -122,10 +150,10 @@ async function doFetchOrderData(
 
   interface Agg { productGid: string; variantGid: string | null; title: string;
     variantTitle: string | null; units: number; netSales: number; }
-  const productBy = new Map<string, Agg>();
-  /* Ordrar som räknas — radrader vars förälder skippats (avbruten/test/utanför
-     fönstret) ska inte in i mixen. */
-  const counted = new Set<string>();
+  /* Ordrar som räknas, med sin dag — radrader vars förälder skippats
+     (avbruten/test/utanför fönstret) ska inte in i mixen. */
+  const counted = new Map<string, string>();
+  const productByDay = new Map<string, Map<string, Agg>>();
 
   for (const line of jsonl) {
     if (!line.__parentId) {
@@ -134,7 +162,7 @@ async function doFetchOrderData(
       const day = dayInTz(new Date(line.createdAt), timezone);
       const bucket = salesBy.get(day);
       if (!bucket) continue;
-      counted.add(line.id);
+      counted.set(line.id, day);
 
       const subtotal = num(line.subtotalPriceSet?.shopMoney?.amount);
       const discounts = num(line.totalDiscountsSet?.shopMoney?.amount);
@@ -149,9 +177,11 @@ async function doFetchOrderData(
       bucket.shippingCharges += num(line.totalShippingPriceSet?.shopMoney?.amount);
     } else {
       // Orderrad-artikel
-      if (!counted.has(line.__parentId)) continue;
+      const day = counted.get(line.__parentId);
+      if (!day) continue;
       const key = line.variant?.id ?? `${line.title}|${line.variantTitle ?? ""}`;
-      const agg = productBy.get(key) ?? {
+      const dayMap = productByDay.get(day) ?? new Map<string, Agg>();
+      const agg = dayMap.get(key) ?? {
         productGid: line.product?.id ?? "",
         variantGid: line.variant?.id ?? null,
         title: line.title,
@@ -161,15 +191,90 @@ async function doFetchOrderData(
       };
       agg.units += line.quantity ?? 0;
       agg.netSales += num(line.discountedTotalSet?.shopMoney?.amount);
-      productBy.set(key, agg);
+      dayMap.set(key, agg);
+      productByDay.set(day, dayMap);
     }
   }
 
-  const costs = await fetchVariantCosts(admin, shopKey);
+  const productsByDay: Record<string, ProductRow[]> = {};
+  for (const [day, m] of productByDay) productsByDay[day] = [...m.values()] as ProductRow[];
   return {
     sales: [...salesBy.values()],
-    products: applyCurrentCosts([...productBy.values()] as ProductRow[], costs),
+    products: mergeProductRows(Object.values(productsByDay).flat()),
+    productsByDay,
   };
+}
+
+/** Slår ihop produktrader (samma variant över flera dagar) till en per variant. */
+export function mergeProductRows(rows: ProductRow[]): ProductRow[] {
+  const by = new Map<string, ProductRow>();
+  for (const r of rows) {
+    const key = r.variantGid ?? `${r.title}|${r.variantTitle ?? ""}`;
+    const agg = by.get(key);
+    if (agg) {
+      agg.units += r.units;
+      agg.netSales += r.netSales;
+      if (agg.unitCost == null) agg.unitCost = r.unitCost;
+    } else {
+      by.set(key, { ...r });
+    }
+  }
+  return [...by.values()];
+}
+
+/**
+ * Hämtar korta fönster via vanlig paginering och returnerar samma radformat
+ * som bulk-exporten, så båda vägarna delar parser. Sidstorleken är vald så att
+ * begärd frågekostnad ryms i API:ts budget (50 ordrar × 25 rader).
+ */
+async function runOrdersPaginated(
+  admin: AdminApiContext,
+  fromExclusive: string,
+  toInclusive: string,
+): Promise<any[]> {
+  const lines: any[] = [];
+  let after: string | null = null;
+  for (let page = 0; page < 20; page++) {
+    const res: Response = await admin.graphql(
+      `#graphql
+       query Orders($after: String, $q: String!) {
+         orders(first: 50, after: $after, query: $q) {
+           pageInfo { hasNextPage endCursor }
+           nodes {
+             id createdAt cancelledAt test
+             totalPriceSet { shopMoney { amount } }
+             subtotalPriceSet { shopMoney { amount } }
+             totalDiscountsSet { shopMoney { amount } }
+             totalShippingPriceSet { shopMoney { amount } }
+             totalRefundedSet { shopMoney { amount } }
+             lineItems(first: 25) {
+               nodes {
+                 title variantTitle quantity
+                 discountedTotalSet { shopMoney { amount } }
+                 product { id }
+                 variant { id }
+               }
+             }
+           }
+         }
+       }`,
+      { variables: { after, q: `created_at:>='${fromExclusive}' AND created_at:<='${toInclusive}'` } },
+    );
+    const body = await res.json();
+    const throttled = (body?.errors ?? []).some(
+      (e: any) => e?.extensions?.code === "THROTTLED",
+    );
+    if (throttled) { await sleep(2000); page--; continue; }
+    const conn = body?.data?.orders;
+    if (!conn) break;
+    for (const o of conn.nodes ?? []) {
+      lines.push({ ...o, lineItems: undefined });
+      for (const li of o.lineItems?.nodes ?? []) lines.push({ ...li, __parentId: o.id });
+    }
+    if (!conn.pageInfo?.hasNextPage) break;
+    after = conn.pageInfo.endCursor;
+  }
+  return lines;
 }
 
 /**

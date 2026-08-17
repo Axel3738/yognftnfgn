@@ -25,6 +25,7 @@ export async function action({ request }: ActionFunctionArgs) {
         prisma.dailySpend.deleteMany({ where: { shop } }),
         prisma.costChange.deleteMany({ where: { shop } }),
         prisma.pnlCache.deleteMany({ where: { shop } }),
+        prisma.dailyPnl.deleteMany({ where: { shop } }),
         prisma.catalogCache.deleteMany({ where: { shop } }),
         prisma.fixedCost.deleteMany({ where: { shop } }),
         prisma.storeLinkCode.deleteMany({ where: { createdBy: shop } }),

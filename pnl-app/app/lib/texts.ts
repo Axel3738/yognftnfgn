@@ -324,7 +324,7 @@ const en = {
   },
 
   group: {
-    noCachedData: "no saved figures for the period — open that store's dashboard once",
+    noCachedData: "figures are being fetched in the background — reload in a minute",
     fxUnavailable: (from: string, to: string) => `exchange rate ${from}→${to} could not be fetched`,
   },
 };
@@ -642,7 +642,7 @@ const sv: Texts = {
   },
 
   group: {
-    noCachedData: "inga sparade siffror för perioden — öppna butikens panel en gång",
+    noCachedData: "siffrorna hämtas i bakgrunden — ladda om om en minut",
     fxUnavailable: (from: string, to: string) => `växelkurs ${from}→${to} kunde inte hämtas`,
   },
 };
