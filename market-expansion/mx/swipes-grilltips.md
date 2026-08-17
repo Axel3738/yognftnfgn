@@ -55,13 +55,16 @@ Mapp: https://drive.google.com/drive/folders/1bngbhLtel48RGevXrNhlqOqZgyqx8tJZ
 
 Listicle-mapp: https://drive.google.com/drive/folders/126StGFqxHyuiSzz-deWLBI1xDobBMJYa
 
-| Listicle | Doc |
+| Listicle | Doc (v2 — med CDN-bildlänkar) |
 |---|---|
-| Artikel 8 MX (anti-aluminio) | https://docs.google.com/document/d/110AOoyPZ5CfiWQSpFPpTguArpx2aN1CoLHR9d8iiyLM |
-| Artikel 1 MX (7 razones) | https://docs.google.com/document/d/1kGF_AdewG9SNMdiusUMZh1Y0iuxJ5KNlhfh1I82fckQ |
-| Artikel 11 MX (frustration) | https://docs.google.com/document/d/1jnHEuxYkBKtIvUxbnOTZPE46HXFWvfIb9-eh-M12tm0 |
-| Artikel 22 MX (hierro fundido) | https://docs.google.com/document/d/1ko3Byg_CW243QVjodUcpFWjrhWzy1mkRTEXoBJp98I0 |
-| Artikel 13 MX (brochetas) | https://docs.google.com/document/d/1QaCOwdsiijMLpck7_zPEHxdfR4I26V4aOXcsrL1FVmk |
+| Artikel 8 MX (anti-aluminio) | https://docs.google.com/document/d/1Q7-7RqXMrN7o3Y0orVIFA2Oxwwpn6z-xfK5Ckm-Xae8 |
+| Artikel 1 MX (7 razones) | https://docs.google.com/document/d/1o4Sz2YjuIbsn8dPz0PP2fd47ZX0IzG3mw6yA95c1uuI |
+| Artikel 11 MX (frustration) | https://docs.google.com/document/d/1ptgDOv5PJ1ouBnLfPnP-6XCNe919kR-J4iPKWpJs3Ik |
+| Artikel 22 MX (hierro fundido) | https://docs.google.com/document/d/1cRFKLKAkjaXwNnA3ua_uq4G99-LBDp8RRqB7xRlXdpU |
+| Artikel 13 MX (brochetas) | https://docs.google.com/document/d/1q8c9NDaHxH7waS36Rehmy7GtsgbUaHTmi1-9b1S40jM |
+
+**Bilder (2026-08-17):** 12 hyperrealistiska scenbilder genererade med FLUX.2 2K (v2 — omkörda på Axels feedback: hyperrealism + lavadero i st.f. diskmaskin) och uppladdade till Shopify Files som `greatgrill-mx-v2-01..12`. Produktbilder = butikens riktiga foton. v1-bilderna raderade ur Shopify. Färdiga HTML-sidor med alla bilder: `market-expansion/mx/listicles/html/artikel{8,1,11,22,13}.html` — CTA:erna pekar på riktiga produkt-sluggen. Kvarvarande bild: Andrés Jiménez-porträttet (Axel har fotot; platshållare "AJ" i HTML).
+⚠️ Öppen copyfråga: sektionstexterna säger "directo al lavavajillas" men bilderna visar handdisk vid lavadero (Axels input: diskmaskin ovanlig i MX) — besluta om texten ska bli "se enjuaga en un minuto, sin tallar" innan sidorna publiceras.
 
 ## Kvar att göra
 
