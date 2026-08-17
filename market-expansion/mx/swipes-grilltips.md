@@ -64,7 +64,7 @@ Listicle-mapp: https://drive.google.com/drive/folders/126StGFqxHyuiSzz-deWLBI1xD
 | Artikel 13 MX (brochetas) | https://docs.google.com/document/d/1q8c9NDaHxH7waS36Rehmy7GtsgbUaHTmi1-9b1S40jM |
 
 **Bilder (2026-08-17):** 12 hyperrealistiska scenbilder genererade med FLUX.2 2K (v2 — omkörda på Axels feedback: hyperrealism + lavadero i st.f. diskmaskin) och uppladdade till Shopify Files som `greatgrill-mx-v2-01..12`. Produktbilder = butikens riktiga foton. v1-bilderna raderade ur Shopify. Färdiga HTML-sidor med alla bilder: `market-expansion/mx/listicles/html/artikel{8,1,11,22,13}.html` — CTA:erna pekar på riktiga produkt-sluggen. Kvarvarande bild: Andrés Jiménez-porträttet (Axel har fotot; platshållare "AJ" i HTML).
-⚠️ Öppen copyfråga: sektionstexterna säger "directo al lavavajillas" men bilderna visar handdisk vid lavadero (Axels input: diskmaskin ovanlig i MX) — besluta om texten ska bli "se enjuaga en un minuto, sin tallar" innan sidorna publiceras.
+✅ Lavavajillas-copyn LÖST 2026-08-17 (sonnet-agent): rengöringssektionerna leder nu med "se enjuaga en un minuto, sin cepillo de alambre" och diskmaskinen är sekundär ("y si tienes lavavajillas, también la aguanta"). Andrés Jiménez-fotot inlagt i alla bylines (CDN: Namnlos_design_-_2026-08-15T064751.462.png). ⚠️ HTML-filerna är MASTER — Google-docsen ligger en revision efter på rengöringstext + foto; bygg alltid GemPages från HTML-filerna. Bild 1–4 + 5A godkända av Axel 2026-08-17. Snapchat som kanal förkastad (fel demografi i MX) — Snapchat-VIDEON körs som Meta-annons när Axel skickar den.
 
 ## Kvar att göra
 
