@@ -1,18 +1,20 @@
 // SE Magnetfiskesatsen — första kampanjen, 2026-08-17.
 //
+// ✅ REDAN BYGGD I KONTOT 2026-08-17 via Ads-connectorn (kampanj 120249815379020291,
+// allt pausat). Den här konfigen är dokumentation + återkörningsskydd — multi-batch
+// hoppar över annonser som redan finns i adsetet.
+//
 // Ny produkt på MagiBorsten. Axels instruktion: OUTCOME_SALES med CBO 1000 kr/dag,
-// ett adset per koncept (PD / SP / CS / G), bred SE-targeting, allt PAUSAT.
+// ett adset per koncept, bred SE-targeting, allt PAUSAT.
 // CBO för test är ett uttryckligt undantag från regel 11 (test-ABO) — Axels beslut
 // i uppdraget 2026-08-17.
 //
-// Copy från Axels ADCOPY-dokument (PD / SP / SO). SO-copyn (rabattvinkeln) körs på
-// CS-materialet, PD-copyn på G-materialet — enligt uppdraget.
+// Copy från Axels ADCOPY-dokument (PD / SP). PD-copyn körs även på G-materialet.
 //
-// ⚠️ PRISFLAGG: SO-copyn lovar "50% rabatt, från 240 kr till 120 kr". Produktsidan
-// säljer för 279 kr utan rabatt (kollat i Shopify 2026-08-17). Aktivera INTE
-// CS-adsetet innan priset/rabatten på sajten stämmer med copyn.
-//
-// Alla 16 assets ligger redan i kontots mediabibliotek och matchas på namn.
+// ⚠️ CS-KONCEPTET UTGICK på Axels order 2026-08-17 ("Ta inte med annonsen som
+// säger 120 kronor"): SO-copyn lovade "50% rabatt, 240 → 120 kr" men produktsidan
+// säljer för 279 kr utan rabatt (kollat i Shopify samma dag). Assets
+// Magnetfiskesats_CS + CS_1 ligger kvar oanvända i mediabiblioteket.
 
 const LP = 'https://baverbutiken.se/products/magnetfiskesats-320lb-neodymmagnet-med-10m-rep';
 
@@ -29,14 +31,6 @@ const COPY_SP = {
   message: 'Magnetfiske är hobbyn alla pratar om just nu 🎣\n\n✅ Tusentals svenskar har redan testat\n✅ Hittar allt från verktyg till hela cyklar\n✅ Enkelt kit – inget krångel\n✅ 30 dagars pengarna-tillbaka-garanti\n\n"Trodde inte det var möjligt förrän jag testade själv."\n👉 Se vad du kan hitta.',
   headline: 'Se vad andra redan hittat',
   description: '⭐⭐⭐⭐⭐ Verifierade kunder älskar den.',
-  cta: 'SHOP_NOW', link: LP,
-};
-
-// SALE/OFFER — körs på CS-materialet (rabattvinkel). Se prisflaggen ovan.
-const COPY_SO = {
-  message: 'Idag: 50% rabatt på magnetfiskesatsen 🔥\n\n✅ 320 pund dragkraft\n✅ Komplett kit – magnet, rep, handtag\n✅ Lagret tar snart slut\n✅ Endast idag – sedan tillbaka till ordinarie pris\n\nMissa inte chansen.\n👉 Beställ innan den är slutsåld.',
-  headline: '50% rabatt – endast idag',
-  description: 'Från 240 kr till 120 kr. Bara idag.',
   cta: 'SHOP_NOW', link: LP,
 };
 
@@ -72,10 +66,6 @@ export default {
         { name: 'Magnetfiskesats SP', copy: COPY_SP, link: LP,
           motifs: ['Magnetfiskesats_SP', 'Magnetfiskesats_SP_1',
                    'Magnetfiskesats_SP_2', 'Magnetfiskesats_SP_3'] },
-
-        // SO-copy (rabatt) på CS-materialet — Axels mappning.
-        { name: 'Magnetfiskesats CS', copy: COPY_SO, link: LP,
-          motifs: ['Magnetfiskesats_CS', 'Magnetfiskesats_CS_1'] },
 
         // PD-copy på G-materialet — Axels mappning.
         { name: 'Magnetfiskesats G', copy: COPY_PD, link: LP,
