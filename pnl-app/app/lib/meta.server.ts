@@ -177,45 +177,40 @@ export async function getSpend(
   }
   const needsFx = Boolean(spendCurrency && shopCurrency && spendCurrency !== shopCurrency);
 
-  // Dagar utan cache, plus de två senaste (kan efterjusteras av Meta). Dagar
-  // som sparats före omräkningen fanns saknar kurs och måste hämtas om.
+  /* Vad behöver hämtas om?
+     - Dagar utan rad har aldrig hämtats (eller hade noll leverans — de får en
+       nollrad vid hämtning, så de inte jagas för evigt).
+     - Färska dagar (Meta efterjusterar) — men bara om raden är äldre än 10
+       minuter. Det är skillnaden mellan "Meta på varje sidladdning" (sekunder
+       av väntan vid varje datumbyte) och "Meta var tionde minut".
+     - Dagar sparade före valutaomräkningen fanns saknar kurs. */
+  const FERSK_MS = 10 * 60 * 1000;
   const stale: string[] = [];
+  let radSaknas = false;
   for (let d = from; d <= to; d = shiftIso(d, 1)) {
     const cachedRow = byDay.get(d);
     const recent = d >= shiftIso(today, -1);
+    const gammal =
+      cachedRow && recent && Date.now() - cachedRow.fetchedAt.getTime() > FERSK_MS;
     const oräknad = needsFx && cachedRow && cachedRow.fxRate == null;
-    if (!cachedRow || recent || oräknad) stale.push(d);
+    if (!cachedRow || gammal || oräknad) {
+      stale.push(d);
+      if (!cachedRow || oräknad) radSaknas = true;
+    }
   }
 
   let fxOk = !needsFx;
 
-  if (stale.length) {
+  if (stale.length && !radSaknas && farUppdateraMeta(shop)) {
+    /* Alla dagar finns, bara färskheten släpar: servera databasen direkt och
+       hämta i bakgrunden. Annonssiffror som är minuter gamla är rätt pris för
+       en panel som svarar omedelbart. */
+    void refreshSpend(shop, cfg, stale, needsFx, spendCurrency, shopCurrency).catch((e) =>
+      console.error(`Meta-bakgrundshämtning för ${shop} misslyckades:`, e),
+    );
+  } else if (stale.length) {
     try {
-      const rows = await fetchInsights(cfg, stale[0], stale[stale.length - 1]);
-
-      const rates = needsFx
-        ? await fetchRates(spendCurrency!, shopCurrency!, stale[0], stale[stale.length - 1])
-        : new Map<string, number>();
-      if (needsFx && rates.size) fxOk = true;
-
-      for (const r of rows) {
-        const day = r.date_start;
-        const raw = Number(r.spend ?? 0);
-        const rate = needsFx ? rateFor(rates, day) : undefined;
-        const rec = {
-          spend: rate ? raw * rate : raw,
-          spendRaw: needsFx ? raw : null,
-          fxRate: rate ?? null,
-          impressions: parseInt(r.impressions ?? "0", 10) || 0,
-          clicks: parseInt(r.clicks ?? "0", 10) || 0,
-        };
-        await prisma.dailySpend.upsert({
-          where: { shop_day: { shop, day: new Date(day) } },
-          create: { shop, day: new Date(day), ...rec },
-          update: { ...rec, fetchedAt: new Date() },
-        });
-        byDay.set(day, { ...(byDay.get(day) as any), day: new Date(day), ...rec });
-      }
+      fxOk = await refreshSpend(shop, cfg, stale, needsFx, spendCurrency, shopCurrency);
     } catch (e) {
       const msg =
         e instanceof MetaError && e.needsReauth
@@ -247,6 +242,67 @@ export async function getSpend(
     })),
     ...fxStatus(needsFx, fxOk, spendCurrency, shopCurrency),
   };
+}
+
+/* Bakgrundshämtningar mot Meta: högst en per butik och minut. */
+const senasteMeta = new Map<string, number>();
+function farUppdateraMeta(shop: string): boolean {
+  const t = senasteMeta.get(shop) ?? 0;
+  if (Date.now() - t < 60_000) return false;
+  senasteMeta.set(shop, Date.now());
+  return true;
+}
+
+/**
+ * Hämtar spannet från Meta och skriver DailySpend-rader. Dagar Meta inte
+ * rapporterar (noll leverans) får en NOLLRAD — utan den räknas dagen som
+ * "aldrig hämtad" för evigt och tvingar ett Meta-anrop på varje sidladdning.
+ * Returnerar om valutaomräkningen (när den behövs) hade kurser.
+ */
+async function refreshSpend(
+  shop: string,
+  cfg: MetaConfig,
+  stale: string[],
+  needsFx: boolean,
+  spendCurrency?: string | null,
+  shopCurrency?: string,
+): Promise<boolean> {
+  const rows = await fetchInsights(cfg, stale[0], stale[stale.length - 1]);
+
+  const rates = needsFx
+    ? await fetchRates(spendCurrency!, shopCurrency!, stale[0], stale[stale.length - 1])
+    : new Map<string, number>();
+  const fxOk = !needsFx || rates.size > 0;
+
+  const rapporterade = new Set<string>();
+  for (const r of rows) {
+    const day = r.date_start;
+    rapporterade.add(day);
+    const raw = Number(r.spend ?? 0);
+    const rate = needsFx ? rateFor(rates, day) : undefined;
+    const rec = {
+      spend: rate ? raw * rate : raw,
+      spendRaw: needsFx ? raw : null,
+      fxRate: rate ?? null,
+      impressions: parseInt(r.impressions ?? "0", 10) || 0,
+      clicks: parseInt(r.clicks ?? "0", 10) || 0,
+    };
+    await prisma.dailySpend.upsert({
+      where: { shop_day: { shop, day: new Date(day) } },
+      create: { shop, day: new Date(day), ...rec },
+      update: { ...rec, fetchedAt: new Date() },
+    });
+  }
+  const nollrad = { spend: 0, spendRaw: null, fxRate: null, impressions: 0, clicks: 0 };
+  for (const day of stale) {
+    if (rapporterade.has(day)) continue;
+    await prisma.dailySpend.upsert({
+      where: { shop_day: { shop, day: new Date(day) } },
+      create: { shop, day: new Date(day), ...nollrad },
+      update: { fetchedAt: new Date() },
+    });
+  }
+  return fxOk;
 }
 
 /** Omräkning lyckad → informera. Behövdes men gick inte → varna. */
