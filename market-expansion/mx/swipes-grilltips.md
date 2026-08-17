@@ -66,6 +66,24 @@ Listicle-mapp: https://drive.google.com/drive/folders/126StGFqxHyuiSzz-deWLBI1xD
 **Bilder (2026-08-17):** 12 hyperrealistiska scenbilder genererade med FLUX.2 2K (v2 — omkörda på Axels feedback: hyperrealism + lavadero i st.f. diskmaskin) och uppladdade till Shopify Files som `greatgrill-mx-v2-01..12`. Produktbilder = butikens riktiga foton. v1-bilderna raderade ur Shopify. Färdiga HTML-sidor med alla bilder: `market-expansion/mx/listicles/html/artikel{8,1,11,22,13}.html` — CTA:erna pekar på riktiga produkt-sluggen. Kvarvarande bild: Andrés Jiménez-porträttet (Axel har fotot; platshållare "AJ" i HTML).
 ✅ Lavavajillas-copyn LÖST 2026-08-17 (sonnet-agent): rengöringssektionerna leder nu med "se enjuaga en un minuto, sin cepillo de alambre" och diskmaskinen är sekundär ("y si tienes lavavajillas, también la aguanta"). Andrés Jiménez-fotot inlagt i alla bylines (CDN: Namnlos_design_-_2026-08-15T064751.462.png). ⚠️ HTML-filerna är MASTER — Google-docsen ligger en revision efter på rengöringstext + foto; bygg alltid GemPages från HTML-filerna. Bild 1–4 + 5A godkända av Axel 2026-08-17. Snapchat som kanal förkastad (fel demografi i MX) — Snapchat-VIDEON körs som Meta-annons när Axel skickar den.
 
+## Annons → Listicle-mappning (beslutad 2026-08-17)
+
+Regel: annonsens löfte fortsätter på destinationssidan. Alla 3 hook-varianter av samma annons → samma destination. Destinations-URL = GemPages-sidans URL när Axel byggt dem.
+
+| Annons | Destination |
+|---|---|
+| 1 foilstop (alla hooks) | Artikel 8 |
+| 2 familia | Artikel 8 |
+| 3 crudoquemado ⭐ | Artikel 11 |
+| 4 plancha | Artikel 22 |
+| 5 quickrec (A+B) | Artikel 1 |
+| 5C oferta | DIREKT till produktsidan (redan köpläge-copy) — testvärd avvikelse |
+| 6 top3 | Artikel 8 |
+| 7 dinero | Artikel 11 |
+| 8 sazon | Artikel 13 |
+
+Belastning: Artikel 8 tar 3 koncept (1, 2, 6) · Artikel 11 tar 2 (3, 7) · Artikel 1, 22, 13 tar 1 var.
+
 ## Kvar att göra
 
 - [x] Spanska VO-manus från copy-subagent (sonnet, tre-frågorstestet redovisat per manus) → inlagda i brieferna
