@@ -74,9 +74,25 @@ halvfärdigt med "nu behöver du bara…".
     - Kvarglömda landsnamn ur den svenska originalcopyn: UK:s magnetfiske sa
       "one of the fastest-growing hobbies in **Sweden**". Sök på "Sweden"/"Sverige".
 
+    - **Externt hotlänkade bilder.** Läs `src` i varje `<img>`: allt som inte är
+      `cdn.shopify.com` ägs inte av butiken. UK hade 117 av 122 produkter hotlänkade
+      från `img.kwcdn.com` (Temus CDN) + 1 från `cdn.cloudfastin.top`. Alla svarade 200,
+      så det syns inte som ett fel — men blockerar Temu hotlänkning släcks alla
+      produktsidor samtidigt och tyst. Migrera med `fileCreate` (tar en publik URL som
+      `originalSource`) och byt sedan `src`. Radera inget förrän den nya URL:en svarar 200.
+    - **Absoluta löften i RUBRIKER, inte bara i brödtext.** Rättar du "you can always hear
+      where the animal is" i stycket men lämnar `<h2>Hear where your animals are – at all
+      times</h2>` ovanför, lovar sidan efter fixen MER än den gjorde innan. Sök på
+      never/always/zero/no risk i HELA dokumentet, rubriker inkluderade.
+
     ⚠️ Shopifys fulltextsök matchar ord för sig, inte frasen. En träff på "Fast delivery"
     kan vara "stick fast" + "Smooth delivery" i samma text. Hämta alltid `descriptionHtml`
     och läs innan du dömer — annars jagar du spöken.
+
+    ⚠️ Låt en SEPARAT agent verifiera varje ändring mot den skarpa texten. I UK-omgången
+    rapporterade lagningsagenterna "klart" på alla 21 — verifierarna bekräftade att alla
+    21 stämde, men hittade samtidigt fyra ärvda mallfel som ingen bett om att leta efter.
+    Den som lagar ser inte det den inte fick i uppdrag att se.
 
 ## Prismetoden
 
