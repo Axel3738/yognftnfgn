@@ -33,12 +33,24 @@ Exempel: `broad_advplus_purchase` eller `LAL1-purchasers_reels_purchase`
 
 ### Ad  ← här bor testandet
 ```
-{BRAND}_{PRODUCT}_{ANGLE}_{FORMAT}_{HOOK}_v{N}
+{BRAND}_{PRODUCT}_{ANGLE}_{FORMAT}_{HOOK}_v{N}[_{DEST}]
 ```
 Exempel: `MAGI_brush_pain_beforeafter_stains_v1`
+Med destinationstest: `clin_greatgrill_pain_ugc_foilstop_v1_pdp`
 
 Varje fält kommer från en **kontrollerad vokabulär** nedan. Håll dig till listorna —
 det är det som gör datan grupperbar. Ny variant = bumpa `v{N}`. Ny idé = nytt hook.
+
+**`DEST` (frivilligt, tillagt 2026-08-17)** — bara när samma creative körs mot flera
+landningssidor. Utan destinationstest utelämnas fältet helt.
+
+| Kod | Betydelse |
+|-----|-----------|
+| `pdp` | Produktsidan |
+| `lst<N>` | Advertorial/listicle nr N (`lst8`, `lst11`, `lst22`, `lst1`, `lst13`) |
+
+Regeln: **byt aldrig destination på en annons som fått data** — skapa en ny annons med
+annat `DEST`. Annars går det inte att avgöra om skillnaden kom från sidan eller från tiden.
 
 ---
 
