@@ -15,12 +15,19 @@ halvfärdigt med "nu behöver du bara…".
 |---|---|---|---|---|---|
 | 🇸🇪 | bäverbutiken.se | SEK | Bäverbutiken | Ja | Huvudbutik, källan |
 | 🇳🇴 | grillklinikken.no | NOK | Grillklinikken | **NEJ** | ✅ Lanserad 2026-08-18 |
-| 🇩🇰 | bæverbutiken.dk | DKK | Bæverbutiken | Ja | ✅ Lanserad 2026-08-18 |
-| 🇫🇮 | EUR-butik (namn syns vid koppling) | EUR | butikens namn | om bäver-varumärke | ⏳ Väntar |
+| 🇩🇰 | bæverbutiken.dk | DKK | Bæverbutiken | Ja | ✅ Lanserad 2026-08-18 (⚠️ dubbletter, se nedan) |
+| 🇫🇮 | majavakauppa.fi | EUR | Majavakauppa | Ja (*majava* = bäver) | ✅ Lanserad 2026-08-18 |
 | 🇬🇧 | GBP-butik (namn syns vid koppling) | GBP | butikens namn | om bäver-varumärke | ⏳ Väntar |
 
 ## Hårda regler
 
+0. **INVENTERA FÖRST — före första `create-product`.** Butiken kan redan ha produkterna
+   från en tidigare session eller ett annat Claude-konto. Lista hela katalogen
+   (`products(first: 50, sortKey: TITLE)`, sidbläddra till `hasNextPage: false`) och
+   sök på SKU-mönstret (`productVariants(query: "sku:TEMU-*")`) **innan** något skapas.
+   Skapa bara det som saknas. *(Danmark fick 25 dubbletter 2026-08-18 för att det här
+   steget hoppades över — Axel: "don't do any duplicates, that just happened in Danish".)*
+   Finns produkten redan: rör den inte utom för att laga defekter (se regel 12).
 1. **`get-shop-info` FÖRST — före varje skrivning.** Verifiera namn + valuta. Fel butik
    eller fel valuta: STOPPA och säg till Axel. Blanda ALDRIG ihop butikerna.
 2. **Butiksbyte:** `switch-shop` släpper nuvarande token; Axel måste själv koppla nästa
@@ -49,6 +56,17 @@ halvfärdigt med "nu behöver du bara…".
 11. **Verifiera efteråt:** hämta några produkter och kontrollera `featuredMedia` (bilderna
     kopieras asynkront till landets CDN — kolla att de landat), status ACTIVE och
     publikationsantal. Rapportera i två högar: Fixat / Förslag.
+12. **Granska det som redan ligger i butiken, inte bara det du själv la in.** En tidigare
+    session kan ha lämnat defekter. Sök efter dem så här — de går att hitta med API:et:
+    - `products(query: "<hastighetsord på landets språk>")` — fulltextsök på beskrivningen.
+      Hittade 12 produkter med "Nopea toimitus" i finska butiken 2026-08-18.
+    - `variantsCount { count }` mot förväntat antal — **1 variant på en sko eller ett
+      mobilskal betyder att kunden inte kan välja storlek/modell.** Laga med
+      `productOptionUpdate` (döp om `Title`-optionen, lägg sedan till värdena i ett
+      SEPARAT anrop — döpa om och lägga till i samma anrop failar tyst) och sätt därefter
+      unika SKU:er, annars ärver alla nya varianter samma SKU.
+    - `mediaCount { count }` = 1 och `<!-- GIF: … -->` i `descriptionHtml` — tomma
+      platshållarkommentarer, ofta kvar på svenska mitt i landets copy.
 
 ## Prismetoden
 

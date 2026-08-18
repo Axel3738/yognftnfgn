@@ -420,8 +420,15 @@ Claude-konto. Det här är kortversionen:
 | 🇸🇪 | bäverbutiken.se | SEK | Bäverbutiken | Ja |
 | 🇳🇴 | grillklinikken.no | NOK | Grillklinikken | **Nej** |
 | 🇩🇰 | bæverbutiken.dk | DKK | Bæverbutiken | Ja |
-| 🇫🇮 | (EUR — namn okänt tills kopplad) | EUR | butikens namn | efter varumärke |
+| 🇫🇮 | majavakauppa.fi | EUR | Majavakauppa | Ja (*majava* = bäver) |
 | 🇬🇧 | (GBP — namn okänt tills kopplad) | GBP | butikens namn | efter varumärke |
+
+⚠️ **Inventera butiken innan du skapar något.** Butikerna kan redan ha produkterna från ett
+annat Claude-konto. Lista hela katalogen och sök på SKU-mönstret **först**, skapa bara det
+som saknas. Danmark fick 25 dubbletter 2026-08-18 för att det steget hoppades över.
+Och granska det som redan ligger där: finska butikens 12 första produkter hade tomma
+svenska platshållarkommentarer, hastighetslöftet "Nopea toimitus" och 1 variant på
+produkter som ska ha 7 respektive 18. Det är inte "någon annans jobb" — det ligger skarpt.
 
 **Processen:** `switch-shop` släpper token → Axel kopplar nästa butik i connectorn →
 **`get-shop-info` FÖRST, alltid** (fel butik = stopp) → skapa produkterna på landets språk →
