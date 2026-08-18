@@ -1,7 +1,7 @@
 # Launch 1 — GreatGrill MX · CBO-testkampanj
 
 **Byggd skarpt i Meta 2026-08-18.** Kampanjen ligger **PAUSED** — allt annat är ACTIVE,
-så du slår på *en* switch (kampanjnivån) och alla 21 annonser går live samtidigt.
+så du slår på *en* switch (kampanjnivån) och alla 42 annonser går live samtidigt.
 Ingenting spenderar en krona innan dess.
 
 | | |
@@ -13,38 +13,71 @@ Ingenting spenderar en krona innan dess.
 | Pixel | `776922878287560` + Purchase |
 | Målgrupp | Broad Mexiko, 25–65, Advantage+ placeringar och Advantage audience |
 | Attribution | 7 dagar klick / 1 dag visning |
-| Byggskript | `build-kampanj-1.py` + `build-kampanj-1-state.json` (resumebart) |
+| Byggskript | `build-kampanj-1.py` (produktsidan) + `build-listicle-adsets.py` (speglingen) |
 
 ---
 
-## Vilka annonser går till en listicle? **Inga. Alla 21 går till produktsidan.**
+## Destinationstestet är igång — 12 adsets, 42 annonser
 
-Det syns direkt i adset-namnen: varje adset heter **`GG PRODUKTSIDA - …`**.
-Ingen rad i kontot säger LISTICLE i dag. Listicle-sidorna (GemPages) är inte byggda
-ännu, så destinationstestet kan inte starta.
+Varje creative ligger i **två** adsets: ett mot produktsidan, ett mot en advertorial.
+Samma annonsnamn i båda — enda skillnaden är sidan. Destinationen står i adset-namnet.
 
-**Destinationen bor i adset-namnet, inte i annonsnamnet** — samma sätt som du redan
-namnger på det här kontot (`Grillborste MX - Rikaste områdena  LISTICLE`).
-När GemPages-sidorna finns duplicerar du adsetet och byter bara prefixet:
+| Produktsida | Listicle-spegling | Landar på |
+|---|---|---|
+| `GG PRODUKTSIDA - 01 foilstop` | `GG LISTICLE 8 - 01 foilstop` | `/pages/8` — *Deja de envolver tus camarones en aluminio* |
+| `GG PRODUKTSIDA - 02 familia` | `GG LISTICLE 8 - 02 familia` | `/pages/8` |
+| `GG PRODUKTSIDA - 06 top3` | `GG LISTICLE 8 - 06 top3` | `/pages/8` |
+| `GG PRODUKTSIDA - 07 dinero` | `GG LISTICLE 11 - 07 dinero` | `/pages/11` — *Deja de quemar la mitad de la comida* |
+| `GG PRODUKTSIDA - 08 sazon` | `GG LISTICLE 13 - 08 sazon` | `/pages/13` — *Una canasta reemplaza diez brochetas* |
+| `GG PRODUKTSIDA - BILDANNONSER` | `GG LISTICLE 1 - BILDANNONSER` | `/pages/1` — *7 razones para cambiar el aluminio* |
 
-| Idag | När listiclen finns |
+Alla produktsida-adsets pekar på
+`https://laclinicadelasador.mx/products/roterande-grillkorg-i-rostfritt-stal-perfekt-for-gronsaker-kott-tillbehor`.
+
+**`/pages/22`** (*7 razones para dejar el hierro fundido*) används inte ännu — den hör till
+koncept 4 plancha, som ligger i våg 2.
+
+Preview-nycklarna (`?_ab=0&key=…`) i Axels xlsx är **inte** använda. Det är Shopifys
+förhandsgranskningslänkar; de kan sluta gälla och hör inte hemma i en annons. De rena
+URL:erna svarar 200 och är publika — kontrollerat 2026-08-18.
+
+### Adset-ID:n (listicle-sidan)
+
+| Adset | ID |
 |---|---|
-| `GG PRODUKTSIDA - 01 foilstop` | `GG LISTICLE 8 - 01 foilstop` |
-| `GG PRODUKTSIDA - 02 familia` | `GG LISTICLE 8 - 02 familia` |
-| `GG PRODUKTSIDA - 06 top3` | `GG LISTICLE 8 - 06 top3` |
-| `GG PRODUKTSIDA - 07 dinero` | `GG LISTICLE 11 - 07 dinero` |
-| `GG PRODUKTSIDA - 08 sazon` | `GG LISTICLE 13 - 08 sazon` |
-| `GG PRODUKTSIDA - BILDANNONSER` | delas upp, se `testmatris.md` |
+| `GG LISTICLE 1 - BILDANNONSER` | `120252844324570349` |
+| `GG LISTICLE 11 - 07 dinero` | `120252844316340349` |
+| `GG LISTICLE 13 - 08 sazon` | `120252844320710349` |
+| `GG LISTICLE 8 - 01 foilstop` | `120252844301770349` |
+| `GG LISTICLE 8 - 02 familia` | `120252844309780349` |
+| `GG LISTICLE 8 - 06 top3` | `120252844312920349` |
 
-Annonsnamnen är **identiska** i båda versionerna. Det är meningen: samma creative,
-enda skillnaden är sidan den landar på — då kan du ställa adset mot adset och få
-destinationssvaret rent.
+Byggt av `build-listicle-adsets.py` (resumebart). Speglingen läser produktsida-adsetets
+annonser och skapar identiska kopior med bytt länk — så nya koncept speglas genom att
+köra om skriptet.
 
-**UTM sköter sig själv.** Länken innehåller Metas makron:
-`?utm_source=fb&utm_medium=paid&utm_campaign=clin_mx_2026q3&utm_content={{ad.name}}&utm_term={{adset.name}}`
-Meta fyller i annons- och adset-namnet automatiskt, så i Shopify ser du både vilken
-annons och vilken **sida** ordern kom från — utan att någon behöver hålla en lista
-uppdaterad för hand.
+---
+
+## ⚠️ Budgeten räcker inte till 12 adsets
+
+2 000 kr/dag delat på 12 adsets är i snitt 167 kr per adset — och CBO delar inte jämnt,
+den koncentrerar. Regel 3 i CLAUDE.md säger att ingen annons får dömas under 300 kr spend
+eller 3 köp. Med den här budgeten kommer merparten av de 42 annonserna aldrig upp i
+dömbart läge; de kommer se ut som förlorare utan att ha testats.
+
+**Två vägar, båda dugliga:**
+
+1. **Höj till 4 000 kr/dag.** Då blir det ~333 kr per adset i snitt och hela matrisen är
+   avläsbar på ungefär en vecka.
+2. **Behåll 2 000 kr och pausa halva matrisen.** Kör destinationstestet på *ett* koncept
+   först — förslagsvis 02 familia, eftersom det har flest hooks med stöd i
+   `voc-research.md`. Pausa de övriga tio adseten. När destinationsfrågan är besvarad
+   gäller svaret för hela biblioteket och du behöver aldrig betala för att mäta samma sak
+   sex gånger.
+
+Rekommendationen är **nr 2** om budgeten är fast: destinationseffekten är en generell
+variabel, creative-effekten är unik per annons. Det är bara den senare som måste mätas
+per annons.
 
 ---
 
@@ -187,7 +220,7 @@ Annonstext saknas ännu för koncept 3, 9, 10 och 11 — skrivs när creativesen
 
 ## Efter launch
 
-- [ ] Bygg GemPages-listiclesen → duplicera adseten med `GG LISTICLE <N> - …` (se `testmatris.md`)
+- [x] Listicle-sidorna byggda och speglade som egna adsets 2026-08-18
 - [x] ~~`node pipeline/quota.mjs log`~~ — gäller inte GreatGrill. Kvotskriptet läser
       `products/products.json`, som bara innehåller Bäverbutikens sex produkter.
       GreatGrill hör till Grillkliniken/SnarkLös och ska enligt CLAUDE.md ("blanda dem

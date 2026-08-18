@@ -8,16 +8,16 @@ det är det som gör att adset kan ställas mot adset. `_pdp`/`_lst<N>`-suffixen
 nedan är den gamla skrivningen och läses nu som *vilket adset annonsen ska ligga i*.
 Byggd kampanj: se `launch-kampanj-1.md`.
 
-## URL:er (fylls i av Axel när GemPages-sidorna är byggda)
+## URL:er (live och verifierade 2026-08-18)
 
 | Kod | Sida | URL |
 |---|---|---|
 | `pdp` | Produktsidan | https://laclinicadelasador.mx/products/roterande-grillkorg-i-rostfritt-stal-perfekt-for-gronsaker-kott-tillbehor |
-| `lst8` | Artikel 8 — anti-aluminio | *(fylls i)* |
-| `lst1` | Artikel 1 — 7 razones | *(fylls i)* |
-| `lst11` | Artikel 11 — frustration | *(fylls i)* |
-| `lst22` | Artikel 22 — hierro fundido | *(fylls i)* |
-| `lst13` | Artikel 13 — brochetas | *(fylls i)* |
+| `lst8` | Artikel 8 (Deja de envolver tus camarones en aluminio) — anti-aluminio | https://laclinicadelasador.mx/pages/8 |
+| `lst1` | Artikel 1 (7 razones para cambiar el aluminio) — 7 razones | https://laclinicadelasador.mx/pages/1 |
+| `lst11` | Artikel 11 (Deja de quemar la mitad de la comida) — frustration | https://laclinicadelasador.mx/pages/11 |
+| `lst22` | Artikel 22 (7 razones para dejar el hierro fundido) — hierro fundido | https://laclinicadelasador.mx/pages/22 |
+| `lst13` | Artikel 13 (Una canasta reemplaza diez brochetas) — brochetas | https://laclinicadelasador.mx/pages/13 |
 
 **UTM på varje länk** (annars syns destinationsskillnaden bara i Meta, inte i Shopify):
 `?utm_source=fb&utm_medium=paid&utm_campaign=clin_mx_2026q3&utm_content={hela_annonsnamnet}`

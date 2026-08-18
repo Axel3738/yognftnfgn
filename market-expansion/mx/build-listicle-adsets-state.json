@@ -1,0 +1,33 @@
+{
+ "adsets": {
+  "GG LISTICLE 8 - 01 foilstop": "120252844301770349",
+  "GG LISTICLE 8 - 02 familia": "120252844309780349",
+  "GG LISTICLE 8 - 06 top3": "120252844312920349",
+  "GG LISTICLE 11 - 07 dinero": "120252844316340349",
+  "GG LISTICLE 13 - 08 sazon": "120252844320710349",
+  "GG LISTICLE 1 - BILDANNONSER": "120252844324570349"
+ },
+ "ads": {
+  "GG LISTICLE 8 - 01 foilstop::GG_01_H3_pain_ugc_cebollita": "120252844306430349",
+  "GG LISTICLE 8 - 01 foilstop::GG_01_H2_pain_ugc_vaporadentro": "120252844307170349",
+  "GG LISTICLE 8 - 01 foilstop::GG_01_H1_pain_ugc_foilstop": "120252844308400349",
+  "GG LISTICLE 8 - 02 familia::GG_02_H2_pain_ugc_alvapor": "120252844311050349",
+  "GG LISTICLE 8 - 02 familia::GG_02_H3_pain_ugc_esposa": "120252844311550349",
+  "GG LISTICLE 8 - 02 familia::GG_02_H1_pain_ugc_familia": "120252844311760349",
+  "GG LISTICLE 8 - 06 top3::GG_06_H3_fomo_comparison_antesdecomprar": "120252844314280349",
+  "GG LISTICLE 8 - 06 top3::GG_06_H1_curiosity_comparison_top3": "120252844314930349",
+  "GG LISTICLE 8 - 06 top3::GG_06_H2_curiosity_comparison_dosdetres": "120252844315570349",
+  "GG LISTICLE 11 - 07 dinero::GG_07_H2_pain_ugc_diezpesos": "120252844317740349",
+  "GG LISTICLE 11 - 07 dinero::GG_07_H3_pain_ugc_asadorcome": "120252844318650349",
+  "GG LISTICLE 11 - 07 dinero::GG_07_H1_pain_ugc_dinero": "120252844319420349",
+  "GG LISTICLE 13 - 08 sazon::GG_08_H2_curiosity_ugc_miraparrilla": "120252844322220349",
+  "GG LISTICLE 13 - 08 sazon::GG_08_H1_curiosity_ugc_sazon": "120252844323570349",
+  "GG LISTICLE 13 - 08 sazon::GG_08_H3_curiosity_ugc_fuegosabor": "120252844324120349",
+  "GG LISTICLE 1 - BILDANNONSER::GG_B6_social_ugc_esposo": "120252844325990349",
+  "GG LISTICLE 1 - BILDANNONSER::GG_B1_pain_beforeafter_crudoquemado": "120252844326530349",
+  "GG LISTICLE 1 - BILDANNONSER::GG_B2_benefit_collage_features": "120252844327010349",
+  "GG LISTICLE 1 - BILDANNONSER::GG_B4_benefit_product_medidas": "120252844327160349",
+  "GG LISTICLE 1 - BILDANNONSER::GG_B3_identity_lifestyle_3idiomas": "120252844327340349",
+  "GG LISTICLE 1 - BILDANNONSER::GG_B5_offer_comparison_nogira": "120252844328020349"
+ }
+}
