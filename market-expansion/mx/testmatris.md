@@ -1,7 +1,12 @@
 # Testmatris GreatGrill MX: creative × destination
 
 **Datum:** 2026-08-17 · **Beslut:** Axel vill köra varje annons i två versioner — en mot produktsidan (PDP) och en mot en advertorial (listicle).
-**Namnkonvention:** `clin_greatgrill_{angle}_{format}_{hook}_v1_{dest}` där dest = `pdp` eller `lst<N>` (tillagt i `docs/naming-convention.md` 2026-08-17).
+**Namnkonvention (uppdaterad 2026-08-18):** annonsen heter `GG_{nr}_{H1|H2|H3}_{angle}_{format}_{hook}`
+och **destinationen står i adset-namnet** — `GG PRODUKTSIDA - 02 familia` respektive
+`GG LISTICLE 8 - 02 familia`. Samma creative har alltså samma annonsnamn i båda versionerna;
+det är det som gör att adset kan ställas mot adset. `_pdp`/`_lst<N>`-suffixen i tabellerna
+nedan är den gamla skrivningen och läses nu som *vilket adset annonsen ska ligga i*.
+Byggd kampanj: se `launch-kampanj-1.md`.
 
 ## URL:er (fylls i av Axel när GemPages-sidorna är byggda)
 

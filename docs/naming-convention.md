@@ -41,16 +41,19 @@ Med destinationstest: `clin_greatgrill_pain_ugc_foilstop_v1_pdp`
 Varje fält kommer från en **kontrollerad vokabulär** nedan. Håll dig till listorna —
 det är det som gör datan grupperbar. Ny variant = bumpa `v{N}`. Ny idé = nytt hook.
 
-**`DEST` (frivilligt, tillagt 2026-08-17)** — bara när samma creative körs mot flera
-landningssidor. Utan destinationstest utelämnas fältet helt.
+**Destination hör hemma i ADSET-namnet, inte i annonsnamnet** *(beslut 2026-08-18,
+ersätter det `DEST`-fält som lades till 2026-08-17)*. Skälet: samma creative ska heta
+exakt likadant oavsett vilken sida den pekar på — då kan man ställa adset mot adset och
+få ett rent destinationssvar, i stället för att ha två olika namn på samma annons.
+Det är också så Axel redan namnger på Snark-kontot (`… - Rikaste områdena  LISTICLE`).
 
-| Kod | Betydelse |
-|-----|-----------|
-| `pdp` | Produktsidan |
-| `lst<N>` | Advertorial/listicle nr N (`lst8`, `lst11`, `lst22`, `lst1`, `lst13`) |
+```
+GG PRODUKTSIDA - 02 familia          ← alla annonser här går till produktsidan
+GG LISTICLE 8 - 02 familia           ← samma annonser, mot advertorial 8
+```
 
-Regeln: **byt aldrig destination på en annons som fått data** — skapa en ny annons med
-annat `DEST`. Annars går det inte att avgöra om skillnaden kom från sidan eller från tiden.
+`utm_content` och `utm_term` sätts med Metas makron `{{ad.name}}` och `{{adset.name}}`,
+aldrig hårdkodat. Då kan namn och attribution inte glida isär.
 
 ---
 
@@ -109,3 +112,20 @@ Vilket hook har lägst CPA?"* — istället för att bara stirra på en enda sif
 2. **Ändra en variabel i taget** när du testar rent (håll allt annat lika, byt bara `angle`).
 3. **Döp aldrig om** en annons som fått data — skapa en ny med bumpat `v{N}`.
 4. Om ett fält inte passar in i vokabulären: lägg till det i listan här *först*, kör sen.
+
+---
+
+## MX-varianten (GreatGrill, konto Snark mexico)
+
+Kortare än standardnamnet ovan, eftersom kampanjen redan bär brand och produkt:
+
+```
+GG_02_H2_pain_ugc_alvapor
+│  │  │  └───────────────── angle_format_hook (samma vokabulär som ovan)
+│  │  └ hook-variant A/B/C = H1/H2/H3
+│  └ annonsnummer = redigerarnas filnummer = Google-dokumentet
+└ GreatGrill
+```
+
+Bildannonser: `GG_B1`–`GG_B6` i stället för nummer + hook.
+`_v1` skrivs inte ut — versionen bumpas först när en v2 faktiskt finns.

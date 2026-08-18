@@ -1,264 +1,208 @@
-# Launch 1 — GreatGrill MX · testkampanj
+# Launch 1 — GreatGrill MX · CBO-testkampanj
 
-**Skapad:** 2026-08-17 · **Byggd i Meta:** 2026-08-18 · **Budget:** 2 000 kr/dag
-**Status: BYGGD OCH KLAR I ADS MANAGER — kampanjen ligger PAUSED.**
-
-Kampanjen är byggd via Marketing API mot **Snark mexico `act_918424617391896`**.
-Adsets och annonser är ACTIVE, **kampanjen är PAUSED** — Axel slår på *en* switch
-(kampanjnivån) så går allting live samtidigt. Inget spenderas innan dess.
+**Byggd skarpt i Meta 2026-08-18.** Kampanjen ligger **PAUSED** — allt annat är ACTIVE,
+så du slår på *en* switch (kampanjnivån) och alla 21 annonser går live samtidigt.
+Ingenting spenderar en krona innan dess.
 
 | | |
 |---|---|
-| Kampanj-ID | `120252843641270349` |
-| Annonskonto | `act_918424617391896` "Snark mexico" · **SEK** · tidszon Mexico/General |
+| Kampanj | `CLIN_GG_SALES_20260818` · ID `120252844116050349` |
+| Budgettyp | **CBO** — 2 000 kr/dag på kampanjnivån *(Axels beslut 2026-08-18)* |
+| Annonskonto | `act_918424617391896` "Snark mexico" · **SEK** · Mexico/General · STONEBITE ECOM AB |
 | Sida | La Clínica del Asador `1334949959694822` |
-| Pixel | `776922878287560` (se varningen i avsnitt 0) |
-| Byggskript | `market-expansion/mx/build-kampanj-1.py` (resumebart) |
-
----
-
-## 0. VERIFIERING — GJORD 2026-08-18
-
-- [x] **Annonskonto verifierat via API:** `{"name":"Snark mexico","currency":"SEK","account_status":1,"timezone_name":"Mexico/General","business_name":"STONEBITE ECOM AB"}`. Det är alltså **inte** SnarkLös `1346450049878358` och **inte** MagiBorsten `1867947880635861`. ✅
-- [x] **Valuta: SEK.** 2 000 kr/dag = 6 adsets à 333 kr, precis som specat. ✅
-- [x] **Facebook-sida:** La Clínica del Asador `1334949959694822` — samma sida som kontots redan live-körande MX-kampanj använder. ✅
-- [x] **Pixel: `776922878287560`.** ⚠️ Den heter "Grillkliniken" och ägs av businessen SnarkLös. Det är den **enda** pixeln på kontot, och den är redan den som den live-körande kampanjen "Grillborsten MX" optimerar mot. Den fyrar från grillkliniken.se, grillklinikken.no **och** laclinicadelasador.mx — signalen delas alltså över tre länder. Sista fyrning 2026-08-18 01:58, så MX-events landar. **Det finns inget alternativ på kontot i dag** — vill du separera MX-signalen krävs en ny pixel på laclinicadelasador.mx, och då börjar inlärningen om från noll.
-- [ ] **Testköp** så Purchase-eventet bevisligen triggar från MX-sidan innan du slår på. *(Axel)*
-- [ ] **Domänverifiering + Aggregated Event Measurement** för laclinicadelasador.mx. *(Axel)*
-
----
-
-## 1. Budget
-
-**2 000 kr/dag**, fördelat på 6 adsets à **333 kr/dag** (33 300 öre). Kampanjbudget (CBO) är AV
-— budgeten ligger på adsetnivå enligt CLAUDE.md regel 11. **Budgetdelning mellan adsets är
-avstängd** (`is_adset_budget_sharing_enabled: false`) — annars lånar adseten av varandra och
-lika-budget-testet går inte att läsa.
-
-## 2. Kampanjnivå
-
-| Fält | Värde |
-|---|---|
-| Namn | `CLIN_SALES_20260817` |
-| Mål | Försäljning (Sales) |
-| Kampanjbudget (CBO) | **AV** — budget ligger på adset-nivå (CLAUDE.md regel 11: tester i ABO, aldrig i skalnings-CBO) |
-| Advantage+ shopping | AV |
+| Pixel | `776922878287560` + Purchase |
+| Målgrupp | Broad Mexiko, 25–65, Advantage+ placeringar och Advantage audience |
 | Attribution | 7 dagar klick / 1 dag visning |
+| Byggskript | `build-kampanj-1.py` + `build-kampanj-1-state.json` (resumebart) |
 
-## 3. Adset-nivå (6 st, identiska inställningar)
+---
 
-| Fält | Värde |
+## Vilka annonser går till en listicle? **Inga. Alla 21 går till produktsidan.**
+
+Det syns direkt i adset-namnen: varje adset heter **`GG PRODUKTSIDA - …`**.
+Ingen rad i kontot säger LISTICLE i dag. Listicle-sidorna (GemPages) är inte byggda
+ännu, så destinationstestet kan inte starta.
+
+**Destinationen bor i adset-namnet, inte i annonsnamnet** — samma sätt som du redan
+namnger på det här kontot (`Grillborste MX - Rikaste områdena  LISTICLE`).
+När GemPages-sidorna finns duplicerar du adsetet och byter bara prefixet:
+
+| Idag | När listiclen finns |
 |---|---|
-| Budget | 333 kr/dag per adset |
-| Optimering | **Purchase** (inte Landing Page Views, inte ATC) |
-| Land | Mexiko |
-| Ålder | 25–65 |
-| Kön | Alla (esposa/esposo-vinklarna riktas mot kvinnor) |
-| Målgrupp | **Broad** — inga intressen, ingen LAL (nytt konto, ingen pixeldata att bygga på) |
-| Placeringar | Advantage+ (alla) |
-| Schema | Inget start-/slutdatum satt — adseten startar i samma sekund som kampanjen slås på |
-| Budgetdelning | AV (`is_adset_budget_sharing_enabled: false`) |
-| Status i Meta | **ACTIVE** (spärren ligger på kampanjnivån) |
+| `GG PRODUKTSIDA - 01 foilstop` | `GG LISTICLE 8 - 01 foilstop` |
+| `GG PRODUKTSIDA - 02 familia` | `GG LISTICLE 8 - 02 familia` |
+| `GG PRODUKTSIDA - 06 top3` | `GG LISTICLE 8 - 06 top3` |
+| `GG PRODUKTSIDA - 07 dinero` | `GG LISTICLE 11 - 07 dinero` |
+| `GG PRODUKTSIDA - 08 sazon` | `GG LISTICLE 13 - 08 sazon` |
+| `GG PRODUKTSIDA - BILDANNONSER` | delas upp, se `testmatris.md` |
 
-**Adset-namn** (konventionen `{audience}_{placement}_{optimization}` + konceptsuffix eftersom ett koncept per adset):
+Annonsnamnen är **identiska** i båda versionerna. Det är meningen: samma creative,
+enda skillnaden är sidan den landar på — då kan du ställa adset mot adset och få
+destinationssvaret rent.
 
-| # | Adset-namn | Innehåll | Adset-ID i Meta |
-|---|---|---|---|
-| AS1 | `broad_advplus_purchase_c2familia` | Koncept 2, 3 hooks | `120252843642550349` |
-| AS2 | `broad_advplus_purchase_c6top3` | Koncept 6, 3 hooks | `120252843659650349` |
-| AS3 | `broad_advplus_purchase_c1foilstop` | Koncept 1, 3 hooks | `120252843663580349` |
-| AS4 | `broad_advplus_purchase_c7dinero` | Koncept 7, 3 hooks | `120252843669480349` |
-| AS5 | `broad_advplus_purchase_c8sazon` | Koncept 8, 3 hooks | `120252843674940349` |
-| AS6 | `broad_advplus_purchase_statics` | 6 bildannonser | `120252843680760349` |
-
-Ett koncept per adset = hooken är enda variabeln inom adsetet. Blanda aldrig koncept i samma adset — då går hook-läsningen förlorad.
+**UTM sköter sig själv.** Länken innehåller Metas makron:
+`?utm_source=fb&utm_medium=paid&utm_campaign=clin_mx_2026q3&utm_content={{ad.name}}&utm_term={{adset.name}}`
+Meta fyller i annons- och adset-namnet automatiskt, så i Shopify ser du både vilken
+annons och vilken **sida** ordern kom från — utan att någon behöver hålla en lista
+uppdaterad för hand.
 
 ---
 
-## 4. Annonsnivå — 21 annonser
+## Så läses annonsnamnet
 
-**Destination för ALLA:** produktsidan. Listicle-versionerna kan inte launchas än — GemPages-sidorna är inte byggda. Destinationstestet startar när URL:erna finns (se `testmatris.md`).
-
-**Bas-URL:** `https://laclinicadelasador.mx/products/roterande-grillkorg-i-rostfritt-stal-perfekt-for-gronsaker-kott-tillbehor`
-**Lägg på UTM per annons:** `?utm_source=fb&utm_medium=paid&utm_campaign=clin_mx_2026q3&utm_content=<ANNONSNAMNET>`
-
-### AS1 — `broad_advplus_purchase_c2familia`
-| Din fil | Annonsnamn i Meta | Annons-ID |
-|---|---|---|
-| `2 HOOK A.mp4` | `clin_greatgrill_pain_ugc_familia_v1_pdp` | `120252843655500349` |
-| `2 HOOK B.mp4` | `clin_greatgrill_pain_ugc_alvapor_v1_pdp` | `120252843656970349` |
-| `2 HOOK C.mp4` | `clin_greatgrill_pain_ugc_esposa_v1_pdp` | `120252843659040349` |
-
-### AS2 — `broad_advplus_purchase_c6top3`
-| Din fil | Annonsnamn i Meta | Annons-ID |
-|---|---|---|
-| `Ad 6 H1 v2.mp4` | `clin_greatgrill_curiosity_comparison_top3_v1_pdp` | `120252843660850349` |
-| `Ad 6 H2 v2.mp4` | `clin_greatgrill_curiosity_comparison_dosdetres_v1_pdp` | `120252843661440349` |
-| `Ad 6 H3 v2.mp4` | `clin_greatgrill_fomo_comparison_antesdecomprar_v1_pdp` | `120252843663000349` |
-
-### AS3 — `broad_advplus_purchase_c1foilstop`
-| Din fil | Annonsnamn i Meta | Annons-ID |
-|---|---|---|
-| `1 HOOK A.mp4` | `clin_greatgrill_pain_ugc_foilstop_v1_pdp` | `120252843666590349` |
-| `1 HOOK B.mp4` | `clin_greatgrill_pain_ugc_vaporadentro_v1_pdp` | `120252843667980349` |
-| `1 HOOK C.mp4` | `clin_greatgrill_pain_ugc_cebollita_v1_pdp` | `120252843669180349` |
-
-### AS4 — `broad_advplus_purchase_c7dinero`
-| Din fil | Annonsnamn i Meta | Annons-ID |
-|---|---|---|
-| `7 H1.mp4` | `clin_greatgrill_pain_ugc_dinero_v1_pdp` | `120252843670730349` |
-| `7 H2.mp4` | `clin_greatgrill_pain_ugc_diezpesos_v1_pdp` | `120252843672480349` |
-| `7 H3.mp4` | `clin_greatgrill_pain_ugc_asadorcome_v1_pdp` | `120252843674440349` |
-
-### AS5 — `broad_advplus_purchase_c8sazon`
-| Din fil | Annonsnamn i Meta | Annons-ID |
-|---|---|---|
-| `8 HOOK A.mp4` | `clin_greatgrill_curiosity_ugc_sazon_v1_pdp` | `120252843676990349` |
-| `8 HOOK B.mp4` | `clin_greatgrill_curiosity_ugc_miraparrilla_v1_pdp` | `120252843678300349` |
-| `8 HOOK C.mp4` | `clin_greatgrill_curiosity_ugc_fuegosabor_v1_pdp` | `120252843680330349` |
-
-### AS6 — `broad_advplus_purchase_statics`
-| Din fil | Annonsnamn i Meta | Annons-ID |
-|---|---|---|
-| `clin_greatgrill_pain_beforeafter_crudoquemado_v1.png` | `clin_greatgrill_pain_beforeafter_crudoquemado_v1_pdp` | `120252843681540349` |
-| `clin_greatgrill_benefit_collage_features_v1.png` | `clin_greatgrill_benefit_collage_features_v1_pdp` | `120252843682520349` |
-| `clin_greatgrill_identity_lifestyle_3idiomas_v1.png` | `clin_greatgrill_identity_lifestyle_3idiomas_v1_pdp` | `120252843683760349` |
-| `clin_greatgrill_benefit_product_medidas_v1.png` | `clin_greatgrill_benefit_product_medidas_v1_pdp` | `120252843684310349` |
-| `clin_greatgrill_offer_comparison_nogira_v1.png` | `clin_greatgrill_offer_comparison_nogira_v1_pdp` | `120252843685660349` |
-| `clin_greatgrill_social_ugc_esposo_v1.png` | `clin_greatgrill_social_ugc_esposo_v1_pdp` | `120252843686180349` |
+```
+GG_02_H2_pain_ugc_alvapor
+│  │  │  │    │   └ hook (kroken som testas)
+│  │  │  │    └ format
+│  │  │  └ vinkel
+│  │  └ hook-variant A/B/C = H1/H2/H3
+│  └ annonsnummer (samma nummer som redigerarnas fil och Google-dokumentet)
+└ GreatGrill
+```
+Bildannonserna heter `GG_B1`–`GG_B6` i stället för nummer + hook.
+Ingen `_v1` och inget `_pdp` längre — versionen bumpas först när en v2 finns, och
+destinationen står i adsetet.
 
 ---
 
-## 5. Hålls tillbaka till våg 2
+## Adsets och annonser
+
+### `GG PRODUKTSIDA - 01 foilstop`  ·  adset-ID `120252844116540349`
+
+| Redigerarnas fil | Annonsnamn i Meta | Annons-ID |
+|---|---|---|
+| `1 HOOK A.mp4` | `GG_01_H1_pain_ugc_foilstop` | `120252844117170349` |
+| `1 HOOK B.mp4` | `GG_01_H2_pain_ugc_vaporadentro` | `120252844117940349` |
+| `1 HOOK C.mp4` | `GG_01_H3_pain_ugc_cebollita` | `120252844118390349` |
+
+### `GG PRODUKTSIDA - 02 familia`  ·  adset-ID `120252844118970349`
+
+| Redigerarnas fil | Annonsnamn i Meta | Annons-ID |
+|---|---|---|
+| `2 HOOK A.mp4` | `GG_02_H1_pain_ugc_familia` | `120252844121100349` |
+| `2 HOOK B.mp4` | `GG_02_H2_pain_ugc_alvapor` | `120252844121860349` |
+| `2 HOOK C.mp4` | `GG_02_H3_pain_ugc_esposa` | `120252844122290349` |
+
+### `GG PRODUKTSIDA - 06 top3`  ·  adset-ID `120252844122910349`
+
+| Redigerarnas fil | Annonsnamn i Meta | Annons-ID |
+|---|---|---|
+| `Ad 6 H1 v2.mp4` | `GG_06_H1_curiosity_comparison_top3` | `120252844123730349` |
+| `Ad 6 H2 v2.mp4` | `GG_06_H2_curiosity_comparison_dosdetres` | `120252844124580349` |
+| `Ad 6 H3 v2.mp4` | `GG_06_H3_fomo_comparison_antesdecomprar` | `120252844125240349` |
+
+### `GG PRODUKTSIDA - 07 dinero`  ·  adset-ID `120252844125870349`
+
+| Redigerarnas fil | Annonsnamn i Meta | Annons-ID |
+|---|---|---|
+| `7 H1.mp4` | `GG_07_H1_pain_ugc_dinero` | `120252844126530349` |
+| `7 H2.mp4` | `GG_07_H2_pain_ugc_diezpesos` | `120252844127080349` |
+| `7 H3.mp4` | `GG_07_H3_pain_ugc_asadorcome` | `120252844127520349` |
+
+### `GG PRODUKTSIDA - 08 sazon`  ·  adset-ID `120252844128040349`
+
+| Redigerarnas fil | Annonsnamn i Meta | Annons-ID |
+|---|---|---|
+| `8 HOOK A.mp4` | `GG_08_H1_curiosity_ugc_sazon` | `120252844128640349` |
+| `8 HOOK B.mp4` | `GG_08_H2_curiosity_ugc_miraparrilla` | `120252844129380349` |
+| `8 HOOK C.mp4` | `GG_08_H3_curiosity_ugc_fuegosabor` | `120252844130280349` |
+
+### `GG PRODUKTSIDA - BILDANNONSER`  ·  adset-ID `120252844131320349`
+
+| Redigerarnas fil | Annonsnamn i Meta | Annons-ID |
+|---|---|---|
+| `clin_greatgrill_pain_beforeafter_crudoquemado_v1.png` | `GG_B1_pain_beforeafter_crudoquemado` | `120252844132140349` |
+| `clin_greatgrill_benefit_collage_features_v1.png` | `GG_B2_benefit_collage_features` | `120252844133440349` |
+| `clin_greatgrill_identity_lifestyle_3idiomas_v1.png` | `GG_B3_identity_lifestyle_3idiomas` | `120252844134020349` |
+| `clin_greatgrill_benefit_product_medidas_v1.png` | `GG_B4_benefit_product_medidas` | `120252844134900349` |
+| `clin_greatgrill_offer_comparison_nogira_v1.png` | `GG_B5_offer_comparison_nogira` | `120252844136210349` |
+| `clin_greatgrill_social_ugc_esposo_v1.png` | `GG_B6_social_ugc_esposo` | `120252844136770349` |
+
+---
+
+## ⚠️ CBO gör hook-testet svårare att läsa — så här kompenserar du
+
+CLAUDE.md regel 11 säger att tester ska ligga i ABO med lika budget per annons.
+Axel valde CBO 2026-08-18 ändå. Konsekvensen är konkret och den kommer:
+**Meta ger inom ett dygn merparten av de 2 000 kr till ett eller två adsets.**
+Motorhöljet är precis det mönstret — `PD_1_H3` tog 42 % av spenden och tre hela
+batcher svalt ihjäl bredvid, vilket är själva anledningen till att regeln finns.
+
+Det betyder inte att kampanjen är fel. Det betyder att **avläsningen måste göras
+annorlunda**:
+
+- **Döm aldrig ett adset som fick under 300 kr.** Det förlorade inte — det fick
+  aldrig chansen. Notera det som "ej testat", inte som förlorare.
+- **Läs hooks bara inom det adset som faktiskt fick spend.** Jämför aldrig H1 i ett
+  adset som fick 1 200 kr mot H1 i ett som fick 90 kr.
+- **Vill du ha ett rent hook-svar:** flytta det svältande konceptet till en egen
+  ABO-kampanj med 300 kr/dag och låt det gå tre dagar.
+- Sätt gärna **minimibelopp per adset** i Ads Manager om du vill tvinga fram
+  spridning — det är CBO:ns enda motmedel.
+
+---
+
+## Avläsning och kill (CLAUDE.md regel 3 + `docs/os/ANALYSMETOD.md`)
+
+- **Ingen dom före 300 kr spend eller 3 köp per annons.**
+- **Dag 1–2:** rör ingenting. Kontrollera bara att leveransen går och att
+  Purchase-eventet trackar.
+- **Dag 3:** första hook-läsningen på tidiga signaler (CTR, CPC, 3s-views, ATC) —
+  inga kill-beslut på köp än.
+- **Dag 4–5:** kill mot **break-even** (BE-ROAS 1,45–1,55 beroende på bundlenivå,
+  bidrag 417–813 MXN/order). Aldrig mot target.
+- **Rangordna på vinstbidrag** `(break-even-CPA − CPA) × köp` — aldrig ROAS eller CPA
+  ensamt. Top spendern är benchmark, inte en kandidat att döma mot småannonser.
+- Fältnamn vid uthämtning: `amount_spent`, `actions:omni_purchase`,
+  `cost_per_omni_purchase`, `purchase_roas`. `omni_purchase_values` är buggig —
+  korskolla mot `amount_spent × purchase_roas`.
+
+---
+
+## Hålls tillbaka till våg 2
 
 | Creative | Varför |
 |---|---|
-| Koncept 4 plancha (`4 H1/H2/H3.mp4`) | Klar men nedprioriterad — går in när en förlorare killas |
-| Koncept 5 quickrec (3 × `.mov`) | Samma |
+| Koncept 4 plancha (`4 H1/H2/H3.mp4`) | Klar och uppladdad i mediabiblioteket — går in när en förlorare killas |
+| Koncept 5 quickrec/pov/oferta (3 × `.mov`) | Samma |
 | Ad 9 esposa (`9.mp4`) | Ensam creative, ingen hook-trio — vänta tills den kan fylla ett eget adset |
-| Koncept 3 crudoquemado ⭐ | **Ej klar hos redigerarna.** Detta är repots prioritet 1 (bäst research-stöd) — in i egen adset så fort den levereras |
+| Koncept 3 crudoquemado ⭐ | **Ej klar hos redigerarna.** Repots prioritet 1 (bäst research-stöd) — eget adset så fort den levereras |
 | Ad 10 porfinsesienta, Ad 11 trompo | Ej klara |
 
----
-
-## 6. Avläsning och kill (CLAUDE.md regel 3 + ANALYSMETOD)
-
-- **Ingen dom före 300 kr spend eller 3 köp per annons.** Vid 333 kr/adset/dag och 3 annonser/adset tar det ~3 dagar innan första annonsen är dömbar.
-- **Dag 1–2:** rör ingenting. Titta bara att leveransen igång och att Purchase-eventet trackar.
-- **Dag 3:** första hook-läsningen på tidiga signaler (CTR, CPC, hook-rate/3s-views, ATC) — men inga kill-beslut på köp än.
-- **Dag 4–5:** kill mot **break-even** (BE-ROAS 1,45–1,55 beroende på bundlenivå, bidrag 417–813 MXN/order). Aldrig mot target.
-- **Rangordna på vinstbidrag** `(break-even-CPA − CPA) × köp` — aldrig ROAS eller CPA ensamt. Top spendern är benchmark, inte en kandidat att döma mot småannonser.
-- Meta-fältnamn vid uthämtning: `amount_spent`, `actions:omni_purchase`, `cost_per_omni_purchase`, `purchase_roas`. `omni_purchase_values` är buggig — korskolla mot `amount_spent × purchase_roas`.
-
-## 7. Efter launch
-
-- [x] ~~Logga i `pipeline/quota.mjs`~~ — **gäller inte GreatGrill.** Kvotskriptet läser `products/products.json`, som bara innehåller Bäverbutikens sex produkter. GreatGrill är Grillkliniken/SnarkLös-sidan av huset och ska enligt CLAUDE.md ("blanda dem aldrig") *inte* läggas in där. Launch-loggen för MX bor i den här filen.
-- [ ] När GemPages-sidorna är live: spegla AS1–AS6 med `_lst<N>`-destinationer (se `testmatris.md`)
-- [x] Konto-ID och pixel-ID ifyllda överst i den här filen 2026-08-18
-- [ ] **Slå på kampanjen** — `120252843641270349` från PAUSED till ACTIVE. *(Axel)*
+Annonstext saknas ännu för koncept 3, 9, 10 och 11 — skrivs när creativesen är klara.
 
 ---
 
-## 4b. Annonstexter (primary text / headline / description / CTA)
+## Kvar innan du slår på
 
-En text per **koncept** — delas av konceptets 3 hooks (hooken varierar videon, inte captionen). Skriven av copy-subagent (sonnet) per modellpolicyn, tre-frågorstestet redovisat i agentens leverans. Klistra in ordagrant, översätt inte tillbaka.
+- [ ] **Testköp** på laclinicadelasador.mx så Purchase-eventet bevisligen triggar.
+      Utan det optimerar Meta mot ingenting. *(Axel)*
+- [ ] **Domänverifiering + Aggregated Event Measurement** för laclinicadelasador.mx. *(Axel)*
+- [ ] **Pixelbeslut.** `776922878287560` heter "Grillkliniken", ägs av businessen
+      SnarkLös och fyrar från grillkliniken.se, grillklinikken.no **och**
+      laclinicadelasador.mx — signalen delas över tre länder. Det är den enda pixeln
+      på kontot och den som din redan live-körande "Grillborsten MX" använder, så den
+      är vald. Egen MX-pixel ger renare data men startar inlärningen från noll. *(Axel)*
+- [ ] **Slå på kampanjen** `120252844116050349` — PAUSED → ACTIVE.
 
-### AS1 — familia
-```
-Esta canasta fue lo único que me hizo dejar el aluminio en la carne asada.
+## Efter launch
 
-Antes mis camarones salían crudos por dentro o quemados por fuera — nunca esas rayas de asador de verdad.
+- [ ] Bygg GemPages-listiclesen → duplicera adseten med `GG LISTICLE <N> - …` (se `testmatris.md`)
+- [x] ~~`node pipeline/quota.mjs log`~~ — gäller inte GreatGrill. Kvotskriptet läser
+      `products/products.json`, som bara innehåller Bäverbutikens sex produkter.
+      GreatGrill hör till Grillkliniken/SnarkLös och ska enligt CLAUDE.md ("blanda dem
+      aldrig") inte in där. Launch-loggen för MX bor i den här filen.
 
-Ahora nomás le echo todo, cierro, giro — y sale parejo cada vez.
+---
 
-Directo al lavavajillas, con garantía de por vida.
+## Annonstexter (primary text / headline / description / CTA)
 
-Compré dos con el paquete: una para mí, otra de regalo para mi esposa. Ya nunca asamos sin ella.
+En text per **koncept** — delas av konceptets tre hooks, eftersom hooken varierar
+videon och inte captionen. Skriven av copy-subagent (sonnet) enligt modellpolicyn.
+Texterna ligger inbyggda i `build-kampanj-1.py` och är redan inne i Meta.
+Källan för formuleringarna är `voc-research.md`.
 
-Hasta 42% de descuento + envío gratis a todo México. 4.8 estrellas y más de 240 reseñas.
-```
-**Headline:** `Un regalo que usan los dos` · **Description:** `Ideal para regalo, 2 pack` · **CTA:** Comprar
-
-### AS2 — top3
-```
-Aluminio, tapetes o canasta giratoria: probamos los tres para asar camarones y verduras chicas.
-
-#1 el aluminio: no se cae nada, pero bloquea el calor y la flama.
-
-#2 los tapetes: es como cocinar en un sartén, pero afuera.
-
-#3 la canasta giratoria de acero inoxidable: la flama llega directo a la comida y nada se cae por el asador.
-
-Directo al lavavajillas.
-
-Hasta 42% de descuento + envío gratis a todo México + garantía de por vida.
-```
-**Headline:** `El #3 sí le da sabor de verdad` · **Description:** `Top 3 para asar comida chica` · **CTA:** Comprar
-
-### AS3 — foilstop
-```
-Cierras el paquete de aluminio y adentro pasa esto: se hace vapor, no fuego.
-
-Tus camarones y verduras se cuecen al vapor — sin rayas de asador, sin sabor ahumado.
-
-Con la canasta giratoria de acero inoxidable, la flama llega directo a la comida y nada se cae por el asador.
-
-Le echas todo, cierras, giras. Directo al lavavajillas al terminar.
-
-Hasta 42% de descuento + envío gratis a todo México + garantía de por vida. 4.8 estrellas y más de 240 reseñas.
-```
-**Headline:** `Nada de vapor. Puro sabor a asador.` · **Description:** `Rayas de asador de verdad` · **CTA:** Comprar ahora
-
-### AS4 — dinero
-```
-El verano pasado tiré comida por el asador — como dos mil pesos, calculando de volada.
-
-La mitad de mis verduras y camarones se me caían directo a las brasas, y lo demás se pegaba o se quemaba.
-
-El aluminio y los tapetes no resolvieron nada — nunca esas rayas de asador de verdad.
-
-Con la canasta giratoria nada se cae, y la comida tiene contacto directo con la flama. Nomás le echas, giras, y directo al lavavajillas.
-
-Cómprala una vez y ahorra en cada carne asada. Hasta 42% de descuento + garantía de por vida.
-```
-**Headline:** `Deja de tirar dinero al asador` · **Description:** `Nada se cae. Nunca más.` · **CTA:** Comprar ahora
-
-### AS5 — sazon
-```
-Si sazonas tus brochetas, estás tirando tu sazón a la basura.
-
-En cuanto las volteas, la mitad se raspa contra el asador — ese sabor se va a las brasas, no a tu comida.
-
-En la canasta giratoria todo va junto en un solo lugar: sazonas una vez y el sazón se queda en la comida.
-
-Los agujeros son tan chicos que nada se te cae.
-
-Desatornillas el mango en dos segundos — directo al lavavajillas.
-
-Hasta 42% de descuento + envío gratis a todo México + garantía de por vida.
-```
-**Headline:** `Una sazonada. Sabor real.` · **Description:** `Tu sazón, no las brasas` · **CTA:** Más información
-
-### AS6 — statics (samma text under alla 6 bilder)
-```
-Cierre seguro, acero inoxidable y gira 360° — nada se te cae por el asador.
-
-Le echas todo, cierras la tapa, la giras. Rayas de asador de verdad, sin aluminio y sin tapetes que bloqueen el fuego.
-
-Mango desmontable, malla fina, se enjuaga en un minuto — o directo al lavavajillas.
-
-Sirve para gas, carbón o pellets. Garantía de por vida.
-
-Hasta 42% de descuento + envío gratis a todo México. 4.8 estrellas y más de 240 reseñas.
-```
-**Headline:** `Gira 360°. Nada se cae.` · **Description:** `Envío gratis a México` · **CTA:** Comprar ahora
-
-### Färdigskrivet men parkerat (våg 2)
-
-**plancha** (koncept 4): *"Cocinaste 20 minutos. Vas a tallar la plancha otros 10. / Una plancha cerrada bloquea el fuego por completo — los jugos se quedan ahí, nada agarra humo. / La canasta giratoria es de acero inoxidable, tan ligera que la levantas con una mano. / La malla abierta deja pasar la flama y el humo — pero los agujeros son tan chicos que nada se te cae. / Desatornillas el mango y va directo al lavavajillas. / Hasta 42% de descuento + garantía de por vida. 4.8 estrellas y más de 240 reseñas."*
-Headline: `Más ligera. Más limpia. Más sabor.` · Description: `Se levanta con una mano` · CTA: Más información
-
-**quickrec** (koncept 5): *"Muchos todavía usan aluminio como si no hubiera nada mejor. Sí lo hay. / Te recomiendo la canasta giratoria: le echas camarones, verduras, todo lo chico para el asador — y salen rayas de asador de verdad, cada vez. / Directo al lavavajillas al terminar. / Hasta 42% de descuento + envío gratis a todo México + garantía de por vida."*
-Headline: `Sí hay algo mejor que el aluminio` · Description: `Rayas de verdad, cada vez` · CTA: Comprar ahora
-
-**Saknas ännu:** annonstext för koncept 3 (crudoquemado), 9 (esposa), 10 (porfinsesienta), 11 (trompo) — skrivs när de creativesen är klara.
+⚠️ **"Directo al lavavajillas" står i nästan varje text.** Axel har själv påpekat att
+diskmaskin är ovanligt i Mexiko (samma invändning gav han på listicle-bilderna).
+Videornas voiceover säger samma sak, så texten är inte ändrad ensidigt — men byt till
+`se enjuaga en segundos` i captionsen om nästa avläsning visar svag CTR.
