@@ -421,7 +421,7 @@ Claude-konto. Det här är kortversionen:
 | 🇳🇴 | grillklinikken.no | NOK | Grillklinikken | **Nej** |
 | 🇩🇰 | bæverbutiken.dk | DKK | Bæverbutiken | Ja |
 | 🇫🇮 | majavakauppa.fi | EUR | Majavakauppa | Ja (*majava* = bäver) |
-| 🇬🇧 | (GBP — namn okänt tills kopplad) | GBP | butikens namn | efter varumärke |
+| 🇬🇧 | beavershop.co.uk | GBP | BeaverShop | Ja |
 
 ⚠️ **Inventera butiken innan du skapar något.** Butikerna kan redan ha produkterna från ett
 annat Claude-konto. Lista hela katalogen och sök på SKU-mönstret **först**, skapa bara det
