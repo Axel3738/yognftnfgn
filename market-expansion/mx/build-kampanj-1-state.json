@@ -1,0 +1,34 @@
+{
+ "campaign": "120252843641270349",
+ "adsets": {
+  "broad_advplus_purchase_c2familia": "120252843642550349",
+  "broad_advplus_purchase_c6top3": "120252843659650349",
+  "broad_advplus_purchase_c1foilstop": "120252843663580349",
+  "broad_advplus_purchase_c7dinero": "120252843669480349",
+  "broad_advplus_purchase_c8sazon": "120252843674940349",
+  "broad_advplus_purchase_statics": "120252843680760349"
+ },
+ "ads": {
+  "clin_greatgrill_pain_ugc_familia_v1_pdp": "120252843655500349",
+  "clin_greatgrill_pain_ugc_alvapor_v1_pdp": "120252843656970349",
+  "clin_greatgrill_pain_ugc_esposa_v1_pdp": "120252843659040349",
+  "clin_greatgrill_curiosity_comparison_top3_v1_pdp": "120252843660850349",
+  "clin_greatgrill_curiosity_comparison_dosdetres_v1_pdp": "120252843661440349",
+  "clin_greatgrill_fomo_comparison_antesdecomprar_v1_pdp": "120252843663000349",
+  "clin_greatgrill_pain_ugc_foilstop_v1_pdp": "120252843666590349",
+  "clin_greatgrill_pain_ugc_vaporadentro_v1_pdp": "120252843667980349",
+  "clin_greatgrill_pain_ugc_cebollita_v1_pdp": "120252843669180349",
+  "clin_greatgrill_pain_ugc_dinero_v1_pdp": "120252843670730349",
+  "clin_greatgrill_pain_ugc_diezpesos_v1_pdp": "120252843672480349",
+  "clin_greatgrill_pain_ugc_asadorcome_v1_pdp": "120252843674440349",
+  "clin_greatgrill_curiosity_ugc_sazon_v1_pdp": "120252843676990349",
+  "clin_greatgrill_curiosity_ugc_miraparrilla_v1_pdp": "120252843678300349",
+  "clin_greatgrill_curiosity_ugc_fuegosabor_v1_pdp": "120252843680330349",
+  "clin_greatgrill_pain_beforeafter_crudoquemado_v1_pdp": "120252843681540349",
+  "clin_greatgrill_benefit_collage_features_v1_pdp": "120252843682520349",
+  "clin_greatgrill_identity_lifestyle_3idiomas_v1_pdp": "120252843683760349",
+  "clin_greatgrill_benefit_product_medidas_v1_pdp": "120252843684310349",
+  "clin_greatgrill_offer_comparison_nogira_v1_pdp": "120252843685660349",
+  "clin_greatgrill_social_ugc_esposo_v1_pdp": "120252843686180349"
+ }
+}

@@ -1,30 +1,39 @@
 # Launch 1 — GreatGrill MX · testkampanj
 
-**Skapad:** 2026-08-17 · **Budget:** 2 000 kr/dag · **Status:** färdig att klickas in i Ads Manager.
-⚠️ **Jag har ingen Meta-koppling i den här sessionen** (bara Shopify, Notion, Drive, Higgsfield, GitHub). Den här filen är en exakt bygglista — någon med kontoåtkomst klickar in den.
+**Skapad:** 2026-08-17 · **Byggd i Meta:** 2026-08-18 · **Budget:** 2 000 kr/dag
+**Status: BYGGD OCH KLAR I ADS MANAGER — kampanjen ligger PAUSED.**
+
+Kampanjen är byggd via Marketing API mot **Snark mexico `act_918424617391896`**.
+Adsets och annonser är ACTIVE, **kampanjen är PAUSED** — Axel slår på *en* switch
+(kampanjnivån) så går allting live samtidigt. Inget spenderas innan dess.
+
+| | |
+|---|---|
+| Kampanj-ID | `120252843641270349` |
+| Annonskonto | `act_918424617391896` "Snark mexico" · **SEK** · tidszon Mexico/General |
+| Sida | La Clínica del Asador `1334949959694822` |
+| Pixel | `776922878287560` (se varningen i avsnitt 0) |
+| Byggskript | `market-expansion/mx/build-kampanj-1.py` (resumebart) |
 
 ---
 
-## 0. VERIFIERA FÖRE DU RÖR NÅGOT (5 min — det här är pengarna)
+## 0. VERIFIERING — GJORD 2026-08-18
 
-CLAUDE.md: *"Två verksamheter. Blanda dem aldrig. Fel annonskonto kostar riktiga pengar."*
-
-- [x] **Annonskonto-ID: `918424617391896`** — uppgivet av Axel 2026-08-17 som "Snark Mexico". ⚠️ EJ verifierat av mig (ingen Meta-åtkomst i sessionen). Bekräfta i Ads Manager att kontot heter något MX-relaterat och att det INTE är SnarkLös `1346450049878358` (SEK, Grillkliniken Sverige) eller MagiBorsten `1867947880635861` (Bäverbutiken).
-- [ ] **Valuta på kontot:** SEK eller MXN? Avgör budgetsiffrorna nedan.
-- [ ] **Pixel.** Måste vara den pixel som ligger installerad på **laclinicadelasador.mx** — aldrig Bäverbutikens `1554276343018184`, aldrig Grillklinikens. Fel pixel = köpen bokförs på fel verksamhet och all analys blir fel, utan felmeddelande. Pixel-ID: `________________`
-- [ ] **Testköp gjort** så att Purchase-eventet faktiskt triggar (annars optimerar Meta mot ingenting).
-- [ ] **Facebook-sida** kopplad = La Clínica del Asador (inte Grilltips/Bryn/svenska sidor).
-- [ ] **Domänverifiering + Aggregated Event Measurement** för laclinicadelasador.mx.
+- [x] **Annonskonto verifierat via API:** `{"name":"Snark mexico","currency":"SEK","account_status":1,"timezone_name":"Mexico/General","business_name":"STONEBITE ECOM AB"}`. Det är alltså **inte** SnarkLös `1346450049878358` och **inte** MagiBorsten `1867947880635861`. ✅
+- [x] **Valuta: SEK.** 2 000 kr/dag = 6 adsets à 333 kr, precis som specat. ✅
+- [x] **Facebook-sida:** La Clínica del Asador `1334949959694822` — samma sida som kontots redan live-körande MX-kampanj använder. ✅
+- [x] **Pixel: `776922878287560`.** ⚠️ Den heter "Grillkliniken" och ägs av businessen SnarkLös. Det är den **enda** pixeln på kontot, och den är redan den som den live-körande kampanjen "Grillborsten MX" optimerar mot. Den fyrar från grillkliniken.se, grillklinikken.no **och** laclinicadelasador.mx — signalen delas alltså över tre länder. Sista fyrning 2026-08-18 01:58, så MX-events landar. **Det finns inget alternativ på kontot i dag** — vill du separera MX-signalen krävs en ny pixel på laclinicadelasador.mx, och då börjar inlärningen om från noll.
+- [ ] **Testköp** så Purchase-eventet bevisligen triggar från MX-sidan innan du slår på. *(Axel)*
+- [ ] **Domänverifiering + Aggregated Event Measurement** för laclinicadelasador.mx. *(Axel)*
 
 ---
 
 ## 1. Budget
 
-Angivet: **2 000 kr/dag**. Fördelat på 6 adsets = **333 kr/adset/dag** (≈ 600 MXN vid 1,79 MXN/SEK).
-
-Är kontot i MXN och du menade 2 000 **MXN**/dag: kör då bara **3 adsets** (AS1, AS2, AS6) à 667 MXN — sex adsets på den budgeten svälter ihjäl varandra och ger ingen läsbar data.
-
----
+**2 000 kr/dag**, fördelat på 6 adsets à **333 kr/dag** (33 300 öre). Kampanjbudget (CBO) är AV
+— budgeten ligger på adsetnivå enligt CLAUDE.md regel 11. **Budgetdelning mellan adsets är
+avstängd** (`is_adset_budget_sharing_enabled: false`) — annars lånar adseten av varandra och
+lika-budget-testet går inte att läsa.
 
 ## 2. Kampanjnivå
 
@@ -47,18 +56,20 @@ Angivet: **2 000 kr/dag**. Fördelat på 6 adsets = **333 kr/adset/dag** (≈ 60
 | Kön | Alla (esposa/esposo-vinklarna riktas mot kvinnor) |
 | Målgrupp | **Broad** — inga intressen, ingen LAL (nytt konto, ingen pixeldata att bygga på) |
 | Placeringar | Advantage+ (alla) |
-| Schema | Starta imorgon 00:00 lokal tid, inget slutdatum |
+| Schema | Inget start-/slutdatum satt — adseten startar i samma sekund som kampanjen slås på |
+| Budgetdelning | AV (`is_adset_budget_sharing_enabled: false`) |
+| Status i Meta | **ACTIVE** (spärren ligger på kampanjnivån) |
 
 **Adset-namn** (konventionen `{audience}_{placement}_{optimization}` + konceptsuffix eftersom ett koncept per adset):
 
-| # | Adset-namn | Innehåll |
-|---|---|---|
-| AS1 | `broad_advplus_purchase_c2familia` | Koncept 2, 3 hooks |
-| AS2 | `broad_advplus_purchase_c6top3` | Koncept 6, 3 hooks |
-| AS3 | `broad_advplus_purchase_c1foilstop` | Koncept 1, 3 hooks |
-| AS4 | `broad_advplus_purchase_c7dinero` | Koncept 7, 3 hooks |
-| AS5 | `broad_advplus_purchase_c8sazon` | Koncept 8, 3 hooks |
-| AS6 | `broad_advplus_purchase_statics` | 6 bildannonser |
+| # | Adset-namn | Innehåll | Adset-ID i Meta |
+|---|---|---|---|
+| AS1 | `broad_advplus_purchase_c2familia` | Koncept 2, 3 hooks | `120252843642550349` |
+| AS2 | `broad_advplus_purchase_c6top3` | Koncept 6, 3 hooks | `120252843659650349` |
+| AS3 | `broad_advplus_purchase_c1foilstop` | Koncept 1, 3 hooks | `120252843663580349` |
+| AS4 | `broad_advplus_purchase_c7dinero` | Koncept 7, 3 hooks | `120252843669480349` |
+| AS5 | `broad_advplus_purchase_c8sazon` | Koncept 8, 3 hooks | `120252843674940349` |
+| AS6 | `broad_advplus_purchase_statics` | 6 bildannonser | `120252843680760349` |
 
 Ett koncept per adset = hooken är enda variabeln inom adsetet. Blanda aldrig koncept i samma adset — då går hook-läsningen förlorad.
 
@@ -72,43 +83,49 @@ Ett koncept per adset = hooken är enda variabeln inom adsetet. Blanda aldrig ko
 **Lägg på UTM per annons:** `?utm_source=fb&utm_medium=paid&utm_campaign=clin_mx_2026q3&utm_content=<ANNONSNAMNET>`
 
 ### AS1 — `broad_advplus_purchase_c2familia`
-| Din fil | Annonsnamn i Meta |
-|---|---|
-| `2 HOOK A.mp4` | `clin_greatgrill_pain_ugc_familia_v1_pdp` |
-| `2 HOOK B.mp4` | `clin_greatgrill_pain_ugc_alvapor_v1_pdp` |
-| `2 HOOK C.mp4` | `clin_greatgrill_pain_ugc_esposa_v1_pdp` |
+| Din fil | Annonsnamn i Meta | Annons-ID |
+|---|---|---|
+| `2 HOOK A.mp4` | `clin_greatgrill_pain_ugc_familia_v1_pdp` | `120252843655500349` |
+| `2 HOOK B.mp4` | `clin_greatgrill_pain_ugc_alvapor_v1_pdp` | `120252843656970349` |
+| `2 HOOK C.mp4` | `clin_greatgrill_pain_ugc_esposa_v1_pdp` | `120252843659040349` |
 
 ### AS2 — `broad_advplus_purchase_c6top3`
-| Din fil | Annonsnamn i Meta |
-|---|---|
-| `Ad 6 H1 v2.mp4` | `clin_greatgrill_curiosity_comparison_top3_v1_pdp` |
-| `Ad 6 H2 v2.mp4` | `clin_greatgrill_curiosity_comparison_dosdetres_v1_pdp` |
-| `Ad 6 H3 v2.mp4` | `clin_greatgrill_fomo_comparison_antesdecomprar_v1_pdp` |
+| Din fil | Annonsnamn i Meta | Annons-ID |
+|---|---|---|
+| `Ad 6 H1 v2.mp4` | `clin_greatgrill_curiosity_comparison_top3_v1_pdp` | `120252843660850349` |
+| `Ad 6 H2 v2.mp4` | `clin_greatgrill_curiosity_comparison_dosdetres_v1_pdp` | `120252843661440349` |
+| `Ad 6 H3 v2.mp4` | `clin_greatgrill_fomo_comparison_antesdecomprar_v1_pdp` | `120252843663000349` |
 
 ### AS3 — `broad_advplus_purchase_c1foilstop`
-| Din fil | Annonsnamn i Meta |
-|---|---|
-| `1 HOOK A.mp4` | `clin_greatgrill_pain_ugc_foilstop_v1_pdp` |
-| `1 HOOK B.mp4` | `clin_greatgrill_pain_ugc_vaporadentro_v1_pdp` |
-| `1 HOOK C.mp4` | `clin_greatgrill_pain_ugc_cebollita_v1_pdp` |
+| Din fil | Annonsnamn i Meta | Annons-ID |
+|---|---|---|
+| `1 HOOK A.mp4` | `clin_greatgrill_pain_ugc_foilstop_v1_pdp` | `120252843666590349` |
+| `1 HOOK B.mp4` | `clin_greatgrill_pain_ugc_vaporadentro_v1_pdp` | `120252843667980349` |
+| `1 HOOK C.mp4` | `clin_greatgrill_pain_ugc_cebollita_v1_pdp` | `120252843669180349` |
 
 ### AS4 — `broad_advplus_purchase_c7dinero`
-| Din fil | Annonsnamn i Meta |
-|---|---|
-| `7 H1.mp4` | `clin_greatgrill_pain_ugc_dinero_v1_pdp` |
-| `7 H2.mp4` | `clin_greatgrill_pain_ugc_diezpesos_v1_pdp` |
-| `7 H3.mp4` | `clin_greatgrill_pain_ugc_asadorcome_v1_pdp` |
+| Din fil | Annonsnamn i Meta | Annons-ID |
+|---|---|---|
+| `7 H1.mp4` | `clin_greatgrill_pain_ugc_dinero_v1_pdp` | `120252843670730349` |
+| `7 H2.mp4` | `clin_greatgrill_pain_ugc_diezpesos_v1_pdp` | `120252843672480349` |
+| `7 H3.mp4` | `clin_greatgrill_pain_ugc_asadorcome_v1_pdp` | `120252843674440349` |
 
 ### AS5 — `broad_advplus_purchase_c8sazon`
-| Din fil | Annonsnamn i Meta |
-|---|---|
-| `8 HOOK A.mp4` | `clin_greatgrill_curiosity_ugc_sazon_v1_pdp` |
-| `8 HOOK B.mp4` | `clin_greatgrill_curiosity_ugc_miraparrilla_v1_pdp` |
-| `8 HOOK C.mp4` | `clin_greatgrill_curiosity_ugc_fuegosabor_v1_pdp` |
+| Din fil | Annonsnamn i Meta | Annons-ID |
+|---|---|---|
+| `8 HOOK A.mp4` | `clin_greatgrill_curiosity_ugc_sazon_v1_pdp` | `120252843676990349` |
+| `8 HOOK B.mp4` | `clin_greatgrill_curiosity_ugc_miraparrilla_v1_pdp` | `120252843678300349` |
+| `8 HOOK C.mp4` | `clin_greatgrill_curiosity_ugc_fuegosabor_v1_pdp` | `120252843680330349` |
 
 ### AS6 — `broad_advplus_purchase_statics`
-Alla 6 PNG:er ur `market-expansion/mx/ads/` — annonsnamn = filnamnet utan `.png`, plus `_pdp`:
-`..._pain_beforeafter_crudoquemado_v1_pdp` · `..._benefit_collage_features_v1_pdp` · `..._identity_lifestyle_3idiomas_v1_pdp` · `..._benefit_product_medidas_v1_pdp` · `..._offer_comparison_nogira_v1_pdp` · `..._social_ugc_esposo_v1_pdp`
+| Din fil | Annonsnamn i Meta | Annons-ID |
+|---|---|---|
+| `clin_greatgrill_pain_beforeafter_crudoquemado_v1.png` | `clin_greatgrill_pain_beforeafter_crudoquemado_v1_pdp` | `120252843681540349` |
+| `clin_greatgrill_benefit_collage_features_v1.png` | `clin_greatgrill_benefit_collage_features_v1_pdp` | `120252843682520349` |
+| `clin_greatgrill_identity_lifestyle_3idiomas_v1.png` | `clin_greatgrill_identity_lifestyle_3idiomas_v1_pdp` | `120252843683760349` |
+| `clin_greatgrill_benefit_product_medidas_v1.png` | `clin_greatgrill_benefit_product_medidas_v1_pdp` | `120252843684310349` |
+| `clin_greatgrill_offer_comparison_nogira_v1.png` | `clin_greatgrill_offer_comparison_nogira_v1_pdp` | `120252843685660349` |
+| `clin_greatgrill_social_ugc_esposo_v1.png` | `clin_greatgrill_social_ugc_esposo_v1_pdp` | `120252843686180349` |
 
 ---
 
@@ -135,9 +152,10 @@ Alla 6 PNG:er ur `market-expansion/mx/ads/` — annonsnamn = filnamnet utan `.pn
 
 ## 7. Efter launch
 
-- [ ] Logga launchade creatives: `node pipeline/quota.mjs log greatgrill 21`
+- [x] ~~Logga i `pipeline/quota.mjs`~~ — **gäller inte GreatGrill.** Kvotskriptet läser `products/products.json`, som bara innehåller Bäverbutikens sex produkter. GreatGrill är Grillkliniken/SnarkLös-sidan av huset och ska enligt CLAUDE.md ("blanda dem aldrig") *inte* läggas in där. Launch-loggen för MX bor i den här filen.
 - [ ] När GemPages-sidorna är live: spegla AS1–AS6 med `_lst<N>`-destinationer (se `testmatris.md`)
-- [ ] Fyll i verkligt konto-ID och pixel-ID överst i den här filen så nästa session vet
+- [x] Konto-ID och pixel-ID ifyllda överst i den här filen 2026-08-18
+- [ ] **Slå på kampanjen** — `120252843641270349` från PAUSED till ACTIVE. *(Axel)*
 
 ---
 
