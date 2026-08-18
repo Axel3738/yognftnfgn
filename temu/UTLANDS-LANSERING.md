@@ -67,6 +67,16 @@ halvfärdigt med "nu behöver du bara…".
       unika SKU:er, annars ärver alla nya varianter samma SKU.
     - `mediaCount { count }` = 1 och `<!-- GIF: … -->` i `descriptionHtml` — tomma
       platshållarkommentarer, ofta kvar på svenska mitt i landets copy.
+    - `products(query: "vendor:'<främmande vendor>'")` — utkast från en HELT annan butik
+      kan ligga kvar. UK hade 14 svenska DRAFT-produkter från "Trevlig Trädgård"
+      (Snigelfällan, Växtbelysning …). Arkivera dem (`status: ARCHIVED`) — arkiv går att
+      ångra, radering gör det inte.
+    - Kvarglömda landsnamn ur den svenska originalcopyn: UK:s magnetfiske sa
+      "one of the fastest-growing hobbies in **Sweden**". Sök på "Sweden"/"Sverige".
+
+    ⚠️ Shopifys fulltextsök matchar ord för sig, inte frasen. En träff på "Fast delivery"
+    kan vara "stick fast" + "Smooth delivery" i samma text. Hämta alltid `descriptionHtml`
+    och läs innan du dömer — annars jagar du spöken.
 
 ## Prismetoden
 
