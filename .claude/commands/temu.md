@@ -79,9 +79,12 @@ Axels format. Sju block, inga avvikelser:
 2. **GIF**
 3. `<h3>` + `<p>` – **lösningen**, alltså produkten
 4. **GIF eller bild**
-5. `<h3>Funktioner</h3>` + `<ul>` med 5 punkter
+5. `<h3>Funktioner</h3>` + `<ul>` med 4–5 punkter — **utfallet i fetstil först, specen som
+   bevis efteråt:** `<li><strong>Utfall</strong> – bevis/spec</li>`. Kör och?-testet på varje
+   punkt (se CLAUDE.md, "Produktcopy på Bäverbutiken").
 6. **Bild**
-7. `<h3>Vår garanti</h3>` + `<p>` – 30 dagar, Klarna, snabb leverans, 🦫
+7. `<h3>Vår garanti</h3>` + `<p>` – 30 dagar, Klarna, **"smidig leverans"** (aldrig
+   hastighetslöfte), 🦫
 
 Bilder skrivs `<p><img src="..." alt="..." loading="lazy" style="max-width:100%;height:auto"></p>`.
 GIF:en får `border-radius:8px`.
@@ -102,11 +105,13 @@ Copy skrivs enligt `docs/copy-regler.md` (CLAUDE.md regel 6).
 - `variants[].inventoryItem.tracked: true`
 - `options` måste anges när varianter anges (`['Title']` om bara en)
 
-### 8. Sätt "fortsätt sälja när slut i lager"
-`create-product` kan **inte** sätta det. Kör direkt efteråt:
+### 8. Sätt "fortsätt sälja när slut i lager" + produktmallen
+`create-product` kan **inte** sätta något av detta. Kör direkt efteråt:
 ```graphql
 productVariantsBulkUpdate(productId: $id, variants: [{id: $vid, inventoryPolicy: CONTINUE}])
+productUpdate(product: {id: $id, templateSuffix: "claudeprodukter"})
 ```
+Utan `templateSuffix: "claudeprodukter"` renderas sidan med butikens standardmall — fel utseende.
 Kontrollera att varje variant har `inventoryPolicy: CONTINUE`. Utan det slutar
 produkten säljas så fort saldot tar slut – och saldot är påhittat ändå.
 
@@ -146,13 +151,19 @@ Hämta produkten igen och verifiera mot checklistan nedan. Rapportera på svensk
 ## Definition of done
 
 - [ ] Produktnamn på svenska, inte Temus råa titel
-- [ ] `status: ACTIVE`
+- [ ] `status: ACTIVE` + publicerad på alla försäljningskanaler
 - [ ] Alla varianter har `inventoryPolicy: CONTINUE`
-- [ ] Alla varianter finns med, SKU `TEMU-<id>`
+- [ ] Produktmall `claudeprodukter` satt (`templateSuffix`)
+- [ ] Alla varianter finns med, SKU `TEMU-<id>` — varianterna från leverantörsofferten, inte Temu
 - [ ] Beskrivningen följer alla sju blocken i rätt ordning
+- [ ] Alla bullets klarar och?-testet — utfall i fetstil, spec som bevis
+- [ ] "Smidig leverans" — inget hastighetslöfte någonstans
+- [ ] Alla räkneord i copyn stämmer mot leverantörsspec/referensbilder
+- [ ] Svensk korrläsning gjord (en/ett, direktöversättningar)
 - [ ] Minst en **animerad** GIF ligger i beskrivningen (annars: skrivet varför)
 - [ ] Inga tomma HTML-kommentarer kvar i beskrivningen
-- [ ] Produktbilder uppladdade, första bilden är huvudbild
+- [ ] Produktbilder uppladdade, första bilden är huvudbild — varje bild-URL svarar 200
 - [ ] Ligger i minst en kollektion (ny skapad om ingen passade)
 - [ ] Shopify-kategori satt
+- [ ] Slutgranskning körd mot det som ligger skarpt; rapport i två högar (Fixat / Förslag)
 - [ ] Länk till produkten i butiken redovisad

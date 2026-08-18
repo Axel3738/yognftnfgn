@@ -356,6 +356,54 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 
 ---
 
+## Produktcopy på Bäverbutiken (butikens playbook)
+
+Källa: Jespers Slopevault-playbook, anpassad till Bäverbutiken 2026-08-18. Gäller varje
+produktsida som skapas eller ändras. `/temu`-kommandot bär mekaniken — det här är reglerna.
+
+**Rösten:** underdriv produkten, överdriv igenkänningen av problemet. Sälj lättnaden, inte
+miraklet — "varför har jag inte redan detta?" slår "wow, vilken innovation". Problemblocket
+skrivs mot rädslan/irritationen *innan* förlusten, inte efter ("pirret när mobilen glider",
+inte "du tappade den").
+
+**Förbjudna ord:** revolutionerande, ultimat, game-changer, måste-ha, oumbärlig, magisk,
+"aldrig mer …", "total trygghet". Inga absoluta löften — "stoppar/håller/dämpar", aldrig
+"aldrig"/"alltid" om utfall. Varje påstående ska vara bokstavligt sant för produkten.
+
+**Leverans — hård regel:** lova ALDRIG hastighet. Inget "snabb leverans", inga "24h", inga
+dagsintervall. Skriv **"smidig leverans"**. *(Bytt på alla 25 egna produkter 2026-08-18.
+Butikens ~75 äldre produkter är INTE kontrollerade — de kan ha hastighetslöften kvar.)*
+
+**Bullets (Funktioner-listan):** 4–5 punkter, **utfallet i fetstil först**, specen efteråt
+bara när den bevisar utfallet: `<li><strong>Utfall</strong> – bevis/spec</li>`.
+**"Och?"-testet:** går det att svara "och?" på punkten är den en spec och skrivs om
+("Silikonlina med clip" → **"Tappar du den stoppas fallet direkt"**). Kort nog för en rad på
+mobil. Tillsammans ska punkterna täcka: smärtan/utfallet, differentieringen, "passar det
+mig?" och varför den är värd pengarna.
+
+**Räkna om alla räkneord:** varje siffra i copyn (delar, lägen, timmar, mått, färger) ska
+stämma mot CWD-offerten och referensbilderna — leverantörers marknadsföring räknar upp sig.
+*(Exempel: "260 delar" får aldrig illustreras med en bild märkt "173 pcs".)*
+
+**Korrläsning:** läs all svensk copy som svensktalande före leverans — en/ett-genus,
+ordföljd, direktöversättningar. Okorrläst svenska launchas inte.
+
+**Slutgranskning (obligatorisk, utan att Axel ber om den):** granska det som ligger skarpt i
+butiken, inte det du minns att du skrev — hämta `descriptionHtml` och läs. Kontrollera:
+inga ärvda rester/platshållare (tomma HTML-kommentarer!), varje bild-URL svarar 200,
+och?-testet på alla bullets, alla räkneord mot spec, korrläsningen. Rapportera i två högar:
+**Fixat** (defekter — åtgärda direkt, redovisa) och **Förslag** (strategiska luckor — Axel väljer).
+
+**Medvetet INTE kopierat från Slopevault:**
+- *"Charge tax off"* på produkter — Bäverbutikens momsläge är okänt (se varningen ovan).
+  Momsinställningar rörs aldrig utan Axels besked.
+- *Recensionssektioner med valt snittbetyg* — inga påhittade omdömen, någonsin.
+- *Temabygge via repo* (sektioner, Liquid, tema-push) — görs inte här ännu. Men produktmallen
+  **`claudeprodukter`** ska sättas på varje ny produkt (`templateSuffix`, sätts efter
+  `create-product`) — annars renderas sidan med fel mall.
+
+---
+
 ## Saker som är lätta att göra fel
 
 - **"PAUSED" gäller bara `ads.mjs` och `meta.mjs`.** Verifierat i koden 2026-08-12:
