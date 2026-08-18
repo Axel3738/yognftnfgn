@@ -22,8 +22,26 @@ varumärkesnamn). Beslut om omrendering tas per annons — varje render drar Hey
 
 ## Flödet
 
-**Järnregel: rendera ALDRIG före proofread.** Varje HeyGen-rendering drar krediter —
+**Järnregel 1: rendera ALDRIG före proofread.** Varje HeyGen-rendering drar krediter —
 proofread-sessionen är gratis. Fel ordning = dubbla renderingar = dubbla krediter.
+
+**Järnregel 2: skanna ALLTID källvideon efter inbränd svensk text INNAN leverans.**
+HeyGen översätter bara ljudet — text som ligger i bilden följer med oöversatt. Kör
+skannern nedan på varje ny källfil; hittas text måste den täckas och ersättas med
+lokaliserade captions, annars är annonsen obrukbar (värsta fallet: gamla priser står
+kvar i bild fast de tagits bort ur talet).
+
+```bash
+# Skanna hela klippet (2 bilder/sek) efter ljusa textplattor, ffmpeg + numpy/pillow:
+#   ffmpeg -i FIL.mp4 -vf 'fps=2,scale=270:480' /tmp/fr/%04d.png
+#   → rader där 40 < antal_vita_pixlar < 240 markerar en platta, inte vit bakgrund
+# Täck sedan bandet med intilliggande bildinnehåll (INTE sudd — det ger grå skugga
+# där den gamla plattan var bredare än den nya texten):
+#   [0:v]crop=B:H:0:Y_KÄLLA,boxblur=6:1:6:1[b];[0:v][b]overlay=0:Y_BAND[v]
+# och lägg lokaliserade captions ovanpå i samma stil som originalet.
+# OBS: MarginV/FontSize i force_style tolkas i ASS-skalan (288 hög), inte i pixlar:
+#   MarginV = (videohöjd - textbandets underkant) * 288 / videohöjd
+```
 
 ```
 1. VÄLJ         → vilka mp4:or + målspråk/marknad (loggas i tabellen nedan)
