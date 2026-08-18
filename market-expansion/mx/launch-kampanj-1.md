@@ -9,7 +9,7 @@
 
 CLAUDE.md: *"Två verksamheter. Blanda dem aldrig. Fel annonskonto kostar riktiga pengar."*
 
-- [ ] **Annonskonto-ID.** "Snark Mexico" är INTE SnarkLös `1346450049878358` (SEK, Grillkliniken Sverige) och INTE MagiBorsten `1867947880635861` (Bäverbutiken). Skriv ner det faktiska MX-konto-ID:t här: `________________`
+- [x] **Annonskonto-ID: `918424617391896`** — uppgivet av Axel 2026-08-17 som "Snark Mexico". ⚠️ EJ verifierat av mig (ingen Meta-åtkomst i sessionen). Bekräfta i Ads Manager att kontot heter något MX-relaterat och att det INTE är SnarkLös `1346450049878358` (SEK, Grillkliniken Sverige) eller MagiBorsten `1867947880635861` (Bäverbutiken).
 - [ ] **Valuta på kontot:** SEK eller MXN? Avgör budgetsiffrorna nedan.
 - [ ] **Pixel.** Måste vara den pixel som ligger installerad på **laclinicadelasador.mx** — aldrig Bäverbutikens `1554276343018184`, aldrig Grillklinikens. Fel pixel = köpen bokförs på fel verksamhet och all analys blir fel, utan felmeddelande. Pixel-ID: `________________`
 - [ ] **Testköp gjort** så att Purchase-eventet faktiskt triggar (annars optimerar Meta mot ingenting).
