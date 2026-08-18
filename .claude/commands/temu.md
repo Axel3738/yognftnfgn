@@ -105,13 +105,15 @@ Copy skrivs enligt `docs/copy-regler.md` (CLAUDE.md regel 6).
 - `variants[].inventoryItem.tracked: true`
 - `options` måste anges när varianter anges (`['Title']` om bara en)
 
-### 8. Sätt "fortsätt sälja när slut i lager" + produktmallen
+### 8. Sätt "fortsätt sälja när slut i lager" + moms AV + produktmallen
 `create-product` kan **inte** sätta något av detta. Kör direkt efteråt:
 ```graphql
-productVariantsBulkUpdate(productId: $id, variants: [{id: $vid, inventoryPolicy: CONTINUE}])
+productVariantsBulkUpdate(productId: $id, variants: [{id: $vid, inventoryPolicy: CONTINUE, taxable: false}])
 productUpdate(product: {id: $id, templateSuffix: "claudeprodukter"})
 ```
-Utan `templateSuffix: "claudeprodukter"` renderas sidan med butikens standardmall — fel utseende.
+- `taxable: false` på **varje** variant — moms är avstängd på produktnivå i hela butiken
+  (Axels beslut 2026-08-18).
+- Utan `templateSuffix: "claudeprodukter"` renderas sidan med butikens standardmall — fel utseende.
 Kontrollera att varje variant har `inventoryPolicy: CONTINUE`. Utan det slutar
 produkten säljas så fort saldot tar slut – och saldot är påhittat ändå.
 
@@ -152,7 +154,7 @@ Hämta produkten igen och verifiera mot checklistan nedan. Rapportera på svensk
 
 - [ ] Produktnamn på svenska, inte Temus råa titel
 - [ ] `status: ACTIVE` + publicerad på alla försäljningskanaler
-- [ ] Alla varianter har `inventoryPolicy: CONTINUE`
+- [ ] Alla varianter har `inventoryPolicy: CONTINUE` och `taxable: false`
 - [ ] Produktmall `claudeprodukter` satt (`templateSuffix`)
 - [ ] Alla varianter finns med, SKU `TEMU-<id>` — varianterna från leverantörsofferten, inte Temu
 - [ ] Beskrivningen följer alla sju blocken i rätt ordning

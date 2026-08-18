@@ -394,9 +394,12 @@ inga ärvda rester/platshållare (tomma HTML-kommentarer!), varje bild-URL svara
 och?-testet på alla bullets, alla räkneord mot spec, korrläsningen. Rapportera i två högar:
 **Fixat** (defekter — åtgärda direkt, redovisa) och **Förslag** (strategiska luckor — Axel väljer).
 
+**Moms på produktnivå — AV (Axels beslut 2026-08-18):** "Charge tax" ska vara AVSTÄNGT på
+varje produkt (`taxable: false` på varje variant, sätts efter `create-product`). Hela
+butiken (~156 produkter, alla varianter) stängdes av 2026-08-18. Priserna är alltså satta
+som slutpriser utan separat momsrad — ändra aldrig tillbaka utan Axels besked.
+
 **Medvetet INTE kopierat från Slopevault:**
-- *"Charge tax off"* på produkter — Bäverbutikens momsläge är okänt (se varningen ovan).
-  Momsinställningar rörs aldrig utan Axels besked.
 - *Recensionssektioner med valt snittbetyg* — inga påhittade omdömen, någonsin.
 - *Temabygge via repo* (sektioner, Liquid, tema-push) — görs inte här ännu. Men produktmallen
   **`claudeprodukter`** ska sättas på varje ny produkt (`templateSuffix`, sätts efter
