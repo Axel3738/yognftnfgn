@@ -138,3 +138,109 @@ Alla 6 PNG:er ur `market-expansion/mx/ads/` — annonsnamn = filnamnet utan `.pn
 - [ ] Logga launchade creatives: `node pipeline/quota.mjs log greatgrill 21`
 - [ ] När GemPages-sidorna är live: spegla AS1–AS6 med `_lst<N>`-destinationer (se `testmatris.md`)
 - [ ] Fyll i verkligt konto-ID och pixel-ID överst i den här filen så nästa session vet
+
+---
+
+## 4b. Annonstexter (primary text / headline / description / CTA)
+
+En text per **koncept** — delas av konceptets 3 hooks (hooken varierar videon, inte captionen). Skriven av copy-subagent (sonnet) per modellpolicyn, tre-frågorstestet redovisat i agentens leverans. Klistra in ordagrant, översätt inte tillbaka.
+
+### AS1 — familia
+```
+Esta canasta fue lo único que me hizo dejar el aluminio en la carne asada.
+
+Antes mis camarones salían crudos por dentro o quemados por fuera — nunca esas rayas de asador de verdad.
+
+Ahora nomás le echo todo, cierro, giro — y sale parejo cada vez.
+
+Directo al lavavajillas, con garantía de por vida.
+
+Compré dos con el paquete: una para mí, otra de regalo para mi esposa. Ya nunca asamos sin ella.
+
+Hasta 42% de descuento + envío gratis a todo México. 4.8 estrellas y más de 240 reseñas.
+```
+**Headline:** `Un regalo que usan los dos` · **Description:** `Ideal para regalo, 2 pack` · **CTA:** Comprar
+
+### AS2 — top3
+```
+Aluminio, tapetes o canasta giratoria: probamos los tres para asar camarones y verduras chicas.
+
+#1 el aluminio: no se cae nada, pero bloquea el calor y la flama.
+
+#2 los tapetes: es como cocinar en un sartén, pero afuera.
+
+#3 la canasta giratoria de acero inoxidable: la flama llega directo a la comida y nada se cae por el asador.
+
+Directo al lavavajillas.
+
+Hasta 42% de descuento + envío gratis a todo México + garantía de por vida.
+```
+**Headline:** `El #3 sí le da sabor de verdad` · **Description:** `Top 3 para asar comida chica` · **CTA:** Comprar
+
+### AS3 — foilstop
+```
+Cierras el paquete de aluminio y adentro pasa esto: se hace vapor, no fuego.
+
+Tus camarones y verduras se cuecen al vapor — sin rayas de asador, sin sabor ahumado.
+
+Con la canasta giratoria de acero inoxidable, la flama llega directo a la comida y nada se cae por el asador.
+
+Le echas todo, cierras, giras. Directo al lavavajillas al terminar.
+
+Hasta 42% de descuento + envío gratis a todo México + garantía de por vida. 4.8 estrellas y más de 240 reseñas.
+```
+**Headline:** `Nada de vapor. Puro sabor a asador.` · **Description:** `Rayas de asador de verdad` · **CTA:** Comprar ahora
+
+### AS4 — dinero
+```
+El verano pasado tiré comida por el asador — como dos mil pesos, calculando de volada.
+
+La mitad de mis verduras y camarones se me caían directo a las brasas, y lo demás se pegaba o se quemaba.
+
+El aluminio y los tapetes no resolvieron nada — nunca esas rayas de asador de verdad.
+
+Con la canasta giratoria nada se cae, y la comida tiene contacto directo con la flama. Nomás le echas, giras, y directo al lavavajillas.
+
+Cómprala una vez y ahorra en cada carne asada. Hasta 42% de descuento + garantía de por vida.
+```
+**Headline:** `Deja de tirar dinero al asador` · **Description:** `Nada se cae. Nunca más.` · **CTA:** Comprar ahora
+
+### AS5 — sazon
+```
+Si sazonas tus brochetas, estás tirando tu sazón a la basura.
+
+En cuanto las volteas, la mitad se raspa contra el asador — ese sabor se va a las brasas, no a tu comida.
+
+En la canasta giratoria todo va junto en un solo lugar: sazonas una vez y el sazón se queda en la comida.
+
+Los agujeros son tan chicos que nada se te cae.
+
+Desatornillas el mango en dos segundos — directo al lavavajillas.
+
+Hasta 42% de descuento + envío gratis a todo México + garantía de por vida.
+```
+**Headline:** `Una sazonada. Sabor real.` · **Description:** `Tu sazón, no las brasas` · **CTA:** Más información
+
+### AS6 — statics (samma text under alla 6 bilder)
+```
+Cierre seguro, acero inoxidable y gira 360° — nada se te cae por el asador.
+
+Le echas todo, cierras la tapa, la giras. Rayas de asador de verdad, sin aluminio y sin tapetes que bloqueen el fuego.
+
+Mango desmontable, malla fina, se enjuaga en un minuto — o directo al lavavajillas.
+
+Sirve para gas, carbón o pellets. Garantía de por vida.
+
+Hasta 42% de descuento + envío gratis a todo México. 4.8 estrellas y más de 240 reseñas.
+```
+**Headline:** `Gira 360°. Nada se cae.` · **Description:** `Envío gratis a México` · **CTA:** Comprar ahora
+
+### Färdigskrivet men parkerat (våg 2)
+
+**plancha** (koncept 4): *"Cocinaste 20 minutos. Vas a tallar la plancha otros 10. / Una plancha cerrada bloquea el fuego por completo — los jugos se quedan ahí, nada agarra humo. / La canasta giratoria es de acero inoxidable, tan ligera que la levantas con una mano. / La malla abierta deja pasar la flama y el humo — pero los agujeros son tan chicos que nada se te cae. / Desatornillas el mango y va directo al lavavajillas. / Hasta 42% de descuento + garantía de por vida. 4.8 estrellas y más de 240 reseñas."*
+Headline: `Más ligera. Más limpia. Más sabor.` · Description: `Se levanta con una mano` · CTA: Más información
+
+**quickrec** (koncept 5): *"Muchos todavía usan aluminio como si no hubiera nada mejor. Sí lo hay. / Te recomiendo la canasta giratoria: le echas camarones, verduras, todo lo chico para el asador — y salen rayas de asador de verdad, cada vez. / Directo al lavavajillas al terminar. / Hasta 42% de descuento + envío gratis a todo México + garantía de por vida."*
+Headline: `Sí hay algo mejor que el aluminio` · Description: `Rayas de verdad, cada vez` · CTA: Comprar ahora
+
+**Saknas ännu:** annonstext för koncept 3 (crudoquemado), 9 (esposa), 10 (porfinsesienta), 11 (trompo) — skrivs när de creativesen är klara.
