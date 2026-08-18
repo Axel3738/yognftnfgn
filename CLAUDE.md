@@ -407,6 +407,41 @@ som slutpriser utan separat momsrad — ändra aldrig tillbaka utan Axels besked
 
 ---
 
+## Utlandsbutikerna — lansering till NO/DK/FI/UK
+
+Hela receptet med priser, SKU:er, bild-URL:er och färdiga steg ligger i
+**`temu/UTLANDS-LANSERING.md`** — den är självbärande och kan klistras in i ett annat
+Claude-konto. Det här är kortversionen:
+
+**Butiksregistret (verifierat 2026-08-18):**
+
+| Land | Butik | Valuta | Vendor | 🦫 i garantin |
+|---|---|---|---|---|
+| 🇸🇪 | bäverbutiken.se | SEK | Bäverbutiken | Ja |
+| 🇳🇴 | grillklinikken.no | NOK | Grillklinikken | **Nej** |
+| 🇩🇰 | bæverbutiken.dk | DKK | Bæverbutiken | Ja |
+| 🇫🇮 | (EUR — namn okänt tills kopplad) | EUR | butikens namn | efter varumärke |
+| 🇬🇧 | (GBP — namn okänt tills kopplad) | GBP | butikens namn | efter varumärke |
+
+**Processen:** `switch-shop` släpper token → Axel kopplar nästa butik i connectorn →
+**`get-shop-info` FÖRST, alltid** (fel butik = stopp) → skapa produkterna på landets språk →
+varianter `CONTINUE` + `taxable: false` → publicera på ALLA kanaler → kategori (taxonomi-ID:na
+är globala, samma GID i alla butiker) → verifiera bilder → nästa land. **Sist: koppla alltid
+tillbaka bäverbutiken.se** — annars skriver nästa session mot fel butik.
+
+**Priserna är kostnadsbaserade per land, inte valutakonverterade.** CWD-frakten skiljer
+per land ($6,29 UK – $9,97 FI på tofflorna). Ankare: tofflorna 349 NOK / 229 DKK /
+29,90 € / £22,99 (Axels beslut 2026-08-18) → faktor mot svenska priset: NO ×1,13,
+DK ×0,74, FI ×0,097, UK ×0,074, avrundat till lokala prispunkter (NOK/DKK 9-slut,
+EUR X,90, GBP X.99). Hela prismatrisen för alla 25 står i filen.
+
+**Copy:** samma 7-blocksformat och bullet-regler som Sverige, skrivet på landets språk
+(aldrig maskinöversatt rakt av — korrläs som infödd). Bilderna återanvänds från svenska
+CDN:en (URL:erna i filen) — Shopify kopierar dem till landets egen CDN automatiskt.
+Grillklinikken-butiker får ALDRIG bäver-emojin eller "Bäverbutiken" som vendor.
+
+---
+
 ## Saker som är lätta att göra fel
 
 - **"PAUSED" gäller bara `ads.mjs` och `meta.mjs`.** Verifierat i koden 2026-08-12:
