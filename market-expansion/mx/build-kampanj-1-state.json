@@ -9,7 +9,9 @@
   "GG - 07 dinero": "120252844751310349",
   "GG - 08 sazon": "120252844757560349",
   "GG - 09 esposa": "120252844762470349",
-  "GG - BILDANNONSER": "120252844764250349"
+  "GG - BILDANNONSER": "120252844764250349",
+  "GG - 10 porfinsesienta": "120252862984210349",
+  "GG - 11 trompo": "120252862991190349"
  },
  "ads": {
   "GG_01_H1_pain_ugc_foilstop_PROD": "120252844707020349",
@@ -73,7 +75,11 @@
   "GG_B5_offer_comparison_nogira_PROD": "120252844771260349",
   "GG_B5_offer_comparison_nogira_LIST1": "120252844771480349",
   "GG_B6_social_ugc_esposo_PROD": "120252844772110349",
-  "GG_B6_social_ugc_esposo_LIST8": "120252844772610349"
+  "GG_B6_social_ugc_esposo_LIST8": "120252844772610349",
+  "GG_10_H1_identity_ugc_porfinsesienta_PROD": "120252862987020349",
+  "GG_10_H1_identity_ugc_porfinsesienta_LIST11": "120252862989030349",
+  "GG_11_H1_curiosity_ugc_trompo_PROD": "120252862994140349",
+  "GG_11_H1_curiosity_ugc_trompo_LIST8": "120252862995200349"
  },
  "creatives": {
   "GG_B4_benefit_product_medidas|https://laclinicadelasador.mx/pages/1": "1357631136540860",
@@ -179,7 +185,11 @@
   "GG_B5_offer_comparison_nogira_PROD|https://laclinicadelasador.mx/products/roterande-grillkorg-i-rostfritt-stal-perfekt-for-gronsaker-kott-tillbehor": "2904482993250498",
   "GG_B5_offer_comparison_nogira_LIST1|https://laclinicadelasador.mx/pages/1": "27804130565945528",
   "GG_B6_social_ugc_esposo_PROD|https://laclinicadelasador.mx/products/roterande-grillkorg-i-rostfritt-stal-perfekt-for-gronsaker-kott-tillbehor": "1386111383658538",
-  "GG_B6_social_ugc_esposo_LIST8|https://laclinicadelasador.mx/pages/8": "27791215867215792"
+  "GG_B6_social_ugc_esposo_LIST8|https://laclinicadelasador.mx/pages/8": "27791215867215792",
+  "GG_10_H1_identity_ugc_porfinsesienta_PROD|https://laclinicadelasador.mx/products/roterande-grillkorg-i-rostfritt-stal-perfekt-for-gronsaker-kott-tillbehor": "2503008223477249",
+  "GG_10_H1_identity_ugc_porfinsesienta_LIST11|https://laclinicadelasador.mx/pages/11": "1302941661743734",
+  "GG_11_H1_curiosity_ugc_trompo_PROD|https://laclinicadelasador.mx/products/roterande-grillkorg-i-rostfritt-stal-perfekt-for-gronsaker-kott-tillbehor": "919048890703318",
+  "GG_11_H1_curiosity_ugc_trompo_LIST8|https://laclinicadelasador.mx/pages/8": "1647359053477522"
  },
  "deleted": [
   "120252844324570349",

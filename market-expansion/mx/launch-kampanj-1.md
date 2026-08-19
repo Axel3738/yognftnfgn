@@ -1,7 +1,7 @@
 # Launch 1 — GreatGrill MX · CBO-testkampanj
 
 **Byggd skarpt i Meta 2026-08-18.** Kampanjen ligger **PAUSED** — allt annat är ACTIVE,
-så du slår på *en* switch (kampanjnivån) och alla 62 annonser går live samtidigt.
+så du slår på *en* switch (kampanjnivån) och alla 66 annonser går live samtidigt.
 Ingenting spenderar en krona innan dess.
 
 | | |
@@ -9,7 +9,7 @@ Ingenting spenderar en krona innan dess.
 | Kampanj | `CLIN_GG_SALES_20260818` · ID `120252844116050349` |
 | Budget | **CBO 2 000 kr/dag** på kampanjnivån *(Axels beslut 2026-08-18)* |
 | Struktur | **Ett adset per annons (koncept).** Båda destinationerna ligger inne i samma adset. *(Axels beslut 2026-08-18)* |
-| Omfattning | 10 adsets · 62 annonser · 31 creatives × 2 destinationer |
+| Omfattning | 12 adsets · 66 annonser · 33 creatives × 2 destinationer |
 | Annonskonto | `act_918424617391896` "Snark mexico" · **SEK** · Mexico/General · STONEBITE ECOM AB |
 | Sida | La Clínica del Asador `1334949959694822` |
 | Pixel | `776922878287560` + Purchase |
@@ -39,6 +39,8 @@ KAMPANJ  CLIN_GG_SALES_20260818                    CBO 2 000 kr/dag
 ├─ GG - 07 dinero            6 annonser
 ├─ GG - 08 sazon             6 annonser
 ├─ GG - 09 esposa            2 annonser  (ensam creative, ingen hook-trio)
+├─ GG - 10 porfinsesienta    2 annonser  (ensam creative)
+├─ GG - 11 trompo            2 annonser  (ensam creative)
 └─ GG - BILDANNONSER        12 annonser  = 6 bilder × 2 destinationer
 ```
 
@@ -158,6 +160,23 @@ Destinationer i detta adset: **produktsidan** och **`/pages/8`** — *Deja de en
 |---|---|---|
 | `9.mp4` | `GG_09_H1_social_ugc_esposa_PROD` | `GG_09_H1_social_ugc_esposa_LIST8` |
 
+### `GG - 10 porfinsesienta`  ·  adset-ID `120252862984210349`
+
+Destinationer: **produktsidan** och **`/pages/11`** — *Deja de quemar la mitad de la comida*
+
+| Redigerarnas fil | Produktsida-versionen | Listicle-versionen |
+|---|---|---|
+| `clin_greatgrill_identity_ugc_porfinsesienta_v1.mov` | `GG_10_H1_identity_ugc_porfinsesienta_PROD` | `GG_10_H1_identity_ugc_porfinsesienta_LIST11` |
+
+### `GG - 11 trompo`  ·  adset-ID `120252862991190349`
+
+Destinationer: **produktsidan** och **`/pages/8`** — *Deja de envolver tus camarones en aluminio*
+Konceptet landar i tesen "fuego directo, no vapor", vilket är exakt artikel 8:s tes.
+
+| Redigerarnas fil | Produktsida-versionen | Listicle-versionen |
+|---|---|---|
+| `clin_greatgrill_curiosity_ugc_trompo_v1.mov` | `GG_11_H1_curiosity_ugc_trompo_PROD` | `GG_11_H1_curiosity_ugc_trompo_LIST8` |
+
 ### `GG - BILDANNONSER`  ·  adset-ID `120252844764250349`
 
 Här har varje bild sin **egen** listicle enligt `testmatris.md`, eftersom destinationen sitter på annonsen och inte på adsetet.
@@ -179,8 +198,8 @@ Här har varje bild sin **egen** listicle enligt `testmatris.md`, eftersom desti
 |---|---|---|
 | produktsidan | — | alla `_PROD`-annonser |
 | `/pages/1` | *7 razones para cambiar el aluminio* | koncept 5 · bild B2, B4, B5 |
-| `/pages/8` | *Deja de envolver tus camarones en aluminio* | koncept 1, 2, 6, 9 · bild B6 |
-| `/pages/11` | *Deja de quemar la mitad de la comida* | koncept 3, 7 · bild B1, B3 |
+| `/pages/8` | *Deja de envolver tus camarones en aluminio* | koncept 1, 2, 6, 9, 11 · bild B6 |
+| `/pages/11` | *Deja de quemar la mitad de la comida* | koncept 3, 7, 10 · bild B1, B3 |
 | `/pages/13` | *Una canasta reemplaza diez brochetas* | koncept 8 |
 | `/pages/22` | *7 razones para dejar el hierro fundido* | koncept 4 |
 
@@ -189,27 +208,26 @@ Alla fem verifierade 2026-08-18: svarar 200 och är publika. Shopifys preview-ny
 
 ---
 
-## Vad som INTE är med
+## Hela biblioteket är inne
 
-| Creative | Varför |
-|---|---|
-| Ad 10 porfinsesienta | Ej klar hos redigerarna |
-| Ad 11 trompo | Ej klar hos redigerarna |
+Alla elva videokoncept plus de sex bildannonserna ligger i kampanjen. Inget hålls tillbaka.
+Koncept 3 ⭐ (repots prioritet 1), 10 och 11 levererades 2026-08-18 och gick in samma dag.
 
-Allt annat som är levererat ligger inne. Koncept 3 ⭐ (repots prioritet 1, bäst
-research-stöd) levererades 2026-08-18 och är med från start.
+**Tre koncept har bara en creative** och saknar hook-trio: ad 9 esposa, ad 10
+porfinsesienta och ad 11 trompo. De ligger i egna adsets med två annonser var. Vill du
+ha hookvarianter på dem behöver redigerarna göra två till per koncept.
 
 ---
 
-## ⚠️ Budgeten räcker inte till 10 adsets
+## ⚠️ Budgeten räcker inte till 12 adsets
 
-2 000 kr/dag delat på 10 adsets är 200 kr per adset i snitt — och CBO delar inte jämnt,
+2 000 kr/dag delat på 12 adsets är 167 kr per adset i snitt — och CBO delar inte jämnt,
 den koncentrerar. Regel 3 i CLAUDE.md: ingen dom under **300 kr spend eller 3 köp**.
-Med 62 annonser i kampanjen når merparten aldrig dömbart läge; de kommer se ut som
+Med 66 annonser i kampanjen når merparten aldrig dömbart läge; de kommer se ut som
 förlorare utan att ha testats.
 
-**Räknat rakt av:** 62 annonser × 300 kr = **18 600 kr** innan hela matrisen är avläsbar.
-På 2 000 kr/dag är det nio dagar *om* pengarna fördelades jämnt — vilket CBO inte gör.
+**Räknat rakt av:** 66 annonser × 300 kr = **19 800 kr** innan hela matrisen är avläsbar.
+På 2 000 kr/dag är det tio dagar *om* pengarna fördelades jämnt — vilket CBO inte gör.
 
 **Tre vägar:**
 
@@ -262,15 +280,23 @@ En text per **koncept** — delas av konceptets hookvarianter och av båda desti
 eftersom hooken varierar videon och inte captionen. Texterna ligger i `build-kampanj-1.py`
 och är inne i Meta. Källa för formuleringarna: `voc-research.md`.
 
-Koncept 3-texten skrevs 2026-08-18 av copy-subagent (sonnet) enligt modellpolicyn i
-CLAUDE.md regel 6, med `docs/copy-regler.md` som krav. Tre-frågorstestet redovisat 3/3 på
-varje bärande rad.
+Texterna till **koncept 3, 10 och 11** skrevs 2026-08-18 av copy-subagent (sonnet) enligt
+modellpolicyn i CLAUDE.md regel 6, med `docs/copy-regler.md` som krav och `voc-research.md`
+som källa. Tre-frågorstestet redovisat rad för rad i varje leverans.
 
-⚠️ **"Directo al lavavajillas"** står i koncept 1, 2, 4, 5, 6, 7, 8 och bildannonserna.
+- **Koncept 10** bygger på ett verbatim mexikanskt meme ur researchen: *"Cuando por fin se
+  sienta el wey que hizo la carne asada para todos"*. Alla bärande rader 3/3.
+- **Koncept 11** bygger på trompo/al pastor-analogin och landar i *"fuego directo, no
+  vapor"*. Subagenten flaggade själv att två rader (ånga-vs-eld och aluminiummigrationen)
+  inte är unika — de återanvänds från koncept 1. Det är medvetet: migrationsraden är den
+  enda hälsoformulering som är juridiskt tillåten i hela projektet, och den bär inte
+  hooken, trompon gör det.
+
+⚠️ **"Directo al lavavajillas"** står i koncept 1, 2, 4, 5, 6, 7, 8, 9 och bildannonserna.
 Axel har påpekat att diskmaskin är ovanligt i Mexiko (samma invändning gav han på
 listicle-bilderna). Videornas voiceover säger samma sak, så texten är inte ändrad
-ensidigt. **Koncept 3 använder redan `se enjuaga en segundos` i stället** — jämför de två
-i avläsningen, det är ett gratis A/B-test på den frasen.
+ensidigt. **Koncept 3, 10 och 11 använder redan `se enjuaga en segundos` i stället** — jämför de två
+grupperna i avläsningen, det är ett gratis A/B-test på den frasen.
 
 **Ad 9 esposa** använder tills vidare koncept 2:s text (samma fru/present-vinkel). Egen
 copy skrivs när den ska skalas.

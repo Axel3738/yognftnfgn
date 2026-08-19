@@ -125,6 +125,34 @@ Es de acero inoxidable resistente, con cierre seguro que no se abre solo — y s
 
 Hoy con hasta 42% de descuento, envío gratis a todo México y garantía de por vida. Dale clic abajo.""",
  "Calor parejo desde todos lados","Nada crudo. Nada quemado.","SHOP_NOW")
+C["10"]=("""Cuando por fin se sienta el que hizo la carne asada para todos, la fiesta ya casi se acabó.
+
+Toda la tarde de pie, volteando cada pieza para que no salga cruda por dentro y quemada por fuera.
+
+Mientras los demás están con la cheve en la mano, tú vigilando el carbón.
+
+La canasta giratoria de GreatGrill gira sola sobre las brasas. Cierras la tapa con el cierre seguro y le das una vuelta cada rato — no se te abre aunque la muevas.
+
+Nada de esas tapas que se zafan a medio asado. Es acero inoxidable, no el clip de plástico que se rompe desde el primer uso.
+
+Por fin te sientas con tu cheve, mientras la carne se cocina pareja por los cuatro lados.
+
+Hasta 42% de descuento, envío gratis a todo México, garantía de por vida y 4.8 estrellas y más de 240 reseñas.""",
+ "Por fin te vas a sentar","Gira sola sobre las brasas","SHOP_NOW")
+C["11"]=("""El trompo del pastor no se detiene ni un segundo.
+
+Gira contra la lumbre todo el tiempo — por eso el pastor sale dorado parejo, de la primera rebanada a la última.
+
+Con los camarones y las verduras casi siempre hacemos lo contrario: los envolvemos en aluminio y los sellamos. Ahí adentro no hay lumbre, hay vapor.
+
+La cebollita en aluminio con mantequilla sigue igual de rica — a esa no le tocamos nada. Pero el camarón, la calabacita, el elote... esos se merecen la flama directa, no una bolsa de vapor a 100°C.
+
+Y a temperatura alta, con limón o sal, el aluminio puede migrar a la comida. ¿Para qué arriesgarte si hay otra forma?
+
+Por eso hicimos una canasta giratoria de acero inoxidable: mismo principio que el trompo. Le echas todo, cierras la tapa, la giras — y nada se cae por el asador. Al terminar, se enjuaga en segundos.
+
+Hoy con hasta 42% de descuento, envío gratis a todo México y garantía de por vida. 4.8 estrellas y más de 240 reseñas.""",
+ "El secreto del trompo, en tu asador","Fuego directo, no vapor","SHOP_NOW")
 C["09"]=C["02"]   # ad 9 ar samma fru/present-vinkel som koncept 2 - egen copy skrivs nar den ska skalas
 C["B"] =("""Cierre seguro, acero inoxidable y gira 360° — nada se te cae por el asador.
 
@@ -165,6 +193,8 @@ PLAN=[
                            ("8 HOOK B.mp4","GG_08_H2_curiosity_ugc_miraparrilla"),
                            ("8 HOOK C.mp4","GG_08_H3_curiosity_ugc_fuegosabor")]),
  ("GG - 09 esposa","09",8,[("9.mp4","GG_09_H1_social_ugc_esposa")]),
+ ("GG - 10 porfinsesienta","10",11,[("clin_greatgrill_identity_ugc_porfinsesienta_v1.mov","GG_10_H1_identity_ugc_porfinsesienta")]),
+ ("GG - 11 trompo","11",8,[("clin_greatgrill_curiosity_ugc_trompo_v1.mov","GG_11_H1_curiosity_ugc_trompo")]),
 ]
 # bildannonserna: egen listicle per bild enligt testmatris.md
 STATICS=[("clin_greatgrill_pain_beforeafter_crudoquemado_v1.png","GG_B1_pain_beforeafter_crudoquemado",11),
