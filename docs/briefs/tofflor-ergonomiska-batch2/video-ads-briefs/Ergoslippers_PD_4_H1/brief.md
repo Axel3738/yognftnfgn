@@ -58,6 +58,6 @@ Bare hands and feet only, no faces required, no AI humans. Product visible from 
 Exports: 1080×1920 + 1080×1350.
 
 - **Production level:** A (new raw footage, one location, ~30 min)
-- **Primary KPI:** hold rate at p50 (target > 14.9 % = winner's level). Guardrail: pause if CPA > 228 kr after 500 kr.
+- **Primary KPI:** hold rate at p50 (target > 14.9 % = winner's level). Guardrail: pause if CPA > 216 kr after 500 kr.
 - **What we learn regardless of outcome:** whether a pure mechanism demo can carry a cold
   audience for this product — decides the demo-vs-story mix in batch #3.

@@ -55,6 +55,6 @@ The stock facts above are the ONLY social proof allowed. No reviews, no ratings,
 scarcity countdowns. No customer data on screen. Exports: 1080×1920 + 1080×1350.
 
 - **Production level:** A (short raw shoot, can reuse SP_4 footage for shots 3–10)
-- **Primary KPI:** CPA + purchase-per-click (does trust convert?). Guardrail: pause if CPA > 228 kr after 500 kr.
+- **Primary KPI:** CPA + purchase-per-click (does trust convert?). Guardrail: pause if CPA > 216 kr after 500 kr.
 - **What we learn regardless of outcome:** whether the SO (social proof) track deserves
   its own adset before real reviews exist.

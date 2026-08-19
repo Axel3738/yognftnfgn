@@ -60,6 +60,6 @@ Tofflor Ergonomiska – Tjocksulade · 309 kr · ~~400 kr~~ · 30 dagars öppet 
 Pure re-cut — no new footage, no AI. Exports: 1080×1920 + 1080×1350.
 
 - **Production level:** B (edit only, ~1 h)
-- **Primary KPI:** hold rate at p50 vs original SP_1 (11.7 %). Guardrail: pause if CPA > 228 kr after 500 kr.
+- **Primary KPI:** hold rate at p50 vs original SP_1 (11.7 %). Guardrail: pause if CPA > 216 kr after 500 kr.
 - **What we learn regardless of outcome:** whether re-cutting rescues polished supplier
   footage — if yes, every future supplier video gets this treatment before being retired.

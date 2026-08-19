@@ -22,7 +22,8 @@ Namnen följer inte namnkonventionen (saknar engelskt produktprefix och variant)
 | ⚠️ Får ej återanvändas | Tofflor_SP_2_1 | Påhittad recension i bild |
 | ⏳ Odömt | övriga 16 | 0–157 kr styck, CS/G-adseten fick nästan inget |
 
-Lärdomar → `dna.md` (mönster 1–4). Kill-beslutet mot PROXY-break-even 228 kr.
+Lärdomar → `dna.md` (mönster 1–4). Kill-beslutet togs först mot proxy-BE 228 kr och
+står sig mot den verifierade break-even (216 kr, Axels COGS-besked 2026-08-19).
 
 ---
 

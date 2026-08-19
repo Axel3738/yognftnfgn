@@ -61,6 +61,6 @@ Tofflor Ergonomiska – Tjocksulade · 309 kr · ~~400 kr~~ · 30 dagars öppet 
 No age targeting language, no fear language, no diagnoses. Exports: 1080×1920 + 1080×1350.
 
 - **Production level:** B (edit only)
-- **Primary KPI:** CPA vs SP_6_H1 (same footage, different angle). Guardrail: pause if CPA > 228 kr after 500 kr.
+- **Primary KPI:** CPA vs SP_6_H1 (same footage, different angle). Guardrail: pause if CPA > 216 kr after 500 kr.
 - **What we learn regardless of outcome:** whether stability/support is a second buying
   motive for this product — decides if the backlog's senior-stability concept gets built.

@@ -9,22 +9,23 @@ Ingen dom under 300 kr spend eller 3 köp.
 
 ---
 
-## ⚠️ Break-even är INTE verifierad för denna produkt
+## Break-even — VERIFIERAD av Axel 2026-08-19
 
-COGS saknas i product sheetet (kostnadskolumnerna är tomma). Nivåerna nedan är en
-**proxy lånad från strandtofflorna** (närmaste produkt: Temu-sko, liknande prisklass):
+Axels besked: **total cost 10,9 USD till Sverige + 2,9 EUR skatt per par.**
+Omräknat (USD 9,6376 ur product sheetet · EUR 11,00, avläst 2026-08-19):
+**COGS ≈ 137 kr/par** → marginal 309 − 137 = **172 kr/par**.
 
-| | Proxy-värde | Källa |
+| | Värde | Härledning |
 |---|---|---|
-| AOV | **388 kr** | Shopify analytics, 28 ordrar sedan 2026-08-01 — VERKLIG |
-| Break-even-ROAS | 1,70 | ⚠️ PROXY (strandtofflorna) |
-| Break-even-CPA | 228 kr | AOV / 1,70 |
-| Target-ROAS (25 %) | 2,97 | ⚠️ PROXY |
-| Target-CPA | 131 kr | AOV / 2,97 |
+| AOV | **388 kr** | Shopify analytics, 28 ordrar sedan 2026-08-01 (≈1,26 par/order) |
+| **Break-even-ROAS** | **1,80** | 309 / 172 (samma kvot per order: 388 / 216) |
+| **Break-even-CPA** | **216 kr** | AOV − COGS per order (388 − 1,26 × 137) |
+| Target-ROAS (25 %) | 3,26 | AOV / target-CPA |
+| Target-CPA | 119 kr | BE-CPA − 0,25 × AOV — samma formel som övriga produkter |
 
-**Fråga ställd till Axel 2026-08-19:** riktig COGS (inköp + frakt) för produkten.
-När svaret kommer: räkna om, uppdatera products.json och denna fil. Kill-beslut
-tagna mot proxyn ska omprövas om riktig break-even avviker >15 %.
+Metod = Axels COGS-beräkning för de andra fem produkterna (AOV − landad COGS, ingen
+momsterm — verifierat mot motorhöljets 342/210/2,74). Ursprungliga proxy-nivåerna
+(1,70 / 228 kr) ersattes samma dag; ingen dom ändrades av bytet.
 
 ---
 
@@ -41,16 +42,17 @@ samtliga 5 rader med köp (t.ex. SP_2: 2 500,03 × 2,2989 = 5 747,5 ≈ 5 747,40
 spenden** — Metas dom. CS-adsetet (rea-vinkel) är pausat sedan tidigare. Funnel-stegen
 LPV→ATC→IC går inte att hämta via MCP-verktyget (fälten finns inte) — lucka, ingen gissning.
 
-### Bedömbara (≥300 kr OCH ≥3 köp) — vinstbidrag `(228 − CPA) × köp` mot PROXY-break-even
+### Bedömbara (≥300 kr OCH ≥3 köp) — vinstbidrag `(216 − CPA) × köp` mot verklig break-even
 
 | Annons | Spend | Andel | Köp | CPA | ROAS | CTR | CPM | Hold p50 | **Vinstbidrag** | Andel vinst |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| **Tofflor_SP_2** (rå UGC-unboxning) | 2 500 kr | 44 % | **15** | **167 kr** | 2,30 | 2,46 % | 139 kr | **14,9 %** | **920 kr** | **80 %** |
-| Tofflor_SP_1 (polerad b-roll) | 1 595 kr | 28 % | 8 | 199 kr | 2,01 | 1,72 % | 137 kr | 11,7 % | 228 kr | 20 % |
+| **Tofflor_SP_2** (rå UGC-unboxning) | 2 500 kr | 44 % | **15** | **167 kr** | 2,30 | 2,46 % | 139 kr | **14,9 %** | **740 kr** | **85 %** |
+| Tofflor_SP_1 (polerad b-roll) | 1 595 kr | 28 % | 8 | 199 kr | 2,01 | 1,72 % | 137 kr | 11,7 % | 132 kr | 15 % |
 
-Känslighet: vid BE-ROAS 1,50 → 1 385 / 476 kr; vid 2,00 → 410 / **−44** kr. SP_2 är
-lönsam i hela intervallet; SP_1 vippar till förlust först vid BE-ROAS 2,0.
-**SP_2 är benchmark.** Dom = preliminär (6 dagar, 15 köp) — ska överleva nästa körning.
+SP_2 tjänar 49 kr per order, SP_1 bara 17 kr — SP_1 är över break-even men tunn;
+SP_6-omklippen är rätt åtgärd, inte paus. Kampanjsnittet (CPA 217 kr) ligger exakt på
+break-even: vinnaren bär förlorarna. **SP_2 är benchmark.** Dom = preliminär
+(6 dagar, 15 köp) — ska överleva nästa körning.
 
 ### För tidigt — ingen dom (urval)
 
@@ -61,7 +63,7 @@ lönsam i hela intervallet; SP_1 vippar till förlust först vid BE-ROAS 2,0.
 | Tofflor_PD_2_1 (AI-statisk "ONDA FÖTTER?") | 14 kr | 1 | ROAS 22,7 = brus. CTR 4,65 % på 86 visn. |
 | Tofflor_PD_2 · PD_3 · PD_Statisk · PD_EXTRA · G_1–G_3 · CS_1–CS_3 | 1–134 kr | 0 | Ingen leverans / adset pausat. |
 
-### Kill (mot proxy-break-even 228 kr, ≥500 kr spend)
+### Kill (mot break-even 216 kr, ≥500 kr spend)
 
 | Annons | Spend | Köp | Beslut |
 |---|---:|---:|---|
@@ -91,14 +93,14 @@ previews + captions i bild, inte på gissad transkribering.
   kund, 42 år" ★★★★★. **Recensionen är påhittad** — produkten har inga verifierade
   recensioner. Se stopplistan.
 
-### Variabeltabell — vinstbidrag per variabelvärde (proxy-BE 228 kr)
+### Variabeltabell — vinstbidrag per variabelvärde (BE 216 kr)
 
 | Variabelvärde | Annonser | Spend | Vinstbidrag | Slutsats |
 |---|---:|---:|---:|---|
-| Video, produkt synlig sek 1 (SP_2, SP_1) | 2 bedömbara | 4 095 kr | 1 148 kr | All vinst bor här |
+| Video, produkt synlig sek 1 (SP_2, SP_1) | 2 bedömbara | 4 095 kr | 872 kr | All vinst bor här |
 | Video, emballage/paket först (PD_1) | 1 (kill) | 565 kr | < 0 | Enda killen |
-| Rå hemmiljö-UGC (SP_2) | 1 | 2 500 kr | 920 kr | Slår studio |
-| Polerad leverantörsstudio (SP_1, PD_1–3) | 4 | 2 231 kr | ~180 kr netto | Fungerar, men sämre per krona |
+| Rå hemmiljö-UGC (SP_2) | 1 | 2 500 kr | 740 kr | Slår studio |
+| Polerad leverantörsstudio (SP_1, PD_1–3) | 4 | 2 231 kr | ~0 kr netto | SP_1:s 132 kr äts upp av PD_1:s förlust |
 | Statics (alla) | 4 | 195 kr | — | Ingen leverans — odömt, inte dött |
 
 ### Mönster (märkta enligt ANALYSMETOD)
@@ -157,7 +159,8 @@ previews + captions i bild, inte på gissad transkribering.
 
 1. **Nya tester i separat test-ABO, lika budget per annons, max 2–3 annonser per adset**
    (Axels regel 2026-08-12 + strandtofflornas leveransmönster: 1 vinnare per adset tar 94 %).
-2. Rangordna på vinstbidrag mot break-even — som är en PROXY tills Axel gett COGS.
+2. Rangordna på vinstbidrag mot break-even-CPA **216 kr** (verifierad 2026-08-19).
+   Kill mot 216 kr, skalning mot target 119 kr — aldrig tvärtom.
 3. Produkten/sulan i bild sekund 1. Aldrig emballage.
 4. Priset hämtas från produktsidan vid varje körning: **309 kr / jämförpris 400 kr /
    spara 91 kr**. Inga andra siffror, inga procentsatser.

@@ -62,6 +62,6 @@ No medical claims beyond these exact lines. No AI humans. No packaging shots.
 Exports: 1080×1920 + 1080×1350.
 
 - **Production level:** A (one extra 3-second shot on top of SP_4_H1's footage)
-- **Primary KPI:** hook rate + CPA. Guardrail: pause if CPA > 228 kr after 500 kr spend.
+- **Primary KPI:** hook rate + CPA. Guardrail: pause if CPA > 216 kr after 500 kr spend.
 - **What we learn regardless of outcome:** pain vs curiosity as opening for this product,
   cleanly isolated on identical bodies.

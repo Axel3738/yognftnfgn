@@ -50,6 +50,6 @@ Max 4 callouts — never add a fifth. Short lines, readable at feed size on a ph
 Exports: 1080×1080 + 1080×1350.
 
 - **Production level:** C (design only)
-- **Primary KPI:** CPA. Guardrail: pause if CPA > 228 kr after 500 kr.
+- **Primary KPI:** CPA. Guardrail: pause if CPA > 216 kr after 500 kr.
 - **What we learn regardless of outcome:** whether the account's proven listicle skeleton
   transfers to this product.

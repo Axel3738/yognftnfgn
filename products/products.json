@@ -166,7 +166,7 @@
         "120249742782850291"
       ],
       "daily_budget_sek": 1000,
-      "target_cpa_sek": 131,
+      "target_cpa_sek": 119,
       "cycle_start": "2026-08-13",
       "status": "aktiv",
       "launches": [
@@ -175,13 +175,13 @@
           "count": 21
         }
       ],
-      "break_even_cpa_sek": 228,
+      "break_even_cpa_sek": 216,
       "aov_sek": 388,
       "aov_kalla": "Shopify analytics sedan 2026-08-01 (28 ordrar, avläst 2026-08-19)",
-      "break_even_status": "⚠️ PROXY, EJ VERIFIERAD: COGS saknas i product sheetet. break_even_roas 1,70 lånad från strandtofflorna (närmaste produkt). target_cpa härledd ur AOV/2,97. Axel måste ge riktig COGS — se products/tofflor-ergonomiska/dna.md.",
-      "break_even_roas": 1.7,
-      "target_roas_25pct": 2.97,
-      "target_cpa_25pct_harledd": 131,
+      "break_even_status": "Fran Axels COGS-besked 2026-08-19: 10,9 USD + 2,9 EUR skatt per par = ca 137 kr (kurser: USD 9,6376 ur product sheetet, EUR 11,00). Marginal 172 kr/par. BE-ROAS = 309/172 = 1,80. Samma metod som ovriga produkter (AOV - COGS, ingen momsterm).",
+      "break_even_roas": 1.8,
+      "target_roas_25pct": 3.26,
+      "target_cpa_25pct_harledd": 119,
       "scaling": false
     }
   ]

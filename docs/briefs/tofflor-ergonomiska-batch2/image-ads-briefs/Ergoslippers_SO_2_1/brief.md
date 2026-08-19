@@ -47,6 +47,6 @@ NO stars, NO quotes, NO "verified customer", NO countdowns. The stock fact exact
 written is the only proof. Exports: 1080×1080 + 1080×1350.
 
 - **Production level:** C (design only, uses existing product photo)
-- **Primary KPI:** purchase-per-click (trust job). Guardrail: pause if CPA > 228 kr after 500 kr.
+- **Primary KPI:** purchase-per-click (trust job). Guardrail: pause if CPA > 216 kr after 500 kr.
 - **What we learn regardless of outcome:** whether honest proof converts before reviews
   exist — sets the template until real testimonials arrive.

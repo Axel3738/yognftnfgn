@@ -1,5 +1,11 @@
 # /forsta-batch — Tofflor Ergonomiska · Slutrapport 2026-08-19
 
+> **Uppdatering samma dag:** Axel bekräftade COGS (10,9 USD + 2,9 EUR skatt per par
+> ≈ 137 kr) efter att rapporten skrevs. Verklig **break-even-ROAS 1,80 / break-even-CPA
+> 216 kr / target-CPA 119 kr** ersätter proxyn (1,70/228/131) som nämns nedan.
+> Vinstbidrag: SP_2 740 kr (85 %), SP_1 132 kr (15 %). **Ingen dom ändrades.**
+> Kvoten blev 6 creatives/cykel. `dna.md` och products.json bär de riktiga talen.
+
 ## Executive summary
 
 Launchbatchen (13 aug, 21 annonser, 4 ABO-adset) har på 6 dagar spenderat **5 641 kr och

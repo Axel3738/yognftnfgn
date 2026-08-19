@@ -49,6 +49,6 @@ No diagnoses, no medical promises — these exact lines are the ceiling. Exports
 1080×1080 + 1080×1350.
 
 - **Production level:** C (design; needs one feet-on-floor photo)
-- **Primary KPI:** CTR first (does pain stop the scroll in static form), then CPA. Guardrail: pause if CPA > 228 kr after 500 kr.
+- **Primary KPI:** CTR first (does pain stop the scroll in static form), then CPA. Guardrail: pause if CPA > 216 kr after 500 kr.
 - **What we learn regardless of outcome:** whether the pain angle survives the move from
   its high-CTR fluke to a properly funded test — decides batch #3's lead angle.

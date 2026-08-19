@@ -50,6 +50,6 @@ Never show a competitor's logo on the thin slipper. Both photos same scale, same
 — the comparison must be honest. Exports: 1080×1080 + 1080×1350.
 
 - **Production level:** C (design + one photo of a cheap flat slipper)
-- **Primary KPI:** CTR + purchase-per-click. Guardrail: pause if CPA > 228 kr after 500 kr.
+- **Primary KPI:** CTR + purchase-per-click. Guardrail: pause if CPA > 216 kr after 500 kr.
 - **What we learn regardless of outcome:** whether visual comparison is a repeatable
   format for this product (it was never delivered in batch #1).

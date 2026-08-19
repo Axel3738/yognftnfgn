@@ -62,6 +62,6 @@ The stock fact is the ONLY social proof allowed. No reviews, no star ratings, no
 "limited time" language. Exports: 1080×1920 + 1080×1350.
 
 - **Production level:** A (minimal new footage on top of SP_4_H1)
-- **Primary KPI:** CPA vs SP_4_H1/H2. Guardrail: pause if CPA > 228 kr after 500 kr.
+- **Primary KPI:** CPA vs SP_4_H1/H2. Guardrail: pause if CPA > 216 kr after 500 kr.
 - **What we learn regardless of outcome:** whether true social proof can carry the hook
   slot — decides if the SO track deserves more budget.

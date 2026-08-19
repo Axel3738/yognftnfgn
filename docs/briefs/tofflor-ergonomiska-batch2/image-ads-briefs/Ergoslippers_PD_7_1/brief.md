@@ -47,6 +47,6 @@ High contrast, minimal text besides the table above. Keep the strap's garbled pr
 of frame. Exports: 1080×1080 + 1080×1350.
 
 - **Production level:** C (design; needs one good macro of the insole)
-- **Primary KPI:** CTR (attention test). Guardrail: pause if CPA > 228 kr after 500 kr.
+- **Primary KPI:** CTR (attention test). Guardrail: pause if CPA > 216 kr after 500 kr.
 - **What we learn regardless of outcome:** whether the insole is the product's visual
   hook in statics too — it already correlates with CTR in video.

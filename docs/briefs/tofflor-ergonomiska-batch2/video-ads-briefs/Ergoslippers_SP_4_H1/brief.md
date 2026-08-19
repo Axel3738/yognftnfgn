@@ -68,5 +68,5 @@ Sound-off first (captions carry it). No AI humans. No packaging in the first sho
 Exports: 1080×1920 and 1080×1350. Captions inside middle 80 % of frame.
 
 - **Production level:** A (new raw phone footage, ~30 min shoot)
-- **Primary KPI:** hook rate + CPA vs benchmark SP_2 (167 kr). Guardrail: pause if CPA > 228 kr after 500 kr spend.
+- **Primary KPI:** hook rate + CPA vs benchmark SP_2 (167 kr). Guardrail: pause if CPA > 216 kr after 500 kr spend.
 - **What we learn regardless of outcome:** whether the insole macro or the table reveal is the stronger opening for this product — feeds every future hook.

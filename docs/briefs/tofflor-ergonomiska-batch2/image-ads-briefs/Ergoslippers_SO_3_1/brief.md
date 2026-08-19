@@ -48,6 +48,6 @@ compare-at price must match the landing page when the ad goes live — check it 
 Exports: 1080×1080 + 1080×1350.
 
 - **Production level:** C (design only)
-- **Primary KPI:** CPA vs the value-led statics. Guardrail: pause if CPA > 228 kr after 500 kr.
+- **Primary KPI:** CPA vs the value-led statics. Guardrail: pause if CPA > 216 kr after 500 kr.
 - **What we learn regardless of outcome:** whether price-led works at all for this
   product — the account playbook says discount angles lose; this is the controlled check.

@@ -52,6 +52,6 @@ Keep the shoe's garbled English print unreadable (angle/crop/retouch).
 Exports: 1080×1080 + 1080×1350.
 
 - **Production level:** C (design, ~30 min once the still exists)
-- **Primary KPI:** delivery first (batch #1 statics got no spend), then CPA. Guardrail: pause if CPA > 228 kr after 500 kr.
+- **Primary KPI:** delivery first (batch #1 statics got no spend), then CPA. Guardrail: pause if CPA > 216 kr after 500 kr.
 - **What we learn regardless of outcome:** whether winner-realism transfers to statics —
   decides the static style for batch #3.
