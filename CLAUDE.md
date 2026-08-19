@@ -167,6 +167,7 @@ Det finns ingen linter och ingen byggkedja i OS:et — `npm test` är hela grind
 | SOP 01–08 (batch-loop, kvot, UGC, check-in, "när Claude inte lyssnar", produkttest, dashboard, körschema ny batch) | `docs/os/SOP-0*.md` |
 | Editor SOP (engelska, till redigerarna) | `docs/os/EDITOR-SOP.md` |
 | Notion-formatet för briefer (exakt spec + statustabell) | `docs/os/NOTION-FORMAT.md` |
+| **Brief-formatet (AT A GLANCE, ingen primärtext, inga shot lists, max 3 hooks)** | **`docs/os/BRIEF-FORMAT.md`** |
 | Produkt-konfig + launch-logg | `products/products.json` |
 | Produktminne per produkt | `products/<id>/` |
 | Kvot-skriptet | `pipeline/quota.mjs` |

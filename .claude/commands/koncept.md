@@ -15,7 +15,7 @@ Exempel:
 
 1. **Logga idén** i `products/<id>/backlog.md` med: datum, typ (`koncept` / `swipe`), beskrivning, källa/länk, status `väntar`. Skapa filen om den saknas.
 2. **Om det är en swipe:** försök hämta och beskriva referensannonsen (Ad Library-länk går att slå upp; bild kan jag granska om den klistras in; annan länk — hämta sidan). Extrahera mekanismen (hook, struktur, proof, offer) — vi kopierar aldrig rakt av, vi tar mekaniken. Skriv extraktionen i backlog-posten så den överlever till nästa batch.
-3. **Om `AKUT`:** bygg briefen nu — hypotes, isolerad variabel, komplett brief enligt leveransformatet (engelska, Swedish/English-tabell, naming med nästa lediga AD-ID i MagiBorsten-kontot). **Copyn/voiceovern skrivs av en subagent med `model: "sonnet"`** (strategin stannar hos huvudmodellen). Lägg i Notion enligt `docs/os/NOTION-FORMAT.md` (item = annonsnamnet, Draft, tag `Video - Pending Approval`, brief i itemet), markera backlog-posten `[brief klar]`.
+3. **Om `AKUT`:** bygg briefen nu — hypotes, isolerad variabel, komplett brief enligt leveransformatet och `docs/os/BRIEF-FORMAT.md` (AT A GLANCE-ruta, VOICEOVER: YES/NO, ingen primärtext, ingen shot list, max 3 hooks; engelska, Swedish/English-tabell, naming med nästa lediga AD-ID i MagiBorsten-kontot). **Copyn/voiceovern skrivs av en subagent med `model: "sonnet"`** (strategin stannar hos huvudmodellen). Lägg i Notion enligt `docs/os/NOTION-FORMAT.md` (item = annonsnamnet, Draft, tag `Video - Pending Approval`, brief i itemet), markera backlog-posten `[brief klar]`.
 4. **Annars:** gör INGET mer — nästa `/cs` plockar upp den automatiskt. Bekräfta bara med backloggens aktuella innehåll som tabell.
 5. Committa och pusha backlog-ändringen.
 

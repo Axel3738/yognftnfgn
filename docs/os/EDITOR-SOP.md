@@ -30,6 +30,13 @@ with a progress bar: *"3 of 6 creatives delivered"*.
 Each task tells you: the product, the task type, how many creatives to deliver,
 the deadline, the brief link, and the folder with source material.
 
+**Every brief starts with an "AT A GLANCE" box.** It tells you exactly what the
+ad is: video or image, VOICEOVER: YES or NO, text on screen or not, how many
+hook versions, and what your job is. You choose the clips yourself — briefs do
+not contain shot-by-shot instructions. If the AT A GLANCE box is missing or
+anything in it is unclear, that is a blocker: report it immediately instead of
+guessing.
+
 ### 2. Start a task
 
 Reply **START** in Slack, or tell your manager. The task moves to *In progress*.

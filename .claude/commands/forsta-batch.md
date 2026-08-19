@@ -47,11 +47,13 @@ Ditt uppdrag: analysera verklig performance-data, förklara varför vissa annons
 - **FAS 5 – Creative DNA:** Winning/Losing DNA + Behåll alltid/Testa kontrollerat/Undvik/Obevisat. **Skriv till `products/<id>/dna.md`.**
 - **FAS 6 – Kund- & konkurrentresearch:** kundspråk (direktcitat/mönster/hypotes), direkta + indirekta konkurrenter, 3 lånade mekanismer.
 - **FAS 7 – Variationer:** 3 per vinnare (nära iteration / format transfer / ny persuasion-angle).
-- **FAS 8 – Nya videokoncept:** 3 st med olika persuasion-mekanismer, inspelningsklara manus.
+- **FAS 8 – Nya videokoncept:** 2–3 koncept med olika persuasion-mekanismer, **vart och ett med 2–3 hookvarianter (max 3)** — samma body, bara hooken byts. Färre koncept × fler hooks slår fler koncept × en hook.
 - **FAS 9 – Nya statiska koncept:** 6 st (demo, jämförelse, testimonial, listicle, offer, risk/cost-of-inaction).
 - **FAS 10 – Testplan:** Tier 1/2/3. Ingen dom <300 kr/3 köp; kill när CPA överstiger **break-even-CPA** (`break_even_cpa_sek` i products.json) efter ≥500 kr spend — inte när den överstiger target-CPA. "Gör innan spend"-lista. **Testplanen ska minst matcha kvoten: kör `node pipeline/quota.mjs`.**
 
-Varje annons: hypotes, vad som behålls/ändras, format, exakt hook, fullständigt manus/designbrief, shot list med tidskoder, exakta text-overlays, creator direction, editing direction, CTA, produktionsnivå, primärt KPI, "vad vi lär oss oavsett utfall".
+Varje annons: hypotes, vad som behålls/ändras, format, exakta hooks (max 3 per koncept), fullständigt manus/designbrief, exakta text-overlays, CTA, produktionsnivå, primärt KPI, "vad vi lär oss oavsett utfall". **Briefens form styrs av `docs/os/BRIEF-FORMAT.md`:** AT A GLANCE-ruta överst med VOICEOVER: YES/NO, ingen primärtext, ingen shot list/editing direction — redigeraren väljer klippen själv.
+
+**Primärtext:** skrivs EN gång (sonnet-subagent) och sparas i `products/<id>/primary-text.md` — återanvänds på alla annonser, testas aldrig utan att Axel ber om det, och läggs aldrig i briefer.
 
 ## NAMING (obligatorisk)
 
@@ -75,6 +77,8 @@ Varje annons: hypotes, vad som behålls/ändras, format, exakt hook, fullständi
 - [ ] Testplanen ≥ kvoten (quota-output visad)
 - [ ] Copy/voiceover via sonnet/haiku-subagent, strategi i huvudsessionen
 - [ ] Briefer självständiga, engelska, Swedish/English-tabeller
+- [ ] BRIEF-FORMAT.md följt: AT A GLANCE + VOICEOVER YES/NO i varje brief, ingen primärtext, inga shot lists, max 3 hooks per koncept
+- [ ] `products/<id>/primary-text.md` skapad (en standardtext, sonnet-subagent)
 - [ ] Naming: upptagna AD-ID:n avlästa, inga återanvända
 - [ ] Två zip-filer med README levererade
 - [ ] `products/<id>/` skapad (dna, batch-log, backlog) och pushad

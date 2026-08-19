@@ -90,7 +90,9 @@ har dödat vinnare två gånger. Kortversion av kraven:
 - **Varje brief taggar sina variabler** (vinkel, hook-typ, format, proof, offer,
   visuell stil, textmängd, talare) i en rad högst upp — utan taggar kan nästa
   `/cs` inte gruppera vinstbidrag per variabel och lärandet dör.
-- Varje annons: hypotes, vad som behålls/ändras, format, exakt hook, komplett brief enligt leveransformatet i `.claude/commands/forsta-batch.md` (engelska briefer, `Swedish (use this) | English meaning`-tabeller, naming-strukturen, upptagna AD-ID:n avlästa i kontot).
+- **Videokoncept levereras med 2–3 hookvarianter (max 3)** — samma body, bara hooken byts, en hypotes per hook. Hellre färre koncept med fler hooks än tvärtom.
+- Varje annons: hypotes, vad som behålls/ändras, format, exakta hooks, komplett brief enligt leveransformatet i `.claude/commands/forsta-batch.md` och **formen i `docs/os/BRIEF-FORMAT.md`** (AT A GLANCE-ruta med VOICEOVER: YES/NO, ingen primärtext, ingen shot list/editing direction, engelska briefer, `Swedish (use this) | English meaning`-tabeller, naming-strukturen, upptagna AD-ID:n avlästa i kontot).
+- **Primärtext:** återanvänd `products/<id>/primary-text.md` — den är ingen testvariabel och läggs aldrig i briefer. Testas bara om Axel ber om det i argumenten.
 
 ### 4. Modellpolicy (obligatorisk)
 - **All slutgiltig ad copy, alla svenska manusrader och voiceovers skrivs av en subagent via Agent-verktyget med `model: "sonnet"`** (eller `"haiku"` för bulkvarianter av samma line). Skicka subagenten: produktens DNA, hypotesen, hooken och formatkraven — den skriver bara text, inga strategibeslut.
@@ -117,4 +119,5 @@ har dödat vinnare två gånger. Kortversion av kraven:
 - [ ] Batchstorlek ≥ kvoten (quota-output visad)
 - [ ] Copy/voiceover skriven av sonnet/haiku-subagent, strategi av huvudmodellen
 - [ ] Briefer på engelska, naming korrekt, zip-paketerade
+- [ ] BRIEF-FORMAT.md följt: AT A GLANCE + VOICEOVER YES/NO, ingen primärtext, inga shot lists, max 3 hooks per koncept
 - [ ] dna.md + batch-log.md uppdaterade i repot (inte bara i chatten) och pushade
