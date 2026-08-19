@@ -100,6 +100,11 @@ halvfärdigt med "nu behöver du bara…".
       times</h2>` ovanför, lovar sidan efter fixen MER än den gjorde innan. Sök på
       never/always/zero/no risk i HELA dokumentet, rubriker inkluderade.
 
+    ⚠️ **Hämta aldrig `descriptionHtml` med `first: 100`.** Node dör på OOM och
+    processen hänger tills den timeoutar — utan felmeddelande som pekar på orsaken.
+    Använd `first: 25`. Vill du bara ha ett ANTAL: använd `productsCount(query: "…")`
+    i stället, det kostar nästan ingenting. (Norge 2026-08-19.)
+
     ⚠️ Shopifys fulltextsök matchar ord för sig, inte frasen. En träff på "Fast delivery"
     kan vara "stick fast" + "Smooth delivery" i samma text. Hämta alltid `descriptionHtml`
     och läs innan du dömer — annars jagar du spöken.
