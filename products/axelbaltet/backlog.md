@@ -29,3 +29,9 @@ Inga items togs in i batch #5 (2026-08-06): alla tre var blockerade eller vänta
   fyra bärande påståenden (överlager, 40 % rabatt, livstidsgaranti, lagerscarcity) är falska eller
   overifierade för oss. **Blockerad uppgradering:** finns en äkta prisorsak skrivs beat 1 och 3 om
   och annonsen får tillbaka modellens ryggrad. Kräver en mening från ägaren.
+
+## Väntande (uppdaterat 2026-08-19)
+
+- **Fler oproducerade assets från ägaren själv** — den bana som ger 1 439 kr vinst per 1 000 kr.
+  Varje mobilfilm och mobilfoto Axel tar i sin egen trädgård är råmaterial värt mer än allt
+  designat material i kontot. Löpande, inte ett engångsitem.

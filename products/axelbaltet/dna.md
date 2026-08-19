@@ -1,7 +1,7 @@
 # Creative DNA – Axelbältet (axelbaltet)
 
-Uppdaterad: **2026-08-12 (/cs-körning nr 5, enligt ANALYSMETOD.md)**. Kampanj 120249192013870291 · MagiBorsten 1867947880635861.
-**Budget 2 000 kr/dag · target-CPA 185 kr · break-even-CPA 326 kr** (kill mäts mot break-even, aldrig mot target).
+Uppdaterad: **2026-08-19 (/cs-körning nr 6, enligt ANALYSMETOD.md)**. Kampanj 120249192013870291 · MagiBorsten 1867947880635861.
+**Budget 1 000 kr/dag (halverad 2026-08-19) · target-CPA 185 kr · break-even-CPA 326 kr** (kill mäts mot break-even, aldrig mot target).
 Produktfakta (omverifierat i Shopify 2026-08-13): **599 kr, jämförpris 789 kr = 190 kr lägre**, fri frakt, 30 dagars öppet köp, 4,75/5 (8 recensioner).
 **PRISÄNDRING 2026-08-05: 509 → 599 kr.** Siffrorna 509 kr, 636 kr och "20 %" är FÖRBJUDNA i all ny copy och creative.
 
@@ -39,7 +39,7 @@ som bär ett pris är byggda på 678/79 kr och behöver göras om mot 599/789/19
 
 LP: baverbutiken.se/products/axelbalte-for-trimmer-justerbart-nylonbalte
 
-Kampanjtotal livstid: **37 459 kr spend · 127 köp · CPA 295 kr · ROAS 1,98 · frekvens 3,09**.
+Kampanjtotal livstid: **44 226 kr spend · 147 köp · CPA 301 kr · ROAS 1,96 · frekvens 3,41**.
 ⚠️ Target-CPA 185 och break-even 326 är räknade på gamla priset 509 kr — båda
 är för lågt satta vid 599 kr. Ägaren räknar om. Tills dess är alla vinstsiffror
 nedan **konservativa**.
@@ -47,6 +47,32 @@ nedan **konservativa**.
 ---
 
 ## WINNING DNA (data — vinstbidrag, inte kvoter)
+
+- **🥇 PRODUKTIONSGRAD ÄR OMVÄNT KORRELERAD MED VINST.** Sorterar man varje bedömbar annons på
+  vinst per 1 000 kr blir ordningen monoton, och spannet är en tiopotens:
+
+  | Vinst/1 000 kr | Annons | Vad den är |
+  |---|---|---|
+  | **+2 127 kr** | Axel UGC | Rå mobilfilm, ägaren själv, noll grafik, noll text |
+  | **+1 074 kr** | PD_2_2 | Ren produktbild, **noll text på bilden** |
+  | +436 kr | SO_2_1 | Designad statisk, rubrik + CTA |
+  | +177 kr | PD_1_H1 | Äkta UGC-video med inbrända undertexter |
+  | +139 kr | (grupp) producerad video | – |
+  | +113 kr | (grupp) designad statisk | – |
+  | −14 kr | SO_2_6 | Designad statisk med prisblock |
+  | −41 kr | PD_3_H1 | AI-genererad video |
+  | −262 kr | SO_2_4 | Designad statisk, beskuren, gradient |
+
+  Grupperat: **oproducerat 1 439 kr/1 000 kr mot allt annat 135 kr/1 000 kr.**
+  → Regel: fånga något verkligt, dekorera det inte. Varje grafiskt element som läggs till en
+  frame har hittills flyttat annonsen nedåt i listan.
+- **Ägarens egen mobilfilm är kontots bästa asset någonsin.** `Axel UGC AXELBÄLTE` (live 2026-08-13):
+  **CPA 104 kr** mot kampanjens 301, 4 köp på 417 kr. Kontots **högsta CTR (2,69 %) OCH högsta
+  CVR (7,14 %) samtidigt** — ingen annan annons är bäst i båda ändar. Handhållet, dagsljus, ingen
+  text, ingen grafik, ingen klippning, **och ingen talad hook alls.**
+- **Noll text på en statisk slår varje designad layout.** `PD_2_2`: CPA 157 kr, 1 074 kr/1 000,
+  kontots lägsta CPM (75 kr). Ingen rubrik, inget pris, ingen CTA i bilden. Låg i ÄNNU OBEVISAT i
+  fyra körningar innan den passerade grinden.
 
 - **Vinnaren är ÄKTA UGC, inte en producerad video.** Visuell granskning 2026-08-09:
   `PD_1_H1` är rå mobilfilm — en verklig man i ett verkligt garage med verktyg och
@@ -103,6 +129,13 @@ nedan **konservativa**.
   Vinnaren SO_2_1 har all text i fri yta. HYPOTES tills SO_2_7 mäter den.
   → Regel: text ligger aldrig ovanpå produkten.
 
+- **Text i creativen kostar pengar.** Grupperat vinstbidrag: creatives **utan** text i bilden ger
+  1 439 kr per 1 000 kr; creatives **med** text ger 135 kr. Varje rubrik, underrubrik, CTA-rad och
+  prisblock som läggs på en statisk har hittills flyttat den nedåt i vinstlistan.
+- **De två gamla videovinnarna bär 78 % av spenden och ligger kring break-even på marginalen**
+  (PD_1_H1 423 kr, SO_1_H2 302 kr, tredje mätningen i rad). Frekvens 3,41 och stigande. Det är där
+  pengarna läcker.
+
 ## PROCESSFEL SOM KOSTAR MÄTNING (uppdaterat 2026-08-09)
 
 - 🔴 **Kontot kör exakt två primärtexter.** Block A på varje PD-annons, block B på
@@ -122,6 +155,12 @@ nedan **konservativa**.
 
 ## FALSIFIERAT — tidigare slutsatser som datan inte stöder
 
+- ❌ **AI-banan är stängd.** `PD_3_H1` har fallit tre mätningar i rad: +151 kr → −26 kr → −42 kr,
+  och CVR 3,23 → 2,48 %. Inga AI-genererade assets ska produceras för den här produkten, med eller
+  utan ansikte.
+- ❌ **"Kronor slår procent" (preliminärt ja i /cs nr 5).** `SO_2_6` gick från +147 kr till −14 kr på
+  samma 3 köp. Den preliminära domen överlevde inte omprövningen — vilket är precis vad regeln om
+  preliminära domar finns för att fånga.
 - ❌ **"AI utan ansikte fungerar" (skrivet som BEVISAD i /cs nr 4).** Byggt på
   `PD_3_H1`: 827 kr, **exakt 3 köp**, CPA 276 kr, +151 kr. Tre dygn senare:
   1 004 kr, fortfarande 3 köp, CPA 335 kr, **−26 kr** — noll köp på 178 kr ny
@@ -214,15 +253,19 @@ mekanismdiagram (`PD_10_1`).
 - **Publikmättnad.** Frekvens 3,09 och stigande. `PD_16_1` (batch #7) byter
   målgruppsram till röjsåg/hel arbetsdag i stället för fler hooks mot samma publik.
 
+## DATAKVALITET
+
+- **100×-buggen i `omni_purchase_values` är borta sedan 2026-08-19.** `spend × ROAS` stämmer mot
+  fältet på samtliga rader, inklusive de fyra som varit trasiga sedan /cs nr 2. Kontrollen körs
+  fortsatt varje gång, men flaggan är lyft.
+
 ## KONCENTRATIONSRISK
 
-- **57 % av nettovinsten sitter i ETT asset** (PD ad 1, hook 1) — och det är kontots
-  enda äkta UGC-video. Dör den, dör kampanjens marginal. Den ligger dessutom nu
-  över break-even på marginalen.
-- Motmedlet är inte fler hooks på samma film, och inte heller AI-kopior av den. Det
-  är **samma vinkel, samma råa mobilutförande, en annan verklig människa**.
-  Batch #6 bygger det (`PD_12_1_H1/H2`, kvinnlig creator) efter att batch #5:s
-  försök (`PD_8_1_H2`) producerats som AI och därmed inte besvarat frågan.
+- **Kontots två effektivaste assets har tillsammans fått 1 203 kr av 44 226 kr spend (2,7 %).**
+  Axels UGC och PD_2_2 ger 1 439 kr vinst per 1 000 kr; de två gamla videorna ger 139 kr och äter
+  78 % av budgeten. Det är kampanjens enskilt största hävstång just nu.
+- **Axels UGC är fortfarande EN fil.** Batch #8 gör det andra assetet (`PD_18_2`) så banan inte
+  hänger på en inspelning.
 
 ## STRUKTURLÄRDOM
 
@@ -246,6 +289,6 @@ mekanismdiagram (`PD_10_1`).
 `Trimmerbelt_PD_2_4` (statisk, ingen hook-del).
 - AD ID = vilket nummer annonsen är inom konceptet · AD VARIANT = variant av den
   annonsen · H ID = vilken hook från den annonsen.
-- Upptagna AD-ID:n: SO 1, 2, 3, 4, 6, 7 · PD 1–17 · SP 3, 4, 5, 6 · SF 1, 2
+- Upptagna AD-ID:n: SO 1, 2, 3, 4, 6, 7, 8 · PD 1–19 · SP 3, 4, 5, 6 · SF 1, 2
   (SF = äldre benämning på social proof, räknas ihop med SP vid numrering).
 - Äldre annonser med data döps aldrig om.

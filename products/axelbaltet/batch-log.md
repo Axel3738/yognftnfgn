@@ -799,3 +799,166 @@ Grindarna kördes om med 678 kr och 79 kr tillagda som förbjudna siffror: 27/27
 **Flaggan på `SO_2_1` är stängd.** "FÅ 20% RABATT IDAG" har flaggats som falskt claim i fyra
 körningar i rad. Vid 789 → 599 kr är den verkliga nedsättningen större än 20 %, så annonsen lovar
 mindre än kunden får. Inte längre ett compliance-problem.
+
+---
+
+## Feedbackloop 2026-08-19 (/cs nr 6, enligt ANALYSMETOD.md)
+
+Hela kampanjen sorterad på spend. **Budget ändrad: 2 000 → 1 000 kr/dag** — uppdaterad i products.json.
+Kampanjtotal livstid: **44 226 kr spend · 147 köp · CPA 301 kr · ROAS 1,96 · frekvens 3,41**.
+
+**Datakvalitet: 100×-buggen är borta.** `spend × ROAS` stämmer mot `omni_purchase_values` på
+**samtliga** rader, inklusive de fyra som varit trasiga sedan /cs nr 2 (SO_2_4, SO_6_1, SF_1_H1,
+PD_2_2). Kontrollen ska fortsätta köras, men flaggan lyfts.
+
+**10 nya annonser launchade:** batch #6 och #7 den 2026-08-12 08:24 (PD_13_1, PD_14_1, PD_15_1,
+PD_16_1, PD_17_1, PD_7_2, SO_2_8, SO_2_9, SP_6_1) och **`Axel UGC AXELBÄLTE` den 2026-08-13**.
+Loggade: kvot −26 → −16, och efter budgetkorrigeringen **+2 före plan** (kvoten är nu 4 per cykel).
+
+### Vinstbidrag (bedömbara: ≥300 kr spend OCH ≥3 köp)
+
+| Annons | Spend | Andel spend | Köp | CPA | Vinstbidrag | Vinst/1 000 kr |
+|---|---|---|---|---|---|---|
+| Axelbälte_PD_1_H1 | 16 341 kr | 42 % | 59 | 277 kr | **+2 893 kr** | 177 kr |
+| Axelbälte_SO_1_H2 | 14 114 kr | 36 % | 48 | 294 kr | +1 534 kr | 109 kr |
+| Axelbälte_SO_2_1 | 2 951 kr | 8 % | 13 | 227 kr | +1 287 kr | 436 kr |
+| **Axel UGC AXELBÄLTE (NY)** | 417 kr | 1 % | 4 | **104 kr** | **+887 kr** | **2 127 kr** |
+| **Axelbälte_PD_2_2 (NY)** | 786 kr | 2 % | 5 | **157 kr** | **+844 kr** | **1 074 kr** |
+| Trimmerbelt_SO_2_6 | 992 kr | 3 % | 3 | 331 kr | −14 kr | −14 kr |
+| Trimmerbelt_PD_3_H1 | 1 020 kr | 3 % | 3 | 340 kr | −42 kr | −41 kr |
+| Trimmerbelt_SO_2_4 (pausad) | 2 210 kr | 6 % | 5 | 442 kr | −580 kr | −262 kr |
+
+Netto bedömbara: **+6 809 kr**.
+
+### DET STORA FYNDET: produktionsgrad är omvänt korrelerad med vinst
+
+Sorterar man **varje** bedömbar annons på vinst per 1 000 kr blir ordningen monoton:
+
+| Vinst/1 000 kr | Annons | Vad den är |
+|---|---|---|
+| **+2 127 kr** | Axel UGC | Rå mobilfilm, ägaren själv, inga grafiska element, ingen text |
+| **+1 074 kr** | PD_2_2 | Ren produktbild, **noll text på bilden** |
+| +436 kr | SO_2_1 | Designad statisk, rubrik + CTA inbränt |
+| +177 kr | PD_1_H1 | Äkta UGC-video med inbrända undertexter |
+| +109 kr | SO_1_H2 | Producerad studiovideo |
+| −14 kr | SO_2_6 | Designad statisk med prisblock |
+| −41 kr | PD_3_H1 | AI-genererad video |
+| −262 kr | SO_2_4 | Designad statisk, beskuren, gradient |
+
+**Ju mindre en asset har producerats, desto mer pengar tjänar den.** Varje grafiskt element,
+varje undertext, varje prisblock, varje AI-tagning flyttar en annons nedåt i listan. Två oberoende
+assets i topp, en video och en bild, båda i praktiken oproducerade, båda långt före allt designat.
+
+Detta är inte ett argument för slarv. Det är ett argument för att pengarna i det här kontot ligger i
+att **fånga något verkligt**, inte i att dekorera det.
+
+### Creative-teardown
+
+**`Axel UGC AXELBÄLTE`** — granskad i Ads Manager: ägaren själv i sin egen trädgård, bärande selen,
+böjer sig ner för att lyfta trimmern. Handhållet vertikalt, starkt dagsljus, ingen text, ingen
+grafik, ingen klippning. **Ingen talad hook alls.** Kör block A som primärtext, precis som allt annat.
+
+**`PD_2_2`** — granskad: selen på ett träbord med trädgårdsbokeh bakom. **Ingen rubrik, inget pris,
+ingen CTA, ingen text överhuvudtaget.** Det är hela bilden. Kör samma block A.
+
+Båda vinnarna kör alltså **identisk copy** som resten av kontot. Skillnaden ligger helt i assetet,
+inte i texten — vilket gör copykonstanten till en fördel just nu: den isolerar creativevariabeln.
+
+### Marginal-CPA (regeln: ≥3 dygn mellan snapshots, ≥5 inkrementella köp)
+
+| Annons | Δ spend | Δ köp | Marginal-CPA | Giltig? |
+|---|---|---|---|---|
+| PD_1_H1 | +2 536 kr | +6 | **423 kr** | ✅ över break-even |
+| SO_1_H2 | +1 512 kr | +5 | **302 kr** | ✅ nätt och jämnt under |
+| PD_2_2 | +578 kr | +2 | – | ❌ under 5 köp |
+
+De två gamla videovinnarna ligger båda kring eller över break-even på marginalen, tredje mätningen i
+rad. Frekvens 3,41 och stigande. De bär fortfarande 78 % av spenden.
+
+### Metrik-diagnos
+
+| Annons | CTR | Hook rate | Hold | p100 | CVR (köp/klick) | CPM | Frekvens |
+|---|---|---|---|---|---|---|---|
+| Axel UGC | **2,69 %** | 95,8 % | 14,3 % | 0,9 % | **7,14 %** | 156 kr | 1,27 |
+| PD_2_2 | 1,46 % | – | – | – | **5,32 %** | **75 kr** | 1,85 |
+| PD_1_H1 | 2,30 % | 95,6 % | 15,9 % | 2,3 % | 2,53 % | 121 kr | 1,77 |
+| SO_1_H2 | 2,01 % | 94,9 % | 11,1 % | 5,4 % | 2,74 % | 125 kr | 2,20 |
+| SO_2_1 | 1,98 % | – | – | – | 3,35 % | 121 kr | 2,27 |
+| SO_2_6 | 1,16 % | – | – | – | 4,00 % | 112 kr | 2,77 |
+
+**Axel UGC har kontots högsta CTR OCH högsta CVR samtidigt** (2,69 % / 7,14 %). Ingen annan annons
+är bäst i båda ändar. PD_2_2 har kontots lägsta CPM (75 kr) och näst högsta CVR.
+
+### Variabelgruppering
+
+| Variabel | Värde | Spend | Vinst | Vinst/1 000 kr |
+|---|---|---|---|---|
+| Visuell stil | **Rå/oproducerad (UGC + native foto)** | 1 203 kr | +1 731 kr | **+1 439 kr** |
+| Visuell stil | Designad statisk | 6 153 kr | +693 kr | +113 kr |
+| Visuell stil | Producerad video | 31 476 kr | +4 385 kr | +139 kr |
+| Textmängd | **Ingen text i creativen** | 1 203 kr | +1 731 kr | **+1 439 kr** |
+| Textmängd | Text i creativen | 37 628 kr | +5 078 kr | +135 kr |
+
+Skillnaden är en tiopotens, inte en marginal.
+
+### Hypotesavstämning
+
+| Annons | Hypotes | Utfall |
+|---|---|---|
+| PD_2_2 (native foto utan overlay) | "Native foto skalar när copyn bär säljet" — låg i ÄNNU OBEVISAT i fyra körningar | ✅ **Bekräftad, starkt.** CPA 157 kr, 1 074 kr/1 000. Näst bäst i kontot. |
+| Axel UGC | Ej briefad av OS:et — ägarens eget initiativ | ✅ **Bästa assetet någonsin i kontot.** CPA 104 kr. Bekräftar allt som stått i dna.md om äkta UGC sedan /cs nr 4. |
+| SO_2_6 (kronor slår procent) | Preliminärt ja i /cs nr 5 (+147 kr på 3 köp) | ❌ **Föll.** Nu −14 kr på samma 3 köp. Den preliminära domen överlevde inte, precis som regeln kräver att man kontrollerar. |
+| PD_3_H1 (AI utan ansikte) | Nedgraderad till hypotes i /cs nr 5 | ❌ **Faller vidare.** +151 → −26 → −42 kr. AI-banan är stängd. |
+| PD_2_4 (smärta i vinnande statiskt format) | Smärta × format-korsning | ⏳ 782 kr, 1 köp, CPA 782. Passerat spendgrinden, långt under köpgrinden. Svag signal. |
+| PD_4_1 (annoterad demo) | Feature-tydlighet | ⏳ 630 kr, 2 köp, CPA 315. Fortfarande under grinden men stabil. |
+| SP_6_1 (äkta betyg) | Social proof som kvalificerare | ⏳ 104 kr, 1 köp. För tidigt men lovande. |
+| Batch #6/#7-statics | Diverse | ⏳ 1–145 kr styck. För tidigt. `SO_2_8` har kontots lägsta CTR (0,75 %). |
+| PD_12_1 (kvinnlig creator-UGC) | Äkta UGC med ny talang | ⏳ Ej producerad. Fortfarande relevant för räckvidd, men Axels egen video har redan bevisat formatet. |
+
+### Mönster (denna körning)
+
+1. **BEVISAD** — *Oproducerat slår producerat, med en tiopotens.* Två oberoende assets, video och
+   bild. → **Briefinstruktion:** hela batch #8 är oproducerat material, noll grafik, noll text.
+2. **BEVISAD** — *Text på en statisk kostar pengar.* Noll-text-bilden ger 1 074 kr/1 000; varje
+   designad statisk med rubrik, underrubrik och CTA ligger mellan +436 och −262.
+   → **Briefinstruktion:** `PD_2_6` och `PD_19_1` bär noll text. Om en designer lägger till något
+   är testet ogiltigt.
+3. **BEVISAD** — *AI-banan är stängd.* PD_3_H1 har fallit tre mätningar i rad, från +151 till −42 kr.
+   → **Briefinstruktion:** inga AI-genererade assets i batch #8, med eller utan ansikte.
+4. **HYPOTES** — *Frånvaron av hook är en del av varför Axels video känns oiscensatt.* Den har ingen
+   talad öppning alls och slår ändå allt. → `PD_18_1` testar fyra hooks mot originalet; att originalet
+   vinner är ett fullgott utfall.
+
+## Batch #8 – 2026-08-19 – 4 briefer (kvot 4 efter budgethalveringen)
+
+Copy skriven av sonnet-subagent. **Primärtexten hålls medvetet konstant** vid block A i alla fyra,
+eftersom båda vinnarna kör den och den därmed är kontrollen. **Inga priser i någon creative.**
+
+| Annons | Typ | Hypotes | Isolerad variabel | Variabeltaggar |
+|---|---|---|---|---|
+| Trimmerbelt_PD_18_1 (H1–H4) | UGC-video | Assetet vinner redan utan hook; en talad öppning i samma oputsade ton höjer stoppgraden | **Endast första 3–5 sek** | smärta · fyra hooks · äkta UGC · demo · ingen offer · rå mobilfilm · ingen text · ägaren |
+| Trimmerbelt_PD_18_2 (H1–H3) | UGC-video | Drivaren är ägaren som filmar verkligt arbete, inte den specifika gräsmattan | Maskin och terräng | uthållighet · tre hooks · äkta UGC · demo · ingen offer · rå mobilfilm · ingen text · ägaren |
+| Trimmerbelt_PD_2_6 | Statisk | **Frånvaron av text är den aktiva ingrediensen**, inte det specifika fotot | Fotografiet | ingen uttalad vinkel · ingen hook · ren produktbild · inget proof · ingen offer · katalogfoto · **noll text** |
+| Trimmerbelt_PD_19_1 | Statisk | Rått slår polerat i stillbild precis som i video | Katalogfoto vs mobilfoto | ingen uttalad vinkel · ingen hook · ren produktbild · inget proof · ingen offer · mobilfoto · **noll text** |
+
+`PD_2_6` och `PD_19_1` tillsammans separerar **noll text** från **oiscensatt** — den frågan avgör om
+kontot ska fortsätta betala för producerad bild överhuvudtaget.
+
+Backlog: inga items togs in. Judge.me-citaten fortfarande blockerade, bundle fortfarande ägarbeslut,
+kvinnlig creator redan uttagen i batch #6 och ännu ej producerad.
+
+**Notion:** 4 items i "Trimmer belt creative hub", Status `Draft`, Typ `Video - Pending Approval`.
+
+## Åtgärder och öppna punkter 2026-08-19
+
+- 🟢 **Skala Axels UGC.** 417 kr spend på kontots effektivaste asset är absurt lite. Den ligger i
+  adset `Axelbälte PD` tillsammans med PD_1_H1 som äter 42 % av kampanjen. Ge den egen budget.
+- 🟢 **Skala PD_2_2.** 786 kr och kontots lägsta CPM. Samma sak: egen cell.
+- 🔴 **De två gamla videovinnarna bär 78 % av spenden och ligger kring break-even på marginalen.**
+  Det är där pengarna läcker. Flytta budget till de två oproducerade assetsen.
+- 🔴 **Materialskulden från priskorrigeringen kvarstår:** `SO_2_6` och `SO_2_7` är live med 678 kr
+  inbränt, och batch #6/#7-brieferna bär samma döda siffra. Behöver göras om mot 599/789/190.
+- 🟡 **Budgeten halverad till 1 000 kr/dag** — noterat och uppdaterat i products.json. Kvoten är nu
+  4 per 3-dagarscykel och vi ligger +2 före plan.
+- ⚠️ **Target-CPA 185 och break-even 326 är fortfarande räknade på gamla priset 509 kr.** Vid 599 kr
+  är båda för lågt satta, så alla vinstsiffror ovan är konservativa. **Ägaren räknar om.**
