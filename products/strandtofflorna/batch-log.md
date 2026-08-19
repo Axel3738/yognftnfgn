@@ -334,3 +334,38 @@ skrev den.
 3. **Upptäckt: `PD_13_17` i batch 8 duplicerar `PD_13_8`**, som redan är
    producerad och fick 33 kr. Batch 8:s post 6 nedprioriteras till sist tills
    `PD_13_8` fått en riktig chans. Sparar en fotografering om den faller.
+
+---
+
+## Batch 9 — 2026-08-19 · 8 statics · *swipe-batch, briefad*
+
+Beställd av Axel: "jag behöver göra fler bilder för att catcha upp" plus
+"lite swipes på några sjuka ads". Konkurrentsökning körd i Meta Ad Library,
+resultatet ligger i `swipes/00_KONKURRENTKARTA.md`.
+
+**Fyndet som ändrar bilden:** sökning på "halkfria tofflor" i Sverige gav
+40 aktiva annonser, **39 av dem våra egna**. Ingen konkurrerar om vår vinkel på
+den svenska marknaden. Det förklarar våra låga CPM:er och betyder att alla
+swipes måste hämtas från USA.
+
+| Annons | Swipe-källa | Produktion | Ändrad variabel | Hypotes |
+|---|---|---|---|---|
+| PD_18_1 | Snibbs, labbtestet | Ny shoot | **proof=demonstration** | Snibbs säljer på att claimet är kontrollerbart (ASTM F2913). Vi har inget labb och får aldrig antyda det, men vi kan göra vårt eget test och säga att det är vårt eget. Vi har aldrig visat sulan hålla i 60 annonser. |
+| PD_19_1 | Advertorial-klustret | Ny shoot | **proof=jämförelse** | "We Tested 5 Shoes, X Ranked #1" fungerar för att den ger ett beslut. Våra två tidigare jämförelser (PD_9_1, PD_12_1) var texttabeller och fick 26 kr ihop. Detta är jämförelsen som foto. Tredje och sista försöket. |
+| SP_9_1 / 9_2 / 9_3 | Snibbs, namngiven publik | Textpålägg | **identitet** | Snibbs öppnar med vem du är, aldrig med skon. Vår enda video över grinden är `SP_4_H1`, identitetsmatch mot villaägare, CPA 193 kr. Aldrig prövat i bild. Tre identiteter: altan, brygga, pool. |
+| PD_20_1 | Foot Health News | Ny shoot | **hook-typ=negation av egen åtgärd** | "Your shift undoes your night splint". Bästa hookstrukturen i hela sökningen: det du redan gjort motverkas. Vår version: du la halkskyddsmatta, men sulan glider ändå. |
+| PD_13_18 | Oveltrix, rotationskadensen | **Ingen** | copy → grepp | Bilden är den bevisade tillgången, copyn otestad. Fyra rotationer på två vinnarbilder, noll produktion. |
+| PD_13_19 | Oveltrix | **Ingen** | copy → bekvämlighet | Vår listicle hävdar att friktionen är den verkliga kostnaden. Aldrig testat som annonstext. |
+| PD_2_8 | Oveltrix | **Ingen** | copy → sköljs rena | På `PD_2_3`, kontots bästa CPA och fortfarande svält på 1,5 % av budgeten. |
+| PD_2_9 | Oveltrix | **Ingen** | copy → lagerutförsäljningen | Läses mot `SO_7_2` i batch 8: räcker det att erbjudandet står i texten, eller måste det synas i bilden? Svarar det ja blir varje framtida offer-annons gratis. |
+
+**Vad vi medvetet INTE swipar:** Snibbs certifiering (vi har ingen), en rankning
+av fem skor vi inte testat, och Oveltrix innehåll — deras sajt visar slutsålt på
+allt och ett ordinariepris lägre än kampanjpriset.
+
+**Vad kartan bekräftade om oss:** ingen i kategorin visar produkten på blött
+underlag. Alla kör torr studio eller sjukhusgolv. Vår bästa bild per krona står
+på regnvått trädäck. Det är inte en swipe, det är vårt eget oexploaterade
+försprång.
+
+Copy skriven av sonnet-subagent enligt regel 5.
