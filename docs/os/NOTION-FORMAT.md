@@ -13,7 +13,7 @@ Brieferna ligger som items i Pending Approval-vyn.
 | **Namn** | Annonsnamnet exakt enligt naming-strukturen, t.ex. `Enginecover_SP_6_H1` |
 | **Status** | `Draft` |
 | **Tag** | `Video - Pending Approval` — **ALLTID denna tag, även för bildannonser** |
-| **Innehåll** | Hela briefen ska vara tillgänglig inne i itemet: klistra in briefen som sidinnehåll OCH länka till brief-filen i Drive (editor-behörighet) |
+| **Innehåll** | Hela briefen ska vara tillgänglig inne i itemet: klistra in briefen som sidinnehåll OCH länka till **just den annonsens brief-fil** i Drive (editor-behörighet). Aldrig mapplänken, aldrig samma länk i flera items — varje item får sin egen fil-länk |
 | Produkt / Batch | Ifyllt |
 | Deadline / Ansvarig redigerare | Lämnas tomt (sätts av managern) |
 

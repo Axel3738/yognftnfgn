@@ -1,5 +1,11 @@
 # /cs – Återkommande creative strategy på senaste annonserna
 
+> **Innan du frågar användaren något:** fråga dig själv om det finns ett sätt att
+> ta reda på svaret som du inte provat än — repo + git-historik, Drive, Notion,
+> Meta, Shopify, product sheetet. Fråga bara när svaret kräver ägaren (pris,
+> rabatt, target-CPA). Den som kör kan vara helt icke-teknisk: en fråga i taget,
+> enkel svenska utan fackord, och ge alltid ett rekommenderat svar att säga ja till.
+
 Argument: `$ARGUMENTS` — produkt-id (från `products/products.json`), och valfritt egna idéer/instruktioner efter produkt-id:t.
 Exempel: `/cs motorholjet` eller `/cs motorholjet testa en vinkel mot båtägare, och gör en variant av vinnaren med äldre man`.
 

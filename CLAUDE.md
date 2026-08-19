@@ -96,6 +96,14 @@ inte röras utan att Axel ber om det.
     argument. Kommandona är filer — de fungerar även när klienten inte
     registrerat dem.
 14. **Korta svar.** Inga bibelsvar. Axel har sagt det två gånger.
+15. **Fråga-sist-regeln.** Innan du ställer en fråga till användaren: fråga dig
+    själv om det finns ett sätt att ta reda på svaret som du inte provat än —
+    repo + git-historik, Drive, Notion, Meta, Shopify, product sheetet. Fråga
+    bara när svaret faktiskt kräver ägaren (regel 12). Den som kör sessionen
+    kan vara helt icke-teknisk (t.ex. Axels mamma, som ska ta över
+    `/forsta-batch`-flödet): en fråga i taget, enkel svenska utan fackord, och
+    ge alltid ett rekommenderat svar som det räcker att säga ja till.
+    Körschemat hon följer är `docs/os/SOP-08-korschema-ny-batch.md`.
 
 ---
 
@@ -156,7 +164,7 @@ Det finns ingen linter och ingen byggkedja i OS:et — `npm test` är hela grind
 | Swipes från konkurrenter | `docs/swipes/` |
 | TOF-idébank | `docs/tof-idea-bank.md` |
 | Actionplan + bottlenecks | `docs/os/ACTIONPLAN.md` |
-| SOP 01–07 (batch-loop, kvot, UGC, check-in, "när Claude inte lyssnar", produkttest, dashboard) | `docs/os/SOP-0*.md` |
+| SOP 01–08 (batch-loop, kvot, UGC, check-in, "när Claude inte lyssnar", produkttest, dashboard, körschema ny batch) | `docs/os/SOP-0*.md` |
 | Editor SOP (engelska, till redigerarna) | `docs/os/EDITOR-SOP.md` |
 | Notion-formatet för briefer (exakt spec + statustabell) | `docs/os/NOTION-FORMAT.md` |
 | Produkt-konfig + launch-logg | `products/products.json` |

@@ -1,5 +1,11 @@
 # /forsta-batch – Creative Strategist OS: första riktiga batchen efter produktlaunch
 
+> **Innan du frågar användaren något:** fråga dig själv om det finns ett sätt att
+> ta reda på svaret som du inte provat än — repo + git-historik, Drive, Notion,
+> Meta, Shopify, product sheetet. Fråga bara när svaret kräver ägaren (pris,
+> rabatt, target-CPA). Den som kör kan vara helt icke-teknisk: en fråga i taget,
+> enkel svenska utan fackord, och ge alltid ett rekommenderat svar att säga ja till.
+
 Argument: `$ARGUMENTS` — produktnamn (som det heter i kampanjen/butiken).
 Exempel: `/forsta-batch Lastnät`
 

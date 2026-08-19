@@ -1,5 +1,11 @@
 # /rapport – Ta emot en slutrapport från Slack
 
+> **Innan du frågar användaren något:** fråga dig själv om det finns ett sätt att
+> ta reda på svaret som du inte provat än — repo + git-historik, Drive, Notion,
+> Meta, Shopify, product sheetet. Fråga bara när svaret kräver ägaren (pris,
+> rabatt, target-CPA). Den som kör kan vara helt icke-teknisk: en fråga i taget,
+> enkel svenska utan fackord, och ge alltid ett rekommenderat svar att säga ja till.
+
 **Var rapporterna kommer ifrån:** `#bäver-scaling-products` i Stonebite
 (`C0BNJC83DMF`), en per redigerare per dag, senast 21:30. Claude kan läsa kanalen
 själv — kör `slack_read_channel` istället för att be managern klistra in.
