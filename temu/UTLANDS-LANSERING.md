@@ -14,7 +14,7 @@ halvfärdigt med "nu behöver du bara…".
 | Land | Butik | Valuta | Vendor | 🦫 i garantiblocket | Status |
 |---|---|---|---|---|---|
 | 🇸🇪 | bäverbutiken.se | SEK | Bäverbutiken | Ja | Huvudbutik, källan |
-| 🇳🇴 | grillklinikken.no | NOK | Grillklinikken | **NEJ** | ✅ Lanserad 2026-08-18 |
+| 🇳🇴 | beverbutikken.no | NOK | Beverbutikken | Ja | ✅ Lanserad 2026-08-18 |
 | 🇩🇰 | bæverbutiken.dk | DKK | Bæverbutiken | Ja | ✅ Lanserad 2026-08-18 (⚠️ dubbletter, se nedan) |
 | 🇫🇮 | majavakauppa.fi | EUR | Majavakauppa | Ja (*majava* = bäver) | ✅ Lanserad 2026-08-18 |
 | 🇬🇧 | beavershop.co.uk (BeaverShop) | GBP | BeaverShop | Ja | ✅ Lanserad 2026-08-18 |

@@ -430,7 +430,7 @@ Claude-konto. Det här är kortversionen:
 | Land | Butik | Valuta | Vendor | 🦫 i garantin |
 |---|---|---|---|---|
 | 🇸🇪 | bäverbutiken.se | SEK | Bäverbutiken | Ja |
-| 🇳🇴 | grillklinikken.no | NOK | Grillklinikken | **Nej** |
+| 🇳🇴 | beverbutikken.no | NOK | Beverbutikken | Ja |
 | 🇩🇰 | bæverbutiken.dk | DKK | Bæverbutiken | Ja |
 | 🇫🇮 | majavakauppa.fi | EUR | Majavakauppa | Ja (*majava* = bäver) |
 | 🇬🇧 | beavershop.co.uk | GBP | BeaverShop | Ja |

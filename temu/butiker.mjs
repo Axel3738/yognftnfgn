@@ -42,10 +42,10 @@ export const BUTIKER = {
   },
   no: {
     land: 'Norge',
-    namn: 'grillklinikken.no',
+    namn: 'beverbutikken.no',
     valuta: 'NOK',
-    vendor: 'Grillklinikken',
-    baver: false,             // ⚠️ Grillklinikken får ALDRIG bävern
+    vendor: 'Beverbutikken',
+    baver: true,              // verifierat mot butiken 2026-08-19
     sprak: 'no',
     faktor: 1.13,
     avrunda: nioSlut,
