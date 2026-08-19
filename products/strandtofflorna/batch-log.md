@@ -250,3 +250,62 @@ samma ad set, annars är jämförelsen värdelös.
 
 Brieferna återanvänder copyn **som den körs idag** för att hålla testet rent. Att rätta
 påståendena är ett separat beslut.
+
+---
+
+## Batch 6 — LAUNCHAD 2026-08-11 · 6 statics · feedbackloop 2026-08-19
+
+Fem av sex i **ett** ad set (`120249702108320291`), SP_7_1 i ett eget
+(`120249702112650291`). Ad settet fick 3 040 kr. **PD_13_16 tog 2 631 kr av dem, 86 %.**
+
+| Annons | Ändrad variabel | Spend | Köp | CPA | Utfall mot hypotesen |
+|---|---|---:|---:|---:|---|
+| **PD_13_16** | sulan mot kameran i championramen | **2 631 kr** | 7 | **376 kr** | ❌ **HYPOTESEN FALSIFIERAD.** Briefen sa: högre klickkvalitet utan att offra CPM. Utfall: CTR 2,41 → 1,78 %, CPA 172 → 376 kr, **vinstbidrag −867 kr**. CPM höll (93 kr), så det var inte auktionen som brast, det var bilden. Se dna.md mönster 15. |
+| PD_13_14 | underlag → blött trädäck | 197 kr | 0 | – | Ingen dom. Under grinden. |
+| PD_2_5 | alla fyra sulorna upp | 178 kr | 0 | – | Ingen dom. |
+| PD_13_15 | beskärning → tight | 20 kr | 0 | – | Ingen dom. Beskärningsfrågan förblir öppen → `PD_2_7` i batch 8. |
+| PD_2_6 | färgmix → endast svart | 14 kr | 0 | – | Ingen dom. |
+| SP_7_1 | social proof-badge | 15 kr | 0 | – | Ingen dom. |
+
+**Lärdom:** det dyraste utfallet hittills av att lägga för många annonser i ett
+ad set. Meta valde en förlorare och gav den 86 % av budgeten. Se dna.md mönster 19.
+
+---
+
+## Batch 7 — DELVIS LAUNCHAD 2026-08-11 · 3 av 5 · feedbackloop 2026-08-19
+
+| Annons | Spend | Köp | Status |
+|---|---:|---:|---|
+| SP_5_4 | 5,61 kr | 0 | Ingen dom. |
+| SP_5_3 | 3,25 kr | 0 | Ingen dom. |
+| SP_5_5 | 1,04 kr | 0 | Ingen dom. |
+| **SP_5_2** | – | – | ❌ **ALDRIG PRODUCERAD.** |
+| **SP_8_1** | – | – | ❌ **ALDRIG PRODUCERAD.** |
+
+⚠️ De två som aldrig byggdes var batchens **högst prioriterade par** och det enda
+som kan avgöra om `SP_5_1`:s resultat kom från bilden eller från copyn. Frågan är
+fortfarande obesvarad. **Båda överförda till batch 8 som post 1 och 2.**
+
+Dessutom: `SP_5_1`, som hela batch 7 byggdes på, har regredierat från CPA 133 kr
+till 230 kr. Se dna.md mönster 17.
+
+---
+
+## Batch 8 — 2026-08-19 · 6 statics · *briefad, ej producerad*
+
+Kvoten **−4 före plan** efter att batch 6 och 7 loggats (9 launchade). Batchen är 6.
+
+| Annons | Parent | Ändrad variabel | Hypotes |
+|---|---|---|---|
+| SP_5_2 | SP_5_1 | **copy** → PD-copy | Överförd från batch 7. Avgör om lo-fi-resultatet är en bild- eller copy-upptäckt. Läses nu mot 230 kr, inte 133 kr. |
+| SP_8_1 | PD_13_6 | **copy** → SP-copy | Överförd. Spegeltestet. Launchas samma dag som SP_5_2, i samma ad set. |
+| SO_7_1 | PD_13_1 | **erbjudandeplatta** | Vi har aldrig kört ett erbjudande i det format som faktiskt säljer. Lagerutförsäljningen är verklig och skälet konkret. 349 kr mot överstruket 420 kr på championbilden. Bevakas på CPM: PD_8_1 (enda andra overlay) ligger på 120 kr. |
+| SO_7_2 | PD_2_3 | **erbjudandeplatta** | Identisk platta, identisk copy, enda skillnaden är bilden under. Avgör om erbjudandet reser eller bara fungerar på vinnarbilden. |
+| PD_2_7 | PD_2_3 | **beskärning** → tight | Beskärningsfrågan har varit öppen i fyra batcher. Görs nu på bästa-CPA-bilden i stället för på studiolinjen. |
+| PD_13_17 | PD_13_1 | **underlag** → blött trädäck | Omtag av `PD_13_8` som aldrig fick leverans (33 kr). Blött underlag är vår starkaste bevisade hävstång och har aldrig prövats på championiscensättningen. |
+
+Copy till SO_7_1 och SO_7_2 skriven av sonnet-subagent enligt regel 5.
+Priset verifierat i Shopify: **349 kr mot ordinarie 420 kr**, samtliga varianter.
+
+**Strukturkrav:** max 2–3 annonser per ad set. Efter batch 6 är detta inte längre
+en rättvisefråga utan en riskfråga.

@@ -22,12 +22,14 @@ Koncept och swipes som väntar. Markeras `[använd i batch #N]` när de plockas 
 
 ## Väntar
 
-- `[använd i batch #7]` **SP_5_2 / SP_8_1 / SP_5_3 / SP_5_4 / SP_5_5** — lo-fi-formatet itererat, plus copy-vs-bild-testet
+- `[använd i batch #7]` **SP_5_3 / SP_5_4 / SP_5_5** — lo-fi-formatet itererat (SP_5_2 och SP_8_1 producerades aldrig)
+- `[använd i batch #8]` **SP_5_2 / SP_8_1** (överförda) **/ SO_7_1 / SO_7_2 / PD_2_7 / PD_13_17** — copy-vs-bild-testet, erbjudandeplattan på två parents, tight beskärning, championen på blött däck
 
 ---
 
+- 🔴 **PAUSA PD_8_1 OCH PD_13_16 — de kostar pengar just nu.** `PD_8_1`: 1 129 kr, 2 köp, CPA 565 kr. Rekommenderades pausad 9 augusti, gjordes inte, och har sedan dess bränt 546 kr på noll köp. `PD_13_16`: 2 631 kr, 7 köp, CPA 376 kr, **vinstbidrag −867 kr** — kontots enda annons med negativt bidrag. Båda uppfyller kill-regeln mot break-even 252 kr.
 - 🔴 **SPRID ANNONSERNA ÖVER FLERA AD SET — enda åtgärden som ändrar utfallet.** Bekräftat två gånger: batch 4 lade nio annonser i ett ad set (`PD_13_6` tog 94 %), batch 5 lade åtta i ett ad set (`PD_8_2` tog 82 % inom timmar). Ad seten får budget — det är fördelningen *inom* dem som är vinnaren-tar-allt. **2–3 annonser per ad set.** Ingen ägarbudget krävs, bara en annan launch-struktur. Gäller batch 6 och 7, och de sju batch 5-annonser som just nu står och svälter.
-- 🟠 **PAUSA PD_8_1 OCH PD_2_2.** PD_8_1: 583 kr, CPA 292 kr — kill-regeln uppfylld. PD_2_2: 3 275 kr, marginell CPA 469 kr över två mätningar; formella kill-regeln inte uppfylld men budgeten gör mer nytta hos PD_2_3 (66 kr) som är samma bild vått.
+- ✅ **AVFÖRT: pausa PD_2_2.** Rekommendationen var fel. De senaste 207 kronorna gav 3 köp till 69 kr styck och livstids-CPA sjönk till 205 kr. Marginell CPA på 2–3 köp är brus. Se dna.md mönster 16.
 - 🔴 **SÄTT ORDINARIEPRISET I SHOPIFY.** Lagerutförsäljningen är verklig (ägaruppgift 2026-08-13) och kommuniceras nu i listiclen och i `SO_6`. Men `compareAtPrice` ligger på 348,75 kr mot priset 349 kr, så produktsidan visar inget överstruket ordinariepris. Annons säger "nedsatt pris", sidan visar en vanlig prislapp. **Ägaråtgärd, blockerar inget bygge men underminerar allt offer-material tills det är gjort.**
 - 🟠 **ÄGARBESLUT: "Hundratals män har redan bytt" i den levande SP-copyn.** Shopify visar 115 ordrar på 90 dagar och produkten finns inte i topp 5 på 12 månader. Täcks inte av vår data. Copyn körs live just nu på `SP_5_1`.
 - ✅ **AVKLARAT: 30 dagars nöjd-kund-garanti** är verifierad, den står i produktbeskrivningen i Shopify. Får användas fritt.

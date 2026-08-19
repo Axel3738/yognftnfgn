@@ -2,7 +2,7 @@
 
 Produkt: Strandtofflor för Herr – Halkfria Trädgårdsskor · 349 kr · [produktsida](https://baverbutiken.se/products/strandtofflor-for-herr-halkfria-tradgardsskor)
 Ad account: MagiBorsten `1867947880635861` · Kampanj: `120249220414220291`
-Senast uppdaterad: **2026-08-09 (kväll)** (fjärde feedbackloopen, 51 annonser i kampanjen)
+Senast uppdaterad: **2026-08-19** (femte feedbackloopen, 60 annonser i kampanjen)
 
 **Läsanvisning:** `DATA` = uppmätt i kontot. `HYPOTES` = strategisk tolkning, ej bevisad.
 Ingen dom sätts på annons under 300 kr spend eller 3 köp.
@@ -55,7 +55,57 @@ klick som inte kan konvertera. Värt en kontroll före launch.
 
 ---
 
-## MÄTNING 2026-08-09 KVÄLL — det som gäller nu
+## MÄTNING 2026-08-19 — det som gäller nu
+
+Livstid, hela kampanjen, 60 annonser. **35 124 kr spend · 171 köp · CPA 205 kr.**
+break-even 252 kr · target 145 kr.
+
+**Datakvalitet (steg 1):** `spend × ROAS` stämmer mot `omni_purchase_values` på
+samtliga sju bedömbara rader. `amount_spent / köp` stämmer mot
+`cost_per_omni_purchase` på alla sju. **Inga trasiga rader.**
+
+### Bedömbara (≥300 kr OCH ≥3 köp) — rangordnade på vinstbidrag `(252 − CPA) × köp`
+
+| Annons | Spend | Andel spend | Köp | CPA | ROAS | CTR | CPM | **Vinstbidrag** |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| **PD_13_1** | 14 602 kr | 41,6 % | 85 | 172 kr | 2,63 | 2,41 % | 86,06 | **6 819 kr** |
+| **PD_13_6** | 7 977 kr | 22,7 % | 38 | 210 kr | 2,24 | 2,47 % | **81,42** | **1 599 kr** |
+| **PD_2_3** | 529 kr | 1,5 % | 7 | **76 kr** | 4,69 | **3,20 %** | 90,89 | **1 235 kr** |
+| PD_2_2 | 3 481 kr | 9,9 % | 17 | 205 kr | 2,29 | 1,76 % | 107,94 | **803 kr** |
+| **SP_4_H1** (video) | 578 kr | 1,6 % | 3 | 193 kr | 2,64 | 2,41 % | 207,62 | **178 kr** |
+| SP_5_1 | 690 kr | 2,0 % | 3 | 230 kr | 1,87 | 2,94 % | 172,09 | **66 kr** |
+| **PD_13_16** | 2 631 kr | 7,5 % | 7 | **376 kr** | 1,29 | 1,78 % | 92,77 | **−867 kr** |
+
+Netto **9 833 kr**. Sju bedömbara. **Första annonsen någonsin med negativt
+vinstbidrag: `PD_13_16`.**
+
+### Marginell CPA sedan 2026-08-09 kväll `DATA`
+
+| | Spend | Nya köp | **Marginell CPA** |
+|---|---|---:|---:|
+| PD_13_1 | 11 147 → 14 602 kr | +16 | **216 kr** — första utmattningstecknet. Frekvens 1,88 → 2,05. |
+| PD_13_6 | 4 140 → 7 977 kr | +14 | **274 kr** — över break-even. |
+| PD_2_2 | 3 275 → 3 481 kr | **+3** | **69 kr** — se rättelse nedan. |
+| PD_2_3 | 328 → 529 kr | +2 | 100 kr |
+| SP_5_1 | 400 → 690 kr | **0** | **∞** |
+| PD_8_1 | 583 → 1 129 kr | **0** | **∞** |
+
+⚠️ **Båda toppannonserna kyler av samtidigt.** PD_13_1 216 kr och PD_13_6 274 kr
+i marginal. Livstidssiffrorna ser fortfarande bra ut, men motorn i kontot går
+långsammare. Det är den viktigaste operativa signalen just nu.
+
+### Kill-beslut
+
+| Annons | Spend | Köp | CPA | Beslut |
+|---|---:|---:|---:|---|
+| **PD_8_1** | 1 129 kr | 2 | **565 kr** | **PAUSA NU.** Rekommenderades pausad 9 augusti, gjordes inte, och har sedan dess bränt 546 kr på noll köp. Kill-regeln är uppfylld med marginal. |
+| **PD_13_16** | 2 631 kr | 7 | **376 kr** | **PAUSA.** Enda annonsen med negativt vinstbidrag. Över break-even på 7 köp. |
+| PD_8_2 | 383 kr | 0 | – | Bevaka. Över spendgränsen, noll köp. Samma sulmotiv som PD_8_1. |
+| PD_2_2 | 3 481 kr | 17 | 205 kr | **BEHÅLL.** Se rättelse nedan. |
+
+---
+
+## MÄTNING 2026-08-09 KVÄLL — historik
 
 Batch 5 launchades kl 19:35–19:58 (8 annonser). 51 annonser i kampanjen.
 **break-even-CPA 252 kr** · target 145 kr. Datakvalitet: `spend × ROAS` stämmer mot
@@ -274,6 +324,67 @@ Båda granskade visuellt (bildfilerna nedladdade ur kontot).
 | Ingen offer i bild | 2 | 8 534 kr | 3 058 kr | 100 % |
 | **Ett par (hjälte) + piedestal + svart camo** | 1 | 5 824 kr | **2 492 kr** | **81 %** |
 | **Fyra par + flat-lay + alla färger** | 1 | 2 710 kr | 566 kr | 19 % |
+
+### Mönster tillagda 2026-08-19 (femte körningen)
+
+`PD_13_16` nedladdad och granskad visuellt. Övriga bedömbara granskade i tidigare
+körningar; `SP_4_H1`:s manus läst ur batch 3-loggen.
+
+**15 — Sulan mot kameran fungerar bara där ljus och bakgrund får mönstret att läsa. `BEVISAD`**
+(PD_13_6 38 köp mot PD_13_16 7 köp, samma element, olika ljussättning)
+
+`PD_13_16` byggdes exakt enligt brief: champion-bilden med bakre skon vriden så
+att sulan möter kameran. Utfall: **CTR 2,41 → 1,78 %, CPA 172 → 376 kr,
+vinstbidrag −867 kr.** Kontots enda annons med negativt bidrag.
+
+Teardown: på `PD_13_6` ligger sulan mot **varm beige med hårt riktljus** och
+tydlig slagskugga, så mönstret läser som struktur. På championens **platta grå
+bakgrund med mjukt ljus** blir samma sula en enda stor mörk platta som fyller
+övre halvan av bilden. Ögat hittar ingen sko. Silhuetten som stoppar scrollen är
+borta.
+
+→ **Briefinstruktion:** sulan är ett hjälteelement **endast** där ljus och
+underlag ger den kontrast. Hårt riktljus, kontrasterande eller blött underlag.
+Aldrig en stor mörk sula mot platt grått. Detta gäller även framtida
+mörka-på-mörkt-bilder: kontrollera alltid i mobilstorlek att produkten läser som
+produkt.
+
+**16 — Marginell CPA på två eller tre köp är brus, inte trend. `RÄTTELSE`**
+
+⚠️ Jag rekommenderade **två gånger** att `PD_2_2` skulle pausas, med argumentet
+att marginalen var negativ över två mätningar (390 kr, sedan ∞). Nästa mätning:
+de senaste 207 kronorna gav **3 köp till 69 kr styck**. Livstids-CPA sjönk från
+234 till 205 kr. Slutsatsen var fel, och tur att den inte verkställdes.
+
+→ **Metodinstruktion:** marginell CPA kräver **minst 3 nya köp** i intervallet
+för att få tolkas som trend. Under det är den en observation, inte ett beslut.
+Kill-beslut fattas fortfarande bara på livstids-CPA mot break-even.
+
+**17 — SP_5_1 regredierade precis som steg 5 varnar för. `BEVISAD`**
+Från 400 kr / 3 köp / CPA 133 kr till **690 kr / 3 köp / CPA 230 kr**. 290 kr
+extra spend gav noll köp. Formatet tjänar fortfarande pengar men är en 230
+kr-annons, inte en champion.
+
+→ **Briefinstruktion:** batch 7 byggdes på 133-kronorssiffran. De fem annonserna
+är vanliga tester nu, inte en satsning på ett bevisat format. Läs dem mot 230 kr.
+
+**18 — Video är inte dött. `BEVISAD (svagt, 3 köp)`**
+`SP_4_H1` (UGC, identitetsmatch villaägare) har passerat grinden: **578 kr,
+3 köp, CPA 193 kr**, bättre än `PD_13_6`. Första videon någonsin över grinden och
+den är lönsam. Vår gamla siffra "video kostar 2,5× mer" byggde på `PD_1_H1`, en
+41-sekunders brand voice-film utan struktur.
+
+→ **Briefinstruktion:** UGC-video med identitetsmatch är ett levande spår.
+`SO_6`/`PD_17` (Bryn-swipen) ligger briefad och oproducerad och bör byggas.
+
+**19 — Vinnaren-tar-allt kan koncentrera budget på en FÖRLUST. `BEVISAD`**
+Batch 6 låg i ett ad set. `PD_13_16` tog **2 631 kr av 3 040 kr (86 %)** och var
+batchens sämsta annons. Meta väljer tidigt på egna signaler, och den gången
+valde den fel.
+
+→ **Strukturåtgärd:** 2–3 annonser per ad set handlar inte bara om att ge
+creatives en chans. Det handlar om att **begränsa nedsidan när algoritmen satsar
+på fel häst.** Utan uppdelning kostade ett felaktigt val oss 2 631 kr.
 
 ### Mönster tillagda 2026-08-09 kväll (fjärde körningen)
 
