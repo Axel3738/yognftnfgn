@@ -130,6 +130,10 @@ Fem av fem dömbara följer mönstret.
 
 **Alla fem är studio mot vit botten.** Kontot har aldrig kört en statisk fotad utomhus.
 
+> ⚠️ **`SO_16_1`:s originalbild är fortfarande osedd.** Den är postbaserad och går inte
+> att rendera via API:et. **Exportera filen ur Ads Manager innan bygget** — annars vet ingen
+> vad basbilden är. Se B21 i backloggen.
+
 ---
 
 ## 2. Format

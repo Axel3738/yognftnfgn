@@ -130,6 +130,15 @@ Fem av fem dömbara följer mönstret.
 
 **Alla fem är studio mot vit botten.** Kontot har aldrig kört en statisk fotad utomhus.
 
+> ⚠️ **Särskild varning för just den här:** `PD_6_1` är också en storleksannons och ligger
+> på −332. Bilden visar varför: **storlekstabellen äter halva ytan och produkten hamnar delvis
+> bakom den.** Den här annonsen ska bära storleken som **en rad i nedre tredjedelen**, aldrig som
+> en tabell. Blir det en tabell är annonsen redan mätt och redan förlorad.
+
+> ⚠️ **`SO_16_1`:s originalbild är fortfarande osedd.** Den är postbaserad och går inte
+> att rendera via API:et. **Exportera filen ur Ads Manager innan bygget** — annars vet ingen
+> vad basbilden är. Se B21 i backloggen.
+
 ---
 
 ## 2. Format

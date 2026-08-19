@@ -358,7 +358,7 @@ tjänar pengar. `SO_5_1` och `PD_8_1` har aldrig itererats trots att de tillsamm
 kr i vinstbidrag — den här rättar det. Den ändrar en sak mot `PD_8_1`: **bredden är budskapet, inte
 priset.**""",
     "Leading with the range rather than the price lifts the proven line-up further, because the doubt the picture answers is whether one exists for my motor.",
-    "The SO copy block, the black cover, the CTA, the landing page, the ad set.",
+    "The SO copy block, the CTA, the landing page, the ad set. **The five-colour line-up is copied from `PD_8_1` unchanged** \u2014 same order, same lighting, same crop.",
     "**What the line-up is sold on** — the range instead of the price.",
     STATIC_FMT,
     """## 3. Design brief
@@ -561,3 +561,31 @@ _new = ("- **This ad is the one exception to the black-cover rule.** It shows th
 assert _old in _s
 _io.open(_p, "w", encoding="utf-8").write(_s.replace(_old, _new, 1))
 print("SO_27_2 färgregel justerad")
+
+# --- Efterjustering: SO_26-flottans varningar (repo ska matcha Notion) ---
+_SO16 = ("\n\n> ⚠️ **`SO_16_1`:s originalbild är fortfarande osedd.** Den är postbaserad och går inte\n"
+         "> att rendera via API:et. **Exportera filen ur Ads Manager innan bygget** — annars vet ingen\n"
+         "> vad basbilden är. Se B21 i backloggen.")
+_EXTRA = {
+ "Enginecover_SO_26_3": (
+   "\n\n> ⚠️ **Särskild varning för just den här:** `PD_6_1` är också en storleksannons och ligger\n"
+   "> på −332. Bilden visar varför: **storlekstabellen äter halva ytan och produkten hamnar delvis\n"
+   "> bakom den.** Den här annonsen ska bära storleken som **en rad i nedre tredjedelen**, aldrig som\n"
+   "> en tabell. Blir det en tabell är annonsen redan mätt och redan förlorad." + _SO16),
+ "Enginecover_SO_26_4": (
+   "\n\n> ⚠️ **Läs detta som kontrollen i testet, inte som en kandidat att skala.** `SO_8_1` och\n"
+   "> `PD_6_1` visar båda ett enda objekt mot nästan tom yta och ligger på −405 och −332. Den här\n"
+   "> har visserligen `SO_16_1`:s miljöfoto i stället för en studiopackshot, så den är inte samma\n"
+   "> sak — men förvänta dig inte att tomheten i sig vinner. Den finns för att göra de tre andra\n"
+   "> läsbara." + _SO16),
+ "Enginecover_SO_26_1": _SO16,
+ "Enginecover_SO_26_2": _SO16,
+}
+_anchor = "**Alla fem är studio mot vit botten.** Kontot har aldrig kört en statisk fotad utomhus."
+for _name, _add in _EXTRA.items():
+    _fp = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)),
+                        "image-ads-briefs", _name, "brief.md")
+    _t = _io.open(_fp, encoding="utf-8").read()
+    assert _anchor in _t, _name
+    _io.open(_fp, "w", encoding="utf-8").write(_t.replace(_anchor, _anchor + _add, 1))
+print("SO_26-varningar tillagda")

@@ -105,7 +105,7 @@ priset.**
 
 **Hypothesis:** Leading with the range rather than the price lifts the proven line-up further, because the doubt the picture answers is whether one exists for my motor.
 
-**Kept:** The SO copy block, the black cover, the CTA, the landing page, the ad set.
+**Kept:** The SO copy block, the CTA, the landing page, the ad set. **The five-colour line-up is copied from `PD_8_1` unchanged** — same order, same lighting, same crop.
 
 **Changed (isolated variable):** **What the line-up is sold on** — the range instead of the price.
 

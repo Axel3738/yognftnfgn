@@ -130,6 +130,16 @@ Fem av fem dömbara följer mönstret.
 
 **Alla fem är studio mot vit botten.** Kontot har aldrig kört en statisk fotad utomhus.
 
+> ⚠️ **Läs detta som kontrollen i testet, inte som en kandidat att skala.** `SO_8_1` och
+> `PD_6_1` visar båda ett enda objekt mot nästan tom yta och ligger på −405 och −332. Den här
+> har visserligen `SO_16_1`:s miljöfoto i stället för en studiopackshot, så den är inte samma
+> sak — men förvänta dig inte att tomheten i sig vinner. Den finns för att göra de tre andra
+> läsbara.
+
+> ⚠️ **`SO_16_1`:s originalbild är fortfarande osedd.** Den är postbaserad och går inte
+> att rendera via API:et. **Exportera filen ur Ads Manager innan bygget** — annars vet ingen
+> vad basbilden är. Se B21 i backloggen.
+
 ---
 
 ## 2. Format
