@@ -1,9 +1,9 @@
 # Enginecover_SO_27_2
 
-**VARIABELTAGGAR:** vinkel=`offer/överlager` · hook-typ=`påstående` · format=`statisk` · proof=`inget (produktclaim)` · offer-i-creativen=`ingen offer` · visuell stil=`avskalad produktbild` · textmängd=`rubrik+underrad` · talare=`ingen`
+**VARIABELTAGGAR:** vinkel=`offer/överlager` · hook-typ=`påstående` · format=`statisk` · proof=`demo` · offer-i-creativen=`pris litet i hörnet` · visuell stil=`sortimentsbild studio` · textmängd=`rubrik+underrad+utpekningar` · talare=`ingen`
 *(Läses av nästa `/cs` för att gruppera vinstbidrag per variabelvärde. Ändra dem inte utan att ändra creativen.)*
 
-**Type:** Static in the offer angle, **stripped back**. Runs against `SO_27_1` in the same ad set.
+**Type:** Static in the offer angle, **the proven studio line-up**. First deliberate iteration of `SO_5_1`/`PD_8_1`. Runs against `SO_27_1` in the same ad set.
 
 ---
 
@@ -82,22 +82,32 @@ den är **statisk** — ingen annan statisk annons i kontot är i närheten.
 Den tog dessutom 3 845 kr till den här veckan och gick **upp** från 168 till 240 kr vinst per
 1 000. Den skalar.
 
-**Vi vet inte varför.** `*.fbcdn.net` blockeras av gatewayen, verifierat fem körningar i rad, så
-bilden går inte att granska. Vi kan inte kopiera det som fungerar, bara testa runt det.
+**Och nu vet vi hur den ser ut.** `*.fbcdn.net` är fortfarande spärrad, men `ads_get_ad_preview`
+renderar bilden serverside — femte försöket, första gången det gick. `SO_5_1` visar **fem höljen i
+rad i olika färger** (oliv, grå, grön, blå, svart) på vita utombordare mot vit botten, rubrik
+*Marint motorhölje i 420D*, ett stort prisblock, tre ikonfördelar och en garantibadge.
 
-De här två testar den enda hypotes vi kan formulera utan att se bilden: **är en skalbar statisk en
-bild med mycket att titta på, eller en med nästan ingenting?** `SO_5_1` har CTR 2,08 % och 2,5 % köp
-per klick — mitt emellan kontots ytterligheter, vilket är förenligt med båda.
+`PD_8_1` — kontots mest effektiva statiska per krona, **+425 kr per 1 000** — visar **samma
+femfärgs-lineup** med fyra utpekningslinjer och priset litet i hörnet.
 
-**Den här är den avskalade.** Hypotesen bakom den är den motsatta: att en statisk som ska bära
-volym måste kunna avkodas på en tiondels sekund, och att allt utöver produkten är brus som gör den
-långsammare att läsa.
+Och de två sämsta, `SO_8_1` (−405) och `PD_6_1` (−332), visar båda **ett enda objekt mot tom
+bakgrund**. Fem av fem dömbara statiska följer mönstret.
 
-**Hypothesis:** A stripped-back image scales better than a content-rich one, because it is read faster in a feed and reads the same on the tenth impression as on the first.
+**Därför är frågan inte längre "mycket eller lite i bild".** Den är utagerad: avskalad enskild
+packshot förlorar, och vi behöver inte betala för att lära oss det igen. Den öppna frågan är i
+stället: **slår en miljöbild vid bryggan den beprövade sortimentsbilden?** Kontot har aldrig kört
+en enda statisk fotad utomhus.
+
+**Den här är sortimentsbilden.** Den är kontots första medvetna iteration på den form som redan
+tjänar pengar. `SO_5_1` och `PD_8_1` har aldrig itererats trots att de tillsammans står för 2 685
+kr i vinstbidrag — den här rättar det. Den ändrar en sak mot `PD_8_1`: **bredden är budskapet, inte
+priset.**
+
+**Hypothesis:** Leading with the range rather than the price lifts the proven line-up further, because the doubt the picture answers is whether one exists for my motor.
 
 **Kept:** The SO copy block, the black cover, the CTA, the landing page, the ad set.
 
-**Changed (isolated variable):** **How much is in the frame** — one element instead of many.
+**Changed (isolated variable):** **What the line-up is sold on** — the range instead of the price.
 
 > **Klickkvalitet: fortfarande den bästa prediktorn vi har, men inte längre utan undantag.**
 > Av de fyra lägsta CTR-annonserna konverterar två utmärkt (`SO_4_H1` 10,8 %, `PD_8_1` 5,5 %) och
@@ -105,6 +115,29 @@ långsammare att läsa.
 > Optimera ändå aldrig för klick.
 
 > **Ingen dom under 300 kr och 3 köp. Ingen vinnare under 2 000 kr.**
+
+---
+
+## 🟢 Vad de granskade bilderna visade (2026-08-19)
+
+Kontots statiska annonser gick äntligen att granska visuellt. Fem av dem är avlästa. Det ändrade
+en slutsats som stod i den första versionen av den här briefen:
+
+| Prisets roll i bilden | Annons | kr/1 000 |
+|---|---|---|
+| Litet, i hörnet, produktbevis dominerar | `PD_8_1` | **+425** |
+| Stort men balanserat mot fem produkter + fördelar | `SO_5_1` | **+240** |
+| Ensam hjälte, enormt och rött | `SO_8_1` | **−405** |
+| Rött, men en storlekstabell äter bilden | `PD_6_1` | **−332** |
+
+**Det är inte "pris i bild" som förlorar. Det är pris som ensam hjälte.** Pris som en detalj bland
+produktbevis är förenligt med kontots två bästa statiska.
+
+**Och: sortiment slår enskild packshot.** De två annonser som visar **fem höljen i färg** är båda
+klart positiva. De två som visar **ett enda objekt mot tom bakgrund** är kontots två sämsta.
+Fem av fem dömbara följer mönstret.
+
+**Alla fem är studio mot vit botten.** Kontot har aldrig kört en statisk fotad utomhus.
 
 ---
 
@@ -126,12 +159,16 @@ of the frame. Headline readable at thumbnail size: minimum ~60 px cap height on 
 
 ## 3. Design brief
 
-**Nästan ingenting.** Höljet monterat på utombordaren mot en lugn, tom bakgrund — slätt vatten,
-jämn himmel, eller en enfärgad yta. Ingen brygga, inga rep, inga fendrar, ingen båt i bild om det
-går att undvika.
+**Kopiera `PD_8_1`:s uppställning.** Fem höljen i rad — oliv, grå, grön, blå, svart — monterade på
+vita utombordare mot vit studiobotten, precis som kontots två bäst presterande statiska. Samma
+ordning, samma ljus, samma beskärning.
 
-Ett motiv, ett budskap. Bilden ska gå att avkoda på ett ögonblick och se likadan ut vid tionde
-visningen som vid första.
+**Fyra utpekningslinjer** som i `PD_8_1`, med tunna streck ut till varsin bubbla:
+*Dragsko – sitter stadigt* · *Kraftigt 420D Oxfordtyg* · *Passar 6–250 hk* ·
+*Skyddar mot sol, regn och salt*.
+
+**Priset litet i nedre högra hörnet**, som i `PD_8_1`. Inget stort prisblock, ingen röd siffra,
+ingen överstruken jämförelse. `SO_8_1` gör det och ligger på −405 kr per 1 000.
 
 ---
 
@@ -139,8 +176,9 @@ visningen som vid första.
 
 | Element | Swedish (use this) | English meaning |
 |---|---|---|
-| Rubrik | Ett hölje. En uppgift. | One cover. One job. |
-| Underrad | 420D Oxfordtyg som skyddar utombordaren, på plats på sekunder | 420D Oxford fabric that protects the outboard, on in seconds |
+| Rubrik | Fem färger. Sex storlekar. | Five colours. Six sizes. |
+| Underrad | Hitta din färg och din storlek – 6–250 hk | Find your colour and your size – 6–250 hp |
+| Hörnet | 299 kr | 299 kr |
 
 ---
 
@@ -174,7 +212,10 @@ visningen som vid första.
 - **Do not put a figure on what an engine costs.**
 - **Size ranges exactly as in the store:** 6 - 18 hk · 20 - 30 hk · 40 - 60 hk · 60 - 90 hk ·
   100 - 150 hk · 175 - 250 hk.
-- **Black cover only.**
+- **This ad is the one exception to the black-cover rule.** It shows the five-colour
+  line-up — olive, grey, green, blue, black — exactly as `PD_8_1` and `SO_5_1` do. Those
+  two are the account's best-performing statics and the range is the whole point of this
+  ad. Colours exactly as sold in the store, no invented colour.
 
 **Spelling traps:** motorhölje · utombordare · hk · 6–250 hk (en dash) · 420D Oxfordtyg ·
 Bäverbutiken. Å, Ä och Ö must render.
@@ -183,9 +224,10 @@ Bäverbutiken. Å, Ä och Ö must render.
 
 ## Primary KPI
 
-**Vinst per 1 000 kr mot `SO_27_1`, och båda mot `SO_5_1`:s 240.** Samma adset, lika budget.
+**Vinst per 1 000 kr mot `SO_27_1`, och båda mot `PD_8_1`:s 425 — inte mot `SO_5_1`:s 240.**
+`PD_8_1` är den form den här kopierar, så den är rätt måttstock. Samma adset, lika budget.
 Läs av vid 2 000 kr.
 
 ## What we learn regardless of outcome
 
-The other half of the same question. Running both is the only way the answer means anything.
+Whether the account's best static form gets better when the range leads instead of the price. Either way it is the first iteration of a proven winner.

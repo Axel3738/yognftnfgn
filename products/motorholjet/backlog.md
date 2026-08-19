@@ -11,13 +11,15 @@ Markeras `[använd i batch #N]` när de plockas in i en batch.
 | B18 | **Pausa `Enginecover_SO_8_1`.** CPA 396,93, vinstbidrag −644 kr, och 170 kr sedan förra veckan utan ett enda nytt köp. Rekommenderat 12 och 19 augusti. | Vinstbidragstabellen | **Ägaråtgärd** |
 | B13 | **Skala `SO_4_H1` vidare.** Enda annonsen som klarat en uppskalning: 434 → 1 185 kr och behöll 1 190 kr per 1 000. Höj mot 2 500 kr. **Byt copyn först** — den kör vinterrubriken. | Teardown 2026-08-19 | Väntar på beslut |
 | B8 | **Retargeting-adset saknas.** Frekvensen är nu **3,21** och pölen av övergivna varukorgar växer varje vecka. `SO_19_H1` och `SO_23_1`/`SO_23_2` väntar på det. | Funnelanalys, uppdaterad 2026-08-19 | **Väntar på setup** |
-| B9 | **Bilderna kan inte granskas.** `*.fbcdn.net` ger 403, verifierat **fem** körningar. `SO_5_1` är kontots näst största vinstkälla med 51 köp och vi kan inte se vad bilden visar. | Teardown 2026-08-19 | **Blockerar analysen** |
+| B20 | **Är jämförpriset 337 kr eller 367 kr?** `SO_5_1` — kontots näst största vinstkälla — kör `337 kr` överstruket. `SO_8_1` kör `367 kr`. Alla våra briefer säger 367 och förbjuder varje annat tal. Ett av dem är fel. | Bildgranskning 2026-08-19 | **ÄGARBESLUT — blockerar prisregeln** |
+| B21 | **Exportera `SO_16_1`:s originalbild ur Ads Manager.** `SO_26_1`–`SO_26_4` bygger alla på den och ingen har sett den. Postbaserade creatives går inte att rendera via API:et. | Bildgranskning 2026-08-19 | **Blockerar batch #8:s bildflotta** |
+| B22 | **Iterera `PD_8_1`, inte bara `SO_5_1`.** `PD_8_1` är kontots mest effektiva statiska per krona (+425 kr/1 000) och har 1,3 % av spenden. Femfärgs-lineup med utpekningslinjer och litet pris. | Bildgranskning 2026-08-19 | **[använd i batch #8]** som `SO_27_2` |
 | B11 | **Rätta de tre sparade copy-blocken.** `SO_4_H1`, kontots näst mest effektiva annons, kör fortfarande `Skydda din motor – innan vintern` och `Beställ innan lagret tar slut`. Femte körningen i rad. | Rotorsaksanalys 2026-08-09 | **Fortfarande ogjord** |
 | B12 | **Batch #7:s 18 briefer är obyggda**, plus två karuseller från batch #6. Karusellformatet har aldrig byggts efter fyra försök. **Prioritera `SO_21`-flottan** — fyra iterationer av kontots enda bevisade skalare. | Kontokontroll 2026-08-19 | Ägarbeslut |
 | B14 | **Videomanuset för `SO_4_H1` saknas.** Batch #3 briefades utanför OS:et. Det är nu den viktigaste luckan: annonsen är den enda som bevisligen skalar och vi vet inte vad den säger. | Teardown 2026-08-12 | Behöver manuset |
 | B4 | **2-pack / bundle.** Ca 16 % köper mer än ett hölje. Kräver butiksändring. | Ordermönster | BLOCKER: ägarbeslut |
 | B5 | **Recensioner.** Ingen reviews-app nåbar. | DNA-lucka | Väntar |
-| B6 | **Mintgrön och Grön har sålt noll.** Överväg att avpublicera. | Variantdata 2026-08-05 | Ägarbeslut |
+| B6 | **Mintgrön och Grön har sålt noll.** Överväg att avpublicera. ⚠️ **Men:** bildgranskningen 19 aug visar att kontots två bäst presterande statiska (`PD_8_1` +425, `SO_5_1` +240) båda säljer på **femfärgs-lineupen**. Avpubliceras färger tappar de sitt motiv. | Variantdata 2026-08-05, omprövad 2026-08-19 | Ägarbeslut — **väg mot annonserna först** |
 
 ## Avklarade
 
@@ -28,6 +30,7 @@ Markeras `[använd i batch #N]` när de plockas in i en batch.
 | B2 | Story-UGC "två motorer, samma brygga" | Briefsats 2026-08-02 | Inspelad som `SP_6_H1` |
 | B3 | Annonser som matchar lagerrensnings-LP:n | LP-bygge 2026-08-05 | SO-blockets copy + listiclen `baverbutiken.se/pages/motorholje-lagerrensning` |
 | B7 | PD-copyn har kontots sämsta klickkvalitet | Teardown 2026-08-05 | Briefad fyra gånger, kört noll gånger. Ligger i batch #7 som `PD_24_2`/`PD_24_3` |
+| B9 | **Bilderna kan inte granskas** | Teardown, fem körningar | **LÖST 2026-08-19.** `ads_get_ad_preview` renderar bilden serverside och returnerar den som bildinnehåll — ingen fbcdn-trafik behövs. Fem dömbara statiska granskade. Fungerar för varje creative med eget `image_hash`; postbaserade kvarstår som blindfläck (se B21) |
 | B19 | **Swipa Bryn-överlagerannonsen** | Manager 2026-08-13 | **[använd i batch #8]** som `SO_25_H1`–`SO_25_H3`. Framework i `swipes/Bryn-overlager-VSL.md` |
 
 ## Struken

@@ -634,3 +634,31 @@ Typ: `Video - Pending Approval` för `SO_25_H1`–`H3`, `Image - Pending Approva
 | Enginecover_SO_26_4 | 3c1270ab-908c-81cb-b742-c621b402420d |
 | Enginecover_SO_27_1 | 3c1270ab-908c-818c-97ab-ff203061d6fc |
 | Enginecover_SO_27_2 | 3c1270ab-908c-8147-beb7-c7b29153efd8 |
+
+
+### Tillägg 2026-08-19, efter körningen: bilderna granskades
+
+Managern bad mig försöka igen med bildgranskningen. Det gick — och det ändrade batchen.
+
+**Vägen som fungerar:** `*.fbcdn.net` och `business.facebook.com` är policyspärrade av gatewayen
+(403 på CONNECT, verifierat på nytt). Men **`ads_get_ad_preview` renderar bilden serverside och
+returnerar den som bildinnehåll i tool-svaret**. Ingen egen nedladdning behövs. Fungerar för varje
+creative som bär eget `image_hash`; postbaserade (`SO_16_*`, `SO_17_1`, `SO_20_1`) ger bara en
+iframe och kvarstår som blindfläck.
+
+**Fem dömbara statiska avlästa:** `PD_8_1` (+425), `SO_5_1` (+240), `SO_2` (+458), `SO_8_1` (−405),
+`PD_6_1` (−332). Detaljerna ligger i `dna.md`.
+
+**Vad som ändrades i batch #8:**
+
+| Annons | Före | Efter | Varför |
+|---|---|---|---|
+| `SO_27_2` | Avskalad bild, ett hölje mot tom bakgrund | **Sortimentsbild** — femfärgs-lineup kopierad från `PD_8_1`, utpekningslinjer, pris litet i hörnet. Rubrik `Fem färger. Sex storlekar.` | Den gamla hypotesen var redan utagerad: `SO_8_1` och `PD_6_1` visar båda ett enda objekt mot tom bakgrund och ligger på −405 och −332. Vi hade betalat för att lära oss samma sak en tredje gång |
+| `SO_27_1` | "Innehållsrik" mot "avskalad" | **Miljöbild** — kontots första statiska fotad utomhus, mäts mot den beprövade studioformen | Alla fem granskade är studio mot vit botten. Miljöbild är en otestad kategori, inte en variant |
+| Alla nio | — | Nytt delat block **"Vad de granskade bilderna visade"** | Prisets *storlek* avgör, inte dess närvaro. Sortiment slår enskild packshot |
+
+**En slutsats ströks:** "prisbevis i bild förlorar" var för grovt. `PD_8_1` har pris i bild och är
+kontots mest effektiva statiska. Det som förlorar är **pris som ensam hjälte** (`SO_8_1`, −405).
+
+**En ny ägarfråga:** `SO_5_1` kör `337 kr` som överstruket jämförpris, `SO_8_1` kör `367 kr`. Våra
+briefer säger 367 och förbjuder alla andra tal. Se B20.

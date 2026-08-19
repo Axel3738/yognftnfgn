@@ -74,6 +74,70 @@ under break-even; låt dem gå till 2 000 kr innan beslut.
 
 ## CREATIVE-TEARDOWN
 
+### 🟢 BILDERNA ÄR GRANSKADE — femte försöket lyckades (2026-08-19)
+
+`*.fbcdn.net` och `business.facebook.com` är fortfarande policyspärrade av gatewayen (403 på
+CONNECT, verifierat på nytt idag). Men **`ads_get_ad_preview` renderar bilden på serversidan och
+returnerar den som bildinnehåll i svaret** — ingen fbcdn-trafik från vår sida alls. Den vägen
+fungerar för varje creative som bär ett eget `image_hash`.
+
+**Fem av kontots dömbara statiska är nu visuellt granskade.** Det som följer är avläst ur
+bilderna, inte gissat.
+
+| Annons | kr/1 000 | Vad bilden faktiskt visar |
+|---|---|---|
+| `PD_8_1` | **+425** | Fem höljen i färg (oliv/grå/grön/blå/svart) på vita utombordare, vit bakgrund. Fyra utpekningslinjer: *Dragsko – sitter stadigt* · *Kraftigt 420D Oxfordtyg* · *Passar 6–250 hk* · *Skyddar mot sol, regn och salt*. `299 kr` litet i nedre högra hörnet |
+| `SO_5_1` | **+240** | Samma femfärgs-lineup. Rubrik *Marint motorhölje i 420D*. Stort prisblock ~~`337 kr`~~ **`299 kr`**. Tre ikonrader: *Passar 6–250 hk* · *Finns i flera färger* · *Enkel att sätta på och ta av*. Badge *30 dagars nöjd-kund-garanti*. Färgprickar längst ner |
+| `SO_2` | **+458** | Marinblå gradient med ankare/livboj som mönster. *20% RABATT IDAG* stort vitt, *Skydda din motor — innan vintern kommer.*, *[ Handla nu — begränsat lager ]*. Ett monterat hölje **plus** produkten hopvikt i förpackning |
+| `SO_8_1` | **−405** | Ett svart hölje på vit botten. *Kampanjpris just nu*, ~~`367 kr`~~ och **`299 kr` i enormt rött**. Tre bullets, 30-dagarsbadge. Renaste "pris som hjälte"-annonsen i kontot |
+| `PD_6_1` | **−332** | *Hitta din storlek* — sexradig tabell över hk-spann som täcker halva ytan. Produkten är liten och **delvis dold bakom tabellen**. `299 kr` i rött under |
+
+**Kvar osedda:** `SO_16_1`, `SO_16_2`, `SO_16_4`, `SO_17_1`, `SO_20_1` (postbaserade, saknar eget
+`image_hash` — preview returnerar bara en iframe) och `PD_6_C1` (katalogannons). För de
+postbaserade finns ingen väg via API:et; de måste exporteras ur Ads Manager för hand.
+
+### 🔴 Faktakonflikt som bara ägaren kan avgöra: 337 kr eller 367 kr?
+
+`SO_5_1` — kontots näst största vinstkälla — kör **`337 kr`** som överstruket jämförpris.
+`SO_8_1` kör **`367 kr`**. Alla briefer vi skrivit sedan 2 augusti säger 367 kr och listar varje
+annat tal som förbjudet. **Ett av talen är fel och jag kan inte avgöra vilket.** Butiken visar
+367 kr som jämförpris, men den vinnande annonsen har kört 337 sedan 4 augusti utan att någon
+reagerat. Se frågan i `backlog.md` (B20).
+
+### Vad bilderna faktiskt säger — tre mönster som ändrar strategin
+
+**1. Prisets STORLEK avgör, inte prisets närvaro.** Min slutsats från 16_1/17_1 var för grov.
+
+| Prisets roll i bilden | Annonser | kr/1 000 |
+|---|---|---|
+| Pris litet, i hörnet, produktbevis dominerar | `PD_8_1` | **+425** |
+| Pris stort men balanserat mot fem produkter + fördelar | `SO_5_1` | **+240** |
+| Pris ensam hjälte, enormt och rött | `SO_8_1` | **−405** |
+| Pris rött men en tabell äter bilden | `PD_6_1` | **−332** |
+
+**Bevisad riktning: pris som ensam hjälte förlorar. Pris som en detalj bland produktbevis
+vinner.** Det är inte samma sak som "pris i bild förlorar" — det var vad jag skrev 19 augusti och
+det var för grovt.
+
+**2. Sortiment slår enskild packshot.** De två annonserna med **fem höljen i bild** (`PD_8_1`,
+`SO_5_1`) är båda tydligt positiva. `SO_2` har två objekt (monterat + hopvikt) och är positiv.
+De två med **ett enda objekt mot tom bakgrund** (`SO_8_1`, `PD_6_1`) är kontots två sämsta
+statiska. Fem av fem följer mönstret. Hypotes, inte bevis — men riktningen är entydig.
+
+**3. Ingen dömbar statisk är en miljöbild.** Alla fem är studio/grafik mot vit eller enfärgad
+botten. Vi har **aldrig** kört en statisk fotad vid brygga eller i hamn. Det är en helt otestad
+kategori, inte en riskabel variant.
+
+### Vad detta gjorde med batch #8
+
+- **`SO_27_2` (avskalad: ett hölje mot tom bakgrund) är i praktiken redan mätt.** Det är exakt vad
+  `SO_8_1` och `PD_6_1` gör, och de ligger på −405 och −332. Briefen är omskriven 2026-08-19 till
+  ett **sortimentstest** i stället (se batch-08/gen.py och batch-log.md).
+- **`SO_26_1`–`SO_26_4` bygger på `SO_16_1`:s fotografi, som fortfarande är osett.** Behåll dem —
+  men be redigeraren exportera originalfilen ur Ads Manager innan bygget, annars vet ingen vad
+  basbilden är.
+- **`SO_27_1` (innehållsrik miljöbild) blir kontots första miljöbildstest.** Höjd prioritet.
+
 ### Prisbevis i bild — första läsbara svaret, och det är negativt
 
 Två annonser med **samma fotografi** passerade grinden samtidigt. Enda skillnaden var nedre
@@ -199,8 +263,12 @@ frekvensen är nu **3,21**.
 2. **Testerna svälter ihjäl i CBO:n.** Mönster 5, fjärde gången.
 3. **PD-blockets klickkvalitet är kontots svagaste**, 2,5 % över sju dömbara annonser.
 4. **Storlekskvalificering i bild.** `PD_6_1`: −332 kr per 1 000 på 2 472 kr.
-5. **Prisbevis i bild.** Mönster 6, riktning.
-6. **Overifierade claims ligger fortfarande live** — femte körningen. `SO_4_H1`, kontots näst bästa
+5. **Pris som ensam hjälte i bilden.** `SO_8_1` (−405) är kontots renaste prisannons och dess
+   sämsta aktiva. `PD_6_1` (−332) samma sak med en tabell i stället. **Bevisat på bild, inte bara
+   på siffror.**
+6. **Ett enda objekt mot tom bakgrund.** De två annonser som gör det är kontots två sämsta
+   statiska. Fem av fem dömbara följer mönstret sortiment > enskild packshot.
+7. **Overifierade claims ligger fortfarande live** — femte körningen. `SO_4_H1`, kontots näst bästa
    annons, kör vinterrubriken och "Beställ innan lagret tar slut".
 
 > **Struken 2026-08-05:** "urgency utan bevis dödar CPA". Identisk copy som SO_2.
@@ -209,6 +277,9 @@ frekvensen är nu **3,21**.
 > **Struken 2026-08-12:** "PD_1_H3 är den enda som inte tappar vid skala".
 > **Struken 2026-08-19:** "Ingenting överlever skala" och "de fyra lägsta CTR-annonserna är de
 > fyra bästa konverterarna". Se överst.
+> **Struken 2026-08-19 (efter bildgranskningen):** "Prisbevis i bild förlorar." För grovt.
+> Bilderna visar att det är **prisets storlek** som avgör: pris som ensam hjälte förlorar
+> (`SO_8_1` −405), pris som detalj bland produktbevis vinner (`PD_8_1` +425). Se teardownet.
 
 ---
 
@@ -219,10 +290,16 @@ frekvensen är nu **3,21**.
   före sekund 4 · 420D Oxfordtyg, 6–250 hk, 30 dagars nöjd-kund-garanti · svart hölje ·
   universell passform (aldrig "formsytt") · vattenavvisande (aldrig "vattentät")
 
+> **Obs om "svart hölje":** kontots två bäst presterande statiska (`PD_8_1` +425, `SO_5_1` +240)
+> visar **fem färger i rad**, inte ett svart hölje. Regeln "svart hölje" gäller video och enskild
+> packshot. **För sortimentsbilder är färglineupen det som fungerar.**
+
 **Testa kontrollerat (en variabel, lika budget, samma adset)**
 - Vad nedre tredjedelen i en offer-bild ska bära, nu när priset förlorat
 - `SO_4_H1`:s form i fler exemplar
-- Vad som gör en statisk skalbar: innehållsrik eller avskalad
+- Vad som gör en statisk skalbar: innehållsrik miljöbild eller sortimentsbild. **Avskalad
+  enskild packshot är utagerat — `SO_8_1` och `PD_6_1` har svarat.**
+- Miljöbild vid brygga som statisk. Aldrig prövat — alla fem dömbara är studio mot vit botten
 - Riktig karusell mot enkel bild
 - Retargeting mot kall trafik
 
@@ -236,7 +313,7 @@ frekvensen är nu **3,21**.
 - Vinterreferenser · "innan lagret tar slut" · overifierade kundantal · absoluta hållbarhetsclaims
 
 **Obevisat (hypoteser i test)**
-- Vad som gör en statisk skalbar — batch #8 testar innehållsrik mot avskalad
+- Vad som gör en statisk skalbar — batch #8 testar innehållsrik miljöbild mot sortimentsbild
 - Om Bryn-swipens VSL-form bär i vårt konto
 - Om öppningen (första 4 sek) betyder något. Fyra försök, alla kontaminerade
 - Karusellformatet
@@ -244,8 +321,13 @@ frekvensen är nu **3,21**.
 
 ## Kända luckor
 
-- **Bilderna kan inte granskas.** `*.fbcdn.net` ger 403, verifierat **fem** körningar. `SO_5_1` är
-  näst största vinstkällan och osynlig för analysen.
+- **~~Bilderna kan inte granskas~~ — LÖST 2026-08-19.** `*.fbcdn.net` och `business.facebook.com`
+  är fortfarande policyspärrade, men `ads_get_ad_preview` renderar bilden serverside och
+  returnerar den som bildinnehåll. **Använd den vägen, inte curl.** Fungerar för varje creative
+  med eget `image_hash`.
+- **Kvarstående blindfläck: postbaserade creatives.** `SO_16_1`, `SO_16_2`, `SO_16_4`, `SO_17_1`,
+  `SO_20_1` saknar `image_hash` och preview ger bara en iframe. De måste exporteras ur Ads Manager
+  för hand. Det gäller hela batch #6:s statiska — samma annonser vars copy vi heller inte kan läsa.
 - **Batch #6:s statiska går inte att copy-verifiera** — byggda på sidoinlägg, `body` och `title`
   exponeras inte på creative-objektet.
 - **Videomanus saknas för batch #1 och #3** (`PD_1_H3`, `PD_EXTRA`, `SP_1_H1`, `SO_1_H1`,

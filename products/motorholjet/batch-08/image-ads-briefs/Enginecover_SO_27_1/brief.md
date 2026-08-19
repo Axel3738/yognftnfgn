@@ -3,7 +3,7 @@
 **VARIABELTAGGAR:** vinkel=`offer/överlager` · hook-typ=`påstående` · format=`statisk` · proof=`demo` · offer-i-creativen=`pris syns i underrad` · visuell stil=`innehållsrik miljöbild` · textmängd=`rubrik+underrad` · talare=`ingen`
 *(Läses av nästa `/cs` för att gruppera vinstbidrag per variabelvärde. Ändra dem inte utan att ändra creativen.)*
 
-**Type:** Static in the offer angle, **content-rich**. Runs against `SO_27_2`, which is the stripped-back version of the same idea.
+**Type:** Static in the offer angle, **environment shot**. Runs against `SO_27_2`, the proven studio line-up. The account has never run an outdoor static.
 
 ---
 
@@ -82,21 +82,30 @@ den är **statisk** — ingen annan statisk annons i kontot är i närheten.
 Den tog dessutom 3 845 kr till den här veckan och gick **upp** från 168 till 240 kr vinst per
 1 000. Den skalar.
 
-**Vi vet inte varför.** `*.fbcdn.net` blockeras av gatewayen, verifierat fem körningar i rad, så
-bilden går inte att granska. Vi kan inte kopiera det som fungerar, bara testa runt det.
+**Och nu vet vi hur den ser ut.** `*.fbcdn.net` är fortfarande spärrad, men `ads_get_ad_preview`
+renderar bilden serverside — femte försöket, första gången det gick. `SO_5_1` visar **fem höljen i
+rad i olika färger** (oliv, grå, grön, blå, svart) på vita utombordare mot vit botten, rubrik
+*Marint motorhölje i 420D*, ett stort prisblock, tre ikonfördelar och en garantibadge.
 
-De här två testar den enda hypotes vi kan formulera utan att se bilden: **är en skalbar statisk en
-bild med mycket att titta på, eller en med nästan ingenting?** `SO_5_1` har CTR 2,08 % och 2,5 % köp
-per klick — mitt emellan kontots ytterligheter, vilket är förenligt med båda.
+`PD_8_1` — kontots mest effektiva statiska per krona, **+425 kr per 1 000** — visar **samma
+femfärgs-lineup** med fyra utpekningslinjer och priset litet i hörnet.
 
-**Den här är den innehållsrika.** Hypotesen bakom den är att en statisk som ska bära volym behöver
-tåla att ses många gånger, och att en bild med flera saker att landa på slits långsammare.
+Och de två sämsta, `SO_8_1` (−405) och `PD_6_1` (−332), visar båda **ett enda objekt mot tom
+bakgrund**. Fem av fem dömbara statiska följer mönstret.
 
-**Hypothesis:** A content-rich image scales better than a stripped-back one, because there is more for the eye to find on the second and third impression.
+**Därför är frågan inte längre "mycket eller lite i bild".** Den är utagerad: avskalad enskild
+packshot förlorar, och vi behöver inte betala för att lära oss det igen. Den öppna frågan är i
+stället: **slår en miljöbild vid bryggan den beprövade sortimentsbilden?** Kontot har aldrig kört
+en enda statisk fotad utomhus.
+
+**Den här är miljöbilden — kontots första.** Hypotesen är att en riktig bruksmiljö gör produkten
+begriplig på ett sätt en studiobild inte kan, och att den därför tål att ses många gånger.
+
+**Hypothesis:** An environment shot at the dock scales better than the proven studio line-up, because seeing the cover in use answers more doubts than seeing it on white.
 
 **Kept:** The SO copy block, the black cover, the CTA, the landing page, the ad set.
 
-**Changed (isolated variable):** **How much is in the frame** — many elements instead of one.
+**Changed (isolated variable):** **Where the photograph is taken** — a real dock instead of a white studio.
 
 > **Klickkvalitet: fortfarande den bästa prediktorn vi har, men inte längre utan undantag.**
 > Av de fyra lägsta CTR-annonserna konverterar två utmärkt (`SO_4_H1` 10,8 %, `PD_8_1` 5,5 %) och
@@ -104,6 +113,29 @@ tåla att ses många gånger, och att en bild med flera saker att landa på slit
 > Optimera ändå aldrig för klick.
 
 > **Ingen dom under 300 kr och 3 köp. Ingen vinnare under 2 000 kr.**
+
+---
+
+## 🟢 Vad de granskade bilderna visade (2026-08-19)
+
+Kontots statiska annonser gick äntligen att granska visuellt. Fem av dem är avlästa. Det ändrade
+en slutsats som stod i den första versionen av den här briefen:
+
+| Prisets roll i bilden | Annons | kr/1 000 |
+|---|---|---|
+| Litet, i hörnet, produktbevis dominerar | `PD_8_1` | **+425** |
+| Stort men balanserat mot fem produkter + fördelar | `SO_5_1` | **+240** |
+| Ensam hjälte, enormt och rött | `SO_8_1` | **−405** |
+| Rött, men en storlekstabell äter bilden | `PD_6_1` | **−332** |
+
+**Det är inte "pris i bild" som förlorar. Det är pris som ensam hjälte.** Pris som en detalj bland
+produktbevis är förenligt med kontots två bästa statiska.
+
+**Och: sortiment slår enskild packshot.** De två annonser som visar **fem höljen i färg** är båda
+klart positiva. De två som visar **ett enda objekt mot tom bakgrund** är kontots två sämsta.
+Fem av fem dömbara följer mönstret.
+
+**Alla fem är studio mot vit botten.** Kontot har aldrig kört en statisk fotad utomhus.
 
 ---
 
@@ -187,4 +219,4 @@ Läs av vid 2 000 kr, inte tidigare — det är först där frågan om skalbarhe
 
 ## What we learn regardless of outcome
 
-Whether a scalable static is a busy image or a quiet one. We cannot see the one that already scales, so this is the only way to ask.
+Whether the account's static ceiling is set by the studio look. Every judgeable static we have is shot on white; this is the first test outside it.

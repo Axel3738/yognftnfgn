@@ -109,6 +109,29 @@ raden längst ner.
 
 ---
 
+## 🟢 Vad de granskade bilderna visade (2026-08-19)
+
+Kontots statiska annonser gick äntligen att granska visuellt. Fem av dem är avlästa. Det ändrade
+en slutsats som stod i den första versionen av den här briefen:
+
+| Prisets roll i bilden | Annons | kr/1 000 |
+|---|---|---|
+| Litet, i hörnet, produktbevis dominerar | `PD_8_1` | **+425** |
+| Stort men balanserat mot fem produkter + fördelar | `SO_5_1` | **+240** |
+| Ensam hjälte, enormt och rött | `SO_8_1` | **−405** |
+| Rött, men en storlekstabell äter bilden | `PD_6_1` | **−332** |
+
+**Det är inte "pris i bild" som förlorar. Det är pris som ensam hjälte.** Pris som en detalj bland
+produktbevis är förenligt med kontots två bästa statiska.
+
+**Och: sortiment slår enskild packshot.** De två annonser som visar **fem höljen i färg** är båda
+klart positiva. De två som visar **ett enda objekt mot tom bakgrund** är kontots två sämsta.
+Fem av fem dömbara följer mönstret.
+
+**Alla fem är studio mot vit botten.** Kontot har aldrig kört en statisk fotad utomhus.
+
+---
+
 ## 2. Format
 
 | | |
