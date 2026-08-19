@@ -1,105 +1,79 @@
-# Koppla API:erna — en gång per butik, sen aldrig mer
+# Koppla en butik — Klient-ID och Hemlighet
 
-Det här är det enda du behöver göra manuellt. Cirka 3 minuter per butik, fem butiker.
-Efter det kan `ladda-upp.mjs` skriva till alla fem i en körning, utan att du kopplar om
-connectorn en enda gång.
+Du behöver **tre uppgifter per butik**. Alla tre går att läsa av när som helst,
+inget "visas bara en gång".
 
-**Varför inte connectorn?** Shopify-connectorn håller bara EN butik åt gången. Det är
-därför du fått koppla om fem gånger per omgång. En egen API-token per butik löser det —
-då kan skriptet prata med alla samtidigt.
-
----
-
-## Steg 1 — skapa token (upprepa för varje butik)
-
-Logga in i **den butikens** Shopify-admin. Gör det en butik i taget så du inte blandar ihop dem.
-
-1. **Inställningar** (kugghjulet nere till vänster)
-2. **Appar och försäljningskanaler**
-3. Knappen **Utveckla appar** uppe till höger
-   - Första gången: klicka **Tillåt anpassad apputveckling** → bekräfta
-4. **Skapa en app** → döp den `Bäver Uppladdare` → **Skapa app**
-5. Fliken **Konfiguration** → **Konfigurera** under *Admin API-integration*
-6. Kryssa i exakt dessa behörigheter:
-
-   | Behörighet | Varför |
-   |---|---|
-   | `write_products` | skapa och ändra produkter |
-   | `read_products` | inventera först, så inga dubbletter skapas |
-   | `write_publications` | publicera på försäljningskanalerna |
-   | `read_publications` | läsa vilka kanaler butiken har |
-   | `write_inventory` | sätta "fortsätt sälja när slut i lager" |
-   | `read_inventory` | läsa lagerstatus |
-
-7. **Spara**
-8. Fliken **API-uppgifter** → **Installera app** → **Installera**
-9. Under *Admin API-åtkomsttoken*: klicka **Visa token en gång** och **kopiera den**
-
-⚠️ **Tokenen visas EN gång.** Kopierar du den inte nu måste du skapa en ny.
-Den börjar med `shpat_`.
-
-10. Notera också butikens **.myshopify.com-adress**. Den står i adressfältet när du är
-    inne i admin: `admin.shopify.com/store/DET-HÄR-NAMNET` → adressen är
-    `DET-HÄR-NAMNET.myshopify.com`.
+| Uppgift | Ser ut som | Var den står |
+|---|---|---|
+| Butikens adress | `4snrw0-mg.myshopify.com` | i adressfältet: `admin.shopify.com/store/**4snrw0-mg**` |
+| Klient-ID | `c08d97a8...` (32 tecken) | appens inställningar → Inloggningsuppgifter |
+| Hemlighet | `shpss_868d...` | samma ställe, tryck på ögat för att visa |
 
 ---
 
-## Steg 2 — lägg in dem i miljön
+## Steg 1 — skapa appen (en gång per butik)
 
-⚠️ **Klistra ALDRIG in en token i chatten.** Den hamnar i historiken och går inte att
-ta tillbaka. Lägg in dem som miljövariabler i stället — då finns de kvar mellan sessioner
-och syns aldrig i någon logg.
+1. **Inställningar** → **Appar och försäljningskanaler** → **Utveckla appar**
+2. **Skapa en app** → döp den `Bäver uppladdare`
+3. Fliken **Konfiguration** → under *Admin API* kryssa i:
+   `write_products` · `read_products` · `write_publications` · `read_publications` ·
+   `write_inventory` · `read_inventory`
+4. **Spara**
+5. **Installera app** ← utan detta steg fungerar ingenting
 
-I **claude.ai → Code → inställningar för din miljö → Environment variables**, lägg till
-tio variabler (två per butik):
+## Steg 2 — läs av de tre uppgifterna
 
-| Namn | Värde |
-|---|---|
-| `SHOPIFY_SHOP_SE` | `xxxx.myshopify.com` |
-| `SHOPIFY_TOKEN_SE` | `shpat_...` |
-| `SHOPIFY_SHOP_NO` | `xxxx.myshopify.com` |
-| `SHOPIFY_TOKEN_NO` | `shpat_...` |
-| `SHOPIFY_SHOP_DK` | `xxxx.myshopify.com` |
-| `SHOPIFY_TOKEN_DK` | `shpat_...` |
-| `SHOPIFY_SHOP_FI` | `xxxx.myshopify.com` |
-| `SHOPIFY_TOKEN_FI` | `shpat_...` |
-| `SHOPIFY_SHOP_UK` | `xxxx.myshopify.com` |
-| `SHOPIFY_TOKEN_UK` | `shpat_...` |
+Gå till appens **Inloggningsuppgifter**. Kopiera **Klient-ID** och **Hemlighet**.
+Adressen läser du i webbläsarens adressfält.
 
-Landskoderna måste stämma med butiksregistret i `butiker.mjs`:
-`SE` = bäverbutiken.se · `NO` = grillklinikken.no · `DK` = bæverbutiken.dk ·
-`FI` = majavakauppa.fi · `UK` = beavershop.co.uk
+⚠️ Leta INTE efter någon "åtkomsttoken". Den behövs inte, och den som visas där
+dör efter 24 timmar. Skriptet hämtar en färsk själv varje gång.
 
----
+## Steg 3 — lägg in dem
 
-## Steg 3 — kontrollera att det funkar
+I miljöinställningarna, tre rader per butik, `NYCKEL=värde`:
+
+```
+SHOPIFY_SHOP_SE=4snrw0-mg.myshopify.com
+SHOPIFY_CLIENT_ID_SE=c08d97a83583b2f86f2e9c68821768b4
+SHOPIFY_CLIENT_SECRET_SE=shpss_...
+```
+
+Byt `SE` mot `NO`, `DK`, `FI` eller `UK` för de andra butikerna.
+
+⚠️ **Har du en `SHOPIFY_TOKEN_*`-rad liggande sedan tidigare — ta bort den.**
+Den dör efter ett dygn och blir en tyst felkälla.
+
+## Steg 4 — kontrollera
 
 ```bash
 node temu/kolla-koppling.mjs
 ```
-
-Skriptet läser varje token, frågar butiken vad den heter och jämför mot registret.
-Det **skriver ingenting**. Du ska få fem gröna rader. Får du en röd står det exakt
-vad som är fel — fel token, fel butik eller saknad behörighet.
-
-Vanligaste felet: `SHOPIFY_SHOP_DK` pekar på fel butik. Skriptet upptäcker det genom att
-jämföra valutan (DKK) mot registret och stoppar innan något skrivs.
+Skriver ingenting. En grön rad per butik med namn, valuta och antal produkter.
 
 ---
 
-## Steg 4 — ladda upp
+## Så fungerar inloggningen
 
-```bash
-node temu/ladda-upp.mjs produkter.json --alla --torrkorning   # visar vad som SKULLE hända
-node temu/ladda-upp.mjs produkter.json --alla                 # skarpt
-```
+Skriptet skickar Klient-ID + Hemlighet till
+`POST https://<butik>/admin/oauth/access_token` med
+`grant_type: client_credentials`, och får tillbaka en token som lever ~24 timmar.
+Det sker automatiskt vid varje körning, så det finns aldrig någon token att
+hålla reda på eller förnya.
 
-Kör **alltid torrkörningen först**. Den inventerar butikerna på riktigt och visar vad som
-skulle skapas och vad som hoppas över för att det redan finns — men skriver ingenting.
+## Det jag hade fel om 2026-08-19
 
----
+Nedskrivet för att ingen ska gå i samma fälla igen:
 
-## Om en token läcker
+- Jag sa att **Klient-ID och Hemlighet var fel fält** och skickade Axel på jakt efter
+  en åtkomsttoken. Det var precis tvärtom — de två fälten är hela lösningen.
+- Jag skrev **menyvägar ur minnet** i stället för att utgå från vad som faktiskt
+  stod på skärmen. Shopifys etiketter skiljer sig mellan versioner och språk.
+- Jag bad om **myshopify-adressen** i stället för att hämta den själv. Den går att
+  läsa ur butikens egen HTML: `curl -sL <butiksdomän> | grep -oE '[a-z0-9-]+\.myshopify\.com'`
+  och finns i `shop { myshopifyDomain }` via connectorn.
+- En kvarglömd `SHOPIFY_TOKEN_*` i miljön **skuggade** den fungerande vägen och gav
+  401 trots korrekta uppgifter. Därför vinner Klient-ID + Hemlighet alltid i koden.
 
-Gå till appen i Shopify-admin → **API-uppgifter** → **Avinstallera app**. Tokenen dör
-direkt. Skapa en ny app och en ny token.
+Sammanlagt kostade det en timme. Regeln som föll ur det står som regel 15 i CLAUDE.md:
+försök själv först, fråga bara när försöket misslyckats.

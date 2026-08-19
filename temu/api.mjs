@@ -7,14 +7,49 @@ const sov = (ms) => new Promise((r) => setTimeout(r, ms));
 
 export class Butik {
   constructor(nyckel) {
-    const { shop, token } = referenser(nyckel);
+    const ref = referenser(nyckel);
     this.nyckel = nyckel;
     this.konfig = BUTIKER[nyckel];
-    this.url = `https://${shop}/admin/api/${API_VERSION}/graphql.json`;
-    this.token = token;
+    this.shop = ref.shop;
+    this.url = `https://${ref.shop}/admin/api/${API_VERSION}/graphql.json`;
+    this.token = ref.token || null;
+    this.clientId = ref.clientId;
+    this.clientSecret = ref.clientSecret;
+  }
+
+  /**
+   * Vaxlar in Klient-ID + Hemlighet mot en access token.
+   * Shopifys client_credentials-grant. Tokenen lever ~24h, sa vi hamtar
+   * en ny vid varje korning i stallet for att lagra nagon.
+   */
+  async hamtaToken() {
+    if (this.token) return this.token;
+    const svar = await fetch(`https://${this.shop}/admin/oauth/access_token`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        client_id: this.clientId,
+        client_secret: this.clientSecret,
+        grant_type: 'client_credentials',
+      }),
+    });
+    const text = await svar.text();
+    if (!svar.ok) {
+      throw new Error(
+        `${this.konfig.namn}: kunde inte hamta token (HTTP ${svar.status}).\n` +
+        `  ${text.slice(0, 200)}\n` +
+        `  Vanligast: fel Klient-ID/Hemlighet, eller appen ar inte installerad i butiken.`
+      );
+    }
+    const data = JSON.parse(text);
+    if (!data.access_token) throw new Error(`${this.konfig.namn}: inget access_token i svaret`);
+    this.token = data.access_token;
+    this.scopes = data.scope;
+    return this.token;
   }
 
   async fraga(query, variables = {}, forsok = 0) {
+    if (!this.token) await this.hamtaToken();
     let svar;
     try {
       svar = await fetch(this.url, {
