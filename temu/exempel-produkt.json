@@ -1,0 +1,33 @@
+[
+  {
+    "namn": "Tofflor Ergonomiska",
+    "produkttyp": "Skor",
+    "pris_sek": 309,
+    "priser": { "no": 349, "dk": 229, "fi": 29.90, "uk": 22.99 },
+    "kategori_gid": "gid://shopify/TaxonomyCategory/aa-8-7",
+    "optioner": ["Storlek", "Färg"],
+    "optionsnamn": {
+      "no": ["Størrelse", "Farge"], "dk": ["Størrelse", "Farve"],
+      "fi": ["Koko", "Väri"], "uk": ["Size", "Colour"], "se": ["Storlek", "Färg"]
+    },
+    "varianter": [
+      { "sku": "TEMU-601100379316292-3637-SO", "optionValues": [{ "optionName": "Storlek", "name": "36-37" }, { "optionName": "Färg", "name": "Svart/Orange" }] },
+      { "sku": "TEMU-601100379316292-3637-HG", "optionValues": [{ "optionName": "Storlek", "name": "36-37" }, { "optionName": "Färg", "name": "Vit/Grön" }] }
+    ],
+    "bilder": [
+      { "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ce963fd939ae7017637863a3d0a0ec07.jpg",
+        "alt": { "sv": "Ergonomiska tofflor med tjock sula", "uk": "Ergonomic slippers with a thick sole" } }
+    ],
+    "text": {
+      "se": { "titel": "Tofflor Ergonomiska – Tjocksulade för Inne & Ute", "beskrivning": "<h3>...</h3>", "taggar": ["tofflor"] },
+      "uk": { "titel": "Ergonomic Slippers – Thick-Soled for Indoors & Outdoors", "beskrivning": "<h3>...</h3>", "taggar": ["slippers"] }
+    }
+  },
+  {
+    "namn": "Testprodukt utan explicit pris",
+    "produkttyp": "Verktyg",
+    "pris_sek": 909,
+    "sku": "TEMU-601102681234291",
+    "text": { "uk": { "titel": "Mini Belt Sander", "beskrivning": "<h3>...</h3>" } }
+  }
+]
