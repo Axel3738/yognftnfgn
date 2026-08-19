@@ -617,3 +617,20 @@ budgetsvält. Fler briefer är inte flaskhalsen. Nio är kvoten och nio går att
 - **#8 och #9 läses av först vid 2 000 kr** — frågan är skalbarhet, inte startvärde.
 - **Ingen dom under 300 kr och 3 köp. Ingen vinnare under 2 000 kr.**
 - Logga launchen: `node pipeline/quota.mjs log motorholjet <antal>`.
+
+**Notion:** alla 9 items skapade 2026-08-19 i "Boat cover 420D creative hub"
+(data source `785270ab-908c-82e5-ac71-07d7b7ef3770`), ett item per annons, Status `Draft`,
+Kategori `Creative Strategy`, hela briefen inklistrad i itemet.
+Typ: `Video - Pending Approval` för `SO_25_H1`–`H3`, `Image - Pending Approval` för de sex statiska.
+
+| Annons | Notion page-id |
+|---|---|
+| Enginecover_SO_25_H1 | 3c1270ab-908c-8121-83cd-c22d4fd49da7 |
+| Enginecover_SO_25_H2 | 3c1270ab-908c-815e-8c20-dce9451a1a2b |
+| Enginecover_SO_25_H3 | 3c1270ab-908c-8100-be93-f68fdf70480f |
+| Enginecover_SO_26_1 | 3c1270ab-908c-8106-bd0b-c3d687130c23 |
+| Enginecover_SO_26_2 | 3c1270ab-908c-8177-a577-f995d396ca50 |
+| Enginecover_SO_26_3 | 3c1270ab-908c-81d2-9d1e-c873cecf5c98 |
+| Enginecover_SO_26_4 | 3c1270ab-908c-81cb-b742-c621b402420d |
+| Enginecover_SO_27_1 | 3c1270ab-908c-818c-97ab-ff203061d6fc |
+| Enginecover_SO_27_2 | 3c1270ab-908c-8147-beb7-c7b29153efd8 |
