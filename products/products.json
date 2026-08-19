@@ -156,6 +156,33 @@
         "collection_id": "6c9270ab-908c-8362-aa2a-87c073045ebf",
         "url": "https://app.notion.com/p/3aa270ab908c80c088aacb4935db8f33"
       }
+    },
+    {
+      "id": "tofflor-ergonomiska",
+      "name": "Tofflor Ergonomiska (Bäverbutiken)",
+      "brand": "Bäverbutiken",
+      "ad_account_id": "1867947880635861",
+      "campaign_ids": [
+        "120249742782850291"
+      ],
+      "daily_budget_sek": 1000,
+      "target_cpa_sek": 131,
+      "cycle_start": "2026-08-13",
+      "status": "aktiv",
+      "launches": [
+        {
+          "date": "2026-08-13",
+          "count": 21
+        }
+      ],
+      "break_even_cpa_sek": 228,
+      "aov_sek": 388,
+      "aov_kalla": "Shopify analytics sedan 2026-08-01 (28 ordrar, avläst 2026-08-19)",
+      "break_even_status": "⚠️ PROXY, EJ VERIFIERAD: COGS saknas i product sheetet. break_even_roas 1,70 lånad från strandtofflorna (närmaste produkt). target_cpa härledd ur AOV/2,97. Axel måste ge riktig COGS — se products/tofflor-ergonomiska/dna.md.",
+      "break_even_roas": 1.7,
+      "target_roas_25pct": 2.97,
+      "target_cpa_25pct_harledd": 131,
+      "scaling": false
     }
   ]
 }
