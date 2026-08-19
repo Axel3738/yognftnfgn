@@ -96,6 +96,18 @@ inte röras utan att Axel ber om det.
     argument. Kommandona är filer — de fungerar även när klienten inte
     registrerat dem.
 14. **Korta svar.** Inga bibelsvar. Axel har sagt det två gånger.
+15. **Fråga aldrig Axel om något du kan ta reda på själv.** Innan en fråga skickas:
+    försök hämta uppgiften, och fråga bara om försöket misslyckas — då med beskedet
+    vad du provat. Axel ska aldrig behöva leta upp något som ligger i ett API, en
+    HTML-sida eller en fil du redan har åtkomst till.
+    *(2026-08-19: jag bad honom leta upp butikens `myshopify.com`-adress. Den låg i
+    butikens egen HTML och tog en sekund att hämta — `curl -sL <butiksdomän> |
+    grep -oE '[a-z0-9-]+\.myshopify\.com'`. Samma uppgift finns också i
+    `shop { myshopifyDomain }` via Shopify-connectorn. Han fick leta i onödan.)*
+    Ordningen är alltid: **försök själv → misslyckas → fråga med exakt en fråga.**
+16. **Ett fel = en ny regel.** Missar du något, eller säger Axel "så här vill jag ha
+    det", skriv in det här i samma svar. Reglerna är produkten — nästa session vet
+    ingenting utom det som står skrivet.
 
 ---
 
