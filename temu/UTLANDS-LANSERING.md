@@ -39,6 +39,21 @@ halvfärdigt med "nu behöver du bara…".
    som vendor och aldrig 🦫 i copyn.
 5. **Varje variant:** `inventoryPolicy: CONTINUE` + `taxable: false` (sätts med
    `productVariantsBulkUpdate` EFTER `create-product` — kan inte sättas vid skapandet).
+5b. **`templateSuffix: "claudeprodukter"` på VARJE produkt** — även i utlandsbutikerna.
+   `create-product` kan inte sätta det; kör `productUpdate` direkt efteråt. Missades i
+   hela DK-omgången 2026-08-18 (Axel upptäckte det). Kontrollera med
+   `products(first:50){edges{node{templateSuffix}}}` — `null` = fel mall renderas.
+
+5c. **Städa dubbletter så här när skadan redan skett.** Regeln Axel gav 2026-08-18:
+   **behåll den med varianter — alltså den nyare, rikare versionen.** Titlarna skiljer
+   sig ofta något mellan versionerna ("Ergonomiske Tøfler" vs "Ergonomiske Hjemmesko"),
+   så para ihop på produkt, inte på exakt titel. Jämför alltid innehållet först: den
+   gamla versionen bar tomma platshållarkommentarer, hastighetslöfte ("Hurtig levering")
+   och pris utanför prismatrisen — den nya var korrekt på alla tre.
+   **Arkivera (`status: ARCHIVED`), radera inte.** Arkivering tar bort produkten ur
+   butiken men går att ångra; radering gör det inte, och väljer du fel tvilling är
+   arbetet borta. Arkiverade produkter behåller sitt `handle` — ska den nya ha den rena
+   URL:en måste du först döpa om den arkiverades handle.
 6. **Publicera på ALLA butikens kanaler:** hämta `publications`, kör `publishablePublish`
    per produkt med alla publication-ID:n.
 7. **Kategori:** taxonomi-GID:na är globala — använd exakt de som står i tabellen nedan,
