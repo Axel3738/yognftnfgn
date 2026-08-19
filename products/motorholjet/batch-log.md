@@ -520,3 +520,100 @@ aldrig itererats, och nå nya människor.
 - **#10 ska inte ersätta `PD_1_H3`** — den ligger bredvid. PD_1_H3 är 63 % av vinsten.
 - **Ingen dom under 300 kr och 3 köp. Ingen vinnare under 2 000 kr.**
 - Logga launchen: `node pipeline/quota.mjs log motorholjet <antal>`.
+
+---
+
+## Feedbackloop 2026-08-19 (sjunde /cs) — kontot vände
+
+### Läget
+
+| Fönster | Spend | Köp | CPA | Mot break-even 236 kr |
+|---|---|---|---|---|
+| Livstid, hela kampanjen | 69 889 kr | 353 | 198 kr | lönsam |
+| **Senaste veckan (marginal)** | **+15 101 kr** | **+78** | **194 kr** | **+42 kr per order** |
+| Senaste 3 dygnen | 7 270 kr | 33 | 220 kr | +16 kr per order |
+
+Vinstbidraget bland dömbara annonser gick från **11 675 kr till 15 940 kr**. Marginalen gick från
+300 kr till 194 kr. **Orsaken var inte en ny creative** — fem förlustannonser pausades
+(`PD_6_C1`, `PD_6_1`, `PD_7_H1`, `PD_16_H1`, `SP_5_H1`) och dagsbudgeten halverades från 4 000 till
+2 000 kr. Kvoten följde med ner från 18 till **9 per 3-dagarscykel**.
+
+### Rättelse: det som launchades var batch #6, inte batch #7
+
+Jag läste först det nya i kontot som batch #7. Fel. Namnen är batch #6:s
+(`SO_16_*`, `SO_17_1`, `SO_20_1`, `SP_18_1`, `PD_19_*`, `PD_21_H1`, `PD_22_H1`, `PD_23_H1`,
+`SP_16_H1`, `SP_17_H1`), launchade 11 augusti. **Batch #7:s 18 briefer är obyggda.**
+
+### Utfall — batch #6
+
+| Annons | Spend | Köp | Utfall |
+|---|---|---|---|
+| `SO_16_1` | 735 kr | 3 | **Dömbar.** CPA 245,16, −37 kr/1 000. Kontrollen i prisbevis-testet |
+| `SO_17_1` | 1 095 kr | 4 | **Dömbar.** CPA 273,80, −138 kr/1 000. **Prisbevis i bild förlorade** |
+| `SO_16_4` | 452 kr | 2 | Under grinden |
+| `SO_16_2` | 303 kr | 0 | Under grinden |
+| `SO_16_3` | **24 kr** | 0 | Svält |
+| `SO_16_5` | **5 kr** | 0 | Svält |
+| `SO_20_1` | 848 kr | 1 | Under grinden. CPA 847,84 — svag signal |
+| `PD_22_H1` | 332 kr | 1 | Under grinden |
+| `PD_21_H1` | 64 kr | 0 | Svält |
+| `PD_23_H1` | 14 kr | 0 | Svält |
+| `PD_19_1` / `PD_19_2` | 5 kr / 1 kr | 0 | Svält |
+| `SP_16_H1` (4 öppningar) | **118 kr totalt** | 0 | Svält. Fjärde kontaminerade hooktestet |
+| `SP_17_H1` | 17 kr | 0 | Svält |
+| `SP_18_1` | **0,30 kr** | 0 | Svält |
+| `SO_18_C1`, `PD_20_C1` | – | – | **Aldrig byggda.** Karusellen otestad efter fyra försök |
+| `SO_19_H1` | – | – | Blockerad, inget retargeting-adset |
+
+**Femvägs bildtestet fick 735 / 452 / 303 / 24 / 5 kr.** 147 gångers skillnad mellan armarna.
+Fjärde gången samma strukturfel förstör samma sorts test.
+
+### Det som faktiskt gick att läsa: prisbevis i bild
+
+`SO_16_1` och `SO_17_1` delar **samma fotografi** och skiljer sig bara i nedre tredjedelen. Båda
+passerade grinden samtidigt. Bilden med pris gav **−138 kr per 1 000**, den utan **−37**.
+Fjärde försöket på frågan, första läsbara svaret, och det är negativt. 3 respektive 4 köp — riktning,
+inte bevis.
+
+### Vad som hände med hypoteserna från 2026-08-12
+
+- **"Ingenting överlever skala": FALSIFIERAD.** `PD_1_H3` tog 4 612 kr till och gick 340 → **383**.
+  `SO_5_1` tog 3 845 kr till och gick 168 → **240**. `SO_4_H1` nästan tredubblades och behöll
+  1 190. Nedgången jag mätte var till stor del att förlorarna låg kvar och drog ner snittet.
+- **"De fyra lägsta CTR-annonserna är de fyra bästa konverterarna, utan undantag": FALSIFIERAD.**
+  Nu två av fyra.
+- **"Pausa SO_8_1": RÄTT, andra veckan i rad.** 170 kr sedan dess, noll köp. Fortfarande aktiv.
+- **"Sänk budgeten" (B15): GJORD.** 4 000 → 2 000 kr.
+- **`SO_4_H1` är den enda bevisade skalaren.** 434 → 1 185 kr, behöll 1 190 kr per 1 000.
+
+---
+
+## Batch #8 — 2026-08-19 (9 creatives, briefade)
+
+Kvot: **9 per 3-dagarscykel** (halverad med budgeten). Läge före batchen: **−54 efter plan**.
+Levererat: **9** (6 bild + 3 video). Briefer: `products/motorholjet/batch-08/`.
+
+**Varför nio och inte arton:** batch #7:s 18 briefer ligger obyggda och batch #6:s test dog på
+budgetsvält. Fler briefer är inte flaskhalsen. Nio är kvoten och nio går att ge riktig budget.
+
+| # | Annons | Format | Isolerad variabel | Hypotes |
+|---|---|---|---|---|
+| 1 | Enginecover_SO_25_H1 | Video 45-60 s | **Hook:** överlagerbekännelse | Bryn-swipen bär i vårt konto. Originalets vinkel |
+| 2 | Enginecover_SO_25_H2 | Video 45-60 s | **Hook:** problem först | Igenkänning före pris kvalificerar bättre |
+| 3 | Enginecover_SO_25_H3 | Video 45-60 s | **Hook:** siffran först | Priset gör stoppjobbet utan förklaring |
+| 4 | Enginecover_SO_26_1 | Statisk | **Nedre tredjedel:** mekanik | Mekanik slår pris i samma yta |
+| 5 | Enginecover_SO_26_2 | Statisk | **Nedre tredjedel:** garanti | Riskavlastning slår pris |
+| 6 | Enginecover_SO_26_3 | Statisk | **Nedre tredjedel:** storlek | Passformsfrågan slår pris |
+| 7 | Enginecover_SO_26_4 | Statisk | **Nedre tredjedel:** tom | Kontrollen. Fotot bär mer utan bildtext |
+| 8 | Enginecover_SO_27_1 | Statisk | **Innehållsrik bild** | En skalbar statisk har mycket att titta på |
+| 9 | Enginecover_SO_27_2 | Statisk | **Avskalad bild** | En skalbar statisk avkodas på ett ögonblick |
+
+**Grindar vid launch:**
+- **Launcha i separat ABO-kampanj med lika dagsbudget per annons**, ca 100 kr per annons per dygn i
+  tre dygn. Fjärde gången i CBO:n ger samma svält som batch #2, #5 och #6.
+- **#1–#3 måste vara identiska från beat 2.** Samma tagning, samma klipp, samma overlays. Fyra
+  tidigare hooktester var kontaminerade.
+- **#4–#7 måste använda exakt samma fotografi som `SO_16_1`.** Bara nedre tredjedelen skiljer.
+- **#8 och #9 läses av först vid 2 000 kr** — frågan är skalbarhet, inte startvärde.
+- **Ingen dom under 300 kr och 3 köp. Ingen vinnare under 2 000 kr.**
+- Logga launchen: `node pipeline/quota.mjs log motorholjet <antal>`.
