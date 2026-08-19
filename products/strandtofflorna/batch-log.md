@@ -309,3 +309,28 @@ Priset verifierat i Shopify: **349 kr mot ordinarie 420 kr**, samtliga varianter
 
 **Strukturkrav:** max 2–3 annonser per ad set. Efter batch 6 är detta inte längre
 en rättvisefråga utan en riskfråga.
+
+---
+
+## 2026-08-19 (andra körningen samma dag) — ingen ny batch
+
+Datan hade inte rört sig sedan mätningen tidigare samma dag: noll nya köp,
+några kronor i spend, inga nya annonser launchade. Batch 8:s sex briefer låg
+oproducerade.
+
+**Ingen batch 9 skrevs.** En sjunde omgång briefer hade gett 11 oproducerade
+briefer på hög. `dna.md` säger uttryckligen att nästa `/cs` ska räkna produktion
+innan den skriver fler, och den regeln gäller även när det är jag själv som
+skrev den.
+
+**Levererat i stället:**
+
+1. **`PD_8_1` och `PD_13_16` pausade** enligt kill-regeln. PD_8_1 hade bränt
+   546 kr på noll köp sedan den rekommenderades pausad 9 augusti. PD_13_16 är
+   kontots enda annons med negativt vinstbidrag.
+2. **Relaunch-plan för sex färdiga creatives** som aldrig fått leverans, i två
+   ad sets om tre. Se `relaunch/RELAUNCH_2026-08-19.md`. Noll produktion krävs,
+   och de tar kvoten från −4 till +2 när de går live.
+3. **Upptäckt: `PD_13_17` i batch 8 duplicerar `PD_13_8`**, som redan är
+   producerad och fick 33 kr. Batch 8:s post 6 nedprioriteras till sist tills
+   `PD_13_8` fått en riktig chans. Sparar en fotografering om den faller.

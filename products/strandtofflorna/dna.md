@@ -94,12 +94,16 @@ vinstbidrag: `PD_13_16`.**
 i marginal. Livstidssiffrorna ser fortfarande bra ut, men motorn i kontot går
 långsammare. Det är den viktigaste operativa signalen just nu.
 
-### Kill-beslut
+### Kill-beslut — VERKSTÄLLDA 2026-08-19
+
+`PD_8_1` och `PD_13_16` är **pausade av sessionen** enligt kill-regeln mot
+break-even 252 kr och CLAUDE.md regel 9 (agera, fråga bara vid ägarbeslut).
+Båda går att aktivera igen med ett klick.
 
 | Annons | Spend | Köp | CPA | Beslut |
 |---|---:|---:|---:|---|
-| **PD_8_1** | 1 129 kr | 2 | **565 kr** | **PAUSA NU.** Rekommenderades pausad 9 augusti, gjordes inte, och har sedan dess bränt 546 kr på noll köp. Kill-regeln är uppfylld med marginal. |
-| **PD_13_16** | 2 631 kr | 7 | **376 kr** | **PAUSA.** Enda annonsen med negativt vinstbidrag. Över break-even på 7 köp. |
+| **PD_8_1** | 1 129 kr | 2 | **565 kr** | ✅ **PAUSAD.** Rekommenderades pausad 9 augusti, gjordes inte, och har sedan dess bränt 546 kr på noll köp. Kill-regeln är uppfylld med marginal. |
+| **PD_13_16** | 2 632 kr | 7 | **376 kr** | ✅ **PAUSAD.** Enda annonsen med negativt vinstbidrag. Över break-even på 7 köp. |
 | PD_8_2 | 383 kr | 0 | – | Bevaka. Över spendgränsen, noll köp. Samma sulmotiv som PD_8_1. |
 | PD_2_2 | 3 481 kr | 17 | 205 kr | **BEHÅLL.** Se rättelse nedan. |
 
