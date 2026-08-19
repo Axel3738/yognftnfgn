@@ -96,13 +96,20 @@ bilderna, inte gissat.
 `image_hash` — preview returnerar bara en iframe) och `PD_6_C1` (katalogannons). För de
 postbaserade finns ingen väg via API:et; de måste exporteras ur Ads Manager för hand.
 
-### 🔴 Faktakonflikt som bara ägaren kan avgöra: 337 kr eller 367 kr?
+### 🔴 `SO_5_1` visar fel jämförpris — avgjort 2026-08-19
 
-`SO_5_1` — kontots näst största vinstkälla — kör **`337 kr`** som överstruket jämförpris.
-`SO_8_1` kör **`367 kr`**. Alla briefer vi skrivit sedan 2 augusti säger 367 kr och listar varje
-annat tal som förbjudet. **Ett av talen är fel och jag kan inte avgöra vilket.** Butiken visar
-367 kr som jämförpris, men den vinnande annonsen har kört 337 sedan 4 augusti utan att någon
-reagerat. Se frågan i `backlog.md` (B20).
+`SO_5_1` kör **`337 kr`** som överstruket jämförpris. `SO_8_1` kör **`367 kr`**.
+**Ägaren bekräftade samma dag att 367 kr är rätt.** Prisregeln står alltså oförändrad: 299 kr mot
+367 kr, 19 % ner, inga andra tal.
+
+Det betyder att **kontots näst största vinstkälla har kört en felaktig jämförelse sedan 4 augusti**
+— 51 köp, 9 703 kr spend. Två saker följer av det:
+
+1. **Rör inte annonsen utan beslut.** En creative-ändring på en annons med 51 köp nollställer dess
+   inlärning. Att bygga om bilden med 367 kr och launcha den som en ny variant bredvid är det
+   säkrare draget. Se B20.
+2. **Fyndet om prisets storlek påverkas inte.** Det handlar om layout — hur stor siffran är och vad
+   som omger den — inte om vilket tal som står där.
 
 ### Vad bilderna faktiskt säger — tre mönster som ändrar strategin
 
