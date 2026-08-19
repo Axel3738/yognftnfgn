@@ -1,67 +1,63 @@
-# Ergoslippers_SP_4_H2 — production brief (video, 9:16 + 4:5)
+# Ergoslippers_SP_4_H2 — video brief
 
-**Product:** Tofflor Ergonomiska – Tjocksulade för Inne & Ute (Bäverbutiken). Unisex
-slippers, thick shock-absorbing sole, ORANGE wave-patterned insole visible through
-openings. Non-slip indoors/outdoors, quick-drying. Sizes 36–49. **Price 309 kr,
-compare-at 400 kr (save 91 kr), 30-day money-back, Klarna.**
+```
+== AT A GLANCE ==
+Ad name(s):      Ergoslippers_SP_4_H1 / _H2 / _H3  (THIS FILE = _H2)
+Format:          Video 9:16 (also export 4:5)
+Length:          ~15–18 seconds
+VOICEOVER:       NO — no voice at all. Text on screen + music only.
+TEXT ON SCREEN:  YES — captions word for word from the "Swedish (use this)" column.
+MUSIC:           Yes, calm background music (your choice).
+HOOKS:           3 versions of this ad. Same body — ONLY the first 3 seconds differ.
+YOUR JOB:        Pick clips from the source folder that match each line of the
+                 script. You choose the clips — there are no shot-by-shot
+                 instructions in this brief. If a clip you need is not in the
+                 folder, STOP and ask — never use AI to fill the gap.
+```
 
-## Concept & hypothesis
+Same body as Ergoslippers_SP_4_H1 (reuse the same clips from second 3 onward).
+Only the first 3 seconds are new: an old THIN, FLAT slipper on a hard floor —
+the "bad" slipper. Then cut to our product.
 
-Same body as `Ergoslippers_SP_4_H1` (raw home video, winner iteration). ONE variable
-changed: the hook is PAIN (tired feet in the evening — the landing page's own opening).
-**Hypothesis:** pain-recognition beats curiosity for this audience. The AI static
-`Tofflor_PD_2_1` ("ONDA FÖTTER? INTE LÄNGRE.") had the campaign's highest CTR (4.65 %)
-— this tests that signal properly in the winning format.
+## HOOKS — what each version tests (same body after second 3)
 
-## Keep / Change
-
-- KEEP: everything from SP_4_H1's body (shots 3–18 s identical — reuse the same footage).
-- CHANGE: first 3 seconds = a THIN, FLAT old slipper slapped down on a hard floor
-  (concrete/tile), then cut to our product.
-
-## Shot list (target 15–18 s)
-
-| Time | Shot | Direction |
+| Version | Tests | Hook lines |
 |---|---|---|
-| 0–3 s | A worn thin flat slipper dropped/slapped onto hard floor, phone close | The "villain" object. Any cheap flat slipper works. Sound of the slap if possible |
-| 3–7 s | Cut to our pair on the table (same footage as SP_4_H1) | |
-| 7–12 s | Side tilt showing sole thickness (same footage) | |
-| 12–15 s | Foot steps in, walks (same footage) | |
-| 15–18 s | END CARD (same as SP_4_H1) | |
+| H1 | Curiosity: open on the ORANGE insole up close | In file Ergoslippers_SP_4_H1 |
+| **H2 ← THIS FILE** | Pain: a thin flat slipper hitting a hard floor | See table below |
+| H3 | True social proof: sold more than we had in stock | In file Ergoslippers_SP_4_H3 |
 
-## Captions — burn in word-for-word
+## TEXT ON SCREEN — this is WRITTEN in the video (word for word)
 
-| Beat | Swedish (use this) | English meaning |
+White rounded box, black text, one line at a time, middle of the frame.
+
+| Part | Swedish (use this) | English meaning |
 |---|---|---|
-| HOOK (0–3s) | Tunn sula. Hård smäll på hälen. | Thin sole. A hard hit on the heel. |
+| HOOK (0–3 s) | Tunn sula. Hård smäll på hälen. | Thin sole. A hard hit on the heel. |
 | HOOK | Efter en dag hemma i tunna tofflor märker du det på kvällen. | After a day at home in thin slippers, you notice it by evening. |
-| PROBLEM | Tunna, platta tofflor gör jobbet mot dig. | Thin, flat slippers work against you. |
-| PROBLEM | Varje steg landar hårt på hälar och knän. | Every step lands hard on heels and knees. |
-| DEMO | Det här är tofflorna. Orange sula, vågformad, tar smällen. | These are the slippers. Orange sole, wave-shaped, takes the hit. |
-| PROOF | Halkfri inne och ute. Lätt och luftig. | Non-slip indoors and out. Light and airy. |
+| BODY | Trötta fötter efter en dag hemma? | Tired feet after a day at home? |
+| BODY | Då är det fel tofflor du haft på dig. | Then you've been wearing the wrong slippers. |
+| BODY | Det här är tofflorna. Tjock sula, hela vägen runt. | These are the slippers. Thick sole, all the way around. |
+| BODY | Halkfri inne och ute. Torkar snabbt. | Non-slip indoors and out. Dries fast. |
 
-## End card
+During the HOOK lines, show a thin flat slipper on a hard floor.
+During the BODY lines, show our slippers at home and on feet (same clips as H1).
 
-Same as `Ergoslippers_SP_4_H1`: Tofflor Ergonomiska – Tjocksulade · 309 kr ·
-~~400 kr~~ · 30 dagars öppet köp · Handla nu.
-
-## Meta ad fields
-
-- **Headline:** `Tunn sula. Hård smäll på hälen.`
-- **Primary text:**
+## END CARD (last 3 seconds)
 
 | Swedish (use this) | English meaning |
 |---|---|
-| Tunna, platta tofflor gör jobbet mot dig – varje steg landar hårt på hälar och knän. | Thin, flat slippers work against you – every step lands hard on heels and knees. |
-| Det märks inte direkt. Det märks på kvällen. | You don't notice it right away. You notice it by evening. |
-| 309 kr. 30 dagars öppet köp. Handla nu. | 309 SEK. 30-day money-back. Shop now. |
+| Tofflor Ergonomiska – Tjocksulade | Ergonomic Slippers – Thick-soled |
+| 309 kr | 309 SEK |
+| ~~400 kr~~ | ~~400 SEK~~ (struck through) |
+| 30 dagars öppet köp | 30-day money-back |
+| Handla nu | Shop now (button) |
 
-## Rules for this ad
+## DO NOT
 
-No medical claims beyond these exact lines. No AI humans. No packaging shots.
-Exports: 1080×1920 + 1080×1350.
-
-- **Production level:** A (one extra 3-second shot on top of SP_4_H1's footage)
-- **Primary KPI:** hook rate + CPA. Guardrail: pause if CPA > 216 kr after 500 kr spend.
-- **What we learn regardless of outcome:** pain vs curiosity as opening for this product,
-  cleanly isolated on identical bodies.
+- Do NOT show the shipping bag or any packaging in the first seconds.
+- Do NOT use AI people or AI clips. Real hands and feet only. No faces needed.
+- Do NOT change, translate or "improve" the Swedish lines.
+- Do NOT show any price except 309 kr and the struck-through 400 kr.
+- Do NOT let the English print on the shoe strap be readable in close-ups.
+- Do NOT add reviews, stars or "verified customer". No medical words.

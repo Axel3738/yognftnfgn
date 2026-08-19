@@ -29,10 +29,20 @@ står sig mot den verifierade break-even (216 kr, Axels COGS-besked 2026-08-19).
 
 ## Batch #2 — `/forsta-batch`-batchen (briefad 2026-08-19, ej launchad)
 
-14 briefer: `docs/briefs/tofflor-ergonomiska-batch2/`. Copy skriven av sonnet-subagent
+16 briefer: `docs/briefs/tofflor-ergonomiska-batch2/`. Copy skriven av sonnet-subagent
 mot `docs/copy-regler.md`. Struktur vid launch: **separat test-ABO**, 2–3 annonser per
-adset, lika budget. Kvoten (proxy-target 131 kr): 5 creatives/3-dagarscykel — batchen
+adset, lika budget. Kvoten (target 119 kr): 6 creatives/3-dagarscykel — batchen
 täcker ~3 cykler.
+
+**Omgjord 2026-08-19 enligt nya `docs/os/BRIEF-FORMAT.md`** (grenen
+`claude/sop-new-product-tdwhjk`): AT A GLANCE-ruta, VOICEOVER: NO på alla videor,
+inga shot lists, ingen primärtext i briefer (flyttad till `primary-text.md` +
+headlines), 2–3 hooks per videokoncept. Två annonser tillkom för att uppfylla
+hook-regeln: **Ergoslippers_PD_4_H2** (skepsis-hook på demo-bodyn) och
+**Ergoslippers_SO_1_H2** (konsekvens-hook på lagerstoryn). SP_6_H2 gjordes om från
+egen vinkel-body till äkta hook-swap på SP_6:s gemensamma body.
+Briefer i Drive: mappen "Tofflor Ergonomiska – Batch 2 briefs"
+(1qcT65MhgJaazdBRORa3ffy3XN8jDddjS), en fil per annons, länkade från Notion-items.
 
 | Annons | Format | Hypotes (isolerad variabel) |
 |---|---|---|
@@ -40,9 +50,11 @@ täcker ~3 cykler.
 | Ergoslippers_SP_4_H2 | Video (rå UGC) | Pain-hook (trötta fötter) vs nyfikenhet — hook isolerad |
 | Ergoslippers_SP_4_H3 | Video (rå UGC) | Sann social proof-hook (översålt lager) — hook isolerad |
 | Ergoslippers_SP_6_H1 | Video (polerad) | Omklippt SP_1: innersulan trycks ihop i sek 1 — räddar polerat footage |
-| Ergoslippers_SP_6_H2 | Video (polerad) | Trygga steg/halkfritt-vinkel på samma footage — angle isolerad |
+| Ergoslippers_SP_6_H2 | Video (polerad) | Golv/halkfritt-hook på samma body som SP_6_H1 — hook isolerad |
 | Ergoslippers_PD_4_H1 | Video (demo) | Mekanism-demo "gå på moln"-testet (tryck → kliv i → gå ut) |
+| Ergoslippers_PD_4_H2 | Video (demo) | Skepsis-hook ("Trodde inte på det…") på PD_4-bodyn — hook isolerad |
 | Ergoslippers_SO_1_H1 | Video (story) | Rak lagerberättelse: 28 ordrar v.1, översålt, nu påfyllt |
+| Ergoslippers_SO_1_H2 | Video (story) | Konsekvens-hook ("Lagret tog slut…") på SO_1-bodyn — hook isolerad |
 | Ergoslippers_SP_5_1 | Statisk | Vinnarens stillbild + komfortpåstående + garanti (format-transfer) |
 | Ergoslippers_PD_7_1 | Statisk | Orange sulan rakt mot kameran (sula-mot-kamera, bevisat mönster strandtofflorna #8) |
 | Ergoslippers_PD_8_1 | Statisk | Jämförelse tunn platt vs tjock stötdämpande |

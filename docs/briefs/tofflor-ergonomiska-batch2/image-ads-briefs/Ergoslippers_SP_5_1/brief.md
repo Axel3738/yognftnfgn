@@ -1,20 +1,33 @@
-# Ergoslippers_SP_5_1 — design brief (static, 1:1 + 4:5)
+# Ergoslippers_SP_5_1 — image brief
 
-**Product:** Tofflor Ergonomiska – Tjocksulade för Inne & Ute (Bäverbutiken). Unisex
-slippers, thick shock-absorbing sole, ORANGE wave insole visible through openings.
-Sizes 36–49. **Price 309 kr, compare-at 400 kr (save 91 kr), 30-day money-back, Klarna.**
+## WHAT THIS AD IS
 
-## Concept & hypothesis
+A calm photo of the slippers on a living-room table (a real still frame from our
+winning video), with one big claim on top and the guarantee at the bottom.
+It sells comfort with realism — no studio, no AI, no hype.
 
-Format-transfer of the campaign's winning VIDEO (`Tofflor_SP_2`, 15 purchases, CPA 167 kr)
-into a static. Base image: a REAL still frame from the raw home video — the pair on the
+```
+== AT A GLANCE ==
+Ad name(s):      Ergoslippers_SP_5_1
+Format:          Static image 1:1 + 1080x1350
+VOICEOVER:       NO — this is a still image.
+TEXT ON IMAGE:   YES — word for word from the "Swedish (use this)" column below.
+HOOKS:           None — image ads never test hooks. This is variant _1.
+YOUR JOB:        Build the layout below from a REAL still frame of the raw home
+                 video (the pair on the coffee table, orange insole visible).
+```
+
+## Concept (for the pipeline/AI)
+
+Format-transfer of the winning VIDEO `Tofflor_SP_2` (15 purchases, CPA 167 kr)
+into a static. Base image: a REAL frame from the raw home video — pair on the
 coffee table, price tag on, warm home light. NOT an AI room, NOT a studio render.
-**Hypothesis:** the winner's "friend's find" realism carries into statics and fixes the
-batch #1 problem where statics never got delivery.
+Hypothesis: the winner's "friend's find" realism carries into statics and fixes
+the batch #1 problem where statics never got delivery.
 
-⚠️ The earlier static `Tofflor_SP_2_1` (ad ID 120249742829060291) is on the DO_NOT_REUSE
-list — it contained a fabricated review. This brief replaces the fake proof with the
-guarantee. Do not copy anything text-wise from that ad.
+⚠️ The earlier static `Tofflor_SP_2_1` (ad ID 120249742829060291) is DO_NOT_REUSE —
+it contained a fabricated review. This brief replaces the fake proof with the
+guarantee. Copy nothing from that ad.
 
 ## Layout
 
@@ -25,33 +38,19 @@ guarantee. Do not copy anything text-wise from that ad.
 | Under image | Badge line |
 | Bottom | Footer + CTA button |
 
-## Text — word-for-word
+## TEXT ON IMAGE — word for word
 
 | Element | Swedish (use this) | English meaning |
 |---|---|---|
-| HOOK headline | Sulan tar smällen. Inte hälen. | The sole takes the hit. Not the heel. |
+| Headline | Sulan tar smällen. Inte hälen. | The sole takes the hit. Not the heel. |
 | Badge | Tjock, stötdämpande sula | Thick, shock-absorbing sole |
 | Footer | 30 dagars öppet köp | 30-day open purchase |
 | CTA button | Handla nu | Shop now |
 
-## Meta ad fields
+## DO NOT
 
-- **Headline:** `Sulan tar smällen. Inte hälen.`
-- **Primary text:**
-
-| Swedish (use this) | English meaning |
-|---|---|
-| Det här är tofflorna som fick fler beställningar än vi hade hemma. | These are the slippers that got more orders than we had in stock. |
-| Tjock sula, halkfri inne och ute. | Thick sole, non-slip indoors and out. |
-| 309 kr. 30 dagars öppet köp. Handla nu. | 309 SEK. 30-day money-back. Shop now. |
-
-## Rules for this ad
-
-Real photo/frame only — no AI scene. No stars, no review quotes, no "verified customer".
-Keep the shoe's garbled English print unreadable (angle/crop/retouch).
-Exports: 1080×1080 + 1080×1350.
-
-- **Production level:** C (design, ~30 min once the still exists)
-- **Primary KPI:** delivery first (batch #1 statics got no spend), then CPA. Guardrail: pause if CPA > 216 kr after 500 kr.
-- **What we learn regardless of outcome:** whether winner-realism transfers to statics —
-  decides the static style for batch #3.
+- No AI scene — real photo/frame only.
+- No stars, no review quotes, no "verified customer".
+- Only these numbers anywhere: 309 kr / 400 kr / save 91 kr. No percentages, no codes.
+- Keep the shoe's garbled English print unreadable (angle/crop/retouch).
+- No diagnoses or medical promises.

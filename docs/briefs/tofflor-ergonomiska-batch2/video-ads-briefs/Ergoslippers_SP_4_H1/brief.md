@@ -1,47 +1,48 @@
-# Ergoslippers_SP_4_H1 — production brief (video, 9:16 + 4:5)
+# Ergoslippers_SP_4_H1 — video brief
 
-**Product:** Tofflor Ergonomiska – Tjocksulade för Inne & Ute (Bäverbutiken). Unisex
-slippers, thick shock-absorbing sole, ORANGE wave-patterned insole visible through
-openings in the shoe. Non-slip indoors/outdoors, quick-drying. Sizes 36–49. Colors:
-Black/Orange (hero), White/Green. **Price 309 kr, compare-at 400 kr (save 91 kr),
-30-day money-back, Klarna.** Landing page: baverbutiken.se/products/tofflor-ergonomiska-tjocksulade-for-inne-ute
+```
+== AT A GLANCE ==
+Ad name(s):      Ergoslippers_SP_4_H1 / _H2 / _H3  (THIS FILE = _H1)
+Format:          Video 9:16 (also export 4:5)
+Length:          ~15–18 seconds
+VOICEOVER:       NO — no voice at all. Text on screen + music only.
+TEXT ON SCREEN:  YES — captions word for word from the "Swedish (use this)" column.
+MUSIC:           Yes, calm background music (your choice).
+HOOKS:           3 versions of this ad. Same body — ONLY the first 3 seconds differ.
+YOUR JOB:        Pick clips from the source folder that match each line of the
+                 script. You choose the clips — there are no shot-by-shot
+                 instructions in this brief. If a clip you need is not in the
+                 folder, STOP and ask — never use AI to fill the gap.
+```
 
-## Concept & hypothesis
+The style to copy: our winning ad looks like a friend filming their new slippers
+at home with a phone. Real table, real light, price tag still on. Keep that feeling.
 
-Iteration of the campaign winner `Tofflor_SP_2` (15 purchases, CPA 167 kr): same raw
-"friend shows you their find" home video body, ONE variable changed — the hook.
-**Hypothesis:** opening on an extreme close-up of the orange wave insole (the product's
-most eye-catching detail) beats the winner's "Det här är tofflorna" table-shot opening.
-Hook is the isolated variable; H1/H2/H3 share the same body.
+## HOOKS — what each version tests (same body after second 3)
 
-## Keep / Change
-
-- KEEP: raw phone footage, real home, slippers on a living-room table, price tag still
-  on, white caption box style, no voiceover, no music requirement.
-- CHANGE: first 3 seconds only — macro on the orange insole.
-
-## Shot list (target 15–18 s total)
-
-| Time | Shot | Direction |
+| Version | Tests | Hook lines |
 |---|---|---|
-| 0–3 s | MACRO: orange wave insole fills the frame, phone slowly pulls back | Real light, slight handshake OK. The orange waves must be unmistakable in frame 1 |
-| 3–7 s | Slippers pair on a coffee table / kitchen table, price tag visible | Same energy as winner ad `Tofflor_SP_2` (ad ID 120249742822260291) |
-| 7–12 s | Hand picks one up, tilts it to show sole thickness from the side | Keep the garbled English print on the strap OUT of readable focus |
-| 12–15 s | Foot steps in, a few steps on wood floor | Bare hands/feet only, no faces needed |
-| 15–18 s | END CARD | See end-card table |
+| **H1 ← THIS FILE** | Curiosity: open on the ORANGE insole up close | See table below |
+| H2 | Pain: a thin flat slipper hitting a hard floor | In file Ergoslippers_SP_4_H2 |
+| H3 | True social proof: sold more than we had in stock | In file Ergoslippers_SP_4_H3 |
 
-## Captions — burn in word-for-word (white rounded box, black text, one line at a time)
+## TEXT ON SCREEN — this is WRITTEN in the video (word for word)
 
-| Beat | Swedish (use this) | English meaning |
+White rounded box, black text, one line at a time, middle of the frame.
+
+| Part | Swedish (use this) | English meaning |
 |---|---|---|
-| HOOK (0–3s) | Så här ser sulan ut inifrån. | This is what the sole looks like inside. |
+| HOOK (0–3 s) | Så här ser sulan ut inifrån. | This is what the sole looks like inside. |
 | HOOK | Orange, vågformad, synlig genom öppningarna. | Orange, wave-shaped, visible through the openings. |
-| PROBLEM | Trötta fötter efter en dag hemma? | Tired feet after a day at home? |
-| PROBLEM | Då är det fel tofflor du haft på dig. | Then you've been wearing the wrong slippers. |
-| DEMO | Det här är tofflorna. Tjock sula, hela vägen runt. | These are the slippers. Thick sole, all the way around. |
-| PROOF | Halkfri inne och ute. Torkar snabbt. | Non-slip indoors and out. Dries fast. |
+| BODY | Trötta fötter efter en dag hemma? | Tired feet after a day at home? |
+| BODY | Då är det fel tofflor du haft på dig. | Then you've been wearing the wrong slippers. |
+| BODY | Det här är tofflorna. Tjock sula, hela vägen runt. | These are the slippers. Thick sole, all the way around. |
+| BODY | Halkfri inne och ute. Torkar snabbt. | Non-slip indoors and out. Dries fast. |
 
-## End card
+During the HOOK lines, the orange insole must fill the screen.
+During the BODY lines, show the slippers at home and on feet.
+
+## END CARD (last 3 seconds)
 
 | Swedish (use this) | English meaning |
 |---|---|
@@ -51,22 +52,11 @@ Hook is the isolated variable; H1/H2/H3 share the same body.
 | 30 dagars öppet köp | 30-day money-back |
 | Handla nu | Shop now (button) |
 
-## Meta ad fields
+## DO NOT
 
-- **Headline:** `Sulan gör jobbet, inte hälen.`
-- **Primary text (3 lines):**
-
-| Swedish (use this) | English meaning |
-|---|---|
-| Orange sula, vågformad, synlig genom öppningarna – det är skillnaden. | Orange sole, wave-shaped, visible through the openings – that's the difference. |
-| Halkfri inne och ute. Torkar snabbt. | Non-slip indoors and out. Dries fast. |
-| 309 kr (spara 91 kr). 30 dagars öppet köp. Handla nu. | 309 SEK (save 91 SEK). 30-day money-back. Shop now. |
-
-## Rules for this ad
-
-Sound-off first (captions carry it). No AI humans. No packaging in the first shot.
-Exports: 1080×1920 and 1080×1350. Captions inside middle 80 % of frame.
-
-- **Production level:** A (new raw phone footage, ~30 min shoot)
-- **Primary KPI:** hook rate + CPA vs benchmark SP_2 (167 kr). Guardrail: pause if CPA > 216 kr after 500 kr spend.
-- **What we learn regardless of outcome:** whether the insole macro or the table reveal is the stronger opening for this product — feeds every future hook.
+- Do NOT show the shipping bag or any packaging in the first seconds.
+- Do NOT use AI people or AI clips. Real hands and feet only. No faces needed.
+- Do NOT change, translate or "improve" the Swedish lines.
+- Do NOT show any price except 309 kr and the struck-through 400 kr.
+- Do NOT let the English print on the shoe strap be readable in close-ups.
+- Do NOT add reviews, stars or "verified customer".

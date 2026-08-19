@@ -1,55 +1,52 @@
-# Ergoslippers_PD_8_1 — design brief (static, 1:1 + 4:5)
+# Ergoslippers_PD_8_1 — image brief
 
-**Product:** Tofflor Ergonomiska – Tjocksulade för Inne & Ute (Bäverbutiken). Unisex
-slippers, thick shock-absorbing sole, ORANGE wave insole. Sizes 36–49. **Price 309 kr,
-compare-at 400 kr (save 91 kr), 30-day money-back, Klarna.**
+## WHAT THIS AD IS
 
-## Concept & hypothesis
+A split image: a thin flat slipper on the left, our thick-soled slipper on the
+right, both from the side so the thickness difference is obvious at a glance.
+One headline asks the viewer to choose.
 
-COMPARISON split: thin flat slipper (left) vs our thick shock-absorbing slipper (right),
-both photographed from the side so sole thickness is the obvious difference.
-**Hypothesis:** the side-profile thickness difference sells the mechanism in one glance
-— the pain copy that earned the campaign's highest CTR (`ONDA FÖTTER?`, 4.65 %) works
-even better when the CAUSE is visible.
+```
+== AT A GLANCE ==
+Ad name(s):      Ergoslippers_PD_8_1
+Format:          Static image 1:1 + 1080x1350
+VOICEOVER:       NO — this is a still image.
+TEXT ON IMAGE:   YES — word for word from the "Swedish (use this)" column below.
+HOOKS:           None — image ads never test hooks. This is variant _1.
+YOUR JOB:        Two real side-profile photos (thin generic slipper vs ours),
+                 same scale and angle, then the text layout below.
+```
+
+## Concept (for the pipeline/AI)
+
+COMPARISON split. Hypothesis: the side-profile thickness difference sells the
+mechanism in one glance — the pain territory that earned the campaign's highest
+CTR (`ONDA FÖTTER?`, 4.65 %) works even better when the CAUSE is visible.
 
 ## Layout
 
 | Zone | Content |
 |---|---|
 | Top | HOOK headline across full width |
-| Left half | Real photo: a generic thin, flat slipper in side profile (no brand visible) + its label line |
-| Right half | Our slipper in side profile, orange insole visible + its label line |
+| Left half | Real photo: generic thin flat slipper, side profile (no brand visible) + its label line |
+| Right half | Our slipper, side profile, orange insole visible + its label line |
 | Bottom | Footer + CTA button |
 
-Use real photos for both sides. A neutral hard floor as common background. No AI scenes.
+Neutral hard floor as common background. No AI scenes.
 
-## Text — word-for-word
+## TEXT ON IMAGE — word for word
 
 | Element | Swedish (use this) | English meaning |
 |---|---|---|
-| HOOK headline | Platt sula. Tjock sula. Välj själv. | Flat sole. Thick sole. You decide. |
-| Left label (thin) | Tunn. Platt. Ingen dämpning. | Thin. Flat. No cushioning. |
-| Right label (ours) | Tjock. Vågformad. Stötdämpande. | Thick. Wave-shaped. Shock-absorbing. |
+| Headline | Platt sula. Tjock sula. Välj själv. | Flat sole. Thick sole. You decide. |
+| Left label | Tunn. Platt. Ingen dämpning. | Thin. Flat. No cushioning. |
+| Right label | Tjock. Vågformad. Stötdämpande. | Thick. Wave-shaped. Shock-absorbing. |
 | Footer | 309 kr. Spara 91 kr mot 400 kr. | 309 SEK. Save 91 SEK versus 400 SEK. |
 | CTA button | Byt sula | Switch soles |
 
-## Meta ad fields
+## DO NOT
 
-- **Headline:** `Platt sula. Tjock sula. Välj själv.`
-- **Primary text:**
-
-| Swedish (use this) | English meaning |
-|---|---|
-| Tunna, platta tofflor gör jobbet mot dig – varje steg landar hårt. | Thin, flat slippers work against you – every step lands hard. |
-| Vår sula är tjock och stötdämpande, med orange vågmönster som tar smällen. | Our sole is thick and shock-absorbing, with an orange wave pattern that takes the hit. |
-| 309 kr. 30 dagars öppet köp. Handla nu. | 309 SEK. 30-day money-back. Shop now. |
-
-## Rules for this ad
-
-Never show a competitor's logo on the thin slipper. Both photos same scale, same angle
-— the comparison must be honest. Exports: 1080×1080 + 1080×1350.
-
-- **Production level:** C (design + one photo of a cheap flat slipper)
-- **Primary KPI:** CTR + purchase-per-click. Guardrail: pause if CPA > 216 kr after 500 kr.
-- **What we learn regardless of outcome:** whether visual comparison is a repeatable
-  format for this product (it was never delivered in batch #1).
+- Never show a competitor's logo on the thin slipper.
+- Both photos same scale, same angle — the comparison must be honest.
+- Only these numbers: 309 / 400 / 91. No percentages, no codes, no timers.
+- No AI scenes, no reviews, no diagnoses.

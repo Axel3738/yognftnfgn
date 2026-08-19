@@ -1,52 +1,51 @@
-# Ergoslippers_SO_2_1 — design brief (static, 1:1 + 4:5)
+# Ergoslippers_SO_2_1 — image brief
 
-**Product:** Tofflor Ergonomiska – Tjocksulade för Inne & Ute (Bäverbutiken). Unisex
-slippers, thick shock-absorbing sole, ORANGE wave insole. Sizes 36–49. **Price 309 kr,
-compare-at 400 kr (save 91 kr), 30-day money-back, Klarna.**
+## WHAT THIS AD IS
 
-## Concept & hypothesis
+A product photo with one honest fact as the headline: more pairs were ordered
+than we had in stock in week one. A "Nu påfyllt" badge shows it's back.
+No reviews, no stars — the stock fact is the whole proof.
 
-TRUE-SOCIAL-PROOF static. This replaces the classic "testimonial card" — the product has
-NO verified reviews yet, so a review quote is a BLOCKER (see DO_NOT_REUSE:
-`Tofflor_SP_2_1` used a fabricated one). The proof here is the verifiable stock fact:
-**more pairs ordered than were in stock in week one (28 orders).**
-**Hypothesis:** an honest sold-out fact carries the same trust job as a testimonial.
+```
+== AT A GLANCE ==
+Ad name(s):      Ergoslippers_SO_2_1
+Format:          Static image 1:1 + 1080x1350
+VOICEOVER:       NO — this is a still image.
+TEXT ON IMAGE:   YES — word for word from the "Swedish (use this)" column below.
+HOOKS:           None — image ads never test hooks. This is variant _1.
+YOUR JOB:        Use the hero product photo (see reference-assets) and build
+                 the layout below.
+```
+
+## Concept (for the pipeline/AI)
+
+TRUE-SOCIAL-PROOF static — replaces the testimonial card because the product has
+NO verified reviews yet (a review quote is a BLOCKER; `Tofflor_SP_2_1` is
+DO_NOT_REUSE for exactly that). The proof is the verifiable stock fact:
+28 orders week one, oversold, restocked. Hypothesis: an honest sold-out fact
+carries the same trust job as a testimonial.
 
 ## Layout
 
 | Zone | Content |
 |---|---|
 | Top | HOOK headline (biggest text) |
-| Middle | Real product photo — the pair, orange insole visible (use `reference-assets` hero image) |
-| Corner over image | Badge chip "Nu påfyllt" |
+| Middle | Real product photo — the pair, orange insole visible (reference-assets hero image) |
+| Corner over image | Badge chip |
 | Bottom | Footer + CTA button |
 
-## Text — word-for-word
+## TEXT ON IMAGE — word for word
 
 | Element | Swedish (use this) | English meaning |
 |---|---|---|
-| HOOK headline | Fler par beställda än vi hade hemma. | More pairs ordered than we had in stock. |
+| Headline | Fler par beställda än vi hade hemma. | More pairs ordered than we had in stock. |
 | Badge | Nu påfyllt | Now restocked |
 | Footer | 309 kr (spara 91 kr mot 400 kr) | 309 SEK (save 91 SEK versus 400 SEK) |
 | CTA button | Handla nu | Shop now |
 
-## Meta ad fields
+## DO NOT
 
-- **Headline:** `Fler par beställda än vi hade hemma.`
-- **Primary text:**
-
-| Swedish (use this) | English meaning |
-|---|---|
-| Första veckan beställdes fler par än vi hade i lager. | In the first week, more pairs were ordered than we had in stock. |
-| 28 beställningar. Nu är det påfyllt. | 28 orders. Now it's restocked. |
-| 309 kr. 30 dagars öppet köp. Handla nu. | 309 SEK. 30-day money-back. Shop now. |
-
-## Rules for this ad
-
-NO stars, NO quotes, NO "verified customer", NO countdowns. The stock fact exactly as
-written is the only proof. Exports: 1080×1080 + 1080×1350.
-
-- **Production level:** C (design only, uses existing product photo)
-- **Primary KPI:** purchase-per-click (trust job). Guardrail: pause if CPA > 216 kr after 500 kr.
-- **What we learn regardless of outcome:** whether honest proof converts before reviews
-  exist — sets the template until real testimonials arrive.
+- NO stars, NO quotes, NO "verified customer", NO countdowns.
+- The stock fact exactly as written is the only proof.
+- Only these numbers: 309 / 400 / 91 (+ the true fact "28"). No percentages, no codes.
+- No AI scenes, no diagnoses.

@@ -1,63 +1,63 @@
-# Ergoslippers_PD_4_H1 — production brief (video, 9:16 + 4:5)
+# Ergoslippers_PD_4_H1 — video brief
 
-**Product:** Tofflor Ergonomiska – Tjocksulade för Inne & Ute (Bäverbutiken). Unisex
-slippers, thick shock-absorbing sole, ORANGE wave insole. Non-slip in/out, quick-drying.
-Sizes 36–49. **Price 309 kr, compare-at 400 kr (save 91 kr), 30-day money-back, Klarna.**
+```
+== AT A GLANCE ==
+Ad name(s):      Ergoslippers_PD_4_H1 / _H2  (THIS FILE = _H1)
+Format:          Video 9:16 (also export 4:5)
+Length:          ~15–20 seconds
+VOICEOVER:       NO — no voice at all. Text on screen + music only.
+TEXT ON SCREEN:  YES — captions word for word from the "Swedish (use this)" column.
+MUSIC:           Yes, calm background music (your choice).
+HOOKS:           2 versions of this ad. Same body — ONLY the first 3 seconds differ.
+YOUR JOB:        Pick clips from the source folder that match each line of the
+                 script. You choose the clips — there are no shot-by-shot
+                 instructions in this brief. If a clip you need is not in the
+                 folder, STOP and ask — never use AI to fill the gap.
+```
 
-## Concept & hypothesis
+This ad is a simple test on camera: we say the slippers feel like walking on
+clouds — then we show it. Hand presses the sole, foot steps in, walking inside
+and outside.
 
-New concept (FAS 8 #1): MECHANISM DEMO. The landing page's promise is "som att gå på
-moln" (like walking on clouds) — this video puts the claim to the test on camera:
-press the sole → step in → wood floor → out to the deck. Pure HOOK → DEMO → CTA
-structure. **Hypothesis:** for a product whose entire value is tactile, showing the
-mechanism beats talking about it. Source: LP promise + the account pattern that
-demo-driven attention wins (SP_3 "Titta vad som händer" had the highest CTR among
-spenders, 2.59 %).
+## HOOKS — what each version tests (same body after second 3)
 
-## Shot list (target 15–20 s) — NEW raw phone footage, real home
-
-| Time | Shot | Direction |
+| Version | Tests | Hook lines |
 |---|---|---|
-| 0–3 s | Hand presses deep into the orange insole, it springs back — macro | This IS the hook. Real light, no studio |
-| 3–6 s | Foot steps into the slipper, weight lands | Film from floor level |
-| 6–10 s | Walking on wood floor, camera follows the feet | Steady, slow steps |
-| 10–14 s | Steps out onto a deck/patio (outdoor surface) | Shows "inne & ute" in one continuous story |
-| 14–16 s | Sole close-up outdoors (grip pattern) | |
-| 16–20 s | END CARD | |
+| **H1 ← THIS FILE** | The claim: "like walking on clouds — see for yourself" | See table below |
+| H2 | Doubt: "didn't believe it until the thumb pressed the sole" | In file Ergoslippers_PD_4_H2 |
 
-## Captions — burn in word-for-word
+## TEXT ON SCREEN — this is WRITTEN in the video (word for word)
 
-| Beat | Swedish (use this) | English meaning |
+White rounded box, black text, one line at a time, middle of the frame.
+
+| Part | Swedish (use this) | English meaning |
 |---|---|---|
-| HOOK (0–3s) | Som att gå på moln, säger vi. Se efter själv. | We say it's like walking on clouds. See for yourself. |
-| DEMO | Handen trycker i sulan. | The hand presses into the sole. |
-| DEMO | Foten kliver i. | The foot steps in. |
-| DEMO | In på trägolvet. | Onto the wood floor. |
-| DEMO | Ut på altanen. | Out onto the deck. |
-| PROOF | Halkfri inne och ute. Torkar snabbt. | Non-slip indoors and out. Dries fast. |
-| CTA-lead | Tjock, stötdämpande sula – 309 kr. | Thick, shock-absorbing sole – 309 SEK. |
+| HOOK (0–3 s) | Som att gå på moln, säger vi. Se efter själv. | We say it's like walking on clouds. See for yourself. |
+| BODY | Handen trycker i sulan. | The hand presses into the sole. |
+| BODY | Foten kliver i. | The foot steps in. |
+| BODY | In på trägolvet. | Onto the wood floor. |
+| BODY | Ut på altanen. | Out onto the deck. |
+| BODY | Halkfri inne och ute. Torkar snabbt. | Non-slip indoors and out. Dries fast. |
+| BODY (last) | Tjock, stötdämpande sula – 309 kr. | Thick, shock-absorbing sole – 309 SEK. |
 
-## End card
+Each caption line describes what should be on screen at that moment — match the
+clip to the line.
 
-Tofflor Ergonomiska – Tjocksulade · 309 kr · ~~400 kr~~ · 30 dagars öppet köp · Handla nu.
-
-## Meta ad fields
-
-- **Headline:** `Som att gå på moln – vi testar det.`
-- **Primary text:**
+## END CARD (last 3 seconds)
 
 | Swedish (use this) | English meaning |
 |---|---|
-| "Som att gå på moln" – vi testar påståendet, sula för sula. | "Like walking on clouds" – we put the claim to the test, sole by sole. |
-| Trägolv, altan, gårdsplan: halkfri och stötdämpande hela vägen. | Wood floor, deck, yard: non-slip and shock-absorbing all the way. |
-| 309 kr. 30 dagars öppet köp. Handla nu. | 309 SEK. 30-day money-back. Shop now. |
+| Tofflor Ergonomiska – Tjocksulade | Ergonomic Slippers – Thick-soled |
+| 309 kr | 309 SEK |
+| ~~400 kr~~ | ~~400 SEK~~ (struck through) |
+| 30 dagars öppet köp | 30-day money-back |
+| Handla nu | Shop now (button) |
 
-## Rules for this ad
+## DO NOT
 
-Bare hands and feet only, no faces required, no AI humans. Product visible from frame 1.
-Exports: 1080×1920 + 1080×1350.
-
-- **Production level:** A (new raw footage, one location, ~30 min)
-- **Primary KPI:** hold rate at p50 (target > 14.9 % = winner's level). Guardrail: pause if CPA > 216 kr after 500 kr.
-- **What we learn regardless of outcome:** whether a pure mechanism demo can carry a cold
-  audience for this product — decides the demo-vs-story mix in batch #3.
+- Do NOT show packaging in the first seconds — the product from frame 1.
+- Do NOT use AI people or AI clips. Real hands and feet only. No faces needed.
+- Do NOT change, translate or "improve" the Swedish lines.
+- Do NOT show any price except 309 kr and the struck-through 400 kr.
+- Do NOT let the English print on the shoe strap be readable in close-ups.
+- Do NOT add reviews, stars or "verified customer".

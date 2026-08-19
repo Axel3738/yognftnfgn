@@ -1,65 +1,61 @@
-# Ergoslippers_SP_6_H1 — production brief (video re-cut, 9:16 + 4:5)
+# Ergoslippers_SP_6_H1 — video brief
 
-**Product:** Tofflor Ergonomiska – Tjocksulade för Inne & Ute (Bäverbutiken). Unisex
-slippers, thick shock-absorbing sole, ORANGE wave insole. Non-slip in/out, quick-drying.
-Sizes 36–49. **Price 309 kr, compare-at 400 kr (save 91 kr), 30-day money-back, Klarna.**
+```
+== AT A GLANCE ==
+Ad name(s):      Ergoslippers_SP_6_H1 / _H2  (THIS FILE = _H1)
+Format:          Video 9:16 (also export 4:5)
+Length:          ~14–18 seconds
+VOICEOVER:       NO — no voice at all. Text on screen + music only.
+TEXT ON SCREEN:  YES — captions word for word from the "Swedish (use this)" column.
+MUSIC:           Yes, calm background music (your choice).
+HOOKS:           2 versions of this ad. Same body — ONLY the first 3 seconds differ.
+YOUR JOB:        This is a RE-CUT. Use ONLY the existing footage from ad
+                 "Tofflor_SP_1" (ask Axel for the source file if you don't
+                 have it). Pick the clips that match each line. No new filming,
+                 no AI.
+```
 
-## Concept & hypothesis
+Why this ad exists: the original video works but starts weak. Your job is the
+same video with a stronger start and new captions.
 
-RE-CUT of existing ad `Tofflor_SP_1` (ad ID 120249742819870291 — polished supplier
-b-roll; 8 purchases, CPA 199 kr, but hold 11.7 % vs the winner's 14.9 %).
-**Hypothesis:** the footage is fine, the OPENING is weak (it opens on a product detail
-without context). Re-cutting so the first 3 s show the insole being pressed by a thumb
-(springs back) fixes the attention problem without new production.
-Source file: the supplier footage used in `Tofflor_SP_1` — ask Axel if you don't have it.
+## HOOKS — what each version tests (same body after second 3)
 
-## Keep / Change
-
-- KEEP: all existing footage, polish, pacing after second 3.
-- CHANGE: re-order only. Open on the insole-compression macro (it exists in the supplier
-  footage — the segment where a thumb/hand presses the orange insole). New captions.
-
-## Edit list (target 14–18 s)
-
-| Time | Shot (from existing footage) | Direction |
+| Version | Tests | Hook lines |
 |---|---|---|
-| 0–3 s | Thumb presses orange insole, it springs back | The single most tactile moment — must be first |
-| 3–7 s | Sole/side profile macro | Keep the garbled English print out of readable focus |
-| 7–12 s | Slipper worn, walking shots | |
-| 12–14 s | Insole through the openings, top view | |
-| 14–18 s | END CARD | |
+| **H1 ← THIS FILE** | The squeeze: thumb presses the insole, it springs back | See table below |
+| H2 | Floors: non-slip on tile, wood, concrete | In file Ergoslippers_SP_6_H2 |
 
-## Captions — burn in word-for-word
+## TEXT ON SCREEN — this is WRITTEN in the video (word for word)
 
-| Beat | Swedish (use this) | English meaning |
+White rounded box, black text, one line at a time, middle of the frame.
+
+| Part | Swedish (use this) | English meaning |
 |---|---|---|
-| HOOK (0–3s) | Tummen trycker. Sulan fjädrar tillbaka. | The thumb presses. The sole springs back. |
+| HOOK (0–3 s) | Tummen trycker. Sulan fjädrar tillbaka. | The thumb presses. The sole springs back. |
 | HOOK | Så mjuk är den – rakt igenom. | That's how soft it is – all the way through. |
-| PROBLEM | Tunna sulor skickar smällen rakt upp i hälen. | Thin soles send the impact straight up into the heel. |
-| DEMO | Här tar sulan smällen istället. Inte hälen. | Here the sole takes the hit instead. Not the heel. |
-| DEMO | Tjock, stötdämpande, orange innersula. | Thick, shock-absorbing, orange insole. |
-| PROOF | Halkfri inne och ute. Torkar snabbt. | Non-slip indoors and out. Dries fast. |
+| BODY | Tjock sula. Vågformad innersula i orange. | Thick sole. Orange wave-shaped insole. |
+| BODY | Den tar smällen – inte hälen. | It absorbs the impact — not the heel. |
+| BODY | Halkfri på kakel, trägolv och betong. | Non-slip on tile, wood floors and concrete. |
+| BODY | Blir sulan blöt torkar den snabbt igen. | If the sole gets wet, it dries fast again. |
+| BODY (last) | Testa själv. 30 dagars öppet köp – pengarna tillbaka. | Try it yourself. 30-day return policy — money back. |
 
-## End card
+During the HOOK lines, show the thumb pressing the orange insole (that clip
+exists in the source footage).
 
-Tofflor Ergonomiska – Tjocksulade · 309 kr · ~~400 kr~~ · 30 dagars öppet köp · Handla nu.
-
-## Meta ad fields
-
-- **Headline:** `Tummen trycker. Sulan fjädrar tillbaka.`
-- **Primary text:**
+## END CARD (last 3 seconds)
 
 | Swedish (use this) | English meaning |
 |---|---|
-| Tummen trycker i sulan – och den fjädrar tillbaka. | Press the sole with your thumb – and it springs back. |
-| Tjock, stötdämpande, orange innersula tar smällen. Inte hälen. | Thick, shock-absorbing orange insole takes the hit. Not the heel. |
-| 309 kr. 30 dagars öppet köp. Handla nu. | 309 SEK. 30-day money-back. Shop now. |
+| Tofflor Ergonomiska – Tjocksulade | Ergonomic Slippers – Thick-soled |
+| 309 kr | 309 SEK |
+| ~~400 kr~~ | ~~400 SEK~~ (struck through) |
+| 30 dagars öppet köp | 30-day money-back |
+| Handla nu | Shop now (button) |
 
-## Rules for this ad
+## DO NOT
 
-Pure re-cut — no new footage, no AI. Exports: 1080×1920 + 1080×1350.
-
-- **Production level:** B (edit only, ~1 h)
-- **Primary KPI:** hold rate at p50 vs original SP_1 (11.7 %). Guardrail: pause if CPA > 216 kr after 500 kr.
-- **What we learn regardless of outcome:** whether re-cutting rescues polished supplier
-  footage — if yes, every future supplier video gets this treatment before being retired.
+- Do NOT film anything new and do NOT use AI clips — re-cut only.
+- Do NOT change, translate or "improve" the Swedish lines.
+- Do NOT show any price except 309 kr and the struck-through 400 kr.
+- Do NOT let the English print on the shoe strap be readable in close-ups.
+- Do NOT add reviews, stars or "verified customer". No medical words.
