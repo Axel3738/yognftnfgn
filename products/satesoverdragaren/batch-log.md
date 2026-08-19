@@ -14,14 +14,14 @@ körning), inte gissningar.
 
 | Annons | Vinkel · Hook-typ · Format · Talare | Utfall (2026-08-05, 16 dagar) |
 |---|---|---|
-| `Seatcover_PD_1_3_H1` | bekvämlighet · påstående/demo · rå leverantörsvideo m. captions · ingen | **Bevisad vinnare, skalar utan CPA-drift.** 21 901 kr, 80 köp, CPA 274 kr, ROAS 2,59, vinstbidrag 16 018 kr (89,7 % av kontots vinst). CPA har *förbättrats* från 288 kr trots +46 % spend. Kontots kontrollannons. *(uppdaterad 2026-08-12)* |
-| `Seatcover_PD_2_1_H1` | problem/lösning · före-efter · rå leverantörsvideo · ingen | **Bevisad, lönsam men svagast av de bedömbara.** 1 289 kr, 3 köp, CPA 430 kr, ROAS 1,51, vinstbidrag 133 kr (0,7 %). Fortfarande exakt 3 köp — inget nytt köp på sex dagar trots fortsatt spend. Under break-even (474 kr) → ingen kill, men ingen skalning. *(uppdaterad 2026-08-12)* |
-| `Seatcover_SO_1_1_H1` | rädsla för kostnad/pris-anker · siffra/pris · offer-grafik · ingen | **Bevisad, bäst CVR i kontot.** 1 541 kr, 5 köp, CPA 308 kr, ROAS 2,48, vinstbidrag 829 kr (4,6 %). Vinst per spendkrona 0,54 kr mot vinnarens 0,73 kr. Enda svagheten är CTR 1,42 % (vinnaren 2,69 %) → CBO svälter den. **BUG:** bilden hade felaktig "överstruket"-text i stället för genomstrykning (fixad i batch 2 som `SO_1_2`). *(uppdaterad 2026-08-12)* |
-| `Seatcover_PD_1_1_H1` | bekvämlighet · påstående/demo · samma video som PD_1_3, INGEN captions · ingen | **Fortfarande 2 köp — nu bedömbar och förlustbringande.** 1 340 kr spend, 2 köp, CPA 670 kr, ROAS 0,97. **CPA ligger 41 % ÖVER break-even 474 kr → detta är kontots enda faktiska kill-kandidat på performance.** Identisk video som vinnaren utan captions. Captions-hypotesen är nu bevisad bortom rimligt tvivel. *(uppdaterad 2026-08-12)* |
-| `Seatcover_PD_1_2_H1` | bekvämlighet · overlay-rubrik ("Ingen mer blöt rumpa"), ingen löpande caption · rå video · ingen | För tidigt (596 kr, 1 köp). Passerat spendgränsen men bara 1 köp → ingen dom. |
-| `Seatcover_PD_3_1_H1` | okänd (svält av CBO) | För tidigt (209 kr, 0 köp). |
-| `Seatcover_SP_1_1_H1` | proof/UGC · fråga · rå UGC-video · creator man | För tidigt (22 kr, 0 köp). |
-| `Seatcover_SP_2_1_H1` | proof/UGC · lång recension · rå UGC-video 79–146 s · creator man | **För tidigt formellt (0 köp), mönstret nu mycket starkt.** 503 kr spend — mer än `SO_1_1_H1` fick när den gav sitt tredje köp — CTR 6,31 % (näst högst i kontot), **fortfarande 0 köp**. Klassiskt nyfikenhetsklick på för lång video. Öppen fråga till Axel: pausa manuellt? |
+| `Seatcover_PD_1_3_H1` | bekvämlighet · påstående/demo · rå leverantörsvideo m. captions · ingen | **Bevisad vinnare, men nu med CPA-drift.** 30 784 kr, 102 köp, CPA 302 kr, ROAS 2,35, vinstbidrag 17 563 kr (66,0 % av kontots vinst). **CPA har gått 274 → 302 kr när spenden gick 21,9k → 30,8k**, alltså första gången skalningen kostar. Fortfarande långt under break-even 474 kr, men precis över target 300 kr. Vinstandelen har fallit från 89,7 % till 66,0 % eftersom nya annonser börjat leverera. Kontots kontrollannons. *(uppdaterad 2026-08-14)* |
+| `Seatcover_PD_2_1_H1` | problem/lösning · före-efter · rå leverantörsvideo · ingen | **Bevisad, lönsam, svagast av videorna.** 1 797 kr, 5 köp, CPA 359 kr, ROAS 1,71, vinstbidrag 573 kr (2,2 %). CPA förbättrad från 430 → 359 kr. Under break-even → ingen kill, över target → ingen skalning. *(uppdaterad 2026-08-14)* |
+| `Seatcover_SO_1_1_H1` | rädsla för kostnad/pris-anker · siffra/pris · offer-grafik · ingen | **Bevisad och nu under target.** 1 936 kr, 7 köp, CPA 277 kr, ROAS 2,65, vinstbidrag 1 382 kr (5,2 %). Vinst per spendkrona 0,71 kr mot vinnarens 0,57 kr — **prisankaret är nu effektivare per krona än vinnaren.** Kvarvarande svaghet är CTR 1,30 %, lägst av alla bedömbara. **BUG:** bilden hade felaktig "överstruket"-text (fixad i batch 2 som `SO_1_2`). *(uppdaterad 2026-08-14)* |
+| `Seatcover_PD_1_1_H1` | bekvämlighet · påstående/demo · samma video som PD_1_3, INGEN captions · ingen | **NU BEDÖMBAR OCH FÖRLUSTBRINGANDE. Kontots första formella kill-beslut.** 1 594 kr, 3 köp, CPA 531 kr, ROAS 1,22. Signifikansgrinden är passerad (≥300 kr, ≥3 köp) och **CPA ligger 12 % över break-even 474 kr → vinstbidrag −172 kr.** Identisk video som vinnaren, enda skillnaden är att captions saknas. Vinnaren står på CPA 302 kr. **Captions-frågan är därmed avgjord med formell signifikans, inte längre anekdot.** *(uppdaterad 2026-08-14)* |
+| `Seatcover_PD_1_2_H1` | bekvämlighet · overlay-rubrik ("Ingen mer blöt rumpa"), ingen löpande caption · rå video · ingen | **För tidigt (850 kr, 2 köp), CPA 425 kr.** Ett köp från att bli bedömbar. Ligger mellan vinnaren (löpande captions) och `PD_1_1_H1` (inga captions) både i upplägg och i CPA, vilket stödjer captions-slutsatsen. |
+| `Seatcover_PD_3_1_H1` | okänd (svält av CBO) | För tidigt (225 kr, 0 köp). |
+| `Seatcover_SP_1_1_H1` | proof/UGC · fråga · rå UGC-video · creator man | För tidigt (22 kr, 0 köp), oförändrat. |
+| `Seatcover_SP_2_1_H1` | proof/UGC · lång recension · rå UGC-video 79–146 s · creator man | **Fortfarande för tidigt, men SP-spåret har fått sitt första köp någonsin.** 681 kr, **1 köp**, CPA 681 kr, CTR 5,73 %. Ett köp på 681 kr är långt över break-even, men det bryter ändå påståendet "noll köp i hela SP-spårets historia" som stått i dna.md sedan runda 2. Formuleringen är rättad där. |
 | `Seatcover_SP_3_1_H1` | proof · testimonial · AI-genererad statisk bild · fabricerad "kund" | **Policyflaggad, ej performance-dömd. Fortsatt LIVE (nu `WITH_ISSUES` i Meta) trots pausrekommendation i tre raka rundor sedan 2026-08-05.** Fabricerad testimonial ("Verifierad kund, 54 år"). 8 kr spend. |
 
 ---
@@ -118,12 +118,15 @@ attackerar exakt den svagheten från motsatta håll.
 | `Seatcover_PD_16_H1` | Riskhantering, inte kreativitet: vinnaren bär 92 % av vinsten och kontot har ingen andra skalbar tillgång. Samma bevisade manusstruktur på **nytt råmaterial** ger en testad backup innan den behövs. Isolerad variabel: råmaterialet (manus, captions, USP-ordning och CTA hålls konstanta). | bekvämlighet/problem-lösning · fråga · rå video m. captions, NYTT material · ingen | Ej launchad |
 | `Seatcover_PD_17_1` | Karusell är aldrig testat i kontot. Videon stoppar många men konverterar 2,5 %; statiken konverterar 6,6 % men stoppar få. Karusellen är enda formatet som kan göra båda jobben i en enhet — och ger en diagnos inget annat format ger: **var folk slutar swipa**. Isolerad variabel: format. | problem→lösning→proof→offer · påstående · KARUSELL 5 kort · ingen | Ej launchad |
 
-**Status 2026-08-12:** ingen av batch #5:s fyra annonser finns i kontot än — tre
-dagar efter briefning. Batch #4 tog två dagar från brief till launch, så detta är
-inte onormalt, men det betyder att batch #5 och #6 sannolikt launchas tillsammans.
-`SO_5_1`, `SO_6_1` och batch #6:s `SO_7_1` bör i så fall köras samtidigt: de tre
-attackerar SO-spårets CTR-problem via typografi, foto respektive budskap, och blir
-en trevägs-diagnos bara om de får samma startpunkt.
+**Status 2026-08-14:** `SO_5_1` och `SO_6_1` är launchade, `PD_16_H1` och
+`PD_17_1` (karusellen) är det inte. Utfall så här långt:
+
+| Annons | Utfall (2026-08-14) |
+|---|---|
+| `Seatcover_SO_5_1` | **För tidigt.** 783 kr, 2 köp, CPA 391 kr, ROAS 1,66, CTR 1,43 %. Hypotesen var att jättetypografi skulle lyfta CTR över 1,43 %. **CTR landade på exakt 1,43 %, alltså oförändrat.** Ingen dom formellt, men typografi ser inte ut att vara SO-spårets flaskhals. |
+| `Seatcover_SO_6_1` | **För tidigt.** 184 kr, 0 köp, CTR 2,39 %. För lite spend för slutsats, men CTR är klart över SO-spårets 1,30 till 1,43 % — äkta miljöfoto ser lovande ut där typografi inte gjorde det. |
+| `Seatcover_PD_16_H1` | Ej launchad. |
+| `Seatcover_PD_17_1` | Ej launchad. Karusell fortfarande otestat i kontot. |
 
 ---
 
@@ -158,3 +161,68 @@ innehåller testimonials.
 formatöverföringen. Rundan gav för första gången ett riktigt mätresultat på en
 briefad annons — då är rätt drag att exploatera det fyndet, inte att sprida
 budgeten på nya gissningar.
+
+
+---
+
+## Batch #6 — utfall (launchad 2026-08-12, avläst 2026-08-14)
+
+Två av fyra launchades. **Den ena blev kontots bästa statiska annons.**
+
+| Annons | Hypotes (loggad i förväg) | Utfall |
+|---|---|---|
+| `Seatcover_PD_20_1` | Handduks-hooken är kontots starkaste stoppmekanism i video. Som stillbild borde den lyfta statik-CTR **utan** videons CVR-straff, eftersom en statik inte ger tid för en bred nyfiken publik att byggas upp. Isolerad variabel: format (video → statik). | **HYPOTESEN HÖLL, och bättre än väntat.** 953 kr, 5 köp, CPA 191 kr, ROAS 5,39, vinstbidrag 1 417 kr. CTR 2,66 % mot SO-spårets 1,30 till 1,43 %, alltså nästan dubbelt. **LPV→köp 9,62 %, näst bäst i hela kontot.** Vinst per spendkrona 1,49 kr mot prisankarets 0,71 kr. Beteende-callouten bär alltså både stoppkraften OCH konverteringen i statiskt format. |
+| `Seatcover_SO_7_1` | Prisankaret konverterar bäst men stoppar sämst, handdukshooken tvärtom. Igenkänningsfrågan i rubrikpositionen med prisankaret som stängning borde kombinera dem. Isolerad variabel: rubrikens register. | **För tidigt (175 kr, 2 köp), men starkast tidiga signal i kontot.** CPA 88 kr, ROAS 5,57, CTR 2,21 % mot `SO_1_1_H1`:s 1,30 %. Går den till 3 köp är den kontots effektivaste annons. Behöver budget, inte fler tester. |
+| `Seatcover_PD_18_H1` | Pris in i videon vid 7 till 9s kvalificerar tidigare. | Ej launchad. |
+| `Seatcover_PD_19_H1` | Beteende-callout på ett annat beteende (jacka/filt). | Ej launchad. |
+
+**Slutsats batch #6:** formatöverföringen av en bevisad hook var rundans billigaste
+och största vinst. Batch #7 bygger vidare på exakt det.
+
+---
+
+## Swipe-annonsen (utanför batchnumreringen)
+
+`Seatcover bryn swipe 1` launchades av Axel 2026-08-13 ur briefen
+`briefs/Seatcover_SP_7_H1/brief.md` (offer-first spokesperson, swipe på en
+vinnande grillkorgsannons, reason-why-öppning på att vi beställde för många).
+
+**Utfall 2026-08-14: 917 kr, 6 köp, CPA 153 kr, ROAS 4,25, vinstbidrag 1 927 kr.**
+**Vinst per spendkrona 2,10 kr — bäst i hela kontot, nästan fyra gånger vinnarens
+0,57 kr.** LPV→köp 10,53 %, högst av alla bedömbara annonser.
+
+Notering om namngivning: annonsen heter `Seatcover bryn swipe 1` i kontot, inte
+enligt namnkonventionen. Behandlas i analysen som `SP_7`. Batch #7:s hooktest
+använder `SP_8` och `SP_9` för att undvika krock.
+
+---
+
+## Batch #7 — byggd 2026-08-19 (6 annonser)
+
+Kvoten är 6 per 3-dagarscykel sedan budgeten fördubblades till 3 000 kr/dag, och
+läget var **−13 creatives efter plan**. Batchen är därför sex briefer.
+
+Hela batchen bygger på rundans två bevisade fynd: **offer-first är kontots mest
+lönsamma budskap** (swipen, 2,10 kr vinst per spendkrona) och **beteende-callout
+bär både stoppkraft och konvertering i statiskt format** (`PD_20_1`, 1,49 kr).
+Inget nytt påhittat spår, bara exploatering av det som mätts.
+
+| Annons | Hypotes | Vinkel · Hook-typ · Format · Talare | Utfall |
+|---|---|---|---|
+| `Seatcover_SP_8_H1` | Vi vet att swipen vinner men inte OM det är hooken eller kroppen. Samma kropp, byt öppningen mot handduks-callouten (kontots högsta video-CTR, 3,69 %). Isolerad variabel: sekund 0 till 8. | beteende-callout → offer-kropp · beteende-callout · VO över demo m. captions · röst utan ansikte | Ej launchad |
+| `Seatcover_SP_9_H1` | Tredje armen i samma test. Samma kropp, öppning på prisjämförelsen, kontots bäst konverterande budskap men aldrig testat som videoöppning. Isolerad variabel: sekund 0 till 8. | pris-anker → offer-kropp · priskontrast · VO över demo m. captions · röst utan ansikte | Ej launchad |
+| `Seatcover_PD_22_H1` | `PD_1_3_H1 – kopia` kör samma creative som vinnaren men på CPA 197 kr mot 302 kr. Om det är verkligt är vinnarens CPA-drift delvis en annonsnivå-effekt, inte creative-trötthet, och fixen är gratis. Kopian var en olycka med litet underlag, detta är samma drag gjort kontrollerat. Isolerad variabel: annonsobjektet. | bekvämlighet/demo · påstående/demo (oförändrad) · rå video m. captions · ingen | Ej launchad |
+| `Seatcover_SO_8_1` | Offer-first vinner i video och en videohook kan flyttas till statik (`PD_20_1` bevisade det). Ingen har kombinerat dem. Reason-why i rubrikpositionen i den bevisade SO-layouten. Isolerad variabel: rubrikens register. | lagerutförsäljning/reason-why · påstående · offer-grafik · ingen | Ej launchad |
+| `Seatcover_PD_21_1` | `PD_20_1` är kontots bästa statik men är EN datapunkt på ETT beteende. Samma layout, annat beteende (jackan). Replikerar kategorin eller bara handduken? Isolerad variabel: vilket beteende som pekas ut. | beteende-callout · fråga (bevisad typ, nytt innehåll) · statisk 50/50-split · ingen | Ej launchad |
+| `Seatcover_SO_9_1` | `PD_20_1` stoppar och konverterar men bär bara ett naket pris i bottenraden. Prisjämförelsen är kontots bästa stängningsargument. Lägg till den utan att röra det som vinner. Isolerad variabel: prisraden. | beteende-callout → pris-anker · fråga (bevisad) · statisk 50/50 + prisrad · ingen | Ej launchad |
+
+**Produktionsanmärkningar inbyggda i brieferna:** `SP_8` och `SP_9` bär den hårda
+regeln att swipens kropp klipps EN gång och delas byte-identiskt mellan alla tre
+hookvarianter. `PD_22_H1` bär regeln att originalet INTE får pausas, annars finns
+ingen jämförelse. `PD_21_1` och `SO_9_1` bär regeln att `PD_20_1`:s layout kopieras
+exakt, eftersom de är innehållstest och inte designtest. **Ingen statik i batchen
+nämner färg** — grön och ljusgrå är slutsålda.
+
+**Backlog:** swipe-itemet är markerat `[använd i batch #7]`. De två extra hookar
+Axel skulle skicka behövdes inte längre — datan pekade ut vilka två som var värda
+att testa, så de är skrivna ur kontots egna vinnare i stället.

@@ -3,7 +3,8 @@
 Produkt: Sätesöverdrag för Åkgräsklippare – Slittåligt 600D Oxford (baverbutiken.se)
 Kampanj: "Sätesöverdragaren" `120249122415680291` · Konto: MagiBorsten `1867947880635861`
 Pris: 649 kr (ord. 811 kr) · Break-even-CPA: **474 kr** · Target-CPA: **300 kr** · AOV (härledd): 697 kr
-Senast uppdaterad: 2026-08-12 (efter `/cs`-runda 5, 23 dagars kontodata)
+Senast uppdaterad: 2026-08-14 (efter `/cs`-runda 6, 25 dagars kontodata)
+Daglig budget: **3 000 kr** (fördubblad från 1 500 kr, avläst i kontot 2026-08-14)
 
 > Denna fil är produktens ackumulerade minne. Data och hypotes hålls isär enligt
 > `docs/os/ANALYSMETOD.md`. Uppdateras vid varje `/cs`.
@@ -12,70 +13,73 @@ Senast uppdaterad: 2026-08-12 (efter `/cs`-runda 5, 23 dagars kontodata)
 
 ## Winning DNA (data — bevisad, ≥2 annonser ≥3 köp vardera med samma slutsats)
 
-- **Format = rå leverantörsvideo med genomgående inbrända svenska captions.**
-  Tre bedömbara videoannonser, alla tre lönsamma, alla tre med captions:
-  `PD_1_3_H1` (80 köp, CPA 274 kr, vinstbidrag 16 018 kr — 89,7 %), `PD_13_H1`
-  (6 köp, CPA 329 kr, 870 kr) och `PD_2_1_H1` (3 köp, CPA 430 kr, 133 kr).
-- **Vinnaren tål skalning utan CPA-drift — nu bekräftat en andra gång.** Spend
-  19 730 → 21 901 kr och köpen 68 → 80. **CPA har sjunkit från 290 → 274 kr
-  medan spenden ökat 46 % sedan runda 3.** Ingen utmattning i sikte.
-  → Instruktion: fortsätt mata budget. Det är inte "över target-CPA"-läge, det är
-  en annons som fortfarande köper billigare ju mer den får.
-- **Prisankaret är BEVISAT och nästan lika lönsamt per krona som vinnaren.**
-  `SO_1_1_H1`: 5 köp, 1 541 kr, vinstbidrag per spendkrona **0,54 kr** mot
-  vinnarens 0,73 kr. (Runda 4 mätte båda till 0,63 kr; vinnaren har sedan dess
-  förbättrat sin CPA medan SO_1_1 stått still — de är alltså inte längre
-  likvärdiga, men SO-spåret är fortfarande klart lönsamt.) Får bara 5,0 % av
-  budgeten.
-- **NYTT OCH VIKTIGAST (runda 5): beteende-callout är kontots starkaste
-  stoppmekanism — bevisad, men med en mätt baksida.** `PD_13_H1` (handduks-hooken,
-  vår egen brief från batch #4) är **första briefade annonsen i kontot som nått
-  signifikans**: 6 köp, CPA 329 kr, lönsam. Den slår vinnaren på båda
-  uppmärksamhetsmåtten — **CTR 3,87 % mot 2,69 %, hold 13,6 % mot 11,7 %** — men
-  förlorar i botten: **LPV→köp 1,81 % mot 2,67 %**. Att peka ut ett workaround
-  ägaren redan använder stoppar alltså fler, men den publiken är bredare och mindre
-  köpmogen. → Instruktion: använd beteende-callout som hookmotor, men **kvalificera
-  tidigare i annonsen** (pris/kostnad i video, inte bara i annonstexten).
-- **Produkten synlig direkt, ingen talare, ingen musikvideo-stil.** Alla tre
-  bevisade videoannonserna är rena demos utan person i bild.
+- **NYTT OCH STÖRST (runda 6): offer-first slår problem-first.** `bryn swipe 1`
+  (swipen, öppnar på att vi beställde för många och att priset därför är nedsatt)
+  gör **2,10 kr vinst per spendkrona — bäst i hela kontot, nästan fyra gånger
+  vinnarens 0,57 kr.** CPA 153 kr mot vinnarens 302 kr. LPV→köp 10,53 %, högst av
+  alla bedömbara annonser. Kontot har aldrig tidigare öppnat en annons med
+  erbjudandet. → Instruktion: reason-why-öppningen är default-hook för ny video,
+  och ska testas som statik.
+- **NYTT (runda 6): beteende-callout bär BÅDE stoppkraft och konvertering i
+  statiskt format.** `PD_20_1` (handduks-hooken som 50/50-statik, byggd i batch #6)
+  gör CTR 2,66 % mot SO-spårets 1,30 till 1,43 %, **och** LPV→köp 9,62 %, näst
+  bäst i kontot. Vinst per spendkrona 1,49 kr mot prisankarets 0,71 kr. I video
+  gav samma hook hög CTR men LÅG CVR (1,97 %). **Formatet avgör alltså om
+  igenkänningshooken drar in rätt publik.** → Instruktion: varje ny statik öppnar
+  på ett beteende, inte på ett tillstånd eller ett pris.
+- **Captions är avgjort, nu med formell signifikans.** `PD_1_1_H1` (identisk video
+  som vinnaren, utan captions) passerade grinden med 3 köp och landade på
+  **CPA 531 kr mot break-even 474 kr, vinstbidrag −172 kr.** Vinnaren med captions
+  står på CPA 302 kr. Detta är kontots första formella kill-beslut på performance.
+  Behandla captions som ett produktionskrav, aldrig en variabel.
+- **Format = rå leverantörsvideo med inbrända svenska captions** står sig som bas:
+  `PD_1_3_H1` (102 köp, CPA 302 kr), `PD_13_H1` (18 köp, CPA 332 kr),
+  `PD_2_1_H1` (5 köp, CPA 359 kr).
+- **Prisankaret är nu effektivare per krona än vinnaren.** `SO_1_1_H1`: 7 köp,
+  CPA 277 kr, 0,71 kr vinst per spendkrona mot vinnarens 0,57. Enda kvarvarande
+  svaghet är CTR 1,30 %, lägst av alla bedömbara.
+- **Produkten synlig direkt, ingen talare i bild.** Gäller alla bevisade vinnare,
+  inklusive swipen, som är voiceover utan ansikte.
+
+## Vinnaren skalar inte längre gratis
+
+CPA gick **274 → 302 kr när spenden gick 21,9k → 30,8k** (+41 % spend). Tidigare
+rundor visade sjunkande CPA vid ökad spend; det gäller inte längre. Fortfarande
+långt under break-even 474 kr, men nu precis över target 300 kr.
+→ Instruktion: fortsätt köra den, men tillväxten ska nu komma från de nya
+vinnarna, inte från att pressa mer budget genom vinnaren.
 
 ## Winning DNA (hypotes — starkt signal, men underliggande annonser < 3 köp)
 
-- **CTR är prisankarets ENDA svaghet — och därmed kontots tydligaste
-  outnyttjade hävstång.** `SO_1_1_H1` konverterar besökare till köp i **6,6 %**
-  mot vinnarens 2,5 % (2,6× bättre), men dess CTR är 1,43 % mot vinnarens 2,76 %.
-  Kedjan: låg CTR → få konverteringssignaler → CBO svälter den → 5,6 % av
-  budgeten trots identisk lönsamhet per krona. **Fixas CTR utan att CVR tappar
-  blir SO-spåret skalbart och kontot slutar hänga på en enda video.** Batch 5
-  attackerar detta från två håll (`SO_5_1` = större typografi, `SO_6_1` = äkta
-  miljöfoto i stället för studiografik).
-- **Captions är den enskilt viktigaste variabeln i video** — och beviset är nu så
-  starkt det kan bli utan att `PD_1_1_H1` når 3 köp. Den rena A/B:n: `PD_1_3_H1`
-  (med captions) 21 901 kr → **80 köp**, ROAS 2,59, CPA 274 kr. `PD_1_1_H1`
-  (identisk video, inga captions) 1 340 kr → **2 köp**, ROAS 0,97, CPA 670 kr.
-  Den caption-lösa tvillingen har stått still på exakt 2 köp i en vecka medan
-  originalet gick 52 → 80 köp. **Dess CPA ligger nu 41 % över break-even 474 kr**
-  — den är alltså inte bara sämre, den är förlustbringande. Behandla captions som
-  ett obligatoriskt produktionskrav, aldrig en variabel att testa om igen.
-- **Statiker med konkret innehåll stoppar bättre än prisgrafik (svag signal).**
-  `PD_14_1` ("vad kommer i paketet") har kontots högsta statik-CTR på 1,97 % mot
-  `SO_1_1_H1`:s 1,42 % — men bara 189 kr spend och 0 köp. Indikation, inte dom.
+- **`SO_7_1` kan bli kontots effektivaste annons.** 175 kr, 2 köp, CPA 88 kr,
+  ROAS 5,57, CTR 2,21 % mot `SO_1_1_H1`:s 1,30 %. Det är korsningen av
+  igenkänningsrubrik och prisanker från batch #6. Ett köp från signifikans.
+  → Instruktion: den behöver budget, inte fler varianter.
+- **Att ladda upp vinnaren på nytt verkar nollställa dess effektivitet.**
+  `PD_1_3_H1 – kopia` kör samma creative som originalet men på **CPA 197 kr mot
+  originalets 302 kr** (5 köp). Kan vara en återställning av annonsnivåns
+  inlärning, kan vara småtalsvariation. **Obevisat, testas kontrollerat i batch #7
+  (`PD_22_H1`).**
+- **Äkta miljöfoto slår jättetypografi i SO-spåret.** `SO_6_1` (miljöfoto)
+  CTR 2,39 %, `SO_5_1` (jättetypografi) CTR 1,43 %, alltså exakt oförändrat mot
+  `SO_1_1_H1`. Båda under signifikans, men riktningen är entydig: SO-spårets
+  CTR-problem är ett bildproblem, inte ett typografiproblem.
 
 ## Losing DNA (hypotes — konsekvent riktning, ingen enskild annons signifikant)
 
-- **UGC/talare-drivet innehåll ("SP"-spåret) har noll bekräftade köp i hela
-  kontots historia**, trots sju annonser och tre batcher. Runda 5: `SP_2_1_H1`
-  nu **503 kr spend, fortfarande 0 köp** (CTR 6,31 %, näst högst i kontot).
-  Summerar man hela SP-spåret: ca **678 kr spend, 0 köp** över sju annonser.
-  Referenspunkt värd att notera: `SO_1_1_H1` hade producerat tre köp vid ungefär
-  den spend `SP_2_1_H1` ensam nu bränt utan ett enda. Ingen enskild annons har nått
-  3 köp så formellt finns ingen dom, men riktningen är entydig över tre batcher och
-  23 dagar. `SP_3_1_H1` har dessutom status **WITH_ISSUES** i Meta (se
-  kvalitetskontroll-loggen).
-- **Lång video (79–146 s) utan cutdown konverterar inte**, trots hög hook/CTR
-  (`SP_2_1_H1`: hook enligt ANALYSMETOD-formeln 93 %, CTR 6,7 %, p50/plays bara
-  10 %, 0 köp på 442 kr). Regel 9: hög CTR utan CVR är nyfikenhetsklick, inte en
-  vinnare.
+- **UGC/talare-drivet innehåll ("SP"-spåret med creator i bild) presterar
+  fortfarande sämst.** Åtta annonser, ca 1 600 kr spend, **1 köp totalt**
+  (`SP_2_1_H1`, CPA 681 kr, långt över break-even 474 kr).
+  **RÄTTELSE:** tidigare rundor skrev "noll köp i hela SP-spårets historia". Det
+  stämmer inte längre, `SP_2_1_H1` har fått ett köp. Riktningen står sig ändå.
+  **Viktigt att inte blanda ihop:** swipen (`bryn swipe 1`) är också talarledd men
+  har **ingen person i bild** — bara voiceover över demo-material — och är kontots
+  mest lönsamma annons. Det är ansiktet och testimonial-formatet som förlorar,
+  inte den mänskliga rösten.
+- **Lång video utan cutdown konverterar inte** (`SP_2_1_H1`: CTR 5,73 %, 1 köp på
+  681 kr). Hög CTR utan CVR är nyfikenhetsklick.
+- **Jättetypografi löser inte låg CTR** (`SO_5_1`: CTR 1,43 %, exakt samma som
+  originalgrafiken).
 
 ## Behåll alltid
 - Captions i alla videor, ord för ord från brief, vit text/svart kant.
@@ -97,23 +101,19 @@ Senast uppdaterad: 2026-08-12 (efter `/cs`-runda 5, 23 dagars kontodata)
 - **Fabricerade testimonials.** Se Kvalitetskontroll-loggen — inträffat två gånger
   i kontot (`SP_3_1_H1` och `SP_6_1`).
 
-## Strukturell observation (runda 4, förvärrad i runda 5) — viktigare än enskilda creatives
+## Strukturell observation (uppdaterad runda 6) — budgeten är fördubblad
 
-**CBO svälter allt nytt.** 28 annonser delar 1 500 kr/dag. Vinnaren tar **71 % av
-all spend**; de fyra bedömbara annonserna tar tillsammans 86,6 %. De 24 övriga
-delar på 13,4 %. Batch 2:s tolv annonser ligger på 9–217 kr styck efter **åtta
-dagar** — ingen har nått 300 kr-gränsen. Vid den takten når de flesta aldrig
-300 kr/3 köp och kan alltså varken bevisa eller motbevisa sina hypoteser.
+**Dagsbudgeten har gått 1 500 → 3 000 kr.** Det är den strukturåtgärd som
+efterfrågats i tre rundor, och effekten syns direkt: batch #5 och #6 fick spend
+inom två dygn, och två av dem (`PD_20_1`, `SO_7_1`) hann leverera köp innan denna
+runda. Jämför med batch #2, där tolv annonser låg under 300 kr i åtta dagar.
 
-**Undantaget bevisar poängen:** `PD_13_H1` fick 1 974 kr (6,4 % av spenden) — och
-blev den enda briefade annonsen som någonsin nått signifikans i kontot. När en
-brief får budget levererar den ett svar. Det är inte creativens fel, det är
-budgetstrukturens. Fler briefer löser inte detta ensamt.
+Vinnarens spendandel har fallit från 71 % till 62,8 %, och vinstandelen från
+89,7 % till 66,0 %. Kontot står inte längre på en enda annons.
 
-**Tre möjliga strukturåtgärder (ägarbeslut, ej Claudes):**
-1. Höj dagsbudgeten så testandelen räcker till fler samtidiga annonser.
-2. Pausa de svältande/underpresterande så budgeten koncentreras på färre tester.
-3. Separat test-adset med egen budget, skilt från det som skalar vinnaren.
+**Kvarstående obalans:** kvoten är nu 6 creatives per 3-dagarscykel och läget är
+**−13 creatives efter plan**, eftersom kvoten skalar med budgeten. Batch #7 är
+därför sex briefer, inte tre.
 
 ## Ännu obevisat
 - Om riktig (verifierad) kundröst konverterar bättre än opersonlig demo —
@@ -141,14 +141,19 @@ budgetstrukturens. Fler briefer löser inte detta ensamt.
 | **2026-08-12** | **Fjärde eskaleringen: `SP_6_1` (fabricerad testimonial "JAKOB, verifierat köp") är fortfarande ACTIVE**, sju dagar efter första pausrekommendationen. `SP_3_1_H1` fortsatt `WITH_ISSUES`. Ingen åtgärd i fyra raka `/cs`-rundor. | Frågan ställs igen i rapporten. Jag pausar inte annonser utan uttryckligt ok från Axel — men detta är nu den enskilt längst öppna posten i produktens historia. |
 | 2026-08-12 | **Datakvalitetskontrollen ren andra rundan i rad.** Alla rader med köp: `spend × ROAS` matchar `omni_purchase_values` på 0,00 % avvikelse. | Fältet användbart. Kontrollen körs ändå varje runda. |
 | 2026-08-12 | `PD_13_H1` launchad enligt brief och nådde signifikans — första gången ett briefat koncept i denna produkt fått nog med budget för att ge ett svar. Ingen QC-avvikelse hittad. | Positiv kontrollpunkt. Bekräftar att brief → produktion → launch-kedjan fungerar när budget finns. |
+| **2026-08-14** | **Visuell granskning kunde INTE genomföras denna runda.** `ads_get_ad_preview` nekades av behörighetsklassificeraren, och `ads_get_creatives` går inte att filtrera per annons (returnerade andra produkters creatives). Teardownet för `PD_20_1` och `SO_7_1` vilar därför på brieferna vi själva skrev plus mätvärdena, inte på granskade bilder. | Redovisat i rapportens DoD som ❌. Behövs behörighet till ad preview för att steg 6b ska kunna köras fullt ut. |
+| **2026-08-14** | **Femte eskaleringen: `SP_6_1` (fabricerad testimonial) fortfarande ACTIVE**, nio dagar efter första pausrekommendationen. `SP_3_1_H1` fortsatt `WITH_ISSUES`. | Frågan ställs igen. Detta är den längst öppna posten i produktens historia. |
+| 2026-08-14 | Datakvalitetskontrollen ren tredje rundan i rad: alla 15 rader med köp matchar på 0,00 % avvikelse. | Fältet stabilt användbart. Kontrollen körs ändå varje runda. |
 | 2026-08-06 | Batch 3 (`PD_11_1`, `SO_3_1`, `PD_12_H1`) visuellt verifierad korrekt vid launch: rätt pris (649 kr) på alla tre, ingen konkurrentlogga i PD_11:s "tunt tyg"-panel, ingen påhittad gåvohögtid i SO_3, PD_12:s hook-bild matchar briefens "blöt/daggig säte-closeup". Kunde inte verifiera den bokstavliga "POV:"-textkortet i PD_12 från en enskild stillbild (video ej avspelad i sin helhet) — flaggat som osäkert, inte som fel. | Positiv kontrollpunkt, inga fel hittade. |
 
 ---
 
 ## Öppna frågor till Axel
 1. **[Olöst sedan runda 2 — fjärde eskaleringen]** Pausa `SP_6_1` och `SP_3_1_H1` (fabricerade testimonials)? Frågades första gången 2026-08-05. Inget svar och ingen åtgärd i fyra rundor. Jag pausar inte annonser själv utan uttryckligt ok.
+1b. **[NYTT, runda 6 — beslut som ger pengar]** `SO_7_1` gör CPA 88 kr på 175 kr spend och `PD_20_1` CPA 191 kr, mot vinnarens 302 kr. Båda svälts fortfarande. Vill du att jag flyttar budget dit, eller ska CBO få fortsätta fördela själv?
 2. **[Runda 3, nu skarpare]** `PD_1_1_H1` är inte längre en gråzon: 1 340 kr spend, 2 köp, **CPA 670 kr mot break-even 474 kr** — den förlorar pengar per köp. Formellt under signifikansgränsen (2 < 3 köp), men den har inte rört sig på en vecka. Pausa? `SP_2_1_H1` (0 köp, 503 kr) samma fråga.
-2b. **[Nytt runda 5]** `PD_13_H1` ligger på CPA 329 kr — lönsam, men över target 300 kr. Ska den få mer budget medan `PD_18_H1`-testet väntar, eller ligga kvar på nuvarande nivå? Detta är ett skalningsbeslut, alltså ditt.
+2c. **[Runda 6]** `PD_1_1_H1` är nu formellt kill-bar: 3 köp, CPA 531 kr mot break-even 474 kr, vinstbidrag −172 kr. Detta är det första beslut där data ensamt räcker. Pausar du den?
+2b. **[Nytt runda 5]** `PD_13_H1` ligger på CPA 332 kr — lönsam, men över target 300 kr. Ska den få mer budget medan `PD_18_H1`-testet väntar, eller ligga kvar på nuvarande nivå? Detta är ett skalningsbeslut, alltså ditt.
 3. Judge.me-export (riktiga recensioner) — efterfrågades 2026-07-30, saknas fortfarande. Blockerar `SP_6_1` (redan launchad felaktigt) och framtida testimonial-briefer.
 4. Bekräfta att `SP_4_H1`/`SP_5_H1`:s filmade person är en riktig kund/creator, inte återanvänt leverantörsmaterial — påverkar om "vanligaste kommentaren"-raden får fortsätta användas.
 5. ~~**[Runda 3]** Fortsätta bygga varje runda oavsett kvotläge?~~ **BESVARAD 2026-08-06: JA.** Axel vill ha buffert med briefer till nästa analys. Kvoten är ett **golv, inte ett tak** — bygg alltid minst kvoten, mer när managern ber om det. Motivera aldrig bort en batch med hänvisning till att kvoten redan är uppfylld. Batch #4 (4 briefer) byggd efter detta besked.

@@ -89,7 +89,7 @@
       "campaign_ids": [
         "120249122415680291"
       ],
-      "daily_budget_sek": 1500,
+      "daily_budget_sek": 3000,
       "target_cpa_sek": 300,
       "cycle_start": "2026-08-04",
       "status": "aktiv",
@@ -109,6 +109,10 @@
         {
           "date": "2026-08-12",
           "count": 4
+        },
+        {
+          "date": "2026-08-19",
+          "count": 6
         }
       ],
       "break_even_cpa_sek": 474,

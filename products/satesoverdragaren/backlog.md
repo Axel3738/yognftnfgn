@@ -2,10 +2,17 @@
 
 ---
 
-## SWIPE: offer-first spokesperson (Bryn grillkorg)
+## SWIPE: offer-first spokesperson (Bryn grillkorg) — `[använd i batch #7]`
 
-**Inlagd 2026-08-13 av Axel.** Status: brief byggd, **väntar på två extra hooks
-från Axel** innan den läggs i Notion och produceras.
+**Inlagd 2026-08-13 av Axel. AVSLUTAD 2026-08-19.**
+Status: launchad som `Seatcover bryn swipe 1` och **kontots mest lönsamma annons**
+(917 kr, 6 köp, CPA 153 kr, 2,10 kr vinst per spendkrona, LPV→köp 10,53 %).
+
+De två extra hookarna behövde aldrig komma från Axel: datan pekade själv ut vilka
+två som var värda att testa. `SP_8_H1` (handduks-callouten, kontots högsta
+video-CTR) och `SP_9_H1` (prisjämförelsen, kontots bäst konverterande budskap)
+ligger i batch #7 och monteras på samma kropp. Har du ändå två egna hooks du vill
+in med blir de H4 och H5 på samma kropp.
 
 ### Källan
 Vinnande annons för en grillkorg (Bryn). Talat VO-manus, ca 70 s. Axels swipe.
