@@ -176,8 +176,15 @@ Två av fyra launchades. **Den ena blev kontots bästa statiska annons.**
 | `Seatcover_PD_18_H1` | Pris in i videon vid 7 till 9s kvalificerar tidigare. | Ej launchad. |
 | `Seatcover_PD_19_H1` | Beteende-callout på ett annat beteende (jacka/filt). | Ej launchad. |
 
+**Visuell granskning 2026-08-19:** `PD_20_1` är byggd exakt enligt brief — äkta
+utomhusfoto, samma maskin i båda panelerna, chips och stödtexter ord för ord,
+enda siffran 649, ingen textbugg. `SO_7_1` har korrekt genomstrykning och rätt
+rubrikhierarki men **bröt mot fotokravet**: produktbilden är en studiokomposit mot
+svart, inte det äkta fotografi briefen krävde.
+
 **Slutsats batch #6:** formatöverföringen av en bevisad hook var rundans billigaste
-och största vinst. Batch #7 bygger vidare på exakt det.
+och största vinst, och den vann på konceptet — inte på någon designavvikelse.
+Batch #7 bygger vidare på exakt det.
 
 ---
 

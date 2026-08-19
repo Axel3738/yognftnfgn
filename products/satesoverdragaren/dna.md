@@ -60,10 +60,24 @@ vinnarna, inte från att pressa mer budget genom vinnaren.
   originalets 302 kr** (5 köp). Kan vara en återställning av annonsnivåns
   inlärning, kan vara småtalsvariation. **Obevisat, testas kontrollerat i batch #7
   (`PD_22_H1`).**
-- **Äkta miljöfoto slår jättetypografi i SO-spåret.** `SO_6_1` (miljöfoto)
-  CTR 2,39 %, `SO_5_1` (jättetypografi) CTR 1,43 %, alltså exakt oförändrat mot
-  `SO_1_1_H1`. Båda under signifikans, men riktningen är entydig: SO-spårets
-  CTR-problem är ett bildproblem, inte ett typografiproblem.
+- **SO-spårets CTR-problem är ett BILDproblem, inte ett typografiproblem.**
+  Nu styrkt med visuell granskning (2026-08-19), inte bara siffror:
+
+  | Annons | Produktbild | CTR |
+  |---|---|---|
+  | `SO_1_1_H1` | studiokomposit mot svart | 1,30 % |
+  | `SO_5_1` | studiokomposit mot svart, jättetypografi | 1,43 % |
+  | `SO_7_1` | studiokomposit mot svart | 2,21 % |
+  | **`SO_6_1`** | **äkta foto, riktig maskin på en gräsmatta** | **2,39 %** |
+
+  Tre av fyra SO-annonser använder samma flytande produktrender mot platt
+  bakgrund. Den enda som visar en riktig maskin i en riktig trädgård har spårets
+  högsta CTR. Alla utom `SO_1_1_H1` är under signifikans, så det är fortfarande
+  hypotes, men riktningen är entydig och samstämmig med kontots bevisade DNA
+  (rå dokumentär stil slår polerad reklamstil).
+  → Instruktion: fotokravet är skärpt i `SO_8_1` och `SO_9_1`. "Äkta fotografi"
+  räckte inte som formulering, produktionen läste det som render. Nu står det
+  uttryckligen att flytande produktrender mot platt bakgrund är förbjudet.
 
 ## Losing DNA (hypotes — konsekvent riktning, ingen enskild annons signifikant)
 
@@ -141,7 +155,11 @@ därför sex briefer, inte tre.
 | **2026-08-12** | **Fjärde eskaleringen: `SP_6_1` (fabricerad testimonial "JAKOB, verifierat köp") är fortfarande ACTIVE**, sju dagar efter första pausrekommendationen. `SP_3_1_H1` fortsatt `WITH_ISSUES`. Ingen åtgärd i fyra raka `/cs`-rundor. | Frågan ställs igen i rapporten. Jag pausar inte annonser utan uttryckligt ok från Axel — men detta är nu den enskilt längst öppna posten i produktens historia. |
 | 2026-08-12 | **Datakvalitetskontrollen ren andra rundan i rad.** Alla rader med köp: `spend × ROAS` matchar `omni_purchase_values` på 0,00 % avvikelse. | Fältet användbart. Kontrollen körs ändå varje runda. |
 | 2026-08-12 | `PD_13_H1` launchad enligt brief och nådde signifikans — första gången ett briefat koncept i denna produkt fått nog med budget för att ge ett svar. Ingen QC-avvikelse hittad. | Positiv kontrollpunkt. Bekräftar att brief → produktion → launch-kedjan fungerar när budget finns. |
-| **2026-08-14** | **Visuell granskning kunde INTE genomföras denna runda.** `ads_get_ad_preview` nekades av behörighetsklassificeraren, och `ads_get_creatives` går inte att filtrera per annons (returnerade andra produkters creatives). Teardownet för `PD_20_1` och `SO_7_1` vilar därför på brieferna vi själva skrev plus mätvärdena, inte på granskade bilder. | Redovisat i rapportens DoD som ❌. Behövs behörighet till ad preview för att steg 6b ska kunna köras fullt ut. |
+| **2026-08-19** | **Visuell granskning genomförd på fem statiker** (`PD_20_1`, `SO_7_1`, `SO_5_1`, `SO_6_1`, `PD_14_1`). Metod som fungerar och ska återanvändas: `ads_get_ad_preview` per annons-id (skicka INTE `ad_account_id`, det argumentet finns inte), hämta `preview_url`, ladda ner sidan och plocka ut bild-URL:en som matchar `t45.1600-4`, ladda ner jpg:n och läs den. `ads_get_ad_images` är värdelös här eftersom alla bilder heter "untitled". | Metoden dokumenterad så nästa runda slipper leta. |
+| **2026-08-19** | **`SO_7_1` bröt mot briefens fotokrav.** Briefen krävde äkta fotografi av det monterade överdraget. Levererat är ett studiokomponerat produktskott mot svart bakgrund, samma typ som `SO_5_1`. Genomstrykningen är korrekt och rubriken dominerar som specificerat, så budskapsdelen är rätt byggd. | Fotokravet är skärpt och omformulerat i `SO_8_1` och `SO_9_1`: "floating product render on a flat background" är nu uttryckligen förbjudet, eftersom "äkta fotografi" uppenbarligen lästes som render. |
+| **2026-08-19** | **`SO_6_1` visar ett GRÖNT överdrag.** Grön är `availableForSale: false` i Shopify. Annonsen visar alltså en färg kunden inte kan köpa. | Flaggat till Axel. Regel tillagd i `PD_21_1`:s brief: överdraget i bild ska vara grått eller svart. |
+| **2026-08-19** | **`SO_6_1`:s rubrik är skriven som ett kundomdöme i jag-form** ("Bytte aldrig sätet. Lade bara på detta."). Batch #5-briefen specificerade ägarobservation, inte kundcitat. Ingen namngiven person och ingen "verifierad kund"-badge, så det är INTE samma klass av brott som `SP_3_1_H1`/`SP_6_1`, men det är ett overifierat förstapersonspåstående. | Flaggat. Bör skrivas om till observation i tredje person om annonsen ska rulla vidare. |
+| 2026-08-19 | `PD_20_1` visuellt verifierad **korrekt byggd**: äkta utomhusfoto, samma maskin i båda panelerna, chips och stödtexter ord för ord enligt brief, enda siffran är 649, ingen "överstruket"-bugg. `PD_14_1` likaså korrekt. | Positiv kontrollpunkt. Kontots bästa statik vann på konceptet, inte på en designavvikelse. |
 | **2026-08-14** | **Femte eskaleringen: `SP_6_1` (fabricerad testimonial) fortfarande ACTIVE**, nio dagar efter första pausrekommendationen. `SP_3_1_H1` fortsatt `WITH_ISSUES`. | Frågan ställs igen. Detta är den längst öppna posten i produktens historia. |
 | 2026-08-14 | Datakvalitetskontrollen ren tredje rundan i rad: alla 15 rader med köp matchar på 0,00 % avvikelse. | Fältet stabilt användbart. Kontrollen körs ändå varje runda. |
 | 2026-08-06 | Batch 3 (`PD_11_1`, `SO_3_1`, `PD_12_H1`) visuellt verifierad korrekt vid launch: rätt pris (649 kr) på alla tre, ingen konkurrentlogga i PD_11:s "tunt tyg"-panel, ingen påhittad gåvohögtid i SO_3, PD_12:s hook-bild matchar briefens "blöt/daggig säte-closeup". Kunde inte verifiera den bokstavliga "POV:"-textkortet i PD_12 från en enskild stillbild (video ej avspelad i sin helhet) — flaggat som osäkert, inte som fel. | Positiv kontrollpunkt, inga fel hittade. |
