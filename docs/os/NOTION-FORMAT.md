@@ -10,7 +10,7 @@ Brieferna ligger som items i Pending Approval-vyn.
 
 | Fält | Värde |
 |------|-------|
-| **Namn** | Annonsnamnet exakt enligt naming-strukturen, t.ex. `Enginecover_SP_6_H1` |
+| **Namn** | `VIDEO — ` eller `IMAGE — ` + annonsnamnet exakt enligt naming-strukturen, t.ex. `VIDEO — Enginecover_SP_6_H1`, `IMAGE — Enginecover_SO_3_2`. Redigerarna gör bara video — typen ska synas direkt i listan. (Prefixet gäller bara Notion; annonsnamnet i Ads Manager har inget prefix) |
 | **Status** | `Draft` |
 | **Tag** | `Video - Pending Approval` — **ALLTID denna tag, även för bildannonser** |
 | **Innehåll** | Hela briefen ska vara tillgänglig inne i itemet: klistra in briefen som sidinnehåll OCH länka till **just den annonsens brief-fil** i Drive (editor-behörighet). Aldrig mapplänken, aldrig samma länk i flera items — varje item får sin egen fil-länk |

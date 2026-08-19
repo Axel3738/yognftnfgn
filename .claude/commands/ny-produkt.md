@@ -14,7 +14,7 @@ Används vid steg 4 i `docs/os/SOP-06-produkttest.md`. Finns redan performance-d
 Gör i ordning, utan att invänta godkännande:
 
 1. **Research:** produktsidan via Shopify (pris, varianter), raden i product sheetet (kostnader, Note, AD ideas, konkurrentlänk — länk i SOP-06), Meta Ad Library på svenska söktermer. Allt är hypotes — markera det.
-2. **Första testbatchen:** 6 statiska (demo, problem/lösning, social proof-stil, offer, listicle, jämförelse) + 2 videokoncept **med 2–3 hookvarianter var (max 3)** — samma body, bara hooken byts. Leveransformat, naming och arbetsregler enligt `.claude/commands/forsta-batch.md`; briefernas form enligt `docs/os/BRIEF-FORMAT.md` (AT A GLANCE-ruta, VOICEOVER: YES/NO, ingen primärtext, inga shot lists). Priser = produktsidans pris.
+2. **Första testbatchen:** 6 statiska (demo, problem/lösning, social proof-stil, offer, listicle, jämförelse) + 2 videokoncept **med 2–3 hookvarianter var (aldrig bara 1, max 3)** — samma body, bara hooken byts. Bilder testar aldrig hooks — variantsiffror i stället. Leveransformat, naming och arbetsregler enligt `.claude/commands/forsta-batch.md`; briefernas form enligt `docs/os/BRIEF-FORMAT.md` (AT A GLANCE-ruta, VOICEOVER: YES/NO, ingen primärtext, inga shot lists). Priser = produktsidans pris.
    **Copy/voiceover via subagent med `model: "sonnet"`** (`"haiku"` för bulkvarianter); strategi i huvudsessionen.
    **Primärtext:** skriv EN standardtext (sonnet-subagent), spara i `products/<id>/primary-text.md` — den återanvänds på alla annonser och läggs aldrig i briefer.
 3. **De 2 extra adsen — OVANPÅ batchen, stryks aldrig** (full spec i `docs/os/SOP-06-produkttest.md`, avsnittet "De 2 extra adsen"):

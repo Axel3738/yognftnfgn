@@ -31,13 +31,17 @@ att följa klipp-för-klipp-instruktioner de inte förstår. Därför:
   överallt, produkt i bild före sekund 4, svenska captions ord-för-ord,
   exportformat 9:16 + 4:5 (video) resp. 1:1 + 1080×1350 (bild).
 
-### 3. Färre koncept, fler hooks — max 3 hooks per koncept
-Vi vill ha mer data per test, inte fler halvtestade koncept.
+### 3. Hooks testas på VIDEO, aldrig på bild — max 3 hooks per videokoncept
+Video är dyrast att producera — därför ska varje videokoncept ge data på flera
+hooks. Bilder är billiga och testas som varianter i stället.
 
-- Ett videokoncept levereras med **2–3 hookvarianter (aldrig fler än 3)**:
+- **Videokoncept: alltid 2–3 hookvarianter (aldrig bara 1, aldrig fler än 3)**:
   samma body, bara de första ~3 sekunderna byts. Naming: `_H1`, `_H2`, `_H3`
-  på samma AD-ID.
-- Hellre 2 koncept × 3 hooks än 6 koncept × 1 hook.
+  på samma AD-ID. Ett videokoncept med en enda hook är slöseri.
+- **Bildannonser testar ALDRIG hooks** — de får variantsiffror (`_1`, `_2` …),
+  aldrig H-ID.
+- Antalet koncept styrs av kvoten som vanligt — det här ändrar inte
+  batchstorleken, bara att varje videokoncept bär flera hooks.
 - Varje hook är en egen hypotes — skriv vad varje hookvariant testar.
 
 ### 4. "AT A GLANCE"-rutan — obligatorisk överst i varje brief
@@ -60,19 +64,46 @@ YOUR JOB:        Pick clips from the source folder that match each line of the
 ```
 
 - **VOICEOVER: YES/NO ska alltid stå i versaler** — aldrig underförstått,
-  aldrig utelämnat. Finns voiceover: säg exakt var filen/manuset finns.
-- Statiska bilder har samma ruta (utan voiceover/hooks-raderna) med exakt
-  text-overlay och referensbild.
+  aldrig utelämnat.
+- **Vid voiceover: två separata tabeller, aldrig blandat.**
+  `VOICEOVER SCRIPT — this is SPOKEN (generate/record exactly this)` och
+  `TEXT ON SCREEN — this is WRITTEN in the video`. Det ska vara omöjligt att
+  missförstå vilka rader som ska bli röst och vilka som ska bli text i bild.
+  Säg exakt var VO-filen finns, eller att redigeraren ska generera den från
+  VO-tabellen.
 - Efter rutan: hook-tabellen (H1/H2/H3), body-manuset, text-overlays — allt
   svenskt i tabell `Swedish (use this) | English meaning` — samt "DO NOT"-listan
   (förbjudna priser m.m.). Inget annat.
 
+## Video-briefer och bild-briefer har olika läsare — skriv därefter
+
+| | **Video-brief** | **Bild-brief** |
+|---|---|---|
+| Läses av | Redigerarna (Filippinerna, engelska som andraspråk) | AI:n i bild-pipelinen (+ Axel som skummar) |
+| Nivå | **För en 10-åring.** Kort, enkel engelska, inga fackord | Får vara hur teknisk och detaljerad som helst — AI läser AI |
+| Krav | AT A GLANCE + VOICEOVER YES/NO + de två tabellerna | Börjar med **"WHAT THIS AD IS"** — 2–3 rader enkel svenska/engelska så Axel förstår vad annonsen handlar om. Resten fritt |
+| Hooks | 2–3 per koncept | Aldrig — variantsiffror |
+
+## Notion-itemets namn visar alltid typen
+
+Redigerarna gör **bara videoannonser** — de ska se direkt i listan vad som är
+deras. Itemnamnet i Notion är därför alltid:
+
+- `VIDEO — Enginecover_PD_9_H1`
+- `IMAGE — Enginecover_SO_3_2`
+
+Prefixet i versaler + ` — ` + annonsnamnet exakt enligt naming-strukturen.
+(Annonsnamnet i Ads Manager har inget prefix — det gäller bara Notion-itemet.)
+
 ## Checklista för varje brief (bockas av i leveransen)
 
 - [ ] AT A GLANCE-ruta överst, VOICEOVER: YES/NO i versaler
+- [ ] Vid voiceover: VOICEOVER SCRIPT-tabell och TEXT ON SCREEN-tabell separata
 - [ ] Ingen primärtext
 - [ ] Ingen shot list / editing direction (utom UGC-inspelning)
-- [ ] Max 3 hooks per koncept, samma body, egen hypotes per hook
+- [ ] Video: 2–3 hooks per koncept (aldrig 1, aldrig 4+). Bild: inga hooks alls
+- [ ] Bild-brief börjar med "WHAT THIS AD IS" på 2–3 enkla rader
+- [ ] Notion-itemnamn: `VIDEO — <annonsnamn>` eller `IMAGE — <annonsnamn>`
 - [ ] Swedish/English-tabeller för allt som syns eller hörs i annonsen
-- [ ] En 10-åring (eller en stressad redigerare på engelska som andraspråk)
-      kan läsa briefen och veta exakt vad som ska göras
+- [ ] Video-briefen: en 10-åring (eller en stressad redigerare på engelska som
+      andraspråk) kan läsa den och veta exakt vad som ska göras

@@ -13,7 +13,9 @@ Ladda upp alla briefer i den angivna batch-mappen till produktens Notion-sida,
 **exakt enligt `docs/os/NOTION-FORMAT.md`:**
 
 - Ett item per annons i Pending Approval-vyn — aldrig flera annonser i samma item.
-- Namn = annonsnamnet exakt (naming-strukturen), t.ex. `Enginecover_SP_6_H1`.
+- Namn = **`VIDEO — ` eller `IMAGE — `** + annonsnamnet exakt (naming-strukturen),
+  t.ex. `VIDEO — Enginecover_SP_6_H1`, `IMAGE — Enginecover_SO_3_2`.
+  Redigerarna gör bara video — typen ska synas direkt i item-listan.
 - Status **Draft**, tag **`Video - Pending Approval`** (även för bildannonser).
 - Briefen tillgänglig i itemet: hela briefen inklistrad som sidinnehåll + länk.
 - **Länken i varje item går till just DEN annonsens brief-fil i Drive** — aldrig
@@ -39,5 +41,5 @@ items som skulle skapats, låtsas aldrig).
 - [ ] Alla i Draft + tag Video - Pending Approval
 - [ ] Briefen läsbar INNE i varje item (inte bara en länk)
 - [ ] **Varje item länkar till sin egen brief-fil** — visa 3 stickprov: itemnamn → länkad fil
-- [ ] Item-namn = annonsnamn exakt
+- [ ] Item-namn = `VIDEO — `/`IMAGE — ` + annonsnamn exakt
 - [ ] Lista över skapade items visad för stickprov

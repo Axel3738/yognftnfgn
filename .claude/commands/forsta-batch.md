@@ -47,8 +47,8 @@ Ditt uppdrag: analysera verklig performance-data, förklara varför vissa annons
 - **FAS 5 – Creative DNA:** Winning/Losing DNA + Behåll alltid/Testa kontrollerat/Undvik/Obevisat. **Skriv till `products/<id>/dna.md`.**
 - **FAS 6 – Kund- & konkurrentresearch:** kundspråk (direktcitat/mönster/hypotes), direkta + indirekta konkurrenter, 3 lånade mekanismer.
 - **FAS 7 – Variationer:** 3 per vinnare (nära iteration / format transfer / ny persuasion-angle).
-- **FAS 8 – Nya videokoncept:** 2–3 koncept med olika persuasion-mekanismer, **vart och ett med 2–3 hookvarianter (max 3)** — samma body, bara hooken byts. Färre koncept × fler hooks slår fler koncept × en hook.
-- **FAS 9 – Nya statiska koncept:** 6 st (demo, jämförelse, testimonial, listicle, offer, risk/cost-of-inaction).
+- **FAS 8 – Nya videokoncept:** 3 koncept med olika persuasion-mekanismer, **vart och ett med 2–3 hookvarianter (aldrig bara 1, max 3)** — samma body, bara hooken byts. Video är dyrast, så varje videokoncept ska ge data på flera hooks.
+- **FAS 9 – Nya statiska koncept:** 6 st (demo, jämförelse, testimonial, listicle, offer, risk/cost-of-inaction). **Bilder testar aldrig hooks** — variantsiffror, inte H-ID.
 - **FAS 10 – Testplan:** Tier 1/2/3. Ingen dom <300 kr/3 köp; kill när CPA överstiger **break-even-CPA** (`break_even_cpa_sek` i products.json) efter ≥500 kr spend — inte när den överstiger target-CPA. "Gör innan spend"-lista. **Testplanen ska minst matcha kvoten: kör `node pipeline/quota.mjs`.**
 
 Varje annons: hypotes, vad som behålls/ändras, format, exakta hooks (max 3 per koncept), fullständigt manus/designbrief, exakta text-overlays, CTA, produktionsnivå, primärt KPI, "vad vi lär oss oavsett utfall". **Briefens form styrs av `docs/os/BRIEF-FORMAT.md`:** AT A GLANCE-ruta överst med VOICEOVER: YES/NO, ingen primärtext, ingen shot list/editing direction — redigeraren väljer klippen själv.
