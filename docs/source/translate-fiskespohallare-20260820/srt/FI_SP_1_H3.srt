@@ -3,33 +3,25 @@
 Tältä veneeni näyttää nyt verrattuna aiempaan.
 
 2
-00:00:02,899 --> 00:00:11,439
-Ennen minulla oli vapoja kaikkialla. Veneessä, autotallissa, sikin sokin, siimat sotkeutuivat joka kerta. Nyt minulla on neljä pidikettä paikoillaan.
+00:00:02,899 --> 00:00:07,119
+Ennen minulla oli vapoja kaikkialla. Veneessä, autotallissa, sikin sokin.
 
 3
-00:00:11,539 --> 00:00:13,099
-Jokainen vapa on omalla paikallaan.
+00:00:07,399 --> 00:00:09,319
+Siimat menivät solmuun joka kerta.
 
 4
-00:00:13,359 --> 00:00:16,139
-Ei sotkuja, ei stressiä ennen kuin lähden vesille.
+00:00:09,639 --> 00:00:16,139
+Nyt minulla on neljä pidikettä paikoillaan. Jokainen vapa on omalla paikallaan. Ei sotkuja, ei stressiä ennen kuin lähden vesille.
 
 5
-00:00:16,180 --> 00:00:20,039
-Sain ne asennettua viidessä minuutissa. Poraa ei oikeastaan edes tarvittu.
+00:00:16,180 --> 00:00:17,659
+Asensin ne viidessä minuutissa.
 
 6
-00:00:20,100 --> 00:00:22,679
-Ne ovat kiinni sekä kotona seinällä että veneessä.
+00:00:18,079 --> 00:00:22,679
+Poraa ei oikeastaan edes tarvittu. Ne ovat kiinni sekä kotona seinällä että veneessä.
 
 7
-00:00:22,739 --> 00:00:25,019
-Tukevat ja pitävät juuri niin kuin pitääkin.
-
-8
-00:00:25,100 --> 00:00:28,339
-Jos kalastat säännöllisesti, ymmärrät heti, miksi tämä kannattaa.
-
-9
-00:00:28,719 --> 00:00:30,619
-Yksinkertainen juttu, suuri ero.
+00:00:22,739 --> 00:00:30,619
+Tukevat, ne pysyvät juuri niin kuin pitääkin. Jos kalastat säännöllisesti, ymmärrät heti, miksi tämä kannattaa. Yksinkertainen juttu, suuri ero.

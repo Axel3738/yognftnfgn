@@ -221,7 +221,8 @@
       "market": "FI",
       "lang": "Finnish (Finland)",
       "srt_done": true,
-      "render_id": "65f6eed82dbc4c61b1615e7a03092476-fi"
+      "render_id": "65f6eed82dbc4c61b1615e7a03092476-fi",
+      "downloaded": true
     },
     "UK_GT_1_H3": {
       "proofread_id": "680ea2081eb64d6f84e80e357e29a7b2-en-en-GB",
@@ -229,7 +230,8 @@
       "market": "UK",
       "lang": "English (UK)",
       "srt_done": true,
-      "render_id": "7be24f60a7d34a89b88186dd85f83b98-en"
+      "render_id": "7be24f60a7d34a89b88186dd85f83b98-en",
+      "downloaded": true
     },
     "NO_PD_1_H1": {
       "proofread_id": "23bb898e2c1a40dbb79245fd4f662f05-nb-nb-NO",
@@ -237,7 +239,8 @@
       "market": "NO",
       "lang": "Norwegian Bokmål (Norway)",
       "srt_done": true,
-      "render_id": "784324b1657147faa0ce68fe371158ec-nb"
+      "render_id": "784324b1657147faa0ce68fe371158ec-nb",
+      "downloaded": true
     },
     "DK_PD_1_H1": {
       "proofread_id": "c1f8000b445240418406bfc0cf58c31f-da-da-DK",
@@ -245,7 +248,8 @@
       "market": "DK",
       "lang": "Danish (Denmark)",
       "srt_done": true,
-      "render_id": "41d9f48fef9d433f973d9cecc2de80ab-da"
+      "render_id": "41d9f48fef9d433f973d9cecc2de80ab-da",
+      "downloaded": true
     },
     "FI_PD_1_H1": {
       "proofread_id": "6ae617ca56994fc6bd724c3a9f0b7ba5-fi-fi-FI",
@@ -261,7 +265,8 @@
       "market": "UK",
       "lang": "English (UK)",
       "srt_done": true,
-      "render_id": "fb4d2467227742b9ba1fffde646dd346-en"
+      "render_id": "fb4d2467227742b9ba1fffde646dd346-en",
+      "downloaded": true
     },
     "NO_PD_1_H2": {
       "proofread_id": "d6f251d9eac2409d826af146accb1d08-nb-nb-NO",
@@ -269,7 +274,8 @@
       "market": "NO",
       "lang": "Norwegian Bokmål (Norway)",
       "srt_done": true,
-      "render_id": "67b2a6ec32dc49bf993c527dfcfe6b3a-nb"
+      "render_id": "67b2a6ec32dc49bf993c527dfcfe6b3a-nb",
+      "downloaded": true
     },
     "DK_PD_1_H2": {
       "proofread_id": "2e41d9abac684b82975f7ca5c3894db6-da-da-DK",
@@ -277,7 +283,8 @@
       "market": "DK",
       "lang": "Danish (Denmark)",
       "srt_done": true,
-      "render_id": "8c5122e14a80463fbe3955922aa583ea-da"
+      "render_id": "8c5122e14a80463fbe3955922aa583ea-da",
+      "downloaded": true
     },
     "FI_PD_1_H2": {
       "proofread_id": "9626568a8ce7477484277183f5124c1f-fi-fi-FI",
@@ -285,7 +292,8 @@
       "market": "FI",
       "lang": "Finnish (Finland)",
       "srt_done": true,
-      "render_id": "9feff369dca9410a9a2dbff8a642a36b-fi"
+      "render_id": "9feff369dca9410a9a2dbff8a642a36b-fi",
+      "downloaded": true
     },
     "UK_PD_1_H2": {
       "proofread_id": "0d770d15868949508fbd4e22bcf9cba9-en-en-GB",
@@ -293,7 +301,8 @@
       "market": "UK",
       "lang": "English (UK)",
       "srt_done": true,
-      "render_id": "38a89110f9f44a93ab58f560216aebfa-en"
+      "render_id": "38a89110f9f44a93ab58f560216aebfa-en",
+      "downloaded": true
     },
     "NO_PD_1_H3": {
       "proofread_id": "15400826983a46f6bd585b91b17689ac-nb-nb-NO",
@@ -301,7 +310,8 @@
       "market": "NO",
       "lang": "Norwegian Bokmål (Norway)",
       "srt_done": true,
-      "render_id": "b1c28d23d3a54f2d8f14b0ad0db18d48-nb"
+      "render_id": "b1c28d23d3a54f2d8f14b0ad0db18d48-nb",
+      "downloaded": true
     },
     "DK_PD_1_H3": {
       "proofread_id": "1102a949f6324ca3b5c55d15aa178673-da-da-DK",
@@ -309,7 +319,8 @@
       "market": "DK",
       "lang": "Danish (Denmark)",
       "srt_done": true,
-      "render_id": "0b6e294ec7aa422f803391a372d0aa81-da"
+      "render_id": "0b6e294ec7aa422f803391a372d0aa81-da",
+      "downloaded": true
     },
     "FI_PD_1_H3": {
       "proofread_id": "19df7c5c79c84d438c7f67509a3c5406-fi-fi-FI",
@@ -317,7 +328,8 @@
       "market": "FI",
       "lang": "Finnish (Finland)",
       "srt_done": true,
-      "render_id": "c5a1eedbda874a67bf94e1ceab958a9d-fi"
+      "render_id": "c5a1eedbda874a67bf94e1ceab958a9d-fi",
+      "downloaded": true
     },
     "UK_PD_1_H3": {
       "proofread_id": "cdccbdb811ef489db851309fe43b1156-en-en-GB",
@@ -325,7 +337,8 @@
       "market": "UK",
       "lang": "English (UK)",
       "srt_done": true,
-      "render_id": "de417b37dac04513866dd9018e1e9647-en"
+      "render_id": "de417b37dac04513866dd9018e1e9647-en",
+      "downloaded": true
     },
     "NO_SO_1_H1": {
       "proofread_id": "dfac8e498dcf419d85d50601b85432e5-nb-nb-NO",
@@ -333,7 +346,8 @@
       "market": "NO",
       "lang": "Norwegian Bokmål (Norway)",
       "srt_done": true,
-      "render_id": "c24911d89fce48c58e0e821d12216d46-nb"
+      "render_id": "c24911d89fce48c58e0e821d12216d46-nb",
+      "downloaded": true
     },
     "DK_SO_1_H1": {
       "proofread_id": "8e3e3bcdad8343cbb27a4be5cfe5eb55-da-da-DK",
@@ -341,7 +355,8 @@
       "market": "DK",
       "lang": "Danish (Denmark)",
       "srt_done": true,
-      "render_id": "99039fc5d4774089a94491ee6393e12b-da"
+      "render_id": "99039fc5d4774089a94491ee6393e12b-da",
+      "downloaded": true
     },
     "FI_SO_1_H1": {
       "proofread_id": "2dffc912e75a47df88f0573870d6e14c-fi-fi-FI",
@@ -357,7 +372,8 @@
       "market": "UK",
       "lang": "English (UK)",
       "srt_done": true,
-      "render_id": "7a503615046946c2b3417639cb2fc2e8-en"
+      "render_id": "7a503615046946c2b3417639cb2fc2e8-en",
+      "downloaded": true
     },
     "NO_SO_1_H2": {
       "proofread_id": "420be20860704bf89c2699f6f0a2d039-nb-nb-NO",
@@ -365,7 +381,8 @@
       "market": "NO",
       "lang": "Norwegian Bokmål (Norway)",
       "srt_done": true,
-      "render_id": "c58fa3283d0f4ba680e5dbd2a040e6fa-nb"
+      "render_id": "c58fa3283d0f4ba680e5dbd2a040e6fa-nb",
+      "downloaded": true
     },
     "DK_SO_1_H2": {
       "proofread_id": "09674aa8b491487daf6d934a61ae4238-da-da-DK",
@@ -373,7 +390,8 @@
       "market": "DK",
       "lang": "Danish (Denmark)",
       "srt_done": true,
-      "render_id": "95c51d6ec3da40f79354829a5e1fcb66-da"
+      "render_id": "95c51d6ec3da40f79354829a5e1fcb66-da",
+      "downloaded": true
     },
     "FI_SO_1_H2": {
       "proofread_id": "6169d94b4ec34b0ea2a902cfc5ffd244-fi-fi-FI",
@@ -381,7 +399,8 @@
       "market": "FI",
       "lang": "Finnish (Finland)",
       "srt_done": true,
-      "render_id": "c1350b0451f1430397f6cb904feb488c-fi"
+      "render_id": "c1350b0451f1430397f6cb904feb488c-fi",
+      "downloaded": true
     },
     "UK_SO_1_H2": {
       "proofread_id": "5d3f1d2dbd814c33a9acc09b6d4be33a-en-en-GB",
@@ -389,7 +408,8 @@
       "market": "UK",
       "lang": "English (UK)",
       "srt_done": true,
-      "render_id": "b8f72f12abb84c669c0934a5fe63406a-en"
+      "render_id": "b8f72f12abb84c669c0934a5fe63406a-en",
+      "downloaded": true
     },
     "NO_SO_1_H3": {
       "proofread_id": "503302f2417644eb9d9f288fa341f1c7-nb-nb-NO",
@@ -397,7 +417,8 @@
       "market": "NO",
       "lang": "Norwegian Bokmål (Norway)",
       "srt_done": true,
-      "render_id": "d22a92220f86403cba3b6bc8a8c729a5-nb"
+      "render_id": "d22a92220f86403cba3b6bc8a8c729a5-nb",
+      "downloaded": true
     },
     "DK_SO_1_H3": {
       "proofread_id": "100908fd667e46a1921a85f912f66039-da-da-DK",
@@ -405,7 +426,8 @@
       "market": "DK",
       "lang": "Danish (Denmark)",
       "srt_done": true,
-      "render_id": "2a24ffa5581641299c4e6c29192d9529-da"
+      "render_id": "2a24ffa5581641299c4e6c29192d9529-da",
+      "downloaded": true
     },
     "FI_SO_1_H3": {
       "proofread_id": "1ed4b4a04f734976bbbc151752096eaf-fi-fi-FI",
@@ -413,7 +435,8 @@
       "market": "FI",
       "lang": "Finnish (Finland)",
       "srt_done": true,
-      "render_id": "044dca6f883a452baf989d4f2a9a9eee-fi"
+      "render_id": "044dca6f883a452baf989d4f2a9a9eee-fi",
+      "downloaded": true
     },
     "UK_SO_1_H3": {
       "proofread_id": "66bc6803d1ce49b5a1248d4b8216a9fc-en-en-GB",
@@ -421,7 +444,8 @@
       "market": "UK",
       "lang": "English (UK)",
       "srt_done": true,
-      "render_id": "755cfdf23c8e489491dc6d9a13eec257-en"
+      "render_id": "755cfdf23c8e489491dc6d9a13eec257-en",
+      "downloaded": true
     },
     "NO_SP_1_H1": {
       "proofread_id": "dca5b74ed3f8483a96a633c189808b8b-nb-nb-NO",
@@ -429,7 +453,8 @@
       "market": "NO",
       "lang": "Norwegian Bokmål (Norway)",
       "srt_done": true,
-      "render_id": "1e8574b3401548b9b7e278d1770530e7-nb"
+      "render_id": "1e8574b3401548b9b7e278d1770530e7-nb",
+      "downloaded": true
     },
     "DK_SP_1_H1": {
       "proofread_id": "f6445c32d72442678aff6383f06eb84b-da-da-DK",
@@ -437,7 +462,8 @@
       "market": "DK",
       "lang": "Danish (Denmark)",
       "srt_done": true,
-      "render_id": "1dff9cd223df48e9be2d2c8f3482c263-da"
+      "render_id": "1dff9cd223df48e9be2d2c8f3482c263-da",
+      "downloaded": true
     },
     "FI_SP_1_H1": {
       "proofread_id": "60dc9ccb248c465cbc18352a2409b5fa-fi-fi-FI",
@@ -445,7 +471,8 @@
       "market": "FI",
       "lang": "Finnish (Finland)",
       "srt_done": true,
-      "render_id": "ee1c240d4f6349ed8ee6cfda085ce5aa-fi"
+      "render_id": "ee1c240d4f6349ed8ee6cfda085ce5aa-fi",
+      "downloaded": true
     },
     "UK_SP_1_H1": {
       "proofread_id": "d399970b399f4617b47156b7ece8e2d3-en-en-GB",
@@ -453,7 +480,8 @@
       "market": "UK",
       "lang": "English (UK)",
       "srt_done": true,
-      "render_id": "8149714ec9e2498ea6c27ac0a858aa6b-en"
+      "render_id": "8149714ec9e2498ea6c27ac0a858aa6b-en",
+      "downloaded": true
     },
     "NO_SP_1_H2": {
       "proofread_id": "ef6122d58206400b88926834b02815cc-nb-nb-NO",
@@ -469,7 +497,8 @@
       "market": "DK",
       "lang": "Danish (Denmark)",
       "srt_done": true,
-      "render_id": "6bfb15cee187461588fc4907e16f98f8-da"
+      "render_id": "6bfb15cee187461588fc4907e16f98f8-da",
+      "downloaded": true
     },
     "FI_SP_1_H2": {
       "proofread_id": "467b8198ff594b2cbe8ada70baa9433b-fi-fi-FI",
@@ -477,7 +506,8 @@
       "market": "FI",
       "lang": "Finnish (Finland)",
       "srt_done": true,
-      "render_id": "b4bb05f01e484d599b034f256585ead7-fi"
+      "render_id": "b4bb05f01e484d599b034f256585ead7-fi",
+      "downloaded": true
     },
     "UK_SP_1_H2": {
       "proofread_id": "fc2c31796f6e471fad6729d13a1182ef-en-en-GB",
@@ -485,7 +515,8 @@
       "market": "UK",
       "lang": "English (UK)",
       "srt_done": true,
-      "render_id": "76699878e4494c2ba8c2742e2d521f77-en"
+      "render_id": "76699878e4494c2ba8c2742e2d521f77-en",
+      "downloaded": true
     },
     "NO_SP_1_H3": {
       "proofread_id": "834f493039c94626a9bdb5cc06cf0528-nb-nb-NO",
@@ -493,7 +524,8 @@
       "market": "NO",
       "lang": "Norwegian Bokmål (Norway)",
       "srt_done": true,
-      "render_id": "d2e519c6b8174e23932c948ba6226ca4-nb"
+      "render_id": "d2e519c6b8174e23932c948ba6226ca4-nb",
+      "downloaded": true
     },
     "DK_SP_1_H3": {
       "proofread_id": "61ecd14cd4ef43888e2b7f738f12b4b9-da-da-DK",
@@ -501,7 +533,8 @@
       "market": "DK",
       "lang": "Danish (Denmark)",
       "srt_done": true,
-      "render_id": "9cd9d66514624766b8708538422f8ed6-da"
+      "render_id": "9cd9d66514624766b8708538422f8ed6-da",
+      "downloaded": true
     },
     "FI_SP_1_H3": {
       "proofread_id": "d0db8290072b49fb9a17db7282a7117b-fi-fi-FI",
@@ -517,7 +550,8 @@
       "market": "UK",
       "lang": "English (UK)",
       "srt_done": true,
-      "render_id": "25163305807b43378be806e665b6091e-en"
+      "render_id": "25163305807b43378be806e665b6091e-en",
+      "downloaded": true
     }
   }
 }
