@@ -1,0 +1,441 @@
+{
+  "assets": {
+    "CS_1_H1": "https://resource2.heygen.ai/video/afc6794a451045b58fb79351b38b2246/original.mp4",
+    "CS_1_H2": "https://resource2.heygen.ai/video/3e91f4493133460b834d1ca7cf4d17ce/original.mp4",
+    "CS_1_H3": "https://resource2.heygen.ai/video/ef6a36691e084b06a4fd15fef831e1fb/original.mp4",
+    "GT_1_H1": "https://resource2.heygen.ai/video/144fd2d4d7f5466a8c50e6c615b38f0d/original.mp4",
+    "GT_1_H2": "https://resource2.heygen.ai/video/4723b87aec15478e860e7256b61130ff/original.mp4",
+    "GT_1_H3": "https://resource2.heygen.ai/video/5c883c6a56d74a359046916fadb65d49/original.mp4",
+    "PD_1_H1": "https://resource2.heygen.ai/video/3522241db5794853b95fe36ee8f62e9c/original.mp4",
+    "PD_1_H2": "https://resource2.heygen.ai/video/09a7dd2798d74b5d85718f1680081140/original.mp4",
+    "PD_1_H3": "https://resource2.heygen.ai/video/3428129748704a09aa1cab87f4a1462b/original.mp4",
+    "SO_1_H1": "https://resource2.heygen.ai/video/25a52b316ec34bd0ba81cea95499391e/original.mp4",
+    "SO_1_H2": "https://resource2.heygen.ai/video/2feebea1d8e145e59be6d929e29a22ae/original.mp4",
+    "SO_1_H3": "https://resource2.heygen.ai/video/34116e404f654f44a7b3888ff2cfef5d/original.mp4",
+    "SP_1_H1": "https://resource2.heygen.ai/video/fbacf6a77ff4490a8e8098f7a63e2a43/original.mp4",
+    "SP_1_H2": "https://resource2.heygen.ai/video/6f61370037a34ba59dd64d142dba3fac/original.mp4",
+    "SP_1_H3": "https://resource2.heygen.ai/video/3831300d52ec45dd8c628462f509633f/original.mp4"
+  },
+  "sessions": {
+    "NO_CS_1_H1": {
+      "proofread_id": "de72f48e97014255914cbbc1ee6afe99-nb-nb-NO",
+      "video": "CS_1_H1",
+      "market": "NO",
+      "lang": "Norwegian Bokmål (Norway)",
+      "srt_done": true
+    },
+    "DK_CS_1_H1": {
+      "proofread_id": "3c39c4b7c2524a2a825922bba5409fb3-da-da-DK",
+      "video": "CS_1_H1",
+      "market": "DK",
+      "lang": "Danish (Denmark)",
+      "srt_done": true
+    },
+    "FI_CS_1_H1": {
+      "proofread_id": "b9143d16e2be466a962a60a6648d9912-fi-fi-FI",
+      "video": "CS_1_H1",
+      "market": "FI",
+      "lang": "Finnish (Finland)",
+      "srt_done": true
+    },
+    "UK_CS_1_H1": {
+      "proofread_id": "4573526f8aff4f018b5fdf48d25fd828-en-en-GB",
+      "video": "CS_1_H1",
+      "market": "UK",
+      "lang": "English (UK)",
+      "srt_done": true
+    },
+    "NO_CS_1_H2": {
+      "proofread_id": "36ee86e9c94f4150bae6e7d19cc19d5f-nb-nb-NO",
+      "video": "CS_1_H2",
+      "market": "NO",
+      "lang": "Norwegian Bokmål (Norway)",
+      "srt_done": true
+    },
+    "DK_CS_1_H2": {
+      "proofread_id": "d8a7c8c1828d48b6bcea70741071847e-da-da-DK",
+      "video": "CS_1_H2",
+      "market": "DK",
+      "lang": "Danish (Denmark)",
+      "srt_done": true
+    },
+    "FI_CS_1_H2": {
+      "proofread_id": "60a8ee3e04824bd492a51a367293319f-fi-fi-FI",
+      "video": "CS_1_H2",
+      "market": "FI",
+      "lang": "Finnish (Finland)",
+      "srt_done": true
+    },
+    "UK_CS_1_H2": {
+      "proofread_id": "faf170ddedbb437393b8d97c1b4d0945-en-en-GB",
+      "video": "CS_1_H2",
+      "market": "UK",
+      "lang": "English (UK)",
+      "srt_done": true
+    },
+    "NO_CS_1_H3": {
+      "proofread_id": "0286e2899e5c4e4d979bab74cc84dab3-nb-nb-NO",
+      "video": "CS_1_H3",
+      "market": "NO",
+      "lang": "Norwegian Bokmål (Norway)",
+      "srt_done": true
+    },
+    "DK_CS_1_H3": {
+      "proofread_id": "6af36d834c714e28a20a3f638b5e5fc0-da-da-DK",
+      "video": "CS_1_H3",
+      "market": "DK",
+      "lang": "Danish (Denmark)",
+      "srt_done": true
+    },
+    "FI_CS_1_H3": {
+      "proofread_id": "f771c7b6cadb49e08cc8be0528c80f8c-fi-fi-FI",
+      "video": "CS_1_H3",
+      "market": "FI",
+      "lang": "Finnish (Finland)",
+      "srt_done": true
+    },
+    "UK_CS_1_H3": {
+      "proofread_id": "6463aa1e5eac42a5965217c636f1b645-en-en-GB",
+      "video": "CS_1_H3",
+      "market": "UK",
+      "lang": "English (UK)",
+      "srt_done": true
+    },
+    "NO_GT_1_H1": {
+      "proofread_id": "0a0739b196854036ac2465e10c839117-nb-nb-NO",
+      "video": "GT_1_H1",
+      "market": "NO",
+      "lang": "Norwegian Bokmål (Norway)",
+      "srt_done": true
+    },
+    "DK_GT_1_H1": {
+      "proofread_id": "85f7c713a8004f8bb7933239fac63684-da-da-DK",
+      "video": "GT_1_H1",
+      "market": "DK",
+      "lang": "Danish (Denmark)",
+      "srt_done": true
+    },
+    "FI_GT_1_H1": {
+      "proofread_id": "0c3c5300afa64a0ab327c9a887b02d16-fi-fi-FI",
+      "video": "GT_1_H1",
+      "market": "FI",
+      "lang": "Finnish (Finland)",
+      "srt_done": true
+    },
+    "UK_GT_1_H1": {
+      "proofread_id": "4931eb89217e48d8a507245f5e220d45-en-en-GB",
+      "video": "GT_1_H1",
+      "market": "UK",
+      "lang": "English (UK)",
+      "srt_done": true
+    },
+    "NO_GT_1_H2": {
+      "proofread_id": "6d0fbc8a07c54b83847c525a383d2715-nb-nb-NO",
+      "video": "GT_1_H2",
+      "market": "NO",
+      "lang": "Norwegian Bokmål (Norway)",
+      "srt_done": true
+    },
+    "DK_GT_1_H2": {
+      "proofread_id": "cb31652cf088459a98ae19021aa123f8-da-da-DK",
+      "video": "GT_1_H2",
+      "market": "DK",
+      "lang": "Danish (Denmark)",
+      "srt_done": true
+    },
+    "FI_GT_1_H2": {
+      "proofread_id": "48f39994ccc8484c8e02efaa6e3d9e92-fi-fi-FI",
+      "video": "GT_1_H2",
+      "market": "FI",
+      "lang": "Finnish (Finland)",
+      "srt_done": true
+    },
+    "UK_GT_1_H2": {
+      "proofread_id": "f0b777e04562414f9924e1249b60d086-en-en-GB",
+      "video": "GT_1_H2",
+      "market": "UK",
+      "lang": "English (UK)",
+      "srt_done": true
+    },
+    "NO_GT_1_H3": {
+      "proofread_id": "3234f120a10b426bad1e6ceeb307d8a5-nb-nb-NO",
+      "video": "GT_1_H3",
+      "market": "NO",
+      "lang": "Norwegian Bokmål (Norway)",
+      "srt_done": true
+    },
+    "DK_GT_1_H3": {
+      "proofread_id": "ae1fe8b77ea64fc8929091185b710bdd-da-da-DK",
+      "video": "GT_1_H3",
+      "market": "DK",
+      "lang": "Danish (Denmark)",
+      "srt_done": true
+    },
+    "FI_GT_1_H3": {
+      "proofread_id": "3a560b01526949bd887e56be6eb2d11e-fi-fi-FI",
+      "video": "GT_1_H3",
+      "market": "FI",
+      "lang": "Finnish (Finland)",
+      "srt_done": false
+    },
+    "UK_GT_1_H3": {
+      "proofread_id": "680ea2081eb64d6f84e80e357e29a7b2-en-en-GB",
+      "video": "GT_1_H3",
+      "market": "UK",
+      "lang": "English (UK)",
+      "srt_done": false
+    },
+    "NO_PD_1_H1": {
+      "proofread_id": "23bb898e2c1a40dbb79245fd4f662f05-nb-nb-NO",
+      "video": "PD_1_H1",
+      "market": "NO",
+      "lang": "Norwegian Bokmål (Norway)",
+      "srt_done": true
+    },
+    "DK_PD_1_H1": {
+      "proofread_id": "c1f8000b445240418406bfc0cf58c31f-da-da-DK",
+      "video": "PD_1_H1",
+      "market": "DK",
+      "lang": "Danish (Denmark)",
+      "srt_done": true
+    },
+    "FI_PD_1_H1": {
+      "proofread_id": "6ae617ca56994fc6bd724c3a9f0b7ba5-fi-fi-FI",
+      "video": "PD_1_H1",
+      "market": "FI",
+      "lang": "Finnish (Finland)",
+      "srt_done": true
+    },
+    "UK_PD_1_H1": {
+      "proofread_id": "9ccbc0f5e02f4f7fa9bb9af669f8f4fa-en-en-GB",
+      "video": "PD_1_H1",
+      "market": "UK",
+      "lang": "English (UK)",
+      "srt_done": false
+    },
+    "NO_PD_1_H2": {
+      "proofread_id": "d6f251d9eac2409d826af146accb1d08-nb-nb-NO",
+      "video": "PD_1_H2",
+      "market": "NO",
+      "lang": "Norwegian Bokmål (Norway)",
+      "srt_done": false
+    },
+    "DK_PD_1_H2": {
+      "proofread_id": "2e41d9abac684b82975f7ca5c3894db6-da-da-DK",
+      "video": "PD_1_H2",
+      "market": "DK",
+      "lang": "Danish (Denmark)",
+      "srt_done": false
+    },
+    "FI_PD_1_H2": {
+      "proofread_id": "9626568a8ce7477484277183f5124c1f-fi-fi-FI",
+      "video": "PD_1_H2",
+      "market": "FI",
+      "lang": "Finnish (Finland)",
+      "srt_done": false
+    },
+    "UK_PD_1_H2": {
+      "proofread_id": "0d770d15868949508fbd4e22bcf9cba9-en-en-GB",
+      "video": "PD_1_H2",
+      "market": "UK",
+      "lang": "English (UK)",
+      "srt_done": false
+    },
+    "NO_PD_1_H3": {
+      "proofread_id": "15400826983a46f6bd585b91b17689ac-nb-nb-NO",
+      "video": "PD_1_H3",
+      "market": "NO",
+      "lang": "Norwegian Bokmål (Norway)",
+      "srt_done": false
+    },
+    "DK_PD_1_H3": {
+      "proofread_id": "1102a949f6324ca3b5c55d15aa178673-da-da-DK",
+      "video": "PD_1_H3",
+      "market": "DK",
+      "lang": "Danish (Denmark)",
+      "srt_done": false
+    },
+    "FI_PD_1_H3": {
+      "proofread_id": "19df7c5c79c84d438c7f67509a3c5406-fi-fi-FI",
+      "video": "PD_1_H3",
+      "market": "FI",
+      "lang": "Finnish (Finland)",
+      "srt_done": false
+    },
+    "UK_PD_1_H3": {
+      "proofread_id": "cdccbdb811ef489db851309fe43b1156-en-en-GB",
+      "video": "PD_1_H3",
+      "market": "UK",
+      "lang": "English (UK)",
+      "srt_done": false
+    },
+    "NO_SO_1_H1": {
+      "proofread_id": "dfac8e498dcf419d85d50601b85432e5-nb-nb-NO",
+      "video": "SO_1_H1",
+      "market": "NO",
+      "lang": "Norwegian Bokmål (Norway)",
+      "srt_done": false
+    },
+    "DK_SO_1_H1": {
+      "proofread_id": "8e3e3bcdad8343cbb27a4be5cfe5eb55-da-da-DK",
+      "video": "SO_1_H1",
+      "market": "DK",
+      "lang": "Danish (Denmark)",
+      "srt_done": false
+    },
+    "FI_SO_1_H1": {
+      "proofread_id": "2dffc912e75a47df88f0573870d6e14c-fi-fi-FI",
+      "video": "SO_1_H1",
+      "market": "FI",
+      "lang": "Finnish (Finland)",
+      "srt_done": false
+    },
+    "UK_SO_1_H1": {
+      "proofread_id": "7db6aaee2cb04d14952c39868ff84657-en-en-GB",
+      "video": "SO_1_H1",
+      "market": "UK",
+      "lang": "English (UK)",
+      "srt_done": false
+    },
+    "NO_SO_1_H2": {
+      "proofread_id": "420be20860704bf89c2699f6f0a2d039-nb-nb-NO",
+      "video": "SO_1_H2",
+      "market": "NO",
+      "lang": "Norwegian Bokmål (Norway)",
+      "srt_done": false
+    },
+    "DK_SO_1_H2": {
+      "proofread_id": "09674aa8b491487daf6d934a61ae4238-da-da-DK",
+      "video": "SO_1_H2",
+      "market": "DK",
+      "lang": "Danish (Denmark)",
+      "srt_done": false
+    },
+    "FI_SO_1_H2": {
+      "proofread_id": "6169d94b4ec34b0ea2a902cfc5ffd244-fi-fi-FI",
+      "video": "SO_1_H2",
+      "market": "FI",
+      "lang": "Finnish (Finland)",
+      "srt_done": false
+    },
+    "UK_SO_1_H2": {
+      "proofread_id": "5d3f1d2dbd814c33a9acc09b6d4be33a-en-en-GB",
+      "video": "SO_1_H2",
+      "market": "UK",
+      "lang": "English (UK)",
+      "srt_done": false
+    },
+    "NO_SO_1_H3": {
+      "proofread_id": "503302f2417644eb9d9f288fa341f1c7-nb-nb-NO",
+      "video": "SO_1_H3",
+      "market": "NO",
+      "lang": "Norwegian Bokmål (Norway)",
+      "srt_done": false
+    },
+    "DK_SO_1_H3": {
+      "proofread_id": "100908fd667e46a1921a85f912f66039-da-da-DK",
+      "video": "SO_1_H3",
+      "market": "DK",
+      "lang": "Danish (Denmark)",
+      "srt_done": false
+    },
+    "FI_SO_1_H3": {
+      "proofread_id": "1ed4b4a04f734976bbbc151752096eaf-fi-fi-FI",
+      "video": "SO_1_H3",
+      "market": "FI",
+      "lang": "Finnish (Finland)",
+      "srt_done": false
+    },
+    "UK_SO_1_H3": {
+      "proofread_id": "66bc6803d1ce49b5a1248d4b8216a9fc-en-en-GB",
+      "video": "SO_1_H3",
+      "market": "UK",
+      "lang": "English (UK)",
+      "srt_done": false
+    },
+    "NO_SP_1_H1": {
+      "proofread_id": "dca5b74ed3f8483a96a633c189808b8b-nb-nb-NO",
+      "video": "SP_1_H1",
+      "market": "NO",
+      "lang": "Norwegian Bokmål (Norway)",
+      "srt_done": false
+    },
+    "DK_SP_1_H1": {
+      "proofread_id": "f6445c32d72442678aff6383f06eb84b-da-da-DK",
+      "video": "SP_1_H1",
+      "market": "DK",
+      "lang": "Danish (Denmark)",
+      "srt_done": false
+    },
+    "FI_SP_1_H1": {
+      "proofread_id": "60dc9ccb248c465cbc18352a2409b5fa-fi-fi-FI",
+      "video": "SP_1_H1",
+      "market": "FI",
+      "lang": "Finnish (Finland)",
+      "srt_done": false
+    },
+    "UK_SP_1_H1": {
+      "proofread_id": "d399970b399f4617b47156b7ece8e2d3-en-en-GB",
+      "video": "SP_1_H1",
+      "market": "UK",
+      "lang": "English (UK)",
+      "srt_done": false
+    },
+    "NO_SP_1_H2": {
+      "proofread_id": "ef6122d58206400b88926834b02815cc-nb-nb-NO",
+      "video": "SP_1_H2",
+      "market": "NO",
+      "lang": "Norwegian Bokmål (Norway)",
+      "srt_done": false
+    },
+    "DK_SP_1_H2": {
+      "proofread_id": "dc4fc6895836475bbdb4ed6f383f5b23-da-da-DK",
+      "video": "SP_1_H2",
+      "market": "DK",
+      "lang": "Danish (Denmark)",
+      "srt_done": false
+    },
+    "FI_SP_1_H2": {
+      "proofread_id": "467b8198ff594b2cbe8ada70baa9433b-fi-fi-FI",
+      "video": "SP_1_H2",
+      "market": "FI",
+      "lang": "Finnish (Finland)",
+      "srt_done": false
+    },
+    "UK_SP_1_H2": {
+      "proofread_id": "fc2c31796f6e471fad6729d13a1182ef-en-en-GB",
+      "video": "SP_1_H2",
+      "market": "UK",
+      "lang": "English (UK)",
+      "srt_done": false
+    },
+    "NO_SP_1_H3": {
+      "proofread_id": "834f493039c94626a9bdb5cc06cf0528-nb-nb-NO",
+      "video": "SP_1_H3",
+      "market": "NO",
+      "lang": "Norwegian Bokmål (Norway)",
+      "srt_done": false
+    },
+    "DK_SP_1_H3": {
+      "proofread_id": "61ecd14cd4ef43888e2b7f738f12b4b9-da-da-DK",
+      "video": "SP_1_H3",
+      "market": "DK",
+      "lang": "Danish (Denmark)",
+      "srt_done": false
+    },
+    "FI_SP_1_H3": {
+      "proofread_id": "d0db8290072b49fb9a17db7282a7117b-fi-fi-FI",
+      "video": "SP_1_H3",
+      "market": "FI",
+      "lang": "Finnish (Finland)",
+      "srt_done": false
+    },
+    "UK_SP_1_H3": {
+      "proofread_id": "e90c0c7991a84dadb955f6f128de54a9-en-en-GB",
+      "video": "SP_1_H3",
+      "market": "UK",
+      "lang": "English (UK)",
+      "srt_done": false
+    }
+  }
+}
