@@ -257,7 +257,8 @@
       "market": "FI",
       "lang": "Finnish (Finland)",
       "srt_done": true,
-      "render_id": "ca41f3de0acb44fea98541e4d69a1d7d-fi"
+      "render_id": "ca41f3de0acb44fea98541e4d69a1d7d-fi",
+      "downloaded": true
     },
     "UK_PD_1_H1": {
       "proofread_id": "9ccbc0f5e02f4f7fa9bb9af669f8f4fa-en-en-GB",
@@ -489,7 +490,8 @@
       "market": "NO",
       "lang": "Norwegian Bokmål (Norway)",
       "srt_done": true,
-      "render_id": "ff962a0aecd845f7ad8a7c6eee149677-nb"
+      "render_id": "ff962a0aecd845f7ad8a7c6eee149677-nb",
+      "downloaded": true
     },
     "DK_SP_1_H2": {
       "proofread_id": "dc4fc6895836475bbdb4ed6f383f5b23-da-da-DK",
