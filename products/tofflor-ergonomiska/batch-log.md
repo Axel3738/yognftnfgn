@@ -64,3 +64,19 @@ Briefer i Drive: mappen "Tofflor Ergonomiska – Batch 2 briefs"
 | Ergoslippers_PD_10_1 | Statisk | Risk/cost-of-inaction: stegen landar i hälar och knän |
 
 Utfall: fylls i vid nästa `/cs`-körning.
+
+---
+
+## Extra koncept (briefade 2026-08-20 på Axels beställning — bara Google Docs, INTE i Notion)
+
+3 videokoncept × 3 hooks = 9 annonser. Briefer i repo:
+`docs/briefs/tofflor-ergonomiska-extra-koncept/` + samma Drive-mapp som batch #2.
+Copy av sonnet-subagent. AD-ID:n PD_5, PD_6, SP_7 är härmed upptagna.
+
+| Koncept | Källa | Hooks |
+|---|---|---|
+| Ergoslippers_PD_5 "Vått underlag" | Bevisat mönster strandtofflorna DNA #7 (vått: CPA 63 vs 228 kr) + backloggen | H1 badrumsgolv · H2 regnvått däck · H3 vattentestet |
+| Ergoslippers_SP_7 "Hela dagen hemma" | LP:ns bärande rad + pain-signalen CTR 4,65 % + vinnarens råa hemformat | H1 morgonen · H2 kvällen · H3 trappstegen |
+| Ergoslippers_PD_6 "Tunn mot tjock" | Playbook: before/after-jämförelse bevisat format + PD_8_1-spåret | H1 sidoprofil · H2 dubbelt trycktest · H3 gamla paret vid dörren |
+
+Skapas de i Notion senare: kom ihåg VIDEO-prefixet och en fil-länk per item.
