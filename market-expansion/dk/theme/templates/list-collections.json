@@ -1,0 +1,88 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "list-collections-template",
+      "settings": {
+        "title_enable": true,
+        "display_type": "all",
+        "sort": "alphabetical",
+        "grid": "2"
+      }
+    },
+    "featured_product_prydcU": {
+      "type": "featured-product",
+      "blocks": {
+        "price_e96am9": {
+          "type": "price",
+          "settings": {}
+        },
+        "description_j3Hiy8": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "is_tab": false
+          }
+        },
+        "variant_picker_KBaaNm": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "color_swatches": false
+          }
+        },
+        "buy_buttons_3MeXV4": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": true
+          }
+        }
+      },
+      "block_order": [
+        "price_e96am9",
+        "description_j3Hiy8",
+        "variant_picker_KBaaNm",
+        "buy_buttons_3MeXV4"
+      ],
+      "name": "Featured product",
+      "settings": {
+        "featured_product": "premium-ljusslinga-utomhus",
+        "divider": false,
+        "sku_enable": false,
+        "image_position": "left",
+        "image_size": "medium",
+        "product_zoom_enable": true,
+        "thumbnail_position": "beside",
+        "thumbnail_arrows": false,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    },
+    "contact_form_tAYMA7": {
+      "type": "contact-form",
+      "name": "Contact form",
+      "settings": {
+        "title": "Kontakt os",
+        "text": "",
+        "show_phone": false,
+        "narrow_column": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "featured_product_prydcU",
+    "contact_form_tAYMA7"
+  ]
+}

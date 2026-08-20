@@ -1,0 +1,979 @@
+{
+ "batch": 5,
+ "products": [
+  {
+   "handle": "digital-dackdjupsmatare-lcd-display",
+   "no": {
+    "title": "Digital Dekkmønsterdybdemåler – LCD-Skjerm",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Kontroll på dekkene – kontroll på sikkerheten</h2>\n<p>For lite mønster på dekkene er farlig og kan gi bot ved kontroll. Det er vanskelig å se med det blotte øye når det begynner å bli på tide å bytte.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e635b363-7588-4381-b5ee-564b5db736fe.jpg?v=1782033732\" style=\"max-width:100%;border-radius:10px;\" alt=\"Digital dekkmønsterdybdemåler\"></p>\n<h3 style=\"font-size:19px;\">Nøyaktig måling på sekunder</h3>\n<p>Med den digitale måleren ser du mønsterdybden nøyaktig på den store LCD-skjermen. Du får raskt svar på om dekkene holder eller må byttes.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/6c16dd93-037e-406d-ad9e-974ace34dcc0.jpg?v=1782033732\" style=\"max-width:100%;border-radius:10px;\" alt=\"Måler i bruk\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Digital avlesning med stor LCD-skjerm</li>\n<li>Måler 0–25,4 mm</li>\n<li>Viser i både mm og tommer</li>\n<li>For bil, lastebil og motorsykkel</li>\n<li>Liten og enkel å oppbevare i bilen</li>\n</ul>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/2ff39d19-ba8c-445f-af30-e4575862125b.jpg?v=1782033732\" style=\"max-width:100%;border-radius:10px;\" alt=\"Måler detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Biltilbehør",
+    "tags": [
+     "Bil",
+     "Dekk",
+     "Garasje",
+     "Måleverktøy",
+     "Sikkerhet"
+    ],
+    "options": [
+     {
+      "name": "Title",
+      "values": [
+       "Default Title"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028706763101",
+      "title": "Default Title",
+      "selectedOptions": [
+       {
+        "name": "Title",
+        "value": "Default Title"
+       }
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Digital dekkmønsterdybdemåler",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "seo": {
+     "title": "Digital Dekkmønsterdybdemåler – LCD-Skjerm",
+     "description": "Mål dekkmønsteret nøyaktig på sekunder med stor LCD-skjerm. Viser mm og tommer – enkel å ha i bilen."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Produkttekst inneholder et garantiløfte (30 dagers fornøyd-kunde-garanti) – bør kontrolleres mot norsk angrerett og garantilovgivning før publisering."
+   ]
+  },
+  {
+   "handle": "snabbtorkande-sportshorts-andningsbara",
+   "no": {
+    "title": "Hurtigtørkende Sportsshorts – Pustende",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Behagelige shorts som holder deg sval</h2>\n<p>Bomullsshorts blir tunge og klissete av svette under trening og varme dager. Det føles ubehagelig og tar lang tid å tørke.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/4a1ef9f2-6b2a-4946-a9bf-1644cbd28e89.jpg?v=1782033786\" style=\"max-width:100%;border-radius:10px;\" alt=\"Hurtigtørkende sportsshorts\"></p>\n<h3 style=\"font-size:19px;\">Lett og pustende stoff</h3>\n<p>Disse sportsshortsene er laget av lett og pustende stoff som tørker raskt. Det elastiske materialet gir bevegelsesfrihet både på løpeturen og på stranden.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1a36c136-4a2d-4d6b-94a2-c7452703ad47.jpg?v=1782033786\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sportsshorts detalj\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Hurtigtørkende og pustende stoff</li>\n<li>Elastisk materiale for full bevegelsesfrihet</li>\n<li>Behagelige under trening og hverdag</li>\n<li>Dobbelt lag for god passform</li>\n<li>Passer til løping, gym og friluftsliv</li>\n</ul>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/54e61bf5-0bd3-45ac-88c8-28a401606614.jpg?v=1782033786\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sportsshorts materiale\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Klær",
+    "tags": [
+     "Camping",
+     "Friluft",
+     "Klær",
+     "Shorts",
+     "Trening"
+    ],
+    "options": [
+     {
+      "name": "Title",
+      "values": [
+       "Default Title"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028706828637",
+      "title": "Default Title",
+      "selectedOptions": [
+       {
+        "name": "Title",
+        "value": "Default Title"
+       }
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Hurtigtørkende sportsshorts",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "seo": {
+     "title": "Hurtigtørkende Sportsshorts – Pustende",
+     "description": "Lette, elastiske sportsshorts som tørker raskt og puster godt. Perfekt til løping og friluftsliv."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Produkttekst inneholder et garantiløfte (30 dagers fornøyd-kunde-garanti) – bør kontrolleres mot norsk angrerett og garantilovgivning før publisering."
+   ]
+  },
+  {
+   "handle": "stottaligt-iphone-fodral-med-halsband-skarmskydd",
+   "no": {
+    "title": "Støtsikkert iPhone-Deksel – med Halssnor og Skjermbeskyttelse",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Beskytt telefonen – og ha den nær</h2>\n<p>En telefon som faller i bakken kan bety en dyr reparasjon. Og å alltid lete etter mobilen i lommen eller vesken er både irriterende og risikabelt.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/2daaadb0-0bb7-4e3b-a7dd-07872c164ed8.jpg?v=1782033860\" style=\"max-width:100%;border-radius:10px;\" alt=\"Støtsikkert iPhone-deksel\"></p>\n<h3 style=\"font-size:19px;\">Støtsikker beskyttelse med halssnor</h3>\n<p>Dekselet har støtdempende kanter og en innebygd skjermbeskyttelse som beskytter mot fall og riper. Med den avtakbare halssnoren og håndleddsremmen har du alltid telefonen lett tilgjengelig.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/31429ea6-d467-4196-8438-ddf7c91f8ea8.jpg?v=1782033860\" style=\"max-width:100%;border-radius:10px;\" alt=\"iPhone-deksel med halssnor\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Støtdempende kanter for bedre fallbeskyttelse</li>\n<li>Innebygd skjermbeskyttelse</li>\n<li>Avtakbar halssnor og håndleddsrem</li>\n<li>360° helhetlig beskyttelse</li>\n<li>Passer til mange iPhone-modeller</li>\n</ul>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/7d430346-a4f3-48ec-b25f-c67c27457e7f.jpg?v=1782033860\" style=\"max-width:100%;border-radius:10px;\" alt=\"iPhone-deksel detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Telefontilbehør",
+    "tags": [
+     "iPhone",
+     "Mobildeksel",
+     "Beskyttelse",
+     "Telefon",
+     "Tilbehør"
+    ],
+    "options": [
+     {
+      "name": "Title",
+      "values": [
+       "Default Title"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028707582301",
+      "title": "Default Title",
+      "selectedOptions": [
+       {
+        "name": "Title",
+        "value": "Default Title"
+       }
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Støtsikkert iPhone-deksel",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "seo": {
+     "title": "Støtsikkert iPhone-Deksel med Halssnor",
+     "description": "Beskytt telefonen mot fall og riper med innebygd skjermbeskyttelse og avtakbar halssnor."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Produkttekst inneholder et garantiløfte (30 dagers fornøyd-kunde-garanti) – bør kontrolleres mot norsk angrerett og garantilovgivning før publisering."
+   ]
+  },
+  {
+   "handle": "herrglasogon-2-pack-latta-modebagar",
+   "no": {
+    "title": "Herrebriller 2-Pak – Lette Motebriller",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">To par – til prisen du forventer for ett</h2>\n<p>Ett par briller holder sjelden. Ett par forsvinner, ett går i stykker, og plutselig står du der uten.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/7c9d7d61-8530-483b-9f5d-74104142e911.jpg?v=1782033910\" style=\"max-width:100%;border-radius:10px;\" alt=\"Herrebriller 2-pak\"></p>\n<h3 style=\"font-size:19px;\">Lette brillefasonger du glemmer at du har på deg</h3>\n<p>Disse brillene er laget av lett og slitesterkt PC-materiale med en stilren design. Du får to par, så du alltid har et ekstra par for hånden.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/a48f6c2e-864b-4a1a-9193-a32899117451.jpg?v=1782033912\" style=\"max-width:100%;border-radius:10px;\" alt=\"Briller detalj\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>To par i ett kjøp</li>\n<li>Lett og slitesterkt PC-materiale</li>\n<li>Stilren design som passer de fleste</li>\n<li>Behagelige å ha på hele dagen</li>\n<li>Bra til hverdag og fritid</li>\n</ul>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/37c1d91f-376c-4163-9343-3ab1ac18499b.jpg?v=1782033910\" style=\"max-width:100%;border-radius:10px;\" alt=\"Briller par\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Tilbehør",
+    "tags": [
+     "Tilbehør",
+     "Briller",
+     "Herre",
+     "Mote",
+     "Tilbehør"
+    ],
+    "options": [
+     {
+      "name": "Title",
+      "values": [
+       "Default Title"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028708139357",
+      "title": "Default Title",
+      "selectedOptions": [
+       {
+        "name": "Title",
+        "value": "Default Title"
+       }
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Herrebriller 2-pak",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "seo": {
+     "title": "Herrebriller 2-Pak – Lette Motebriller",
+     "description": "To par lette, stilrene herrebriller i slitesterkt PC-materiale – alltid et ekstra par for hånden."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Produkttekst inneholder et garantiløfte (30 dagers fornøyd-kunde-garanti) – bør kontrolleres mot norsk angrerett og garantilovgivning før publisering."
+   ]
+  },
+  {
+   "handle": "handhallen-sprutpistol-for-farg-hantverk",
+   "no": {
+    "title": "Håndholdt Sprøytepistol – for Maling og Håndverk",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Enkel sprøytemaling for små prosjekter</h2>\n<p>Å male små håndverksprosjekter med pensel gir lette striper og ujevn overflate. Stort sprøyteutstyr er både dyrt og unødvendig for de små jobbene.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/62390db6-ab3e-4d89-9c7c-45b7d79f3d4e.jpg?v=1782033986\" style=\"max-width:100%;border-radius:10px;\" alt=\"Håndholdt sprøytepistol\"></p>\n<h3 style=\"font-size:19px;\">Lett å holde og bruke</h3>\n<p>Denne håndholdte sprøytepistolen ligger godt i hånden og gir jevn maling på håndverk og mindre overflater. Den er laget av slitesterk plast og er enkel å tørke ren.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/a7d151c3-9df9-4ab2-8084-e72b8f76a61a.jpg?v=1782033986\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sprøytepistol i bruk\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Gir jevn maling på små overflater</li>\n<li>Ergonomisk grep</li>\n<li>Slitesterk plastkonstruksjon</li>\n<li>Bra til håndverk, modeller og hobbyprosjekter</li>\n<li>Enkel å rengjøre etter bruk</li>\n</ul>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e5e4b33e-8db2-4f9d-ac02-71fe3264f527.jpg?v=1782033987\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sprøytepistol detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Verktøy",
+    "tags": [
+     "DIY",
+     "Maling",
+     "Håndverk",
+     "Malerarbeid",
+     "Verktøy"
+    ],
+    "options": [
+     {
+      "name": "Title",
+      "values": [
+       "Default Title"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028708860253",
+      "title": "Default Title",
+      "selectedOptions": [
+       {
+        "name": "Title",
+        "value": "Default Title"
+       }
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Håndholdt sprøytepistol",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "seo": {
+     "title": "Håndholdt Sprøytepistol for Maling",
+     "description": "Lett sprøytepistol som gir jevn maling på håndverk og mindre overflater. Slitesterk og lett å rengjøre."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Produkttekst inneholder et garantiløfte (30 dagers fornøyd-kunde-garanti) – bør kontrolleres mot norsk angrerett og garantilovgivning før publisering."
+   ]
+  },
+  {
+   "handle": "forlangningsnyckel-2-i-1-sparrnyckel-med-hylsor",
+   "no": {
+    "title": "Forlengelsesnøkkel 2-i-1 – Skrallenøkkel med Piper",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">En nøkkel som erstatter flere</h2>\n<p>Å lete etter riktig pipe og nøkkel midt i en jobb tar tid og tålmodighet. Trange rom gjør det enda vanskeligere.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/cc5c4594-f12b-4915-8eb7-3a7f872549a8.jpg?v=1782034060\" style=\"max-width:100%;border-radius:10px;\" alt=\"Forlengelsesnøkkel 2-i-1\"></p>\n<h3 style=\"font-size:19px;\">To funksjoner i ett verktøy</h3>\n<p>Denne forlengelsesnøkkelen fungerer både som skrallenøkkel og forlengelse. Du kommer til flere skruer med ett eneste verktøy og slipper å bytte hele tiden.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/932e1b6c-f0cf-4790-8c6d-3365b8270732.jpg?v=1782034060\" style=\"max-width:100%;border-radius:10px;\" alt=\"Skrallenøkkel i bruk\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>2-i-1 – skrallenøkkel og forlengelse</li>\n<li>Kommer til i trange rom</li>\n<li>Universell passform for vanlige piper</li>\n<li>Komplett sett for både hjemme og garasjen</li>\n<li>Slitesterkt materiale som varer</li>\n</ul>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ea8852fe-f7cb-4db8-a195-7875bd09bfc6.jpg?v=1782034060\" style=\"max-width:100%;border-radius:10px;\" alt=\"Nøkkelsett detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Verktøy",
+    "tags": [
+     "Garasje",
+     "Mekaniker",
+     "Nøkkel",
+     "Skrallenøkkel",
+     "Verktøy"
+    ],
+    "options": [
+     {
+      "name": "Title",
+      "values": [
+       "Default Title"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028709253469",
+      "title": "Default Title",
+      "selectedOptions": [
+       {
+        "name": "Title",
+        "value": "Default Title"
+       }
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Forlengelsesnøkkel 2-i-1",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "seo": {
+     "title": "Forlengelsesnøkkel 2-i-1 – Skrallenøkkel",
+     "description": "Skrallenøkkel og forlengelse i ett verktøy – kommer til i trange rom og passer vanlige piper."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Produkttekst inneholder et garantiløfte (30 dagers fornøyd-kunde-garanti) – bør kontrolleres mot norsk angrerett og garantilovgivning før publisering."
+   ]
+  },
+  {
+   "handle": "oljefilternyckel-3-kaft-justerbar",
+   "no": {
+    "title": "Oljefilternøkkel 3-Kjeft – Justerbar",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Få løs filteret – uten å slite</h2>\n<p>Et fastsittende oljefilter er et klassisk problem ved oljeskift. Med feil verktøy river du opp hendene og får det likevel ikke løs.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/4b7eddd5-3823-43f5-af76-196da3370fad.jpg?v=1782034113\" style=\"max-width:100%;border-radius:10px;\" alt=\"Oljefilternøkkel 3-kjeft\"></p>\n<h3 style=\"font-size:19px;\">Justerbar gripekraft</h3>\n<p>Den justerbare 3-kjeftsnøkkelen griper filteret godt fra flere hold. Du får løs selv hardt sittende filtre med ett enkelt grep.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/c1aa82d3-e094-4f7d-8571-ffe3a6e5a88e.jpg?v=1782034113\" style=\"max-width:100%;border-radius:10px;\" alt=\"Oljefilternøkkel i bruk\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Tre kjefter som griper godt</li>\n<li>Justerbar for ulike filterdiametre</li>\n<li>Får løs selv hardt sittende filtre</li>\n<li>Passer de fleste biler og motorer</li>\n<li>Slitesterkt materiale for lang levetid</li>\n</ul>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/004bfec9-3653-468b-b7fb-8651181494d2.jpg?v=1782034113\" style=\"max-width:100%;border-radius:10px;\" alt=\"Oljefilternøkkel detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Verktøy",
+    "tags": [
+     "Bil",
+     "Filter",
+     "Garasje",
+     "Oljeskift",
+     "Verktøy"
+    ],
+    "options": [
+     {
+      "name": "Title",
+      "values": [
+       "Default Title"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028709679453",
+      "title": "Default Title",
+      "selectedOptions": [
+       {
+        "name": "Title",
+        "value": "Default Title"
+       }
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Oljefilternøkkel 3-kjeft",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "seo": {
+     "title": "Oljefilternøkkel 3-Kjeft – Justerbar",
+     "description": "Justerbar oljefilternøkkel som griper godt og løsner selv hardt sittende filtre. Passer de fleste biler."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Produkttekst inneholder et garantiløfte (30 dagers fornøyd-kunde-garanti) – bør kontrolleres mot norsk angrerett og garantilovgivning før publisering."
+   ]
+  },
+  {
+   "handle": "manuell-vatskepump-borrdriven-sug-overforingspump",
+   "no": {
+    "title": "Manuell Væskepumpe – Drilldrevet Suge- og Overføringspumpe",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Flytt væske raskt – med drillen din</h2>\n<p>Å tømme en tank eller flytte vann for hånd er tregt og sølete. Ofte havner mer på bakken enn der du vil ha det.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/46f88a48-182e-4fbf-a69b-4561eb69612b_800x800_8ed3eb8d-0127-49b8-8e52-d4f15f59023d.jpg?v=1782034167\" style=\"max-width:100%;border-radius:10px;\" alt=\"Manuell væskepumpe\"></p>\n<h3 style=\"font-size:19px;\">Koble til drillen og kjør</h3>\n<p>Pumpen drives av din vanlige drill og flytter vann eller drivstoff raskt. Den fungerer også manuelt og passer både EU- og US-gjenger.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/d4069b4b-d1a5-4527-a119-4f3c25ba8f70.jpg?v=1782034167\" style=\"max-width:100%;border-radius:10px;\" alt=\"Væskepumpe i bruk\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Drives av vanlig drill</li>\n<li>Fungerer også manuelt</li>\n<li>For vann, drivstoff og andre væsker</li>\n<li>Passer både EU- og US-gjenger</li>\n<li>Bra til garasje, båt og utendørs bruk</li>\n</ul>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/80fc74cf-64ad-49fb-80b8-770f4884ea61.jpg?v=1782034166\" style=\"max-width:100%;border-radius:10px;\" alt=\"Væskepumpe detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Verktøy",
+    "tags": [
+     "Drivstoff",
+     "Garasje",
+     "Pumpe",
+     "Vann",
+     "Verktøy"
+    ],
+    "options": [
+     {
+      "name": "Title",
+      "values": [
+       "Default Title"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028711579997",
+      "title": "Default Title",
+      "selectedOptions": [
+       {
+        "name": "Title",
+        "value": "Default Title"
+       }
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Manuell væskepumpe",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "seo": {
+     "title": "Manuell Væskepumpe – Drilldrevet",
+     "description": "Flytt vann eller drivstoff raskt med drillen din. Fungerer også manuelt – passer EU- og US-gjenger."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Produkttekst inneholder et garantiløfte (30 dagers fornøyd-kunde-garanti) – bør kontrolleres mot norsk angrerett og garantilovgivning før publisering."
+   ]
+  },
+  {
+   "handle": "tradlos-bildammsugare-uppladdningsbar-kraftfull",
+   "no": {
+    "title": "Trådløs Bilstøvsuger – Oppladbar og Kraftig",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Rengjør bilen – uten ledning og krøll</h2>\n<p>Smuler, sand og støv samles raskt i bilen og i trange hjørner. En stor støvsuger med ledning når sjelden helt inn.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/9f00625a-3d21-4ee4-9d2b-04b9f42cdb8f.jpg?v=1782034214\" style=\"max-width:100%;border-radius:10px;\" alt=\"Trådløs bilstøvsuger\"></p>\n<h3 style=\"font-size:19px;\">Liten, trådløs og sterk</h3>\n<p>Denne støvsugeren er trådløs og oppladbar via USB. Til tross for sin lille størrelse har den god sugekraft og når enkelt inn i sprekker og under seter.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/4778ea00-840e-47be-972f-fb1212f42454.jpg?v=1782034213\" style=\"max-width:100%;border-radius:10px;\" alt=\"Bilstøvsuger i bruk\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Trådløs og oppladbar via USB</li>\n<li>God sugekraft i et lite format</li>\n<li>Når inn i sprekker og trange hjørner</li>\n<li>Bra til bil, hjem og kontor</li>\n<li>Lett å tømme og rengjøre</li>\n</ul>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/93f42398-5267-4514-af84-896584b58091.jpg?v=1782034213\" style=\"max-width:100%;border-radius:10px;\" alt=\"Bilstøvsuger detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Biltilbehør",
+    "tags": [
+     "Bil",
+     "Støvsuger",
+     "Garasje",
+     "Rengjøring",
+     "Trådløs"
+    ],
+    "options": [
+     {
+      "name": "Title",
+      "values": [
+       "Default Title"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028713251165",
+      "title": "Default Title",
+      "selectedOptions": [
+       {
+        "name": "Title",
+        "value": "Default Title"
+       }
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Trådløs bilstøvsuger",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "seo": {
+     "title": "Trådløs Bilstøvsuger – Oppladbar",
+     "description": "Kraftig, trådløs bilstøvsuger med USB-lading. Når enkelt inn i sprekker og under seter."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Produkttekst inneholder et garantiløfte (30 dagers fornøyd-kunde-garanti) – bør kontrolleres mot norsk angrerett og garantilovgivning før publisering."
+   ]
+  },
+  {
+   "handle": "hopfallbar-vattenbehallare-8l-med-kran",
+   "no": {
+    "title": "Sammenleggbar Vannbeholder 8L – med Kran",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Ha rent vann nær teltet</h2>\n<p>På camping er det langt til kranen, og tunge vanndunker tar plass. Du vil ha vann lett tilgjengelig uten å måtte bære frem og tilbake.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/37b9315e721245afabf2fec43cb40410-goods.jpg?v=1782034272\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sammenleggbar vannbeholder 8L\"></p>\n<h3 style=\"font-size:19px;\">Sammenleggbar og lett å bære</h3>\n<p>Denne vannbeholderen rommer nesten 8 liter og har en praktisk kran. Når den er tom, bretter du den flat sammen så den knapt tar noe plass.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e3f623ab-4ff6-40f5-8a9a-9ff00f29f97e.jpg?v=1782034271\" style=\"max-width:100%;border-radius:10px;\" alt=\"Vannbeholder med kran\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Rommer nesten 8 liter</li>\n<li>Praktisk kran for enkel tapping</li>\n<li>Sammenleggbar – tar liten plass</li>\n<li>Lett å ta med seg</li>\n<li>Bra til camping, turer og utflukter</li>\n</ul>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/47d99ed1-05ea-4f6d-9246-13455ef54994.jpg?v=1782034271\" style=\"max-width:100%;border-radius:10px;\" alt=\"Vannbeholder detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Camping",
+    "tags": [
+     "Camping",
+     "Friluft",
+     "Oppbevaring",
+     "Utendørs",
+     "Vann"
+    ],
+    "options": [
+     {
+      "name": "Title",
+      "values": [
+       "Default Title"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028717805917",
+      "title": "Default Title",
+      "selectedOptions": [
+       {
+        "name": "Title",
+        "value": "Default Title"
+       }
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Sammenleggbar vannbeholder 8L",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "seo": {
+     "title": "Sammenleggbar Vannbeholder 8L",
+     "description": "Praktisk vannbeholder med kran som rommer nesten 8 liter. Bretter flat sammen – perfekt til camping."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Produkttekst inneholder et garantiløfte (30 dagers fornøyd-kunde-garanti) – bør kontrolleres mot norsk angrerett og garantilovgivning før publisering."
+   ]
+  },
+  {
+   "handle": "barbar-tvattlina-8m-justerbar-for-camping",
+   "no": {
+    "title": "Bærbar Klessnor 8m – Justerbar for Camping",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Tørk klærne uansett hvor du er</h2>\n<p>På reise og camping blir våte klær og håndklær fort et problem. Uten noe sted å henge dem blir de liggende fuktige og begynner å lukte.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e33d3d323aaf1ab75078c014315d2ce4.jpg?v=1782034323\" style=\"max-width:100%;border-radius:10px;\" alt=\"Bærbar klessnor\"></p>\n<h3 style=\"font-size:19px;\">Justerbar snor som blir med</h3>\n<p>Denne klessnoren er 8 meter lang og justerbar. Du strekker den enkelt opp mellom to trær eller stolper og har en tørkesnor på noen sekunder.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/f960b003-56a5-45ee-b07f-af4561f2df49.jpg?v=1782034323\" style=\"max-width:100%;border-radius:10px;\" alt=\"Klessnor oppsatt\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>8 meter lang og justerbar</li>\n<li>Lett å strekke opp mellom trær og stolper</li>\n<li>Lett og liten å pakke</li>\n<li>Bra til camping, reise og fiske</li>\n<li>Slitesterk snor som varer</li>\n</ul>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/224dcdc9-0733-4ea3-be2b-053bac2f330e.jpg?v=1782034323\" style=\"max-width:100%;border-radius:10px;\" alt=\"Klessnor detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Camping",
+    "tags": [
+     "Camping",
+     "Friluft",
+     "Reise",
+     "Klessnor",
+     "Utendørs"
+    ],
+    "options": [
+     {
+      "name": "Title",
+      "values": [
+       "Default Title"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028722196829",
+      "title": "Default Title",
+      "selectedOptions": [
+       {
+        "name": "Title",
+        "value": "Default Title"
+       }
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Bærbar klessnor",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "seo": {
+     "title": "Bærbar Klessnor 8m – Justerbar",
+     "description": "Justerbar klessnor på 8 meter til camping og reise. Lett å pakke og rask å sette opp."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Produkttekst inneholder et garantiløfte (30 dagers fornøyd-kunde-garanti) – bør kontrolleres mot norsk angrerett og garantilovgivning før publisering."
+   ]
+  },
+  {
+   "handle": "brostvaska-for-herr-sling-bag-for-sport-fritid",
+   "no": {
+    "title": "Brystveske for Herre – Sling Bag for Sport og Fritid",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Ha det viktigste nær kroppen</h2>\n<p>På sykkelen, motorsykkelen eller turen vil du ha telefon, nøkler og lommebok lett tilgjengelig. En vanlig ryggsekk må du hele tiden ta av for å komme til.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ff60a886-8a8a-4ff1-a219-0d9753c55367.jpg?v=1782034378\" style=\"max-width:100%;border-radius:10px;\" alt=\"Brystveske herre\"></p>\n<h3 style=\"font-size:19px;\">Smidig veske med mange rom</h3>\n<p>Brystvesken sitter godt på kroppen og har flere rom til sakene dine. Remmene er justerbare, så vesken sitter behagelig uansett aktivitet.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ec8053ce-94ab-4965-af44-8ee9792faf7f.jpg?v=1782034378\" style=\"max-width:100%;border-radius:10px;\" alt=\"Brystveske på kroppen\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Flere rom til telefon, nøkler og lommebok</li>\n<li>Justerbare remmer for god passform</li>\n<li>Sitter godt under bevegelse</li>\n<li>Bra til sykkel, motorsykkel og fotturer</li>\n<li>Slitesterkt materiale med glidelåser</li>\n</ul>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/be910792-8198-4224-898e-62e487e67ba1.jpg?v=1782034378\" style=\"max-width:100%;border-radius:10px;\" alt=\"Brystveske detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Vesker",
+    "tags": [
+     "Brystveske",
+     "Camping",
+     "Friluft",
+     "Sport",
+     "Veske"
+    ],
+    "options": [
+     {
+      "name": "Farge",
+      "values": [
+       "Kamuflasje",
+       "Svart",
+       "Khaki",
+       "Mørk kamuflasje"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65490297979229",
+      "title": "Kamuflasje",
+      "selectedOptions": [
+       {
+        "name": "Farge",
+        "value": "Kamuflasje"
+       }
+      ]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65490298011997",
+      "title": "Svart",
+      "selectedOptions": [
+       {
+        "name": "Farge",
+        "value": "Svart"
+       }
+      ]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65490298044765",
+      "title": "Khaki",
+      "selectedOptions": [
+       {
+        "name": "Farge",
+        "value": "Khaki"
+       }
+      ]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65490298077533",
+      "title": "Mørk kamuflasje",
+      "selectedOptions": [
+       {
+        "name": "Farge",
+        "value": "Mørk kamuflasje"
+       }
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Brystveske herre",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "seo": {
+     "title": "Brystveske for Herre – Sling Bag",
+     "description": "Smidig brystveske med flere rom og justerbare remmer. Perfekt til sykkel, motorsykkel og turer."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Produkttekst inneholder et garantiløfte (30 dagers fornøyd-kunde-garanti) – bør kontrolleres mot norsk angrerett og garantilovgivning før publisering."
+   ]
+  },
+  {
+   "handle": "strandmatta-med-uppblasbart-nackstod-sandtat",
+   "no": {
+    "title": "Strandmatte med Oppblåsbar Nakkestøtte – Sandtett",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Ligg behagelig på stranden – uten sand overalt</h2>\n<p>Et vanlig teppe på stranden samler sand og blir hardt å ligge på. Og uten støtte for nakken blir det fort ubehagelig.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/eacea9df-7727-4fd7-a0a1-6baab89682a1.jpg?v=1782034442\" style=\"max-width:100%;border-radius:10px;\" alt=\"Strandmatte med nakkestøtte\"></p>\n<h3 style=\"font-size:19px;\">Sandtett matte med innebygd pute</h3>\n<p>Matten har et sandtett stoff som ikke samler sand, og en oppblåsbar nakkestøtte for bedre komfort. Den er lett å brette sammen og ta med seg.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/6882ce43-3ba9-4781-8659-fa850766ad60.jpg?v=1782034440\" style=\"max-width:100%;border-radius:10px;\" alt=\"Strandmatte utlagt\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Sandtett stoff som holder matten ren</li>\n<li>Oppblåsbar nakkestøtte for komfort</li>\n<li>Sammenleggbar og lett å bære</li>\n<li>Fuktsikker – bra også på gress</li>\n<li>Reparasjonssett følger med</li>\n</ul>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/df6fc715-aca8-4053-a68b-c48f2788042c.jpg?v=1782034440\" style=\"max-width:100%;border-radius:10px;\" alt=\"Strandmatte detalj\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Camping",
+    "tags": [
+     "Camping",
+     "Friluft",
+     "Matte",
+     "Piknik",
+     "Strand"
+    ],
+    "options": [
+     {
+      "name": "Title",
+      "values": [
+       "Default Title"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65028726882653",
+      "title": "Default Title",
+      "selectedOptions": [
+       {
+        "name": "Title",
+        "value": "Default Title"
+       }
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Strandmatte med nakkestøtte",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "seo": {
+     "title": "Strandmatte med Oppblåsbar Nakkestøtte",
+     "description": "Sandtett strandmatte med oppblåsbar nakkestøtte. Lett å brette sammen og ta med på stranden."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Produkttekst inneholder et garantiløfte (30 dagers fornøyd-kunde-garanti) – bør kontrolleres mot norsk angrerett og garantilovgivning før publisering."
+   ]
+  },
+  {
+   "handle": "herrsandaler-konvertibla-for-sport-strand",
+   "no": {
+    "title": "Herresandaler – Konvertible for Sport og Strand",
+    "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Behagelige sandaler for hele sommeren</h2>\n<p>Det er godt å slippe å snøre sko på varme dager. Men mange sandaler er både ubehagelige og glatte når det blir vått.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/00bf0c32-4466-46c3-9331-29e7f04c94e3.jpg?v=1782034511\" style=\"max-width:100%;border-radius:10px;\" alt=\"Herresandaler\"></p>\n<h3 style=\"font-size:19px;\">To stiler i ett par</h3>\n<p>Disse sandalene kan brukes på to måter og passer til både strand og hverdag. Sålen gir godt grep, og materialet er både lett og behagelig mot foten.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3fc975ae-f2ee-4fe8-8224-b47f3ffdb903.jpg?v=1782034511\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sandaler detalj\"></p>\n<h3 style=\"font-size:19px;\">Funksjoner</h3>\n<ul>\n<li>Konvertibel design – to stiler i ett par</li>\n<li>Sklisikker såle med godt grep</li>\n<li>Lett og behagelig materiale</li>\n<li>Bra til strand, camping og hverdag</li>\n<li>Enkle å skylle rene</li>\n</ul>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1013/0322/2621/files/54f7bfbd-3bba-4304-b5bf-897acd9ee5fe.jpg?v=1782034510\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sandaler par\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>30 dagers fornøyd-kunde-garanti.</strong> Ikke helt fornøyd? Ta kontakt innen 30 dager, så løser vi det – uten krøll.</p>\n</div>",
+    "productType": "Sko",
+    "tags": [
+     "Camping",
+     "Friluft",
+     "Sandaler",
+     "Sko",
+     "Strand"
+    ],
+    "options": [
+     {
+      "name": "Størrelse",
+      "values": [
+       "41",
+       "42.5",
+       "43.5",
+       "44.5",
+       "45",
+       "46"
+      ]
+     },
+     {
+      "name": "Farge",
+      "values": [
+       "Svart",
+       "Grå",
+       "Blå"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "id": "gid://shopify/ProductVariant/65337672139101",
+      "title": "41 / Svart",
+      "selectedOptions": [
+       {
+        "name": "Størrelse",
+        "value": "41"
+       },
+       {
+        "name": "Farge",
+        "value": "Svart"
+       }
+      ]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65337672171869",
+      "title": "41 / Grå",
+      "selectedOptions": [
+       {
+        "name": "Størrelse",
+        "value": "41"
+       },
+       {
+        "name": "Farge",
+        "value": "Grå"
+       }
+      ]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65337672204637",
+      "title": "41 / Blå",
+      "selectedOptions": [
+       {
+        "name": "Størrelse",
+        "value": "41"
+       },
+       {
+        "name": "Farge",
+        "value": "Blå"
+       }
+      ]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65337672237405",
+      "title": "42.5 / Svart",
+      "selectedOptions": [
+       {
+        "name": "Størrelse",
+        "value": "42.5"
+       },
+       {
+        "name": "Farge",
+        "value": "Svart"
+       }
+      ]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65337672270173",
+      "title": "42.5 / Grå",
+      "selectedOptions": [
+       {
+        "name": "Størrelse",
+        "value": "42.5"
+       },
+       {
+        "name": "Farge",
+        "value": "Grå"
+       }
+      ]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65337672302941",
+      "title": "42.5 / Blå",
+      "selectedOptions": [
+       {
+        "name": "Størrelse",
+        "value": "42.5"
+       },
+       {
+        "name": "Farge",
+        "value": "Blå"
+       }
+      ]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65337672335709",
+      "title": "43.5 / Svart",
+      "selectedOptions": [
+       {
+        "name": "Størrelse",
+        "value": "43.5"
+       },
+       {
+        "name": "Farge",
+        "value": "Svart"
+       }
+      ]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65337672368477",
+      "title": "43.5 / Grå",
+      "selectedOptions": [
+       {
+        "name": "Størrelse",
+        "value": "43.5"
+       },
+       {
+        "name": "Farge",
+        "value": "Grå"
+       }
+      ]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65337672401245",
+      "title": "43.5 / Blå",
+      "selectedOptions": [
+       {
+        "name": "Størrelse",
+        "value": "43.5"
+       },
+       {
+        "name": "Farge",
+        "value": "Blå"
+       }
+      ]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65337672434013",
+      "title": "44.5 / Svart",
+      "selectedOptions": [
+       {
+        "name": "Størrelse",
+        "value": "44.5"
+       },
+       {
+        "name": "Farge",
+        "value": "Svart"
+       }
+      ]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65337672466781",
+      "title": "44.5 / Grå",
+      "selectedOptions": [
+       {
+        "name": "Størrelse",
+        "value": "44.5"
+       },
+       {
+        "name": "Farge",
+        "value": "Grå"
+       }
+      ]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65337672499549",
+      "title": "44.5 / Blå",
+      "selectedOptions": [
+       {
+        "name": "Størrelse",
+        "value": "44.5"
+       },
+       {
+        "name": "Farge",
+        "value": "Blå"
+       }
+      ]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65337672532317",
+      "title": "45 / Svart",
+      "selectedOptions": [
+       {
+        "name": "Størrelse",
+        "value": "45"
+       },
+       {
+        "name": "Farge",
+        "value": "Svart"
+       }
+      ]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65337672565085",
+      "title": "45 / Grå",
+      "selectedOptions": [
+       {
+        "name": "Størrelse",
+        "value": "45"
+       },
+       {
+        "name": "Farge",
+        "value": "Grå"
+       }
+      ]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65337672597853",
+      "title": "45 / Blå",
+      "selectedOptions": [
+       {
+        "name": "Størrelse",
+        "value": "45"
+       },
+       {
+        "name": "Farge",
+        "value": "Blå"
+       }
+      ]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65337672630621",
+      "title": "46 / Svart",
+      "selectedOptions": [
+       {
+        "name": "Størrelse",
+        "value": "46"
+       },
+       {
+        "name": "Farge",
+        "value": "Svart"
+       }
+      ]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65337672663389",
+      "title": "46 / Grå",
+      "selectedOptions": [
+       {
+        "name": "Størrelse",
+        "value": "46"
+       },
+       {
+        "name": "Farge",
+        "value": "Grå"
+       }
+      ]
+     },
+     {
+      "id": "gid://shopify/ProductVariant/65337672696157",
+      "title": "46 / Blå",
+      "selectedOptions": [
+       {
+        "name": "Størrelse",
+        "value": "46"
+       },
+       {
+        "name": "Farge",
+        "value": "Blå"
+       }
+      ]
+     }
+    ],
+    "imagesAlt": [
+     "Herresandaler",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "seo": {
+     "title": "Herresandaler – Konvertible for Sport",
+     "description": "Sklisikre, konvertible herresandaler i lett materiale. To bæremåter – perfekt til strand og hverdag."
+    }
+   },
+   "flags": [
+    "JURIDISK GRANSKNING: Produkttekst inneholder et garantiløfte (30 dagers fornøyd-kunde-garanti) – bør kontrolleres mot norsk angrerett og garantilovgivning før publisering."
+   ]
+  }
+ ]
+}

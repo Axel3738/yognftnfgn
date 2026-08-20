@@ -1,0 +1,16 @@
+{
+  "name": "baverbutiken-creative-os",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Creative Strategy OS för Bäverbutiken: brief-kvot, produktminne och redigerardashboard. Inga externa beroenden.",
+  "scripts": {
+    "quota": "node pipeline/quota.mjs",
+    "seed": "node dashboard/seed.mjs --force",
+    "dash": "node dashboard/build.mjs",
+    "status": "node dashboard/cli.mjs status",
+    "review": "node dashboard/cli.mjs review-queue",
+    "test": "node --test dashboard/test/*.test.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
