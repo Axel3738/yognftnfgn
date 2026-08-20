@@ -62,12 +62,15 @@ function variantIn(p, land, v) {
   const { varde } = v.pris_sek != null || v.priser
     ? prisFor({ ...p, pris_sek: v.pris_sek ?? p.pris_sek, priser: v.priser ?? p.priser }, land)
     : prisFor(p, land);
+  // Lokalisera optionerna: namnen kommer ur p.optionsnamn[land], vardena ur v.varden[land].
+  const namn = p.optionsnamn?.[land] || p.optioner || ['Title'];
+  const varden = v.varden?.[land] || v.varden?.se || (v.optionValues ? v.optionValues.map((o) => o.name) : ['Default Title']);
   return {
     price: String(varde),
     inventoryPolicy: 'CONTINUE',
     taxable: false,
     inventoryItem: { sku: v.sku, tracked: true },
-    optionValues: v.optionValues,
+    optionValues: varden.map((vv, i) => ({ optionName: namn[i], name: vv })),
   };
 }
 
@@ -110,7 +113,7 @@ for (const land of lander) {
     if (!text) { fel.push(`${p.namn}: saknar text.${land}`); continue; }
 
     // REGEL 0 — inventera först. Finns någon av SKU:erna redan? Rör inte.
-    const varianter = p.varianter?.length ? p.varianter : [{ sku: p.sku, optionValues: [{ optionName: 'Title', name: 'Default Title' }] }];
+    const varianter = p.varianter?.length ? p.varianter : [{ sku: p.sku, varden: { se: ['Default Title'] } }];
     const traff = varianter.map((v) => skuIndex.get(v.sku)).find(Boolean);
     if (traff) {
       hoppade.push(`${p.namn} → finns redan som "${traff.titel}" (${traff.status})`);
@@ -147,7 +150,7 @@ for (const land of lander) {
             ...(p.kategori_gid ? { category: p.kategori_gid } : {}),
             productOptions: optioner.map((namn, i) => ({
               name: namn,
-              values: [...new Set(varianter.map((v) => v.optionValues[i]?.name))].map((n) => ({ name: n })),
+              values: [...new Set(priser.map((pv) => pv.optionValues[i]?.name))].map((n) => ({ name: n })),
             })),
           },
           media: (p.bilder || []).map((b) => ({

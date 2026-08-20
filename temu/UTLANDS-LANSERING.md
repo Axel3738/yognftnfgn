@@ -186,6 +186,25 @@ språk, ett pris för alla storlekar. SKU-mönstret är identiskt i alla butiker
 | 24 | Vandringskängor Herr | TEMU-601105032097489-<strl> | Strl 41–47 | aa-8-3 | CDN/temu2-kangor.gif | CDN/temu2-kangor-1.webp | 669 | 759 | 499 | 64,90 | 49.99 |
 | 25 | Cykelshorts Herr | TEMU-601099538175267-<S…3XL> | S, M, L, XL, 2XL, 3XL | sg-4-4-4 | CDN/temu2-cykelshorts.gif | CDN/temu2-cykelshorts-1.webp + -2.webp (-2 = block 4) | 259 | 289 | 189 | 24,90 | 18.99 |
 
+**Våg 3 (2026-08-20, ur Next_up_products_3, CDN-bas `…/0985/8754/1849/files/`):**
+
+| # | Produkt | SKU-bas | Varianter | Kategori | GIF/bild | SE | NO | DK | FI | UK |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 26 | MC-kapell 220×120 | TEMU-601102992953649-<CG/SB/FD/FF/CD/CF> | 6 färger | vp-1-5-3-6 | temu3-mc-kapell.gif + -1.jpg | 289 | 329 | 209 | 27,90 | 20.99 |
+| 27 | Dörrbottenlist | TEMU-601099515911841 | EN | ha-2-20-4 | **ingen bild — text tills Axel skickar** | 259 | 289 | 189 | 24,90 | 18.99 |
+| 28 | Kranskydd frost 420D | TEMU-601101411598143 | EN | ha-10-2-4 | temu3-kranskydd.gif + -1.jpg | 249 | 279 | 179 | 23,90 | 17.99 |
+| 29 | Plyschtofflor herr | TEMU-601102047663138-<4041…4849> | 5 strl (40-41…48-49, tolkning av "40-49") | aa-8-7 | temu3-plyschtofflor.gif + -1.jpg | 389 | 439 | 289 | 37,90 | 28.99 |
+
+Ur samma quote HOPPADES ÖVER: motorskydd 605748427852371 (= befintliga "Marint
+Motorskydd 420D" — quoten är facit för den, ingen ny produkt) och memory foam-tofflor
+601101251777925 (leverantören gav ingen quote, MOQ 3000).
+
+**Ny bildkälla 2026-08-20:** Temu-sidans HTML-skal bär numera produktens HUVUDBILD
+(`img.kwcdn.com/product/fancy/…?imageView2/2/w/800`) — hämtas med curl + grep, ingen
+inloggning. Det är produktens EGEN bild, så den är OK även för skor/kläder (till
+skillnad från DDG-söktraffar). Bara en bild per produkt; galleriet kräver fortfarande
+inloggning eller Axel.
+
 Uteduschens extra-bild (rad 2): `CDN/01d1af10-a6a3-4693-8faf-efc4f5c3283b_19396558-e6ba-4b1f-b1bb-e2edbc5014b1.jpg`.
 Bild-URL:erna funkar utan `?v=`-parametern.
 
