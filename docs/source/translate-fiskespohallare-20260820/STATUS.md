@@ -22,15 +22,14 @@ och levererade i chatten (44 zippar). Körloggen: `docs/video-localization.md`.
 13 064 → 8 004 api-credits för hela körningen (transkribering ~1 020 + rendering ~4 040),
 ≈ 84 credits per levererad video.
 
-## Öppna frågor till Axel (flaggade i leveransrapporten)
+## Öppna frågor — ALLA STÄNGDA (Axel 2026-08-20)
 
-1. "Fri frakt (ved større bestillinger)" + "med Klarna får du varan först" + "30 dagars
-   öppet köp/nöjd kundgaranti" är kvar i talet på alla marknader — bekräfta att villkoren
-   gäller i NO/DK/FI/UK innan launch.
-2. SO/SP-källvideorna har en TOM svart platta i övre delen (censurruta i källmaterialet,
-   ingen text). Lämnad orörd — vill Axel ha bort den krävs nytt källmaterial.
-3. SO-annonsernas "nöjd kundgaranti" normaliserades till öppet köp/returret-fras på
-   NO/DK/UK — säg till om garantiformuleringen ska tillbaka.
+1. ✅ Villkoren bekräftade: 30 dagars öppet köp gäller, fri frakt över 300 kr — de
+   villkorade fraserna i videorna ("ved større bestillinger" etc.) stämmer.
+2. ✅ Tomma svarta plattan i SO/SP-källorna: OK att lämna som den är.
+3. ✅ Garantinormaliseringen (nöjd kundgaranti → öppet köp/returret på NO/DK/UK): godkänd.
+
+Ingen omrendering behövs. Batchen är slutgiltigt godkänd för launch-förberedelse.
 
 ## Filer
 
