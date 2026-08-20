@@ -1,9 +1,16 @@
 # Översättningsjobb: Fiskespöhållaren → NO, DK, FI, UK
 
-**Status: VÄNTAR PÅ HIGGSFIELD-ÅTKOMST.** Proofread klar 2026-08-20. Ingen generering
-är gjord — sessionen saknade både Higgsfield-MCP:n och `HF_API_KEY`/`HF_SECRET`.
-Nästa session med Higgsfield kopplat: kör steg 3–6 i
-`.claude/skills/translate-images/SKILL.md` med måltexterna nedan, ordagrant.
+**Status: REDO ATT GENERERA VIA KIE AI.** Proofread klar 2026-08-20. Ingen generering
+är gjord än. Higgsfield är ur bilden (Axels konto saknar unlimited-pott och credits,
+supportärende pågår) — **Axel köpte Kie AI 2026-08-20 i stället.**
+
+**Generering körs via Kie AI:s API** (`https://api.kie.ai`, docs: `https://docs.kie.ai`)
+med nyckeln i env-variabeln **`KIE_API_KEY`**. Modell: **Nano Banana Pro**
+(samma Googlemodell som skillen pekar på i Higgsfield — bäst på textrendering,
+vilket är hela jobbet här). Verifiera exakt modellnamn/endpoint mot docs vid körning.
+Flödet i övrigt enligt steg 4–6 i `.claude/skills/translate-images/SKILL.md`:
+originalbilden som referens + måltexterna nedan ordagrant i prompten, QA bild för
+bild, zip per marknad.
 
 ## Källa
 
