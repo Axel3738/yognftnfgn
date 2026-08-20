@@ -33,6 +33,7 @@ säg uttryckligen varför.
 | Trimmer belt (Trimmerbelt)    | `collection://2f1270ab-908c-820a-9a08-07b73d53710b` |
 | Mower seat (Seatcover)        | `collection://6c9270ab-908c-8362-aa2a-87c073045ebf` |
 | Beach crocs (Beachslippers)   | `collection://50c270ab-908c-8266-aa1f-872b99fe61e0` |
+| Tofflor Ergonomiska (Ergoslippers) | `collection://dda270ab-908c-825c-8aa9-070103389634` |
 
 Titelkolumnen heter **`Namn`**, inte `Name`. Statusflödet som används:
 `Draft` → `In Review` → `Approved`. (`To be Reviewed` finns också i schemat
@@ -50,6 +51,18 @@ men används inte — kör alltid `In Review`.)
   **vattenavvisande** (aldrig vattentät), universalpassform (aldrig
   måttsydd), svart hölje (enda undantaget är SO_27_2:s femfärgsuppställning),
   exakta hk-intervall, inga tillverkarlogotyper (YAMAHA etc.).
+- Strandtofflor: 349/420 kr. Ergoslippers: **309 kr, jämförpris 400 kr, spara
+  91 kr** — inget annat. Ergoslippers har **inga verifierade recensioner**:
+  aldrig stjärnor, citat eller "verifierad kund"; ärligt bevis är lagerfaktumet
+  (28 beställningar första veckan) eller garantin. Inga medicinska påståenden.
+  Skons rem bär förvanskad engelsk text ("OK ouranni…") — vinkla bort eller
+  retuschera, aldrig läsbar i bild. Storlek 36–49, unisex. Export 1:1 + 4:5.
+- Ergoslippers-briefer ligger i det här repot:
+  `docs/briefs/tofflor-ergonomiska-batch2/` (grenen
+  `claude/tofflor-ergonomiska-6ig49t`). Produktfoton hämtas från Shopify-CDN
+  (länkar i `reference-assets/REFERENCE-ASSETS.md`); retuscherad hero utan
+  tryck finns uppladdad i Higgsfield som media_id
+  `532b633b-4b38-4008-9738-201fe3bbe996`.
 
 ## Higgsfield-tips som sparar tid och krediter
 
