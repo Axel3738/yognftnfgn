@@ -99,6 +99,26 @@ inte röras utan att Axel ber om det.
 
 ---
 
+## Videolokalisering: `/translate` (AKTIV — inte legacy)
+
+Undantag från legacy-regeln ovan: **videolokaliserings-pipelinen är i aktiv drift.**
+Axel översätter/dubbar mp4-annonser till nya marknader via HeyGen (röstklon + lip-sync).
+
+När Axel skriver `/translate`, klistrar in en Drive-länk med annonser, eller ber om
+översättning/dubbning till ett land: kör skillen **translate**
+(`.claude/skills/translate/SKILL.md`). Den innehåller hela flödet och alla kända
+HeyGen-fallgropar. Processdokumentation + körlogg: `docs/video-localization.md`.
+
+Järnreglerna (kostar pengar eller förtroende att bryta):
+1. **Rendera ALDRIG före proofread** — rendering drar HeyGen-credits, proofread är gratis.
+2. **Skanna ALLTID källvideon efter inbränd svensk text före leverans** — HeyGen
+   översätter bara ljudet.
+3. Captions är opt-in; max 2 rader. Komprimera aldrig hårdare än 30 MiB-gränsen kräver.
+
+Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
+
+---
+
 ## Kommandona (Axels gränssnitt)
 
 13 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.

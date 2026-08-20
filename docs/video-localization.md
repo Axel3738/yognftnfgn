@@ -22,8 +22,26 @@ varumärkesnamn). Beslut om omrendering tas per annons — varje render drar Hey
 
 ## Flödet
 
-**Järnregel: rendera ALDRIG före proofread.** Varje HeyGen-rendering drar krediter —
+**Järnregel 1: rendera ALDRIG före proofread.** Varje HeyGen-rendering drar krediter —
 proofread-sessionen är gratis. Fel ordning = dubbla renderingar = dubbla krediter.
+
+**Järnregel 2: skanna ALLTID källvideon efter inbränd svensk text INNAN leverans.**
+HeyGen översätter bara ljudet — text som ligger i bilden följer med oöversatt. Kör
+skannern nedan på varje ny källfil; hittas text måste den täckas och ersättas med
+lokaliserade captions, annars är annonsen obrukbar (värsta fallet: gamla priser står
+kvar i bild fast de tagits bort ur talet).
+
+```bash
+# Skanna hela klippet (2 bilder/sek) efter ljusa textplattor, ffmpeg + numpy/pillow:
+#   ffmpeg -i FIL.mp4 -vf 'fps=2,scale=270:480' /tmp/fr/%04d.png
+#   → rader där 40 < antal_vita_pixlar < 240 markerar en platta, inte vit bakgrund
+# Täck sedan bandet med intilliggande bildinnehåll (INTE sudd — det ger grå skugga
+# där den gamla plattan var bredare än den nya texten):
+#   [0:v]crop=B:H:0:Y_KÄLLA,boxblur=6:1:6:1[b];[0:v][b]overlay=0:Y_BAND[v]
+# och lägg lokaliserade captions ovanpå i samma stil som originalet.
+# OBS: MarginV/FontSize i force_style tolkas i ASS-skalan (288 hög), inte i pixlar:
+#   MarginV = (videohöjd - textbandets underkant) * 288 / videohöjd
+```
 
 ```
 1. VÄLJ         → vilka mp4:or + målspråk/marknad (loggas i tabellen nedan)
@@ -150,3 +168,10 @@ som manuellt alternativ när man vill handstyla.
 
 Status per kolumn: ⏳ pågår · ✅ klar · ❌ fail. När en lokaliserad annons går live
 loggas den dessutom som vanligt i `ad-tracker.md` (den är ett eget test).
+| FI-batch: alla 16 talannonser | fi / Finnish (Finland) | ✅ 2026-08-12 | ✅ 6 rättade (Grillklinikenin Mastern, 420 D, tasapainossa, verkkokaupassamme, kadu-vändningen, filler), 6 rena | ✅ per kampanjstil | ✅ alla 16 levererade | Längdkoll: inget överspill trots finskans längre ord · tvåstegsleverans (prisfria först, prisannonser när €-priser kom) gav noll omrenderingar · Rutikuiva/Entä jos-fixar · priser 29,95 € / 59,95 € |
+| NL-batch: alla 16 talannonser | nl / Dutch (Netherlands) | ✅ 2026-08-12 | ✅ 12 rättade (Mastern, Kurkdroog, motorolie→motorhoezen, alla priser strukna på begäran, spijt-vändningen, webshop), 4 rena | ✅ per kampanjstil | ✅ alla 16 levererade | 2 släpptes ur moderering i efterhand |
+| MX-batch: alla 16 talannonser | mx / Spanish (Mexico) | ✅ 2026-08-13 | ✅ 10 rättade (El Mastern, coronas→pesos/strukna, 420 D, omkastad ordning, tienda en línea), 6 rena | ✅ per kampanjstil | ✅ alla 16 levererade | 2 containeromstarter — state-till-disk gjorde återupptagning möjlig utan omrendering |
+| Drive-mapp: 3 Mastern-farsdagsannonser (100MB+ .mov via delad Drive-länk) | no / Norwegian Bokmål | ✅ 2026-08-13 | ✅ børstehår, rengjøre, stangen, sesong-grammatik | — (utan captions) | ✅ levererade | embeddedfolderview listar delad mapp utan API · komprimering 111MB→16MB före upload |
+| MX2-batch: 17 Mastern-annonser (Drive-mapp, 3,5MB–143MB) | mx / Spanish (Mexico) | ✅ 2026-08-13 | ✅ 13 rättade: Grillkliniken→**La Clínica del Asador**, svenska kronor→pesos (grillvärden 25/30 tusen), "hasta 40% descuento"→**1,699 i st.f. 2,400 pesos**, master→Mastern | ✅ clean-stil på alla | ✅ alla 17 levererade | ⚠️ 40%-påståendet matchade inte 2400→1699 (=29%) — ersattes med faktiska priser · långa videor krävde hård komprimering för 30MB-gränsen |
+| AU-batch: 19 Mastern-annonser (samma källor som MX2 + Rea_01 + Mastern_ad01) | au / English (Australia) | ✅ 2026-08-18 | ✅ alla 19 rättade per `au-localisation.md`: Grillkliniken→**The BBQ Clinic**, Mastern→**The Master**, "the grill"→BBQ/grate (aldrig grill som substantiv), AU-stavning, pris **$149.95**, grillvärden→$2,000/$3,000 (uppskattningar), "40% off"→"in our seasonal sale", slang ≤2 & barbie ≤1 · automatisk regex-verifierare körd tills grönt | ✅ clean/tight blur per kampanjstil, Rea_01-slutkort **ON SALE NOW** | ✅ 17/19 levererade (101_H2/H3 i moderationskö) | Verifierarens timecode-false-positives (1,699/2,400 i tidsstämplar) fixade · 3 SRT-uppladdningar behövde omtag pga CDN-lagg |
+| Tofflor-batch: 12 ergonomiska tofflor-annonser (Drive-mapp, 1080×1920) | no + dk + fi + uk (48 översättningar) | ✅ 2026-08-18 | ✅ 24 rättade: alla belopp strukna (400→309 kr) och ersatta med **23 % rabatt**-formuleringar utan siffror, FI-produktterm enhetlig (tohvelit→**tossut**), DK/UK omvänd ordföljd i avslut ("Hjemmesko, ergonomiske"→"Ergonomiske hjemmesko"), NO påhittat "Ergotøfler"→"Ergonomiske tøfler", FI ordningstal 23:e→"kahdenkymmenenkolmen prosentin" | — (utan captions) | ✅ alla 48 levererade | ⚠️ **HeyGen-bugg:** PUT /srt svarade 200 men persisterade aldrig på 13 sessioner (retry hjälpte inte) — lösning: skapa NY proofread-session och lokalisera om mot det färska transkriptet · 2 UK krävde en tredje omgång |
