@@ -114,6 +114,25 @@ halvfärdigt med "nu behöver du bara…".
     21 stämde, men hittade samtidigt fyra ärvda mallfel som ingen bett om att leta efter.
     Den som lagar ser inte det den inte fick i uppdrag att se.
 
+## Hitta samma produkt i en annan butik
+
+Titelmatchning fungerar inte — finska och norska titlarna delar inga ord med de
+svenska ("Fiskespöhållare" / "Fiskestangholder" / "Kalastusvapateline").
+
+**Matcha pa SKU:ns tre sista siffror.** Katalogen anvander samma nummer i alla
+butiker, bara kategoridelen skiljer:
+
+```
+SE  TEMU-601104615671651          (goods-id, avviker)
+NO  BEVER-MARIN-049
+DK  BAEVER-MARINE-049
+FI  MAJAVA-MARINE-049
+UK  BEAVER-MARINE-049
+```
+
+Numret finns i `market-expansion/uk/output/catalog.uk.json` via `sourceHandle`.
+Verktyg: `temu/synka-priser.mjs`.
+
 ## Prismetoden
 
 Kostnadsbaserad per land — INTE valutakonvertering. CWD:s frakt skiljer per land
