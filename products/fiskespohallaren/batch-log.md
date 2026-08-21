@@ -38,4 +38,6 @@
 | Rodholder_CS_3_1 | Sann offer-static 289 kr/72 kr per st | Redo |
 | Rodholder_PD_10_1 | Risk/skydda ditt dyraste spö | Redo |
 
+**Notion-uppladdning 2026-08-21 (`/notion`):** alla 15 annonser uppladdade till Fish rod holder-hubben som items i Draft + `Video - Pending Approval`, hela briefen inklistrad i varje item + länk till brief-filen i repot. OBS: ingen Drive-mapp finns för batch #2 — brief-källan är repot (`docs/briefs/rodholder-batch2-2026-08-21/`) + zipparna som levererades i chatten. SP_3_1-itemet är märkt ⛔ BLOCKED (väntar på riktig recensionstext), GT_3_H1 märkt Tier 3.
+
 **Utfall:** fylls i vid nästa `/cs`-avläsning (tidigast 3 dygn efter launch, ≥5 köp för marginal-CPA — 2b-grinden).
