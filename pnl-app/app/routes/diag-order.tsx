@@ -52,7 +52,15 @@ export async function loader({ request }: LoaderFunctionArgs) {
         ? { orders: rad.orders, totalSales: rad.totalSales, fetchedAt: rad.fetchedAt.toISOString() }
         : null;
 
-      if (!token) return { shop, tz, idag, lagrad, scope: session?.scope ?? null, fraga: "FEL: ingen offline-nyckel" };
+      const nyckel = {
+        harToken: Boolean(token),
+        expires: session?.expires?.toISOString() ?? null,
+        utgangen: session?.expires ? session.expires.getTime() < Date.now() : null,
+        harRefreshToken: Boolean(session?.refreshToken),
+        refreshUtgar: session?.refreshTokenExpires?.toISOString() ?? null,
+      };
+
+      if (!token) return { shop, tz, idag, lagrad, nyckel, scope: session?.scope ?? null, fraga: "FEL: ingen offline-nyckel" };
 
       /* Exakt samma fråga som runOrdersPaginated ställer. */
       let fraga: string;
@@ -84,7 +92,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
         fraga = `KASTADE: ${(e as Error).message}`;
       }
 
-      return { shop, tz, idag, valuta: settings?.currency, scope: session?.scope ?? null, lagrad, fraga };
+      return { shop, tz, idag, valuta: settings?.currency, scope: session?.scope ?? null, nyckel, lagrad, fraga };
     }),
   );
 

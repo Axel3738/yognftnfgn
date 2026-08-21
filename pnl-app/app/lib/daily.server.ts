@@ -160,6 +160,83 @@ export function markeraPagaende<T>(shop: string, p: Promise<T>): Promise<T> {
    minuters paus mellan försöken, som force inte får kringgå. */
 const senasteFel = new Map<string, number>();
 
+/**
+ * Butikens offline-nyckel, förnyad när den behöver det.
+ *
+ * Sedan `expiringOfflineAccessTokens` slogs på är nycklarna färskvara. Men
+ * biblioteket förnyar dem bara i `authenticate.admin` — alltså när NÅGON
+ * öppnar just den butikens panel. Gruppsummeringen läser nycklarna direkt ur
+ * Session-tabellen och kringgår den vägen, så en butik ingen besökte fick sin
+ * nyckel att tyst gå ut: Norge och Finland svarade 401 mitt på dagen och
+ * försäljningen såg ut som noll. Här förnyas nyckeln med refresh-token innan
+ * den används, precis som biblioteket gör åt den inloggade butiken.
+ *
+ * `tvinga` används efter ett 401: nyckeln kan vara ogiltig långt före sitt
+ * utgångsdatum (ominstallation, ändrade scopes).
+ */
+async function giltigToken(shop: string, tvinga = false): Promise<string | null> {
+  const rad = await prisma.session.findFirst({ where: { shop, isOnline: false } });
+  if (!rad) return null;
+
+  const token = rad.accessToken ? decrypt(rad.accessToken) : null;
+  const kvar = rad.expires ? rad.expires.getTime() - Date.now() : Infinity;
+  // Samma marginal som bibliotekets egen: förnya innan den faktiskt gått ut.
+  if (!tvinga && token && kvar > 5 * 60 * 1000) return token;
+
+  const refresh = rad.refreshToken ? decrypt(rad.refreshToken) : null;
+  if (!refresh) return token; // inget att förnya med — försök med den vi har
+
+  /* Anropet görs direkt mot Shopifys OAuth-endpoint i stället för via
+     bibliotekets hjälpare: den ligger bakom en typad yta som inte exponerar
+     `api` för den här distributionen, och kontraktet här (refresh_token-grant)
+     är stabilt och lätt att läsa. */
+  try {
+    const res = await fetch(`https://${shop}/admin/oauth/access_token`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        client_id: process.env.SHOPIFY_API_KEY,
+        client_secret: process.env.SHOPIFY_API_SECRET,
+        refresh_token: refresh,
+        grant_type: "refresh_token",
+      }),
+      signal: AbortSignal.timeout(15_000),
+    });
+    if (!res.ok) {
+      console.error(`Nyckelförnyelse för ${shop} nekades: HTTP ${res.status}`);
+      return token;
+    }
+    const body: any = await res.json();
+    if (!body?.access_token) return token;
+
+    const sekunder = (n: unknown) =>
+      typeof n === "number" ? new Date(Date.now() + n * 1000) : undefined;
+    await prisma.session.update({
+      where: { id: rad.id },
+      data: {
+        accessToken: body.access_token,
+        ...(body.scope ? { scope: body.scope } : {}),
+        ...(sekunder(body.expires_in) ? { expires: sekunder(body.expires_in) } : {}),
+        ...(body.refresh_token
+          ? {
+              refreshToken: body.refresh_token,
+              ...(sekunder(body.refresh_token_expires_in)
+                ? { refreshTokenExpires: sekunder(body.refresh_token_expires_in) }
+                : {}),
+            }
+          : {}),
+      },
+    });
+    console.log(`Offline-nyckeln för ${shop} förnyades.`);
+    return body.access_token as string;
+  } catch (e) {
+    console.error(`Kunde inte förnya offline-nyckeln för ${shop}:`, e);
+    return token;
+  }
+}
+
+const arObehorig = (e: unknown) => /\b401\b|Invalid API key or access token/i.test(String(e));
+
 export async function refreshShopDaily(
   shop: string,
   from: string,
@@ -169,13 +246,23 @@ export async function refreshShopDaily(
   if (Date.now() - (senasteFel.get(shop) ?? 0) < 5 * 60 * 1000) return false;
   if (!opts?.force && !farStartaBakgrund(shop)) return false;
   try {
-    const [session, settings] = await Promise.all([
-      prisma.session.findFirst({ where: { shop, isOnline: false } }),
+    const [token, settings] = await Promise.all([
+      giltigToken(shop),
       prisma.shopSettings.findUnique({ where: { shop } }),
     ]);
-    const token = session?.accessToken ? decrypt(session.accessToken) : null;
     if (!token) return false;
-    await refreshDaily(adminFromToken(shop, token), shop, settings?.timezone ?? "UTC", from, to);
+    const tz = settings?.timezone ?? "UTC";
+    try {
+      await refreshDaily(adminFromToken(shop, token), shop, tz, from, to);
+    } catch (e) {
+      /* 401 kan komma före utgångsdatumet. Tvinga fram en ny nyckel och gör
+         ett försök till — annars krävs ett manuellt besök i butikens admin
+         för något som går att laga av sig självt. */
+      if (!arObehorig(e)) throw e;
+      const ny = await giltigToken(shop, true);
+      if (!ny || ny === token) throw e;
+      await refreshDaily(adminFromToken(shop, ny), shop, tz, from, to);
+    }
     senasteFel.delete(shop);
     return true;
   } catch (e) {
