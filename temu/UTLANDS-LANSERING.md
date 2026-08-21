@@ -155,16 +155,26 @@ varandra i fyra butiker. Dessa regler är obligatoriska för varje produkt:
    "de hade varit perfekta … dessa bilder ska du ta också från alla produkter") —
    de visar produkten i användning och bär verifierade mått/spec som copyn ska
    hämta sina räkneord ur. Be Axel klistra in dem för varje produkt.
-   **Två vägar in (den här molnmiljön kan INTE själv nå galleriet — verifierat
+   **Vägarna in (den här molnmiljön kan INTE själv nå galleriet — verifierat
    2026-08-21 med både curl och riktig Chromium; proxyn släpper inte igenom
    webbläsartrafik):**
-   1. Axel håller in bilderna i mobilen och klistrar in dem i chatten (funkade
-      för pingisen), eller
-   2. Axel kör **Claude på sin egen dator** (Cowork/desktop-appen med
-      Chrome-tillägget, eller Claude Code lokalt med webbläsarkoppling) — den
-      styr HANS inloggade webbläsare, kan öppna Temu-länken som han själv och
-      spara alla galleribilder. Bilderna klistras sedan in här, eller committas
-      till repot av den lokala sessionen så plockar molnsessionen upp dem.
+   1. ⭐ **DRIVE-FLÖDET (standard sedan 2026-08-21, "inklistring skalar inte"):**
+      Google Drive-mappen **"Bäverbutiken – Temu-bilder"** (id
+      `1k43w1Z24CyVxxIGWWkI0l0qpjLwrpsur`) har en undermapp per produkt, döpt
+      `<namn> – <goods-id>`. Axel sparar galleribilderna dit (mobil: håll in →
+      spara → dela till Drive-mappen; eller Cowork/Chrome på datorn sparar
+      direkt dit). Sessionen hämtar dem SJÄLV via Drive-connectorn:
+      `search_files(query: "parentId = '<undermappens-id>'")` →
+      `download_file_content` (base64). Skapa ny undermapp per ny produkt med
+      `create_file(contentMimeType: "application/vnd.google-apps.folder")`.
+      Kolla mappen VARJE session som bygger produktsidor — fråga inte Axel om
+      bilder som redan ligger där.
+   2. **Helt automatiskt (målbilden): CWD skickar bildpaket med offerten.**
+      Leverantören har originalbilderna. Axel har bett CWD lägga en
+      bildpaketslänk per produkt i offertbladet — när det landar behövs
+      varken Temu eller manuella steg.
+   3. Nödfall: Axel klistrar in bilderna direkt i chatten (extraheras ur
+      transkriptet i full upplösning).
    **Texten på infografikerna görs om till marknadens språk** (Axel 2026-08-21) —
    engelska original får bara ligga kvar i UK-butiken. Metod: INTE AI-textbyte —
    kie.ai garblade svenskan ("UTDRABARLT NÄT", "PASSCHES TO ALLA BORD") och
