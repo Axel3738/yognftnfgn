@@ -24,11 +24,19 @@
 //    lådan, AI:n gissade ett kort nät — det riktiga dras ut 1,7 m över hela
 //    bordet. Finns en äkta Temu-galleribild som visar samma sak: använd den,
 //    aldrig AI.
+// 6. Formatet är 1:1 (Axels beslut 2026-08-21) — det är default här. Avvik
+//    bara med skäl, via fjärde argumentet.
+// 7. Gör gärna FLERA AI-bilder per produkt: en stilla miljöbild + en där
+//    produkten faktiskt används. I-användning utan ansikten: beskär i prompten
+//    till ben/händer ("only legs from the knees down, no face"). Produkten
+//    styr personen — herrprodukt kräver herrkläder i bild (första gåendebilden
+//    fick bara bara ben och läste som dam på en herrkänga → omgjord med byxben).
 
-const [ref, prompt, ut] = process.argv.slice(2);
+const [ref, prompt, ut, format = "1:1"] = process.argv.slice(2);
 const K = process.env.KIE_API_KEY;
 if (!K || !ref || !prompt) {
-  console.error('Användning: KIE_API_KEY=... node temu/ai-bild.mjs "<bild-URL>" "<scen>" [ut.png]');
+  console.error('Användning: KIE_API_KEY=... node temu/ai-bild.mjs "<bild-URL>" "<scen>" [ut.png] [format]');
+  console.error('format: 1:1 (default, Axels beslut 2026-08-21), 16:9, 9:16, 3:4, 4:3, auto');
   process.exit(1);
 }
 const svar = await fetch("https://api.kie.ai/api/v1/jobs/createTask", {
@@ -36,7 +44,7 @@ const svar = await fetch("https://api.kie.ai/api/v1/jobs/createTask", {
   headers: { Authorization: `Bearer ${K}`, "Content-Type": "application/json" },
   body: JSON.stringify({
     model: "google/nano-banana-edit",
-    input: { prompt: `${prompt} Keep the product identical to the reference image: same colors, same shape, same details. Photorealistic.`, image_urls: [ref] },
+    input: { prompt: `${prompt} Keep the product identical to the reference image: same colors, same shape, same details. Photorealistic.`, image_urls: [ref], image_size: format },
   }),
 });
 const skapad = await svar.json();

@@ -188,6 +188,11 @@ kortversion: alltid edit av referensbilden (aldrig text-till-bild), granska
 räkneorden visuellt (modellen räknar fel — piloten gav 7-8 bollar i stället för 6),
 aldrig som huvudbild, undvik människor i närbild.
 
+**Format och antal (Axel 2026-08-21):** AI-bilder genereras i **1:1**, aldrig 16:9
+(skriptets default är nu 1:1). Gör gärna **flera** per produkt: en stilla miljöbild
+plus en där produkten **används** — utan ansikten (beskär till ben/händer i
+prompten), och personen ska matcha produkten (herrprodukt = herrkläder i bild).
+
 ⚠️ **AI-bilder får aldrig gissa produktegenskaper.** Piloten (pingis 2026-08-21)
 underkändes av Axel: AI:n ritade ett kort nät fast det riktiga dras ut 1,7 m över
 hela bordet — referensbilden (produkten hopfälld i låda) visade inte utsträckt
