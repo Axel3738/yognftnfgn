@@ -82,6 +82,12 @@ halvfärdigt med "nu behöver du bara…".
       unika SKU:er, annars ärver alla nya varianter samma SKU.
     - `mediaCount { count }` = 1 och `<!-- GIF: … -->` i `descriptionHtml` — tomma
       platshållarkommentarer, ofta kvar på svenska mitt i landets copy.
+13. **Produktnamn får inte krocka med etablerade varumärken.** "Boxbollen" är ett
+    skyddat varumärke i Sverige (Axel 2026-08-21) — produkten döptes om till
+    "Bollpannband" och ordet togs bort ur titel, copy och taggar. Innan ett
+    produktnamn sätts: fundera på om namnet är en känd produkt/ett företag på
+    marknaden, och välj i så fall ett beskrivande eget namn i stället. Gäller
+    alla länder — kolla mot landets marknad, inte bara den svenska.
     - `products(query: "vendor:'<främmande vendor>'")` — utkast från en HELT annan butik
       kan ligga kvar. UK hade 14 svenska DRAFT-produkter från "Trevlig Trädgård"
       (Snigelfällan, Växtbelysning …). Arkivera dem (`status: ARCHIVED`) — arkiv går att
@@ -231,7 +237,7 @@ språk, ett pris för alla storlekar. SKU-mönstret är identiskt i alla butiker
 | 13 | Övervakningskamera dubbellins PTZ | TEMU-601100938731214 | EN | co-2-5 | CDN/temu2-kamera.gif | CDN/temu2-kamera-1.webp + -2.webp + -3.webp (galleri; -1 block 4, -3 block 6) | 799 | 899 | 589 | 76,90 | 59.99 |
 | 14 | Första Hjälpen-Kit 260 delar | TEMU-601099866212432 | EN | hb-1-8 | CDN/temu2-forstahjalpen.gif | CDN/temu2-forstahjalpen-1.webp | 309 | 349 | 229 | 29,90 | 22.99 |
 | 15 | Stänkskärm MTB | TEMU-601100182464991 | EN | sg-4-4-2 | CDN/temu2-stankskarm.gif | CDN/temu2-stankskarm-1.webp + -2.webp + -3.webp (galleri; -1 block 4, -2 block 6) | 219 | 249 | 159 | 20,90 | 15.99 |
-| 16 | Boxboll med Pannband | TEMU-601100409294093 | EN | sg-1-4-2 | ingen GIF (ingen funktionsvideo) | CDN(SE)/21f347ce-….jpg (huvud, Temus egen) + boxboll-produkt.jpg + boxboll-detalj.jpg (beskurna ur huvudbilden 2026-08-21). ⚠️ Pannbandet har trycka runliknande bokstäver ("TRIPLE"-aktigt) — syns på produkten, Axel informerad | 179 | 199 | 129 | 16,90 | 12.99 |
+| 16 | Bollpannband — ⚠️ OMDÖPT + NY VINKEL 2026-08-21 (Axel): "Boxbollen" är ett skyddat varumärke i Sverige → ordet boxboll får inte finnas i titel/copy/taggar på någon marknad. Vinkeln är ROLIG PRESENT/familjekväll, INTE träning/gym ("ingen köper den för att träna"). Lokala namn sätts i samma anda (t.ex. DA/NO/FI-motsvarighet till "bollpannband") | TEMU-601100409294093 | EN | sg-1-4-2 | ingen GIF (ingen funktionsvideo) | CDN(SE)/21f347ce-….jpg (huvud, Temus egen) + boxboll-produkt.jpg + boxboll-detalj.jpg (beskurna ur huvudbilden; filnamnen bär gamla ordet — bara URL:er, ej synlig text). ⚠️ Pannbandet har tryckta runliknande bokstäver ("TRIPLE"-aktigt) — syns på produkten, Axel informerad | 179 | 199 | 129 | 16,90 | 12.99 |
 | 17 | Bordtennisnät Infällbart (2 rack & 6 bollar) — ⚠️ BYTT PRODUKT 2026-08-21: goods 605778962427277, gamla "tränaren" var fel bild/produkt. SE ombyggd; DK/FI/UK väntar på Axels feedback. Varianter: Färg Svart/Orange (näthållarnas färg, Axel 2026-08-21) | TEMU-605778962427277-<SV/OR> | 2 färger | sg-3-6 | ingen GIF (färgbyte ≠ funktion, regel 4) | CDN(SE)/cf861360-….jpg + temu3-pingnat-svart.jpg + temu3-pingnat-orange.jpg (variantbilder kopplade) | 309 | 349 | 229 | 29,90 | 22.99 |
 | 18 | Linupprullare Aluminium | TEMU-601099521158260 | EN | sg-4-6 | CDN/temu2-linupprullare.gif | CDN/temu2-linupprullare.webp | 249 | 279 | 179 | 23,90 | 18.99 |
 | 19 | Mini Fiskespö Set | TEMU-601102632838913 | EN | sg-4-6-11-12 | CDN/temu2-fiskespo.gif | CDN/temu2-fiskespo-1.webp | 429 | 489 | 319 | 41,90 | 31.99 |
