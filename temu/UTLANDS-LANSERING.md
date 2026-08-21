@@ -202,7 +202,7 @@ språk, ett pris för alla storlekar. SKU-mönstret är identiskt i alla butiker
 | 14 | Första Hjälpen-Kit 260 delar | TEMU-601099866212432 | EN | hb-1-8 | CDN/temu2-forstahjalpen.gif | CDN/temu2-forstahjalpen-1.webp | 309 | 349 | 229 | 29,90 | 22.99 |
 | 15 | Stänkskärm MTB | TEMU-601100182464991 | EN | sg-4-4-2 | CDN/temu2-stankskarm.gif | CDN/temu2-stankskarm-1.webp + -2.webp + -3.webp (galleri; -1 block 4, -2 block 6) | 219 | 249 | 159 | 20,90 | 15.99 |
 | 16 | Boxboll med Pannband | TEMU-601100409294093 | EN | sg-1-4-2 | **saknar bild/GIF — ren text tills Axel skickar bild** | — | 179 | 199 | 129 | 16,90 | 12.99 |
-| 17 | Bordtennistränare | TEMU-601099969009037 | EN | sg-3-6 | CDN/temu2-pingis.gif | CDN/temu2-pingis.webp | 309 | 349 | 229 | 29,90 | 22.99 |
+| 17 | Bordtennisnät Infällbart (2 rack & 6 bollar) — ⚠️ BYTT PRODUKT 2026-08-21: goods 605778962427277, gamla "tränaren" var fel bild/produkt. SE ombyggd; DK/FI/UK väntar på Axels feedback. 2 varianter finns på Temu — namnen okända, fråga Axel | TEMU-605778962427277 | EN (variant 2 väntar) | sg-3-6 | — (ingen funktions-GIF ännu) | CDN(SE)/cf861360-….jpg | 309 | 349 | 229 | 29,90 | 22.99 |
 | 18 | Linupprullare Aluminium | TEMU-601099521158260 | EN | sg-4-6 | CDN/temu2-linupprullare.gif | CDN/temu2-linupprullare.webp | 249 | 279 | 179 | 23,90 | 18.99 |
 | 19 | Mini Fiskespö Set | TEMU-601102632838913 | EN | sg-4-6-11-12 | CDN/temu2-fiskespo.gif | CDN/temu2-fiskespo-1.webp | 429 | 489 | 319 | 41,90 | 31.99 |
 | 20 | Hopfällbar Såg | TEMU-601099520639890 | EN | ha-15-62 | CDN/temu2-sag.gif | CDN/temu2-sag.webp | 279 | 319 | 209 | 26,90 | 20.99 |
