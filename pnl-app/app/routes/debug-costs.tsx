@@ -21,6 +21,18 @@ export async function loader({ request }: LoaderFunctionArgs) {
   if (!/^[a-z0-9-]+\.myshopify\.com$/.test(shop)) {
     return json({ error: "ange ?shop=xxx.myshopify.com" }, { status: 400 });
   }
+  /* &title=tossut → slå upp varianter (och deras unitCost) vars titel
+     innehåller strängen, i den butikens katalogcache. För att jämföra vad
+     systerbutiker har inlagt för samma produkt. */
+  const titelSok = (url.searchParams.get("title") ?? "").toLowerCase();
+  if (titelSok) {
+    const kat = await prisma.catalogCache.findUnique({ where: { shop } });
+    const träffar = ((kat?.payload as any[]) ?? [])
+      .filter((v) => String(v.productTitle ?? "").toLowerCase().includes(titelSok))
+      .map((v) => ({ product: v.productTitle, variant: v.variantTitle, price: v.price, unitCost: v.unitCost ?? null }));
+    return json({ shop, titelSok, träffar });
+  }
+
   const dagar = Math.min(parseInt(url.searchParams.get("days") ?? "30", 10) || 30, 120);
   const idag = new Date().toISOString().slice(0, 10);
   const from = shiftIso(idag, -(dagar - 1));
