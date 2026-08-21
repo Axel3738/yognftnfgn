@@ -12,7 +12,7 @@ Full analys: `docs/briefs/rodholder-batch2-2026-08-21/RAPPORT.md`.
 | Break-even-ROAS / CPA | **1,50 / 285 kr** | Axels kampanjnamn "BE ROAS 1.50". COGS-rad i product sheet TOM — obekräftad mot kalkyl |
 | Target (25 %) | 2,40 / 178 kr | härledd: BE/(1−0,25×BE) |
 
-⚠️ **Jämförpriset i Shopify är 148,75 kr — LÄGRE än priset.** Sidan visar en prishöjning, inte en rabatt. Ägarbeslut väntar (ta bort eller sätta sant referenspris). Tills det är löst: **inga rabatt-claims i någon annons.** Förbjudna tal i copy: 149 kr, 148,75 kr, "40 %".
+✅ **LÖST 2026-08-21:** det bakvända jämförpriset (148,75 kr) togs bort på Axels beslut — sidan visar nu enbart 289 kr. Eftersom inget referenspris finns gäller fortsatt: **inga rabatt-claims i någon annons** utan nytt ägarbeslut. Förbjudna tal i copy: 149 kr, 148,75 kr, "40 %".
 
 ## Läget efter körning #1
 

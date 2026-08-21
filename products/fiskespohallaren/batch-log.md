@@ -14,7 +14,9 @@
 **Åtgärder 2026-08-21 (denna session):**
 - Pausade 5 felpris-annonser (149 kr mot sidans 289 kr): 120249850587690291, 120249850594370291, 120249850597910291, 120249850596710291, 120249856850670291. Den sista hade rättad body men "4-PACK – 149 KR" inbränt i bilden.
 - Registrerade produkten i products.json (BE 1,50/285 kr, target 2,40/178 kr, budget 4 000 kr/dag → kvot 14/cykel).
-- Flaggade jämförpriset 148,75 kr (bakvänt) → ägarbeslut väntar.
+- Flaggade jämförpriset 148,75 kr (bakvänt) → Axel beslutade "ta bort det" samma dag; compareAtPrice satt till null via Shopify API (pris 289 kr orört, verifierat). CS-annonserna med "40 % RABATT" (CS_1_H1/H2/H3) kör vidare tills batch #2-ersättarna är live — claimen saknar nu helt stöd på sidan, byt så fort Rodholder_CS_3_1/SO_3_H1 är producerade.
+
+**Notion-hub skapad av Axel 2026-08-21:** "Fish rod holder" (database `3c3270ab-908c-80f8-824d-eed3c4aa94e1`, collection `3c3270ab-908c-8356-ad6c-87ff779e647d`) — registrerad i products.json med `scaling: true` (hub + 4 000 kr/dag = redigerarflödet). Batch #2-brieferna laddas upp dit via `/notion`.
 
 ## Batch #2 — briefad 2026-08-21 (EJ launchad ännu)
 

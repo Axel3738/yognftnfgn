@@ -30,13 +30,19 @@
       "break_even_roas": 1.5,
       "target_roas_25pct": 2.4,
       "target_cpa_25pct_harledd": 178,
-      "scaling": false,
+      "scaling": true,
+      "notion": {
+        "name": "Fish rod holder",
+        "database_id": "3c3270ab-908c-80f8-824d-eed3c4aa94e1",
+        "collection_id": "3c3270ab-908c-8356-ad6c-87ff779e647d",
+        "url": "https://app.notion.com/p/3c3270ab908c80f8824deed3c4aa94e1"
+      },
       "shopify": {
         "product_gid": "gid://shopify/Product/16268173214045",
         "handle": "fiskespohallare-4-pack-kraftig-forvaring",
         "sku": "TEMU-601104615671651",
         "pris_sek": 289,
-        "varning": "compareAtPrice 148.75 ligger LAGRE an priset (gammalt pris kvar) - se batch-log 2026-08-21"
+        "varning": "LOST 2026-08-21: bakvant compareAtPrice (148.75) borttaget pa Axels beslut - sidan visar nu enbart 289 kr. Inga rabatt-claims i annonser utan nytt agarbeslut."
       }
     },
     {
