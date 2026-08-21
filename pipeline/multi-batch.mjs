@@ -200,7 +200,7 @@ for (const camp of cfg.campaigns) {
 
     if (DRY) {
       for (const m of motifs) {
-        const r = resolveMotif(m.name);
+        const r = resolveMotif(m.media || m.name);
         const c = m.copy ? ` · egen copy: ${m.copy.headline}` : '';
         console.log(`  · ${m.name}: ${r ? (r.kind === 'video' ? 'video' : 'bild [' + Object.keys(r.variants).join('+') + ']') : 'SAKNAS'}${c}`);
       }
