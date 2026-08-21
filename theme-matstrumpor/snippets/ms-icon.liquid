@@ -1,0 +1,81 @@
+{%- comment -%}
+  ms-icon — inbyggd ikonuppsättning.
+
+  Anrop:  {% render 'ms-icon', name: 'truck' %}
+          {% render 'ms-icon', name: 'star', class: 'ms-i--fill' %}
+
+  Alla ikoner ärver textfärgen och skalar med typsnittet. Inga externa
+  ikonbibliotek, ingen nätverksbegäran. Rent dekorativa (aria-hidden) —
+  betydelsen ska alltid stå i text bredvid.
+{%- endcomment -%}
+
+{%- liquid
+  assign n = name | default: 'check'
+  assign extra = class | default: ''
+-%}
+
+<svg class="ms-i {{ extra }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="presentation">
+  {%- case n -%}
+
+    {%- when 'check' -%}
+      <path d="M20 6 9 17l-5-5"/>
+
+    {%- when 'check-circle' -%}
+      <circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/>
+
+    {%- when 'x' -%}
+      <path d="M18 6 6 18M6 6l12 12"/>
+
+    {%- when 'truck' -%}
+      <path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/>
+      <circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/>
+
+    {%- when 'shield' -%}
+      <path d="M12 3l7 3v5c0 4.2-2.9 7.9-7 9-4.1-1.1-7-4.8-7-9V6z"/><path d="m9 12 2 2 4-4"/>
+
+    {%- when 'refresh' -%}
+      <path d="M21 12a9 9 0 1 1-2.6-6.4"/><path d="M21 4v5h-5"/>
+
+    {%- when 'gift' -%}
+      <path d="M4 11h16v9H4zM3 7h18v4H3zM12 7v13"/>
+      <path d="M12 7S10.5 3 8.5 3.5 7 7 12 7zM12 7s1.5-4 3.5-3.5S17 7 12 7z"/>
+
+    {%- when 'star' -%}
+      <path d="m12 3.6 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.8l5.9-.9z"/>
+
+    {%- when 'chevron' -%}
+      <path d="m6 9 6 6 6-6"/>
+
+    {%- when 'clock' -%}
+      <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 1.9"/>
+
+    {%- when 'lock' -%}
+      <rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/>
+
+    {%- when 'heart' -%}
+      <path d="M12 20s-7-4.4-7-9.2A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.8C19 15.6 12 20 12 20z"/>
+
+    {%- when 'package' -%}
+      <path d="M12 3.5 20 8v8l-8 4.5L4 16V8z"/><path d="M4 8l8 4.5L20 8M12 12.5V21"/>
+
+    {%- when 'sparkle' -%}
+      <path d="M12 3.5 13.7 9l5.5 1.7-5.5 1.7L12 18l-1.7-5.6L4.8 10.7 10.3 9z"/>
+
+    {%- when 'calendar' -%}
+      <rect x="4" y="5.5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3.5v4M15 3.5v4"/>
+
+    {%- when 'flame' -%}
+      <path d="M12 21c3.3 0 6-2.5 6-5.6 0-3.9-4-5.2-3.2-9.4-2.6.9-4 3-4 5 0 1-.6 1.6-1.2 1.6-.8 0-1.3-.7-1.3-1.8C6.7 12.4 6 13.8 6 15.4 6 18.5 8.7 21 12 21z"/>
+
+    {%- when 'chat' -%}
+      <path d="M20 12.5c0 3.6-3.6 6.5-8 6.5a9.6 9.6 0 0 1-2.6-.35L4.5 20.5l1.2-3.4A6.4 6.4 0 0 1 4 12.5C4 8.9 7.6 6 12 6s8 2.9 8 6.5z"/>
+
+    {%- when 'seal' -%}
+      <path d="M12 2.5 14.2 5l3.3-.4 1 3.2 3 1.4-1.6 2.9 1.6 2.9-3 1.4-1 3.2-3.3-.4L12 21.5 9.8 19l-3.3.4-1-3.2-3-1.4L4.1 12 2.5 9.1l3-1.4 1-3.2L9.8 5z"/>
+      <path d="m9 12 2 2 4-4.5"/>
+
+    {%- else -%}
+      <path d="M20 6 9 17l-5-5"/>
+
+  {%- endcase -%}
+</svg>

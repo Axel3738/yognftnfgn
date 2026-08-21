@@ -1,0 +1,23 @@
+{% render 'ms-guarantee',
+   title: block.settings.title,
+   body: block.settings.body,
+   icon: block.settings.icon %}
+
+{% schema %}
+{
+  "name": "Garanti",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Rubrik", "default": "30 dagars öppet köp" },
+    { "type": "richtext", "id": "body", "label": "Text",
+      "default": "<p>Inte nöjd? Hör av dig inom 30 dagar så löser vi det. Inget krångel.</p>" },
+    { "type": "select", "id": "icon", "label": "Ikon", "default": "seal",
+      "options": [
+        { "value": "seal", "label": "Sigill" },
+        { "value": "shield", "label": "Sköld" },
+        { "value": "refresh", "label": "Retur" },
+        { "value": "heart", "label": "Hjärta" }
+      ] }
+  ],
+  "presets": [{ "name": "Garanti" }]
+}
+{% endschema %}

@@ -1,0 +1,59 @@
+{%- comment -%}
+  ms-head — allt konverteringslagret behöver i <head>.
+  Läggs in i layout/theme.liquid, före </head>:
+
+      {% render 'ms-head' %}
+
+  Ordningen spelar roll:
+    1. CSS:en först, så inget hoppar till.
+    2. A/B-konfigurationen som ren JSON.
+    3. ms-ab.js UTAN defer — den måste hinna välja variant innan sidan målas.
+    4. ms-cro.js med defer — beteende, behöver inte blockera.
+
+  Testerna konfigureras i Temainställningar → Matstrumpor A/B, ett test per
+  rad på formen:   id            (50/50)
+                   id:90:10      (viktad, för försiktig utrullning)
+  Rader som börjar med # är avstängda.
+{%- endcomment -%}
+
+{{ 'ms-cro.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign raw_tests = settings.ms_ab_tests | default: '' | split: '
+'
+  assign cookie_days = settings.ms_ab_cookie_days | default: 30
+-%}
+<script id="ms-ab-config" type="application/json">
+{
+  "cookieDays": {{ cookie_days | json }},
+  "tests": [
+    {%- assign printed = 0 -%}
+    {%- for line in raw_tests -%}
+      {%- liquid
+        assign t = line | strip
+        assign skip = false
+        if t == blank
+          assign skip = true
+        endif
+        assign hash = t | slice: 0, 1
+        if hash == '#'
+          assign skip = true
+        endif
+      -%}
+      {%- unless skip -%}
+        {%- liquid
+          assign parts = t | split: ':'
+          assign id = parts[0] | strip
+          assign wa = parts[1] | default: 50 | plus: 0
+          assign wb = parts[2] | default: 50 | plus: 0
+        -%}
+        {%- if printed > 0 -%},{%- endif -%}
+        {"id": {{ id | json }}, "variants": ["a","b"], "weights": [{{ wa }}, {{ wb }}], "active": true}
+        {%- assign printed = printed | plus: 1 -%}
+      {%- endunless -%}
+    {%- endfor -%}
+  ]
+}
+</script>
+<script src="{{ 'ms-ab.js' | asset_url }}"></script>
+<script src="{{ 'ms-cro.js' | asset_url }}" defer></script>

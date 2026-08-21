@@ -1,0 +1,17 @@
+{%- comment -%}
+  ms-payment-icons — betalsätten butiken faktiskt har aktiverade.
+
+  Använder Shopifys egna, licensierade logotyper via payment_type_svg_tag.
+  Vi ritar aldrig egna Visa/Klarna-märken — det vore varumärkesintrång och
+  dessutom fel så fort butiken byter betalleverantör.
+{%- endcomment -%}
+{%- if shop.enabled_payment_types.size > 0 -%}
+  <div class="ms-pay ms-scope">
+    {%- if label != blank -%}<span class="ms-pay__label">{{ label }}</span>{%- endif -%}
+    <div class="ms-pay__row">
+      {%- for type in shop.enabled_payment_types -%}
+        {{ type | payment_type_svg_tag: class: 'ms-pay__icon' }}
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}

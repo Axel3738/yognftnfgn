@@ -1,0 +1,28 @@
+<div class="ms-scope ms-section">
+  <div class="ms-wrap" style="max-width: 760px;">
+    {% render 'ms-guarantee',
+       title: section.settings.title,
+       body: section.settings.body,
+       icon: section.settings.icon %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Garantiblock",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Rubrik", "default": "30 dagars öppet köp" },
+    { "type": "richtext", "id": "body", "label": "Text",
+      "default": "<p>Inte nöjd? Hör av dig inom 30 dagar så löser vi det. Inget krångel, inga följdfrågor.</p>" },
+    { "type": "select", "id": "icon", "label": "Ikon", "default": "seal",
+      "options": [
+        { "value": "seal", "label": "Sigill" },
+        { "value": "shield", "label": "Sköld" },
+        { "value": "refresh", "label": "Retur" },
+        { "value": "heart", "label": "Hjärta" }
+      ] }
+  ],
+  "presets": [{ "name": "Garantiblock" }]
+}
+{% endschema %}

@@ -1,0 +1,12 @@
+{%- comment -%}
+  ms-ab-attrs — märker ett element som tillhörande en testvariant.
+
+  Anrop:  <div class="ms-scope" {% render 'ms-ab-attrs', test: 'buybox', variant: 'b' %}>
+
+  Variant A renderas synlig, variant B renderas med hidden. Motorn i
+  ms-ab.js vänder på det för besökare som lottats till B. Är JavaScript
+  avstängt ser besökaren alltid A — aldrig två varianter, aldrig tom sida.
+{%- endcomment -%}
+{%- if test != blank and variant != blank -%}
+  data-ms-ab="{{ test | strip | escape }}:{{ variant | strip | escape }}"{% unless variant == 'a' %} hidden{% endunless %}
+{%- endif -%}

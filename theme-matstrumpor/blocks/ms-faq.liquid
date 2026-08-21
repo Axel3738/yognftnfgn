@@ -1,0 +1,13 @@
+{% render 'ms-faq', pairs: block.settings.pairs %}
+
+{% schema %}
+{
+  "name": "Vanliga frågor",
+  "settings": [
+    { "type": "textarea", "id": "pairs", "label": "Frågor och svar",
+      "default": "Passar de alla?::En storlek passar de flesta, ungefär strl 36–44.|Hur snabbt kommer de?::5–10 arbetsdagar med fri frakt inom Sverige.",
+      "info": "Format fråga::svar, separerade med |." }
+  ],
+  "presets": [{ "name": "Vanliga frågor" }]
+}
+{% endschema %}

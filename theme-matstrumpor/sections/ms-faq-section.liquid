@@ -1,0 +1,39 @@
+<div class="ms-scope ms-section">
+  <div class="ms-wrap" style="max-width: 820px;">
+    <div class="ms-center" style="margin-bottom: 24px;">
+      <h2 class="ms-h2">{{ section.settings.heading }}</h2>
+    </div>
+    <div class="ms-faq">
+      {%- for block in section.blocks -%}
+        <details class="ms-faq__item" {{ block.shopify_attributes }}>
+          <summary class="ms-faq__q">
+            <span>{{ block.settings.q }}</span>
+            {% render 'ms-icon', name: 'chevron', class: 'ms-faq__chev' %}
+          </summary>
+          <div class="ms-faq__a">{{ block.settings.a }}</div>
+        </details>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Vanliga frågor",
+  "tag": "section",
+  "max_blocks": 20,
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Rubrik", "default": "Vanliga frågor" }
+  ],
+  "blocks": [
+    { "type": "qa", "name": "Fråga", "settings": [
+      { "type": "text", "id": "q", "label": "Fråga" },
+      { "type": "richtext", "id": "a", "label": "Svar" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Vanliga frågor",
+      "blocks": [{ "type": "qa" }, { "type": "qa" }, { "type": "qa" }, { "type": "qa" }] }
+  ]
+}
+{% endschema %}

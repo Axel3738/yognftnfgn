@@ -1,0 +1,188 @@
+{%- comment -%}
+  ms-bundle-picker — paketväljare i köpblocket.
+
+  Två lägen, valda automatiskt:
+
+    variant   Produkten har flera varianter (t.ex. Sushi-Strumpor: "3 - Par"
+              och "5 - Par"). Varje variant blir ett kort. Priset per enhet
+              räknas ut och det billigaste per enhet flaggas som bästa köp.
+
+    quantity  Produkten har bara en variant (Pizza, Hamburgare, Donut).
+              Korten sätter i stället ANTAL. Inga påhittade rabattpriser —
+              totalen är alltid styckpris × antal. Ska ett paketpris visas
+              måste en riktig automatisk rabatt finnas i Shopify, och då
+              anges den i inställningen rabatt_procent.
+
+  Parametrar:
+    product          (obligatorisk)
+    heading          rubrik ovanför korten
+    mode             'auto' | 'variant' | 'quantity'   (default auto)
+    unit_word        ord för en enhet, t.ex. 'par'      (default 'st')
+    popular_index    vilket kort som får flaggan, 1-baserat, 0 = ingen
+    popular_text     flaggans text
+    tiers            för quantity: "1,2,3" — antalen som ska erbjudas
+    discount_percent för quantity: verklig rabatt i procent, 0 om ingen finns
+{%- endcomment -%}
+
+{%- liquid
+  assign p = product
+
+  assign want = mode | default: 'auto'
+  assign variant_count = p.variants | size
+  if want == 'auto'
+    if variant_count > 1
+      assign want = 'variant'
+    else
+      assign want = 'quantity'
+    endif
+  endif
+
+  assign unit = unit_word | default: 'st'
+  assign flag_at = popular_index | default: 0 | plus: 0
+  assign flag_text = popular_text | default: 'Populärast'
+  assign uid = p.id | append: '-' | append: section_id
+-%}
+
+{%- unless p and p.available -%}
+  {%- comment -%} Slutsåld eller ingen produkt: rendera ingenting. {%- endcomment -%}
+{%- else -%}{%- if want == 'variant' -%}
+
+  {%- comment -%} Steg 1: hitta det DYRASTE priset per enhet — det är referensen. {%- endcomment -%}
+  {%- liquid
+    assign baseline = 0
+    for v in p.variants
+      assign units = v.title | split: ' ' | first | plus: 0
+      if units < 1
+        assign units = 1
+      endif
+      assign per = v.price | divided_by: units
+      if per > baseline
+        assign baseline = per
+      endif
+    endfor
+  -%}
+
+  <ms-bundle class="ms-scope" data-mode="variant">
+    {%- if heading != blank -%}<p class="ms-h3">{{ heading }}</p>{%- endif -%}
+    <div class="ms-bundle" role="radiogroup" aria-label="{{ heading | default: 'Välj paket' | escape }}">
+      {%- for v in p.variants -%}
+        {%- liquid
+          assign units = v.title | split: ' ' | first | plus: 0
+          if units < 1
+            assign units = 1
+          endif
+          assign per = v.price | divided_by: units
+          assign saving = 0
+          if baseline > 0 and per < baseline
+            assign diff = baseline | minus: per | times: 100
+            assign saving = diff | divided_by: baseline
+          endif
+          assign is_current = false
+          if p.selected_or_first_available_variant.id == v.id
+            assign is_current = true
+          endif
+        -%}
+        <label class="ms-bundle__opt{% unless v.available %} ms-bundle__opt--sold{% endunless %}">
+          {%- if forloop.index == flag_at and v.available -%}
+            <span class="ms-bundle__flag">{{ flag_text }}</span>
+          {%- elsif saving >= 10 and flag_at == 0 -%}
+            <span class="ms-bundle__flag">Spara {{ saving }}%</span>
+          {%- endif -%}
+          <input
+            class="ms-bundle__input"
+            type="radio"
+            name="ms-bundle-{{ uid }}"
+            value="{{ v.id }}"
+            data-variant-id="{{ v.id }}"
+            data-price="{{ v.price }}"
+            data-compare-at="{{ v.compare_at_price | default: 0 }}"
+            data-quantity="1"
+            {% if is_current %}checked{% endif %}
+            {% unless v.available %}disabled{% endunless %}>
+          <span class="ms-bundle__card">
+            <span class="ms-bundle__dot" aria-hidden="true"></span>
+            <span class="ms-bundle__label">
+              {{ v.title }}
+              {%- if v.available == false -%}
+                <span class="ms-bundle__note">Slutsåld</span>
+              {%- elsif saving > 0 -%}
+                <span class="ms-bundle__note">{{ saving }}% billigare per {{ unit }}</span>
+              {%- endif -%}
+            </span>
+            <span class="ms-bundle__prices">
+              <span class="ms-bundle__price">{{ v.price | money }}</span>
+              {%- if v.compare_at_price > v.price -%}
+                <span class="ms-bundle__was">{{ v.compare_at_price | money }}</span>
+              {%- endif -%}
+              {%- if units > 1 -%}
+                <span class="ms-bundle__unit">{{ per | money }} / {{ unit }}</span>
+              {%- endif -%}
+            </span>
+          </span>
+        </label>
+      {%- endfor -%}
+    </div>
+  </ms-bundle>
+
+{%- else -%}
+
+  {%- liquid
+    assign list = tiers | default: '1,2,3' | split: ','
+    assign disc = discount_percent | default: 0 | plus: 0
+    assign v = p.selected_or_first_available_variant
+  -%}
+  <ms-bundle class="ms-scope" data-mode="quantity">
+    {%- if heading != blank -%}<p class="ms-h3">{{ heading }}</p>{%- endif -%}
+    <div class="ms-bundle" role="radiogroup" aria-label="{{ heading | default: 'Välj antal' | escape }}">
+      {%- for t in list -%}
+        {%- liquid
+          assign q = t | strip | plus: 0
+          if q < 1
+            assign q = 1
+          endif
+          assign gross = v.price | times: q
+          assign net = gross
+          if q > 1 and disc > 0
+            assign keep = 100 | minus: disc
+            assign net = gross | times: keep | divided_by: 100
+          endif
+          assign per = net | divided_by: q
+        -%}
+        <label class="ms-bundle__opt">
+          {%- if forloop.index == flag_at -%}
+            <span class="ms-bundle__flag">{{ flag_text }}</span>
+          {%- endif -%}
+          <input
+            class="ms-bundle__input"
+            type="radio"
+            name="ms-bundle-{{ uid }}"
+            value="{{ q }}"
+            data-variant-id="{{ v.id }}"
+            data-price="{{ net }}"
+            data-compare-at="{{ gross }}"
+            data-quantity="{{ q }}"
+            {% if forloop.first %}checked{% endif %}>
+          <span class="ms-bundle__card">
+            <span class="ms-bundle__dot" aria-hidden="true"></span>
+            <span class="ms-bundle__label">
+              {{ q }} {{ unit }}
+              {%- if q > 1 and disc > 0 -%}
+                <span class="ms-bundle__note">Spara {{ disc }}%</span>
+              {%- endif -%}
+            </span>
+            <span class="ms-bundle__prices">
+              <span class="ms-bundle__price">{{ net | money }}</span>
+              {%- if net < gross -%}
+                <span class="ms-bundle__was">{{ gross | money }}</span>
+              {%- endif -%}
+              {%- if q > 1 -%}
+                <span class="ms-bundle__unit">{{ per | money }} / {{ unit }}</span>
+              {%- endif -%}
+            </span>
+          </span>
+        </label>
+      {%- endfor -%}
+    </div>
+  </ms-bundle>
+
+{%- endif -%}{%- endunless -%}

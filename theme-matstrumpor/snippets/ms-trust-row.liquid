@@ -1,0 +1,29 @@
+{%- comment -%}
+  ms-trust-row — trygghetsikoner under köpknappen.
+  Parametrar: items — "ikon:text|ikon:text|…"
+              t.ex. "truck:Fri frakt i Sverige|refresh:30 dagars öppet köp"
+  Giltiga ikonnamn står listade i ms-icon.liquid.
+{%- endcomment -%}
+{%- liquid
+  assign fallback = 'truck:Fri frakt i Sverige|refresh:30 dagars öppet köp|lock:Trygg betalning'
+  assign rows = items | default: fallback | split: '|'
+-%}
+{%- if rows.size > 0 -%}
+  <div class="ms-trust ms-scope">
+    {%- for row in rows -%}
+      {%- liquid
+        assign bits = row | split: ':'
+        assign ico = bits[0] | strip
+        assign txt = bits[1] | strip
+        if txt == blank
+          assign txt = ico
+          assign ico = 'check-circle'
+        endif
+      -%}
+      <div class="ms-trust__item">
+        {% render 'ms-icon', name: ico %}
+        <span>{{ txt }}</span>
+      </div>
+    {%- endfor -%}
+  </div>
+{%- endif -%}

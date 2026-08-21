@@ -1,0 +1,24 @@
+{% render 'ms-sales-points',
+   points: block.settings.points,
+   icon: block.settings.icon %}
+
+{% schema %}
+{
+  "name": "Säljpunkter",
+  "settings": [
+    { "type": "textarea", "id": "points", "label": "Punkter",
+      "default": "En storlek passar alla|Levereras i presentförpackning|Premiumkvalitet som håller",
+      "info": "Separera med |. En rad kan välja egen ikon: gift:Perfekt gåva" },
+    { "type": "select", "id": "icon", "label": "Ikon för rader utan eget val", "default": "check-circle",
+      "options": [
+        { "value": "check-circle", "label": "Bock i cirkel" },
+        { "value": "check", "label": "Bock" },
+        { "value": "star", "label": "Stjärna" },
+        { "value": "sparkle", "label": "Glitter" },
+        { "value": "gift", "label": "Present" },
+        { "value": "none", "label": "Ingen (använd emoji i texten)" }
+      ] }
+  ],
+  "presets": [{ "name": "Säljpunkter" }]
+}
+{% endschema %}

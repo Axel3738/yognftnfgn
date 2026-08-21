@@ -1,0 +1,38 @@
+{%- comment -%}
+  ms-sales-points — bockade nyttopunkter i köpblocket.
+
+  Parametrar:
+    points  rader separerade med |
+            En rad kan välja egen ikon med prefix, t.ex. "gift:Perfekt gåva".
+    icon    ikon för rader utan eget prefix. Sätt till 'none' när raderna
+            redan börjar med en emoji, så det inte blir bock OCH emoji.
+{%- endcomment -%}
+{%- liquid
+  assign rows = points | default: '' | split: '|'
+  assign ico_default = icon | default: 'check-circle'
+-%}
+{%- if rows.size > 0 -%}
+  <ul class="ms-points ms-scope">
+    {%- for row in rows -%}
+      {%- liquid
+        assign text = row | strip
+        assign ico = ico_default
+        assign bits = row | split: ':'
+        if bits.size > 1
+          assign head = bits[0] | strip
+          assign known = 'check,check-circle,truck,shield,refresh,gift,star,clock,lock,heart,package,sparkle,calendar,flame,chat,seal' | split: ','
+          if known contains head
+            assign ico = head
+            assign text = bits[1] | strip
+          endif
+        endif
+      -%}
+      {%- if text != blank -%}
+        <li class="ms-points__item">
+          {%- unless ico == 'none' -%}{% render 'ms-icon', name: ico %}{%- endunless -%}
+          <span>{{ text }}</span>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+{%- endif -%}

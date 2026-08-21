@@ -1,0 +1,12 @@
+{% render 'ms-payment-icons', label: block.settings.label %}
+
+{% schema %}
+{
+  "name": "Betalsätt",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Text ovanför", "default": "Trygg betalning med" },
+    { "type": "paragraph", "content": "Visar de betalsätt butiken faktiskt har aktiverade. Listan uppdateras av sig själv om betalsätten ändras." }
+  ],
+  "presets": [{ "name": "Betalsätt" }]
+}
+{% endschema %}

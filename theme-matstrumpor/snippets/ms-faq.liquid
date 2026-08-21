@@ -1,0 +1,29 @@
+{%- comment -%}
+  ms-faq — dragspel byggt på <details>, så det fungerar utan JavaScript och
+  går att hitta med webbläsarens egen sidsökning (Ctrl+F).
+
+  Parametrar: pairs — "fråga::svar|fråga::svar|…"
+{%- endcomment -%}
+{%- liquid
+  assign rows = pairs | default: '' | split: '|'
+-%}
+{%- if rows.size > 0 -%}
+  <div class="ms-faq ms-scope">
+    {%- for row in rows -%}
+      {%- liquid
+        assign bits = row | split: '::'
+        assign q = bits[0] | strip
+        assign a = bits[1] | strip
+      -%}
+      {%- if q != blank -%}
+        <details class="ms-faq__item">
+          <summary class="ms-faq__q">
+            <span>{{ q }}</span>
+            {% render 'ms-icon', name: 'chevron', class: 'ms-faq__chev' %}
+          </summary>
+          <div class="ms-faq__a"><p>{{ a }}</p></div>
+        </details>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+{%- endif -%}

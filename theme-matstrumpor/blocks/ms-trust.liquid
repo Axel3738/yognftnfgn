@@ -1,0 +1,13 @@
+{% render 'ms-trust-row', items: block.settings.items %}
+
+{% schema %}
+{
+  "name": "Trygghetsrad",
+  "settings": [
+    { "type": "textarea", "id": "items", "label": "Punkter",
+      "default": "truck:Fri frakt i Sverige|refresh:30 dagars öppet köp|lock:Trygg betalning",
+      "info": "Format ikon:text, separerade med |. Ikoner: truck, refresh, lock, shield, gift, star, heart, package, clock, chat, seal, sparkle, calendar, flame." }
+  ],
+  "presets": [{ "name": "Trygghetsrad" }]
+}
+{% endschema %}

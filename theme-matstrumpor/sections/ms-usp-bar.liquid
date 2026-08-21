@@ -1,0 +1,21 @@
+{% render 'ms-trust-row', items: section.settings.items %}
+<style>
+  #shopify-section-{{ section.id }} .ms-trust {
+    margin: 0; border-radius: 0; border-inline: 0;
+    {% if section.settings.background != blank %}background: {{ section.settings.background }};{% endif %}
+  }
+</style>
+
+{% schema %}
+{
+  "name": "USP-rad",
+  "tag": "section",
+  "settings": [
+    { "type": "textarea", "id": "items", "label": "Punkter",
+      "default": "truck:Fri frakt i Sverige|refresh:30 dagars öppet köp|gift:Levereras presentklart|star:Älskad av tusentals svenskar",
+      "info": "Format ikon:text, separerade med |." },
+    { "type": "color", "id": "background", "label": "Bakgrund" }
+  ],
+  "presets": [{ "name": "USP-rad" }]
+}
+{% endschema %}

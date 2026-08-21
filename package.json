@@ -10,7 +10,13 @@
     "dash": "node dashboard/build.mjs",
     "status": "node dashboard/cli.mjs status",
     "review": "node dashboard/cli.mjs review-queue",
-    "test": "node --test dashboard/test/*.test.mjs"
+    "test": "node --test dashboard/test/*.test.mjs",
+    "tema:check": "node theme-matstrumpor/tools/liquid-check.mjs",
+    "tema:test": "node --test theme-matstrumpor/ab/test/*.test.mjs",
+    "tema:grind": "npm run tema:check && npm run tema:test",
+    "tema:ab": "node theme-matstrumpor/ab/analys.mjs"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }

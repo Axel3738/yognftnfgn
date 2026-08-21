@@ -1,0 +1,28 @@
+{%- comment -%}
+  ms-delivery-estimate — konkret leveransfönster i stället för "5–10 dagar".
+
+  Datumet räknas ut i webbläsaren i svensk tid, i arbetsdagar, av
+  <ms-delivery> i ms-cro.js. Serverns HTML innehåller en läsbar reservtext
+  så sidan säger något vettigt även utan JavaScript.
+
+  Parametrar: min_days, max_days, cutoff_hour (0 = ingen brytpunkt), text
+{%- endcomment -%}
+{%- liquid
+  assign mn = min_days | default: 5 | plus: 0
+  assign mx = max_days | default: 10 | plus: 0
+  assign cut = cutoff_hour | default: 0 | plus: 0
+  assign lead = text | default: 'Beräknad leverans'
+-%}
+<ms-delivery class="ms-scope"
+  data-min-days="{{ mn }}"
+  data-max-days="{{ mx }}"
+  {% if cut > 0 %}data-cutoff-hour="{{ cut }}"{% endif %}>
+  <div class="ms-delivery">
+    {% render 'ms-icon', name: 'truck' %}
+    <div>
+      {{ lead }}
+      <span class="ms-delivery__date" data-ms-delivery-range>{{ mn }}–{{ mx }} arbetsdagar</span>
+      <span class="ms-delivery__cut" data-ms-delivery-cut hidden></span>
+    </div>
+  </div>
+</ms-delivery>

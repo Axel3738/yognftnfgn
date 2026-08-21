@@ -1,0 +1,647 @@
+/* ==========================================================================
+   ms-cro.css — konverteringslagret för Matstrumpor.se
+   --------------------------------------------------------------------------
+   Egen kod. Inga beroenden, inga externa anrop, ingen kopierad temakod.
+   Fungerar ovanpå vilket OS 2.0-tema som helst (Horizon, Dawn, Shrine).
+
+   Uppbyggnad:
+     1. Designtokens      — märkets färger/typsnitt, går att överstyra per sektion
+     2. Grundelement      — knappar, kort, rubriker
+     3. Komponenter       — en per konverteringsblock, prefix .ms-
+     4. Tillgänglighet    — fokus, kontrast, reducerad rörelse
+
+   Alla tokens har fallback till märkets riktiga värden (avlästa från
+   matstrumpor.se 2026-08-21), så filen ser rätt ut även om temats egna
+   variabler saknas.
+   ========================================================================== */
+
+/* 1. DESIGNTOKENS ========================================================= */
+
+.ms,
+.ms-scope {
+  /* Färg — märkets palett */
+  --ms-accent: #dd821d;           /* varm bärnsten, märkets accent */
+  --ms-accent-dark: #b8681322;    /* används bara för ytor, se nedan */
+  --ms-accent-ink: #fdfbf7;       /* text ovanpå accent */
+  --ms-ink: #121212;              /* brödtext */
+  --ms-ink-soft: #5c5750;         /* sekundär text */
+  --ms-ink-faint: #8c857c;        /* hjälptext */
+  --ms-surface: #ffffff;          /* kortbakgrund */
+  --ms-surface-2: #faf7f2;        /* varm ljus yta */
+  --ms-surface-3: #f3f3f3;        /* neutral ljus yta */
+  --ms-line: #e6e0d6;             /* kantlinje */
+  --ms-line-strong: #cfc6b7;
+  --ms-good: #1f7a4d;             /* bekräftelse, klarmarkering */
+  --ms-warn: #c2410c;             /* brådska, lågt lager */
+
+  /* Form */
+  --ms-radius: 14px;
+  --ms-radius-sm: 9px;
+  --ms-radius-pill: 999px;
+  --ms-shadow: 0 1px 2px rgba(18, 18, 18, .06), 0 8px 24px -12px rgba(18, 18, 18, .18);
+  --ms-shadow-lift: 0 2px 4px rgba(18, 18, 18, .08), 0 16px 36px -14px rgba(18, 18, 18, .28);
+  --ms-ring: 0 0 0 3px rgba(221, 130, 29, .32);
+
+  /* Rytm */
+  --ms-gap: 12px;
+  --ms-pad: 16px;
+  --ms-section-y: clamp(32px, 6vw, 64px);
+
+  /* Typografi — ärver temats typsnitt, faller tillbaka på märkets */
+  --ms-font: var(--font-body-family, "Mochiy Pop P One", ui-rounded, system-ui, sans-serif);
+  --ms-font-head: var(--font-heading-family, var(--ms-font));
+  --ms-fs-xs: .75rem;
+  --ms-fs-sm: .875rem;
+  --ms-fs-md: 1rem;
+  --ms-fs-lg: 1.125rem;
+  --ms-fs-xl: clamp(1.25rem, 1rem + 1.2vw, 1.75rem);
+  --ms-fs-2xl: clamp(1.6rem, 1.1rem + 2.2vw, 2.5rem);
+}
+
+/* Mörkt läge: bara om temat självt ber om det. Vi tvingar aldrig fram det. */
+.ms-scope[data-ms-scheme="dark"] {
+  --ms-ink: #f6f2ec;
+  --ms-ink-soft: #c8c0b4;
+  --ms-ink-faint: #9a9287;
+  --ms-surface: #1c1a17;
+  --ms-surface-2: #232019;
+  --ms-surface-3: #2b2721;
+  --ms-line: #3a352c;
+  --ms-line-strong: #4d4638;
+}
+
+/* 2. GRUNDELEMENT ========================================================= */
+
+.ms-scope {
+  font-family: var(--ms-font);
+  color: var(--ms-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.ms-scope *,
+.ms-scope *::before,
+.ms-scope *::after { box-sizing: border-box; }
+
+.ms-wrap {
+  width: 100%;
+  max-width: var(--ms-max, 1200px);
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 32px);
+}
+
+.ms-section { padding-block: var(--ms-section-y); }
+
+.ms-h2 {
+  font-family: var(--ms-font-head);
+  font-size: var(--ms-fs-2xl);
+  line-height: 1.15;
+  margin: 0 0 .35em;
+  text-wrap: balance;
+}
+
+.ms-h3 {
+  font-family: var(--ms-font-head);
+  font-size: var(--ms-fs-lg);
+  line-height: 1.25;
+  margin: 0 0 .3em;
+}
+
+.ms-lede {
+  font-size: var(--ms-fs-md);
+  color: var(--ms-ink-soft);
+  line-height: 1.55;
+  margin: 0 auto;
+  max-width: 62ch;
+}
+
+.ms-center { text-align: center; }
+
+.ms-eyebrow {
+  display: inline-block;
+  font-size: var(--ms-fs-xs);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ms-accent);
+  margin-bottom: .6em;
+}
+
+/* Ikoner: ärver textfärg, skalar med typsnittet */
+.ms-i {
+  width: 1.15em;
+  height: 1.15em;
+  flex: 0 0 auto;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ms-i--fill { fill: currentColor; stroke: none; }
+
+/* 3. KOMPONENTER ========================================================== */
+
+/* 3.1 USP-rad — förtroendepunkter direkt under headern ------------------- */
+.ms-usp {
+  background: var(--ms-surface-2);
+  border-block: 1px solid var(--ms-line);
+}
+.ms-usp__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--ms-usp-cols, 2), minmax(0, 1fr));
+  gap: var(--ms-gap);
+  padding-block: 14px;
+}
+.ms-usp__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: var(--ms-fs-sm);
+  line-height: 1.3;
+  text-align: left;
+  color: var(--ms-ink);
+}
+.ms-usp__item .ms-i { color: var(--ms-accent); }
+@media (min-width: 750px) {
+  .ms-usp__grid { grid-template-columns: repeat(var(--ms-usp-cols-d, 4), minmax(0, 1fr)); }
+}
+
+/* 3.2 Rullande band ------------------------------------------------------ */
+.ms-marquee {
+  --ms-marquee-dur: 26s;
+  overflow: hidden;
+  background: var(--ms-marquee-bg, var(--ms-accent));
+  color: var(--ms-marquee-fg, var(--ms-accent-ink));
+  padding-block: 10px;
+}
+.ms-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: ms-marquee-scroll var(--ms-marquee-dur) linear infinite;
+}
+.ms-marquee:hover .ms-marquee__track,
+.ms-marquee:focus-within .ms-marquee__track { animation-play-state: paused; }
+.ms-marquee__group {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+.ms-marquee__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-inline: 22px;
+  font-size: var(--ms-fs-sm);
+  white-space: nowrap;
+}
+.ms-marquee__item::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: .55;
+  margin-left: 22px;
+}
+@keyframes ms-marquee-scroll {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+/* 3.3 Säljpunkter — bockade rader i köpblocket -------------------------- */
+.ms-points { display: grid; gap: 9px; margin: 14px 0; padding: 0; list-style: none; }
+.ms-points__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: var(--ms-fs-sm);
+  line-height: 1.4;
+}
+.ms-points__item .ms-i { color: var(--ms-good); margin-top: .1em; }
+.ms-points__emoji { font-size: 1.05em; line-height: 1.3; }
+
+/* 3.4 Paketväljare — kärnan i snittordervärdet -------------------------- */
+.ms-bundle { display: grid; gap: 10px; margin: 18px 0; }
+.ms-bundle__opt { position: relative; margin: 0; }
+.ms-bundle__input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.ms-bundle__card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 2px solid var(--ms-line);
+  border-radius: var(--ms-radius);
+  background: var(--ms-surface);
+  transition: border-color .16s ease, background-color .16s ease, box-shadow .16s ease;
+}
+.ms-bundle__input:hover + .ms-bundle__card { border-color: var(--ms-line-strong); }
+.ms-bundle__input:checked + .ms-bundle__card {
+  border-color: var(--ms-accent);
+  background: color-mix(in srgb, var(--ms-accent) 6%, var(--ms-surface));
+  box-shadow: var(--ms-shadow);
+}
+.ms-bundle__input:focus-visible + .ms-bundle__card { box-shadow: var(--ms-ring); }
+/* Radioprick ritas av oss så den ser lika ut i alla webbläsare */
+.ms-bundle__dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--ms-line-strong);
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+}
+.ms-bundle__dot::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ms-accent);
+  transform: scale(0);
+  transition: transform .16s ease;
+}
+.ms-bundle__input:checked + .ms-bundle__card .ms-bundle__dot { border-color: var(--ms-accent); }
+.ms-bundle__input:checked + .ms-bundle__card .ms-bundle__dot::after { transform: scale(1); }
+.ms-bundle__label { font-size: var(--ms-fs-md); line-height: 1.25; }
+.ms-bundle__note { display: block; font-size: var(--ms-fs-xs); color: var(--ms-ink-soft); margin-top: 3px; }
+.ms-bundle__prices { text-align: right; line-height: 1.2; }
+.ms-bundle__price { font-size: var(--ms-fs-md); font-weight: 700; display: block; }
+.ms-bundle__was { font-size: var(--ms-fs-xs); color: var(--ms-ink-faint); text-decoration: line-through; }
+.ms-bundle__unit { display: block; font-size: var(--ms-fs-xs); color: var(--ms-ink-soft); }
+.ms-bundle__flag {
+  position: absolute;
+  top: -9px;
+  right: 12px;
+  z-index: 1;
+  background: var(--ms-accent);
+  color: var(--ms-accent-ink);
+  font-size: var(--ms-fs-xs);
+  padding: 2px 9px;
+  border-radius: var(--ms-radius-pill);
+  white-space: nowrap;
+}
+.ms-bundle__opt--sold .ms-bundle__card { opacity: .45; }
+.ms-bundle__opt--sold .ms-bundle__input { cursor: not-allowed; }
+
+/* 3.5 Trygghetsrad ------------------------------------------------------ */
+.ms-trust {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+  gap: var(--ms-gap);
+  margin: 16px 0;
+  padding: 14px 10px;
+  border: 1px solid var(--ms-line);
+  border-radius: var(--ms-radius);
+  background: var(--ms-surface-2);
+}
+.ms-trust__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  font-size: var(--ms-fs-xs);
+  line-height: 1.3;
+  color: var(--ms-ink-soft);
+}
+.ms-trust__item .ms-i { width: 1.6em; height: 1.6em; color: var(--ms-accent); }
+
+/* 3.6 Betalikoner ------------------------------------------------------- */
+.ms-pay { margin: 14px 0; text-align: center; }
+.ms-pay__label { display: block; font-size: var(--ms-fs-xs); color: var(--ms-ink-faint); margin-bottom: 7px; }
+.ms-pay__row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 7px; }
+.ms-pay__row svg { height: 26px; width: auto; display: block; border-radius: 4px; }
+
+/* 3.7 Leveransbesked ---------------------------------------------------- */
+.ms-delivery {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px dashed var(--ms-line-strong);
+  border-radius: var(--ms-radius);
+  background: var(--ms-surface-2);
+  font-size: var(--ms-fs-sm);
+  line-height: 1.45;
+  margin: 14px 0;
+}
+.ms-delivery .ms-i { color: var(--ms-accent); margin-top: .15em; }
+.ms-delivery__date { font-weight: 700; white-space: nowrap; }
+.ms-delivery__cut { display: block; color: var(--ms-ink-soft); font-size: var(--ms-fs-xs); margin-top: 2px; }
+
+/* 3.8 Lagerindikator ---------------------------------------------------- */
+.ms-stock { margin: 14px 0; }
+.ms-stock__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--ms-fs-sm);
+  margin-bottom: 7px;
+}
+.ms-stock__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--ms-warn);
+  flex: 0 0 auto;
+  animation: ms-pulse 2s ease-in-out infinite;
+}
+.ms-stock__bar {
+  height: 7px;
+  border-radius: var(--ms-radius-pill);
+  background: var(--ms-surface-3);
+  overflow: hidden;
+}
+.ms-stock__fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--ms-warn), var(--ms-accent));
+  width: var(--ms-stock-pct, 30%);
+}
+@keyframes ms-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: .35; }
+}
+
+/* 3.9 Nedräkning -------------------------------------------------------- */
+.ms-countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 12px 14px;
+  border-radius: var(--ms-radius);
+  background: var(--ms-surface-2);
+  border: 1px solid var(--ms-line);
+  margin: 14px 0;
+  font-size: var(--ms-fs-sm);
+}
+.ms-countdown__clock { display: flex; gap: 6px; }
+.ms-countdown__cell {
+  min-width: 44px;
+  padding: 5px 7px;
+  border-radius: var(--ms-radius-sm);
+  background: var(--ms-ink);
+  color: var(--ms-surface);
+  text-align: center;
+  line-height: 1.1;
+}
+.ms-countdown__num { display: block; font-size: var(--ms-fs-lg); font-weight: 700; font-variant-numeric: tabular-nums; }
+.ms-countdown__unit { display: block; font-size: 10px; opacity: .75; text-transform: uppercase; letter-spacing: .06em; }
+.ms-countdown[hidden] { display: none; }
+
+/* 3.10 Dragspel / FAQ --------------------------------------------------- */
+.ms-faq { display: grid; gap: 8px; }
+.ms-faq__item {
+  border: 1px solid var(--ms-line);
+  border-radius: var(--ms-radius);
+  background: var(--ms-surface);
+  overflow: hidden;
+}
+.ms-faq__item[open] { border-color: var(--ms-line-strong); }
+.ms-faq__q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: var(--ms-fs-md);
+  line-height: 1.35;
+  list-style: none;
+}
+.ms-faq__q::-webkit-details-marker { display: none; }
+.ms-faq__q:hover { background: var(--ms-surface-2); }
+.ms-faq__chev { transition: transform .18s ease; color: var(--ms-accent); }
+.ms-faq__item[open] .ms-faq__chev { transform: rotate(180deg); }
+.ms-faq__a {
+  padding: 0 16px 16px;
+  font-size: var(--ms-fs-sm);
+  line-height: 1.6;
+  color: var(--ms-ink-soft);
+}
+.ms-faq__a > :first-child { margin-top: 0; }
+.ms-faq__a > :last-child { margin-bottom: 0; }
+
+/* 3.11 Garantikort ------------------------------------------------------ */
+.ms-guarantee {
+  display: grid;
+  gap: 14px;
+  align-items: center;
+  padding: clamp(18px, 4vw, 30px);
+  border: 2px solid var(--ms-accent);
+  border-radius: var(--ms-radius);
+  background: color-mix(in srgb, var(--ms-accent) 5%, var(--ms-surface));
+  text-align: center;
+}
+.ms-guarantee__seal {
+  width: 60px;
+  height: 60px;
+  margin-inline: auto;
+  color: var(--ms-accent);
+}
+.ms-guarantee__seal .ms-i { width: 100%; height: 100%; }
+.ms-guarantee__body { font-size: var(--ms-fs-sm); line-height: 1.6; color: var(--ms-ink-soft); }
+@media (min-width: 750px) {
+  .ms-guarantee { grid-template-columns: auto 1fr; text-align: left; }
+  .ms-guarantee__seal { margin-inline: 0; }
+}
+
+/* 3.12 Jämförelsetabell ------------------------------------------------- */
+.ms-compare__scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.ms-compare__table {
+  width: 100%;
+  min-width: 460px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: var(--ms-fs-sm);
+}
+.ms-compare__table th,
+.ms-compare__table td {
+  padding: 13px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--ms-line);
+  vertical-align: middle;
+}
+.ms-compare__table thead th {
+  font-size: var(--ms-fs-xs);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--ms-ink-soft);
+  border-bottom: 2px solid var(--ms-line-strong);
+}
+.ms-compare__table tbody tr:last-child th,
+.ms-compare__table tbody tr:last-child td { border-bottom: 0; }
+.ms-compare__col--us {
+  background: color-mix(in srgb, var(--ms-accent) 7%, var(--ms-surface));
+  text-align: center;
+}
+.ms-compare__table thead .ms-compare__col--us {
+  color: var(--ms-ink);
+  font-weight: 700;
+  border-top-left-radius: var(--ms-radius);
+  border-top-right-radius: var(--ms-radius);
+}
+.ms-compare__table tbody tr:last-child .ms-compare__col--us {
+  border-bottom-left-radius: var(--ms-radius);
+  border-bottom-right-radius: var(--ms-radius);
+}
+.ms-compare__col--them { text-align: center; color: var(--ms-ink-faint); }
+.ms-compare__yes { color: var(--ms-good); }
+.ms-compare__no { color: var(--ms-ink-faint); }
+/* Status bärs av ikon + dold text, aldrig av färg ensam */
+.ms-sr {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 3.13 Omdömen ---------------------------------------------------------- */
+.ms-reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: var(--ms-gap);
+}
+.ms-review {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+  border: 1px solid var(--ms-line);
+  border-radius: var(--ms-radius);
+  background: var(--ms-surface);
+  box-shadow: var(--ms-shadow);
+}
+.ms-review__stars { display: flex; gap: 2px; color: var(--ms-accent); }
+.ms-review__stars .ms-i { width: 1em; height: 1em; }
+.ms-review__title { font-family: var(--ms-font-head); font-size: var(--ms-fs-md); margin: 0; line-height: 1.3; }
+.ms-review__body { font-size: var(--ms-fs-sm); line-height: 1.6; color: var(--ms-ink-soft); margin: 0; flex: 1; }
+.ms-review__who {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--ms-fs-xs);
+  color: var(--ms-ink-faint);
+}
+.ms-review__avatar {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--ms-surface-3);
+  flex: 0 0 auto;
+}
+.ms-review__verified { display: inline-flex; align-items: center; gap: 4px; color: var(--ms-good); }
+.ms-review__verified .ms-i { width: .95em; height: .95em; }
+
+/* 3.14 Sticky köpknapp -------------------------------------------------- */
+.ms-sticky {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: var(--ms-sticky-z, 40);
+  background: var(--ms-surface);
+  border-top: 1px solid var(--ms-line);
+  box-shadow: 0 -6px 24px -10px rgba(18, 18, 18, .3);
+  padding: 10px clamp(12px, 4vw, 20px);
+  padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  transform: translateY(110%);
+  transition: transform .22s ease;
+  visibility: hidden;
+}
+.ms-sticky[data-shown="true"] { transform: translateY(0); visibility: visible; }
+.ms-sticky__inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 1000px;
+  margin-inline: auto;
+}
+.ms-sticky__media {
+  width: 44px; height: 44px;
+  border-radius: var(--ms-radius-sm);
+  object-fit: cover;
+  flex: 0 0 auto;
+  background: var(--ms-surface-3);
+}
+.ms-sticky__text { flex: 1; min-width: 0; line-height: 1.25; }
+.ms-sticky__name {
+  display: block;
+  font-size: var(--ms-fs-sm);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ms-sticky__price { font-size: var(--ms-fs-sm); font-weight: 700; }
+.ms-sticky__was { font-size: var(--ms-fs-xs); color: var(--ms-ink-faint); text-decoration: line-through; margin-left: 5px; }
+.ms-sticky__btn {
+  flex: 0 0 auto;
+  min-height: 46px;
+  padding-inline: clamp(18px, 5vw, 34px);
+  border: 0;
+  border-radius: var(--ms-radius-pill);
+  background: var(--ms-accent);
+  color: var(--ms-accent-ink);
+  font-family: inherit;
+  font-size: var(--ms-fs-md);
+  cursor: pointer;
+  transition: filter .16s ease, transform .16s ease;
+}
+.ms-sticky__btn:hover { filter: brightness(1.06); }
+.ms-sticky__btn:active { transform: translateY(1px); }
+.ms-sticky__btn:focus-visible { outline: 0; box-shadow: var(--ms-ring); }
+.ms-sticky__btn[disabled] { opacity: .5; cursor: not-allowed; }
+/* På desktop hänger den hellre högst upp, den stjäl mindre yta där */
+@media (min-width: 990px) {
+  .ms-sticky[data-position="top"] {
+    top: 0; bottom: auto;
+    border-top: 0;
+    border-bottom: 1px solid var(--ms-line);
+    box-shadow: 0 6px 24px -10px rgba(18, 18, 18, .3);
+    transform: translateY(-110%);
+    padding-bottom: 10px;
+  }
+  .ms-sticky[data-position="top"][data-shown="true"] { transform: translateY(0); }
+}
+
+/* 4. TILLGÄNGLIGHET ====================================================== */
+
+.ms-scope :focus-visible {
+  outline: 2px solid var(--ms-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ms-scope *,
+  .ms-scope *::before,
+  .ms-scope *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+  .ms-marquee__track { animation: none; transform: none; }
+  .ms-marquee__group:nth-child(n+2) { display: none; }
+  .ms-marquee { overflow-x: auto; }
+  .ms-marquee__track { width: auto; }
+}
+
+@media (forced-colors: active) {
+  .ms-bundle__card,
+  .ms-faq__item,
+  .ms-review,
+  .ms-trust { border: 1px solid CanvasText; }
+  .ms-bundle__input:checked + .ms-bundle__card { border: 3px solid Highlight; }
+}

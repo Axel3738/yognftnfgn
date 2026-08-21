@@ -1,0 +1,42 @@
+{%- liquid
+  assign p = product
+  if p == blank
+    assign p = closest.product
+  endif
+-%}
+{% render 'ms-bundle-picker',
+   product: p,
+   heading: block.settings.heading,
+   mode: block.settings.mode,
+   unit_word: block.settings.unit_word,
+   popular_index: block.settings.popular_index,
+   popular_text: block.settings.popular_text,
+   tiers: block.settings.tiers,
+   discount_percent: block.settings.discount_percent,
+   section_id: block.id %}
+
+{% schema %}
+{
+  "name": "Paketväljare",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Rubrik", "default": "Välj ditt paket" },
+    { "type": "select", "id": "mode", "label": "Läge", "default": "auto",
+      "info": "Auto väljer varianter när produkten har flera, annars antal.",
+      "options": [
+        { "value": "auto", "label": "Auto" },
+        { "value": "variant", "label": "En rad per variant" },
+        { "value": "quantity", "label": "En rad per antal" }
+      ] },
+    { "type": "text", "id": "unit_word", "label": "Ord för en enhet", "default": "par" },
+    { "type": "range", "id": "popular_index", "label": "Flagga rad nummer", "min": 0, "max": 5, "step": 1, "default": 0,
+      "info": "0 = ingen flagga. Sätts den till 0 flaggas i stället bästa pris per enhet automatiskt." },
+    { "type": "text", "id": "popular_text", "label": "Flaggans text", "default": "Populärast" },
+    { "type": "header", "content": "Bara för läget 'en rad per antal'" },
+    { "type": "text", "id": "tiers", "label": "Antal att erbjuda", "default": "1,2,3",
+      "info": "Kommaseparerat." },
+    { "type": "range", "id": "discount_percent", "label": "Verklig rabatt i procent", "min": 0, "max": 40, "step": 5, "default": 0,
+      "info": "VIKTIGT: sätt bara ett värde här om det finns en matchande automatisk rabatt i Shopify. Annars visar sidan ett pris som kassan inte ger." }
+  ],
+  "presets": [{ "name": "Paketväljare" }]
+}
+{% endschema %}

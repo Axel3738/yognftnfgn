@@ -14,21 +14,25 @@ vilka connectors som måste kopplas) → `docs/os/ACTIONPLAN.md`.
 
 ---
 
-## Två verksamheter. Blanda dem aldrig.
+## Tre verksamheter. Blanda dem aldrig.
 
 Det här är det farligaste misstaget i repot — fel annonskonto kostar riktiga pengar.
 
-| | **Bäverbutiken** | **Grillkliniken** |
-|---|---|---|
-| Sajt | bäverbutiken.se (Shopify general store) | grillkliniken.se |
-| Ad account | MagiBorsten `1867947880635861` (SEK) | SnarkLös `1346450049878358` (SEK) |
-| Produkter | 6 st, se `products/products.json` | Mastern (elgrillborste, 999 kr) |
-| Styrs av | slash-kommandona nedan | `pipeline/waves/` + `docs/` (legacy) |
-| Sida / pixel | `678639638662543` / `1554276343018184` | står inte i `main` — läs den ur en SnarkLös-vågkonfig |
+| | **Bäverbutiken** | **Grillkliniken** | **Matstrumpor** |
+|---|---|---|---|
+| Sajt | bäverbutiken.se (Shopify general store) | grillkliniken.se | matstrumpor.se |
+| Ad account | MagiBorsten `1867947880635861` (SEK) | SnarkLös `1346450049878358` (SEK) | `730973156224390` (⚠️ UNSETTLED) |
+| Produkter | 6 st, se `products/products.json` | Mastern (elgrillborste, 999 kr) | 4 strumpor + presentkort |
+| Styrs av | slash-kommandona nedan | `pipeline/waves/` + `docs/` (legacy) | `theme-matstrumpor/` + `/abtest` |
+| Sida / pixel | `678639638662543` / `1554276343018184` | står inte i `main` — läs den ur en SnarkLös-vågkonfig | står inte i `main` |
 
 Kontonamnet är aldrig samma som brandnamnet. Kolla `ad_account_id` innan du rör
-något i Meta. Övriga konton finns men används inte: Matstrumpor.se
-`730973156224390` (⚠️ UNSETTLED).
+något i Meta.
+
+⚠️ **Shopify-connectorn pekar bara på en butik i taget.** Byter du butik med
+`switch-shop` tappas åtkomsten till den förra och den måste auktoriseras om av
+Axel — det kan du inte göra åt honom. Verifiera alltid med `get-shop-info` och
+läs av `domain` innan du hämtar siffror. Fel butik ger tal som ser rimliga ut.
 
 **Kopiera aldrig `page`/`pixel` mellan verksamheterna.** Fel pixel betyder att köpen
 bokförs på fel verksamhet och att all analys blir fel — och det syns inte som ett
@@ -37,6 +41,11 @@ felmeddelande, bara som konstig data.
 **Creative Strategy OS:et är bara Bäverbutiken.** Grillkliniken/Mastern-materialet
 i `docs/` och `pipeline/` (utom `pipeline/quota.mjs`) är legacy referens och ska
 inte röras utan att Axel ber om det.
+
+**Matstrumpor är bara `theme-matstrumpor/`.** Butikens egna Shopify-tema, byggt
+för att ersätta en kopia av Shrine 1.3.1. Rör inte `products/`, `pipeline/` eller
+`dashboard/` för Matstrumpors räkning — de tillhör Bäverbutiken. Start:
+`theme-matstrumpor/README.md`.
 
 ---
 
@@ -121,7 +130,8 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 
 ## Kommandona (Axels gränssnitt)
 
-13 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
+14 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
+(`/abtest` gäller Matstrumpor, resten Bäverbutiken.)
 
 | Kommando | Vad |
 |----------|-----|
@@ -138,6 +148,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/dashboard [datum]` | Bygg och läs redigerardashboarden |
 | `/rapport <namn>: <text>` | Tolka en slutrapport från Slack (bekräftas innan den sparas) |
 | `/granska [id]` | Beta av review-kön: checklista → godkänn eller skicka tillbaka |
+| `/abtest [id]` | **Matstrumpor:** läs av eller planera ett A/B-test på sajten |
 
 ---
 

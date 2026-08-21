@@ -1,0 +1,25 @@
+{% render 'ms-sticky-atc',
+   product: product,
+   label: section.settings.label,
+   position: section.settings.position,
+   show_image: section.settings.show_image %}
+
+{% schema %}
+{
+  "name": "Fast köpknapp",
+  "tag": null,
+  "enabled_on": { "templates": ["product"] },
+  "settings": [
+    { "type": "text", "id": "label", "label": "Knapptext", "default": "Köp nu" },
+    { "type": "select", "id": "position", "label": "Placering på dator", "default": "bottom",
+      "options": [
+        { "value": "bottom", "label": "Nederkant" },
+        { "value": "top", "label": "Överkant" }
+      ],
+      "info": "På mobil sitter den alltid i nederkanten, där tummen är." },
+    { "type": "checkbox", "id": "show_image", "label": "Visa produktbild", "default": true },
+    { "type": "paragraph", "content": "Knappen dyker upp när temats riktiga köpknapp scrollats ur bild, och skickar klicket vidare dit. Den bygger alltså inget eget köpflöde." }
+  ],
+  "presets": [{ "name": "Fast köpknapp" }]
+}
+{% endschema %}
