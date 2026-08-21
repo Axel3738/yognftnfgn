@@ -267,17 +267,31 @@
           : svDate(from, false) + ' – ' + svDate(to, false);
       }
 
-      var cutEl = this.querySelector('[data-ms-delivery-cut]');
-      if (cutEl && cutoff !== null && !isNaN(cutoff)) {
-        if (missedCutoff) {
-          cutEl.textContent = 'Beställningar efter ' + pad(cutoff) + ':00 packas nästa arbetsdag.';
-        } else {
-          var mins = (cutoff * 60) - (now.getHours() * 60 + now.getMinutes());
-          var h = Math.floor(mins / 60), m = mins % 60;
-          cutEl.textContent = 'Beställ inom ' + (h > 0 ? h + ' tim ' : '') + m + ' min så packas den idag.';
-        }
-        cutEl.hidden = false;
+      this.cutEl = this.querySelector('[data-ms-delivery-cut]');
+      this.cutoff = cutoff;
+      if (this.cutEl && cutoff !== null && !isNaN(cutoff)) {
+        // Nedräkningen tickar. En siffra som står still säger "ungefär",
+        // en som räknar ner säger "nu" — det är hela poängen med den.
+        this.tickCut = this.tickCut.bind(this);
+        this.tickCut();
+        this.timer = setInterval(this.tickCut, 1000);
+        this.cutEl.hidden = false;
       }
+    }
+
+    disconnectedCallback() { clearInterval(this.timer); }
+
+    tickCut() {
+      var now = stockholmNow();
+      var kvar = (this.cutoff * 3600) - (now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds());
+      if (kvar <= 0) {
+        this.cutEl.textContent = 'Beställningar efter ' + pad(this.cutoff) + ':00 packas nästa arbetsdag.';
+        clearInterval(this.timer);
+        return;
+      }
+      var h = Math.floor(kvar / 3600), m = Math.floor((kvar % 3600) / 60), sek = kvar % 60;
+      this.cutEl.innerHTML = 'Beställ inom <strong>' +
+        (h > 0 ? h + ' tim ' : '') + m + ' min ' + pad(sek) + ' s</strong> så packas den idag.';
     }
   }
 
@@ -341,6 +355,191 @@
   }
 
 
+  /* --- <ms-video> ------------------------------------------------------- */
+  /* En mp4 som beter sig som en gif. Filen har preload="none" i HTML:en, så
+     ingenting hämtas förrän rutan scrollas in i bild. Utanför bild pausas den
+     igen — en video som spelar osynligt kostar batteri och data utan att
+     någon ser den.                                                          */
+
+  class MsVideo extends HTMLElement {
+    connectedCallback() {
+      this.el = this.querySelector('video');
+      if (!this.el) return;
+
+      // Safari på iOS kräver båda för att alls tillåta autoplay.
+      this.el.muted = true;
+      this.el.playsInline = true;
+      this.el.setAttribute('playsinline', '');
+
+      this.el.addEventListener('playing', function () {
+        this.dataset.igang = 'true';
+      }.bind(this), { once: true });
+
+      this.observer = new IntersectionObserver(this.onSyns.bind(this), { threshold: 0.25 });
+      this.observer.observe(this);
+
+      var ljud = this.querySelector('.ms-video__ljud');
+      if (ljud) ljud.addEventListener('click', this.toggleLjud.bind(this, ljud));
+    }
+
+    disconnectedCallback() { if (this.observer) this.observer.disconnect(); }
+
+    onSyns(entries) {
+      if (entries[0].isIntersecting) {
+        // play() avvisas om webbläsaren ändå säger nej. Då låter vi det vara.
+        var p = this.el.play();
+        if (p && p.catch) p.catch(function () {});
+      } else {
+        this.el.pause();
+      }
+    }
+
+    toggleLjud(knapp) {
+      this.el.muted = !this.el.muted;
+      knapp.setAttribute('aria-pressed', String(!this.el.muted));
+      knapp.setAttribute('aria-label', this.el.muted ? 'Slå på ljudet' : 'Stäng av ljudet');
+      this.dataset.ljudPa = this.el.muted ? 'false' : 'true';
+    }
+  }
+
+
+  /* --- <ms-multibundle> ------------------------------------------------- */
+  /* "Köp alla fyra". Totalen räknas på de verkliga priserna i markeringarna —
+     vi hittar aldrig på ett pris. Finns en rabatt är den en RIKTIG automatisk
+     rabatt i Shopify, och då dras den i kassan, inte av oss.                */
+
+  class MsMultibundle extends HTMLElement {
+    connectedCallback() {
+      this.kryss = Array.prototype.slice.call(this.querySelectorAll('.ms-mb__kryss'));
+      this.knapp = this.querySelector('.ms-mb__knapp');
+      this.netto = this.querySelector('[data-ms-mb-netto]');
+      this.brutto = this.querySelector('[data-ms-mb-brutto]');
+      this.fel = this.querySelector('[data-ms-mb-fel]');
+      if (!this.kryss.length || !this.knapp) return;
+
+      this.rabatt = Number(this.dataset.rabatt || 0);
+      this.rakna = this.rakna.bind(this);
+      this.kryss.forEach(function (k) { k.addEventListener('change', this.rakna); }, this);
+      this.knapp.addEventListener('click', this.lagg.bind(this));
+      this.rakna();
+    }
+
+    valda() {
+      return this.kryss.filter(function (k) { return k.checked; });
+    }
+
+    rakna() {
+      var valda = this.valda();
+      var brutto = valda.reduce(function (a, k) { return a + Number(k.dataset.price || 0); }, 0);
+      var netto = this.rabatt > 0 ? Math.round(brutto * (100 - this.rabatt) / 100) : brutto;
+      var format = this.dataset.moneyFormat;
+      if (this.netto) this.netto.textContent = money(netto, format);
+      if (this.brutto) this.brutto.textContent = money(brutto, format);
+      this.knapp.disabled = valda.length === 0;
+    }
+
+    lagg(ev) {
+      ev.preventDefault();
+      var valda = this.valda();
+      if (!valda.length) return;
+
+      var rutt = (window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/';
+      var text = this.knapp.textContent;
+      this.knapp.disabled = true;
+      this.knapp.textContent = 'Lägger i…';
+      if (this.fel) this.fel.hidden = true;
+
+      fetch(rutt + 'cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          items: valda.map(function (k) {
+            return { id: Number(k.dataset.variantId), quantity: 1 };
+          })
+        })
+      }).then(function (svar) {
+        if (!svar.ok) return svar.json().then(function (d) { throw new Error(d.description || d.message); });
+        window.location.href = this.dataset.tillKassan ? rutt + 'checkout' : rutt + 'cart';
+      }.bind(this)).catch(function (e) {
+        this.knapp.disabled = false;
+        this.knapp.textContent = text;
+        if (this.fel) {
+          this.fel.textContent = e.message || 'Det gick inte att lägga i varukorgen. Försök igen.';
+          this.fel.hidden = false;
+        }
+      }.bind(this));
+    }
+  }
+
+
+  /* --- <ms-slider> ------------------------------------------------------ */
+  /* Spåret är ren CSS (scroll-snap) och fungerar utan den här koden. Det enda
+     JavaScript gör är att lägga till prickar och hålla dem i takt — därför
+     ligger de dolda i HTML:en tills vi vet att koden kört.                  */
+
+  class MsSlider extends HTMLElement {
+    connectedCallback() {
+      this.spar = this.querySelector('.ms-rs__spar');
+      this.prickar = this.querySelector('[data-ms-slider-dots]');
+      if (!this.spar || !this.prickar) return;
+
+      this.kort = Array.prototype.slice.call(this.spar.children);
+      if (this.kort.length < 2) return;
+
+      this.kort.forEach(function (kort, i) {
+        var p = document.createElement('button');
+        p.type = 'button';
+        p.className = 'ms-rs__prick';
+        p.setAttribute('aria-label', 'Visa omdöme ' + (i + 1));
+        p.addEventListener('click', function () {
+          kort.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        });
+        this.prickar.appendChild(p);
+      }, this);
+      this.prickar.hidden = false;
+
+      this.observer = new IntersectionObserver(this.markera.bind(this), {
+        root: this.spar, threshold: 0.6
+      });
+      this.kort.forEach(function (k) { this.observer.observe(k); }, this);
+    }
+
+    disconnectedCallback() { if (this.observer) this.observer.disconnect(); }
+
+    markera(entries) {
+      entries.forEach(function (e) {
+        var i = this.kort.indexOf(e.target);
+        var prick = this.prickar.children[i];
+        if (prick) prick.dataset.aktiv = String(e.isIntersecting);
+      }, this);
+    }
+  }
+
+
+  /* --- storleksguiden --------------------------------------------------- */
+  /* <dialog> sköter escape, fokusfälla och bakgrund själv. Vi kopplar bara
+     knapparna, plus klick utanför rutan.                                    */
+
+  document.addEventListener('click', function (ev) {
+    var oppna = ev.target.closest && ev.target.closest('[data-ms-size-open]');
+    if (oppna) {
+      var ruta = document.getElementById(oppna.getAttribute('data-ms-size-open'));
+      if (ruta && ruta.showModal) { ev.preventDefault(); ruta.showModal(); }
+      return;
+    }
+    var stang = ev.target.closest && ev.target.closest('[data-ms-size-close]');
+    if (stang) {
+      var d = stang.closest('dialog');
+      if (d) d.close();
+      return;
+    }
+    // Klick på själva <dialog> är klick på bakgrunden — innehållet ligger i barnen.
+    if (ev.target.tagName === 'DIALOG' && ev.target.classList.contains('ms-size__ruta')) {
+      ev.target.close();
+    }
+  });
+
+
   /* --- registrering ----------------------------------------------------- */
 
   function define(name, ctor) {
@@ -351,6 +550,9 @@
   define('ms-bundle', MsBundle);
   define('ms-delivery', MsDelivery);
   define('ms-countdown', MsCountdown);
+  define('ms-video', MsVideo);
+  define('ms-multibundle', MsMultibundle);
+  define('ms-slider', MsSlider);
 
   // Exponera hjälparna för A/B-motorn och för felsökning i konsolen.
   window.MS = window.MS || {};

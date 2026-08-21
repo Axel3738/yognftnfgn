@@ -1,3 +1,4 @@
+{%- if section.settings.visible -%}
 {%- comment -%}
   ms-app-slot — en tom plats där vilken Shopify-app som helst kan läggas in.
 
@@ -36,6 +37,7 @@
     {%- endif -%}
   </div>
 </div>
+{%- endif -%}
 
 {% schema %}
 {
@@ -43,6 +45,8 @@
   "tag": "section",
   "max_blocks": 6,
   "settings": [
+    { "type": "checkbox", "id": "visible", "label": "Visa sektionen", "default": true,
+      "info": "Bocka ur för att stänga av den utan att ta bort den." },
     { "type": "paragraph", "content": "Lägg in vilken app som helst här — recensioner, paket, frakträknare. Klicka på Lägg till block och välj appen." },
     { "type": "text", "id": "eyebrow", "label": "Överrubrik" },
     { "type": "text", "id": "heading", "label": "Rubrik" },

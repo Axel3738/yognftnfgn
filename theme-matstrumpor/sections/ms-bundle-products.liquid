@@ -1,0 +1,72 @@
+{%- liquid
+  comment
+    Ett block = en produkt, så ordningen går att dra om i temaredigeraren.
+    Filter i render-argument är opålitligt, därför plockas listan ut här.
+  endcomment
+  assign instal = section.blocks | map: 'settings'
+  assign valda = instal | map: 'product'
+  assign s = section.settings
+-%}
+{%- if s.visible -%}
+<div class="ms-scope ms-section" {% render 'ms-ab-attrs', test: s.ab_test, variant: s.ab_variant %}>
+  <div class="ms-wrap" style="max-width: {{ s.width }}px;">
+    {%- if s.heading != blank or s.eyebrow != blank -%}
+      <div class="ms-center" style="margin-bottom: 22px;">
+        {%- if s.eyebrow != blank -%}<span class="ms-eyebrow">{{ s.eyebrow }}</span>{%- endif -%}
+        {%- if s.heading != blank -%}<h2 class="ms-h2">{{ s.heading }}</h2>{%- endif -%}
+        {%- if s.body != blank -%}<p class="ms-lede">{{ s.body }}</p>{%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {% render 'ms-bundle-products',
+       produkter: valda,
+       heading: s.list_heading,
+       rabatt_procent: s.discount_percent,
+       knapptext: s.button_label,
+       till_kassan: s.skip_cart,
+       section_id: section.id %}
+  </div>
+</div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Paket av flera varor",
+  "tag": "section",
+  "max_blocks": 8,
+  "settings": [
+    { "type": "checkbox", "id": "visible", "label": "Visa sektionen", "default": true,
+      "info": "Bocka ur för att stänga av den utan att ta bort den." },
+    { "type": "header", "content": "Innehåll" },
+    { "type": "text", "id": "eyebrow", "label": "Överrubrik", "default": "Spara på hela lådan" },
+    { "type": "text", "id": "heading", "label": "Rubrik", "default": "Ta hela samlingen" },
+    { "type": "text", "id": "body", "label": "Ingress" },
+    { "type": "text", "id": "list_heading", "label": "Rubrik över listan", "default": "Ingår i paketet" },
+    { "type": "text", "id": "button_label", "label": "Knapptext", "default": "Lägg alla i varukorgen" },
+    { "type": "header", "content": "Pris och kassa" },
+    { "type": "range", "id": "discount_percent", "label": "Verklig rabatt i procent", "min": 0, "max": 40, "step": 5, "default": 0,
+      "info": "VIKTIGT: sätt bara ett värde här om det finns en matchande automatisk rabatt i Shopify. Annars visar sidan ett pris som kassan inte ger." },
+    { "type": "checkbox", "id": "skip_cart", "label": "Gå direkt till kassan", "default": false,
+      "info": "Hoppar över varukorgen efter att paketet lagts i. Kortare väg, men kunden ser aldrig varukorgen." },
+    { "type": "header", "content": "Utseende" },
+    { "type": "range", "id": "width", "label": "Maxbredd", "min": 600, "max": 1400, "step": 50, "default": 800, "unit": "px" },
+    { "type": "header", "content": "A/B-test" },
+    { "type": "text", "id": "ab_test", "label": "Test-id", "info": "Lämna tomt om sektionen inte ingår i något test." },
+    { "type": "select", "id": "ab_variant", "label": "Visas för variant", "default": "",
+      "options": [
+        { "value": "", "label": "Alla" },
+        { "value": "a", "label": "Bara A" },
+        { "value": "b", "label": "Bara B" }
+      ] }
+  ],
+  "blocks": [
+    { "type": "produkt", "name": "Produkt", "settings": [
+      { "type": "product", "id": "product", "label": "Produkt" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Paket av flera varor",
+      "blocks": [{ "type": "produkt" }, { "type": "produkt" }, { "type": "produkt" }, { "type": "produkt" }] }
+  ]
+}
+{% endschema %}

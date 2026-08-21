@@ -1,3 +1,4 @@
+{%- if section.settings.visible -%}
 <div class="ms-scope ms-section">
   <div class="ms-wrap" style="max-width: 820px;">
     <div class="ms-center" style="margin-bottom: 24px;">
@@ -16,6 +17,7 @@
     </div>
   </div>
 </div>
+{%- endif -%}
 
 {% schema %}
 {
@@ -23,6 +25,8 @@
   "tag": "section",
   "max_blocks": 20,
   "settings": [
+    { "type": "checkbox", "id": "visible", "label": "Visa sektionen", "default": true,
+      "info": "Bocka ur för att stänga av den utan att ta bort den." },
     { "type": "text", "id": "heading", "label": "Rubrik", "default": "Vanliga frågor" }
   ],
   "blocks": [

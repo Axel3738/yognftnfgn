@@ -624,6 +624,283 @@
   .ms-sticky[data-position="top"][data-shown="true"] { transform: translateY(0); }
 }
 
+/* 3.15 Knapp i vår egen stil ------------------------------------------- */
+.ms-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding-inline: clamp(20px, 5vw, 36px);
+  border: 0;
+  border-radius: var(--ms-radius-pill);
+  background: var(--ms-accent);
+  color: var(--ms-accent-ink);
+  font: inherit;
+  font-size: var(--ms-fs-md);
+  text-decoration: none;
+  cursor: pointer;
+  transition: filter .16s ease, transform .16s ease;
+}
+.ms-btn:hover { filter: brightness(1.06); }
+.ms-btn:active { transform: translateY(1px); }
+.ms-btn[disabled] { opacity: .5; cursor: not-allowed; }
+
+/* 3.16 Video ------------------------------------------------------------ */
+/* Rutan har ett fast bildformat så sidan inte hoppar när filmen laddas in. */
+.ms-video {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: var(--ms-surface-3);
+}
+.ms-video--rundat { border-radius: var(--ms-radius); }
+.ms-video[data-ratio="1x1"]  { aspect-ratio: 1 / 1; }
+.ms-video[data-ratio="4x5"]  { aspect-ratio: 4 / 5; }
+.ms-video[data-ratio="9x16"] { aspect-ratio: 9 / 16; }
+.ms-video[data-ratio="16x9"] { aspect-ratio: 16 / 9; }
+.ms-video video,
+.ms-video__poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.ms-video__poster {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  transition: opacity .3s ease;
+}
+/* Posterbilden tonas bort först när filmen faktiskt börjat spela. */
+.ms-video[data-igang="true"] .ms-video__poster { opacity: 0; pointer-events: none; }
+.ms-video__ljud {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 2;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(18, 18, 18, .55);
+  color: #fff;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+}
+.ms-video[data-ljud-pa="true"] .ms-video__ljud { background: var(--ms-accent); }
+.ms-video__tom {
+  padding: 32px;
+  border: 2px dashed var(--ms-line-strong);
+  border-radius: var(--ms-radius);
+  text-align: center;
+  color: var(--ms-ink-soft);
+  font-size: var(--ms-fs-sm);
+}
+
+.ms-videogrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: var(--ms-gap);
+}
+.ms-videogrid__caption {
+  margin: 8px 0 0;
+  font-size: var(--ms-fs-sm);
+  color: var(--ms-ink-soft);
+  text-align: center;
+}
+@media (min-width: 750px) {
+  .ms-videogrid {
+    grid-template-columns: repeat(var(--ms-videogrid-cols, 3), minmax(0, 1fr));
+  }
+}
+
+/* 3.17 Paket över flera produkter -------------------------------------- */
+.ms-mb {
+  display: block;
+  padding: clamp(16px, 4vw, 24px);
+  border: 2px solid var(--ms-accent);
+  border-radius: var(--ms-radius);
+  background: color-mix(in srgb, var(--ms-accent) 4%, var(--ms-surface));
+}
+.ms-mb__lista { display: grid; gap: 8px; margin: 14px 0; }
+.ms-mb__rad {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--ms-line);
+  border-radius: var(--ms-radius-sm);
+  background: var(--ms-surface);
+  cursor: pointer;
+}
+.ms-mb__kryss { position: absolute; opacity: 0; width: 0; height: 0; }
+.ms-mb__box {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--ms-line-strong);
+  border-radius: 6px;
+  color: transparent;
+  transition: background-color .14s ease, border-color .14s ease, color .14s ease;
+}
+.ms-mb__kryss:checked + .ms-mb__box {
+  background: var(--ms-accent);
+  border-color: var(--ms-accent);
+  color: var(--ms-accent-ink);
+}
+.ms-mb__kryss:focus-visible + .ms-mb__box { box-shadow: var(--ms-ring); }
+.ms-mb__bild { width: 52px; height: 52px; border-radius: 8px; object-fit: cover; }
+.ms-mb__namn { font-size: var(--ms-fs-sm); line-height: 1.3; }
+.ms-mb__pris { font-size: var(--ms-fs-sm); font-weight: 700; white-space: nowrap; }
+/* En avmarkerad rad ska synas som avmarkerad, inte bara sakna bock. */
+.ms-mb__rad:has(.ms-mb__kryss:not(:checked)) { opacity: .5; }
+
+.ms-mb__summa {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--ms-line);
+  font-size: var(--ms-fs-md);
+}
+.ms-mb__summa-tal strong { font-size: var(--ms-fs-lg); }
+.ms-mb__was {
+  margin-right: 8px;
+  color: var(--ms-ink-faint);
+  text-decoration: line-through;
+  font-size: var(--ms-fs-sm);
+}
+.ms-mb__rabatt { margin: 4px 0 0; font-size: var(--ms-fs-xs); color: var(--ms-ink-soft); }
+.ms-mb__knapp {
+  width: 100%;
+  min-height: 50px;
+  margin-top: 14px;
+  border: 0;
+  border-radius: var(--ms-radius-pill);
+  background: var(--ms-accent);
+  color: var(--ms-accent-ink);
+  font: inherit;
+  font-size: var(--ms-fs-md);
+  cursor: pointer;
+}
+.ms-mb__knapp:hover { filter: brightness(1.06); }
+.ms-mb__knapp[disabled] { opacity: .5; cursor: not-allowed; }
+.ms-mb__fel { margin: 10px 0 0; color: var(--ms-warn); font-size: var(--ms-fs-sm); }
+
+/* 3.18 Storleksguide ---------------------------------------------------- */
+.ms-size { margin: 10px 0; }
+.ms-size__lank {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ms-ink);
+  font: inherit;
+  font-size: var(--ms-fs-sm);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.ms-size__lank .ms-i { color: var(--ms-accent); }
+.ms-size__ruta {
+  width: min(560px, calc(100vw - 32px));
+  padding: 0;
+  border: 0;
+  border-radius: var(--ms-radius);
+  background: var(--ms-surface);
+  color: var(--ms-ink);
+  box-shadow: var(--ms-shadow-lift);
+}
+.ms-size__ruta::backdrop { background: rgba(18, 18, 18, .5); }
+.ms-size__topp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px 12px;
+}
+.ms-size__topp .ms-h3 { margin: 0; }
+.ms-size__stang {
+  width: 34px; height: 34px;
+  display: grid; place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: var(--ms-surface-3);
+  color: var(--ms-ink);
+  cursor: pointer;
+}
+.ms-size__scroll { overflow-x: auto; padding: 0 20px; }
+.ms-size__tabell {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: var(--ms-fs-sm);
+}
+.ms-size__tabell th,
+.ms-size__tabell td {
+  padding: 11px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--ms-line);
+}
+.ms-size__tabell thead th {
+  font-size: var(--ms-fs-xs);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--ms-ink-soft);
+  border-bottom: 2px solid var(--ms-line-strong);
+}
+.ms-size__tabell tbody tr:last-child th,
+.ms-size__tabell tbody tr:last-child td { border-bottom: 0; }
+.ms-size__fot {
+  margin: 0;
+  padding: 12px 20px 18px;
+  font-size: var(--ms-fs-xs);
+  color: var(--ms-ink-soft);
+}
+
+/* 3.19 Omdömesslider --------------------------------------------------- */
+/* Spåret är scroll-snap och fungerar utan JavaScript. Prickarna är extra. */
+.ms-rs__spar {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min(100%, 300px), 1fr);
+  gap: var(--ms-gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 2px;
+  padding-bottom: 6px;
+  scrollbar-width: none;
+}
+.ms-rs__spar::-webkit-scrollbar { display: none; }
+.ms-rs__kort { scroll-snap-align: center; }
+@media (min-width: 750px) {
+  .ms-rs__spar { grid-auto-columns: minmax(0, calc((100% - var(--ms-gap) * 2) / 3)); }
+}
+.ms-rs__prickar {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 16px;
+}
+.ms-rs__prick {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--ms-line-strong);
+  cursor: pointer;
+  transition: background-color .16s ease, transform .16s ease;
+}
+.ms-rs__prick[data-aktiv="true"] { background: var(--ms-accent); transform: scale(1.25); }
+
 /* 4. TILLGÄNGLIGHET ====================================================== */
 
 .ms-scope :focus-visible {

@@ -1,3 +1,4 @@
+{%- if section.settings.visible -%}
 <div class="ms-scope ms-section" {% render 'ms-ab-attrs', test: section.settings.ab_test, variant: section.settings.ab_variant %}>
   <div class="ms-wrap">
     <div class="ms-center" style="margin-bottom: 26px;">
@@ -52,6 +53,7 @@
     </div>
   </div>
 </div>
+{%- endif -%}
 
 {% schema %}
 {
@@ -59,6 +61,8 @@
   "tag": "section",
   "max_blocks": 10,
   "settings": [
+    { "type": "checkbox", "id": "visible", "label": "Visa sektionen", "default": true,
+      "info": "Bocka ur för att stänga av den utan att ta bort den." },
     { "type": "text", "id": "eyebrow", "label": "Överrubrik", "default": "Varför just den här" },
     { "type": "text", "id": "heading", "label": "Rubrik", "default": "Matstrumpor mot en vanlig present" },
     { "type": "text", "id": "body", "label": "Ingress" },

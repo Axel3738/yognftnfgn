@@ -200,6 +200,18 @@ function checkSchema(src) {
   // Shopify kräver att "tag" är en sträng ur den här listan. null betyder inte
   // "ingen tagg" — filen avvisas. Utelämna nyckeln, så blir det en div.
   // (Verifierat mot Shopify 2026-08-21: ms-sticky-atc hade "tag": null.)
+  // Shopify kapar inte ett för långt namn — filen avvisas.
+  // (Verifierat 2026-08-21: "Paket över flera produkter" var 26 tecken.)
+  const NAMN_MAX = 25;
+  if (typeof json.name === 'string' && json.name.length > NAMN_MAX && !json.name.startsWith('t:')) {
+    out.push(`schema: "name" är ${json.name.length} tecken — max ${NAMN_MAX}, Shopify avvisar filen`);
+  }
+  for (const p of json.presets ?? []) {
+    if (typeof p?.name === 'string' && p.name.length > NAMN_MAX && !p.name.startsWith('t:')) {
+      out.push(`schema: preset-namnet "${p.name}" är ${p.name.length} tecken — max ${NAMN_MAX}`);
+    }
+  }
+
   const TAGGAR = new Set(['article', 'aside', 'div', 'footer', 'header', 'section']);
   if ('tag' in json) {
     if (typeof json.tag !== 'string') {
@@ -247,6 +259,11 @@ function checkSchema(src) {
           }
           if (typeof d === 'number' && (d < min || d > max)) {
             out.push(`schema: range '${s.id}' har standardvärde utanför min/max`);
+          } else if (typeof d === 'number' && (d - min) % step !== 0) {
+            // Standardvärdet måste gå att nå med reglaget. 820 finns inte i
+            // skalan 600/650/700… och då avvisar Shopify hela filen.
+            // (Verifierat 2026-08-21 på ms-bundle-products.)
+            out.push(`schema: range '${s.id}' har standardvärde ${d} som inte ligger på ett steg (${min} + n×${step})`);
           }
         }
       }

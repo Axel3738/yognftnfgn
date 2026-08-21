@@ -1,0 +1,25 @@
+{% render 'ms-size-guide',
+   lank_text: block.settings.lank_text,
+   rubrik: block.settings.rubrik,
+   kolumner: block.settings.kolumner,
+   rader: block.settings.rader,
+   fotnot: block.settings.fotnot,
+   uid: block.id %}
+
+{% schema %}
+{
+  "name": "Storleksguide",
+  "settings": [
+    { "type": "text", "id": "lank_text", "label": "Text på länken", "default": "Storleksguide" },
+    { "type": "text", "id": "rubrik", "label": "Rubrik i rutan", "default": "Passar de här mig?" },
+    { "type": "text", "id": "kolumner", "label": "Kolumnrubriker", "default": "Storlek;Fotlängd;Motsvarar",
+      "info": "Separera med semikolon." },
+    { "type": "textarea", "id": "rader", "label": "Rader",
+      "default": "36–38;23–24 cm;Small|39–41;25–26 cm;Medium|42–44;27–28 cm;Large",
+      "info": "En rad per storlek. Celler separeras med semikolon, rader med |." },
+    { "type": "text", "id": "fotnot", "label": "Fotnot",
+      "default": "Strumporna är stretchiga — hamnar du mellan två storlekar fungerar båda." }
+  ],
+  "presets": [{ "name": "Storleksguide" }]
+}
+{% endschema %}

@@ -1,14 +1,18 @@
+{%- if section.settings.visible -%}
 {% render 'ms-sticky-atc',
    product: product,
    label: section.settings.label,
    position: section.settings.position,
    show_image: section.settings.show_image %}
+{%- endif -%}
 
 {% schema %}
 {
   "name": "Fast köpknapp",
   "enabled_on": { "templates": ["product"] },
   "settings": [
+    { "type": "checkbox", "id": "visible", "label": "Visa sektionen", "default": true,
+      "info": "Bocka ur för att stänga av den utan att ta bort den." },
     { "type": "text", "id": "label", "label": "Knapptext", "default": "Köp nu" },
     { "type": "select", "id": "position", "label": "Placering på dator", "default": "bottom",
       "options": [

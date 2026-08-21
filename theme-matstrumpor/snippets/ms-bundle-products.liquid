@@ -1,0 +1,96 @@
+{%- comment -%}
+  ms-bundle-products — "köp alla fyra" över FLERA produkter.
+
+  Skillnaden mot ms-bundle-picker: den säljer fler av samma produkt, den här
+  säljer olika produkter ihop. För en presentbutik är det den som lyfter
+  snittordervärdet mest.
+
+  Samma ärlighetsregel som paketväljaren: totalen är summan av de VERKLIGA
+  priserna. Ett rabattpris får bara visas om en riktig automatisk rabatt finns
+  i Shopify, och då anges den i rabatt_procent. Vi visar aldrig ett pris som
+  kassan inte ger — det är vilseledande marknadsföring, och kunden upptäcker
+  det i kassan.
+
+  Parametrar:
+    produkter        lista med produkter (obligatorisk)
+    heading          rubrik
+    rabatt_procent   verklig rabatt i procent, 0 om ingen finns
+    knapptext        text på knappen
+    till_kassan      true = hoppa över varukorgen och gå rakt till kassan
+    section_id       för unika fältnamn
+{%- endcomment -%}
+{%- liquid
+  assign lista = produkter
+  assign disc = rabatt_procent | default: 0 | plus: 0
+  assign uid = section_id | default: 'ms'
+  assign brutto = 0
+  assign antal = 0
+  for p in lista
+    if p != blank and p.available
+      assign v = p.selected_or_first_available_variant
+      assign brutto = brutto | plus: v.price
+      assign antal = antal | plus: 1
+    endif
+  endfor
+  assign netto = brutto
+  if disc > 0
+    assign kvar = 100 | minus: disc
+    assign netto = brutto | times: kvar | divided_by: 100
+  endif
+-%}
+
+{%- if antal > 1 -%}
+  <ms-multibundle class="ms-scope ms-mb"
+    data-money-format="{{ shop.money_format | strip_html | escape }}"
+    data-rabatt="{{ disc }}"
+    {% if till_kassan %}data-till-kassan="true"{% endif %}>
+
+    {%- if heading != blank -%}<p class="ms-h3">{{ heading }}</p>{%- endif -%}
+
+    <div class="ms-mb__lista">
+      {%- for p in lista -%}
+        {%- if p != blank and p.available -%}
+          {%- assign v = p.selected_or_first_available_variant -%}
+          <label class="ms-mb__rad">
+            <input class="ms-mb__kryss" type="checkbox" checked
+                   name="ms-mb-{{ uid }}"
+                   data-variant-id="{{ v.id }}"
+                   data-price="{{ v.price }}">
+            <span class="ms-mb__box" aria-hidden="true">
+              {% render 'ms-icon', name: 'check' %}
+            </span>
+            {%- if p.featured_image -%}
+              <img class="ms-mb__bild" loading="lazy" width="52" height="52" alt=""
+                   src="{{ p.featured_image | image_url: width: 120 }}">
+            {%- endif -%}
+            <span class="ms-mb__namn">{{ p.title }}</span>
+            <span class="ms-mb__pris">{{ v.price | money }}</span>
+          </label>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    <div class="ms-mb__summa">
+      <span class="ms-mb__summa-text">Totalt</span>
+      <span class="ms-mb__summa-tal">
+        {%- if disc > 0 -%}
+          <span class="ms-mb__was" data-ms-mb-brutto>{{ brutto | money }}</span>
+        {%- endif -%}
+        <strong data-ms-mb-netto>{{ netto | money }}</strong>
+      </span>
+    </div>
+
+    {%- if disc > 0 -%}
+      <p class="ms-mb__rabatt">Rabatten dras automatiskt i kassan.</p>
+    {%- endif -%}
+
+    <button type="button" class="ms-mb__knapp">
+      {{ knapptext | default: 'Lägg alla i varukorgen' }}
+    </button>
+    <p class="ms-mb__fel" data-ms-mb-fel hidden role="alert"></p>
+  </ms-multibundle>
+{%- elsif request.design_mode -%}
+  <div class="ms-scope ms-video__tom">
+    Välj minst två produkter i sektionens block, annars finns det inget paket att visa.
+  </div>
+{%- endif -%}

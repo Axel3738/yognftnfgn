@@ -1,0 +1,68 @@
+{%- comment -%}
+  ms-size-guide — storleksguide som öppnas i en ruta ovanpå sidan.
+
+  Byggd på <dialog>, som webbläsaren själv sköter: escape stänger, fokus låses
+  inne i rutan, och bakgrunden blir inert. Ingen egen overlay-kod, inget
+  bibliotek, och den fungerar även om vår JavaScript inte hunnit ladda —
+  <dialog> har showModal inbyggt.
+
+  Parametrar:
+    lank_text   texten som öppnar rutan
+    rubrik      rubrik i rutan
+    rader       "etikett;kolumn;kolumn|etikett;kolumn;kolumn"
+    kolumner    "Storlek;Fotlängd;Motsvarar"
+    fotnot      liten text under tabellen
+    uid         unikt id (t.ex. block.id)
+{%- endcomment -%}
+{%- liquid
+  assign id = uid | default: 'ms-size'
+  assign huvuden = kolumner | default: 'Storlek;Fotlängd;Motsvarar' | split: ';'
+  assign rad_lista = rader | default: '' | split: '|'
+-%}
+{%- if rad_lista.size > 0 -%}
+  <div class="ms-scope ms-size">
+    <button type="button" class="ms-size__lank" data-ms-size-open="{{ id }}">
+      {% render 'ms-icon', name: 'package' %}
+      <span>{{ lank_text | default: 'Storleksguide' }}</span>
+    </button>
+
+    <dialog class="ms-size__ruta" id="{{ id }}">
+      <div class="ms-size__topp">
+        <p class="ms-h3">{{ rubrik | default: 'Storleksguide' }}</p>
+        <button type="button" class="ms-size__stang" data-ms-size-close aria-label="Stäng">
+          {% render 'ms-icon', name: 'x' %}
+        </button>
+      </div>
+
+      <div class="ms-size__scroll">
+        <table class="ms-size__tabell">
+          <thead>
+            <tr>
+              {%- for h in huvuden -%}<th scope="col">{{ h | strip }}</th>{%- endfor -%}
+            </tr>
+          </thead>
+          <tbody>
+            {%- for rad in rad_lista -%}
+              {%- assign celler = rad | split: ';' -%}
+              {%- if celler.size > 0 -%}
+                <tr>
+                  {%- for cell in celler -%}
+                    {%- if forloop.first -%}
+                      <th scope="row">{{ cell | strip }}</th>
+                    {%- else -%}
+                      <td>{{ cell | strip }}</td>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </tr>
+              {%- endif -%}
+            {%- endfor -%}
+          </tbody>
+        </table>
+      </div>
+
+      {%- if fotnot != blank -%}
+        <p class="ms-size__fot">{{ fotnot }}</p>
+      {%- endif -%}
+    </dialog>
+  </div>
+{%- endif -%}

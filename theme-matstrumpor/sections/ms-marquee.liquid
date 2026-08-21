@@ -1,3 +1,4 @@
+{%- if section.settings.visible -%}
 {%- liquid
   assign rows = section.settings.items | default: '' | split: '|'
   assign speed = section.settings.speed | default: 26
@@ -24,12 +25,15 @@
     </div>
   </div>
 {%- endif -%}
+{%- endif -%}
 
 {% schema %}
 {
   "name": "Rullande band",
   "tag": "section",
   "settings": [
+    { "type": "checkbox", "id": "visible", "label": "Visa sektionen", "default": true,
+      "info": "Bocka ur för att stänga av den utan att ta bort den." },
     { "type": "textarea", "id": "items", "label": "Texter",
       "default": "Älskad av tusentals svenskar|Fri frakt i Sverige|30 dagars öppet köp|Levereras presentklart",
       "info": "Separera med |." },

@@ -1,0 +1,58 @@
+{%- comment -%}
+  ms-video — en mp4 som beter sig som en gif.
+
+  Fyra attribut gör hela jobbet:
+    autoplay    spelar av sig själv
+    muted       utan den vägrar alla webbläsare autoplay. Den är inte valfri.
+    loop        börjar om
+    playsinline hindrar iOS från att slå på helskärm och ta över sidan
+
+  Ingen kontrollrad. Resultatet ser ut som en gif men är en bråkdel så stor
+  och långt skarpare.
+
+  preload="none" gör att filen inte hämtas förrän <ms-video> i ms-cro.js
+  startar den, vilket den gör först när rutan scrollats in i bild. Utan det
+  drar en sida med fem videor tiotals megabyte innan något syns.
+
+  Parametrar:
+    video     Shopify-videon (mediaväljaren i temaredigeraren)  — obligatorisk
+    poster    bild som visas innan filmen börjat
+    ratio     'auto' | '1x1' | '4x5' | '9x16' | '16x9'
+    ljud      true = visa en ljudknapp. Autoplay kräver ändå tyst start.
+    rundat    true = rundade hörn som resten av temat
+{%- endcomment -%}
+{%- liquid
+  assign v = video
+  assign f = ratio | default: 'auto'
+  assign klass = 'ms-video'
+  if rundat != false
+    assign klass = klass | append: ' ms-video--rundat'
+  endif
+-%}
+{%- if v != blank -%}
+  <ms-video class="ms-scope {{ klass }}" data-ratio="{{ f }}"
+    {% if ljud %}data-ljud="true"{% endif %}>
+    {%- if poster != blank -%}
+      <img class="ms-video__poster"
+           src="{{ poster | image_url: width: 1200 }}"
+           alt="" loading="lazy" width="1200"
+           height="{{ 1200 | divided_by: poster.aspect_ratio | round }}">
+    {%- endif -%}
+
+    {{ v | video_tag: autoplay: true, loop: true, muted: true, controls: false,
+           preload: 'none', class: 'ms-video__el' }}
+
+    {%- if ljud -%}
+      <button type="button" class="ms-video__ljud" aria-pressed="false"
+              aria-label="Slå på ljudet">
+        {% render 'ms-icon', name: 'chat' %}
+      </button>
+    {%- endif -%}
+  </ms-video>
+{%- elsif request.design_mode -%}
+  {%- comment -%} Syns bara i temaredigeraren, aldrig för en kund. {%- endcomment -%}
+  <div class="ms-scope ms-video__tom">
+    Ingen video vald. Klicka på <strong>Välj video</strong> och ladda upp en mp4 —
+    t.ex. en av annonsfilmerna.
+  </div>
+{%- endif -%}

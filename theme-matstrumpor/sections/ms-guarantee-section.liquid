@@ -1,3 +1,4 @@
+{%- if section.settings.visible -%}
 <div class="ms-scope ms-section">
   <div class="ms-wrap" style="max-width: 760px;">
     {% render 'ms-guarantee',
@@ -6,12 +7,15 @@
        icon: section.settings.icon %}
   </div>
 </div>
+{%- endif -%}
 
 {% schema %}
 {
   "name": "Garantiblock",
   "tag": "section",
   "settings": [
+    { "type": "checkbox", "id": "visible", "label": "Visa sektionen", "default": true,
+      "info": "Bocka ur för att stänga av den utan att ta bort den." },
     { "type": "text", "id": "title", "label": "Rubrik", "default": "30 dagars öppet köp" },
     { "type": "richtext", "id": "body", "label": "Text",
       "default": "<p>Inte nöjd? Hör av dig inom 30 dagar så löser vi det. Inget krångel, inga följdfrågor.</p>" },
