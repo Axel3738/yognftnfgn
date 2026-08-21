@@ -155,6 +155,16 @@ varandra i fyra butiker. Dessa regler är obligatoriska för varje produkt:
    "de hade varit perfekta … dessa bilder ska du ta också från alla produkter") —
    de visar produkten i användning och bär verifierade mått/spec som copyn ska
    hämta sina räkneord ur. Be Axel klistra in dem för varje produkt.
+   **Två vägar in (den här molnmiljön kan INTE själv nå galleriet — verifierat
+   2026-08-21 med både curl och riktig Chromium; proxyn släpper inte igenom
+   webbläsartrafik):**
+   1. Axel håller in bilderna i mobilen och klistrar in dem i chatten (funkade
+      för pingisen), eller
+   2. Axel kör **Claude på sin egen dator** (Cowork/desktop-appen med
+      Chrome-tillägget, eller Claude Code lokalt med webbläsarkoppling) — den
+      styr HANS inloggade webbläsare, kan öppna Temu-länken som han själv och
+      spara alla galleribilder. Bilderna klistras sedan in här, eller committas
+      till repot av den lokala sessionen så plockar molnsessionen upp dem.
    **Texten på infografikerna görs om till marknadens språk** (Axel 2026-08-21) —
    engelska original får bara ligga kvar i UK-butiken. Metod: INTE AI-textbyte —
    kie.ai garblade svenskan ("UTDRABARLT NÄT", "PASSCHES TO ALLA BORD") och
