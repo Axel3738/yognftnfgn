@@ -73,7 +73,13 @@ och att allt överlever ett temabyte.
 **På sidan** (läggs in som sektioner)
 
 USP-rad · Rullande band · Omdömen · Jämförelsetabell · Vanliga frågor ·
-Garantiblock · Fast köpknapp
+Garantiblock · Fast köpknapp · **Appyta**
+
+**Appyta** är platsen för Judge.me, Loox eller vilken annan app som helst.
+Sektionen **Omdömen** tar också app-block, så en riktig recensionswidget kan
+ligga ovanför de skrivna omdömena. Se `docs/appar.md` — där står också vad som
+måste göras om efter ett temabyte, vilket är lätt att missa och tyst dödar
+e-postinsamlingen.
 
 ---
 

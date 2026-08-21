@@ -12,8 +12,19 @@
       </div>
     {%- endif -%}
 
+    {%- comment -%}
+      App-block först, i full bredd. En riktig recensionsapp (Judge.me, Loox,
+      Okendo) ritar sitt eget rutnät och ska inte tvingas in i vårt.
+    {%- endcomment -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == '@app' -%}
+        <div {{ block.shopify_attributes }} style="margin-bottom: 22px;">{% render block %}</div>
+      {%- endif -%}
+    {%- endfor -%}
+
     <div class="ms-reviews__grid">
       {%- for block in section.blocks -%}
+        {%- if block.type == '@app' -%}{%- continue -%}{%- endif -%}
         <article class="ms-review" {{ block.shopify_attributes }}>
           <div class="ms-review__stars" role="img"
                aria-label="{{ block.settings.stars }} av 5 stjärnor">
@@ -53,9 +64,11 @@
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Överrubrik", "default": "Vad kunderna säger" },
     { "type": "text", "id": "heading", "label": "Rubrik", "default": "Presenten som alltid landar rätt" },
-    { "type": "text", "id": "body", "label": "Ingress" }
+    { "type": "text", "id": "body", "label": "Ingress" },
+    { "type": "paragraph", "content": "Vill du visa riktiga recensioner från en app i stället: klicka på Lägg till block och välj appen, t.ex. Judge.me. Appen ritar sitt eget rutnät ovanför de skrivna omdömena." }
   ],
   "blocks": [
+    { "type": "@app" },
     {
       "type": "review",
       "name": "Omdöme",

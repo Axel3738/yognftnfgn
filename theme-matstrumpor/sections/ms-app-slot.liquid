@@ -1,0 +1,62 @@
+{%- comment -%}
+  ms-app-slot — en tom plats där vilken Shopify-app som helst kan läggas in.
+
+  Det här är svaret på "hur får jag in Judge.me / en recensionsapp / en
+  frakträknare på sidan". Sektionen ritar bara ramen — rubrik, bredd, luft —
+  och låter appen fylla insidan.
+
+  I temaredigeraren: lägg till sektionen → "Lägg till block" → apparna dyker
+  upp under rubriken Appar. Finns appen inte i listan har den inga app-block;
+  se docs/appar.md för vad man gör då.
+
+  Fungerar för alla appar som erbjuder app-block: Judge.me, Loox, Okendo,
+  Yotpo, Kaching Bundles, Rebuy och de flesta andra.
+{%- endcomment -%}
+<div class="ms-scope ms-section" {% render 'ms-ab-attrs', test: section.settings.ab_test, variant: section.settings.ab_variant %}>
+  <div class="ms-wrap" style="max-width: {{ section.settings.width }}px;">
+    {%- if section.settings.heading != blank -%}
+      <div class="ms-center" style="margin-bottom: 22px;">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="ms-eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        <h2 class="ms-h2">{{ section.settings.heading }}</h2>
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      {%- for block in section.blocks -%}
+        <div {{ block.shopify_attributes }}>{% render block %}</div>
+      {%- endfor -%}
+    {%- elsif request.design_mode -%}
+      {%- comment -%} Syns bara i temaredigeraren, aldrig för en kund. {%- endcomment -%}
+      <div style="padding:32px;border:2px dashed var(--ms-line-strong);border-radius:var(--ms-radius);text-align:center;color:var(--ms-ink-soft);font-size:.9rem">
+        Tom appyta. Klicka på <strong>Lägg till block</strong> och välj din app —
+        t.ex. Judge.me — så hamnar den här.
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Appyta",
+  "tag": "section",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "paragraph", "content": "Lägg in vilken app som helst här — recensioner, paket, frakträknare. Klicka på Lägg till block och välj appen." },
+    { "type": "text", "id": "eyebrow", "label": "Överrubrik" },
+    { "type": "text", "id": "heading", "label": "Rubrik" },
+    { "type": "range", "id": "width", "label": "Maxbredd", "min": 600, "max": 1400, "step": 50, "default": 1100, "unit": "px" },
+    { "type": "header", "content": "A/B-test" },
+    { "type": "text", "id": "ab_test", "label": "Test-id", "info": "Lämna tomt om sektionen inte ingår i något test." },
+    { "type": "select", "id": "ab_variant", "label": "Visas för variant", "default": "",
+      "options": [
+        { "value": "", "label": "Alla" },
+        { "value": "a", "label": "Bara A" },
+        { "value": "b", "label": "Bara B" }
+      ] }
+  ],
+  "blocks": [{ "type": "@app" }],
+  "presets": [{ "name": "Appyta" }]
+}
+{% endschema %}
