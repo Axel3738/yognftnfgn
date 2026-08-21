@@ -2,6 +2,44 @@
   "comment": "Per-produkt-konfig for brief-kvoten. Endast Baverbutiken.se - MagiBorsten 1867947880635861. aov_sek = verklig AOV fran Shopify analytics. break_even_roas / target_roas_25pct = Axels COGS-berakning 2026-08-05 - ANVAND ROAS-tröskeln i forsta hand, den drivar inte nar AOV rors. break_even_cpa_sek = aov_sek / break_even_roas (rakna om nar AOV andras). KILL-beslut mats mot break-even, ALDRIG mot target. Se docs/os/ANALYSMETOD.md. scaling=true = produkt vi SKALAR (ingar i redigerardashboarden och har egen Notion creative hub). scaling=false = testprodukt, ingar inte i redigerarnas arbetsflode. notion.collection_id anvands av /dashboard for att lasa briefarna.",
   "products": [
     {
+      "id": "fiskespohallaren",
+      "name": "Fiskespöhållaren 4-Pack (Bäverbutiken)",
+      "brand": "Bäverbutiken",
+      "ad_account_id": "1867947880635861",
+      "campaign_ids": [
+        "120249850522830291"
+      ],
+      "daily_budget_sek": 4000,
+      "target_cpa_sek": 178,
+      "cycle_start": "2026-08-18",
+      "status": "aktiv",
+      "launches": [
+        {
+          "date": "2026-08-18",
+          "count": 21
+        },
+        {
+          "date": "2026-08-19",
+          "count": 5
+        }
+      ],
+      "break_even_cpa_sek": 285,
+      "aov_sek": 427,
+      "aov_kalla": "Shopify analytics per produkt 2026-08-17..21 (37 ordrar). Meta-AOV samma period: 441 kr.",
+      "break_even_status": "break_even_roas 1.50 fran Axels kampanjnamn 'BE ROAS 1.50' (launch 2026-08-18). CPA = AOV / break_even_roas. Ingen COGS-rad ifylld i product sheet - verifiera mot Axels kalkyl.",
+      "break_even_roas": 1.5,
+      "target_roas_25pct": 2.4,
+      "target_cpa_25pct_harledd": 178,
+      "scaling": false,
+      "shopify": {
+        "product_gid": "gid://shopify/Product/16268173214045",
+        "handle": "fiskespohallare-4-pack-kraftig-forvaring",
+        "sku": "TEMU-601104615671651",
+        "pris_sek": 289,
+        "varning": "compareAtPrice 148.75 ligger LAGRE an priset (gammalt pris kvar) - se batch-log 2026-08-21"
+      }
+    },
+    {
       "id": "motorholjet",
       "name": "Motorhöljet (Bäverbutiken)",
       "brand": "Bäverbutiken",
