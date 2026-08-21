@@ -235,7 +235,18 @@ galleribild från Temu som visar samma sak går den ALLTID före en AI-bild.
 
 ## Kaching Bundles (mängdrabatter)
 
-**Det finns inget API.** Verifierat 2026-08-21 i sidkoden på bäverbutiken.se:
+**UPPDATERING samma kväll: det GÅR att automatisera ändå** — Belysningshuset
+(kompiskretsen) skickade ett färdigt CLI som pratar med **Kachings eget backend-API**
+(`bundles.kachingappz.app/frontend_api/`) inifrån appens iframe i Shopify-adminen,
+där App Bridge själv sköter inloggningen. Verktyget ligger i **`temu/kaching-cli/`**
+(säkerhetsgranskat 2026-08-21: bara två domäner, enda beroendet Playwright).
+Det körs på AXELS DATOR (kräver riktig inloggad Chrome — molnmiljön har
+webbläsarväggen). Butik ifylld, marginalsäkrad standardstege-payload och körprompt
+för lokala Claude finns i mappen (`KÖR-FÖR-BÄVERBUTIKEN.md`). `api-map.json` är
+kartan över endpoints och fällor — läs den före varje skrivning. Dela ALDRIG
+`profile/`-mappen (aktiv admin-session).
+
+**Ursprunglig analys (fortsatt sann för Shopify-vägen):** Verifierat 2026-08-21 i sidkoden på bäverbutiken.se:
 appen är installerad (app embed `kaching-bundles-1952` + loader.js), men deal-
 konfigurationen ligger i Kachings egen backend och hämtas av deras script i
 webbläsaren — inga metafält i Shopify att skriva, ingen MCP, inget CLI. Deals
