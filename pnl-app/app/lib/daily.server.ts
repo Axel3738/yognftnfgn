@@ -239,8 +239,8 @@ export async function giltigToken(shop: string, tvinga = false): Promise<string 
   }
 }
 
-/** Senaste förnyelsefelet per butik — läses av diagnosrutten. */
-export const senasteFornyelseFel = new Map<string, string>();
+/** Senaste förnyelsefelet per butik. Behålls för felsökning via loggarna. */
+const senasteFornyelseFel = new Map<string, string>();
 
 const arObehorig = (e: unknown) => /\b401\b|Invalid API key or access token/i.test(String(e));
 
