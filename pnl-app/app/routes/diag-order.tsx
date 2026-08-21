@@ -13,6 +13,7 @@
 import type { LoaderFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import prisma from "../db.server";
+import { refreshShopDaily } from "../lib/daily.server";
 import { decrypt } from "../lib/crypto.server";
 
 const NYCKEL = "MhnCkAciVygF7mcEE5-2AZHnduopib03";
@@ -92,7 +93,24 @@ export async function loader({ request }: LoaderFunctionArgs) {
         fraga = `KASTADE: ${(e as Error).message}`;
       }
 
-      return { shop, tz, idag, valuta: settings?.currency, scope: session?.scope ?? null, nyckel, lagrad, fraga };
+      /* ?fix=1 kör den riktiga produktionsvägen (med nyckelförnyelse) och
+         visar utfallet — verifierar och lagar dagens rad i ett svep. */
+      let fix: unknown;
+      if (new URL(request.url).searchParams.get("fix") === "1") {
+        const ok = await refreshShopDaily(shop, idag, idag, { force: true });
+        const efter = await prisma.dailyPnl.findUnique({
+          where: { shop_day: { shop, day: idag } },
+          select: { orders: true, totalSales: true, fetchedAt: true },
+        });
+        fix = {
+          hamtningOk: ok,
+          efter: efter
+            ? { orders: efter.orders, totalSales: efter.totalSales, fetchedAt: efter.fetchedAt.toISOString() }
+            : null,
+        };
+      }
+
+      return { shop, tz, idag, valuta: settings?.currency, scope: session?.scope ?? null, nyckel, lagrad, fraga, fix };
     }),
   );
 
