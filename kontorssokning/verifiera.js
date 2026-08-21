@@ -58,7 +58,7 @@ export function adressFinns(text, adress) {
   return false;
 }
 
-export function ytaFinns(text, kvm) {
+export function ytaFinns(text, kvm, intervall) {
   if (kvm == null) return null;
   const platt = text.replace(/ /g, ' ');
   const tal = [...platt.matchAll(/(\d[\d\s.,]*)\s*(?:kvm|m²|m2|kvadratmeter)/gi)]
@@ -66,6 +66,13 @@ export function ytaFinns(text, kvm) {
     .filter((n) => Number.isFinite(n) && n > 0);
   if (!tal.length) return null;
   if (tal.some((n) => Math.abs(n - kvm) <= Math.max(2, kvm * 0.05))) return true;
+  // Annonser som anger ett spann ("900-1870 kvm") har inte mittvärdet på sidan.
+  // Då räcker det att någon av ändpunkterna står där.
+  if (Array.isArray(intervall) && intervall.length === 2) {
+    const [lag, hog] = intervall;
+    const traff = (v) => tal.some((n) => Math.abs(n - v) <= Math.max(2, v * 0.05));
+    if (traff(lag) || traff(hog)) return true;
+  }
   return false;
 }
 
@@ -111,7 +118,7 @@ export async function granska(objekt) {
   }
 
   const adr = adressFinns(text, objekt.adress);
-  const yta = ytaFinns(text, objekt.kvm);
+  const yta = ytaFinns(text, objekt.kvm, objekt.kvm_intervall);
   const delar = [];
   if (adr === true) delar.push('adress ✓');
   else if (adr === 'delvis') delar.push('gatunamn ✓ (nummer avviker)');
