@@ -174,7 +174,7 @@ const senasteFel = new Map<string, number>();
  * `tvinga` används efter ett 401: nyckeln kan vara ogiltig långt före sitt
  * utgångsdatum (ominstallation, ändrade scopes).
  */
-async function giltigToken(shop: string, tvinga = false): Promise<string | null> {
+export async function giltigToken(shop: string, tvinga = false): Promise<string | null> {
   const rad = await prisma.session.findFirst({ where: { shop, isOnline: false } });
   if (!rad) return null;
 

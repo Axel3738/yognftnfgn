@@ -231,6 +231,36 @@ den första fixen. De som satt kvar och nu är åtgärdade:
 Diagnosrutten `/diag-grupp` är BORTTAGEN (oautentiserad, kunde trigga externa
 API-anrop) — återskapa mönstret ur git-historiken vid behov och ta bort igen.
 
+### Nycklarna som gick ut i tysthet — Norge och Finland visade 0 kr (aug 2026)
+Symptom: gemensamma vyn visade 0 kr försäljning för NO och FI bredvid full
+annonskostnad, alltså ren förlust, medan butikerna sålde som vanligt. Axel var
+nära att fatta beslut på siffran. TVÅ fel i lager:
+1. **Nollor skrevs som sanning.** `runOrdersPaginated` hade `if (!conn) break`
+   — ett GraphQL-fel gav tom lista, noll ordrar skrevs som dagsrader, och
+   `refreshShopDaily` rapporterade SUCCÉ. En butik som inte fick fråga såg
+   exakt ut som en butik utan försäljning. Bulk-vägen kastade redan fel; det
+   var bara den paginerade (dagens siffror, gruppens uppdatering) som teg.
+   Regel: **en misslyckad datahämtning får aldrig skriva ett värde.**
+2. **Offline-nycklarna gick ut.** Med `expiringOfflineAccessTokens` är
+   nycklarna färskvara (~1 dygn), men biblioteket förnyar dem BARA i
+   `authenticate.admin` — när någon öppnar just den butikens panel.
+   Gruppsummeringen läser nycklarna direkt ur Session-tabellen och kringgår
+   den vägen, så butiker ingen besökt dog tyst. NO gick ut 05:16, FI 04:27.
+   SE/UK/DK har eviga grandfathered-nycklar (`expires` null) och märkte inget.
+**Nyckelinsikt om topologin:** varje butik har sin EGEN app-registrering, så
+en nyckel kan bara förnyas med den registreringens client_id/secret. Sveriges
+tjänst får `invalid_request: This request requires an active refresh_token` på
+Norges nyckel — bara Norges egen tjänst kan förnya den. Verifierat i skarpt
+läge: samma anrop misslyckades från SE och lyckades från NO.
+Fixen: `giltigToken()` i daily.server förnyar före användning och efter 401,
+och `token-keeper.server.ts` (startad i entry.server, alltså i ALLA sex
+tjänsterna) förnyar var 15:e minut de nycklar som går ut inom 3 timmar. Varje
+tjänst lagar sin egen butik; delad databas gör resultatet synligt för alla.
+Butiker vars nyckel inte går att förnya utesluts och namnges i gruppsumman i
+stället för att räknas som noll.
+Om det händer igen: öppna appen i den butikens Shopify-admin en gång — det ger
+en ny nyckel via OAuth, och vakten håller den vid liv därefter.
+
 ### App Store (StonePNL)
 - client_id 8200cbe4502be19ac6ebe75ac65e3ad2, distribution public, managed
   pricing $9.99/30 dagar med **1 dags** gratis trial (Axel rättade: inte 7).

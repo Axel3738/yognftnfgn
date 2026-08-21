@@ -4,6 +4,12 @@ import { RemixServer } from "@remix-run/react";
 import { createReadableStreamFromReadable, type EntryContext } from "@remix-run/node";
 import { isbot } from "isbot";
 import { addDocumentResponseHeaders } from "./shopify.server";
+import { startaTokenVakt } from "./lib/token-keeper.server";
+
+/* Varje tjänst håller sin egen butiks offline-nyckel vid liv. Utan det gick
+   nycklarna ut för butiker ingen öppnat, och deras försäljning frös på noll i
+   den gemensamma vyn. Entry-modulen laddas en gång per process. */
+startaTokenVakt();
 
 export default async function handleRequest(
   request: Request,

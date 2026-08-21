@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "token-v50", db });
+  return json({ ok: true, build: "vakt-v51", db });
 }
