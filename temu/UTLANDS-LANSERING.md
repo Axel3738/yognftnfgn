@@ -139,10 +139,16 @@ Bakgrund: bordtennistränaren fick en DDG-sökträff som bild — en golvståend
 från en ANNAN listning — medan copyn beskrev en bordsklämma. Bild och text motsade
 varandra i fyra butiker. Dessa regler är obligatoriska för varje produkt:
 
-1. **Endast produktens egna bilder.** Källa 1: galleriet på produktens Temu-sida
-   (Axel högerklickar → kopiera bildadress). Källa 2: huvudbilden ur sidans
-   HTML-skal (`img.kwcdn.com/product/fancy/…w/800` — hämtas med curl, är alltid
-   produktens egen). **Bildsökningar (DDG m.fl.) är HELT förbjudna som produktbilder.**
+1. **Endast produktens egna bilder.** Källa 1: galleriet på produktens Temu-sida —
+   **Axel klistrar in bilderna direkt i chatten**; de går att plocka ut i full
+   upplösning ur sessionens transkript (JSONL, `message.content[].type=="image"`,
+   base64 i `source.data`). Källa 2: huvudbilden ur sidans HTML-skal
+   (`img.kwcdn.com/product/fancy/…w/800` — hämtas med curl, är alltid produktens
+   egen). **Bildsökningar (DDG m.fl.) är HELT förbjudna som produktbilder.**
+   ⭐ **Temu-galleriets infografiker är guldstandarden** (Axel 2026-08-21:
+   "de hade varit perfekta … dessa bilder ska du ta också från alla produkter") —
+   de visar produkten i användning och bär verifierade mått/spec som copyn ska
+   hämta sina räkneord ur. Be Axel klistra in dem för varje produkt.
 2. **Research är facit för copyn.** Läs Temu-sidans egen produktbeskrivning
    (`ra_beskrivning` ur `hamta.mjs`), sök lite om produkttypen, förstå vilket
    problem den löser — DÄRIFRÅN skrivs copyn. Bilderna kontrolleras sedan mot
@@ -166,8 +172,14 @@ produktens RIKTIGA bild med `node temu/ai-bild.mjs` (kie.ai nano-banana-edit,
 nyckel i miljövariabeln `KIE_API_KEY`). Fyra hårda regler står i skriptets huvud —
 kortversion: alltid edit av referensbilden (aldrig text-till-bild), granska
 räkneorden visuellt (modellen räknar fel — piloten gav 7-8 bollar i stället för 6),
-aldrig som huvudbild, undvik människor i närbild. Pilot: pingisens miljöbild
-2026-08-21, godkänd trohet efter en iteration.
+aldrig som huvudbild, undvik människor i närbild.
+
+⚠️ **AI-bilder får aldrig gissa produktegenskaper.** Piloten (pingis 2026-08-21)
+underkändes av Axel: AI:n ritade ett kort nät fast det riktiga dras ut 1,7 m över
+hela bordet — referensbilden (produkten hopfälld i låda) visade inte utsträckt
+läge, så modellen hittade på det. Regeln: generera bara scener där referensbilden
+visar produktens form i det läge scenen kräver. Finns en riktig infografik/
+galleribild från Temu som visar samma sak går den ALLTID före en AI-bild.
 
 ## Prismetoden
 

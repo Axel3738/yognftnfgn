@@ -19,6 +19,11 @@
 // 3. AI-bilden är MILJÖBILD — aldrig huvudbild, ersätter aldrig äkta produktfoton.
 // 4. Undvik människor i närbild i prompten — AI-ansikten ser fejk ut och
 //    drar ner trovärdigheten (Axels "scamigt"-varning gäller åt båda hållen).
+// 5. Generera bara scener där referensbilden visar produktens form i det läge
+//    scenen kräver. Piloten underkändes: referensen visade nätet hopfällt i
+//    lådan, AI:n gissade ett kort nät — det riktiga dras ut 1,7 m över hela
+//    bordet. Finns en äkta Temu-galleribild som visar samma sak: använd den,
+//    aldrig AI.
 
 const [ref, prompt, ut] = process.argv.slice(2);
 const K = process.env.KIE_API_KEY;
