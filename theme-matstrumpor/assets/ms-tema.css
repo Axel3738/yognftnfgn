@@ -1,0 +1,56 @@
+/* ==========================================================================
+   ms-tema.css — anpassningslagret mot bastemat
+   --------------------------------------------------------------------------
+   ms-cro.css är vårt eget och rör bara .ms-*. Den här filen är den ENDA plats
+   där vi rör basetemats egna klasser, och den laddas efter ms-cro.css.
+
+   Varför separat: temats klassnamn (.product-form__submit, .price…) är Dawns,
+   inte våra. Byts bastemat ut är det den här filen som ska skrivas om — inte
+   konverteringslagret. Den är också liten med flit, så den går att justera
+   utan att ladda upp hela CSS:en igen.
+
+   Dawn-specifikt. Läs innan du byter bastema.
+   ========================================================================== */
+
+/* Köpknappen ------------------------------------------------------------ */
+/* Dawn gör "Lägg i varukorgen" till en sekundär (vit) knapp så fort Shop Pay
+   är påslaget. Det ger sidans viktigaste knapp minst tyngd på hela sidan.
+   Vi vänder på det: vår knapp är fylld, Shop Pay får ligga under som
+   alternativ. Dawns knappar räknar i rgb-tripletter, därav formatet. */
+.product-form__submit.button,
+.product-form__submit.button--secondary {
+  --color-button: 221, 130, 29;
+  --color-button-text: 253, 251, 247;
+  --alpha-button-background: 1;
+  --alpha-button-border: 1;
+  min-height: 5.2rem;
+  font-size: 1.6rem;
+  letter-spacing: .02em;
+}
+.product-form__submit.button:hover { filter: brightness(1.06); }
+
+/* Shop Pay-knappen ska se ut som ett andrahandsval, inte som huvudsaken. */
+.product-form__buttons .shopify-payment-button { margin-top: .8rem; }
+
+/* Priset ---------------------------------------------------------------- */
+/* Priset är det andra ögat landar på efter titeln. Dawn sätter det i samma
+   storlek som brödtexten. */
+.product .price {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+.product .product__tax { opacity: .65; }
+
+/* Köprutan -------------------------------------------------------------- */
+/* Luften mellan blocken i köprutan. Dawn lämnar dem tätt ihop, vilket gör att
+   våra block ser ut att höra ihop med temats i stället för att läsas var för sig. */
+.product__info-container > * + * { margin-top: 1.2rem; }
+.product__info-container { max-width: 52rem; }
+
+/* Titeln får inte konkurrera med sektionsrubrikerna längre ner. */
+.product__title h1,
+.product__title .h1 { line-height: 1.15; }
+
+/* Galleriet ------------------------------------------------------------- */
+/* Miniatyrerna ska synas som miniatyrer, inte som lika stora rutor. */
+.thumbnail-list__item { max-width: 9rem; }

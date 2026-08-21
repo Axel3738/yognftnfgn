@@ -1,0 +1,142 @@
+{
+  "sections": {
+    "ms_usp": {
+      "type": "ms-usp-bar",
+      "settings": {
+        "items": "truck:Fri frakt i Sverige|refresh:30 dagars öppet köp|gift:Levereras presentklart|star:Älskad av tusentals svenskar"
+      }
+    },
+    "hero": {
+      "type": "rich-text",
+      "blocks": {
+        "h": {
+          "type": "heading",
+          "settings": {
+            "heading": "Presenten som får dem att skratta",
+            "heading_size": "h0"
+          }
+        },
+        "t": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Strumpor som ser ut som mat. Levereras presentklart, med fri frakt i hela Sverige.</p>"
+          }
+        },
+        "b": {
+          "type": "button",
+          "settings": {
+            "button_label": "Se alla strumpor",
+            "button_link": "shopify://collections/alla-produkter",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": ["h", "t", "b"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "produkter": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Alla strumpor",
+        "heading_size": "h1",
+        "collection": "alla-produkter",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "ms_marquee": {
+      "type": "ms-marquee",
+      "settings": {
+        "items": "Älskad av tusentals svenskar|Fri frakt i Sverige|30 dagars öppet köp|Levereras presentklart",
+        "speed": 26,
+        "background": "#dd821d",
+        "text_color": "#fdfbf7"
+      }
+    },
+    "ms_compare": {
+      "type": "ms-compare",
+      "blocks": {
+        "r1": { "type": "row", "settings": { "feature": "Fri frakt i Sverige", "us": true, "them": false } },
+        "r2": { "type": "row", "settings": { "feature": "30 dagars öppet köp", "us": true, "them": false } },
+        "r3": { "type": "row", "settings": { "feature": "Levereras presentklart", "us": true, "them": false } },
+        "r4": { "type": "row", "settings": { "feature": "En storlek passar alla", "us": true, "them": false } }
+      },
+      "block_order": ["r1", "r2", "r3", "r4"],
+      "settings": {
+        "eyebrow": "Varför just den här",
+        "heading": "Matstrumpor mot en vanlig present",
+        "us_label": "Matstrumpor",
+        "them_label": "Vanlig present"
+      }
+    },
+    "ms_faq": {
+      "type": "ms-faq-section",
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "q": "Passar de alla?",
+            "a": "<p>En storlek passar de flesta, ungefär strl 36–44.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "q": "Hur snabbt kommer de?",
+            "a": "<p>5–10 arbetsdagar med fri frakt inom Sverige.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "q": "Kan jag skicka dem som present direkt?",
+            "a": "<p>Ja. Alla par levereras i presentförpackning.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": {
+        "heading": "Vanliga frågor"
+      }
+    },
+    "ms_guarantee": {
+      "type": "ms-guarantee-section",
+      "settings": {
+        "title": "30 dagars öppet köp",
+        "body": "<p>Inte nöjd? Hör av dig inom 30 dagar så löser vi det. Inget krångel, inga följdfrågor.</p>",
+        "icon": "seal"
+      }
+    }
+  },
+  "order": [
+    "ms_usp",
+    "hero",
+    "produkter",
+    "ms_marquee",
+    "ms_compare",
+    "ms_faq",
+    "ms_guarantee"
+  ]
+}

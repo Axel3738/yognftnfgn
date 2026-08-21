@@ -24,17 +24,6 @@
             "custom_liquid": "{% render 'ms-sales-points', points: 'En storlek passar alla|Levereras i presentförpackning|Premiumkvalitet som håller', icon: 'check-circle' %}"
           }
         },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
-          }
-        },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
         "ms_bundle": {
           "type": "custom_liquid",
           "settings": {
@@ -94,8 +83,6 @@
         "title",
         "price",
         "ms_points",
-        "variant_picker",
-        "quantity_selector",
         "ms_bundle",
         "buy_buttons",
         "ms_trust",
@@ -109,11 +96,11 @@
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
-        "media_size": "large",
+        "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "gallery_layout": "stacked",
-        "mobile_thumbnails": "hide",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
         "media_position": "left",
         "image_zoom": "lightbox",
         "hide_variants": true,
@@ -125,12 +112,45 @@
     "ms_compare": {
       "type": "ms-compare",
       "blocks": {
-        "r1": { "type": "row", "settings": { "feature": "Fri frakt i Sverige", "us": true, "them": false } },
-        "r2": { "type": "row", "settings": { "feature": "30 dagars öppet köp", "us": true, "them": false } },
-        "r3": { "type": "row", "settings": { "feature": "Levereras presentklart", "us": true, "them": false } },
-        "r4": { "type": "row", "settings": { "feature": "En storlek passar alla", "us": true, "them": false } }
+        "r1": {
+          "type": "row",
+          "settings": {
+            "feature": "Fri frakt i Sverige",
+            "us": true,
+            "them": false
+          }
+        },
+        "r2": {
+          "type": "row",
+          "settings": {
+            "feature": "30 dagars öppet köp",
+            "us": true,
+            "them": false
+          }
+        },
+        "r3": {
+          "type": "row",
+          "settings": {
+            "feature": "Levereras presentklart",
+            "us": true,
+            "them": false
+          }
+        },
+        "r4": {
+          "type": "row",
+          "settings": {
+            "feature": "En storlek passar alla",
+            "us": true,
+            "them": false
+          }
+        }
       },
-      "block_order": ["r1", "r2", "r3", "r4"],
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
       "settings": {
         "eyebrow": "Varför just den här",
         "heading": "Matstrumpor mot en vanlig present",
@@ -156,7 +176,10 @@
           }
         }
       },
-      "block_order": ["q1", "q2"],
+      "block_order": [
+        "q1",
+        "q2"
+      ],
       "settings": {
         "heading": "Vanliga frågor"
       }

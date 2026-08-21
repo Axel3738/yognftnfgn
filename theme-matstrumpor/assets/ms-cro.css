@@ -50,12 +50,19 @@
   /* Typografi — ärver temats typsnitt, faller tillbaka på märkets */
   --ms-font: var(--font-body-family, "Mochiy Pop P One", ui-rounded, system-ui, sans-serif);
   --ms-font-head: var(--font-heading-family, var(--ms-font));
-  --ms-fs-xs: .75rem;
-  --ms-fs-sm: .875rem;
-  --ms-fs-md: 1rem;
-  --ms-fs-lg: 1.125rem;
-  --ms-fs-xl: clamp(1.25rem, 1rem + 1.2vw, 1.75rem);
-  --ms-fs-2xl: clamp(1.6rem, 1.1rem + 2.2vw, 2.5rem);
+
+  /* ⚠️ em, aldrig rem. Dawn (och Shrine, och de flesta OS 2.0-teman) sätter
+     html { font-size: 62.5% }, alltså 1rem = 10px. Räknar vi i rem blir all
+     vår text ~40 % för liten bredvid temats egen — och det syns först på
+     riktig sajt, aldrig i koden. em ärver temats brödtextstorlek i stället,
+     så vi hamnar rätt oavsett vilket tema vi ligger ovanpå.
+     (Hittat på matstrumpor.se 2026-08-21: 14px-text renderades som 8,75px.) */
+  --ms-fs-xs: .78em;
+  --ms-fs-sm: .9em;
+  --ms-fs-md: 1em;
+  --ms-fs-lg: 1.15em;
+  --ms-fs-xl: clamp(1.25em, 1em + 1.2vw, 1.75em);
+  --ms-fs-2xl: clamp(1.7em, 1.2em + 2.2vw, 2.6em);
 }
 
 /* Mörkt läge: bara om temat självt ber om det. Vi tvingar aldrig fram det. */
@@ -272,7 +279,7 @@
 .ms-bundle__input:checked + .ms-bundle__card .ms-bundle__dot { border-color: var(--ms-accent); }
 .ms-bundle__input:checked + .ms-bundle__card .ms-bundle__dot::after { transform: scale(1); }
 .ms-bundle__label { font-size: var(--ms-fs-md); line-height: 1.25; }
-.ms-bundle__note { display: block; font-size: var(--ms-fs-xs); color: var(--ms-ink-soft); margin-top: 3px; }
+.ms-bundle__note { display: block; font-size: .78em; color: var(--ms-ink-soft); margin-top: 3px; }
 .ms-bundle__prices { text-align: right; line-height: 1.2; }
 .ms-bundle__price { font-size: var(--ms-fs-md); font-weight: 700; display: block; }
 .ms-bundle__was { font-size: var(--ms-fs-xs); color: var(--ms-ink-faint); text-decoration: line-through; }
@@ -336,7 +343,7 @@
 }
 .ms-delivery .ms-i { color: var(--ms-accent); margin-top: .15em; }
 .ms-delivery__date { font-weight: 700; white-space: nowrap; }
-.ms-delivery__cut { display: block; color: var(--ms-ink-soft); font-size: var(--ms-fs-xs); margin-top: 2px; }
+.ms-delivery__cut { display: block; color: var(--ms-ink-soft); font-size: .87em; margin-top: 2px; }
 
 /* 3.8 Lagerindikator ---------------------------------------------------- */
 .ms-stock { margin: 14px 0; }
@@ -396,8 +403,8 @@
   text-align: center;
   line-height: 1.1;
 }
-.ms-countdown__num { display: block; font-size: var(--ms-fs-lg); font-weight: 700; font-variant-numeric: tabular-nums; }
-.ms-countdown__unit { display: block; font-size: 10px; opacity: .75; text-transform: uppercase; letter-spacing: .06em; }
+.ms-countdown__num { display: block; font-size: 1.28em; font-weight: 700; font-variant-numeric: tabular-nums; }
+.ms-countdown__unit { display: block; font-size: .62em; opacity: .75; text-transform: uppercase; letter-spacing: .06em; }
 .ms-countdown[hidden] { display: none; }
 
 /* 3.10 Dragspel / FAQ --------------------------------------------------- */
@@ -426,7 +433,7 @@
 .ms-faq__item[open] .ms-faq__chev { transform: rotate(180deg); }
 .ms-faq__a {
   padding: 0 16px 16px;
-  font-size: var(--ms-fs-sm);
+  font-size: .95em;
   line-height: 1.6;
   color: var(--ms-ink-soft);
 }

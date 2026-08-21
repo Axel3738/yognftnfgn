@@ -5,7 +5,8 @@
       {% render 'ms-head' %}
 
   Ordningen spelar roll:
-    1. CSS:en först, så inget hoppar till.
+    1. CSS:en först, så inget hoppar till. ms-tema.css sist av de två — den
+       anpassar bastemat och ska kunna överstyra konverteringslagret.
     2. A/B-konfigurationen som ren JSON.
     3. ms-ab.js UTAN defer — den måste hinna välja variant innan sidan målas.
     4. ms-cro.js med defer — beteende, behöver inte blockera.
@@ -17,6 +18,7 @@
 {%- endcomment -%}
 
 {{ 'ms-cro.css' | asset_url | stylesheet_tag }}
+{{ 'ms-tema.css' | asset_url | stylesheet_tag }}
 
 {%- comment -%}
   Radbrytningen måste plockas ut i ett eget assign-tag. Ett {% liquid %}-block

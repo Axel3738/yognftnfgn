@@ -37,6 +37,49 @@ koden — `kontrolleraButik()` avbryter på fel primärdomän — men kontroller
 
 ## Körningen 2026-08-21 — temat ligger uppe
 
+### Andra passet: temat var byggt, men det SÅG inte byggt ut
+
+Första passet laddade upp filerna korrekt och sidan renderade. Den såg ändå
+fel ut, av tre skäl som inte syns i någon kod:
+
+1. **All vår text var ~40 % för liten.** `ms-cro.css` räknade i `rem`, men Dawn
+   (och Shrine, och de flesta OS 2.0-teman) sätter `html { font-size: 62.5% }`.
+   1rem = 10px, alltså renderades 14px-text som 8,75px. Tokens räknar nu i `em`
+   och ärver temats brödtextstorlek i stället. **Detta är den viktigaste raden i
+   hela filen** — den går inte att upptäcka utan att titta på en riktig sida.
+2. **Dubbla kontroller i köprutan.** Dawns variantväljare låg kvar bredvid
+   paketkorten, plus dubbel antalsväljare. Paketväljaren *är* variantväljaren;
+   Dawns är borttagna ur mallen.
+3. **Hela temat var omålad Dawn** — engelsk annonsrad, Dawns typsnitt, Dawns
+   svartvita knappar. Nu satt via `config/settings_data.json`.
+
+### Vad som styr utseendet nu
+
+| Fil | Vad |
+|---|---|
+| `config/settings_data.json` | Märkets palett och typsnitt: accent `#dd821d`, text `#121212`, knapptext `#fdfbf7`, typsnitt `mochiy_pop_p_one_n4` — samma som live-sajten. Rundade hörn, kundvagnslåda, svenska. |
+| `assets/ms-tema.css` | **Enda stället där vi rör basetemats egna klasser.** Gör köpknappen fylld i stället för Dawns vita sekundärknapp, förstorar priset, luftar köprutan. Byts bastemat är det den här filen som skrivs om — inte konverteringslagret. Liten med flit, så den går att justera utan att ladda upp 20 KB CSS igen. |
+| `templates/product.json` | Köprutan. Referens i repot: `templates/product.dawn.json`. |
+| `templates/index.json` | Startsidan. Referens: `templates/index.dawn.json`. |
+| `sections/header-group.json` | Roterande svensk annonsrad i accentfärg. |
+| `sections/footer-group.json` | Svensk sidfot, utan land- och språkväljare. |
+
+### Så granskas resultatet utan webbläsare
+
+Chromium i den här miljön når inte ut på nätet, men `curl` gör det.
+
+```bash
+python3 tools/spegla.py "https://matstrumpor.se/?preview_theme_id=<id>" /tmp/m
+node tools/skott.mjs "file:///tmp/m/sida.html" hem.png 2100
+```
+
+`spegla.py` hämtar sidan och allt den refererar med curl, skriver om länkarna
+till lokala filer och renderar från `file://`. ⚠️ Kakburken är inte valfri —
+utan `-c/-b` får du det **publicerade** temat i stället, och det ser ut att
+fungera. (Hände 2026-08-21: en hel granskning gjordes på fel tema.)
+
+## Körningen 2026-08-21 — detaljer
+
 | | |
 |---|---|
 | Tema | **Matstrumpor CRO**, id `205400768851`, **OPUBLICERAT** |
@@ -91,8 +134,8 @@ före uppladdning — den fångar dem nu innan Shopify gör det.
 - **Omdömessektionen ligger uppe men är inte inlagd i mallen.** Vi hittar inte på
   kundomdömen. Lägg in den i temaredigeraren när det finns riktiga, eller koppla
   in en recensionsapp via app-blocket.
-- **Dawns egen variantväljare ligger kvar bredvid paketkorten** på Sushi. Inget
-  är trasigt, men det är två kontroller för samma val. Axels beslut.
+- **Omdömen på startsidan.** Sektionen finns, men den är tom tills det finns
+  riktiga omdömen att lägga in.
 
 ## Steg 0b — appen måste få röra teman
 
