@@ -160,9 +160,10 @@ async function läsStruktur(temaId) {
   const sektionsLiquid = (await hämtaFiler(temaId, [sektionsfil])).get(sektionsfil) ?? '';
   const schema = plockaSchema(sektionsLiquid);
 
+  const blockTyper = (schema?.blocks ?? []).map(b => b.type);
   return {
-    mall, råMall, huvudId, huvudSektion, sektionsfil, schema,
-    tarEmotTemablock: (schema?.blocks ?? []).some(b => b.type === '@theme'),
+    mall, råMall, huvudId, huvudSektion, sektionsfil, schema, blockTyper,
+    tarEmotTemablock: blockTyper.includes('@theme'),
     layout: filer.get('layout/theme.liquid'),
   };
 }
@@ -230,7 +231,8 @@ if (kommando === 'las') {
   const s = await läsStruktur(id);
   console.log(`Produktsektion : ${s.huvudId} (${s.huvudSektion.type})`);
   console.log(`Sektionsfil    : ${s.sektionsfil}`);
-  console.log(`Tar temablock  : ${s.tarEmotTemablock ? 'JA' : 'NEJ — våra block kan inte ligga i köprutan'}`);
+  console.log(`Tar temablock  : ${s.tarEmotTemablock ? 'JA' : 'NEJ'}`);
+  console.log(`custom_liquid  : ${s.blockTyper.includes('custom_liquid') ? 'JA — den vägen används i stället' : 'NEJ'}`);
   console.log(`Blocktyper     : ${Object.values(s.huvudSektion.blocks ?? {}).map(b => b.type).join(', ')}`);
   console.log(`Köpknappen     : ${Object.values(s.huvudSektion.blocks ?? {}).find(b => KNAPP_MÖNSTER.test(b.type ?? ''))?.type ?? 'HITTAD EJ'}`);
   console.log(`\ntemplates/product.json:\n${s.råMall}`);
@@ -252,7 +254,7 @@ console.log(`        Kopia: ${KOPIANS_NAMN} · id ${kortId(kopia.id)} · role ${
 // Steg 3
 const struktur = await läsStruktur(kopia.id);
 console.log(`Steg 3  Produktsektion: ${struktur.huvudId} (${struktur.huvudSektion.type})`);
-console.log(`        Tar emot temablock: ${struktur.tarEmotTemablock ? 'ja' : 'NEJ'}\n`);
+console.log(`        Väg in i köprutan: ${struktur.tarEmotTemablock ? 'temablock' : 'custom_liquid'}\n`);
 
 // Steg 4
 const skrivna = await skrivFiler(kopia.id, await våraFiler());

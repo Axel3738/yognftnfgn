@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   byggMall, hittaProduktsektion, kopplaInHead, plockaSchema, slåIhopInställningar,
-  FÖRE_KNAPPEN, EFTER_KNAPPEN, SEKTIONER_UNDER, SIST_I_MALLEN,
+  EFTER_PRISET, FÖRE_KNAPPEN, EFTER_KNAPPEN, SEKTIONER_UNDER, SIST_I_MALLEN,
 } from '../mall.mjs';
 
 // En förenklad men strukturellt äkta produktmall: sektionsnycklarna heter något
@@ -29,7 +29,7 @@ const typer = ny => ny.sections['huvud-abc'].block_order.map(id => ny.sections['
 
 test('köpblocket får rätt ordning runt temats egen knapp', () => {
   assert.deepEqual(typer(byggMall(bas())), [
-    'title', 'price', ...FÖRE_KNAPPEN, 'buy_buttons', ...EFTER_KNAPPEN, 'description',
+    'title', 'price', ...EFTER_PRISET, ...FÖRE_KNAPPEN, 'buy_buttons', ...EFTER_KNAPPEN, 'description',
   ]);
 });
 
@@ -60,8 +60,52 @@ test('sektionerna hamnar under köpblocket och sticky-knappen sist', () => {
   for (const typ of [...SEKTIONER_UNDER, SIST_I_MALLEN]) assert.equal(ny.sections[typ].type, typ);
 });
 
-test('stannar när sektionen inte tar emot temablock', () => {
-  assert.throws(() => byggMall(bas({ tarEmotTemablock: false })), /tar inte emot temablock/);
+test('stannar när sektionen varken tar temablock eller custom_liquid', () => {
+  assert.throws(
+    () => byggMall(bas({ tarEmotTemablock: false, blockTyper: ['title', 'price'] })),
+    /varken emot temablock/,
+  );
+});
+
+/* --- Dawn-vägen: custom_liquid i stället för temablock ------------------- */
+
+const dawn = () => bas({ tarEmotTemablock: false, blockTyper: ['@app', 'title', 'price', 'buy_buttons', 'custom_liquid'] });
+
+test('Dawn: våra block läggs in som custom_liquid i rätt ordning', () => {
+  const ny = byggMall(dawn());
+  const s = ny.sections['huvud-abc'];
+  assert.deepEqual(s.block_order, [
+    'b1', 'b2', 'ms_points', 'ms_bundle', 'b3',
+    'ms_trust', 'ms_delivery', 'ms_pay', 'ms_faq', 'ms_guarantee', 'b4',
+  ]);
+  assert.equal(s.block_order.indexOf('ms_points'), s.block_order.indexOf('b2') + 1, 'säljpunkterna ska ligga direkt under priset');
+  for (const id of ['ms_points', 'ms_bundle', 'ms_trust', 'ms_delivery', 'ms_pay', 'ms_faq', 'ms_guarantee']) {
+    assert.equal(s.blocks[id].type, 'custom_liquid', id);
+  }
+});
+
+test('Dawn: varje custom_liquid renderar sin snippet', () => {
+  const s = byggMall(dawn()).sections['huvud-abc'];
+  const par = [
+    ['ms_points', 'ms-sales-points'], ['ms_bundle', 'ms-bundle-picker'],
+    ['ms_trust', 'ms-trust-row'], ['ms_delivery', 'ms-delivery-estimate'],
+    ['ms_pay', 'ms-payment-icons'], ['ms_faq', 'ms-faq'], ['ms_guarantee', 'ms-guarantee'],
+  ];
+  for (const [id, snippet] of par) {
+    assert.match(s.blocks[id].settings.custom_liquid, new RegExp(`\\{% render '${snippet}'`), id);
+  }
+});
+
+test('Dawn: paketväljaren får produkten och ett unikt section_id', () => {
+  const cl = byggMall(dawn()).sections['huvud-abc'].blocks.ms_bundle.settings.custom_liquid;
+  assert.match(cl, /product: product/);
+  assert.match(cl, /section_id: section\.id/);
+});
+
+test('Dawn: en omkörning dubblerar inte custom_liquid-blocken', () => {
+  const en = byggMall(dawn());
+  const två = byggMall({ mall: en, huvudId: 'huvud-abc', tarEmotTemablock: false, blockTyper: ['custom_liquid'] });
+  assert.deepEqual(två.sections['huvud-abc'].block_order, en.sections['huvud-abc'].block_order);
 });
 
 test('stannar när köpknappen inte går att hitta', () => {

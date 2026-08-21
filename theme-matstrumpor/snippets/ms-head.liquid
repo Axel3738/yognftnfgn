@@ -18,9 +18,15 @@
 
 {{ 'ms-cro.css' | asset_url | stylesheet_tag }}
 
+{%- comment -%}
+  Radbrytningen måste plockas ut i ett eget assign-tag. Ett {% liquid %}-block
+  bryter satserna på radslut, så en sträng som spänner över två rader gör att
+  Shopify avvisar hela filen med "Unknown tag '''".
+{%- endcomment -%}
+{%- assign ms_nl = '
+' -%}
 {%- liquid
-  assign raw_tests = settings.ms_ab_tests | default: '' | split: '
-'
+  assign raw_tests = settings.ms_ab_tests | default: '' | split: ms_nl
   assign cookie_days = settings.ms_ab_cookie_days | default: 30
 -%}
 <script id="ms-ab-config" type="application/json">

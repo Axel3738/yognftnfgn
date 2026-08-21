@@ -140,9 +140,35 @@ function checkFile(file, icons) {
     problems.push(`ojämnt antal {{ (${opens}) och }} (${closes})`);
   }
 
+  problems.push(...checkMultilineString(src));
   problems.push(...checkSchema(src));
 
   return { rel, problems };
+}
+
+/* --- strängar över flera rader i {% liquid %} --------------------------- */
+
+// Ett {% liquid %}-block bryter satserna på radslut. En sträng som spänner
+// över två rader blir därför två trasiga satser, och Shopify avvisar hela
+// filen med "Unknown tag '''". Radbrytningen måste plockas ut i ett eget
+// {% assign %} utanför blocket.
+// (Verifierat mot Shopify 2026-08-21: ms-head.liquid gjorde exakt det här.)
+function checkMultilineString(src) {
+  const out = [];
+  const block = /\{%-?\s*liquid\b([\s\S]*?)-?%\}/g;
+  let m;
+  while ((m = block.exec(src)) !== null) {
+    const startLine = src.slice(0, m.index).split('\n').length;
+    m[1].split('\n').forEach((rad, i) => {
+      // # är kommentar bara först på raden. Mitt i en rad är det ett vanligt
+      // tecken, t.ex. i satsen  if hash == '#'  — som annars ser oparad ut.
+      const kod = /^\s*#/.test(rad) ? '' : rad;
+      if ((kod.match(/'/g) || []).length % 2 === 1) {
+        out.push(`rad ${startLine + i}: oparad ' i ett {% liquid %}-block — en sträng får inte spänna över flera rader där, Shopify avvisar filen`);
+      }
+    });
+  }
+  return out;
 }
 
 /* --- {% schema %} ------------------------------------------------------- */
@@ -171,6 +197,18 @@ function checkSchema(src) {
   const out = [];
   const ids = new Set();
 
+  // Shopify kräver att "tag" är en sträng ur den här listan. null betyder inte
+  // "ingen tagg" — filen avvisas. Utelämna nyckeln, så blir det en div.
+  // (Verifierat mot Shopify 2026-08-21: ms-sticky-atc hade "tag": null.)
+  const TAGGAR = new Set(['article', 'aside', 'div', 'footer', 'header', 'section']);
+  if ('tag' in json) {
+    if (typeof json.tag !== 'string') {
+      out.push('schema: "tag" måste vara en sträng — utelämna nyckeln för div, Shopify avvisar filen');
+    } else if (!TAGGAR.has(json.tag)) {
+      out.push(`schema: "tag": "${json.tag}" är inte tillåten (${[...TAGGAR].join(', ')})`);
+    }
+  }
+
   const walkSettings = (list, where) => {
     if (!Array.isArray(list)) return;
     for (const s of list) {
@@ -183,6 +221,14 @@ function checkSchema(src) {
       const key = where + '/' + s.id;
       if (ids.has(key)) out.push(`schema: dubblerat id '${s.id}' i ${where}`);
       ids.add(key);
+      // Shopify avvisar hela filen på ett tomt standardvärde: "default får inte
+      // vara tomt". Vill man inte ha något default ska nyckeln utelämnas helt.
+      // Undantag: select/radio där ett av alternativen faktiskt har värdet ""
+      // — då är tomt ett giltigt val och Shopify godtar det. (Verifierat mot
+      // Shopify 2026-08-21: ms-stock avvisades, ms-app-slot godtogs.)
+      if (s.default === '' && !(s.options ?? []).some(o => o.value === '')) {
+        out.push(`schema: '${s.id}' i ${where} har tomt standardvärde — utelämna "default" i stället, Shopify avvisar filen`);
+      }
       if (s.type === 'select' || s.type === 'radio') {
         if (!Array.isArray(s.options) || !s.options.length) {
           out.push(`schema: '${s.id}' är ${s.type} men saknar options`);

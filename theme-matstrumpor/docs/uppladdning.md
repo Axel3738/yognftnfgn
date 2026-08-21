@@ -35,6 +35,65 @@ Domänen måste vara **matstrumpor.se**. Är den något annat: **stanna**. Fel b
 ger tal som ser rimliga ut men kommer från fel verksamhet. Spärren sitter också i
 koden — `kontrolleraButik()` avbryter på fel primärdomän — men kontrollera ändå.
 
+## Körningen 2026-08-21 — temat ligger uppe
+
+| | |
+|---|---|
+| Tema | **Matstrumpor CRO**, id `205400768851`, **OPUBLICERAT** |
+| Bastema | Dawn (`184707088723`, opublicerat, themeStoreId 887) |
+| Förhandslänk | `https://matstrumpor.se/?preview_theme_id=205400768851` |
+| Uppladdat | 31 ms-filer + `layout/theme.liquid` + `templates/product.json` |
+| Verifierat | Varje fil byte-jämförd mot originalet, och produktsidan hämtad skarpt |
+
+Det publicerade temat (`theme-export-matstrumpor-se-shrine-2-01dec202`) rördes inte.
+
+**Vägen in gick via MCP-connectorn, inte via env-nycklarna** — appen saknar
+tema-scope (steg 0b). MCP:n tillåter `themeFilesUpsert` bara mot opublicerade
+teman, vilket är exakt rätt spärr.
+
+### Dawn tar inte emot temablock — våra block går in som `custom_liquid`
+
+`sections/main-product.liquid` i Dawn listar `@app` men **inte `@theme`**, och
+dess `{% case block.type %}` har ingen generisk gren. Läggs `blocks/ms-*` in där
+renderas de inte alls — sidan blir tom, precis som steg 3 varnar för.
+
+Lösningen är Dawns egen lucka: blocktypen `custom_liquid`, vars
+`liquid`-inställning kör `{% render %}` utan problem (verifierat på riktig sida).
+Varje ms-block blir alltså ett `custom_liquid` som renderar samma snippet med
+samma standardvärden. Logiken bor fortfarande bara i `snippets/`.
+
+`tools/mall.mjs` väljer väg automatiskt: temablock om sektionen har `@theme`,
+annars `custom_liquid`, annars stannar den. Mallen som laddades upp ligger som
+referens i `templates/product.dawn.json` — och testet i `tools/test/` kontrollerar
+att skriptet återskapar exakt den.
+
+### Tre buggar som Shopify hittade och som grinden nu fångar
+
+Alla tre gjorde att filen **avvisades helt** — de hade aldrig gått att ladda upp:
+
+| Fil | Fel | Rättning |
+|---|---|---|
+| `blocks/ms-stock.liquid` | `"default": ""` på en textinställning | nyckeln borttagen |
+| `sections/ms-sticky-atc.liquid` | `"tag": null` — måste vara sträng | nyckeln borttagen (blir `div`) |
+| `snippets/ms-head.liquid` | sträng över två rader i ett `{% liquid %}`-block | radbrytningen flyttad till ett eget `{% assign %}` |
+
+`tools/liquid-check.mjs` har fått en regel per fel. Kör alltid `npm run tema:grind`
+före uppladdning — den fångar dem nu innan Shopify gör det.
+
+### Kvar att göra
+
+- **`config/settings_schema.json` är inte ändrad.** Filen är 40 KB och skrevs
+  inte av för hand. Utan den går A/B-testerna inte att slå på i temaredigeraren.
+  Det spelar ingen roll i dag: utan inställningen blir `settings.ms_ab_tests`
+  tom, motorn kör med `tests: []` och ligger stilla — vilket är samma läge som
+  fragmentets standardvärde `# buybox` (avstängt) ger. `npm run tema:upp -- allt`
+  gör ändringen automatiskt så fort appen har tema-scope.
+- **Omdömessektionen ligger uppe men är inte inlagd i mallen.** Vi hittar inte på
+  kundomdömen. Lägg in den i temaredigeraren när det finns riktiga, eller koppla
+  in en recensionsapp via app-blocket.
+- **Dawns egen variantväljare ligger kvar bredvid paketkorten** på Sushi. Inget
+  är trasigt, men det är två kontroller för samma val. Axels beslut.
+
 ## Steg 0b — appen måste få röra teman
 
 ⚠️ **Detta stoppade körningen 2026-08-21.** Appen för matstrumpor.se har bara

@@ -1,0 +1,198 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "ms_points": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'ms-sales-points', points: 'En storlek passar alla|Levereras i presentförpackning|Premiumkvalitet som håller', icon: 'check-circle' %}"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "ms_bundle": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'ms-bundle-picker', product: product, heading: 'Välj ditt paket', mode: 'auto', unit_word: 'par', popular_index: 0, popular_text: 'Populärast', tiers: '1,2,3', discount_percent: 0, section_id: section.id %}"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "ms_trust": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'ms-trust-row', items: 'truck:Fri frakt i Sverige|refresh:30 dagars öppet köp|lock:Trygg betalning' %}"
+          }
+        },
+        "ms_delivery": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'ms-delivery-estimate', min_days: 5, max_days: 10, cutoff_hour: 0, text: 'Beräknad leverans' %}"
+          }
+        },
+        "ms_pay": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'ms-payment-icons', label: 'Trygg betalning med' %}"
+          }
+        },
+        "ms_faq": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'ms-faq', pairs: 'Passar de alla?::En storlek passar de flesta, ungefär strl 36–44.|Hur snabbt kommer de?::5–10 arbetsdagar med fri frakt inom Sverige.' %}"
+          }
+        },
+        "ms_guarantee": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'ms-guarantee', title: '30 dagars öppet köp', body: '<p>Inte nöjd? Hör av dig inom 30 dagar så löser vi det. Inget krångel.</p>', icon: 'seal' %}"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Dela"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "ms_points",
+        "variant_picker",
+        "quantity_selector",
+        "ms_bundle",
+        "buy_buttons",
+        "ms_trust",
+        "ms_delivery",
+        "ms_pay",
+        "ms_faq",
+        "ms_guarantee",
+        "description",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "ms_compare": {
+      "type": "ms-compare",
+      "blocks": {
+        "r1": { "type": "row", "settings": { "feature": "Fri frakt i Sverige", "us": true, "them": false } },
+        "r2": { "type": "row", "settings": { "feature": "30 dagars öppet köp", "us": true, "them": false } },
+        "r3": { "type": "row", "settings": { "feature": "Levereras presentklart", "us": true, "them": false } },
+        "r4": { "type": "row", "settings": { "feature": "En storlek passar alla", "us": true, "them": false } }
+      },
+      "block_order": ["r1", "r2", "r3", "r4"],
+      "settings": {
+        "eyebrow": "Varför just den här",
+        "heading": "Matstrumpor mot en vanlig present",
+        "us_label": "Matstrumpor",
+        "them_label": "Vanlig present"
+      }
+    },
+    "ms_faq_section": {
+      "type": "ms-faq-section",
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "q": "Passar de alla?",
+            "a": "<p>En storlek passar de flesta, ungefär strl 36–44.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "q": "Hur snabbt kommer de?",
+            "a": "<p>5–10 arbetsdagar med fri frakt inom Sverige.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2"],
+      "settings": {
+        "heading": "Vanliga frågor"
+      }
+    },
+    "ms_sticky": {
+      "type": "ms-sticky-atc",
+      "settings": {
+        "label": "Köp nu",
+        "position": "bottom",
+        "show_image": true
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "Du kanske också gillar",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ms_compare",
+    "ms_faq_section",
+    "related-products",
+    "ms_sticky"
+  ]
+}
