@@ -31,14 +31,21 @@
 -%}
 
 {%- if p and p.available and alla.size > 0 -%}
-  {%- comment -%} Variantpriserna som JSON, så JS kan räkna om vid variantbyte. {%- endcomment -%}
+  {%- comment -%}
+    Variantpriserna som JSON, så JS kan räkna om vid variantbyte.
+
+    MÅSTE köras genom `escape`. JSON:ens citattecken avslutar annars
+    HTML-attributet, JSON.parse felar, och då räknar JS varje nivå på
+    styckpriset 0 — hela köprutan visar 0 kr. Sidan ser rätt ut tills
+    JavaScript hinner köra.
+  {%- endcomment -%}
   {%- capture priskarta -%}
-    {%- for x in p.variants -%}"{{ x.id }}":{{ x.price }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}
+    { {%- for x in p.variants -%}"{{ x.id }}":{{ x.price }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%} }
   {%- endcapture -%}
 
   <ms-paket class="ms-scope ms-paket"
     data-money-format="{{ shop.money_format | strip_html | escape }}"
-    data-varianter="{ {{- priskarta -}} }">
+    data-varianter="{{ priskarta | strip | escape }}">
 
     <div class="ms-paket__lista" role="radiogroup" aria-label="Välj paket">
       {%- assign visade = 0 -%}

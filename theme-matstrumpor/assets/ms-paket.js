@@ -85,9 +85,15 @@
       return forsta ? this.priser[forsta] : 0;
     }
 
-    /* Räknar om alla kort mot den variant som är vald just nu. */
+    /* Räknar om alla kort mot den variant som är vald just nu.
+
+       Utan variantpriser räknar vi INTE om. Liquid har redan skrivit rätt
+       priser i korten, och ett tomt prisregister skulle ersätta dem med
+       0 kr — ett fel som ser ut som en rea och inte som en krasch. Hellre
+       priser som står stilla vid variantbyte än priser som är påhittade. */
     rita() {
       var styck = this.styckpris();
+      if (!styck) return;
       var format = this.dataset.moneyFormat;
       this.inputs.forEach(function (i) {
         var antal = Number(i.dataset.antal || 1);

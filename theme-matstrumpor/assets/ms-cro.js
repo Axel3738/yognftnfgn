@@ -21,13 +21,20 @@
 
   function money(cents, format) {
     // Shopify anger pris i ören. format t.ex. "{{amount_no_decimals}} kr".
-    var kr = cents / 100;
-    var hasDecimals = Math.round(cents) % 100 !== 0;
+    //
+    // Butikens format bestämmer om ören visas. Säger det no_decimals ska
+    // 199,50 bli 200 — precis som Liquids `| money` gör. Räknar vi själva
+    // står vår siffra och temats egen bredvid varandra och skiljer sig, och
+    // priset ser ut att ändra sig när sidan laddat klart.
+    var f = format || '{{amount}} kr';
+    var utanOren = /no_decimals/i.test(f);
+    var kr = utanOren ? Math.round(cents / 100) : cents / 100;
+    var visaOren = !utanOren && Math.round(cents) % 100 !== 0;
     var text = kr.toLocaleString('sv-SE', {
-      minimumFractionDigits: hasDecimals ? 2 : 0,
-      maximumFractionDigits: hasDecimals ? 2 : 0
+      minimumFractionDigits: visaOren ? 2 : 0,
+      maximumFractionDigits: visaOren ? 2 : 0
     });
-    return (format || '{{amount}} kr').replace(/\{\{\s*amount[a-z_]*\s*\}\}/gi, text);
+    return f.replace(/\{\{\s*amount[a-z_]*\s*\}\}/gi, text);
   }
 
   function kopformular(rot) {
