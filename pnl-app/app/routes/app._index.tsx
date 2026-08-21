@@ -34,6 +34,7 @@ import {
   markeraPagaende,
   readDaily,
   refreshDaily,
+  refreshShopDaily,
   shiftIso,
 } from "../lib/daily.server";
 import { getSpend } from "../lib/meta.server";
@@ -101,6 +102,11 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
      uppdateras dagens närmaste dagar i bakgrunden (billig, kort export).
      Ligger någon dag i intervallet mer än 6 h bak (sena returer bokförs på
      orderns dag) exporteras hela intervallet om, också i bakgrunden. */
+  /* Gruppvyn väntar ändå in alla medlemmars färska dagar — då måste den EGNA
+     butiken hämtas synkront också. Annars visar samma skärm färska
+     medlemssiffror i tabellen och timgamla i KPI-rutorna ovanför, och den
+     som läser av dagens vinst får två olika svar. */
+  const gruppvy = url.searchParams.get("all") === "1";
   const lastAt = daily.lastDayFetchedAt?.getTime() ?? 0;
   const oldestAt = daily.oldestFetchedAt?.getTime() ?? 0;
   const dataAgeMin = lastAt ? Math.round((Date.now() - lastAt) / 60000) : 0;
@@ -117,7 +123,13 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
       refreshDaily(admin, shop, timezone, f, tt),
     ).catch((e) => console.error("Bakgrundsuppdatering misslyckades:", e));
   };
-  if (to >= today && Date.now() - lastAt > 10 * 60 * 1000 && farStartaBakgrund(shop)) {
+  const forAldrad = to >= today && Date.now() - lastAt > 10 * 60 * 1000;
+  if (gruppvy && forAldrad) {
+    const senasteFrom = from > shiftIso(today, -2) ? from : shiftIso(today, -2);
+    if (await refreshShopDaily(shop, senasteFrom, today, { force: true })) {
+      daily = await readDaily(shop, from, to);
+    }
+  } else if (forAldrad && farStartaBakgrund(shop)) {
     refreshBg(from > shiftIso(today, -2) ? from : shiftIso(today, -2), today);
   } else if (Date.now() - oldestAt > 6 * 60 * 60 * 1000 && farStartaBakgrund(shop)) {
     refreshBg(from, to);
@@ -249,7 +261,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
      summan kostar ett antal databasfrågor och de flesta vill se sin egen
      butik. Antalet medlemmar räknas alltid, för kryssrutan ska bara finnas
      när det faktiskt finns något att summera. */
-  const visaAlla = url.searchParams.get("all") === "1" && groupSize > 1;
+  const visaAlla = gruppvy && groupSize > 1;
   const group = visaAlla
     ? await summeraGrupp(settings.groupId!, from, to, settings.currency, lang)
     : null;
