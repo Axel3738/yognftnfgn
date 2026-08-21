@@ -327,6 +327,8 @@ const en = {
     noCachedData: "figures are being fetched — the total fills in automatically",
     refreshFailed:
       "couldn't fetch this store's data — open its dashboard once; its access may need to be renewed",
+    spendUnavailable:
+      "ad spend could not be fetched — excluded so the total isn't overstated",
     fxUnavailable: (from: string, to: string) => `exchange rate ${from}→${to} could not be fetched`,
   },
 };
@@ -647,6 +649,8 @@ const sv: Texts = {
     noCachedData: "siffrorna hämtas just nu — summan fylls på automatiskt",
     refreshFailed:
       "butikens siffror gick inte att hämta — öppna dess panel en gång; åtkomsten kan behöva förnyas",
+    spendUnavailable:
+      "annonskostnaden gick inte att hämta — utesluten så att summan inte blir för hög",
     fxUnavailable: (from: string, to: string) => `växelkurs ${from}→${to} kunde inte hämtas`,
   },
 };

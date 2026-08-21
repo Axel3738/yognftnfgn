@@ -44,7 +44,9 @@ async function fetchInsights(cfg: MetaConfig, since: string, until: string): Pro
   url.searchParams.set("limit", "500");
   url.searchParams.set("access_token", cfg.accessToken);
 
-  const res = await fetch(url);
+  /* Timeout: det här anropet awaitas numera även i gruppsummeringen — utan
+     gräns blir ett hängt Meta-svar en panel som aldrig laddar. */
+  const res = await fetch(url, { signal: AbortSignal.timeout(15_000) });
   const body = await res.json();
 
   if (!res.ok) {
@@ -72,6 +74,7 @@ async function fetchRates(
   try {
     const res = await fetch(
       `https://api.frankfurter.dev/v1/${from}..${to}?base=${base}&symbols=${quote}`,
+      { signal: AbortSignal.timeout(10_000) },
     );
     if (!res.ok) return out;
     const body = await res.json();
@@ -109,7 +112,7 @@ async function fetchAccountCurrency(cfg: MetaConfig): Promise<string | undefined
   url.searchParams.set("fields", "currency");
   url.searchParams.set("access_token", cfg.accessToken);
   try {
-    const res = await fetch(url);
+    const res = await fetch(url, { signal: AbortSignal.timeout(10_000) });
     const body = await res.json();
     return res.ok ? (body?.currency ?? undefined) : undefined;
   } catch {
@@ -199,9 +202,17 @@ export async function getSpend(
       cachedRow && recent && Date.now() - cachedRow.fetchedAt.getTime() > FERSK_MS;
     const oräknad =
       needsFx && cachedRow && cachedRow.fxRate == null && Number(cachedRow.spend) !== 0;
-    if (!cachedRow || gammal || oräknad) {
+    /* En dag som konverterades samma dag den hämtades kan ha fått gårdagens
+       kurs (ECB publicerar först på eftermiddagen). Hämtas om en gång när en
+       senare dag passerat, så att den slutliga kursen blir dagens egen. */
+    const provisorisk =
+      needsFx && cachedRow && cachedRow.fxRate != null && cachedRow.spendRaw != null &&
+      iso(cachedRow.fetchedAt) <= d;
+    if (!cachedRow || gammal || oräknad || provisorisk) {
       stale.push(d);
-      if (!cachedRow || oräknad) radSaknas = true;
+      /* Bara helt saknade rader tvingar en synkron hämtning — oomräknade och
+         provisoriska rader är servebara och får rättas via bakgrundsvägen. */
+      if (!cachedRow) radSaknas = true;
     }
   }
 
@@ -212,17 +223,49 @@ export async function getSpend(
      hämta alls) visade "kunde inte räknas om"-bannern trots att allt var väl. */
   let fxOk = true;
 
-  if (stale.length && !radSaknas && !opts?.syncFresh && farUppdateraMeta(shop)) {
+  /* Backoff: en butik vars Meta-anrop nyss misslyckades (död token, rate
+     limit) ska inte betala ett nytt dömt anrop på varje sidladdning. Cachen
+     serveras och `error` sätts så anroparen vet att spend är ofullständig. */
+  const nyligenFel = Date.now() - (senasteMetaFel.get(shop) ?? 0) < 5 * 60 * 1000;
+
+  if (stale.length && !radSaknas && !opts?.syncFresh) {
     /* Alla dagar finns, bara färskheten släpar: servera databasen direkt och
        hämta i bakgrunden. Annonssiffror som är minuter gamla är rätt pris för
-       en panel som svarar omedelbart. */
-    void refreshSpend(shop, cfg, stale, needsFx, spendCurrency, shopCurrency).catch((e) =>
-      console.error(`Meta-bakgrundshämtning för ${shop} misslyckades:`, e),
-    );
+       en panel som svarar omedelbart. Säger minutspärren nej pågår (eller
+       gjordes nyss) redan en hämtning — då serveras cachen som den är, den
+       får INTE trilla ner i den synkrona grenen och blockera panelen. */
+    if (!nyligenFel && farUppdateraMeta(shop)) {
+      void refreshSpend(shop, cfg, stale, needsFx, spendCurrency, shopCurrency).catch((e) => {
+        senasteMetaFel.set(shop, Date.now());
+        console.error(`Meta-bakgrundshämtning för ${shop} misslyckades:`, e);
+      });
+    }
+  } else if (stale.length && nyligenFel) {
+    /* Rader saknas men senaste försöket small: servera det som finns och
+       flagga — utan flaggan ser saknade dagar ut som noll annonskostnad. */
+    return {
+      days: cached.map((r) => ({
+        day: iso(r.day),
+        spend: Number(r.spend),
+        impressions: r.impressions,
+        clicks: r.clicks,
+      })),
+      error: radSaknas
+        ? "Ad spend could not be fetched just now — retrying in a few minutes."
+        : undefined,
+      ...fxStatus(
+        needsFx,
+        !cached.some((r) => r.fxRate == null && Number(r.spend) !== 0),
+        spendCurrency,
+        shopCurrency,
+      ),
+    };
   } else if (stale.length) {
     try {
       fxOk = await refreshSpend(shop, cfg, stale, needsFx, spendCurrency, shopCurrency);
+      senasteMetaFel.delete(shop);
     } catch (e) {
+      senasteMetaFel.set(shop, Date.now());
       const msg =
         e instanceof MetaError && e.needsReauth
           ? "The Meta token has expired — reconnect under Settings."
@@ -262,6 +305,9 @@ export async function getSpend(
     ...fxStatus(needsFx, fxOk, spendCurrency, shopCurrency),
   };
 }
+
+/* Senaste misslyckade Meta-hämtningen per butik — styr backoffen ovan. */
+const senasteMetaFel = new Map<string, number>();
 
 /* Bakgrundshämtningar mot Meta: högst en per butik och minut. */
 const senasteMeta = new Map<string, number>();

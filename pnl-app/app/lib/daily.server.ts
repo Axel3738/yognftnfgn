@@ -129,6 +129,9 @@ function adminFromToken(shop: string, accessToken: string) {
           "X-Shopify-Access-Token": accessToken,
         },
         body: JSON.stringify({ query, variables: opts?.variables }),
+        /* Gruppsumman awaitar de här anropen — utan timeout blir ett hängt
+           svar från Shopify en panel som aldrig laddar för NÅGON butik. */
+        signal: AbortSignal.timeout(20_000),
       }),
   };
 }
@@ -141,12 +144,29 @@ function adminFromToken(shop: string, accessToken: string) {
  * (korta fönster via paginerings-snabbvägen, ett par sekunder) — dubbla
  * samtidiga hämtningar av samma fönster slås ändå ihop i fetchOrderData.
  */
+/* Pågående bakgrundshämtningar. Panelen behöver veta att EN hämtning är i
+   luften — inte bara att just den här requesten startade den — annars slutar
+   självomladdningen polla efter första försöket medan exporten fortfarande
+   kör, och skärmen fastnar på gamla siffror. */
+const pagaende = new Set<string>();
+export const bakgrundPagar = (shop: string): boolean => pagaende.has(shop);
+export function markeraPagaende<T>(shop: string, p: Promise<T>): Promise<T> {
+  pagaende.add(shop);
+  return p.finally(() => pagaende.delete(shop));
+}
+
+/* Senaste misslyckade hämtningen per butik. En butik med död nyckel (401)
+   ska inte betala ett nytt dömt API-anrop på varje gruppladdning — fem
+   minuters paus mellan försöken, som force inte får kringgå. */
+const senasteFel = new Map<string, number>();
+
 export async function refreshShopDaily(
   shop: string,
   from: string,
   to: string,
   opts?: { force?: boolean },
 ): Promise<boolean> {
+  if (Date.now() - (senasteFel.get(shop) ?? 0) < 5 * 60 * 1000) return false;
   if (!opts?.force && !farStartaBakgrund(shop)) return false;
   try {
     const [session, settings] = await Promise.all([
@@ -156,8 +176,10 @@ export async function refreshShopDaily(
     const token = session?.accessToken ? decrypt(session.accessToken) : null;
     if (!token) return false;
     await refreshDaily(adminFromToken(shop, token), shop, settings?.timezone ?? "UTC", from, to);
+    senasteFel.delete(shop);
     return true;
   } catch (e) {
+    senasteFel.set(shop, Date.now());
     console.error(`Bakgrundshämtning för ${shop} misslyckades:`, e);
     return false;
   }

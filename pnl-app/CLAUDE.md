@@ -194,6 +194,43 @@ tjänst + per butik: grupp/Meta-status, senaste spend/PnL-dag; `?probe=1`
 testar sparad Shopify-token, Meta-token och FX-anropet och visar RÅA fel).
 Ta bort rutten när den inte längre behövs — mönstret finns i git-historiken.
 
+### Gruppsumman visade gamla säljsiffror mot färska kostnader (aug 2026)
+Axel läste av dagens vinst i gemensamma vyn, såg för lite plus och var nära
+att fatta ett felbeslut på siffran. Orsak: **asymmetrisk färskhet.**
+Annonskostnaden hämtades synkront medan säljraderna bara uppdaterades i
+BAKGRUNDEN — färska fulla kostnader mot timgamla ofullständiga intäkter, och
+det nya syntes först vid en omladdning ingen visste behövdes. Regeln
+"panelen får aldrig vänta synkront på ett externt API" gäller fortfarande för
+den EGNA butiken, men i gruppsumman måste båda sidor av kalkylen komma från
+samma tidpunkt: hellre två sekunder än ett tal som ljuger. Nu hämtas
+medlemmarnas tre senaste dagar synkront (pagineringsvägen, alla parallellt)
+och spend via getSpend med `syncFresh`.
+En adversariell granskning (3 linser × verifierare) hittade 17 verkliga fel i
+den första fixen. De som satt kvar och nu är åtgärdade:
+- **Tyst för HÖG vinst:** gruppen hårdkodade `spendReliable: true` och
+  ignorerade getSpends `error`/`currencyMismatch` ⇒ saknade spend-dagar
+  räknades som noll annonskostnad. Butiken utesluts och namnges nu.
+- **Minutspärren inverterade:** när `farUppdateraMeta` sa nej föll koden ner i
+  den SYNKRONA grenen — spärren gjorde anropet blockerande i stället för att
+  hoppa över det. Nej betyder nu "servera cachen".
+- **Ingen backoff:** en död nyckel (401) gav ett nytt dömt API-anrop på varje
+  laddning, och `force` kringgick spärren. 5 min paus per butik, som force
+  inte får förbi (`senasteFel`/`senasteMetaFel`).
+- **Inga timeouts:** allt på gruppens awaitade väg (Shopify, Meta, ECB) saknade
+  gräns ⇒ ett hängt svar = panel som aldrig laddar. AbortSignal.timeout 8–20 s.
+- **En butiks undantag dödade hela summan** (Promise.all) ⇒ allSettled.
+- **Självomladdningen dog efter 6 s:** `refreshing` betydde "jag startade en",
+  inte "en pågår" ⇒ bulk-exporten på 30 s hann aldrig synas. In-flight-set i
+  daily.server (`bakgrundPagar`/`markeraPagaende`).
+- **Lång lucka + död nyckel** sa "hämtas just nu" i evighet ⇒ nyckeln sonderas
+  synkront med luckans sista dagar innan resten lovas bort till bakgrunden.
+- **UTC vs butikstid** i gruppens färskhetsgrind ⇒ `dayInTz(m.timezone)`.
+- **FX:** provisorisk kurs (hämtad före ECB:s publicering ~16 CET) hämtas om en
+  gång dagen efter; nödfallscachen fick 5 min felpaus så ett avbrott inte ger
+  två timeout-försök per butik och laddning.
+Diagnosrutten `/diag-grupp` är BORTTAGEN (oautentiserad, kunde trigga externa
+API-anrop) — återskapa mönstret ur git-historiken vid behov och ta bort igen.
+
 ### App Store (StonePNL)
 - client_id 8200cbe4502be19ac6ebe75ac65e3ad2, distribution public, managed
   pricing $9.99/30 dagar med **1 dags** gratis trial (Axel rättade: inte 7).

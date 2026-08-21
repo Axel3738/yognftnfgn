@@ -15,6 +15,11 @@ const TTL = 6 * 60 * 60 * 1000; // kurser rör sig inte snabbt nog för tätare
    utesluta hela butiken ur gruppsumman — det var precis vad som hände när
    Frankfurter hickade: butiker "försvann" ur den gemensamma vyn. */
 const NODFALL_TTL = 7 * 24 * 60 * 60 * 1000;
+/* Efter ett misslyckat försök: sluta jaga i fem minuter. Utan pausen gjorde
+   varje sidladdning under ett Frankfurter-avbrott två nya timeout-försök per
+   butik — fem butiker × två anrop framför en väntande panel. */
+const misslyckadesVid = new Map<string, number>();
+const RETRY_PAUS = 5 * 60 * 1000;
 
 /** Dagens kurs mellan två valutor. 1 = samma valuta. undefined = okänd. */
 export async function rate(from: string, to: string): Promise<number | undefined> {
@@ -25,21 +30,31 @@ export async function rate(from: string, to: string): Promise<number | undefined
   const hit = cache.get(key);
   if (hit && Date.now() - hit.at < TTL) return hit.rate;
 
-  // Två försök: enstaka nätverkshickor ska inte synas i UI:t.
+  const nodfall = () => (hit && Date.now() - hit.at < NODFALL_TTL ? hit.rate : undefined);
+
+  const fel = misslyckadesVid.get(key) ?? 0;
+  if (Date.now() - fel < RETRY_PAUS) return nodfall();
+
+  /* Två försök: enstaka nätverkshickor ska inte synas i UI:t. Timeout per
+     försök — gruppsumman awaitar det här, och ett hängt svar utan gräns är
+     en panel som aldrig laddar. */
   for (let försök = 0; försök < 2; försök++) {
     try {
-      const res = await fetch(`https://api.frankfurter.dev/v1/latest?base=${from}&symbols=${to}`);
+      const res = await fetch(`https://api.frankfurter.dev/v1/latest?base=${from}&symbols=${to}`, {
+        signal: AbortSignal.timeout(8_000),
+      });
       if (!res.ok) continue;
       const body = await res.json();
       const v = body?.rates?.[to];
       if (typeof v !== "number") continue;
       cache.set(key, { rate: v, at: Date.now() });
+      misslyckadesVid.delete(key);
       return v;
     } catch {
       /* nästa försök, eller nödfallet nedan */
     }
   }
 
-  if (hit && Date.now() - hit.at < NODFALL_TTL) return hit.rate;
-  return undefined;
+  misslyckadesVid.set(key, Date.now());
+  return nodfall();
 }

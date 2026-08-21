@@ -18,6 +18,7 @@ import { compute } from "./pnl.server";
 import { rate } from "./fx.server";
 import { readDaily, refreshShopDaily, shiftIso } from "./daily.server";
 import { getSpend } from "./meta.server";
+import { dayInTz } from "./shopify-data.server";
 import { decrypt } from "./crypto.server";
 import { t, type Lang } from "./texts";
 
@@ -57,6 +58,10 @@ async function summeraButik(
   | { ok: true; shop: string; currency: string; totals: ReturnType<typeof compute>["totals"]; kurs: number }
   | { ok: false; shop: string; reason: string }
 > {
+  /* "Idag" i BUTIKENS tidszon. UTC-dagen släpar efter mellan midnatt och
+     02:00 svensk tid, vilket gjorde både färskhetsfönstret och Metas
+     dagsklassning en dag för generösa. */
+  const idag = dayInTz(new Date(), m.timezone ?? "UTC");
   let daily = await readDaily(m.shop, from, to);
   if (daily.missingDays.length) {
     const first = daily.missingDays[0];
@@ -73,7 +78,16 @@ async function summeraButik(
       hamtningOk = await refreshShopDaily(m.shop, first, last, { force: true });
       if (hamtningOk) daily = await readDaily(m.shop, from, to);
     } else {
-      void refreshShopDaily(m.shop, first, last);
+      /* Lång lucka: sondera nyckeln synkront med luckans sista dagar
+         (pagineringsvägen, ett par sekunder) innan resten lovas bort till
+         bakgrunden. Utan sonderingen sa panelen "hämtas just nu" i all
+         evighet för en butik vars nyckel var död — FI:s 401 syntes aldrig. */
+      const probeFrom = shiftIso(last, -2) > first ? shiftIso(last, -2) : first;
+      hamtningOk = await refreshShopDaily(m.shop, probeFrom, last, { force: true });
+      if (hamtningOk) {
+        void refreshShopDaily(m.shop, first, last);
+        daily = await readDaily(m.shop, from, to);
+      }
     }
     /* Skillnaden syns i UI:t: "hämtas just nu" är sant bara när en hämtning
        faktiskt pågår. Slog den fel (död nyckel — FI:s token gav 401 i dagar
@@ -95,8 +109,7 @@ async function summeraButik(
        (pagineringssnabbvägen) och alla butiker går parallellt, så priset är
        ett par sekunder — och siffrorna är aldrig äldre än 10 minuter. */
     const senast = daily.lastDayFetchedAt?.getTime() ?? 0;
-    const idagUtc = new Date().toISOString().slice(0, 10);
-    if (to >= shiftIso(idagUtc, -1) && Date.now() - senast > 10 * 60 * 1000) {
+    if (to >= shiftIso(idag, -1) && Date.now() - senast > 10 * 60 * 1000) {
       const senasteFrom = from > shiftIso(to, -2) ? from : shiftIso(to, -2);
       const ok = await refreshShopDaily(m.shop, senasteFrom, to, { force: true });
       if (ok) daily = await readDaily(m.shop, from, to);
@@ -113,11 +126,11 @@ async function summeraButik(
      så butiker vars panel ingen öppnat halkade efter i dagar och summans
      annonskostnad blev tyst för låg. Nu fylls luckor på plats och färskheten
      sköts i bakgrunden, precis som för dagsraderna. */
+  const metaToken = m.metaAccessToken ? decrypt(m.metaAccessToken) : null;
   const metaCfg =
-    m.metaAdAccountId && m.metaAccessToken
-      ? { adAccountId: m.metaAdAccountId, accessToken: decrypt(m.metaAccessToken)! }
+    m.metaAdAccountId && metaToken
+      ? { adAccountId: m.metaAdAccountId, accessToken: metaToken }
       : null;
-  const idag = new Date().toISOString().slice(0, 10);
   const [costChanges, fixedRows, spendData] = await Promise.all([
     prisma.costChange.findMany({ where: { shop: m.shop } }),
     prisma.fixedCost.findMany({ where: { shop: m.shop } }),
@@ -127,9 +140,25 @@ async function summeraButik(
     getSpend(m.shop, metaCfg, from, to, idag, m.currency, m.spendCurrency, { syncFresh: true }),
   ]);
 
+  /* Annonskostnaden måste vara komplett för att summan ska betyda något.
+     Saknas den (död Meta-nyckel, rate limit) eller gick den inte att räkna om
+     till butikens valuta, utesluts butiken och namnges — annars räknas
+     saknade dagar som noll annonskostnad och gruppens vinst blir för HÖG.
+     Det var exakt den lögnen som fick Axel att nästan fatta fel beslut. */
+  if (spendData.currencyMismatch) {
+    return {
+      ok: false,
+      shop: m.shop,
+      reason: T.group.fxUnavailable(spendData.currencyMismatch.spend, spendData.currencyMismatch.shop),
+    };
+  }
+  if (metaCfg && spendData.error) {
+    return { ok: false, shop: m.shop, reason: T.group.spendUnavailable };
+  }
+
   const r = compute({
     from, to,
-    spendReliable: true,
+    spendReliable: Boolean(!metaCfg || !spendData.error),
     fixedMonthlyTotal: fixedRows.reduce((a, x) => a + Number(x.monthlyAmount), 0),
     sales: daily.sales,
     sessions: [],
@@ -165,7 +194,16 @@ export async function summeraGrupp(
 
   /* Sekventiellt blev fem butiker fem väntetider i rad — parallellt är
      summan klar när den långsammaste butiken är det. */
-  const utfall = await Promise.all(medlemmar.map((m) => summeraButik(m, from, to, visaValuta, T)));
+  const utfall = (
+    await Promise.allSettled(medlemmar.map((m) => summeraButik(m, from, to, visaValuta, T)))
+  ).map((r, i) => {
+    if (r.status === "fulfilled") return r.value;
+    /* En butiks fel (DB-hicka, oväntat undantag) fick tidigare hela
+       gruppsumman att kasta — och panelen visade "Application Error" i
+       stället för de fyra butiker som gick bra. */
+    console.error(`Gruppsummering för ${medlemmar[i].shop} misslyckades:`, r.reason);
+    return { ok: false as const, shop: medlemmar[i].shop, reason: T.group.refreshFailed };
+  });
 
   const totals = noll();
   const rows: GroupResult["rows"] = [];

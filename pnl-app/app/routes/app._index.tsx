@@ -28,7 +28,14 @@ import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { compute, rangeWindow } from "../lib/pnl.server";
 import { applyCurrentCosts, dayInTz, fetchShopInfo, loadCatalog } from "../lib/shopify-data.server";
-import { farStartaBakgrund, readDaily, refreshDaily, shiftIso } from "../lib/daily.server";
+import {
+  bakgrundPagar,
+  farStartaBakgrund,
+  markeraPagaende,
+  readDaily,
+  refreshDaily,
+  shiftIso,
+} from "../lib/daily.server";
 import { getSpend } from "../lib/meta.server";
 import { summeraGrupp } from "../lib/group.server";
 import { decrypt } from "../lib/crypto.server";
@@ -97,12 +104,18 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
   const lastAt = daily.lastDayFetchedAt?.getTime() ?? 0;
   const oldestAt = daily.oldestFetchedAt?.getTime() ?? 0;
   const dataAgeMin = lastAt ? Math.round((Date.now() - lastAt) / 60000) : 0;
-  let refreshing = false;
+  /* Startvärdet är "pågår det redan en hämtning?" — inte "startade JAG en?".
+     Skillnaden avgör om självomladdningen fortsätter polla: en bulk-export
+     tar ~30 s, och minutspärren hindrar nästa laddning från att starta en ny,
+     så utan det här slutade panelen polla efter 6 sekunder och stod kvar på
+     gamla siffror tills någon laddade om för hand. */
+  let refreshing = bakgrundPagar(shop);
   const refreshBg = (f: string, tt: string) => {
     refreshing = true;
-    void refreshDaily(admin, shop, timezone, f, tt).catch((e) =>
-      console.error("Bakgrundsuppdatering misslyckades:", e),
-    );
+    void markeraPagaende(
+      shop,
+      refreshDaily(admin, shop, timezone, f, tt),
+    ).catch((e) => console.error("Bakgrundsuppdatering misslyckades:", e));
   };
   if (to >= today && Date.now() - lastAt > 10 * 60 * 1000 && farStartaBakgrund(shop)) {
     refreshBg(from > shiftIso(today, -2) ? from : shiftIso(today, -2), today);
