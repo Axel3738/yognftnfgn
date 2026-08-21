@@ -1,0 +1,20 @@
+{
+  "_kommentar": "Sidor som blockerar automatisk hämtning. Länkarna är bekräftade via sökmotorträffar 2026-08-21 (annonsantalen är sajtens egna siffror den dagen). Öppna dem i webbläsaren — där släpps du in.",
+  "objektvision": {
+    "status": "blockerad",
+    "orsak": "Alla URL:er 302-omdirigeras till /clearance ('Verifierar att du är en riktig person'). Gäller även detaljsidorna i deras egen sitemap. /clearance är spärrad i deras robots.txt, så sidan går inte att läsa utan att kringgå bot-skyddet.",
+    "kontrollerat": "2026-08-21",
+    "lankar": [
+      { "vad": "Kontorslokaler Hisingen (hela)", "url": "https://objektvision.se/kontorslokaler/g%C3%B6teborg/hisingen", "annonser": 319, "niva": 1 },
+      { "vad": "Kontorslokaler Centrala Hisingen (Lindholmen, Lundby, Kvillebäcken, Brämaregården)", "url": "https://objektvision.se/kontorslokaler/g%C3%B6teborg/centrala_hisingen", "annonser": 53, "niva": 1 },
+      { "vad": "Kontorslokaler Norra Hisingen (Backa, Kärra, Tuve, Säve)", "url": "https://objektvision.se/kontorslokaler/g%C3%B6teborg/norra_hisingen", "annonser": 82, "niva": 1 },
+      { "vad": "Kontorslokaler Västra Hisingen (Torslanda, Björlanda, Biskopsgården, Arendal)", "url": "https://objektvision.se/kontorslokaler/g%C3%B6teborg/v%C3%A4stra_hisingen", "annonser": 36, "niva": 1 },
+      { "vad": "Alla lediga lokaler Hisingen (bredare — fångar råa ytor och kombilokaler)", "url": "https://objektvision.se/lediga_lokaler/g%C3%B6teborg/hisingen", "annonser": 492, "niva": 1 },
+      { "vad": "Kontorshotell & coworking Hisingen (ditt absoluta nej — men bra att se vad som finns)", "url": "https://objektvision.se/kontorshotell_coworking/g%C3%B6teborg/hisingen", "annonser": 29, "niva": 1 },
+      { "vad": "Kontorslokaler Kungälv", "url": "https://objektvision.se/kontorslokaler/kung%C3%A4lv", "annonser": 41, "niva": 2 },
+      { "vad": "Alla lediga lokaler Kungälv", "url": "https://objektvision.se/lediga_lokaler/kung%C3%A4lv", "annonser": 78, "niva": 2 },
+      { "vad": "Kontorslokaler hela Göteborg (om nivå 1–2 blir för tunt)", "url": "https://objektvision.se/kontorslokaler/g%C3%B6teborg", "annonser": 1654, "niva": 3 }
+    ],
+    "tips": "Sidorna har paginering med ?p=2, ?p=3 osv. Sätt ytfiltret till minst 100 kvm i deras eget filter — det går inte att koda in i länken."
+  }
+}

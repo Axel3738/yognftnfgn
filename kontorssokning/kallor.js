@@ -33,7 +33,7 @@ function lank(url, text) {
   return `[${esc(text || 'öppna')}](${url})`;
 }
 
-export function byggKallor(raa) {
+export function byggKallor(raa, manuella = {}) {
   const loggar = raa.sokloggar || [];
   const objekt = [...(raa.godkanda || []), ...(raa.underkanda || [])];
 
@@ -103,6 +103,25 @@ export function byggKallor(raa) {
   }
   rader.push('');
 
+  // Manuellt kartlagda sidor jag inte kom in på
+  for (const [namn, m] of Object.entries(manuella)) {
+    if (namn.startsWith('_')) continue;
+    rader.push(`## ${namn.charAt(0).toUpperCase() + namn.slice(1)} — kartlagd, inte hämtad`);
+    rader.push('');
+    rader.push(`**Varför:** ${esc(m.orsak)}`);
+    rader.push('');
+    rader.push(`Kontrollerat ${m.kontrollerat}. Länkarna nedan fungerar i din webbläsare — annonsantalen är sajtens egna siffror den dagen.`);
+    rader.push('');
+    rader.push('| Nivå | Sökning | Annonser | Öppna |');
+    rader.push('|---:|---|---:|---|');
+    for (const l of m.lankar || []) {
+      rader.push(`| ${l.niva} | ${esc(l.vad)} | ${l.annonser ?? '—'} | ${lank(l.url, 'öppna')} |`);
+    }
+    rader.push('');
+    if (m.tips) rader.push(`**Tips:** ${esc(m.tips)}`);
+    rader.push('');
+  }
+
   // Full logg
   rader.push('## Full sökningslogg');
   rader.push('');
@@ -142,7 +161,11 @@ export function byggKallor(raa) {
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const raa = JSON.parse(readFileSync(join(HAR, 'raa.json'), 'utf8'));
-  const md = byggKallor(raa);
+  let manuella = {};
+  try {
+    manuella = JSON.parse(readFileSync(join(HAR, 'manuella-lankar.json'), 'utf8'));
+  } catch {}
+  const md = byggKallor(raa, manuella);
   writeFileSync(join(HAR, 'kallor.md'), md);
   console.log(`kallor.md skriven (${md.split('\n').length} rader)`);
 }
