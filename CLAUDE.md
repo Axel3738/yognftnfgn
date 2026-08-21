@@ -148,6 +148,7 @@ installera för OS:et). Kör dessa **från repo-roten**:
 
 ```bash
 npm run quota      # node pipeline/quota.mjs      — brief-kvoten (mål nr 1)
+npm run shopify    # node shopify/token.mjs       — verifierar Shopify-kopplingen per marknad
 npm run dash       # node dashboard/build.mjs     — bygger dashboard/index.html
 npm run status     # node dashboard/cli.mjs status
 npm run review     # node dashboard/cli.mjs review-queue
@@ -182,6 +183,7 @@ Det finns ingen linter och ingen byggkedja i OS:et — `npm test` är hela grind
 | Produkt-konfig + launch-logg | `products/products.json` |
 | Produktminne per produkt | `products/<id>/` |
 | Kvot-skriptet | `pipeline/quota.mjs` |
+| Shopify-koppling per marknad (hämtar token ur env + verifierar) | `shopify/token.mjs` |
 | Namnkonventionen | `docs/naming-convention.md` |
 | Punchline-bank + vinnande lines | `docs/winning-lines.md` |
 | Ad-tracker (hypotes → utfall → lärdom) | `docs/ad-tracker.md` |
