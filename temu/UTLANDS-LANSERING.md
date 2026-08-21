@@ -233,6 +233,27 @@ läge, så modellen hittade på det. Regeln: generera bara scener där referensb
 visar produktens form i det läge scenen kräver. Finns en riktig infografik/
 galleribild från Temu som visar samma sak går den ALLTID före en AI-bild.
 
+## Kaching Bundles (mängdrabatter)
+
+**Det finns inget API.** Verifierat 2026-08-21 i sidkoden på bäverbutiken.se:
+appen är installerad (app embed `kaching-bundles-1952` + loader.js), men deal-
+konfigurationen ligger i Kachings egen backend och hämtas av deras script i
+webbläsaren — inga metafält i Shopify att skriva, ingen MCP, inget CLI. Deals
+kan alltså INTE skapas via Shopify Admin API.
+
+**Lösningen är att inga per-produkt-steg behövs:** Kaching kan applicera EN deal
+på "Alla produkter" (eller en collection). Axel ställer in rabattstegen EN gång i
+Kaching-admin — därefter får varje ny produkt vi laddar upp widgeten automatiskt.
+
+**Marginalregeln:** en rabattstege är säker om paketpriset ≥ 3 × paketkostnaden
+(landad kostnad för antalet + 2,9 €/order) — då håller BE-ROAS ≤ 1,5.
+Maxrabatt för antal n: `1 − 3 × kostnad_n / (n × styckpris)`.
+Offert 2 (SE, räknat 2026-08-21): båtmotor max 18/25 % (2-/3-pack), MC 36/46 %,
+dörrlist 38/49 %, kranskydd 39/51 %, plysch 26/34 %. → En standardstege på
+**2 st −10 % / 3 st −15 %** är säker på ALLA fem. Vid varje ny offert: räkna om
+maxrabatterna och flagga produkter som inte klarar standardstegen (de undantas
+i Kaching).
+
 ## Galleri-integrationen 2026-08-21 (offert 2 + båtmotorskydd)
 
 Axel laddade upp Temu-galleriets bilder som zippar; allt integrerat i SE med
