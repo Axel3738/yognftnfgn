@@ -170,6 +170,19 @@ varandra i fyra butiker. Dessa regler är obligatoriska för varje produkt:
 3. **Minst 2 olika bilder för en full produktsida — helst så många som möjligt**
    (fler bilder höjer konverteringsgraden). 1 bild = galleri endast, inga
    bildblock i beskrivningen, produkten flaggas "väntar på bilder".
+   ⚠️ **SKÄRPNING (Axel 2026-08-21, efter offert 2-leveransen): 2 bilder är
+   MINIMUM, inte klart.** En färdig produktsida har huvudbild + Temu-galleriets
+   spec-/infografikbilder (översatta till marknadens språk med sharp-metoden)
+   + AI-bilder (miljö och i-användning, 1:1). Sidorna läcker inte galleriet —
+   **be Axel klistra in galleribilderna INNAN leveransen**, som ett steg i
+   jobbet, inte som en fotnot efteråt. Axels dom när steget hoppades över:
+   "bare minimum … kastjobbat".
+3b. **Researchen ska svara på NÄR och VAR produkten används** — inte bara vilket
+   problem den löser. Båtmotorskyddet sattes i sjön på AI-bilden, men produkten
+   används vid VINTERFÖRVARING PÅ LAND (båten på trailer/bockar; skyddet håller
+   väder ute och gör motorn ointressant för tjuvar — ingen kapell-täcker motorn
+   i vattnet). Fel användningskontext = fel miljöbild, fel copy och fel vinkel,
+   även när själva produkten är rätt återgiven.
 4. **GIF:en ska visa produktens FUNKTION** — aldrig en inzoomad stillbild.
    Finns en video på Temu-sidan: ta videon (Axel kopierar videoadressen), lägg in
    den eller konvertera+komprimera till GIF. Finns ingen funktionsvisning: ingen GIF.
@@ -201,6 +214,22 @@ visar produktens form i det läge scenen kräver. Finns en riktig infografik/
 galleribild från Temu som visar samma sak går den ALLTID före en AI-bild.
 
 ## Prismetoden
+
+### ⚠️ NY REGEL för alla NYA produkter (Axel 2026-08-21)
+
+**Pris = 3 × landad kostnad (per land, ur offerten) + 2,9 € — och 2,9 €-skatten
+gäller BARA EU-butikerna (SE/DK/FI).** Norge och UK har ingen 2,9 €-avgift →
+där blir priset märkbart lägre: pris = 3 × landad kostnad, rakt av.
+3×-multipeln ger inbyggd break-even-ROAS på minst 1,5. Landad kostnad tas ur
+offertbladets kolumn för respektive land (kostnaderna skiljer per land!),
+konverteras till lokal valuta och avrundas till landets prispunkter som vanligt
+(9-slut / X,90 / X.99). Faktormetoden nedan gäller bara den GAMLA katalogen.
+
+*Tillämpad 2026-08-21 på offert 2-produkterna i SE (USD→SEK 9,6 + 2,9 € ≈ 32 kr):
+båtmotorskydd 519, MC-kapell 279, plyschtofflor 359; dörrlist 259 och kranskydd
+249 landade på samma 9-slut som förut.*
+
+### Gamla katalogen: faktormetoden
 
 Kostnadsbaserad per land — INTE valutakonvertering. CWD:s frakt skiljer per land
 (tofflorna: SE $9,15 · NO $10,21 · DK $10,45 · FI $12,08 · UK $8,40 landad kostnad).
@@ -261,7 +290,7 @@ språk, ett pris för alla storlekar. SKU-mönstret är identiskt i alla butiker
 | 27 | Dörrbottenlist — ⚠️ COPY OMSKRIVEN 2026-08-21: gamla var gissad utan bild (självhäftande/sax/lim) — produkten är en textilhylsa med skumcylinder som TRÄS på dörrbladet, 94 cm, springor upp till 3 cm, kaffebrun | TEMU-601099515911841 | EN | ha-2-20-4 | ingen GIF | CDN(SE)/dorrlist-huvud.jpg (Temus egen, COFFEE-bannern bortskuren) + dorrlist-miljo.png (AI) | 259 | 289 | 189 | 24,90 | 18.99 |
 | 28 | Kranskydd frost 420D | TEMU-601101411598143 | EN | ha-10-2-4 | zoom-GIF ERSATT 2026-08-21 med AI-miljöbild (frostvägg) | CDN(SE)/temu3-kranskydd-1.jpg + kranskydd-miljo.png | 249 | 279 | 179 | 23,90 | 17.99 |
 | 29 | Plyschtofflor herr | TEMU-601102047663138-<4041…4849> | 5 strl (40-41…48-49, tolkning av "40-49" — ⚠️ EJ bekräftad av Axel) | aa-8-7 | zoom-GIF ERSATT 2026-08-21 med AI-bild i användning (fötter, ansiktsfritt) | CDN(SE)/temu3-plyschtofflor-1.jpg + plyschtofflor-miljo.png | 389 | 439 | 289 | 37,90 | 28.99 |
-| 30 | Båtmotorskydd 420D Heltäckande — NY 2026-08-21 ur offert 2. ⚠️ Temu-bilden visar 3 färger men offerten säger "only black" → bara svart säljs, huvudbilden är den svarta URKLIPPT ur triobilden (grannarna bortmålade). 9 storleksvarianter (offerten kvoterad på 250–350 hk, $16.9 landad) | TEMU-605748427852371-<0-5…250-350> | 9 storlekar (hk) | vp-1-5-3-6 | ingen GIF | CDN(SE)/batmotorskydd-svart.jpg + batmotorskydd-miljo.png (AI, heltäckt motor — 2 omtag krävdes innan propellern slutade sticka ut) | 569 | 639 | 419 | 54,90 | 41.99 |
+| 30 | Båtmotorskydd 420D Heltäckande — NY 2026-08-21 ur offert 2. ⚠️ Temu-bilden visar 3 färger men offerten säger "only black" → bara svart säljs, huvudbilden är den svarta URKLIPPT ur triobilden. 9 storleksvarianter. **OMPOSITIONERAD (Axel 2026-08-21): produkten är för VINTERFÖRVARING PÅ LAND** — copy och miljöbild bytta till upplagd båt på trailer (första AI-bilden hade motorn i sjön = fel kontext); stöldvinkeln inne ("övertäckt motor = tråkigare byte"). Propellern ur AI-bilden togs bort med riktad andrapass-edit | TEMU-605748427852371-<0-5…250-350> | 9 storlekar (hk) | vp-1-5-3-6 | ingen GIF | CDN(SE)/batmotorskydd-svart.jpg + batmotorskydd-vinter.png (AI) | **519** (nya 3×-regeln) | räknas per land vid utrullning: 3 × landets landade kostnad, + 2,9 € endast DK/FI | | | |
 | 31 | Herrtofflor inne (comfy) — ⚠️ VÄNTAR: ingen offert (leverantören: "similar but with a moq 3000"), inget SE-pris går att räkna → EJ uppladdad. Axel avgör om den ska offereras om | TEMU-601101251777925 | — | — | — | — | — | — | — | — | — |
 
 Ur samma quote HOPPADES ÖVER: motorskydd 605748427852371 (= befintliga "Marint
