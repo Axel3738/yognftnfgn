@@ -257,10 +257,12 @@ språk, ett pris för alla storlekar. SKU-mönstret är identiskt i alla butiker
 
 | # | Produkt | SKU-bas | Varianter | Kategori | GIF/bild | SE | NO | DK | FI | UK |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 26 | MC-kapell 220×120 | TEMU-601102992953649-<CG/SB/FD/FF/CD/CF> | 6 färger | vp-1-5-3-6 | temu3-mc-kapell.gif + -1.jpg | 289 | 329 | 209 | 27,90 | 20.99 |
-| 27 | Dörrbottenlist | TEMU-601099515911841 | EN | ha-2-20-4 | **ingen bild — text tills Axel skickar** | 259 | 289 | 189 | 24,90 | 18.99 |
-| 28 | Kranskydd frost 420D | TEMU-601101411598143 | EN | ha-10-2-4 | temu3-kranskydd.gif + -1.jpg | 249 | 279 | 179 | 23,90 | 17.99 |
-| 29 | Plyschtofflor herr | TEMU-601102047663138-<4041…4849> | 5 strl (40-41…48-49, tolkning av "40-49") | aa-8-7 | temu3-plyschtofflor.gif + -1.jpg | 389 | 439 | 289 | 37,90 | 28.99 |
+| 26 | MC-kapell 220×120 — 6 färger BEKRÄFTADE i offerten 2026-08-21 (Cloud Grey/Solid Black/Frosted Dragon/Frosted Floral/Clear Dragon/Clear Floral) | TEMU-601102992953649-<CG/SB/FD/FF/CD/CF> | 6 färger | vp-1-5-3-6 | zoom-GIF ERSATT 2026-08-21 med AI-miljöbild (regn) | CDN(SE)/temu3-mc-kapell-1.jpg + mc-kapell-miljo.png | 289 | 329 | 209 | 27,90 | 20.99 |
+| 27 | Dörrbottenlist — ⚠️ COPY OMSKRIVEN 2026-08-21: gamla var gissad utan bild (självhäftande/sax/lim) — produkten är en textilhylsa med skumcylinder som TRÄS på dörrbladet, 94 cm, springor upp till 3 cm, kaffebrun | TEMU-601099515911841 | EN | ha-2-20-4 | ingen GIF | CDN(SE)/dorrlist-huvud.jpg (Temus egen, COFFEE-bannern bortskuren) + dorrlist-miljo.png (AI) | 259 | 289 | 189 | 24,90 | 18.99 |
+| 28 | Kranskydd frost 420D | TEMU-601101411598143 | EN | ha-10-2-4 | zoom-GIF ERSATT 2026-08-21 med AI-miljöbild (frostvägg) | CDN(SE)/temu3-kranskydd-1.jpg + kranskydd-miljo.png | 249 | 279 | 179 | 23,90 | 17.99 |
+| 29 | Plyschtofflor herr | TEMU-601102047663138-<4041…4849> | 5 strl (40-41…48-49, tolkning av "40-49" — ⚠️ EJ bekräftad av Axel) | aa-8-7 | zoom-GIF ERSATT 2026-08-21 med AI-bild i användning (fötter, ansiktsfritt) | CDN(SE)/temu3-plyschtofflor-1.jpg + plyschtofflor-miljo.png | 389 | 439 | 289 | 37,90 | 28.99 |
+| 30 | Båtmotorskydd 420D Heltäckande — NY 2026-08-21 ur offert 2. ⚠️ Temu-bilden visar 3 färger men offerten säger "only black" → bara svart säljs, huvudbilden är den svarta URKLIPPT ur triobilden (grannarna bortmålade). 9 storleksvarianter (offerten kvoterad på 250–350 hk, $16.9 landad) | TEMU-605748427852371-<0-5…250-350> | 9 storlekar (hk) | vp-1-5-3-6 | ingen GIF | CDN(SE)/batmotorskydd-svart.jpg + batmotorskydd-miljo.png (AI, heltäckt motor — 2 omtag krävdes innan propellern slutade sticka ut) | 569 | 639 | 419 | 54,90 | 41.99 |
+| 31 | Herrtofflor inne (comfy) — ⚠️ VÄNTAR: ingen offert (leverantören: "similar but with a moq 3000"), inget SE-pris går att räkna → EJ uppladdad. Axel avgör om den ska offereras om | TEMU-601101251777925 | — | — | — | — | — | — | — | — | — |
 
 Ur samma quote HOPPADES ÖVER: motorskydd 605748427852371 (= befintliga "Marint
 Motorskydd 420D" — quoten är facit för den, ingen ny produkt) och memory foam-tofflor
