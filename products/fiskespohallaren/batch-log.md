@@ -38,6 +38,8 @@
 | Rodholder_CS_3_1 | Sann offer-static 289 kr/72 kr per st | Redo |
 | Rodholder_PD_10_1 | Risk/skydda ditt dyraste spö | Redo |
 
-**Notion-uppladdning 2026-08-21 (`/notion`):** alla 15 annonser uppladdade till Fish rod holder-hubben som items i Draft + `Video - Pending Approval`, hela briefen inklistrad i varje item + länk till brief-filen i repot. OBS: ingen Drive-mapp finns för batch #2 — brief-källan är repot (`docs/briefs/rodholder-batch2-2026-08-21/`) + zipparna som levererades i chatten. SP_3_1-itemet är märkt ⛔ BLOCKED (väntar på riktig recensionstext), GT_3_H1 märkt Tier 3.
+**Notion-uppladdning 2026-08-21 (`/notion`):** alla 15 annonser uppladdade till Fish rod holder-hubben som items i Draft + `Video - Pending Approval`, hela briefen inklistrad i varje item. SP_3_1-itemet är märkt ⛔ BLOCKED (väntar på riktig recensionstext), GT_3_H1 märkt Tier 3.
+
+**Drive-mapp skapad 2026-08-21 (Axels go):** `BÄVER/TEMU-601104615671651 Fiskespöhållare/Batch #2 briefs (2026-08-21)/` (mapp-id `1tzWG2if8SsFI2TpAIAz-cfVF7OD20nrM`) med undermappar `video-ads-briefs` (README + 7 brief-docs) och `image-ads-briefs` (README + 6 brief-docs) — alla som Google Docs. Alla 15 Notion-items har Drive-länken överst ("Brief in Drive (use this)"). Mappnamnet följer SOP-06 (SKU + referensnamn). Reference-asset-BILDERNA ligger i `image-ads-briefs.zip` (levererad i chatten) + repot — inte i Drive; README:erna pekar på produktsidan för produktsanning. Brief-källan i repot: `docs/briefs/rodholder-batch2-2026-08-21/`.
 
 **Utfall:** fylls i vid nästa `/cs`-avläsning (tidigast 3 dygn efter launch, ≥5 köp för marginal-CPA — 2b-grinden).
