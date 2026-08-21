@@ -133,6 +133,32 @@ UK  BEAVER-MARINE-049
 Numret finns i `market-expansion/uk/output/catalog.uk.json` via `sourceHandle`.
 Verktyg: `temu/synka-priser.mjs`.
 
+## Bildreglerna (Axel, 2026-08-20 — efter pingisskandalen)
+
+Bakgrund: bordtennistränaren fick en DDG-sökträff som bild — en golvstående modell
+från en ANNAN listning — medan copyn beskrev en bordsklämma. Bild och text motsade
+varandra i fyra butiker. Dessa regler är obligatoriska för varje produkt:
+
+1. **Endast produktens egna bilder.** Källa 1: galleriet på produktens Temu-sida
+   (Axel högerklickar → kopiera bildadress). Källa 2: huvudbilden ur sidans
+   HTML-skal (`img.kwcdn.com/product/fancy/…w/800` — hämtas med curl, är alltid
+   produktens egen). **Bildsökningar (DDG m.fl.) är HELT förbjudna som produktbilder.**
+2. **Research är facit för copyn.** Läs Temu-sidans egen produktbeskrivning
+   (`ra_beskrivning` ur `hamta.mjs`), sök lite om produkttypen, förstå vilket
+   problem den löser — DÄRIFRÅN skrivs copyn. Bilderna kontrolleras sedan mot
+   copyn: motsäger de varandra är det stopp tills det är utrett.
+3. **Minst 2 olika bilder för en full produktsida — helst så många som möjligt**
+   (fler bilder höjer konverteringsgraden). 1 bild = galleri endast, inga
+   bildblock i beskrivningen, produkten flaggas "väntar på bilder".
+4. **GIF:en ska visa produktens FUNKTION** — aldrig en inzoomad stillbild.
+   Finns en video på Temu-sidan: ta videon (Axel kopierar videoadressen), lägg in
+   den eller konvertera+komprimera till GIF. Finns ingen funktionsvisning: ingen GIF.
+5. **Klarar produkten inte 1–4 laddas den INTE upp.** Den hamnar på väntelistan
+   i leveransen i stället. Hellre tre kompletta än sex halva.
+6. **Leverans per produkt:** när en produkt är klar skickas butikslänken till Axel
+   direkt — han granskar och ger feedback per produkt. Ingen bulk-avrapportering
+   av osedda sidor.
+
 ## Prismetoden
 
 Kostnadsbaserad per land — INTE valutakonvertering. CWD:s frakt skiljer per land
