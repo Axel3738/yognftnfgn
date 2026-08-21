@@ -266,7 +266,8 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const params = JSON.parse(readFileSync(join(HAR, 'parametrar.json'), 'utf8'));
   const raa = JSON.parse(readFileSync(join(HAR, 'raa.json'), 'utf8'));
   const hamtadDatum = new Date().toISOString().slice(0, 10);
-  const objekt = byggObjekt(Array.isArray(raa) ? raa : raa.objekt, params, hamtadDatum);
+  const kallor = Array.isArray(raa) ? raa : raa.godkanda || raa.objekt || [];
+  const objekt = byggObjekt(kallor, params, hamtadDatum);
   writeFileSync(join(HAR, 'objekt.json'), JSON.stringify(objekt, null, 2) + '\n');
   if (!process.argv.includes('--tyst')) {
     const perNiva = objekt.reduce((a, o) => ((a[o.niva] = (a[o.niva] || 0) + 1), a), {});
