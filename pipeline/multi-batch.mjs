@@ -231,7 +231,9 @@ for (const camp of cfg.campaigns) {
       const copy = m.copy ? { ...adsetCopy, ...m.copy } : adsetCopy;
       if (finnsIAdset.has(motif)) { console.log(`  · ${motif} finns redan i adsetet — hoppar`); continue; }
       try {
-        const r = resolveMotif(motif);
+        // m.media: bibliotekstitel när den skiljer sig från annonsnamnet
+        // (t.ex. filen "..._4x5" ska bli annonsen "Enginecover_SO_21_H1")
+        const r = resolveMotif(m.media || motif);
         if (!r) throw new Error('media saknas i biblioteket');
         const form = { name: `${motif}_creative`, degrees_of_freedom_spec: NO_ENHANCEMENTS };
         if (r.kind === 'video') {
