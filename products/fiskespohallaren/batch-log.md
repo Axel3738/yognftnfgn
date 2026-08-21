@@ -11,6 +11,8 @@
 
 **Avläsning 2026-08-21 (~2,5 dygn):** 3 705 kr, 33 köp, CPA 112,28, ROAS 3,93, CTR 4,21 %, CPM 143. Funnel 25 933 → 717 LPV → 62 ATC → 33 köp. Shopify: 37 ordrar/17 918 kr sedan 17/8. Full analys: `docs/briefs/rodholder-batch2-2026-08-21/RAPPORT.md`.
 
+**Avläsning #2, 2026-08-21 ~06:15 UTC (`/cs`):** delta sedan morgonens avläsning: +4,77 kr spend, 0 nya köp, budget oförändrad 4 000 kr/dag, alla 5 felpris-pauser står kvar. Inga domar ändrade — PD_1_H1 fortfarande under spend-grinden (242,54 kr). Marginal-CPA-grinden (2b: ≥3 dygn, ≥5 köp) öppnar tidigast 2026-08-24. Ingen ny batch byggd: batch #2 (15 briefer ≥ kvoten 14) är levererad men ej launchad — nästa riktiga `/cs` körs efter launch + ≥3 dygns data.
+
 **Åtgärder 2026-08-21 (denna session):**
 - Pausade 5 felpris-annonser (149 kr mot sidans 289 kr): 120249850587690291, 120249850594370291, 120249850597910291, 120249850596710291, 120249856850670291. Den sista hade rättad body men "4-PACK – 149 KR" inbränt i bilden.
 - Registrerade produkten i products.json (BE 1,50/285 kr, target 2,40/178 kr, budget 4 000 kr/dag → kvot 14/cykel).
