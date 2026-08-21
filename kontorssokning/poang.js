@@ -268,6 +268,23 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const hamtadDatum = new Date().toISOString().slice(0, 10);
   const kallor = Array.isArray(raa) ? raa : raa.godkanda || raa.objekt || [];
   const objekt = byggObjekt(kallor, params, hamtadDatum);
+
+  // Manuella rättelser (t.ex. sajter som inte går att granska automatiskt) läggs på sist.
+  let rattelser = {};
+  try {
+    rattelser = JSON.parse(readFileSync(join(HAR, 'rattelser.json'), 'utf8'));
+  } catch {}
+  let antalRattade = 0;
+  for (const o of objekt) {
+    const r = (o.kalla_url || []).map((u) => rattelser[u]).find(Boolean);
+    if (!r) continue;
+    antalRattade++;
+    if (r.granskning) o.granskning = r.granskning;
+    if (r.kontorsdel_kvm != null) o.kontorsdel_kvm = r.kontorsdel_kvm;
+    if (r.lagg_till_plus) o.plus = [...new Set([...o.plus, ...r.lagg_till_plus])];
+    if (r.lagg_till_minus) o.minus = [...new Set([...o.minus, ...r.lagg_till_minus])];
+  }
+  if (antalRattade) console.log(`${antalRattade} objekt fick manuella rättelser ur rattelser.json`);
   writeFileSync(join(HAR, 'objekt.json'), JSON.stringify(objekt, null, 2) + '\n');
   if (!process.argv.includes('--tyst')) {
     const perNiva = objekt.reduce((a, o) => ((a[o.niva] = (a[o.niva] || 0) + 1), a), {});

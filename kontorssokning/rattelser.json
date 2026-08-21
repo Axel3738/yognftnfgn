@@ -1,0 +1,20 @@
+{
+  "_kommentar": "Manuella rättelser och granskningsnoteringar som inte kommer ur den automatiska insamlingen. Nyckeln är objektets kalla_url. Tillämpas av poang.js efter poängsättningen, så de överlever en omkörning.",
+  "https://palmungmellin.se/lokaler/gustaf-dalensgatan-19-helt-nyrenoverad-kontorslokal-pa-221-kvm": {
+    "granskning": { "lage": "bekraftad", "notering": "adress ✓, yta ✓ — bekräftad manuellt 2026-08-21; sajten bryter TLS mot automatisk hämtning", "kontrollerad": "https://palmungmellin.se/lokaler/gustaf-dalensgatan-19-helt-nyrenoverad-kontorslokal-pa-221-kvm" }
+  },
+  "https://palmungmellin.se/lokaler/jaernmalmsgatan-1-lager-kontor-pa-1-955-kvm": {
+    "granskning": { "lage": "bekraftad", "notering": "adress ✓, yta ✓ — bekräftad manuellt 2026-08-21; sajten bryter TLS mot automatisk hämtning", "kontrollerad": "https://palmungmellin.se/lokaler/jaernmalmsgatan-1-lager-kontor-pa-1-955-kvm" },
+    "kontorsdel_kvm": 160,
+    "lagg_till_minus": ["av 1 955 kvm är bara ca 160 kvm kontor — resten är lager som inte behövs"]
+  },
+  "https://palmungmellin.se/lokaler/kontor-lager-235-kvm-tuvevaegen-39": {
+    "granskning": { "lage": "bekraftad", "notering": "adress ✓, yta ✓ — bekräftad manuellt 2026-08-21; sajten bryter TLS mot automatisk hämtning", "kontrollerad": "https://palmungmellin.se/lokaler/kontor-lager-235-kvm-tuvevaegen-39" },
+    "lagg_till_plus": ["dusch finns (WC med dusch)"],
+    "lagg_till_minus": ["annonsen delar inte upp hur mycket av de 235 kvm som är kontor"]
+  },
+  "https://palmungmellin.se/lokaler/exportgatan-25-29-lager-och-kontor-pa-upp-till-ca-8000-kvm": {
+    "granskning": { "lage": "bekraftad", "notering": "adress ✓, yta ✓ — bekräftad manuellt 2026-08-21; sajten bryter TLS mot automatisk hämtning", "kontrollerad": "https://palmungmellin.se/lokaler/exportgatan-25-29-lager-och-kontor-pa-upp-till-ca-8000-kvm" },
+    "kontorsdel_kvm": 935
+  }
+}

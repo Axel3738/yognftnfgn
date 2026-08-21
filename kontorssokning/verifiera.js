@@ -14,15 +14,29 @@
 // vara bot-skydd. Därför skiljs "ej_kontrollerbar" från "avviker".
 
 import { readFileSync, writeFileSync } from 'node:fs';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const HAR = dirname(fileURLToPath(import.meta.url));
+const korCurl = promisify(execFile);
 const UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36';
 const SAMTIDIGA = 4;
 const PAUS_MS = 400; // artighet mot värdarna
 
 const ENTITETER = { '&aring;': 'å', '&auml;': 'ä', '&ouml;': 'ö', '&Aring;': 'Å', '&Auml;': 'Ä', '&Ouml;': 'Ö', '&amp;': '&', '&nbsp;': ' ', '&quot;': '"', '&#39;': "'" };
+
+// Reservläge för JS-renderade sidor (Next.js m.fl.): innehållet ligger i en
+// JSON-blob inuti en script-tagg. Då behålls skripten och JSON-escaper avkodas.
+export function textifieraDjupt(html) {
+  let t = html.replace(/\\u([0-9a-fA-F]{4})/g, (_, h) => String.fromCharCode(parseInt(h, 16)));
+  t = t.replace(/\\"/g, '"').replace(/<[^>]+>/g, ' ');
+  t = t.replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCharCode(parseInt(h, 16)));
+  t = t.replace(/&#(\d+);/g, (_, d) => String.fromCharCode(+d));
+  for (const [e, c] of Object.entries(ENTITETER)) t = t.split(e).join(c);
+  return t.replace(/\s+/g, ' ');
+}
 
 export function textifiera(html) {
   let t = html
@@ -38,13 +52,16 @@ export function textifiera(html) {
 const platta = (s) =>
   (s || '')
     .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // é -> e, ü -> u
     .replace(/[åä]/g, 'a')
     .replace(/ö/g, 'o')
     .replace(/[^a-z0-9]/g, '');
 
 // Gatunamn + nummer räcker — orten står ofta i en annan del av sidan.
 export function adressnyckel(adress) {
-  const forsta = String(adress || '').split(',')[0].trim();
+  const utanParentes = String(adress || '').replace(/\([^)]*\)/g, ' ');
+  const forsta = utanParentes.split(',')[0].trim();
   return platta(forsta);
 }
 
@@ -53,7 +70,7 @@ export function adressFinns(text, adress) {
   if (nyckel.length < 4) return null;
   if (platta(text).includes(nyckel)) return true;
   // Fall tillbaka på enbart gatunamnet utan nummer (annonser skriver "12 C" vs "12C")
-  const utanNummer = platta(String(adress || '').split(',')[0].replace(/[\d\s]+[a-zA-Z]?$/, ''));
+  const utanNummer = platta(String(adress || '').replace(/\([^)]*\)/g, ' ').split(',')[0].replace(/[\d\s]+[a-zA-Z]?$/, ''));
   if (utanNummer.length >= 5 && platta(text).includes(utanNummer)) return 'delvis';
   return false;
 }
@@ -61,7 +78,7 @@ export function adressFinns(text, adress) {
 export function ytaFinns(text, kvm, intervall) {
   if (kvm == null) return null;
   const platt = text.replace(/ /g, ' ');
-  const tal = [...platt.matchAll(/(\d[\d\s.,]*)\s*(?:kvm|m²|m2|kvadratmeter)/gi)]
+  const tal = [...platt.matchAll(/(\d[\d\s.,]*)\s*(?:kvm|kvadratmeter|m\s*[²2])/gi)]
     .map((m) => parseFloat(m[1].replace(/[\s.]/g, '').replace(',', '.')))
     .filter((n) => Number.isFinite(n) && n > 0);
   if (!tal.length) return null;
@@ -76,27 +93,52 @@ export function ytaFinns(text, kvm, intervall) {
   return false;
 }
 
+// Hämtar med curl, inte med Nodes inbyggda fetch. Vissa fastighetssajter
+// (bl.a. alvstranden.se) sitter bakom en brandvägg som avvisar fetch på
+// TLS-fingeravtrycket och svarar "Request Rejected" — curl släpps igenom.
 async function hamta(url) {
-  const styr = new AbortController();
-  const timer = setTimeout(() => styr.abort(), 25000);
   try {
-    const svar = await fetch(url, {
-      redirect: 'follow',
-      signal: styr.signal,
-      headers: { 'User-Agent': UA, 'Accept-Language': 'sv-SE,sv;q=0.9', Accept: 'text/html,application/xhtml+xml' },
-    });
-    const html = await svar.text();
-    return { status: svar.status, slutUrl: svar.url, html };
+    const { stdout } = await korCurl(
+      'curl',
+      [
+        '-sS', '-L', '--compressed', '--max-time', '25', '--max-redirs', '5',
+        '-A', UA,
+        '-H', 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        '-H', 'Accept-Language: sv-SE,sv;q=0.9,en;q=0.8',
+        '-w', '\n__STATUS__%{http_code}__URL__%{url_effective}',
+        url,
+      ],
+      { maxBuffer: 20 * 1024 * 1024, timeout: 30000 }
+    );
+    const m = stdout.match(/\n__STATUS__(\d+)__URL__(.*)$/s);
+    if (!m) return { status: 0, slutUrl: url, html: '', fel: 'oväntat svar från curl' };
+    return { status: Number(m[1]), slutUrl: m[2].trim(), html: stdout.slice(0, m.index) };
   } catch (fel) {
-    return { status: 0, slutUrl: url, html: '', fel: String(fel.message || fel) };
-  } finally {
-    clearTimeout(timer);
+    return { status: 0, slutUrl: url, html: '', fel: String(fel.message || fel).split('\n')[0] };
   }
 }
 
-const BOTSPARR = /verifierar att du är|är du en robot|just a moment|checking your browser|enable javascript and cookies|attention required/i;
+const BOTSPARR = /verifierar att du är|request rejected|är du en robot|just a moment|checking your browser|enable javascript and cookies|attention required/i;
+
+// Manuella granskningsdomar för sajter som inte går att nå automatiskt.
+let RATTELSER = null;
+function rattelseFor(objekt) {
+  if (RATTELSER === null) {
+    try {
+      RATTELSER = JSON.parse(readFileSync(join(HAR, 'rattelser.json'), 'utf8'));
+    } catch {
+      RATTELSER = {};
+    }
+  }
+  for (const u of objekt.kalla_url || []) {
+    if (RATTELSER[u]?.granskning) return RATTELSER[u].granskning;
+  }
+  return null;
+}
 
 export async function granska(objekt) {
+  const manuell = rattelseFor(objekt);
+  if (manuell) return manuell;
   const url = objekt.kalla_url?.[0];
   if (!url) return { lage: 'ej_kontrollerbar', notering: 'ingen käll-URL', kontrollerad: null };
 
@@ -109,7 +151,12 @@ export async function granska(objekt) {
     return { lage: 'ej_kontrollerbar', notering: `svarade HTTP ${status}`, kontrollerad: url };
   }
 
-  const text = textifiera(html);
+  let text = textifiera(html);
+  let djupt = false;
+  if (text.length < 400 && html.length > 2000) {
+    text = textifieraDjupt(html); // JS-renderad sida
+    djupt = true;
+  }
   if (BOTSPARR.test(text) || /\/clearance/.test(slutUrl)) {
     return { lage: 'ej_kontrollerbar', notering: 'sidan visar bot-skydd i stället för innehåll — kolla manuellt', kontrollerad: url };
   }
@@ -136,7 +183,7 @@ export async function granska(objekt) {
   }
   return {
     lage: traffar === 2 ? 'bekraftad' : 'delvis_bekraftad',
-    notering: delar.join(', '),
+    notering: delar.join(', ') + (djupt ? ' (läst ur sidans JSON-data, JS-renderad sida)' : ''),
     kontrollerad: url,
   };
 }

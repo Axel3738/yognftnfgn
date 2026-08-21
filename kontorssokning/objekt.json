@@ -67,6 +67,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalnytt.se/kontor/g%C3%B6teborg/nya-tingstadsgatan-1-335255"
     }
   },
   {
@@ -139,6 +144,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalnytt.se/kontor/g%C3%B6teborg/gamla-tuvevagen-15b-331514"
     }
   },
   {
@@ -209,6 +219,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/herkulesgatan-1g"
     }
   },
   {
@@ -277,6 +292,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/herkulesgatan-1k-backaplan"
     }
   },
   {
@@ -349,6 +369,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://alvstranden.se/lediga-lokaler/anders-carlssons-gata-30-the-yard/"
     }
   },
   {
@@ -417,6 +442,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.castellum.se/lediga-lokaler/lergodsgatan-1/lergodsgatan-1-408-kvm/"
     }
   },
   {
@@ -487,6 +517,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.castellum.se/lediga-lokaler/ringogatan-12/ringogatan-12-441-kvm/"
     }
   },
   {
@@ -556,6 +591,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/5-plejadgatan-3-lindholmen"
     }
   },
   {
@@ -633,6 +673,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalnytt.se/kontor/g%C3%B6teborg/borstbindaregatan-12c-340256"
     }
   },
   {
@@ -705,6 +750,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalnytt.se/kontor/g%C3%B6teborg/nya-tingstadsgatan-1-335913"
     }
   },
   {
@@ -774,6 +824,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://alvstranden.se/lediga-lokaler/lindholmsallen-34-297-kvm/"
     }
   },
   {
@@ -843,6 +898,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://lokalguiden.se/lokal/6-importgatan-23-backa"
     }
   },
   {
@@ -911,6 +971,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.castellum.se/lediga-lokaler/goteborg-backa-215/exportgatan-47a-541-kvm/"
     }
   },
   {
@@ -985,6 +1050,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.platzer.se/sv/lokaler/lindholmspiren-9-870-kvm"
     }
   },
   {
@@ -1057,6 +1127,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.platzer.se/sv/lokaler/lindholmspiren-9-255-kvm"
     }
   },
   {
@@ -1126,6 +1201,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/1-s%C3%B6rredsplatsen-1-torslanda"
     }
   },
   {
@@ -1199,6 +1279,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/gotaverksgatan-8"
     }
   },
   {
@@ -1270,6 +1355,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://alvstranden.se/lediga-lokaler/bror-nilssons-gata-5-188-kvm/"
     }
   },
   {
@@ -1340,83 +1430,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
-    }
-  },
-  {
-    "id": "ext-transportgatan-39-422-46-hisings-backa-492",
-    "titel": "Transportgatan 39 – två kontorsenheter på 239 och 506 kvm vid E6 med fri parkering",
-    "adress": "Transportgatan 39, 422 46 Hisings Backa",
-    "omrade": "Bäckebol / Hisings Backa, Göteborg",
-    "niva": 1,
-    "typ": "kontor",
-    "kvm": 492,
-    "kvm_intervall": [
-      239,
-      745
-    ],
-    "antal_kontorsrum": null,
-    "oppen_yta": true,
-    "oppen_yta_kvm": null,
-    "motesrum": null,
-    "hyra_kr_man": null,
-    "hyra_kr_kvm_ar": null,
-    "hyra_anmarkning": "Hyresfältet anger \"Kontakta hyresvärd\"; kontraktlängd \"Förhandlingsbart\", förstahandskontrakt",
-    "tilltrade": "Toppfältet anger \"Enligt överenskommelse\", medan Ekonomi-rutan anger \"Omgående\" – motstridigt i annonsen",
-    "vaning": "2 av 2",
-    "parkering": "\"Fri parkering (möjligt att installera laddstolpar om behov av elbilsladdning finns)\"",
-    "kollektivtrafik": "\"Det finns goda kollektivtrafikförbindelser med buss till centrala Göteborg.\" Direkt anslutning till E6",
-    "hyresvard": "Mileway",
-    "bild_url": "https://res.cloudinary.com/portally/image/upload/b_auto,c_lpad,h_600,q_auto,w_900/v1/Objektvision-images/Image.aspx_szurnl?_a=BAMAPqeA0",
-    "kalla_url": [
-      "https://www.portally.com/lokal/transportgatan-39-506-kvm"
-    ],
-    "hamtad_datum": "2026-08-21",
-    "beskrivning": "Två flexibla kontorsenheter på 239 respektive 506 kvm i en tvåvåningsfastighet från 1982 i Bäckebol, uthyrda av Mileway. Enheterna kan hyras var för sig eller sammanhängande och passar verksamheter som behöver både öppna arbetsytor och separata kontorsrum. Fri parkering med laddmöjlighet finns, men hyra och kontaktperson saknas i annonsen.",
-    "bekraftelsecitat": "Välkommen till en trevlig fastighet med två flexibla kontorslokaler på 239 och 506 kvm",
-    "plus": [
-      "Fri parkering på fastigheten, med möjlighet att installera laddstolpar",
-      "Annonsen pekar uttryckligen ut \"både öppna arbetsytor och separata kontorsrum\"",
-      "239 kvm-enheten är en bra storlek för 8–12 personer, och de två enheterna kan slås ihop",
-      "Direkt E6-anslutning plus buss till centrala Göteborg och service i Bäckebol Center",
-      "Förstahandskontrakt med förhandlingsbar längd"
-    ],
-    "minus": [
-      "Hyran anges inte – \"Kontakta hyresvärd\"",
-      "Ingen namngiven kontaktperson, bara \"Kontakta Mileway\"",
-      "Antal kontorsrum och mötesrum framgår inte; planlösningen hänvisas till ritning i bilagorna",
-      "Ingen dusch eller omklädning nämns",
-      "Motstridigt tillträde (Enligt överenskommelse vs Omgående) och byggår 1982",
-      "492 kvm är mer yta än 8–12 personer behöver"
-    ],
-    "okanda_falt": [
-      "antal_kontorsrum",
-      "motesrum",
-      "oppen_yta_kvm",
-      "hyra_kr_man",
-      "hyra_kr_kvm_ar",
-      "kontakt_namn",
-      "kontakt_telefon",
-      "kontakt_epost",
-      "hyra",
-      "kontakt.epost",
-      "kontakt.telefon"
-    ],
-    "verifierad": true,
-    "kontakt": {
-      "namn": null,
-      "telefon": null,
-      "epost": null
     },
-    "restid_kungalv_min_uppskattad": 18,
-    "matchpoang": 83,
-    "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
-    "poangdelar": {
-      "yta": 25,
-      "rum": 12.5,
-      "oppen_yta": 15,
-      "geografi": 15,
-      "hyra": 10,
-      "tilltrade": 5
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.platzer.se/sv/lokaler/lindholmspiren-9-445-kvm"
     }
   },
   {
@@ -1494,6 +1512,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/tagenevagen-62-180-717-kvm"
     }
   },
   {
@@ -1565,6 +1588,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/lindholmspiren-7-678-kvm"
     }
   },
   {
@@ -1640,6 +1668,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/theres-svenssons-gata-9"
     }
   },
   {
@@ -1707,6 +1740,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/7-trank%C3%A4rrsgatan-15-hisings-k%C3%A4rra"
     }
   },
   {
@@ -1782,6 +1820,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/backavagen-7-240-kvm"
     }
   },
   {
@@ -1856,6 +1899,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 4
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/importgatan-7-417-kvm"
     }
   },
   {
@@ -1930,6 +1978,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalnytt.se/kontor/g%C3%B6teborg/gustaf-dalensgatan-19-337262"
     }
   },
   {
@@ -1999,6 +2052,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.al.se/kontorserbjudande/hitta-lokal/goteborg/lindholmen/gotaverksgatan-2-344-kvm/"
     }
   },
   {
@@ -2070,6 +2128,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://alvstranden.se/lediga-lokaler/anders-carlssons-gata-14-560-kvm/"
     }
   },
   {
@@ -2143,6 +2206,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://alvstranden.se/lediga-lokaler/theres-svenssons-gata-10-1143-kvm/"
     }
   },
   {
@@ -2217,6 +2285,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://alvstranden.se/lediga-lokaler/diagonalen-6b-454-kvm/"
     }
   },
   {
@@ -2290,6 +2363,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://alvstranden.se/lediga-lokaler/anders-carlssons-gata-9-1-300-kvm/"
     }
   },
   {
@@ -2362,6 +2440,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/14-importgatan-7-hisingen"
     }
   },
   {
@@ -2436,6 +2519,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalnytt.se/kontor/g%C3%B6teborg/gustaf-dalensgatan-19-339355"
     }
   },
   {
@@ -2512,6 +2600,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalnytt.se/%C3%B6vrigt/g%C3%B6teborg/gustaf-dalensgatan-19-337265"
     }
   },
   {
@@ -2581,6 +2674,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/lindholmsallen-8b-lundbyvassen"
     }
   },
   {
@@ -2652,6 +2750,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/ringogatan-12-690-kvm"
     }
   },
   {
@@ -2727,6 +2830,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/lindholmsallen-2-1700-kvm"
     }
   },
   {
@@ -2801,6 +2909,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/ruskvadersgatan-18"
     }
   },
   {
@@ -2873,6 +2986,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.platzer.se/sv/lokaler/lindholmspiren-9-778-kvm"
     }
   },
   {
@@ -2945,6 +3063,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.platzer.se/sv/lokaler/arendal-alle-1-374-kvm"
     }
   },
   {
@@ -3015,6 +3138,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.castellum.se/lediga-lokaler/tingstadsvassen-292/gjutjarnsgatan-4-3102-kvm/"
     }
   },
   {
@@ -3092,6 +3220,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/lindholmshamnen-28"
     }
   },
   {
@@ -3160,6 +3293,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.aspelinramm.se/lediga-lokaler/torslanda-hangar/kontorslokal-172-m2"
     }
   },
   {
@@ -3230,6 +3368,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://lokalguiden.se/lokal/12-backa-berg%C3%B6gata-7-backa"
     }
   },
   {
@@ -3305,6 +3448,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/deltavagen-6"
     }
   },
   {
@@ -3379,6 +3527,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/arendalsvagen-10"
     }
   },
   {
@@ -3450,6 +3603,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.castellum.se/lediga-lokaler/goteborg-backa-215/exportgatan-47a-8500-kvm/"
     }
   },
   {
@@ -3525,6 +3683,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/karrlyckegatan-24"
     }
   },
   {
@@ -3601,6 +3764,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 4
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/norra-hisingen/532575"
     }
   },
   {
@@ -3676,6 +3844,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/sangspelsgatan-1"
     }
   },
   {
@@ -3749,6 +3922,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/hangarvagen-12"
     }
   },
   {
@@ -3821,6 +3999,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/stenkolsgatan-1b-hisings-backa"
     }
   },
   {
@@ -3895,6 +4078,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalnytt.se/lager/g%C3%B6teborg/exportgatan-7b-340765"
     }
   },
   {
@@ -3971,6 +4159,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalnytt.se/kontor/g%C3%B6teborg/frihamnen-14-336770"
     }
   },
   {
@@ -4050,6 +4243,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalnytt.se/kontor/g%C3%B6teborg/lindholmsallen-10-335151"
     }
   },
   {
@@ -4094,7 +4292,8 @@
       "Kontorsdelens planlösning, antal rum och mötesrum beskrivs inte alls",
       "Ringön är ett industriområde, inte ett kontorsläge",
       "kombilokal med lagerdel — lagret behövs inte vid dropshipping",
-      "1955 kvm är mer yta än 8–12 personer behöver"
+      "1955 kvm är mer yta än 8–12 personer behöver",
+      "av 1 955 kvm är bara ca 160 kvm kontor — resten är lager som inte behövs"
     ],
     "okanda_falt": [
       "hyra_kr_man",
@@ -4111,6 +4310,11 @@
       "telefon": "031-744 50 45",
       "epost": "erik.palmung@palmungmellin.se"
     },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓ — bekräftad manuellt 2026-08-21; sajten bryter TLS mot automatisk hämtning",
+      "kontrollerad": "https://palmungmellin.se/lokaler/jaernmalmsgatan-1-lager-kontor-pa-1-955-kvm"
+    },
     "restid_kungalv_min_uppskattad": 22,
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
@@ -4121,7 +4325,8 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
-    }
+    },
+    "kontorsdel_kvm": 160
   },
   {
     "id": "ext-ringogatan-29-goteborg-2675",
@@ -4193,6 +4398,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.castellum.se/lediga-lokaler/tingstadsvassen-312/ringogatan-29-2900-kvm2/"
     }
   },
   {
@@ -4264,6 +4474,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://alvstranden.se/lediga-lokaler/gotaverksgatan-10_1300-kvm/"
     }
   },
   {
@@ -4341,6 +4556,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalnytt.se/industri/g%C3%B6teborg/stalverksgatan-5-339745"
     }
   },
   {
@@ -4421,6 +4641,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/vaestra-hisingen/571363"
     }
   },
   {
@@ -4498,6 +4723,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/lundby/501961"
     }
   },
   {
@@ -4558,6 +4788,11 @@
       "namn": "Erik Palmung",
       "telefon": "031-744 50 45",
       "epost": "erik.palmung@palmungmellin.se"
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓ — bekräftad manuellt 2026-08-21; sajten bryter TLS mot automatisk hämtning",
+      "kontrollerad": "https://palmungmellin.se/lokaler/gustaf-dalensgatan-19-helt-nyrenoverad-kontorslokal-pa-221-kvm"
     },
     "restid_kungalv_min_uppskattad": 18,
     "matchpoang": 75,
@@ -4642,6 +4877,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.al.se/kontorserbjudande/hitta-lokal/goteborg/lindholmen/lindholmsallen-10-536-kvm/"
     }
   },
   {
@@ -4676,14 +4916,16 @@
       "Fasta parkeringsplatser i direkt anslutning till lokalen och de ingår i hyran",
       "WC med dusch samt kök/pausrum finns",
       "Egen entré och god tillgänglighet i markplan",
-      "Grindat område som låses kvällar, nätter och helger"
+      "Grindat område som låses kvällar, nätter och helger",
+      "dusch finns (WC med dusch)"
     ],
     "minus": [
       "Kontorsdelens yta anges inte – oklart hur mycket av 235 kvm som är kontor",
       "Hyra och tillträde står inte på sidan",
       "Antal kontorsrum, mötesrum och öppen planlösning framgår inte",
       "Kombilokal med godshanteringsdörr passar sämre för e-handel utan lagerbehov",
-      "kombilokal med lagerdel — lagret behövs inte vid dropshipping"
+      "kombilokal med lagerdel — lagret behövs inte vid dropshipping",
+      "annonsen delar inte upp hur mycket av de 235 kvm som är kontor"
     ],
     "okanda_falt": [
       "antal_kontorsrum",
@@ -4701,6 +4943,11 @@
       "namn": "Erik Palmung",
       "telefon": "031-744 50 45",
       "epost": "erik.palmung@palmungmellin.se"
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓ — bekräftad manuellt 2026-08-21; sajten bryter TLS mot automatisk hämtning",
+      "kontrollerad": "https://palmungmellin.se/lokaler/kontor-lager-235-kvm-tuvevaegen-39"
     },
     "restid_kungalv_min_uppskattad": 20,
     "matchpoang": 75,
@@ -4780,6 +5027,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/1-karossv%C3%A4gen-2"
     }
   },
   {
@@ -4859,6 +5111,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/lundby/607126"
     }
   },
   {
@@ -4929,6 +5186,11 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/1-v%C3%A4stra-gatan-84-kung%C3%A4lv"
     }
   },
   {
@@ -5001,6 +5263,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/9-manufakturgatan-5-ring%C3%B6n"
     }
   },
   {
@@ -5063,6 +5330,11 @@
       "telefon": "031-744 50 45",
       "epost": "erik.palmung@palmungmellin.se"
     },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓ — bekräftad manuellt 2026-08-21; sajten bryter TLS mot automatisk hämtning",
+      "kontrollerad": "https://palmungmellin.se/lokaler/exportgatan-25-29-lager-och-kontor-pa-upp-till-ca-8000-kvm"
+    },
     "restid_kungalv_min_uppskattad": 24,
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2/5",
@@ -5073,7 +5345,8 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2
-    }
+    },
+    "kontorsdel_kvm": 935
   },
   {
     "id": "ln-vallfrogatan-10-goteborg-170",
@@ -5149,6 +5422,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalnytt.se/butik/g%C3%B6teborg/vallfrogatan-10-328296"
     }
   },
   {
@@ -5228,6 +5506,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/norra-hisingen/574738"
     }
   },
   {
@@ -5302,6 +5585,11 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/bultgatan-40-694-kvm"
     }
   },
   {
@@ -5378,6 +5666,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.platzer.se/sv/lokaler/lindholmspiren-9-421-kvm"
     }
   },
   {
@@ -5456,6 +5749,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/vaestra-hisingen/574774"
     }
   },
   {
@@ -5533,6 +5831,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/lundby/565613"
     }
   },
   {
@@ -5604,6 +5907,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/herkulesgatan-1-130-kvm"
     }
   },
   {
@@ -5671,6 +5979,11 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalnytt.se/kontor/kung%C3%A4lv/bilgatan-20-327072"
     }
   },
   {
@@ -5751,6 +6064,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/norra-hisingen/577297"
     }
   },
   {
@@ -5822,6 +6140,11 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 4
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/6-bilgatan-20-rollsbo-industriomr%C3%A5de"
     }
   },
   {
@@ -5892,6 +6215,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/8-pumpgatan-1-lundbyvassen"
     }
   },
   {
@@ -5964,6 +6292,11 @@
       "geografi": 3.8,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalnytt.se/kontor/g%C3%B6teborg/hornsgatan-1-337906"
     }
   },
   {
@@ -6044,6 +6377,88 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/norra-hisingen/575392"
+    }
+  },
+  {
+    "id": "lg-transportgatan-39-agnesberg-492",
+    "titel": "Kontor 239–745 kvm, delbart i två enheter, inflytt omgående",
+    "adress": "Transportgatan 39, Agnesberg",
+    "omrade": "Bäckebol",
+    "niva": 3,
+    "typ": "kontor",
+    "kvm": 492,
+    "kvm_intervall": [
+      239,
+      745
+    ],
+    "antal_kontorsrum": null,
+    "oppen_yta": true,
+    "oppen_yta_kvm": null,
+    "motesrum": null,
+    "hyra_kr_man": null,
+    "hyra_kr_kvm_ar": null,
+    "hyra_anmarkning": "Annonsens faktaruta anger \"Hyra: Ej angiven\" – ingen siffra publicerad.",
+    "tilltrade": "Omgående",
+    "vaning": "Faktarutan anger \"Våningsplan: 2\" – annonsen förtydligar inte om det avser plan 2 eller två plan. \"Stor entré på markplan samt hiss gör lokalerna lättillgängliga.\"",
+    "parkering": "\"Parkeringsplatser finns i direkt anslutning till byggnaden för både personal och besökare\" samt \"Fri parkering (möjligt att installera laddstolpar om behov av elbilsladdning finns)\". Parkering, besöksparkering, kundparkering och laddstolpe listas bland faciliteterna. Antal p-platser anges inte.",
+    "kollektivtrafik": "\"Goda kollektivtrafikförbindelser med buss till centrala Göteborg\" – ingen linje eller hållplats namnges.",
+    "hyresvard": "Mileway Sweden AB",
+    "bild_url": "https://static.lokalguiden.se/filter/976x520,,90,cover/uploads/customer/6267/1212b525b226a8fc24e93481f5493e7c.jpg",
+    "kalla_url": [
+      "https://www.lokalguiden.se/lokal/3-transportgatan-39-b%C3%A4ckebol",
+      "https://www.portally.com/lokal/transportgatan-39-506-kvm"
+    ],
+    "hamtad_datum": "2026-08-21",
+    "beskrivning": "Två kontorsenheter om 239 respektive 506 kvm i ett industri- och handelsområde vid E6 norr om Göteborg, som kan hyras var för sig eller slås ihop till 745 kvm. Annonsen anger uttryckligen att ytorna kan utformas som öppna kontorslandskap eller separata kontor och listar dusch, hiss, kök/pentry, serverrum, fiber och fri parkering med möjlighet till laddstolpar. Hyra saknas helt och antalet kontorsrum respektive mötesrum anges inte.",
+    "bekraftelsecitat": "två flexibla kontorslokaler på 239 och 506 kvm",
+    "plus": [
+      "Dusch listas uttryckligen bland faciliteterna",
+      "Fri parkering i direkt anslutning för både personal och besökare, med möjlighet att installera laddstolpar",
+      "Planlösningen är anpassningsbar: \"öppna kontorslandskap eller separata kontor\", plus konferensrum",
+      "Tillträde omgående – ingen väntan på inflytt",
+      "Hiss, kök/pentry, WC, handikapptoalett, serverrum och fiber ingår enligt egenskapslistan"
+    ],
+    "minus": [
+      "Hyran är inte publicerad (\"Ej angiven\") – går inte att budgetera på",
+      "Antal kontorsrum och antal mötesrum anges inte, trots att båda är avgörande för rankningen",
+      "Minsta enheten är 239 kvm, vilket är rejält tilltaget för 8–12 personer; 745 kvm är klart för stort",
+      "Industri- och handelsområde cirka 10 km norr om centrum, kollektivtrafiken är buss utan namngiven linje eller hållplats",
+      "492 kvm är mer yta än 8–12 personer behöver"
+    ],
+    "okanda_falt": [
+      "antal_kontorsrum",
+      "oppen_yta_kvm",
+      "motesrum",
+      "hyra_kr_man",
+      "hyra_kr_kvm_ar",
+      "hyra"
+    ],
+    "verifierad": true,
+    "kontakt": {
+      "namn": "Caroline Klamas",
+      "telefon": "070-279 58 41",
+      "epost": "Caroline.Klamas@mileway.com"
+    },
+    "restid_kungalv_min_uppskattad": 18,
+    "matchpoang": 71,
+    "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 3,8/15, Hyra 10/10, Tillträde 5/5",
+    "poangdelar": {
+      "yta": 25,
+      "rum": 12.5,
+      "oppen_yta": 15,
+      "geografi": 3.8,
+      "hyra": 10,
+      "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/3-transportgatan-39-b%C3%A4ckebol"
     }
   },
   {
@@ -6119,6 +6534,11 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/bultgatan-40a-1107-kvm"
     }
   },
   {
@@ -6193,6 +6613,11 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/arntorpsgatan-6"
     }
   },
   {
@@ -6270,6 +6695,11 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/vastra-gatan-71-73"
     }
   },
   {
@@ -6345,6 +6775,11 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/bultgatan-40a"
     }
   },
   {
@@ -6417,6 +6852,11 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.catena.se/lediga-objekt/2492_bilgatan-25-kungalv"
     }
   },
   {
@@ -6493,6 +6933,11 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalnytt.se/kontor/kung%C3%A4lv/bilgatan-20-340549"
     }
   },
   {
@@ -6567,6 +7012,11 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/bultgatan-40b-235-kvm"
     }
   },
   {
@@ -6643,6 +7093,176 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/uddevallavagen-14"
+    }
+  },
+  {
+    "id": "ext-bultgatan-40-440-42-kungalv-400",
+    "titel": "Bultgatan 40, Rollsbo – kontor att hyra i spannet ca 100–700 kvm, även kombiytor kontor/lager",
+    "adress": "Bultgatan 40, 440 42 Kungälv",
+    "omrade": "Rollsbo, Kungälv",
+    "niva": 2,
+    "typ": "kombilokal",
+    "kvm": 400,
+    "kvm_intervall": [
+      100,
+      700
+    ],
+    "antal_kontorsrum": null,
+    "oppen_yta": null,
+    "oppen_yta_kvm": null,
+    "motesrum": null,
+    "hyra_kr_man": null,
+    "hyra_kr_kvm_ar": null,
+    "hyra_anmarkning": "Annonsen anger endast \"Kontakta hyresvärd\" – ingen hyresnivå publicerad.",
+    "tilltrade": "Omedelbart",
+    "vaning": null,
+    "parkering": null,
+    "kollektivtrafik": null,
+    "hyresvard": "Altra Fastigheter",
+    "bild_url": "https://res.cloudinary.com/portally/image/upload/b_auto,c_lpad,h_600,q_auto,w_900/_56A3074_hm386n",
+    "kalla_url": [
+      "https://www.portally.com/lokal/bultgatan-40-100-700-kvm"
+    ],
+    "hamtad_datum": "2026-08-21",
+    "beskrivning": "Fastighetsannons för hela Bultgatan 40 i Rollsbo där kontor kan hyras i spannet ca 100–700 kvm, med kombiytor kontor/lager och en butiksyta om ca 600 kvm som alternativ. Annonsen beskriver ingen planlösning alls, så antal rum, mötesrum och öppen yta är okända. Tillträde omedelbart och lunchrestaurang i huset, men varken hyra eller parkering anges.",
+    "bekraftelsecitat": "möjlighet att hyra enbart kontor i spannet ca 100–700 kvm",
+    "plus": [
+      "Går att hyra enbart kontor från ca 100 kvm – storleken kan skräddarsys efter 8–12 personer",
+      "Tillträde omedelbart enligt faktarutan",
+      "Lunchrestaurang finns i huset",
+      "Annonsen nämner e-handel som en av verksamheterna lokalerna passar för",
+      "Rollsbo industriområde, \"endast cirka 20 minuter till centrala Göteborg\" och nära E6"
+    ],
+    "minus": [
+      "Ingen planlösning beskriven – kontorsrum, mötesrum och eventuell öppen yta framgår inte",
+      "Ingen hyra publicerad",
+      "Parkering nämns inte alls – skallkravet går inte att bekräfta",
+      "Detta är en fastighetsannons, inte en specifik ledig lokal: 100–700 kvm är ett spann över flera enheter, så vad som faktiskt är ledigt måste ringas fram",
+      "parkering ej angiven — måste kollas (krav)",
+      "kombilokal med lagerdel — lagret behövs inte vid dropshipping"
+    ],
+    "okanda_falt": [
+      "antal_kontorsrum",
+      "oppen_yta",
+      "oppen_yta_kvm",
+      "motesrum",
+      "hyra_kr_man",
+      "hyra_kr_kvm_ar",
+      "vaning",
+      "parkering",
+      "kollektivtrafik",
+      "kontakt_telefon",
+      "kontakt_epost",
+      "hyra",
+      "kontakt.epost",
+      "kontakt.telefon"
+    ],
+    "verifierad": true,
+    "kontakt": {
+      "namn": "Moa Corse (Altra Fastigheter)",
+      "telefon": null,
+      "epost": null
+    },
+    "restid_kungalv_min_uppskattad": 5,
+    "matchpoang": 70,
+    "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
+    "poangdelar": {
+      "yta": 25,
+      "rum": 12.5,
+      "oppen_yta": 10,
+      "geografi": 7.5,
+      "hyra": 10,
+      "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/bultgatan-40-100-700-kvm"
+    }
+  },
+  {
+    "id": "ext-hollandsgatan-4-442-50-ytterby-149",
+    "titel": "Hollandsgatan 4, Ytterby Park – 149 kvm nyproducerad lokal med påverkbar planlösning, parkering i direkt anslutning",
+    "adress": "Hollandsgatan 4, 442 50 Ytterby",
+    "omrade": "Ytterby, Kungälv",
+    "niva": 2,
+    "typ": "nyproduktion",
+    "kvm": 149,
+    "kvm_intervall": null,
+    "antal_kontorsrum": null,
+    "oppen_yta": null,
+    "oppen_yta_kvm": null,
+    "motesrum": null,
+    "hyra_kr_man": null,
+    "hyra_kr_kvm_ar": null,
+    "hyra_anmarkning": "Annonsen anger endast \"Kontakta hyresvärd\" – ingen hyresnivå publicerad.",
+    "tilltrade": "Faktarutan säger \"Enligt överenskommelse\"; texten säger \"byggstart 2025 och inflyttning under 2026\".",
+    "vaning": null,
+    "parkering": "\"Gott om parkeringsplatser i direkt anslutning till fastigheten förstärker bekvämligheten ytterligare.\"",
+    "kollektivtrafik": "\"Busshållplats finns precis utanför fastigheten med smidiga förbindelser till Kungälv centrum och Ytterby station där tåg vidare mot Göteborg avgår frekvent.\"",
+    "hyresvard": null,
+    "bild_url": "https://res.cloudinary.com/portally/image/upload/b_auto,c_lpad,h_600,q_auto,w_900/v1/Objektvision-images/Image.aspx_ri5sfu",
+    "kalla_url": [
+      "https://www.portally.com/lokal/hollandsgatan-4"
+    ],
+    "hamtad_datum": "2026-08-21",
+    "beskrivning": "Nyproducerad, ännu inte färdigställd verksamhetslokal på 149 kvm i Ytterby Park med skyltläge mot Marstrandsvägen. Hyresgästen kan påverka både planlösning och materialval, men inga rum, mötesrum eller hyror anges och inflyttning ligger under 2026. Parkering i direkt anslutning och busshållplats utanför entrén är däremot uttalat i annonsen.",
+    "bekraftelsecitat": "Lokaltyp: Butik, Industri/Verkstad, Kontor – Storlek: 149 m²",
+    "plus": [
+      "Parkering uttryckligen utlovad: \"Gott om parkeringsplatser i direkt anslutning till fastigheten\" – enda objektet av mina sex där skallkravet bekräftas",
+      "Busshållplats precis utanför fastigheten, tåg mot Göteborg från Ytterby station",
+      "Påverkbar planlösning – går att rita ett kontor efter 8–12 personer från grunden",
+      "149 kvm är en rimlig storlek för 8–12 personer"
+    ],
+    "minus": [
+      "Nyproduktion med byggstart 2025 och inflyttning under 2026 – ingen färdig lokal att titta på eller flytta in i direkt",
+      "Annonsen listar lokaltypen som butik/industri/verkstad/kontor och beskriver den bara som \"flexibel verksamhetslokal\" – inte som färdigt kontor",
+      "Ingen hyra, inga kontorsrum, inga mötesrum och ingen fastighetsägare namngiven",
+      "Ytterby ligger utanför Kungälvs centrum",
+      "nyproduktion — tillträdet ligger längre fram",
+      "149 kvm är i underkant för 8–12 personer"
+    ],
+    "okanda_falt": [
+      "antal_kontorsrum",
+      "oppen_yta",
+      "oppen_yta_kvm",
+      "motesrum",
+      "hyra_kr_man",
+      "hyra_kr_kvm_ar",
+      "vaning",
+      "hyresvard",
+      "kontakt_telefon",
+      "kontakt_epost",
+      "hyra",
+      "kontakt.epost",
+      "kontakt.telefon"
+    ],
+    "verifierad": true,
+    "kontakt": {
+      "namn": "Madeleine Ljungberg (Croisette Real Estate Partner)",
+      "telefon": null,
+      "epost": null
+    },
+    "restid_kungalv_min_uppskattad": 8,
+    "matchpoang": 70,
+    "poangmotivering": "Yta 24,7/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
+    "poangdelar": {
+      "yta": 24.7,
+      "rum": 12.5,
+      "oppen_yta": 10,
+      "geografi": 7.5,
+      "hyra": 10,
+      "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/hollandsgatan-4"
     }
   },
   {
@@ -6714,6 +7334,88 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 4
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalnytt.se/%C3%B6vrigt/kung%C3%A4lv/hollandsgatan-335184"
+    }
+  },
+  {
+    "id": "lg-marieholmsgatan-64-goteborg-425",
+    "titel": "Flexibelt kontor 280–570 kvm med parkeringshus och padelhall",
+    "adress": "Marieholmsgatan 64, Göteborg",
+    "omrade": "Marieholm / Gamlestaden",
+    "niva": 3,
+    "typ": "kontor",
+    "kvm": 425,
+    "kvm_intervall": [
+      280,
+      570
+    ],
+    "antal_kontorsrum": null,
+    "oppen_yta": true,
+    "oppen_yta_kvm": null,
+    "motesrum": null,
+    "hyra_kr_man": null,
+    "hyra_kr_kvm_ar": null,
+    "hyra_anmarkning": "Annonsen anger \"Hyra: Ej angiven\" och ingen driftkostnad – hyresnivån måste efterfrågas hos Newsec.",
+    "tilltrade": null,
+    "vaning": "3",
+    "parkering": "\"I övrigt är det gott om parkeringsplatser tack vare vårt stora parkeringshus\" – parkeringshuset uppges ha många lediga platser för hyresgäster och besökare. Inget sägs om laddplatser eller kostnad.",
+    "kollektivtrafik": "Busshållplats direkt utanför fastigheten. Gamlestads Torg med tåg och spårvagn ligger på promenadavstånd. Direkt access till E20, E6 och E45 samt närhet till Marieholmstunneln.",
+    "hyresvard": "Newsec",
+    "bild_url": "https://static.lokalguiden.se/uploads/customer/394/c6a84337eef5fcb96c659cbdaa3ffcde.jpg",
+    "kalla_url": [
+      "https://www.lokalguiden.se/lokal/marieholmsgatan-64"
+    ],
+    "hamtad_datum": "2026-08-21",
+    "beskrivning": "Kontorsyta på plan 3 i en fastighet med hög takhöjd, stora ljusgårdar och mycket dagsljus, uthyrbar i spannet 280–570 kvm. Planlösningen är i dag en blandning av öppna ytor och egna rum och uppges kunna anpassas efter hyresgästens önskemål. Fastigheten har eget parkeringshus, busshållplats direkt utanför och padelhall i huset, men varken hyra, tillträde eller antal rum anges.",
+    "bekraftelsecitat": "280–570 m² Kontor",
+    "plus": [
+      "Parkering tydligt bekräftad i annonsen: eget stort parkeringshus med \"gott om parkeringsplatser\" för hyresgäster och besökare",
+      "Blandning av öppen yta och egna rum redan i dag, och lokalen uppges kunna anpassas efter hyresgästens önskemål",
+      "Busshållplats direkt utanför och gångavstånd till Gamlestads Torg med både tåg och spårvagn",
+      "Hög takhöjd, mycket naturligt ljus och stora ljusgårdar",
+      "Padelhall i fastigheten"
+    ],
+    "minus": [
+      "Varken hyra eller driftkostnad anges – helt oprissatt",
+      "Inget tillträdesdatum angivet",
+      "Antal kontorsrum, mötesrum, pentry och dusch framgår inte av annonsen",
+      "Minsta yta 280 kvm är rejält tilltaget för 8–12 personer, och objektet ligger i Marieholm/Gamlestaden – varken på Hisingen eller i Kungälv",
+      "425 kvm är mer yta än 8–12 personer behöver"
+    ],
+    "okanda_falt": [
+      "antal_kontorsrum",
+      "oppen_yta_kvm",
+      "motesrum",
+      "hyra_kr_man",
+      "hyra_kr_kvm_ar",
+      "tilltrade",
+      "hyra"
+    ],
+    "verifierad": true,
+    "kontakt": {
+      "namn": "Ulf Birk",
+      "telefon": "031-761 63 08 / 070-859 60 51 (växel 020-40 40 40)",
+      "epost": "ulf.birk@newsec.se"
+    },
+    "restid_kungalv_min_uppskattad": 28,
+    "matchpoang": 69,
+    "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 3,8/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
+    "poangdelar": {
+      "yta": 25,
+      "rum": 12.5,
+      "oppen_yta": 15,
+      "geografi": 3.8,
+      "hyra": 10,
+      "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/marieholmsgatan-64"
     }
   },
   {
@@ -6788,6 +7490,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/exportgatan-1-270-299-kvm"
     }
   },
   {
@@ -6863,6 +7570,11 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/v%C3%A4stra-gatan-84-86-kung%C3%A4lv"
     }
   },
   {
@@ -6940,6 +7652,11 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/564252"
     }
   },
   {
@@ -7016,6 +7733,11 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/564497"
     }
   },
   {
@@ -7087,6 +7809,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.castellum.se/lediga-lokaler/ringogatan-12/ringogatan-12-690-kvm/"
     }
   },
   {
@@ -7162,6 +7889,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/stalverksgatan-11"
     }
   },
   {
@@ -7243,6 +7975,11 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/468073"
     }
   },
   {
@@ -7311,6 +8048,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/9-backa-berg%C3%B6gata-5-backa"
     }
   },
   {
@@ -7382,6 +8124,11 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/k%C3%A5ller%C3%B6dsv%C3%A4gen-4-kung%C3%A4lv"
     }
   },
   {
@@ -7460,6 +8207,11 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/591760"
     }
   },
   {
@@ -7531,6 +8283,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/exportgatan-51a"
     }
   },
   {
@@ -7603,6 +8360,93 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/filaregatan-16-%C3%A4ngeg%C3%A4rde"
+    }
+  },
+  {
+    "id": "vl-hollandsgatan-gatunummer-dolt-i-annonsen-150",
+    "titel": "Hollandsgatan, Ytterby – ca 150 kvm kontor att hyra (portalannons utan beskrivning)",
+    "adress": "Hollandsgatan (gatunummer dolt i annonsen), Ytterby, Kungälv",
+    "omrade": "Ytterby, Kungälv",
+    "niva": 2,
+    "typ": "kontor",
+    "kvm": 150,
+    "kvm_intervall": null,
+    "antal_kontorsrum": null,
+    "oppen_yta": null,
+    "oppen_yta_kvm": null,
+    "motesrum": null,
+    "hyra_kr_man": null,
+    "hyra_kr_kvm_ar": null,
+    "hyra_anmarkning": "Annonsen anger \"Hyra per år exkl. drift: Inte angivet\". Full information och hyresvärdens kontaktuppgifter kräver inloggning/prenumeration på verksamhetslokaler.se.",
+    "tilltrade": null,
+    "vaning": null,
+    "parkering": null,
+    "kollektivtrafik": null,
+    "hyresvard": null,
+    "bild_url": "https://www.verksamhetslokaler.se/LPStreetView/Cache/591761_534.webp",
+    "kalla_url": [
+      "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/591761"
+    ],
+    "hamtad_datum": "2026-08-21",
+    "beskrivning": "Kort portalannons för ca 150 kvm kontor på Hollandsgatan i Ytterby, helt utan beskrivningstext. Varken planlösning, hyra, parkering, tillträde eller hyresvärd framgår, och kontaktuppgifterna ligger bakom inloggning. Storleken passar 8–12 personer, men allt annat måste ringas fram – annonsen ligger dessutom på samma gata som nyproduktionen Hollandsgatan 4 och kan vara samma objekt.",
+    "bekraftelsecitat": "Kontor att hyra, Kungälv, Ytterby, Hollandsgatan – Ca. 150 m2",
+    "plus": [
+      "Ca 150 kvm anges som renodlat kontor – rätt storlek för 8–12 personer",
+      "Ligger i Ytterby, Kungälv, inom sökområdet",
+      "Annonsen är aktiv och senast uppdaterad 20 juli, alltså färsk"
+    ],
+    "minus": [
+      "Ingen beskrivningstext alls – kontorsrum, öppen yta, mötesrum och våning saknas helt",
+      "Parkering nämns inte – skallkravet går inte att bekräfta",
+      "Ingen hyra angiven och inget tillträdesdatum (fältet \"Indraget 20.07.2026\" är inte ett tillträde)",
+      "Hyresvärd och kontaktuppgifter ligger bakom betalvägg, och gatunumret är dolt – kan vara dubblett av Hollandsgatan 4",
+      "parkering ej angiven — måste kollas (krav)"
+    ],
+    "okanda_falt": [
+      "antal_kontorsrum",
+      "oppen_yta",
+      "oppen_yta_kvm",
+      "motesrum",
+      "hyra_kr_man",
+      "hyra_kr_kvm_ar",
+      "tilltrade",
+      "vaning",
+      "parkering",
+      "kollektivtrafik",
+      "hyresvard",
+      "kontakt_namn",
+      "kontakt_telefon",
+      "kontakt_epost",
+      "hyra",
+      "kontakt.epost",
+      "kontakt.telefon"
+    ],
+    "verifierad": true,
+    "kontakt": {
+      "namn": null,
+      "telefon": null,
+      "epost": null
+    },
+    "restid_kungalv_min_uppskattad": 8,
+    "matchpoang": 68,
+    "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
+    "poangdelar": {
+      "yta": 25,
+      "rum": 12.5,
+      "oppen_yta": 10,
+      "geografi": 7.5,
+      "hyra": 10,
+      "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/591761"
     }
   },
   {
@@ -7674,6 +8518,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.aspelinramm.se/lediga-lokaler/torslanda-hangar/kontorslokal-115-m2"
     }
   },
   {
@@ -7743,6 +8592,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 4
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/sorhallstorget-10-goteborg"
     }
   },
   {
@@ -7818,6 +8672,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 4
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/flygledarevagen-1"
     }
   },
   {
@@ -7899,6 +8758,169 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/562138"
+    }
+  },
+  {
+    "id": "ln-rullagergatan-9-goteborg-290",
+    "titel": "Nyrenoverat kontor 290 kvm i East Square, hus från 1913",
+    "adress": "Rullagergatan 9, Göteborg",
+    "omrade": "Gamlestaden",
+    "niva": 3,
+    "typ": "kontor",
+    "kvm": 290,
+    "kvm_intervall": null,
+    "antal_kontorsrum": null,
+    "oppen_yta": null,
+    "oppen_yta_kvm": null,
+    "motesrum": null,
+    "hyra_kr_man": null,
+    "hyra_kr_kvm_ar": null,
+    "hyra_anmarkning": "Annonsens faktaruta anger hyra som \"Kontakta annonsören\" – ingen siffra publicerad.",
+    "tilltrade": "Enligt överenskommelse",
+    "vaning": null,
+    "parkering": "\"Här finns goda parkeringsmöjligheter för besökare och medarbetare. Givetvis finns det möjlighet till el-laddning.\" Antal p-platser anges inte.",
+    "kollektivtrafik": "Spårvagn i direkt anslutning – hållplats SKF och Gamlestadens resecentrum ligger nära; \"Med spårvagn tar det bara ca 7 minuter in till city.\"",
+    "hyresvard": "Aspelin Ramm AB",
+    "bild_url": null,
+    "kalla_url": [
+      "https://www.lokalnytt.se/kontor/g%C3%B6teborg/rullagergatan-9-340527"
+    ],
+    "hamtad_datum": "2026-08-21",
+    "beskrivning": "Nyrenoverat kontor på 290 kvm i East Square, ett hus från 1913 i Gamlestaden med spårvagn cirka 7 minuter från city. Annonsen lyfter parkering med laddmöjlighet, skyltläge och närhet till service, men säger ingenting om rumsindelning, öppen planlösning, mötesrum, våningsplan eller hyra. Hyresvärd är Aspelin Ramm och kontakten är Malin Tulldahl, vars telefon och e-post är dolda bakom annonsformuläret.",
+    "bekraftelsecitat": "Nu har du chansen att hyra en nyrenoverad och flexibel kontorslokal om 290 kvm",
+    "plus": [
+      "Parkering för både medarbetare och besökare med möjlighet till elbilsladdning – skallkravet är uttryckligen omnämnt i annonsen",
+      "Spårvagn i direkt anslutning: hållplats SKF och Gamlestadens resecentrum, cirka 7 minuter till city",
+      "Nyligen renoverad lokal i en karaktärsfastighet från 1913 (East Square)",
+      "290 kvm ger gott om utrymme för 8–12 personer med marginal för tillväxt",
+      "Service i närområdet: gym, restauranger, matbutik, apotek och företagshälsovård"
+    ],
+    "minus": [
+      "Hyran är inte publicerad – annonsen säger bara \"Kontakta annonsören\", går inte att budgetera på",
+      "Varken antal kontorsrum, mötesrum eller öppen planlösning framgår, alltså går de två tyngsta rankningskriterierna inte att bedöma",
+      "Våningsplan anges inte i annonsen",
+      "Ligger i Gamlestaden, alltså varken på Hisingen eller i Kungälv – nivå 3-kandidat med extra restid"
+    ],
+    "okanda_falt": [
+      "antal_kontorsrum",
+      "oppen_yta",
+      "oppen_yta_kvm",
+      "motesrum",
+      "hyra_kr_man",
+      "hyra_kr_kvm_ar",
+      "vaning",
+      "kontakt_telefon",
+      "kontakt_epost",
+      "bild_url",
+      "hyra",
+      "kontakt.epost",
+      "kontakt.telefon"
+    ],
+    "verifierad": true,
+    "kontakt": {
+      "namn": "Malin Tulldahl",
+      "telefon": null,
+      "epost": null
+    },
+    "restid_kungalv_min_uppskattad": 28,
+    "matchpoang": 66,
+    "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 3,8/15, Hyra 10/10, Tillträde 5/5",
+    "poangdelar": {
+      "yta": 25,
+      "rum": 12.5,
+      "oppen_yta": 10,
+      "geografi": 3.8,
+      "hyra": 10,
+      "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalnytt.se/kontor/g%C3%B6teborg/rullagergatan-9-340527"
+    }
+  },
+  {
+    "id": "ext-vastra-gatan-71-442-31-kungalv-135",
+    "titel": "Västra Gatan 71 – 135 kvm kontor på plan 4 med utsikt och hiss, centrala Kungälv",
+    "adress": "Västra Gatan 71, 442 31 Kungälv",
+    "omrade": "Kungälv centrum",
+    "niva": 2,
+    "typ": "kontor",
+    "kvm": 135,
+    "kvm_intervall": null,
+    "antal_kontorsrum": null,
+    "oppen_yta": null,
+    "oppen_yta_kvm": null,
+    "motesrum": null,
+    "hyra_kr_man": null,
+    "hyra_kr_kvm_ar": null,
+    "hyra_anmarkning": "Annonsen anger endast \"Kontakta hyresvärd\" – ingen hyresnivå publicerad.",
+    "tilltrade": "Faktarutan säger \"Enligt överenskommelse\"; annonstexten säger \"Lokalen är tillgänglig 1/6 2024\" (motsägelsefullt, uppgiften verkar gammal).",
+    "vaning": "Plan 4 (\"Lokalen är på 4.e våningen med utsikt, och hiss finns\")",
+    "parkering": null,
+    "kollektivtrafik": null,
+    "hyresvard": "Sigillet Fastighets AB (publ)",
+    "bild_url": "https://res.cloudinary.com/portally/image/upload/b_auto,c_lpad,h_600,q_auto,w_900/XK1_tysh1l?_a=BAMAPqeA0",
+    "kalla_url": [
+      "https://www.portally.com/lokal/vastra-gatan-71"
+    ],
+    "hamtad_datum": "2026-08-21",
+    "beskrivning": "135 kvm kontor på plan 4 med utsikt och hiss, mitt i centrala Kungälv. Annonsen är extremt kortfattad: varken planlösning, antal rum, hyra eller parkering anges. Att annonstexten talar om tillgänglighet 1/6 2024 tyder på att annonsen inte har uppdaterats.",
+    "bekraftelsecitat": "Kontorslokal på 135 kvm belägen centralt i Kungälv",
+    "plus": [
+      "Centralt läge i Kungälv, gångavstånd till stadens service",
+      "135 kvm är rätt storleksordning för 8–12 personer utan överyta",
+      "Plan 4 med utsikt och hiss i huset"
+    ],
+    "minus": [
+      "Parkering nämns inte alls – skallkravet går inte att bekräfta",
+      "Planlösningen är helt obeskriven: varken kontorsrum, mötesrum eller öppen yta anges",
+      "Ingen hyra publicerad",
+      "Annonstextens datum 1/6 2024 antyder en gammal, ej uppdaterad annons – kontrollera att lokalen fortfarande är ledig",
+      "parkering ej angiven — måste kollas (krav)",
+      "135 kvm är i underkant för 8–12 personer"
+    ],
+    "okanda_falt": [
+      "antal_kontorsrum",
+      "oppen_yta",
+      "oppen_yta_kvm",
+      "motesrum",
+      "hyra_kr_man",
+      "hyra_kr_kvm_ar",
+      "parkering",
+      "kollektivtrafik",
+      "kontakt_telefon",
+      "kontakt_epost",
+      "hyra",
+      "kontakt.epost",
+      "kontakt.telefon"
+    ],
+    "verifierad": true,
+    "kontakt": {
+      "namn": "Victor Fridén (Sigillet Fastighets AB)",
+      "telefon": null,
+      "epost": null
+    },
+    "restid_kungalv_min_uppskattad": 4,
+    "matchpoang": 66,
+    "poangmotivering": "Yta 20,5/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
+    "poangdelar": {
+      "yta": 20.5,
+      "rum": 12.5,
+      "oppen_yta": 10,
+      "geografi": 7.5,
+      "hyra": 10,
+      "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/vastra-gatan-71"
     }
   },
   {
@@ -7969,6 +8991,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/1-backa-berg%C3%B6gata-14-backa"
     }
   },
   {
@@ -8047,6 +9074,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/vaestra-hisingen/607020"
     }
   },
   {
@@ -8116,6 +9148,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://alvstranden.se/lediga-lokaler/plejadgatan-3-758-kvm-2/"
     }
   },
   {
@@ -8189,6 +9226,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://alvstranden.se/lediga-lokaler/frihamnsporten-4-332-kvm/"
     }
   },
   {
@@ -8263,6 +9305,90 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.platzer.se/sv/lokaler/lindholmspiren-9-105-kvm"
+    }
+  },
+  {
+    "id": "ext-larjeholmsvagen-12-angered-goteborg-587",
+    "titel": "Lärjeholms Gård, Lärjeholmsvägen 12 – 587 kvm kontor i byggnadsminne, Higab söker kontorsverksamhet",
+    "adress": "Lärjeholmsvägen 12, Angered, Göteborg",
+    "omrade": "Angered/Hjällbo, Göteborg",
+    "niva": 3,
+    "typ": "kontor",
+    "kvm": 587,
+    "kvm_intervall": null,
+    "antal_kontorsrum": null,
+    "oppen_yta": null,
+    "oppen_yta_kvm": null,
+    "motesrum": null,
+    "hyra_kr_man": null,
+    "hyra_kr_kvm_ar": null,
+    "hyra_anmarkning": "Ingen hyra anges i Higabs vakanslista; detaljsidan ligger på objektvision.se som blockerar hämtning (bot-verifiering).",
+    "tilltrade": null,
+    "vaning": null,
+    "parkering": null,
+    "kollektivtrafik": null,
+    "hyresvard": "Higab (Göteborgs kommunala fastighetsbolag)",
+    "bild_url": "https://www.higab.se/app/uploads/2015/11/Larjeholmsgard-P0129495_HgkvalitetRekommenderas-1600x1200.jpg",
+    "kalla_url": [
+      "https://www.higab.se/lediga-lokaler/",
+      "https://www.higab.se/vara-hus/larjeholms-gard/"
+    ],
+    "hamtad_datum": "2026-08-21",
+    "beskrivning": "587 kvm kontor i Lärjeholms Gård, ett byggnadsminne från 1790-talet som Higab hyr ut och där man aktivt söker en kontorsverksamhet. Detaljsidan ligger på objektvision.se och gick inte att hämta, så planlösning, rum, hyra, tillträde och parkering är okända. Läget i Angered ligger dessutom varken på Hisingen eller i Kungälv.",
+    "bekraftelsecitat": "Kontor. Storlek: 587 kvm. Lärjeholmsvägen 12, Angered",
+    "plus": [
+      "587 kvm renodlat kontor hos Higab, ett kommunalt fastighetsbolag – stabil hyresvärd",
+      "Nyrenoverat byggnadsminne från 1790-talet, en unik profilbyggnad för ett varumärke",
+      "Higab söker aktivt en kontorsverksamhet till lokalen: \"Nu söks en kontorsverksamhet till Lärjeholms Gård i östra Göteborg\"",
+      "Namngiven fastighetsförvaltare med direktnummer och e-post finns på Higabs hussida"
+    ],
+    "minus": [
+      "Ligger i Angered/Hjällbo – varken Hisingen eller Kungälv, alltså utanför sökområdet",
+      "587 kvm är ungefär dubbelt så mycket yta som 8–12 personer behöver",
+      "Detaljsidan (objektvision.se) blockerar hämtning: antal rum, mötesrum, hyra, tillträde och parkering är helt okända",
+      "Parkering nämns inte någonstans – skallkravet går inte att bekräfta, och Glenn Westerberg står som förvaltare, inte uttalat som uthyrningsansvarig",
+      "parkering ej angiven — måste kollas (krav)",
+      "587 kvm är mer yta än 8–12 personer behöver"
+    ],
+    "okanda_falt": [
+      "antal_kontorsrum",
+      "oppen_yta",
+      "oppen_yta_kvm",
+      "motesrum",
+      "hyra_kr_man",
+      "hyra_kr_kvm_ar",
+      "tilltrade",
+      "vaning",
+      "parkering",
+      "kollektivtrafik",
+      "hyra"
+    ],
+    "verifierad": true,
+    "kontakt": {
+      "namn": "Glenn Westerberg, fastighetsförvaltare (Higab) – enligt Higabs hussida för Lärjeholms Gård; Higabs växel för lediga lokaler är 031-368 53 00 / info@higab.se",
+      "telefon": "031-368 53 26",
+      "epost": "glenn.westerberg@higab.se"
+    },
+    "restid_kungalv_min_uppskattad": 28,
+    "matchpoang": 64,
+    "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 3,8/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
+    "poangdelar": {
+      "yta": 25,
+      "rum": 12.5,
+      "oppen_yta": 10,
+      "geografi": 3.8,
+      "hyra": 10,
+      "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.higab.se/lediga-lokaler/"
     }
   },
   {
@@ -8342,6 +9468,11 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/577529"
     }
   },
   {
@@ -8412,6 +9543,11 @@
       "geografi": 3.8,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/marieholmsgatan-36-marieholm-gamlestaden"
     }
   },
   {
@@ -8484,6 +9620,11 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/svarvaregatan-13"
     }
   },
   {
@@ -8561,6 +9702,11 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/hollandsgatan-5-300-kvm"
     }
   },
   {
@@ -8628,6 +9774,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/2-herkulesgatan-1v-backaplan"
     }
   },
   {
@@ -8653,7 +9804,8 @@
     "hyresvard": "loqalo AB",
     "bild_url": "https://static.lokalguiden.se/filter/976x520,,90,cover/uploads/customer/5716/8c26536e7e6fcd7950f30d200e11ee0b.jpg",
     "kalla_url": [
-      "https://www.lokalguiden.se/lokal/1-bultgatan-40b-kung%C3%A4lv"
+      "https://www.lokalguiden.se/lokal/1-bultgatan-40b-kung%C3%A4lv",
+      "https://www.portally.com/lokal/bultgatan-40b-480-kvm"
     ],
     "hamtad_datum": "2026-08-21",
     "beskrivning": "Färdigt kontor på 480 kvm i Rollsbo med flera enskilda kontorsrum i varierande storlek, konferensrum, mötesrum, reception, pausrum med pentry och lounge samt en stor terrass. Fastigheten har hiss, serverrum, kapprum, kopieringsrum, godsmottagning och flera WC inklusive RWC. Parkeringen är stark – både besöksparkering och garageplatser att hyra – men varken hyra, tillträde eller exakt antal rum står i annonsen (publicerad 2026-05-13).",
@@ -8699,6 +9851,11 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/1-bultgatan-40b-kung%C3%A4lv"
     }
   },
   {
@@ -8768,6 +9925,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://alvstranden.se/lediga-lokaler/theres-svenssons-gata-10-125-kvm/"
     }
   },
   {
@@ -8838,6 +10000,87 @@
       "geografi": 7.5,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/dumpergatan-4-kung%C3%A4lv"
+    }
+  },
+  {
+    "id": "lg-goteborgsvagen-64-surte-110",
+    "titel": "Kontor 110 kvm med öppen planlösning i Surte centrum",
+    "adress": "Göteborgsvägen 64, Surte",
+    "omrade": "Surte, Ale kommun",
+    "niva": 3,
+    "typ": "kontor",
+    "kvm": 110,
+    "kvm_intervall": null,
+    "antal_kontorsrum": null,
+    "oppen_yta": true,
+    "oppen_yta_kvm": null,
+    "motesrum": null,
+    "hyra_kr_man": null,
+    "hyra_kr_kvm_ar": null,
+    "hyra_anmarkning": "Annonsen anger \"Hyra: Ej angiven\" – ingen hyresnivå eller driftkostnad publicerad.",
+    "tilltrade": null,
+    "vaning": null,
+    "parkering": "\"Parkeringsmöjligheter finns i området\" – annonsen anger inga egna p-platser, antal eller laddmöjlighet.",
+    "kollektivtrafik": "\"Här når du E45 för smidig bilpendling till Göteborg på cirka 20 minuter, medan kollektivtrafiken tar dig dit på omkring 10 minuter.\" Ligger i Surte centrum med service och lunchrestauranger i närheten.",
+    "hyresvard": "loqalo AB",
+    "bild_url": "https://static.lokalguiden.se/uploads/customer/5716/d55acea1d42472fad14c57b4666d39f6.jpg",
+    "kalla_url": [
+      "https://www.lokalguiden.se/lokal/g%C3%B6teborgsv%C3%A4gen-64-ale"
+    ],
+    "hamtad_datum": "2026-08-21",
+    "beskrivning": "Kontorslokal på 110 kvm med öppen planlösning i Surte centrum, cirka 10 minuter från Göteborg med kollektivtrafik och ca 20 minuter via E45 med bil. Annonsen är kortfattad och nämner varken kontorsrum, mötesrum, pentry, dusch eller våningsplan. Lokalen ligger i Ale kommun, alltså utanför både Hisingen och Kungälv.",
+    "bekraftelsecitat": "110 m² Kontor",
+    "plus": [
+      "Öppen planlösning uttryckligen angiven i annonsen",
+      "\"Parkeringsmöjligheter finns i området\" enligt annonsen",
+      "Cirka 10 minuter till Göteborg med kollektivtrafik och ca 20 minuter via E45 med bil",
+      "Service, lunchrestauranger, skolor samt skog, vandringsleder och badplats i närheten",
+      "Namngiven kontaktperson hos loqalo med både telefon och e-post",
+      "dusch finns"
+    ],
+    "minus": [
+      "110 kvm är snålt tilltaget för 8–12 personer, särskilt om egna kontorsrum behövs",
+      "Parkeringen är bara vagt beskriven som \"i området\" – inga egna platser bekräftade, vilket är ett skallkrav",
+      "Varken hyra, tillträde eller våningsplan anges",
+      "Ligger i Surte i Ale kommun, utanför sökområdet Hisingen/Kungälv, och annonsen nämner inga kontorsrum, mötesrum eller pentry",
+      "110 kvm är i underkant för 8–12 personer"
+    ],
+    "okanda_falt": [
+      "antal_kontorsrum",
+      "oppen_yta_kvm",
+      "motesrum",
+      "hyra_kr_man",
+      "hyra_kr_kvm_ar",
+      "tilltrade",
+      "vaning",
+      "hyra"
+    ],
+    "verifierad": true,
+    "kontakt": {
+      "namn": "Julia Schwartz",
+      "telefon": "072-147 75 20",
+      "epost": "julia@loqalo.se"
+    },
+    "restid_kungalv_min_uppskattad": 22,
+    "matchpoang": 57,
+    "poangmotivering": "Yta 13/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 3,8/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
+    "poangdelar": {
+      "yta": 13,
+      "rum": 12.5,
+      "oppen_yta": 15,
+      "geografi": 3.8,
+      "hyra": 10,
+      "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/g%C3%B6teborgsv%C3%A4gen-64-ale"
     }
   },
   {
@@ -8911,6 +10154,11 @@
       "geografi": 15,
       "hyra": 10,
       "tilltrade": 5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/backa-bergogata-5-2"
     }
   },
   {
@@ -8982,6 +10230,11 @@
       "geografi": 3.8,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/17-vassgatan-3-%C3%B6stra-g%C3%B6teborg"
     }
   },
   {
@@ -9055,6 +10308,11 @@
       "geografi": 3.8,
       "hyra": 10,
       "tilltrade": 2.5
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/g%C3%B6teborgsv%C3%A4gen-93a-ale"
     }
   }
 ]

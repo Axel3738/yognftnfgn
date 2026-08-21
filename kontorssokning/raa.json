@@ -1,7 +1,7 @@
 {
  "hamtad_datum": "2026-08-21",
- "antal_objekt_rakt": 154,
- "antal_unika": 134,
+ "antal_objekt_rakt": 164,
+ "antal_unika": 142,
  "godkanda": [
   {
    "titel": "Kontor högst upp med takterrass på Ringön, 900 m till spårvagn",
@@ -4086,6 +4086,117 @@
    "verifierad": true
   },
   {
+   "titel": "Nyrenoverat kontor 290 kvm i East Square, hus från 1913",
+   "adress": "Rullagergatan 9, Göteborg",
+   "omrade": "Gamlestaden",
+   "niva": 3,
+   "typ": "kontor",
+   "kvm": 290,
+   "kvm_intervall": null,
+   "antal_kontorsrum": null,
+   "oppen_yta": null,
+   "oppen_yta_kvm": null,
+   "motesrum": null,
+   "hyra_kr_man": null,
+   "hyra_kr_kvm_ar": null,
+   "hyra_anmarkning": "Annonsens faktaruta anger hyra som \"Kontakta annonsören\" – ingen siffra publicerad.",
+   "tilltrade": "Enligt överenskommelse",
+   "vaning": null,
+   "parkering": "\"Här finns goda parkeringsmöjligheter för besökare och medarbetare. Givetvis finns det möjlighet till el-laddning.\" Antal p-platser anges inte.",
+   "kollektivtrafik": "Spårvagn i direkt anslutning – hållplats SKF och Gamlestadens resecentrum ligger nära; \"Med spårvagn tar det bara ca 7 minuter in till city.\"",
+   "hyresvard": "Aspelin Ramm AB",
+   "kontakt_namn": "Malin Tulldahl",
+   "kontakt_telefon": null,
+   "kontakt_epost": null,
+   "bild_url": null,
+   "bekraftelsecitat": "Nu har du chansen att hyra en nyrenoverad och flexibel kontorslokal om 290 kvm",
+   "beskrivning": "Nyrenoverat kontor på 290 kvm i East Square, ett hus från 1913 i Gamlestaden med spårvagn cirka 7 minuter från city. Annonsen lyfter parkering med laddmöjlighet, skyltläge och närhet till service, men säger ingenting om rumsindelning, öppen planlösning, mötesrum, våningsplan eller hyra. Hyresvärd är Aspelin Ramm och kontakten är Malin Tulldahl, vars telefon och e-post är dolda bakom annonsformuläret.",
+   "plus": [
+    "Parkering för både medarbetare och besökare med möjlighet till elbilsladdning – skallkravet är uttryckligen omnämnt i annonsen",
+    "Spårvagn i direkt anslutning: hållplats SKF och Gamlestadens resecentrum, cirka 7 minuter till city",
+    "Nyligen renoverad lokal i en karaktärsfastighet från 1913 (East Square)",
+    "290 kvm ger gott om utrymme för 8–12 personer med marginal för tillväxt",
+    "Service i närområdet: gym, restauranger, matbutik, apotek och företagshälsovård"
+   ],
+   "minus": [
+    "Hyran är inte publicerad – annonsen säger bara \"Kontakta annonsören\", går inte att budgetera på",
+    "Varken antal kontorsrum, mötesrum eller öppen planlösning framgår, alltså går de två tyngsta rankningskriterierna inte att bedöma",
+    "Våningsplan anges inte i annonsen",
+    "Ligger i Gamlestaden, alltså varken på Hisingen eller i Kungälv – nivå 3-kandidat med extra restid"
+   ],
+   "kalla_url": [
+    "https://www.lokalnytt.se/kontor/g%C3%B6teborg/rullagergatan-9-340527"
+   ],
+   "okanda_falt": [
+    "antal_kontorsrum",
+    "oppen_yta",
+    "oppen_yta_kvm",
+    "motesrum",
+    "hyra_kr_man",
+    "hyra_kr_kvm_ar",
+    "vaning",
+    "kontakt_telefon",
+    "kontakt_epost",
+    "bild_url"
+   ],
+   "verifierad": true
+  },
+  {
+   "titel": "Kontor 239–745 kvm, delbart i två enheter, inflytt omgående",
+   "adress": "Transportgatan 39, Agnesberg",
+   "omrade": "Bäckebol",
+   "niva": 3,
+   "typ": "kontor",
+   "kvm": 492,
+   "kvm_intervall": [
+    239,
+    745
+   ],
+   "antal_kontorsrum": null,
+   "oppen_yta": true,
+   "oppen_yta_kvm": null,
+   "motesrum": null,
+   "hyra_kr_man": null,
+   "hyra_kr_kvm_ar": null,
+   "hyra_anmarkning": "Annonsens faktaruta anger \"Hyra: Ej angiven\" – ingen siffra publicerad.",
+   "tilltrade": "Omgående",
+   "vaning": "Faktarutan anger \"Våningsplan: 2\" – annonsen förtydligar inte om det avser plan 2 eller två plan. \"Stor entré på markplan samt hiss gör lokalerna lättillgängliga.\"",
+   "parkering": "\"Parkeringsplatser finns i direkt anslutning till byggnaden för både personal och besökare\" samt \"Fri parkering (möjligt att installera laddstolpar om behov av elbilsladdning finns)\". Parkering, besöksparkering, kundparkering och laddstolpe listas bland faciliteterna. Antal p-platser anges inte.",
+   "kollektivtrafik": "\"Goda kollektivtrafikförbindelser med buss till centrala Göteborg\" – ingen linje eller hållplats namnges.",
+   "hyresvard": "Mileway Sweden AB",
+   "kontakt_namn": "Caroline Klamas",
+   "kontakt_telefon": "070-279 58 41",
+   "kontakt_epost": "Caroline.Klamas@mileway.com",
+   "bild_url": "https://static.lokalguiden.se/filter/976x520,,90,cover/uploads/customer/6267/1212b525b226a8fc24e93481f5493e7c.jpg",
+   "bekraftelsecitat": "två flexibla kontorslokaler på 239 och 506 kvm",
+   "beskrivning": "Två kontorsenheter om 239 respektive 506 kvm i ett industri- och handelsområde vid E6 norr om Göteborg, som kan hyras var för sig eller slås ihop till 745 kvm. Annonsen anger uttryckligen att ytorna kan utformas som öppna kontorslandskap eller separata kontor och listar dusch, hiss, kök/pentry, serverrum, fiber och fri parkering med möjlighet till laddstolpar. Hyra saknas helt och antalet kontorsrum respektive mötesrum anges inte.",
+   "plus": [
+    "Dusch listas uttryckligen bland faciliteterna",
+    "Fri parkering i direkt anslutning för både personal och besökare, med möjlighet att installera laddstolpar",
+    "Planlösningen är anpassningsbar: \"öppna kontorslandskap eller separata kontor\", plus konferensrum",
+    "Tillträde omgående – ingen väntan på inflytt",
+    "Hiss, kök/pentry, WC, handikapptoalett, serverrum och fiber ingår enligt egenskapslistan"
+   ],
+   "minus": [
+    "Hyran är inte publicerad (\"Ej angiven\") – går inte att budgetera på",
+    "Antal kontorsrum och antal mötesrum anges inte, trots att båda är avgörande för rankningen",
+    "Minsta enheten är 239 kvm, vilket är rejält tilltaget för 8–12 personer; 745 kvm är klart för stort",
+    "Industri- och handelsområde cirka 10 km norr om centrum, kollektivtrafiken är buss utan namngiven linje eller hållplats"
+   ],
+   "kalla_url": [
+    "https://www.lokalguiden.se/lokal/3-transportgatan-39-b%C3%A4ckebol",
+    "https://www.portally.com/lokal/transportgatan-39-506-kvm"
+   ],
+   "okanda_falt": [
+    "antal_kontorsrum",
+    "oppen_yta_kvm",
+    "motesrum",
+    "hyra_kr_man",
+    "hyra_kr_kvm_ar"
+   ],
+   "verifierad": true
+  },
+  {
    "titel": "Torslanda hangar – 172 kvm kontor i markplan på Gamla Flygplatsvägen",
    "adress": "Gamla Flygplatsvägen 4, Torslanda",
    "omrade": "Torslanda",
@@ -4728,64 +4839,6 @@
    "verifierad": true
   },
   {
-   "titel": "Transportgatan 39 – två kontorsenheter på 239 och 506 kvm vid E6 med fri parkering",
-   "adress": "Transportgatan 39, 422 46 Hisings Backa",
-   "omrade": "Bäckebol / Hisings Backa, Göteborg",
-   "niva": 1,
-   "typ": "kontor",
-   "kvm": 492,
-   "kvm_intervall": [
-    239,
-    745
-   ],
-   "antal_kontorsrum": null,
-   "oppen_yta": true,
-   "oppen_yta_kvm": null,
-   "motesrum": null,
-   "hyra_kr_man": null,
-   "hyra_kr_kvm_ar": null,
-   "hyra_anmarkning": "Hyresfältet anger \"Kontakta hyresvärd\"; kontraktlängd \"Förhandlingsbart\", förstahandskontrakt",
-   "tilltrade": "Toppfältet anger \"Enligt överenskommelse\", medan Ekonomi-rutan anger \"Omgående\" – motstridigt i annonsen",
-   "vaning": "2 av 2",
-   "parkering": "\"Fri parkering (möjligt att installera laddstolpar om behov av elbilsladdning finns)\"",
-   "kollektivtrafik": "\"Det finns goda kollektivtrafikförbindelser med buss till centrala Göteborg.\" Direkt anslutning till E6",
-   "hyresvard": "Mileway",
-   "kontakt_namn": null,
-   "kontakt_telefon": null,
-   "kontakt_epost": null,
-   "bild_url": "https://res.cloudinary.com/portally/image/upload/b_auto,c_lpad,h_600,q_auto,w_900/v1/Objektvision-images/Image.aspx_szurnl?_a=BAMAPqeA0",
-   "bekraftelsecitat": "Välkommen till en trevlig fastighet med två flexibla kontorslokaler på 239 och 506 kvm",
-   "plus": [
-    "Fri parkering på fastigheten, med möjlighet att installera laddstolpar",
-    "Annonsen pekar uttryckligen ut \"både öppna arbetsytor och separata kontorsrum\"",
-    "239 kvm-enheten är en bra storlek för 8–12 personer, och de två enheterna kan slås ihop",
-    "Direkt E6-anslutning plus buss till centrala Göteborg och service i Bäckebol Center",
-    "Förstahandskontrakt med förhandlingsbar längd"
-   ],
-   "minus": [
-    "Hyran anges inte – \"Kontakta hyresvärd\"",
-    "Ingen namngiven kontaktperson, bara \"Kontakta Mileway\"",
-    "Antal kontorsrum och mötesrum framgår inte; planlösningen hänvisas till ritning i bilagorna",
-    "Ingen dusch eller omklädning nämns",
-    "Motstridigt tillträde (Enligt överenskommelse vs Omgående) och byggår 1982"
-   ],
-   "kalla_url": [
-    "https://www.portally.com/lokal/transportgatan-39-506-kvm"
-   ],
-   "beskrivning": "Två flexibla kontorsenheter på 239 respektive 506 kvm i en tvåvåningsfastighet från 1982 i Bäckebol, uthyrda av Mileway. Enheterna kan hyras var för sig eller sammanhängande och passar verksamheter som behöver både öppna arbetsytor och separata kontorsrum. Fri parkering med laddmöjlighet finns, men hyra och kontaktperson saknas i annonsen.",
-   "okanda_falt": [
-    "antal_kontorsrum",
-    "motesrum",
-    "oppen_yta_kvm",
-    "hyra_kr_man",
-    "hyra_kr_kvm_ar",
-    "kontakt_namn",
-    "kontakt_telefon",
-    "kontakt_epost"
-   ],
-   "verifierad": true
-  },
-  {
    "titel": "Tagenevägen 62 – 180–360 kvm flexibelt kontor på plan 2 i BREEAM-certifierad fastighet",
    "adress": "Tagenevägen 62, 425 37 Hisings Kärra",
    "omrade": "Hisings Kärra / Tagene, Göteborg",
@@ -5253,7 +5306,8 @@
    "bild_url": "https://static.lokalguiden.se/filter/976x520,,90,cover/uploads/customer/5716/8c26536e7e6fcd7950f30d200e11ee0b.jpg",
    "bekraftelsecitat": "möjlighet att hyra en modern och välplanerad kontorslokal om cirka 480 kvm",
    "kalla_url": [
-    "https://www.lokalguiden.se/lokal/1-bultgatan-40b-kung%C3%A4lv"
+    "https://www.lokalguiden.se/lokal/1-bultgatan-40b-kung%C3%A4lv",
+    "https://www.portally.com/lokal/bultgatan-40b-480-kvm"
    ],
    "beskrivning": "Färdigt kontor på 480 kvm i Rollsbo med flera enskilda kontorsrum i varierande storlek, konferensrum, mötesrum, reception, pausrum med pentry och lounge samt en stor terrass. Fastigheten har hiss, serverrum, kapprum, kopieringsrum, godsmottagning och flera WC inklusive RWC. Parkeringen är stark – både besöksparkering och garageplatser att hyra – men varken hyra, tillträde eller exakt antal rum står i annonsen (publicerad 2026-05-13).",
    "okanda_falt": [
@@ -6868,6 +6922,397 @@
     "tilltrade",
     "vaning",
     "kollektivtrafik"
+   ],
+   "verifierad": true
+  },
+  {
+   "titel": "Bultgatan 40, Rollsbo – kontor att hyra i spannet ca 100–700 kvm, även kombiytor kontor/lager",
+   "adress": "Bultgatan 40, 440 42 Kungälv",
+   "omrade": "Rollsbo, Kungälv",
+   "niva": 2,
+   "typ": "kombilokal",
+   "kvm": 400,
+   "kvm_intervall": [
+    100,
+    700
+   ],
+   "antal_kontorsrum": null,
+   "oppen_yta": null,
+   "oppen_yta_kvm": null,
+   "motesrum": null,
+   "hyra_kr_man": null,
+   "hyra_kr_kvm_ar": null,
+   "hyra_anmarkning": "Annonsen anger endast \"Kontakta hyresvärd\" – ingen hyresnivå publicerad.",
+   "tilltrade": "Omedelbart",
+   "vaning": null,
+   "parkering": null,
+   "kollektivtrafik": null,
+   "hyresvard": "Altra Fastigheter",
+   "kontakt_namn": "Moa Corse (Altra Fastigheter)",
+   "kontakt_telefon": null,
+   "kontakt_epost": null,
+   "bild_url": "https://res.cloudinary.com/portally/image/upload/b_auto,c_lpad,h_600,q_auto,w_900/_56A3074_hm386n",
+   "bekraftelsecitat": "möjlighet att hyra enbart kontor i spannet ca 100–700 kvm",
+   "kalla_url": [
+    "https://www.portally.com/lokal/bultgatan-40-100-700-kvm"
+   ],
+   "beskrivning": "Fastighetsannons för hela Bultgatan 40 i Rollsbo där kontor kan hyras i spannet ca 100–700 kvm, med kombiytor kontor/lager och en butiksyta om ca 600 kvm som alternativ. Annonsen beskriver ingen planlösning alls, så antal rum, mötesrum och öppen yta är okända. Tillträde omedelbart och lunchrestaurang i huset, men varken hyra eller parkering anges.",
+   "plus": [
+    "Går att hyra enbart kontor från ca 100 kvm – storleken kan skräddarsys efter 8–12 personer",
+    "Tillträde omedelbart enligt faktarutan",
+    "Lunchrestaurang finns i huset",
+    "Annonsen nämner e-handel som en av verksamheterna lokalerna passar för",
+    "Rollsbo industriområde, \"endast cirka 20 minuter till centrala Göteborg\" och nära E6"
+   ],
+   "minus": [
+    "Ingen planlösning beskriven – kontorsrum, mötesrum och eventuell öppen yta framgår inte",
+    "Ingen hyra publicerad",
+    "Parkering nämns inte alls – skallkravet går inte att bekräfta",
+    "Detta är en fastighetsannons, inte en specifik ledig lokal: 100–700 kvm är ett spann över flera enheter, så vad som faktiskt är ledigt måste ringas fram"
+   ],
+   "okanda_falt": [
+    "antal_kontorsrum",
+    "oppen_yta",
+    "oppen_yta_kvm",
+    "motesrum",
+    "hyra_kr_man",
+    "hyra_kr_kvm_ar",
+    "vaning",
+    "parkering",
+    "kollektivtrafik",
+    "kontakt_telefon",
+    "kontakt_epost"
+   ],
+   "verifierad": true
+  },
+  {
+   "titel": "Västra Gatan 71 – 135 kvm kontor på plan 4 med utsikt och hiss, centrala Kungälv",
+   "adress": "Västra Gatan 71, 442 31 Kungälv",
+   "omrade": "Kungälv centrum",
+   "niva": 2,
+   "typ": "kontor",
+   "kvm": 135,
+   "kvm_intervall": null,
+   "antal_kontorsrum": null,
+   "oppen_yta": null,
+   "oppen_yta_kvm": null,
+   "motesrum": null,
+   "hyra_kr_man": null,
+   "hyra_kr_kvm_ar": null,
+   "hyra_anmarkning": "Annonsen anger endast \"Kontakta hyresvärd\" – ingen hyresnivå publicerad.",
+   "tilltrade": "Faktarutan säger \"Enligt överenskommelse\"; annonstexten säger \"Lokalen är tillgänglig 1/6 2024\" (motsägelsefullt, uppgiften verkar gammal).",
+   "vaning": "Plan 4 (\"Lokalen är på 4.e våningen med utsikt, och hiss finns\")",
+   "parkering": null,
+   "kollektivtrafik": null,
+   "hyresvard": "Sigillet Fastighets AB (publ)",
+   "kontakt_namn": "Victor Fridén (Sigillet Fastighets AB)",
+   "kontakt_telefon": null,
+   "kontakt_epost": null,
+   "bild_url": "https://res.cloudinary.com/portally/image/upload/b_auto,c_lpad,h_600,q_auto,w_900/XK1_tysh1l?_a=BAMAPqeA0",
+   "bekraftelsecitat": "Kontorslokal på 135 kvm belägen centralt i Kungälv",
+   "kalla_url": [
+    "https://www.portally.com/lokal/vastra-gatan-71"
+   ],
+   "beskrivning": "135 kvm kontor på plan 4 med utsikt och hiss, mitt i centrala Kungälv. Annonsen är extremt kortfattad: varken planlösning, antal rum, hyra eller parkering anges. Att annonstexten talar om tillgänglighet 1/6 2024 tyder på att annonsen inte har uppdaterats.",
+   "plus": [
+    "Centralt läge i Kungälv, gångavstånd till stadens service",
+    "135 kvm är rätt storleksordning för 8–12 personer utan överyta",
+    "Plan 4 med utsikt och hiss i huset"
+   ],
+   "minus": [
+    "Parkering nämns inte alls – skallkravet går inte att bekräfta",
+    "Planlösningen är helt obeskriven: varken kontorsrum, mötesrum eller öppen yta anges",
+    "Ingen hyra publicerad",
+    "Annonstextens datum 1/6 2024 antyder en gammal, ej uppdaterad annons – kontrollera att lokalen fortfarande är ledig"
+   ],
+   "okanda_falt": [
+    "antal_kontorsrum",
+    "oppen_yta",
+    "oppen_yta_kvm",
+    "motesrum",
+    "hyra_kr_man",
+    "hyra_kr_kvm_ar",
+    "parkering",
+    "kollektivtrafik",
+    "kontakt_telefon",
+    "kontakt_epost"
+   ],
+   "verifierad": true
+  },
+  {
+   "titel": "Hollandsgatan 4, Ytterby Park – 149 kvm nyproducerad lokal med påverkbar planlösning, parkering i direkt anslutning",
+   "adress": "Hollandsgatan 4, 442 50 Ytterby",
+   "omrade": "Ytterby, Kungälv",
+   "niva": 2,
+   "typ": "nyproduktion",
+   "kvm": 149,
+   "kvm_intervall": null,
+   "antal_kontorsrum": null,
+   "oppen_yta": null,
+   "oppen_yta_kvm": null,
+   "motesrum": null,
+   "hyra_kr_man": null,
+   "hyra_kr_kvm_ar": null,
+   "hyra_anmarkning": "Annonsen anger endast \"Kontakta hyresvärd\" – ingen hyresnivå publicerad.",
+   "tilltrade": "Faktarutan säger \"Enligt överenskommelse\"; texten säger \"byggstart 2025 och inflyttning under 2026\".",
+   "vaning": null,
+   "parkering": "\"Gott om parkeringsplatser i direkt anslutning till fastigheten förstärker bekvämligheten ytterligare.\"",
+   "kollektivtrafik": "\"Busshållplats finns precis utanför fastigheten med smidiga förbindelser till Kungälv centrum och Ytterby station där tåg vidare mot Göteborg avgår frekvent.\"",
+   "hyresvard": null,
+   "kontakt_namn": "Madeleine Ljungberg (Croisette Real Estate Partner)",
+   "kontakt_telefon": null,
+   "kontakt_epost": null,
+   "bild_url": "https://res.cloudinary.com/portally/image/upload/b_auto,c_lpad,h_600,q_auto,w_900/v1/Objektvision-images/Image.aspx_ri5sfu",
+   "bekraftelsecitat": "Lokaltyp: Butik, Industri/Verkstad, Kontor – Storlek: 149 m²",
+   "kalla_url": [
+    "https://www.portally.com/lokal/hollandsgatan-4"
+   ],
+   "beskrivning": "Nyproducerad, ännu inte färdigställd verksamhetslokal på 149 kvm i Ytterby Park med skyltläge mot Marstrandsvägen. Hyresgästen kan påverka både planlösning och materialval, men inga rum, mötesrum eller hyror anges och inflyttning ligger under 2026. Parkering i direkt anslutning och busshållplats utanför entrén är däremot uttalat i annonsen.",
+   "plus": [
+    "Parkering uttryckligen utlovad: \"Gott om parkeringsplatser i direkt anslutning till fastigheten\" – enda objektet av mina sex där skallkravet bekräftas",
+    "Busshållplats precis utanför fastigheten, tåg mot Göteborg från Ytterby station",
+    "Påverkbar planlösning – går att rita ett kontor efter 8–12 personer från grunden",
+    "149 kvm är en rimlig storlek för 8–12 personer"
+   ],
+   "minus": [
+    "Nyproduktion med byggstart 2025 och inflyttning under 2026 – ingen färdig lokal att titta på eller flytta in i direkt",
+    "Annonsen listar lokaltypen som butik/industri/verkstad/kontor och beskriver den bara som \"flexibel verksamhetslokal\" – inte som färdigt kontor",
+    "Ingen hyra, inga kontorsrum, inga mötesrum och ingen fastighetsägare namngiven",
+    "Ytterby ligger utanför Kungälvs centrum"
+   ],
+   "okanda_falt": [
+    "antal_kontorsrum",
+    "oppen_yta",
+    "oppen_yta_kvm",
+    "motesrum",
+    "hyra_kr_man",
+    "hyra_kr_kvm_ar",
+    "vaning",
+    "hyresvard",
+    "kontakt_telefon",
+    "kontakt_epost"
+   ],
+   "verifierad": true
+  },
+  {
+   "titel": "Hollandsgatan, Ytterby – ca 150 kvm kontor att hyra (portalannons utan beskrivning)",
+   "adress": "Hollandsgatan (gatunummer dolt i annonsen), Ytterby, Kungälv",
+   "omrade": "Ytterby, Kungälv",
+   "niva": 2,
+   "typ": "kontor",
+   "kvm": 150,
+   "kvm_intervall": null,
+   "antal_kontorsrum": null,
+   "oppen_yta": null,
+   "oppen_yta_kvm": null,
+   "motesrum": null,
+   "hyra_kr_man": null,
+   "hyra_kr_kvm_ar": null,
+   "hyra_anmarkning": "Annonsen anger \"Hyra per år exkl. drift: Inte angivet\". Full information och hyresvärdens kontaktuppgifter kräver inloggning/prenumeration på verksamhetslokaler.se.",
+   "tilltrade": null,
+   "vaning": null,
+   "parkering": null,
+   "kollektivtrafik": null,
+   "hyresvard": null,
+   "kontakt_namn": null,
+   "kontakt_telefon": null,
+   "kontakt_epost": null,
+   "bild_url": "https://www.verksamhetslokaler.se/LPStreetView/Cache/591761_534.webp",
+   "bekraftelsecitat": "Kontor att hyra, Kungälv, Ytterby, Hollandsgatan – Ca. 150 m2",
+   "kalla_url": [
+    "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/591761"
+   ],
+   "beskrivning": "Kort portalannons för ca 150 kvm kontor på Hollandsgatan i Ytterby, helt utan beskrivningstext. Varken planlösning, hyra, parkering, tillträde eller hyresvärd framgår, och kontaktuppgifterna ligger bakom inloggning. Storleken passar 8–12 personer, men allt annat måste ringas fram – annonsen ligger dessutom på samma gata som nyproduktionen Hollandsgatan 4 och kan vara samma objekt.",
+   "plus": [
+    "Ca 150 kvm anges som renodlat kontor – rätt storlek för 8–12 personer",
+    "Ligger i Ytterby, Kungälv, inom sökområdet",
+    "Annonsen är aktiv och senast uppdaterad 20 juli, alltså färsk"
+   ],
+   "minus": [
+    "Ingen beskrivningstext alls – kontorsrum, öppen yta, mötesrum och våning saknas helt",
+    "Parkering nämns inte – skallkravet går inte att bekräfta",
+    "Ingen hyra angiven och inget tillträdesdatum (fältet \"Indraget 20.07.2026\" är inte ett tillträde)",
+    "Hyresvärd och kontaktuppgifter ligger bakom betalvägg, och gatunumret är dolt – kan vara dubblett av Hollandsgatan 4"
+   ],
+   "okanda_falt": [
+    "antal_kontorsrum",
+    "oppen_yta",
+    "oppen_yta_kvm",
+    "motesrum",
+    "hyra_kr_man",
+    "hyra_kr_kvm_ar",
+    "tilltrade",
+    "vaning",
+    "parkering",
+    "kollektivtrafik",
+    "hyresvard",
+    "kontakt_namn",
+    "kontakt_telefon",
+    "kontakt_epost"
+   ],
+   "verifierad": true
+  },
+  {
+   "titel": "Lärjeholms Gård, Lärjeholmsvägen 12 – 587 kvm kontor i byggnadsminne, Higab söker kontorsverksamhet",
+   "adress": "Lärjeholmsvägen 12, Angered, Göteborg",
+   "omrade": "Angered/Hjällbo, Göteborg",
+   "niva": 3,
+   "typ": "kontor",
+   "kvm": 587,
+   "kvm_intervall": null,
+   "antal_kontorsrum": null,
+   "oppen_yta": null,
+   "oppen_yta_kvm": null,
+   "motesrum": null,
+   "hyra_kr_man": null,
+   "hyra_kr_kvm_ar": null,
+   "hyra_anmarkning": "Ingen hyra anges i Higabs vakanslista; detaljsidan ligger på objektvision.se som blockerar hämtning (bot-verifiering).",
+   "tilltrade": null,
+   "vaning": null,
+   "parkering": null,
+   "kollektivtrafik": null,
+   "hyresvard": "Higab (Göteborgs kommunala fastighetsbolag)",
+   "kontakt_namn": "Glenn Westerberg, fastighetsförvaltare (Higab) – enligt Higabs hussida för Lärjeholms Gård; Higabs växel för lediga lokaler är 031-368 53 00 / info@higab.se",
+   "kontakt_telefon": "031-368 53 26",
+   "kontakt_epost": "glenn.westerberg@higab.se",
+   "bild_url": "https://www.higab.se/app/uploads/2015/11/Larjeholmsgard-P0129495_HgkvalitetRekommenderas-1600x1200.jpg",
+   "bekraftelsecitat": "Kontor. Storlek: 587 kvm. Lärjeholmsvägen 12, Angered",
+   "kalla_url": [
+    "https://www.higab.se/lediga-lokaler/",
+    "https://www.higab.se/vara-hus/larjeholms-gard/"
+   ],
+   "beskrivning": "587 kvm kontor i Lärjeholms Gård, ett byggnadsminne från 1790-talet som Higab hyr ut och där man aktivt söker en kontorsverksamhet. Detaljsidan ligger på objektvision.se och gick inte att hämta, så planlösning, rum, hyra, tillträde och parkering är okända. Läget i Angered ligger dessutom varken på Hisingen eller i Kungälv.",
+   "plus": [
+    "587 kvm renodlat kontor hos Higab, ett kommunalt fastighetsbolag – stabil hyresvärd",
+    "Nyrenoverat byggnadsminne från 1790-talet, en unik profilbyggnad för ett varumärke",
+    "Higab söker aktivt en kontorsverksamhet till lokalen: \"Nu söks en kontorsverksamhet till Lärjeholms Gård i östra Göteborg\"",
+    "Namngiven fastighetsförvaltare med direktnummer och e-post finns på Higabs hussida"
+   ],
+   "minus": [
+    "Ligger i Angered/Hjällbo – varken Hisingen eller Kungälv, alltså utanför sökområdet",
+    "587 kvm är ungefär dubbelt så mycket yta som 8–12 personer behöver",
+    "Detaljsidan (objektvision.se) blockerar hämtning: antal rum, mötesrum, hyra, tillträde och parkering är helt okända",
+    "Parkering nämns inte någonstans – skallkravet går inte att bekräfta, och Glenn Westerberg står som förvaltare, inte uttalat som uthyrningsansvarig"
+   ],
+   "okanda_falt": [
+    "antal_kontorsrum",
+    "oppen_yta",
+    "oppen_yta_kvm",
+    "motesrum",
+    "hyra_kr_man",
+    "hyra_kr_kvm_ar",
+    "tilltrade",
+    "vaning",
+    "parkering",
+    "kollektivtrafik"
+   ],
+   "verifierad": true
+  },
+  {
+   "titel": "Flexibelt kontor 280–570 kvm med parkeringshus och padelhall",
+   "adress": "Marieholmsgatan 64, Göteborg",
+   "omrade": "Marieholm / Gamlestaden",
+   "niva": 3,
+   "typ": "kontor",
+   "kvm": 425,
+   "kvm_intervall": [
+    280,
+    570
+   ],
+   "antal_kontorsrum": null,
+   "oppen_yta": true,
+   "oppen_yta_kvm": null,
+   "motesrum": null,
+   "hyra_kr_man": null,
+   "hyra_kr_kvm_ar": null,
+   "hyra_anmarkning": "Annonsen anger \"Hyra: Ej angiven\" och ingen driftkostnad – hyresnivån måste efterfrågas hos Newsec.",
+   "tilltrade": null,
+   "vaning": "3",
+   "parkering": "\"I övrigt är det gott om parkeringsplatser tack vare vårt stora parkeringshus\" – parkeringshuset uppges ha många lediga platser för hyresgäster och besökare. Inget sägs om laddplatser eller kostnad.",
+   "kollektivtrafik": "Busshållplats direkt utanför fastigheten. Gamlestads Torg med tåg och spårvagn ligger på promenadavstånd. Direkt access till E20, E6 och E45 samt närhet till Marieholmstunneln.",
+   "hyresvard": "Newsec",
+   "kontakt_namn": "Ulf Birk",
+   "kontakt_telefon": "031-761 63 08 / 070-859 60 51 (växel 020-40 40 40)",
+   "kontakt_epost": "ulf.birk@newsec.se",
+   "bild_url": "https://static.lokalguiden.se/uploads/customer/394/c6a84337eef5fcb96c659cbdaa3ffcde.jpg",
+   "bekraftelsecitat": "280–570 m² Kontor",
+   "kalla_url": [
+    "https://www.lokalguiden.se/lokal/marieholmsgatan-64"
+   ],
+   "beskrivning": "Kontorsyta på plan 3 i en fastighet med hög takhöjd, stora ljusgårdar och mycket dagsljus, uthyrbar i spannet 280–570 kvm. Planlösningen är i dag en blandning av öppna ytor och egna rum och uppges kunna anpassas efter hyresgästens önskemål. Fastigheten har eget parkeringshus, busshållplats direkt utanför och padelhall i huset, men varken hyra, tillträde eller antal rum anges.",
+   "plus": [
+    "Parkering tydligt bekräftad i annonsen: eget stort parkeringshus med \"gott om parkeringsplatser\" för hyresgäster och besökare",
+    "Blandning av öppen yta och egna rum redan i dag, och lokalen uppges kunna anpassas efter hyresgästens önskemål",
+    "Busshållplats direkt utanför och gångavstånd till Gamlestads Torg med både tåg och spårvagn",
+    "Hög takhöjd, mycket naturligt ljus och stora ljusgårdar",
+    "Padelhall i fastigheten"
+   ],
+   "minus": [
+    "Varken hyra eller driftkostnad anges – helt oprissatt",
+    "Inget tillträdesdatum angivet",
+    "Antal kontorsrum, mötesrum, pentry och dusch framgår inte av annonsen",
+    "Minsta yta 280 kvm är rejält tilltaget för 8–12 personer, och objektet ligger i Marieholm/Gamlestaden – varken på Hisingen eller i Kungälv"
+   ],
+   "okanda_falt": [
+    "antal_kontorsrum",
+    "oppen_yta_kvm",
+    "motesrum",
+    "hyra_kr_man",
+    "hyra_kr_kvm_ar",
+    "tilltrade"
+   ],
+   "verifierad": true
+  },
+  {
+   "titel": "Kontor 110 kvm med öppen planlösning i Surte centrum",
+   "adress": "Göteborgsvägen 64, Surte",
+   "omrade": "Surte, Ale kommun",
+   "niva": 3,
+   "typ": "kontor",
+   "kvm": 110,
+   "kvm_intervall": null,
+   "antal_kontorsrum": null,
+   "oppen_yta": true,
+   "oppen_yta_kvm": null,
+   "motesrum": null,
+   "hyra_kr_man": null,
+   "hyra_kr_kvm_ar": null,
+   "hyra_anmarkning": "Annonsen anger \"Hyra: Ej angiven\" – ingen hyresnivå eller driftkostnad publicerad.",
+   "tilltrade": null,
+   "vaning": null,
+   "parkering": "\"Parkeringsmöjligheter finns i området\" – annonsen anger inga egna p-platser, antal eller laddmöjlighet.",
+   "kollektivtrafik": "\"Här når du E45 för smidig bilpendling till Göteborg på cirka 20 minuter, medan kollektivtrafiken tar dig dit på omkring 10 minuter.\" Ligger i Surte centrum med service och lunchrestauranger i närheten.",
+   "hyresvard": "loqalo AB",
+   "kontakt_namn": "Julia Schwartz",
+   "kontakt_telefon": "072-147 75 20",
+   "kontakt_epost": "julia@loqalo.se",
+   "bild_url": "https://static.lokalguiden.se/uploads/customer/5716/d55acea1d42472fad14c57b4666d39f6.jpg",
+   "bekraftelsecitat": "110 m² Kontor",
+   "kalla_url": [
+    "https://www.lokalguiden.se/lokal/g%C3%B6teborgsv%C3%A4gen-64-ale"
+   ],
+   "beskrivning": "Kontorslokal på 110 kvm med öppen planlösning i Surte centrum, cirka 10 minuter från Göteborg med kollektivtrafik och ca 20 minuter via E45 med bil. Annonsen är kortfattad och nämner varken kontorsrum, mötesrum, pentry, dusch eller våningsplan. Lokalen ligger i Ale kommun, alltså utanför både Hisingen och Kungälv.",
+   "plus": [
+    "Öppen planlösning uttryckligen angiven i annonsen",
+    "\"Parkeringsmöjligheter finns i området\" enligt annonsen",
+    "Cirka 10 minuter till Göteborg med kollektivtrafik och ca 20 minuter via E45 med bil",
+    "Service, lunchrestauranger, skolor samt skog, vandringsleder och badplats i närheten",
+    "Namngiven kontaktperson hos loqalo med både telefon och e-post"
+   ],
+   "minus": [
+    "110 kvm är snålt tilltaget för 8–12 personer, särskilt om egna kontorsrum behövs",
+    "Parkeringen är bara vagt beskriven som \"i området\" – inga egna platser bekräftade, vilket är ett skallkrav",
+    "Varken hyra, tillträde eller våningsplan anges",
+    "Ligger i Surte i Ale kommun, utanför sökområdet Hisingen/Kungälv, och annonsen nämner inga kontorsrum, mötesrum eller pentry"
+   ],
+   "okanda_falt": [
+    "antal_kontorsrum",
+    "oppen_yta_kvm",
+    "motesrum",
+    "hyra_kr_man",
+    "hyra_kr_kvm_ar",
+    "tilltrade",
+    "vaning"
    ],
    "verifierad": true
   }
