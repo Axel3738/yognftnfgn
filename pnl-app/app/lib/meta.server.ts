@@ -183,7 +183,9 @@ export async function getSpend(
      - Färska dagar (Meta efterjusterar) — men bara om raden är äldre än 10
        minuter. Det är skillnaden mellan "Meta på varje sidladdning" (sekunder
        av väntan vid varje datumbyte) och "Meta var tionde minut".
-     - Dagar sparade före valutaomräkningen fanns saknar kurs. */
+     - Dagar sparade före valutaomräkningen fanns saknar kurs — men bara om
+       det finns något att räkna om: en nollrad är noll i alla valutor, och
+       att jaga den för evigt var precis det nollraderna skulle förhindra. */
   const FERSK_MS = 10 * 60 * 1000;
   const stale: string[] = [];
   let radSaknas = false;
@@ -192,14 +194,20 @@ export async function getSpend(
     const recent = d >= shiftIso(today, -1);
     const gammal =
       cachedRow && recent && Date.now() - cachedRow.fetchedAt.getTime() > FERSK_MS;
-    const oräknad = needsFx && cachedRow && cachedRow.fxRate == null;
+    const oräknad =
+      needsFx && cachedRow && cachedRow.fxRate == null && Number(cachedRow.spend) !== 0;
     if (!cachedRow || gammal || oräknad) {
       stale.push(d);
       if (!cachedRow || oräknad) radSaknas = true;
     }
   }
 
-  let fxOk = !needsFx;
+  /* fxOk speglar det som faktiskt SERVERAS: sant tills en rad i fönstret
+     visar sig vara oomräknad. Tidigare startade den på false så fort valuta-
+     omräkning behövdes och sattes bara av den synkrona hämtningen — så varje
+     sidladdning som serverade cachen direkt (bakgrundsvägen, eller inget att
+     hämta alls) visade "kunde inte räknas om"-bannern trots att allt var väl. */
+  let fxOk = true;
 
   if (stale.length && !radSaknas && farUppdateraMeta(shop)) {
     /* Alla dagar finns, bara färskheten släpar: servera databasen direkt och
@@ -216,6 +224,9 @@ export async function getSpend(
         e instanceof MetaError && e.needsReauth
           ? "The Meta token has expired — reconnect under Settings."
           : `Could not fetch ad spend: ${(e as Error).message}`;
+      const cachadOomräknad =
+        needsFx &&
+        [...byDay.values()].some((r) => r.fxRate == null && Number(r.spend) !== 0);
       return {
         days: [...byDay.values()].map((r: any) => ({
           day: typeof r.day === "string" ? r.day : iso(r.day),
@@ -224,7 +235,7 @@ export async function getSpend(
           clicks: r.clicks,
         })),
         error: msg,
-        ...fxStatus(needsFx, fxOk, spendCurrency, shopCurrency),
+        ...fxStatus(needsFx, !cachadOomräknad, spendCurrency, shopCurrency),
       };
     }
   }
@@ -233,6 +244,11 @@ export async function getSpend(
     where: { shop, day: { gte: new Date(from), lte: new Date(to) } },
     orderBy: { day: "asc" },
   });
+  /* Facit är raderna som serveras: ligger det en oomräknad rad med belopp
+     kvar i fönstret ska varningen visas, oavsett vilken väg hit vi tog. */
+  if (needsFx && fresh.some((r) => r.fxRate == null && Number(r.spend) !== 0)) {
+    fxOk = false;
+  }
   return {
     days: fresh.map((r) => ({
       day: iso(r.day),
@@ -269,8 +285,13 @@ async function refreshSpend(
 ): Promise<boolean> {
   const rows = await fetchInsights(cfg, stale[0], stale[stale.length - 1]);
 
+  /* Fönstret breddas en vecka bakåt: ECB publicerar dagens kurs först på
+     eftermiddagen, så "idag" (och helgdagar) konverteras med senast
+     publicerade kurs via rateFor:s bakåtsökning. Utan breddningen var ett
+     fönster som bara innehöll idag alltid tomt — och dagens spend skrevs
+     oomräknad i butikens valuta. */
   const rates = needsFx
-    ? await fetchRates(spendCurrency!, shopCurrency!, stale[0], stale[stale.length - 1])
+    ? await fetchRates(spendCurrency!, shopCurrency!, shiftIso(stale[0], -7), stale[stale.length - 1])
     : new Map<string, number>();
   const fxOk = !needsFx || rates.size > 0;
 

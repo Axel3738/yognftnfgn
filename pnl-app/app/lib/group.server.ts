@@ -17,6 +17,8 @@ import prisma from "../db.server";
 import { compute } from "./pnl.server";
 import { rate } from "./fx.server";
 import { readDaily, refreshShopDaily, shiftIso } from "./daily.server";
+import { getSpend } from "./meta.server";
+import { decrypt } from "./crypto.server";
 import { t, type Lang } from "./texts";
 
 export interface GroupTotals {
@@ -66,13 +68,24 @@ async function summeraButik(
        ladda om. Långa luckor (första 90-dagarsbygget) tar bulk-exportens
        halvminut per butik och får gå i bakgrunden; panelen laddar då om sig
        själv tills alla är med. */
+    let hamtningOk = true;
     if (spann <= 7) {
-      const ok = await refreshShopDaily(m.shop, first, last, { force: true });
-      if (ok) daily = await readDaily(m.shop, from, to);
+      hamtningOk = await refreshShopDaily(m.shop, first, last, { force: true });
+      if (hamtningOk) daily = await readDaily(m.shop, from, to);
     } else {
       void refreshShopDaily(m.shop, first, last);
     }
-    if (daily.missingDays.length) return { ok: false, shop: m.shop, reason: T.group.noCachedData };
+    /* Skillnaden syns i UI:t: "hämtas just nu" är sant bara när en hämtning
+       faktiskt pågår. Slog den fel (död nyckel — FI:s token gav 401 i dagar
+       medan panelen lovade att summan skulle fyllas på) ska det stå att
+       butiken behöver öppnas, inte att allt löser sig självt. */
+    if (daily.missingDays.length) {
+      return {
+        ok: false,
+        shop: m.shop,
+        reason: hamtningOk ? T.group.noCachedData : T.group.refreshFailed,
+      };
+    }
   } else {
     /* Färskhet: dagens siffror rör sig. Är butikens senaste dag äldre än
        10 min uppdateras den i bakgrunden — nästa omsummering har färska tal. */
@@ -88,12 +101,20 @@ async function summeraButik(
     return { ok: false, shop: m.shop, reason: T.group.fxUnavailable(m.currency, visaValuta) };
   }
 
-  const [costChanges, fixedRows, spendRows] = await Promise.all([
+  /* Annonskostnaden går genom getSpend med butikens EGEN Meta-nyckel — samma
+     väg som butikens panel. Tidigare lästes bara cachade DailySpend-rader,
+     så butiker vars panel ingen öppnat halkade efter i dagar och summans
+     annonskostnad blev tyst för låg. Nu fylls luckor på plats och färskheten
+     sköts i bakgrunden, precis som för dagsraderna. */
+  const metaCfg =
+    m.metaAdAccountId && m.metaAccessToken
+      ? { adAccountId: m.metaAdAccountId, accessToken: decrypt(m.metaAccessToken)! }
+      : null;
+  const idag = new Date().toISOString().slice(0, 10);
+  const [costChanges, fixedRows, spendData] = await Promise.all([
     prisma.costChange.findMany({ where: { shop: m.shop } }),
     prisma.fixedCost.findMany({ where: { shop: m.shop } }),
-    prisma.dailySpend.findMany({
-      where: { shop: m.shop, day: { gte: new Date(from), lte: new Date(to) } },
-    }),
+    getSpend(m.shop, metaCfg, from, to, idag, m.currency, m.spendCurrency),
   ]);
 
   const r = compute({
@@ -102,12 +123,7 @@ async function summeraButik(
     fixedMonthlyTotal: fixedRows.reduce((a, x) => a + Number(x.monthlyAmount), 0),
     sales: daily.sales,
     sessions: [],
-    spend: spendRows.map((s) => ({
-      day: s.day.toISOString().slice(0, 10),
-      spend: Number(s.spend),
-      impressions: s.impressions,
-      clicks: s.clicks,
-    })),
+    spend: spendData.days,
     products: daily.products,
     costChanges: costChanges.map((c) => ({
       productGid: c.productGid,

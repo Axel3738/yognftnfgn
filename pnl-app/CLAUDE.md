@@ -169,6 +169,31 @@ bakgrunden.
   butiken säljer i GBP. Fix: spendCurrency + omräkning per dag med dagens
   kurs, spendRaw+fxRate sparas för spårbarhet.
 
+### FX-bannern och den "försvinnande" butiken (aug 2026)
+Axel: NO + FI/DK "visar inte metaspendeln och kopplas inte ihop med de andra".
+Grupp och Meta var HELA TIDEN rätt konfigurerade i databasen. Tre verkliga fel:
+1. **fxOk-buggen:** `getSpend` initierade `fxOk = !needsFx` och satte den bara
+   på den synkrona hämtvägen ⇒ varje icke-SEK-butik (annonskontot är SEK)
+   visade "Annonskostnaden kunde inte räknas om" på VARJE cachad sidladdning,
+   även när allt var väl. Fix: fxOk räknas från raderna som faktiskt serveras
+   (oomräknad = fxRate null OCH spend ≠ 0 — nollrader är noll i alla valutor
+   och ska inte jagas). Kursfönstret breddas 7 dagar bakåt så att "idag" kan
+   konverteras innan ECB publicerat (kommer ~16 CET; helger saknas).
+2. **Gruppens annonskostnad:** lästes bara ur cachade DailySpend-rader ⇒
+   butiker vars panel ingen öppnat halkade efter i dagar (DK stannade 17:e,
+   UK 16:e) och summan blev tyst för låg. Fix: gruppen går via getSpend med
+   butikens egen Meta-nyckel, som dagsraderna redan gjorde via
+   refreshShopDaily. `rate()` i fx.server fick retry + nödfallscache (7 d) —
+   en frankfurter-hicka uteslöt annars hela butiker ur summan.
+3. **FI:s Shopify-token var död (401)** ⇒ dagsraderna stannade 19:e och
+   gruppen sa "hämtas just nu" för evigt. Fix: gruppen skiljer nu "hämtning
+   pågår" från "hämtningen misslyckades — öppna butikens panel". Åtgärden för
+   den döda tokenen är att öppna appen i den butikens admin (OAuth ger ny).
+Felsökt via tillfälliga oautentiserade `/diag-grupp` (DB-fingeravtryck per
+tjänst + per butik: grupp/Meta-status, senaste spend/PnL-dag; `?probe=1`
+testar sparad Shopify-token, Meta-token och FX-anropet och visar RÅA fel).
+Ta bort rutten när den inte längre behövs — mönstret finns i git-historiken.
+
 ### App Store (StonePNL)
 - client_id 8200cbe4502be19ac6ebe75ac65e3ad2, distribution public, managed
   pricing $9.99/30 dagar med **1 dags** gratis trial (Axel rättade: inte 7).
