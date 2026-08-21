@@ -448,6 +448,19 @@ hämta data: **Notion** (de 4 creative hub-databaserna), **Slack** (workspace
 Stonebite), **Meta Ads** (MagiBorsten `1867947880635861`), **Shopify**
 (bäverbutiken.se, för verklig AOV).
 
+**Shopify går också att nå utan connectorn.** Environmentet har
+`SHOPIFY_SHOP_*`, `SHOPIFY_CLIENT_ID_*` och `SHOPIFY_CLIENT_SECRET_*` för sex
+butiker (`SE`, `DK`, `NO`, `FI`, `UK`, `MATSTRUMPOR`). `node shopify/token.mjs`
+växlar dem mot en Admin-token via `client_credentials` och verifierar
+kopplingen. Ta den vägen när MCP:n säger `token expired` — den går inte att
+auktorisera om i en icke-interaktiv session. `SHOPIFY_TOKEN_SE` är död
+(`atkn_`-token, ger 401); skriptet märker det och tar klientnyckeln i stället.
+
+⚠️ **Appen för matstrumpor.se har bara `write_inventory, write_products,
+write_publications`.** Teman, ordrar och rapporter är stängda och kräver att Axel
+kryssar i scopen i adminen. Kör `node theme-matstrumpor/tools/atkomst.mjs` för
+att se läget innan du planerar något som behöver dem.
+
 ---
 
 ## Om repots grenar

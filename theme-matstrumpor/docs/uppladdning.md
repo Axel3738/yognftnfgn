@@ -1,16 +1,61 @@
 # Uppladdning till matstrumpor.se
 
-Körs när Shopify-connectorn är auktoriserad mot **matstrumpor.se**. Inget här
-rör den publicerade butiken.
+Inget här rör den publicerade butiken.
 
-## Steg 0 — verifiera butiken
+## Kortversionen
+
+```bash
+npm run tema:grind              # måste vara grön
+node theme-matstrumpor/tools/atkomst.mjs   # visar vad appen får göra
+npm run tema:upp -- teman       # lista temana i butiken
+npm run tema:upp -- allt        # steg 2–7 i en körning
+```
+
+`allt` duplicerar bastemat, laddar upp filerna, kopplar in dem, bygger
+produktmallen och skriver ut förhandslänken. Kopian blir alltid opublicerad.
+
+## Steg 0 — kom in i butiken
+
+Shopify-MCP:n dör med jämna mellanrum (`token expired`, och efter ett
+`switch-shop` går den inte att laga i en icke-interaktiv session). **Gå inte via
+MCP:n.** Nycklarna finns i environmentet:
 
 ```
-get-shop-info  →  domain måste vara matstrumpor.se
+SHOPIFY_SHOP_MATSTRUMPOR · SHOPIFY_CLIENT_ID_MATSTRUMPOR · SHOPIFY_CLIENT_SECRET_MATSTRUMPOR
 ```
 
-Är den något annat: **stanna**. Fel butik ger tal som ser rimliga ut men
-kommer från fel verksamhet.
+`shopify/token.mjs` växlar dem mot en färsk Admin-token via `client_credentials`
+(giltig 24 h) och `theme-matstrumpor/tools/shopify.mjs` gör anropen.
+
+```bash
+npm run tema:shop     # verifierar kopplingen och visar butiken
+```
+
+Domänen måste vara **matstrumpor.se**. Är den något annat: **stanna**. Fel butik
+ger tal som ser rimliga ut men kommer från fel verksamhet. Spärren sitter också i
+koden — `kontrolleraButik()` avbryter på fel primärdomän — men kontrollera ändå.
+
+## Steg 0b — appen måste få röra teman
+
+⚠️ **Detta stoppade körningen 2026-08-21.** Appen för matstrumpor.se har bara
+`write_inventory, write_products, write_publications`. Tema-API:t svarar då:
+
+```
+[API] This action requires merchant approval for read_themes scope.
+```
+
+Det går inte att komma runt från den här sidan — scopet sitter på appen. Axel
+öppnar det i adminen för matstrumpor.se:
+
+> Inställningar → Appar och försäljningskanaler → Utveckla appar → appen
+> → Konfiguration → Admin API-omfattning → kryssa i **read_themes** och
+> **write_themes** → Spara → Installera om appen
+
+Kryssa i **read_orders** och **read_reports** samtidigt — de behövs för steg 8
+och för alla frågor om trafik och köp.
+
+Kör `node theme-matstrumpor/tools/atkomst.mjs` efteråt: alla fyra raderna ska
+vara gröna.
 
 ## Steg 1 — kontrollera bygget lokalt
 
@@ -18,14 +63,22 @@ kommer från fel verksamhet.
 npm run tema:grind
 ```
 
-Både Liquid-kontrollen och de 26 testerna ska vara gröna. Ladda aldrig upp
+Både Liquid-kontrollen och de 41 testerna ska vara gröna. Ladda aldrig upp
 med en röd grind — Shopify avvisar ogiltig schema-JSON, och då står temat
 halvt uppladdat.
 
+---
+
+**Steg 2–7 körs av `npm run tema:upp -- allt`.** Beskrivningarna nedan står kvar
+för att de förklarar *varför* ordningen ser ut som den gör — och för att kunna
+göra stegen för hand den dagen skriptet inte räcker till.
+
+---
+
 ## Steg 2 — hitta eller skapa ett bastema
 
-```
-themes(first: 20) { nodes { id name role themeStoreId } }
+```bash
+npm run tema:upp -- teman
 ```
 
 - Finns **Horizon** eller **Dawn** opublicerat → använd det.
@@ -39,9 +92,14 @@ themes(first: 20) { nodes { id name role themeStoreId } }
 
 Det här steget går inte att hoppa över och går inte att gissa sig till.
 
+```bash
+npm run tema:upp -- las <temaId>
 ```
-theme(id: "...") { files(first: 250, filenames: ["sections/*", "blocks/*", "layout/*", "templates/product.json"]) { nodes { filename } } }
-```
+
+Skriptet skriver ut vilken sektion som är produktsektionen, vilka blocktyper den
+har, vad köpknappen heter — och om sektionen alls tar emot temablock. Gör den
+inte det stannar bygget i steg 6 i stället för att lägga in block som inte
+renderas.
 
 Läs `templates/product.json` och `layout/theme.liquid` i sin helhet. Du behöver
 veta vad temats produktsektion **faktiskt heter** och vilka blocktyper den
@@ -106,10 +164,42 @@ varukorgen och se att rätt variant hamnar där.
 npm run tema:ab -- --planera --baslinje <konv> --trafik <besökare/dag>
 ```
 
-⚠️ Annonskontot för Matstrumpor (`730973156224390`) är markerat **UNSETTLED** i
-`CLAUDE.md`. Rullar inga annonser finns nästan ingen trafik, och då är A/B-test
-fel verktyg — bygg förbättringen rakt av i stället. Kontrollera trafiken innan du
-föreslår ett test.
+### Avläsning 2026-08-21: A/B-test är fel verktyg i den här butiken
+
+Shopifys egna sessions och ordrar gick inte att läsa (`read_orders` och
+`read_reports` saknas — se steg 0b), så siffrorna nedan kommer från Meta.
+De pekar entydigt åt samma håll.
+
+Annonskontot `730973156224390` ("nya kungen"), **hela sin livstid**:
+
+| | |
+|---|---|
+| Kampanjer | 1 st — *"Ny Interaktion Kampanj med rekommenderade inställningar"* |
+| Spend | 1 329,29 kr |
+| Visningar / räckvidd | 11 319 / 5 339 |
+| **Utgående klick** | **9** |
+| Köp, ROAS, landningssidvisningar | inga alls |
+| Pixel/dataset på kontot | **inget** |
+
+Kampanjen är en **interaktionskampanj** — den är köpt för att samla reaktioner,
+inte för att skicka folk till sajten. Nio klick på trettio dagar är noll trafik.
+Och utan pixel finns ingen mätning ens om trafiken kom.
+
+Vad planeraren säger vid 30 besökare/dag och 2 % konvertering:
+
+```
+Lyft   Per variant    Totalt   Dagar
++20 %       21106     42212    1408   ← för långt
++50 %        3823      7646     255   ← för långt
+```
+
+Även ett orimligt stort lyft på 50 % skulle ta **åtta månader** att bevisa. Ett
+test som rullar så länge mäter säsong och prisändringar, inte varianten.
+
+**Slutsats:** bygg förbättringen rakt av och låt den ligga. Starta inga tester
+förrän butiken har trafik — grovt räknat behövs några hundra besökare per dag
+innan ett test hinner bli klart inom sex veckor. Läs om trafiken innan du
+föreslår ett test nästa gång; siffrorna ovan är från *ett* nedslag.
 
 ## Publicera
 

@@ -105,11 +105,19 @@ smakar.
 
 ```bash
 npm run tema:check    # kontrollerar alla Liquid-filer
-npm run tema:test     # 26 tester på A/B-matematiken
+npm run tema:test     # 41 tester: A/B-matematiken + produktmallen
 npm run tema:grind    # båda — kör den här före uppladdning
+
+npm run tema:shop            # verifierar att vi är inne på matstrumpor.se
+npm run tema:upp -- teman    # listar temana i butiken
+npm run tema:upp -- allt     # laddar upp: steg 2–7 i docs/uppladdning.md
 ```
 
 Det finns ingen byggkedja. Filerna laddas upp som de är.
+
+Åtkomsten går via `SHOPIFY_*_MATSTRUMPOR` i environmentet, inte via Shopify-MCP:n
+— den dör med jämna mellanrum. Kör `node tools/atkomst.mjs` för att se vad appen
+får göra just nu.
 
 ---
 
