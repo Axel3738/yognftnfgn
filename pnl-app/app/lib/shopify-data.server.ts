@@ -265,8 +265,23 @@ async function runOrdersPaginated(
       (e: any) => e?.extensions?.code === "THROTTLED",
     );
     if (throttled) { await sleep(2000); page--; continue; }
+    /* Ett fel här FÅR inte bli en tom lista. Det var precis vad som hände:
+       saknad orderbehörighet (ACCESS_DENIED) eller en död nyckel gav
+       `data.orders === null`, loopen bröt, och noll rader skrevs ner som
+       "butiken sålde ingenting idag" — med annonskostnaden kvar. Gruppvyn
+       visade då 0 kr försäljning och ren förlust för friska butiker.
+       Ett fel ska kastas: då skrivs ingenting, och den som frågade får
+       säga ifrån istället för att visa en nolla som ser äkta ut. */
+    if (body?.errors?.length) {
+      const msg = body.errors.map((e: any) => e?.message ?? String(e)).join("; ");
+      throw new Error(`Order query failed: ${msg}`);
+    }
     const conn = body?.data?.orders;
-    if (!conn) break;
+    if (!conn) {
+      throw new Error(
+        `Order query returned no data (HTTP ${res.status}) — the access token may lack read_orders.`,
+      );
+    }
     for (const o of conn.nodes ?? []) {
       lines.push({ ...o, lineItems: undefined });
       for (const li of o.lineItems?.nodes ?? []) lines.push({ ...li, __parentId: o.id });

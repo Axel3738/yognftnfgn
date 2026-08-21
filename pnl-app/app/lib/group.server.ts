@@ -112,7 +112,16 @@ async function summeraButik(
     if (to >= shiftIso(idag, -1) && Date.now() - senast > 10 * 60 * 1000) {
       const senasteFrom = from > shiftIso(to, -2) ? from : shiftIso(to, -2);
       const ok = await refreshShopDaily(m.shop, senasteFrom, to, { force: true });
-      if (ok) daily = await readDaily(m.shop, from, to);
+      if (ok) {
+        daily = await readDaily(m.shop, from, to);
+      } else {
+        /* Misslyckad uppdatering av den dag som fortfarande rör sig får INTE
+           serveras tyst. Raden som ligger kvar är antingen morgongammal eller
+           — värre — en nollrad skriven när orderfrågan svarade med fel. Då
+           visades 0 kr försäljning bredvid full annonskostnad, vilket ser ut
+           som en förlustdag men är ett hämtningsfel. Butiken namnges. */
+        return { ok: false, shop: m.shop, reason: T.group.refreshFailed };
+      }
     }
   }
 
