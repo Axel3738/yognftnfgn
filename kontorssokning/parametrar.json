@@ -1,0 +1,31 @@
+{
+  "_kommentar": "Axels sökkriterier. Ändra här och kör om `node kontorssokning/poang.js` så räknas alla matchpoäng om.",
+  "budget": {
+    "typ": "ingen_grans",
+    "max_kr_man": null,
+    "max_kr_kvm_ar": null,
+    "notering": "Ingen fast budget satt 2026-08-21. Alla objekt får full budgetpoäng; hyran redovisas rakt av i stället."
+  },
+  "tilltrade": {
+    "onskemal": "omgaende",
+    "senast_datum": "2026-12-31",
+    "notering": "Omgående föredras. Tillträde inom 2026 ger nästan full poäng, 2027 och senare halveras."
+  },
+  "verksamhet": {
+    "antal_medarbetare": [8, 12],
+    "bransch": "e-handel, dropshipping",
+    "lagerbehov": false,
+    "riktvarde_kvm": [150, 250]
+  },
+  "parkering": "krav",
+  "kollektivtrafik": "oviktigt",
+  "max_restid_kungalv_min": 35,
+  "maste_ha": [],
+  "uppskattat": ["dusch"],
+  "absoluta_nej": ["delat kontorshotell"],
+  "skallkrav": {
+    "min_kvm": 100,
+    "endast_uthyrning": true,
+    "kraver_kontorsdel": true
+  }
+}
