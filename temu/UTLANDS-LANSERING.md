@@ -159,6 +159,16 @@ varandra i fyra butiker. Dessa regler är obligatoriska för varje produkt:
    direkt — han granskar och ger feedback per produkt. Ingen bulk-avrapportering
    av osedda sidor.
 
+### AI-miljöbilder (kie.ai, Axels beslut 2026-08-21)
+
+När produkten behöver en "i användning"-bild som Temu inte ger: generera den ur
+produktens RIKTIGA bild med `node temu/ai-bild.mjs` (kie.ai nano-banana-edit,
+nyckel i miljövariabeln `KIE_API_KEY`). Fyra hårda regler står i skriptets huvud —
+kortversion: alltid edit av referensbilden (aldrig text-till-bild), granska
+räkneorden visuellt (modellen räknar fel — piloten gav 7-8 bollar i stället för 6),
+aldrig som huvudbild, undvik människor i närbild. Pilot: pingisens miljöbild
+2026-08-21, godkänd trohet efter en iteration.
+
 ## Prismetoden
 
 Kostnadsbaserad per land — INTE valutakonvertering. CWD:s frakt skiljer per land
