@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Matstrumpor A/B",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Här slås A/B-testerna på. Ett test-id per rad. Rader som börjar med # är avstängda. Vill du rulla ut försiktigt går det att vikta: buybox:90:10 ger 10 procent av besökarna variant B."
+      },
+      {
+        "type": "textarea",
+        "id": "ms_ab_tests",
+        "label": "Aktiva tester",
+        "default": "# buybox",
+        "info": "Vilka sektioner som varierar styrs per sektion, under rubriken A/B-test."
+      },
+      {
+        "type": "range",
+        "id": "ms_ab_cookie_days",
+        "label": "Hur länge en besökare minns sin variant",
+        "min": 7,
+        "max": 90,
+        "step": 7,
+        "default": 30,
+        "unit": "d",
+        "info": "Kortare tid gör att återvändande besökare kan byta variant mitt i testet, vilket smetar ut resultatet. 30 dagar är lagom."
+      }
+    ]
+  }
+]

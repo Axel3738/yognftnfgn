@@ -1,0 +1,706 @@
+<title>Matstrumpor Produktsida</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Public+Sans:ital,wght@0,300..800;1,300..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+/* ============================================================
+   1. RAMEN — medvetet tyst. Märkets accent ska vara den enda
+      personligheten på sidan, och den bor inne i mockupen.
+   ============================================================ */
+:root {
+  --ground:      #f6f4f0;
+  --ground-2:    #ffffff;
+  --ground-3:    #edeae3;
+  --ink:         #201d18;
+  --ink-2:       #55503f;
+  --ink-3:       #857e6c;
+  --rule:        #ddd7ca;
+  --rule-soft:   #e8e3d8;
+  --accent:      #b8681a;
+  --accent-soft: #f4e6d2;
+  --good:        #1f7a4d;
+  --bad:         #a3341c;
+  --shadow:      0 1px 2px rgba(32,29,24,.05), 0 22px 48px -28px rgba(32,29,24,.35);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground:      #17150f;
+    --ground-2:    #201d16;
+    --ground-3:    #2a2619;
+    --ink:         #f2ede2;
+    --ink-2:       #b9b2a0;
+    --ink-3:       #8b8474;
+    --rule:        #38321f;
+    --rule-soft:   #2c2718;
+    --accent:      #e79a3f;
+    --accent-soft: #33280f;
+    --good:        #56b98a;
+    --bad:         #e08466;
+    --shadow:      0 1px 2px rgba(0,0,0,.4), 0 22px 48px -28px rgba(0,0,0,.9);
+  }
+}
+:root[data-theme="dark"] {
+  --ground:      #17150f;
+  --ground-2:    #201d16;
+  --ground-3:    #2a2619;
+  --ink:         #f2ede2;
+  --ink-2:       #b9b2a0;
+  --ink-3:       #8b8474;
+  --rule:        #38321f;
+  --rule-soft:   #2c2718;
+  --accent:      #e79a3f;
+  --accent-soft: #33280f;
+  --good:        #56b98a;
+  --bad:         #e08466;
+  --shadow:      0 1px 2px rgba(0,0,0,.4), 0 22px 48px -28px rgba(0,0,0,.9);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 1140px;
+  margin-inline: auto;
+  padding: clamp(28px, 5vw, 64px) clamp(18px, 4vw, 40px) 80px;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 6vw, 72px);
+}
+
+.mono {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: .72rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* --- rubrikblock --- */
+.masthead { display: flex; flex-direction: column; gap: 20px; }
+.masthead h1 {
+  font-size: clamp(1.9rem, 1.2rem + 2.6vw, 3rem);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -.022em;
+  margin: 0;
+  text-wrap: balance;
+}
+.masthead p.intro {
+  margin: 0;
+  max-width: 62ch;
+  font-size: 1.05rem;
+  color: var(--ink-2);
+}
+.meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1px;
+  background: var(--rule-soft);
+  border: 1px solid var(--rule-soft);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.meta div { background: var(--ground-2); padding: 13px 15px; }
+.meta dt { margin: 0 0 3px; }
+.meta dd {
+  margin: 0;
+  font-size: .92rem;
+  font-weight: 600;
+  line-height: 1.35;
+  word-break: break-word;
+}
+.tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 2px 9px; border-radius: 999px;
+  font-size: .78rem; font-weight: 600; letter-spacing: 0;
+  text-transform: none;
+}
+.tag--live { background: var(--accent-soft); color: var(--accent); }
+.tag--wait { background: var(--ground-3); color: var(--ink-2); }
+
+/* --- sektionsrubriker --- */
+.sec { display: flex; flex-direction: column; gap: 22px; }
+.sec > header { display: flex; flex-direction: column; gap: 7px; }
+.sec h2 {
+  margin: 0;
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.65rem);
+  font-weight: 750;
+  letter-spacing: -.014em;
+  line-height: 1.2;
+}
+.sec header p { margin: 0; color: var(--ink-2); max-width: 64ch; }
+
+/* --- mockup-uppställning --- */
+.stage {
+  display: grid;
+  gap: clamp(24px, 4vw, 44px);
+  align-items: start;
+}
+@media (min-width: 900px) { .stage { grid-template-columns: 390px 1fr; } }
+
+.device {
+  width: 100%;
+  max-width: 390px;
+  margin-inline: auto;
+  background: #ffffff;
+  border: 1px solid var(--rule);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+}
+.device__chrome {
+  height: 30px;
+  background: var(--ground-3);
+  border-bottom: 1px solid var(--rule-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .66rem; color: var(--ink-3);
+  letter-spacing: .04em;
+}
+.device__screen {
+  height: 720px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: #ffffff;
+  scrollbar-width: thin;
+}
+.device__hint {
+  padding: 8px 12px;
+  border-top: 1px solid var(--rule-soft);
+  background: var(--ground-3);
+  text-align: center;
+}
+
+/* Nyckeln bredvid mockupen. Numreringen speglar sidans verkliga
+   ordning uppifrån och ner — den bär alltså information. */
+.key { display: flex; flex-direction: column; gap: 2px; counter-reset: k; }
+.key__row {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 14px;
+  padding: 13px 4px;
+  border-bottom: 1px solid var(--rule-soft);
+  align-items: start;
+}
+.key__row:last-child { border-bottom: 0; }
+.key__n {
+  counter-increment: k;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .74rem;
+  font-weight: 600;
+  color: var(--accent);
+  padding-top: 2px;
+}
+.key__n::before { content: counter(k, decimal-leading-zero); }
+.key__row h3 { margin: 0 0 2px; font-size: .96rem; font-weight: 700; line-height: 1.3; }
+.key__row p { margin: 0; font-size: .88rem; color: var(--ink-2); line-height: 1.5; }
+.key__row .new {
+  display: inline-block; margin-left: 7px; vertical-align: 1px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .62rem; letter-spacing: .06em;
+  padding: 1px 6px; border-radius: 4px;
+  background: var(--accent-soft); color: var(--accent);
+}
+
+/* --- bred vy --- */
+.wide {
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.wide__chrome {
+  height: 30px; background: var(--ground-3);
+  border-bottom: 1px solid var(--rule-soft);
+  display: flex; align-items: center; padding-inline: 14px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .66rem; color: var(--ink-3);
+}
+.wide__body { overflow-x: auto; }
+
+/* --- listor --- */
+.rules { display: grid; gap: 1px; background: var(--rule-soft);
+         border: 1px solid var(--rule-soft); border-radius: 10px; overflow: hidden; }
+.rule-item { background: var(--ground-2); padding: 16px 18px; display: grid;
+             grid-template-columns: 22px 1fr; gap: 13px; align-items: start; }
+.rule-item svg { width: 17px; height: 17px; margin-top: 3px; flex: none; }
+.rule-item h3 { margin: 0 0 3px; font-size: .95rem; font-weight: 700; }
+.rule-item p { margin: 0; font-size: .89rem; color: var(--ink-2); line-height: 1.55; }
+
+.next { display: grid; gap: 1px; background: var(--rule-soft);
+        border: 1px solid var(--rule-soft); border-radius: 10px; overflow: hidden; }
+.next__row { background: var(--ground-2); padding: 15px 18px;
+             display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: baseline; }
+.next__row strong { font-size: .95rem; }
+.next__row span { font-size: .89rem; color: var(--ink-2); flex: 1 1 260px; }
+
+footer.sig { border-top: 1px solid var(--rule); padding-top: 20px; }
+footer.sig p { margin: 0; font-size: .85rem; color: var(--ink-3); max-width: 70ch; }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
+
+/* ============================================================
+   2. TEMATS EGEN CSS — exakt filen som laddas upp till Shopify.
+      Inte en ritning av den. Det du ser nedan är det som körs.
+   ============================================================ */
+/*__MSCSS__*/
+
+/* ============================================================
+   3. Justeringar som BARA gäller den här förhandsvisningen.
+      Den fasta köpknappen är position:fixed i skarp drift; här
+      måste den bo inne i telefonramen i stället.
+   ============================================================ */
+.device .ms-sticky { position: absolute; z-index: 5; }
+.device__screen { position: relative; }
+.preview-page { padding-bottom: 78px; }
+.preview-pad { padding: 0 16px; }
+.preview-gallery { position: relative; background: var(--ms-surface-3); }
+.preview-gallery img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+.preview-badge {
+  position: absolute; top: 12px; left: 12px; z-index: 2;
+  background: #121212; color: #fdfbf7;
+  font-size: .68rem; letter-spacing: .05em;
+  padding: 5px 11px; border-radius: 999px;
+}
+.preview-thumbs { display: flex; gap: 6px; padding: 8px 16px 0; }
+.preview-thumbs img { width: 52px; height: 52px; object-fit: cover; border-radius: 8px; border: 2px solid transparent; }
+.preview-thumbs img.on { border-color: var(--ms-accent); }
+.preview-title { font-family: var(--ms-font-head); font-size: 1.35rem; line-height: 1.2; margin: 12px 0 6px; }
+.preview-price { display: flex; align-items: baseline; gap: 9px; margin-bottom: 4px; }
+.preview-price b { font-size: 1.4rem; }
+.preview-price s { color: var(--ms-ink-faint); font-size: .95rem; }
+.preview-price em {
+  font-style: normal; background: var(--ms-accent); color: var(--ms-accent-ink);
+  font-size: .72rem; padding: 2px 8px; border-radius: 999px;
+}
+.preview-atc {
+  display: block; width: 100%; min-height: 52px; margin: 4px 0 2px;
+  border: 0; border-radius: 999px;
+  background: var(--ms-accent); color: var(--ms-accent-ink);
+  font-family: inherit; font-size: 1.05rem; cursor: pointer;
+}
+.preview-desc h3 { font-family: var(--ms-font-head); font-size: 1rem; margin: 20px 0 6px; }
+.preview-desc p { font-size: .88rem; line-height: 1.6; color: var(--ms-ink-soft); margin: 0 0 10px; }
+</style>
+
+<div class="page">
+
+  <header class="masthead">
+    <span class="mono">Förhandsvisning · matstrumpor.se</span>
+    <h1>Ny produktsida, byggd från grunden</h1>
+    <p class="intro">
+      Det här är den nya produktsidan renderad med temats riktiga stilmall — inte en
+      skiss av den. Paketväljaren, dragspelet och det rullande bandet fungerar på
+      riktigt i rutan nedan, och leveransdatumet räknas ut live medan du läser.
+      Ingenting är uppladdat till butiken än.
+    </p>
+    <dl class="meta">
+      <div>
+        <dt class="mono">Butik</dt>
+        <dd>matstrumpor.se</dd>
+      </div>
+      <div>
+        <dt class="mono">Ersätter</dt>
+        <dd>Shrine 1.3.1<br><span style="font-weight:400;color:var(--ink-3);font-size:.82rem">theme-export-…-shrine-2</span></dd>
+      </div>
+      <div>
+        <dt class="mono">Licensläge</dt>
+        <dd><span class="tag tag--live">Egen kod</span></dd>
+      </div>
+      <div>
+        <dt class="mono">Status</dt>
+        <dd><span class="tag tag--wait">Väntar på uppladdning</span></dd>
+      </div>
+    </dl>
+  </header>
+
+  <section class="sec">
+    <header>
+      <h2>Produktsidan på mobil</h2>
+      <p>Scrolla inuti rutan. Tryck på paketkorten — de svarar, precis som i skarp drift.</p>
+    </header>
+
+    <div class="stage">
+      <div class="device">
+        <div class="device__chrome">matstrumpor.se/products/sushi-strumpor</div>
+        <div class="device__screen">
+          <div class="ms-scope preview-page">
+
+            <!-- rullande band -->
+            <div class="ms-marquee" style="--ms-marquee-dur:26s">
+              <div class="ms-marquee__track">
+                <div class="ms-marquee__group">
+                  <span class="ms-marquee__item">Älskad av tusentals svenskar</span>
+                  <span class="ms-marquee__item">Fri frakt i Sverige</span>
+                  <span class="ms-marquee__item">30 dagars öppet köp</span>
+                  <span class="ms-marquee__item">Levereras presentklart</span>
+                </div>
+                <div class="ms-marquee__group" aria-hidden="true">
+                  <span class="ms-marquee__item">Älskad av tusentals svenskar</span>
+                  <span class="ms-marquee__item">Fri frakt i Sverige</span>
+                  <span class="ms-marquee__item">30 dagars öppet köp</span>
+                  <span class="ms-marquee__item">Levereras presentklart</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- galleri -->
+            <div class="preview-gallery">
+              <span class="preview-badge">BÄSTSÄLJARE</span>
+              <img src="__IMG_HERO__" alt="Sushi-strumpor upplagda som sushibitar i en presentbox">
+            </div>
+            <div class="preview-thumbs">
+              <img class="on" src="__IMG_HERO__" alt="">
+              <img src="__IMG_B__" alt="">
+              <img src="__IMG_C__" alt="">
+            </div>
+
+            <form class="preview-pad" action="/cart/add" onsubmit="return false">
+              <h1 class="preview-title">Sushi-Strumpor</h1>
+              <div class="preview-price">
+                <b>399 kr</b><s>599 kr</s><em>Spara 33 %</em>
+              </div>
+
+              <ul class="ms-points">
+                <li class="ms-points__item"><svg class="ms-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span>En storlek passar alla, ca 36–44</span></li>
+                <li class="ms-points__item"><svg class="ms-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Levereras i en sushibox som lurar nästan alla</span></li>
+                <li class="ms-points__item"><svg class="ms-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Mjuka och stretchiga — används, inte bara skrattas åt</span></li>
+              </ul>
+
+              <!-- paketväljaren: exakt markup från ms-bundle-picker.liquid -->
+              <ms-bundle data-mode="variant">
+                <p class="ms-h3">Välj ditt paket</p>
+                <div class="ms-bundle" role="radiogroup" aria-label="Välj paket">
+                  <label class="ms-bundle__opt">
+                    <input class="ms-bundle__input" type="radio" name="pv" data-variant-id="1" data-price="36900" data-quantity="1">
+                    <span class="ms-bundle__card">
+                      <span class="ms-bundle__dot" aria-hidden="true"></span>
+                      <span class="ms-bundle__label">3 - Par</span>
+                      <span class="ms-bundle__prices">
+                        <span class="ms-bundle__price">369 kr</span>
+                        <span class="ms-bundle__unit">123 kr / par</span>
+                      </span>
+                    </span>
+                  </label>
+                  <label class="ms-bundle__opt">
+                    <span class="ms-bundle__flag">Spara 35%</span>
+                    <input class="ms-bundle__input" type="radio" name="pv" checked data-variant-id="2" data-price="39900" data-quantity="1">
+                    <span class="ms-bundle__card">
+                      <span class="ms-bundle__dot" aria-hidden="true"></span>
+                      <span class="ms-bundle__label">5 - Par
+                        <span class="ms-bundle__note">35% billigare per par</span>
+                      </span>
+                      <span class="ms-bundle__prices">
+                        <span class="ms-bundle__price">399 kr</span>
+                        <span class="ms-bundle__unit">79 kr / par</span>
+                      </span>
+                    </span>
+                  </label>
+                </div>
+              </ms-bundle>
+
+              <button type="submit" class="preview-atc">Lägg i varukorgen</button>
+
+              <div class="ms-trust">
+                <div class="ms-trust__item"><svg class="ms-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg><span>Fri frakt i Sverige</span></div>
+                <div class="ms-trust__item"><svg class="ms-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.6-6.4"/><path d="M21 4v5h-5"/></svg><span>30 dagars öppet köp</span></div>
+                <div class="ms-trust__item"><svg class="ms-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/></svg><span>Trygg betalning</span></div>
+              </div>
+
+              <!-- leveransbeskedet räknas ut live av ms-cro.js -->
+              <ms-delivery data-min-days="5" data-max-days="10" data-cutoff-hour="14">
+                <div class="ms-delivery">
+                  <svg class="ms-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg>
+                  <div>
+                    Beräknad leverans
+                    <span class="ms-delivery__date" data-ms-delivery-range>5–10 arbetsdagar</span>
+                    <span class="ms-delivery__cut" data-ms-delivery-cut hidden></span>
+                  </div>
+                </div>
+              </ms-delivery>
+
+              <div class="ms-pay">
+                <span class="ms-pay__label">Trygg betalning med</span>
+                <div class="ms-pay__row">
+                  <span class="mono" style="font-size:.7rem;color:var(--ms-ink-faint);text-transform:none;letter-spacing:0">
+                    Hämtas från butikens aktiverade betalsätt
+                  </span>
+                </div>
+              </div>
+
+              <div class="preview-desc">
+                <h3>Den perfekta överraskningen</h3>
+                <p>Våra sushi-strumpor är gjorda för ett enda syfte: att leverera wow-effekt
+                   från första sekund. Det är den där känslan när någon öppnar lådan och tror
+                   att det är riktig sushi — tills de inser vad det egentligen är.</p>
+              </div>
+
+              <div class="ms-faq" style="margin-top:16px">
+                <details class="ms-faq__item">
+                  <summary class="ms-faq__q"><span>Passar de alla?</span>
+                    <svg class="ms-i ms-faq__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                  </summary>
+                  <div class="ms-faq__a"><p>En storlek passar de flesta, ungefär strl 36–44.</p></div>
+                </details>
+                <details class="ms-faq__item">
+                  <summary class="ms-faq__q"><span>Hur snabbt kommer de?</span>
+                    <svg class="ms-i ms-faq__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                  </summary>
+                  <div class="ms-faq__a"><p>5–10 arbetsdagar med fri frakt inom Sverige.</p></div>
+                </details>
+                <details class="ms-faq__item">
+                  <summary class="ms-faq__q"><span>Går de att lämna tillbaka?</span>
+                    <svg class="ms-i ms-faq__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                  </summary>
+                  <div class="ms-faq__a"><p>Ja, 30 dagars öppet köp. Hör av dig så löser vi det.</p></div>
+                </details>
+              </div>
+
+              <div style="margin:18px 0">
+                <div class="ms-guarantee">
+                  <div class="ms-guarantee__seal">
+                    <svg class="ms-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 14.2 5l3.3-.4 1 3.2 3 1.4-1.6 2.9 1.6 2.9-3 1.4-1 3.2-3.3-.4L12 21.5 9.8 19l-3.3.4-1-3.2-3-1.4L4.1 12 2.5 9.1l3-1.4 1-3.2L9.8 5z"/><path d="m9 12 2 2 4-4.5"/></svg>
+                  </div>
+                  <div>
+                    <p class="ms-h3">30 dagars öppet köp</p>
+                    <div class="ms-guarantee__body">Inte nöjd? Hör av dig inom 30 dagar så löser vi det. Inget krångel.</div>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <!-- fast köpknapp -->
+            <ms-sticky-atc>
+              <div class="ms-sticky" data-position="bottom" data-shown="true">
+                <div class="ms-sticky__inner">
+                  <img class="ms-sticky__media" src="__IMG_HERO__" alt="" width="44" height="44">
+                  <span class="ms-sticky__text">
+                    <span class="ms-sticky__name">Sushi-Strumpor · 5 par</span>
+                    <span class="ms-sticky__price">399 kr</span>
+                    <span class="ms-sticky__was">599 kr</span>
+                  </span>
+                  <button type="button" class="ms-sticky__btn">Köp nu</button>
+                </div>
+              </div>
+            </ms-sticky-atc>
+
+          </div>
+        </div>
+        <div class="device__hint mono">Scrollbar yta · 390 px bred</div>
+      </div>
+
+      <div class="key">
+        <div class="key__row"><span class="key__n"></span><div>
+          <h3>Rullande band <span class="new">nytt</span></h3>
+          <p>Fyra löften som roterar. Pausar när man för muspekaren över, och står stilla för den som stängt av rörelse i systemet.</p>
+        </div></div>
+        <div class="key__row"><span class="key__n"></span><div>
+          <h3>Galleri med märkning</h3>
+          <p>Samma nio bilder som i dag. Märkningen uppe till vänster är en textinställning, inte en bild — den går att ändra utan bildredigerare.</p>
+        </div></div>
+        <div class="key__row"><span class="key__n"></span><div>
+          <h3>Säljpunkter</h3>
+          <p>Tre bockade rader direkt under priset, där ögat redan är.</p>
+        </div></div>
+        <div class="key__row"><span class="key__n"></span><div>
+          <h3>Paketväljare <span class="new">nytt</span></h3>
+          <p>Den här är den viktigaste. I dag ligger 3-par och 5-par i en rullgardinsmeny där ingen ser att 5-par är 35 % billigare per par. Som kort blir skillnaden omöjlig att missa.</p>
+        </div></div>
+        <div class="key__row"><span class="key__n"></span><div>
+          <h3>Köpknapp</h3>
+          <p>Full bredd, 52 px hög — över gränsen för vad som är bekvämt att träffa med tummen.</p>
+        </div></div>
+        <div class="key__row"><span class="key__n"></span><div>
+          <h3>Trygghetsrad</h3>
+          <p>Placerad direkt under knappen, alltså precis där tvekan uppstår.</p>
+        </div></div>
+        <div class="key__row"><span class="key__n"></span><div>
+          <h3>Leveransbesked <span class="new">nytt</span></h3>
+          <p>Ett riktigt datum i stället för "5–10 arbetsdagar". Räknas i arbetsdagar och svensk tid, hoppar över helger. Datumet i rutan är uträknat nu, medan du läser.</p>
+        </div></div>
+        <div class="key__row"><span class="key__n"></span><div>
+          <h3>Betalsätt</h3>
+          <p>Hämtas från butikens egna aktiverade betalsätt, så de aldrig kan visa något ni inte har.</p>
+        </div></div>
+        <div class="key__row"><span class="key__n"></span><div>
+          <h3>Vanliga frågor <span class="new">nytt</span></h3>
+          <p>Fångar invändningarna innan de blir ett mejl till kundtjänst. Fungerar utan JavaScript och går att söka i med Ctrl+F.</p>
+        </div></div>
+        <div class="key__row"><span class="key__n"></span><div>
+          <h3>Garanti</h3>
+          <p>Sista invändningen, precis innan sidan tar slut.</p>
+        </div></div>
+        <div class="key__row"><span class="key__n"></span><div>
+          <h3>Fast köpknapp <span class="new">nytt</span></h3>
+          <p>Dyker upp när den riktiga knappen scrollats förbi. Den bygger inget eget köpflöde — den klickar på temats riktiga knapp, så varianter och felmeddelanden fungerar precis som vanligt.</p>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <header>
+      <h2>Sektioner längre ner på sidan</h2>
+      <p>Samma stilmall, full bredd. Jämförelsetabellen är ny — den ger ett svar på "varför just den här och inte vilken present som helst".</p>
+    </header>
+
+    <div class="wide">
+      <div class="wide__chrome">Jämförelsetabell och omdömen · datorbredd</div>
+      <div class="wide__body">
+        <div class="ms-scope" style="padding: 34px 26px">
+
+          <div style="text-align:center;margin-bottom:24px">
+            <span class="ms-eyebrow">Varför just den här</span>
+            <h2 class="ms-h2">Matstrumpor mot en vanlig present</h2>
+          </div>
+          <div class="ms-compare__scroll">
+            <table class="ms-compare__table">
+              <thead>
+                <tr>
+                  <th scope="col"><span class="ms-sr">Egenskap</span></th>
+                  <th scope="col" class="ms-compare__col--us">Matstrumpor</th>
+                  <th scope="col" class="ms-compare__col--them">Vanlig present</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Får mottagaren att skratta högt</th>
+                  <td class="ms-compare__col--us"><span class="ms-compare__yes"><svg class="ms-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="ms-sr">Ja</span></span></td>
+                  <td class="ms-compare__col--them"><span class="ms-compare__no"><svg class="ms-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span class="ms-sr">Nej</span></span></td></tr>
+                <tr><th scope="row">Används efter första dagen</th>
+                  <td class="ms-compare__col--us"><span class="ms-compare__yes"><svg class="ms-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="ms-sr">Ja</span></span></td>
+                  <td class="ms-compare__col--them"><span class="ms-compare__no"><svg class="ms-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span class="ms-sr">Nej</span></span></td></tr>
+                <tr><th scope="row">Behöver ingen inslagning</th>
+                  <td class="ms-compare__col--us"><span class="ms-compare__yes"><svg class="ms-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="ms-sr">Ja</span></span></td>
+                  <td class="ms-compare__col--them"><span class="ms-compare__no"><svg class="ms-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span class="ms-sr">Nej</span></span></td></tr>
+                <tr><th scope="row">Går att ge till någon som har allt</th>
+                  <td class="ms-compare__col--us"><span class="ms-compare__yes"><svg class="ms-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="ms-sr">Ja</span></span></td>
+                  <td class="ms-compare__col--them"><span class="ms-compare__no"><svg class="ms-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span class="ms-sr">Nej</span></span></td></tr>
+                <tr><th scope="row">Kostar under 400 kr</th>
+                  <td class="ms-compare__col--us"><span class="ms-compare__yes"><svg class="ms-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="ms-sr">Ja</span></span></td>
+                  <td class="ms-compare__col--them"><span class="ms-compare__yes"><svg class="ms-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="ms-sr">Ja</span></span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="text-align:center;margin:44px 0 22px">
+            <span class="ms-eyebrow">Vad kunderna säger</span>
+            <h2 class="ms-h2">Presenten som alltid landar rätt</h2>
+          </div>
+          <div class="ms-reviews__grid">
+            <article class="ms-review">
+              <div class="ms-review__stars" role="img" aria-label="5 av 5 stjärnor">
+                <svg class="ms-i ms-i--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.8l5.9-.9z"/></svg>
+                <svg class="ms-i ms-i--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.8l5.9-.9z"/></svg>
+                <svg class="ms-i ms-i--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.8l5.9-.9z"/></svg>
+                <svg class="ms-i ms-i--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.8l5.9-.9z"/></svg>
+                <svg class="ms-i ms-i--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.8l5.9-.9z"/></svg>
+              </div>
+              <h3 class="ms-review__title">Mycket bättre än jag trodde!</h3>
+              <p class="ms-review__body">Jag beställde 5-packet till min syster som älskar sushi och hon skrattade i fem minuter när hon öppnade förpackningen. Ser helt sjukt realistiska ut och strumporna är oväntat mjuka.</p>
+              <div class="ms-review__who"><span>Erik L.</span></div>
+            </article>
+            <article class="ms-review">
+              <div class="ms-review__stars" role="img" aria-label="5 av 5 stjärnor">
+                <svg class="ms-i ms-i--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.8l5.9-.9z"/></svg>
+                <svg class="ms-i ms-i--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.8l5.9-.9z"/></svg>
+                <svg class="ms-i ms-i--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.8l5.9-.9z"/></svg>
+                <svg class="ms-i ms-i--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.8l5.9-.9z"/></svg>
+                <svg class="ms-i ms-i--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.8l5.9-.9z"/></svg>
+              </div>
+              <h3 class="ms-review__title">Den roligaste presenten jag gett!</h3>
+              <p class="ms-review__body">Köpte 3-packet som en liten gåva till en kollega. Förpackningen ser ut som en riktig sushilåda och reaktionen var guld värd. Alla på kontoret ville veta var jag köpt dem.</p>
+              <div class="ms-review__who"><span>Sandra V.</span></div>
+            </article>
+            <article class="ms-review">
+              <div class="ms-review__stars" role="img" aria-label="5 av 5 stjärnor">
+                <svg class="ms-i ms-i--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.8l5.9-.9z"/></svg>
+                <svg class="ms-i ms-i--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.8l5.9-.9z"/></svg>
+                <svg class="ms-i ms-i--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.8l5.9-.9z"/></svg>
+                <svg class="ms-i ms-i--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.8l5.9-.9z"/></svg>
+                <svg class="ms-i ms-i--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.8l5.9-.9z"/></svg>
+              </div>
+              <h3 class="ms-review__title">Hela familjen älskade dem</h3>
+              <p class="ms-review__body">Jag beställde två paket inför jul och det blev snabbt årets mest uppskattade klapp. Barnen trodde nästan att det var sushi på riktigt. Superbra kvalitet och väldigt rolig idé.</p>
+              <div class="ms-review__who"><span>Madeleine A.</span></div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <header>
+      <h2>Byggt för att inte kunna fuska</h2>
+      <p>ShrinePro-liknande teman får ofta sin effekt av påhittad brådska. Fyra sådana genvägar är stängda i koden, inte bara avstängda i inställningarna.</p>
+    </header>
+    <div class="rules">
+      <div class="rule-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--good)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <div><h3>Lagerindikatorn hittar inte på siffror</h3>
+          <p>Spårar produkten lager visas det verkliga antalet. Gör den inte det visas ingen siffra alls — bara en textrad, eller ingenting.</p></div>
+      </div>
+      <div class="rule-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--good)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <div><h3>Nedräkningen startar inte om vid varje besök</h3>
+          <p>Den räknar till ett riktigt datum eller till dagens brytpunkt för packning. Den klassiska "erbjudandet går ut om 9:59" som nollställs när man laddar om finns inte.</p></div>
+      </div>
+      <div class="rule-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--good)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <div><h3>Paketpriset stämmer alltid med kassan</h3>
+          <p>Ska det stå "spara 15 %" måste en riktig automatisk rabatt finnas i Shopify. Annars visas bara styckpris gånger antal.</p></div>
+      </div>
+      <div class="rule-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--good)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <div><h3>"Verifierat köp" måste kryssas i manuellt</h3>
+          <p>Per omdöme, och bara när köpet faktiskt går att styrka. Därför står det inte på de tre omdömena ovan.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <header>
+      <h2>Vad som händer nu</h2>
+    </header>
+    <div class="next">
+      <div class="next__row"><strong>1. Du kopplar om Shopify</strong>
+        <span>Settings → Connectors → Shopify → välj matstrumpor.se. Bara du kan göra det.</span></div>
+      <div class="next__row"><strong>2. Jag laddar upp</strong>
+        <span>Till ett nytt, opublicerat tema. Den publicerade sajten rörs inte.</span></div>
+      <div class="next__row"><strong>3. Du får en förhandslänk</strong>
+        <span>Riktiga produkter, riktig kundvagn. Ingen ser den utom du.</span></div>
+      <div class="next__row"><strong>4. Du säger till</strong>
+        <span>Först då publiceras något.</span></div>
+    </div>
+  </section>
+
+  <footer class="sig">
+    <p>Renderad med temats riktiga stilmall från <code>theme-matstrumpor/assets/ms-cro.css</code>.
+    Leveransdatumet ovan är uträknat av <code>ms-cro.js</code> i din webbläsare, just nu.
+    Bilderna kommer från matstrumpor.se. Ingenting på den här sidan är kopierat från
+    ShrinePro eller något annat betaltema.</p>
+  </footer>
+
+</div>
+
+<script>
+/*__MSJS__*/
+</script>
