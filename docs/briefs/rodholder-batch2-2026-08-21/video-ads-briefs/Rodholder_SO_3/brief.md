@@ -20,7 +20,34 @@ The old discount concept (40 % off) performed at demo-level CPA (143.80 kr) but 
 
 ## Copy
 
-<!-- COPY_SO_3 -->
+### Hook (hero line, biggest text in the video)
+
+| Hook | Swedish (use this) | English meaning |
+|---|---|---|
+| H1 ⭐ | 72,25 kr per hållare. Fyra stycken, 289 kr totalt. | 72.25 SEK per holder. Four pieces, 289 SEK total. |
+| Alt | Priset är precis vad det är: 72,25 kr per klämma. | The price is exactly what it is: 72.25 SEK per clamp. |
+
+### Captions (5-beat, use in order)
+
+| Beat | Swedish (use this) | English meaning |
+|---|---|---|
+| 1 ⭐ | 289 kr för ett 4-pack. | 289 SEK for a 4-pack. |
+| 2 ⭐ | Räkna själv: 289 delat på fyra. | Do the math: 289 divided by four. |
+| 3 ⭐ | Klarna finns om du vill dela upp det. | Klarna is available if you want to split it. |
+| 4 ⭐ | Ångrar du dig – 30 dagars garanti. | Change your mind – 30-day guarantee. |
+| 5 ⭐ | 289 kr, fyra hållare – beställ idag. | 289 SEK, four holders – order today. |
+
+### Primary text (use verbatim)
+
+| Swedish (use this) | English meaning |
+|---|---|
+| Inget rabattpris här – bara det verkliga priset. 🎣 | No discount price here – just the real price. |
+| 289 kr för ett 4-pack, 72,25 kr per hållare. | 289 SEK for a 4-pack, 72.25 SEK per holder. |
+| ✅ Klarna finns | Klarna available |
+| ✅ 30 dagars nöjd-kund-garanti | 30-day satisfaction guarantee |
+| Handla för 300 kr och frakten är fri. Beställ idag. 👇 | Spend over 300 SEK and shipping is free. Order today. |
+
+Headline: `289 kr för 4 st`. Tre-frågorstest: every approved line passes visualize+falsify; hook, captions 1/2/5 and body line 2 also pass unique — no line failed 3/3.
 
 ## Direction
 

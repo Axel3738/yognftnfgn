@@ -14,7 +14,14 @@ Before/after is the simplest conflict and a proven pattern in our playbook. Hypo
 
 ## Text (verbatim)
 
-<!-- COPY_PD_7 -->
+| Element | Swedish (use this) | English meaning |
+|---|---|---|
+| Headline ⭐ | Skillnaden är en klämma. | The difference is one clamp. |
+| Label left ⭐ | Utan klämma: spö trasslar | Without clamp: rod tangles |
+| Label right ⭐ | Med klämma: spö stängt | With clamp: rod shut |
+| Footer ⭐ | 4-pack 289 kr – beställ idag | 4-pack 289 SEK – order today |
+
+Tre-frågorstest: all lines pass visualize+falsify; footer also passes unique — no line failed 3/3.
 
 ## Body (primary text)
 

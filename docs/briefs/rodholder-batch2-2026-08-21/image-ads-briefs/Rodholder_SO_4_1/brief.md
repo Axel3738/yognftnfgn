@@ -13,7 +13,16 @@ A competitor's modular-rack framing signals that buyers think in "how many rods 
 
 ## Text (verbatim)
 
-<!-- COPY_SO_4 -->
+| Element | Swedish (use this) | English meaning |
+|---|---|---|
+| Headline ⭐ | 4 hållare, fyra platser att välja. | 4 holders, four spots to choose. |
+| Cell 1 (boat) ⭐ | Båten: spöet stannar stängt | The boat: the rod stays shut |
+| Cell 2 (wall) ⭐ | Väggen: ett spö var | The wall: one rod each |
+| Cell 3 (storage) ⭐ | Förrådet: spön i rad | Storage: rods in a row |
+| Cell 4 (transport) ⭐ | Transporten: spöet stannar stängt | Transport: the rod stays shut |
+| Footer ⭐ | 4-pack 289 kr – beställ idag | 4-pack 289 SEK – order today |
+
+Tre-frågorstest: all lines pass visualize+falsify; headline (exact count) and footer also pass unique — no line failed 3/3.
 
 ## Body (primary text)
 

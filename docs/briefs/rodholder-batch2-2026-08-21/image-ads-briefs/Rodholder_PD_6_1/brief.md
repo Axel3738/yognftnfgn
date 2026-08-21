@@ -14,11 +14,17 @@ The demo angle owns 87 % of assessable profit but has only run as video. The acc
 
 ## Text (verbatim)
 
-<!-- COPY_PD_6 -->
+| Element | Swedish (use this) | English meaning |
+|---|---|---|
+| Headline ⭐ | Ett klick. Spöet stängt. | One click. The rod is shut. |
+| Subline ⭐ | Hårdplast och skumgummi håller spöet säkert stängt. | Hard plastic and foam keep the rod securely shut. |
+| Footer ⭐ | 4-pack 289 kr – beställ idag | 4-pack 289 SEK – order today |
+
+Tre-frågorstest: headline ✅✅❌ · subline ✅✅✅ (exact material construction) · footer ✅✅✅ — no line failed 3/3.
 
 ## Body (primary text)
 
-Use "Demo-body" from the shared bodies section — see `<!-- COPY_BODIES -->` note in `Rodholder_CS_3_1/brief.md`; the demo body is the proven winner copy (also printed in `../../video-ads-briefs/Rodholder_PD_3/brief.md`).
+Use the "Demo-body (proven winner, verbatim)" printed in `../Rodholder_CS_3_1/brief.md` under "Bodies" — it is the account's winning primary text, unchanged.
 
 ## Export & KPI
 

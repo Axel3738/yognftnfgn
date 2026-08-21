@@ -25,7 +25,19 @@ The winning raw clips convert (23 purchases, CPA 63–145 kr) but hold is weak (
 
 ## Copy — captions (Swedish verbatim)
 
-<!-- COPY_PD_4 -->
+Use the ⭐ lines. A/B/C alternatives listed for reference only — do not mix within one video.
+
+| Beat | Swedish (use this) | English meaning |
+|---|---|---|
+| 1 HOOK ⭐ | Ihopfällt spö. Ändå trassel i båten. | Rod folded shut. Still tangles in the boat. |
+| 2 PROBLEM ⭐ | Linor och beten trasslar ihop sig. | Lines and lures tangle together. |
+| 3 DEMO ⭐ | Klämman håller spöet stängt – klick. | The clamp holds the rod shut – click. |
+| 4 PROOF ⭐ | Skruva fast på vägg eller i båt. | Screw it to the wall or in the boat. |
+| 5 CTA ⭐ | 289 kr. Fyra hållare. Inget mer trassel. | 289 SEK. Four holders. No more tangles. |
+
+Alternatives (same beat order): 1B "Spöna trasslar innan du ens lagt ut." · 2B "Ett löst spö rör allt annat." · 3B "En klämma. Spöet stannar stängt." · 4A "Fyra klämmor i paketet, en plats var." · 5A "4-pack för 289 kr – beställ idag."
+
+Tre-frågorstest (approved): Hook ✅✅❌ · Problem ✅✅❌ · Demo ✅✅❌ · Proof ✅✅✅ · CTA ✅✅✅ — no line failed 3/3.
 
 ## Primary text
 

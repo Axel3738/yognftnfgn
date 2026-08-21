@@ -14,7 +14,13 @@
 
 ## Text (verbatim)
 
-<!-- COPY_PD_10 -->
+| Element | Swedish (use this) | English meaning |
+|---|---|---|
+| Headline ⭐ | Ligger ditt bästa spö löst i trasslet? | Is your best rod lying loose in the tangle? |
+| Subline ⭐ | Skumgummit skyddar spötoppen, plasten håller spöet stängt. | The foam protects the rod tip, the plastic keeps the rod shut. |
+| Footer ⭐ | Skydda dina spön – 289 kr för 4-pack | Protect your rods – 289 SEK for a 4-pack |
+
+Tre-frågorstest: headline ✅✅❌ · subline ✅✅✅ (exact material facts) · footer ✅✅✅ — no line failed 3/3.
 
 ## Body (primary text)
 
