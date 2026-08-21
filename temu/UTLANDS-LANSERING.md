@@ -233,6 +233,30 @@ läge, så modellen hittade på det. Regeln: generera bara scener där referensb
 visar produktens form i det läge scenen kräver. Finns en riktig infografik/
 galleribild från Temu som visar samma sak går den ALLTID före en AI-bild.
 
+## Galleri-integrationen 2026-08-21 (offert 2 + båtmotorskydd)
+
+Axel laddade upp Temu-galleriets bilder som zippar; allt integrerat i SE med
+sharp-översatta infografiker (`temu/infografik/vag3.mjs`, språk sv/no/da/fi).
+Bilderna är facit — offerten avrundade upp. Rättade fakta:
+
+- **Båtmotorskydd:** storlekstabell 7 storlekar (6–15 → 175–225 hk) med omkrets/höjd
+  — ⚠️ offerten nämnde även 0–5 och 250–350 hk (250–350 var den kvoterade!); 9
+  varianter säljs tills CWD bekräftar. Äkta i-användningsbild ersatte lösningsbilden.
+- **MC-kapell:** måtten är **218 × 118,5 cm** (inte 220×120 — offerten avrundade).
+  Titel + copy rättade. Regnfoto (äkta) ersatte AI-regnbilden. Måttskiss översatt.
+- **Dörrlist:** mekanismen VERIFIERAD ur galleriet: **självhäftande kardborreband +
+  klippbar med sax** (första omskrivningen "inget lim" var fel — hela galleriet
+  behövs innan copy skrivs). 94 cm / 3 cm skum / 8 cm flik. ⚠️ Temu har 5 färger
+  (svart/grå/brun/kaffe/vit) — vi säljer kaffe; fler kräver CWD-offert.
+- **Kranskydd:** måtten är **22 × 14 cm** (inte 15×21 som offerten sa). Äkta
+  på-kranen-bild ersatte AI-bilden.
+- **Plyschtofflor:** **memoryskum-innersula** (nytt verifierat faktum, egen
+  infografik). Äkta i-användningsbilder ersatte AI-bilden. ⚠️ Temu har ≥3 färger
+  (svart/grå/brun) — vi säljer svart.
+- **Herrtofflor (väntar offert):** hela galleriet (24 bilder) sparat i
+  `temu/infografik/herrtofflor/` — redo när offerten kommer.
+- AI-miljöbilderna raderades där äkta bilder visar samma sak (regeln: äkta före AI).
+
 ## Prismetoden
 
 ### ⚠️ NY REGEL för alla NYA produkter (Axel 2026-08-21)
