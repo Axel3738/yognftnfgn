@@ -38,27 +38,96 @@ upptäcker det i sista steget. Det är exakt det ärlighetsreglerna i
 En kopia av widgeten är alltså inte en kopia av funktionen. Ska vi äga det här
 måste rabatten också bli vår.
 
-## Två vägar
+## Två vägar — Axel valde B (2026-08-21)
 
-**A. Widgeten nu, Kaching kvar som rabattmotor.**
-Vår widget sätter samma antal, Kachings funktion drar samma rabatt. Fungerar
-direkt utan att röra pengar. Men vi sitter kvar i appberoendet, och det är
-oklart om funktionen triggar på enbart antal eller på Kachings egna
-radattribut — det går inte att avgöra utan att lägga en riktig order.
+**A. Widgeten nu, Kaching kvar som rabattmotor.** Fungerar direkt men lämnar
+oss kvar i appberoendet. Vald bort.
 
-**B. Vi äger rabatten.**
-Riktiga rabatter i Shopify som matchar varje nivå — en automatisk rabatt per
-antalsnivå plus en "köp X få Y"-rabatt för ätpinnarna. Ingen app behövs, och
-priset på sidan är samma pris som kassan tar, garanterat.
+**B. Vi äger rabatten.** Riktiga rabatter i Shopify som matchar varje nivå.
+Ingen app behövs, och priset på sidan är samma pris som kassan tar.
 
-Väg B kräver att rabatter skapas i Shopify. Det är ett ägarbeslut enligt
-`CLAUDE.md` regel 12 och görs aldrig utan att Axel sagt ja.
+---
 
-## Så byggs vår version
+# Så det byggdes
 
-- **Nivåerna är block i temaredigeraren** — ett block per nivå, med antal,
-  rubrik, underrubrik, etikett, bricka, rabattyp och gratisprodukt. Axel
-  uppdaterar dem själv, utan app och utan kod.
-- **A/B-test** via sektionens `ab_test`/`ab_variant`, samma motor som resten av
-  temat. Två sektioner, variant A och B, och utfallet skrivs på ordern.
-- **Priset räknas på verkliga variantpriser**, aldrig på ett inskrivet tal.
+## 1. Nivåerna är metaobjekt, inte kod
+
+Definitionen `ms_paketniva` (`Innehåll → Metaobjekt → Paketnivå` i adminen).
+En post per nivå och produkt — **tolv poster i dag**, tre per strumpa.
+
+| Fält | Vad |
+|---|---|
+| `produkt` | vilken produkt nivån gäller |
+| `antal` | hur många par |
+| `rubrik`, `underrubrik` | texten i kortet |
+| `bricka` | "Mest Populär" / "Bäst Värde", tom = ingen bricka |
+| `fastpris` | vad kunden ska betala totalt |
+| `gratis_produkt`, `gratis_antal`, `gratis_text` | gåvan |
+| `forvald` | vilket kort som är ikryssat från början |
+| `ab_variant` | tom = alltid, `a`/`b` = bara i den varianten |
+| `rabattkod` | koden som ger priset |
+
+Axel ändrar erbjudanden här. Inget i temat behöver röras.
+
+## 2. Rabatten är åtta riktiga rabattkoder som vi äger
+
+| Kod | Drar av | Kräver minst |
+|---|---|---|
+| `PAKET-SUSHI-2` | 499 kr | 838 kr |
+| `PAKET-SUSHI-4` | 1 197 kr | 1 676 kr |
+| `PAKET-PIZZA-2` | 549 kr | 998 kr |
+| `PAKET-PIZZA-4` | 1 327 kr | 1 996 kr |
+| `PAKET-HAMBURGARE-2` | 399 kr | 698 kr |
+| `PAKET-HAMBURGARE-4` | 947 kr | 1 396 kr |
+| `PAKET-DONUT-2` | 399 kr | 698 kr |
+| `PAKET-DONUT-4` | 947 kr | 1 396 kr |
+
+Rabatten är ett **belopp**, inte en procent — precis som Kachings fastpris
+fungerade. Därför blir avdraget rätt även när kunden byter variant.
+
+⚠️ **Sushis minimibelopp är lägre än 2×399.** Sushi har två varianter
+(5-par 399 kr, 3-par 369 kr). Minimibeloppet måste klara den billigaste:
+2 × 369 + 2 × 50 = 838 kr. Sätts det efter 5-par-priset slutar rabatten
+gälla så fort någon väljer 3-par — utan felmeddelande.
+
+## 3. Vid köp
+
+`ms-paket.js` lägger strumporna **och** gåvan i kundvagnen med `/cart/add.js`,
+och skickar sedan kunden till `/discount/<kod>?redirect=/cart`. Shopifys egen
+väg. Ingen app, ingen funktion, inget som kan avinstalleras under oss.
+
+Verifierat mot temat 2026-08-21 — vad som faktiskt skickas:
+
+| Val | Kundvagn | Sedan | Kunden betalar |
+|---|---|---|---|
+| 1-pack | 1 strumpa | /cart | 399 kr |
+| 2-pack | 2 strumpor + 2 ätpinnar | `PAKET-SUSHI-2` | 898 − 499 = **399 kr** |
+| 4-pack | 4 strumpor + 4 ätpinnar | `PAKET-SUSHI-4` | 1 796 − 1 197 = **599 kr** |
+
+## Två fällor som kostade pengar, båda hittade vid test
+
+**"Köp nu" gick förbi allt.** Temats direktkassa skickar formuläret rakt till
+kassan — utan rabattkod och utan gåvan. Sidan lovade 399 kr, kassan hade tagit
+798 kr. Knappen göms nu så länge ett rabatterat paket är valt. På 1-pack finns
+ingen rabatt att tappa, så där får den vara kvar.
+
+**Vi band till fel formulär.** Dawn renderar ett **dolt** produktformulär
+*före* det riktiga. Det saknar köpknapp och bär bara variantdata. Koden tog
+det första den hittade, så köplyssnaren hamnade i tomma intet och kunden hade
+fått **en** strumpa till fullpris fast sidan lovat ett paket. Samma fel tog
+bort den fasta mobilknappen, som gav upp när den inte hittade någon knapp.
+Regeln nu, i både `ms-cro.js` och `ms-paket.js`: rätt formulär är det som
+**har en köpknapp**.
+
+## Ärlighetsspärren
+
+Ett rabatterat pris visas **bara** om nivån har både `fastpris` och
+`rabattkod`. Saknas koden vet vi inte att kassan ger priset — då visar sidan
+fullpris. Det är därför 1-pack inte har någon överstruken siffra.
+
+## A/B-test av erbjudanden
+
+Fältet `ab_variant` på metaobjektet. Tom = nivån visas alltid. `a` eller `b` =
+bara i den varianten. Skapa två uppsättningar nivåer, sätt `a` på den ena och
+`b` på den andra, och slå på testet i `Temainställningar → Matstrumpor A/B`.
+Priset räknas alltid på verkliga variantpriser, aldrig på ett inskrivet tal.

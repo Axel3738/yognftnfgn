@@ -1,0 +1,99 @@
+/* ==========================================================================
+   ms-paket.css — utseendet på paketnivåerna
+   --------------------------------------------------------------------------
+   Egen fil av samma skäl som ms-paket.js: paketnivåerna är den enda delen som
+   rör pengar, och de ska gå att läsa, ändra och byta ut för sig. Tokens ärvs
+   från ms-cro.css, så färger och storlekar följer resten av temat.
+   ========================================================================== */
+/* 3.20 Paketnivåer ------------------------------------------------------ */
+/* Samma sorts kort som paketväljaren, men med bricka, underrubrik och
+   gratisrad. Brickan sitter ovanför kanten, därför luften överst. */
+.ms-paket { display: block; margin: 18px 0; }
+.ms-paket__lista { display: grid; gap: 12px; padding-top: 10px; }
+.ms-paket__opt { position: relative; margin: 0; display: block; }
+.ms-paket__input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.ms-paket__kort {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 14px;
+  border: 2px solid var(--ms-line);
+  border-radius: var(--ms-radius);
+  background: var(--ms-surface);
+  transition: border-color .16s ease, background-color .16s ease, box-shadow .16s ease;
+}
+.ms-paket__input:hover + .ms-paket__kort { border-color: var(--ms-line-strong); }
+.ms-paket__input:checked + .ms-paket__kort {
+  border-color: var(--ms-accent);
+  background: color-mix(in srgb, var(--ms-accent) 6%, var(--ms-surface));
+  box-shadow: var(--ms-shadow);
+}
+.ms-paket__input:focus-visible + .ms-paket__kort { box-shadow: var(--ms-ring); }
+.ms-paket__dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--ms-line-strong);
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+}
+.ms-paket__dot::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ms-accent);
+  transform: scale(0);
+  transition: transform .16s ease;
+}
+.ms-paket__input:checked + .ms-paket__kort .ms-paket__dot { border-color: var(--ms-accent); }
+.ms-paket__input:checked + .ms-paket__kort .ms-paket__dot::after { transform: scale(1); }
+.ms-paket__text { min-width: 0; line-height: 1.25; }
+.ms-paket__rubrik { display: block; font-size: var(--ms-fs-md); font-weight: 700; }
+.ms-paket__under { display: block; font-size: var(--ms-fs-xs); color: var(--ms-ink-soft); margin-top: 2px; }
+.ms-paket__gratis {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 6px;
+  padding: 3px 9px;
+  border-radius: var(--ms-radius-pill);
+  background: color-mix(in srgb, var(--ms-good) 12%, var(--ms-surface));
+  color: var(--ms-good);
+  font-size: var(--ms-fs-xs);
+  line-height: 1.3;
+}
+.ms-paket__pris { text-align: right; line-height: 1.25; white-space: nowrap; }
+.ms-paket__nu { display: block; font-size: var(--ms-fs-lg); font-weight: 700; }
+.ms-paket__forr { font-size: var(--ms-fs-xs); color: var(--ms-ink-faint); text-decoration: line-through; }
+.ms-paket__styck { display: block; font-size: var(--ms-fs-xs); color: var(--ms-ink-soft); }
+.ms-paket__bricka {
+  position: absolute;
+  top: -10px;
+  right: 14px;
+  z-index: 1;
+  padding: 3px 11px;
+  border-radius: var(--ms-radius-pill);
+  background: var(--ms-accent);
+  color: var(--ms-accent-ink);
+  font-size: var(--ms-fs-xs);
+  white-space: nowrap;
+}
+.ms-paket__spar {
+  display: block;
+  margin-top: 6px;
+  padding-left: 46px;
+  font-size: var(--ms-fs-xs);
+  color: var(--ms-good);
+}
+.ms-paket__fel { margin: 10px 0 0; color: var(--ms-warn); font-size: var(--ms-fs-sm); }

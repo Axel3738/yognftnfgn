@@ -125,12 +125,24 @@ före uppladdning — den fångar dem nu innan Shopify gör det.
 
 ### Kvar att göra
 
-- **`config/settings_schema.json` är inte ändrad.** Filen är 40 KB och skrevs
-  inte av för hand. Utan den går A/B-testerna inte att slå på i temaredigeraren.
-  Det spelar ingen roll i dag: utan inställningen blir `settings.ms_ab_tests`
-  tom, motorn kör med `tests: []` och ligger stilla — vilket är samma läge som
-  fragmentets standardvärde `# buybox` (avstängt) ger. `npm run tema:upp -- allt`
-  gör ändringen automatiskt så fort appen har tema-scope.
+- **`config/settings_schema.json` är inte ändrad.** Utan den går A/B-testerna
+  inte att slå på i temaredigeraren. Det spelar ingen roll i dag: utan
+  inställningen blir `settings.ms_ab_tests` tom, motorn kör med `tests: []` och
+  ligger stilla — samma läge som fragmentets standardvärde `# buybox` (avstängt)
+  ger. Och A/B-test är ändå fel verktyg vid butikens nuvarande trafik, se
+  avläsningen längre ned.
+
+  Varför den inte fixades 2026-08-21: filen är 40 290 byte och enda vägen in i
+  den går genom att skriva av hela innehållet för hand. Blir ett tecken fel
+  slutar **hela temaredigeraren** att fungera, och det är inget Axel kan
+  reparera själv. Kontrollerat om den går att hämta färdig i stället: den är
+  **inte** Dawns standardfil (v15.3.0 har exakt samma storlek men annan
+  md5-summa), så den bär egna ändringar som inte får skrivas över.
+
+  Så här blir den fixad: kryssa i `read_themes` + `write_themes` på appen
+  (steg 0b) och kör `npm run tema:upp -- allt`. Då läser skriptet filen från
+  temat, slår ihop den med fragmentet via den testade `slåIhopInställningar`
+  och skriver tillbaka — utan att något skrivs av för hand.
 - **Omdömessektionen ligger uppe men är inte inlagd i mallen.** Vi hittar inte på
   kundomdömen. Lägg in den i temaredigeraren när det finns riktiga, eller koppla
   in en recensionsapp via app-blocket.
@@ -217,10 +229,42 @@ måste byggas mot det bastema som faktiskt används.
 
 ```
 assets/ms-cro.css   assets/ms-cro.js   assets/ms-ab.js
+assets/ms-paket.css assets/ms-paket.js assets/ms-tema.css
 snippets/ms-*.liquid
 blocks/ms-*.liquid
 sections/ms-*.liquid
 ```
+
+### Skriv inte av filen för hand — låt Shopify hämta den
+
+`themeFilesUpsert` tar `body: { type: TEXT }`, och då måste filinnehållet
+skrivas in i anropet. På en 21 KB-fil är det både dyrt och riskabelt: ett enda
+felskrivet tecken i pengakoden syns inte förrän en kund betalar fel belopp.
+
+`type: URL` finns också, och Shopifys egen mellanlagring ger en URL gratis.
+Trestegsvägen laddar upp filen **byte-exakt** utan att den skrivs av:
+
+1. `stagedUploadsCreate(input: [{resource: FILE, filename: "…", mimeType: "…",
+   httpMethod: POST}])` → svarar med `url`, `resourceUrl` och `parameters`.
+2. POST:a filen dit med curl. Varje `parameters`-par blir ett `-F namn=värde`,
+   och filen sist som `-F "file=@<sökväg>"`. **Ordningen spelar roll — filen
+   ska ligga sist.** Svar `HTTP 201` = uppe.
+3. `themeFilesUpsert` med `body: { type: URL, value: "<resourceUrl>" }`.
+
+Steg 3 svarar med tom `upsertedThemeFiles` och tomma `userErrors` — det är
+**inte** ett fel, filen hämtas i bakgrunden. Läs av resultatet i stället:
+
+### Verifiera med md5, inte med ögat
+
+`theme.files` har fältet `checksumMd5`. Det är den enda kontroll som duger:
+
+```bash
+md5sum theme-matstrumpor/assets/ms-cro.js
+```
+
+Stämmer den mot `checksumMd5` är filen på temat identisk med repots, tecken
+för tecken. Bytestorlek ensam räcker inte — två olika filer kan vara lika
+stora. Kör kontrollen på **alla** filer efter varje uppladdningsomgång.
 
 ## Steg 5 — koppla in i temat
 

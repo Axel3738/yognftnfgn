@@ -1,0 +1,30 @@
+{%- liquid
+  assign p = product
+  if p == blank
+    assign p = closest.product
+  endif
+-%}
+<div {% render 'ms-ab-attrs', test: block.settings.ab_test, variant: block.settings.ab_variant %}>
+  {% render 'ms-paket',
+     product: p,
+     variant: block.settings.ab_variant,
+     section_id: block.id %}
+</div>
+
+{% schema %}
+{
+  "name": "Paketnivåer",
+  "settings": [
+    { "type": "paragraph", "content": "Nivåerna redigeras i Shopify-adminen under Innehåll → Metaobjekt → Paketnivå. Ett rabatterat pris visas bara om nivån har både ett totalpris och en rabattkod — annars vet vi inte att kassan ger priset." },
+    { "type": "header", "content": "A/B-test" },
+    { "type": "text", "id": "ab_test", "label": "Test-id", "info": "Lämna tomt om blocket inte ingår i något test." },
+    { "type": "select", "id": "ab_variant", "label": "Visas för variant", "default": "",
+      "options": [
+        { "value": "", "label": "Alla" },
+        { "value": "a", "label": "Bara A" },
+        { "value": "b", "label": "Bara B" }
+      ] }
+  ],
+  "presets": [{ "name": "Paketnivåer" }]
+}
+{% endschema %}

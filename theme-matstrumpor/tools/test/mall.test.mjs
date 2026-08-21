@@ -75,11 +75,11 @@ test('Dawn: våra block läggs in som custom_liquid i rätt ordning', () => {
   const ny = byggMall(dawn());
   const s = ny.sections['huvud-abc'];
   assert.deepEqual(s.block_order, [
-    'b1', 'b2', 'ms_points', 'ms_bundle', 'b3',
+    'b1', 'b2', 'ms_points', 'ms_paket', 'b3',
     'ms_trust', 'ms_delivery', 'ms_pay', 'ms_faq', 'ms_guarantee', 'b4',
   ]);
   assert.equal(s.block_order.indexOf('ms_points'), s.block_order.indexOf('b2') + 1, 'säljpunkterna ska ligga direkt under priset');
-  for (const id of ['ms_points', 'ms_bundle', 'ms_trust', 'ms_delivery', 'ms_pay', 'ms_faq', 'ms_guarantee']) {
+  for (const id of ['ms_points', 'ms_paket', 'ms_trust', 'ms_delivery', 'ms_pay', 'ms_faq', 'ms_guarantee']) {
     assert.equal(s.blocks[id].type, 'custom_liquid', id);
   }
 });
@@ -87,7 +87,7 @@ test('Dawn: våra block läggs in som custom_liquid i rätt ordning', () => {
 test('Dawn: varje custom_liquid renderar sin snippet', () => {
   const s = byggMall(dawn()).sections['huvud-abc'];
   const par = [
-    ['ms_points', 'ms-sales-points'], ['ms_bundle', 'ms-bundle-picker'],
+    ['ms_points', 'ms-sales-points'], ['ms_paket', 'ms-paket'],
     ['ms_trust', 'ms-trust-row'], ['ms_delivery', 'ms-delivery-estimate'],
     ['ms_pay', 'ms-payment-icons'], ['ms_faq', 'ms-faq'], ['ms_guarantee', 'ms-guarantee'],
   ];
@@ -96,8 +96,8 @@ test('Dawn: varje custom_liquid renderar sin snippet', () => {
   }
 });
 
-test('Dawn: paketväljaren får produkten och ett unikt section_id', () => {
-  const cl = byggMall(dawn()).sections['huvud-abc'].blocks.ms_bundle.settings.custom_liquid;
+test('Dawn: paketnivåerna får produkten och ett unikt section_id', () => {
+  const cl = byggMall(dawn()).sections['huvud-abc'].blocks.ms_paket.settings.custom_liquid;
   assert.match(cl, /product: product/);
   assert.match(cl, /section_id: section\.id/);
 });

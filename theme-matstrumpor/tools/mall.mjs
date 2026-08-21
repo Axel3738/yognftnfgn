@@ -10,7 +10,7 @@ export const KNAPP_MÖNSTER = /buy[-_]?buttons?|product[-_]form|add[-_]?to[-_]?c
 // före knappen (där valet ska göras). Mellan dem ligger temats egna block.
 export const PRIS_MÖNSTER = /price/i;
 export const EFTER_PRISET = ['ms-points'];
-export const FÖRE_KNAPPEN = ['ms-bundle'];
+export const FÖRE_KNAPPEN = ['ms-paket'];
 export const EFTER_KNAPPEN = ['ms-trust', 'ms-delivery', 'ms-pay', 'ms-faq', 'ms-guarantee'];
 export const SEKTIONER_UNDER = ['ms-compare', 'ms-reviews', 'ms-faq-section'];
 export const SIST_I_MALLEN = 'ms-sticky-atc';
@@ -50,6 +50,7 @@ export function slåIhopInställningar(rå, fragment) {
 export const RENDER = {
   'ms-points': "{% render 'ms-sales-points', points: 'En storlek passar alla|Levereras i presentförpackning|Premiumkvalitet som håller', icon: 'check-circle' %}",
   'ms-bundle': "{% render 'ms-bundle-picker', product: product, heading: 'Välj ditt paket', mode: 'auto', unit_word: 'par', popular_index: 0, popular_text: 'Populärast', tiers: '1,2,3', discount_percent: 0, section_id: section.id %}",
+  'ms-paket': "{% render 'ms-paket', product: product, section_id: section.id %}",
   'ms-trust': "{% render 'ms-trust-row', items: 'truck:Fri frakt i Sverige|refresh:30 dagars öppet köp|lock:Trygg betalning' %}",
   'ms-delivery': "{% render 'ms-delivery-estimate', min_days: 5, max_days: 10, cutoff_hour: 0, text: 'Beräknad leverans' %}",
   'ms-pay': "{% render 'ms-payment-icons', label: 'Trygg betalning med' %}",

@@ -30,11 +30,24 @@
     return (format || '{{amount}} kr').replace(/\{\{\s*amount[a-z_]*\s*\}\}/gi, text);
   }
 
+  function kopformular(rot) {
+    // Det formulär som faktiskt kan skicka en beställning är det som har en
+    // köpknapp. Sista utvägen: första formuläret, som förr.
+    var formar = rot.querySelectorAll('form[action*="/cart/add"]');
+    for (var i = 0; i < formar.length; i++) {
+      if (formar[i].querySelector('[type="submit"], [name="add"]')) return formar[i];
+    }
+    return formar[0] || null;
+  }
+
   function productForm(el) {
     // Temats eget köpformulär. Först inom sektionen, annars första på sidan.
+    // Dawn renderar ETT DOLT formulär före det riktiga — det saknar köpknapp
+    // och används bara för variantdata. Tar man det första hamnar antalet
+    // och köplyssnaren i tomma intet, och kunden får en vara till fullpris
+    // fast sidan lovat ett paket. Därför väljs formuläret på knappen.
     var scope = el.closest('[id^="shopify-section"]') || document;
-    return scope.querySelector('form[action*="/cart/add"]') ||
-           document.querySelector('form[action*="/cart/add"]');
+    return kopformular(scope) || kopformular(document);
   }
 
   function stockholmNow() {

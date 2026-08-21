@@ -24,12 +24,6 @@
             "custom_liquid": "{% render 'ms-sales-points', points: 'En storlek passar alla|Levereras i presentförpackning|Premiumkvalitet som håller', icon: 'check-circle' %}"
           }
         },
-        "ms_bundle": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "{% render 'ms-bundle-picker', product: product, heading: 'Välj ditt paket', mode: 'auto', unit_word: 'par', popular_index: 0, popular_text: 'Populärast', tiers: '1,2,3', discount_percent: 0, section_id: section.id %}"
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -76,6 +70,19 @@
           "settings": {
             "share_label": "Dela"
           }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "ms_paket": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'ms-paket', product: product, section_id: section.id %}"
+          }
         }
       },
       "block_order": [
@@ -83,7 +90,8 @@
         "title",
         "price",
         "ms_points",
-        "ms_bundle",
+        "variant_picker",
+        "ms_paket",
         "buy_buttons",
         "ms_trust",
         "ms_delivery",

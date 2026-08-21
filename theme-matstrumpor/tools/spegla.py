@@ -79,6 +79,17 @@ html = re.sub(r'https://fonts\.shopifycdn\.com/[^"\')\s]+', absolut_om, html)
 html = re.sub(r'https://cdn\.shopify\.com/[^"\')\s]+\.(?:png|jpe?g|webp|svg|gif)(?:\?[^"\')\s]*)?',
               absolut_om, html)
 
+# Skript måste också med, annars testar man bara Liquid. Pengakoden
+# (ms-paket.js) ligger i en <script src> — utan den här raden ser sidan ut
+# att fungera medan ingen av vår JS körts överhuvudtaget.
+def js_in(m):
+    src = urljoin(url, m.group(1))
+    lokal = hamta(src)
+    return m.group(0) if not lokal else m.group(0).replace(m.group(1), lokal)
+
+
+html = re.sub(r'<script[^>]+src="([^"]+)"', js_in, html)
+
 ut = f"{mapp}/sida.html"
 open(ut, "w", encoding="utf-8").write(html)
 print("speglad:", ut, "|", len(os.listdir(f'{mapp}/a')), "filer")

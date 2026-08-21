@@ -10,6 +10,8 @@
     2. A/B-konfigurationen som ren JSON.
     3. ms-ab.js UTAN defer — den måste hinna välja variant innan sidan målas.
     4. ms-cro.js med defer — beteende, behöver inte blockera.
+    5. ms-paket.js sist — paketnivåerna. Egen fil för att den är den enda
+       koden som rör pengar, och ska gå att läsa och byta ut för sig.
 
   Testerna konfigureras i Temainställningar → Matstrumpor A/B, ett test per
   rad på formen:   id            (50/50)
@@ -18,6 +20,7 @@
 {%- endcomment -%}
 
 {{ 'ms-cro.css' | asset_url | stylesheet_tag }}
+{{ 'ms-paket.css' | asset_url | stylesheet_tag }}
 {{ 'ms-tema.css' | asset_url | stylesheet_tag }}
 
 {%- comment -%}
@@ -65,3 +68,4 @@
 </script>
 <script src="{{ 'ms-ab.js' | asset_url }}"></script>
 <script src="{{ 'ms-cro.js' | asset_url }}" defer></script>
+<script src="{{ 'ms-paket.js' | asset_url }}" defer></script>
