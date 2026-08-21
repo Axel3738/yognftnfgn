@@ -45,3 +45,21 @@
 **Drive-mapp skapad 2026-08-21 (Axels go):** `BÄVER/TEMU-601104615671651 Fiskespöhållare/Batch #2 briefs (2026-08-21)/` (mapp-id `1tzWG2if8SsFI2TpAIAz-cfVF7OD20nrM`) med undermappar `video-ads-briefs` (README + 7 brief-docs) och `image-ads-briefs` (README + 6 brief-docs) — alla som Google Docs. Alla 15 Notion-items har Drive-länken överst ("Brief in Drive (use this)"). Mappnamnet följer SOP-06 (SKU + referensnamn). Reference-asset-BILDERNA ligger i `image-ads-briefs.zip` (levererad i chatten) + repot — inte i Drive; README:erna pekar på produktsidan för produktsanning. Brief-källan i repot: `docs/briefs/rodholder-batch2-2026-08-21/`.
 
 **Utfall:** fylls i vid nästa `/cs`-avläsning (tidigast 3 dygn efter launch, ≥5 köp för marginal-CPA — 2b-grinden).
+
+## Batch #3 — "DEMO GRIND", briefad 2026-08-21 på Axels direkta order (EJ launchad ännu)
+
+**Ägarinput (Axel, 2026-08-21):** "den basic ass-videon går bäst — den som är på engelska. Jättetydlig produkt som bara visar hur den fungerar. Mer sådana." Beslut: en hel batch av rena, textfria produktdemos, byggd utan ny performance-data (medvetet — ägarbeslut går före vänta-på-data). Noterat i DNA: engelskt tal/text i råklipp är inget hinder för svensk publik.
+
+**14 ads = 7 demo-koncept × 2 hooks.** ALLA kör vinnarcopyn ordagrant som primärtext — enda variabeln är vad videon visar. Ingen ny svensk copy skrevs (ergo ingen subagent — återanvändning av bevisad copy). Briefer: `docs/briefs/rodholder-batch3-2026-08-21/` + Drive "Batch #3 briefs – DEMO GRIND" (`1CjQoPbDwiqWcVxyXo5zgo82jZg5yItXC`) + 14 Notion-items (Draft, Video - Pending Approval).
+
+| Annons | Demo-moment | Variabeltaggar (gemensamt: vinkel=problem/lösning, format=rå demo, proof=demo, offer=ingen, text=ingen, talare=ingen) |
+|---|---|---|
+| Rodholder_PD_11_H1/H2 | "Klicket" — macro-klick 2–3 vinklar | hook=klick vs lyft |
+| Rodholder_PD_12_H1/H2 | "En hand" — enhandsstängning, 1 sekund | vinkel=bekvämlighet; hook=stängning vs upptagen hand |
+| Rodholder_PD_13_H1/H2 | "Alla fyra" — fyra spön i rad, rytm | proof=antal; hook=klick 1 vs färdig rad |
+| Rodholder_PD_14_H1/H2 | "Skruven" — väggmontering, två skruvar | vinkel=förvaring; hook=skruv vs klick-i |
+| Rodholder_PD_15_H1/H2 | "Skaka-testet" — upp-och-ner, håller | proof=stresstest; hook=flip vs macro |
+| Rodholder_PD_16_H1/H2 | "Passar alla" — tunt + grovt spö, samma klämma | vinkel=invändningskross; hook=tunn vs grov |
+| Rodholder_PD_17_H1/H2 | "Bagageluckan" — transport utan trassel | vinkel=transport; hook=lucka vs lyft |
+
+**Utfall:** fylls i av nästa `/cs` efter launch. OBS: launcha i test-ABO:t (regel 11), aldrig i skalnings-CBO:n. Batch #2 + #3 = 29 briefer totalt i kö → täcker kvoten (14/cykel) för cykel 2 OCH 3.
