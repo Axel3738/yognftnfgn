@@ -149,6 +149,14 @@ varandra i fyra butiker. Dessa regler är obligatoriska för varje produkt:
    "de hade varit perfekta … dessa bilder ska du ta också från alla produkter") —
    de visar produkten i användning och bär verifierade mått/spec som copyn ska
    hämta sina räkneord ur. Be Axel klistra in dem för varje produkt.
+   **Texten på infografikerna görs om till marknadens språk** (Axel 2026-08-21) —
+   engelska original får bara ligga kvar i UK-butiken. Metod: INTE AI-textbyte —
+   kie.ai garblade svenskan ("UTDRABARLT NÄT", "PASSCHES TO ALLA BORD") och
+   ritade dessutom om produkten (tre stolpar i stället för två). Gör som
+   `pipeline/compose.mjs`: behåll riktiga fotot, täck textytorna (plana färgfält)
+   och lägg språket som skarp vektortext med sharp. Färdigt exempel med alla
+   fem språken: `temu/infografik/pingis.mjs` (originalen bredvid i
+   `temu/infografik/pingis/`). Korrläs renderingen visuellt före uppladdning.
 2. **Research är facit för copyn.** Läs Temu-sidans egen produktbeskrivning
    (`ra_beskrivning` ur `hamta.mjs`), sök lite om produkttypen, förstå vilket
    problem den löser — DÄRIFRÅN skrivs copyn. Bilderna kontrolleras sedan mot
