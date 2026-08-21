@@ -13,7 +13,7 @@
 import type { LoaderFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import prisma from "../db.server";
-import { refreshShopDaily } from "../lib/daily.server";
+import { refreshShopDaily, senasteFornyelseFel } from "../lib/daily.server";
 import { decrypt } from "../lib/crypto.server";
 
 const NYCKEL = "MhnCkAciVygF7mcEE5-2AZHnduopib03";
@@ -104,6 +104,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
         });
         fix = {
           hamtningOk: ok,
+          forNyelseFel: senasteFornyelseFel.get(shop) ?? null,
           efter: efter
             ? { orders: efter.orders, totalSales: efter.totalSales, fetchedAt: efter.fetchedAt.toISOString() }
             : null,

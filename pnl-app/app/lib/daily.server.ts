@@ -203,7 +203,9 @@ async function giltigToken(shop: string, tvinga = false): Promise<string | null>
       signal: AbortSignal.timeout(15_000),
     });
     if (!res.ok) {
-      console.error(`Nyckelförnyelse för ${shop} nekades: HTTP ${res.status}`);
+      const text = await res.text().catch(() => "");
+      senasteFornyelseFel.set(shop, `HTTP ${res.status}: ${text.slice(0, 300)}`);
+      console.error(`Nyckelförnyelse för ${shop} nekades: HTTP ${res.status} ${text.slice(0, 200)}`);
       return token;
     }
     const body: any = await res.json();
@@ -227,13 +229,18 @@ async function giltigToken(shop: string, tvinga = false): Promise<string | null>
           : {}),
       },
     });
+    senasteFornyelseFel.delete(shop);
     console.log(`Offline-nyckeln för ${shop} förnyades.`);
     return body.access_token as string;
   } catch (e) {
+    senasteFornyelseFel.set(shop, `KASTADE: ${(e as Error).message}`);
     console.error(`Kunde inte förnya offline-nyckeln för ${shop}:`, e);
     return token;
   }
 }
+
+/** Senaste förnyelsefelet per butik — läses av diagnosrutten. */
+export const senasteFornyelseFel = new Map<string, string>();
 
 const arObehorig = (e: unknown) => /\b401\b|Invalid API key or access token/i.test(String(e));
 
