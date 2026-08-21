@@ -5,7 +5,9 @@
 // og-taggarna — titel, en beskrivningstext och produkt-id. Bilder, pris,
 // varianter och lagerstatus hämtas av webbläsaren från ett API som kräver
 // inloggning och en anti-bot-token (`NEED_LOGIN` / `request illegal`).
-// Chromium/Playwright kan inte heller användas här: den här miljön har inget
+// Chromium/Playwright kan inte heller användas här (åter-verifierat 2026-08-21 med
+// riktig Chromium + miljöproxyn — ERR_CONNECTION_RESET även mot example.com;
+// proxyn släpper bara igenom verktygsanrop, inte webbläsartrafik): miljön har inget
 // nät för webbläsaren (ERR_CONNECTION_RESET även mot example.com).
 //
 // Därför: titel/beskrivning/id hämtas automatiskt, medan bilder, pris och

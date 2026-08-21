@@ -217,17 +217,17 @@ galleribild från Temu som visar samma sak går den ALLTID före en AI-bild.
 
 ### ⚠️ NY REGEL för alla NYA produkter (Axel 2026-08-21)
 
-**Pris = 3 × landad kostnad (per land, ur offerten) + 2,9 € — och 2,9 €-skatten
-gäller BARA EU-butikerna (SE/DK/FI).** Norge och UK har ingen 2,9 €-avgift →
-där blir priset märkbart lägre: pris = 3 × landad kostnad, rakt av.
-3×-multipeln ger inbyggd break-even-ROAS på minst 1,5. Landad kostnad tas ur
-offertbladets kolumn för respektive land (kostnaderna skiljer per land!),
-konverteras till lokal valuta och avrundas till landets prispunkter som vanligt
-(9-slut / X,90 / X.99). Faktormetoden nedan gäller bara den GAMLA katalogen.
+**Pris = 3 × (landad kostnad + 2,9 €) i EU-butikerna (SE/DK/FI). Norge och UK
+har ingen 2,9 €-avgift → pris = 3 × landad kostnad, rakt av — märkbart lägre.**
+Skatten ligger INUTI multiplikationen — det ger exakt 1,5 i break-even-ROAS.
+⚠️ Först felräknat som "3 × kostnad, plus skatten utanför" vilket SÄNKTE priser
+— Axel: "du ska höja dem". Landad kostnad tas ur offertbladets kolumn för
+respektive land (kostnaderna skiljer per land!), konverteras till lokal valuta
+och avrundas till landets prispunkter (9-slut / X,90 / X.99 — uppåt vid lika).
+Faktormetoden nedan gäller bara den GAMLA katalogen.
 
-*Tillämpad 2026-08-21 på offert 2-produkterna i SE (USD→SEK 9,6 + 2,9 € ≈ 32 kr):
-båtmotorskydd 519, MC-kapell 279, plyschtofflor 359; dörrlist 259 och kranskydd
-249 landade på samma 9-slut som förut.*
+*Tillämpad 2026-08-21 på offert 2-produkterna i SE (USD→SEK 9,6; 2,9 € ≈ 31,9 kr):
+båtmotorskydd 579 · MC-kapell 349 · dörrlist 319 · kranskydd 309 · plyschtofflor 429.*
 
 ### Gamla katalogen: faktormetoden
 
