@@ -133,6 +133,9 @@ export async function getSpend(
   today: string,
   shopCurrency?: string,
   storedSpendCurrency?: string | null,
+  /** syncFresh: vänta in även rena färskhetsuppdateringar (gruppsumman) i
+      stället för att servera gamla rader och hämta i bakgrunden (panelen). */
+  opts?: { syncFresh?: boolean },
 ): Promise<{
   days: { day: string; spend: number; impressions: number; clicks: number }[];
   error?: string;
@@ -209,7 +212,7 @@ export async function getSpend(
      hämta alls) visade "kunde inte räknas om"-bannern trots att allt var väl. */
   let fxOk = true;
 
-  if (stale.length && !radSaknas && farUppdateraMeta(shop)) {
+  if (stale.length && !radSaknas && !opts?.syncFresh && farUppdateraMeta(shop)) {
     /* Alla dagar finns, bara färskheten släpar: servera databasen direkt och
        hämta i bakgrunden. Annonssiffror som är minuter gamla är rätt pris för
        en panel som svarar omedelbart. */

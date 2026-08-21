@@ -792,13 +792,19 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
   const missingCount = d.group?.missing.length ?? 0;
   const pollCount = useRef(0);
   useEffect(() => {
-    if (missingCount === 0 || pollCount.current >= 10 || revalidator.state !== "idle") return;
+    /* Två skäl att ladda om sig själv: gruppbutiker saknas (bakgrundshämtning
+       pågår på servern), eller den egna butikens dagssiffror uppdateras i
+       bakgrunden (refreshing). Utan det andra skälet stod panelen kvar på
+       timmar gamla siffror med bara en diskret "uppdaterad för X min sedan"-
+       rad — och den som läste av dagens vinst fick fel svar tills en manuell
+       omladdning ingen visste behövdes. */
+    if ((missingCount === 0 && !refreshing) || pollCount.current >= 10 || revalidator.state !== "idle") return;
     const timer = setTimeout(() => {
       pollCount.current += 1;
       revalidator.revalidate();
     }, 6000);
     return () => clearTimeout(timer);
-  }, [missingCount, revalidator, revalidator.state]);
+  }, [missingCount, refreshing, revalidator, revalidator.state]);
   const dec = (s: string) => (lang === "sv" ? s.replace(".", ",") : s);
   if (fatal || !result) {
     return (

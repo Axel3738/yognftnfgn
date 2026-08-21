@@ -87,12 +87,19 @@ async function summeraButik(
       };
     }
   } else {
-    /* Färskhet: dagens siffror rör sig. Är butikens senaste dag äldre än
-       10 min uppdateras den i bakgrunden — nästa omsummering har färska tal. */
+    /* Färskhet: dagens siffror rör sig. De uppdaterades tidigare bara i
+       bakgrunden — gruppsumman serverade då timmar gamla dagssiffror och det
+       nya syntes först vid NÄSTA omladdning, som ingen visste att de skulle
+       göra. En dag som såg ut som förlust var i verkligheten vinst. Nu väntar
+       summan in de sekunder det tar: bara de tre senaste dagarna hämtas
+       (pagineringssnabbvägen) och alla butiker går parallellt, så priset är
+       ett par sekunder — och siffrorna är aldrig äldre än 10 minuter. */
     const senast = daily.lastDayFetchedAt?.getTime() ?? 0;
     const idagUtc = new Date().toISOString().slice(0, 10);
     if (to >= shiftIso(idagUtc, -1) && Date.now() - senast > 10 * 60 * 1000) {
-      void refreshShopDaily(m.shop, shiftIso(to, -2), to);
+      const senasteFrom = from > shiftIso(to, -2) ? from : shiftIso(to, -2);
+      const ok = await refreshShopDaily(m.shop, senasteFrom, to, { force: true });
+      if (ok) daily = await readDaily(m.shop, from, to);
     }
   }
 
@@ -114,7 +121,10 @@ async function summeraButik(
   const [costChanges, fixedRows, spendData] = await Promise.all([
     prisma.costChange.findMany({ where: { shop: m.shop } }),
     prisma.fixedCost.findMany({ where: { shop: m.shop } }),
-    getSpend(m.shop, metaCfg, from, to, idag, m.currency, m.spendCurrency),
+    /* syncFresh: även annonskostnadens färskhet väntas in — dagens spend är
+       halva vinstkalkylen, och en bakgrundshämtning hade lämnat samma lucka
+       som dagssiffrorna nyss hade. */
+    getSpend(m.shop, metaCfg, from, to, idag, m.currency, m.spendCurrency, { syncFresh: true }),
   ]);
 
   const r = compute({

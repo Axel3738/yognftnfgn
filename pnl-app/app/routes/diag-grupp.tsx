@@ -100,7 +100,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
           prisma.session.findFirst({ where: { shop }, select: { id: true } }),
           prisma.dailySpend.count({ where: { shop } }),
           prisma.dailySpend.findFirst({ where: { shop }, orderBy: { day: "desc" }, select: { day: true, fetchedAt: true } }),
-          prisma.dailyPnl.findFirst({ where: { shop }, orderBy: { day: "desc" }, select: { day: true } }),
+          prisma.dailyPnl.findFirst({ where: { shop }, orderBy: { day: "desc" }, select: { day: true, fetchedAt: true } }),
         ]);
         const rad: Record<string, unknown> = {
           shop,
@@ -115,6 +115,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
           senasteSpendDag: spendSenaste?.day?.toISOString().slice(0, 10) ?? null,
           senasteSpendHamtad: spendSenaste?.fetchedAt?.toISOString() ?? null,
           senastePnlDag: pnlSenaste?.day ?? null,
+          senastePnlHamtad: pnlSenaste?.fetchedAt?.toISOString() ?? null,
         };
         if (probe) {
           const [shopify, meta, fx] = await Promise.all([
