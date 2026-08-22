@@ -43,24 +43,6 @@
             "custom_liquid": "{% render 'ms-delivery-estimate', min_days: 5, max_days: 10, cutoff_hour: 0, text: 'Beräknad leverans' %}"
           }
         },
-        "ms_pay": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "{% render 'ms-payment-icons', label: 'Trygg betalning med' %}"
-          }
-        },
-        "ms_faq": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "{% render 'ms-faq', pairs: 'Passar de alla?::En storlek passar de flesta, ungefär strl 36–44.|Hur snabbt kommer de?::5–10 arbetsdagar med fri frakt inom Sverige.' %}"
-          }
-        },
-        "ms_guarantee": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "{% render 'ms-guarantee', title: '30 dagars öppet köp', body: '<p>Inte nöjd? Hör av dig inom 30 dagar så löser vi det. Inget krångel.</p>', icon: 'seal' %}"
-          }
-        },
         "description": {
           "type": "description",
           "settings": {}
@@ -100,9 +82,6 @@
         "buy_buttons",
         "ms_trust",
         "ms_delivery",
-        "ms_pay",
-        "ms_faq",
-        "ms_guarantee",
         "description",
         "share"
       ],
