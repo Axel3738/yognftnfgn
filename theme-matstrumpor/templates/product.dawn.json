@@ -94,55 +94,6 @@
         "padding_bottom": 12
       }
     },
-    "ms_compare": {
-      "type": "ms-compare",
-      "blocks": {
-        "r1": {
-          "type": "row",
-          "settings": {
-            "feature": "Fri frakt i Sverige",
-            "us": true,
-            "them": false
-          }
-        },
-        "r2": {
-          "type": "row",
-          "settings": {
-            "feature": "30 dagars öppet köp",
-            "us": true,
-            "them": false
-          }
-        },
-        "r3": {
-          "type": "row",
-          "settings": {
-            "feature": "Levereras presentklart",
-            "us": true,
-            "them": false
-          }
-        },
-        "r4": {
-          "type": "row",
-          "settings": {
-            "feature": "En storlek passar alla",
-            "us": true,
-            "them": false
-          }
-        }
-      },
-      "block_order": [
-        "r1",
-        "r2",
-        "r3",
-        "r4"
-      ],
-      "settings": {
-        "eyebrow": "Varför just den här",
-        "heading": "Matstrumpor mot en vanlig present",
-        "us_label": "Matstrumpor",
-        "them_label": "Vanlig present"
-      }
-    },
     "ms_faq_section": {
       "type": "ms-faq-section",
       "blocks": {
@@ -156,14 +107,46 @@
         "q2": {
           "type": "qa",
           "settings": {
+            "q": "Hur fungerar Köp 1 – Få 1?",
+            "a": "<p>Välj paketet i köprutan och tryck på Lägg i varukorgen. Gratisdelarna följer med automatiskt, och i varukorgen ser du dem som egna rader på 0 kr.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "q": "Kan jag skicka dem som present direkt?",
+            "a": "<p>Ja. Alla par levereras i en presentförpackning som ser ut som riktig mat — redo att ges bort utan inslagning.</p>"
+          }
+        },
+        "q4": {
+          "type": "qa",
+          "settings": {
             "q": "Hur snabbt kommer de?",
             "a": "<p>5–10 arbetsdagar med fri frakt inom Sverige.</p>"
+          }
+        },
+        "q5": {
+          "type": "qa",
+          "settings": {
+            "q": "Vilka betalsätt kan jag använda?",
+            "a": "<p>Klarna, kort (Visa, Mastercard, American Express m.fl.), Apple Pay, Google Pay, PayPal och Shop Pay.</p>"
+          }
+        },
+        "q6": {
+          "type": "qa",
+          "settings": {
+            "q": "Vad gäller om jag ångrar mig?",
+            "a": "<p>30 dagars öppet köp. Mejla <a href=\"mailto:kundsupport@matstrumpor.se\">kundsupport@matstrumpor.se</a> så hjälper vi dig — inget krångel.</p>"
           }
         }
       },
       "block_order": [
         "q1",
-        "q2"
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
       ],
       "settings": {
         "heading": "Vanliga frågor"
@@ -175,24 +158,6 @@
         "label": "Köp nu",
         "position": "bottom",
         "show_image": true
-      }
-    },
-    "related-products": {
-      "type": "related-products",
-      "settings": {
-        "heading": "Du kanske också gillar",
-        "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "padding_top": 36,
-        "padding_bottom": 28
       }
     },
     "judgeme_widget": {
@@ -214,9 +179,7 @@
   "order": [
     "main",
     "judgeme_widget",
-    "ms_compare",
     "ms_faq_section",
-    "related-products",
     "ms_sticky"
   ]
 }

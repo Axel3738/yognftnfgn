@@ -302,7 +302,7 @@
 /* 3.5 Trygghetsrad ------------------------------------------------------ */
 .ms-trust {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--ms-gap);
   margin: 16px 0;
   padding: 14px 10px;
@@ -321,6 +321,12 @@
   color: var(--ms-ink-soft);
 }
 .ms-trust__item .ms-i { width: 1.6em; height: 1.6em; color: var(--ms-accent); }
+/* Trång mobil: tre ska fortfarande rymmas på raden, så allt krymper ett snäpp. */
+@media (max-width: 480px) {
+  .ms-trust { gap: 6px; padding: 12px 6px; }
+  .ms-trust__item { font-size: .68em; gap: 4px; }
+  .ms-trust__item .ms-i { width: 1.5em; height: 1.5em; }
+}
 
 /* 3.6 Betalikoner ------------------------------------------------------- */
 .ms-pay { margin: 14px 0; text-align: center; }

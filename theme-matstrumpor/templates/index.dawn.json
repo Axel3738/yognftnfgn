@@ -3,7 +3,7 @@
     "ms_usp": {
       "type": "ms-usp-bar",
       "settings": {
-        "items": "truck:Fri frakt i Sverige|refresh:30 dagars öppet köp|gift:Levereras presentklart|star:Älskad av tusentals svenskar"
+        "items": "gift:Levereras presentklart|star:Älskad av tusentals svenskar"
       }
     },
     "hero": {
@@ -51,7 +51,7 @@
         "image_behavior": "none",
         "stack_images_on_mobile": false,
         "mobile_content_alignment": "center",
-        "show_text_below": false
+        "show_text_below": true
       }
     },
     "ms_marquee": {
@@ -354,8 +354,8 @@
     }
   },
   "order": [
-    "ms_usp",
     "hero",
+    "ms_usp",
     "ms_marquee",
     "produkt",
     "berattelse",
