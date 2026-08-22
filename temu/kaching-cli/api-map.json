@@ -3,7 +3,9 @@
   "base": "https://bundles.kachingappz.app/frontend_api",
   "auth": {
     "how": "Bearer <App Bridge session token>, injiceras automatiskt av App Bridge i varje fetch som körs inne i appens iframe",
-    "extraHeaders": { "x-requested-with": "XMLHttpRequest" },
+    "extraHeaders": {
+      "x-requested-with": "XMLHttpRequest"
+    },
     "appClientId": "74f3a88ca9004748ce9210ea2cda82ca",
     "shopifyAppId": 2935586817
   },
@@ -13,7 +15,7 @@
     "GET /deal_blocks": "sammanfattningslista (id, status, blockName, dealBars[{id,title}])",
     "GET /deal_blocks/:id": "{ deal_block: {...} } hela objektet",
     "GET /deal_blocks/new": "skal med blockName, startTimestamp, shopCustomStyles",
-    "GET /deal_blocks/templates": "färdiga mallar",
+    "GET /deal_blocks/templates": "⚠️ 404 numera (verifierat 2026-08-22) — använd ett riktigt block via GET /deal_blocks/:id som mall i stället",
     "PUT /deal_blocks/:id": "SKAPAR OCH UPPDATERAR (upsert). Det finns INGEN POST-route — appen genererar UUID:t på klienten. Body: { deal_block, ab_test_variants: [], ab_test_traffic_allocation: null, test_type: 'manual', publish: true|false }",
     "POST /deal_blocks/:id/publish": "sätt status active",
     "POST /deal_blocks/:id/unpublish": "sätt status draft",
@@ -30,6 +32,11 @@
     "spacing är en multiplikator, inte pixlar. 1 ≈ tajt (som referensbilden), 8 blir enormt.",
     "appEmbed måste vara på i temat (config/settings_data.json -> current.blocks) annars renderas ingenting. Blocktyp: shopify://apps/kaching-bundles/blocks/app-embed-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
     "Rabatten går via cart transform, INTE automaticDiscountNodes — den listan är tom även när allt funkar.",
-    "Shop-metafältet är inte läsbart via Admin API från en annan app (returnerar null). Läs det via Storefront API med butikens publika token i stället."
+    "Shop-metafältet är inte läsbart via Admin API från en annan app (returnerar null). Läs det via Storefront API med butikens publika token i stället.",
+    "blockVisibility 'all-products' BEKRÄFTAT 2026-08-22 genom Kachings widgetkod (kaching-bundles.js).",
+    "percentage: 0 renderar som ordinarie pris — ingen automatisk %-etikett (procent visas bara via {{saved_percentage}} i egna texter).",
+    "En minimal payload räcker INTE för snygg rendering: riktiga block har ~28 toppnycklar till (template: 'quantity-breaks', colors, fonts, imageSize, *Enabled-flaggor). Bygg alltid payload från ett riktigt block (GET) + ändra fälten. badges ska vara [] — bar-märken sätts via badgeText.",
+    "Matchningsordning i widgeten: selected-products → selected-collections → excluded-products → all-products, och bara FÖRSTA träffen renderas. Ett all-products-block är alltså en FALLBACK som inte rör produkter med egna deals.",
+    "Verifiering går att köra även utan inloggning via lib/storefront.mjs (Storefront-token ur kaching-bundles-config på valfri produktsida) — funkar från molnsessionen."
   ]
 }

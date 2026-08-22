@@ -246,6 +246,15 @@ för lokala Claude finns i mappen (`KÖR-FÖR-BÄVERBUTIKEN.md`). `api-map.json`
 kartan över endpoints och fällor — läs den före varje skrivning. Dela ALDRIG
 `profile/`-mappen (aktiv admin-session).
 
+**KÖRT SKARPT 2026-08-22 (SE):** standardstegen ligger live — block
+`38b39d0c-4f43-4103-88ae-d18654254905`, all-products, 1 st / 2 st −10 % ("Mest
+populär") / 3 st −15 %. Verifierad från molnet via `lib/storefront.mjs` (0 lintfel).
+Den är en FALLBACK: 30 av 152 produkter hade egna deals som fortsätter gälla;
+122 fick stegen. Komplett payload (v2, alla ~28 toppnycklar från ett riktigt
+block) ligger på Axels dator: `payloads/baverbutiken-standardstege.v2.json` —
+utgå från den vid utrullning till NO/DK/FI/UK (samma stege, landets språk på
+titlarna). Se uppdaterade gotchas i `api-map.json`.
+
 **Ursprunglig analys (fortsatt sann för Shopify-vägen):** Verifierat 2026-08-21 i sidkoden på bäverbutiken.se:
 appen är installerad (app embed `kaching-bundles-1952` + loader.js), men deal-
 konfigurationen ligger i Kachings egen backend och hämtas av deras script i
