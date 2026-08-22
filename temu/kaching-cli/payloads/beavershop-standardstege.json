@@ -42,7 +42,7 @@
     {
       "id": "st1a",
       "title": "1x",
-      "subtitle": "Save {{saved_total}}",
+      "subtitle": "",
       "label": "",
       "badgeStyle": "simple",
       "badgeText": "",

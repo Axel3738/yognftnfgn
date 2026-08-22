@@ -35,7 +35,7 @@
     "Shop-metafältet är inte läsbart via Admin API från en annan app (returnerar null). Läs det via Storefront API med butikens publika token i stället.",
     "blockVisibility 'all-products' BEKRÄFTAT 2026-08-22 genom Kachings widgetkod (kaching-bundles.js).",
     "percentage: 0 renderar som ordinarie pris — ingen automatisk %-etikett (procent visas bara via {{saved_percentage}} i egna texter).",
-    "En minimal payload räcker INTE för snygg rendering: riktiga block har ~28 toppnycklar till (template: 'quantity-breaks', colors, fonts, imageSize, *Enabled-flaggor). Bygg alltid payload från ett riktigt block (GET) + ändra fälten. badges ska vara [] — bar-märken sätts via badgeText.",
+    "En minimal payload räcker INTE för snygg rendering: riktiga block har ~28 toppnycklar till (template: 'quantity-breaks', colors, fonts, imageSize, *Enabled-flaggor). Bygg alltid payload från ett riktigt block (GET) + ändra fälten. badges-formen är {id, attachedTo:{type,dealBarId}, text, colors:{text,background}, badgeType:'simple', textSize} — badgeType 'most-popular' använder 'size' i stället för textSize. Sätt text både i badge-objektet och barens badgeText (referensblocken har båda). Rättat 2026-08-23 — tidigare stod här fel att badges skulle vara tom.",
     "Matchningsordning i widgeten: selected-products → selected-collections → excluded-products → all-products, och bara FÖRSTA träffen renderas. Ett all-products-block är alltså en FALLBACK som inte rör produkter med egna deals.",
     "Verifiering går att köra även utan inloggning via lib/storefront.mjs (Storefront-token ur kaching-bundles-config på valfri produktsida) — funkar från molnsessionen."
   ]

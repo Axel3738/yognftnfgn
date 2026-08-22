@@ -43,7 +43,7 @@
       "id": "st1a",
       "title": "1 stk",
       "subtitle": "",
-      "label": "Spar {{saved_total}}",
+      "label": "",
       "badgeStyle": "simple",
       "badgeText": "",
       "badgeImageGID": null,
