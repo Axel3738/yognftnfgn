@@ -9,6 +9,32 @@ halvfärdigt med "nu behöver du bara…".
 
 ---
 
+## ✅ Utrullningen 2026-08-22: ramverksprodukterna ligger live i alla fyra länder
+
+De 8 ramverksprodukterna (pingis, kängor, bollpannband, båtmotorskydd, mc-kapell,
+dörrlist, kranskydd, plyschtofflor) rullades ut till NO/DK/FI/UK med
+`temu/utrullning/kor.mjs` — 32 produkter, slutverifierade gröna (block, bilder 200,
+priser, moms av, mall, kanaler). Texterna ligger i `temu/utrullning/texter.mjs`
+(natively skriven copy per språk), SE-bildkartan i `temu/utrullning/se-bilder.json`.
+
+- **Priserna** följer nya regeln: 3 × (landad kostnad + 2,9 €) i DK/FI,
+  3 × landad i NO/UK. Hela matrisen står i `PRISER` i `texter.mjs`.
+- **Ersatta produkter:** gamla bordtennistränaren (goods 601099969009037) och
+  boxbollen-som-träning raderades i DK/FI/UK och skapades om som pingisnätet
+  (605778962427277) respektive bollpannbandet-som-present. NO fick nya direkt.
+- **MC-kapellet** heter nu 218×118 cm i alla butiker (måtten ur offerten, inte
+  leverantörens 220×120).
+- **Språkbilderna** (måttbilder/infografiker, sharp-metoden) är egna filer per
+  språk; UK använder engelska Temu-original + en ren en-tabell för båtmotorn.
+- ⚠️ **Lärdom:** landsapparna saknar `write_files`, så `fileDelete`/`fileUpdate`
+  är stängda. **`productSet(input:{id, files:[…]})` ersätter hela bildlistan med
+  bara `write_products`** — det är vägen för att byta bilder på befintliga
+  produkter. `productCreateMedia`/`productDeleteMedia` finns inte i API 2025-10.
+- Kvar: Kaching-stegar för utlandsbutikerna (kräver Axels Mac — `temu/kaching-cli/`),
+  herrtofflorna väntar på CWD-offert.
+
+---
+
 ## Butiksregistret
 
 | Land | Butik | Valuta | Vendor | 🦫 i garantiblocket | Status |

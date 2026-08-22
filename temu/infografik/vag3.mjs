@@ -3,7 +3,7 @@
 // marknadens språk (sharp-metoden — aldrig AI-textbyte). Källbilder: Axels
 // zip-uppladdningar 2026-08-21, /tmp/fix/galleri/<produkt>/.
 //
-//   node temu/infografik/vag3.mjs <sv|no|da|fi> [utmapp] [källmapp]
+//   node temu/infografik/vag3.mjs <sv|no|da|fi|en> [utmapp] [källmapp]
 //
 // Bygger: <ut>/<lang>-batmotor-tabell.jpg, <lang>-mc-matt.jpg,
 // <lang>-dorrlist-matt.jpg, <lang>-kranskydd-matt.jpg, <lang>-plysch-memory.jpg
@@ -63,6 +63,21 @@ const SPRAK = {
     mjuk: 'Blød',
     plata: 'Platåsål',
   },
+  en: {
+    tabellRubrik: 'Size guide – outboard motor cover',
+    kol: ['Motor', 'Perimeter', 'Height'],
+    hk: 'HP',
+    tabellNot1: 'Perimeter is measured around the cowling.',
+    tabellNot2: 'Measurements are approximate.',
+    mattskiss: 'DIMENSIONS',
+    kranRubrik: 'Bigger and thicker',
+    kranSub1: 'About 1–2 inches larger than other tap covers –',
+    kranSub2: 'covers the whole tap right up to the wall',
+    memory: 'Memory Foam',
+    memorySub: 'Soft insole that moulds to your foot.',
+    mjuk: 'Soft',
+    plata: 'Platform sole',
+  },
   fi: {
     tabellRubrik: 'Kokotaulukko – moottorisuoja',
     kol: ['Moottori', 'Ympärys', 'Korkeus'],
@@ -93,7 +108,7 @@ const TABELL = [
 const [lang, utmapp = '/tmp/fix', kallmapp = '/tmp/fix/galleri'] = process.argv.slice(2);
 const T = SPRAK[lang];
 if (!T) {
-  console.error('Användning: node temu/infografik/vag3.mjs <sv|no|da|fi> [utmapp] [källmapp]');
+  console.error('Användning: node temu/infografik/vag3.mjs <sv|no|da|fi|en> [utmapp] [källmapp]');
   process.exit(1);
 }
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
