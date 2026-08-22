@@ -302,10 +302,13 @@ bara de 8 — samma upplägg som SE haft sedan 10/15-stegen. 3-pack-taket är
 dokumenterat härunder (24,5 % på sämsta produkten) — **sätt aldrig ned 20 % av
 försiktighet**, det var nära att hända när lokala Claude bara såg 2-packs-taket.
 
-**✅ UK-marknadsfelet FIXAT 2026-08-23** — Axel gjorde Storbritannien till primär
-marknad i adminen; molnet verifierade efteråt att beavershop.co.uk visar GBP för
-ALLA besökare (även utan geo-träff) och att stegen 0/15/20 + preselect 1x ligger
-live i alla fem butikerna. Ursprungsfyndet, för historiken:
+**✅ UK-marknadsfelet FIXAT 2026-08-23** — Axel tog bort Sverige-marknaden i
+adminen, och det räckte: utan den faller alla besökare som inte geo-matchas till
+Storbritannien tillbaka på butiksstandarden, som är GBP. Molnet verifierade
+efteråt att beavershop.co.uk visar GBP för ALLA besökare (10 länder testade) och
+att stegen 0/15/20 + preselect 1x ligger live i alla fem butikerna. Riktiga
+brittiska kunder såg pund även FÖRE fixen (aktiv UK-marknad, IP-styrd) — Axels
+annonstestdata påverkades alltså inte. Ursprungsfyndet, för historiken:
 
 **⚠️ UK-butikens standardmarknad var SVERIGE/SEK (upptäckt 2026-08-23):**
 beavershop.co.uk visar "605,00 kr" (SEK, kurs 12,91) för alla besökare som inte
