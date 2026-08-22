@@ -24,7 +24,7 @@
     "kalla_url": [
       "https://www.lokalnytt.se/kontor/g%C3%B6teborg/nya-tingstadsgatan-1-335255"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Ljust kontorsplan på plan 3 om 493 kvm med hela 16 kontorsrum i varierande storlek, flera mötesrum och ett större konferensrum med vikvägg. Kök och sociala ytor ligger i öppen planlösning, och det finns 3 WC varav en RWC med dusch. Hyran är tydligt angiven till 1 400 kr/kvm/år exklusive moms och el.",
     "plus": [
       "16 kontorsrum plus flera mötesrum och stort konferensrum med vikvägg",
@@ -58,6 +58,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 18,
+    "parkering_status": "ja",
     "matchpoang": 95,
     "poangmotivering": "Yta 25/25, Rum 25/25, Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -100,7 +101,7 @@
       "https://www.lokalnytt.se/kontor/g%C3%B6teborg/gamla-tuvevagen-15b-331514",
       "https://www.portally.com/lokal/gamla-tuvevagen-15b"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Modern kontorslokal om 200 kvm på plan 1 vid Backaplan, med 7 ljusa kontorsrum, 1–2 mötesrum och en öppen yta vid entrén som kan användas som lounge. Fullt utrustat pentry, WC och RWC samt hiss finns. Hyran är 2 100 kr/kvm/år, men annonsen säger inget om moms och el ingår.",
     "plus": [
       "7 ljusa och välplanerade kontorsrum plus 1–2 mötesrum",
@@ -135,6 +136,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 23,
+    "parkering_status": "ja",
     "matchpoang": 95,
     "poangmotivering": "Yta 25/25, Rum 25/25, Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -176,7 +178,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/herkulesgatan-1g"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "200 kvm kontor i Gamla Bultfabriken vid Hjalmar Brantingsplatsen, med sju kontorsrum varav två större plus en öppen yta som kan användas som lounge eller gemensam arbetsyta. Kök med diskmaskin, två toaletter varav en med dusch, förråd/datarum, komfortkyla och säkerhetsdörr ingår. Rums- och ytmixen matchar 8–12 personer bra, men varken hyra eller antal renodlade mötesrum anges.",
     "bekraftelsecitat": "ett funktionellt och prisvärt kontor om cirka 200 kvm",
     "plus": [
@@ -210,6 +212,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 22,
+    "parkering_status": "ja",
     "matchpoang": 95,
     "poangmotivering": "Yta 25/25, Rum 25/25, Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -252,7 +255,7 @@
       "https://www.lokalguiden.se/lokal/herkulesgatan-1k-backaplan",
       "https://www.portally.com/lokal/herkulesgatan-1k-270-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Välplanerat kontor på 270 kvm en trappa upp i Gamla Bultfabriken vid Backaplan, med tio kontorsrum varav tre rymmer minst två arbetsplatser vardera. Utöver rummen finns ett konferensrum, en öppen yta för utställning, lounge eller lunch, samt tre förråd/datautrymmen. Det är den mest detaljerat beskrivna lokalen i gruppen och den enda som anger både rumsantal, öppen yta och parkeringsvillkor.",
     "bekraftelsecitat": "Här erbjuds ett fräscht och välplanerat kontor på 270 kvm, beläget en trappa upp",
     "plus": [
@@ -283,6 +286,7 @@
       "epost": "lokalguiden@byggnadsbolaget.com"
     },
     "restid_kungalv_min_uppskattad": 22,
+    "parkering_status": "ja",
     "matchpoang": 93,
     "poangmotivering": "Yta 25/25, Rum 25/25, Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -324,7 +328,7 @@
     "kalla_url": [
       "https://alvstranden.se/lediga-lokaler/anders-carlssons-gata-30-the-yard/"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Hela plan 3 i coworkingfastigheten The Yard på Lindholmen hyrs ut som en egen privat bas på ca 440 kvm, färdig med 6 kontor för 1-4 personer, 26 arbetsplatser i öppen miljö, 1 mötesrum, 1 samtalsrum, pentry, 3 toaletter, förråd och grundmöblering. Tillgång till husets gemensamma lobby, lunchområde och medlemsaktiviteter ingår, liksom möjlighet att lägga till en verkstadsbox. Dusch finns, men bilparkering nämns inte alls i annonsen.",
     "bekraftelsecitat": "möjligheten att hyra hela tredje våningen – cirka 440 kvm",
     "plus": [
@@ -332,8 +336,7 @@
       "Både 6 enskilda kontorsrum och 26 arbetsplatser i öppen miljö - exakt den mix av celler och landskap som efterfrågas",
       "Färdigt och grundmöblerat med mötesrum, samtalsrum, pentry och förråd - ingen egen anpassning krävs",
       "Gemensamma ytor, lobby, lunchområde och community ingår utan extra kostnad",
-      "Egen privat våning trots coworkingfastighet, alltså ingen delning av själva arbetsytan",
-      "parkering: Endast \"Cykelparkering\" anges bland egenskaperna. Bilparkering nämns inte på sidan."
+      "Egen privat våning trots coworkingfastighet, alltså ingen delning av själva arbetsytan"
     ],
     "minus": [
       "delat kontorshotell — absolut nej enligt kriterierna",
@@ -341,6 +344,7 @@
       "Ingen hyra anges",
       "Inget tillträdesdatum anges",
       "Ingen uppgift om kollektivtrafik på annonssidan",
+      "bilparkering nämns inte i annonsen — bryter mot kravet",
       "440 kvm är mer yta än 8–12 personer behöver"
     ],
     "okanda_falt": [
@@ -360,6 +364,7 @@
       "epost": "marie.vulpe@alvstranden.goteborg.se"
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "nej",
     "matchpoang": 93,
     "poangmotivering": "Yta 25/25, Rum 25/25, Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -402,7 +407,7 @@
       "https://www.castellum.se/lediga-lokaler/lergodsgatan-1/lergodsgatan-1-408-kvm/",
       "https://www.portally.com/lokal/lergodsgatan-1"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontor på 408 kvm i två våningsplan på Ringön med 12–13 egna kontorsrum, ett konferensrum, pentry, hiss och en uteplats mot sydväst. Hyran är den enda i urvalet som anges i kronor per månad: 40 800–41 000 kr plus drift 5 889 kr och fastighetsskatt 2 516 kr. Rikligt med parkering på fastigheten och buss 47 cirka 50 meter bort.",
     "bekraftelsecitat": "\"Fint kontor med uteplats på Ringön!\" – faktaruta: 408 kvm, Kontor",
     "plus": [
@@ -433,6 +438,7 @@
       "epost": "mathias.grahn@castellum.se"
     },
     "restid_kungalv_min_uppskattad": 22,
+    "parkering_status": "ja",
     "matchpoang": 90,
     "poangmotivering": "Yta 25/25, Rum 25/25, Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -474,7 +480,7 @@
     "kalla_url": [
       "https://www.castellum.se/lediga-lokaler/ringogatan-12/ringogatan-12-441-kvm/"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Helt oinredd råyta på 441 kvm i markplan i en modern fyravåningsfastighet på Ringön, där hyresgästen är med och formar planlösningen från grunden tillsammans med Castellum. Fastigheten ligger utanför trängselavgifterna och har både p-platser och garageplatser samt industribuss vid porten. Castellum uppskattar ytan till 10-20 arbetsplatser, vilket är rymligt för 8-12 personer.",
     "bekraftelsecitat": "Möjlighet att skapa ett kontor helt enligt egna önskemål! Råyta om ca 440 kvm.",
     "plus": [
@@ -508,6 +514,7 @@
       "epost": "mathias.grahn@castellum.se"
     },
     "restid_kungalv_min_uppskattad": 22,
+    "parkering_status": "ja",
     "matchpoang": 88,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 20/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -549,7 +556,7 @@
     "kalla_url": [
       "https://www.lokalguiden.se/lokal/5-plejadgatan-3-lindholmen"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "302 kvm kontor med utsikt över Göteborg nära centrala Lindholmen, förmedlat av Relier. Planlösningen är mestadels öppen med ca 20–30 arbetsplatser, plus fyra separata kontorsrum och ett mötesrum. Enda listade egenskap i faktarutan är hiss – parkering nämns inte alls.",
     "bekraftelsecitat": "Kontorslokal om ca 302 kvm, med utsikt över Göteborg",
     "plus": [
@@ -582,6 +589,7 @@
       "epost": "johan.nilsson@relier.se"
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "okant",
     "matchpoang": 88,
     "poangmotivering": "Yta 25/25, Rum 20/25, Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -626,7 +634,7 @@
     "kalla_url": [
       "https://www.lokalnytt.se/kontor/g%C3%B6teborg/borstbindaregatan-12c-340256"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontorsvåning högst upp i huset på plan 6 vid Vågmästareplatsen/Kvillebäcken, med mestadels öppen planlösning och samtalsrum samt mötesrum utspridda i lokalen. Hela ytan är ca 1 870 kvm men går att dela av och hyra från ca 900 kvm. Hyran anges inte i annonsen utan hänvisas till annonsören.",
     "plus": [
       "Mestadels öppen planlösning med samtalsrum och mötesrum utspridda i lokalen",
@@ -664,6 +672,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 23,
+    "parkering_status": "ja",
     "matchpoang": 83,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -709,7 +718,7 @@
       "https://www.lokalnytt.se/kontor/g%C3%B6teborg/nya-tingstadsgatan-1-335913",
       "https://www.lokalguiden.se/lokal/25-nya-tingstadsgatan-1-hisingen"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Nyrenoverade kontorsytor på plan 3 i samma hus som föregående objekt, där man kan hyra hela våningsplanet om 1 000 kvm eller mindre delar enligt förslagen 180, 327 och 493 kvm. Nytt kök ingår och 180 kvm-enheten kan fås antingen som 6 rum eller som öppen planlösning. Hyran är 1 700 kr/kvm/år exklusive moms och el.",
     "plus": [
       "Nyrenoverat 2025 med nytt kök",
@@ -741,6 +750,7 @@
       "epost": "linda.neidert@bygg-gota.se"
     },
     "restid_kungalv_min_uppskattad": 18,
+    "parkering_status": "ja",
     "matchpoang": 83,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -782,7 +792,7 @@
     "kalla_url": [
       "https://alvstranden.se/lediga-lokaler/lindholmsallen-34-297-kvm/"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontorslokal i bottenplan på Lindholmen som annonsen beskriver som en blandning av öppna ytor och mindre rum, flexibel för kontor, showroom eller service. Parkeringsgarage, cykelparkering och elbilsladdning finns bland fastighetens egenskaper. Tillträde uppges vara omgående, men varken hyra, antal rum eller mötesrum framgår.",
     "bekraftelsecitat": "297 kvm med en blandning av öppna ytor och mindre rum – flexibelt för kontor",
     "plus": [
@@ -815,6 +825,7 @@
       "epost": "henrik.sellgren@alvstranden.goteborg.se"
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "ja",
     "matchpoang": 83,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -857,7 +868,7 @@
       "https://lokalguiden.se/lokal/6-importgatan-23-backa",
       "https://www.lokalguiden.se/lokal/6-importgatan-23-backa"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontor på 455 kvm i Hisings Backa med blandad planlösning som kombinerar öppna ytor och separata kontorsrum samt flera mötesrum i olika storlekar. Annonsen lyfter fram gott om parkering direkt utanför lokalen, omklädningsrum med dusch, lunchrum med gemensam innergård och fiber. Hyran anges inte och exakt rumsantal saknas.",
     "bekraftelsecitat": "Nu ges möjligheten att hyra ett kontor om ca 455 kvm i Hisings Backa",
     "plus": [
@@ -889,6 +900,7 @@
       "epost": "erika.borsing@mileway.com"
     },
     "restid_kungalv_min_uppskattad": 18,
+    "parkering_status": "ja",
     "matchpoang": 83,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -930,7 +942,7 @@
     "kalla_url": [
       "https://www.castellum.se/lediga-lokaler/goteborg-backa-215/exportgatan-47a-541-kvm/"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontorsvåning på plan 3 i en kontors- och industrifastighet vid Göta älv i Backa, med blandad planlösning av öppna ytor och kontorsrum som kan anpassas. Parkering finns intill fastigheten och läget ligger nära E6 med bussförbindelser. Ytan är dock dimensionerad för 25–40 arbetsplatser och hyran är inte publicerad.",
     "bekraftelsecitat": "Yta 541 kvm … Kontor med härlig takterrass!",
     "plus": [
@@ -962,6 +974,7 @@
       "epost": "mathias.grahn@castellum.se"
     },
     "restid_kungalv_min_uppskattad": 24,
+    "parkering_status": "ja",
     "matchpoang": 83,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -1006,7 +1019,7 @@
     "kalla_url": [
       "https://www.platzer.se/sv/lokaler/lindholmspiren-9-870-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Hel kontorsvåning på plan 5 på Lindholmspiren med öppen planlösning som kan kompletteras med fokusrum och mötesrum, golv-till-tak-fönster och älvutsikt. Fastigheten har garage, parkering i området, dusch, omklädningsrum, reception och tre bokningsbara mötesrum, och är BREEAM Very Good-certifierad. Lokalen är byggd för ca 65 arbetsplatser och därmed kraftigt överdimensionerad för en grupp på 8–12 personer.",
     "bekraftelsecitat": "Lokaltyp Kontor Totalyta 838-870 m² Arbetsplatser 65 st Våning 5",
     "plus": [
@@ -1041,6 +1054,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "ja",
     "matchpoang": 83,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -1082,7 +1096,7 @@
     "kalla_url": [
       "https://www.platzer.se/sv/lokaler/lindholmspiren-9-255-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Nyskapad kontorslokal på plan 5 i Lindholmspiren 9, planerad för upp till 20 arbetsplatser med öppen planlösning kombinerad med fokusrum och storrum. Huset har reception, restaurang, tre bokningsbara mötesrum, cykelparkering och omklädningsrum, och ligger 50 m från gratisfärjan. Annonsen säger ingenting om bilparkering eller hyra.",
     "bekraftelsecitat": "Lokaltyp Kontor Totalyta 255 m² Arbetsplatser 20 st Våning 5",
     "plus": [
@@ -1090,14 +1104,14 @@
       "Uttalad öppen planlösning som kan kombineras med fokusrum och storrum",
       "Tre gemensamma mötesrum i huset som hyresgäster bokar fritt, plus bemannad reception och restaurang i entréplan",
       "Omklädningsrum i huset",
-      "Toppläge för kollektivtrafik: gratisfärja 50 m, spårvagn och buss inom 300 m",
-      "parkering: Endast cykelparkering nämns: \"I huset erbjuds gemensamma möteslokaler, reception, cykelparkering och omklädningsrum\" — bilparkering står inte i annonsen"
+      "Toppläge för kollektivtrafik: gratisfärja 50 m, spårvagn och buss inom 300 m"
     ],
     "minus": [
       "Bilparkering nämns inte alls på sidan — bara cykelparkering, och parkering är ett skallkrav",
       "Ingen hyra angiven",
       "Uthyrarens telefon och e-post saknas på sidan",
-      "Antal kontorsrum anges inte, och dusch nämns inte på just den här annonsen (till skillnad från husets 870-kvm-annons)"
+      "Antal kontorsrum anges inte, och dusch nämns inte på just den här annonsen (till skillnad från husets 870-kvm-annons)",
+      "bilparkering nämns inte i annonsen — bryter mot kravet"
     ],
     "okanda_falt": [
       "antal_kontorsrum",
@@ -1118,6 +1132,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "nej",
     "matchpoang": 83,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -1159,7 +1174,7 @@
     "kalla_url": [
       "https://www.lokalguiden.se/lokal/1-s%C3%B6rredsplatsen-1-torslanda"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontor på 531 kvm på entréplan i Torslanda med uttalat öppen kontorsplanlösning kompletterad med flera kontorsrum, reception och pentry. Egenskapslistan tar upp mötesrum, omklädningsrum, serverrum och kundparkering, och parkering sker i direkt anslutning till fastigheten. Antal rum, hyra och dusch framgår inte.",
     "bekraftelsecitat": "Ledigt kontor om 531 kvm i attraktiva Torslanda",
     "plus": [
@@ -1192,6 +1207,7 @@
       "epost": "alexander.olofsson@revelop.se"
     },
     "restid_kungalv_min_uppskattad": 28,
+    "parkering_status": "ja",
     "matchpoang": 83,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -1234,7 +1250,7 @@
       "https://www.portally.com/lokal/gotaverksgatan-8",
       "https://www.al.se/kontorserbjudande/hitta-lokal/goteborg/lindholmen/gotaverksgatan-8-191-kvm/"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Färdigmöblerat 191 kvm-kontor på plan 3 på Lindholmen med öppen kontorsyta för ca 8 arbetsplatser, loungegrupp, touchdown-yta för 4 personer, två glasade samtalsrum, ett glasat mötesrum för 4-6 personer, pentry med tio sittplatser och WC. Planlösningen är den enda i mitt urval som är dimensionerad för precis den här personalstorleken. Parkering nämns dock inte alls i annonsen.",
     "bekraftelsecitat": "Ljus kontorslokal om 191 kvm med fönstervägg mot sydöst",
     "plus": [
@@ -1270,6 +1286,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "okant",
     "matchpoang": 83,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -1311,7 +1328,7 @@
     "kalla_url": [
       "https://alvstranden.se/lediga-lokaler/bror-nilssons-gata-5-188-kvm/"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Karaktärsfull kontorslokal på 188 kvm på plan 3 med eget entresolplan i Älvstrandens bestånd på Lindholmen. Annonsen beskriver en blandning av öppna sociala arbetsytor och avskilda kontor, samt dusch i lokalen. Ytan passar 8–12 personer med god marginal, men varken hyra, rumsantal eller bilparkering framgår.",
     "bekraftelsecitat": "Nu finns chansen att etablera er i en unik och karaktärsfull kontorslokal om 188 kvm",
     "plus": [
@@ -1319,14 +1336,14 @@
       "Kombinerar öppna arbetsytor med avskilda kontorsrum – matchar ett team på 8–12",
       "Eget entresolplan ger extra yta utan extra våningsplan",
       "Tillträde enligt överenskommelse, alltså flexibel start",
-      "Namngiven uthyrningsansvarig med både telefon och e-post",
-      "parkering: Annonsen nämner endast \"Cykelparkering\" – bilparkering, garage eller p-platser står inte på sidan."
+      "Namngiven uthyrningsansvarig med både telefon och e-post"
     ],
     "minus": [
       "Skallkravet parkering är inte uppfyllt i texten – bara cykelparkering nämns",
       "Ingen hyra angiven, går inte att budgetera mot",
       "Antal kontorsrum och mötesrum framgår inte",
-      "Kollektivtrafik/hållplats nämns inte på sidan"
+      "Kollektivtrafik/hållplats nämns inte på sidan",
+      "bilparkering nämns inte i annonsen — bryter mot kravet"
     ],
     "okanda_falt": [
       "antal_kontorsrum",
@@ -1346,6 +1363,7 @@
       "epost": "marie.vulpe@alvstranden.goteborg.se"
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "nej",
     "matchpoang": 83,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -1387,7 +1405,7 @@
     "kalla_url": [
       "https://www.platzer.se/sv/lokaler/lindholmspiren-9-445-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Ljus kontorsyta på 445 kvm högst upp på plan 5 med utsikt över Göta älv, som enligt Platzer passar bra för en öppen planlösning kompletterad med ytor för samarbete och enskilt arbete. Sidan anger 30 arbetsplatser, gemensam bemannad reception, möteslokaler i olika storlekar samt dusch och omklädningsrum med bastu i källaren. Garage och parkering i området finns, men antal platser anges inte.",
     "bekraftelsecitat": "Effektiva, ljusa kontorslokaler om 445 m² med Göta älvutsikt",
     "plus": [
@@ -1421,6 +1439,7 @@
       "epost": "christina.olauson@platzer.se"
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "ja",
     "matchpoang": 83,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -1465,7 +1484,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/tagenevagen-62-180-717-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Ljus kontorsyta på 180–360 kvm på plan 2 i en BREEAM-certifierad fastighet i Hisings Kärra, renoverad 2019 och uthyrd av Revelop. Planlösningen kombinerar öppna arbetsytor med flera kontorsrum i olika storlekar, förråd och flera WC, till 1 195 kr/m²/år. Annonsen säger ingenting om parkering eller kollektivtrafik.",
     "bekraftelsecitat": "\"Flexibel kontorslokal i Hisings Kärra\" … \"Storlek 180 - 360 m²\"",
     "plus": [
@@ -1503,6 +1522,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 15,
+    "parkering_status": "okant",
     "matchpoang": 83,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -1544,7 +1564,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/lindholmspiren-7-678-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "678 kvm kontor i en Castellum-fastighet från 2017 på Lindholmen, med blandad planlösning: öppna ytor, enskilda kontorsrum och gemensamhetsytor. Två bokningsbara konferensrum ligger högst upp i byggnaden, och huset har eget garage där samtliga platser har elbilsladdare. Ytan är dock mycket stor för 8–12 personer och annonsen nämner ingen möjlighet att dela upp den.",
     "bekraftelsecitat": "Kontor Storlek 678 m² Hyra Kontakta hyresvärd",
     "plus": [
@@ -1579,6 +1599,7 @@
       "epost": "Mathias.grahn@castellum.se"
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "ja",
     "matchpoang": 83,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -1623,7 +1644,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/theres-svenssons-gata-9"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontor på plan 4–6 i en kontorsfastighet från 2007 på Lindholmen, uthyrbart från 258 upp till 2 185 kvm med i dag blandad planlösning av enskilda kontorsrum, större öppna ytor och gemensamhetsytor. Eget garage i byggnaden där samtliga platser har elbilsladdare, plus dedikerade platser utomhus. Varken hyra, antal kontorsrum, antal mötesrum eller uppgift om dusch och pentry framgår av annonsen.",
     "bekraftelsecitat": "kontor på plan 4-6 med utsikt mot vattnet. Möjligt att hyra från 258 kvm",
     "plus": [
@@ -1659,6 +1680,7 @@
       "epost": "Mathias.grahn@castellum.se"
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "ja",
     "matchpoang": 83,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -1700,7 +1722,7 @@
     "kalla_url": [
       "https://www.lokalguiden.se/lokal/7-trank%C3%A4rrsgatan-15-hisings-k%C3%A4rra"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Ren kontorsyta på 320 kvm i en Fastpartner-fastighet från 1996 i Hisings Kärra, där annonsen anger att planlösningen kan vara öppen eller rumsindelad. Parkering finns på plats och pendeltåget tar 5 minuter till Hjalmar Brantingsplatsen. Annonsen är mycket kortfattad: varken hyra, antal kontorsrum, mötesrum eller pentry redovisas.",
     "bekraftelsecitat": "Ledig kontorsyta om ca 320 m². Modern fastighet i ett smidigt läge",
     "plus": [
@@ -1731,6 +1753,7 @@
       "epost": "nikolai.shervin@fastpartner.se"
     },
     "restid_kungalv_min_uppskattad": 15,
+    "parkering_status": "ja",
     "matchpoang": 83,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -1772,7 +1795,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/backavagen-7-240-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Helt nybyggt kontor på 240 kvm från 2024 i Kvarteret Alpha på Backaplan, fördelat på två plan med interntrappa och med en egen, delvis väderskyddad takterrass. Ytorna beskrivs som flexibla och kan utformas antingen som öppna ytor eller privata kontor, och en ritning bifogas som PDF. Varning: annonsen nämner inte parkering med ett enda ord, vilket är hyresgästens skallkrav – det måste kontrolleras med Skandia Fastigheter innan objektet rankas.",
     "bekraftelsecitat": "\"Kontor med egen takterrass och utsikt över Göteborg\" – 240 m²",
     "plus": [
@@ -1811,6 +1834,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 22,
+    "parkering_status": "okant",
     "matchpoang": 83,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -1852,7 +1876,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/importgatan-7-417-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Ljus kontorslokal om ca 417 kvm på plan 4 av 4 med hiss, beskriven som en flexibel arbetsmiljö med \"en bra mix av öppna ytor och enskilda rum\". Utöver öppna arbetsytor, kontorsrum och mötesrum finns kök/pentry, pausytor, omklädningsrum, förråd och WC. Hyresvärd är Mileway, tillträde 2026-08-31 och parkering med laddstolpar finns på fastigheten.",
     "bekraftelsecitat": "Kontorslokal om ca 417 kvm",
     "plus": [
@@ -1890,6 +1914,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 18,
+    "parkering_status": "ja",
     "matchpoang": 82,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 4/5",
     "poangdelar": {
@@ -1932,7 +1957,7 @@
       "https://www.lokalnytt.se/kontor/g%C3%B6teborg/gustaf-dalensgatan-19-337262",
       "https://palmungmellin.se/lokaler/gustaf-dalensgatan-19-ljus-och-fin-kontorslokal-pa-190-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "190 kvm nyrenoverat kontor högst upp i huset med komfortkyla, dimbara LED-plattor och ljudklassade systemväggar. Planlösningen består av enskilda kontorsrum, konferensrum, förråd och copy-utrymme plus stora öppna sociala ytor kring köket. WC/dusch finns och snabbt tillträde uppges vara möjligt, men hyran står inte i annonsen.",
     "plus": [
       "Dusch finns - \"WC/dusch och separat WC vid hallen\"",
@@ -1969,6 +1994,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 23,
+    "parkering_status": "ja",
     "matchpoang": 80,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -2010,7 +2036,7 @@
     "kalla_url": [
       "https://www.al.se/kontorserbjudande/hitta-lokal/goteborg/lindholmen/gotaverksgatan-2-344-kvm/"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Yt-effektivt kontor högst upp på plan 7 i en industrifastighet på Lindholmen, uthyrt av Atrium Ljungberg. Annonsen beskriver en ljus öppen del för arbetsplatser och gemensamhetsytor plus flera rum i olika storlekar för möten och koncentrerat arbete. P-plats går att hyra i fastigheten med elladdning, men hyra och tillträde anges inte.",
     "bekraftelsecitat": "Area: 344 kvm, Lokaltyp: Kontor",
     "plus": [
@@ -2043,6 +2069,7 @@
       "epost": "Kicki.Gronlund@al.se"
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "ja",
     "matchpoang": 80,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -2084,7 +2111,7 @@
     "kalla_url": [
       "https://alvstranden.se/lediga-lokaler/anders-carlssons-gata-14-560-kvm/"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontorslokal på 560 kvm högst upp på plan 7 mitt i Lindholmen Innovation District, med öppna arbetsytor kombinerade med avskilda kontorsrum och mötesutrymmen samt anpassningsbar planlösning. Egenskapslistan tar bara upp solceller, cykelparkering och bihotell — bilparkering och dusch nämns inte. Hyra och tillträde saknas i annonsen och ytan är betydligt större än behovet för 8–12 personer.",
     "bekraftelsecitat": "Ljus och välplanerad kontorslokal – 560 kvm på Lindholmens bästa läge!",
     "plus": [
@@ -2092,7 +2119,6 @@
       "Planlösningen kan anpassas efter verksamhetens behov",
       "Högst upp i huset på plan 7 med generöst ljusinsläpp och utsikt över Lindholmen",
       "Planritning finns som PDF direkt i annonsen",
-      "Cykelparkering och solceller",
       "dusch finns"
     ],
     "minus": [
@@ -2100,6 +2126,7 @@
       "560 kvm är omkring fem gånger mer yta än 8–12 personer behöver",
       "Varken hyra eller tillträdesdatum anges",
       "Antal kontorsrum och mötesrum anges inte, och dusch/omklädningsrum nämns inte",
+      "bilparkering nämns inte i annonsen — bryter mot kravet",
       "560 kvm är mer yta än 8–12 personer behöver"
     ],
     "okanda_falt": [
@@ -2119,6 +2146,7 @@
       "epost": "marie.vulpe@alvstranden.goteborg.se"
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "nej",
     "matchpoang": 80,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -2160,14 +2188,13 @@
     "kalla_url": [
       "https://alvstranden.se/lediga-lokaler/theres-svenssons-gata-10-1143-kvm/"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontorsvåning på plan 5 i Träverkstaden på Lindholmen, 1 143 kvm med \"flexibel planlösning med en genomtänkt mix av större ytor och mindre rum\" och utsikt över Göta älv. Annonsen listar dusch, cykelparkering och restauranger, men nämner ingen bilparkering. Hyra, tillträde och rumsantal saknas helt, och ytan är runt tio gånger större än behovet för 8–12 personer.",
     "bekraftelsecitat": "Theres Svenssons gata 10 (1143 kvm) … Letar ni efter en kontorslokal",
     "plus": [
       "Dusch finns enligt egenskapslistan — uppskattat av hyresgästen",
       "Flexibel planlösning som blandar större samlade ytor med mindre rum",
       "Utsikt över Göta älv från plan 5, restauranger i huset/området",
-      "Cykelparkering",
       "Direkt telefon och e-post till uthyrningsansvarig hos Älvstranden"
     ],
     "minus": [
@@ -2177,6 +2204,7 @@
       "Antal kontorsrum, mötesrum och arbetsplatser saknas helt",
       "Ingen kollektivtrafik eller hållplats anges på sidan",
       "Sidan visar bara placeholder-bilder, ingen riktig bild-URL att hämta",
+      "bilparkering nämns inte i annonsen — bryter mot kravet",
       "1143 kvm är mer yta än 8–12 personer behöver"
     ],
     "okanda_falt": [
@@ -2197,6 +2225,7 @@
       "epost": "henrik.sellgren@alvstranden.goteborg.se"
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "nej",
     "matchpoang": 80,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -2238,7 +2267,7 @@
     "kalla_url": [
       "https://alvstranden.se/lediga-lokaler/diagonalen-6b-454-kvm/"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontor på 454 kvm fördelat på två våningsplan med egen hiss på Lindholmen, med en mix av ytor för kontorslandskap, mötesrum och gemensamma ytor plus en stor terrass i solläge. Dusch finns enligt egenskapslistan och spårvagn med stopp vid Lindholmen Science Park anges från årsskiftet 2025–2026. Annonsen nämner ingen parkering, ingen hyra och inget tillträde, och adressen på sidan är Utvecklingsgatan 6B — inte Diagonalen 6B som URL:en antyder.",
     "bekraftelsecitat": "454 kvadratmeter … mix av ytor som passar för kontorslandskap, mötesrum och gemensamma ytor",
     "plus": [
@@ -2276,6 +2305,7 @@
       "epost": "henrik.sellgren@alvstranden.goteborg.se"
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "okant",
     "matchpoang": 80,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -2317,7 +2347,7 @@
     "kalla_url": [
       "https://alvstranden.se/lediga-lokaler/anders-carlssons-gata-9-1-300-kvm/"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontorslokal i två plan på 1 098 kvm i Älvstrandens varvsfastighet 141:an på Lindholmen, med entréplan uppdelat i kontors- och konferensrum plus en större kreativ yta, och övre plan i öppen planlösning med kontorslandskap, kök och sällskapsytor. På entréplanet finns även två studios och en egen stor port direkt in i lokalen. Parkeringsgarage, laddstation för bil, cykelparkering och dusch anges som egenskaper.",
     "bekraftelsecitat": "Lokalen är 1 098 kvadratmeter och längtar efter en hyresgäst",
     "plus": [
@@ -2354,6 +2384,7 @@
       "epost": "henrik.sellgren@alvstranden.goteborg.se"
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "ja",
     "matchpoang": 80,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -2395,7 +2426,7 @@
     "kalla_url": [
       "https://www.lokalguiden.se/lokal/14-importgatan-7-hisingen"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "298 kvm kontor vid Stigs Center i Backa som går att hyra helt eller delvis, uthyrt av MIKE Kommersiella Lokaler. Lokalen har både öppna ytor och separata kontorsrum samt mötesrum, telefon-/teamsrum, omklädningsrum och en loungemiljö. Annonsen säger ingenting om parkering, våningsplan, hyra eller tillträde.",
     "bekraftelsecitat": "Hyr hela eller delar av riktigt fint kontor ... 298 m²",
     "plus": [
@@ -2431,6 +2462,7 @@
       "epost": "mikael.andersson@mikefastigheter.se"
     },
     "restid_kungalv_min_uppskattad": 18,
+    "parkering_status": "okant",
     "matchpoang": 80,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -2473,7 +2505,7 @@
       "https://www.lokalnytt.se/kontor/g%C3%B6teborg/gustaf-dalensgatan-19-339355",
       "https://www.portally.com/lokal/gustaf-dalensgatan-19-221-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Nyrenoverat 221 kvm-kontor på bottenplan i Kvillebäcken där hyresgästen kan påverka planlösningen. Nyrenoverad RWC med dusch finns och parkering med elbilsladdning kan hyras på fastigheten. Hyra saknas i annonsen och tillträde sker enligt överenskommelse.",
     "plus": [
       "Helt nyrenoverad lokal",
@@ -2510,6 +2542,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 23,
+    "parkering_status": "ja",
     "matchpoang": 78,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -2552,7 +2585,7 @@
       "https://www.lokalnytt.se/%C3%B6vrigt/g%C3%B6teborg/gustaf-dalensgatan-19-337265",
       "https://palmungmellin.se/lokaler/gustaf-dalensgatan-19-helt-nyrenoverad-kontorslokal-med-balkong"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "408 kvm kontor på näst översta planet som just nu byggs om, vilket gör att planlösningen går att påverka. Nytt kök och RWC med dusch ingår, och parkering med elbilsladdning finns att hyra. Observera att annonsen samtidigt beskriver en helhet på 837 kvm i två plan - kolla med hyresvärden vad som faktiskt hyrs ut som 408 kvm.",
     "plus": [
       "Störst av objekten på adressen - 408 kvm på ett plan",
@@ -2591,6 +2624,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 23,
+    "parkering_status": "ja",
     "matchpoang": 78,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -2632,7 +2666,7 @@
     "kalla_url": [
       "https://www.lokalguiden.se/lokal/lindholmsallen-8b-lundbyvassen"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Stor kontorsyta på 1 093 kvm på plan 8 i Uni3 by Geely, byggt 2021, med garage med laddmöjligheter i huset. Fastigheten erbjuder omklädningsrum, dusch, gym (SATS), restaurang, reception, konferensanläggningar, mötesrum, terrass och telefonbås. Annonsen beskriver husets faciliteter men inte den enskilda lokalens planlösning, rumsantal eller hyra.",
     "bekraftelsecitat": "Kontorslokalerna på Uni3 by Geely sträcker sig från 300 kvm och uppåt",
     "plus": [
@@ -2665,6 +2699,7 @@
       "epost": "Angelica.adolfsson@geelyeu.com"
     },
     "restid_kungalv_min_uppskattad": 24,
+    "parkering_status": "ja",
     "matchpoang": 78,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -2706,7 +2741,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/ringogatan-12-690-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Rumsindelat kontor på 690 kvm på plan 3 på Ringön, med flera kontorsrum, ett separat konferensrum och en egen terrass som annonsen kallar en ovanlig förmån i området. Både p-platser och garageplatser finns, och Castellum uppger ambitionen att använda återbrukat material vid lokalanpassning. Ytan är dock mer än tre gånger så stor som ett företag med 8-12 personer normalt behöver.",
     "bekraftelsecitat": "\"Kontor med egen terrass!\" / \"Storlek 690 m²\"",
     "plus": [
@@ -2741,6 +2776,7 @@
       "epost": "Mathias.grahn@castellum.se"
     },
     "restid_kungalv_min_uppskattad": 22,
+    "parkering_status": "ja",
     "matchpoang": 78,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -2782,7 +2818,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/lindholmsallen-2-1700-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Yteffektivt kontor om ca 1 700 kvm på plan 5 vid Lindholmsallén med vattenutsikt, plats för upp till ca 160 arbetsplatser och två säkerhetsklassade SUA-rum. Annonsen lyfter möjligheten att teckna kortare eller flexibla hyresavtal samt valbar premiumservice. Ytan är dock i en helt annan storleksklass än vad 8-12 personer behöver, och parkering nämns inte alls.",
     "bekraftelsecitat": "erbjuds nu ca 1 700 kvm kontorsyta med utsikt över vattnet",
     "plus": [
@@ -2821,6 +2857,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "okant",
     "matchpoang": 78,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -2862,7 +2899,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/ruskvadersgatan-18"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kombilokal om cirka 570 kvm i två plan i Biskopsgården som annonseras i första hand som lagerlokal, med 8 meters takhöjd och lastbrygga under tak. Kontorsdelen består av två kontor och ett större mötes-/konferensrum på övre plan plus flera rum på entréplan, men hur många kvm som är kontor anges inte. Parkering och dusch är däremot uttryckligen bekräftade.",
     "bekraftelsecitat": "en kombilokal om cirka 570 kvm för företag som söker lager, kontor",
     "plus": [
@@ -2900,6 +2937,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 25,
+    "parkering_status": "ja",
     "matchpoang": 78,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -2941,7 +2979,7 @@
     "kalla_url": [
       "https://www.platzer.se/sv/lokaler/lindholmspiren-9-778-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Inflyttningsklar kontorsvåning på plan 4 på Lindholmspiren med plats för cirka 60 medarbetare på 778 kvm, uthyrd som Platzers FIXAT-lokal med avtalstid från tolv månader. Huset har dusch, omklädningsrum, cykelrum, bemannad reception och tre gemensamma bokningsbara konferensrum. Parkering beskrivs bara som \"i området\" och ytan är alldeles för stor för 8–12 personer.",
     "bekraftelsecitat": "Lokaltyp: Kontor … plats för cirka 60 medarbetare fördelat på 778 kvadratmeter",
     "plus": [
@@ -2957,7 +2995,7 @@
       "Ingen hyra anges",
       "Varken antal kontorsrum eller öppen planlösning beskrivs i annonsen",
       "Ingen e-post och inget direktnummer till uthyraren, bara växeln",
-      "ingen parkering — bryter mot kravet",
+      "bilparkering nämns inte i annonsen — bryter mot kravet",
       "778 kvm är mer yta än 8–12 personer behöver"
     ],
     "okanda_falt": [
@@ -2977,6 +3015,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "nej",
     "matchpoang": 78,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -3018,7 +3057,7 @@
     "kalla_url": [
       "https://www.platzer.se/sv/lokaler/arendal-alle-1-374-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Flexibel kontorslokal på 374 kvm på plan 2 i Arendal ARZ, av Platzer angiven till 15–20 arbetsplatser. Annonsen är mycket kortfattad och säger ingenting om antal kontorsrum, mötesrum eller planlösning. Parkering nämns bara som närservice i området, vilket är svagt när parkering är ett skallkrav.",
     "bekraftelsecitat": "Välkommen till Arendal ARZ, en flexibel kontorslokal om 374 kvm",
     "plus": [
@@ -3034,7 +3073,7 @@
       "Arendal ligger långt västerut i ett rent logistikområde, sämre pendlingsläge",
       "Ingen e-post och inget direktnummer till uthyraren",
       "Dusch och omklädningsrum nämns inte",
-      "ingen parkering — bryter mot kravet"
+      "bilparkering nämns inte i annonsen — bryter mot kravet"
     ],
     "okanda_falt": [
       "antal_kontorsrum",
@@ -3054,6 +3093,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 30,
+    "parkering_status": "nej",
     "matchpoang": 78,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -3095,7 +3135,7 @@
     "kalla_url": [
       "https://www.castellum.se/lediga-lokaler/tingstadsvassen-292/gjutjarnsgatan-4-3102-kvm/"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Osäker som kontorsobjekt: annonsen gäller 3 102 kvm totalt i ett före detta djursjukhus och delar inte upp hur mycket som är kontor respektive lager. Castellum erbjuder ytan på korttids-/rivningskontrakt, med enskilda kontorsrum, omklädningsrum, parkeringar i anslutning till fastigheten och cirka 4 000 kvm inhägnad uppställningsyta. Varken hyra, kontorsdelens yta eller mötesrum framgår av annonsen.",
     "bekraftelsecitat": "3 102 kvm etableringslokal, lager, tillfälligt kontor",
     "plus": [
@@ -3129,6 +3169,7 @@
       "epost": "mathias.grahn@castellum.se"
     },
     "restid_kungalv_min_uppskattad": 22,
+    "parkering_status": "ja",
     "matchpoang": 78,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -3170,7 +3211,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/lindholmshamnen-28"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kommande nyproduktion på Lindholmen där annonsen anger 965 kvm totalt, planerat som ca 450 kvm restaurang och ca 515 kvm kontor. Ytorna beskrivs bara som flexibla och anpassningsbara – inget sägs om rum, planlösning, våning eller parkering. Att kontorsdelen skulle gå att hyra ensam framgår inte av annonsen.",
     "bekraftelsecitat": "planeras en restauranglokal om cirka 450 kvm samt kontorsytor om cirka 515 kvm",
     "plus": [
@@ -3211,6 +3252,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "okant",
     "matchpoang": 78,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -3252,7 +3294,7 @@
     "kalla_url": [
       "https://www.aspelinramm.se/lediga-lokaler/torslanda-hangar/kontorslokal-172-m2"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "En kontorsyta på 172 kvm i markplan i Aspelin Ramms fastighet Torslanda hangar, uthyrd direkt av fastighetsägaren. Annonsen är mycket kortfattad: den beskriver lokalen som rymlig och effektivt disponerad med gott skyltläge, men säger ingenting om rumsindelning, mötesrum, kök eller hyra. Parkering nämns bara i allmänna ordalag som \"bra parkeringsmöjligheter\".",
     "bekraftelsecitat": "Välkommen till en rymlig kontorslokal om 172 kvm i markplan!",
     "plus": [
@@ -3284,6 +3326,7 @@
       "epost": "malin.tulldahl@aspelinramm.se"
     },
     "restid_kungalv_min_uppskattad": 28,
+    "parkering_status": "ja",
     "matchpoang": 78,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -3326,7 +3369,7 @@
       "https://lokalguiden.se/lokal/12-backa-berg%C3%B6gata-7-backa",
       "https://www.lokalguiden.se/lokal/12-backa-berg%C3%B6gata-7-backa"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "En kombilokal på totalt 220 kvm i Backa med kontorsrum i varierande storlek, konferensrum, pentry/kök, pausyta, förråd, WC och omklädningsrum, plus en lagerdel med markport och 2,8–3,5 m takhöjd. Fastigheten är från 1990 och har fiber, 63A och två trefasuttag. Fri parkering med elbilsladdning finns direkt utanför byggnaden.",
     "bekraftelsecitat": "\"Ledig övrig lokal på Backa bergögata 7\" + \"Minsta storlek: 220 m²\"",
     "plus": [
@@ -3359,6 +3402,7 @@
       "epost": "mimoza.zeneli@mileway.com"
     },
     "restid_kungalv_min_uppskattad": 18,
+    "parkering_status": "ja",
     "matchpoang": 78,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -3403,7 +3447,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/deltavagen-6"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Rymligt kontor i två plan i SIBA-huset på Backaplan, annonserat som 900–1 900 kvm till 900 kr/m²/år via CBRE. Delar av ytan går att hyra, tillträdet är omgående och avtalet beskrivs som mycket flexibelt på 3–4 månader. Det finns gott om kostnadsfri parkering direkt vid fastigheten, men planlösningen beskrivs inte.",
     "bekraftelsecitat": "\"Prisvärd kontorslokal i SIBA-huset – flexibla hyresavtal på Backaplan!\" … \"900 - 1900 m²\"",
     "plus": [
@@ -3439,6 +3483,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 22,
+    "parkering_status": "ja",
     "matchpoang": 78,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -3480,7 +3525,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/arendalsvagen-10"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "334 kvm kontorslokal i en modern industrifastighet i Arendal, marknadsförd för projektkontor, tillfälliga ytor eller långsiktig etablering. Tillträde omgående på förstahandskontrakt med förhandlingsbar längd, och busshållplatsen Arendalsvägen ligger vid lokalen. Annonsen säger dock ingenting om planlösning, antal rum eller parkering.",
     "bekraftelsecitat": "Nu finns en flexibel och fräsch kontorslokal om 334 kvm tillgänglig i Arendal",
     "plus": [
@@ -3518,6 +3563,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 30,
+    "parkering_status": "okant",
     "matchpoang": 78,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -3559,7 +3605,7 @@
     "kalla_url": [
       "https://www.castellum.se/lediga-lokaler/goteborg-backa-215/exportgatan-47a-8500-kvm/"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kombilokal på totalt 8 500 kvm i markplan vid Exportgatan, uppdelad på ca 5 500 kvm lager och ca 3 000 kvm kontor. Lagret har hög- och lågdel med godsmottagning, portar 3 x 4,5 m och ca 6 m takhöjd, och annonsen anger att lokalen går att dela och anpassa. Parkering finns i anslutning till fastigheten, restaurang på plats och goda bussförbindelser nära E6.",
     "bekraftelsecitat": "\"Lager om ca 5500 kvm Kontor om ca 3000 kvm\"",
     "plus": [
@@ -3594,6 +3640,7 @@
       "epost": "mathias.grahn@castellum.se"
     },
     "restid_kungalv_min_uppskattad": 24,
+    "parkering_status": "ja",
     "matchpoang": 78,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -3635,7 +3682,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/karrlyckegatan-24"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kombilokal på 412 kvm fördelad på två plan med lagerutrymme på bottenplan och kontor på övre plan – hur stor kontorsdelen är framgår inte av annonsen. Parkering finns enligt annonsen \"gott om\" på fastigheten, men inga uppgifter om antal kontorsrum, mötesrum, öppen planlösning, dusch eller hyra. Lagerdelen är överflödig för en e-handel utan lagerbehov, och annonsen anger läget som Torslanda.",
     "bekraftelsecitat": "Här finns det möjlighet att hyra en kombinationslokal om ca 412 kvm",
     "plus": [
@@ -3674,6 +3721,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 30,
+    "parkering_status": "ja",
     "matchpoang": 78,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -3715,7 +3763,7 @@
     "kalla_url": [
       "https://www.verksamhetslokaler.se/hyra/kontorslokaler/norra-hisingen/532575"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontorslokal på ca 180 kvm vid Nya Tingstadsgatan på Norra Hisingen, med angiven hyra ca 1 500 kr/kvm/år och tillträde 08.08.2026. Annonsen saknar helt beskrivande text: gatunummer, exakt yta och exakt hyresbelopp ligger bakom inloggning. Storleken passar hyresgästen bäst av mina sex objekt, men allt om rum, planlösning, parkering och hyresvärd måste inhämtas separat.",
     "bekraftelsecitat": "Ca. 180 m2 … Lokaltyp: Kontor",
     "plus": [
@@ -3755,6 +3803,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 21,
+    "parkering_status": "okant",
     "matchpoang": 77,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 4/5",
     "poangdelar": {
@@ -3796,7 +3845,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/sangspelsgatan-1"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Ledig kontorslokal om 135 kvm i Brunnsbo, uppdelad i 6 rum med två badrum och ett större kök, i ett flerbostadshus från 1964. Grundhyran anges till 800 kr/kvm/år exkl moms, vilket är den enda av mina sex annonser som faktiskt sätter en siffra. Annonsen nämner varken parkering, dusch, öppen planlösning eller våningsplan.",
     "bekraftelsecitat": "Med sina 135 kvm uppdelat i 6 rum med två badrum",
     "plus": [
@@ -3835,6 +3884,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 20,
+    "parkering_status": "okant",
     "matchpoang": 76,
     "poangmotivering": "Yta 20,5/25, Rum 25/25, Öppen yta 0/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -3876,7 +3926,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/hangarvagen-12"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "137 kvm kontor i Torslanda med fem kontorsrum och uttalat rumsindelad planlösning, utrustat med pentry, WC, dusch och omklädningsrum. Gott om parkeringsplatser på fastigheten och mycket bra skyltläge. Den stora hämskon är att lokalen bara hyrs ut på rivningskontrakt till och med 2026-12-31.",
     "bekraftelsecitat": "möjlighet att hyra denna fräscha kontorslokal om 137 kvm i härliga Torslanda",
     "plus": [
@@ -3913,6 +3963,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 28,
+    "parkering_status": "ja",
     "matchpoang": 76,
     "poangmotivering": "Yta 21,1/25, Rum 25/25, Öppen yta 0/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -3956,7 +4007,7 @@
       "https://www.lokalnytt.se/kontor/g%C3%B6teborg/stenkolsgatan-1b-335153",
       "https://www.portally.com/lokal/stenkolsgatan-1b"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Ljust 155 kvm-kontor på översta planet på Ringön med egen takterrass och hiss. Gratis bilparkering ingår enligt annonsen och det är knappt en kilometer till spårvagnshållplats Frihamnen. Varken hyra, tillträde eller rumsfördelning står i annonsen.",
     "plus": [
       "Egen takterrass i solläge, lokalen ligger högst upp i huset",
@@ -3990,6 +4041,7 @@
       "epost": "rikard.reutherborg@nyakvadrat.se"
     },
     "restid_kungalv_min_uppskattad": 22,
+    "parkering_status": "ja",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -4034,7 +4086,7 @@
       "https://www.portally.com/lokal/exportgatan-7b-255-kvm",
       "https://lokalguiden.se/lokal/1-exportgatan-7b-hisings-backa"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "255 kvm kontorslokal på Exportgatan i Backa där lageryta kan ordnas i anslutning, alltså klarar kontorsdelen ensam ytkravet. 14 parkeringsplatser ingår i inhägnat område och läget ger snabb anslutning till Hisingsleden och E6. Varken hyra, tillträde eller rumsindelning anges i annonsen.",
     "plus": [
       "14 parkeringsplatser ingår i inhägnat område - starkast parkeringsläget av objekten",
@@ -4069,6 +4121,7 @@
       "epost": "rikard.reutherborg@nyakvadrat.se"
     },
     "restid_kungalv_min_uppskattad": 24,
+    "parkering_status": "ja",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -4110,7 +4163,7 @@
     "kalla_url": [
       "https://www.lokalnytt.se/kontor/g%C3%B6teborg/frihamnen-14-336770"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Nybyggd fastighet i Frihamnen/Ringön med 250 kvm kontorsyta som kan anpassas efter verksamhetens behov. Stora fönster med utsikt över staden och älven, samt tillgång till gemensamma konferensrum i olika storlekar. Annonsen är mycket knapphändig: varken hyra, våning, tillträdesdatum eller rumsindelning anges.",
     "plus": [
       "Nybyggd fastighet med stora fönster och utsikt över stad och älv",
@@ -4150,6 +4203,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 22,
+    "parkering_status": "ja",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -4191,7 +4245,7 @@
     "kalla_url": [
       "https://www.lokalnytt.se/kontor/g%C3%B6teborg/lindholmsallen-10-335151"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Stort ljust kontor om 1 750 kvm fördelat på två plan på Lindholmen, med plats för cirka 140 personer i blandad planlösning och gott om mötesrum uppdelat i intern och extern zon. Dusch och hiss finns på kontoret, garage med laddplatser i huset, och fastigheten har gemensam konferensvåning, gym, yogarum och AW-rum. Varken hyra eller tillträdesdatum anges i annonsen.",
     "plus": [
       "Dusch och hiss finns på kontoret",
@@ -4234,6 +4288,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "ja",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -4276,7 +4331,7 @@
       "https://palmungmellin.se/lokaler/jaernmalmsgatan-1-lager-kontor-pa-1-955-kvm",
       "https://www.lokalnytt.se/lager/g%C3%B6teborg/jarnmalmsgatan-1-330174"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Detta är i grunden en lager- och logistiklokal på 1 955 kvm på Ringön där bara ca 160 kvm är kontor – resten är öppen lageryta som en e-handel utan lagerbehov inte har användning för. Parkering finns på gårdsytan med möjlighet att hyra fler platser, och det finns WC/dusch och omklädningsrum på entresolplanet. Kontorsdelens planlösning, rumsantal och hyra anges inte.",
     "bekraftelsecitat": "öppen lageryta i markplan samt kontor om ca 160 kvm",
     "plus": [
@@ -4316,6 +4371,7 @@
       "kontrollerad": "https://palmungmellin.se/lokaler/jaernmalmsgatan-1-lager-kontor-pa-1-955-kvm"
     },
     "restid_kungalv_min_uppskattad": 22,
+    "parkering_status": "ja",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -4356,7 +4412,7 @@
     "kalla_url": [
       "https://www.castellum.se/lediga-lokaler/tingstadsvassen-312/ringogatan-29-2900-kvm2/"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Nyproducerad lager- och kontorsfastighet på Ringön där Castellum bygger efter hyresgästens behov, totalt 2 450–2 900 kvm varav kontorsdelen är flexibel mellan ca 450 och 800 kvm. Parkering ingår bland fastighetens faciliteter och busslinje 47 stannar utanför porten. Tillträdet ligger 2027-05-01 och den stora lagerdelen gör upplägget illa matchat mot en e-handel utan lagerbehov.",
     "bekraftelsecitat": "Kontorsdelen tillkommer och ytan är flexibel mellan ca 450 - 800 kvm",
     "plus": [
@@ -4389,6 +4445,7 @@
       "epost": "mathias.grahn@castellum.se"
     },
     "restid_kungalv_min_uppskattad": 22,
+    "parkering_status": "ja",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2/5",
     "poangdelar": {
@@ -4430,12 +4487,11 @@
     "kalla_url": [
       "https://alvstranden.se/lediga-lokaler/gotaverksgatan-10_1300-kvm/"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Stor kontorsyta på 1 300 kvm i den gamla varvsbyggnaden M1:an mitt i Lindholmen Innovation District, marknadsförd som flexibla ytor för teknik- och utvecklingsbolag. Egenskapslistan tar bara upp cykelparkering, dusch och restauranger. Annonsen saknar helt uppgifter om hyra, tillträde, våningsplan och planlösning, och ytan är långt större än vad 8–12 personer behöver.",
     "bekraftelsecitat": "Lokaltyp Kontor Storlek 1300 kvm",
     "plus": [
       "Dusch finns med bland lokalens egenskaper",
-      "Cykelparkering",
       "Karaktärsfull industribyggnad (M1:an) mitt i Lindholmen Innovation District",
       "Kollektivtrafik, restauranger och service inom några minuters promenad"
     ],
@@ -4444,6 +4500,7 @@
       "Bilparkering nämns inte alls — och parkering är ett skallkrav",
       "Varken hyra, tillträdesdatum eller våningsplan anges",
       "Planlösningen beskrivs bara som \"flexibla ytor\" — inga uppgifter om öppen yta, kontorsrum eller mötesrum",
+      "bilparkering nämns inte i annonsen — bryter mot kravet",
       "1300 kvm är mer yta än 8–12 personer behöver"
     ],
     "okanda_falt": [
@@ -4465,6 +4522,7 @@
       "epost": "martin.nilbo@alvstranden.goteborg.se"
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "nej",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -4507,7 +4565,7 @@
       "https://www.lokalnytt.se/industri/g%C3%B6teborg/stalverksgatan-5-339745",
       "https://www.lokalguiden.se/lokal/2-st%C3%A5lverksgatan-5-ring%C3%B6n"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kombilokal på totalt 563 kvm på Ringön, uppdelad i cirka 140 kvm verkstad/lager och resterande yta som kontor med flera arbetsrum. Kontorsytan anges INTE med egen siffra i annonsen — siffran 423 kvm förekommer inte i texten utan är en uträkning. Till lokalen hör cirka 15 p-platser, några med elladdare.",
     "bekraftelsecitat": "en kombilokal om totalt 563 kvm ... resterande yta disponeras som kontor",
     "plus": [
@@ -4547,6 +4605,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 22,
+    "parkering_status": "ja",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -4588,7 +4647,7 @@
     "kalla_url": [
       "https://www.verksamhetslokaler.se/hyra/kontorslokaler/vaestra-hisingen/571363"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Ca 4 960 kvm kontor på Äckrornavägen i Biskopsgården – långt över behovet för 8–12 personer, och annonsen säger ingenting om att ytan går att dela upp. Sidan innehåller inga uppgifter alls om hyra, planlösning, parkering, tillträde eller hyresvärd. Allt utöver yta och lokaltyp kräver inloggning hos verksamhetslokaler.se.",
     "bekraftelsecitat": "Kontor att hyra, Västra hisingen, Äckrornavägen ... Ca. 4 960m2",
     "plus": [
@@ -4632,6 +4691,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 25,
+    "parkering_status": "okant",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -4673,7 +4733,7 @@
     "kalla_url": [
       "https://www.verksamhetslokaler.se/hyra/kontorslokaler/lundby/501961"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Ca 200 kvm kontor på Gamla Tuvevägen i Lundby till ca 2 000 kr/kvm/år exkl. drift, vilket är den enda konkreta uppgiften i annonsen. Ytan är rimlig för 8–12 personer, men rumsantal, planlösning, parkering och tillträde saknas helt. Gatunummer, hyresvärd och kontaktuppgifter ligger bakom inloggning.",
     "bekraftelsecitat": "Kontor att hyra, Lundby, Gamla Tuvevägen ... Storlek: Ca. 200 m2",
     "plus": [
@@ -4714,6 +4774,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 24,
+    "parkering_status": "okant",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -4755,7 +4816,7 @@
     "kalla_url": [
       "https://palmungmellin.se/lokaler/gustaf-dalensgatan-19-helt-nyrenoverad-kontorslokal-pa-221-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Helt nyrenoverad kontorslokal på 221 kvm vid Backaplan med mycket fönster och bra takhöjd. Planlösningen går att påverka, vilket gör att fördelningen mellan kontorsrum och öppen yta kan formas efter ett team på 8–12 personer. Parkering med elbilsladdning finns att hyra i fastigheten och hållplats Swedenborgsplatsen ligger några meter bort.",
     "bekraftelsecitat": "Helt nyrenoverad kontorslokal på 221 kvm med möjlighet att påverka planlösningen.",
     "plus": [
@@ -4795,6 +4856,7 @@
       "kontrollerad": "https://palmungmellin.se/lokaler/gustaf-dalensgatan-19-helt-nyrenoverad-kontorslokal-pa-221-kvm"
     },
     "restid_kungalv_min_uppskattad": 18,
+    "parkering_status": "ja",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -4831,7 +4893,7 @@
     "kalla_url": [
       "https://www.al.se/kontorserbjudande/hitta-lokal/goteborg/lindholmen/lindholmsallen-10-536-kvm/"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Yteffektiv kontorslokal på 536 kvm på Lindholmen med flexibel planlösning och fönster i tre väderstreck. Fastigheten har gemensamt bokningsbart konferensrum och omklädningsrum för dam och herr i källarplan, och garage finns i grannfastigheten. Ytan är dock mer än dubbelt så stor som ett team på 8–12 personer behöver.",
     "bekraftelsecitat": "Area: 536 kvm, Lokaltyp: Kontor",
     "plus": [
@@ -4868,6 +4930,7 @@
       "epost": "Kicki.Gronlund@al.se"
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "ja",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -4909,7 +4972,7 @@
     "kalla_url": [
       "https://palmungmellin.se/lokaler/kontor-lager-235-kvm-tuvevaegen-39"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kombilokal på 235 kvm i markplan vid Tuvevägen med kontor, förråd, kök/pausrum och WC med dusch. Fasta parkeringsplatser ligger direkt utanför lokalen och ingår i hyran, och området är grindat och låst kvällar, nätter och helger. Annonsen delar inte upp hur mycket av de 235 kvm som faktiskt är kontor, vilket är den stora osäkerheten.",
     "bekraftelsecitat": "Area: 235 kvm … Kombilokal i markplan med kontor, förråd, personalutrymmen",
     "plus": [
@@ -4950,6 +5013,7 @@
       "kontrollerad": "https://palmungmellin.se/lokaler/kontor-lager-235-kvm-tuvevaegen-39"
     },
     "restid_kungalv_min_uppskattad": 20,
+    "parkering_status": "ja",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -4986,7 +5050,7 @@
     "kalla_url": [
       "https://www.lokalguiden.se/lokal/1-karossv%C3%A4gen-2"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Hela kontorsplanet på översta våningen (plan 2) i Torslanda, 375 kvm, beskrivet som enklare men fina kontorslokaler med effektiv planlösning. Annonsen anger varken antal kontorsrum, mötesrum, öppen planlösning eller hyra. Parkering lyfts fram uttryckligen, både inom inhägnat område och utanför, och flera busslinjer har hållplats intill.",
     "bekraftelsecitat": "375 m² Kontor",
     "plus": [
@@ -5018,6 +5082,7 @@
       "epost": "andreas.kaveland@torslandapropertyinvestment.se"
     },
     "restid_kungalv_min_uppskattad": 28,
+    "parkering_status": "ja",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -5059,7 +5124,7 @@
     "kalla_url": [
       "https://www.verksamhetslokaler.se/hyra/kontorslokaler/lundby/607126"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Aggregatorannons för ca 195 kvm kontor vid Pumpgatan i Lundby, nära Lindholmspiren (postnr 41755, ID 607126). Sidan anger \"Lokaltyp: Kontor\", men den enda brödtexten är AI-genererad områdesbeskrivning om lunchställen och kollektivtrafik. Inget om kontorsrum, planlösning, parkering, hyra eller hyresvärd – och inget som bekräftar att det skulle vara ett delat kontorshus.",
     "bekraftelsecitat": "Kontor att hyra, Lundby, Pumpgatan … Ca. 195m2",
     "plus": [
@@ -5102,6 +5167,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 24,
+    "parkering_status": "okant",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -5143,7 +5209,7 @@
     "kalla_url": [
       "https://www.lokalguiden.se/lokal/1-v%C3%A4stra-gatan-84-kung%C3%A4lv"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontor på 161 kvm på plan 1 mitt på Västra gatan i centrala Kungälv, med ljusinsläpp från flera väderstreck och en blandning av öppna arbetsytor och rumsindelade delar. Pentry, två WC och gott om förråd ingår; tre minuters promenad till busstationen och cirka 15 minuter till Göteborg via E6. Annonsen nämner varken parkering, dusch, antal kontorsrum eller hyresnivå.",
     "bekraftelsecitat": "möjligheten att hyra en trevlig och välplanerad kontorslokal om 161 kvm",
     "plus": [
@@ -5177,6 +5243,7 @@
       "epost": "ella@loqalo.se"
     },
     "restid_kungalv_min_uppskattad": 4,
+    "parkering_status": "okant",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -5218,7 +5285,7 @@
     "kalla_url": [
       "https://www.lokalguiden.se/lokal/9-manufakturgatan-5-ring%C3%B6n"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "340 kvm kontor på Ringön i en fastighet byggd 2018, med en runtgående planlösning men många cellkontor, konferensrum och ett stort sällskapskök. Kontoret nås med hiss eller ett par trappor upp och har en stor balkong för fika och lunch. Uthyrningen sköts av Relier; annonsen anger varken hyra, tillträde eller fastighetsägare.",
     "bekraftelsecitat": "\"Ledig kontorslokal på Manufakturgatan 5, Ringön\" + \"Minsta storlek: 340 m²\"",
     "plus": [
@@ -5254,6 +5321,7 @@
       "epost": "rebecka.polhem@relier.se"
     },
     "restid_kungalv_min_uppskattad": 22,
+    "parkering_status": "ja",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -5295,7 +5363,7 @@
     "kalla_url": [
       "https://palmungmellin.se/lokaler/exportgatan-25-29-lager-och-kontor-pa-upp-till-ca-8000-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "En hel egen byggnad på ca 8 000 kvm vid Exportgatan där bara ca 935 kvm är kontor och resten är lager- och produktionsyta med portar och 7-9 meters takhöjd. Objektet marknadsförs mot logistik-, lager- och produktionsverksamhet och blir tillgängligt först i början av 2027. Två omklädningsrum, kök på två plan och loungeytor ingår, och parkering för personal och besökare finns.",
     "bekraftelsecitat": "Byggnaden omfattar cirka 8 000 kvm, varav cirka 935 kvm kontorsyta",
     "plus": [
@@ -5336,6 +5404,7 @@
       "kontrollerad": "https://palmungmellin.se/lokaler/exportgatan-25-29-lager-och-kontor-pa-upp-till-ca-8000-kvm"
     },
     "restid_kungalv_min_uppskattad": 24,
+    "parkering_status": "ja",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2/5",
     "poangdelar": {
@@ -5373,7 +5442,7 @@
     "kalla_url": [
       "https://www.lokalnytt.se/butik/g%C3%B6teborg/vallfrogatan-10-328296"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Nyproducerad lokal på 170 kvm i bottenplan av ett bostadshus på centrala Hisingen, en av fyra lokaler i byggnaden. Annonsen riktar sig mot närservice och butik och nämner bara pentry och WC som utrustning, men fastighetsägaren uppges vara öppen för anpassningar. Busshållplats ligger precis utanför, medan parkering och hyra inte nämns alls.",
     "bekraftelsecitat": "Butik/Kontor/Kontor, 170 m2, Göteborg, Hisingen",
     "plus": [
@@ -5413,6 +5482,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 25,
+    "parkering_status": "okant",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -5454,7 +5524,7 @@
     "kalla_url": [
       "https://www.verksamhetslokaler.se/hyra/kontorslokaler/norra-hisingen/574738"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "VARNING: annonsen har fältet 'Indraget: 14.08.2026', vilket kan betyda att den redan är tillbakadragen – måste bekräftas innan någon lägger tid på den. Utöver lokaltyp (Kontor), yta (ca 910 kvm) och gatan (Aröds Industriväg, gatunumret dolt) finns ingen information alls: inga rum, ingen planlösning, ingen parkering, ingen hyra och inga kontaktuppgifter utan betald prenumeration. Ytan är dessutom omkring tio gånger vad 8–12 personer behöver.",
     "bekraftelsecitat": "Kontor att hyra, Norra hisingen, Aröds Industriväg … Ca. 910m2",
     "plus": [
@@ -5497,6 +5567,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 18,
+    "parkering_status": "okant",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -5538,7 +5609,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/bultgatan-40-694-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Stor kontorsvåning på 694 kvm i Rollsbo som enligt annonsen har både enskilda kontor, flera mötes- och konferensrum och öppna arbetsytor, plus reception, stort kök, kopieringsrum och serverrum. Parkering finns i direkt anslutning till fastigheten för både personal och besökare. Ytan är ungefär tre gånger större än vad 8–12 personer behöver, och hyran anges inte.",
     "bekraftelsecitat": "Ljus kontorslokal om 694 kvm i attraktiva Rollsbo",
     "plus": [
@@ -5576,6 +5647,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 5,
+    "parkering_status": "ja",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -5620,7 +5692,7 @@
     "kalla_url": [
       "https://www.platzer.se/sv/lokaler/lindholmspiren-9-421-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontor i entréplan på Lindholmspiren med fönster från golv till tak, generös takhöjd och 30 arbetsplatser. Faktarutan anger ytan som ett spann 320–421 kvm medan brödtexten säljer in 421 kvm. Fastigheten har garage, parkering i området, gemensam reception, restaurang, dusch och omklädningsrum – men varken hyra, tillträde eller kontaktuppgifter framgår.",
     "bekraftelsecitat": "\"Nu finns möjlighet att hyra ett kontor om 421 kvm på Lindholmspiren\"",
     "plus": [
@@ -5657,6 +5729,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "ja",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -5698,7 +5771,7 @@
     "kalla_url": [
       "https://www.verksamhetslokaler.se/hyra/kontorslokaler/vaestra-hisingen/574774"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Ca 195 kvm kontor på Kärrlyckegatan i Västra Hisingen, listat via en bevakningstjänst som själv samlat in uppgiften. Annonsen innehåller i praktiken bara lokaltyp, yta och postort – gatunummer, hyra, planlösning och hyresvärdens kontaktuppgifter är dolda bakom inloggning. Storleken passar 8–12 personer, men ingenting utöver ytan går att bekräfta.",
     "bekraftelsecitat": "Kontor att hyra, Västra hisingen, Kärrlyckegatan ... Ca. 195 m2",
     "plus": [
@@ -5740,6 +5813,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 25,
+    "parkering_status": "okant",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -5781,7 +5855,7 @@
     "kalla_url": [
       "https://www.verksamhetslokaler.se/hyra/kontorslokaler/lundby/565613"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Ca 1 870 kvm kontor på Borstbindaregatan i Lundby, prissatt till ca 3 000 kr/kvm/år exklusive drift. Annonsen är en insamlad notering utan planlösning, kontaktuppgifter eller gatunummer – bara lokaltyp, yta och kvadratmeterpris. Ytan är i storleksordningen tio gånger mer än vad 8–12 personer behöver och annonsen säger ingenting om att den går att dela.",
     "bekraftelsecitat": "Kontor att hyra, Lundby, Borstbindaregatan ... Ca. 1 870 m2",
     "plus": [
@@ -5822,6 +5896,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 24,
+    "parkering_status": "okant",
     "matchpoang": 75,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -5863,7 +5938,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/herkulesgatan-1-130-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Hörnkontor på 130 kvm på plan 2 av 2 vid Backaplan, med stor öppen arbetsyta, två egna kontorsrum, ett större konferensrum, pentry och ca 3,6 m takhöjd. Parkeringen är utförligt beskriven i annonsen – besöksparkering, egna platser att hyra och laddplatser i området – och det finns dusch i den handikappanpassade toaletten. Hyran anges inte och kontakten sker via mäklare utan telefon eller e-post på sidan.",
     "bekraftelsecitat": "ett modernt och välplanerat hörnkontor om cirka 130 kvm",
     "plus": [
@@ -5898,6 +5973,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 22,
+    "parkering_status": "ja",
     "matchpoang": 74,
     "poangmotivering": "Yta 19/25, Rum 10/25, Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -5940,7 +6016,7 @@
       "https://www.lokalnytt.se/kontor/kung%C3%A4lv/bilgatan-20-327072",
       "https://www.lokalguiden.se/lokal/50-bilgatan-20-rollsbo"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Hörnkontor på 295 kvm på plan 3 av 3 i Rollsbo, i dag indelat i nio kontorsrum plus kök, konferens- och telefonrum, loungeyta och WC. Gott om p-platser vid fastigheten, buss utanför dörren och nära E6; hiss finns och hyresvärden erbjuder att anpassa lokalen efter behov. Hyra anges inte – annonsen hänvisar till annonsören, och planskiss finns som PDF.",
     "bekraftelsecitat": "Lokalen om 295 kvm är i dagsläget indelat i 9 kontor, kök, konferens- och telefonrum",
     "plus": [
@@ -5970,6 +6046,7 @@
       "epost": "eva.naslund@hantverkslokaler.se (maskerad på lokalnytt, hämtad från lokalguiden-annonsen för samma objekt)"
     },
     "restid_kungalv_min_uppskattad": 5,
+    "parkering_status": "ja",
     "matchpoang": 73,
     "poangmotivering": "Yta 25/25, Rum 25/25, Öppen yta 0/20, Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -6011,7 +6088,7 @@
     "kalla_url": [
       "https://www.verksamhetslokaler.se/hyra/kontorslokaler/norra-hisingen/577297"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Tunn bevakningsannons på verksamhetslokaler.se: ca 140 kvm kontor på Kavaljersgatan i Backa, Norra Hisingen. Ytan ligger rätt för 8–12 personer, men annonsen visar varken hyra, planlösning, parkering eller kontaktuppgifter. Gatunumret är dolt, så objektet måste identifieras via hyresvärden innan det går att bedöma.",
     "bekraftelsecitat": "Kontor att hyra i Norra hisingen ... Storlek: Ca. 140 m2",
     "plus": [
@@ -6055,6 +6132,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": null,
+    "parkering_status": "okant",
     "matchpoang": 72,
     "poangmotivering": "Yta 22/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -6099,7 +6177,7 @@
     "kalla_url": [
       "https://www.lokalguiden.se/lokal/6-bilgatan-20-rollsbo-industriomr%C3%A5de"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kombilokal i Rollsbo där kontorsdelen på 295 kvm ligger på plan 3 med 11 kontorsrum, 2 mötesrum, lunchrum, förråd och WC, och där spannet 295–625 kvm visar att kontoret kan tas utan lagret på ca 330 kvm. Parkering och laddmöjlighet finns i direkt anslutning till fastigheten, och tillträdet är satt till 2026-10-01. Svagheten är att kontoret är helt cellindelat – öppen planlösning nämns bara om lagerdelen.",
     "bekraftelsecitat": "Rymliga kontorslokaler om 295 kvm med stora möjligheter att anpassa efter verksamhet och behov",
     "plus": [
@@ -6131,6 +6209,7 @@
       "epost": "eva.naslund@hantverkslokaler.se"
     },
     "restid_kungalv_min_uppskattad": 5,
+    "parkering_status": "ja",
     "matchpoang": 72,
     "poangmotivering": "Yta 25/25, Rum 25/25, Öppen yta 0/20, Geografi 7,5/15, Hyra 10/10, Tillträde 4/5",
     "poangdelar": {
@@ -6172,7 +6251,7 @@
     "kalla_url": [
       "https://www.lokalguiden.se/lokal/8-pumpgatan-1-lundbyvassen"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Fullservice-kontorssvit på 123 kvm i United Spaces coworkinganläggning i nybyggda Uni3 by Geely på Lindholmen, med inflyttning omgående och allt utom mötesrum inkluderat i hyran. Det är den enda av mina sex annonser med prisuppgift, men den ges som ett brett spann (3 900–13 460 kr/kvm/år). Varning: annonsen anger uttryckligen \"Parkeringsmöjlighet: Nej\", vilket bryter mot hyresgästens skallkrav.",
     "bekraftelsecitat": "Med generösa 123 kvadratmeter utrymme och inspirerande utsikt, är detta kontor en perfekt plats",
     "plus": [
@@ -6206,6 +6285,7 @@
       "epost": "emma.hjorth@unitedspaces.se"
     },
     "restid_kungalv_min_uppskattad": 24,
+    "parkering_status": "ja",
     "matchpoang": 72,
     "poangmotivering": "Yta 16,9/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -6247,7 +6327,7 @@
     "kalla_url": [
       "https://www.lokalnytt.se/kontor/g%C3%B6teborg/hornsgatan-1-337906"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "300 kvm kontor i East 1, det gamla SKF-huvudkontoret i Gamlestaden, som totalrenoveras 2025 och miljöcertifieras BREEAM Excellent. Annonsen lovar flexibel planlösning med både öppen plan och cellkontor, men anger varken rumsantal, våningsplan eller hyra. Parkering finns i garage och utomhus med elladdning, och spårvagnshållplatsen SKF ligger intill.",
     "bekraftelsecitat": "Kontor, 300 m2, Göteborg, Gamlestaden",
     "plus": [
@@ -6283,6 +6363,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 28,
+    "parkering_status": "ja",
     "matchpoang": 71,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 3,8/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -6324,7 +6405,7 @@
     "kalla_url": [
       "https://www.verksamhetslokaler.se/hyra/kontorslokaler/norra-hisingen/575392"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Aggregatorannons utan beskrivande text: sidan bekräftar bara att det är ca 135 kvm kontor på Sångspelsgatan i Norra Hisingen (postnr 42241, ID 575392). Hyra anges som \"Inte angivet\" och all kontaktinformation ligger bakom betalvägg. Kontorsrum, planlösning, våning och parkering går inte att läsa ut ur annonsen.",
     "bekraftelsecitat": "Kontor att hyra, Norra hisingen, Sångspelsgatan … Ca. 135m2",
     "plus": [
@@ -6368,6 +6449,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": null,
+    "parkering_status": "okant",
     "matchpoang": 71,
     "poangmotivering": "Yta 20,5/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -6413,7 +6495,7 @@
       "https://www.lokalguiden.se/lokal/3-transportgatan-39-b%C3%A4ckebol",
       "https://www.portally.com/lokal/transportgatan-39-506-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Två kontorsenheter om 239 respektive 506 kvm i ett industri- och handelsområde vid E6 norr om Göteborg, som kan hyras var för sig eller slås ihop till 745 kvm. Annonsen anger uttryckligen att ytorna kan utformas som öppna kontorslandskap eller separata kontor och listar dusch, hiss, kök/pentry, serverrum, fiber och fri parkering med möjlighet till laddstolpar. Hyra saknas helt och antalet kontorsrum respektive mötesrum anges inte.",
     "bekraftelsecitat": "två flexibla kontorslokaler på 239 och 506 kvm",
     "plus": [
@@ -6445,6 +6527,7 @@
       "epost": "Caroline.Klamas@mileway.com"
     },
     "restid_kungalv_min_uppskattad": 18,
+    "parkering_status": "ja",
     "matchpoang": 71,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 3,8/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -6486,7 +6569,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/bultgatan-40a-1107-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "1 107 kvm kontor i Rollsbo industriområde som enligt annonsen kan anpassas och även delas upp, i en fastighet som blandar kontor, kontorshotell och lättare tillverkningsindustri. Läget är bilnära med direktanslutning till E6 och busshållplats intill, och hyresgästerna delar en gemensam utegård. Ytan är kraftigt överdimensionerad för 8-12 personer och annonsen säger ingenting om rumsindelning, mötesrum, dusch eller hyra.",
     "bekraftelsecitat": "Kontorslokal om 1107 kvm i Rollsbo industriområde",
     "plus": [
@@ -6525,6 +6608,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 5,
+    "parkering_status": "ja",
     "matchpoang": 70,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -6566,7 +6650,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/arntorpsgatan-6"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "324 kvm kontor i en fastighet uppförd 2014 i Arntorp, där kontoret enligt annonsen är \"fördelat på flera rum i olika storlek\" och enskilda möblerade kontorsrum går att hyra. HWC, dusch och omklädningsrum finns och parkeringsplatser ligger i anslutning till lokalen. Annonsen anger varken antal rum, mötesrum, våningsplan, kollektivtrafik eller hyra.",
     "bekraftelsecitat": "Arntorpsgatan 6 · Kontor i Kungälv … 324 m²",
     "plus": [
@@ -6604,6 +6688,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 7,
+    "parkering_status": "ja",
     "matchpoang": 70,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -6648,7 +6733,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/vastra-gatan-71-73"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Butiks- och kontorsytor mitt i Kungälvs centrum, uthyrningsbara i storlekar från 350 upp till 831 kvm för 700 kr/kvm/år med omedelbart tillträde. Garage finns i fastigheten och besöks- och kundparkering på gatan. Annonsen är extremt kortfattad: ingenting om rumsindelning, mötesrum, våningsplan, dusch eller kollektivtrafik, och minsta ytan är stor för 8-12 personer.",
     "plus": [
       "Garage i fastigheten plus besöks- och kundparkering på gatan - starkast dokumenterade parkeringen bland Kungälvsobjekten",
@@ -6686,6 +6771,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 4,
+    "parkering_status": "ja",
     "matchpoang": 70,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -6728,7 +6814,7 @@
       "https://www.portally.com/lokal/bultgatan-40a",
       "https://www.lokalguiden.se/lokal/2-bultgatan-40a-kung%C3%A4lv"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontorslokal på 229 kvm i Rollsbo industriområde som enligt annonsen kan anpassas efter hyresgästens önskemål. Fastigheten innehåller kontor, kontorshotell och lättare tillverkningsindustri, och hyresgäster får tillgång till en gemensam utegård. Parkering finns intill byggnaden och buss stannar utanför, men hyra, planlösning och våningsplan saknas helt.",
     "bekraftelsecitat": "Kontorslokal om 229 kvm i Rollsbo industriområde",
     "plus": [
@@ -6766,6 +6852,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 5,
+    "parkering_status": "ja",
     "matchpoang": 70,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -6807,7 +6894,7 @@
     "kalla_url": [
       "https://www.catena.se/lediga-objekt/2492_bilgatan-25-kungalv"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Catena hyr ut en lager- och logistikfastighet på 5 446 kvm i Rollsbo där beskrivningen nämner moderna kontorslokaler, men aldrig hur stor kontorsdelen är. Tillträde sker enligt överenskommelse och området beskrivs som väl kommunicerat via E6 och buss mot Kungälvs Resecentrum. För ett e-handelsbolag på 8–12 personer utan lagerbehov är fastigheten kraftigt överdimensionerad – kontorsdelen måste styckas ut och storleken bekräftas av Lovisa Wångdahl innan objektet kan bedömas.",
     "bekraftelsecitat": "Fastigheten erbjuder rymliga lagerutrymmen med hög takhöjd och moderna kontorslokaler.",
     "okanda_falt": [
@@ -6843,6 +6930,7 @@
       "epost": "lovisa.wangdahl@catena.se"
     },
     "restid_kungalv_min_uppskattad": 5,
+    "parkering_status": "okant",
     "matchpoang": 70,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -6884,7 +6972,7 @@
     "kalla_url": [
       "https://www.lokalnytt.se/kontor/kung%C3%A4lv/bilgatan-20-340549"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kombilokal i centrala Rollsbo där 295 kvm kontor på plan 3 och 330 kvm varmlager i markplan uthyrs samlat eller var för sig – kontorsdelen ensam passar 8–12 personer. Fastigheten från 1994 har hiss, FTX-ventilation, fjärrvärme, parkering i direkt anslutning med laddmöjlighet och busshållplats utanför porten. Annonsen beskriver dock kontorets planlösning enbart som anpassningsbar; den öppna planlösning som nämns gäller lagerdelen, inte kontoret.",
     "bekraftelsecitat": "Rymliga kontorslokaler om 295 kvm med stora möjligheter att anpassa efter verksamhet",
     "okanda_falt": [
@@ -6924,6 +7012,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 5,
+    "parkering_status": "ja",
     "matchpoang": 70,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -6965,7 +7054,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/bultgatan-40b-235-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontorslokal på 235 kvm i Rollsbo industriområde som enligt annonsen kan anpassas efter önskemål, med mycket bra skyltläge mot E6. Parkering finns intill byggnaden och busshållplatsen Kungälv Rattgatan ligger alldeles intill med tre linjer. Annonsen säger ingenting om antal kontorsrum, mötesrum eller planlösning, så innehållet måste kontrolleras på visning.",
     "bekraftelsecitat": "Kontorslokal om 235 kvm i Rollsbo industriområde",
     "plus": [
@@ -7003,6 +7092,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 5,
+    "parkering_status": "ja",
     "matchpoang": 70,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -7045,7 +7135,7 @@
       "https://www.portally.com/lokal/uddevallavagen-14",
       "https://www.lokalguiden.se/lokal/1-uddevallav%C3%A4gen-14-kung%C3%A4lv"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontorslokal på 461 kvm på våning 1 centralt i Kungälv, med ingång via entréplan och möjlighet att ta trappa eller hiss upp till kontoret. Parkeringsmöjligheter finns enligt annonsen och lokalen har varit ledig sedan 1 januari 2025. Annonsen beskriver inte planlösningen alls – varken kontorsrum, mötesrum eller öppen yta – och ingen hyra anges.",
     "bekraftelsecitat": "LEDIGT: KONTOR 461 KVM from 1/1 2025",
     "plus": [
@@ -7084,6 +7174,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 4,
+    "parkering_status": "ja",
     "matchpoang": 70,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -7128,7 +7219,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/bultgatan-40-100-700-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Fastighetsannons för hela Bultgatan 40 i Rollsbo där kontor kan hyras i spannet ca 100–700 kvm, med kombiytor kontor/lager och en butiksyta om ca 600 kvm som alternativ. Annonsen beskriver ingen planlösning alls, så antal rum, mötesrum och öppen yta är okända. Tillträde omedelbart och lunchrestaurang i huset, men varken hyra eller parkering anges.",
     "bekraftelsecitat": "möjlighet att hyra enbart kontor i spannet ca 100–700 kvm",
     "plus": [
@@ -7169,6 +7260,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 5,
+    "parkering_status": "okant",
     "matchpoang": 70,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -7210,7 +7302,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/hollandsgatan-4"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Nyproducerad, ännu inte färdigställd verksamhetslokal på 149 kvm i Ytterby Park med skyltläge mot Marstrandsvägen. Hyresgästen kan påverka både planlösning och materialval, men inga rum, mötesrum eller hyror anges och inflyttning ligger under 2026. Parkering i direkt anslutning och busshållplats utanför entrén är däremot uttalat i annonsen.",
     "bekraftelsecitat": "Lokaltyp: Butik, Industri/Verkstad, Kontor – Storlek: 149 m²",
     "plus": [
@@ -7249,6 +7341,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 8,
+    "parkering_status": "ja",
     "matchpoang": 70,
     "poangmotivering": "Yta 24,7/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -7291,7 +7384,7 @@
       "https://www.lokalnytt.se/%C3%B6vrigt/kung%C3%A4lv/hollandsgatan-335184",
       "https://www.lokalguiden.se/lokal/hollandsgatan-ytterby"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Sista lediga lokalen i nyproducerade Ytterby Park vid Marstrandsvägen, 149 kvm i markplan där hyresgästen enligt annonsen själv får påverka utformning och materialval. Annonsen marknadsför lokalen mot kontor, butik, vård och träning samtidigt och söker uttryckligen aktörer inom hälsa och vård, så ingen färdig kontorsplanlösning finns beskriven. Parkering och busshållplats utanför dörren, men inflyttningen angavs till våren 2026 i en annons från oktober 2024 och måste stämmas av.",
     "bekraftelsecitat": "149 m² · Lokaltyper: Kontor",
     "plus": [
@@ -7325,6 +7418,7 @@
       "epost": "rikard.reutherborg@nyakvadrat.se"
     },
     "restid_kungalv_min_uppskattad": 8,
+    "parkering_status": "ja",
     "matchpoang": 69,
     "poangmotivering": "Yta 24,7/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 4/5",
     "poangdelar": {
@@ -7369,7 +7463,7 @@
     "kalla_url": [
       "https://www.lokalguiden.se/lokal/marieholmsgatan-64"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontorsyta på plan 3 i en fastighet med hög takhöjd, stora ljusgårdar och mycket dagsljus, uthyrbar i spannet 280–570 kvm. Planlösningen är i dag en blandning av öppna ytor och egna rum och uppges kunna anpassas efter hyresgästens önskemål. Fastigheten har eget parkeringshus, busshållplats direkt utanför och padelhall i huset, men varken hyra, tillträde eller antal rum anges.",
     "bekraftelsecitat": "280–570 m² Kontor",
     "plus": [
@@ -7402,6 +7496,7 @@
       "epost": "ulf.birk@newsec.se"
     },
     "restid_kungalv_min_uppskattad": 28,
+    "parkering_status": "ja",
     "matchpoang": 69,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 3,8/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -7446,7 +7541,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/exportgatan-1-270-299-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Två separata kontorssviter om 270 kvm respektive 299 kvm vid Tingstadsmotet, beskrivna som rumsindelade kontor med både vanliga kontorsrum/storrum och mötesrum. Hyran är ett av få objekt med prisuppgift: 1 300 kr/kvm/år, med fri parkering och elbilsladdning. Tillträde uppges omgående.",
     "bekraftelsecitat": "trevliga och välplanerade kontor om 270 kvm och 299 kvm",
     "plus": [
@@ -7481,6 +7576,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 18,
+    "parkering_status": "ja",
     "matchpoang": 68,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 0/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -7522,7 +7618,7 @@
     "kalla_url": [
       "https://www.lokalguiden.se/lokal/v%C3%A4stra-gatan-84-86-kung%C3%A4lv"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "442 kvm ljus lokal på entréplan i Kungälvs gamla stadskärna, uppdelad på butiksyta plus flera kontorsutrymmen. Ytan är stor för 8–12 personer, och annonsen nämner varken parkering, dusch eller mötesrum. Annonsen är daterad 2023-11-14, så aktualiteten bör kontrolleras med loqalo innan visning.",
     "bekraftelsecitat": "Lokalen är om 442 kvm där det både omfatta butiksyta och flertal kontorsutrymmen",
     "plus": [
@@ -7561,6 +7657,7 @@
       "epost": "matilda@loqalo.se"
     },
     "restid_kungalv_min_uppskattad": 4,
+    "parkering_status": "okant",
     "matchpoang": 68,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -7602,7 +7699,7 @@
     "kalla_url": [
       "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/564252"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Maskingenererad stubbannons för ca 1 380 kvm kontor på Solbräckegatan i Kungälv (postnummer 442 45) - sidan innehåller yta, lokaltyp och kommun, ingenting annat. Hyra, hyresvärd, planlösning och parkering saknas helt och kontaktuppgifterna ligger bakom registrering på sajten. Ytan är dessutom långt över behovet för 8-12 personer och ingen delbarhet nämns.",
     "bekraftelsecitat": "Kontor att hyra, Kungälv, Solbräckegatan … Ca. 1 380m2",
     "plus": [
@@ -7643,6 +7740,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 6,
+    "parkering_status": "okant",
     "matchpoang": 68,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -7684,7 +7782,7 @@
     "kalla_url": [
       "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/564497"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Maskingenererad stubbannons för ca 160 kvm kontor på Västra Gatan i Kungälv; beskrivningstexten är en oöversatt dansk standardmening (\"Dette erhvervslejemål, som kan anvendes til Kontor, ligger i Kungälv\") utan sakinnehåll. Yta och lokaltyp är det enda som bekräftas - hyra, hyresvärd, planlösning och parkering saknas, och kontaktuppgifter kräver registrering. Storleken passar 8-12 personer, men allt annat måste ringas fram.",
     "bekraftelsecitat": "Kontor att hyra, Kungälv, Västra Gatan … Ca. 160 m2",
     "plus": [
@@ -7724,6 +7822,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 4,
+    "parkering_status": "okant",
     "matchpoang": 68,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -7768,7 +7867,7 @@
     "kalla_url": [
       "https://www.castellum.se/lediga-lokaler/ringogatan-12/ringogatan-12-690-kvm/"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontorsvåning på plan 3 hos Castellum på Ringön, 550–690 kvm med flera separata kontorsrum, ett separat konferensrum och pentry med utgång till egen terrass. P-platser och garageplatser finns vid fastigheten och industribuss stannar direkt utanför. Ingen hyra anges, och ytan är flera gånger större än vad 8–12 personer behöver.",
     "bekraftelsecitat": "Ringögatan 12 (690 kvm) … Kontor … Här erbjuds en flexibel kontorslokal",
     "plus": [
@@ -7800,6 +7899,7 @@
       "epost": "mathias.grahn@castellum.se"
     },
     "restid_kungalv_min_uppskattad": 22,
+    "parkering_status": "ja",
     "matchpoang": 68,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 0/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -7844,7 +7944,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/stalverksgatan-11"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Två kontorsenheter på Ringön som kan hyras ihop till 650 kvm eller delas: 100 kvm i markplan med egen entré och 550 kvm på plan två med egen terrass. Plan två är rumsindelat med kontorsrum, konferens-/mötesrum i olika storlekar, pentry och en stor loungeyta i mitten. Parkering finns alldeles intill byggnaden, men hyran är inte publicerad.",
     "bekraftelsecitat": "ett kontor om 550 kvm med egen terass",
     "plus": [
@@ -7880,6 +7980,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 22,
+    "parkering_status": "ja",
     "matchpoang": 68,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 0/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -7921,7 +8022,7 @@
     "kalla_url": [
       "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/468073"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Innehållsfattig aggregatorannons: verksamhetslokaler.se listar ett kontor på ca 460 kvm på Uddevallavägen i Kungälv men visar bara lokaltyp, yta och ort, ingen bild av lokalen (endast Google Street View). Hyra står som \"Inte angivet\", och gatunummer samt hyresvärdens kontaktuppgifter är låsta bakom registrering. Datumet 27.07.2026 på sidan är när annonsen drogs in i databasen, inte ett tillträdesdatum – det ska inte tolkas som tillträde.",
     "bekraftelsecitat": "Lokaltyp: Kontor Storlek: Ca. 460 m2",
     "plus": [
@@ -7966,6 +8067,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 5,
+    "parkering_status": "okant",
     "matchpoang": 68,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -8007,7 +8109,7 @@
     "kalla_url": [
       "https://www.lokalguiden.se/lokal/9-backa-berg%C3%B6gata-5-backa"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontor på 170 kvm en trappa upp i en kontors- och lagerfastighet från 1990 i Backa, uthyrt av Mileway. Lokalen har kontorsrum i varierande storlek, mötesrum, pentry/kök, förråd samt dusch, bastu och WC. Parkering med laddmöjlighet ligger i direkt anslutning, men hyran är inte angiven.",
     "bekraftelsecitat": "Kontorslokal om 170 kvm i en välskött kontors- och lagerfastighet i Backa.",
     "plus": [
@@ -8039,6 +8141,7 @@
       "epost": "mimoza.zeneli@mileway.com"
     },
     "restid_kungalv_min_uppskattad": 18,
+    "parkering_status": "ja",
     "matchpoang": 68,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 0/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -8080,7 +8183,7 @@
     "kalla_url": [
       "https://www.lokalguiden.se/lokal/k%C3%A5ller%C3%B6dsv%C3%A4gen-4-kung%C3%A4lv"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Egen fristående fastighet på 220 kvm i Kode utanför Kungälv, bestående av kontor, omklädning och tvättstuga med parkering utanför. Annonsen riktar sig uttryckligen till städfirmor, elfirmor och snickare snarare än till tjänsteföretag, och säger ingenting om antal kontorsrum, mötesrum eller planlösning. Pendeln till centrala Göteborg anges till cirka 35 minuter.",
     "bekraftelsecitat": "en egen fastighet om 220 kvm... Fastigheten består av kontor, omklädning, tvättstuga",
     "okanda_falt": [
@@ -8115,6 +8218,7 @@
       "epost": "ella@loqalo.se"
     },
     "restid_kungalv_min_uppskattad": 5,
+    "parkering_status": "ja",
     "matchpoang": 68,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -8156,7 +8260,7 @@
     "kalla_url": [
       "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/591760"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Annonsen innehåller nästan inga uppgifter: bara att det är ett kontor på ca 300 kvm på Hollandsgatan i Ytterby, publicerat 19.08.2026. Gatunummer, hyra och hyresvärdens kontaktuppgifter är dolda bakom inloggning/registrering. Med stor sannolikhet är detta samma objekt som Hollandsgatan 5 (302 kvm, fastigheten Pumpen 3) som ligger som fullständig annons på Portally – använd den annonsen i stället.",
     "bekraftelsecitat": "Kontor att hyra, Kungälv, Ytterby, Hollandsgatan … Ca. 300 m2",
     "plus": [
@@ -8198,6 +8302,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 8,
+    "parkering_status": "okant",
     "matchpoang": 68,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -8239,7 +8344,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/exportgatan-51a"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Stor kontorsfastighet på Exportgatan i Hisings Backa med 1 320 kvm fördelat på tre våningsplan varav ett källarplan, uthyrd av Novier till 900 kr/kvm/år. Planlösningen består av separata kontorsrum och mötesrum, och det finns gott om parkering runt hela fastigheten. Hela ytan är kraftigt överdimensionerad för 8–12 personer, men annonsen anger att det går att hyra del av lokalen.",
     "bekraftelsecitat": "möjligheten att hyra kontor med bra läge på Exportgatan upp till ca 1 320 kvm",
     "plus": [
@@ -8274,6 +8379,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 18,
+    "parkering_status": "ja",
     "matchpoang": 68,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 0/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -8315,7 +8421,7 @@
     "kalla_url": [
       "https://www.lokalguiden.se/lokal/filaregatan-16-%C3%A4ngeg%C3%A4rde"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kombilokal om totalt ca 1 600 kvm i Ängegärde, fördelad på ca 240 kvm kontor och personalytor och ca 1 360 kvm lager med fem portar och lastning under skärmtak. Kontorsdelen skulle räcka för 8–12 personer, men annonsen anger både minsta och största storlek som 1 600 kvm – lagerdelen som en e-handel utan lagerbehov inte har någon nytta av följer alltså med. Parkering finns på gården plus ett vidbyggt garage, och en ritning ligger bifogad som PDF.",
     "bekraftelsecitat": "Välkommen till fina kontors- och lagerytor om totalt ca 1 600 kvm.",
     "plus": [
@@ -8351,6 +8457,7 @@
       "epost": "mikael.andersson@mikefastigheter.se"
     },
     "restid_kungalv_min_uppskattad": 5,
+    "parkering_status": "ja",
     "matchpoang": 68,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -8392,7 +8499,7 @@
     "kalla_url": [
       "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/591761"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kort portalannons för ca 150 kvm kontor på Hollandsgatan i Ytterby, helt utan beskrivningstext. Varken planlösning, hyra, parkering, tillträde eller hyresvärd framgår, och kontaktuppgifterna ligger bakom inloggning. Storleken passar 8–12 personer, men allt annat måste ringas fram – annonsen ligger dessutom på samma gata som nyproduktionen Hollandsgatan 4 och kan vara samma objekt.",
     "bekraftelsecitat": "Kontor att hyra, Kungälv, Ytterby, Hollandsgatan – Ca. 150 m2",
     "plus": [
@@ -8433,6 +8540,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 8,
+    "parkering_status": "okant",
     "matchpoang": 68,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -8475,7 +8583,7 @@
       "https://www.aspelinramm.se/lediga-lokaler/torslanda-hangar/kontorslokal-115-m2",
       "https://www.lokalguiden.se/lokal/3-gamla-flygplatsv%C3%A4gen-4"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Liten kontorslokal i markplan i Torslanda hangar, beskriven som ljus och funktionell med separat mötesrum, pentry och eget WC. Parkering uppges finnas i direkt anslutning till fastigheten. Hyra, antal kontorsrum och planlösning i övrigt framgår inte av annonsen.",
     "bekraftelsecitat": "en ljus och funktionell kontorslokal om 115 kvm i attraktiva Torslanda",
     "plus": [
@@ -8509,6 +8617,7 @@
       "epost": "malin.tulldahl@aspelinramm.se"
     },
     "restid_kungalv_min_uppskattad": 28,
+    "parkering_status": "ja",
     "matchpoang": 67,
     "poangmotivering": "Yta 14,5/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -8550,7 +8659,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/sorhallstorget-10-goteborg"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "600 kvm kontor på Sörhallstorget i Eriksberg med Castellum som hyresvärd och utgångshyra 1 600 kr/kvm/år. Lokalen är i dagsläget rumsindelad med mötesrum, konferensrum och pentry, och tillträde anges till 2026-09-01. Parkering finns i garage i begränsat antal plus tillståndsparkering runt huset, och läget nås med buss och färja.",
     "plus": [
       "Hyresnivån är öppet redovisad: 1 600 kr/kvm/år i utgångshyra",
@@ -8583,6 +8692,7 @@
       "epost": "mathias.grahn@castellum.se"
     },
     "restid_kungalv_min_uppskattad": 27,
+    "parkering_status": "ja",
     "matchpoang": 67,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 0/20, Geografi 15/15, Hyra 10/10, Tillträde 4/5",
     "poangdelar": {
@@ -8624,7 +8734,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/flygledarevagen-1"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "291 kvm rumsindelat kontor på Flygledarevägen i Torslanda med kontorsrum i olika storlekar, kök, WC/RWC och dusch. Ytan kan enligt annonsen utökas med ca 30 kvm eller delas så att bara halva hyrs. Det finns gott om parkeringsplatser på fastigheten, men hyran är inte publicerad.",
     "bekraftelsecitat": "möjlighet att hyra denna flexibla och trevlig kontorslokal om 291 kvm",
     "plus": [
@@ -8663,6 +8773,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 28,
+    "parkering_status": "ja",
     "matchpoang": 67,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 0/20, Geografi 15/15, Hyra 10/10, Tillträde 4/5",
     "poangdelar": {
@@ -8704,7 +8815,7 @@
     "kalla_url": [
       "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/562138"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Innehållsfattig aggregatorannons: verksamhetslokaler.se listar ett kontor på ca 145 kvm på Dumpergatan i Kungälv (postnr 442 40) med enbart lokaltyp, yta och ort, och endast Google Street View som bild. Hyra står som \"Inte angivet\" och gatunummer samt kontaktuppgifter är låsta bakom registrering. Datumet 03.08.2026 är när annonsen drogs in i databasen, inte ett tillträdesdatum.",
     "bekraftelsecitat": "Lokaltyp: Kontor Storlek: Ca. 145 m2",
     "plus": [
@@ -8749,6 +8860,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 5,
+    "parkering_status": "okant",
     "matchpoang": 66,
     "poangmotivering": "Yta 23,5/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -8790,7 +8902,7 @@
     "kalla_url": [
       "https://www.lokalnytt.se/kontor/g%C3%B6teborg/rullagergatan-9-340527"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Nyrenoverat kontor på 290 kvm i East Square, ett hus från 1913 i Gamlestaden med spårvagn cirka 7 minuter från city. Annonsen lyfter parkering med laddmöjlighet, skyltläge och närhet till service, men säger ingenting om rumsindelning, öppen planlösning, mötesrum, våningsplan eller hyra. Hyresvärd är Aspelin Ramm och kontakten är Malin Tulldahl, vars telefon och e-post är dolda bakom annonsformuläret.",
     "bekraftelsecitat": "Nu har du chansen att hyra en nyrenoverad och flexibel kontorslokal om 290 kvm",
     "plus": [
@@ -8828,6 +8940,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 28,
+    "parkering_status": "ja",
     "matchpoang": 66,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 3,8/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -8869,7 +8982,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/vastra-gatan-71"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "135 kvm kontor på plan 4 med utsikt och hiss, mitt i centrala Kungälv. Annonsen är extremt kortfattad: varken planlösning, antal rum, hyra eller parkering anges. Att annonstexten talar om tillgänglighet 1/6 2024 tyder på att annonsen inte har uppdaterats.",
     "bekraftelsecitat": "Kontorslokal på 135 kvm belägen centralt i Kungälv",
     "plus": [
@@ -8907,6 +9020,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 4,
+    "parkering_status": "okant",
     "matchpoang": 66,
     "poangmotivering": "Yta 20,5/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -8948,7 +9062,7 @@
     "kalla_url": [
       "https://www.lokalguiden.se/lokal/1-backa-berg%C3%B6gata-14-backa"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontor om ca 280 kvm på våning 2 av 2 på Backa Bergögata 14, beskrivet som en rumsindelad planlösning. Annonsen är mycket kortfattad och säger ingenting om antal rum, mötesrum, parkering, dusch eller kollektivtrafik. Förmedlas av Relier med Christer Backman som kontakt.",
     "bekraftelsecitat": "Möjlighet att hyra kontor om ca 280 kvm på Backa Bergögata!",
     "plus": [
@@ -8982,6 +9096,7 @@
       "epost": "christer.backman@relier.se"
     },
     "restid_kungalv_min_uppskattad": 18,
+    "parkering_status": "okant",
     "matchpoang": 65,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 0/20, Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -9023,7 +9138,7 @@
     "kalla_url": [
       "https://www.verksamhetslokaler.se/hyra/kontorslokaler/vaestra-hisingen/607020"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Aggregatorannons för ca 115 kvm kontor på Gamla Flygplatsvägen i Västra Hisingen (postnr 42337, ID 607020). Den enda brödtexten är AI-genererad och handlar om området – den listar allmänna parkeringar och lunchställen i närheten, inte lokalens egna faciliteter. Hyra, rumsantal, våning, hyresvärd och kontaktuppgifter saknas helt.",
     "bekraftelsecitat": "Denna kontorslokal om cirka 115 m² är belägen i Västra Hisingen",
     "plus": [
@@ -9065,6 +9180,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 15,
+    "parkering_status": "ja",
     "matchpoang": 65,
     "poangmotivering": "Yta 14,5/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -9106,7 +9222,7 @@
     "kalla_url": [
       "https://alvstranden.se/lediga-lokaler/plejadgatan-3-758-kvm-2/"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontorslokal på 758 kvm på plan 2 i fastigheten Brasilia på Lindholmen, byggd 1950 och renoverad 2001, med utsikt över älven. Annonsen slår fast att det inte är öppen planlösning men att ljusinsläppet är bra, och priset anges till 1 600 kr/kvm/år på treårsavtal med drift och fastighetsskatt utöver. Parkering finns nära till hands och kollektivt reser man med buss till Lindholmsallén eller med Älvsnabben över älven.",
     "bekraftelsecitat": "\"Här har vi nu en kontorslokal om 758 kvm som är i fint skick\"",
     "plus": [
@@ -9139,6 +9255,7 @@
       "epost": "camilla.andersson@alvstranden.goteborg.se"
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "ja",
     "matchpoang": 65,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 0/20, Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -9180,7 +9297,7 @@
     "kalla_url": [
       "https://alvstranden.se/lediga-lokaler/frihamnsporten-4-332-kvm/"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontorslokal på 332 kvm i Frihamnen med en blandning av större och mindre rum som enligt annonsen kan användas till kontor, mötesrum eller kreativa arbetsytor. Spårvagn med hållplats precis utanför byggnaden sedan december 2025, och Nordstan samt centrala Göteborg ligger nära via Hisingsbron. Annonsen saknar helt uppgift om hyra, tillträde, våning och parkering; en planritning finns som PDF.",
     "bekraftelsecitat": "\"Lokalen som är 332 kvadratmeter stor erbjuder både större och mindre rum\"",
     "plus": [
@@ -9217,6 +9334,7 @@
       "epost": "camilla.andersson@alvstranden.goteborg.se"
     },
     "restid_kungalv_min_uppskattad": 24,
+    "parkering_status": "okant",
     "matchpoang": 65,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 0/20, Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -9258,7 +9376,7 @@
     "kalla_url": [
       "https://www.platzer.se/sv/lokaler/lindholmspiren-9-105-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "En ny egen kontorsenhet på 105 kvm på plan 5 som Platzer bygger för åtta medarbetare, där pentry och WC delas med våningsplanet och konferensrum, reception samt cykel- och omklädningsrum är gemensamma i huset. Läget på Lindholmen har Älvsnabben 50 meter bort och spårvagn/buss inom 300 meter. Parkering anges bara som \"Parkering i området\" och \"Besöksparkering\".",
     "bekraftelsecitat": "Lokaltyp Kontor Totalyta 105 m² Arbetsplatser 8 st",
     "plus": [
@@ -9296,6 +9414,7 @@
       "epost": "christina.olauson@platzer.se"
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "ja",
     "matchpoang": 64,
     "poangmotivering": "Yta 11,5/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -9338,7 +9457,7 @@
       "https://www.higab.se/lediga-lokaler/",
       "https://www.higab.se/vara-hus/larjeholms-gard/"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "587 kvm kontor i Lärjeholms Gård, ett byggnadsminne från 1790-talet som Higab hyr ut och där man aktivt söker en kontorsverksamhet. Detaljsidan ligger på objektvision.se och gick inte att hämta, så planlösning, rum, hyra, tillträde och parkering är okända. Läget i Angered ligger dessutom varken på Hisingen eller i Kungälv.",
     "bekraftelsecitat": "Kontor. Storlek: 587 kvm. Lärjeholmsvägen 12, Angered",
     "plus": [
@@ -9375,6 +9494,7 @@
       "epost": "glenn.westerberg@higab.se"
     },
     "restid_kungalv_min_uppskattad": 28,
+    "parkering_status": "okant",
     "matchpoang": 64,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 3,8/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -9416,7 +9536,7 @@
     "kalla_url": [
       "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/577529"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Annonsen är närmast tom: den anger bara att det är ett kontor på ca 130 kvm på Solbräckegatan i Kungälv (postnummer 442 45), listat 14.08.2026. Gatunummer, hyra och hyresvärdens kontaktuppgifter kräver inloggning eller registrering. Ingenting går att läsa ut om parkering, kontorsrum, mötesrum eller planlösning.",
     "bekraftelsecitat": "Kontor att hyra, Kungälv, Solbräckegatan … Ca. 130m2",
     "plus": [
@@ -9459,6 +9579,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 6,
+    "parkering_status": "okant",
     "matchpoang": 62,
     "poangmotivering": "Yta 19/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -9500,7 +9621,7 @@
     "kalla_url": [
       "https://www.lokalguiden.se/lokal/marieholmsgatan-36-marieholm-gamlestaden"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Nybyggt kontor på 210 kvm på översta planet i ett nyuppfört hus i Marieholm, med egen terrass mot stadens skyline. Annonsen anger två kontorsrum (ett tredje kan byggas), ett mötesrum och ett kök, men säger inget om öppen planlösning. Varken hyra, tillträde, parkering eller kollektivtrafik står i annonsen — parkeringen måste kontrolleras separat eftersom den är ett skallkrav.",
     "bekraftelsecitat": "Typ: Kontor, Kontorshotell · Minsta storlek: 210 m² · Hyra: Ej angiven",
     "plus": [
@@ -9534,6 +9655,7 @@
       "epost": "mikael.andersson@mikefastigheter.se"
     },
     "restid_kungalv_min_uppskattad": 28,
+    "parkering_status": "okant",
     "matchpoang": 61,
     "poangmotivering": "Yta 25/25, Rum 10/25, Öppen yta 10/20 (okänt → halv poäng), Geografi 3,8/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -9575,7 +9697,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/svarvaregatan-13"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontorslokal på 150 kvm på plan 2 i Kungälv, beskriven som fräsch och uppdelad i flera kontorsrum. En showroomyta kan hyras till, och annonsen lyfter goda parkeringsmöjligheter i direkt anslutning till fastigheten, även för kunder. Hyra, antal rum, mötesrum och kollektivtrafik saknas i annonsen.",
     "bekraftelsecitat": "Kontor Storlek 150 m² Hyra Kontakta hyresvärd Tillträde Enligt överenskommelse",
     "plus": [
@@ -9611,6 +9733,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 5,
+    "parkering_status": "ja",
     "matchpoang": 60,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 0/20, Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -9655,7 +9778,7 @@
       "https://www.lokalnytt.se/kontor/kung%C3%A4lv/hollandsgatan-5-340872",
       "https://www.lokalguiden.se/lokal/3-hollandsgatan-5-ytterby"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontorslokal på 300 kvm i centrala Ytterby, huvudsakligen rumsindelad men enligt annonsen enkel att anpassa till ett öppnare koncept eller dela av till en mindre enhet. Huset har mycket bra skyltläge och rymmer bland annat veterinär och ett populärt bageri. Annonsen motsäger sig själv om parkering: faktarutan säger nej medan texten lovar goda parkeringsmöjligheter i anslutning till fastigheten.",
     "bekraftelsecitat": "Kontor Butik Storlek 300 m² Hyra Kontakta hyresvärd",
     "plus": [
@@ -9693,6 +9816,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 8,
+    "parkering_status": "ja",
     "matchpoang": 60,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 0/20, Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -9734,7 +9858,7 @@
     "kalla_url": [
       "https://www.lokalguiden.se/lokal/2-herkulesgatan-1v-backaplan"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Nybyggt kontor på 110 kvm en trappa upp i Gamla Bultfabriken vid Hjalmar Brantingsplatsen. Lokalen består enligt annonsen av en stor öppen arbetsyta, en mindre öppen yta/funktionell zon och ett konferensrum – alltså inga separata kontorsrum – plus pentry, kaklad handikappanpassad toalett med dusch och direkt utgång till terrass. Gott om parkering inom fastigheten med helårs-P-tillstånd att köpa.",
     "bekraftelsecitat": "Välkommen till ett nybyggt och modernt kontor på 110 m²",
     "plus": [
@@ -9765,6 +9889,7 @@
       "epost": "lokalguiden@byggnadsbolaget.com"
     },
     "restid_kungalv_min_uppskattad": 22,
+    "parkering_status": "ja",
     "matchpoang": 58,
     "poangmotivering": "Yta 13/25, Rum 0/25, Öppen yta 15/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -9807,7 +9932,7 @@
       "https://www.lokalguiden.se/lokal/1-bultgatan-40b-kung%C3%A4lv",
       "https://www.portally.com/lokal/bultgatan-40b-480-kvm"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Färdigt kontor på 480 kvm i Rollsbo med flera enskilda kontorsrum i varierande storlek, konferensrum, mötesrum, reception, pausrum med pentry och lounge samt en stor terrass. Fastigheten har hiss, serverrum, kapprum, kopieringsrum, godsmottagning och flera WC inklusive RWC. Parkeringen är stark – både besöksparkering och garageplatser att hyra – men varken hyra, tillträde eller exakt antal rum står i annonsen (publicerad 2026-05-13).",
     "bekraftelsecitat": "möjlighet att hyra en modern och välplanerad kontorslokal om cirka 480 kvm",
     "okanda_falt": [
@@ -9842,6 +9967,7 @@
       "epost": "julia@loqalo.se"
     },
     "restid_kungalv_min_uppskattad": 5,
+    "parkering_status": "ja",
     "matchpoang": 58,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 0/20, Geografi 7,5/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -9883,7 +10009,7 @@
     "kalla_url": [
       "https://alvstranden.se/lediga-lokaler/theres-svenssons-gata-10-125-kvm/"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontor på 125 kvm i industribyggnaden Träverkstaden/Sågeriet mitt på Lindholmen, uthyrt av Älvstranden Utveckling. Lokalen består till största delen av enskilda kontorsrum plus förråd, eget pentry, WC och ett större rum för möten eller gemensamt arbete. Fastigheten har parkeringsgarage, laddstation för bil, dusch och solceller.",
     "bekraftelsecitat": "möjligheten att hyra en mångsidig och välplanerad kontorslokal på 125 kvm",
     "plus": [
@@ -9916,6 +10042,7 @@
       "epost": "marie.vulpe@alvstranden.goteborg.se"
     },
     "restid_kungalv_min_uppskattad": 26,
+    "parkering_status": "ja",
     "matchpoang": 58,
     "poangmotivering": "Yta 17,5/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 0/20, Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -9957,7 +10084,7 @@
     "kalla_url": [
       "https://www.lokalguiden.se/lokal/dumpergatan-4-kung%C3%A4lv"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Traditionellt rumsindelat kontor på 147 kvm i Rollsbo/Ytterby, tidigare använt av ett vårdbolag, med kök/pentry, WC och RWC, dusch och fiberanslutning. Både besöks- och personalparkering finns och busshållplatsen vid Rollsbokrysset ligger nära. Antal kontorsrum, våning, hyra och tillträde saknas i annonsen, som publicerades 2026-02-07.",
     "bekraftelsecitat": "ett fräscht och välhållet kontor om 147 kvm med bra standard och effektiv planlösning",
     "plus": [
@@ -9991,6 +10118,7 @@
       "epost": "olivia@loqalo.se"
     },
     "restid_kungalv_min_uppskattad": 5,
+    "parkering_status": "ja",
     "matchpoang": 57,
     "poangmotivering": "Yta 24,1/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 0/20, Geografi 7,5/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -10032,7 +10160,7 @@
     "kalla_url": [
       "https://www.lokalguiden.se/lokal/g%C3%B6teborgsv%C3%A4gen-64-ale"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontorslokal på 110 kvm med öppen planlösning i Surte centrum, cirka 10 minuter från Göteborg med kollektivtrafik och ca 20 minuter via E45 med bil. Annonsen är kortfattad och nämner varken kontorsrum, mötesrum, pentry, dusch eller våningsplan. Lokalen ligger i Ale kommun, alltså utanför både Hisingen och Kungälv.",
     "bekraftelsecitat": "110 m² Kontor",
     "plus": [
@@ -10067,6 +10195,7 @@
       "epost": "julia@loqalo.se"
     },
     "restid_kungalv_min_uppskattad": 22,
+    "parkering_status": "ja",
     "matchpoang": 57,
     "poangmotivering": "Yta 13/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 3,8/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -10108,7 +10237,7 @@
     "kalla_url": [
       "https://www.portally.com/lokal/backa-bergogata-5-2"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kompakt kontorslokal på 111 kvm i en Mileway-ägd kontors- och lagerfastighet i Backa, med kontorsrum i varierande storlekar, mötesrum, pentry/kök, pausyta, förråd och WC. Parkering finns i direkt anslutning till lokalen med möjlighet till elbilsladdning. Annonsen riktar sig uttryckligen till mindre företag, och 111 kvm blir trångt för 8–12 personer.",
     "bekraftelsecitat": "Kontorslokal om 111 kvm belägen på plan 1 i en välskött kontors- och lagerfastighet",
     "plus": [
@@ -10145,6 +10274,7 @@
       "epost": null
     },
     "restid_kungalv_min_uppskattad": 18,
+    "parkering_status": "ja",
     "matchpoang": 56,
     "poangmotivering": "Yta 13,3/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 0/20, Geografi 15/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
@@ -10186,7 +10316,7 @@
     "kalla_url": [
       "https://www.lokalguiden.se/lokal/17-vassgatan-3-%C3%B6stra-g%C3%B6teborg"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontorslokal om ca 301 kvm i markplan på Vassgatan 3 i Marieholm, med enskilda arbetsrum längs fönsterpartierna och gemensamma ytor för möten. Annonsen lyfter parkeringsmöjligheter vid fastigheten, älvutsikt och god tillgång till kollektivtrafik och vägnät. Hyra, tillträde och antal rum saknas helt i annonsen och måste efterfrågas hos loqalo.",
     "bekraftelsecitat": "möjlighet att hyra en kontorslokal om cirka 301 kvm",
     "plus": [
@@ -10221,6 +10351,7 @@
       "epost": "sofie@loqalo.se"
     },
     "restid_kungalv_min_uppskattad": 27,
+    "parkering_status": "ja",
     "matchpoang": 54,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 0/20, Geografi 3,8/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {
@@ -10262,7 +10393,7 @@
     "kalla_url": [
       "https://www.lokalguiden.se/lokal/g%C3%B6teborgsv%C3%A4gen-93a-ale"
     ],
-    "hamtad_datum": "2026-08-21",
+    "hamtad_datum": "2026-08-22",
     "beskrivning": "Lokal om 424 kvm i bottenvåningen centralt i Surte med flera kontorsrum, konferensrum, pentry, två entréer och två tillgänglighetsanpassade toaletter. Annonsen framhåller närheten till E45 och pendeltåg med 10–20 minuter till Göteborg, men beskriver lokalen som idealisk för vård eller utbildning. Parkering, hyra och tillträde saknas i annonsen, som dessutom är publicerad så långt tillbaka som december 2023.",
     "bekraftelsecitat": "Här erbjuds en fräsch och välplanerad lokal på 424 kvm",
     "plus": [
@@ -10299,6 +10430,7 @@
       "epost": "mikael@loqalo.se"
     },
     "restid_kungalv_min_uppskattad": 22,
+    "parkering_status": "okant",
     "matchpoang": 54,
     "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 0/20, Geografi 3,8/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
     "poangdelar": {

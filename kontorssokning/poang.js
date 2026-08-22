@@ -144,18 +144,34 @@ function poangTilltrade(o, params) {
 
 // --- Plus, minus och flaggor ----------------------------------------------
 
+// Parkering är Axels skallkrav, så statusen ska vara ett fält – inte något man
+// läser ut ur fritext på två olika sätt och får två olika svar.
+export function parkeringsstatus(o) {
+  const p = (o.parkering || '').toLowerCase();
+  if (!o.parkering) return 'okant';
+  if (
+    /saknas|ingen p|ej parkering|inga p-platser/.test(p) ||
+    /(bilparkering|parkering)[^.]{0,40}(nämns inte|står inte|anges inte|finns inte)/.test(p) ||
+    /endast\s+"?cykelparkering|bara cykelparkering/.test(p)
+  ) {
+    return 'nej';
+  }
+  if (/^\s*(endast\s+)?cykel/.test(p)) return 'nej';
+  return 'ja';
+}
+
 function berikaFlaggor(o, params, restid) {
   const plus = [...(o.plus || [])];
   const minus = [...(o.minus || [])];
   const okanda = new Set(o.okanda_falt || []);
 
   // Parkering är ett skallkrav i Axels parametrar men står inte i alla annonser.
-  const p = (o.parkering || '').toLowerCase();
-  if (!o.parkering) {
+  const parkering = parkeringsstatus(o);
+  if (parkering === 'okant') {
     okanda.add('parkering');
     minus.push('parkering ej angiven — måste kollas (krav)');
-  } else if (/saknas|ingen p|ej parkering|inga p-platser/.test(p)) {
-    minus.push('ingen parkering — bryter mot kravet');
+  } else if (parkering === 'nej') {
+    minus.push('bilparkering nämns inte i annonsen — bryter mot kravet');
   } else if (!plus.some((x) => /parkering|p-plats/i.test(x))) {
     plus.push(`parkering: ${o.parkering}`);
   }
@@ -182,7 +198,8 @@ function berikaFlaggor(o, params, restid) {
   if (!o.kontakt_epost) okanda.add('kontakt.epost');
   if (!o.kontakt_telefon) okanda.add('kontakt.telefon');
 
-  return { plus: [...new Set(plus)], minus: [...new Set(minus)], okanda_falt: [...okanda] };
+  const renadePlus = parkering === 'ja' ? plus : plus.filter((x) => !/parkering|p-plats|garage/i.test(x));
+  return { plus: [...new Set(renadePlus)], minus: [...new Set(minus)], okanda_falt: [...okanda], parkering_status: parkering };
 }
 
 // --- Huvudfunktion ---------------------------------------------------------
@@ -238,6 +255,7 @@ export function poangsatt(raaObjekt, params) {
     hyra_kr_kvm_ar: kvmAr,
     hyra_anmarkning: anm ?? null,
     restid_kungalv_min_uppskattad: restid,
+    parkering_status: flaggor.parkering_status,
     matchpoang: Math.round(summa),
     poangmotivering: motivering,
     poangdelar: Object.fromEntries(Object.entries(delar).map(([k, d]) => [k, Math.round(d.p * 10) / 10])),
