@@ -7,47 +7,163 @@
       }
     },
     "hero": {
-      "type": "rich-text",
+      "type": "image-banner",
       "blocks": {
         "h": {
           "type": "heading",
           "settings": {
-            "heading": "Presenten som får dem att skratta",
-            "heading_size": "h0"
+            "heading": "Strumpor som ser ut som mat",
+            "heading_size": "h1"
           }
         },
         "t": {
           "type": "text",
           "settings": {
-            "text": "<p>Strumpor som ser ut som mat. Levereras presentklart, med fri frakt i hela Sverige.</p>"
+            "text": "Gåvan de skrattar åt först – och sen använder varje vecka. Levereras i en presentförpackning som ser ut som riktig mat.",
+            "text_style": "body"
           }
         },
         "b": {
-          "type": "button",
+          "type": "buttons",
           "settings": {
-            "button_label": "Se alla strumpor",
-            "button_link": "shopify://collections/alla-produkter",
-            "button_style_secondary": false
+            "button_label_1": "Handla nu",
+            "button_link_1": "shopify://collections/strumporna",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": true
           }
         }
       },
-      "block_order": ["h", "t", "b"],
+      "block_order": [
+        "h",
+        "t",
+        "b"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/hf_20260225_045241_92dce67d-dbb6-4a7b-a5ff-ca8ba3833899.jpg",
+        "image_overlay_opacity": 10,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "scheme-1",
+        "image_behavior": "none",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "ms_marquee": {
+      "type": "ms-marquee",
+      "settings": {
+        "items": "Älskad av tusentals svenskar|Fri frakt i Sverige|30 dagars öppet köp|Levereras presentklart",
+        "speed": 26,
+        "background": "#dd821d",
+        "text_color": "#fdfbf7"
+      }
+    },
+    "produkt": {
+      "type": "featured-product",
+      "blocks": {
+        "etikett": {
+          "type": "text",
+          "settings": {
+            "text": "Bästsäljaren",
+            "text_style": "uppercase"
+          }
+        },
+        "titel": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "pris": {
+          "type": "price",
+          "settings": {}
+        },
+        "varianter": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "paket": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'ms-paket', product: section.settings.product, section_id: section.id %}"
+          }
+        },
+        "kop": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        }
+      },
+      "block_order": [
+        "etikett",
+        "titel",
+        "pris",
+        "varianter",
+        "paket",
+        "kop"
+      ],
+      "settings": {
+        "product": "sushi-strumpor",
+        "color_scheme": "scheme-1",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "berattelse": {
+      "type": "rich-text",
+      "blocks": {
+        "h": {
+          "type": "heading",
+          "settings": {
+            "heading": "Strumpor man aldrig blandar ihop",
+            "heading_size": "h1"
+          }
+        },
+        "t": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Alla går kort om strumpor, och udda par är vardag. De här blandar du aldrig ihop – de ser ut som sushi, pizza, hamburgare och donuts.</p><p>Det börjar med ett skratt när lådan öppnas. Sen blir de favoritparet i lådan. En rolig gåva – i formen av något de redan älskar.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "h",
+        "t"
+      ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
         "full_width": true,
-        "padding_top": 52,
-        "padding_bottom": 52
+        "padding_top": 44,
+        "padding_bottom": 28
       }
     },
-    "produkter": {
+    "sortiment": {
       "type": "featured-collection",
       "settings": {
-        "title": "Alla strumpor",
+        "title": "Hela sortimentet",
         "heading_size": "h1",
-        "collection": "alla-produkter",
-        "products_to_show": 8,
+        "collection": "strumporna",
+        "products_to_show": 4,
         "columns_desktop": 4,
         "full_width": false,
         "show_view_all": true,
@@ -66,29 +182,132 @@
         "padding_bottom": 40
       }
     },
-    "ms_marquee": {
-      "type": "ms-marquee",
+    "statement": {
+      "type": "rich-text",
+      "blocks": {
+        "h": {
+          "type": "heading",
+          "settings": {
+            "heading": "Från sushi till donuts – en strumpa för allt de älskar att äta",
+            "heading_size": "h1"
+          }
+        },
+        "b": {
+          "type": "button",
+          "settings": {
+            "button_label": "Se alla strumpor",
+            "button_link": "shopify://collections/strumporna",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "h",
+        "b"
+      ],
       "settings": {
-        "items": "Älskad av tusentals svenskar|Fri frakt i Sverige|30 dagars öppet köp|Levereras presentklart",
-        "speed": 26,
-        "background": "#dd821d",
-        "text_color": "#fdfbf7"
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     },
-    "ms_compare": {
-      "type": "ms-compare",
+    "omdomen": {
+      "type": "ms-review-slider",
       "blocks": {
-        "r1": { "type": "row", "settings": { "feature": "Fri frakt i Sverige", "us": true, "them": false } },
-        "r2": { "type": "row", "settings": { "feature": "30 dagars öppet köp", "us": true, "them": false } },
-        "r3": { "type": "row", "settings": { "feature": "Levereras presentklart", "us": true, "them": false } },
-        "r4": { "type": "row", "settings": { "feature": "En storlek passar alla", "us": true, "them": false } }
+        "r1": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": "",
+            "body": "Jättefina i rolig förpackning! Snabb leverans",
+            "name": "Wide Pia",
+            "verified": true
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": "",
+            "body": "Uppskattat och rolig present",
+            "name": "Jonas",
+            "verified": true
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "stars": 4,
+            "title": "",
+            "body": "Ser helt fantastiskt ut. Ej öppnat då de är en gåva.",
+            "name": "Gittan",
+            "verified": true
+          }
+        },
+        "r4": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": "",
+            "body": "Jättefina!!!",
+            "name": "Annika",
+            "verified": true
+          }
+        }
       },
-      "block_order": ["r1", "r2", "r3", "r4"],
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
       "settings": {
-        "eyebrow": "Varför just den här",
-        "heading": "Matstrumpor mot en vanlig present",
-        "us_label": "Matstrumpor",
-        "them_label": "Vanlig present"
+        "visible": true,
+        "eyebrow": "Verifierade köp",
+        "heading": "Vad kunderna säger",
+        "ab_test": "",
+        "ab_variant": ""
+      }
+    },
+    "trygghet": {
+      "type": "image-with-text",
+      "blocks": {
+        "h": {
+          "type": "heading",
+          "settings": {
+            "heading": "Handla tryggt hos oss",
+            "heading_size": "h2"
+          }
+        },
+        "t": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Fri frakt på alla ordrar och 30 dagars öppet köp, så att du kan handla utan stress.</p><p>Betala som du vill – Klarna, kort, Apple Pay eller Google Pay.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "h",
+        "t"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/WhatsAppImage2025-11-25at08.41.59_5.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "ms_faq": {
@@ -116,7 +335,11 @@
           }
         }
       },
-      "block_order": ["q1", "q2", "q3"],
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
       "settings": {
         "heading": "Vanliga frågor"
       }
@@ -133,9 +356,13 @@
   "order": [
     "ms_usp",
     "hero",
-    "produkter",
     "ms_marquee",
-    "ms_compare",
+    "produkt",
+    "berattelse",
+    "sortiment",
+    "statement",
+    "omdomen",
+    "trygghet",
     "ms_faq",
     "ms_guarantee"
   ]
