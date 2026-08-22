@@ -106,7 +106,6 @@
 
             assign ordinarie = v.price | times: antal | plus: gvarde
             assign kundpris = ordinarie | minus: rabatt
-            assign per_styck = kundpris | divided_by: antal
             assign vald = niva.forvald.value
           -%}
           <label class="ms-paket__opt">
@@ -139,9 +138,6 @@
                 {%- if rabatt > 0 -%}
                   <span class="ms-paket__forr" data-ms-paket-forr>{{ ordinarie | money }}</span>
                 {%- endif -%}
-                {%- if antal > 1 -%}
-                  <span class="ms-paket__styck" data-ms-paket-styck>{{ per_styck | money }} / st</span>
-                {%- endif -%}
               </span>
             </span>
             {%- if gantal > 0 and niva.gratis_text.value != blank -%}
@@ -160,9 +156,6 @@
                 </span>
                 <span class="ms-paket__gava-varde">värde {{ gvarde | money }}</span>
               </span>
-            {%- endif -%}
-            {%- if rabatt > 0 -%}
-              <span class="ms-paket__spar" data-ms-paket-spar>Du sparar {{ rabatt | money }}</span>
             {%- endif -%}
           </label>
           {%- assign visade = visade | plus: 1 -%}
