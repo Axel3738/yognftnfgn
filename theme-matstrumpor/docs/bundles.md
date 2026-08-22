@@ -135,7 +135,20 @@ kassan tar 369 kr. Fastprisfältet används inte i BOGO-läge.
 `ms-paket__gava` — streckad grön remsa under kortet med pinnarnas
 produktbild, "Gratis på köpet" och värdet. Samma grepp som Kaching.
 
-## Pizza, hamburgare och donut: kvar i fastprisläge
+## Uppdatering 2026-08-22 (kväll): ALLA fyra kör BOGO nu
+
+Axel godkände prishöjningen på 4-packen. Pizza/hamburgare/donut har samma
+köp-X-få-Y-arkitektur som sushin: koder `PIZZA-K1F1`, `PIZZA-K2F2`,
+`HAMBURGARE-K1F1/K2F2`, `DONUT-K1F1/K2F2`, metaobjekten i BOGO-läge
+(`bogo_gratis` 1/2), gamla `PAKET-*`-koderna avaktiverade. Kassatestat:
+pizza 449/898, hamburgare 299/598, donut 299/598 — pinnarna 0,00 kr överallt.
+
+Gåvoremsan är dessutom tillståndsstyrd: grå och nedtonad tills nivån väljs,
+grön när den är vald (`:checked ~ .ms-paket__gava` i ms-paket.css).
+
+Avsnittet nedan beskriver läget FÖRE detta och behålls som historik.
+
+## Pizza, hamburgare och donut: kvar i fastprisläge (HISTORIK, gäller inte längre)
 
 De kör sina ursprungliga koder (`PAKET-PIZZA-2` osv) med belopp mot hela
 kundvagnen. Totalen är rätt på öret, men kassan SMETAR UT rabatten över alla

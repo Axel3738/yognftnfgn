@@ -157,9 +157,9 @@
     "brand_description": "<p></p>",
     "brand_image_width": 100,
     "social_twitter_link": "",
-    "social_facebook_link": "",
+    "social_facebook_link": "https://www.facebook.com/profile.php?id=61584643820493",
     "social_pinterest_link": "",
-    "social_instagram_link": "",
+    "social_instagram_link": "https://www.instagram.com/matstrumpor.se/",
     "social_tiktok_link": "",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
@@ -192,6 +192,11 @@
     "blocks": {
       "judgeme_karna": {
         "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {}
+      },
+      "klaviyo": {
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
         "settings": {}
       }
