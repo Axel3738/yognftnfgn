@@ -1,6 +1,6 @@
 {
-  "_not": "Standardstegen för HELA katalogen enligt Axels schema 2026-08-22: 1x ordinarie pris (jämförpriset +30 % i Shopify visar rean — useProductCompareAtPrice:true), 2 st −15 %, 3 st −20 %. Marginalsäkrad: max-rabatterna ur offert 2 är 18,4 % (2-pack) / 24,5 % (3-pack) på sämsta produkten (båtmotorskyddet) — 15/20 ligger under. Uppdatera LIVE-blocket med: node kaching.mjs update --store baverbutiken --id 38b39d0c-4f43-4103-88ae-d18654254905 --file payloads/baverbutiken-standardstege.json",
-  "blockName": "Standardstege – alla produkter",
+  "_not": "Alla-produkter-stegen för beverbutikken enligt Axels schema 2026-08-22 (1x ordinarie + jämförpris +30 %, 2x −15 %, 3x −20 %). KRÄVER att Kaching Bundles-appen är installerad i butiken först. Kör: node kaching.mjs create --store beverbutikken --file payloads/beverbutikken-standardstege.json",
+  "blockName": "Standardstige – alle produkter",
   "blockTitle": "",
   "discountName": "",
   "blockLayout": "vertical",
@@ -41,7 +41,7 @@
   "dealBars": [
     {
       "id": "st1a",
-      "title": "1 st",
+      "title": "1 stk",
       "subtitle": "",
       "label": "",
       "badgeStyle": "simple",
@@ -70,11 +70,11 @@
     },
     {
       "id": "st2b",
-      "title": "2 st – spara 15 %",
-      "subtitle": "Mest vald",
+      "title": "2 stk – spar 15 %",
+      "subtitle": "Mest valgt",
       "label": "",
       "badgeStyle": "simple",
-      "badgeText": "Mest populär",
+      "badgeText": "Mest populær",
       "badgeImageGID": null,
       "mediaImageGID": null,
       "featuredMediaGID": null,
@@ -99,8 +99,8 @@
     },
     {
       "id": "st3c",
-      "title": "3 st – spara 20 %",
-      "subtitle": "Bästa priset",
+      "title": "3 stk – spar 20 %",
+      "subtitle": "Beste pris",
       "label": "",
       "badgeStyle": "simple",
       "badgeText": "",

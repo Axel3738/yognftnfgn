@@ -5,5 +5,29 @@
     "myshopify": "4snrw0-mg.myshopify.com",
     "publicUrl": "https://baverbutiken.se",
     "themeId": null
+  },
+  "beverbutikken": {
+    "handle": "1acuam-s5",
+    "myshopify": "1acuam-s5.myshopify.com",
+    "publicUrl": "https://beverbutikken.no",
+    "themeId": null
+  },
+  "baeverbutiken": {
+    "handle": "v0xqtk-tx",
+    "myshopify": "v0xqtk-tx.myshopify.com",
+    "publicUrl": "https://bæverbutiken.dk",
+    "themeId": null
+  },
+  "majavakauppa": {
+    "handle": "q0uthu-xq",
+    "myshopify": "q0uthu-xq.myshopify.com",
+    "publicUrl": "https://majavakauppa.fi",
+    "themeId": null
+  },
+  "beavershop": {
+    "handle": "1wucum-x0",
+    "myshopify": "1wucum-x0.myshopify.com",
+    "publicUrl": "https://beavershop.co.uk",
+    "themeId": null
   }
 }

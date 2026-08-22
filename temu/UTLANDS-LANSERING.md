@@ -281,6 +281,20 @@ block) ligger på Axels dator: `payloads/baverbutiken-standardstege.v2.json` —
 utgå från den vid utrullning till NO/DK/FI/UK (samma stege, landets språk på
 titlarna). Se uppdaterade gotchas i `api-map.json`.
 
+**AXELS SCHEMA 2026-08-22 (ersätter stegen ovan):** jämförpris = pris × 1,3 i
+Shopify (1x-raden visar då rean själv via `useProductCompareAtPrice`), 1x
+ordinarie pris, **2 st −15 %, 3 st −20 %**. Genomfört från molnet samma dag:
+jämförpriserna satta på de 8 ramverksprodukternas alla varianter i ALLA FEM
+butikerna (`temu/utrullning/jamforpris.mjs` — rör inte övriga katalogen, t.ex.
+axelbältets medvetna 678 kr). Payloader för alla fem butiker ligger i
+`payloads/*-standardstege.json` (lokala titlar, preselect 1x), stores.json har
+alla fem handles. Molnet verifierade också via storefront-läsvägen att Kaching
+är installerad + embedden på i alla fem butiker, och att INGEN av de 8 nya
+produkterna täcks av något befintligt utlandsblock (de gamla
+selected-products-blocken där hör till 25-katalogen). Själva stegarna kräver
+Axels Mac — exakt körordning står i `kaching-cli/KÖR-FÖR-BÄVERBUTIKEN.md`
+(1 update för SE-blocket + 4 create för utland).
+
 **Ursprunglig analys (fortsatt sann för Shopify-vägen):** Verifierat 2026-08-21 i sidkoden på bäverbutiken.se:
 appen är installerad (app embed `kaching-bundles-1952` + loader.js), men deal-
 konfigurationen ligger i Kachings egen backend och hämtas av deras script i
