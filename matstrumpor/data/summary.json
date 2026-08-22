@@ -1,0 +1,1929 @@
+{
+ "generatedFrom": "orders.jsonl",
+ "totalOrdersInFile": 3407,
+ "p1": {
+  "period": "jul_nov_dec_2025",
+  "orders": 1665,
+  "cancelled": 4,
+  "revenue": 600523,
+  "aov": {
+   "mean": 360.7,
+   "median": 299,
+   "p25": 299,
+   "p75": 399,
+   "p90": 399,
+   "max": 1198
+  },
+  "refunds": {
+   "orders": 4,
+   "amount": 1597,
+   "orderShare": 0.0024
+  },
+  "uniqueCustomers": 1609,
+  "customersWithMultipleOrdersWithinPeriod": 53,
+  "hours": {
+   "0": 13,
+   "1": 5,
+   "2": 1,
+   "3": 3,
+   "4": 2,
+   "5": 9,
+   "6": 36,
+   "7": 49,
+   "8": 120,
+   "9": 156,
+   "10": 139,
+   "11": 130,
+   "12": 115,
+   "13": 117,
+   "14": 92,
+   "15": 83,
+   "16": 89,
+   "17": 91,
+   "18": 63,
+   "19": 84,
+   "20": 67,
+   "21": 84,
+   "22": 75,
+   "23": 42
+  },
+  "weekdays": {
+   "tors": 258,
+   "fre": 198,
+   "lör": 239,
+   "sön": 233,
+   "mån": 245,
+   "tis": 223,
+   "ons": 269
+  },
+  "topDates": [
+   [
+    "2025-12-14",
+    121
+   ],
+   [
+    "2025-12-08",
+    114
+   ],
+   [
+    "2025-12-10",
+    113
+   ],
+   [
+    "2025-12-13",
+    107
+   ],
+   [
+    "2025-12-11",
+    106
+   ],
+   [
+    "2025-12-15",
+    106
+   ],
+   [
+    "2025-12-06",
+    91
+   ],
+   [
+    "2025-12-16",
+    91
+   ],
+   [
+    "2025-12-12",
+    89
+   ],
+   [
+    "2025-12-17",
+    78
+   ],
+   [
+    "2025-12-07",
+    74
+   ],
+   [
+    "2025-12-04",
+    72
+   ],
+   [
+    "2025-12-09",
+    72
+   ],
+   [
+    "2025-12-03",
+    66
+   ],
+   [
+    "2025-12-05",
+    65
+   ]
+  ],
+  "topFirstNames": [
+   [
+    "Maria",
+    33
+   ],
+   [
+    "Anna",
+    27
+   ],
+   [
+    "Eva",
+    26
+   ],
+   [
+    "Anders",
+    25
+   ],
+   [
+    "Lena",
+    24
+   ],
+   [
+    "Karin",
+    24
+   ],
+   [
+    "Johan",
+    24
+   ],
+   [
+    "Fredrik",
+    19
+   ],
+   [
+    "Magnus",
+    19
+   ],
+   [
+    "Per",
+    18
+   ],
+   [
+    "Mats",
+    17
+   ],
+   [
+    "Mikael",
+    16
+   ],
+   [
+    "Åsa",
+    16
+   ],
+   [
+    "Daniel",
+    15
+   ],
+   [
+    "Patrik",
+    15
+   ],
+   [
+    "Helena",
+    15
+   ],
+   [
+    "Ann",
+    14
+   ],
+   [
+    "Katarina",
+    14
+   ],
+   [
+    "Linda",
+    14
+   ],
+   [
+    "Gunilla",
+    13
+   ],
+   [
+    "Kerstin",
+    13
+   ],
+   [
+    "Annika",
+    13
+   ],
+   [
+    "Peter",
+    13
+   ],
+   [
+    "Sara",
+    13
+   ],
+   [
+    "Martin",
+    13
+   ],
+   [
+    "Carina",
+    12
+   ],
+   [
+    "Birgitta",
+    11
+   ],
+   [
+    "Cecilia",
+    11
+   ],
+   [
+    "Jenny",
+    11
+   ],
+   [
+    "Stefan",
+    11
+   ],
+   [
+    "Lars",
+    11
+   ],
+   [
+    "Agneta",
+    10
+   ],
+   [
+    "Anette",
+    10
+   ],
+   [
+    "Erik",
+    10
+   ],
+   [
+    "Christian",
+    10
+   ],
+   [
+    "Lisa",
+    10
+   ],
+   [
+    "Marie",
+    9
+   ],
+   [
+    "Christina",
+    9
+   ],
+   [
+    "Monica",
+    9
+   ],
+   [
+    "Thomas",
+    9
+   ],
+   [
+    "Camilla",
+    9
+   ],
+   [
+    "Johanna",
+    9
+   ],
+   [
+    "Emma",
+    9
+   ],
+   [
+    "Henrik",
+    9
+   ],
+   [
+    "Elisabeth",
+    9
+   ],
+   [
+    "Jonas",
+    9
+   ],
+   [
+    "Mattias",
+    9
+   ],
+   [
+    "Hans",
+    8
+   ],
+   [
+    "Jesper",
+    8
+   ],
+   [
+    "Niklas",
+    8
+   ],
+   [
+    "Susanne",
+    8
+   ],
+   [
+    "Kristina",
+    8
+   ],
+   [
+    "Sofia",
+    8
+   ],
+   [
+    "Jan",
+    8
+   ],
+   [
+    "Håkan",
+    8
+   ],
+   [
+    "Andreas",
+    8
+   ],
+   [
+    "Robert",
+    8
+   ],
+   [
+    "Ulla",
+    7
+   ],
+   [
+    "Monika",
+    7
+   ],
+   [
+    "Inger",
+    7
+   ],
+   [
+    "Lotta",
+    7
+   ],
+   [
+    "Malin",
+    7
+   ],
+   [
+    "Ulrika",
+    7
+   ],
+   [
+    "Hanna",
+    7
+   ],
+   [
+    "Ingrid",
+    6
+   ],
+   [
+    "Pia",
+    6
+   ],
+   [
+    "Mia",
+    6
+   ],
+   [
+    "Viktoria",
+    6
+   ],
+   [
+    "Margareta",
+    6
+   ],
+   [
+    "Jessica",
+    6
+   ],
+   [
+    "Christer",
+    6
+   ],
+   [
+    "Nina",
+    6
+   ],
+   [
+    "Marcus",
+    6
+   ],
+   [
+    "Gunnar",
+    6
+   ],
+   [
+    "Anita",
+    6
+   ],
+   [
+    "Gun",
+    5
+   ],
+   [
+    "Tobias",
+    5
+   ],
+   [
+    "Ulf",
+    5
+   ],
+   [
+    "Kristoffer",
+    5
+   ],
+   [
+    "Lisbeth",
+    5
+   ],
+   [
+    "Bengt",
+    5
+   ],
+   [
+    "Susanna",
+    5
+   ],
+   [
+    "Marianne",
+    5
+   ],
+   [
+    "Tommy",
+    5
+   ],
+   [
+    "Bo",
+    5
+   ],
+   [
+    "Helene",
+    5
+   ],
+   [
+    "David",
+    5
+   ],
+   [
+    "Pernilla",
+    5
+   ],
+   [
+    "Kjell",
+    5
+   ],
+   [
+    "Björn",
+    5
+   ],
+   [
+    "Lennart",
+    5
+   ],
+   [
+    "Michael",
+    5
+   ],
+   [
+    "Karl",
+    4
+   ],
+   [
+    "Liselotte",
+    4
+   ],
+   [
+    "Annelie",
+    4
+   ],
+   [
+    "Petra",
+    4
+   ],
+   [
+    "Tomas",
+    4
+   ],
+   [
+    "Ann-Charlotte",
+    4
+   ],
+   [
+    "Roger",
+    4
+   ],
+   [
+    "Leif",
+    4
+   ],
+   [
+    "Helen",
+    4
+   ],
+   [
+    "Torbjörn",
+    4
+   ],
+   [
+    "Charlotta",
+    4
+   ],
+   [
+    "Jeanette",
+    4
+   ],
+   [
+    "Marita",
+    4
+   ],
+   [
+    "Carolina",
+    4
+   ],
+   [
+    "Emil",
+    4
+   ],
+   [
+    "Conny",
+    4
+   ],
+   [
+    "Siv",
+    4
+   ],
+   [
+    "Christine",
+    4
+   ],
+   [
+    "Sanna",
+    4
+   ],
+   [
+    "Catarina",
+    4
+   ],
+   [
+    "Kenneth",
+    4
+   ],
+   [
+    "Jimmy",
+    4
+   ],
+   [
+    "Sonja",
+    3
+   ],
+   [
+    "Kristin",
+    3
+   ],
+   [
+    "Emelie",
+    3
+   ],
+   [
+    "Jerry",
+    3
+   ],
+   [
+    "Tina",
+    3
+   ],
+   [
+    "Anneli",
+    3
+   ]
+  ],
+  "topCities": [
+   [
+    "Stockholm",
+    86
+   ],
+   [
+    "Göteborg",
+    33
+   ],
+   [
+    "Uppsala",
+    26
+   ],
+   [
+    "Malmö",
+    24
+   ],
+   [
+    "GÖteborg",
+    20
+   ],
+   [
+    "Sollentuna",
+    19
+   ],
+   [
+    "Huddinge",
+    18
+   ],
+   [
+    "Bromma",
+    16
+   ],
+   [
+    "Täby",
+    16
+   ],
+   [
+    "Örebro",
+    15
+   ],
+   [
+    "Hägersten",
+    14
+   ],
+   [
+    "Västerås",
+    14
+   ],
+   [
+    "Umeå",
+    14
+   ],
+   [
+    "Lund",
+    13
+   ],
+   [
+    "Eskilstuna",
+    12
+   ],
+   [
+    "Helsingborg",
+    12
+   ],
+   [
+    "Jönköping",
+    11
+   ],
+   [
+    "Solna",
+    11
+   ],
+   [
+    "Sundbyberg",
+    11
+   ],
+   [
+    "Åkersberga",
+    11
+   ],
+   [
+    "Halmstad",
+    10
+   ],
+   [
+    "Älvsjö",
+    10
+   ],
+   [
+    "Visby",
+    10
+   ],
+   [
+    "Lidingö",
+    10
+   ],
+   [
+    "Västra Frölunda",
+    9
+   ],
+   [
+    "Nyköping",
+    9
+   ],
+   [
+    "TÄby",
+    9
+   ],
+   [
+    "Kalmar",
+    9
+   ],
+   [
+    "Sundsvall",
+    9
+   ],
+   [
+    "MalmÖ",
+    8
+   ]
+  ],
+  "regions": [
+   [
+    "Storstockholm",
+    478
+   ],
+   [
+    "Storgöteborg",
+    181
+   ],
+   [
+    "Skåne/Blekinge övr",
+    126
+   ],
+   [
+    "Uppsala/Roslagen",
+    80
+   ],
+   [
+    "Malmö/Skåne väst",
+    75
+   ],
+   [
+    "Småland/Öland",
+    59
+   ],
+   [
+    "Skaraborg",
+    59
+   ],
+   [
+    "Dalarna",
+    53
+   ],
+   [
+    "Halland/Småland väst",
+    47
+   ],
+   [
+    "Östergötland syd",
+    47
+   ],
+   [
+    "Västerås",
+    38
+   ],
+   [
+    "Gävleborg",
+    38
+   ],
+   [
+    "Umeå/Västerbotten",
+    38
+   ],
+   [
+    "Norrköping",
+    38
+   ],
+   [
+    "Jönköping",
+    37
+   ],
+   [
+    "Eskilstuna/Sörmland",
+    37
+   ],
+   [
+    "Bohuslän/Trollhättan",
+    36
+   ],
+   [
+    "Örebro",
+    27
+   ],
+   [
+    "Skellefteå/Piteå",
+    23
+   ],
+   [
+    "okänd",
+    22
+   ],
+   [
+    "Karlstad/Värmland",
+    20
+   ],
+   [
+    "Norrbotten",
+    19
+   ],
+   [
+    "Jämtland/Härjedalen",
+    18
+   ],
+   [
+    "Borås/Sjuhärad",
+    16
+   ],
+   [
+    "Sundsvall",
+    15
+   ],
+   [
+    "Värmland övr",
+    13
+   ],
+   [
+    "Gotland",
+    13
+   ],
+   [
+    "Västernorrland övr",
+    12
+   ]
+  ],
+  "countries": {
+   "SE": 1665
+  },
+  "gift": {
+   "nameMismatch": 73,
+   "nameComparable": 1642,
+   "nameMismatchShare": 0.0445,
+   "zipDiff": 47,
+   "zipComparable": 1665,
+   "zipDiffShare": 0.0282
+  },
+  "products": [
+   [
+    "Sushi-Strumpor",
+    2624
+   ],
+   [
+    "Presentkort",
+    138
+   ],
+   [
+    "Skrubbmattan - Tvätta fötterna utan att böja dig – gör duschen tryggare och enklare varje dag!",
+    59
+   ],
+   [
+    "Donut-strumpor",
+    42
+   ],
+   [
+    "Fixkliniken Multiband - Stärk din kropp enkelt hemma!",
+    18
+   ],
+   [
+    "Garanti för säker Frakt",
+    16
+   ],
+   [
+    "Fixkliniken Multiband Guide – Din enkla guide till rörelse och styrka hemma",
+    10
+   ],
+   [
+    "OrtoFlex Pro",
+    1
+   ]
+  ],
+  "variants": [
+   [
+    "Sushi-Strumpor | 5 - Par",
+    2576
+   ],
+   [
+    "Presentkort | 150,00 kr",
+    138
+   ],
+   [
+    "Sushi-Strumpor | 3 - Par",
+    48
+   ],
+   [
+    "Donut-strumpor | (standard)",
+    42
+   ],
+   [
+    "Skrubbmattan - Tvätta fötterna utan att böja dig – gör duschen tryggare och enklare varje dag! | Grå",
+    24
+   ],
+   [
+    "Skrubbmattan - Tvätta fötterna utan att böja dig – gör duschen tryggare och enklare varje dag! | Rosa",
+    20
+   ],
+   [
+    "Garanti för säker Frakt | (standard)",
+    16
+   ],
+   [
+    "Skrubbmattan - Tvätta fötterna utan att böja dig – gör duschen tryggare och enklare varje dag! | Blå",
+    15
+   ],
+   [
+    "Fixkliniken Multiband Guide – Din enkla guide till rörelse och styrka hemma | (standard)",
+    10
+   ],
+   [
+    "Fixkliniken Multiband - Stärk din kropp enkelt hemma! | Lätt - 4 Band / Lila",
+    6
+   ],
+   [
+    "Fixkliniken Multiband - Stärk din kropp enkelt hemma! | Tung - 6 Band / Blå",
+    5
+   ],
+   [
+    "Fixkliniken Multiband - Stärk din kropp enkelt hemma! | Lätt - 4 Band / Blå",
+    4
+   ],
+   [
+    "Fixkliniken Multiband - Stärk din kropp enkelt hemma! | Tung - 6 Band / Gul",
+    2
+   ],
+   [
+    "OrtoFlex Pro | 39-40",
+    1
+   ],
+   [
+    "Fixkliniken Multiband - Stärk din kropp enkelt hemma! | Tung - 6 Band / Lila",
+    1
+   ]
+  ],
+  "sockPairsDist": {
+   "0": 52,
+   "1": 882,
+   "2": 577,
+   "3": 11,
+   "4": 134,
+   "6": 5,
+   "7": 1,
+   "8": 3
+  },
+  "itemsPerOrder": {
+   "1": 907,
+   "2": 580,
+   "3": 32,
+   "4": 13,
+   "5": 124,
+   "7": 5,
+   "8": 1,
+   "10": 3
+  },
+  "chopsticksOrders": 0,
+  "multiProductOrders": 159,
+  "discounts": {
+   "orders": 1,
+   "share": 0.0006,
+   "topCodes": [
+    [
+     "HELENA60",
+     1
+    ]
+   ]
+  },
+  "gateways": {
+   "shopify_payments": 1665,
+   "gift_card": 3
+  },
+  "lifetimeMultiOrderCustomers": 121
+ },
+ "p2": {
+  "period": "q1_jan_mar_2026",
+  "orders": 1734,
+  "cancelled": 0,
+  "revenue": 641732,
+  "aov": {
+   "mean": 370.1,
+   "median": 399,
+   "p25": 299,
+   "p75": 399,
+   "p90": 399,
+   "max": 1198
+  },
+  "refunds": {
+   "orders": 7,
+   "amount": 2095,
+   "orderShare": 0.004
+  },
+  "uniqueCustomers": 1682,
+  "customersWithMultipleOrdersWithinPeriod": 47,
+  "hours": {
+   "0": 18,
+   "1": 4,
+   "2": 4,
+   "3": 2,
+   "4": 2,
+   "5": 7,
+   "6": 36,
+   "7": 93,
+   "8": 129,
+   "9": 154,
+   "10": 151,
+   "11": 124,
+   "12": 121,
+   "13": 92,
+   "14": 77,
+   "15": 101,
+   "16": 90,
+   "17": 92,
+   "18": 87,
+   "19": 85,
+   "20": 77,
+   "21": 92,
+   "22": 61,
+   "23": 35
+  },
+  "weekdays": {
+   "tors": 250,
+   "fre": 227,
+   "lör": 246,
+   "sön": 265,
+   "mån": 238,
+   "tis": 247,
+   "ons": 261
+  },
+  "topDates": [
+   [
+    "2026-02-01",
+    67
+   ],
+   [
+    "2026-01-26",
+    61
+   ],
+   [
+    "2026-01-30",
+    61
+   ],
+   [
+    "2026-01-31",
+    60
+   ],
+   [
+    "2026-01-29",
+    59
+   ],
+   [
+    "2026-01-28",
+    57
+   ],
+   [
+    "2026-01-27",
+    55
+   ],
+   [
+    "2026-01-24",
+    52
+   ],
+   [
+    "2026-02-02",
+    49
+   ],
+   [
+    "2026-01-25",
+    47
+   ],
+   [
+    "2026-02-04",
+    47
+   ],
+   [
+    "2026-02-05",
+    47
+   ],
+   [
+    "2026-01-22",
+    44
+   ],
+   [
+    "2026-02-07",
+    44
+   ],
+   [
+    "2026-01-21",
+    43
+   ]
+  ],
+  "topFirstNames": [
+   [
+    "Anders",
+    30
+   ],
+   [
+    "Maria",
+    28
+   ],
+   [
+    "Lena",
+    25
+   ],
+   [
+    "Lars",
+    25
+   ],
+   [
+    "Eva",
+    24
+   ],
+   [
+    "Stefan",
+    21
+   ],
+   [
+    "Johan",
+    21
+   ],
+   [
+    "Peter",
+    21
+   ],
+   [
+    "Per",
+    21
+   ],
+   [
+    "Mikael",
+    21
+   ],
+   [
+    "Anna",
+    18
+   ],
+   [
+    "Thomas",
+    18
+   ],
+   [
+    "Gunilla",
+    18
+   ],
+   [
+    "Kerstin",
+    18
+   ],
+   [
+    "Inger",
+    17
+   ],
+   [
+    "Fredrik",
+    17
+   ],
+   [
+    "Helena",
+    16
+   ],
+   [
+    "Christina",
+    16
+   ],
+   [
+    "Annika",
+    16
+   ],
+   [
+    "Joakim",
+    16
+   ],
+   [
+    "Daniel",
+    16
+   ],
+   [
+    "Marie",
+    15
+   ],
+   [
+    "Elisabeth",
+    15
+   ],
+   [
+    "Birgitta",
+    14
+   ],
+   [
+    "Susanne",
+    14
+   ],
+   [
+    "Marianne",
+    13
+   ],
+   [
+    "Jonas",
+    13
+   ],
+   [
+    "Magnus",
+    13
+   ],
+   [
+    "Monica",
+    12
+   ],
+   [
+    "Karin",
+    12
+   ],
+   [
+    "Henrik",
+    12
+   ],
+   [
+    "Håkan",
+    12
+   ],
+   [
+    "Åsa",
+    11
+   ],
+   [
+    "Margareta",
+    11
+   ],
+   [
+    "Ann",
+    11
+   ],
+   [
+    "Mats",
+    11
+   ],
+   [
+    "Yvonne",
+    11
+   ],
+   [
+    "Pia",
+    10
+   ],
+   [
+    "Agneta",
+    10
+   ],
+   [
+    "Carina",
+    10
+   ],
+   [
+    "Patrik",
+    10
+   ],
+   [
+    "Anneli",
+    9
+   ],
+   [
+    "Mattias",
+    9
+   ],
+   [
+    "Anita",
+    9
+   ],
+   [
+    "Anette",
+    8
+   ],
+   [
+    "Johanna",
+    8
+   ],
+   [
+    "Andreas",
+    8
+   ],
+   [
+    "Martin",
+    8
+   ],
+   [
+    "Ulf",
+    7
+   ],
+   [
+    "Annica",
+    7
+   ],
+   [
+    "Ingrid",
+    7
+   ],
+   [
+    "Gun",
+    7
+   ],
+   [
+    "Markus",
+    7
+   ],
+   [
+    "Erik",
+    7
+   ],
+   [
+    "Ulla",
+    7
+   ],
+   [
+    "Tomas",
+    7
+   ],
+   [
+    "Mona",
+    7
+   ],
+   [
+    "Tommy",
+    7
+   ],
+   [
+    "Lisbeth",
+    7
+   ],
+   [
+    "Linda",
+    7
+   ],
+   [
+    "Kristina",
+    6
+   ],
+   [
+    "Niklas",
+    6
+   ],
+   [
+    "Lisa",
+    6
+   ],
+   [
+    "Helen",
+    6
+   ],
+   [
+    "Sonia",
+    6
+   ],
+   [
+    "Britt",
+    6
+   ],
+   [
+    "Jenny",
+    6
+   ],
+   [
+    "Richard",
+    6
+   ],
+   [
+    "Michael",
+    6
+   ],
+   [
+    "Christian",
+    6
+   ],
+   [
+    "Malin",
+    6
+   ],
+   [
+    "Niclas",
+    6
+   ],
+   [
+    "Jan",
+    6
+   ],
+   [
+    "Ingegerd",
+    6
+   ],
+   [
+    "Göran",
+    6
+   ],
+   [
+    "Berit",
+    6
+   ],
+   [
+    "Ulrika",
+    6
+   ],
+   [
+    "Ann-Britt",
+    5
+   ],
+   [
+    "Lennart",
+    5
+   ],
+   [
+    "Rose-Marie",
+    5
+   ],
+   [
+    "Irene",
+    5
+   ],
+   [
+    "David",
+    5
+   ],
+   [
+    "Ida",
+    5
+   ],
+   [
+    "Roger",
+    5
+   ],
+   [
+    "Pär",
+    5
+   ],
+   [
+    "Gunnar",
+    5
+   ],
+   [
+    "Claes",
+    5
+   ],
+   [
+    "Ingela",
+    5
+   ],
+   [
+    "Robert",
+    5
+   ],
+   [
+    "Kenneth",
+    5
+   ],
+   [
+    "Sara",
+    5
+   ],
+   [
+    "Nina",
+    4
+   ],
+   [
+    "Jörgen",
+    4
+   ],
+   [
+    "Emelie",
+    4
+   ],
+   [
+    "Jessica",
+    4
+   ],
+   [
+    "Dan",
+    4
+   ],
+   [
+    "Christer",
+    4
+   ],
+   [
+    "Bo",
+    4
+   ],
+   [
+    "Rickard",
+    4
+   ],
+   [
+    "Björn",
+    4
+   ],
+   [
+    "Kjell",
+    4
+   ],
+   [
+    "Sandra",
+    4
+   ],
+   [
+    "Sofia",
+    4
+   ],
+   [
+    "Emil",
+    4
+   ],
+   [
+    "Gerd",
+    4
+   ],
+   [
+    "Oscar",
+    4
+   ],
+   [
+    "Karl",
+    4
+   ],
+   [
+    "Tobias",
+    4
+   ],
+   [
+    "Siv",
+    4
+   ],
+   [
+    "Annelie",
+    4
+   ],
+   [
+    "Birgit",
+    4
+   ],
+   [
+    "Katarina",
+    3
+   ],
+   [
+    "Bodil",
+    3
+   ],
+   [
+    "Pernilla",
+    3
+   ],
+   [
+    "Christel",
+    3
+   ],
+   [
+    "Frida",
+    3
+   ],
+   [
+    "Urban",
+    3
+   ],
+   [
+    "Maud",
+    3
+   ],
+   [
+    "Therese",
+    3
+   ],
+   [
+    "Liselotte",
+    3
+   ]
+  ],
+  "topCities": [
+   [
+    "Stockholm",
+    66
+   ],
+   [
+    "Göteborg",
+    28
+   ],
+   [
+    "Åkersberga",
+    25
+   ],
+   [
+    "Uppsala",
+    24
+   ],
+   [
+    "Västerås",
+    23
+   ],
+   [
+    "Örebro",
+    17
+   ],
+   [
+    "Malmö",
+    14
+   ],
+   [
+    "Falun",
+    14
+   ],
+   [
+    "Lidingö",
+    14
+   ],
+   [
+    "GÖteborg",
+    13
+   ],
+   [
+    "Huddinge",
+    13
+   ],
+   [
+    "Nacka",
+    13
+   ],
+   [
+    "Bromma",
+    13
+   ],
+   [
+    "Solna",
+    12
+   ],
+   [
+    "Sundsvall",
+    12
+   ],
+   [
+    "Helsingborg",
+    12
+   ],
+   [
+    "Kalmar",
+    11
+   ],
+   [
+    "Knivsta",
+    11
+   ],
+   [
+    "Luleå",
+    10
+   ],
+   [
+    "Linköping",
+    10
+   ],
+   [
+    "Halmstad",
+    10
+   ],
+   [
+    "Sollentuna",
+    10
+   ],
+   [
+    "Vallentuna",
+    9
+   ],
+   [
+    "Sundbyberg",
+    9
+   ],
+   [
+    "Karlstad",
+    9
+   ],
+   [
+    "Enskede",
+    9
+   ],
+   [
+    "Hägersten",
+    9
+   ],
+   [
+    "Växjö",
+    9
+   ],
+   [
+    "Västra Frölunda",
+    8
+   ],
+   [
+    "Tyresö",
+    8
+   ]
+  ],
+  "regions": [
+   [
+    "Storstockholm",
+    412
+   ],
+   [
+    "Skåne/Blekinge övr",
+    149
+   ],
+   [
+    "Storgöteborg",
+    140
+   ],
+   [
+    "Uppsala/Roslagen",
+    96
+   ],
+   [
+    "Småland/Öland",
+    81
+   ],
+   [
+    "Malmö/Skåne väst",
+    71
+   ],
+   [
+    "Gävleborg",
+    61
+   ],
+   [
+    "Dalarna",
+    53
+   ],
+   [
+    "Norrköping",
+    51
+   ],
+   [
+    "Västerås",
+    49
+   ],
+   [
+    "Halland/Småland väst",
+    49
+   ],
+   [
+    "Östergötland syd",
+    47
+   ],
+   [
+    "Jönköping",
+    44
+   ],
+   [
+    "Bohuslän/Trollhättan",
+    43
+   ],
+   [
+    "Norrbotten",
+    41
+   ],
+   [
+    "Eskilstuna/Sörmland",
+    41
+   ],
+   [
+    "Jämtland/Härjedalen",
+    40
+   ],
+   [
+    "Skaraborg",
+    34
+   ],
+   [
+    "Umeå/Västerbotten",
+    32
+   ],
+   [
+    "Karlstad/Värmland",
+    30
+   ],
+   [
+    "Sundsvall",
+    26
+   ],
+   [
+    "Västernorrland övr",
+    26
+   ],
+   [
+    "Örebro",
+    26
+   ],
+   [
+    "Skellefteå/Piteå",
+    25
+   ],
+   [
+    "Borås/Sjuhärad",
+    22
+   ],
+   [
+    "okänd",
+    21
+   ],
+   [
+    "Värmland övr",
+    13
+   ],
+   [
+    "Gotland",
+    11
+   ]
+  ],
+  "countries": {
+   "SE": 1734
+  },
+  "gift": {
+   "nameMismatch": 72,
+   "nameComparable": 1713,
+   "nameMismatchShare": 0.042,
+   "zipDiff": 62,
+   "zipComparable": 1734,
+   "zipDiffShare": 0.0358
+  },
+  "products": [
+   [
+    "Sushi-Strumpor",
+    2881
+   ],
+   [
+    "Äkta ätpinnar i trä",
+    1005
+   ],
+   [
+    "Presentkort",
+    59
+   ],
+   [
+    "Donut-strumpor",
+    33
+   ],
+   [
+    "Sushistrumpor",
+    17
+   ],
+   [
+    "Pizza-Strumpor",
+    2
+   ],
+   [
+    "Hamburgare-Strumpor",
+    1
+   ]
+  ],
+  "variants": [
+   [
+    "Sushi-Strumpor | 5 - Par",
+    2859
+   ],
+   [
+    "Äkta ätpinnar i trä | (standard)",
+    1005
+   ],
+   [
+    "Presentkort | 150,00 kr",
+    59
+   ],
+   [
+    "Donut-strumpor | (standard)",
+    33
+   ],
+   [
+    "Sushi-Strumpor | 3 - Par",
+    22
+   ],
+   [
+    "Sushistrumpor | 5 - Par",
+    17
+   ],
+   [
+    "Pizza-Strumpor | (standard)",
+    2
+   ],
+   [
+    "Hamburgare-Strumpor | (standard)",
+    1
+   ]
+  ],
+  "sockPairsDist": {
+   "1": 855,
+   "2": 723,
+   "3": 7,
+   "4": 141,
+   "5": 4,
+   "6": 2,
+   "8": 2
+  },
+  "itemsPerOrder": {
+   "1": 853,
+   "2": 393,
+   "3": 12,
+   "4": 332,
+   "5": 58,
+   "6": 4,
+   "8": 77,
+   "9": 1,
+   "12": 2,
+   "16": 2
+  },
+  "chopsticksOrders": 417,
+  "multiProductOrders": 479,
+  "discounts": {
+   "orders": 0,
+   "share": 0,
+   "topCodes": []
+  },
+  "gateways": {
+   "shopify_payments": 1734,
+   "gift_card": 3
+  },
+  "lifetimeMultiOrderCustomers": 109
+ },
+ "p1CustomersWhoReturnedInP2": 10
+}
