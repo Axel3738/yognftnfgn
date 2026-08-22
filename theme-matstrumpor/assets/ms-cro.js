@@ -112,11 +112,24 @@
 
       this.button.addEventListener('click', this.forward.bind(this));
 
-      // Visas när den riktiga knappen är utanför vyn.
-      this.observer = new IntersectionObserver(this.onIntersect.bind(this), {
-        rootMargin: '-10px 0px -10px 0px'
-      });
-      this.observer.observe(this.target);
+      // Visas BARA när köpknappen passerats — alltså när kunden scrollat
+      // förbi paketen och knappen. Ligger knappen längre ner på sidan
+      // (kunden har inte nått den än) ska baren inte skymma något: på mobil
+      // är knappen under vecket redan vid sidladdning, och utan kollen låg
+      // baren i vägen innan paketen ens setts.
+      //
+      // Medvetet en scroll-lyssnare, INTE IntersectionObserver: observern
+      // säger bara till när knappen korsar vykanten. Hoppar sidan förbi
+      // knappen inom en enda frame (Home/End, ankarlänk, återställd
+      // scrollposition) korsas ingen kant — ingen signal, och baren står
+      // kvar i fel läge. Lägesräkningen här är för billig för att strypas
+      // fel: en getBoundingClientRect per frame, bara medan det scrollas.
+      this.uppdatera = this.uppdatera.bind(this);
+      this.tick = this.tick.bind(this);
+      this.vantar = false;
+      window.addEventListener('scroll', this.tick, { passive: true });
+      window.addEventListener('resize', this.tick, { passive: true });
+      this.uppdatera();
 
       // Håll pris och tillgänglighet i takt med temats knapp.
       this.sync = this.sync.bind(this);
@@ -127,15 +140,23 @@
     }
 
     disconnectedCallback() {
-      if (this.observer) this.observer.disconnect();
+      window.removeEventListener('scroll', this.tick);
+      window.removeEventListener('resize', this.tick);
       if (this.mo) this.mo.disconnect();
       document.removeEventListener('ms:variant', this.sync);
     }
 
-    onIntersect(entries) {
-      // Visas så fort temats riktiga köpknapp inte syns — oavsett om kunden
-      // är ovanför eller nedanför den. Syns knappen är stickyn bara i vägen.
-      this.bar.dataset.shown = String(!entries[0].isIntersecting);
+    tick() {
+      // Max en avläsning per frame, hur tätt scrollhändelserna än kommer.
+      if (this.vantar) return;
+      this.vantar = true;
+      requestAnimationFrame(this.uppdatera);
+    }
+
+    uppdatera() {
+      this.vantar = false;
+      var passerad = this.target.getBoundingClientRect().bottom < 0;
+      this.bar.dataset.shown = String(passerad);
     }
 
     sync(ev) {
