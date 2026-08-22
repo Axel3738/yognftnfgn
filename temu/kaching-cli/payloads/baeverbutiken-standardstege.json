@@ -1,5 +1,5 @@
 {
-  "_not": "Alla-produkter-stegen för baeverbutiken enligt Axels schema 2026-08-22 (1x ordinarie + jämförpris +30 %, 2x −15 %, 3x −20 %). KRÄVER att Kaching Bundles-appen är installerad i butiken först. Kör: node kaching.mjs create --store baeverbutiken --file payloads/baeverbutiken-standardstege.json",
+  "_not": "Alla-produkter-stegen för baeverbutiken enligt Axels schema 2026-08-22 (1x ordinarie + jämförpris +30 %, 2x −15 %, 3x −20 %). KRÄVER att Kaching Bundles-appen är installerad i butiken först. Kör: node kaching.mjs create --store baeverbutiken --file payloads/baeverbutiken-standardstege.json MARGINALTAK (offert 2, sämsta produkten båtmotorskyddet): max 18,4 % på 2-pack och 24,5 % på 3-pack — 15/20 ligger under BÅDA. Sätt aldrig ned 3-packen till 15 av försiktighet; taket för 3-pack är dokumenterat.",
   "blockName": "Standardstige – alle produkter",
   "blockTitle": "",
   "discountName": "",

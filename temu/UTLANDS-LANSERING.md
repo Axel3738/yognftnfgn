@@ -295,6 +295,23 @@ selected-products-blocken där hör till 25-katalogen). Själva stegarna kräver
 Axels Mac — exakt körordning står i `kaching-cli/KÖR-FÖR-BÄVERBUTIKEN.md`
 (1 update för SE-blocket + 4 create för utland).
 
+**KÖRT SKARPT 2026-08-23 (alla fem, från Axels Mac):** stegarna 1x / 2 st −15 % /
+3 st −20 % ligger live i alla fem butikerna, read-back verifierad. Notera att
+fallback-blocket täcker HELA katalogen per butik (~677 produkter totalt), inte
+bara de 8 — samma upplägg som SE haft sedan 10/15-stegen. 3-pack-taket är
+dokumenterat härunder (24,5 % på sämsta produkten) — **sätt aldrig ned 20 % av
+försiktighet**, det var nära att hända när lokala Claude bara såg 2-packs-taket.
+
+**⚠️ UK-butikens standardmarknad är SVERIGE/SEK (upptäckt 2026-08-23):**
+beavershop.co.uk visar "605,00 kr" (SEK, kurs 12,91) för alla besökare som inte
+geo-matchas till GB — inklusive Google och annonsgranskare. `?country=GB` ger
+korrekt GBP, så en UK-marknad finns. Dessutom underskrider de konverterade
+SEK-priserna bäverbutiken.se:s egna priser på samma produkter. Fixen görs i
+Shopify-admin för beavershop (API-appen saknar markets-behörighet):
+Inställningar → Marknader → gör Storbritannien till primär marknad, och ta bort
+Sverige-marknaden. NO/DK/FI är kontrollerade och korrekta (kurs 1,0 mot egen
+valuta; "kr" där är norska/danska kronor).
+
 **Ursprunglig analys (fortsatt sann för Shopify-vägen):** Verifierat 2026-08-21 i sidkoden på bäverbutiken.se:
 appen är installerad (app embed `kaching-bundles-1952` + loader.js), men deal-
 konfigurationen ligger i Kachings egen backend och hämtas av deras script i
