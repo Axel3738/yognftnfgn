@@ -74,7 +74,7 @@ Axel ändrar erbjudanden här. Inget i temat behöver röras.
 | Kod | Drar av | Kräver minst |
 |---|---|---|
 | `PAKET-SUSHI-2` | 499 kr | 838 kr |
-| `PAKET-SUSHI-4` | 1 197 kr | 1 676 kr |
+| `PAKET-SUSHI-4` | 998 kr | 1 676 kr |
 | `PAKET-PIZZA-2` | 549 kr | 998 kr |
 | `PAKET-PIZZA-4` | 1 327 kr | 1 996 kr |
 | `PAKET-HAMBURGARE-2` | 399 kr | 698 kr |
@@ -89,6 +89,36 @@ fungerade. Därför blir avdraget rätt även när kunden byter variant.
 (5-par 399 kr, 3-par 369 kr). Minimibeloppet måste klara den billigaste:
 2 × 369 + 2 × 50 = 838 kr. Sätts det efter 5-par-priset slutar rabatten
 gälla så fort någon väljer 3-par — utan felmeddelande.
+
+## Sushi kör BOGO sedan 2026-08-22 (Axels beslut)
+
+Stegen på Sushi-Strumpor lades om från 1/2/4-pack till köp-en-få-en:
+
+| Kort | Kunden betalar | Ordinarie |
+|---|---|---|
+| 1 par (ankare) | 399 kr | 399 kr |
+| **Köp 1 – Få 1 GRATIS** ← förvald, "Mest Populär" | 399 kr | 898 kr |
+| Köp 2 – Få 2 GRATIS, "Mest gratis" | 798 kr | 1 796 kr |
+
+Tvåan är samma pris som förut — bara omformulerad. Trean HÖJDES 599 → 798 kr
+(ren BOGO i stället för 67 % rabatt): 199 kr mer marginal per order, mot att
+erbjudandet är grundare än Kachings gamla. "Köp 4 få 4" valdes bort — 8 par
+är mer än någon behöver och 1 596 kr är ett för stort ordervärde för strumpor.
+
+Ankaret (1 par, fullpris) finns kvar med flit: utan det finns inget som gör
+"Få 1 GRATIS" läsbart. Brickan på trean är "Mest gratis", inte "Bäst värde" —
+styckpriset är detsamma som på tvåan (200 kr/par), så "bäst värde" vore lögn.
+Det som ÄR störst är gåvovärdet: 998 kr mot 499 kr.
+
+Ändringen gjordes i metaobjekten FÖRE rabattkoden. I den ordningen kan sidan
+som värst visa ett högre pris än kassan tar — aldrig tvärtom.
+
+Kassatest 2026-08-22: 898→399 (kod 2), 1 796→798 (kod 4), och med billigaste
+varianten (3-par) 1 676→678 — kunden betalar 60 kr mindre än strikt BOGO där,
+eftersom beloppet är satt efter 5-par. Sidan visar samma siffra, så sidan och
+kassan är alltid överens.
+
+De andra tre strumporna rör inte detta — de kör kvar 1/2/4-pack.
 
 ## 3. Vid köp
 
@@ -117,9 +147,9 @@ Verifierat mot temat 2026-08-22 — vad som faktiskt skickas och vad lådan visa
 
 | Val | Kundvagn | Kod | Lådan visar |
 |---|---|---|---|
-| 1-pack | 1 strumpa | – | 399 kr |
-| 2-pack | 2 strumpor + 2 ätpinnar | `PAKET-SUSHI-2` | 898 − 499 = **399 kr** |
-| 4-pack | 4 strumpor + 4 ätpinnar | `PAKET-SUSHI-4` | 1 796 − 1 197 = **599 kr** |
+| 1 par | 1 strumpa | – | 399 kr |
+| Köp 1 – Få 1 | 2 strumpor + 2 ätpinnar | `PAKET-SUSHI-2` | 898 − 499 = **399 kr** |
+| Köp 2 – Få 2 | 4 strumpor + 4 ätpinnar | `PAKET-SUSHI-4` | 1 796 − 998 = **798 kr** |
 
 ## ⚠️ Kachings rabatt är fortfarande ACTIVE
 
