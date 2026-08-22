@@ -259,6 +259,15 @@
           if (lada && lada.renderContents && data.sections) {
             try {
               lada.renderContents(data);
+              // Var kundvagnen tom när sidan laddades är lådan märkt is-empty
+              // på själva <cart-drawer>. Temats omritning tar bara bort märket
+              // från insidan, och CSS:en gömmer då hela produktlistan
+              // (.is-empty .cart__contents { display: none }) — kunden ser
+              // summan men inte varorna. Drabbar exakt första köpet i en tom
+              // vagn, därför städas märket här.
+              lada.classList.remove('is-empty');
+              var inre = lada.querySelector('.drawer__inner');
+              if (inre) inre.classList.remove('is-empty');
               self.kontrollera(rutt, kod, laddaOm);
               return;
             } catch (e) { /* lådan gick inte att rita — ta reservvägen */ }
