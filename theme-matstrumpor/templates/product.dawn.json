@@ -83,11 +83,16 @@
           "settings": {
             "custom_liquid": "{% render 'ms-paket', product: product, section_id: section.id %}"
           }
+        },
+        "judgeme_stjarnor": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
         }
       },
       "block_order": [
         "vendor",
         "title",
+        "judgeme_stjarnor",
         "price",
         "ms_points",
         "variant_picker",
@@ -217,10 +222,26 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "judgeme_widget": {
+      "type": "apps",
+      "blocks": {
+        "w": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "w"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "main",
+    "judgeme_widget",
     "ms_compare",
     "ms_faq_section",
     "related-products",
