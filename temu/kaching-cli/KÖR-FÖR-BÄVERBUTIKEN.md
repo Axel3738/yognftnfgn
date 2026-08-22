@@ -34,10 +34,9 @@ Regler: ändra aldrig produktpriser. Hitta aldrig på rabattnivåer. Verifiera e
 varje skrivning. Rör inte deals du inte skapat — utlandsbutikernas gamla block
 (uppdaterade 2026-08-20) tillhör 25-katalogen och ska lämnas i fred.
 
-Anteckning: `preselectedDealBarId` är `st1a` (1x förvald) i alla payloader —
-medvetet, eftersom `updateNativePrice: true` + förvald 2x gör att produktsidans
-pris visar bundlepriset i stället för annonspriset. Vill Axel ha 2x förvald som
-i sin gamla butik: byt till `st2b` i payloaden och kör om — men fråga först.
+Anteckning (historik): stegarna skapades först med 1x förvald för att
+`updateNativePrice: true` + förvald 2x hade skrivit om sidpriset. Löst 2026-08-23:
+husstilen kör `updateNativePrice: false`, så 2x förvald är riskfri — se nedan.
 
 ---
 
