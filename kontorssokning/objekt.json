@@ -99,7 +99,8 @@
     "bild_url": null,
     "kalla_url": [
       "https://www.lokalnytt.se/kontor/g%C3%B6teborg/gamla-tuvevagen-15b-331514",
-      "https://www.portally.com/lokal/gamla-tuvevagen-15b"
+      "https://www.portally.com/lokal/gamla-tuvevagen-15b",
+      "https://www.verksamhetslokaler.se/hyra/kontorslokaler/lundby/501961"
     ],
     "hamtad_datum": "2026-08-22",
     "beskrivning": "Modern kontorslokal om 200 kvm på plan 1 vid Backaplan, med 7 ljusa kontorsrum, 1–2 mötesrum och en öppen yta vid entrén som kan användas som lounge. Fullt utrustat pentry, WC och RWC samt hiss finns. Hyran är 2 100 kr/kvm/år, men annonsen säger inget om moms och el ingår.",
@@ -147,6 +148,7 @@
       "hyra": 10,
       "tilltrade": 5
     },
+    "dubbletter_sammanslagna": 1,
     "granskning": {
       "lage": "bekraftad",
       "notering": "adress ✓, yta ✓",
@@ -2480,86 +2482,6 @@
     }
   },
   {
-    "id": "ln-gustaf-dalnsgatan-19-goteborg-221",
-    "titel": "Nyrenoverat kontor där planlösningen går att påverka",
-    "adress": "Gustaf Dalénsgatan 19, Göteborg",
-    "omrade": "Kvillebäcken",
-    "niva": 1,
-    "typ": "kontor",
-    "kvm": 221,
-    "kvm_intervall": null,
-    "antal_kontorsrum": null,
-    "oppen_yta": null,
-    "oppen_yta_kvm": null,
-    "motesrum": null,
-    "hyra_kr_man": null,
-    "hyra_kr_kvm_ar": null,
-    "hyra_anmarkning": null,
-    "tilltrade": "\"Enligt överenskommelse\"",
-    "vaning": "Plan 1 av 3",
-    "parkering": "\"Parkering, med möjlighet till elbilsladdning, finns att hyra på fastigheten\"",
-    "kollektivtrafik": "Busshållplats Swedenborgsplatsen \"endast några meter från fastigheten\"; buss 17 avgår vid fastigheten",
-    "hyresvard": "Palmung Mellin Fastigheter",
-    "bild_url": "https://www.lokalnytt.se/dbfiles/11940/objects/339355/new_full_32987798.jpg",
-    "kalla_url": [
-      "https://www.lokalnytt.se/kontor/g%C3%B6teborg/gustaf-dalensgatan-19-339355",
-      "https://www.portally.com/lokal/gustaf-dalensgatan-19-221-kvm"
-    ],
-    "hamtad_datum": "2026-08-22",
-    "beskrivning": "Nyrenoverat 221 kvm-kontor på bottenplan i Kvillebäcken där hyresgästen kan påverka planlösningen. Nyrenoverad RWC med dusch finns och parkering med elbilsladdning kan hyras på fastigheten. Hyra saknas i annonsen och tillträde sker enligt överenskommelse.",
-    "plus": [
-      "Helt nyrenoverad lokal",
-      "Hyresgästen kan påverka planlösningen",
-      "Nyrenoverad RWC med dusch och WC",
-      "Parkering med elbilsladdning finns att hyra på fastigheten",
-      "Busshållplats Swedenborgsplatsen några meter bort"
-    ],
-    "minus": [
-      "Hyra anges inte - står som \"kontakta annonsören\"",
-      "Tillträde bara \"enligt överenskommelse\", inget datum",
-      "Antal kontorsrum, mötesrum och planlösning framgår inte",
-      "Kontaktpersonens telefon och e-post är maskerade på sidan"
-    ],
-    "bekraftelsecitat": "Helt nyrenoverad kontorslokal på 221 kvm med möjlighet att påverka planlösningen",
-    "okanda_falt": [
-      "hyra_kr_man",
-      "hyra_kr_kvm_ar",
-      "hyra_anmarkning",
-      "antal_kontorsrum",
-      "motesrum",
-      "oppen_yta",
-      "oppen_yta_kvm",
-      "kontakt_telefon",
-      "kontakt_epost",
-      "hyra",
-      "kontakt.epost",
-      "kontakt.telefon"
-    ],
-    "verifierad": true,
-    "kontakt": {
-      "namn": "Erik Palmung",
-      "telefon": null,
-      "epost": null
-    },
-    "restid_kungalv_min_uppskattad": 23,
-    "parkering_status": "ja",
-    "matchpoang": 78,
-    "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 5/5",
-    "poangdelar": {
-      "yta": 25,
-      "rum": 12.5,
-      "oppen_yta": 10,
-      "geografi": 15,
-      "hyra": 10,
-      "tilltrade": 5
-    },
-    "granskning": {
-      "lage": "bekraftad",
-      "notering": "adress ✓, yta ✓",
-      "kontrollerad": "https://www.lokalnytt.se/kontor/g%C3%B6teborg/gustaf-dalensgatan-19-339355"
-    }
-  },
-  {
     "id": "ln-gustaf-dalnsgatan-19-goteborg-408",
     "titel": "Kontor under ombyggnad på näst översta planet, anpassningsbar planlösning",
     "adress": "Gustaf Dalénsgatan 19, Göteborg",
@@ -3843,7 +3765,8 @@
     "hyresvard": "Stena Fastigheter",
     "bild_url": "https://res.cloudinary.com/portally/image/upload/b_auto,c_lpad,h_600,q_auto,w_900/v1/Objektvision-images/Image.aspx_dpeof1?_a=BAMAPqeA0",
     "kalla_url": [
-      "https://www.portally.com/lokal/sangspelsgatan-1"
+      "https://www.portally.com/lokal/sangspelsgatan-1",
+      "https://www.verksamhetslokaler.se/hyra/kontorslokaler/norra-hisingen/575392"
     ],
     "hamtad_datum": "2026-08-22",
     "beskrivning": "Ledig kontorslokal om 135 kvm i Brunnsbo, uppdelad i 6 rum med två badrum och ett större kök, i ett flerbostadshus från 1964. Grundhyran anges till 800 kr/kvm/år exkl moms, vilket är den enda av mina sex annonser som faktiskt sätter en siffra. Annonsen nämner varken parkering, dusch, öppen planlösning eller våningsplan.",
@@ -3895,6 +3818,7 @@
       "hyra": 10,
       "tilltrade": 5
     },
+    "dubbletter_sammanslagna": 1,
     "granskning": {
       "lage": "bekraftad",
       "notering": "adress ✓, yta ✓",
@@ -4057,6 +3981,86 @@
       "notering": "adress ✓, yta ✓",
       "kontrollerad": "https://www.lokalguiden.se/lokal/stenkolsgatan-1b-hisings-backa"
     }
+  },
+  {
+    "id": "ext-gustaf-dalensgatan-19-417-05-goteborg-221",
+    "titel": "Gustaf Dalénsgatan 19 – helt nyrenoverad kontorslokal på 221 kvm vid Backaplan",
+    "adress": "Gustaf Dalensgatan 19, 417 05 Göteborg",
+    "omrade": "Backaplan / Hisings Backa",
+    "niva": 1,
+    "typ": "kontor",
+    "kvm": 221,
+    "kvm_intervall": null,
+    "antal_kontorsrum": null,
+    "oppen_yta": null,
+    "oppen_yta_kvm": null,
+    "motesrum": null,
+    "hyra_kr_man": null,
+    "hyra_kr_kvm_ar": null,
+    "hyra_anmarkning": "Ingen hyresuppgift alls på annonssidan.",
+    "tilltrade": null,
+    "vaning": null,
+    "parkering": "\"Parkering, även med möjlighet till elbilsladdning, finns att hyra på fastigheten.\"",
+    "kollektivtrafik": "Närmaste hållplats är Swedenborgsplatsen, \"endast några meter från fastigheten\"",
+    "hyresvard": "Palmung Mellin Fastigheter",
+    "bild_url": "https://a.storyblok.com/f/178849/1536x1024/7cc4d158ca/kontorslandskap-2.png",
+    "kalla_url": [
+      "https://palmungmellin.se/lokaler/gustaf-dalensgatan-19-helt-nyrenoverad-kontorslokal-pa-221-kvm",
+      "https://www.lokalnytt.se/kontor/g%C3%B6teborg/gustaf-dalensgatan-19-339355",
+      "https://www.portally.com/lokal/gustaf-dalensgatan-19-221-kvm"
+    ],
+    "hamtad_datum": "2026-08-22",
+    "beskrivning": "Helt nyrenoverad kontorslokal på 221 kvm vid Backaplan med mycket fönster och bra takhöjd. Planlösningen går att påverka, vilket gör att fördelningen mellan kontorsrum och öppen yta kan formas efter ett team på 8–12 personer. Parkering med elbilsladdning finns att hyra i fastigheten och hållplats Swedenborgsplatsen ligger några meter bort.",
+    "bekraftelsecitat": "Helt nyrenoverad kontorslokal på 221 kvm med möjlighet att påverka planlösningen.",
+    "plus": [
+      "Parkering på fastigheten att hyra, med elbilsladdning – uppfyller skallkravet",
+      "Nyrenoverad RWC med dusch",
+      "Hållplats Swedenborgsplatsen några meter från fastigheten",
+      "Planlösningen går att påverka, kan anpassas till 8–12 personer",
+      "Direkt kontakt till uthyraren med namn, telefon och e-post"
+    ],
+    "minus": [
+      "Hyra, tillträde och våningsplan står inte på sidan",
+      "Antal kontorsrum anges inte",
+      "Öppen planlösning nämns inte uttryckligen, bara att planlösningen går att påverka",
+      "Antal mötesrum framgår inte"
+    ],
+    "okanda_falt": [
+      "antal_kontorsrum",
+      "oppen_yta",
+      "oppen_yta_kvm",
+      "motesrum",
+      "hyra_kr_man",
+      "hyra_kr_kvm_ar",
+      "tilltrade",
+      "vaning",
+      "kvm_intervall",
+      "hyra"
+    ],
+    "verifierad": true,
+    "kontakt": {
+      "namn": "Erik Palmung",
+      "telefon": "031-744 50 45",
+      "epost": "erik.palmung@palmungmellin.se"
+    },
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓ — bekräftad manuellt 2026-08-21; sajten bryter TLS mot automatisk hämtning",
+      "kontrollerad": "https://palmungmellin.se/lokaler/gustaf-dalensgatan-19-helt-nyrenoverad-kontorslokal-pa-221-kvm"
+    },
+    "restid_kungalv_min_uppskattad": 18,
+    "parkering_status": "ja",
+    "matchpoang": 75,
+    "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
+    "poangdelar": {
+      "yta": 25,
+      "rum": 12.5,
+      "oppen_yta": 10,
+      "geografi": 15,
+      "hyra": 10,
+      "tilltrade": 2.5
+    },
+    "dubbletter_sammanslagna": 1
   },
   {
     "id": "ln-exportgatan-7b-goteborg-255",
@@ -4709,163 +4713,81 @@
     }
   },
   {
-    "id": "vl-gamla-tuvevagen-gatunummer-dolt-i-annons-200",
-    "titel": "Kontor pa Gamla Tuvevagen, ca 200 kvm – Lundby, ca 2 000 kr/kvm/ar exkl drift",
-    "adress": "Gamla Tuvevägen (gatunummer dolt i annonsen), 417 22 Göteborg",
-    "omrade": "Lundby / Bramaregarden",
-    "niva": 1,
+    "id": "lg-vastra-gatan-8486-kungalv-161",
+    "titel": "Kontor 161 kvm på Västra Gatan 84 — centralt läge i Kungälvs köpstråk, tillträde enligt överenskommelse",
+    "adress": "Västra Gatan 84–86, Kungälv",
+    "omrade": "Kungälv centrum",
+    "niva": 2,
     "typ": "kontor",
-    "kvm": 200,
+    "kvm": 161,
     "kvm_intervall": null,
     "antal_kontorsrum": null,
-    "oppen_yta": null,
-    "oppen_yta_kvm": null,
-    "motesrum": null,
-    "hyra_kr_man": null,
-    "hyra_kr_kvm_ar": 2000,
-    "hyra_anmarkning": "Annonsen anger 'Hyra per m2 per år, exkl. drift: Ca. 2 000 kr.' Totalhyran per år står som 'Inte angivet' och drift tillkommer.",
-    "tilltrade": null,
-    "vaning": null,
-    "parkering": null,
-    "kollektivtrafik": null,
-    "hyresvard": null,
-    "bild_url": null,
-    "kalla_url": [
-      "https://www.verksamhetslokaler.se/hyra/kontorslokaler/lundby/501961"
-    ],
-    "hamtad_datum": "2026-08-22",
-    "beskrivning": "Ca 200 kvm kontor på Gamla Tuvevägen i Lundby till ca 2 000 kr/kvm/år exkl. drift, vilket är den enda konkreta uppgiften i annonsen. Ytan är rimlig för 8–12 personer, men rumsantal, planlösning, parkering och tillträde saknas helt. Gatunummer, hyresvärd och kontaktuppgifter ligger bakom inloggning.",
-    "bekraftelsecitat": "Kontor att hyra, Lundby, Gamla Tuvevägen ... Storlek: Ca. 200 m2",
-    "plus": [
-      "Ca 200 kvm passar 8–12 personer bra",
-      "Prisnivån är faktiskt angiven: ca 2 000 kr/kvm/år exkl. drift",
-      "Lundby/Brämaregården ligger centralt på Hisingen"
-    ],
-    "minus": [
-      "Parkering nämns inte alls – skallkravet går inte att bekräfta",
-      "Inget om antal kontorsrum, mötesrum eller öppen planlösning",
-      "Tillträde saknas i annonsen",
-      "Adress, hyresvärd och kontaktuppgifter kräver inloggning",
-      "parkering ej angiven — måste kollas (krav)"
-    ],
-    "okanda_falt": [
-      "kvm_intervall",
-      "antal_kontorsrum",
-      "oppen_yta",
-      "oppen_yta_kvm",
-      "motesrum",
-      "hyra_kr_man",
-      "tilltrade",
-      "vaning",
-      "parkering",
-      "kollektivtrafik",
-      "hyresvard",
-      "kontakt_namn",
-      "kontakt_telefon",
-      "kontakt_epost",
-      "bild_url",
-      "kontakt.epost",
-      "kontakt.telefon"
-    ],
-    "verifierad": true,
-    "kontakt": {
-      "namn": null,
-      "telefon": null,
-      "epost": null
-    },
-    "restid_kungalv_min_uppskattad": 24,
-    "parkering_status": "okant",
-    "matchpoang": 75,
-    "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
-    "poangdelar": {
-      "yta": 25,
-      "rum": 12.5,
-      "oppen_yta": 10,
-      "geografi": 15,
-      "hyra": 10,
-      "tilltrade": 2.5
-    },
-    "granskning": {
-      "lage": "bekraftad",
-      "notering": "adress ✓, yta ✓",
-      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/lundby/501961"
-    }
-  },
-  {
-    "id": "ext-gustaf-dalensgatan-19-417-05-goteborg-221",
-    "titel": "Gustaf Dalénsgatan 19 – helt nyrenoverad kontorslokal på 221 kvm vid Backaplan",
-    "adress": "Gustaf Dalensgatan 19, 417 05 Göteborg",
-    "omrade": "Backaplan / Hisings Backa",
-    "niva": 1,
-    "typ": "kontor",
-    "kvm": 221,
-    "kvm_intervall": null,
-    "antal_kontorsrum": null,
-    "oppen_yta": null,
+    "oppen_yta": true,
     "oppen_yta_kvm": null,
     "motesrum": null,
     "hyra_kr_man": null,
     "hyra_kr_kvm_ar": null,
-    "hyra_anmarkning": "Ingen hyresuppgift alls på annonssidan.",
-    "tilltrade": null,
-    "vaning": null,
-    "parkering": "\"Parkering, även med möjlighet till elbilsladdning, finns att hyra på fastigheten.\"",
-    "kollektivtrafik": "Närmaste hållplats är Swedenborgsplatsen, \"endast några meter från fastigheten\"",
-    "hyresvard": "Palmung Mellin Fastigheter",
-    "bild_url": "https://a.storyblok.com/f/178849/1536x1024/7cc4d158ca/kontorslandskap-2.png",
+    "hyra_anmarkning": "Annonsen anger \"Hyra: Ej angiven\" och \"Kontakta annonsören för mer information och aktuell hyresnivå\".",
+    "tilltrade": "Enligt överenskommelse (annonsens snabbfakta: \"Tillträde: enligt överenskommelse\"; faktarutan säger \"Tillträde: Ej angivet\")",
+    "vaning": "Plan 1 (\"Våningsplan: 1\")",
+    "parkering": null,
+    "kollektivtrafik": "Annonsen: \"Det är ca 3 minuters gångväg till busstationen, där ni enkelt tar er vidare mot både Göteborg och Bohus centrum.\" Samt \"Med bil når ni E6 snabbt och tar er till Göteborg på cirka 15 minuter.\"",
+    "hyresvard": "loqalo AB (anges som uthyrare i annonsen)",
+    "bild_url": "https://static.lokalguiden.se/filter/615x327,,90,cover/uploads/customer/5716/7e687eb7e4f217a80dfef5a219aa9b40.jpg",
     "kalla_url": [
-      "https://palmungmellin.se/lokaler/gustaf-dalensgatan-19-helt-nyrenoverad-kontorslokal-pa-221-kvm"
+      "https://www.lokalguiden.se/lokal/1-v%C3%A4stra-gatan-84-kung%C3%A4lv",
+      "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/564497"
     ],
     "hamtad_datum": "2026-08-22",
-    "beskrivning": "Helt nyrenoverad kontorslokal på 221 kvm vid Backaplan med mycket fönster och bra takhöjd. Planlösningen går att påverka, vilket gör att fördelningen mellan kontorsrum och öppen yta kan formas efter ett team på 8–12 personer. Parkering med elbilsladdning finns att hyra i fastigheten och hållplats Swedenborgsplatsen ligger några meter bort.",
-    "bekraftelsecitat": "Helt nyrenoverad kontorslokal på 221 kvm med möjlighet att påverka planlösningen.",
+    "beskrivning": "Kontor på 161 kvm på plan 1 mitt på Västra gatan i centrala Kungälv, med ljusinsläpp från flera väderstreck och en blandning av öppna arbetsytor och rumsindelade delar. Pentry, två WC och gott om förråd ingår; tre minuters promenad till busstationen och cirka 15 minuter till Göteborg via E6. Annonsen nämner varken parkering, dusch, antal kontorsrum eller hyresnivå.",
+    "bekraftelsecitat": "möjligheten att hyra en trevlig och välplanerad kontorslokal om 161 kvm",
     "plus": [
-      "Parkering på fastigheten att hyra, med elbilsladdning – uppfyller skallkravet",
-      "Nyrenoverad RWC med dusch",
-      "Hållplats Swedenborgsplatsen några meter från fastigheten",
-      "Planlösningen går att påverka, kan anpassas till 8–12 personer",
-      "Direkt kontakt till uthyraren med namn, telefon och e-post"
+      "Blandad planlösning: \"Planlösningen ger en fin kombination av öppna arbetsytor och rumsindelade delar\" – passar både fokusarbete och möten.",
+      "Centralt Kungälvsläge på köpstråket med butiker, caféer, restauranger och service runt hörnet.",
+      "Ca 3 minuters gångväg till busstationen och ca 15 minuter till Göteborg via E6.",
+      "Pentry, två WC och \"gott om förråd/förvaring\" ingår.",
+      "Namngiven kontaktperson med direktnummer och mejl (Ella Stål, loqalo AB, 031-350 49 00 som växel).",
+      "dusch finns"
     ],
     "minus": [
-      "Hyra, tillträde och våningsplan står inte på sidan",
-      "Antal kontorsrum anges inte",
-      "Öppen planlösning nämns inte uttryckligen, bara att planlösningen går att påverka",
-      "Antal mötesrum framgår inte"
+      "Parkering nämns inte med ett ord i annonsen – skallkravet går inte att bekräfta, och centralt köpstråk är sällan p-vänligt.",
+      "Dusch nämns inte.",
+      "Antal kontorsrum och antal mötesrum anges inte, bara \"rum för kontor/möten\" – rumsförsörjningen går inte att bedöma.",
+      "Hyra ej angiven, och annonsen är publicerad 2025-12-11 (objektsnr 41994986) så uppgifterna kan ha hunnit bli inaktuella.",
+      "parkering ej angiven — måste kollas (krav)"
     ],
     "okanda_falt": [
       "antal_kontorsrum",
-      "oppen_yta",
       "oppen_yta_kvm",
       "motesrum",
       "hyra_kr_man",
       "hyra_kr_kvm_ar",
-      "tilltrade",
-      "vaning",
-      "kvm_intervall",
+      "parkering",
       "hyra"
     ],
     "verifierad": true,
     "kontakt": {
-      "namn": "Erik Palmung",
-      "telefon": "031-744 50 45",
-      "epost": "erik.palmung@palmungmellin.se"
+      "namn": "Ella Stål",
+      "telefon": "076-506 53 99",
+      "epost": "ella@loqalo.se"
     },
-    "granskning": {
-      "lage": "bekraftad",
-      "notering": "adress ✓, yta ✓ — bekräftad manuellt 2026-08-21; sajten bryter TLS mot automatisk hämtning",
-      "kontrollerad": "https://palmungmellin.se/lokaler/gustaf-dalensgatan-19-helt-nyrenoverad-kontorslokal-pa-221-kvm"
-    },
-    "restid_kungalv_min_uppskattad": 18,
-    "parkering_status": "ja",
+    "restid_kungalv_min_uppskattad": 4,
+    "parkering_status": "okant",
     "matchpoang": 75,
-    "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
+    "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
     "poangdelar": {
       "yta": 25,
       "rum": 12.5,
-      "oppen_yta": 10,
-      "geografi": 15,
+      "oppen_yta": 15,
+      "geografi": 7.5,
       "hyra": 10,
-      "tilltrade": 2.5
+      "tilltrade": 5
+    },
+    "dubbletter_sammanslagna": 1,
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.lokalguiden.se/lokal/1-v%C3%A4stra-gatan-84-kung%C3%A4lv"
     }
   },
   {
@@ -5182,82 +5104,6 @@
       "lage": "bekraftad",
       "notering": "adress ✓, yta ✓",
       "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/lundby/607126"
-    }
-  },
-  {
-    "id": "lg-vastra-gatan-8486-kungalv-161",
-    "titel": "Kontor 161 kvm på Västra Gatan 84 — centralt läge i Kungälvs köpstråk, tillträde enligt överenskommelse",
-    "adress": "Västra Gatan 84–86, Kungälv",
-    "omrade": "Kungälv centrum",
-    "niva": 2,
-    "typ": "kontor",
-    "kvm": 161,
-    "kvm_intervall": null,
-    "antal_kontorsrum": null,
-    "oppen_yta": true,
-    "oppen_yta_kvm": null,
-    "motesrum": null,
-    "hyra_kr_man": null,
-    "hyra_kr_kvm_ar": null,
-    "hyra_anmarkning": "Annonsen anger \"Hyra: Ej angiven\" och \"Kontakta annonsören för mer information och aktuell hyresnivå\".",
-    "tilltrade": "Enligt överenskommelse (annonsens snabbfakta: \"Tillträde: enligt överenskommelse\"; faktarutan säger \"Tillträde: Ej angivet\")",
-    "vaning": "Plan 1 (\"Våningsplan: 1\")",
-    "parkering": null,
-    "kollektivtrafik": "Annonsen: \"Det är ca 3 minuters gångväg till busstationen, där ni enkelt tar er vidare mot både Göteborg och Bohus centrum.\" Samt \"Med bil når ni E6 snabbt och tar er till Göteborg på cirka 15 minuter.\"",
-    "hyresvard": "loqalo AB (anges som uthyrare i annonsen)",
-    "bild_url": "https://static.lokalguiden.se/filter/615x327,,90,cover/uploads/customer/5716/7e687eb7e4f217a80dfef5a219aa9b40.jpg",
-    "kalla_url": [
-      "https://www.lokalguiden.se/lokal/1-v%C3%A4stra-gatan-84-kung%C3%A4lv"
-    ],
-    "hamtad_datum": "2026-08-22",
-    "beskrivning": "Kontor på 161 kvm på plan 1 mitt på Västra gatan i centrala Kungälv, med ljusinsläpp från flera väderstreck och en blandning av öppna arbetsytor och rumsindelade delar. Pentry, två WC och gott om förråd ingår; tre minuters promenad till busstationen och cirka 15 minuter till Göteborg via E6. Annonsen nämner varken parkering, dusch, antal kontorsrum eller hyresnivå.",
-    "bekraftelsecitat": "möjligheten att hyra en trevlig och välplanerad kontorslokal om 161 kvm",
-    "plus": [
-      "Blandad planlösning: \"Planlösningen ger en fin kombination av öppna arbetsytor och rumsindelade delar\" – passar både fokusarbete och möten.",
-      "Centralt Kungälvsläge på köpstråket med butiker, caféer, restauranger och service runt hörnet.",
-      "Ca 3 minuters gångväg till busstationen och ca 15 minuter till Göteborg via E6.",
-      "Pentry, två WC och \"gott om förråd/förvaring\" ingår.",
-      "Namngiven kontaktperson med direktnummer och mejl (Ella Stål, loqalo AB, 031-350 49 00 som växel).",
-      "dusch finns"
-    ],
-    "minus": [
-      "Parkering nämns inte med ett ord i annonsen – skallkravet går inte att bekräfta, och centralt köpstråk är sällan p-vänligt.",
-      "Dusch nämns inte.",
-      "Antal kontorsrum och antal mötesrum anges inte, bara \"rum för kontor/möten\" – rumsförsörjningen går inte att bedöma.",
-      "Hyra ej angiven, och annonsen är publicerad 2025-12-11 (objektsnr 41994986) så uppgifterna kan ha hunnit bli inaktuella.",
-      "parkering ej angiven — måste kollas (krav)"
-    ],
-    "okanda_falt": [
-      "antal_kontorsrum",
-      "oppen_yta_kvm",
-      "motesrum",
-      "hyra_kr_man",
-      "hyra_kr_kvm_ar",
-      "parkering",
-      "hyra"
-    ],
-    "verifierad": true,
-    "kontakt": {
-      "namn": "Ella Stål",
-      "telefon": "076-506 53 99",
-      "epost": "ella@loqalo.se"
-    },
-    "restid_kungalv_min_uppskattad": 4,
-    "parkering_status": "okant",
-    "matchpoang": 75,
-    "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 15/20, Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
-    "poangdelar": {
-      "yta": 25,
-      "rum": 12.5,
-      "oppen_yta": 15,
-      "geografi": 7.5,
-      "hyra": 10,
-      "tilltrade": 5
-    },
-    "granskning": {
-      "lage": "bekraftad",
-      "notering": "adress ✓, yta ✓",
-      "kontrollerad": "https://www.lokalguiden.se/lokal/1-v%C3%A4stra-gatan-84-kung%C3%A4lv"
     }
   },
   {
@@ -6381,92 +6227,6 @@
     }
   },
   {
-    "id": "vl-sangspelsgatan-422-41-goteborg-gatunumme-135",
-    "titel": "Kontor pa Sangspelsgatan, ca 135 kvm – Backa, hyra ej angiven",
-    "adress": "Sångspelsgatan, 422 41 Göteborg (gatunummer dolt i annonsen: \"Se väg-nr [xxxxxxxx]\")",
-    "omrade": "Backa, Norra Hisingen",
-    "niva": 1,
-    "typ": "kontor",
-    "kvm": 135,
-    "kvm_intervall": null,
-    "antal_kontorsrum": null,
-    "oppen_yta": null,
-    "oppen_yta_kvm": null,
-    "motesrum": null,
-    "hyra_kr_man": null,
-    "hyra_kr_kvm_ar": null,
-    "hyra_anmarkning": "Annonsen anger \"Hyra per år exkl. drift: Inte angivet\". Ingen hyresnivå finns på sidan.",
-    "tilltrade": null,
-    "vaning": null,
-    "parkering": null,
-    "kollektivtrafik": null,
-    "hyresvard": null,
-    "bild_url": null,
-    "kalla_url": [
-      "https://www.verksamhetslokaler.se/hyra/kontorslokaler/norra-hisingen/575392"
-    ],
-    "hamtad_datum": "2026-08-22",
-    "beskrivning": "Aggregatorannons utan beskrivande text: sidan bekräftar bara att det är ca 135 kvm kontor på Sångspelsgatan i Norra Hisingen (postnr 42241, ID 575392). Hyra anges som \"Inte angivet\" och all kontaktinformation ligger bakom betalvägg. Kontorsrum, planlösning, våning och parkering går inte att läsa ut ur annonsen.",
-    "bekraftelsecitat": "Kontor att hyra, Norra hisingen, Sångspelsgatan … Ca. 135m2",
-    "plus": [
-      "Ytan 135 kvm enligt annonsen räcker i storleksordning för 8–12 personer om planlösningen tillåter.",
-      "Läget Backa/Norra Hisingen ligger inom det sökta Hisingen-området.",
-      "Annonsen är färsk: \"Senast uppdaterad 13:24 • 14 aug.\", \"Skapad 7 d\"."
-    ],
-    "minus": [
-      "Annonsen saknar all beskrivande text – inget om kontorsrum, planlösning eller öppen yta.",
-      "Ingen parkeringsuppgift alls, och parkering är skallkrav för den här hyresgästen.",
-      "Hyra står som \"Inte angivet\" och hyresvärd/kontaktuppgifter ligger bakom betalvägg (\"Se all information om lokalen och få direkt tillgång till hyresvärdens kontaktuppgifter\").",
-      "Gatunumret är dolt och fältet \"Indraget: 14.08.2026\" är oförklarat på sidan – kan betyda att annonsen dragits tillbaka.",
-      "parkering ej angiven — måste kollas (krav)",
-      "135 kvm är i underkant för 8–12 personer"
-    ],
-    "okanda_falt": [
-      "antal_kontorsrum",
-      "oppen_yta",
-      "oppen_yta_kvm",
-      "motesrum",
-      "hyra_kr_man",
-      "hyra_kr_kvm_ar",
-      "tilltrade",
-      "vaning",
-      "parkering",
-      "kollektivtrafik",
-      "hyresvard",
-      "kontakt_namn",
-      "kontakt_telefon",
-      "kontakt_epost",
-      "bild_url",
-      "adress (gatunummer dolt)",
-      "hyra",
-      "kontakt.epost",
-      "kontakt.telefon"
-    ],
-    "verifierad": true,
-    "kontakt": {
-      "namn": null,
-      "telefon": null,
-      "epost": null
-    },
-    "restid_kungalv_min_uppskattad": null,
-    "parkering_status": "okant",
-    "matchpoang": 71,
-    "poangmotivering": "Yta 20,5/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
-    "poangdelar": {
-      "yta": 20.5,
-      "rum": 12.5,
-      "oppen_yta": 10,
-      "geografi": 15,
-      "hyra": 10,
-      "tilltrade": 2.5
-    },
-    "granskning": {
-      "lage": "bekraftad",
-      "notering": "adress ✓, yta ✓",
-      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/norra-hisingen/575392"
-    }
-  },
-  {
     "id": "lg-transportgatan-39-agnesberg-492",
     "titel": "Kontor 239–745 kvm, delbart i två enheter, inflytt omgående",
     "adress": "Transportgatan 39, Agnesberg",
@@ -6870,6 +6630,90 @@
     }
   },
   {
+    "id": "ext-uddevallavagen-14-442-32-kungalv-461",
+    "titel": "Kontorslokal på våning 1 centralt i Kungälv med hiss och parkering",
+    "adress": "Uddevallavägen 14, 442 32 Kungälv",
+    "omrade": "Kungälv centrum",
+    "niva": 2,
+    "typ": "kontor",
+    "kvm": 461,
+    "kvm_intervall": null,
+    "antal_kontorsrum": null,
+    "oppen_yta": null,
+    "oppen_yta_kvm": null,
+    "motesrum": null,
+    "hyra_kr_man": null,
+    "hyra_kr_kvm_ar": null,
+    "hyra_anmarkning": "Ingen hyra anges. Faktarutan säger \"Kontakta hyresvärd\".",
+    "tilltrade": "\"Enligt överenskommelse\" – annonsen anger dessutom att lokalen är ledig from 1/1 2025",
+    "vaning": "Våning 1",
+    "parkering": "\"Parkeringsmöjligheter finns\" (inget om antal platser, garage eller laddplatser)",
+    "kollektivtrafik": null,
+    "hyresvard": "Sigillet Fastighets AB (publ)",
+    "bild_url": "https://res.cloudinary.com/portally/image/upload/b_auto,c_lpad,h_600,q_auto,w_900/214-Borgarparken-bild1_fmjd5n",
+    "kalla_url": [
+      "https://www.portally.com/lokal/uddevallavagen-14",
+      "https://www.lokalguiden.se/lokal/1-uddevallav%C3%A4gen-14-kung%C3%A4lv",
+      "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/468073"
+    ],
+    "hamtad_datum": "2026-08-22",
+    "beskrivning": "Kontorslokal på 461 kvm på våning 1 centralt i Kungälv, med ingång via entréplan och möjlighet att ta trappa eller hiss upp till kontoret. Parkeringsmöjligheter finns enligt annonsen och lokalen har varit ledig sedan 1 januari 2025. Annonsen beskriver inte planlösningen alls – varken kontorsrum, mötesrum eller öppen yta – och ingen hyra anges.",
+    "bekraftelsecitat": "LEDIGT: KONTOR 461 KVM from 1/1 2025",
+    "plus": [
+      "Centralt läge i Kungälv, till skillnad från industriområdena i Rollsbo",
+      "Parkeringsmöjligheter finns enligt annonsen – skallkravet är i grunden täckt",
+      "Hiss upp till kontoret, entré via entréplan",
+      "Ledig sedan 1/1 2025 – tillträde bör kunna gå snabbt",
+      "Känd institutionell hyresvärd (Sigillet Fastighets AB publ) med namngiven kontaktperson"
+    ],
+    "minus": [
+      "461 kvm är klart större än vad 8–12 personer behöver, och annonsen nämner ingen delning",
+      "Planlösningen beskrivs inte alls: inga uppgifter om kontorsrum, mötesrum eller öppen yta",
+      "Ingen hyra angiven (\"Kontakta hyresvärd\")",
+      "Parkeringsuppgiften är vag – varken antal platser, garage eller laddplatser preciseras, och inget om kollektivtrafik eller dusch står på sidan",
+      "461 kvm är mer yta än 8–12 personer behöver"
+    ],
+    "okanda_falt": [
+      "kvm_intervall",
+      "antal_kontorsrum",
+      "oppen_yta",
+      "oppen_yta_kvm",
+      "motesrum",
+      "hyra_kr_man",
+      "hyra_kr_kvm_ar",
+      "kollektivtrafik",
+      "kontakt_telefon",
+      "kontakt_epost",
+      "hyra",
+      "kontakt.epost",
+      "kontakt.telefon"
+    ],
+    "verifierad": true,
+    "kontakt": {
+      "namn": "Victor Fridén (Sigillet Fastighets AB)",
+      "telefon": null,
+      "epost": null
+    },
+    "restid_kungalv_min_uppskattad": 4,
+    "parkering_status": "ja",
+    "matchpoang": 70,
+    "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
+    "poangdelar": {
+      "yta": 25,
+      "rum": 12.5,
+      "oppen_yta": 10,
+      "geografi": 7.5,
+      "hyra": 10,
+      "tilltrade": 5
+    },
+    "dubbletter_sammanslagna": 1,
+    "granskning": {
+      "lage": "bekraftad",
+      "notering": "adress ✓, yta ✓",
+      "kontrollerad": "https://www.portally.com/lokal/uddevallavagen-14"
+    }
+  },
+  {
     "id": "ext-bilgatan-25-kungalv-5446",
     "titel": "Bilgatan 25, Rollsbo – 5 446 kvm lager- och logistikfastighet med kontorslokaler (kontorsdelens yta anges inte)",
     "adress": "Bilgatan 25, Kungälv",
@@ -7110,88 +6954,6 @@
     }
   },
   {
-    "id": "ext-uddevallavagen-14-442-32-kungalv-461",
-    "titel": "Kontorslokal på våning 1 centralt i Kungälv med hiss och parkering",
-    "adress": "Uddevallavägen 14, 442 32 Kungälv",
-    "omrade": "Kungälv centrum",
-    "niva": 2,
-    "typ": "kontor",
-    "kvm": 461,
-    "kvm_intervall": null,
-    "antal_kontorsrum": null,
-    "oppen_yta": null,
-    "oppen_yta_kvm": null,
-    "motesrum": null,
-    "hyra_kr_man": null,
-    "hyra_kr_kvm_ar": null,
-    "hyra_anmarkning": "Ingen hyra anges. Faktarutan säger \"Kontakta hyresvärd\".",
-    "tilltrade": "\"Enligt överenskommelse\" – annonsen anger dessutom att lokalen är ledig from 1/1 2025",
-    "vaning": "Våning 1",
-    "parkering": "\"Parkeringsmöjligheter finns\" (inget om antal platser, garage eller laddplatser)",
-    "kollektivtrafik": null,
-    "hyresvard": "Sigillet Fastighets AB (publ)",
-    "bild_url": "https://res.cloudinary.com/portally/image/upload/b_auto,c_lpad,h_600,q_auto,w_900/214-Borgarparken-bild1_fmjd5n",
-    "kalla_url": [
-      "https://www.portally.com/lokal/uddevallavagen-14",
-      "https://www.lokalguiden.se/lokal/1-uddevallav%C3%A4gen-14-kung%C3%A4lv"
-    ],
-    "hamtad_datum": "2026-08-22",
-    "beskrivning": "Kontorslokal på 461 kvm på våning 1 centralt i Kungälv, med ingång via entréplan och möjlighet att ta trappa eller hiss upp till kontoret. Parkeringsmöjligheter finns enligt annonsen och lokalen har varit ledig sedan 1 januari 2025. Annonsen beskriver inte planlösningen alls – varken kontorsrum, mötesrum eller öppen yta – och ingen hyra anges.",
-    "bekraftelsecitat": "LEDIGT: KONTOR 461 KVM from 1/1 2025",
-    "plus": [
-      "Centralt läge i Kungälv, till skillnad från industriområdena i Rollsbo",
-      "Parkeringsmöjligheter finns enligt annonsen – skallkravet är i grunden täckt",
-      "Hiss upp till kontoret, entré via entréplan",
-      "Ledig sedan 1/1 2025 – tillträde bör kunna gå snabbt",
-      "Känd institutionell hyresvärd (Sigillet Fastighets AB publ) med namngiven kontaktperson"
-    ],
-    "minus": [
-      "461 kvm är klart större än vad 8–12 personer behöver, och annonsen nämner ingen delning",
-      "Planlösningen beskrivs inte alls: inga uppgifter om kontorsrum, mötesrum eller öppen yta",
-      "Ingen hyra angiven (\"Kontakta hyresvärd\")",
-      "Parkeringsuppgiften är vag – varken antal platser, garage eller laddplatser preciseras, och inget om kollektivtrafik eller dusch står på sidan",
-      "461 kvm är mer yta än 8–12 personer behöver"
-    ],
-    "okanda_falt": [
-      "kvm_intervall",
-      "antal_kontorsrum",
-      "oppen_yta",
-      "oppen_yta_kvm",
-      "motesrum",
-      "hyra_kr_man",
-      "hyra_kr_kvm_ar",
-      "kollektivtrafik",
-      "kontakt_telefon",
-      "kontakt_epost",
-      "hyra",
-      "kontakt.epost",
-      "kontakt.telefon"
-    ],
-    "verifierad": true,
-    "kontakt": {
-      "namn": "Victor Fridén (Sigillet Fastighets AB)",
-      "telefon": null,
-      "epost": null
-    },
-    "restid_kungalv_min_uppskattad": 4,
-    "parkering_status": "ja",
-    "matchpoang": 70,
-    "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
-    "poangdelar": {
-      "yta": 25,
-      "rum": 12.5,
-      "oppen_yta": 10,
-      "geografi": 7.5,
-      "hyra": 10,
-      "tilltrade": 5
-    },
-    "granskning": {
-      "lage": "bekraftad",
-      "notering": "adress ✓, yta ✓",
-      "kontrollerad": "https://www.portally.com/lokal/uddevallavagen-14"
-    }
-  },
-  {
     "id": "ext-bultgatan-40-440-42-kungalv-400",
     "titel": "Bultgatan 40, Rollsbo – kontor att hyra i spannet ca 100–700 kvm, även kombiytor kontor/lager",
     "adress": "Bultgatan 40, 440 42 Kungälv",
@@ -7278,87 +7040,6 @@
     }
   },
   {
-    "id": "ext-hollandsgatan-4-442-50-ytterby-149",
-    "titel": "Hollandsgatan 4, Ytterby Park – 149 kvm nyproducerad lokal med påverkbar planlösning, parkering i direkt anslutning",
-    "adress": "Hollandsgatan 4, 442 50 Ytterby",
-    "omrade": "Ytterby, Kungälv",
-    "niva": 2,
-    "typ": "nyproduktion",
-    "kvm": 149,
-    "kvm_intervall": null,
-    "antal_kontorsrum": null,
-    "oppen_yta": null,
-    "oppen_yta_kvm": null,
-    "motesrum": null,
-    "hyra_kr_man": null,
-    "hyra_kr_kvm_ar": null,
-    "hyra_anmarkning": "Annonsen anger endast \"Kontakta hyresvärd\" – ingen hyresnivå publicerad.",
-    "tilltrade": "Faktarutan säger \"Enligt överenskommelse\"; texten säger \"byggstart 2025 och inflyttning under 2026\".",
-    "vaning": null,
-    "parkering": "\"Gott om parkeringsplatser i direkt anslutning till fastigheten förstärker bekvämligheten ytterligare.\"",
-    "kollektivtrafik": "\"Busshållplats finns precis utanför fastigheten med smidiga förbindelser till Kungälv centrum och Ytterby station där tåg vidare mot Göteborg avgår frekvent.\"",
-    "hyresvard": null,
-    "bild_url": "https://res.cloudinary.com/portally/image/upload/b_auto,c_lpad,h_600,q_auto,w_900/v1/Objektvision-images/Image.aspx_ri5sfu",
-    "kalla_url": [
-      "https://www.portally.com/lokal/hollandsgatan-4"
-    ],
-    "hamtad_datum": "2026-08-22",
-    "beskrivning": "Nyproducerad, ännu inte färdigställd verksamhetslokal på 149 kvm i Ytterby Park med skyltläge mot Marstrandsvägen. Hyresgästen kan påverka både planlösning och materialval, men inga rum, mötesrum eller hyror anges och inflyttning ligger under 2026. Parkering i direkt anslutning och busshållplats utanför entrén är däremot uttalat i annonsen.",
-    "bekraftelsecitat": "Lokaltyp: Butik, Industri/Verkstad, Kontor – Storlek: 149 m²",
-    "plus": [
-      "Parkering uttryckligen utlovad: \"Gott om parkeringsplatser i direkt anslutning till fastigheten\" – enda objektet av mina sex där skallkravet bekräftas",
-      "Busshållplats precis utanför fastigheten, tåg mot Göteborg från Ytterby station",
-      "Påverkbar planlösning – går att rita ett kontor efter 8–12 personer från grunden",
-      "149 kvm är en rimlig storlek för 8–12 personer"
-    ],
-    "minus": [
-      "Nyproduktion med byggstart 2025 och inflyttning under 2026 – ingen färdig lokal att titta på eller flytta in i direkt",
-      "Annonsen listar lokaltypen som butik/industri/verkstad/kontor och beskriver den bara som \"flexibel verksamhetslokal\" – inte som färdigt kontor",
-      "Ingen hyra, inga kontorsrum, inga mötesrum och ingen fastighetsägare namngiven",
-      "Ytterby ligger utanför Kungälvs centrum",
-      "nyproduktion — tillträdet ligger längre fram",
-      "149 kvm är i underkant för 8–12 personer"
-    ],
-    "okanda_falt": [
-      "antal_kontorsrum",
-      "oppen_yta",
-      "oppen_yta_kvm",
-      "motesrum",
-      "hyra_kr_man",
-      "hyra_kr_kvm_ar",
-      "vaning",
-      "hyresvard",
-      "kontakt_telefon",
-      "kontakt_epost",
-      "hyra",
-      "kontakt.epost",
-      "kontakt.telefon"
-    ],
-    "verifierad": true,
-    "kontakt": {
-      "namn": "Madeleine Ljungberg (Croisette Real Estate Partner)",
-      "telefon": null,
-      "epost": null
-    },
-    "restid_kungalv_min_uppskattad": 8,
-    "parkering_status": "ja",
-    "matchpoang": 70,
-    "poangmotivering": "Yta 24,7/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 5/5",
-    "poangdelar": {
-      "yta": 24.7,
-      "rum": 12.5,
-      "oppen_yta": 10,
-      "geografi": 7.5,
-      "hyra": 10,
-      "tilltrade": 5
-    },
-    "granskning": {
-      "lage": "bekraftad",
-      "notering": "adress ✓, yta ✓",
-      "kontrollerad": "https://www.portally.com/lokal/hollandsgatan-4"
-    }
-  },
-  {
     "id": "ln-hollandsgatan-149",
     "titel": "Sista lokalen i nyproducerade Ytterby Park vid Marstrandsvägen, anpassningsbar för kontor - OSÄKER: annonsen riktar sig även mot butik och vård, och ingen ren kontorsyta är särredovisad",
     "adress": "Hollandsgatan",
@@ -7382,7 +7063,9 @@
     "bild_url": "https://www.lokalnytt.se/dbfiles/54010/objects/335184/new_full_32892563.jpg",
     "kalla_url": [
       "https://www.lokalnytt.se/%C3%B6vrigt/kung%C3%A4lv/hollandsgatan-335184",
-      "https://www.lokalguiden.se/lokal/hollandsgatan-ytterby"
+      "https://www.lokalguiden.se/lokal/hollandsgatan-ytterby",
+      "https://www.portally.com/lokal/hollandsgatan-4",
+      "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/591761"
     ],
     "hamtad_datum": "2026-08-22",
     "beskrivning": "Sista lediga lokalen i nyproducerade Ytterby Park vid Marstrandsvägen, 149 kvm i markplan där hyresgästen enligt annonsen själv får påverka utformning och materialval. Annonsen marknadsför lokalen mot kontor, butik, vård och träning samtidigt och söker uttryckligen aktörer inom hälsa och vård, så ingen färdig kontorsplanlösning finns beskriven. Parkering och busshållplats utanför dörren, men inflyttningen angavs till våren 2026 i en annons från oktober 2024 och måste stämmas av.",
@@ -7429,6 +7112,7 @@
       "hyra": 10,
       "tilltrade": 4
     },
+    "dubbletter_sammanslagna": 2,
     "granskning": {
       "lage": "bekraftad",
       "notering": "adress ✓, yta ✓",
@@ -7758,88 +7442,6 @@
     }
   },
   {
-    "id": "vl-vastra-gatan-gatunummer-dolt-i-annonsen-160",
-    "titel": "Kontor pa Vastra Gatan, ca 160 kvm – Kungalv centrum, i den gamla stadskarnan",
-    "adress": "Vastra Gatan (gatunummer dolt i annonsen)",
-    "omrade": "Kungalv centrum",
-    "niva": 2,
-    "typ": "kontor",
-    "kvm": 160,
-    "kvm_intervall": null,
-    "antal_kontorsrum": null,
-    "oppen_yta": null,
-    "oppen_yta_kvm": null,
-    "motesrum": null,
-    "hyra_kr_man": null,
-    "hyra_kr_kvm_ar": null,
-    "hyra_anmarkning": "Annonsen anger \"Hyra per år exkl. drift: Inte angivet\".",
-    "tilltrade": null,
-    "vaning": null,
-    "parkering": null,
-    "kollektivtrafik": null,
-    "hyresvard": null,
-    "bild_url": "https://www.verksamhetslokaler.se/LPStreetView/Cache/564497_534.webp",
-    "kalla_url": [
-      "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/564497"
-    ],
-    "hamtad_datum": "2026-08-22",
-    "beskrivning": "Maskingenererad stubbannons för ca 160 kvm kontor på Västra Gatan i Kungälv; beskrivningstexten är en oöversatt dansk standardmening (\"Dette erhvervslejemål, som kan anvendes til Kontor, ligger i Kungälv\") utan sakinnehåll. Yta och lokaltyp är det enda som bekräftas - hyra, hyresvärd, planlösning och parkering saknas, och kontaktuppgifter kräver registrering. Storleken passar 8-12 personer, men allt annat måste ringas fram.",
-    "bekraftelsecitat": "Kontor att hyra, Kungälv, Västra Gatan … Ca. 160 m2",
-    "plus": [
-      "Ca 160 kvm ligger rätt i storlek för 8-12 personer",
-      "Läget anges till Västra Gatan i Kungälvs centrum, alltså centralt i den gamla stadskärnan"
-    ],
-    "minus": [
-      "Automatgenererad stubbannons - beskrivningen är oöversatt dansk standardtext utan någon information om lokalen",
-      "Parkering nämns inte alls, och parkering är skallkrav för den här hyresgästen",
-      "Hyra, hyresvärd och kontaktuppgifter saknas (kräver registrering); sidans enda datum, \"Indraget: 14.08.2026\", står identiskt på flera annonser och går inte att tolka som tillträde",
-      "Inget om antal rum, öppen planlösning, mötesrum, våningsplan eller dusch",
-      "parkering ej angiven — måste kollas (krav)"
-    ],
-    "okanda_falt": [
-      "antal_kontorsrum",
-      "oppen_yta",
-      "oppen_yta_kvm",
-      "motesrum",
-      "hyra_kr_man",
-      "hyra_kr_kvm_ar",
-      "tilltrade",
-      "vaning",
-      "parkering",
-      "kollektivtrafik",
-      "hyresvard",
-      "kontakt_namn",
-      "kontakt_telefon",
-      "kontakt_epost",
-      "hyra",
-      "kontakt.epost",
-      "kontakt.telefon"
-    ],
-    "verifierad": true,
-    "kontakt": {
-      "namn": null,
-      "telefon": null,
-      "epost": null
-    },
-    "restid_kungalv_min_uppskattad": 4,
-    "parkering_status": "okant",
-    "matchpoang": 68,
-    "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
-    "poangdelar": {
-      "yta": 25,
-      "rum": 12.5,
-      "oppen_yta": 10,
-      "geografi": 7.5,
-      "hyra": 10,
-      "tilltrade": 2.5
-    },
-    "granskning": {
-      "lage": "bekraftad",
-      "notering": "adress ✓, yta ✓",
-      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/564497"
-    }
-  },
-  {
     "id": "ext-ringogatan-12-goteborg-620",
     "titel": "Ringögatan 12 - kontorsvåning med många rum, konferens och egen terrass",
     "adress": "Ringögatan 12, Göteborg",
@@ -7998,93 +7600,6 @@
     }
   },
   {
-    "id": "vl-uddevallavagen-kungalv-gatunummer-dolt-b-460",
-    "titel": "Kontor ca 460 kvm på Uddevallavägen i Kungälv – aggregatorannons nästan utan uppgifter",
-    "adress": "Uddevallavägen, Kungälv (gatunummer dolt bakom registrering)",
-    "omrade": "Kungälv",
-    "niva": 2,
-    "typ": "kontor",
-    "kvm": 460,
-    "kvm_intervall": null,
-    "antal_kontorsrum": null,
-    "oppen_yta": null,
-    "oppen_yta_kvm": null,
-    "motesrum": null,
-    "hyra_kr_man": null,
-    "hyra_kr_kvm_ar": null,
-    "hyra_anmarkning": "\"Hyra per år exkl. drift: Inte angivet\"",
-    "tilltrade": null,
-    "vaning": null,
-    "parkering": null,
-    "kollektivtrafik": null,
-    "hyresvard": null,
-    "bild_url": null,
-    "kalla_url": [
-      "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/468073"
-    ],
-    "hamtad_datum": "2026-08-22",
-    "beskrivning": "Innehållsfattig aggregatorannons: verksamhetslokaler.se listar ett kontor på ca 460 kvm på Uddevallavägen i Kungälv men visar bara lokaltyp, yta och ort, ingen bild av lokalen (endast Google Street View). Hyra står som \"Inte angivet\", och gatunummer samt hyresvärdens kontaktuppgifter är låsta bakom registrering. Datumet 27.07.2026 på sidan är när annonsen drogs in i databasen, inte ett tillträdesdatum – det ska inte tolkas som tillträde.",
-    "bekraftelsecitat": "Lokaltyp: Kontor Storlek: Ca. 460 m2",
-    "plus": [
-      "Ytan, ca 460 kvm, räcker med god marginal för 8–12 personer",
-      "Ligger i Kungälv, alltså inom sökområdet",
-      "Annonsen är färsk – sidan uppdaterades 27 juli 2026 och är skapad ca 25 dagar tidigare"
-    ],
-    "minus": [
-      "Ingen beskrivning av lokalen alls – bara lokaltyp, yta och ort",
-      "Hyra står som \"Inte angivet\"",
-      "Exakt gatunummer, bilder och hyresvärdens kontaktuppgifter kräver registrering",
-      "Parkering, planlösning, våning och tillträde framgår inte – skallkravet parkering går inte att kontrollera här",
-      "parkering ej angiven — måste kollas (krav)",
-      "460 kvm är mer yta än 8–12 personer behöver"
-    ],
-    "okanda_falt": [
-      "antal_kontorsrum",
-      "oppen_yta",
-      "oppen_yta_kvm",
-      "motesrum",
-      "hyra_kr_man",
-      "hyra_kr_kvm_ar",
-      "tilltrade",
-      "vaning",
-      "parkering",
-      "kollektivtrafik",
-      "hyresvard",
-      "kontakt_namn",
-      "kontakt_telefon",
-      "kontakt_epost",
-      "bild_url",
-      "exakt gatuadress",
-      "dusch",
-      "hyra",
-      "kontakt.epost",
-      "kontakt.telefon"
-    ],
-    "verifierad": true,
-    "kontakt": {
-      "namn": null,
-      "telefon": null,
-      "epost": null
-    },
-    "restid_kungalv_min_uppskattad": 5,
-    "parkering_status": "okant",
-    "matchpoang": 68,
-    "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
-    "poangdelar": {
-      "yta": 25,
-      "rum": 12.5,
-      "oppen_yta": 10,
-      "geografi": 7.5,
-      "hyra": 10,
-      "tilltrade": 2.5
-    },
-    "granskning": {
-      "lage": "bekraftad",
-      "notering": "adress ✓, yta ✓",
-      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/468073"
-    }
-  },
-  {
     "id": "lg-backa-bergogata-5-backa-hisings-backa-170",
     "titel": "Backa Bergögata 5 – 170 kvm modernt kontor med dusch, bastu och parkering med laddstolpe",
     "adress": "Backa Bergögata 5, Backa, Hisings Backa",
@@ -8233,90 +7748,6 @@
       "lage": "bekraftad",
       "notering": "adress ✓, yta ✓",
       "kontrollerad": "https://www.lokalguiden.se/lokal/k%C3%A5ller%C3%B6dsv%C3%A4gen-4-kung%C3%A4lv"
-    }
-  },
-  {
-    "id": "vl-hollandsgatan-gatunummer-dolt-bakom-se-v-300",
-    "titel": "Kontor på Hollandsgatan, ca 300 kvm – Ytterby, större av två ytor på samma gata",
-    "adress": "Hollandsgatan (gatunummer dolt bakom \"Se väg-nr [xxxxxxxx]\"), Ytterby, Kungälv",
-    "omrade": "Ytterby, Kungälv",
-    "niva": 2,
-    "typ": "kontor",
-    "kvm": 300,
-    "kvm_intervall": null,
-    "antal_kontorsrum": null,
-    "oppen_yta": null,
-    "oppen_yta_kvm": null,
-    "motesrum": null,
-    "hyra_kr_man": null,
-    "hyra_kr_kvm_ar": null,
-    "hyra_anmarkning": "\"Hyra per år exkl. drift: Inte angivet\" – priset ligger bakom inloggning",
-    "tilltrade": null,
-    "vaning": null,
-    "parkering": null,
-    "kollektivtrafik": null,
-    "hyresvard": null,
-    "bild_url": "https://www.verksamhetslokaler.se/LPStreetView/Cache/591760_534.webp?t=639147178494623309",
-    "kalla_url": [
-      "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/591760"
-    ],
-    "hamtad_datum": "2026-08-22",
-    "beskrivning": "Annonsen innehåller nästan inga uppgifter: bara att det är ett kontor på ca 300 kvm på Hollandsgatan i Ytterby, publicerat 19.08.2026. Gatunummer, hyra och hyresvärdens kontaktuppgifter är dolda bakom inloggning/registrering. Med stor sannolikhet är detta samma objekt som Hollandsgatan 5 (302 kvm, fastigheten Pumpen 3) som ligger som fullständig annons på Portally – använd den annonsen i stället.",
-    "bekraftelsecitat": "Kontor att hyra, Kungälv, Ytterby, Hollandsgatan … Ca. 300 m2",
-    "plus": [
-      "Ca 300 kvm på Hollandsgatan i Ytterby, dvs. tillräcklig yta för 8–12 personer",
-      "Färsk annons – publicerad 19.08.2026",
-      "Matchar sannolikt Portally-annonsen för Hollandsgatan 5 (302 kvm), som har fullständig beskrivning"
-    ],
-    "minus": [
-      "Nästan all information kräver inloggning: gatunummer, hyra, hyresvärd och kontaktuppgifter är dolda",
-      "Parkering nämns inte alls, trots att det är skallkrav",
-      "Ingenting om kontorsrum, mötesrum eller öppen planlösning går att läsa ut",
-      "Sannolikt en dubblett av Hollandsgatan 5 – bör inte räknas som ett separat objekt",
-      "parkering ej angiven — måste kollas (krav)"
-    ],
-    "okanda_falt": [
-      "kvm_intervall",
-      "antal_kontorsrum",
-      "oppen_yta",
-      "oppen_yta_kvm",
-      "motesrum",
-      "hyra_kr_man",
-      "hyra_kr_kvm_ar",
-      "tilltrade",
-      "vaning",
-      "parkering",
-      "kollektivtrafik",
-      "hyresvard",
-      "kontakt_namn",
-      "kontakt_telefon",
-      "kontakt_epost",
-      "hyra",
-      "kontakt.epost",
-      "kontakt.telefon"
-    ],
-    "verifierad": true,
-    "kontakt": {
-      "namn": null,
-      "telefon": null,
-      "epost": null
-    },
-    "restid_kungalv_min_uppskattad": 8,
-    "parkering_status": "okant",
-    "matchpoang": 68,
-    "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
-    "poangdelar": {
-      "yta": 25,
-      "rum": 12.5,
-      "oppen_yta": 10,
-      "geografi": 7.5,
-      "hyra": 10,
-      "tilltrade": 2.5
-    },
-    "granskning": {
-      "lage": "bekraftad",
-      "notering": "adress ✓, yta ✓",
-      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/591760"
     }
   },
   {
@@ -8475,89 +7906,6 @@
     }
   },
   {
-    "id": "vl-hollandsgatan-gatunummer-dolt-i-annonsen-150",
-    "titel": "Hollandsgatan, Ytterby – ca 150 kvm kontor att hyra (portalannons utan beskrivning)",
-    "adress": "Hollandsgatan (gatunummer dolt i annonsen), Ytterby, Kungälv",
-    "omrade": "Ytterby, Kungälv",
-    "niva": 2,
-    "typ": "kontor",
-    "kvm": 150,
-    "kvm_intervall": null,
-    "antal_kontorsrum": null,
-    "oppen_yta": null,
-    "oppen_yta_kvm": null,
-    "motesrum": null,
-    "hyra_kr_man": null,
-    "hyra_kr_kvm_ar": null,
-    "hyra_anmarkning": "Annonsen anger \"Hyra per år exkl. drift: Inte angivet\". Full information och hyresvärdens kontaktuppgifter kräver inloggning/prenumeration på verksamhetslokaler.se.",
-    "tilltrade": null,
-    "vaning": null,
-    "parkering": null,
-    "kollektivtrafik": null,
-    "hyresvard": null,
-    "bild_url": "https://www.verksamhetslokaler.se/LPStreetView/Cache/591761_534.webp",
-    "kalla_url": [
-      "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/591761"
-    ],
-    "hamtad_datum": "2026-08-22",
-    "beskrivning": "Kort portalannons för ca 150 kvm kontor på Hollandsgatan i Ytterby, helt utan beskrivningstext. Varken planlösning, hyra, parkering, tillträde eller hyresvärd framgår, och kontaktuppgifterna ligger bakom inloggning. Storleken passar 8–12 personer, men allt annat måste ringas fram – annonsen ligger dessutom på samma gata som nyproduktionen Hollandsgatan 4 och kan vara samma objekt.",
-    "bekraftelsecitat": "Kontor att hyra, Kungälv, Ytterby, Hollandsgatan – Ca. 150 m2",
-    "plus": [
-      "Ca 150 kvm anges som renodlat kontor – rätt storlek för 8–12 personer",
-      "Ligger i Ytterby, Kungälv, inom sökområdet",
-      "Annonsen är aktiv och senast uppdaterad 20 juli, alltså färsk"
-    ],
-    "minus": [
-      "Ingen beskrivningstext alls – kontorsrum, öppen yta, mötesrum och våning saknas helt",
-      "Parkering nämns inte – skallkravet går inte att bekräfta",
-      "Ingen hyra angiven och inget tillträdesdatum (fältet \"Indraget 20.07.2026\" är inte ett tillträde)",
-      "Hyresvärd och kontaktuppgifter ligger bakom betalvägg, och gatunumret är dolt – kan vara dubblett av Hollandsgatan 4",
-      "parkering ej angiven — måste kollas (krav)"
-    ],
-    "okanda_falt": [
-      "antal_kontorsrum",
-      "oppen_yta",
-      "oppen_yta_kvm",
-      "motesrum",
-      "hyra_kr_man",
-      "hyra_kr_kvm_ar",
-      "tilltrade",
-      "vaning",
-      "parkering",
-      "kollektivtrafik",
-      "hyresvard",
-      "kontakt_namn",
-      "kontakt_telefon",
-      "kontakt_epost",
-      "hyra",
-      "kontakt.epost",
-      "kontakt.telefon"
-    ],
-    "verifierad": true,
-    "kontakt": {
-      "namn": null,
-      "telefon": null,
-      "epost": null
-    },
-    "restid_kungalv_min_uppskattad": 8,
-    "parkering_status": "okant",
-    "matchpoang": 68,
-    "poangmotivering": "Yta 25/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
-    "poangdelar": {
-      "yta": 25,
-      "rum": 12.5,
-      "oppen_yta": 10,
-      "geografi": 7.5,
-      "hyra": 10,
-      "tilltrade": 2.5
-    },
-    "granskning": {
-      "lage": "bekraftad",
-      "notering": "adress ✓, yta ✓",
-      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/591761"
-    }
-  },
-  {
     "id": "ext-gamla-flygplatsvagen-4-torslanda-115",
     "titel": "Torslanda hangar – 115 kvm kontor i markplan med separat mötesrum, pentry och eget WC",
     "adress": "Gamla Flygplatsvägen 4, Torslanda",
@@ -8581,7 +7929,8 @@
     "bild_url": null,
     "kalla_url": [
       "https://www.aspelinramm.se/lediga-lokaler/torslanda-hangar/kontorslokal-115-m2",
-      "https://www.lokalguiden.se/lokal/3-gamla-flygplatsv%C3%A4gen-4"
+      "https://www.lokalguiden.se/lokal/3-gamla-flygplatsv%C3%A4gen-4",
+      "https://www.verksamhetslokaler.se/hyra/kontorslokaler/vaestra-hisingen/607020"
     ],
     "hamtad_datum": "2026-08-22",
     "beskrivning": "Liten kontorslokal i markplan i Torslanda hangar, beskriven som ljus och funktionell med separat mötesrum, pentry och eget WC. Parkering uppges finnas i direkt anslutning till fastigheten. Hyra, antal kontorsrum och planlösning i övrigt framgår inte av annonsen.",
@@ -8628,6 +7977,7 @@
       "hyra": 10,
       "tilltrade": 5
     },
+    "dubbletter_sammanslagna": 1,
     "granskning": {
       "lage": "bekraftad",
       "notering": "adress ✓, yta ✓",
@@ -8788,93 +8138,6 @@
       "lage": "bekraftad",
       "notering": "adress ✓, yta ✓",
       "kontrollerad": "https://www.portally.com/lokal/flygledarevagen-1"
-    }
-  },
-  {
-    "id": "vl-dumpergatan-442-40-kungalv-gatunummer-do-145",
-    "titel": "Kontor ca 145 kvm på Dumpergatan i Kungälv – aggregatorannons nästan utan uppgifter",
-    "adress": "Dumpergatan, 442 40 Kungälv (gatunummer dolt bakom registrering)",
-    "omrade": "Kungälv (annonsen anger ingen stadsdel)",
-    "niva": 2,
-    "typ": "kontor",
-    "kvm": 145,
-    "kvm_intervall": null,
-    "antal_kontorsrum": null,
-    "oppen_yta": null,
-    "oppen_yta_kvm": null,
-    "motesrum": null,
-    "hyra_kr_man": null,
-    "hyra_kr_kvm_ar": null,
-    "hyra_anmarkning": "\"Hyra per år exkl. drift: Inte angivet\"",
-    "tilltrade": null,
-    "vaning": null,
-    "parkering": null,
-    "kollektivtrafik": null,
-    "hyresvard": null,
-    "bild_url": null,
-    "kalla_url": [
-      "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/562138"
-    ],
-    "hamtad_datum": "2026-08-22",
-    "beskrivning": "Innehållsfattig aggregatorannons: verksamhetslokaler.se listar ett kontor på ca 145 kvm på Dumpergatan i Kungälv (postnr 442 40) med enbart lokaltyp, yta och ort, och endast Google Street View som bild. Hyra står som \"Inte angivet\" och gatunummer samt kontaktuppgifter är låsta bakom registrering. Datumet 03.08.2026 är när annonsen drogs in i databasen, inte ett tillträdesdatum.",
-    "bekraftelsecitat": "Lokaltyp: Kontor Storlek: Ca. 145 m2",
-    "plus": [
-      "Ligger i Kungälv med postnummer 442 40, alltså inom sökområdet",
-      "Annonsen är färsk – sidan uppdaterades 3 augusti 2026 och är skapad ca 18 dagar tidigare",
-      "Ytan ca 145 kvm kan räcka för 8–12 personer om planlösningen är effektiv"
-    ],
-    "minus": [
-      "Ingen beskrivning, planlösning eller bild av lokalen – bara lokaltyp, yta och ort",
-      "Hyra står som \"Inte angivet\"",
-      "Exakt gatunummer och hyresvärdens kontaktuppgifter kräver registrering",
-      "Parkering nämns inte alls, så skallkravet går inte att kontrollera; 145 kvm är dessutom i underkant för 8–12 personer plus mötesrum",
-      "parkering ej angiven — måste kollas (krav)",
-      "145 kvm är i underkant för 8–12 personer"
-    ],
-    "okanda_falt": [
-      "antal_kontorsrum",
-      "oppen_yta",
-      "oppen_yta_kvm",
-      "motesrum",
-      "hyra_kr_man",
-      "hyra_kr_kvm_ar",
-      "tilltrade",
-      "vaning",
-      "parkering",
-      "kollektivtrafik",
-      "hyresvard",
-      "kontakt_namn",
-      "kontakt_telefon",
-      "kontakt_epost",
-      "bild_url",
-      "exakt gatuadress",
-      "dusch",
-      "hyra",
-      "kontakt.epost",
-      "kontakt.telefon"
-    ],
-    "verifierad": true,
-    "kontakt": {
-      "namn": null,
-      "telefon": null,
-      "epost": null
-    },
-    "restid_kungalv_min_uppskattad": 5,
-    "parkering_status": "okant",
-    "matchpoang": 66,
-    "poangmotivering": "Yta 23,5/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 7,5/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
-    "poangdelar": {
-      "yta": 23.5,
-      "rum": 12.5,
-      "oppen_yta": 10,
-      "geografi": 7.5,
-      "hyra": 10,
-      "tilltrade": 2.5
-    },
-    "granskning": {
-      "lage": "bekraftad",
-      "notering": "adress ✓, yta ✓",
-      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/562138"
     }
   },
   {
@@ -9111,90 +8374,6 @@
       "lage": "bekraftad",
       "notering": "adress ✓, yta ✓",
       "kontrollerad": "https://www.lokalguiden.se/lokal/1-backa-berg%C3%B6gata-14-backa"
-    }
-  },
-  {
-    "id": "vl-gamla-flygplatsvagen-423-37-goteborg-gat-115",
-    "titel": "Kontor pa Gamla Flygplatsvagen, ca 115 kvm – Save/Torslanda, bra parkering enligt annonsen",
-    "adress": "Gamla Flygplatsvägen, 423 37 Göteborg (gatunummer dolt i annonsen: \"Se väg-nr [xxxxxxxx]\")",
-    "omrade": "Säve / Torslanda, Västra Hisingen",
-    "niva": 1,
-    "typ": "kontor",
-    "kvm": 115,
-    "kvm_intervall": null,
-    "antal_kontorsrum": null,
-    "oppen_yta": null,
-    "oppen_yta_kvm": null,
-    "motesrum": null,
-    "hyra_kr_man": null,
-    "hyra_kr_kvm_ar": null,
-    "hyra_anmarkning": "Annonsen anger \"Hyra per år exkl. drift: Inte angivet\".",
-    "tilltrade": null,
-    "vaning": null,
-    "parkering": "Annonsen: \"Området erbjuder flera parkeringsalternativ, inklusive APCOA PARKERING och Gamla Flygplatsvägen 19 Parkering, båda öppna dygnet runt.\" OBS: texten är AI-genererad och beskriver allmänna p-anläggningar i området, inte parkering som ingår i lokalen.",
-    "kollektivtrafik": null,
-    "hyresvard": null,
-    "bild_url": null,
-    "kalla_url": [
-      "https://www.verksamhetslokaler.se/hyra/kontorslokaler/vaestra-hisingen/607020"
-    ],
-    "hamtad_datum": "2026-08-22",
-    "beskrivning": "Aggregatorannons för ca 115 kvm kontor på Gamla Flygplatsvägen i Västra Hisingen (postnr 42337, ID 607020). Den enda brödtexten är AI-genererad och handlar om området – den listar allmänna parkeringar och lunchställen i närheten, inte lokalens egna faciliteter. Hyra, rumsantal, våning, hyresvärd och kontaktuppgifter saknas helt.",
-    "bekraftelsecitat": "Denna kontorslokal om cirka 115 m² är belägen i Västra Hisingen",
-    "plus": [
-      "Ca 115 kvm kontor i Säve/Torslanda, inom det sökta Hisingen-området.",
-      "Annonsen nämner parkeringsalternativ öppna dygnet runt i närområdet (APCOA och Gamla Flygplatsvägen 19).",
-      "Mycket färsk annons: \"Senast uppdaterad 06:50 • 21 aug.\", \"Skapad 12 h\"."
-    ],
-    "minus": [
-      "Enda brödtexten är AI-genererad (\"Beskrivningen är skapad med hjälp av AI\") och beskriver området, inte lokalen.",
-      "Parkeringen som nämns är allmänna p-anläggningar i närheten – inget om p-platser som ingår i hyran.",
-      "Hyra, våning, kontorsrum, mötesrum, dusch, hyresvärd och kontaktuppgifter saknas helt (kontakt bakom betalvägg).",
-      "115 kvm är i minsta laget för 8–12 personer, och gatunumret är dolt så exakt läge kan inte bekräftas.",
-      "115 kvm är i underkant för 8–12 personer"
-    ],
-    "okanda_falt": [
-      "antal_kontorsrum",
-      "oppen_yta",
-      "oppen_yta_kvm",
-      "motesrum",
-      "hyra_kr_man",
-      "hyra_kr_kvm_ar",
-      "tilltrade",
-      "vaning",
-      "kollektivtrafik",
-      "hyresvard",
-      "kontakt_namn",
-      "kontakt_telefon",
-      "kontakt_epost",
-      "bild_url",
-      "adress (gatunummer dolt)",
-      "hyra",
-      "kontakt.epost",
-      "kontakt.telefon"
-    ],
-    "verifierad": true,
-    "kontakt": {
-      "namn": null,
-      "telefon": null,
-      "epost": null
-    },
-    "restid_kungalv_min_uppskattad": 15,
-    "parkering_status": "ja",
-    "matchpoang": 65,
-    "poangmotivering": "Yta 14,5/25, Rum 12,5/25 (okänt → halv poäng), Öppen yta 10/20 (okänt → halv poäng), Geografi 15/15, Hyra 10/10, Tillträde 2,5/5 (okänt → halv poäng)",
-    "poangdelar": {
-      "yta": 14.5,
-      "rum": 12.5,
-      "oppen_yta": 10,
-      "geografi": 15,
-      "hyra": 10,
-      "tilltrade": 2.5
-    },
-    "granskning": {
-      "lage": "bekraftad",
-      "notering": "adress ✓, yta ✓",
-      "kontrollerad": "https://www.verksamhetslokaler.se/hyra/kontorslokaler/vaestra-hisingen/607020"
     }
   },
   {
@@ -9776,7 +8955,8 @@
       "https://www.portally.com/lokal/hollandsgatan-5-300-kvm",
       "https://www.portally.com/lokal/hollandsgatan-5-302-kvm",
       "https://www.lokalnytt.se/kontor/kung%C3%A4lv/hollandsgatan-5-340872",
-      "https://www.lokalguiden.se/lokal/3-hollandsgatan-5-ytterby"
+      "https://www.lokalguiden.se/lokal/3-hollandsgatan-5-ytterby",
+      "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/591760"
     ],
     "hamtad_datum": "2026-08-22",
     "beskrivning": "Kontorslokal på 300 kvm i centrala Ytterby, huvudsakligen rumsindelad men enligt annonsen enkel att anpassa till ett öppnare koncept eller dela av till en mindre enhet. Huset har mycket bra skyltläge och rymmer bland annat veterinär och ett populärt bageri. Annonsen motsäger sig själv om parkering: faktarutan säger nej medan texten lovar goda parkeringsmöjligheter i anslutning till fastigheten.",
@@ -9827,6 +9007,7 @@
       "hyra": 10,
       "tilltrade": 5
     },
+    "dubbletter_sammanslagna": 1,
     "granskning": {
       "lage": "bekraftad",
       "notering": "adress ✓, yta ✓",
@@ -10082,7 +9263,8 @@
     "hyresvard": "loqalo AB (anges som uthyrare i annonsen)",
     "bild_url": "https://static.lokalguiden.se/filter/615x327,,90,cover/uploads/customer/5716/06e6631a7e9b8cfa42426358533a303b.jpg",
     "kalla_url": [
-      "https://www.lokalguiden.se/lokal/dumpergatan-4-kung%C3%A4lv"
+      "https://www.lokalguiden.se/lokal/dumpergatan-4-kung%C3%A4lv",
+      "https://www.verksamhetslokaler.se/hyra/kontorslokaler/kungaelv/562138"
     ],
     "hamtad_datum": "2026-08-22",
     "beskrivning": "Traditionellt rumsindelat kontor på 147 kvm i Rollsbo/Ytterby, tidigare använt av ett vårdbolag, med kök/pentry, WC och RWC, dusch och fiberanslutning. Både besöks- och personalparkering finns och busshållplatsen vid Rollsbokrysset ligger nära. Antal kontorsrum, våning, hyra och tillträde saknas i annonsen, som publicerades 2026-02-07.",
@@ -10129,6 +9311,7 @@
       "hyra": 10,
       "tilltrade": 2.5
     },
+    "dubbletter_sammanslagna": 1,
     "granskning": {
       "lage": "bekraftad",
       "notering": "adress ✓, yta ✓",

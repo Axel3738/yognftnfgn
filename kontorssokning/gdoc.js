@@ -10,8 +10,18 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const HAR = dirname(fileURLToPath(import.meta.url));
-const objekt = JSON.parse(readFileSync(join(HAR, 'objekt.json'), 'utf8'));
+const alla = JSON.parse(readFileSync(join(HAR, 'objekt.json'), 'utf8'));
 const params = JSON.parse(readFileSync(join(HAR, 'parametrar.json'), 'utf8'));
+
+// --max-kvm=220 ger en delmängd. Annonser som anger ett spann ("180-1000 kvm")
+// tas med om spannets undre gräns ryms, för då går den mindre ytan att hyra.
+const maxArg = process.argv.find((a) => a.startsWith('--max-kvm='));
+const MAX_KVM = maxArg ? Number(maxArg.split('=')[1]) : null;
+const ryms = (o) =>
+  (o.kvm != null && o.kvm <= MAX_KVM) ||
+  (Array.isArray(o.kvm_intervall) && o.kvm_intervall[0] <= MAX_KVM);
+const objekt = MAX_KVM ? alla.filter(ryms) : alla;
+const viaSpann = MAX_KVM ? objekt.filter((o) => !(o.kvm != null && o.kvm <= MAX_KVM)) : [];
 
 const esc = (s) =>
   String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -34,8 +44,11 @@ const andel = (n) => Math.round((n / objekt.length) * 100);
 const rader = [];
 const ut = (s) => rader.push(s);
 
-ut(`<h1>Kontorslokaler — Hisingen och Kungälv</h1>`);
-ut(`<p><i>${objekt.length} lediga kontorslokaler, hämtade ${objekt[0]?.hamtad_datum ?? ''} och kontrollerade mot sina levande annonser. Sorterade på matchpoäng.</i></p>`);
+ut(`<h1>Kontorslokaler — Hisingen och Kungälv${MAX_KVM ? ` · max ${MAX_KVM} kvm` : ''}</h1>`);
+ut(`<p><i>${objekt.length} lediga kontorslokaler${MAX_KVM ? ` på ${MAX_KVM} kvm eller mindre, utvalda ur den fullständiga listan på ${alla.length}` : ''}, hämtade ${alla[0]?.hamtad_datum ?? ''} och kontrollerade mot sina levande annonser. Sorterade på matchpoäng.</i></p>`);
+if (MAX_KVM && viaSpann.length) {
+  ut(`<p><i>${viaSpann.length} av dem är egentligen större lokaler vars annons erbjuder ett spann som börjar under ${MAX_KVM} kvm — de går alltså att hyra i mindre delar. De är märkta i tabellen.</i></p>`);
+}
 
 ut(`<h2>Sökkriterier</h2>`);
 ut(`<table border="1" cellpadding="6" cellspacing="0"><tbody>`);
@@ -79,7 +92,7 @@ if (antalDelat) {
 for (const [i, o] of utanDelat.slice(0, 10).entries()) {
   ut(`<h3>${i + 1}. ${esc(o.adress)} — ${o.matchpoang} poäng</h3>`);
   ut(
-    `<p>${esc(o.omrade)} (nivå ${o.niva}) · <b>${tal(o.kvm)} kvm</b> · ${o.antal_kontorsrum != null ? `<b>${o.antal_kontorsrum} kontorsrum</b>` : 'rumsantal ej angivet'} · ${hyra(o)} · tillträde ${esc(o.tilltrade || 'ej angivet')}<br>` +
+    `<p>${esc(o.omrade)} (nivå ${o.niva}) · <b>${Array.isArray(o.kvm_intervall) ? `${tal(o.kvm_intervall[0])}–${tal(o.kvm_intervall[1])}` : tal(o.kvm)} kvm</b> · ${o.antal_kontorsrum != null ? `<b>${o.antal_kontorsrum} kontorsrum</b>` : 'rumsantal ej angivet'} · ${hyra(o)} · tillträde ${esc(o.tilltrade || 'ej angivet')}<br>` +
       `Hyresvärd: ${esc(o.hyresvard || 'ej angiven')}${o.kontakt.namn ? ` · ${esc(o.kontakt.namn)}` : ''}${o.kontakt.telefon ? ` · ${esc(o.kontakt.telefon)}` : ''}${o.kontakt.epost ? ` · ${esc(o.kontakt.epost)}` : ''}<br>` +
       `<a href="${esc(o.kalla_url[0])}">Öppna annonsen</a></p>`
   );
@@ -89,7 +102,7 @@ for (const [i, o] of utanDelat.slice(0, 10).entries()) {
 }
 
 // Hela listan
-ut(`<h2>Alla ${objekt.length} objekt</h2>`);
+ut(`<h2>${MAX_KVM ? `Alla ${objekt.length} objekt på max ${MAX_KVM} kvm` : `Alla ${objekt.length} objekt`}</h2>`);
 ut(`<p><i>Klicka på adressen för att öppna annonsen. Streck betyder att annonsen inte anger uppgiften.</i></p>`);
 ut(`<table border="1" cellpadding="4" cellspacing="0"><thead><tr>` +
   `<th>#</th><th>Poäng</th><th>Adress</th><th>Område</th><th>Kvm</th><th>Rum</th><th>Hyra</th><th>Parkering</th><th>Hyresvärd</th>` +
@@ -100,7 +113,7 @@ for (const [i, o] of objekt.entries()) {
     `<tr><td>${i + 1}</td><td>${o.matchpoang}</td>` +
       `<td><a href="${esc(o.kalla_url[0])}">${esc(o.adress)}</a></td>` +
       `<td>${esc(o.omrade)} (N${o.niva}${o.typ !== 'kontor' ? ', ' + o.typ : ''})</td>` +
-      `<td>${tal(o.kvm)}</td><td>${o.antal_kontorsrum ?? '—'}</td>` +
+      `<td>${Array.isArray(o.kvm_intervall) ? `${tal(o.kvm_intervall[0])}–${tal(o.kvm_intervall[1])}` : tal(o.kvm)}</td><td>${o.antal_kontorsrum ?? '—'}</td>` +
       `<td>${hyra(o)}</td><td>${parkCell}</td>` +
       `<td>${esc((o.hyresvard || '—').split('(')[0].trim().slice(0, 40))}</td></tr>`
   );

@@ -263,6 +263,59 @@ export function poangsatt(raaObjekt, params) {
   };
 }
 
+// Samma lokal dyker upp på flera sajter, och verksamhetslokaler.se maskerar
+// gatunumret ("Gamla Tuvevägen (gatunummer dolt i annonsen)"). Då matchar inte
+// adresssträngarna varandra trots att det är samma objekt. Här slås de ihop på
+// gatunamn + yta, men BARA när gatunumren är förenliga: lika, eller saknas på
+// ena sidan. Lindholmsallén 2 och 10 är olika hus, Bultgatan 40A och 40B likaså.
+export function gatunamn(adress) {
+  return (adress || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/\([^)]*\)/g, ' ')
+    .split(',')[0]
+    .replace(/\b\d+\s*[a-z]?\b/g, ' ')
+    .replace(/[^a-z ]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+export function gatunummer(adress) {
+  const utanParentes = String(adress || '').replace(/\([^)]*\)/g, ' ').split(',')[0];
+  const m = utanParentes.match(/\b(\d+\s*[a-zA-Z]?)\b/);
+  return m ? m[1].replace(/\s+/g, '').toLowerCase() : null;
+}
+
+function sammaObjekt(a, b) {
+  if (a.kvm == null || b.kvm == null) return false;
+  if (gatunamn(a.adress) !== gatunamn(b.adress)) return false;
+  if (Math.abs(a.kvm - b.kvm) > Math.max(3, a.kvm * 0.02)) return false;
+  const na = gatunummer(a.adress);
+  const nb = gatunummer(b.adress);
+  if (na && nb && na !== nb) return false; // olika hus på samma gata
+  return true;
+}
+
+// Behåll den post som har flest ifyllda fält – den maskerade annonsen är nästan
+// alltid den tunnare av de två.
+function slaIhop(objekt) {
+  const kvar = [];
+  for (const o of objekt) {
+    const traff = kvar.find((k) => sammaObjekt(k, o));
+    if (!traff) {
+      kvar.push(o);
+      continue;
+    }
+    const behall = (o.okanda_falt || []).length < (traff.okanda_falt || []).length ? o : traff;
+    const slang = behall === o ? traff : o;
+    behall.kalla_url = [...new Set([...(behall.kalla_url || []), ...(slang.kalla_url || [])])];
+    behall.dubbletter_sammanslagna = (behall.dubbletter_sammanslagna || 0) + 1;
+    if (behall !== traff) kvar[kvar.indexOf(traff)] = behall;
+  }
+  return kvar;
+}
+
 function slug(s) {
   return nyckla(s).replace(/\s+/g, '-').slice(0, 40);
 }
@@ -277,7 +330,7 @@ export function byggObjekt(raa, params, hamtadDatum) {
     const p = poangsatt(o, params);
     objekt.push({ id, ...p, hamtad_datum: p.hamtad_datum ?? hamtadDatum ?? null });
   }
-  return objekt.sort((a, b) => b.matchpoang - a.matchpoang);
+  return slaIhop(objekt).sort((a, b) => b.matchpoang - a.matchpoang);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
