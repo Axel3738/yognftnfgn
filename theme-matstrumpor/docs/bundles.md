@@ -92,32 +92,71 @@ gälla så fort någon väljer 3-par — utan felmeddelande.
 
 ## 3. Vid köp
 
-`ms-paket.js` lägger strumporna **och** gåvan i kundvagnen med `/cart/add.js`,
-och skickar sedan kunden till `/discount/<kod>?redirect=/cart`. Shopifys egen
-väg. Ingen app, ingen funktion, inget som kan avinstalleras under oss.
+Sidan laddas inte om. Kunden får temats vanliga kundvagnslåda, precis som när
+man köper vad som helst annat i butiken.
 
-Verifierat mot temat 2026-08-21 — vad som faktiskt skickas:
+Ordningen är inte valfri:
 
-| Val | Kundvagn | Sedan | Kunden betalar |
+1. **Rabattkoden först**, med en `fetch` mot
+   `/discount/<kod>?redirect=/cart.js`. Shopify lägger koden på sessionen.
+   `?redirect=/cart.js` gör att svaret blir några hundra byte JSON i stället
+   för hela startsidan — det märks på mobil.
+2. **Sedan varorna**, med `/cart/add.js`. Strumporna och gåvan i ett anrop.
+   Anropet ber samtidigt om temats kundvagnssektioner (`sections`).
+3. **Lådan ritas om** med temats egen `renderContents()` och öppnas.
+
+Görs 1 och 2 i omvänd ordning ritas lådan med **fullpris** och rättar sig
+först vid nästa sidladdning. Kunden hinner se fel siffra.
+
+Efteråt kontrolleras `/cart.js`. Saknas koden gick något fel, och då tar vi
+reservvägen: `/discount/<kod>?redirect=/cart`, som laddar om men alltid
+fungerar. Finns ingen kundvagnslåda alls (butiken kan vara inställd på
+kundvagnssida) går vi samma väg direkt.
+
+Verifierat mot temat 2026-08-22 — vad som faktiskt skickas och vad lådan visar:
+
+| Val | Kundvagn | Kod | Lådan visar |
 |---|---|---|---|
-| 1-pack | 1 strumpa | /cart | 399 kr |
+| 1-pack | 1 strumpa | – | 399 kr |
 | 2-pack | 2 strumpor + 2 ätpinnar | `PAKET-SUSHI-2` | 898 − 499 = **399 kr** |
 | 4-pack | 4 strumpor + 4 ätpinnar | `PAKET-SUSHI-4` | 1 796 − 1 197 = **599 kr** |
 
-## Två fällor som kostade pengar, båda hittade vid test
+## ⚠️ Kachings rabatt är fortfarande ACTIVE
 
-**"Köp nu" gick förbi allt.** Temats direktkassa skickar formuläret rakt till
-kassan — utan rabattkod och utan gåvan. Sidan lovade 399 kr, kassan hade tagit
-798 kr. Knappen göms nu så länge ett rabatterat paket är valt. På 1-pack finns
-ingen rabatt att tappa, så där får den vara kvar.
+`DiscountAutomaticNode/1775028568403` — *"Kaching Bundles - Bundle #4 kung
+kung"*, funktionen `Kaching Bundle Quantity Breaks (4.0)`. Den ligger kvar och
+delar butik med våra åtta koder. **Två rabattmotorer på samma kundvagn.**
 
-**Vi band till fel formulär.** Dawn renderar ett **dolt** produktformulär
-*före* det riktiga. Det saknar köpknapp och bär bara variantdata. Koden tog
-det första den hittade, så köplyssnaren hamnade i tomma intet och kunden hade
-fått **en** strumpa till fullpris fast sidan lovat ett paket. Samma fel tog
-bort den fasta mobilknappen, som gav upp när den inte hittade någon knapp.
-Regeln nu, i både `ms-cro.js` och `ms-paket.js`: rätt formulär är det som
-**har en köpknapp**.
+Det syns i testerna: samma köp gav 399 kr när vår kod fastnade och 499 kr när
+den inte gjorde det (då tog Kachings funktion över och drog 399 kr på enbart
+strumporna, inte på ätpinnarna). Vår kod vinner när den appliceras, för den
+är bättre för kunden — men vi vill inte att utfallet ska bero på vem som
+hinner först.
+
+Den får **inte** stängas av medan det gamla temat är publicerat: den publicerade
+sidan visar Kachings widget och är helt beroende av funktionen. Rätt ordning:
+
+1. Publicera det nya temat.
+2. Avaktivera Kachings automatiska rabatt.
+3. Avinstallera appen.
+
+Steg 2 och 3 är ägarbeslut enligt `CLAUDE.md` regel 12.
+
+## Två fällor i temats egen kod
+
+**Direktkassan går förbi allt.** `show_dynamic_checkout` är satt till `false`
+på `buy_buttons` i `templates/product.json`. "Köp med Shop" skickar formuläret
+rakt till kassan utan vår kod: ingen rabattkod, ingen gåva. Slår någon på den
+igen fångar `direktkop()` i JS:en upp det och gömmer knappen så länge ett
+rabatterat paket är valt — men inställningen är den riktiga spärren.
+
+**Temat har en egen köplyssnare på samma formulär.** Kör både temats och vår
+läggs varorna i vagnen **två gånger**. Vår lyssnare sitter därför i
+fångstfasen på `document` och stoppar händelsen innan den når formuläret.
+
+Att det inte redan smällt beror på att temats lyssnare råkar krascha på en
+spinner som saknas i markupen (`Cannot read properties of null`). Det är tur,
+inte konstruktion, och tur duger inte i den kod som rör pengar.
 
 ## Ärlighetsspärren
 

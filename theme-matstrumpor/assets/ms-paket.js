@@ -5,7 +5,7 @@
    pengar. Ett fel här betyder att sidan visar ett pris kassan inte ger, och
    då ska den vara lätt att läsa, testa och byta ut för sig.
 
-   Tre saker skiljer den från en vanlig antalsväljare, och alla tre finns för
+   Fem saker skiljer den från en vanlig antalsväljare, och alla fem finns för
    att priset på sidan MÅSTE vara priset kassan tar:
 
      1. Rabatten är ett BELOPP, inte en procent — precis som Shopifys
@@ -13,10 +13,14 @@
         variant (3-par kostar mindre än 5-par, men avdraget är detsamma).
      2. Varje nivå bär med sig sin rabattkod. Saknas koden visar Liquid
         fullpris, och då finns inget att dra av här heller.
-     3. Vid köp läggs varorna i kundvagnen och koden appliceras via
-        /discount/<kod> — Shopifys egen väg. Ingen app, ingen funktion.
-     4. Temats direktkassa ("Köp nu"/Shop Pay) göms så länge ett rabatterat
-        paket är valt — den vägen går förbi både koden och gratisprodukten.
+     3. Koden läggs på FÖRE varorna, via /discount/<kod>. Shopifys egen väg,
+        ingen app. Ordningen gör att kundvagnen är rabatterad redan när den
+        ritas — tvärtom hinner kunden se fullpris.
+     4. Köpet fångas i fångstfasen, så temats egen köplyssnare aldrig kör.
+        Kör båda hamnar varorna i vagnen två gånger.
+     5. Direktkassan ("Köp nu"/Shop Pay) är avstängd i produktmallen, för den
+        går förbi både koden och gratisprodukten. direktkop() nedan är kvar
+        som skyddsnät om någon slår på inställningen igen.
    ========================================================================== */
 
 (function () {
@@ -150,7 +154,18 @@
       if (!this.form) return;
       this.knapp = this.form.querySelector('[type="submit"], [name="add"]');
       if (!this.knapp) return;
-      this.form.addEventListener('submit', this.kop.bind(this));
+
+      // Lyssnar i FÅNGSTFASEN på document, inte på formuläret självt.
+      //
+      // Temat har en egen köplyssnare på samma formulär. Ligger vår bredvid
+      // körs båda, och kunden får varorna i vagnen två gånger. Fångstfasen
+      // når oss innan händelsen hunnit fram till formuläret, så stopPropagation
+      // i kop() gör att bara vår kod kör.
+      //
+      // Att det inte redan smällt beror på att temats lyssnare råkar krascha
+      // på en spinner som saknas i markupen. Det är tur, inte konstruktion,
+      // och tur duger inte i den kod som rör pengar.
+      document.addEventListener('submit', this.kop.bind(this), true);
     }
 
     /* Direktkassan ("Köp nu" / Shop Pay) skickar formuläret förbi vår kod:
@@ -166,9 +181,25 @@
       });
     }
 
+    /* Lägger i kundvagnen och öppnar temats egen kundvagnslåda.
+
+       Ordningen är inte valfri. Rabattkoden läggs på FÖRST, med en vanlig
+       fetch mot /discount/<kod>. Shopify sätter koden på sessionen, och den
+       kundvagn vi hämtar direkt efteråt är därför redan rabatterad. Görs det
+       tvärtom ritas lådan med fullpris och rättar sig först vid nästa
+       sidladdning — kunden hinner se fel siffra.
+
+       `?redirect=/cart.js` gör att omdirigeringen landar på kundvagnen som
+       JSON i stället för på startsidan. Några hundra byte i stället för en
+       hel sida, på mobil.
+
+       Lådan ritas om med temats egen renderContents(), samma väg som temats
+       vanliga köpknapp går. Finns ingen låda (butiken kan vara inställd på
+       kundvagnssida) laddar vi om till /cart som förr. */
     kop(ev) {
-      if (!this.vald) return;
+      if (ev.target !== this.form || !this.vald) return;
       ev.preventDefault();
+      ev.stopPropagation();
 
       var rutt = (window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/';
       var antal = Number(this.vald.dataset.antal || 1);
@@ -179,36 +210,85 @@
       var varor = [{ id: Number(this.variantId()), quantity: antal }];
       if (gvariant && gantal > 0) varor.push({ id: Number(gvariant), quantity: gantal });
 
-      var text = this.knapp.textContent;
+      var self = this;
       var knapp = this.knapp;
+      var text = knapp.textContent;
       var fel = this.fel;
       knapp.disabled = true;
       knapp.textContent = 'Lägger i…';
       if (fel) fel.hidden = true;
 
-      fetch(rutt + 'cart/add.js', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ items: varor })
-      }).then(function (svar) {
-        if (!svar.ok) {
-          return svar.json().then(function (d) {
-            throw new Error(d.description || d.message || 'Kunde inte lägga i varukorgen.');
-          });
-        }
-        // /discount/<kod> lägger på koden och skickar vidare. Utan kod går vi
-        // rakt till kundvagnen — då finns ingen rabatt att applicera.
+      function aterstall() {
+        knapp.disabled = false;
+        knapp.textContent = text;
+      }
+
+      // Reservvägen. Den laddar om sidan, men den fungerar alltid.
+      function laddaOm() {
         window.location.href = kod
           ? rutt + 'discount/' + encodeURIComponent(kod) + '?redirect=' + encodeURIComponent('/cart')
           : rutt + 'cart';
+      }
+
+      var koden = kod
+        ? fetch(rutt + 'discount/' + encodeURIComponent(kod) + '?redirect=' + encodeURIComponent('/cart.js'),
+                { credentials: 'same-origin' })
+        : Promise.resolve();
+
+      koden.then(function () {
+        var lada = document.querySelector('cart-drawer');
+        var kropp = { items: varor };
+        if (lada && lada.getSectionsToRender) {
+          kropp.sections = lada.getSectionsToRender().map(function (s) { return s.id; }).join(',');
+          kropp.sections_url = window.location.pathname;
+        }
+        return fetch(rutt + 'cart/add.js', {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(kropp)
+        }).then(function (svar) {
+          if (!svar.ok) {
+            return svar.json().then(function (d) {
+              throw new Error(d.description || d.message || 'Kunde inte lägga i varukorgen.');
+            });
+          }
+          return svar.json();
+        }).then(function (data) {
+          aterstall();
+          if (lada && lada.renderContents && data.sections) {
+            try {
+              lada.renderContents(data);
+              self.kontrollera(rutt, kod, laddaOm);
+              return;
+            } catch (e) { /* lådan gick inte att rita — ta reservvägen */ }
+          }
+          laddaOm();
+        });
       }).catch(function (e) {
-        knapp.disabled = false;
-        knapp.textContent = text;
+        aterstall();
         if (fel) {
           fel.textContent = e.message || 'Det gick inte att lägga i varukorgen. Försök igen.';
           fel.hidden = false;
         }
       });
+    }
+
+    /* Sista kontrollen: fastnade koden verkligen?
+
+       Saknas den helt i kundvagnen gick /discount-anropet fel, och då tar vi
+       reservvägen — hellre en extra sidladdning än ett pris vi lovat men inte
+       ger. Ligger koden där men är oanvändbar (för låg summa) hjälper ingen
+       omladdning; då visar lådan redan den sanna siffran, och det är rätt. */
+    kontrollera(rutt, kod, atgard) {
+      if (!kod) return;
+      fetch(rutt + 'cart.js', { credentials: 'same-origin', headers: { Accept: 'application/json' } })
+        .then(function (r) { return r.json(); })
+        .then(function (vagn) {
+          var finns = (vagn.discount_codes || []).some(function (d) { return d.code === kod; });
+          if (!finns) atgard();
+        })
+        .catch(function () { /* kunde inte kontrollera — låt lådan stå */ });
     }
   }
 
