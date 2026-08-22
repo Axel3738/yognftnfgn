@@ -67,10 +67,27 @@ async function api(path, { method = 'GET', form, params } = {}) {
 }
 
 // ---- bibliotek ----
+// paginerat: stora konton (SE har 700+ bilder) får "reduce the amount of data"
+// på en enda 500-sida
+async function apiAll(edge, fields) {
+  const out = [];
+  let res = await api(`${cfg.act}/${edge}`, { params: { fields, limit: '100' } });
+  for (;;) {
+    out.push(...(res.data || []));
+    const next = res.paging?.next;
+    if (!next) return out;
+    const r = await fetch(next);
+    res = await r.json();
+    if (res.error) {
+      if (res.error.code === 17 || res.error.is_transient) { await sleep(60_000); res = { data: [], paging: { next } }; continue; }
+      throw new Error(`${edge} (paging) → ${res.error.message}`);
+    }
+  }
+}
 const imgs = new Map(), vids = new Map();
-for (const i of (await api(`${cfg.act}/adimages`, { params: { fields: 'name,hash', limit: '500' } })).data || [])
+for (const i of await apiAll('adimages', 'name,hash'))
   imgs.set(i.name.replace(/\.\w+$/, '').trim(), i.hash);
-for (const v of (await api(`${cfg.act}/advideos`, { params: { fields: 'title,id,status', limit: '500' } })).data || [])
+for (const v of await apiAll('advideos', 'title,id,status'))
   if (v.status?.video_status === 'ready') vids.set((v.title || '').replace(/\.\w+$/, '').trim(), v.id);
 
 function resolveMotif(motif) {
