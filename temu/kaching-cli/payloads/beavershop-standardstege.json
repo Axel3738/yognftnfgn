@@ -1,7 +1,7 @@
 {
-  "_not": "Alla-produkter-stegen för beavershop enligt Axels schema 2026-08-22 (1x ordinarie + jämförpris +30 %, 2x −15 %, 3x −20 %). KRÄVER att Kaching Bundles-appen är installerad i butiken först. Kör: node kaching.mjs create --store beavershop --file payloads/beavershop-standardstege.json MARGINALTAK (offert 2, sämsta produkten båtmotorskyddet): max 18,4 % på 2-pack och 24,5 % på 3-pack — 15/20 ligger under BÅDA. Sätt aldrig ned 3-packen till 15 av försiktighet; taket för 3-pack är dokumenterat.",
+  "_not": "Allt-produkter-stegen i Axels husstil (2026-08-23): stil kopierad fält för fält ur referensblocket 7ecfec05-dafa-466f-b6ac-34cb35f9084f i samma butik (hårda kanter cornerRadius 0, garantirubriken ovanför, Spar-platshållare). 1x ordinarie / 2x −15 % / 3x −20 %, 2:a raden förvald — riskfritt eftersom updateNativePrice är false som i referenserna. Marginaltak: 18,4 % (2-pack) / 24,5 % (3-pack) på sämsta produkten. Fri frakt-chip medvetet utelämnad tills fraktgränsen per butik är bekräftad av Axel.",
   "blockName": "Standard ladder – all products",
-  "blockTitle": "",
+  "blockTitle": "British support agents & 30 day money back guarantee",
   "discountName": "",
   "blockLayout": "vertical",
   "blockVisibility": "all-products",
@@ -24,17 +24,17 @@
   "showBothPrices": false,
   "unitLabel": "",
   "useProductCompareAtPrice": true,
-  "showPricesWithoutDecimals": true,
+  "showPricesWithoutDecimals": false,
   "priceRounding": false,
   "priceRoundingPrecision": ".00",
-  "updateNativePrice": true,
-  "updateNativePriceType": "bundle",
-  "skipCart": true,
+  "updateNativePrice": false,
+  "updateNativePriceType": "item",
+  "skipCart": false,
   "lowStockAlertEnabled": false,
   "lowStockAlert": null,
   "showVariantsForSingleQuantity": true,
-  "preselectedDealBarId": "st1a",
-  "cornerRadius": 14,
+  "preselectedDealBarId": "st2b",
+  "cornerRadius": 0,
   "spacing": 1,
   "customStylesEnabled": false,
   "customStyles": "",
@@ -42,7 +42,7 @@
     {
       "id": "st1a",
       "title": "1x",
-      "subtitle": "",
+      "subtitle": "Save {{saved_total}}",
       "label": "",
       "badgeStyle": "simple",
       "badgeText": "",
@@ -70,11 +70,11 @@
     },
     {
       "id": "st2b",
-      "title": "2x – Save 15%",
-      "subtitle": "Most popular",
+      "title": "2x",
+      "subtitle": "Save {{saved_total}}",
       "label": "",
       "badgeStyle": "simple",
-      "badgeText": "Most popular",
+      "badgeText": "",
       "badgeImageGID": null,
       "mediaImageGID": null,
       "featuredMediaGID": null,
@@ -99,8 +99,8 @@
     },
     {
       "id": "st3c",
-      "title": "3x – Save 20%",
-      "subtitle": "Best price",
+      "title": "3x",
+      "subtitle": "Save {{saved_total}}",
       "label": "",
       "badgeStyle": "simple",
       "badgeText": "",
@@ -127,14 +127,159 @@
       "discountValue": 20
     }
   ],
-  "badgesEnabled": true,
-  "badges": [
-    {
-      "id": "stb1",
-      "attachedTo": {
-        "type": "dealBar",
-        "dealBarId": "st2b"
-      }
+  "badgesEnabled": false,
+  "badges": [],
+  "colors": {
+    "background": {
+      "red": 237,
+      "green": 237,
+      "blue": 237,
+      "alpha": 1
+    },
+    "selectedBackground": {
+      "red": 255,
+      "green": 255,
+      "blue": 255,
+      "alpha": 1
+    },
+    "border": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "blockTitle": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "title": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "subtitle": {
+      "red": 85,
+      "green": 85,
+      "blue": 85,
+      "alpha": 1
+    },
+    "price": {
+      "red": 255,
+      "green": 50,
+      "blue": 50,
+      "alpha": 1
+    },
+    "fullPrice": {
+      "red": 85,
+      "green": 85,
+      "blue": 85,
+      "alpha": 1
+    },
+    "labelBackground": {
+      "red": 217,
+      "green": 217,
+      "blue": 217,
+      "alpha": 1
+    },
+    "label": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "badgeBackground": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "badgeText": {
+      "red": 255,
+      "green": 255,
+      "blue": 255,
+      "alpha": 1
+    },
+    "freeGiftBackground": {
+      "red": 179,
+      "green": 179,
+      "blue": 179,
+      "alpha": 1
+    },
+    "freeGiftText": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "freeGiftSelectedBackground": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "freeGiftSelectedText": {
+      "red": 255,
+      "green": 255,
+      "blue": 255,
+      "alpha": 1
+    },
+    "upsellBackground": {
+      "red": 204,
+      "green": 204,
+      "blue": 204,
+      "alpha": 1
+    },
+    "upsellText": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "upsellSelectedBackground": {
+      "red": 204,
+      "green": 204,
+      "blue": 204,
+      "alpha": 1
+    },
+    "upsellSelectedText": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
     }
-  ]
+  },
+  "fonts": {
+    "fontFamily": null,
+    "blockTitle": {
+      "size": 14,
+      "style": "bold"
+    },
+    "title": {
+      "size": 20,
+      "style": "bold"
+    },
+    "subtitle": {
+      "size": 14,
+      "style": "regular"
+    },
+    "label": {
+      "size": 12,
+      "style": "regular"
+    },
+    "freeGift": {
+      "size": 13,
+      "style": "bold"
+    },
+    "upsell": {
+      "size": 13,
+      "style": "bold"
+    },
+    "unitLabel": {
+      "size": 14,
+      "style": "regular"
+    }
+  }
 }

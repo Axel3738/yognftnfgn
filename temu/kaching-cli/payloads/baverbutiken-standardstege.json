@@ -1,7 +1,7 @@
 {
-  "_not": "Standardstegen för HELA katalogen enligt Axels schema 2026-08-22: 1x ordinarie pris (jämförpriset +30 % i Shopify visar rean — useProductCompareAtPrice:true), 2 st −15 %, 3 st −20 %. Marginalsäkrad: max-rabatterna ur offert 2 är 18,4 % (2-pack) / 24,5 % (3-pack) på sämsta produkten (båtmotorskyddet) — 15/20 ligger under. Uppdatera LIVE-blocket med: node kaching.mjs update --store baverbutiken --id 38b39d0c-4f43-4103-88ae-d18654254905 --file payloads/baverbutiken-standardstege.json",
+  "_not": "Allt-produkter-stegen i Axels husstil (2026-08-23): stil kopierad fält för fält ur referensblocket a725f871-71ef-45a0-8deb-726da2bde703 i samma butik (hårda kanter cornerRadius 0, garantirubriken ovanför, Spar-platshållare). 1x ordinarie / 2x −15 % / 3x −20 %, 2:a raden förvald — riskfritt eftersom updateNativePrice är false som i referenserna. Marginaltak: 18,4 % (2-pack) / 24,5 % (3-pack) på sämsta produkten. Fri frakt-chip medvetet utelämnad tills fraktgränsen per butik är bekräftad av Axel.",
   "blockName": "Standardstege – alla produkter",
-  "blockTitle": "",
+  "blockTitle": "14 Dagars Ångerrätt & Svensk kundsupport",
   "discountName": "",
   "blockLayout": "vertical",
   "blockVisibility": "all-products",
@@ -24,25 +24,25 @@
   "showBothPrices": false,
   "unitLabel": "",
   "useProductCompareAtPrice": true,
-  "showPricesWithoutDecimals": true,
+  "showPricesWithoutDecimals": false,
   "priceRounding": false,
   "priceRoundingPrecision": ".00",
-  "updateNativePrice": true,
-  "updateNativePriceType": "bundle",
-  "skipCart": true,
+  "updateNativePrice": false,
+  "updateNativePriceType": "item",
+  "skipCart": false,
   "lowStockAlertEnabled": false,
   "lowStockAlert": null,
   "showVariantsForSingleQuantity": true,
-  "preselectedDealBarId": "st1a",
-  "cornerRadius": 14,
-  "spacing": 1,
+  "preselectedDealBarId": "st2b",
+  "cornerRadius": 0,
+  "spacing": 0.65,
   "customStylesEnabled": false,
   "customStyles": "",
   "dealBars": [
     {
       "id": "st1a",
       "title": "1 st",
-      "subtitle": "",
+      "subtitle": "Standard pris",
       "label": "",
       "badgeStyle": "simple",
       "badgeText": "",
@@ -70,8 +70,8 @@
     },
     {
       "id": "st2b",
-      "title": "2 st – spara 15 %",
-      "subtitle": "Mest vald",
+      "title": "2 st",
+      "subtitle": "",
       "label": "",
       "badgeStyle": "simple",
       "badgeText": "Mest populär",
@@ -99,8 +99,8 @@
     },
     {
       "id": "st3c",
-      "title": "3 st – spara 20 %",
-      "subtitle": "Bästa priset",
+      "title": "3 st",
+      "subtitle": "",
       "label": "",
       "badgeStyle": "simple",
       "badgeText": "",
@@ -134,7 +134,177 @@
       "attachedTo": {
         "type": "dealBar",
         "dealBarId": "st2b"
-      }
+      },
+      "text": "Mest populär",
+      "colors": {
+        "text": {
+          "red": 255,
+          "green": 255,
+          "blue": 255,
+          "alpha": 1
+        },
+        "background": {
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "alpha": 1
+        }
+      },
+      "badgeType": "simple",
+      "textSize": 12
     }
-  ]
+  ],
+  "colors": {
+    "background": {
+      "red": 237,
+      "green": 237,
+      "blue": 237,
+      "alpha": 1
+    },
+    "selectedBackground": {
+      "red": 255,
+      "green": 255,
+      "blue": 255,
+      "alpha": 1
+    },
+    "border": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "blockTitle": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "title": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "subtitle": {
+      "red": 85,
+      "green": 85,
+      "blue": 85,
+      "alpha": 1
+    },
+    "price": {
+      "red": 188,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "fullPrice": {
+      "red": 85,
+      "green": 85,
+      "blue": 85,
+      "alpha": 1
+    },
+    "labelBackground": {
+      "red": 217,
+      "green": 217,
+      "blue": 217,
+      "alpha": 1
+    },
+    "label": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "badgeBackground": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "badgeText": {
+      "red": 255,
+      "green": 255,
+      "blue": 255,
+      "alpha": 1
+    },
+    "freeGiftBackground": {
+      "red": 179,
+      "green": 179,
+      "blue": 179,
+      "alpha": 1
+    },
+    "freeGiftText": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "freeGiftSelectedBackground": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "freeGiftSelectedText": {
+      "red": 255,
+      "green": 255,
+      "blue": 255,
+      "alpha": 1
+    },
+    "upsellBackground": {
+      "red": 204,
+      "green": 204,
+      "blue": 204,
+      "alpha": 1
+    },
+    "upsellText": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "upsellSelectedBackground": {
+      "red": 204,
+      "green": 204,
+      "blue": 204,
+      "alpha": 1
+    },
+    "upsellSelectedText": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    }
+  },
+  "fonts": {
+    "fontFamily": null,
+    "blockTitle": {
+      "size": 14,
+      "style": "bold"
+    },
+    "title": {
+      "size": 20,
+      "style": "bold"
+    },
+    "subtitle": {
+      "size": 14,
+      "style": "regular"
+    },
+    "label": {
+      "size": 12,
+      "style": "regular"
+    },
+    "freeGift": {
+      "size": 13,
+      "style": "bold"
+    },
+    "upsell": {
+      "size": 13,
+      "style": "bold"
+    },
+    "unitLabel": {
+      "size": 14,
+      "style": "regular"
+    }
+  }
 }

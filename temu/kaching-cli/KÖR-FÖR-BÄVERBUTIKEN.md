@@ -38,3 +38,19 @@ Anteckning: `preselectedDealBarId` är `st1a` (1x förvald) i alla payloader —
 medvetet, eftersom `updateNativePrice: true` + förvald 2x gör att produktsidans
 pris visar bundlepriset i stället för annonspriset. Vill Axel ha 2x förvald som
 i sin gamla butik: byt till `st2b` i payloaden och kör om — men fråga först.
+
+---
+
+## Stiluppdateringen 2026-08-23 (Axels husstil på alla fem stegarna)
+
+Payloaderna i `payloads/` är ombyggda med stilen fält för fält ur Axels egna
+referensblock i respektive butik (hårda kanter `cornerRadius: 0`, garantirubriken
+som `blockTitle`, butikens exakta `colors`/`fonts`/`spacing`, `Spar {{saved_total}}`-
+platshållare). Dessutom: `preselectedDealBarId: "st2b"` (mittenvalet förvalt —
+Axels beslut, riskfritt eftersom `updateNativePrice: false` som i referenserna),
+`skipCart: false`, `showPricesWithoutDecimals: false`. Stilreferensblocken:
+baverbutiken `a725f871-…`, beverbutikken `9c262b91-…`, baeverbutiken `f53d81a5-…`,
+majavakauppa `876116b0-…`, beavershop `7ecfec05-…`. Fri frakt-chip är medvetet
+utelämnade — bekräfta fraktgränsen per butik innan de läggs på ett
+allt-produkter-block. Kör `update` mot varje butiks fallback-block med de nya
+payloaderna och visa skärmbilder.
