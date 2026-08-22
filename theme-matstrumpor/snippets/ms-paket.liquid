@@ -75,21 +75,32 @@
               assign gvarde = gvar.price | times: gantal
             endif
 
-            comment
-              Rabatten räknas ut mot STANDARDvarianten, för det är så Shopifys
-              rabattkod fungerar: ett fast belopp, inte en procent. Sedan dras
-              samma belopp från vilken variant kunden än väljer.
-            endcomment
-            assign standard = p.selected_or_first_available_variant.price
-            assign ordinarie_standard = standard | times: antal | plus: gvarde
-            assign rabatt = 0
             assign kod = niva.rabattkod.value | default: '' | strip
-            assign fast = niva.fastpris.value
-            if kod != '' and fast != blank
-              assign fast_ore = fast | times: 100 | round
-              assign rabatt = ordinarie_standard | minus: fast_ore
-              if rabatt < 0
-                assign rabatt = 0
+            assign bogo = niva.bogo_gratis.value | default: 0 | plus: 0
+            assign rabatt = 0
+            if bogo > 0 and kod != ''
+              comment
+                BOGO-läge: koden är en köp-X-få-Y-rabatt som ger `bogo` strumpor
+                och gåvan till 100 %. Rabatten SKALAR därför med variantpriset —
+                3-par-lådan ger mindre avdrag än 5-par-lådan, precis som kassan
+                räknar. Ett fast belopp här hade visat fel pris på 3-par.
+              endcomment
+              assign rabatt = v.price | times: bogo | plus: gvarde
+            else
+              comment
+                Fastprisläge: rabatten är ett BELOPP räknat mot standardvarianten,
+                för det är så en vanlig rabattkod fungerar. Samma belopp dras
+                vilken variant kunden än väljer.
+              endcomment
+              assign standard = p.selected_or_first_available_variant.price
+              assign ordinarie_standard = standard | times: antal | plus: gvarde
+              assign fast = niva.fastpris.value
+              if kod != '' and fast != blank
+                assign fast_ore = fast | times: 100 | round
+                assign rabatt = ordinarie_standard | minus: fast_ore
+                if rabatt < 0
+                  assign rabatt = 0
+                endif
               endif
             endif
 
@@ -109,6 +120,7 @@
               value="{{ niva.system.handle }}"
               data-antal="{{ antal }}"
               data-rabatt="{{ rabatt }}"
+              data-bogo="{{ bogo }}"
               data-kod="{{ kod | escape }}"
               data-gratis-variant="{{ gvar.id }}"
               data-gratis-antal="{{ gantal }}"
@@ -121,12 +133,6 @@
                 {%- if niva.underrubrik.value != blank -%}
                   <span class="ms-paket__under">{{ niva.underrubrik.value }}</span>
                 {%- endif -%}
-                {%- if gantal > 0 and niva.gratis_text.value != blank -%}
-                  <span class="ms-paket__gratis">
-                    {% render 'ms-icon', name: 'gift' %}
-                    <span>{{ niva.gratis_text.value }}</span>
-                  </span>
-                {%- endif -%}
               </span>
               <span class="ms-paket__pris">
                 <span class="ms-paket__nu" data-ms-paket-nu>{{ kundpris | money }}</span>
@@ -138,6 +144,23 @@
                 {%- endif -%}
               </span>
             </span>
+            {%- if gantal > 0 and niva.gratis_text.value != blank -%}
+              {%- comment -%}
+                Gåvan hänger under kortet som en egen remsa, utanför ramen —
+                den ska läsas som något EXTRA man får, inte som en rad i
+                erbjudandet. Samma grepp som Kaching Bundles använder.
+              {%- endcomment -%}
+              <span class="ms-paket__gava">
+                {%- if niva.gratis_produkt.value.featured_image -%}
+                  <img class="ms-paket__gava-bild" src="{{ niva.gratis_produkt.value.featured_image | image_url: width: 80 }}" alt="" width="40" height="40" loading="lazy">
+                {%- endif -%}
+                <span class="ms-paket__gava-text">
+                  <span class="ms-paket__gava-etikett">{% render 'ms-icon', name: 'gift' %} Gratis på köpet</span>
+                  <span>{{ niva.gratis_text.value }}</span>
+                </span>
+                <span class="ms-paket__gava-varde">värde {{ gvarde | money }}</span>
+              </span>
+            {%- endif -%}
             {%- if rabatt > 0 -%}
               <span class="ms-paket__spar" data-ms-paket-spar>Du sparar {{ rabatt | money }}</span>
             {%- endif -%}

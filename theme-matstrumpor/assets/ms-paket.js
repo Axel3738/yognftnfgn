@@ -89,6 +89,16 @@
       return forsta ? this.priser[forsta] : 0;
     }
 
+    /* Rabatten för ett kort. BOGO-nivåer (data-bogo > 0) skalar med
+       variantpriset — gratisdelarna är X stycken av det man valt, inte ett
+       fast belopp. Övriga nivåer använder det fasta beloppet från Liquid. */
+    rabattFor(i, styck) {
+      var bogo = Number(i.dataset.bogo || 0);
+      var gvarde = Number(i.dataset.gratisVarde || 0);
+      if (bogo > 0) return bogo * styck + gvarde;
+      return Number(i.dataset.rabatt || 0);
+    }
+
     /* Räknar om alla kort mot den variant som är vald just nu.
 
        Utan variantpriser räknar vi INTE om. Liquid har redan skrivit rätt
@@ -99,9 +109,10 @@
       var styck = this.styckpris();
       if (!styck) return;
       var format = this.dataset.moneyFormat;
+      var self = this;
       this.inputs.forEach(function (i) {
         var antal = Number(i.dataset.antal || 1);
-        var rabatt = Number(i.dataset.rabatt || 0);
+        var rabatt = self.rabattFor(i, styck);
         var gvarde = Number(i.dataset.gratisVarde || 0);
         var ordinarie = styck * antal + gvarde;
         var nu = Math.max(0, ordinarie - rabatt);
@@ -139,7 +150,7 @@
       var styck = this.styckpris();
       var antal = Number(this.vald.dataset.antal || 1);
       var gvarde = Number(this.vald.dataset.gratisVarde || 0);
-      var rabatt = Number(this.vald.dataset.rabatt || 0);
+      var rabatt = this.rabattFor(this.vald, styck);
       document.dispatchEvent(new CustomEvent('ms:variant', {
         detail: {
           id: this.variantId(),

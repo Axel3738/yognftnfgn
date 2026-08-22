@@ -92,35 +92,62 @@ gälla så fort någon väljer 3-par — utan felmeddelande.
 
 ## Sushi kör BOGO sedan 2026-08-22 (Axels beslut)
 
-Stegen på Sushi-Strumpor lades om från 1/2/4-pack till köp-en-få-en:
+Två kort (1-par-ankaret togs bort på Axels begäran 2026-08-22, på alla fyra
+strumporna):
 
-| Kort | Kunden betalar | Ordinarie |
+| Kort | Kod | Kunden betalar (5-par / 3-par) |
 |---|---|---|
-| 1 par (ankare) | 399 kr | 399 kr |
-| **Köp 1 – Få 1 GRATIS** ← förvald, "Mest Populär" | 399 kr | 898 kr |
-| Köp 2 – Få 2 GRATIS, "Mest gratis" | 798 kr | 1 796 kr |
+| **Köp 1 – Få 1 GRATIS** ← förvald, "Mest Populär" | `SUSHI-K1F1` | 399 / 369 kr |
+| Köp 2 – Få 2 GRATIS, "Mest gratis" | `SUSHI-K2F2` | 798 / 738 kr |
 
-Tvåan är samma pris som förut — bara omformulerad. Trean HÖJDES 599 → 798 kr
-(ren BOGO i stället för 67 % rabatt): 199 kr mer marginal per order, mot att
-erbjudandet är grundare än Kachings gamla. "Köp 4 få 4" valdes bort — 8 par
-är mer än någon behöver och 1 596 kr är ett för stort ordervärde för strumpor.
+### Sushis koder är köp-X-få-Y, inte belopp — och varför
 
-Ankaret (1 par, fullpris) finns kvar med flit: utan det finns inget som gör
-"Få 1 GRATIS" läsbart. Brickan på trean är "Mest gratis", inte "Bäst värde" —
-styckpriset är detsamma som på tvåan (200 kr/par), så "bäst värde" vore lögn.
-Det som ÄR störst är gåvovärdet: 998 kr mot 499 kr.
+Axel ville att ätpinnarna ska stå som **0 kr** i kassan, som Kachings gifts.
+Första försöket var Kachings egen arkitektur: en beloppsrabatt på strumporna
+plus en automatisk 100 %-rabatt på pinnarna. **Det fungerar inte med Shopifys
+inbyggda rabatter**, och regeln är värd att minnas:
 
-Ändringen gjordes i metaobjekten FÖRE rabattkoden. I den ordningen kan sidan
-som värst visa ett högre pris än kassan tar — aldrig tvärtom.
+> En vara som redan fått rabatt räknas inte som "köpt" i en annan
+> köp-X-få-Y-rabatt. Strumporna fick beloppsrabatten, alltså föll
+> pinnrabattens köpkrav, alltså försvann den — oavsett att båda hade
+> kombination påslagen. Verifierat i både varukorgen och kassans egen
+> serialiserade state. Kaching kommer runt det med en egen Shopify
+> Function; den vägen kräver en app.
 
-Kassatest 2026-08-22: 898→399 (kod 2), 1 796→798 (kod 4), och med billigaste
-varianten (3-par) 1 676→678 — kunden betalar 60 kr mindre än strikt BOGO där,
-eftersom beloppet är satt efter 5-par. Sidan visar samma siffra, så sidan och
-kassan är alltid överens.
+Lösningen: **hela nivån är EN köp-X-få-Y-kod.** `SUSHI-K1F1` = köp 1
+sushistrumpa, få 3 enheter gratis (1 strumpa + 2 par pinnar, 100 %).
+`SUSHI-K2F2` = köp 2, få 6 enheter gratis. Då finns inget att kombinera,
+och kassan visar gratisstrumpan OCH pinnarna som egna 0 kr-rader.
 
-De andra tre strumporna rör inte detta — de kör kvar 1/2/4-pack.
+Kassatestat 2026-08-22: 5-par 399/798 kr, 3-par 369/738 kr, pinnar 0,00 och
+en strumprad på 0,00 i varje köp.
 
-## 3. Vid köp
+### BOGO-rabatten skalar med varianten
+
+En köp-X-få-Y-rabatt är inte ett fast belopp: gratisdelen är värd det
+varianten kostar. Därför har metaobjektet fältet **`bogo_gratis`** (antal
+gratis strumpor i nivån). Är det satt räknar Liquid och JS rabatten som
+`bogo_gratis × variantpris + gåvans värde` — 3-par-lådan visar 369 kr och
+kassan tar 369 kr. Fastprisfältet används inte i BOGO-läge.
+
+### Gåvan visas som en hängande remsa
+
+`ms-paket__gava` — streckad grön remsa under kortet med pinnarnas
+produktbild, "Gratis på köpet" och värdet. Samma grepp som Kaching.
+
+## Pizza, hamburgare och donut: kvar i fastprisläge
+
+De kör sina ursprungliga koder (`PAKET-PIZZA-2` osv) med belopp mot hela
+kundvagnen. Totalen är rätt på öret, men kassan SMETAR UT rabatten över alla
+rader — pinnarna ser ut att kosta ~44–87 kr fast totalen stämmer. Det är
+Shopifys fördelningsvisning och går inte att styra utan Functions.
+
+De kan inte få sushilösningen rakt av: deras 4-pack (669/449 kr) är djupare
+rabatterade än ren BOGO (898/598 kr), och köp-X-få-Y kan bara ge hela
+enheter gratis. Ska pinnarna se gratis ut även där måste 4-packen bli ren
+BOGO — en prishöjning, alltså Axels beslut. Frågan är ställd 2026-08-22.
+
+## 3. Vid köp## 3. Vid köp
 
 Sidan laddas inte om. Kunden får temats vanliga kundvagnslåda, precis som när
 man köper vad som helst annat i butiken.

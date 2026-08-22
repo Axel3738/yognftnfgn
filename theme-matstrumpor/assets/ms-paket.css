@@ -61,17 +61,47 @@
 .ms-paket__text { min-width: 0; line-height: 1.25; }
 .ms-paket__rubrik { display: block; font-size: var(--ms-fs-md); font-weight: 700; }
 .ms-paket__under { display: block; font-size: var(--ms-fs-xs); color: var(--ms-ink-soft); margin-top: 2px; }
-.ms-paket__gratis {
-  display: inline-flex;
+/* Gåvan — en egen remsa som hänger under kortet, indragen och med streckad
+   kant så den läses som ett EXTRA paket ovanpå erbjudandet. Samma grepp
+   som Kaching ritar sina gifts med. */
+.ms-paket__gava {
+  display: flex;
   align-items: center;
-  gap: 5px;
-  margin-top: 6px;
-  padding: 3px 9px;
-  border-radius: var(--ms-radius-pill);
-  background: color-mix(in srgb, var(--ms-good) 12%, var(--ms-surface));
-  color: var(--ms-good);
+  gap: 10px;
+  margin: 0 6px 0 22px;
+  padding: 8px 12px 8px 8px;
+  border: 2px dashed var(--ms-good);
+  border-top-width: 0;
+  border-radius: 0 0 var(--ms-radius) var(--ms-radius);
+  background: color-mix(in srgb, var(--ms-good) 8%, var(--ms-surface));
+  color: var(--ms-ink);
   font-size: var(--ms-fs-xs);
   line-height: 1.3;
+}
+.ms-paket__gava-bild {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  object-fit: cover;
+  background: var(--ms-surface);
+}
+.ms-paket__gava-text { display: grid; gap: 1px; min-width: 0; }
+.ms-paket__gava-etikett {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+  color: var(--ms-good);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  font-size: .72em;
+}
+.ms-paket__gava-varde {
+  margin-left: auto;
+  white-space: nowrap;
+  color: var(--ms-good);
+  font-weight: 700;
 }
 .ms-paket__pris { text-align: right; line-height: 1.25; white-space: nowrap; }
 .ms-paket__nu { display: block; font-size: var(--ms-fs-lg); font-weight: 700; }
