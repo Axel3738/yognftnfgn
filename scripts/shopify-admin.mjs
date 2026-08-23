@@ -10,6 +10,11 @@
 //
 // Spärr: vägrar röra butiker vars namn/URL ser ut som Grillkliniken-sidan
 // (bbq/grill/matstrump) — två verksamheter, blandas aldrig.
+//
+// KRÄVER att appen har rätt behörigheter i respektive butik. Rabattkommandona
+// kräver read_discounts + write_discounts; per 2026-08-23 har apparna bara
+// products/inventory/publications, så de måste läggas till i appens
+// konfiguration innan skapa-rabatt fungerar.
 
 const API_V = "2025-07";
 
@@ -60,7 +65,7 @@ async function gql(token, query, variables = {}) {
     body: JSON.stringify({ query, variables }),
   });
   const j = await r.json();
-  if (j.errors && !j.data) fel(`API-fel (${CC}): ` + JSON.stringify(j.errors).slice(0, 300));
+  if (j.errors) fel(`API-fel (${CC}): ` + JSON.stringify(j.errors).slice(0, 500));
   return j.data;
 }
 
@@ -122,7 +127,8 @@ if (kommando === "skapa-rabatt") {
       },
     }
   );
-  const res = d.discountCodeBasicCreate;
+  const res = d?.discountCodeBasicCreate;
+  if (!res) fel(`Shopify svarade tomt på rabattskapandet (${CC}) — saknar appen write_discounts?`);
   if (res.userErrors?.length) fel(JSON.stringify(res.userErrors));
   const c = res.codeDiscountNode.codeDiscount;
   console.log(
