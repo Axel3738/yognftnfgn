@@ -105,6 +105,50 @@ Kompletterar `problemet.md` (3-lagersmodellen).
 - Så du straffar barnbarnen för att föräldrarna aldrig lärde dem att tacka?
 - De älskar att veta att jag har tänkt på dem — de är helnöjda med lite godis, för tanken slår plånboken.
 
+## Konkurrentspaning: snabbast växande gåvoannonsörer i Meta Ads Library
+
+Metod och förbehåll: Meta Ads Library visar inte spend/tillväxt för vanliga annonser — rankingen är närmaste proxy: antal aktiva annonser i Sverige på gåvosökningar + hur nyskapade de är (mätt 2026-08-23): BubblyDoo Böcker 63 aktiva, Magisk Barnbok 22 (upp från 2 i april), Pappakepsen.se 21 (alla vinklar färska). Rubrikerna är exakta citat (emojis borttagna).
+
+### 1. BubblyDoo Böcker — personaliserade barnböcker och prylar med licensfigurer (PAW Patrol, Peppa Pig)
+
+- ”Ett PAW Patrol Dino-äventyr att aldrig glömma!”
+- ”Följ med på det ultimata PAW Patrol Dino-äventyret!”
+- ”Nytt PAW Patrol Dino-äventyr!”
+- ”Ditt barns alldeles egna Peppa Pig-vattenflaska!”
+- ”Redo för skolan med PAW Patrol!” / ”En egen PAW Patrol-handduk!”
+
+**Behov/önskan:** Rubrikerna trycker på två saker: figuren barnet redan älskar (PAW Patrol, Peppa Pig i varje rubrik) och ägandet — ”ditt barns alldeles egna”, ”en egen”. Behovet som väcks: ge barnet dess egen plats i den värld det redan är besatt av, med ett minne som löfte (”att aldrig glömma”).
+
+**Koppling till Reddit-underlaget:** Direkt stöd i vårt material: ”Det säkraste kortet är figuren barnet redan älskar på TV — känslan för karaktären är äkta” (r/UKParenting) och mönstret från r/Mommit att köpa leksaksversionen av det barnet redan låtsasleker. Varumärket löser också givarens problem ”deras värld är inte min — jag kan inte träffa rätt i den själv”: licensfiguren är en genväg in i barnets värld som inte kan bli fel.
+
+### 2. Magisk Barnbok — personlig barnbok med barnets foto
+
+- ”Personlig barnbok med foto | Magisk Barnbok” (samma rubrik bär i princip hela kontot — den återkommer på nästan varje aktiv annons)
+- ”Personlig Barnbok med AI | Magisk Barnbok” (äldre variant från i våras — ”AI” har sedan bytts mot ”foto” i rubriken)
+
+**Behov/önskan:** Ett varumärke, en enda rubrikformel: barnet som huvudperson i sin egen bok. Behovet som tillgodoses är att bli sedd — presenten handlar bevisligen om just det här barnet — plus varaktighet (en bok sparas). Att ”AI” tonats bort ur rubriken till förmån för ”foto” antyder att det personliga, inte tekniken, är det som säljer.
+
+**Koppling till Reddit-underlaget:** Vårt material stödjer båda delarna: böcker är trådarnas vanligaste säkra kort (”böcker är det självklara — något fysiskt att packa upp och dessutom nödvändigt”, r/AskUK; ”boksamlingen vi byggde upp har vi kvar än”), och att se sig själv är en dokumenterad barnfavorit — ”hon älskar att sitta i knät och be att få se gamla bilder på sig själv” (r/Mommit). Kombinationen bok + barnet självt träffar även omtankebehovet: ”favoritpresenten är den som bevisar att givaren vet vad jag tycker om”.
+
+### 3. Pappakepsen.se — broderade kepsar med eget namn, egen text eller symbol
+
+- ”Årets julklapp till hela familjen”
+- ”Presenten farfar faktiskt använder”
+- ”Barnkeps med barnets namn”
+- ”Designa din egen keps”
+- ”Fars dag 8 november – Pappa-kepsen” / ”Kepsar broderade i Borås, Sverige | För hela familjen”
+
+**Behov/önskan:** Tre tryckpunkter: användbarhet (”faktiskt använder”), personalisering (”barnets namn”, ”designa din egen”) och färdiga högtidskrokar (jul, fars dag, möhippa). Behovet som tillgodoses: den säkra presenten till personer som är svåra att köpa till — mannen, pappan, farfar — där rädslan är att presenten blir liggande.
+
+**Koppling till Reddit-underlaget:** Rubriken ”Presenten farfar faktiskt använder” är nästan ordagrant vårt materials kriterium: ”de små praktiska sakerna är det som används mest i längden” och ”något man kan säga tack till i stället för att fråga varför” (r/sweden). Den träffar också givaridentiteten från r/AskUK — ”jag vill inte framstå som den snåla farfadern som aldrig ger någonting” — fast spegelvänd: här är farfar mottagaren som får något användbart i stället för en hyllvärmare.
+
+### Sammanfattning per varumärke — huvudsakligt behov
+
+- BubblyDoo: REAKTIONEN — barnets ögonblick när favoritfiguren är dess egen.
+- Magisk Barnbok: ATT BLI SEDD — varaktig gåva som bevisligen handlar om just det här barnet.
+- Pappakepsen.se: ANVÄNDBARHET UTAN FELKÖPSRISK — personaliserat och praktiskt till de svårköpta.
+- Gemensamt: personalisering som svar på ”de har redan allt” / ”jag vet inte vad jag ska köpa”. Ingen av de tre säljer humor — skratt/reaktionspositionen är inte upptagen av något växande varumärke i mätningen.
+
 ## Återkommande ord
 
 Innehållsord som förekommer minst tre gånger i påståendena ovan, i fallande ordning efter antal förekomster. Vanliga funktionsord är borträknade; olika böjningsformer räknas var för sig.
