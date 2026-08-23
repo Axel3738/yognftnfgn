@@ -18,7 +18,8 @@ andra defaults). Skriv `[rabatt]` i en text så byts det mot rabatten (t.ex.
 |---|---|
 | **bæverbutiken.dk** | ✅ Installerad i temadubbletten **"Live + skrapkort 2026-08-23"** (opublicerad), med danska texter. Rabattkoden `VELKOMMEN10` (10 %, alla kunder, en användning per kund) är skapad och AKTIV. Verifierad i preview med Chromium (mobil + desktop, skrapning + mejlsteg). **Kvar: publicera temat** (Webbshop → Teman) och testa i inkognitofönster. |
 | **bäverbutiken.se** | ✅ Installerad i temadubbletten **"Live + skrapkort 2026-08-23"** (opublicerad), svenska texter, svart bakgrund. Använder den befintliga aktiva koden `VALKOMMEN10` (10 % på hela ordern, "Välkomstrabatt nyhetsbrev"). Verifierad i preview. **Kvar: publicera temat.** OBS: `VALKOMMEN10` har inte "en användning per kund" — ägarbeslut om den ska begränsas. Klaviyo-embed finns i temat: kolla att inga Klaviyo-popupformulär är aktiva så det inte blir dubbla popuper. |
-| Övriga marknader (NO/UK …) | ⏳ Ej gjort — samma flöde per butik, se nedan. |
+| **beverbutikken.no** | ✅ Installerad med norska texter i TVÅ dubbletter, eftersom butiken hade ett förberett norskt tema vid sidan av live: **"Live + skrapkort 2026-08-23"** (kopia av live-temat, som är den svenska exporten) och **"Beverbutikken norsk + skrapkort 2026-08-23"** (kopia av "Beverbutikken norsk - KLAR FOR PUBLISERING"). Publicera den som gäller — skrapkortet finns i båda. Koden `VELKOMMEN10` (10 %, alla kunder, en användning per kund) skapad och AKTIV. Norska dubbletten verifierad interaktivt i preview. |
+| Övriga marknader (UK …) | ⏳ Ej gjort — samma flöde per butik, se nedan. |
 
 ---
 
