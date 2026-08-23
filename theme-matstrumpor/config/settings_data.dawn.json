@@ -56,6 +56,17 @@
           "secondary_button_label": "#121212",
           "shadow": "#121212"
         }
+      },
+      "scheme-6": {
+        "settings": {
+          "background": "#F7D9AE",
+          "background_gradient": "",
+          "text": "#121212",
+          "button": "#DD821D",
+          "button_label": "#FDFBF7",
+          "secondary_button_label": "#DD821D",
+          "shadow": "#121212"
+        }
       }
     },
     "type_header_font": "mochiy_pop_p_one_n4",

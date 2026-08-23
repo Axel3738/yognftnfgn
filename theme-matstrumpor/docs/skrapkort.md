@@ -1,0 +1,57 @@
+# Skrapkortet — e-postklubbens popup
+
+`sections/ms-skrapkort.liquid`, ligger i footer-gruppen så den följer med på
+alla sidor. Självbärande: markup, stil, skript och inställningar i samma fil.
+Byggd 2026-08-23 på Axels beställning (förebilden var en skrapkorts-app).
+
+## Flödet
+
+1. **Skrapa.** ~10 s efter sidladdning (inställbart) öppnas en `<dialog>` med
+   ett skrapkort. Foliet är en canvas som suddas med fingret
+   (`destination-out`); vid ~40 % bortskrapat visas vinsten.
+2. **Mejl.** Koden lämnas ut mot mejladress. Formuläret är Shopifys eget
+   `{% form 'customer' %}` med taggarna `newsletter,skrapkort` — adressen blir
+   en riktig prenumerant i Shopify och följer med till Klaviyo (tagga gärna
+   segment på `skrapkort`). Shopify laddar om sidan efter POST; skriptet läser
+   flaggan `form.posted_successfully?` och öppnar popupen igen i klart-läget.
+3. **Klar.** Koden visas och knappen lägger den i kassan via
+   `/discount/<kod>?redirect=/`.
+
+## Rabattkoden
+
+**`KLUBB10`** — riktig `DiscountCodeBasic` i Shopify, skapad 2026-08-23
+(id `gid://shopify/DiscountCodeNode/1830184976723`):
+10 % på hela köpet, **en gång per kund**, kombinerar inte med något.
+
+⚠️ **Vi har skapat den koden.** Regeln "stäng av koder vi inte skapat" gäller
+inte KLUBB10 (och inte GLÖMD).
+
+⚠️ Shopify tar **en kod per köp**. Paketpriserna är också koder, så KLUBB10
+kan aldrig staplas på ett paketpris — kassan tar den ena eller den andra.
+Det står i popupens finstilt. Lova aldrig något annat i copy.
+
+## Minnet (localStorage `ms-skrap`)
+
+| Värde | Betyder |
+|---|---|
+| `klar` | prenumerant — visas aldrig igen |
+| `skrapad` | skrapade klart men mejlade inte — mejlsteget återkommer nästa besök |
+| `vila:<ms>` | stängde utan att gå med — vilar i valt antal dagar (standard 3) |
+
+## Fallgropar som redan är lösta
+
+- **Paddingklick stängde popupen.** Klick med `target = dialogen` är både
+  bakgrund OCH dialogens egen padding. När skrapsteget byttes mitt i
+  gnuggandet landade nästa klick på paddingen och stängde allt. Därför
+  koordinatkollen mot `getBoundingClientRect()` — bara äkta bakgrundsklick
+  stänger.
+- **Fördröjningen ser trasig ut i lokala speglar.** På `file://` dröjer
+  `DOMContentLoaded` ~10 s (defer-skripten misslyckas långsamt), så timern
+  hinner fyra före första mätpunkten. På riktiga sajten är fördröjningen
+  verklig — verifiera med `window.__timrar`-wrappen i stället för klockan.
+
+## Inställningar (temaredigeraren → footer → Skrapkort e-postklubb)
+
+Rubrik, underrubrik, rabattkod, rabattext, fördröjning (3–30 s),
+vilodagar (1–30) och en avstängningskryssruta. Koden skapas INTE av popupen —
+den måste finnas i Shopify och `rabatt_text` ska stämma med vad den ger.

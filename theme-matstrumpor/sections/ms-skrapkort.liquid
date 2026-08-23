@@ -1,0 +1,366 @@
+{%- comment -%}
+  ms-skrapkort — skrapa-fram-rabatten-popup för e-postklubben.
+
+  Flödet i tre steg:
+    1. SKRAPA  Efter en stunds fördröjning öppnas ett skrapkort. Foliet är en
+               canvas som suddas med fingret (destination-out). När ~40 % är
+               bortskrapat visas vinsten.
+    2. MEJL    Koden lämnas ut först mot mejladress. Formuläret är Shopifys
+               eget kundformulär — adressen blir en riktig prenumerant i
+               Shopify (tagg newsletter) och följer med till Klaviyo.
+               Sidan laddas om av Shopify efter POST; vi läser flaggan och
+               öppnar popupen igen i klart-läget.
+    3. KLAR    Koden visas och knappen lägger den i kassan via /discount/.
+
+  Ärlighetsregler: koden är en riktig rabattkod i Shopify — popupen lovar
+  inget som kassan inte håller. Shopify tar EN kod per köp, så den kan inte
+  kombineras med paketpriserna (som också är koder) — det står i finstilten.
+
+  Minnet (localStorage ms-skrap):
+    'klar'        prenumerant, visa aldrig igen
+    'skrapad'     skrapade klart men mejlade inte — visa mejlsteget nästa gång
+    'vila:<ms>'   stängde utan att gå med — vila i valt antal dagar
+{%- endcomment -%}
+{%- if section.settings.visible -%}
+{%- liquid
+  assign kod = section.settings.kod | strip
+  assign rabatt = section.settings.rabatt_text | strip
+-%}
+<dialog class="ms-skrap" id="ms-skrap"
+  data-fordrojning="{{ section.settings.fordrojning }}"
+  data-vilodagar="{{ section.settings.vilodagar }}">
+  <button type="button" class="ms-skrap__stang" data-ms-skrap-stang aria-label="Stäng">&times;</button>
+
+  <div class="ms-skrap__steg" data-ms-steg="skrapa">
+    <h2 class="ms-skrap__rubrik">{{ section.settings.rubrik }}</h2>
+    <p class="ms-skrap__under">{{ section.settings.under }}</p>
+    <div class="ms-skrap__kort">
+      <div class="ms-skrap__vinst" aria-hidden="true">
+        <span class="ms-skrap__procent">{{ rabatt }}</span>
+        <span class="ms-skrap__vinsttext">rabatt på ditt köp</span>
+      </div>
+      <canvas class="ms-skrap__folie" width="560" height="300" aria-label="Skrapyta"></canvas>
+    </div>
+  </div>
+
+  <div class="ms-skrap__steg" data-ms-steg="mejl" hidden>
+    <h2 class="ms-skrap__rubrik">Du skrapade fram {{ rabatt }}! 🎉</h2>
+    <p class="ms-skrap__under">Ange din mejl så låser du upp koden — den funkar direkt.</p>
+    {%- form 'customer', id: 'ms-skrap-form', class: 'ms-skrap__form' -%}
+      <input type="hidden" name="contact[tags]" value="newsletter,skrapkort">
+      {%- if form.posted_successfully? -%}<div data-ms-skrap-postad hidden></div>{%- endif -%}
+      {%- if form.errors -%}
+        <p class="ms-skrap__fel" data-ms-skrap-fel>
+          {{ form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email }}
+        </p>
+      {%- endif -%}
+      <div class="ms-skrap__falt">
+        <input type="email" name="contact[email]" required autocomplete="email"
+          autocapitalize="off" autocorrect="off"
+          placeholder="din@mejl.se" aria-label="Mejladress">
+        <button type="submit" class="ms-skrap__knapp">Lås upp koden</button>
+      </div>
+    {%- endform -%}
+    <p class="ms-skrap__finstilt">
+      Genom att gå med säger du ja till mejl från oss — avsluta när du vill.
+      <a href="/policies/privacy-policy">Integritetspolicy</a>
+    </p>
+  </div>
+
+  <div class="ms-skrap__steg" data-ms-steg="klar" hidden>
+    <h2 class="ms-skrap__rubrik">Välkommen i klubben! 🎉</h2>
+    <p class="ms-skrap__under">Din kod:</p>
+    <p class="ms-skrap__kod">{{ kod }}</p>
+    <a class="ms-skrap__knapp ms-skrap__knapp--bred" href="/discount/{{ kod | url_encode }}?redirect=/">
+      Handla med {{ rabatt }} rabatt
+    </a>
+    <p class="ms-skrap__finstilt">
+      Koden följer med till kassan när du klickar på knappen.
+      Gäller inte ihop med paketpriserna.
+    </p>
+  </div>
+</dialog>
+<style>
+  .ms-skrap {
+    border: 0;
+    border-radius: var(--ms-radius, 16px);
+    padding: 26px 22px 22px;
+    width: min(92vw, 380px);
+    text-align: center;
+    background: var(--ms-surface, #fff);
+    box-shadow: 0 24px 60px rgba(18, 18, 18, .3);
+  }
+  .ms-skrap::backdrop { background: rgba(18, 18, 18, .45); }
+  .ms-skrap__stang {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    border: 0;
+    background: none;
+    font-size: 26px;
+    line-height: 1;
+    color: var(--ms-ink-faint, #8a8377);
+    cursor: pointer;
+    padding: 4px 8px;
+  }
+  /* Sidoluft så rubriken inte går in under stängkrysset. */
+  .ms-skrap__rubrik { margin: 0 0 6px; padding: 0 20px; font-size: 1.35em; line-height: 1.25; }
+  .ms-skrap__under { margin: 0 0 14px; color: var(--ms-ink-soft, #5f5a52); font-size: .95em; }
+  .ms-skrap__kort {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px dashed var(--ms-accent, #DD821D);
+  }
+  .ms-skrap__vinst {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    height: 150px;
+    background: var(--ms-surface-2, #faf7f2);
+  }
+  .ms-skrap__procent { font-size: 2.4em; font-weight: 800; color: var(--ms-accent, #DD821D); }
+  .ms-skrap__vinsttext { color: var(--ms-ink-soft, #5f5a52); }
+  .ms-skrap__folie {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+    cursor: crosshair;
+    transition: opacity .5s ease;
+  }
+  .ms-skrap__folie[data-borta] { opacity: 0; pointer-events: none; }
+  .ms-skrap__falt { display: flex; gap: 8px; }
+  .ms-skrap__falt input {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 11px 12px;
+    border: 1px solid var(--ms-line-strong, #d8cbb8);
+    border-radius: 10px;
+    font: inherit;
+  }
+  .ms-skrap__knapp {
+    display: inline-block;
+    padding: 11px 16px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--ms-accent, #DD821D);
+    color: var(--ms-accent-ink, #FDFBF7);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: filter .15s ease;
+  }
+  .ms-skrap__knapp:hover { filter: brightness(1.06); }
+  .ms-skrap__knapp--bred { display: block; }
+  .ms-skrap__kod {
+    margin: 0 0 14px;
+    padding: 10px;
+    border: 2px dashed var(--ms-accent, #DD821D);
+    border-radius: 10px;
+    font-size: 1.3em;
+    font-weight: 800;
+    letter-spacing: .08em;
+    user-select: all;
+  }
+  .ms-skrap__fel { margin: 0 0 10px; color: #b3261e; font-size: .9em; }
+  .ms-skrap__finstilt { margin: 12px 0 0; font-size: .75em; color: var(--ms-ink-faint, #8a8377); }
+  .ms-skrap__finstilt a { color: inherit; }
+</style>
+<script>
+  (function () {
+    'use strict';
+    var ruta = document.getElementById('ms-skrap');
+    if (!ruta || !ruta.showModal) return;
+
+    var NYCKEL = 'ms-skrap';
+    var VILA_MS = Number(ruta.dataset.vilodagar || 3) * 86400000;
+    function minns() { try { return localStorage.getItem(NYCKEL) || ''; } catch (e) { return ''; } }
+    function spara(v) { try { localStorage.setItem(NYCKEL, v); } catch (e) { /* privat läge */ } }
+
+    function steg(namn) {
+      ruta.querySelectorAll('[data-ms-steg]').forEach(function (el) {
+        el.hidden = el.dataset.msSteg !== namn;
+      });
+    }
+
+    /* --- skrapfoliet ---------------------------------------------------- */
+    var canvas = ruta.querySelector('.ms-skrap__folie');
+    var ctx = canvas.getContext('2d');
+    var skrapklar = false;
+
+    function malaFolie() {
+      var b = canvas.width, h = canvas.height;
+      var g = ctx.createLinearGradient(0, 0, b, h);
+      g.addColorStop(0, '#e89b45');
+      g.addColorStop(.5, '#dd821d');
+      g.addColorStop(1, '#c06f14');
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, b, h);
+      ctx.fillStyle = 'rgba(253, 251, 247, .9)';
+      ctx.font = '700 44px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('SKRAPA HÄR', b / 2, h / 2 - 14);
+      ctx.font = '30px sans-serif';
+      ctx.fillText('🪙 dra med fingret', b / 2, h / 2 + 38);
+    }
+
+    function andelBorta() {
+      // Var 16:e pixel räcker som stickprov — exakthet spelar ingen roll här.
+      var data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+      var borta = 0, alla = 0;
+      for (var i = 3; i < data.length; i += 64) {
+        alla++;
+        if (data[i] === 0) borta++;
+      }
+      return alla ? borta / alla : 0;
+    }
+
+    function skrapa(ev) {
+      if (skrapklar) return;
+      var rekt = canvas.getBoundingClientRect();
+      var x = (ev.clientX - rekt.left) * (canvas.width / rekt.width);
+      var y = (ev.clientY - rekt.top) * (canvas.height / rekt.height);
+      ctx.globalCompositeOperation = 'destination-out';
+      ctx.beginPath();
+      ctx.arc(x, y, 34, 0, Math.PI * 2);
+      ctx.fill();
+      if (andelBorta() > 0.4) {
+        skrapklar = true;
+        canvas.setAttribute('data-borta', '');
+        spara('skrapad');
+        setTimeout(function () { steg('mejl'); }, 550);
+      }
+    }
+
+    var drar = false;
+    canvas.addEventListener('pointerdown', function (ev) {
+      drar = true;
+      canvas.setPointerCapture(ev.pointerId);
+      skrapa(ev);
+    });
+    canvas.addEventListener('pointermove', function (ev) { if (drar) skrapa(ev); });
+    canvas.addEventListener('pointerup', function () { drar = false; });
+
+    /* --- öppna/stäng ----------------------------------------------------- */
+    function oppna(stegnamn) {
+      steg(stegnamn);
+      if (stegnamn !== 'skrapa') canvas.setAttribute('data-borta', '');
+      else malaFolie();
+      ruta.showModal();
+    }
+
+    // Stängning utan medlemskap = vila. Klart läge förblir klart.
+    function vilaEllerKlar() {
+      if (minns() === 'klar') return;
+      if (minns() === 'skrapad') return; // mejlsteget återkommer nästa besök
+      spara('vila:' + Date.now());
+    }
+    ruta.querySelector('[data-ms-skrap-stang]').addEventListener('click', function () { ruta.close(); });
+    ruta.addEventListener('close', vilaEllerKlar);
+    ruta.addEventListener('click', function (ev) {
+      // Klick med target = dialogen är två olika saker: bakgrunden ELLER
+      // dialogens egen padding. Bara äkta bakgrundsklick får stänga —
+      // utan koordinatkollen stängde ivriga skrapfingrar popupen på
+      // paddingen precis när mejlsteget kom fram.
+      if (ev.target !== ruta) return;
+      var r = ruta.getBoundingClientRect();
+      if (ev.clientX < r.left || ev.clientX > r.right || ev.clientY < r.top || ev.clientY > r.bottom) {
+        ruta.close();
+      }
+    });
+
+    /* --- vad ska hända vid sidladdning? ---------------------------------- */
+    var lage = minns();
+
+    // Mejlen skickades nyss: Shopify har laddat om sidan, flaggan finns bara
+    // om det var VÅRT formulär som postade.
+    if (ruta.querySelector('[data-ms-skrap-postad]')) {
+      spara('klar');
+      oppna('klar');
+      return;
+    }
+    if (ruta.querySelector('[data-ms-skrap-fel]')) {
+      oppna('mejl');
+      return;
+    }
+
+    if (lage === 'klar') return;
+    if (lage.indexOf('vila:') === 0) {
+      var sedan = Number(lage.slice(5));
+      if (Date.now() - sedan < VILA_MS) return;
+    }
+
+    setTimeout(function () {
+      oppna(lage === 'skrapad' ? 'mejl' : 'skrapa');
+    }, Number(ruta.dataset.fordrojning || 10) * 1000);
+  })();
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Skrapkort e-postklubb",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "visible",
+      "label": "Visa sektionen",
+      "default": true,
+      "info": "Bocka ur för att stänga av den utan att ta bort den."
+    },
+    {
+      "type": "text",
+      "id": "rubrik",
+      "label": "Rubrik",
+      "default": "Skrapa fram din välkomstrabatt"
+    },
+    {
+      "type": "text",
+      "id": "under",
+      "label": "Underrubrik",
+      "default": "Alla vinner. Skrapa rutan med fingret."
+    },
+    {
+      "type": "text",
+      "id": "kod",
+      "label": "Rabattkod",
+      "default": "KLUBB10",
+      "info": "Måste finnas som riktig rabattkod i Shopify — popupen skapar den inte."
+    },
+    {
+      "type": "text",
+      "id": "rabatt_text",
+      "label": "Rabatten i text",
+      "default": "10 %",
+      "info": "Ska stämma med vad koden faktiskt ger."
+    },
+    {
+      "type": "range",
+      "id": "fordrojning",
+      "label": "Fördröjning innan den öppnas",
+      "min": 3,
+      "max": 30,
+      "step": 1,
+      "unit": "s",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "vilodagar",
+      "label": "Vilodagar efter Nej tack",
+      "min": 1,
+      "max": 30,
+      "step": 1,
+      "default": 3
+    }
+  ],
+  "presets": [{ "name": "Skrapkort e-postklubb" }]
+}
+{% endschema %}

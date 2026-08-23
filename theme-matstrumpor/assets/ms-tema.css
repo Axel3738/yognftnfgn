@@ -59,11 +59,15 @@
 .thumbnail-list__item { max-width: 9rem; }
 
 /* Sidfoten -------------------------------------------------------------- */
-/* Märkets tre färger: mörk botten (scheme-4), crème text, orange accenter.
-   Botten är mörk för att loggan är orange på genomskinlig botten — på
-   orange eller crème bakgrund försvinner den. Rubrikerna tar accentfärgen
-   via schemats egen knappvariabel, så de följer med om paletten ändras. */
+/* Ljust orange botten (scheme-6, Axels val 2026-08-23 — mörkt kändes fel
+   för märket), mörk text, orange accenter. Rubrikerna tar accentfärgen via
+   schemats egen knappvariabel men mörkas ned ett steg med color-mix —
+   ren accentorange på ljust orange botten ger för svag kontrast för text.
+   Raden innan är reserven för webbläsare utan color-mix. */
 .footer .footer-block__heading { color: rgba(var(--color-button), 1); }
+.footer .footer-block__heading {
+  color: color-mix(in srgb, rgb(var(--color-button)) 70%, #3A1F00);
+}
 
 /* Sociala ikoner: Dawns är 18 px gråa streck längst ner — osynliga.
    Här blir de orangea runda knappar under loggan, stora nog för tummen. */

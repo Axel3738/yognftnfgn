@@ -40,7 +40,7 @@
         "foretaget"
       ],
       "settings": {
-        "color_scheme": "scheme-4",
+        "color_scheme": "scheme-6",
         "newsletter_enable": true,
         "newsletter_heading": "Missa inga nyheter",
         "enable_follow_on_shop": true,
@@ -59,10 +59,17 @@
       "settings": {
         "visible": true
       }
+    },
+    "ms_skrapkort": {
+      "type": "ms-skrapkort",
+      "settings": {
+        "visible": true
+      }
     }
   },
   "order": [
     "footer",
-    "ms_cookies"
+    "ms_cookies",
+    "ms_skrapkort"
   ]
 }
