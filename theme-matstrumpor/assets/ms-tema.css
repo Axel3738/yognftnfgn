@@ -57,3 +57,29 @@
 /* Galleriet ------------------------------------------------------------- */
 /* Miniatyrerna ska synas som miniatyrer, inte som lika stora rutor. */
 .thumbnail-list__item { max-width: 9rem; }
+
+/* Sidfoten -------------------------------------------------------------- */
+/* Märkets tre färger: mörk botten (scheme-4), crème text, orange accenter.
+   Botten är mörk för att loggan är orange på genomskinlig botten — på
+   orange eller crème bakgrund försvinner den. Rubrikerna tar accentfärgen
+   via schemats egen knappvariabel, så de följer med om paletten ändras. */
+.footer .footer-block__heading { color: rgba(var(--color-button), 1); }
+
+/* Sociala ikoner: Dawns är 18 px gråa streck längst ner — osynliga.
+   Här blir de orangea runda knappar under loggan, stora nog för tummen. */
+.footer .footer__list-social { gap: 1rem; margin-top: 1rem; }
+.footer .list-social__link {
+  width: 4.4rem;
+  height: 4.4rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(var(--color-button), 1);
+  color: rgb(var(--color-button-text));
+  transition: transform .15s ease, filter .15s ease;
+}
+.footer .list-social__link:hover { transform: translateY(-2px); filter: brightness(1.08); }
+.footer .list-social__link .svg-wrapper,
+.footer .list-social__link svg { width: 2rem; height: 2rem; }

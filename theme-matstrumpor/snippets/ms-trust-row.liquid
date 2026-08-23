@@ -9,7 +9,12 @@
   assign rows = items | default: fallback | split: '|'
 -%}
 {%- if rows.size > 0 -%}
-  <div class="ms-trust ms-scope">
+  {%- comment -%}
+    Kolumnantalet följer antalet punkter. Med fast 3-kolumnsrutnät hamnade
+    startsidans två punkter i kolumn 1–2 med en tom tredjedel till höger —
+    raden såg vänsterskjuten ut i stället för centrerad.
+  {%- endcomment -%}
+  <div class="ms-trust ms-scope" style="--ms-tr-antal: {{ rows.size }}">
     {%- for row in rows -%}
       {%- liquid
         assign bits = row | split: ':'

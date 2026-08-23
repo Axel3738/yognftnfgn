@@ -5,6 +5,12 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "brand": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
         "snabblankar": {
           "type": "link_list",
           "settings": {
@@ -28,16 +34,17 @@
         }
       },
       "block_order": [
+        "brand",
         "snabblankar",
         "information",
         "foretaget"
       ],
       "settings": {
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-4",
         "newsletter_enable": true,
         "newsletter_heading": "Missa inga nyheter",
         "enable_follow_on_shop": true,
-        "show_social": true,
+        "show_social": false,
         "enable_country_selector": false,
         "enable_language_selector": false,
         "payment_enable": true,

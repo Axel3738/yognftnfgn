@@ -154,8 +154,8 @@
     "sale_badge_color_scheme": "scheme-3",
     "sold_out_badge_color_scheme": "scheme-4",
     "brand_headline": "",
-    "brand_description": "<p></p>",
-    "brand_image_width": 100,
+    "brand_description": "<p>Strumpor som ser ut som mat – gåvan de skrattar åt först och använder varje vecka.</p><p><strong>Följ oss:</strong></p>",
+    "brand_image_width": 160,
     "social_twitter_link": "",
     "social_facebook_link": "https://www.facebook.com/profile.php?id=61584643820493",
     "social_pinterest_link": "",
@@ -200,7 +200,8 @@
         "disabled": false,
         "settings": {}
       }
-    }
+    },
+    "brand_image": "shopify://shop_images/Namnlos_design_-_2026-03-19T120925.579.png"
   },
   "presets": {
     "Matstrumpor": {

@@ -302,7 +302,7 @@
 /* 3.5 Trygghetsrad ------------------------------------------------------ */
 .ms-trust {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(var(--ms-tr-antal, 3), 1fr);
   gap: var(--ms-gap);
   margin: 16px 0;
   padding: 14px 10px;

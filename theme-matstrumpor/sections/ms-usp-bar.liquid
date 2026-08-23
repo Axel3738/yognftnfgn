@@ -5,6 +5,10 @@
     margin: 0; border-radius: 0; border-inline: 0;
     {% if section.settings.background != blank %}background: {{ section.settings.background }};{% endif %}
   }
+  /* Mobilkrympningen i ms-cro.css finns för att TRE punkter ska rymmas på
+     en rad i köprutan. Här på startsidan är punkterna färre och har hela
+     sidbredden — texten ska inte krympa till oläslighet. */
+  #shopify-section-{{ section.id }} .ms-trust__item { font-size: var(--ms-fs-xs); }
 </style>
 {%- endif -%}
 
