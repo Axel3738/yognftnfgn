@@ -1,0 +1,282 @@
+{
+ "kalla": "AI-genererade UGC-bilder (Nano Banana Pro) för matstrumpor.se",
+ "antal": 25,
+ "obs": "Bilderna är AI-genererade och bär Googles SynthID-vattenstämpel. Använd dem som marknadsföringsbilder med AI-märkning, inte som kundrecensioner.",
+ "bilder": [
+  {
+   "fil": "bilder/sushistrumpor_A_koksbordet.jpg",
+   "id": "A",
+   "titel": "Köksbordet",
+   "produkt": "Sushi",
+   "shopify_handle": "sushi-strumpor",
+   "malgrupp": "Grund",
+   "beskrivning": "Paketet har kommit – stökigt köksbord, blandljus.",
+   "alt_text": "Köksbordet – Paketet har kommit – stökigt köksbord, blandljus",
+   "forslag_pa_anvandning": "Produktsida: allmän 'kundbild'-känsla."
+  },
+  {
+   "fil": "bilder/sushistrumpor_I_fodelsedag.jpg",
+   "id": "I",
+   "titel": "Födelsedagen",
+   "produkt": "Sushi",
+   "shopify_handle": "sushi-strumpor",
+   "malgrupp": "Mottagare ≤18",
+   "beskrivning": "Tonåring bakifrån, prinsesstårta, äldre händer som klappar. Inget ansikte.",
+   "alt_text": "Födelsedagen – Tonåring bakifrån, prinsesstårta, äldre händer som klappar",
+   "forslag_pa_anvandning": "Produktsida/sociala medier: visar strumporna i användning hos tonåring/barn (inga ansikten)."
+  },
+  {
+   "fil": "bilder/matstrumpor_11_sushi_presentpase.jpg",
+   "id": "11_sushi_presentpase",
+   "titel": "Sushi i presentpåsen",
+   "produkt": "Sushi",
+   "shopify_handle": "sushi-strumpor",
+   "malgrupp": "Givare 50+/60+",
+   "beskrivning": "Äldre händer lägger sushilådan i en presentpåse med silkespapper.",
+   "alt_text": "Sushi i presentpåsen – Äldre händer lägger sushilådan i en presentpåse med silkespapper",
+   "forslag_pa_anvandning": "Annons/landningssida riktad till köparen (50+): presentkänsla, julklapp, barnbarn."
+  },
+  {
+   "fil": "bilder/matstrumpor_12_sushi3_skolbord.jpg",
+   "id": "12_sushi3_skolbord",
+   "titel": "Sushi 3-par vid läxorna",
+   "produkt": "Sushi",
+   "shopify_handle": "sushi-strumpor",
+   "malgrupp": "Mottagare ≤18",
+   "beskrivning": "Tonåringens händer öppnar 3-pars-lådan mitt bland läxböckerna. Inget ansikte.",
+   "alt_text": "Sushi 3-par vid läxorna – Tonåringens händer öppnar 3-pars-lådan mitt bland läxböckerna",
+   "forslag_pa_anvandning": "Produktsida/sociala medier: visar strumporna i användning hos tonåring/barn (inga ansikten)."
+  },
+  {
+   "fil": "bilder/matstrumpor_14_sushi_korsord.jpg",
+   "id": "14_sushi_korsord",
+   "titel": "Sushi på soffbordet",
+   "produkt": "Sushi",
+   "shopify_handle": "sushi-strumpor",
+   "malgrupp": "Givare 50+/60+",
+   "beskrivning": "Sushilådan på soffbordet hos ett pensionärspar, korsord och tekopp.",
+   "alt_text": "Sushi på soffbordet – Sushilådan på soffbordet hos ett pensionärspar, korsord och tekopp",
+   "forslag_pa_anvandning": "Annons/landningssida riktad till köparen (50+): presentkänsla, julklapp, barnbarn."
+  },
+  {
+   "fil": "bilder/matstrumpor_15_sushi_bilen.jpg",
+   "id": "15_sushi_bilen",
+   "titel": "Hämtat paketet",
+   "produkt": "Sushi",
+   "shopify_handle": "sushi-strumpor",
+   "malgrupp": "Givare 50+/60+",
+   "beskrivning": "Sushilådan på passagerarsätet i en äldre Volvo efter paketutlämningen.",
+   "alt_text": "Hämtat paketet – Sushilådan på passagerarsätet i en äldre Volvo efter paketutlämningen",
+   "forslag_pa_anvandning": "Annons/landningssida riktad till köparen (50+): presentkänsla, julklapp, barnbarn."
+  },
+  {
+   "fil": "bilder/matstrumpor_17_sushi3_takeaway.jpg",
+   "id": "17_sushi3_takeaway",
+   "titel": "Vilken är riktig?",
+   "produkt": "Sushi",
+   "shopify_handle": "sushi-strumpor",
+   "malgrupp": "Allmänt",
+   "beskrivning": "Strumpsushi bredvid riktig takeaway-sushi – skämtbild.",
+   "alt_text": "Vilken är riktig? – Strumpsushi bredvid riktig takeaway-sushi – skämtbild",
+   "forslag_pa_anvandning": "Produktsida eller inlägg: humor/vardag."
+  },
+  {
+   "fil": "bilder/matstrumpor_22_pizza_skateboard.jpg",
+   "id": "22_pizza_skateboard",
+   "titel": "Pizza-strumpor på skateboarden",
+   "produkt": "Pizza",
+   "shopify_handle": "pizza-strumpor",
+   "malgrupp": "Mottagare ≤18",
+   "beskrivning": "Tonåringens fötter i pizzastrumporna på skateboarden i hallen. Inget ansikte.",
+   "alt_text": "Pizza-strumpor på skateboarden – Tonåringens fötter i pizzastrumporna på skateboarden i hallen",
+   "forslag_pa_anvandning": "Produktsida/sociala medier: visar strumporna i användning hos tonåring/barn (inga ansikten)."
+  },
+  {
+   "fil": "bilder/matstrumpor_23_pizza_kartonger.jpg",
+   "id": "23_pizza_kartonger",
+   "titel": "Pizzakartongerna",
+   "produkt": "Pizza",
+   "shopify_handle": "pizza-strumpor",
+   "malgrupp": "Allmänt",
+   "beskrivning": "Strumpkartongen överst på riktiga pizzakartonger på en tonårsfest.",
+   "alt_text": "Pizzakartongerna – Strumpkartongen överst på riktiga pizzakartonger på en tonårsfest",
+   "forslag_pa_anvandning": "Produktsida eller inlägg: humor/vardag."
+  },
+  {
+   "fil": "bilder/matstrumpor_27_pizza_sushi_granen.jpg",
+   "id": "27_pizza_sushi_granen",
+   "titel": "Två paket under granen",
+   "produkt": "Flera",
+   "shopify_handle": null,
+   "malgrupp": "Alla produkter",
+   "beskrivning": "Pizzakartongen och sushilådan under granen.",
+   "alt_text": "Två paket under granen – Pizzakartongen och sushilådan under granen",
+   "forslag_pa_anvandning": "Startsida/kollektion: visar hela sortimentet, bra för 'julklappar'-sektion."
+  },
+  {
+   "fil": "bilder/matstrumpor_28_pizza_paketpase.jpg",
+   "id": "28_pizza_paketpase",
+   "titel": "Pizza-strumpor i utlämningspåsen",
+   "produkt": "Pizza",
+   "shopify_handle": "pizza-strumpor",
+   "malgrupp": "Givare 50+/60+",
+   "beskrivning": "Pizzakartongen nyss uppriven ur paketpåsen på köksbänken.",
+   "alt_text": "Pizza-strumpor i utlämningspåsen – Pizzakartongen nyss uppriven ur paketpåsen på köksbänken",
+   "forslag_pa_anvandning": "Annons/landningssida riktad till köparen (50+): presentkänsla, julklapp, barnbarn."
+  },
+  {
+   "fil": "bilder/matstrumpor_36_burger_studsmatta.jpg",
+   "id": "36_burger_studsmatta",
+   "titel": "Burgarstrumpor på studsmattan",
+   "produkt": "Hamburgare",
+   "shopify_handle": "hamburger-strumpor",
+   "malgrupp": "Mottagare ≤18",
+   "beskrivning": "Barn på studsmattan i burgarstrumporna, rött hus bakom. Inget ansikte.",
+   "alt_text": "Burgarstrumpor på studsmattan – Barn på studsmattan i burgarstrumporna, rött hus bakom",
+   "forslag_pa_anvandning": "Produktsida/sociala medier: visar strumporna i användning hos tonåring/barn (inga ansikten)."
+  },
+  {
+   "fil": "bilder/matstrumpor_41_donut_mormor.jpg",
+   "id": "41_donut_mormor",
+   "titel": "Mormor med donutlådan",
+   "produkt": "Donut",
+   "shopify_handle": "donut-strumpor",
+   "malgrupp": "Givare 50+/60+",
+   "beskrivning": "Mormors händer håller upp den rosa donutlådan.",
+   "alt_text": "Mormor med donutlådan – Mormors händer håller upp den rosa donutlådan",
+   "forslag_pa_anvandning": "Annons/landningssida riktad till köparen (50+): presentkänsla, julklapp, barnbarn."
+  },
+  {
+   "fil": "bilder/matstrumpor_43_donut_fika.jpg",
+   "id": "43_donut_fika",
+   "titel": "Donut-strumpor på fikat",
+   "produkt": "Donut",
+   "shopify_handle": "donut-strumpor",
+   "malgrupp": "Allmänt",
+   "beskrivning": "Donutlådan bredvid riktiga kanelbullar på fikabordet.",
+   "alt_text": "Donut-strumpor på fikat – Donutlådan bredvid riktiga kanelbullar på fikabordet",
+   "forslag_pa_anvandning": "Produktsida eller inlägg: humor/vardag."
+  },
+  {
+   "fil": "bilder/matstrumpor_44_donut_balkongen.jpg",
+   "id": "44_donut_balkongen",
+   "titel": "Donut-strumpor och tofflor",
+   "produkt": "Donut",
+   "shopify_handle": "donut-strumpor",
+   "malgrupp": "Mottagare ≤18",
+   "beskrivning": "Tonåringens fötter i gröna donutstrumpor och foam-tofflor på balkongen. Inget ansikte.",
+   "alt_text": "Donut-strumpor och tofflor – Tonåringens fötter i gröna donutstrumpor och foam-tofflor på balkongen",
+   "forslag_pa_anvandning": "Produktsida/sociala medier: visar strumporna i användning hos tonåring/barn (inga ansikten)."
+  },
+  {
+   "fil": "bilder/matstrumpor_47_donut_presentpase.jpg",
+   "id": "47_donut_presentpase",
+   "titel": "Donutlådan i presentpåsen",
+   "produkt": "Donut",
+   "shopify_handle": "donut-strumpor",
+   "malgrupp": "Givare 50+/60+",
+   "beskrivning": "Donutlådan i presentpåse på passagerarsätet.",
+   "alt_text": "Donutlådan i presentpåsen – Donutlådan i presentpåse på passagerarsätet",
+   "forslag_pa_anvandning": "Annons/landningssida riktad till köparen (50+): presentkänsla, julklapp, barnbarn."
+  },
+  {
+   "fil": "bilder/matstrumpor_51_alla_namnlappar.jpg",
+   "id": "51_alla_namnlappar",
+   "titel": "Julklappar till barnbarnen",
+   "produkt": "Flera",
+   "shopify_handle": null,
+   "malgrupp": "Alla produkter",
+   "beskrivning": "Fyra lådor på radda med namnlappar till barnbarnen.",
+   "alt_text": "Julklappar till barnbarnen – Fyra lådor på radda med namnlappar till barnbarnen",
+   "forslag_pa_anvandning": "Startsida/kollektion: visar hela sortimentet, bra för 'julklappar'-sektion."
+  },
+  {
+   "fil": "bilder/matstrumpor_52_alla_fotter_soffan.jpg",
+   "id": "52_alla_fotter_soffan",
+   "titel": "Hela familjens fötter",
+   "produkt": "Flera",
+   "shopify_handle": null,
+   "malgrupp": "Alla produkter",
+   "beskrivning": "Fyra par fötter i soffan med varsin sort. Inget ansikte.",
+   "alt_text": "Hela familjens fötter – Fyra par fötter i soffan med varsin sort",
+   "forslag_pa_anvandning": "Startsida/kollektion: visar hela sortimentet, bra för 'julklappar'-sektion."
+  },
+  {
+   "fil": "bilder/matstrumpor_53_alla_byralada.jpg",
+   "id": "53_alla_byralada",
+   "titel": "Strumplådan",
+   "produkt": "Flera",
+   "shopify_handle": null,
+   "malgrupp": "Allmänt",
+   "beskrivning": "Byrålådan full av matstrumpor blandat med vanliga svarta.",
+   "alt_text": "Strumplådan – Byrålådan full av matstrumpor blandat med vanliga svarta",
+   "forslag_pa_anvandning": "Produktsida eller inlägg: humor/vardag."
+  },
+  {
+   "fil": "bilder/matstrumpor_55_alla_klapplista.jpg",
+   "id": "55_alla_klapplista",
+   "titel": "Julklappslistan",
+   "produkt": "Flera",
+   "shopify_handle": null,
+   "malgrupp": "Givare 50+/60+",
+   "beskrivning": "Lådorna bredvid en handskriven julklappslista.",
+   "alt_text": "Julklappslistan – Lådorna bredvid en handskriven julklappslista",
+   "forslag_pa_anvandning": "Annons/landningssida riktad till köparen (50+): presentkänsla, julklapp, barnbarn."
+  },
+  {
+   "fil": "bilder/matstrumpor_56_alla_valjer.jpg",
+   "id": "56_alla_valjer",
+   "titel": "Vilken ska vi välja?",
+   "produkt": "Flera",
+   "shopify_handle": null,
+   "malgrupp": "Givare 50+/60+",
+   "beskrivning": "Morfar jämför pizzakartongen och burgarlådan.",
+   "alt_text": "Vilken ska vi välja? – Morfar jämför pizzakartongen och burgarlådan",
+   "forslag_pa_anvandning": "Annons/landningssida riktad till köparen (50+): presentkänsla, julklapp, barnbarn."
+  },
+  {
+   "fil": "bilder/matstrumpor_61_dorrmattan.jpg",
+   "id": "61_dorrmattan",
+   "titel": "Leverans på dörrmattan",
+   "produkt": "Flera",
+   "shopify_handle": null,
+   "malgrupp": "Allmänt",
+   "beskrivning": "Fraktkartongen på dörrmattan med sushi- och donutlådan i.",
+   "alt_text": "Leverans på dörrmattan – Fraktkartongen på dörrmattan med sushi- och donutlådan i",
+   "forslag_pa_anvandning": "Produktsida eller inlägg: humor/vardag."
+  },
+  {
+   "fil": "bilder/matstrumpor_62_mormor_skrattar.jpg",
+   "id": "62_mormor_skrattar",
+   "titel": "Mormor skrattar",
+   "produkt": "Flera",
+   "shopify_handle": null,
+   "malgrupp": "Givare 50+/60+",
+   "beskrivning": "Mormor skrattar vid födelsedagsbordet med burgarlådan i handen.",
+   "alt_text": "Mormor skrattar – Mormor skrattar vid födelsedagsbordet med burgarlådan i handen",
+   "forslag_pa_anvandning": "Annons/landningssida riktad till köparen (50+): presentkänsla, julklapp, barnbarn."
+  },
+  {
+   "fil": "bilder/matstrumpor_63_morfar_fatoljen.jpg",
+   "id": "63_morfar_fatoljen",
+   "titel": "Morfar testar själv",
+   "produkt": "Flera",
+   "shopify_handle": null,
+   "malgrupp": "Givare 50+/60+",
+   "beskrivning": "Morfar i fåtöljen visar upp pizzastrumporna på sina egna fötter.",
+   "alt_text": "Morfar testar själv – Morfar i fåtöljen visar upp pizzastrumporna på sina egna fötter",
+   "forslag_pa_anvandning": "Annons/landningssida riktad till köparen (50+): presentkänsla, julklapp, barnbarn."
+  },
+  {
+   "fil": "bilder/matstrumpor_64_tonaring_donut_pov.jpg",
+   "id": "64_tonaring_donut_pov",
+   "titel": "Donutlådan i knät",
+   "produkt": "Donut",
+   "shopify_handle": "donut-strumpor",
+   "malgrupp": "Mottagare ≤18",
+   "beskrivning": "Tonåringens POV med donutlådan i knät. Inget ansikte.",
+   "alt_text": "Donutlådan i knät – Tonåringens POV med donutlådan i knät",
+   "forslag_pa_anvandning": "Produktsida/sociala medier: visar strumporna i användning hos tonåring/barn (inga ansikten)."
+  }
+ ]
+}
