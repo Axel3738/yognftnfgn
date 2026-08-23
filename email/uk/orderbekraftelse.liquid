@@ -1,0 +1,265 @@
+{% comment %}
+  Orderbekräftelse (en-GB) — brandad för beavershop.co.uk.
+  Klistras in i: Inställningar → Aviseringar → Kundaviseringar → Orderbekräftelse → Redigera kod.
+  Innehåll enligt "custom order confirmation"-upplägget: tidslinje med leveranstider,
+  grundarhälsning, FAQ, kontakt och nyhetsbrevs-block med rabattkrok.
+  Fakta ur beavershop.co.uk:s Shipping information + Returns & cancellation-sidor,
+  lästa 2026-08-23: 0–2 arbetsdagars behandling, 5–10 arbetsdagars leverans (ett
+  enda spann, ingen SE/utländskt-lager-uppdelning på UK-sajten), 14 dagars
+  ångerrätt (Consumer Contracts Regulations 2013) + totalt 30 dagars öppet köp,
+  återbetalning inom 10 arbetsdagar. Ändras policyn, ändra här.
+{% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thank you for your order</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0; padding:0; background-color:#f2f2f2; -webkit-text-size-adjust:100%;">
+
+  <div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">
+    Your order's been received — here's exactly what happens next, step by step.
+  </div>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f2f2f2;">
+    <tr>
+      <td align="center" style="padding:24px 12px;">
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%; background-color:#ffffff; border:1px solid #e8e8e1;">
+
+          <!-- Sidhuvud -->
+          <tr>
+            <td align="center" style="background-color:#000000; padding:20px 24px;">
+              <a href="{{ shop.url }}" style="text-decoration:none;">
+                <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:26px; letter-spacing:1px; color:#ffffff; text-transform:uppercase;">{{ shop.name }}</span>
+              </a>
+            </td>
+          </tr>
+
+          <!-- Rubrik -->
+          <tr>
+            <td style="padding:36px 32px 8px 32px;" align="center">
+              <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:30px; line-height:1.15; color:#000000; text-transform:uppercase;">Thank you for your order!</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:8px 32px 4px 32px;" align="center">
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:1.6; color:#000000; margin:0;">
+                {% if customer.first_name %}Hi {{ customer.first_name }}!{% else %}Hi there!{% endif %}
+                We've received order <strong>{{ name }}</strong>. Here's exactly what happens now.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Knapp: ordersida -->
+          <tr>
+            <td align="center" style="padding:24px 32px 8px 32px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" bgcolor="#dd1d1d" style="background-color:#dd1d1d;">
+                    <a href="{{ order_status_url }}" target="_blank"
+                       style="display:inline-block; padding:16px 44px; font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:18px; letter-spacing:1px; color:#ffffff; text-decoration:none; text-transform:uppercase;">
+                      Track your order
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Vad händer nu — tidslinje ur fraktpolicyn -->
+          <tr>
+            <td style="padding:28px 32px 8px 32px;">
+              <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:16px; color:#000000; text-transform:uppercase; letter-spacing:0.5px;">What happens now?</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:4px 32px 20px 32px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td width="34" valign="top" style="padding:8px 0;">
+                    <div style="width:24px; height:24px; background:#dd1d1d; color:#ffffff; text-align:center; line-height:24px; font-family:'Anton',Arial,sans-serif; font-size:13px;">1</div>
+                  </td>
+                  <td style="padding:8px 0; font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.5; color:#000000;">
+                    <strong>We pack your order</strong> — within 0–2 working days.
+                  </td>
+                </tr>
+                <tr>
+                  <td width="34" valign="top" style="padding:8px 0;">
+                    <div style="width:24px; height:24px; background:#dd1d1d; color:#ffffff; text-align:center; line-height:24px; font-family:'Anton',Arial,sans-serif; font-size:13px;">2</div>
+                  </td>
+                  <td style="padding:8px 0; font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.5; color:#000000;">
+                    <strong>Your parcel is dispatched</strong> — you'll get an email with a tracking link the moment it happens. Can't find it? Check your junk folder.
+                  </td>
+                </tr>
+                <tr>
+                  <td width="34" valign="top" style="padding:8px 0;">
+                    <div style="width:24px; height:24px; background:#dd1d1d; color:#ffffff; text-align:center; line-height:24px; font-family:'Anton',Arial,sans-serif; font-size:13px;">3</div>
+                  </td>
+                  <td style="padding:8px 0; font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.5; color:#000000;">
+                    <strong>It arrives with you</strong> — standard delivery is 5–10 working days with tracked shipping. Always trackable.
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Avdelare -->
+          <tr>
+            <td style="padding:0 32px;"><div style="border-top:1px solid #e8e8e1; font-size:0; line-height:0;">&nbsp;</div></td>
+          </tr>
+
+          <!-- Ordersammanfattning -->
+          <tr>
+            <td style="padding:24px 32px 8px 32px;">
+              <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:16px; color:#000000; text-transform:uppercase; letter-spacing:0.5px;">Your order</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 32px 8px 32px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                {% for line in subtotal_line_items %}
+                <tr>
+                  <td width="72" style="padding:10px 0; vertical-align:middle;">
+                    {% if line.image %}
+                      <img src="{{ line | img_url: 'compact_cropped' }}" alt="{{ line.title | escape }}" width="60" height="60" style="display:block; border:1px solid #e8e8e1;">
+                    {% endif %}
+                  </td>
+                  <td style="padding:10px 0 10px 12px; vertical-align:middle;">
+                    <p style="font-family:Arial,Helvetica,sans-serif; font-size:14px; color:#000000; margin:0; font-weight:bold;">{{ line.title }}</p>
+                    {% if line.variant_title and line.variant_title != 'Default Title' %}
+                      <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#6b6b6b; margin:2px 0 0 0;">{{ line.variant_title }}</p>
+                    {% endif %}
+                    <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#6b6b6b; margin:2px 0 0 0;">Qty: {{ line.quantity }}</p>
+                  </td>
+                  <td align="right" style="padding:10px 0; vertical-align:middle; white-space:nowrap;">
+                    <p style="font-family:Arial,Helvetica,sans-serif; font-size:14px; color:#000000; margin:0;">{{ line.final_line_price | money }}</p>
+                  </td>
+                </tr>
+                {% endfor %}
+              </table>
+            </td>
+          </tr>
+
+          <!-- Summering -->
+          <tr>
+            <td style="padding:0 32px 24px 32px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #e8e8e1;">
+                <tr>
+                  <td style="padding:12px 0 2px 0; font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#6b6b6b;">Subtotal</td>
+                  <td align="right" style="padding:12px 0 2px 0; font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#000000;">{{ subtotal_price | money }}</td>
+                </tr>
+                {% if discounts %}
+                <tr>
+                  <td style="padding:2px 0; font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#6b6b6b;">Discount</td>
+                  <td align="right" style="padding:2px 0; font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#dd1d1d;">{{ discounts_savings | money }}</td>
+                </tr>
+                {% endif %}
+                {% for shipping_line in shipping_lines %}
+                <tr>
+                  <td style="padding:2px 0; font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#6b6b6b;">Shipping ({{ shipping_line.title }})</td>
+                  <td align="right" style="padding:2px 0; font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#000000;">{{ shipping_line.price | money }}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                  <td style="padding:8px 0 0 0; font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:16px; color:#000000; text-transform:uppercase;">Total</td>
+                  <td align="right" style="padding:8px 0 0 0; font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:16px; color:#000000;">{{ total_price | money }}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Leveransadress -->
+          {% if shipping_address %}
+          <tr>
+            <td style="padding:0 32px;"><div style="border-top:1px solid #e8e8e1; font-size:0; line-height:0;">&nbsp;</div></td>
+          </tr>
+          <tr>
+            <td style="padding:20px 32px 20px 32px;">
+              <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:16px; color:#000000; text-transform:uppercase; letter-spacing:0.5px;">Delivering to</span>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.6; color:#000000; margin:8px 0 0 0;">
+                {{ shipping_address.name }}<br>
+                {{ shipping_address.address1 }}{% if shipping_address.address2 != blank %}, {{ shipping_address.address2 }}{% endif %}<br>
+                {{ shipping_address.city }} {{ shipping_address.zip }}
+              </p>
+            </td>
+          </tr>
+          {% endif %}
+
+          <!-- Grundarhälsning -->
+          <tr>
+            <td style="padding:0 32px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f7f7f7; border-left:4px solid #dd1d1d;">
+                <tr>
+                  <td style="padding:18px 20px;">
+                    <p style="font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.6; color:#000000; margin:0; font-style:italic;">
+                      "Thanks so much for your order! If anything's wrong or unclear, email <a href="mailto:{{ shop.email }}" style="color:#dd1d1d;">{{ shop.email }}</a> and I'll take a personal look."
+                    </p>
+                    <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#6b6b6b; margin:8px 0 0 0;">— Axel, founder</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- FAQ — ur frakt- och återbetalningspolicyn -->
+          <tr>
+            <td style="padding:28px 32px 8px 32px;">
+              <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:16px; color:#000000; text-transform:uppercase; letter-spacing:0.5px;">Frequently asked questions</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 32px 24px 32px;">
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.5; color:#000000; margin:10px 0 0 0;"><strong>When will my order be dispatched?</strong></p>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.6; color:#6b6b6b; margin:2px 0 0 0;">We process orders within 0–2 working days. As soon as it's dispatched, you'll get an email with a tracking link.</p>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.5; color:#000000; margin:12px 0 0 0;"><strong>How long does delivery take?</strong></p>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.6; color:#6b6b6b; margin:2px 0 0 0;">Standard delivery is 5–10 working days with tracked shipping. All prices include UK VAT, so there's nothing extra to pay on delivery.</p>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.5; color:#000000; margin:12px 0 0 0;"><strong>Can I cancel or return it?</strong></p>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.6; color:#6b6b6b; margin:2px 0 0 0;">You have a 14-day cancellation right, plus a total of 30 days to return the item. You'll find everything you need on <a href="{{ shop.url }}/pages/returns" style="color:#dd1d1d;">{{ shop.url | remove: 'https://' }}/pages/returns</a>.</p>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.5; color:#000000; margin:12px 0 0 0;"><strong>I'd like to change something in my order</strong></p>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.6; color:#6b6b6b; margin:2px 0 0 0;">Email <a href="mailto:{{ shop.email }}" style="color:#dd1d1d;">{{ shop.email }}</a> as soon as possible — if your order hasn't been packed yet, we can usually sort it.</p>
+            </td>
+          </tr>
+
+          <!-- Nyhetsbrevs-block -->
+          <tr>
+            <td style="padding:0 32px 32px 32px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#000000;">
+                <tr>
+                  <td align="center" style="padding:24px 20px;">
+                    <p style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:20px; color:#ffffff; margin:0; text-transform:uppercase; letter-spacing:0.5px;">10% off your next order</p>
+                    <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.6; color:#d9d9d9; margin:8px 0 16px 0;">Join our newsletter and get a discount code straight to your inbox. No waiting.</p>
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td align="center" bgcolor="#dd1d1d" style="background-color:#dd1d1d;">
+                          <a href="{{ shop.url }}/#newsletter-footer" target="_blank"
+                             style="display:inline-block; padding:12px 32px; font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:15px; letter-spacing:1px; color:#ffffff; text-decoration:none; text-transform:uppercase;">
+                            Get the code
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Sidfot -->
+          <tr>
+            <td align="center" style="background-color:#000000; padding:24px 32px; border-top:1px solid #2a2a2a;">
+              <p style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:15px; color:#ffffff; margin:0 0 8px 0; text-transform:uppercase; letter-spacing:1px;">{{ shop.name }}</p>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#d9d9d9; margin:0;">
+                Questions about your order? Reply to this email or write to
+                <a href="mailto:{{ shop.email }}" style="color:#ffffff;">{{ shop.email }}</a>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

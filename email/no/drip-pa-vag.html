@@ -1,0 +1,76 @@
+<!--
+  Drip-e-post "På vei" — sendes ~4 dager etter at ordren er markert sendt.
+  Sendes via Markedsføring → Automatiseringer (egen automatisering:
+  trigger "Order fulfilled" → vent 4 dager → send e-post) med dette
+  innholdet i en Custom HTML-blokk. Setup: se email/no/README.md.
+
+  OBS: Shopify Email kjører IKKE Liquid i custom HTML-blokker — derfor
+  ingen {{ }}-variabler her. Sporingslinken er ordrespesifikk og kan ikke
+  lenkes herfra; e-posten peker i stedet på fraktbekreftelsesmailen.
+  Emnelinje (settes i automatiseringen): Pakken din er på vei
+  Norsk versjon av mallar/drip-pa-vag.html — URL-er byttet til
+  beverbutikken.no, "utenlandsk lager"-formuleringen fjernet fordi den
+  norske fraktsiden ikke oppgir lagerplassering (bare 5–10 virkedager totalt).
+-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f2f2f2;">
+  <tr>
+    <td align="center" style="padding:24px 12px;">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%; background-color:#ffffff; border:1px solid #e8e8e1;">
+
+        <tr>
+          <td align="center" style="background-color:#000000; padding:20px 24px;">
+            <a href="https://beverbutikken.no" style="text-decoration:none;">
+              <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:26px; letter-spacing:1px; color:#ffffff; text-transform:uppercase;">Beverbutikken.no</span>
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:36px 32px 8px 32px;" align="center">
+            <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:30px; line-height:1.15; color:#000000; text-transform:uppercase;">Snart fremme</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:8px 32px 4px 32px;" align="center">
+            <p style="font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:1.6; color:#000000; margin:0;">
+              Hei! Pakken din har forlatt lageret og er på vei til deg.
+            </p>
+            <p style="font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:1.6; color:#000000; margin:12px 0 0 0;">
+              Normal leveringstid hos oss er <strong>5–10 virkedager</strong> med sporbar frakt — du er et stykke inn i den reisen nå.
+            </p>
+            <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.6; color:#6b6b6b; margin:12px 0 0 0;">
+              Nysgjerrig på hvor den befinner seg akkurat nå? Sporingslinken finner du i e-posten
+              <em>"Ordren din er pakket"</em> — sjekk gjerne søppelposten også.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="center" style="padding:24px 32px 32px 32px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td align="center" bgcolor="#dd1d1d" style="background-color:#dd1d1d;">
+                  <a href="https://beverbutikken.no/pages/kontakt" target="_blank"
+                     style="display:inline-block; padding:14px 36px; font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:16px; letter-spacing:1px; color:#ffffff; text-decoration:none; text-transform:uppercase;">
+                    Finner du ikke sporingen?
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="center" style="background-color:#000000; padding:24px 32px;">
+            <p style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:15px; color:#ffffff; margin:0 0 8px 0; text-transform:uppercase; letter-spacing:1px;">Beverbutikken.no</p>
+            <p style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#d9d9d9; margin:0;">
+              Spørsmål om leveransen din? Svar på denne e-posten så hjelper vi deg.
+            </p>
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,124 @@
+{% comment %}
+  "Under levering" (dk) — brandad för bæverbutiken.dk.
+  Klistras in i: Indstillinger → Notifikationer → Kundenotifikationer → Under levering → Rediger kode.
+  Obs: den här avin är avstängd som standard i Shopify — slå på den på samma sida.
+  Triggas av transportörens riktiga "out for delivery"-skanning — inte leverantörens
+  tidiga "fulfilled"-markering — så "på vej"-formuleringen här är ärlig, till skillnad
+  från fragtbekräftelsemejlet.
+{% endcomment %}
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Din pakke er under levering</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0; padding:0; background-color:#f2f2f2; -webkit-text-size-adjust:100%;">
+
+  <div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">
+    Din pakke er under levering — den er fremme hos dig meget snart.
+  </div>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f2f2f2;">
+    <tr>
+      <td align="center" style="padding:24px 12px;">
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%; background-color:#ffffff; border:1px solid #e8e8e1;">
+
+          <tr>
+            <td align="center" style="background-color:#000000; padding:20px 24px;">
+              <a href="{{ shop.url }}" style="text-decoration:none;">
+                <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:26px; letter-spacing:1px; color:#ffffff; text-transform:uppercase;">{{ shop.name }}</span>
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:36px 32px 8px 32px;" align="center">
+              <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:30px; line-height:1.15; color:#000000; text-transform:uppercase;">Din pakke er under levering!</span>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:8px 32px 4px 32px;" align="center">
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:1.6; color:#000000; margin:0;">
+                {% if customer.first_name %}Hej {{ customer.first_name }}!{% else %}Hej!{% endif %}
+                Pakken med ordre <strong>{{ name }}</strong> er under levering og er fremme hos dig meget snart.
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" style="padding:24px 32px 8px 32px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" bgcolor="#dd1d1d" style="background-color:#dd1d1d;">
+                    <a href="{% if fulfillment.tracking_url %}{{ fulfillment.tracking_url }}{% else %}{{ order_status_url }}{% endif %}" target="_blank"
+                       style="display:inline-block; padding:16px 44px; font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:18px; letter-spacing:1px; color:#ffffff; text-decoration:none; text-transform:uppercase;">
+                      Spor din pakke
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" style="padding:8px 32px 32px 32px;">
+              {% if fulfillment.tracking_numbers.size > 0 %}
+                <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#6b6b6b; margin:0;">
+                  Sporingsnummer:
+                  {% if fulfillment.tracking_url %}
+                    <a href="{{ fulfillment.tracking_url }}" style="color:#dd1d1d; font-weight:bold;">{{ fulfillment.tracking_numbers.first }}</a>
+                  {% else %}
+                    <strong style="color:#000000;">{{ fulfillment.tracking_numbers.first }}</strong>
+                  {% endif %}
+                  {% if fulfillment.tracking_company %}({{ fulfillment.tracking_company }}){% endif %}
+                </p>
+              {% endif %}
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#6b6b6b; margin:8px 0 0 0;">
+                Hele din ordre finder du på <a href="{{ order_status_url }}" style="color:#dd1d1d; font-weight:bold;">din ordreside</a>.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Nyhetsbrevs-block -->
+          <tr>
+            <td style="padding:0 32px 32px 32px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#000000;">
+                <tr>
+                  <td align="center" style="padding:24px 20px;">
+                    <p style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:20px; color:#ffffff; margin:0; text-transform:uppercase; letter-spacing:0.5px;">10 % rabat på næste køb</p>
+                    <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.6; color:#d9d9d9; margin:8px 0 16px 0;">Tilmeld dig nyhedsbrevet og få en rabatkode direkte i indbakken. Ingen ventetid.</p>
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td align="center" bgcolor="#dd1d1d" style="background-color:#dd1d1d;">
+                          <a href="{{ shop.url }}/#newsletter-footer" target="_blank"
+                             style="display:inline-block; padding:12px 32px; font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:15px; letter-spacing:1px; color:#ffffff; text-decoration:none; text-transform:uppercase;">
+                            Hent rabatkoden
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" style="background-color:#000000; padding:24px 32px;">
+              <p style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:15px; color:#ffffff; margin:0 0 8px 0; text-transform:uppercase; letter-spacing:1px;">{{ shop.name }}</p>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#d9d9d9; margin:0;">
+                Spørgsmål til din levering? Svar på denne mail, eller skriv til
+                <a href="mailto:{{ shop.email }}" style="color:#ffffff;">{{ shop.email }}</a>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

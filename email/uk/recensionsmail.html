@@ -1,0 +1,93 @@
+<!--
+  Recensionsmejl (en-GB) — skickas ~14 dagar efter att ordern markerats skickad
+  (då har de flesta haft paketet några dagar även vid 5–10 dagars leverans).
+  Skickas via Marknadsföring → Automatiseringar (egen automatisering:
+  trigger "Order fulfilled" → vänta 14 dagar → skicka e-post) med det här
+  innehållet i ett Custom HTML-block. Setup: se email/README.md.
+
+  Stjärnstyrningen:
+  - 1–3 stjärnor → kontaktsidan (beavershop.co.uk/pages/contact, "berätta vad
+    som gick fel") — missnöjet fångas privat i stället för att bli en publik
+    recension. Vill Axel hellre skicka dem till Judge.me: aktivera Judge.me:s
+    "All Reviews Page" och byt LÅG-länken nedan till den sidans URL.
+  - 4–5 stjärnor → Trustpilots recensionsformulär för beavershop.co.uk
+    (https://uk.trustpilot.com/evaluate/beavershop.co.uk — URL:en är given av
+    Axel/uppgiften, INTE oberoende verifierad att Trustpilot-profilen finns).
+  ⚠️ Att bara bjuda in nöjda kunder till Trustpilot strider mot Trustpilots
+  riktlinjer — Axels beslut, risken är dokumenterad i README.
+
+  Ämnesrad (sätts i automatiseringen): 1, 2 or 5 stars — which will it be?
+-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f2f2f2;">
+  <tr>
+    <td align="center" style="padding:24px 12px;">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%; background-color:#ffffff; border:1px solid #e8e8e1;">
+
+        <tr>
+          <td align="center" style="background-color:#000000; padding:20px 24px;">
+            <a href="https://beavershop.co.uk" style="text-decoration:none;">
+              <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:26px; letter-spacing:1px; color:#ffffff; text-transform:uppercase;">BeaverShop</span>
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:36px 32px 8px 32px;" align="center">
+            <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:30px; line-height:1.15; color:#000000; text-transform:uppercase;">How was your order?</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:8px 32px 4px 32px;" align="center">
+            <p style="font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:1.6; color:#000000; margin:0;">
+              You've had it a little while now. Click the number of stars that fits best — it takes five seconds.
+            </p>
+          </td>
+        </tr>
+
+        <!-- Stjärnraden: 1–3 → kontaktsidan, 4–5 → Trustpilot -->
+        <tr>
+          <td align="center" style="padding:24px 32px 8px 32px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="padding:0 6px;"><a href="https://beavershop.co.uk/pages/contact" target="_blank" style="font-family:Arial,Helvetica,sans-serif; font-size:40px; line-height:1; color:#dd1d1d; text-decoration:none;" aria-label="1 star">&#9733;</a></td>
+                <td style="padding:0 6px;"><a href="https://beavershop.co.uk/pages/contact" target="_blank" style="font-family:Arial,Helvetica,sans-serif; font-size:40px; line-height:1; color:#dd1d1d; text-decoration:none;" aria-label="2 stars">&#9733;</a></td>
+                <td style="padding:0 6px;"><a href="https://beavershop.co.uk/pages/contact" target="_blank" style="font-family:Arial,Helvetica,sans-serif; font-size:40px; line-height:1; color:#dd1d1d; text-decoration:none;" aria-label="3 stars">&#9733;</a></td>
+                <td style="padding:0 6px;"><a href="https://uk.trustpilot.com/evaluate/beavershop.co.uk" target="_blank" style="font-family:Arial,Helvetica,sans-serif; font-size:40px; line-height:1; color:#dd1d1d; text-decoration:none;" aria-label="4 stars">&#9733;</a></td>
+                <td style="padding:0 6px;"><a href="https://uk.trustpilot.com/evaluate/beavershop.co.uk" target="_blank" style="font-family:Arial,Helvetica,sans-serif; font-size:40px; line-height:1; color:#dd1d1d; text-decoration:none;" aria-label="5 stars">&#9733;</a></td>
+              </tr>
+              <tr>
+                <td align="center" style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#6b6b6b; padding-top:4px;">1</td>
+                <td align="center" style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#6b6b6b; padding-top:4px;">2</td>
+                <td align="center" style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#6b6b6b; padding-top:4px;">3</td>
+                <td align="center" style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#6b6b6b; padding-top:4px;">4</td>
+                <td align="center" style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#6b6b6b; padding-top:4px;">5</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="center" style="padding:8px 32px 24px 32px;">
+            <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#6b6b6b; margin:0;">
+              One click takes you to the next step.
+            </p>
+            <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.6; color:#6b6b6b; margin:10px 0 0 0;">
+              Something gone wrong? Tell us what happened and we'll fix it.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="center" style="background-color:#000000; padding:24px 32px;">
+            <p style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:15px; color:#ffffff; margin:0 0 8px 0; text-transform:uppercase; letter-spacing:1px;">BeaverShop</p>
+            <p style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#d9d9d9; margin:0;">
+              Questions? Reply to this email and we'll help you out.
+            </p>
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>

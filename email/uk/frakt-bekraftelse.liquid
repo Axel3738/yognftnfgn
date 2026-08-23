@@ -1,0 +1,209 @@
+{% comment %}
+  Fraktbekräftelse (en-GB) — brandad för beavershop.co.uk.
+  Klistras in i: Inställningar → Aviseringar → Kundaviseringar → Fraktbekräftelse → Redigera kod.
+  Bygger på Shopifys standardvariabler: fulfillment, order_status_url, shop.
+  OBS: leverantören markerar ordrar som skickade inom ~24 h, ofta innan paketet
+  fysiskt rör sig. Därför säger mejlet "packed and handed to the courier" —
+  ALDRIG "on its way" — och förklarar att spårningen kan visa tomt tills
+  transportören skannat paketet. Samma ärliga vinkel som i den svenska mallen.
+  Brandfärger från theme.css (Impulse): knapp #dd1d1d, kant #e8e8e1, header/footer #000000.
+{% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your order's been packed</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0; padding:0; background-color:#f2f2f2; -webkit-text-size-adjust:100%;">
+
+  <div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">
+    Your order's been packed and handed to the courier — here's your tracking link.
+  </div>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f2f2f2;">
+    <tr>
+      <td align="center" style="padding:24px 12px;">
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%; background-color:#ffffff; border:1px solid #e8e8e1;">
+
+          <!-- Sidhuvud: svart list med ordmärke, som sajtens header -->
+          <tr>
+            <td align="center" style="background-color:#000000; padding:20px 24px;">
+              <a href="{{ shop.url }}" style="text-decoration:none;">
+                <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:26px; letter-spacing:1px; color:#ffffff; text-transform:uppercase;">{{ shop.name }}</span>
+              </a>
+            </td>
+          </tr>
+
+          <!-- Rubrik -->
+          <tr>
+            <td style="padding:36px 32px 8px 32px;" align="center">
+              <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:30px; line-height:1.15; color:#000000; text-transform:uppercase;">Your order's been packed!</span>
+            </td>
+          </tr>
+
+          <!-- Ingress -->
+          <tr>
+            <td style="padding:8px 32px 4px 32px;" align="center">
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:1.6; color:#000000; margin:0;">
+                {% if customer.first_name %}Hi {{ customer.first_name }}!{% else %}Hi there!{% endif %}
+                Order <strong>{{ name }}</strong> has been packed and handed over to the courier — it's over to them now for the rest of the journey to you.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Spårningsknapp — huvudhandlingen i mejlet -->
+          <tr>
+            <td align="center" style="padding:24px 32px 8px 32px;">
+              {% if fulfillment.tracking_url %}
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td align="center" bgcolor="#dd1d1d" style="background-color:#dd1d1d;">
+                      <a href="{{ fulfillment.tracking_url }}" target="_blank"
+                         style="display:inline-block; padding:16px 44px; font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:18px; letter-spacing:1px; color:#ffffff; text-decoration:none; text-transform:uppercase;">
+                        Track your parcel
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              {% else %}
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td align="center" bgcolor="#dd1d1d" style="background-color:#dd1d1d;">
+                      <a href="{{ order_status_url }}" target="_blank"
+                         style="display:inline-block; padding:16px 44px; font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:18px; letter-spacing:1px; color:#ffffff; text-decoration:none; text-transform:uppercase;">
+                        Track your order
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              {% endif %}
+            </td>
+          </tr>
+
+          <!-- Spårningsnummer i klartext, klickbara -->
+          <tr>
+            <td align="center" style="padding:8px 32px 24px 32px;">
+              {% if fulfillment.tracking_numbers.size == 1 %}
+                <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#6b6b6b; margin:0;">
+                  Tracking number:
+                  {% if fulfillment.tracking_url %}
+                    <a href="{{ fulfillment.tracking_url }}" style="color:#dd1d1d; font-weight:bold;">{{ fulfillment.tracking_numbers.first }}</a>
+                  {% else %}
+                    <strong style="color:#000000;">{{ fulfillment.tracking_numbers.first }}</strong>
+                  {% endif %}
+                  {% if fulfillment.tracking_company %}({{ fulfillment.tracking_company }}){% endif %}
+                </p>
+              {% elsif fulfillment.tracking_numbers.size > 1 %}
+                <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#6b6b6b; margin:0 0 6px 0;">
+                  Your delivery has multiple parcels{% if fulfillment.tracking_company %} ({{ fulfillment.tracking_company }}){% endif %}:
+                </p>
+                {% for tracking_number in fulfillment.tracking_numbers %}
+                  <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; margin:0 0 4px 0;">
+                    {% assign t_url = fulfillment.tracking_urls[forloop.index0] %}
+                    {% if t_url %}
+                      <a href="{{ t_url }}" style="color:#dd1d1d; font-weight:bold;">{{ tracking_number }}</a>
+                    {% else %}
+                      <strong style="color:#000000;">{{ tracking_number }}</strong>
+                    {% endif %}
+                  </p>
+                {% endfor %}
+              {% else %}
+                <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#6b6b6b; margin:0;">
+                  Tracking number will be added as soon as the courier registers the parcel.
+                </p>
+              {% endif %}
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.6; color:#6b6b6b; margin:10px 0 0 0;">
+                Tracking might show nothing for the first day or so — it wakes up as soon as the courier scans the parcel.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Avdelare -->
+          <tr>
+            <td style="padding:0 32px;"><div style="border-top:1px solid #e8e8e1; font-size:0; line-height:0;">&nbsp;</div></td>
+          </tr>
+
+          <!-- Innehåll i leveransen -->
+          <tr>
+            <td style="padding:24px 32px 8px 32px;">
+              <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:16px; color:#000000; text-transform:uppercase; letter-spacing:0.5px;">In this delivery</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 32px 24px 32px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                {% for line in fulfillment.fulfillment_line_items %}
+                <tr>
+                  <td width="72" style="padding:10px 0; vertical-align:middle;">
+                    {% if line.line_item.image %}
+                      <img src="{{ line.line_item.image | img_url: 'compact_cropped' }}" alt="{{ line.line_item.title | escape }}" width="60" height="60" style="display:block; border:1px solid #e8e8e1;">
+                    {% endif %}
+                  </td>
+                  <td style="padding:10px 0 10px 12px; vertical-align:middle;">
+                    <p style="font-family:Arial,Helvetica,sans-serif; font-size:14px; color:#000000; margin:0; font-weight:bold;">{{ line.line_item.title }}</p>
+                    {% if line.line_item.variant_title and line.line_item.variant_title != 'Default Title' %}
+                      <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#6b6b6b; margin:2px 0 0 0;">{{ line.line_item.variant_title }}</p>
+                    {% endif %}
+                  </td>
+                  <td align="right" style="padding:10px 0; vertical-align:middle;">
+                    <p style="font-family:Arial,Helvetica,sans-serif; font-size:14px; color:#000000; margin:0;">× {{ line.quantity }}</p>
+                  </td>
+                </tr>
+                {% endfor %}
+              </table>
+            </td>
+          </tr>
+
+          <!-- Sekundär länk till orderstatus -->
+          <tr>
+            <td align="center" style="padding:0 32px 32px 32px;">
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#6b6b6b; margin:0;">
+                You can always see delivery status and your full order on
+                <a href="{{ order_status_url }}" style="color:#dd1d1d; font-weight:bold;">your order page</a>.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Nyhetsbrevs-block -->
+          <tr>
+            <td style="padding:0 32px 32px 32px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#000000;">
+                <tr>
+                  <td align="center" style="padding:24px 20px;">
+                    <p style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:20px; color:#ffffff; margin:0; text-transform:uppercase; letter-spacing:0.5px;">10% off your next order</p>
+                    <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.6; color:#d9d9d9; margin:8px 0 16px 0;">Join our newsletter and get a discount code straight to your inbox. No waiting.</p>
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td align="center" bgcolor="#dd1d1d" style="background-color:#dd1d1d;">
+                          <a href="{{ shop.url }}/#newsletter-footer" target="_blank"
+                             style="display:inline-block; padding:12px 32px; font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:15px; letter-spacing:1px; color:#ffffff; text-decoration:none; text-transform:uppercase;">
+                            Get the code
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Sidfot: svart, som sajtens footer -->
+          <tr>
+            <td align="center" style="background-color:#000000; padding:24px 32px;">
+              <p style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:15px; color:#ffffff; margin:0 0 8px 0; text-transform:uppercase; letter-spacing:1px;">{{ shop.name }}</p>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#d9d9d9; margin:0;">
+                Questions about your delivery? Reply to this email or write to
+                <a href="mailto:{{ shop.email }}" style="color:#ffffff;">{{ shop.email }}</a>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

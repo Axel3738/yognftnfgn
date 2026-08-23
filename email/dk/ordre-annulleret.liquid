@@ -1,0 +1,129 @@
+{% comment %}
+  Ordre annulleret (dk) — brandad för bæverbutiken.dk.
+  Klistras in i: Indstillinger → Notifikationer → Kundenotifikationer → Ordre annulleret → Rediger kode.
+  Återbetalningsinfo ur bæverbutiken.dk:s egen retur-og-fortrydelsesret-sida 2026-08-23:
+  refusion senast 14 dage, samme betalingsmiddel, ingen gebyr. Sidan anger INGEN separat
+  SLA för en annullerad (ej returnerad) ordre — steg 2 nedan lånar därför det verifierade
+  14-dages-fönstret från fortrydelsesretten, och steg 3 (SE:s "15 arbetsdagar-eskalering")
+  har medvetet gjorts om till en generisk kontaktuppmaning utan uppfunnet tal.
+  Ändras policyn, ändra här.
+{% endcomment %}
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Din ordre er annulleret</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0; padding:0; background-color:#f2f2f2; -webkit-text-size-adjust:100%;">
+
+  <div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">
+    Din ordre er annulleret — her er præcis, hvad der sker med pengene.
+  </div>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f2f2f2;">
+    <tr>
+      <td align="center" style="padding:24px 12px;">
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%; background-color:#ffffff; border:1px solid #e8e8e1;">
+
+          <tr>
+            <td align="center" style="background-color:#000000; padding:20px 24px;">
+              <a href="{{ shop.url }}" style="text-decoration:none;">
+                <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:26px; letter-spacing:1px; color:#ffffff; text-transform:uppercase;">{{ shop.name }}</span>
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:36px 32px 8px 32px;" align="center">
+              <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:30px; line-height:1.15; color:#000000; text-transform:uppercase;">Din ordre er annulleret</span>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:8px 32px 4px 32px;" align="center">
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:1.6; color:#000000; margin:0;">
+                {% if customer.first_name %}Hej {{ customer.first_name }}!{% else %}Hej!{% endif %}
+                Ordre <strong>{{ name }}</strong> er nu annulleret. Her er præcis, hvad der sker med pengene.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Återbetalningsinfo -->
+          <tr>
+            <td style="padding:24px 32px 8px 32px;">
+              <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:16px; color:#000000; text-transform:uppercase; letter-spacing:0.5px;">Din tilbagebetaling</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:4px 32px 20px 32px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td width="34" valign="top" style="padding:8px 0;">
+                    <div style="width:24px; height:24px; background:#dd1d1d; color:#ffffff; text-align:center; line-height:24px; font-family:'Anton',Arial,sans-serif; font-size:13px;">1</div>
+                  </td>
+                  <td style="padding:8px 0; font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.5; color:#000000;">
+                    Har du allerede betalt, går pengene <strong>automatisk tilbage til det betalingsmiddel, du brugte</strong> — du skal ikke gøre noget.
+                  </td>
+                </tr>
+                <tr>
+                  <td width="34" valign="top" style="padding:8px 0;">
+                    <div style="width:24px; height:24px; background:#dd1d1d; color:#ffffff; text-align:center; line-height:24px; font-family:'Anton',Arial,sans-serif; font-size:13px;">2</div>
+                  </td>
+                  <td style="padding:8px 0; font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.5; color:#000000;">
+                    Tilbagebetalingen sker senest <strong>14 dage</strong> efter annulleringen. Din bank eller dit kortselskab kan have brug for et par ekstra dage, før den ses på din konto.
+                  </td>
+                </tr>
+                <tr>
+                  <td width="34" valign="top" style="padding:8px 0;">
+                    <div style="width:24px; height:24px; background:#dd1d1d; color:#ffffff; text-align:center; line-height:24px; font-family:'Anton',Arial,sans-serif; font-size:13px;">3</div>
+                  </td>
+                  <td style="padding:8px 0; font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.5; color:#000000;">
+                    Kan du stadig ikke se pengene, når fristen er passeret? Skriv til
+                    <a href="mailto:{{ shop.email }}" style="color:#dd1d1d; font-weight:bold;">{{ shop.email }}</a>, så følger vi op for dig.
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Avdelare -->
+          <tr>
+            <td style="padding:0 32px;"><div style="border-top:1px solid #e8e8e1; font-size:0; line-height:0;">&nbsp;</div></td>
+          </tr>
+
+          <!-- FAQ -->
+          <tr>
+            <td style="padding:24px 32px 8px 32px;">
+              <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:16px; color:#000000; text-transform:uppercase; letter-spacing:0.5px;">Ofte stillede spørgsmål</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 32px 28px 32px;">
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.5; color:#000000; margin:10px 0 0 0;"><strong>Annullerede jeg ved en fejl — kan ordren genoprettes?</strong></p>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.6; color:#6b6b6b; margin:2px 0 0 0;">Nemmeste løsning er at lægge en ny ordre på <a href="{{ shop.url }}" style="color:#dd1d1d;">{{ shop.url | remove: 'https://' }}</a>. Er du i tvivl? Skriv til os først.</p>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.5; color:#000000; margin:12px 0 0 0;"><strong>Går pengene tilbage til det rigtige kort?</strong></p>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.6; color:#6b6b6b; margin:2px 0 0 0;">Ja — tilbagebetalingen går altid til nøjagtig samme betalingsmiddel, som købet blev foretaget med. Det er ikke muligt at flytte den til en anden konto.</p>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.5; color:#000000; margin:12px 0 0 0;"><strong>Andre spørgsmål?</strong></p>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.6; color:#6b6b6b; margin:2px 0 0 0;">Svar på denne mail, eller skriv til <a href="mailto:{{ shop.email }}" style="color:#dd1d1d;">{{ shop.email }}</a> — vi svarer, så snart vi kan.</p>
+            </td>
+          </tr>
+
+          <!-- Sidfot -->
+          <tr>
+            <td align="center" style="background-color:#000000; padding:24px 32px;">
+              <p style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:15px; color:#ffffff; margin:0 0 8px 0; text-transform:uppercase; letter-spacing:1px;">{{ shop.name }}</p>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#d9d9d9; margin:0;">
+                Spørgsmål? Svar på denne mail, eller skriv til
+                <a href="mailto:{{ shop.email }}" style="color:#ffffff;">{{ shop.email }}</a>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

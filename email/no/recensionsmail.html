@@ -1,0 +1,96 @@
+<!--
+  Anmeldelses-e-post — sendes ~14 dager etter at ordren er markert sendt
+  (da har de fleste hatt pakken noen dager).
+  Sendes via Markedsføring → Automatiseringer (egen automatisering:
+  trigger "Order fulfilled" → vent 14 dager → send e-post) med dette
+  innholdet i en Custom HTML-blokk. Setup: se email/no/README.md.
+
+  Stjernestyringen:
+  - 1–3 stjerner → kontaktsiden ("fortell hva som gikk galt") — misnøyen
+    fanges privat i stedet for å bli en offentlig anmeldelse.
+    Vil Axel heller sende dem til Judge.me: aktiver Judge.me sin
+    "All Reviews Page" og bytt LAG_LANK under til den sidens URL.
+  - 4–5 stjerner → Trustpilots anmeldelsesskjema for beverbutikken.no.
+  ⚠️ Å bare invitere fornøyde kunder til Trustpilot strider mot Trustpilots
+  retningslinjer — Axels beslutning, risikoen er dokumentert i README.
+
+  Emnelinje (settes i automatiseringen): 1, 2 eller 5 stjerner — hvilken blir det?
+  Norsk versjon av mallar/recensionsmail.html. Kontaktside-URL byttet til
+  /pages/kontakt (verifisert på beverbutikken.no). Trustpilot-lenken er
+  IKKE verifisert — https://no.trustpilot.com/evaluate/beverbutikken.no
+  ga 404 ved sjekk 2026-08-23 (trolig fordi Trustpilot-profilen ikke er
+  opprettet ennå). Se README for detaljer.
+-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f2f2f2;">
+  <tr>
+    <td align="center" style="padding:24px 12px;">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%; background-color:#ffffff; border:1px solid #e8e8e1;">
+
+        <tr>
+          <td align="center" style="background-color:#000000; padding:20px 24px;">
+            <a href="https://beverbutikken.no" style="text-decoration:none;">
+              <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:26px; letter-spacing:1px; color:#ffffff; text-transform:uppercase;">Beverbutikken.no</span>
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:36px 32px 8px 32px;" align="center">
+            <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:30px; line-height:1.15; color:#000000; text-transform:uppercase;">Hvordan var bestillingen?</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:8px 32px 4px 32px;" align="center">
+            <p style="font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:1.6; color:#000000; margin:0;">
+              Du har hatt den en stund nå. Klikk på antall stjerner som stemmer best — tar fem sekunder.
+            </p>
+          </td>
+        </tr>
+
+        <!-- Stjernerekken: 1–3 → kontaktsiden (LAG_LANK), 4–5 → Trustpilot -->
+        <tr>
+          <td align="center" style="padding:24px 32px 8px 32px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="padding:0 6px;"><a href="https://beverbutikken.no/pages/kontakt" target="_blank" style="font-family:Arial,Helvetica,sans-serif; font-size:40px; line-height:1; color:#dd1d1d; text-decoration:none;" aria-label="1 stjerne">&#9733;</a></td>
+                <td style="padding:0 6px;"><a href="https://beverbutikken.no/pages/kontakt" target="_blank" style="font-family:Arial,Helvetica,sans-serif; font-size:40px; line-height:1; color:#dd1d1d; text-decoration:none;" aria-label="2 stjerner">&#9733;</a></td>
+                <td style="padding:0 6px;"><a href="https://beverbutikken.no/pages/kontakt" target="_blank" style="font-family:Arial,Helvetica,sans-serif; font-size:40px; line-height:1; color:#dd1d1d; text-decoration:none;" aria-label="3 stjerner">&#9733;</a></td>
+                <td style="padding:0 6px;"><a href="https://no.trustpilot.com/evaluate/beverbutikken.no" target="_blank" style="font-family:Arial,Helvetica,sans-serif; font-size:40px; line-height:1; color:#dd1d1d; text-decoration:none;" aria-label="4 stjerner">&#9733;</a></td>
+                <td style="padding:0 6px;"><a href="https://no.trustpilot.com/evaluate/beverbutikken.no" target="_blank" style="font-family:Arial,Helvetica,sans-serif; font-size:40px; line-height:1; color:#dd1d1d; text-decoration:none;" aria-label="5 stjerner">&#9733;</a></td>
+              </tr>
+              <tr>
+                <td align="center" style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#6b6b6b; padding-top:4px;">1</td>
+                <td align="center" style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#6b6b6b; padding-top:4px;">2</td>
+                <td align="center" style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#6b6b6b; padding-top:4px;">3</td>
+                <td align="center" style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#6b6b6b; padding-top:4px;">4</td>
+                <td align="center" style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#6b6b6b; padding-top:4px;">5</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="center" style="padding:8px 32px 24px 32px;">
+            <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#6b6b6b; margin:0;">
+              Ett klikk tar deg videre til neste steg.
+            </p>
+            <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.6; color:#6b6b6b; margin:10px 0 0 0;">
+              Gikk noe galt? Fortell hva som skjedde, så fikser vi det.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="center" style="background-color:#000000; padding:24px 32px;">
+            <p style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:15px; color:#ffffff; margin:0 0 8px 0; text-transform:uppercase; letter-spacing:1px;">Beverbutikken.no</p>
+            <p style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#d9d9d9; margin:0;">
+              Spørsmål? Svar på denne e-posten så hjelper vi deg.
+            </p>
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
