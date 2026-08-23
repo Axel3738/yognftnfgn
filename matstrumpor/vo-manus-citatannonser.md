@@ -1,171 +1,127 @@
-# 8 voiceover-manus byggda av kundcitat (idé 1–8 ur annonsideer-voc.md)
+# VO-manus sushistrumpor — rev 2 (2026-08-23)
 
-**Datum:** 2026-08-23. **Regel (Axels):** endast kundcitat ur VoC-underlaget +
-minimala fyllnadsord + rader ur den tidigare vinnande annonsen. Ingen visuell
-regi — alla är videoannonser men det visuella bestäms separat. Inget pris i VO.
-Skrivna av copy-subagent enligt modellpolicyn; byggstenarna redovisas per manus.
+Rev 1 (rådraften) ligger i git-historiken. Denna version: Axels omarbetade
+VO 1–2 (stavning putsad, innehåll orört) + VO 4–8 omarbetade till samma mall.
+Mall: 3–4 hookvarianter + body i flödet problem → vändning → mekanik →
+"får en reaktion och används på riktigt" → "genomtänkt, kul, utan att försöka
+för mycket" → "Ser ut som sushi, är strumpor, sushistrumpor."
+Ingen visuell regi, inget pris, inga påhittade siffror.
 
-**Vinnarrader (ur Axels ursprungsannons):** "Om du ska ge bort en present snart
-är sushiformade strumpor det snällaste du kan ge dom." / "Först tror man att
-det är sushi. Sen inser man att det är strumpor." / "Ser ut som sushi, är
-strumpor, sushistrumpor." / "En present som faktiskt får en reaktion och som
-används på riktigt." / "Den typen av liten present som passar till alla
-tillfällen. Genomtänkt, kul, utan att försöka för mycket."
+⚠️ **Struken hook (påhittad statistik):** "Över hälften av alla föräldrar lider
+av samma stress…" — ingen källa finns. Ersatt av H2 nedan, som är sann
+(underlaget är 11 verkliga forumtrådar).
 
 ---
 
-## VO 1 — Forumfrågan
+## VO 1 — Forumfrågan (Axels version)
 
-> Jag sitter och ber främlingar på nätet
-> om förslag till min egen dotter —
-> som om jag inte kände henne.
->
-> Sanningen är att ingen förälder
-> vet exakt vad barnen blir glada för.
->
-> Först tror man att det är sushi.
-> Sen inser man att det är strumpor.
->
+- **H1:** Jag sitter och ber främlingar på nätet om förslag till min egen dotter, som om jag inte kände henne.
+- **H2 (ersättning):** Det finns hela forumtrådar där föräldrar ber främlingar om julklappstips till sina egna barn. Jag var en av dem.
+- **H3:** Innan jag hittade dessa kände jag mig som en dålig förälder. Jag satt och bad främlingar på nätet om förslag till min egen dotter.
+
+> Sanningen är att ingen förälder vet exakt vad barnen blir glada för.
+> Det mesta är en chansning, men om ditt barn gillar sushi blir valet lite
+> mindre riskabelt. För först tror man att det är sushi. Sen inser man att det
+> är strumpor. Helt plötsligt har du gett bort något som faktiskt får en
+> reaktion och som används på riktigt. Det är typ den perfekta balansen mellan
+> praktiskt och oväntat. Genomtänkt, kul, men utan att försöka för mycket.
 > Ser ut som sushi, är strumpor, sushistrumpor.
 
-*Byggstenar: citat A + en bryggmening + vinnarrader.*
+## VO 2 — Kuvertet vs paketet (Axels version)
 
-## VO 2 — Kuvertet vs paketet
+- **H1:** Jag ser hellre att barnen köper något de faktiskt vill ha, än att jag står och gissar fel.
+- **H2:** Mina presenter har aldrig varit dom som får någon vidare reaktion, så jag slutade försöka helt. Tills min vän visade mig dom här.
+- **H3:** Presenter har aldrig varit enkelt.
+- **H4:** Den som uppfann det här förtjänar ett nobelpris. För den löste min presentkris.
 
-> Jag ser hellre att barnen köper något
-> de faktiskt vill ha,
-> än att jag står och gissar fel.
->
-> Så man lägger pengar i kortet istället —
-> och offrar titeln världens bästa gåvogivare.
->
-> Sushistrumpor tar bort gissningen helt.
->
-> Ser ut som sushi, är strumpor, sushistrumpor.
+> Så man lägger pengar i kortet istället, och offrar titeln "hon har verkligen
+> tänkt till" åt någon annan. Men med dessa är det som att du vet allt om
+> personen, så länge du bara vet deras favoriträtt. Det är sushistrumpor, och
+> dom tar bort gissningen helt. Med dessa har du plötsligt gett bort något som
+> faktiskt får en reaktion och som används på riktigt. Det är den typen av
+> lilla present som passar perfekt till alla tillfällen. Genomtänkt, kul, men
+> utan att försöka för mycket. Ser ut som sushi, är strumpor, sushistrumpor.
 
-*Byggstenar: citat B + Axels vinkel som brygga + vinnarrad.*
+## VO 4 — Tonåringen 12–25 (till köparen)
 
-## VO 3 — Nästan-rätt-klappen
+- **H1:** Jag gav min systerdotter en målarbok i julklapp. Hon fyllde tolv. Hon ville ha allt annat än det.
+- **H2 (Axels val):** Den som uppfann det här förtjänar ett nobelpris. För den löste min presentkris.
+- **H3:** Innan jag hittade dessa gissade jag alltid fel på min tonåring. Fel ålder, fel grej, ingen reaktion.
+- **H4:** Att köpa present till en tonåring är ett minfält.
 
-> Hårdrocksfantasten som fick en popstjärnehandduk
-> med motiveringen att "du gillar ju musik" —
-> vet precis vad det här handlar om.
->
-> Att önska sig något specifikt
-> och få en ersättning i samma kategori
-> känns värre än att inte få något alls.
->
-> Sushistrumpor är inte en ersättning för något —
-> de är sin egen grej.
->
-> Ser ut som sushi, är strumpor, sushistrumpor.
-
-*Byggstenar: citat E + C + bryggmening + vinnarrad.*
-
-## VO 4 — Åldern som är omöjlig (riktad till köparen)
-
-> En målarbok till en tolvåring landar aldrig rätt —
-> fel ålder är det vanligaste misstaget
-> när man köper klapp till tonåringar.
->
-> Men det är också i den åldern
-> de blir besatta av grejer
-> och hakar på varje trend.
->
-> Sushistrumpor — ser ut som sushi, är strumpor, sushistrumpor.
->
-> Om du ska ge bort en present snart
-> är sushiformade strumpor det snällaste du kan ge dom.
-
-*Byggstenar: citat D + Axels trendvinkel + vinnarrader. Målgrupp: köpare till 12–25-åringar som älskar sushi.*
+> En målarbok till en tolvåring landar aldrig rätt, och tonåringar är ännu
+> svårare — fel ålder, fel grej, ingen reaktion. Men det är just i den åldern
+> de blir besatta av grejer och hakar på varje trend. Plötsligt har du gett
+> bort något som faktiskt får en reaktion och som används på riktigt.
+> Genomtänkt, kul, men utan att försöka för mycket. Ser ut som sushi, är
+> strumpor, sushistrumpor. Om du ska ge bort en present snart är sushiformade
+> strumpor det snällaste du kan ge dom.
 
 ## VO 5 — Kunskapströskeln
 
-> Du fattar inte deras musik,
-> deras spel, eller vilka märken som gäller just nu.
->
-> Men det vanligaste kärnfelet är ändå
-> att givaren köper det den själv gillar,
-> inte det mottagaren vill ha.
->
-> Så kan du inget om ämnet —
-> välj något helt annat.
->
-> Favoritpresenten är trots allt den
-> som bevisar att man vet vad mottagaren tycker om,
-> inte den dyraste.
->
-> Ser ut som sushi, är strumpor, sushistrumpor.
+- **H1:** Jag fattar inte deras musik, deras spel, eller vilka märken som gäller just nu — så jag brukar köpa fel.
+- **H2:** Jag köpte alltid det jag själv gillade och kallade det en present. Tills min vän visade mig dom här.
+- **H3:** Presenter har aldrig varit enkelt.
+- **H4:** Favoritpresenten jag någonsin fått var inte den dyraste. Det var den som bevisade att någon faktiskt visste vad jag gillade.
 
-*Byggstenar: citat R + P + Axels vinkel ("kan du inget om ämnet — välj något helt annat") + vinnarrad.*
+> Du fattar inte deras musik, deras spel, eller vilka märken som gäller just
+> nu. Så länge du inte vet något om ämnet är det vanligaste kärnfelet ändå
+> detsamma: du köper det du själv gillar, inte det dom vill ha. Men med
+> sushistrumpor slipper du gissa alls. Det är som att du vet allt om personen,
+> så länge du bara vet deras favoriträtt. Plötsligt har du gett bort något som
+> faktiskt får en reaktion och som används på riktigt. Genomtänkt, kul, men
+> utan att försöka för mycket. Ser ut som sushi, är strumpor, sushistrumpor.
 
 ## VO 6 — Lillasyskonet
 
-> De drunknar redan i storasyskonets ärvda saker —
-> kläderna, cykeln, leksakerna,
-> allt är redan använt.
->
-> Yngre syskon är svårast att köpa till
-> av just den anledningen.
->
-> Det enda de inte ärver är strumpor.
->
-> Ser ut som sushi, är strumpor, sushistrumpor.
->
-> En present som faktiskt får en reaktion
-> och som används på riktigt.
+- **H1:** Mitt yngsta syskon ärver allt — kläderna, cykeln, leksakerna. Allt är redan använt innan det ens blir hens.
+- **H2:** Innan jag hittade dessa visste jag aldrig vad jag skulle ge yngre syskon som inte redan varit någon annans.
+- **H3:** Det enda de inte ärver är strumpor.
 
-*Byggstenar: citat F + Axels punchline "Det enda de inte ärver är strumpor" + vinnarrader.*
+> Yngre syskon drunknar redan i storasyskonets ärvda saker — kläderna, cykeln,
+> leksakerna, allt är redan använt när det kommer till dom. Jag har alltid
+> tyckt dom är svårast att köpa present till, av just den anledningen. Men det
+> enda de inte ärver är strumpor. Sushistrumpor är helt nya, helt deras —
+> något som faktiskt får en reaktion och som används på riktigt. Genomtänkt,
+> kul, men utan att försöka för mycket. Ser ut som sushi, är strumpor,
+> sushistrumpor.
 
 ## VO 7 — Perfektionisten
 
-> Jag antecknar hela året
-> för att pricka den perfekta julklappen.
->
-> Att se barnens ansikten när de öppnar paketen
-> är min favoritdel av hela julen.
->
-> Men ibland finns det en genväg
-> till exakt samma ansikte.
->
-> En present som faktiskt får en reaktion
-> och som används på riktigt.
->
-> Ser ut som sushi, är strumpor, sushistrumpor.
+- **H1:** Jag antecknar hela året för att pricka den perfekta julklappen. Att se barnens ansikten när dom öppnar paketen är min favoritdel av hela julen.
+- **H2:** Jag trodde att den perfekta reaktionen krävde ett helt års anteckningar. Tills jag hittade dom här — exakt samma ansikte, ingen anteckning behövs.
+- **H3:** Barnens ansikte är hela julen. Resten är bara omslagspapper.
 
-*Byggstenar: citat G + bryggmening + vinnarrader.*
+> Jag antecknar hela året för att pricka den perfekta julklappen — det är min
+> favoritdel av hela julen, att se barnens ansikten när dom öppnar paketen.
+> Men jag har hittat en genväg till exakt samma ansikte, utan anteckningarna.
+> Sushistrumpor — något som faktiskt får en reaktion och som används på
+> riktigt. Det är den typen av present som passar perfekt till alla
+> tillfällen. Genomtänkt, kul, men utan att försöka för mycket. Ser ut som
+> sushi, är strumpor, sushistrumpor.
 
 ## VO 8 — Kan-inte-vänta-testet
 
-> Jag har kämpat i veckor
-> med att inte ge den i förväg.
->
-> Så känns det när man vet
-> att man har köpt rätt present —
-> den vill man ge bort direkt.
->
-> Ser ut som sushi, är strumpor, sushistrumpor.
->
-> Den typen av liten present
-> som passar till alla tillfällen.
-> Genomtänkt, kul, utan att försöka för mycket.
+- **H1:** Jag har kämpat i veckor med att inte ge den bort i förväg.
+- **H2:** Den som uppfann det här förtjänar ett nobelpris. För den löste min presentkris.
+- **H3:** Kan du inte vänta med att ge bort en present? Då vet du att du köpt rätt.
+- **H4:** Jag är usel på att hålla presenter hemliga. Tills min vän visade mig dom här blev det ännu värre.
 
-*Byggstenar: citat H + Axels vinkel ("det är då man vet att man köpt rätt") + vinnarrader.*
+> Jag har kämpat i veckor med att inte ge den bort i förväg. Så känns det när
+> man vet att man har köpt rätt present — den vill man ge direkt, inte vänta
+> till julafton. Det är kvittot på att man faktiskt lyckats: något som
+> faktiskt får en reaktion och som används på riktigt. Den typen av liten
+> present som passar perfekt till alla tillfällen. Genomtänkt, kul, men utan
+> att försöka för mycket. Ser ut som sushi, är strumpor, sushistrumpor.
 
 ---
 
-## Tre-frågorstestet (hook-raderna)
+## Tre-frågorstestet (hooks, sammanfattning)
 
-| VO | Visualisera | Falsifiera | Unikt | Kommentar |
-|---|---|---|---|---|
-| 1 | ✅ | ✅ | ✅ | Pinsamt specifik handling |
-| 2 | ✅ | ✅ | ⚠️ | Allmän insikt men äkta kundcitat; bär kuvert-kontrasten |
-| 3 | ✅ | ✅ | ✅ | Specifik anekdot, svår att äga för andra |
-| 4 | ✅ | ✅ | ✅ | Konkret exempel + tydlig målgrupp |
-| 5 | ✅ | ✅ | ⚠️ | Vanligt problem, men uppräkningen gör den specifik |
-| 6 | ✅ | ✅ | ✅ | Ovanlig vinkel (yngre syskon), vivid bild |
-| 7 | ✅ | ✅ | ✅ | Specifikt beteende, inte känsla |
-| 8 | ✅ | ✅ | ✅ | Distinkt erkännande |
-
-Citatnycklarna (A–U) refererar till citatbanken i `voc-presentkop.md`.
-Ingen rad nämner pris; inga nya påståenden utanför byggstenarna.
+Bärande hooks (klarar visualisera + falsifiera, unika nog): VO4 H1/H3, VO5
+H2/H4, VO6 H1/H2/H3, VO7 H1/H2, VO8 H1/H4. Tonsättar-hooks (medvetet
+generiska, samma funktion som Axels "Presenter har aldrig varit enkelt"):
+VO4 H4, VO5 H3, VO7 H3, VO8 H3 — använd dem som variant B i test, aldrig
+ensamma som enda hook i en batch. Nobelpris-raden är punchline snarare än
+scen: stark igenkänning, svag bild — funkar bäst med tydligt produktvisuellt
+under sig.
