@@ -2,6 +2,9 @@
   Fraktbekräftelse ("Din order är på väg") — brandad för Bäverbutiken.
   Klistras in i: Inställningar → Aviseringar → Kundaviseringar → Fraktbekräftelse → Redigera kod.
   Bygger på Shopifys standardvariabler: fulfillment, order_status_url, shop.
+  OBS: leverantören markerar ordrar som skickade inom ~24 h, ofta innan paketet
+  fysiskt rör sig. Därför säger mejlet "packad och överlämnad" — aldrig "på väg" —
+  och förklarar att spårningen kan visa tomt tills transportören skannat paketet.
   Brandfärger från theme.css (Impulse): knapp #dd1d1d, kant #e8e8e1, header/footer #000000.
 {% endcomment %}
 <!DOCTYPE html>
@@ -15,7 +18,7 @@
 <body style="margin:0; padding:0; background-color:#f2f2f2; -webkit-text-size-adjust:100%;">
 
   <div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">
-    Ditt paket är på väg — spåra det direkt med länken i mejlet.
+    Din order är packad och överlämnad till frakten — här är din spårningslänk.
   </div>
 
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f2f2f2;">
@@ -35,7 +38,7 @@
           <!-- Rubrik -->
           <tr>
             <td style="padding:36px 32px 8px 32px;" align="center">
-              <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:30px; line-height:1.15; color:#000000; text-transform:uppercase;">Din order är på väg!</span>
+              <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:30px; line-height:1.15; color:#000000; text-transform:uppercase;">Din order är packad!</span>
             </td>
           </tr>
 
@@ -44,7 +47,7 @@
             <td style="padding:8px 32px 4px 32px;" align="center">
               <p style="font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:1.6; color:#000000; margin:0;">
                 {% if customer.first_name %}Hej {{ customer.first_name }}!{% else %}Hej!{% endif %}
-                Order <strong>{{ name }}</strong> har lämnat oss och är på väg hem till dig.
+                Order <strong>{{ name }}</strong> är packad och överlämnad till frakten — nu tar transportören över resten av resan hem till dig.
               </p>
             </td>
           </tr>
@@ -110,6 +113,9 @@
                   Spårningsnummer läggs till så snart transportören registrerat paketet.
                 </p>
               {% endif %}
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.6; color:#6b6b6b; margin:10px 0 0 0;">
+                Spårningen kan visa tomt de första dagarna — den vaknar så fort transportören skannar paketet.
+              </p>
             </td>
           </tr>
 

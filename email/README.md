@@ -9,7 +9,9 @@ butikerna — se sist i filen.*
 | Fil | Mejl | Skickas när |
 |---|---|---|
 | `mallar/orderbekraftelse.liquid` | **Orderbekräftelse** — tidslinje, grundarhälsning, FAQ, nyhetsbrev | Order läggs |
-| `mallar/frakt-bekraftelse.liquid` | **Fraktbekräftelse** — "Din order är på väg" | Ordern skickas |
+| `mallar/frakt-bekraftelse.liquid` | **Fraktbekräftelse** — "Din order är packad" | Leverantören markerar skickad (ofta före verklig avgång — se nedan) |
+| `mallar/drip-pa-vag.html` | **Drip "På väg"** — lägesuppdatering | Automation: skickad + 4 dagar |
+| `mallar/recensionsmail.html` | **Recensionsmejl** — stjärnstyrning Judge.me/kontakt vs Trustpilot | Automation: skickad + 14 dagar |
 | `mallar/ute-for-leverans.liquid` | **Ute för leverans** | Transportören är ute med paketet (avstängd som standard — slå på!) |
 | `mallar/levererad.liquid` | **Levererad** | Paketet är framme (avstängd som standard — slå på!) |
 | `mallar/order-annullerad.liquid` | **Order annullerad** — återbetalning steg för steg, FAQ | Order annulleras |
@@ -38,13 +40,76 @@ i inkorgen, inte kräva ett klick.
 | Mejl | Ämnesrad |
 |---|---|
 | Orderbekräftelse | `{{ customer.first_name }}, {{ name }} är mottagen – vi packar` |
-| Fraktbekräftelse | `{{ customer.first_name }}, {{ name }} är på väg till dig` |
+| Fraktbekräftelse | `{{ customer.first_name }}, din order är packad` |
+| Drip "På väg" (i automationen) | `Ditt paket är på väg` |
+| Recensionsmejl (i automationen) | `1, 2 eller 5 stjärnor — vilken blir det?` |
 | Ute för leverans | `{{ customer.first_name }}, {{ name }} kommer till dig idag` |
 | Levererad | `{{ customer.first_name }}, {{ name }} är framme` |
 | Order annullerad | `Order {{ name }} har annullerats` |
 
 Reservvarianter (tryggare/hookigare) per mejl finns i copy-leveransen —
 be Claude visa dem om du vill byta.
+
+## Leverantören trycker "skickad" för tidigt — hela flödet
+
+Leverantören markerar ordrar som distribuerade + arkiverade inom ~24 h, ofta
+innan paketet fysiskt rör sig. Det styr hur varje mejl ska förhålla sig till
+sanningen:
+
+| När | Mejl | Trigger | Ärligt för att… |
+|---|---|---|---|
+| Dag 0 | Orderbekräftelse | Order läggs | Lovar bara "vi packar inom 0–2 dagar" + 5–10 dagars leverans |
+| Dag 0–1 | Fraktbekräftelse | Leverantören trycker skickad | Omskriven: säger **"packad och överlämnad"**, aldrig "på väg", och förklarar att spårningen kan visa tomt tills första skanningen |
+| Dag ~4 | Drip "På väg" | Automation: skickad + 4 dagar | Vid det laget rör sig paketet på riktigt |
+| Verklig händelse | Ute för leverans / Levererad | **Transportörens skanningar** | Triggas av riktiga händelser, inte leverantörens klick — de kan aldrig gå för tidigt |
+| Dag ~14 | Recensionsmejl | Automation: skickad + 14 dagar | 5–10 dagars leverans + några dagars användning har hunnit ske |
+
+**"Paketet är i Sverige"-mejlet:** Shopify har ingen sådan händelse — de enda
+transportörshändelserna är "ute för leverans" och "levererad", och de täcker
+i praktiken exakt det du vill säga ("kommer inom kort"). Vill du ha ett äkta
+"nu är det i Sverige"-mejl krävs en spårningsapp (t.ex. Parcel Panel eller
+Track123) som läser transportörens hela händelsekedja — säg till så sätter vi
+upp det, men börja utan: skanningsmejlen gör 90 % av jobbet.
+
+### Sätta upp de två automationerna (drip + recension)
+
+1. Shopify admin → **Marknadsföring → Automatiseringar → Skapa egen automatisering**.
+2. Trigger: **Order fulfilled** → lägg till **Vänta**-steg: 4 dagar (drip)
+   resp. 14 dagar (recension).
+3. Åtgärd: skicka e-post → i e-posteditorn, lägg till ett **Custom HTML**-block
+   och klistra in innehållet från `mallar/drip-pa-vag.html` resp.
+   `mallar/recensionsmail.html`. Ämnesrader enligt tabellen ovan.
+4. Testa på dig själv innan aktivering.
+
+⚠️ **Två begränsningar att känna till:**
+- Automationsmejl är **marknadsföringsmejl** — de går bara till kunder som
+  godkänt marknadsföring i kassan. Aviseringsmejlen (`.liquid`-filerna) går
+  däremot alltid till alla.
+- Custom HTML-block kör inte Liquid, så drip-mejlet kan inte länka till just
+  den kundens spårning — det pekar på fraktbekräftelsemejlet i stället.
+  Vill du ha orderspecifik spårningslänk i drip-mejlet: bygg det i
+  **Shopify Flow** (gratisapp) med "Send email"-åtgärden — enklare utseende
+  men full tillgång till ordervariabler. Säg till så skriver vi den varianten.
+
+### Recensionsmejlets stjärnstyrning
+
+Fem klickbara stjärnor. Länkmål i `mallar/recensionsmail.html`:
+
+- **1–3 stjärnor** → kontaktsidan (`/pages/contact`) — missnöjet fångas
+  privat ("berätta vad som gick fel så fixar vi det") i stället för att bli
+  en publik recension. Vill du hellre skicka dem till Judge.me: aktivera
+  Judge.me:s **All Reviews Page** (är inte aktiverad idag — `/apps/judgeme`
+  ger 404) och byt de tre första länkarna till den sidans URL.
+- **4–5 stjärnor** → `https://se.trustpilot.com/evaluate/baverbutiken.se`.
+  **Verifiera att Trustpilot-profilen finns** innan mejlet aktiveras —
+  Trustpilot blockerade automatisk kontroll, så det är obekräftat.
+
+⚠️ **Trustpilot-risk, läs innan aktivering:** att systematiskt bjuda in bara
+nöjda kunder till Trustpilot ("review gating") strider mot Trustpilots
+riktlinjer och kan leda till varningsflagg på profilen om det upptäcks.
+Upplägget är vanligt i e-handel, men det är ditt beslut med öppna ögon.
+Det säkra alternativet: låt alla stjärnor gå till Trustpilot och fånga
+missnöje via en separat "svara på mejlet"-rad.
 
 ## Nyhetsbrev + rabattkod (kroken)
 
@@ -112,8 +177,10 @@ gratis, oavsett Email-appen.
 ## Nästa steg (i ordning)
 
 1. Skapa välkomstautomationen med rabattkod (ovan) — **före** mallarna går live.
-2. Klistra in de fem mallarna + testskicka.
-3. Slå på **övergiven kassa**-automationen och branda den i editorn.
+2. Klistra in de fem `.liquid`-mallarna + testskicka.
+3. Sätt upp drip- och recensionsautomationerna (skickad + 4 resp. 14 dagar).
+4. Verifiera Trustpilot-profilen och ta ställning till gating-risken ovan.
+5. Slå på **övergiven kassa**-automationen och branda den i editorn.
 
 ## Återanvändning i andra butiker
 
