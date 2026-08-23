@@ -106,7 +106,32 @@
     /* Gradient kring accentfärgen #DD821D — ger djup i stället för platt yta. */
     background: linear-gradient(160deg, #EE9E3F 0%, #DD821D 55%, #B96A12 100%);
   }
-  .ms-skrap[open] { display: flex; }
+  /* Entrén: snabb och mjuk — fade + litet lyft på ~0,3 s. Snabbt nog att
+     inte tänkas på, mjukt nog att inte kännas som ett skärmbyte. Varje
+     steg gör samma lilla resa när det visas, så även bytet skrapa → mejl
+     glider i stället för att slå om. */
+  @keyframes ms-skrap-in {
+    from { opacity: 0; transform: translateY(14px) scale(.98); }
+    to { opacity: 1; transform: none; }
+  }
+  .ms-skrap[open] { display: flex; animation: ms-skrap-in .28s cubic-bezier(.22, .9, .36, 1) both; }
+  .ms-skrap[open] .ms-skrap__steg:not([hidden]) {
+    animation: ms-skrap-in .34s cubic-bezier(.22, .9, .36, 1) both;
+  }
+  /* Vinsten gör en liten pop när guldet släpper. */
+  @keyframes ms-skrap-pop {
+    0% { transform: scale(.92); }
+    55% { transform: scale(1.05); }
+    100% { transform: none; }
+  }
+  .ms-skrap__kort[data-avslojad] .ms-skrap__vinst {
+    animation: ms-skrap-pop .5s cubic-bezier(.22, .9, .36, 1) .2s both;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ms-skrap[open],
+    .ms-skrap[open] .ms-skrap__steg:not([hidden]),
+    .ms-skrap__kort[data-avslojad] .ms-skrap__vinst { animation: none; }
+  }
   .ms-skrap::backdrop { background: rgba(18, 18, 18, .45); }
   .ms-skrap__steg { max-width: 520px; width: 100%; }
   .ms-skrap__stang {
@@ -321,8 +346,11 @@
       if (andelBorta() > 0.4) {
         skrapklar = true;
         canvas.setAttribute('data-borta', '');
+        canvas.parentNode.setAttribute('data-avslojad', '');
         spara('skrapad');
-        setTimeout(function () { steg('mejl'); }, 550);
+        // Låt vinsten sjunka in innan mejlsteget glider fram — foliet tonar
+        // på 0,5 s och kunden ska hinna LÄSA vad den skrapat fram.
+        setTimeout(function () { steg('mejl'); }, 1600);
       }
     }
 
