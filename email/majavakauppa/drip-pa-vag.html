@@ -1,0 +1,73 @@
+<!--
+  Drip-mejl "På väg" — skickas ~4 dagar efter att ordern markerats skickad.
+  Skickas via Marknadsföring → Automatiseringar (egen automatisering:
+  trigger "Order fulfilled" → vänta 4 dagar → skicka e-post) med det här
+  innehållet i ett Custom HTML-block. Setup: se email/README.md.
+
+  OBS: Shopify Email kör INTE Liquid i custom HTML-block — därför inga
+  {{ }}-variabler här. Spårningslänken är orderspecifik och kan inte länkas
+  härifrån; mejlet pekar i stället på fraktbekräftelsemejlet.
+  Ämnesrad (sätts i automatiseringen): Pakettisi on matkalla
+-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f2f2f2;">
+  <tr>
+    <td align="center" style="padding:24px 12px;">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%; background-color:#ffffff; border:1px solid #e8e8e1;">
+
+        <tr>
+          <td align="center" style="background-color:#000000; padding:20px 24px;">
+            <a href="https://majavakauppa.fi" style="text-decoration:none;">
+              <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:26px; letter-spacing:1px; color:#ffffff; text-transform:uppercase;">majavakauppa.fi</span>
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:36px 32px 8px 32px;" align="center">
+            <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:30px; line-height:1.15; color:#000000; text-transform:uppercase;">Kohta perillä</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:8px 32px 4px 32px;" align="center">
+            <p style="font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:1.6; color:#000000; margin:0;">
+              Hei! Pakettisi on lähtenyt varastolta ja on matkalla sinulle.
+            </p>
+            <p style="font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:1.6; color:#000000; margin:12px 0 0 0;">
+              Arvioidun toimitusajan näit kassalla tilausta tehdessäsi — paketti on jo matkalla tuota reittiä.
+            </p>
+            <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.6; color:#6b6b6b; margin:12px 0 0 0;">
+              Kiinnostaako, missä se on juuri nyt? Seurantalinkki löytyy sähköpostista
+              <em>"Tilauksesi on pakattu"</em> — tarkista myös roskaposti.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="center" style="padding:24px 32px 32px 32px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td align="center" bgcolor="#dd1d1d" style="background-color:#dd1d1d;">
+                  <a href="https://majavakauppa.fi/pages/ota-yhteytta" target="_blank"
+                     style="display:inline-block; padding:14px 36px; font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:16px; letter-spacing:1px; color:#ffffff; text-decoration:none; text-transform:uppercase;">
+                    Etkö löydä seurantaa?
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="center" style="background-color:#000000; padding:24px 32px;">
+            <p style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:15px; color:#ffffff; margin:0 0 8px 0; text-transform:uppercase; letter-spacing:1px;">majavakauppa.fi</p>
+            <p style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#d9d9d9; margin:0;">
+              Kysyttävää toimituksesta? Vastaa tähän sähköpostiin, niin autamme sinua.
+            </p>
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>

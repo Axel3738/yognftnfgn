@@ -184,6 +184,10 @@ gratis, oavsett Email-appen.
 
 ## Återanvändning i andra butiker
 
+**Finska butiken är redan gjord:** `email/majavakauppa/` innehåller alla sju
+mallarna på finska, grundade i majavakauppa.fi:s egna policysidor (som skiljer
+sig — inga dagssiffror, 14 dagars återbetalning). Läs den mappens README.
+
 Mallarna hårdkodar inte butiksnamn, mejladress eller länkar —
 `{{ shop.name }}`, `{{ shop.email }}`, `{{ shop.url }}` hämtas från butiken
 de klistras in i. Butiksspecifikt som måste bytas per butik:
