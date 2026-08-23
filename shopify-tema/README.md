@@ -17,7 +17,8 @@ andra defaults). Skriv `[rabatt]` i en text så byts det mot rabatten (t.ex.
 | Butik | Läge |
 |---|---|
 | **bæverbutiken.dk** | ✅ Installerad i temadubbletten **"Live + skrapkort 2026-08-23"** (opublicerad), med danska texter. Rabattkoden `VELKOMMEN10` (10 %, alla kunder, en användning per kund) är skapad och AKTIV. Verifierad i preview med Chromium (mobil + desktop, skrapning + mejlsteg). **Kvar: publicera temat** (Webbshop → Teman) och testa i inkognitofönster. |
-| bäverbutiken.se m.fl. | ⏳ Ej gjort — connector-bytet till .se kräver ny OAuth-godkännande som inte gick i fjärrsessionen. Samma flöde per butik, se nedan. |
+| **bäverbutiken.se** | ✅ Installerad i temadubbletten **"Live + skrapkort 2026-08-23"** (opublicerad), svenska texter, svart bakgrund. Använder den befintliga aktiva koden `VALKOMMEN10` (10 % på hela ordern, "Välkomstrabatt nyhetsbrev"). Verifierad i preview. **Kvar: publicera temat.** OBS: `VALKOMMEN10` har inte "en användning per kund" — ägarbeslut om den ska begränsas. Klaviyo-embed finns i temat: kolla att inga Klaviyo-popupformulär är aktiva så det inte blir dubbla popuper. |
+| Övriga marknader (NO/UK …) | ⏳ Ej gjort — samma flöde per butik, se nedan. |
 
 ---
 
