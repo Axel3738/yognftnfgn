@@ -1,5 +1,11 @@
 # Skrapkortet — e-postklubbens popup
 
+> **Delbar version:** `delat/skrapkort-delbar.liquid` är en fristående,
+> brandneutral kopia som Axel skickar till vänner med andra butiker.
+> Färger och alla texter är sektionsinställningar, installationsguiden
+> ligger som kommentar högst upp i filen. Uppdateras skrapkortet i skarp
+> drift ska den delbara kopian följa med.
+
 `sections/ms-skrapkort.liquid`, ligger i footer-gruppen så den följer med på
 alla sidor. Självbärande: markup, stil, skript och inställningar i samma fil.
 Byggd 2026-08-23 på Axels beställning (förebilden var en skrapkorts-app).
