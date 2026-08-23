@@ -12,8 +12,9 @@ allt är räknat på orderdatan, utom ålder/kön som är en **förnamnsproxy** 
 
 1. **Julförsäljningen var i praktiken 14 dagar: 2–17 december.** 1 270 av periodens
    1 665 ordrar (76 %) kom i det fönstret. Efter 17 dec (sista leveransdag före jul) dog allt.
-   November gav bara 52 ordrar — annonserna var avstängda 13 nov–1 dec, så Black Friday
-   missades helt. Störst dag: 14 dec (121 ordrar).
+   November gav bara 52 ordrar — enligt Axel (2026-08-22) för att butiken lanserades på
+   riktigt först i månadsskiftet nov/dec; ordrarna 6–12 nov var förspelet. November och
+   Black Friday är alltså **otestade**, inte bevisat svaga. Störst dag: 14 dec (121 ordrar).
 2. **Julköparen är äldre än man tror.** Även i december var ~69 % av köparna 50+.
    Kön: 59 % kvinnor. Största segmenten: kvinnor 65+ (22 %), kvinnor 50–64 (21 %),
    män 35–49 (14 %), män 50–64 (14 %). Det här är mor-/farföräldrar och föräldrar som
@@ -116,7 +117,8 @@ inte i leveransadresserna.
 ## Dagskurvan som planeringsunderlag
 
 ```
-Nov 2025:  6–12 nov ~52 ordrar → annonser AV 13 nov–1 dec → 0 ordrar (Black Friday missad)
+Nov 2025:  6–12 nov ~52 ordrar (förspel) → 13 nov–1 dec: 0 ordrar (butiken ännu inte
+           lanserad på riktigt — Axels uppgift 2026-08-22; Black Friday därmed otestad)
 Dec 2025:  2 dec 52 → 8 dec 114 → 14 dec 121 (topp) → 17 dec 78 → 19 dec 31 → julafton 3
 Mellandagar–11 jan: 4–11/dag (organisk botten: nästan noll utan annonser)
 Jan 2026:  upprampning från 12 jan → platå 24 jan–12 feb (44–67/dag, topp 1 feb 67)
@@ -173,10 +175,10 @@ självköp/hemma-sushi-identitet, inte skämtklapp. Beviset för att produkten h
 
 ## Rekommendationer inför Q4 2026
 
-1. **Starta annonserna senast v. 46–47 (mitten av november).** Förra året var kontot
-   släckt 13 nov–1 dec och hela november gav 52 ordrar. Svenskarna julhandlar från
-   Black Friday — fönstret 28 nov–17 dec är sannolikt värt 2–3× fjolårets december om
-   rampen börjar tidigare. Planera för att **76 % av volymen kommer på ~14 dagar** och
+1. **Starta annonserna senast v. 46–47 (mitten av november).** Förra året lanserades
+   butiken först i månadsskiftet nov/dec — hela november och Black Friday är otestade.
+   Svenskarna julhandlar från Black Friday — fönstret 28 nov–17 dec är sannolikt värt
+   2–3× fjolårets december om rampen börjar tidigare. Planera för att **76 % av volymen kommer på ~14 dagar** och
    att allt är över den 17–18 dec (lyft "beställ senast X för leverans till jul" som
    deadline-hook sista veckan).
 2. **Gör kreativet för en 50+-publik, inte en ung meme-publik.** Tala till mor-/far-
