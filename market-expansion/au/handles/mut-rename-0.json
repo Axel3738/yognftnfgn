@@ -1,0 +1,33 @@
+{
+ "query": "mutation Rename($p0: ProductUpdateInput!, $p1: ProductUpdateInput!, $p2: ProductUpdateInput!, $p3: ProductUpdateInput!, $p4: ProductUpdateInput!, $p5: ProductUpdateInput!, $p6: ProductUpdateInput!) {\n  a0: productUpdate(product: $p0) { product { id handle } userErrors { field message } }\n  a1: productUpdate(product: $p1) { product { id handle } userErrors { field message } }\n  a2: productUpdate(product: $p2) { product { id handle } userErrors { field message } }\n  a3: productUpdate(product: $p3) { product { id handle } userErrors { field message } }\n  a4: productUpdate(product: $p4) { product { id handle } userErrors { field message } }\n  a5: productUpdate(product: $p5) { product { id handle } userErrors { field message } }\n  a6: productUpdate(product: $p6) { product { id handle } userErrors { field message } }\n}",
+ "variables": {
+  "p0": {
+   "id": "gid://shopify/Product/15844610572671",
+   "handle": "bbq-brush-light-and-easy"
+  },
+  "p1": {
+   "id": "gid://shopify/Product/15844610670975",
+   "handle": "premium-bbq-skewers-6-pack"
+  },
+  "p2": {
+   "id": "gid://shopify/Product/15844610703743",
+   "handle": "premium-leather-bbq-apron"
+  },
+  "p3": {
+   "id": "gid://shopify/Product/15844611129727",
+   "handle": "hard-wearing-bbq-apron"
+  },
+  "p4": {
+   "id": "gid://shopify/Product/15844611522943",
+   "handle": "protective-bbq-gloves"
+  },
+  "p5": {
+   "id": "gid://shopify/Product/15844612079999",
+   "handle": "bbq-sausage-holder"
+  },
+  "p6": {
+   "id": "gid://shopify/Product/15844612178303",
+   "handle": "end-grain-walnut-chopping-board"
+  }
+ }
+}

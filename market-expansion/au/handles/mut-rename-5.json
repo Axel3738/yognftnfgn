@@ -1,0 +1,33 @@
+{
+ "query": "mutation Rename($p0: ProductUpdateInput!, $p1: ProductUpdateInput!, $p2: ProductUpdateInput!, $p3: ProductUpdateInput!, $p4: ProductUpdateInput!, $p5: ProductUpdateInput!, $p6: ProductUpdateInput!) {\n  a0: productUpdate(product: $p0) { product { id handle } userErrors { field message } }\n  a1: productUpdate(product: $p1) { product { id handle } userErrors { field message } }\n  a2: productUpdate(product: $p2) { product { id handle } userErrors { field message } }\n  a3: productUpdate(product: $p3) { product { id handle } userErrors { field message } }\n  a4: productUpdate(product: $p4) { product { id handle } userErrors { field message } }\n  a5: productUpdate(product: $p5) { product { id handle } userErrors { field message } }\n  a6: productUpdate(product: $p6) { product { id handle } userErrors { field message } }\n}",
+ "variables": {
+  "p0": {
+   "id": "gid://shopify/Product/15844625482111",
+   "handle": "portable-outdoor-bbq"
+  },
+  "p1": {
+   "id": "gid://shopify/Product/15844625613183",
+   "handle": "bbq-tool-set"
+  },
+  "p2": {
+   "id": "gid://shopify/Product/15844625842559",
+   "handle": "6-piece-knife-set"
+  },
+  "p3": {
+   "id": "gid://shopify/Product/15844626334079",
+   "handle": "the-master-replacement-brush-head"
+  },
+  "p4": {
+   "id": "gid://shopify/Product/15844626399615",
+   "handle": "flipgrill-charcoal-bbq"
+  },
+  "p5": {
+   "id": "gid://shopify/Product/15844626465151",
+   "handle": "the-master-brush-safe-head"
+  },
+  "p6": {
+   "id": "gid://shopify/Product/15844627415423",
+   "handle": "bodybuilder-bbq-apron"
+  }
+ }
+}

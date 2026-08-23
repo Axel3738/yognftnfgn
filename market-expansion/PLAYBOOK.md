@@ -355,6 +355,39 @@ Alla har inträffat på riktigt.
     återskapa byte-exakt (nyckelordning förlorad) — semantiskt identisk kopia räcker.
     **Verifiera ALLTID md5, inte bara storlek** — vid Grillkliniken-exporten hade en fil
     rätt bytelängd men fel innehåll (dolt avskriftsfel).
+23. **Byt produkt-handles till målspråket INNAN annonserna startar** — inte efter. Svenska
+    handles i annonslänkar (`/products/elektrisk-grillborste`) ser oproffsigt ut och tappar
+    SEO. Ordningen som fungerade i AU-körningen:
+    (a) bygg en handle-karta (GID, gammal, ny, titel) och validera unikhet + slug-format
+        *innan* något körs — sortera ALLTID mappningen längsta-gamla-handle-först, annars
+        korrumperar `polerhuvud` sin syskonprodukt `polerhuvud-1`;
+    (b) inventera vad som pekar på gamla handles: temat (`featured_product`-settings och
+        `all_products['<handle>']`-lookups BRYTER; `/products/`-länkar räddas av redirects),
+        Judge.me-CSV:er, menyer (PRODUCT-typ är GID-bunden = säker), smarta kollektioner;
+    (c) `productUpdate(product:{id, handle})` — går att alias-batcha ~7 st per anrop;
+    (d) **`urlRedirect` skapas INTE automatiskt av API:t** (bara av admin-UI:ts kryssruta) —
+        skapa alla 42 själv, annars 404:ar varje indexerad/delad gammal länk;
+    (e) Shopify uppdaterar en DEL av temareferenserna själv vid namnbytet, men inte alla —
+        efterkontrollera `templates/*.json` manuellt. I AU låg 1 av 2 `featured_product` kvar.
+24. **MAIN-temat går inte att skriva till via API:t — men `themeDuplicate` gör det.**
+    Duplicera live-temat, `themeFilesUpsert` mot kopian (unpublished = tillåtet), låt människan
+    publicera. Väg dock in friktionen: appar som GemPages/Kaching är temabundna och kan behöva
+    om-synkas efter en temapublicering — för en enstaka inställning är 20 sekunder i
+    temaredigeraren ofta billigare än ett temabyte.
+25. **Kolla om recensionerna REDAN är importerade innan du levererar en CSV igen.**
+    `metafield(namespace:"reviews", key:"rating_count")` per produkt ger sanningen på
+    sekunder. I AU låg 429 recensioner redan inne (247/77/50/21/16/13/5) — en andra import
+    hade dubblerat allihop. Judge.me binder recensioner till produkt-ID internt, så ett
+    handle-byte flyttar dem inte; däremot cachar Judge.me gamla `/products/`-URL:er i
+    shop- och produktmetafält som självläker vid nästa synk.
+26. **Översättningsagenter hittar på varumärken från bildfilnamn.** I AU hamnade
+    "CharBreaker" (från leverantörens `CharBreaker_Accessories_1.webp`) i två SEO-
+    beskrivningar som om det vore produktens namn. Grep:a alltid färdig text mot
+    källans filnamn.
+27. **Bygg inte in andras varumärken i permanenta URL:er.** `sailor-moon-apron` som
+    landningssida för Meta-annonser är en IP-flagga (Toei driver frågan, Meta kan stänga
+    annonskontot) — handle:t är dessutom det svåraste att ändra i efterhand. Neutralisera:
+    `anime-sailor-bbq-apron`.
 
 ---
 

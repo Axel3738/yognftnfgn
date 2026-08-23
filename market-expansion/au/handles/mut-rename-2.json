@@ -1,0 +1,33 @@
+{
+ "query": "mutation Rename($p0: ProductUpdateInput!, $p1: ProductUpdateInput!, $p2: ProductUpdateInput!, $p3: ProductUpdateInput!, $p4: ProductUpdateInput!, $p5: ProductUpdateInput!, $p6: ProductUpdateInput!) {\n  a0: productUpdate(product: $p0) { product { id handle } userErrors { field message } }\n  a1: productUpdate(product: $p1) { product { id handle } userErrors { field message } }\n  a2: productUpdate(product: $p2) { product { id handle } userErrors { field message } }\n  a3: productUpdate(product: $p3) { product { id handle } userErrors { field message } }\n  a4: productUpdate(product: $p4) { product { id handle } userErrors { field message } }\n  a5: productUpdate(product: $p5) { product { id handle } userErrors { field message } }\n  a6: productUpdate(product: $p6) { product { id handle } userErrors { field message } }\n}",
+ "variables": {
+  "p0": {
+   "id": "gid://shopify/Product/15844615455103",
+   "handle": "bbq-cleaning-stone"
+  },
+  "p1": {
+   "id": "gid://shopify/Product/15844615815551",
+   "handle": "the-master-brush-and-polishing-head-2-pack"
+  },
+  "p2": {
+   "id": "gid://shopify/Product/15844617159039",
+   "handle": "the-grillfather-apron"
+  },
+  "p3": {
+   "id": "gid://shopify/Product/15844617519487",
+   "handle": "bbq-tongs"
+  },
+  "p4": {
+   "id": "gid://shopify/Product/15844618174847",
+   "handle": "golf-bbq-kit"
+  },
+  "p5": {
+   "id": "gid://shopify/Product/15844618764671",
+   "handle": "potato-spiral-cutter"
+  },
+  "p6": {
+   "id": "gid://shopify/Product/15844619190655",
+   "handle": "anime-sailor-bbq-apron"
+  }
+ }
+}

@@ -1,0 +1,393 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slideshow-0": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "NEW RANGE OF BBQ TOOLS",
+            "title_size": 80,
+            "subheading": "The best gifts for anyone who loves a barbecue",
+            "link": "shopify://collections/bbq-tools",
+            "link_text": "Shop now",
+            "link_2": "shopify://collections/bbq-tools",
+            "link_text_2": "",
+            "color_accent": "#000000",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/Namnlos_design_55.png",
+            "overlay_opacity": 0,
+            "focal_point": "top center"
+          }
+        },
+        "slideshow-1": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "top_subheading": "",
+            "title": "Two line\ntitle slide.",
+            "title_size": 80,
+            "subheading": "And optional subtext",
+            "link": "shopify://collections/all",
+            "link_text": "Shop all",
+            "link_2": "shopify://collections/all",
+            "link_text_2": "Shop all",
+            "color_accent": "#000000",
+            "text_align": "vertical-bottom horizontal-left",
+            "overlay_opacity": 0,
+            "focal_point": "top center"
+          }
+        }
+      },
+      "block_order": [
+        "slideshow-0",
+        "slideshow-1"
+      ],
+      "settings": {
+        "section_height": "750px",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "bars",
+        "autoplay": false,
+        "autoplay_speed": 7
+      }
+    },
+    "featured_product_Xfc4Jy": {
+      "type": "featured-product",
+      "blocks": {
+        "price_abRqdk": {
+          "type": "price",
+          "settings": {}
+        },
+        "description_AFrNFV": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "is_tab": false
+          }
+        },
+        "variant_picker_byrjrd": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "color_swatches": false
+          }
+        },
+        "buy_buttons_R4GmX7": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": true
+          }
+        }
+      },
+      "block_order": [
+        "price_abRqdk",
+        "description_AFrNFV",
+        "variant_picker_byrjrd",
+        "buy_buttons_R4GmX7"
+      ],
+      "name": "Featured product",
+      "settings": {
+        "featured_product": "the-master-electric-bbq-brush",
+        "divider": false,
+        "sku_enable": false,
+        "image_position": "left",
+        "image_size": "medium",
+        "product_zoom_enable": true,
+        "thumbnail_position": "beside",
+        "thumbnail_arrows": false,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    },
+    "rich_text_HCKdEk": {
+      "type": "rich-text",
+      "name": "Rich text",
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "background-image-text": {
+      "type": "background-image-text",
+      "disabled": true,
+      "settings": {
+        "subtitle": "",
+        "title": "We are proud to present",
+        "text": "<p>The Sunshade sun hat, the perfect accessory for every summer activity. With our sun hat you can protect yourself from the sun's harmful UV rays with UPF50+ sun protection. The hat gives you optimal protection against damaging UV rays and effectively shields your skin from the sun.</p><p>The sun hat features a smart design with a ponytail opening at the back, and the inside is fitted with a ventilating mesh layer that significantly improves cooling. No more sweating - keep your head cool even on the hottest days. The breathable fabric also keeps it comfortable, even when worn for long periods.</p>",
+        "button_label": "",
+        "button_link": "shopify://collections/all",
+        "focal_point": "center",
+        "layout": "right",
+        "height": 750,
+        "framed": false,
+        "parallax": false
+      }
+    },
+    "de497480-7481-4cad-8d6b-37f023759cfb": {
+      "type": "text-and-image",
+      "disabled": true,
+      "settings": {
+        "image_width": 700,
+        "subtitle": "",
+        "title": "Image with text",
+        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "layout": "right",
+        "divider": false
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "blocks": {
+        "b55dd3f0-1027-4f23-b061-71469c0c6923": {
+          "type": "heading",
+          "settings": {
+            "title": "WE ARE PROUD TO PRESENT"
+          }
+        },
+        "2b21fc1e-29c8-48d8-8fb2-2b571bf51fde": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><strong>We are proud to present our new collection of barbecue accessories!</strong><br/><br/>Here you'll find carefully selected products that combine function, quality and design - all to make your barbecue nights even more fun and full of flavour.</p><p>From clever tools and hard-wearing aprons to fun party gear, we've gathered everything you need to take your barbecuing to the next level. Whether you're a beginner or a true pitmaster, there's something here for you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "b55dd3f0-1027-4f23-b061-71469c0c6923",
+        "2b21fc1e-29c8-48d8-8fb2-2b571bf51fde"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "featured_collection_tmqkgD": {
+      "type": "featured-collection",
+      "name": "Featured collection",
+      "settings": {
+        "title": "APRONS",
+        "home_featured_products": "aprons",
+        "per_row": 4,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "slideshow_pQVNk9": {
+      "type": "slideshow",
+      "blocks": {
+        "image_PJHxDT": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "From serious BBQ tools to fun party aprons - we've got everything for your barbecue night!",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/flipping-chicken-and-veggie-kabob-on-grill.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "image_PJHxDT"
+      ],
+      "name": "Hero (optional slideshow)",
+      "settings": {
+        "section_height": "650px",
+        "mobile_height": "auto",
+        "parallax": true,
+        "style": "bars",
+        "autoplay": true,
+        "autoplay_speed": 5
+      }
+    },
+    "featured_product_QyMjjh": {
+      "type": "featured-product",
+      "blocks": {
+        "price_i6WK3W": {
+          "type": "price",
+          "settings": {}
+        },
+        "description_UXXxUk": {
+          "type": "description",
+          "settings": {
+            "is_tab": false
+          }
+        },
+        "variant_picker_jkjfA8": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "color_swatches": false
+          }
+        },
+        "buy_buttons_FqJWxQ": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": true
+          }
+        }
+      },
+      "block_order": [
+        "price_i6WK3W",
+        "description_UXXxUk",
+        "variant_picker_jkjfA8",
+        "buy_buttons_FqJWxQ"
+      ],
+      "name": "Featured product",
+      "settings": {
+        "featured_product": "stainless-steel-bbq-hotplate",
+        "divider": false,
+        "sku_enable": false,
+        "image_position": "left",
+        "image_size": "medium",
+        "product_zoom_enable": true,
+        "thumbnail_position": "beside",
+        "thumbnail_arrows": false,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    },
+    "text_and_image_PGFD6X": {
+      "type": "text-and-image",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/steaks-oil-salt-knife-and-a-cutting-board.jpg",
+        "image_width": 700,
+        "subtitle": "",
+        "title": "Shop with confidence!",
+        "text": "<p><br/>We offer <strong>free shipping on all orders</strong> and <strong>30-day returns</strong>, so you can shop stress-free.<br/><br/>Choose from the most popular payment methods, including PayPal, Apple Pay, Google Pay, VISA and Mastercard.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "layout": "right",
+        "divider": false
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured collection",
+        "home_featured_products": "",
+        "per_row": 4,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "blog-posts": {
+      "type": "blog-posts",
+      "disabled": true,
+      "settings": {
+        "title": "From the journal",
+        "blog": "news",
+        "post_limit": 3,
+        "blog_show_tags": false,
+        "blog_show_date": true,
+        "blog_show_comments": false,
+        "blog_show_author": false,
+        "view_all": true,
+        "blog_image_size": "wide",
+        "divider": false
+      }
+    },
+    "map": {
+      "type": "map",
+      "disabled": true,
+      "settings": {
+        "map_title": "Our retail store",
+        "address": "<p>301 Front St W<br/>Toronto, Canada</p><p>Mon - Fri, 8:30am - 10:30pm<br/>Saturday, 8:30am - 10:30pm<br/>Sunday, 8:30am - 10:30pm</p>",
+        "map_address": "301 Front St W, Toronto, ON M5V 2T6",
+        "api_key": "",
+        "show_button": true,
+        "background_image_position": "center center"
+      }
+    },
+    "rich_text_ARrV8U": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_XDqktH": {
+          "type": "heading",
+          "settings": {
+            "title": "Want to know more about us?"
+          }
+        },
+        "text_JUrMWh": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Learn more about us by clicking the button below.</p>"
+          }
+        },
+        "button_WrMY68": {
+          "type": "button",
+          "settings": {
+            "link": "shopify://pages/about-us",
+            "link_text": "Learn more"
+          }
+        }
+      },
+      "block_order": [
+        "heading_XDqktH",
+        "text_JUrMWh",
+        "button_WrMY68"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "featured_product_Xfc4Jy",
+    "rich_text_HCKdEk",
+    "background-image-text",
+    "de497480-7481-4cad-8d6b-37f023759cfb",
+    "rich-text",
+    "featured_collection_tmqkgD",
+    "slideshow_pQVNk9",
+    "featured_product_QyMjjh",
+    "text_and_image_PGFD6X",
+    "featured-collection",
+    "blog-posts",
+    "map",
+    "rich_text_ARrV8U"
+  ]
+}

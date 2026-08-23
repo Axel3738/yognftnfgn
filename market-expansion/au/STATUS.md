@@ -54,6 +54,21 @@ på Axels order: 30 produkter + 4 kollektioner + 4 sidor raderade. 132 ordrar OR
       med "include any applicable taxes — the price you see at checkout is the total price you pay"
       (+ importtröskel AUD $1 000); samma neutrala formulering i terms-of-service. Ingen sida lovar
       längre GST-uppbörd som inte sker (checkouten tar 0 skatt tills GST-registrering ev. konfigureras).
+- [x] **Handle-bytet 2026-08-23: alla 42 produkt-URL:er svenska → engelska.**
+      Karta: `handles/handle-map-v2.tsv` (GID, gammal, ny, titel). 42 `productUpdate`, 0 fel.
+      42 `urlRedirect` gamla→nya skapade (API:t gör dem INTE automatiskt).
+      Hero: `/products/elektrisk-grillborste` → **`/products/the-master-electric-bbq-brush`**.
+      17 av namnen justerades av en granskningsagent: `flipgrill-bbq-basket`→`flipgrill-charcoal-bbq`
+      (produkten är en kolgrill, inte en korg), de fyra Master-tillbehören fick
+      `the-master-`-prefix (var kolliderande: brush-head/polishing-head/brush-safe-head/
+      brush-polishing-head), `sailor-moon-apron`→`anime-sailor-bbq-apron` (IP-risk i annonslänk),
+      `bbq`-token tillagd på förkläden, `safe-shipping-guarantee`→`shipping-protection`.
+- [x] "CharBreaker" (leverantörens bildfilnamn, ej vårt varumärke) borttaget ur 2 SEO-beskrivningar
+- [x] Judge.me-recensionerna var REDAN importerade (429 st: 247/77/50/21/16/13/5) — importera INTE igen.
+      CSV:n uppdaterad med nya handles + korrekta AU-produkt-ID:n som arkiv/backup.
+- [ ] MANUELLT (Axel): startsidans andra "Featured product" pekar fortfarande på gamla `stekbord`
+      → välj om produkten (Stainless Steel BBQ Hotplate) i temaredigeraren. Alternativt publicera
+      det förberedda temat `bbq-clinic-au-v2` (gid://shopify/OnlineStoreTheme/198851854719).
 
 ## AU-fällor
 1. Basvaluta DKK + AUD-siffror i priserna → DK/SE-marknaderna MÅSTE förbli av (annars $29.95 = 29.95 DKK!).

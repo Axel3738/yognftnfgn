@@ -1,0 +1,33 @@
+{
+ "query": "mutation Rename($p0: ProductUpdateInput!, $p1: ProductUpdateInput!, $p2: ProductUpdateInput!, $p3: ProductUpdateInput!, $p4: ProductUpdateInput!, $p5: ProductUpdateInput!, $p6: ProductUpdateInput!) {\n  a0: productUpdate(product: $p0) { product { id handle } userErrors { field message } }\n  a1: productUpdate(product: $p1) { product { id handle } userErrors { field message } }\n  a2: productUpdate(product: $p2) { product { id handle } userErrors { field message } }\n  a3: productUpdate(product: $p3) { product { id handle } userErrors { field message } }\n  a4: productUpdate(product: $p4) { product { id handle } userErrors { field message } }\n  a5: productUpdate(product: $p5) { product { id handle } userErrors { field message } }\n  a6: productUpdate(product: $p6) { product { id handle } userErrors { field message } }\n}",
+ "variables": {
+  "p0": {
+   "id": "gid://shopify/Product/15844619288959",
+   "handle": "mastercook-bbq-apron"
+  },
+  "p1": {
+   "id": "gid://shopify/Product/15844620337535",
+   "handle": "greatgrill-rotating-bbq-basket"
+  },
+  "p2": {
+   "id": "gid://shopify/Product/15844620861823",
+   "handle": "4-stage-knife-sharpener"
+  },
+  "p3": {
+   "id": "gid://shopify/Product/15844621091199",
+   "handle": "stainless-steel-bbq-hotplate"
+  },
+  "p4": {
+   "id": "gid://shopify/Product/15844621582719",
+   "handle": "turbo-bbq-fire-blower"
+  },
+  "p5": {
+   "id": "gid://shopify/Product/15844621681023",
+   "handle": "the-master-electric-bbq-brush"
+  },
+  "p6": {
+   "id": "gid://shopify/Product/15844622139775",
+   "handle": "shipping-protection"
+  }
+ }
+}
