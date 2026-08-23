@@ -25,8 +25,10 @@
 {%- liquid
   assign kod = section.settings.kod | strip
   assign rabatt = section.settings.rabatt_text | strip
+  # Hårt mellanslag så "10 %" aldrig radbryts mitt i.
+  assign rabatt_fast = rabatt | replace: ' ', '&nbsp;'
 -%}
-<dialog class="ms-skrap" id="ms-skrap"
+<dialog class="ms-skrap" id="ms-skrap" tabindex="-1"
   data-fordrojning="{{ section.settings.fordrojning }}"
   data-vilodagar="{{ section.settings.vilodagar }}">
   <button type="button" class="ms-skrap__stang" data-ms-skrap-stang aria-label="Stäng">&times;</button>
@@ -39,12 +41,13 @@
         <span class="ms-skrap__procent">{{ rabatt }}</span>
         <span class="ms-skrap__vinsttext">rabatt på ditt köp</span>
       </div>
-      <canvas class="ms-skrap__folie" width="560" height="300" aria-label="Skrapyta"></canvas>
+      <canvas class="ms-skrap__folie" width="840" height="450" aria-label="Skrapyta"></canvas>
     </div>
+    <p class="ms-skrap__ledtext">Dra med fingret över guldet</p>
   </div>
 
   <div class="ms-skrap__steg" data-ms-steg="mejl" hidden>
-    <h2 class="ms-skrap__rubrik">Du skrapade fram {{ rabatt }}! 🎉</h2>
+    <h2 class="ms-skrap__rubrik">Du skrapade fram {{ rabatt_fast }}! 🎉</h2>
     <p class="ms-skrap__under">Ange din mejl så låser du upp koden — den funkar direkt.</p>
     {%- form 'customer', id: 'ms-skrap-form', class: 'ms-skrap__form' -%}
       <input type="hidden" name="contact[tags]" value="newsletter,skrapkort">
@@ -72,7 +75,7 @@
     <p class="ms-skrap__under">Din kod:</p>
     <p class="ms-skrap__kod">{{ kod }}</p>
     <a class="ms-skrap__knapp ms-skrap__knapp--bred" href="/discount/{{ kod | url_encode }}?redirect=/">
-      Handla med {{ rabatt }} rabatt
+      Handla med {{ rabatt_fast }} rabatt
     </a>
     <p class="ms-skrap__finstilt">
       Koden följer med till kassan när du klickar på knappen.
@@ -81,48 +84,86 @@
   </div>
 </dialog>
 <style>
+  /* Fullskärm i märkesorange — förebilden är skrapkorts-apparna: hela
+     skärmen tas över, guldkortet är det enda att interagera med och
+     krysset är medvetet lågmält (men 44 px stort och alltid klickbart). */
   .ms-skrap {
     border: 0;
-    border-radius: var(--ms-radius, 16px);
-    padding: 26px 22px 22px;
-    width: min(92vw, 380px);
+    border-radius: 0;
+    margin: 0;
+    padding: 24px;
+    width: 100vw;
+    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    display: none;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    background: var(--ms-surface, #fff);
-    box-shadow: 0 24px 60px rgba(18, 18, 18, .3);
+    color: #FDFBF7;
+    /* Gradient kring accentfärgen #DD821D — ger djup i stället för platt yta. */
+    background: linear-gradient(160deg, #EE9E3F 0%, #DD821D 55%, #B96A12 100%);
   }
+  .ms-skrap[open] { display: flex; }
   .ms-skrap::backdrop { background: rgba(18, 18, 18, .45); }
+  .ms-skrap__steg { max-width: 520px; width: 100%; }
   .ms-skrap__stang {
-    position: absolute;
-    top: 8px;
-    right: 10px;
+    position: fixed;
+    top: 14px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
     border: 0;
     background: none;
-    font-size: 26px;
+    font-size: 30px;
     line-height: 1;
-    color: var(--ms-ink-faint, #8a8377);
+    color: #FDFBF7;
+    opacity: .55;
     cursor: pointer;
-    padding: 4px 8px;
+    transition: opacity .15s ease;
   }
-  /* Sidoluft så rubriken inte går in under stängkrysset. */
-  .ms-skrap__rubrik { margin: 0 0 6px; padding: 0 20px; font-size: 1.35em; line-height: 1.25; }
-  .ms-skrap__under { margin: 0 0 14px; color: var(--ms-ink-soft, #5f5a52); font-size: .95em; }
+  .ms-skrap__stang:hover, .ms-skrap__stang:focus-visible { opacity: 1; }
+  /* Dawns vita fokusring gör krysset till en vit låda — egen diskret ring. */
+  .ms-skrap__stang:focus, .ms-skrap__stang:focus-visible, .ms-skrap__stang.focused {
+    box-shadow: none;
+    outline: 2px solid rgba(253, 251, 247, .7);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+  /* Dialogen tar själva fokuset vid öppning så ringen inte pekar på krysset. */
+  .ms-skrap:focus, .ms-skrap:focus-visible { outline: none; box-shadow: none; }
+  .ms-skrap__rubrik {
+    margin: 0 0 8px;
+    font-size: clamp(1.7em, 6vw, 2.6em);
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: #FDFBF7;
+  }
+  .ms-skrap__under { margin: 0 0 22px; color: rgba(253, 251, 247, .85); font-size: 1em; }
   .ms-skrap__kort {
     position: relative;
-    border-radius: 12px;
+    width: min(84vw, 420px);
+    aspect-ratio: 28 / 15;
+    margin: 0 auto;
+    border-radius: 14px;
     overflow: hidden;
-    border: 2px dashed var(--ms-accent, #DD821D);
+    box-shadow: 0 18px 45px rgba(90, 50, 0, .45), 0 2px 8px rgba(90, 50, 0, .3);
   }
   .ms-skrap__vinst {
+    position: absolute;
+    inset: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 2px;
-    height: 150px;
-    background: var(--ms-surface-2, #faf7f2);
+    background: #FDFBF7;
   }
-  .ms-skrap__procent { font-size: 2.4em; font-weight: 800; color: var(--ms-accent, #DD821D); }
-  .ms-skrap__vinsttext { color: var(--ms-ink-soft, #5f5a52); }
+  .ms-skrap__procent { font-size: 2.6em; font-weight: 800; color: #C9A227; }
+  .ms-skrap__vinsttext { color: #5f5a52; }
   .ms-skrap__folie {
     position: absolute;
     inset: 0;
@@ -133,42 +174,58 @@
     transition: opacity .5s ease;
   }
   .ms-skrap__folie[data-borta] { opacity: 0; pointer-events: none; }
+  .ms-skrap__ledtext { margin: 16px 0 0; color: rgba(253, 251, 247, .75); font-size: .9em; }
   .ms-skrap__falt { display: flex; gap: 8px; }
+  .ms-skrap__falt .ms-skrap__knapp { white-space: nowrap; }
   .ms-skrap__falt input {
     flex: 1 1 auto;
     min-width: 0;
-    padding: 11px 12px;
-    border: 1px solid var(--ms-line-strong, #d8cbb8);
-    border-radius: 10px;
+    padding: 13px 14px;
+    border: 0;
+    border-radius: 12px;
     font: inherit;
+    background: #FDFBF7;
+    color: #121212;
   }
   .ms-skrap__knapp {
     display: inline-block;
-    padding: 11px 16px;
+    padding: 13px 18px;
     border: 0;
-    border-radius: 10px;
-    background: var(--ms-accent, #DD821D);
-    color: var(--ms-accent-ink, #FDFBF7);
+    border-radius: 12px;
+    /* Guldknapp som matchar kortet. */
+    background: linear-gradient(180deg, #F2D879 0%, #DDB94B 55%, #C9A227 100%);
+    color: #4A3506;
     font: inherit;
-    font-weight: 700;
+    font-weight: 800;
     cursor: pointer;
     text-decoration: none;
-    transition: filter .15s ease;
+    box-shadow: 0 6px 18px rgba(90, 50, 0, .35);
+    transition: filter .15s ease, transform .15s ease;
   }
-  .ms-skrap__knapp:hover { filter: brightness(1.06); }
+  .ms-skrap__knapp:hover { filter: brightness(1.05); transform: translateY(-1px); }
   .ms-skrap__knapp--bred { display: block; }
   .ms-skrap__kod {
-    margin: 0 0 14px;
-    padding: 10px;
-    border: 2px dashed var(--ms-accent, #DD821D);
-    border-radius: 10px;
-    font-size: 1.3em;
+    margin: 0 auto 18px;
+    padding: 12px;
+    max-width: 300px;
+    border: 2px dashed #F2D879;
+    border-radius: 12px;
+    background: rgba(253, 251, 247, .12);
+    color: #FDFBF7;
+    font-size: 1.4em;
     font-weight: 800;
-    letter-spacing: .08em;
+    letter-spacing: .1em;
     user-select: all;
   }
-  .ms-skrap__fel { margin: 0 0 10px; color: #b3261e; font-size: .9em; }
-  .ms-skrap__finstilt { margin: 12px 0 0; font-size: .75em; color: var(--ms-ink-faint, #8a8377); }
+  .ms-skrap__fel {
+    margin: 0 0 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: #FDFBF7;
+    color: #b3261e;
+    font-size: .9em;
+  }
+  .ms-skrap__finstilt { margin: 14px 0 0; font-size: .78em; color: rgba(253, 251, 247, .7); }
   .ms-skrap__finstilt a { color: inherit; }
 </style>
 <script>
@@ -194,21 +251,51 @@
     var skrapklar = false;
 
     function malaFolie() {
+      // Guldfolie: gradient i guldtoner, sneda glansband, svaga skrapmärken
+      // och präglad text — ljus kant ovanför, mörk under, som tryckt i guldet.
       var b = canvas.width, h = canvas.height;
-      var g = ctx.createLinearGradient(0, 0, b, h);
-      g.addColorStop(0, '#e89b45');
-      g.addColorStop(.5, '#dd821d');
-      g.addColorStop(1, '#c06f14');
       ctx.globalCompositeOperation = 'source-over';
+
+      var g = ctx.createLinearGradient(0, 0, b, h);
+      g.addColorStop(0, '#F1D77E');
+      g.addColorStop(.35, '#E3BE55');
+      g.addColorStop(.62, '#C9A227');
+      g.addColorStop(1, '#E8C863');
       ctx.fillStyle = g;
       ctx.fillRect(0, 0, b, h);
-      ctx.fillStyle = 'rgba(253, 251, 247, .9)';
-      ctx.font = '700 44px sans-serif';
+
+      // Två sneda glansband.
+      ctx.fillStyle = 'rgba(255, 250, 235, .28)';
+      ctx.beginPath();
+      ctx.moveTo(b * .12, 0); ctx.lineTo(b * .30, 0);
+      ctx.lineTo(b * .06, h); ctx.lineTo(-b * .12, h);
+      ctx.closePath(); ctx.fill();
+      ctx.fillStyle = 'rgba(255, 250, 235, .16)';
+      ctx.beginPath();
+      ctx.moveTo(b * .78, 0); ctx.lineTo(b * .86, 0);
+      ctx.lineTo(b * .62, h); ctx.lineTo(-b * .54 + b, h);
+      ctx.closePath(); ctx.fill();
+
+      // Svaga skrapmärken som bjuder in fingret.
+      ctx.strokeStyle = 'rgba(140, 110, 20, .18)';
+      ctx.lineCap = 'round';
+      ctx.lineWidth = 16;
+      [[.16, .30, .30, .22], [.20, .42, .36, .34], [.68, .68, .84, .60], [.72, .80, .86, .74]]
+        .forEach(function (m) {
+          ctx.beginPath();
+          ctx.moveTo(b * m[0], h * m[1]);
+          ctx.lineTo(b * m[2], h * m[3]);
+          ctx.stroke();
+        });
+
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText('SKRAPA HÄR', b / 2, h / 2 - 14);
-      ctx.font = '30px sans-serif';
-      ctx.fillText('🪙 dra med fingret', b / 2, h / 2 + 38);
+      ctx.font = '800 64px sans-serif';
+      // Präglingen: ljus kant snett ovanför, mörk text ovanpå.
+      ctx.fillStyle = 'rgba(255, 250, 235, .55)';
+      ctx.fillText('SKRAPA HÄR', b / 2, h / 2 - 2);
+      ctx.fillStyle = '#8A6A14';
+      ctx.fillText('SKRAPA HÄR', b / 2, h / 2 + 2);
     }
 
     function andelBorta() {
@@ -229,7 +316,7 @@
       var y = (ev.clientY - rekt.top) * (canvas.height / rekt.height);
       ctx.globalCompositeOperation = 'destination-out';
       ctx.beginPath();
-      ctx.arc(x, y, 34, 0, Math.PI * 2);
+      ctx.arc(x, y, 50, 0, Math.PI * 2);
       ctx.fill();
       if (andelBorta() > 0.4) {
         skrapklar = true;
@@ -254,6 +341,9 @@
       if (stegnamn !== 'skrapa') canvas.setAttribute('data-borta', '');
       else malaFolie();
       ruta.showModal();
+      // showModal fokuserar annars stängkrysset — då lyser temats fokusring
+      // upp krysset som det första man ser. Dialogen tar fokuset i stället.
+      ruta.focus();
     }
 
     // Stängning utan medlemskap = vila. Klart läge förblir klart.
@@ -325,7 +415,7 @@
       "type": "text",
       "id": "under",
       "label": "Underrubrik",
-      "default": "Alla vinner. Skrapa rutan med fingret."
+      "default": "Alla vinner – guldet döljer din rabatt."
     },
     {
       "type": "text",
@@ -349,7 +439,7 @@
       "max": 30,
       "step": 1,
       "unit": "s",
-      "default": 10
+      "default": 7
     },
     {
       "type": "range",

@@ -6,9 +6,13 @@ Byggd 2026-08-23 på Axels beställning (förebilden var en skrapkorts-app).
 
 ## Flödet
 
-1. **Skrapa.** ~10 s efter sidladdning (inställbart) öppnas en `<dialog>` med
-   ett skrapkort. Foliet är en canvas som suddas med fingret
-   (`destination-out`); vid ~40 % bortskrapat visas vinsten.
+1. **Skrapa.** ~7 s efter sidladdning (inställbart; 6–7 s var Axels riktmärke
+   från andra butiker) öppnas en **fullskärms**-`<dialog>` i märkesorange med
+   ett guldigt skrapkort — guldgradient, glansband, skrapmärken och präglad
+   text målas i canvasen. Krysset är medvetet lågmält (55 % opacitet) så
+   kortet är det man interagerar med, men det är 44 px och alltid klickbart,
+   och ESC fungerar. Foliet suddas med fingret (`destination-out`); vid ~40 %
+   bortskrapat visas vinsten.
 2. **Mejl.** Koden lämnas ut mot mejladress. Formuläret är Shopifys eget
    `{% form 'customer' %}` med taggarna `newsletter,skrapkort` — adressen blir
    en riktig prenumerant i Shopify och följer med till Klaviyo (tagga gärna
@@ -44,7 +48,13 @@ Det står i popupens finstilt. Lova aldrig något annat i copy.
   bakgrund OCH dialogens egen padding. När skrapsteget byttes mitt i
   gnuggandet landade nästa klick på paddingen och stängde allt. Därför
   koordinatkollen mot `getBoundingClientRect()` — bara äkta bakgrundsklick
-  stänger.
+  stänger. (I fullskärmsläget finns ingen bakgrund alls, så kollen är
+  vilande — men den skyddar om dialogen någon gång görs mindre igen.)
+- **Dawns fokusring gjorde krysset till en vit låda.** `showModal()`
+  fokuserar första fokuserbara elementet = stängkrysset, och Dawn målar en
+  vit ring + outline på fokus. Dialogen har `tabindex="-1"` och tar själv
+  fokuset efter öppning; krysset har en egen diskret fokusstil för
+  tangentbordsanvändare.
 - **Fördröjningen ser trasig ut i lokala speglar.** På `file://` dröjer
   `DOMContentLoaded` ~10 s (defer-skripten misslyckas långsamt), så timern
   hinner fyra före första mätpunkten. På riktiga sajten är fördröjningen
