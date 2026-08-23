@@ -46,7 +46,14 @@ på Axels order: 30 produkter + 4 kollektioner + 4 sidor raderade. 132 ordrar OR
       startsidans bildreferenser löser nu. 4 kollektionsbilder satta.
 - [x] The Master prissatt $179.95 / compareAt $299.95 (Axel delegerade; BE-ROAS 1,40 vid COGS $27,5 USD + 5 % avgifter)
 - [x] GRIND (Sydney NSW 2000): 1× The Master = $179.95 AUD, frakt "Free Shipping" 0 ✓
-- [ ] Fas 9: fullständig sanningskontroll före annonsstart (efter domänkoppling thebbqclinic.com)
+- [x] Fas 9: fullständig sanningskontroll KÖRD 2026-08-23 — se LAUNCH-CHECK.md
+      (alla kärnkontroller ✅, Melbourne-grind 29.90 AUD/frakt 0, 1 blockerare + 9 varningar)
+- [x] Blockeraren FIXAD 2026-08-23: kundeservice@grillklinikken.com → hello@thebbqclinic.com
+      på alla 6 sidor (26 förekomster inkl. 13 mailto-länkar; verifierat 0 gamla / 26 nya; temat innehåller 0 mejladresser)
+- [x] GST-formuleringen FIXAD 2026-08-23: shipping-sidans falska "GST is collected at checkout" ersatt
+      med "include any applicable taxes — the price you see at checkout is the total price you pay"
+      (+ importtröskel AUD $1 000); samma neutrala formulering i terms-of-service. Ingen sida lovar
+      längre GST-uppbörd som inte sker (checkouten tar 0 skatt tills GST-registrering ev. konfigureras).
 
 ## AU-fällor
 1. Basvaluta DKK + AUD-siffror i priserna → DK/SE-marknaderna MÅSTE förbli av (annars $29.95 = 29.95 DKK!).
