@@ -1,0 +1,185 @@
+<!-- ========================================================================
+     THE BBQ CLINIC – LISTICLE (paste into a Liquid/HTML element in GemPages)
+     All copy and images are filled in. Every product link points at
+     /products/the-master-electric-bbq-brush (8 places).
+     ===================================================================== -->
+<style>
+  .lst-wrap *{box-sizing:border-box;margin:0;padding:0}
+  .lst-wrap{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:#1a1a1a;line-height:1.6;background:#fff}
+  .lst-container{max-width:680px;margin:0 auto;padding:0 20px}
+
+  .lst-bar{position:sticky;top:0;z-index:50;background:#111;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;flex-wrap:wrap}
+  .lst-bar-txt{font-size:13px;font-weight:700;letter-spacing:.3px}
+  .lst-bar-txt small{display:block;font-weight:500;opacity:.9}
+  .lst-bar-timer{display:flex;gap:6px}
+  .lst-tcell{background:#fff;color:#111;border-radius:6px;padding:4px 8px;text-align:center;min-width:44px}
+  .lst-tcell b{font-size:16px;display:block;line-height:1}
+  .lst-tcell span{font-size:9px;letter-spacing:1px;opacity:.7}
+
+  .lst-wrap .lst-h1{font-size:46px !important;line-height:1.12 !important;font-weight:800 !important;margin:34px 0 18px}
+  .lst-byline{display:flex;align-items:center;gap:12px;margin-bottom:26px}
+  .lst-byline img{width:46px;height:46px;border-radius:50%;object-fit:cover}
+  .lst-byline .lst-meta{font-size:14px}
+  .lst-byline .lst-meta b{display:block}
+
+  .lst-summary{font-size:16px;margin-bottom:34px}
+  .lst-hr{border:none;border-top:1px solid #e5e5e5;margin:34px 0}
+
+  .lst-item{margin:40px 0}
+  .lst-item h2{font-size:22px;font-weight:800;margin-bottom:16px}
+  .lst-item img{width:100%;border-radius:10px;display:block;margin-bottom:16px}
+  .lst-item p{font-size:16px}
+  .lst-cta{display:inline-block;margin-top:14px;color:#16a34a;font-weight:700;text-decoration:none;font-size:16px}
+  .lst-cta:hover{text-decoration:underline}
+
+  .lst-promo{background:#f9f7df;border-radius:14px;padding:34px 24px;text-align:center;margin:46px 0}
+  .lst-promo h2{font-size:26px;font-weight:800;line-height:1.25;margin-bottom:16px}
+  .lst-promo p{font-size:16px;max-width:520px;margin:0 auto 22px}
+  .lst-promo-bar{background:#111;color:#fff;font-weight:800;font-size:13px;letter-spacing:.5px;border-radius:8px;padding:12px 16px;margin-bottom:20px}
+  .lst-promo img{width:100%;border-radius:10px;display:block}
+
+  .lst-offer{background:#fff;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.08);padding:34px 24px;text-align:center;margin:0 auto 30px;max-width:600px}
+  .lst-offer .lst-gift{font-weight:800;font-size:16px;margin-bottom:14px}
+  .lst-offer .lst-big{font-size:40px;font-weight:900;line-height:1.05;margin-bottom:16px}
+  .lst-offer .lst-big .red{color:#DA420E}
+  .lst-offer .lst-disc{font-style:italic;font-size:15px;color:#444;margin-bottom:22px}
+  .lst-btn{display:block;background:#1db954;color:#fff;font-size:22px;font-weight:800;text-decoration:none;border-radius:10px;padding:18px;margin-bottom:22px;transition:background .15s}
+  .lst-btn:hover{background:#18a249}
+  .lst-offer .lst-exp{font-weight:800;font-size:15px;letter-spacing:.5px;margin-bottom:10px}
+  .lst-offer .lst-redtimer{color:#DA420E;font-weight:800;font-size:20px;margin-bottom:18px}
+  .lst-risk{display:inline-block;border:1px solid #ddd;border-radius:8px;padding:10px 18px;font-weight:700;font-size:14px;margin-bottom:16px}
+  .lst-risk .red{color:#DA420E}
+  .lst-offer .lst-test{font-weight:800;font-size:15px}
+
+  .lst-footer{text-align:center;color:#888;font-size:15px;padding:30px 20px 50px}
+
+  @media(max-width:600px){
+    .lst-wrap .lst-h1{font-size:32px !important}
+    .lst-offer .lst-big{font-size:30px}
+    .lst-btn{font-size:19px}
+    .lst-bar-txt{font-size:11px}
+  }
+</style>
+
+<div class="lst-wrap">
+
+  <!-- ===== TOP BAR ===== -->
+  <div class="lst-bar">
+    <div class="lst-bar-txt">✨ WAREHOUSE CLEAR-OUT ✨<small>40% OFF + FREE SHIPPING AUSTRALIA-WIDE + EXTRA ACCESSORIES</small></div>
+    <div class="lst-bar-timer">
+      <div class="lst-tcell"><b data-t="h">00</b><span>HRS</span></div>
+      <div class="lst-tcell"><b data-t="m">44</b><span>MIN</span></div>
+      <div class="lst-tcell"><b data-t="s">57</b><span>SEC</span></div>
+    </div>
+  </div>
+
+  <div class="lst-container">
+
+    <!-- ===== HEADLINE + BYLINE ===== -->
+    <h1 class="lst-h1">We over-ordered The Complete Master Kit — and now you get 40% off while stock lasts</h1>
+
+    <div class="lst-byline">
+      <img src="https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Skarmavbild_2026-06-24_kl._07.04.15.png?v=1782277481" alt="Jonno from The BBQ Clinic">
+      <div class="lst-meta">By <b>Jonno from The BBQ Clinic</b><span>Last updated: 23 June 2026</span></div>
+    </div>
+
+    <p class="lst-summary"><b>Summary:</b> Our last order came in bigger than planned and the warehouse is packed to the roof. So we're running our biggest sale ever: 40% off, free shipping Australia-wide, and the complete accessory kit with every Master. But only while stock lasts. If you've ever scrubbed the grates for twenty minutes and still not got them clean, this is the fix.</p>
+
+    <hr class="lst-hr">
+
+    <!-- ===== TIP 1 ===== -->
+    <div class="lst-item">
+      <h2>1. Your grates look clean. They aren't.</h2>
+      <img src="https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Bild_2026-06-24_kl._06.46.png?v=1782276462" alt="">
+      <p>You scrubbed the grates last weekend. They looked good afterwards. But under the surface, down in the gaps between the bars, the old baked-on fat is still sitting there: dark, sticky, hard as concrete. Not from last week. From last summer. An ordinary wire brush only scrapes the top and never reaches where the fat actually sits. You think your grates are clean. They aren't.</p>
+      <a class="lst-cta" href="https://thebbqclinic.com/products/the-master-electric-bbq-brush">👉 See how clean they can actually get</a>
+    </div>
+
+    <!-- ===== TIP 2 ===== -->
+    <div class="lst-item">
+      <h2>2. Old fat wrecks the flavour of everything you cook</h2>
+      <img src="https://cdn.shopify.com/s/files/1/0947/0174/8548/files/img_2001.webp?v=1781010430" alt="">
+      <p>Every time you fire up the BBQ, the old fat heats up all over again. It smokes, rises through the grates and puts its flavour into the meat you just laid down. That's the burnt aftertaste you could never place: not the meat, not the gas. And the old fat insulates the surface between the meat and the metal, so the sear is never even and the meat sticks. Clean grates give you direct contact, and the sear you actually fire up the barbie for.</p>
+      <a class="lst-cta" href="https://thebbqclinic.com/products/the-master-electric-bbq-brush">👉 Get a proper sear back</a>
+    </div>
+
+    <!-- ===== TIP 3 ===== -->
+    <div class="lst-item">
+      <h2>3. Your wire brush makes it worse — and sheds bristles into your food</h2>
+      <img src="https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Grill_Brush.jpg?v=1782276628" alt="">
+      <p>You press harder to reach the fat, and that's when the brush starts shedding bristles: thin metal wires, next to impossible to spot against dark grates. They lodge in the meat and go down with it. This is no urban myth: swallowed bristles have sent people to emergency, and both Weber and Nexgrill have recalled millions of wire brushes. A brush that scrapes never solves the problem. It is the problem.</p>
+      <a class="lst-cta" href="https://thebbqclinic.com/products/the-master-electric-bbq-brush">👉 Be done with loose bristles for good</a>
+    </div>
+
+    <!-- ===== TIP 4 ===== -->
+    <div class="lst-item">
+      <h2>4. But the worst part isn't the flavour — the fat eats your BBQ from the inside</h2>
+      <img src="https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Namnlos_design_75.png?v=1779452216" alt="">
+      <p>This is the part nobody talks about. Baked-on fat is corrosive and slowly eats the metal away from underneath. Discolouration turns to rust, rust turns into grates that flake and burners that seize. A BBQ that should last you for years can be finished long before its time. You spent thousands of dollars getting the right BBQ, and the only thing standing between it and a rusted-out heap is what you do with the grates after every cook.</p>
+      <a class="lst-cta" href="https://thebbqclinic.com/products/the-master-electric-bbq-brush">👉 Protect your investment</a>
+    </div>
+
+    <!-- ===== TIP 5 ===== -->
+    <div class="lst-item">
+      <h2>5. 60 seconds instead of 20 minutes of scrubbing</h2>
+      <img src="https://cdn.shopify.com/s/files/1/0947/0174/8548/files/e_4.gif?v=1777384821" alt="">
+      <p>Breaking baked-on fat loose doesn't take more pressure. It takes rotation. The Master doesn't scrape, it spins: 400 revolutions a minute, lifting the fat from underneath, down in the gaps an ordinary brush never reached. You just hold it. One button, sixty seconds, and the grates come up gleaming. No scrubbing, no aching arms, no hands that smell of fat.</p>
+      <a class="lst-cta" href="https://thebbqclinic.com/products/the-master-electric-bbq-brush">👉 Clean in 60 seconds</a>
+    </div>
+
+    <!-- ===== TIP 6 ===== -->
+    <div class="lst-item">
+      <h2>6. Replace just the head — not the whole tool</h2>
+      <img src="https://cdn.shopify.com/s/files/1/0947/0174/8548/files/download.gif?v=1782277122" alt="">
+      <p>Cheap brushes that rust, flatten out and fall apart after one season are money down the drain. The Master is built to take thousands of cooks and comes with two interchangeable heads: a coarse one that breaks the baked-on fat loose, and a Brush-Safe head that polishes to a shine and is designed to hold its bristles in place. When a head wears out you replace the head, not the whole tool. A one-off investment that keeps going season after season.</p>
+      <a class="lst-cta" href="https://thebbqclinic.com/products/the-master-electric-bbq-brush">👉 Invest in quality</a>
+    </div>
+
+    <!-- ===== TIP 7 ===== -->
+    <div class="lst-item">
+      <h2>7. Try it with 30-day change-of-mind returns</h2>
+      <img src="https://cdn.shopify.com/s/files/1/0947/0174/8548/files/IMG_4286_1.jpg?v=1777397071" alt="">
+      <p>Thousands of Australian BBQ owners have already swapped the wire brush for The Master. We think you'll feel the same, so you get 30 days to change your mind. If the grates aren't clean in sixty seconds, or you're simply not happy, send it back within 30 days: you pay the return postage and the return address is in Sweden. This sits on top of your rights under the Australian Consumer Law, and takes nothing away from them.</p>
+      <a class="lst-cta" href="https://thebbqclinic.com/products/the-master-electric-bbq-brush">👉 Order yours today</a>
+    </div>
+
+    <!-- ===== PROMO / SOCIAL PROOF ===== -->
+    <div class="lst-promo">
+      <h2>Thousands of Australians are already cooking on clean grates</h2>
+      <p>Our warehouse is overflowing and it has to be cleared. Upgrade the way you look after your BBQ today and save 40%, plus free shipping Australia-wide, but only while stock lasts. When the shelves are empty, the sale is over.</p>
+      <div class="lst-promo-bar">✨ WAREHOUSE CLEAR-OUT – OUR BIGGEST SALE EVER ✨</div>
+      <img src="https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Skarmavbild_2026-06-24_kl._07.02.32.png?v=1782277377" alt="">
+    </div>
+
+    <!-- ===== FINAL OFFER CARD ===== -->
+    <div class="lst-offer">
+      <div class="lst-gift">🎁 EXTRA BRUSH HEAD INCLUDED FREE 🎁</div>
+      <div class="lst-big">GET <span class="red">40% OFF</span><br>+ FREE SHIPPING AUSTRALIA-WIDE</div>
+      <div class="lst-disc">*Stock is limited. When it's gone, it's gone.</div>
+      <a class="lst-btn" href="https://thebbqclinic.com/products/the-master-electric-bbq-brush">Check availability →</a>
+      <div class="lst-exp">OFFER ENDS IN:</div>
+      <div class="lst-redtimer"><span data-t="h">00</span> : <span data-t="m">44</span> : <span data-t="s">50</span></div>
+      <div class="lst-risk">Sell-out risk: <span class="red">High</span> | FREE shipping Australia-wide</div>
+      <div class="lst-test">The complete kit is included: extra brush head, Brush-Safe head and protective gloves.</div>
+    </div>
+
+  </div>
+
+  <div class="lst-footer">Copyright © 2026 The BBQ Clinic. All rights reserved.</div>
+</div>
+
+<script>
+(function(){
+  var TOTAL = 45 * 60; // countdown starts at 45 min
+  var els = document.querySelectorAll('.lst-wrap [data-t]');
+  function tick(){
+    var h = Math.floor(TOTAL/3600), m = Math.floor((TOTAL%3600)/60), s = TOTAL%60;
+    els.forEach(function(e){
+      var t = e.getAttribute('data-t');
+      e.textContent = ('0'+(t==='h'?h:t==='m'?m:s)).slice(-2);
+    });
+    if(TOTAL>0) TOTAL--;
+  }
+  tick(); setInterval(tick,1000);
+})();
+</script>
