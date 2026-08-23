@@ -42,7 +42,11 @@ på Axels order: 30 produkter + 4 kollektioner + 4 sidor raderade. 132 ordrar OR
       11 filer en-AU (0 svenska strängar), BBQ Clinic-logga i header/footer/checkout/favicon
 - [x] Fas 8: Judge.me-CSV en-AU klar (434 recensioner, validerad, levererad till Axel)
 - [x] Mastern-bilder: 5 st lokaliserade till engelska och UTBYTTA på produkten (verifierat: 6 media, gamla raderade)
-- [ ] Fas 9: sanningskontroll före lansering (körs när Axel gjort språkbyte + apparna)
+- [x] Temabilder fixade 2026-08-23: 5 saknade shop_images uppladdade (hero Namnlos_design_55 m.fl.) →
+      startsidans bildreferenser löser nu. 4 kollektionsbilder satta.
+- [x] The Master prissatt $179.95 / compareAt $299.95 (Axel delegerade; BE-ROAS 1,40 vid COGS $27,5 USD + 5 % avgifter)
+- [x] GRIND (Sydney NSW 2000): 1× The Master = $179.95 AUD, frakt "Free Shipping" 0 ✓
+- [ ] Fas 9: fullständig sanningskontroll före annonsstart (efter domänkoppling thebbqclinic.com)
 
 ## AU-fällor
 1. Basvaluta DKK + AUD-siffror i priserna → DK/SE-marknaderna MÅSTE förbli av (annars $29.95 = 29.95 DKK!).
