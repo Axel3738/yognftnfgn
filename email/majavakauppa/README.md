@@ -45,9 +45,13 @@ policysidorna lovar inga, och då får mejlen inte heller göra det.
    men policysidorna på sajten säger `asiakaspalvelu@majavakauppa.fi`.
    Bestäm en och rätta den andra — annars pekar mejlen och sajten åt olika
    håll.
-2. **Rabattnivån 10 %** i nyhetsbrevs-blocket är samma förslag som för .se —
-   och kräver att välkomstautomationen med kod sätts upp i majavakauppa.fi:s
-   admin innan mejlen går live (steg i `email/README.md`).
+2. **Rabattkoden är skapad** (2026-08-23, via Shopify-kopplingen):
+   `TERVETULOA10` — 10 % på allt, alla kunder, ingen slutdatum, **max en
+   användning per kund**. Kvar för Axel: sätt upp välkomstautomationen
+   (Marknadsföring → Automatiseringar) som mejlar koden till nya
+   prenumeranter — utan den lovar nyhetsbrevs-blocket i mejlen en kod som
+   aldrig kommer. Obs: en delad kod kan läcka till rabattkodssajter;
+   uppgradera till automationens unika engångskoder när det blir aktuellt.
 
 Setup-stegen (klistra in, automationer, välkomstrabatt) är identiska med
 `email/README.md` — bara i majavakauppa.fi:s admin i stället.
