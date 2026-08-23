@@ -105,3 +105,8 @@ Kompletterar `problemet.md` (3-lagersmodellen).
 - Så du straffar barnbarnen för att föräldrarna aldrig lärde dem att tacka?
 - De älskar att veta att jag har tänkt på dem — de är helnöjda med lite godis, för tanken slår plånboken.
 
+## Återkommande ord
+
+Innehållsord som förekommer minst tre gånger i påståendena ovan, i fallande ordning efter antal förekomster. Vanliga funktionsord är borträknade; olika böjningsformer räknas var för sig.
+
+presenter (9) · givaren (9) · vet (8) · öppna (7) · barnet (7) · barnen (6) · present (6) · fel (5) · presenten (5) · behöver (5) · bästa (5) · köpa (4) · köper (4) · paket (4) · barn (4) · saker (4) · givare (4) · strumpor (4) · gillar (3) · minns (3) · klappen (3) · poängen (3) · slår (3) · gåva (3) · tillsammans (3) · pengar (3) · upplevelser (3) · små (3) · veta (3)
