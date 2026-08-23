@@ -1,35 +1,39 @@
-# Videokoncept Q4: "Revanschen" (farfar slog familjens presentexpert)
+# Videokoncept Q4: "Jag gav min man en chans" (klappköperskan som berättare)
 
-**Datum:** 2026-08-22. **Status:** koncept, ej manus. **Källa:** Axels idé i chatt
-+ `kundanalys-q4-2025.md` (avataren "Eva, 63" = klappköperskan 50–65+, 43 % av julköparna).
+**Datum:** 2026-08-22 (rev 2 — Axels slutgiltiga hook ersatte revansch-vinkeln).
+**Status:** koncept godkänt av Axel, manus under produktion.
+**Källa:** Axels idé i chatt + `kundanalys-q4-2025.md` (avataren "Eva, 63" =
+klappköperskan 50–65+, 43 % av julköparna).
 
-## Kärnan
-Berättaren är huvudkunden själv: kvinnan som i trettio år varit familjens
-presentexpert — och vars man (farfar/morfar, Ullared-kassens trogna vän) i år
-kom hem med sushistrumporna och slog henne. Rollomkastning = konflikt
-(fiendetyp B: "jag är den som kan presenter"). En 60+-kvinnoröst som öppnar
-videon är dessutom pattern interrupt i feeden.
+## Kärnan (Axels version)
+Berättaren är huvudkunden själv: kvinnan som alltid köpt presenterna till
+barnbarnen. **Hon gav sin man chansen** — och det han gjorde chockade henne.
+Hon skäms nästan för att det inte var hon som hittade dem först.
 
-**Tonjustering:** "skäms" spelas som varm revanschlust/tävling i äktenskapet,
-aldrig surt — och aldrig hån mot honom eller mot Ullared.
+Varför den vinkeln vinner över revansch-varianten (rev 1): hon behåller
+auktoriteten hela vägen (hon DELEGERADE, blev inte omsprungen), skammen blir
+varm i stället för sur, och det finns ingen tävlingston att trampa fel på.
+Ullared-referensen utgick med samma drag.
 
-**High stakes-lösningen:** CTA:t ÄR hennes revansch. Insatsen = vem som vinner
-julafton, och deadline är verklig (76 % av julvolymen kom 2–17 dec; sista
-leveransdag ~17 dec). Slutreplik: "Julafton kommer oavsett. I år är det jag
-som beställer." + beställ-före-datum.
+**Hook (Axels rad):** "Jag har alltid varit den som köpt presenter till
+barnbarnen. Men nu gav jag min man en chans — och det han gjorde chockade mig.
+Och jag skäms."
 
-## Beats (9:16, ~30 s) — faktorerna bärs av audio + visuellt
+**Avslut (Axels rad):** underbar reaktion + används på riktigt — "inte bara en
+grej som är rolig i en vecka, utan de används år efter år."
 
-| Beat | Tid | Audio (hon berättar) | Visuellt |
+## Beats (9:16, ~30 s) — embarrassment/curiosity/high stakes via audio + visuellt
+
+| Beat | Tid | Bär | Innehåll |
 |---|---|---|---|
-| Hook | 0–3 s | "Min man kom hem med sushi. Trodde jag." | Närbild: "sushibrickan" ställs på köksbordet |
-| Embarrassment | 3–10 s | 30 år som familjens julklappsgeneral — han brukar komma hem med Ullared-kassen | Gul-blå kassen i hallen, hennes min |
-| Curiosity/reveal | 10–18 s | "Sen vek han ut den." | Sushibit för bit viks ut till strumpor, fem motiv |
-| Beviset | 18–25 s | Barnbarnen trodde också att det var sushi — används varje vecka, blandas aldrig ihop | Reaktion vid bordet, strumpor på fötter |
-| High stakes + CTA | 25–30 s | "Julafton kommer oavsett. I år är det jag som beställer." | Paket under granen + "beställ före X dec" |
+| Hook | 0–3 s | Audio | Hans hook-rad kortad till scrolltempo |
+| Embarrassment | 3–10 s | Audio + min | Hon som alltid skött presenterna gav honom chansen |
+| Curiosity/reveal | 10–18 s | Visuellt | "Sushibrickan" viks ut till strumpor, bit för bit — videons hjärta |
+| Bevis | 18–25 s | Audio + visuellt | Reaktionen + används år efter år, strumpor på fötter |
+| High stakes + CTA | 25–30 s | Visuellt + text | Verklig deadline (sista beställningsdag ~17 dec; 76 % av fjolårsvolymen kom 2–17 dec) |
 
-## Nästa steg
-Manusrader (svenska repliker i tabell + engelsk brief till redigerare) skrivs
-av copy-subagent (modellpolicyn, regel 6) med detta koncept + copy-reglerna
-när Axel ger klartecken. Ingen prisangivelse i copy; aktuellt pris läses från
-produktsidan vid körning.
+## Manus
+Färdiga VO-repliker (svenska, tabell Swedish/English), captions och engelsk
+editor-brief: se `manus-video-gav-min-man-en-chans.md` (skrivs av
+copy-subagent enligt modellpolicyn, med Axels rader som stomme).
+Ingen prisangivelse i copy; aktuellt pris läses från produktsidan vid körning.
