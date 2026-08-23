@@ -1,0 +1,126 @@
+{% comment %}
+  Order annullerad — brandad för Bäverbutiken.
+  Klistras in i: Inställningar → Aviseringar → Kundaviseringar → Order annullerad → Redigera kod.
+  Återbetalningsinfo är hämtad ur butikens återbetalningspolicy (baverbutiken.se)
+  2026-08-23: automatiskt till ursprungligt betalsätt, inom 10 arbetsdagar,
+  kontakta support efter 15 arbetsdagar. Ändras policyn, ändra här.
+{% endcomment %}
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Din order är annullerad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0; padding:0; background-color:#f2f2f2; -webkit-text-size-adjust:100%;">
+
+  <div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">
+    Din order är annullerad — här är exakt vad som händer med pengarna.
+  </div>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f2f2f2;">
+    <tr>
+      <td align="center" style="padding:24px 12px;">
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%; background-color:#ffffff; border:1px solid #e8e8e1;">
+
+          <tr>
+            <td align="center" style="background-color:#000000; padding:20px 24px;">
+              <a href="{{ shop.url }}" style="text-decoration:none;">
+                <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:26px; letter-spacing:1px; color:#ffffff; text-transform:uppercase;">{{ shop.name }}</span>
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:36px 32px 8px 32px;" align="center">
+              <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:30px; line-height:1.15; color:#000000; text-transform:uppercase;">Din order är annullerad</span>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:8px 32px 4px 32px;" align="center">
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:1.6; color:#000000; margin:0;">
+                {% if customer.first_name %}Hej {{ customer.first_name }}!{% else %}Hej!{% endif %}
+                Order <strong>{{ name }}</strong> är nu annullerad. Här är exakt vad som händer med pengarna.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Återbetalningsinfo — ur återbetalningspolicyn -->
+          <tr>
+            <td style="padding:24px 32px 8px 32px;">
+              <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:16px; color:#000000; text-transform:uppercase; letter-spacing:0.5px;">Din återbetalning</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:4px 32px 20px 32px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td width="34" valign="top" style="padding:8px 0;">
+                    <div style="width:24px; height:24px; background:#dd1d1d; color:#ffffff; text-align:center; line-height:24px; font-family:'Anton',Arial,sans-serif; font-size:13px;">1</div>
+                  </td>
+                  <td style="padding:8px 0; font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.5; color:#000000;">
+                    Har du redan betalat går pengarna <strong>automatiskt tillbaka till samma betalsätt du använde</strong> — du behöver inte göra någonting.
+                  </td>
+                </tr>
+                <tr>
+                  <td width="34" valign="top" style="padding:8px 0;">
+                    <div style="width:24px; height:24px; background:#dd1d1d; color:#ffffff; text-align:center; line-height:24px; font-family:'Anton',Arial,sans-serif; font-size:13px;">2</div>
+                  </td>
+                  <td style="padding:8px 0; font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.5; color:#000000;">
+                    Återbetalningen görs inom <strong>10 arbetsdagar</strong>. Banken eller kortföretaget kan behöva ytterligare någon dag innan den syns på ditt konto.
+                  </td>
+                </tr>
+                <tr>
+                  <td width="34" valign="top" style="padding:8px 0;">
+                    <div style="width:24px; height:24px; background:#dd1d1d; color:#ffffff; text-align:center; line-height:24px; font-family:'Anton',Arial,sans-serif; font-size:13px;">3</div>
+                  </td>
+                  <td style="padding:8px 0; font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.5; color:#000000;">
+                    Har det gått mer än <strong>15 arbetsdagar</strong> utan att pengarna synts? Mejla
+                    <a href="mailto:{{ shop.email }}" style="color:#dd1d1d; font-weight:bold;">{{ shop.email }}</a> så jagar vi den åt dig.
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Avdelare -->
+          <tr>
+            <td style="padding:0 32px;"><div style="border-top:1px solid #e8e8e1; font-size:0; line-height:0;">&nbsp;</div></td>
+          </tr>
+
+          <!-- FAQ -->
+          <tr>
+            <td style="padding:24px 32px 8px 32px;">
+              <span style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:16px; color:#000000; text-transform:uppercase; letter-spacing:0.5px;">Vanliga frågor</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 32px 28px 32px;">
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.5; color:#000000; margin:10px 0 0 0;"><strong>Annullerade jag av misstag — kan ordern återställas?</strong></p>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.6; color:#6b6b6b; margin:2px 0 0 0;">Enklast är att lägga en ny order på <a href="{{ shop.url }}" style="color:#dd1d1d;">{{ shop.url | remove: 'https://' }}</a>. Osäker? Mejla oss först.</p>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.5; color:#000000; margin:12px 0 0 0;"><strong>Går pengarna tillbaka till rätt kort?</strong></p>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.6; color:#6b6b6b; margin:2px 0 0 0;">Ja — återbetalningen går alltid till exakt samma betalsätt som köpet gjordes med. Det går inte att styra om till ett annat konto.</p>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.5; color:#000000; margin:12px 0 0 0;"><strong>Övriga frågor?</strong></p>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.6; color:#6b6b6b; margin:2px 0 0 0;">Svara på det här mejlet eller skriv till <a href="mailto:{{ shop.email }}" style="color:#dd1d1d;">{{ shop.email }}</a> — vi svarar så fort vi kan.</p>
+            </td>
+          </tr>
+
+          <!-- Sidfot -->
+          <tr>
+            <td align="center" style="background-color:#000000; padding:24px 32px;">
+              <p style="font-family:'Anton','Arial Narrow',Arial,sans-serif; font-size:15px; color:#ffffff; margin:0 0 8px 0; text-transform:uppercase; letter-spacing:1px;">{{ shop.name }}</p>
+              <p style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#d9d9d9; margin:0;">
+                Frågor? Svara på det här mejlet eller skriv till
+                <a href="mailto:{{ shop.email }}" style="color:#ffffff;">{{ shop.email }}</a>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
