@@ -69,6 +69,28 @@ på Axels order: 30 produkter + 4 kollektioner + 4 sidor raderade. 132 ordrar OR
 - [ ] MANUELLT (Axel): startsidans andra "Featured product" pekar fortfarande på gamla `stekbord`
       → välj om produkten (Stainless Steel BBQ Hotplate) i temaredigeraren. Alternativt publicera
       det förberedda temat `bbq-clinic-au-v2` (gid://shopify/OnlineStoreTheme/198851854719).
+- [x] 8 tomma produktbeskrivningar fyllda (Masterns 5 tillbehör + handskar, spray, fraktskydd) —
+      en-AU, samma HTML-skelett som hero, inga påhittade specar
+- [x] ACL-granskning av alla 42 produkttexter: 9 produkter ändrade. Största: Masterns
+      "Lifetime warranty. If it breaks, you get a new one. Full stop." → korrekt begränsad
+      garanti + lagstadgade konsumentgarantier. Även "physically impossible to drop bristles"
+      → "designed to hold the bristles in place", och "no questions, no process"-retur → verklig policy.
+- [x] Platshållare ("Example product $29") bortstädade från cart, 404, blogg, /collections m.fl.
+      — i temakopian v2 (MAIN kan inte skrivas till via API)
+- [x] Bloggen döpt om: "Nyheter"/nyheter → "News"/news. Död redirect /products/yiloyoyoyo raderad.
+- [x] SEO-titlarna på 2 produkter återställda (nollades av CharBreaker-fixen)
+
+## Listiclesen (GemPages) — inventerade 2026-08-23, EJ översatta
+Se `listicles/INVENTORY.md`. **36 mallar** (inte 19), 249 sektionsfiler, 9,6 MB, ~30 400 ord,
+1 758 översättningsenheter → 2 589 redigeringspunkter (varje sträng finns i BÅDE template-JSON
+och sektionens schema-default — översätt bara den ena och det ser rätt ut tills någon rör temat).
+Ingen sida använder dem → helt vilande just nu.
+**Blockerare för MX-metoden: GemPages är INTE installerat på AU-butiken** (0 GEMPAGES-metafält),
+och sektionerna tillhör den svenska GemPages-workspacen (`cw0mid-qw`, `gempages_617120062062527169`).
+Utöver text måste fixas: 128 absoluta länkar till grillkliniken.se (4 av 5 mål-handles finns inte
+i AU), 89 bilder hotlinkade från svenska butikens CDN (flera med inbränd svensk text),
+kr-priser, svenska recensentnamn (7 st × 18 mallar), Jula/Biltema/Konsumentverket, Org.nr,
+"Fri frakt inom Sverige", och en vintersäsongsvinkel som är fel halvklot.
 
 ## AU-fällor
 1. Basvaluta DKK + AUD-siffror i priserna → DK/SE-marknaderna MÅSTE förbli av (annars $29.95 = 29.95 DKK!).
