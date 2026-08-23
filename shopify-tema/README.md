@@ -16,15 +16,8 @@ andra defaults). Skriv `[rabatt]` i en text så byts det mot rabatten (t.ex.
 
 | Butik | Läge |
 |---|---|
-| **bæverbutiken.dk** | ✅ Installerad i temadubbletten **"Live + skrapkort 2026-08-23"** (opublicerad), med danska texter och koden `VELKOMMEN10`. Verifierad i preview med Chromium (mobil + desktop, skrapning + mejlsteg). **Ej publicerad.** |
-| bäverbutiken.se m.fl. | ⏳ Ej gjort — Shopify-connectorn var kopplad till .dk-butiken den här sessionen. Samma flöde per butik, se nedan. |
-
-**Innan publicering i .dk-butiken (ägarbeslut, gör i ordning):**
-1. Skapa rabattkoden `VELKOMMEN10` i Shopify-admin: Rabatter → Skapa rabatt →
-   procent av på beställning → ✅ "Begränsa till en användning per kund".
-   Popupen skapar den INTE — utan riktig kod delar den ut en död kod.
-2. Publicera temat "Live + skrapkort 2026-08-23" (Webbshop → Teman).
-3. Testa i inkognitofönster — popupen minns per webbläsare (localStorage).
+| **bæverbutiken.dk** | ✅ Installerad i temadubbletten **"Live + skrapkort 2026-08-23"** (opublicerad), med danska texter. Rabattkoden `VELKOMMEN10` (10 %, alla kunder, en användning per kund) är skapad och AKTIV. Verifierad i preview med Chromium (mobil + desktop, skrapning + mejlsteg). **Kvar: publicera temat** (Webbshop → Teman) och testa i inkognitofönster. |
+| bäverbutiken.se m.fl. | ⏳ Ej gjort — connector-bytet till .se kräver ny OAuth-godkännande som inte gick i fjärrsessionen. Samma flöde per butik, se nedan. |
 
 ---
 
