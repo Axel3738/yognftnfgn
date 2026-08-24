@@ -25,6 +25,8 @@ källan. Bygg aldrig en analys på gissningar när materialet står längre upp.
 - Produktens rad i `products/products.json` (ad account = **MagiBorsten 1867947880635861**, kampanjer, budget, target-CPA, break-even-CPA).
 - `products/<id>/dna.md`, `batch-log.md`, `backlog.md` om de finns — de är
   komplement till chatten, inte ersättning för den.
+- `docs/voc-reddit-<id>-*.md` om de finns — produktens VoC-underlag (riktiga
+  kundröster). Färskaste filen gäller.
 - Kör `node pipeline/quota.mjs` — kvoten bestämmer batchstorleken.
 
 ### 1b. Saknas underlaget helt? (varken i chatten eller i `products/<id>/`)
@@ -78,9 +80,20 @@ har dödat vinnare två gånger. Kortversion av kraven:
 - **Stäm av mot hypoteserna i batch-log.md:** för varje annons i förra batchen, skriv utfallet — höll hypotesen eller inte, och varför (data, inte tyckande).
 - **Uppdatera `products/<id>/dna.md`:** flytta bekräftade mönster till Winning/Losing DNA, markera vad som fortfarande är hypotes. DNA-filen är produktens ackumulerade minne — skriv den så att nästa session förstår utan kontext.
 
+### 2c. VoC-mining (när Axel bifogar trådar/skärmdumpar — eller ber om det)
+
+Bifogar Axel skärmdumpade trådar (Reddit m.m.) är det kundundersökningsmaterial:
+kör hela flödet i **`docs/os/VOC-MINING.md`** innan batchen byggs — parallella
+extraktions-subagenter (sonnet) per sidintervall, kategorisering per behov i
+huvudsessionen, frekvensräkning, leverans som enkel PDF till Axel + 
+`docs/voc-reddit-<id>-<datum>.md` i repot, och topp-behoven in i `dna.md`.
+Järnregler: hitta aldrig på påståenden, frekvens är signal, Reddit-röster är
+research — aldrig kundomdömen i annons.
+
 ### 3. Bygg nästa batch
 - Antal = minst kvoten per 3-dagarscykel för produkten.
 - Mix: iterationer på vinnarna (isolerad variabel per iteration) + nya koncept från Losing DNA-lärdomar + **alla väntande items i backlog.md** (markera dem `[använd i batch #N]`) + det jag skickade med i argumenten ovan.
+- Finns VoC-underlag (`docs/voc-reddit-<id>-*.md`): varje nytt koncept pekar på sin behovskategori + minst ett citat. Kundens workarounds ur VoC:n är färdiga fiender för konflikt typ A. Koncept utan källa märks som gissning.
 - **Varje brief taggar sina variabler** (vinkel, hook-typ, format, proof, offer,
   visuell stil, textmängd, talare) i en rad högst upp — utan taggar kan nästa
   `/cs` inte gruppera vinstbidrag per variabel och lärandet dör.
@@ -108,6 +121,7 @@ har dödat vinnare två gånger. Kortversion av kraven:
 - [ ] Feedbackloop körd: varje annons i förra batchen har fått sitt utfall loggat i batch-log.md
 - [ ] dna.md uppdaterad (data skild från hypotes)
 - [ ] Backlog-items inkluderade och markerade som använda
+- [ ] Bifogade trådar VoC-minade enligt VOC-MINING.md (PDF + repo-fil + dna.md) — eller N/A
 - [ ] Batchstorlek ≥ kvoten (quota-output visad)
 - [ ] Copy/voiceover skriven av sonnet/haiku-subagent, strategi av huvudmodellen
 - [ ] Briefer på engelska, naming korrekt, zip-paketerade
