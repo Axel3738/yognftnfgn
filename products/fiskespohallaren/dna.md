@@ -18,7 +18,7 @@ Full analys: `docs/briefs/rodholder-batch2-2026-08-21/RAPPORT.md`.
 
 ~22 200 kr spend → 163 köp, CPA ~136, allt väl under BE 285. Kampanjen spenderar nu nära full budget. Batch #2+#3 launchades 22–24/8 — **i skalnings-CBO:n, mot regel 11** (femte gången i kontot): ~20 av 27 Rodholder-ads svälter under 100 kr. Undantaget PD_15_H1 fick 3 532 kr och levererar. PD_1_H1 bekräftar regressionsregeln: CPA 60,58 på 242 kr → 180,94 livstid (marginal 215).
 
-⛔ **PRODUKTJOBBET KORRIGERAT AV ÄGAREN 2026-08-24 (viktigaste rotorsaken):** klämmorna fäster INTE spön i väggar/båtar — de klämmer ihop det delade spöts två halvor till ETT prydligt paket vid transport. Alla vägg-koncept utgick (PD_9 pausad i Meta, PD_14 aldrig launchad, briefer märkta WITHDRAWN). ⚠️ Shopify-LP:n säger fortfarande "Monteras enkelt på vägg eller i båten" — butiksändring, väntar på Axel.
+⛔ **PRODUKTJOBBET KORRIGERAT AV ÄGAREN 2026-08-24 (viktigaste rotorsaken):** klämmorna fäster INTE spön i väggar/båtar — de klämmer ihop det delade spöts två halvor till ETT prydligt paket vid transport. Alla vägg-koncept utgick (PD_9 pausad i Meta, PD_14 aldrig launchad, briefer märkta WITHDRAWN). ✅ **LP-BESLUT 2026-08-24 (Axel):** LP-texten byts **framåt**, inget retroaktivt. Ny text KLAR (skriven via sonnet-subagent, tre-frågorstestad) i `products/fiskespohallaren/lp-text-2026-08-24.md` — blockerad av Shopify-connectorn som stod på **fel butik (Matstrumpor.se)** och nu kräver återauktorisering mot bäverbutiken.se. Byt så fort kopplingen fungerar; verifiera butik med `get-shop-info` först. Framtida copy: säg "delbara spön", inte "passar alla spön".
 
 ## Winning DNA (alla domar PRELIMINÄRA — 2,5 dygn, 1d_view_7d_click)
 
