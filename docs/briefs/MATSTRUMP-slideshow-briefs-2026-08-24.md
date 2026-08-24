@@ -164,3 +164,39 @@ Image: matstrumpor_52_alla_fotter_soffan.jpg, held on a second beat with new tex
 | Can you visualize it? | Yes — a grandparent holding two different boxes side by side, visibly matching one to someone. |
 | Can it be falsified? | Yes — checkable against the real range: four distinct styles exist, so "one per person" is literally possible. |
 | Could no competitor sign it? | Yes — a single-SKU brand or a real food company can't offer "one per person" variety. Only a four-style collection can. |
+
+---
+
+# MATSTRUMP_alla_conflict_slideshow_antipresentkort_v1
+
+*(Added later same day — Axel's "reverse" of a gift-card ad, Ads Library id
+1511387033768400, which could not be opened. The gift card never appears on
+screen; it exists only in the Swedish text.)*
+
+**Ad name:** MATSTRUMP_alla_conflict_slideshow_antipresentkort_v1
+**Concept:** Anti-gift-card reversal: real reaction shots that cut straight into the reveal — it looks like food, it's actually socks. The gift card never appears on screen; it only exists in the Swedish text, as the boring option this box beats.
+**Target audience:** Swedish gift-givers, roughly 25–55, buying for parents/grandparents/partners for birthdays and everyday occasions — the ones who default to a gift card because picking the "wrong" thing feels risky.
+
+**Production notes:** Hard cuts only between slides — no crossfades/dissolves. Calm, warm background music, no lyrics. Deliver both 4:5 (1080×1350) and 9:16 (1080×1920). The Swedish overlay text is final copy — place it, don't translate it. Files live in `theme-matstrumpor/ugc-bilder/bilder/`. Delivery names: `MATSTRUMP_alla_conflict_slideshow_antipresentkort_v1_4x5.mp4` / `_9x16.mp4`.
+
+| # | Image file | Duration | Swedish overlay (use this) | English meaning | Editing note |
+|---|---|---|---|---|---|
+| 1 | matstrumpor_62_mormor_skrattar.jpg | 2.0s | Presentkort ger aldrig den minen. | A gift card never gives you that face. | HOOK — open the ad on this frame. Crop tight on her face + the burger box for 9:16; keep both in frame for 4:5. Overlay upper third, clear of her face and the box. |
+| 2 | matstrumpor_61_dorrmattan.jpg | 1.5s | Ser ut som mat på dörren. | Looks like food at the door. | Establishing shot. Works as-is in 4:5; for 9:16 push in slightly on the sushi box so it still reads at thumbnail size. Overlay lower third. |
+| 3 | matstrumpor_11_sushi_presentpase.jpg | 1.5s | Inte kvällsmat. En gåva. | Not dinner. A gift. | Keep the sushi box visible through the bag opening. Overlay upper third, clear of the hands. |
+| 4 | matstrumpor_63_morfar_fatoljen.jpg | 2.0s | Bara strumpor. Fast roligare. | Just socks. Only more fun. | The reveal beat — keep the pizza-print socks sharp and fully in frame, bottom half. Overlay top or side. |
+| 5 | matstrumpor_56_alla_valjer.jpg | 1.5s | Fyra lådor att välja. | Four boxes to choose from. | Keep both boxes readable in every crop — for 9:16, zoom out slightly rather than crop either box off. |
+| 6 | matstrumpor_52_alla_fotter_soffan.jpg | 2.0s | Och de används på riktigt. | And people actually wear them. | Widest shot, hardest to crop for 9:16 — prioritize keeping at least 3 of the 4 sock pairs + the popcorn bowl in frame. Minimal overlay, let it breathe. |
+
+**End card**
+File: matstrumpor_41_donut_mormor.jpg — 2.5s
+Swedish overlay: Köp 1, få 1 – på alla. / matstrumpor.se
+English meaning: Buy 1, get 1 — on all four. / matstrumpor.se
+Editing note: Simple white text directly on the image — offer line largest, matstrumpor.se underneath. Soft gradient at the bottom only if needed for legibility. No logo bug, no boxed graphics, no button. Hold the full 2.5s, no motion.
+
+**Do NOT:**
+- No invented claims or stats — use only what's in this brief (prices, box contents, Buy 1 Get 1, sizing). No reviews, no customer counts, no percentages.
+- Never caption or label these as "kundbilder" / real customer photos — they're staged lifestyle shots, not verified UGC or testimonials.
+- No image of an actual gift card anywhere in the ad — it only exists in the Swedish text. That's the whole point of the concept.
+- All images in this bank are AI-generated. Whoever uploads this ad in Ads Manager must tick the AI-content disclosure toggle — required, not optional.
+- No Christmas imagery — this is an all-occasion ("alla") edit, not a holiday one.

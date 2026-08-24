@@ -127,3 +127,32 @@ Separat **test-ABO, lika budget per annons** — aldrig i skalnings-CBO. Ren ang
 A vs B vs C med samma bildbas, en primärtextvariant per paket i våg 1 (A1/B1/C1),
 varianterna 2–3 är omskrivningsreserv till våg 2. Kontofrågan är öppen:
 "nya kungen" är ACTIVE igen, "Sushi kanske?" innehåller SnarkLös-annonser (blanda inte).
+
+## Paket D — Anti-presentkortet (conflict, "reversen") · `MATSTRUMP_alla_conflict_antipresentkort_v1`
+
+> Tillagt 2026-08-24 (senare pass). Axels idé utifrån en annons i Ads Library
+> (id 1511387033768400 — gick inte att öppna, FB blockerar): vänd presentkorts-
+> pitchen. Udden riktas mot presentkortet som KATEGORI (den fega defaulten),
+> aldrig mot något företag och utan påhittad statistik. OBS: sajten säljer
+> själv ett presentkort (150 kr) — vinkeln attackerar fenomenet, inte produkten.
+
+**D1 (sushi)**
+Hon trodde det var sushi. Det var strumpor.
+Ett presentkort säger "jag visste inte vad du ville ha." Den här lådan säger "jag tänkte på dig."
+5 par strumpor, ätpinnar i trä, en låda som lurar ögat innan den avslöjar sig. 399 kr — just nu köp 1, få 1. 🥢
+
+**D2 (pizza)**
+Morfar har redan allt — utom strumpor som ser ut som pizza.
+Ett presentkort löser inte det problemet. Det bara flyttar det till nästa högtid.
+Öppna lådan och han tror det är kvällens mat. Det är strumpor, onesize 36–44. Pizza, 449 kr — just nu köp 1, få 1. 🍕
+
+**D3 (burgare)**
+Den här lådan får folk att säga "vänta, va?"
+Det gör aldrig ett presentkort. Den här ser ut som burgare i låda. Den är strumpor.
+Och sen används de faktiskt — inte som ett kort som blir liggande i en byrålåda. Burgare, 299 kr, just nu köp 1, få 1. 🍔
+
+Rubriker: **"Ser ut som mat. Är strumpor."** · **"Inget presentkort ger en dubbeltitt."**
+Beskrivning: "Roligare än ett presentkort."
+
+Tre-frågorstestet (körd på båda rubrikerna, alla tre första rader och slideshow-hooken
+"Presentkort ger aldrig den minen."): helgrönt — se subagentens tabell i sessionen.
