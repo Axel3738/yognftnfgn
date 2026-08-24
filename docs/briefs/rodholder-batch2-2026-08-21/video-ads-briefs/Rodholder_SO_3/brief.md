@@ -14,7 +14,7 @@ The old discount concept (40 % off) performed at demo-level CPA (143.80 kr) but 
 |---|---|---|
 | HOOK | 0–3 s | All 4 clamps in hand / laid out; big caption with the per-unit price |
 | VALUE | 3–7 s | One clamp clicked on a rod — "this is what 72 kr does" |
-| DEMO | 7–12 s | Quick cuts: boat use + wall use |
+| DEMO | 7–12 s | Quick cuts: clamp holding the two rod sections together — in the boat, in the trunk |
 | TRUST | 12–15 s | Guarantee + Klarna caption |
 | CTA | 15–18 s | 289 kr / 4-pack end frame |
 

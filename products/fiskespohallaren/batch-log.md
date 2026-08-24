@@ -64,3 +64,50 @@
 | Rodholder_PD_17_H1/H2 | "Bagageluckan" — transport utan trassel | vinkel=transport; hook=lucka vs lyft |
 
 **Utfall:** fylls i av nästa `/cs` efter launch. OBS: launcha i test-ABO:t (regel 11), aldrig i skalnings-CBO:n. Batch #2 + #3 = 29 briefer totalt i kö → täcker kvoten (14/cykel) för cykel 2 OCH 3.
+
+## Avläsning #3, 2026-08-24 (`/cs` — körning #3)
+
+**Stort läge:** Batch #2+#3 launchades 22–24/8 (27 ads loggade i kvoten) — **i skalnings-CBO:n, INTE i separat test-ABO. Regel 11 bröts vid launchen** (femte gången i kontot). ~20 av 27 Rodholder-ads svälter under 100 kr. Namnavvikelser vid launch: `Rodholder_PD_8_H2_H1/H2` och `PD_3_H2_H1/H2` (dubbla hooksuffix).
+
+**Datakvalitet:** `spend × ROAS` = `omni_purchase_values` på samtliga rader ✓. Kampanj ~22 200 kr, 163 köp, CPA ~136.
+
+**Vinstbidragstabell (livstid 6 dygn, BE-CPA 285, bedömbara ≥300 kr & ≥3 köp), sorterad på vinst:**
+
+| Annons | Spend | Köp | CPA | ROAS | Vinstbidrag | Marginal-CPA sedan 21/8 (2b ✓) |
+|---|---|---|---|---|---|---|
+| PD_EXTRA a (benchmark, 26,5 % spendandel) | 5 892,50 | 42 | 140,30 | 3,11 | **6 077 kr** | 139 |
+| PD_EXTRA c | 3 286,86 | 28 | 117,39 | 3,53 | **4 693 kr** | 143 |
+| CS_1_H1 ⚠️ osann claim | 2 186,56 | 22 | 99,39 | 4,29 | **4 083 kr** | **89** (freq 1,56 — högst) |
+| PD_EXTRA b | 3 090,08 | 21 | 147,15 | 2,84 | **2 895 kr** | 148 |
+| **Rodholder_PD_15_H1 (Skaka-testet, batch #3)** | 3 531,72 | 22 | 160,53 | 2,94 | **2 738 kr** | 161 (allt inom fönstret) |
+| PD_1_H1 | 3 256,83 | 18 | 180,94 | 2,71 | 1 873 kr | 215 |
+
+För tidigt men lovande: CS_1_H3 ny video 251 kr/6 köp (spend under grind), CS_2_1 326 kr/2 köp, PD_16_H1 172 kr/1 köp. Övriga <100 kr — CBO-svält, ingen dom. Inga kill-kandidater (allt bedömbart under BE 285).
+
+**Metrik-diagnos:** PD_15_H1 hold 23,5 % (3× råklippens 5,9–6,4 %) men CTR 2,59 % (< PD_EXTRA 3,4–3,6) — proofen håller kvar, hooken stoppar mindre. PD_1_H1: marginal 215, håller på att tappa mot benchmark. CS_1_H1 freq 1,56 = första mättnadssignalen i kampanjen.
+
+**Hypotesutfall (batch #1–#3):**
+- PD rå demo → **HÖLL** igen (91 köp över 3 klipp).
+- Regressionsregeln → **HÖLL** (PD_1_H1 60,58→180,94; PD_EXTRA c 62,64→117,39).
+- PD_15 skaka-test-proof → **HÖLL, preliminär-stark** (22 köp; hold 3×).
+- PD_4 captions-på-vinnarklipp, PD_5 hugget, PD_8 trasselboll, PD_18 hårsnodd, PD_16/17, statics → ingen dom (CBO-svält eller nyss launchade).
+- PD_9 Garageväggen → **UTGICK** (fel produktförståelse, pausad i Meta 2026-08-24, 11,92 kr spend). PD_14 Skruven → UTGICK före launch.
+- CS_1_H1 (osann rabatt) → marginellt billigast (89 kr) men byts av integritetsskäl; sann offer-framing (SO_3/CS_3) måste få budget för att skilja vinkel från lögn.
+
+**PRODUKTKORRIGERING (ägarens ord, 2026-08-24):** klämmorna fäster inte spön i någonting — de klämmer ihop det delade spöts två halvor till ett prydligt paket vid transport. Alla vägg-formuleringar rättade i briefer + Notion; PD_9_H1 pausad. ⚠️ Shopify-LP:n säger fortfarande "Monteras enkelt på vägg eller i båten" — butiksändring, Axels beslut väntar.
+
+## Batch #4 — "IHOP-PAKETET", briefad 2026-08-24 (VoC-driven + korrigerat produktjobb)
+
+14 creatives (6 videokoncept × 2 hooks + 2 statics), alla pekar på VoC-kategori + citat (docs/voc-reddit-fiskespohallaren-2026-08-24.md). Launchas i separat test-ABO — INTE i CBO:n.
+
+| Annons | Hypotes (VoC-källa) | Variabeltaggar (gemensamt: format=demo-video/statics, offer=ingen, talare=ingen) |
+|---|---|---|
+| Rodholder_PD_19_H1/H2 | Kardborre-proceduren som fiende — visa deras omständliga metod vs ett klick (VoC kat 3, bevisad) | vinkel=ersätt-fulhacket typ A; hook=procedur vs fråga; proof=jämförelse |
+| Rodholder_PD_20_H1/H2 | Kylväske-kaoset i bagaget — delarna flänger runt bland packningen (VoC kat 1, bevisad) | vinkel=transportkaos; hook=bagagelucka vs fråga; proof=demo |
+| Rodholder_PD_21_H1/H2 | Ren textfri demo av RÄTTA jobbet: dela spöt, kläm ihop halvorna, bär som ETT paket (vinnarformeln + korrigering) | vinkel=problem/lösning; hook=ihopklämning vs bär-i-en-hand; text=ingen |
+| Rodholder_PD_22_H1/H2 | Spontanfisket — hopklämt och redo i bilen, isär på en sekund vid vattnet (VoC kat 5) | vinkel=alltid-redo; hook=paket-i-bagage vs efter-jobbet; proof=demo |
+| Rodholder_PD_23_H1/H2 | Skummet — band/snoddar glider, skumgummit greppar (VoC kat 3+7; PD_15 visade att proof håller kvar) | vinkel=differentiering/proof; hook=glid vs grepp; proof=stresstest |
+| Rodholder_SO_5_1 | Rättad listicle "hela resan" utan vägg (VoC kat 1/4) | vinkel=värde-bredd; format=collage-static |
+| Rodholder_PD_24_1 | Före/efter: spretande halvor vs hopklämt paket (VoC kat 4) | vinkel=kontrast; format=split-static |
+
+**Utfall:** fylls i av nästa `/cs`.

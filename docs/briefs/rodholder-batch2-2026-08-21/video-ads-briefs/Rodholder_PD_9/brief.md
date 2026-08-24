@@ -1,3 +1,13 @@
+# ⛔ WITHDRAWN 2026-08-24 — DO NOT PRODUCE
+
+**Owner correction (Axel):** the clamps are NOT for mounting rods to anything.
+They clamp the two sections of a take-down rod TOGETHER so the halves don't
+flail around — a neat, simple package for transport. This entire concept was
+built on wall-mounting, which the product does not do. The Meta ad based on it
+(Rodholder_PD_9_H1) was PAUSED 2026-08-24. Replacement concepts: batch #4.
+
+---
+
 # Rodholder_PD_9_H1 — "Garageväggen" (before/after wall storage)
 
 **Type:** Video · **Production level:** medium (one location: garage/shed wall) · **Tier 2**

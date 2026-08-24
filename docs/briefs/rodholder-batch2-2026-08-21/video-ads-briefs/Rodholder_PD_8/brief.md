@@ -15,7 +15,7 @@ Our account's hook rule: the first second must show one real, physical, slightly
 | HOOK | 0–3 s | MACRO: the real tangle ball lifted out of a locker, filling the frame. Locked camera, hands only |
 | PROBLEM | 3–7 s | Pull at it — a lure snags, the knot tightens |
 | MECHANISM | 7–12 s | Clamp closes a collapsed rod: line trapped flat against the blank, nothing loose |
-| DEMO 2 | 12–16 s | Four clamps on the wall, one rod each |
+| DEMO 2 | 12–16 s | Four folded rods, each clamped shut into its own neat package, laid side by side |
 | CTA | 16–20 s | End frame, 289 kr |
 
 ## Copy
@@ -36,7 +36,7 @@ Note: the second sentence of each hook IS the image instruction — the tangle b
 | 1 Härvan ⭐ | En hopknuten härva av lina och drag. | A knotted tangle of line and lure. |
 | 2 Varför ⭐ | Ingen håller spöet stängt – så blir det så här. | Nothing keeps the rod shut – so this happens. |
 | 3 Klämman ⭐ | Skumgummit håller spöet still, plasten håller det stängt. | The foam holds the rod still, the plastic keeps it shut. |
-| 4 Väggen ⭐ | Fyra klämmor. Fyra spön. Var sin plats. | Four clamps. Four rods. One spot each. |
+| 4 Paketen ⭐ | Fyra klämmor. Fyra spön. Var sin plats. | Four clamps. Four rods. One spot each. |
 | 5 CTA ⭐ | 4-pack, 289 kr – slipp trasselbollen för gott. | 4-pack, 289 SEK – be done with the tangle for good. |
 
 ### Primary text (use verbatim, both ads)

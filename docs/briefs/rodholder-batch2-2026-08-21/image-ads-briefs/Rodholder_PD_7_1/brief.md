@@ -4,11 +4,11 @@
 
 ## Hypothesis
 
-Before/after is the simplest conflict and a proven pattern in our playbook. Hypothesis: the tangle (before) next to the ordered wall/clamped rod (after) tells the whole story at scroll speed. Isolated variable: **visual persuasion mechanism** (contrast vs single demo scene).
+Before/after is the simplest conflict and a proven pattern in our playbook. Hypothesis: the tangle (before) next to the neatly clamped-together rods (after) tells the whole story at scroll speed. Isolated variable: **visual persuasion mechanism** (contrast vs single demo scene).
 
 ## Design
 
-- Split layout, vertical divider. LEFT "UTAN": real tangle — rods crossed, lines wrapped, a lure snagged (make it genuinely messy, use real gear). RIGHT "MED": same rods, each closed with a clamp, laid parallel (or hanging in a wall row).
+- Split layout, vertical divider. LEFT "UTAN": real tangle — rods crossed, lines wrapped, a lure snagged (make it genuinely messy, use real gear). RIGHT "MED": same rods, each closed with a clamp, laid parallel as neat two-piece packages.
 - Label chips top of each panel (text from table below). Headline across the top, footer strip bottom with price.
 - Same lighting both panels — the ONLY difference is order vs chaos. **No AI-generated gear.**
 

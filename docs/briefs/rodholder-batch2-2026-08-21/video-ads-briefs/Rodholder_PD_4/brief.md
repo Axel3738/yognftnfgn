@@ -20,7 +20,7 @@ The winning raw clips convert (23 purchases, CPA 63–145 kr) but hold is weak (
 | HOOK | 0–3 s | Clamp clicked onto collapsed rod, macro, hands only | Caption 1 |
 | PROBLEM | 3–6 s | Tangled rods/lines lifted from boat locker | Caption 2 |
 | DEMO | 6–11 s | Clamp closed around rod; rod lifted, nothing dangles | Caption 3 |
-| PROOF/VALUE | 11–15 s | All 4 clamps in shot | Caption 4 |
+| PROOF/VALUE | 11–15 s | The two clamped halves lifted as ONE package; all 4 clamps in shot | Caption 4 |
 | CTA | 15–18 s | Product + clean end frame | Caption 5 (price 289 kr) |
 
 ## Copy — captions (Swedish verbatim)
@@ -32,7 +32,7 @@ Use the ⭐ lines. A/B/C alternatives listed for reference only — do not mix w
 | 1 HOOK ⭐ | Ihopfällt spö. Ändå trassel i båten. | Rod folded shut. Still tangles in the boat. |
 | 2 PROBLEM ⭐ | Linor och beten trasslar ihop sig. | Lines and lures tangle together. |
 | 3 DEMO ⭐ | Klämman håller spöet stängt – klick. | The clamp holds the rod shut – click. |
-| 4 PROOF ⭐ | Skruva fast på vägg eller i båt. | Screw it to the wall or in the boat. |
+| 4 PROOF ⭐ | Två halvor blir ett paket. | Two halves become one package. |
 | 5 CTA ⭐ | 289 kr. Fyra hållare. Inget mer trassel. | 289 SEK. Four holders. No more tangles. |
 
 Alternatives (same beat order): 1B "Spöna trasslar innan du ens lagt ut." · 2B "Ett löst spö rör allt annat." · 3B "En klämma. Spöet stannar stängt." · 4A "Fyra klämmor i paketet, en plats var." · 5A "4-pack för 289 kr – beställ idag."

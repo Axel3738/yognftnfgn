@@ -14,7 +14,7 @@
 |---|---|---|
 | HOOK | 0–3 s | The 4-pack being wrapped / ribbon tied around it — real hands, real product |
 | WHY IT LANDS | 3–8 s | Cut to the angler's world: rods in boat, clamp clicked on |
-| PROOF | 8–13 s | Wall row with 4 rods — "he uses it every trip" visual |
+| PROOF | 8–13 s | Four folded rods, each clamped into a neat two-piece package, lying side by side — "he uses it every trip" visual |
 | TRUST | 13–16 s | Guarantee caption |
 | CTA | 16–20 s | 289 kr end frame |
 
