@@ -12,6 +12,28 @@ andra defaults). Skriv `[rabatt]` i en text så byts det mot rabatten (t.ex.
 
 ---
 
+## ⚠️ Buggfix 2026-08-24 — INTE utrullad till butikerna ännu
+
+Masterfilen har fått två buggfixar (se `delat/FIXA-SKRAPKORT.md` för exakta
+ändringar): popupen återkom på varje sidbyte (minnet skrevs bara vid stängning
+— nu skrivs det när den öppnas, plus sessionStorage-spärr per besök), och
+rubriken bröt sista bokstaven till egen rad (temats `word-break` + `vw`-mått —
+nu `cqw`, brytförbud och auto-krympning).
+
+**Dubbletterna i .se-, .dk- och .no-butikerna innehåller fortfarande
+buggversionen.** Sessionen 2026-08-24 kunde inte nå temana: env-nycklarna
+(`SHOPIFY_SHOP_SE/DK/NO` + client credentials) fungerar mot Admin API men
+apparna saknar `read_themes`/`write_themes`, och Shopify-connectorn stod på
+The BBQ Clinic (ett `switch-shop` kräver att Axel godkänner varje butik
+interaktivt och går inte att laga i en obevakad session). Ingen butik har
+skrapkortet live (verifierat mot alla tre storefronts 2026-08-24), så inga
+kunder ser buggarna.
+
+**Före publicering av en dubblett:** applicera `delat/FIXA-SKRAPKORT.md` på
+butikens `sections/skrapkort.liquid` (hämta butikens fil, patcha, ladda upp —
+byt ALDRIG hela filen, .dk/.no har egna texter i schemat). Med Shopify-
+connectorn ansluten till rätt butik gör Claude det på ett par minuter per butik.
+
 ## Status per butik (2026-08-23)
 
 | Butik | Läge |
