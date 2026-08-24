@@ -25,6 +25,7 @@ Full analys: `docs/briefs/rodholder-batch2-2026-08-21/RAPPORT.md`.
 | **Rå leverantörsdemo, produkt i bild <1 s, ingen text/polish** | Bevisad inom batchen (3 annonser, 6–9 köp vardera) — preliminär tills nästa avläsning | PD_EXTRA ×3: 2 586 kr, 23 köp, CPA 63–145, 87,5 % av bedömbart vinstbidrag |
 | **Trassel-copyn**: "Trassliga fiskespön i båten – igen? / Den här lilla klämman löser det på 1 sekund / ✅×3 / Beställ ditt 4-pack" | Bevisad (23 köp bakom exakt denna text) | Återanvänd verbatim där det går |
 | **Engelskt tal/text i råklipp är inget hinder för svensk publik** | Ägarinput (Axel 2026-08-21: "videon på engelska går bäst") + PD_EXTRA-datan | Kräv aldrig omdubbning av råklipp; svensk copy bär budskapet i primärtexten |
+| **VoC: "hårsnoddar" är fulhacket kunderna faktiskt använder** | ÄKTA VoC — Axels research bland fiskande vänner 2026-08-21: "man strular alltid med hårsnoddar och sånt för att hålla ihop spöna, det är så jävla jobbigt" | Konflikttyp A (fulhacket som fiende). Första riktiga kundspråket för produkten — testas i PD_18. Använd ordet "hårsnodd", inte "gummiband", i copy |
 | Problem/lösning-vinkeln (trassel) slår offer-vinkeln | Hypotes (1 CS-annons som jämförelse) | CS CPA 143,80 = PD-nivå, ingen edge av "rabatt" |
 | Hold är låg (6–9 %) men CVR hög (LPV→köp 3,4–7,5 %) → retention är INTE flaskhalsen | Hypotes | Kort demo räcker; sälj inte story |
 
