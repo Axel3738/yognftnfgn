@@ -1,0 +1,27 @@
+# MATSTRUMP_alla_identity_slideshow_envar_v1
+
+**Concept:** One box per person in the family — and proof they actually get worn.
+**Delivery file:** `MATSTRUMP_alla_identity_slideshow_envar_v1_9x16.mp4`
+
+## Rules
+
+- **Format: 9:16 only** (1080×1920).
+- Slideshow of still photos. ~2 s per slide, end card ~2.5 s. Hard cuts. Total 12–15 s.
+- **Music on the whole video — required.** Calm, no lyrics, license-safe for Meta ads. Editor picks the track.
+- Text: simple white text, subtle shadow/gradient if needed. Keep inside middle 80 % of frame height. The Swedish lines below are FINAL COPY — place them exactly, never translate.
+- **All images must be hyperrealistic** — they must read as real phone photos. Use the provided images as-is; any replacement must match that hyperreal phone-photo look. No cartoon, no gloss, no obvious AI look.
+- Musts: tick the **AI-content disclosure in Ads Manager** (all images are AI-generated — required, not optional). Never caption anything as customer photos. No Christmas images. No claims beyond what's written here.
+
+## Slides
+
+| # | Image | Swedish text (use exactly) | English meaning |
+|---|---|---|---|
+| 1 | matstrumpor_56_alla_valjer.jpg | En låda per person i familjen | One box per person in the family |
+| 2 | matstrumpor_51_alla_namnlappar.jpg | Namnlapp på varje låda | A name tag on every box |
+| 3 | matstrumpor_23_pizza_kartonger.jpg *(keep a real pizza box in frame next to it)* | Ligger i högen med riktig pizza | Sits in the pile with real pizza |
+| 4 | matstrumpor_43_donut_fika.jpg | Bredvid kanelbullarna på fikabordet | Next to the cinnamon buns on the fika table |
+| 5 | matstrumpor_53_alla_byralada.jpg | Bor i lådan med de vanliga | Lives in the drawer with the ordinary ones |
+| 6 | matstrumpor_52_alla_fotter_soffan.jpg | Var och en har sin sort | Each person has their own kind |
+| 7 | same image, held — END CARD | Fyra sorter. Välj en var. / matstrumpor.se | Four styles. Choose one for each. / matstrumpor.se |
+
+No prices in this ad.
