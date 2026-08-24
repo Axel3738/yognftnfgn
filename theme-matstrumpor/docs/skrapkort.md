@@ -40,13 +40,22 @@ inte KLUBB10 (och inte GLÖMD).
 kan aldrig staplas på ett paketpris — kassan tar den ena eller den andra.
 Det står i popupens finstilt. Lova aldrig något annat i copy.
 
-## Minnet (localStorage `ms-skrap`)
+## Minnet — två lager
+
+**Besöksspärren** (`sessionStorage` `ms-skrap-besok`): popupen visas **högst en
+gång per besök**. Märket sätts i samma stund den öppnas — inte när den stängs.
+
+**Mellan besök** (`localStorage` `ms-skrap`):
 
 | Värde | Betyder |
 |---|---|
 | `klar` | prenumerant — visas aldrig igen |
 | `skrapad` | skrapade klart men mejlade inte — mejlsteget återkommer nästa besök |
-| `vila:<ms>` | stängde utan att gå med — vilar i valt antal dagar (standard 3) |
+| `vila:<ms>` | aktivt nej tack — vilar i valt antal dagar (standard 3) |
+| `visad:<ms>` | sedd men obesvarad — vilar lika länge som ett nej |
+
+Postat formulär (`posted_successfully?`) och formulärfel kollas **före**
+besöksspärren, annars skulle kunden som just mejlat aldrig få se sin kod.
 
 ## Fallgropar som redan är lösta
 
@@ -56,6 +65,13 @@ Det står i popupens finstilt. Lova aldrig något annat i copy.
   koordinatkollen mot `getBoundingClientRect()` — bara äkta bakgrundsklick
   stänger. (I fullskärmsläget finns ingen bakgrund alls, så kollen är
   vilande — men den skyddar om dialogen någon gång görs mindre igen.)
+- **Popupen kom tillbaka på varje ny sida (2026-08-24, Axel på skarp sajt).**
+  Minnet skrevs bara i `close`-lyssnaren. Kunden som ser popupen och klickar
+  vidare till en produktsida stänger aldrig något — inget sparades, och efter
+  7 s på nästa sida öppnades den igen. Fixen är två spärrar: `visad:<tid>`
+  skrivs i samma stund popupen öppnas, och en sessionsflagga stoppar den helt
+  under resten av besöket. Regeln som sitter kvar: **skriv minnet när något
+  visas, inte när någon svarar** — de flesta svarar aldrig.
 - **Dawns fokusring gjorde krysset till en vit låda.** `showModal()`
   fokuserar första fokuserbara elementet = stängkrysset, och Dawn målar en
   vit ring + outline på fokus. Dialogen har `tabindex="-1"` och tar själv

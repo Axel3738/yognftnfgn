@@ -16,10 +16,16 @@
   inget som kassan inte håller. Shopify tar EN kod per köp, så den kan inte
   kombineras med paketpriserna (som också är koder) — det står i finstilten.
 
-  Minnet (localStorage ms-skrap):
-    'klar'        prenumerant, visa aldrig igen
-    'skrapad'     skrapade klart men mejlade inte — visa mejlsteget nästa gång
-    'vila:<ms>'   stängde utan att gå med — vila i valt antal dagar
+  Minnet, två lager:
+    sessionStorage 'ms-skrap-besok'  Sedd en gång = klart för det besöket.
+      Sätts i samma stund som popupen öppnas, inte när den stängs. Kunden
+      som bara klickar vidare stänger aldrig något — utan den här spärren
+      möter samma popup hen på varje ny sida i butiken.
+    localStorage 'ms-skrap'          Minnet mellan besök:
+      'klar'        prenumerant, visa aldrig igen
+      'skrapad'     skrapade men mejlade inte — mejlsteget nästa besök
+      'vila:<ms>'   aktivt nej tack — vila i valt antal dagar
+      'visad:<ms>'  sedd men obesvarad — vilar lika länge som ett nej
 {%- endcomment -%}
 {%- if section.settings.visible -%}
 {%- liquid
@@ -260,9 +266,14 @@
     if (!ruta || !ruta.showModal) return;
 
     var NYCKEL = 'ms-skrap';
+    var BESOK = 'ms-skrap-besok';
     var VILA_MS = Number(ruta.dataset.vilodagar || 3) * 86400000;
     function minns() { try { return localStorage.getItem(NYCKEL) || ''; } catch (e) { return ''; } }
     function spara(v) { try { localStorage.setItem(NYCKEL, v); } catch (e) { /* privat läge */ } }
+    // Besöksspärren lever i sessionStorage: den följer med mellan sidbyten
+    // i samma flik men nollas när kunden kommer tillbaka en annan gång.
+    function visadIBesoket() { try { return sessionStorage.getItem(BESOK) === '1'; } catch (e) { return false; } }
+    function markeraBesok() { try { sessionStorage.setItem(BESOK, '1'); } catch (e) { /* privat läge */ } }
 
     function steg(namn) {
       ruta.querySelectorAll('[data-ms-steg]').forEach(function (el) {
@@ -372,12 +383,21 @@
       // showModal fokuserar annars stängkrysset — då lyser temats fokusring
       // upp krysset som det första man ser. Dialogen tar fokuset i stället.
       ruta.focus();
+
+      // Minnet skrivs HÄR, i samma stund som kunden får se popupen — inte
+      // först när den stängs. Kunden som bara klickar vidare till nästa sida
+      // stänger aldrig något, och utan den här raden mötte samma popup hen
+      // på varje ny sida.
+      markeraBesok();
+      var f = minns();
+      if (f !== 'klar' && f !== 'skrapad' && f.indexOf('vila:') !== 0) spara('visad:' + Date.now());
     }
 
     // Stängning utan medlemskap = vila. Klart läge förblir klart.
     function vilaEllerKlar() {
       if (minns() === 'klar') return;
       if (minns() === 'skrapad') return; // mejlsteget återkommer nästa besök
+      // Aktivt nej väger tyngre än 'visad' och startar om vilan.
       spara('vila:' + Date.now());
     }
     ruta.querySelector('[data-ms-skrap-stang]').addEventListener('click', function () { ruta.close(); });
@@ -409,10 +429,19 @@
       return;
     }
 
+    // Sedd en gång under besöket = klart för i dag. Gäller ALLA lägen, så
+    // popupen aldrig möter samma kund två gånger på en shoppingrunda.
+    if (visadIBesoket()) return;
+
     if (lage === 'klar') return;
     if (lage.indexOf('vila:') === 0) {
       var sedan = Number(lage.slice(5));
       if (Date.now() - sedan < VILA_MS) return;
+    }
+    // Sedd men obesvarad i ett tidigare besök: vila lika länge som ett nej.
+    if (lage.indexOf('visad:') === 0) {
+      var sett = Number(lage.slice(6));
+      if (Date.now() - sett < VILA_MS) return;
     }
 
     setTimeout(function () {

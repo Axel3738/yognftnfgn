@@ -10,9 +10,12 @@
     med till Klaviyo/Mailchimp om butiken har synk. Sist visas koden med en
     knapp som lägger den i kassan automatiskt.
 
-    Minne per besökare (localStorage): prenumerant ser den aldrig igen,
-    "stängde utan att gå med" vilar i valfritt antal dagar, "skrapade men
-    mejlade inte" får mejlsteget direkt nästa besök. Mjuk entré på 0,28 s,
+    Minne per besökare: popupen visas HÖGST EN GÅNG per besök — märket
+    sätts i samma stund den öppnas, inte när den stängs, annars möter den
+    kunden på varje ny sida hen klickar sig till. Mellan besök:
+    prenumerant ser den aldrig igen, "stängde utan att gå med" och "sedd
+    men obesvarad" vilar i valfritt antal dagar, "skrapade men mejlade
+    inte" får mejlsteget direkt nästa besök. Mjuk entré på 0,28 s,
     liten pop på vinsten, och allt stängs av för den som bett sin telefon
     om mindre rörelse (prefers-reduced-motion).
 
@@ -276,9 +279,14 @@
     if (!ruta || !ruta.showModal) return;
 
     var NYCKEL = 'sk-skrapkort';
+    var BESOK = 'sk-skrapkort-besok';
     var VILA_MS = Number(ruta.dataset.vilodagar || 3) * 86400000;
     function minns() { try { return localStorage.getItem(NYCKEL) || ''; } catch (e) { return ''; } }
     function spara(v) { try { localStorage.setItem(NYCKEL, v); } catch (e) { /* privat läge */ } }
+    // Besöksspärren lever i sessionStorage: den följer med mellan sidbyten
+    // i samma flik men nollas när kunden kommer tillbaka en annan gång.
+    function visadIBesoket() { try { return sessionStorage.getItem(BESOK) === '1'; } catch (e) { return false; } }
+    function markeraBesok() { try { sessionStorage.setItem(BESOK, '1'); } catch (e) { /* privat läge */ } }
 
     function steg(namn) {
       ruta.querySelectorAll('[data-sk-steg]').forEach(function (el) {
@@ -388,6 +396,14 @@
       // showModal fokuserar annars stängkrysset — då lyser temats fokusring
       // upp krysset som det första man ser. Dialogen tar fokuset i stället.
       ruta.focus();
+
+      // Minnet skrivs HÄR, i samma stund som kunden får se popupen — inte
+      // först när den stängs. Kunden som bara klickar vidare till nästa sida
+      // stänger aldrig något, och utan den här raden mötte samma popup hen
+      // på varje ny sida i butiken.
+      markeraBesok();
+      var f = minns();
+      if (f !== 'klar' && f !== 'skrapad' && f.indexOf('vila:') !== 0) spara('visad:' + Date.now());
     }
 
     // Stängning utan medlemskap = vila. Klart läge förblir klart.
@@ -426,10 +442,19 @@
       return;
     }
 
+    // Sedd en gång under besöket = klart för i dag. Gäller ALLA lägen, så
+    // popupen aldrig möter samma kund två gånger på en shoppingrunda.
+    if (visadIBesoket()) return;
+
     if (lage === 'klar') return;
     if (lage.indexOf('vila:') === 0) {
       var sedan = Number(lage.slice(5));
       if (Date.now() - sedan < VILA_MS) return;
+    }
+    // Sedd men obesvarad i ett tidigare besök: vila lika länge som ett nej.
+    if (lage.indexOf('visad:') === 0) {
+      var sett = Number(lage.slice(6));
+      if (Date.now() - sett < VILA_MS) return;
     }
 
     setTimeout(function () {
