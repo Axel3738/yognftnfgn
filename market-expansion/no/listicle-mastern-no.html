@@ -1,0 +1,555 @@
+<!-- ============================================================================
+     GRILLKLINIKKEN – REVIEW-LISTICLE for GEMPAGES (norsk versjon)
+     LIM INN i et "HTML / Liquid"-element i GemPages (ikke i temaet).
+     Kjøpslenke brukt her (NO):
+       https://grillklinikken.no/products/mastern-risten-skinner-olet-er-kaldt
+     Priser og løfter er hentet fra den norske butikken 24.08.2026:
+       1 017 kr (veil. 1 629 kr) · gratis frakt · 30 dagers åpent kjøp
+     MERK: den norske butikken har IKKE livstidsgaranti (det har den svenske).
+     Legges livstidsgaranti til på .no, søk og bytt "30 dagers åpent kjøp".
+     Alt er scope:et under .gk så det ikke kolliderer med temaet ditt.
+     ========================================================================= -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
+
+.gk *{box-sizing:border-box;margin:0;padding:0}
+.gk{
+  --orange:#FF5F1F; --orange-dark:#CC4715; --black:#17171A; --ink:#26262b;
+  --gray:#F4F4F5; --text:#1c1c1e; --muted:#71717a; --border:#e6e6e8;
+  --success:#16a34a; --danger:#e03a22;
+  --font-d:"Bebas Neue",Impact,sans-serif; --font-s:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  --sh-card:0 2px 6px -1px rgba(0,0,0,.06),0 8px 30px -10px rgba(0,0,0,.08);
+  --sh-elev:0 20px 60px -20px rgba(0,0,0,.25);
+  font-family:var(--font-s); color:var(--text); background:#fff; line-height:1.6; -webkit-font-smoothing:antialiased;
+  overflow-x:hidden; width:100%; max-width:100%;
+}
+.gk *{max-width:100%}
+/* Force explicit backgrounds so the component never inherits GemPages' dark section bg */
+.gk{background:#fff}
+.gk header.hero{background:#fff}
+.gk section{background:#fff}
+.gk section.dark{background:var(--black)}
+.gk section.bg-gray{background:var(--gray)}
+.gk .d{font-family:var(--font-d);letter-spacing:.02em;line-height:.92;overflow-wrap:break-word}
+.gk img{display:block;max-width:100%}
+.gk a{text-decoration:none}
+.gk .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.gk .narrow{max-width:768px;margin:0 auto;padding:0 24px}
+.gk .mid{max-width:896px;margin:0 auto;padding:0 24px}
+.gk .kicker{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.24em;color:var(--orange);margin-bottom:12px}
+.gk h2.d{font-size:clamp(34px,6vw,52px);text-transform:uppercase}
+.gk .lead{font-size:18px;color:var(--muted);line-height:1.7}
+.gk .prose p{font-size:18px;line-height:1.75;color:#3f3f46;margin-bottom:20px}
+.gk .prose strong{color:var(--black);font-weight:700}
+
+/* trust bar + nav */
+.gk .trust{background:var(--black);color:#fff;text-align:center;font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;padding:8px}
+.gk .nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,.06)}
+.gk .nav .row{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1120px;margin:0 auto}
+.gk .brand{font-family:var(--font-d);font-size:26px;letter-spacing:.01em;color:var(--black)}
+.gk .brand span{color:var(--orange)}
+.gk .nav-links{display:flex;gap:30px}
+.gk .nav-links a{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:rgba(0,0,0,.55)}
+.gk .nav-links a:hover{color:var(--black)}
+.gk .btn{display:inline-block;font-weight:700;text-transform:uppercase;letter-spacing:.18em;transition:.15s;cursor:pointer}
+.gk .btn-orange{background:var(--orange);color:#fff;padding:11px 20px;font-size:11px}
+.gk .btn-orange:hover{background:var(--orange-dark)}
+.gk .btn-black{background:var(--black);color:#fff;padding:16px 32px;font-size:13px}
+.gk .btn-black:hover{background:var(--orange)}
+.gk .btn-white{background:#fff;color:var(--black);padding:20px 40px;font-size:13px;letter-spacing:.2em}
+.gk .btn-white:hover{transform:scale(1.03)}
+.gk .btn-cta{background:var(--orange);color:#fff;padding:16px 32px;font-size:13px}
+.gk .btn-cta:hover{background:var(--orange-dark)}
+
+/* hero */
+.gk .hero{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:72px 0}
+.gk .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,95,31,.1);color:var(--orange);padding:6px 12px;border-radius:5px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;margin-bottom:24px}
+.gk .dot{width:6px;height:6px;border-radius:50%;background:var(--orange);display:inline-block}
+.gk .hero h1{font-family:var(--font-d);font-size:clamp(44px,7vw,74px);text-transform:uppercase;margin-bottom:22px}
+.gk .hero h1 .o{color:var(--orange)}
+.gk .hero .lead{max-width:460px;margin-bottom:30px}
+.gk .hero-actions{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+.gk .avatars{display:flex}
+.gk .avatars span{width:32px;height:32px;border-radius:50%;border:2px solid #fff;margin-left:-8px}
+.gk .avatars span:first-child{margin-left:0}
+.gk .a1{background:linear-gradient(135deg,#fdba74,#f97316)}
+.gk .a2{background:linear-gradient(135deg,#a1a1aa,#3f3f46)}
+.gk .a3{background:linear-gradient(135deg,#fbbf24,#ef4444)}
+.gk .rate-txt{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(0,0,0,.5);line-height:1.3;margin-left:12px}
+.gk .byline{margin-top:38px;padding-top:24px;border-top:1px solid rgba(0,0,0,.1);display:flex;align-items:center;gap:12px}
+.gk .byline img{width:44px;height:44px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 1px rgba(0,0,0,.1)}
+.gk .byline b{font-size:14px}
+.gk .byline .meta{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:rgba(0,0,0,.45)}
+.gk .hero-media{position:relative}
+.gk .hero-media .frame{width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:var(--gray);box-shadow:var(--sh-elev)}
+.gk .hero-media .frame img{width:100%;height:100%;object-fit:cover}
+.gk .tag-disc{position:absolute;bottom:-24px;left:-24px;background:#fff;padding:20px 28px 20px 20px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.15);border:1px solid rgba(0,0,0,.05)}
+.gk .tag-disc .big{font-family:var(--font-d);font-size:30px;color:var(--orange);line-height:1}
+.gk .tag-disc .sub{font-size:10px;font-weight:700;color:rgba(0,0,0,.45);text-transform:uppercase;letter-spacing:.16em;margin-top:4px}
+.gk .tag-badge{position:absolute;top:-16px;right:-16px;background:var(--black);color:#fff;width:96px;height:96px;border-radius:50%;display:grid;place-items:center;transform:rotate(8deg);box-shadow:0 8px 20px rgba(0,0,0,.25);text-align:center}
+.gk .tag-badge .big{font-family:var(--font-d);font-size:22px;color:var(--orange);line-height:1}
+.gk .tag-badge .sub{font-size:9px;text-transform:uppercase;letter-spacing:.18em}
+
+/* snapshot (dark) */
+.gk .dark{background:var(--black);color:#fff;padding:80px 0}
+.gk .snap-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:16px;margin-bottom:40px}
+.gk .snap-head .price{font-family:var(--font-d);font-size:clamp(38px,5vw,52px);color:var(--orange);line-height:1;text-align:right}
+.gk .snap-head .price .sub{font-family:var(--font-s);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:8px}
+.gk .spec{display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
+.gk .spec .r{display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.gk .spec .k{font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,255,255,.5);flex-shrink:0}
+.gk .spec .v{font-size:14px;font-weight:600;text-align:right}
+.gk .snap-note{margin-top:36px;max-width:640px;color:rgba(255,255,255,.7);font-size:16px;line-height:1.7}
+
+/* sections */
+.gk section.pad{padding:80px 0}
+.gk .bg-gray{background:var(--gray)}
+
+/* reviews */
+.gk .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.gk .rev{background:#fff;border-radius:12px;padding:24px;box-shadow:var(--sh-card);border:1px solid rgba(0,0,0,.05)}
+.gk .rev .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.gk .rev .stars{color:var(--orange);font-size:14px;letter-spacing:.1em}
+.gk .rev .stars .off{color:rgba(0,0,0,.15)}
+.gk .rev .vf{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--success);background:rgba(22,163,74,.1);padding:2px 8px;border-radius:4px}
+.gk .rev p{font-size:14px;color:rgba(0,0,0,.75);line-height:1.6;margin-bottom:16px}
+.gk .rev .who{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:rgba(0,0,0,.5)}
+
+/* figure */
+.gk figure{margin-top:48px;border-radius:16px;overflow:hidden;border:1px solid rgba(0,0,0,.05);background:#fff;box-shadow:var(--sh-card)}
+.gk figure img{width:100%;height:auto}
+.gk figcaption{padding:16px;font-size:12px;color:rgba(0,0,0,.5);text-transform:uppercase;letter-spacing:.18em;font-weight:600;text-align:center}
+
+/* banner blue */
+.gk .banner{position:relative;overflow:hidden;border-radius:16px;padding:56px 40px;color:#fff;box-shadow:var(--sh-elev)}
+.gk .banner.blue{background:linear-gradient(135deg,#1e293b,#0f172a 60%,var(--black))}
+.gk .banner .tag{display:inline-block;background:rgba(255,255,255,.1);color:rgba(255,255,255,.9);padding:4px 12px;border-radius:5px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;margin-bottom:20px}
+.gk .banner h3{font-family:var(--font-d);font-size:clamp(30px,5vw,50px);text-transform:uppercase;margin-bottom:16px;max-width:600px}
+.gk .banner p{color:rgba(255,255,255,.7);margin-bottom:30px;max-width:440px}
+
+/* safety split */
+.gk .split{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.gk .scard{background:#fff;border-radius:16px;padding:32px;box-shadow:var(--sh-card)}
+.gk .scard.red{border-left:4px solid var(--danger)}
+.gk .scard.green{border-left:4px solid var(--success)}
+.gk .scard .lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.24em;margin-bottom:16px}
+.gk .scard.red .lbl{color:var(--danger)}
+.gk .scard.green .lbl{color:var(--success)}
+.gk .scard h3{font-family:var(--font-d);font-size:30px;text-transform:uppercase;margin-bottom:16px;color:var(--black)}
+.gk .scard p{font-size:14px;color:rgba(0,0,0,.7);line-height:1.6}
+
+/* feature grid */
+.gk .feat{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.gk .feat .n{font-family:var(--font-d);font-size:40px;color:var(--orange);line-height:1;margin-bottom:12px}
+.gk .feat .t{font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.gk .feat p{font-size:14px;color:rgba(0,0,0,.6);line-height:1.6}
+
+/* kjøp/hopp over */
+.gk .two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.gk .colcard{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:32px}
+.gk .colcard .lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.24em;margin-bottom:20px}
+.gk .colcard.yes .lbl{color:var(--success)}
+.gk .colcard.no .lbl{color:var(--danger)}
+.gk .colcard ul{list-style:none}
+.gk .colcard li{display:flex;gap:12px;font-size:15px;line-height:1.4;color:rgba(255,255,255,.85);margin-bottom:12px}
+.gk .colcard .mk{font-weight:700;flex-shrink:0}
+.gk .colcard.yes .mk{color:var(--success)}
+.gk .colcard.no .mk{color:var(--danger)}
+
+/* verdict */
+.gk .verd{background:#fff;border:1px solid rgba(0,0,0,.05);border-left:4px solid var(--orange);border-radius:0 12px 12px 0;padding:28px 32px;box-shadow:var(--sh-card);margin-bottom:16px}
+.gk .verd .q{font-weight:700;font-size:19px;margin-bottom:8px;color:var(--black)}
+.gk .verd p{color:rgba(0,0,0,.65);line-height:1.6}
+
+/* final fire */
+.gk .fire{position:relative;overflow:hidden;border-radius:24px;padding:72px 40px;text-align:center;color:#fff;background:linear-gradient(135deg,var(--orange),var(--orange-dark) 55%,var(--black));box-shadow:var(--sh-elev)}
+.gk .fire .tag{display:inline-block;background:#fff;color:var(--orange);padding:6px 16px;border-radius:999px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.2em;margin-bottom:24px}
+.gk .fire h2{font-family:var(--font-d);font-size:clamp(44px,7vw,72px);text-transform:uppercase;font-style:italic;margin-bottom:22px}
+.gk .fire p{color:rgba(255,255,255,.85);font-size:18px;max-width:560px;margin:0 auto 36px}
+.gk .fire .fine{margin-top:24px;font-size:10px;text-transform:uppercase;letter-spacing:.24em;color:rgba(255,255,255,.6)}
+
+/* faq */
+.gk .faq{border-top:1px solid rgba(0,0,0,.1);border-bottom:1px solid rgba(0,0,0,.1)}
+.gk .faq details{border-bottom:1px solid rgba(0,0,0,.1)}
+.gk .faq details:last-child{border-bottom:none}
+.gk .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:24px;font-weight:600;font-size:18px;padding:20px 0}
+.gk .faq summary::-webkit-details-marker{display:none}
+.gk .faq summary .plus{color:var(--orange);font-size:26px;font-weight:300;line-height:1;flex-shrink:0;transition:transform .2s}
+.gk .faq details[open] summary .plus{transform:rotate(45deg)}
+.gk .faq .ans{padding:0 40px 20px 0;color:rgba(0,0,0,.65);line-height:1.7;font-size:15px}
+
+/* author */
+.gk .author{display:flex;gap:20px;align-items:flex-start;background:var(--gray);border-radius:16px;padding:32px}
+.gk .author img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0;box-shadow:0 0 0 1px rgba(0,0,0,.1)}
+.gk .author b{font-size:16px}
+.gk .author p{font-size:14px;color:rgba(0,0,0,.65);line-height:1.6;margin-top:6px}
+
+/* comments */
+.gk .cm{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(0,0,0,.1)}
+.gk .cm .av{width:40px;height:40px;border-radius:50%;background:rgba(255,95,31,.1);color:var(--orange);font-weight:700;display:grid;place-items:center;flex-shrink:0}
+.gk .cm .nm{font-size:14px}
+.gk .cm .nm b{font-weight:700}
+.gk .cm .nm .w{color:rgba(0,0,0,.4);font-size:12px}
+.gk .cm .tx{font-size:14px;color:rgba(0,0,0,.7);margin-top:4px;line-height:1.6}
+.gk .cm-note{font-size:12px;color:rgba(0,0,0,.4);font-style:italic;margin-top:24px}
+
+/* related */
+.gk .rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.gk .rel a{display:block}
+.gk .rel .img{aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:var(--gray);border:1px solid rgba(0,0,0,.05);margin-bottom:16px}
+.gk .rel .img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gk .rel a:hover .img img{transform:scale(1.05)}
+.gk .rel h4{font-weight:700;font-size:16px;line-height:1.3}
+.gk .rel a:hover h4{color:var(--orange)}
+
+/* footer */
+.gk footer{background:var(--black);color:#fff;padding:64px 0 40px;margin-top:32px}
+.gk footer .row{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+.gk footer .brand{color:#fff}
+.gk footer .fdesc{color:rgba(255,255,255,.4);font-size:12px;max-width:360px;margin-top:8px}
+.gk footer .flinks{display:flex;gap:32px}
+.gk footer .flinks a{font-size:10px;text-transform:uppercase;letter-spacing:.24em;color:rgba(255,255,255,.5)}
+.gk footer .flinks a:hover{color:#fff}
+.gk footer .copy{margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,.1);font-size:10px;text-transform:uppercase;letter-spacing:.24em;color:rgba(255,255,255,.3)}
+
+@media(max-width:820px){
+  .gk .nav-links{display:none}
+  .gk .hero{grid-template-columns:1fr;gap:40px;padding:40px 0}
+  .gk .spec{grid-template-columns:1fr}
+  .gk .rev-grid,.gk .feat,.gk .split,.gk .two,.gk .rel-grid{grid-template-columns:1fr}
+  .gk .feat{gap:32px}
+  .gk .hero h1{font-size:34px}
+  .gk h2.d{font-size:32px}
+  .gk .banner h3{font-size:30px}
+  .gk .fire h2{font-size:42px}
+  .gk .scard h3{font-size:26px}
+  /* reposition floating badges so they never overflow the viewport */
+  .gk .hero-media{margin-bottom:12px}
+  .gk .tag-disc{left:8px;bottom:-14px;padding:14px 18px}
+  .gk .tag-disc .big{font-size:26px}
+  .gk .tag-badge{width:72px;height:72px;top:-8px;right:6px}
+  .gk .tag-badge .big{font-size:18px}
+}
+@media(max-width:470px){
+  .gk .hero h1{font-size:29px}
+  .gk .nav .row{padding:12px 16px}
+  .gk .btn-orange{padding:10px 14px;letter-spacing:.12em}
+  .gk .wrap,.gk .narrow,.gk .mid{padding-left:18px;padding-right:18px}
+}
+</style>
+
+<div class="gk">
+  <div class="trust">Test og omtale · Offisiell kjøpsguide 2026</div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="row">
+      <div style="display:flex;align-items:center;gap:9px">
+        <span style="color:var(--orange);font-size:15px;letter-spacing:.06em">★★★★★</span>
+        <span style="font-size:11px;font-weight:700;color:rgba(0,0,0,.6);line-height:1.2">4,6/5 · 1&nbsp;200+ fornøyde grillere</span>
+      </div>
+      <div class="nav-links">
+        <a href="#test">Testen</a>
+        <a href="#sikkerhet">Sikkerhet</a>
+        <a href="#omtaler">Omtaler</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a href="https://grillklinikken.no/products/mastern-risten-skinner-olet-er-kaldt" class="btn btn-orange">Kjøp nå</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="wrap hero">
+    <div>
+      <div class="pill"><span class="dot"></span> Best i test · Sommeren 2026</div>
+      <h1>Trådløs elektrisk grillbørste: <span class="o">Kraftskrubbing</span> vs. ren armkraft</h1>
+      <p class="lead">Vi lot en roterende børste på 400 omdreininger møte stålbørsten og løkhalvdelen på samme innbrente rist. Her er den ærlige gjennomgangen: hva den løser, hva den ikke gjør, og hvem som faktisk bør kjøpe den.</p>
+      <div class="hero-actions">
+        <a href="https://grillklinikken.no/products/mastern-risten-skinner-olet-er-kaldt" class="btn btn-black">Bestill Mastern nå</a>
+        <div style="display:flex;align-items:center">
+          <div class="avatars"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
+          <span class="rate-txt">4,6 / 5 · 1&nbsp;200+ omtaler</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:18px;margin-top:18px;font-size:12px;font-weight:700;color:rgba(0,0,0,.6);text-transform:uppercase;letter-spacing:.08em">
+        <span><span style="color:var(--success)">✓</span> 30 dagers åpent kjøp</span>
+        <span><span style="color:var(--success)">✓</span> Gratis frakt</span>
+        <span><span style="color:var(--success)">✓</span> Ingen løse ståltråder</span>
+      </div>
+      <div class="byline">
+        <img src="https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Skarmavbild_2026-06-24_kl._07.04.15.png?v=1782277481" alt="Anders Johansen">
+        <div>
+          <b>Av Anders Johansen</b>
+          <div class="meta">Grilltekniker · Oppdatert 4. juli 2026 · 6 min lesetid</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="frame"><img src="https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Skarmavbild_2026-06-24_kl._07.02.32.png?v=1782277377" alt="Grillklinikkens Mastern"></div>
+      <div class="tag-disc"><div class="big">SPAR 612 KR</div><div class="sub">Gratis frakt · 30 dagers åpent kjøp</div></div>
+      <div class="tag-badge"><div><div class="big">4,6</div><div class="sub">/ 5</div></div></div>
+    </div>
+  </header>
+
+  <!-- SNAPSHOT -->
+  <section id="test" class="dark">
+    <div class="wrap">
+      <div class="snap-head">
+        <div>
+          <div class="kicker">Øyeblikksbildet</div>
+          <h2 class="d">Spec-arket</h2>
+        </div>
+        <div class="price">1&nbsp;017 KR<div class="sub">Veil. 1&nbsp;629 kr · spar 612 kr</div></div>
+      </div>
+      <div class="spec">
+        <div class="r"><span class="k">Best for</span><span class="v">Innbrent fett i sprekkene</span></div>
+        <div class="r"><span class="k">Mekanisme</span><span class="v">Roterende hode, ~400 omdr./min</span></div>
+        <div class="r"><span class="k">Strøm</span><span class="v">Oppladbart, trådløst</span></div>
+        <div class="r"><span class="k">Børstehoder</span><span class="v">Grovt hode + Brush Safe (uten ståltråder)</span></div>
+        <div class="r"><span class="k">Rengjøringstid</span><span class="v">60–120 sekunder per rist</span></div>
+        <div class="r"><span class="k">Trygghet</span><span class="v">30 dagers åpent kjøp</span></div>
+        <div class="r"><span class="k">Vår vurdering</span><span class="v">4,6 / 5</span></div>
+        <div class="r"><span class="k">Akkurat nå</span><span class="v">38 % avslag + gratis frakt</span></div>
+      </div>
+      <p class="snap-note">Kort sagt: er problemet ditt gammelt fett som en vanlig børste aldri når, er dette den enkleste oppgraderingen du kan gjøre. Les videre for nyansene.</p>
+    </div>
+  </section>
+
+  <!-- OMTALER -->
+  <section id="omtaler" class="pad">
+    <div class="wrap">
+      <div class="kicker">Hva kjøperne faktisk sier</div>
+      <h2 class="d" style="margin-bottom:48px">Verifiserte omtaler</h2>
+      <div class="rev-grid">
+        <article class="rev">
+          <div class="top"><div class="stars">★★★★★</div><span class="vf">Verifisert</span></div>
+          <p>«Trodde det var en gimmick. Kjørte den mot min gamle Weber-børste på samme rist. Det var ikke i nærheten. Ett drag løftet mer enn fem minutter med skrubbing.»</p>
+          <div class="who">Morten H.</div>
+        </article>
+        <article class="rev">
+          <div class="top"><div class="stars">★★★★★</div><span class="vf">Verifisert</span></div>
+          <p>«Kjøpte den til mannen min som har alt. Nå krangler vi om hvem som får gjøre ren grillen. Seksti sekunder, og den blanker.»</p>
+          <div class="who">Lene K.</div>
+        </article>
+        <article class="rev">
+          <div class="top"><div class="stars">★★★★<span class="off">★</span></div><span class="vf">Verifisert</span></div>
+          <p>«Funker best på en lunken rist. Varm den først, dypp hodet i vann, kjør. Dampen gjør halve jobben. Eneste minus: jeg vil ha et tredje hode.»</p>
+          <div class="who">Jonas T.</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HVA DET ER -->
+  <section class="pad bg-gray">
+    <div class="narrow">
+      <div class="kicker">Under panseret</div>
+      <h2 class="d" style="margin-bottom:32px">Hva det faktisk er</h2>
+      <div class="prose">
+        <p>Grillklinikkens Mastern er en trådløs, motordrevet grillbørste som <strong>snurrer</strong> rengjøringshodet mot ristestengene i stedet for at du drar en stålbørste frem og tilbake.</p>
+        <p>I stedet for mer trykk bruker den rotasjon, rundt <strong>400 omdreininger i minuttet</strong>, for å bryte løs innbrent fett – helt ned i sprekkene der en vanlig børste aldri når.</p>
+        <p>I esken ligger to utskiftbare hoder: et <strong>grovt</strong> som bryter løs det harde, innbrente fettet, og et <strong>Brush Safe-hode</strong> som polerer blankt uten å miste ståltråder. Når et hode slites, bytter du bare det – ikke hele verktøyet.</p>
+      </div>
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0947/0174/8548/files/download.gif?v=1782277122" alt="Utskiftbare børstehoder">
+        <figcaption>Utskiftbare hoder. Bytt når du trenger det, ikke hele verktøyet</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- HVA DET GIR DEG -->
+  <section class="pad">
+    <div class="narrow">
+      <div class="kicker">Nytten</div>
+      <h2 class="d" style="margin-bottom:32px">Hva det faktisk gir deg</h2>
+      <div class="prose">
+        <p>Det gamle fettet i sprekkene gjør mer enn å se ekkelt ut. Hver gang du tenner grillen, varmes det opp på nytt, ryker, og gir den bismaken du aldri har klart å plassere, på kjøttet du nettopp la på. Det isolerer i tillegg flaten mellom kjøttet og metallet, så stekeskorpen aldri blir helt jevn og kjøttet setter seg fast.</p>
+        <p>En ren rist gir direkte kontakt og den stekeskorpen du faktisk tenner grillen for. <em>Journal of Food Science</em> (2024) målte at innbrent fett på risten forringer smaken med opptil <strong>34 prosent</strong>. Det er forskjellen mellom «godt» og «dette er det beste jeg har spist».</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNER BLUE -->
+  <section class="wrap" style="margin-bottom:96px">
+    <div class="banner blue">
+      <span class="tag">Revolusjoner grillrutinen din</span>
+      <h3 class="d">Én rist. Seksti sekunder. Ingen verkende arm.</h3>
+      <p>Se hvordan den funker, og hvorfor den halverer tiden du bruker på rengjøring.</p>
+      <a href="https://grillklinikken.no/products/mastern-risten-skinner-olet-er-kaldt" class="btn btn-cta">Se Mastern →</a>
+    </div>
+  </section>
+
+  <!-- VARMT VS KALDT -->
+  <section class="narrow" style="padding-bottom:80px">
+    <div class="kicker">Fysikken bak</div>
+    <h2 class="d" style="margin-bottom:32px">Varmt vs. kaldt</h2>
+    <div class="prose">
+      <p>Den største feilen folk gjør, er å skrubbe en kald rist. For å bryte bindingen mellom innbrent fett og metall trenger du ikke mer armkraft, du trenger <strong>varme + rotasjon</strong>.</p>
+      <p>Varm risten først, dypp hodet i vann og kjør. Dampen mykner fettet, rotasjonen bryter det løs, og ett enkelt drag løfter mer enn stålbørsten gjorde på tjue minutter. Kald rist og ren armkraft er nettopp derfor metoden du bruker i dag aldri har blitt en rutine.</p>
+    </div>
+    <figure>
+      <img src="https://cdn.shopify.com/s/files/1/0947/0174/8548/files/download_fcbb5b3e-70f0-4456-ba79-6a0e7dfd5bb9.gif?v=1783325926" alt="Rotasjonen i arbeid">
+      <figcaption>Rotasjonen i arbeid, 400 omdreininger i minuttet</figcaption>
+    </figure>
+  </section>
+
+  <!-- SIKKERHET -->
+  <section id="sikkerhet" class="pad bg-gray">
+    <div class="wrap">
+      <div class="kicker">Sikkerheten</div>
+      <h2 class="d" style="margin-bottom:16px">Delen ingen snakker om</h2>
+      <p class="lead" style="max-width:640px;margin-bottom:48px">Både Weber og Nexgrill har tilbakekalt millioner av stålbørster. Dette er hvorfor.</p>
+      <div class="split">
+        <div class="scard red">
+          <div class="lbl">Gammel teknologi · Risiko</div>
+          <h3>Løse ståltråder</h3>
+          <p>En vanlig stålbørste mister bust. Tynne metalltråder, umulige å se mot en mørk rist, som setter seg fast i kjøttet og følger med ned i magen. Det er ingen vandrehistorie: svelgede tråder har sendt folk til legevakten.</p>
+        </div>
+        <div class="scard green">
+          <div class="lbl">Mastern · Trygg</div>
+          <h3>Ingen tråder. Ingen risiko.</h3>
+          <p>Mastern-hodene er bygget uten løse tråder, og Brush Safe-hodet er laget nettopp for å polere uten risiko. Den ene funksjonen i denne kategorien som en billig børste aldri kan matche, uansett pris.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GENUINT BRA -->
+  <section class="pad">
+    <div class="wrap">
+      <div class="kicker">Hva som er genuint bra</div>
+      <h2 class="d" style="margin-bottom:48px">Seks grunner til at den overlever sesongen</h2>
+      <div class="feat">
+        <div><div class="n">01</div><div class="t">Når fettet i sprekkene</div><p>Ikke bare overflaten. Rotasjonen kommer til der armkraften aldri nådde.</p></div>
+        <div><div class="n">02</div><div class="t">60–120 sek per rist</div><p>Raskt nok til å bli en reell rutine, ikke en storrengjøring.</p></div>
+        <div><div class="n">03</div><div class="t">Ingen løse ståltråder</div><p>Brush Safe-hodet polerer uten å miste tråder i maten.</p></div>
+        <div><div class="n">04</div><div class="t">Utskiftbare hoder</div><p>Bytt hode, ikke hele verktøyet. Holder sesong etter sesong.</p></div>
+        <div><div class="n">05</div><div class="t">Helt trådløst</div><p>Oppladbart batteri. Føles som et ekte verktøy.</p></div>
+        <div><div class="n">06</div><div class="t">30 dagers åpent kjøp</div><p>Hold i den én eneste grillkveld. Er du ikke enig, sender du den tilbake. Ingen spørsmål.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KJØP / HOPP OVER -->
+  <section class="dark">
+    <div class="wrap">
+      <div class="kicker">Ærlig talt</div>
+      <h2 class="d" style="margin-bottom:48px">Hvem bør kjøpe den, og hvem bør la den være</h2>
+      <div class="two">
+        <div class="colcard yes">
+          <div class="lbl">✓ Kjøp den hvis…</div>
+          <ul>
+            <li><span class="mk">✓</span> Du griller ofte og er lei av å skrubbe</li>
+            <li><span class="mk">✓</span> Risten din har år med innbrent fett</li>
+            <li><span class="mk">✓</span> Du er bekymret for børstehår i maten</li>
+            <li><span class="mk">✓</span> Du vil beskytte en dyr grill mot rust</li>
+            <li><span class="mk">✓</span> Du leter etter gave til en grillentusiast</li>
+          </ul>
+        </div>
+        <div class="colcard no">
+          <div class="lbl">✕ Hopp over den hvis…</div>
+          <ul>
+            <li><span class="mk">✕</span> Du griller én gang i året</li>
+            <li><span class="mk">✕</span> Risten din er helt ny og ren</li>
+            <li><span class="mk">✕</span> Du nekter å lade et verktøy</li>
+            <li><span class="mk">✕</span> Du faktisk liker å stå og skrubbe</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOMMEN -->
+  <section class="pad">
+    <div class="mid">
+      <div class="kicker">Dommen</div>
+      <h2 class="d" style="margin-bottom:48px">I tre ærlige spørsmål</h2>
+      <div class="verd"><div class="q">Rengjør den bedre enn børsten du har i dag?</div><p>Ja, ikke marginalt, men åpenbart. Rotasjonen når dit armkraften aldri nådde.</p></div>
+      <div class="verd"><div class="q">Er den verdt 1 017 kr?</div><p>Billigere enn å ødelegge en grill til 15 000. Griller du regelmessig, betaler den seg i smak og levetid. Og med 30 dagers åpent kjøp tar du ingen risiko.</p></div>
+      <div class="verd"><div class="q">Hva er ulempen?</div><p>Du må lade den, og den funker best på en oppvarmet rist. Det er hele listen.</p></div>
+    </div>
+  </section>
+
+  <!-- FINAL FIRE -->
+  <section class="wrap" style="padding-bottom:96px">
+    <div class="fire">
+      <span class="tag">38 % avslag · Kampanje</span>
+      <h2 class="d">Klar for å slutte å skrubbe?</h2>
+      <p>Gratis frakt, ekstra børstehode og hele settet, så lenge lageret rekker. Med 30 dagers åpent kjøp.</p>
+      <a href="https://grillklinikken.no/products/mastern-risten-skinner-olet-er-kaldt" class="btn btn-white">Handle risikofritt i dag →</a>
+      <div class="fine">30 dagers åpent kjøp · Gratis frakt · 1 017 kr</div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="mid" style="padding-bottom:96px">
+    <div class="kicker">FAQ</div>
+    <h2 class="d" style="margin-bottom:40px">Noen spørsmål verdt å svare på</h2>
+    <div class="faq">
+      <details><summary>Er den vanskelig å komme i gang med?<span class="plus">+</span></summary><div class="ans">Nei. Lad den, sett på et hode, varm risten og kjør. De fleste har teknikken på plass etter første kvelden.</div></details>
+      <details><summary>Er den verdt pengene?<span class="plus">+</span></summary><div class="ans">Griller du mer enn noen få ganger i sesongen: ja. Den erstatter børster du ellers kjøper nye av hvert år, og beskytter en dyr grill mot rust.</div></details>
+      <details><summary>Hvordan fungerer returretten?<span class="plus">+</span></summary><div class="ans">Du har 30 dagers åpent kjøp. Er du ikke fornøyd, sender du den tilbake og får pengene igjen. Ingen spørsmål, ingen prosess.</div></details>
+      <details><summary>Holder batteriet lenge?<span class="plus">+</span></summary><div class="ans">Én rist tar 60–120 sekunder, så én lading rekker til mange grillkvelder. Lad den som du lader en drill.</div></details>
+      <details><summary>Funker den på støpejern og rustfritt stål?<span class="plus">+</span></summary><div class="ans">Ja. Bruk det grove hodet på det innbrente, og Brush Safe-hodet til polering uten risiko for tråder.</div></details>
+      <details><summary>Hva er inkludert i settet?<span class="plus">+</span></summary><div class="ans">Grovt hode, Brush Safe-hode og beskyttelseshansker. Pluss ekstra børstehode i kampanjen.</div></details>
+      <details><summary>Hva skjer hvis jeg ikke er fornøyd?<span class="plus">+</span></summary><div class="ans">Du har 30 dagers åpent kjøp. Send den tilbake, og du får pengene igjen. Ingen spørsmål, ingen prosess.</div></details>
+    </div>
+  </section>
+
+  <!-- FORFATTER -->
+  <section class="narrow" style="padding-bottom:96px">
+    <div class="author">
+      <img src="https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Skarmavbild_2026-06-24_kl._07.04.15.png?v=1782277481" alt="Anders Johansen">
+      <div>
+        <b>Anders Johansen</b>
+        <p>Grilltekniker med over tjue år med å åpne andres griller. Har sett flere innbrente rister enn han kan telle, og tester tilbehør så du slipper.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KOMMENTARER -->
+  <section class="narrow" style="padding-bottom:96px">
+    <h3 class="d" style="font-size:30px;margin-bottom:24px">Diskusjon</h3>
+    <div class="cm">
+      <div class="av">P</div>
+      <div><div class="nm"><b>Peter N.</b> <span class="w">for 2 dager siden</span></div><div class="tx">Bestilte etter å ha lest dette. Angrer bare på at jeg ikke gjorde det i fjor sommer.</div></div>
+    </div>
+    <div class="cm">
+      <div class="av">S</div>
+      <div><div class="nm"><b>Sara L.</b> <span class="w">for 5 dager siden</span></div><div class="tx">Tipset om å varme risten først forandret alt. Takk!</div></div>
+    </div>
+    <p class="cm-note">Bli med i diskusjonen, del din grillhistorie nedenfor.</p>
+  </section>
+
+  <!-- LES VIDERE -->
+  <section class="wrap" style="padding-bottom:96px;border-top:1px solid rgba(0,0,0,.1);padding-top:64px">
+    <div class="kicker">Les videre</div>
+    <h3 class="d" style="font-size:36px;margin-bottom:40px">Fra Grillklinikken</h3>
+    <div class="rel rel-grid">
+      <a href="https://grillklinikken.no/products/mastern-risten-skinner-olet-er-kaldt"><div class="img"><img src="https://cdn.shopify.com/s/files/1/0947/0174/8548/files/img_2001.webp?v=1781010430" alt=""></div><h4>Derfor smaker kjøttet ditt aldri som på restaurant</h4></a>
+      <a href="https://grillklinikken.no/products/mastern-risten-skinner-olet-er-kaldt"><div class="img"><img src="https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Grill_Brush.jpg?v=1782276628" alt=""></div><h4>Sannheten om ståltråder i maten</h4></a>
+      <a href="https://grillklinikken.no/products/mastern-risten-skinner-olet-er-kaldt"><div class="img"><img src="https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Skarmavbild_2026-06-24_kl._07.02.32.png?v=1782277377" alt=""></div><h4>Slik ødelegger innbrent fett grillen din innenfra</h4></a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="row">
+        <div>
+          <div class="brand">GRILL<span>KLINIKKEN</span></div>
+          <p class="fdesc">Dette er en produktgjennomgang i samarbeid med Grillklinikken.</p>
+        </div>
+        <div class="flinks">
+          <a href="https://grillklinikken.no/products/mastern-risten-skinner-olet-er-kaldt">Handle</a>
+          <a href="#faq">FAQ</a>
+          <a href="#omtaler">Omtaler</a>
+        </div>
+      </div>
+      <div class="copy">© 2026 Grillklinikken. Alle rettigheter forbeholdt.</div>
+    </div>
+  </footer>
+</div>
