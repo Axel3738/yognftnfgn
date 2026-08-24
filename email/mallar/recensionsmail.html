@@ -10,11 +10,13 @@
     fångas privat i stället för att bli en publik recension.
     Vill Axel hellre skicka dem till Judge.me: aktivera Judge.me:s
     "All Reviews Page" och byt LAG_LANK nedan till den sidans URL.
-  - 4–5 stjärnor → Trustpilots recensionsformulär för baverbutiken.se.
-  ⚠️ Att bara bjuda in nöjda kunder till Trustpilot strider mot Trustpilots
-  riktlinjer — Axels beslut, risken är dokumenterad i README.
 
   Ämnesrad (sätts i automatiseringen): 1, 2 eller 5 stjärnor — vilken blir det?
+  ⚠️ TRUSTPILOT SAKNAS (kontrollerat 2026-08-24): ingen av butikerna har en
+  Trustpilot-profil — evaluate-URL:en gav 404 medan ett kontrolltest mot ett
+  känt varumärke gav 200. Alla fem stjärnor pekar därför på kontaktsidan så
+  ingen kund hamnar på en död sida. När profilen är skapad: byt tillbaka de
+  två sista stjärnornas href till Trustpilot-URL:en.
 -->
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f2f2f2;">
   <tr>
@@ -43,7 +45,7 @@
           </td>
         </tr>
 
-        <!-- Stjärnraden: 1–3 → kontaktsidan (LAG_LANK), 4–5 → Trustpilot -->
+        <!-- Stjärnraden: alla stjärnor → kontaktsidan tills Trustpilot-profilen finns -->
         <tr>
           <td align="center" style="padding:24px 32px 8px 32px;">
             <table role="presentation" cellpadding="0" cellspacing="0" border="0">
@@ -51,8 +53,8 @@
                 <td style="padding:0 6px;"><a href="https://baverbutiken.se/pages/contact" target="_blank" style="font-family:Arial,Helvetica,sans-serif; font-size:40px; line-height:1; color:#dd1d1d; text-decoration:none;" aria-label="1 stjärna">&#9733;</a></td>
                 <td style="padding:0 6px;"><a href="https://baverbutiken.se/pages/contact" target="_blank" style="font-family:Arial,Helvetica,sans-serif; font-size:40px; line-height:1; color:#dd1d1d; text-decoration:none;" aria-label="2 stjärnor">&#9733;</a></td>
                 <td style="padding:0 6px;"><a href="https://baverbutiken.se/pages/contact" target="_blank" style="font-family:Arial,Helvetica,sans-serif; font-size:40px; line-height:1; color:#dd1d1d; text-decoration:none;" aria-label="3 stjärnor">&#9733;</a></td>
-                <td style="padding:0 6px;"><a href="https://se.trustpilot.com/evaluate/baverbutiken.se" target="_blank" style="font-family:Arial,Helvetica,sans-serif; font-size:40px; line-height:1; color:#dd1d1d; text-decoration:none;" aria-label="4 stjärnor">&#9733;</a></td>
-                <td style="padding:0 6px;"><a href="https://se.trustpilot.com/evaluate/baverbutiken.se" target="_blank" style="font-family:Arial,Helvetica,sans-serif; font-size:40px; line-height:1; color:#dd1d1d; text-decoration:none;" aria-label="5 stjärnor">&#9733;</a></td>
+                <td style="padding:0 6px;"><a href="https://baverbutiken.se/pages/contact" target="_blank" style="font-family:Arial,Helvetica,sans-serif; font-size:40px; line-height:1; color:#dd1d1d; text-decoration:none;" aria-label="4 stjärnor">&#9733;</a></td>
+                <td style="padding:0 6px;"><a href="https://baverbutiken.se/pages/contact" target="_blank" style="font-family:Arial,Helvetica,sans-serif; font-size:40px; line-height:1; color:#dd1d1d; text-decoration:none;" aria-label="5 stjärnor">&#9733;</a></td>
               </tr>
               <tr>
                 <td align="center" style="font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#6b6b6b; padding-top:4px;">1</td>
