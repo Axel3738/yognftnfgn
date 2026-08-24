@@ -1,7 +1,8 @@
 # Matstrumpor — slideshow briefs 010–013 · 2026-08-24
 
-En fil per annons, numrerade i creative-hubbens serie (001–009 är upptagna).
-Bilderna delas via Drive från `theme-matstrumpor/ugc-bilder/bilder/`.
+En fil per annons. Redigerarna GENERERAR bilderna själva (AI, hyperrealistiskt)
+— bildkolumnen är inspiration, inte instruktion. Produktkorrekthet är enda
+hårda regeln: riktiga produktfoton på matstrumpor.se som referens.
 
 | Nr | Fil | Meta-annonsnamn |
 |---|---|---|
@@ -11,4 +12,5 @@ Bilderna delas via Drive från `theme-matstrumpor/ugc-bilder/bilder/`.
 | 013 | `docs/briefs/013.md` | MATSTRUMP_alla_conflict_slideshow_antipresentkort_v1 |
 
 Bakgrund, copy-QA och tre-frågorstesten: `docs/matstrumpor-copy-2026-08-24.md`
-+ git-historiken.
++ git-historiken. (De 25 AI-bilderna i `theme-matstrumpor/ugc-bilder/` är
+sajtmaterial och kan användas som stilreferens, men briefsen kräver dem inte.)
