@@ -39,6 +39,7 @@
 | Rodholder_SO_4_1 | Listicle "4 hållare, 4 platser" | Redo |
 | Rodholder_CS_3_1 | Sann offer-static 289 kr/72 kr per st | Redo |
 | Rodholder_PD_10_1 | Risk/skydda ditt dyraste spö | Redo |
+| Rodholder_PD_18_H1/H2 | "Hårsnodden" — ÄKTA VoC (Axels kompisresearch): folk strular med hårsnoddar som fulhack; visa deras eget hack + klämman som ersättare. Syskon till PD_8, isolerad variabel: fienden (hårsnodd vs trasselboll). Tillagd 2026-08-24 på Axels order | Redo — ägarprioriterad |
 
 **Notion-uppladdning 2026-08-21 (`/notion`):** alla 15 annonser uppladdade till Fish rod holder-hubben som items i Draft + `Video - Pending Approval`, hela briefen inklistrad i varje item. SP_3_1-itemet är märkt ⛔ BLOCKED (väntar på riktig recensionstext), GT_3_H1 märkt Tier 3.
 

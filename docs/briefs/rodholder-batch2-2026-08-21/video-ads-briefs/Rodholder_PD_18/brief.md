@@ -22,7 +22,40 @@
 
 ## Copy
 
-<!-- COPY_PD_18 -->
+### Hooks — H1 and H2 are the two ads (line 2 IS the image instruction)
+
+| Ad | Swedish (use this) | English meaning |
+|---|---|---|
+| H1 ⭐ | En hårsnodd om spöet – igen? 🎣 / Det här är klämman som löser det på 1 sekund. | A hair tie around the rod – again? / This is the clamp that fixes it in 1 second. |
+| H2 ⭐ | Strular du med hårsnoddar för att hålla ihop spöna? 🎣 / Det här är klämman som gör slut på strulet. | Do you fumble with hair ties to hold your rods together? / This is the clamp that ends the hassle. |
+
+H2 line 1 is near-verbatim the customer research quote — strongest VoC link in the account.
+
+### Captions/VO (5-beat, use in order — same for both ads)
+
+| Beat | Swedish (use this) | English meaning |
+|---|---|---|
+| 1 Snodden ⭐ | Hårsnodden. Runt spöet. Igen. | The hair tie. Around the rod. Again. |
+| 2 Strulet ⭐ | På, av, fast i linan. | On, off, caught in the line. |
+| 3 Klämman ⭐ | Klämman. Ett klick. Klart. | The clamp. One click. Done. |
+| 4 Jämförelsen ⭐ | Snodden bort. Klämman på. | Hair tie off. Clamp on. |
+| 5 CTA ⭐ | 4-pack, 289 kr. Beställ idag. | 4-pack, 289 kr. Order today. |
+
+No shipping claim anywhere — a single 4-pack (289 kr) is below the 300 kr free-shipping threshold.
+
+### Primary text (use verbatim, both ads)
+
+| Swedish (use this) | English meaning |
+|---|---|
+| Hårsnodden runt spöet – strular igen? 🎣 | The hair tie around the rod – hassling again? |
+| Den här klämman löser det på 1 sekund. | This clamp fixes it in 1 second. |
+| ✅ Håller ihopfällda spön säkert stängda | Keeps folded rods securely closed |
+| ✅ Inga fler hårsnoddar som fastnar i linan | No more hair ties catching in the line |
+| Beställ ditt 4-pack för 289 kr och slipp snodden för gott. 👇 | Order your 4-pack for 289 kr and ditch the hair tie for good. |
+
+Headline: `Slipp hårsnoddarna` (Ditch the hair ties). CTA: SHOP NOW.
+
+Tre-frågorstest: all 14 recommended lines pass all three questions (visualize / falsify / unique) — full variant tables (A/B/C per line) were reviewed; recommendations marked ⭐ above.
 
 ## Direction
 
