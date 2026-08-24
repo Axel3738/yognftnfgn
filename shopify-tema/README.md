@@ -20,7 +20,13 @@ Masterfilen har fått två buggfixar (se `delat/FIXA-SKRAPKORT.md` för exakta
 rubriken bröt sista bokstaven till egen rad (temats `word-break` + `vw`-mått —
 nu `cqw`, brytförbud och auto-krympning).
 
-**Dubbletterna i .se-, .dk- och .no-butikerna innehåller fortfarande
+**✅ .se är fixad (2026-08-24):** Axel kopplade Shopify-connectorn till
+bäverbutiken.se och butikens fil i dubbletten "Live + skrapkort 2026-08-23"
+patchades (MD5-verifierad uppladdning, filen ligger i `butiker/se-skrapkort.liquid`).
+Verifierad i preview med Chromium, mobil + desktop: popupen öppnas, återkommer
+INTE efter sidbyte, rubriken ryms utan ordbrytning, skrapa → mejlsteg fungerar.
+
+**Dubbletterna i .dk- och .no-butikerna innehåller fortfarande
 buggversionen.** Sessionen 2026-08-24 kunde inte nå temana: env-nycklarna
 (`SHOPIFY_SHOP_SE/DK/NO` + client credentials) fungerar mot Admin API men
 apparna saknar `read_themes`/`write_themes`, och Shopify-connectorn stod på
