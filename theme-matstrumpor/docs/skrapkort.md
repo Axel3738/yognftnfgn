@@ -1,5 +1,10 @@
 # Skrapkortet — e-postklubbens popup
 
+> **Patch till redan installerade butiker:** `delat/FIXA-SKRAPKORT.md` — en
+> sök-och-ersätt-instruktion som rättar besöksspärren och rubrikbrytningen
+> utan att röra butikens egna texter och färger. Sökblocken är verifierade mot
+> den version som skickades ut 2026-08-23.
+>
 > **Delbar version:** `delat/skrapkort-delbar.liquid` är en fristående,
 > brandneutral kopia som Axel skickar till vänner med andra butiker.
 > Färger och alla texter är sektionsinställningar, installationsguiden
@@ -72,6 +77,15 @@ besöksspärren, annars skulle kunden som just mejlat aldrig få se sin kod.
   skrivs i samma stund popupen öppnas, och en sessionsflagga stoppar den helt
   under resten av besöket. Regeln som sitter kvar: **skriv minnet när något
   visas, inte när någon svarar** — de flesta svarar aldrig.
+- **Sista bokstaven hoppade ner på egen rad (2026-08-24).** Rubriken blev
+  `VÄLKOMSTRABAT / T`. Temat sätter `word-break: break-word` på rubriker, så
+  ett ord som är en aning för brett kapas mitt itu. Rubriken räknade dessutom
+  sin storlek på skärmens bredd (`vw`) trots att rutan är smalare. Nu:
+  `word-break: normal` (ord bryts aldrig), storlek i `cqw` (rutans bredd), och
+  en JS-krympning som sista skydd. **ResizeObserver duger inte** som trigger —
+  rubriken är alltid 100 % bred, så dess egen storlek ändras aldrig när texten
+  växer; därför efterkontroller vid 150/600/1500 ms plus `document.fonts.ready`
+  (butikens typsnitt laddas asynkront och är ofta bredare än reservtypsnittet).
 - **Dawns fokusring gjorde krysset till en vit låda.** `showModal()`
   fokuserar första fokuserbara elementet = stängkrysset, och Dawn målar en
   vit ring + outline på fokus. Dialogen har `tabindex="-1"` och tar själv
