@@ -59,6 +59,9 @@ det är det som gör datan grupperbar. Ny variant = bumpa `v{N}`. Ny idé = nytt
 | `authority` | Expert, testvinnare, garanti |
 | `fomo` | Rädsla att missa, brådska, slut i lager |
 | `identity` | "För dig som är X" |
+| `gift` | Presentköp — mottagaren är någon annan än köparen *(tillagd 2026-08-25, Matstrumpor)* |
+| `conflict` | Mot något — kategorin/alternativet är fienden (t.ex. anti-presentkort) *(tillagd 2026-08-25)* |
+| `dilemma` | Två dåliga val, produkten slipper välja (rolig ↔ används) *(tillagd 2026-08-25)* |
 
 ### FORMAT — det visuella formatet
 | Kod | Betydelse |
@@ -71,6 +74,8 @@ det är det som gör datan grupperbar. Ny variant = bumpa `v{N}`. Ny idé = nytt
 | `textheavy` | Grafik med stor rubriktext |
 | `comparison` | Vi vs dem / gammalt vs nytt |
 | `collage` | Flera bilder/feature-callouts |
+| `static` | Stillbild (när ingen av ovanstående passar bättre) *(tillagd 2026-08-25)* |
+| `slideshow` | Bildspel av stillbilder med musik *(tillagd 2026-08-25, Matstrumpor)* |
 
 ### HOOK — den primära kroken (kort slug, fritt men konsekvent)
 Det första ögat/hjärnan fastnar på. Håll det till 1–2 ord: `stains`, `2sec`,
