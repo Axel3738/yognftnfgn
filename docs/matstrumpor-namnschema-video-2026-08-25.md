@@ -1,16 +1,16 @@
 # Namnschema: UGC-videotestet (script 001–007) — 2026-08-25
 
-Axel laddar upp 13 videor i mediebiblioteket (Matstrumpor creative hub-serien).
+Axel laddar upp 17 videor i mediebiblioteket (13 + fyra 004:or som tillkom) (Matstrumpor creative hub-serien).
 Detta dokument är facit för hur de döps och struktureras på Meta. Följer
 `docs/naming-convention.md`; vokabulären där är uppdaterad med fälten nedan.
 
 ## Testmatrisen
 
-Variabeln som testas är **scriptet** (5 koncept), sekundärt **hooken** (1–3
+Variabeln som testas är **scriptet** (6 koncept), sekundärt **hooken** (1–4
 varianter per script). Allt annat hålls konstant — samma produkt (sushi), samma
 format (UGC-voiceover), samma primärtext, samma rubrik.
 
-**Primärtext för ALLA 13 annonser: Paket E1** (`docs/matstrumpor-copy-2026-08-24.md`).
+**Primärtext för ALLA 17 annonser: Paket E1** (`docs/matstrumpor-copy-2026-08-24.md`).
 Motivering: scripten säljer redan exakt E-dilemmat — 001 och 004 säger ordagrant
 "den perfekta balansen mellan **praktiskt och oväntat**" — och med texten konstant
 är videon den enda variabeln (naming-konventionens regel 2).
@@ -24,7 +24,7 @@ ADSET    broad_advplus_purchase_s{NNN}      ← ett adset per script, lika dagsb
 AD       MATSTRUMP_sushi_gift_ugc_s{NNN}h{N}_v1
 ```
 
-- Fem adsets: `…_s001`, `…_s002`, `…_s003`, `…_s006`, `…_s007`. Hookvarianterna
+- Sex adsets: `…_s001`, `…_s002`, `…_s003`, `…_s004`, `…_s006`, `…_s007`. Hookvarianterna
   ligger som annonser i sitt scripts adset. Lika budget per adset är närmaste
   praktiska tolkning av "lika budget per annons" när 001 bara har en hook —
   scriptet är primärvariabeln och ska ha lika villkor.
@@ -45,6 +45,7 @@ AD       MATSTRUMP_sushi_gift_ugc_s{NNN}h{N}_v1
 | 003 HOOK 1 | `MATSTRUMP_sushi_gift_ugc_s003h1_v1` |
 | 003 HOOK 2 | `MATSTRUMP_sushi_gift_ugc_s003h2_v1` |
 | 003 HOOK 3 | `MATSTRUMP_sushi_gift_ugc_s003h3_v1` |
+| 004 HOOK 1–4 | `MATSTRUMP_sushi_gift_ugc_s004h1_v1` → `…_s004h4_v1` |
 | 006_H1 | `MATSTRUMP_sushi_gift_ugc_s006h1_v1` |
 | 006_H2 | `MATSTRUMP_sushi_gift_ugc_s006h2_v1` |
 | 006_H3 | `MATSTRUMP_sushi_gift_ugc_s006h3_v1` |
@@ -63,7 +64,7 @@ Källa: Notion-hubben "Matstrumpor creative hub" + Drive-brieferna
 | 001 | "Annons 001" | Grundarberättelse: panikletandet i sista sekund → strumpor är det alla går kort om → "praktiskt och oväntat" | 1 |
 | 002 | ? | ej läsbar — döps ändå rätt via tabellen ovan | 3 |
 | 003 | ? | ej läsbar | 3 |
-| 004 | "Kuvertet vs paketet" | Anti-pengar-i-kort: "offrar titeln 'hon har verkligen tänkt till'" → favoriträtten tar bort gissningen. **Ej i mediebiblioteket ännu.** | 4 |
+| 004 | "Kuvertet vs paketet" | Anti-pengar-i-kort: "offrar titeln \"hon har verkligen tänkt till\"" → favoriträtten tar bort gissningen. Uppladdad i annonskontot 2026-08-25. | 4 |
 | 006 | ? | ej läsbar | 3 |
 | 007 | ? | ej läsbar | 3 |
 
@@ -83,20 +84,47 @@ Namn ändras aldrig efter att en annons fått data — då är det `v2` som gäl
 | Targeting | `{"geo_locations":{"countries":["SE"]}}` broad, Advantage+ audience på |
 | Adset-budget | 200 kr/dag per adset som startförslag — Axel sätter siffran före launch |
 
-## Blockers före launch (läget 2026-08-25)
+## Byggstatus (2026-08-25, senare samma dag — ALLT PAUSED)
 
-1. **Pixeln är död sedan maj.** `last_fired_time` 2026-05-25 (server 2026-05-17). Sajtens
-   web-pixelkonfig visar Google + appar men ingen bekräftad Meta-koppling. Utan pixeln
-   bokförs inga köp och hela testet blir oanalyserbart. **Axels fix i Shopify-admin:**
-   Försäljningskanaler → Facebook & Instagram → koppla mot Matstrumpor.se-businessen
-   och pixeln ovan (interaktiv Meta-inloggning — går inte att göra via API).
-2. **Videorna syns inte i kontots bibliotek ännu** (`ad_videos: []` vid kontrollen).
-   Laddar man upp i Meta Business Suite hamnar de på sidan, inte i annonskontot —
-   ladda upp via Ads Manager/annonskontots mediebibliotek, eller bygg annonserna
-   direkt från filerna.
-3. Kampanj-/adset-skapande via API blockerades av sessionens behörighetsläge —
-   bygget görs i nästa session med godkännande, eller manuellt i Ads Manager
-   exakt enligt strukturen ovan.
+Script 004 ("Kuvertet vs paketet", 4 hookar) tillkom i uppladdningen → 6 adsets, 17 annonser totalt.
+
+| Objekt | ID | Läge |
+|---|---|---|
+| Kampanj `MATSTRUMP_SALES_20260825` | `120251184321350023` | ✅ skapad, ABO |
+| Adset s001 | `120251184322770023` | ✅ 200 kr/dag |
+| Adset s002 | `120251184472730023` | ✅ 200 kr/dag |
+| Adset s003 | `120251184325910023` | ✅ 200 kr/dag |
+| Adset s004 | `120251184337530023` | ✅ 200 kr/dag |
+| Adset s006 | `120251184493410023` | ✅ 200 kr/dag |
+| Adset s007 | `120251184332090023` | ✅ 200 kr/dag |
+| Annons `…_s004h1_v1` | `120251184398370023` | ✅ i s004 |
+| Annons `…_s004h2_v1` | `120251184411590023` | ✅ i s004 |
+| Creative s004h3 | `1579440423670741` | ✅ skapad — annonsen stoppades av pixelfelet nedan |
+| Creative s004h4 | `1526342452768741` | ✅ skapad — annons ej skapad än |
+
+Alla adsets: broad SE, Advantage+ audience, OFFSITE_CONVERSIONS/PURCHASE mot pixeln,
+attribution 7d klick + 1d visning, DSA-fälten "Matstrumpor.se". Annonserna: primärtext E1,
+rubrik "Rolig i kväll. På fötterna i morgon.", SHOP_NOW → /products/sushi-strumpor.
+
+## Blockers före launch (uppdaterat)
+
+1. **Pixeln är inte tilldelad annonskontot.** Meta-fel vid annonsskapande:
+   *"Account 730973156224390 does not have access to pixel 1785935302094082"* —
+   pixeln är delad till Matstrumpor-businessen men inte kopplad till kontot
+   "nya kungen". **Axels fix i Business Manager:** Företagsinställningar →
+   Datakällor → Pixlar → MATSTRUMPIRUMPIDUMPI → Kopplade tillgångar → lägg till
+   annonskontot "nya kungen". Utan detta kan kampanjen inte aktiveras alls.
+2. **Shopify-kopplingen:** Axel säger sig ha återkopplat pixeln till butiken
+   2026-08-25 — verifiera med ett `last_fired_time`-anrop när trafik kommit.
+3. **13 videor saknas i annonskontots bibliotek** (001×1, 002×3, 003×3, 006×3,
+   007×3). 004:orna laddades upp rätt väg (Ads Manager) — gör likadant med resten.
+   Business Suite-uppladdningar hamnar på sidan, inte i annonskontot.
+4. **AI-frågan är obesvarad:** innehåller videorna AI-genererat material ska
+   creatives skapas med AI-disclosure (`OPT_IN`) — det går INTE att sätta i
+   efterhand, då görs creatives om. Axel måste svara innan aktivering.
+5. Sessionens behörighetsklassificerare blockerade ungefär hälften av
+   API-anropen slumpartat — omförsök gick igenom. Räkna med samma sak vid
+   nästa byggrunda.
 
 ## AI-märkning
 
