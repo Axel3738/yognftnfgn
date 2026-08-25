@@ -156,3 +156,47 @@ Beskrivning: "Roligare än ett presentkort."
 
 Tre-frågorstestet (körd på båda rubrikerna, alla tre första rader och slideshow-hooken
 "Presentkort ger aldrig den minen."): helgrönt — se subagentens tabell i sessionen.
+
+## Paket E — Dilemmat (rolig + används) · `MATSTRUMP_alla_dilemma_static_tvattmedel_v1`
+
+**Hooken (ordagrann, ändras aldrig):** *"Ingen jublar åt tvättmedel. Ingen sparar en skämtpryl."*
+
+Född på produktsidan (revision 3, `docs/matstrumpor-produktbeskrivning-sushi-2026-08-25.md`)
+och handplockad av Axel 2026-08-25: raden fick honom — som "bara läser fort" — att
+stanna och läsa resten. Positionen är dokumenterat ledig: ingen växande gåvoannonsör
+säljer humor, och ingen alls säljer **rolig + används efteråt** (konkurrentspaningen i
+`docs/matstrumpor-voc-presentkop-2026-08-23.md`). Alla varianter öppnar med hooken
+ordagrant — det är paketets konstant; det som testas mot A–D är vinkeln.
+
+**E1 (dilemmat → produkten, sushi)**
+Ingen jublar åt tvättmedel. Ingen sparar en skämtpryl.
+Svaret på båda: en låda som ser ut som riktig takeaway, 5 par rullade som maki, ätpinnar i trä bredvid.
+Den ligger inte kvar i lådan efteråt – den ligger på fötterna, vecka efter vecka.
+
+**E2 (dilemmat → erbjudandet, alla fyra sorter)**
+Ingen jublar åt tvättmedel. Ingen sparar en skämtpryl.
+Fyra sorter, samma lösning: sushi, pizza, hamburgare, donut.
+Just nu: Köp 1, få 1 – på alla fyra sorter.
+Sushi 399 kr (3 par 369 kr) · Pizza 449 kr · Hamburgare 299 kr · Donut 299 kr.
+Fri frakt i Sverige. 30 dagars öppet köp.
+
+**E3 (dilemmat → berättad scen — parning med UGC-bilderna)**
+Ingen jublar åt tvättmedel. Ingen sparar en skämtpryl.
+Locket av, lådan vänd mot kameran, ett skratt innan strumporna ens är på fötterna.
+Sen tas de på – för att testa.
+Tre veckor senare sitter samma par på samma fötter, en vanlig tisdag hemma.
+
+Rubriker: **"Rolig i kväll. På fötterna i morgon."** · **"Skämt glöms. Strumpor bärs."**
+Beskrivning: "4 sorter. Köp 1, få 1. Fri frakt i Sverige."
+
+**Hook-overlay (9:16 video/bild):**
+```
+Ingen jublar åt tvättmedel.
+Ingen sparar en skämtpryl.
+```
+Kortversion om ytan kräver (tappar inte dilemmat): *"Ingen firar tvättmedel. Ingen sparar skämt."*
+
+Tre-frågorstestet (körd på båda rubrikerna + kortade hooken): helgrönt —
+originalhooken är dessutom fälttestad på Axel själv, vilket är mer än någon
+annan rad i dokumentet kan visa. Testas i eget test-ABO per regel 11; E1 först
+om bara en variant får plats i vågen.
