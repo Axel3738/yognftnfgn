@@ -8,6 +8,33 @@ reaktion OCH är praktisk, den dör inte i en byrålåda.
 Uppdaterad live via Admin API (`productUpdate`) på
 `gid://shopify/Product/10286130889043` — verifierad med återläsning samma stund.
 
+## Revision 2 (2026-08-25, samma dag) — problemblocket skrevs om
+
+Axels korrigering: emotionellt-blocket ska bära **presentköparens problem**
+(varför hen kan sluta leta), inte mottagarens reaktion. Underlag:
+`docs/matstrumpor-voc-presentkop-2026-08-23.md`. Reaktionen flyttade ner till
+lösningsblocket. Detta ligger live nu:
+
+> **Fem öppna flikar. Fortfarande inget att köpa.**
+> Du vet känslan: fliken har legat öppen i tjugo minuter, hjärnan levererar
+> noll idéer. Hen du ska köpa till har redan allt – eller vet inte ens vad hen
+> skulle önska sig. Sluta leta – det här är presenten.
+
+*(GIF)*
+
+> **Ser ut som sushi. Är strumpor.**
+> De tittar två gånger. Sen skrattar de. De tror att det är riktig sushi –
+> tills de inser vad det egentligen är. De flesta skämtpresenter dör i en
+> byrålåda. Den här lever vidare på fötterna.
+
+Alternativ rubrik till problemblocket (samma brödtext, byts på Axels ord):
+**"Presentletandet som känns som ett högskoleprov."** (bilden kommer rakt ur
+VOC:en — en förälder jämförde julklappsstressen med ett högskoleprov).
+
+Funktioner, bilder och garanti oförändrade från revision 1 (nedan). Blocken
+"De tittar två gånger …" och "Skrattet lägger sig …" i revision 1-HTML:en är
+alltså ersatta av citaten ovan.
+
 ## Varför Temu-bilden togs bort
 
 Mittenbilden var hotlinkad från `img.kwcdn.com` (Temus CDN). Tre skäl att den fick gå:
