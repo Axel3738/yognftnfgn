@@ -113,6 +113,25 @@ Originalannonserna 1–4 har ingen text i bild (rena produktfoton + primärtext)
 swiparna följer samma mönster. Higgsfield behövdes aldrig — saldot (1,85 credits)
 är dessutom för lågt för generering (0,5 credits/bild + omtagsmarginal).
 
+### B-setet: AI-genererade studiobaser (kie.ai, 2026-08-25)
+
+Genererade på Axels begäran via kie.ai (nano-banana-edit) med de riktiga
+produktfotona som referens — det ger det originalen har men våra foton saknar:
+strumpor **på fötter** i studio på enfärgad bakgrund. Samma mapp, 1080×1350.
+
+| Fil | Motiv | Matchar original |
+|---|---|---|
+| `B1-fotter-bla.jpg` | Laxrandiga paret på fötter, ljusblå studio | Annons 1 (kanelbulle på blått) |
+| `B2-fotter-rosa.jpg` | Maki-paret (prickar/svart band/grön tå) på fötter, rosa | Annons 2/4 (rosa studio) |
+| `B3-fotter-gul.jpg` | Tamago-paret på fötter mot bordskant, gul | Annons 3/4 |
+| `B4-presentogonblick.jpg` | Händer öppnar boxen mot kameran, hemmiljö | Frågehooken (A4-copyn) |
+| `B5-flatlay-rosa.jpg` | Boxen uppifrån + ätpinnar, rosa | Annons 2:s pastellstil |
+
+⚠️ **AI-brasklapp:** B4/B5 är mycket trogna verkliga boxen. B1–B3 har små
+designavvikelser mot de riktiga strumporna (tå-/hälfärger) — jämför mot fysisk
+produkt innan launch, eller kör A-setet (riktiga foton) där exakthet krävs.
+API-nyckeln ligger INTE i repot; genereringsskriptet läser den ur env `KIE_KEY`.
+
 ## Tre-frågorstestet
 
 Alla 20 rader (primärtexter, rubriker, hooks) testade: ✅ visualisera / ✅ falsifiera
