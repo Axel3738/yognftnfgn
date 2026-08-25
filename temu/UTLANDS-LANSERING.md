@@ -35,6 +35,30 @@ priser, moms av, mall, kanaler). Texterna ligger i `temu/utrullning/texter.mjs`
 
 ---
 
+## ✅ Offert 4 (2026-08-25): 5 nya produkter live i alla fem butikerna
+
+Tanköverdrag (IBC 1000 L), jättefotboll 60 cm, vandringsdamasker, gravstenspenna
+och kamouflagetejp — 25 produkter, slutverifierade gröna. Copy i
+`temu/utrullning/texter4.mjs`, skaparen i `temu/utrullning/kor4.mjs`,
+språkbilderna byggs av `temu/infografik/offert4.mjs` (48 st).
+
+- **Priser** enligt 3×-regeln, jämförpris ×1,3 satt direkt vid skapandet.
+- **Bilderna** kom från Cowork → Drive-mappen; 75 galleribilder hämtades av
+  molnsessionen med `curl` mot `drive.google.com/uc?export=download&id=<id>`
+  (fungerar direkt när mappen är delad — ingen nedladdning på Axels dator).
+- ⚠️ **Lärdom (kostade 20 raderade produkter):** en **staged-URL kan bara
+  konsumeras EN gång**. Samma `resourceUrl` i flera butiker ger `media FAILED` i
+  alla utom den första — blobben är borta efter första ingesteringen. Stagea per
+  butik (`kor4.mjs stage <land>` → `staged-<land>.json`). SE CDN-URL:er går
+  däremot att återanvända fritt, det är bara staged storage som är engångs.
+- ⚠️ `productCreate` tar `productOptions` men **inte** varianter — varianterna
+  skapas alltid i ett andra anrop med `REMOVE_STANDALONE_VARIANT`.
+- **Badshortsen väntar:** 4 tryck (hajar/cocktail/krabbor/hawaii) är skrivna och
+  prissatta (399 kr SE), men Temu-galleriet saknade storlekstabell. Fråga CWD
+  vilka storlekar som gäller innan produkten skapas.
+
+---
+
 ## Butiksregistret
 
 | Land | Butik | Valuta | Vendor | 🦫 i garantiblocket | Status |
