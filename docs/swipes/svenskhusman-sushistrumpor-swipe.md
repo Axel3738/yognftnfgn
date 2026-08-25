@@ -94,6 +94,25 @@ i tre-frågorstestet.**
 1. "Tre par eller fem — skillnaden är 30 kr."
 2. "Fem par kostar nästan lika mycket som tre."
 
+## Färdiga creatives (bildannonserna)
+
+Byggda 2026-08-25, ligger i `docs/briefs/sushi-swipe-2026-08-25/` (1080×1350, 4:5).
+Baserna är **riktiga produktfoton** hämtade från matstrumpor.se:s publika produktsida
+(sushi-strumpor har 9 bilder där) — inte AI-genererade. A5:s pristext är komponerad
+som skarp SVG-vektortext med `sharp` (husmetoden); byggskriptet ligger i samma mapp.
+
+| Annons | Fil | Bas |
+|---|---|---|
+| 1 | `A1-sushiboxen-stamning.jpg` | Boxen på frukostbord (lifestyle, ljus) |
+| 2 | `A2-narbild-bitar.jpg` | Bitar på fat, pastellbakgrund |
+| 3 | `A3-hela-kollektionen.jpg` | Box + 5 par utsolfjädrade, vit bakgrund |
+| 4 | `A4-bambubricka-illusion.jpg` | Bambubricka — ser mest ut som riktig sushi |
+| 5 | `A5-kampanjgrafik.jpg` | Kampanjgrafik: "2 par till för 30 kr" + 369/399 kr + Shoppa nu |
+
+Originalannonserna 1–4 har ingen text i bild (rena produktfoton + primärtext), så
+swiparna följer samma mönster. Higgsfield behövdes aldrig — saldot (1,85 credits)
+är dessutom för lågt för generering (0,5 credits/bild + omtagsmarginal).
+
 ## Tre-frågorstestet
 
 Alla 20 rader (primärtexter, rubriker, hooks) testade: ✅ visualisera / ✅ falsifiera
