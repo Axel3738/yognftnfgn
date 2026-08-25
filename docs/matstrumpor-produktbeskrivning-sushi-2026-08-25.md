@@ -8,12 +8,41 @@ reaktion OCH är praktisk, den dör inte i en byrålåda.
 Uppdaterad live via Admin API (`productUpdate`) på
 `gid://shopify/Product/10286130889043` — verifierad med återläsning samma stund.
 
-## Revision 2 (2026-08-25, samma dag) — problemblocket skrevs om
+## Revision 3 (2026-08-25) — riktad mot personan, inte generisk
+
+Axel underkände revision 2 som **för generisk** ("vilken presentprodukt som
+helst"). Riktningen: skriv till EN person ur VOC:en — **den som är trött på
+att leta eftersom få presenter är både roliga OCH faktiskt används efteråt.**
+Roliga presenter används inte länge; strumpor är något man alltid behöver.
+Dilemmat rolig-eller-använd är hens problem, sushistrumporna slipper välja.
+Detta ligger live nu:
+
+> **Ingen jublar åt tvättmedel. Ingen sparar en skämtpryl.**
+> Den roliga håller en kväll, sen hamnar den i en byrålåda. Den praktiska gör
+> nytta, men pappret rivs av i tystnad. Du slipper välja: den här är rolig i
+> kväll och på fötterna i morgon.
+
+*(GIF)*
+
+> **Ser ut som sushi. Är strumpor.**
+> De tror att det är riktig sushi – tills de inser vad det egentligen är. De
+> tittar två gånger. Sen skrattar de. När skrattet lagt sig är det fortfarande
+> strumpor – något man faktiskt behöver och använder.
+
+Alternativ rubrik till problemblocket (samma brödtext, byts på Axels ord):
+**"En kväll med skämtet. Resten av året i en byrålåda."** — valdes bort för att
+den bara bär skämtsidan av dilemmat och krockar med brödtextens "byrålåda".
+
+Positioneringen att bevaka i annonser framåt: **rolig + används efteråt** är
+kombinationen ingen växande gåvoannonsör äger (se konkurrentspaningen i
+VOC-dokumentet — skrattpositionen är ledig).
+
+## Revision 2 (2026-08-25, samma dag) — ERSATT av revision 3 — problemblocket skrevs om
 
 Axels korrigering: emotionellt-blocket ska bära **presentköparens problem**
 (varför hen kan sluta leta), inte mottagarens reaktion. Underlag:
 `docs/matstrumpor-voc-presentkop-2026-08-23.md`. Reaktionen flyttade ner till
-lösningsblocket. Detta ligger live nu:
+lösningsblocket. Låg live några timmar innan revision 3 ersatte den:
 
 > **Fem öppna flikar. Fortfarande inget att köpa.**
 > Du vet känslan: fliken har legat öppen i tjugo minuter, hjärnan levererar
