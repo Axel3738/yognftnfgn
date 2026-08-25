@@ -101,12 +101,31 @@ Script 004 ("Kuvertet vs paketet", 4 hookar) tillkom i uppladdningen → 6 adset
 | Annons `…_s004h2_v1` | `120251184411590023` | ✅ i s004 |
 | Annons `…_s004h3_v1` | `120251184533510023` | ✅ i s004 (efter pixelfixen) |
 | Annons `…_s004h4_v1` | `120251184534120023` | ✅ i s004 |
+| Annons `…_s001h1_v1` | `120251184825310023` | ✅ i s001 |
+| Annons `…_s002h1_v1` | `120251184831320023` | ✅ i s002 |
+| Annons `…_s002h2_v1` | `120251184836680023` | ✅ i s002 |
+| Annons `…_s002h3_v1` | `120251184839900023` | ✅ i s002 |
+| Annons `…_s003h1_v1` | `120251184844360023` | ✅ i s003 |
+| Annons `…_s003h2_v1` | `120251184848190023` | ✅ i s003 |
+| Annons `…_s003h3_v1` | `120251184849760023` | ✅ i s003 |
+| Annons `…_s006h1_v1` | `120251184852030023` | ✅ i s006 |
+| Annons `…_s006h2_v1` | `120251184857360023` | ✅ i s006 |
+| Annons `…_s006h3_v1` | `120251184861480023` | ✅ i s006 |
+| Annons `…_s007h1_v1` | `120251184863480023` | ✅ i s007 |
+| Annons `…_s007h2_v1` | `120251184864610023` | ✅ i s007 |
+| Annons `…_s007h3_v1` | `120251184865930023` | ✅ i s007 |
 
 Alla adsets: broad SE, Advantage+ audience, OFFSITE_CONVERSIONS/PURCHASE mot pixeln,
 attribution 7d klick + 1d visning, DSA-fälten "Matstrumpor.se". Annonserna: primärtext E1,
 rubrik "Rolig i kväll. På fötterna i morgon.", SHOP_NOW → /products/sushi-strumpor.
 
-## Blockers före launch (uppdaterat)
+## KOMPLETT 2026-08-25: alla 17 annonser skapade, allt PAUSED
+
+Kampanjen är redo att aktiveras av Axel. Nya creatives (s001–s003, s006–s007)
+skapades med `self_ai_disclosure: OPT_OUT` (Axel bekräftade: inget AI-material).
+Totalbudget om allt aktiveras: 6 × 200 kr = 1 200 kr/dag.
+
+## Blockers före launch (historik — alla lösta)
 
 1. **LÖST 2026-08-25: pixeln tilldelad annonskontot av Axel** — annonsskapandet funkar igen. Ursprungsfelet:  Meta-fel vid annonsskapande:
    *"Account 730973156224390 does not have access to pixel 1785935302094082"* —
@@ -116,7 +135,7 @@ rubrik "Rolig i kväll. På fötterna i morgon.", SHOP_NOW → /products/sushi-s
    annonskontot "nya kungen". Utan detta kan kampanjen inte aktiveras alls.
 2. **Shopify-kopplingen:** Axel säger sig ha återkopplat pixeln till butiken
    2026-08-25 — verifiera med ett `last_fired_time`-anrop när trafik kommit.
-3. **13 videor saknas i annonskontots bibliotek** (001×1, 002×3, 003×3, 006×3,
+3. **LÖST: alla 17 videor i annonskontot** (Axel hade först laddat upp i fel konto — API-koll mot rätt konto avslöjade det). Gamla texten: 13 videor saknas i annonskontots bibliotek (001×1, 002×3, 003×3, 006×3,
    007×3). 004:orna laddades upp rätt väg (Ads Manager) — gör likadant med resten.
    Business Suite-uppladdningar hamnar på sidan, inte i annonskontot.
 4. **AI-frågan BESVARAD: ingen AI i videorna** (Axel 2026-08-25) — nya creatives sätter `self_ai_disclosure: OPT_OUT`. Gamla regeln kvar för framtida material:  innehåller videorna AI-genererat material ska
