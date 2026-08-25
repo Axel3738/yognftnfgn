@@ -72,6 +72,32 @@ Källa: Notion-hubben "Matstrumpor creative hub" + Drive-brieferna
 vinkel → säg till FÖRE launch, så byts `sushi`/`gift`-fältet för de annonserna.
 Namn ändras aldrig efter att en annons fått data — då är det `v2` som gäller.
 
+## Kontofakta (verifierade via Meta API 2026-08-25)
+
+| Vad | Värde |
+|---|---|
+| Ad account | **nya kungen** `730973156224390` — businessen **Matstrumpor.se** (`3354502211392342`), ACTIVE, SEK, betalmetod finns |
+| Sida | **Matstrumpor.se** `820358954504320` (gamla annonsernas sida — businessen har även "Matstrumpor" `1285064981363590`) |
+| Pixel | **MATSTRUMPIRUMPIDUMPI** `1785935302094082` — enda dataset i businessen. ⚠️ Ägs tekniskt av SnarkLös-BM:en (historiskt), men är matstrumpors egen och delad hit. |
+| promoted_object för adseten | `{"pixel_id":"1785935302094082","custom_event_type":"PURCHASE"}` |
+| Targeting | `{"geo_locations":{"countries":["SE"]}}` broad, Advantage+ audience på |
+| Adset-budget | 200 kr/dag per adset som startförslag — Axel sätter siffran före launch |
+
+## Blockers före launch (läget 2026-08-25)
+
+1. **Pixeln är död sedan maj.** `last_fired_time` 2026-05-25 (server 2026-05-17). Sajtens
+   web-pixelkonfig visar Google + appar men ingen bekräftad Meta-koppling. Utan pixeln
+   bokförs inga köp och hela testet blir oanalyserbart. **Axels fix i Shopify-admin:**
+   Försäljningskanaler → Facebook & Instagram → koppla mot Matstrumpor.se-businessen
+   och pixeln ovan (interaktiv Meta-inloggning — går inte att göra via API).
+2. **Videorna syns inte i kontots bibliotek ännu** (`ad_videos: []` vid kontrollen).
+   Laddar man upp i Meta Business Suite hamnar de på sidan, inte i annonskontot —
+   ladda upp via Ads Manager/annonskontots mediebibliotek, eller bygg annonserna
+   direkt från filerna.
+3. Kampanj-/adset-skapande via API blockerades av sessionens behörighetsläge —
+   bygget görs i nästa session med godkännande, eller manuellt i Ads Manager
+   exakt enligt strukturen ovan.
+
 ## AI-märkning
 
 Innehåller videorna AI-genererat material (Higgsfield/HeyGen-klipp, AI-bilder):
