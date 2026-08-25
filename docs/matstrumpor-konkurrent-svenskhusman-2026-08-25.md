@@ -88,3 +88,23 @@ givaren, presenten som faktiskt används** — nämns aldrig av dem.
 4. **Bevaka "lite roligare"-spåret.** Om deras humor-test växer ska vi redan äga
    skrattpositionen med data.
 5. Babblarna-mönstret (licens mot småbarnsföräldrar) = backloggidé vid breddning.
+
+## Tillämpning på egna hubben (2026-08-25, Axels fråga)
+
+Genomgång av korten i Matstrumpor creative hub mot skalan. Läsbart underlag:
+briefer 010–013 (repo), Meet matstrumpor-briefen (Drive), script 001+004.
+Sushi Haiku/Fable/opus/somnet + 002/003/005–009 har oåtkomliga briefer — ej dömda.
+
+| Kort | Klassning | Dom |
+|---|---|---|
+| 012 (identity, envar) | Positiv/LÅG — mysig familjeslideshow utan vändning, reaktion eller skratt | **GÖR OM** — enda tydliga Husman-kopian. Fix: vändningen till bild 1 ("en av lådorna är strumpor" i pizzahögen), lägg in en reaktionsbild, punchline-rad i stället för konstaterande |
+| Meet matstrumpor (tyst brandvideo) | Positiv/LÅG **by design** (Roy's Boys-swipe) | Behåll — men öronmärk för brand/retargeting, aldrig kall testbudget. Har mikrovändningen "Lådan? Också sushi. / Redan inslagen." |
+| 011 (offer/reaktionen) | Medel-hög: "Käk som inte är käk" + mormor skrattar | Rör inte |
+| 010 (Ser ut som mat) / 013 (anti-presentkort) | Medel resp. medel-hög | Rör inte |
+| 001–004, 006, 007 (launchade 17) | 001 = lugna hörnet, 004 = konflikt | **Döms inte före data** (300 kr/3 köp). 001 är mätpunkten som visar om låg intensitet ens funkar för oss |
+
+Regeln framåt: valensen är alltid positiv — det som styrs är INTENSITETEN, och
+vår lediga ruta är hög. Tre grepp som höjer utan att tappa glädjen:
+1. Vändningen till första bilden (ser ut som mat → är strumpor, inom 2 s).
+2. Ett ansikte som reagerar (dubbeltitt + skratt) — inte bara produktbilder.
+3. Textrad som punchline med kontrast, aldrig beskrivning.
