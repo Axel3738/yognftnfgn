@@ -99,8 +99,8 @@ Script 004 ("Kuvertet vs paketet", 4 hookar) tillkom i uppladdningen → 6 adset
 | Adset s007 | `120251184332090023` | ✅ 200 kr/dag |
 | Annons `…_s004h1_v1` | `120251184398370023` | ✅ i s004 |
 | Annons `…_s004h2_v1` | `120251184411590023` | ✅ i s004 |
-| Creative s004h3 | `1579440423670741` | ✅ skapad — annonsen stoppades av pixelfelet nedan |
-| Creative s004h4 | `1526342452768741` | ✅ skapad — annons ej skapad än |
+| Annons `…_s004h3_v1` | `120251184533510023` | ✅ i s004 (efter pixelfixen) |
+| Annons `…_s004h4_v1` | `120251184534120023` | ✅ i s004 |
 
 Alla adsets: broad SE, Advantage+ audience, OFFSITE_CONVERSIONS/PURCHASE mot pixeln,
 attribution 7d klick + 1d visning, DSA-fälten "Matstrumpor.se". Annonserna: primärtext E1,
@@ -108,7 +108,7 @@ rubrik "Rolig i kväll. På fötterna i morgon.", SHOP_NOW → /products/sushi-s
 
 ## Blockers före launch (uppdaterat)
 
-1. **Pixeln är inte tilldelad annonskontot.** Meta-fel vid annonsskapande:
+1. **LÖST 2026-08-25: pixeln tilldelad annonskontot av Axel** — annonsskapandet funkar igen. Ursprungsfelet:  Meta-fel vid annonsskapande:
    *"Account 730973156224390 does not have access to pixel 1785935302094082"* —
    pixeln är delad till Matstrumpor-businessen men inte kopplad till kontot
    "nya kungen". **Axels fix i Business Manager:** Företagsinställningar →
@@ -119,7 +119,7 @@ rubrik "Rolig i kväll. På fötterna i morgon.", SHOP_NOW → /products/sushi-s
 3. **13 videor saknas i annonskontots bibliotek** (001×1, 002×3, 003×3, 006×3,
    007×3). 004:orna laddades upp rätt väg (Ads Manager) — gör likadant med resten.
    Business Suite-uppladdningar hamnar på sidan, inte i annonskontot.
-4. **AI-frågan är obesvarad:** innehåller videorna AI-genererat material ska
+4. **AI-frågan BESVARAD: ingen AI i videorna** (Axel 2026-08-25) — nya creatives sätter `self_ai_disclosure: OPT_OUT`. Gamla regeln kvar för framtida material:  innehåller videorna AI-genererat material ska
    creatives skapas med AI-disclosure (`OPT_IN`) — det går INTE att sätta i
    efterhand, då görs creatives om. Axel måste svara innan aktivering.
 5. Sessionens behörighetsklassificerare blockerade ungefär hälften av
