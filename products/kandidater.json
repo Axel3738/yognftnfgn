@@ -33,7 +33,8 @@
         "problem": "Gäddan har tänder och kroken sitter kvar. Verkligt, återkommande.",
         "demo": "Handen som greppar gäddan i käften, tänder och krok en centimeter från fingrarna.",
         "mansprodukt": "Fiskeredskap till eget bruk.",
-        "wow": "SATT INTE — kräver att Axel tittar på produktbilden."
+        "wow": "SATT INTE — kräver att Axel tittar på produktbilden.",
+        "3-sek-bilden": "Handen greppar gäddan i käften — tänder och krok en cm från fingrarna."
       },
       "kandhet_kalla": "Clas Ohlson 'fiskeklamma' 0 träffar · XXL 'fiskeklamma' och 'fiskgrip' 0 artiklar · Amazon.se har listningar · svenska sportfiskebutiker finns i nischen (ej verifierat att de lagerför just klämman)",
       "skal": "Starkaste kandidaten hittills. Väntar på wow-poäng och verkligt pris.",
@@ -41,7 +42,8 @@
         "dom": null,
         "skal": null,
         "datum": null
-      }
+      },
+      "temu_lank": "https://www.temu.com/-folding-fishing-lip-gripper-grabber-grip-with-sheath-foldable-collapsible-fish-holder-control-accessories-portable-lightweight-aluminium-alloy-110lbs-loading-capacity-g-601099648408864.html"
     },
     {
       "slug": "klyvkil",
@@ -198,6 +200,766 @@
       },
       "kandhet_kalla": "Biltema: https://www.biltema.se/verktyg/skarverktyg/knivar/knivslip-2000023864 · Amazon.se · Kitch'n · Knivshop.se · Maskinklippet.se · Oqvist.se",
       "skal": "Kategorin är commodity. En tillräckligt ovanlig variant (t.ex. eldriven med synlig gnistdemo) är en EGEN kandidat med egen slug.",
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
+    },
+    {
+      "slug": "fiskelampa-led",
+      "namn": "Undervattens LED-fiskelampa, 108 LED",
+      "nisch": "fiske",
+      "upptackt": "2026-08-26",
+      "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
+      "temu_lank": "https://www.temu.com/12v-led-fishing-light-underwater-108-led-fish-school-detection-light-submersible-night-fishing-bait-detector-can-attract-crabs-to-shrimp-and-squid--g-601099628595535.html",
+      "temu_sokterm": null,
+      "stopp": {
+        "frakt_regel": {
+          "dom": "varning",
+          "kalla": "Temu-listning: https://www.temu.com/12v-led-fishing-light-underwater-108-led-fish-school-detection-light-submersible-night-fishing-bait-detector-can-attract-crabs-to-shrimp-and-squid--g-601099628595535.html",
+          "not": "Uppladdningsbart/batteridrivet — kontrollera litium och fraktrestriktioner före beställning."
+        },
+        "marginal": {
+          "dom": null,
+          "kalla": null,
+          "not": "Kräver verkligt Temu-pris och besked om momsläget."
+        }
+      },
+      "poang": {
+        "wow": 4,
+        "kandhet": 4,
+        "problem": 3,
+        "demo": 5,
+        "mansprodukt": 5,
+        "marginal": null
+      },
+      "motivering": {
+        "3-sek-bilden": "Mörkt vatten, lampan ner — fisken samlas i ljuskäglan.",
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+      },
+      "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
+      "skal": null,
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
+    },
+    {
+      "slug": "gummihav",
+      "namn": "Hopfällbar gummihåv med teleskopskaft",
+      "nisch": "fiske",
+      "upptackt": "2026-08-26",
+      "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
+      "temu_lank": "https://www.temu.com/rubber-coated-fishing-landing-net-with-foldable-aluminum-frame-portable-collapsible-minnow-net-for-kayak-fly-catfish-bass-trout-safe-fish-release-rust-resistant-design-blue-durable-mesh-material-g-601101620329607.html",
+      "temu_sokterm": null,
+      "stopp": {
+        "frakt_regel": {
+          "dom": "pass",
+          "kalla": "Temu-listning: https://www.temu.com/rubber-coated-fishing-landing-net-with-foldable-aluminum-frame-portable-collapsible-minnow-net-for-kayak-fly-catfish-bass-trout-safe-fish-release-rust-resistant-design-blue-durable-mesh-material-g-601101620329607.html",
+          "not": "Ingen elektronik, ingen storleksvariant, tål postgång."
+        },
+        "marginal": {
+          "dom": null,
+          "kalla": null,
+          "not": "Kräver verkligt Temu-pris och besked om momsläget."
+        }
+      },
+      "poang": {
+        "wow": 2,
+        "kandhet": 3,
+        "problem": 3,
+        "demo": 3,
+        "mansprodukt": 5,
+        "marginal": null
+      },
+      "motivering": {
+        "3-sek-bilden": "Håven viks ihop till en tredjedel med ett grepp.",
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+      },
+      "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
+      "skal": null,
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
+    },
+    {
+      "slug": "linespolare",
+      "namn": "Fiskelinespolare / spolstation",
+      "nisch": "fiske",
+      "upptackt": "2026-08-26",
+      "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
+      "temu_lank": "https://www.temu.com/portable-fishing-line-reel-spooler-system-machine-spooling-station-line-winder-line-loader-outdoor-fishing-accessories-g-601099513186757.html",
+      "temu_sokterm": null,
+      "stopp": {
+        "frakt_regel": {
+          "dom": "pass",
+          "kalla": "Temu-listning: https://www.temu.com/portable-fishing-line-reel-spooler-system-machine-spooling-station-line-winder-line-loader-outdoor-fishing-accessories-g-601099513186757.html",
+          "not": "Ingen elektronik, ingen storleksvariant, tål postgång."
+        },
+        "marginal": {
+          "dom": null,
+          "kalla": null,
+          "not": "Kräver verkligt Temu-pris och besked om momsläget."
+        }
+      },
+      "poang": {
+        "wow": 3,
+        "kandhet": 4,
+        "problem": 4,
+        "demo": 5,
+        "mansprodukt": 5,
+        "marginal": null
+      },
+      "motivering": {
+        "3-sek-bilden": "Linan lägger sig jämnt på rullen i stället för att trassla ihop sig i knät.",
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+      },
+      "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
+      "skal": null,
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
+    },
+    {
+      "slug": "fiskestol-kylvaska",
+      "namn": "Fiskestol med inbyggd kylväska",
+      "nisch": "fiske",
+      "upptackt": "2026-08-26",
+      "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
+      "temu_lank": "https://www.temu.com/camping-fishing-chair-bag-foldable-camping-chair-with-cooler-bag-waterproof-fishing-stool-collapsible-camping-hunting-fishing-chair-storage-bag-with-portable-belt-for-outdoor-fishing-beach-hiking-g-601099513313687.html",
+      "temu_sokterm": null,
+      "stopp": {
+        "frakt_regel": {
+          "dom": "pass",
+          "kalla": "Temu-listning: https://www.temu.com/camping-fishing-chair-bag-foldable-camping-chair-with-cooler-bag-waterproof-fishing-stool-collapsible-camping-hunting-fishing-chair-storage-bag-with-portable-belt-for-outdoor-fishing-beach-hiking-g-601099513313687.html",
+          "not": "Ingen elektronik, ingen storleksvariant, tål postgång."
+        },
+        "marginal": {
+          "dom": null,
+          "kalla": null,
+          "not": "Kräver verkligt Temu-pris och besked om momsläget."
+        }
+      },
+      "poang": {
+        "wow": 3,
+        "kandhet": 3,
+        "problem": 3,
+        "demo": 3,
+        "mansprodukt": 5,
+        "marginal": null
+      },
+      "motivering": {
+        "3-sek-bilden": "Väskan viks ut till stol — man sätter sig på sin egen kylväska.",
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+      },
+      "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
+      "skal": null,
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
+    },
+    {
+      "slug": "spohallare-relingen",
+      "namn": "Fiskespöhållare för båtreling, rostfri",
+      "nisch": "bat",
+      "upptackt": "2026-08-26",
+      "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
+      "temu_lank": "https://www.temu.com/stainless-steel-fishing-rod-holder-adjustable-clamp-on-rail-mount-for-marine-boat-fits-19-25mm-tubing-rod-support-bracket-for-yacht-g-601099523435929.html",
+      "temu_sokterm": null,
+      "stopp": {
+        "frakt_regel": {
+          "dom": "pass",
+          "kalla": "Temu-listning: https://www.temu.com/stainless-steel-fishing-rod-holder-adjustable-clamp-on-rail-mount-for-marine-boat-fits-19-25mm-tubing-rod-support-bracket-for-yacht-g-601099523435929.html",
+          "not": "Ingen elektronik, ingen storleksvariant, tål postgång."
+        },
+        "marginal": {
+          "dom": null,
+          "kalla": null,
+          "not": "Kräver verkligt Temu-pris och besked om momsläget."
+        }
+      },
+      "poang": {
+        "wow": 2,
+        "kandhet": 4,
+        "problem": 3,
+        "demo": 3,
+        "mansprodukt": 5,
+        "marginal": null
+      },
+      "motivering": {
+        "3-sek-bilden": "Klämms fast på relingen utan att borra ett enda hål.",
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+      },
+      "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
+      "skal": null,
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
+    },
+    {
+      "slug": "sup-pump",
+      "namn": "Elektrisk högtryckspump 20 PSI, SUP/båt",
+      "nisch": "bat",
+      "upptackt": "2026-08-26",
+      "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
+      "temu_lank": "https://www.temu.com/paddle-board-pump-20psi-sup-pump-portable-electric-air-pump-quick-inflate---pump-for-stand-up-paddle-boards-kayak-tent-g-601100698385430.html",
+      "temu_sokterm": null,
+      "stopp": {
+        "frakt_regel": {
+          "dom": "varning",
+          "kalla": "Temu-listning: https://www.temu.com/paddle-board-pump-20psi-sup-pump-portable-electric-air-pump-quick-inflate---pump-for-stand-up-paddle-boards-kayak-tent-g-601100698385430.html",
+          "not": "Uppladdningsbart och 12V — kontrollera litium, CE och fraktrestriktioner."
+        },
+        "marginal": {
+          "dom": null,
+          "kalla": null,
+          "not": "Kräver verkligt Temu-pris och besked om momsläget."
+        }
+      },
+      "poang": {
+        "wow": 4,
+        "kandhet": 3,
+        "problem": 5,
+        "demo": 5,
+        "mansprodukt": 4,
+        "marginal": null
+      },
+      "motivering": {
+        "3-sek-bilden": "Brädan reser sig själv medan mannen står och tittar på.",
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+      },
+      "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
+      "skal": null,
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
+    },
+    {
+      "slug": "mc-tankvaska",
+      "namn": "Magnetisk MC-tankväska med mobilfönster",
+      "nisch": "mc",
+      "upptackt": "2026-08-26",
+      "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
+      "temu_lank": "https://www.temu.com/magnetic-motorcycle-bag-motorcycle--tank-bag-navigation-universal-motorbike-tool-backpack-portable-g-601099594026719.html",
+      "temu_sokterm": null,
+      "stopp": {
+        "frakt_regel": {
+          "dom": "pass",
+          "kalla": "Temu-listning: https://www.temu.com/magnetic-motorcycle-bag-motorcycle--tank-bag-navigation-universal-motorbike-tool-backpack-portable-g-601099594026719.html",
+          "not": "Ingen elektronik, ingen storleksvariant, tål postgång."
+        },
+        "marginal": {
+          "dom": null,
+          "kalla": null,
+          "not": "Kräver verkligt Temu-pris och besked om momsläget."
+        }
+      },
+      "poang": {
+        "wow": 4,
+        "kandhet": 4,
+        "problem": 4,
+        "demo": 4,
+        "mansprodukt": 5,
+        "marginal": null
+      },
+      "motivering": {
+        "3-sek-bilden": "Väskan smäller fast på tanken av sig själv — inga remmar.",
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+      },
+      "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
+      "skal": null,
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
+    },
+    {
+      "slug": "mc-mobilhallare",
+      "namn": "Vattentät MC-mobilhållare, 360°",
+      "nisch": "mc",
+      "upptackt": "2026-08-26",
+      "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
+      "temu_lank": "https://www.temu.com/1pc-waterproof-bike-phone-mount-cell-phone-holder-for-motorcycle-bike-handlebars-360-adjustable-universal-motorcycle-phone-mount-bike-phone-holder-with-tpu--handlebar-clamp-fits-4-0-6-8inch-smartphones-g-601099565517616.html",
+      "temu_sokterm": null,
+      "stopp": {
+        "frakt_regel": {
+          "dom": "pass",
+          "kalla": "Temu-listning: https://www.temu.com/1pc-waterproof-bike-phone-mount-cell-phone-holder-for-motorcycle-bike-handlebars-360-adjustable-universal-motorcycle-phone-mount-bike-phone-holder-with-tpu--handlebar-clamp-fits-4-0-6-8inch-smartphones-g-601099565517616.html",
+          "not": "Ingen elektronik, ingen storleksvariant, tål postgång."
+        },
+        "marginal": {
+          "dom": null,
+          "kalla": null,
+          "not": "Kräver verkligt Temu-pris och besked om momsläget."
+        }
+      },
+      "poang": {
+        "wow": 2,
+        "kandhet": 2,
+        "problem": 4,
+        "demo": 3,
+        "mansprodukt": 4,
+        "marginal": null
+      },
+      "motivering": {
+        "3-sek-bilden": "Regnet vräker ner, telefonen är torr och skärmen går att svepa.",
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+      },
+      "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
+      "skal": null,
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
+    },
+    {
+      "slug": "stolsspalt",
+      "namn": "Bilstolsspalt-organizer, 2 lager",
+      "nisch": "bil",
+      "upptackt": "2026-08-26",
+      "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
+      "temu_lank": "https://www.temu.com/1pc-car-seat-gap-filler-organizer-auto-seat-catcher-slot-storage-box-side-pocket-holder-removable-washable-2-layers-driver-passenger-side-g-601099512543869.html",
+      "temu_sokterm": null,
+      "stopp": {
+        "frakt_regel": {
+          "dom": "pass",
+          "kalla": "Temu-listning: https://www.temu.com/1pc-car-seat-gap-filler-organizer-auto-seat-catcher-slot-storage-box-side-pocket-holder-removable-washable-2-layers-driver-passenger-side-g-601099512543869.html",
+          "not": "Ingen elektronik, ingen storleksvariant, tål postgång."
+        },
+        "marginal": {
+          "dom": null,
+          "kalla": null,
+          "not": "Kräver verkligt Temu-pris och besked om momsläget."
+        }
+      },
+      "poang": {
+        "wow": 3,
+        "kandhet": 2,
+        "problem": 4,
+        "demo": 5,
+        "mansprodukt": 3,
+        "marginal": null
+      },
+      "motivering": {
+        "3-sek-bilden": "Telefonen tappas — och studsar på organizern i stället för att försvinna ner i springan.",
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+      },
+      "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
+      "skal": null,
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
+    },
+    {
+      "slug": "stralkastare",
+      "namn": "Strålkastarrestaurering, kit",
+      "nisch": "bil",
+      "upptackt": "2026-08-26",
+      "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
+      "temu_lank": "https://www.temu.com/universal-headlight-restoration-kit-car-light-polish-for-yellowing-scratch-and-oxidation-repair-clear-and-bright--plastic-headlamp-restorer-fluid-g-601099649443819.html",
+      "temu_sokterm": null,
+      "stopp": {
+        "frakt_regel": {
+          "dom": "pass",
+          "kalla": "Temu-listning: https://www.temu.com/universal-headlight-restoration-kit-car-light-polish-for-yellowing-scratch-and-oxidation-repair-clear-and-bright--plastic-headlamp-restorer-fluid-g-601099649443819.html",
+          "not": "Ingen elektronik, ingen storleksvariant, tål postgång."
+        },
+        "marginal": {
+          "dom": null,
+          "kalla": null,
+          "not": "Kräver verkligt Temu-pris och besked om momsläget."
+        }
+      },
+      "poang": {
+        "wow": 5,
+        "kandhet": 2,
+        "problem": 4,
+        "demo": 5,
+        "mansprodukt": 5,
+        "marginal": null
+      },
+      "motivering": {
+        "3-sek-bilden": "Halva strålkastaren gulnad, halva glasklar. Delad bild, noll förklaring behövs.",
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+      },
+      "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
+      "skal": null,
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
+    },
+    {
+      "slug": "rengoringsgel",
+      "namn": "Bilrengöringsgel för ventiler",
+      "nisch": "bil",
+      "upptackt": "2026-08-26",
+      "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
+      "temu_lank": "https://www.temu.com/80g-cleaning-gel-for-car-detail-tools-car-cleaning-automotive-dust-air-vent-interior-detail-putty-universal-dust-cleaner-tools-for-cars-g-601099512312723.html",
+      "temu_sokterm": null,
+      "stopp": {
+        "frakt_regel": {
+          "dom": "pass",
+          "kalla": "Temu-listning: https://www.temu.com/80g-cleaning-gel-for-car-detail-tools-car-cleaning-automotive-dust-air-vent-interior-detail-putty-universal-dust-cleaner-tools-for-cars-g-601099512312723.html",
+          "not": "Ingen elektronik, ingen storleksvariant, tål postgång."
+        },
+        "marginal": {
+          "dom": null,
+          "kalla": null,
+          "not": "Kräver verkligt Temu-pris och besked om momsläget."
+        }
+      },
+      "poang": {
+        "wow": 3,
+        "kandhet": 1,
+        "problem": 3,
+        "demo": 5,
+        "mansprodukt": 3,
+        "marginal": null
+      },
+      "motivering": {
+        "3-sek-bilden": "Gelen trycks ner i ventilgallret och kommer upp svart.",
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+      },
+      "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
+      "skal": null,
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
+    },
+    {
+      "slug": "baksatesmadrass",
+      "namn": "Uppblåsbar baksätesmadrass med pump",
+      "nisch": "bil",
+      "upptackt": "2026-08-26",
+      "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
+      "temu_lank": "https://www.temu.com/-inflatable-car-air-mattress-back-seat-bed-thickened-car-camping-air-mattress-with-air-pump-car-sleeping-mattress-bed-for-car-universal-suv-portable-car-travel-mattress-g-601099590681604.html",
+      "temu_sokterm": null,
+      "stopp": {
+        "frakt_regel": {
+          "dom": "pass",
+          "kalla": "Temu-listning: https://www.temu.com/-inflatable-car-air-mattress-back-seat-bed-thickened-car-camping-air-mattress-with-air-pump-car-sleeping-mattress-bed-for-car-universal-suv-portable-car-travel-mattress-g-601099590681604.html",
+          "not": "Ingen elektronik, ingen storleksvariant, tål postgång."
+        },
+        "marginal": {
+          "dom": null,
+          "kalla": null,
+          "not": "Kräver verkligt Temu-pris och besked om momsläget."
+        }
+      },
+      "poang": {
+        "wow": 4,
+        "kandhet": 2,
+        "problem": 3,
+        "demo": 4,
+        "mansprodukt": 4,
+        "marginal": null
+      },
+      "motivering": {
+        "3-sek-bilden": "Baksätet blir en dubbelsäng på nittio sekunder.",
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+      },
+      "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
+      "skal": null,
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
+    },
+    {
+      "slug": "vindrutebeskydd",
+      "namn": "Magnetiskt vindrutebeskydd, 3 lager",
+      "nisch": "bil",
+      "upptackt": "2026-08-26",
+      "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
+      "temu_lank": "https://www.temu.com/magnetic-car-windshield-snow-cover-with-3-layers-protection--frost-uv-dust-resistant-for-windscreen-protector-windshield-cover-fits-for-cars-trucks--and-suvs-all-weather--g-601099664585850.html",
+      "temu_sokterm": null,
+      "stopp": {
+        "frakt_regel": {
+          "dom": "pass",
+          "kalla": "Temu-listning: https://www.temu.com/magnetic-car-windshield-snow-cover-with-3-layers-protection--frost-uv-dust-resistant-for-windscreen-protector-windshield-cover-fits-for-cars-trucks--and-suvs-all-weather--g-601099664585850.html",
+          "not": "Ingen elektronik, ingen storleksvariant, tål postgång."
+        },
+        "marginal": {
+          "dom": null,
+          "kalla": null,
+          "not": "Kräver verkligt Temu-pris och besked om momsläget."
+        }
+      },
+      "poang": {
+        "wow": 3,
+        "kandhet": 2,
+        "problem": 5,
+        "demo": 4,
+        "mansprodukt": 4,
+        "marginal": null
+      },
+      "motivering": {
+        "3-sek-bilden": "Grannen skrapar i tio minuter. Han drar av duken och kör.",
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+      },
+      "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
+      "skal": null,
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
+    },
+    {
+      "slug": "hundskydd",
+      "namn": "Hundskydd baksäte med hård botten",
+      "nisch": "bil",
+      "upptackt": "2026-08-26",
+      "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
+      "temu_lank": "https://www.temu.com/back-seat-extender-for-dogs--antiscratch-pu-leather-hard-bottom-dog-car-seat-cover-waterproof-dog-car-hammock-backseat-pet-protector-detachable-seat-covers-for-car-suv-truck-g-601101648226567.html",
+      "temu_sokterm": null,
+      "stopp": {
+        "frakt_regel": {
+          "dom": "pass",
+          "kalla": "Temu-listning: https://www.temu.com/back-seat-extender-for-dogs--antiscratch-pu-leather-hard-bottom-dog-car-seat-cover-waterproof-dog-car-hammock-backseat-pet-protector-detachable-seat-covers-for-car-suv-truck-g-601101648226567.html",
+          "not": "Ingen elektronik, ingen storleksvariant, tål postgång."
+        },
+        "marginal": {
+          "dom": null,
+          "kalla": null,
+          "not": "Kräver verkligt Temu-pris och besked om momsläget."
+        }
+      },
+      "poang": {
+        "wow": 2,
+        "kandhet": 2,
+        "problem": 4,
+        "demo": 4,
+        "mansprodukt": 3,
+        "marginal": null
+      },
+      "motivering": {
+        "3-sek-bilden": "Blöt jakthund hoppar in — baksätet är fortfarande torrt.",
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+      },
+      "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
+      "skal": null,
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
+    },
+    {
+      "slug": "kottermometer",
+      "namn": "Trådlös köttermometer, 150 m, 2 givare",
+      "nisch": "grill",
+      "upptackt": "2026-08-26",
+      "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
+      "temu_lank": "https://www.temu.com/-tp08-wireless-meat-thermometer-500ft-range-dual-probes-for-grilling-bbq-digital-kitchen-cooking-temperature-gauge-with-alerts--batteries-g-601099761936638.html",
+      "temu_sokterm": null,
+      "stopp": {
+        "frakt_regel": {
+          "dom": "varning",
+          "kalla": "Temu-listning: https://www.temu.com/-tp08-wireless-meat-thermometer-500ft-range-dual-probes-for-grilling-bbq-digital-kitchen-cooking-temperature-gauge-with-alerts--batteries-g-601099761936638.html",
+          "not": "Uppladdningsbart/batteridrivet — kontrollera litium och fraktrestriktioner före beställning."
+        },
+        "marginal": {
+          "dom": null,
+          "kalla": null,
+          "not": "Kräver verkligt Temu-pris och besked om momsläget."
+        }
+      },
+      "poang": {
+        "wow": 4,
+        "kandhet": 2,
+        "problem": 4,
+        "demo": 4,
+        "mansprodukt": 5,
+        "marginal": null
+      },
+      "motivering": {
+        "3-sek-bilden": "Han sitter inne med ölen medan telefonen larmar om att köttet är klart.",
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+      },
+      "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
+      "skal": null,
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
+    },
+    {
+      "slug": "kallrok",
+      "namn": "Kallrökgenerator i rostfritt, utan el",
+      "nisch": "grill",
+      "upptackt": "2026-08-26",
+      "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
+      "temu_lank": "https://www.temu.com/rectangular-stainless-steel-smoke-generator-for-bbq-smoke-fish-cheese-and-more-no-electricity-required-g-601099616899807.html",
+      "temu_sokterm": null,
+      "stopp": {
+        "frakt_regel": {
+          "dom": "pass",
+          "kalla": "Temu-listning: https://www.temu.com/rectangular-stainless-steel-smoke-generator-for-bbq-smoke-fish-cheese-and-more-no-electricity-required-g-601099616899807.html",
+          "not": "Ingen elektronik, ingen storleksvariant, tål postgång."
+        },
+        "marginal": {
+          "dom": null,
+          "kalla": null,
+          "not": "Kräver verkligt Temu-pris och besked om momsläget."
+        }
+      },
+      "poang": {
+        "wow": 5,
+        "kandhet": 4,
+        "problem": 4,
+        "demo": 5,
+        "mansprodukt": 5,
+        "marginal": null
+      },
+      "motivering": {
+        "3-sek-bilden": "Röken kryper ut ur lådan i tolv timmar — laxen blir kallrökt i en vanlig grill.",
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+      },
+      "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
+      "skal": null,
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
+    },
+    {
+      "slug": "campingdusch",
+      "namn": "Bärbar USB-campingdusch med pump",
+      "nisch": "camping",
+      "upptackt": "2026-08-26",
+      "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
+      "temu_lank": "https://www.temu.com/portable-camping-shower-outdoor-camping-shower-pump-usb-rechargeable-plug-and--handheld-showerhead-for-camping-hiking-traveling-rv-g-601100228650100.html",
+      "temu_sokterm": null,
+      "stopp": {
+        "frakt_regel": {
+          "dom": "varning",
+          "kalla": "Temu-listning: https://www.temu.com/portable-camping-shower-outdoor-camping-shower-pump-usb-rechargeable-plug-and--handheld-showerhead-for-camping-hiking-traveling-rv-g-601100228650100.html",
+          "not": "Uppladdningsbart/batteridrivet — kontrollera litium och fraktrestriktioner före beställning."
+        },
+        "marginal": {
+          "dom": null,
+          "kalla": null,
+          "not": "Kräver verkligt Temu-pris och besked om momsläget."
+        }
+      },
+      "poang": {
+        "wow": 4,
+        "kandhet": 3,
+        "problem": 4,
+        "demo": 5,
+        "mansprodukt": 4,
+        "marginal": null
+      },
+      "motivering": {
+        "3-sek-bilden": "Pumpen ner i en hink — och det blir en riktig dusch mitt i skogen.",
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+      },
+      "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
+      "skal": null,
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
+    },
+    {
+      "slug": "nackstretcher",
+      "namn": "Uppblåsbar nackstretcher",
+      "nisch": "kropp",
+      "upptackt": "2026-08-26",
+      "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
+      "temu_lank": "https://www.temu.com/1pc-neck-stretcher-inflatable-cervical-neck-traction-device-and-neck-brace-adjustable-neck-support-for-spine-alignment-and-neck-g-601099523726017.html",
+      "temu_sokterm": null,
+      "stopp": {
+        "frakt_regel": {
+          "dom": "pass",
+          "kalla": "Temu-listning: https://www.temu.com/1pc-neck-stretcher-inflatable-cervical-neck-traction-device-and-neck-brace-adjustable-neck-support-for-spine-alignment-and-neck-g-601099523726017.html",
+          "not": "Ingen elektronik, ingen storleksvariant, tål postgång."
+        },
+        "marginal": {
+          "dom": null,
+          "kalla": null,
+          "not": "Kräver verkligt Temu-pris och besked om momsläget."
+        }
+      },
+      "poang": {
+        "wow": 3,
+        "kandhet": 2,
+        "problem": 5,
+        "demo": 3,
+        "mansprodukt": 4,
+        "marginal": null
+      },
+      "motivering": {
+        "3-sek-bilden": "Pumpas upp och lyfter huvudet synligt från axlarna.",
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+      },
+      "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
+      "skal": null,
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
+    },
+    {
+      "slug": "multiyxa",
+      "namn": "Multiverktygsyxa 13-i-1 med vikbar såg",
+      "nisch": "camping",
+      "upptackt": "2026-08-26",
+      "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
+      "temu_lank": "https://www.temu.com/camping-axe-13-multifunctional-hatchet-with-whistle-folding-saw-and-abs-sheath-full-tang-survival-axe-with-nylon-fiber-handle-for-outdoor-bushcraft-hiking-camping-g-602256065844454.html",
+      "temu_sokterm": null,
+      "stopp": {
+        "frakt_regel": {
+          "dom": "varning",
+          "kalla": "Temu-listning: https://www.temu.com/camping-axe-13-multifunctional-hatchet-with-whistle-folding-saw-and-abs-sheath-full-tang-survival-axe-with-nylon-fiber-handle-for-outdoor-bushcraft-hiking-camping-g-602256065844454.html",
+          "not": "Yxa med kniv/såg — kontrollera svenska införsel- och åldersregler före beställning."
+        },
+        "marginal": {
+          "dom": null,
+          "kalla": null,
+          "not": "Kräver verkligt Temu-pris och besked om momsläget."
+        }
+      },
+      "poang": {
+        "wow": 4,
+        "kandhet": 3,
+        "problem": 3,
+        "demo": 4,
+        "mansprodukt": 5,
+        "marginal": null
+      },
+      "motivering": {
+        "3-sek-bilden": "Yxan fälls upp och tretton verktyg viker ut sig ur skaftet.",
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+      },
+      "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
+      "skal": null,
       "axel": {
         "dom": null,
         "skal": null,
