@@ -42,10 +42,13 @@ hans nej, godkännandegraden per nisch, och hans egna ord om varje produkt.
    **problemformulerade** — `fishing tool` ger brus, `fish lip gripper` och
    `hook remover` ger produkter. Härled dem ur nischens moment: vad gör mannen, i
    vilken ordning, var gör det ont?
-4. **Svep Temu:** `WebFetch` på `https://www.temu.com/search_result.html?search_key=<term>`
-   — **utan `/se/`**, den varianten returnerar bara sidtiteln. Ett anrop per term,
-   **ett i taget och högst 6–8 per session**: Temu stryper efter ungefär tio anrop och
-   svarar då bara med sidtiteln "Temu". Tolka det som strypning, inte som noll träffar.
+4. **Svep Temu — använd `WebSearch` med `site:temu.com <term>`, inte WebFetch.**
+   Sökmotorn ger **riktiga produktlänkar** (`...-g-<id>.html`) till kolumn M i
+   quote-sheetet, och stryps aldrig. WebFetch mot `temu.com/search_result.html` ger
+   bara namn utan länkar och slutar svara efter ungefär tio anrop — då kommer bara
+   sidtiteln "Temu" tillbaka, vilket är strypning och inte noll träffar.
+   Funkar inte `site:`-operatorn i en viss sökning: skriv om den som
+   `temu.com <term> product page`.
 5. **Grovsålla** — bort med storleksval, rent dekorativt och flerpacksbrus.
 6. **Kändhetskolla de överlevande** — `WebSearch` på `pricerunner <svensk term>`,
    antalet står i träffens titel. En sökning per kandidat räcker i jaktläget.
@@ -108,8 +111,9 @@ python3 pipeline/quote-sheet.py produkter.json ut.xlsx
 ```
 
 `produkter.json` är en lista med `{namn, temu_lank, bild, butikslank, leverantor_ref}`.
-Bara `temu_lank` krävs. **Bilden måste vara en lokal fil** — Temus bild-URL:er går inte
-att hämta härifrån, så be Axel om bilderna eller ta dem ur ett sheet han skickat.
+Bara `temu_lank` krävs. **Produktbilder går inte att hämta från Temu på någon testad
+väg** — lämna `bild` tom och skriv produktnamnet i `namn`, så fylls kolumn A med namnet
+i stället för en bild. Har Axel skickat bilder: peka `bild` på de lokala filerna.
 Ta med **de godkända** kandidaterna, inte hela listan. Skicka filen i chatten.
 
 ---

@@ -155,9 +155,11 @@ och utan Axels skäl lär sig systemet ingenting.
 
 | Källa | Läge | Vad vi får |
 |---|---|---|
-| **Temu-sök** via `temu.com/search_result.html?search_key=<term>` | ✅ | Produktnamn. **Utan `/se/` i sökvägen** — `/se/`-varianten returnerar bara sidtiteln |
-| Temu efter ~10 anrop | ⚠️ | **Stryps.** Svaret blir bara sidtiteln "Temu" och hade inte återhämtat sig efter ~10 min. Svep 6–8 termer per session, en i taget, och spara resten till nästa gång |
-| **WebSearch** | ✅ | Bärande verktyget för G1 och G2 |
+| **`site:temu.com <term>` via WebSearch** | ✅✅ | **Bästa metoden.** Ger riktiga produktlänkar (`...-g-<id>.html`) och stryps aldrig. Använd i första hand |
+| Temu-sök via `temu.com/search_result.html?search_key=<term>` | ⚠️ | Produktnamn men **inga länkar**. Utan `/se/` i sökvägen. Stryps snabbt |
+| Temu efter ~10 anrop | ❌ | **Stryps hårt.** Svaret blir bara sidtiteln "Temu" och hade inte återhämtat sig efter en timme. Gäller även enskilda produktsidor |
+| **Produktbilder från Temu** | ❌ | Går inte att hämta på någon testad väg. Sheetet får produktnamn i kolumn A i stället för bild |
+| **WebSearch** | ✅ | Bärande verktyget för kändhetsaxeln och mättnadskollen |
 | Clas Ohlson-, Kjell-, XXL-sök | ✅ | Direkt G1-kontroll |
 | Temu-priser | ⚠️ | **Opålitliga.** Extraheringen blandar ihop rader — vi har sett en pennvässare på $495. Priset läser Axel av själv |
 | Temu sold-count / omdömen | ❌ | Finns inte i det vi kan hämta. Ingen automatisk säljvolym-validering |
