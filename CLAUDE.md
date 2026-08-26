@@ -24,6 +24,14 @@ Idéer dras aldrig ur luften. Varje koncept ska gå att spåra genom de här ste
 En idé = (bevisad önskan) × (bevisat format någon annanstans) × (våra regler).
 Kan jag inte peka på steg 1 och 4 för en idé är den påhittad — då ska den bort.
 
+Samma krav på SCENARIONIVÅ: varje vardagsscen i ett script (vad han gör,
+när han blir sur, vad som hänger vid grillen) ska gå att spåra till VOC —
+ringlistan, forumresearchen eller ett kundcitat. Ett scenario ingen känner
+igen ("skrubbar surt i mörkret") dödar trovärdigheten även om resten är rätt.
+Verkliga mönster att bygga på: han skjuter upp rengöringen och grillar ändå,
+han kör med en urgammal sliten borste för "den funkar ju", han köper aldrig
+något till sig själv, han svarar "ingenting" på önskelistan.
+
 ## Regelmallen (låsta regler, gäller varje script)
 
 - **Domare:** spend + ROAS. Mjuka mått (CTR, hook rate, tittartid) är obduktion,
