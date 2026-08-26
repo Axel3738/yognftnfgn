@@ -62,3 +62,48 @@ källform ur GitHub-klonen, `ms-*.css` i källform via Admin API. (CDN-versioner
 | `locales/` | byt butiksspråk till `en.default.json` (finns redan i Dawn) |
 
 CSS/JS behöver **ingen** översättning — svenskan där är kodkommentarer.
+
+---
+
+## Sushi Socks-butiken — läget 2026-08-26
+
+Butik: `ud9jb9-jb.myshopify.com` (trial). Temat uppladdat av Axel som
+**"theme-export-matstrumpor-se-matstrumpor-cro-v4"** (utkast).
+
+### Gjort via API
+
+| Vad | Status |
+|---|---|
+| `templates/index.json` | ✅ engelsk, sushi-spetsad copy, recensionssektionen borttagen |
+| `templates/product.json` | ✅ engelsk, 6 FAQ-frågor, Judge.me-blocken borttagna (appen finns inte här) |
+| `sections/header-group.json` | ✅ engelska announcements + landväljare på |
+| `sections/footer-group.json` | ✅ engelska rubriker, företagsblocket = platshållare |
+| 7 × `snippets/ms-*.liquid` | ✅ alla kundsynliga strängar på engelska |
+| Metaobjekt `ms_paketniva` | ✅ skapat som "Bundle tier", 13 fält, storefront-läsbart |
+| Marknader | ✅ US (USD), UK (GBP), AU (AUD), NZ (NZD), CA (CAD) — alla aktiva |
+| Butiksspråk | ✅ engelska var redan primärt |
+
+**Uppladdningsmetoden som fungerar** (och sparar enormt med kontext):
+`stagedUploadsCreate` med `resource: FILE` → `PUT` filen med curl → resourceUrl är
+publikt läsbar → `themeFilesUpsert` med `body: { type: URL, value: <resourceUrl> }`.
+Filinnehållet behöver aldrig passera GraphQL-anropet.
+⚠️ `themeFilesUpsert` returnerar tom `upsertedThemeFiles`-lista även när det
+lyckas — verifiera med en `files`-query på `size`/`updatedAt` i stället.
+
+### Kvar — kräver klick i adminen (API:t tillåter det inte)
+
+1. **Butiksnamnet** står som "My Store" → ändra till **Sushi Socks**
+   (Inställningar → Butiksuppgifter).
+2. **Butiksvalutan är SEK** → ändra till **USD**. Går bara innan första ordern.
+3. **Sverige ligger kvar som primär marknad.** Exakt samma fälla som
+   beavershop.co.uk hade: alla besökare utanför de fem länderna får då SEK.
+   Gör USA primär och ta bort Sverige-marknaden.
+4. **Publicera temat** (Shopify blockerar temapublicering via API).
+5. **Apparna**: Judge.me och Klaviyo om de ska med.
+
+### Kvar för mig när det är gjort
+
+- Produkten (sushi-strumporna) med engelsk copy + bilder
+- Paketnivåerna som `bundle_tier`-poster + riktiga rabattkoder i kassan
+- Priser per marknad enligt 3×-regeln (kräver CWD-kostnad för US/UK/AU/NZ/CA)
+- Fraktzoner per marknad

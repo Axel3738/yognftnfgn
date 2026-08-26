@@ -1,0 +1,14 @@
+{%- comment -%}
+  ms-guarantee — guarantee card. Parameters: title, body, icon
+{%- endcomment -%}
+{%- liquid
+  assign ico = icon | default: 'seal'
+  assign head = title | default: '30-day returns'
+-%}
+<div class="ms-guarantee ms-scope">
+  <div class="ms-guarantee__seal">{% render 'ms-icon', name: ico %}</div>
+  <div>
+    <p class="ms-h3">{{ head }}</p>
+    <div class="ms-guarantee__body">{{ body }}</div>
+  </div>
+</div>
