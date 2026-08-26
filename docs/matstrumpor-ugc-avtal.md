@@ -9,8 +9,12 @@
 | Kreatör | Brief | Pris | Rättigheter | Fönster | Status |
 |---|---|---|---|---|---|
 | **Nathalie Bemerholt** (@nathalie40plus) | 016 — Sushiälskaren | 3 000 kr + 500 kr rättigheter = **3 500 kr** (moms ej bekräftad) | Fria annonsrättigheter | **6 mån från leverans** | Överenskommet 2026-08-26, leveransdatum ej satt |
-| **Sofie Olsson** (heltids-UGC, 35K följare, nisch kvinnor 40+) | 015 — Remake, två hooks | **5 500 kr ex moms** | Fria annonsrättigheter | **6 mån från leverans** | Bud accepterat 2026-08-26, väntar bekräftelse |
-| **husetmellanhagarna** | 014 — Levain-swipe | — | — | — | Ej kontaktad/besvarad |
+| **Sofie Olsson** = **@husetmellanhagarna** (heltids-UGC, 35K följare, nisch kvinnor 40+) | 015 — Remake, två hooks | **5 500 kr ex moms** | Fria annonsrättigheter | **6 mån från leverans** | Bud accepterat 2026-08-26, väntar bekräftelse |
+| **@optiwellness.se** | 014 — Levain-swipe (otilldelad) | — | — | — | Status oklar — kontaktad? |
+
+⚠️ **Sofie Olsson och @husetmellanhagarna är samma person.** Kontonamnet avslöjar
+inte nischen: kontot är UGC-produktion mot kvinnor 40+, inte ett familjekonto.
+Matcha aldrig brief mot kreatör utifrån kontonamnet — läs profilen eller fråga.
 
 ## Att bevaka
 
@@ -21,6 +25,9 @@
 - **Sätt kalenderpåminnelse 1 månad före varje fönster går ut**, så beslutet
   (förlänga eller pausa) tas i lugn och ro.
 - Moms: Sofie har angett ex moms. Nathalies 3 500 kr är oklart — bekräftas i mail.
+- **014 (Levain-swipe) är otilldelad.** Den kräver en mottagare i bild (scen 5:
+  någon får lådan, dubbeltitt, skratt) — sikta på en kreatör som har folk omkring
+  sig att filma, inte en ensam talking head.
 
 ## Principen som förhandlingarna byggde på
 
