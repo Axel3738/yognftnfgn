@@ -218,4 +218,13 @@ Senaste 3 dygnen: 21 302 kr spend → 1 498 kr vinst (**0,07 kr per spendkrona**
 | SO_7_1 | "Tänk om den inte funkar för mig?" → 30 dagars garanti | PROD-serien (obeprövad, saknar dom) | format=static; proof=garanti |
 | PD_31_1 | Före/efter: spretande halvor vs hopklämt paket i bagageluckan | VoC kat 1 + PD_6_1 | format=split-static; vinkel=kontrast |
 
+**Copy:** all svensk copy skriven av sonnet-subagent enligt regel 6, mot `docs/copy-regler.md`, tre-frågorstestet redovisat per rad i varje brief. Ny gemensam primärtext ersätter CS_1:s osanna rabattext (den innehöll "40 % RABATT", "IDAG ENDAST", "Få kvar i lager" och "Fri frakt över 300kr" — inget av det håller).
+
+**Levererat 2026-08-26:**
+- Repo: `docs/briefs/rodholder-batch5-2026-08-26/` (README + 9 briefer + zip)
+- Drive: `Batch #5 briefs – QUALIFY NOT FASCINATE (2026-08-26)` (mapp `1MJ5uolp_ApMIIjWOZhnS39BZATSPtZf2`) med `video-ads-briefs` (`1yeNK_IxWNIQ-DkOkt0yBS8q_GFmr5elU`) och `image-ads-briefs` (`1zalxy5esePFyLBwv1Au_cr9Xls1N6VFz`) — 10 Google Docs
+- Notion: 14 items i Fish rod holder-hubben, Draft + `Video - Pending Approval`, brief inklistrad + Drive-länk överst
+
+⚠️ **Notion-hubben har fått en ny typ `Image - Pending Approval`** (fanns inte vid batch #4). Batch #5:s fyra statics lades ändå som `Video - Pending Approval` för att följa `docs/os/NOTION-FORMAT.md` och vara konsekvent med batch #2–#4 — hade jag bytt hade statics fallit ur `/dashboard`-filtreringen som filtrerar på inkludering. **Frågan om hubben ska börja använda bildtypen är Axels** — byts den måste NOTION-FORMAT.md och dashboardfiltret ändras samtidigt, annars försvinner alla bildannonser ur mätningen tyst.
+
 **Utfall:** fylls i av nästa `/cs`.
