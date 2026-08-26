@@ -9,7 +9,8 @@
       "campaign_ids": [
         "120249850522830291"
       ],
-      "daily_budget_sek": 4000,
+      "daily_budget_sek": 8000,
+      "daily_budget_kalla": "OBSERVERAD faktisk dagsspend 2026-08-23..26 (5 829-9 506 kr/dag, snitt ~7 700). Budgetfaltet gar INTE att lasa via Meta-MCP:t - detta ar utrakning ur spenden, inte ett avlast budgetvarde. Var 4000 vid registreringen 2026-08-21. OBS: budgetokningen sammanfaller med att CPA gick 101 -> 324 kr, se dna.md.",
       "target_cpa_sek": 178,
       "cycle_start": "2026-08-18",
       "status": "aktiv",
@@ -25,6 +26,10 @@
         {
           "date": "2026-08-24",
           "count": 27
+        },
+        {
+          "date": "2026-08-25",
+          "count": 20
         }
       ],
       "break_even_cpa_sek": 285,
