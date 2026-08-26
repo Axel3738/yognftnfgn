@@ -6,6 +6,7 @@
   "description": "Creative Strategy OS för Bäverbutiken: brief-kvot, produktminne och redigerardashboard. Inga externa beroenden.",
   "scripts": {
     "quota": "node pipeline/quota.mjs",
+    "kandidater": "node pipeline/kandidater.mjs",
     "seed": "node dashboard/seed.mjs --force",
     "dash": "node dashboard/build.mjs",
     "status": "node dashboard/cli.mjs status",

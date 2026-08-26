@@ -121,10 +121,11 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 
 ## Kommandona (Axels gränssnitt)
 
-13 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
+14 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
 
 | Kommando | Vad |
 |----------|-----|
+| `/produkt jaga <nisch>` / `/produkt <namn>` | **Produktjakten:** sveper Temu efter nya produkter, eller dömer av en kandidat mot de sex grindarna — `docs/os/PRODUKTKRITERIER.md` |
 | `/ny-produkt <namn> <budget>` | Första testbatchen för ny produkt (ingen data än) — SOP-06 |
 | `/forsta-batch <namn>` | Full CS-analys från noll i en NY chatt |
 | `/cs <id> [egna idéer]` | **Kärnloopen:** CS på senaste annonserna, feedbackloop, nästa batch |
@@ -148,6 +149,7 @@ installera för OS:et). Kör dessa **från repo-roten**:
 
 ```bash
 npm run quota      # node pipeline/quota.mjs      — brief-kvoten (mål nr 1)
+npm run kandidater # node pipeline/kandidater.mjs — produktkandidater: grindar, poäng, dom
 npm run dash       # node dashboard/build.mjs     — bygger dashboard/index.html
 npm run status     # node dashboard/cli.mjs status
 npm run review     # node dashboard/cli.mjs review-queue
@@ -170,6 +172,7 @@ Det finns ingen linter och ingen byggkedja i OS:et — `npm test` är hela grind
 | **Creative strategy: insikt → manus (hjärnan i video-pipelinen)** | **`docs/creative-strategy.md`** |
 | **Copy-reglerna (obligatoriska för varje rad som skrivs)** | **`docs/copy-regler.md`** |
 | **Analysmetoden (obligatorisk vid all bedömning)** | **`docs/os/ANALYSMETOD.md`** |
+| **Produktkriterier (obligatoriska vid allt produktval)** | **`docs/os/PRODUKTKRITERIER.md`** |
 | Playbook — vinklar/hooks/format som bevisats över tid | `docs/playbook.md` |
 | Hook-regeln (visuellt) | `docs/hook-visual-rule-2026-08-04.md` |
 | Avatar-research + VoC (Reddit) | `docs/avatar-research-*.md`, `docs/voc-reddit-*.md` |
@@ -180,8 +183,10 @@ Det finns ingen linter och ingen byggkedja i OS:et — `npm test` är hela grind
 | Editor SOP (engelska, till redigerarna) | `docs/os/EDITOR-SOP.md` |
 | Notion-formatet för briefer (exakt spec + statustabell) | `docs/os/NOTION-FORMAT.md` |
 | Produkt-konfig + launch-logg | `products/products.json` |
+| Produktkandidater (bedömda OCH avfärdade) | `products/kandidater.json` |
 | Produktminne per produkt | `products/<id>/` |
 | Kvot-skriptet | `pipeline/quota.mjs` |
+| Kandidat-skriptet | `pipeline/kandidater.mjs` |
 | Namnkonventionen | `docs/naming-convention.md` |
 | Punchline-bank + vinnande lines | `docs/winning-lines.md` |
 | Ad-tracker (hypotes → utfall → lärdom) | `docs/ad-tracker.md` |

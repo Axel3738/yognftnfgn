@@ -41,7 +41,7 @@ en första ads-batch, och skalar det som visar köpsignal. Allt sker i ad accoun
 
 ## Flödet för en ny testprodukt
 
-1. Välj nästa produkt (Axel, eller enligt "What product is next"-Loomen).
+1. Välj nästa produkt — kör **`/produkt jaga <nisch>`** för att hitta kandidater och **`/produkt <namn>`** för att döma av en. Kriterierna står i `docs/os/PRODUKTKRITERIER.md`; minnet i `products/kandidater.json`. Endast produkter med domen `GO` går vidare till steg 2.
 2. Kontrollera i product sheetet: kostnader ifyllda, footage-länk finns,
    "Ads to do" ifylld. Saknas något → fixa först.
 3. Skapa/kontrollera Drive-mappen (`SKU Referensnamn`), lägg allt material i
@@ -86,4 +86,4 @@ session ("här är vad Loomen säger: … uppdatera SOP-06"), så skrivs de in h
 
 - [x] Exakt vilka de "2 extra adsen" är — **klart 2026-08-05**, se ovan
 - [ ] Processtegen i pt 1–3 som inte täcks av stegen ovan
-- [ ] Kriterierna i "What product is next?"
+- [x] Kriterierna i "What product is next?" — **klart 2026-08-26**, se `docs/os/PRODUKTKRITERIER.md` (sex grindar + poängmodell, körs med `/produkt`)
