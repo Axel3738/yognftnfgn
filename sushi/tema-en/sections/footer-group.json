@@ -5,18 +5,40 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "brand": { "type": "brand_information", "settings": { "show_social": true } },
-        "snabblankar": { "type": "link_list", "settings": { "heading": "Quick links", "menu": "main-menu" } },
-        "information": { "type": "link_list", "settings": { "heading": "Information", "menu": "footer" } },
+        "brand": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "snabblankar": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "main-menu"
+          }
+        },
+        "information": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Information",
+            "menu": "footer"
+          }
+        },
         "foretaget": {
           "type": "text",
           "settings": {
             "heading": "The company",
-            "subtext": "<p>PLATSHÅLLARE — fyll i den engelska butikens juridiska uppgifter innan lansering.<br/>Bolagsnamn<br/>Org.nr</p><p>support@DOMÄN</p>"
+            "subtext": "<p>Sushi Sock is operated by<br/>STONEBITE ECOM AB<br/>Reg. no. 559576-2401</p><p>support@sushisock.com</p>"
           }
         }
       },
-      "block_order": ["brand", "snabblankar", "information", "foretaget"],
+      "block_order": [
+        "brand",
+        "snabblankar",
+        "information",
+        "foretaget"
+      ],
       "settings": {
         "color_scheme": "scheme-6",
         "newsletter_enable": true,
@@ -32,7 +54,15 @@
         "padding_bottom": 36
       }
     },
-    "ms_cookies": { "type": "ms-cookies", "settings": { "visible": true } }
+    "ms_cookies": {
+      "type": "ms-cookies",
+      "settings": {
+        "visible": true
+      }
+    }
   },
-  "order": ["footer", "ms_cookies"]
+  "order": [
+    "footer",
+    "ms_cookies"
+  ]
 }

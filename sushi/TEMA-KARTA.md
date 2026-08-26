@@ -77,7 +77,7 @@ Butik: `ud9jb9-jb.myshopify.com` (trial). Temat uppladdat av Axel som
 | `templates/index.json` | ✅ engelsk, sushi-spetsad copy, recensionssektionen borttagen |
 | `templates/product.json` | ✅ engelsk, 6 FAQ-frågor, Judge.me-blocken borttagna (appen finns inte här) |
 | `sections/header-group.json` | ✅ engelska announcements + landväljare på |
-| `sections/footer-group.json` | ✅ engelska rubriker, företagsblocket = platshållare |
+| `sections/footer-group.json` | ✅ engelska rubriker + STONEBITE ECOM AB och support@sushisock.com |
 | 7 × `snippets/ms-*.liquid` | ✅ alla kundsynliga strängar på engelska |
 | Metaobjekt `ms_paketniva` | ✅ skapat som "Bundle tier", 13 fält, storefront-läsbart |
 | Marknader | ✅ US (USD), UK (GBP), AU (AUD), NZ (NZD), CA (CAD) — alla aktiva |
@@ -92,8 +92,11 @@ lyckas — verifiera med en `files`-query på `size`/`updatedAt` i stället.
 
 ### Kvar — kräver klick i adminen (API:t tillåter det inte)
 
-1. **Butiksnamnet** står som "My Store" → ändra till **Sushi Socks**
-   (Inställningar → Butiksuppgifter).
+1. **Butiksnamnet** står som "My Store" → ändra till **Sushi Sock**
+   (Inställningar → Butiksuppgifter). Shopify har ingen `shopUpdate`-mutation
+   för namnet, så det går inte via API.
+1b. **Domänen `sushisock.com`** (Axels val 2026-08-26, kollad ledig mot Verisigns
+   RDAP) — köps under Inställningar → Domäner.
 2. **Butiksvalutan är SEK** → ändra till **USD**. Går bara innan första ordern.
 3. **Sverige ligger kvar som primär marknad.** Exakt samma fälla som
    beavershop.co.uk hade: alla besökare utanför de fem länderna får då SEK.
@@ -107,3 +110,16 @@ lyckas — verifiera med en `files`-query på `size`/`updatedAt` i stället.
 - Paketnivåerna som `bundle_tier`-poster + riktiga rabattkoder i kassan
 - Priser per marknad enligt 3×-regeln (kräver CWD-kostnad för US/UK/AU/NZ/CA)
 - Fraktzoner per marknad
+
+### Domänvalet 2026-08-26
+
+`sushisocks.com` och `foodsocks.com` var båda tagna. Lediga alternativ som
+kontrollerades mot `rdap.verisign.com` (auktoritativ för .com): sushisock.com,
+sockshi.com, wearsushi.com, socksushi.com, makisocks.com, nigirisocks.com,
+thesushisocks.com, getsushisocks.com, foodsox.com, munchsocks.com,
+mealsocks.com, socksnack.com, sockmeal.com, funfoodsocks.com, rollsocks.com,
+wasabisocks.com, sushitoes.com. **Axel valde `sushisock.com`.**
+
+Kontrollmetod (går att köra igen): `curl -o /dev/null -w "%{http_code}"
+https://rdap.verisign.com/com/v1/domain/<domän>` → 404 = ledig, 200 = tagen.
+DNS-uppslag duger INTE — en registrerad domän kan sakna DNS-poster.
