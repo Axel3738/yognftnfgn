@@ -198,3 +198,35 @@ Det är hela poängen: utan de avfärdade utvärderas samma produkt om och om ig
 
 Claude sätter aldrig en wow-poäng på en produkt vars bild ingen har sett — den lämnas
 tom och domen hålls tillbaka tills Axel fyllt i den.
+
+---
+
+## Quote-sheetet
+
+Leverantörsofferten byggs med `pipeline/quote-sheet.py`, som återskapar Axels mall exakt:
+
+```bash
+pip install openpyxl                                  # enda beroendet
+python3 pipeline/quote-sheet.py produkter.json ut.xlsx
+```
+
+`produkter.json` är en lista med `{namn, temu_lank, bild, butikslank, leverantor_ref}`.
+Bara `temu_lank` krävs; `bild` är en lokal fil (Temus bild-URL:er går inte att hämta,
+så bilden måste sparas ner först).
+
+**Mallens struktur** (avläst 2026-08-26): rubrik på rad 1–2, tvåradig kolumnrubrik på
+3–4, sedan ett produktblock var fjärde rad — tre rader för kvantitet 1/2/3 plus en tom
+mellanrad. Sverige ligger inline (`H`–`K`), följt av Norge, Finland, Danmark och UK i
+egna sexkolumnersblock med var sin färg. **Gula celler fyller leverantören i**, gröna är
+summor, och produktnamnet står inte i text — produkten identifieras av bilden i kolumn A
+och Temu-länken i kolumn M.
+
+Två medvetna avsteg från mallen, båda för att mallen är inkonsekvent i sig:
+- **Radhöjd 45 pt i alla block.** Mallen växlar mellan 45, 22,5 och 15,75 — bara 45
+  ger plats åt produktbilden.
+- **Blocktonen växlar hela vägen ner.** Mallen växlar korrekt i block 1–7 och slutar
+  sedan; de sista blocken hann aldrig formateras.
+
+⚠️ LibreOffice kan inte öppna xlsx-filer i den här miljön, så filen går inte att
+förhandsgranska eller räkna om här. Sheetet innehåller inga formler, så det spelar
+ingen roll — men lägger någon in formler måste de verifieras på Axels dator.
