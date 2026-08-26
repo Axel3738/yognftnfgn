@@ -3,7 +3,7 @@
   "kandidater": [
     {
       "slug": "fiskeklamma",
-      "namn": "Fiskeklämma (fish lip gripper)",
+      "namn": "Fiskeklämma med våg, 360° vridbar",
       "nisch": "fiske",
       "upptackt": "2026-08-26",
       "kalla": "Axels egna exempel, verifierat mot Temu-svep 2026-08-26",
@@ -43,7 +43,8 @@
         "skal": null,
         "datum": null
       },
-      "temu_lank": "https://www.temu.com/-folding-fishing-lip-gripper-grabber-grip-with-sheath-foldable-collapsible-fish-holder-control-accessories-portable-lightweight-aluminium-alloy-110lbs-loading-capacity-g-601099648408864.html"
+      "temu_lank": "https://www.temu.com/se/fish-lip-gripper-aluminum-alloy-with-scale-built-in-weighing-360-degree-swivel-without-battery-g-606702497855951.html",
+      "lank_status": "verifierad live i Temus katalog 2026-08-26"
     },
     {
       "slug": "klyvkil",
@@ -208,11 +209,11 @@
     },
     {
       "slug": "fiskelampa-led",
-      "namn": "Undervattens LED-fiskelampa, 108 LED",
+      "namn": "Undervattens fiskelampa 80 W, 12 V",
       "nisch": "fiske",
       "upptackt": "2026-08-26",
       "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
-      "temu_lank": "https://www.temu.com/12v-led-fishing-light-underwater-108-led-fish-school-detection-light-submersible-night-fishing-bait-detector-can-attract-crabs-to-shrimp-and-squid--g-601099628595535.html",
+      "temu_lank": "https://www.temu.com/se/underwater--light--80w-40000--12v-led-deep-drop-night-fishing-light-submersible-fishing--shrimping-lights-for--crappie-shrimp-squid-fish-g-602754458170762.html",
       "temu_sokterm": null,
       "stopp": {
         "frakt_regel": {
@@ -244,7 +245,8 @@
         "dom": null,
         "skal": null,
         "datum": null
-      }
+      },
+      "lank_status": "verifierad live i Temus katalog 2026-08-26"
     },
     {
       "slug": "gummihav",
@@ -252,7 +254,7 @@
       "nisch": "fiske",
       "upptackt": "2026-08-26",
       "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
-      "temu_lank": "https://www.temu.com/rubber-coated-fishing-landing-net-with-foldable-aluminum-frame-portable-collapsible-minnow-net-for-kayak-fly-catfish-bass-trout-safe-fish-release-rust-resistant-design-blue-durable-mesh-material-g-601101620329607.html",
+      "temu_lank": "https://www.temu.com/se/search_result.html?search_key=hopf%C3%A4llbar%20h%C3%A5v%20fiske",
       "temu_sokterm": null,
       "stopp": {
         "frakt_regel": {
@@ -284,15 +286,16 @@
         "dom": null,
         "skal": null,
         "datum": null
-      }
+      },
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'hopfällbar håv fiske'"
     },
     {
       "slug": "linespolare",
-      "namn": "Fiskelinespolare / spolstation",
+      "namn": "Fiskelinespolare, justerbar spolstation",
       "nisch": "fiske",
       "upptackt": "2026-08-26",
       "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
-      "temu_lank": "https://www.temu.com/portable-fishing-line-reel-spooler-system-machine-spooling-station-line-winder-line-loader-outdoor-fishing-accessories-g-601099513186757.html",
+      "temu_lank": "https://www.temu.com/se/fishing-line-winder-portable-spool-winding-station-adjustable-line-spooler-for-spinning-and-baitcasting-reels-fits-multiple-spool-sizes-anti--fishing-must-have-g-607018312145870.html",
       "temu_sokterm": null,
       "stopp": {
         "frakt_regel": {
@@ -324,7 +327,8 @@
         "dom": null,
         "skal": null,
         "datum": null
-      }
+      },
+      "lank_status": "verifierad live i Temus katalog 2026-08-26"
     },
     {
       "slug": "fiskestol-kylvaska",
@@ -332,7 +336,7 @@
       "nisch": "fiske",
       "upptackt": "2026-08-26",
       "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
-      "temu_lank": "https://www.temu.com/camping-fishing-chair-bag-foldable-camping-chair-with-cooler-bag-waterproof-fishing-stool-collapsible-camping-hunting-fishing-chair-storage-bag-with-portable-belt-for-outdoor-fishing-beach-hiking-g-601099513313687.html",
+      "temu_lank": "https://www.temu.com/se/search_result.html?search_key=fiskestol%20kylv%C3%A4ska",
       "temu_sokterm": null,
       "stopp": {
         "frakt_regel": {
@@ -364,7 +368,8 @@
         "dom": null,
         "skal": null,
         "datum": null
-      }
+      },
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'fiskestol kylväska'"
     },
     {
       "slug": "spohallare-relingen",
@@ -372,7 +377,7 @@
       "nisch": "bat",
       "upptackt": "2026-08-26",
       "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
-      "temu_lank": "https://www.temu.com/stainless-steel-fishing-rod-holder-adjustable-clamp-on-rail-mount-for-marine-boat-fits-19-25mm-tubing-rod-support-bracket-for-yacht-g-601099523435929.html",
+      "temu_lank": "https://www.temu.com/se/search_result.html?search_key=fiskesp%C3%B6h%C3%A5llare%20b%C3%A5t%20reling",
       "temu_sokterm": null,
       "stopp": {
         "frakt_regel": {
@@ -404,15 +409,16 @@
         "dom": null,
         "skal": null,
         "datum": null
-      }
+      },
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'fiskespöhållare båt reling'"
     },
     {
       "slug": "sup-pump",
-      "namn": "Elektrisk högtryckspump 20 PSI, SUP/båt",
+      "namn": "Elektrisk SUP-pump 20 PSI med autostopp",
       "nisch": "bat",
       "upptackt": "2026-08-26",
       "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
-      "temu_lank": "https://www.temu.com/paddle-board-pump-20psi-sup-pump-portable-electric-air-pump-quick-inflate---pump-for-stand-up-paddle-boards-kayak-tent-g-601100698385430.html",
+      "temu_lank": "https://www.temu.com/se/electric-sup-pump-20psi-high-pressure-electric-paddle-board-pump-with-auto-off-feature--inflation-and-deflation-function-12v--car-connector-for-outdoor-use-suitable-for-inflatable-stand-up-paddle-boards-boats-tents-kayaks-and-air-mattresses-g-601099661146062.html",
       "temu_sokterm": null,
       "stopp": {
         "frakt_regel": {
@@ -444,15 +450,16 @@
         "dom": null,
         "skal": null,
         "datum": null
-      }
+      },
+      "lank_status": "verifierad live i Temus katalog 2026-08-26"
     },
     {
       "slug": "mc-tankvaska",
-      "namn": "Magnetisk MC-tankväska med mobilfönster",
+      "namn": "Magnetisk MC-tankväska 5–6,5 L med regnskydd",
       "nisch": "mc",
       "upptackt": "2026-08-26",
       "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
-      "temu_lank": "https://www.temu.com/magnetic-motorcycle-bag-motorcycle--tank-bag-navigation-universal-motorbike-tool-backpack-portable-g-601099594026719.html",
+      "temu_lank": "https://www.temu.com/se/magnetic-motorcycle-tank-bag-5-6-5l-expandable-capacity-quick-release-motorbike-storage-bag-backpack-with-rain-cover-for-riding-touring-travel-g-606305364342606.html",
       "temu_sokterm": null,
       "stopp": {
         "frakt_regel": {
@@ -484,7 +491,8 @@
         "dom": null,
         "skal": null,
         "datum": null
-      }
+      },
+      "lank_status": "verifierad live i Temus katalog 2026-08-26"
     },
     {
       "slug": "mc-mobilhallare",
@@ -492,7 +500,7 @@
       "nisch": "mc",
       "upptackt": "2026-08-26",
       "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
-      "temu_lank": "https://www.temu.com/1pc-waterproof-bike-phone-mount-cell-phone-holder-for-motorcycle-bike-handlebars-360-adjustable-universal-motorcycle-phone-mount-bike-phone-holder-with-tpu--handlebar-clamp-fits-4-0-6-8inch-smartphones-g-601099565517616.html",
+      "temu_lank": "https://www.temu.com/se/search_result.html?search_key=mobilh%C3%A5llare%20motorcykel%20vattent%C3%A4t",
       "temu_sokterm": null,
       "stopp": {
         "frakt_regel": {
@@ -524,7 +532,8 @@
         "dom": null,
         "skal": null,
         "datum": null
-      }
+      },
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'mobilhållare motorcykel vattentät'"
     },
     {
       "slug": "stolsspalt",
@@ -532,7 +541,7 @@
       "nisch": "bil",
       "upptackt": "2026-08-26",
       "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
-      "temu_lank": "https://www.temu.com/1pc-car-seat-gap-filler-organizer-auto-seat-catcher-slot-storage-box-side-pocket-holder-removable-washable-2-layers-driver-passenger-side-g-601099512543869.html",
+      "temu_lank": "https://www.temu.com/se/search_result.html?search_key=bilstol%20springa%20organizer",
       "temu_sokterm": null,
       "stopp": {
         "frakt_regel": {
@@ -564,15 +573,16 @@
         "dom": null,
         "skal": null,
         "datum": null
-      }
+      },
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'bilstol springa organizer'"
     },
     {
       "slug": "stralkastare",
-      "namn": "Strålkastarrestaurering, kit",
+      "namn": "Strålkastarrestaurering, 38 delar med borrsats",
       "nisch": "bil",
       "upptackt": "2026-08-26",
       "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
-      "temu_lank": "https://www.temu.com/universal-headlight-restoration-kit-car-light-polish-for-yellowing-scratch-and-oxidation-repair-clear-and-bright--plastic-headlamp-restorer-fluid-g-601099649443819.html",
+      "temu_lank": "https://www.temu.com/se/-38pcs-car-headlight-restoration-kit-3-inch-headlight-polishing-kit-headlight-cleaning-kit-with-sanding-disc-scouring-pad-polishing-pad-for-drill-universal-automotive-tools-for-car-headlight-g-610504013648313.html",
       "temu_sokterm": null,
       "stopp": {
         "frakt_regel": {
@@ -604,7 +614,8 @@
         "dom": null,
         "skal": null,
         "datum": null
-      }
+      },
+      "lank_status": "verifierad live i Temus katalog 2026-08-26"
     },
     {
       "slug": "rengoringsgel",
@@ -612,7 +623,7 @@
       "nisch": "bil",
       "upptackt": "2026-08-26",
       "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
-      "temu_lank": "https://www.temu.com/80g-cleaning-gel-for-car-detail-tools-car-cleaning-automotive-dust-air-vent-interior-detail-putty-universal-dust-cleaner-tools-for-cars-g-601099512312723.html",
+      "temu_lank": "https://www.temu.com/se/search_result.html?search_key=reng%C3%B6ringsgel%20bil%20ventil",
       "temu_sokterm": null,
       "stopp": {
         "frakt_regel": {
@@ -644,7 +655,8 @@
         "dom": null,
         "skal": null,
         "datum": null
-      }
+      },
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'rengöringsgel bil ventil'"
     },
     {
       "slug": "baksatesmadrass",
@@ -652,7 +664,7 @@
       "nisch": "bil",
       "upptackt": "2026-08-26",
       "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
-      "temu_lank": "https://www.temu.com/-inflatable-car-air-mattress-back-seat-bed-thickened-car-camping-air-mattress-with-air-pump-car-sleeping-mattress-bed-for-car-universal-suv-portable-car-travel-mattress-g-601099590681604.html",
+      "temu_lank": "https://www.temu.com/se/search_result.html?search_key=uppbl%C3%A5sbar%20madrass%20bil%20baks%C3%A4te",
       "temu_sokterm": null,
       "stopp": {
         "frakt_regel": {
@@ -684,7 +696,8 @@
         "dom": null,
         "skal": null,
         "datum": null
-      }
+      },
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'uppblåsbar madrass bil baksäte'"
     },
     {
       "slug": "vindrutebeskydd",
@@ -692,7 +705,7 @@
       "nisch": "bil",
       "upptackt": "2026-08-26",
       "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
-      "temu_lank": "https://www.temu.com/magnetic-car-windshield-snow-cover-with-3-layers-protection--frost-uv-dust-resistant-for-windscreen-protector-windshield-cover-fits-for-cars-trucks--and-suvs-all-weather--g-601099664585850.html",
+      "temu_lank": "https://www.temu.com/se/search_result.html?search_key=magnetiskt%20vindrutebeskydd%20sn%C3%B6",
       "temu_sokterm": null,
       "stopp": {
         "frakt_regel": {
@@ -724,7 +737,8 @@
         "dom": null,
         "skal": null,
         "datum": null
-      }
+      },
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'magnetiskt vindrutebeskydd snö'"
     },
     {
       "slug": "hundskydd",
@@ -732,7 +746,7 @@
       "nisch": "bil",
       "upptackt": "2026-08-26",
       "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
-      "temu_lank": "https://www.temu.com/back-seat-extender-for-dogs--antiscratch-pu-leather-hard-bottom-dog-car-seat-cover-waterproof-dog-car-hammock-backseat-pet-protector-detachable-seat-covers-for-car-suv-truck-g-601101648226567.html",
+      "temu_lank": "https://www.temu.com/se/search_result.html?search_key=hundskydd%20baks%C3%A4te%20bil",
       "temu_sokterm": null,
       "stopp": {
         "frakt_regel": {
@@ -764,15 +778,16 @@
         "dom": null,
         "skal": null,
         "datum": null
-      }
+      },
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'hundskydd baksäte bil'"
     },
     {
       "slug": "kottermometer",
-      "namn": "Trådlös köttermometer, 150 m, 2 givare",
+      "namn": "Trådlös köttermometer med 2 givare",
       "nisch": "grill",
       "upptackt": "2026-08-26",
       "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
-      "temu_lank": "https://www.temu.com/-tp08-wireless-meat-thermometer-500ft-range-dual-probes-for-grilling-bbq-digital-kitchen-cooking-temperature-gauge-with-alerts--batteries-g-601099761936638.html",
+      "temu_lank": "https://www.temu.com/se/search_result.html?search_key=tr%C3%A5dl%C3%B6s%20k%C3%B6ttermometer%20grill",
       "temu_sokterm": null,
       "stopp": {
         "frakt_regel": {
@@ -804,7 +819,8 @@
         "dom": null,
         "skal": null,
         "datum": null
-      }
+      },
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'trådlös köttermometer grill'"
     },
     {
       "slug": "kallrok",
@@ -812,7 +828,7 @@
       "nisch": "grill",
       "upptackt": "2026-08-26",
       "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
-      "temu_lank": "https://www.temu.com/rectangular-stainless-steel-smoke-generator-for-bbq-smoke-fish-cheese-and-more-no-electricity-required-g-601099616899807.html",
+      "temu_lank": "https://www.temu.com/se/304-stainless-steel-cold-smoke-generator--box-thickened-material-high-temperature-resistant-easy-to-clean-suitable-for-any-model-of-grill-rack-essential-tool-for-backyard-outdoor-bbq-durable-and-long-lasting-g-606167724032109.html",
       "temu_sokterm": null,
       "stopp": {
         "frakt_regel": {
@@ -844,15 +860,16 @@
         "dom": null,
         "skal": null,
         "datum": null
-      }
+      },
+      "lank_status": "verifierad live i Temus katalog 2026-08-26"
     },
     {
       "slug": "campingdusch",
-      "namn": "Bärbar USB-campingdusch med pump",
+      "namn": "Bärbar campingdusch 8000 mAh, IPX8",
       "nisch": "camping",
       "upptackt": "2026-08-26",
       "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
-      "temu_lank": "https://www.temu.com/portable-camping-shower-outdoor-camping-shower-pump-usb-rechargeable-plug-and--handheld-showerhead-for-camping-hiking-traveling-rv-g-601100228650100.html",
+      "temu_lank": "https://www.temu.com/se/8000mah-portable-camping-shower-10-speed-camp-shower-pump-led-display-4-spray--ipx8-waterproof-outdoor-shower-kit-for-hiking-travel-pet-car-wash-g-610220545826668.html",
       "temu_sokterm": null,
       "stopp": {
         "frakt_regel": {
@@ -884,7 +901,8 @@
         "dom": null,
         "skal": null,
         "datum": null
-      }
+      },
+      "lank_status": "verifierad live i Temus katalog 2026-08-26"
     },
     {
       "slug": "nackstretcher",
@@ -892,7 +910,7 @@
       "nisch": "kropp",
       "upptackt": "2026-08-26",
       "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
-      "temu_lank": "https://www.temu.com/1pc-neck-stretcher-inflatable-cervical-neck-traction-device-and-neck-brace-adjustable-neck-support-for-spine-alignment-and-neck-g-601099523726017.html",
+      "temu_lank": "https://www.temu.com/se/search_result.html?search_key=uppbl%C3%A5sbar%20nackstretcher",
       "temu_sokterm": null,
       "stopp": {
         "frakt_regel": {
@@ -924,15 +942,16 @@
         "dom": null,
         "skal": null,
         "datum": null
-      }
+      },
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'uppblåsbar nackstretcher'"
     },
     {
       "slug": "multiyxa",
-      "namn": "Multiverktygsyxa 13-i-1 med vikbar såg",
+      "namn": "Multiverktygsyxa med vikbar såg",
       "nisch": "camping",
       "upptackt": "2026-08-26",
       "kalla": "Produktjakt 2026-08-26 via site:temu.com-sökning",
-      "temu_lank": "https://www.temu.com/camping-axe-13-multifunctional-hatchet-with-whistle-folding-saw-and-abs-sheath-full-tang-survival-axe-with-nylon-fiber-handle-for-outdoor-bushcraft-hiking-camping-g-602256065844454.html",
+      "temu_lank": "https://www.temu.com/se/search_result.html?search_key=multiverktyg%20yxa%20camping",
       "temu_sokterm": null,
       "stopp": {
         "frakt_regel": {
@@ -964,7 +983,8 @@
         "dom": null,
         "skal": null,
         "datum": null
-      }
+      },
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'multiverktyg yxa camping'"
     }
   ]
 }

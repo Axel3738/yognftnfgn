@@ -42,13 +42,18 @@ hans nej, godkännandegraden per nisch, och hans egna ord om varje produkt.
    **problemformulerade** — `fishing tool` ger brus, `fish lip gripper` och
    `hook remover` ger produkter. Härled dem ur nischens moment: vad gör mannen, i
    vilken ordning, var gör det ont?
-4. **Svep Temu — använd `WebSearch` med `site:temu.com <term>`, inte WebFetch.**
-   Sökmotorn ger **riktiga produktlänkar** (`...-g-<id>.html`) till kolumn M i
-   quote-sheetet, och stryps aldrig. WebFetch mot `temu.com/search_result.html` ger
-   bara namn utan länkar och slutar svara efter ungefär tio anrop — då kommer bara
-   sidtiteln "Temu" tillbaka, vilket är strypning och inte noll träffar.
-   Funkar inte `site:`-operatorn i en viss sökning: skriv om den som
-   `temu.com <term> product page`.
+4. **Svep Temu med `WebFetch` på `https://www.temu.com/search_result.html?search_key=<term>`**
+   — **utan `/se/`** (den varianten renderar inte). **Be uttryckligen om href/URL i
+   prompten**, annars kommer bara namnen: *"give the name AND the full product URL
+   (the -g-<number>.html path)"*. Det är den **enda** källan till levande produktlänkar.
+
+   ☠️ **Använd ALDRIG `site:temu.com` för att hämta länkar.** Sökmotorns index är
+   gammalt och länkarna leder till avpublicerade listningar — det brände en hel
+   leverans 2026-08-26. Se "Länkfällan" i kriterierna. Till *research* om vad som
+   finns går webbsökning bra; till *länkar i ett sheet* aldrig.
+
+   **Budget: ~9 anrop.** Sedan svarar Temu bara med sidtiteln "Temu" — det är
+   strypning, inte noll träffar. Planera för 8–9 verifierade produkter per session.
 5. **Grovsålla** — bort med storleksval, rent dekorativt och flerpacksbrus.
 6. **Kändhetskolla de överlevande** — `WebSearch` på `pricerunner <svensk term>`,
    antalet står i träffens titel. En sökning per kandidat räcker i jaktläget.
@@ -113,7 +118,16 @@ python3 pipeline/quote-sheet.py produkter.json ut.xlsx
 `produkter.json` är en lista med `{namn, temu_lank, bild, butikslank, leverantor_ref}`.
 Bara `temu_lank` krävs. **Produktbilder går inte att hämta från Temu på någon testad
 väg** — lämna `bild` tom och skriv produktnamnet i `namn`, så fylls kolumn A med namnet
-i stället för en bild. Har Axel skickat bilder: peka `bild` på de lokala filerna.
+i stället för en bild.
+
+**Länkarna i kolumn M, i prioritetsordning:**
+1. Direktlänk från en live-sökning, med `/se/` framför sökvägen — verifierat levande.
+2. Räcker inte anropsbudgeten: **svensk söklänk**
+   `https://www.temu.com/se/search_result.html?search_key=<svensk term>`. Den går
+   aldrig sönder och visar alltid svenskt lager.
+
+**Skriv alltid ut i leveransen vilka rader som är verifierade och vilka som är
+söklänkar.** Låtsas aldrig att en obekräftad länk är verifierad.
 Ta med **de godkända** kandidaterna, inte hela listan. Skicka filen i chatten.
 
 ---

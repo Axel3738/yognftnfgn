@@ -155,8 +155,9 @@ och utan Axels skäl lär sig systemet ingenting.
 
 | Källa | Läge | Vad vi får |
 |---|---|---|
-| **`site:temu.com <term>` via WebSearch** | ✅✅ | **Bästa metoden.** Ger riktiga produktlänkar (`...-g-<id>.html`) och stryps aldrig. Använd i första hand |
-| Temu-sök via `temu.com/search_result.html?search_key=<term>` | ⚠️ | Produktnamn men **inga länkar**. Utan `/se/` i sökvägen. Stryps snabbt |
+| **`temu.com/search_result.html?search_key=<term>` via WebFetch** | ✅ | **Enda källan till LEVANDE produktlänkar.** Be uttryckligen om href/URL — då kommer `-g-<id>.html` med. Utan `/se/` i sökvägen. Stryps efter ~9 anrop |
+| `site:temu.com <term>` via WebSearch | ☠️ | **ANVÄND ALDRIG FÖR LÄNKAR.** Sökmotorns index är gammalt — länkarna leder till avpublicerade listningar som visar "Den här produkten är slutsåld". Brändes 2026-08-26, se nedan |
+| `temu.com/se/search_result.html?search_key=<svensk term>` | ✅ | Renderar inte i WebFetch, men är en **säker länk att leverera**: alltid levande, alltid svenskt lager. Reservlösning när direktlänk inte hinns med |
 | Temu efter ~10 anrop | ❌ | **Stryps hårt.** Svaret blir bara sidtiteln "Temu" och hade inte återhämtat sig efter en timme. Gäller även enskilda produktsidor |
 | **Produktbilder från Temu** | ❌ | Går inte att hämta på någon testad väg. Sheetet får produktnamn i kolumn A i stället för bild |
 | **WebSearch** | ✅ | Bärande verktyget för kändhetsaxeln och mättnadskollen |
@@ -178,6 +179,37 @@ och utan Axels skäl lär sig systemet ingenting.
 
 Claude sätter aldrig en wow-poäng på en produkt vars bild ingen har sett — den lämnas
 tom och domen hålls tillbaka tills Axel fyllt i den.
+
+---
+
+## ☠️ Länkfällan — läs den här innan du bygger ett quote-sheet
+
+**2026-08-26 levererades 20 produkter där nästan varje länk visade "Den här produkten
+är slutsåld".** Orsaken var inte tur eller lagerbrist. Länkarna var hämtade ur
+sökmotorns index via `site:temu.com`, och det indexet är gammalt: två av träffarna hade
+till och med "This item was discontinued" i titeln. Sheetet byggdes på ett arkiv i
+stället för på lagret.
+
+**Så här ser skillnaden ut i praktiken:**
+
+| Källa | Typiskt goods-ID | Läge |
+|---|---|---|
+| `site:temu.com` (sökmotorindex) | `g-601099…` | Ofta avpublicerad |
+| `search_result.html` (Temus egen katalog) | `g-606…`, `g-607…`, `g-610…` | Levande just nu |
+
+⚠️ ID-numret ensamt är **inget bevis** — Temus levande katalog innehåller även
+`601099…`-listningar. Det enda som räknas är att länken kom ur en **live-sökning**.
+
+**Regeln:** en produktlänk som ska in i ett quote-sheet måste komma ur
+`temu.com/search_result.html?search_key=<term>` hämtad med WebFetch, där prompten
+uttryckligen ber om href/URL. Kom länken från en vanlig webbsökning är den obekräftad
+och får inte levereras som direktlänk.
+
+**Budgeten:** Temu stryper efter ungefär nio anrop och svarar sedan bara med sidtiteln
+"Temu". Det räcker till 8–9 verifierade produkter per session. Behövs fler: leverera
+resten som **svenska söklänkar** (`temu.com/se/search_result.html?search_key=<svensk
+term>`) och markera i leveransen vilka rader som är verifierade och vilka som är
+söklänkar. En söklänk går aldrig sönder — den är en ärlig reservlösning, inte ett fusk.
 
 ---
 
