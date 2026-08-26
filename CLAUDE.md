@@ -125,7 +125,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 
 | Kommando | Vad |
 |----------|-----|
-| `/produkt jaga <nisch>` / `/produkt <namn>` | **Produktjakten:** sveper Temu efter nya produkter, eller dömer av en kandidat mot de sex grindarna — `docs/os/PRODUKTKRITERIER.md` |
+| `/produkt jaga <nisch>` / `/produkt <namn>` / `/produkt sheet` | **Produktjakten:** sveper Temu, poängsätter kandidater och bygger leverantörsofferten. Claude rangordnar — **Axel godkänner** — `docs/os/PRODUKTKRITERIER.md` |
 | `/ny-produkt <namn> <budget>` | Första testbatchen för ny produkt (ingen data än) — SOP-06 |
 | `/forsta-batch <namn>` | Full CS-analys från noll i en NY chatt |
 | `/cs <id> [egna idéer]` | **Kärnloopen:** CS på senaste annonserna, feedbackloop, nästa batch |
@@ -186,7 +186,8 @@ Det finns ingen linter och ingen byggkedja i OS:et — `npm test` är hela grind
 | Produktkandidater (bedömda OCH avfärdade) | `products/kandidater.json` |
 | Produktminne per produkt | `products/<id>/` |
 | Kvot-skriptet | `pipeline/quota.mjs` |
-| Kandidat-skriptet | `pipeline/kandidater.mjs` |
+| Kandidat-skriptet + godkännandeloopen | `pipeline/kandidater.mjs` (`smak` visar vad Axel säger ja till) |
+| Quote-sheet-generatorn | `pipeline/quote-sheet.py` (kräver `openpyxl`) |
 | Namnkonventionen | `docs/naming-convention.md` |
 | Punchline-bank + vinnande lines | `docs/winning-lines.md` |
 | Ad-tracker (hypotes → utfall → lärdom) | `docs/ad-tracker.md` |

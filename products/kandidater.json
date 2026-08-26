@@ -1,5 +1,5 @@
 {
-  "comment": "Produktkandidat-minnet för Bäverbutiken (MagiBorsten 1867947880635861). Fylls av /produkt, läses av pipeline/kandidater.mjs. Kriterier: docs/os/PRODUKTKRITERIER.md. VIKTIGT: avfärdade produkter raderas ALDRIG — hela poängen med filen är att samma produkt inte utvärderas om och om igen. Poäng och dom räknas av skriptet, aldrig för hand. En grinddom utan 'kalla' är ogiltig (CLAUDE.md regel 3). grindar.dom = pass | varning | fail. status = ny | bedomd | prov-bestallt | launchad | stangd.",
+  "comment": "Produktkandidat-minnet för Bäverbutiken (MagiBorsten 1867947880635861). Fylls av /produkt, läses av pipeline/kandidater.mjs. Kriterier: docs/os/PRODUKTKRITERIER.md. ARBETSDELNING: Claude poängsätter och rangordnar, AXEL godkänner — skriptet räknar aldrig fram ett ja eller nej. Bara två hårda stopp (stopp.frakt_regel, stopp.marginal); allt annat är poäng, för en produkt FÅR finnas i butik, den får bara inte vara svinkänd. poang: wow(×2), kandhet(×2, 5=knappt sedd i Sverige / 0=hyllvara alla kan priset på), problem, demo, mansprodukt, marginal — 0-5 var, max 40. axel: {dom:'ja'|'nej', skal, datum} — skälet är det systemet lär sig av, kör 'kandidater.mjs smak'. Nekade produkter raderas ALDRIG. En stoppdom utan 'kalla' är ogiltig (CLAUDE.md regel 3).",
   "kandidater": [
     {
       "slug": "fiskeklamma",
@@ -8,154 +8,40 @@
       "upptackt": "2026-08-26",
       "kalla": "Axels egna exempel, verifierat mot Temu-svep 2026-08-26",
       "temu_sokterm": "fish gripper",
-      "status": "bedomd",
-      "grindar": {
-        "g1_ica_maxi": {
-          "dom": "varning",
-          "malgrupp": "bred manlig publik (INTE sportfiskare)",
-          "kalla": "Clas Ohlson-sök 'fiskeklamma' = 0 träffar; XXL-sök 'fiskeklamma' = 0 artiklar; XXL-sök 'fiskgrip' = 0 artiklar; WebSearch visar listningar på amazon.se (nivå C, prisankare)",
-          "not": "Ingen träff i bredhandeln — grinden håller mot bred manlig publik. Faller mot sportfiskare: svenska specialistbutiker (Fiske.se, Sportfiskegiganten, Sportfiskeprylar, Jiggar.nu) finns i nischen. EJ VERIFIERAT att de lagerför just klämman — kolla innan målgruppen sätts smalt."
-        },
-        "g2_mattnad": {
+      "stopp": {
+        "frakt_regel": {
           "dom": "pass",
-          "kalla": "WebSearch svenska + engelska (2026-08-26): ingen svensk dropshippingbutik och ingen svensk viral-signal hittad. Engelska träffar handlar om en fingerträningsprodukt vid namn 'The Gripper', inte fiskeklämmor",
-          "not": "Låg konfidens: bevisar frånvaro av träffar, inte frånvaro av konkurrenter. Meta Ad Library ger 403 i den här miljön, så den skarpaste mättnadskollen går inte att köra automatiskt."
+          "kalla": "Temu-svep 2026-08-26: metall/plast, inget litium, ingen CE-fråga",
+          "not": "Fraktbar som vanligt paket."
         },
-        "g3_tre_sek": {
-          "dom": "pass",
-          "kalla": "Temu-svep 'fish gripper' 2026-08-26: bl.a. 'Fish Lip Gripper Aluminum Alloy with Scale', 'Plastic Serrated Fish Gripper Non-Slip'",
-          "not": "3-sek-bildrutan: handen som greppar gäddan i käften — tänder och krok en centimeter från fingrarna, utan att någon rör fisken. Före/efter filmar sig självt."
-        },
-        "g4_marginal": {
+        "marginal": {
           "dom": null,
           "kalla": null,
-          "not": "Kan inte räknas: Temu-priserna vi kan hämta är opålitliga och momsläget för Bäverbutiken står ingenstans i repot. Axel läser av priset, momsen är ett ägarbeslut."
-        },
-        "g5_retur": {
-          "dom": "pass",
-          "kalla": "Temu-svep 2026-08-26: metall/plast, en storlek, inget batteri",
-          "not": "Ingen storleksvariant, inget litium, ingen CE-fråga, tål postgång."
-        },
-        "g6_manskop": {
-          "dom": "pass",
-          "kalla": "Produktkategori: fiskeredskap till eget bruk",
-          "not": "Klassisk självköpsprodukt. Fungerar även som present, men behöver inte vara det."
+          "not": "Kräver verkligt Temu-pris och besked om momsläget — båda utestående."
         }
       },
       "poang": {
         "wow": null,
+        "kandhet": 4,
         "problem": 4,
         "demo": 5,
-        "ovanlighet": 3,
-        "marginal": null,
-        "robusthet": null
+        "mansprodukt": 5,
+        "marginal": null
       },
-      "skal": "Klarar bredhandelstestet och har en självfilmande demo. Håller tillbaka domen: wow kräver att Axel tittar på produktbilden, marginal kräver verkligt Temu-pris och besked om momsläget.",
-      "nasta": "Axel: sätt wow 0–5 på produktbilden, läs av riktigt Temu-pris, svara på momsläget. Då räknar skriptet fram domen."
-    },
-    {
-      "slug": "knivslip",
-      "namn": "Knivslip / knivslipmaskin",
-      "nisch": "verktyg",
-      "upptackt": "2026-08-26",
-      "kalla": "Axels egna exempel, kontrollerat 2026-08-26",
-      "temu_sokterm": "knife sharpener",
-      "status": "bedomd",
-      "grindar": {
-        "g1_ica_maxi": {
-          "dom": "fail",
-          "malgrupp": "bred manlig publik",
-          "kalla": "Biltema säljer knivslip: https://www.biltema.se/verktyg/skarverktyg/knivar/knivslip-2000023864 · dessutom Amazon.se, Kitch'n (kitchnsverige.se), Knivshop.se, Maskinklippet.se, Oqvist.se",
-          "not": "Nivå A-träff på Biltema = fällande. Kategorin är commodity i Sverige — mottagaren tänker 'den där har ju Biltema'. Kjell & Co gav 0 träffar, men en enda bredhandelsträff räcker för att fälla."
-        },
-        "g2_mattnad": {
-          "dom": null,
-          "kalla": null,
-          "not": "Ej utredd — G1 föll, resten behöver inte utredas."
-        },
-        "g3_tre_sek": {
-          "dom": null,
-          "kalla": null,
-          "not": "Ej utredd."
-        },
-        "g4_marginal": {
-          "dom": null,
-          "kalla": null,
-          "not": "Ej utredd."
-        },
-        "g5_retur": {
-          "dom": null,
-          "kalla": null,
-          "not": "Ej utredd."
-        },
-        "g6_manskop": {
-          "dom": null,
-          "kalla": null,
-          "not": "Ej utredd."
-        }
+      "motivering": {
+        "kandhet": "Noll träffar i bredhandeln. Finns på Amazon.se och i sportfiskebutiker — därför 4 och inte 5.",
+        "problem": "Gäddan har tänder och kroken sitter kvar. Verkligt, återkommande.",
+        "demo": "Handen som greppar gäddan i käften, tänder och krok en centimeter från fingrarna.",
+        "mansprodukt": "Fiskeredskap till eget bruk.",
+        "wow": "SATT INTE — kräver att Axel tittar på produktbilden."
       },
-      "poang": {
-        "wow": null,
-        "problem": null,
-        "demo": null,
-        "ovanlighet": null,
-        "marginal": null,
-        "robusthet": null
-      },
-      "skal": "Faller på ICA Maxi-testet: knivslip är hyllvara på Biltema och finns hos minst fem svenska återförsäljare. Gäller kategorin generellt — en tillräckligt ovanlig variant (t.ex. eldriven med synlig gnistdemo) är en EGEN kandidat och ska bedömas för sig, inte under den här posten.",
-      "nasta": "Stängd som kategori. Vill Axel driva en specifik ovanlig variant: lägg upp den som ny kandidat med egen slug och egen G1-koll."
-    },
-    {
-      "slug": "sagkedjeslip",
-      "namn": "Elektrisk sågkedjeslip",
-      "nisch": "ved",
-      "upptackt": "2026-08-26",
-      "kalla": "Temu-svep ved/verktyg/garage 2026-08-26 (/produkt jaga)",
-      "temu_sokterm": "chainsaw sharpener",
-      "status": "bedomd",
-      "grindar": {
-        "g1_ica_maxi": {
-          "dom": "fail",
-          "malgrupp": "bred manlig publik",
-          "kalla": "Jula Elektrisk kedjeslip 85 W, 349 kr: https://www.jula.se/catalog/tradgard/motorsagar-och-vedklyvning/kedjesagar-och-tillbehor/motorsagstillbehor/elektrisk-kedjeslip-023785/ · Biltema Kedjeslipmaskin 130 W: https://www.biltema.se/fritid/tradgard/tradgardsmaskiner/motorsagar/motorsagstillbehor/kedjeslipmaskin-130-w-2000021827 · Clas Ohlson för motorsågstillbehör",
-          "not": "Två nivå A-träffar. 349 kr på Jula är ett prisankare vi inte kan slå."
-        },
-        "g2_mattnad": {
-          "dom": null,
-          "kalla": null,
-          "not": "Ej utredd — G1 föll."
-        },
-        "g3_tre_sek": {
-          "dom": null,
-          "kalla": null,
-          "not": "Ej utredd — G1 föll."
-        },
-        "g4_marginal": {
-          "dom": null,
-          "kalla": null,
-          "not": "Ej utredd — G1 föll."
-        },
-        "g5_retur": {
-          "dom": null,
-          "kalla": null,
-          "not": "Ej utredd — G1 föll."
-        },
-        "g6_manskop": {
-          "dom": null,
-          "kalla": null,
-          "not": "Ej utredd — G1 föll."
-        }
-      },
-      "poang": {
-        "wow": null,
-        "problem": null,
-        "demo": null,
-        "ovanlighet": null,
-        "marginal": null,
-        "robusthet": null
-      },
-      "skal": "Faller på ICA Maxi-testet. Demon är stark (gnistor, sedan såg genom stock) men priset är känt och lågt hos både Jula och Biltema.",
-      "nasta": "Stängd. Ligger i Biltemas/Julas kärnsortiment — se Dödzonen i docs/os/PRODUKTKRITERIER.md."
+      "kandhet_kalla": "Clas Ohlson 'fiskeklamma' 0 träffar · XXL 'fiskeklamma' och 'fiskgrip' 0 artiklar · Amazon.se har listningar · svenska sportfiskebutiker finns i nischen (ej verifierat att de lagerför just klämman)",
+      "skal": "Starkaste kandidaten hittills. Väntar på wow-poäng och verkligt pris.",
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
     },
     {
       "slug": "klyvkil",
@@ -164,50 +50,79 @@
       "upptackt": "2026-08-26",
       "kalla": "Temu-svep ved/verktyg/garage 2026-08-26 (/produkt jaga)",
       "temu_sokterm": "kindling splitter wedge",
-      "status": "bedomd",
-      "grindar": {
-        "g1_ica_maxi": {
-          "dom": "fail",
-          "malgrupp": "bred manlig publik",
-          "kalla": "Jula Klyvkil + Vriden klyvkil (Meec Tools): https://www.jula.se/catalog/tradgard/motorsagar-och-vedklyvning/vedbearbetning/avverkningsverktyg/klyvkil-015326/ · Biltema Klyvkil: https://www.biltema.se/verktyg/handverktyg/hammare/klyvkil-2000041738 · Clas Ohlson 4-vägskniv till vedklyv: https://www.clasohlson.com/se/4-vagskniv-till-vedklyv/p/41-2362 · PriceRunner: 22 produkter",
-          "not": "Clas Ohlson-sökningen på 'vedkil' gav noll träffar, men Jula och Biltema säljer klyvkil rakt av och PriceRunner listar 22 produkter. Nivå A."
+      "stopp": {
+        "frakt_regel": {
+          "dom": "pass",
+          "kalla": "Temu-svep 2026-08-26: metall/plast, inget litium, ingen CE-fråga",
+          "not": "Fraktbar som vanligt paket."
         },
-        "g2_mattnad": {
+        "marginal": {
           "dom": null,
           "kalla": null,
-          "not": "Ej utredd — G1 föll."
-        },
-        "g3_tre_sek": {
-          "dom": null,
-          "kalla": null,
-          "not": "Ej utredd — G1 föll."
-        },
-        "g4_marginal": {
-          "dom": null,
-          "kalla": null,
-          "not": "Ej utredd — G1 föll."
-        },
-        "g5_retur": {
-          "dom": null,
-          "kalla": null,
-          "not": "Ej utredd — G1 föll."
-        },
-        "g6_manskop": {
-          "dom": null,
-          "kalla": null,
-          "not": "Ej utredd — G1 föll."
+          "not": "Kräver verkligt Temu-pris och besked om momsläget — båda utestående."
         }
       },
       "poang": {
-        "wow": null,
-        "problem": null,
-        "demo": null,
-        "ovanlighet": null,
-        "marginal": null,
-        "robusthet": null
+        "wow": 4,
+        "kandhet": 1,
+        "problem": 4,
+        "demo": 5,
+        "mansprodukt": 5,
+        "marginal": 3
       },
-      "skal": "Faller på ICA Maxi-testet trots hög wow-potential (fyrvägskilen klyver stocken i fyra på ett slag). Kategorin är hyllvara.",
-      "nasta": "Stängd. Ligger i Biltemas/Julas kärnsortiment — se Dödzonen i docs/os/PRODUKTKRITERIER.md."
+      "motivering": {
+        "kandhet": "Jula (rak + vriden), Biltema och Clas Ohlson säljer klyvkil. PriceRunner: 22 produkter. Nästan hyllvara.",
+        "wow": "Fyrvägskilen klyver stocken i fyra på ett slag — visuellt starkt.",
+        "demo": "Slägga ner, fyra vedträn ut. Filmar sig självt.",
+        "problem": "Att klyva småved med yxa är långsamt och farligt."
+      },
+      "kandhet_kalla": "Jula: https://www.jula.se/catalog/tradgard/motorsagar-och-vedklyvning/vedbearbetning/avverkningsverktyg/klyvkil-015326/ · Biltema: https://www.biltema.se/verktyg/handverktyg/hammare/klyvkil-2000041738 · Clas Ohlson 4-vägskniv: https://www.clasohlson.com/se/4-vagskniv-till-vedklyv/p/41-2362 · PriceRunner 22 produkter",
+      "skal": "Bra wow och demo, men kändheten drar ner den — kilen finns i tre bredhandelskedjor.",
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
+    },
+    {
+      "slug": "sagkedjeslip",
+      "namn": "Elektrisk sågkedjeslip",
+      "nisch": "ved",
+      "upptackt": "2026-08-26",
+      "kalla": "Temu-svep ved/verktyg/garage 2026-08-26 (/produkt jaga)",
+      "temu_sokterm": "chainsaw sharpener",
+      "stopp": {
+        "frakt_regel": {
+          "dom": "pass",
+          "kalla": "Temu-svep 2026-08-26: metall/plast, inget litium, ingen CE-fråga",
+          "not": "Fraktbar som vanligt paket."
+        },
+        "marginal": {
+          "dom": null,
+          "kalla": null,
+          "not": "Kräver verkligt Temu-pris och besked om momsläget — båda utestående."
+        }
+      },
+      "poang": {
+        "wow": 3,
+        "kandhet": 1,
+        "problem": 4,
+        "demo": 5,
+        "mansprodukt": 5,
+        "marginal": 2
+      },
+      "motivering": {
+        "kandhet": "Jula 349 kr och Biltema 130 W. Två bredhandelskedjor med känt pris.",
+        "marginal": "349 kr hos Jula är ett hårt prisankare.",
+        "demo": "Gnistor, sedan sågen genom stocken som smör."
+      },
+      "kandhet_kalla": "Jula Elektrisk kedjeslip 85 W 349 kr: https://www.jula.se/catalog/tradgard/motorsagar-och-vedklyvning/kedjesagar-och-tillbehor/motorsagstillbehor/elektrisk-kedjeslip-023785/ · Biltema Kedjeslipmaskin 130 W: https://www.biltema.se/fritid/tradgard/tradgardsmaskiner/motorsagar/motorsagstillbehor/kedjeslipmaskin-130-w-2000021827",
+      "skal": "Demon är stark men priset är känt och lågt hos både Jula och Biltema.",
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
     },
     {
       "slug": "skruvutdragare",
@@ -216,50 +131,78 @@
       "upptackt": "2026-08-26",
       "kalla": "Temu-svep ved/verktyg/garage 2026-08-26 (/produkt jaga)",
       "temu_sokterm": "bolt extractor rusted screw",
-      "status": "bedomd",
-      "grindar": {
-        "g1_ica_maxi": {
-          "dom": "fail",
-          "malgrupp": "bred manlig publik",
-          "kalla": "Jula 12-delar 299 kr + 5-delar 49,90 kr: https://www.jula.se/catalog/verktyg-och-maskiner/handverktyg/gangverktyg/skruvutdragare-och-muttersprackare/ · Biltema 5 st: https://www.biltema.se/bil---mc/bilverktyg/avdragare/skruvutdragare-5-st-2000042008 · Bauhaus Matador M3-M24 · Clas Ohlson Rennsteig: https://www.clasohlson.com/se/Skruvutdragare-Rennsteig/p/41-1502 · PriceRunner: 97 produkter",
-          "not": "Fyra nivå A-butiker plus 97 produkter på PriceRunner. 49,90 kr på Jula gör priskonkurrens omöjlig."
+      "stopp": {
+        "frakt_regel": {
+          "dom": "pass",
+          "kalla": "Temu-svep 2026-08-26: metall/plast, inget litium, ingen CE-fråga",
+          "not": "Fraktbar som vanligt paket."
         },
-        "g2_mattnad": {
+        "marginal": {
           "dom": null,
           "kalla": null,
-          "not": "Ej utredd — G1 föll."
-        },
-        "g3_tre_sek": {
-          "dom": null,
-          "kalla": null,
-          "not": "Ej utredd — G1 föll."
-        },
-        "g4_marginal": {
-          "dom": null,
-          "kalla": null,
-          "not": "Ej utredd — G1 föll."
-        },
-        "g5_retur": {
-          "dom": null,
-          "kalla": null,
-          "not": "Ej utredd — G1 föll."
-        },
-        "g6_manskop": {
-          "dom": null,
-          "kalla": null,
-          "not": "Ej utredd — G1 föll."
+          "not": "Kräver verkligt Temu-pris och besked om momsläget — båda utestående."
         }
       },
       "poang": {
-        "wow": null,
-        "problem": null,
-        "demo": null,
-        "ovanlighet": null,
-        "marginal": null,
-        "robusthet": null
+        "wow": 3,
+        "kandhet": 0,
+        "problem": 5,
+        "demo": 5,
+        "mansprodukt": 5,
+        "marginal": 1
       },
-      "skal": "Faller hårdast av alla i svepet. Problemet är utmärkt och demon självklar, men produkten är commodity i fyra bredhandelskedjor.",
-      "nasta": "Stängd. Ligger i Biltemas/Julas kärnsortiment — se Dödzonen i docs/os/PRODUKTKRITERIER.md."
+      "motivering": {
+        "kandhet": "Fyra bredhandelskedjor och 97 produkter på PriceRunner. Så svinkänd det går att bli.",
+        "marginal": "49,90 kr hos Jula gör priskonkurrens omöjlig.",
+        "problem": "Rundad eller rostfast skruv — alla män har varit där."
+      },
+      "kandhet_kalla": "Jula 12-delar 299 kr + 5-delar 49,90 kr · Biltema 5 st: https://www.biltema.se/bil---mc/bilverktyg/avdragare/skruvutdragare-5-st-2000042008 · Bauhaus Matador · Clas Ohlson Rennsteig: https://www.clasohlson.com/se/Skruvutdragare-Rennsteig/p/41-1502 · PriceRunner 97 produkter",
+      "skal": "Problemet är utmärkt och demon självklar — men produkten är commodity i fyra kedjor.",
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
+    },
+    {
+      "slug": "knivslip",
+      "namn": "Knivslip / knivslipmaskin",
+      "nisch": "verktyg",
+      "upptackt": "2026-08-26",
+      "kalla": "Axels egna exempel, kontrollerat 2026-08-26",
+      "temu_sokterm": "knife sharpener",
+      "stopp": {
+        "frakt_regel": {
+          "dom": "pass",
+          "kalla": "Temu-svep 2026-08-26: metall/plast, inget litium, ingen CE-fråga",
+          "not": "Fraktbar som vanligt paket."
+        },
+        "marginal": {
+          "dom": null,
+          "kalla": null,
+          "not": "Kräver verkligt Temu-pris och besked om momsläget — båda utestående."
+        }
+      },
+      "poang": {
+        "wow": 1,
+        "kandhet": 0,
+        "problem": 3,
+        "demo": 4,
+        "mansprodukt": 3,
+        "marginal": 2
+      },
+      "motivering": {
+        "kandhet": "Biltema, Amazon.se, Kitch'n, Knivshop och Maskinklippet. Hyllvara.",
+        "wow": "Vardaglig pryl — uppskattad ur kategorin, inte ur en specifik produktbild.",
+        "demo": "Tomattestet före/efter fungerar alltid."
+      },
+      "kandhet_kalla": "Biltema: https://www.biltema.se/verktyg/skarverktyg/knivar/knivslip-2000023864 · Amazon.se · Kitch'n · Knivshop.se · Maskinklippet.se · Oqvist.se",
+      "skal": "Kategorin är commodity. En tillräckligt ovanlig variant (t.ex. eldriven med synlig gnistdemo) är en EGEN kandidat med egen slug.",
+      "axel": {
+        "dom": null,
+        "skal": null,
+        "datum": null
+      }
     }
   ]
 }

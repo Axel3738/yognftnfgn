@@ -1,12 +1,17 @@
-# /produkt – Hitta och döm av nya produkter till Bäverbutiken
+# /produkt – Hitta, poängsätt och offertera nya produkter till Bäverbutiken
 
-Argument: `$ARGUMENTS`. Tre lägen, avgörs av första ordet:
+Argument: `$ARGUMENTS`. Första ordet avgör läget:
 
 | Skriv | Läge | Vad som händer |
 |---|---|---|
-| `/produkt jaga fiske` | **Jakt** | Sveper en nisch på Temu och lämnar 8–12 kandidater, grovsållade |
-| `/produkt Fiskeklämma i stål` (eller en Temu-länk) | **Dom** | Kör alla sex grindar + poäng på EN produkt |
-| `/produkt lista` | **Läge** | Visar pipelinen ur `products/kandidater.json` |
+| `/produkt jaga fiske` | **Jakt** | Sveper en nisch på Temu och lämnar en rangordnad lista att godkänna |
+| `/produkt Fiskeklämma i stål` (eller en Temu-länk) | **Bedöm** | Full research + poäng på EN produkt |
+| `/produkt lista` | **Läge** | Pipelinen, rangordnad |
+| `/produkt sheet` | **Offert** | Bygger leverantörens quote-sheet av de godkända |
+
+**Grundregeln, och den viktigaste:** *Claude poängsätter och rangordnar. Axel godkänner.*
+Skriv aldrig ut ett eget slutgiltigt ja eller nej — leverera listan och be om hans dom.
+Gränsen för "för känt" sitter i hans huvud, inte i en tabell.
 
 Kriterierna står i **`docs/os/PRODUKTKRITERIER.md`** — läs den först, varje gång.
 Fyller steget "Välj nästa produkt" i `docs/os/SOP-06-produkttest.md`.
@@ -14,100 +19,112 @@ Ad account: **MagiBorsten `1867947880635861`**. Gäller aldrig Grillkliniken.
 
 ---
 
-## Läge JAKT — `/produkt jaga <nisch>`
+## Före allting: läs av smaken
 
-1. **Kolla minnet först:** `node pipeline/kandidater.mjs` — vad är redan dömt i den
-   nischen? Avfärdade produkter tas aldrig upp igen utan ny information.
-2. **Dödzonskollen — innan en enda sökning körs.** Fråga: *har Biltema eller Jula en
-   egen hyllsektion för det här?* Är svaret ja är nischen minerad — ett skarpt svep av
-   ved/verktyg 2026-08-26 gav fem kandidater och noll överlevande, alla fällda av
-   Biltema/Jula. Byt nisch, eller leta specifikt efter det som ligger *bredvid* hyllan.
-   Se "Dödzonen" i `docs/os/PRODUKTKRITERIER.md`.
-3. **Bygg söktermerna.** 10–15 stycken, **på engelska** (Temus sök är engelsk), och de
-   ska vara *problemformulerade*, inte kategoriformulerade. `fishing tool` ger brus;
-   `fish lip gripper`, `hook remover`, `line cutter retractor` ger produkter.
-   Härled dem ur nischens moment: vad gör mannen, i vilken ordning, var gör det ont?
-4. **Svep Temu:** `WebFetch` på `https://www.temu.com/search_result.html?search_key=<term>`
-   — **utan `/se/`**, den varianten returnerar bara sidtiteln. Ett anrop per term,
-   **ett i taget och högst 6–8 per session**: Temu stryper efter ungefär tio anrop och
-   svarar då bara med sidtiteln "Temu". Tolka det som strypning, inte som noll träffar —
-   och spara resten av termerna till nästa gång i stället för att köra vidare blint.
-5. **Grovsålla direkt** — släng allt som är: kökspryl, kläder/storleksval, rent
-   dekorativt, flerpacksbrus, eller uppenbart bredhandel (G1). Kvar ska 8–12 stå.
-6. **Leverera tabellen** — och den är hela leveransen:
+```bash
+node pipeline/kandidater.mjs smak
+```
 
-   | # | Produkt | Nisch | Vad den löser | 3-sek-bilden | G1-risk | Temu-sökterm |
-   |---|---|---|---|---|---|---|
-
-   "3-sek-bilden" ska vara en **konkret bildruta**, inte en egenskap. Kan du inte
-   skriva bildrutan är produkten inte klar för listan.
-7. **Skriv in dem** i `products/kandidater.json` med status `ny` — inga poäng ännu.
-8. **Avsluta med frågan:** vilka av dessa ska jag köra full dom på? Sätt aldrig en
-   wow-poäng på en produkt vars bild ingen har sett.
-
-⚠️ **Priserna Temu-svepet returnerar är opålitliga** (extraheringen blandar ihop rader).
-Skriv aldrig ut dem som fakta — Axel läser av priset själv.
+Finns tre domar eller fler visar den vilken axel som faktiskt skiljer Axels ja från
+hans nej, godkännandegraden per nisch, och hans egna ord om varje produkt.
+**Läs hans formuleringar och låt dem styra urvalet** — det är så systemet blir bättre
+över tid. Är listan tom: hoppa över, men kör den nästa gång.
 
 ---
 
-## Läge DOM — `/produkt <namn eller Temu-länk>`
+## Läge JAKT — `/produkt jaga <nisch>`
 
-1. **Dedup:** `node pipeline/kandidater.mjs sok <term>`. Redan dömd → visa den gamla
-   domen och fråga vad som är nytt, i stället för att döma om.
-2. **Kör de sex grindarna i ordning** ur `docs/os/PRODUKTKRITERIER.md`. Stanna vid
-   första fallna grinden — resten behöver inte utredas.
-   - **G1 ICA Maxi:** börja med `WebSearch` på `pricerunner <svensk term>` — antalet står
-     i träffens titel (`"Skruvutdragare • Jämför (97 produkter)"`) och avgör oftast saken
-     direkt. Följ upp med direktsök hos Clas Ohlson, Kjell och XXL (de går att hämta;
-     Biltema/Jula/Rusta/Bauhaus blockerar → täck med WebSearch). Skilj på nivå A
-     (bredhandel = fällande), nivå B (specialistbutik = varning) och nivå C (Amazon.se
-     m.fl. = prisankare, aldrig fällande i sig). **Skriv ut vilken målgrupp domen gäller.**
-   - **G2 Mättnad:** sök svenska dropshippingbutiker + engelsk mättnad.
-   - **G3–G6:** bedöm och motivera.
-   - **Varje grinddom ska ha en källa** — URL eller sökträff. Ingen källa, ingen dom.
-3. **Poängsätt** bara om alla sex grindar höll. Wow väger dubbelt och **wow under 3 ger
-   aldrig GO**. Har du inte sett produktbilden: lämna wow tom, be Axel sätta den, och
-   håll tillbaka domen.
+1. **Dedup:** `node pipeline/kandidater.mjs` — vad är redan bedömt i nischen?
+2. **Dödzonskollen:** har Biltema eller Jula en egen hyllsektion för det här? Är svaret
+   ja blir kändheten 0–1 på nästan allt du hittar. Byt nisch, eller leta efter det som
+   ligger *bredvid* hyllan. Se "Dödzonen" i kriterierna.
+3. **Bygg söktermerna.** 10–15 stycken, **på engelska** (Temus sök är engelsk), och
+   **problemformulerade** — `fishing tool` ger brus, `fish lip gripper` och
+   `hook remover` ger produkter. Härled dem ur nischens moment: vad gör mannen, i
+   vilken ordning, var gör det ont?
+4. **Svep Temu:** `WebFetch` på `https://www.temu.com/search_result.html?search_key=<term>`
+   — **utan `/se/`**, den varianten returnerar bara sidtiteln. Ett anrop per term,
+   **ett i taget och högst 6–8 per session**: Temu stryper efter ungefär tio anrop och
+   svarar då bara med sidtiteln "Temu". Tolka det som strypning, inte som noll träffar.
+5. **Grovsålla** — bort med storleksval, rent dekorativt och flerpacksbrus.
+6. **Kändhetskolla de överlevande** — `WebSearch` på `pricerunner <svensk term>`,
+   antalet står i träffens titel. En sökning per kandidat räcker i jaktläget.
+7. **Leverera den rangordnade listan:**
+
+   | # | Produkt | Nisch | Vad den löser | 3-sek-bilden | Wow | Kändhet | Poäng |
+   |---|---|---|---|---|---|---|---|
+
+   "3-sek-bilden" ska vara en **konkret bildruta**, inte en egenskap. Kan du inte skriva
+   bildrutan är produkten inte klar för listan. Sätt `wow` till `–` om du inte sett
+   produktbilden — gissa aldrig.
+8. **Skriv in dem** i `products/kandidater.json`.
+9. **Avsluta med att be om domen** — vilka är ja, vilka är nej? Påminn om att skälet
+   behövs, det är det systemet lär sig av.
+
+⚠️ **Temu-priserna som kommer ut är opålitliga** (extraheringen blandar ihop rader).
+Redovisa dem aldrig som fakta.
+
+---
+
+## Läge BEDÖM — `/produkt <namn eller Temu-länk>`
+
+1. **Dedup:** `node pipeline/kandidater.mjs sok <term>`. Redan bedömd → visa den gamla
+   bedömningen och fråga vad som är nytt.
+2. **De två hårda stoppen** (S1 frakt/regler, S2 marginal) — **var och en med källa**.
+   Faller ett stopp: skriv det rakt ut, men lägg ändå in produkten i loggen.
+3. **Poängsätt de sex axlarna.** Kändheten tas fram i ordningen PriceRunner →
+   Clas Ohlson/Kjell/XXL → WebSearch för de blockerade kedjorna. **Motivera varje axel**
+   i `motivering`-fältet — det är motiveringen Axel läser när han dömer.
 4. **Marginalräkning:** landed cost → föreslaget pris → break-even-ROAS
-   (`1 / (1 − landed cost / pris)`). Jämför mot spannet 1,34–2,00 i `products.json`.
-   **Fråga om momsläget innan du drar av 25 %** — det står ingenstans i repot.
-5. **Leverera domkortet:**
+   (`1 / (1 − landed cost / pris)`), jämför mot 1,34–2,00 i `products.json`.
+   **Fråga om momsläget innan du drar av 25 %.**
+5. **Leverera kortet:**
 
    ```
-   PRODUKT: <namn>
-   GRINDAR: G1 ✅/❌ <källa> · G2 … · G3 … · G4 … · G5 … · G6 …
-   POÄNG:   wow ×2 = _ | problem _ | demo _ | ovanlighet _ | marginal _ | robusthet _  →  _/35
-   DOM:     GO / VÄNTA / NEJ
-   SKÄL:    en mening
-   NÄSTA:   <konkret steg>
+   PRODUKT:  <namn>
+   STOPP:    S1 ✅/⛔ <källa> · S2 ✅/⛔ <källa>
+   POÄNG:    wow ×2 _ | kändhet ×2 _ | problem _ | demo _ | mansprodukt _ | marginal _  →  _/40
+   KÄNDHET:  <var den finns, med länkar>
+   3-SEK:    <bildrutan>
    ```
-6. **Logga i `products/kandidater.json`** — även `NEJ`, med skälet. Det är hela
-   anledningen till att filen finns.
-7. **Vid `GO`:** säg exakt vad som ska hända — beställ prov, Drive-mapp
-   `TEMU-<SKU> <Referensnamn>` (SOP-06 regel 1), rad i product sheetet, sedan
-   `/ny-produkt <namn> <budget>`. Skapa **inte** produkten i `products.json` här;
-   det gör `/ny-produkt` när provet är godkänt.
-8. Committa och pusha.
+   Avsluta med **"ja eller nej?"** — inte med en egen dom.
+6. **Logga** i `products/kandidater.json`, committa och pusha.
 
 ---
 
 ## Läge LISTA — `/produkt lista`
 
-Kör `node pipeline/kandidater.mjs` och visa utskriften. Lyft det som ligger på `GO`
-utan nästa steg taget, och allt på `VÄNTA` som är äldre än 60 dagar — det ska antingen
-tas upp eller stängas.
+`node pipeline/kandidater.mjs`. Lyft det som väntar på hans ja/nej.
+
+---
+
+## Läge OFFERT — `/produkt sheet`
+
+Bygger leverantörens quote-sheet med **exakt** Axels mallstruktur:
+
+```bash
+pip install openpyxl
+python3 pipeline/quote-sheet.py produkter.json ut.xlsx
+```
+
+`produkter.json` är en lista med `{namn, temu_lank, bild, butikslank, leverantor_ref}`.
+Bara `temu_lank` krävs. **Bilden måste vara en lokal fil** — Temus bild-URL:er går inte
+att hämta härifrån, så be Axel om bilderna eller ta dem ur ett sheet han skickat.
+Ta med **de godkända** kandidaterna, inte hela listan. Skicka filen i chatten.
 
 ---
 
 ## DEFINITION OF DONE
 
 - [ ] `docs/os/PRODUKTKRITERIER.md` läst i den här sessionen
-- [ ] Dedup körd mot `products/kandidater.json` innan något nytt bedömdes
+- [ ] `kandidater.mjs smak` körd före listan (om det finns ≥3 domar)
+- [ ] Dedup körd innan något nytt bedömdes
 - [ ] JAKT: dödzonskollen gjord före svepet
-- [ ] JAKT: 8–12 kandidater, var och en med en konkret 3-sekundersbildruta
-- [ ] DOM: alla sex grindar körda i ordning, **var och en med källa**
-- [ ] Poäng bara satt på produkter som klarat alla grindar; wow tom om bilden inte setts
+- [ ] JAKT: rangordnad lista, var och en med konkret 3-sekundersbildruta
+- [ ] Kändheten belagd med källa — PriceRunner-antal eller butikslänk
+- [ ] Stoppdomar har källa; wow lämnad tom om produktbilden inte setts
 - [ ] Break-even-ROAS uträknad, momsläget frågat och inte gissat
 - [ ] Temu-priser inte redovisade som fakta
-- [ ] Allt bedömt loggat i `kandidater.json` — även NEJ, med skäl
+- [ ] **Levererat som en lista att godkänna — ingen egen slutgiltig dom**
+- [ ] Allt loggat i `kandidater.json`, även nekade, med Axels skäl
 - [ ] Pushad

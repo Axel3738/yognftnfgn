@@ -30,91 +30,96 @@ inte `GO`, om de inte klarar allt annat med marginal.
 
 ---
 
-## Steg 1 — Sex grindar. En enda missad grind = NEJ.
+## Arbetsdelningen: Claude rangordnar, Axel godkänner
 
-Grindarna körs **före** poängsättning. Faller produkten på en grind sätts inga poäng
-alls — då är den avgjord. **Varje grinddom kräver en källa** (URL eller sökträff).
-Ingen källa = ingen dom, enligt regel 3 i `CLAUDE.md`.
+**Claude fäller aldrig ett slutgiltigt ja eller nej.** Uppgiften är att leverera en
+*rangordnad lista* med research och poäng, så att Axel kan gå igenom den och säga ja
+eller nej på magkänsla. Skriptet räknar därför fram en poäng — aldrig en dom.
 
-### G1 — ICA Maxi-testet *(Axels viktigaste kriterium)*
-> Vet den tänkta målgruppen redan att produkten finns billigt i en vanlig butik?
+Det finns en anledning: gränsen för vad som är "för känt" sitter i Axels huvud, inte i
+en tabell. Han såg det själv — *"det är svårt för dig att veta"*. Systemet blir bättre
+genom att hans domar sparas och läses, inte genom hårdare regler.
 
-Det spelar ingen roll att produkten är svår att hitta. Det som dödar en annons är att
-mottagaren tänker *"den där har ju Biltema"*. Sök produkten i två nivåer:
+```bash
+node pipeline/kandidater.mjs godkann <slug> "skäl"
+node pipeline/kandidater.mjs neka    <slug> "skäl"
+node pipeline/kandidater.mjs smak      # vad han faktiskt säger ja och nej till
+```
 
-| Nivå | Butiker | Träff betyder |
-|---|---|---|
-| **A — bredhandel** | Biltema, Jula, Clas Ohlson, Rusta, Kjell & Co, Bauhaus, ICA Maxi, Coop, Willys, Elgiganten, XXL | **FÄLLANDE** — grinden faller |
-| **B — specialistbutik** | sportfiskebutiker, bilvårdsbutiker, jaktbutiker, hobbyhandel | **VARNING** — fällande *bara* om annonsmålgruppen är just de specialisterna |
-| **C — marknadsplats** | Amazon.se, Fyndiq, CDON | **prisankare**, se nedan — aldrig fällande i sig |
+**Skälet är obligatoriskt** — det är det enda systemet lär sig av. `smak` visar vilken
+axel som faktiskt skiljer ja från nej, godkännandegrad per nisch, och hans egna ord.
+**Kör `smak` innan varje ny lista** när det finns tre domar eller fler.
 
-**Amazon.se är inte bredhandel.** Nästan varje dropshippingprodukt ligger också på
-Amazon.se — räknades den som nivå A skulle grinden fälla allt och bli meningslös.
-Den behandlas i stället som ett **prisankare**: den fäller bara om listningen dyker upp
-högt på den *svenska* sökterm kunden själv skulle skriva **och** ligger klart under vårt
-tänkta pris. Ligger den djupt ner i sökresultatet är den en varning, inte ett stopp.
+---
 
-Nivå B-nyansen är hela poängen: en fiskeklämma som bara finns hos Sportfiskegiganten
-passerar mot en bred manlig publik, men faller om vi annonserar mot sportfiskare.
-Skriv alltid ut vilken målgrupp domen gäller.
+## Steg 1 — Två hårda stopp. Bara två.
 
-*Verktyg som fungerar:* Clas Ohlson-, Kjell- och XXL-sök går att hämta. Biltema, Jula,
-Rusta, Bauhaus och Amazon.se blockerar — täck dem med `WebSearch` i stället.
+Tidigare hade den här filen sex grindar, och de var för hårda. Axel:
+*"för grejen är det ändå att få finnas i butiker."* En produkt får alltså finnas i
+handeln — den får bara inte vara **svinkänd**. Det är numera en poängaxel, inte en grind.
 
-**Snabbaste G1-kollen: PriceRunner via WebSearch.** Sidan blockerar direktanrop, men
-sökträffens *titel* innehåller antalet: `"Skruvutdragare • Jämför (97 produkter)"`.
-Sök `pricerunner <svensk term>` — högt antal = commodity, noll träff = grinden håller.
-En sökning ersätter fem butikssökningar.
+Kvar som verkliga stopp är bara det som gör en produkt omöjlig att sälja över huvud taget:
 
-### G2 — Mättnadstestet
-> Är produkten redan körd sönder?
+### S1 — Frakt och regler
+Litiumbatteri · CE-/elsäkerhetskrav · livsmedelskontakt · vapenlikt · ömtåligt i
+postgång · leveranstid över tre veckor.
 
-Faller om **något** av detta stämmer:
-- ≥3 svenska dropshipping-butiker säljer den redan
-- den har varit en känd "TikTok-produkt" i mer än ~6 månader
-- den ligger i de generiska topplistorna som alla produktjägare läser
-
-Ser den *ny* ut men känns bekant: den är förmodligen mättad. Sök på svenska **och**
-engelska — den engelska mättnaden kommer till Sverige med några månaders fördröjning,
-och det fönstret är där pengarna finns.
-
-### G3 — 3-sekunderstestet
-> Syns wow:et på tre sekunder, utan ljud, i en stillbild eller ett klipp?
-
-Bäverbutiken lever på Meta-video med ljudet av. Går effekten inte att **visa** — den
-måste förklaras i text — är produkten omöjlig att annonsera oavsett hur bra den är.
-Kräver ett konkret svar: *vilken bild?* Kan du inte beskriva bildrutan faller grinden.
-
-### G4 — Marginaltestet
-> Går den att sälja till minst 3× landed cost, med break-even-ROAS ≤ 2,0?
-
-Landed cost = produktpris + frakt + eventuell tull. Räkna break-even-ROAS som
+### S2 — Marginal
+Går inte att sälja till minst 3× landed cost. Räkna break-even-ROAS som
 `1 / (1 − landed cost / försäljningspris)` och jämför mot kontots spann i
-`products/products.json` (1,34–2,00 idag). Över 2,0 är produkten svårsåld även när
-creativen fungerar — väggfästet på 2,00 är kontots smärtgräns, inte ett mål.
+`products/products.json` (1,34–2,00 idag).
 
 ⚠️ **Bäverbutikens momsläge står ingenstans i repot.** Fråga Axel innan du drar av
 25 % — gör du det reflexmässigt ser lönsamma produkter ut att gå med förlust.
 
-### G5 — Returtestet
-Faller på något av: kräver storleks-/passformsval · litiumbatteri (fraktrestriktioner)
-· CE-/elsäkerhetskrav · livsmedelskontakt · vapenlikt · ömtåligt i postgång ·
-leveranstid > 3 veckor.
-
-*(Strandtofflorna är undantaget som bekräftar regeln — storleksval kostar i returer och
-togs medvetet.)*
-
-### G6 — Mansköpstestet
-Köper en man den **till sig själv**? Är svaret "det är en present" → `VÄNTA`, inte `GO`.
+**Ett stopp kräver en källa.** Ingen källa, inget stopp (CLAUDE.md regel 3).
 
 ---
 
-## Dödzonen: nischer där G1 nästan alltid faller
+## Steg 2 — Sex poängaxlar, 0–5. Max 40.
 
-Uppmätt 2026-08-26 med ett skarpt svep av ved/verktyg/garage. **Fem kandidater, noll
-överlevande** — alla föll på G1, alla mot Biltema eller Jula:
+Wow och kändhet väger dubbelt — det är de två Axel själv lyfte fram.
 
-| Kandidat | Fälldes av |
+| Axel | Vikt | 0 | 5 |
+|---|---|---|---|
+| **Wow** | **×2** | "jaha" | "vad fan är det där" — man stannar tummen |
+| **Kändhet** | **×2** | hyllvara målgruppen kan priset på | knappt sedd i Sverige |
+| Problem | ×1 | konstruerat | gör ont, ofta, och mannen vet om det |
+| Demo | ×1 | inget före/efter | före/efter filmar sig självt |
+| Mansprodukt | ×1 | inte hans grej | han köper den till sig själv |
+| Marginal | ×1 | break-even-ROAS ~2,0 | break-even-ROAS ≤1,4 |
+
+### Kändhetsskalan — den nya, och den som ersatte ICA Maxi-grinden
+
+| Poäng | Betyder | Exempel |
+|---|---|---|
+| **0** | Hyllvara i Biltema/Jula/Clas Ohlson, målgruppen kan priset | skruvutdragare (Jula 49,90), knivslip |
+| **1–2** | Finns i bredhandeln, men få tänker på den | klyvkil, sågkedjeslip |
+| **3** | Bara i specialistbutik eller på Amazon.se | — |
+| **4** | I princip bara Temu/AliExpress | fiskeklämma |
+| **5** | Knappt sedd i Sverige alls | — |
+
+Så tas den fram, i den ordningen:
+
+1. `WebSearch` på `pricerunner <svensk term>` — antalet står i träffens titel
+   (`"Skruvutdragare • Jämför (97 produkter)"`). Högt antal = låg kändhetspoäng.
+2. Direktsök hos Clas Ohlson, Kjell och XXL — de går att hämta.
+3. Biltema, Jula, Rusta, Bauhaus blockerar direktanrop → täck med `WebSearch`.
+4. Amazon.se räknas **inte** som bredhandel. Nästan varje dropshippingprodukt ligger
+   där; räknades den som hyllvara skulle axeln bli meningslös. Den drar ner poängen
+   bara om listningen ligger högt på den svenska sökterm kunden själv skriver.
+
+**Poängen får inte hittas på.** Har ingen sett produktbilden sätts `wow` till `null` —
+skriptet räknar då fram en indikativ poäng och skriver ut att wow saknas. Det är
+bättre än en gissning.
+
+---
+
+## Dödzonen: nischer där kändheten alltid blir 0
+
+Uppmätt 2026-08-26 med ett skarpt svep av ved/verktyg/garage. **Fem kandidater, alla med kändhet 0–1** — allihop fällda av Biltema eller Jula:
+
+| Kandidat | Finns hos |
 |---|---|
 | Elektrisk sågkedjeslip | Jula 349 kr · Biltema Kedjeslipmaskin 130 W |
 | Klyvkil / vedkil (även 4-vägs) | Jula (Meec Tools, rak + vriden) · Biltema · Clas Ohlson 4-vägskniv · PriceRunner: 22 produkter |
@@ -136,40 +141,13 @@ det här?"* Är svaret ja — byt nisch, eller leta specifikt efter det som ligg
 hyllan. Det som är värt att svepa är produkter som löser ett mansproblem **utan** att
 vara ett handverktyg.
 
-## Steg 2 — Poäng. Bara för produkter som klarat alla sex grindar.
-
-Sex axlar, 0–5 poäng. **Wow räknas dubbelt** — det är Axels uttalade viktigaste faktor.
-Max 35.
-
-| Axel | Vikt | 0 | 5 |
-|---|---|---|---|
-| **Wow** | **×2** | "jaha" | "vad fan är det där" — man stannar tummen |
-| Problem | ×1 | konstruerat | gör ont, ofta, och mannen vet om det |
-| Demo | ×1 | inget före/efter | före/efter filmar sig självt |
-| Ovanlighet | ×1 | alla har sett den | målgruppen har aldrig sett den |
-| Marginal | ×1 | break-even-ROAS ~2,0 | break-even-ROAS ≤1,4 |
-| Robusthet | ×1 | ser billig ut i handen, går sönder | känns värd pengarna |
-
-**Domen:**
-
-| Poäng | Dom | Vad som händer |
-|---|---|---|
-| **≥26** | `GO` | Beställ prov. Drive-mapp `TEMU-<SKU> <Referensnamn>`, in i product sheetet, sedan `/ny-produkt` |
-| **20–25** | `VÄNTA` | Ligger kvar i `kandidater.json`. Behöver en vinkel, ett bättre pris eller en säsong |
-| **<20** | `NEJ` | Avfärdad — **med skäl**, så den inte utvärderas igen om tre månader |
-
-**Wow-golv:** wow under 3 ger aldrig `GO`, hur bra totalen än ser ut. En produkt som
-löser ett verkligt problem utan wow är en butiksprodukt, inte en annonsprodukt.
-
----
-
 ## Steg 3 — Vad som loggas
 
-Varje bedömd produkt skrivs till `products/kandidater.json` — **även avfärdade**.
-Det är hela poängen: utan de avfärdade utvärderas samma produkt om och om igen.
-`node pipeline/kandidater.mjs sok <term>` före varje ny bedömning.
+Varje bedömd produkt skrivs till `products/kandidater.json` — **även nekade**.
+Det är hela poängen: utan de nekade utvärderas samma produkt igen om tre månader,
+och utan Axels skäl lär sig systemet ingenting.
 
----
+`node pipeline/kandidater.mjs sok <term>` före varje ny bedömning.
 
 ## Vad Claude faktiskt kan och inte kan (verifierat 2026-08-26)
 
