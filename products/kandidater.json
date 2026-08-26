@@ -21,7 +21,7 @@
         }
       },
       "poang": {
-        "wow": null,
+        "wow": 4,
         "kandhet": 4,
         "problem": 4,
         "demo": 5,
@@ -33,7 +33,7 @@
         "problem": "Gäddan har tänder och kroken sitter kvar. Verkligt, återkommande.",
         "demo": "Handen som greppar gäddan i käften, tänder och krok en centimeter från fingrarna.",
         "mansprodukt": "Fiskeredskap till eget bruk.",
-        "wow": "SATT INTE — kräver att Axel tittar på produktbilden.",
+        "wow": "SATT PÅ PRODUKTBILDEN (granskad 2026-08-26): Handen håller gäddan i käften — precis den bildrutan vi vill ha.",
         "3-sek-bilden": "Handen greppar gäddan i käften — tänder och krok en cm från fingrarna."
       },
       "kandhet_kalla": "Clas Ohlson 'fiskeklamma' 0 träffar · XXL 'fiskeklamma' och 'fiskgrip' 0 artiklar · Amazon.se har listningar · svenska sportfiskebutiker finns i nischen (ej verifierat att de lagerför just klämman)",
@@ -44,7 +44,8 @@
         "datum": null
       },
       "temu_lank": "https://www.temu.com/se/fish-lip-gripper-aluminum-alloy-with-scale-built-in-weighing-360-degree-swivel-without-battery-g-606702497855951.html",
-      "lank_status": "verifierad live i Temus katalog 2026-08-26"
+      "lank_status": "verifierad live i Temus katalog 2026-08-26",
+      "bild_status": "Produktbild hämtad och granskad"
     },
     {
       "slug": "klyvkil",
@@ -237,7 +238,8 @@
       },
       "motivering": {
         "3-sek-bilden": "Mörkt vatten, lampan ner — fisken samlas i ljuskäglan.",
-        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar.",
+        "wow": "SATT PÅ PRODUKTBILDEN (granskad 2026-08-26): Grönt sken, 12V-klämmor, tydlig undervattenslampa."
       },
       "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
       "skal": null,
@@ -246,7 +248,8 @@
         "skal": null,
         "datum": null
       },
-      "lank_status": "verifierad live i Temus katalog 2026-08-26"
+      "lank_status": "verifierad live i Temus katalog 2026-08-26",
+      "bild_status": "Produktbild hämtad och granskad"
     },
     {
       "slug": "gummihav",
@@ -287,7 +290,8 @@
         "skal": null,
         "datum": null
       },
-      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'hopfällbar håv fiske'"
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'hopfällbar håv fiske'",
+      "bild_status": "Bild ej hämtad än (Temu strypt) — söklänk levererad i sheetet"
     },
     {
       "slug": "linespolare",
@@ -319,7 +323,8 @@
       },
       "motivering": {
         "3-sek-bilden": "Linan lägger sig jämnt på rullen i stället för att trassla ihop sig i knät.",
-        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar.",
+        "wow": "SATT PÅ PRODUKTBILDEN (granskad 2026-08-26): Ren produktbild med bordsklämma och rulle. Tydlig men inte hisnande."
       },
       "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
       "skal": null,
@@ -328,7 +333,8 @@
         "skal": null,
         "datum": null
       },
-      "lank_status": "verifierad live i Temus katalog 2026-08-26"
+      "lank_status": "verifierad live i Temus katalog 2026-08-26",
+      "bild_status": "Produktbild hämtad och granskad"
     },
     {
       "slug": "fiskestol-kylvaska",
@@ -369,7 +375,8 @@
         "skal": null,
         "datum": null
       },
-      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'fiskestol kylväska'"
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'fiskestol kylväska'",
+      "bild_status": "Bild ej hämtad än (Temu strypt) — söklänk levererad i sheetet"
     },
     {
       "slug": "spohallare-relingen",
@@ -410,7 +417,8 @@
         "skal": null,
         "datum": null
       },
-      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'fiskespöhållare båt reling'"
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'fiskespöhållare båt reling'",
+      "bild_status": "Bild ej hämtad än (Temu strypt) — söklänk levererad i sheetet"
     },
     {
       "slug": "sup-pump",
@@ -442,7 +450,8 @@
       },
       "motivering": {
         "3-sek-bilden": "Brädan reser sig själv medan mannen står och tittar på.",
-        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar.",
+        "wow": "SATT PÅ PRODUKTBILDEN (granskad 2026-08-26): Kompakt pump med display och munstycken. Ser dyrare ut än den är."
       },
       "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
       "skal": null,
@@ -451,7 +460,8 @@
         "skal": null,
         "datum": null
       },
-      "lank_status": "verifierad live i Temus katalog 2026-08-26"
+      "lank_status": "verifierad live i Temus katalog 2026-08-26",
+      "bild_status": "Produktbild hämtad och granskad"
     },
     {
       "slug": "mc-tankvaska",
@@ -474,7 +484,7 @@
         }
       },
       "poang": {
-        "wow": 4,
+        "wow": null,
         "kandhet": 4,
         "problem": 4,
         "demo": 4,
@@ -483,7 +493,8 @@
       },
       "motivering": {
         "3-sek-bilden": "Väskan smäller fast på tanken av sig själv — inga remmar.",
-        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar.",
+        "wow": "Osatt — rätt produkt inte hittad än."
       },
       "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
       "skal": null,
@@ -492,7 +503,8 @@
         "skal": null,
         "datum": null
       },
-      "lank_status": "verifierad live i Temus katalog 2026-08-26"
+      "lank_status": "verifierad live i Temus katalog 2026-08-26",
+      "bild_status": "⚠️ FEL PRODUKT — båda träffarna visade sig vara monteringsfästen, ingen väska. Söks om."
     },
     {
       "slug": "mc-mobilhallare",
@@ -533,7 +545,8 @@
         "skal": null,
         "datum": null
       },
-      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'mobilhållare motorcykel vattentät'"
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'mobilhållare motorcykel vattentät'",
+      "bild_status": "Bild ej hämtad än (Temu strypt) — söklänk levererad i sheetet"
     },
     {
       "slug": "stolsspalt",
@@ -574,7 +587,8 @@
         "skal": null,
         "datum": null
       },
-      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'bilstol springa organizer'"
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'bilstol springa organizer'",
+      "bild_status": "Bild ej hämtad än (Temu strypt) — söklänk levererad i sheetet"
     },
     {
       "slug": "stralkastare",
@@ -597,7 +611,7 @@
         }
       },
       "poang": {
-        "wow": 5,
+        "wow": 3,
         "kandhet": 2,
         "problem": 4,
         "demo": 5,
@@ -606,7 +620,8 @@
       },
       "motivering": {
         "3-sek-bilden": "Halva strålkastaren gulnad, halva glasklar. Delad bild, noll förklaring behövs.",
-        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar.",
+        "wow": "SATT PÅ PRODUKTBILDEN (granskad 2026-08-26): 38 delar utlagda. Kitet i sig är inte wow — det är före/efter som är det."
       },
       "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
       "skal": null,
@@ -615,7 +630,8 @@
         "skal": null,
         "datum": null
       },
-      "lank_status": "verifierad live i Temus katalog 2026-08-26"
+      "lank_status": "verifierad live i Temus katalog 2026-08-26",
+      "bild_status": "Produktbild hämtad och granskad"
     },
     {
       "slug": "rengoringsgel",
@@ -656,7 +672,8 @@
         "skal": null,
         "datum": null
       },
-      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'rengöringsgel bil ventil'"
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'rengöringsgel bil ventil'",
+      "bild_status": "Bild ej hämtad än (Temu strypt) — söklänk levererad i sheetet"
     },
     {
       "slug": "baksatesmadrass",
@@ -697,7 +714,8 @@
         "skal": null,
         "datum": null
       },
-      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'uppblåsbar madrass bil baksäte'"
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'uppblåsbar madrass bil baksäte'",
+      "bild_status": "Bild ej hämtad än (Temu strypt) — söklänk levererad i sheetet"
     },
     {
       "slug": "vindrutebeskydd",
@@ -738,7 +756,8 @@
         "skal": null,
         "datum": null
       },
-      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'magnetiskt vindrutebeskydd snö'"
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'magnetiskt vindrutebeskydd snö'",
+      "bild_status": "Bild ej hämtad än (Temu strypt) — söklänk levererad i sheetet"
     },
     {
       "slug": "hundskydd",
@@ -779,7 +798,8 @@
         "skal": null,
         "datum": null
       },
-      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'hundskydd baksäte bil'"
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'hundskydd baksäte bil'",
+      "bild_status": "Bild ej hämtad än (Temu strypt) — söklänk levererad i sheetet"
     },
     {
       "slug": "kottermometer",
@@ -820,7 +840,8 @@
         "skal": null,
         "datum": null
       },
-      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'trådlös köttermometer grill'"
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'trådlös köttermometer grill'",
+      "bild_status": "Bild ej hämtad än (Temu strypt) — söklänk levererad i sheetet"
     },
     {
       "slug": "kallrok",
@@ -843,7 +864,7 @@
         }
       },
       "poang": {
-        "wow": 5,
+        "wow": 4,
         "kandhet": 4,
         "problem": 4,
         "demo": 5,
@@ -852,7 +873,8 @@
       },
       "motivering": {
         "3-sek-bilden": "Röken kryper ut ur lådan i tolv timmar — laxen blir kallrökt i en vanlig grill.",
-        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar.",
+        "wow": "SATT PÅ PRODUKTBILDEN (granskad 2026-08-26): Spiralbricka med spån + värmeljus. Mekanismen syns direkt i bilden, ovanlig form."
       },
       "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
       "skal": null,
@@ -861,7 +883,8 @@
         "skal": null,
         "datum": null
       },
-      "lank_status": "verifierad live i Temus katalog 2026-08-26"
+      "lank_status": "verifierad live i Temus katalog 2026-08-26",
+      "bild_status": "Produktbild hämtad och granskad"
     },
     {
       "slug": "campingdusch",
@@ -893,7 +916,8 @@
       },
       "motivering": {
         "3-sek-bilden": "Pumpen ner i en hink — och det blir en riktig dusch mitt i skogen.",
-        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar."
+        "poang_kalla": "Uppskattade ur produktkategorin, INTE ur en produktbild — ingen bild har kunnat hämtas. Axel korrigerar.",
+        "wow": "SATT PÅ PRODUKTBILDEN (granskad 2026-08-26): 20 L hopfällbar hink + pump + duschhandtag. Hela systemet syns."
       },
       "kandhet_kalla": "Ej fullständigt belagd för denna produkt — kändhetspoängen är en uppskattning. Kör PriceRunner-kollen före beställning.",
       "skal": null,
@@ -902,7 +926,8 @@
         "skal": null,
         "datum": null
       },
-      "lank_status": "verifierad live i Temus katalog 2026-08-26"
+      "lank_status": "verifierad live i Temus katalog 2026-08-26",
+      "bild_status": "Produktbild hämtad och granskad"
     },
     {
       "slug": "nackstretcher",
@@ -943,7 +968,8 @@
         "skal": null,
         "datum": null
       },
-      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'uppblåsbar nackstretcher'"
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'uppblåsbar nackstretcher'",
+      "bild_status": "Bild ej hämtad än (Temu strypt) — söklänk levererad i sheetet"
     },
     {
       "slug": "multiyxa",
@@ -984,7 +1010,8 @@
         "skal": null,
         "datum": null
       },
-      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'multiverktyg yxa camping'"
+      "lank_status": "SÖKLÄNK — direktlänk ej verifierad (Temu strypt). Svensk sökterm: 'multiverktyg yxa camping'",
+      "bild_status": "Bild ej hämtad än (Temu strypt) — söklänk levererad i sheetet"
     }
   ]
 }

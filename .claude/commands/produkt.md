@@ -116,9 +116,13 @@ python3 pipeline/quote-sheet.py produkter.json ut.xlsx
 ```
 
 `produkter.json` är en lista med `{namn, temu_lank, bild, butikslank, leverantor_ref}`.
-Bara `temu_lank` krävs. **Produktbilder går inte att hämta från Temu på någon testad
-väg** — lämna `bild` tom och skriv produktnamnet i `namn`, så fylls kolumn A med namnet
-i stället för en bild.
+Bara `temu_lank` krävs, men **bilden är i praktiken obligatorisk** — Axel har sagt det
+uttryckligen. Be om `img.kwcdn.com`-adressen i samma WebFetch-anrop som länken, ladda
+ner med `curl` (klipp bort `?imageView2`-suffixet för full upplösning) och peka `bild`
+på den lokala filen. Full beskrivning i "Produktbilderna" i kriterierna.
+
+⚠️ **Titta på bilderna innan leverans.** Montera en kontaktkarta och läs den — det
+avslöjade två helt felaktiga produkter av åtta första gången det gjordes.
 
 **Länkarna i kolumn M, i prioritetsordning:**
 1. Direktlänk från en live-sökning, med `/se/` framför sökvägen — verifierat levande.

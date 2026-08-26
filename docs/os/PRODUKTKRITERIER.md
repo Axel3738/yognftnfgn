@@ -159,7 +159,7 @@ och utan Axels skäl lär sig systemet ingenting.
 | `site:temu.com <term>` via WebSearch | ☠️ | **ANVÄND ALDRIG FÖR LÄNKAR.** Sökmotorns index är gammalt — länkarna leder till avpublicerade listningar som visar "Den här produkten är slutsåld". Brändes 2026-08-26, se nedan |
 | `temu.com/se/search_result.html?search_key=<svensk term>` | ✅ | Renderar inte i WebFetch, men är en **säker länk att leverera**: alltid levande, alltid svenskt lager. Reservlösning när direktlänk inte hinns med |
 | Temu efter ~10 anrop | ❌ | **Stryps hårt.** Svaret blir bara sidtiteln "Temu" och hade inte återhämtat sig efter en timme. Gäller även enskilda produktsidor |
-| **Produktbilder från Temu** | ❌ | Går inte att hämta på någon testad väg. Sheetet får produktnamn i kolumn A i stället för bild |
+| **Produktbilder från Temu** | ✅ | Går att hämta — **be uttryckligen om `img.kwcdn.com`-adressen i WebFetch-prompten**, annars kommer den inte med. Bild-CDN:en är öppen för `curl` |
 | **WebSearch** | ✅ | Bärande verktyget för kändhetsaxeln och mättnadskollen |
 | Clas Ohlson-, Kjell-, XXL-sök | ✅ | Direkt G1-kontroll |
 | Temu-priser | ⚠️ | **Opålitliga.** Extraheringen blandar ihop rader — vi har sett en pennvässare på $495. Priset läser Axel av själv |
@@ -210,6 +210,48 @@ och får inte levereras som direktlänk.
 resten som **svenska söklänkar** (`temu.com/se/search_result.html?search_key=<svensk
 term>`) och markera i leveransen vilka rader som är verifierade och vilka som är
 söklänkar. En söklänk går aldrig sönder — den är en ärlig reservlösning, inte ett fusk.
+
+---
+
+## Produktbilderna — så hämtas de
+
+Bilder är inte valfria. Axel: *"du måste verkligen lägga in bilder på produkterna."*
+Utan bild går wow inte att sätta, och fel produkt upptäcks inte.
+
+**Att bilderna inte gick att hämta var fel — jag frågade bara aldrig efter dem.**
+WebFetch renderar sidan och ser `<img>`-taggarna; de kommer bara inte med om prompten
+inte ber om dem.
+
+**Steg 1 — be om adressen i samma anrop som länken:**
+
+> *"For each product, give: name, full product URL (-g-\<number\>.html), and thumbnail
+> image src URL (img.kwcdn.com)."*
+
+**Steg 2 — ladda ner med `curl`.** Bild-CDN:en (`img.kwcdn.com`) är öppen och kräver
+ingen inloggning. Klipp bort `?imageView2/...`-suffixet, så kommer bilden i full
+upplösning (800×800 eller 1500×1500 i stället för 500 px):
+
+```bash
+curl -sS -A "<vanlig webbläsar-UA>" -H "Referer: https://www.temu.com/" \
+     -o bilder/<slug>.jpg "${url%%\?*}"
+```
+
+Filändelsen i adressen ljuger ibland (`.jpeg` som egentligen är PNG) — sätt rätt
+ändelse efter `file --mime-type`, annars vägrar openpyxl bädda in filen.
+
+**Steg 3 — TITTA på bilderna innan de levereras.** Montera dem till en kontaktkarta
+och läs den. Det är inte en formalitet: första gången det gjordes, 2026-08-26,
+avslöjade det direkt att två av åtta produkter var **helt fel vara** — "kallrökgeneratorn"
+var ett kollage av grilltillbehör och "MC-tankväskan" var två plastfästen utan väska.
+Ingen av dem hade upptäckts på namnet.
+
+Kontaktkartan är också enda sättet att sätta `wow` på riktigt i stället för att
+uppskatta ur kategorin.
+
+**Anropsbudget:** Temu stryper efter ungefär åtta anrop och återhämtar sig långsamt —
+och strypningen verkar hårdna om man fortsätter hamra. Räkna med **7–8 färdiga
+produkter (länk + bild) per fönster**. Tjugo produkter är alltså tre omgångar.
+Leverera det som är klart, säg vad som återstår, och fortsätt.
 
 ---
 
