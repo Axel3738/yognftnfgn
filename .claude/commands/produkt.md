@@ -18,23 +18,31 @@ Ad account: **MagiBorsten `1867947880635861`**. Gäller aldrig Grillkliniken.
 
 1. **Kolla minnet först:** `node pipeline/kandidater.mjs` — vad är redan dömt i den
    nischen? Avfärdade produkter tas aldrig upp igen utan ny information.
-2. **Bygg söktermerna.** 10–15 stycken, **på engelska** (Temus sök är engelsk), och de
+2. **Dödzonskollen — innan en enda sökning körs.** Fråga: *har Biltema eller Jula en
+   egen hyllsektion för det här?* Är svaret ja är nischen minerad — ett skarpt svep av
+   ved/verktyg 2026-08-26 gav fem kandidater och noll överlevande, alla fällda av
+   Biltema/Jula. Byt nisch, eller leta specifikt efter det som ligger *bredvid* hyllan.
+   Se "Dödzonen" i `docs/os/PRODUKTKRITERIER.md`.
+3. **Bygg söktermerna.** 10–15 stycken, **på engelska** (Temus sök är engelsk), och de
    ska vara *problemformulerade*, inte kategoriformulerade. `fishing tool` ger brus;
    `fish lip gripper`, `hook remover`, `line cutter retractor` ger produkter.
    Härled dem ur nischens moment: vad gör mannen, i vilken ordning, var gör det ont?
-3. **Svep Temu:** `WebFetch` på `https://www.temu.com/search_result.html?search_key=<term>`
-   — **utan `/se/`**, den varianten returnerar bara sidtiteln. Ett anrop per term.
-4. **Grovsålla direkt** — släng allt som är: kökspryl, kläder/storleksval, rent
+4. **Svep Temu:** `WebFetch` på `https://www.temu.com/search_result.html?search_key=<term>`
+   — **utan `/se/`**, den varianten returnerar bara sidtiteln. Ett anrop per term,
+   **ett i taget och högst 6–8 per session**: Temu stryper efter ungefär tio anrop och
+   svarar då bara med sidtiteln "Temu". Tolka det som strypning, inte som noll träffar —
+   och spara resten av termerna till nästa gång i stället för att köra vidare blint.
+5. **Grovsålla direkt** — släng allt som är: kökspryl, kläder/storleksval, rent
    dekorativt, flerpacksbrus, eller uppenbart bredhandel (G1). Kvar ska 8–12 stå.
-5. **Leverera tabellen** — och den är hela leveransen:
+6. **Leverera tabellen** — och den är hela leveransen:
 
    | # | Produkt | Nisch | Vad den löser | 3-sek-bilden | G1-risk | Temu-sökterm |
    |---|---|---|---|---|---|---|
 
    "3-sek-bilden" ska vara en **konkret bildruta**, inte en egenskap. Kan du inte
    skriva bildrutan är produkten inte klar för listan.
-6. **Skriv in dem** i `products/kandidater.json` med status `ny` — inga poäng ännu.
-7. **Avsluta med frågan:** vilka av dessa ska jag köra full dom på? Sätt aldrig en
+7. **Skriv in dem** i `products/kandidater.json` med status `ny` — inga poäng ännu.
+8. **Avsluta med frågan:** vilka av dessa ska jag köra full dom på? Sätt aldrig en
    wow-poäng på en produkt vars bild ingen har sett.
 
 ⚠️ **Priserna Temu-svepet returnerar är opålitliga** (extraheringen blandar ihop rader).
@@ -48,10 +56,12 @@ Skriv aldrig ut dem som fakta — Axel läser av priset själv.
    domen och fråga vad som är nytt, i stället för att döma om.
 2. **Kör de sex grindarna i ordning** ur `docs/os/PRODUKTKRITERIER.md`. Stanna vid
    första fallna grinden — resten behöver inte utredas.
-   - **G1 ICA Maxi:** `WebSearch` på svenska + direktsök hos Clas Ohlson, Kjell, XXL
-     (de går att hämta; Biltema/Jula/Rusta/Bauhaus/Amazon.se blockerar → täck med
-     WebSearch). Skilj på nivå A (bredhandel = fällande) och nivå B (specialistbutik
-     = varning). **Skriv ut vilken målgrupp domen gäller.**
+   - **G1 ICA Maxi:** börja med `WebSearch` på `pricerunner <svensk term>` — antalet står
+     i träffens titel (`"Skruvutdragare • Jämför (97 produkter)"`) och avgör oftast saken
+     direkt. Följ upp med direktsök hos Clas Ohlson, Kjell och XXL (de går att hämta;
+     Biltema/Jula/Rusta/Bauhaus blockerar → täck med WebSearch). Skilj på nivå A
+     (bredhandel = fällande), nivå B (specialistbutik = varning) och nivå C (Amazon.se
+     m.fl. = prisankare, aldrig fällande i sig). **Skriv ut vilken målgrupp domen gäller.**
    - **G2 Mättnad:** sök svenska dropshippingbutiker + engelsk mättnad.
    - **G3–G6:** bedöm och motivera.
    - **Varje grinddom ska ha en källa** — URL eller sökträff. Ingen källa, ingen dom.
@@ -93,6 +103,7 @@ tas upp eller stängas.
 
 - [ ] `docs/os/PRODUKTKRITERIER.md` läst i den här sessionen
 - [ ] Dedup körd mot `products/kandidater.json` innan något nytt bedömdes
+- [ ] JAKT: dödzonskollen gjord före svepet
 - [ ] JAKT: 8–12 kandidater, var och en med en konkret 3-sekundersbildruta
 - [ ] DOM: alla sex grindar körda i ordning, **var och en med källa**
 - [ ] Poäng bara satt på produkter som klarat alla grindar; wow tom om bilden inte setts

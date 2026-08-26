@@ -61,6 +61,11 @@ Skriv alltid ut vilken målgrupp domen gäller.
 *Verktyg som fungerar:* Clas Ohlson-, Kjell- och XXL-sök går att hämta. Biltema, Jula,
 Rusta, Bauhaus och Amazon.se blockerar — täck dem med `WebSearch` i stället.
 
+**Snabbaste G1-kollen: PriceRunner via WebSearch.** Sidan blockerar direktanrop, men
+sökträffens *titel* innehåller antalet: `"Skruvutdragare • Jämför (97 produkter)"`.
+Sök `pricerunner <svensk term>` — högt antal = commodity, noll träff = grinden håller.
+En sökning ersätter fem butikssökningar.
+
 ### G2 — Mättnadstestet
 > Är produkten redan körd sönder?
 
@@ -104,6 +109,33 @@ Köper en man den **till sig själv**? Är svaret "det är en present" → `VÄN
 
 ---
 
+## Dödzonen: nischer där G1 nästan alltid faller
+
+Uppmätt 2026-08-26 med ett skarpt svep av ved/verktyg/garage. **Fem kandidater, noll
+överlevande** — alla föll på G1, alla mot Biltema eller Jula:
+
+| Kandidat | Fälldes av |
+|---|---|
+| Elektrisk sågkedjeslip | Jula 349 kr · Biltema Kedjeslipmaskin 130 W |
+| Klyvkil / vedkil (även 4-vägs) | Jula (Meec Tools, rak + vriden) · Biltema · Clas Ohlson 4-vägskniv · PriceRunner: 22 produkter |
+| Skruvutdragarsats | Jula 49,90 kr · Biltema · Bauhaus · Clas Ohlson · PriceRunner: 97 produkter |
+| Fällkilar | Samma hylla som klyvkilen |
+| Pickaroon / vedhake | Samma hylla |
+
+**Mönstret, och det är riktningsgivande:** Biltema och Jula äger handverktyg,
+vedbearbetning och bilverktyg i Sverige — till priser vi omöjligt kan konkurrera med
+och som målgruppen kan utantill. Söker du i deras kärnsortiment letar du i en minerad
+nisch.
+
+Och åt andra hållet: **kontots alla vinnare ligger utanför det sortimentet** — båtkapell,
+sätesöverdrag till åkgräsklippare, hållningsbälte, strandtofflor, väggfäste. Ingen av
+dem finns på Biltemas hyllor.
+
+**Regeln som följer:** innan en nisch sveps, fråga *"har Biltema en egen hyllsektion för
+det här?"* Är svaret ja — byt nisch, eller leta specifikt efter det som ligger *bredvid*
+hyllan. Det som är värt att svepa är produkter som löser ett mansproblem **utan** att
+vara ett handverktyg.
+
 ## Steg 2 — Poäng. Bara för produkter som klarat alla sex grindar.
 
 Sex axlar, 0–5 poäng. **Wow räknas dubbelt** — det är Axels uttalade viktigaste faktor.
@@ -146,6 +178,7 @@ Det är hela poängen: utan de avfärdade utvärderas samma produkt om och om ig
 | Källa | Läge | Vad vi får |
 |---|---|---|
 | **Temu-sök** via `temu.com/search_result.html?search_key=<term>` | ✅ | Produktnamn. **Utan `/se/` i sökvägen** — `/se/`-varianten returnerar bara sidtiteln |
+| Temu efter ~10 anrop | ⚠️ | **Stryps.** Svaret blir bara sidtiteln "Temu" och hade inte återhämtat sig efter ~10 min. Svep 6–8 termer per session, en i taget, och spara resten till nästa gång |
 | **WebSearch** | ✅ | Bärande verktyget för G1 och G2 |
 | Clas Ohlson-, Kjell-, XXL-sök | ✅ | Direkt G1-kontroll |
 | Temu-priser | ⚠️ | **Opålitliga.** Extraheringen blandar ihop rader — vi har sett en pennvässare på $495. Priset läser Axel av själv |
@@ -154,6 +187,7 @@ Det är hela poängen: utan de avfärdade utvärderas samma produkt om och om ig
 | Meta Ad Library | ❌ | 403 — mättnadskollen får gå via WebSearch |
 | Kickstarter, Reddit, TikTok Creative Center, Amazon.se, Jula, Biltema, Rusta, Bauhaus | ❌ | 403/503/tomt skal |
 | Chromium/Playwright | ❌ | All utgående trafik från webbläsaren resettas i den här miljön |
+| PriceRunner (direktanrop) | ❌ | Tomt — men antalet syns i WebSearch-träffens titel, se G1 ovan |
 
 **Konsekvensen — arbetsfördelningen:**
 
