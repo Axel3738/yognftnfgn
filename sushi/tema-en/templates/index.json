@@ -1,0 +1,233 @@
+{
+  "sections": {
+    "ms_usp": {
+      "type": "ms-usp-bar",
+      "settings": {
+        "items": "gift:Arrives gift-ready|star:Loved by thousands"
+      }
+    },
+    "hero": {
+      "type": "image-banner",
+      "blocks": {
+        "h": {
+          "type": "heading",
+          "settings": { "heading": "Socks that look like sushi", "heading_size": "h1" }
+        },
+        "t": {
+          "type": "text",
+          "settings": {
+            "text": "The gift they laugh at first — and then wear every week. Arrives in a box that looks like the real thing.",
+            "text_style": "body"
+          }
+        },
+        "b": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop now",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": ["h", "t", "b"],
+      "settings": {
+        "image_overlay_opacity": 10,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "scheme-1",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "ms_marquee": {
+      "type": "ms-marquee",
+      "settings": {
+        "items": "Loved by thousands|Free shipping|30-day returns|Arrives gift-ready",
+        "speed": 26,
+        "background": "#dd821d",
+        "text_color": "#fdfbf7"
+      }
+    },
+    "produkt": {
+      "type": "featured-product",
+      "blocks": {
+        "etikett": { "type": "text", "settings": { "text": "Bestseller", "text_style": "uppercase" } },
+        "titel": { "type": "title", "settings": { "heading_size": "h1" } },
+        "pris": { "type": "price", "settings": {} },
+        "varianter": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
+        "paket": {
+          "type": "custom_liquid",
+          "settings": { "custom_liquid": "{% render 'ms-paket', product: section.settings.product, section_id: section.id %}" }
+        },
+        "kop": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": false, "show_gift_card_recipient": false } }
+      },
+      "block_order": ["etikett", "titel", "pris", "varianter", "paket", "kop"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "berattelse": {
+      "type": "rich-text",
+      "blocks": {
+        "h": { "type": "heading", "settings": { "heading": "The one pair nobody mixes up", "heading_size": "h1" } },
+        "t": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Everyone runs short on socks, and odd pairs are a fact of life. These ones you never lose track of — they are rolled and boxed like a real sushi platter.</p><p>It starts with a laugh when the lid comes off. Then they become the pair that keeps getting picked. A funny gift, in the shape of something they already love.</p>"
+          }
+        }
+      },
+      "block_order": ["h", "t"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 44,
+        "padding_bottom": 28
+      }
+    },
+    "sortiment": {
+      "type": "featured-collection",
+      "settings": {
+        "products_to_show": 4,
+        "title": "The whole set",
+        "heading_size": "h1",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "statement": {
+      "type": "rich-text",
+      "blocks": {
+        "h": { "type": "heading", "settings": { "heading": "Nigiri, maki and a side of soy — as socks", "heading_size": "h1" } },
+        "b": {
+          "type": "button",
+          "settings": { "button_label": "See every roll", "button_link": "shopify://collections/all", "button_style_secondary": false }
+        }
+      },
+      "block_order": ["h", "b"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "trygghet": {
+      "type": "image-with-text",
+      "blocks": {
+        "h": { "type": "heading", "settings": { "heading": "Shop with confidence", "heading_size": "h2" } },
+        "t": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Free shipping on every order and 30-day returns, so you can order without second-guessing it.</p><p>Pay however you like — card, PayPal, Apple Pay or Google Pay.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": ["h", "t"],
+      "settings": {
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "ms_faq": {
+      "type": "ms-faq-section",
+      "blocks": {
+        "q1": { "type": "qa", "settings": { "q": "Will they fit?", "a": "<p>One size fits most — roughly UK 4–10 / US 5–12.</p>" } },
+        "q2": { "type": "qa", "settings": { "q": "Can I send them straight as a gift?", "a": "<p>Yes. Every pair arrives boxed to look like real sushi — no wrapping needed.</p>" } },
+        "q3": { "type": "qa", "settings": { "q": "Where do you ship?", "a": "<p>The United States, United Kingdom, Australia, New Zealand and Canada, with free shipping on every order.</p>" } }
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": { "heading": "Common questions" }
+    },
+    "ms_guarantee": {
+      "type": "ms-guarantee-section",
+      "settings": {
+        "title": "30-day returns",
+        "body": "<p>Not happy? Get in touch within 30 days and we will sort it. No hoops, no follow-up questions.</p>",
+        "icon": "seal"
+      }
+    },
+    "ugc_galleri": {
+      "type": "multicolumn",
+      "blocks": {
+        "g1": { "type": "column", "settings": { "title": "Movie night", "text": "", "link_label": "", "link": "" } },
+        "g2": { "type": "column", "settings": { "title": "The birthday", "text": "", "link_label": "", "link": "" } },
+        "g3": { "type": "column", "settings": { "title": "The office secret santa", "text": "", "link_label": "", "link": "" } }
+      },
+      "block_order": ["g1", "g2", "g3"],
+      "settings": {
+        "title": "Out in the wild",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 8
+      }
+    },
+    "ugc_markning": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<p style=\"text-align:center;font-size:1.2rem;color:rgba(18,18,18,.55);margin:0\">Lifestyle images are AI-generated illustrations.</p>",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "hero", "ms_usp", "ms_marquee", "produkt", "berattelse", "sortiment",
+    "statement", "ugc_galleri", "ugc_markning", "trygghet", "ms_faq", "ms_guarantee"
+  ]
+}
