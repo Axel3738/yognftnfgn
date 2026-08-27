@@ -86,15 +86,18 @@ Allt annat i annonsen är byggt för att stötta den rapporten.
 
 ## Vad som INTE går att kopiera rakt av
 
-**Siffran.** "Över 14 000 speglar" är deras faktum. **Vi har ingen motsvarighet
-och får inte hitta på en** (CLAUDE.md regel 3). Beat 2 måste antingen bäras av
-något annat sant eller utgå.
+**Siffran hade vi inte — nu har vi den.** Axel bekräftade 2026-08-27:
+**15 000 lådor** sålda förra året (lådor, inte par — en låda är 5 par), slut
+**redan i november**, och **många kunder fick aldrig sina innan jul**.
 
-**Vad vi däremot HAR:** Axels egna ord tidigare i det här arbetet —
-> *"vi sålde slut på sushistrumpor redan i november förra året"*
+Det ger oss hela Ristals struktur med äkta innehåll: skalbeviset (beat 2), den
+tidiga utsålningen och erkännandet att folk blev utan (beat 3). Att det tog slut
+**i november** — före säsongens topp — är dessutom en starkare rapport än deras
+december.
 
-Det är exakt Ristals beat 3, och det är vårt. Att det tog slut **i november** —
-före säsongens topp — är dessutom en starkare rapport än deras december.
+**Men vi uppgraderar aldrig hans ord.** Ristal skriver "hundratals föräldrar";
+Axel sa "många". Då står det "många" i copyn. Inget av talen går att verifiera
+mot Shopify — `read_orders` är inte ikryssat för matstrumpor-appen.
 
 **Lagerbilden.** Ristals bild bevisar deras lagerhistoria. Har vi ett riktigt
 foto på sushilådor i kartonger, packbord, eller en leverans? Har vi inte det
@@ -103,8 +106,8 @@ måste bildvalet lösas på annat sätt — och **aldrig med en AI-genererad
 
 ## Frågor till Axel innan 018 kan launchas
 
-1. **Hur många sushilådor sålde ni förra året?** Finns talet blir beat 2 en riktig
-   siffra. Finns det inte kör vi versionen utan — den är skriven.
+1. ~~Hur många sushilådor sålde ni förra året?~~ **Besvarat 2026-08-27: 15 000
+   lådor, slut i november, många blev utan.**
 2. **Finns det ett riktigt foto på lagret/packningen?** Annars behöver
    bildvinkeln göras om.
 3. **När ska julvinkeln starta?** Ristal startade 26 oktober. Nuvarande utkast
