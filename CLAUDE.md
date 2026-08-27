@@ -104,7 +104,12 @@ för att ersätta en kopia av Shrine 1.3.1. Rör inte `products/`, `pipeline/` e
     `.claude/commands/` och följ den exakt, med texten efter kommandonamnet som
     argument. Kommandona är filer — de fungerar även när klienten inte
     registrerat dem.
-14. **Korta svar.** Inga bibelsvar. Axel har sagt det två gånger.
+14. **Korta svar, skrivna som text — inte som listor.** Inga bibelsvar. Axel har
+    sagt det två gånger. Och svara i **stycken**, inte i punktlistor med siffror:
+    numrerade listor och bullets ska sparas till sådant som faktiskt är en lista
+    (manusbeats, tabeller med ID:n, checklistor). Resonemang, bedömningar och
+    rekommendationer skrivs som löpande text. *(Axel 2026-08-27: "Kan du sluta
+    skicka allt i punktform med siffror. Skicka det som stycken istället.")*
 
 ---
 
