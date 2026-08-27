@@ -83,9 +83,31 @@ Varje brief som innehåller en body — manus, primärtext, långtext — levere
 (t.ex. bevisbeatet flyttat, eller användningen före uppackningen). Två
 omskrivningar av samma text räknas inte som varianter.
 
-Samma sak gäller hookar: leverera flera som testar olika saker mot varandra, med
-en etikett per hook som säger vad just den testar. Annars går det inte att läsa
-av vad som vann.
+### Hookar skrivs TILL en body — aldrig som en fri matris
+*(Axel, 2026-08-27: "det finns ingen anledning att pröva kollegan-hooken när
+bodiesarna ser ut som de gör.")*
+
+Leverera aldrig N hookar och M bodies som fritt kombinerbara rutor. **Bodyn
+låser saker** — den namnger mottagaren, avgör om det var ett gåvoköp eller ett
+självköp, och kan redan ha sagt det hooken tänkte säga. En hook om en kollega
+följd av en body som slutar *"fick pappa att skratta högst"* är en trasig annons,
+och matrisen döljer att den är trasig.
+
+Så här görs det i stället:
+
+1. Bestäm bodyn först.
+2. Skriv ner vad bodyn **låser**: vem som nämns vid namn, om det är gåva eller
+   självköp, vilka beats som redan är upptagna (t.ex. "jag såg en annons").
+3. Skriv hookarna **till just den bodyn**, tre stycken som testar olika saker.
+4. Upprepa för nästa body.
+
+Redovisa alltid **varför** varje hook passar sin body. Kan man inte skriva den
+raden hör de inte ihop.
+
+Antalet varianter är inte poängen — **att de går ihop är poängen.** Levereras
+tre bodies och ägaren behåller två, är det två bodies som gäller, och hookarna
+skrivs om mot dem.
+
 
 - **Skriv om, skriv om:** bra copy är omskriven copy, 20–25 varv är normalt.
   Producera 3–5 versioner av samma rad — feedback på versioner är alltid
