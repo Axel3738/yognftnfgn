@@ -709,7 +709,3 @@ heldag var värd det — och den som ska in som fast kostnad i PNL-appen.
    material att testa volymmallen på direkt.
 6. Boka K9 (skogen) som första riktiga kreatörsdag — störst kandidatpool, bra headroom,
    lägst risk att bränna pengar på ett misslyckat första svep.
-
----
-
-Dokumentet är skrivet till `/home/user/yognftnfgn/docs/ugc-creators.md`.

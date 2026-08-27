@@ -30,7 +30,7 @@ den går 2 200 → 3 000 kr/dag).
 | Fil | Innehåll |
 |---|---|
 | `volym-och-skalning.md` | Volymtrappan, taket, chill-villkoren, veckorutinen, snabbreferens |
-| `ugc-kreatorer.md` | 12 kreatörsarketyper, 6 batch-roller, sourcing, ersättning, avtal, briefmall, register |
+| [`../ugc-creators.md`](../ugc-creators.md) | 12 kreatörsarketyper, 6 batch-roller, sourcing, ersättning, avtal, briefmall, kvalitetströskel, register |
 | `katalogsegment.md` | Katalogen delad i castbara inspelningssegment med rekvisitakrav |
 | `granskning-ekonomi.md` | Adversariell granskning: moms, kassaflöde, tull, UGC-kostnad, returer |
 | `granskning-meta-mekanik.md` | Adversariell granskning: learning phase, ASC vs ABO, creatives per adset, frekvens |
