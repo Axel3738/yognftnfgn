@@ -73,6 +73,20 @@ Räkna om till den ram där siffran blir slående — men den ska förbli sann.
 - **Granska i verkligheten:** bedöm en static i feed-kontext (bland andra
   annonser), inte som ensam fil. Skriv copyn i det format den ska leva i —
   det är därför overlay-texten sätts direkt på 4:5-canvasen i `pipeline/`.
+
+### Alltid tre versioner av bodyn — aldrig en
+*(Axels regel, 2026-08-27: "Alltid 2 extra varianter utöver original bodyn.")*
+
+Varje brief som innehåller en body — manus, primärtext, långtext — levereras med
+**originalet plus två alternativa versioner**. Varianterna ska skilja sig i
+**angreppssätt**, inte i ordval: samma mekanik och samma längd, men olika väg dit
+(t.ex. bevisbeatet flyttat, eller användningen före uppackningen). Två
+omskrivningar av samma text räknas inte som varianter.
+
+Samma sak gäller hookar: leverera flera som testar olika saker mot varandra, med
+en etikett per hook som säger vad just den testar. Annars går det inte att läsa
+av vad som vann.
+
 - **Skriv om, skriv om:** bra copy är omskriven copy, 20–25 varv är normalt.
   Producera 3–5 versioner av samma rad — feedback på versioner är alltid
   bättre än feedback på en ensam rad. (Detta är subagentens jobb: be alltid
