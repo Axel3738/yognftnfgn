@@ -1,5 +1,11 @@
 # Sushi-Strumporna — copy per annons (swipe av svenskhusman_socks, 2026-08-25)
 
+> ⚠️ **DELVIS FÖRÅLDRAD 2026-08-27.** 3-par-varianten (369 kr) är slutsåld på matstrumpor.se,
+> och erbjudandet är nu **Köp 1 – Få 1 GRATIS** (2 lådor, 399 kr). **Copy 5 nedan får inte
+> köras** — den bygger helt på prisdifferensen 369→399 kr. Ersättare finns som copy E i
+> `docs/briefs/sushi-bogo-2026-08-27/COPY.md`. Copy 1–4 fungerar fortfarande, men lägg till
+> BOGO-erbjudandet i primärtexten innan de launchas.
+
 Fem copy-set. Varje set listar vilka bilder i mappen det ska paras med.
 A-bilder = riktiga produktfoton · B-bilder = AI-genererade (kie.ai, produktfoto som referens).
 Priser: 3 par 369 kr / 5 par 399 kr · matstrumpor.se
