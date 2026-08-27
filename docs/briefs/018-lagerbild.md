@@ -1,81 +1,61 @@
-# 018 — Bildbrief: lagerbilden
+# 018 — Lagerbilden (ÄKTA FOTO, inte AI)
 
-> Bilden till annons 018 ("Hinner jag få den till jul?").
-> Swipe av Ristals julspegel — `docs/swipes/ristal-julspegel-2026-08-27.md`.
-> Skriven 2026-08-27.
+> Bilden till annons 018 ("Hinner sushistrumporna fram till jul?").
+> **Reviderad 2026-08-27: Axel skickade ett riktigt foto från packningen.**
+> Den ursprungliga briefen bad om en AI-genererad bild — den är struken.
 
-## Varför bilden är viktigare än den ser ut
+## Vad som ändrades, och varför det spelar roll
 
-I originalet är bilden **inte dekoration — den är beviset**. Texten säger "allt
-tog slut i lager". Bilden visar ett riktigt lager med en riktig människa som
-packar. Bild och text bevisar varandra.
+Den första versionen av det här dokumentet var en promptbrief för att *generera*
+en lagerbild. Det behövs inte längre, och det är en klar förbättring:
 
-Byter man ut den mot en snygg produktbild rasar halva annonsen, för då finns
-det ingenting som stöttar bristpåståendet.
+| | AI-bild | Axels foto |
+|---|---|---|
+| Beviset | En illustration av något vi gör | **Bevis på att vi gjorde det** |
+| AI-märkning | Krävs (`self_ai_disclosure`) | **Krävs inte** |
+| Risk | Måste noga avgränsas för att inte påstå en skala vi inte har | Ingen — det är vår faktiska verksamhet |
 
-**Därför:** den här bilden ska se ut som ett arbetsfoto någon råkade ta. Inte
-som en annons.
+Hela annonsens motor är att bristen **rapporteras bakåt som något som verkligen
+hänt**. Ett äkta foto stöttar den rapporten på ett sätt en genererad bild aldrig
+kan. Det här var rätt beslut av Axel.
 
-## Vad som får finnas i bilden — och vad som inte får
+## Vad fotot visar
 
-**Ska finnas:**
-- Sushilådor (produkten) staplade — flera, så att det ser ut som lager.
-- Wellpapp/fraktkartonger runt omkring.
-- Ett packbord, packlistor eller fraktetiketter.
-- En person som packar, sedd **från sidan eller bakifrån**, mitt i arbetet.
-  Ingen som poserar, ingen som tittar in i kameran.
+Packrummet, sett över ett långt ljust bord:
 
-**Får INTE finnas:**
-- **Ingen skala vi inte har.** Inget jättelager med truckar, pallställ i tak-höjd
-  eller hundratals meter hyllor. Det skulle vara ett påstående om verksamhetens
-  storlek, och det är inte vårt att göra. Ett rum, ett bord, staplar — inte en
-  distributionscentral.
-- Ingen inbränd text. Copyn bär annonsen, bilden bär beviset.
-- Inga andra sorter (pizza, hamburgare, donut) — bara sushi.
-- Ingen jul. Inga granar, ingen dekor.
-- Inga ansikten i fokus, inga igenkännbara personer.
-- Ingen glossig e-handelsstil, ingen studiobelysning, ingen stock photo-känsla.
+- **I förgrunden:** två staplar sushilådor med genomskinligt lock — laxbitar,
+  gurkmaki, tamago, gunkan. Produkten är tydligt läsbar och stämmer med sajten.
+  Ätpinnar i trä ligger lösa på bordet bredvid.
+- **På bordet:** tejphållare, maskeringstejp, hopknycklat packpapper, en utskriven
+  plocklista, öppna wellpappkartonger med fraktetiketter.
+- **I bakgrunden:** en person i grå t-shirt som lyfter ner en sushilåda i en
+  kartong, sedd från sidan, ansiktet inte i fokus. Metallhyllor med kartonger
+  längs väggen. Dagsljus från fönstret.
 
-## Produktnoggrannhet — enda hårda kravet
+Det är exakt vad den gamla briefen försökte beskriva — men på riktigt.
 
-Använd de riktiga produktbilderna på **matstrumpor.se** som referens. Lådan ska
-se ut som en äkta takeaway-sushilåda, med strumporna rullade som maki-rullar och
-ätpinnar i trä. Ser produkten fel ut är bilden obrukbar, hur fin den än är.
+## Varför bilden fungerar (behåll det här om den någonsin ska ersättas)
 
-## Prompt (engelska — bildmodellen kräver det)
-
-```
-Photorealistic candid workplace photo, shot on a phone, natural indoor light
-from a window. A small Swedish e-commerce packing room: a plain work table
-covered with stacks of takeaway-style sushi boxes, each box containing five
-rolled sock "maki" rolls and a pair of wooden chopsticks. Open cardboard
-shipping boxes and a roll of packing tape on the table, a few shipping labels
-and a printed picking list. One person in a plain dark t-shirt, seen from the
-side, hands busy packing a box, face not visible, not looking at the camera.
-Modest room, ordinary shelving along one wall, a few stacked cartons — a small
-operation, not a large warehouse. Slightly imperfect framing, mild motion in
-the hands, real textures, visible dust and creases in the cardboard. No text,
-no logos, no graphics, no studio lighting, no glossy retouching.
-```
-
-**Negativ prompt:** `text, watermark, logo, christmas decorations, forklift,
-pallet racking, huge warehouse, studio lighting, glossy, stock photo, posed
-model, face looking at camera, cartoon, illustration`
+1. **Produkten är i förgrunden och läsbar.** Man ser att det är sushistrumpor,
+   inte bara "kartonger".
+2. **Personen poserar inte.** Sedd från sidan, mitt i ett handgrepp. Det är
+   skillnaden mellan ett arbetsfoto och en annonsbild.
+3. **Skalan är ärlig.** Ett rum, ett bord, hyllor — ingen distributionscentral.
+   Bilden påstår ingenting om storlek som vi inte kan backa.
+4. **Slarvet är trovärdighet.** Knycklat papper, lös tejp, snedställd stol. Ett
+   städat foto hade sett iscensatt ut och tagit bort beviskraften.
 
 ## Format
 
 | Vad | Krav |
 |---|---|
-| Bildförhållande | **4:5** (1080×1350) som huvudformat, **1:1** (1080×1080) som variant |
-| Antal | 4 varianter att välja mellan |
-| Filnamn | `018_lager_4x5_v1.jpg` … `_v4.jpg` |
+| Original | Porträtt (ca 4:5) — passar Meta-feeden direkt |
+| Beskärning | **4:5** (1080×1350) huvudformat. Behåll lådorna i förgrunden och personen i bild — beskär aldrig bort någondera |
+| Variant | 1:1 (1080×1080) om det behövs för fler placeringar |
+| Text på bilden | **Ingen.** Copyn bär annonsen, bilden bär beviset |
 
-## ⚠️ AI-märkning
+## Att göra
 
-Bilden är AI-genererad. **Meta kräver att det anmäls** (`self_ai_disclosure`).
-Det är annonsörens beslut, inte vårt — **Axel kryssar i det själv innan launch.**
-
-Notera också vad bilden får och inte får påstå: en genererad bild av att lådor
-packas är en illustration av något vi faktiskt gör. En genererad bild av ett
-lager i en storlek vi inte har vore ett påstående vi inte kan backa. Det är
-skillnaden, och den är hela anledningen till avgränsningarna ovan.
+- [ ] **Axel laddar upp fotot i mediebiblioteket på `nya kungen`** (730973156224390)
+      och döper det till `lagerbild`. Då kopplas det till annonsen.
+- [x] ~~AI-märkning~~ — utgår. Fotot är äkta.
