@@ -98,15 +98,41 @@ lyckas — verifiera med en `files`-query på `size`/`updatedAt` i stället.
 1b. **Domänen `sushisock.com`** (Axels val 2026-08-26, kollad ledig mot Verisigns
    RDAP) — köps under Inställningar → Domäner.
 2. **Butiksvalutan är SEK** → ändra till **USD**. Går bara innan första ordern.
-3. **Sverige ligger kvar som primär marknad.** Exakt samma fälla som
-   beavershop.co.uk hade: alla besökare utanför de fem länderna får då SEK.
-   Gör USA primär och ta bort Sverige-marknaden.
+3. ~~Sverige som primär marknad~~ ✅ **LÖST via API 2026-08-27.** Primärmarknaden
+   kan inte bytas via API (`MarketUpdateInput` saknar `primary`), men den kunde
+   döpas om till **"Rest of world"** och få `baseCurrency: USD`. Primärmarknaden
+   är automatiskt fallback för alla omatchade besökare, så ingen ser SEK längre.
+   `applicationLevel: ALL` stöds INTE för regioner — men behövs inte.
+   Prisavrundning påslagen på alla sex marknaderna.
 4. **Publicera temat** (Shopify blockerar temapublicering via API).
 5. **Apparna**: Judge.me och Klaviyo om de ska med.
 
+### Produkten — inlagd 2026-08-27
+
+**Sushi Socks – 5 Pairs in a Takeaway Box** (`sushi-socks`,
+`gid://shopify/Product/16120859820357`). ACTIVE, publicerad på alla tre kanaler.
+
+- **9 produktbilder**, alla READY. Hämtade direkt från matstrumpor.se:s publika
+  CDN (`/products.json` ger hela produkten inkl. bild-URL:er utan inloggning) och
+  lagda som `originalSource` — ingen omvägen via nedladdning behövdes.
+- **Engelsk copy** skriven ur den svenska: samma vinkel (rolig i kväll, på
+  fötterna i morgon), men utan hastighetslöfte och utan "Fri frakt i Sverige".
+- **Varianter:** `SUSHI-SOCKS-5` (5 pairs) och `SUSHI-SOCKS-3` (3 pairs),
+  moms av, CONTINUE, vikt satt.
+- **Samling** `all-socks` skapad, produkten i den.
+- **Startsidan** kopplad till produkten och samlingen.
+
+⚠️ **Priserna är provisoriska.** Butiksvalutan är fortfarande SEK, så jag satte
+426 / 331 SEK — vilket med marknadernas prisavrundning landar kring $45 / $35.
+Exakta priser sätts när butiksvalutan bytts till USD och CWD-kostnaden finns.
+
+⚠️ **Temat duplicerades.** Shopify blockerar filskrivning mot det publicerade
+temat, så startsidans produktkoppling ligger i **"Sushi Sock EN v2"** (utkast).
+Det är det temat som ska publiceras. Dupliceringen är asynkron — `processing: true`
+tills den är klar, och en upsert som körs innan dess skrivs över.
+
 ### Kvar för mig när det är gjort
 
-- Produkten (sushi-strumporna) med engelsk copy + bilder
 - Paketnivåerna som `bundle_tier`-poster + riktiga rabattkoder i kassan
 - Priser per marknad enligt 3×-regeln (kräver CWD-kostnad för US/UK/AU/NZ/CA)
 - Fraktzoner per marknad

@@ -1,0 +1,193 @@
+{
+ "id": 10286130889043,
+ "title": "Sushi-Strumpor",
+ "handle": "sushi-strumpor",
+ "body_html": "<h3>Ingen jublar åt tvättmedel. Ingen sparar en skämtpryl.</h3>\n<p>Den roliga håller en kväll, sen hamnar den i en byrålåda. Den praktiska gör nytta, men pappret rivs av i tystnad. Du slipper välja: den här är rolig i kväll och på fötterna i morgon.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/0976/7508/4115/files/ezgif-5d1844bc3a0df8.webp?v=1765216430\" alt=\"Sushilådan öppnas och strumporna visar sig\"></p>\n<h3>Ser ut som sushi. Är strumpor.</h3>\n<p>De tror att det är riktig sushi – tills de inser vad det egentligen är. De tittar två gånger. Sen skrattar de. När skrattet lagt sig är det fortfarande strumpor – något man faktiskt behöver och använder.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/0976/7508/4115/files/matstrumpor_52_alla_fotter_soffan.jpg\" alt=\"Fyra par fötter i soffan med varsin matstrumpa (AI-genererad illustrationsbild)\"></p>\n<h3>Det här får du</h3>\n<ul>\n<li>5 par strumpor, rullade som sushibitar</li>\n<li>Sushilåda som lurar ögat – ser ut som takeaway tills du öppnar den</li>\n<li>Ätpinnar av trä ingår, för hela illusionen</li>\n<li>Onesize – passar 36–44</li>\n<li>Fri frakt i Sverige – framme på 5–10 arbetsdagar</li>\n</ul>\n<p><img src=\"https://cdn.shopify.com/s/files/1/0976/7508/4115/files/WhatsAppImage2025-11-27at03.41.39.jpg?v=1764611683\" alt=\"Sushi-strumporna upplagda med lådan och ätpinnarna\"></p>\n<h3>30 dagar att ändra dig.</h3>\n<p>30 dagars öppet köp. Funkar det inte, skickar du bara tillbaka det – inga konstiga frågor.</p>\n<p style=\"font-size:0.85em;opacity:0.65;\">Soffbilden är en AI-genererad illustration.</p>",
+ "published_at": "2025-12-01T18:55:03+01:00",
+ "created_at": "2025-12-01T18:55:00+01:00",
+ "updated_at": "2026-08-27T04:22:46+02:00",
+ "vendor": "Matstrumpor.se",
+ "product_type": "",
+ "tags": [],
+ "variants": [
+  {
+   "id": 52506473365843,
+   "title": "5 - Par",
+   "option1": "5 - Par",
+   "option2": null,
+   "option3": null,
+   "sku": null,
+   "requires_shipping": true,
+   "taxable": true,
+   "featured_image": {
+    "id": 71718864290131,
+    "product_id": 10286130889043,
+    "position": 1,
+    "created_at": "2025-12-01T18:53:44+01:00",
+    "updated_at": "2026-02-25T05:54:38+01:00",
+    "alt": null,
+    "width": 800,
+    "height": 800,
+    "src": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/WhatsAppImage2025-11-25at08.41.59_5.jpg?v=1771995278",
+    "variant_ids": [
+     52506473365843
+    ]
+   },
+   "available": true,
+   "price": "399.00",
+   "grams": 0,
+   "compare_at_price": "399.00",
+   "position": 1,
+   "product_id": 10286130889043,
+   "created_at": "2025-12-01T19:18:47+01:00",
+   "updated_at": "2026-08-27T04:22:46+02:00"
+  },
+  {
+   "id": 52506473398611,
+   "title": "3 - Par",
+   "option1": "3 - Par",
+   "option2": null,
+   "option3": null,
+   "sku": null,
+   "requires_shipping": true,
+   "taxable": true,
+   "featured_image": {
+    "id": 71718864388435,
+    "product_id": 10286130889043,
+    "position": 3,
+    "created_at": "2025-12-01T18:53:53+01:00",
+    "updated_at": "2026-02-25T05:54:38+01:00",
+    "alt": null,
+    "width": 1000,
+    "height": 1000,
+    "src": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/WhatsAppImage2025-11-27at03.41.37_80407476-11ab-4ab2-a940-b37398596e88_2.jpg?v=1771995278",
+    "variant_ids": [
+     52506473398611
+    ]
+   },
+   "available": true,
+   "price": "369.00",
+   "grams": 0,
+   "compare_at_price": "369.00",
+   "position": 2,
+   "product_id": 10286130889043,
+   "created_at": "2025-12-01T19:18:47+01:00",
+   "updated_at": "2026-08-27T04:22:46+02:00"
+  }
+ ],
+ "images": [
+  {
+   "id": 71718864290131,
+   "created_at": "2025-12-01T18:53:44+01:00",
+   "position": 1,
+   "updated_at": "2026-02-25T05:54:38+01:00",
+   "product_id": 10286130889043,
+   "variant_ids": [
+    52506473365843
+   ],
+   "src": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/WhatsAppImage2025-11-25at08.41.59_5.jpg?v=1771995278",
+   "width": 800,
+   "height": 800
+  },
+  {
+   "id": 74076141879635,
+   "created_at": "2026-01-29T19:03:11+01:00",
+   "position": 2,
+   "updated_at": "2026-02-25T05:54:38+01:00",
+   "product_id": 10286130889043,
+   "variant_ids": [],
+   "src": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/Skarmbild2026-01-29190257.png?v=1771995278",
+   "width": 617,
+   "height": 616
+  },
+  {
+   "id": 71718864388435,
+   "created_at": "2025-12-01T18:53:53+01:00",
+   "position": 3,
+   "updated_at": "2026-02-25T05:54:38+01:00",
+   "product_id": 10286130889043,
+   "variant_ids": [
+    52506473398611
+   ],
+   "src": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/WhatsAppImage2025-11-27at03.41.37_80407476-11ab-4ab2-a940-b37398596e88_2.jpg?v=1771995278",
+   "width": 1000,
+   "height": 1000
+  },
+  {
+   "id": 71718864421203,
+   "created_at": "2025-12-01T18:54:00+01:00",
+   "position": 4,
+   "updated_at": "2026-02-25T05:54:38+01:00",
+   "product_id": 10286130889043,
+   "variant_ids": [],
+   "src": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/openart-f0afefca-9979-4f52-b96f-99e5e65142e1_2.png?v=1771995278",
+   "width": 800,
+   "height": 800
+  },
+  {
+   "id": 71718864552275,
+   "created_at": "2025-12-01T18:54:06+01:00",
+   "position": 5,
+   "updated_at": "2026-02-25T05:54:38+01:00",
+   "product_id": 10286130889043,
+   "variant_ids": [],
+   "src": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/WhatsAppImage2025-11-27at03.41.38.jpg?v=1771995278",
+   "width": 1000,
+   "height": 1000
+  },
+  {
+   "id": 71718864912723,
+   "created_at": "2025-12-01T18:54:13+01:00",
+   "position": 6,
+   "updated_at": "2026-02-25T05:54:38+01:00",
+   "product_id": 10286130889043,
+   "variant_ids": [],
+   "src": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/b9c28ae5-af1f-4f0f-b507-2f4f3b0b7126_2.avif?v=1771995278",
+   "width": 800,
+   "height": 800
+  },
+  {
+   "id": 71718865240403,
+   "created_at": "2025-12-01T18:54:21+01:00",
+   "position": 7,
+   "updated_at": "2026-02-25T05:54:38+01:00",
+   "product_id": 10286130889043,
+   "variant_ids": [],
+   "src": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/openart-bc64e45b-b775-417a-99cd-d269208aafcf_1.png?v=1771995278",
+   "width": 800,
+   "height": 800
+  },
+  {
+   "id": 71718865371475,
+   "created_at": "2025-12-01T18:54:27+01:00",
+   "position": 8,
+   "updated_at": "2026-02-25T05:54:38+01:00",
+   "product_id": 10286130889043,
+   "variant_ids": [],
+   "src": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/5c8d5bd4-a94b-42d3-9480-5f9e81dea7ee_3.avif?v=1771995278",
+   "width": 800,
+   "height": 800
+  },
+  {
+   "id": 71718865764691,
+   "created_at": "2025-12-01T18:54:40+01:00",
+   "position": 9,
+   "updated_at": "2026-02-25T05:54:38+01:00",
+   "product_id": 10286130889043,
+   "variant_ids": [],
+   "src": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/WhatsAppImage2025-11-27at03.41.39.jpg?v=1771995278",
+   "width": 589,
+   "height": 604
+  }
+ ],
+ "options": [
+  {
+   "name": "Par",
+   "position": 1,
+   "values": [
+    "5 - Par",
+    "3 - Par"
+   ]
+  }
+ ]
+}

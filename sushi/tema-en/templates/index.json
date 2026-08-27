@@ -11,7 +11,10 @@
       "blocks": {
         "h": {
           "type": "heading",
-          "settings": { "heading": "Socks that look like sushi", "heading_size": "h1" }
+          "settings": {
+            "heading": "Socks that look like sushi",
+            "heading_size": "h1"
+          }
         },
         "t": {
           "type": "text",
@@ -24,7 +27,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop now",
-            "button_link_1": "shopify://collections/all",
+            "button_link_1": "shopify://collections/all-socks",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -32,7 +35,11 @@
           }
         }
       },
-      "block_order": ["h", "t", "b"],
+      "block_order": [
+        "h",
+        "t",
+        "b"
+      ],
       "settings": {
         "image_overlay_opacity": 10,
         "image_height": "medium",
@@ -58,17 +65,52 @@
     "produkt": {
       "type": "featured-product",
       "blocks": {
-        "etikett": { "type": "text", "settings": { "text": "Bestseller", "text_style": "uppercase" } },
-        "titel": { "type": "title", "settings": { "heading_size": "h1" } },
-        "pris": { "type": "price", "settings": {} },
-        "varianter": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
+        "etikett": {
+          "type": "text",
+          "settings": {
+            "text": "Bestseller",
+            "text_style": "uppercase"
+          }
+        },
+        "titel": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "pris": {
+          "type": "price",
+          "settings": {}
+        },
+        "varianter": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
         "paket": {
           "type": "custom_liquid",
-          "settings": { "custom_liquid": "{% render 'ms-paket', product: section.settings.product, section_id: section.id %}" }
+          "settings": {
+            "custom_liquid": "{% render 'ms-paket', product: section.settings.product, section_id: section.id %}"
+          }
         },
-        "kop": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": false, "show_gift_card_recipient": false } }
+        "kop": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        }
       },
-      "block_order": ["etikett", "titel", "pris", "varianter", "paket", "kop"],
+      "block_order": [
+        "etikett",
+        "titel",
+        "pris",
+        "varianter",
+        "paket",
+        "kop"
+      ],
       "settings": {
         "color_scheme": "scheme-1",
         "secondary_background": false,
@@ -80,13 +122,20 @@
         "hide_variants": false,
         "enable_video_looping": false,
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "product": "sushi-socks"
       }
     },
     "berattelse": {
       "type": "rich-text",
       "blocks": {
-        "h": { "type": "heading", "settings": { "heading": "The one pair nobody mixes up", "heading_size": "h1" } },
+        "h": {
+          "type": "heading",
+          "settings": {
+            "heading": "The one pair nobody mixes up",
+            "heading_size": "h1"
+          }
+        },
         "t": {
           "type": "text",
           "settings": {
@@ -94,7 +143,10 @@
           }
         }
       },
-      "block_order": ["h", "t"],
+      "block_order": [
+        "h",
+        "t"
+      ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -124,19 +176,33 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "collection": "all-socks"
       }
     },
     "statement": {
       "type": "rich-text",
       "blocks": {
-        "h": { "type": "heading", "settings": { "heading": "Nigiri, maki and a side of soy — as socks", "heading_size": "h1" } },
+        "h": {
+          "type": "heading",
+          "settings": {
+            "heading": "Nigiri, maki and a side of soy — as socks",
+            "heading_size": "h1"
+          }
+        },
         "b": {
           "type": "button",
-          "settings": { "button_label": "See every roll", "button_link": "shopify://collections/all", "button_style_secondary": false }
+          "settings": {
+            "button_label": "See every roll",
+            "button_link": "shopify://collections/all-socks",
+            "button_style_secondary": false
+          }
         }
       },
-      "block_order": ["h", "b"],
+      "block_order": [
+        "h",
+        "b"
+      ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -149,7 +215,13 @@
     "trygghet": {
       "type": "image-with-text",
       "blocks": {
-        "h": { "type": "heading", "settings": { "heading": "Shop with confidence", "heading_size": "h2" } },
+        "h": {
+          "type": "heading",
+          "settings": {
+            "heading": "Shop with confidence",
+            "heading_size": "h2"
+          }
+        },
         "t": {
           "type": "text",
           "settings": {
@@ -158,7 +230,10 @@
           }
         }
       },
-      "block_order": ["h", "t"],
+      "block_order": [
+        "h",
+        "t"
+      ],
       "settings": {
         "height": "adapt",
         "desktop_image_width": "medium",
@@ -177,12 +252,36 @@
     "ms_faq": {
       "type": "ms-faq-section",
       "blocks": {
-        "q1": { "type": "qa", "settings": { "q": "Will they fit?", "a": "<p>One size fits most — roughly UK 4–10 / US 5–12.</p>" } },
-        "q2": { "type": "qa", "settings": { "q": "Can I send them straight as a gift?", "a": "<p>Yes. Every pair arrives boxed to look like real sushi — no wrapping needed.</p>" } },
-        "q3": { "type": "qa", "settings": { "q": "Where do you ship?", "a": "<p>The United States, United Kingdom, Australia, New Zealand and Canada, with free shipping on every order.</p>" } }
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "q": "Will they fit?",
+            "a": "<p>One size fits most — roughly UK 4–10 / US 5–12.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "q": "Can I send them straight as a gift?",
+            "a": "<p>Yes. Every pair arrives boxed to look like real sushi — no wrapping needed.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "q": "Where do you ship?",
+            "a": "<p>The United States, United Kingdom, Australia, New Zealand and Canada, with free shipping on every order.</p>"
+          }
+        }
       },
-      "block_order": ["q1", "q2", "q3"],
-      "settings": { "heading": "Common questions" }
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "heading": "Common questions"
+      }
     },
     "ms_guarantee": {
       "type": "ms-guarantee-section",
@@ -195,11 +294,39 @@
     "ugc_galleri": {
       "type": "multicolumn",
       "blocks": {
-        "g1": { "type": "column", "settings": { "title": "Movie night", "text": "", "link_label": "", "link": "" } },
-        "g2": { "type": "column", "settings": { "title": "The birthday", "text": "", "link_label": "", "link": "" } },
-        "g3": { "type": "column", "settings": { "title": "The office secret santa", "text": "", "link_label": "", "link": "" } }
+        "g1": {
+          "type": "column",
+          "settings": {
+            "title": "Movie night",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "g2": {
+          "type": "column",
+          "settings": {
+            "title": "The birthday",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "g3": {
+          "type": "column",
+          "settings": {
+            "title": "The office secret santa",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
       },
-      "block_order": ["g1", "g2", "g3"],
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ],
       "settings": {
         "title": "Out in the wild",
         "heading_size": "h1",
@@ -227,7 +354,17 @@
     }
   },
   "order": [
-    "hero", "ms_usp", "ms_marquee", "produkt", "berattelse", "sortiment",
-    "statement", "ugc_galleri", "ugc_markning", "trygghet", "ms_faq", "ms_guarantee"
+    "hero",
+    "ms_usp",
+    "ms_marquee",
+    "produkt",
+    "berattelse",
+    "sortiment",
+    "statement",
+    "ugc_galleri",
+    "ugc_markning",
+    "trygghet",
+    "ms_faq",
+    "ms_guarantee"
   ]
 }
