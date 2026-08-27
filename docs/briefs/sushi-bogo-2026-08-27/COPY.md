@@ -1,8 +1,17 @@
 # Sushi-Strumporna — BOGO-annonser, copy per annons (2026-08-27)
 
 Sex färdiga annonser. Alla **tema-fria** (ingen högtid, ingen säsong, ingen rea) och byggda
-på det nu gällande erbjudandet. Bilderna är AI-genererade i kie.ai med de riktiga
-produktfotona från matstrumpor.se som referens; texten är skarp vektortext lagd med `sharp`.
+på det nu gällande erbjudandet.
+
+**Så är de gjorda (v2, 2026-08-27):** scenerna är genererade i kie.ai med de riktiga
+produktfotona från matstrumpor.se som referens. Typografin sätts sedan i **Poppins Bold**
+med `sharp` (`layout2.mjs` + `build-final.mjs`), med mjuka skuggor under rubriker och badges.
+
+*Varför inte all text renderad av AI:n?* Det testades — resultatet var typografiskt snyggt,
+men modellen klarar inte svenska diakriter tillförlitligt. Över 24 genereringar återkom
+"lädan" (lådan), "Skåmt" (Skämt), "FÄ" (FÅ), "år" (är) och "takaway" (takeaway), även med
+explicit teckeninstruktion. Scen från AI + text i Poppins ger proffsig typografi **och**
+garanterat korrekt svenska.
 
 ## Erbjudandet — verifierat på matstrumpor.se 2026-08-27
 
@@ -23,7 +32,7 @@ in dem i 898 blir summan fel — copy-juryn fångade det felet i tre varianter.
 
 ---
 
-## D1 — Två lådor · `D1-tva-lador-bogo.jpg`
+## D1 — Två lådor · `P1-tva-lador.jpg`
 **I bilden:** "Den vänstra ger du bort. Den högra blir din." + badge "KÖP 1 – FÅ 1 GRATIS"
 
 **Primärtext:**
@@ -42,7 +51,7 @@ Fri frakt i hela Sverige och 30 dagars öppet köp. Lådorna kommer presentklara
 
 ---
 
-## D2 — Fötter + låda · `D2-fotter-box-bogo.jpg`
+## D2 — Fötter + låda · `P2-fotter-box.jpg`
 **I bilden:** badge "KÖP 1 / FÅ 1 / GRATIS" + "Skämt i lådan. Strumpa på foten."
 
 **Primärtext:**
@@ -63,8 +72,8 @@ Allt levereras presentklart. Fri frakt i hela Sverige och 30 dagars öppet köp 
 
 ---
 
-## D3 — Staplade lådor · `D3-staplade-lador-bogo.jpg`
-**I bilden:** "SUSHISTRUMPOR" + "Ser ut som takeaway. Är 20 par strumpor." + banner "KÖP 2 – FÅ 2 GRATIS"
+## D3 — Staplade lådor · `P3-staplade.jpg`
+**I bilden:** "SUSHISTRUMPOR" + "Tjugo par strumpor i fyra lådor." + banner "KÖP 2 – FÅ 2 GRATIS"
 *Detta är den enda annonsen som säljer det stora paketet (4 lådor).*
 
 **Primärtext:**
@@ -85,7 +94,7 @@ Köp 2 – få 2 gratis: fyra lådor för 798 kr i stället för 1796 kr. 4 par 
 
 ---
 
-## D4 — Svävande låda · `D4-box-svavande-bogo.jpg`
+## D4 — Svävande låda · `P4-svavande.jpg`
 **I bilden:** "Ser ut som mat. Är tio par strumpor." + badge "KÖP 1 – FÅ 1 GRATIS"
 *Den rena produktannonsen — ersättaren för högtidsannonsen.*
 
@@ -107,7 +116,7 @@ Köp 1 – Få 1: två lådor, tio par, 399 kr. Ätpinnar i trä ligger med. Fri
 
 ---
 
-## C — Transformations-swipen · `C-sushi-till-strumpor.jpg`
+## C — Transformations-swipen · `P5-transformation.jpg`
 *Swipe av "Din hund på strumpor": banner i toppen, delad bild med pil emellan.*
 **I bilden:** "Sushin är slut ikväll. Strumporna finns kvar."
 *(Juryns bildtext var "Slut ikväll. → Tio par, 399 kr." — jag använde rubriken i stället, eftersom
@@ -131,7 +140,7 @@ En låda ger du bort. Den andra står kvar hemma till nästa gång du blir bjude
 
 ---
 
-## F — Kontrast-swipen · `F-dammsamlare-reaktion.jpg`
+## F — Kontrast-swipen · `P6-kontrast.jpg`
 *Swipe av Ristals "Detta är dekoration. / Detta är motivation." — kategoriomdefiniering genom
 kontrast. Originalets personalisering (namn + nummer) kan vi inte lova och översätts inte.
 Originalets "sedan 2020" översätts inte heller — vi har inget årtal att stå på.*
