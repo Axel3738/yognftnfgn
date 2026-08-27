@@ -204,3 +204,72 @@ annonser. Det gör att svaga script aldrig får data, och att "script A slog scr
 B" inte längre går att säga med säkerhet. Bytet är medvetet: snabbare väg till en
 vinnare + samlat engagemang, mot sämre jämförbarhet mellan scripten.
 Namnen är bumpade till `v2` så gammal och ny struktur går att skilja i insights.
+
+---
+
+## Adset 2 i samma kampanj: de 16 nya videorna (2026-08-27)
+
+Axels beställning: "Nu ska dessa laddas upp i den nya CBO och läggas i ett nytt
+eget adset." Videorna låg redan i mediebiblioteket på `nya kungen`
+(`730973156224390`).
+
+| Objekt | ID | Läge |
+|---|---|---|
+| Kampanj `MATSTRUMP_SALES_20260826` | `120251217860260023` | PAUSED (samma som ovan) |
+| Adset `broad_advplus_purchase_nya16` | `120251218118710023` | PAUSED, **1 000 kr/dag** |
+| 16 annonser `…_v1` | se tabell nedan | PAUSED |
+
+Adsetet är byggt likadant som `…_alla17`: broad Sverige, Advantage+ Audience,
+optimering `OFFSITE_CONVERSIONS` mot pixel `1785935302094082`, ingen
+intressetargeting.
+
+**Skillnad mot adset 1:** de här 16 är *nya* creatives och har inget engagemang
+att ärva, så de är skapade inline med `object_story_spec` + `video_data`
+(video_id + thumbnail), inte som befintliga inlägg. Thumbnail är obligatorisk —
+utan `image_url` faller anropet på fel 1443226.
+
+| Annons | Ad-ID | Video-ID | Källa i mediebiblioteket |
+|---|---|---|---|
+| `MATSTRUMP_sushi_gift_ugc_s008h1_v1` | 120251218122850023 | 1448657477320973 | 008 Sushi_H1 |
+| `MATSTRUMP_sushi_gift_ugc_s008h2_v1` | 120251218130540023 | 1453564173263279 | 008 Sushi_H2 |
+| `MATSTRUMP_sushi_gift_ugc_s008h3_v1` | 120251218132800023 | 1364297669149428 | 008 Sushi_H3 |
+| `MATSTRUMP_sushi_gift_ugc_s009h1_v1` | 120251218134500023 | 2991564441203253 | 009 HOOK 1 |
+| `MATSTRUMP_sushi_gift_ugc_s009h2_v1` | 120251218158740023 | 1560184536138262 | 009 HOOK 2 |
+| `MATSTRUMP_sushi_gift_ugc_s009h3_v1` | 120251218161020023 | 2692955411160930 | 009 HOOK 3 |
+| `MATSTRUMP_sushi_fomo_ugc_november_v1` | 120251218163340023 | 1782871483130482 | 014 |
+| `MATSTRUMP_sushi_gift_ugc_julstrumpa_v1` | 120251218165480023 | 1079866044593423 | 015_H1 |
+| `MATSTRUMP_sushi_gift_ugc_trodde_v1` | 120251218167200023 | 1349450110603264 | 015_H2 |
+| `MATSTRUMP_sushi_gift_ugc_haikuh1_v1` | 120251218168880023 | 28702519579344925 | haiku H1 |
+| `MATSTRUMP_sushi_gift_ugc_haikuh2_v1` | 120251218171220023 | 2001355903882423 | haiku H2 |
+| `MATSTRUMP_sushi_gift_ugc_haikuh3_v1` | 120251218173400023 | 1081888994347701 | haiku H3 |
+| `MATSTRUMP_sushi_gift_ugc_opush1_v1` | 120251218175800023 | 29043331745252475 | opus 3 HOOK 1 |
+| `MATSTRUMP_sushi_gift_ugc_somneth1_v1` | 120251218179080023 | 1618982373104869 | Somnet 5 HOOK 1 |
+| `MATSTRUMP_sushi_gift_ugc_somneth2_v1` | 120251218181400023 | 1567253058467110 | Somnet 5 HOOK 2 |
+| `MATSTRUMP_sushi_gift_ugc_somneth3_v1` | 120251218187860023 | 2322095285276379 | Somnet 5 HOOK 3 |
+
+**004-videorna i biblioteket är uteslutna** — de är samma filer som redan ligger
+som `…_s004h1–h4` i adset 1. Att lägga dem i båda adseten hade fått dem att bjuda
+mot sig själva.
+
+### Copy: identisk på alla 16
+
+Creativen är enda variabeln, så texten är låst över hela adsetet:
+
+- **Primärtext:** "Ingen jublar åt tvättmedel. Ingen sparar en skämtpryl. / Svaret
+  på båda: en låda som ser ut som riktig takeaway, 5 par rullade som maki,
+  ätpinnar i trä bredvid. / Den ligger inte kvar i lådan efteråt – den ligger på
+  fötterna, vecka efter vecka."
+- **Rubrik:** "Rolig i kväll. På fötterna i morgon."
+- **Beskrivning:** "4 sorter. Köp 1, få 1. Fri frakt i Sverige."
+- **CTA:** SHOP_NOW → https://matstrumpor.se/products/sushi-strumpor
+
+### ⚠️ Öppet innan aktivering
+
+1. **AI-märkningen är INTE satt på de här 16.** Axels "nej det gör dom inte"
+   gällde de ursprungliga 17. Innehåller någon av de nya videorna AI-genererat
+   material måste `self_ai_disclosure` sättas — det är annonsörens beslut, aldrig
+   vårt.
+2. **Total dagsbudget blir 2 000 kr** om båda adseten (`…_alla17` +
+   `…_nya16`) aktiveras samtidigt. Kampanjen är CBO-lös: budgeten sitter per
+   adset.
+3. Den gamla kampanjen `MATSTRUMP_SALES_20260825` ska fortfarande pausas först.
