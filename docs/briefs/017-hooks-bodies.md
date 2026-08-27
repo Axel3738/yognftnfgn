@@ -1,37 +1,23 @@
-# 017 — Hookar och bodyversioner
+# 017 — Två bodies, tre skräddarsydda hookar var
 
-> Till kreatörsbriefen `docs/briefs/017.md`. Skriven 2026-08-27.
-> Följer regeln i `docs/copy-regler.md`: **alltid originalet plus två varianter.**
+> Till kreatörsbriefen `docs/briefs/017.md`. Reviderad 2026-08-27.
+> **Body 3 är slängd** (Axels beslut). Hookarna är skrivna **till** sin body —
+> se regeln i `docs/copy-regler.md`, de är inte utbytbara mellan bodies.
 
-## Så här läses det
+## Vad hooken måste göra
 
-**Hooken** = beat 1–2. Den låga insatsen → det stora utfallet.
-**Bodyn** = beat 3–12, allt efter hooken till och med CTA:n.
+Hooken är beat 1–2 och den har **ett** jobb: **vändningen**.
+Låg insats → oväntat stort utfall. Resultatet före historien.
 
-Hook och body går att kombinera fritt. Testa **en variabel i taget** — byt hook
-och behåll bodyn, eller tvärtom. Byter du båda vet du inte vad som gjorde
-skillnaden.
-
-## HOOKAR — 6 att testa
-
-| # | Vad den testar | Raderna |
-|---|---|---|
-| 1 | Mottagaren är pojkvännen i stället för pappa | "Jag skulle bara kolla efter en present till min kille." / "Men nu äger både jag och han egna sushistrumpor." |
-| 2 | Utfallet uppåt — kollegorna, större spridning än familjen | "Jag skulle bara kolla efter en present till min kollega." / "Men nu har sex av mina kollegor egna sushistrumpor." |
-| 3 | Erkänner köpet redan i rad 1, rad 2 blir omfånget | "Jag skulle bara kolla, men köpte sushistrumpor till hela familjen." / "Nu äger tre personer i mitt hus sushistrumpor." |
-| 4 | Börjar i **invändningen** i stället för i avsikten | "Vem ger bort strumpor med sushi på, tänkte jag." / "Men nu äger både jag, pappa och mamma ett par var." |
-| 5 | Ingen presenttanke alls — hon skulle bara scrolla | "Jag skulle bara scrolla, inte alls köpa något." / "Men nu har jag, min sambo och min bror varsina sushistrumpor." |
-| 6 | Utfallet **nedåt** — hon behöll dem själv | "Jag skulle köpa en gåva till min bästa vän." / "Men nej, jag behöll sushistrumporna själv, hon fick inget." |
-
-⚠️ **Hook 2** namnger ett antal ("sex av mina kollegor"). Kreatören får bara säga
-det om det är sant. Stämmer det inte: byt siffran eller välj en annan hook.
-
-⚠️ **Hook 6** är den roligaste men den enda som **vänder bort från gåvoköpet** —
-hon ger inte bort någonting. Kör den som medveten ytterkant, inte som standard.
+En hook som bara är en söt scen är ingen hook. Rad 2 måste vända något.
 
 ---
 
-## BODY 1 — originalet
+# BODY 1 — pappa som mottagare
+
+**Bodyn låser:** pappa nämns vid namn i beat 10 · det var ett gåvoköp (beat 4 och
+11 handlar om att *ge bort*) · annonsen är upptagen av beat 3, hooken får inte
+nämna den.
 
 | Beat | Rad |
 |---|---|
@@ -46,7 +32,34 @@ hon ger inte bort någonting. Kör den som medveten ytterkant, inte som standard
 | 11 | Vill du också ge bort något helt onödigt men fantastiskt? |
 | 12 | Beställ dina sushistrumpor på matstrumpor punkt se idag. |
 
-## BODY 2 — bevisbeatet ligger på LÅDAN, inte på rullarna
+### B1-Hook 1 — skämtpresenten som fastnade
+> "Jag skulle bara hitta en rolig grej åt pappa."
+> "Nu har pappa dem på sig varje gång jag hälsar på."
+
+Vändningen: engångsskämt → han bär dem jämt. Sätter upp pappa och håller kvar
+gåvoramen. Nämner ingen annons, så beat 3 är fortfarande ny information.
+
+### B1-Hook 2 — hon trodde själv att det var en flopp
+> "Jag tänkte att det var den dummaste presenten till pappa."
+> "Han visade upp de rullade strumporna för hela bordet."
+
+Vändningen: väntad flopp → han skryter om den. Ekar beat 4:s tvivel utan att
+avslöja utfallet i förväg.
+
+### B1-Hook 3 — spridningen, närmast originalet
+> "Förra veckan köpte jag strumpor med sushi till pappa."
+> "Och samma kväll beställde jag en egen sushilåda till mig."
+
+Vändningen: en present → två köp samma kväll. Förbereder beat 9 (att hon själv
+bär dem) utan att göra om det till ett självköp.
+
+---
+
+# BODY 2 — ingen namngiven mottagare
+
+**Bodyn låser:** ingen mottagare nämns (beat 10 säger bara "presenten") ·
+invändningen är **"vem behöver"**, inte "vem ger bort" · annonsen är upptagen av
+beat 3, där hon dessutom blir jagad av den.
 
 | Beat | Rad |
 |---|---|
@@ -61,35 +74,44 @@ hon ger inte bort någonting. Kör den som medveten ytterkant, inte som standard
 | 11 | Vill du också ge bort något helt löjligt men perfekt? |
 | 12 | Hitta dem på matstrumpor punkt se, Köp 1 Få 1 just nu. |
 
-*Beat 7 stod först "…precis som en riktig sushibox **med samma rutor**". Den
-detaljen är struken — vi kan inte belägga att lådan har samma fackindelning som
-en riktig sushibox, och det är just bevisraden som inte får överdriva.*
+### B2-Hook 1 — invändningen besvarar sig själv
+> "Jag frågade mig själv vem som ens behöver sushistrumpor."
+> "Svaret visade sig vara jag, varje enda dag."
 
-## BODY 3 — användningen FÖRE uppackningen
+Vändningen: invändningen slår tillbaka på henne. Startar exakt i beat 4:s
+"vem behöver"-linje.
 
-| Beat | Rad |
-|---|---|
-| 3 | Jag såg annonsen på Instagram och sparade den typ direkt. |
-| 4 | Och jag tänkte, det här är väl det dummaste jag kan köpa. |
-| 5 | Men två dagar senare låg den i kundvagnen ändå. |
-| 6 | Och sen dess har jag haft dem på jobbet, på resan och hemma i soffan. |
-| 7 | Men backa till dagen paketet kom, för jag måste visa dig en sak. |
-| 8 | Jag öppnade lådan och alltså, du ser direkt att de är rullade som riktiga makibitar. |
-| 9 | Jag hade nog inte sett skillnaden i en sushibar. |
-| 10 | Så ja, dummaste presenten jag köpt, men den jag är mest stolt över. |
-| 11 | Vågar du också ge bort något helt dumt men perfekt samtidigt? |
-| 12 | Sushistrumporna ligger på matstrumpor punkt se, just nu Köp 1 Få 1. |
+### B2-Hook 2 — skämtet till sig själv som blev standard
+> "Jag beställde ett par som ett skämt till mig själv."
+> "Nu är det de enda strumporna jag letar efter."
+
+Vändningen: engångsskämt → förstahandsval. Ingen mottagare utsedd, ingen ny
+person införd.
+
+### B2-Hook 3 — privat test blev offentligt
+> "Jag beställde bara för att testa hela dumheten själv."
+> "Nu frågar folk på kontoret varför strumporna ser ut som sushi."
+
+Vändningen: privat nyfikenhet → andra lägger märke till dem. Håller
+vem-behöver-linjen.
 
 ---
 
-## Sanningsvillkor som följer med varje version
+## Tre rader rättades innan leverans
 
-- **Body 1, beat 10** gäller bara om pappa faktiskt fick lådan och faktiskt
-  skrattade. Stämmer det inte: byt mot kreatörens egen verkliga reaktion.
+| Hook | Problem | Åtgärd |
+|---|---|---|
+| B1-Hook 1 | Rad 2 var *"Han provade ätpinnarna innan han ens sett strumporna"* — en söt scen, **ingen vändning**. Hela hookens jobb försvann | Bytt mot "Nu har pappa dem på sig varje gång jag hälsar på" |
+| B2-Hook 1 | Rad 2 var *"Nu bär jag rullade sushistrumpor till jobbet och gymmet"* — **upprepar beat 9 nästan ordagrant** ("till jobbet, till gymmet…") | Bytt mot "Svaret visade sig vara jag, varje enda dag" |
+| B2-Hook 2 | Var *"Jag hade redan sushistrumpor på när sambon vaknade / Han pekade och skrattade"* — ingen vändning, **och** den införde en sambo som bodyn inte känner till | Helt ersatt med skämt-till-sig-själv-hooken |
+
+## Sanningsvillkor
+
+- **B1-Hook 1 och 2** förutsätter att pappa faktiskt fick lådan och faktiskt
+  reagerade. Stämmer det inte: byt hook, eller byt reaktionen mot den verkliga.
+- **B1-Hook 3** förutsätter att hon beställde en egen samma kväll.
+- **B2-Hook 3** förutsätter att folk faktiskt frågat på kontoret — mer än en gång.
+- **Body 1, beat 10** gäller bara om pappa skrattade. Samma villkor som ovan.
 - Strumporna är **rullade som maki** — de ÄR aldrig maki eller riktig sushi.
-  Kreatören får säga vad hon själv trodde (beat 8/9), aldrig vad andra luras tro.
-- Inga materialpåståenden, inga påhittade recensioner eller siffror.
-- Erbjudandet heter **Köp 1 Få 1**. Aldrig procent, aldrig "spara X kr".
-- Storlek om det nämns: **onesize 36–44**.
-- Pris: **399 kr för 5 par**. Verifierat mot sajten 2026-08-27. Det finns även en
-  **3-parsvariant för 369 kr** — nämn den inte i UGC:n, den gör budskapet grumligt.
+- Erbjudandet heter **Köp 1 Få 1**. Onesize 36–44. Pris **399 kr för 5 par**
+  (verifierat mot sajten 2026-08-27).
