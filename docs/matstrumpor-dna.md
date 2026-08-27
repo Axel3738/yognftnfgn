@@ -41,8 +41,33 @@ spaningen i `docs/matstrumpor-voc-presentkop-2026-08-23.md`.
 3. **Vändningen inom 2 sekunder** (ser ut som mat → är strumpor) är den bärande
    video-variabeln. Ur 010/011/012v2-briefernas struktur.
 4. **Reaktionsansikte i bild** (dubbeltitt + skratt) > rena produktbilder.
+6. **Retrospektiv brist slår framåtriktad** — "det tog slut i november förra
+   året" är trovärdigt på ett sätt som "begränsat lager" aldrig är, för det
+   rapporterar något som redan hänt i stället för att lova något. Ur Ristal-
+   swipen. Otestad hos oss; kräver att Axel bekräftar fjolårets utsålt.
 5. VOC:ns tre kärndesires bär copyn: reaktionsögonblicket · träffsäkra givaren ·
    används efteråt. (`docs/matstrumpor-voc-presentkop-2026-08-23.md`)
+
+## Konkurrentsignaler (uppdaterad 2026-08-27)
+
+Ur Metas annonsbibliotek. **Antal annonser är inte spend och inte köp** — det här
+är swipe-källor enligt CLAUDE.md, inte data att döma på.
+
+- **SweSocks** (`772781455925075`) — svenska strumpor med eget tryck. ~1 711
+  annonser i Sverige, ~621 med hundtema. Volymen ligger på **mottagarens
+  reaktionsögonblick**: "Mammas reaktion säger allt om presenten", "Mamma gråter
+  av lycka", "Glädjechocken som gjorde henne tårögd". Ett helt morsdagskluster
+  bulkskapat inom samma minut.
+  → **Extern uppbackning för hypotes 4** (reaktionsansikte > ren produktbild).
+  Nedbrytning: `docs/swipes/swesocks-dog-socks-2026-08-27.md`.
+- **Ristal** (`384102874791997`) — personlig LED-fotbollsspegel. ~148 annonser,
+  **samma rubrik på allihop**, skalade 4–14 december 2025. Julvinkeln startade
+  **26 oktober**. Deras scarcity rapporteras bakåt som ett erkänt misslyckande
+  ("vi fick säga nej") i stället för att förutsägas framåt.
+  → Ny hypotes 6 nedan. Nedbrytning: `docs/swipes/ristal-julspegel-2026-08-27.md`.
+
+**Kalibrering:** Ristal startar jul den 26 oktober. Vår julbatch ligger på
+~15 september. Sju veckors skillnad — värt ett medvetet beslut, inte en slump.
 
 ## Losing DNA / förbjudet
 

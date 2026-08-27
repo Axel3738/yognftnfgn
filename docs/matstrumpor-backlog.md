@@ -14,3 +14,6 @@ Regel: ett koncept föds aldrig ur tomma intet — det ska peka på sin källa
 | Presentväljar-sektion + Q4-leveransbanner på sajten | Q4-playbooken: faith.se prisnav, givaren shoppar person+budget | Väntar på Axels go |
 | "Filma när de öppnar den" — öppningsögonblicket som keepsake + UGC-pipeline | Axels DTC-research: "spara en stund"-temat (Storyworth/ArtPix) applicerat utan produktändring | Väntar — kan in i nästa copybatch direkt |
 | Namn på lådan (custom-tjänst) | Theo Grace-mönstret + 012 v2:s namnlappsbild | Sortimentsbeslut Axel |
+| **017 — bekännelse-UGC ("skulle bara kolla → nu äger flera")** | SweSocks hundstrumpe-annons, `docs/swipes/swesocks-dog-socks-2026-08-27.md` | Manus klart — bildlagret väntar på videon |
+| **018 — "Hinner jag få den till jul?" (statisk + långtext)** | Ristals julspegel, `docs/swipes/ristal-julspegel-2026-08-27.md` | Copy klar — väntar på fjolårets säljsiffra + lagerfoto |
+
