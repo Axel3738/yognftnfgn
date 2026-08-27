@@ -149,3 +149,58 @@ Totalbudget om allt aktiveras: 6 × 200 kr = 1 200 kr/dag.
 
 Innehåller videorna AI-genererat material (Higgsfield/HeyGen-klipp, AI-bilder):
 kryssa i Metas AI-disclosure-toggle vid uppladdning. Gäller per video.
+
+---
+
+## Kampanj 2: post-ID-återanvändning i ett adset (2026-08-26)
+
+Axels beställning: ta post-ID från de 17 befintliga annonserna och bygg om dem
+som **befintliga inlägg** i en ny kampanj med ETT adset. Poängen är att
+engagemanget (likes, kommentarer, delningar) följer med annonsen i stället för
+att nollställas — nya creatives startar alltid på noll.
+
+| Objekt | ID | Läge |
+|---|---|---|
+| Kampanj `MATSTRUMP_SALES_20260826` | `120251217860260023` | PAUSED |
+| Adset `broad_advplus_purchase_alla17` | `120251217861060023` | PAUSED, **1 000 kr/dag** |
+| 17 annonser `…_v2` | se tabell nedan | PAUSED / under Metas granskning |
+
+Alla annonser skapade med `creative: {object_story_id: "<page>_<post>"}` →
+Meta bekräftar `creative_summary: "Existing post"` på varje.
+
+| Annons | Nytt ad-ID | Post-ID (inlägget som återanvänds) |
+|---|---|---|
+| `…_s001h1_v2` | 120251217863240023 | 820358954504320_122138145573154794 |
+| `…_s002h1_v2` | 120251217866510023 | 820358954504320_122138145651154794 |
+| `…_s002h2_v2` | 120251217867700023 | 820358954504320_122138145699154794 |
+| `…_s002h3_v2` | 120251217868470023 | 820358954504320_122138145801154794 |
+| `…_s003h1_v2` | 120251217869230023 | 820358954504320_122138145861154794 |
+| `…_s003h2_v2` | 120251217871580023 | 820358954504320_122138145975154794 |
+| `…_s003h3_v2` | 120251217872180023 | 820358954504320_122138146059154794 |
+| `…_s004h1_v2` | 120251217872830023 | 820358954504320_122138143629154794 |
+| `…_s004h2_v2` | 120251217873790023 | 820358954504320_122138143779154794 |
+| `…_s004h3_v2` | 120251217874500023 | 820358954504320_122138143941154794 |
+| `…_s004h4_v2` | 120251217875930023 | 820358954504320_122138144043154794 |
+| `…_s006h1_v2` | 120251217876730023 | 820358954504320_122138146167154794 |
+| `…_s006h2_v2` | 120251217877630023 | 820358954504320_122138146275154794 |
+| `…_s006h3_v2` | 120251217878500023 | 820358954504320_122138146311154794 |
+| `…_s007h1_v2` | 120251217879450023 | 820358954504320_122138146545154794 |
+| `…_s007h2_v2` | 120251217880040023 | 820358954504320_122138146629154794 |
+| `…_s007h3_v2` | 120251217880730023 | 820358954504320_122138146731154794 |
+
+### ⚠️ Måste göras innan den nya kampanjen aktiveras
+
+1. **Pausa den gamla kampanjen** `MATSTRUMP_SALES_20260825` (`120251184321350023`).
+   Kör båda samtidigt budar samma 17 creatives mot samma broad SE-publik i samma
+   auktion → dyrare CPM och splittrad data. Aldrig båda igång.
+2. **Bestäm budget.** 1 000 kr/dag är satt som utgångspunkt (Axel sa "1 000 eller
+   2 000") — ändras på adsetet före aktivering.
+
+### Konsekvens för testläsbarheten (Axels beslut, dokumenterat)
+
+Regel 11 säger lika budget per annons i ett test-ABO. **Ett adset med 17 annonser
+ger inte det** — Meta fördelar budgeten själv och lägger den typiskt på 2–4
+annonser. Det gör att svaga script aldrig får data, och att "script A slog script
+B" inte längre går att säga med säkerhet. Bytet är medvetet: snabbare väg till en
+vinnare + samlat engagemang, mot sämre jämförbarhet mellan scripten.
+Namnen är bumpade till `v2` så gammal och ny struktur går att skilja i insights.
