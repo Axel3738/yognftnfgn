@@ -273,3 +273,59 @@ Creativen är enda variabeln, så texten är låst över hela adsetet:
    `…_nya16`) aktiveras samtidigt. Kampanjen är CBO-lös: budgeten sitter per
    adset.
 3. Den gamla kampanjen `MATSTRUMP_SALES_20260825` ska fortfarande pausas först.
+
+---
+
+## Adset 3: bildannonserna (2026-08-27)
+
+| Objekt | ID | Läge |
+|---|---|---|
+| Adset `broad_advplus_purchase_bilder` | `120251218829760023` | PAUSED, **1 000 kr/dag** |
+| 11 bildannonser | se tabell | PAUSED |
+
+Samma uppsättning som de andra två adseten: broad Sverige, Advantage+ Audience,
+`OFFSITE_CONVERSIONS` mot pixel `1785935302094082`, ingen intressetargeting.
+Bilderna låg redan i kontots bildbibliotek — skapade som `link_data` med
+`image_hash`.
+
+**Varje annons har EGEN copy.** Ligger de i samma adset med samma text mäter vi
+ingenting: då är bilden enda variabeln på pappret men budskapet blir det som
+avgör. En vinkel per bild.
+
+| Annons | Ad-ID | Bild | Vinkel |
+|---|---|---|---|
+| `…_gift_static_b001_v1` | 120251218947790023 | B001 | Mottagaren som sagt "köp inget åt mig" |
+| `…_anvandning_static_b002_v1` | 120251218950670023 | b002 | Används efteråt, inte en engångspryl |
+| `…_pris_static_b003_v1` | 120251218953150023 | b003 | Prisvärdet: 399 kr / 5 par |
+| `…_vandning_static_b004_v1` | 120251218955330023 | b004 | Ätpinnarna redo, inget att äta |
+| `…_vandning_static_b005_v1` | 120251218957170023 | b005 | Räkna bitarna — ingen är sushi |
+| `…_skamt_static_c_v1` | 120251218959540023 | C | Bygger vidare på "sushin är slut" |
+| `…_offer_static_d1_v1` | 120251218961180023 | D1 | En att ge bort, en att behålla |
+| `…_offer_static_d2_v1` | 120251218962240023 | D2 | Lådan är skämtet, tio par är utfallet |
+| `…_offer_static_d3_v1` | 120251218963520023 | D3 | Volym: fyra lådor |
+| `…_offer_static_d4_v1` | 120251218965690023 | D4 | En syns, två landar |
+| `…_position_static_f_v1` | 120251218967850023 | F | Kärnpositionen: skratt + används |
+
+### ⚠️ D3 lovar ett annat erbjudande än resten
+
+D3:s bild säger **"KÖP 2 – FÅ 2 GRATIS"**. Alla andra säger **"KÖP 1 – FÅ 1"**,
+och `products.json`/DNA:t känner bara till Köp 1 Få 1. Copyn följer bilden, men
+**stämmer inte erbjudandet på sajten är det ett falskt löfte i en publicerad
+annons** — då ska bilden göras om, inte texten. Obesvarat av Axel 2026-08-27.
+
+### Lagerannonsen saknas ännu
+
+Annons 018 (lagerbilden + långtexten) ska in i samma adset. Fotot ligger inte i
+mediebiblioteket — Axel laddar upp det som `lagerbild`, sedan kopplas annonsen.
+
+### Priset verifierat mot sajten 2026-08-27
+
+`Sushi-Strumpor` har **två varianter**: `5 - Par = 399 kr` och `3 - Par = 369 kr`.
+Det avgör den öppna frågan i 018: **369 kr är ett 3-parspaket**, inte styckpris
+vid tre lådor. 3-parsvarianten är dock sämre värde per par (123 kr/par mot 80) —
+värt att titta på, men rör inte copyn.
+
+### Total dagsbudget
+
+Tre adsets à 1 000 kr = **3 000 kr/dag** om alla aktiveras samtidigt.
+Budgeten sitter per adset, kampanjen är CBO-lös.
