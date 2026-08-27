@@ -3,3 +3,4 @@ pipeline/output/
 voiceover/output/
 *.log
 .env
+*.zip
