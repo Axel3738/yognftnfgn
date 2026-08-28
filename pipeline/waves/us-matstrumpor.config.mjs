@@ -18,8 +18,8 @@
 // ⚠️ INNAN AKTIVERING:
 //   1. LÖST 2026-08-28: annonserna pekar nu på sushisock.com (engelsk butik,
 //      USD) och kör sidan Sushisock.com. Omkopplat på alla 49 annonser via API.
-//   2. Prisannonsen säger "399 kr" — kolla att butiken visar rimlig valuta för
-//      US-besökare innan den får spend.
+//   2. LÖST 2026-08-28: prisannonsen omskriven till BOGO — butiken kör
+//      "Buy 1 – Get 1 FREE" och SEK-priset var fel för USD-butiken.
 //   3. EN_s008h1 finns inte i biblioteket (h2/h3 finns) — den svenska
 //      motsvarigheten hoppas över tills filen laddas upp.
 //
@@ -94,11 +94,12 @@ export default {
               headline: 'Count the pieces. None are sushi.',
               description: 'The sushi box from above — every piece is a sock, not food. Five pairs, rolled like maki, one size EU 36–44. Wooden chopsticks included.' }),
 
-            // ⚠️ SEK-pris — se varning i filhuvudet
+            // Omskriven till BOGO 2026-08-28 — SEK-priset var fel för USD-butiken,
+            // och butiken kör "Buy 1 – Get 1 FREE" (verifierat på produktsidan).
             ad('MATSTRUMP_US_sushi_pris_static_b003_v1', 'b003-no-text', {
-              message: '399 kr. Five pairs in the box.\nUnder 80 kr per pair — the chopsticks thrown in.\nA gift and everyday socks in the same box.\nOne size EU 36–44.',
-              headline: 'Five pairs for 399 kr — chopsticks included',
-              description: '399 kr for five pairs of sushi socks in one size EU 36–44, wooden chopsticks included. Under 80 kr per pair.' }),
+              message: 'Buy 1 box – get 1 free.\nTen pairs of sushi socks land at your door.\nRolled like maki, wooden chopsticks in every box.\nOne size EU 36–44.',
+              headline: 'Buy 1 – Get 1 FREE',
+              description: 'Buy 1, get 1 free: two boxes, ten pairs of sushi socks, rolled like maki. Wooden chopsticks included. One size EU 36–44.' }),
 
             ad('MATSTRUMP_US_sushi_offer_static_d4_v1', 'D4-floating-box-bogo-EN', {
               message: 'One box in the picture.\nTwo arrive at your door.\nBuy 1 — get 1 free. Ten pairs of sushi socks total, rolled like maki.\nOne size EU 36–44.',
