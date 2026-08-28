@@ -1,6 +1,6 @@
 # Svenska kreatörer med rätt rekvisita — outdoor-butik
 
-**Google Sheet (Axels godkännandelista):** https://docs.google.com/spreadsheets/d/1jiOm_d4Pisnw13owdN84yqonz1vXEM__A4Pg_y1TBU4/edit
+**Google Sheet (Axels godkännandelista):** https://docs.google.com/spreadsheets/d/1EgNtv-tCqeN4zVViO5X4EWNWv4XVo0vPIAtf_BiGGGk/edit
 
 Research 2026-08-28. Alla siffror avlästa live samma dag ur YouTubes egen
 kanaldata. Inga siffror, namn eller konton är uppskattade eller påhittade.
@@ -185,3 +185,18 @@ YouTube-kanal.
 hör till de mest aktiva i listan.
 
 Instagram-raderna går inte att aktivitetskontrollera; profildata kräver inloggning.
+
+### Not om Google Sheetet
+
+Arket skapas genom att ladda upp CSV till Drive. Två saker följer av det:
+
+- **Ingen formatering.** Kolumnbredder, färgmarkering av status och rullgardin i
+  Godkänd?-kolumnen går inte att sätta den vägen. Raderna är i stället sorterade
+  så att de mest aktiva ligger överst och de döda sist.
+- **Bilderna ligger som text.** Google tolkar inte `=IMAGE(...)` som formel vid
+  CSV-import. För att tända dem: markera kolumn A, Ctrl+H, sök `=IMAGE(` och
+  ersätt med `=IMAGE(`, kryssa i "Sök även inom formler". Alla 24 blir bilder.
+
+Ett försök gjordes med xlsx (som klarar både formatering och formler) men
+uppladdningen kräver att hela filen skickas som base64, och den strängen blev
+korrupt två gånger — vilket gav ett tomt ark. CSV är text och tål det.
