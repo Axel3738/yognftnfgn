@@ -287,6 +287,19 @@ publicerar v4.** Om cookie-bannern togs bort med flit: säg till, så tas den ur
 - Footerns inbyggda nyhetsbrevsfält ("Get the good stuff") är kvar — det är
   ett formulär i sidfoten, ingen popup.
 
+### 2026-08-28 kväll, runda 2
+
+- **v4 publicerad av Axel** — verifierat: 0 spår av ms-skrapkort/ms-cookies på
+  live-sajten. Inga e-postpopups någonstans, det är ett uttalat krav från Axel:
+  **aldrig popup/signup/scratch-off vid sidladdning på engelska butiken.**
+  Footerns nyhetsbrevsfält är kvar (formulär, inte popup).
+- **Bilder inlagda i alla fyra produktbeskrivningarna** (nya butikens CDN):
+  sushi 3 st (öppningsanimationen `sushi-box-opening.webp` + soffbilden med
+  AI-disclosure + flatlay), pizza 2, burger 1, donut 1. Verifierade 200 + syns
+  i renderad HTML.
+- **Judge.me:** appen kan bara Axel installera. När den är inne: Preview Badge
+  (stjärnraden) under produkttiteln + importera `judge-me-import.csv`.
+
 ### Kvarvarande smått (Axel)
 
 1. **Publicera "Sushi Sock EN v4".**
