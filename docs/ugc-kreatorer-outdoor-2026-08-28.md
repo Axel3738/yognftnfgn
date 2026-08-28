@@ -1,5 +1,7 @@
 # Svenska kreatörer med rätt rekvisita — outdoor-butik
 
+**Google Sheet (Axels godkännandelista):** https://docs.google.com/spreadsheets/d/1uvTdzrZ4OyTcgD0VtfAJMOQRJtlJLIU3IYhCSw9gieE/edit
+
 Research 2026-08-28. Alla siffror avlästa live samma dag ur YouTubes egen
 kanaldata. Inga siffror, namn eller konton är uppskattade eller påhittade.
 
