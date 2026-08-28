@@ -1,0 +1,47 @@
+[
+ {
+  "produkt": "sushi-strumpor",
+  "namn": "Wide Pia",
+  "betyg": "5",
+  "datum": "2026-04-09 18:51:14 UTC",
+  "titel": "",
+  "text": "Jättefina i rolig förpackning! Snabb leverans",
+  "verifierad": false
+ },
+ {
+  "produkt": "sushi-strumpor",
+  "namn": "Niklas",
+  "betyg": "3",
+  "datum": "2026-01-22 17:26:03 UTC",
+  "titel": "",
+  "text": "Kul förpackning, vet inte ännu om kvalitet på strumpor",
+  "verifierad": false
+ },
+ {
+  "produkt": "sushi-strumpor",
+  "namn": "Jonas",
+  "betyg": "5",
+  "datum": "2026-01-07 06:03:16 UTC",
+  "titel": "",
+  "text": "Uppskattat och rolig present",
+  "verifierad": false
+ },
+ {
+  "produkt": "sushi-strumpor",
+  "namn": "Gittan",
+  "betyg": "4",
+  "datum": "2026-01-02 22:24:34 UTC",
+  "titel": "",
+  "text": "Ser helt fantastiskt ut. Ej öppnat då de är en gåva.",
+  "verifierad": false
+ },
+ {
+  "produkt": "sushi-strumpor",
+  "namn": "Fredrik",
+  "betyg": "4",
+  "datum": "2026-01-02 11:15:07 UTC",
+  "titel": "",
+  "text": "Lång leveranstid men kul present/produkt till en sushi-älskare.",
+  "verifierad": false
+ }
+]

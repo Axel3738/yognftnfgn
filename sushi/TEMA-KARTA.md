@@ -44,10 +44,16 @@ källform ur GitHub-klonen, `ms-*.css` i källform via Admin API. (CDN-versioner
 2. **Apparna** — Judge.me (recensioner) och Klaviyo ligger som app-blocks i
    `settings_data.json` och `templates/product.json`. Installeras separat.
 3. **Produkter, sidor, menyer, policies** — butiksinnehåll, inte tema.
-4. ⚠️ **Recensionerna på startsidan** (Wide Pia, Jonas, Gittan, Annika) är
-   riktiga svenska kunders omdömen om den svenska butiken. De får INTE
-   översättas och återanvändas — det vore påhittade omdömen. Sektionen lämnas
-   tom tills den engelska butiken har egna.
+4. **Recensionerna — Axels beslut 2026-08-28:** de riktiga Judge.me-
+   recensionerna från matstrumpor.se ÅTERANVÄNDS på engelska butiken, på det
+   ärliga sättet: troget översatta (samma betyg, namn, datum), ALLA följer med
+   inklusive 3:an och fraktklagomålet (att sålla vore att fejka snittet),
+   `verified_buyer=false` (köpet skedde inte i denna butik) och varje text
+   märkt "(Translated from our Swedish store)". Källa: `sushi/judge-me-kalla-sv.json`
+   (5 st, skrapade ur widgetens cachade HTML), importfil: `sushi/judge-me-import.csv`.
+   Butiken visar 6 totalt — den sjätte är inte publikt synlig; hämtas i så fall
+   via CSV-export i Matstrumpors Judge.me-admin. Att HITTA PÅ omdömen är
+   fortfarande förbjudet.
 
 ## Text som ska översättas
 
