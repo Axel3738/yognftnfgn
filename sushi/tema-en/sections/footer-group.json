@@ -54,19 +54,10 @@
         "padding_bottom": 36
       }
     },
-    "ms_cookies": {
-      "type": "ms-cookies",
-      "settings": {
-        "visible": true,
-        "text": "We use cookies to make the site work and to understand what our visitors like.",
-        "ok_label": "OK",
-        "nej_label": "No thanks"
-      }
-    },
     "ms_skrapkort": {
       "type": "ms-skrapkort",
       "settings": {
-        "visible": true,
+        "visible": false,
         "rubrik": "Scratch to reveal your welcome discount",
         "under": "Everyone wins – the gold hides your discount.",
         "kod": "CLUB10",
@@ -78,7 +69,6 @@
   },
   "order": [
     "footer",
-    "ms_cookies",
     "ms_skrapkort"
   ]
 }

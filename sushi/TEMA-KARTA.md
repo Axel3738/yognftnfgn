@@ -267,6 +267,20 @@ publicerar v4.** Om cookie-bannern togs bort med flit: säg till, så tas den ur
 - Privacy policy finns och är på engelska; /pages/contact och
   /pages/data-sharing-opt-out svarar 200.
 
+### Popup-besluten (Axel 2026-08-28 kväll)
+
+- **Cookie-samtycket sköts av Shopifys inbyggda banner** (Inställningar →
+  Kundintegritet), som är region-smart. Temats egen `ms-cookies` är helt
+  BORTTAGEN ur v4:s footer-grupp — lägg aldrig tillbaka den utan att stänga av
+  Shopifys, annars blir det dubbla banners.
+- **Inga e-postpopups på engelska butiken** (alla länder, UK inkluderat):
+  `ms_skrapkort` ligger kvar i footer-gruppen med alla inställningar men
+  `visible: false` — slås på igen med kryssrutan i temaredigeraren.
+  **Rabattkoden CLUB10 är inaktiverad** i kassan (status EXPIRED) — utan popup
+  ska koden inte gå att använda. Återaktiveras i Rabatter om popupen slås på.
+- Footerns inbyggda nyhetsbrevsfält ("Get the good stuff") är kvar — det är
+  ett formulär i sidfoten, ingen popup.
+
 ### Kvarvarande smått (Axel)
 
 1. **Publicera "Sushi Sock EN v4".**
