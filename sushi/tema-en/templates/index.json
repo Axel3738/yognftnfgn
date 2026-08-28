@@ -41,6 +41,7 @@
         "b"
       ],
       "settings": {
+        "image": "shopify://shop_images/hf_20260225_045241_92dce67d-dbb6-4a7b-a5ff-ca8ba3833899.jpg",
         "image_overlay_opacity": 10,
         "image_height": "medium",
         "image_behavior": "none",
@@ -235,6 +236,7 @@
         "t"
       ],
       "settings": {
+        "image": "shopify://shop_images/matstrumpor_61_dorrmattan.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
@@ -297,6 +299,7 @@
         "g1": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/matstrumpor_52_alla_fotter_soffan.jpg",
             "title": "Movie night",
             "text": "",
             "link_label": "",
@@ -306,6 +309,7 @@
         "g2": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/matstrumpor_62_mormor_skrattar.jpg",
             "title": "The birthday",
             "text": "",
             "link_label": "",
@@ -315,6 +319,7 @@
         "g3": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/matstrumpor_63_morfar_fatoljen.jpg",
             "title": "The office secret santa",
             "text": "",
             "link_label": "",

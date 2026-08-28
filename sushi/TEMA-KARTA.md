@@ -137,6 +137,94 @@ tills den är klar, och en upsert som körs innan dess skrivs över.
 - Priser per marknad enligt 3×-regeln (kräver CWD-kostnad för US/UK/AU/NZ/CA)
 - Fraktzoner per marknad
 
+---
+
+## Läget 2026-08-28 — allt komplett inför publicering
+
+Allt tema-arbete ligger nu i **"Sushi Sock EN v3"** (`205209043269`). Axel
+publicerade v2 innan bilderna var inne, och API:t får inte skriva till ett
+publicerat tema — därför duplicerades v2 → v3 och ALLA ändringar nedan ligger
+där. **Det Axel ser på sajten är v2 tills han publicerar v3.**
+
+### Produkterna (5 st, alla ACTIVE på alla 3 kanaler, USD efter valutabytet 2026-08-28)
+
+| Handle | Pris | Jämförpris | SKU |
+|---|---|---|---|
+| `sushi-socks` | $44.99 (5 par) / $34.99 (3 par) | – | SUSHI-SOCKS-5/3 |
+| `burger-socks` | $33.99 | $56.99 | BURGER-SOCKS-2 |
+| `pizza-socks` | $49.99 | $66.99 | PIZZA-SOCKS-4 |
+| `donut-socks` | $33.99 | $56.99 | DONUT-SOCKS-3 |
+| `wooden-chopsticks` | $5.99 | – | CHOPSTICKS-1 |
+
+Sockprodukterna ligger i All socks; ätpinnarna är gratisprodukten i stegarna
+och ligger utanför samlingen. Copy och bilder speglar matstrumpor.se
+(publika `/products.json` + CDN). Priserna sattes om från de provisoriska
+SEK-talen samma minut som Axel bytte butiksvalutan till USD — Shopify räknar
+INTE om siffror vid valutabyte (426 kr hade blivit $426).
+
+### Paketstegarna ("kashingbanden" — ms-paket, inte Kaching-appen)
+
+Spegel av Matstrumpors live-stege (avläst ur renderade produktsidor):
+2 nivåer × 4 produkter = **8 `ms_paketniva`-poster** + **8 riktiga BxGy-koder**.
+
+- Nivå 1 (förvald, "Most popular"): *Buy 1 – Get 1 FREE* + 2 par ätpinnar.
+  Kod `<PRODUKT>-K1F1`: buys 1 av produkten → 3 billigaste av {produkt, ätpinnar} 100 % av.
+- Nivå 2 ("Best value"): *Buy 2 – Get 2 FREE* + 4 par. Kod `<PRODUKT>-K2F2`:
+  buys 2 → 6 st 100 % av.
+- Prefixen: SUSHI, BURGER, PIZZA, DONUT. Ärlighetsspärren i ms-paket kräver att
+  koden finns i kassan — det gör alla åtta nu.
+
+### Popuperna + översättningarna (i v3)
+
+- **Skrapkortet (e-postpopupen)** fanns i Matstrumpors footer-grupp men hade
+  fallit bort ur den översatta — återinsatt på engelska med kod **CLUB10**
+  (riktig 10 %-kod skapad). `sections/ms-skrapkort.liquid` helt översatt
+  (inkl. canvas-texten "SCRATCH HERE" i JS).
+- **Cookie-bannern** engelsk: både settings i footer-group.json och defaults i
+  `sections/ms-cookies.liquid`.
+- `ms-usp-bar`, `ms-marquee`, `ms-faq-section`, `ms-guarantee-section`:
+  schema/defaults engelska (renderade värden var redan engelska via index.json).
+- `settings_data.json`: engelsk brand_description, tömda sociala länkar
+  (pekade på Matstrumpors FB/IG), favicon (maskoten, `sushi-favicon.png`).
+- EJ översatta (används inte av något aktivt template): `blocks/ms-*.liquid`,
+  `sections/ms-reviews`, `ms-review-slider`, `ms-compare`, `ms-video`,
+  `ms-bundle-products`, `ms-app-slot`, `snippets/ms-faq`, `ms-sales-points`,
+  `ms-bundle-*`. Tas när/om de aktiveras.
+
+### Bilderna
+
+- 6 sektionsbilder till Files med **samma filnamn** som `shop_images`-
+  referenserna (hero `hf_20260225_…`, `matstrumpor_61_dorrmattan`, UGC 52/62/63,
+  gamla loggan) → referenserna löser utan template-ändringar. Alla READY.
+- `templates/index.json` i v3 har bildreferenserna inlagda (hero, trygghet,
+  UGC g1–g3) — de saknades helt i den första översättningen, därför var
+  startsidan bildlös.
+- **Loggan:** Matstrumpors original är brandat "MATSTRUMPOR.SE" och kunde inte
+  återanvändas. Jag byggde en Sushi Sock-lockup (maskot + Mochiy Pop One), men
+  Axel laddade samtidigt upp en egen **`sushisock_logo_916.png`** (SUSHISOCK.COM
+  i bågen, samma stil som originalet) — **den är inkopplad** som logga +
+  brand_image. Min `sushi-sock-logo.png` och gamla `Namnlos_design_…` ligger
+  oanvända kvar i Files.
+
+### Kvar för Axel (klick i adminen)
+
+1. **Publicera "Sushi Sock EN v3"** — annars syns inget av ovanstående.
+2. Butiksnamn "My Store" → **Sushi Sock**.
+3. Köp **sushisock.com** — UTAN s på slutet (sushisocks.com är tagen, verifierat
+   mot RDAP 2026-08-28).
+4. ~~Butiksvaluta~~ ✅ USD bytt av Axel 2026-08-28.
+5. Shopify Payments + uppgradera trialen.
+6. ⚠️ **Fraktzonerna: temat lovar "Free shipping on every order"** (announcement
+   bar, USP-rad, FAQ, trygghetsblock). Frakten måste sättas till fri i alla fem
+   marknaderna innan lansering — annars ljuger sajten.
+7. Judge.me/Klaviyo om de ska med.
+
+### Kvar för mig
+
+- Priser finjusteras när CWD-kostnaden för US/UK/AU/NZ/CA finns (dagens USD-tal
+  är samma prispunkter som de provisoriska SEK-talen siktade på).
+- Fraktzoner via API om Axel vill.
+
 ### Domänvalet 2026-08-26
 
 `sushisocks.com` och `foodsocks.com` var båda tagna. Lediga alternativ som

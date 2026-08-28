@@ -1,0 +1,32 @@
+{%- if section.settings.visible -%}
+<div class="ms-scope ms-section">
+  <div class="ms-wrap" style="max-width: 760px;">
+    {% render 'ms-guarantee',
+       title: section.settings.title,
+       body: section.settings.body,
+       icon: section.settings.icon %}
+  </div>
+</div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Guarantee block",
+  "tag": "section",
+  "settings": [
+    { "type": "checkbox", "id": "visible", "label": "Show section", "default": true,
+      "info": "Untick to switch it off without deleting it." },
+    { "type": "text", "id": "title", "label": "Heading", "default": "30-day returns" },
+    { "type": "richtext", "id": "body", "label": "Text",
+      "default": "<p>Not happy? Get in touch within 30 days and we will sort it. No hoops, no follow-up questions.</p>" },
+    { "type": "select", "id": "icon", "label": "Icon", "default": "seal",
+      "options": [
+        { "value": "seal", "label": "Seal" },
+        { "value": "shield", "label": "Shield" },
+        { "value": "refresh", "label": "Returns" },
+        { "value": "heart", "label": "Heart" }
+      ] }
+  ],
+  "presets": [{ "name": "Guarantee block" }]
+}
+{% endschema %}
