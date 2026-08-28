@@ -13,9 +13,12 @@ Skriven 2026-08-25 (körning 1 — nollrunda samma dag som launch, 0 köp).
   s006, s007), 17 UGC-annonser, live sedan 2026-08-25.
 - **Priser (verifierade på sajten):** Sushi 399 kr (3-par 369) · Pizza 449 ·
   Hamburgare 299 · Donut 299 · presentkort 150. Köp 1 Få 1 på alla fyra.
-- ⚠️ **Break-even-ROAS/CPA SAKNAS** — COGS är inte dokumenterad någonstans.
-  Utan den kan vinstbidrag inte räknas vid första riktiga avläsningen.
-  **Fråga Axel — gissa aldrig.**
+- ⚠️ **Break-even-ROAS/CPA SAKNAS FORTFARANDE** — COGS är inte dokumenterad
+  någonstans. Vid avläsning 1 (2026-08-28) blockerade det vinstbidragstabellen
+  helt: ingen ranking kunde göras. **Det är nu den enskilt viktigaste luckan i
+  hela produktminnet, och riktiga pengar rör sig.** Fråga Axel — gissa aldrig.
+- **Avläsningshistorik:** avläsning 1 gjord 2026-08-28, se
+  `docs/matstrumpor-batch-log.md`. Snapshot 1 av marginal-CPA-serien.
 
 ## Positionen (strategi, väntar på databevis)
 
@@ -29,7 +32,24 @@ spaningen i `docs/matstrumpor-voc-presentkop-2026-08-23.md`.
 
 ## Winning DNA (bevisat med köpdata)
 
-*(tomt — inga köp ännu; fylls av kommande /cs-körningar)*
+*(fortfarande tomt efter avläsning 1, 2026-08-28.* **Noll annonser har passerat
+signifikansgrinden** — högsta antal köp på en enskild annons är 2, grinden kräver
+3. 10 attribuerade köp fördelade på fem annonser, två per annons. Ingenting får
+skrivas in här förrän en annons klarar ≥300 kr **och** ≥3 köp.)
+
+### Vad avläsning 1 ändå fastslog (data, inte tolkning)
+
+- **`omni_purchase_values` är INTE trasigt i det här kontot.** `spend × ROAS` mot
+  fältet gav 0,00 % avvikelse på alla fem rader med köp. ANALYSMETOD:s varning
+  gäller MagiBorsten — anta den aldrig för `nya kungen`. Kontrollen körs ändå.
+- **AOV 438,90 kr** (4 389 kr / 10 köp). Rimlig mot 399 kr-grundlådan.
+- **Konto-ROAS 0,696** på matstrumpor-annonserna. Under 1,0 = förlust oavsett
+  COGS, eftersom break-even-ROAS alltid är ≥ 1,0.
+- **Hook rate är oanvändbar här.** 94–97 % på varje video — det är autoplay.
+  Hold rate är den enda videometrik som skiljer annonserna åt (5,6 % → 17,9 %).
+- **Pixeln räknar 20 köp, Meta attribuerar 10.** Halva försäljningen kommer inte
+  från annonserna. Läs aldrig annons-ROAS som butikens hela sanning.
+- **Trattens svagaste led: ViewContent → AddToCart, 7,4 %** (802 → 59).
 
 ## Hypoteser (märkta, ej bevisade)
 
@@ -41,6 +61,13 @@ spaningen i `docs/matstrumpor-voc-presentkop-2026-08-23.md`.
 3. **Vändningen inom 2 sekunder** (ser ut som mat → är strumpor) är den bärande
    video-variabeln. Ur 010/011/012v2-briefernas struktur.
 4. **Reaktionsansikte i bild** (dubbeltitt + skratt) > rena produktbilder.
+   *Extern uppbackning: SweSocks kör ~621 hundannonser med mottagarreaktionen som
+   bärande vinkel (se Konkurrentsignaler).*
+4b. **Hold rate är den bärande videovariabeln, inte hooken.** Ur avläsning 1:
+   hook rate är identisk (94–97 %, autoplay) medan hold spretar 5,6–17,9 %.
+   Annonsen med sämst hold (`haikuh2_v1`, 5,6 %) fick mest budget eftersom den
+   har kontots lägsta CPM — billig räckvidd som inte tittar klart och inte köper.
+   **Otestad: ingen annons har nog med köp för att koppla hold till intäkt.**
 6. **Retrospektiv brist slår framåtriktad** — "det tog slut i november förra
    året" är trovärdigt på ett sätt som "begränsat lager" aldrig är, för det
    rapporterar något som redan hänt i stället för att lova något. Ur Ristal-
