@@ -121,10 +121,11 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 
 ## Kommandona (Axels gränssnitt)
 
-13 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
+14 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
 
 | Kommando | Vad |
 |----------|-----|
+| `/rond [datum]` | **Dagens rond på annonskontot:** läser Meta, räknar panelens regler, föreslår budgetändringar. Ändrar aldrig något själv |
 | `/ny-produkt <namn> <budget>` | Första testbatchen för ny produkt (ingen data än) — SOP-06 |
 | `/forsta-batch <namn>` | Full CS-analys från noll i en NY chatt |
 | `/cs <id> [egna idéer]` | **Kärnloopen:** CS på senaste annonserna, feedbackloop, nästa batch |
@@ -147,12 +148,13 @@ Roten är ett eget npm-projekt (Node ≥20, **noll externa beroenden** — inget
 installera för OS:et). Kör dessa **från repo-roten**:
 
 ```bash
+npm run rond       # node agent/rond.mjs          — dagens rond (kräver färsk agent/kontodata.json)
 npm run quota      # node pipeline/quota.mjs      — brief-kvoten (mål nr 1)
 npm run dash       # node dashboard/build.mjs     — bygger dashboard/index.html
 npm run status     # node dashboard/cli.mjs status
 npm run review     # node dashboard/cli.mjs review-queue
 npm run seed       # node dashboard/seed.mjs --force  (⚠️ skriver över testdata)
-npm test           # node --test dashboard/test/*.test.mjs — 17 tester, ska vara gröna
+npm test           # node --test dashboard/ + agent/ — 61 tester, ska vara gröna
 ```
 
 Enskilt test: `node --test --test-name-pattern "<del av testnamnet>" dashboard/test/rules.test.mjs`
@@ -170,6 +172,7 @@ Det finns ingen linter och ingen byggkedja i OS:et — `npm test` är hela grind
 | **Creative strategy: insikt → manus (hjärnan i video-pipelinen)** | **`docs/creative-strategy.md`** |
 | **Copy-reglerna (obligatoriska för varje rad som skrivs)** | **`docs/copy-regler.md`** |
 | **Analysmetoden (obligatorisk vid all bedömning)** | **`docs/os/ANALYSMETOD.md`** |
+| **Dagliga ronden: beslutsmotor, minne och spärrar** | **`agent/README.md`** |
 | Playbook — vinklar/hooks/format som bevisats över tid | `docs/playbook.md` |
 | Hook-regeln (visuellt) | `docs/hook-visual-rule-2026-08-04.md` |
 | Avatar-research + VoC (Reddit) | `docs/avatar-research-*.md`, `docs/voc-reddit-*.md` |
@@ -285,6 +288,21 @@ uppdatera den sist, och skriv ut datum + vilken körning i ordningen det var.
 `pipeline/`, `video/`, `voiceover/` och `pnl-app/` har **egen `package.json`** — kör
 alltid deras kommandon inifrån mappen. `dashboard/` och `schema/` har det inte; de
 körs från roten via npm-scripten ovan. Allt är ESM (`.mjs`) om inget annat sägs.
+
+### `agent/` — dagliga ronden på annonskontot
+Den automatiska versionen av Bäverpanelens dagliga runda. Läser Meta, kör
+panelens regler i kod och **föreslår** budgetändringar — ändrar aldrig något själv.
+Break-even läses ur kampanjnamnet (`| BE ROAS 1.49 |`), inte ur `products.json`,
+eftersom de sex produkterna där är pausade i Meta medan åtta andra kampanjer kör.
+
+```bash
+node agent/rond.mjs          # rapport (kräver färsk agent/kontodata.json)
+node agent/rond.mjs --json   # samma sak som maskindata
+```
+`besked.mjs` = all matematik · `logg.mjs` + `budgetlogg.jsonl` = minnet
+(dagar sedan ändring, back-dagar i rad) · `produktkarta.json` = test eller drift
+per kampanj. Spärrar och öppna frågor står i `agent/README.md`.
+⚠ Ronden vägrar köra mot annat konto än MagiBorsten `1867947880635861`.
 
 ### `dashboard/` — redigerarpanelen
 Spårningslagret. Notion är sanningen för *vad* som finns; dashboarden lägger på

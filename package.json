@@ -10,7 +10,10 @@
     "dash": "node dashboard/build.mjs",
     "status": "node dashboard/cli.mjs status",
     "review": "node dashboard/cli.mjs review-queue",
-    "test": "node --test dashboard/test/*.test.mjs"
+    "test": "node --test dashboard/test/*.test.mjs agent/test/*.test.mjs",
+    "rond": "node agent/rond.mjs"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }

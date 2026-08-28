@@ -1,0 +1,73 @@
+{
+  "kommentar": "Sanningskällan för /rond. En post per kampanj som FAKTISKT kör i MagiBorsten 1867947880635861 (Bäverbutiken). Break-even läses i första hand ur kampanjnamnet ('| BE ROAS 1.49 |') — det är Axels egen konvention och den enda källa som följer med kampanjen. Fyll bara i break_even_roas här när namnet saknar talet ELLER säger TBC, och skriv då alltid var talet kommer ifrån i break_even_kalla. En kampanj som saknas här körs som testprodukt och flaggas i rapporten. Kampanjer som inte ligger här och inte är aktiva rörs aldrig.",
+  "ad_account_id": "1867947880635861",
+  "ad_account_namn": "MagiBorsten",
+  "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
+  "uppdaterad": "2026-08-28",
+  "kampanjer": [
+    {
+      "campaign_id": "120249850522830291",
+      "produkt": "Fiskespöhållaren",
+      "lage": "drift",
+      "lage_motivering": "269 köp och livstids-ROAS 2,25 mot break-even 1,50 (avläst 2026-08-28)",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120249902177470291",
+      "produkt": "Bälteslipmaskinen",
+      "lage": "drift",
+      "lage_motivering": "32 köp och livstids-ROAS 2,43 mot break-even 1,58 (avläst 2026-08-28)",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120249952968210291",
+      "produkt": "Soptunneklistermärkena",
+      "lage": "test",
+      "lage_motivering": "21 köp men livstids-ROAS 1,46 under break-even 1,67 — har inte bevisat sig än",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120249975043720291",
+      "produkt": "Kranskydd Frost 420D",
+      "lage": "test",
+      "lage_motivering": "9 köp sedan start — för få för drift",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120249989799680291",
+      "produkt": "Övervakningskameran",
+      "lage": "test",
+      "lage_motivering": "3 köp sedan start",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120249989987370291",
+      "produkt": "Plyschtofflorna Herr",
+      "lage": "test",
+      "lage_motivering": "2 köp sedan start",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120249990230470291",
+      "produkt": "Cykelshorts Herr",
+      "lage": "test",
+      "lage_motivering": "5 köp sedan start",
+      "break_even_roas": null,
+      "break_even_kalla": "SAKNAS — kampanjnamnet säger 'BE ROAS TBC'. Ronden vägrar döma den här kampanjen tills talet står i namnet. Sätt det i Ads Manager, gissa inte här."
+    },
+    {
+      "campaign_id": "120249990507280291",
+      "produkt": "MC-Kapellet",
+      "lage": "test",
+      "lage_motivering": "2 köp sedan start",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    }
+  ]
+}

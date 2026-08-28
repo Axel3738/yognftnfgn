@@ -1,0 +1,270 @@
+// Beslutsmotorn för /rond. Ren räkning — inga API-anrop, ingen I/O, inget Claude.
+// Allt som avgör om en budget höjs, sänks eller lämnas ifred bor HÄR, i kod,
+// så att svaret blir detsamma varje gång och går att testa.
+//
+// Reglerna kommer från Bäverpanelen (Axels driftpanel) plus de grindar som
+// docs/os/ANALYSMETOD.md och CLAUDE.md regel 3-4 kräver.
+
+export const GOLV_SEK = 500;
+export const TAK_SEK = 4000;
+export const STEG_SEK = 50;
+
+// Grindar innan någon dom alls får fällas (CLAUDE.md regel 3).
+export const MIN_SPEND_FOR_DOM = 300;
+export const MIN_KOP_FOR_DOM = 3;
+
+// Testprodukt får ligga ifred tills den passerat den här spenden (Bäverpanelen, regel 3).
+export const TEST_TROSKEL_SEK = 1500;
+
+// Meta ska hinna lära sig mellan ändringar (Bäverpanelen, regel 1).
+export const MIN_DAGAR_MELLAN_ANDRINGAR = 3;
+
+// Drift på golvet som går back så här många dygn i rad stängs av (Bäverpanelen, regel 3b).
+export const BACK_DAGAR_FOR_AVSTANGNING = 7;
+
+// Zongränser i procent vinst av omsättningen (Bäverpanelen, regel 4).
+export const ZON_SANK_UNDER = 16;
+export const ZON_SKALA_OVER = 25;
+
+// Så nära en zongräns är beslutet inte att lita på: ROAS för de senaste dygnen
+// revideras uppåt i efterhand när köp attribueras (7 dagars klickfönster).
+// products/axelbaltet/batch-log.md har ett fall där en för tidig avläsning var
+// 3,08x fel. Inom den här marginalen flaggas raden i stället för att bara köras.
+export const NARA_GRANS_PP = 3;
+
+/**
+ * Plockar break-even-ROAS ur kampanjnamnet. Axels namnkonvention är
+ * "Produkten | BE ROAS 1.49 | Launch 2026-08-27". "TBC" betyder att talet
+ * inte är satt ännu — då får ingen dom fällas.
+ * @returns {{be: number|null, kalla: string}}
+ */
+export function lasBreakEven(kampanjnamn) {
+  const namn = String(kampanjnamn || '');
+  if (/BE\s*ROAS\s*TBC/i.test(namn)) {
+    return { be: null, kalla: 'kampanjnamnet säger TBC' };
+  }
+  const träff = namn.match(/BE\s*ROAS\s*([0-9]+[.,][0-9]+|[0-9]+)/i);
+  if (!träff) return { be: null, kalla: 'saknas i kampanjnamnet' };
+  const be = Number(träff[1].replace(',', '.'));
+  if (!Number.isFinite(be) || be <= 1) {
+    return { be: null, kalla: `orimligt tal i kampanjnamnet (${träff[1]})` };
+  }
+  return { be, kalla: 'kampanjnamnet' };
+}
+
+/**
+ * Meta returnerar belopp som formaterad text: "1 000,00 kr (SEK)" med hårt
+ * mellanslag. Plockar ut talet. Returnerar null när fältet saknas helt —
+ * aldrig 0, för 0 och "vet inte" betyder helt olika saker här.
+ */
+export function lasBelopp(värde) {
+  if (värde === null || värde === undefined || värde === '') return null;
+  if (typeof värde === 'number') return Number.isFinite(värde) ? värde : null;
+  const rensad = String(värde).replace(/[^0-9.,-]/g, '');
+  if (rensad === '') return null;
+  // Svenskt format: punkt är tusentalsavgränsare bara om komma också finns.
+  const normaliserad = rensad.includes(',')
+    ? rensad.replace(/\./g, '').replace(',', '.')
+    : rensad;
+  const tal = Number(normaliserad);
+  return Number.isFinite(tal) ? tal : null;
+}
+
+/** Vinst i procent av omsättningen. Null när ROAS saknas eller är noll (= inga köp). */
+export function vinstProcent(breakEven, roas) {
+  if (!Number.isFinite(breakEven) || breakEven <= 1) return null;
+  if (!Number.isFinite(roas) || roas <= 0) return null;
+  return (1 / breakEven - 1 / roas) * 100;
+}
+
+/**
+ * Ny budget avrundad till jämna 50 kr UTAN att bryta mot 20-procentsregeln.
+ * Panelens Math.round gör det: 605 kr -> 750 kr är +24 %. Vi avrundar därför
+ * höjningar nedåt och sänkningar uppåt, så steget aldrig blir större än 20 %.
+ */
+export function nyBudget(riktning, budget) {
+  if (!Number.isFinite(budget) || budget <= 0) return null;
+  if (riktning === 'upp') {
+    const rå = budget * 1.2;
+    return Math.min(TAK_SEK, Math.floor(rå / STEG_SEK) * STEG_SEK);
+  }
+  if (riktning === 'ner') {
+    const rå = budget * 0.8;
+    return Math.max(GOLV_SEK, Math.ceil(rå / STEG_SEK) * STEG_SEK);
+  }
+  if (riktning === 'halvera') {
+    const rå = budget * 0.5;
+    return Math.max(GOLV_SEK, Math.ceil(rå / STEG_SEK) * STEG_SEK);
+  }
+  throw new Error(`Okänd riktning "${riktning}"`);
+}
+
+function kr(n) {
+  return `${Math.round(n).toLocaleString('sv-SE')} kr`;
+}
+
+/** Avstånd i procentenheter till närmaste zongräns. */
+export function avstandTillGrans(vinst) {
+  if (!Number.isFinite(vinst)) return null;
+  return Math.min(
+    Math.abs(vinst - 0),
+    Math.abs(vinst - ZON_SANK_UNDER),
+    Math.abs(vinst - ZON_SKALA_OVER),
+  );
+}
+
+function pct(n) {
+  return `${n.toFixed(1).replace('.', ',')} %`;
+}
+
+/**
+ * Fäller dagens dom för EN kampanj.
+ *
+ * @param {object} rad
+ * @param {string}  rad.namn              Kampanjnamnet (break-even läses härifrån)
+ * @param {'test'|'drift'} rad.lage       Ny produkt vi testar, eller en som gått bra
+ * @param {number|null} rad.breakEven     Override; annars läses den ur namnet
+ * @param {number|null} rad.roas3d        ROAS senaste 3 dagarna
+ * @param {number|null} rad.spend3d       Spend senaste 3 dagarna
+ * @param {number|null} rad.kop3d         Antal köp senaste 3 dagarna
+ * @param {number|null} rad.spendTotal    Spend sedan start
+ * @param {number|null} rad.budget        Nuvarande dagsbudget
+ * @param {number|null} rad.dagarSedanAndring  Från budgetloggen. null = aldrig ändrad av oss
+ * @param {number|null} rad.backDagarIRad Antal dygn i rad under break-even
+ * @returns {{kod: string, rubrik: string, motivering: string, nyBudget: number|null,
+ *           zon: string|null, vinstProcent: number|null, breakEven: number|null,
+ *           breakEvenKalla: string, kraverGodkannande: boolean}}
+ */
+export function besked(rad) {
+  const lage = rad.lage === 'drift' ? 'drift' : 'test';
+  const ur = lasBreakEven(rad.namn);
+  const breakEven = Number.isFinite(rad.breakEven) && rad.breakEven > 1 ? rad.breakEven : ur.be;
+  const breakEvenKalla = Number.isFinite(rad.breakEven) && rad.breakEven > 1
+    ? (rad.breakEvenKalla || 'produktkarta.json')
+    : ur.kalla;
+
+  const svar = (kod, rubrik, motivering, extra = {}) => ({
+    kod,
+    rubrik,
+    motivering,
+    nyBudget: null,
+    zon: null,
+    vinstProcent: null,
+    breakEven,
+    breakEvenKalla,
+    kraverGodkannande: false,
+    naraGrans: false,
+    ...extra,
+  });
+
+  // 1. Utan break-even finns ingen dom att fälla. Gissa aldrig.
+  if (!Number.isFinite(breakEven)) {
+    return svar('SAKNAR_BREAK_EVEN', 'Break-even saknas',
+      `Ingen dom går att fälla — break-even ${breakEvenKalla}. Sätt talet i kampanjnamnet först.`);
+  }
+
+  // 2. Utan känd budget vet vi inte vad vi skulle ändra.
+  if (!Number.isFinite(rad.budget) || rad.budget <= 0) {
+    return svar('SAKNAR_BUDGET', 'Budget saknas på kampanjen',
+      'Dagsbudgeten sitter troligen på annonsgruppen (ABO). Läs och ändra den där i stället.');
+  }
+
+  // 3. Grinden ur CLAUDE.md regel 3 / ANALYSMETOD: ingen dom under 300 kr eller 3 köp.
+  const spend3d = rad.spend3d;
+  const kop3d = rad.kop3d;
+  if (!Number.isFinite(spend3d) || !Number.isFinite(kop3d)
+      || spend3d < MIN_SPEND_FOR_DOM || kop3d < MIN_KOP_FOR_DOM) {
+    const spendText = Number.isFinite(spend3d) ? kr(spend3d) : 'okänd spend';
+    const kopText = Number.isFinite(kop3d) ? `${kop3d} köp` : 'okänt antal köp';
+    return svar('FOR_LITE_DATA', 'För lite data för en dom',
+      `${spendText} och ${kopText} på 3 dagar. Grinden går vid ${MIN_SPEND_FOR_DOM} kr och ${MIN_KOP_FOR_DOM} köp. Rör ingenting.`);
+  }
+
+  const vinst = vinstProcent(breakEven, rad.roas3d);
+  if (vinst === null) {
+    return svar('FOR_LITE_DATA', 'ROAS saknas',
+      'Meta returnerade ingen ROAS för perioden. Rör ingenting förrän siffran finns.');
+  }
+
+  // 4. Kadensspärren: Meta ska hinna lära sig mellan ändringar.
+  const dagar = rad.dagarSedanAndring;
+  if (Number.isFinite(dagar) && dagar < MIN_DAGAR_MELLAN_ANDRINGAR) {
+    return svar('VANTA_KADENS', 'Vänta — ändrad för nyligen',
+      `Budgeten ändrades för ${dagar} ${dagar === 1 ? 'dag' : 'dagar'} sedan. Nästa ändring tidigast efter ${MIN_DAGAR_MELLAN_ANDRINGAR} dagar.`,
+      { vinstProcent: vinst });
+  }
+
+  const avstand = avstandTillGrans(vinst);
+  const naraGrans = avstand !== null && avstand < NARA_GRANS_PP;
+  const gransText = naraGrans
+    ? ` ⚠ Ligger ${avstand.toFixed(1).replace('.', ',')} procentenheter från en zongräns — ROAS för de senaste dygnen kan fortfarande revideras uppåt. Kolla i Ads Manager innan du kör den här.`
+    : '';
+  const bas = `${pct(vinst)} vinst av omsättningen (ROAS ${rad.roas3d.toFixed(2).replace('.', ',')} mot break-even ${breakEven.toFixed(2).replace('.', ',')}).`;
+
+  // 5. Förlust.
+  if (vinst < 0) {
+    if (lage === 'test') {
+      if (Number.isFinite(rad.spendTotal) && rad.spendTotal < TEST_TROSKEL_SEK) {
+        return svar('VANTA_TROSKEL', 'Vänta — har inte fått chansen än',
+          `${bas} Den har spenderat ${kr(rad.spendTotal)} av ${kr(TEST_TROSKEL_SEK)} sedan start. Rör ingenting förrän den passerat tröskeln.`,
+          { zon: 'stop', vinstProcent: vinst });
+      }
+      return svar('ATGARDSTRAPPAN', 'Gå åtgärdstrappan',
+        `${bas} Passerad ${kr(TEST_TROSKEL_SEK)} utan att gå plus. Stäng INTE av produkten direkt: först den enskilda annonsen som ätit budgeten, vänta ett dygn, sen annonsgruppen, sist hela produkten.${gransText}`,
+        { zon: 'stop', vinstProcent: vinst, kraverGodkannande: true, naraGrans });
+    }
+    // Drift.
+    if (rad.budget <= GOLV_SEK) {
+      const back = Number.isFinite(rad.backDagarIRad) ? rad.backDagarIRad : null;
+      if (back !== null && back >= BACK_DAGAR_FOR_AVSTANGNING) {
+        return svar('STANG_AV', 'Stäng av',
+          `${bas} ${back} dygn i rad under break-even på lägsta budgeten. Gränsen är ${BACK_DAGAR_FOR_AVSTANGNING}.${gransText}`,
+          { zon: 'stop', vinstProcent: vinst, kraverGodkannande: true, naraGrans });
+      }
+      const backText = back === null ? 'okänt antal' : String(back);
+      return svar('RAKNA_BACKDAGAR', 'Ligg kvar på golvet — räkna dagar',
+        `${bas} Redan på ${kr(GOLV_SEK)}. ${backText} dygn i rad under break-even hittills; vid ${BACK_DAGAR_FOR_AVSTANGNING} stängs den av.`,
+        { zon: 'stop', vinstProcent: vinst });
+    }
+    const halv = nyBudget('halvera', rad.budget);
+    return svar('HALVERA', 'Halvera',
+      `${bas} Sänk från ${kr(rad.budget)} till ${kr(halv)} per dag.${gransText}`,
+      { zon: 'stop', vinstProcent: vinst, nyBudget: halv, kraverGodkannande: true, naraGrans });
+  }
+
+  // 6. 0-16 %: sänk.
+  if (vinst < ZON_SANK_UNDER) {
+    if (rad.budget <= GOLV_SEK) {
+      return svar('LAT_VARA', 'Låt vara',
+        `${bas} Ligger redan på ${kr(GOLV_SEK)} och går plus. Lämna den.`,
+        { zon: 'down', vinstProcent: vinst });
+    }
+    const ner = nyBudget('ner', rad.budget);
+    return svar('SANK', 'Sänk 20 %',
+      `${bas} Under ${ZON_SANK_UNDER} % är det mer värt att sänka. Ändra från ${kr(rad.budget)} till ${kr(ner)} per dag. Nästa koll om ${MIN_DAGAR_MELLAN_ANDRINGAR} dagar.${gransText}`,
+      { zon: 'down', vinstProcent: vinst, nyBudget: ner, kraverGodkannande: true, naraGrans });
+  }
+
+  // 7. 16-25 %: låt vara. Det här är läget vi vill ha de flesta produkter i.
+  if (vinst < ZON_SKALA_OVER) {
+    return svar('LAT_VARA', 'Låt vara',
+      `${bas} Mellan ${ZON_SANK_UNDER} och ${ZON_SKALA_OVER} % rör vi ingenting. Nästa koll om ${MIN_DAGAR_MELLAN_ANDRINGAR} dagar.`,
+      { zon: 'hold', vinstProcent: vinst });
+  }
+
+  // 8. Över 25 %: skala.
+  if (rad.budget >= TAK_SEK) {
+    return svar('LAT_VARA', 'Låt vara — taket nått',
+      `${bas} Går bra, men ${kr(TAK_SEK)} per dag är taket. Vi skalar inte högre.`,
+      { zon: 'hold', vinstProcent: vinst });
+  }
+  const upp = nyBudget('upp', rad.budget);
+  if (upp <= rad.budget) {
+    return svar('LAT_VARA', 'Låt vara — taket nått',
+      `${bas} En höjning på 20 % skulle passera taket ${kr(TAK_SEK)}.`,
+      { zon: 'hold', vinstProcent: vinst });
+  }
+  return svar('SKALA', 'Skala upp 20 %',
+    `${bas} Ändra från ${kr(rad.budget)} till ${kr(upp)} per dag. Nästa koll om ${MIN_DAGAR_MELLAN_ANDRINGAR} dagar.${gransText}`,
+    { zon: 'up', vinstProcent: vinst, nyBudget: upp, kraverGodkannande: true, naraGrans });
+}
