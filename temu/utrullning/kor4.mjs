@@ -1,5 +1,6 @@
 // Offert 4-skaparen (2026-08-25): 5 nya produkter → alla fem butikerna.
-// (Badshortsen väntar på CWD:s storleksbesked och skapas separat.)
+// (Badshortsen skapades 2026-08-28 via badshorts.mjs — den behöver två
+// optioner (Motiv × Storlek), som den här enradsmaskin inte hanterar.)
 //
 //   node kor4.mjs stage <land>    # ladda upp landets bilder till staged storage
 //   node kor4.mjs <land> [prod]   # land = se | no | dk | fi | uk

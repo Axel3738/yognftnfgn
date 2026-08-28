@@ -503,3 +503,33 @@ Bild-URL:erna funkar utan `?v=`-parametern.
 - [ ] Bilder verifierade på landets CDN
 - [ ] Rapport: Fixat / Förslag
 - [ ] Nästa butik kopplad — eller bäverbutiken.se återkopplad om detta var sista landet
+
+---
+
+## Badshortsen (offert 4:s sjätte produkt) — skapad 2026-08-28
+
+Skapad i alla fem butikerna via `temu/utrullning/badshorts.mjs` (egen körfil:
+två optioner, Motiv × Storlek, vilket kor4.mjs inte hanterar). 4 motiv
+(Hajar/Cocktail/Krabbor/Hawaii) × S–XXL = 20 varianter per butik, variantbild
+per motiv, kategori Boardshorts (`aa-1-20-2`), momsfri, claudeprodukter-mall,
+alla kanaler, jämförpris ×1,3. Slutgranskad mot skarpa butiker: 20 varianter,
+rätt priser, 3 beskrivningsbilder som svarar 200, inga rester — i alla fem.
+
+| Land | Pris | Jämförpris | URL |
+|---|---|---|---|
+| SE | 399 kr | 519 | baverbutiken.se/products/badshorts-med-skamttryck-rumpan-bak |
+| NO | 329 kr | 428 | beverbutikken.no/products/badeshorts-med-spoketrykk-rumpa-bak |
+| DK | 289 kr | 376 | bæverbutiken.dk/products/badeshorts-med-sjovt-tryk-numsen-bagpa |
+| FI | 42,90 € | 55,77 | majavakauppa.fi/products/vitsi-uimashortsit-pylly-takana |
+| UK | £21.99 | 28.59 | beavershop.co.uk/products/funny-swim-shorts-cheeky-behind |
+
+**Storlekskällan:** Temu-listningens storleksväljare, "Standard"-skalan S–XXL
+(Axels skärmdump 2026-08-28). CWD trycker på beställning ("all make to order,
+3d printed") — bekräftar CWD andra mått är det deras som gäller. **Ingen
+måttabell i copyn** — vi har inga verifierade cm-mått och påstår därför inga.
+SKU-mönster: `TEMU-606721154083596-<HA|CO|KR|HW>-<S..XXL>`.
+
+⚠️ Miljönycklarna: alla fem butikernas SHOPIFY_SHOP/CLIENT_ID/CLIENT_SECRET
+ligger i CCR-miljöns **miljöinställningar** (inte i någon fil i repot eller
+scratchpad) — det är därför TOKENS.md säger "miljöinställningarna". Leta inte
+efter en env-fil.
