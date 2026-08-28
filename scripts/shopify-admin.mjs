@@ -9,6 +9,7 @@
 //   node scripts/shopify-admin.mjs skapa-rabatt SE VALKOMMEN10 10 "Välkommen – nyhetsbrev 10 %"
 //   node scripts/shopify-admin.mjs tema-lista SE
 //   node scripts/shopify-admin.mjs tema-installera-skrapkort DK <temaId>   (kräver read_themes+write_themes)
+//   node scripts/shopify-admin.mjs tema-ta-bort-skrapkort SE <temaId>
 //
 // Spärr: vägrar röra butiker vars namn/URL ser ut som Grillkliniken-sidan
 // (bbq/grill/matstrump) — två verksamheter, blandas aldrig.
@@ -130,6 +131,60 @@ if (kommando === "tema-installera-skrapkort") {
   if (res.userErrors?.length) fel(JSON.stringify(res.userErrors));
   console.log(`${identitet}\nINSTALLERAT i utkastet "${t.name}": ${res.upsertedThemeFiles.map((f) => f.filename).join(", ")}`);
   console.log("Förhandsgranska utkastet i admin → Webbshop → Teman → Förhandsgranska.");
+  process.exit(0);
+}
+
+
+// Tar BORT skrapkortet ur ett OPUBLICERAT tema (utkast): raderar
+// sections/skrapkort.liquid och plockar bort section-raden ur layouten.
+// Vägrar röra MAIN-temat.
+//   node scripts/shopify-admin.mjs tema-ta-bort-skrapkort <CC> <temaId>
+if (kommando === "tema-ta-bort-skrapkort") {
+  const temaId = rest[0];
+  if (!temaId) fel("ange tema-id (siffrorna från tema-lista)");
+  const gid = `gid://shopify/OnlineStoreTheme/${temaId}`;
+  const t = (await gql(token, "query($id: ID!) { theme(id: $id) { name role } }", { id: gid })).theme;
+  if (!t) fel("temat finns inte");
+  if (t.role === "MAIN") fel(`"${t.name}" är LIVETEMAT — ändra bara utkast (duplicera temat i admin först)`);
+
+  const layout = (await gql(token,
+    `query($id: ID!) { theme(id: $id) { files(filenames: ["layout/theme.liquid"], first: 1) { nodes { body { ... on OnlineStoreThemeFileBodyText { content } } } } } }`,
+    { id: gid })).theme.files.nodes[0]?.body?.content;
+  if (!layout) fel("hittar inte layout/theme.liquid i temat");
+
+  const nyLayout = layout
+    .split("\n")
+    .filter((rad) => !/{%-?\s*section\s+'skrapkort'\s*-?%}/.test(rad))
+    .join("\n");
+  const gjort = [];
+
+  if (nyLayout !== layout) {
+    const r1 = await gql(token,
+      `mutation($id: ID!, $files: [OnlineStoreThemeFilesUpsertFileInput!]!) {
+        themeFilesUpsert(themeId: $id, files: $files) { upsertedThemeFiles { filename } userErrors { field message } }
+      }`,
+      { id: gid, files: [{ filename: "layout/theme.liquid", body: { type: "TEXT", value: nyLayout } }] });
+    if (r1.themeFilesUpsert.userErrors?.length) fel(JSON.stringify(r1.themeFilesUpsert.userErrors));
+    gjort.push("section-raden borttagen ur layout/theme.liquid");
+  } else {
+    gjort.push("layouten hade ingen skrapkort-rad (redan borta?)");
+  }
+
+  const fanns = (await gql(token,
+    `query($id: ID!) { theme(id: $id) { files(filenames: ["sections/skrapkort.liquid"], first: 1) { nodes { filename } } } }`,
+    { id: gid })).theme.files.nodes.length > 0;
+  if (fanns) {
+    const r2 = await gql(token,
+      `mutation($id: ID!, $files: [String!]!) {
+        themeFilesDelete(themeId: $id, files: $files) { deletedThemeFiles { filename } userErrors { field message } }
+      }`, { id: gid, files: ["sections/skrapkort.liquid"] });
+    if (r2.themeFilesDelete.userErrors?.length) fel(JSON.stringify(r2.themeFilesDelete.userErrors));
+    gjort.push("sections/skrapkort.liquid raderad");
+  } else {
+    gjort.push("sections/skrapkort.liquid fanns inte i temat");
+  }
+  console.log(`${identitet}\nUTKAST "${t.name}":\n- ` + gjort.join("\n- "));
+  console.log("Förhandsgranska i admin → Webbshop → Teman → Förhandsgranska. Publicera när det ser rätt ut.");
   process.exit(0);
 }
 
