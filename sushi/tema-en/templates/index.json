@@ -1,11 +1,5 @@
 {
   "sections": {
-    "ms_usp": {
-      "type": "ms-usp-bar",
-      "settings": {
-        "items": "gift:Arrives gift-ready|star:Loved by thousands"
-      }
-    },
     "hero": {
       "type": "image-banner",
       "blocks": {
@@ -27,7 +21,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop now",
-            "button_link_1": "shopify://collections/all-socks",
+            "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -54,9 +48,18 @@
         "show_text_below": true
       }
     },
+    "ms_usp": {
+      "type": "ms-usp-bar",
+      "settings": {
+        "visible": true,
+        "items": "gift:Arrives gift-ready|star:Loved by thousands",
+        "background": ""
+      }
+    },
     "ms_marquee": {
       "type": "ms-marquee",
       "settings": {
+        "visible": true,
         "items": "Loved by thousands|Free shipping|30-day returns|Arrives gift-ready",
         "speed": 26,
         "background": "#dd821d",
@@ -113,6 +116,7 @@
         "kop"
       ],
       "settings": {
+        "product": "sushi-socks",
         "color_scheme": "scheme-1",
         "secondary_background": false,
         "media_size": "medium",
@@ -123,8 +127,7 @@
         "hide_variants": false,
         "enable_video_looping": false,
         "padding_top": 36,
-        "padding_bottom": 36,
-        "product": "sushi-socks"
+        "padding_bottom": 36
       }
     },
     "berattelse": {
@@ -195,7 +198,7 @@
           "type": "button",
           "settings": {
             "button_label": "See every roll",
-            "button_link": "shopify://collections/all-socks",
+            "button_link": "shopify://collections/all",
             "button_style_secondary": false
           }
         }
@@ -211,6 +214,71 @@
         "full_width": true,
         "padding_top": 52,
         "padding_bottom": 52
+      }
+    },
+    "ugc_galleri": {
+      "type": "multicolumn",
+      "blocks": {
+        "g1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/matstrumpor_52_alla_fotter_soffan.jpg",
+            "title": "Movie night",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "g2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/matstrumpor_62_mormor_skrattar.jpg",
+            "title": "The birthday",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "g3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/matstrumpor_63_morfar_fatoljen.jpg",
+            "title": "The office secret santa",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "settings": {
+        "title": "Out in the wild",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 8
+      }
+    },
+    "ugc_markning": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<p style=\"text-align:center;font-size:1.2rem;color:rgba(18,18,18,.55);margin:0\">Lifestyle images are AI-generated illustrations.</p>",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 28
       }
     },
     "trygghet": {
@@ -282,79 +350,17 @@
         "q3"
       ],
       "settings": {
+        "visible": true,
         "heading": "Common questions"
       }
     },
     "ms_guarantee": {
       "type": "ms-guarantee-section",
       "settings": {
+        "visible": true,
         "title": "30-day returns",
         "body": "<p>Not happy? Get in touch within 30 days and we will sort it. No hoops, no follow-up questions.</p>",
         "icon": "seal"
-      }
-    },
-    "ugc_galleri": {
-      "type": "multicolumn",
-      "blocks": {
-        "g1": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/matstrumpor_52_alla_fotter_soffan.jpg",
-            "title": "Movie night",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "g2": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/matstrumpor_62_mormor_skrattar.jpg",
-            "title": "The birthday",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "g3": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/matstrumpor_63_morfar_fatoljen.jpg",
-            "title": "The office secret santa",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "g1",
-        "g2",
-        "g3"
-      ],
-      "settings": {
-        "title": "Out in the wild",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "portrait",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 8
-      }
-    },
-    "ugc_markning": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "<p style=\"text-align:center;font-size:1.2rem;color:rgba(18,18,18,.55);margin:0\">Lifestyle images are AI-generated illustrations.</p>",
-        "color_scheme": "scheme-1",
-        "padding_top": 0,
-        "padding_bottom": 28
       }
     }
   },

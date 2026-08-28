@@ -225,6 +225,62 @@ Spegel av Matstrumpors live-stege (avläst ur renderade produktsidor):
   är samma prispunkter som de provisoriska SEK-talen siktade på).
 - Fraktzoner via API om Axel vill.
 
+---
+
+## Marknadsgranskningen 2026-08-28 (eftermiddag) — butiken är LIVE
+
+Sedan förmiddagen har Axel: publicerat v3, köpt och kopplat **sushisock.com**,
+bytt butiksnamnet till "sushisock.com", bytt valutan till USD — och **redigerat
+startsidan i temaredigeraren** (14:30 UTC): tog bort sortiment- och
+statement-sektionerna + cookie-bannern, bytte mejlen till hello@sushisock.com,
+länkade hero-knappen till /collections/all.
+
+**Rotorsaken till hans raderingar:** samlingen `all-socks` var aldrig publicerad
+på försäljningskanalerna → `/collections/all-socks` gav 404 och "The whole set"
+såg trasig ut. ⚠️ **Lärdom: en samling som skapas via API måste också
+`publishablePublish`:as, precis som produkter.** Fixat — samlingen ligger nu på
+alla tre kanalerna och URL:en svarar 200.
+
+**"Sushi Sock EN v4"** (`205244858693`) = Axels redigerade v3 + sortiment,
+statement och cookie-bannern återinsatta (hans mejl och länkar behållna).
+Skrivning mot publicerat tema är blockerad, därför ny dubblett. **Axel
+publicerar v4.** Om cookie-bannern togs bort med flit: säg till, så tas den ur.
+
+### Verifierat per marknad (rätt sida, rätt valuta, rätt matematik)
+
+| Land | Valuta | Sushi 3-par | Stege nivå 1 |
+|---|---|---|---|
+| US | USD | $34.99 | $44.99 (förr $101.96) |
+| GB | GBP | £27 | £34 (förr £78) |
+| AU | AUD | A$50 | ✓ |
+| NZ | NZD | NZ$61 | ✓ |
+| CA | CAD | C$50 | ✓ |
+| SE/DE/övriga | USD (fallback via primär US) | $34.99 | ✓ |
+
+- Alla 5 produktsidorna på engelska, noll svenska spår, stegen renderar överallt
+  (ätpinnarna har medvetet ingen stege). Gåvovärdet konverteras per valuta.
+- **Kassatest på riktigt** (cookie-jar, /cart/add.js + /discount/SUSHI-K1F1):
+  2 lådor + 2 ätpinnar → totalpris $44.99, rabatt $56.97 — exakt widgetens löfte.
+- Landväljaren listar exakt de 6 marknadsländerna.
+- **Frakt: zonen "Internationell" (US/GB/AU/NZ/CA m.fl.) har Standard $0 = fri
+  frakt** — löftet "Free shipping on every order" håller för alla målmarknader.
+- Privacy policy finns och är på engelska; /pages/contact och
+  /pages/data-sharing-opt-out svarar 200.
+
+### Kvarvarande smått (Axel)
+
+1. **Publicera "Sushi Sock EN v4".**
+2. **Policysidor saknas:** refund/terms/shipping — sajten lovar 30-day returns.
+   Inställningar → Policyer → "Infoga mall" (engelska, en per policy).
+3. Sverigezonens gamla fraktpriser (65/99 SEK) blev $65/$99 efter valutabytet —
+   ta bort de betalda raderna (gratisraden finns kvar) eller ta bort SE-zonen.
+4. Butiksnamnet är "sushisock.com" — funkar, men "Sushi Sock" blir snyggare i
+   flikar/kvitton. Axels val.
+5. Städa gamla teman (v2, exporten, extra v3-dubbletten `205207961925`, Horizon)
+   — API:t får inte radera teman.
+6. EU-fraktzonen (299) är död konfig — EU-länder ingår inte i någon marknad och
+   kan inte checka ut. Ofarligt.
+
 ### Domänvalet 2026-08-26
 
 `sushisocks.com` och `foodsocks.com` var båda tagna. Lediga alternativ som
