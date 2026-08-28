@@ -1,6 +1,6 @@
 # Svenska kreatörer med rätt rekvisita — outdoor-butik
 
-**Google Sheet (Axels godkännandelista):** https://docs.google.com/spreadsheets/d/1uvTdzrZ4OyTcgD0VtfAJMOQRJtlJLIU3IYhCSw9gieE/edit
+**Google Sheet (Axels godkännandelista):** https://docs.google.com/spreadsheets/d/1jiOm_d4Pisnw13owdN84yqonz1vXEM__A4Pg_y1TBU4/edit
 
 Research 2026-08-28. Alla siffror avlästa live samma dag ur YouTubes egen
 kanaldata. Inga siffror, namn eller konton är uppskattade eller påhittade.
@@ -136,3 +136,52 @@ utrustningskravet och låter folk anmäla sig:
   YouTube går att läsa. Det är därför listan lutar mot YouTube.
 - "Affärsmejl bakom inloggning" betyder att kanalen **har** en affärsmejl
   registrerad hos YouTube, men att den bara visas för inloggade.
+
+---
+
+## Aktivitetskontroll 2026-08-28 (tillagd efter första leveransen)
+
+Senaste uppladdning hämtad ur varje kanals officiella RSS-flöde. Flödet rymmer
+max 15 poster, så "90 dgr" toppar vid 15.
+
+| Kanal | Senaste video | Dagar sedan | Videor 90 dgr | Dom |
+|---|---|---|---|---|
+| Mackans Garage | 2026-08-28 | 0 | 15 | Aktiv |
+| FRILUFTSLIV | 2026-08-28 | 0 | 12 | Aktiv |
+| Loppan | 2026-08-27 | 1 | 12 | Aktiv |
+| Rickards Garage | 2026-08-24 | 4 | 15 | Aktiv |
+| Bondtösen | 2026-08-24 | 4 | 15 | Aktiv |
+| Alex Tidström | 2026-08-23 | 5 | 15 | Aktiv |
+| Silent Trucker | 2026-08-23 | 5 | 15 | Aktiv |
+| Gammelmalms Gård | 2026-08-23 | 5 | 15 | Aktiv |
+| Swedish Pete | 2026-08-22 | 6 | 9 | Aktiv |
+| Bondevloggen | 2026-08-15 | 13 | 13 | Aktiv |
+| På språng i trädgården | 2026-08-14 | 14 | 7 | Aktiv |
+| carlrobinfishing | 2026-08-11 | 17 | 4 | Aktiv |
+| MoxZy | 2026-08-09 | 19 | 4 | Aktiv |
+| Peter Persson | 2026-07-27 | 32 | 2 | Aktiv, glest |
+| Väddö Gårdsmejeri | 2026-07-11 | 48 | 15 | Körde hårt, tyst sedan juli |
+| ÖrnMalm | 2026-06-20 | 69 | 2 | Aktiv, glest |
+| Fishing Barista | 2026-05-17 | 103 | 0 | **Tveksam — 2 videor på ett år** |
+| Familjen Gaia | 2026-02-08 | 201 | 0 | Vilande |
+| HOJSAC | 2025-11-23 | 278 | 0 | Vilande |
+| Angelica Larsson | 2025-06-30 | 424 | 0 | **Död på YouTube** |
+| Seastone Garden | 2024-04-29 | 851 | 0 | **Död** |
+| Johan Gartner | 2024-01-09 | 962 | 0 | **Död** |
+| Ahxrider | 2022-05-19 | 1562 | 0 | **Död** |
+| Kim Sahlström | 2022-03-13 | 1629 | 0 | **Död** |
+
+**Korrigering av första leveransen:** Fishing Barista utpekades som "bästa matchen
+i hela listan". Rekvisitan stämmer fortfarande — han är den enda som visar båt,
+utombordare och trailer — men han har lagt upp två videor på ett år. Räkna inte
+med snabb leverans därifrån.
+
+**Fem kanaler är döda** (över ett år utan uppladdning) och ska strykas:
+Kim Sahlström, Ahxrider, Johan Gartner, Seastone Garden och Angelica Larssons
+YouTube-kanal.
+
+**Två uppgraderingar:** Loppan (2 kvinnlig lastbilschaufför) och Bondtösen
+(2 kvinnlig lantbrukare) låg som småkanaler men lägger upp nästan dagligen — de
+hör till de mest aktiva i listan.
+
+Instagram-raderna går inte att aktivitetskontrollera; profildata kräver inloggning.
