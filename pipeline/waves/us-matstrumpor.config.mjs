@@ -16,8 +16,8 @@
 //     Se varningen nedan.
 //
 // ⚠️ INNAN AKTIVERING:
-//   1. Ingen engelsk butikssida finns — /en och /en-us ger 404. Alla annonser
-//      pekar på den SVENSKA produktsidan matstrumpor.se/products/sushi-strumpor.
+//   1. LÖST 2026-08-28: annonserna pekar nu på sushisock.com (engelsk butik,
+//      USD) och kör sidan Sushisock.com. Omkopplat på alla 49 annonser via API.
 //   2. Prisannonsen säger "399 kr" — kolla att butiken visar rimlig valuta för
 //      US-besökare innan den får spend.
 //   3. EN_s008h1 finns inte i biblioteket (h2/h3 finns) — den svenska
@@ -26,7 +26,7 @@
 // Extramaterial i biblioteket som svenska kampanjen INTE kör (hjartius a/b,
 // balansen, femanledningar, pask, asmr5050) är avsiktligt utelämnat ur spegeln.
 
-const LP = 'https://matstrumpor.se/products/sushi-strumpor';
+const LP = 'https://sushisock.com/products/sushi-socks';   // engelska butiken (USD)
 
 // Delad UGC-copy — översättning av "Ingen jublar åt tvättmedel..."
 const COPY_UGC = {
@@ -40,7 +40,7 @@ const ad = (name, media, copy) => ({ name, media, copy: { ...copy, cta: 'SHOP_NO
 
 export default {
   act: 'act_730973156224390',    // nya kungen (Matstrumpor.se, SEK)
-  page: '820358954504320',       // samma sida som de svenska annonserna
+  page: '1229557150250240',      // Sushisock.com
   pixel: '1785935302094082',     // MATSTRUMPIRUMPIDUMPI
   link: LP,
   targeting: {
