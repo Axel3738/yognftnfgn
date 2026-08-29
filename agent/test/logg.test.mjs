@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { mkdtemp, writeFile, readFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { backDagarIRad, dagarSedanAndring, lasLogg, raknaTrasigaRader, skrivRad } from '../logg.mjs';
+import { backDagarIRad, dagarSedanAndring, lasLogg, raknaTrasigaRader, senasteRadMedKod, skrivRad } from '../logg.mjs';
 
 async function tempfil(innehall) {
   const mapp = await mkdtemp(join(tmpdir(), 'rond-'));
@@ -96,4 +96,17 @@ test('skrivRad vägrar en rad som inte går att tolka i efterhand', async () => 
   const fil = await tempfil('');
   await assert.rejects(() => skrivRad({ datum: '2026-08-28' }, fil), /saknar "kampanj_id"/);
   await assert.rejects(() => skrivRad(rad({ ad_account_id: '' }), fil), /saknar "ad_account_id"/);
+});
+
+test('senasteRadMedKod hittar senaste genomförda trappsteget', () => {
+  const logg = [
+    rad({ datum: '2026-08-20', kod: 'TRAPPA_STEG_1', ny_budget: null }),
+    rad({ datum: '2026-08-23', kod: 'TRAPPA_STEG_2', ny_budget: null }),
+    rad({ datum: '2026-08-24', kod: 'SANK' }),
+    rad({ datum: '2026-08-25', kod: 'TRAPPA_STEG_1', ny_budget: null, genomford: false }),
+  ];
+  const koder = ['TRAPPA_STEG_1', 'TRAPPA_STEG_2', 'TRAPPA_STEG_3'];
+  assert.equal(senasteRadMedKod(logg, '111', koder).kod, 'TRAPPA_STEG_2');
+  assert.equal(senasteRadMedKod(logg, '999', koder), null);
+  assert.equal(senasteRadMedKod([], '111', koder), null);
 });

@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { bedomKampanj, breakEvenForPost, kontrolleraKonto, rapport, TILLATET_KONTO } from '../rond.mjs';
+import { bedomKampanj, breakEvenForPost, kontrolleraKonto, planera, rapport, TILLATET_KONTO } from '../rond.mjs';
 
 const bas = () => ({
   hamtad: '2026-08-28T07:00:00Z',
@@ -142,4 +142,65 @@ test('en anmärkning i produktkartan syns i rapportens varningar', () => {
   )];
   const text = rapport(rader, { idag: '2026-08-28', hamtad: 'nyss', varningar: ['X: inköpspriset har höjts'] });
   assert.match(text, /inköpspriset har höjts/);
+});
+
+// --- planera: åtgärdslistan för autoläget ---
+
+function radMedDom(id, budget, dom) {
+  return { id, namn: `${id} | BE ROAS 2.00`, budget, dom: { naraGrans: false, ...dom } };
+}
+
+test('planera bygger budgetåtgärder med öre — Metas API tar öre, inte kronor', () => {
+  const plan = planera([
+    radMedDom('a', 1000, { kod: 'SKALA', kraverGodkannande: true, nyBudget: 1200, motivering: 'x' }),
+    radMedDom('b', 1000, { kod: 'LAT_VARA', kraverGodkannande: false, nyBudget: null, motivering: 'x' }),
+  ]);
+  assert.equal(plan.sparrad, false);
+  assert.equal(plan.atgarder.length, 1);
+  assert.equal(plan.atgarder[0].typ, 'budget');
+  assert.equal(plan.atgarder[0].till_sek, 1200);
+  assert.equal(plan.atgarder[0].till_ore, 120000);
+});
+
+test('planera: STANG_AV blir paus och ATGARDSTRAPPAN blir trappa', () => {
+  const plan = planera([
+    radMedDom('a', 500, { kod: 'STANG_AV', kraverGodkannande: true, nyBudget: null, motivering: 'x' }),
+    radMedDom('b', 1000, { kod: 'ATGARDSTRAPPAN', kraverGodkannande: true, nyBudget: null, motivering: 'x' }),
+  ]);
+  assert.deepEqual(plan.atgarder.map((a) => a.typ), ['paus_kampanj', 'trappa']);
+});
+
+test('planera nära zongräns: HALVERA mildras till SANK, resten skjuts upp', () => {
+  const plan = planera([
+    radMedDom('a', 2500, { kod: 'HALVERA', kraverGodkannande: true, nyBudget: 1250, naraGrans: true, motivering: 'x' }),
+    radMedDom('b', 1000, { kod: 'SKALA', kraverGodkannande: true, nyBudget: 1200, naraGrans: true, motivering: 'x' }),
+    radMedDom('c', 500, { kod: 'STANG_AV', kraverGodkannande: true, nyBudget: null, naraGrans: true, motivering: 'x' }),
+  ]);
+  assert.equal(plan.atgarder.length, 1);
+  assert.equal(plan.atgarder[0].kod, 'SANK');
+  assert.equal(plan.atgarder[0].till_sek, 2000); // 2500 × 0,8
+  assert.match(plan.atgarder[0].mildrad, /mildrad/);
+  assert.equal(plan.uppskjutna.length, 2);
+});
+
+test('kontospärren kasserar hela planen vid orimlig total höjning', () => {
+  // En trasig dom med 100x-budget (enhetsfelet) ska stoppa allt, inte köras.
+  const plan = planera([
+    radMedDom('a', 1000, { kod: 'SKALA', kraverGodkannande: true, nyBudget: 120000, motivering: 'trasig' }),
+    radMedDom('b', 1000, { kod: 'LAT_VARA', kraverGodkannande: false, nyBudget: null, motivering: 'x' }),
+  ]);
+  assert.equal(plan.sparrad, true);
+  assert.equal(plan.atgarder.length, 0);
+  assert.match(plan.orsak, /kasseras/);
+});
+
+test('en normal dags plan går genom kontospärren', () => {
+  const plan = planera([
+    radMedDom('a', 1000, { kod: 'SKALA', kraverGodkannande: true, nyBudget: 1200, motivering: 'x' }),
+    radMedDom('b', 2500, { kod: 'HALVERA', kraverGodkannande: true, nyBudget: 1250, motivering: 'x' }),
+    radMedDom('c', 1000, { kod: 'SANK', kraverGodkannande: true, nyBudget: 800, motivering: 'x' }),
+  ]);
+  assert.equal(plan.sparrad, false);
+  assert.equal(plan.atgarder.length, 3);
+  assert.ok(plan.nyTotal < plan.gammalTotal);
 });

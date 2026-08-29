@@ -19,6 +19,13 @@ export const TEST_TROSKEL_SEK = 1500;
 // Meta ska hinna lära sig mellan ändringar (Bäverpanelen, regel 1).
 export const MIN_DAGAR_MELLAN_ANDRINGAR = 3;
 
+// Snabbspåret (Axels beslut 2026-08-29): en produkt i skalningszonen med
+// ROAS ≥ 3 får höjas 20 % redan dagen efter förra ändringen, inte var tredje
+// dag. Gäller BARA höjningar — sänkningar och avstängningar väntar alltid
+// sina tre dagar, eftersom färska minus-siffror revideras uppåt i efterhand.
+export const SNABB_SKALNING_ROAS = 3.0;
+export const SNABB_MIN_DAGAR = 1;
+
 // Drift på golvet som går back så här många dygn i rad stängs av (Bäverpanelen, regel 3b).
 export const BACK_DAGAR_FOR_AVSTANGNING = 7;
 
@@ -220,10 +227,13 @@ export function besked(rad) {
   }
 
   // 4. Kadensspärren: Meta ska hinna lära sig mellan ändringar.
+  // Snabbspåret gäller bara uppåt: skalningszon + ROAS ≥ 3 → 1 dag räcker.
   const dagar = rad.dagarSedanAndring;
-  if (Number.isFinite(dagar) && dagar < MIN_DAGAR_MELLAN_ANDRINGAR) {
+  const snabbspar = rad.roas3d >= SNABB_SKALNING_ROAS && vinst >= ZON_SKALA_OVER;
+  const minDagar = snabbspar ? SNABB_MIN_DAGAR : MIN_DAGAR_MELLAN_ANDRINGAR;
+  if (Number.isFinite(dagar) && dagar < minDagar) {
     return svar('VANTA_KADENS', 'Vänta — ändrad för nyligen',
-      `Budgeten ändrades för ${dagar} ${dagar === 1 ? 'dag' : 'dagar'} sedan. Nästa ändring tidigast efter ${MIN_DAGAR_MELLAN_ANDRINGAR} dagar.`,
+      `Budgeten ändrades för ${dagar} ${dagar === 1 ? 'dag' : 'dagar'} sedan. Nästa ändring tidigast efter ${minDagar} ${minDagar === 1 ? 'dag' : 'dagar'}.`,
       { vinstProcent: vinst });
   }
 
@@ -297,7 +307,10 @@ export function besked(rad) {
       `${bas} En höjning på 20 % skulle passera taket ${kr(TAK_SEK)}.`,
       { zon: 'hold', vinstProcent: vinst });
   }
+  const nastaKoll = snabbspar
+    ? 'Snabbspår: ROAS över 3 — kan höjas igen redan imorgon.'
+    : `Nästa koll om ${MIN_DAGAR_MELLAN_ANDRINGAR} dagar.`;
   return svar('SKALA', 'Skala upp 20 %',
-    `${bas} Ändra från ${kr(rad.budget)} till ${kr(upp)} per dag. Nästa koll om ${MIN_DAGAR_MELLAN_ANDRINGAR} dagar.${gransText}`,
+    `${bas} Ändra från ${kr(rad.budget)} till ${kr(upp)} per dag. ${nastaKoll}${gransText}`,
     { zon: 'up', vinstProcent: vinst, nyBudget: upp, kraverGodkannande: true, naraGrans });
 }

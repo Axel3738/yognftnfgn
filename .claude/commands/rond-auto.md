@@ -1,0 +1,147 @@
+# /rond-auto – Ronden som ändrar själv (körs varje dag)
+
+Automatläget av `/rond`. **Axels stående beslut 2026-08-29:** ronden får skala
+upp, skala ner och stänga av enligt reglerna, utan att fråga per rad.
+
+Ronden KÖRS varje dag, men varje produkt ÄNDRAS högst var tredje dag —
+utom snabbspåret: en produkt i skalningszonen med ROAS ≥ 3 får höjas 20 %
+redan dagen efter förra höjningen. Sänkningar och avstängningar väntar alltid
+sina tre dagar. Allt det räknar `agent/besked.mjs` ut — inte du.
+
+Gäller **bara Bäverbutiken / MagiBorsten `1867947880635861`**. Grillkliniken
+(SnarkLös `1346450049878358`) rörs aldrig.
+
+**All matematik görs av `agent/besked.mjs` och `agent/rond.mjs`. Du räknar
+ALDRIG själv, avrundar aldrig själv, och hittar aldrig på ett tal som inte står
+i planen.** Din uppgift: hämta siffror, kör skriptet, utför planen exakt,
+verifiera varje skrivning, logga, uppdatera dashboarden.
+
+## 0. Förberedelse
+
+- Checka ut grenen `claude/daily-agent-discussion-uos5df` och dra senaste:
+  `git pull origin claude/daily-agent-discussion-uos5df` — budgetloggen är
+  minnet, en gammal kopia gör att kadensspärren räknar fel.
+- Finns inte Meta-verktygen (`mcp__ADsmanagaer__*`): **avbryt allt**, säg det
+  rakt ut och gör ingenting annat. Ingen rapport på ingenting.
+
+## 1. Hämta läget ur Meta
+
+Tre anrop till `mcp__ADsmanagaer__ads_get_ad_entities`, alla med
+`ad_account_id: "1867947880635861"` och filtrering på
+`campaign.effective_status IN ["ACTIVE"]`:
+
+1. `date_preset: "last_3d"` — `fields: ["id","name","effective_status","daily_budget","amount_spent","purchase_roas","omni_purchase","created_time"]`
+2. `date_preset: "maximum"` — samma fält (ger `spend_total`)
+3. `date_preset: "last_7d"` + `time_increment: "1"` — dygnsserien
+
+Fältnamnen är exakta. Använd **aldrig** `omni_purchase_values` (buggig, se
+CLAUDE.md). Skriv siffrorna **ordagrant** till `agent/kontodata.json` i samma
+format som `/rond` beskriver. Saknas ett värde: `null`, aldrig 0, aldrig gissat.
+
+Aktiv kampanj som saknas i `agent/produktkarta.json`: lägg till den som
+`"lage": "test"` med motivering. Gissa aldrig break-even — utan tal i
+kampanjnamnet eller kostnadsblock får den domen SAKNAR_BREAK_EVEN, och det är
+rätt.
+
+## 2. Räkna
+
+```bash
+node agent/rond.mjs --json > /tmp/rond-utfall.json
+```
+
+Avbryter skriptet (`RONDEN AVBRÖTS`): gör ingenting mot Meta, gå till steg 6
+och rapportera felet.
+
+Läs `plan` ur utfallet:
+- **`plan.sparrad: true`** → GÖR INGA ÄNDRINGAR ALLS. Kontospärren har slagit
+  till, vilket betyder att något är trasigt. Gå till steg 5–6 och larma.
+- Annars: `plan.atgarder` är HELA listan. Inget utanför den får röras.
+
+## 3. Utför planen — en åtgärd i taget, verifiera varje
+
+För varje åtgärd i `plan.atgarder`:
+
+**`typ: "budget"`** — ändra dagsbudgeten:
+1. `mcp__ADsmanagaer__ads_update_entity` med `entity_type: "campaign"`,
+   `entity_id` = kampanj-id, `fields: {"daily_budget": <till_ore>}`.
+   ⚠️ **API:t tar ÖRE.** Använd `till_ore` ur planen, ordagrant. 1 200 kr =
+   `120000`. Skriv aldrig `till_sek` i det fältet.
+2. **Verifiera:** läs tillbaka kampanjen (`ads_get_ad_entities`, filtrering på
+   `campaign.id`) och kontrollera att `daily_budget` nu visar exakt
+   `till_sek` kronor. Visar den 100× för mycket eller för lite: **återställ
+   omedelbart till gamla budgeten (gamla kronor × 100 = öre), avbryt HELA
+   körningen och larma.**
+3. Logga raden (steg 5) med `genomford: true`.
+
+**`typ: "paus_kampanj"`** — stäng av:
+1. `ads_update_entity` med `fields: {"status": "PAUSED"}`.
+2. Verifiera: läs tillbaka, `effective_status` ska vara PAUSED.
+3. Logga med kod `STANG_AV`, `genomford: true`.
+
+**`typ: "trappa"`** — produkten går back; pausa det minsta trasiga först.
+Läs `agent/budgetlogg.jsonl` och avgör steget med `senasteRadMedKod(logg, id,
+["TRAPPA_STEG_1","TRAPPA_STEG_2"])` (finns i `agent/logg.mjs`):
+
+- **Inget tidigare steg → STEG 1:** hämta kampanjens annonser (`level: "ad"`,
+  `date_preset: "last_3d"`, filtrering `campaign.id`). Finns EN aktiv annons
+  med ≥50 % av kampanjens 3-dagarsspend och 0 köp: pausa **bara den annonsen**
+  (`entity_type: "ad"`, `fields: {"status":"PAUSED"}`), verifiera, logga
+  `TRAPPA_STEG_1`. Finns ingen sådan annons: gå direkt till STEG 2-bedömningen.
+- **STEG 1 taget → STEG 2:** bara om **minst 2 dagar** gått sedan
+  `TRAPPA_STEG_1`-raden OCH dygnen EFTER pausdatumet (ur dygnsserien i
+  `kontodata.json`) fortfarande ligger under break-even — pausen ska hinna
+  synas i siffrorna innan nästa steg tas. Blev det bättre: gör ingenting,
+  produkten läker. Annars: hämta annonsgrupperna (`level: "adset"`). Är EN
+  grupp under break-even medan minst en annan ligger över: pausa den gruppen
+  (`entity_type: "ad_set"`), verifiera, logga `TRAPPA_STEG_2`. Ser alla lika
+  dåliga ut: hela produkten går back — pausa kampanjen, logga `TRAPPA_STEG_3`.
+- **STEG 2 taget → STEG 3:** samma väntregel (2 dagar + dygnen efter pausen
+  under break-even). Står förlusten kvar: pausa kampanjen, logga
+  `TRAPPA_STEG_3`.
+
+`plan.uppskjutna` utförs INTE — logga varje med kod `UPPSKJUTEN_GRANS`,
+`genomford: false`, och orsaken som motivering.
+
+## 4. Vad du ALDRIG gör
+
+- Aldrig en ändring som inte står i `plan.atgarder`.
+- Aldrig `pipeline/meta.mjs` (defaultar till fel konto).
+- Aldrig fortsätta efter en misslyckad verifiering — återställ och avbryt.
+- Aldrig starta något som är pausat. Ronden stänger av; den startar aldrig på.
+- Aldrig röra priser, texter, creatives, målgrupper eller andra konton.
+
+## 5. Logga
+
+En rad per kampanj i `agent/budgetlogg.jsonl` via `skrivRad` i
+`agent/logg.mjs` — även för LAT_VARA och väntande (`genomford: false` där
+inget gjordes). Utförda ändringar: `genomford: true`,
+`godkand_av: "auto — Axels stående beslut 2026-08-29"`. Fältformatet står i
+`/rond` steg 5.
+
+## 6. Dashboard + leverans
+
+```bash
+node agent/dashboard.mjs
+```
+
+Publicera om dashboarden på **samma URL** (läs först, publicera sen):
+`Artifact` `action: "read"` → `action: "publish"` med
+`url: "https://claude.ai/code/artifact/33962d72-94ff-4657-9c5a-71f584a837a0"`
+och `file_path: agent/dashboard.html`.
+
+Committa och pusha `agent/budgetlogg.jsonl` + `agent/produktkarta.json` (om
+ändrad) till `claude/daily-agent-discussion-uos5df`.
+
+Svara sedan kort på svenska: vad som ändrades (produkt, från → till), vad som
+sköts upp och varför, och om något larmade. Inga bibelsvar.
+
+## DEFINITION OF DONE
+- [ ] Färsk `git pull` innan något annat
+- [ ] Tre Meta-anrop gjorda mot `1867947880635861`
+- [ ] `kontodata.json` skriven ordagrant
+- [ ] `node agent/rond.mjs --json` kört; `plan.sparrad` kontrollerad
+- [ ] Varje åtgärd utförd med öre-fältet ur planen och verifierad med läsning
+- [ ] Uppskjutna loggade som `UPPSKJUTEN_GRANS`
+- [ ] Alla loggrader skrivna, committade och pushade
+- [ ] Dashboarden ombyggd och ompublicerad på samma URL
+- [ ] Kort svar till Axel

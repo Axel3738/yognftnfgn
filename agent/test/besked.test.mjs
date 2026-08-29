@@ -96,11 +96,27 @@ test('utan känd budget föreslås ingen ändring', () => {
 });
 
 test('kadensspärren stoppar en andra ändring inom tre dygn', () => {
-  assert.equal(besked(rad({ roas3d: 10, dagarSedanAndring: 0 })).kod, 'VANTA_KADENS');
-  assert.equal(besked(rad({ roas3d: 10, dagarSedanAndring: 2 })).kod, 'VANTA_KADENS');
+  // ROAS 2,9 med BE 2,00 -> 15,5 % vinst: inget snabbspår, vanliga tre dagar.
+  assert.equal(besked(rad({ roas3d: 2.9, dagarSedanAndring: 2 })).kod, 'VANTA_KADENS');
   assert.equal(besked(rad({ roas3d: 10, dagarSedanAndring: 3 })).kod, 'SKALA');
   // Aldrig ändrad av oss = ingen spärr.
   assert.equal(besked(rad({ roas3d: 10, dagarSedanAndring: null })).kod, 'SKALA');
+});
+
+test('snabbspåret: ROAS över 3 i skalningszonen får höjas redan efter en dag', () => {
+  // BE 2,00 · ROAS 10 -> 40 % vinst och ROAS ≥ 3: snabbspår.
+  assert.equal(besked(rad({ roas3d: 10, dagarSedanAndring: 1 })).kod, 'SKALA');
+  assert.match(besked(rad({ roas3d: 10, dagarSedanAndring: 1 })).motivering, /Snabbspår/);
+  // Men aldrig samma dag som förra ändringen.
+  assert.equal(besked(rad({ roas3d: 10, dagarSedanAndring: 0 })).kod, 'VANTA_KADENS');
+});
+
+test('snabbspåret gäller aldrig neråt — sänkningar väntar sina tre dagar', () => {
+  // ROAS 3,1 men BE 2,9 -> bara 2,2 % vinst: SANK-zon, ingen genväg trots hög ROAS.
+  const dom = besked(rad({ namn: 'X | BE ROAS 2.90', roas3d: 3.1, dagarSedanAndring: 1 }));
+  assert.equal(dom.kod, 'VANTA_KADENS');
+  // Förlust med hög ROAS-siffra finns inte, men förlust + färsk ändring ska vänta.
+  assert.equal(besked(rad({ lage: 'drift', roas3d: 1.2, budget: 2000, dagarSedanAndring: 2 })).kod, 'VANTA_KADENS');
 });
 
 test('zonerna: sänk, låt vara, skala', () => {

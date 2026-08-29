@@ -47,6 +47,8 @@ dem oförändrade — inte att bedöma dem.
 - **Ingen dom under grinden.** Under 300 kr spend eller 3 köp på tre dagar
   rörs ingenting.
 - **Högst en ändring var tredje dag** per kampanj, räknat ur budgetloggen.
+  Undantag uppåt: skalningszonen + ROAS ≥ 3 = snabbspår, får höjas dagligen
+  (Axels beslut 2026-08-29). Aldrig snabbspår neråt.
 - **Aldrig mer än 20 % åt gången.** Avrundningen till jämna 50 kr går nedåt
   vid höjning och uppåt vid sänkning, så steget aldrig blir större.
   (Bäverpanelens egen avrundning bryter mot den regeln: 605 → 750 kr är +24 %.)
@@ -68,7 +70,11 @@ dem oförändrade — inte att bedöma dem.
   "låt vara" eller "sänk". Ronden kör vidare på det gamla talet 1,58 tills
   raden ur kostnadsarket finns.
 - **Cykelshorts break-even bygger på 5 köp.** Räkna om vid 30+.
-- **Om ronden någon gång ska få ändra själv.** Idag: nej.
+- ~~Om ronden någon gång ska få ändra själv.~~ **Avgjort 2026-08-29: ja.**
+  `/rond-auto` körs dagligen via en Routine och utför planen själv, med
+  kontospärren, öre-verifieringen och trappan i `.claude/commands/rond-auto.md`.
+  `/rond` finns kvar som manuellt läge. Dashboarden för människor:
+  `agent/dashboard.mjs` → https://claude.ai/code/artifact/33962d72-94ff-4657-9c5a-71f584a837a0
 
 ## Så räknas break-even
 

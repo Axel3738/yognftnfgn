@@ -121,11 +121,12 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 
 ## Kommandona (Axels gränssnitt)
 
-14 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
+15 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
 
 | Kommando | Vad |
 |----------|-----|
-| `/rond [datum]` | **Dagens rond på annonskontot:** läser Meta, räknar panelens regler, föreslår budgetändringar. Ändrar aldrig något själv |
+| `/rond [datum]` | Dagens rond, manuellt läge: läser Meta, räknar reglerna, föreslår. Ändrar inget själv |
+| `/rond-auto` | **Automatronden (körs dagligen av en Routine):** utför planen själv — skalar, sänker, stänger av. Spärrar och verifieringar i kommandofilen. Dashboard: `agent/dashboard.mjs` |
 | `/ny-produkt <namn> <budget>` | Första testbatchen för ny produkt (ingen data än) — SOP-06 |
 | `/forsta-batch <namn>` | Full CS-analys från noll i en NY chatt |
 | `/cs <id> [egna idéer]` | **Kärnloopen:** CS på senaste annonserna, feedbackloop, nästa batch |

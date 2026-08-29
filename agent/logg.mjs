@@ -87,6 +87,22 @@ export function backDagarIRad(dygn, breakEven) {
 }
 
 /**
+ * Senaste raden för kampanjen vars kod finns i listan. Används av åtgärds-
+ * trappan för att veta vilket steg som redan tagits.
+ * @returns {object|null}
+ */
+export function senasteRadMedKod(logg, kampanjId, koder) {
+  let träff = null;
+  for (const rad of logg) {
+    if (rad.kampanj_id !== kampanjId) continue;
+    if (!koder.includes(rad.kod)) continue;
+    if (rad.genomford !== true) continue;
+    if (träff === null || String(rad.datum) > String(träff.datum)) träff = rad;
+  }
+  return träff;
+}
+
+/**
  * Skriver en rad. Allt som behövs för att i efterhand kunna svara på
  * "varför gjorde den så här" utan att gissa.
  */

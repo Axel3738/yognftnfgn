@@ -1,0 +1,146 @@
+<title>Bäverronden</title>
+<style>
+:root{
+  --grund:#F6F3EE; --kort:#FFFFFF; --bläck:#221C15; --dov:#7C7267; --linje:#E7E0D5;
+  --ok:#1B7A4E; --ok-w:#E7F2EB; --justera:#9A5B08; --justera-w:#F7EEDF;
+  --stopp:#B3261E; --stopp-w:#F9E9E7; --vanta:#57534E; --vanta-w:#EFECE7;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --grund:#161210; --kort:#201A15; --bläck:#F2EDE5; --dov:#A79C8F; --linje:#373027;
+  --ok:#5CC08D; --ok-w:#1E2E25; --justera:#E0A353; --justera-w:#302719;
+  --stopp:#F28B82; --stopp-w:#34201E; --vanta:#B0A89F; --vanta-w:#28231F;
+}}
+:root[data-theme="dark"]{
+  --grund:#161210; --kort:#201A15; --bläck:#F2EDE5; --dov:#A79C8F; --linje:#373027;
+  --ok:#5CC08D; --ok-w:#1E2E25; --justera:#E0A353; --justera-w:#302719;
+  --stopp:#F28B82; --stopp-w:#34201E; --vanta:#B0A89F; --vanta-w:#28231F;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--grund);color:var(--bläck);
+  font:17px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased}
+.ram{max-width:660px;margin:0 auto;padding:28px 16px 72px}
+header h1{font-size:30px;font-weight:800;letter-spacing:-.02em;margin:0}
+header .datum{color:var(--dov);margin:2px 0 18px;font-size:15px}
+.banner{display:flex;align-items:center;gap:12px;border-radius:14px;padding:16px 18px;
+  font-size:19px;font-weight:650;margin-bottom:26px}
+.banner.t-ok{background:var(--ok-w);color:var(--ok)}
+.banner.t-fel{background:var(--stopp-w);color:var(--stopp)}
+.banner .bg{font-size:26px}
+.kort{display:flex;gap:14px;align-items:flex-start;background:var(--kort);
+  border:1px solid var(--linje);border-radius:14px;padding:16px;margin-bottom:12px}
+.kort .glyf{font-size:30px;line-height:1;flex:none;margin-top:2px}
+.kort .inneh{flex:1;min-width:0}
+.kort h2{font-size:14px;font-weight:650;text-transform:uppercase;letter-spacing:.06em;
+  color:var(--dov);margin:0 0 2px}
+.kort .besked{font-size:20px;font-weight:800;margin:0;letter-spacing:-.01em}
+.t-ok .besked{color:var(--ok)} .t-justera .besked{color:var(--justera)}
+.t-stopp .besked,.t-fel .besked{color:var(--stopp)} .t-vanta .besked{color:var(--vanta)}
+.kort .forkl{margin:4px 0 0;color:var(--dov);font-size:15px;max-width:44ch}
+.siffror{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;font-size:14px;color:var(--dov)}
+.siffror b{color:var(--bläck);font-variant-numeric:tabular-nums}
+.budget{flex:none;text-align:right;font-size:22px;font-weight:800;
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.budget small{display:block;font-size:12px;font-weight:400;color:var(--dov)}
+h3{font-size:15px;text-transform:uppercase;letter-spacing:.07em;color:var(--dov);
+  margin:34px 0 10px;font-weight:650}
+.logg{list-style:none;margin:0;padding:0}
+.logg li{padding:9px 2px;border-bottom:1px solid var(--linje);font-size:15px}
+.logg time{color:var(--dov);font-variant-numeric:tabular-nums;margin-right:8px}
+.tomt{color:var(--dov)}
+footer{margin-top:38px;color:var(--dov);font-size:14px;max-width:52ch}
+@media(max-width:480px){.budget{display:none}}
+</style>
+<div class="ram">
+<header>
+  <h1>Bäverronden</h1>
+  <p class="datum">Siffror från 2026-08-28 · Bäverbutiken</p>
+</header>
+<div class="banner t-ok"><span class="bg" aria-hidden="true">✅</span><span>Allt sköter sig självt. Du behöver inte göra något.</span></div>
+<article class="kort t-stopp">
+  <div class="glyf" aria-hidden="true">🔧</div>
+  <div class="inneh">
+    <h2>Soptunneklistermärkena</h2>
+    <p class="besked">Dålig annons letas upp</p>
+    <p class="forkl">Produkten går back. Ronden pausar det minsta som är trasigt först — inte hela produkten.</p>
+    <div class="siffror"><span>Säljer för <b>1,36 kr</b> per annonskrona</span><span>behöver <b>1,67</b></span></div>
+  </div>
+  <div class="budget">1 000 kr<small>/dag just nu</small></div>
+</article>
+<article class="kort t-justera">
+  <div class="glyf" aria-hidden="true">📉</div>
+  <div class="inneh">
+    <h2>Fiskespöhållaren</h2>
+    <p class="besked">Sänks till 2 000 kr/dag</p>
+    <p class="forkl">Går knappt back, men siffran ligger för nära gränsen för ett stort beslut. Sänks 20 % nu — halveras om förlusten står kvar om tre dagar.</p>
+    <div class="siffror"><span>Säljer för <b>1,46 kr</b> per annonskrona</span><span>behöver <b>1,50</b></span></div>
+  </div>
+  <div class="budget">2 500 kr<small>/dag just nu</small></div>
+</article>
+<article class="kort t-vanta">
+  <div class="glyf" aria-hidden="true">⏳</div>
+  <div class="inneh">
+    <h2>MC-Kapellet</h2>
+    <p class="besked">För ny — samlar data</p>
+    <p class="forkl">För få köp än för att säga något säkert.</p>
+    <div class="siffror"><span>Säljer för <b>1,19 kr</b> per annonskrona</span><span>behöver <b>1,49</b></span></div>
+  </div>
+  <div class="budget">1 000 kr<small>/dag just nu</small></div>
+</article>
+<article class="kort t-vanta">
+  <div class="glyf" aria-hidden="true">⏳</div>
+  <div class="inneh">
+    <h2>Cykelshorts Herr</h2>
+    <p class="besked">För ny — samlar data</p>
+    <p class="forkl">För få köp än för att säga något säkert.</p>
+    <div class="siffror"><span>Säljer för <b>2,19 kr</b> per annonskrona</span><span>behöver <b>1,68</b></span></div>
+  </div>
+  <div class="budget">1 000 kr<small>/dag just nu</small></div>
+</article>
+<article class="kort t-vanta">
+  <div class="glyf" aria-hidden="true">⏳</div>
+  <div class="inneh">
+    <h2>Plyschtofflorna Herr</h2>
+    <p class="besked">För ny — samlar data</p>
+    <p class="forkl">För få köp än för att säga något säkert.</p>
+    <div class="siffror"><span>Säljer för <b>1,72 kr</b> per annonskrona</span><span>behöver <b>1,49</b></span></div>
+  </div>
+  <div class="budget">1 000 kr<small>/dag just nu</small></div>
+</article>
+<article class="kort t-vanta">
+  <div class="glyf" aria-hidden="true">⏳</div>
+  <div class="inneh">
+    <h2>Övervakningskameran</h2>
+    <p class="besked">För ny — samlar data</p>
+    <p class="forkl">För få köp än för att säga något säkert.</p>
+    <div class="siffror"><span>Säljer för <b>3,62 kr</b> per annonskrona</span><span>behöver <b>1,57</b></span></div>
+  </div>
+  <div class="budget">1 000 kr<small>/dag just nu</small></div>
+</article>
+<article class="kort t-ok">
+  <div class="glyf" aria-hidden="true">📈</div>
+  <div class="inneh">
+    <h2>Kranskydd Frost 420D</h2>
+    <p class="besked">Höjs till 1 200 kr/dag</p>
+    <p class="forkl">Den tjänar bra — får 20 % mer att jobba med.</p>
+    <div class="siffror"><span>Säljer för <b>2,87 kr</b> per annonskrona</span><span>behöver <b>1,49</b></span></div>
+  </div>
+  <div class="budget">1 000 kr<small>/dag just nu</small></div>
+</article>
+<article class="kort t-ok">
+  <div class="glyf" aria-hidden="true">✅</div>
+  <div class="inneh">
+    <h2>Bälteslipmaskinen</h2>
+    <p class="besked">Går bra — rörs inte</p>
+    <p class="forkl">Precis där vi vill ha den.</p>
+    <div class="siffror"><span>Säljer för <b>2,45 kr</b> per annonskrona</span><span>behöver <b>1,73</b></span></div>
+  </div>
+  <div class="budget">2 000 kr<small>/dag just nu</small></div>
+</article>
+<h3>Senast ändrat</h3>
+<ul class="logg"><li><time>2026-08-29</time> <b>Cykelshorts Herr</b> ✏️ nytt break-even 1,68 inskrivet</li><li><time>2026-08-29</time> <b>Bälteslipmaskinen</b> ✏️ nytt break-even 1,73 inskrivet</li></ul>
+<footer>Ronden kör själv varje dag: läser Meta, räknar reglerna och ändrar budgetarna.
+Aldrig mer än 20 % åt gången. En produkt ändras högst var tredje dag — utom riktiga
+vinnare (ROAS över 3), som får höjas dagligen. Golv 500 kr, tak 4 000 kr per produkt.
+Blir något konstigt stoppar ronden sig själv och det står här.</footer>
+</div>

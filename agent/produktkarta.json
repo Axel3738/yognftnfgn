@@ -3,7 +3,7 @@
   "ad_account_id": "1867947880635861",
   "ad_account_namn": "MagiBorsten",
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-08-28",
+  "uppdaterad": "2026-08-29",
   "kampanjer": [
     {
       "campaign_id": "120249850522830291",
@@ -19,8 +19,16 @@
       "lage": "drift",
       "lage_motivering": "32 köp och livstids-ROAS 2,43 mot break-even 1,58 (avläst 2026-08-28)",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet",
-      "anmarkning": "Inköpspriset höjdes till 40 USD (2026-08-28) men kampanjnamnets break-even 1,58 bygger på den gamla kostnaden, ca 34,8 USD totalt. Den nya break-even ligger mellan 1,73 och 2,06 beroende på om frakt och avgifter tillkommer ovanpå de 40 USD — och det avgör om beskedet blir 'låt vara' eller 'sänk'. SAKNAS: raden för Bälteslipmaskinen ur kostnadsarket (samma tre kolumner som Cykelshorts: pris, frakt, totalt). Tills den finns dömer ronden på det gamla talet 1,58."
+      "break_even_kalla": "uträknad ur kostnadsblocket nedan",
+      "kostnad": {
+        "pris_sek": 909,
+        "usd": 40,
+        "eur": 0,
+        "sek": 0,
+        "kalla": "Axels besked 2026-08-29: inköpspris höjt till 40 USD, totalt — ingen frakt eller avgift tillkommer.",
+        "datum": "2026-08-29"
+      },
+      "anmarkning": "Axel planerar att höja priset. När det sker: ändra pris_sek här, så räknas break-even om automatiskt, och uppdatera talet i kampanjnamnet."
     },
     {
       "campaign_id": "120249952968210291",
@@ -92,7 +100,7 @@
         ],
         "datum": "2026-08-28"
       },
-      "anmarkning": "Break-even 1,68 bygger på bara 5 köp. Räkna om den när produkten har 30+ köp — blandningen mellan 1-, 2- och 3-pack styr talet helt (1,83 vid bara 1-pack, 1,57 vid bara 3-pack). Kampanjnamnet säger fortfarande 'BE ROAS TBC'; sätt 1.68 där så syns talet även utanför ronden."
+      "anmarkning": "Break-even 1,68 bygger på bara 5 köp — räkna om vid 30+. Blandningen mellan 1-, 2- och 3-pack styr talet (1,83 vid bara 1-pack, 1,57 vid bara 3-pack)."
     },
     {
       "campaign_id": "120249990507280291",

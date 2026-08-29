@@ -9,7 +9,7 @@
 import { readFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { besked, breakEvenRoas, kostnadSek, lasBelopp, lasBreakEven } from './besked.mjs';
+import { besked, breakEvenRoas, kostnadSek, lasBelopp, lasBreakEven, nyBudget } from './besked.mjs';
 import { backDagarIRad, dagarSedanAndring, lasLogg, raknaTrasigaRader } from './logg.mjs';
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
@@ -117,6 +117,79 @@ export function bedomKampanj(kampanj, { logg, idag, karta, fx }) {
       backDagarIRad: backDagarIRad(kampanj.dygn, källa.be),
     }),
   };
+}
+
+/**
+ * Bygger den exakta åtgärdslistan för autoläget (/rond-auto).
+ *
+ * Talen här är de enda som får skickas till Meta — Claude räknar aldrig om dem.
+ * Budget anges i BÅDE kronor och öre eftersom Metas API tar öre
+ * (1 200 kr = 120000). Skickas kronorna rakt in blir budgeten 100x för låg;
+ * skickas öre där kronor väntas blir den 100x för hög.
+ *
+ * Försiktighetsregeln nära zongräns (ROAS revideras uppåt i efterhand):
+ * ett besked som ligger inom NARA_GRANS_PP från en gräns mildras ett steg —
+ * HALVERA blir SANK, och SKALA/SANK/STANG_AV/ATGARDSTRAPPAN skjuts upp till
+ * nästa körning. Är signalen äkta står den kvar om tre dagar med mognare data.
+ */
+export function planera(rader) {
+  const atgarder = [];
+  const uppskjutna = [];
+
+  for (const r of rader) {
+    const d = r.dom;
+    if (!d.kraverGodkannande) continue;
+
+    const grund = { kampanj_id: r.id, namn: r.namn, kod: d.kod, motivering: d.motivering };
+
+    if (d.naraGrans) {
+      if (d.kod === 'HALVERA') {
+        const ner = nyBudget('ner', r.budget);
+        if (Number.isFinite(ner) && ner < r.budget) {
+          atgarder.push({
+            ...grund, typ: 'budget', kod: 'SANK',
+            fran_sek: r.budget, till_sek: ner, till_ore: Math.round(ner * 100),
+            mildrad: 'HALVERA mildrad till SANK: beskedet ligger nära en zongräns och ROAS kan revideras uppåt. Står förlusten kvar nästa körning halveras den då.',
+          });
+        } else {
+          uppskjutna.push({ ...grund, orsak: 'nära zongräns och redan på golvet' });
+        }
+      } else {
+        uppskjutna.push({ ...grund, orsak: 'nära zongräns — omprövas nästa körning med mognare data' });
+      }
+      continue;
+    }
+
+    if (d.kod === 'SKALA' || d.kod === 'SANK' || d.kod === 'HALVERA') {
+      atgarder.push({
+        ...grund, typ: 'budget',
+        fran_sek: r.budget, till_sek: d.nyBudget, till_ore: Math.round(d.nyBudget * 100),
+      });
+    } else if (d.kod === 'STANG_AV') {
+      atgarder.push({ ...grund, typ: 'paus_kampanj' });
+    } else if (d.kod === 'ATGARDSTRAPPAN') {
+      atgarder.push({ ...grund, typ: 'trappa' });
+    }
+  }
+
+  // Kontospärren: summan av dagsbudgetarna får aldrig stiga mer än 20 % på en
+  // körning. Med 20 %-taket per kampanj är det matematiskt omöjligt att bryta —
+  // slår spärren till är något trasigt (enhetsfel, dubbelräkning) och HELA
+  // planen kasseras. Hellre en dag utan ändringar än en trasig ändring.
+  const gammalTotal = rader.reduce((s, r) => s + (Number.isFinite(r.budget) ? r.budget : 0), 0);
+  let nyTotal = gammalTotal;
+  for (const a of atgarder) {
+    if (a.typ === 'budget') nyTotal += a.till_sek - a.fran_sek;
+  }
+  if (nyTotal > gammalTotal * 1.2 + 1) {
+    return {
+      sparrad: true,
+      orsak: `Kontospärr: planen skulle höja totalbudgeten från ${Math.round(gammalTotal)} till ${Math.round(nyTotal)} kr/dag (över +20 %). Det ska inte kunna hända — hela planen kasseras. Gör inga ändringar och larma Axel.`,
+      atgarder: [], uppskjutna, gammalTotal, nyTotal,
+    };
+  }
+
+  return { sparrad: false, orsak: null, atgarder, uppskjutna, gammalTotal, nyTotal };
 }
 
 const ORDNING = [
@@ -253,7 +326,7 @@ async function main() {
 
   const meta = { idag, hamtad: data.hamtad, varningar };
   if (argv.includes('--json')) {
-    console.log(JSON.stringify({ meta, rader }, null, 2));
+    console.log(JSON.stringify({ meta, rader, plan: planera(rader) }, null, 2));
   } else {
     console.log(rapport(rader, meta));
   }
