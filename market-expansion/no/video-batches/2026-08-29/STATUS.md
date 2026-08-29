@@ -7,14 +7,16 @@ Rutin: `/translate-no` (`.claude/commands/translate-no.md`). Manifest: `batch.js
 |---|---|---|---|---|---|
 | Kranskydd Frost 420D (`kranskydd`) | 12 | ✅ kranbeskyttelse-frost-420d-… | 219 (før 285) | 1,63 | ✅ Översatt, levererad, launchad ACTIVE 2026-08-29 |
 | IBC-tanköverdrag (`ibc`) | 11 (CS_1_H1 saknas i Drive) | ✅ ibc-tanktrekk-1000-l-… | 439 (før 586, höjt för 25 %-claim) | 1,63 | ✅ Översatt, levererad, launchad ACTIVE 2026-08-29 |
-| Cykelshorts Herr (`cykelshorts`) | 12 | ❌ finns inte på beverbutikken.no | — | — | Kan inte launchas ännu |
-| Bälteslipmaskin Mini 3-i-1 (`balteslip`) | 12 | ❌ finns inte på beverbutikken.no | — | — | Kan inte launchas ännu |
+| Cykelshorts Herr (`cykelshorts`) | 12 + 4 bilder | ✅ sykkelshorts-herre-… | 289 (før 379) | 1,41 | ✅ Launchad ACTIVE 2026-08-30 (natten) |
+| Bälteslipmaskin Mini 3-i-1 (`balteslip`) | 12 + 4 bilder | ✅ beltesliper-mini-3-i-1-… | 1029 (før 1715, höjt för 40 %-claim) | 1,41 | ✅ Launchad ACTIVE 2026-08-30 (natten) |
 
 **Bildannonser klara 2026-08-29 (kvällen):** 8 st (4 per produkt) — Kie AI (`google/nano-banana-edit`)
 raderade texten, PIL komponerade norsk text exakt (direktöversättning i bildmodell stavade fel
 och förkastades). Levererade i chatten, uppladdade i NO-mapparna, inlagda ACTIVE i respektive
 koncept-adset som `<Produkt>_NO_<K>_2_1`. Kampanjerna har nu 16 resp. 15 annonser.
 Alla 23 videor + 8 bilder + 8 adcopy-docs ligger i Drive under NO/-mappen.
+
+**Nattbatch 2026-08-30:** Overvåkingskamera (`overvakningskamera`, 12 videor + 4 bilder, 899/1169 kr, BE-ROAS 1,40) tillagd och launchad ACTIVE tillsammans med Sykkelshorts + Beltesliper. Kampanj-ID: 120251998454160233 / 120251998498540233 / 120251998582640233. Kvar i huvudmappen för morgonrutinen: Damasker Vandring (= Gamasjer Tur, 309 kr) och Jättefotboll (= Kjempefotball, 299 kr).
 
 **API-verifierad 2026-08-29 17:30 UTC:** båda kampanjerna ACTIVE/ACTIVE, 4 adsets vardera ACTIVE, 12 + 11 annonser alla ACTIVE (effective_status), CBO 1000 kr/dag, alla annonslänkar → beverbutikken.no. Videouppladdning till NO-mapparna väntar fortfarande på Drive-brevlådans URL.
 
