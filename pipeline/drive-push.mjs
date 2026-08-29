@@ -30,7 +30,12 @@ for (const f of files) {
   writeFileSync(tmp, b64);
   const u = `${URL}?key=${encodeURIComponent(KEY)}&folderId=${encodeURIComponent(folder)}&name=${encodeURIComponent(basename(f))}&mimeType=video/mp4`;
   try {
-    const res = execFileSync('curl', ['-sSL', '-X', 'POST', '--data-binary', `@${tmp}`, '-H', 'Content-Type: text/plain', u], { maxBuffer: 1e7 }).toString();
+    // Apps Script svarar 302 → echo-URL som ska hämtas med GET (curl behåller POST
+    // vid 302, därför två steg i stället för -L).
+    const head = execFileSync('curl', ['-sS', '-X', 'POST', '--data-binary', `@${tmp}`, '-H', 'Content-Type: text/plain', '-o', '/dev/null', '-D', '-', u], { maxBuffer: 1e7 }).toString();
+    const loc = (head.match(/^location:\s*(\S+)/im) || [])[1];
+    if (!loc) throw new Error('ingen redirect från webbappen: ' + head.split('\n').slice(0, 3).join(' '));
+    const res = execFileSync('curl', ['-sSL', loc], { maxBuffer: 1e7 }).toString();
     const j = JSON.parse(res);
     if (!j.ok) throw new Error(j.fel || res.slice(0, 200));
     console.log(`✓ ${basename(f)} (${mb.toFixed(1)} MB) → ${j.id}`);
