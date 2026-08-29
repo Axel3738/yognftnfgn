@@ -103,7 +103,7 @@ test('rapporten listar det som kräver godkännande först', () => {
         id: '2', namn: 'Dålig | BE ROAS 2.00', daily_budget: '1 000,00 kr (SEK)',
         spend_3d: '1 000,00 kr', roas_3d: '2.50', kop_3d: 10,
       },
-      { logg: [], idag: '2026-08-28', karta: {} },
+      { logg: [], idag: '2026-08-28', karta: { 2: { campaign_id: '2', lage: 'drift' } } },
     ),
   ];
   const text = rapport(rader, { idag: '2026-08-28', hamtad: 'nyss', varningar: ['test'] });
@@ -244,4 +244,17 @@ test('en budget som ser ut som öre ger ingen dom alls', () => {
   );
   assert.equal(rad.dom.kod, 'ORIMLIG_DATA');
   assert.match(rad.dom.motivering, /felparsning/);
+});
+
+test('en fryst kampanj rörs inte alls före frys_till, och tinar efter', () => {
+  const kampanj = {
+    id: '1', namn: 'X | BE ROAS 1.68', daily_budget: '1 000,00 kr (SEK)',
+    spend_3d: '1 500,00 kr', roas_3d: '2.14', kop_3d: 8, spend_total: '1 500,00 kr',
+  };
+  const karta = { 1: { campaign_id: '1', lage: 'drift', frys_till: '2026-08-31', frys_motivering: 'prishöjning på väg' } };
+  const fryst = bedomKampanj(kampanj, { logg: [], idag: '2026-08-29', karta, fx: null });
+  assert.equal(fryst.dom.kod, 'FRYST');
+  assert.equal(fryst.dom.kraverGodkannande, false);
+  const tinad = bedomKampanj(kampanj, { logg: [], idag: '2026-09-01', karta, fx: null });
+  assert.notEqual(tinad.dom.kod, 'FRYST');
 });

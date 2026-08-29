@@ -36,7 +36,9 @@
       "lage": "test",
       "lage_motivering": "21 köp men livstids-ROAS 1,46 under break-even 1,67 — har inte bevisat sig än",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "frys_till": "2026-08-31",
+      "frys_motivering": "Kortet var spärrat och spendhistoriken är därför opålitlig. Axel har dessutom själv pausat storspendarna. Ingen åtgärdstrappa på gammal, skev data — omprövas efter 31/8 på färska dygn."
     },
     {
       "campaign_id": "120249975043720291",
@@ -100,7 +102,9 @@
         ],
         "datum": "2026-08-28"
       },
-      "anmarkning": "Break-even 1,68 bygger på bara 5 köp — räkna om vid 30+. Blandningen mellan 1-, 2- och 3-pack styr talet (1,83 vid bara 1-pack, 1,57 vid bara 3-pack)."
+      "anmarkning": "Break-even 1,68 bygger på bara 5 köp — räkna om vid 30+. Blandningen mellan 1-, 2- och 3-pack styr talet (1,83 vid bara 1-pack, 1,57 vid bara 3-pack).",
+      "frys_till": "2026-08-31",
+      "frys_motivering": "Prishöjning på väg. Break-even blev fel från början (COGS var okänd vid launch) och rättelsen får inte straffa annonserna — vid ROAS 2,14 höjs PRISET, inte sänks budgeten. Mål: minst break-even 1,5. När priset är höjt: uppdatera kostnad.pris_sek här + talet i kampanjnamnet, ta bort frysen."
     },
     {
       "campaign_id": "120249990507280291",
@@ -126,5 +130,6 @@
     "datum": "2026-08-27",
     "kalla": "mid-market (investing.com 9,69 · XE 9,52 · OFX 9,50 för USD; XE 11,09 för EUR)"
   },
-  "momsnot": "Ingen moms. Bäverbutiken säljer DDP till Sverige (Axels besked 2026-08-29). Break-even räknas rakt på försäljningspriset. Ingen öppen fråga."
+  "momsnot": "Ingen moms. Bäverbutiken säljer DDP till Sverige (Axels besked 2026-08-29). Break-even räknas rakt på försäljningspriset. Ingen öppen fråga.",
+  "regel_andrad_break_even": "VIKTIG REGEL (Axel 2026-08-29): när break-even ändras retroaktivt — ny COGS, räknefel som rättas — får det ALDRIG ensamt utlösa en sänkning eller kill. En produkt som säljer bra på fel kalkyl fixas med PRISET, inte budgeten. Frys kampanjen (frys_till + frys_motivering), höj priset, uppdatera kalkylen, töm frysen."
 }

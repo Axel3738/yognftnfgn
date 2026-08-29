@@ -53,6 +53,13 @@ dem oförändrade — inte att bedöma dem.
   vid höjning och uppåt vid sänkning, så steget aldrig blir större.
   (Bäverpanelens egen avrundning bryter mot den regeln: 605 → 750 kr är +24 %.)
 - **Golv 500 kr, tak 4 000 kr.**
+- **En testprodukt som går plus rörs aldrig** — testbudgeten ligger kvar tills
+  den bevisat sig eller gått back. Tunn plusmarginal på en ny produkt är ett
+  prisproblem, inte ett budgetproblem. (Axel 2026-08-29.)
+- **Ändrad break-even utlöser aldrig ensam en sänkning.** Rättas kalkylen i
+  efterhand (ny COGS) fryses kampanjen och PRISET åtgärdas först — annonser
+  som säljer bra på fel kalkyl ska inte straffas. Frys: `frys_till` +
+  `frys_motivering` i `produktkarta.json`, tinar av sig själv på datumet.
 - **Orimliga siffror ger ingen dom.** ROAS utanför 0–15 flaggas i stället.
 - **⚠ nära zongräns.** Ligger vinsten inom 3 procentenheter från en gräns
   flaggas raden — ROAS för de senaste dygnen revideras uppåt i efterhand.

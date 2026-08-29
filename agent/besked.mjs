@@ -313,8 +313,16 @@ export function besked(rad) {
       { zon: 'stop', vinstProcent: vinst, nyBudget: halv, kraverGodkannande: true, naraGrans });
   }
 
-  // 6. 0-16 %: sänk.
+  // 6. 0-16 %: sänk — men bara drift. En testprodukt som går PLUS rörs aldrig:
+  // testbudgeten ligger kvar tills den bevisat sig eller gått back (Axels
+  // beslut 2026-08-29 — en tunn plusmarginal på en ny produkt är ofta ett
+  // prisproblem, inte ett budgetproblem).
   if (vinst < ZON_SANK_UNDER) {
+    if (lage === 'test') {
+      return svar('LAT_VARA', 'Testas — går plus, rörs inte',
+        `${bas} Testprodukt på plus behåller sin testbudget. Är marginalen tunn är det priset som ska ses över, inte budgeten.`,
+        { zon: 'hold', vinstProcent: vinst });
+    }
     if (rad.budget <= GOLV_SEK) {
       return svar('LAT_VARA', 'Låt vara',
         `${bas} Ligger redan på ${kr(GOLV_SEK)} och går plus. Lämna den.`,

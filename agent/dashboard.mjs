@@ -53,6 +53,7 @@ export function kortText(rad, uppskjuten, atgard) {
     case 'RAKNA_BACKDAGAR': return { glyf: '👀', ton: 'justera', rubrik: 'Bevakas på lägsta budgeten', text: 'Går back på 500 kr/dag. Vid sju dagar i rad stängs den av.' };
     case 'SAKNAR_BREAK_EVEN': return { glyf: '❓', ton: 'fel', rubrik: 'Saknar break-even', text: 'Talet finns inte i kampanjnamnet. Ingen bedömning förrän det är satt.' };
     case 'STOR_SPEND_UTAN_KOP': return { glyf: '🚨', ton: 'fel', rubrik: 'Bränner pengar utan köp', text: 'Mycket spend, nästan inga köp. Något är fel — produktsidan, priset eller lagret. Titta nu.' };
+    case 'FRYST': return { glyf: '✋', ton: 'vanta', rubrik: 'Fryst — Axels order', text: d.motivering };
     case 'SAKNAR_SPEND_TOTAL': return { glyf: '⏳', ton: 'vanta', rubrik: 'Väntar på siffra', text: 'Totalspenden saknas — inget görs förrän den finns.' };
     default: return { glyf: '⚠️', ton: 'fel', rubrik: 'Siffrorna ser fel ut', text: d.motivering };
   }

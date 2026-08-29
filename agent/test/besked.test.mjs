@@ -306,3 +306,12 @@ test('okänd totalspend skickar aldrig en testprodukt till trappan', () => {
   assert.equal(dom.kod, 'SAKNAR_SPEND_TOTAL');
   assert.equal(dom.kraverGodkannande, false);
 });
+
+test('en testprodukt som går plus behåller sin testbudget — sänk-zonen gäller bara drift', () => {
+  // BE 2,00 · ROAS 2,50 -> 10 % vinst: drift sänks, test rörs inte.
+  assert.equal(besked(rad({ lage: 'drift', roas3d: 2.5 })).kod, 'SANK');
+  const dom = besked(rad({ lage: 'test', roas3d: 2.5 }));
+  assert.equal(dom.kod, 'LAT_VARA');
+  assert.equal(dom.kraverGodkannande, false);
+  assert.match(dom.motivering, /priset/);
+});

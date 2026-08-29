@@ -91,6 +91,24 @@ export function bedomKampanj(kampanj, { logg, idag, karta, fx }) {
     kop3d,
   };
 
+  // Fryst på Axels order: rörs inte alls till och med frys_till-datumet.
+  // Används när siffrorna ljuger av yttre skäl (spärrat kort, prishöjning på
+  // väg, retroaktivt ändrad break-even) — reglerna ska inte straffa en produkt
+  // för något som inte är annonsernas fel.
+  if (post.frys_till && String(idag) <= String(post.frys_till)) {
+    const urNamn = lasBreakEven(kampanj.namn);
+    return {
+      ...grund,
+      dom: {
+        kod: 'FRYST', rubrik: `Fryst t.o.m. ${post.frys_till}`,
+        motivering: post.frys_motivering || 'Fryst på Axels order.',
+        nyBudget: null, zon: null, vinstProcent: null,
+        breakEven: urNamn.be, breakEvenKalla: urNamn.kalla,
+        kraverGodkannande: false, naraGrans: false,
+      },
+    };
+  }
+
   if (budget !== null && (budget < BUDGET_RIMLIG_MIN || budget > BUDGET_RIMLIG_MAX)) {
     const urNamn = lasBreakEven(kampanj.namn);
     return {
@@ -253,7 +271,7 @@ const ORDNING = [
   'STANG_AV', 'ATGARDSTRAPPAN', 'HALVERA', 'SANK', 'SKALA',
   'STOR_SPEND_UTAN_KOP', 'RAKNA_BACKDAGAR', 'ORIMLIG_DATA', 'SAKNAR_BREAK_EVEN',
   'SAKNAR_BUDGET', 'SAKNAR_SPEND_TOTAL', 'VANTA_KADENS', 'VANTA_TROSKEL',
-  'FOR_LITE_DATA', 'LAT_VARA',
+  'FOR_LITE_DATA', 'FRYST', 'LAT_VARA',
 ];
 
 function kr(n) {
