@@ -4,162 +4,182 @@
   "proofreadId": "a379645419324a999ed28db720fbc232-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "b3f237b098ca46209fdbe4d2ec77b92b-nb"
+  "renderId": "b3f237b098ca46209fdbe4d2ec77b92b-nb",
+  "downloaded": true
  },
  "kranskydd_SP_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/2c19c9bfa42c4c2cb3ada53f412e566e/original.mp4",
   "proofreadId": "b605d4781ac24aee9e084a70606885fa-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "47e504887e854cbb8bf685604b8aae00-nb"
+  "renderId": "47e504887e854cbb8bf685604b8aae00-nb",
+  "downloaded": true
  },
  "kranskydd_SP_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/29232ccbaf6e4c56860657d360e1fb55/original.mp4",
   "proofreadId": "b101ef42bf944b0ea6ce1fe1107800f0-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "71daed58327f4d6f9dcd65633cfab3d2-nb"
+  "renderId": "71daed58327f4d6f9dcd65633cfab3d2-nb",
+  "downloaded": true
  },
  "kranskydd_CS_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/f90fec82d727484395aa7777316ec818/original.mp4",
   "proofreadId": "8b8abe1e0ca24da2869bf6c844183694-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "cc2e5a29095b460ab6761841e9af6716-nb"
+  "renderId": "cc2e5a29095b460ab6761841e9af6716-nb",
+  "downloaded": true
  },
  "kranskydd_CS_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/acd27751fe9c4c6fb1b491825be60a6a/original.mp4",
   "proofreadId": "0ca856d06149486384a0c531ba3bc50f-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "4657b68899a84ba7910e39ffe1086543-nb"
+  "renderId": "4657b68899a84ba7910e39ffe1086543-nb",
+  "downloaded": true
  },
  "kranskydd_CS_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/e5c0a2d43daf4eeebcddb5e58c1f7d65/original.mp4",
   "proofreadId": "60ac1413112c4a12ad430381194e2243-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "f12466bc244c4f08a32e7f46a1449a28-nb",
-  "downloaded": "failed",
-  "error": "render failed"
+  "renderId": "f12466bc244c4f08a32e7f46a1449a28-nb"
  },
  "kranskydd_PD_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/e7979d43d5fa48448b8037fb555d9bb6/original.mp4",
   "proofreadId": "a7305d3267784525bee64d37f57cc9e7-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "9e1391342e0941c4aef25a64581d1454-nb"
+  "renderId": "9e1391342e0941c4aef25a64581d1454-nb",
+  "downloaded": true
  },
  "kranskydd_PD_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/31df8f0f2f2b4e9d96f9878e6fa854a8/original.mp4",
   "proofreadId": "7f06c608b5e94464a1a04fd47a910102-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "b1daa15d0f4a4dbc8e59363092f72d32-nb"
+  "renderId": "b1daa15d0f4a4dbc8e59363092f72d32-nb",
+  "downloaded": true
  },
  "kranskydd_PD_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/747d49d539204c9d9fe9049ec8f80e4a/original.mp4",
   "proofreadId": "7136867a386842cd9d022b0fc19e7df2-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "ff26edf82ff64e49b5e3f26f73091c0a-nb"
+  "renderId": "ff26edf82ff64e49b5e3f26f73091c0a-nb",
+  "downloaded": true
  },
  "kranskydd_GT_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/4da195fc62304569ba082a3e5b047c37/original.mp4",
   "proofreadId": "9deda58ced134ef0b46533509b9ec6ee-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "25eaac6ba65a4a2593f9f4da686eee19-nb"
+  "renderId": "25eaac6ba65a4a2593f9f4da686eee19-nb",
+  "downloaded": true
  },
  "kranskydd_GT_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/de5dc3be7f244b5fafbf7b37d562e2b9/original.mp4",
   "proofreadId": "9aac4e55beb5447b8e145e7d2379c0c3-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "15d99acad38f4961a3f186e043071868-nb"
+  "renderId": "15d99acad38f4961a3f186e043071868-nb",
+  "downloaded": true
  },
  "kranskydd_GT_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/c13772b292ad4d829c6a3421b5acf001/original.mp4",
   "proofreadId": "a4adc2c7350f4358a72cb5ec04465bff-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "c5fe0ab3d5694a93af15831a0883ffcc-nb"
+  "renderId": "c5fe0ab3d5694a93af15831a0883ffcc-nb",
+  "downloaded": true
  },
  "ibc_PD_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/778cc3b459da4806903d0939d8232080/original.mp4",
   "proofreadId": "5b44e077e4cf4d0e9a659ab7fa45bac7-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "e320ec013d8f456b9340ce9c62c80f9e-nb"
+  "renderId": "e320ec013d8f456b9340ce9c62c80f9e-nb",
+  "downloaded": true
  },
  "ibc_PD_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/8693691e71404e51a6569b01b7ca5334/original.mp4",
   "proofreadId": "5f0fb897c2c143d8bb3a7203d2787fc0-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "695dbe216c1b48c791401fb32f05f332-nb"
+  "renderId": "695dbe216c1b48c791401fb32f05f332-nb",
+  "downloaded": true
  },
  "ibc_PD_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/f4e3aaddeba64f91abd30f87eace7503/original.mp4",
   "proofreadId": "9fe1757101c648278eac12b21ec52e2c-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "ae85d2f8f0f74dc8bf4cd8e1ae0f4e8c-nb"
+  "renderId": "ae85d2f8f0f74dc8bf4cd8e1ae0f4e8c-nb",
+  "downloaded": true
  },
  "ibc_SP_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/b926b67dd7004bf0885564d82bd337b7/original.mp4",
   "proofreadId": "7a630f6dcbb04e2f8d3fea01e9956648-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "f18c6d5bb84c480995d7f42d92347a03-nb"
+  "renderId": "f18c6d5bb84c480995d7f42d92347a03-nb",
+  "downloaded": true
  },
  "ibc_SP_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/83be32d19a674153aab4b0da72660897/original.mp4",
   "proofreadId": "2c8485101b2f4dc887c2bc0e54d49517-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "801d493751b8495ba91e87c31034e485-nb"
+  "renderId": "801d493751b8495ba91e87c31034e485-nb",
+  "downloaded": true
  },
  "ibc_SP_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/f7b2ea20230147a1bf597e6ca03bcedf/original.mp4",
   "proofreadId": "5f0753c0cc714599beea0be28064b409-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "6979c0b288d143cf8fa41b5a25f8ad91-nb"
+  "renderId": "6979c0b288d143cf8fa41b5a25f8ad91-nb",
+  "downloaded": true
  },
  "ibc_GT_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/97f6e8e63b164348a68ffce505cd29f7/original.mp4",
   "proofreadId": "9c1b188d92cb4571afdbad391194dc55-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "e5f5fd67dd504e068d4ba1f79837a5a7-nb"
+  "renderId": "e5f5fd67dd504e068d4ba1f79837a5a7-nb",
+  "downloaded": true
  },
  "ibc_GT_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/772b41d3926c4c838c32a34a10e66631/original.mp4",
   "proofreadId": "8e5b946a80af4f59be81976af03417c8-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "f70b0bc6522a4aa8bc4332d377bf6b01-nb"
+  "renderId": "f70b0bc6522a4aa8bc4332d377bf6b01-nb",
+  "downloaded": true
  },
  "ibc_GT_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/104a20085eca42ada029ae8e4c6b32fe/original.mp4",
   "proofreadId": "0501bda78280474fa1d36ca6cd8ee526-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "e6657d4a477041dba29e5953b9476a36-nb"
+  "renderId": "e6657d4a477041dba29e5953b9476a36-nb",
+  "downloaded": true
  },
  "ibc_CS_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/516e8dccfdab44f988f33015f3275793/original.mp4",
   "proofreadId": "337a2ab60cad4413bc4af998ae756881-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "ffd62594a29a43f4850d4a8a30c47622-nb"
+  "renderId": "ffd62594a29a43f4850d4a8a30c47622-nb",
+  "downloaded": true
  },
  "ibc_CS_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/aae912ceefce45fc94104938f61fb6ad/original.mp4",
   "proofreadId": "898c1637f6694b64bbad403b624d80df-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "5fadd4947a4944ceaeb75bf7fe780426-nb"
+  "renderId": "5fadd4947a4944ceaeb75bf7fe780426-nb",
+  "downloaded": true
  }
 }

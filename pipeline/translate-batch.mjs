@@ -164,7 +164,9 @@ switch (cmd) {
           if (s.status === 'success') {
             await h.downloadResult(st.renderId, path.join(out, j.key + '.mp4'));
             st.downloaded = true; save(); console.log('nedladdad', j.key);
-          } else if (s.status === 'failed') { st.downloaded = 'failed'; st.error = 'render failed'; save(); console.error('RENDER FAIL', j.key); }
+          } else if (s.status === 'failed' && /moderation/i.test(s.failure_message || '')) {
+            console.log('moderationskö:', j.key, '— väntar (släpps oftast inom ~1 h)');
+          } else if (s.status === 'failed') { st.downloaded = 'failed'; st.error = s.failure_message || 'render failed'; save(); console.error('RENDER FAIL', j.key, st.error); }
         } catch (e) { console.error('pollfel', j.key, e.message); }
       }
       open = jobs.filter(j => state[j.key]?.renderId && !state[j.key].downloaded);
