@@ -17,8 +17,10 @@ stanna bara vid ❌ i QA:n eller när något kräver ägarbeslut (pris, budgetä
 3. Ladda ner: media via `https://drive.google.com/uc?export=download&id=<id>`,
    docs via `https://docs.google.com/document/d/<id>/export?format=txt`,
    sheet via `https://docs.google.com/spreadsheets/d/<id>/export?format=csv`.
-4. Hitta produkten i Shopify (SE-butiken via connectorn): handle, produkt-id,
-   pris, jämförpris, varianter. Hitta COGS i batch-sheeten (länkade i
+4. Hitta produkten i Shopify (SE-butiken): handle, produkt-id, pris, jämförpris,
+   varianter. Connectorn om den är kopplad; annars Admin API direkt med
+   `SHOPIFY_TOKEN_SE` (`shpat_`) — se "Shopify utan connector" i
+   `docs/temu-launch-flow.md`. Hitta COGS i batch-sheeten (länkade i
    masterdokumentet, se `docs/temu-launch-flow.md`) — sök på produktens
    engelska namn. Total inköpskostnad SE = Total tax exclusive + 2,9 EUR.
 

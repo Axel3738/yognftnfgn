@@ -92,3 +92,23 @@ Exempel i äldre produkter: `Mobilskal_REVIEWS.xlsx`, `MOWER-SEAT-GRA_ADCOPY_PD/
   Ignorerar sheetens `product_handle` (ofta fel) och kopplar via `--product-id`.
   Kräver env `JUDGEME_API_TOKEN` + `JUDGEME_SHOP_DOMAIN`; förhandsgranska med `--dry`.
 - `.claude/settings.json` tillåter båda verktygen utan permission-prompt.
+
+## Shopify utan connector
+
+Shopify-connectorn kan vara bortkopplad (Axel växlar mellan butiker). Då används
+Admin API direkt med en token från en custom app i Bäverbutikens admin:
+
+```bash
+curl -sS -X POST "https://$SHOPIFY_SHOP_SE/admin/api/2025-07/graphql.json" \
+  -H "X-Shopify-Access-Token: $SHOPIFY_TOKEN_SE" \
+  -H "Content-Type: application/json" \
+  -d '{"query":"{ products(first:5){ nodes{ id handle title } } }"}'
+```
+
+- `SHOPIFY_SHOP_SE` finns redan i miljön (`4snrw0-mg.myshopify.com`).
+- `SHOPIFY_TOKEN_SE` ska vara en **`shpat_`-token** (Admin API access token från
+  en custom app med scopes `read_products` + `write_products`). ⚠️ En token som
+  börjar på `atkn_` är en CLI-token och ger 401 mot Admin API — det låg länge en
+  sådan i miljön; byt den, felsök inte.
+- Tokentyp kollas snabbt: 401 med `Invalid API key or access token` = fel sorts
+  token, inte fel butik.
