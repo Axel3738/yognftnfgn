@@ -1,8 +1,27 @@
 {
   "permissions": {
+    "defaultMode": "dontAsk",
     "allow": [
-      "Bash(node tools/judgeme-import.mjs *)",
-      "Bash(python3 tools/drive-ls.py *)"
+      "Bash(node *)",
+      "Bash(python3 *)",
+      "Bash(curl *)",
+      "Bash(git *)",
+      "Bash(npm *)",
+      "Bash(pip *)",
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "WebFetch",
+      "mcp__ADsmanagaer",
+      "mcp__Google_Drive",
+      "mcp__Google-Drive",
+      "mcp__Shopify",
+      "mcp__Slack",
+      "mcp__Notion",
+      "mcp__github",
+      "mcp__Claude_Code_Remote"
     ]
   }
 }
