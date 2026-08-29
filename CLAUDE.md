@@ -121,7 +121,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 
 ## Kommandona (Axels gränssnitt)
 
-13 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
+14 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
 
 | Kommando | Vad |
 |----------|-----|
@@ -138,6 +138,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/dashboard [datum]` | Bygg och läs redigerardashboarden |
 | `/rapport <namn>: <text>` | Tolka en slutrapport från Slack (bekräftas innan den sparas) |
 | `/granska [id]` | Beta av review-kön: checklista → godkänn eller skicka tillbaka |
+| `/launch <produktnamn>` | **Temu-flödet:** Drive → QA → Judge.me → Meta som PAUSED (`docs/temu-launch-flow.md`) |
 
 ---
 

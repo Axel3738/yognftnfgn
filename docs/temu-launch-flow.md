@@ -80,3 +80,15 @@ medierna och syns då inte direkt för alla konton):
   (description). Mappas rakt mot annonsens fält vid uppladdning.
 
 Exempel i äldre produkter: `Mobilskal_REVIEWS.xlsx`, `MOWER-SEAT-GRA_ADCOPY_PD/SP/SO`.
+
+## Verktyg och kommando
+
+- **`/launch <produktnamn>`** (`.claude/commands/launch.md`) — hela flödet för en
+  produkt i en körning.
+- `tools/drive-ls.py` — listar länkdelade Drive-mappar utan inloggning, ALLA
+  filtyper (Docs/Sheets länkar till docs.google.com — ett filter på bara
+  drive.google.com missar dem tyst; det har hänt).
+- `tools/judgeme-import.mjs` — importerar en REVIEWS-CSV via Judge.me:s API.
+  Ignorerar sheetens `product_handle` (ofta fel) och kopplar via `--product-id`.
+  Kräver env `JUDGEME_API_TOKEN` + `JUDGEME_SHOP_DOMAIN`; förhandsgranska med `--dry`.
+- `.claude/settings.json` tillåter båda verktygen utan permission-prompt.
