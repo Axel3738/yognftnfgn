@@ -226,6 +226,36 @@ Genomfört:
 - Temaloopen: v3 (färger + FAQ-sektion) publicerades av Axel → VoC-texterna
   för startsidan skrivs i **v4 (utkast)**.
 
+## 8e. Varv 7 (2026-08-29): redigerarmanualen
+
+Axels generiska editor-SOP ("How to Make Ads for a New Product", Beerverse)
+granskades mot den här butikens verklighet — sex ändringspunkter godkändes och
+implementerades i en ny självbetjäningsmanual för videoredigeraren:
+`redigerare/tvillingkudden-ad-manual.html`, publicerad som Claude-artifact
+(<https://claude.ai/code/artifact/84cc1400-5d01-48b2-be1c-5ff7031011a8>).
+
+- **Låsta produktfakta** överst (45 cm, 599 kr, vit kant, order → foto →
+  utkast → 8–12 arbetsdagar) + "Never in any ad"-listan: inga rabatter
+  (prisinformationslagen), inga påhittade recensioner, inget "made in Sweden",
+  inget snabb-leverans- eller retursnack.
+- **Koncepten bytta:** Social Proof → **Recognition** (ingen social proof
+  finns än), Clearance Sale → **Longing** (rabatter är olagliga för ny butik;
+  smakregler: antyd aldrig att djuret dött). Demo och Gift kvar, Gift med
+  köpar-avataren utskriven.
+- **Tre inbäddade Claude-promptar** med fakta + förbjudslista + 5 VoC-insikter
+  inbakade, så redigeraren inte behöver veta något själv.
+- **ElevenLabs-röstguide:** svensk kvinna 30–45 — inte defaultrösten (man).
+- **Assetpaketet:** 14 CDN-länkar till butikens bilder/GIF:ar, fasta svenska
+  repliker i tabell (Swedish | English meaning), namnkonvention
+  `Tvillingkudden – Concept – Hook N`, 12-videorutnät, leveranschecklista.
+- **Två fält Axel måste fylla i i HTML-filen:** `[PASSWORD HERE]`
+  (butikslösenordet) och `[LINK HERE]` (ElevenLabs-SOP:en).
+
+Notion-raden i Product test center SE BÄVER (`3cb270ab…`) uppdaterad:
+Instructions pekar på nya artifacten och **Typ ändrad
+"Video - Pending Approval" → "Guideline"** så raden inte räknas som en
+Bäver-annons i mätningen.
+
 ## 9. Kvarstående — kräver Axel
 
 1. **Publicera temat:** Online Store → Themes →
@@ -241,3 +271,8 @@ Genomfört:
 5. **Leverantör:** priserna antar COGS ≈ 250–350 kr för custom-formklippt kudde.
    Verifiera mot faktisk leverantör innan första annonskrona.
 6. **Lösenordsskyddet** ligger kvar tills du väljer att lansera.
+7. **Redigerarmanualen:** fyll i `[PASSWORD HERE]` (butikslösenordet) och
+   `[LINK HERE]` (ElevenLabs-SOP:en) i
+   `redigerare/tvillingkudden-ad-manual.html`, be Claude publicera om
+   artifacten, och **dela artifacten** via share-menyn — den är privat tills
+   du delar den, så redigeraren kan inte öppna länken innan dess.

@@ -1,0 +1,469 @@
+<title>Tvillingkudden Ad Manual</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Public+Sans:wght@400;600;700&family=Spline+Sans+Mono:wght@400;600&display=swap">
+<style>
+  :root{
+    --paper:#FDFBF5;
+    --panel:#FFFFFF;
+    --panel-soft:#F5F1FC;
+    --ink:#241C31;
+    --ink-dim:#5C5470;
+    --ink-faint:#8B8398;
+    --line:#E4DDF0;
+    --accent:#7C4EC4;
+    --accent-ink:#FDFBF7;
+    --warn-bg:#FBEFEE;
+    --warn-border:#E3B8B4;
+    --warn:#A33A32;
+    --ok-bg:#EEF6EE;
+    --ok-border:#BDD8BE;
+    --ok:#2E6B44;
+    --code-bg:#26203380;
+    --display:"Bricolage Grotesque","Public Sans",system-ui,sans-serif;
+    --body:"Public Sans",system-ui,-apple-system,sans-serif;
+    --mono:"Spline Sans Mono","SF Mono",Consolas,monospace;
+  }
+  :root:not([data-theme="light"]){ color-scheme: light dark; }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#1B1524; --panel:#241C31; --panel-soft:#2B2240;
+      --ink:#EFE9F8; --ink-dim:#BDB3CF; --ink-faint:#8D82A3;
+      --line:#3A2F52; --accent:#A98BE0; --accent-ink:#1B1524;
+      --warn-bg:#33201F; --warn-border:#6B3A36; --warn:#E8968E;
+      --ok-bg:#1E2E22; --ok-border:#3A5C42; --ok:#96CBA4;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1B1524; --panel:#241C31; --panel-soft:#2B2240;
+    --ink:#EFE9F8; --ink-dim:#BDB3CF; --ink-faint:#8D82A3;
+    --line:#3A2F52; --accent:#A98BE0; --accent-ink:#1B1524;
+    --warn-bg:#33201F; --warn-border:#6B3A36; --warn:#E8968E;
+    --ok-bg:#1E2E22; --ok-border:#3A5C42; --ok:#96CBA4;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--body); font-size:15.5px; line-height:1.55;
+  }
+  .wrap{max-width:800px; margin:0 auto; padding:52px 22px 110px;}
+  .eyebrow{
+    color:var(--accent); font-size:12px; font-weight:700;
+    letter-spacing:.1em; text-transform:uppercase; margin-bottom:12px;
+  }
+  h1{
+    font-family:var(--display); font-weight:800;
+    font-size:clamp(34px,6vw,46px); line-height:1.05;
+    letter-spacing:-.01em; margin:0 0 16px; text-wrap:balance;
+  }
+  .intro{color:var(--ink-dim); max-width:62ch; margin:0 0 26px;}
+  .intro b{color:var(--ink);}
+  .rule{width:52px;height:4px;background:var(--accent);border:none;margin:0 0 34px;border-radius:2px;}
+
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px;}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;}
+  .stat .num{font-family:var(--display);color:var(--accent);font-size:30px;font-weight:800;line-height:1;}
+  .stat .label{font-weight:700;margin-top:8px;font-size:14.5px;}
+  .stat .sub{color:var(--ink-faint);font-size:13px;margin-top:2px;}
+
+  h2.step{
+    font-family:var(--display); font-weight:800; font-size:22px;
+    margin:52px 0 6px; letter-spacing:-.005em;
+  }
+  h2.step .n{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:30px;height:30px;border-radius:9px;background:var(--accent);
+    color:var(--accent-ink);font-size:15px;margin-right:10px;vertical-align:-4px;
+  }
+  .steplede{color:var(--ink-dim);margin:0 0 16px;max-width:64ch;}
+  .steplede b{color:var(--ink);}
+
+  h3.mini{
+    font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--ink-faint);font-weight:700;margin:38px 0 12px;
+    border-bottom:1px solid var(--line);padding-bottom:8px;
+  }
+
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0 8px;}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;}
+  .card .ct{font-weight:700;font-size:14px;margin-bottom:10px;display:flex;gap:8px;align-items:center;}
+  .card ul{margin:0;padding-left:18px;}
+  .card li{color:var(--ink-dim);font-size:14px;margin-bottom:7px;}
+  .card li b{color:var(--ink);}
+  .card.locked{border-color:var(--accent);}
+  .card.locked .ct{color:var(--accent);}
+  .card.never{background:var(--warn-bg);border-color:var(--warn-border);}
+  .card.never .ct{color:var(--warn);}
+  .card.never li b{color:var(--warn);}
+
+  .why{font-size:13px;color:var(--ink-faint);margin:10px 0 0;}
+
+  .concepts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0;}
+  .concept{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:12px;padding:18px 20px;}
+  .concept .k{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-faint);font-weight:700;}
+  .concept .name{font-family:var(--display);font-weight:800;font-size:19px;margin:3px 0 8px;}
+  .concept p{color:var(--ink-dim);font-size:13.5px;margin:0 0 8px;}
+  .concept p b{color:var(--ink);}
+  .concept .seed{background:var(--panel-soft);border-radius:8px;padding:9px 12px;font-size:13px;color:var(--ink-dim);}
+  .concept .seed b{color:var(--accent);}
+  .tag{display:inline-block;background:var(--panel-soft);color:var(--accent);font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border-radius:5px;padding:2px 8px;margin-left:8px;vertical-align:2px;}
+
+  .promptbox{position:relative;background:var(--panel);border:1.5px solid var(--accent);border-radius:12px;margin:16px 0;}
+  .promptbox .ph{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line);}
+  .promptbox .ph b{font-size:13px;color:var(--accent);letter-spacing:.04em;text-transform:uppercase;}
+  .copybtn{font-family:var(--body);font-size:12.5px;font-weight:700;color:var(--accent-ink);background:var(--accent);border:none;border-radius:7px;padding:6px 14px;cursor:pointer;}
+  .copybtn:focus-visible{outline:2px solid var(--ink);outline-offset:2px;}
+  .promptbox pre{
+    font-family:var(--mono);font-size:12.6px;line-height:1.6;color:var(--ink-dim);
+    margin:0;padding:16px 18px;white-space:pre-wrap;overflow-x:auto;
+  }
+  .promptbox pre b{color:var(--ink);font-weight:600;}
+
+  .notebox{background:var(--panel-soft);border-radius:10px;padding:13px 17px;font-size:14px;color:var(--ink-dim);margin:14px 0;}
+  .notebox b{color:var(--ink);}
+  .notebox.owner{border:1.5px dashed var(--accent);background:transparent;}
+  .notebox.owner b{color:var(--accent);}
+
+  table{width:100%;border-collapse:collapse;margin:14px 0;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px;}
+  th{text-align:left;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);background:var(--panel-soft);padding:11px 15px;border-bottom:1px solid var(--line);}
+  td{padding:12px 15px;border-bottom:1px solid var(--line);color:var(--ink-dim);vertical-align:top;}
+  td:first-child{color:var(--ink);font-weight:600;}
+  tr:last-child td{border-bottom:none;}
+  td a{color:var(--accent);font-weight:600;word-break:break-all;}
+  .tablewrap{overflow-x:auto;}
+  td .sv{font-family:var(--mono);font-size:13px;color:var(--ink);}
+
+  .greenbox{background:var(--ok-bg);border:1px solid var(--ok-border);border-radius:12px;padding:18px 20px;margin:16px 0;}
+  .greenbox .gt{color:var(--ok);font-weight:700;margin-bottom:10px;font-size:14.5px;}
+  .greenbox .l{display:flex;gap:9px;font-size:14px;color:var(--ink-dim);margin-bottom:8px;}
+  .greenbox .l b{color:var(--ink);}
+  .greenbox .tick{color:var(--ok);font-weight:800;}
+  .greenbox .foot{margin-top:6px;font-size:14px;color:var(--ink-dim);}
+
+  .grid12{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0;}
+  .gcell{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 14px;}
+  .gcell .gn{font-weight:800;font-family:var(--display);font-size:15px;margin-bottom:8px;}
+  .gcell .h{display:flex;justify-content:space-between;background:var(--panel-soft);border-radius:6px;padding:5px 9px;font-size:12.5px;margin-bottom:5px;color:var(--ink-dim);}
+  .gcell .h b{color:var(--accent);}
+
+  .specs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;}
+  .spec{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;}
+  .spec .k{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-faint);}
+  .spec .v{font-weight:700;margin-top:3px;font-size:14.5px;}
+
+  ol.flow{list-style:none;padding:0;margin:16px 0;}
+  ol.flow li{display:flex;gap:13px;padding-bottom:18px;position:relative;}
+  ol.flow li:not(:last-child)::before{content:"";position:absolute;left:13px;top:30px;bottom:0;width:2px;background:var(--line);}
+  ol.flow .b{flex:0 0 27px;height:27px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;}
+  ol.flow .t b{display:block;font-size:15px;margin-bottom:2px;}
+  ol.flow .t span{color:var(--ink-dim);font-size:14px;}
+
+  .check{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:16px 0;}
+  .check .ct{font-weight:700;color:var(--accent);margin-bottom:12px;}
+  .check label{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ink-dim);margin-bottom:9px;cursor:pointer;}
+  .check input{accent-color:var(--accent);width:16px;height:16px;margin-top:2px;flex:0 0 auto;}
+  .check label b{color:var(--ink);}
+
+  ul.plain{padding-left:20px;margin:12px 0;}
+  ul.plain li{color:var(--ink-dim);margin-bottom:7px;font-size:14.5px;}
+  ul.plain li b{color:var(--ink);}
+  p{color:var(--ink-dim);}
+  p b{color:var(--ink);}
+
+  footer{margin-top:64px;padding-top:18px;border-top:1px solid var(--line);color:var(--ink-faint);font-size:12.5px;}
+
+  @media (max-width:700px){
+    .stats,.facts,.concepts,.specs{grid-template-columns:1fr;}
+    .grid12{grid-template-columns:1fr 1fr;}
+  }
+  @media (prefers-reduced-motion: reduce){ *{scroll-behavior:auto!important;} }
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Hjärtkompis · Product Test · One Product Store</div>
+  <h1>Tvillingkudden<br>Ad Manual</h1>
+  <p class="intro">You are making the full launch ad set for <b>one product</b>: a plush pillow sewn in the shape of a customer's pet, from their own photo. Do the research first, then run everything in <b>one Claude chat</b> — it remembers the product. You should never need to ask questions: the facts are locked on this page, and the default rules at the bottom cover the rest.</p>
+  <hr class="rule">
+
+  <div class="stats">
+    <div class="stat"><div class="num">12</div><div class="label">Video ads</div><div class="sub">4 concepts × 3 hooks.</div></div>
+    <div class="stat"><div class="num">4</div><div class="label">Image ads</div><div class="sub">One per concept.</div></div>
+    <div class="stat"><div class="num">16</div><div class="label">Total files</div><div class="sub">+ feed copy per concept.</div></div>
+  </div>
+
+  <h3 class="mini">The product — locked facts (never change these)</h3>
+  <div class="facts">
+    <div class="card locked">
+      <div class="ct">🔒 What we sell</div>
+      <ul>
+        <li><b>Tvillingkudden</b> — a plush pillow cut along the pet's outline with a <b>soft white fabric margin</b> around the printed photo. Knitted polyester, printed on both sides, fully sewn, no zipper. Machine washable 30°C.</li>
+        <li><b>One size: 45 cm tall. Price: 599 kr</b> incl. VAT. Free tracked shipping in Sweden.</li>
+        <li><b>How ordering works:</b> order → reply to the order confirmation with a photo → approve a digital draft → sewn to order, home in <b>8–12 business days</b>.</li>
+        <li><b>Guarantee:</b> nothing is sewn until the customer approves the draft. Wrong vs. the approved draft → remade free.</li>
+      </ul>
+    </div>
+    <div class="card never">
+      <div class="ct">🚫 Never in any ad</div>
+      <ul>
+        <li><b>No discounts, sales, countdowns or urgency.</b> The store says "the price you see is the price you pay" — and a new store may not legally advertise reference prices in Sweden.</li>
+        <li><b>No reviews, star ratings, "verified customer" or "10,000+ sold".</b> We have zero customers. Invented proof is illegal and contradicts our own site.</li>
+        <li><b>No "made in Sweden"</b> — it is sewn abroad and the site says so openly.</li>
+        <li><b>No fast-delivery claims.</b> Only "8–12 business days" is true.</li>
+        <li><b>Never mention returns or right of withdrawal.</b> Custom-made = no ångerrätt; the draft approval is the safety net.</li>
+      </ul>
+      <p class="why">If a winning ad you copy relies on any of these, keep its structure and replace that part.</p>
+    </div>
+  </div>
+  <div class="notebox">Product page: <a href="https://a6k90m-ii.myshopify.com/products/tvillingkudden-kudden-formad-exakt-som-ditt-husdjur" style="color:var(--accent);font-weight:600;">a6k90m-ii.myshopify.com → Tvillingkudden</a></div>
+  <div class="notebox owner"><b>Owner fills in:</b> store password (the shop is still password-protected): <span style="font-family:var(--mono)">[PASSWORD HERE]</span></div>
+
+  <h3 class="mini">The 4 concepts for this product</h3>
+  <p class="steplede">A <b>concept</b> is the main message; a <b>hook</b> is the first 3 seconds. Note: this product does <b>not</b> use the usual Clearance Sale and Social Proof concepts — they are replaced below, for the reasons in the red box.</p>
+  <div class="concepts">
+    <div class="concept">
+      <div class="k">Concept 1</div>
+      <div class="name">Demo <span class="tag">Most important</span></div>
+      <p>Photo becomes pillow. Show the transformation: phone photo → digital draft → the finished pillow with the white margin, hugged on the sofa.</p>
+      <div class="seed"><b>Hook seed:</b> the ordinary, slightly goofy everyday photo works better than a posed one — "that photo in your camera roll? It's a pillow now."</div>
+    </div>
+    <div class="concept">
+      <div class="k">Concept 2 · replaces Social Proof</div>
+      <div class="name">Recognition</div>
+      <p>The pet reacts to its own pillow — sniffing, head-tilt, stealing it. Honest social proof without fake reviews: the dog itself is the witness.</p>
+      <div class="seed"><b>Hook seed:</b> "Even the dog thinks it's the dog." We already have a working clip of this motif (see Assets).</div>
+    </div>
+    <div class="concept">
+      <div class="k">Concept 3 · replaces Clearance Sale</div>
+      <div class="name">Longing</div>
+      <p>For people living apart from their pet (students, commuters) and everyone whose dog is getting older. Something to hold every day.</p>
+      <p><b>Taste rules:</b> never show or say that a pet died, no sad music manipulation. The angle is distance and time — "she gets older every year" — kept warm, never exploitative.</p>
+      <div class="seed"><b>Hook seed:</b> "You moved out. The dog didn't."</div>
+    </div>
+    <div class="concept">
+      <div class="k">Concept 4</div>
+      <div class="name">Gift</div>
+      <p>Talks to the <b>gift-buyer</b>, not the pet owner: the partner, the adult child buying for mom/grandma, the friend of a dog person. Sell the receiver's reaction and the pride of finding "the perfect gift".</p>
+      <div class="seed"><b>Hook seed:</b> grandma laughing with her schnauzer pillow while the real schnauzer stares at it (see Assets — we have this image).</div>
+    </div>
+  </div>
+
+  <h2 class="step"><span class="n">1</span>Research the product (5 min)</h2>
+  <p class="steplede">Before opening Claude. Write short notes — you'll paste them into the first prompt.</p>
+  <ul class="plain">
+    <li><b>Main competitor:</b> allaboutvibe.com (US). Study their product pages and their ads in the <b>Meta Ad Library</b> — search "custom pet pillow", "pet pillow", "dog pillow photo".</li>
+    <li><b>Product reality:</b> the pillows on Temu listings show exactly what our factory makes (white margin, plush). Your ads must show <b>this</b> construction — a white border around the printed pet, not a tight die-cut.</li>
+    <li><b>Audience:</b> Swedish dog and cat owners, mostly women 30–55. Gift-buyers: their partners, adult children and friends.</li>
+    <li><b>Customer research is already done:</b> read the insights document linked in the Notion card (what real pet owners say they want). The 3 big ones: personal beats generic gifts · the candid photo beats the posed one · it should be <i>used daily</i>, not displayed.</li>
+  </ul>
+
+  <h2 class="step"><span class="n">2</span>Find &amp; transcribe winning ads</h2>
+  <p class="steplede">We remake winners. Find a top ad (most views/likes/comments) for <b>Demo</b> and <b>Gift</b> and transcribe them. For <b>Recognition</b> and <b>Longing</b> a direct winner may not exist — that's fine, note it and Claude writes those scripts from the insights instead.</p>
+  <div class="greenbox">
+    <div class="gt">✅ Before you copy a winning ad, ALL of these must be true</div>
+    <div class="l"><span class="tick">✓</span><span>It's from a <b>smaller brand or normal creator</b>, not a huge global brand.</span></div>
+    <div class="l"><span class="tick">✓</span><span>You replace the voice with <b>our own Swedish voiceover</b>.</span></div>
+    <div class="l"><span class="tick">✓</span><span>You add <b>our own Swedish captions</b> and remove their music (use trending or royalty-free audio).</span></div>
+    <div class="l"><span class="tick">✓</span><span><b>No other brand's logo, name or watermark</b> visible in your version.</span></div>
+    <div class="l"><span class="tick">✓</span><span>Anything showing a person's face uses <b>our assets or supplier footage</b>, never their clips re-uploaded.</span></div>
+    <div class="foot"><b>All true?</b> Go ahead. <b>Any one false?</b> Pick another winner. Never re-upload someone's exact video.</div>
+  </div>
+
+  <h2 class="step"><span class="n">3</span>One Claude chat → the voiceover scripts</h2>
+  <p class="steplede">Open a <b>new</b> Claude chat, press Copy, fill in the brackets, send. Keep this same chat for the whole product.</p>
+  <div class="promptbox">
+    <div class="ph"><b>Prompt 1 · Voiceovers</b><button class="copybtn" type="button">Copy</button></div>
+    <pre>I run a Swedish one-product store and need voiceover scripts for launch ads. Keep this whole chat about this ONE product.
+
+LOCKED PRODUCT FACTS (never contradict these):
+- Product: Tvillingkudden — a plush pillow sewn in the shape of the customer's pet, from their own photo, with a soft white fabric margin around the printed image. Both sides printed, fully sewn, machine washable 30°C.
+- One size 45 cm, 599 kr incl VAT, free tracked shipping in Sweden.
+- Flow: order → reply to the order confirmation with a photo (any phone photo works, a candid everyday photo is often best) → approve a digital draft before anything is sewn → home in 8–12 business days.
+- Guarantee: draft approved before sewing; wrong vs approved draft = remade free.
+
+FORBIDDEN in every script: discounts, urgency, countdowns; reviews, ratings, "verified customer", sold-counts; "made in Sweden"; fast delivery claims; any mention of returns or right of withdrawal. We have zero customers — invent no social proof.
+
+CUSTOMER INSIGHTS (from real pet-owner research — use them):
+1) Generic gifts (chocolate, flowers, mugs with paw prints) feel mass-produced; something SEWN after their own pet feels made-for-them.
+2) The candid, slightly goofy photo captures the pet's personality better than a posed one — details (ears, fur pattern, posture) are what make it "them".
+3) A personal object should be USED daily (a sofa pillow), not displayed.
+4) People living apart from their pet want something to see and hold every day.
+5) Humor + warmth together beats either alone.
+
+MY RESEARCH: [PASTE YOUR NOTES]
+WINNING DEMO AD (transcript): [PASTE]
+WINNING GIFT AD (transcript, leave blank if none found): [PASTE]
+
+Write 4 Swedish VOICEOVER scripts (natural spoken Swedish, short sentences, 20–35 seconds each) + 3 hook options (first 3 seconds) per concept:
+
+- DEMO: remake the winning demo for our product. The story: an ordinary phone photo becomes a pillow shaped like the pet. Show the white-margin construction and the approve-the-draft step as a trust point.
+- RECOGNITION: no winner exists — write from scratch. The pet reacts to its own pillow (sniffs it, tilts its head, tries to steal it). This is our social proof: the dog itself. Playful, warm.
+- LONGING: no winner exists — write from scratch. For people living apart from their pet, and for owners watching their dog get older. Warm and understated. HARD RULES: never say or imply the pet died, no grief exploitation — the angle is distance and time, "she gets older every year, the pillow stays".
+- GIFT: written for the GIFT-BUYER (partner, adult child, friend of a pet person), not the pet owner. Sell the receiver's reaction and the pride of the perfect personal gift vs generic gifts.
+
+Output clearly labeled: DEMO / RECOGNITION / LONGING / GIFT — script + 3 hooks each.</pre>
+  </div>
+
+  <h2 class="step"><span class="n">4</span>Voiceovers in ElevenLabs</h2>
+  <ul class="plain">
+    <li><b>Voice:</b> warm, natural <b>Swedish female voice, sounds 30–45</b> for Demo, Recognition and Longing (our audience). Do <b>not</b> use the default male voice from other products.</li>
+    <li><b>Gift:</b> pick a voice matching the gift-buyer in your script (e.g. a younger adult buying for their mom).</li>
+    <li>Read the script out loud once — if a sentence is hard to say, ask the same Claude chat: "Make it more casual and shorter."</li>
+  </ul>
+  <div class="notebox owner"><b>Owner fills in:</b> link to the ElevenLabs SOP: <span style="font-family:var(--mono)">[LINK HERE]</span></div>
+
+  <h2 class="step"><span class="n">5</span>Same chat → the 4 image ads</h2>
+  <div class="promptbox">
+    <div class="ph"><b>Prompt 2 · Image ads</b><button class="copybtn" type="button">Copy</button></div>
+    <pre>Same product. Give me 4 image-ad plans — one per concept: DEMO, RECOGNITION, LONGING, GIFT. For each:
+
+A) An image-generation prompt (photorealistic, casual iPhone-photo feel, Scandinavian home, bright, scroll-stopping, clear empty space for text). The pillow must always be: printed pet photo with a SOFT WHITE FABRIC MARGIN around it, plump, fully sewn — clearly a pillow, not a real animal. Note: I already have a finished asset pack (see my notes) — if an existing asset fits, say which one to use instead of generating new.
+
+B) The exact SWEDISH overlay text:
+- DEMO: one bold headline naming the transformation (photo → pillow shaped like YOUR pet). No prices needed; if price appears it is exactly "599 kr".
+- RECOGNITION: one playful line about the pet recognizing itself. NO review quotes, NO star ratings, NO "verified customer".
+- LONGING: one warm, understated line about distance or time. Never about death.
+- GIFT: a headline aimed at the gift-giver ("perfekta presenten till...") + one short line about the receiver's reaction.
+Also give a short button text per image (e.g. "Gör din egen kudde").
+
+FORBIDDEN on all images: discounts, urgency, countdowns, reviews, sold-counts, "made in Sweden", delivery-time promises other than 8–12 business days.
+
+Output labeled 1 DEMO, 2 RECOGNITION, 3 LONGING, 4 GIFT — each with A) and B).</pre>
+  </div>
+  <div class="notebox">Generate the picture (or use an asset from the pack below), add the Swedish text on top → 4 finished image ads.</div>
+
+  <h2 class="step"><span class="n">6</span>Same chat → the feed copy</h2>
+  <div class="promptbox">
+    <div class="ph"><b>Prompt 3 · Feed copy</b><button class="copybtn" type="button">Copy</button></div>
+    <pre>Same product. Swedish feed ad copy — one set per concept (DEMO, RECOGNITION, LONGING, GIFT). For each give PRIMÄRTEXT, RUBRIK, BESKRIVNING.
+
+Rules:
+- RUBRIK is ALWAYS the dream scenario. Never an offer — this store runs no discounts, ever. For GIFT the dream scenario is being the person who found the perfect gift. Max ~40 characters, punchy.
+- PRIMÄRTEXT: scroll-stopping first line, then 2–4 short benefit lines, then a clear CTA. Natural spoken Swedish, mobile friendly, 1–3 emojis allowed. For LONGING keep it calm — fewer emojis, no exclamation marks.
+- BESKRIVNING: one short supporting line.
+- The FORBIDDEN list from before applies to every line.
+
+Output labeled DEMO / RECOGNITION / LONGING / GIFT.</pre>
+  </div>
+
+  <h3 class="mini">Asset pack — ready-made material you can use freely</h3>
+  <p class="steplede">All AI-generated by us, on our CDN — use as b-roll, statics and hook frames. Never present them as customer photos. For real footage, use the supplier's clips from the Temu listing (ask the owner for the link).</p>
+  <div class="tablewrap">
+  <table>
+    <tr><th>File</th><th>What it shows / best use</th></tr>
+    <tr><td><a href="https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-fore-efter.png">fore-efter.png</a></td><td>Phone showing the photo next to the finished pillow of the same corgi. <b>The Demo money shot.</b></td></tr>
+    <tr><td><a href="https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-gif-kram.gif">gif-kram.gif</a></td><td>Hands squeezing the pillow — softness proof. Demo b-roll.</td></tr>
+    <tr><td><a href="https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-gif-nosar.gif">gif-nosar.gif</a></td><td>Shiba sniffing its own pillow. <b>The Recognition motif, moving.</b></td></tr>
+    <tr><td><a href="https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-ugc-hund-nosar.png">ugc-hund-nosar.png</a></td><td>Same motif as a still.</td></tr>
+    <tr><td><a href="https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-ugc-eldstad.png">ugc-eldstad.png</a></td><td>Owner + real labrador + pillow by the wood stove. Warm lifestyle.</td></tr>
+    <tr><td><a href="https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-ugc-selfie.png">ugc-selfie.png</a></td><td>Casual selfie with golden + pillow. UGC feel.</td></tr>
+    <tr><td><a href="https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-ugc-soffa-katt.png">ugc-soffa-katt.png</a></td><td>Woman hugging cat pillow, real black cat beside. Cat audience.</td></tr>
+    <tr><td><a href="https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-ugc-mormor.png">ugc-mormor.png</a></td><td>Grandma laughing with schnauzer pillow, real dog at her feet. <b>The Gift shot.</b></td></tr>
+    <tr><td><a href="https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-ugc-valp.png">ugc-valp.png</a></td><td>Bernese puppy next to its pillow twin. "Puppy days don't last."</td></tr>
+    <tr><td><a href="https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-barnkram.png">barnkram.png</a></td><td>Child hugging a big dog pillow on the sofa.</td></tr>
+    <tr><td><a href="https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-hund-portratt.png">hund-portratt.png</a></td><td>Clean product shot, dog pillow with white margin.</td></tr>
+    <tr><td><a href="https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-katt-portratt.png">katt-portratt.png</a></td><td>Clean product shot, cat pillow.</td></tr>
+    <tr><td><a href="https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-kuddvagg.png">kuddvagg.png</a></td><td>Seven different pet pillows on one sofa — "any pet works".</td></tr>
+    <tr><td><a href="https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-hero-wide.png">hero-wide.png</a></td><td>Wide hero with copy space.</td></tr>
+  </table>
+  </div>
+
+  <h3 class="mini">Fixed Swedish lines — use as-is</h3>
+  <div class="tablewrap">
+  <table>
+    <tr><th>Swedish (use this)</th><th>English meaning</th></tr>
+    <tr><td class="sv">Gör din egen kudde</td><td>Make your own pillow (standard CTA / button)</td></tr>
+    <tr><td class="sv">Sydd efter din bild</td><td>Sewn from your photo</td></tr>
+    <tr><td class="sv">Du godkänner utkastet innan vi syr</td><td>You approve the draft before we sew (trust line)</td></tr>
+    <tr><td class="sv">Fri frakt i hela Sverige</td><td>Free shipping across Sweden</td></tr>
+    <tr><td class="sv">599 kr · En storlek, 45 cm</td><td>599 kr · One size, 45 cm</td></tr>
+  </table>
+  </div>
+
+  <h2 class="step"><span class="n">7</span>Edit &amp; finish</h2>
+  <ol class="flow">
+    <li><div class="b">1</div><div class="t"><b>Build the 4 video bodies.</b><span>Winning ad = layout. Swap in our assets + supplier footage, add the ElevenLabs voiceover + Swedish captions. Gift footage matches the gift-buyer, not the pet owner.</span></div></li>
+    <li><div class="b">2</div><div class="t"><b>Make 3 hooks per body.</b><span>Swap only the first 3 seconds. 4 × 3 = 12 videos.</span></div></li>
+    <li><div class="b">3</div><div class="t"><b>Finish the 4 image ads.</b><span>Picture + Swedish overlay text.</span></div></li>
+    <li><div class="b">4</div><div class="t"><b>Rename all 16 files + save the copy.</b><span>Upload to the product's Finished Ads folder. Done — don't message anyone.</span></div></li>
+  </ol>
+
+  <div class="grid12">
+    <div class="gcell"><div class="gn">Demo</div><div class="h">Hook 1 <b>Ad 1</b></div><div class="h">Hook 2 <b>Ad 2</b></div><div class="h">Hook 3 <b>Ad 3</b></div></div>
+    <div class="gcell"><div class="gn">Recognition</div><div class="h">Hook 1 <b>Ad 4</b></div><div class="h">Hook 2 <b>Ad 5</b></div><div class="h">Hook 3 <b>Ad 6</b></div></div>
+    <div class="gcell"><div class="gn">Longing</div><div class="h">Hook 1 <b>Ad 7</b></div><div class="h">Hook 2 <b>Ad 8</b></div><div class="h">Hook 3 <b>Ad 9</b></div></div>
+    <div class="gcell"><div class="gn">Gift</div><div class="h">Hook 1 <b>Ad 10</b></div><div class="h">Hook 2 <b>Ad 11</b></div><div class="h">Hook 3 <b>Ad 12</b></div></div>
+  </div>
+
+  <h3 class="mini">Default rules — don't ask, just do this</h3>
+  <div class="tablewrap">
+  <table>
+    <tr><th>If this happens…</th><th>Do this</th></tr>
+    <tr><td>Which winning ad do I pick?</td><td>The one with the most views, likes and comments — as long as it passes the green checklist.</td></tr>
+    <tr><td>No winner exists for Recognition or Longing.</td><td>Expected. Claude writes those from the insights — the prompt already says so.</td></tr>
+    <tr><td>The winner's script uses a discount or fake reviews.</td><td>Keep its structure and pacing, replace that content with the draft-approval trust point or the insights.</td></tr>
+    <tr><td>The voiceover sounds stiff.</td><td>Reply in the same chat: "Make it more casual and human, and shorter."</td></tr>
+    <tr><td>I don't have good footage.</td><td>Use the asset pack + the supplier's videos from the Temu listing.</td></tr>
+    <tr><td>The ad feels long or boring.</td><td>Cut the slow parts. Keep the hook and the best moment.</td></tr>
+    <tr><td>I finished everything.</td><td>Rename the 16 files, upload them + the copy. Done.</td></tr>
+  </table>
+  </div>
+
+  <h3 class="mini">Technical specs — all videos</h3>
+  <div class="specs">
+    <div class="spec"><div class="k">Format</div><div class="v">Vertical 9:16</div></div>
+    <div class="spec"><div class="k">Hook</div><div class="v">Grab the viewer in the first 3 sec</div></div>
+    <div class="spec"><div class="k">Voiceover</div><div class="v">Swedish (ElevenLabs), female 30–45</div></div>
+    <div class="spec"><div class="k">Captions</div><div class="v">Swedish, on screen, max 2 lines</div></div>
+    <div class="spec"><div class="k">Ending</div><div class="v">CTA: "Gör din egen kudde"</div></div>
+    <div class="spec"><div class="k">Product look</div><div class="v">White margin around the print — always</div></div>
+  </div>
+
+  <h3 class="mini">Naming &amp; definition of done</h3>
+  <div class="notebox">
+    <b>Videos:</b> <span style="font-family:var(--mono)">Tvillingkudden – Concept – Hook N</span> → e.g. <span style="font-family:var(--mono)">Tvillingkudden – Longing – Hook 2</span><br>
+    <b>Images:</b> <span style="font-family:var(--mono)">Tvillingkudden – Image – Concept</span> → e.g. <span style="font-family:var(--mono)">Tvillingkudden – Image – Gift</span>
+  </div>
+
+  <div class="check" id="deliver-check">
+    <div class="ct">Check off everything before you upload</div>
+    <label><input type="checkbox"> Did the 5-min research (competitor, product reality, audience, insights doc)</label>
+    <label><input type="checkbox"> Found + transcribed winners for <b>Demo</b> and <b>Gift</b> (or noted none found)</label>
+    <label><input type="checkbox"> Ran Prompt 1 → scripts + 3 hooks for all 4 concepts</label>
+    <label><input type="checkbox"> Voiceovers made — <b>female Swedish voice</b> (gifter voice for Gift)</label>
+    <label><input type="checkbox"> Ran Prompt 2 → 4 image ads finished</label>
+    <label><input type="checkbox"> Ran Prompt 3 → copy for all 4 concepts</label>
+    <label><input type="checkbox"> 12 videos edited: 4 concepts × 3 hooks, 9:16, captions, CTA</label>
+    <label><input type="checkbox"> Every ad passes the <b>Never-list</b>: no discounts, no reviews, no "made in Sweden", no fast delivery, no returns talk</label>
+    <label><input type="checkbox"> Longing concept: nothing implies the pet died</label>
+    <label><input type="checkbox"> Product shown with the <b>white margin</b> construction everywhere</label>
+    <label><input type="checkbox"> All 16 files renamed + uploaded, copy saved</label>
+  </div>
+
+  <h3 class="mini">After the test</h3>
+  <ol class="flow">
+    <li><div class="b">1</div><div class="t"><b>See what sells.</b><span>Usually 1–2 angles out of 4. Completely normal.</span></div></li>
+    <li><div class="b">2</div><div class="t"><b>The owner turns off what doesn't sell.</b><span>You don't need to do anything here.</span></div></li>
+    <li><div class="b">3</div><div class="t"><b>Winners get real UGC later.</b><span>We never buy expensive UGC before the product proves itself.</span></div></li>
+  </ol>
+
+  <footer>Hjärtkompis · Tvillingkudden ad instructions · Replaces the generic "How to Make Ads for a New Product" for this product · Updated 2026-08-29</footer>
+</div>
+
+<script>
+  document.querySelectorAll('.copybtn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var pre = btn.closest('.promptbox').querySelector('pre');
+      var done = function(){ btn.textContent = 'Copied!'; setTimeout(function(){ btn.textContent = 'Copy'; }, 1600); };
+      try {
+        navigator.clipboard.writeText(pre.textContent).then(done, function(){ btn.textContent = 'Select & copy manually'; });
+      } catch(e){ btn.textContent = 'Select & copy manually'; }
+    });
+  });
+  (function(){
+    var boxes = document.querySelectorAll('#deliver-check input');
+    boxes.forEach(function(box, i){
+      try { if (localStorage.getItem('tvilling-check-' + i) === '1') box.checked = true; } catch(e){}
+      box.addEventListener('change', function(){
+        try { localStorage.setItem('tvilling-check-' + i, box.checked ? '1' : '0'); } catch(e){}
+      });
+    });
+  })();
+</script>
