@@ -290,6 +290,10 @@ export function annonsbehov(rader, { logg = [], idag = null } = {}) {
   const KLAR = ['FORSTA_BATCH_KLAR', 'CS_BATCH_KLAR'];
   const behov = [];
   for (const r of rader) {
+    // Fryst = händerna borta helt: datan går inte att lita på (spärrat kort,
+    // prishöjning på väg). En brief skriven nu skulle bygga på fel siffror
+    // eller fel pris. Gäller alla behovstyper, inte bara rundorna.
+    if (r.dom?.kod === 'FRYST') continue;
     const egna = logg.filter((rad) => rad.kampanj_id === r.id && rad.genomford === true);
     const klarRader = egna.filter((rad) => KLAR.includes(rad.kod));
     const harBatch = klarRader.length > 0;
@@ -308,7 +312,6 @@ export function annonsbehov(rader, { logg = [], idag = null } = {}) {
 
     if (harBatch) {
       if (dagarSedanBatch !== null && dagarSedanBatch < BRIEF_INTERVALL_DAGAR) continue; // låt batchen landa
-      if (r.dom?.kod === 'FRYST') continue; // fryst produkt: datan går inte att bedöma — ingen runda förrän frysen släpper
       const rundaAntal = rundkvot(r.budget);
       if (rundaAntal === 0) continue; // ingen budget — ingen runda
       let fokus = '';

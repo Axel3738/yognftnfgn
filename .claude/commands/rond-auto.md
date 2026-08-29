@@ -159,6 +159,10 @@ länge produkterna är ≤6 — blir de fler: säg till Axel att cykeln inte gå
 - Behov `brief_runda` (och `ersatt`/`mata_vinnare` på en produkt som redan har
   minne i `products/<id>/`) → följ `.claude/commands/cs.md`. Står det ett
   "Fokus:" i orsaken styr det rundans inriktning.
+  **Saknar produkten minnesfiler** (ingen `products/<id>/dna.md`, inte heller i
+  `git log --all` — händer när batchen är historisk, gjord före systemet) →
+  kör `.claude/commands/forsta-batch.md`-flödet i stället, det bygger minnet
+  från noll. Logga ändå `CS_BATCH_KLAR` (produkten HAR redan haft en batch).
 - **Rundans storlek = `rundaAntal`** i behovsraden (halva veckokvoten,
   avrundad uppåt — två rundor per vecka ≈ veckokvoten). För `forsta_batch`
   gäller i stället hela veckokvoten (`veckokvot` i utfallet).

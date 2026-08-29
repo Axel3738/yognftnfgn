@@ -340,10 +340,14 @@ test('3-dagarsrundan: tyst i tre dagar, sen brief_runda med fokus', () => {
   assert.match(behov[0].orsak, /ersätt det som pausats/);
 });
 
-test('3-dagarsrundan hoppar över frysta produkter och produkter utan budget', () => {
+test('frysta produkter ger inga behov alls — inte ens första batchen', () => {
   const logg = [{ kampanj_id: 'a', kod: 'CS_BATCH_KLAR', genomford: true, datum: '2026-08-20' }];
   const fryst = [{ id: 'a', namn: 'X | BE ROAS 1.50', spendTotal: 9000, budget: 2000, dom: { kod: 'FRYST', vinstProcent: null } }];
   assert.equal(annonsbehov(fryst, { logg, idag: '2026-08-29' }).length, 0);
+  // Fryst UTAN batch och över tröskeln (Cykelshorts-fallet: prishöjning på
+  // väg — en brief nu skulle bränna in fel pris): ingen forsta_batch.
+  const frystUtanBatch = [{ id: 'b', namn: 'Y | BE ROAS 1.50', spendTotal: 1850, budget: 1000, dom: { kod: 'FRYST', vinstProcent: null } }];
+  assert.equal(annonsbehov(frystUtanBatch, { logg: [], idag: '2026-08-29' }).length, 0);
   const utanBudget = [{ id: 'a', namn: 'X | BE ROAS 1.50', spendTotal: 9000, dom: { vinstProcent: 18 } }];
   assert.equal(annonsbehov(utanBudget, { logg, idag: '2026-08-29' }).length, 0);
 });
