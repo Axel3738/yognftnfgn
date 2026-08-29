@@ -21,6 +21,8 @@ verifiera varje skrivning, logga, uppdatera dashboarden.
 - Checka ut grenen `claude/daily-agent-discussion-uos5df` och dra senaste:
   `git pull origin claude/daily-agent-discussion-uos5df` — budgetloggen är
   minnet, en gammal kopia gör att kadensspärren räknar fel.
+  Saknas repot helt i containern: klona
+  `https://github.com/Axel3738/yognftnfgn.git` och checka ut grenen först.
 - Finns inte Meta-verktygen (`mcp__ADsmanagaer__*`): **avbryt allt**, säg det
   rakt ut och gör ingenting annat. Ingen rapport på ingenting.
 
