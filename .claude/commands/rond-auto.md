@@ -21,8 +21,13 @@ verifiera varje skrivning, logga, uppdatera dashboarden.
 - Checka ut grenen `claude/daily-agent-discussion-uos5df` och dra senaste:
   `git pull origin claude/daily-agent-discussion-uos5df` — budgetloggen är
   minnet, en gammal kopia gör att kadensspärren räknar fel.
-  Saknas repot helt i containern: klona
-  `https://github.com/Axel3738/yognftnfgn.git` och checka ut grenen först.
+  Saknas repot helt i containern: hämta det med
+  `mcp__Claude_Code_Remote__add_repo` (owner `Axel3738`, repo `yognftnfgn`,
+  access `push`) och följ klon-instruktionen i svaret. Finns inte det
+  verktyget: klona läskopian `https://github.com/Axel3738/yognftnfgn.git`.
+- **Kan du inte PUSHA till repot: gör INGA ändringar i Meta.** Utan pushad
+  logg blir kadensspärren blind och nästa körning dubbeländrar. Kör då som
+  ren rapport och säg varför.
 - Finns inte Meta-verktygen (`mcp__ADsmanagaer__*`): **avbryt allt**, säg det
   rakt ut och gör ingenting annat. Ingen rapport på ingenting.
 
