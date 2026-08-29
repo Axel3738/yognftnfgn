@@ -166,16 +166,25 @@ länge produkterna är ≤6 — blir de fler: säg till Axel att cykeln inte gå
 - **Rundans storlek = `rundaAntal`** i behovsraden (halva veckokvoten,
   avrundad uppåt — två rundor per vecka ≈ veckokvoten). För `forsta_batch`
   gäller i stället hela veckokvoten (`veckokvot` i utfallet).
-- **Ny produkt utan Notion-hub:** bygg aldrig en hub från grunden. Duplicera
-  en befintlig hubs schema utan innehåll (Axels arbetssätt): hämta schemat
-  från t.ex. "Trimmer belt creative hub" (`3aa270ab-908c-808b-9d87-d1f1a0d70cbc`)
-  med notion-fetch, skapa databasen med samma kolumner/alternativ via
-  notion-create-database, och lägg till en "Pending Approval"-boardvy
-  (gruppera på Status, filtrera Typ = "Video - Pending Approval").
-  Status-ALTERNATIVEN kan API:t inte klona (känd Notion-begränsning) — de blir
-  standard (Inte påbörjad/Pågår/Klar); använd "Inte påbörjad" som Draft och
-  nämn i svaret att Axel kan döpa om dem i UI:t om han vill ha samma som i de
-  andra hubbarna. Anteckna hubbens id + Drive-mappens id i `agent/produktkarta.json`.
+- **Ny produkt utan Notion-hub:** bygg ALDRIG en hub från grunden och klona
+  ALDRIG schemat via create-database — då blir statusarna svenska
+  (Inte påbörjad/Pågår/Klar) och hubben hamnar utanför teamspacen. Fel båda
+  gångerna det testades 2026-08-29. Gör i stället:
+  1. Duplicera den TOMMA mallen med notion-duplicate-page — sök i Notion på
+     **"Creative Hub mall TOM"** (Axel skapar den; ligger i
+     Bäverbutiken-teamspacen). Dubbletten ärver engelska statusar (Draft,
+     In progress, In progress 2, Approved …), alla vyer OCH teamspace-platsen.
+  2. Dupliceringen är asynkron — vänta och hämta om tills databasen finns,
+     döp sedan om via notion-update-data-source till
+     "<Produktnamn på engelska> creative hub".
+  3. Skapa items med notion-create-pages (Status "Draft",
+     Typ "Video - Pending Approval").
+  Finns mallen inte (sökningen ger noll): skapa INGEN hub — lista i svaret
+  exakt vilka items som skulle skapats och be Axel skapa mallen (duplicera
+  Creative Hub master utan innehåll, döp den "Creative Hub mall TOM").
+  **ALLT som skrivs i Notion är på ENGELSKA** — itemnamn, statusar, innehåll,
+  kommentarer. Redigerarna läser inte svenska.
+  Anteckna hubbens id + Drive-mappens id i `agent/produktkarta.json`.
 - När batchen är klar OCH uppladdad till Notion: skriv en loggrad med kod
   `FORSTA_BATCH_KLAR` (respektive `CS_BATCH_KLAR`), `genomford: true` —
   det är den raden som startar om 3-dagarsklockan.
