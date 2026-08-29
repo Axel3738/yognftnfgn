@@ -70,6 +70,42 @@ export function lasBelopp(värde) {
   return Number.isFinite(tal) ? tal : null;
 }
 
+/**
+ * Kostnad per order i kronor, från delarna den består av.
+ * Leverantörspris och frakt betalas i USD, avgifter ofta i EUR — därför tre poster.
+ */
+export function kostnadSek(kostnad, fx) {
+  if (!kostnad || !fx) return null;
+  const usd = Number(kostnad.usd) || 0;
+  const eur = Number(kostnad.eur) || 0;
+  const sek = Number(kostnad.sek) || 0;
+  if (usd && !Number.isFinite(fx.usd_sek)) return null;
+  if (eur && !Number.isFinite(fx.eur_sek)) return null;
+  const summa = usd * (fx.usd_sek ?? 0) + eur * (fx.eur_sek ?? 0) + sek;
+  return summa > 0 ? summa : null;
+}
+
+/**
+ * Break-even-ROAS ur försäljningspris och kostnad per order.
+ *
+ *   vinst = omsättning - kostnad - annonsspend
+ *   vid noll vinst: annonsspend = omsättning - kostnad
+ *   ROAS = omsättning / annonsspend = pris / (pris - kostnad)
+ *
+ * Momsen dras INTE av. Verifierat 2026-08-28 mot två produkter: Cykelshorts
+ * (faktisk kostnad 117,60 kr mot 119,75 kr som modellen utan momsavdrag
+ * förutsätter — 1,8 % ifrån; modellen med momsavdrag är 42 % fel) och
+ * Bälteslipmaskinen (utan momsavdrag ger 34,8 USD, vilket stämmer med att
+ * inköpspriset nyss höjdes till 40 USD; med momsavdrag ger den 15,8 USD).
+ */
+export function breakEvenRoas(prisSek, kostnadPerOrderSek) {
+  if (!Number.isFinite(prisSek) || prisSek <= 0) return null;
+  if (!Number.isFinite(kostnadPerOrderSek) || kostnadPerOrderSek < 0) return null;
+  const marginal = prisSek - kostnadPerOrderSek;
+  if (marginal <= 0) return null; // Produkten går inte att annonsera lönsamt alls.
+  return prisSek / marginal;
+}
+
 /** Vinst i procent av omsättningen. Null när ROAS saknas eller är noll (= inga köp). */
 export function vinstProcent(breakEven, roas) {
   if (!Number.isFinite(breakEven) || breakEven <= 1) return null;

@@ -9,7 +9,7 @@
 import { readFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { besked, lasBelopp, lasBreakEven } from './besked.mjs';
+import { besked, breakEvenRoas, kostnadSek, lasBelopp, lasBreakEven } from './besked.mjs';
 import { backDagarIRad, dagarSedanAndring, lasLogg, raknaTrasigaRader } from './logg.mjs';
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
@@ -42,7 +42,28 @@ export function kontrolleraKonto(data) {
   return fel;
 }
 
-export function bedomKampanj(kampanj, { logg, idag, karta }) {
+/**
+ * Break-even för en kampanj, i tur och ordning:
+ * 1. räknat ur kostnadsblocket i produktkarta.json (pris och kostnad per order)
+ * 2. ett fast tal i produktkarta.json
+ * 3. talet i kampanjnamnet
+ */
+export function breakEvenForPost(post, kampanjnamn, fx) {
+  if (post?.kostnad) {
+    const kostnad = kostnadSek(post.kostnad, fx);
+    const be = breakEvenRoas(Number(post.kostnad.pris_sek), kostnad);
+    if (Number.isFinite(be)) {
+      return { be, kalla: post.kostnad.kalla || 'uträknad ur produktkarta.json' };
+    }
+  }
+  if (Number.isFinite(post?.break_even_roas) && post.break_even_roas > 1) {
+    return { be: post.break_even_roas, kalla: post.break_even_kalla || 'produktkarta.json' };
+  }
+  const ur = lasBreakEven(kampanjnamn);
+  return { be: ur.be, kalla: ur.kalla };
+}
+
+export function bedomKampanj(kampanj, { logg, idag, karta, fx }) {
   const post = karta?.[kampanj.id] ?? {};
   const budget = lasBelopp(kampanj.daily_budget);
   const spend3d = lasBelopp(kampanj.spend_3d);
@@ -78,23 +99,22 @@ export function bedomKampanj(kampanj, { logg, idag, karta }) {
     };
   }
 
-  const ur = lasBreakEven(kampanj.namn);
-  const breakEven = Number.isFinite(post.break_even_roas) ? post.break_even_roas : ur.be;
+  const källa = breakEvenForPost(post, kampanj.namn, fx);
 
   return {
     ...grund,
     dom: besked({
       namn: kampanj.namn,
       lage: grund.lage,
-      breakEven: Number.isFinite(post.break_even_roas) ? post.break_even_roas : null,
-      breakEvenKalla: post.break_even_kalla,
+      breakEven: källa.be,
+      breakEvenKalla: källa.kalla,
       roas3d,
       spend3d,
       kop3d,
       spendTotal,
       budget,
       dagarSedanAndring: dagarSedanAndring(logg, kampanj.id, idag),
-      backDagarIRad: backDagarIRad(kampanj.dygn, breakEven),
+      backDagarIRad: backDagarIRad(kampanj.dygn, källa.be),
     }),
   };
 }
@@ -205,9 +225,11 @@ async function main() {
   }
 
   let karta = {};
+  let fx = null;
   try {
     const rå = JSON.parse(await readFile(join(HÄR, 'produktkarta.json'), 'utf8'));
     for (const post of rå.kampanjer ?? []) karta[post.campaign_id] = post;
+    fx = rå.valutakurser ?? null;
   } catch {
     karta = {};
   }
@@ -217,7 +239,12 @@ async function main() {
   const trasiga = await raknaTrasigaRader();
   if (trasiga > 0) varningar.push(`${trasiga} trasig(a) rader i budgetloggen hoppades över.`);
 
-  const rader = data.kampanjer.map((k) => bedomKampanj(k, { logg, idag, karta }));
+  const rader = data.kampanjer.map((k) => bedomKampanj(k, { logg, idag, karta, fx }));
+
+  for (const r of rader) {
+    const anm = karta[r.id]?.anmarkning;
+    if (anm) varningar.push(`${r.namn.split('|')[0].trim()}: ${anm}`);
+  }
 
   const utankarta = rader.filter((r) => !karta[r.id]);
   if (utankarta.length > 0) {

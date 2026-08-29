@@ -19,7 +19,8 @@
       "lage": "drift",
       "lage_motivering": "32 köp och livstids-ROAS 2,43 mot break-even 1,58 (avläst 2026-08-28)",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "anmarkning": "Inköpspriset höjdes till 40 USD (2026-08-28) men kampanjnamnets break-even 1,58 bygger på den gamla kostnaden, ca 34,8 USD totalt. Den nya break-even ligger mellan 1,73 och 2,06 beroende på om frakt och avgifter tillkommer ovanpå de 40 USD — och det avgör om beskedet blir 'låt vara' eller 'sänk'. SAKNAS: raden för Bälteslipmaskinen ur kostnadsarket (samma tre kolumner som Cykelshorts: pris, frakt, totalt). Tills den finns dömer ronden på det gamla talet 1,58."
     },
     {
       "campaign_id": "120249952968210291",
@@ -59,7 +60,39 @@
       "lage": "test",
       "lage_motivering": "5 köp sedan start",
       "break_even_roas": null,
-      "break_even_kalla": "SAKNAS — kampanjnamnet säger 'BE ROAS TBC'. Ronden vägrar döma den här kampanjen tills talet står i namnet. Sätt det i Ads Manager, gissa inte här."
+      "break_even_kalla": "uträknad ur kostnadsblocket nedan",
+      "kostnad": {
+        "pris_sek": 382,
+        "usd": 12.74,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "uträknad: AOV 382 kr ur Meta (1 183 kr spend x ROAS 1,615 / 5 köp, 2026-08-28) = ca 1,68 par per order. Kostnadstrappan 8,9 / 14,9 / 20,2 USD för 1 / 2 / 3 par (Axels kostnadsark 2026-08-28) ger 12,74 USD vid 1,68 par, plus 2,9 EUR per order.",
+        "pristrappa": [
+          {
+            "antal": 1,
+            "pris_sek": 259,
+            "usd": 8.9,
+            "eur": 2.9,
+            "break_even_roas": 1.83
+          },
+          {
+            "antal": 2,
+            "pris_sek": 440,
+            "usd": 14.9,
+            "eur": 2.9,
+            "break_even_roas": 1.66
+          },
+          {
+            "antal": 3,
+            "pris_sek": 622,
+            "usd": 20.2,
+            "eur": 2.9,
+            "break_even_roas": 1.57
+          }
+        ],
+        "datum": "2026-08-28"
+      },
+      "anmarkning": "Break-even 1,68 bygger på bara 5 köp. Räkna om den när produkten har 30+ köp — blandningen mellan 1-, 2- och 3-pack styr talet helt (1,83 vid bara 1-pack, 1,57 vid bara 3-pack). Kampanjnamnet säger fortfarande 'BE ROAS TBC'; sätt 1.68 där så syns talet även utanför ronden."
     },
     {
       "campaign_id": "120249990507280291",
@@ -69,5 +102,13 @@
       "break_even_roas": null,
       "break_even_kalla": "kampanjnamnet"
     }
-  ]
+  ],
+  "valutakurser": {
+    "kommentar": "Används för att räkna om kostnad i USD/EUR till kronor. Mid-market 2026-08-27. Din bank eller ditt kort tar troligen 1-3 % sämre kurs — höj talen om du vill räkna med det.",
+    "usd_sek": 9.6,
+    "eur_sek": 11.09,
+    "datum": "2026-08-27",
+    "kalla": "mid-market (investing.com 9,69 · XE 9,52 · OFX 9,50 för USD; XE 11,09 för EUR)"
+  },
+  "momsnot": "Break-even räknas RAKT PÅ FÖRSÄLJNINGSPRISET, utan momsavdrag. Verifierat 2026-08-28 genom att vända på två befintliga break-even-tal: Cykelshorts faktiska kostnad 117,60 kr mot 119,75 kr som modellen utan momsavdrag förutsätter (1,8 % ifrån), medan modellen med momsavdrag ger 67,95 kr (42 % fel). Bälteslipmaskinen pekar åt samma håll: utan momsavdrag 34,8 USD, vilket stämmer med att inköpspriset nyss höjdes till 40 USD; med momsavdrag 15,8 USD. Detta besvarar frågan CLAUDE.md flaggade som olöst. Säger Axel något annat gäller hans svar."
 }

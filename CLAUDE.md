@@ -154,7 +154,7 @@ npm run dash       # node dashboard/build.mjs     — bygger dashboard/index.htm
 npm run status     # node dashboard/cli.mjs status
 npm run review     # node dashboard/cli.mjs review-queue
 npm run seed       # node dashboard/seed.mjs --force  (⚠️ skriver över testdata)
-npm test           # node --test dashboard/ + agent/ — 61 tester, ska vara gröna
+npm test           # node --test dashboard/ + agent/ — 69 tester, ska vara gröna
 ```
 
 Enskilt test: `node --test --test-name-pattern "<del av testnamnet>" dashboard/test/rules.test.mjs`
@@ -217,10 +217,15 @@ när en budget passerar den gränsen.
 - `axelbaltet`: `products.json` säger break-even-CPA **299 kr**, `products/axelbaltet/dna.md`
   säger **326 kr**. Kill-beslut mäts mot break-even — fråga Axel vilken som gäller.
   Båda är dessutom räknade på gamla priset 509 kr och är för lågt satta vid 599 kr.
-- **Bäverbutikens momsläge står ingenstans i repot.** Fråga Axel, gissa inte.
-  Grillkliniken säljer *utan* moms — marginalen räknas rakt på priset (Mastern:
-  999 kr, inte 799 kr netto). Drar du reflexmässigt av 25 % ser lönsamma annonser
-  ut att gå med förlust.
+- **Momsläget: break-even räknas rakt på priset, utan momsavdrag.** Härlett
+  2026-08-28 genom att vända på två befintliga break-even-tal mot verklig COGS:
+  Cykelshorts faktiska kostnad 117,60 kr mot 119,75 kr som modellen utan
+  momsavdrag förutsätter (1,8 % ifrån) — med momsavdrag blir det 67,95 kr, 42 %
+  fel. Bälteslipmaskinen pekar åt samma håll (34,8 USD utan momsavdrag, vilket
+  stämmer med att inköpspriset nyss höjdes till 40 USD; 15,8 USD med). Samma
+  modell som Grillkliniken. Drar du reflexmässigt av 25 % ser lönsamma annonser
+  ut att gå med förlust. Uträkningen bor i `agent/besked.mjs` (`breakEvenRoas`)
+  och är testad. Säger Axel något annat gäller hans svar.
 
 Alla `launches[]` i `products.json` är tomma. Kvotskriptet visar därför ett
 minusläge som speglar utebliven loggning, inte utebliven produktion — logga med

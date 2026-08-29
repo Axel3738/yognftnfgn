@@ -15,7 +15,7 @@ Vill du bara se om koden funkar, utan att hämta ny data:
 ```bash
 node agent/rond.mjs          # rapport i terminalen
 node agent/rond.mjs --json   # samma sak som maskindata
-npm test                     # 44 tester, ska vara gröna
+npm test                     # 69 tester, ska vara gröna
 ```
 
 ## Filerna
@@ -57,10 +57,30 @@ dem oförändrade — inte att bedöma dem.
 
 ## Det som inte är avgjort
 
-- **Vilket break-even som gäller.** Ronden läser talet ur kampanjnamnet,
-  eftersom det är det enda som följer med kampanjen. `products/products.json`
-  har andra tal för sina sex produkter — de kampanjerna är pausade i Meta och
-  berör därför inte ronden idag. Skulle de startas om måste talen jämkas.
-- **Om momsen är avdragen** i break-even-talen. Står ingenstans. Är den inte
-  det ser lönsamma produkter sämre ut än de är.
+- **Vilket break-even som gäller.** Ronden tar talet i tre steg: uträknat ur
+  kostnadsblocket i `produktkarta.json` om det finns, annars ett fast tal där,
+  annars talet i kampanjnamnet. `products/products.json` har andra tal för sina
+  sex produkter — de kampanjerna är pausade i Meta och berör därför inte ronden
+  idag. Skulle de startas om måste talen jämkas.
+- **Bälteslipmaskinens nya break-even.** Inköpspriset höjdes till 40 USD
+  2026-08-28, men det saknas besked om frakt och avgifter ovanpå. Break-even
+  ligger någonstans mellan 1,73 och 2,06 — och det avgör om beskedet blir
+  "låt vara" eller "sänk". Ronden kör vidare på det gamla talet 1,58 tills
+  raden ur kostnadsarket finns.
+- **Cykelshorts break-even bygger på 5 köp.** Räkna om vid 30+.
 - **Om ronden någon gång ska få ändra själv.** Idag: nej.
+
+## Så räknas break-even
+
+```
+break-even-ROAS = pris / (pris − kostnad per order)
+```
+
+Momsen dras **inte** av. Kostnaden per order läggs ihop av delar i USD, EUR och
+kronor, med valutakurserna i `produktkarta.json`. Ändras ett inköpspris räcker
+det att ändra ett tal där — ronden räknar om break-even själv.
+
+Går produkten i flera prisnivåer (1-pack, 2-pack, 3-pack) är break-even olika
+för varje nivå. Ronden använder ett blandat tal som utgår från den AOV Meta
+faktiskt visar, och trappan sparas i `produktkarta.json` så det går att se hur
+talet kom till.

@@ -1,7 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  avstandTillGrans, besked, lasBelopp, lasBreakEven, nyBudget, vinstProcent,
+  avstandTillGrans, besked, breakEvenRoas, kostnadSek, lasBelopp, lasBreakEven,
+  nyBudget, vinstProcent,
   GOLV_SEK, TAK_SEK,
 } from '../besked.mjs';
 
@@ -212,4 +213,42 @@ test('avstandTillGrans mäter till närmaste av 0, 16 och 25 procent', () => {
   assert.equal(avstandTillGrans(24), 1);
   assert.equal(avstandTillGrans(20), 4);
   assert.equal(avstandTillGrans(null), null);
+});
+
+test('kostnadSek lägger ihop USD, EUR och kronor', () => {
+  const fx = { usd_sek: 9.6, eur_sek: 11.09 };
+  // Cykelshorts 1-pack: 8,9 USD + 2,9 EUR
+  assert.equal(Math.round(kostnadSek({ usd: 8.9, eur: 2.9 }, fx) * 100) / 100, 117.6);
+  assert.equal(kostnadSek({ sek: 50 }, fx), 50);
+  assert.equal(kostnadSek(null, fx), null);
+  assert.equal(kostnadSek({ usd: 8.9 }, null), null);
+  // Saknas kursen för en valuta som faktiskt används: vägra räkna.
+  assert.equal(kostnadSek({ usd: 8.9 }, { eur_sek: 11.09 }), null);
+});
+
+test('breakEvenRoas räknar pris delat med marginal', () => {
+  // Cykelshorts 1-pack: 259 kr, kostnad 117,60 kr
+  assert.equal(Math.round(breakEvenRoas(259, 117.6) * 100) / 100, 1.83);
+  // 3-pack: 622 kr, kostnad 226,08 kr
+  assert.equal(Math.round(breakEvenRoas(622, 226.08) * 100) / 100, 1.57);
+  // Bälteslipmaskinen med 40 USD rakt av: 909 kr, 384 kr
+  assert.equal(Math.round(breakEvenRoas(909, 384) * 100) / 100, 1.73);
+});
+
+test('breakEvenRoas vägrar räkna när produkten inte går ihop', () => {
+  assert.equal(breakEvenRoas(259, 259), null);
+  assert.equal(breakEvenRoas(259, 300), null);
+  assert.equal(breakEvenRoas(0, 100), null);
+  assert.equal(breakEvenRoas(259, null), null);
+});
+
+test('modellen utan momsavdrag stämmer med den faktiska kostnaden', () => {
+  // Panelens befintliga break-even för Cykelshorts 1-pack är 1,86.
+  // Utan momsavdrag förutsätter det en kostnad på ~120 kr — den faktiska är 117,60 kr.
+  const utanMoms = 259 * (1 - 1 / 1.86);
+  const faktisk = 8.9 * 9.6 + 2.9 * 11.09;
+  assert.ok(Math.abs(utanMoms - faktisk) / faktisk < 0.05, 'ska ligga inom 5 %');
+  // Med momsavdrag skulle samma break-even förutsätta ~68 kr — långt fel.
+  const medMoms = 259 / 1.25 - 259 / 1.86;
+  assert.ok(Math.abs(medMoms - faktisk) / faktisk > 0.3, 'ska ligga långt fel');
 });
