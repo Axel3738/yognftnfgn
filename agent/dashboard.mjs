@@ -10,7 +10,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { bedomKampanj, planera } from './rond.mjs';
+import { annonsbehov, bedomKampanj, planera } from './rond.mjs';
 import { lasLogg } from './logg.mjs';
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
@@ -70,7 +70,7 @@ const LOGGTEXT = {
   NAMNBYTE: (r) => `✏️ nytt break-even ${dec(r.break_even)} inskrivet`,
 };
 
-export function bygg({ rader, plan, logg, hamtad }) {
+export function bygg({ rader, plan, logg, hamtad, behov = [] }) {
   // Dashboarden är också systemets MINNE när körningen inte kan pusha till
   // git: hela budgetloggen bäddas in som JSON och läses tillbaka av nästa
   // körning med agent/minne.mjs. \u003c-escapen hindrar </script>-brytning.
@@ -181,6 +181,8 @@ footer{margin-top:38px;color:var(--dov);font-size:14px;max-width:52ch}
 </header>
 <div class="banner t-${banner.ton}"><span class="bg" aria-hidden="true">${banner.glyf}</span><span>${esc(banner.text)}</span></div>
 ${kortHtml}
+${behov.length === 0 ? '' : `<h3>🎨 Nya annonser behövs</h3>
+<ul class="logg">${behov.map((b) => `<li><b>${esc(b.namn.split('|')[0].trim())}</b> — ${esc(b.orsak)}</li>`).join('')}</ul>`}
 <h3>Senast ändrat</h3>
 ${loggHtml}
 <footer>Ronden kör själv varje dag: läser Meta, räknar reglerna och ändrar budgetarna.
@@ -197,7 +199,13 @@ async function main() {
   const karta = Object.fromEntries((rå.kampanjer ?? []).map((k) => [k.campaign_id, k]));
   const logg = await lasLogg();
   const rader = data.kampanjer.map((k) => bedomKampanj(k, { logg, idag: data.idag, karta, fx: rå.valutakurser }));
-  const html = bygg({ rader, plan: planera(rader), logg, hamtad: data.hamtad });
+  const html = bygg({
+    rader,
+    plan: planera(rader, { logg, idag: data.idag }),
+    logg,
+    hamtad: data.hamtad,
+    behov: annonsbehov(rader, { logg, idag: data.idag }),
+  });
   await writeFile(UTFIL, html, 'utf8');
   console.log(`skrev ${UTFIL} (${html.length} tecken)`);
 }

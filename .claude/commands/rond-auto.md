@@ -165,7 +165,9 @@ okej — minnet är redan sparat i dashboarden; nästa session med push-rättigh
 synkar ikapp git.
 
 Svara sedan kort på svenska: vad som ändrades (produkt, från → till), vad som
-sköts upp och varför, och om något larmade. Inga bibelsvar.
+sköts upp och varför, om något larmade — och om `annonsbehov` i utfallet flaggat
+produkter som behöver nya annonser (då med en rad per produkt och tipset att
+starta `/cs` eller `/forsta-batch`). Inga bibelsvar.
 
 ## DEFINITION OF DONE
 - [ ] Färsk `git pull` innan något annat

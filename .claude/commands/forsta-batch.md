@@ -57,8 +57,20 @@ Varje annons: hypotes, vad som behålls/ändras, format, exakt hook, fullständi
 2. Varje annons i testplanen: egen självständig brief i egen mapp — en klippare ska kunna jobba utan att läsa något annat.
 3. **Engelska briefer**; svenska manusrader/voiceovers/text-i-bild i tabell `Swedish (use this) | English meaning`.
 4. Två zip: `video-ads-briefs.zip` + `image-ads-briefs.zip`, vardera med README (globala regler: rätt pris, produkt i bild före sekund 4, svenska captions ord-för-ord, exportformat 9:16 + 4:5 resp. 1:1 + 1080×1350, stavfällor) och i bild-zippen `reference-assets` med befintliga annonsbilder (vinnare tydligt döpta, ej-återanvändbara som `DO_NOT_REUSE_...`).
-5. Skicka rapport + briefer + zip i samma leverans utan att invänta godkännande. Max EN fråga sist, bara om den kräver ägarens beslut.
-6. **Skapa produktens minnesfiler:** `products/<id>/dna.md`, `products/<id>/batch-log.md` (denna batch med hypoteser), `products/<id>/backlog.md` (tom). Committa och pusha.
+5. **Drive görs av dig, inte av Axel** (Google Drive-kopplingen): hitta produktens
+   mapp under produktmappsroten (`16rA1SxQRevd9FNb8fnh4vRsukmVPEm4e`), skapa
+   `Batch #N` (nästa lediga nummer), ladda upp en undermapp per annons med dess
+   brief, dela mappen så alla med länken är redigerare, och visa länken.
+   Saknas Drive-kopplingen: leverera zipparna i chatten och säg exakt vilka
+   mappar som skulle skapats — låtsas aldrig.
+6. **Kör därefter `/notion`-flödet direkt i samma session** (produktens hub +
+   Batch-mappens länk) utan att invänta kommandot. Notion-hubbens id står i
+   `products/products.json`.
+7. **Inget tracking-sheet.** Axels beslut 2026-08-29: 100k-sheetet per produkt
+   utgår ur ny-produktflödet — ronden och `agent/budgetlogg.jsonl` spårar
+   utfallet. `/sheet` finns kvar som separat kommando om det någon gång behövs.
+8. Skicka rapport + briefer + zip i samma leverans utan att invänta godkännande. Max EN fråga sist, bara om den kräver ägarens beslut.
+9. **Skapa produktens minnesfiler:** `products/<id>/dna.md`, `products/<id>/batch-log.md` (denna batch med hypoteser), `products/<id>/backlog.md` (tom). Committa och pusha.
 
 ## DEFINITION OF DONE (markera ✅/❌ sist)
 
@@ -71,5 +83,8 @@ Varje annons: hypotes, vad som behålls/ändras, format, exakt hook, fullständi
 - [ ] Briefer självständiga, engelska, Swedish/English-tabeller
 - [ ] Naming: upptagna AD-ID:n avlästa, inga återanvända
 - [ ] Två zip-filer med README levererade
+- [ ] Batch-mapp skapad och delad i Drive (eller exakt redovisat varför inte)
+- [ ] Notion-items skapade enligt `/notion`-formatet (eller exakt redovisat varför inte)
+- [ ] Inget tracking-sheet skapat
 - [ ] `products/<id>/` skapad (dna, batch-log, backlog) och pushad
 - [ ] Max EN fråga ställd

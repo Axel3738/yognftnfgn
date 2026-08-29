@@ -267,6 +267,36 @@ export function planera(rader, { logg = [], idag = null } = {}) {
   return { sparrad: false, orsak: null, atgarder, uppskjutna, gammalTotal, nyTotal };
 }
 
+/**
+ * Annons-triggern: flaggar produkter som behöver nya annonser, ur budgetloggen.
+ * - Trappan har pausat material (eller produkten stängts av) senaste 7 dagarna:
+ *   det som pausats måste ersättas för att testet ska vara rättvist.
+ * - Två eller fler genomförda höjningar senaste 7 dagarna: en vinnare som
+ *   skalas behöver mer material innan tröttheten kommer, inte efter.
+ * Flaggan startar ingenting själv — den syns i rapporten och på dashboarden,
+ * och batchen dras igång med /forsta-batch eller /cs.
+ */
+export function annonsbehov(rader, { logg = [], idag = null } = {}) {
+  if (idag === null) return [];
+  const nu = Date.parse(`${idag}T00:00:00Z`);
+  const inom7 = (datum) => {
+    const d = (nu - Date.parse(`${datum}T00:00:00Z`)) / 86400000;
+    return Number.isFinite(d) && d >= 0 && d <= 7;
+  };
+  const behov = [];
+  for (const r of rader) {
+    const egna = logg.filter((rad) => rad.kampanj_id === r.id && rad.genomford === true && inom7(rad.datum));
+    const pausat = egna.some((rad) => ['TRAPPA_STEG_1', 'TRAPPA_STEG_2', 'TRAPPA_STEG_3', 'STANG_AV'].includes(rad.kod));
+    const skalningar = egna.filter((rad) => rad.kod === 'SKALA').length;
+    if (pausat) {
+      behov.push({ kampanj_id: r.id, namn: r.namn, orsak: 'material pausat senaste veckan — ersätt det som stängts av' });
+    } else if (skalningar >= 2) {
+      behov.push({ kampanj_id: r.id, namn: r.namn, orsak: `skalats ${skalningar} gånger på en vecka — mata vinnaren med mer material innan tröttheten kommer` });
+    }
+  }
+  return behov;
+}
+
 const ORDNING = [
   'STANG_AV', 'ATGARDSTRAPPAN', 'HALVERA', 'SANK', 'SKALA',
   'STOR_SPEND_UTAN_KOP', 'RAKNA_BACKDAGAR', 'ORIMLIG_DATA', 'SAKNAR_BREAK_EVEN',
@@ -278,7 +308,7 @@ function kr(n) {
   return n === null ? '—' : `${Math.round(n).toLocaleString('sv-SE')} kr`;
 }
 
-export function rapport(rader, meta) {
+export function rapport(rader, meta, behov = []) {
   const sorterade = [...rader].sort(
     (a, b) => ORDNING.indexOf(a.dom.kod) - ORDNING.indexOf(b.dom.kod),
   );
@@ -334,6 +364,15 @@ export function rapport(rader, meta) {
         ? ''
         : ` (${r.dom.vinstProcent.toFixed(1).replace('.', ',')} % vinst)`;
       ut.push(`- ${r.namn.split('|')[0].trim()} — ${r.dom.rubrik}${vinst}`);
+    }
+    ut.push('');
+  }
+
+  if (behov.length > 0) {
+    ut.push(`## 🎨 Nya annonser behövs (${behov.length})`);
+    ut.push('');
+    for (const b of behov) {
+      ut.push(`- **${b.namn.split('|')[0].trim()}** — ${b.orsak}. Starta med \`/cs\` eller \`/forsta-batch\`.`);
     }
     ut.push('');
   }
@@ -413,9 +452,9 @@ async function main() {
 
   const meta = { idag, hamtad: data.hamtad, varningar };
   if (argv.includes('--json')) {
-    console.log(JSON.stringify({ meta, rader, plan: planera(rader, { logg, idag }) }, null, 2));
+    console.log(JSON.stringify({ meta, rader, plan: planera(rader, { logg, idag }), annonsbehov: annonsbehov(rader, { logg, idag }) }, null, 2));
   } else {
-    console.log(rapport(rader, meta));
+    console.log(rapport(rader, meta, annonsbehov(rader, { logg, idag })));
   }
 }
 

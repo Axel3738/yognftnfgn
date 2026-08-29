@@ -180,7 +180,7 @@ Det finns ingen linter och ingen byggkedja i OS:et — `npm test` är hela grind
 | Swipes från konkurrenter | `docs/swipes/` |
 | TOF-idébank | `docs/tof-idea-bank.md` |
 | Actionplan + bottlenecks | `docs/os/ACTIONPLAN.md` |
-| SOP 01–07 (batch-loop, kvot, UGC, check-in, "när Claude inte lyssnar", produkttest, dashboard) | `docs/os/SOP-0*.md` |
+| SOP 01–08 (batch-loop, kvot, UGC, check-in, "när Claude inte lyssnar", produkttest, dashboard, ny produktbatch) | `docs/os/SOP-0*.md` |
 | Editor SOP (engelska, till redigerarna) | `docs/os/EDITOR-SOP.md` |
 | Notion-formatet för briefer (exakt spec + statustabell) | `docs/os/NOTION-FORMAT.md` |
 | Produkt-konfig + launch-logg | `products/products.json` |

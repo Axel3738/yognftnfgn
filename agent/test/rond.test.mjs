@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { bedomKampanj, breakEvenForPost, kontrolleraKonto, planera, rapport, TILLATET_KONTO } from '../rond.mjs';
+import { annonsbehov, bedomKampanj, breakEvenForPost, kontrolleraKonto, planera, rapport, TILLATET_KONTO } from '../rond.mjs';
 
 const bas = () => ({
   hamtad: '2026-08-28T07:00:00Z',
@@ -277,4 +277,31 @@ test('minnet överlever tur och retur genom dashboardens HTML', async () => {
   const html = bygg({ rader: [], plan: { sparrad: false, atgarder: [], uppskjutna: [] }, logg, hamtad: '2026-08-29' });
   const tillbaka = extraheraLogg(html);
   assert.deepEqual(tillbaka, logg);
+});
+
+test('annons-triggern flaggar pausat material och snabbskalade vinnare', () => {
+  const rader = [
+    { id: 'a', namn: 'Trasig | BE ROAS 1.50' },
+    { id: 'b', namn: 'Vinnare | BE ROAS 1.50' },
+    { id: 'c', namn: 'Lugn | BE ROAS 1.50' },
+  ];
+  const logg = [
+    { kampanj_id: 'a', kod: 'TRAPPA_STEG_1', genomford: true, datum: '2026-08-27' },
+    { kampanj_id: 'b', kod: 'SKALA', genomford: true, datum: '2026-08-25', ny_budget: 1200 },
+    { kampanj_id: 'b', kod: 'SKALA', genomford: true, datum: '2026-08-27', ny_budget: 1450 },
+    { kampanj_id: 'c', kod: 'LAT_VARA', genomford: false, datum: '2026-08-28' },
+  ];
+  const behov = annonsbehov(rader, { logg, idag: '2026-08-29' });
+  assert.equal(behov.length, 2);
+  assert.match(behov.find((b) => b.kampanj_id === 'a').orsak, /pausat/);
+  assert.match(behov.find((b) => b.kampanj_id === 'b').orsak, /skalats 2/);
+});
+
+test('annons-triggern glömmer det som är äldre än en vecka', () => {
+  const rader = [{ id: 'a', namn: 'X | BE ROAS 1.50' }];
+  const logg = [{ kampanj_id: 'a', kod: 'TRAPPA_STEG_2', genomford: true, datum: '2026-08-10' }];
+  assert.equal(annonsbehov(rader, { logg, idag: '2026-08-29' }).length, 0);
+  // En genomförd SKALA räcker inte — det krävs två inom veckan.
+  const enSkala = [{ kampanj_id: 'a', kod: 'SKALA', genomford: true, datum: '2026-08-28', ny_budget: 1200 }];
+  assert.equal(annonsbehov(rader, { logg: enSkala, idag: '2026-08-29' }).length, 0);
 });
