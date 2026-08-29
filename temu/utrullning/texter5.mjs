@@ -128,6 +128,7 @@ export const T5_SV = {
     bullets: [
       '<strong>Hjälmen får äntligen en plats</strong> – 37 liter sväljer den med marginal',
       '<strong>Sitter fast på hojen</strong> – spännremmar för dyna eller pakethållare',
+      '<strong>Bärs som ryggsäck av hojen</strong> – axelremmar och ventilerande ryggplatta i mesh',
       '<strong>Syns i mörkret</strong> – reflexdetaljer på baksidan',
       '<strong>Packar mer än hjälmen</strong> – regnställ, handskar och kedjelås ryms bredvid',
     ],
