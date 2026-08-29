@@ -102,7 +102,10 @@ switch (cmd) {
         try {
           const s = await h.proofreadStatus(st.proofreadId);
           if (['completed', 'success'].includes(s.status)) {
-            writeFileSync(path.join(srtDir, j.key + '.srt'), await h.proofreadGetSrt(st.proofreadId));
+            // getSrt returnerar URL:er ({original_srt_url, srt_url}) — hämta texten färskt
+            const urls = await h.proofreadGetSrt(st.proofreadId);
+            writeFileSync(path.join(srtDir, j.key + '.srt'), await h.fetchFresh(urls.srt_url));
+            writeFileSync(path.join(srtDir, j.key + '.orig.srt'), await h.fetchFresh(urls.original_srt_url));
             st.srtDone = true; save(); console.log('SRT klar', j.key);
           } else if (s.status === 'failed') {
             st.srtDone = 'failed'; st.error = s.failure_message || 'proofread failed'; save();
@@ -128,7 +131,8 @@ switch (cmd) {
       let ok = false;
       for (let i = 0; i < 8 && !ok; i++) {  // upp till 8×8 s — CDN-lagg
         await sleep(8000);
-        const live = await h.proofreadGetSrt(st.proofreadId);
+        const urls = await h.proofreadGetSrt(st.proofreadId);
+        const live = await h.fetchFresh(urls.srt_url);
         ok = live.replace(/\s+/g, ' ').trim() === srt.replace(/\s+/g, ' ').trim();
       }
       if (!ok) { st.srtApplied = 'MISMATCH'; save(); console.error('⚠️ SRT persisterade inte för', j.key, '— känd HeyGen-bugg: skapa NY proofread-session (kör proofread igen efter att ha nollat posten i state-filen).'); continue; }

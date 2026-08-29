@@ -21,16 +21,17 @@ if (process.env.HTTPS_PROXY && process.env.NODE_USE_ENV_PROXY !== '1') {
   process.exit(r.status ?? 1);
 }
 
-const SHOP = process.env.SHOPIFY_SHOP_SE;
-const ID = process.env.SHOPIFY_CLIENT_ID_SE;
-const SECRET = process.env.SHOPIFY_CLIENT_SECRET_SE;
-
 const args = process.argv.slice(2);
+// --market SE|NO|DK|FI|UK väljer butik (env-tripletterna SHOPIFY_*_<MARKNAD>); SE är default.
+const market = (args.includes('--market') ? args[args.indexOf('--market') + 1] : 'SE').toUpperCase();
+const SHOP = process.env[`SHOPIFY_SHOP_${market}`];
+const ID = process.env[`SHOPIFY_CLIENT_ID_${market}`];
+const SECRET = process.env[`SHOPIFY_CLIENT_SECRET_${market}`];
 const productId = args[args.indexOf('--product-id') + 1];
 const rabatt = Number(args[args.indexOf('--rabatt') + 1]);
 const dry = args.includes('--dry');
 
-if (!SHOP || !ID || !SECRET) { console.error('Saknar env SHOPIFY_SHOP_SE / SHOPIFY_CLIENT_ID_SE / SHOPIFY_CLIENT_SECRET_SE.'); process.exit(2); }
+if (!SHOP || !ID || !SECRET) { console.error('Saknar env SHOPIFY_SHOP_/CLIENT_ID_/CLIENT_SECRET_ för vald marknad.'); process.exit(2); }
 if (args.indexOf('--product-id') < 0 || args.indexOf('--rabatt') < 0 || !(rabatt > 0 && rabatt < 90)) {
   console.error('Användning: node tools/shopify-fix-compareat.mjs --product-id <numeriskt id> --rabatt <procent 1-89> [--dry]');
   process.exit(2);
