@@ -581,3 +581,13 @@ variant), låsta FX 2026-08-22, lokala prispunkter, jämförpris ×1,3.
   batterifri produkt. Rena bilder efterfrågade från CWD.
 - **Fotokudden:** CWD:s pris avser största storleken (max 45 cm) → prissättning
   kan räkna värsta fallet. Kvar: fotoflödet per order.
+
+## Lagning 2026-08-29: tre produkter saknades i NO
+
+Axel upptäckte att cykelshorts (#25), bälteslipmaskin (#21) och övervakningskamera
+(#13) aldrig skapades i beverbutikken.no (fanns i SE/DK/FI/UK). Skapade med norsk
+copy (sonnet-subagent, stilfacit texter5-no.mjs), receptets NO-priser
+(289/1029/899, jämför ×1,3 nioSlut), SE-CDN-bilder, claudeprodukter-mall,
+taxable false, publicerade på alla 4 kanaler. Verifierade READY.
+Lärdom: inventera ALLA butiker per SKU efter varje utrullning — NO-luckan satt
+i veckor utan att synas.
