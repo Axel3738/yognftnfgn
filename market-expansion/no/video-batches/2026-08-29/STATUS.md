@@ -10,6 +10,8 @@ Rutin: `/translate-no` (`.claude/commands/translate-no.md`). Manifest: `batch.js
 | Cykelshorts Herr (`cykelshorts`) | 12 | ❌ finns inte på beverbutikken.no | — | — | Kan inte launchas ännu |
 | Bälteslipmaskin Mini 3-i-1 (`balteslip`) | 12 | ❌ finns inte på beverbutikken.no | — | — | Kan inte launchas ännu |
 
+**API-verifierad 2026-08-29 17:30 UTC:** båda kampanjerna ACTIVE/ACTIVE, 4 adsets vardera ACTIVE, 12 + 11 annonser alla ACTIVE (effective_status), CBO 1000 kr/dag, alla annonslänkar → beverbutikken.no. Videouppladdning till NO-mapparna väntar fortfarande på Drive-brevlådans URL.
+
 **Launch bekräftad 2026-08-29:** Kranbeskyttelse Frost NO (12 annonser) + IBC-tanktrekk NO
 (11 annonser), båda ACTIVE, CBO 1000 kr/dag, adset per koncept, kampanj-ID
 120251996272390233 resp. 120251996323340233. Drive: NO-mappar skapade med 8 norska
