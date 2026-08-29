@@ -121,7 +121,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 
 ## Kommandona (Axels gränssnitt)
 
-13 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
+14 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
 
 | Kommando | Vad |
 |----------|-----|
@@ -138,6 +138,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/dashboard [datum]` | Bygg och läs redigerardashboarden |
 | `/rapport <namn>: <text>` | Tolka en slutrapport från Slack (bekräftas innan den sparas) |
 | `/granska [id]` | Beta av review-kön: checklista → godkänn eller skicka tillbaka |
+| `/launch <produktnamn>` | **Temu-flödet:** Drive → QA → Judge.me → Meta som PAUSED (`docs/temu-launch-flow.md`) |
 
 ---
 
@@ -214,10 +215,9 @@ när en budget passerar den gränsen.
 - `axelbaltet`: `products.json` säger break-even-CPA **299 kr**, `products/axelbaltet/dna.md`
   säger **326 kr**. Kill-beslut mäts mot break-even — fråga Axel vilken som gäller.
   Båda är dessutom räknade på gamla priset 509 kr och är för lågt satta vid 599 kr.
-- **Bäverbutikens momsläge står ingenstans i repot.** Fråga Axel, gissa inte.
-  Grillkliniken säljer *utan* moms — marginalen räknas rakt på priset (Mastern:
-  999 kr, inte 799 kr netto). Drar du reflexmässigt av 25 % ser lönsamma annonser
-  ut att gå med förlust.
+- **Bäverbutiken säljer UTAN moms** (Axels besked 2026-08-29) — precis som
+  Grillkliniken. Marginalen räknas rakt på priset. Drar du reflexmässigt av 25 %
+  ser lönsamma annonser ut att gå med förlust.
 
 Alla `launches[]` i `products.json` är tomma. Kvotskriptet visar därför ett
 minusläge som speglar utebliven loggning, inte utebliven produktion — logga med

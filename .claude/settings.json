@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node tools/judgeme-import.mjs *)",
+      "Bash(python3 tools/drive-ls.py *)"
+    ]
+  }
+}

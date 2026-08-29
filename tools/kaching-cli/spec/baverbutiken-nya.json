@@ -1,0 +1,191 @@
+{
+  "_lasmig": "Spec for en batch Kaching-bundles. Kor: node build-payloads.mjs spec/baverbutiken-nya.json",
+  "beskrivning": "Nya produkter Baverbutiken, launchbatch 2026-08-29",
+  "butik": "baverbutiken",
+  "utmapp": "baverbutiken-2026-08-29",
+  "standard": {
+    "showPricesPerItem": true,
+    "showBothPrices": false,
+    "useProductCompareAtPrice": true,
+    "spacing": 1,
+    "cornerRadius": 14
+  },
+  "stegar": {
+    "standard": {
+      "namn": "Standardstege",
+      "rubrik": "Köp fler – spara mer",
+      "nivaer": [
+        {
+          "antal": 1,
+          "rabatt": 0,
+          "titel": "1 st",
+          "badge": "",
+          "forvald": false
+        },
+        {
+          "antal": 2,
+          "rabatt": 15,
+          "titel": "2 st",
+          "badge": "Mest populär",
+          "forvald": true
+        },
+        {
+          "antal": 3,
+          "rabatt": 20,
+          "titel": "3 st",
+          "badge": "Bäst värde",
+          "forvald": false
+        }
+      ]
+    },
+    "bogo": {
+      "namn": "Köp 1 få 1",
+      "rubrik": "Köp 1, få 1 gratis",
+      "nivaer": [
+        {
+          "antal": 1,
+          "rabatt": 0,
+          "titel": "1 st",
+          "badge": "",
+          "forvald": false
+        },
+        {
+          "antal": 2,
+          "rabatt": 50,
+          "titel": "2 st",
+          "badge": "Köp 1, få 1 gratis",
+          "forvald": true
+        }
+      ]
+    }
+  },
+  "produkter": [
+    {
+      "handle": "magnethylla-for-tvattmaskin-och-kylskap-forvaring-utan-borr",
+      "titel": "Magnethylla för Tvättmaskin och Kylskåp",
+      "gid": "gid://shopify/Product/16474311852381",
+      "priser": [
+        439.0
+      ],
+      "stege": "standard"
+    },
+    {
+      "handle": "palsborste-till-dyson-dammsugare-borsta-och-sug-i-samma-drag",
+      "titel": "Pälsborste till Dyson-dammsugare",
+      "gid": "gid://shopify/Product/16474311786845",
+      "priser": [
+        539.0
+      ],
+      "stege": "standard"
+    },
+    {
+      "handle": "3d-sandbild-20-cm-nytt-landskap-varje-gang-du-vander-den",
+      "titel": "3D-sandbild 20 cm",
+      "gid": "gid://shopify/Product/16474311721309",
+      "priser": [
+        459.0
+      ],
+      "stege": "standard"
+    },
+    {
+      "handle": "veckodosett-21-fack-morgon-middag-och-kvall-i-sju-dagar",
+      "titel": "Veckodosett 21 Fack",
+      "gid": "gid://shopify/Product/16474311688541",
+      "priser": [
+        389.0
+      ],
+      "stege": "standard"
+    },
+    {
+      "handle": "medicinask-i-fickformat-7-fack-med-tatslutande-lock",
+      "titel": "Medicinask i Fickformat",
+      "gid": "gid://shopify/Product/16474311623005",
+      "priser": [
+        289.0
+      ],
+      "stege": "standard"
+    },
+    {
+      "handle": "somnadskit-104-delar-allt-i-ett-fodral",
+      "titel": "Sömnadskit 104 Delar",
+      "gid": "gid://shopify/Product/16474311590237",
+      "priser": [
+        329.0
+      ],
+      "stege": "standard"
+    },
+    {
+      "handle": "motocentric-bakvaska-37-l-hjalmen-gar-i-vaskan",
+      "titel": "Motocentric Bakväska 37 L",
+      "gid": "gid://shopify/Product/16474311524701",
+      "priser": [
+        989.0
+      ],
+      "stege": "standard"
+    },
+    {
+      "handle": "magnetplattor-i-storformat-byggset-i-lada-med-handtag",
+      "titel": "Magnetplattor i Storformat",
+      "gid": "gid://shopify/Product/16474311491933",
+      "priser": [
+        469.0,
+        539.0
+      ],
+      "stege": "standard"
+    },
+    {
+      "handle": "kasta-fanga-set-4-korgar-och-bollar-pa-lina",
+      "titel": "Kasta & Fånga-set",
+      "gid": "gid://shopify/Product/16474311459165",
+      "priser": [
+        419.0
+      ],
+      "stege": "standard"
+    },
+    {
+      "handle": "glasspints-med-lock-2-pack-gor-glassen-direkt-i-burken",
+      "titel": "Glasspints med Lock 2-pack",
+      "gid": "gid://shopify/Product/16474311426397",
+      "priser": [
+        499.0
+      ],
+      "stege": "standard"
+    },
+    {
+      "handle": "luffarschack-i-tra-klassikern-som-ligger-framme",
+      "titel": "Luffarschack i Trä",
+      "gid": "gid://shopify/Product/16474311393629",
+      "priser": [
+        259.0
+      ],
+      "stege": "standard"
+    },
+    {
+      "handle": "bankhylla-med-utdragbar-korg-dubbel-yta-pa-samma-bank",
+      "titel": "Bänkhylla med Utdragbar Korg",
+      "gid": "gid://shopify/Product/16474311295325",
+      "priser": [
+        849.0
+      ],
+      "stege": "standard"
+    },
+    {
+      "handle": "diskstall-i-tva-vaningar-hela-diskens-torkyta-pa-42-cm",
+      "titel": "Diskställ i Två Våningar",
+      "gid": "gid://shopify/Product/16474311262557",
+      "priser": [
+        739.0
+      ],
+      "stege": "standard"
+    },
+    {
+      "handle": "arbetslampa-for-makita-batteri-15-led-med-usb-uttag",
+      "titel": "Arbetslampa för Makita-batteri",
+      "gid": "gid://shopify/Product/16474311197021",
+      "priser": [
+        439.0
+      ],
+      "stege": "standard"
+    }
+  ]
+}
