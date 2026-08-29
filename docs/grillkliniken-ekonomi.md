@@ -81,8 +81,9 @@ handle `grilloverdrag-420d-5-storlekar-med-snorning`). Temu-källa: goods
 taxable false, CONTINUE, svensk storleksguide-infografik genererad och inlagd
 i beskrivningen, publicerad mot alla 5 kanaler (syns när status blir ACTIVE).
 
-⚠️ **Priserna (349/399/449/499/549 kr) är FÖRSLAG utan kostnadsunderlag** —
-ingen CWD-offert finns för produkten. Ankrade mot Bäverbutikens CWD-prissatta
-420D-skydd (MC-kapell 349, IBC 489, båtmotorskydd 579). Aktiveras först när
-Axel bekräftat priserna eller skickat inköpskostnad (60 %-marginalmålet kräver
-inpris för att räknas).
+**CWD-offert kom 2026-08-29** (CANWANGDA 089, 26/08/26): 80-storleken landad
+$11,2 och 190-storleken $14,5 (420D Oxford + silver coating, 6–10 dagar, YUN).
+Offerten rättade också 190-måttet till **190×71×117** (Temu-bilden sa 70).
+Priserna höjdes på Axels begäran till **399/449/499/549/599 kr** = 73–77 %
+marginal på de offererade storlekarna (mellanstorlekarna interpolerade).
+Fortfarande UTKAST — Axel aktiverar/säger till.
