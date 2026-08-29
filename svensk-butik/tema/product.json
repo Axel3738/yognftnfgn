@@ -1,0 +1,157 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "ms_trust": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'ms-trust-row', items: 'truck:Fri frakt i Sverige|refresh:Omsys om den blir fel|lock:Trygg betalning' %}"
+          }
+        },
+        "ms_delivery": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'ms-delivery-estimate', min_days: 8, max_days: 12, cutoff_hour: 0, text: 'Beräknad leverans' %}"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Dela"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "buy_buttons",
+        "ms_trust",
+        "ms_delivery",
+        "description",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "ms_faq_section": {
+      "type": "ms-faq-section",
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "q": "Vilken bild ska jag skicka?",
+            "a": "<p>Vilken mobilbild som helst duger som utgångspunkt, så länge djuret syns tydligt. Efter beställningen svarar du på orderbekräftelsen med bilden.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "q": "Hur vet jag att kudden blir lik?",
+            "a": "<p>Du får ett digitalt utkast av din kudde att godkänna innan vi syr ett enda stygn. Vill du ändra något justerar vi utkastet först — utan kostnad.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "q": "Hur snabbt kommer den?",
+            "a": "<p>Kudden sys på beställning. Räkna med 8–12 arbetsdagar från godkänt utkast, med fri och spårbar frakt i hela Sverige.</p>"
+          }
+        },
+        "q4": {
+          "type": "qa",
+          "settings": {
+            "q": "Vilka betalsätt kan jag använda?",
+            "a": "<p>Klarna eller kort, direkt i kassan.</p>"
+          }
+        },
+        "q5": {
+          "type": "qa",
+          "settings": {
+            "q": "Vad gäller om jag ångrar mig?",
+            "a": "<p>Kudden sys efter din bild och är specialtillverkad — därför gäller ingen ångerrätt enligt distansavtalslagen. Det är precis därför du godkänner utkastet innan vi syr, och blir kudden fel mot det du godkänt syr vi om den utan kostnad.</p>"
+          }
+        },
+        "q6": {
+          "type": "qa",
+          "settings": {
+            "q": "Går kudden att tvätta?",
+            "a": "<p>Ja, i maskin på 30 grader.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6"],
+      "settings": {
+        "heading": "Vanliga frågor"
+      }
+    },
+    "ms_sticky": {
+      "type": "ms-sticky-atc",
+      "settings": {
+        "label": "Köp nu",
+        "position": "bottom",
+        "show_image": true
+      }
+    },
+    "judgeme_widget": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "judgeme_widget",
+    "ms_faq_section",
+    "ms_sticky"
+  ]
+}

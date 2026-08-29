@@ -1,0 +1,341 @@
+{
+  "sections": {
+    "hero": {
+      "type": "image-banner",
+      "blocks": {
+        "h": {
+          "type": "heading",
+          "settings": {
+            "heading": "En bit av din hund du får behålla.",
+            "heading_size": "h1"
+          }
+        },
+        "t": {
+          "type": "text",
+          "settings": {
+            "text": "Skicka din bästa bild — vi syr en kudde i exakt ditt husdjurs form. Du godkänner utkastet innan vi syr något alls.",
+            "text_style": "body"
+          }
+        },
+        "b": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Se kuddarna",
+            "button_link_1": "shopify://collections/alla-kuddar",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": ["h", "t", "b"],
+      "settings": {
+        "image": "shopify://shop_images/hjartkompis-hero-wide.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "show_text_box": true,
+        "color_scheme": "scheme-1",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "ms_usp": {
+      "type": "ms-usp-bar",
+      "settings": {
+        "items": "truck:Fri frakt i hela Sverige|check-circle:Godkänn utkastet innan vi syr|lock:Trygg betalning"
+      }
+    },
+    "ms_marquee": {
+      "type": "ms-marquee",
+      "settings": {
+        "items": "Sydd efter din bild|Fri frakt i hela Sverige|Du godkänner utkastet innan vi syr|Omsys utan kostnad om den blir fel",
+        "speed": 26,
+        "background": "#B26E4B",
+        "text_color": "#FDFBF7"
+      }
+    },
+    "produkt": {
+      "type": "featured-product",
+      "blocks": {
+        "etikett": {
+          "type": "text",
+          "settings": {
+            "text": "Sydd på beställning",
+            "text_style": "uppercase"
+          }
+        },
+        "titel": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "pris": {
+          "type": "price",
+          "settings": {}
+        },
+        "varianter": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "kop": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        }
+      },
+      "block_order": ["etikett", "titel", "pris", "varianter", "kop"],
+      "settings": {
+        "product": "tvillingkudden-kudden-formad-exakt-som-ditt-husdjur",
+        "color_scheme": "scheme-1",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "berattelse": {
+      "type": "rich-text",
+      "blocks": {
+        "h": {
+          "type": "heading",
+          "settings": {
+            "heading": "Formad som din hund. Ser ut som inredning.",
+            "heading_size": "h1"
+          }
+        },
+        "t": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Vi klipper kudden i exakt ditt husdjurs silhuett och trycker bilden på mjuk sammet — dubbelsidigt, cirka tio centimeter tjock.</p><p>Den ligger i soffan som vilken kudde som helst. Tills någon tittar en gång till.</p>"
+          }
+        }
+      },
+      "block_order": ["h", "t"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 44,
+        "padding_bottom": 28
+      }
+    },
+    "sortiment": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "alla-kuddar",
+        "products_to_show": 4,
+        "title": "Kuddarna",
+        "heading_size": "h1",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "statement": {
+      "type": "rich-text",
+      "blocks": {
+        "h": {
+          "type": "heading",
+          "settings": {
+            "heading": "Hundar blir aldrig för gamla för att somna i din famn.",
+            "heading_size": "h1"
+          }
+        },
+        "b": {
+          "type": "button",
+          "settings": {
+            "button_label": "Se alla kuddar",
+            "button_link": "shopify://collections/alla-kuddar",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": ["h", "b"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "ugc_galleri": {
+      "type": "multicolumn",
+      "blocks": {
+        "g1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/hjartkompis-tvilling.png",
+            "title": "Tvillingen",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "g2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/hjartkompis-katt-fatolj.png",
+            "title": "Vardagsrummet",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "g3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/hjartkompis-minne.png",
+            "title": "Minnet",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": ["g1", "g2", "g3"],
+      "settings": {
+        "title": "Som de används",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 8
+      }
+    },
+    "ugc_markning": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<p style=\"text-align:center;font-size:1.2rem;color:rgba(18,18,18,.55);margin:0\">Miljöbilderna är AI-genererade illustrationer.</p>",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 28
+      }
+    },
+    "trygghet": {
+      "type": "image-with-text",
+      "blocks": {
+        "h": {
+          "type": "heading",
+          "settings": {
+            "heading": "Handla tryggt hos oss",
+            "heading_size": "h2"
+          }
+        },
+        "t": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Du godkänner ett digitalt utkast innan vi syr — och blir kudden fel mot det du godkänt syr vi om den utan kostnad.</p><p>Betala med Klarna eller kort. Fri, spårbar frakt i hela Sverige.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": ["h", "t"],
+      "settings": {
+        "image": "shopify://shop_images/hjartkompis-unboxing.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "ms_faq": {
+      "type": "ms-faq-section",
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "q": "Vilken bild ska jag skicka?",
+            "a": "<p>Vilken mobilbild som helst duger, så länge djuret syns tydligt. Du ser alltid ett digitalt utkast innan vi syr något.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "q": "Hur lång är leveranstiden?",
+            "a": "<p>Kudden sys på beställning. Räkna med 8–12 arbetsdagar från godkänt utkast, med fri och spårbar frakt i hela Sverige.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "q": "Kan jag ångra köpet?",
+            "a": "<p>Kudden sys efter din bild och är specialtillverkad — därför gäller ingen ångerrätt enligt distansavtalslagen. I stället godkänner du utkastet före sömnad, och blir kudden fel mot det du godkänt syr vi om den utan kostnad.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": {
+        "heading": "Vanliga frågor"
+      }
+    },
+    "ms_guarantee": {
+      "type": "ms-guarantee-section",
+      "settings": {
+        "title": "Du godkänner innan vi syr",
+        "body": "<p>Vi syr ingenting förrän du sett och godkänt utkastet av din kudde. Blir den ändå fel mot det du godkänt syr vi om den — utan kostnad.</p>",
+        "icon": "seal"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "ms_usp",
+    "ms_marquee",
+    "produkt",
+    "berattelse",
+    "sortiment",
+    "statement",
+    "ugc_galleri",
+    "ugc_markning",
+    "trygghet",
+    "ms_faq",
+    "ms_guarantee"
+  ]
+}

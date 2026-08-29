@@ -82,12 +82,22 @@ medvetet bortvalt i v1, mejlflödet är standard i nischen.)
 
 ## 5. Bildspråket (differentieringens andra halva)
 
-Alla bilder AI-genereras via Higgsfield — **noll bilder tas från förlagan.**
-Stilguide: skandinaviskt hem, mjukt dagsljus, linne + ljus ek, dämpade varma
-neutraler, redaktionell fotorealism, ingen text i bild. 10 bestämda motiv
-(hero-soffa, närbilder hund/katt, "tvillingen" — djuret bredvid sin kudde,
-barnkram, minnesmotiv med ljus, fotokudde, unboxing i kraftpapper, nyfiken
-katt, sortimentsbild). Prompter + URL:er: `svensk-butik/bilder/`.
+Alla bilder AI-genereras — **noll bilder tas från förlagan.** Stilguide:
+skandinaviskt hem, mjukt dagsljus, linne + ljus ek, dämpade varma neutraler,
+redaktionell fotorealism, ingen text i bild.
+
+**Modellbeslut (2026-08-29, andra varvet):** första försöket med Higgsfield
+soul_2 underkändes av Axel — kuddarna såg ut som riktiga djur, inte som
+produkten. Ersatt med **nano-banana-2 via kie.ai** (`KIE_API_KEY` i env,
+`POST /api/v1/jobs/createTask`, polla `recordInfo`). Nyckeln till att bilden
+läser som produkt är promptreceptet: *"die-cut shaped plush pillow …
+photorealistic printed image on its front face … clearly a PILLOW, not a
+real animal: visible fabric texture and slight print flatness, a thick white
+fabric side gusset running around the entire edge, plump stuffed body,
+rounded seams"* + uppställd/proppad pose. 11 godkända bilder (produktstudio
+hund/katt, hero, soffa, fåtölj, tvilling, barnkram, minne, fotokudde,
+unboxing, sortiment). Manifest med prompter/CDN-URL:er: `bilder/bilder.json`;
+helperscript: kie.py i scratchpad, dokumenterat i manifestet.
 
 ## 6. Modellpolicy följd
 
@@ -132,35 +142,38 @@ priser och struktur: huvudsessionen. Workflow-run: `wf_4e07ebfe-f50`.
 | Publicering till Webbshop + Shop-kanalen | ✅ | båda ACTIVE-produkterna + kollektionen |
 | Moms inkl. i priser (`taxesIncluded`) | ✅ verifierat | — |
 
-**Bilder:** hero-soffan (godkänd i QA) ligger som featured på Tvillingkudden och
-kollektionen. Närbilden hade AI-artefakten "AMIUOEN" tryckt på kuddens sida —
-retuscherad lokalt (maskerad + median-inpainting, verifierad i zoom-QA) och
-uppladdad via staged upload till både Tvillingkudden (bild 2) och Minneskudden
-(featured). Original + retusch + prompt-URL:er: `svensk-butik/bilder/`.
+**Bilder (andra varvet, 2026-08-29):** hela bildsetet utbytt mot 11
+nano-banana-2-bilder efter Axels underkännande av Higgsfield-setet.
+Tvillingkudden: 6 bilder (soffa featured, studio hund/katt, tvilling,
+sortiment, barnkram). Minneskudden: minne (featured) + unboxing. Fotokudden:
+fotokudde — och produkten sattes ACTIVE. Kollektionsbild: sortiment. Alla
+ligger även som butiksfiler (`hjartkompis-*.png`) för temat.
 
-## 9. Kvarstående — kräver Axel eller mer krediter
+**Tema (2026-08-29):** Axels opublicerade matstrumpor-CRO-tema är omskrivet
+till Hjärtkompis via `themeFilesUpsert` — tre filer: `templates/index.json`
+(hero med hero-wide-bilden, USP-rad, marquee, featured Tvillingkudden,
+sortiment, galleri, trygghet, FAQ, garantiblock — matstrumpor-recensionerna
+och "Köp 1 – Få 1"-paketet borttagna, AI-bildmärkningen behållen),
+`templates/product.json` (trustrad, leveransestimat 8–12 dagar, kudd-FAQ) och
+`config/settings_data.json` (lugn typografi i stället för Mochiy Pop,
+terrakotta #B26E4B i stället för sushi-orange, matstrumpor-logga och sociala
+länkar rensade). Kopior i `svensk-butik/tema/`. Verifierat: `ms-head`
+innehåller INGEN tracking (bara CSS + A/B-skript), så ingen
+matstrumpor-pixel följer med. Originalet finns kvar på matstrumpor.se.
+**API:t kan inte publicera teman — publiceringen är ett klick för Axel.**
 
-1. **Higgsfield-krediter tog slut** (0,35 → 0,11; en bild kostar 0,12 med
-   soul_2). 8 av 10 planerade bilder återstår, prompterna ligger färdiga i
-   `bilder/bilder.json` + workflow-scriptet. Fyll på ~1 credit och kör om —
-   prioritet: katt-fatolj, fotokudde (låser upp Fotokudden ur DRAFT), tvilling,
-   barnkram, minne.
+## 9. Kvarstående — kräver Axel
+
+1. **Publicera temat:** Online Store → Themes →
+   "theme-export-matstrumpor-se-matstrumpor-cro-v5" → Publish. Allt innehåll
+   är redan omskrivet till Hjärtkompis. (Ett klick — API:t får inte.)
 2. **Butiksnamnet** är fortfarande "My Store" — går inte att byta via API.
-   Shopify admin → Settings → Store details → byt till **Hjärtkompis** (och
-   verifiera ledig .se-domän innan något registreras; se `copy/namn-och-rubriker.md`
-   för 4 alternativ till namn).
-3. **Policyerna i kassan** (Refund/Shipping) gick inte att sätta via API:t
-   (saknar `write_legal_policies`-scope). Färdiga texter att klistra in finns i
-   `SHOPIFY-MANUELLT.md`. Innehållet finns redan publikt på Leverans-sidan, så
-   inget är dolt för kunden — men kassan länkar tomma policyer tills detta görs.
-4. **Betalningar:** Shopify Payments + Klarna måste aktiveras i admin innan
-   lansering (copyn nämner Klarna och kort). Utan detta går det inte att checka ut.
-5. **Tema/startsida:** live-temat är Horizon; ditt eget tema
-   (matstrumpor-exporten) ligger opublicerat och rördes inte (API:t får inte
-   skriva i publicerade teman, och att skriva blint i din enda export vore
-   fel). Startsidans sektioner sätts i temaredigeraren: hero-bild
-   (`bilder/hero-soffa.png`), rubrik *"En bit av din hund du får behålla."* +
-   kollektionen. 10 minuter i Customize.
-6. **Leverantör:** priserna antar COGS ≈ 250–350 kr för custom-formklippt kudde
-   (CJ/AliExpress-klass). Verifiera mot faktisk leverantör innan första annonskrona.
-7. **Lösenordsskyddet** ligger kvar tills du väljer att lansera.
+   Settings → Store details → byt till **Hjärtkompis** (verifiera ledig
+   .se-domän; 4 alternativ i `copy/namn-och-rubriker.md`).
+3. **Policyerna i kassan** (Refund/Shipping) — API-token saknar
+   `write_legal_policies`. Klistra-in-färdiga texter i `SHOPIFY-MANUELLT.md`.
+   Innehållet finns redan publikt på Leverans-sidan.
+4. **Betalningar:** Shopify Payments + Klarna aktiveras i admin före lansering.
+5. **Leverantör:** priserna antar COGS ≈ 250–350 kr för custom-formklippt kudde.
+   Verifiera mot faktisk leverantör innan första annonskrona.
+6. **Lösenordsskyddet** ligger kvar tills du väljer att lansera.

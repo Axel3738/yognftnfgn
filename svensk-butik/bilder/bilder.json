@@ -1,15 +1,83 @@
 {
-  "images": [
+  "genererade": "2026-08-29",
+  "bilder": [
     {
-      "shot": "hero-soffa",
-      "prompt": "Photorealistic editorial product photograph: a plush custom-shaped pet pillow — a soft velvet pillow die-cut in the exact silhouette of a golden retriever, printed with a photorealistic photo of the dog on its surface, approximately 10 cm thick with slightly rounded stuffed edges, clearly a real manufactured home decor product and not a stuffed animal toy — resting upright on a light linen sofa in a bright Scandinavian living room, soft morning light streaming through sheer white curtains, light oak wood textures, muted warm neutrals (off-white, beige, sage green), shallow depth of field, no text, no logos, no watermarks, no humans",
-      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_30bhN0j8YsQ0cxqkUIBljdJLmO6/hf_20260829_063612_42afa1e3-68eb-4304-848b-c6b642cb0960.png"
+      "shot": "test-hundkudde",
+      "modell": "nano-banana-2 via kie.ai",
+      "shopify_fil": "hjartkompis-hund-soffa.png",
+      "cdn": "https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-hund-soffa.png",
+      "repo_kopia": "svensk-butik/bilder/test-hundkudde.jpg (nedskalad 1024px; originalet 2K ligger pa Shopifys CDN)"
     },
     {
-      "shot": "hund-narbild",
-      "prompt": "Photorealistic editorial close-up photograph: a plush custom-shaped pet pillow — a soft velvet pillow die-cut in the exact silhouette of a brown labrador, printed with a photorealistic photo of the dog on its surface, approximately 10 cm thick with slightly rounded stuffed edges, clearly a real manufactured home decor product and not a stuffed animal toy — lying on a neutral oat-colored bedspread, velvet fabric texture and stitched edge seams clearly visible, soft natural daylight, Scandinavian bedroom in muted warm neutrals (off-white, beige), shallow depth of field, no text, no logos, no watermarks, no humans",
-      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_30bhN0j8YsQ0cxqkUIBljdJLmO6/hf_20260829_063612_919b31b6-5f4f-4491-a0c6-453e235b69bf.png"
+      "shot": "hund-studio",
+      "modell": "nano-banana-2 via kie.ai",
+      "shopify_fil": "hjartkompis-hund-studio.png",
+      "cdn": "https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-hund-studio.png",
+      "repo_kopia": "svensk-butik/bilder/hund-studio.jpg (nedskalad 1024px; originalet 2K ligger pa Shopifys CDN)"
+    },
+    {
+      "shot": "katt-studio",
+      "modell": "nano-banana-2 via kie.ai",
+      "shopify_fil": "hjartkompis-katt-studio.png",
+      "cdn": "https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-katt-studio.png",
+      "repo_kopia": "svensk-butik/bilder/katt-studio.jpg (nedskalad 1024px; originalet 2K ligger pa Shopifys CDN)"
+    },
+    {
+      "shot": "katt-fatolj",
+      "modell": "nano-banana-2 via kie.ai",
+      "shopify_fil": "hjartkompis-katt-fatolj.png",
+      "cdn": "https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-katt-fatolj.png",
+      "repo_kopia": "svensk-butik/bilder/katt-fatolj.jpg (nedskalad 1024px; originalet 2K ligger pa Shopifys CDN)"
+    },
+    {
+      "shot": "tvilling",
+      "modell": "nano-banana-2 via kie.ai",
+      "shopify_fil": "hjartkompis-tvilling.png",
+      "cdn": "https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-tvilling.png",
+      "repo_kopia": "svensk-butik/bilder/tvilling.jpg (nedskalad 1024px; originalet 2K ligger pa Shopifys CDN)"
+    },
+    {
+      "shot": "barnkram",
+      "modell": "nano-banana-2 via kie.ai",
+      "shopify_fil": "hjartkompis-barnkram.png",
+      "cdn": "https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-barnkram.png",
+      "repo_kopia": "svensk-butik/bilder/barnkram.jpg (nedskalad 1024px; originalet 2K ligger pa Shopifys CDN)"
+    },
+    {
+      "shot": "minne",
+      "modell": "nano-banana-2 via kie.ai",
+      "shopify_fil": "hjartkompis-minne.png",
+      "cdn": "https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-minne.png",
+      "repo_kopia": "svensk-butik/bilder/minne.jpg (nedskalad 1024px; originalet 2K ligger pa Shopifys CDN)"
+    },
+    {
+      "shot": "fotokudde",
+      "modell": "nano-banana-2 via kie.ai",
+      "shopify_fil": "hjartkompis-fotokudde.png",
+      "cdn": "https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-fotokudde.png",
+      "repo_kopia": "svensk-butik/bilder/fotokudde.jpg (nedskalad 1024px; originalet 2K ligger pa Shopifys CDN)"
+    },
+    {
+      "shot": "unboxing",
+      "modell": "nano-banana-2 via kie.ai",
+      "shopify_fil": "hjartkompis-unboxing.png",
+      "cdn": "https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-unboxing.png",
+      "repo_kopia": "svensk-butik/bilder/unboxing.jpg (nedskalad 1024px; originalet 2K ligger pa Shopifys CDN)"
+    },
+    {
+      "shot": "sortiment",
+      "modell": "nano-banana-2 via kie.ai",
+      "shopify_fil": "hjartkompis-sortiment.png",
+      "cdn": "https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-sortiment.png",
+      "repo_kopia": "svensk-butik/bilder/sortiment.jpg (nedskalad 1024px; originalet 2K ligger pa Shopifys CDN)"
+    },
+    {
+      "shot": "hero-wide",
+      "modell": "nano-banana-2 via kie.ai",
+      "shopify_fil": "hjartkompis-hero-wide.png",
+      "cdn": "https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-hero-wide.png",
+      "repo_kopia": "svensk-butik/bilder/hero-wide.jpg (nedskalad 1024px; originalet 2K ligger pa Shopifys CDN)"
     }
   ],
-  "notes": "KREDITLÄGE: 0,35 credits före → 0,11 efter. Modell: soul_2 (Higgsfield Soul 2.0, fotorealistisk, billigast av alla testade: 0,12 credits exakt/bild; nano_banana 1,0, gpt_image_2 low 0,5). Ingen unlim-allowance tillgänglig på kontot.\n\nSTRUKET PGA KREDITBRIST (8 av 10): Krediterna räckte bara till 2 bilder (2 × 0,12 = 0,24; en tredje hade krävt 0,36 > 0,35). Prioritetslistan var 1, 2, 3, 4, 7 — jag genererade 1 (hero-soffa) och 2 (hund-narbild) och strök 3 (katt-fatolj), 4 (tvilling), 7 (fotokudde) samt de icke-prioriterade 5, 6, 8, 9, 10.\n\nAVVIKELSER:\n1. Aspect ratio: soul_2 stödjer inte 4:5 — hero-soffa genererades i 3:4 (närmaste match, serverns coercion). 1:1 för hund-narbild blev korrekt.\n2. QA hund-narbild: liten gibberish-text \"AMIUOEN\" är tryckt på kuddens sida (bryter mot NO text-regeln). Regenerering (1 gång) var instruerad om krediterna tillåter — det gör de inte (0,11 kvar < 0,12). Bilden levereras med denna brasklapp; texten sitter i ett litet plant parti och kan retuscheras manuellt, eller regenereras när kontot fyllts på. I övrigt god produktkänsla (silhuettform, rundade kanter, vit sidosöm). Hunden lutar mer åt vizsla/brun pointer än labrador.\n3. QA hero-soffa: godkänd — ingen text, korrekt produktform (die-cut silhuett med print, rundade fyllda kanter), skandinaviskt ljus och material enligt stilspec.\n\nBåda bilderna finns även lokalt: /tmp/claude-0/-home-user-yognftnfgn/3bb3dd95-5efc-5eef-9f43-39c6c62bf870/scratchpad/shot1-hero-soffa.png och shot2-hund-narbild.png. Job-ID:n: 42afa1e3-68eb-4304-848b-c6b642cb0960 (hero-soffa), 919b31b6-5f4f-4491-a0c6-453e235b69bf (hund-narbild). För resterande 8 bilder krävs påfyllning om minst ~1 credit (8 × 0,12 = 0,96)."
+  "borttagna": "hero-soffa/hund-narbild (Higgsfield soul_2, underkanda av Axel — kuddarna sag ut som riktiga djur; ersatta med nano-banana-2-set dar produkten tydligt ar en kudde)"
 }

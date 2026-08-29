@@ -2,6 +2,12 @@
 
 Allt nedan gick inte att göra via API:t. Ordningen är prioritetsordning.
 
+## 0. Publicera temat (ett klick)
+
+Online Store → Themes → **theme-export-matstrumpor-se-matstrumpor-cro-v5**
+→ ⋯ → **Publish**. Temat är redan omskrivet till Hjärtkompis (startsida,
+produktsida, färger, typografi, bilder) — API:t får bara inte publicera det.
+
 ## 1. Byt butiksnamn (Settings → Store details)
 
 Namn: **Hjärtkompis**
@@ -47,30 +53,19 @@ Namn: **Hjärtkompis**
 Aktivera Shopify Payments (kort) + Klarna. Copyn på sajten lovar "Klarna
 eller kort" — lansera inte innan båda funkar i en testcheckout.
 
-## 4. Startsidan (Online Store → Customize, temat Horizon)
+## 4. Startsidan — redan klar i temat
 
-- Hero-bild: `svensk-butik/bilder/hero-soffa.png` (ligger redan på Shopifys
-  CDN som Tvillingkuddens featured image)
-- Hero-rubrik: **"En bit av din hund du får behålla."**
-- Underrubrik: "Skicka din bästa bild — vi syr en kudde i exakt din hunds
-  form. Du godkänner utkastet innan vi syr något alls."
-- Sektion: Featured collection → "Alla kuddar"
-- Alternativa rubriker och taglines: `copy/namn-och-rubriker.md`
+Startsidan sätts av det omskrivna temat (steg 0). Vill du justera något görs
+det i temaredigeraren; alternativa rubriker och taglines finns i
+`copy/namn-och-rubriker.md`. Bilderna ligger som butiksfiler
+(`hjartkompis-*.png`) under Content → Files.
 
-## 5. När Higgsfield är påfyllt (~1 credit räcker)
+## 5. Före lansering (i ordning)
 
-Kör om de 8 strukna bilderna (prompter i `bilder/bilder.json` och i
-workflow-scriptet). Prioritet:
-1. `fotokudde` — låser upp Fotokudden ur DRAFT (sätt sedan status ACTIVE)
-2. `katt-fatolj` — kattbild saknas helt i butiken
-3. `tvilling`, `barnkram`, `minne`, `unboxing`, `katt-nyfiken`, `sortiment`
-
-## 6. Före lansering (i ordning)
-
-1. Betalningar aktiva (steg 3)
-2. Policyer inklistrade (steg 2)
-3. Startsidan uppsatt (steg 4)
+1. Temat publicerat (steg 0)
+2. Betalningar aktiva (steg 3)
+3. Policyer inklistrade (steg 2)
 4. Leverantör verifierad — COGS och faktisk leveranstid mot löftet 8–12
-   arbetsdagar (products-priserna antar COGS ≈ 250–350 kr)
+   arbetsdagar (priserna antar COGS ≈ 250–350 kr)
 5. Testorder hela vägen genom kassan
 6. Ta bort lösenordsskyddet
