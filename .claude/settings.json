@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Write",
+      "Edit",
+      "Artifact",
+      "Bash(git *)",
+      "Bash(node *)",
+      "Bash(npm *)",
+      "Bash(python3 *)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(mkdir *)",
+      "Bash(jq *)",
+      "Bash(wc *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "mcp__ADsmanagaer__ads_get_ad_accounts",
+      "mcp__ADsmanagaer__ads_get_ad_entities",
+      "mcp__ADsmanagaer__ads_get_field_context",
+      "mcp__ADsmanagaer__ads_update_entity",
+      "mcp__ADsmanagaer__ads_activate_entity"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "mcp__ADsmanagaer__ads_creative_delete",
+      "mcp__ADsmanagaer__ads_catalog_delete_product",
+      "mcp__ADsmanagaer__ads_delete_custom_audience"
+    ]
+  }
+}
