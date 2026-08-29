@@ -61,13 +61,19 @@ Följ uppladdningsprompten i masterdokumentet:
 
 ## Fas 4 — Efterarbete
 
-1. Flytta INTE Drive-mappen till LAUNCHED — det gör Axel när han slagit på kampanjen.
+1. Flytta produktens Drive-mapp till `Products/LAUNCHED/` (mapp-id
+   `1-vbYhYgTEv7zYptW5rGmgKAITmAz4l1X`) via Drive-connectorn — uppladdningen är
+   gjord och mappen ska inte plockas igen av nästa körning. Går flytten inte
+   (rättigheter på mappen): säg det i slutrapporten så flyttar Axel den själv.
+   Kampanjen är PAUSED, så "launched" här betyder "klar att slås på".
 2. Rapportera: QA-utfall, antal recensioner importerade, kampanj/adset/annons-id:n,
-   break-even som användes, och vad som väntar på Axel.
+   break-even som användes, och vad som väntar på Axel (framför allt: slå på
+   kampanjen).
 
 ## Definition of done
 - [ ] Alla creatives nedladdade och QA:ade, tabell levererad
 - [ ] Inga ❌ på pris/claims/stavning olösta (eller uttryckligen överlämnade till Axel)
 - [ ] Recensionerna importerade mot rätt produkt-id och verifierade
 - [ ] Kampanj + adsets + annonser skapade PAUSED med BE-ROAS + datum i namnet
+- [ ] Drive-mappen flyttad till LAUNCHED (eller flaggad om rättigheter saknas)
 - [ ] Slutrapport med id:n och kvarstående punkter
