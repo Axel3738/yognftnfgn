@@ -66,9 +66,15 @@ För varje åtgärd i `plan.atgarder`:
    `entity_id` = kampanj-id, `fields: {"daily_budget": <till_ore>}`.
    ⚠️ **API:t tar ÖRE.** Använd `till_ore` ur planen, ordagrant. 1 200 kr =
    `120000`. Skriv aldrig `till_sek` i det fältet.
-2. **Verifiera:** läs tillbaka kampanjen (`ads_get_ad_entities`, filtrering på
-   `campaign.id`) och kontrollera att `daily_budget` nu visar exakt
-   `till_sek` kronor. Visar den 100× för mycket eller för lite: **återställ
+   ⚠️ **Verktyget TVINGAR kampanjen till PAUSED vid budgetändring**
+   (`status_forced_to_paused: true` i svaret — bekräftat i skarp drift
+   2026-08-29). Sätt den OMEDELBART tillbaka: nytt anrop till
+   `ads_update_entity` med `fields: {"status": "ACTIVE"}` innan något annat
+   görs. Går det inte att återaktivera: larma direkt i svaret och på
+   dashboarden — en pausad vinnare förlorar pengar varje timme.
+2. **Verifiera:** läs tillbaka kampanjen (`ads_get_ad_entities`) och
+   kontrollera BÅDE att `daily_budget` visar exakt `till_sek` kronor OCH att
+   `effective_status` är `ACTIVE` igen. Visar den 100× för mycket eller för lite: **återställ
    omedelbart till gamla budgeten (gamla kronor × 100 = öre), avbryt HELA
    körningen och larma.**
 3. **Logga, committa och pusha DIREKT** — innan nästa åtgärd: skriv loggraden
