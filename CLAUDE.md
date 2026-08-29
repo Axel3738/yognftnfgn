@@ -548,6 +548,10 @@ Grillklinikken-butiker får ALDRIG bäver-emojin eller "Bäverbutiken" som vendo
   mobbningsverktyg i stället för ett styrverktyg.
 - **Färgordningen i diagrammen är en färgblindhetsmekanism, inte dekoration.**
   Rotera den inte. Status bärs alltid av ikon **och** text, aldrig färg ensam.
+- **Kaching-stegens första nivå får ALDRIG ha undertexten "Standard pris"** (Axels
+  beslut 2026-08-29 — den låg i fallback-stegen och syntes på varje produkt).
+  Rensas med `temu/kaching-cli/fixa-standardpris.mjs <butik>` på Axels dator
+  (kräver inloggad Kaching-session). Sätt aldrig texten i nya stegar.
 - **Notion-anropen stryps till ~3/s.** Ett par hundra sidor tar några minuter.
   Det är normalt, inte en hängning.
 - **Språk:** allt i repot skrivs på svenska — kod, kommentarer, commit-meddelanden.
