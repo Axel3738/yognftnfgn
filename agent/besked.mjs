@@ -92,11 +92,8 @@ export function kostnadSek(kostnad, fx) {
  *   vid noll vinst: annonsspend = omsättning - kostnad
  *   ROAS = omsättning / annonsspend = pris / (pris - kostnad)
  *
- * Momsen dras INTE av. Verifierat 2026-08-28 mot två produkter: Cykelshorts
- * (faktisk kostnad 117,60 kr mot 119,75 kr som modellen utan momsavdrag
- * förutsätter — 1,8 % ifrån; modellen med momsavdrag är 42 % fel) och
- * Bälteslipmaskinen (utan momsavdrag ger 34,8 USD, vilket stämmer med att
- * inköpspriset nyss höjdes till 40 USD; med momsavdrag ger den 15,8 USD).
+ * Ingen moms: Bäverbutiken säljer DDP till Sverige (Axels besked 2026-08-29).
+ * Break-even räknas rakt på försäljningspriset.
  */
 export function breakEvenRoas(prisSek, kostnadPerOrderSek) {
   if (!Number.isFinite(prisSek) || prisSek <= 0) return null;

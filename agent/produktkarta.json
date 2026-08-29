@@ -110,5 +110,5 @@
     "datum": "2026-08-27",
     "kalla": "mid-market (investing.com 9,69 · XE 9,52 · OFX 9,50 för USD; XE 11,09 för EUR)"
   },
-  "momsnot": "Break-even räknas RAKT PÅ FÖRSÄLJNINGSPRISET, utan momsavdrag. Verifierat 2026-08-28 genom att vända på två befintliga break-even-tal: Cykelshorts faktiska kostnad 117,60 kr mot 119,75 kr som modellen utan momsavdrag förutsätter (1,8 % ifrån), medan modellen med momsavdrag ger 67,95 kr (42 % fel). Bälteslipmaskinen pekar åt samma håll: utan momsavdrag 34,8 USD, vilket stämmer med att inköpspriset nyss höjdes till 40 USD; med momsavdrag 15,8 USD. Detta besvarar frågan CLAUDE.md flaggade som olöst. Säger Axel något annat gäller hans svar."
+  "momsnot": "Ingen moms. Bäverbutiken säljer DDP till Sverige (Axels besked 2026-08-29). Break-even räknas rakt på försäljningspriset. Ingen öppen fråga."
 }

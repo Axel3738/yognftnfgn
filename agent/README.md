@@ -76,7 +76,7 @@ dem oförändrade — inte att bedöma dem.
 break-even-ROAS = pris / (pris − kostnad per order)
 ```
 
-Momsen dras **inte** av. Kostnaden per order läggs ihop av delar i USD, EUR och
+Ingen moms — butiken säljer DDP till Sverige. Kostnaden per order läggs ihop av delar i USD, EUR och
 kronor, med valutakurserna i `produktkarta.json`. Ändras ett inköpspris räcker
 det att ändra ett tal där — ronden räknar om break-even själv.
 

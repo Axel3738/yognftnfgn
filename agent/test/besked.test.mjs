@@ -242,13 +242,11 @@ test('breakEvenRoas vägrar räkna när produkten inte går ihop', () => {
   assert.equal(breakEvenRoas(259, null), null);
 });
 
-test('modellen utan momsavdrag stämmer med den faktiska kostnaden', () => {
-  // Panelens befintliga break-even för Cykelshorts 1-pack är 1,86.
-  // Utan momsavdrag förutsätter det en kostnad på ~120 kr — den faktiska är 117,60 kr.
-  const utanMoms = 259 * (1 - 1 / 1.86);
-  const faktisk = 8.9 * 9.6 + 2.9 * 11.09;
-  assert.ok(Math.abs(utanMoms - faktisk) / faktisk < 0.05, 'ska ligga inom 5 %');
-  // Med momsavdrag skulle samma break-even förutsätta ~68 kr — långt fel.
-  const medMoms = 259 / 1.25 - 259 / 1.86;
-  assert.ok(Math.abs(medMoms - faktisk) / faktisk > 0.3, 'ska ligga långt fel');
+test('break-even räknas rakt på priset — ingen moms (DDP till Sverige)', () => {
+  // Spärr mot att någon i framtiden lägger in ett 25-procentsavdrag.
+  // Cykelshorts 1-pack: pris 259 kr, verklig kostnad 8,9 USD + 2,9 EUR = 117,60 kr.
+  const kostnad = 8.9 * 9.6 + 2.9 * 11.09;
+  assert.equal(Math.round(breakEvenRoas(259, kostnad) * 100) / 100, 1.83);
+  // Med ett momsavdrag hade samma siffror gett ett helt annat tal.
+  assert.notEqual(Math.round(breakEvenRoas(259 / 1.25, kostnad) * 100) / 100, 1.83);
 });

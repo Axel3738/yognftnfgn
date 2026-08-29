@@ -217,15 +217,10 @@ när en budget passerar den gränsen.
 - `axelbaltet`: `products.json` säger break-even-CPA **299 kr**, `products/axelbaltet/dna.md`
   säger **326 kr**. Kill-beslut mäts mot break-even — fråga Axel vilken som gäller.
   Båda är dessutom räknade på gamla priset 509 kr och är för lågt satta vid 599 kr.
-- **Momsläget: break-even räknas rakt på priset, utan momsavdrag.** Härlett
-  2026-08-28 genom att vända på två befintliga break-even-tal mot verklig COGS:
-  Cykelshorts faktiska kostnad 117,60 kr mot 119,75 kr som modellen utan
-  momsavdrag förutsätter (1,8 % ifrån) — med momsavdrag blir det 67,95 kr, 42 %
-  fel. Bälteslipmaskinen pekar åt samma håll (34,8 USD utan momsavdrag, vilket
-  stämmer med att inköpspriset nyss höjdes till 40 USD; 15,8 USD med). Samma
-  modell som Grillkliniken. Drar du reflexmässigt av 25 % ser lönsamma annonser
-  ut att gå med förlust. Uträkningen bor i `agent/besked.mjs` (`breakEvenRoas`)
-  och är testad. Säger Axel något annat gäller hans svar.
+- **Ingen moms. Frågan är stängd.** Bäverbutiken säljer DDP till Sverige.
+  Break-even räknas rakt på försäljningspriset: `pris / (pris − kostnad per order)`.
+  Axels besked 2026-08-29. Dra aldrig av 25 % — då ser lönsamma annonser ut att gå
+  med förlust. Uträkningen ligger i `agent/besked.mjs` (`breakEvenRoas`) och är testad.
 
 Alla `launches[]` i `products.json` är tomma. Kvotskriptet visar därför ett
 minusläge som speglar utebliven loggning, inte utebliven produktion — logga med
