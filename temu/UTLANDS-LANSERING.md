@@ -533,3 +533,38 @@ SKU-mönster: `TEMU-606721154083596-<HA|CO|KR|HW>-<S..XXL>`.
 ligger i CCR-miljöns **miljöinställningar** (inte i någon fil i repot eller
 scratchpad) — det är därför TOKENS.md säger "miljöinställningarna". Leta inte
 efter en env-fil.
+
+---
+
+## Batch 5 (2026-08-28) — 14 av 17 produkter ur nya CWD-offerten
+
+Offerten (Google Sheet, 17 produkter med kostnader per land) → 14 skapade i
+alla fem butikerna via `temu/utrullning/kor5.mjs` + `texter5*.mjs`.
+Svensk mastercopy av huvudsessionen; NO/DA/FI/EN av sonnet-subagenter med
+texter4 som stilreferens (modellpolicyn), stickprovskorrlästa.
+
+**Skapade:** arbetslampa (Makita-kompatibel, "batteri ingår inte" i copy+bullet),
+diskställ 2 vån, bänkhylla m utdragskorg, luffarschack, glasspints 2-pack 16 oz,
+kasta&fånga-set, magnetplattor (46/60 delar = två varianter med OLIKA pris),
+Motocentric-bakväska 37 L, sömnadskit 104 delar, reseask 7 fack, veckodosett
+21 fack, 3D-sandbild 20 cm, Dyson-pälsborstkit V7–V15, magnethylla.
+
+**INTE skapade — väntar besked:**
+1. **Lövblåsaren** (rad 49): "4.0/6.0Ah Batteries 1/2pc" — oklart om kvoten
+   avser 1 eller 2 batterier, 4.0 eller 6.0Ah. Fråga CWD.
+2. **Jetfläkten** (rad 61): en bild säger "utan batteri", en annan visar
+   batterier+laddare; specarna motsäger varandra (150000 vs 28000 RPM). Fråga CWD.
+3. **Fotokudden** (rad 69): custom-tryck av husdjursfoto, max 45 cm — kräver
+   fotouppladdning i köpflödet (app/line item property). Eget projekt.
+
+**Källhederlighet:** bilderna kommer ur offertens inbäddade xlsx-bilder +
+Temu-länkarnas `top_gallery_url` (img.kwcdn.com är öppen även när temu.com
+blockerar — lärdomen är att CDN:et går att hämta ifrån direkt). Bilder med fel
+räkneord (48/68pcs, 111pcs) eller kinesisk text används INTE. Sömnadskitet är
+**104 delar** (offerten + innehållslistan), inte 100 (Temu-slug) eller 111
+(bildpåskrift). Magnetplattorna är **46/60**, inte bildernas 48/68.
+Veckodosetten säljs bara i svart (offerten skiljer inte färger; grön/brun på
+bilderna kan vara andra SKU:er). Bänkhyllan har ingen måttbild → inga mått i copyn.
+
+Prismatris: 3×-regeln på offertens landade kostnader qty 1 (46/60-setet per
+variant), låsta FX 2026-08-22, lokala prispunkter, jämförpris ×1,3.
