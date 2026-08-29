@@ -208,6 +208,24 @@ Genomfört:
   produktsidan, UGC-galleri, rättad berättelse-text) ligger i
   `tema/index.json` och väntar — se SHOPIFY-MANUELLT steg 0b.
 
+## 8d. Varv 6 (2026-08-29): leverantörsfakta, en storlek och VoC-copy
+
+- **Leverantören bekräftad (Axels skärmdump):** fabriken gör **45 cm-enheter**,
+  ~4 dagars produktion + 2–3 dagar transport till deras lager. Löftet
+  8–12 arbetsdagar till kund håller därmed (4 + 2–3 + frakt till Sverige),
+  men verifiera totala frakttiden mot första riktiga ordern.
+- **Varianterna omgjorda:** 40/55/75 cm var påhittade storlekar — ersatta med
+  **en variant: 45 cm, 599 kr** (SKU HK-45), den storlek fabriken faktiskt
+  gör. Färre val är dessutom renare för one-product-testet. Fler storlekar
+  läggs till först när leverantören bekräftat dem.
+- **VoC-kundinsikter** (Axels PDF, Reddit-material) sparade i
+  `research/kundinsikter-voc.md` och invävda i all copy via sonnet-subagent:
+  generiskt-vs-sytt-konflikten, "den knasiga bilden", privata minnen,
+  närhet på avstånd, används-varje-dag, kvalitetsoro mött med ärlighet,
+  humor, hundar-tar-kuddar-själva.
+- Temaloopen: v3 (färger + FAQ-sektion) publicerades av Axel → VoC-texterna
+  för startsidan skrivs i **v4 (utkast)**.
+
 ## 9. Kvarstående — kräver Axel
 
 1. **Publicera temat:** Online Store → Themes →
