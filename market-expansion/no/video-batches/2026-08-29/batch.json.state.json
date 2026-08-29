@@ -268,14 +268,16 @@
   "proofreadId": "946277cea1c54ca887c1b20513545cf7-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "78a5c1a72f1a47c59cce85cf89c43ee0-nb"
+  "renderId": "78a5c1a72f1a47c59cce85cf89c43ee0-nb",
+  "downloaded": true
  },
  "cykelshorts_CS_3": {
   "assetUrl": "https://resource2.heygen.ai/video/c8796223b94346a29183978f273a8181/original.mp4",
   "proofreadId": "9b523ef4d4af44dfb5ede11de879da81-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "cd5a8749c84e4a7385107c9806e90002-nb"
+  "renderId": "cd5a8749c84e4a7385107c9806e90002-nb",
+  "downloaded": true
  },
  "balteslip_SP_1": {
   "assetUrl": "https://resource2.heygen.ai/video/d7b11ed52f3b4f55935df8eb0d2d7d64/original.mp4",
@@ -306,21 +308,24 @@
   "proofreadId": "3e5afeb9170d47b6b8dc5a4be5c428bc-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "cd948738529e4f2c858dbca9ec2c447c-nb"
+  "renderId": "cd948738529e4f2c858dbca9ec2c447c-nb",
+  "downloaded": true
  },
  "balteslip_PD_2": {
   "assetUrl": "https://resource2.heygen.ai/video/8a910e8a92ea468891b8ef52e52f7ebb/original.mp4",
   "proofreadId": "ac3cd68fae76436e9b5aacb643e67d92-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "ed4e560f57cb479fa4787da7072f431c-nb"
+  "renderId": "ed4e560f57cb479fa4787da7072f431c-nb",
+  "downloaded": true
  },
  "balteslip_PD_3": {
   "assetUrl": "https://resource2.heygen.ai/video/bc932af551d44476a38b86b12b17b975/original.mp4",
   "proofreadId": "41472477ee66414fa3b081ed99a297ba-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "d626ac09ef07424da492308a3c234ebe-nb"
+  "renderId": "d626ac09ef07424da492308a3c234ebe-nb",
+  "downloaded": true
  },
  "balteslip_G_1": {
   "assetUrl": "https://resource2.heygen.ai/video/3a43ef49292e404b9f5843b873e458fb/original.mp4",
@@ -343,111 +348,127 @@
   "proofreadId": "84d11351c4734729ad0ea06a345ee54d-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "69d1d8849f1c42f9a8f683357605c11b-nb"
+  "renderId": "69d1d8849f1c42f9a8f683357605c11b-nb",
+  "downloaded": true
  },
  "balteslip_CS_1": {
   "assetUrl": "https://resource2.heygen.ai/video/bd271519c643449db41fc1aa1608e00b/original.mp4",
   "proofreadId": "c34cb66c24f74384aef8988f8592762f-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "564054e819124c5c84289f57df351611-nb"
+  "renderId": "564054e819124c5c84289f57df351611-nb",
+  "downloaded": true
  },
  "balteslip_CS_2": {
   "assetUrl": "https://resource2.heygen.ai/video/6dc0c570049f42aabe4b2a4183eaa467/original.mp4",
   "proofreadId": "478d4ba64b514f909bc34ece1b65a0e3-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "162b9aa01a7d42e68bb85b83cd239b25-nb"
+  "renderId": "162b9aa01a7d42e68bb85b83cd239b25-nb",
+  "downloaded": true
  },
  "balteslip_CS_3": {
   "assetUrl": "https://resource2.heygen.ai/video/f9199a57d3394e73bea46ae417c0e54d/original.mp4",
   "proofreadId": "500b41428b0b40319593c9a661710fd3-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "8fffe1ef8ba34692babee3f28139f8cf-nb"
+  "renderId": "8fffe1ef8ba34692babee3f28139f8cf-nb",
+  "downloaded": true
  },
  "overvakningskamera_PD_1": {
   "assetUrl": "https://resource2.heygen.ai/video/dbd6f67d818e4d9b9e98ee8d089398be/original.mp4",
   "proofreadId": "423e983f1ba244cb81cffb1457bd48c9-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "4735bbb2635744d598c4c7f8342f997e-nb"
+  "renderId": "4735bbb2635744d598c4c7f8342f997e-nb",
+  "downloaded": true
  },
  "overvakningskamera_PD_2": {
   "assetUrl": "https://resource2.heygen.ai/video/4e361358aae94a7a8c15c0d157812727/original.mp4",
   "proofreadId": "d7352d3c873c469783fc83119fd9f6af-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "763e7d92fb2848409fc74dac04d2d007-nb"
+  "renderId": "763e7d92fb2848409fc74dac04d2d007-nb",
+  "downloaded": true
  },
  "overvakningskamera_PD_3": {
   "assetUrl": "https://resource2.heygen.ai/video/b9881e30fff549d585412d153674d42c/original.mp4",
   "proofreadId": "a6d752798b9d4cf1be80a8739d189386-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "2e35815604b84f29a8c4acb9755c4cf5-nb"
+  "renderId": "2e35815604b84f29a8c4acb9755c4cf5-nb",
+  "downloaded": true
  },
  "overvakningskamera_SP_1": {
   "assetUrl": "https://resource2.heygen.ai/video/437075fe1c7749eca2fb10f37d2c6c07/original.mp4",
   "proofreadId": "6a903027a80948cbbc410094a9dd8953-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "baaedba8db7c4e84b0da29f024a107dc-nb"
+  "renderId": "baaedba8db7c4e84b0da29f024a107dc-nb",
+  "downloaded": true
  },
  "overvakningskamera_SP_2": {
   "assetUrl": "https://resource2.heygen.ai/video/d7a7af7df8e0412c8ab633f000f03685/original.mp4",
   "proofreadId": "e879a4c9eab641bc9e2db2a37c14cc2e-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "1c4a96b2616c467eae59ed15e3986e89-nb"
+  "renderId": "1c4a96b2616c467eae59ed15e3986e89-nb",
+  "downloaded": true
  },
  "overvakningskamera_SP_3": {
   "assetUrl": "https://resource2.heygen.ai/video/ed420efd3ee74a6f8fd8d89934ef96d5/original.mp4",
   "proofreadId": "5179ed9d1ae844beb09df28601940651-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "79f02f0805164e68ac8b5973574fe058-nb"
+  "renderId": "79f02f0805164e68ac8b5973574fe058-nb",
+  "downloaded": true
  },
  "overvakningskamera_G_1": {
   "assetUrl": "https://resource2.heygen.ai/video/f088f8f17655451593e5ba3f21016503/original.mp4",
   "proofreadId": "7137d96f24d447918c85b69cee8354d1-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "157bf8b41d47423b959f86d68367da9c-nb"
+  "renderId": "157bf8b41d47423b959f86d68367da9c-nb",
+  "downloaded": true
  },
  "overvakningskamera_G_2": {
   "assetUrl": "https://resource2.heygen.ai/video/1312c560245747729a600258bc1ebe04/original.mp4",
   "proofreadId": "1d82bc2ffebf4e5d9db279d751129c5d-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "00190b797b4143feb12cfd93a1348813-nb"
+  "renderId": "00190b797b4143feb12cfd93a1348813-nb",
+  "downloaded": true
  },
  "overvakningskamera_G_3": {
   "assetUrl": "https://resource2.heygen.ai/video/6576709259e94a25ba089b17c3e63ecc/original.mp4",
   "proofreadId": "9ff39522f2ad410493a6345d289f5f41-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "55f79ebb962043749a1aca3c3ec563e6-nb"
+  "renderId": "55f79ebb962043749a1aca3c3ec563e6-nb",
+  "downloaded": true
  },
  "overvakningskamera_CS_1": {
   "assetUrl": "https://resource2.heygen.ai/video/530d898aa4884ec9955cf99b1e3acbfc/original.mp4",
   "proofreadId": "f0c73deeb138449c9e3687f650c4b92d-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "3a42c18f19c64582aef211bbb2aae3e6-nb"
+  "renderId": "3a42c18f19c64582aef211bbb2aae3e6-nb",
+  "downloaded": true
  },
  "overvakningskamera_CS_2": {
   "assetUrl": "https://resource2.heygen.ai/video/8be9b187515e419f9b2f7383c6e77000/original.mp4",
   "proofreadId": "63f7a73124bc4618ab35ce50cb0b7bef-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "20b86071625a4dc48dc87ce09c56b58c-nb"
+  "renderId": "20b86071625a4dc48dc87ce09c56b58c-nb",
+  "downloaded": true
  },
  "overvakningskamera_CS_3": {
   "assetUrl": "https://resource2.heygen.ai/video/c79784c214af4b3fa2af7317496f399a/original.mp4",
   "proofreadId": "dd9ee9a91da44e7db830d141e30d6460-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "ffc631d53a52481691976bb700f62b2d-nb"
+  "renderId": "ffc631d53a52481691976bb700f62b2d-nb",
+  "downloaded": true
  }
 }

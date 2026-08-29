@@ -30,9 +30,14 @@ def burn(slug, name):
     fixed = os.path.join(BASE, 'srt-fixed', key + '.srt')
     final_dir = os.path.join(BASE, 'final', slug); os.makedirs(final_dir, exist_ok=True)
     out = os.path.join(final_dir, f'NO_{key}.mp4')
-    bands = [b for b in SCAN[key]['bands'] if b['y0'] > 1000]  # captions-bandet, inte scenljus högre upp
-    y0 = min(b['y0'] for b in bands) - 8
-    y1 = max(b['y1'] for b in bands) + 8
+    # captions-bandet: föredra band som börjar i standardzonen; ljusa scener kan
+    # dränka profilen (bälteslipen) — då används batchens standardband.
+    bands = [b for b in SCAN[key]['bands'] if 1250 < b['y0'] < 1600]
+    if bands:
+        y0 = min(b['y0'] for b in bands) - 8
+        y1 = max(b['y1'] for b in bands) + 8
+    else:
+        y0, y1 = 1388, 1496
     H = SCAN[key]['h']; h = y1 - y0
     cov = os.path.join(BASE, 'srt-fixed', key + '.cover.srt')
     cover_srt(fixed, cov)
