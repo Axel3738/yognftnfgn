@@ -73,3 +73,33 @@ payloaden till en skarp butik.
 - Ändra aldrig produktpriser i Shopify utan att fråga först.
 - API:t är odokumenterat och kan ändras utan förvarning — verifiera efter varje skrivning.
 - Två verksamheter i repot: kontrollera vilken butik `--store` pekar på innan du kör.
+
+## Bygga en hel batch bundles
+
+`build-payloads.mjs` genererar en payload per produkt ur en spec-fil, så att en
+launchbatch inte behöver handpåläggning per produkt.
+
+```bash
+node tools/kaching-cli/build-payloads.mjs spec/<batch>.json
+```
+
+Spec-filen håller produkterna (handle, titel, GID, variantpriser), vilken stege
+var och en ska ha, och de globala designvalen. Stegarna definieras på ett ställe:
+`standard` (1 / 2 / 3 st med 0 / −15 / −20 %) och `bogo` (1 st ord., 2 st −50 %).
+
+Ut kommer `payloads/<batch>/<handle>.json` plus `KOR-DETTA.md` med de exakta
+kommandona att köra.
+
+**Rabatterna sätts alltid som `percentage`, aldrig `specific`.** `specific` är ett
+fast totalbelopp och blir därför fel så fort en produkt har varianter som kostar
+olika — Magnetplattor i Storformat kostar 469 kr för 46 delar och 539 kr för 60.
+Procent fungerar för båda.
+
+Undertexterna räknas ut ur de verkliga priserna: har alla varianter samma pris
+skrivs exakta kronor ("Du sparar 78 kr — 220 kr/st"), skiljer de sig skrivs bara
+procenten, eftersom en kronsiffra då hade varit fel för minst en variant.
+
+Payloaden byggs på `payloads/exempel-tresteg.json` som skelett — en riktig
+fungerande bundle med alla 67 fält — och bara det som ska skilja skrivs över.
+Att bygga en payload från grunden är det snabbaste sättet att tappa ett fält
+som Kaching tyst behöver.

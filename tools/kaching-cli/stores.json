@@ -1,9 +1,9 @@
 {
-  "_läsmig": "Lägg till din butik här. 'handle' är det som står i admin-URL:en: https://admin.shopify.com/store/DET-HÄR/... Det är oftast INTE samma som domännamnet.",
-  "belysningshuset": {
-    "handle": "BYT-MOT-DIN-STORE-HANDLE",
-    "myshopify": "BYT-MOT-DIN-STORE-HANDLE.myshopify.com",
-    "publicUrl": "https://belysningshuset.se",
+  "_lasmig": "'handle' ar det som star i admin-URL:en: https://admin.shopify.com/store/DET-HAR/... Det ar oftast myshopify-prefixet, men verifiera i webblasaren forsta gangen.",
+  "baverbutiken": {
+    "handle": "4snrw0-mg",
+    "myshopify": "4snrw0-mg.myshopify.com",
+    "publicUrl": "https://baverbutiken.se",
     "themeId": null
   }
 }
