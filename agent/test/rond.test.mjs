@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { annonsbehov, bedomKampanj, breakEvenForPost, kontrolleraKonto, planera, rapport, TILLATET_KONTO } from '../rond.mjs';
+import { annonsbehov, annonskvot, bedomKampanj, breakEvenForPost, kontrolleraKonto, planera, rapport, TILLATET_KONTO } from '../rond.mjs';
 
 const bas = () => ({
   hamtad: '2026-08-28T07:00:00Z',
@@ -362,4 +362,13 @@ test('filutkorgen överlever tur och retur och släpper inte igenom farliga sök
   const tillbaka = extraheraFiler(html);
   assert.deepEqual(Object.keys(tillbaka), ['products/lastnat/dna.md']);
   assert.equal(tillbaka['products/lastnat/dna.md'], filer['products/lastnat/dna.md']);
+});
+
+test('launchstrukturen: budget styr veckokvoten precis som Axels tabell', () => {
+  assert.deepEqual(annonskvot(500), { antal: 1, nyaKoncept: 0 });
+  assert.deepEqual(annonskvot(1000), { antal: 2, nyaKoncept: 1 });
+  assert.deepEqual(annonskvot(2000), { antal: 3, nyaKoncept: 1 });
+  assert.deepEqual(annonskvot(2500), { antal: 3, nyaKoncept: 1 });
+  assert.deepEqual(annonskvot(4000), { antal: 4, nyaKoncept: 1 });
+  assert.deepEqual(annonskvot(null), { antal: 0, nyaKoncept: 0 });
 });

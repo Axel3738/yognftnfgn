@@ -153,6 +153,9 @@ Aldrig mer än en batch per dygn, resten av listan rapporteras bara.
   dem, via det vanliga veckoflödet.
 - Behov `ersatt` eller `mata_vinnare` på en produkt som redan har minne
   (`products/<id>/`) → följ `.claude/commands/cs.md` i stället.
+- **Batchens storlek = veckokvoten** (`veckokvot` i utfallet, launchstrukturen:
+  budget → antal annonser + nya koncept). En /cs-batch för produkten producerar
+  veckans antal — mest variationer, nya koncept enligt kvoten.
 - När batchen är klar OCH uppladdad till Notion: skriv en loggrad med kod
   `FORSTA_BATCH_KLAR` (respektive `CS_BATCH_KLAR`), `genomford: true` —
   det är den raden som tystar behovet i en vecka.

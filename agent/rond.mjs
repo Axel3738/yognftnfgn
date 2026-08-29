@@ -325,6 +325,20 @@ function b_spend(rader, behovsrad) {
 // första riktiga creative-strategy-batch.
 export const FORSTA_BATCH_SPEND_SEK = 3000;
 
+/**
+ * Launchstrukturen — Axels tabell ur Bäverpanelen: hur många nya annonser en
+ * produkt ska få per vecka, styrt av dagsbudgeten. Mest variationer, ungefär
+ * en ny idé per tre variationer. Jasper klarar 50-70/vecka totalt; blir det
+ * plats över ska den gå till FLER PRODUKTER, inte fler annonser på samma.
+ */
+export function annonskvot(budgetSek) {
+  if (!Number.isFinite(budgetSek) || budgetSek <= 0) return { antal: 0, nyaKoncept: 0 };
+  if (budgetSek < 750) return { antal: 1, nyaKoncept: 0 };
+  if (budgetSek < 1500) return { antal: 2, nyaKoncept: 1 };
+  if (budgetSek < 3000) return { antal: 3, nyaKoncept: 1 };
+  return { antal: 4, nyaKoncept: 1 };
+}
+
 const ORDNING = [
   'STANG_AV', 'ATGARDSTRAPPAN', 'HALVERA', 'SANK', 'SKALA',
   'STOR_SPEND_UTAN_KOP', 'RAKNA_BACKDAGAR', 'ORIMLIG_DATA', 'SAKNAR_BREAK_EVEN',
@@ -403,6 +417,9 @@ export function rapport(rader, meta, behov = []) {
       ut.push(`- **${b.namn.split('|')[0].trim()}** — ${b.orsak}. Starta med \`/cs\` eller \`/forsta-batch\`.`);
     }
     ut.push('');
+    const totalVecka = rader.reduce((s2, r) => s2 + annonskvot(r.budget).antal, 0);
+    ut.push(`Veckokvot totalt (launchstrukturen): ${totalVecka} annonser över ${rader.length} produkter. Jasper klarar 50–70 — plats över går till FLER produkter.`);
+    ut.push('');
   }
 
   if (meta.varningar?.length) {
@@ -480,7 +497,14 @@ async function main() {
 
   const meta = { idag, hamtad: data.hamtad, varningar };
   if (argv.includes('--json')) {
-    console.log(JSON.stringify({ meta, rader, plan: planera(rader, { logg, idag }), annonsbehov: annonsbehov(rader, { logg, idag }) }, null, 2));
+    const behovslista = annonsbehov(rader, { logg, idag }).map((b) => {
+      const rad = rader.find((r) => r.id === b.kampanj_id);
+      return { ...b, veckokvot: annonskvot(rad?.budget) };
+    });
+    console.log(JSON.stringify({
+      meta, rader, plan: planera(rader, { logg, idag }), annonsbehov: behovslista,
+      veckokvot: rader.map((r) => ({ kampanj_id: r.id, namn: r.namn, ...annonskvot(r.budget) })),
+    }, null, 2));
   } else {
     console.log(rapport(rader, meta, annonsbehov(rader, { logg, idag })));
   }
