@@ -79,6 +79,18 @@ klart utan att invänta godkännande; stanna bara vid ägarbeslut eller ❌ neda
    gamla videor med samma titel återanvänts av misstag (annonsnamnen är
    produktprefixade just därför).
 
+## Fas 3.5 — Drive-leverans (Axels krav 2026-08-29)
+
+Färdiga videor + norska adcopy-docs ska in i Drive, i en mapp **"NO <källmappens
+namn>"** bredvid produktens källmapp (samma förälder). Docs skapas via
+Drive-connectorn (`create_file`, textContent → Google Doc). Videorna är för stora
+för connectorn — de laddas upp med `node pipeline/drive-push.mjs
+--folder=<mapp-id> final/<slug>/*.mp4`, som kräver env `DRIVE_UPLOAD_URL` +
+`DRIVE_UPLOAD_KEY` (Apps Script-brevlådan, installation: `tools/drive-brevlada.gs`).
+Saknas env-variablerna: be Axel installera brevlådan, leverera docs ändå.
+REVIEWS-arken kopieras INTE: påhittade kundrecensioner översätts/publiceras inte
+av rutinen (beslut 2026-08-29) — raden lämnas till Axel.
+
 ## Fas 4 — Logga och pusha
 
 1. Ny rad i körloggen i `docs/video-localization.md` (kvot, rättelser, captions,
