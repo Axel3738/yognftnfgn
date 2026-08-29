@@ -1,0 +1,107 @@
+/* ==========================================================================
+   ms-tema.css — anpassningslagret mot bastemat (Hjärtkompis-version)
+   --------------------------------------------------------------------------
+   ms-cro.css är vårt eget och rör bara .ms-*. Den här filen är den ENDA plats
+   där vi rör basetemats egna klasser, och den laddas efter ms-cro.css.
+
+   Varför separat: temats klassnamn (.product-form__submit, .price…) är Dawns,
+   inte våra. Byts bastemat ut är det den här filen som ska skrivas om — inte
+   konverteringslagret. Den är också liten med flit, så den går att justera
+   utan att ladda upp hela CSS:en igen.
+
+   Dawn-specifikt. Läs innan du byter bastema.
+   ========================================================================== */
+
+/* Hjärtkompis-paletten -------------------------------------------------- */
+/* ms-cro.css sätter matstrumpors bärnstensorange som fallback-tokens.
+   Den här filen laddas sist, så här byts hela accentfamiljen till lila —
+   ett ställe, slår igenom i alla .ms-komponenter (USP-rad, marquee,
+   paketkort, trustrad, leverans, FAQ-pil, garantikort, sticky-knapp). */
+.ms,
+.ms-scope {
+  --ms-accent: #7c4ec4;           /* lila, Hjärtkompis accent */
+  --ms-accent-dark: #5d38a022;    /* används bara för ytor */
+  --ms-accent-ink: #fdfbf7;       /* text ovanpå accent */
+  --ms-ring: 0 0 0 3px rgba(124, 78, 196, .32);
+  --ms-surface-2: #f5f1fc;        /* ljuslila yta (ersätter varm beige) */
+  --ms-line: #e4def0;             /* kantlinje i samma familj */
+  --ms-line-strong: #c7bce0;
+}
+
+/* Köpknappen ------------------------------------------------------------ */
+/* Dawn gör "Lägg i varukorgen" till en sekundär (vit) knapp så fort Shop Pay
+   är påslaget. Det ger sidans viktigaste knapp minst tyngd på hela sidan.
+   Vi vänder på det: vår knapp är fylld, Shop Pay får ligga under som
+   alternativ. Dawns knappar räknar i rgb-tripletter, därav formatet. */
+.product-form__submit.button,
+.product-form__submit.button--secondary {
+  --color-button: 124, 78, 196;
+  --color-button-text: 253, 251, 247;
+  --alpha-button-background: 1;
+  --alpha-button-border: 1;
+  min-height: 5.2rem;
+  font-size: 1.6rem;
+  letter-spacing: .02em;
+}
+.product-form__submit.button:hover { filter: brightness(1.06); }
+
+/* Shop Pay-knappen ska se ut som ett andrahandsval, inte som huvudsaken. */
+.product-form__buttons .shopify-payment-button { margin-top: .8rem; }
+
+/* Priset ---------------------------------------------------------------- */
+/* Priset är det andra ögat landar på efter titeln. Dawn sätter det i samma
+   storlek som brödtexten. */
+.product .price {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+.product .product__tax { opacity: .65; }
+
+/* Köprutan -------------------------------------------------------------- */
+/* Luften mellan blocken i köprutan. Dawn lämnar dem tätt ihop, vilket gör att
+   våra block ser ut att höra ihop med temats i stället för att läsas var för sig. */
+.product__info-container > * + * { margin-top: 1.2rem; }
+.product__info-container { max-width: 52rem; }
+
+/* Paketnivåerna är sidans viktigaste val — de får andas mer än resten. */
+.product__info-container > * + .ms-paket { margin-top: 1.8rem; }
+
+/* Titeln får inte konkurrera med sektionsrubrikerna längre ner. */
+.product__title h1,
+.product__title .h1 { line-height: 1.15; }
+
+/* Bilder i produktbeskrivningen ska aldrig spränga spalten. */
+.product__description img { max-width: 100%; height: auto; border-radius: 14px; }
+
+/* Galleriet ------------------------------------------------------------- */
+/* Miniatyrerna ska synas som miniatyrer, inte som lika stora rutor. */
+.thumbnail-list__item { max-width: 9rem; }
+
+/* Sidfoten -------------------------------------------------------------- */
+/* Ljus botten, mörk text, lila accenter. Rubrikerna tar accentfärgen via
+   schemats egen knappvariabel men mörkas ned ett steg med color-mix —
+   ren accentlila på ljus botten ger för svag kontrast för text.
+   Raden innan är reserven för webbläsare utan color-mix. */
+.footer .footer-block__heading { color: rgba(var(--color-button), 1); }
+.footer .footer-block__heading {
+  color: color-mix(in srgb, rgb(var(--color-button)) 70%, #1e0a3c);
+}
+
+/* Sociala ikoner: Dawns är 18 px gråa streck längst ner — osynliga.
+   Här blir de lila runda knappar under loggan, stora nog för tummen. */
+.footer .footer__list-social { gap: 1rem; margin-top: 1rem; }
+.footer .list-social__link {
+  width: 4.4rem;
+  height: 4.4rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(var(--color-button), 1);
+  color: rgb(var(--color-button-text));
+  transition: transform .15s ease, filter .15s ease;
+}
+.footer .list-social__link:hover { transform: translateY(-2px); filter: brightness(1.08); }
+.footer .list-social__link .svg-wrapper,
+.footer .list-social__link svg { width: 2rem; height: 2rem; }

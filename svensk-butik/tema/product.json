@@ -126,9 +126,32 @@
             "q": "Går kudden att tvätta?",
             "a": "<p>Ja, i maskin på 30 grader.</p>"
           }
+        },
+        "q7": {
+          "type": "qa",
+          "settings": {
+            "q": "Vad händer om min bild är suddig eller dåligt tagen?",
+            "a": "<p>Skicka den ändå. Vilken mobilbild som helst duger som utgångspunkt — är den för dålig för att bli bra säger vi till innan något sys, inte efteråt.</p>"
+          }
+        },
+        "q8": {
+          "type": "qa",
+          "settings": {
+            "q": "Är det här ännu en Kina-butik?",
+            "a": "<p>Nej, Hjärtkompis är en svensk butik. Kuddarna sys på beställning hos vår tillverkningspartner utomlands — precis som det mesta skräddarsytt görs. Därför tar leveransen 8–12 arbetsdagar och inte två–tre. Vi lovar hellre en tid som stämmer än en som låter bra.</p>"
+          }
         }
       },
-      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6"],
+      "block_order": [
+        "q1",
+        "q2",
+        "q7",
+        "q3",
+        "q4",
+        "q5",
+        "q8",
+        "q6"
+      ],
       "settings": {
         "heading": "Vanliga frågor"
       }
