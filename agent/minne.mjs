@@ -12,12 +12,38 @@
 // repots budgetlogg.jsonl skrivs filen över; annars behålls repots och en
 // varning skrivs. Exitkod 0 = synkat, 2 = kunde inte tolka.
 
-import { readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { lasLogg, LOGGFIL } from './logg.mjs';
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
+const REPOROT = join(HÄR, '..');
+
+/**
+ * Filutkorgen: minnesfiler en schemalagd körning lade i dashboarden i stället
+ * för att pusha. Bara ofarliga relativa sökvägar accepteras.
+ */
+export function extraheraFiler(html) {
+  const träff = String(html).match(
+    /<script type="application\/json" id="filutkorg">([\s\S]*?)<\/script>/,
+  );
+  if (!träff) return {};
+  try {
+    const filer = JSON.parse(träff[1]);
+    if (filer === null || typeof filer !== 'object' || Array.isArray(filer)) return {};
+    const rena = {};
+    for (const [sokvag, innehall] of Object.entries(filer)) {
+      if (typeof innehall !== 'string') continue;
+      if (!/^(products|docs|agent)\//.test(sokvag)) continue;
+      if (sokvag.includes('..') || sokvag.includes('\\')) continue;
+      rena[sokvag] = innehall;
+    }
+    return rena;
+  } catch {
+    return {};
+  }
+}
 
 export function extraheraLogg(html) {
   const träff = String(html).match(
@@ -51,6 +77,21 @@ async function main() {
     console.log(`minnet synkat: ${urArtefakt.length} rader från dashboarden (repot hade ${urRepo.length})`);
   } else {
     console.log(`VARNING: repots logg (${urRepo.length} rader) är längre än dashboardens (${urArtefakt.length}) — behåller repots. Publicera om dashboarden så den kommer ikapp.`);
+  }
+
+  // Filutkorgen: skriv filerna till arbetskopian OCH spegla till agent/utkorg/
+  // så de överlever nästa dashboard-ombyggnad tills en push-session committat
+  // dem och tömt utkorgen.
+  const filer = extraheraFiler(html);
+  for (const [sokvag, innehall] of Object.entries(filer)) {
+    for (const mal of [join(REPOROT, sokvag), join(HÄR, 'utkorg', sokvag)]) {
+      await mkdir(dirname(mal), { recursive: true });
+      await writeFile(mal, innehall, 'utf8');
+    }
+  }
+  if (Object.keys(filer).length > 0) {
+    console.log(`filutkorg: ${Object.keys(filer).length} fil(er) utskrivna: ${Object.keys(filer).join(', ')}`);
+    console.log('En session med push-rättighet: committa filerna, töm agent/utkorg/ och publicera om dashboarden.');
   }
 }
 

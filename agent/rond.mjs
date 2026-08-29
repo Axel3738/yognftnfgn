@@ -283,19 +283,47 @@ export function annonsbehov(rader, { logg = [], idag = null } = {}) {
     const d = (nu - Date.parse(`${datum}T00:00:00Z`)) / 86400000;
     return Number.isFinite(d) && d >= 0 && d <= 7;
   };
+  const KLAR = ['FORSTA_BATCH_KLAR', 'CS_BATCH_KLAR'];
   const behov = [];
   for (const r of rader) {
-    const egna = logg.filter((rad) => rad.kampanj_id === r.id && rad.genomford === true && inom7(rad.datum));
-    const pausat = egna.some((rad) => ['TRAPPA_STEG_1', 'TRAPPA_STEG_2', 'TRAPPA_STEG_3', 'STANG_AV'].includes(rad.kod));
-    const skalningar = egna.filter((rad) => rad.kod === 'SKALA').length;
+    const egna = logg.filter((rad) => rad.kampanj_id === r.id && rad.genomford === true);
+    const harBatch = egna.some((rad) => KLAR.includes(rad.kod));
+    const nyligenKlar = egna.some((rad) => KLAR.includes(rad.kod) && inom7(rad.datum));
+    if (nyligenKlar) continue; // batch gjord i veckan — låt den landa först
+
+    // Axels regel 2026-08-29: 3 000 kr total spend utan en riktig batch = dags.
+    if (!harBatch && Number.isFinite(r.spendTotal) && r.spendTotal >= FORSTA_BATCH_SPEND_SEK) {
+      behov.push({
+        kampanj_id: r.id, namn: r.namn, typ: 'forsta_batch',
+        orsak: `har spenderat ${Math.round(r.spendTotal).toLocaleString('sv-SE')} kr utan en riktig batch — dags för /forsta-batch`,
+      });
+      continue;
+    }
+
+    const senaste7 = egna.filter((rad) => inom7(rad.datum));
+    const pausat = senaste7.some((rad) => ['TRAPPA_STEG_1', 'TRAPPA_STEG_2', 'TRAPPA_STEG_3', 'STANG_AV'].includes(rad.kod));
+    const skalningar = senaste7.filter((rad) => rad.kod === 'SKALA').length;
     if (pausat) {
-      behov.push({ kampanj_id: r.id, namn: r.namn, orsak: 'material pausat senaste veckan — ersätt det som stängts av' });
+      behov.push({ kampanj_id: r.id, namn: r.namn, typ: 'ersatt', orsak: 'material pausat senaste veckan — ersätt det som stängts av' });
     } else if (skalningar >= 2) {
-      behov.push({ kampanj_id: r.id, namn: r.namn, orsak: `skalats ${skalningar} gånger på en vecka — mata vinnaren med mer material innan tröttheten kommer` });
+      behov.push({ kampanj_id: r.id, namn: r.namn, typ: 'mata_vinnare', orsak: `skalats ${skalningar} gånger på en vecka — mata vinnaren med mer material innan tröttheten kommer` });
     }
   }
-  return behov;
+  // Första batchen först, störst spend först — det är den ronden startar.
+  return behov.sort((a, b) => {
+    if (a.typ !== b.typ) return a.typ === 'forsta_batch' ? -1 : 1;
+    return (b_spend(rader, b) - b_spend(rader, a));
+  });
 }
+
+function b_spend(rader, behovsrad) {
+  const r = rader.find((x) => x.id === behovsrad.kampanj_id);
+  return Number.isFinite(r?.spendTotal) ? r.spendTotal : 0;
+}
+
+// Axels beslut 2026-08-29: vid 3 000 kr total spend förtjänar produkten sin
+// första riktiga creative-strategy-batch.
+export const FORSTA_BATCH_SPEND_SEK = 3000;
 
 const ORDNING = [
   'STANG_AV', 'ATGARDSTRAPPAN', 'HALVERA', 'SANK', 'SKALA',

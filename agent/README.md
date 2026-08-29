@@ -27,7 +27,8 @@ npm test                     # 69 tester, ska vara gröna
 | `rond.mjs` | Kör ihop det: kontroller, dom per kampanj, färdig rapport. |
 | `produktkarta.json` | Vilka kampanjer som är test respektive drift. Sanningskällan. |
 | `budgetlogg.jsonl` | Minnet. En rad per beslut, aldrig redigerad i efterhand. Färskaste kopian bor inbäddad i dashboard-artefakten (schemalagda körningar kan inte pusha till git); `minne.mjs` synkar. |
-| `minne.mjs` | Läser tillbaka budgetloggen ur dashboardens HTML. Källan med flest rader vinner. |
+| `minne.mjs` | Läser tillbaka budgetloggen och filutkorgen ur dashboardens HTML. Källan med flest rader vinner. |
+| `utkorg/` | Filbrygga: minnesfiler från schemalagda batchkörningar väntar här (inbäddade i dashboarden) tills en push-session committar dem och tömmer mappen. Gitignorerad. |
 | `kontodata.json` | Dagens siffror ur Meta. Skrivs om varje rond, ligger inte i git. |
 | `test/` | Testerna. |
 
@@ -83,6 +84,20 @@ dem oförändrade — inte att bedöma dem.
   kontospärren, öre-verifieringen och trappan i `.claude/commands/rond-auto.md`.
   `/rond` finns kvar som manuellt läge. Dashboarden för människor:
   `agent/dashboard.mjs` → https://claude.ai/code/artifact/33962d72-94ff-4657-9c5a-71f584a837a0
+
+## Annons-triggern
+
+Ronden flaggar produkter som behöver nya annonser och startar högst EN batch
+per dygn (`/rond-auto` steg 4b):
+
+- **3 000 kr total spend utan en riktig batch** → första batchen
+  (`/forsta-batch`). Axels regel 2026-08-29.
+- **Material pausat av trappan/avstängning senaste veckan** → ersätt (`/cs`).
+- **2+ höjningar på en vecka** → mata vinnaren (`/cs`).
+
+En klar batch loggas som `FORSTA_BATCH_KLAR`/`CS_BATCH_KLAR` och tystar
+produktens behov i sju dagar. Brieferna landar i produktens Notion-hub —
+samma kö som redigerarna redan jobbar ur.
 
 ## Så räknas break-even
 

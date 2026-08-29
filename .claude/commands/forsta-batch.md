@@ -71,6 +71,9 @@ Varje annons: hypotes, vad som behålls/ändras, format, exakt hook, fullständi
    utfallet. `/sheet` finns kvar som separat kommando om det någon gång behövs.
 8. Skicka rapport + briefer + zip i samma leverans utan att invänta godkännande. Max EN fråga sist, bara om den kräver ägarens beslut.
 9. **Skapa produktens minnesfiler:** `products/<id>/dna.md`, `products/<id>/batch-log.md` (denna batch med hypoteser), `products/<id>/backlog.md` (tom). Committa och pusha.
+   Körs detta i en schemalagd session som inte kan pusha: kopiera dessutom
+   filerna till `agent/utkorg/products/<id>/` och bygg + publicera om
+   dashboarden — utkorgen är bryggan till git (se `/rond-auto` steg 4b).
 
 ## DEFINITION OF DONE (markera ✅/❌ sist)
 

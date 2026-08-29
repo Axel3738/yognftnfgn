@@ -7,7 +7,8 @@
 //
 //   node agent/dashboard.mjs        # läser kontodata + produktkarta + logg
 
-import { readFile, writeFile } from 'node:fs/promises';
+import { readdir, readFile, writeFile } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { annonsbehov, bedomKampanj, planera } from './rond.mjs';
@@ -68,14 +69,22 @@ const LOGGTEXT = {
   TRAPPA_STEG_2: () => '🔧 sämsta annonsgruppen pausades',
   TRAPPA_STEG_3: () => '🛑 stängdes av (hela produkten gick back)',
   NAMNBYTE: (r) => `✏️ nytt break-even ${dec(r.break_even)} inskrivet`,
+  FORSTA_BATCH_KLAR: () => '🎨 första annonsbatchen klar — briefer i Notion',
+  CS_BATCH_KLAR: () => '🎨 ny annonsbatch klar — briefer i Notion',
 };
 
-export function bygg({ rader, plan, logg, hamtad, behov = [] }) {
+export function bygg({ rader, plan, logg, hamtad, behov = [], filer = {} }) {
   // Dashboarden är också systemets MINNE när körningen inte kan pusha till
   // git: hela budgetloggen bäddas in som JSON och läses tillbaka av nästa
   // körning med agent/minne.mjs. \u003c-escapen hindrar </script>-brytning.
   const minnesBlock = `<script type="application/json" id="budgetlogg">${
     JSON.stringify(logg).replace(/</g, '\\u003c')
+  }</script>`;
+  // Filutkorgen: minnesfiler (dna.md, batch-log.md ...) som en schemalagd
+  // körning inte kunde pusha till git. De ligger med i dashboarden tills en
+  // session med push-rättighet synkar dem (agent/minne.mjs) och tömmer utkorgen.
+  const filBlock = Object.keys(filer).length === 0 ? '' : `\n<script type="application/json" id="filutkorg">${
+    JSON.stringify(filer).replace(/</g, '\\u003c')
   }</script>`;
   const uppskjutnaId = new Set((plan.uppskjutna ?? []).map((u) => u.kampanj_id));
   const atgardMap = new Map((plan.atgarder ?? []).map((a) => [a.kampanj_id, a]));
@@ -189,8 +198,21 @@ ${loggHtml}
 Aldrig mer än 20 % åt gången. En produkt ändras högst var tredje dag — utom riktiga
 vinnare (ROAS över 3), som får höjas dagligen. Golv 500 kr, tak 4 000 kr per produkt.
 Blir något konstigt stoppar ronden sig själv och det står här.</footer>
-${minnesBlock}
+${minnesBlock}${filBlock}
 </div>`;
+}
+
+export const UTKORG = join(HÄR, 'utkorg');
+
+async function lasUtkorg() {
+  if (!existsSync(UTKORG)) return {};
+  const filer = {};
+  for (const post of await readdir(UTKORG, { recursive: true, withFileTypes: true })) {
+    if (!post.isFile()) continue;
+    const rel = join(post.parentPath ?? post.path, post.name).slice(UTKORG.length + 1);
+    filer[rel] = await readFile(join(UTKORG, rel), 'utf8');
+  }
+  return filer;
 }
 
 async function main() {
@@ -205,6 +227,7 @@ async function main() {
     logg,
     hamtad: data.hamtad,
     behov: annonsbehov(rader, { logg, idag: data.idag }),
+    filer: await lasUtkorg(),
   });
   await writeFile(UTFIL, html, 'utf8');
   console.log(`skrev ${UTFIL} (${html.length} tecken)`);

@@ -281,9 +281,9 @@ test('minnet överlever tur och retur genom dashboardens HTML', async () => {
 
 test('annons-triggern flaggar pausat material och snabbskalade vinnare', () => {
   const rader = [
-    { id: 'a', namn: 'Trasig | BE ROAS 1.50' },
-    { id: 'b', namn: 'Vinnare | BE ROAS 1.50' },
-    { id: 'c', namn: 'Lugn | BE ROAS 1.50' },
+    { id: 'a', namn: 'Trasig | BE ROAS 1.50', spendTotal: 900 },
+    { id: 'b', namn: 'Vinnare | BE ROAS 1.50', spendTotal: 2000 },
+    { id: 'c', namn: 'Lugn | BE ROAS 1.50', spendTotal: 500 },
   ];
   const logg = [
     { kampanj_id: 'a', kod: 'TRAPPA_STEG_1', genomford: true, datum: '2026-08-27' },
@@ -298,10 +298,68 @@ test('annons-triggern flaggar pausat material och snabbskalade vinnare', () => {
 });
 
 test('annons-triggern glömmer det som är äldre än en vecka', () => {
-  const rader = [{ id: 'a', namn: 'X | BE ROAS 1.50' }];
+  const rader = [{ id: 'a', namn: 'X | BE ROAS 1.50', spendTotal: 1000 }];
   const logg = [{ kampanj_id: 'a', kod: 'TRAPPA_STEG_2', genomford: true, datum: '2026-08-10' }];
   assert.equal(annonsbehov(rader, { logg, idag: '2026-08-29' }).length, 0);
   // En genomförd SKALA räcker inte — det krävs två inom veckan.
   const enSkala = [{ kampanj_id: 'a', kod: 'SKALA', genomford: true, datum: '2026-08-28', ny_budget: 1200 }];
   assert.equal(annonsbehov(rader, { logg: enSkala, idag: '2026-08-29' }).length, 0);
+});
+
+
+test('3 000 kr total spend utan batch flaggar första batchen — Axels regel', () => {
+  const rader = [
+    { id: 'stor', namn: 'Fiskespöhållaren | BE ROAS 1.50', spendTotal: 52000 },
+    { id: 'liten', namn: 'Ny | BE ROAS 1.50', spendTotal: 1200 },
+    { id: 'batchad', namn: 'Klar | BE ROAS 1.50', spendTotal: 9000 },
+  ];
+  const logg = [{ kampanj_id: 'batchad', kod: 'FORSTA_BATCH_KLAR', genomford: true, datum: '2026-06-01' }];
+  const behov = annonsbehov(rader, { logg, idag: '2026-08-29' });
+  assert.equal(behov.length, 1);
+  assert.equal(behov[0].kampanj_id, 'stor');
+  assert.equal(behov[0].typ, 'forsta_batch');
+});
+
+test('en nyss klar batch tystar alla behov i en vecka', () => {
+  const rader = [{ id: 'a', namn: 'X | BE ROAS 1.50', spendTotal: 9000 }];
+  const logg = [
+    { kampanj_id: 'a', kod: 'FORSTA_BATCH_KLAR', genomford: true, datum: '2026-08-26' },
+    { kampanj_id: 'a', kod: 'TRAPPA_STEG_1', genomford: true, datum: '2026-08-28' },
+  ];
+  assert.equal(annonsbehov(rader, { logg, idag: '2026-08-29' }).length, 0);
+  // När batchen inte längre är färsk (8 dagar) men pausningen är det (6 dagar):
+  // pausat material flaggar igen — 3000-regeln tiger, batchen är ju gjord.
+  const behovSen = annonsbehov(rader, { logg, idag: '2026-09-03' });
+  assert.equal(behovSen.length, 1);
+  assert.equal(behovSen[0].typ, 'ersatt');
+});
+
+test('första batch-behoven sorteras först, störst spend först', () => {
+  const rader = [
+    { id: 'v', namn: 'Vinnare | BE', spendTotal: 99000 },
+    { id: 'a', namn: 'A | BE', spendTotal: 4000 },
+    { id: 'b', namn: 'B | BE', spendTotal: 8000 },
+  ];
+  const logg = [
+    { kampanj_id: 'v', kod: 'FORSTA_BATCH_KLAR', genomford: true, datum: '2026-06-01' },
+    { kampanj_id: 'v', kod: 'SKALA', genomford: true, datum: '2026-08-25', ny_budget: 1200 },
+    { kampanj_id: 'v', kod: 'SKALA', genomford: true, datum: '2026-08-27', ny_budget: 1450 },
+  ];
+  const behov = annonsbehov(rader, { logg, idag: '2026-08-29' });
+  assert.deepEqual(behov.map((b) => b.kampanj_id), ['b', 'a', 'v']);
+});
+
+test('filutkorgen överlever tur och retur och släpper inte igenom farliga sökvägar', async () => {
+  const { bygg } = await import('../dashboard.mjs');
+  const { extraheraFiler } = await import('../minne.mjs');
+  const filer = {
+    'products/lastnat/dna.md': '# DNA </script> med farliga tecken',
+    '../../etc/passwd': 'nej',
+    '/tmp/absolut': 'nej',
+    'annat/otillatet.md': 'nej',
+  };
+  const html = bygg({ rader: [], plan: { sparrad: false, atgarder: [], uppskjutna: [] }, logg: [], hamtad: '2026-08-29', filer });
+  const tillbaka = extraheraFiler(html);
+  assert.deepEqual(Object.keys(tillbaka), ['products/lastnat/dna.md']);
+  assert.equal(tillbaka['products/lastnat/dna.md'], filer['products/lastnat/dna.md']);
 });

@@ -29,8 +29,9 @@ verifiera varje skrivning, logga, uppdatera dashboarden.
   pusha till git. Läs dashboarden med `Artifact` `action: "read"` på
   `https://claude.ai/code/artifact/33962d72-94ff-4657-9c5a-71f584a837a0`
   (svaret sparas som HTML-fil), kör sedan
-  `node agent/minne.mjs <sparad-html-fil>`. Misslyckas synken: **avbryt** —
-  kör aldrig ronden på repots möjligen gamla logg.
+  `node agent/minne.mjs <sparad-html-fil>` — den synkar både budgetloggen och
+  filutkorgen (minnesfiler från tidigare batchkörningar). Misslyckas synken:
+  **avbryt** — kör aldrig ronden på repots möjligen gamla logg.
 - **Minnesregeln ersätter push-kravet:** efter VARJE genomförd Meta-ändring
   skrivs loggraden lokalt, `node agent/dashboard.mjs` körs om och dashboarden
   **publiceras om på samma URL** (det är så minnet sparas). Misslyckas
@@ -139,6 +140,29 @@ och räknas inte:
 - Aldrig fortsätta efter en misslyckad verifiering — återställ och avbryt.
 - Aldrig starta något som är pausat. Ronden stänger av; den startar aldrig på.
 - Aldrig röra priser, texter, creatives, målgrupper eller andra konton.
+
+## 4b. Annonsbatchen (Axels beslut 2026-08-29: rutinen startar den själv)
+
+Om `annonsbehov` i utfallet inte är tomt: kör EN batch — den första i listan
+(listan är redan sorterad: första batchen före påfyllnad, störst spend först).
+Aldrig mer än en batch per dygn, resten av listan rapporteras bara.
+
+- Behov `forsta_batch` → följ `.claude/commands/forsta-batch.md` i sin helhet
+  (analys → briefer → Drive → Notion). Strategin görs FÖRST, sedan läggs
+  annonserna i produktens Notion-hub — det är där Jasper och redigerarna ser
+  dem, via det vanliga veckoflödet.
+- Behov `ersatt` eller `mata_vinnare` på en produkt som redan har minne
+  (`products/<id>/`) → följ `.claude/commands/cs.md` i stället.
+- När batchen är klar OCH uppladdad till Notion: skriv en loggrad med kod
+  `FORSTA_BATCH_KLAR` (respektive `CS_BATCH_KLAR`), `genomford: true` —
+  det är den raden som tystar behovet i en vecka.
+- **Minnesfilerna** (`products/<id>/dna.md`, `batch-log.md`, `backlog.md`):
+  skriv dem i arbetskopian som vanligt OCH kopiera dem till `agent/utkorg/`
+  (samma relativa sökvägar) innan dashboarden byggs om — utkorgen bäddas in i
+  dashboarden och synkas till git av nästa session med push-rättighet.
+  En batch vars minnesfiler inte hamnat i utkorgen är INTE klar.
+- Hinner batchen inte bli klar (avbrott, fel): logga ingenting med *_KLAR —
+  då flaggas behovet igen imorgon och batchen görs om hel.
 
 ## 5. Logga
 
