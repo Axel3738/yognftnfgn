@@ -60,12 +60,23 @@ den stora posten — nästan dubbla produktkostnaden här (make-to-order, 3D-pri
 - Skalning till NO/DK/FI/UK: egna annonskonton `Magiborsten NO/DK/FI/UK`,
   break-even per marknad i kampanjnamnet.
 
-## Judge.me-recensioner — ÖPPEN PUNKT
+## Recensioner och ad copy — per produkt i Drive
 
-Axel: det ska finnas en CSV per produktmapp med produktens recensioner.
-**Verifierat 2026-08-29: noll CSV:er i samtliga 33 produktmappar** (10 i
-Products/ + 23 i LAUNCHED/). Enda review-filen är Judge.me:s mall-CSV under
-"Always do this...". Antingen har de aldrig laddats upp, ligger på annat konto,
-eller raderas efter import. Axel kollar. Importen själv går via Judge.me:s
-REST-API (`api.judge.me`, nåbart härifrån) — kräver butikens API-token,
-CSV behövs inte ens.
+Ligger som Google-filer bredvid creatives (kan släpa: skapas ibland efter
+medierna och syns då inte direkt för alla konton):
+
+- **`<Produkt>_REVIEWS`** (Sheet/xlsx): Judge.me:s direct-import-kolumner
+  rakt av — `title,body,rating,review_date,reviewer_name,reviewer_email,
+  product_id,product_handle,reply,picture_urls`. Svenska recensioner.
+  `product_handle` står som platshållaren
+  `not-a-real-product-handle-so-this-review-wont-import` — **importsteget
+  byter den mot produktens riktiga Shopify-handle**, annars importeras inget
+  (medvetet felsäkert). `reviewer_email` lämnas tom — hitta aldrig på adresser.
+  Importen görs via Judge.me:s REST-API (`api.judge.me`), ingen CSV-uppladdning
+  behövs. Kräver butikens Judge.me API-token.
+- **`<Produkt>_ADCOPY_<vinkel>`** (Doc, en per vinkel; äldre namnvariant
+  `<Produkt>_<vinkel>_ADCOPY 1`): tre block — **PRIMÄRTEXT** (Metas primary
+  text, emojis + ✅-listor), **RUBRIK** (headline), **BESKRIVNING**
+  (description). Mappas rakt mot annonsens fält vid uppladdning.
+
+Exempel i äldre produkter: `Mobilskal_REVIEWS.xlsx`, `MOWER-SEAT-GRA_ADCOPY_PD/SP/SO`.
