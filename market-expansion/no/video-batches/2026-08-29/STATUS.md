@@ -5,12 +5,14 @@ Rutin: `/translate-no` (`.claude/commands/translate-no.md`). Manifest: `batch.js
 
 | Produkt (slug) | Videor | Norsk sida | Pris NOK | BE-ROAS | Läge |
 |---|---|---|---|---|---|
-| Kranskydd Frost 420D (`kranskydd`) | 12 | ✅ kranbeskyttelse-frost-420d-… | 219 (før 285) | 1,63 | Väntar på HeyGen-krediter |
-| IBC-tanköverdrag (`ibc`) | 11 (CS_1_H1 saknas i Drive) | ✅ ibc-tanktrekk-1000-l-… | 439 (før 571) | 1,63 | Väntar på HeyGen-krediter |
+| Kranskydd Frost 420D (`kranskydd`) | 12 | ✅ kranbeskyttelse-frost-420d-… | 219 (før 285) | 1,63 | ✅ Översatt, levererad, launchad ACTIVE 2026-08-29 |
+| IBC-tanköverdrag (`ibc`) | 11 (CS_1_H1 saknas i Drive) | ✅ ibc-tanktrekk-1000-l-… | 439 (før 586, höjt för 25 %-claim) | 1,63 | ✅ Översatt, levererad, launchad ACTIVE 2026-08-29 |
 | Cykelshorts Herr (`cykelshorts`) | 12 | ❌ finns inte på beverbutikken.no | — | — | Kan inte launchas ännu |
 | Bälteslipmaskin Mini 3-i-1 (`balteslip`) | 12 | ❌ finns inte på beverbutikken.no | — | — | Kan inte launchas ännu |
 
-**Blockerare 2026-08-29:** HeyGens `api`-kvot slut (11 → 2 efter 47 failade
+**Löst 2026-08-29 (kvällen):** Axel fyllde wallet ($500). Hela batchen drog ~1 127 credits.
+
+**Tidigare blockerare:** HeyGens `api`-kvot slut (11 → 2 efter 47 failade
 proofread-sessioner). Behov: ~14 kredit-minuter för de två launchbara produkterna,
 ~22 för alla fyra (tumregel ~1 kredit/videominut — verifiera mot verklig förbrukning
 efter första videon och avbryt om det drar mer).
