@@ -68,12 +68,23 @@ Verifiera efteråt med ett GET mot `api.judge.me` att antalet stämmer.
 
 ## Fas 3 — Meta-uppladdning (MagiBorsten `1867947880635861`, SEK)
 
-Följ uppladdningsprompten i masterdokumentet:
+**Strukturen är Axels befintliga kontokonvention — läs en äldre launchad kampanj
+i kontot som facit, aldrig en gissning. Verifierat 2026-08-29 mot ~20 launcher:**
 
-- Kampanjnamn: **måste innehålla break-even-ROAS + launchdatum**,
-  t.ex. `Badshorts med Skämttryck | BE 1,61 | 2026-08-29`.
-- Struktur: **ett adset per vinkel** (CS/GT/PD/SP), lika budget, totalt 1 000 kr/dag
-  test. Nya batcher = nya adsets, aldrig in i befintliga.
+- **CBO:** budgeten ligger på KAMPANJNIVÅ — `daily_budget` 1 000 kr/dag
+  (100000 öre), bid strategy Highest volume (`LOWEST_COST_WITHOUT_CAP`).
+  Adseten har ALDRIG egna budgetar.
+- **Ett adset per koncept** (CS/GT/PD/SP — alla koncept som har creatives).
+  Nya batcher = nya adsets, aldrig in i befintliga.
+- Kampanjnamn EXAKT enligt kontots mönster:
+  `<Produktnamnet i bestämd form> | BE ROAS X.XX | Launch YYYY-MM-DD`
+  (t.ex. `Gravstenspennan | BE ROAS 1.60 | Launch 2026-08-29`). Okänd
+  break-even skrivs `BE ROAS TBC`. Aldrig formatet "BE 1,60" — Axel söker
+  på "BE ROAS".
+- ⚠️ Metas API **tvångspausar kampanjen vid varje budget-/strukturändring**
+  (`status_forced_to_paused`). Efter varje update på en kampanj som ska vara
+  igång: sätt ACTIVE igen och verifiera med en tillbakaläsning — samma regel
+  som Bäverronden lärde sig.
 - Ad copy: PRIMÄRTEXT/RUBRIK/BESKRIVNING ur vinkelns ADCOPY-doc, rakt av.
 - **Inga creative enhancements** — stäng av allt utom relevanta kommentarer.
 - **Allt SKAPAS PAUSED på alla nivåer** (kampanj, adset, annons — sätt varje
