@@ -69,19 +69,35 @@ export function dagarSedanAndring(logg, kampanjId, idagISO) {
 }
 
 /**
- * Antal dygn i rad, räknat bakåt från det senaste, där ROAS låg under break-even.
- * @param {Array<{datum: string, roas: number}>} dygn  Dygnsserie från Meta
+ * Antal dygn i rad, räknat bakåt från senaste dygnet, där kampanjen spenderade
+ * utan att nå break-even.
+ *
+ * Tre regler efter granskningen 2026-08-29:
+ * - Ett dygn med spend men UTAN mätbar ROAS räknas som back-dygn — noll köp är
+ *   per definition under break-even. (Metas API utelämnar purchase_roas de
+ *   dygn inget säljs, och det är precis de värsta dygnen.)
+ * - Ett dygn utan spend, eller en lucka i kalendern, BRYTER streaken — då körde
+ *   kampanjen inte, och "7 dagar back i rad" ska betyda sju körda dygn.
+ * - Äldre serier utan spend-fält behandlas som att spend fanns.
+ *
+ * @param {Array<{datum: string, roas?: number, spend?: number}>} dygn
  */
 export function backDagarIRad(dygn, breakEven) {
   if (!Array.isArray(dygn) || !Number.isFinite(breakEven)) return null;
-  const sorterade = [...dygn]
-    .filter((d) => d && typeof d.datum === 'string' && Number.isFinite(d.roas))
-    .sort((a, b) => (a.datum < b.datum ? 1 : -1));
-  if (sorterade.length === 0) return null;
+  const rader = dygn.filter((d) => d && /^\d{4}-\d{2}-\d{2}$/.test(String(d.datum ?? '')));
+  if (rader.length === 0) return null;
+  const sorterade = [...rader].sort((a, b) => (a.datum < b.datum ? 1 : -1));
   let streak = 0;
+  let vantat = null;
   for (const dag of sorterade) {
-    if (dag.roas < breakEven) streak += 1;
-    else break;
+    if (vantat !== null && dag.datum !== vantat) break; // lucka i kalendern
+    const harSpend = dag.spend === undefined
+      ? true
+      : Number.isFinite(dag.spend) && dag.spend > 0;
+    if (!harSpend) break;
+    if (Number.isFinite(dag.roas) && dag.roas >= breakEven) break;
+    streak += 1;
+    vantat = new Date(Date.parse(`${dag.datum}T00:00:00Z`) - 86400000).toISOString().slice(0, 10);
   }
   return streak;
 }
@@ -91,12 +107,16 @@ export function backDagarIRad(dygn, breakEven) {
  * trappan för att veta vilket steg som redan tagits.
  * @returns {object|null}
  */
-export function senasteRadMedKod(logg, kampanjId, koder) {
+export function senasteRadMedKod(logg, kampanjId, koder, { maxAlderDagar = null, idag = null } = {}) {
   let träff = null;
   for (const rad of logg) {
     if (rad.kampanj_id !== kampanjId) continue;
     if (!koder.includes(rad.kod)) continue;
     if (rad.genomford !== true) continue;
+    if (maxAlderDagar !== null && idag !== null) {
+      const alder = (Date.parse(`${idag}T00:00:00Z`) - Date.parse(`${rad.datum}T00:00:00Z`)) / 86400000;
+      if (!Number.isFinite(alder) || alder > maxAlderDagar) continue; // för gammal — hör till en tidigare cykel
+    }
     if (träff === null || String(rad.datum) > String(träff.datum)) träff = rad;
   }
   return träff;
@@ -112,6 +132,13 @@ export async function skrivRad(rad, fil = LOGGFIL) {
     if (rad[nyckel] === undefined || rad[nyckel] === null || rad[nyckel] === '') {
       throw new Error(`Loggraden saknar "${nyckel}" — vägrar skriva en rad som inte går att tolka i efterhand`);
     }
+  }
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(String(rad.datum))) {
+    throw new Error(`Loggradens datum "${rad.datum}" är inte YYYY-MM-DD — kadensspärren skulle bli blind för raden`);
+  }
+  if (['SKALA', 'SANK', 'HALVERA'].includes(rad.kod) && rad.genomford === true
+      && !Number.isFinite(rad.ny_budget)) {
+    throw new Error(`En genomförd ${rad.kod} utan ny_budget gör ändringen osynlig för kadensspärren — vägrar`);
   }
   await appendFile(fil, `${JSON.stringify(rad)}\n`, 'utf8');
   return rad;

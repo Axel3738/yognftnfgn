@@ -79,10 +79,19 @@ test('nyBudget respekterar golv och tak', () => {
 
 test('ingen dom under 300 kr spend eller 3 köp', () => {
   assert.equal(besked(rad({ spend3d: 250, kop3d: 10 })).kod, 'FOR_LITE_DATA');
-  assert.equal(besked(rad({ spend3d: 1000, kop3d: 2 })).kod, 'FOR_LITE_DATA');
+  assert.equal(besked(rad({ spend3d: 600, kop3d: 2 })).kod, 'FOR_LITE_DATA');
   assert.equal(besked(rad({ spend3d: null, kop3d: null })).kod, 'FOR_LITE_DATA');
-  // Grinden går före allt annat — även när siffrorna ser katastrofala ut.
   assert.equal(besked(rad({ roas3d: 0.1, spend3d: 200, kop3d: 1 })).kod, 'FOR_LITE_DATA');
+});
+
+test('grinden är inget evigt frikort: stor spend utan köp larmar', () => {
+  // 900+ kr på tre dagar med under 3 köp är inte "för lite data" — det är trasigt.
+  assert.equal(besked(rad({ spend3d: 1000, kop3d: 2 })).kod, 'STOR_SPEND_UTAN_KOP');
+  assert.equal(besked(rad({ spend3d: 2500, kop3d: 0, roas3d: 0 })).kod, 'STOR_SPEND_UTAN_KOP');
+  // Larmet föreslår ingen automatisk åtgärd — en människa ska titta.
+  assert.equal(besked(rad({ spend3d: 1000, kop3d: 2 })).kraverGodkannande, false);
+  // Precis under larmgränsen: fortfarande vanlig grind.
+  assert.equal(besked(rad({ spend3d: 899, kop3d: 2 })).kod, 'FOR_LITE_DATA');
 });
 
 test('utan break-even fälls ingen dom alls', () => {
@@ -103,12 +112,20 @@ test('kadensspärren stoppar en andra ändring inom tre dygn', () => {
   assert.equal(besked(rad({ roas3d: 10, dagarSedanAndring: null })).kod, 'SKALA');
 });
 
-test('snabbspåret: ROAS över 3 i skalningszonen får höjas redan efter en dag', () => {
-  // BE 2,00 · ROAS 10 -> 40 % vinst och ROAS ≥ 3: snabbspår.
-  assert.equal(besked(rad({ roas3d: 10, dagarSedanAndring: 1 })).kod, 'SKALA');
-  assert.match(besked(rad({ roas3d: 10, dagarSedanAndring: 1 })).motivering, /Snabbspår/);
-  // Men aldrig samma dag som förra ändringen.
-  assert.equal(besked(rad({ roas3d: 10, dagarSedanAndring: 0 })).kod, 'VANTA_KADENS');
+test('snabbspåret: ROAS över 3 i skalningszonen får höjas redan dagen efter en HÖJNING', () => {
+  // BE 2,00 · ROAS 10 -> 40 % vinst, ROAS ≥ 3, förra ändringen var en höjning.
+  const snabb = rad({ roas3d: 10, dagarSedanAndring: 1, senasteAndringKod: 'SKALA' });
+  assert.equal(besked(snabb).kod, 'SKALA');
+  assert.match(besked(snabb).motivering, /Snabbspår/);
+  // Aldrig samma dag som förra ändringen.
+  assert.equal(besked(rad({ roas3d: 10, dagarSedanAndring: 0, senasteAndringKod: 'SKALA' })).kod, 'VANTA_KADENS');
+});
+
+test('snabbspåret gäller aldrig dagen efter en sänkning eller okänd ändring', () => {
+  // Dagen efter en HALVERA vore en +20 % ren vingelflygning.
+  assert.equal(besked(rad({ roas3d: 10, dagarSedanAndring: 1, senasteAndringKod: 'HALVERA' })).kod, 'VANTA_KADENS');
+  assert.equal(besked(rad({ roas3d: 10, dagarSedanAndring: 1, senasteAndringKod: 'SANK' })).kod, 'VANTA_KADENS');
+  assert.equal(besked(rad({ roas3d: 10, dagarSedanAndring: 1 })).kod, 'VANTA_KADENS');
 });
 
 test('snabbspåret gäller aldrig neråt — sänkningar väntar sina tre dagar', () => {
@@ -265,4 +282,27 @@ test('break-even räknas rakt på priset — ingen moms (DDP till Sverige)', () 
   assert.equal(Math.round(breakEvenRoas(259, kostnad) * 100) / 100, 1.83);
   // Med ett momsavdrag hade samma siffror gett ett helt annat tal.
   assert.notEqual(Math.round(breakEvenRoas(259 / 1.25, kostnad) * 100) / 100, 1.83);
+});
+
+
+test('break-even-typon fångas: heltal som 149 ger ingen dom', () => {
+  assert.equal(lasBreakEven('X | BE ROAS 149 | Launch').be, null);
+  assert.equal(lasBreakEven('X | BE ROAS 11 |').be, null);
+  assert.equal(lasBreakEven('X | BE ROAS 9.5 |').be, 9.5);
+  assert.equal(besked(rad({ namn: 'X | BE ROAS 149 |' })).kod, 'SAKNAR_BREAK_EVEN');
+});
+
+test('lasBelopp: amerikanskt format och tvetydiga tusental', () => {
+  assert.equal(lasBelopp('2,500.00 kr'), 2500);
+  assert.equal(lasBelopp('1,000.00'), 1000);
+  assert.equal(lasBelopp('1.000'), null); // tvetydigt — hellre "vet inte" än 1000x fel
+  assert.equal(lasBelopp('1.000.000'), 1000000);
+  assert.equal(lasBelopp('1 000,00 kr (SEK)'), 1000); // svenskt funkar fortfarande
+  assert.equal(lasBelopp('1.456467'), 1.456467); // Metas råa decimaler likaså
+});
+
+test('okänd totalspend skickar aldrig en testprodukt till trappan', () => {
+  const dom = besked(rad({ lage: 'test', roas3d: 1.2, spendTotal: null }));
+  assert.equal(dom.kod, 'SAKNAR_SPEND_TOTAL');
+  assert.equal(dom.kraverGodkannande, false);
 });

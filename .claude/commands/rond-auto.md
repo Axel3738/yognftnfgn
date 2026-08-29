@@ -32,7 +32,7 @@ Tre anrop till `mcp__ADsmanagaer__ads_get_ad_entities`, alla med
 
 1. `date_preset: "last_3d"` — `fields: ["id","name","effective_status","daily_budget","amount_spent","purchase_roas","omni_purchase","created_time"]`
 2. `date_preset: "maximum"` — samma fält (ger `spend_total`)
-3. `date_preset: "last_7d"` + `time_increment: "1"` — dygnsserien
+3. `date_preset: "last_14d"` + `time_increment: "1"` — dygnsserien (varje dygn: datum, roas OCH spend ur `amount_spent`)
 
 Fältnamnen är exakta. Använd **aldrig** `omni_purchase_values` (buggig, se
 CLAUDE.md). Skriv siffrorna **ordagrant** till `agent/kontodata.json` i samma
@@ -71,7 +71,10 @@ För varje åtgärd i `plan.atgarder`:
    `till_sek` kronor. Visar den 100× för mycket eller för lite: **återställ
    omedelbart till gamla budgeten (gamla kronor × 100 = öre), avbryt HELA
    körningen och larma.**
-3. Logga raden (steg 5) med `genomford: true`.
+3. **Logga, committa och pusha DIREKT** — innan nästa åtgärd: skriv loggraden
+   (`genomford: true`), `git pull --rebase origin claude/daily-agent-discussion-uos5df`
+   och pusha. Misslyckas pushen: **avbryt resten av körningen** — en Meta-ändring
+   utan pushad loggrad gör kadensspärren blind och nästa körning ändrar igen.
 
 **`typ: "paus_kampanj"`** — stäng av:
 1. `ads_update_entity` med `fields: {"status": "PAUSED"}`.
@@ -80,13 +83,17 @@ För varje åtgärd i `plan.atgarder`:
 
 **`typ: "trappa"`** — produkten går back; pausa det minsta trasiga först.
 Läs `agent/budgetlogg.jsonl` och avgör steget med `senasteRadMedKod(logg, id,
-["TRAPPA_STEG_1","TRAPPA_STEG_2"])` (finns i `agent/logg.mjs`):
+["TRAPPA_STEG_1","TRAPPA_STEG_2"], { maxAlderDagar: 14, idag })` (finns i
+`agent/logg.mjs`) — trapprader äldre än 14 dagar hör till en tidigare cykel
+och räknas inte:
 
 - **Inget tidigare steg → STEG 1:** hämta kampanjens annonser (`level: "ad"`,
   `date_preset: "last_3d"`, filtrering `campaign.id`). Finns EN aktiv annons
   med ≥50 % av kampanjens 3-dagarsspend och 0 köp: pausa **bara den annonsen**
   (`entity_type: "ad"`, `fields: {"status":"PAUSED"}`), verifiera, logga
-  `TRAPPA_STEG_1`. Finns ingen sådan annons: gå direkt till STEG 2-bedömningen.
+  `TRAPPA_STEG_1`. Finns ingen sådan annons: logga ändå `TRAPPA_STEG_1` med
+  motiveringen "ingen dominant annons att pausa" och **stanna där för idag** —
+  steg 2 får tas tidigast om 2 dagar. Trappan tar ALDRIG mer än ett steg per dag.
 - **STEG 1 taget → STEG 2:** bara om **minst 2 dagar** gått sedan
   `TRAPPA_STEG_1`-raden OCH dygnen EFTER pausdatumet (ur dygnsserien i
   `kontodata.json`) fortfarande ligger under break-even — pausen ska hinna

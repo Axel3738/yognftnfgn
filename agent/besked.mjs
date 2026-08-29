@@ -53,7 +53,9 @@ export function lasBreakEven(kampanjnamn) {
   const träff = namn.match(/BE\s*ROAS\s*([0-9]+[.,][0-9]+|[0-9]+)/i);
   if (!träff) return { be: null, kalla: 'saknas i kampanjnamnet' };
   const be = Number(träff[1].replace(',', '.'));
-  if (!Number.isFinite(be) || be <= 1) {
+  // Kontots verkliga break-even ligger 1,3-2,0. Under 1 är matematiskt omöjligt,
+  // över 10 är ett typo ("BE ROAS 149") — båda ska ge "ingen dom", inte en dom.
+  if (!Number.isFinite(be) || be <= 1 || be > 10) {
     return { be: null, kalla: `orimligt tal i kampanjnamnet (${träff[1]})` };
   }
   return { be, kalla: 'kampanjnamnet' };
@@ -69,10 +71,30 @@ export function lasBelopp(värde) {
   if (typeof värde === 'number') return Number.isFinite(värde) ? värde : null;
   const rensad = String(värde).replace(/[^0-9.,-]/g, '');
   if (rensad === '') return null;
-  // Svenskt format: punkt är tusentalsavgränsare bara om komma också finns.
-  const normaliserad = rensad.includes(',')
-    ? rensad.replace(/\./g, '').replace(',', '.')
-    : rensad;
+  // Både svensk ("1 000,00") och amerikansk ("2,500.00") formatering förekommer
+  // i API-svar. Regel: finns både punkt och komma är det SIST förekommande
+  // tecknet decimaltecknet. Finns bara punkt och exakt tre siffror efter den
+  // ("1.000") går det inte att veta om det är ett tusental — då hellre null
+  // (= "vet inte", ger ingen dom) än ett tal som kan vara 1000x fel.
+  const sistaPunkt = rensad.lastIndexOf('.');
+  const sistaKomma = rensad.lastIndexOf(',');
+  let normaliserad;
+  if (sistaPunkt >= 0 && sistaKomma >= 0) {
+    normaliserad = sistaKomma > sistaPunkt
+      ? rensad.replace(/\./g, '').replace(',', '.')
+      : rensad.replace(/,/g, '');
+  } else if (sistaKomma >= 0) {
+    normaliserad = rensad.split(',').length > 2
+      ? rensad.replace(/,/g, '')
+      : rensad.replace(',', '.');
+  } else if (sistaPunkt >= 0) {
+    const delar = rensad.split('.');
+    if (delar.length > 2) normaliserad = rensad.replace(/\./g, '');
+    else if (delar[1].length === 3) return null; // "1.000" — tvetydigt
+    else normaliserad = rensad;
+  } else {
+    normaliserad = rensad;
+  }
   const tal = Number(normaliserad);
   return Number.isFinite(tal) ? tal : null;
 }
@@ -210,8 +232,15 @@ export function besked(rad) {
   }
 
   // 3. Grinden ur CLAUDE.md regel 3 / ANALYSMETOD: ingen dom under 300 kr eller 3 köp.
+  // Men grinden får inte bli ett evigt frikort: en kampanj som bränner stort
+  // UTAN att köpa in sig över grinden är inte "för lite data" — den är trasig.
   const spend3d = rad.spend3d;
   const kop3d = rad.kop3d;
+  if (Number.isFinite(spend3d) && spend3d >= 3 * MIN_SPEND_FOR_DOM
+      && (!Number.isFinite(kop3d) || kop3d < MIN_KOP_FOR_DOM)) {
+    return svar('STOR_SPEND_UTAN_KOP', 'Bränner pengar utan köp — larm',
+      `${kr(spend3d)} på 3 dagar men ${Number.isFinite(kop3d) ? kop3d : 'okänt antal'} köp. Det är inte "för lite data" längre — något är fel (produktsidan, priset, lagret?). En människa måste titta.`);
+  }
   if (!Number.isFinite(spend3d) || !Number.isFinite(kop3d)
       || spend3d < MIN_SPEND_FOR_DOM || kop3d < MIN_KOP_FOR_DOM) {
     const spendText = Number.isFinite(spend3d) ? kr(spend3d) : 'okänd spend';
@@ -229,7 +258,10 @@ export function besked(rad) {
   // 4. Kadensspärren: Meta ska hinna lära sig mellan ändringar.
   // Snabbspåret gäller bara uppåt: skalningszon + ROAS ≥ 3 → 1 dag räcker.
   const dagar = rad.dagarSedanAndring;
-  const snabbspar = rad.roas3d >= SNABB_SKALNING_ROAS && vinst >= ZON_SKALA_OVER;
+  // Snabbspåret gäller bara höjning-efter-höjning. Dagen efter en sänkning
+  // eller halvering vore en 20 %-höjning ren vingelflygning.
+  const snabbspar = rad.roas3d >= SNABB_SKALNING_ROAS && vinst >= ZON_SKALA_OVER
+    && rad.senasteAndringKod === 'SKALA';
   const minDagar = snabbspar ? SNABB_MIN_DAGAR : MIN_DAGAR_MELLAN_ANDRINGAR;
   if (Number.isFinite(dagar) && dagar < minDagar) {
     return svar('VANTA_KADENS', 'Vänta — ändrad för nyligen',
@@ -247,7 +279,13 @@ export function besked(rad) {
   // 5. Förlust.
   if (vinst < 0) {
     if (lage === 'test') {
-      if (Number.isFinite(rad.spendTotal) && rad.spendTotal < TEST_TROSKEL_SEK) {
+      if (!Number.isFinite(rad.spendTotal)) {
+        // Okänd totalspend får aldrig tolkas som "tröskeln är passerad".
+        return svar('SAKNAR_SPEND_TOTAL', 'Spend sedan start saknas',
+          `${bas} Går back, men utan totalspend går det inte att veta om den passerat ${kr(TEST_TROSKEL_SEK)}-tröskeln. Rör ingenting — hämta talet.`,
+          { zon: 'stop', vinstProcent: vinst });
+      }
+      if (rad.spendTotal < TEST_TROSKEL_SEK) {
         return svar('VANTA_TROSKEL', 'Vänta — har inte fått chansen än',
           `${bas} Den har spenderat ${kr(rad.spendTotal)} av ${kr(TEST_TROSKEL_SEK)} sedan start. Rör ingenting förrän den passerat tröskeln.`,
           { zon: 'stop', vinstProcent: vinst });

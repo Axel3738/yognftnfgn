@@ -183,11 +183,20 @@ test('planera nära zongräns: HALVERA mildras till SANK, resten skjuts upp', ()
   assert.equal(plan.uppskjutna.length, 2);
 });
 
-test('kontospärren kasserar hela planen vid orimlig total höjning', () => {
-  // En trasig dom med 100x-budget (enhetsfelet) ska stoppa allt, inte köras.
+test('ett belopp utanför golv-tak utförs aldrig — det skjuts upp', () => {
+  // En trasig dom med 100x-budget (enhetsfelet) fastnar i beloppsvalideringen.
   const plan = planera([
     radMedDom('a', 1000, { kod: 'SKALA', kraverGodkannande: true, nyBudget: 120000, motivering: 'trasig' }),
-    radMedDom('b', 1000, { kod: 'LAT_VARA', kraverGodkannande: false, nyBudget: null, motivering: 'x' }),
+  ]);
+  assert.equal(plan.atgarder.length, 0);
+  assert.equal(plan.uppskjutna.length, 1);
+  assert.match(plan.uppskjutna[0].orsak, /ogiltigt belopp/);
+});
+
+test('kontospärren kasserar hela planen vid orimlig total höjning', () => {
+  // Belopp inom golv-tak men en absurd relativ höjning: hela planen kasseras.
+  const plan = planera([
+    radMedDom('a', 200, { kod: 'SKALA', kraverGodkannande: true, nyBudget: 4000, motivering: 'trasig' }),
   ]);
   assert.equal(plan.sparrad, true);
   assert.equal(plan.atgarder.length, 0);
@@ -203,4 +212,36 @@ test('en normal dags plan går genom kontospärren', () => {
   assert.equal(plan.sparrad, false);
   assert.equal(plan.atgarder.length, 3);
   assert.ok(plan.nyTotal < plan.gammalTotal);
+});
+
+
+test('en kampanj som redan ändrats idag rörs inte igen', () => {
+  const logg = [{ kampanj_id: 'a', kod: 'SKALA', genomford: true, datum: '2026-08-29', ny_budget: 1200 }];
+  const plan = planera(
+    [radMedDom('a', 1200, { kod: 'SKALA', kraverGodkannande: true, nyBudget: 1400, motivering: 'x' })],
+    { logg, idag: '2026-08-29' },
+  );
+  assert.equal(plan.atgarder.length, 0);
+  assert.match(plan.uppskjutna[0].orsak, /redan ändrad idag/);
+});
+
+test('tre uppskjutningar i rad: nära-gräns-åtgärden körs ändå', () => {
+  const uppskjuten = (datum) => ({ kampanj_id: 'a', kod: 'UPPSKJUTEN_GRANS', genomford: false, datum });
+  const dom = { kod: 'SANK', kraverGodkannande: true, nyBudget: 800, naraGrans: true, motivering: 'x' };
+  // Två uppskjutningar: skjuts upp igen.
+  const plan2 = planera([radMedDom('a', 1000, dom)], { logg: [uppskjuten('2026-08-27'), uppskjuten('2026-08-28')], idag: '2026-08-29' });
+  assert.equal(plan2.atgarder.length, 0);
+  // Tre: signalen har stått i tre dagar — kör.
+  const plan3 = planera([radMedDom('a', 1000, dom)], { logg: [uppskjuten('2026-08-26'), uppskjuten('2026-08-27'), uppskjuten('2026-08-28')], idag: '2026-08-29' });
+  assert.equal(plan3.atgarder.length, 1);
+  assert.equal(plan3.atgarder[0].till_sek, 800);
+});
+
+test('en budget som ser ut som öre ger ingen dom alls', () => {
+  const rad = bedomKampanj(
+    { id: '1', namn: 'X | BE ROAS 1.50', daily_budget: 250000, spend_3d: '1 000,00 kr', roas_3d: '1.20', kop_3d: 10 },
+    { logg: [], idag: '2026-08-28', karta: {}, fx: null },
+  );
+  assert.equal(rad.dom.kod, 'ORIMLIG_DATA');
+  assert.match(rad.dom.motivering, /felparsning/);
 });

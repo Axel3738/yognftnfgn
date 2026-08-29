@@ -9,8 +9,8 @@
 import { readFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { besked, breakEvenRoas, kostnadSek, lasBelopp, lasBreakEven, nyBudget } from './besked.mjs';
-import { backDagarIRad, dagarSedanAndring, lasLogg, raknaTrasigaRader } from './logg.mjs';
+import { besked, breakEvenRoas, GOLV_SEK as GOLV_SEK_PLAN, kostnadSek, lasBelopp, lasBreakEven, nyBudget, TAK_SEK as TAK_SEK_PLAN } from './besked.mjs';
+import { backDagarIRad, dagarSedanAndring, lasLogg, raknaTrasigaRader, senasteRadMedKod } from './logg.mjs';
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
 
@@ -22,6 +22,15 @@ export const TILLATET_KONTONAMN = 'MagiBorsten';
 // Utanför det här spannet är ROAS-talet inte att lita på.
 export const ROAS_RIMLIGT_MIN = 0;
 export const ROAS_RIMLIGT_MAX = 15;
+
+// Samma sak för dagsbudgeten: kontots budgetar ligger 500-4 000 kr. Ett tal
+// under 100 eller över 10 000 är med all sannolikhet en felparsning (öre lästa
+// som kronor eller tvärtom) — ingen dom, larm i stället.
+export const BUDGET_RIMLIG_MIN = 100;
+export const BUDGET_RIMLIG_MAX = 10000;
+
+// Kontodatan får vara högst så här gammal när en plan byggs.
+export const MAX_DATAALDER_TIMMAR = 20;
 
 export function kontrolleraKonto(data) {
   const fel = [];
@@ -82,6 +91,21 @@ export function bedomKampanj(kampanj, { logg, idag, karta, fx }) {
     kop3d,
   };
 
+  if (budget !== null && (budget < BUDGET_RIMLIG_MIN || budget > BUDGET_RIMLIG_MAX)) {
+    const urNamn = lasBreakEven(kampanj.namn);
+    return {
+      ...grund,
+      dom: {
+        kod: 'ORIMLIG_DATA',
+        rubrik: 'Budgeten ser fel ut',
+        motivering: `Dagsbudget ${budget} kr ligger utanför ${BUDGET_RIMLIG_MIN}–${BUDGET_RIMLIG_MAX} kr — troligen en felparsning (öre/kronor). Ingen dom fälls; kontrollera i Ads Manager.`,
+        nyBudget: null, zon: null, vinstProcent: null,
+        breakEven: urNamn.be, breakEvenKalla: urNamn.kalla,
+        kraverGodkannande: false, naraGrans: false,
+      },
+    };
+  }
+
   if (roas3d !== null && (roas3d < ROAS_RIMLIGT_MIN || roas3d > ROAS_RIMLIGT_MAX)) {
     return {
       ...grund,
@@ -114,6 +138,7 @@ export function bedomKampanj(kampanj, { logg, idag, karta, fx }) {
       spendTotal,
       budget,
       dagarSedanAndring: dagarSedanAndring(logg, kampanj.id, idag),
+      senasteAndringKod: senasteRadMedKod(logg, kampanj.id, ['SKALA', 'SANK', 'HALVERA'])?.kod ?? null,
       backDagarIRad: backDagarIRad(kampanj.dygn, källa.be),
     }),
   };
@@ -132,9 +157,30 @@ export function bedomKampanj(kampanj, { logg, idag, karta, fx }) {
  * HALVERA blir SANK, och SKALA/SANK/STANG_AV/ATGARDSTRAPPAN skjuts upp till
  * nästa körning. Är signalen äkta står den kvar om tre dagar med mognare data.
  */
-export function planera(rader) {
+export function planera(rader, { logg = [], idag = null } = {}) {
   const atgarder = [];
   const uppskjutna = [];
+
+  // Antal UPPSKJUTEN_GRANS i rad (senaste raderna) per kampanj: efter tre
+  // uppskjutningar har signalen stått i 3+ dagar — attributionsargumentet är
+  // förbrukat och åtgärden körs ändå.
+  const uppskjutnaIRad = (id) => {
+    const egna = logg
+      .filter((r) => r.kampanj_id === id && r.kod !== 'NAMNBYTE')
+      .sort((a, b) => (a.datum < b.datum ? 1 : -1));
+    let n = 0;
+    for (const r of egna) {
+      if (r.kod === 'UPPSKJUTEN_GRANS') n += 1;
+      else break;
+    }
+    return n;
+  };
+
+  // Redan ändrad idag (dubbelkörning, kraschad körning som hann skriva)?
+  const andradIdag = (id) => idag !== null && logg.some(
+    (r) => r.kampanj_id === id && r.genomford === true && r.datum === idag
+      && ['SKALA', 'SANK', 'HALVERA', 'STANG_AV', 'TRAPPA_STEG_1', 'TRAPPA_STEG_2', 'TRAPPA_STEG_3'].includes(r.kod),
+  );
 
   for (const r of rader) {
     const d = r.dom;
@@ -142,7 +188,12 @@ export function planera(rader) {
 
     const grund = { kampanj_id: r.id, namn: r.namn, kod: d.kod, motivering: d.motivering };
 
-    if (d.naraGrans) {
+    if (andradIdag(r.id)) {
+      uppskjutna.push({ ...grund, orsak: 'redan ändrad idag — en ändring per dygn' });
+      continue;
+    }
+
+    if (d.naraGrans && uppskjutnaIRad(r.id) < 3) {
       if (d.kod === 'HALVERA') {
         const ner = nyBudget('ner', r.budget);
         if (Number.isFinite(ner) && ner < r.budget) {
@@ -161,6 +212,12 @@ export function planera(rader) {
     }
 
     if (d.kod === 'SKALA' || d.kod === 'SANK' || d.kod === 'HALVERA') {
+      // Sista ledet före API:t: beloppet MÅSTE vara ett vettigt tal.
+      if (!Number.isFinite(d.nyBudget) || d.nyBudget < GOLV_SEK_PLAN || d.nyBudget > TAK_SEK_PLAN
+          || d.nyBudget === r.budget) {
+        uppskjutna.push({ ...grund, orsak: `ogiltigt belopp (${d.nyBudget}) — utförs inte` });
+        continue;
+      }
       atgarder.push({
         ...grund, typ: 'budget',
         fran_sek: r.budget, till_sek: d.nyBudget, till_ore: Math.round(d.nyBudget * 100),
@@ -194,8 +251,9 @@ export function planera(rader) {
 
 const ORDNING = [
   'STANG_AV', 'ATGARDSTRAPPAN', 'HALVERA', 'SANK', 'SKALA',
-  'RAKNA_BACKDAGAR', 'ORIMLIG_DATA', 'SAKNAR_BREAK_EVEN', 'SAKNAR_BUDGET',
-  'VANTA_KADENS', 'VANTA_TROSKEL', 'FOR_LITE_DATA', 'LAT_VARA',
+  'STOR_SPEND_UTAN_KOP', 'RAKNA_BACKDAGAR', 'ORIMLIG_DATA', 'SAKNAR_BREAK_EVEN',
+  'SAKNAR_BUDGET', 'SAKNAR_SPEND_TOTAL', 'VANTA_KADENS', 'VANTA_TROSKEL',
+  'FOR_LITE_DATA', 'LAT_VARA',
 ];
 
 function kr(n) {
@@ -209,7 +267,7 @@ export function rapport(rader, meta) {
   const attGora = sorterade.filter((r) => r.dom.kraverGodkannande);
   const attKolla = sorterade.filter(
     (r) => !r.dom.kraverGodkannande
-      && ['ORIMLIG_DATA', 'SAKNAR_BREAK_EVEN', 'SAKNAR_BUDGET', 'RAKNA_BACKDAGAR'].includes(r.dom.kod),
+      && ['STOR_SPEND_UTAN_KOP', 'ORIMLIG_DATA', 'SAKNAR_BREAK_EVEN', 'SAKNAR_BUDGET', 'SAKNAR_SPEND_TOTAL', 'RAKNA_BACKDAGAR'].includes(r.dom.kod),
   );
   const ifred = sorterade.filter((r) => !attGora.includes(r) && !attKolla.includes(r));
 
@@ -297,6 +355,17 @@ async function main() {
     process.exit(2);
   }
 
+  // Gammal kontodata ger en plan byggd på gårdagen. Hellre stopp.
+  const alderMs = Date.now() - Date.parse(String(data.hamtad));
+  if (!Number.isFinite(alderMs)) {
+    console.error(`RONDEN AVBRÖTS: "hamtad" (${data.hamtad}) går inte att tolka som tid.`);
+    process.exit(2);
+  }
+  if (alderMs > MAX_DATAALDER_TIMMAR * 3600 * 1000 && !argv.includes('--tillat-gammal')) {
+    console.error(`RONDEN AVBRÖTS: kontodatan är ${Math.round(alderMs / 3600000)} timmar gammal (max ${MAX_DATAALDER_TIMMAR}). Hämta ny, eller kör --tillat-gammal för en historisk torrkörning.`);
+    process.exit(2);
+  }
+
   let karta = {};
   let fx = null;
   try {
@@ -326,7 +395,7 @@ async function main() {
 
   const meta = { idag, hamtad: data.hamtad, varningar };
   if (argv.includes('--json')) {
-    console.log(JSON.stringify({ meta, rader, plan: planera(rader) }, null, 2));
+    console.log(JSON.stringify({ meta, rader, plan: planera(rader, { logg, idag }) }, null, 2));
   } else {
     console.log(rapport(rader, meta));
   }

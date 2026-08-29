@@ -110,3 +110,43 @@ test('senasteRadMedKod hittar senaste genomförda trappsteget', () => {
   assert.equal(senasteRadMedKod(logg, '999', koder), null);
   assert.equal(senasteRadMedKod([], '111', koder), null);
 });
+
+
+test('backDagarIRad: spend utan ROAS är ett back-dygn — nolldygnen är de värsta', () => {
+  const dygn = [
+    { datum: '2026-08-25', roas: 1.2, spend: 500 },
+    { datum: '2026-08-26', roas: null, spend: 480 }, // 0 köp -> Meta utelämnar ROAS
+    { datum: '2026-08-27', roas: null, spend: 510 },
+  ];
+  assert.equal(backDagarIRad(dygn, 1.5), 3);
+});
+
+test('backDagarIRad: lucka i kalendern eller dygn utan spend bryter streaken', () => {
+  const medLucka = [
+    { datum: '2026-08-24', roas: 1.2, spend: 500 },
+    // 25:e saknas helt
+    { datum: '2026-08-26', roas: 1.2, spend: 500 },
+    { datum: '2026-08-27', roas: 1.2, spend: 500 },
+  ];
+  assert.equal(backDagarIRad(medLucka, 1.5), 2);
+  const utanSpend = [
+    { datum: '2026-08-26', roas: 1.2, spend: 0 },
+    { datum: '2026-08-27', roas: 1.2, spend: 500 },
+  ];
+  assert.equal(backDagarIRad(utanSpend, 1.5), 1);
+});
+
+test('senasteRadMedKod: rader äldre än maxAlderDagar hör till en tidigare cykel', () => {
+  const logg = [rad({ datum: '2026-06-01', kod: 'TRAPPA_STEG_2', ny_budget: null })];
+  const koder = ['TRAPPA_STEG_1', 'TRAPPA_STEG_2'];
+  assert.equal(senasteRadMedKod(logg, '111', koder).kod, 'TRAPPA_STEG_2');
+  assert.equal(senasteRadMedKod(logg, '111', koder, { maxAlderDagar: 14, idag: '2026-08-29' }), null);
+});
+
+test('skrivRad vägrar rader som gör kadensspärren blind', async () => {
+  const fil = await tempfil('');
+  await assert.rejects(() => skrivRad(rad({ datum: 'igår' }), fil), /YYYY-MM-DD/);
+  await assert.rejects(() => skrivRad(rad({ kod: 'SANK', genomford: true, ny_budget: null }), fil), /osynlig/);
+  // Ett förslag (genomford false) får sakna ny_budget.
+  await skrivRad(rad({ kod: 'SANK', genomford: false, ny_budget: null }), fil);
+});

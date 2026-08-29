@@ -25,9 +25,12 @@ Alla anrop går till `mcp__ADsmanagaer__ads_get_ad_entities` med
 **b) Samma kampanjer sedan start** — samma anrop med `date_preset: "maximum"`.
 Ger `spend_total`.
 
-**c) Dygn för dygn, senaste 7 dagarna** — samma anrop med
-`date_preset: "last_7d"` och `time_increment: "1"`. Ger serien som
-back-dagsräknaren behöver.
+**c) Dygn för dygn, senaste 14 dagarna** — samma anrop med
+`date_preset: "last_14d"` och `time_increment: "1"`. Ger serien som
+back-dagsräknaren behöver — 14 dygn så att en 7-dagarsstreak ryms med marginal.
+Varje dygn i serien ska ha `datum`, `roas` OCH `spend` (ur `amount_spent`):
+ett dygn med spend men utan ROAS är ett riktigt back-dygn (noll köp), och det
+syns bara om spenden följer med.
 
 Fältnamnen är exakta: `amount_spent`, `purchase_roas`, `omni_purchase`.
 Inte `spend` eller `purchases`. Använd **aldrig** `omni_purchase_values` —
@@ -55,7 +58,7 @@ tomma fält. Saknas ett värde: låt det vara `null`.
       "roas_3d": "1.456467",
       "kop_3d": 70,
       "spend_total": "51 663,22 kr (SEK)",
-      "dygn": [{ "datum": "2026-08-27", "roas": 1.316813 }]
+      "dygn": [{ "datum": "2026-08-27", "roas": 1.316813, "spend": 4774.86 }]
     }
   ]
 }

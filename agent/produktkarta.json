@@ -109,6 +109,14 @@
       "lage_motivering": "2 köp sedan start",
       "break_even_roas": null,
       "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250001079150291",
+      "produkt": "IBC-Tanköverdraget",
+      "lage": "test",
+      "lage_motivering": "startad 2026-08-28, 1 köp",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
     }
   ],
   "valutakurser": {
