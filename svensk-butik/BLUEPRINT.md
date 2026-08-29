@@ -181,6 +181,33 @@ leverantörens egna produktbilder. Lärdomar som byggts in:
   som generator-input — de innehåller andras husdjur och går inte att äga;
   motiven är textpromptade från analys av konstruktionen.
 
+## 8c. Varv 4 (2026-08-29): one product store + UGC-bildreceptet
+
+Axels beslut: butiken är för "mellanmjölkig" med tre produkter — **one product
+store** för det generiska Sverige-testet. Vinklarna (saknad, gullig kudde,
+present) körs i **annonserna**, inte som egna produktsidor. Landing pages per
+vinkel kommer senare, när testet visat något.
+
+Genomfört:
+- **Tvillingkudden är enda produkten.** Ny titel: *"Tvillingkudden – din bästa
+  vän, en kram du får behålla"* och ny öppning på produktsidan
+  (dörr-ögonblicket — svensk version av konkurrentens "best friend"-vinkel som
+  Axel pekade ut, skriven av sonnet-subagent, tre-frågorstestet kört).
+  Minneskudden + Fotokudden ligger kvar som UTKAST för senare vinkel-evolution.
+  Menyn: Hem / Tvillingkudden / Vanliga frågor / Kontakt.
+- **UGC/iPhone-bildreceptet** (research + 6 godkända bilder på första försöket):
+  amatörfoto-triggerord (candid, handheld, awkward framing, uneven indoor
+  lighting, lived-in home) + produktspec + kravet att kuddens tryck matchar det
+  riktiga djuret i bilden. Fullt recept i `bilder/bilder.json`. Motiven:
+  eldstad, soffa-katt, selfie, mormor (present), valp, shiba-som-nosar.
+  Produktgalleriet är nu UGC-först (före/efter → eldstad → porträtt → nosar →
+  selfie → kuddvägg …); de polerade studiobilderna är borttagna.
+- **Temat publicerades av Axel under arbetet** — Hjärtkompis-temat är LIVE.
+  Baksidan: API:t får inte längre skriva i det (spärr mot livetema). Den
+  färdiga one-product-startsidan (sortiment-sektionen borttagen, CTA:er till
+  produktsidan, UGC-galleri, rättad berättelse-text) ligger i
+  `tema/index.json` och väntar — se SHOPIFY-MANUELLT steg 0b.
+
 ## 9. Kvarstående — kräver Axel
 
 1. **Publicera temat:** Online Store → Themes →

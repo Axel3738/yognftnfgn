@@ -2,11 +2,31 @@
 
 Allt nedan gick inte att göra via API:t. Ordningen är prioritetsordning.
 
-## 0. Publicera temat (ett klick)
+## 0. Publicera temat — ✅ KLART (Axel publicerade 2026-08-29)
 
-Online Store → Themes → **theme-export-matstrumpor-se-matstrumpor-cro-v5**
-→ ⋯ → **Publish**. Temat är redan omskrivet till Hjärtkompis (startsida,
-produktsida, färger, typografi, bilder) — API:t får bara inte publicera det.
+## 0b. Startsidans one-product-version (två vägar, välj en)
+
+Temat är live, och API:t får inte skriva i publicerade teman. Den färdiga
+one-product-startsidan ligger i `svensk-butik/tema/index.json` (sortiment-
+sektionen borttagen, båda CTA-knapparna → produktsidan, UGC-bilder i galleriet,
+berättelse-texten rättad från "sammet/exakt silhuett" till plysch/vit kant).
+
+**Väg A (enklast):** Online Store → Themes → ⋯ på det publicerade temat →
+**Duplicate**. Säg till Claude — kopian går att skriva om via API:t på en
+minut, sen publicerar du kopian.
+
+**Väg B (själv i Customize, 4 ändringar):**
+1. Ta bort sektionen "Kuddarna" (featured collection).
+2. Hero-knappen: "Gör din egen kudde" → länka till produkten Tvillingkudden.
+   Samma sak med knappen i "Hundar blir aldrig för gamla…"-sektionen.
+3. Galleriet "Som de används": byt de tre bilderna till
+   `hjartkompis-ugc-eldstad`, `hjartkompis-ugc-hund-nosar`,
+   `hjartkompis-ugc-mormor` (finns under Content → Files); rubriker
+   "Tvillingen" / "Igenkänningen" / "Presenten".
+4. Berättelse-sektionen: byt texten till: "Vi skär kudden längs ditt husdjurs
+   kontur, med en mjuk vit kant, och trycker bilden på mjuk plysch —
+   dubbelsidigt, helsydd utan dragkedja." + "Den ligger i soffan som vilken
+   kudde som helst. Tills någon tittar en gång till."
 
 ## 1. Byt butiksnamn (Settings → Store details)
 

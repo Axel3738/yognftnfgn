@@ -20,8 +20,8 @@
         "b": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Se kuddarna",
-            "button_link_1": "shopify://collections/alla-kuddar",
+            "button_label_1": "Gör din egen kudde",
+            "button_link_1": "shopify://products/tvillingkudden-kudden-formad-exakt-som-ditt-husdjur",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -29,7 +29,11 @@
           }
         }
       },
-      "block_order": ["h", "t", "b"],
+      "block_order": [
+        "h",
+        "t",
+        "b"
+      ],
       "settings": {
         "image": "shopify://shop_images/hjartkompis-hero-wide.png",
         "image_overlay_opacity": 0,
@@ -94,7 +98,13 @@
           }
         }
       },
-      "block_order": ["etikett", "titel", "pris", "varianter", "kop"],
+      "block_order": [
+        "etikett",
+        "titel",
+        "pris",
+        "varianter",
+        "kop"
+      ],
       "settings": {
         "product": "tvillingkudden-kudden-formad-exakt-som-ditt-husdjur",
         "color_scheme": "scheme-1",
@@ -123,11 +133,14 @@
         "t": {
           "type": "text",
           "settings": {
-            "text": "<p>Vi klipper kudden i exakt ditt husdjurs silhuett och trycker bilden på mjuk sammet — dubbelsidigt, cirka tio centimeter tjock.</p><p>Den ligger i soffan som vilken kudde som helst. Tills någon tittar en gång till.</p>"
+            "text": "<p>Vi skär kudden längs ditt husdjurs kontur, med en mjuk vit kant, och trycker bilden på mjuk plysch — dubbelsidigt, helsydd utan dragkedja.</p><p>Den ligger i soffan som vilken kudde som helst. Tills någon tittar en gång till.</p>"
           }
         }
       },
-      "block_order": ["h", "t"],
+      "block_order": [
+        "h",
+        "t"
+      ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -135,30 +148,6 @@
         "full_width": true,
         "padding_top": 44,
         "padding_bottom": 28
-      }
-    },
-    "sortiment": {
-      "type": "featured-collection",
-      "settings": {
-        "collection": "alla-kuddar",
-        "products_to_show": 4,
-        "title": "Kuddarna",
-        "heading_size": "h1",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 40,
-        "padding_bottom": 40
       }
     },
     "statement": {
@@ -174,13 +163,16 @@
         "b": {
           "type": "button",
           "settings": {
-            "button_label": "Se alla kuddar",
-            "button_link": "shopify://collections/alla-kuddar",
+            "button_label": "Gör din egen kudde",
+            "button_link": "shopify://products/tvillingkudden-kudden-formad-exakt-som-ditt-husdjur",
             "button_style_secondary": false
           }
         }
       },
-      "block_order": ["h", "b"],
+      "block_order": [
+        "h",
+        "b"
+      ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -196,7 +188,7 @@
         "g1": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/hjartkompis-tvilling.png",
+            "image": "shopify://shop_images/hjartkompis-ugc-eldstad.png",
             "title": "Tvillingen",
             "text": "",
             "link_label": "",
@@ -206,8 +198,8 @@
         "g2": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/hjartkompis-katt-fatolj.png",
-            "title": "Vardagsrummet",
+            "image": "shopify://shop_images/hjartkompis-ugc-hund-nosar.png",
+            "title": "Igenkänningen",
             "text": "",
             "link_label": "",
             "link": ""
@@ -216,15 +208,19 @@
         "g3": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/hjartkompis-minne.png",
-            "title": "Minnet",
+            "image": "shopify://shop_images/hjartkompis-ugc-mormor.png",
+            "title": "Presenten",
             "text": "",
             "link_label": "",
             "link": ""
           }
         }
       },
-      "block_order": ["g1", "g2", "g3"],
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ],
       "settings": {
         "title": "Som de används",
         "heading_size": "h1",
@@ -268,7 +264,10 @@
           }
         }
       },
-      "block_order": ["h", "t"],
+      "block_order": [
+        "h",
+        "t"
+      ],
       "settings": {
         "image": "shopify://shop_images/hjartkompis-unboxing.png",
         "height": "adapt",
@@ -310,7 +309,11 @@
           }
         }
       },
-      "block_order": ["q1", "q2", "q3"],
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
       "settings": {
         "heading": "Vanliga frågor"
       }
@@ -330,7 +333,6 @@
     "ms_marquee",
     "produkt",
     "berattelse",
-    "sortiment",
     "statement",
     "ugc_galleri",
     "ugc_markning",
