@@ -86,4 +86,4 @@ $11,2 och 190-storleken $14,5 (420D Oxford + silver coating, 6–10 dagar, YUN).
 Offerten rättade också 190-måttet till **190×71×117** (Temu-bilden sa 70).
 Priserna höjdes på Axels begäran till **399/449/499/549/599 kr** = 73–77 %
 marginal på de offererade storlekarna (mellanstorlekarna interpolerade).
-Fortfarande UTKAST — Axel aktiverar/säger till.
+AKTIVERAD 2026-08-29 på Axels begäran — live på grillkliniken.se/products/grilloverdrag-420d-5-storlekar-med-snorning. Silverbeläggningen beskrivs som glatt insida (skonsam mot lock/lack), enligt Axels produktkännedom.
