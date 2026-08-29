@@ -1,0 +1,23 @@
+1
+00:00:00,140 --> 00:00:02,419
+909 kronor idag bara.
+
+2
+00:00:02,700 --> 00:00:04,239
+909 kronor idag.
+
+3
+00:00:04,380 --> 00:00:05,539
+Begränsat lager kvar.
+
+4
+00:00:05,659 --> 00:00:09,519
+Tre verktyg i ett. Slitmaskin, slitverktyg och polerare.
+
+5
+00:00:09,739 --> 00:00:10,819
+Nu till reapris.
+
+6
+00:00:10,899 --> 00:00:15,339
+Klicka på länken innan den är slut. Det här priset kommer inte tillbaka

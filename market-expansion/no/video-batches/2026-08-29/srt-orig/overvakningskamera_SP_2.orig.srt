@@ -1,0 +1,15 @@
+1
+00:00:00,099 --> 00:00:02,919
+Vi hade tre kameror förut, nu har vi en.
+
+2
+00:00:03,000 --> 00:00:05,960
+Vi bytte ut hela vårt gamla kamerasystem mot den här.
+
+3
+00:00:06,119 --> 00:00:14,239
+En kamera, två linser, hela tomten. Se hur den vrider sig automatiskt när något rör sig. Den håller koll på garageuppfarten, entrén, allt.
+
+4
+00:00:14,279 --> 00:00:25,219
+Och den larmar bara på riktigt, inte varje gång katten smyger förbi. Appen skickar en notis direkt till mobilen. Vi kan se live var vi än är. Bäst av allt, den kostade en bråkdel av vårt gamla system
