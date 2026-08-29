@@ -81,8 +81,9 @@ klart utan att invänta godkännande; stanna bara vid ägarbeslut eller ❌ neda
 
 ## Fas 3.5 — Drive-leverans (Axels krav 2026-08-29)
 
-Färdiga videor + norska adcopy-docs ska in i Drive, i en mapp **"NO <källmappens
-namn>"** bredvid produktens källmapp (samma förälder). Docs skapas via
+Färdiga videor + norska adcopy-docs ska in i Drive: i huvudmappen finns en mapp
+**`NO`** (id `131yXc3gJKU1DKqoDwLci_UknTrBJXXT_`, Axels struktur 2026-08-29) och i
+den en undermapp per produkt med **samma namn som källmappen**. Docs skapas via
 Drive-connectorn (`create_file`, textContent → Google Doc). Videorna är för stora
 för connectorn — de laddas upp med `node pipeline/drive-push.mjs
 --folder=<mapp-id> final/<slug>/*.mp4`, som kräver env `DRIVE_UPLOAD_URL` +
