@@ -5,6 +5,12 @@ fortsätta bygga utan att ha varit med i chatten där systemet byggdes.
 
 Läs detta först, sedan `CLAUDE.md`, sedan `docs/os/ACTIONPLAN.md`.
 
+> **Obs (2026-08-29):** det finns numera en **tredje verksamhet** vid sidan av
+> Bäverbutiken och Grillkliniken: en svensk custom-kuddbutik ("Hjärtkompis",
+> Shopify-butiken "My Store", a6k90m-ii.myshopify.com). Den har **inget** med
+> MagiBorsten- eller SnarkLös-kontona att göra. Allt om den:
+> `svensk-butik/BLUEPRINT.md` + `svensk-butik/SHOPIFY-MANUELLT.md`.
+
 ---
 
 ## 1. Var systemet ligger

@@ -98,6 +98,69 @@ priser och struktur: huvudsessionen. Workflow-run: `wf_4e07ebfe-f50`.
 
 ---
 
-*Resterande sektioner (research-sammanfattning, vald copy, bygglogg,
-kvarstående manuella steg) fylls på nedan när workflowen levererat och
-Shopify-bygget är gjort.*
+## 7. Research i korthet (fullständigt i `research/`)
+
+- **Konkurrenten** kör permanent "40% OFF" med countdown, live-mockupwidget på
+  produktsidan, "Handmade in USA" ×4, humor ("Roast Your Cat") och en mycket
+  välskriven memorial-ton (konkreta sorgetriggers — tom matskål, koppel på
+  kroken — aldrig "regnbågsbron"). Det vi behöll: sidstrukturen, remake-garantin,
+  "any phone photo works", människogranskat utkast. Det vi vände på: rean,
+  presenten-först, USA-skriket.
+- **Juridik (verifierat mot lagtext, se `research/juridik-trust.md`):**
+  ångerrättsundantaget är distansavtalslagen 2 kap. 11 § p. 3; informationen
+  måste ges *innan* köp (2 kap. 2 §), annars förlängs ångerfristen upp till ett
+  år (2 kap. 12 §) — därför står det på varje produktsida, i FAQ och i
+  leveranssidan. Jämförpriser kräver 30-dagars prishistorik (prisinformations-
+  lagen) — därför inga överstrukna priser.
+- **Svensk marknad:** ingen etablerad svensk aktör äger formklippta
+  husdjurskuddar med skandinavisk estetik; utländska aktörer skeppar hit med
+  långa leveranstider och översättningssvenska. Luckan vi tar: äkta svenska +
+  ärlighet + skandinaviskt bildspråk.
+
+## 8. Bygglogg — vad som är GJORT i Shopify (2026-08-29)
+
+| Sak | Status | ID |
+|---|---|---|
+| Tvillingkudden (599/799/1 099 kr, 3 storlekar, hero + närbild) | ✅ ACTIVE + publicerad | `gid://shopify/Product/8814684307593` |
+| Minneskudden (599/799 kr, 2 storlekar, närbild) | ✅ ACTIVE + publicerad | `gid://shopify/Product/8814684733577` |
+| Fotokudden (449/549 kr, 2 storlekar) | ⚠️ DRAFT — bild saknas (kreditbrist) | `gid://shopify/Product/8814684930185` |
+| Kollektion "Alla kuddar" (alla 3, beskrivning + bild) | ✅ publicerad | `gid://shopify/Collection/326691651721` |
+| Sidor: Om oss, Leverans och retur, Vanliga frågor | ✅ publicerade | `/pages/om-oss`, `/pages/leverans-och-retur`, `/pages/vanliga-fragor` |
+| Huvudmeny (Hem, Alla kuddar, Tvillingkudden, Minneskudden, FAQ, Kontakt) | ✅ | main-menu |
+| Sidfotsmeny (Om oss, Leverans, FAQ, Kontakt, Sök) | ✅ | footer |
+| Frakt: egen Sverige-zon med **Fri frakt 0 kr** | ✅ | butiken var felkonfigurerad: "Domestic" var Norge i NOK och Sverige låg i International för 180 NOK — åtgärdat |
+| Publicering till Webbshop + Shop-kanalen | ✅ | båda ACTIVE-produkterna + kollektionen |
+| Moms inkl. i priser (`taxesIncluded`) | ✅ verifierat | — |
+
+**Bilder:** hero-soffan (godkänd i QA) ligger som featured på Tvillingkudden och
+kollektionen. Närbilden hade AI-artefakten "AMIUOEN" tryckt på kuddens sida —
+retuscherad lokalt (maskerad + median-inpainting, verifierad i zoom-QA) och
+uppladdad via staged upload till både Tvillingkudden (bild 2) och Minneskudden
+(featured). Original + retusch + prompt-URL:er: `svensk-butik/bilder/`.
+
+## 9. Kvarstående — kräver Axel eller mer krediter
+
+1. **Higgsfield-krediter tog slut** (0,35 → 0,11; en bild kostar 0,12 med
+   soul_2). 8 av 10 planerade bilder återstår, prompterna ligger färdiga i
+   `bilder/bilder.json` + workflow-scriptet. Fyll på ~1 credit och kör om —
+   prioritet: katt-fatolj, fotokudde (låser upp Fotokudden ur DRAFT), tvilling,
+   barnkram, minne.
+2. **Butiksnamnet** är fortfarande "My Store" — går inte att byta via API.
+   Shopify admin → Settings → Store details → byt till **Hjärtkompis** (och
+   verifiera ledig .se-domän innan något registreras; se `copy/namn-och-rubriker.md`
+   för 4 alternativ till namn).
+3. **Policyerna i kassan** (Refund/Shipping) gick inte att sätta via API:t
+   (saknar `write_legal_policies`-scope). Färdiga texter att klistra in finns i
+   `SHOPIFY-MANUELLT.md`. Innehållet finns redan publikt på Leverans-sidan, så
+   inget är dolt för kunden — men kassan länkar tomma policyer tills detta görs.
+4. **Betalningar:** Shopify Payments + Klarna måste aktiveras i admin innan
+   lansering (copyn nämner Klarna och kort). Utan detta går det inte att checka ut.
+5. **Tema/startsida:** live-temat är Horizon; ditt eget tema
+   (matstrumpor-exporten) ligger opublicerat och rördes inte (API:t får inte
+   skriva i publicerade teman, och att skriva blint i din enda export vore
+   fel). Startsidans sektioner sätts i temaredigeraren: hero-bild
+   (`bilder/hero-soffa.png`), rubrik *"En bit av din hund du får behålla."* +
+   kollektionen. 10 minuter i Customize.
+6. **Leverantör:** priserna antar COGS ≈ 250–350 kr för custom-formklippt kudde
+   (CJ/AliExpress-klass). Verifiera mot faktisk leverantör innan första annonskrona.
+7. **Lösenordsskyddet** ligger kvar tills du väljer att lansera.
