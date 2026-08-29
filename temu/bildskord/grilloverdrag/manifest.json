@@ -1,0 +1,90 @@
+{
+ "kalla": "https://www.temu.com/se/g-601103374896256.html",
+ "skordad": "2026-08-29T05:23:46.954Z",
+ "filer": [
+  {
+   "fil": "01.jpg",
+   "url": "https://img.kwcdn.com/product/fancy/8a26a4b5-20ae-4213-a77c-76ad2d1bbcce.jpg",
+   "typ": "image/jpeg",
+   "bytes": 233588
+  },
+  {
+   "fil": "02.jpg",
+   "url": "https://img.kwcdn.com/product/fancy/6a068363-4457-4860-bb4e-f453e6a2062b.jpg",
+   "typ": "image/jpeg",
+   "bytes": 415670
+  },
+  {
+   "fil": "03.jpg",
+   "url": "https://img.kwcdn.com/product/open/29dba380f9444c4db366a26d56cb3f78-goods.jpeg",
+   "typ": "image/jpeg",
+   "bytes": 294790
+  },
+  {
+   "fil": "04.jpg",
+   "url": "https://img.kwcdn.com/product/fancy/63c3a29c-0fc2-4b96-9d7a-500a92c9c94e.jpg",
+   "typ": "image/jpeg",
+   "bytes": 369069
+  },
+  {
+   "fil": "05.jpg",
+   "url": "https://img.kwcdn.com/product/open/4f8b4b1dc688466eac8b9dee8d7d2014-goods.jpeg",
+   "typ": "image/jpeg",
+   "bytes": 98863
+  },
+  {
+   "fil": "06.jpg",
+   "url": "https://img.kwcdn.com/product/open/4d1054bcb42840b1a99cd612fef758b0-goods.jpeg",
+   "typ": "image/jpeg",
+   "bytes": 174782
+  },
+  {
+   "fil": "07.jpg",
+   "url": "https://img.kwcdn.com/product/open/bd297cc13aaa4bdba61992e3bdcebc14-goods.jpeg",
+   "typ": "image/jpeg",
+   "bytes": 155267
+  },
+  {
+   "fil": "08.jpg",
+   "url": "https://img.kwcdn.com/product/fancy/2d44cc9d-7bdc-4876-8b79-36f55b2e9ddc.jpg",
+   "typ": "image/jpeg",
+   "bytes": 258350
+  },
+  {
+   "fil": "09.jpg",
+   "url": "https://img.kwcdn.com/product/open/efcda53913514e0caaa375cd7da27a97-goods.jpeg",
+   "typ": "image/jpeg",
+   "bytes": 78669
+  },
+  {
+   "fil": "10.jpg",
+   "url": "https://img.kwcdn.com/product/fancy/91cf0f3f-5f05-414a-b6cf-e268ae3b7eea.jpg",
+   "typ": "image/jpeg",
+   "bytes": 336207
+  },
+  {
+   "fil": "11.jpg",
+   "url": "https://img.kwcdn.com/product/fancy/658307c3-9f49-4122-a219-5213c70e8426.jpg",
+   "typ": "image/jpeg",
+   "bytes": 106739
+  },
+  {
+   "fil": "12.jpg",
+   "url": "https://img.kwcdn.com/product/fancy/572c791d-5dd2-45d5-9a15-d636288127ce.jpg",
+   "typ": "image/jpeg",
+   "bytes": 343768
+  },
+  {
+   "fil": "13.jpg",
+   "url": "https://img.kwcdn.com/product/337403e7db2d893823845d30c2911eae97c92781.temu.000001.jpeg",
+   "typ": "image/jpeg",
+   "bytes": 60131
+  },
+  {
+   "fil": "14.mp4",
+   "url": "https://goods-vod.kwcdn.com/goods-video/ff9c6a68c716e69faef954ea9fa14eb3880b5f9egs2CV.f30.mp4",
+   "typ": "video/mp4",
+   "bytes": 4941183
+  }
+ ]
+}

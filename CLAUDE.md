@@ -440,6 +440,24 @@ Produktens faktiska utseende (färg, detaljer, innehåll) ska alltid komma från
 en riktig källbild — AI får aldrig vara enda källan till hur produkten ser ut.
 AI-video → GIF görs också i molnet (Higgsfield + ffmpeg).
 
+**Beskrivningens struktur (Axels regel 2026-08-29)** — gäller varje produktsida
+som får skördebilder, i den här exakta ordningen:
+
+1. Problemet / den emotionella delen (copy)
+2. GIF
+3. Lösningen (copy)
+4. GIF eller bild — det som passar bäst
+5. Funktioner (bullets enligt copy-reglerna)
+6. Bild
+7. Garanti
+
+GIF:arna görs av skördens video med ffmpeg (palettegen/paletteuse, ~400 px,
+8 fps, mål < 4 MB styck). Skördebilder med utländsk text görs om till svenska
+med **KIE AI** (`KIE_API_KEY`) innan de används — och varje översatt bild
+granskas visuellt: räkneord och mått på bilden ska stämma mot offerten, annars
+används den inte. En–två produktbilder i galleriet räcker inte — galleriet ska
+ha variation: rena foton, miljöbilder, detaljbilder, storleksguide och video.
+
 ---
 
 ## Utlandsbutikerna — lansering till NO/DK/FI/UK
