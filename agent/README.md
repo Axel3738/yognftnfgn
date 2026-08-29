@@ -26,7 +26,8 @@ npm test                     # 69 tester, ska vara gröna
 | `logg.mjs` | Läser och skriver budgetloggen. Räknar dagar sedan ändring och back-dagar i rad. |
 | `rond.mjs` | Kör ihop det: kontroller, dom per kampanj, färdig rapport. |
 | `produktkarta.json` | Vilka kampanjer som är test respektive drift. Sanningskällan. |
-| `budgetlogg.jsonl` | Minnet. En rad per beslut, aldrig redigerad i efterhand. |
+| `budgetlogg.jsonl` | Minnet. En rad per beslut, aldrig redigerad i efterhand. Färskaste kopian bor inbäddad i dashboard-artefakten (schemalagda körningar kan inte pusha till git); `minne.mjs` synkar. |
+| `minne.mjs` | Läser tillbaka budgetloggen ur dashboardens HTML. Källan med flest rader vinner. |
 | `kontodata.json` | Dagens siffror ur Meta. Skrivs om varje rond, ligger inte i git. |
 | `test/` | Testerna. |
 

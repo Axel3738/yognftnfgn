@@ -71,6 +71,12 @@ const LOGGTEXT = {
 };
 
 export function bygg({ rader, plan, logg, hamtad }) {
+  // Dashboarden är också systemets MINNE när körningen inte kan pusha till
+  // git: hela budgetloggen bäddas in som JSON och läses tillbaka av nästa
+  // körning med agent/minne.mjs. \u003c-escapen hindrar </script>-brytning.
+  const minnesBlock = `<script type="application/json" id="budgetlogg">${
+    JSON.stringify(logg).replace(/</g, '\\u003c')
+  }</script>`;
   const uppskjutnaId = new Set((plan.uppskjutna ?? []).map((u) => u.kampanj_id));
   const atgardMap = new Map((plan.atgarder ?? []).map((a) => [a.kampanj_id, a]));
   const kort = rader.map((r) => ({ rad: r, ...kortText(r, uppskjutnaId.has(r.id), atgardMap.get(r.id)) }));
@@ -181,6 +187,7 @@ ${loggHtml}
 Aldrig mer än 20 % åt gången. En produkt ändras högst var tredje dag — utom riktiga
 vinnare (ROAS över 3), som får höjas dagligen. Golv 500 kr, tak 4 000 kr per produkt.
 Blir något konstigt stoppar ronden sig själv och det står här.</footer>
+${minnesBlock}
 </div>`;
 }
 

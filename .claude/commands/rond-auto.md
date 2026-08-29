@@ -21,13 +21,22 @@ verifiera varje skrivning, logga, uppdatera dashboarden.
 - Checka ut grenen `claude/daily-agent-discussion-uos5df` och dra senaste:
   `git pull origin claude/daily-agent-discussion-uos5df` — budgetloggen är
   minnet, en gammal kopia gör att kadensspärren räknar fel.
-  Saknas repot helt i containern: hämta det med
-  `mcp__Claude_Code_Remote__add_repo` (owner `Axel3738`, repo `yognftnfgn`,
-  access `push`) och följ klon-instruktionen i svaret. Finns inte det
-  verktyget: klona läskopian `https://github.com/Axel3738/yognftnfgn.git`.
-- **Kan du inte PUSHA till repot: gör INGA ändringar i Meta.** Utan pushad
-  logg blir kadensspärren blind och nästa körning dubbeländrar. Kör då som
-  ren rapport och säg varför.
+  Saknas repot helt i containern: klona läskopian
+  `https://github.com/Axel3738/yognftnfgn.git` och checka ut grenen.
+  (De schemalagda körningarna har bara läsrättighet — det är förväntat.)
+- **SYNKA MINNET — obligatoriskt:** dashboarden bär den färskaste
+  budgetloggen inbäddad som JSON, eftersom schemalagda körningar inte kan
+  pusha till git. Läs dashboarden med `Artifact` `action: "read"` på
+  `https://claude.ai/code/artifact/33962d72-94ff-4657-9c5a-71f584a837a0`
+  (svaret sparas som HTML-fil), kör sedan
+  `node agent/minne.mjs <sparad-html-fil>`. Misslyckas synken: **avbryt** —
+  kör aldrig ronden på repots möjligen gamla logg.
+- **Minnesregeln ersätter push-kravet:** efter VARJE genomförd Meta-ändring
+  skrivs loggraden lokalt, `node agent/dashboard.mjs` körs om och dashboarden
+  **publiceras om på samma URL** (det är så minnet sparas). Misslyckas
+  ompubliceringen efter en genomförd ändring: gör inga fler ändringar och
+  larma högt. Git-push görs i slutet OM den fungerar (den gör det i
+  interaktiva sessioner) — men den är inte längre ett stoppvillkor.
 - Finns inte Meta-verktygen (`mcp__ADsmanagaer__*`): **avbryt allt**, säg det
   rakt ut och gör ingenting annat. Ingen rapport på ingenting.
 
@@ -84,10 +93,11 @@ För varje åtgärd i `plan.atgarder`:
    `effective_status` är `ACTIVE` igen. Visar den 100× för mycket eller för lite: **återställ
    omedelbart till gamla budgeten (gamla kronor × 100 = öre), avbryt HELA
    körningen och larma.**
-3. **Logga, committa och pusha DIREKT** — innan nästa åtgärd: skriv loggraden
-   (`genomford: true`), `git pull --rebase origin claude/daily-agent-discussion-uos5df`
-   och pusha. Misslyckas pushen: **avbryt resten av körningen** — en Meta-ändring
-   utan pushad loggrad gör kadensspärren blind och nästa körning ändrar igen.
+3. **Spara minnet DIREKT** — innan nästa åtgärd: skriv loggraden
+   (`genomford: true`), kör `node agent/dashboard.mjs` och publicera om
+   dashboarden på samma URL. Misslyckas ompubliceringen: **avbryt resten av
+   körningen och larma** — en Meta-ändring utan sparad loggrad gör
+   kadensspärren blind och nästa körning ändrar igen.
 
 **`typ: "paus_kampanj"`** — stäng av:
 1. `ads_update_entity` med `fields: {"status": "PAUSED"}`.
@@ -149,8 +159,10 @@ Publicera om dashboarden på **samma URL** (läs först, publicera sen):
 `url: "https://claude.ai/code/artifact/33962d72-94ff-4657-9c5a-71f584a837a0"`
 och `file_path: agent/dashboard.html`.
 
-Committa och pusha `agent/budgetlogg.jsonl` + `agent/produktkarta.json` (om
-ändrad) till `claude/daily-agent-discussion-uos5df`.
+Försök committa och pusha `agent/budgetlogg.jsonl` + `agent/produktkarta.json`
+(om ändrad) till `claude/daily-agent-discussion-uos5df`. Nekas pushen är det
+okej — minnet är redan sparat i dashboarden; nästa session med push-rättighet
+synkar ikapp git.
 
 Svara sedan kort på svenska: vad som ändrades (produkt, från → till), vad som
 sköts upp och varför, och om något larmade. Inga bibelsvar.
@@ -162,6 +174,6 @@ sköts upp och varför, och om något larmade. Inga bibelsvar.
 - [ ] `node agent/rond.mjs --json` kört; `plan.sparrad` kontrollerad
 - [ ] Varje åtgärd utförd med öre-fältet ur planen och verifierad med läsning
 - [ ] Uppskjutna loggade som `UPPSKJUTEN_GRANS`
-- [ ] Alla loggrader skrivna, committade och pushade
+- [ ] Alla loggrader skrivna och dashboarden ompublicerad efter varje ändring (= minnet sparat); git-push försökt
 - [ ] Dashboarden ombyggd och ompublicerad på samma URL
 - [ ] Kort svar till Axel

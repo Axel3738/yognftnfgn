@@ -267,3 +267,14 @@ test('eskaleringen räknar dagar, inte rader — två körningar samma dag är e
     { logg: [u('2026-08-28'), u('2026-08-28'), u('2026-08-29'), u('2026-08-29')], idag: '2026-08-30' });
   assert.equal(plan.atgarder.length, 0);
 });
+
+test('minnet överlever tur och retur genom dashboardens HTML', async () => {
+  const { bygg } = await import('../dashboard.mjs');
+  const { extraheraLogg } = await import('../minne.mjs');
+  const logg = [
+    { datum: '2026-08-29', kampanj_id: '1', kod: 'SKALA', ny_budget: 1200, genomford: true, motivering: 'test </script> med farliga tecken' },
+  ];
+  const html = bygg({ rader: [], plan: { sparrad: false, atgarder: [], uppskjutna: [] }, logg, hamtad: '2026-08-29' });
+  const tillbaka = extraheraLogg(html);
+  assert.deepEqual(tillbaka, logg);
+});
