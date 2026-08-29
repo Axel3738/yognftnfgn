@@ -162,6 +162,25 @@ innehåller INGEN tracking (bara CSS + A/B-skript), så ingen
 matstrumpor-pixel följer med. Originalet finns kvar på matstrumpor.se.
 **API:t kan inte publicera teman — publiceringen är ett klick för Axel.**
 
+## 8b. Varv 3 (2026-08-29): Temu-referensen
+
+Axel pekade på två Temu-listningar av samma produkt — i praktiken
+leverantörens egna produktbilder. Lärdomar som byggts in:
+
+- **Produktens verkliga konstruktion:** generös **vit tygkant** runt det
+  tryckta djuret (inte tight silhuettklippning), plysch i **stickat
+  polyestertyg**, **helsydd utan dragkedja**. Copyn på alla tre produkter är
+  rättad ("sammet" → plysch; "exakt silhuett" → kontur med vit kant) — utkastet
+  kunden godkänner ska stämma med det som levereras.
+- **Två nya säljmotiv** lånade som *idé* (aldrig som bildfil): **kuddväggen**
+  (sju olika djur i en soffa — säljer "vilken bild som helst funkar") och
+  **före/efter** (mobilfoto → färdig kudde — förklarar produkten på en sekund).
+- 4 nya bilder genererade (kuddvagg, hund-porträtt, katt-porträtt,
+  före/efter). Tvillingkuddens galleri leds nu av före/efter → hundporträtt →
+  kuddvägg; kollektionsbilden är kuddväggen. Temus bilder användes **inte**
+  som generator-input — de innehåller andras husdjur och går inte att äga;
+  motiven är textpromptade från analys av konstruktionen.
+
 ## 9. Kvarstående — kräver Axel
 
 1. **Publicera temat:** Online Store → Themes →

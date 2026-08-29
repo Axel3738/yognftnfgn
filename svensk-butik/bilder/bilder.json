@@ -77,7 +77,36 @@
       "shopify_fil": "hjartkompis-hero-wide.png",
       "cdn": "https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-hero-wide.png",
       "repo_kopia": "svensk-butik/bilder/hero-wide.jpg (nedskalad 1024px; originalet 2K ligger pa Shopifys CDN)"
+    },
+    {
+      "shot": "kuddvagg",
+      "modell": "nano-banana-2 via kie.ai (varv 3, Temu-informerad konstruktion: vit tygkant, plysch, helsydd)",
+      "shopify_fil": "hjartkompis-kuddvagg.png",
+      "cdn": "https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-kuddvagg.png",
+      "repo_kopia": "svensk-butik/bilder/kuddvagg.jpg (nedskalad 1024px)"
+    },
+    {
+      "shot": "hund-portratt-kant",
+      "modell": "nano-banana-2 via kie.ai (varv 3, Temu-informerad konstruktion: vit tygkant, plysch, helsydd)",
+      "shopify_fil": "hjartkompis-hund-portratt.png",
+      "cdn": "https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-hund-portratt.png",
+      "repo_kopia": "svensk-butik/bilder/hund-portratt-kant.jpg (nedskalad 1024px)"
+    },
+    {
+      "shot": "katt-portratt-kant",
+      "modell": "nano-banana-2 via kie.ai (varv 3, Temu-informerad konstruktion: vit tygkant, plysch, helsydd)",
+      "shopify_fil": "hjartkompis-katt-portratt.png",
+      "cdn": "https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-katt-portratt.png",
+      "repo_kopia": "svensk-butik/bilder/katt-portratt-kant.jpg (nedskalad 1024px)"
+    },
+    {
+      "shot": "fore-efter",
+      "modell": "nano-banana-2 via kie.ai (varv 3, Temu-informerad konstruktion: vit tygkant, plysch, helsydd)",
+      "shopify_fil": "hjartkompis-fore-efter.png",
+      "cdn": "https://cdn.shopify.com/s/files/1/0783/2341/7225/files/hjartkompis-fore-efter.png",
+      "repo_kopia": "svensk-butik/bilder/fore-efter.jpg (nedskalad 1024px)"
     }
   ],
-  "borttagna": "hero-soffa/hund-narbild (Higgsfield soul_2, underkanda av Axel — kuddarna sag ut som riktiga djur; ersatta med nano-banana-2-set dar produkten tydligt ar en kudde)"
+  "borttagna": "hero-soffa/hund-narbild (Higgsfield soul_2, underkanda av Axel — kuddarna sag ut som riktiga djur; ersatta med nano-banana-2-set dar produkten tydligt ar en kudde)",
+  "varv3": "2026-08-29: Axel pekade pa tva Temu-listningar (leverantorens produktbilder). Larde: produkten har GENEROS VIT TYGKANT runt trycket (inte tight silhuett), stickat polyestertyg, helsydd utan dragkedja; basta saljgreppen ar kuddvaggen (manga olika djur) och fore/efter (mobilbild -> kudde). Temus bilder anvandes INTE som generator-input — bara som analysunderlag; alla motiv ar textpromptade och egna. Produktcopyn rattad: sammet->plysch, exakt silhuett->kontur med vit kant."
 }
