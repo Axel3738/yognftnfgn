@@ -315,3 +315,13 @@ test('en testprodukt som går plus behåller sin testbudget — sänk-zonen gäl
   assert.equal(dom.kraverGodkannande, false);
   assert.match(dom.motivering, /priset/);
 });
+
+test('en testprodukt under 1 500 kr totalspend larmas aldrig — MC-Kapellet-regeln', () => {
+  // 1 053 kr på 3 dagar, 2 köp, 1 114 kr totalt: under testtröskeln -> samlar data.
+  const dom = besked(rad({ lage: 'test', spend3d: 1053, kop3d: 2, spendTotal: 1114 }));
+  assert.equal(dom.kod, 'FOR_LITE_DATA');
+  // Samma siffror ÖVER tröskeln: larm.
+  assert.equal(besked(rad({ lage: 'test', spend3d: 1053, kop3d: 2, spendTotal: 1600 })).kod, 'STOR_SPEND_UTAN_KOP');
+  // Drift larmar oavsett totalspend.
+  assert.equal(besked(rad({ lage: 'drift', spend3d: 1053, kop3d: 2, spendTotal: null })).kod, 'STOR_SPEND_UTAN_KOP');
+});

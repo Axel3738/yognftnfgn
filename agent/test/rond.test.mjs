@@ -258,3 +258,12 @@ test('en fryst kampanj rörs inte alls före frys_till, och tinar efter', () => 
   const tinad = bedomKampanj(kampanj, { logg: [], idag: '2026-09-01', karta, fx: null });
   assert.notEqual(tinad.dom.kod, 'FRYST');
 });
+
+test('eskaleringen räknar dagar, inte rader — två körningar samma dag är en uppskjutning', () => {
+  const u = (datum) => ({ kampanj_id: 'a', kod: 'UPPSKJUTEN_GRANS', genomford: false, datum });
+  const dom = { kod: 'SANK', kraverGodkannande: true, nyBudget: 800, naraGrans: true, motivering: 'x' };
+  // Fyra rader men bara två unika dagar: skjuts upp igen.
+  const plan = planera([radMedDom('a', 1000, dom)],
+    { logg: [u('2026-08-28'), u('2026-08-28'), u('2026-08-29'), u('2026-08-29')], idag: '2026-08-30' });
+  assert.equal(plan.atgarder.length, 0);
+});

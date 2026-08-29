@@ -236,8 +236,13 @@ export function besked(rad) {
   // UTAN att köpa in sig över grinden är inte "för lite data" — den är trasig.
   const spend3d = rad.spend3d;
   const kop3d = rad.kop3d;
+  // Testprodukter larmas dock aldrig före 1 500 kr total spend (Axels order
+  // 2026-08-29, MC-Kapellet) — under testtröskeln har den inte fått sin chans.
+  const underTesttroskel = lage === 'test'
+    && (!Number.isFinite(rad.spendTotal) || rad.spendTotal < TEST_TROSKEL_SEK);
   if (Number.isFinite(spend3d) && spend3d >= 3 * MIN_SPEND_FOR_DOM
-      && (!Number.isFinite(kop3d) || kop3d < MIN_KOP_FOR_DOM)) {
+      && (!Number.isFinite(kop3d) || kop3d < MIN_KOP_FOR_DOM)
+      && !underTesttroskel) {
     return svar('STOR_SPEND_UTAN_KOP', 'Bränner pengar utan köp — larm',
       `${kr(spend3d)} på 3 dagar men ${Number.isFinite(kop3d) ? kop3d : 'okänt antal'} köp. Det är inte "för lite data" längre — något är fel (produktsidan, priset, lagret?). En människa måste titta.`);
   }

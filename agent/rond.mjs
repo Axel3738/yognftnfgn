@@ -186,12 +186,12 @@ export function planera(rader, { logg = [], idag = null } = {}) {
     const egna = logg
       .filter((r) => r.kampanj_id === id && r.kod !== 'NAMNBYTE')
       .sort((a, b) => (a.datum < b.datum ? 1 : -1));
-    let n = 0;
+    const dagar = new Set();
     for (const r of egna) {
-      if (r.kod === 'UPPSKJUTEN_GRANS') n += 1;
+      if (r.kod === 'UPPSKJUTEN_GRANS') dagar.add(r.datum); // unika DAGAR — två körningar samma dag är en uppskjutning
       else break;
     }
-    return n;
+    return dagar.size;
   };
 
   // Redan ändrad idag (dubbelkörning, kraschad körning som hann skriva)?
