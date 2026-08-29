@@ -4,29 +4,23 @@ Allt nedan gick inte att göra via API:t. Ordningen är prioritetsordning.
 
 ## 0. Publicera temat — ✅ KLART (Axel publicerade 2026-08-29)
 
-## 0b. Startsidans one-product-version (två vägar, välj en)
+## 0b. Publicera "Hjärtkompis v2 (utkast)" (ett klick)
 
-Temat är live, och API:t får inte skriva i publicerade teman. Den färdiga
-one-product-startsidan ligger i `svensk-butik/tema/index.json` (sortiment-
-sektionen borttagen, båda CTA-knapparna → produktsidan, UGC-bilder i galleriet,
-berättelse-texten rättad från "sammet/exakt silhuett" till plysch/vit kant).
+Temat duplicerades via API:t (`themeDuplicate`) 2026-08-29 och utkastet
+**"Hjärtkompis v2 (utkast)"** innehåller allt som inte gick att skriva i
+live-temat:
+- One-product-startsida: sortiment-sektionen borttagen, båda CTA-knapparna
+  går direkt till Tvillingkudden, UGC-bilder i galleriet, berättelse-texten
+  rättad till plysch/vit kant.
+- **USA-paletten** (Axels beslut, samma stil som förlagan): lila `#7C4EC4`
+  på knappar/accent/marquee, gräddvit `#FFFDF4` bas, ljuslila `#F6F0FF` och
+  ljusrosa `#F9D9E5` sektionsytor.
 
-**Väg A (enklast):** Online Store → Themes → ⋯ på det publicerade temat →
-**Duplicate**. Säg till Claude — kopian går att skriva om via API:t på en
-minut, sen publicerar du kopian.
-
-**Väg B (själv i Customize, 4 ändringar):**
-1. Ta bort sektionen "Kuddarna" (featured collection).
-2. Hero-knappen: "Gör din egen kudde" → länka till produkten Tvillingkudden.
-   Samma sak med knappen i "Hundar blir aldrig för gamla…"-sektionen.
-3. Galleriet "Som de används": byt de tre bilderna till
-   `hjartkompis-ugc-eldstad`, `hjartkompis-ugc-hund-nosar`,
-   `hjartkompis-ugc-mormor` (finns under Content → Files); rubriker
-   "Tvillingen" / "Igenkänningen" / "Presenten".
-4. Berättelse-sektionen: byt texten till: "Vi skär kudden längs ditt husdjurs
-   kontur, med en mjuk vit kant, och trycker bilden på mjuk plysch —
-   dubbelsidigt, helsydd utan dragkedja." + "Den ligger i soffan som vilken
-   kudde som helst. Tills någon tittar en gång till."
+Förhandsgranska utkastet i Themes-listan → **Publish** när det ser bra ut.
+(API:t får duplicera och skriva i utkast, men aldrig publicera.)
+Vill du ha förlagans rundade, bubbliga typsnitt också: Customize →
+Typography → t.ex. Baloo/Quicksand — typsnittsbyte är säkrast att göra i
+temaredigeraren.
 
 ## 1. Byt butiksnamn (Settings → Store details)
 
