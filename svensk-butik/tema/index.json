@@ -13,7 +13,7 @@
         "t": {
           "type": "text",
           "settings": {
-            "text": "Skicka din bästa bild — vi syr en kudde i exakt ditt husdjurs form. Du godkänner utkastet innan vi syr något alls.",
+            "text": "Skicka din bästa bild – vi syr en kudde i exakt ditt husdjurs form. Du godkänner utkastet innan vi syr en enda söm.",
             "text_style": "body"
           }
         },
@@ -51,7 +51,7 @@
     "ms_usp": {
       "type": "ms-usp-bar",
       "settings": {
-        "items": "truck:Fri frakt i hela Sverige|check-circle:Godkänn utkastet innan vi syr|lock:Trygg betalning"
+        "items": "truck:Fri frakt i hela Sverige|check-circle:Godkänn utkastet innan vi syr|lock:Trygg betalning med Klarna eller kort"
       }
     },
     "ms_marquee": {
@@ -133,7 +133,7 @@
         "t": {
           "type": "text",
           "settings": {
-            "text": "<p>Vi skär kudden längs ditt husdjurs kontur, med en mjuk vit kant, och trycker bilden på mjuk plysch — dubbelsidigt, helsydd utan dragkedja.</p><p>Den ligger i soffan som vilken kudde som helst. Tills någon tittar en gång till.</p>"
+            "text": "<p>Konturen är skuren efter din bild, med en mjuk vit kant runt hela formen. Tryckt i plysch, på båda sidor – inte ett foto klistrat på en fyrkantig kudde.</p><p>Den ligger i soffan som vilken kudde som helst. Tills någon tittar en gång till, ser hängöronen och pälsteckningen, och fattar. Ingen skylt, inget att förklara – bara din hund, där den alltid legat.</p>"
           }
         }
       },
@@ -259,7 +259,7 @@
         "t": {
           "type": "text",
           "settings": {
-            "text": "<p>Du godkänner ett digitalt utkast innan vi syr — och blir kudden fel mot det du godkänt syr vi om den utan kostnad.</p><p>Betala med Klarna eller kort. Fri, spårbar frakt i hela Sverige.</p>",
+            "text": "<p>Du ser och godkänner ett digitalt utkast innan vi syr en enda söm. Är kudden inte lik utkastet syr vi om den utan kostnad – ingen diskussion, ingen extra avgift.</p><p>Betala tryggt med Klarna eller kort, och få kudden hemburen med fri, spårbar frakt var du än bor i Sverige.</p>",
             "text_style": "body"
           }
         }
@@ -291,21 +291,21 @@
           "type": "qa",
           "settings": {
             "q": "Vilken bild ska jag skicka?",
-            "a": "<p>Vilken mobilbild som helst duger, så länge djuret syns tydligt. Du ser alltid ett digitalt utkast innan vi syr något.</p>"
+            "a": "<p>En bild där hela djuret syns tydligt, gärna en vanlig vardagsbild snarare än en poserad – det är den du känner igen ditt djur i.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
             "q": "Hur lång är leveranstiden?",
-            "a": "<p>Kudden sys på beställning. Räkna med 8–12 arbetsdagar från godkänt utkast, med fri och spårbar frakt i hela Sverige.</p>"
+            "a": "<p>8–12 arbetsdagar efter att du godkänt utkastet, med fri frakt.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
             "q": "Kan jag ångra köpet?",
-            "a": "<p>Kudden sys efter din bild och är specialtillverkad — därför gäller ingen ångerrätt enligt distansavtalslagen. I stället godkänner du utkastet före sömnad, och blir kudden fel mot det du godkänt syr vi om den utan kostnad.</p>"
+            "a": "<p>Nej, kudden är specialtillverkad efter din bild och omfattas inte av ångerrätten. Du godkänner däremot utkastet innan vi syr, och får omsyning utan kostnad om resultatet avviker.</p>"
           }
         }
       },
@@ -322,7 +322,7 @@
       "type": "ms-guarantee-section",
       "settings": {
         "title": "Du godkänner innan vi syr",
-        "body": "<p>Vi syr ingenting förrän du sett och godkänt utkastet av din kudde. Blir den ändå fel mot det du godkänt syr vi om den — utan kostnad.</p>",
+        "body": "<p>Inget material beställs, ingen söm läggs, förrän du sagt ja till det digitala utkastet. Är slutresultatet inte likt det du godkände syr vi om kudden – utan kostnad, utan krångel.</p>",
         "icon": "seal"
       }
     }

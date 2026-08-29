@@ -89,56 +89,56 @@
           "type": "qa",
           "settings": {
             "q": "Vilken bild ska jag skicka?",
-            "a": "<p>Vilken mobilbild som helst duger som utgångspunkt, så länge djuret syns tydligt. Efter beställningen svarar du på orderbekräftelsen med bilden.</p>"
+            "a": "<p>Välj en bild där hela djuret syns, i bra ljus och med skarpt fokus. En vanlig vardagsbild – på golvet, i fönstret, mitt i en rörelse – funkar oftast bättre än en poserad, för det är den naturliga hållningen och de små detaljerna som gör att du känner igen ditt djur i kudden.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
             "q": "Hur vet jag att kudden blir lik?",
-            "a": "<p>Du får ett digitalt utkast av din kudde att godkänna innan vi syr ett enda stygn. Vill du ändra något justerar vi utkastet först — utan kostnad.</p>"
+            "a": "<p>Du godkänner ett digitalt utkast innan vi syr något. Där ser du exakt hur konturen, färgerna och detaljerna – pälsteckning, öron, uttryck – blir, och kan be oss justera innan sömnaden börjar.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
             "q": "Hur snabbt kommer den?",
-            "a": "<p>Kudden sys på beställning. Räkna med 8–12 arbetsdagar från godkänt utkast, med fri och spårbar frakt i hela Sverige.</p>"
+            "a": "<p>Kudden sys på beställning efter att du godkänt utkastet, och är hemma hos dig inom 8–12 arbetsdagar. Fri frakt ingår.</p>"
           }
         },
         "q4": {
           "type": "qa",
           "settings": {
             "q": "Vilka betalsätt kan jag använda?",
-            "a": "<p>Klarna eller kort, direkt i kassan.</p>"
+            "a": "<p>Du betalar med Klarna eller kort i kassan, som vanligt.</p>"
           }
         },
         "q5": {
           "type": "qa",
           "settings": {
             "q": "Vad gäller om jag ångrar mig?",
-            "a": "<p>Kudden sys efter din bild och är specialtillverkad — därför gäller ingen ångerrätt enligt distansavtalslagen. Det är precis därför du godkänner utkastet innan vi syr, och blir kudden fel mot det du godkänt syr vi om den utan kostnad.</p>"
+            "a": "<p>Nej. Kudden sys efter din bild och blir en specialtillverkad vara, vilket undantar den från ångerrätten enligt distansavtalslagen. Du godkänner utkastet innan vi syr, och om resultatet avviker syr vi om den utan kostnad.</p>"
           }
         },
         "q6": {
           "type": "qa",
           "settings": {
             "q": "Går kudden att tvätta?",
-            "a": "<p>Ja, i maskin på 30 grader.</p>"
+            "a": "<p>Maskintvätt i 30 grader. Kudden är gjord för att användas i soffan varje dag, inte stå orörd i en hylla.</p>"
           }
         },
         "q7": {
           "type": "qa",
           "settings": {
             "q": "Vad händer om min bild är suddig eller dåligt tagen?",
-            "a": "<p>Skicka den ändå. Vilken mobilbild som helst duger som utgångspunkt — är den för dålig för att bli bra säger vi till innan något sys, inte efteråt.</p>"
+            "a": "<p>Hör av dig innan du beställer så tittar vi på bilden och säger rakt ut om den räcker. En suddig bild blir en suddig kudde – vi stoppar dig hellre i tid än syr en kudde du blir besviken på.</p>"
           }
         },
         "q8": {
           "type": "qa",
           "settings": {
             "q": "Är det här ännu en Kina-butik?",
-            "a": "<p>Nej, Hjärtkompis är en svensk butik. Kuddarna sys på beställning hos vår tillverkningspartner utomlands — precis som det mesta skräddarsytt görs. Därför tar leveransen 8–12 arbetsdagar och inte två–tre. Vi lovar hellre en tid som stämmer än en som låter bra.</p>"
+            "a": "<p>Vi är ett svenskt företag och det är vi som svarar när du mejlar. Kuddarna sys hos en tillverkningspartner utomlands – det säger vi rakt ut i stället för att antyda något annat. Det du har kontroll över är utkastet du godkänner innan sömnaden.</p>"
           }
         }
       },
