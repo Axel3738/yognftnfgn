@@ -79,6 +79,26 @@ klart utan att invänta godkännande; stanna bara vid ägarbeslut eller ❌ neda
    gamla videor med samma titel återanvänts av misstag (annonsnamnen är
    produktprefixade just därför).
 
+## Fas 3.2 — Bildannonserna (`*_<vinkel>_2_1.png`, Axels krav 2026-08-29)
+
+Varje produktmapp har ~4 bildannonser som ska med i kampanjen. Flöde (verifierat
+2026-08-29 — **direktöversättning i bildmodell stavar fel, gör inte det**):
+1. Läs varje bild, inventera all svensk text + verifiera claims mot norska butiken
+   (samma prisregler som för video; rabattprocent i talet styr jämförpriset).
+2. **Kie AI** (env `KIE_API_KEY`): `POST api.kie.ai/api/v1/jobs/createTask` med
+   modell `google/nano-banana-edit` och prompten "Remove ALL text, letters and
+   numbers … keep buttons as empty shapes" + originalets publika Drive-URL.
+   Polla `GET /api/v1/jobs/recordInfo?taskId=`. (Higgsfield är fallback om Kie
+   saknas — samma teknik.)
+3. Rita norsk text deterministiskt med PIL på den rensade plattan
+   (LiberationSans-Bold; ✓-tecken ritas med linjer — glyfen saknas i fonten;
+   knappar målas som rounded rectangles). Exempel: `compose-no.py` i batchmappen.
+4. QA varje bild visuellt (stavning, siffror, layout). Leverera i chatten,
+   ladda upp till NO-mappen via drive-push (`mimeType=image/png`).
+5. Lägg in i produktens BEFINTLIGA koncept-adsets som `<Produkt>_NO_<K>_2_1`
+   (link_data + image_hash, samma copy som konceptets videoannonser,
+   enhancements OPT_OUT, status enligt beslut).
+
 ## Fas 3.5 — Drive-leverans (Axels krav 2026-08-29)
 
 Färdiga videor + norska adcopy-docs ska in i Drive: i huvudmappen finns en mapp
