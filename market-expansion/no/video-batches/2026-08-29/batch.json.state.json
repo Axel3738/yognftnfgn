@@ -39,7 +39,9 @@
   "proofreadId": "60ac1413112c4a12ad430381194e2243-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "f12466bc244c4f08a32e7f46a1449a28-nb"
+  "renderId": "f12466bc244c4f08a32e7f46a1449a28-nb",
+  "downloaded": "failed",
+  "error": "render failed"
  },
  "kranskydd_PD_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/e7979d43d5fa48448b8037fb555d9bb6/original.mp4",
