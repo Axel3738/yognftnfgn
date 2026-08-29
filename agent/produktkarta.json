@@ -6,6 +6,46 @@
   "uppdaterad": "2026-08-29",
   "kampanjer": [
     {
+      "campaign_id": "120250009747620291",
+      "produkt": "Jättefotbollen",
+      "lage": "test",
+      "lage_motivering": "startad 2026-08-29, för ny för att ha data i 3-dagarsfönstret",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250009539570291",
+      "produkt": "Gravstenspennan",
+      "lage": "test",
+      "lage_motivering": "startad 2026-08-29, för ny för att ha data i 3-dagarsfönstret",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250009391470291",
+      "produkt": "Damasker Vandring",
+      "lage": "test",
+      "lage_motivering": "startad 2026-08-29, för ny för att ha data i 3-dagarsfönstret",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250009325850291",
+      "produkt": "Båtmotorskyddet 420D",
+      "lage": "test",
+      "lage_motivering": "startad 2026-08-29, för ny för att ha data i 3-dagarsfönstret",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250009266750291",
+      "produkt": "Badshorts med Skämttryck",
+      "lage": "test",
+      "lage_motivering": "startad 2026-08-29, för ny för att ha data i 3-dagarsfönstret",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
       "campaign_id": "120249850522830291",
       "produkt": "Fiskespöhållaren",
       "lage": "drift",
@@ -50,9 +90,15 @@
       "campaign_id": "120249975043720291",
       "produkt": "Kranskydd Frost 420D",
       "lage": "test",
-      "lage_motivering": "9 köp sedan start — för få för drift",
+      "lage_motivering": "11 köp sedan start (avläst 2026-08-29, maximum) — under 30-köpsgränsen för drift. Passerat testtröskeln (3 091 kr, ROAS 1,72 mot BE 1,49) och har nu fått sin första riktiga batch via /forsta-batch.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "60c555f47e1844e19031a507426e4fe9",
+      "notion_hub_datakalla": "e2c7ec0f-948b-474f-a4ee-8cca815105b6",
+      "notion_hub_namn": "Kranskydd Frost 420D creative hub",
+      "drive_produktmapp_id": "1q0uWwEp2-l4zjvR9nL532y3nO3AZj9W9",
+      "drive_senaste_batchmapp_id": "12QdSskokWOi9S9RPdQnyBBet4vrH3_tp",
+      "minne": "products/kranskydd-frost-420d/"
     },
     {
       "campaign_id": "120249989799680291",
