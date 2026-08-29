@@ -214,10 +214,9 @@ när en budget passerar den gränsen.
 - `axelbaltet`: `products.json` säger break-even-CPA **299 kr**, `products/axelbaltet/dna.md`
   säger **326 kr**. Kill-beslut mäts mot break-even — fråga Axel vilken som gäller.
   Båda är dessutom räknade på gamla priset 509 kr och är för lågt satta vid 599 kr.
-- **Bäverbutikens momsläge står ingenstans i repot.** Fråga Axel, gissa inte.
-  Grillkliniken säljer *utan* moms — marginalen räknas rakt på priset (Mastern:
-  999 kr, inte 799 kr netto). Drar du reflexmässigt av 25 % ser lönsamma annonser
-  ut att gå med förlust.
+- **Bäverbutiken säljer UTAN moms** (Axels besked 2026-08-29) — precis som
+  Grillkliniken. Marginalen räknas rakt på priset. Drar du reflexmässigt av 25 %
+  ser lönsamma annonser ut att gå med förlust.
 
 Alla `launches[]` i `products.json` är tomma. Kvotskriptet visar därför ett
 minusläge som speglar utebliven loggning, inte utebliven produktion — logga med
