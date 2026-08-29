@@ -10,6 +10,12 @@ Rutin: `/translate-no` (`.claude/commands/translate-no.md`). Manifest: `batch.js
 | Cykelshorts Herr (`cykelshorts`) | 12 | ❌ finns inte på beverbutikken.no | — | — | Kan inte launchas ännu |
 | Bälteslipmaskin Mini 3-i-1 (`balteslip`) | 12 | ❌ finns inte på beverbutikken.no | — | — | Kan inte launchas ännu |
 
+**Launch bekräftad 2026-08-29:** Kranbeskyttelse Frost NO (12 annonser) + IBC-tanktrekk NO
+(11 annonser), båda ACTIVE, CBO 1000 kr/dag, adset per koncept, kampanj-ID
+120251996272390233 resp. 120251996323340233. Drive: NO-mappar skapade med 8 norska
+adcopy-docs; videouppladdning väntar på Drive-brevlådans URL från Axel
+(tools/drive-brevlada.gs). REVIEWS-arken översätts inte (påhittade recensioner — beslut 2026-08-29).
+
 **Löst 2026-08-29 (kvällen):** Axel fyllde wallet ($500). Hela batchen drog ~1 127 credits.
 
 **Tidigare blockerare:** HeyGens `api`-kvot slut (11 → 2 efter 47 failade
