@@ -1,0 +1,35 @@
+{
+  "_note": "Kachings interna admin-API, kartlagt 2026-08-20 genom att fånga appens trafik och läsa dess egna JS-bundles (vite/assets/DealBlock-*.js, NewDealBlock-*.js). Odokumenterat och kan ändras utan förvarning — verifiera alltid efter skrivning.",
+  "base": "https://bundles.kachingappz.app/frontend_api",
+  "auth": {
+    "how": "Bearer <App Bridge session token>, injiceras automatiskt av App Bridge i varje fetch som körs inne i appens iframe",
+    "extraHeaders": { "x-requested-with": "XMLHttpRequest" },
+    "appClientId": "74f3a88ca9004748ce9210ea2cda82ca",
+    "shopifyAppId": 2935586817
+  },
+  "endpoints": {
+    "GET /current_shop": "butiksinfo (valuta, money_format, locale)",
+    "GET /onboarding": "{ appEmbed: { active, themeId }, hasActiveDeals } — kolla ALLTID appEmbed.active, annars syns inget i butiken",
+    "GET /deal_blocks": "sammanfattningslista (id, status, blockName, dealBars[{id,title}])",
+    "GET /deal_blocks/:id": "{ deal_block: {...} } hela objektet",
+    "GET /deal_blocks/new": "skal med blockName, startTimestamp, shopCustomStyles",
+    "GET /deal_blocks/templates": "färdiga mallar",
+    "PUT /deal_blocks/:id": "SKAPAR OCH UPPDATERAR (upsert). Det finns INGEN POST-route — appen genererar UUID:t på klienten. Body: { deal_block, ab_test_variants: [], ab_test_traffic_allocation: null, test_type: 'manual', publish: true|false }",
+    "POST /deal_blocks/:id/publish": "sätt status active",
+    "POST /deal_blocks/:id/unpublish": "sätt status draft",
+    "DELETE /deal_blocks/:id": "radera",
+    "POST /deal_blocks/:id/validate_visibility": "{ visibility: { blockVisibility, selectedProductGIDs, ... } } -> { conflictingDealBlock }",
+    "POST /deal_blocks/:id/validate_name": "{ blockName } -> { conflictingDealBlock }",
+    "PATCH /deal_blocks/:id/ab_test": "{ chosen_ab_test_variant_id } avslutar A/B-test",
+    "GET /deal_block_metrics?page=1": "statistik per block"
+  },
+  "gotchas": [
+    "publish: true i PUT gör blocket aktivt direkt — ingen separat publish behövs vid create.",
+    "id måste genereras av klienten (crypto.randomUUID). dealBar-id kan vara vad som helst unikt; appen använder 4-teckens nanoids.",
+    "API-objektet skiljer sig från metafältet: selectedProducts: [{id: 'gid://...'}] i API:t vs selectedProductIds: [123] i metafältet. marketGID vs marketId.",
+    "spacing är en multiplikator, inte pixlar. 1 ≈ tajt (som referensbilden), 8 blir enormt.",
+    "appEmbed måste vara på i temat (config/settings_data.json -> current.blocks) annars renderas ingenting. Blocktyp: shopify://apps/kaching-bundles/blocks/app-embed-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
+    "Rabatten går via cart transform, INTE automaticDiscountNodes — den listan är tom även när allt funkar.",
+    "Shop-metafältet är inte läsbart via Admin API från en annan app (returnerar null). Läs det via Storefront API med butikens publika token i stället."
+  ]
+}

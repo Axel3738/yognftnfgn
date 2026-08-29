@@ -1,0 +1,361 @@
+{
+  "blockName": "Sömnadskit 104 Delar — Standardstege",
+  "blockTitle": "Köp fler – spara mer",
+  "discountName": "",
+  "blockLayout": "vertical",
+  "blockVisibility": "selected-products",
+  "selectedProducts": [
+    {
+      "id": "gid://shopify/Product/16474311590237"
+    }
+  ],
+  "selectedCollections": [],
+  "excludedProducts": [],
+  "excludedCollections": [],
+  "marketGID": null,
+  "excludedMarketGIDs": [],
+  "currency": null,
+  "excludeB2bCustomers": false,
+  "excludePos": false,
+  "startTimestamp": null,
+  "endTimestamp": null,
+  "differentVariantsEnabled": true,
+  "hideVariantPicker": false,
+  "disableVariantOptionSync": false,
+  "hideUnavailableOptions": false,
+  "showPricesPerItem": true,
+  "showBothPrices": false,
+  "unitLabel": "",
+  "useProductCompareAtPrice": true,
+  "showPricesWithoutDecimals": false,
+  "priceRounding": false,
+  "priceRoundingPrecision": ".00",
+  "updateNativePrice": true,
+  "updateNativePriceType": "bundle",
+  "skipCart": true,
+  "lowStockAlertEnabled": false,
+  "lowStockAlert": null,
+  "showVariantsForSingleQuantity": true,
+  "preselectedDealBarId": "pih7",
+  "cornerRadius": 14,
+  "spacing": 1,
+  "customStylesEnabled": false,
+  "customStyles": "",
+  "dealBars": [
+    {
+      "id": "GVK5",
+      "title": "1 st",
+      "subtitle": "Ordinarie pris",
+      "label": "",
+      "badgeStyle": "simple",
+      "badgeText": "",
+      "badgeImageGID": null,
+      "mediaImageGID": null,
+      "featuredMediaGID": null,
+      "featuredProductGID": null,
+      "featuredImages": [],
+      "freeGifts": [],
+      "freeGiftsSummary": null,
+      "multipleGiftsSelectors": [],
+      "upsells": [],
+      "productPersonalisation": null,
+      "highlights": null,
+      "sellingPlanEnabled": false,
+      "sellingPlanGid": null,
+      "hideBehindScratchOff": false,
+      "showAsSoldOutEnabled": false,
+      "showAsSoldOut": null,
+      "dealBarType": "quantity-break",
+      "quantity": 1,
+      "quantitySelector": false,
+      "discountType": "percentage",
+      "discountValue": 0
+    },
+    {
+      "id": "pih7",
+      "title": "2 st",
+      "subtitle": "Du sparar 99 kr — 280 kr/st",
+      "label": "",
+      "badgeStyle": "simple",
+      "badgeText": "Mest populär",
+      "badgeImageGID": null,
+      "mediaImageGID": null,
+      "featuredMediaGID": null,
+      "featuredProductGID": null,
+      "featuredImages": [],
+      "freeGifts": [],
+      "freeGiftsSummary": null,
+      "multipleGiftsSelectors": [],
+      "upsells": [],
+      "productPersonalisation": null,
+      "highlights": null,
+      "sellingPlanEnabled": false,
+      "sellingPlanGid": null,
+      "hideBehindScratchOff": false,
+      "showAsSoldOutEnabled": false,
+      "showAsSoldOut": null,
+      "dealBarType": "quantity-break",
+      "quantity": 2,
+      "quantitySelector": false,
+      "discountType": "percentage",
+      "discountValue": 15
+    },
+    {
+      "id": "OxhZ",
+      "title": "3 st",
+      "subtitle": "Du sparar 197 kr — 263 kr/st",
+      "label": "",
+      "badgeStyle": "simple",
+      "badgeText": "Bäst värde",
+      "badgeImageGID": null,
+      "mediaImageGID": null,
+      "featuredMediaGID": null,
+      "featuredProductGID": null,
+      "featuredImages": [],
+      "freeGifts": [],
+      "freeGiftsSummary": null,
+      "multipleGiftsSelectors": [],
+      "upsells": [],
+      "productPersonalisation": null,
+      "highlights": null,
+      "sellingPlanEnabled": false,
+      "sellingPlanGid": null,
+      "hideBehindScratchOff": false,
+      "showAsSoldOutEnabled": false,
+      "showAsSoldOut": null,
+      "dealBarType": "quantity-break",
+      "quantity": 3,
+      "quantitySelector": false,
+      "discountType": "percentage",
+      "discountValue": 20
+    }
+  ],
+  "badgesEnabled": true,
+  "badges": [
+    {
+      "id": "bG1a",
+      "attachedTo": {
+        "type": "dealBar",
+        "dealBarId": "rT3b"
+      },
+      "text": "Mest populære",
+      "colors": {
+        "text": {
+          "red": 255,
+          "green": 255,
+          "blue": 255,
+          "alpha": 1
+        },
+        "background": {
+          "red": 21,
+          "green": 74,
+          "blue": 130,
+          "alpha": 1
+        }
+      },
+      "badgeType": "simple",
+      "textSize": 12
+    },
+    {
+      "id": "bG2b",
+      "attachedTo": {
+        "type": "dealBar",
+        "dealBarId": "vX5c"
+      },
+      "text": "40% Rabatt",
+      "colors": {
+        "text": {
+          "red": 255,
+          "green": 255,
+          "blue": 255,
+          "alpha": 1
+        },
+        "background": {
+          "red": 21,
+          "green": 74,
+          "blue": 130,
+          "alpha": 1
+        }
+      },
+      "badgeType": "simple",
+      "textSize": 12
+    }
+  ],
+  "colors": {
+    "background": {
+      "red": 255,
+      "green": 255,
+      "blue": 255,
+      "alpha": 1
+    },
+    "selectedBackground": {
+      "red": 233,
+      "green": 241,
+      "blue": 250,
+      "alpha": 1
+    },
+    "border": {
+      "red": 27,
+      "green": 95,
+      "blue": 168,
+      "alpha": 1
+    },
+    "blockTitle": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "title": {
+      "red": 17,
+      "green": 17,
+      "blue": 17,
+      "alpha": 1
+    },
+    "subtitle": {
+      "red": 90,
+      "green": 90,
+      "blue": 90,
+      "alpha": 1
+    },
+    "price": {
+      "red": 11,
+      "green": 92,
+      "blue": 168,
+      "alpha": 1
+    },
+    "fullPrice": {
+      "red": 136,
+      "green": 136,
+      "blue": 136,
+      "alpha": 1
+    },
+    "labelBackground": {
+      "red": 221,
+      "green": 225,
+      "blue": 233,
+      "alpha": 1
+    },
+    "label": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "badgeBackground": {
+      "red": 21,
+      "green": 74,
+      "blue": 130,
+      "alpha": 1
+    },
+    "badgeText": {
+      "red": 255,
+      "green": 255,
+      "blue": 255,
+      "alpha": 1
+    },
+    "freeGiftBackground": {
+      "red": 209,
+      "green": 222,
+      "blue": 238,
+      "alpha": 1
+    },
+    "freeGiftText": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "freeGiftSelectedBackground": {
+      "red": 27,
+      "green": 95,
+      "blue": 168,
+      "alpha": 1
+    },
+    "freeGiftSelectedText": {
+      "red": 255,
+      "green": 255,
+      "blue": 255,
+      "alpha": 1
+    },
+    "upsellBackground": {
+      "red": 209,
+      "green": 216,
+      "blue": 225,
+      "alpha": 1
+    },
+    "upsellText": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "upsellSelectedBackground": {
+      "red": 209,
+      "green": 216,
+      "blue": 225,
+      "alpha": 1
+    },
+    "upsellSelectedText": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    }
+  },
+  "fonts": {
+    "fontFamily": null,
+    "blockTitle": {
+      "size": 14,
+      "style": "bold"
+    },
+    "title": {
+      "size": 20,
+      "style": "bold"
+    },
+    "subtitle": {
+      "size": 14,
+      "style": "bold"
+    },
+    "label": {
+      "size": 12,
+      "style": "regular"
+    },
+    "freeGift": {
+      "size": 13,
+      "style": "bold"
+    },
+    "upsell": {
+      "size": 13,
+      "style": "bold"
+    },
+    "unitLabel": {
+      "size": 14,
+      "style": "regular"
+    }
+  },
+  "swatchOptions": [],
+  "swatchSize": 18,
+  "swatchShape": "square",
+  "showSelectedSwatchName": false,
+  "imageSize": 48,
+  "imageCornerRadius": 6,
+  "defaultVariantsV2": [],
+  "collectionBreaksEnabled": false,
+  "collectionBreaks": null,
+  "chooseProductModal": null,
+  "timerEnabled": false,
+  "timer": null,
+  "scratchOffEnabled": false,
+  "scratchOff": null,
+  "subscriptionsEnabled": false,
+  "subscriptions": null,
+  "stickyAtcEnabled": false,
+  "stickyAtc": null,
+  "progressiveGiftsEnabled": false,
+  "progressiveGifts": null,
+  "checkboxUpsellsEnabled": false,
+  "checkboxUpsells": null,
+  "savingsSummaryEnabled": false,
+  "savingsSummary": null
+}

@@ -1,0 +1,9 @@
+{
+  "_lasmig": "'handle' ar det som star i admin-URL:en: https://admin.shopify.com/store/DET-HAR/... Det ar oftast myshopify-prefixet, men verifiera i webblasaren forsta gangen.",
+  "baverbutiken": {
+    "handle": "4snrw0-mg",
+    "myshopify": "4snrw0-mg.myshopify.com",
+    "publicUrl": "https://baverbutiken.se",
+    "themeId": null
+  }
+}

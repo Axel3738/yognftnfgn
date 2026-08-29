@@ -2,7 +2,9 @@
 
 **Syfte:** Återskapa Bäverbutikens (SE) Kaching Bundles-mängdrabatter i norska butiken
 **Beverbutikken** (`1acuam-s5.myshopify.com`, valuta **NOK**) för 16 produkter.
-Kaching saknar API – allt byggs manuellt i appens admin. Denna mall är gjord för copy-paste,
+Kaching saknar *publikt* API, men appen har ett eget backend-API som går att styra – se
+`tools/kaching-cli/` och `docs/kaching-cli.md`. **Det här dokumentet skrevs innan det var känt**
+och beskriver därför handpåläggning i appens admin. Mallen är gjord för copy-paste,
 fält för fält.
 
 > ## ⚠️ Viktig status: SE-analysen kunde inte genomföras från denna miljö

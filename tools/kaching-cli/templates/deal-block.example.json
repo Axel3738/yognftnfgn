@@ -1,0 +1,304 @@
+{
+  "_comment": "Komplett verklig deal block-struktur i EXAKT den form Kaching lagrar den. Anvand som falt-referens. Vid create: skicka ALDRIG med id/nanoId/versionId/abTestVariantId - klienten genererar id, resten satter servern.",
+  "blockTitle": "KÖP FLER - SPARA MER",
+  "blockVisibility": "selected-products",
+  "discountName": "",
+  "excludeB2bCustomers": false,
+  "blockLayout": "vertical",
+  "differentVariantsEnabled": true,
+  "hideVariantPicker": false,
+  "disableVariantOptionSync": false,
+  "hideUnavailableOptions": false,
+  "showPricesPerItem": false,
+  "showBothPrices": false,
+  "unitLabel": "",
+  "useProductCompareAtPrice": true,
+  "showPricesWithoutDecimals": true,
+  "priceRounding": false,
+  "priceRoundingPrecision": ".00",
+  "updateNativePrice": true,
+  "updateNativePriceType": "bundle",
+  "skipCart": true,
+  "lowStockAlertEnabled": false,
+  "lowStockAlert": null,
+  "showVariantsForSingleQuantity": true,
+  "preselectedDealBarId": "pgaU",
+  "dealBars": [
+    {
+      "id": "pgaU",
+      "title": "1-pack",
+      "subtitle": "För dig som vill testa",
+      "label": "",
+      "badgeStyle": "simple",
+      "badgeText": "REA 50%! [day-9] - [date+0]",
+      "badgeImageGID": null,
+      "mediaImageGID": null,
+      "featuredMediaGID": null,
+      "featuredProductGID": null,
+      "featuredImages": [],
+      "freeGifts": [],
+      "freeGiftsSummary": null,
+      "multipleGiftsSelectors": [],
+      "upsells": [],
+      "productPersonalisation": null,
+      "highlights": null,
+      "sellingPlanEnabled": false,
+      "sellingPlanGid": null,
+      "hideBehindScratchOff": false,
+      "showAsSoldOutEnabled": false,
+      "showAsSoldOut": null,
+      "dealBarType": "quantity-break",
+      "quantity": 1,
+      "quantitySelector": false,
+      "discountType": "specific",
+      "discountValue": 799
+    },
+    {
+      "id": "Y0md",
+      "title": "2-pack",
+      "subtitle": "Bäst pris per styck",
+      "label": "",
+      "badgeStyle": "simple",
+      "badgeText": "",
+      "badgeImageGID": null,
+      "mediaImageGID": null,
+      "featuredMediaGID": null,
+      "featuredProductGID": null,
+      "featuredImages": [],
+      "freeGifts": [],
+      "freeGiftsSummary": null,
+      "multipleGiftsSelectors": [],
+      "upsells": [],
+      "productPersonalisation": null,
+      "highlights": null,
+      "sellingPlanEnabled": false,
+      "sellingPlanGid": null,
+      "hideBehindScratchOff": false,
+      "showAsSoldOutEnabled": false,
+      "showAsSoldOut": null,
+      "dealBarType": "quantity-break",
+      "quantity": 2,
+      "quantitySelector": false,
+      "discountType": "specific",
+      "discountValue": 3198
+    }
+  ],
+  "badgesEnabled": true,
+  "badges": [
+    {
+      "id": "legacy-pgaU",
+      "attachedTo": {
+        "type": "dealBar",
+        "dealBarId": "pgaU"
+      },
+      "text": "REA 50%! [day-9] - [date+0]",
+      "colors": {
+        "text": {
+          "red": 255,
+          "green": 255,
+          "blue": 255,
+          "alpha": 1
+        },
+        "background": {
+          "red": 244,
+          "green": 65,
+          "blue": 65,
+          "alpha": 1
+        }
+      },
+      "badgeType": "simple",
+      "textSize": 12
+    }
+  ],
+  "cornerRadius": 14,
+  "spacing": 1,
+  "colors": {
+    "background": {
+      "red": 242,
+      "green": 247,
+      "blue": 243,
+      "alpha": 1
+    },
+    "selectedBackground": {
+      "red": 255,
+      "green": 255,
+      "blue": 255,
+      "alpha": 1
+    },
+    "border": {
+      "red": 59,
+      "green": 75,
+      "blue": 59,
+      "alpha": 1
+    },
+    "blockTitle": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "title": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "subtitle": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "price": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "fullPrice": {
+      "red": 85,
+      "green": 85,
+      "blue": 85,
+      "alpha": 1
+    },
+    "labelBackground": {
+      "red": 221,
+      "green": 225,
+      "blue": 233,
+      "alpha": 1
+    },
+    "label": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "badgeBackground": {
+      "red": 244,
+      "green": 65,
+      "blue": 65,
+      "alpha": 1
+    },
+    "badgeText": {
+      "red": 255,
+      "green": 255,
+      "blue": 255,
+      "alpha": 1
+    },
+    "freeGiftBackground": {
+      "red": 186,
+      "green": 196,
+      "blue": 211,
+      "alpha": 1
+    },
+    "freeGiftText": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "freeGiftSelectedBackground": {
+      "red": 59,
+      "green": 75,
+      "blue": 59,
+      "alpha": 1
+    },
+    "freeGiftSelectedText": {
+      "red": 255,
+      "green": 255,
+      "blue": 255,
+      "alpha": 1
+    },
+    "upsellBackground": {
+      "red": 209,
+      "green": 216,
+      "blue": 225,
+      "alpha": 1
+    },
+    "upsellText": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    },
+    "upsellSelectedBackground": {
+      "red": 209,
+      "green": 216,
+      "blue": 225,
+      "alpha": 1
+    },
+    "upsellSelectedText": {
+      "red": 0,
+      "green": 0,
+      "blue": 0,
+      "alpha": 1
+    }
+  },
+  "fonts": {
+    "fontFamily": null,
+    "blockTitle": {
+      "size": 14,
+      "style": "bold"
+    },
+    "title": {
+      "size": 20,
+      "style": "bold"
+    },
+    "subtitle": {
+      "size": 14,
+      "style": "regular"
+    },
+    "label": {
+      "size": 12,
+      "style": "regular"
+    },
+    "freeGift": {
+      "size": 13,
+      "style": "bold"
+    },
+    "upsell": {
+      "size": 13,
+      "style": "bold"
+    },
+    "unitLabel": {
+      "size": 14,
+      "style": "regular"
+    }
+  },
+  "customStylesEnabled": false,
+  "customStyles": "",
+  "swatchOptions": [],
+  "swatchSize": 18,
+  "swatchShape": "square",
+  "showSelectedSwatchName": false,
+  "imageSize": 48,
+  "imageCornerRadius": 6,
+  "collectionBreaksEnabled": false,
+  "collectionBreaks": null,
+  "chooseProductModal": null,
+  "timerEnabled": false,
+  "scratchOffEnabled": false,
+  "scratchOff": null,
+  "subscriptionsEnabled": false,
+  "subscriptions": null,
+  "currency": null,
+  "stickyAtcEnabled": false,
+  "stickyAtc": null,
+  "progressiveGiftsEnabled": false,
+  "checkboxUpsellsEnabled": false,
+  "savingsSummaryEnabled": false,
+  "savingsSummary": null,
+  "excludedProductIds": [],
+  "excludedCollectionIds": [],
+  "selectedProductIds": [
+    1234567890
+  ],
+  "selectedCollectionIds": [],
+  "marketId": null,
+  "excludedMarketIds": [],
+  "timer": null,
+  "progressiveGifts": null,
+  "checkboxUpsells": null,
+  "defaultVariantsV2": [],
+  "otherProductHandles": []
+}
