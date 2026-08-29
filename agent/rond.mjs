@@ -269,13 +269,17 @@ export function planera(rader, { logg = [], idag = null } = {}) {
 
 /**
  * Annons-triggern: flaggar produkter som behöver nya annonser, ur budgetloggen.
- * - Trappan har pausat material (eller produkten stängts av) senaste 7 dagarna:
- *   det som pausats måste ersättas för att testet ska vara rättvist.
- * - Två eller fler genomförda höjningar senaste 7 dagarna: en vinnare som
- *   skalas behöver mer material innan tröttheten kommer, inte efter.
- * Flaggan startar ingenting själv — den syns i rapporten och på dashboarden,
- * och batchen dras igång med /forsta-batch eller /cs.
+ * Axels regel 2026-08-29: "rutinen ska leta efter produkter som inte har fått
+ * sin tre dagars brief" — var tredje dag får varje produkt med en batch en ny
+ * brief-runda (/cs). Produkter utan batch fångas av forsta_batch-regeln.
+ * - forsta_batch: passerat 1 500 kr OCH på/över break-even, ingen batch ännu.
+ * - brief_runda: har en batch och senaste *_KLAR-raden är ≥3 dagar gammal.
+ *   Fokus (ersätt pausat / mata vinnaren) bakas in i orsaken.
+ * - ersatt/mata_vinnare: kvarvarande signaler för produkter utan batch.
+ * Flaggan startar ingenting själv — rond-auto steg 4b kör rundorna.
  */
+export const BRIEF_INTERVALL_DAGAR = 3;
+
 export function annonsbehov(rader, { logg = [], idag = null } = {}) {
   if (idag === null) return [];
   const nu = Date.parse(`${idag}T00:00:00Z`);
@@ -287,33 +291,79 @@ export function annonsbehov(rader, { logg = [], idag = null } = {}) {
   const behov = [];
   for (const r of rader) {
     const egna = logg.filter((rad) => rad.kampanj_id === r.id && rad.genomford === true);
-    const harBatch = egna.some((rad) => KLAR.includes(rad.kod));
-    const nyligenKlar = egna.some((rad) => KLAR.includes(rad.kod) && inom7(rad.datum));
-    if (nyligenKlar) continue; // batch gjord i veckan — låt den landa först
-
-    // Axels regel 2026-08-29: 3 000 kr total spend utan en riktig batch = dags.
-    if (!harBatch && Number.isFinite(r.spendTotal) && r.spendTotal >= FORSTA_BATCH_SPEND_SEK) {
-      behov.push({
-        kampanj_id: r.id, namn: r.namn, typ: 'forsta_batch',
-        orsak: `har spenderat ${Math.round(r.spendTotal).toLocaleString('sv-SE')} kr utan en riktig batch — dags för /forsta-batch`,
-      });
-      continue;
-    }
+    const klarRader = egna.filter((rad) => KLAR.includes(rad.kod));
+    const harBatch = klarRader.length > 0;
+    // Dagar sedan senaste batch — null om ingen batch finns.
+    const senasteKlar = klarRader
+      .map((rad) => Date.parse(`${rad.datum}T00:00:00Z`))
+      .filter(Number.isFinite)
+      .sort((a, b) => b - a)[0];
+    const dagarSedanBatch = Number.isFinite(senasteKlar)
+      ? Math.floor((nu - senasteKlar) / 86400000)
+      : null;
 
     const senaste7 = egna.filter((rad) => inom7(rad.datum));
     const pausat = senaste7.some((rad) => ['TRAPPA_STEG_1', 'TRAPPA_STEG_2', 'TRAPPA_STEG_3', 'STANG_AV'].includes(rad.kod));
     const skalningar = senaste7.filter((rad) => rad.kod === 'SKALA').length;
+
+    if (harBatch) {
+      if (dagarSedanBatch !== null && dagarSedanBatch < BRIEF_INTERVALL_DAGAR) continue; // låt batchen landa
+      if (r.dom?.kod === 'FRYST') continue; // fryst produkt: datan går inte att bedöma — ingen runda förrän frysen släpper
+      const rundaAntal = rundkvot(r.budget);
+      if (rundaAntal === 0) continue; // ingen budget — ingen runda
+      let fokus = '';
+      if (pausat) fokus = ' Fokus: ersätt det som pausats i trappan.';
+      else if (skalningar >= 2) fokus = ` Fokus: mata vinnaren — skalats ${skalningar} gånger på en vecka.`;
+      behov.push({
+        kampanj_id: r.id, namn: r.namn, typ: 'brief_runda',
+        dagarSedanBatch, rundaAntal,
+        orsak: `${dagarSedanBatch} dagar sedan senaste batchen — dags för 3-dagarsrundan (${rundaAntal} annonser via /cs).${fokus}`,
+      });
+      continue;
+    }
+
+    // Axels regel 2026-08-29 (förtydligad): CS-processen startar när produkten
+    // KLARAR testet — passerat 1 500 kr OCH ligger på/över break-even. Då går
+    // den test -> skalning och ska pumpas med nya annonser. En produkt som
+    // passerat tröskeln MED förlust hanteras av åtgärdstrappan, inte av en batch.
+    const overBreakEven = r.dom?.vinstProcent === null || r.dom?.vinstProcent === undefined
+      ? null
+      : r.dom.vinstProcent >= 0;
+    if (Number.isFinite(r.spendTotal) && r.spendTotal >= FORSTA_BATCH_SPEND_SEK
+        && overBreakEven !== false) {
+      behov.push({
+        kampanj_id: r.id, namn: r.namn, typ: 'forsta_batch',
+        orsak: `har klarat testet (${Math.round(r.spendTotal).toLocaleString('sv-SE')} kr spenderat, över break-even) utan en riktig batch — dags för /forsta-batch`,
+      });
+      continue;
+    }
+
     if (pausat) {
       behov.push({ kampanj_id: r.id, namn: r.namn, typ: 'ersatt', orsak: 'material pausat senaste veckan — ersätt det som stängts av' });
     } else if (skalningar >= 2) {
       behov.push({ kampanj_id: r.id, namn: r.namn, typ: 'mata_vinnare', orsak: `skalats ${skalningar} gånger på en vecka — mata vinnaren med mer material innan tröttheten kommer` });
     }
   }
-  // Första batchen först, störst spend först — det är den ronden startar.
+  // Första batchen först, sen brief-rundor (äldst först), sist övriga signaler.
+  const RANG = { forsta_batch: 0, brief_runda: 1, ersatt: 2, mata_vinnare: 2 };
   return behov.sort((a, b) => {
-    if (a.typ !== b.typ) return a.typ === 'forsta_batch' ? -1 : 1;
+    if (RANG[a.typ] !== RANG[b.typ]) return RANG[a.typ] - RANG[b.typ];
+    if (a.typ === 'brief_runda' && b.typ === 'brief_runda'
+        && a.dagarSedanBatch !== b.dagarSedanBatch) {
+      return b.dagarSedanBatch - a.dagarSedanBatch;
+    }
     return (b_spend(rader, b) - b_spend(rader, a));
   });
+}
+
+/**
+ * Storleken på en 3-dagarsrunda: halva veckokvoten, avrundad uppåt (två rundor
+ * per vecka ≈ veckokvoten). ANTAGANDE 2026-08-29, säg till Axel om delningen
+ * ska vara en annan.
+ */
+export function rundkvot(budgetSek) {
+  const vecka = annonskvot(budgetSek).antal;
+  return vecka === 0 ? 0 : Math.ceil(vecka / 2);
 }
 
 function b_spend(rader, behovsrad) {
@@ -321,9 +371,10 @@ function b_spend(rader, behovsrad) {
   return Number.isFinite(r?.spendTotal) ? r.spendTotal : 0;
 }
 
-// Axels beslut 2026-08-29: vid 3 000 kr total spend förtjänar produkten sin
-// första riktiga creative-strategy-batch.
-export const FORSTA_BATCH_SPEND_SEK = 3000;
+// Axels beslut 2026-08-29 (förtydligat samma dag): testtröskeln. När en
+// produkt passerat den OCH ligger över break-even går den test -> skalning,
+// och då startar creative-strategy-processen.
+export const FORSTA_BATCH_SPEND_SEK = 1500;
 
 /**
  * Launchstrukturen — Axels tabell ur Bäverpanelen: hur många nya annonser en
@@ -414,7 +465,9 @@ export function rapport(rader, meta, behov = []) {
     ut.push(`## 🎨 Nya annonser behövs (${behov.length})`);
     ut.push('');
     for (const b of behov) {
-      ut.push(`- **${b.namn.split('|')[0].trim()}** — ${b.orsak}. Starta med \`/cs\` eller \`/forsta-batch\`.`);
+      const kommando = b.typ === 'forsta_batch' ? '`/forsta-batch`' : '`/cs`';
+      const orsak = b.orsak.endsWith('.') ? b.orsak : `${b.orsak}.`;
+      ut.push(`- **${b.namn.split('|')[0].trim()}** — ${orsak} Kommando: ${kommando}.`);
     }
     ut.push('');
     const totalVecka = rader.reduce((s2, r) => s2 + annonskvot(r.budget).antal, 0);

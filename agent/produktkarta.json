@@ -28,7 +28,13 @@
         "kalla": "Axels besked 2026-08-29: inköpspris höjt till 40 USD, totalt — ingen frakt eller avgift tillkommer.",
         "datum": "2026-08-29"
       },
-      "anmarkning": "Axel planerar att höja priset. När det sker: ändra pris_sek här, så räknas break-even om automatiskt, och uppdatera talet i kampanjnamnet."
+      "anmarkning": "Axel planerar att höja priset. När det sker: ändra pris_sek här, så räknas break-even om automatiskt, och uppdatera talet i kampanjnamnet.",
+      "notion_hub_id": "7dc504681b9c43498ea8be26b120b721",
+      "notion_hub_datakalla": "81e1eb38-db47-4bc1-bdf1-7e9e0243cfa2",
+      "notion_hub_namn": "Belt grinder creative hub",
+      "drive_produktmapp_id": "1Yzk6i6qwM7FmzkV6LEZjfL_PZntUyLBS",
+      "drive_senaste_batchmapp_id": "1eYmok8-W2UFwWIdDSq8ozFenYHihKuRB",
+      "minne": "products/balteslipmaskinen/"
     },
     {
       "campaign_id": "120249952968210291",

@@ -90,8 +90,10 @@ dem oförändrade — inte att bedöma dem.
 Ronden flaggar produkter som behöver nya annonser och startar högst EN batch
 per dygn (`/rond-auto` steg 4b):
 
-- **3 000 kr total spend utan en riktig batch** → första batchen
-  (`/forsta-batch`). Axels regel 2026-08-29.
+- **Klarat testet — 1 500 kr total spend OCH över break-even — utan en
+  riktig batch** → första batchen (`/forsta-batch`). Det är övergången
+  test → skalning; en förlorare vid tröskeln går åtgärdstrappan i stället.
+  Axels regel 2026-08-29.
 - **Material pausat av trappan/avstängning senaste veckan** → ersätt (`/cs`).
 - **2+ höjningar på en vecka** → mata vinnaren (`/cs`).
 

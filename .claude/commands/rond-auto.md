@@ -141,30 +141,46 @@ och räknas inte:
 - Aldrig starta något som är pausat. Ronden stänger av; den startar aldrig på.
 - Aldrig röra priser, texter, creatives, målgrupper eller andra konton.
 
-## 4b. Annonsbatchen (Axels beslut 2026-08-29: rutinen startar den själv)
+## 4b. Annonsbatcherna (Axels beslut 2026-08-29: rutinen kör dem själv, var tredje dag)
 
-Om `annonsbehov` i utfallet inte är tomt: kör EN batch — den första i listan
-(listan är redan sorterad: första batchen före påfyllnad, störst spend först).
-Aldrig mer än en batch per dygn, resten av listan rapporteras bara.
+Det här är rutinens andra jobb, lika viktigt som budgetarna: **varje produkt
+med en batch ska få sin nya brief-runda var tredje dag.** `annonsbehov` i
+utfallet listar allt som är förfallet, färdigsorterat (första batchen först,
+sen rundorna med äldst batch först). Kör **upp till TVÅ poster per morgon**,
+uppifrån — resten av listan rapporteras och ligger kvar till imorgon.
+(Två per morgon räcker för att hinna alla produkter i en 3-dagarscykel så
+länge produkterna är ≤6 — blir de fler: säg till Axel att cykeln inte går ihop.)
 
 - Behov `forsta_batch` → följ `.claude/commands/forsta-batch.md` i sin helhet
   (analys → briefer → Drive → Notion). Strategin görs FÖRST, sedan läggs
   annonserna i produktens Notion-hub — det är där Jasper och redigerarna ser
-  dem, via det vanliga veckoflödet.
-- Behov `ersatt` eller `mata_vinnare` på en produkt som redan har minne
-  (`products/<id>/`) → följ `.claude/commands/cs.md` i stället.
-- **Batchens storlek = veckokvoten** (`veckokvot` i utfallet, launchstrukturen:
-  budget → antal annonser + nya koncept). En /cs-batch för produkten producerar
-  veckans antal — mest variationer, nya koncept enligt kvoten.
+  dem, via det vanliga veckoflödet. **Rutinen skriver briefer — den gör aldrig
+  själva annonserna. Redigerarna gör annonserna.**
+- Behov `brief_runda` (och `ersatt`/`mata_vinnare` på en produkt som redan har
+  minne i `products/<id>/`) → följ `.claude/commands/cs.md`. Står det ett
+  "Fokus:" i orsaken styr det rundans inriktning.
+- **Rundans storlek = `rundaAntal`** i behovsraden (halva veckokvoten,
+  avrundad uppåt — två rundor per vecka ≈ veckokvoten). För `forsta_batch`
+  gäller i stället hela veckokvoten (`veckokvot` i utfallet).
+- **Ny produkt utan Notion-hub:** bygg aldrig en hub från grunden. Duplicera
+  en befintlig hubs schema utan innehåll (Axels arbetssätt): hämta schemat
+  från t.ex. "Trimmer belt creative hub" (`3aa270ab-908c-808b-9d87-d1f1a0d70cbc`)
+  med notion-fetch, skapa databasen med samma kolumner/alternativ via
+  notion-create-database, och lägg till en "Pending Approval"-boardvy
+  (gruppera på Status, filtrera Typ = "Video - Pending Approval").
+  Status-ALTERNATIVEN kan API:t inte klona (känd Notion-begränsning) — de blir
+  standard (Inte påbörjad/Pågår/Klar); använd "Inte påbörjad" som Draft och
+  nämn i svaret att Axel kan döpa om dem i UI:t om han vill ha samma som i de
+  andra hubbarna. Anteckna hubbens id + Drive-mappens id i `agent/produktkarta.json`.
 - När batchen är klar OCH uppladdad till Notion: skriv en loggrad med kod
   `FORSTA_BATCH_KLAR` (respektive `CS_BATCH_KLAR`), `genomford: true` —
-  det är den raden som tystar behovet i en vecka.
+  det är den raden som startar om 3-dagarsklockan.
 - **Minnesfilerna** (`products/<id>/dna.md`, `batch-log.md`, `backlog.md`):
   skriv dem i arbetskopian som vanligt OCH kopiera dem till `agent/utkorg/`
   (samma relativa sökvägar) innan dashboarden byggs om — utkorgen bäddas in i
   dashboarden och synkas till git av nästa session med push-rättighet.
   En batch vars minnesfiler inte hamnat i utkorgen är INTE klar.
-- Hinner batchen inte bli klar (avbrott, fel): logga ingenting med *_KLAR —
+- Hinner en batch inte bli klar (avbrott, fel): logga ingenting med *_KLAR —
   då flaggas behovet igen imorgon och batchen görs om hel.
 
 ## 5. Logga
@@ -192,9 +208,9 @@ okej — minnet är redan sparat i dashboarden; nästa session med push-rättigh
 synkar ikapp git.
 
 Svara sedan kort på svenska: vad som ändrades (produkt, från → till), vad som
-sköts upp och varför, om något larmade — och om `annonsbehov` i utfallet flaggat
-produkter som behöver nya annonser (då med en rad per produkt och tipset att
-starta `/cs` eller `/forsta-batch`). Inga bibelsvar.
+sköts upp och varför, om något larmade — och vilka brief-rundor/batcher som
+kördes (produkt + antal briefer + Notion-länk) respektive ligger kvar i kön
+till imorgon. Inga bibelsvar.
 
 ## DEFINITION OF DONE
 - [ ] Färsk `git pull` innan något annat
@@ -203,6 +219,7 @@ starta `/cs` eller `/forsta-batch`). Inga bibelsvar.
 - [ ] `node agent/rond.mjs --json` kört; `plan.sparrad` kontrollerad
 - [ ] Varje åtgärd utförd med öre-fältet ur planen och verifierad med läsning
 - [ ] Uppskjutna loggade som `UPPSKJUTEN_GRANS`
+- [ ] Förfallna behov i `annonsbehov` körda (max 2) med *_KLAR-loggrad + minnesfiler i utkorgen — eller exakt redovisat varför inte
 - [ ] Alla loggrader skrivna och dashboarden ompublicerad efter varje ändring (= minnet sparat); git-push försökt
 - [ ] Dashboarden ombyggd och ompublicerad på samma URL
 - [ ] Kort svar till Axel

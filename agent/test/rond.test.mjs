@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { annonsbehov, annonskvot, bedomKampanj, breakEvenForPost, kontrolleraKonto, planera, rapport, TILLATET_KONTO } from '../rond.mjs';
+import { annonsbehov, annonskvot, bedomKampanj, breakEvenForPost, kontrolleraKonto, planera, rapport, rundkvot, TILLATET_KONTO } from '../rond.mjs';
 
 const bas = () => ({
   hamtad: '2026-08-28T07:00:00Z',
@@ -282,7 +282,7 @@ test('minnet överlever tur och retur genom dashboardens HTML', async () => {
 test('annons-triggern flaggar pausat material och snabbskalade vinnare', () => {
   const rader = [
     { id: 'a', namn: 'Trasig | BE ROAS 1.50', spendTotal: 900 },
-    { id: 'b', namn: 'Vinnare | BE ROAS 1.50', spendTotal: 2000 },
+    { id: 'b', namn: 'Vinnare | BE ROAS 1.50', spendTotal: 1400 },
     { id: 'c', namn: 'Lugn | BE ROAS 1.50', spendTotal: 500 },
   ];
   const logg = [
@@ -307,46 +307,75 @@ test('annons-triggern glömmer det som är äldre än en vecka', () => {
 });
 
 
-test('3 000 kr total spend utan batch flaggar första batchen — Axels regel', () => {
+test('klarat testet (1 500 kr + över break-even) utan batch flaggar första batchen', () => {
   const rader = [
-    { id: 'stor', namn: 'Fiskespöhållaren | BE ROAS 1.50', spendTotal: 52000 },
-    { id: 'liten', namn: 'Ny | BE ROAS 1.50', spendTotal: 1200 },
-    { id: 'batchad', namn: 'Klar | BE ROAS 1.50', spendTotal: 9000 },
+    { id: 'stor', namn: 'Fiskespöhållaren | BE ROAS 1.50', spendTotal: 52000, dom: { vinstProcent: 21 } },
+    { id: 'liten', namn: 'Ny | BE ROAS 1.50', spendTotal: 1200, dom: { vinstProcent: 30 } },
+    { id: 'batchad', namn: 'Klar | BE ROAS 1.50', spendTotal: 9000, budget: 2000, dom: { vinstProcent: 18 } },
+    { id: 'forlorare', namn: 'Back | BE ROAS 1.50', spendTotal: 5000, dom: { vinstProcent: -8 } },
   ];
-  const logg = [{ kampanj_id: 'batchad', kod: 'FORSTA_BATCH_KLAR', genomford: true, datum: '2026-06-01' }];
+  // batchad fick sin batch igår — inne i 3-dagarsfönstret, ska vara tyst.
+  const logg = [{ kampanj_id: 'batchad', kod: 'FORSTA_BATCH_KLAR', genomford: true, datum: '2026-08-28' }];
   const behov = annonsbehov(rader, { logg, idag: '2026-08-29' });
   assert.equal(behov.length, 1);
   assert.equal(behov[0].kampanj_id, 'stor');
   assert.equal(behov[0].typ, 'forsta_batch');
 });
 
-test('en nyss klar batch tystar alla behov i en vecka', () => {
-  const rader = [{ id: 'a', namn: 'X | BE ROAS 1.50', spendTotal: 9000 }];
+test('3-dagarsrundan: tyst i tre dagar, sen brief_runda med fokus', () => {
+  const rader = [{ id: 'a', namn: 'X | BE ROAS 1.50', spendTotal: 9000, budget: 2000, dom: { vinstProcent: 18 } }];
   const logg = [
-    { kampanj_id: 'a', kod: 'FORSTA_BATCH_KLAR', genomford: true, datum: '2026-08-26' },
+    { kampanj_id: 'a', kod: 'FORSTA_BATCH_KLAR', genomford: true, datum: '2026-08-27' },
     { kampanj_id: 'a', kod: 'TRAPPA_STEG_1', genomford: true, datum: '2026-08-28' },
   ];
+  // Dag 2 efter batchen: låt den landa.
   assert.equal(annonsbehov(rader, { logg, idag: '2026-08-29' }).length, 0);
-  // När batchen inte längre är färsk (8 dagar) men pausningen är det (6 dagar):
-  // pausat material flaggar igen — 3000-regeln tiger, batchen är ju gjord.
-  const behovSen = annonsbehov(rader, { logg, idag: '2026-09-03' });
-  assert.equal(behovSen.length, 1);
-  assert.equal(behovSen[0].typ, 'ersatt');
+  // Dag 3: rundan är förfallen, och pausningen blir rundans fokus.
+  const behov = annonsbehov(rader, { logg, idag: '2026-08-30' });
+  assert.equal(behov.length, 1);
+  assert.equal(behov[0].typ, 'brief_runda');
+  assert.equal(behov[0].dagarSedanBatch, 3);
+  assert.equal(behov[0].rundaAntal, 2); // budget 2 000 → veckokvot 3 → runda 2
+  assert.match(behov[0].orsak, /3 dagar sedan/);
+  assert.match(behov[0].orsak, /ersätt det som pausats/);
 });
 
-test('första batch-behoven sorteras först, störst spend först', () => {
+test('3-dagarsrundan hoppar över frysta produkter och produkter utan budget', () => {
+  const logg = [{ kampanj_id: 'a', kod: 'CS_BATCH_KLAR', genomford: true, datum: '2026-08-20' }];
+  const fryst = [{ id: 'a', namn: 'X | BE ROAS 1.50', spendTotal: 9000, budget: 2000, dom: { kod: 'FRYST', vinstProcent: null } }];
+  assert.equal(annonsbehov(fryst, { logg, idag: '2026-08-29' }).length, 0);
+  const utanBudget = [{ id: 'a', namn: 'X | BE ROAS 1.50', spendTotal: 9000, dom: { vinstProcent: 18 } }];
+  assert.equal(annonsbehov(utanBudget, { logg, idag: '2026-08-29' }).length, 0);
+});
+
+test('rundkvoten är halva veckokvoten avrundad uppåt', () => {
+  assert.equal(rundkvot(500), 1);   // veckokvot 1
+  assert.equal(rundkvot(1000), 1);  // veckokvot 2
+  assert.equal(rundkvot(2000), 2);  // veckokvot 3
+  assert.equal(rundkvot(4000), 2);  // veckokvot 4
+  assert.equal(rundkvot(0), 0);
+  assert.equal(rundkvot(undefined), 0);
+});
+
+test('första batch-behoven sorteras först, sen rundor med äldst batch först', () => {
   const rader = [
-    { id: 'v', namn: 'Vinnare | BE', spendTotal: 99000 },
-    { id: 'a', namn: 'A | BE', spendTotal: 4000 },
-    { id: 'b', namn: 'B | BE', spendTotal: 8000 },
+    { id: 'v', namn: 'Vinnare | BE', spendTotal: 99000, budget: 4000, dom: { vinstProcent: 25 } },
+    { id: 'g', namn: 'Gammal | BE', spendTotal: 20000, budget: 1000, dom: { vinstProcent: 20 } },
+    { id: 'a', namn: 'A | BE', spendTotal: 4000, dom: { vinstProcent: 10 } },
+    { id: 'b', namn: 'B | BE', spendTotal: 8000, dom: { vinstProcent: 12 } },
   ];
   const logg = [
-    { kampanj_id: 'v', kod: 'FORSTA_BATCH_KLAR', genomford: true, datum: '2026-06-01' },
+    { kampanj_id: 'v', kod: 'FORSTA_BATCH_KLAR', genomford: true, datum: '2026-08-24' },
     { kampanj_id: 'v', kod: 'SKALA', genomford: true, datum: '2026-08-25', ny_budget: 1200 },
     { kampanj_id: 'v', kod: 'SKALA', genomford: true, datum: '2026-08-27', ny_budget: 1450 },
+    { kampanj_id: 'g', kod: 'CS_BATCH_KLAR', genomford: true, datum: '2026-08-20' },
   ];
   const behov = annonsbehov(rader, { logg, idag: '2026-08-29' });
-  assert.deepEqual(behov.map((b) => b.kampanj_id), ['b', 'a', 'v']);
+  // b och a saknar batch (forsta_batch, störst spend först), sen rundorna:
+  // g:s batch är äldre (9 dagar) än v:s (5) — g före v trots mindre spend.
+  assert.deepEqual(behov.map((b) => b.kampanj_id), ['b', 'a', 'g', 'v']);
+  assert.equal(behov[2].typ, 'brief_runda');
+  assert.match(behov[3].orsak, /mata vinnaren/);
 });
 
 test('filutkorgen överlever tur och retur och släpper inte igenom farliga sökvägar', async () => {
