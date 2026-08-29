@@ -24,6 +24,14 @@ stanna bara vid ❌ i QA:n eller när något kräver ägarbeslut (pris, budgetä
    masterdokumentet, se `docs/temu-launch-flow.md`) — sök på produktens
    engelska namn. Total inköpskostnad SE = Total tax exclusive + 2,9 EUR.
 
+## Fas 0.5 — Dubblettspärr (OBLIGATORISK innan launch)
+
+Sök annonskontot efter en befintlig kampanj vars namn innehåller produktnamnet
+— **oavsett status**. Finns en: launcha INTE produkten igen, notera i rapporten
+att den redan är launchad (och att Drive-mappen i så fall bara inte kunnat
+flyttas till LAUNCHED). Mappflytten misslyckas ibland på rättigheter, så
+kampanjkontot är sanningen för vad som är launchat — aldrig mapplistan ensam.
+
 ## Fas 1 — QA (gratis, gör den alltid komplett)
 
 1. Dra frames ur varje video (`imageio-ffmpeg` via pip om ffmpeg saknas), läs ALL
