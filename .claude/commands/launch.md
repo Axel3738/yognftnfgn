@@ -33,8 +33,13 @@ stanna bara vid ❌ i QA:n eller när något kräver ägarbeslut (pris, budgetä
 2. Samma kontroll på de 4 bildannonserna och ADCOPY-texterna.
 3. Räkna break-even-ROAS = pris / (pris − inköpskostnad i SEK). **Utan moms** —
    Bäverbutiken säljer utan moms, dra ALDRIG av 25 %.
-4. Leverera QA-tabell: ✅/❌ per creative med exakta fynd. ❌ på pris/claims/
-   stavning = creativen launchas inte förrän Axel sagt sitt.
+4. **Rabattclaim som inte stämmer är INTE ett stoppfel** (Axels policy
+   2026-08-29): annonsen ändras aldrig — jämförpriset höjs så claimen stämmer.
+   Kör `node tools/shopify-fix-compareat.mjs --product-id <id> --rabatt <claimad procent>`
+   och rapportera ändringen. Stavfel i inbränd text, fel produktnamn och fel
+   *styckpris* är däremot fortfarande stoppfel för den creativen.
+5. Leverera QA-tabell: ✅/❌ per creative med exakta fynd. Creative med stoppfel
+   launchas inte (övriga i produkten launchas som vanligt).
 
 ## Fas 2 — Recensioner (Judge.me)
 
@@ -55,19 +60,32 @@ Följ uppladdningsprompten i masterdokumentet:
   test. Nya batcher = nya adsets, aldrig in i befintliga.
 - Ad copy: PRIMÄRTEXT/RUBRIK/BESKRIVNING ur vinkelns ADCOPY-doc, rakt av.
 - **Inga creative enhancements** — stäng av allt utom relevanta kommentarer.
-- **ALLT skapas PAUSED: kampanj, adset OCH annons — sätt varje nivå explicit.**
-  Ingenting får kunna spendera innan Axel tittat.
+- **Allt SKAPAS PAUSED på alla nivåer** (kampanj, adset, annons — sätt varje
+  explicit) så att inget spenderar halvbyggt.
 - Video/bild som bara heter produktnamnet (utan vinkelkod) → läggs under PD.
+
+**Aktivering (Axels beslut 2026-08-29 — han vill inte slå på manuellt):**
+när produktens ALLA annonser är uppladdade och QA:n är grön aktiveras kampanj,
+adsets och annonser direkt. Undantag som förblir PAUSED och rapporteras:
+enskilda creatives med stoppfel (stavning, styckpris, produktnamn), och hela
+produkten om break-even inte gick att räkna (saknad quote i batch-sheeten) —
+en kampanj utan känd break-even får aldrig spendera.
 
 ## Fas 4 — Efterarbete
 
-1. Flytta INTE Drive-mappen till LAUNCHED — det gör Axel när han slagit på kampanjen.
-2. Rapportera: QA-utfall, antal recensioner importerade, kampanj/adset/annons-id:n,
-   break-even som användes, och vad som väntar på Axel.
+1. Flytta produktens Drive-mapp till `Products/LAUNCHED/` (mapp-id
+   `1-vbYhYgTEv7zYptW5rGmgKAITmAz4l1X`) via Drive-connectorn — mappen ska inte
+   plockas igen av nästa körning. Går flytten inte (rättigheter på mappen):
+   säg det i slutrapporten så flyttar Axel den själv.
+2. Rapportera: QA-utfall (inkl. jämförpris-fixar som gjordes), antal recensioner
+   importerade, kampanj/adset/annons-id:n, break-even, vad som AKTIVERADES och
+   vad som lämnades PAUSED med orsak.
 
 ## Definition of done
 - [ ] Alla creatives nedladdade och QA:ade, tabell levererad
-- [ ] Inga ❌ på pris/claims/stavning olösta (eller uttryckligen överlämnade till Axel)
+- [ ] Rabattclaims fixade via jämförpriset (verktyget), stoppfel exkluderade
 - [ ] Recensionerna importerade mot rätt produkt-id och verifierade
-- [ ] Kampanj + adsets + annonser skapade PAUSED med BE-ROAS + datum i namnet
+- [ ] Kampanj + adsets + annonser skapade med BE-ROAS + datum i namnet
+- [ ] Aktiverat enligt aktiveringsreglerna (eller PAUSED med rapporterad orsak)
+- [ ] Drive-mappen flyttad till LAUNCHED (eller flaggad om rättigheter saknas)
 - [ ] Slutrapport med id:n och kvarstående punkter
