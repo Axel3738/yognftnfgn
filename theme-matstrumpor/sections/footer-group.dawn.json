@@ -59,17 +59,10 @@
       "settings": {
         "visible": true
       }
-    },
-    "ms_skrapkort": {
-      "type": "ms-skrapkort",
-      "settings": {
-        "visible": true
-      }
     }
   },
   "order": [
     "footer",
-    "ms_cookies",
-    "ms_skrapkort"
+    "ms_cookies"
   ]
 }

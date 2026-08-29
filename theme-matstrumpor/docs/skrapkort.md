@@ -1,3 +1,9 @@
+> ⚠️ **BORTTAGET UR TEMAT 2026-08-28 på Axels begäran.**
+> Koden finns inte längre i `sections/` eller `delat/`. Dokumentet ligger kvar som
+> arkiv. Vill du ha tillbaka funktionen:
+> `git checkout <commit-före-borttagningen> -- theme-matstrumpor/sections/ms-skrapkort.liquid theme-matstrumpor/delat/`
+> och lägg tillbaka `ms_skrapkort` i `sections/footer-group.dawn.json`.
+
 # Skrapkortet — e-postklubbens popup
 
 > **Patch till redan installerade butiker:** `delat/FIXA-SKRAPKORT.md` — en
