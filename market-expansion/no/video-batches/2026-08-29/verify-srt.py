@@ -14,7 +14,7 @@ FORBIDDEN = [
     (r'\b(309|402|310|489|636|509)\b', 'svenskt/gammalt belopp'),
     (r'\bfri frakt\b(?![^\n]*over 300)', 'fri frakt-claim'),
     (r'\b(bara|endast|bare) i ?dag\b', 'endast-idag-löfte'),
-    (r'[åä]r\b|\boch\b|\bocks[åa]\b|\bhär\b|\bfrån\b|\bvälj\b|\bkör\b|\bpratar\b|\bgrej\b', 'trolig svenska'),
+    (r'\bär\b|\boch\b|\bocks[åa]\b|\bhär\b|\bfrån\b|\bvälj\b|\bkör\b|\bpratar\b|\bgrej\b|\bidag\b|\bkranen där\b', 'trolig svenska'),
     (r'\bkronor\b', 'svenska "kronor" (ska vara kroner)'),
     (r'överdrag|villaägare|utekran(?!en)|blixtlås', 'svecism'),
 ]
