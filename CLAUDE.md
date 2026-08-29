@@ -419,6 +419,29 @@ som slutpriser utan separat momsrad — ändra aldrig tillbaka utan Axels besked
 
 ---
 
+## Produktbatch-flödet (Axels regel 2026-08-29)
+
+**Vid varje ny produktbatch: leverera Cowork-prompten FÖRST, innan den egna
+uppladdningen startar.** Axel kör bildskörden på sin dator parallellt medan
+molnsessionen gör copy, priser och uppladdning. Prompten ska vara komplett
+klistra-in-bar: git-instruktioner + `temu-bilder.mjs`-kommandon med ALLA
+batchens Temu-URL:er och mappnamn (se `temu/kaching-cli/KÖR-BILDSKÖRD.md`).
+Bakgrund: Temu blockerar molnmiljön (Chromium resettas, curl får tomt skal) men
+`img.kwcdn.com` är öppet — skörden kräver Axels dator, allt annat gör molnet.
+Skörden pushas till branchen → molnsessionen fyller gallerierna med bilder,
+GIF:ar och video i efterhand.
+
+**AI-bilder (utan Cowork):** Higgsfield är kopplat i molnsessionen och används
+när riktiga bilder saknas eller behöver kompletteras — MEN med ärlighetsramen
+som redan gäller: AI används för miljö-/livsstilsbilder med en riktig
+produktbild som referens, och märks alltid ("Livsstilsbilderna är AI-genererade
+illustrationer" — samma mönster som matstrumpor-soffbilden och Bäver-UGC:n).
+Produktens faktiska utseende (färg, detaljer, innehåll) ska alltid komma från
+en riktig källbild — AI får aldrig vara enda källan till hur produkten ser ut.
+AI-video → GIF görs också i molnet (Higgsfield + ffmpeg).
+
+---
+
 ## Utlandsbutikerna — lansering till NO/DK/FI/UK
 
 Hela receptet med priser, SKU:er, bild-URL:er och färdiga steg ligger i
