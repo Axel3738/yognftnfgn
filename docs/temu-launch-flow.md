@@ -106,9 +106,25 @@ curl -sS -X POST "https://$SHOPIFY_SHOP_SE/admin/api/2025-07/graphql.json" \
 ```
 
 - `SHOPIFY_SHOP_SE` finns redan i miljön (`4snrw0-mg.myshopify.com`).
-- `SHOPIFY_TOKEN_SE` ska vara en **`shpat_`-token** (Admin API access token från
-  en custom app med scopes `read_products` + `write_products`). ⚠️ En token som
-  börjar på `atkn_` är en CLI-token och ger 401 mot Admin API — det låg länge en
-  sådan i miljön; byt den, felsök inte.
-- Tokentyp kollas snabbt: 401 med `Invalid API key or access token` = fel sorts
-  token, inte fel butik.
+- **Ingen statisk token behövs.** Miljön har `SHOPIFY_CLIENT_ID_SE` +
+  `SHOPIFY_CLIENT_SECRET_SE`, och en färsk `shpat_`-token mintas per körning via
+  client credentials grant (verifierat 2026-08-29, scope
+  `write_inventory,write_products,write_publications`):
+  `POST https://$SHOPIFY_SHOP_SE/admin/oauth/access_token` med
+  `{"client_id":…,"client_secret":…,"grant_type":"client_credentials"}`.
+  `tools/shopify-fix-compareat.mjs` gör detta åt dig.
+- `SHOPIFY_TOKEN_SE` (`atkn_…`) är en CLI-token som ger 401 mot Admin API —
+  ignorera den, felsök aldrig mot den.
+
+## Prispolicy vid claim-mismatch (Axels beslut 2026-08-29)
+
+Säger annonsen en rabattprocent som inte stämmer mot butiken ändras ALDRIG
+annonsen eller copyn — **jämförpriset höjs** tills claimen stämmer:
+
+```bash
+node tools/shopify-fix-compareat.mjs --product-id <id> --rabatt <claimad procent>
+```
+
+Verktyget sätter `compare_at_price = ceil(pris / (1 − rabatt))` per variant
+(uppåt, så verklig rabatt ≥ claim). Exempel: badshorts 399 kr + "50 %" → 798;
+båtmotorskyddet 579 kr + "40 %" → 965. Ändringen rapporteras alltid.
