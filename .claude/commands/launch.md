@@ -32,6 +32,14 @@ att den redan är launchad (och att Drive-mappen i så fall bara inte kunnat
 flyttas till LAUNCHED). Mappflytten misslyckas ibland på rättigheter, så
 kampanjkontot är sanningen för vad som är launchat — aldrig mapplistan ensam.
 
+Två undantag där en befintlig kampanj ÄR åtgärdbar:
+1. **Halvbyggd** (kampanjen saknar annonser, t.ex. för att Metas uppladdning
+   var otillgänglig): komplettera den med annonserna i stället för att hoppa
+   över — försök uppladdningen igen.
+2. **PAUSED utan aktiveringsbeslut** (launchad av en äldre körning innan
+   aktiveringsreglerna, aldrig QA-bedömd för aktivering): gör QA på produktens
+   creatives och aktivera enligt aktiveringsreglerna i fas 3.
+
 ## Fas 1 — QA (gratis, gör den alltid komplett)
 
 1. Dra frames ur varje video (`imageio-ffmpeg` via pip om ffmpeg saknas), läs ALL
