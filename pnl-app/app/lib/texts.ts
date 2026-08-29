@@ -46,7 +46,7 @@ const en = {
     combineHelp: (currency: string) =>
       `Adds up all linked stores into one calculation in ${currency}, using daily exchange rates.`,
     thStore: "Store",
-    thCurrency: "Currency",
+    thCurrency: "Sells in",
     thSales: "Sales",
     thAds: "Ads",
     thNetProfit: "Net profit",
@@ -270,7 +270,7 @@ const en = {
     subtitleLinked: (n: number) => `${n} stores linked — combine them on the Profit page`,
     subtitleUnlinked: "Link your stores to see them in one combined calculation",
     thStore: "Store",
-    thCurrency: "Currency",
+    thCurrency: "Sells in",
     thisOne: "this one",
     addTitle: "Add a store",
     addBody:
@@ -368,7 +368,7 @@ const sv: Texts = {
     combineHelp: (currency: string) =>
       `Räknar ihop alla ihopkopplade butiker till en kalkyl i ${currency}, med dagskurs.`,
     thStore: "Butik",
-    thCurrency: "Valuta",
+    thCurrency: "Säljer i",
     thSales: "Försäljning",
     thAds: "Annonser",
     thNetProfit: "Nettovinst",
@@ -592,7 +592,7 @@ const sv: Texts = {
     subtitleLinked: (n: number) => `${n} butiker ihopkopplade — summera dem på Vinst-sidan`,
     subtitleUnlinked: "Koppla ihop dina butiker för att se dem i en gemensam kalkyl",
     thStore: "Butik",
-    thCurrency: "Valuta",
+    thCurrency: "Säljer i",
     thisOne: "den här",
     addTitle: "Lägg till en butik",
     addBody:
