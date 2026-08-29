@@ -568,3 +568,16 @@ bilderna kan vara andra SKU:er). Bänkhyllan har ingen måttbild → inga mått 
 
 Prismatris: 3×-regeln på offertens landade kostnader qty 1 (46/60-setet per
 variant), låsta FX 2026-08-22, lokala prispunkter, jämförpris ×1,3.
+
+### Batch 5.1-uppföljning (2026-08-28, CWD:s svar)
+
+- **Jetfläkten SKAPAD i alla fem butikerna** (`kor5.mjs <land> jetflakt`).
+  CWD bekräftade: offererad UTAN batteri — Sverige tillåter inte frakt av lösa
+  batterier alls. Copy enligt arbetslampe-mönstret ("batteri ingår inte",
+  Makita 18V-fästet), INGA specsiffror (leverantörens W/RPM motsäger varandra),
+  bild = offertens nakna enhet med kinesiska bannern bortskuren (sharp-crop).
+- **Lövblåsaren fortsatt VÄNTA:** samma utan-batteri-läge, men alla offertbilder
+  visar batterikit med påtryckt "4.0/6.0Ah Batteries 1/2pc" — oanvändbara för en
+  batterifri produkt. Rena bilder efterfrågade från CWD.
+- **Fotokudden:** CWD:s pris avser största storleken (max 45 cm) → prissättning
+  kan räkna värsta fallet. Kvar: fotoflödet per order.

@@ -209,6 +209,21 @@ export const T5_NO = {
     alt: { main: 'Børstehodet på støvsugeren ved siden av hund og katt', b2: 'Settets deler – børstehode, slange og adaptere, merket V7–V15' },
   },
 
+  jetflakt: {
+    titel: 'Jetvifte for Makita-batteri – Blås Rent uten Ledning',
+    problemH: 'Trykkluft på boks tar slutt midt i jobben',
+    problemP: 'Støvet i PC-en, sponene på arbeidsbenken, løvet på trappen – boksene koster og går tomme, og kompressoren med slange står i en bod du ikke er i.',
+    losningH: 'Turboviften som kobles på batteriet du allerede har',
+    losningP: 'En håndholdt jetvifte med børsteløs motor som blåser bort støv, spon og løv med en rettet luftstrøm. Pistolgrep, avtrekker, og foten kobles rett på Makita 18V-festet – samme batteri som i skrutrekkeren. Batteri følger ikke med: den drives av det du allerede eier.',
+    bullets: [
+      '<strong>Blåser rent der boksluften tok slutt</strong> – støv, spon og løv uten forbruksvarer',
+      '<strong>Kobles rett på batteriet du eier</strong> – passer Makita 18V-festet',
+      '<strong>Børsteløs motor i pistolgrep</strong> – rettes med én hånd',
+      '<strong>Batteri følger ikke med</strong> – viften drives av ditt eget verktøybatteri',
+    ],
+    alt: { main: 'Jetviften uten batteri, skrått forfra' },
+  },
+
   magnethylla: {
     titel: 'Magnethylle for Vaskemaskin og Kjøleskap – Oppbevaring Uten Boring',
     problemH: 'Vaskemiddelet står på gulvet bak døren',

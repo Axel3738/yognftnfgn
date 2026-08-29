@@ -211,6 +211,21 @@ export const T5_DA = {
     alt: { main: 'Børstehovedet på støvsugeren ved siden af hund og kat', b2: 'Sættets dele – børstehoved, slange og adaptere, mærket V7–V15' },
   },
 
+  jetflakt: {
+    titel: 'Jetblæser til Makita-batteri – Blæs Rent uden Ledning',
+    problemH: 'Trykluft på dåse slipper op midt i arbejdet',
+    problemP: 'Støvet i computeren, spånerne på arbejdsbordet, løvet på trappen – dåserne koster og løber tør, og kompressoren med slange står i et skur, du ikke er i.',
+    losningH: 'Turboblæseren der klikker på batteriet, du allerede har',
+    losningP: 'En håndholdt jetblæser med børsteløs motor, der blæser støv, spåner og løv væk med en rettet luftstrøm. Pistolgreb, aftrækker, og foden klikker lige på Makita 18V-fatningen – samme batteri som i skruemaskinen. Batteri følger ikke med: den kører på det, du allerede ejer.',
+    bullets: [
+      '<strong>Blæser rent, hvor dåseluften slap op</strong> – støv, spåner og løv uden forbrugsvarer',
+      '<strong>Klikker lige på batteriet, du ejer</strong> – passer til Makita 18V-fatningen',
+      '<strong>Børsteløs motor i pistolgreb</strong> – rettes med én hånd',
+      '<strong>Batteri følger ikke med</strong> – blæseren kører på dit eget værktøjsbatteri',
+    ],
+    alt: { main: 'Jetblæseren uden batteri, skråt forfra' },
+  },
+
   magnethylla: {
     titel: 'Magnethylde til Vaskemaskine og Køleskab – Opbevaring Uden Boring',
     problemH: 'Vaskemidlet står på gulvet bag døren',

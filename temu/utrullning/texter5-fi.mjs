@@ -212,6 +212,21 @@ export const T5_FI = {
     alt: { main: 'Harjapää pölynimurissa koiran ja kissan vierellä', b2: 'Setin osat – harjapää, letku ja sovittimet, merkitty V7–V15' },
   },
 
+  jetflakt: {
+    titel: 'Suihkupuhallin Makita-akulle – Puhalla Puhtaaksi Ilman Johtoa',
+    problemH: 'Paineilma spraypurkista loppuu kesken työn',
+    problemP: 'Pöly tietokoneessa, lastut työpenkillä, lehdet portailla – purkit maksavat ja loppuvat, ja kompressori letkuineen seisoo varastossa jossa et ole.',
+    losningH: 'Turbopuhallin, joka istuu akkuun jonka jo omistat',
+    losningP: 'Käsin pidettävä suihkupuhallin, jossa harjaton moottori puhaltaa pois pölyn, lastut ja lehdet suunnatulla ilmavirralla. Pistoolikahva, liipaisin, ja jalka istuu suoraan Makita 18V -kiinnikkeeseen – sama akku kuin ruuvinvääntimessä. Akku ei sisälly: se toimii sillä minkä jo omistat.',
+    bullets: [
+      '<strong>Puhaltaa puhtaaksi siitä missä purkki loppui</strong> – pöly, lastut ja lehdet ilman kulutustarvikkeita',
+      '<strong>Istuu suoraan akkuun jonka omistat</strong> – sopii Makita 18V -kiinnikkeeseen',
+      '<strong>Harjaton moottori pistoolikahvassa</strong> – suunnataan yhdellä kädellä',
+      '<strong>Akku ei sisälly</strong> – puhallin toimii omalla työkaluakullasi',
+    ],
+    alt: { main: 'Suihkupuhallin ilman akkua, viistosti edestä' },
+  },
+
   magnethylla: {
     titel: 'Magneettihylly Pesukoneelle ja Jääkaapille – Säilytystä Ilman Poraamista',
     problemH: 'Pesuaine seisoo lattialla oven takana',

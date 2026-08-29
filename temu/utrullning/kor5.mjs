@@ -44,6 +44,7 @@ export const PRISER5 = {
   sandbild: { SE: 459, NO: 399, DK: 349, FI: 49.9, UK: 23.99 },
   dysonborste: { SE: 539, NO: 479, DK: 399, FI: 59.9, UK: 31.99 },
   magnethylla: { SE: 439, NO: 379, DK: 329, FI: 46.9, UK: 20.99 },
+  jetflakt: { SE: 709, NO: 679, DK: 549, FI: 77.9, UK: 37.99 },
 };
 
 const G = (f) => `batch5-galleri/${f}`;
@@ -127,6 +128,15 @@ const PRODUKTER = {
     media: [{ roll: 'main', fil: G('rad65.jpg') }, { roll: 'b2', fil: M('image27.png') }],
     suffixar: ['-SV', '-VI'], variantBild: ['main', 'b2'],
   },
+};
+
+PRODUKTER.jetflakt = {
+  // CWD 2026-08-28: offererad UTAN batteri (Sverige tillåter inte frakt av lösa
+  // batterier). Bilden är offertens nakna enhet med kinesiska bannern bortskuren.
+  // Inga specsiffror i copyn — leverantörens W/RPM-uppgifter motsäger varandra.
+  sku: 'TEMU-601102600651869',
+  kategori: 'gid://shopify/TaxonomyCategory/hg-12-3-7',
+  media: [{ roll: 'main', fil: G('jetflakt-ren.png') }],
 };
 
 async function laddaTexter(sprak) {

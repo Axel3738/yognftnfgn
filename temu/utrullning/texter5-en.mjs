@@ -215,6 +215,21 @@ export const T5_EN = {
     alt: { main: 'The brush head on the vacuum next to a dog and cat', b2: "The kit's parts – brush head, hose and adaptors, marked V7–V15" },
   },
 
+  jetflakt: {
+    titel: 'Jet Blower for Makita Battery – Blow Clean without a Cord',
+    problemH: 'Canned air runs out halfway through the job',
+    problemP: "The dust in the computer, the shavings on the workbench, the leaves on the steps – the cans cost money and run dry, and the compressor with its hose sits in a shed you're not in.",
+    losningH: 'The turbo blower that runs on the battery you already have',
+    losningP: 'A handheld jet blower with a brushless motor that blows away dust, shavings and leaves with a directed airflow. Pistol grip, trigger, and the base clips straight onto the Makita 18V mount – the same battery as in your drill. Battery not included: it runs on the one you already own.',
+    bullets: [
+      '<strong>Blows clean where canned air ran out</strong> – dust, shavings and leaves with no consumables',
+      '<strong>Clips onto the battery you own</strong> – fits the Makita 18V mount',
+      '<strong>Brushless motor in a pistol grip</strong> – aimed with one hand',
+      '<strong>Battery not included</strong> – the blower runs on your own tool battery',
+    ],
+    alt: { main: 'The jet blower without a battery, at an angle from the front' },
+  },
+
   magnethylla: {
     titel: 'Magnetic Shelf for Washing Machine & Fridge – Storage Without Drilling',
     problemH: 'The washing powder sits on the floor behind the door',

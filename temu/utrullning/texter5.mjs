@@ -211,6 +211,21 @@ export const T5_SV = {
     alt: { main: 'Borsthuvudet på dammsugaren intill hund och katt', b2: 'Kitets delar – borsthuvud, slang och adaptrar, märkta V7–V15' },
   },
 
+  jetflakt: {
+    titel: 'Jetfläkt för Makita-batteri – Blås Rent utan Sladd',
+    problemH: 'Tryckluften på burk tar slut mitt i jobbet',
+    problemP: 'Dammet i datorn, spånen på arbetsbänken, löven på trappen – burkarna kostar och dör, och kompressorn med slang står i ett förråd du inte är i.',
+    losningH: 'Turbofläkten som kliver på batteriet du redan har',
+    losningP: 'En handhållen jetfläkt med borstlös motor som blåser bort damm, spån och löv med ett riktat luftflöde. Pistolgrepp, avtryckare, och foten kliver rakt på Makita 18V-fästet – samma batteri som i skruvdragaren. Batteri ingår inte: den drivs av det du redan äger.',
+    bullets: [
+      '<strong>Blåser rent där burkluften tog slut</strong> – damm, spån och löv utan förbrukningsvaror',
+      '<strong>Kliver rakt på batteriet du äger</strong> – passar Makita 18V-fästet',
+      '<strong>Borstlös motor i pistolgrepp</strong> – riktas med en hand',
+      '<strong>Batteri ingår inte</strong> – fläkten drivs av ditt eget verktygsbatteri',
+    ],
+    alt: { main: 'Jetfläkten utan batteri, snett framifrån' },
+  },
+
   magnethylla: {
     titel: 'Magnethylla för Tvättmaskin och Kylskåp – Förvaring Utan Borr',
     problemH: 'Tvättmedlet står på golvet bakom dörren',
