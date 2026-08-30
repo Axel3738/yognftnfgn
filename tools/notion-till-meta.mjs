@@ -247,7 +247,23 @@ async function main() {
 
   const kampanjId = produkt.campaign_ids[0];
   const kampanj = await api(kampanjId, { params: { fields: 'name,status,daily_budget' } });
-  logg(`Produkt ${produktId} → kampanj "${kampanj.name}" (${kampanjId}) på MagiBorsten ${act}`);
+  logg(`Produkt ${produkt.id} → kampanj "${kampanj.name}" (${kampanjId}) på MagiBorsten ${act}`);
+
+  // SPÄRR 0 — en avstängd kampanj som har spenderat ar avvecklad, inte tom.
+  // Nya creatives ska inte in dar: de begravs bakom en pausad kampanj, forsvinner
+  // ur konet (dubblettsparren ser dem som gjorda) och kan bli aktiverade av misstag
+  // den dag nagon slar pa kampanjen igen. Rapportera i stallet.
+  // (Axels reaktion 2026-08-30: motorhoIjets hub var dessutom arkiverad i Notion.)
+  if (kampanj.status !== 'ACTIVE') {
+    const s = await spend(kampanjId);
+    if (s > 0) {
+      logg(`⏭  "${kampanj.name}" är ${kampanj.status} med ${s} kr spend — avstängd med flit.`);
+      logg(`   Laddar INTE upp "${namn}" här. Produkten ligger på hyllan.`);
+      logg(`   Vill du ändå: aktivera kampanjen först, eller kör med --anda.`);
+      if (!finns('anda')) return;
+      logg(`   --anda angivet: fortsätter ändå.`);
+    }
+  }
 
   // Spärr 4 — dubblett. Samma annonsnamn någonstans i kontot = redan uppladdad.
   const befintliga = await alla(`act_${act}/ads`, { fields: 'name,status,adset_id' });

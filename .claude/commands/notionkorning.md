@@ -102,9 +102,21 @@ Tre utfall per leverans, och de behandlas olika:
 
 | Utfall | Vad rutinen gör |
 |---|---|
-| Kampanj hittad, **PAUSED** | Ladda upp. Annonsen hamnar bakom en avstängd kampanj och spenderar noll. |
-| Kampanj hittad, **ACTIVE** | Ladda upp — men den **börjar spendera direkt vid aktivering**. QA:n måste vara helt grön, utan undantag. |
+| Kampanj **ACTIVE** | Ladda upp — men den **börjar spendera direkt vid aktivering**. QA:n måste vara helt grön, utan undantag. |
+| Kampanj **PAUSED, 0 kr spend** | Ladda upp. Kampanjen har aldrig kommit igång och kan aktiveras. |
+| Kampanj **PAUSED med spend > 0** | **AVVECKLAD. Ladda inte upp.** Rapportera bara. |
 | **Ingen kampanj** i kontot | Produkten är inte launchad. **Ladda inte upp, gissa aldrig en kampanj.** Rapportera raden. |
+
+⚠️ **En avstängd kampanj som har spenderat är avvecklad, inte tom.** Axels regel
+2026-08-30. Nya creatives ska inte in där: de begravs bakom en pausad kampanj,
+försvinner ur kön (dubblettspärren ser dem som gjorda) och kan aktiveras av
+misstag den dag någon slår på kampanjen igen. Motorhöljet är exemplet — kampanjen
+är PAUSED med 72 234 kr spend **och** dess Notion-hub är arkiverad. Produkten
+ligger på hyllan; rutinen rör den inte.
+
+`notion-till-meta.mjs` vägrar själv en sådan uppladdning (spärr 0). `--anda`
+finns för att kringgå den — **använd den aldrig i rutinen**, bara när Axel
+uttryckligen ber om det i en chatt.
 
 En leveransmapp utan mediafil är **inte klar** — lista den under "väntar på
 redigeraren" och gå vidare.
@@ -250,6 +262,7 @@ Verktyget bär spärrarna som inte får kringgås:
 
 | # | Spärr | Skyddar mot |
 |---|-------|-------------|
+| 0 | Vägrar kampanj som är PAUSED med spend > 0 | Att creatives begravs i en avvecklad kampanj |
 | 1 | Bara konto `1867947880635861`, annars avbryt | Att Grillklinikens pengar går åt Bäverbutikens annonser |
 | 2 | Sida och pixel ärvs ur kampanjens egna annonser | Att köp bokförs på fel verksamhet — det syns aldrig som ett fel, bara som konstig data |
 | 3 | Bara mappar med känt `creative_prefix` | Att produkter utanför detta OS launchas av misstag |
@@ -319,6 +332,7 @@ själv nästa natt.
 - [ ] Briefens egna hard rules / COPY GATE kontrollerade, inte bara tabellen
 - [ ] Ingen creative med stoppfel uppladdad
 - [ ] Uppladdade i rätt produkts CBO, sida/pixel ärvd, inget med spend > 0 rört
+- [ ] Inga creatives lagda i en avvecklad kampanj (PAUSED med spend) — bara rapporterade
 - [ ] Feedback skriven i Notion-itemet på varje stoppad creative
 - [ ] Kvoten loggad + nytt läge visat + pushad
 - [ ] Slutrapport i mobilformat, skickad till Discord
