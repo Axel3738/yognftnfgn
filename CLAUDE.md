@@ -14,6 +14,60 @@ vilka connectors som måste kopplas) → `docs/os/ACTIONPLAN.md`.
 
 ---
 
+## Så här ska du svara Axel (gäller VARJE svar, inga undantag)
+
+Axel har grov dyslexi. Långa svar gör att han inte kan jobba.
+Det här står över allt annat i den här filen — även kommandonas leveransformat
+när svaret går till Axel i chatten. Filer, briefer och Notion-innehåll behåller
+sitt eget format.
+
+Prompten nedan är Axels egen, ordagrant. Följ den.
+
+> Så här ska du svara mig
+> Jag har grov dyslexi. Långa svar gör att jag inte kan jobba. Följ reglerna nedan i varje svar. Inga undantag.
+>
+> **FORMAT**
+>
+> 1. Börja med en rad: hur många saker JAG ska göra. Exempel: "Du ska göra 2 saker."
+> 2. Ska jag inte göra något, skriv: "Du behöver inte göra något."
+> 3. Numrera varje sak. Ge den en fet rubrik på max 4 ord.
+> 4. Under rubriken: en mening per rad. Varje mening = ett klick eller ett handgrepp.
+> 5. Sätt en avdelare mellan varje sak.
+> 6. Avsluta med raden: "Sen är du klar. Jag har gjort resten."
+>
+> **MENINGARNA**
+>
+> * Max 10 ord per mening.
+> * En mening per rad. Aldrig stycken.
+> * Aldrig mer än 3 saker åt gången. Har du fler, ge mig de 3 första.
+> * Skriv exakt var jag ska klicka och vad knappen heter.
+> * Fetstil bara på namn jag ska leta efter.
+> * Hela svaret ska rymmas på en mobilskärm.
+>
+> **DETTA SKRIVER DU ALDRIG**
+>
+> * Vad du gjorde, hur du gjorde det eller varför.
+> * Teknisk bakgrund, historik, filnamn, kommandon, kod, testresultat.
+> * Rättelser av vad jag trodde. Skriv bara vad som gäller nu.
+> * Villkor som "om det står X, gör Y". Välj åt mig i stället.
+> * Orden "men", "dock", "notera att", "en detalj", "kort läge".
+> * Varningar, risker eller saker jag kan kolla själv.
+>
+> **OM NÅGOT GICK FEL**
+>
+> * En mening om vad som är fel.
+> * En mening om vad jag ska göra.
+> * Inget mer.
+>
+> **OM DU BEHÖVER VETA NÅGOT AV MIG**
+>
+> * Ställ en fråga. Bara en.
+> * Ge mig 2 eller 3 svarsalternativ att välja mellan.
+>
+> Svara alltid på svenska.
+
+---
+
 ## Två verksamheter. Blanda dem aldrig.
 
 Det här är det farligaste misstaget i repot — fel annonskonto kostar riktiga pengar.
@@ -100,42 +154,9 @@ inte röras utan att Axel ber om det.
     `.claude/commands/` och följ den exakt, med texten efter kommandonamnet som
     argument. Kommandona är filer — de fungerar även när klienten inte
     registrerat dem.
-14. **Korta svar.** Inga bibelsvar. Följ ALLTID "Svarsformatet till Axel" nedan.
-
----
-
-## Svarsformatet till Axel (obligatoriskt — inga undantag)
-
-Axel har grov dyslexi. Långa svar gör att han inte kan jobba. Varje svar
-till honom i chatten följer detta, ordagrant (hans regler 2026-08-30):
-
-**Format:**
-1. Börja med en rad: hur många saker AXEL ska göra. Ex: "Du ska göra 2 saker."
-2. Ska han inte göra något: skriv "Du behöver inte göra något."
-3. Numrera varje sak. Fet rubrik på max 4 ord.
-4. Under rubriken: en mening per rad. Varje mening = ett klick eller handgrepp.
-5. Avdelare (`---`) mellan varje sak.
-6. Avsluta med raden: "Sen är du klar. Jag har gjort resten."
-
-**Meningarna:** max 10 ord per mening. En mening per rad, aldrig stycken.
-Max 3 saker åt gången — finns fler: ge de 3 första. Skriv exakt var han ska
-klicka och vad knappen heter. Fetstil bara på namn han ska leta efter. Hela
-svaret ska rymmas på en mobilskärm.
-
-**Skriv ALDRIG:** vad du gjorde, hur eller varför. Teknisk bakgrund,
-historik, filnamn, kommandon, kod, testresultat. Rättelser av vad han
-trodde — skriv bara vad som gäller nu. Villkor ("om X, gör Y") — välj åt
-honom i stället. Orden "men", "dock", "notera att", "en detalj", "kort
-läge". Varningar, risker eller saker han kan kolla själv.
-
-**Om något gick fel:** en mening om vad som är fel. En mening om vad Axel
-ska göra. Inget mer.
-
-**Behöver du veta något:** ställ EN fråga, med 2 eller 3 svarsalternativ.
-
-Discord-briefer och rutinrapporter till Axel följer samma anda: kort,
-inga tekniska termer, inga id:n. Dokument i repot (SOP:er, DNA, briefer)
-behåller sina egna format — de är arbetsmaterial, inte svar till Axel.
+14. **Korta svar.** Inga bibelsvar. Axel har sagt det två gånger.
+    Svarsprompten högst upp i den här filen gäller alltid — även när ett kommando
+    ber om ett längre leveransformat i chatten.
 
 ---
 
@@ -182,6 +203,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/bildannonser [--dry]` | **Rutin 20:00 varje dag:** alla Notion-hubbar → ogjorda bildannonser → kie.ai → `To be Reviewed`. **Aldrig video.** |
 | `/nattkorning` | Rutinen "Ad upload and structure": Drive-kön → QA → Meta |
 | `/notionkorning` | **Nattrutin 00:01:** redigerarnas leveranser → brief-QA → upp i produktens CBO |
+| `/commission` | **Var tredje dag + månadens sista dag:** godkända Notion-rader → spend i alla annonskonton → 0,4 % till redigeraren |
 
 ### Nattrutinerna
 
@@ -195,6 +217,11 @@ Merga alltid till `main`, annars är rutinen bara schemalagd, inte igång.
 | 05:30 | `30 3 * * *` | Norska recensioner | `/no-recensioner` |
 | 20:00 | `0 18 * * *` | Bildannonser | `/bildannonser` |
 | 00:01 | `1 22 * * *` | Leveransrundan | `/notionkorning` |
+| 06:00 | `0 4 * * *` | Commission | `/commission` |
+
+`/commission` har daglig cron med flit: **skriptet självt avgör** om dagen är
+kördag (den 1, 4, 7 … 28, plus alltid månadens sista dag) och avslutar tyst annars.
+Cron kan inte uttrycka "var tredje dag plus sista dagen" över månadsskiften.
 
 ⚠️ **Cron står i UTC och följer inte sommartid.** Tiderna ovan gäller CEST
 (mars–oktober). Vid vinteromställningen går varje rutin en timme senare svensk
@@ -387,6 +414,25 @@ referensbilder `google/nano-banana-edit` (matchar en Winning Creative).
 namn (`..._4_1` är bild, `..._4_H1` är video) och görs av redigerarna.
 
 ⚠️ **Importera aldrig från `pipeline/` här** — det är Grillklinikens brand kit.
+
+### `commission/` — redigerarnas commission
+Motorn bakom `/commission`. Fristående, **inga npm-beroenden**.
+**Läs-bara mot både Notion och Meta** — den ändrar ingen status och rör inte kontot.
+
+```bash
+node commission/run.mjs --torr                    # räkna och visa, skriv ingen fil
+node commission/run.mjs --jobb <fil.json>         # Notion-raderna från MCP-sessionen
+node commission/run.mjs --manad 2026-07           # räkna om en gången månad
+```
+`berakning.mjs` är ren räknelogik (16 tester), `meta.mjs` läser spend ur **alla**
+annonskonton token:en når, `notion.mjs` läser hubbarna, `run.mjs` skriver
+rapporten till `commission/korningar/<YYYY-MM>/<datum>.md`.
+
+Satsen är 0,4 % och står som `SATS` i `berakning.mjs`. Bara `role: "editor"` i
+`dashboard/data/team.json` får utbetalning — spend på Axels rader, på rader utan
+Ansvarig och på okända Notion-användare redovisas separat som obetald.
+
+⚠️ **Valutor summeras aldrig.** NYC Grill-kontot är i USD, resten i SEK.
 
 ### `pipeline/` — bildannonser (Grillkliniken/Mastern, legacy)
 ⚠️ **Trots mappnamnet är det här inte Bäverbutiken.** `brand.mjs` sätter
@@ -582,3 +628,61 @@ att bygga om det från början.
 De går **inte** att slå ihop rakt av. Ska något återupplivas: hämta det till en
 **egen mapp** — annars försvinner redigerarpanelen och nästa `/dashboard` skriver
 över det du hämtade.
+
+---
+
+## Så här ska du svara Axel (svarsformat — gäller varje svar)
+
+Axel har grov dyslexi. Långa svar gör att han inte kan jobba.
+Följ reglerna nedan i varje svar. Inga undantag.
+
+**DEL 1: VAD SOM HÄNT**
+Börja alltid med rubriken **Läget.**
+Skriv 1 till 3 rader under den.
+Rad 1: vad du gjorde eller kom fram till.
+Rad 2: vad det betyder för honom.
+Rad 3: bara om något inte fungerade.
+Max 10 ord per rad. En mening per rad.
+Har du gjort tio saker, skriv den ena som betyder något.
+
+**DEL 2: VAD HAN SKA GÖRA**
+Skriv sen en rad: hur många saker HAN ska göra.
+Exempel: "Du ska göra 2 saker."
+Ska han inte göra något, skriv: "Du behöver inte göra något."
+Numrera varje sak. Fet rubrik på max 4 ord.
+Under rubriken: en mening per rad.
+Varje mening = ett klick eller ett handgrepp.
+Sätt en avdelare mellan varje sak.
+Avsluta med: "Sen är du klar. Jag har gjort resten."
+
+**MENINGARNA**
+Max 10 ord per mening.
+En mening per rad. Aldrig stycken.
+Aldrig mer än 3 saker åt gången.
+Skriv exakt var han ska klicka och vad knappen heter.
+Fetstil bara på namn han ska leta efter.
+Hela svaret ska rymmas på en mobilskärm.
+
+**DETTA SKRIVER DU ALDRIG**
+Hur du gjorde något eller varför.
+Filnamn, kommandon, kod, testresultat, historik.
+Rättelser av vad han trodde. Skriv bara vad som gäller nu.
+Villkor som "om det står X, gör Y". Välj åt honom i stället.
+Orden "men", "dock", "notera att", "en detalj", "kort läge".
+Varningar, risker eller saker han kan kolla själv.
+
+**OM HAN FRÅGAT EFTER ETT SVAR ELLER EN SLUTSATS**
+Skriv svaret på första raden.
+Skriv sen max 3 rader om varför det blev så.
+Inget mer.
+
+**OM NÅGOT GICK FEL**
+En mening om vad som är fel.
+En mening om vad han ska göra.
+Inget mer.
+
+**OM DU BEHÖVER VETA NÅGOT AV HONOM**
+Ställ en fråga. Bara en.
+Ge 2 eller 3 svarsalternativ.
+
+Svara alltid på svenska.

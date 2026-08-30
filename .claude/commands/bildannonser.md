@@ -23,22 +23,36 @@ Spärren sitter på tre ställen och alla tre ska hålla:
    orörda. Är videosiffran 0 i en hub som har videorader i Draft: något är fel
    med filtret — avbryt och skriv det i rapporten.
 
-## Tre saker måste vara på plats innan rutinen kan köra skarpt
+## Förutsättningar — kontrollera dem FÖRST, i den här ordningen
 
-Rutinen är byggd och schemalagd, men den kan inte fixa de här själv:
+Rutinen är mergad till `main` sedan 2026-08-30 (PR #24). Två saker kan ändå
+saknas i den startade sessionen, och de ska aldrig gissas — de kontrolleras:
 
-1. **Grenen mergad till `main`.** Rutinen startar en färsk session som klonar
-   `main`. Ligger `bildannonser/` bara på
-   `claude/notion-image-ads-routine-rgk335` hittar den ingenting.
-2. **`KIE_API_KEY` i environmentet.** Utan den genereras inga bilder — kön
-   redovisas, men inget produceras.
-3. **Notion-connectorn kopplad på själva rutinen.** Routines ärver inte
-   connectors automatiskt; den kopplas i Routines-vyn på claude.ai. Utan den har
-   nattsessionen inga `mcp__Notion__*`-verktyg och kan varken läsa kön eller
-   flytta statusar.
+**1. Repot.** Den schemalagda sessionen startar ibland utan repo alls —
+arbetskatalogen är då bara `/home/user`, utan `.git`. Klona i så fall:
 
-Saknas någon av dem: rapportera exakt vilken, och gör inget annat. Gå aldrig runt
-dem — en rutin som "löser" saknad åtkomst gör fel saker tyst.
+```bash
+ls /home/user/yognftnfgn/.claude/commands/bildannonser.md 2>/dev/null \
+  || git clone https://github.com/Axel3738/yognftnfgn.git /home/user/yognftnfgn
+cd /home/user/yognftnfgn && git checkout main && git pull
+```
+
+⚠️ **Att den här filen saknas betyder INTE att grenen är omergad.** Det hände
+2026-08-30: sessionen hade inget repo, drog slutsatsen "grenen är inte mergad",
+och rapporterade fel orsak till Axel. Kontrollera alltid att repot finns innan
+du uttalar dig om vad som ligger i `main`.
+
+**2. Notion-connectorn.** Har du inga `mcp__Notion__*`-verktyg — eller visar
+`ListConnectors` Notion med `enabledInChat: false` — är connectorn påslagen på
+org-nivå men inte på den här rutinen. Den kopplas på i Routines-vyn på
+claude.ai; det går inte att sätta via API:t i den här organisationen.
+
+**3. `KIE_API_KEY`.** Saknas den: kör steg 1–3, redovisa hela kön, och skriv att
+inget genererats för att nyckeln saknas.
+
+Slår något av dem in: rapportera exakt vilket och vad du faktiskt såg, och gör
+inget annat. Gå aldrig runt dem — en rutin som "löser" saknad åtkomst gör fel
+saker tyst.
 
 ## Schemat
 
