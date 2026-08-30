@@ -52,19 +52,28 @@ Verktyget las_fil hämtar vilken fil som helst ur repot — produktminne
 
 Teamet: dashboard/data/team.json. Redigerarna sitter i Manila (UTC+8).
 
-## "VILKA ADS SKA GÖRAS" = DRAFT
-Frågar Axel vad som ska göras, vad som är kvar, eller vad redigerarna ska ta
-härnäst — svara med raderna som har notionStatus **Draft** i
-dashboard/data/tasks.json. Draft betyder: briefen finns, ingen har börjat.
-Det är de annonserna som ska produceras.
+## "VILKA ADS SKA GÖRAS" = DRAFT, OCH ALDRIG ARKIVERAT
+Frågar Axel vad som ska göras eller vad som är kvar: svara med raderna som
+har notionStatus **Draft** i dashboard/data/tasks.json. Draft = briefen finns,
+ingen har börjat. Det är de annonserna som ska produceras.
 
-Blanda inte in resten om han inte frågar:
+ARKIVERADE PRODUKTER RÄKNAS ALDRIG. Axel arkiverar allt som inte körs längre,
+och arkiverat arbete ska aldrig föreslås — då planerar teamet en dag på döda
+produkter. Filtret sköts åt dig innan du ser filen; nämn aldrig det som
+sållats bort som något att göra.
+
+Just nu är ALLA sex produkter i products.json arkiverade, så tasks.json
+innehåller inget levande alls. Får du noll rader: säg det rakt ut på en rad
+och att det aktuella arbetet ligger i Notion för de 25 kampanjerna i
+agent/produktkarta.json — inte i repot. Hitta aldrig på arbete för att
+fylla tomrummet.
+
+Övriga statusar, bara om han frågar:
 - "In progress" = någon gör första versionen just nu
 - "In progress 2" = underkänd och görs om. INTE "längre kommen"
-- Approved = historik, nämn dem aldrig
+- Approved = historik
 
-assignedEditorId är tomt på alla rader, så du kan säga VAD som ska göras,
-aldrig VEM. En rad om det sist, bara när han frågar om personer.
+assignedEditorId är tomt på alla rader, så du kan säga VAD, aldrig VEM.
 
 Gissa aldrig siffror. Hitta aldrig på tal som inte står i en fil.
 Kan du inte svaret: säg det på en rad, och vilken fil som saknas.
@@ -98,6 +107,18 @@ const VERKTYG = [
     },
   },
 ];
+
+/** Produkter Axel arkiverat. Deras arbete räknas aldrig som något att göra. */
+async function arkiveradeProdukter() {
+  try {
+    const rå = await lasFil('products/products.json');
+    const p = JSON.parse(rå);
+    const lista = Array.isArray(p) ? p : (p.products || Object.values(p).find(Array.isArray) || []);
+    return lista.filter((x) => x.arkiverad).map((x) => x.id);
+  } catch {
+    return [];
+  }
+}
 
 async function affarskontext() {
   if (kontextCache.text && Date.now() - kontextCache.byggd < KONTEXT_TTL_MS) {
@@ -219,7 +240,9 @@ export async function fraga({ text, kanalId, anvandare }) {
         if (fil === null) innehåll = 'FINNS INTE';
         else if (/dashboard\/data\/tasks\.json$/.test(sökväg)) {
           // Rå är filen 487 kB och kapas till 12 %. Komprimerad får den plats.
-          innehåll = JSON.stringify(komprimeraTasks(fil), null, 1);
+          // Arkiverade produkter sållas bort här, inte av modellen — en regel i
+          // en prompt går att glömma, ett filter gör det inte.
+          innehåll = JSON.stringify(komprimeraTasks(fil, await arkiveradeProdukter()), null, 1);
         } else if (fil.length > TAK_TECKEN) {
           // En tyst avkortning är det farligaste som finns: modellen ser inte
           // att något fattas och svarar tvärsäkert på en tolftedel av datan.

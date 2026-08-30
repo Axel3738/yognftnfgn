@@ -160,16 +160,20 @@ export function komprimeraLogg(jsonl, maxPerKampanj = 1) {
  * notionStatus är fältet som betyder något för Axel: Draft = ska göras,
  * "In progress 2" = underkänd och görs om (INTE "längre kommen").
  */
-export function komprimeraTasks(rå) {
+export function komprimeraTasks(rå, arkiverade = []) {
   const t = JSON.parse(rå);
   const alla = Array.isArray(t) ? t : (t.tasks || Object.values(t)[0] || []);
+  const dött = new Set(arkiverade);
   const räkning = {};
   for (const x of alla) {
     const k = x.notionStatus || x.status || 'okänd';
     räkning[k] = (räkning[k] || 0) + 1;
   }
+  // Axel arkiverar allt som inte körs längre. Arkiverat arbete ska ALDRIG
+  // räknas som något att göra — annars planerar teamet en dag på döda produkter.
+  const bortsållade = alla.filter((x) => dött.has(x.productId)).length;
   const öppna = alla
-    .filter((x) => x.status !== 'approved')
+    .filter((x) => x.status !== 'approved' && !dött.has(x.productId))
     .map((x) => ({
       id: x.id,
       titel: x.title,
@@ -181,8 +185,12 @@ export function komprimeraTasks(rå) {
       blockerad: x.blockerReason || undefined,
     }));
   return {
-    _om: `${alla.length} tasks totalt, ${öppna.length} ej godkända. Godkända är `
-      + 'bortsållade som historik. Draft = ska göras, "In progress 2" = revision.',
+    _om: `${alla.length} tasks totalt, ${öppna.length} kvar efter sållning. `
+      + 'Godkända är bort som historik. Draft = ska göras, "In progress 2" = revision.',
+    _arkiverat: bortsållade
+      ? `${bortsållade} tasks tillhör ARKIVERADE produkter (${[...dött].join(', ')}) `
+        + 'och är bortsållade. De ska aldrig nämnas som arbete som ska göras.'
+      : undefined,
     antal_per_status: räkning,
     oppna: öppna,
   };
