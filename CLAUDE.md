@@ -144,7 +144,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/rapport <namn>: <text>` | Tolka en slutrapport från Slack (bekräftas innan den sparas) |
 | `/granska [id]` | Beta av review-kön: checklista → godkänn eller skicka tillbaka |
 | `/launch <produktnamn>` | **Temu-flödet:** Drive → QA → Judge.me → Meta som PAUSED (`docs/temu-launch-flow.md`) |
-| `/notionkorning` | **Nattrutin 00:01:** klara Notion-tasks → brief-QA → upp i produktens CBO |
+| `/notionkorning` | **Nattrutin 00:01:** redigerarnas leveranser → brief-QA → upp i produktens CBO |
 
 ---
 
@@ -374,6 +374,9 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 | Mapp/fil | Vad |
 |---|---|
 | `pipeline/ads.mjs`, `meta.mjs` | Laddar upp creatives till Meta som **PAUSED** |
+| `tools/leveranskon.mjs` | Vad redigerarna levererat i Drive som ännu inte finns i kontot (kön för `/notionkorning`) |
+| `tools/notion-klara.mjs` | Läser creative-hubbarna via Notions REST API (`NOTION_TOKEN`) — reservväg när MCP:n saknas |
+| `tools/notion-till-meta.mjs` | Laddar upp EN godkänd creative i produktens CBO, med spärrar mot fel konto och mot att röra avstängt |
 | `pipeline/batch.mjs`, `multi-batch.mjs`, `uk-wave.mjs`, `mastern-batch.mjs` | ⚠️ Laddar **inte** upp som PAUSED — se regeln under "Saker som är lätta att göra fel" |
 | `pipeline/waves/*.config.mjs` | Vågkonfig per marknad — `se-`, `dk-`, `no-`, `uk-` |
 | `pipeline/localize.mjs`, `heygen.mjs`, `veed.mjs`, `cover-srt.py` | Översätter färdiga videoannonser till nya språk (`docs/video-localization.md`) |
@@ -415,6 +418,13 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   5 av 8 rader**. Korskolla alltid mot `amount_spent × purchase_roas`.
 - **Notion-status `In progress 2` betyder REVISION** — annonsen underkändes och
   görs om. Det betyder INTE "längre kommen". Full tabell i `docs/os/NOTION-FORMAT.md`.
+- **Hubbarna använder inte hela statustabellen.** Verifierat 2026-08-30: noll rader
+  står på `To be Reviewed` i någon av de fyra hubbarna — allt hoppar direkt till
+  `Approved` (bara strandtofflorna har 12 `In Review`). Och `Filer och media` är
+  tomt på samtliga rader: **Notion bär briefen, aldrig den färdiga filen.**
+  Den ligger i Drive under `Edited Folder/Week N/<annonsnamn>/<annonsnamn>.mp4`.
+  Bygg därför aldrig en rutin som utgår från att en status markerar "klar" —
+  leveransen i Drive mot annonsnamnen i kontot är det som faktiskt stämmer.
 - **Notion-hubbarna rymmer mer än annonser.** Bara rader med Typ `… Pending Approval`
   är annonser. SOP, Guideline, Feedback och `Winning Creative` (arkiv) är
   dokumentation och räknas aldrig. Filtrera på Typ vid **varje** hubbläsning, inte
