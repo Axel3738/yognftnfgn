@@ -8,3 +8,7 @@ agent/kontodata.json
 
 # Filbrygga: minnesfiler som väntar på en session med push-rättighet.
 agent/utkorg/
+
+# Discord-botens token ska ALDRIG ligga i repot.
+agent/discord-bot.json
+bot/.env
