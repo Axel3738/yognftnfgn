@@ -4,16 +4,24 @@
 //
 //   node tools/judgeme-import.mjs <reviews.csv> --product-id <shopify-produkt-id> [--dry]
 //
+// Mot en annan butik än den svenska (t.ex. norska), med handle-uppslag:
+//   node tools/judgeme-import.mjs <reviews.no.csv> \
+//     --product-handle <no-handle> --store-url https://beverbutikken.no \
+//     --shop-domain "$JUDGEME_NO_SHOP_DOMAIN" --token-env JUDGEME_NO_API_TOKEN [--dry]
+//
 // CSV-formatet är Judge.me:s eget (kolumnerna i <Produkt>_REVIEWS-sheetsen):
 //   title,body,rating,review_date,reviewer_name,reviewer_email,product_id,product_handle,reply,picture_urls
 //
 // Sheetens product_handle IGNORERAS medvetet: den är ofta fel (skriven ur
 // produktens titel, inte ur butiken) och ett fel handle importerar tyst mot
 // ingenting. Kopplingen görs i stället via --product-id, Shopify-produktens
-// numeriska id, som hämtas ur butiken vid körning.
+// numeriska id — antingen angivet direkt, eller uppslaget ur butikens publika
+// products.json med --product-handle + --store-url.
 //
 // Kräver env: JUDGEME_API_TOKEN (privata tokenen), JUDGEME_SHOP_DOMAIN
-// (t.ex. 4snrw0-mg.myshopify.com).
+// (t.ex. 4snrw0-mg.myshopify.com). Judge.me-tokens är PER BUTIK — den svenska
+// tokenen fungerar inte mot den norska butiken. Peka på en annan butiks token
+// med --token-env och dess domän med --shop-domain.
 
 import fs from 'node:fs';
 import { spawnSync } from 'node:child_process';
@@ -50,19 +58,41 @@ function parseCsv(text) {
 }
 
 const args = process.argv.slice(2);
-const csvFil = args.find((a) => !a.startsWith('--'));
-const productId = args[args.indexOf('--product-id') + 1];
+const flagga = (namn) => (args.indexOf(namn) < 0 ? null : args[args.indexOf(namn) + 1]);
+const csvFil = args.find((a) => !a.startsWith('--') && a.endsWith('.csv'));
 const dry = args.includes('--dry');
 
-const TOKEN = process.env.JUDGEME_API_TOKEN;
-const SHOP = process.env.JUDGEME_SHOP_DOMAIN;
-if (!csvFil || !productId || args.indexOf('--product-id') < 0) {
+const handle = flagga('--product-handle');
+const storeUrl = (flagga('--store-url') || '').replace(/\/$/, '');
+const TOKEN = process.env[flagga('--token-env') || 'JUDGEME_API_TOKEN'];
+const SHOP = flagga('--shop-domain') || process.env.JUDGEME_SHOP_DOMAIN;
+
+if (!csvFil || (!flagga('--product-id') && !handle)) {
   console.error('Användning: node tools/judgeme-import.mjs <reviews.csv> --product-id <id> [--dry]');
+  console.error('       eller: ... --product-handle <handle> --store-url <https://butiken>');
   process.exit(2);
 }
 if (!TOKEN || !SHOP) {
-  console.error('Saknar env-variablerna JUDGEME_API_TOKEN och/eller JUDGEME_SHOP_DOMAIN.');
+  console.error(`Saknar token (${flagga('--token-env') || 'JUDGEME_API_TOKEN'}) och/eller butiksdomän.`);
+  console.error('Judge.me-tokens är per butik — den svenska gäller inte för den norska butiken.');
   process.exit(2);
+}
+
+// Handle -> numeriskt produkt-id via butikens publika feed (ingen token behövs).
+let productId = flagga('--product-id');
+if (!productId) {
+  if (!storeUrl) { console.error('--product-handle kräver --store-url.'); process.exit(2); }
+  let träff = null;
+  for (let sida = 1; sida <= 5 && !träff; sida++) {
+    const r = await fetch(`${storeUrl}/products.json?limit=250&page=${sida}`);
+    if (!r.ok) { console.error(`Kunde inte läsa ${storeUrl}/products.json (${r.status}).`); process.exit(1); }
+    const produkter = (await r.json()).products ?? [];
+    if (produkter.length === 0) break;
+    träff = produkter.find((p) => p.handle === handle) ?? null;
+  }
+  if (!träff) { console.error(`Hittade inget handle "${handle}" i ${storeUrl}.`); process.exit(1); }
+  productId = String(träff.id);
+  console.log(`${handle} -> produkt ${productId} i ${storeUrl}`);
 }
 
 const rader = parseCsv(fs.readFileSync(csvFil, 'utf8'));
