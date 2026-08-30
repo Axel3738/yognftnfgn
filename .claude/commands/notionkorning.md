@@ -83,12 +83,39 @@ matcha alltid på annonsdelen före tankstrecket.
 
 ```bash
 node tools/leveranskon.mjs            # allt som väntar, per produkt
-node tools/leveranskon.mjs --json     # samma sak maskinläsbart
+node tools/leveranskon.mjs --alla     # även det som redan ligger uppe
+node tools/leveranskon.mjs --json     # maskinläsbart
 ```
 
-Verktyget läser Drive publikt, hämtar alla annonsnamn i kontot och visar
-skillnaden. En leveransmapp utan mediafil är **inte klar** — lista den under
-"väntar på redigeraren" och gå vidare.
+**Rutinen täcker HELA Bäverbutiken, inte en fast lista produkter.** Nya produkter
+tillkommer ständigt (Axels påpekande 2026-08-30), så kopplingen leverans → kampanj
+härleds ur kontot självt: annonserna i MagiBorsten lär verktyget vilket
+annonsprefix som hör till vilken kampanj. `Rodholder_` → Fiskespöhållaren,
+`Balteslipmaskin_` → Bälteslipmaskinen, och så vidare — **46 prefix i dag, utan
+en rad konfiguration.** `creative_prefix` i `products.json` är bara en explicit
+override för de fyra skalningsprodukterna.
+
+En hårdkodad produktlista missar nya leveranser **tyst**, och en tyst missad
+leverans är värre än en rapporterad. Bygg därför aldrig tillbaka den.
+
+Tre utfall per leverans, och de behandlas olika:
+
+| Utfall | Vad rutinen gör |
+|---|---|
+| Kampanj hittad, **PAUSED** | Ladda upp. Annonsen hamnar bakom en avstängd kampanj och spenderar noll. |
+| Kampanj hittad, **ACTIVE** | Ladda upp — men den **börjar spendera direkt vid aktivering**. QA:n måste vara helt grön, utan undantag. |
+| **Ingen kampanj** i kontot | Produkten är inte launchad. **Ladda inte upp, gissa aldrig en kampanj.** Rapportera raden. |
+
+En leveransmapp utan mediafil är **inte klar** — lista den under "väntar på
+redigeraren" och gå vidare.
+
+**⚠️ Nödbroms.** Väntar fler än **10** leveranser, eller skulle körningen ladda
+upp i fler än **3 olika kampanjer** på en natt: **stanna, ladda inte upp något**,
+och lista i rapporten exakt vilka leveranser och kampanjer det gällde. En kö som
+plötsligt svämmar över betyder oftast att en prefixkoppling gått fel, inte att
+redigerarna haft en rekordnatt. *(Samma logik som nödbromsen i `/nattkorning`
+steg 1 — den regeln finns för att ett svep en gång slog på ett dussin
+avstängda kampanjer.)*
 
 Ladda ner varje creative till scratchpad via export-URL:en verktyget skriver ut.
 Radera media mellan produkterna.
@@ -189,10 +216,19 @@ Går det inte: lämna creativen till nästa runda.
 Ett anrop per godkänd creative:
 
 ```bash
+# En av de fyra skalningsprodukterna (står i products.json):
 node tools/notion-till-meta.mjs \
   --produkt <id> --namn <annonsnamn> --fil <sökväg> \
   --primar "..." --rubrik "..." [--beskrivning "..."] --aktivera
+
+# Alla andra produkter — kampanj-id:t kommer från leveranskon.mjs:
+node tools/notion-till-meta.mjs \
+  --kampanj <kampanj-id> --namn <annonsnamn> --fil <sökväg> \
+  --primar "..." --rubrik "..." [--beskrivning "..."] --aktivera
 ```
+
+`--kampanj` kontrollerar att kampanjen ligger i MagiBorsten innan något skrivs —
+kontospärren gäller lika hårt där.
 
 Verktyget bär spärrarna som inte får kringgås:
 
@@ -273,6 +309,9 @@ själv nästa natt.
 
 ## DEFINITION OF DONE
 - [ ] Leveranskön hämtad — Drive mot kontot, inte mapplistan ensam
+- [ ] Hela Bäverbutiken täckt, inte bara de fyra i products.json
+- [ ] Nödbromsen respekterad (>10 leveranser eller >3 kampanjer = stanna)
+- [ ] Leveranser utan kampanj i kontot rapporterade, inte uppladdade på en gissning
 - [ ] `qa-frames.py` körd på VARJE creative, video som bild — inget stickprov
 - [ ] Varje frame läst, och QA-tabellen ifylld per creative mot dess egen brief
       (eller uttryckligen: briefen gick inte att läsa, och varför)

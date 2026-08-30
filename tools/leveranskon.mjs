@@ -39,18 +39,41 @@ function driveLs(id) {
   }
 }
 
-async function metaAnnonsnamn(act) {
+/** Alla annonser i kontot, med sin kampanj. Kontot ar kvittot pa vad som ar gjort
+ *  OCH facit for vilken kampanj ett prefix hor till — bada las har, en gang. */
+async function metaAnnonser(act) {
   if (!process.env.META_ACCESS_TOKEN) dö('META_ACCESS_TOKEN saknas i miljön.');
-  const namn = new Set();
-  let url = `${API}/act_${act}/ads?fields=name&limit=200&access_token=${process.env.META_ACCESS_TOKEN}`;
+  const ut = [];
+  let url = `${API}/act_${act}/ads?fields=name,campaign{name,status}&limit=300&access_token=${process.env.META_ACCESS_TOKEN}`;
   while (url) {
-    const r = await fetch(url);
-    const j = await r.json();
+    const j = await (await fetch(url)).json();
     if (j.error) dö(`Meta: ${j.error.message}`);
-    for (const a of j.data || []) namn.add(a.name.trim().toLowerCase());
+    ut.push(...(j.data || []));
     url = j.paging?.next ?? null;
   }
-  return namn;
+  return ut;
+}
+
+/** Prefixet ur ett annonsnamn: "Rodholder_PD_11_H1" -> "rodholder". */
+const prefixAv = (namn) => (annonsdel(namn).match(/^([A-Za-z]+)_/) || [])[1]?.toLowerCase() ?? null;
+
+/** Kontot lar oss sjalvt vilken kampanj ett prefix hor till — ingen konfig behovs.
+ *  Nya produkter dyker upp standigt i Baverbutiken; en hardkodad lista missar dem
+ *  tyst, och tyst missad leverans ar varre an en rapporterad. Kampanjen med FLEST
+ *  annonser pa prefixet vinner; oavgjort bryts av att en ACTIVE kampanj gar fore. */
+function prefixKarta(annonser) {
+  const rakning = {};
+  for (const a of annonser) {
+    const p = prefixAv(a.name);
+    if (!p || !a.campaign?.id) continue;
+    ((rakning[p] ??= {})[a.campaign.id] ??= { ...a.campaign, antal: 0 }).antal++;
+  }
+  const karta = {};
+  for (const [p, kampanjer] of Object.entries(rakning)) {
+    karta[p] = Object.values(kampanjer).sort((a, b) =>
+      b.antal - a.antal || (b.status === 'ACTIVE') - (a.status === 'ACTIVE'))[0];
+  }
+  return karta;
 }
 
 // Notion-titlar bär ibland ett suffix: "Beachslippers_PD_2_8 – COPY ONLY: ...".
@@ -58,58 +81,107 @@ async function metaAnnonsnamn(act) {
 const annonsdel = (s) => s.split(/\s+[–—-]\s+/)[0].trim();
 
 const { products } = JSON.parse(readFileSync(`${ROT}products/products.json`, 'utf8'));
+const BAVERBUTIKEN_ACT = '1867947880635861';
 const filter = flagga('produkt');
-const medPrefix = products.filter(p => p.creative_prefix && (!filter || p.id === filter));
-if (!medPrefix.length) dö(filter ? `${filter} saknar creative_prefix i products.json.` : 'Ingen produkt har creative_prefix.');
 
-const produktFör = (namn) => medPrefix.find(p =>
-  annonsdel(namn).toLowerCase().startsWith(p.creative_prefix.toLowerCase()));
+// products.json ar en explicit override for de fyra skalningsprodukterna.
+// Allt annat i Baverbutiken hittas via kontot i prefixKarta().
+const konfig = {};
+for (const p of products) {
+  if (p.creative_prefix && p.ad_account_id === BAVERBUTIKEN_ACT) {
+    konfig[p.creative_prefix.replace(/_$/, '').toLowerCase()] = p;
+  }
+}
 
-// 1. Leveranserna i Drive.
+// Notion-titlar bar ibland ett suffix: "Beachslippers_PD_2_8 – COPY ONLY: ...".
+// Drive-mappen heter bara annonsdelen. Jamfor alltid pa annonsdelen.
+
+// 1. Kontot: vad som redan ar gjort, och vilket prefix som hor till vilken kampanj.
+const annonser = await metaAnnonser(BAVERBUTIKEN_ACT);
+const uppe = new Set(annonser.map(a => a.name.trim().toLowerCase()));
+const karta = prefixKarta(annonser);
+
+// 2. Leveranserna i Drive.
 const veckor = driveLs(EDITED_FOLDER).filter(x => x.typ === 'mapp');
 const leveranser = [];
 for (const v of veckor) {
   for (const m of driveLs(v.id)) {
     if (m.typ !== 'mapp') continue;
-    const p = produktFör(m.titel);
-    if (!p) continue;            // andra produkter utanför detta OS — rörs aldrig
-    leveranser.push({ vecka: v.titel, mapp: m.id, namn: annonsdel(m.titel), rubrik: m.titel, produkt: p });
+    const namn = annonsdel(m.titel);
+    const pfx = prefixAv(namn);
+    if (!pfx) continue;                       // inte ett annonsnamn — hoppa tyst
+    const p = konfig[pfx] ?? null;
+    const kampanj = p ? { id: p.campaign_ids[0], name: null, status: null } : (karta[pfx] ?? null);
+    leveranser.push({
+      vecka: v.titel, mapp: m.id, namn, prefix: pfx,
+      produktId: p?.id ?? pfx, kampanj,
+      kalla: p ? 'products.json' : (kampanj ? 'kontot' : null),
+    });
+  }
+}
+if (filter) {
+  for (let i = leveranser.length - 1; i >= 0; i--) {
+    if (leveranser[i].produktId !== filter && leveranser[i].prefix !== filter.toLowerCase()) leveranser.splice(i, 1);
   }
 }
 
-// 2. Kvittot: vad som redan finns i kontot.
-const uppe = await metaAnnonsnamn(medPrefix[0].ad_account_id);
-
-// 3. Kön.
+// 3. Kon: levererat men inte i kontot.
 const kö = [];
 for (const l of leveranser) {
   const gjort = uppe.has(l.namn.toLowerCase());
   if (gjort && !finns('alla')) continue;
   const filer = driveLs(l.mapp).filter(f => f.typ === 'fil');
-  kö.push({ ...l, produktId: l.produkt.id, kampanj: l.produkt.campaign_ids[0], gjort, filer });
+  kö.push({ ...l, gjort, filer });
+}
+
+// Kampanjnamn for de som kom ur products.json (kartan har dem inte alltid).
+for (const k of kö) {
+  if (k.kampanj && !k.kampanj.name) {
+    const träff = annonser.find(a => a.campaign?.id === k.kampanj.id)?.campaign;
+    if (träff) { k.kampanj.name = träff.name; k.kampanj.status = träff.status; }
+  }
 }
 
 if (finns('json')) {
   console.log(JSON.stringify({
     hämtadAt: new Date().toISOString(),
     levereratTotalt: leveranser.length,
-    kö: kö.map(({ produkt, ...r }) => r),
+    kö,
   }, null, 2));
   process.exit(0);
 }
 
-const perProdukt = {};
-for (const k of kö) (perProdukt[k.produktId] ??= []).push(k);
+const nya = kö.filter(k => !k.gjort);
+const utan = nya.filter(k => !k.kampanj);
+console.log(`Leveransmappar i Drive: ${leveranser.length} · ${leveranser.length - nya.length} redan i kontot · ${karta && Object.keys(karta).length} kända prefix i kontot\n`);
 
-console.log(`Leveransmappar i Drive: ${leveranser.length} · redan i kontot: ${leveranser.length - kö.filter(k => !k.gjort).length}`);
+const perProdukt = {};
+for (const k of nya) (perProdukt[k.produktId] ??= []).push(k);
+
 for (const [pid, rader] of Object.entries(perProdukt)) {
-  console.log(`\n${pid} → kampanj ${rader[0].kampanj}`);
+  const kmp = rader[0].kampanj;
+  if (!kmp) {
+    console.log(`${pid} → ⚠️  INGEN KAMPANJ i kontot — produkten är inte launchad. Laddas INTE upp.`);
+  } else {
+    const aktiv = kmp.status === 'ACTIVE';
+    console.log(`${pid} → ${kmp.name} [${kmp.status}]${aktiv ? '  ⚠️ AKTIV — uppladdning här börjar spendera' : ''}`);
+    console.log(`   (kopplingen kommer från ${rader[0].kalla})`);
+  }
   for (const r of rader) {
     const media = r.filer.filter(f => /\.(mp4|mov|m4v|jpg|jpeg|png)$/i.test(f.titel));
-    console.log(`  ${r.gjort ? '✔' : '•'} ${r.namn}  (${r.vecka})`);
-    if (!media.length) console.log(`      ⚠ ingen media i mappen — inte klar`);
-    else for (const f of media) console.log(`      ${f.titel}  https://drive.google.com/uc?export=download&id=${f.id}`);
+    console.log(`  • ${r.namn}  (${r.vecka})`);
+    if (!media.length) { console.log(`      ⚠ ingen media i mappen — inte klar`); continue; }
+    for (const f of media) {
+      const fnamn = f.titel.replace(/\.[^.]+$/, '');
+      const varning = fnamn.toLowerCase() !== r.namn.toLowerCase() ? '  ⚠ FILNAMN ≠ MAPPNAMN' : '';
+      console.log(`      ${f.titel}${varning}`);
+      console.log(`        https://drive.google.com/uc?export=download&id=${f.id}`);
+    }
   }
+  console.log('');
 }
-const nya = kö.filter(k => !k.gjort).length;
-console.log(`\n${nya} leverans(er) väntar på uppladdning.`);
+
+console.log(`${nya.length} leverans(er) väntar på uppladdning.`);
+if (utan.length) console.log(`⚠️  ${utan.length} av dem saknar kampanj i kontot och laddas inte upp.`);
+const iAktiva = nya.filter(k => k.kampanj?.status === 'ACTIVE').length;
+if (iAktiva) console.log(`⚠️  ${iAktiva} skulle hamna i en AKTIV kampanj — de börjar spendera direkt vid aktivering.`);

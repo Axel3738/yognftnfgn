@@ -215,8 +215,22 @@ async function lista(produkt) {
 
 async function main() {
   const produktId = flagga('produkt');
-  if (!produktId) dö('Ange --produkt <id>.');
-  const produkt = laddaProdukt(produktId);
+  const kampanjFlagga = flagga('kampanj');
+  if (!produktId && !kampanjFlagga) dö('Ange --produkt <id> eller --kampanj <kampanj-id>.');
+
+  // Nya produkter dyker upp standigt i Baverbutiken och star inte i products.json.
+  // Da anges kampanjen direkt — leveranskon.mjs har redan hittat ratt kampanj ur
+  // kontot. Kontokontrollen gors anda: kampanjen maste ligga i MagiBorsten.
+  let produkt;
+  if (produktId) {
+    produkt = laddaProdukt(produktId);
+  } else {
+    const k = await api(kampanjFlagga, { params: { fields: 'name,account_id' } });
+    if (k.account_id !== BAVERBUTIKEN_ACT) {
+      dö(`Kampanj ${kampanjFlagga} ligger på konto ${k.account_id}, inte Bäverbutikens ${BAVERBUTIKEN_ACT}. Avbryter — fel annonskonto kostar riktiga pengar.`);
+    }
+    produkt = { id: k.name, ad_account_id: BAVERBUTIKEN_ACT, campaign_ids: [kampanjFlagga] };
+  }
   const act = produkt.ad_account_id;
 
   if (finns('lista')) return lista(produkt);
