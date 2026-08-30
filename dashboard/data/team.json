@@ -33,7 +33,8 @@
           5
         ],
         "defaultDailyCreativeTarget": 4
-      }
+      },
+      "arbetsomrade": ""
     },
     {
       "id": "axel",
@@ -44,13 +45,14 @@
       "email": "axelodhner.business@gmail.com",
       "slackUserId": "U0B3MADDQR5",
       "slackHandle": "@axel.odhner",
-      "notionUserId": "332d872b-594c-815b-92e8-0002f9c93383"
+      "notionUserId": "332d872b-594c-815b-92e8-0002f9c93383",
+      "arbetsomrade": ""
     },
     {
       "id": "josh",
       "name": "Josh Naelga",
       "role": "editor",
-      "timezone": "Europe/Stockholm",
+      "timezone": "Asia/Manila",
       "active": true,
       "email": "joshnaelga146@gmail.com",
       "slackUserId": "U0BHPPC8X16",
@@ -72,13 +74,14 @@
         "endOfDayReportTime": "21:30",
         "skills": [],
         "notes": ""
-      }
+      },
+      "arbetsomrade": "nya-produkter"
     },
     {
       "id": "annabelle",
       "name": "Annabelle Gonzales",
       "role": "editor",
-      "timezone": "Europe/Stockholm",
+      "timezone": "Asia/Manila",
       "active": true,
       "email": "annagonzales120629@gmail.com",
       "slackUserId": "U0BGP6ERDV1",
@@ -100,13 +103,14 @@
         "endOfDayReportTime": "21:30",
         "skills": [],
         "notes": "Slack-namnet visar 'Anna' - INTE Anna Odhner (managern). Saknas i Notion, darfor kan inga briefer tilldelas henne an."
-      }
+      },
+      "arbetsomrade": "nya-produkter"
     },
     {
       "id": "gilz",
       "name": "Gilz Bruce Biazon",
       "role": "editor",
-      "timezone": "Europe/Stockholm",
+      "timezone": "Asia/Manila",
       "active": true,
       "email": "i.gilzbrucebiazon@gmail.com",
       "slackUserId": "U0BGVDLRH42",
@@ -128,13 +132,14 @@
         "endOfDayReportTime": "21:30",
         "skills": [],
         "notes": "Ar i #video-editors men inte i #baver-scaling-products. Saknas i Notion."
-      }
+      },
+      "arbetsomrade": ""
     },
     {
       "id": "carl",
       "name": "Carl Vicente",
       "role": "editor",
-      "timezone": "Europe/Stockholm",
+      "timezone": "Asia/Manila",
       "active": true,
       "email": "carlvicente.working@gmail.com",
       "slackUserId": "U0BGVDQH7PU",
@@ -156,7 +161,52 @@
         "endOfDayReportTime": "21:30",
         "skills": [],
         "notes": "Ar i #video-editors men inte i #baver-scaling-products. Saknas i Notion."
+      },
+      "arbetsomrade": ""
+    },
+    {
+      "id": "jasper",
+      "name": "Jasper",
+      "role": "editor",
+      "timezone": "Asia/Manila",
+      "active": true,
+      "email": "",
+      "slackUserId": "",
+      "slackHandle": "",
+      "notionUserId": "",
+      "inScalingChannel": false,
+      "arbetsomrade": "videoannonser",
+      "profile": {
+        "defaultDailyCreativeTarget": 4,
+        "workingDays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "workdayStart": "",
+        "workdayEnd": "",
+        "middayCheckTime": "18:30",
+        "endOfDayReportTime": "21:30",
+        "skills": [
+          "video"
+        ],
+        "notes": "Kapaciteten 50-70 annonser/vecka star i agent/rond.mjs. Slack-id, mejl och Notion-id saknas - fyll i nar de ar kanda."
       }
     }
-  ]
+  ],
+  "arbetsfordelning": {
+    "uppdaterad": "2026-08-30",
+    "kalla": "Axels besked i Claude Code-chatten 2026-08-30",
+    "nya-produkter": [
+      "josh",
+      "annabelle"
+    ],
+    "videoannonser": [
+      "jasper"
+    ],
+    "bildannonser": "Ett separat Claude-konto, ingen manniska. Star darfor inte i users[].",
+    "oklart": "Gilz och Carl har inget bekraftat arbetsomrade - Axel namnde dem inte. Anna Odhner ar manager och godkanner, hon producerar inte."
+  }
 }
