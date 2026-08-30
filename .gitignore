@@ -2,3 +2,6 @@ node_modules/
 pipeline/output/
 *.log
 .env
+
+# Genererade bildannonser — artefakter, inte källkod
+bildannonser/output/

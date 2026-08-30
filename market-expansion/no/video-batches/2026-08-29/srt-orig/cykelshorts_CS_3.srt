@@ -1,0 +1,27 @@
+1
+00:00:00,219 --> 00:00:01,620
+259 kr
+
+2
+00:00:01,799 --> 00:00:02,460
+Fri frakt.
+
+3
+00:00:02,619 --> 00:00:03,740
+Klart til å bestilles i dag.
+
+4
+00:00:03,859 --> 00:00:06,920
+Våre vatterte sykkelshorts koster 259 kroner.
+
+5
+00:00:07,079 --> 00:00:09,159
+Fri frakt på bestillinger over 300 kroner.
+
+6
+00:00:09,239 --> 00:00:15,679
+Vattering og kompresjon til en pris du ikke finner noen andre steder. Lageret er begrenset og tømmes raskt. Ikke gå glipp av sjansen.
+
+7
+00:00:15,759 --> 00:00:17,639
+Bestill før de er utsolgt. Klikk nå.

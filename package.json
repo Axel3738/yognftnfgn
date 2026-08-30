@@ -3,14 +3,17 @@
   "version": "1.0.0",
   "type": "module",
   "private": true,
-  "description": "Creative Strategy OS för Bäverbutiken: brief-kvot, produktminne och redigerardashboard. Inga externa beroenden.",
+  "description": "Creative Strategy OS för Bäverbutiken: brief-kvot, produktminne, redigerardashboard och bildannons-rutinen. Inga externa beroenden.",
   "scripts": {
     "quota": "node pipeline/quota.mjs",
     "seed": "node dashboard/seed.mjs --force",
     "dash": "node dashboard/build.mjs",
     "status": "node dashboard/cli.mjs status",
     "review": "node dashboard/cli.mjs review-queue",
-    "test": "node --test dashboard/test/*.test.mjs"
+    "test": "node --test dashboard/test/*.test.mjs bildannonser/test/*.test.mjs",
+    "bilder": "node bildannonser/run.mjs"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }

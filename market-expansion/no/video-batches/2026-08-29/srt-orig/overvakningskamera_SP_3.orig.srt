@@ -1,0 +1,27 @@
+1
+00:00:00,019 --> 00:00:03,319
+Titta vad som händer när grannens katt går förbi vår tomt.
+
+2
+00:00:03,439 --> 00:00:06,399
+Vi bytte ut hela vårt gamla kamerssystem mot den här.
+
+3
+00:00:06,559 --> 00:00:08,479
+En kamera, två linser, hela tomten.
+
+4
+00:00:08,739 --> 00:00:11,559
+Se hur den vrider sig automatiskt när något rör sig.
+
+5
+00:00:11,579 --> 00:00:20,339
+Den håller koll på garageuppfarten, entrén, allt. Och den larmar bara på riktigt. Inte varje gång katten smyger förbi. Appen skickar en notis direkt till mobilen.
+
+6
+00:00:20,439 --> 00:00:22,299
+Vi kan se live var vi än är.
+
+7
+00:00:22,340 --> 00:00:25,659
+Bäst av allt, den kostade en bråkdel av vårt gamla system

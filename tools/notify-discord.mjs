@@ -9,7 +9,9 @@
 //   1. Bot-token — env DISCORD_BOT_TOKEN / DISCORD_TOKEN / DISCORD_ACCESS_TOKEN,
 //      eller vilken env-variabel som helst vars NAMN innehåller DISCORD och vars
 //      värde inte är en URL (så funkar det oavsett exakt vad Axel döpte den till).
-//      Skickar via POST /api/v10/channels/<id>/messages.
+//      Skickar via POST /api/v10/channels/<id>/messages. Botten kan dessutom
+//      LÄSA kanalen, vilket en webhook aldrig kan — men den måste vara inbjuden
+//      till servern och ha skrivrätt i kanalen.
 //   2. Webhook — env DISCORD_WEBHOOK_URL (eller en DISCORD-variabel som är en
 //      webhook-URL). Används bara om ingen bot-token finns.
 //
@@ -64,24 +66,24 @@ for (const line of text.split('\n')) {
 }
 if (cur) parts.push(cur);
 
+const viaBot = auth.typ === 'bot';
+const mål = viaBot ? `https://discord.com/api/v10/channels/${KANAL}/messages` : auth.url;
+const huvuden = viaBot
+  ? { 'Content-Type': 'application/json', Authorization: `Bot ${auth.token}` }
+  : { 'Content-Type': 'application/json' };
+
 for (const [i, content] of parts.entries()) {
-  let r;
-  if (auth.typ === 'bot') {
-    r = await fetch(`https://discord.com/api/v10/channels/${KANAL}/messages`, {
-      method: 'POST',
-      headers: { 'Authorization': `Bot ${auth.token}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ content }),
-    });
-  } else {
-    r = await fetch(auth.url, {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ content, username: 'Nattkörningen' }),
-    });
-  }
+  // username går bara att sätta på en webhook — botens namn styrs i Discord.
+  const kropp = viaBot ? { content } : { content, username: 'Nattkörningen' };
+  const r = await fetch(mål, { method: 'POST', headers: huvuden, body: JSON.stringify(kropp) });
   if (!r.ok) {
     console.error(`Discord svarade ${r.status} (${auth.typ}): ${(await r.text()).slice(0, 200)}`);
+    if (viaBot && r.status === 401) console.error('401 = fel eller återkallad bot-token.');
+    if (viaBot && r.status === 403) console.error('403 = botten är inte inbjuden till servern, eller saknar skrivrätt i kanalen.');
+    if (viaBot && r.status === 404) console.error('404 = kanal-id:t finns inte, eller botten ser inte kanalen.');
     process.exit(1);
   }
   if (i < parts.length - 1) await new Promise(res => setTimeout(res, 600));
 }
-console.log(`Skickat till Discord via ${auth.typ} (${parts.length} meddelande${parts.length > 1 ? 'n' : ''}).`);
+console.log(`Skickat till Discord via ${viaBot ? 'boten' : 'webhooken'} ` +
+  `(${parts.length} meddelande${parts.length > 1 ? 'n' : ''}).`);
