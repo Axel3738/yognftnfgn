@@ -223,10 +223,13 @@ Sedan max 5 korta rader: hur många per produkt, vad som hoppades över och varf
 Videoraderna redovisas på en rad: `Videoannonser orörda: 3 (redigerarnas)`.
 Tekniska detaljer (taskId, filnamn, hubb-id) allra sist under en rad `Detaljer:`.
 
-Skicka samma text till Discord:
+Skicka samma text till Discord — kanalen **#ai-image-ads** (Axels beslut
+2026-08-30). Den tomma `DISCORD_CHANNEL_ID=` är nödvändig: env-variabeln pekar
+ut en annan kanal och vinner annars över namnet.
 
 ```bash
-node tools/notify-discord.mjs "<hela rapporten>"
+DISCORD_CHANNEL_ID= DISCORD_CHANNEL_NAME=ai-image-ads \
+  node tools/notify-discord.mjs "<hela rapporten>"
 ```
 
 Misslyckas skicket: nämn det på en rad och gå vidare — Discord-strul stoppar
