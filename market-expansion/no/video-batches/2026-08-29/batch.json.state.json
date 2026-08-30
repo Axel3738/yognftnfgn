@@ -483,7 +483,8 @@
   "proofreadId": "2af76be46b544ffda328ffe4e9416d27-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "c29d529cadcb4e389aa83ffd1c406994-nb"
+  "renderId": "c29d529cadcb4e389aa83ffd1c406994-nb",
+  "downloaded": true
  },
  "damasker_CS_3": {
   "assetUrl": "https://resource2.heygen.ai/video/32660412122e4e7ea46e03c99b73c0de/original.mp4",
@@ -497,7 +498,8 @@
   "proofreadId": "8aa636efb3b941cc98626967e2824ae9-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "7bfd2f0740f84b649a857a67034e6500-nb"
+  "renderId": "7bfd2f0740f84b649a857a67034e6500-nb",
+  "downloaded": true
  },
  "damasker_G_2": {
   "assetUrl": "https://resource2.heygen.ai/video/612e432e9dbd4a14bafe0fcb88b660f1/original.mp4",
@@ -520,7 +522,8 @@
   "proofreadId": "0cabb77ff9b24aa4b034a21a4d589b42-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "3b5a4bbf0d2447e6b72e8876645d5729-nb"
+  "renderId": "3b5a4bbf0d2447e6b72e8876645d5729-nb",
+  "downloaded": true
  },
  "damasker_PD_2": {
   "assetUrl": "https://resource2.heygen.ai/video/6e2107a8067749739945a3e770862284/original.mp4",
@@ -535,7 +538,8 @@
   "proofreadId": "eeaee4623b3c45f083afc308abbd4756-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "92dd12b422504e81a73a8f4d339a2f6e-nb"
+  "renderId": "92dd12b422504e81a73a8f4d339a2f6e-nb",
+  "downloaded": true
  },
  "damasker_SP_1": {
   "assetUrl": "https://resource2.heygen.ai/video/3013650a89894e08842a8cbb34ad91b4/original.mp4",
@@ -550,56 +554,64 @@
   "proofreadId": "8b615e2de68f4c5babbd02fb290046dd-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "4a8378802eff406f8a9f15a8d8fde84d-nb"
+  "renderId": "4a8378802eff406f8a9f15a8d8fde84d-nb",
+  "downloaded": true
  },
  "damasker_SP_3": {
   "assetUrl": "https://resource2.heygen.ai/video/72edc95892dd492690073d1a1e2c0dbd/original.mp4",
   "proofreadId": "45ad063346dd4fc19f6aeb9fdd029d13-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "90e6cc3ab5854e49b6fef38f7dcee739-nb"
+  "renderId": "90e6cc3ab5854e49b6fef38f7dcee739-nb",
+  "downloaded": true
  },
  "jattefotboll_PD_1": {
   "assetUrl": "https://resource2.heygen.ai/video/dfe7edbd73f7483eb6a782c55de55526/original.mp4",
   "proofreadId": "3a60002f0b114b48897a2e75f6d58edc-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "4a8c6e0ab0d245c3905617235229fa97-nb"
+  "renderId": "4a8c6e0ab0d245c3905617235229fa97-nb",
+  "downloaded": true
  },
  "jattefotboll_PD_2": {
   "assetUrl": "https://resource2.heygen.ai/video/3a020b45fc2a4cf787ba036c90f5e251/original.mp4",
   "proofreadId": "e1e0a7ef35bb4743a81ae820c61c2d23-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "c315a501d89c40c281fc917b506d2107-nb"
+  "renderId": "c315a501d89c40c281fc917b506d2107-nb",
+  "downloaded": true
  },
  "jattefotboll_PD_3": {
   "assetUrl": "https://resource2.heygen.ai/video/c5dcf581e84044818d02e2ac1f47650b/original.mp4",
   "proofreadId": "800b5f684159496da3dc716eaecac80c-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "6408c2dab10446fc93888c04f63ae110-nb"
+  "renderId": "6408c2dab10446fc93888c04f63ae110-nb",
+  "downloaded": true
  },
  "jattefotboll_SP_1": {
   "assetUrl": "https://resource2.heygen.ai/video/c5f05943727747218d9c24c2589e9c5c/original.mp4",
   "proofreadId": "7938b4ae2c6d4c9cb0ac7435f8e2b59b-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "aa4d5a76365a45e19ee51eef5c55b62f-nb"
+  "renderId": "aa4d5a76365a45e19ee51eef5c55b62f-nb",
+  "downloaded": true
  },
  "jattefotboll_SP_2": {
   "assetUrl": "https://resource2.heygen.ai/video/f6038ac205464553afbdaef23bef7622/original.mp4",
   "proofreadId": "2f44796b37b147dabcb2e55607b18411-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "8723f6d1379243c8a08a50fec788c6df-nb"
+  "renderId": "8723f6d1379243c8a08a50fec788c6df-nb",
+  "downloaded": true
  },
  "jattefotboll_SP_3": {
   "assetUrl": "https://resource2.heygen.ai/video/53222a743dcc43fa9e9ee4384f3cd1bc/original.mp4",
   "proofreadId": "f8ba8bedcc2a47db9e7443d0844947c8-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "efaefdaa5f7d44f7a9ef926068f81369-nb"
+  "renderId": "efaefdaa5f7d44f7a9ef926068f81369-nb",
+  "downloaded": true
  },
  "jattefotboll_CS_1": {
   "assetUrl": "https://resource2.heygen.ai/video/1f77f3e2ceb4444aae8ea0c88a34cb9a/original.mp4",
@@ -613,7 +625,8 @@
   "proofreadId": "96967192eae64486bb09c4af0df269d4-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "41a36e1d9c184ee9954a612555a586d3-nb"
+  "renderId": "41a36e1d9c184ee9954a612555a586d3-nb",
+  "downloaded": true
  },
  "jattefotboll_CS_3": {
   "assetUrl": "https://resource2.heygen.ai/video/a4ce9f97c0bf45ee98af1f439f2b2d2b/original.mp4",
@@ -627,20 +640,23 @@
   "proofreadId": "924d987d60934a359be3f1a1a9d08662-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "162992abdca34b91ac805f128ba9cbe1-nb"
+  "renderId": "162992abdca34b91ac805f128ba9cbe1-nb",
+  "downloaded": true
  },
  "jattefotboll_G_2": {
   "assetUrl": "https://resource2.heygen.ai/video/b12ee3f54cd040f4b016cc173a418f4a/original.mp4",
   "proofreadId": "2297cc9f0d214608930c0ef6144cd7a1-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "c530921754a84983be6dea8e760d70b6-nb"
+  "renderId": "c530921754a84983be6dea8e760d70b6-nb",
+  "downloaded": true
  },
  "jattefotboll_G_3": {
   "assetUrl": "https://resource2.heygen.ai/video/7cae2bc7121f4298acdfa542c485dc78/original.mp4",
   "proofreadId": "ce1a9a689f7f4c769cd3d6b107d9eeaa-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "ef357a199ac043b0b880214b09a72fa8-nb"
+  "renderId": "ef357a199ac043b0b880214b09a72fa8-nb",
+  "downloaded": true
  }
 }
