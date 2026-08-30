@@ -9,9 +9,11 @@ import { hamtaAffarskontext, lasFil } from './repo.js';
 const claude = new Anthropic({ maxRetries: 2, timeout: 120_000 });
 
 export const MODELL = 'claude-opus-5';
-// Taket måste rymma thinking + svaret. 1024 riskerar tomt svar där thinking
-// äter hela budgeten och stop_reason blir "max_tokens".
-const MAX_TOKENS = 4096;
+// Taket måste rymma tänkandet OCH svaret. På Opus 5 är tänkandet påslaget
+// som default och räknas mot max_tokens — för lågt tak ger avhuggna svar,
+// inte ett felmeddelande. 16000 är rekommenderat för icke-strömmade anrop.
+// Vi betalar bara för det som faktiskt genereras, så ett högt tak kostar inget.
+const MAX_TOKENS = 16000;
 
 // Affärskontexten byggs om högst en gång i halvtimmen. Byggs den per
 // meddelande missar varje anrop cachen och kostnaden mångdubblas.
@@ -142,8 +144,12 @@ export async function fraga({ text, kanalId, anvandare }) {
       tools: VERKTYG,
       system: [
         // Block 1: fryst regelverk. Ändras bara vid deploy.
-        { type: 'text', text: REGLER, cache_control: { type: 'ephemeral', ttl: '1h' } },
+        { type: 'text', text: REGLER },
         // Block 2: affärsdata. Byts var 30:e minut.
+        //
+        // EN brytpunkt, sist. Cachen är en prefixmatchning, så den här
+        // täcker verktygen + båda systemblocken. En egen brytpunkt på REGLER
+        // vore bortkastad: blocket är för kort för minsta cachebara prefix.
         { type: 'text', text: kontext, cache_control: { type: 'ephemeral', ttl: '1h' } },
       ],
       messages,
@@ -162,6 +168,14 @@ export async function fraga({ text, kanalId, anvandare }) {
       .join('\n')
       .trim();
 
+    if (svar.stop_reason === 'refusal') {
+      // HTTP 200, men modellen avböjde. Utan det här blir svaret tyst tomt.
+      const varfor = svar.stop_details?.explanation || svar.stop_details?.category || 'okänd orsak';
+      return `Jag kan inte svara på det (${varfor}). Formulera om, eller fråga i Claude Code-chatten.`;
+    }
+    if (svar.stop_reason === 'max_tokens') {
+      console.warn('[claude] svaret slog i taket — höj MAX_TOKENS');
+    }
     if (svar.stop_reason !== 'tool_use') break;
 
     const anrop = svar.content.filter((b) => b.type === 'tool_use');
