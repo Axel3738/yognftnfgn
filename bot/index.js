@@ -26,6 +26,39 @@ if (saknas.length) {
   process.exit(1);
 }
 
+/**
+ * Nycklar går ut som HTTP-headers, och headers får bara innehålla tecken
+ * 0-255. Ett enda • i värdet ger felet "Cannot convert argument to a
+ * ByteString ..." vid VARJE anrop — ett meddelande som inte säger någonting
+ * om vad som faktiskt är fel.
+ *
+ * Det händer på ett självklart sätt: kopierar man nyckeln från API keys-sidan
+ * får man den maskerade versionen, sk-ant-a••••••••, och prickarna följer med
+ * in i Railway. Den fällan kostade en kväll; nu fångas den vid start.
+ */
+for (const namn of KRÄVS) {
+  const värde = process.env[namn];
+  const i = [...värde].findIndex((t) => t.codePointAt(0) > 255);
+  if (i !== -1) {
+    console.error(
+      `Startar inte: ${namn} innehåller tecknet "${[...värde][i]}" på plats ${i + 1}, `
+      + 'som inte får finnas i en nyckel.',
+    );
+    console.error(
+      värde.includes('•') || värde.includes('*')
+        ? '→ Du har klistrat in den MASKERADE nyckeln (den med prickar). '
+          + 'Hämta den riktiga: console.anthropic.com → API Keys → Create Key, '
+          + 'och kopiera hela strängen direkt när den visas — den går inte att läsa igen sedan.'
+        : '→ Kopiera om värdet, utan mellanslag eller radbrytningar.',
+    );
+    process.exit(1);
+  }
+  if (värde.trim() !== värde) {
+    console.error(`Startar inte: ${namn} har blanksteg eller radbrytning i början eller slutet.`);
+    process.exit(1);
+  }
+}
+
 if (!process.env.GITHUB_TOKEN) {
   // 60 anrop/timme utan token. Boten läser fler än så på en normal dag och
   // börjar då svara "GitHub nekade läsning" mitt i en konversation.
