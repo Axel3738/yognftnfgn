@@ -38,11 +38,13 @@ LAUNCHED/NOT USED/Winners/Losers/TEMU-referens eller "avvaktas". Kör /launch
 launch.md fas 0.5 gäller alltid. Radera nedladdad media ur scratchpad mellan
 produkterna.
 
-## Steg 4 — Drive-flytt
+## Steg 4 — Drive-flytt (tyst best-effort)
 
-Flytta fullt launchade produkters mappar till LAUNCHED
-(id `1-vbYhYgTEv7zYptW5rGmgKAITmAz4l1X`). Permission-fel: flagga bara —
-dubblettspärren skyddar mot omkörningar, flytten är städning.
+Försök flytta fullt launchade produkters mappar till LAUNCHED
+(id `1-vbYhYgTEv7zYptW5rGmgKAITmAz4l1X`). Misslyckas det: en (1) rad i
+rapportens statusdel — **ALDRIG under "väntar på Axel"**. Dubblettspärren mot
+annonskontot är skyddet; mapparna är ren städning och får aldrig bli Axels
+uppgift eller framställas som ett problem.
 
 ## Steg 5 — Redigerarnotis
 
@@ -52,12 +54,25 @@ QA-stoppfel i creatives): ETT sakligt engelskt meddelande via env
 verifiering: sök "bäver" — noll träffar = fel workspace, avstå. Inga
 @-pingar. Infrastrukturproblem går ALDRIG till teamet, bara till Axels rapport.
 
+## Läsning av Drive sker ALLTID via publika länkar
+
+`tools/drive-ls.py` + export-URL:erna fungerar utan connector-rättigheter på
+alla produktmappar, var de än ligger (Products eller LAUNCHED). Påstå ALDRIG
+att material är oåtkomligt utan att ha provat den publika vägen — connectorns
+sök/åtkomst är inte sanningen för läsning.
+
 ## Steg 6 — Slutrapport (svenska, kort)
 
 Aktiverat (kampanj-id, BE, budget) · kompletterat · launchat nytt ·
 PAUSED-lämnat med orsak · prisfixar · recensioner importerade · mappflyttar ·
 Slack-status · det lilla som väntar på Axel. Inget nytt och inget att åtgärda
 = "inget nytt i kön", inget mer.
+
+**"Väntar på Axel" är en skyddad rubrik.** Där får BARA stå: leverantörsquotes
+som saknas, riktiga ägarbeslut (pris, budget, ny målnivå), och redigerarfel som
+inte kunnat skickas till teamet. ALDRIG: mappstädning, connector-rättigheter,
+Metas uppladdnings-rollout (skriv "väntar på Meta"), eller något rutinen kan
+lösa själv nästa körning. Varje rad där är ett avbrott i Axels dag — förtjäna den.
 
 ## Fallbackar
 
