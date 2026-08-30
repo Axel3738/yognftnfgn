@@ -301,11 +301,19 @@ lovar att aldrig ge.
   ärliga raden om att Norge/Island kan få lokal moms/hanteringsavgift vid
   införsel. Utkastprodukternas beskrivningar likaså.
 
+**Justering samma dag (Axels beslut):** Island utgår helt — fraktzonen är
+NO/DK/FI, flaggraden visar 4 flaggor, sidtexterna säger "Sverige, Norge,
+Danmark och Finland". Moms/tull-raden om Norge togs bort från sajten på
+Axels uttryckliga order ("norge får ingen moms"), och policytexterna i
+SHOPIFY-MANUELLT rörs inte (de nämner fortfarande Island + avgiftsraden —
+synka dem först när Axel säger till).
+
 ⚠️ **Kända begränsningar (medvetna, inte glömda):**
-1. **Norge/Island = tull.** Utan norsk VOEC-registrering betalar norska
-   kunder moms + avgift vid dörren. Sajten säger det ärligt, men
-   **annonsera inte i NO/IS** förrän VOEC är löst — kör SE (+ DK/FI som är
-   EU) först.
+1. **Norge = tull ändå.** Norges momsfria 350-kronorsgräns försvann 2020;
+   utan VOEC-registrering (eller leverantör som skickar med tull betald)
+   momsas norska paket vid gränsen, oavsett vad sajten säger. Axel är
+   informerad 2026-08-30. **Verifiera leverantörens Norge-flöde innan
+   annonser körs i NO.**
 2. **Valutan är SEK för alla.** Shopify Markets med DKK/NOK/EUR är nästa
    steg, inte gjort.
 3. **Sajten är på svenska.** Funkar i SE, hyfsat i NO/DK, inte i FI —
