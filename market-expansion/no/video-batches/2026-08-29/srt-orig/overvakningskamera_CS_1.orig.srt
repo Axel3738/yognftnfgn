@@ -1,0 +1,27 @@
+1
+00:00:00,199 --> 00:00:01,939
+799 kronor idag.
+
+2
+00:00:02,039 --> 00:00:10,619
+Sen är den borta. Just nu 799 kronor. Ordinarie pris 1000 kronor. Dubbellins, AI-spårning, 355 graders täckning.
+
+3
+00:00:10,739 --> 00:00:13,380
+Lagret är begränsat och priset går upp snart.
+
+4
+00:00:13,479 --> 00:00:15,259
+Handla idag, betala med Klarna.
+
+5
+00:00:15,319 --> 00:00:18,459
+Få den nu, betala sen. Fri frakt över 300 kronor.
+
+6
+00:00:18,579 --> 00:00:21,239
+Trettio dagars öppet köp om du inte är nöjd.
+
+7
+00:00:21,239 --> 00:00:23,567
+Missa inte rean. Beställ innan den är slut.

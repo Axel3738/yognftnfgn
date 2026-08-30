@@ -1,0 +1,27 @@
+1
+00:00:00,019 --> 00:00:03,319
+Se hva som skjer når naboens katt går forbi tomten vår.
+
+2
+00:00:03,439 --> 00:00:06,399
+Vi byttet ut hele det gamle kamerasystemet vårt med dette.
+
+3
+00:00:06,559 --> 00:00:08,479
+Ett kamera, to linser, hele tomten.
+
+4
+00:00:08,739 --> 00:00:11,559
+Se hvordan det vrir seg automatisk når noe beveger seg.
+
+5
+00:00:11,579 --> 00:00:20,339
+Det overvåker garasjeoppkjørselen og inngangen. Det varsler kun ved reelle hendelser, ikke når katten sniker seg forbi. Appen sender varsel til mobilen.
+
+6
+00:00:20,439 --> 00:00:22,299
+Vi kan se live uansett hvor vi er.
+
+7
+00:00:22,340 --> 00:00:25,659
+Best av alt, den kostet en brøkdel av det gamle systemet vårt.

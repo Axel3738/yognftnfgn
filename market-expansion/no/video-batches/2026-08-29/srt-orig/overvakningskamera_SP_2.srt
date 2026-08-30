@@ -1,0 +1,15 @@
+1
+00:00:00,099 --> 00:00:02,919
+Vi hadde tre kameraer før, nå har vi ett.
+
+2
+00:00:03,000 --> 00:00:05,960
+Vi byttet ut hele det gamle kamerasystemet vårt med dette.
+
+3
+00:00:06,119 --> 00:00:14,239
+Ett kamera, to linser, hele tomten. Se hvordan det vrir seg automatisk når noe beveger seg. Det holder oversikt over garasjeoppkjørselen, inngangspartiet, alt.
+
+4
+00:00:14,279 --> 00:00:25,219
+Det varsler kun ved alvor, ikke når katten går forbi. Appen sender varsel til mobilen, så vi kan se live uansett hvor vi er. Best av alt: den kostet en brøkdel av det gamle systemet.

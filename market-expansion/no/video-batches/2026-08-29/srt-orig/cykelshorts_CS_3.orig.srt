@@ -1,0 +1,27 @@
+1
+00:00:00,219 --> 00:00:01,620
+259 kronor.
+
+2
+00:00:01,799 --> 00:00:02,460
+Fri frakt.
+
+3
+00:00:02,619 --> 00:00:03,740
+Klart att beställa i dag.
+
+4
+00:00:03,859 --> 00:00:06,920
+Våra vadderade cykelshorts kostar 259 kronor.
+
+5
+00:00:07,079 --> 00:00:09,159
+Fri frakt på ordrar över 300 kronor.
+
+6
+00:00:09,239 --> 00:00:15,679
+Vaddering och kompression till ett pris du inte hittar någon annanstans. Lagret är begränsat och går snabbt. Missa inte chansen.
+
+7
+00:00:15,759 --> 00:00:17,639
+Beställ innan de är slut. Klicka nu.

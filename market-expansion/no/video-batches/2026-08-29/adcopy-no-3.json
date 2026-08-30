@@ -1,0 +1,46 @@
+{
+  "damasker": {
+    "PD": {
+      "message": "Lei av snø, væte og grus i skoene? 🥾\n✅ Holder snøen ute – hele turen\n✅ Stopper regn og våt mark\n✅ Beskytter mot grus, leire og stein\n✅ På med dem på 10 sekunder\nKlikk og bestill dine i dag 👉",
+      "headline": "Gå tørrskodd – uansett vær",
+      "description": "Gamasjer som holder snø, væte og grus ute."
+    },
+    "SP": {
+      "message": "«Helt tørre sokker – selv i regn og leire» 👍\n✅ Elsket av tusenvis av turgåere\n✅ Holder tett hele dagen\n✅ Enkle å ta på og av\n✅ 30 dagers åpent kjøp\nSe hvorfor kundene ikke kan slutte å snakke om dem 👉",
+      "headline": "Kundene elsker tørre føtter",
+      "description": "Bekreftede kunder – tørre sko, hver gang."
+    },
+    "CS": {
+      "message": "⚡ 40 % rabatt – så lenge lageret rekker ⚡\nPrisen gjelder ikke for alltid – snart er den borte.\n✅ Fri frakt over 300 kr\n✅ 30 dagers åpent kjøp\n✅ Lageret krymper – bare noen få igjen\nIkke gå glipp av sjansen. Bestill nå før det er utsolgt 👉",
+      "headline": "40 % rabatt – så lenge lageret rekker",
+      "description": "Salget avsluttes snart – få igjen på lager."
+    },
+    "G": {
+      "message": "Endelig fant jeg den perfekte gaven til ham 🎁\nHan som alltid er ute – tur, hund, skog, natur.\n✅ En gave han faktisk bruker\n✅ Enkel, praktisk, verdsatt\n✅ Perfekt til jul, bursdag eller bare «en tanke»\nSe ansiktet hans når han åpner pakken 👉",
+      "headline": "Gaven han faktisk bruker",
+      "description": "Den perfekte gaven til ham som elsker naturen."
+    }
+  },
+  "jattefotboll": {
+    "PD": {
+      "message": "Lei av at ungene sitter inne? 📱➡️☀️\nDenne kjempefotballen (60 cm!) får dem til å løpe ut i hagen hver dag.\n⚽ Perfekt for hagen, bassenget og stranden\n⚽ Enkel å blåse opp og pakke sammen\n⚽ Gøy for både barn og voksne\nBestill nå og se dem smile hele sommeren. 👉",
+      "headline": "Gjør hagen til en lekeplass",
+      "description": "60 cm kjempefotball for hele sommeren."
+    },
+    "SP": {
+      "message": "«Ungene har lekt med den hver dag siden den kom.» ⭐⭐⭐⭐⭐\nDet er derfor så mange familier velger vår kjempefotball i sommer.\n✅ Elsket av barn i alle aldre\n✅ Perfekt for basseng, hage og strand\n✅ 30 dagers åpent kjøp\nSe hvorfor alle snakker om den. Bestill i dag 👉",
+      "headline": "Familiens favoritt i sommer",
+      "description": "Vurdert 5 av 5 av fornøyde foreldre."
+    },
+    "CS": {
+      "message": "⏰ 23 % rabatt på kjempefotballen – så lenge lageret rekker\n389 kr → 299 kr — men bare noen få igjen på lager.\n🔥 Tilbudet varer ikke evig\n🔥 Bare noen få igjen på lager\n🔥 Når den er tom, er den tom\nIkke gå glipp av sjansen. Bestill før lageret tar slutt 👉",
+      "headline": "Gjør hagen til en lekeplass",
+      "description": "23 % rabatt – så lenge lageret rekker."
+    },
+    "G": {
+      "message": "Jeg fant endelig gaven som fikk ungene til å juble av glede. 🎁\nIkke flere «takk, den var fin» med skuldertrekk – dette er gaven de faktisk vil ha.\n🎁 Perfekt for fotballgale barn\n🎁 Passer bursdag, sommerferie og «bare fordi»\n🎁 Enkel å pakke inn, stor reaksjon\nBli den som ga den beste gaven i år. Bestill nå 👉",
+      "headline": "Gaven ungene faktisk vil ha",
+      "description": "Den perfekte gaven til fotballgale barn."
+    }
+  }
+}
