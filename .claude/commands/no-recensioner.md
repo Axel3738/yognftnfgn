@@ -94,6 +94,10 @@ väntar på tokenen. Kör aldrig mot den svenska butiken i stället.
 node tools/notify-discord.mjs "<rapporten>"
 ```
 
+Verktyget skickar via boten (`DISCORD_BOT_TOKEN` + `DISCORD_CHANNEL_ID`) om de
+finns, annars via webhooken (`DISCORD_WEBHOOK_URL`). Saknas båda felar det med
+besked om vilket som fattas.
+
 Kort rapport: per produkt antal importerade recensioner, överhoppade (redan
 importerade eller trasigt ark) med orsak. Inget nytt att göra = en rad.
 Misslyckas skicket: nämn det på en rad och fortsätt.
