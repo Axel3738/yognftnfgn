@@ -1,0 +1,235 @@
+# /bildannonser — den dagliga bildannons-rutinen (20:00)
+
+Kör varje kväll 20:00. Uppdraget i en mening: **gå igenom alla Bäverbutikens
+Notion-hubbar, hitta bildannonser som inte är gjorda, generera dem med kie.ai,
+och lämna dem i `To be Reviewed` åt granskningsrutinen.**
+
+Argument: `$ARGUMENTS` — normalt tomt. `--dry` = visa vad som skulle genereras
+utan att bränna credits. `<hubbnamn>` = kör bara den hubben.
+
+## Järnregeln: ALDRIG videoannonser
+
+Rutinen genererar **bara** rader med `Typ = "Image - Pending Approval"`.
+Videorader (`Video - Pending Approval`) ligger i samma hubbar, i samma status
+`Draft`, ofta med nästan samma namn — `Beltgrinder_PD_4_1` är bild,
+`Beltgrinder_PD_4_H1` är video. De görs av redigerarna, aldrig här.
+
+Spärren sitter på tre ställen och alla tre ska hålla:
+1. SQL:en filtrerar på `Typ = 'Image - Pending Approval'` (**inkludering**, aldrig
+   uteslutning — annars smyger nya Typ-värden in i körningen).
+2. `bildannonser/run.mjs` vägrar varje jobb vars `typ` inte är exakt det värdet
+   och kastar fel i stället för att hoppa över tyst.
+3. Slutrapporten redovisar antal bildrader och antal videorader som lämnades
+   orörda. Är videosiffran 0 i en hub som har videorader i Draft: något är fel
+   med filtret — avbryt och skriv det i rapporten.
+
+## Tre saker måste vara på plats innan rutinen kan köra skarpt
+
+Rutinen är byggd och schemalagd, men den kan inte fixa de här själv:
+
+1. **Grenen mergad till `main`.** Rutinen startar en färsk session som klonar
+   `main`. Ligger `bildannonser/` bara på
+   `claude/notion-image-ads-routine-rgk335` hittar den ingenting.
+2. **`KIE_API_KEY` i environmentet.** Utan den genereras inga bilder — kön
+   redovisas, men inget produceras.
+3. **Notion-connectorn kopplad på själva rutinen.** Routines ärver inte
+   connectors automatiskt; den kopplas i Routines-vyn på claude.ai. Utan den har
+   nattsessionen inga `mcp__Notion__*`-verktyg och kan varken läsa kön eller
+   flytta statusar.
+
+Saknas någon av dem: rapportera exakt vilken, och gör inget annat. Gå aldrig runt
+dem — en rutin som "löser" saknad åtkomst gör fel saker tyst.
+
+## Schemat
+
+Rutinen är en Routine som startar en färsk session 20:00 svensk tid varje dag.
+Cron körs i **UTC**, så den står på `0 18 * * *` — rätt under sommartid.
+
+⚠️ **Vid vintertidsomställningen 25 oktober 2026 blir 18:00 UTC = 19:00 i Sverige.**
+Ska den ligga kvar på 20:00: ändra till `0 19 * * *`. Ingen automatik gör det.
+
+## Steg 0 — Läsning
+
+`CLAUDE.md` → `docs/os/NOTION-FORMAT.md` → `docs/copy-regler.md` →
+`docs/naming-convention.md`. Kräver env `KIE_API_KEY` samt Notion-connectorn.
+Saknas `KIE_API_KEY`: kör hela steg 1–3, redovisa kön, och skriv i rapporten att
+inget genererats för att nyckeln saknas. Låtsas aldrig att bilder är gjorda.
+
+## Steg 1 — Hitta alla hubbar (aldrig en handskriven lista)
+
+Hubbarna hittas dynamiskt, så nya produkter kommer med av sig själva:
+
+- Sök i Notion med `teamspace_id = 3a9270ab-908c-81a8-a48c-004222d195e7`
+  (**teamspacet Bäverbutiken**) efter databaser vars titel slutar på
+  `creative hub`.
+- Uteslut `Creative hub MALL` — den är mallen nya hubbar klonas från, inte en
+  produkt.
+- Hämta varje hubbs `collection://`-URL med `fetch` på databas-id:t.
+
+**Teamspacet ÄR skyddet mot att blanda verksamheterna.** Grillkliniken,
+Matstrumpor och Ploomi.se har egna teamspaces. Sök aldrig utan `teamspace_id`,
+och lägg aldrig till en hubb för hand — en hubb utanför Bäverbutikens teamspace
+rörs aldrig, oavsett vad den heter.
+
+Saknar en hubb Typ-värdet `Image - Pending Approval` är den skapad före mallen
+uppdaterades: hoppa över den och skriv en rad i rapporten om att den behöver få
+valet tillagt. Lägg inte till det själv.
+
+## Steg 2 — Hitta de ogjorda bildannonserna
+
+Per hubb, en fråga:
+
+```sql
+SELECT url, "Namn", "Status", "Landing page", "Filer och media"
+FROM "collection://<hubbens-id>"
+WHERE "Typ" = 'Image - Pending Approval' AND "Status" = 'Draft'
+```
+
+`Draft` = ingen har börjat. Det är hela kön. Rör aldrig `In progress`,
+`In progress 2`, `Creative strat review`, `To be Reviewed`, `In Review`,
+`Approved`, `Archived` eller `Not used` — de är någon annans beslut.
+
+Kör samtidigt en räkning av `Typ = 'Video - Pending Approval' AND "Status" = 'Draft'`
+per hubb. Den siffran används bara i rapporten, som kvitto på att videoraderna
+sågs och lämnades ifred.
+
+**Verifierat läge 2026-08-30** (kör frågan, jämför — den ska se ut ungefär så här):
+
+| Hubb | Bild i Draft | Video i Draft (rörs inte) |
+|---|---|---|
+| Belt grinder | `Beltgrinder_PD_4_1`, `PD_5_1`, `SO_4_1` | `PD_4_H1`, `PD_5_H1`, `SP_4_H1` |
+| Kranskydd Frost | `Kranskydd_CI_1_1`, `PD_3_1`, `SP_3_1` | `CI_1_H1`, `SP_3_H1`, `UG_1_H1` |
+| Boat cover, Beach crocs, Trimmer belt, Mower seat | 0 | 0 |
+
+Sex bildrader, sex videorader, nästan identiska namn — `_1` mot `_H1`. Det är
+precis det här fallet järnregeln finns för.
+
+## Steg 3 — Bygg prompten ur briefen (hitta ALDRIG på copy)
+
+Läs varje rads sidinnehåll med `fetch`. Briefen innehåller allt som behövs:
+produkt, format, scenbeskrivning, och en tabell `Swedish (use this) | English meaning`.
+
+**De svenska raderna kopieras ordagrant ur tabellen.** Rutinen skriver ingen ny
+copy — varken rubriker, stödrader eller CTA. Det är inte en effektivisering, det
+är modellpolicyn i `CLAUDE.md` punkt 6: all ad copy skrivs av en subagent i
+`/cs`-flödet, aldrig av en nattrutin. Saknar briefen svenska rader: **hoppa över
+raden**, lämna den i `Draft` och skriv den under "Behöver brief" i rapporten.
+
+Tre kontroller innan prompten byggs:
+
+1. **Priset.** Står ett pris i briefen: hämta det verkliga priset från
+   produktsidan (`Landing page`) och jämför. Skiljer de sig — hoppa över raden
+   och rapportera. Ett inbränt gammalt pris gör creativen oanvändbar (se
+   `CLAUDE.md`, "Saker som är lätta att göra fel").
+2. **Referensbild.** Pekar briefen på en `Winning Creative` i samma hubb: hämta
+   dess bild-URL och skicka med som `referens_bilder` — då växlar klienten
+   automatiskt till `google/nano-banana-edit` och matchar vinnarformatet.
+3. **Bildformat.** `4:5` (1080×1350) är standard för Metas feed. Säger briefen
+   `1:1` — använd det. Säger den båda: generera ett jobb per format och döp dem
+   `<namn>` och `<namn>_1x1`.
+
+Skriv prompten på engelska (bildmodellen kräver det) men **de svenska raderna
+ordagrant inom citattecken**, med en uttrycklig instruktion att texten ska
+återges tecken för tecken. Skriv jobbfilen till scratchpad:
+
+```json
+{
+  "datum": "2026-08-30",
+  "jobb": [
+    {
+      "namn": "Beltgrinder_PD_4_1",
+      "typ": "Image - Pending Approval",
+      "hub": "Belt grinder creative hub",
+      "notion_url": "https://app.notion.com/p/...",
+      "prompt": "...",
+      "bildformat": "4:5",
+      "referens_bilder": []
+    }
+  ]
+}
+```
+
+## Steg 4 — Generera
+
+```bash
+node bildannonser/run.mjs --jobb=<scratchpad>/jobb.json          # skarpt
+node bildannonser/run.mjs --jobb=<scratchpad>/jobb.json --dry    # bara planen
+```
+
+Bilder + `_manifest.json` hamnar i `bildannonser/output/<datum>/`. Ett jobb som
+misslyckas stoppar aldrig de andra — det hamnar som `status: "fel"` i manifestet.
+Kör om en misslyckad rad **en** gång; misslyckas den igen lämnas den i `Draft`
+och rapporteras.
+
+## Steg 5 — QA innan något laddas upp
+
+**Titta på varje genererad bild.** Bildmodeller är opålitliga på text, och
+svenska å/ä/ö är det första som går sönder. Per bild:
+
+- [ ] Varje svensk rad är exakt densamma som i briefens tabell — bokstav för
+      bokstav, å/ä/ö intakta, inga påhittade ord.
+- [ ] Ingen dubblerad, avhuggen eller spegelvänd text.
+- [ ] Produkten ser ut som produkten på produktsidan.
+- [ ] Priset (om något) är det verifierade priset från steg 3.
+- [ ] Inga påhittade rabattsiffror, inga "40 %", ingen falsk lagerbrist.
+
+Underkänd bild: generera om **en** gång med skärpt textinstruktion. Underkänd
+igen — ladda inte upp, lämna raden i `Draft`, rapportera. **En dålig bild i
+Notion är dyrare än en tom rad**, för granskningsrutinen litar på att det som
+ligger där är QA:at.
+
+## Steg 6 — Notion: bifoga bilden och flytta till To be Reviewed
+
+Per godkänd bild, i den här ordningen:
+
+1. `create-file-upload` med filnamnet → POST filen till `upload_url` med de
+   returnerade headers (multipart, fältet `file`).
+2. `update-page` med `command: "update_properties"` på raden:
+   - `Filer och media` = uppladdningens referens
+   - `Status` = `"To be Reviewed"`
+3. **Läs tillbaka raden** och verifiera att både filen och statusen sitter.
+
+Ordningen är inte förhandlingsbar: **statusen flyttas aldrig före bilden är
+uppe.** Blir uppladdningen klar men statusbytet misslyckas hamnar raden i
+"Behöver hjälp" i rapporten — då finns bilden men raden syns fortfarande i
+morgondagens kö, vilket är rätt fel att ha.
+
+Rutinen ändrar **bara** `Filer och media` och `Status`. Aldrig `Namn`, `Typ`,
+`Ansvarig`, `Deadline`, `Feedback` eller sidinnehållet. Den raderar aldrig en
+rad och flyttar aldrig en status bakåt.
+
+## Steg 7 — Rapport (mobilformat — Axel läser den som notis)
+
+**Första raden är hela rapporten för mobilen.** Max 12 ord, börjar med ✅ eller ⚠️:
+
+- `✅ 6 bildannonser klara, ligger för granskning`
+- `⚠️ 4 klara, 2 väntar på brief`
+
+Sedan max 5 korta rader: hur många per produkt, vad som hoppades över och varför.
+Videoraderna redovisas på en rad: `Videoannonser orörda: 3 (redigerarnas)`.
+Tekniska detaljer (taskId, filnamn, hubb-id) allra sist under en rad `Detaljer:`.
+
+Skicka samma text till Discord:
+
+```bash
+node tools/notify-discord.mjs "<hela rapporten>"
+```
+
+Misslyckas skicket: nämn det på en rad och gå vidare — Discord-strul stoppar
+aldrig körningen.
+
+## DEFINITION OF DONE
+
+- [ ] Alla hubbar i teamspacet Bäverbutiken lästa — skriv antalet, och att
+      `Creative hub MALL` uteslöts
+- [ ] Ingen hubb utanför Bäverbutikens teamspace rörd
+- [ ] Kön hämtad med `Typ = 'Image - Pending Approval' AND Status = 'Draft'`
+      (inkluderingsfilter) — skriv antalet
+- [ ] **Noll videorader genererade** — skriv hur många som fanns och lämnades
+- [ ] Ingen ny copy skriven; alla svenska rader ordagrant ur briefen
+- [ ] Priser verifierade mot produktsidan för varje brief som anger pris
+- [ ] Varje genererad bild QA:ad mot checklistan i steg 5 — redovisa per bild
+- [ ] Bild uppladdad FÖRE statusbytet, båda tillbakalästa
+- [ ] Alla godkända rader står i `To be Reviewed`
+- [ ] Överhoppade rader ligger kvar i `Draft` med skriven orsak
+- [ ] Rapport levererad i mobilformat + skickad till Discord
