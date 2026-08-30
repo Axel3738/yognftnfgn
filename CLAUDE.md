@@ -88,6 +88,11 @@ inte röras utan att Axel ber om det.
     av 17 annonser under 30 kr; batch #5:s trevägstest med identisk copy gav
     5,70 / 5,52 / 159,76 kr. Läggs nya creatives i skalningens CBO blir datan
     oläsbar och kvoten meningslös.)*
+    ⚠️ **Ett uttryckligt undantag, Axels beslut 2026-08-30:** nattrutinen
+    `/notionkorning` laddar upp redigerarnas färdiga creatives i produktens
+    aktiva CBO (`campaign_ids[0]`), inte i ett test-ABO. Det gäller ENBART den
+    rutinen. Rätta inte tillbaka det — och allt annat nytt testande följer
+    fortfarande regel 11.
 12. **Fråga bara när ett beslut kräver ägaren** (prisändring, rabatt i Shopify, ny
     target-CPA). Allt annat: kör.
 13. **Om Axel skriver ett `/kommando` som klienten inte känner igen** (eller skriver
@@ -121,7 +126,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 
 ## Kommandona (Axels gränssnitt)
 
-14 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
+15 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
 
 | Kommando | Vad |
 |----------|-----|
@@ -139,6 +144,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/rapport <namn>: <text>` | Tolka en slutrapport från Slack (bekräftas innan den sparas) |
 | `/granska [id]` | Beta av review-kön: checklista → godkänn eller skicka tillbaka |
 | `/launch <produktnamn>` | **Temu-flödet:** Drive → QA → Judge.me → Meta som PAUSED (`docs/temu-launch-flow.md`) |
+| `/notionkorning` | **Nattrutin 00:01:** klara Notion-tasks → brief-QA → upp i produktens CBO |
 
 ---
 
