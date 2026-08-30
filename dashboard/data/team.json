@@ -139,7 +139,7 @@
       "email": "carlvicente.working@gmail.com",
       "slackUserId": "U0BGVDQH7PU",
       "slackHandle": "@carlvicente.working",
-      "notionUserId": "",
+      "notionUserId": "24ed872b-594c-8102-b94d-0002bde1d55a",
       "inScalingChannel": false,
       "profile": {
         "defaultDailyCreativeTarget": 4,
@@ -155,7 +155,35 @@
         "middayCheckTime": "18:30",
         "endOfDayReportTime": "21:30",
         "skills": [],
-        "notes": "Ar i #video-editors men inte i #baver-scaling-products. Saknas i Notion."
+        "notes": "Ar i #video-editors men inte i #baver-scaling-products. Notion-ID bekraftat mot workspace 2026-08-30."
+      }
+    },
+    {
+      "id": "jasper",
+      "name": "Jasper Tomboc",
+      "role": "editor",
+      "timezone": "Asia/Manila",
+      "active": true,
+      "email": "tombocjazzer1@gmail.com",
+      "slackUserId": "",
+      "slackHandle": "",
+      "notionUserId": "3bcd872b-594c-8133-865d-0002340f7eff",
+      "inScalingChannel": false,
+      "profile": {
+        "defaultDailyCreativeTarget": 4,
+        "workingDays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "workdayStart": "",
+        "workdayEnd": "",
+        "middayCheckTime": "18:30",
+        "endOfDayReportTime": "21:30",
+        "skills": [],
+        "notes": "Hittad som Ansvarig pa godkanda rader i Trimmer belt creative hub 2026-08-30. Saknar Slack-ID."
       }
     }
   ]

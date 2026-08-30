@@ -198,6 +198,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/bildannonser [--dry]` | **Rutin 20:00 varje dag:** alla Notion-hubbar → ogjorda bildannonser → kie.ai → `To be Reviewed`. **Aldrig video.** |
 | `/nattkorning` | Rutinen "Ad upload and structure": Drive-kön → QA → Meta |
 | `/notionkorning` | **Nattrutin 00:01:** redigerarnas leveranser → brief-QA → upp i produktens CBO |
+| `/commission` | **Var tredje dag + månadens sista dag:** godkända Notion-rader → spend i alla annonskonton → 0,4 % till redigeraren |
 
 ### Nattrutinerna
 
@@ -211,6 +212,11 @@ Merga alltid till `main`, annars är rutinen bara schemalagd, inte igång.
 | 05:30 | `30 3 * * *` | Norska recensioner | `/no-recensioner` |
 | 20:00 | `0 18 * * *` | Bildannonser | `/bildannonser` |
 | 00:01 | `1 22 * * *` | Leveransrundan | `/notionkorning` |
+| 06:00 | `0 4 * * *` | Commission | `/commission` |
+
+`/commission` har daglig cron med flit: **skriptet självt avgör** om dagen är
+kördag (den 1, 4, 7 … 28, plus alltid månadens sista dag) och avslutar tyst annars.
+Cron kan inte uttrycka "var tredje dag plus sista dagen" över månadsskiften.
 
 ⚠️ **Cron står i UTC och följer inte sommartid.** Tiderna ovan gäller CEST
 (mars–oktober). Vid vinteromställningen går varje rutin en timme senare svensk
@@ -403,6 +409,25 @@ referensbilder `google/nano-banana-edit` (matchar en Winning Creative).
 namn (`..._4_1` är bild, `..._4_H1` är video) och görs av redigerarna.
 
 ⚠️ **Importera aldrig från `pipeline/` här** — det är Grillklinikens brand kit.
+
+### `commission/` — redigerarnas commission
+Motorn bakom `/commission`. Fristående, **inga npm-beroenden**.
+**Läs-bara mot både Notion och Meta** — den ändrar ingen status och rör inte kontot.
+
+```bash
+node commission/run.mjs --torr                    # räkna och visa, skriv ingen fil
+node commission/run.mjs --jobb <fil.json>         # Notion-raderna från MCP-sessionen
+node commission/run.mjs --manad 2026-07           # räkna om en gången månad
+```
+`berakning.mjs` är ren räknelogik (16 tester), `meta.mjs` läser spend ur **alla**
+annonskonton token:en når, `notion.mjs` läser hubbarna, `run.mjs` skriver
+rapporten till `commission/korningar/<YYYY-MM>/<datum>.md`.
+
+Satsen är 0,4 % och står som `SATS` i `berakning.mjs`. Bara `role: "editor"` i
+`dashboard/data/team.json` får utbetalning — spend på Axels rader, på rader utan
+Ansvarig och på okända Notion-användare redovisas separat som obetald.
+
+⚠️ **Valutor summeras aldrig.** NYC Grill-kontot är i USD, resten i SEK.
 
 ### `pipeline/` — bildannonser (Grillkliniken/Mastern, legacy)
 ⚠️ **Trots mappnamnet är det här inte Bäverbutiken.** `brand.mjs` sätter
