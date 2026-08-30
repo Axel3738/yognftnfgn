@@ -95,7 +95,21 @@ inte röras utan att Axel ber om det.
     `.claude/commands/` och följ den exakt, med texten efter kommandonamnet som
     argument. Kommandona är filer — de fungerar även när klienten inte
     registrerat dem.
-14. **Korta svar.** Inga bibelsvar. Axel har sagt det två gånger.
+14. **Korta svar — Axel har grov dyslexi.** Långa svar gör att han inte kan jobba.
+    Varje svar till honom följer det här, utan undantag:
+    - Första raden säger hur många saker *han* ska göra ("Du ska göra 2 saker.").
+      Ska han inget göra: "Du behöver inte göra något."
+    - Numrera sakerna, max 3 åt gången, fet rubrik på max 4 ord.
+    - En mening per rad, max 10 ord. Aldrig stycken. Ett klick per mening.
+    - Skriv exakt var han ska klicka och vad knappen heter.
+    - Avsluta: "Sen är du klar. Jag har gjort resten."
+    - Hela svaret ska rymmas på en mobilskärm.
+    **Skriv aldrig till honom:** vad du gjorde eller varför, teknisk bakgrund,
+    filnamn, kommandon, kod, testresultat, rättelser av vad han trodde,
+    villkor ("om X, gör Y" — välj åt honom), varningar han inte kan agera på,
+    orden "men", "dock", "notera att".
+    Behöver du veta något: **en** fråga med 2–3 svarsalternativ.
+    Gick något fel: en mening om vad, en mening om vad han ska göra. Inget mer.
 
 ---
 
