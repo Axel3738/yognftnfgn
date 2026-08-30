@@ -618,7 +618,8 @@
   "proofreadId": "48abeac508b64b589437bfb2a7c6f554-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "219ad35b2691441d844000d99e43c2ed-nb"
+  "renderId": "219ad35b2691441d844000d99e43c2ed-nb",
+  "downloaded": true
  },
  "jattefotboll_CS_2": {
   "assetUrl": "https://resource2.heygen.ai/video/3e6be9b700214de5af4d3328553fa335/original.mp4",
@@ -633,7 +634,8 @@
   "proofreadId": "5eebda2fbfe740939f04f6305adf3ece-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "d12e7fd64b3f40d59a63f2c89e4a71c6-nb"
+  "renderId": "d12e7fd64b3f40d59a63f2c89e4a71c6-nb",
+  "downloaded": true
  },
  "jattefotboll_G_1": {
   "assetUrl": "https://resource2.heygen.ai/video/c10fb3ba28524bbb95fffda4d0897f52/original.mp4",
