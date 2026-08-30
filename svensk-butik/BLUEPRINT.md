@@ -256,14 +256,33 @@ Instructions pekar på nya artifacten och **Typ ändrad
 "Video - Pending Approval" → "Guideline"** så raden inte räknas som en
 Bäver-annons i mätningen.
 
+## 8f. Varv 8 (2026-08-30): varumärket blir TWINPILLOW
+
+Axel valde **Twinpillow** som varumärke (kandidater på vägen: "din vän på
+kudde", Tvillingkudden som brand, TwinPet). Avgörandet: varumärket ska funka
+i alla länder på en och samma sajt, och rymma framtida kuddar med människor —
+det klarar inte ett pet-namn. Domänkollen (DNS, 2026-08-30): hela
+twinpillow-familjen ledig **inklusive .com**; twinpet.com var upptagen av en
+djuraffär i Wales. Namnsystemet: brand Twinpillow överallt, produktnamnet är
+den lokala översättningen per marknad — Tvillingkudden (SE), Tvillingpuden
+(DK), Tvillingputen (NO). Känd svaghet: "twin pillow" är en sängstorlek på
+engelska → sökbrus i US/UK, irrelevant i Norden.
+
+Genomfört i repot: SHOPIFY-MANUELLT.md (butiksnamn + domänköp),
+namn-och-rubriker.md (beslutet loggat, kandidaterna arkiverade),
+redigerarmanualen ombrandad + ompublicerad. **Kvar i Shopify** (blockerat:
+connectorn tappade behörigheten vid butiksbyte, Axel måste koppla om den
+till a6k90m-ii/My Store): tema-utkastets namn/texter, Om oss-sidan,
+produktens vendor-fält, ev. brandnamn i sidtexter.
+
 ## 9. Kvarstående — kräver Axel
 
 1. **Publicera temat:** Online Store → Themes →
    "theme-export-matstrumpor-se-matstrumpor-cro-v5" → Publish. Allt innehåll
    är redan omskrivet till Hjärtkompis. (Ett klick — API:t får inte.)
 2. **Butiksnamnet** är fortfarande "My Store" — går inte att byta via API.
-   Settings → Store details → byt till **Hjärtkompis** (verifiera ledig
-   .se-domän; 4 alternativ i `copy/namn-och-rubriker.md`).
+   Settings → Store details → byt till **Twinpillow** (beslut 2026-08-30,
+   se varv 8). Köp **twinpillow.se + twinpillow.com** först.
 3. **Policyerna i kassan** (Refund/Shipping) — API-token saknar
    `write_legal_policies`. Klistra-in-färdiga texter i `SHOPIFY-MANUELLT.md`.
    Innehållet finns redan publikt på Leverans-sidan.

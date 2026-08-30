@@ -4,11 +4,12 @@ Allt nedan gick inte att göra via API:t. Ordningen är prioritetsordning.
 
 ## 0. Publicera temat — ✅ KLART (Axel publicerade 2026-08-29)
 
-## 0b. Publicera "Hjärtkompis v2 (utkast)" (ett klick)
+## 0b. Publicera "Hjärtkompis v4 (utkast)" (ett klick)
 
-Temat duplicerades via API:t (`themeDuplicate`) 2026-08-29 och utkastet
-**"Hjärtkompis v2 (utkast)"** innehåller allt som inte gick att skriva i
-live-temat:
+Temat duplicerades via API:t (`themeDuplicate`) 2026-08-29 och det senaste
+utkastet **"Hjärtkompis v4 (utkast)"** innehåller allt som inte gick att
+skriva i live-temat (v2/v3 är redan publicerade av Axel — v4 lägger till
+VoC-texterna på startsidan + FAQ-sektionen på produktsidan):
 - One-product-startsida: sortiment-sektionen borttagen, båda CTA-knapparna
   går direkt till Tvillingkudden, UGC-bilder i galleriet, berättelse-texten
   rättad till plysch/vit kant.
@@ -24,7 +25,14 @@ temaredigeraren.
 
 ## 1. Byt butiksnamn (Settings → Store details)
 
-Namn: **Hjärtkompis**
+Namn: **Twinpillow** *(Axels beslut 2026-08-30 — ersätter arbetsnamnet
+Hjärtkompis. Motiv: varumärket ska funka i alla länder och även för
+framtida människokuddar; produktnamnet per marknad är den lokala
+översättningen — Tvillingkudden i Sverige.)*
+
+Köp domänerna innan namnet används i annonser: **twinpillow.se** +
+**twinpillow.com** (båda saknade DNS 2026-08-30 — verifiera i registrarens
+sök, domäner kan vara registrerade utan hemsida).
 
 ## 2. Policyer (Settings → Policies)
 

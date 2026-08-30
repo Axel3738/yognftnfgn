@@ -1,6 +1,16 @@
 # Namn och rubriker (sonnet-subagent)
 
-## Brandkandidater
+> **BESLUT 2026-08-30: varumärket heter TWINPILLOW.** Axels val, ersätter
+> arbetsnamnet Hjärtkompis och kandidaterna nedan (som sparas som historik).
+> Motiv: (1) ska funka i alla länder — en sajt, ett varumärke; (2) rymmer
+> framtida människokuddar, vilket "pet"-namn inte gör; (3) hela domänfamiljen
+> saknade DNS 2026-08-30, inklusive twinpillow.com (till skillnad från
+> twinpet.com som är en djuraffär i Wales). Produktnamnet per marknad är den
+> lokala översättningen: **Tvillingkudden** (SE), Tvillingpuden (DK),
+> Tvillingputen (NO). Känd svaghet: "twin pillow" är också en sängstorlek på
+> engelska — brus i organisk sökning på US/UK-marknader, inget problem i Norden.
+
+## Brandkandidater (historik — ersatta av beslutet ovan)
 Fem kandidater (resonemang per namn — ingen domänkontroll gjord, Axel bör verifiera lediga .se-domäner och Bolagsverkets namnregister innan registrering):
 
 1. **Hjärtkompis** — "Kompis" är ordet svenska hundägare redan använder om sina djur ("min bästa kompis"). Namnet lånar kundens eget språk i stället för att uppfinna ett nytt, och kodar hela vinkelbytet (relation, inte present) direkt i varumärket. Ingen känd krock.

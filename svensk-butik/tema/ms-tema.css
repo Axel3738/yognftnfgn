@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ms-tema.css — anpassningslagret mot bastemat (Hjärtkompis-version)
+   ms-tema.css — anpassningslagret mot bastemat (Twinpillow-version)
    --------------------------------------------------------------------------
    ms-cro.css är vårt eget och rör bara .ms-*. Den här filen är den ENDA plats
    där vi rör basetemats egna klasser, och den laddas efter ms-cro.css.
@@ -12,14 +12,14 @@
    Dawn-specifikt. Läs innan du byter bastema.
    ========================================================================== */
 
-/* Hjärtkompis-paletten -------------------------------------------------- */
+/* Twinpillow-paletten -------------------------------------------------- */
 /* ms-cro.css sätter matstrumpors bärnstensorange som fallback-tokens.
    Den här filen laddas sist, så här byts hela accentfamiljen till lila —
    ett ställe, slår igenom i alla .ms-komponenter (USP-rad, marquee,
    paketkort, trustrad, leverans, FAQ-pil, garantikort, sticky-knapp). */
 .ms,
 .ms-scope {
-  --ms-accent: #7c4ec4;           /* lila, Hjärtkompis accent */
+  --ms-accent: #7c4ec4;           /* lila, Twinpillow-accent */
   --ms-accent-dark: #5d38a022;    /* används bara för ytor */
   --ms-accent-ink: #fdfbf7;       /* text ovanpå accent */
   --ms-ring: 0 0 0 3px rgba(124, 78, 196, .32);
