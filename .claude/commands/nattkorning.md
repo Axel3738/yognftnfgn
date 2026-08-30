@@ -77,12 +77,23 @@ alla produktmappar, var de än ligger (Products eller LAUNCHED). Påstå ALDRIG
 att material är oåtkomligt utan att ha provat den publika vägen — connectorns
 sök/åtkomst är inte sanningen för läsning.
 
-## Steg 6 — Slutrapport (svenska, kort)
+## Steg 6 — Slutrapport (mobilformat — Axel läser den som push-notis)
 
-Aktiverat (kampanj-id, BE, budget) · kompletterat · launchat nytt ·
-PAUSED-lämnat med orsak · prisfixar · recensioner importerade · mappflyttar ·
-Slack-status · det lilla som väntar på Axel. Inget nytt och inget att åtgärda
-= "inget nytt i kön", inget mer.
+**FÖRSTA RADEN är hela rapporten för mobilen.** Max 12 ord, börjar med ✅ eller
+⚠️, säger vad som hände och om något väntar på Axel. Exempel:
+
+- `✅ 2 launchade, 7 rullar, inget väntar på dig`
+- `✅ Inget nytt i kön, allt rullar`
+- `⚠️ 1 sak väntar: quote för Bordtennisnätet`
+
+Sedan max 5 korta rader på vanlig svenska: vad som launchades/aktiverades/
+kompletterades (produktnamn + budget, INGA id:n), vad som hoppades över och
+varför, i en mening var. Inga tabeller, inga rubriker, inga tekniska termer.
+Kampanj-id:n och tekniska detaljer läggs allra sist under en enda rad
+"Detaljer:" — den delen är för felsökning, inte för Axel.
+
+Inget nytt och inget att åtgärda = HELA rapporten är en rad:
+`✅ Inget nytt i kön, allt rullar`.
 
 **"Väntar på Axel" är en skyddad rubrik.** Där får BARA stå: leverantörsquotes
 som saknas, riktiga ägarbeslut (pris, budget, ny målnivå), och redigerarfel som
