@@ -122,19 +122,21 @@ Kampanj-id:n och tekniska detaljer läggs allra sist under en enda rad
 Inget nytt och inget att åtgärda = HELA rapporten är en rad:
 `✅ Inget nytt i kön, allt rullar`.
 
-**Briefen skickas ALLTID till Axels Discord efter varje körning** — samma
-text som chattrapporten (inklusive "Detaljer:"-raderna):
+**Briefen skickas ALLTID till Discord-kanalen `#new-products-coing-out`
+efter varje körning** (Axels beslut 2026-08-30). Discord-versionen är den
+ENKLA delen av rapporten: första raden + de max 5 korta raderna — **ALDRIG
+"Detaljer:"-raderna**, de hör hemma i chattrapporten:
 
 ```bash
-node tools/notify-discord.mjs "<hela rapporten>"
+node tools/notify-discord.mjs "<första raden + de korta raderna>"
 ```
 
 Verktyget hittar själv auth i environmentet (bot-token i första hand —
 vilken env-variabel som helst med DISCORD i namnet — annars webhook) och
-skickar till kanalen "mamma jobb". Långa rapporter delas automatiskt.
-Misslyckas skicket (eller saknas auth): nämn det på en rad i
-chattrapporten och fortsätt — Discord-strul får aldrig stoppa körningen
-eller hamna under "Väntar på Axel".
+slår upp kanalen på namnet via boten; hittas den inte används "mamma jobb"
+som reserv. Långa rapporter delas automatiskt. Misslyckas skicket (eller
+saknas auth): nämn det på en rad i chattrapporten och fortsätt —
+Discord-strul får aldrig stoppa körningen eller hamna under "Väntar på Axel".
 
 **"Väntar på Axel" är en skyddad rubrik.** Där får BARA stå: leverantörsquotes
 som saknas, riktiga ägarbeslut (pris, budget, ny målnivå), och redigerarfel som

@@ -15,8 +15,11 @@
 //   2. Webhook — env DISCORD_WEBHOOK_URL (eller en DISCORD-variabel som är en
 //      webhook-URL). Används bara om ingen bot-token finns.
 //
-// Kanal-id:t är inte en hemlighet: "mamma jobb" = 1543546469884362833
-// (läst ur webhooken 2026-08-30). Kan pekas om med env DISCORD_CHANNEL_ID.
+// Kanal (Axels beslut 2026-08-30): briefen går till #new-products-coing-out
+// (stavningen med "coing" är kanalens faktiska namn). Boten slår upp kanal-id:t
+// på namnet i servern (guild 1540322130388983921, läst ur webhooken — inte en
+// hemlighet). Overrides: env DISCORD_CHANNEL_ID (id) eller DISCORD_CHANNEL_NAME.
+// Hittas inte kanalen används "mamma jobb" = 1543546469884362833 som reserv.
 
 import { spawnSync } from 'node:child_process';
 if (process.env.HTTPS_PROXY && process.env.NODE_USE_ENV_PROXY !== '1') {
@@ -26,7 +29,30 @@ if (process.env.HTTPS_PROXY && process.env.NODE_USE_ENV_PROXY !== '1') {
   process.exit(r.status ?? 1);
 }
 
-const KANAL = process.env.DISCORD_CHANNEL_ID || '1543546469884362833';
+const GUILD = '1540322130388983921';
+const KANALNAMN = (process.env.DISCORD_CHANNEL_NAME || 'new-products-coing-out').replace(/^#/, '');
+const RESERVKANAL = '1543546469884362833'; // "mamma jobb"
+
+async function hittaKanal(token) {
+  if (process.env.DISCORD_CHANNEL_ID) return process.env.DISCORD_CHANNEL_ID;
+  try {
+    const r = await fetch(`https://discord.com/api/v10/guilds/${GUILD}/channels`, {
+      headers: { Authorization: `Bot ${token}` },
+    });
+    if (r.ok) {
+      const kanaler = (await r.json()).filter(k => k.type === 0);
+      const träff = kanaler.find(k => k.name === KANALNAMN)
+        || kanaler.find(k => k.name.startsWith('new-products'));
+      if (träff) return träff.id;
+      console.error(`Hittade ingen kanal "${KANALNAMN}" i servern — skickar till reservkanalen.`);
+    } else {
+      console.error(`Kunde inte lista kanaler (${r.status}) — skickar till reservkanalen.`);
+    }
+  } catch (e) {
+    console.error(`Kanaluppslag misslyckades (${e.message}) — skickar till reservkanalen.`);
+  }
+  return RESERVKANAL;
+}
 
 function hittaAuth() {
   const env = process.env;
@@ -67,6 +93,7 @@ for (const line of text.split('\n')) {
 if (cur) parts.push(cur);
 
 const viaBot = auth.typ === 'bot';
+const KANAL = viaBot ? await hittaKanal(auth.token) : null;
 const mål = viaBot ? `https://discord.com/api/v10/channels/${KANAL}/messages` : auth.url;
 const huvuden = viaBot
   ? { 'Content-Type': 'application/json', Authorization: `Bot ${auth.token}` }
