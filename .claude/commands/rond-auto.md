@@ -173,18 +173,19 @@ länge produkterna är ≤6 — blir de fler: säg till Axel att cykeln inte gå
   ALDRIG schemat via create-database — då blir statusarna svenska
   (Inte påbörjad/Pågår/Klar) och hubben hamnar utanför teamspacen. Fel båda
   gångerna det testades 2026-08-29. Gör i stället:
-  1. Duplicera den TOMMA mallen med notion-duplicate-page — sök i Notion på
-     **"Creative Hub mall TOM"** (Axel skapar den; ligger i
-     Bäverbutiken-teamspacen). Dubbletten ärver engelska statusar (Draft,
-     In progress, In progress 2, Approved …), alla vyer OCH teamspace-platsen.
+  1. Duplicera den TOMMA mallen **"Creative hub MALL"**
+     (id `3cc270ab-908c-8005-a50e-db6b1b179794`, Axels mall i
+     Bäverbutiken-teamspacen) med notion-duplicate-page. Dubbletten ärver
+     engelska statusar (Draft, In progress, In progress 2, Approved …), alla
+     vyer OCH teamspace-platsen. Verifierat 2026-08-30.
   2. Dupliceringen är asynkron — vänta och hämta om tills databasen finns,
      döp sedan om via notion-update-data-source till
      "<Produktnamn på engelska> creative hub".
-  3. Skapa items med notion-create-pages (Status "Draft",
-     Typ "Video - Pending Approval").
-  Finns mallen inte (sökningen ger noll): skapa INGEN hub — lista i svaret
-  exakt vilka items som skulle skapats och be Axel skapa mallen (duplicera
-  Creative Hub master utan innehåll, döp den "Creative Hub mall TOM").
+  3. Skapa items med notion-create-pages: Status "Draft",
+     Typ **"Video - Pending Approval"** för video och
+     **"Image - Pending Approval"** för bildannonser (Axels nya typ i mallen).
+  Går mallen inte att hitta: skapa INGEN hub — lista i svaret exakt vilka
+  items som skulle skapats och säg det till Axel.
   **ALLT som skrivs i Notion är på ENGELSKA** — itemnamn, statusar, innehåll,
   kommentarer. Redigerarna läser inte svenska.
   Anteckna hubbens id + Drive-mappens id i `agent/produktkarta.json`.

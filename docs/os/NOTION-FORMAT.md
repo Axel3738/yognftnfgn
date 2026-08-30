@@ -1,10 +1,14 @@
 # Notion-formatet för briefer — gäller ALLA produkter, alltid likadant
 
-Varje produkt har en egen Notion-databas (samma mall för alla produkter) med
-flikarna **Guidelines & SOPs** och **Pending Approval**. Exempel som finns idag:
-**"Boat cover 420D creative hub"** (Motorhöljet). Sök på produktnamnet i Notion
-för att hitta rätt databas.
-Brieferna ligger som items i Pending Approval-vyn.
+Varje produkt har en egen Notion-databas med flikarna **Guidelines & SOPs**
+och **Pending Approval**. Sök på produktnamnet i Notion för att hitta rätt
+databas. Brieferna ligger som items i Pending Approval-vyn.
+
+**Ny hub skapas ALDRIG från grunden:** duplicera den tomma mallen
+**"Creative hub MALL"** (`3cc270ab-908c-8005-a50e-db6b1b179794`) — den bär
+engelska statusar, alla vyer och teamspace-platsen. Full procedur i
+`/rond-auto` steg 4b. **Allt som skrivs i Notion är på engelska** —
+redigerarna läser inte svenska.
 
 ## Varje annons = ETT item, exakt så här
 
@@ -12,7 +16,7 @@ Brieferna ligger som items i Pending Approval-vyn.
 |------|-------|
 | **Namn** | Annonsnamnet exakt enligt naming-strukturen, t.ex. `Enginecover_SP_6_H1` |
 | **Status** | `Draft` |
-| **Tag** | `Video - Pending Approval` — **ALLTID denna tag, även för bildannonser** |
+| **Tag** | `Video - Pending Approval` för video, `Image - Pending Approval` för bild (Axels mall 2026-08-30). ⚠️ ÄLDRE hubbar saknar Image-typen — där används `Video - Pending Approval` för allt, precis som förr |
 | **Innehåll** | Hela briefen ska vara tillgänglig inne i itemet: klistra in briefen som sidinnehåll OCH länka till brief-filen i Drive (editor-behörighet) |
 | Produkt / Batch | Ifyllt |
 | Deadline / Ansvarig redigerare | Lämnas tomt (sätts av managern) |
