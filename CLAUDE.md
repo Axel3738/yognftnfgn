@@ -506,6 +506,7 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 |---|---|
 | `pipeline/ads.mjs`, `meta.mjs` | Laddar upp creatives till Meta som **PAUSED** |
 | `tools/leveranskon.mjs` | Vad redigerarna levererat i Drive som ännu inte finns i kontot (kön för `/notionkorning`) |
+| `tools/qa-frames.py` | Drar frames ur en levererad video (tätt i hooken) så briefkontrollen går att göra på riktigt |
 | `tools/notion-klara.mjs` | Läser creative-hubbarna via Notions REST API (`NOTION_TOKEN`) — reservväg när MCP:n saknas |
 | `tools/notion-till-meta.mjs` | Laddar upp EN godkänd creative i produktens CBO, med spärrar mot fel konto och mot att röra avstängt |
 | `pipeline/batch.mjs`, `multi-batch.mjs`, `uk-wave.mjs`, `mastern-batch.mjs` | ⚠️ Laddar **inte** upp som PAUSED — se regeln under "Saker som är lätta att göra fel" |
@@ -581,6 +582,14 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   mobbningsverktyg i stället för ett styrverktyg.
 - **Färgordningen i diagrammen är en färgblindhetsmekanism, inte dekoration.**
   Rotera den inte. Status bärs alltid av ikon **och** text, aldrig färg ensam.
+- **Rutinerna täcker HELA Bäverbutiken, inte en fast produktlista.** Nya produkter
+  tillkommer ständigt i teamspacet och i annonskontot (63 kampanjer, 46
+  annonsprefix per 2026-08-30 — mot 6 produkter i `products.json`). En rutin som
+  hårdkodar produkter missar nya leveranser **tyst**. `/notionkorning` härleder
+  därför kopplingen leverans → kampanj ur kontot självt: annonsprefixet i namnet
+  slås upp mot kampanjen som redan har annonser med samma prefix
+  (`Rodholder_` → Fiskespöhållaren). `creative_prefix` i `products.json` är bara
+  en override för de fyra skalningsprodukterna. Bygg aldrig tillbaka en fast lista.
 - **Notion-anropen stryps till ~3/s.** Ett par hundra sidor tar några minuter.
   Det är normalt, inte en hängning.
 - **Språk:** allt i repot skrivs på svenska — kod, kommentarer, commit-meddelanden.
