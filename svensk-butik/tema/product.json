@@ -28,7 +28,7 @@
         "ms_trust": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{% render 'ms-trust-row', items: 'truck:Fri frakt i Sverige|refresh:Omsys om den blir fel|lock:Trygg betalning' %}"
+            "custom_liquid": "{% render 'ms-trust-row', items: 'truck:Fri frakt i hela Norden|refresh:Omsys om den blir fel|lock:Trygg betalning' %}"
           }
         },
         "ms_delivery": {

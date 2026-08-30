@@ -63,9 +63,13 @@ sök, domäner kan vara registrerade utan hemsida).
 > Så snart du godkänt ditt digitala utkast påbörjas sömnaden.
 >
 > - **Leveranstid:** 8–12 arbetsdagar från godkänt utkast till leverans.
-> - **Fraktkostnad:** fri frakt i hela Sverige.
+> - **Fraktkostnad:** fri frakt i hela Norden — Sverige, Norge, Danmark,
+>   Finland och Island.
 > - **Leverans:** spårbar leverans till utlämningsställe eller paketbox nära
 >   dig. Du får avisering när paketet är på väg.
+> - **Norge och Island:** lokal moms och eventuella hanteringsavgifter kan
+>   tillkomma vid införsel — de tas i så fall ut av transportören vid
+>   leverans, inte av oss.
 >
 > Blir något försenat hör vi av oss — du ska aldrig behöva jaga oss för att
 > få veta var din kudde är.

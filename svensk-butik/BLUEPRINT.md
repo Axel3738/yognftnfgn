@@ -278,6 +278,39 @@ till "Twinpillow v4 (utkast)". Live-temat v3 behåller sitt gamla namn
 (API:t rör inte MAIN; namnet försvinner när v4 publiceras).
 Butiksnamnfältet ("My Store") återstår — bara Axel kommer åt det.
 
+## 8g. Varv 9 (2026-08-30): nordisk positionering
+
+Axels beslut: positionera Twinpillow som **svenskt varumärke som levererar
+till hela Norden**, tydligt på hemsidan (särskilt startsidan). Regeln som
+styrde genomförandet: flaggorna får bara visas om kassan faktiskt tar emot
+länderna — annars är det ett falskt löfte av precis den sort varumärket
+lovar att aldrig ge.
+
+- **Frakt:** ny zon "Norden" (NO, DK, FI, IS) med fri frakt i
+  leveransprofilen, bredvid Sverige-zonen. Samtidigt raderades två trasiga
+  rester från butiksmallen: "Domestic" som i själva verket var **Norge** i
+  NOK (75/0 kr + Ekspress 99 NOK) och "International" (USA, Japan m.fl. för
+  180 NOK). Butiken säljer nu till exakt Norden, inget annat.
+- **Tema v4:** ny sektion `norden_flaggor` direkt under USP-raden —
+  "Svenskt varumärke · Vi levererar till hela Norden" + alla fem nordiska
+  flaggor som inline-SVG (emoji-flaggor visas som bokstäver på Windows).
+  USP-raden, marqueen (+ "Svenskt varumärke"), trygghetstexten och
+  produktsidans trustrad bytta från "Sverige" till "Norden".
+- **Sidorna:** Leverans och retur + Vanliga frågor uppdaterade (fri frakt i
+  hela Norden, ny FAQ-fråga "Skickar ni till hela Norden?"), inklusive den
+  ärliga raden om att Norge/Island kan få lokal moms/hanteringsavgift vid
+  införsel. Utkastprodukternas beskrivningar likaså.
+
+⚠️ **Kända begränsningar (medvetna, inte glömda):**
+1. **Norge/Island = tull.** Utan norsk VOEC-registrering betalar norska
+   kunder moms + avgift vid dörren. Sajten säger det ärligt, men
+   **annonsera inte i NO/IS** förrän VOEC är löst — kör SE (+ DK/FI som är
+   EU) först.
+2. **Valutan är SEK för alla.** Shopify Markets med DKK/NOK/EUR är nästa
+   steg, inte gjort.
+3. **Sajten är på svenska.** Funkar i SE, hyfsat i NO/DK, inte i FI —
+   Markets + översättning enligt expansionsplanen i varv 8-diskussionen.
+
 ## 9. Kvarstående — kräver Axel
 
 1. **Publicera temat:** Online Store → Themes →

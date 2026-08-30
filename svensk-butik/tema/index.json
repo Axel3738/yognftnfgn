@@ -51,13 +51,22 @@
     "ms_usp": {
       "type": "ms-usp-bar",
       "settings": {
-        "items": "truck:Fri frakt i hela Sverige|check-circle:Godkänn utkastet innan vi syr|lock:Trygg betalning med Klarna eller kort"
+        "items": "truck:Fri frakt i hela Norden|check-circle:Godkänn utkastet innan vi syr|lock:Trygg betalning med Klarna eller kort"
+      }
+    },
+    "norden_flaggor": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div style='text-align:center;padding:26px 16px 6px'><p style='margin:0 0 12px;font-size:1.3rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(18,18,18,.6)'>Svenskt varumärke · Vi levererar till hela Norden</p><div style='display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap'><svg width='36' height='26' viewBox='0 0 36 26' role='img' aria-label='Sverige' style='border-radius:4px;box-shadow:0 0 0 1px rgba(18,18,18,.1)'><rect width='36' height='26' fill='#006AA7'/><rect x='11' width='5' height='26' fill='#FECC00'/><rect y='10.5' width='36' height='5' fill='#FECC00'/></svg><svg width='36' height='26' viewBox='0 0 36 26' role='img' aria-label='Norge' style='border-radius:4px;box-shadow:0 0 0 1px rgba(18,18,18,.1)'><rect width='36' height='26' fill='#BA0C2F'/><rect x='10' width='7' height='26' fill='#FFFFFF'/><rect y='9.5' width='36' height='7' fill='#FFFFFF'/><rect x='12' width='3' height='26' fill='#00205B'/><rect y='11.5' width='36' height='3' fill='#00205B'/></svg><svg width='36' height='26' viewBox='0 0 36 26' role='img' aria-label='Danmark' style='border-radius:4px;box-shadow:0 0 0 1px rgba(18,18,18,.1)'><rect width='36' height='26' fill='#C8102E'/><rect x='11' width='5' height='26' fill='#FFFFFF'/><rect y='10.5' width='36' height='5' fill='#FFFFFF'/></svg><svg width='36' height='26' viewBox='0 0 36 26' role='img' aria-label='Finland' style='border-radius:4px;box-shadow:0 0 0 1px rgba(18,18,18,.1)'><rect width='36' height='26' fill='#FFFFFF'/><rect x='10' width='6' height='26' fill='#002F6C'/><rect y='10' width='36' height='6' fill='#002F6C'/></svg><svg width='36' height='26' viewBox='0 0 36 26' role='img' aria-label='Island' style='border-radius:4px;box-shadow:0 0 0 1px rgba(18,18,18,.1)'><rect width='36' height='26' fill='#02529C'/><rect x='10' width='7' height='26' fill='#FFFFFF'/><rect y='9.5' width='36' height='7' fill='#FFFFFF'/><rect x='12' width='3' height='26' fill='#DC1E35'/><rect y='11.5' width='36' height='3' fill='#DC1E35'/></svg></div></div>",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "ms_marquee": {
       "type": "ms-marquee",
       "settings": {
-        "items": "Sydd efter din bild|Fri frakt i hela Sverige|Du godkänner utkastet innan vi syr|Omsys utan kostnad om den blir fel",
+        "items": "Svenskt varumärke|Sydd efter din bild|Fri frakt i hela Norden|Du godkänner utkastet innan vi syr|Omsys utan kostnad om den blir fel",
         "speed": 26,
         "background": "#7C4EC4",
         "text_color": "#FDFBF7"
@@ -259,7 +268,7 @@
         "t": {
           "type": "text",
           "settings": {
-            "text": "<p>Du ser och godkänner ett digitalt utkast innan vi syr en enda söm. Är kudden inte lik utkastet syr vi om den utan kostnad – ingen diskussion, ingen extra avgift.</p><p>Betala tryggt med Klarna eller kort, och få kudden hemburen med fri, spårbar frakt var du än bor i Sverige.</p>",
+            "text": "<p>Du ser och godkänner ett digitalt utkast innan vi syr en enda söm. Är kudden inte lik utkastet syr vi om den utan kostnad – ingen diskussion, ingen extra avgift.</p><p>Betala tryggt med Klarna eller kort, och få kudden hemburen med fri, spårbar frakt var du än bor i Norden.</p>",
             "text_style": "body"
           }
         }
@@ -330,6 +339,7 @@
   "order": [
     "hero",
     "ms_usp",
+    "norden_flaggor",
     "ms_marquee",
     "produkt",
     "berattelse",
