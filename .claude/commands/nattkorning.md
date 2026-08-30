@@ -41,6 +41,14 @@ PAUSED-orsaker som alltid respekteras: BE ROAS TBC (får aldrig aktiveras),
 QA-stoppfel på enskilda annonser. Metas API tvångspausar vid budget-/
 strukturändringar — verifiera med tillbakaläsning efter varje aktivering.
 
+**Nödbroms:** vill svepet aktivera fler kampanjer än körningen själv skapade
+i steg 3 plus TVÅ till — avbryt HELA svepet utan att röra något och skriv i
+rapporten exakt vilka kampanjer det ville aktivera och varför. Ett svep som
+"hittar" många kandidater är per definition trasigt. Dessutom: VARJE
+statusändring körningen gör (aktivering och pausning, alla nivåer) listas
+med namn + gammal→ny status under "Detaljer:" i slutrapporten, så att Axel
+alltid kan se på morgonen exakt vad som slogs på och av.
+
 ## Steg 2 — Komplettera halvbyggda kampanjer
 
 Kampanjer med saknade koncept-adsets eller utan annonser (Metas uppladdning
