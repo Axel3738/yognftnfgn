@@ -11,16 +11,24 @@ förväntat och irrelevant. CS OS:ets commit-regler i CLAUDE.md gäller
 /cs-flödet, inte nattkörningen. Läs sedan: `docs/temu-launch-flow.md` och
 `.claude/commands/launch.md` — launch.md är facit för varje produktkörning.
 
-## Steg 1 — Aktiveringssvep
+## Steg 1 — Aktiveringssvep (HÅRT AVGRÄNSAT — läs varje ord)
 
-Hämta alla kampanjer i MagiBorsten (`1867947880635861`, SEK) skapade av det
-här flödet (namnformat `| BE ROAS ... | Launch ...`). Varje kampanj som står
-PAUSED **utan giltig orsak** aktiveras uppifrån och ner (kampanj → adsets →
-annonser — varje nivå explicit). Giltiga orsaker att förbli PAUSED:
-- break-even okänd (`BE ROAS TBC`) — får ALDRIG aktiveras
-- enskilda annonser med QA-stoppfel (stavfel, styckprisfel, fel produktnamn)
-Metas API tvångspausar kampanjer vid budget-/strukturändringar — verifiera
-med tillbakaläsning efter varje aktivering.
+**Svepet gäller ENBART kampanjer som DENNA körning själv skapat i steg 3,
+plus kampanjer vars Launch-datum i namnet är DAGENS datum.** Ingenting annat.
+
+**En äldre kampanj som står PAUSED är PAUSAD FÖR ATT AXEL VILL DET.**
+Olönsamma produkter pausas manuellt — det syns inte i någon metadata, så
+rutinen kan inte skilja "tvångspausad av API" från "avstängd med flit" på
+gamla kampanjer. Därför: **rör ALDRIG status på en kampanj med äldre
+Launch-datum än i dag.** Inte "aktivera tillbaka", inte "den ser halvfärdig
+ut", inget. (Detta hände 2026-08-29: en för bred svepregel slog på nio gamla
+manuellt pausade kampanjer, flera olönsamma. Det får aldrig hända igen.)
+
+För dagens kampanjer gäller som förut: aktivera uppifrån och ner (kampanj →
+adsets → annonser, varje nivå explicit) när QA är grön. PAUSED-orsaker som
+alltid respekteras: BE ROAS TBC (får aldrig aktiveras), QA-stoppfel på
+enskilda annonser. Metas API tvångspausar vid budget-/strukturändringar —
+verifiera med tillbakaläsning efter varje aktivering av DAGENS kampanjer.
 
 ## Steg 2 — Komplettera halvbyggda kampanjer
 
