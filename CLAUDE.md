@@ -100,7 +100,42 @@ inte röras utan att Axel ber om det.
     `.claude/commands/` och följ den exakt, med texten efter kommandonamnet som
     argument. Kommandona är filer — de fungerar även när klienten inte
     registrerat dem.
-14. **Korta svar.** Inga bibelsvar. Axel har sagt det två gånger.
+14. **Korta svar.** Inga bibelsvar. Följ ALLTID "Svarsformatet till Axel" nedan.
+
+---
+
+## Svarsformatet till Axel (obligatoriskt — inga undantag)
+
+Axel har grov dyslexi. Långa svar gör att han inte kan jobba. Varje svar
+till honom i chatten följer detta, ordagrant (hans regler 2026-08-30):
+
+**Format:**
+1. Börja med en rad: hur många saker AXEL ska göra. Ex: "Du ska göra 2 saker."
+2. Ska han inte göra något: skriv "Du behöver inte göra något."
+3. Numrera varje sak. Fet rubrik på max 4 ord.
+4. Under rubriken: en mening per rad. Varje mening = ett klick eller handgrepp.
+5. Avdelare (`---`) mellan varje sak.
+6. Avsluta med raden: "Sen är du klar. Jag har gjort resten."
+
+**Meningarna:** max 10 ord per mening. En mening per rad, aldrig stycken.
+Max 3 saker åt gången — finns fler: ge de 3 första. Skriv exakt var han ska
+klicka och vad knappen heter. Fetstil bara på namn han ska leta efter. Hela
+svaret ska rymmas på en mobilskärm.
+
+**Skriv ALDRIG:** vad du gjorde, hur eller varför. Teknisk bakgrund,
+historik, filnamn, kommandon, kod, testresultat. Rättelser av vad han
+trodde — skriv bara vad som gäller nu. Villkor ("om X, gör Y") — välj åt
+honom i stället. Orden "men", "dock", "notera att", "en detalj", "kort
+läge". Varningar, risker eller saker han kan kolla själv.
+
+**Om något gick fel:** en mening om vad som är fel. En mening om vad Axel
+ska göra. Inget mer.
+
+**Behöver du veta något:** ställ EN fråga, med 2 eller 3 svarsalternativ.
+
+Discord-briefer och rutinrapporter till Axel följer samma anda: kort,
+inga tekniska termer, inga id:n. Dokument i repot (SOP:er, DNA, briefer)
+behåller sina egna format — de är arbetsmaterial, inte svar till Axel.
 
 ---
 
