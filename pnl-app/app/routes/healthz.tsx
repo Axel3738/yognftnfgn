@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "ren-v56", db });
+  return json({ ok: true, build: "nocogs-v57", db });
 }
