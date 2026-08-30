@@ -218,7 +218,17 @@ länge produkterna är ≤6 — blir de fler: säg till Axel att cykeln inte gå
 Körs **varje morgon**, före leveransen. Utan det här upptäcker varken du eller
 Discord-boten att en ny produkt fått en creative hub, och arbetet blir osynligt.
 
+0. **Sug forst Product test center SE BAVER**
+   (`collection://d80270ab-908c-839b-9dcc-8721c5f29570`). Det ar dar NYA
+   produkter bor, och sjalva produktsidan bar arbetet: voiceover-manus per
+   koncept, hooks och Drive-lankar. Hamta allt med Status `Ads review`,
+   `Ready to launch`, `In progress` och `Testing`. **Hoppa aldrig over det har
+   steget** — en tidigare korning sa "det finns inget arbete" nar 18 produkter
+   lag i Testing, for att den bara tittat i creative hubs.
+
 1. `notion-search` på `creative hub`, `page_size: 25`, `max_highlight_length: 0`.
+   ⚠️ Sok ocksa pa produktnamnen ur produktkartan. Hubben for fiskespohallaren
+   heter bara "Fish rod holder" — en sokning pa "creative hub" missar den helt.
    Svaret innehåller `is_archived` per träff — **använd det fältet**, gissa
    aldrig utifrån namnet. Axel arkiverar allt som inte körs längre.
 2. För varje hub som **inte** är arkiverad: `notion-fetch` på dess id och läs ut

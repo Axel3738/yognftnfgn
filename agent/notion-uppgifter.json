@@ -1,62 +1,91 @@
 {
-  "kommentar": "Vad som faktiskt ska produceras, hamtat ur Notions creative hubs. Det har ar sanningen om arbetet - dashboard/data/tasks.json ar en gammal ogiltig ogonblicksbild av produkter som inte kors langre.",
-  "sa_lases_den": "Draft = briefen finns, ingen har borjat. Det ar de annonserna som ska goras. Bara rader med Typ 'Video - Pending Approval' eller 'Image - Pending Approval' ar annonser - Guideline, SOP, Feedback och Winning Creative ar dokumentation och raknas aldrig. Filtrera pa inkludering, aldrig pa uteslutning.",
+  "kommentar": "Var arbetet finns i Notion. Det ligger i TVA databaser, inte en - det ar den vanligaste missen och den far en att svara 'det finns inget arbete' nar det finns massor.",
+
+  "VARNING_LAS_DETTA_FORST": "Hittar du inget i en databas betyder det INTE att det inte finns arbete. Det betyder att du letat pa ett stalle. Sag alltid VILKA kallor du kollat, och foresla den du inte kollat. Pasta aldrig att nagot inte finns.",
+
   "uppdaterad": "2026-08-30",
-  "kalla": "Notion MCP, direktfraga mot varje hubs data source",
-  "VARNING_FARSKHET": "Det har ar en ogonblicksbild. Notion andras hela tiden. Ar uppdaterad-datumet mer an nagra dagar gammalt: sag det rakt ut och hamta om ur Notion i stallet for att svara pa gammal data.",
+  "kalla": "Notion MCP, direktfragor mot bada databasernas data sources",
+  "VARNING_FARSKHET": "Ogonblicksbild. Notion andras hela tiden. Ar uppdaterad mer an nagra dagar gammalt: sag det och hamta om.",
 
-  "hubbar_levande": [
-    {
-      "namn": "Belt grinder creative hub",
-      "produkt": "Balteslipmaskinen",
-      "notion_id": "3cc270ab-908c-813c-94fa-d90daa9bf776",
-      "collection": "collection://a1d270ab-908c-82e2-b3be-07b523257509"
+  "databas_1_product_test_center": {
+    "namn": "Product test center SE BÄVER",
+    "collection": "collection://d80270ab-908c-839b-9dcc-8721c5f29570",
+    "vad_den_ar": "HAR bor nya produkter. Varje rad ar en produkt, och sjalva SIDAN innehaller arbetet: voiceover-manus per koncept (DEMO, SOCIAL PROOF, CLEARANCE, GIFT), hook-alternativ, Drive-lank till fardiga annonser och lank till produktsidan. Kolla ALLTID har for nya produkter innan du sager att nagot saknas.",
+    "egna_statusar": {
+      "Testing": "Produkten testas just nu. 18 st - det ar de levande kampanjerna.",
+      "Ads review": "Vantar pa Axels granskning.",
+      "Ready to launch": "Klar att launcha.",
+      "In progress": "Arbete pagar.",
+      "Continue to scale": "Bevisad vinnare som skalas.",
+      "Has gotten over 2000 sek spend": "Passerat domgransen.",
+      "Products": "Produktbiblioteket, inte aktivt arbete."
     },
-    {
-      "namn": "Kranskydd Frost 420D creative hub",
-      "produkt": "Kranskydd Frost 420D",
-      "notion_id": "3cc270ab-908c-8179-bde9-d11a87ed06fb",
-      "collection": "collection://088270ab-908c-8269-bd9d-87564d1dc9b6"
-    },
-    {
-      "namn": "Fish rod holder",
-      "produkt": "Fiskespohallaren",
-      "notion_id": "3c3270ab-908c-80f8-824d-eed3c4aa94e1",
-      "collection": "collection://3c3270ab-908c-8356-ad6c-87ff779e647d"
-    }
-  ],
+    "vantar_pa_axel": [
+      { "namn": "Bordtennisnät Infällbart", "status": "Ads review" },
+      { "namn": "Kamouflagetejp 3-pack", "status": "Ads review" }
+    ],
+    "i_testing": [
+      "Anti freeze cover for water tap", "Badshorts med Skämttryck", "Boxboll",
+      "Bälteslipmaskin Mini 3-i-1", "Båtmotorskydd 420D", "Cykelshorts Herr",
+      "Damasker Vandring", "Dörrbottensäkringsremsor", "Första hjälpen kit",
+      "Gravstenspenna", "IBC-tanköverdrag", "Jättefotboll",
+      "Linupprullare Aluminium", "Motorcycle cover", "Plyschtofflor Herr",
+      "Smiley face trash can stickers", "Vandringskängor Herr",
+      "Övervakningskamera Trådlös"
+    ]
+  },
 
-  "hubbar_arkiverade": [
-    "Beach crocs creative hub (strandtofflorna)",
-    "Mower seat creative hub (satesoverdragaren)",
-    "Trimmer belt creative hub (axelbaltet)",
-    "Boat cover 420D creative hub"
-  ],
-  "arkiveringsnot": "Notion satter sjalv is_archived pa sokresultatet. Axel arkiverar allt som inte kors langre. Las ALDRIG en arkiverad hub som arbete som ska goras.",
+  "databas_2_creative_hubs": {
+    "vad_de_ar": "En hub per produkt som gatt vidare fran testcentret. Har ligger de enskilda annonserna som briefer.",
+    "sa_lases_de": "Bara Typ 'Video - Pending Approval' eller 'Image - Pending Approval' ar annonser. Guideline, SOP, Feedback och Winning Creative ar dokumentation. Filtrera pa INKLUDERING, aldrig uteslutning. Draft = briefen finns, ingen har borjat.",
+    "levande": [
+      {
+        "namn": "Belt grinder creative hub",
+        "produkt": "Balteslipmaskinen",
+        "collection": "collection://a1d270ab-908c-82e2-b3be-07b523257509",
+        "drafts": 6
+      },
+      {
+        "namn": "Kranskydd Frost 420D creative hub",
+        "produkt": "Kranskydd Frost 420D",
+        "collection": "collection://088270ab-908c-8269-bd9d-87564d1dc9b6",
+        "drafts": 6
+      },
+      {
+        "namn": "Fish rod holder",
+        "produkt": "Fiskespohallaren",
+        "collection": "collection://3c3270ab-908c-8356-ad6c-87ff779e647d",
+        "drafts": 0,
+        "not": "48 rader, alla Approved."
+      }
+    ],
+    "arkiverade": [
+      "Beach crocs (strandtofflorna)", "Mower seat (satesoverdragaren)",
+      "Trimmer belt (axelbaltet)", "Boat cover 420D"
+    ],
+    "sok_tips": "Sok ALDRIG bara pa 'creative hub'. Hubben for fiskespohallaren heter bara 'Fish rod holder' och missas da helt. Sok aven pa produktnamnet, och las is_archived ur sokresultatet i stallet for att gissa pa namnet.",
+    "drafts": [
+      { "namn": "Beltgrinder_PD_4_H1", "produkt": "Balteslipmaskinen", "typ": "Video" },
+      { "namn": "Beltgrinder_PD_5_H1", "produkt": "Balteslipmaskinen", "typ": "Video" },
+      { "namn": "Beltgrinder_SP_4_H1", "produkt": "Balteslipmaskinen", "typ": "Video" },
+      { "namn": "Beltgrinder_PD_4_1", "produkt": "Balteslipmaskinen", "typ": "Bild" },
+      { "namn": "Beltgrinder_PD_5_1", "produkt": "Balteslipmaskinen", "typ": "Bild" },
+      { "namn": "Beltgrinder_SO_4_1", "produkt": "Balteslipmaskinen", "typ": "Bild" },
+      { "namn": "Kranskydd_SP_3_H1", "produkt": "Kranskydd Frost 420D", "typ": "Video", "prioritet": "High" },
+      { "namn": "Kranskydd_CI_1_H1", "produkt": "Kranskydd Frost 420D", "typ": "Video" },
+      { "namn": "Kranskydd_UG_1_H1", "produkt": "Kranskydd Frost 420D", "typ": "Video" },
+      { "namn": "Kranskydd_CI_1_1", "produkt": "Kranskydd Frost 420D", "typ": "Bild" },
+      { "namn": "Kranskydd_PD_3_1", "produkt": "Kranskydd Frost 420D", "typ": "Bild" },
+      { "namn": "Kranskydd_SP_3_1", "produkt": "Kranskydd Frost 420D", "typ": "Bild" }
+    ]
+  },
 
-  "drafts": [
-    { "namn": "Beltgrinder_PD_4_H1", "produkt": "Balteslipmaskinen", "typ": "Video", "prioritet": null },
-    { "namn": "Beltgrinder_PD_5_H1", "produkt": "Balteslipmaskinen", "typ": "Video", "prioritet": null },
-    { "namn": "Beltgrinder_SP_4_H1", "produkt": "Balteslipmaskinen", "typ": "Video", "prioritet": null },
-    { "namn": "Beltgrinder_PD_4_1", "produkt": "Balteslipmaskinen", "typ": "Bild", "prioritet": null },
-    { "namn": "Beltgrinder_PD_5_1", "produkt": "Balteslipmaskinen", "typ": "Bild", "prioritet": null },
-    { "namn": "Beltgrinder_SO_4_1", "produkt": "Balteslipmaskinen", "typ": "Bild", "prioritet": null },
-
-    { "namn": "Kranskydd_SP_3_H1", "produkt": "Kranskydd Frost 420D", "typ": "Video", "prioritet": "High" },
-    { "namn": "Kranskydd_CI_1_H1", "produkt": "Kranskydd Frost 420D", "typ": "Video", "prioritet": "Medium" },
-    { "namn": "Kranskydd_UG_1_H1", "produkt": "Kranskydd Frost 420D", "typ": "Video", "prioritet": "Medium" },
-    { "namn": "Kranskydd_CI_1_1", "produkt": "Kranskydd Frost 420D", "typ": "Bild", "prioritet": "Medium" },
-    { "namn": "Kranskydd_PD_3_1", "produkt": "Kranskydd Frost 420D", "typ": "Bild", "prioritet": "Medium" },
-    { "namn": "Kranskydd_SP_3_1", "produkt": "Kranskydd Frost 420D", "typ": "Bild", "prioritet": "Medium" }
-  ],
-
-  "inga_drafts": [
-    "Fiskespohallaren: 48 annonser i hubben, alla Approved. Ingenting att gora dar just nu."
-  ],
+  "dod_data": "dashboard/data/tasks.json ar fran 2026-08-06 och varenda rad tillhor produkter som inte kors langre. Anvand den aldrig for att svara om arbete.",
 
   "arbetsfordelning": {
     "Video": "Jasper",
     "Bild": "Det separata Claude-kontot",
+    "Nya produkter": "Josh och Annabelle",
     "kalla": "Axels besked 2026-08-30"
   }
 }
