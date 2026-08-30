@@ -36,9 +36,12 @@ Två undantag där en befintlig kampanj ÄR åtgärdbar:
 1. **Halvbyggd** (kampanjen saknar annonser, t.ex. för att Metas uppladdning
    var otillgänglig): komplettera den med annonserna i stället för att hoppa
    över — försök uppladdningen igen.
-2. **PAUSED utan aktiveringsbeslut** (launchad av en äldre körning innan
-   aktiveringsreglerna, aldrig QA-bedömd för aktivering): gör QA på produktens
-   creatives och aktivera enligt aktiveringsreglerna i fas 3.
+2. **PAUSED som aldrig kommit igång** (launchad av en äldre körning, aldrig
+   QA-bedömd för aktivering — och lifetime-spend är exakt 0 kr, verifierat
+   mot insights INNAN status rörs): gör QA på produktens creatives och
+   aktivera enligt aktiveringsreglerna i fas 3. **Har kampanjen spenderat en
+   enda krona är PAUSED ett beslut** (Axels, skalningsrondens eller
+   åtgärdstrappans) — rör aldrig statusen (Axels regel 2026-08-30).
 
 ## Fas 1 — QA (gratis, gör den alltid komplett)
 

@@ -13,22 +13,33 @@ förväntat och irrelevant. CS OS:ets commit-regler i CLAUDE.md gäller
 
 ## Steg 1 — Aktiveringssvep (HÅRT AVGRÄNSAT — läs varje ord)
 
-**Svepet gäller ENBART kampanjer som DENNA körning själv skapat i steg 3,
-plus kampanjer vars Launch-datum i namnet är DAGENS datum.** Ingenting annat.
+**Axels regel, ordagrant (2026-08-30): svepet får bara aktivera nya launcher
+som aldrig kommit igång — aldrig kampanjer eller annonser som Axel,
+skalningsronden eller åtgärdstrappan har stängt av.**
 
-**En äldre kampanj som står PAUSED är PAUSAD FÖR ATT AXEL VILL DET.**
-Olönsamma produkter pausas manuellt — det syns inte i någon metadata, så
-rutinen kan inte skilja "tvångspausad av API" från "avstängd med flit" på
-gamla kampanjer. Därför: **rör ALDRIG status på en kampanj med äldre
-Launch-datum än i dag.** Inte "aktivera tillbaka", inte "den ser halvfärdig
-ut", inget. (Detta hände 2026-08-29: en för bred svepregel slog på nio gamla
-manuellt pausade kampanjer, flera olönsamma. Det får aldrig hända igen.)
+Det betyder att en kampanj/adset/annons får aktiveras av svepet ENBART om
+BÅDA villkoren är uppfyllda:
 
-För dagens kampanjer gäller som förut: aktivera uppifrån och ner (kampanj →
-adsets → annonser, varje nivå explicit) när QA är grön. PAUSED-orsaker som
-alltid respekteras: BE ROAS TBC (får aldrig aktiveras), QA-stoppfel på
-enskilda annonser. Metas API tvångspausar vid budget-/strukturändringar —
-verifiera med tillbakaläsning efter varje aktivering av DAGENS kampanjer.
+1. **Den har aldrig kommit igång:** lifetime-spend är exakt 0 kr (hämta
+   `amount_spent`/insights för kampanjen INNAN du rör status). Har den
+   spenderat en enda krona har den varit igång — då är PAUSED ett beslut
+   (Axels, skalningsrondens eller åtgärdstrappans) och statusen är HELIG.
+   Besluten syns inte i någon metadata, så spend > 0 är enda säkra testet.
+2. **Den är en ny launch:** skapad av DENNA körning i steg 3, eller har
+   dagens datum i `Launch YYYY-MM-DD`-delen av namnet.
+
+Faller något av villkoren: rör ALDRIG status. Inte "aktivera tillbaka",
+inte "den ser halvfärdig ut", inget. Samma regel per NIVÅ: en enskild
+annons som är PAUSED inne i en aktiv kampanj är avstängd med flit —
+aktivera aldrig en annons som har spend > 0. (Detta hände 2026-08-29/30:
+en för bred svepregel slog på ett dussin gamla manuellt avstängda
+kampanjer, flera olönsamma. Det får aldrig hända igen.)
+
+För kampanjer som klarar båda villkoren gäller som förut: aktivera uppifrån
+och ner (kampanj → adsets → annonser, varje nivå explicit) när QA är grön.
+PAUSED-orsaker som alltid respekteras: BE ROAS TBC (får aldrig aktiveras),
+QA-stoppfel på enskilda annonser. Metas API tvångspausar vid budget-/
+strukturändringar — verifiera med tillbakaläsning efter varje aktivering.
 
 ## Steg 2 — Komplettera halvbyggda kampanjer
 
