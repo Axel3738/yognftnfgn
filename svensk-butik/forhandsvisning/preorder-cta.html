@@ -176,11 +176,30 @@
     transition: width 1s linear, background-color .3s ease;
   }
   .omg-varning {
-    margin: 13px 0 0; padding: 10px 12px;
+    margin: 13px 0 0; padding: 11px 12px;
     border: 1px solid #e8c489; border-radius: 10px; background: #fffaf0;
-    font-size: 13.5px; line-height: 1.5; color: #5c3a12; text-align: left;
+    text-align: left;
   }
-  .omg-varning strong { display: block; margin-top: 2px; color: #8a3b12; }
+  .omg-rad {
+    display: flex; align-items: flex-start; gap: 8px; margin: 0;
+    font-size: 13.5px; line-height: 1.5; color: #5c3a12;
+  }
+  .omg-rad + .omg-rad {
+    margin-top: 9px; padding-top: 9px; border-top: 1px solid #f0dcb8;
+  }
+  .omg-rad b { color: #2a1147; white-space: nowrap; }
+  .omg-rad strong { display: block; margin-top: 2px; color: #8a3b12; }
+  .omg-pil {
+    flex: none; width: 96px; padding: 3px 6px; border-radius: 6px;
+    font-size: 10.5px; font-weight: 700; letter-spacing: .04em;
+    text-transform: uppercase; text-align: center;
+  }
+  .omg-pil--ja { background: #e7ddf7; color: #4b2c86; }
+  .omg-pil--nej { background: #f6dfc0; color: #8a3b12; }
+  @media (max-width: 400px) {
+    .omg-rad { flex-direction: column; gap: 4px; }
+    .omg-pil { width: auto; align-self: flex-start; }
+  }
   .omg--brad { border-color: #a1500b; }
   .omg--brad .omg-ruta b, .omg--brad .omg-matare-fyll { background: #a1500b; }
   .omg--sist { border-color: #a3311a; }
@@ -396,7 +415,16 @@
           </div>
           <p class="omg-matare-text">Så mycket är kvar av veckans omgång</p>
           <div class="omg-matare"><span class="omg-matare-fyll" id="uMatare" style="width:100%"></span></div>
-          <p class="omg-varning">Beställer du efter det hamnar din kudde i nästa veckas omgång — <strong>en hel vecka extra att vänta.</strong></p>
+          <div class="omg-varning">
+            <p class="omg-rad">
+              <span class="omg-pil omg-pil--ja">Beställer du nu</span>
+              <span>vi börjar sy din kudde <b id="uNu">i veckan</b></span>
+            </p>
+            <p class="omg-rad">
+              <span class="omg-pil omg-pil--nej">Missar du klockan</span>
+              <span>då börjar vi inte förrän <b id="uSen">veckan därpå</b> — <strong>en hel vecka extra att vänta.</strong></span>
+            </p>
+          </div>
         </div>
 
         <button class="knapp" type="button">Förbeställ min kudde</button>
@@ -428,7 +456,7 @@
         <h4>Varför den säljer</h4>
         <ul>
           <li><b>Väntetiden blir argumentet.</b> "Din kudde finns inte än" är skälet till att den blir hennes.</li>
-          <li><b>Konsekvensen står utskriven.</b> Missar hon klockan blir det en vecka extra — det är vad som faktiskt händer.</li>
+          <li><b>Konsekvensen är ett datum.</b> Två datum bredvid varandra gör väntan till en bild, inte en uppmaning.</li>
           <li><b>Rutan svarar i frågornas ordning.</b> Vad, hur, när, pris, gör så här, varför nu, vågar jag.</li>
           <li><b>Knappen säger vad hon får.</b> "Förbeställ min kudde", inte "Lägg i varukorgen".</li>
           <li><b>Sista oron dör vid tummen.</b> Raden under knappen svarar på "betalar jag i blindo?".</li>
@@ -471,6 +499,12 @@
       return new Date(mal.getTime() + skillnad);
     }
 
+    function datum(ms) {
+      return new Date(ms).toLocaleDateString('sv-SE', {
+        weekday: 'long', day: 'numeric', month: 'long', timeZone: 'Europe/Stockholm'
+      });
+    }
+
     function rita() {
       const kvar = nastaStangning().getTime() - Date.now();
       if (kvar <= 0) return;
@@ -480,6 +514,9 @@
       document.getElementById('uSek').textContent = tva(Math.floor(kvar / 1000) % 60);
       document.getElementById('uMatare').style.width =
         Math.max(0, Math.min(100, (kvar / VECKA) * 100)) + '%';
+      const stangning = nastaStangning().getTime();
+      document.getElementById('uNu').textContent = datum(stangning + 86400000);
+      document.getElementById('uSen').textContent = datum(stangning + 8 * 86400000);
       ruta.classList.toggle('omg--brad', kvar < 24 * 3600000);
       ruta.classList.toggle('omg--sist', kvar < 3 * 3600000);
     }

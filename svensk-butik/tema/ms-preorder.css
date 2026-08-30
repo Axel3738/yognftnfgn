@@ -250,16 +250,51 @@
    utan den är en nedräkning bara en siffra som rör sig. */
 .ms-omg__varning {
   margin: 1.3rem 0 0;
-  padding: 1rem 1.2rem;
+  padding: 1.1rem 1.2rem;
   border: 1px solid #e8c489;
   border-radius: 10px;
   background: #fffaf0;
+  text-align: left;
+}
+.ms-omg__rad {
+  display: flex;
+  align-items: flex-start;
+  gap: .8rem;
+  margin: 0;
   font-size: 1.45rem;
   line-height: 1.5;
   color: #5c3a12;
-  text-align: left;
 }
-.ms-omg__varning strong { display: block; margin-top: .2rem; color: #8a3b12; }
+.ms-omg__rad + .ms-omg__rad {
+  margin-top: .9rem;
+  padding-top: .9rem;
+  border-top: 1px solid #f0dcb8;
+}
+.ms-omg__rad b { color: #2a1147; white-space: nowrap; }
+.ms-omg__rad strong { display: block; margin-top: .2rem; color: #8a3b12; }
+
+/* Etiketterna är det som gör raderna jämförbara vid en blick. Fast bredd,
+   så de två datumen hamnar under varandra i stället för att flyta isär. */
+.ms-omg__pil {
+  flex: none;
+  width: 9.6rem;
+  padding: .3rem .6rem;
+  border-radius: 6px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.ms-omg__pil--ja { background: #e7ddf7; color: #4b2c86; }
+.ms-omg__pil--nej { background: #f6dfc0; color: #8a3b12; }
+
+@media (max-width: 400px) {
+  /* På smal skärm får etiketten en egen rad — annars kläms datumet ihop
+     till tre ord per rad och jämförelsen går förlorad. */
+  .ms-omg__rad { flex-direction: column; gap: .4rem; }
+  .ms-omg__pil { width: auto; align-self: flex-start; }
+}
 
 /* Sista dygnet, och sista tre timmarna. Bärnsten och rött i stället för lila:
    brådskan ska läsas som en annan sorts information än varumärkesfärgen. */

@@ -110,10 +110,23 @@
       <span class="ms-omg__matare-fyll" data-ms-matare style="width: 100%"></span>
     </div>
 
-    <p class="ms-omg__varning">
-      Beställer du efter det hamnar din kudde i nästa veckas omgång —
-      <strong>en hel vecka extra att vänta.</strong>
-    </p>
+    {%- comment -%}
+      Två datum, inte ett löfte om "en vecka extra". Ett datum går att se
+      framför sig; "en vecka" gör det inte. Båda räknas fram ur samma
+      deadline: sömnaden startar dagen efter att omgången stängt.
+      Reservtexten är den som syns utan JavaScript.
+    {%- endcomment -%}
+    <div class="ms-omg__varning">
+      <p class="ms-omg__rad">
+        <span class="ms-omg__pil ms-omg__pil--ja">Beställer du nu</span>
+        <span>vi börjar sy din kudde <b data-ms-nu>i veckan</b></span>
+      </p>
+      <p class="ms-omg__rad">
+        <span class="ms-omg__pil ms-omg__pil--nej">Missar du klockan</span>
+        <span>då börjar vi inte förrän <b data-ms-sen>veckan därpå</b> —
+          <strong>en hel vecka extra att vänta.</strong></span>
+      </p>
+    </div>
   </ms-omgang>
 
   <script>
@@ -132,6 +145,8 @@
           this.min = this.querySelector('[data-ms-min]');
           this.sek = this.querySelector('[data-ms-sek]');
           this.matare = this.querySelector('[data-ms-matare]');
+          this.datumNu = this.querySelector('[data-ms-nu]');
+          this.datumSen = this.querySelector('[data-ms-sen]');
           if (!this.tim) return;
 
           this.veckodag = parseInt(this.dataset.veckodag, 10) || 0;
@@ -161,6 +176,13 @@
           return new Date(mal.getTime() + skillnad);
         }
 
+        datum(ms) {
+          return new Date(ms).toLocaleDateString('sv-SE', {
+            weekday: 'long', day: 'numeric', month: 'long',
+            timeZone: 'Europe/Stockholm'
+          });
+        }
+
         rita() {
           const kvar = this.nastaStangning().getTime() - Date.now();
           /* nastaStangning() rullar alltid fram när tiden passerats, så kvar
@@ -177,6 +199,15 @@
           /* Mätaren krymper genom veckan, så fönstret syns och inte bara räknas. */
           if (this.matare) {
             this.matare.style.width = Math.max(0, Math.min(100, (kvar / VECKA) * 100)) + '%';
+          }
+
+          /* Sömnaden startar dagen efter att omgången stängt. Missar hon
+             den här omgången hamnar hon i nästa — alltså sju dagar senare.
+             Datumen skrivs i svensk tid oavsett var besökaren sitter. */
+          if (this.datumNu && this.datumSen) {
+            const stangning = this.nastaStangning().getTime();
+            this.datumNu.textContent = this.datum(stangning + 86400000);
+            this.datumSen.textContent = this.datum(stangning + 8 * 86400000);
           }
 
           /* Tonen skärps när det faktiskt är bråttom — inte tidigare. */
