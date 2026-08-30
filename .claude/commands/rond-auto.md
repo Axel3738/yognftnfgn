@@ -242,11 +242,17 @@ sköts upp och varför, om något larmade — och vilka brief-rundor/batcher som
 kördes (produkt + antal briefer + Notion-länk) respektive ligger kvar i kön
 till imorgon. Inga bibelsvar.
 
-**Skicka samma korta rapport till Discord** (Axels order 2026-08-30): läs
-`webhook_url` + `username` ur `agent/discord.json` och POST:a med curl
-(`{"username": ..., "content": ...}`, Markdown funkar, max 2 000 tecken —
-korta ner om det behövs, viktigast först: ändringar → larm → batcher).
-Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
+**Skicka samma korta rapport till Discord** (Axels order 2026-08-30):
+
+```bash
+node agent/discord-post.mjs "Ronden <datum>" "<rapporten i Markdown>"
+```
+
+Skriptet sköter webhook, delning över 2 000-teckengränsen och rate limits —
+skriv aldrig egen curl-kod mot Discord. Posta dessutom en egen rad varje gång
+**nya uppgifter går ut till redigerarna** (brief-runda eller förstabatch klar):
+produkt, antal briefer och Notion-länken. Misslyckas Discord-posten: nämn det
+i svaret men stoppa ingenting.
 
 ## DEFINITION OF DONE
 - [ ] Färsk `git pull` innan något annat

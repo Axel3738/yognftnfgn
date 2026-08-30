@@ -1,5 +1,7 @@
 {
-  "kommentar": "Discord-webhook för rondens morgonrapporter (Axels server, inkopplad 2026-08-30). Alla med URL:en kan posta i kanalen — repot är privat, men flytta till env-variabel om repot någonsin öppnas.",
-  "webhook_url": "https://discord.com/api/webhooks/1543545488677019688/6fZM7TQHUDhFq1F42K4QjVb-YmClh7cZW998-5B8YLTz_R66NvC_dKWCsvuEFAxDAoBw",
-  "username": "Skalningskungen 🦫"
+  "kommentar": "Discord-webhookar per kanal. ALLA rutiner postar via agent/discord-post.mjs — lägg aldrig egen curl-kod i en kommandofil. Ny kanal: skapa en webhook i Discord (Serverinställningar → Integrationer → Webbhooks) och lägg URL:en här. Saknas kanalen används 'standard'. Webhookar kan bara posta i sin egen kanal — därför är de OK i ett privat repo. Bot-token är en helt annan sak och ligger ALDRIG här.",
+  "username": "Bävern 🦫",
+  "kanaler": {
+    "standard": "https://discord.com/api/webhooks/1543545488677019688/6fZM7TQHUDhFq1F42K4QjVb-YmClh7cZW998-5B8YLTz_R66NvC_dKWCsvuEFAxDAoBw"
+  }
 }
