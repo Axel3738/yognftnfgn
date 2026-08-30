@@ -4,11 +4,23 @@
   "sa_valjs_kanal": "Kommandofilerna använder de LOGISKA namnen i alias nedan (ronden, uppgifter, launcher, larm). Skriptet slår upp den riktiga kanalen på namn via Discords API och postar SOM BOTEN. Det kräver env DISCORD_BOT_TOKEN — i Routine-miljön för schemalagda körningar, i Railway för realtidsboten.",
   "server": "Bäverbutiken (1540322130388983921)",
   "alias": {
-    "ronden": "skalning",
+    "ronden": "scaling",
     "uppgifter": "ads-to-edit",
     "launcher": "new-products-coing-out",
     "translation": "translation-till-norge-av-nya-produkter",
-    "larm": "allmänt",
-    "chatt": "allmänt"
-  }
+    "larm": "general",
+    "chatt": "general"
+  },
+  "kanal_id": {
+    "scaling": "1543546164199161887",
+    "ads-to-edit": "1543631861002276985",
+    "new-products-coing-out": "1543546469884362833",
+    "translation-till-norge-av-nya-produkter": "1543546518785495151",
+    "general": "1540322131148013580",
+    "read-me": "1543641075657220126",
+    "kalendrar": "1540553128179531786",
+    "kalendrar-som-ska-runna": "1540553097636614254",
+    "monthly-comissions": "1543655241503740045"
+  },
+  "kanal_id_kommentar": "Verifierat mot Discords API 2026-08-30. Alias ronden och larm/chatt pekade dessforinnan pa \"skalning\" och \"allmant\" - kanaler som inte finns. Rutinerna hittade da ingen kanal alls."
 }

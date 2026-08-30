@@ -277,7 +277,7 @@ export async function skyddadeKanaler() {
     return Object.values(konfig.alias || {});
   } catch {
     // Går filen inte att läsa skyddar vi hellre för mycket än för lite.
-    return ['skalning', 'ads-to-edit', 'new-products-coing-out', 'allmänt'];
+    return ['scaling', 'ads-to-edit', 'new-products-coing-out', 'general'];
   }
 }
 
