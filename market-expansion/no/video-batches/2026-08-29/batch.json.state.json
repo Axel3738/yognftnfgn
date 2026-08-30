@@ -476,7 +476,8 @@
   "proofreadId": "3698ddc1e43f4aae991b25d124a42a22-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "f6e33005dfdb42c18332fbaf1d0675d5-nb"
+  "renderId": "f6e33005dfdb42c18332fbaf1d0675d5-nb",
+  "downloaded": true
  },
  "damasker_CS_2": {
   "assetUrl": "https://resource2.heygen.ai/video/a6a1e8196c76476d81f762988f64328e/original.mp4",
@@ -491,7 +492,8 @@
   "proofreadId": "bf06665361314dc5926f151183ba5bed-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "4196e0d4f6e343d4aaea1a021ae8b866-nb"
+  "renderId": "4196e0d4f6e343d4aaea1a021ae8b866-nb",
+  "downloaded": true
  },
  "damasker_G_1": {
   "assetUrl": "https://resource2.heygen.ai/video/a8fb8e3b569342febe80f4a4df38f0fa/original.mp4",

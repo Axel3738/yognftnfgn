@@ -12,9 +12,21 @@ klart utan att invänta godkännande; stanna bara vid ägarbeslut eller ❌ neda
 
 ## Fas 0 — Inventera och verifiera (gratis, alltid komplett)
 
-1. Lista Drive-mappen (connector eller `embeddedfolderview`). En undermapp = en
-   produkt. Annonsvideor = `*_<KONCEPT>_<nr>[_H<n>].mp4` (CS/PD/SP/G/GT).
-   `*_Extra`, PNG:er, ADCOPY-docs och REVIEW-sheets är inte annonsvideor.
+**Drive-ramverket (Axels struktur 2026-08-30):**
+- Källa: **WINNERS** (`1752El3Ehbew06Oey1RK-VPNGHIVQjeiI`) — en undermapp per
+  launchad produkt. Rutinen tar varje produkt här.
+- Mål: **MAKE TO NORWAY** (`1z6oJt1dTu1kwXU-s1_RQkwIRFar3zeOw`) — rutinen skapar
+  en norsk dubblettmapp **`NO <källmappens namn>`** per produkt och lägger ALLT
+  där (videor, bilder, adcopy-docs). Prefixet `NO ` är obligatoriskt.
+- **Inga mappar flyttas någonsin** — källmappen i WINNERS rörs inte.
+  Dubblettspärr i Drive: finns `NO <namn>` redan i MAKE TO NORWAY är produkten
+  behandlad → hoppa (komplettera bara om mappen är halvfärdig).
+  (Samma ramverk återanvänds per marknad senare: `DK <namn>`, `UK <namn>` osv.)
+
+1. Lista WINNERS. En undermapp = en produkt. Annonsvideor =
+   `*_<KONCEPT>_<nr>[_H<n>].mp4` (CS/PD/SP/G/GT).
+   `*_Extra`, PNG:er (utom `*_<vinkel>_2_1.png`-bildannonserna, se Fas 3.2),
+   ADCOPY-docs och REVIEW-sheets är inte annonsvideor.
 2. Bygg/uppdatera batchmanifestet `market-expansion/no/video-batches/<datum>/batch.json`
    (format: se befintlig batch). Ladda ner videorna, komprimera >31 MB till crf 24–26.
 3. **Norsk produktsida per produkt:** sök `https://beverbutikken.no/products.json`
@@ -101,10 +113,10 @@ Varje produktmapp har ~4 bildannonser som ska med i kampanjen. Flöde (verifiera
 
 ## Fas 3.5 — Drive-leverans (Axels krav 2026-08-29)
 
-Färdiga videor + norska adcopy-docs ska in i Drive: i huvudmappen finns en mapp
-**`NO`** (id `131yXc3gJKU1DKqoDwLci_UknTrBJXXT_`, Axels struktur 2026-08-29) och i
-den en undermapp per produkt med **samma namn som källmappen**. Docs skapas via
-Drive-connectorn (`create_file`, textContent → Google Doc). Videorna är för stora
+Färdiga videor + norska adcopy-docs ska in i Drive: i **MAKE TO NORWAY**
+(`1z6oJt1dTu1kwXU-s1_RQkwIRFar3zeOw`) skapas mappen **`NO <källmappens namn>`**
+per produkt (se ramverket i Fas 0 — gamla `NO`-wrappermappen finns inte längre).
+Docs skapas via Drive-connectorn (`create_file`, textContent → Google Doc). Videorna är för stora
 för connectorn — de laddas upp med `node pipeline/drive-push.mjs
 --folder=<mapp-id> final/<slug>/*.mp4`, som kräver env `DRIVE_UPLOAD_URL` +
 `DRIVE_UPLOAD_KEY` (Apps Script-brevlådan, installation: `tools/drive-brevlada.gs`).
