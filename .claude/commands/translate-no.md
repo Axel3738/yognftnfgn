@@ -107,9 +107,12 @@ Varje produktmapp har ~4 bildannonser som ska med i kampanjen. Flöde (verifiera
    knappar målas som rounded rectangles). Exempel: `compose-no.py` i batchmappen.
 4. QA varje bild visuellt (stavning, siffror, layout). Leverera i chatten,
    ladda upp till NO-mappen via drive-push (`mimeType=image/png`).
-5. Lägg in i produktens BEFINTLIGA koncept-adsets som `<Produkt>_NO_<K>_2_1`
-   (link_data + image_hash, samma copy som konceptets videoannonser,
-   enhancements OPT_OUT, status enligt beslut).
+5. Lägg in i produktens BEFINTLIGA koncept-adsets:
+   `node no-image-ads.mjs waves/no-<slug>-video.config.mjs --imgdir=<mapp> --slug=<slug> [--dry]`
+   — skapar `<Produkt>_NO_<K>_2_1` (link_data + image_hash, samma copy som
+   konceptets videoannonser, enhancements OPT_OUT, status ur konfigen). Idempotent.
+   ⚠️ Kontots rate limit (Meta-fel 17) slår vid täta körningar — låt jobben gå
+   sekventiellt med paus emellan, aldrig parallellt mot samma konto.
 
 ## Fas 3.5 — Drive-leverans (Axels krav 2026-08-29)
 
