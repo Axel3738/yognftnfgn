@@ -288,19 +288,33 @@ export async function skyddadeKanaler() {
 export async function utfor({ atgarder, guild }) {
   const gjort = [];
   const misslyckades = [];
-  const hittaKategori = (namn) => (namn
-    ? guild.channels.cache.find(
-      (k) => k.type === ChannelType.GuildCategory && k.name.toLowerCase() === namn.toLowerCase(),
-    )
-    : null);
-  const hittaKanal = (namn) => guild.channels.cache.find(
-    (k) => k.type === ChannelType.GuildText && k.name === kanalnamn(namn),
-  );
+
+  // Kategorier vi skapar just nu. Att leta upp dem i cachen i stället vore en
+  // kapplöpning: hinner den inte uppdateras landar alla nya kanaler på
+  // toppnivån i stället för i kategorin, utan att något felmeddelande syns.
+  const nyaKategorier = new Map();
+  const hittaKategori = (namn) => {
+    if (!namn) return null;
+    const key = namn.toLowerCase();
+    return nyaKategorier.get(key) || guild.channels.cache.find(
+      (k) => k.type === ChannelType.GuildCategory && k.name.toLowerCase() === key,
+    ) || null;
+  };
+  // Samma kapplöpning för namnbyten: "döp om a till b" följt av "sätt ämne på
+  // b" måste hitta b även innan gateway-eventet hunnit fram.
+  const nyaNamn = new Map();
+  const hittaKanal = (namn) => {
+    const rent = kanalnamn(namn);
+    return nyaNamn.get(rent) || guild.channels.cache.find(
+      (k) => k.type === ChannelType.GuildText && k.name === rent,
+    ) || null;
+  };
 
   for (const a of atgarder) {
     try {
       if (a.typ === 'skapa_kategori') {
-        await guild.channels.create({ name: a.namn, type: ChannelType.GuildCategory });
+        const ny = await guild.channels.create({ name: a.namn, type: ChannelType.GuildCategory });
+        nyaKategorier.set(a.namn.toLowerCase(), ny);
       } else if (a.typ === 'skapa_kanal') {
         await guild.channels.create({
           name: a.namn,
@@ -312,6 +326,7 @@ export async function utfor({ atgarder, guild }) {
         const k = hittaKanal(a.namn);
         if (!k) throw new Error('kanalen hittades inte längre');
         await k.setName(a.nytt_namn);
+        nyaNamn.set(a.nytt_namn, k);
       } else if (a.typ === 'flytta') {
         const k = hittaKanal(a.namn);
         if (!k) throw new Error('kanalen hittades inte längre');
@@ -324,7 +339,10 @@ export async function utfor({ atgarder, guild }) {
         const k = hittaKanal(a.namn);
         if (!k) throw new Error('kanalen hittades inte längre');
         let arkiv = hittaKategori(ARKIVNAMN);
-        if (!arkiv) arkiv = await guild.channels.create({ name: ARKIVNAMN, type: ChannelType.GuildCategory });
+        if (!arkiv) {
+          arkiv = await guild.channels.create({ name: ARKIVNAMN, type: ChannelType.GuildCategory });
+          nyaKategorier.set(ARKIVNAMN, arkiv);
+        }
         await k.setParent(arkiv.id, { lockPermissions: false });
         // Läsbar för alla som såg den förut, men ingen kan skriva mer.
         await k.permissionOverwrites.edit(guild.roles.everyone, {

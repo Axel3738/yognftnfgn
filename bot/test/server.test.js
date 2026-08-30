@@ -1,9 +1,13 @@
 // validera() är enda skyddet mellan "Claude föreslog något" och "servern
-// byggdes om". Den testas hårt; utfor() ringer Discord och testas inte här.
+// byggdes om". Den testas hårt. utfor() testas mot en fejkad server längst ner
+// — inte för att API-anropen är intressanta, utan för att ordningsfelen är det.
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { validera, beskriv, kanalnamn, MAX_PER_KATEGORI, MAX_NAMNBYTEN } from '../server.js';
+import { ChannelType } from 'discord.js';
+import {
+  validera, beskriv, kanalnamn, utfor, ARKIVNAMN, MAX_PER_KATEGORI, MAX_NAMNBYTEN,
+} from '../server.js';
 
 const LÄGE = {
   skyddade: ['skalning', 'ads-to-edit'],
@@ -137,4 +141,78 @@ test('tom plan går att beskriva utan att krascha', () => {
   const text = beskriv(validera(plan(), LÄGE));
   assert.match(text, /Ingenting att göra/);
   assert.doesNotMatch(beskriv({ atgarder: [], avvisade: [] }), /undefined/);
+});
+
+// ---- utfor() mot en fejkad Discord-server -------------------------------
+// Poängen är kapplöpningen: cachen uppdateras INTE här, precis som den kan
+// låta bli i verkligheten just efter att en kategori skapats.
+
+function fejkGuild(befintliga = []) {
+  const skapade = [];
+  const anrop = [];
+  const cache = befintliga.slice();
+  const kanal = (o) => ({
+    ...o,
+    setName: async (n) => { anrop.push(`setName:${o.name}->${n}`); o.name = n; },
+    setParent: async (id) => { anrop.push(`setParent:${o.name}->${id}`); o.parentId = id; },
+    setTopic: async (t) => { anrop.push(`setTopic:${o.name}=${t}`); },
+    permissionOverwrites: { edit: async () => { anrop.push(`lås:${o.name}`); } },
+  });
+  return {
+    skapade,
+    anrop,
+    roles: { everyone: { id: '@everyone' } },
+    channels: {
+      // Cachen speglar ALDRIG det vi skapar — det är hela testet.
+      cache: { find: (f) => cache.map(kanal).find(f) || undefined, values: () => cache.values() },
+      create: async (o) => {
+        skapade.push(o);
+        return kanal({ ...o, id: `id-${skapade.length}` });
+      },
+    },
+  };
+}
+
+test('en kanal hamnar i kategorin som skapades i samma körning', async () => {
+  const guild = fejkGuild();
+  const { gjort, misslyckades } = await utfor({
+    atgarder: [
+      { typ: 'skapa_kategori', namn: 'Produkter' },
+      { typ: 'skapa_kanal', namn: 'motorholjet', kategori: 'Produkter' },
+    ],
+    guild,
+  });
+  assert.equal(misslyckades.length, 0, misslyckades.join('; '));
+  assert.equal(gjort.length, 2);
+  const kanal = guild.skapade[1];
+  assert.equal(kanal.parent, 'id-1', 'utan detta landar kanalen på toppnivån, tyst');
+});
+
+test('arkivering skapar arkivkategorin en gång och låser kanalerna', async () => {
+  const guild = fejkGuild([
+    { name: 'gammal-a', type: ChannelType.GuildText },
+    { name: 'gammal-b', type: ChannelType.GuildText },
+  ]);
+  const { gjort, misslyckades } = await utfor({
+    atgarder: [{ typ: 'arkivera', namn: 'gammal-a' }, { typ: 'arkivera', namn: 'gammal-b' }],
+    guild,
+  });
+  assert.equal(misslyckades.length, 0, misslyckades.join('; '));
+  assert.equal(gjort.length, 2);
+  const arkiv = guild.skapade.filter((k) => k.name === ARKIVNAMN);
+  assert.equal(arkiv.length, 1, 'två arkivkategorier med samma namn är en röra');
+  assert.equal(guild.anrop.filter((a) => a.startsWith('lås:')).length, 2);
+});
+
+test('ett steg som felar stoppar inte resten', async () => {
+  const guild = fejkGuild();
+  const { gjort, misslyckades } = await utfor({
+    atgarder: [
+      { typ: 'byt_namn', namn: 'finns-inte', nytt_namn: 'x' },
+      { typ: 'skapa_kanal', namn: 'kommer-fram' },
+    ],
+    guild,
+  });
+  assert.equal(misslyckades.length, 1);
+  assert.equal(gjort.length, 1, 'en halvfärdig server som säger vad som gick fel slår en som tystnar');
 });

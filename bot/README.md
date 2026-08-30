@@ -182,4 +182,4 @@ I `server.js` är det `validera()` som är det viktiga. Den står mellan "Claude
 föreslog något" och "servern byggdes om", och den är ren kod med egna tester —
 hittar modellen på en åtgärdstyp som `radera` dör den där, inte i din server.
 
-Tester: `cd bot && npm test` (26 st, inget nätverk).
+Tester: `cd bot && npm test` (29 st, inget nätverk).
