@@ -162,6 +162,23 @@ test('skalning föreslår rätt nytt tal och stannar vid taket', () => {
   assert.equal(tak.nyBudget, null);
 });
 
+test('raketspåret: ROAS ≥ 5 skalar ×1,8 i stället för 20 % (Axel 2026-08-30)', () => {
+  // BE 2,00 · ROAS 6 -> 33 % vinst och raket: 1 000 -> 1 800.
+  const raket = besked(rad({ roas3d: 6, budget: 1000 }));
+  assert.equal(raket.kod, 'SKALA');
+  assert.equal(raket.nyBudget, 1800);
+  assert.equal(raket.raket, true);
+  assert.match(raket.motivering, /Raketregeln/);
+  // Strax under 5: vanliga 20 %.
+  const vanlig = besked(rad({ roas3d: 4.9, budget: 1000 }));
+  assert.equal(vanlig.nyBudget, 1200);
+  assert.equal(vanlig.raket, undefined);
+  // Taket klipper: 2 500 × 1,8 = 4 500 -> 4 000.
+  assert.equal(besked(rad({ roas3d: 8, budget: 2500 })).nyBudget, 4000);
+  // Redan på taket: låt vara.
+  assert.equal(besked(rad({ roas3d: 8, budget: TAK_SEK })).kod, 'LAT_VARA');
+});
+
 test('testprodukt med förlust lämnas ifred under tröskeln', () => {
   const dom = besked(rad({ lage: 'test', roas3d: 1.2, spendTotal: 900 }));
   assert.equal(dom.kod, 'VANTA_TROSKEL');

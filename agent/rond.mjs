@@ -239,6 +239,7 @@ export function planera(rader, { logg = [], idag = null } = {}) {
       atgarder.push({
         ...grund, typ: 'budget',
         fran_sek: r.budget, till_sek: d.nyBudget, till_ore: Math.round(d.nyBudget * 100),
+        ...(d.raket ? { raket: true } : {}),
       });
     } else if (d.kod === 'STANG_AV') {
       atgarder.push({ ...grund, typ: 'paus_kampanj' });
@@ -248,18 +249,23 @@ export function planera(rader, { logg = [], idag = null } = {}) {
   }
 
   // Kontospärren: summan av dagsbudgetarna får aldrig stiga mer än 20 % på en
-  // körning. Med 20 %-taket per kampanj är det matematiskt omöjligt att bryta —
-  // slår spärren till är något trasigt (enhetsfel, dubbelräkning) och HELA
-  // planen kasseras. Hellre en dag utan ändringar än en trasig ändring.
+  // körning — PLUS det som raketreglerna uttryckligen förklarar (ROAS ≥ 5 får
+  // ×1,8 per kampanj, Axels beslut 2026-08-30). Utanför det är en större höjning
+  // matematiskt omöjlig — slår spärren till är något trasigt (enhetsfel,
+  // dubbelräkning) och HELA planen kasseras. Hellre en dag utan ändringar än
+  // en trasig ändring.
   const gammalTotal = rader.reduce((s, r) => s + (Number.isFinite(r.budget) ? r.budget : 0), 0);
   let nyTotal = gammalTotal;
+  let raketExtra = 0;
   for (const a of atgarder) {
-    if (a.typ === 'budget') nyTotal += a.till_sek - a.fran_sek;
+    if (a.typ !== 'budget') continue;
+    nyTotal += a.till_sek - a.fran_sek;
+    if (a.raket) raketExtra += Math.max(0, (a.till_sek - a.fran_sek) - a.fran_sek * 0.2);
   }
-  if (nyTotal > gammalTotal * 1.2 + 1) {
+  if (nyTotal > gammalTotal * 1.2 + raketExtra + 1) {
     return {
       sparrad: true,
-      orsak: `Kontospärr: planen skulle höja totalbudgeten från ${Math.round(gammalTotal)} till ${Math.round(nyTotal)} kr/dag (över +20 %). Det ska inte kunna hända — hela planen kasseras. Gör inga ändringar och larma Axel.`,
+      orsak: `Kontospärr: planen skulle höja totalbudgeten från ${Math.round(gammalTotal)} till ${Math.round(nyTotal)} kr/dag (mer än +20 % plus raketernas del). Det ska inte kunna hända — hela planen kasseras. Gör inga ändringar och larma Axel.`,
       atgarder: [], uppskjutna, gammalTotal, nyTotal,
     };
   }

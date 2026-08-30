@@ -26,6 +26,13 @@ export const MIN_DAGAR_MELLAN_ANDRINGAR = 3;
 export const SNABB_SKALNING_ROAS = 3.0;
 export const SNABB_MIN_DAGAR = 1;
 
+// Raketspåret (Axels beslut 2026-08-30): "när de haft över 5x ROAS är det värt
+// att skala väldigt aggressivt, nästan dubbla budgeten". Faktorn 1,8 = "nästan
+// dubbla" — ANTAGANDE: säg till om det ska vara exakt 2,0. Taket 4 000 kr och
+// golv/50-kronorsavrundningen gäller precis som vanligt.
+export const RAKET_ROAS = 5.0;
+export const RAKET_FAKTOR = 1.8;
+
 // Drift på golvet som går back så här många dygn i rad stängs av (Bäverpanelen, regel 3b).
 export const BACK_DAGAR_FOR_AVSTANGNING = 7;
 
@@ -140,14 +147,19 @@ export function vinstProcent(breakEven, roas) {
 }
 
 /**
- * Ny budget avrundad till jämna 50 kr UTAN att bryta mot 20-procentsregeln.
+ * Ny budget avrundad till jämna 50 kr UTAN att bryta mot stegets maxfaktor.
  * Panelens Math.round gör det: 605 kr -> 750 kr är +24 %. Vi avrundar därför
- * höjningar nedåt och sänkningar uppåt, så steget aldrig blir större än 20 %.
+ * höjningar nedåt och sänkningar uppåt, så steget aldrig blir större än
+ * faktorn (20 % — eller ×1,8 på raketspåret).
  */
 export function nyBudget(riktning, budget) {
   if (!Number.isFinite(budget) || budget <= 0) return null;
   if (riktning === 'upp') {
     const rå = budget * 1.2;
+    return Math.min(TAK_SEK, Math.floor(rå / STEG_SEK) * STEG_SEK);
+  }
+  if (riktning === 'raket') {
+    const rå = budget * RAKET_FAKTOR;
     return Math.min(TAK_SEK, Math.floor(rå / STEG_SEK) * STEG_SEK);
   }
   if (riktning === 'ner') {
@@ -346,21 +358,27 @@ export function besked(rad) {
       { zon: 'hold', vinstProcent: vinst });
   }
 
-  // 8. Över 25 %: skala.
+  // 8. Över 25 %: skala. Raketspåret: ROAS ≥ 5 → nästan dubbla (×1,8).
+  const raket = rad.roas3d >= RAKET_ROAS;
   if (rad.budget >= TAK_SEK) {
     return svar('LAT_VARA', 'Låt vara — taket nått',
       `${bas} Går bra, men ${kr(TAK_SEK)} per dag är taket. Vi skalar inte högre.`,
       { zon: 'hold', vinstProcent: vinst });
   }
-  const upp = nyBudget('upp', rad.budget);
+  const upp = nyBudget(raket ? 'raket' : 'upp', rad.budget);
   if (upp <= rad.budget) {
     return svar('LAT_VARA', 'Låt vara — taket nått',
-      `${bas} En höjning på 20 % skulle passera taket ${kr(TAK_SEK)}.`,
+      `${bas} En höjning skulle passera taket ${kr(TAK_SEK)}.`,
       { zon: 'hold', vinstProcent: vinst });
   }
-  const nastaKoll = snabbspar
+  const nastaKoll = snabbspar || raket
     ? 'Snabbspår: ROAS över 3 — kan höjas igen redan imorgon.'
     : `Nästa koll om ${MIN_DAGAR_MELLAN_ANDRINGAR} dagar.`;
+  if (raket) {
+    return svar('SKALA', 'Raketskala — nästan dubbla',
+      `${bas} Raketregeln (Axel 2026-08-30): ROAS över ${RAKET_ROAS} — ändra från ${kr(rad.budget)} till ${kr(upp)} per dag (×1,8). ${nastaKoll}${gransText}`,
+      { zon: 'up', vinstProcent: vinst, nyBudget: upp, kraverGodkannande: true, naraGrans, raket: true });
+  }
   return svar('SKALA', 'Skala upp 20 %',
     `${bas} Ändra från ${kr(rad.budget)} till ${kr(upp)} per dag. ${nastaKoll}${gransText}`,
     { zon: 'up', vinstProcent: vinst, nyBudget: upp, kraverGodkannande: true, naraGrans });

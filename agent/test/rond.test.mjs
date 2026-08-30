@@ -214,6 +214,22 @@ test('en normal dags plan går genom kontospärren', () => {
   assert.ok(plan.nyTotal < plan.gammalTotal);
 });
 
+test('kontospärren släpper igenom raketernas del men stoppar samma höjning utan flagga', () => {
+  // Raket 2 000 -> 3 600 på en total om 3 000: +53 % totalt, men förklarat av raketen.
+  const medFlagga = planera([
+    radMedDom('r', 2000, { kod: 'SKALA', kraverGodkannande: true, nyBudget: 3600, raket: true, motivering: 'raket' }),
+    radMedDom('x', 1000, { kod: 'LAT_VARA', kraverGodkannande: false, motivering: 'x' }),
+  ]);
+  assert.equal(medFlagga.sparrad, false);
+  assert.equal(medFlagga.atgarder.length, 1);
+  // Exakt samma belopp UTAN raketflaggan är oförklarat: kasseras.
+  const utanFlagga = planera([
+    radMedDom('r', 2000, { kod: 'SKALA', kraverGodkannande: true, nyBudget: 3600, motivering: 'trasig' }),
+    radMedDom('x', 1000, { kod: 'LAT_VARA', kraverGodkannande: false, motivering: 'x' }),
+  ]);
+  assert.equal(utanFlagga.sparrad, true);
+});
+
 
 test('en kampanj som redan ändrats idag rörs inte igen', () => {
   const logg = [{ kampanj_id: 'a', kod: 'SKALA', genomford: true, datum: '2026-08-29', ny_budget: 1200 }];

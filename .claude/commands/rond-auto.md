@@ -156,6 +156,9 @@ länge produkterna är ≤6 — blir de fler: säg till Axel att cykeln inte gå
   annonserna i produktens Notion-hub — det är där Jasper och redigerarna ser
   dem, via det vanliga veckoflödet. **Rutinen skriver briefer — den gör aldrig
   själva annonserna. Redigerarna gör annonserna.**
+  ⚠️ Drive: batchmappen läggs i produktens BEFINTLIGA mapp (Joshs) — ALDRIG
+  ny mapp i `BÄVER/Products`, det är lanseringskön. Exakt regel i
+  forsta-batch.md punkt 5.
 - Behov `brief_runda` (och `ersatt`/`mata_vinnare` på en produkt som redan har
   minne i `products/<id>/`) → följ `.claude/commands/cs.md`. Står det ett
   "Fokus:" i orsaken styr det rundans inriktning.

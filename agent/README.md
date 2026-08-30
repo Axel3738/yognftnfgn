@@ -51,8 +51,12 @@ dem oförändrade — inte att bedöma dem.
 - **Högst en ändring var tredje dag** per kampanj, räknat ur budgetloggen.
   Undantag uppåt: skalningszonen + ROAS ≥ 3 = snabbspår, får höjas dagligen
   (Axels beslut 2026-08-29). Aldrig snabbspår neråt.
-- **Aldrig mer än 20 % åt gången.** Avrundningen till jämna 50 kr går nedåt
-  vid höjning och uppåt vid sänkning, så steget aldrig blir större.
+- **Aldrig mer än 20 % åt gången** — utom **raketspåret**: ROAS ≥ 5 i
+  skalningszonen höjer ×1,8 ("nästan dubbla", Axels beslut 2026-08-30;
+  faktorn är ett antagande — säg till om det ska vara exakt 2,0).
+  Kontospärren (+20 % total) släpper igenom exakt raketernas förklarade del.
+  Avrundningen till jämna 50 kr går nedåt vid höjning och uppåt vid sänkning,
+  så steget aldrig blir större än faktorn.
   (Bäverpanelens egen avrundning bryter mot den regeln: 605 → 750 kr är +24 %.)
 - **Golv 500 kr, tak 4 000 kr.**
 - **En testprodukt som går plus rörs aldrig** — testbudgeten ligger kvar tills
