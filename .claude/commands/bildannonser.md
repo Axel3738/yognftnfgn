@@ -23,6 +23,23 @@ Spärren sitter på tre ställen och alla tre ska hålla:
    orörda. Är videosiffran 0 i en hub som har videorader i Draft: något är fel
    med filtret — avbryt och skriv det i rapporten.
 
+## Tre saker måste vara på plats innan rutinen kan köra skarpt
+
+Rutinen är byggd och schemalagd, men den kan inte fixa de här själv:
+
+1. **Grenen mergad till `main`.** Rutinen startar en färsk session som klonar
+   `main`. Ligger `bildannonser/` bara på
+   `claude/notion-image-ads-routine-rgk335` hittar den ingenting.
+2. **`KIE_API_KEY` i environmentet.** Utan den genereras inga bilder — kön
+   redovisas, men inget produceras.
+3. **Notion-connectorn kopplad på själva rutinen.** Routines ärver inte
+   connectors automatiskt; den kopplas i Routines-vyn på claude.ai. Utan den har
+   nattsessionen inga `mcp__Notion__*`-verktyg och kan varken läsa kön eller
+   flytta statusar.
+
+Saknas någon av dem: rapportera exakt vilken, och gör inget annat. Gå aldrig runt
+dem — en rutin som "löser" saknad åtkomst gör fel saker tyst.
+
 ## Schemat
 
 Rutinen är en Routine som startar en färsk session 20:00 svensk tid varje dag.
