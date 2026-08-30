@@ -120,14 +120,18 @@ if (!produktSvar.ok && produktSvar.kropp?.error !== 'Product not found') {
 const judgemeId = produktSvar.kropp?.product?.id ?? null;
 
 if (judgemeId) {
-  const revSvar = await judgemeGet('/reviews', { product_id: String(judgemeId), per_page: '5' });
+  const revSvar = await judgemeGet('/reviews', { product_id: String(judgemeId), per_page: '100' });
   if (!revSvar.ok) {
     console.error(`Kunde inte läsa befintliga recensioner (${revSvar.status}).`);
     process.exit(1);
   }
-  const antal = (revSvar.kropp.reviews ?? []).length;
+  // Bara det kunden faktiskt ser räknas. En avpublicerad eller dold recension
+  // är bortstädad i praktiken (Judge.me:s v1-API kan inte radera, bara dölja),
+  // och ska inte spärra en omkörning som ersätter den.
+  const antal = (revSvar.kropp.reviews ?? [])
+    .filter((r) => r.published && !r.hidden).length;
   if (antal > 0 && !args.includes('--anda')) {
-    console.log(`Produkt ${productId} har redan recensioner i ${SHOP} — hoppar över.`);
+    console.log(`Produkt ${productId} har redan ${antal} synliga recensioner i ${SHOP} — hoppar över.`);
     console.log('Ska de läggas till ändå (t.ex. en påbyggnadsbatch): kör om med --anda.');
     process.exit(0);
   }

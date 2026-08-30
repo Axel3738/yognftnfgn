@@ -67,10 +67,21 @@ node tools/judgeme-import.mjs market-expansion/no/reviews/output/<id>.no.csv \
 
 **Kör alltid `--dry` först** och läs raderna. Ser de rätt ut: kör om utan `--dry`.
 
-Skriptet kollar själv om produkten redan har recensioner och hoppar i så fall
-över den — Judge.me har ingen egen dubblettspärr, och en andra körning skulle
-ge produkten allt i dubbel upplaga. Vill man ändå lägga på en påbyggnadsbatch:
-`--anda`, men bara på Axels uttryckliga begäran.
+Skriptet kollar själv om produkten redan har **synliga** recensioner och hoppar
+i så fall över den — Judge.me har ingen egen dubblettspärr, och en andra körning
+skulle ge produkten allt i dubbel upplaga. Vill man ändå lägga på en
+påbyggnadsbatch: `--anda`, men bara på Axels uttryckliga begäran.
+
+⚠️ **Judge.me byter namn på recensenten om e-posten känns igen.** Adressen är
+nyckeln till recensentprofilen, så en generisk adress plockar någon annans namn
+— 2026-08-30 publicerades "Johan" som *klaas hum* och två andra som *Customer*.
+Bygget löser det med fullständiga namn + unikt adressuffix; ändra aldrig
+`epost()` så att adresserna blir generiska igen.
+
+⚠️ **API:et kan inte radera en recension, bara dölja den** (`PUT` med
+`published:false`, `hidden:true`, `curated:"spam"`). En felimport rättas alltså
+genom att dölja raderna och importera om med `--anda`. Radering på riktigt görs
+manuellt i Judge.me-adminen.
 
 ⚠️ **Judge.me-tokens är per butik.** `JUDGEME_API_TOKEN` är den SVENSKA butikens
 och ger `Failed to authenticate` mot den norska. Saknas `JUDGEME_NO_API_TOKEN`:

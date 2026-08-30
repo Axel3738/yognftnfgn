@@ -3,38 +3,48 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
-## Läget 2026-08-30
+## Läget 2026-08-30 — klart
 
-`JUDGEME_NO_API_TOKEN` inlagd och verifierad. Norska butiken hade redan 315
-recensioner sedan tidigare körningar, så dubblettspärren gjorde jobbet:
+`JUDGEME_NO_API_TOKEN` inlagd och verifierad. Alla fem produkter med användbara
+källark är på plats i Judge.me:
 
-| Produkt | Norskt handle | Läge |
-|---|---|---|
-| IBC-tanktrekk | `ibc-tanktrekk-1000-l-stopper-alger-uv` | ✅ 10 importerade 2026-08-30 |
-| Kranbeskyttelse Frost 420D | `kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter` | ⏭️ hade redan 10 — hoppades över |
-| Sykkelshorts Herre | `sykkelshorts-herre-polstret-med-kompresjon` | ⏭️ hade redan 16 (**8 dubbletter**) |
-| Kjempefotball | `kjempefotball-60-cm-oppblasbar-for-hage-basseng` | ⏭️ hade redan 16 (**8 dubbletter**) |
-| Overvåkingskamera | `overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing` | ⏭️ hade redan 10 — hoppades över |
-| Gamasjer Tur | `gamasjer-tur-holder-sno-vaete-grus-ute` | ❌ källarket saknar betyg |
+| Produkt | Synliga recensioner | Snitt |
+|---|---:|---:|
+| IBC-tanktrekk | 10 | 4,7★ |
+| Kranbeskyttelse Frost 420D | 10 | 4,9★ |
+| Sykkelshorts Herre | 8 | 5,0★ |
+| Kjempefotball | 8 | 5,0★ |
+| Overvåkingskamera | 10 | 5,0★ |
+| Gamasjer Tur | 0 | ❌ källarket saknar betyg |
 
-De fyra överhoppade har recensioner med andra namn än våra CSV:er (Eirik Hansen,
-Silje, Kjetil, Nora …) — en tidigare körning översatte och importerade dem redan.
-CSV:erna i `output/` för dem är alltså överflödiga, men lämnas kvar som facit.
+**Noll dubbletter.** Kranbeskyttelse, Sykkelshorts, Kjempefotball och
+Overvåkingskamera var redan importerade av en tidigare körning — spärren
+hoppade över dem. Bara IBC-tanktrekk importerades här.
 
-**IBC-arkets tio recensioner har alla titeln "Bra produkt".** Så står det i
+**IBC-arkets tio recensioner har alla titeln "Bra produkt."** Så står det i
 källarket och så importerades de. Vill Axel ha varierade titlar ändras de i
 arket, inte här.
 
+## Två saker som städades 2026-08-30
+
+1. **Fel recensentnamn på IBC.** Första importen använde generiska adresser
+   (`johan@example.com`), och Judge.me kopplade dem till främmande profiler:
+   "Johan" publicerades som *klaas hum*, två andra som *Customer*. De tio
+   döldes och importerades om med fullständiga namn och unika adresser.
+2. **Dubbletter på Sykkelshorts och Kjempefotball.** Båda hade 16 recensioner
+   där 8 var unika — importen hade körts två gånger innan spärren fanns.
+   8 dubbletter per produkt döldes, ett exemplar av varje behölls.
+
+⚠️ **Judge.me:s v1-API kan inte radera, bara dölja.** De 26 bortstädade
+recensionerna ligger kvar i adminen som avpublicerade + spam-markerade och syns
+inte för kunder. Vill Axel ha bort dem helt görs det i Judge.me-adminen.
+
 ## 🔴 Kvar att åtgärda
 
-1. **Sykkelshorts och Kjempefotball har varje recension i dubbel upplaga**
-   (8 unika × 2 = 16 vardera). Någon körde importen två gånger innan
-   dubblettspärren fanns. De 8 extra per produkt kan raderas via Judge.me:s
-   API — men det är en irreversibel radering, så den görs bara på Axels ok.
-2. **`Damasker Vandring_REVIEW` saknar betyg på alla 10 rader** (och har tomt
-   `product_handle`). Kontrollerat igen 2026-08-30: fortfarande tomt. Utan betyg
-   kan Judge.me inte ta emot raden. Fyll i betygen i arket, kör om bygget —
-   inga betyg hittas på eller gissas här.
+**`Damasker Vandring_REVIEW` saknar betyg på alla 10 rader** (och har tomt
+`product_handle`). Kontrollerat två gånger 2026-08-30: fortfarande tomt. Utan
+betyg kan Judge.me inte ta emot raden. Fyll i betygen i arket, kör om bygget —
+inga betyg hittas på eller gissas här.
 
 ## Dubblettspärr
 
