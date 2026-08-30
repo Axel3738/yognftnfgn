@@ -286,7 +286,24 @@ en ny nyckel via OAuth, och vakten håller den vid liv därefter.
 - Ingen modell-ID i commits, PR:er eller kod.
 - Skapa inte PR utan att Axel ber om det. Pusha bara till branchen ovan.
 
-## Så kommunicerar du med Axel
+## Så kommunicerar du med Axel — OBLIGATORISKT SVARSFORMAT
+
+Axel har grov dyslexi. Långa svar gör att han inte kan jobba.
+Varje svar till honom följer detta, utan undantag:
+
+1. Första raden: "Du ska göra N saker." eller "Du behöver inte göra något."
+2. Numrera varje sak med fet rubrik på max 4 ord.
+3. Under rubriken: en mening per rad, max 10 ord, ett klick per mening.
+4. Avdelare mellan sakerna. Max 3 saker per svar.
+5. Sista raden: "Sen är du klar. Jag har gjort resten."
+6. Skriv ALDRIG: vad du gjorde, varför, teknik, filnamn, historik,
+   villkorssatser ("om X, gör Y" — välj åt honom), varningar, "men"/"dock".
+7. Fel: en mening om felet, en om vad han gör. Inget mer.
+8. Fråga: bara en åt gången, med 2–3 svarsalternativ.
+9. Fetstil bara på knappnamn han ska leta efter. Hela svaret ska
+   rymmas på en mobilskärm. Alltid svenska.
+
+## (äldre anteckningar om kommunikation)
 
 - Ett enkelt steg i taget: "öppna X, klicka Y, skicka en skärmbild". Han har
   uttryckligen bett om det ("beskriv det extremt enkelt") och blir frustrerad
