@@ -1,6 +1,6 @@
 # Svenska kreatörer med rätt rekvisita — outdoor-butik
 
-**Google Sheet (Axels godkännandelista):** https://docs.google.com/spreadsheets/d/1EgNtv-tCqeN4zVViO5X4EWNWv4XVo0vPIAtf_BiGGGk/edit
+**Google Sheet (Axels godkännandelista):** https://docs.google.com/spreadsheets/d/1AZ4grfFPtJu3JXoJ8QjsPrRjKjtV5qQnWKdwUTwXtyk/edit
 
 Research 2026-08-28. Alla siffror avlästa live samma dag ur YouTubes egen
 kanaldata. Inga siffror, namn eller konton är uppskattade eller påhittade.
@@ -200,3 +200,28 @@ Arket skapas genom att ladda upp CSV till Drive. Två saker följer av det:
 Ett försök gjordes med xlsx (som klarar både formatering och formler) men
 uppladdningen kräver att hela filen skickas som base64, och den strängen blev
 korrupt två gånger — vilket gav ett tomt ark. CSV är text och tål det.
+
+---
+
+## Sortering på UGC-chans (2026-08-30)
+
+Arket är omsorterat. Ordningen är inte längre följarantal eller aktivitet, utan
+**chansen att personen säger ja till ett UGC-upplägg** — alltså att sälja filmen
+till oss i stället för att sälja en placering i sin egen kanal.
+
+Kriterier som ger HÖG: litet konto (under ~3 000 prenumeranter), äger rekvisitan,
+söker själv samarbeten i sin kanalbeskrivning, lägger upp regelbundet.
+Kriterier som ger LÅG: stort konto som troligen prissätter som influencer, eller
+vilande kanal utan publik kontakt.
+
+- **HÖG:** 9 st — FRILUFTSLIV, Fishing Barista, Bondtösen, carlrobinfishing,
+  Bondevloggen, Loppan, På språng i trädgården, Gammelmalms Gård, Silent Trucker
+- **MEDEL:** 5 st — MoxZy, ÖrnMalm, Swedish Pete, Väddö Gårdsmejeri, Alex Tidström
+- **LÅG:** 5 st — HOJSAC, Familjen Gaia, Peter Persson, Mackans Garage, Rickards Garage
+- **OKÄND:** 11 Instagram-rader
+- **STRYK:** 5 döda kanaler
+
+Observera att Rickards Garage och Mackans Garage — de två bästa
+rekvisitamatchningarna för kategori 1 — hamnar i LÅG. De äger rätt grejer, men
+med 98 100 respektive 72 500 prenumeranter förhandlar de sannolikt som
+influencers, inte som UGC-kreatörer.
