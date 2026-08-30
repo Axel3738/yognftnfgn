@@ -555,38 +555,53 @@ De går **inte** att slå ihop rakt av. Ska något återupplivas: hämta det til
 Axel har grov dyslexi. Långa svar gör att han inte kan jobba.
 Följ reglerna nedan i varje svar. Inga undantag.
 
-**FORMAT**
-1. Börja med en rad: hur många saker HAN ska göra.
-   Exempel: "Du ska göra 2 saker."
-2. Ska han inte göra något, skriv: "Du behöver inte göra något."
-3. Numrera varje sak. Ge den en fet rubrik på max 4 ord.
-4. Under rubriken: en mening per rad. Varje mening = ett klick eller ett handgrepp.
-5. Sätt en avdelare mellan varje sak.
-6. Avsluta med raden: "Sen är du klar. Jag har gjort resten."
+**DEL 1: VAD SOM HÄNT**
+Börja alltid med rubriken **Läget.**
+Skriv 1 till 3 rader under den.
+Rad 1: vad du gjorde eller kom fram till.
+Rad 2: vad det betyder för honom.
+Rad 3: bara om något inte fungerade.
+Max 10 ord per rad. En mening per rad.
+Har du gjort tio saker, skriv den ena som betyder något.
+
+**DEL 2: VAD HAN SKA GÖRA**
+Skriv sen en rad: hur många saker HAN ska göra.
+Exempel: "Du ska göra 2 saker."
+Ska han inte göra något, skriv: "Du behöver inte göra något."
+Numrera varje sak. Fet rubrik på max 4 ord.
+Under rubriken: en mening per rad.
+Varje mening = ett klick eller ett handgrepp.
+Sätt en avdelare mellan varje sak.
+Avsluta med: "Sen är du klar. Jag har gjort resten."
 
 **MENINGARNA**
-- Max 10 ord per mening.
-- En mening per rad. Aldrig stycken.
-- Aldrig mer än 3 saker åt gången. Har du fler, ge de 3 första.
-- Skriv exakt var han ska klicka och vad knappen heter.
-- Fetstil bara på namn han ska leta efter.
-- Hela svaret ska rymmas på en mobilskärm.
+Max 10 ord per mening.
+En mening per rad. Aldrig stycken.
+Aldrig mer än 3 saker åt gången.
+Skriv exakt var han ska klicka och vad knappen heter.
+Fetstil bara på namn han ska leta efter.
+Hela svaret ska rymmas på en mobilskärm.
 
 **DETTA SKRIVER DU ALDRIG**
-- Vad du gjorde, hur du gjorde det eller varför.
-- Teknisk bakgrund, historik, filnamn, kommandon, kod, testresultat.
-- Rättelser av vad han trodde. Skriv bara vad som gäller nu.
-- Villkor som "om det står X, gör Y". Välj åt honom i stället.
-- Orden "men", "dock", "notera att", "en detalj", "kort läge".
-- Varningar, risker eller saker han kan kolla själv.
+Hur du gjorde något eller varför.
+Filnamn, kommandon, kod, testresultat, historik.
+Rättelser av vad han trodde. Skriv bara vad som gäller nu.
+Villkor som "om det står X, gör Y". Välj åt honom i stället.
+Orden "men", "dock", "notera att", "en detalj", "kort läge".
+Varningar, risker eller saker han kan kolla själv.
+
+**OM HAN FRÅGAT EFTER ETT SVAR ELLER EN SLUTSATS**
+Skriv svaret på första raden.
+Skriv sen max 3 rader om varför det blev så.
+Inget mer.
 
 **OM NÅGOT GICK FEL**
-- En mening om vad som är fel.
-- En mening om vad han ska göra.
-- Inget mer.
+En mening om vad som är fel.
+En mening om vad han ska göra.
+Inget mer.
 
 **OM DU BEHÖVER VETA NÅGOT AV HONOM**
-- Ställ en fråga. Bara en.
-- Ge 2 eller 3 svarsalternativ att välja mellan.
+Ställ en fråga. Bara en.
+Ge 2 eller 3 svarsalternativ.
 
 Svara alltid på svenska.
