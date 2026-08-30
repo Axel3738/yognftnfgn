@@ -549,6 +549,13 @@ Grillklinikken-butiker får ALDRIG bäver-emojin eller "Bäverbutiken" som vendo
   mobbningsverktyg i stället för ett styrverktyg.
 - **Färgordningen i diagrammen är en färgblindhetsmekanism, inte dekoration.**
   Rotera den inte. Status bärs alltid av ikon **och** text, aldrig färg ensam.
+- **COGS (inköpspris) sätts från offertens landade kostnad × valutakurs** — aldrig
+  ur priset och aldrig genom att konvertera en systerbutiks cogs. Metod, låsta
+  kurser, landfaktorer och skript: `temu/cogs/README.md`. 2,9 €-avgiften är per
+  ORDER och ingår inte. Butikerna har OLIKA SKU-scheman för samma produkt
+  (SE `TEMU-*`, NO `BEVER-*`) — matcha via namn eller SE-katalogen som brygga.
+  *(2026-08-30: 669 varianter i alla fem butiker saknade inköpspris, vilket gjorde
+  varje vinstrapport fel. 368 fyllda.)*
 - **Kaching-stegens första nivå får ALDRIG ha undertexten "Standard pris"** (Axels
   beslut 2026-08-29 — den låg i fallback-stegen och syntes på varje produkt).
   Rensas med `temu/kaching-cli/fixa-standardpris.mjs <butik>` på Axels dator
