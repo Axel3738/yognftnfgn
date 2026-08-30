@@ -185,11 +185,13 @@ async function main() {
   // Kalenderspärren gäller BARA den schemalagda rutinen (--rutin). Kör Axel
   // kommandot för hand ska han alltid få siffror — annars ser en handkörning
   // en icke-kördag ut som att rutinen är trasig.
+  // Rutinen räknar VARJE dag. Kördagen avgör bara om rapporten sparas som
+  // kvitto — inte om siffrorna tas fram. En rutin som svarar "ingen körning
+  // i dag" ser ut som en trasig rutin, och Axel ska alltid kunna fråga.
   const kordag = arKordag(datum);
-  if (finns('rutin') && !kordag.kor) {
-    console.log(`Ingen körning i dag: ${kordag.skal}.`);
-    console.log('Kördagar är den 1, 4, 7 … 28 plus månadens sista dag.');
-    return;
+  const sparaRapport = !finns('rutin') || kordag.kor;
+  if (!sparaRapport) {
+    console.log(`Lägeskoll — ${kordag.skal}. Siffrorna nedan sparas inte som rapport.\n`);
   }
 
   // --- Notion
@@ -238,6 +240,7 @@ async function main() {
   skrivTerminal(rapport, kallor);
 
   if (finns('torr')) { console.log('\n[TORR] Ingen rapportfil skriven.'); return; }
+  if (!sparaRapport) { console.log('\nIngen rapportfil — i dag är ingen kördag. Nästa rapport: den 1, 4, 7 … 28 eller månadens sista dag.'); return; }
 
   const md = skrivRapport(rapport, kallor);
   const bas = `${ROT}/commission/korningar/${p.manad}/${p.till}`;

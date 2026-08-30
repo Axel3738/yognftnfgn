@@ -8,12 +8,12 @@ och räkna ut 0,4 % av spenden de dragit in under månaden.**
 Argument: `$ARGUMENTS` — normalt tomt. `--manad YYYY-MM` = räkna om en gången
 månad i efterhand. `--torr` = räkna och visa, skriv ingen rapportfil.
 
-## ⚠️ Skriver Axel /commission i chatten: räkna ALLTID
+## ⚠️ Leverera ALLTID siffror
 
-Kalenderspärren gäller **bara** den schemalagda rutinen, som skickar `--rutin`.
-Ber Axel om commission en tisdag den 30:e ska han få siffror — inte beskedet
-"i dag är ingen kördag". Skicka aldrig `--rutin` i en handkörning, och svara
-aldrig med kalenderspärren på en fråga från Axel.
+Kommandot räknar varje gång det körs, vilken dag som helst. Kalendern avgör
+bara om körningen sparas som rapport och räknas som slutavräkning. Svara
+aldrig Axel — eller rutinloggen — med "ingen körning i dag" och inget mer.
+Skicka aldrig `--rutin` i en handkörning.
 
 **Månadens sista körning är slutavräkningen — det är den summan som betalas ut.**
 Körningarna däremellan är lägeskoll: samma månad, färre dagar mätta.
@@ -128,10 +128,10 @@ rader i Axels namn; det är den som satts som Ansvarig som gjort jobbet.
 node commission/run.mjs --rutin --jobb commission/jobb/<datum>.json
 ```
 
-`--rutin` är kalenderspärren: körs kommandot schemalagt en dag som inte är
-kördag avslutas det direkt. **Kör Axel kommandot för hand: lämna bort `--rutin`**,
-då räknas månaden hittills oavsett datum. En handkörning som svarar "ingen
-körning i dag" ser ut som en trasig rutin.
+`--rutin` styr bara om rapportfilen SPARAS: på en icke-kördag räknas siffrorna
+ändå och skrivs ut, men ingen fil läggs i `commission/korningar/`. Kommandot
+avslutar sig aldrig utan siffror — svara aldrig Axel med "ingen körning i dag".
+**Kör Axel kommandot för hand: lämna bort `--rutin`**, då sparas rapporten också.
 
 Efterhandskörning av en gången månad: lägg till `--manad 2026-07`.
 Vill du bara se siffrorna utan att skriva rapportfil: `--torr`.
