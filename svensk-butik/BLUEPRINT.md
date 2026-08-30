@@ -520,30 +520,32 @@ veckan vid den tiden. Ändras rutinen ska `stang_veckodag`/`stang_timme` i
 Förhandsvisningen:
 <https://claude.ai/code/artifact/c8bb8fba-4196-4703-a48a-d5275ed24f1f>
 
-## 8o. Varv 17 (2026-08-30): konsekvensen blir två datum
+## 8o. Varv 17 (2026-08-30): konsekvensen — direkt mot datum
 
-Axel: i stället för "en hel vecka extra" ska det stå ett riktigt datum —
-"om du inte beställer nu börjar vi inte tillverkningen förrän [datum]", sju
-till åtta dagar fram. Ligger kvar i **"Twinpillow v8 (utkast)"**
+Axel ville inte ha ett datum på den positiva raden ("vi börjar sy den
+7 september" fick även det bra alternativet att låta segt). I stället säger
+raden vad som händer direkt. Ligger i **"Twinpillow v8 (utkast)"**
 (`156622553225`).
 
-**Varför datum slår "en vecka":** en vecka är en abstraktion, ett datum går
-att se framför sig. Två datum bredvid varandra gör dessutom skillnaden till
-en bild i stället för en uppmaning:
-
-> **BESTÄLLER DU NU** — vi börjar sy din kudde *måndag 1 september*
-> **MISSAR DU KLOCKAN** — då börjar vi inte förrän *måndag 8 september* —
+> **BESTÄLLER DU NU** — vi börjar med din kudde *inom 24 timmar*, och den
+> går med i veckans sömnad
+> **MISSAR DU KLOCKAN** — då syr vi den först *måndag 8 september* —
 > en hel vecka extra att vänta.
 
-Båda datumen räknas fram i webbläsaren ur samma deadline som klockan:
-sömnaden startar dagen efter att omgången stängt, och missar hon omgången
-hamnar hon sju dagar senare. Skrivs i svensk tid oavsett var besökaren
-sitter, så datumet är detsamma för alla. Utan JavaScript står "i veckan" /
-"veckan därpå" i stället — sant, bara mindre skarpt.
+Kontrasten är hela poängen: omedelbart mot ett bestämt datum en vecka bort.
+"En vecka extra" är en abstraktion, ett datum går att se framför sig — så
+datumet står kvar där det biter, på förlustraden. Det räknas fram i
+webbläsaren ur samma deadline som klockan (sömnaden startar dagen efter att
+omgången stängt, missad omgång = sju dagar senare), i svensk tid oavsett var
+besökaren sitter. Utan JavaScript står "veckan därpå" — sant, bara mindre
+skarpt.
 
-⚠️ Antagandet i datumen: **sömnaden startar dagen efter att omgången
-stängt.** Stämmer inte det ska `+ 86400000` i `snippets/ms-preorder.liquid`
-justeras samma dag.
+⚠️ **Två förutsättningar som måste hållas sanna** — annars ska raden ändras
+samma dag:
+1. **Vi börjar med kudden inom 24 timmar** efter beställning (utkastet).
+   Det är Axels eget arbete, men det måste faktiskt göras.
+2. **Ordrarna går till leverantören en gång i veckan** vid angiven tid, och
+   sömnaden startar dagen efter — det är antagandet datumet vilar på.
 
 Förhandsvisningen:
 <https://claude.ai/code/artifact/c8bb8fba-4196-4703-a48a-d5275ed24f1f>

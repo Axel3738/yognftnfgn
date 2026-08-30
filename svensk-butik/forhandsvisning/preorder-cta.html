@@ -418,11 +418,11 @@
           <div class="omg-varning">
             <p class="omg-rad">
               <span class="omg-pil omg-pil--ja">Beställer du nu</span>
-              <span>vi börjar sy din kudde <b id="uNu">i veckan</b></span>
+              <span>vi börjar med din kudde <b>inom 24 timmar</b>, och den går med i veckans sömnad</span>
             </p>
             <p class="omg-rad">
               <span class="omg-pil omg-pil--nej">Missar du klockan</span>
-              <span>då börjar vi inte förrän <b id="uSen">veckan därpå</b> — <strong>en hel vecka extra att vänta.</strong></span>
+              <span>då syr vi den först <b id="uSen">veckan därpå</b> — <strong>en hel vecka extra att vänta.</strong></span>
             </p>
           </div>
         </div>
@@ -456,7 +456,7 @@
         <h4>Varför den säljer</h4>
         <ul>
           <li><b>Väntetiden blir argumentet.</b> "Din kudde finns inte än" är skälet till att den blir hennes.</li>
-          <li><b>Konsekvensen är ett datum.</b> Två datum bredvid varandra gör väntan till en bild, inte en uppmaning.</li>
+          <li><b>Direkt mot datum.</b> Vi sätter igång inom ett dygn — eller så syr vi den först ett bestämt datum en vecka senare.</li>
           <li><b>Rutan svarar i frågornas ordning.</b> Vad, hur, när, pris, gör så här, varför nu, vågar jag.</li>
           <li><b>Knappen säger vad hon får.</b> "Förbeställ min kudde", inte "Lägg i varukorgen".</li>
           <li><b>Sista oron dör vid tummen.</b> Raden under knappen svarar på "betalar jag i blindo?".</li>
@@ -514,9 +514,8 @@
       document.getElementById('uSek').textContent = tva(Math.floor(kvar / 1000) % 60);
       document.getElementById('uMatare').style.width =
         Math.max(0, Math.min(100, (kvar / VECKA) * 100)) + '%';
-      const stangning = nastaStangning().getTime();
-      document.getElementById('uNu').textContent = datum(stangning + 86400000);
-      document.getElementById('uSen').textContent = datum(stangning + 8 * 86400000);
+      document.getElementById('uSen').textContent =
+        datum(nastaStangning().getTime() + 8 * 86400000);
       ruta.classList.toggle('omg--brad', kvar < 24 * 3600000);
       ruta.classList.toggle('omg--sist', kvar < 3 * 3600000);
     }

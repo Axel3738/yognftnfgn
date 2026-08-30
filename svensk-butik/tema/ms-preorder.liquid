@@ -119,11 +119,12 @@
     <div class="ms-omg__varning">
       <p class="ms-omg__rad">
         <span class="ms-omg__pil ms-omg__pil--ja">Beställer du nu</span>
-        <span>vi börjar sy din kudde <b data-ms-nu>i veckan</b></span>
+        <span>vi börjar med din kudde <b>inom 24 timmar</b>, och den går med
+          i veckans sömnad</span>
       </p>
       <p class="ms-omg__rad">
         <span class="ms-omg__pil ms-omg__pil--nej">Missar du klockan</span>
-        <span>då börjar vi inte förrän <b data-ms-sen>veckan därpå</b> —
+        <span>då syr vi den först <b data-ms-sen>veckan därpå</b> —
           <strong>en hel vecka extra att vänta.</strong></span>
       </p>
     </div>
@@ -145,7 +146,6 @@
           this.min = this.querySelector('[data-ms-min]');
           this.sek = this.querySelector('[data-ms-sek]');
           this.matare = this.querySelector('[data-ms-matare]');
-          this.datumNu = this.querySelector('[data-ms-nu]');
           this.datumSen = this.querySelector('[data-ms-sen]');
           if (!this.tim) return;
 
@@ -203,11 +203,10 @@
 
           /* Sömnaden startar dagen efter att omgången stängt. Missar hon
              den här omgången hamnar hon i nästa — alltså sju dagar senare.
-             Datumen skrivs i svensk tid oavsett var besökaren sitter. */
-          if (this.datumNu && this.datumSen) {
-            const stangning = this.nastaStangning().getTime();
-            this.datumNu.textContent = this.datum(stangning + 86400000);
-            this.datumSen.textContent = this.datum(stangning + 8 * 86400000);
+             Datumet skrivs i svensk tid oavsett var besökaren sitter. */
+          if (this.datumSen) {
+            this.datumSen.textContent =
+              this.datum(this.nastaStangning().getTime() + 8 * 86400000);
           }
 
           /* Tonen skärps när det faktiskt är bråttom — inte tidigare. */
