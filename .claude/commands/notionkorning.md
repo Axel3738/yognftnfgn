@@ -61,6 +61,8 @@ matcha alltid på annonsdelen före tankstrecket.
 - Rutinen ärver inga MCP-connectors. Drive läses via publika länkar och Meta via
   `META_ACCESS_TOKEN` — båda fungerar utan connector. **Notion kräver antingen
   Notion-MCP:n eller `NOTION_TOKEN`** (se steg 2).
+- Frame-uttaget i steg 2 kräver `imageio-ffmpeg` och `pillow`. Saknas de:
+  `pip install imageio-ffmpeg pillow` en gång i början av körningen.
 
 ## Steg 1 — Hämta kön
 
@@ -76,7 +78,14 @@ skillnaden. En leveransmapp utan mediafil är **inte klar** — lista den under
 Ladda ner varje creative till scratchpad via export-URL:en verktyget skriver ut.
 Radera media mellan produkterna.
 
-## Steg 2 — Brief-kontrollen (grinden — gratis, gör den alltid komplett)
+## Steg 2 — Brief-kontrollen (den hårda grinden)
+
+**Ingen creative lämnar det här steget utan att ha granskats bild för bild mot
+sin egen brief. Video och bild, varenda en, varje natt.** Axels regel
+2026-08-30: stämmer den inte med briefen lanseras den inte. Grinden är gratis —
+det enda som kostar är att låta en felaktig annons börja spendera.
+
+### 2a. Hämta briefen
 
 Briefen ligger som sidinnehåll i Notion-itemet med samma namn:
 
@@ -85,47 +94,72 @@ node tools/notion-klara.mjs --produkt <id>          # hitta itemet + dess page-i
 node tools/notion-klara.mjs --brief <page-id>       # dumpa briefen som text
 ```
 
-Är Notion-MCP:n ansluten går det lika bra att hämta itemet därigenom.
-**Finns varken MCP eller `NOTION_TOKEN`:** säg det rakt ut i rapporten, kör bara
-de punkter i tabellen nedan som inte kräver briefen (5–8, 10, 11), och ladda
-bara upp de creatives som klarar dem. Låtsas aldrig att briefen kontrollerats.
+Är Notion-MCP:n ansluten går det lika bra därigenom. **Finns varken MCP eller
+`NOTION_TOKEN`:** säg det rakt ut i rapporten, kör bara de punkter nedan som inte
+kräver briefen (5–8, 10–12), och ladda **bara** upp de creatives som klarar dem.
+Låtsas aldrig att briefen kontrollerats.
 
-Dra frames ur videon och läs ALL inbränd text (`imageio-ffmpeg` via pip om
-ffmpeg saknas). Jämför levererad creative mot sin egen brief:
+### 2b. Gör creativen granskningsbar
 
-| # | Punkt | Stoppfel? |
-|---|-------|-----------|
-| 1 | Hooken i briefen är hooken i de första 3 sekunderna | ✅ ja |
-| 2 | Formatet stämmer (UGC / before-after / comparison …) | ✅ ja |
-| 3 | Vinkeln stämmer (pain / benefit / social …) | ✅ ja |
-| 4 | Alla scener/beats i briefen finns med | ⚠️ nej — notera |
-| 5 | Priset stämmer mot **produktsidan i Shopify just nu** | ✅ ja |
-| 6 | Förbjudna priser: `509 kr`, `636 kr`, `"20 %"` | ✅ ja |
-| 7 | "Bäverbutiken" rättstavat i all inbränd text ("väverbutiken" har hänt) | ✅ ja |
-| 8 | Rätt produktnamn | ✅ ja |
-| 9 | Svenska manusraderna = briefens rader (inte omskrivna) | ⚠️ nej — notera |
-| 10 | Annonsnamnet följer `docs/naming-convention.md` | ✅ ja |
-| 11 | **Filnamnet i mappen = mappnamnet** | ✅ ja |
-| 12 | Rabattclaim mot jämförpriset | ❌ inte stoppfel — se nedan |
+```bash
+python3 tools/qa-frames.py <fil.mp4|bild.jpg> --ut <mapp>
+```
+
+Verktyget drar frames tätt genom hookens första 3 sekunder (0,0 / 0,5 / 1,0 …),
+sedan var 1,5:e sekund, plus sista bilden där pris och CTA brukar ligga. Bilder
+skalas till läsbar storlek. Kräver `imageio-ffmpeg` (`pip install imageio-ffmpeg
+pillow` om det saknas).
+
+**Läs sedan VARJE frame i mappen.** Inte bara den första, inte bara ett stickprov
+— hela sekvensen, i ordning. Bildannonser granskas likadant: hela ytan, all text.
+Att materialet är uttaget är inte samma sak som att det är granskat.
+
+### 2c. Checklistan, per creative
+
+| # | Punkt | Var | Stoppfel? |
+|---|-------|-----|-----------|
+| 1 | Hooken i briefen är hooken i bild | frames 0–3 s | ✅ ja |
+| 2 | Formatet stämmer (UGC / before-after / comparison …) | hela | ✅ ja |
+| 3 | Vinkeln stämmer (pain / benefit / social …) | hela | ✅ ja |
+| 4 | Alla scener/beats i briefen finns med | hela | ⚠️ nej — notera |
+| 5 | Priset stämmer mot **produktsidan i Shopify just nu** | all inbränd text | ✅ ja |
+| 6 | Förbjudna priser: `509 kr`, `636 kr`, `"20 %"` | all inbränd text | ✅ ja |
+| 7 | "Bäverbutiken" rättstavat ("väverbutiken" har hänt) | all inbränd text | ✅ ja |
+| 8 | Rätt produktnamn | all inbränd text | ✅ ja |
+| 9 | Svenska manusraderna = briefens rader (inte omskrivna) | all inbränd text | ⚠️ nej — notera |
+| 10 | Annonsnamnet följer `docs/naming-convention.md` | filnamn | ✅ ja |
+| 11 | **Filnamnet i mappen = mappnamnet** | Drive | ✅ ja |
+| 12 | Å, Ä, Ö renderar korrekt i all text | hela | ✅ ja |
+| 13 | Rabattclaim mot jämförpriset | text | ❌ inte stoppfel — se nedan |
 
 Punkt 11 finns för att det redan hänt: mappen `Enginecover_SO_25_H1` innehåller
 filen `Enginecover_SP_25_H1.mp4`. Då vet vi inte vilken brief creativen hör till
 — fråga redigeraren, ladda inte upp på en gissning.
 
-Briefen bär dessutom egna hårda regler (`Hard rules`, `COPY GATE`, spärrade
-formuleringar som *"innan lagret tar slut"*). **De räknas som stoppfel** även om
-de inte står i tabellen — briefen är normativ för sin egen annons.
+**Briefens egna hårda regler väger lika tungt som tabellen.** Varje brief har ett
+`Hard rules`-block och ofta en `COPY GATE` med spärrade formuleringar — till
+exempel att *"innan lagret tar slut"* är förbjudet medan *"så länge lagret
+räcker"* är tillåtet, eller att en produkt aldrig får kallas vattentät. **Ett
+brott mot briefens egna regler är ett stoppfel**, även om det inte står i
+tabellen ovan. Briefen är normativ för sin egen annons.
 
 **Rabattclaim som inte stämmer ändras aldrig i annonsen** (Axels policy
 2026-08-29) — jämförpriset höjs i stället så claimen stämmer:
 `node tools/shopify-fix-compareat.mjs --product-id <id> --rabatt <procent>`.
 Rapportera ändringen.
 
-Leverera en QA-tabell: ✅/❌ per creative med **exakta fynd** (vad, var i filen,
-vilken sekund). Ett ❌ på en stoppfelspunkt = creativen laddas **inte** upp.
+### 2d. Redovisa
 
-**Röd QA:** skriv en kommentar i Notion-itemet med den konkreta feedbacken
-(vad, var, vad som ska bli i stället) och ta med raden i redigerarnotisen i steg 5.
+En QA-tabell per creative: ✅/❌ per punkt. **Varje ❌ ska peka ut var det sitter**
+— frame-nummer och sekund för video, plats i bilden för statiska. Ett fynd utan
+plats är inte ett fynd, det är en gissning, och det duger inte som grund för att
+stoppa någons arbete.
+
+Ett ❌ på en stoppfelspunkt = creativen laddas **inte** upp. Skriv då en kommentar
+i Notion-itemet med konkret feedback (vad, var, vad som ska bli i stället) och ta
+med raden i redigerarnotisen i steg 5.
+
+Radera framesen och nedladdad media ur scratchpad när produkten är klar.
 
 ## Steg 3 — Ad copy ur briefen
 
@@ -209,8 +243,11 @@ själv nästa natt.
 
 ## DEFINITION OF DONE
 - [ ] Leveranskön hämtad — Drive mot kontot, inte mapplistan ensam
-- [ ] Varje leverans QA:ad mot sin egen brief — tabell med exakta fynd levererad
+- [ ] `qa-frames.py` körd på VARJE creative, video som bild — inget stickprov
+- [ ] Varje frame läst, och QA-tabellen ifylld per creative mot dess egen brief
       (eller uttryckligen: briefen gick inte att läsa, och varför)
+- [ ] Varje ❌ utpekat med frame-nummer och sekund (eller plats i bilden)
+- [ ] Briefens egna hard rules / COPY GATE kontrollerade, inte bara tabellen
 - [ ] Ingen creative med stoppfel uppladdad
 - [ ] Uppladdade i rätt produkts CBO, sida/pixel ärvd, inget med spend > 0 rört
 - [ ] Feedback skriven i Notion-itemet på varje stoppad creative
