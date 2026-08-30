@@ -29,7 +29,7 @@ Per produkt som inte redan står i `market-expansion/no/reviews/build/sources.js
 1. Leta upp den **svenska** produktmappen i Drive-huvudmappen
    `1-vbYhYgTEv7zYptW5rGmgKAITmAz4l1X` (`python3 tools/drive-ls.py <mapp-id>`).
 2. Ta arket som heter `<Produkt>_REVIEWS` / `_Reviews` / `_REVIEW` — stavningen
-   varierar, matcha skiftlägesokänsligt på "review".
+   varierar, matcha skiftlägesokänsligt på **"rev"** — arket för Bälteslipmaskin heter `_REVEW`, och en sökning på "review" missar det helt.
    **Saknas arket: hoppa över produkten och rapportera den.** Skriv aldrig egna
    recensioner.
 3. Slå upp produktens norska handle i `https://beverbutikken.no/products.json`
