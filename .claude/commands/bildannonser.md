@@ -118,6 +118,34 @@ sågs och lämnades ifred.
 Sex bildrader, sex videorader, nästan identiska namn — `_1` mot `_H1`. Det är
 precis det här fallet järnregeln finns för.
 
+## Metoden: modellen ritar bilden, vi sätter texten
+
+⚠️ **Låt ALDRIG bildmodellen rendera svensk text.** Verifierat 2026-08-30 i två
+rundor: kie.ai gav "trå" istället för "trä", "fölyer" istället för "följer",
+"veldlyt" istället för "väldigt" och en obegriplig kundrecension. Alla 10 bilder
+underkändes. Skärpta promptar hjälpte inte — det är modellens gräns, inte
+promptens.
+
+⚠️ **Låt ALDRIG modellen rita produkten fritt.** Samma körning gav en påhittad
+maskin i varje bild. Produktbilden från produktsidan ska med som referens i
+VARJE anrop, då växlar klienten till `google/nano-banana-edit`.
+
+Flödet är därför tre steg, och ordningen är inte förhandlingsbar:
+
+1. **Verifiera texten** mot briefen innan något genereras:
+   `python3 bildannonser/verifiera.py --spec <spec> --briefar <mapp>`
+   Varje sträng måste finnas ordagrant i briefen. Ett fynd = inget renderas.
+2. **Generera bilden utan text**, med produktfotot som referens. Prompten ska
+   beskriva produkten ur referensbilden och avsluta med en negativlista:
+   ingen text, inga bokstäver, inga siffror, ingen logga, ingen vattenstämpel.
+   Be modellen lämna lugna ytor i topp och botten där texten ska ligga.
+3. **Bränn på texten deterministiskt:**
+   `python3 bildannonser/text.py --spec <spec>`
+   Texten kommer ordagrant ur briefen och kan aldrig bli felstavad.
+
+Hela metoden står i `docs/framework-bildannonser.md` — läs den före varje
+körning. Den är destillerad ur produktionen för sju produkter.
+
 ## Steg 3 — Bygg prompten ur briefen (hitta ALDRIG på copy)
 
 Läs varje rads sidinnehåll med `fetch`. Briefen innehåller allt som behövs:
