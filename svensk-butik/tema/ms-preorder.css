@@ -147,18 +147,15 @@
 }
 .ms-bild__hjalp { margin: .7rem 0 0; font-size: 1.45rem; color: rgba(42, 17, 71, .68); }
 
-/* Nedräkningarna -------------------------------------------------------- */
+/* Nedräkningen ---------------------------------------------------------- */
 /* Ligger direkt ovanför knappen med flit: brådska högt upp på sidan läses som
    en reklamruta och scrollas förbi, brådska i beslutsögonblicket är det sista
    hon ser innan hon trycker.
 
-   Två riktiga tidpunkter, ingen påhittad: midnatt (utkastet) och veckans
-   sömnadsomgång. Båda har samma sluttid för alla besökare — ingen av dem får
-   startas om vid sidladdning.
-
-   Siffertavlorna är hela skillnaden mot förra versionen. En siffra i löptext
-   läses som information; rutor med tim/min/sek under, mörk botten och
-   sekunder som faktiskt rör sig läses som en klocka som går. */
+   Fyra rutor — dagar, timmar, minuter, sekunder — så sekunderna alltid syns
+   röra sig, oavsett om det är sex dagar eller sex minuter kvar. Mätaren under
+   gör veckan konkret: fönstret krymper synligt i stället för att bara räknas
+   ned. Sluttiden är densamma för alla besökare (se ms-preorder.liquid). */
 .ms-omg {
   display: block;
   margin: 1.8rem 0 1.2rem;
@@ -186,27 +183,27 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  gap: .5rem;
-  margin: 0 0 1rem;
+  gap: .35rem;
+  margin: 0 0 1.4rem;
 }
 .ms-omg__ruta { display: grid; justify-items: center; gap: .35rem; }
 .ms-omg__ruta b {
   display: block;
-  min-width: 6.6rem;
-  padding: .7rem .5rem;
+  min-width: 5.4rem;
+  padding: .7rem .4rem;
   border-radius: 10px;
   background: #2a1147;
   color: #fffdf4;
-  font-size: clamp(3.2rem, 11vw, 4rem);
+  font-size: clamp(2.6rem, 8.5vw, 3.4rem);
   font-weight: 700;
   line-height: 1.05;
   font-variant-numeric: tabular-nums;
   transition: background-color .3s ease;
 }
 .ms-omg__ruta small {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  letter-spacing: .12em;
+  letter-spacing: .1em;
   text-transform: uppercase;
   color: rgba(42, 17, 71, .55);
 }
@@ -214,11 +211,11 @@
    rörelsen i köprutan — därför märks den. */
 .ms-omg__kolon {
   align-self: start;
-  padding-top: .8rem;
-  font-size: clamp(2.6rem, 9vw, 3.2rem);
+  padding-top: .7rem;
+  font-size: clamp(2.2rem, 7vw, 2.8rem);
   font-weight: 700;
   line-height: 1;
-  color: rgba(42, 17, 71, .35);
+  color: rgba(42, 17, 71, .3);
   animation: ms-omg-blink 1s steps(2, jump-none) infinite;
 }
 @keyframes ms-omg-blink { 50% { opacity: .2; } }
@@ -226,34 +223,53 @@
   .ms-omg__kolon { animation: none; }
 }
 
-.ms-omg__under { margin: 0; font-size: 1.45rem; line-height: 1.5; color: rgba(42, 17, 71, .75); }
-.ms-omg__under strong { color: #2a1147; }
-
-/* Veckoraden är den andra, längre deadlinen. Den ska läsas som en rad i ett
-   produktionsschema, inte som en andra reklamruta — därav den låga vikten. */
-.ms-omg__vecka {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: .5rem;
-  margin: 1.2rem 0 0;
-  padding-top: 1.1rem;
-  border-top: 1px dashed var(--ms-line-strong, #c7bce0);
-  font-size: 1.4rem;
-  line-height: 1.45;
-  color: rgba(42, 17, 71, .72);
+/* Mätaren: hela veckans fönster, och hur mycket som är kvar av det. */
+.ms-omg__matare-text {
+  margin: 0 0 .5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(42, 17, 71, .5);
 }
-.ms-omg__vecka .ms-i { flex: none; width: 1.6rem; height: 1.6rem; color: var(--ms-accent, #7c4ec4); }
-.ms-omg__vecka b { color: #2a1147; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ms-omg__matare {
+  height: 1rem;
+  border-radius: 999px;
+  background: #ece5f8;
+  overflow: hidden;
+}
+.ms-omg__matare-fyll {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--ms-accent, #7c4ec4);
+  transition: width 1s linear, background-color .3s ease;
+}
 
-/* Sista tre timmarna före midnatt, och sista timmen. Bärnsten och rött i
-   stället för lila: brådskan ska läsas som en annan sorts information än
-   varumärkesfärgen, inte som mer av samma. */
+/* Konsekvensen, utskriven. Det är den som gör klockan värd att titta på:
+   utan den är en nedräkning bara en siffra som rör sig. */
+.ms-omg__varning {
+  margin: 1.3rem 0 0;
+  padding: 1rem 1.2rem;
+  border: 1px solid #e8c489;
+  border-radius: 10px;
+  background: #fffaf0;
+  font-size: 1.45rem;
+  line-height: 1.5;
+  color: #5c3a12;
+  text-align: left;
+}
+.ms-omg__varning strong { display: block; margin-top: .2rem; color: #8a3b12; }
+
+/* Sista dygnet, och sista tre timmarna. Bärnsten och rött i stället för lila:
+   brådskan ska läsas som en annan sorts information än varumärkesfärgen. */
 .ms-omg--brad { border-color: #a1500b; }
 .ms-omg--brad .ms-omg__ruta b { background: #a1500b; }
+.ms-omg--brad .ms-omg__matare-fyll { background: #a1500b; }
 .ms-omg--sist { border-color: #a3311a; }
 .ms-omg--sist .ms-omg__etikett { color: #a3311a; }
 .ms-omg--sist .ms-omg__ruta b { background: #a3311a; }
+.ms-omg--sist .ms-omg__matare-fyll { background: #a3311a; }
 
 /* Knappen och raden under den ------------------------------------------- */
 /* Förbeställningsknappen är sidans enda uppgift — den får väga mest av allt

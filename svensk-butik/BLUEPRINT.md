@@ -487,6 +487,39 @@ kalendertidpunkter i `Europe/Stockholm`, oavsett besökarens tidszon.
 Förhandsvisningen (levande klockor):
 <https://claude.ai/code/artifact/c8bb8fba-4196-4703-a48a-d5275ed24f1f>
 
+## 8n. Varv 16 (2026-08-30): batchklockan
+
+Axel förtydligade: **en** klocka, till veckans batch, som räknar ner med
+sekunder — och under den ska det synas att den som missar får vänta en hel
+vecka extra i tillverkningstid. Dygnsklockan (utkast i natt) från varv 15 är
+borttagen; den var Claudes tolkning, inte beställningen. Ligger i
+**"Twinpillow v8 (utkast)"** (`156622553225`); v7 publicerades under arbetet.
+
+**Så ser den ut nu:**
+- **Fyra siffertavlor** — dagar : timmar : minuter : sekunder — så sekunderna
+  alltid syns röra sig, oavsett om det är sex dagar eller sex minuter kvar.
+  Blinkande kolon en gång i sekunden. Det är den enda rörelsen i köprutan.
+- **Mätare under klockan** som visar hur mycket av veckans omgång som är
+  kvar. Den gör veckan konkret: fönstret krymper synligt i stället för att
+  bara räknas ned.
+- **Konsekvensen utskriven** i en egen varningsruta: *"Beställer du efter det
+  hamnar din kudde i nästa veckas omgång — en hel vecka extra att vänta."*
+  Det är den som gör klockan värd att titta på; utan den är en nedräkning
+  bara en siffra som rör sig.
+- Färgen skärps sista dygnet (bärnsten) och sista tre timmarna (rött) —
+  tavlorna och mätaren byter färg tillsammans.
+
+Deadlinen är fortfarande söndag 23.00 svensk tid, samma sluttid för alla
+besökare, nollställd av kalendern och aldrig av besöket.
+
+⚠️ **Förutsättningen som måste hållas sann:** löftet om en vecka extra
+gäller bara så länge ordrarna faktiskt går till leverantören en gång i
+veckan vid den tiden. Ändras rutinen ska `stang_veckodag`/`stang_timme` i
+`snippets/ms-preorder.liquid` ändras samma dag.
+
+Förhandsvisningen:
+<https://claude.ai/code/artifact/c8bb8fba-4196-4703-a48a-d5275ed24f1f>
+
 ## 9. Kvarstående — kräver Axel
 
 1. **Publicera temat:** Online Store → Themes →
