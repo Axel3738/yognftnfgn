@@ -31,12 +31,19 @@ inte: notera och gå vidare.
 
 ## Steg 3 — Launch-kön
 
-Lista Products-mappen (id `1Gga4QfZ0UfVC-q06BGGHN_fkSFN0Iygm`) med
-`python3 tools/drive-ls.py`. Kandidater = mappar som inte är
-LAUNCHED/NOT USED/Winners/Losers/TEMU-referens eller "avvaktas". Kör /launch
-(launch.md) på varje komplett kandidat tills kön är tom — dubblettspärren i
-launch.md fas 0.5 gäller alltid. Radera nedladdad media ur scratchpad mellan
-produkterna.
+**FÖRST, innan någon mapp bedöms:** hämta hela kampanjlistan från MagiBorsten.
+**En produkt vars namn redan finns i en kampanj är ALDRIG en kandidat** —
+oavsett var mappen ligger, oavsett kampanjens status. Den ska inte launchas,
+inte QA:as om, inte nämnas som något Axel ska göra. Mapparnas placering är
+opålitlig (flyttar misslyckas på rättigheter, folk drar runt dem) —
+**kampanjkontot är enda sanningen för vad som redan är gjort.** Halvbyggda
+eller PAUSED-utan-beslut hanteras tyst i steg 1–2, inte här.
+
+Sedan: lista Products-mappen (id `1Gga4QfZ0UfVC-q06BGGHN_fkSFN0Iygm`) med
+`python3 tools/drive-ls.py`. Kandidater = mappar som INTE matchar någon
+befintlig kampanj och inte är LAUNCHED/NOT USED/Winners/Losers/TEMU-referens
+eller "avvaktas". Kör /launch (launch.md) på varje komplett kandidat tills kön
+är tom. Radera nedladdad media ur scratchpad mellan produkterna.
 
 ## Steg 4 — Drive-flytt (tyst best-effort)
 
