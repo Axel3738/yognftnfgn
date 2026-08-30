@@ -25,6 +25,18 @@
             "show_gift_card_recipient": false
           }
         },
+        "ms_paket": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'ms-paket', product: product, section_id: section.id %}"
+          }
+        },
+        "ms_bild": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class='ms-scope ms-bild'><p class='ms-bild__rubrik'>SÅ FUNKAR DET</p><ol class='ms-bild__steg'><li><strong>BESTÄLL KUDDEN.</strong></li><li><strong>SKICKA DIN BILD.</strong> Lägg till den här nedanför – eller svara på orderbekräftelsen med bilden efter köpet. Båda funkar lika bra.</li><li><strong>GODKÄNN UTKASTET.</strong> Vi syr ingenting förrän du sagt ja.</li></ol><label class='ms-bild__etikett' for='ms-bild-{{ section.id }}'>DIN BILD (går bra att lägga till nu)</label><input id='ms-bild-{{ section.id }}' class='ms-bild__input' type='file' name='properties[Din bild]' accept='image/*' form='product-form-{{ section.id }}'><p class='ms-bild__hjalp'>Ingen bild nu? Ingen fara – vi mejlar dig efter köpet och du svarar med bilden då.</p></div>"
+          }
+        },
         "ms_trust": {
           "type": "custom_liquid",
           "settings": {
@@ -60,6 +72,8 @@
         "title",
         "price",
         "variant_picker",
+        "ms_paket",
+        "ms_bild",
         "buy_buttons",
         "ms_trust",
         "ms_delivery",

@@ -83,6 +83,34 @@ h1, .h1, h2, .h2, h3, .h3 {
 /* Bilder i produktbeskrivningen ska aldrig spränga spalten. */
 .product__description img { max-width: 100%; height: auto; border-radius: 14px; }
 
+/* Bildinlämningen + stegen ---------------------------------------------- */
+/* Print-on-demand-flödet i stora bokstäver — köparna är ofta äldre.
+   Filfältet hör till produktformuläret via form-attributet (fältet ligger
+   i ett custom_liquid-block utanför <form>-elementet). */
+.ms-bild {
+  border: 2px solid var(--ms-line-strong, #c7bce0);
+  border-radius: 14px;
+  padding: 1.6rem;
+  background: var(--ms-surface-2, #f5f1fc);
+}
+.ms-bild__rubrik { margin: 0 0 .8rem; font-size: 1.5rem; font-weight: 700; letter-spacing: .06em; }
+.ms-bild__steg { margin: 0 0 1.2rem; padding-left: 2rem; font-size: 1.7rem; line-height: 1.55; }
+.ms-bild__steg li + li { margin-top: .6rem; }
+.ms-bild__etikett { display: block; font-size: 1.5rem; font-weight: 700; letter-spacing: .04em; margin-bottom: .5rem; }
+.ms-bild__input {
+  display: block;
+  width: 100%;
+  font-size: 1.6rem;
+  padding: 1rem;
+  background: #fff;
+  border: 2px dashed var(--ms-accent, #7c4ec4);
+  border-radius: 10px;
+}
+.ms-bild__hjalp { margin: .8rem 0 0; font-size: 1.5rem; color: rgba(18, 18, 18, .75); }
+
+/* Större brödtext på produktsidan — samma skäl som ovan. */
+.product__description { font-size: 1.7rem; line-height: 1.65; }
+
 /* Galleriet ------------------------------------------------------------- */
 /* Miniatyrerna ska synas som miniatyrer, inte som lika stora rutor. */
 .thumbnail-list__item { max-width: 9rem; }

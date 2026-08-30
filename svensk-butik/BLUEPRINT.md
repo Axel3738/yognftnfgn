@@ -342,6 +342,30 @@ live (`header-group.json` + footern):
    borttagen** tills Axel sagt vilken Twinpillow-adress som gäller (två är
    på väg: en för .se, en för .com).
 
+## 8i. Varv 11 (2026-08-30): bundle + bildfält på produktsidan
+
+Axels beställning: enkel bundle (inte "generisk kaching"), enkel bilduppladdning
+eller extremt tydliga instruktioner (äldre köpare), stor text. Under arbetet
+publicerade Axel v4 → allt nedan ligger i **"Twinpillow v5 (utkast)"**
+(`156602990729`), duplicerat från v4.
+
+- **Bundlen** använder temats eget ärliga paketsystem (`ms-paket`, visar
+  rabattpris bara om rabattkoden finns på riktigt). Skapat i butiken:
+  metaobjekt-definitionen `ms_paketniva` (fanns inte — följer inte med
+  temaexporter) + två nivåer: "1 kudde" 599 kr (förvald) och "2 kuddar –
+  en till dig, en att ge bort" **1 098 kr** (549 kr/st, bricka utan
+  skrikighet) via äkta rabattkod **TVILLING2** (−100 kr, min 2 st, bara
+  Tvillingkudden). ⚠️ 1 098 kr är Claudes förslag — Axel bekräftar eller
+  ändrar (`Innehåll → Metaobjekt → Paketnivå` + rabattkoden).
+  Jämförelsen är mot gällande styckpris — ingen påhittad förr-pris-rea.
+- **Bildfältet:** "SÅ FUNKAR DET" i tre stora steg + frivilligt filfält
+  (`properties[Din bild]`, kopplat till produktformuläret via
+  `form`-attributet) + lugnande rad om att bilden kan mejlas efteråt.
+  Större brödtext på hela produktsidan (1.7rem).
+- **Måste testas före lansering:** lägg i varukorgen MED en bifogad bild
+  (AJAX-varukorgen + filfält), och ett testköp med 2-pack där TVILLING2
+  dras av automatiskt i kassan.
+
 ## 9. Kvarstående — kräver Axel
 
 1. **Publicera temat:** Online Store → Themes →
