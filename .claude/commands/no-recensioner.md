@@ -90,17 +90,30 @@ väntar på tokenen. Kör aldrig mot den svenska butiken i stället.
 
 ## Fas 5 — Rapportera
 
+**MAX 3 RADER. Inga undantag.** Rapporten läses på en telefon.
+
 ```bash
 node tools/notify-discord.mjs "<rapporten>"
 ```
 
-Verktyget skickar via boten (`DISCORD_BOT_TOKEN` + `DISCORD_CHANNEL_ID`) om de
-finns, annars via webhooken (`DISCORD_WEBHOOK_URL`). Saknas båda felar det med
-besked om vilket som fattas.
+Rad 1 = resultatet. Rad 2–3 = bara det Axel måste göra något åt.
 
-Kort rapport: per produkt antal importerade recensioner, överhoppade (redan
-importerade eller trasigt ark) med orsak. Inget nytt att göra = en rad.
-Misslyckas skicket: nämn det på en rad och fortsätt.
+```
+✅ NO-recensioner: 0 nya (7 produkter, alla redan klara)
+```
+```
+✅ NO-recensioner: 10 nya på IBC-tanktrekk, 6 överhoppade
+```
+```
+⚠️ NO-recensioner: 0 nya — Judge.me-token avvisad
+```
+
+Förbjudet i rapporten: förklaringar av vad du gjorde, vilka filer du läste,
+vilka steg du hoppade över, teknisk bakgrund, "Detaljer:"-block. Allt sådant
+hör hemma i STATUS.md och commit-meddelandet — inte i Discord.
+
+Verktyget skickar via boten (`DISCORD_BOT_TOKEN` + `DISCORD_CHANNEL_ID`) om de
+finns, annars via webhooken (`DISCORD_WEBHOOK_URL`).
 
 Committa `sources.json`, kartorna och `output/`, och pusha.
 
