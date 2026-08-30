@@ -270,10 +270,13 @@ engelska → sökbrus i US/UK, irrelevant i Norden.
 
 Genomfört i repot: SHOPIFY-MANUELLT.md (butiksnamn + domänköp),
 namn-och-rubriker.md (beslutet loggat, kandidaterna arkiverade),
-redigerarmanualen ombrandad + ompublicerad. **Kvar i Shopify** (blockerat:
-connectorn tappade behörigheten vid butiksbyte, Axel måste koppla om den
-till a6k90m-ii/My Store): tema-utkastets namn/texter, Om oss-sidan,
-produktens vendor-fält, ev. brandnamn i sidtexter.
+redigerarmanualen ombrandad + ompublicerad. Genomfört i Shopify 2026-08-30
+(efter att Axel köpt twinpillow.se + .com och kopplat om connectorn):
+vendor → Twinpillow på alla tre produkterna, Om oss-sidan omskriven,
+Minneskuddens beskrivning ("Twinpillows minneskudde"), temautkastet döpt om
+till "Twinpillow v4 (utkast)". Live-temat v3 behåller sitt gamla namn
+(API:t rör inte MAIN; namnet försvinner när v4 publiceras).
+Butiksnamnfältet ("My Store") återstår — bara Axel kommer åt det.
 
 ## 9. Kvarstående — kräver Axel
 
