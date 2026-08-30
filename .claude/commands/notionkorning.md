@@ -9,6 +9,21 @@ Den här rundan rör bara de fyra skalningsprodukterna på MagiBorsten.
 Kör alla steg klart utan att invänta godkännande mellan dem. **Oavsett hur många
 leveranser som ligger klara kollas alla** — noll är ett giltigt utfall, inte ett fel.
 
+## Torrläge — `/notionkorning --torr`
+
+Skrivs `--torr` (eller "torrkör", "provkör", "utan att ladda upp") körs **steg 0
+till 3 fullt ut och steg 4 stannar före varje skrivning.** Ingenting skapas,
+ingenting aktiveras, ingenting kommenteras i Notion, kvoten loggas inte och
+inget pushas.
+
+Leverera i stället en tabell: per creative vilken produkt och kampanj den skulle
+hamna i, vilket adset (befintligt eller nyskapat), QA-utfallet, och om den skulle
+laddas upp eller stoppas. Sista raden: **exakt vilka statusändringar som skulle
+gjorts**, med namn och gammal→ny status.
+
+Verktygen har samma läge: `node tools/notion-till-meta.mjs … --torr`.
+Torrläget är alltid säkert att köra — använd det vid minsta tvekan.
+
 ## Axels beslut 2026-08-30 (styr hela rutinen — ändra inget av detta på egen hand)
 
 1. **Klar = levererad fil i Drive som saknar annons i Meta.** Två källor, två
@@ -194,6 +209,21 @@ Verktyget bär spärrarna som inte får kringgås:
   manuellt avstängda kampanjer, flera olönsamma.)*
 - Dubblettspärr på annonsnamn i hela kontot — samma creative laddas aldrig upp
   två gånger. Det är också det som gör rutinen säker att köra varje natt.
+
+**De sex spärrarna, och exakt vad var och en skyddar mot:**
+
+| # | Spärr | Skyddar mot |
+|---|-------|-------------|
+| 1 | Bara konto `1867947880635861`, annars avbryt | Att Grillklinikens pengar går åt Bäverbutikens annonser |
+| 2 | Sida och pixel ärvs ur kampanjens egna annonser | Att köp bokförs på fel verksamhet — det syns aldrig som ett fel, bara som konstig data |
+| 3 | Bara mappar med känt `creative_prefix` | Att produkter utanför detta OS launchas av misstag |
+| 4 | Dubblettspärr på annonsnamn i hela kontot | Att samma creative laddas upp igen nästa natt |
+| 5 | Allt skapas PAUSED, alltid | Att något börjar spendera halvbyggt |
+| 6 | `--aktivera` rör bara det med 0 kr lifetime-spend | Att en medvetet avstängd kampanj slås på igen |
+
+Spärr 6 är den som kostade förra gången. **Spend > 0 betyder att någon stängt av
+den med flit** — Axel, skalningsronden eller åtgärdstrappan. Det syns inte i
+någon metadata, så spenden är enda säkra testet.
 
 Torrkör med `--torr` om något ser fel ut. Fungerar inte uppladdningen (Metas
 uppladdning är ibland avstängd för kontot): notera creativen och ta den nästa
