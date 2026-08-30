@@ -118,8 +118,13 @@ rader i Axels namn; det är den som satts som Ansvarig som gjort jobbet.
 ## Steg 2 — Räkna
 
 ```bash
-node commission/run.mjs --jobb commission/jobb/<datum>.json
+node commission/run.mjs --rutin --jobb commission/jobb/<datum>.json
 ```
+
+`--rutin` är kalenderspärren: körs kommandot schemalagt en dag som inte är
+kördag avslutas det direkt. **Kör Axel kommandot för hand: lämna bort `--rutin`**,
+då räknas månaden hittills oavsett datum. En handkörning som svarar "ingen
+körning i dag" ser ut som en trasig rutin.
 
 Efterhandskörning av en gången månad: lägg till `--manad 2026-07`.
 Vill du bara se siffrorna utan att skriva rapportfil: `--torr`.

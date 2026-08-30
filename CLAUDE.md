@@ -222,6 +222,8 @@ Merga alltid till `main`, annars är rutinen bara schemalagd, inte igång.
 `/commission` har daglig cron med flit: **skriptet självt avgör** om dagen är
 kördag (den 1, 4, 7 … 28, plus alltid månadens sista dag) och avslutar tyst annars.
 Cron kan inte uttrycka "var tredje dag plus sista dagen" över månadsskiften.
+Kalenderspärren sitter på flaggan `--rutin` — kör Axel `/commission` för hand
+räknas månaden hittills oavsett datum.
 
 ⚠️ **Cron står i UTC och följer inte sommartid.** Tiderna ovan gäller CEST
 (mars–oktober). Vid vinteromställningen går varje rutin en timme senare svensk
