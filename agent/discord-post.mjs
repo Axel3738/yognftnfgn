@@ -6,8 +6,9 @@
 //   node agent/discord-post.mjs --kanal larm "Rubrik" "Brödtext"
 //   echo "text" | node agent/discord-post.mjs "Rubrik"
 //
-// Kanalerna och deras webhookar står i agent/discord.json. Saknas kanalen
-// används "standard". Skriptet kraschar aldrig en rutin: fel skrivs till
+// Kanalnamnen översätts via alias-listan i agent/discord.json. Posten görs SOM
+// BOTEN och kräver env DISCORD_BOT_TOKEN — repot är publikt, så inga hemligheter
+// får ligga i en fil här. Skriptet kraschar aldrig en rutin: fel skrivs till
 // stderr och ger exit 1, men rutinen ska fortsätta ändå.
 
 import { readFile } from 'node:fs/promises';
@@ -55,11 +56,8 @@ export function dela(text, max = MAX_TECKEN) {
 
 export async function lasKonfig(fil = KONFIGFIL) {
   const rå = JSON.parse(await readFile(fil, 'utf8'));
-  const kanaler = rå.kanaler && typeof rå.kanaler === 'object' ? rå.kanaler : {};
-  // Bakåtkompatibelt: den första versionen hade bara webhook_url.
-  if (rå.webhook_url && !kanaler.standard) kanaler.standard = rå.webhook_url;
   const alias = rå.alias && typeof rå.alias === 'object' ? rå.alias : {};
-  return { kanaler, alias, username: rå.username || 'Bävern 🦫' };
+  return { alias };
 }
 
 /**
@@ -114,36 +112,31 @@ async function posta(url, kropp, extraHuvuden = {}) {
  * Skickar ett meddelande. Rubriken fetstilas och upprepas inte på följdbitar;
  * i stället numreras de, så en lång rapport går att läsa i ordning.
  */
-export async function skicka({ rubrik = '', text = '', kanal = 'standard', konfig = null } = {}) {
-  const { kanaler, alias, username } = konfig || (await lasKonfig());
+export async function skicka({ rubrik = '', text = '', kanal = 'chatt', konfig = null } = {}) {
+  const token = process.env.DISCORD_BOT_TOKEN;
+  if (!token) {
+    throw new Error(
+      'DISCORD_BOT_TOKEN saknas. Repot är publikt, så token får ALDRIG ligga i en fil här — '
+      + 'sätt den som env-variabel i Routine-miljön (schemalagda körningar) eller i Railway (boten).',
+    );
+  }
 
+  const { alias } = konfig || (await lasKonfig());
   // Kommandofilerna säger "ronden" / "uppgifter" / "larm" — alias översätter
   // till det kanalnamn servern faktiskt har, så en omdöpt kanal bara kräver
   // en rad i discord.json i stället för ändringar i varje kommandofil.
-  const riktigtNamn = (alias && alias[kanal]) || kanal;
+  const riktigtNamn = alias[kanal] || kanal;
 
-  // Väg 1 (helst): posta som boten till kanalen med det namnet. Kräver bara
-  // env DISCORD_BOT_TOKEN — inga webhook-URL:er att hålla reda på, och nya
-  // kanaler funkar direkt så fort boten skapat dem.
-  let url = null;
-  let huvuden = {};
-  let via = 'webhook';
-  if (process.env.DISCORD_BOT_TOKEN && riktigtNamn !== 'standard') {
-    const id = await slaUppKanal(riktigtNamn);
-    if (id) {
-      url = `https://discord.com/api/v10/channels/${id}/messages`;
-      huvuden = { Authorization: `Bot ${process.env.DISCORD_BOT_TOKEN}` };
-      via = 'bot';
-    }
+  const id = await slaUppKanal(riktigtNamn, token);
+  if (!id) {
+    throw new Error(
+      `Hittade ingen textkanal som heter "${riktigtNamn}" i någon server boten är med i. `
+      + 'Kolla stavningen i alias-listan i agent/discord.json, eller att boten ser kanalen.',
+    );
   }
 
-  // Väg 2: webhook ur discord.json. Faller tillbaka på "standard" så en rutin
-  // aldrig tystnar bara för att dess kanal inte finns än.
-  if (!url) {
-    const webhook = kanaler[riktigtNamn] || kanaler[kanal] || kanaler.standard;
-    if (!webhook) throw new Error(`Ingen webhook för kanalen "${kanal}" i ${KONFIGFIL}, och ingen DISCORD_BOT_TOKEN satt.`);
-    url = webhook;
-  }
+  const url = `https://discord.com/api/v10/channels/${id}/messages`;
+  const huvuden = { Authorization: `Bot ${token}` };
 
   const bitar = dela(text);
   const antal = Math.max(1, bitar.length);
@@ -151,18 +144,23 @@ export async function skicka({ rubrik = '', text = '', kanal = 'standard', konfi
     const huvud = i === 0
       ? (rubrik ? `**${rubrik}**\n` : '')
       : (rubrik ? `**${rubrik}** _(${i + 1}/${antal})_\n` : '');
-    const innehåll = `${huvud}${bitar[i] ?? ''}`.trim();
-    // username går bara att sätta på webhookar; botens namn styrs av appen.
-    await posta(url, via === 'bot' ? { content: innehåll } : { username, content: innehåll }, huvuden);
+    // Discord tillåter ~5 meddelanden per 5 sekunder per kanal — en paus
+    // mellan bitarna gör att en lång rapport inte rate-limitas.
+    if (i > 0) await new Promise((r) => setTimeout(r, 350));
+    await posta(url, {
+      content: `${huvud}${bitar[i] ?? ''}`.trim(),
+      // Utan detta pingar en rapport som råkar innehålla @everyone hela servern.
+      allowed_mentions: { parse: [] },
+    }, huvuden);
   }
-  return { kanal, delar: antal, via };
+  return { kanal: riktigtNamn, delar: antal };
 }
 
 async function main() {
   const argv = process.argv.slice(2);
-  let kanal = 'standard';
+  let kanal = 'chatt';
   const i = argv.indexOf('--kanal');
-  if (i >= 0) { kanal = argv[i + 1] || 'standard'; argv.splice(i, 2); }
+  if (i >= 0) { kanal = argv[i + 1] || 'chatt'; argv.splice(i, 2); }
 
   const rubrik = argv[0] || '';
   let text = argv.slice(1).join(' ');
@@ -179,8 +177,8 @@ async function main() {
     process.exit(2);
   }
 
-  const { kanal: använd, delar, via } = await skicka({ rubrik, text, kanal });
-  console.log(`Postat till Discord (#${använd} via ${via}, ${delar} ${delar === 1 ? 'meddelande' : 'meddelanden'}).`);
+  const { kanal: använd, delar } = await skicka({ rubrik, text, kanal });
+  console.log(`Postat till Discord (#${använd}, ${delar} ${delar === 1 ? 'meddelande' : 'meddelanden'}).`);
 }
 
 if (process.argv[1] && import.meta.url.endsWith(process.argv[1].split('/').pop())) {
