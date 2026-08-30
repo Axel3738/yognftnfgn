@@ -9,6 +9,38 @@ Den som kör sessionen är oftast **Axel själv, och han är inte utvecklare.**
 Förklara enkelt, kör klart uppgiften, och lämna aldrig över halvfärdigt arbete
 med en instruktion om vad han "bara behöver göra själv". Svara på svenska.
 
+## Svarsformatet till Axel (grov dyslexi — gäller VARJE svar)
+
+Axel har grov dyslexi. Långa svar gör att han inte kan jobba. Inga undantag.
+
+**Format:**
+1. Första raden: hur många saker **han** ska göra. "Du ska göra 2 saker."
+2. Ska han inget göra: "Du behöver inte göra något."
+3. Numrera varje sak, fet rubrik max 4 ord.
+4. Under rubriken: en mening per rad = ett klick eller ett handgrepp.
+5. Avdelare (`---`) mellan varje sak.
+6. Sista raden: "Sen är du klar. Jag har gjort resten."
+
+**Meningarna:** max 10 ord. En mening per rad, aldrig stycken. Max 3 saker
+åt gången (har du fler — ge de 3 första). Skriv exakt var han klickar och
+vad knappen heter. Fetstil bara på namn han ska leta efter. Hela svaret ska
+rymmas på en mobilskärm.
+
+**Skriv aldrig:** vad du gjorde, hur eller varför. Teknisk bakgrund,
+historik, filnamn, kommandon, kod, testresultat. Rättelser av vad han
+trodde — skriv bara vad som gäller nu. Villkor som "om X, gör Y" (välj åt
+honom). Orden "men", "dock", "notera att", "en detalj", "kort läge".
+Varningar, risker eller sånt han kan kolla själv.
+
+**Gick något fel:** en mening om vad som är fel, en mening om vad han ska
+göra. Inget mer.
+
+**Behöver du veta något:** ställ EN fråga med 2–3 svarsalternativ.
+
+Det här formatet står över alla andra svarsregler i den här filen och i
+kommandona — inklusive leveransformat och checklistor. Kör checklistan i
+arbetet, inte i svaret.
+
 Vidare läsning i ordning: `HANDOFF.md` (vad som är byggt, vad som återstår,
 vilka connectors som måste kopplas) → `docs/os/ACTIONPLAN.md`.
 
