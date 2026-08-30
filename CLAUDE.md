@@ -305,6 +305,37 @@ node agent/rond.mjs --json   # samma sak som maskindata
 per kampanj. Spärrar och öppna frågor står i `agent/README.md`.
 ⚠ Ronden vägrar köra mot annat konto än MagiBorsten `1867947880635861`.
 
+### `bot/` — Bävern, Discord-boten (körs på Railway)
+Realtidsbot som svarar Axel direkt i Discord med Opus. **Läsande — den ändrar
+aldrig budgetar, Notion, Drive eller repot.** Klickvägen för uppsättning står i
+`bot/README.md`; den är skriven till Axel, inte till en utvecklare.
+
+Den läser filer via **GitHub Contents API**, aldrig från containerns disk:
+Railway bygger bara `bot/`-mappen och filerna skulle frysas vid deploy ändå.
+Därför är `bot/` självbärande med egen `package.json` — `dela.js` är en medveten
+kopia av splittern i `agent/discord-post.mjs`, och båda har egna tester.
+
+| Fil | Vad |
+|---|---|
+| `index.js` | Tar emot meddelanden, kö, typing-puls, knappar, `!ping` / `!glöm` / `!bygg` |
+| `claude.js` | Opus + prompt-cache i två block + verktygsloopen för `las_fil` |
+| `repo.js` | Filhämtning med ETag, cache och skydd mot att läsa hemligheter |
+| `server.js` | `!bygg` — bygger om Discord-servern på beskrivning |
+
+**`!bygg` går alltid genom `validera()` i `server.js`.** Det är enda skyddet
+mellan "Claude föreslog något" och "servern byggdes om": ingen radering (bara
+arkivering), rutinernas kanaler orörbara, Discords tak inbyggda, och allt som
+stryks redovisas. Rör du den funktionen: kör `cd bot && npm test` (26 tester).
+
+⚠️ **Repot är publikt.** `DISCORD_BOT_TOKEN`, `ANTHROPIC_API_KEY` och
+`GITHUB_TOKEN` lever bara som env-variabler i Railway — aldrig i en fil här.
+`agent/discord.json` innehåller enbart aliaskartan kanal→rutin, inga nycklar.
+
+Rutinerna postar **inte** via boten utan via `node agent/discord-post.mjs
+--kanal <alias> "Rubrik" "Text"`, som kräver `DISCORD_BOT_TOKEN` i rutinens
+environment. Lägger du till en kanal i `agent/discord.json` blir den samtidigt
+skyddad mot `!bygg` — det är samma lista.
+
 ### `dashboard/` — redigerarpanelen
 Spårningslagret. Notion är sanningen för *vad* som finns; dashboarden lägger på
 *vem, när, hur mycket*.
