@@ -58,7 +58,8 @@ export async function lasKonfig(fil = KONFIGFIL) {
   const kanaler = rå.kanaler && typeof rå.kanaler === 'object' ? rå.kanaler : {};
   // Bakåtkompatibelt: den första versionen hade bara webhook_url.
   if (rå.webhook_url && !kanaler.standard) kanaler.standard = rå.webhook_url;
-  return { kanaler, username: rå.username || 'Bävern 🦫' };
+  const alias = rå.alias && typeof rå.alias === 'object' ? rå.alias : {};
+  return { kanaler, alias, username: rå.username || 'Bävern 🦫' };
 }
 
 /**
@@ -114,7 +115,12 @@ async function posta(url, kropp, extraHuvuden = {}) {
  * i stället numreras de, så en lång rapport går att läsa i ordning.
  */
 export async function skicka({ rubrik = '', text = '', kanal = 'standard', konfig = null } = {}) {
-  const { kanaler, username } = konfig || (await lasKonfig());
+  const { kanaler, alias, username } = konfig || (await lasKonfig());
+
+  // Kommandofilerna säger "ronden" / "uppgifter" / "larm" — alias översätter
+  // till det kanalnamn servern faktiskt har, så en omdöpt kanal bara kräver
+  // en rad i discord.json i stället för ändringar i varje kommandofil.
+  const riktigtNamn = (alias && alias[kanal]) || kanal;
 
   // Väg 1 (helst): posta som boten till kanalen med det namnet. Kräver bara
   // env DISCORD_BOT_TOKEN — inga webhook-URL:er att hålla reda på, och nya
@@ -122,8 +128,8 @@ export async function skicka({ rubrik = '', text = '', kanal = 'standard', konfi
   let url = null;
   let huvuden = {};
   let via = 'webhook';
-  if (process.env.DISCORD_BOT_TOKEN && kanal !== 'standard') {
-    const id = await slaUppKanal(kanal);
+  if (process.env.DISCORD_BOT_TOKEN && riktigtNamn !== 'standard') {
+    const id = await slaUppKanal(riktigtNamn);
     if (id) {
       url = `https://discord.com/api/v10/channels/${id}/messages`;
       huvuden = { Authorization: `Bot ${process.env.DISCORD_BOT_TOKEN}` };
@@ -134,7 +140,7 @@ export async function skicka({ rubrik = '', text = '', kanal = 'standard', konfi
   // Väg 2: webhook ur discord.json. Faller tillbaka på "standard" så en rutin
   // aldrig tystnar bara för att dess kanal inte finns än.
   if (!url) {
-    const webhook = kanaler[kanal] || kanaler.standard;
+    const webhook = kanaler[riktigtNamn] || kanaler[kanal] || kanaler.standard;
     if (!webhook) throw new Error(`Ingen webhook för kanalen "${kanal}" i ${KONFIGFIL}, och ingen DISCORD_BOT_TOKEN satt.`);
     url = webhook;
   }
