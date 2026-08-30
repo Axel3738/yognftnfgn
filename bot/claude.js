@@ -2,7 +2,7 @@
 // caching, verktygsloopen och historiken per kanal.
 
 import Anthropic from '@anthropic-ai/sdk';
-import { hamtaAffarskontext, lasFil } from './repo.js';
+import { hamtaAffarskontext, lasFil, komprimeraTasks } from './repo.js';
 
 // Zero-arg-konstruktorn läser ANTHROPIC_API_KEY ur environmentet.
 // timeout är MILLISEKUNDER i JS-SDK:n.
@@ -14,6 +14,9 @@ export const MODELL = 'claude-opus-5';
 // inte ett felmeddelande. 16000 är rekommenderat för icke-strömmade anrop.
 // Vi betalar bara för det som faktiskt genereras, så ett högt tak kostar inget.
 const MAX_TOKENS = 16000;
+
+// Tak per filläsning. Nås det säger verktygsresultatet det RAKT UT.
+const TAK_TECKEN = 120_000;
 
 // Affärskontexten byggs om högst en gång i halvtimmen. Byggs den per
 // meddelande missar varje anrop cachen och kostnaden mångdubblas.
@@ -48,10 +51,20 @@ Verktyget las_fil hämtar vilken fil som helst ur repot — produktminne
 (products/<id>/dna.md, batch-log.md, backlog.md), docs/, dashboard/data/.
 
 Teamet: dashboard/data/team.json. Redigerarna sitter i Manila (UTC+8).
-Tasks: dashboard/data/tasks.json — raderna är från 2026-08-06 och
-assignedEditorId är tomt på alla, så du kan säga VAD som är ojort men
-aldrig VEM. Nämn det på en rad sist, bara när det faktiskt spelar roll
-för frågan.
+
+## "VILKA ADS SKA GÖRAS" = DRAFT
+Frågar Axel vad som ska göras, vad som är kvar, eller vad redigerarna ska ta
+härnäst — svara med raderna som har notionStatus **Draft** i
+dashboard/data/tasks.json. Draft betyder: briefen finns, ingen har börjat.
+Det är de annonserna som ska produceras.
+
+Blanda inte in resten om han inte frågar:
+- "In progress" = någon gör första versionen just nu
+- "In progress 2" = underkänd och görs om. INTE "längre kommen"
+- Approved = historik, nämn dem aldrig
+
+assignedEditorId är tomt på alla rader, så du kan säga VAD som ska göras,
+aldrig VEM. En rad om det sist, bara när han frågar om personer.
 
 Gissa aldrig siffror. Hitta aldrig på tal som inte står i en fil.
 Kan du inte svaret: säg det på en rad, och vilken fil som saknas.
@@ -201,8 +214,21 @@ export async function fraga({ text, kanalId, anvandare }) {
       let innehåll;
       let fel = false;
       try {
-        const fil = await lasFil(a.input?.sokvag);
-        innehåll = fil === null ? 'FINNS INTE' : fil.slice(0, 60_000);
+        const sökväg = a.input?.sokvag;
+        const fil = await lasFil(sökväg);
+        if (fil === null) innehåll = 'FINNS INTE';
+        else if (/dashboard\/data\/tasks\.json$/.test(sökväg)) {
+          // Rå är filen 487 kB och kapas till 12 %. Komprimerad får den plats.
+          innehåll = JSON.stringify(komprimeraTasks(fil), null, 1);
+        } else if (fil.length > TAK_TECKEN) {
+          // En tyst avkortning är det farligaste som finns: modellen ser inte
+          // att något fattas och svarar tvärsäkert på en tolftedel av datan.
+          innehåll = `${fil.slice(0, TAK_TECKEN)}\n\n`
+            + `=== AVKORTAD ===\nDu ser de första ${TAK_TECKEN} av ${fil.length} tecken `
+            + `(${Math.round((TAK_TECKEN / fil.length) * 100)} %). Resten saknas. `
+            + 'Svara ALDRIG som om du sett hela filen — säg att den är avkortad '
+            + 'och vad du behöver för att svara säkert.';
+        } else innehåll = fil;
       } catch (e) {
         innehåll = `FEL: ${e.message}`;
         fel = true;

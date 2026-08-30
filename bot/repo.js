@@ -150,6 +150,45 @@ export function komprimeraLogg(jsonl, maxPerKampanj = 1) {
 }
 
 /**
+ * tasks.json är 487 kB. Skickas den rå kapas den på 60 000 tecken — 12 % —
+ * och boten svarade tvärsäkert "allt är motorhöljet" när fyra axelbälte-drafts
+ * låg utanför snittet. Ett självsäkert fel är värre än inget svar.
+ *
+ * Godkända tasks är historik och intresserar ingen som frågar vad som ska
+ * göras. Kvar blir 16 rader i stället för 105, och hela filen får plats.
+ *
+ * notionStatus är fältet som betyder något för Axel: Draft = ska göras,
+ * "In progress 2" = underkänd och görs om (INTE "längre kommen").
+ */
+export function komprimeraTasks(rå) {
+  const t = JSON.parse(rå);
+  const alla = Array.isArray(t) ? t : (t.tasks || Object.values(t)[0] || []);
+  const räkning = {};
+  for (const x of alla) {
+    const k = x.notionStatus || x.status || 'okänd';
+    räkning[k] = (räkning[k] || 0) + 1;
+  }
+  const öppna = alla
+    .filter((x) => x.status !== 'approved')
+    .map((x) => ({
+      id: x.id,
+      titel: x.title,
+      produkt: x.productId,
+      notionStatus: x.notionStatus,
+      redigerare: x.assignedEditorId,
+      plandatum: x.plannedDate,
+      deadline: x.dueDate,
+      blockerad: x.blockerReason || undefined,
+    }));
+  return {
+    _om: `${alla.length} tasks totalt, ${öppna.length} ej godkända. Godkända är `
+      + 'bortsållade som historik. Draft = ska göras, "In progress 2" = revision.',
+    antal_per_status: räkning,
+    oppna: öppna,
+  };
+}
+
+/**
  * Den fasta affärskontexten som läggs i systemprompten. Hämtas om var 30:e
  * minut, aldrig per meddelande — annars rasar prompt-cachen.
  */
