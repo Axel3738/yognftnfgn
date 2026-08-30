@@ -319,6 +319,29 @@ synka dem först när Axel säger till).
 3. **Sajten är på svenska.** Funkar i SE, hyfsat i NO/DK, inte i FI —
    Markets + översättning enligt expansionsplanen i varv 8-diskussionen.
 
+## 8h. Varv 10 (2026-08-30): popup-rensning + två lögner ur mallen
+
+Axels beställning: bort med skrapkorts-popupen, mejlprenumerationen och den
+egna cookie-bannern. Gjort i tema v4 (`footer-group.json`): sektionerna
+`ms_cookies` och `ms_skrapkort` borttagna, footerns `newsletter_enable` →
+false (och `enable_follow_on_shop` → false). Cookie-bannern är ok att ta
+bort just nu eftersom `ms-head.liquid` är verifierat fritt från
+spårningspixlar — **när Meta-pixeln installeras måste samtycke lösas igen**
+(Shopifys inbyggda Customer Privacy räcker), annars spåras EU-besökare utan
+samtycke.
+
+I samma städning hittades och fixades två ärvda mallfel som aldrig fått gå
+live (`header-group.json` + footern):
+1. Annonsbaren lovade **"30 dagars öppet köp"** — direkt falskt för
+   specialtillverkade varor utan ångerrätt. Ersatt med "Du godkänner
+   utkastet innan vi syr" / "Omsys utan kostnad om den blir fel", och
+   "hela Sverige" → "hela Norden".
+2. Footern angav **Matstrumpor.se + kundsupport@matstrumpor.se** som
+   avsändare. Nu: "Twinpillow drivs av STONEBITE ECOM AB, org.nr
+   559576-2401" + länkar till Om oss/Kontakt. **Mejladressen är medvetet
+   borttagen** tills Axel sagt vilken Twinpillow-adress som gäller (två är
+   på väg: en för .se, en för .com).
+
 ## 9. Kvarstående — kräver Axel
 
 1. **Publicera temat:** Online Store → Themes →
