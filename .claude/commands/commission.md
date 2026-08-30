@@ -8,6 +8,13 @@ och räkna ut 0,4 % av spenden de dragit in under månaden.**
 Argument: `$ARGUMENTS` — normalt tomt. `--manad YYYY-MM` = räkna om en gången
 månad i efterhand. `--torr` = räkna och visa, skriv ingen rapportfil.
 
+## ⚠️ Skriver Axel /commission i chatten: räkna ALLTID
+
+Kalenderspärren gäller **bara** den schemalagda rutinen, som skickar `--rutin`.
+Ber Axel om commission en tisdag den 30:e ska han få siffror — inte beskedet
+"i dag är ingen kördag". Skicka aldrig `--rutin` i en handkörning, och svara
+aldrig med kalenderspärren på en fråga från Axel.
+
 **Månadens sista körning är slutavräkningen — det är den summan som betalas ut.**
 Körningarna däremellan är lägeskoll: samma månad, färre dagar mätta.
 
