@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // run.mjs — räknar ihop redigerarnas commission och skriver rapporten.
 //
-//   node commission/run.mjs                      dagens körning (kör bara på kördag)
-//   node commission/run.mjs --tvinga             kör oavsett datum
+//   node commission/run.mjs                      räkna månaden hittills (alltid)
+//   node commission/run.mjs --rutin              schemalagt: kör bara på kördag
 //   node commission/run.mjs --manad 2026-07      hela juli i efterhand
 //   node commission/run.mjs --jobb <fil.json>    Notion-raderna från MCP-sessionen
 //   node commission/run.mjs --torr               räkna och visa, skriv ingen fil
@@ -182,10 +182,13 @@ function skrivTerminal(r, kallor) {
 
 async function main() {
   const { datum, ...p } = bestamPeriod();
+  // Kalenderspärren gäller BARA den schemalagda rutinen (--rutin). Kör Axel
+  // kommandot för hand ska han alltid få siffror — annars ser en handkörning
+  // en icke-kördag ut som att rutinen är trasig.
   const kordag = arKordag(datum);
-  if (!kordag.kor && !finns('tvinga') && !flagga('manad')) {
+  if (finns('rutin') && !kordag.kor) {
     console.log(`Ingen körning i dag: ${kordag.skal}.`);
-    console.log('Kördagar är den 1, 4, 7 … 28 plus månadens sista dag. Kör ändå med --tvinga.');
+    console.log('Kördagar är den 1, 4, 7 … 28 plus månadens sista dag.');
     return;
   }
 
