@@ -378,6 +378,18 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 
 ## Saker som är lätta att göra fel
 
+- **PAUSED i annonskontot är ett beslut, aldrig ett fel att "rätta".** En
+  kampanj/adset/annons som är pausad och har spenderat > 0 kr har stängts av
+  med flit (av Axel, skalningsronden eller åtgärdstrappan) — den får ALDRIG
+  aktiveras av någon session eller rutin, oavsett hur namnet ser ut.
+  Aktivering gäller enbart det körningen själv skapat, eller Metas
+  tvångspauser på exakt de kampanjer körningen själv just uppdaterat
+  (verifierat med tillbakaläsning). Statusändringar görs alltid mot en
+  namngiven lista, aldrig som svep över ett mönster — och ska fler än ett par
+  kampanjer utanför körningens egna ändras: lista namnen och invänta Axels ok.
+  *(Incident 2026-08-29/30: ett namnmönster-svep i nattrutinen slog på ett
+  dussin manuellt avstängda kampanjer, flera olönsamma. Regeln i
+  `.claude/commands/nattkorning.md` steg 1 + nödbromsen där är facit.)*
 - **"PAUSED" gäller bara `ads.mjs` och `meta.mjs`.** Verifierat i koden 2026-08-12:
   `batch.mjs:158` och `multi-batch.mjs:215` sätter adsetet PAUSED men **annonsen
   `ACTIVE`**. `uk-wave.mjs:171,222` sätter **båda ACTIVE** (bara kampanjen är PAUSED).
