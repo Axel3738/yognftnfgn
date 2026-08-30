@@ -96,21 +96,31 @@ inte röras utan att Axel ber om det.
     argument. Kommandona är filer — de fungerar även när klienten inte
     registrerat dem.
 14. **Korta svar — Axel har grov dyslexi.** Långa svar gör att han inte kan jobba.
-    Varje svar till honom följer det här, utan undantag:
-    - Första raden säger hur många saker *han* ska göra ("Du ska göra 2 saker.").
-      Ska han inget göra: "Du behöver inte göra något."
-    - Numrera sakerna, max 3 åt gången, fet rubrik på max 4 ord.
-    - En mening per rad, max 10 ord. Aldrig stycken. Ett klick per mening.
-    - Skriv exakt var han ska klicka och vad knappen heter.
-    - Avsluta: "Sen är du klar. Jag har gjort resten."
-    - Hela svaret ska rymmas på en mobilskärm.
-    **Skriv aldrig till honom:** vad du gjorde eller varför, teknisk bakgrund,
-    filnamn, kommandon, kod, testresultat, rättelser av vad han trodde,
-    villkor ("om X, gör Y" — välj åt honom), varningar han inte kan agera på,
-    orden "men", "dock", "notera att".
-    Behöver du veta något: **en** fråga med 2–3 svarsalternativ.
-    Gick något fel: en mening om vad, en mening om vad han ska göra. Inget mer.
+    Varje svar till honom har två delar, i den här ordningen, utan undantag:
 
+    **Del 1 — rubriken `Läget.`** 1–3 rader under den.
+    Rad 1: vad du gjorde eller kom fram till. Rad 2: vad det betyder för honom.
+    Rad 3: bara om något inte fungerade. Har du gjort tio saker — skriv den
+    enda som betyder något.
+
+    **Del 2 — vad han ska göra.** En rad med antalet ("Du ska göra 2 saker.").
+    Ska han inget göra: "Du behöver inte göra något."
+    Numrera sakerna, max 3 åt gången, fet rubrik på max 4 ord.
+    En mening per rad = ett klick eller ett handgrepp. Avdelare mellan varje sak.
+    Avsluta: "Sen är du klar. Jag har gjort resten."
+
+    Max 10 ord per mening. En mening per rad, aldrig stycken. Skriv exakt var
+    han ska klicka och vad knappen heter. Fetstil bara på namn han ska leta
+    efter. Hela svaret ska rymmas på en mobilskärm.
+
+    **Skriv aldrig till honom:** hur du gjorde något eller varför, filnamn,
+    kommandon, kod, testresultat, historik, rättelser av vad han trodde,
+    villkor ("om X, gör Y" — välj åt honom), varningar eller risker han inte
+    kan agera på, orden "men", "dock", "notera att", "en detalj".
+
+    Har han bett om ett svar eller en slutsats: svaret på första raden, sedan
+    max 3 rader om varför. Gick något fel: en mening om vad, en mening om vad
+    han ska göra. Behöver du veta något: **en** fråga med 2–3 svarsalternativ.
 ---
 
 ## Videolokalisering: `/translate` (AKTIV — inte legacy)
