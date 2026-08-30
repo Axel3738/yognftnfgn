@@ -29,21 +29,30 @@ kan vara tillfälligt avstängd för kontot): försök ladda upp de saknade
 creatives och bygg klart enligt launch.md. Funkar uppladdningen fortfarande
 inte: notera och gå vidare.
 
-## Steg 3 — Launch-kön
+## Steg 3 — Launch-kön (Axels kontrakt, ordagrant)
 
-**FÖRST, innan någon mapp bedöms:** hämta hela kampanjlistan från MagiBorsten.
-**En produkt vars namn redan finns i en kampanj är ALDRIG en kandidat** —
-oavsett var mappen ligger, oavsett kampanjens status. Den ska inte launchas,
-inte QA:as om, inte nämnas som något Axel ska göra. Mapparnas placering är
-opålitlig (flyttar misslyckas på rättigheter, folk drar runt dem) —
-**kampanjkontot är enda sanningen för vad som redan är gjort.** Halvbyggda
-eller PAUSED-utan-beslut hanteras tyst i steg 1–2, inte här.
+**Driven ÄR to-do-listan. Kampanjkontot är kvittot på vad som är gjort.**
+Två källor, två olika jobb — blanda aldrig ihop dem:
 
-Sedan: lista Products-mappen (id `1Gga4QfZ0UfVC-q06BGGHN_fkSFN0Iygm`) med
-`python3 tools/drive-ls.py`. Kandidater = mappar som INTE matchar någon
-befintlig kampanj och inte är LAUNCHED/NOT USED/Winners/Losers/TEMU-referens
-eller "avvaktas". Kör /launch (launch.md) på varje komplett kandidat tills kön
-är tom. Radera nedladdad media ur scratchpad mellan produkterna.
+1. **Vad som SKA göras** avgörs ENBART av Drive: mappar som ligger direkt i
+   Products (id `1Gga4QfZ0UfVC-q06BGGHN_fkSFN0Iygm`), listade med
+   `python3 tools/drive-ls.py`. Axel styr listan genom att lägga och flytta
+   mappar. Det som inte ligger där finns inte på to-do-listan och rörs aldrig
+   som ny launch. (LAUNCHED/NOT USED/Winners/Losers/TEMU-referens/"avvaktas"
+   är aldrig to-do.)
+2. **Vad som redan ÄR gjort** avgörs ENBART av kampanjlistan från MagiBorsten,
+   hämtad INNAN någon mapp bedöms: matchar mappens produktnamn en befintlig
+   kampanj är den GJORD — hoppa över TYST (mappen har bara inte flyttats än;
+   flyttar nekas ibland på rättigheter). Aldrig omlaunch, aldrig om-QA,
+   aldrig en rad på Axels lista.
+
+Kandidat = ligger i Products (källa 1) OCH saknar kampanj (källa 2). Kör
+/launch (launch.md) på varje komplett kandidat tills kön är tom. Radera
+nedladdad media ur scratchpad mellan produkterna.
+
+Underhåll av redan launchade kampanjer (steg 1–2: aktivering, komplettering av
+saknade adsets) är INTE to-do-listan — det styrs av kampanjkontot och får läsa
+sitt material varifrån mappen än ligger, LAUNCHED inräknat, via publika länkar.
 
 ## Steg 4 — Drive-flytt (tyst best-effort)
 
