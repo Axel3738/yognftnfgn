@@ -454,6 +454,39 @@ utan att hela basanpassningen skickas upp igen.
 Förhandsvisningen (uppdaterad):
 <https://claude.ai/code/artifact/c8bb8fba-4196-4703-a48a-d5275ed24f1f>
 
+## 8m. Varv 15 (2026-08-30): två klockor, båda riktiga
+
+Axel: timern såg inte brådskande ut, och han ville ha en dygnsklocka vid
+sidan av veckoklockan — båda med sekundvisare. Ligger i **"Twinpillow v7
+(utkast)"** (`156622389385`); v6 publicerades under arbetet.
+
+**Varför den inte såg brådskande ut:** en siffra i löptext läses som
+information, inte som en klocka. Nu är det siffertavlor — mörka rutor med
+tim/min/sek under, blinkande kolon en gång i sekunden, och sekunderna som
+faktiskt rör sig. Det är den enda rörelsen i köprutan, därför märks den.
+
+**Två deadlines, ingen påhittad:**
+1. **Dygnsklockan → midnatt svensk tid.** "Beställ före midnatt så ligger
+   ditt utkast i mejlen i morgon." Nollställs varje natt av kalendern, inte
+   av besöket — samma sluttid för alla. Visar HH:MM:SS dygnet runt, vilket
+   också är det som ger den ständiga brådskekänslan Axel var ute efter.
+2. **Veckoraden → söndag 23.00.** Sömnadsomgången, nu också med sekunder.
+
+Färgen skärps när det faktiskt är bråttom: bärnsten sista tre timmarna före
+midnatt, rött sista timmen.
+
+⚠️ **Två förutsättningar som måste hållas sanna** — annars ska respektive rad
+bort samma dag:
+1. **Utkast dagen efter beställning** (dygnsklockan). Det är vårt eget
+   arbete, så det är Axels att hålla — men det måste faktiskt hållas.
+2. **Ordrar till leverantören en gång i veckan** vid angiven tid (veckoraden).
+
+Byggd så att den aldrig kan bli en per-besökare-timer: båda räknar mot
+kalendertidpunkter i `Europe/Stockholm`, oavsett besökarens tidszon.
+
+Förhandsvisningen (levande klockor):
+<https://claude.ai/code/artifact/c8bb8fba-4196-4703-a48a-d5275ed24f1f>
+
 ## 9. Kvarstående — kräver Axel
 
 1. **Publicera temat:** Online Store → Themes →

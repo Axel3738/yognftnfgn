@@ -147,55 +147,113 @@
 }
 .ms-bild__hjalp { margin: .7rem 0 0; font-size: 1.45rem; color: rgba(42, 17, 71, .68); }
 
-/* Nedräkningen till sömnadsomgången ------------------------------------- */
-/* Ligger direkt ovanför knappen med flit: brådska högt upp på sidan läses
-   som en reklamruta och scrollas förbi, brådska i beslutsögonblicket är det
-   sista hon ser innan hon trycker. Räknar mot en riktig, gemensam deadline
-   (se ms-preorder.liquid) — får aldrig startas om vid varje sidladdning. */
+/* Nedräkningarna -------------------------------------------------------- */
+/* Ligger direkt ovanför knappen med flit: brådska högt upp på sidan läses som
+   en reklamruta och scrollas förbi, brådska i beslutsögonblicket är det sista
+   hon ser innan hon trycker.
+
+   Två riktiga tidpunkter, ingen påhittad: midnatt (utkastet) och veckans
+   sömnadsomgång. Båda har samma sluttid för alla besökare — ingen av dem får
+   startas om vid sidladdning.
+
+   Siffertavlorna är hela skillnaden mot förra versionen. En siffra i löptext
+   läses som information; rutor med tim/min/sek under, mörk botten och
+   sekunder som faktiskt rör sig läses som en klocka som går. */
 .ms-omg {
   display: block;
   margin: 1.8rem 0 1.2rem;
-  padding: 1.4rem 1.2rem 1.2rem;
-  border: 2px solid var(--ms-line-strong, #c7bce0);
+  padding: 1.6rem 1.4rem 1.4rem;
+  border: 2px solid #2a1147;
   border-radius: 14px;
   background: #fff;
   text-align: center;
-  transition: border-color .3s ease, background-color .3s ease;
 }
 .ms-omg__etikett {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: .5rem;
-  margin: 0 0 .4rem;
-  font-size: 1.3rem;
+  margin: 0 0 1rem;
+  font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: .08em;
   text-transform: uppercase;
-  color: rgba(42, 17, 71, .62);
+  color: #a1500b;
 }
-.ms-omg__etikett .ms-i { width: 1.6rem; height: 1.6rem; }
-.ms-omg__klocka {
-  margin: 0 0 .6rem;
-  font-size: clamp(3rem, 10vw, 3.8rem);
+.ms-omg__etikett .ms-i { width: 1.7rem; height: 1.7rem; }
+
+.ms-omg__ur {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: .5rem;
+  margin: 0 0 1rem;
+}
+.ms-omg__ruta { display: grid; justify-items: center; gap: .35rem; }
+.ms-omg__ruta b {
+  display: block;
+  min-width: 6.6rem;
+  padding: .7rem .5rem;
+  border-radius: 10px;
+  background: #2a1147;
+  color: #fffdf4;
+  font-size: clamp(3.2rem, 11vw, 4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+  transition: background-color .3s ease;
+}
+.ms-omg__ruta small {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(42, 17, 71, .55);
+}
+/* Kolonet blinkar en gång i sekunden, som på en klocka. Det är den enda
+   rörelsen i köprutan — därför märks den. */
+.ms-omg__kolon {
+  align-self: start;
+  padding-top: .8rem;
+  font-size: clamp(2.6rem, 9vw, 3.2rem);
   font-weight: 700;
   line-height: 1;
-  font-variant-numeric: tabular-nums;
-  color: #2a1147;
+  color: rgba(42, 17, 71, .35);
+  animation: ms-omg-blink 1s steps(2, jump-none) infinite;
 }
-.ms-omg__under { margin: 0; font-size: 1.4rem; line-height: 1.5; color: rgba(42, 17, 71, .72); }
+@keyframes ms-omg-blink { 50% { opacity: .2; } }
+@media (prefers-reduced-motion: reduce) {
+  .ms-omg__kolon { animation: none; }
+}
+
+.ms-omg__under { margin: 0; font-size: 1.45rem; line-height: 1.5; color: rgba(42, 17, 71, .75); }
 .ms-omg__under strong { color: #2a1147; }
 
-/* Under 12 timmar kvar. Bärnsten i stället för lila: brådskan ska läsas som
-   en annan sorts information än varumärkesfärgen, inte som mer av samma. */
-.ms-omg--brad { border-color: #e0a341; background: #fffaf0; }
-.ms-omg--brad .ms-omg__klocka,
-.ms-omg--brad .ms-omg__etikett { color: #a1500b; }
+/* Veckoraden är den andra, längre deadlinen. Den ska läsas som en rad i ett
+   produktionsschema, inte som en andra reklamruta — därav den låga vikten. */
+.ms-omg__vecka {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  margin: 1.2rem 0 0;
+  padding-top: 1.1rem;
+  border-top: 1px dashed var(--ms-line-strong, #c7bce0);
+  font-size: 1.4rem;
+  line-height: 1.45;
+  color: rgba(42, 17, 71, .72);
+}
+.ms-omg__vecka .ms-i { flex: none; width: 1.6rem; height: 1.6rem; color: var(--ms-accent, #7c4ec4); }
+.ms-omg__vecka b { color: #2a1147; font-variant-numeric: tabular-nums; white-space: nowrap; }
 
-/* Sista två timmarna. */
-.ms-omg--sist { border-color: #d1583f; background: #fff5f2; }
-.ms-omg--sist .ms-omg__klocka,
+/* Sista tre timmarna före midnatt, och sista timmen. Bärnsten och rött i
+   stället för lila: brådskan ska läsas som en annan sorts information än
+   varumärkesfärgen, inte som mer av samma. */
+.ms-omg--brad { border-color: #a1500b; }
+.ms-omg--brad .ms-omg__ruta b { background: #a1500b; }
+.ms-omg--sist { border-color: #a3311a; }
 .ms-omg--sist .ms-omg__etikett { color: #a3311a; }
+.ms-omg--sist .ms-omg__ruta b { background: #a3311a; }
 
 /* Knappen och raden under den ------------------------------------------- */
 /* Förbeställningsknappen är sidans enda uppgift — den får väga mest av allt

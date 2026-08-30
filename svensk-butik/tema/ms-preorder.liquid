@@ -65,34 +65,66 @@
   </p>
 
 {%- when 'klocka' -%}
+  {%- comment -%}
+    TVÅ RIKTIGA DEADLINES, INGEN PÅHITTAD
+    Dygnsklockan räknar till midnatt svensk tid — samma sluttid för alla, och
+    den nollställs av kalendern, inte av besöket. Den håller bara så länge
+    utkastlöftet håller: beställningar före midnatt ska få sitt utkast dagen
+    efter. Slutar vi göra det ska raden bort samma dag.
+    Veckoraden räknar till sömnadsomgången (se toppen av filen).
+
+    Siffertavlorna finns för att en siffra i löptext inte läses som en klocka.
+    Rutor med tim/min/sek under, och sekunderna som faktiskt rör sig, gör att
+    ögat känner igen en nedräkning direkt.
+  {%- endcomment -%}
   <ms-omgang class="ms-scope ms-omg"
     data-veckodag="{{ stang_veckodag }}"
     data-timme="{{ stang_timme }}">
+
     <p class="ms-omg__etikett">
       {% render 'ms-icon', name: 'clock' %}
-      Veckans sömnadsomgång stänger om
+      Ditt utkast börjar ritas i natt
     </p>
-    {%- comment -%}
-      Reservtexten syns utan JavaScript — den säger samma sak, utan sekunder.
-    {%- endcomment -%}
-    <p class="ms-omg__klocka" data-ms-omg-klocka>{{ stang_namn }}</p>
+
+    <div class="ms-omg__ur">
+      <span class="ms-omg__ruta"><b data-ms-tim>--</b><small>tim</small></span>
+      <span class="ms-omg__kolon" aria-hidden="true">:</span>
+      <span class="ms-omg__ruta"><b data-ms-min>--</b><small>min</small></span>
+      <span class="ms-omg__kolon" aria-hidden="true">:</span>
+      <span class="ms-omg__ruta"><b data-ms-sek>--</b><small>sek</small></span>
+    </div>
+
     <p class="ms-omg__under">
-      Beställer du efter det syr vi din kudde i nästa omgång —
-      <strong>en vecka senare</strong>.
+      Beställ före midnatt så ligger ditt utkast i mejlen
+      <strong>i morgon</strong>.
+    </p>
+
+    <p class="ms-omg__vecka">
+      {% render 'ms-icon', name: 'sparkle' %}
+      <span>Veckans sömnadsomgång stänger om
+        {%- comment -%}
+          Reservtexten syns utan JavaScript — samma besked, utan sekunder.
+        {%- endcomment -%}
+        <b data-ms-vecka>{{ stang_namn }}</b>
+      </span>
     </p>
   </ms-omgang>
 
   <script>
-    /* Nedräkning till nästa riktiga stängning, räknad i svensk tid oavsett
-       var besökaren sitter. Samma sluttid för alla — den får aldrig utgå
-       från när sidan öppnades. */
+    /* Två nedräkningar, båda mot riktiga tidpunkter i svensk tid:
+       nästa midnatt och nästa sömnadsomgång. Ingen av dem utgår från när
+       sidan öppnades — sluttiden är densamma för alla besökare. */
     (function () {
       if (window.customElements && customElements.get('ms-omgang')) return;
 
       class MsOmgang extends HTMLElement {
         connectedCallback() {
-          this.klocka = this.querySelector('[data-ms-omg-klocka]');
-          if (!this.klocka) return;
+          this.tim = this.querySelector('[data-ms-tim]');
+          this.min = this.querySelector('[data-ms-min]');
+          this.sek = this.querySelector('[data-ms-sek]');
+          this.vecka = this.querySelector('[data-ms-vecka]');
+          if (!this.tim) return;
+
           this.veckodag = parseInt(this.dataset.veckodag, 10) || 0;
           this.timme = parseInt(this.dataset.timme, 10) || 23;
           this.rita();
@@ -104,42 +136,56 @@
         }
 
         /* Besökarens klocka kan stå var som helst i världen. Vi flyttar den
-           till svensk tid, räknar fram nästa stängning där, och flyttar
-           tillbaka — annars stänger omgången på olika tider i olika länder. */
-        nastaStangning() {
+           till svensk tid, räknar där, och flyttar tillbaka — annars går
+           deadlinen ut vid olika tidpunkter i olika länder. */
+        svenskNu() {
           const nu = new Date();
           const svensk = new Date(nu.toLocaleString('en-US', { timeZone: 'Europe/Stockholm' }));
-          const skillnad = nu.getTime() - svensk.getTime();
+          return { svensk: svensk, skillnad: nu.getTime() - svensk.getTime() };
+        }
 
-          const mal = new Date(svensk);
+        nastaMidnatt() {
+          const t = this.svenskNu();
+          const mal = new Date(t.svensk);
+          mal.setHours(24, 0, 0, 0);
+          return new Date(mal.getTime() + t.skillnad);
+        }
+
+        nastaStangning() {
+          const t = this.svenskNu();
+          const mal = new Date(t.svensk);
           mal.setHours(this.timme, 0, 0, 0);
-          let dagar = (this.veckodag - svensk.getDay() + 7) % 7;
-          if (dagar === 0 && svensk.getTime() >= mal.getTime()) dagar = 7;
+          let dagar = (this.veckodag - t.svensk.getDay() + 7) % 7;
+          if (dagar === 0 && t.svensk.getTime() >= mal.getTime()) dagar = 7;
           mal.setDate(mal.getDate() + dagar);
-
-          return new Date(mal.getTime() + skillnad);
+          return new Date(mal.getTime() + t.skillnad);
         }
 
         rita() {
-          const kvar = this.nastaStangning().getTime() - Date.now();
-          /* nastaStangning() rullar alltid fram till nästa vecka när tiden
-             passerats, så kvar är normalt positiv. Skulle den ändå inte bli
-             det, låt förra siffran stå kvar hellre än att visa minustid. */
-          if (kvar <= 0) return;
-
-          const s = Math.floor(kvar / 1000) % 60;
-          const m = Math.floor(kvar / 60000) % 60;
-          const h = Math.floor(kvar / 3600000) % 24;
-          const d = Math.floor(kvar / 86400000);
           const tva = (n) => String(n).padStart(2, '0');
 
-          this.klocka.textContent = d > 0
-            ? d + (d === 1 ? ' dag ' : ' dagar ') + h + ' tim ' + tva(m) + ' min'
-            : tva(h) + ':' + tva(m) + ':' + tva(s);
+          const kvar = this.nastaMidnatt().getTime() - Date.now();
+          if (kvar > 0) {
+            this.tim.textContent = tva(Math.floor(kvar / 3600000));
+            this.min.textContent = tva(Math.floor(kvar / 60000) % 60);
+            this.sek.textContent = tva(Math.floor(kvar / 1000) % 60);
+            /* Tonen skärps när det faktiskt är bråttom — inte tidigare. */
+            this.classList.toggle('ms-omg--brad', kvar < 3 * 3600000);
+            this.classList.toggle('ms-omg--sist', kvar < 3600000);
+          }
 
-          /* Tonen skärps när det faktiskt är bråttom — inte tidigare. */
-          this.classList.toggle('ms-omg--brad', kvar < 12 * 3600000);
-          this.classList.toggle('ms-omg--sist', kvar < 2 * 3600000);
+          if (this.vecka) {
+            const v = this.nastaStangning().getTime() - Date.now();
+            if (v > 0) {
+              const d = Math.floor(v / 86400000);
+              const h = Math.floor(v / 3600000) % 24;
+              const m = Math.floor(v / 60000) % 60;
+              const s = Math.floor(v / 1000) % 60;
+              this.vecka.textContent = d > 0
+                ? d + (d === 1 ? ' dag ' : ' dagar ') + h + ' tim ' + tva(m) + ' min ' + tva(s) + ' sek'
+                : tva(h) + ':' + tva(m) + ':' + tva(s);
+            }
+          }
         }
       }
 
