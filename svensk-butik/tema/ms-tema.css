@@ -272,3 +272,51 @@ h1, .h1, h2, .h2, h3, .h3 {
   font-weight: 700;
   box-shadow: 0 6px 18px rgba(124, 78, 196, .28);
 }
+
+/* Nedräkningen till sömnadsomgången ------------------------------------- */
+/* Räknar mot en riktig, gemensam deadline (se ms-preorder.liquid). Den får
+   aldrig göras om till en timer som startar om vid varje sidladdning. */
+.ms-omg {
+  display: block;
+  margin: 0 0 1.8rem;
+  padding: 1.4rem 1.2rem 1.2rem;
+  border: 2px solid var(--ms-line-strong, #c7bce0);
+  border-radius: 14px;
+  background: #fff;
+  text-align: center;
+  transition: border-color .3s ease, background-color .3s ease;
+}
+.ms-omg__etikett {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  margin: 0 0 .4rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(42, 17, 71, .62);
+}
+.ms-omg__etikett .ms-i { width: 1.6rem; height: 1.6rem; }
+.ms-omg__klocka {
+  margin: 0 0 .6rem;
+  font-size: clamp(3rem, 10vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: #2a1147;
+}
+.ms-omg__under { margin: 0; font-size: 1.4rem; line-height: 1.5; color: rgba(42, 17, 71, .72); }
+.ms-omg__under strong { color: #2a1147; }
+
+/* Under 12 timmar kvar. Bärnsten i stället för lila: brådskan ska läsas som
+   en annan sorts information än varumärkesfärgen, inte som mer av samma. */
+.ms-omg--brad { border-color: #e0a341; background: #fffaf0; }
+.ms-omg--brad .ms-omg__klocka,
+.ms-omg--brad .ms-omg__etikett { color: #a1500b; }
+
+/* Sista två timmarna. */
+.ms-omg--sist { border-color: #d1583f; background: #fff5f2; }
+.ms-omg--sist .ms-omg__klocka,
+.ms-omg--sist .ms-omg__etikett { color: #a3311a; }

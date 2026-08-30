@@ -391,6 +391,31 @@ sömnaden: stygnrad som innerkant och de tre stegen uppträdda på en tråd
 - **Förhandsvisning** (mobilvy av hela köprutan):
   <https://claude.ai/code/artifact/c8bb8fba-4196-4703-a48a-d5275ed24f1f>
 
+## 8k. Varv 13 (2026-08-30): nedräkningen till sömnadsomgången
+
+Axel ville ha en timer som startar om på ~12 timmar vid varje sidbesök, för
+att rättfärdiga leveranstiden. **Den byggdes inte.** En tidsgräns som beror
+på när besökaren råkade öppna sidan kan aldrig vara sann, och en påhittad
+tidsgräns som ska pressa fram ett snabbt köp står på svarta listan i
+marknadsföringslagen (bilaga I till direktiv 2005/29/EG, punkt 7) — förbjuden
+oavsett effekt, och första sak en konkurrentanmälan tar.
+
+**Byggt i stället:** nedräkning mot en *riktig* veckodeadline — samma sluttid
+för alla besökare, **söndag 23.00 svensk tid**, satt av när ordrarna faktiskt
+går till leverantören. Tickar i sekunder, står i timmar/minuter/sekunder
+under det sista dygnet, och rullar automatiskt vidare till nästa vecka.
+Färgen skärps när det verkligen är bråttom: bärnsten under 12 timmar kvar,
+rött sista två timmarna. Samma emotionella beat, men det håller.
+
+⚠️ **Förutsättning som måste hållas sann:** texten lovar att beställningar
+före deadline går i veckans omgång. Det gäller bara så länge ordrarna
+faktiskt skickas till leverantören en gång i veckan vid den tidpunkten.
+Ändras rutinen ska `stang_veckodag`/`stang_timme` i
+`snippets/ms-preorder.liquid` ändras samma dag.
+
+Förhandsvisningen (med levande timer):
+<https://claude.ai/code/artifact/c8bb8fba-4196-4703-a48a-d5275ed24f1f>
+
 ## 9. Kvarstående — kräver Axel
 
 1. **Publicera temat:** Online Store → Themes →

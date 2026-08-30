@@ -136,6 +136,29 @@
     text-wrap: balance;
   }
   .pre p.ing { margin: 0 0 19px; font-size: 14.5px; line-height: 1.6; color: var(--ink-svag); }
+  .omg {
+    display: block; margin: 0 0 18px; padding: 14px 12px 12px;
+    border: 2px solid var(--linje-stark); border-radius: 14px;
+    background: var(--kort); text-align: center;
+    transition: border-color .3s ease, background-color .3s ease;
+  }
+  .omg-etikett {
+    display: flex; align-items: center; justify-content: center; gap: 5px;
+    margin: 0 0 4px; font-size: 11.5px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--ink-svagast);
+  }
+  .omg-etikett svg { width: 15px; height: 15px; }
+  .omg-klocka {
+    margin: 0 0 6px; font-size: 34px; font-weight: 700; line-height: 1;
+    font-variant-numeric: tabular-nums; color: var(--plommon);
+  }
+  .omg-under { margin: 0; font-size: 13px; line-height: 1.5; color: var(--ink-svag); }
+  .omg-under strong { color: var(--plommon); }
+  .omg--brad { border-color: #e0a341; background: #fffaf0; }
+  .omg--brad .omg-klocka, .omg--brad .omg-etikett { color: #a1500b; }
+  .omg--sist { border-color: #d1583f; background: #fff5f2; }
+  .omg--sist .omg-klocka, .omg--sist .omg-etikett { color: #a3311a; }
+
   .spar {
     position: relative; display: grid; grid-template-columns: repeat(3, 1fr);
     gap: 8px; margin: 0 0 16px; padding: 0; list-style: none; text-align: center;
@@ -276,6 +299,15 @@
           <h3>Din kudde finns inte än.<br>Vi syr den åt dig.</h3>
           <p class="ing">Inget lager, ingen hylla, ingen slumpad kudde ur en låda. Din börjar existera först när du sagt ja till utkastet.</p>
 
+          <div class="omg" id="omg">
+            <p class="omg-etikett">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 1.9"/></svg>
+              Veckans sömnadsomgång stänger om
+            </p>
+            <p class="omg-klocka" id="omgKlocka">söndag 23.00</p>
+            <p class="omg-under">Beställer du efter det syr vi din kudde i nästa omgång — <strong>en vecka senare</strong>.</p>
+          </div>
+
           <ol class="spar">
             <li class="steg steg--nu">
               <span class="punkt">1</span>
@@ -367,6 +399,7 @@
         <h4>Varför den säljer</h4>
         <ul>
           <li><b>Väntetiden blir argumentet.</b> "Din kudde finns inte än" är skälet till att den blir hennes.</li>
+          <li><b>Klockan tickar på riktigt.</b> Hinner hon inte får hon vänta en vecka — det är sant, och därför funkar det.</li>
           <li><b>Tråden håller ihop stegen.</b> Hon ser hela vägen innan hon betalar.</li>
           <li><b>Knappen säger vad hon får.</b> "Förbeställ min kudde", inte "Lägg i varukorgen".</li>
           <li><b>Sista oron dör vid tummen.</b> Raden under knappen svarar på "betalar jag i blindo?".</li>
@@ -376,9 +409,10 @@
       <div class="notkort">
         <h4>Allt här går att belägga</h4>
         <ul>
+          <li>Nedräkningen går mot en riktig deadline — samma sluttid för alla, den startar aldrig om.</li>
           <li>Leveransdatumet räknas i riktiga arbetsdagar.</li>
           <li>2-packets pris ligger som riktig rabattkod i kassan.</li>
-          <li>Ingen nedräknare, ingen lagerräknare, inga recensioner.</li>
+          <li>Ingen lagerräknare, inga recensioner, inga påhittade siffror.</li>
         </ul>
       </div>
     </div>
@@ -386,3 +420,43 @@
 
   <p class="fot">Datumet i kortet är ett exempel — på sajten räknas det ut när sidan öppnas.</p>
 </div>
+
+<script>
+  /* Samma logik som i temat: nästa söndag 23.00 svensk tid, samma sluttid
+     för alla besökare. Startar aldrig om vid sidladdning. */
+  (function () {
+    const ruta = document.getElementById('omg');
+    const klocka = document.getElementById('omgKlocka');
+    if (!ruta || !klocka) return;
+
+    function nastaStangning() {
+      const nu = new Date();
+      const svensk = new Date(nu.toLocaleString('en-US', { timeZone: 'Europe/Stockholm' }));
+      const skillnad = nu.getTime() - svensk.getTime();
+      const mal = new Date(svensk);
+      mal.setHours(23, 0, 0, 0);
+      let dagar = (0 - svensk.getDay() + 7) % 7;
+      if (dagar === 0 && svensk.getTime() >= mal.getTime()) dagar = 7;
+      mal.setDate(mal.getDate() + dagar);
+      return new Date(mal.getTime() + skillnad);
+    }
+
+    function rita() {
+      const kvar = nastaStangning().getTime() - Date.now();
+      if (kvar <= 0) return;
+      const tva = (n) => String(n).padStart(2, '0');
+      const s = Math.floor(kvar / 1000) % 60;
+      const m = Math.floor(kvar / 60000) % 60;
+      const h = Math.floor(kvar / 3600000) % 24;
+      const d = Math.floor(kvar / 86400000);
+      klocka.textContent = d > 0
+        ? d + (d === 1 ? ' dag ' : ' dagar ') + h + ' tim ' + tva(m) + ' min'
+        : tva(h) + ':' + tva(m) + ':' + tva(s);
+      ruta.classList.toggle('omg--brad', kvar < 12 * 3600000);
+      ruta.classList.toggle('omg--sist', kvar < 2 * 3600000);
+    }
+
+    rita();
+    setInterval(rita, 1000);
+  })();
+</script>
