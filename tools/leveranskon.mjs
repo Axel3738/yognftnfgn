@@ -134,11 +134,27 @@ for (const l of leveranser) {
   kö.push({ ...l, gjort, filer });
 }
 
+/** Lifetime-spend. Fel att lasa = anta att den spenderat (rors inte). */
+async function spend(id) {
+  try {
+    const r = await (await fetch(`${API}/${id}/insights?date_preset=maximum&fields=spend&access_token=${process.env.META_ACCESS_TOKEN}`)).json();
+    return Number(r.data?.[0]?.spend ?? 0);
+  } catch { return Infinity; }
+}
+
 // Kampanjnamn for de som kom ur products.json (kartan har dem inte alltid).
 for (const k of kö) {
   if (k.kampanj && !k.kampanj.name) {
     const träff = annonser.find(a => a.campaign?.id === k.kampanj.id)?.campaign;
     if (träff) { k.kampanj.name = träff.name; k.kampanj.status = träff.status; }
+  }
+}
+
+// En PAUSED kampanj som spenderat ar avvecklad — dit gar inga nya creatives.
+for (const k of kö) {
+  if (k.kampanj && k.kampanj.status && k.kampanj.status !== 'ACTIVE') {
+    k.kampanjSpend = await spend(k.kampanj.id);
+    k.avvecklad = k.kampanjSpend > 0;
   }
 }
 
@@ -153,6 +169,7 @@ if (finns('json')) {
 
 const nya = kö.filter(k => !k.gjort);
 const utan = nya.filter(k => !k.kampanj);
+const hyllade = nya.filter(k => k.avvecklad);
 console.log(`Leveransmappar i Drive: ${leveranser.length} · ${leveranser.length - nya.length} redan i kontot · ${karta && Object.keys(karta).length} kända prefix i kontot\n`);
 
 const perProdukt = {};
@@ -162,6 +179,9 @@ for (const [pid, rader] of Object.entries(perProdukt)) {
   const kmp = rader[0].kampanj;
   if (!kmp) {
     console.log(`${pid} → ⚠️  INGEN KAMPANJ i kontot — produkten är inte launchad. Laddas INTE upp.`);
+  } else if (rader[0].avvecklad) {
+    console.log(`${pid} → ${kmp.name} [${kmp.status}], ${rader[0].kampanjSpend} kr spend`);
+    console.log(`   ⏭  AVVECKLAD — avstängd med flit. Laddas INTE upp. Rapporteras bara.`);
   } else {
     const aktiv = kmp.status === 'ACTIVE';
     console.log(`${pid} → ${kmp.name} [${kmp.status}]${aktiv ? '  ⚠️ AKTIV — uppladdning här börjar spendera' : ''}`);
@@ -183,5 +203,6 @@ for (const [pid, rader] of Object.entries(perProdukt)) {
 
 console.log(`${nya.length} leverans(er) väntar på uppladdning.`);
 if (utan.length) console.log(`⚠️  ${utan.length} av dem saknar kampanj i kontot och laddas inte upp.`);
+if (hyllade.length) console.log(`⏭  ${hyllade.length} hör till en avvecklad kampanj och laddas inte upp.`);
 const iAktiva = nya.filter(k => k.kampanj?.status === 'ACTIVE').length;
 if (iAktiva) console.log(`⚠️  ${iAktiva} skulle hamna i en AKTIV kampanj — de börjar spendera direkt vid aktivering.`);
