@@ -88,6 +88,11 @@ inte röras utan att Axel ber om det.
     av 17 annonser under 30 kr; batch #5:s trevägstest med identisk copy gav
     5,70 / 5,52 / 159,76 kr. Läggs nya creatives i skalningens CBO blir datan
     oläsbar och kvoten meningslös.)*
+    ⚠️ **Ett uttryckligt undantag, Axels beslut 2026-08-30:** nattrutinen
+    `/notionkorning` laddar upp redigerarnas färdiga creatives i produktens
+    aktiva CBO (`campaign_ids[0]`), inte i ett test-ABO. Det gäller ENBART den
+    rutinen. Rätta inte tillbaka det — och allt annat nytt testande följer
+    fortfarande regel 11.
 12. **Fråga bara när ett beslut kräver ägaren** (prisändring, rabatt i Shopify, ny
     target-CPA). Allt annat: kör.
 13. **Om Axel skriver ett `/kommando` som klienten inte känner igen** (eller skriver
@@ -121,7 +126,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 
 ## Kommandona (Axels gränssnitt)
 
-16 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
+17 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
 
 | Kommando | Vad |
 |----------|-----|
@@ -141,6 +146,31 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/launch <produktnamn>` | **Temu-flödet:** Drive → QA → Judge.me → Meta som PAUSED (`docs/temu-launch-flow.md`) |
 | `/bildannonser [--dry]` | **Rutin 20:00 varje dag:** alla Notion-hubbar → ogjorda bildannonser → kie.ai → `To be Reviewed`. **Aldrig video.** |
 | `/nattkorning` | Rutinen "Ad upload and structure": Drive-kön → QA → Meta |
+| `/notionkorning` | **Nattrutin 00:01:** redigerarnas leveranser → brief-QA → upp i produktens CBO |
+
+### Nattrutinerna
+
+Kör automatiskt som Routines på claude.ai. **De klonar `main`** — ligger
+kommandofilen kvar på en gren hittar rutinen den inte och ger upp direkt.
+Merga alltid till `main`, annars är rutinen bara schemalagd, inte igång.
+
+| Tid (svensk) | Cron (UTC) | Rutin | Kommando |
+|---|---|---|---|
+| 04:15 | `15 2 * * *` | Daglig NO-videobatch | `/translate-no` |
+| 05:30 | `30 3 * * *` | Norska recensioner | `/no-recensioner` |
+| 20:00 | `0 18 * * *` | Bildannonser | `/bildannonser` |
+| 00:01 | `1 22 * * *` | Leveransrundan | `/notionkorning` |
+
+⚠️ **Cron står i UTC och följer inte sommartid.** Tiderna ovan gäller CEST
+(mars–oktober). Vid vinteromställningen går varje rutin en timme senare svensk
+tid — cron-uttrycken ska då minskas med en timme.
+
+⚠️ **Rutiner ärver inte sessionens MCP-connectors.** En rutin som behöver Notion,
+Drive eller Shopify måste få connectorn kopplad på själva rutinen i Routines-vyn
+på claude.ai — annars står den helt utan `mcp__*`-verktyg. Bygg därför rutinerna
+på vägar som fungerar ändå där det går: Drive läses publikt med
+`tools/drive-ls.py`, Meta via `META_ACCESS_TOKEN`, Notion via `NOTION_TOKEN`
+(`tools/notion-klara.mjs`).
 
 ---
 
@@ -394,6 +424,9 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 | Mapp/fil | Vad |
 |---|---|
 | `pipeline/ads.mjs`, `meta.mjs` | Laddar upp creatives till Meta som **PAUSED** |
+| `tools/leveranskon.mjs` | Vad redigerarna levererat i Drive som ännu inte finns i kontot (kön för `/notionkorning`) |
+| `tools/notion-klara.mjs` | Läser creative-hubbarna via Notions REST API (`NOTION_TOKEN`) — reservväg när MCP:n saknas |
+| `tools/notion-till-meta.mjs` | Laddar upp EN godkänd creative i produktens CBO, med spärrar mot fel konto och mot att röra avstängt |
 | `pipeline/batch.mjs`, `multi-batch.mjs`, `uk-wave.mjs`, `mastern-batch.mjs` | ⚠️ Laddar **inte** upp som PAUSED — se regeln under "Saker som är lätta att göra fel" |
 | `pipeline/waves/*.config.mjs` | Vågkonfig per marknad — `se-`, `dk-`, `no-`, `uk-` |
 | `pipeline/localize.mjs`, `heygen.mjs`, `veed.mjs`, `cover-srt.py` | Översätter färdiga videoannonser till nya språk (`docs/video-localization.md`) |
@@ -435,6 +468,13 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   5 av 8 rader**. Korskolla alltid mot `amount_spent × purchase_roas`.
 - **Notion-status `In progress 2` betyder REVISION** — annonsen underkändes och
   görs om. Det betyder INTE "längre kommen". Full tabell i `docs/os/NOTION-FORMAT.md`.
+- **Hubbarna använder inte hela statustabellen.** Verifierat 2026-08-30: noll rader
+  står på `To be Reviewed` i någon av de fyra hubbarna — allt hoppar direkt till
+  `Approved` (bara strandtofflorna har 12 `In Review`). Och `Filer och media` är
+  tomt på samtliga rader: **Notion bär briefen, aldrig den färdiga filen.**
+  Den ligger i Drive under `Edited Folder/Week N/<annonsnamn>/<annonsnamn>.mp4`.
+  Bygg därför aldrig en rutin som utgår från att en status markerar "klar" —
+  leveransen i Drive mot annonsnamnen i kontot är det som faktiskt stämmer.
 - **Notion-hubbarna rymmer mer än annonser.** Bara rader med Typ `… Pending Approval`
   är annonser. SOP, Guideline, Feedback och `Winning Creative` (arkiv) är
   dokumentation och räknas aldrig. Filtrera på Typ vid **varje** hubbläsning, inte

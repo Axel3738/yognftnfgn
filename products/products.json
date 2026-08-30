@@ -1,5 +1,5 @@
 {
-  "comment": "Per-produkt-konfig for brief-kvoten. Endast Baverbutiken.se - MagiBorsten 1867947880635861. aov_sek = verklig AOV fran Shopify analytics. break_even_roas / target_roas_25pct = Axels COGS-berakning 2026-08-05 - ANVAND ROAS-tröskeln i forsta hand, den drivar inte nar AOV rors. break_even_cpa_sek = aov_sek / break_even_roas (rakna om nar AOV andras). KILL-beslut mats mot break-even, ALDRIG mot target. Se docs/os/ANALYSMETOD.md. scaling=true = produkt vi SKALAR (ingar i redigerardashboarden och har egen Notion creative hub). scaling=false = testprodukt, ingar inte i redigerarnas arbetsflode. notion.collection_id anvands av /dashboard for att lasa briefarna.",
+  "comment": "Per-produkt-konfig for brief-kvoten. Endast Baverbutiken.se - MagiBorsten 1867947880635861. aov_sek = verklig AOV fran Shopify analytics. break_even_roas / target_roas_25pct = Axels COGS-berakning 2026-08-05 - ANVAND ROAS-tröskeln i forsta hand, den drivar inte nar AOV rors. break_even_cpa_sek = aov_sek / break_even_roas (rakna om nar AOV andras). KILL-beslut mats mot break-even, ALDRIG mot target. Se docs/os/ANALYSMETOD.md. scaling=true = produkt vi SKALAR (ingar i redigerardashboarden och har egen Notion creative hub). scaling=false = testprodukt, ingar inte i redigerarnas arbetsflode. notion.collection_id anvands av /dashboard for att lasa briefarna. creative_prefix = prefixet redigerarnas leveransmappar i Drive ('Edited Folder/Week N/<annonsnamn>') har for produkten. Anvands av /notionkorning for att koppla en leverans till ratt produkt och kampanj.",
   "products": [
     {
       "id": "motorholjet",
@@ -27,7 +27,8 @@
         "database_id": "3b0270ab-908c-80a7-8793-fa11d8c0f6e4",
         "collection_id": "785270ab-908c-82e5-ac71-07d7b7ef3770",
         "url": "https://app.notion.com/p/3b0270ab908c80a78793fa11d8c0f6e4"
-      }
+      },
+      "creative_prefix": "Enginecover_"
     },
     {
       "id": "ai-glasogon",
@@ -99,7 +100,8 @@
         "database_id": "3aa270ab-908c-802b-a7a4-eb74d08d7eb7",
         "collection_id": "50c270ab-908c-8266-aa1f-872b99fe61e0",
         "url": "https://app.notion.com/p/3aa270ab908c802ba7a4eb74d08d7eb7"
-      }
+      },
+      "creative_prefix": "Beachslippers_"
     },
     {
       "id": "axelbaltet",
@@ -127,7 +129,8 @@
         "database_id": "3aa270ab-908c-808b-9d87-d1f1a0d70cbc",
         "collection_id": "2f1270ab-908c-820a-9a08-07b73d53710b",
         "url": "https://app.notion.com/p/3aa270ab908c808b9d87d1f1a0d70cbc"
-      }
+      },
+      "creative_prefix": "Trimmerbelt_"
     },
     {
       "id": "satesoverdragaren",
@@ -155,7 +158,8 @@
         "database_id": "3aa270ab-908c-80c0-88aa-cb4935db8f33",
         "collection_id": "6c9270ab-908c-8362-aa2a-87c073045ebf",
         "url": "https://app.notion.com/p/3aa270ab908c80c088aacb4935db8f33"
-      }
+      },
+      "creative_prefix": "Seatcover_"
     }
   ]
 }
