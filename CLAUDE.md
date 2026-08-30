@@ -14,52 +14,57 @@ vilka connectors som måste kopplas) → `docs/os/ACTIONPLAN.md`.
 
 ---
 
-## Svarsformatet till Axel (gäller VARJE svar, inga undantag)
+## Så här ska du svara Axel (gäller VARJE svar, inga undantag)
 
 Axel har grov dyslexi. Långa svar gör att han inte kan jobba.
-Det här formatet står över allt annat i den här filen. Även kommandonas
-leveransformat skrivs om till det här när svaret går till Axel i chatten —
-filer, briefer och Notion-innehåll behåller sitt eget format.
+Det här står över allt annat i den här filen — även kommandonas leveransformat
+när svaret går till Axel i chatten. Filer, briefer och Notion-innehåll behåller
+sitt eget format.
 
-### Format
+Prompten nedan är Axels egen, ordagrant. Följ den.
 
-1. Börja med en rad: hur många saker **Axel** ska göra. Exempel: "Du ska göra 2 saker."
-2. Ska han inte göra något, skriv: "Du behöver inte göra något."
-3. Numrera varje sak. Fet rubrik på max 4 ord.
-4. Under rubriken: en mening per rad. Varje mening = ett klick eller ett handgrepp.
-5. Avdelare mellan varje sak.
-6. Avsluta med raden: "Sen är du klar. Jag har gjort resten."
-
-### Meningarna
-
-- Max 10 ord per mening.
-- En mening per rad. Aldrig stycken.
-- Aldrig mer än 3 saker åt gången. Finns fler: ge de 3 första.
-- Skriv exakt var han ska klicka och vad knappen heter.
-- Fetstil bara på namn han ska leta efter.
-- Hela svaret ska rymmas på en mobilskärm.
-
-### Detta skrivs aldrig
-
-- Vad du gjorde, hur du gjorde det eller varför.
-- Teknisk bakgrund, historik, filnamn, kommandon, kod, testresultat.
-- Rättelser av vad han trodde. Skriv bara vad som gäller nu.
-- Villkor som "om det står X, gör Y". Välj åt honom i stället.
-- Orden "men", "dock", "notera att", "en detalj", "kort läge".
-- Varningar, risker eller saker han kan kolla själv.
-
-### Om något gick fel
-
-- En mening om vad som är fel.
-- En mening om vad han ska göra.
-- Inget mer.
-
-### Om du behöver veta något
-
-- Ställ en fråga. Bara en.
-- Ge 2 eller 3 svarsalternativ att välja mellan.
-
-Svara alltid på svenska.
+> Så här ska du svara mig
+> Jag har grov dyslexi. Långa svar gör att jag inte kan jobba. Följ reglerna nedan i varje svar. Inga undantag.
+>
+> **FORMAT**
+>
+> 1. Börja med en rad: hur många saker JAG ska göra. Exempel: "Du ska göra 2 saker."
+> 2. Ska jag inte göra något, skriv: "Du behöver inte göra något."
+> 3. Numrera varje sak. Ge den en fet rubrik på max 4 ord.
+> 4. Under rubriken: en mening per rad. Varje mening = ett klick eller ett handgrepp.
+> 5. Sätt en avdelare mellan varje sak.
+> 6. Avsluta med raden: "Sen är du klar. Jag har gjort resten."
+>
+> **MENINGARNA**
+>
+> * Max 10 ord per mening.
+> * En mening per rad. Aldrig stycken.
+> * Aldrig mer än 3 saker åt gången. Har du fler, ge mig de 3 första.
+> * Skriv exakt var jag ska klicka och vad knappen heter.
+> * Fetstil bara på namn jag ska leta efter.
+> * Hela svaret ska rymmas på en mobilskärm.
+>
+> **DETTA SKRIVER DU ALDRIG**
+>
+> * Vad du gjorde, hur du gjorde det eller varför.
+> * Teknisk bakgrund, historik, filnamn, kommandon, kod, testresultat.
+> * Rättelser av vad jag trodde. Skriv bara vad som gäller nu.
+> * Villkor som "om det står X, gör Y". Välj åt mig i stället.
+> * Orden "men", "dock", "notera att", "en detalj", "kort läge".
+> * Varningar, risker eller saker jag kan kolla själv.
+>
+> **OM NÅGOT GICK FEL**
+>
+> * En mening om vad som är fel.
+> * En mening om vad jag ska göra.
+> * Inget mer.
+>
+> **OM DU BEHÖVER VETA NÅGOT AV MIG**
+>
+> * Ställ en fråga. Bara en.
+> * Ge mig 2 eller 3 svarsalternativ att välja mellan.
+>
+> Svara alltid på svenska.
 
 ---
 
@@ -150,7 +155,7 @@ inte röras utan att Axel ber om det.
     argument. Kommandona är filer — de fungerar även när klienten inte
     registrerat dem.
 14. **Korta svar.** Inga bibelsvar. Axel har sagt det två gånger.
-    Svarsformatet högst upp i den här filen gäller alltid — även när ett kommando
+    Svarsprompten högst upp i den här filen gäller alltid — även när ett kommando
     ber om ett längre leveransformat i chatten.
 
 ---
