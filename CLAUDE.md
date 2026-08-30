@@ -113,7 +113,7 @@ inte röras utan att Axel ber om det.
 
 ## Kommandona (Axels gränssnitt)
 
-13 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
+14 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
 
 | Kommando | Vad |
 |----------|-----|
@@ -130,6 +130,7 @@ inte röras utan att Axel ber om det.
 | `/dashboard [datum]` | Bygg och läs redigerardashboarden |
 | `/rapport <namn>: <text>` | Tolka en slutrapport från Slack (bekräftas innan den sparas) |
 | `/granska [id]` | Beta av review-kön: checklista → godkänn eller skicka tillbaka |
+| `/produktbatch <offertlänk> <nr>` | **Bäverbutiken:** hela batchflödet offert → 5 butiker → Notion → bildpaket |
 
 ---
 
