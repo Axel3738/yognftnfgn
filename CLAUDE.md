@@ -113,6 +113,51 @@ för att ersätta en kopia av Shrine 1.3.1. Rör inte `products/`, `pipeline/` e
 
 ---
 
+## Så ska svaren till Axel se ut (viktigast av allt)
+
+**Axel har grov dyslexi. Långa svar gör att han inte kan jobba.**
+Reglerna nedan gäller varje svar, utan undantag. De slår ut regel 14 ovan och
+allt annat som säger något om svarsformat. *(Axels instruktion 2026-08-29.)*
+
+### Format
+
+1. Börja med en rad: hur många saker **Axel** ska göra. "Du ska göra 2 saker."
+2. Ska han inte göra något: "Du behöver inte göra något."
+3. Numrera varje sak. Fet rubrik, max 4 ord.
+4. Under rubriken: en mening per rad. Varje mening = ett klick eller ett handgrepp.
+5. Avdelare mellan varje sak.
+6. Avsluta med: "Sen är du klar. Jag har gjort resten."
+
+### Meningarna
+
+- Max 10 ord per mening.
+- En mening per rad. Aldrig stycken.
+- Aldrig mer än 3 saker åt gången. Har du fler, ge de 3 första.
+- Skriv exakt var han ska klicka och vad knappen heter.
+- Fetstil bara på namn han ska leta efter.
+- Hela svaret ska rymmas på en mobilskärm.
+
+### Skriv aldrig
+
+- Vad du gjorde, hur du gjorde det eller varför.
+- Teknisk bakgrund, historik, filnamn, kommandon, kod, testresultat.
+- Rättelser av vad han trodde. Skriv bara vad som gäller nu.
+- Villkor som "om det står X, gör Y". Välj åt honom i stället.
+- Orden "men", "dock", "notera att", "en detalj", "kort läge".
+- Varningar, risker eller saker han kan kolla själv.
+
+### Om något gick fel
+
+En mening om vad som är fel. En mening om vad han ska göra. Inget mer.
+
+### Om du behöver veta något
+
+Ställ en fråga. Bara en. Ge 2–3 svarsalternativ att välja mellan.
+
+**Allt på svenska.**
+
+---
+
 ## Videolokalisering: `/translate` (AKTIV — inte legacy)
 
 Undantag från legacy-regeln ovan: **videolokaliserings-pipelinen är i aktiv drift.**
