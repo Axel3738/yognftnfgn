@@ -8,6 +8,15 @@ import { lasFil } from '../repo.js';
 
 const riktigFetch = globalThis.fetch;
 
+// Testerna får ALDRIG bero på vad som råkar ligga i environmentet. Kör någon
+// med en GITHUB_TOKEN satt — vilket varje utvecklare har, och sandboxen här
+// har en dummy — gick fem tester röda och koden såg trasig ut fast den var hel.
+const sparadToken = process.env.GITHUB_TOKEN;
+delete process.env.GITHUB_TOKEN;
+test.after(() => {
+  if (sparadToken !== undefined) process.env.GITHUB_TOKEN = sparadToken;
+});
+
 /** Bygger ett svar som liknar det fetch ger, med bara det vi läser. */
 function svar(status, { text = '', etag = null, kvar = '4999' } = {}) {
   const h = new Map([['etag', etag], ['x-ratelimit-remaining', kvar], ['x-ratelimit-reset', '0']]);
