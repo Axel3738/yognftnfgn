@@ -1,15 +1,22 @@
 #!/usr/bin/env node
-// Skickar nattkörningens brief till Axels Discord-kanal via webhook.
+// Skickar nattkörningens brief till Axels Discord-kanal "mamma jobb".
 // Noll beroenden.
 //
 //   node tools/notify-discord.mjs "✅ 2 launchade, allt rullar"
 //   cat rapport.txt | node tools/notify-discord.mjs
 //
-// Två sätt att skicka, i den här ordningen:
-//   1. DISCORD_BOT_TOKEN + DISCORD_CHANNEL_ID  (botten postar i kanalen)
-//   2. DISCORD_WEBHOOK_URL                     (webhook, ingen bot behövs)
-// Båda är hemligheter och ligger därför INTE i repot — de sätts i
-// Claude-environmentet, precis som JUDGEME_API_TOKEN och Shopify-nycklarna.
+// Auth (hemligheterna ligger i environmentet, ALDRIG i repot):
+//   1. Bot-token — env DISCORD_BOT_TOKEN / DISCORD_TOKEN / DISCORD_ACCESS_TOKEN,
+//      eller vilken env-variabel som helst vars NAMN innehåller DISCORD och vars
+//      värde inte är en URL (så funkar det oavsett exakt vad Axel döpte den till).
+//      Skickar via POST /api/v10/channels/<id>/messages. Botten kan dessutom
+//      LÄSA kanalen, vilket en webhook aldrig kan — men den måste vara inbjuden
+//      till servern och ha skrivrätt i kanalen.
+//   2. Webhook — env DISCORD_WEBHOOK_URL (eller en DISCORD-variabel som är en
+//      webhook-URL). Används bara om ingen bot-token finns.
+//
+// Kanal-id:t är inte en hemlighet: "mamma jobb" = 1543546469884362833
+// (läst ur webhooken 2026-08-30). Kan pekas om med env DISCORD_CHANNEL_ID.
 
 import { spawnSync } from 'node:child_process';
 if (process.env.HTTPS_PROXY && process.env.NODE_USE_ENV_PROXY !== '1') {
@@ -19,13 +26,26 @@ if (process.env.HTTPS_PROXY && process.env.NODE_USE_ENV_PROXY !== '1') {
   process.exit(r.status ?? 1);
 }
 
-const WEBHOOK = process.env.DISCORD_WEBHOOK_URL;
-const BOT = process.env.DISCORD_BOT_TOKEN;
-const KANAL = process.env.DISCORD_CHANNEL_ID;
-const viaBot = Boolean(BOT && KANAL);
-if (!viaBot && !WEBHOOK) {
-  console.error('Kan inte skicka: sätt antingen DISCORD_BOT_TOKEN + DISCORD_CHANNEL_ID, eller DISCORD_WEBHOOK_URL.');
-  if (BOT && !KANAL) console.error('DISCORD_BOT_TOKEN finns men DISCORD_CHANNEL_ID saknas — botten vet inte vilken kanal.');
+const KANAL = process.env.DISCORD_CHANNEL_ID || '1543546469884362833';
+
+function hittaAuth() {
+  const env = process.env;
+  for (const n of ['DISCORD_BOT_TOKEN', 'DISCORD_TOKEN', 'DISCORD_ACCESS_TOKEN']) {
+    if (env[n]) return { typ: 'bot', token: env[n].replace(/^Bot\s+/i, '') };
+  }
+  const kandidater = Object.keys(env).filter(n => /DISCORD/i.test(n) && env[n]);
+  for (const n of kandidater) {
+    if (!/^https?:\/\//i.test(env[n])) return { typ: 'bot', token: env[n].replace(/^Bot\s+/i, '') };
+  }
+  const hook = env.DISCORD_WEBHOOK_URL
+    || kandidater.map(n => env[n]).find(v => v.startsWith('https://discord.com/api/webhooks/'));
+  if (hook) return { typ: 'webhook', url: hook };
+  return null;
+}
+
+const auth = hittaAuth();
+if (!auth) {
+  console.error('Ingen Discord-auth i environmentet. Letade efter: DISCORD_BOT_TOKEN / DISCORD_TOKEN / DISCORD_ACCESS_TOKEN / *DISCORD* / DISCORD_WEBHOOK_URL.');
   process.exit(2);
 }
 
@@ -46,14 +66,10 @@ for (const line of text.split('\n')) {
 }
 if (cur) parts.push(cur);
 
-// Boten postar i kanalen; webhooken postar på sin egen adress. Botten kan
-// dessutom LÄSA kanalen, vilket en webhook aldrig kan — men den behöver vara
-// inbjuden till servern och ha skrivrättighet i just den kanalen.
-const mål = viaBot
-  ? `https://discord.com/api/v10/channels/${KANAL}/messages`
-  : WEBHOOK;
+const viaBot = auth.typ === 'bot';
+const mål = viaBot ? `https://discord.com/api/v10/channels/${KANAL}/messages` : auth.url;
 const huvuden = viaBot
-  ? { 'Content-Type': 'application/json', Authorization: `Bot ${BOT}` }
+  ? { 'Content-Type': 'application/json', Authorization: `Bot ${auth.token}` }
   : { 'Content-Type': 'application/json' };
 
 for (const [i, content] of parts.entries()) {
@@ -61,7 +77,7 @@ for (const [i, content] of parts.entries()) {
   const kropp = viaBot ? { content } : { content, username: 'Nattkörningen' };
   const r = await fetch(mål, { method: 'POST', headers: huvuden, body: JSON.stringify(kropp) });
   if (!r.ok) {
-    console.error(`Discord svarade ${r.status}: ${(await r.text()).slice(0, 200)}`);
+    console.error(`Discord svarade ${r.status} (${auth.typ}): ${(await r.text()).slice(0, 200)}`);
     if (viaBot && r.status === 401) console.error('401 = fel eller återkallad bot-token.');
     if (viaBot && r.status === 403) console.error('403 = botten är inte inbjuden till servern, eller saknar skrivrätt i kanalen.');
     if (viaBot && r.status === 404) console.error('404 = kanal-id:t finns inte, eller botten ser inte kanalen.');
