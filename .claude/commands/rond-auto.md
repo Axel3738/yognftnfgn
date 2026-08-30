@@ -59,6 +59,12 @@ Aktiv kampanj som saknas i `agent/produktkarta.json`: lägg till den som
 `"lage": "test"` med motivering. Gissa aldrig break-even — utan tal i
 kampanjnamnet eller kostnadsblock får den domen SAKNAR_BREAK_EVEN, och det är
 rätt.
+⚠️ **Ändrar du produktkartan: kopiera den till
+`agent/utkorg/agent/produktkarta.json` INNAN dashboarden byggs om.** Utkorgen
+i dashboarden är enda vägen till git för schemalagda körningar — glöms
+kopian bort skriver nästa körnings minnessynk över din ändring med den gamla
+versionen (hände 2026-08-30: 11 nya kampanjer försvann och fick läggas in
+igen för hand).
 
 ## 2. Räkna
 

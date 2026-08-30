@@ -3,7 +3,7 @@
   "ad_account_id": "1867947880635861",
   "ad_account_namn": "MagiBorsten",
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-08-29",
+  "uppdaterad": "2026-08-30",
   "kampanjer": [
     {
       "campaign_id": "120250009747620291",
@@ -173,6 +173,94 @@
       "produkt": "IBC-Tanköverdraget",
       "lage": "test",
       "lage_motivering": "startad 2026-08-28, 1 köp",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120249978017760291",
+      "produkt": "Bollpannbandet",
+      "lage": "test",
+      "lage_motivering": "aktiv i kontot men saknades i kartan — tillagd 2026-08-30 (rondens regel: okänd kampanj = test). Ingen når 30-köpsgränsen för drift ännu.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120249968685220291",
+      "produkt": "Första Hjälpen-Kitet",
+      "lage": "test",
+      "lage_motivering": "aktiv i kontot men saknades i kartan — tillagd 2026-08-30 (rondens regel: okänd kampanj = test). Ingen når 30-köpsgränsen för drift ännu.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120249944274690291",
+      "produkt": "Linupprullare Aluminium",
+      "lage": "test",
+      "lage_motivering": "aktiv i kontot men saknades i kartan — tillagd 2026-08-30 (rondens regel: okänd kampanj = test). Ingen når 30-köpsgränsen för drift ännu.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120249931473380291",
+      "produkt": "Vandringskängor Herr",
+      "lage": "test",
+      "lage_motivering": "aktiv i kontot men saknades i kartan — tillagd 2026-08-30 (rondens regel: okänd kampanj = test). Ingen når 30-köpsgränsen för drift ännu.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120249917338680291",
+      "produkt": "Sneakers Herr",
+      "lage": "test",
+      "lage_motivering": "aktiv i kontot men saknades i kartan — tillagd 2026-08-30 (rondens regel: okänd kampanj = test). Ingen når 30-köpsgränsen för drift ännu.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120249907932310291",
+      "produkt": "Mini Fiskespöset",
+      "lage": "test",
+      "lage_motivering": "aktiv i kontot men saknades i kartan — tillagd 2026-08-30 (rondens regel: okänd kampanj = test). Ingen når 30-köpsgränsen för drift ännu.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120249903073770291",
+      "produkt": "Hopfällbara Sågen",
+      "lage": "test",
+      "lage_motivering": "aktiv i kontot men saknades i kartan — tillagd 2026-08-30 (rondens regel: okänd kampanj = test). Ingen når 30-köpsgränsen för drift ännu.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120249901836200291",
+      "produkt": "Mobilskalet",
+      "lage": "test",
+      "lage_motivering": "aktiv i kontot men saknades i kartan — tillagd 2026-08-30 (rondens regel: okänd kampanj = test). Ingen når 30-köpsgränsen för drift ännu.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120249900796660291",
+      "produkt": "Surfplattestället",
+      "lage": "test",
+      "lage_motivering": "aktiv i kontot men saknades i kartan — tillagd 2026-08-30 (rondens regel: okänd kampanj = test). Ingen når 30-köpsgränsen för drift ännu.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120249867700600291",
+      "produkt": "Golfskoväskan",
+      "lage": "test",
+      "lage_motivering": "aktiv i kontot men saknades i kartan — tillagd 2026-08-30 (rondens regel: okänd kampanj = test). Ingen når 30-köpsgränsen för drift ännu.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120249850431570291",
+      "produkt": "14-i-1 Verktyget",
+      "lage": "test",
+      "lage_motivering": "aktiv i kontot men saknades i kartan — tillagd 2026-08-30 (rondens regel: okänd kampanj = test). Ingen når 30-köpsgränsen för drift ännu.",
       "break_even_roas": null,
       "break_even_kalla": "kampanjnamnet"
     }
