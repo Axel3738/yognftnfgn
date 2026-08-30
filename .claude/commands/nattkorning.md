@@ -122,6 +122,18 @@ Kampanj-id:n och tekniska detaljer läggs allra sist under en enda rad
 Inget nytt och inget att åtgärda = HELA rapporten är en rad:
 `✅ Inget nytt i kön, allt rullar`.
 
+**Briefen skickas ALLTID till Axels Discord efter varje körning** — samma
+text som chattrapporten (inklusive "Detaljer:"-raderna):
+
+```bash
+node tools/notify-discord.mjs "<hela rapporten>"
+```
+
+Verktyget läser webhooken ur env `DISCORD_WEBHOOK_URL` och delar
+automatiskt upp långa rapporter. Misslyckas skicket (eller saknas env:en):
+nämn det på en rad i chattrapporten och fortsätt — Discord-strul får aldrig
+stoppa körningen eller hamna under "Väntar på Axel".
+
 **"Väntar på Axel" är en skyddad rubrik.** Där får BARA stå: leverantörsquotes
 som saknas, riktiga ägarbeslut (pris, budget, ny målnivå), och redigerarfel som
 inte kunnat skickas till teamet. ALDRIG: mappstädning, connector-rättigheter,
