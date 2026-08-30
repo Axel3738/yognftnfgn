@@ -1,0 +1,69 @@
+{%- comment -%}
+  ms-preorder — förbeställningskortet direkt ovanför paketvalet och köpknappen.
+
+  VARFÖR DET SER UT SÅ HÄR
+  Produkten finns inte i lager och kan inte finnas det: varje kudde sys efter
+  kundens egen bild. Det är produktens starkaste argument, inte dess svaghet —
+  därför säger kortet det rakt ut i stället för att gömma väntetiden i
+  finstilt. "Din kudde finns inte än" är sant, och det är också anledningen
+  till att den blir hennes.
+
+  Sömnaden är den visuella idén: kortets kant är en stygnrad (streckad ram)
+  och de tre stegen sitter på en tråd. Ingen nedräknare, ingen lagerräknare,
+  inga påhittade siffror — allt kortet påstår går att belägga.
+
+  Leveransfönstret återanvänder ms-delivery-estimate, som räknar riktiga
+  arbetsdagar i webbläsaren. Datumet är alltså sant, inte satt för hand.
+
+  Parametrar:
+    del  'kort' (standard) = hela kortet
+         'not'             = den lilla raden under köpknappen
+{%- endcomment -%}
+{%- liquid
+  assign vilken = del | default: 'kort'
+-%}
+
+{%- if vilken == 'not' -%}
+  <p class="ms-scope ms-pre__not">
+    {% render 'ms-icon', name: 'shield' %}
+    <span>Du betalar i dag. Vi syr först när du godkänt ditt utkast.</span>
+  </p>
+
+{%- else -%}
+  <div class="ms-scope ms-pre">
+    <span class="ms-pre__flagga">
+      {% render 'ms-icon', name: 'sparkle' %}
+      Förbeställning
+    </span>
+
+    <p class="ms-pre__rubrik">Din kudde finns inte än.<br>Vi syr den åt dig.</p>
+    <p class="ms-pre__ing">
+      Inget lager, ingen hylla, ingen slumpad kudde ur en låda. Din börjar
+      existera först när du sagt ja till utkastet.
+    </p>
+
+    <ol class="ms-pre__spar">
+      <li class="ms-pre__steg ms-pre__steg--nu">
+        <span class="ms-pre__punkt">1</span>
+        <span class="ms-pre__namn">Du förbeställer</span>
+        <span class="ms-pre__und">i dag</span>
+      </li>
+      <li class="ms-pre__steg">
+        <span class="ms-pre__punkt">2</span>
+        <span class="ms-pre__namn">Du godkänner</span>
+        <span class="ms-pre__und">innan en enda söm</span>
+      </li>
+      <li class="ms-pre__steg">
+        <span class="ms-pre__punkt">3</span>
+        <span class="ms-pre__namn">Vi syr och skickar</span>
+        <span class="ms-pre__und">fri frakt</span>
+      </li>
+    </ol>
+
+    <div class="ms-pre__datum">
+      {% render 'ms-delivery-estimate',
+         min_days: 8, max_days: 12, cutoff_hour: 0,
+         text: 'Hemma hos dig' %}
+    </div>
+  </div>
+{%- endif -%}

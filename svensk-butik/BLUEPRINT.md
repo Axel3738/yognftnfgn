@@ -366,6 +366,31 @@ publicerade Axel v4 → allt nedan ligger i **"Twinpillow v5 (utkast)"**
   (AJAX-varukorgen + filfält), och ett testköp med 2-pack där TVILLING2
   dras av automatiskt i kassan.
 
+## 8j. Varv 12 (2026-08-30): förbeställnings-CTA:n
+
+Axels beställning: en visuellt stark CTA som tydligt är en förbeställning,
+med text nära köpknappen och en optimerad knappetikett. Ligger i
+**"Twinpillow v5 (utkast)"** (`156602990729`), v4 är MAIN.
+
+**Grepp:** väntetiden görs till argumentet i stället för invändningen —
+"Din kudde finns inte än. Vi syr den åt dig." Produkten *kan* inte finnas i
+lager, och det är precis varför den blir kundens. Visuellt bärs kortet av
+sömnaden: stygnrad som innerkant och de tre stegen uppträdda på en tråd
+(`snippets/ms-preorder.liquid` + `.ms-pre*` i `ms-tema.css`).
+
+- **Knappetiketten:** "Lägg i varukorgen" → **"Förbeställ min kudde"**.
+  Första person och benämner köpet rätt. Ändrad i `snippets/buy-buttons.liquid`
+  (inte i locales — en produkt i butiken; flytta till `locales/sv.json` om
+  butiken någonsin får fler). Sticky-knappen har samma text.
+- **Raden under knappen:** "Du betalar i dag. Vi syr först när du godkänt
+  ditt utkast." — sista invändningen besvaras där tummen redan är.
+- **Leveransfönstret** i kortet återanvänder `ms-delivery-estimate`, som
+  räknar riktiga arbetsdagar i webbläsaren. Datumet är alltså sant.
+- **Inga påhittade signaler:** ingen nedräknare, ingen lagerräknare, inga
+  recensioner. Varje påstående i kortet går att belägga.
+- **Förhandsvisning** (mobilvy av hela köprutan):
+  <https://claude.ai/code/artifact/c8bb8fba-4196-4703-a48a-d5275ed24f1f>
+
 ## 9. Kvarstående — kräver Axel
 
 1. **Publicera temat:** Online Store → Themes →
