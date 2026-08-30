@@ -95,6 +95,44 @@ if (!productId) {
   console.log(`${handle} -> produkt ${productId} i ${storeUrl}`);
 }
 
+// Dubblettspärr: har produkten redan recensioner importeras inget. Judge.me
+// har ingen egen spärr — kör man två gånger får produkten allt i dubbel
+// upplaga, och det syns bara som konstiga siffror i widgeten.
+//
+// Två steg, för att /reviews filtrerar på Judge.me:s EGET produkt-id, inte på
+// Shopifys. Skickar man Shopify-id:t som external_id ignoreras parametern tyst
+// och man får butikens senaste recensioner i stället — det ser ut som en träff
+// och skulle spärra varje produkt. Verifierat mot API:et 2026-08-30.
+async function judgemeGet(sökväg, params) {
+  const url = new URL(`https://api.judge.me/api/v1${sökväg}`);
+  url.searchParams.set('api_token', TOKEN);
+  url.searchParams.set('shop_domain', SHOP);
+  for (const [k, v] of Object.entries(params)) url.searchParams.set(k, v);
+  const r = await fetch(url);
+  return { ok: r.ok, status: r.status, kropp: await r.json().catch(() => ({})) };
+}
+
+const produktSvar = await judgemeGet('/products/-1', { external_id: productId });
+if (!produktSvar.ok && produktSvar.kropp?.error !== 'Product not found') {
+  console.error(`Kunde inte slå upp produkten (${produktSvar.status}): ${JSON.stringify(produktSvar.kropp).slice(0, 200)}`);
+  process.exit(1);
+}
+const judgemeId = produktSvar.kropp?.product?.id ?? null;
+
+if (judgemeId) {
+  const revSvar = await judgemeGet('/reviews', { product_id: String(judgemeId), per_page: '5' });
+  if (!revSvar.ok) {
+    console.error(`Kunde inte läsa befintliga recensioner (${revSvar.status}).`);
+    process.exit(1);
+  }
+  const antal = (revSvar.kropp.reviews ?? []).length;
+  if (antal > 0 && !args.includes('--anda')) {
+    console.log(`Produkt ${productId} har redan recensioner i ${SHOP} — hoppar över.`);
+    console.log('Ska de läggas till ändå (t.ex. en påbyggnadsbatch): kör om med --anda.');
+    process.exit(0);
+  }
+}
+
 const rader = parseCsv(fs.readFileSync(csvFil, 'utf8'));
 console.log(`${rader.length} recensioner i ${csvFil} → produkt ${productId} i ${SHOP}${dry ? ' (DRY — inget skickas)' : ''}`);
 

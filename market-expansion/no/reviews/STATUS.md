@@ -24,8 +24,17 @@ bara lägesrapporten.
    beverbutikken.no (Settings → Integrations → API token). Judge.me *är*
    installerat på butiken, så det är bara tokenen som fattas.
 2. **`Damasker Vandring_REVIEW` saknar betyg på alla 10 rader** (och har tomt
-   `product_handle`). Utan betyg kan Judge.me inte ta emot raden. Fyll i
-   betygen i arket, kör om bygget — inga betyg hittas på eller gissas här.
+   `product_handle`). Kontrollerat igen 2026-08-30: fortfarande tomt. Utan betyg
+   kan Judge.me inte ta emot raden. Fyll i betygen i arket, kör om bygget —
+   inga betyg hittas på eller gissas här.
+
+## Dubblettspärr
+
+`judgeme-import.mjs` kollar om produkten redan har recensioner och hoppar över
+den i så fall. Judge.me har ingen egen spärr — utan den skulle en andra körning
+ge produkten allt i dubbel upplaga. Spärren slår upp Judge.me:s eget produkt-id
+via `/products/-1?external_id=<shopify-id>` och filtrerar `/reviews` på det;
+Shopify-id:t direkt mot `/reviews` ignoreras tyst av API:et.
 
 ## Bälteslipmaskin Mini
 
