@@ -67,6 +67,11 @@ Fråga med AskUserQuestion om något av detta saknas: **marknader** och **priser
    (`pipeline/cover-srt.py` för ≤2-radiga cues; vit platta, svart fet text).
    OBS: MarginV/FontSize i force_style är i ASS-skala (höjd 288), inte pixlar.
    ffmpeg i loopar: alltid `-nostdin` och `</dev/null`.
+   ⚠️ HeyGens render-SRT (engelska) har tokeniserade sammandragningar — "it 's",
+   "ca n't", "wo n't". Slå alltid ihop dem (" 's"→"'s", " n't"→"n't", " 're"/" 'll"/
+   " 've"/" 'm" likadant) INNAN cover-srt.py körs, annars bränns felen in i captions.
+   ⚠️ Skanna även ÖVRE delen av bilden (y 100–520) efter hook-headlines — bandskanning
+   av nedre tredjedelen missar dem. Axel har fångat missade hooks två batcher i rad.
 8. **Leverera.** Döp om till `{MARKNAD}_{namn}.mp4` (NO_/DK_/FI_/UK_/AU_/MX_/NL_).
    Zippa ≤30 MiB per zip (chattens gräns), `zip -0`. Filer >30 MiB: komprimera crf 23–26,
    aldrig hårdare än nödvändigt — kvaliteten får inte förstöras.
