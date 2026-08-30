@@ -131,12 +131,12 @@ async function byggPlan(message, önskemål) {
     );
   }
 
-  const { kanaler, kategorier } = lasLaget(message.guild);
+  const { kanaler, kategorier, roller, botPosition } = lasLaget(message.guild);
   const [rå, skyddade] = await Promise.all([
-    planera({ text: önskemål, kanaler, kategorier }),
+    planera({ text: önskemål, kanaler, kategorier, roller, botPosition }),
     skyddadeKanaler(),
   ]);
-  const plan = validera(rå, { skyddade, kanaler, kategorier });
+  const plan = validera(rå, { skyddade, kanaler, kategorier, roller, botPosition });
 
   const id = `bygg:${message.id}`;
   väntande.set(id, { plan, ägare: message.author.id, guildId: message.guild.id });

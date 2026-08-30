@@ -29,6 +29,45 @@ export const MAX_NAMNBYTEN = 2;
 
 export const ARKIVNAMN = 'arkiv';
 
+/**
+ * Rollnivåer. Rättigheter sätts ALDRIG en och en av modellen — den väljer en
+ * nivå, och nivåerna står här i kod. Det är skillnaden mellan "Claude kan
+ * justera roller" och "Claude kan dela ut Administrator".
+ *
+ * Ingen nivå innehåller Administrator, ManageGuild, ManageRoles, Kick eller Ban.
+ * Vill Axel ge någon det gör han det själv i Discord.
+ */
+export const NIVAER = {
+  // Läser och reagerar, skriver inte. För kanaler man bara ska följa.
+  lasare: [
+    PermissionFlagsBits.ViewChannel, PermissionFlagsBits.ReadMessageHistory,
+    PermissionFlagsBits.AddReactions, PermissionFlagsBits.UseExternalEmojis,
+    PermissionFlagsBits.ChangeNickname, PermissionFlagsBits.UseApplicationCommands,
+  ],
+  // Vanlig i teamet. Röst och slash-kommandon är med med flit: utan dem kan
+  // de varken ringa varandra eller använda /-kommandon, och det märks först
+  // när någon försöker.
+  medlem: [
+    PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages,
+    PermissionFlagsBits.EmbedLinks, PermissionFlagsBits.AttachFiles,
+    PermissionFlagsBits.ReadMessageHistory, PermissionFlagsBits.AddReactions,
+    PermissionFlagsBits.UseExternalEmojis, PermissionFlagsBits.ChangeNickname,
+    PermissionFlagsBits.CreatePublicThreads, PermissionFlagsBits.SendMessagesInThreads,
+    PermissionFlagsBits.Connect, PermissionFlagsBits.Speak,
+    PermissionFlagsBits.UseVAD, PermissionFlagsBits.Stream,
+    PermissionFlagsBits.UseApplicationCommands,
+  ],
+  // Får städa i kanalerna och pinga @here. Inte @everyone.
+  moderator: null,
+};
+NIVAER.moderator = [
+  ...NIVAER.medlem,
+  PermissionFlagsBits.ManageMessages,
+  PermissionFlagsBits.MentionEveryone,
+];
+
+const bitsumma = (lista) => lista.reduce((a, b) => a | b, 0n);
+
 const PLANSCHEMA = {
   type: 'object',
   properties: {
@@ -40,12 +79,20 @@ const PLANSCHEMA = {
         properties: {
           typ: {
             type: 'string',
-            enum: ['skapa_kategori', 'skapa_kanal', 'byt_namn', 'flytta', 'satt_amne', 'arkivera'],
+            enum: ['skapa_kategori', 'skapa_kanal', 'byt_namn', 'flytta', 'satt_amne',
+              'arkivera', 'las_kanal', 'las_upp_kanal', 'satt_roll'],
           },
           namn: { type: 'string', description: 'Namn på det som skapas, eller nuvarande namn på det som ändras.' },
           nytt_namn: { type: 'string', description: 'Bara för byt_namn.' },
           kategori: { type: 'string', description: 'Kategorin kanalen ska ligga i. Tom = ingen kategori.' },
           amne: { type: 'string', description: 'Kanalens ämnesrad. Frivillig.' },
+          niva: {
+            type: 'string',
+            enum: ['lasare', 'medlem', 'moderator'],
+            description: 'Bara för satt_roll. lasare = får läsa men inte skriva. '
+              + 'medlem = vanlig chatt, filer, trådar, röst. moderator = medlem + '
+              + 'städa meddelanden + pinga @here.',
+          },
           motiv: { type: 'string', description: 'Kort: varför den här åtgärden.' },
         },
         required: ['typ', 'namn', 'motiv'],
@@ -70,13 +117,20 @@ Regler:
 - Rör inte kanaler som rutinerna postar i om han inte uttryckligen namnger dem.
 - Föreslå aldrig fler åtgärder än han bett om. Ingen "medan vi ändå är här".
 - Är önskemålet otydligt: gör den minsta rimliga tolkningen och skriv i
-  motivet vad du antog.`;
+  motivet vad du antog.
+
+Att låsa en kanal (las_kanal) betyder: teamet läser, bara Bävern skriver.
+Använd det för kanaler där rutinerna postar rapporter — annars scrollar
+dagens uppgift bort i chatten.
+
+Roller sätts med en NIVÅ, aldrig med enskilda rättigheter. Det finns ingen
+nivå som ger Administrator, och du kan inte hitta på en.`;
 
 /**
  * Frågar Claude om en plan. Returnerar { sammanfattning, atgarder }.
  * Ingen validering här — det gör validera(), som är testad.
  */
-export async function planera({ text, kanaler = [], kategorier = [] }) {
+export async function planera({ text, kanaler = [], kategorier = [], roller = [], botPosition = 0 }) {
   const laget = [
     'Serverns kategorier just nu:',
     kategorier.length ? kategorier.map((k) => `- ${k.namn}`).join('\n') : '(inga)',
@@ -84,6 +138,16 @@ export async function planera({ text, kanaler = [], kategorier = [] }) {
     'Serverns kanaler just nu:',
     kanaler.length
       ? kanaler.map((k) => `- ${k.namn}${k.kategori ? ` (i ${k.kategori})` : ' (utan kategori)'}`).join('\n')
+      : '(inga)',
+    '',
+    `Serverns roller (Bävern ligger på position ${botPosition} — allt på eller `
+    + 'över den positionen går INTE att ändra):',
+    roller.length
+      ? [...roller].sort((a, b) => b.position - a.position)
+        .map((r) => `- ${r.namn} (position ${r.position})`
+          + `${r.egen ? ' ← Bäverns egen roll' : ''}`
+          + `${r.position >= botPosition && !r.everyone && !r.egen ? ' ← går inte att ändra' : ''}`)
+        .join('\n')
       : '(inga)',
   ].join('\n');
 
@@ -123,7 +187,9 @@ export function kanalnamn(rå) {
  * `skyddade` = kanalnamn rutinerna postar i. De får inte byta namn, flyttas
  * eller arkiveras, för då postar rutinen i tomma luften utan felmeddelande.
  */
-export function validera(plan, { skyddade = [], kanaler = [], kategorier = [] } = {}) {
+export function validera(plan, {
+  skyddade = [], kanaler = [], kategorier = [], roller = [], botPosition = Infinity,
+} = {}) {
   const atgarder = [];
   const avvisade = [];
   const skydd = new Set(skyddade.map((s) => kanalnamn(s)));
@@ -175,9 +241,35 @@ export function validera(plan, { skyddade = [], kanaler = [], kategorier = [] } 
       continue;
     }
 
+    if (a.typ === 'satt_roll') {
+      a.namn = String(a.namn || '').trim();
+      if (!a.namn) { neka(a, 'tomt rollnamn'); continue; }
+      if (!NIVAER[a.niva]) { neka(a, `okänd nivå: ${a.niva}`); continue; }
+      // Discords rollhierarki är absolut. En roll på eller över botens egen
+      // position går inte att röra ens med Administrator — säg det här i
+      // stället för att låta Discord svara 403 mitt i bygget.
+      const r = roller.find((x) => x.namn.toLowerCase() === a.namn.toLowerCase());
+      if (!r) { neka(a, 'rollen finns inte'); continue; }
+      if (r.egen) { neka(a, 'det är botens egen roll — den kan inte ändra sig själv'); continue; }
+      if (r.position >= botPosition && !r.everyone) {
+        neka(a, `ligger över Bävern i rollistan (position ${r.position}) — dra ner den först`);
+        continue;
+      }
+      atgarder.push(a);
+      continue;
+    }
+
     // Härifrån och ner: åtgärder på något som redan finns.
     const mål = kanalnamn(a.namn);
     if (!finns.has(mål)) { neka(a, 'kanalen finns inte'); continue; }
+
+    if (a.typ === 'las_kanal' || a.typ === 'las_upp_kanal') {
+      // Låsning är TILLÅTEN på skyddade kanaler — det är precis dem som ska
+      // låsas. Boten får explicit skrivrätt, så rutinerna postar som förut.
+      atgarder.push(a);
+      continue;
+    }
+
     if (skydd.has(mål)) { neka(a, 'skyddad kanal — en rutin postar här'); continue; }
 
     if (a.typ === 'byt_namn') {
@@ -233,6 +325,9 @@ const ORD = {
   flytta: (a) => `Flytta **#${kanalnamn(a.namn)}** till ${a.kategori || '(ingen kategori)'}`,
   satt_amne: (a) => `Ämnesrad på **#${kanalnamn(a.namn)}**`,
   arkivera: (a) => `Arkivera **#${kanalnamn(a.namn)}** (raderas inte)`,
+  las_kanal: (a) => `Lås **#${kanalnamn(a.namn)}** — teamet läser, bara Bävern skriver`,
+  las_upp_kanal: (a) => `Lås upp **#${kanalnamn(a.namn)}** — alla får skriva igen`,
+  satt_roll: (a) => `Rollen **${a.namn}** blir *${a.niva}*`,
 };
 
 /** Diffen Axel läser innan han trycker Kör. Ingen jargong, en rad per sak. */
@@ -266,7 +361,15 @@ export function lasLaget(guild) {
       kanaler.push({ namn: kanal.name, id: kanal.id, kategori: kanal.parent?.name || '' });
     }
   }
-  return { kategorier, kanaler };
+  const roller = guild.roles.cache.map((r) => ({
+    namn: r.name,
+    position: r.position,
+    everyone: r.id === guild.id,
+    // Botens egen roll går inte att ändra av boten själv, hur högt den än ligger.
+    egen: r.tags?.botId === guild.client.user.id,
+  }));
+  const minRoll = guild.members.me?.roles.highest;
+  return { kategorier, kanaler, roller, botPosition: minRoll?.position ?? 0 };
 }
 
 /** Rutinernas kanaler. De får aldrig döpas om eller flyttas bort under fötterna. */
@@ -335,6 +438,29 @@ export async function utfor({ atgarder, guild }) {
         const k = hittaKanal(a.namn);
         if (!k) throw new Error('kanalen hittades inte längre');
         await k.setTopic(a.amne || null);
+      } else if (a.typ === 'las_kanal' || a.typ === 'las_upp_kanal') {
+        const k = hittaKanal(a.namn);
+        if (!k) throw new Error('kanalen hittades inte längre');
+        const las = a.typ === 'las_kanal';
+        await k.permissionOverwrites.edit(guild.roles.everyone, {
+          SendMessages: las ? false : null,
+          CreatePublicThreads: las ? false : null,
+          SendMessagesInThreads: las ? false : null,
+        });
+        // Boten måste få skriva explicit, annars tystnar rutinernas rapporter
+        // i samma sekund som kanalen låses — och ingenting säger till.
+        const jag = guild.members.me?.roles.botRole;
+        if (las && jag) {
+          await k.permissionOverwrites.edit(jag, { ViewChannel: true, SendMessages: true });
+        }
+      } else if (a.typ === 'satt_roll') {
+        const roll = guild.roles.cache.find(
+          (r) => r.name.toLowerCase() === String(a.namn).toLowerCase(),
+        );
+        if (!roll) throw new Error('rollen hittades inte längre');
+        const niva = NIVAER[a.niva];
+        if (!niva) throw new Error(`okänd nivå ${a.niva}`);
+        await roll.setPermissions(bitsumma(niva));
       } else if (a.typ === 'arkivera') {
         const k = hittaKanal(a.namn);
         if (!k) throw new Error('kanalen hittades inte längre');

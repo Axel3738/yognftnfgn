@@ -4,9 +4,10 @@
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { ChannelType } from 'discord.js';
+import { ChannelType, PermissionsBitField } from 'discord.js';
 import {
-  validera, beskriv, kanalnamn, utfor, ARKIVNAMN, MAX_PER_KATEGORI, MAX_NAMNBYTEN,
+  validera, beskriv, kanalnamn, utfor, NIVAER, ARKIVNAMN,
+  MAX_PER_KATEGORI, MAX_NAMNBYTEN,
 } from '../server.js';
 
 const LÄGE = {
@@ -21,6 +22,18 @@ const LÄGE = {
 };
 
 const plan = (...atgarder) => ({ sammanfattning: 't', atgarder });
+
+// Bäverns roll ligger på 6. Allt på eller över går inte att röra.
+const ROLLAGE = {
+  botPosition: 6,
+  roller: [
+    { namn: '@everyone', position: 0, everyone: true },
+    { namn: 'CEO', position: 1 },
+    { namn: 'Video editor', position: 3 },
+    { namn: 'Bävern', position: 6, egen: true },
+    { namn: 'Serverägare', position: 9 },
+  ],
+};
 
 test('kanalnamn städas till något Discord accepterar', () => {
   assert.equal(kanalnamn('Nya Produkter!'), 'nya-produkter');
@@ -215,4 +228,69 @@ test('ett steg som felar stoppar inte resten', async () => {
   });
   assert.equal(misslyckades.length, 1);
   assert.equal(gjort.length, 1, 'en halvfärdig server som säger vad som gick fel slår en som tystnar');
+});
+
+// ---- rollnivåer och kanallåsning --------------------------------------
+
+test('ingen nivå kan dela ut Administrator eller något annat farligt', () => {
+  // Hela poängen med nivåer i stället för lösa rättigheter: modellen väljer
+  // ett namn, och vad namnet betyder står i kod som den inte kan röra.
+  const förbjudet = ['Administrator', 'ManageGuild', 'ManageRoles', 'ManageChannels',
+    'KickMembers', 'BanMembers', 'ManageWebhooks'];
+  for (const [namn, bitar] of Object.entries(NIVAER)) {
+    const p = new PermissionsBitField(bitar.reduce((a, b) => a | b, 0n));
+    for (const f of förbjudet) assert.equal(p.has(f), false, `nivån ${namn} ger ${f}`);
+  }
+});
+
+test('medlemsnivån har kvar röst och slash-kommandon', () => {
+  // Glöms de bort märks det först när någon försöker ringa eller skriva /.
+  const p = new PermissionsBitField(NIVAER.medlem.reduce((a, b) => a | b, 0n));
+  for (const f of ['Connect', 'Speak', 'UseApplicationCommands', 'SendMessages']) {
+    assert.ok(p.has(f), `medlem saknar ${f}`);
+  }
+});
+
+test('läsarnivån kan inte skriva', () => {
+  const p = new PermissionsBitField(NIVAER.lasare.reduce((a, b) => a | b, 0n));
+  assert.equal(p.has('SendMessages'), false);
+  assert.ok(p.has('ViewChannel'));
+});
+
+test('en roll över Bävern går inte att ändra', () => {
+  const ut = validera(plan(
+    { typ: 'satt_roll', namn: 'Serverägare', niva: 'medlem', motiv: '' },
+    { typ: 'satt_roll', namn: 'Bävern', niva: 'medlem', motiv: '' },
+  ), { ...LÄGE, ...ROLLAGE });
+  assert.equal(ut.atgarder.length, 0);
+  assert.match(ut.avvisade[0].varfor, /över Bävern/);
+  assert.match(ut.avvisade[1].varfor, /egen roll/);
+});
+
+test('roller under Bävern går att sätta, och @everyone med', () => {
+  const ut = validera(plan(
+    { typ: 'satt_roll', namn: 'Video editor', niva: 'medlem', motiv: '' },
+    { typ: 'satt_roll', namn: '@everyone', niva: 'medlem', motiv: '' },
+    { typ: 'satt_roll', namn: 'Finns inte alls', niva: 'medlem', motiv: '' },
+    { typ: 'satt_roll', namn: 'CEO', niva: 'gudanivå', motiv: '' },
+  ), { ...LÄGE, ...ROLLAGE });
+  assert.equal(ut.atgarder.length, 2);
+  assert.match(ut.avvisade[0].varfor, /finns inte/);
+  assert.match(ut.avvisade[1].varfor, /okänd nivå/);
+});
+
+test('skyddade kanaler FÅR låsas — det är precis de som ska låsas', () => {
+  // Skyddet finns för att rutinen inte ska tappa sin kanal vid namnbyte eller
+  // arkivering. Låsning gör tvärtom: den ger boten kanalen för sig själv.
+  const ut = validera(plan(
+    { typ: 'las_kanal', namn: 'skalning', motiv: '' },
+    { typ: 'byt_namn', namn: 'skalning', nytt_namn: 'x', motiv: '' },
+  ), LÄGE);
+  assert.equal(ut.atgarder.length, 1, 'låsningen ska igenom');
+  assert.equal(ut.atgarder[0].typ, 'las_kanal');
+  assert.match(ut.avvisade[0].varfor, /skyddad/, 'namnbytet ska stoppas');
+});
+
+test('låsning av en kanal som inte finns avvisas', () => {
+  assert.equal(validera(plan({ typ: 'las_kanal', namn: 'finns-inte', motiv: '' }), LÄGE).atgarder.length, 0);
 });
