@@ -9,9 +9,15 @@
 //   DISCORD_AGARE       kommaseparerade user-id som får prata med boten (default: alla)
 //   GITHUB_GREN         gren att läsa från (default: arbetsgrenen)
 
-import { Client, Events, GatewayIntentBits, DiscordAPIError } from 'discord.js';
+import {
+  Client, Events, GatewayIntentBits, DiscordAPIError,
+  ActionRowBuilder, ButtonBuilder, ButtonStyle, MessageFlags,
+} from 'discord.js';
 import { dela } from './dela.js';
 import { fraga, nollstallHistorik, MODELL } from './claude.js';
+import {
+  planera, validera, beskriv, utfor, lasLaget, skyddadeKanaler,
+} from './server.js';
 
 const KRÄVS = ['DISCORD_BOT_TOKEN', 'ANTHROPIC_API_KEY'];
 const saknas = KRÄVS.filter((n) => !process.env[n]);
@@ -76,6 +82,90 @@ async function svara(message, text) {
   }
 }
 
+// Planer som väntar på att någon trycker Kör. Nyckeln är knappens id.
+// Rensas efter TIMEOUT så en glömd plan inte kan köras en vecka senare mot en
+// server som hunnit ändras.
+const väntande = new Map();
+const PLAN_TIMEOUT_MS = 5 * 60_000;
+
+async function byggPlan(message, önskemål) {
+  if (!message.guild) throw new Error('!bygg fungerar bara i en server, inte i DM.');
+  const jag = message.guild.members.me;
+  if (!jag?.permissions.has('ManageChannels')) {
+    throw new Error(
+      'Jag saknar rättigheten Hantera kanaler i den här servern. '
+      + 'Serverinställningar → Roller → min roll → slå på "Hantera kanaler".',
+    );
+  }
+
+  const { kanaler, kategorier } = lasLaget(message.guild);
+  const [rå, skyddade] = await Promise.all([
+    planera({ text: önskemål, kanaler, kategorier }),
+    skyddadeKanaler(),
+  ]);
+  const plan = validera(rå, { skyddade, kanaler, kategorier });
+
+  const id = `bygg:${message.id}`;
+  väntande.set(id, { plan, ägare: message.author.id, guildId: message.guild.id });
+  setTimeout(() => väntande.delete(id), PLAN_TIMEOUT_MS).unref?.();
+
+  const knappar = new ActionRowBuilder().addComponents(
+    new ButtonBuilder().setCustomId(`${id}:kor`).setLabel('Kör').setStyle(ButtonStyle.Success)
+      .setDisabled(plan.atgarder.length === 0),
+    new ButtonBuilder().setCustomId(`${id}:avbryt`).setLabel('Avbryt').setStyle(ButtonStyle.Secondary),
+  );
+
+  const bitar = dela(beskriv(plan));
+  for (let i = 0; i < bitar.length; i += 1) {
+    const sista = i === bitar.length - 1;
+    await message.channel.send({
+      content: bitar[i],
+      components: sista ? [knappar] : [],
+      allowedMentions: { parse: [] },
+    });
+    if (!sista) await new Promise((r) => setTimeout(r, 350));
+  }
+}
+
+client.on(Events.InteractionCreate, async (interaction) => {
+  if (!interaction.isButton() || !interaction.customId.startsWith('bygg:')) return;
+  const [, meddelandeId, vad] = interaction.customId.split(':');
+  const id = `bygg:${meddelandeId}`;
+  const post = väntande.get(id);
+
+  if (!post) {
+    await interaction.reply({ content: 'Planen har gått ut. Kör `!bygg` igen.', flags: MessageFlags.Ephemeral });
+    return;
+  }
+  // Bara den som bad om planen får köra den — annars kan vem som helst i
+  // servern trycka på någon annans knapp.
+  if (interaction.user.id !== post.ägare) {
+    await interaction.reply({ content: 'Det är inte din plan.', flags: MessageFlags.Ephemeral });
+    return;
+  }
+
+  väntande.delete(id);
+  if (vad === 'avbryt') {
+    await interaction.update({ content: '❌ Avbrutet. Ingenting ändrades.', components: [] });
+    return;
+  }
+
+  // Bygget tar längre tid än Discords 3-sekundersgräns för en knapp.
+  await interaction.update({ content: '⏳ Bygger …', components: [] });
+  try {
+    const { gjort, misslyckades } = await utfor({ atgarder: post.plan.atgarder, guild: interaction.guild });
+    const rader = [`✅ Klart: ${gjort.length} av ${post.plan.atgarder.length}.`];
+    if (gjort.length) rader.push('', ...gjort.map((r) => `- ${r}`));
+    if (misslyckades.length) rader.push('', `⚠️ Gick inte (${misslyckades.length}):`, ...misslyckades.map((r) => `- ${r}`));
+    for (const bit of dela(rader.join('\n'))) {
+      await interaction.followUp({ content: bit, allowedMentions: { parse: [] } });
+    }
+  } catch (fel) {
+    console.error('[bygg]', fel);
+    await interaction.followUp({ content: `Bygget sket sig: ${String(fel.message).slice(0, 300)}` }).catch(() => {});
+  }
+});
+
 client.on(Events.MessageCreate, (message) => {
   if (!skaSvara(message)) return;
   const text = message.content.trim();
@@ -89,6 +179,29 @@ client.on(Events.MessageCreate, (message) => {
   if (/^!glöm\b/i.test(text) || /^!glom\b/i.test(text)) {
     nollstallHistorik(message.channelId);
     message.reply('Glömde konversationen i den här kanalen. Vi börjar om.').catch(() => {});
+    return;
+  }
+
+  const bygg = text.match(/^!bygg\b\s*([\s\S]*)$/i);
+  if (bygg) {
+    const önskemål = bygg[1].trim();
+    if (!önskemål) {
+      message.reply('Skriv vad du vill ha, t.ex. `!bygg en kanal per skalningsprodukt under en kategori Produkter`.').catch(() => {});
+      return;
+    }
+    kö = kö.then(async () => {
+      let puls = null;
+      try {
+        await message.channel.sendTyping().catch(() => {});
+        puls = setInterval(() => message.channel.sendTyping().catch(() => {}), 8000);
+        await byggPlan(message, önskemål);
+      } catch (fel) {
+        console.error('[bygg]', fel);
+        await message.reply(`Kunde inte planera: ${String(fel.message).slice(0, 400)}`).catch(() => {});
+      } finally {
+        if (puls) clearInterval(puls);
+      }
+    }).catch((fel) => console.error('[kö]', fel));
     return;
   }
 

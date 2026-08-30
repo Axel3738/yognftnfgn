@@ -42,11 +42,16 @@ Utan den här kommer meddelanden in tomma och boten ser död ut trots att den k�
 Öppna länken, välj din server, godkänn:
 
 ```
-https://discord.com/api/oauth2/authorize?client_id=1543628123289952277&permissions=84992&scope=bot
+https://discord.com/api/oauth2/authorize?client_id=1543628123289952277&permissions=268520464&scope=bot
 ```
 
-Den ber om fyra saker: se kanaler, skicka meddelanden, läsa historik, bädda in
-länkar. Inget mer — den kan inte radera eller ändra något i servern.
+Den ber om sex saker: se kanaler, skicka meddelanden, läsa historik, bädda in
+länkar, **hantera kanaler** och **hantera roller**. De två sista behövs bara
+för `!bygg`. Den ber aldrig om Administratör och kan inte radera en kanal —
+`!bygg` arkiverar i stället.
+
+Vill du inte ge den de två sista: ta bort dem i Discords ruta när du bjuder in.
+Allt utom `!bygg` fungerar ändå.
 
 ## Steg 3 — Lägg upp den på Railway
 
@@ -79,11 +84,48 @@ länge den varit uppe. Gör den inte det: öppna Railway → **Deployments** →
 | Du skriver | Vad som händer |
 |---|---|
 | vad som helst | Boten svarar med verksamhetens data i huvudet |
+| `!bygg <vad du vill ha>` | Bygger om servern. Visar planen först, du trycker Kör |
 | `!ping` | "Vaken. Modell: … Uppe i N min." |
 | `!glöm` | Nollställer konversationen i den kanalen |
 
 Den minns de senaste 8 turerna per kanal i 2 timmar. Byter du ämne helt är
 `!glöm` snabbare än att förklara.
+
+---
+
+## `!bygg` — servern på beskrivning
+
+Du skriver hur du vill ha det. Boten svarar med en lista på exakt vad som
+händer, och två knappar. **Ingenting sker förrän du trycker Kör.**
+
+```
+!bygg en kanal för varje skalningsprodukt under en ny kategori Produkter
+!bygg döp om gammalt-skrap till idébank och flytta den till Produkter
+!bygg arkivera alla kanaler vi inte använt sedan i somras
+```
+
+Fyra spärrar, och de går inte att prompta bort:
+
+1. **Ingenting raderas, någonsin.** Vill du bli av med en kanal arkiveras den:
+   flyttas till kategorin *arkiv* och låses för nya inlägg. Historiken finns
+   kvar och kanalen går att flytta tillbaka.
+2. **Rutinernas kanaler är skyddade.** `skalning`, `ads-to-edit`,
+   `new-products-coing-out` och `allmänt` kan inte döpas om, flyttas eller
+   arkiveras — då hade rutinen postat i tomma luften utan felmeddelande.
+   Listan läses ur `agent/discord.json`, så lägger du till en kanal där blir
+   den skyddad automatiskt.
+3. **Bara du kan trycka på din knapp**, och planen går ut efter 5 minuter.
+4. **Allt som stryks redovisas.** Kom det med ett förslag boten inte fick köra
+   står det under *Struket* med anledningen. En tyst bortsållad åtgärd ser ut
+   som att den kördes.
+
+Går ett steg fel fortsätter resten, och du får en lista på vad som gick och vad
+som inte gick.
+
+⚠️ Får du "Jag saknar rättigheten Hantera kanaler": gå till Serverinställningar
+→ Roller, dra botens roll **högre upp** än de kanaler och roller den ska röra,
+och slå på Hantera kanaler. Discord låter aldrig en bot ändra något som ligger
+ovanför den i rollistan.
 
 ---
 
@@ -115,13 +157,14 @@ Läggs in som Variables i Railway om du vill begränsa boten.
 ## Så hänger det ihop
 
 ```
-Discord  ──►  index.js   (tar emot, kö, typing, delar långa svar)
+Discord  ──►  index.js   (tar emot, kö, typing, delar långa svar, knappar)
                  │
-                 ▼
-              claude.js  (Opus + prompt-cache + verktygsloop)
-                 │
-                 ▼
-              repo.js    (GitHub Contents API — alltid färska filer)
+                 ├──►  claude.js  (Opus + prompt-cache + verktygsloop)
+                 │         │
+                 └──►  server.js  (!bygg: planera → validera → beskriv → utför)
+                           │
+                           ▼
+                        repo.js   (GitHub Contents API — alltid färska filer)
 ```
 
 Boten läser **aldrig** containerns filsystem. Railway bygger bara `bot/`, och
@@ -135,4 +178,8 @@ kopiorna har egna tester.
 Rutinerna postar via `agent/discord-post.mjs`, inte via boten. Den vägen kräver
 `DISCORD_BOT_TOKEN` i rutinens environment.
 
-Tester: `cd bot && npm test` (14 st).
+I `server.js` är det `validera()` som är det viktiga. Den står mellan "Claude
+föreslog något" och "servern byggdes om", och den är ren kod med egna tester —
+hittar modellen på en åtgärdstyp som `radera` dör den där, inte i din server.
+
+Tester: `cd bot && npm test` (26 st, inget nätverk).
