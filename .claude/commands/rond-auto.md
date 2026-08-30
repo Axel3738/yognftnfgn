@@ -3,6 +3,13 @@
 Automatläget av `/rond`. **Axels stående beslut 2026-08-29:** ronden får skala
 upp, skala ner och stänga av enligt reglerna, utan att fråga per rad.
 
+**Tolkningsregel (Axel 2026-08-30):** när körordern (trigger-prompten) säger
+"utför bara det som står i plan.atgarder" syftar det på BUDGETÄNDRINGARNA i
+Meta. Annonsbehoven i steg 4b är fortfarande obligatoriska — kör upp till två
+per morgon. En körning som lämnar förfallna behov utan åtgärd och utan
+redovisning är INTE klar. (Körningen 2026-08-30 hoppade över hela kön på den
+meningen — det var fel tolkning.)
+
 Ronden KÖRS varje dag, men varje produkt ÄNDRAS högst var tredje dag —
 utom snabbspåret: en produkt i skalningszonen med ROAS ≥ 3 får höjas 20 %
 redan dagen efter förra höjningen. Sänkningar och avstängningar väntar alltid
