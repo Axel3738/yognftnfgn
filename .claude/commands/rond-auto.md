@@ -213,6 +213,39 @@ länge produkterna är ≤6 — blir de fler: säg till Axel att cykeln inte gå
 - Hinner en batch inte bli klar (avbrott, fel): logga ingenting med *_KLAR —
   då flaggas behovet igen imorgon och batchen görs om hel.
 
+## 4c. Notion-svepet — vilka hubbar finns, och vad ska produceras
+
+Körs **varje morgon**, före leveransen. Utan det här upptäcker varken du eller
+Discord-boten att en ny produkt fått en creative hub, och arbetet blir osynligt.
+
+1. `notion-search` på `creative hub`, `page_size: 25`, `max_highlight_length: 0`.
+   Svaret innehåller `is_archived` per träff — **använd det fältet**, gissa
+   aldrig utifrån namnet. Axel arkiverar allt som inte körs längre.
+2. För varje hub som **inte** är arkiverad: `notion-fetch` på dess id och läs ut
+   `collection://…`-URL:en ur `<data-source url="…">`.
+   Hubbar som redan står i `agent/notion-uppgifter.json` har sin collection
+   sparad — hoppa över hämtningen för dem.
+3. Fråga varje collection:
+   ```sql
+   SELECT "Namn", "Typ", "Status", "Prioritet" FROM "collection://…"
+   WHERE "Typ" IN ('Video - Pending Approval','Image - Pending Approval')
+   ```
+   **Filtrera på inkludering, aldrig på uteslutning.** Guideline, SOP, Feedback
+   och `Winning Creative` är dokumentation och räknas aldrig som annonser —
+   filtrerar du bort dem i stället smyger nya stödsidor in i mätningen.
+4. Skriv om `agent/notion-uppgifter.json`: levande hubbar med collection-id,
+   arkiverade hubbar, och alla rader med Status `Draft`. Sätt `uppdaterad` till
+   dagens datum. **Spegla filen till `agent/utkorg/`** — rutinen kan inte pusha.
+5. Rapportera i leveransen:
+   - **Nya hubbar sedan igår** (fanns inte i filen innan) — det är signalen att
+     en produkt börjat rulla.
+   - Hubbar som blivit arkiverade sedan igår.
+   - Antal drafts per produkt, uppdelat på video och bild.
+
+Hittar du en hub som saknar produkt i `agent/produktkarta.json`, eller en
+kampanj i produktkartan som saknar hub: säg det. Det är oftast en glömd
+uppsättning, inte ett fel i datan.
+
 ## 5. Logga
 
 En rad per kampanj i `agent/budgetlogg.jsonl` via `skrivRad` i
@@ -271,4 +304,7 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 - [ ] Förfallna behov i `annonsbehov` körda (max 2) med *_KLAR-loggrad + minnesfiler i utkorgen — eller exakt redovisat varför inte
 - [ ] Alla loggrader skrivna och dashboarden ompublicerad efter varje ändring (= minnet sparat); git-push försökt
 - [ ] Dashboarden ombyggd och ompublicerad på samma URL
-- [ ] Kort svar till Axel
+- [ ] Notion-svepet kört: hubbar avlästa med `is_archived`, drafts hämtade,
+      `agent/notion-uppgifter.json` omskriven med dagens datum och speglad till utkorgen
+- [ ] Nya och nyss arkiverade hubbar redovisade i leveransen
+- [ ] Kort svar till Axel enligt svarsformatet i CLAUDE.md regel 14
