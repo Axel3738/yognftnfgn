@@ -11,16 +11,35 @@ förväntat och irrelevant. CS OS:ets commit-regler i CLAUDE.md gäller
 /cs-flödet, inte nattkörningen. Läs sedan: `docs/temu-launch-flow.md` och
 `.claude/commands/launch.md` — launch.md är facit för varje produktkörning.
 
-## Steg 1 — Aktiveringssvep
+## Steg 1 — Aktiveringssvep (HÅRT AVGRÄNSAT — läs varje ord)
 
-Hämta alla kampanjer i MagiBorsten (`1867947880635861`, SEK) skapade av det
-här flödet (namnformat `| BE ROAS ... | Launch ...`). Varje kampanj som står
-PAUSED **utan giltig orsak** aktiveras uppifrån och ner (kampanj → adsets →
-annonser — varje nivå explicit). Giltiga orsaker att förbli PAUSED:
-- break-even okänd (`BE ROAS TBC`) — får ALDRIG aktiveras
-- enskilda annonser med QA-stoppfel (stavfel, styckprisfel, fel produktnamn)
-Metas API tvångspausar kampanjer vid budget-/strukturändringar — verifiera
-med tillbakaläsning efter varje aktivering.
+**Axels regel, ordagrant (2026-08-30): svepet får bara aktivera nya launcher
+som aldrig kommit igång — aldrig kampanjer eller annonser som Axel,
+skalningsronden eller åtgärdstrappan har stängt av.**
+
+Det betyder att en kampanj/adset/annons får aktiveras av svepet ENBART om
+BÅDA villkoren är uppfyllda:
+
+1. **Den har aldrig kommit igång:** lifetime-spend är exakt 0 kr (hämta
+   `amount_spent`/insights för kampanjen INNAN du rör status). Har den
+   spenderat en enda krona har den varit igång — då är PAUSED ett beslut
+   (Axels, skalningsrondens eller åtgärdstrappans) och statusen är HELIG.
+   Besluten syns inte i någon metadata, så spend > 0 är enda säkra testet.
+2. **Den är en ny launch:** skapad av DENNA körning i steg 3, eller har
+   dagens datum i `Launch YYYY-MM-DD`-delen av namnet.
+
+Faller något av villkoren: rör ALDRIG status. Inte "aktivera tillbaka",
+inte "den ser halvfärdig ut", inget. Samma regel per NIVÅ: en enskild
+annons som är PAUSED inne i en aktiv kampanj är avstängd med flit —
+aktivera aldrig en annons som har spend > 0. (Detta hände 2026-08-29/30:
+en för bred svepregel slog på ett dussin gamla manuellt avstängda
+kampanjer, flera olönsamma. Det får aldrig hända igen.)
+
+För kampanjer som klarar båda villkoren gäller som förut: aktivera uppifrån
+och ner (kampanj → adsets → annonser, varje nivå explicit) när QA är grön.
+PAUSED-orsaker som alltid respekteras: BE ROAS TBC (får aldrig aktiveras),
+QA-stoppfel på enskilda annonser. Metas API tvångspausar vid budget-/
+strukturändringar — verifiera med tillbakaläsning efter varje aktivering.
 
 ## Steg 2 — Komplettera halvbyggda kampanjer
 
