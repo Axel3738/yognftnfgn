@@ -18,6 +18,15 @@ Alla 23 videor + 8 bilder + 8 adcopy-docs ligger i Drive under NO/-mappen.
 
 **API-verifierad 2026-08-30 00:11 UTC:** nattbatchens tre kampanjer ACTIVE/ACTIVE, 4 adsets vardera, 16 annonser per kampanj (12 video + 4 bild) alla ACTIVE, CBO 1000 kr/dag, alla länkar → beverbutikken.no.
 
+**Morgonbatch 2026-08-30 (pågår):** Damasker Vandring (`damasker` → Gamasjer Tur, 309 kr,
+ordinær 515 höjd för 40 %-claim, BE-ROAS 1,64) + Jättefotboll (`jattefotboll` → Kjempefotball
+60 cm, 299/389 = 23 % sant, BE-ROAS 1,65). 24 videor: proofread ✅, SRT-lokalisering av två
+sonnet-subagenter ✅ (verify-srt-3.py grön), apply ✅, rendering startad. 8 bildannonser ✅
+(Kie + compose-no-3.py, QA:ade, levererade i chatten + uppladdade i Drive NO-mapparna
+"Damasker Vandring"/"Jättefotboll" med 8 adcopy-docs). Captions: fast band 1388–1500
+(burn-captions-3.py — källornas enradspill verifierad i frames, scannens band dränks av snö/sand).
+Vågkonfigar: `no-damasker-video.config.mjs` + `no-jattefotboll-video.config.mjs`, dubblettspärr grön.
+
 **Nattbatch 2026-08-30:** Overvåkingskamera (`overvakningskamera`, 12 videor + 4 bilder, 899/1169 kr, BE-ROAS 1,40) tillagd och launchad ACTIVE tillsammans med Sykkelshorts + Beltesliper. Kampanj-ID: 120251998454160233 / 120251998498540233 / 120251998582640233. Kvar i huvudmappen för morgonrutinen: Damasker Vandring (= Gamasjer Tur, 309 kr) och Jättefotboll (= Kjempefotball, 299 kr).
 
 **API-verifierad 2026-08-29 17:30 UTC:** båda kampanjerna ACTIVE/ACTIVE, 4 adsets vardera ACTIVE, 12 + 11 annonser alla ACTIVE (effective_status), CBO 1000 kr/dag, alla annonslänkar → beverbutikken.no. Videouppladdning till NO-mapparna väntar fortfarande på Drive-brevlådans URL.

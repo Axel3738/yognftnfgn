@@ -97,5 +97,45 @@
    "CS_2": "1G6Ftqa-mJOcMUKP94qnPPEi3h2lGW5mF",
    "CS_3": "1uFHFVwjXpijSQWmWuREuhi2C2IJJkPGT"
   }
+ },
+ "damasker": {
+  "produkt": "Damasker Vandring",
+  "no_title": "Gamasjer Tur – Holder Snø, Væte & Grus Ute",
+  "link": "https://beverbutikken.no/products/gamasjer-tur-holder-sno-vaete-grus-ute",
+  "pris_nok": "309",
+  "videos": {
+   "CS_1": "1eLBASJkr30ZZ0vkZnhFyzbBCovztRHbT",
+   "CS_2": "1B-hH3TNXUnNUaLq5ZtUJyJg5O8pKq3U-",
+   "CS_3": "1WWJx7ZUrU8k0VSuAspFUhkjUUgx0qTpm",
+   "G_1": "1T7J9jbVyjBWCgHjr1_uAUni5rsGXYXyI",
+   "G_2": "10Nwus4K6aXD3q4cMKPry9wK7-N9IoW_d",
+   "G_3": "1b1xiF5ecbFO3sdaRK58Le8oTUoHZbd6_",
+   "PD_1": "1Kk-qULxcg_zOd30DjrerTkmcZ1RtKLt1",
+   "PD_2": "1qzInCgXwukEfg1mxoO2oQwhddBAvejaA",
+   "PD_3": "1U5ophSQTP8ce9CZeo_yWZgRjHbebvLCa",
+   "SP_1": "13Xg5PAkdorAM5g5tcMe4zCezvsPTSFXp",
+   "SP_2": "1ZQkDJ8grFtTh5Xa1J9kiLpDxCsy7QtNM",
+   "SP_3": "1N6C8kZyM360EmVZ0n6XnoC0B-o58rUaq"
+  }
+ },
+ "jattefotboll": {
+  "produkt": "Jättefotboll",
+  "no_title": "Kjempefotball 60 cm – Oppblåsbar for Hage & Basseng",
+  "link": "https://beverbutikken.no/products/kjempefotball-60-cm-oppblasbar-for-hage-basseng",
+  "pris_nok": "299",
+  "videos": {
+   "PD_1": "1X64KS6GwbLVw2joFa5FotPgZjdT_r65G",
+   "PD_2": "158V2h4symPUaw7k5igytCiwfSbWriJ2o",
+   "PD_3": "1T9IvOEjvCn2Sf_APIDZRceTxgrtllPr3",
+   "SP_1": "18OVPusQ_EhZayGU1nLliCvL09S8C8YFi",
+   "SP_2": "1pzcwmNVC3KwQKRFJef-bYLeF9yQq9rip",
+   "SP_3": "1IPw4yJ8BWbRAxa2Avihh8u_CI0EjmPkA",
+   "CS_1": "1NGQZtEfvRbZUH1Wzw5sivBRSyVeXh3xW",
+   "CS_2": "1KifCIg8eykhHBnVYH1lxjPc6QUOK0Apg",
+   "CS_3": "1A4A4uup4iqPn1zfXp8hxgi5p_920chJ5",
+   "G_1": "1_2diFWpy3IZVEp44d9JMbPA6zWEbGE2d",
+   "G_2": "1HXeuwkMXS7iw_nF8zvh7F6qp57hsLwmy",
+   "G_3": "1qWdXHjbo4YiDTFx3BmbcscX1cAgA_XX_"
+  }
  }
 }
