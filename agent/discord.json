@@ -1,0 +1,5 @@
+{
+  "kommentar": "Discord-webhook för rondens morgonrapporter (Axels server, inkopplad 2026-08-30). Alla med URL:en kan posta i kanalen — repot är privat, men flytta till env-variabel om repot någonsin öppnas.",
+  "webhook_url": "https://discord.com/api/webhooks/1543545488677019688/6fZM7TQHUDhFq1F42K4QjVb-YmClh7cZW998-5B8YLTz_R66NvC_dKWCsvuEFAxDAoBw",
+  "username": "Skalningskungen 🦫"
+}
