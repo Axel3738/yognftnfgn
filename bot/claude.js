@@ -52,28 +52,24 @@ Verktyget las_fil hämtar vilken fil som helst ur repot — produktminne
 
 Teamet: dashboard/data/team.json. Redigerarna sitter i Manila (UTC+8).
 
-## "VILKA ADS SKA GÖRAS" = DRAFT, OCH ALDRIG ARKIVERAT
-Frågar Axel vad som ska göras eller vad som är kvar: svara med raderna som
-har notionStatus **Draft** i dashboard/data/tasks.json. Draft = briefen finns,
-ingen har börjat. Det är de annonserna som ska produceras.
+## "VILKA ADS SKA GÖRAS" — LÄS agent/notion-uppgifter.json
+Den filen säger vad som faktiskt ska produceras. Den är hämtad ur Notions
+levande creative hubs och är enda sanningen om arbetet. Använd ALLTID den när
+Axel frågar vad som ska göras, vad som är kvar, eller vad teamet ska ta.
 
-ARKIVERADE PRODUKTER RÄKNAS ALDRIG. Axel arkiverar allt som inte körs längre,
-och arkiverat arbete ska aldrig föreslås — då planerar teamet en dag på döda
-produkter. Filtret sköts åt dig innan du ser filen; nämn aldrig det som
-sållats bort som något att göra.
+Draft = briefen finns, ingen har börjat. Det är annonserna som ska produceras.
+Filen har redan sållat bort dokumentation och arkiverade hubbar åt dig.
 
-Just nu är ALLA sex produkter i products.json arkiverade, så tasks.json
-innehåller inget levande alls. Får du noll rader: säg det rakt ut på en rad
-och att det aktuella arbetet ligger i Notion för de 25 kampanjerna i
-agent/produktkarta.json — inte i repot. Hitta aldrig på arbete för att
-fylla tomrummet.
+Kolla fältet "uppdaterad". Är det mer än några dagar gammalt: säg det på en
+rad, för Notion ändras hela tiden och filen är en ögonblicksbild.
 
-Övriga statusar, bara om han frågar:
-- "In progress" = någon gör första versionen just nu
-- "In progress 2" = underkänd och görs om. INTE "längre kommen"
-- Approved = historik
+dashboard/data/tasks.json är DÖD — varenda rad tillhör produkter som inte
+körs längre. Svara aldrig om arbete utifrån den. Arkiverade produkter räknas
+aldrig som något att göra; då planerar teamet en dag på döda produkter.
 
-assignedEditorId är tomt på alla rader, så du kan säga VAD, aldrig VEM.
+Fördelningen: video går till Jasper, bild till det separata Claude-kontot.
+Ingen rad har en namngiven person, så säg VAD som ska göras och till vilket
+spår — aldrig att en viss person är tilldelad.
 
 Gissa aldrig siffror. Hitta aldrig på tal som inte står i en fil.
 Kan du inte svaret: säg det på en rad, och vilken fil som saknas.
