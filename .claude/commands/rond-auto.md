@@ -245,14 +245,21 @@ till imorgon. Inga bibelsvar.
 **Skicka samma korta rapport till Discord** (Axels order 2026-08-30):
 
 ```bash
-node agent/discord-post.mjs "Ronden <datum>" "<rapporten i Markdown>"
+node agent/discord-post.mjs --kanal ronden "Ronden <datum>" "<rapporten i Markdown>"
 ```
 
-Skriptet sköter webhook, delning över 2 000-teckengränsen och rate limits —
-skriv aldrig egen curl-kod mot Discord. Posta dessutom en egen rad varje gång
-**nya uppgifter går ut till redigerarna** (brief-runda eller förstabatch klar):
-produkt, antal briefer och Notion-länken. Misslyckas Discord-posten: nämn det
-i svaret men stoppa ingenting.
+Skriptet sköter kanalval, delning över 2 000-teckengränsen och rate limits —
+skriv aldrig egen curl-kod mot Discord. Varje rutin har sin egen kanal
+(`kanalplan` i `agent/discord.json`); finns kanalen inte än postas det i
+standardkanalen i stället för att tystna.
+
+Posta dessutom, i **egna** poster:
+- `--kanal uppgifter` varje gång nya uppgifter går ut till redigerarna
+  (brief-runda eller förstabatch klar): produkt, antal briefer, Notion-länk.
+- `--kanal larm` när något kräver Axel: `STOR_SPEND_UTAN_KOP`, `plan.sparrad`,
+  misslyckad verifiering efter en Meta-skrivning.
+
+Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 
 ## DEFINITION OF DONE
 - [ ] Färsk `git pull` innan något annat

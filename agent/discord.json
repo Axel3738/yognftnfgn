@@ -1,6 +1,14 @@
 {
-  "kommentar": "Discord-webhookar per kanal. ALLA rutiner postar via agent/discord-post.mjs — lägg aldrig egen curl-kod i en kommandofil. Ny kanal: skapa en webhook i Discord (Serverinställningar → Integrationer → Webbhooks) och lägg URL:en här. Saknas kanalen används 'standard'. Webhookar kan bara posta i sin egen kanal — därför är de OK i ett privat repo. Bot-token är en helt annan sak och ligger ALDRIG här.",
+  "kommentar": "Discord-kanaler för rutinernas rapporter. ALLA rutiner postar via agent/discord-post.mjs — skriv aldrig egen curl-kod mot Discord i en kommandofil.",
+  "sa_valjs_kanal": "Är env DISCORD_BOT_TOKEN satt postar skriptet SOM BOTEN direkt till kanalen med det namnet — då behövs inga webhookar alls, och nya kanaler funkar så fort boten skapat dem. Saknas token faller den tillbaka på webhookarna nedan, och på 'standard' om kanalen inte finns där. En rutin tystnar alltså aldrig.",
   "username": "Bävern 🦫",
+  "kanalplan": {
+    "ronden": "Skalningskungens dagliga budgetrapport",
+    "uppgifter": "nya briefer och batcher som går ut till redigerarna",
+    "launcher": "nattkörningens launch-rapporter (Mammas jobb)",
+    "larm": "sådant som kräver Axel: bränner pengar utan köp, spärrar, fel",
+    "bavern": "chatt med boten"
+  },
   "kanaler": {
     "standard": "https://discord.com/api/webhooks/1543545488677019688/6fZM7TQHUDhFq1F42K4QjVb-YmClh7cZW998-5B8YLTz_R66NvC_dKWCsvuEFAxDAoBw"
   }

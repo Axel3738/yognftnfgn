@@ -61,12 +61,38 @@ export async function lasKonfig(fil = KONFIGFIL) {
   return { kanaler, username: rå.username || 'Bävern 🦫' };
 }
 
-/** POST med en (1) omförsök vid rate limit. Discord svarar 204 vid lyckad post. */
-async function posta(url, kropp) {
+/**
+ * Slår upp en kanal på NAMN med bot-token. Det här är den väg vi vill gå:
+ * då kan boten skapa nya kanaler själv utan att någon behöver klistra in en
+ * webhook-URL, och varje rutin kan posta i sin egen kanal med bara ett namn.
+ * Kräver env DISCORD_BOT_TOKEN. Returnerar null om token saknas.
+ */
+export async function slaUppKanal(namn, token = process.env.DISCORD_BOT_TOKEN) {
+  if (!token) return null;
+  const huvuden = { Authorization: `Bot ${token}` };
+  const sökt = String(namn).toLowerCase().replace(/^#/, '');
+
+  const servrar = await fetch('https://discord.com/api/v10/users/@me/guilds', { headers: huvuden });
+  if (!servrar.ok) throw new Error(`Kunde inte lista servrar (${servrar.status}) — är DISCORD_BOT_TOKEN rätt?`);
+
+  for (const server of await servrar.json()) {
+    const svar = await fetch(`https://discord.com/api/v10/guilds/${server.id}/channels`, { headers: huvuden });
+    if (!svar.ok) continue;
+    // type 0 = textkanal. Discord slugifierar namn (mellanslag → bindestreck).
+    const träff = (await svar.json()).find(
+      (k) => k.type === 0 && k.name.toLowerCase() === sökt,
+    );
+    if (träff) return träff.id;
+  }
+  return null;
+}
+
+/** POST med omförsök vid rate limit. Discord svarar 204 (webhook) / 200 (bot). */
+async function posta(url, kropp, extraHuvuden = {}) {
   for (let försök = 0; försök < 3; försök += 1) {
     const svar = await fetch(url, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', ...extraHuvuden },
       body: JSON.stringify(kropp),
     });
     if (svar.status === 429) {
@@ -89,8 +115,29 @@ async function posta(url, kropp) {
  */
 export async function skicka({ rubrik = '', text = '', kanal = 'standard', konfig = null } = {}) {
   const { kanaler, username } = konfig || (await lasKonfig());
-  const url = kanaler[kanal] || kanaler.standard;
-  if (!url) throw new Error(`Ingen webhook för kanalen "${kanal}" i ${KONFIGFIL}.`);
+
+  // Väg 1 (helst): posta som boten till kanalen med det namnet. Kräver bara
+  // env DISCORD_BOT_TOKEN — inga webhook-URL:er att hålla reda på, och nya
+  // kanaler funkar direkt så fort boten skapat dem.
+  let url = null;
+  let huvuden = {};
+  let via = 'webhook';
+  if (process.env.DISCORD_BOT_TOKEN && kanal !== 'standard') {
+    const id = await slaUppKanal(kanal);
+    if (id) {
+      url = `https://discord.com/api/v10/channels/${id}/messages`;
+      huvuden = { Authorization: `Bot ${process.env.DISCORD_BOT_TOKEN}` };
+      via = 'bot';
+    }
+  }
+
+  // Väg 2: webhook ur discord.json. Faller tillbaka på "standard" så en rutin
+  // aldrig tystnar bara för att dess kanal inte finns än.
+  if (!url) {
+    const webhook = kanaler[kanal] || kanaler.standard;
+    if (!webhook) throw new Error(`Ingen webhook för kanalen "${kanal}" i ${KONFIGFIL}, och ingen DISCORD_BOT_TOKEN satt.`);
+    url = webhook;
+  }
 
   const bitar = dela(text);
   const antal = Math.max(1, bitar.length);
@@ -98,9 +145,11 @@ export async function skicka({ rubrik = '', text = '', kanal = 'standard', konfi
     const huvud = i === 0
       ? (rubrik ? `**${rubrik}**\n` : '')
       : (rubrik ? `**${rubrik}** _(${i + 1}/${antal})_\n` : '');
-    await posta(url, { username, content: `${huvud}${bitar[i] ?? ''}`.trim() });
+    const innehåll = `${huvud}${bitar[i] ?? ''}`.trim();
+    // username går bara att sätta på webhookar; botens namn styrs av appen.
+    await posta(url, via === 'bot' ? { content: innehåll } : { username, content: innehåll }, huvuden);
   }
-  return { kanal, delar: antal };
+  return { kanal, delar: antal, via };
 }
 
 async function main() {
@@ -124,8 +173,8 @@ async function main() {
     process.exit(2);
   }
 
-  const { kanal: använd, delar } = await skicka({ rubrik, text, kanal });
-  console.log(`Postat till Discord (#${använd}, ${delar} ${delar === 1 ? 'meddelande' : 'meddelanden'}).`);
+  const { kanal: använd, delar, via } = await skicka({ rubrik, text, kanal });
+  console.log(`Postat till Discord (#${använd} via ${via}, ${delar} ${delar === 1 ? 'meddelande' : 'meddelanden'}).`);
 }
 
 if (process.argv[1] && import.meta.url.endsWith(process.argv[1].split('/').pop())) {
