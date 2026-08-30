@@ -1,0 +1,41 @@
+{
+  "_kommentar": "En rad per produkt som lokaliserats till Norge. drive_sheet = REVIEWS-arket i den SVENSKA produktmappen. no_handle = produktens handle på beverbutikken.no (verifieras mot butiken vid varje körning).",
+  "produkter": [
+    {
+      "id": "ibc-tanktrekk",
+      "namn": "IBC-tanköverdrag",
+      "drive_sheet": "1ok_wu730sdLZicbi0yS7jsufyrN0ZY9wvz3DqVzJT7s",
+      "no_handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
+    },
+    {
+      "id": "kranbeskyttelse",
+      "namn": "Kranskydd Frost 420D",
+      "drive_sheet": "194lKmhe4UJNPlqu-wRLvdzCzzwHdDzQN6nO91mwmQ80",
+      "no_handle": "kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+    },
+    {
+      "id": "sykkelshorts",
+      "namn": "Cykelshorts Herr",
+      "drive_sheet": "1mOaC0gqWwOB_kSPmUt-Zh2VByHU2Xc_bn3TRn9j-xhA",
+      "no_handle": "sykkelshorts-herre-polstret-med-kompresjon"
+    },
+    {
+      "id": "gamasjer",
+      "namn": "Damasker Vandring",
+      "drive_sheet": "1HG_1zfQJaL3TTb7jBlTBtiUmEKtsg4dFO6TMbuRuyZw",
+      "no_handle": "gamasjer-tur-holder-sno-vaete-grus-ute"
+    },
+    {
+      "id": "kjempefotball",
+      "namn": "Jättefotboll",
+      "drive_sheet": "1w0y5kI35Xj4RGLWn1Lz7St3ohL-gvwWmGpsKopbZtYE",
+      "no_handle": "kjempefotball-60-cm-oppblasbar-for-hage-basseng"
+    },
+    {
+      "id": "overvakingskamera",
+      "namn": "Övervakningskamera Trådlös",
+      "drive_sheet": "17O2zShgGpy4dTb3IBDY1tBOGvmpqMFRd_C8KwAuJx_k",
+      "no_handle": "overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+    }
+  ]
+}
