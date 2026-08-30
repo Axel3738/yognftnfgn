@@ -28,6 +28,16 @@
   --ms-line-strong: #c7bce0;
 }
 
+/* Rubrikfonten ---------------------------------------------------------- */
+/* Mochiy Pop One (Axels val 2026-08-30, samma familj som hans giftbrand).
+   Bara rubriker — brödtexten stannar i Assistant: en hel sida i bubbelfont
+   blir oläslig och krockar med minnes-vinkeln. Fonten har en enda vikt,
+   därav vikten 400. Själva laddningen ligger i ms-head.liquid. */
+h1, .h1, h2, .h2, h3, .h3 {
+  font-family: 'Mochiy Pop One', var(--font-heading-family, 'Assistant'), sans-serif;
+  font-weight: 400;
+}
+
 /* Köpknappen ------------------------------------------------------------ */
 /* Dawn gör "Lägg i varukorgen" till en sekundär (vit) knapp så fort Shop Pay
    är påslaget. Det ger sidans viktigaste knapp minst tyngd på hela sidan.
