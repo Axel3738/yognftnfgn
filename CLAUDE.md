@@ -121,7 +121,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 
 ## Kommandona (Axels gränssnitt)
 
-14 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
+16 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
 
 | Kommando | Vad |
 |----------|-----|
@@ -139,6 +139,8 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/rapport <namn>: <text>` | Tolka en slutrapport från Slack (bekräftas innan den sparas) |
 | `/granska [id]` | Beta av review-kön: checklista → godkänn eller skicka tillbaka |
 | `/launch <produktnamn>` | **Temu-flödet:** Drive → QA → Judge.me → Meta som PAUSED (`docs/temu-launch-flow.md`) |
+| `/bildannonser [--dry]` | **Rutin 20:00 varje dag:** alla Notion-hubbar → ogjorda bildannonser → kie.ai → `To be Reviewed`. **Aldrig video.** |
+| `/nattkorning` | Rutinen "Ad upload and structure": Drive-kön → QA → Meta |
 
 ---
 
@@ -301,7 +303,31 @@ approve, kpi, export-csv …) — hela listan står som kommentar högst upp i f
 **`cli.mjs` har ingen `build`** — HTML:en byggs av `build.mjs`.
 Logiken bor i `lib/kpi.mjs`, `lib/model.mjs`, `lib/store.mjs`; datan i `data/*.json`.
 
-### `pipeline/` — bildannonser
+### `bildannonser/` — Bäverbutikens bildannonser (kie.ai)
+Motorn bakom `/bildannonser`-rutinen. Fristående, **inga npm-beroenden**
+(inbyggda `fetch`). Kräver env `KIE_API_KEY`.
+
+```bash
+node bildannonser/run.mjs --jobb=<fil.json> --dry   # planen, inga credits
+node bildannonser/run.mjs --jobb=<fil.json>         # skarpt
+```
+`kie.mjs` pratar med kie.ais jobb-API (`createTask` → polla `recordInfo`);
+`run.mjs` läser jobbfilen, granskar den, genererar och skriver
+`bildannonser/output/<datum>/_manifest.json`. Jobbfilen skrivs av rutinen ur
+Notion — aldrig för hand. Utan referensbilder körs `google/nano-banana`, med
+referensbilder `google/nano-banana-edit` (matchar en Winning Creative).
+
+⚠️ `run.mjs` **vägrar** varje jobb vars `typ` inte är exakt
+`Image - Pending Approval`. Videoraderna ligger i samma hubbar med nästan samma
+namn (`..._4_1` är bild, `..._4_H1` är video) och görs av redigerarna.
+
+⚠️ **Importera aldrig från `pipeline/` här** — det är Grillklinikens brand kit.
+
+### `pipeline/` — bildannonser (Grillkliniken/Mastern, legacy)
+⚠️ **Trots mappnamnet är det här inte Bäverbutiken.** `brand.mjs` sätter
+`LOGO_WORDMARK = 'GRILLKLINIKEN'` och grillfärger, och `package.json` säger
+"bildannonser för Mastern". Bäverbutikens bildannonser bor i `bildannonser/`.
+
 Två steg, för att bildmodeller är dåliga på text: Higgsfield Soul genererar en
 fotorealistisk bas med medvetet mörk tomyta → `compose.mjs` lägger rubrik/badge/
 footer som skarp vektortext ovanpå med `sharp`.
@@ -445,9 +471,20 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 ## Connectors som måste vara kopplade
 
 Följer **inte** med repot. Utan dem går det att bygga och testa koden, men inte att
-hämta data: **Notion** (de 4 creative hub-databaserna), **Slack** (workspace
+hämta data: **Notion** (creative hub-databaserna), **Slack** (workspace
 Stonebite), **Meta Ads** (MagiBorsten `1867947880635861`), **Shopify**
 (bäverbutiken.se, för verklig AOV).
+
+Notion-hubbarna hittas **dynamiskt via teamspacet Bäverbutiken**
+(`3a9270ab-908c-81a8-a48c-004222d195e7`) — databaser vars titel slutar på
+`creative hub`, minus mallen `Creative hub MALL`. Håll aldrig en handskriven
+lista: nya produkter ska komma med av sig själva, och teamspacet är det som
+hindrar att Grillkliniken, Matstrumpor eller Ploomi.se blandas in (de har egna
+teamspaces). `products.json` känner bara fyra av hubbarna — den är inte facit här.
+
+**Env-nycklar rutinerna behöver:** `KIE_API_KEY` (bildannonser),
+`HEYGEN_API_KEY` (`/translate`), `META_ACCESS_TOKEN`, `DISCORD_WEBHOOK_URL`
+(nattrapporterna), `JUDGEME_API_TOKEN`, `SHOPIFY_TOKEN_*`.
 
 ---
 
