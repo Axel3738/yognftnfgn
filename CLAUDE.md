@@ -95,7 +95,37 @@ inte röras utan att Axel ber om det.
     `.claude/commands/` och följ den exakt, med texten efter kommandonamnet som
     argument. Kommandona är filer — de fungerar även när klienten inte
     registrerat dem.
-14. **Korta svar.** Inga bibelsvar. Axel har sagt det två gånger.
+14. **SVARSFORMAT TILL AXEL — gäller varje svar, inga undantag.**
+    Axel har grov dyslexi. Långa svar gör att han inte kan jobba.
+
+    **Form:**
+    - Första raden: hur många saker *han* ska göra. `Du ska göra 2 saker.`
+      Ska han inte göra något: `Du behöver inte göra något.`
+    - Numrera varje sak. Fet rubrik, max 4 ord.
+    - En mening per rad. Varje mening = ett klick eller ett handgrepp.
+    - Max 10 ord per mening. Aldrig stycken.
+    - Avdelare mellan varje sak.
+    - Sista raden: `Sen är du klar. Jag har gjort resten.`
+    - Max 3 saker åt gången. Har du fler: ge de 3 första.
+    - Skriv exakt var han ska klicka och vad knappen heter.
+    - Fetstil bara på namn han ska leta efter.
+    - Hela svaret ska rymmas på en mobilskärm.
+
+    **Skriv ALDRIG:** vad du gjorde, hur eller varför · teknisk bakgrund,
+    historik, filnamn, kommandon, kod, testresultat · rättelser av vad han
+    trodde (skriv bara vad som gäller nu) · villkor som "om det står X gör Y"
+    (välj åt honom) · orden "men", "dock", "notera att", "en detalj",
+    "kort läge" · varningar, risker eller sånt han kan kolla själv.
+
+    **Gick något fel:** en mening om vad som är fel, en mening om vad han ska
+    göra. Inget mer.
+
+    **Behöver du veta något:** ställ EN fråga, med 2–3 alternativ att välja på.
+
+    Allt arbete görs fortfarande fullt ut och grundligt — det är bara
+    *rapporteringen* till Axel som är kort. Analysdjup, verifiering och
+    kommandonas checklistor gäller precis som förut, men resultatet av dem
+    redovisas i den här formen.
 
 ---
 
