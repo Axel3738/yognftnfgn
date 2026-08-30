@@ -18,14 +18,21 @@ Alla 23 videor + 8 bilder + 8 adcopy-docs ligger i Drive under NO/-mappen.
 
 **API-verifierad 2026-08-30 00:11 UTC:** nattbatchens tre kampanjer ACTIVE/ACTIVE, 4 adsets vardera, 16 annonser per kampanj (12 video + 4 bild) alla ACTIVE, CBO 1000 kr/dag, alla länkar → beverbutikken.no.
 
-**Morgonbatch 2026-08-30 (pågår):** Damasker Vandring (`damasker` → Gamasjer Tur, 309 kr,
+**Morgonbatch 2026-08-30 ✅ KLAR:** Damasker Vandring (`damasker` → Gamasjer Tur, 309 kr,
 ordinær 515 höjd för 40 %-claim, BE-ROAS 1,64) + Jättefotboll (`jattefotboll` → Kjempefotball
-60 cm, 299/389 = 23 % sant, BE-ROAS 1,65). 24 videor: proofread ✅, SRT-lokalisering av två
-sonnet-subagenter ✅ (verify-srt-3.py grön), apply ✅, rendering startad. 8 bildannonser ✅
-(Kie + compose-no-3.py, QA:ade, levererade i chatten + uppladdade i Drive NO-mapparna
-"Damasker Vandring"/"Jättefotboll" med 8 adcopy-docs). Captions: fast band 1388–1500
-(burn-captions-3.py — källornas enradspill verifierad i frames, scannens band dränks av snö/sand).
-Vågkonfigar: `no-damasker-video.config.mjs` + `no-jattefotboll-video.config.mjs`, dubblettspärr grön.
+60 cm, 299/389 = 23 % sant, BE-ROAS 1,65). 24 videor: proofread → SRT-lokalisering (två
+sonnet-subagenter, verify-srt-3.py grön) → apply → rendering → captions (fast band 1388–1500,
+burn-captions-3.py). 8 bildannonser (Kie + compose-no-3.py). Launchade ACTIVE 2026-08-30:
+kampanj-ID 120251999873390233 (Gamasjer) / 120251999916430233 (Kjempefotball), CBO 1000 kr/dag,
+4 adsets × 4 annonser (3 video + 1 bild) per kampanj. **API-verifierad:** båda ACTIVE/ACTIVE,
+alla 32 annonser ACTIVE, alla länkar → beverbutikken.no. Levererat i chatten (8 zip ≤30 MiB +
+8 png) och uppladdat i Drive: MAKE TO NORWAY → "NO Damasker Vandring"/"NO Jättefotboll"
+(24 mp4 + 8 png + 8 adcopy-docs). Kvot 27 715 → 26 939 (~776 credits).
+
+**Drive-ramverk 2026-08-30 (Axels beslut):** källa = WINNERS-mappen, mål = `NO <namn>`-dubbletter
+i MAKE TO NORWAY (f.d. huvudmappen), inga mappar flyttas. Inskrivet i `/translate-no` Fas 0 + 3.5.
+Befintliga norska mappar NO-prefixade. Rutinen är ombunden till huvudsessionen (fresh-session-
+triggern fick inget repo), kör 04:15 svensk tid dagligen.
 
 **Nattbatch 2026-08-30:** Overvåkingskamera (`overvakningskamera`, 12 videor + 4 bilder, 899/1169 kr, BE-ROAS 1,40) tillagd och launchad ACTIVE tillsammans med Sykkelshorts + Beltesliper. Kampanj-ID: 120251998454160233 / 120251998498540233 / 120251998582640233. Kvar i huvudmappen för morgonrutinen: Damasker Vandring (= Gamasjer Tur, 309 kr) och Jättefotboll (= Kjempefotball, 299 kr).
 
