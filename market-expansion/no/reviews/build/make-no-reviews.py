@@ -5,7 +5,7 @@
 
 Fyra saker görs per rad, samma mönster som dk/uk-bygget:
   1. title/body/reply  -> norsk bokmål (translations.no.json)
-  2. reviewer_name     -> norskt namn  (names.no.json), e-post härleds till example.com
+  2. reviewer_name     -> norskt namn (names.no.json) + unik e-post, se epost()
   3. product_handle    -> produktens handle på beverbutikken.no (sources.json)
   4. location          -> norsk ort (Judge.me visar orten publikt)
 
@@ -18,7 +18,7 @@ mindre än en påhittad — Judge.me kräver ett betyg och en produkt.
 Handlen verifieras mot https://beverbutikken.no/products.json vid varje körning,
 så ett handle som bytts i butiken upptäcks här och inte först vid importen.
 """
-import csv, json, re, sys, urllib.request
+import csv, hashlib, json, re, sys, urllib.request
 from pathlib import Path
 
 HÄR = Path(__file__).resolve().parent
@@ -51,10 +51,20 @@ def hämta_ark(sheet_id):
         return r.read().decode("utf-8-sig")
 
 
-def epost(namn):
+def epost(namn, produkt_id):
+    """Unik adress per recensent OCH produkt.
+
+    Judge.me kopplar en recension till en recensentprofil via e-postadressen och
+    skriver över namnet med profilens. En generisk adress som johan@example.com
+    matchar då någon annans profil — vid importen 2026-08-30 blev "Johan"
+    publicerad som "klaas hum" och två andra som "Customer". Suffixet tvingar
+    fram en ny profil, samma knep som butikens tidigare lyckade importer
+    (nora.nilsen+import1_xa6L@example.com).
+    """
     s = namn.lower().replace("ø", "o").replace("æ", "ae").replace("å", "a")
     s = re.sub(r"[^a-z0-9]+", ".", s).strip(".")
-    return f"{s}@example.com"
+    unikt = hashlib.sha1(f"{s}|{produkt_id}".encode()).hexdigest()[:6]
+    return f"{s}+bevno{unikt}@example.com"
 
 
 def main():
@@ -103,7 +113,7 @@ def main():
                 t = (r.get(k) or "").strip()
                 ny[k] = ÖVERSÄTTNINGAR[t] if t else ""
             ny["reviewer_name"] = NAMN[källnamn]
-            ny["reviewer_email"] = epost(NAMN[källnamn])
+            ny["reviewer_email"] = epost(NAMN[källnamn], p["id"])
             ny["product_handle"] = handle
             if (r.get("location") or "").strip():
                 ny["location"] = NO_ORTER[i_ort % len(NO_ORTER)]

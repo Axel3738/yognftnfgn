@@ -5,24 +5,32 @@ bara lägesrapporten.
 
 ## Läget 2026-08-30
 
-| Produkt | Norskt handle | Rader | Importerad |
-|---|---|---:|---|
-| IBC-tanköverdrag | `ibc-tanktrekk-1000-l-stopper-alger-uv` | 10/10 | ⏳ väntar på token |
-| Kranskydd Frost 420D | `kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter` | 10/10 | ⏳ väntar på token |
-| Cykelshorts Herr | `sykkelshorts-herre-polstret-med-kompresjon` | 8/8 | ⏳ väntar på token |
-| Jättefotboll | `kjempefotball-60-cm-oppblasbar-for-hage-basseng` | 8/8 | ⏳ väntar på token |
-| Övervakningskamera Trådlös | `overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing` | 10/10 | ⏳ väntar på token |
-| Damasker Vandring | `gamasjer-tur-holder-sno-vaete-grus-ute` | **0/10** | ❌ källarket saknar betyg |
+`JUDGEME_NO_API_TOKEN` inlagd och verifierad. Norska butiken hade redan 315
+recensioner sedan tidigare körningar, så dubblettspärren gjorde jobbet:
 
-**46 recensioner klara.** Alla handles verifierade mot `beverbutikken.no/products.json`.
+| Produkt | Norskt handle | Läge |
+|---|---|---|
+| IBC-tanktrekk | `ibc-tanktrekk-1000-l-stopper-alger-uv` | ✅ 10 importerade 2026-08-30 |
+| Kranbeskyttelse Frost 420D | `kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter` | ⏭️ hade redan 10 — hoppades över |
+| Sykkelshorts Herre | `sykkelshorts-herre-polstret-med-kompresjon` | ⏭️ hade redan 16 (**8 dubbletter**) |
+| Kjempefotball | `kjempefotball-60-cm-oppblasbar-for-hage-basseng` | ⏭️ hade redan 16 (**8 dubbletter**) |
+| Overvåkingskamera | `overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing` | ⏭️ hade redan 10 — hoppades över |
+| Gamasjer Tur | `gamasjer-tur-holder-sno-vaete-grus-ute` | ❌ källarket saknar betyg |
 
-## 🔴 Två saker kräver Axel
+De fyra överhoppade har recensioner med andra namn än våra CSV:er (Eirik Hansen,
+Silje, Kjetil, Nora …) — en tidigare körning översatte och importerade dem redan.
+CSV:erna i `output/` för dem är alltså överflödiga, men lämnas kvar som facit.
 
-1. **`JUDGEME_NO_API_TOKEN` saknas i environmentet.** Judge.me-tokens är per
-   butik — `JUDGEME_API_TOKEN` är den svenska butikens och ger
-   `Failed to authenticate` mot den norska. Hämtas i Judge.me-adminen för
-   beverbutikken.no (Settings → Integrations → API token). Judge.me *är*
-   installerat på butiken, så det är bara tokenen som fattas.
+**IBC-arkets tio recensioner har alla titeln "Bra produkt".** Så står det i
+källarket och så importerades de. Vill Axel ha varierade titlar ändras de i
+arket, inte här.
+
+## 🔴 Kvar att åtgärda
+
+1. **Sykkelshorts och Kjempefotball har varje recension i dubbel upplaga**
+   (8 unika × 2 = 16 vardera). Någon körde importen två gånger innan
+   dubblettspärren fanns. De 8 extra per produkt kan raderas via Judge.me:s
+   API — men det är en irreversibel radering, så den görs bara på Axels ok.
 2. **`Damasker Vandring_REVIEW` saknar betyg på alla 10 rader** (och har tomt
    `product_handle`). Kontrollerat igen 2026-08-30: fortfarande tomt. Utan betyg
    kan Judge.me inte ta emot raden. Fyll i betygen i arket, kör om bygget —
