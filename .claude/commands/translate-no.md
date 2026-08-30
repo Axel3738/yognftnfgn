@@ -127,10 +127,17 @@ Saknas env-variablerna: be Axel installera brevlådan, leverera docs ändå.
 REVIEWS-arken kopieras INTE: påhittade kundrecensioner översätts/publiceras inte
 av rutinen (beslut 2026-08-29) — raden lämnas till Axel.
 
-## Fas 4 — Logga och pusha
+## Fas 4 — Logga, pusha och briefa
 
 1. Ny rad i körloggen i `docs/video-localization.md` (kvot, rättelser, captions,
    leverans, launch). Uppdatera batchmappens filer. Committa + pusha.
+2. **Discord-brief (Axels krav 2026-08-30) — skickas EFTER VARJE körning, även
+   när inget behandlades:** `node pipeline/discord-brief.mjs "<text>"`.
+   Kort och skannbar, på svenska: vilka produkter som kördes (videor/bilder,
+   kampanj + BE-ROAS + status), vilka som hoppades över och varför (saknar norsk
+   butikssida / redan behandlad), kvot före/efter, rättelser värda att veta,
+   och eventuella fel eller väntande beslut. Ingen körning = en rad om det
+   ("inget nytt i WINNERS").
 
 ## Definition of done
 
