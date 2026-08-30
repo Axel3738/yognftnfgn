@@ -1,13 +1,20 @@
 #!/usr/bin/env node
-// Skickar nattkörningens brief till Axels Discord-kanal via webhook.
+// Skickar nattkörningens brief till Axels Discord-kanal "mamma jobb".
 // Noll beroenden.
 //
 //   node tools/notify-discord.mjs "✅ 2 launchade, allt rullar"
 //   cat rapport.txt | node tools/notify-discord.mjs
 //
-// Webhook-adressen är en hemlighet och ligger därför INTE i repot — den
-// läses ur env DISCORD_WEBHOOK_URL (sätts i Claude-environmentet, precis
-// som JUDGEME_API_TOKEN och Shopify-nycklarna).
+// Auth (hemligheterna ligger i environmentet, ALDRIG i repot):
+//   1. Bot-token — env DISCORD_BOT_TOKEN / DISCORD_TOKEN / DISCORD_ACCESS_TOKEN,
+//      eller vilken env-variabel som helst vars NAMN innehåller DISCORD och vars
+//      värde inte är en URL (så funkar det oavsett exakt vad Axel döpte den till).
+//      Skickar via POST /api/v10/channels/<id>/messages.
+//   2. Webhook — env DISCORD_WEBHOOK_URL (eller en DISCORD-variabel som är en
+//      webhook-URL). Används bara om ingen bot-token finns.
+//
+// Kanal-id:t är inte en hemlighet: "mamma jobb" = 1543546469884362833
+// (läst ur webhooken 2026-08-30). Kan pekas om med env DISCORD_CHANNEL_ID.
 
 import { spawnSync } from 'node:child_process';
 if (process.env.HTTPS_PROXY && process.env.NODE_USE_ENV_PROXY !== '1') {
@@ -17,8 +24,28 @@ if (process.env.HTTPS_PROXY && process.env.NODE_USE_ENV_PROXY !== '1') {
   process.exit(r.status ?? 1);
 }
 
-const URL = process.env.DISCORD_WEBHOOK_URL;
-if (!URL) { console.error('Saknar env DISCORD_WEBHOOK_URL — briefen kan inte skickas.'); process.exit(2); }
+const KANAL = process.env.DISCORD_CHANNEL_ID || '1543546469884362833';
+
+function hittaAuth() {
+  const env = process.env;
+  for (const n of ['DISCORD_BOT_TOKEN', 'DISCORD_TOKEN', 'DISCORD_ACCESS_TOKEN']) {
+    if (env[n]) return { typ: 'bot', token: env[n].replace(/^Bot\s+/i, '') };
+  }
+  const kandidater = Object.keys(env).filter(n => /DISCORD/i.test(n) && env[n]);
+  for (const n of kandidater) {
+    if (!/^https?:\/\//i.test(env[n])) return { typ: 'bot', token: env[n].replace(/^Bot\s+/i, '') };
+  }
+  const hook = env.DISCORD_WEBHOOK_URL
+    || kandidater.map(n => env[n]).find(v => v.startsWith('https://discord.com/api/webhooks/'));
+  if (hook) return { typ: 'webhook', url: hook };
+  return null;
+}
+
+const auth = hittaAuth();
+if (!auth) {
+  console.error('Ingen Discord-auth i environmentet. Letade efter: DISCORD_BOT_TOKEN / DISCORD_TOKEN / DISCORD_ACCESS_TOKEN / *DISCORD* / DISCORD_WEBHOOK_URL.');
+  process.exit(2);
+}
 
 let text = process.argv.slice(2).join(' ').trim();
 if (!text) {
@@ -38,14 +65,23 @@ for (const line of text.split('\n')) {
 if (cur) parts.push(cur);
 
 for (const [i, content] of parts.entries()) {
-  const r = await fetch(URL, {
-    method: 'POST', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ content, username: 'Nattkörningen' }),
-  });
+  let r;
+  if (auth.typ === 'bot') {
+    r = await fetch(`https://discord.com/api/v10/channels/${KANAL}/messages`, {
+      method: 'POST',
+      headers: { 'Authorization': `Bot ${auth.token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ content }),
+    });
+  } else {
+    r = await fetch(auth.url, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ content, username: 'Nattkörningen' }),
+    });
+  }
   if (!r.ok) {
-    console.error(`Discord svarade ${r.status}: ${(await r.text()).slice(0, 200)}`);
+    console.error(`Discord svarade ${r.status} (${auth.typ}): ${(await r.text()).slice(0, 200)}`);
     process.exit(1);
   }
   if (i < parts.length - 1) await new Promise(res => setTimeout(res, 600));
 }
-console.log(`Skickat till Discord (${parts.length} meddelande${parts.length > 1 ? 'n' : ''}).`);
+console.log(`Skickat till Discord via ${auth.typ} (${parts.length} meddelande${parts.length > 1 ? 'n' : ''}).`);
