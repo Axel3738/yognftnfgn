@@ -16,6 +16,8 @@ och förkastades). Levererade i chatten, uppladdade i NO-mapparna, inlagda ACTIV
 koncept-adset som `<Produkt>_NO_<K>_2_1`. Kampanjerna har nu 16 resp. 15 annonser.
 Alla 23 videor + 8 bilder + 8 adcopy-docs ligger i Drive under NO/-mappen.
 
+**API-verifierad 2026-08-30 00:11 UTC:** nattbatchens tre kampanjer ACTIVE/ACTIVE, 4 adsets vardera, 16 annonser per kampanj (12 video + 4 bild) alla ACTIVE, CBO 1000 kr/dag, alla länkar → beverbutikken.no.
+
 **Nattbatch 2026-08-30:** Overvåkingskamera (`overvakningskamera`, 12 videor + 4 bilder, 899/1169 kr, BE-ROAS 1,40) tillagd och launchad ACTIVE tillsammans med Sykkelshorts + Beltesliper. Kampanj-ID: 120251998454160233 / 120251998498540233 / 120251998582640233. Kvar i huvudmappen för morgonrutinen: Damasker Vandring (= Gamasjer Tur, 309 kr) och Jättefotboll (= Kjempefotball, 299 kr).
 
 **API-verifierad 2026-08-29 17:30 UTC:** båda kampanjerna ACTIVE/ACTIVE, 4 adsets vardera ACTIVE, 12 + 11 annonser alla ACTIVE (effective_status), CBO 1000 kr/dag, alla annonslänkar → beverbutikken.no. Videouppladdning till NO-mapparna väntar fortfarande på Drive-brevlådans URL.
