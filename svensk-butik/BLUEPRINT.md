@@ -416,6 +416,44 @@ faktiskt skickas till leverantören en gång i veckan vid den tidpunkten.
 Förhandsvisningen (med levande timer):
 <https://claude.ai/code/artifact/c8bb8fba-4196-4703-a48a-d5275ed24f1f>
 
+## 8l. Varv 14 (2026-08-30): köprutan omstuvad efter beslutsordningen
+
+Axel: optimera hela köprutan efter hur beslutet faktiskt fattas, och behåll
+timern som urgency-trigger. Ligger i **"Twinpillow v6 (utkast)"**
+(`156622094473`) — v5 publicerades av Axel under arbetet.
+
+**Ordningen är nu besökarens frågeordning.** Rutan svarar på en fråga i
+taget; byter man ordning tvingas hon hålla en obesvarad fråga i huvudet
+medan hon läser nästa, och det är där folk lämnar.
+
+| # | Frågan i huvudet | Vad som svarar |
+|---|---|---|
+| 1 | Vad är det här? | förbeställningskortet |
+| 2 | Hur går det till? | tråden med tre steg |
+| 3 | När får jag den? | leveransdatumet |
+| 4 | Vad kostar det? | paketvalet |
+| 5 | Vad ska jag göra? | bildfältet |
+| 6 | Varför just nu? | nedräkningen |
+| 7 | Vågar jag? | raden under knappen |
+
+**Tre konkreta ändringar:**
+1. **Nedräkningen flyttad ned**, från mitten av kortet till direkt ovanför
+   knappen. Brådska högt upp på sidan läses som en reklamruta och scrollas
+   förbi; i beslutsögonblicket är den det sista hon ser innan hon trycker.
+2. **En förklaring i stället för två.** Tråden och den numrerade "så funkar
+   det"-listan sa samma sak och konkurrerade. Listan är borta; steg 1 i
+   tråden rymmer nu bilden ("Du beställer / och skickar din bild").
+3. **Bildfältet av med sin ram.** Fyra inramade lådor på rad gjorde att allt
+   vägde lika mycket. Nu finns tre ramar — kortet, paketvalet, nedräkningen —
+   och en enda sak som väger tyngst: knappen.
+
+CSS:en för hela köprutan bröts ut ur `ms-tema.css` till egen
+`assets/ms-preorder.css`, laddad av snippeten. Köprutan går nu att justera
+utan att hela basanpassningen skickas upp igen.
+
+Förhandsvisningen (uppdaterad):
+<https://claude.ai/code/artifact/c8bb8fba-4196-4703-a48a-d5275ed24f1f>
+
 ## 9. Kvarstående — kräver Axel
 
 1. **Publicera temat:** Online Store → Themes →

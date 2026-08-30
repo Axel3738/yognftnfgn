@@ -34,7 +34,7 @@
         "ms_bild": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class='ms-scope ms-bild'><p class='ms-bild__rubrik'>SÅ FUNKAR DET</p><ol class='ms-bild__steg'><li><strong>BESTÄLL KUDDEN.</strong></li><li><strong>SKICKA DIN BILD.</strong> Lägg till den här nedanför – eller svara på orderbekräftelsen med bilden efter köpet. Båda funkar lika bra.</li><li><strong>GODKÄNN UTKASTET.</strong> Vi syr ingenting förrän du sagt ja.</li></ol><label class='ms-bild__etikett' for='ms-bild-{{ section.id }}'>DIN BILD (går bra att lägga till nu)</label><input id='ms-bild-{{ section.id }}' class='ms-bild__input' type='file' name='properties[Din bild]' accept='image/*' form='product-form-{{ section.id }}'><p class='ms-bild__hjalp'>Ingen bild nu? Ingen fara – vi mejlar dig efter köpet och du svarar med bilden då.</p></div>"
+            "custom_liquid": "<div class='ms-scope ms-bild'><label class='ms-bild__etikett' for='ms-bild-{{ section.id }}'>DIN BILD PÅ DJURET</label><input id='ms-bild-{{ section.id }}' class='ms-bild__input' type='file' name='properties[Din bild]' accept='image/*' form='product-form-{{ section.id }}'><p class='ms-bild__hjalp'>Lägg till den nu, eller svara på mejlet efter köpet. Båda funkar lika bra.</p></div>"
           }
         },
         "ms_trust": {
@@ -71,16 +71,23 @@
           "settings": {
             "custom_liquid": "{% render 'ms-preorder', del: 'not' %}"
           }
+        },
+        "ms_klocka": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'ms-preorder', del: 'klocka' %}"
+          }
         }
       },
       "block_order": [
         "vendor",
         "title",
         "price",
-        "variant_picker",
         "ms_preorder",
+        "variant_picker",
         "ms_paket",
         "ms_bild",
+        "ms_klocka",
         "buy_buttons",
         "ms_atcnote",
         "ms_trust",

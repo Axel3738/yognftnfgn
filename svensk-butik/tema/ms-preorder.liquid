@@ -1,21 +1,35 @@
 {%- comment -%}
-  ms-preorder — förbeställningskortet direkt ovanför paketvalet och köpknappen.
+  ms-preorder — förbeställningsdelarna i köprutan.
 
-  VARFÖR DET SER UT SÅ HÄR
-  Produkten finns inte i lager och kan inte finnas det: varje kudde sys efter
-  kundens egen bild. Det är produktens starkaste argument, inte dess svaghet —
-  därför säger kortet det rakt ut i stället för att gömma väntetiden i
-  finstilt. "Din kudde finns inte än" är sant, och det är också anledningen
-  till att den blir hennes.
+  ORDNINGEN I KÖPRUTAN, OCH VARFÖR
+  Besökaren ställer sina frågor i en bestämd ordning, och rutan svarar i
+  samma ordning. Byter man ordning tvingas hon hålla en obesvarad fråga i
+  huvudet medan hon läser nästa — det är där folk lämnar.
+
+    1. Vad är det här?      → kortet ("Din kudde finns inte än")
+    2. Hur går det till?    → tråden med tre steg
+    3. När får jag den?     → leveransdatumet
+    4. Vad kostar det?      → paketvalet
+    5. Vad ska jag göra?    → bildfältet
+    6. Varför just nu?      → nedräkningen, direkt ovanför knappen
+    7. Vågar jag?           → raden under knappen
+
+  Nedräkningen ligger sist med flit. Brådska placerad högt läses som en
+  reklamruta och scrollas förbi; placerad i beslutsögonblicket, precis ovanför
+  knappen, är den det sista hon ser innan hon trycker.
+
+  EN FÖRKLARING, INTE TVÅ
+  Tidigare fanns både tråden och en numrerad "så funkar det"-lista. Två
+  listor som säger samma sak konkurrerar och dubblar läsbördan. Tråden är
+  kvar; bildfältet fick i stället en enda mening.
 
   NEDRÄKNINGEN
   Räknar mot en RIKTIG deadline: samma tidpunkt för alla besökare, i svensk
-  tid, satt av när ordrarna faktiskt går iväg till fabriken (data-veckodag /
-  data-timme). Den får aldrig byggas om till en timer som startar om vid varje
-  sidladdning — då är deadlinen påhittad, och en påhittad tidsgräns som ska
-  pressa fram ett snabbt köp står på svarta listan i marknadsföringslagen
-  (bilaga I till direktiv 2005/29/EG, punkt 7). Den är dessutom onödig: en
-  äkta veckodeadline visar timmar och sekunder ändå större delen av veckan.
+  tid, satt av när ordrarna faktiskt går iväg till fabriken (stang_veckodag /
+  stang_timme). Den får aldrig byggas om till en timer som startar om vid
+  varje sidladdning — då är deadlinen påhittad, och en påhittad tidsgräns som
+  ska pressa fram ett snabbt köp står på svarta listan i marknadsföringslagen
+  (bilaga I till direktiv 2005/29/EG, punkt 7).
 
   FÖRUTSÄTTNING SOM MÅSTE HÅLLAS SANN
   Texten lovar att beställningar före deadline går i veckans sömnadsomgång.
@@ -23,12 +37,10 @@
   gång i veckan vid den tidpunkten. Ändras rutinen ska siffrorna nedan ändras
   samma dag.
 
-  Sömnaden är den visuella idén: kortets kant är en stygnrad och de tre stegen
-  sitter på en tråd. Ingen lagerräknare, inga påhittade siffror.
-
   Parametrar:
-    del  'kort' (standard) = hela kortet
-         'not'             = den lilla raden under köpknappen
+    del  'kort'   (standard) = förbeställningskortet
+         'klocka'            = nedräkningen (läggs direkt ovanför köpknappen)
+         'not'               = trygghetsraden under köpknappen
 {%- endcomment -%}
 {%- liquid
   assign vilken = del | default: 'kort'
@@ -37,67 +49,38 @@
   assign stang_namn = 'söndag 23.00'
 -%}
 
-{%- if vilken == 'not' -%}
+{%- comment -%}
+  Stilarna följer med snippeten, så varje del fungerar även om någon flyttar
+  den ensam till en annan mall. Webbläsaren hämtar filen en gång oavsett hur
+  många gånger länken skrivs ut.
+{%- endcomment -%}
+{{ 'ms-preorder.css' | asset_url | stylesheet_tag }}
+
+{%- case vilken -%}
+
+{%- when 'not' -%}
   <p class="ms-scope ms-pre__not">
     {% render 'ms-icon', name: 'shield' %}
     <span>Du betalar i dag. Vi syr först när du godkänt ditt utkast.</span>
   </p>
 
-{%- else -%}
-  <div class="ms-scope ms-pre">
-    <span class="ms-pre__flagga">
-      {% render 'ms-icon', name: 'sparkle' %}
-      Förbeställning
-    </span>
-
-    <p class="ms-pre__rubrik">Din kudde finns inte än.<br>Vi syr den åt dig.</p>
-    <p class="ms-pre__ing">
-      Inget lager, ingen hylla, ingen slumpad kudde ur en låda. Din börjar
-      existera först när du sagt ja till utkastet.
+{%- when 'klocka' -%}
+  <ms-omgang class="ms-scope ms-omg"
+    data-veckodag="{{ stang_veckodag }}"
+    data-timme="{{ stang_timme }}">
+    <p class="ms-omg__etikett">
+      {% render 'ms-icon', name: 'clock' %}
+      Veckans sömnadsomgång stänger om
     </p>
-
-    <ms-omgang class="ms-omg"
-      data-veckodag="{{ stang_veckodag }}"
-      data-timme="{{ stang_timme }}">
-      <p class="ms-omg__etikett">
-        {% render 'ms-icon', name: 'clock' %}
-        Veckans sömnadsomgång stänger om
-      </p>
-      {%- comment -%}
-        Reservtexten är den som syns utan JavaScript — den säger samma sak,
-        bara utan sekunder.
-      {%- endcomment -%}
-      <p class="ms-omg__klocka" data-ms-omg-klocka>{{ stang_namn }}</p>
-      <p class="ms-omg__under">
-        Beställer du efter det syr vi din kudde i nästa omgång —
-        <strong>en vecka senare</strong>.
-      </p>
-    </ms-omgang>
-
-    <ol class="ms-pre__spar">
-      <li class="ms-pre__steg ms-pre__steg--nu">
-        <span class="ms-pre__punkt">1</span>
-        <span class="ms-pre__namn">Du förbeställer</span>
-        <span class="ms-pre__und">i dag</span>
-      </li>
-      <li class="ms-pre__steg">
-        <span class="ms-pre__punkt">2</span>
-        <span class="ms-pre__namn">Du godkänner</span>
-        <span class="ms-pre__und">innan en enda söm</span>
-      </li>
-      <li class="ms-pre__steg">
-        <span class="ms-pre__punkt">3</span>
-        <span class="ms-pre__namn">Vi syr och skickar</span>
-        <span class="ms-pre__und">fri frakt</span>
-      </li>
-    </ol>
-
-    <div class="ms-pre__datum">
-      {% render 'ms-delivery-estimate',
-         min_days: 8, max_days: 12, cutoff_hour: 0,
-         text: 'Hemma hos dig' %}
-    </div>
-  </div>
+    {%- comment -%}
+      Reservtexten syns utan JavaScript — den säger samma sak, utan sekunder.
+    {%- endcomment -%}
+    <p class="ms-omg__klocka" data-ms-omg-klocka>{{ stang_namn }}</p>
+    <p class="ms-omg__under">
+      Beställer du efter det syr vi din kudde i nästa omgång —
+      <strong>en vecka senare</strong>.
+    </p>
+  </ms-omgang>
 
   <script>
     /* Nedräkning till nästa riktiga stängning, räknad i svensk tid oavsett
@@ -140,8 +123,8 @@
         rita() {
           const kvar = this.nastaStangning().getTime() - Date.now();
           /* nastaStangning() rullar alltid fram till nästa vecka när tiden
-             passerats, så kvar är normalt positiv. Skulle den ändå bli det
-             inte, låt förra siffran stå kvar hellre än att visa minustid. */
+             passerats, så kvar är normalt positiv. Skulle den ändå inte bli
+             det, låt förra siffran stå kvar hellre än att visa minustid. */
           if (kvar <= 0) return;
 
           const s = Math.floor(kvar / 1000) % 60;
@@ -163,4 +146,42 @@
       customElements.define('ms-omgang', MsOmgang);
     })();
   </script>
-{%- endif -%}
+
+{%- else -%}
+  <div class="ms-scope ms-pre">
+    <span class="ms-pre__flagga">
+      {% render 'ms-icon', name: 'sparkle' %}
+      Förbeställning
+    </span>
+
+    <p class="ms-pre__rubrik">Din kudde finns inte än.<br>Vi syr den åt dig.</p>
+    <p class="ms-pre__ing">
+      Inget lager, ingen hylla, ingen slumpad kudde ur en låda. Din börjar
+      existera först när du sagt ja till utkastet.
+    </p>
+
+    <ol class="ms-pre__spar">
+      <li class="ms-pre__steg ms-pre__steg--nu">
+        <span class="ms-pre__punkt">1</span>
+        <span class="ms-pre__namn">Du beställer</span>
+        <span class="ms-pre__und">och skickar din bild</span>
+      </li>
+      <li class="ms-pre__steg">
+        <span class="ms-pre__punkt">2</span>
+        <span class="ms-pre__namn">Du godkänner</span>
+        <span class="ms-pre__und">innan en enda söm</span>
+      </li>
+      <li class="ms-pre__steg">
+        <span class="ms-pre__punkt">3</span>
+        <span class="ms-pre__namn">Vi syr och skickar</span>
+        <span class="ms-pre__und">fri frakt</span>
+      </li>
+    </ol>
+
+    <div class="ms-pre__datum">
+      {% render 'ms-delivery-estimate',
+         min_days: 8, max_days: 12, cutoff_hour: 0,
+         text: 'Hemma hos dig' %}
+    </div>
+  </div>
+{%- endcase -%}

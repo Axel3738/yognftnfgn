@@ -137,7 +137,7 @@
   }
   .pre p.ing { margin: 0 0 19px; font-size: 14.5px; line-height: 1.6; color: var(--ink-svag); }
   .omg {
-    display: block; margin: 0 0 18px; padding: 14px 12px 12px;
+    display: block; margin: 18px 0 12px; padding: 14px 12px 12px;
     border: 2px solid var(--linje-stark); border-radius: 14px;
     background: var(--kort); text-align: center;
     transition: border-color .3s ease, background-color .3s ease;
@@ -218,10 +218,7 @@
   }
 
   /* ---- bildinlämningen ---- */
-  .bild {
-    margin: 16px 0 0; padding: 16px;
-    border: 2px solid var(--linje-stark); border-radius: 14px; background: var(--lavendel);
-  }
+  .bild { margin: 16px 0 0; }
   .bild-rub { margin: 0 0 8px; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; color: var(--plommon); }
   .bild ol { margin: 0 0 12px; padding-left: 19px; font-size: 14.5px; line-height: 1.55; color: var(--ink-svag); }
   .bild ol strong { color: var(--plommon); }
@@ -299,20 +296,11 @@
           <h3>Din kudde finns inte än.<br>Vi syr den åt dig.</h3>
           <p class="ing">Inget lager, ingen hylla, ingen slumpad kudde ur en låda. Din börjar existera först när du sagt ja till utkastet.</p>
 
-          <div class="omg" id="omg">
-            <p class="omg-etikett">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 1.9"/></svg>
-              Veckans sömnadsomgång stänger om
-            </p>
-            <p class="omg-klocka" id="omgKlocka">söndag 23.00</p>
-            <p class="omg-under">Beställer du efter det syr vi din kudde i nästa omgång — <strong>en vecka senare</strong>.</p>
-          </div>
-
           <ol class="spar">
             <li class="steg steg--nu">
               <span class="punkt">1</span>
-              <span class="namn">Du förbeställer</span>
-              <span class="und">i dag</span>
+              <span class="namn">Du beställer</span>
+              <span class="und">och skickar din bild</span>
             </li>
             <li class="steg">
               <span class="punkt">2</span>
@@ -356,18 +344,21 @@
         </div>
 
         <div class="bild">
-          <p class="bild-rub">SÅ FUNKAR DET</p>
-          <ol>
-            <li><strong>BESTÄLL KUDDEN.</strong></li>
-            <li><strong>SKICKA DIN BILD.</strong> Här nedanför – eller svara på mejlet efteråt.</li>
-            <li><strong>GODKÄNN UTKASTET.</strong> Vi syr ingenting förrän du sagt ja.</li>
-          </ol>
-          <span class="bild-etikett">DIN BILD (går bra att lägga till nu)</span>
+          <span class="bild-etikett">DIN BILD PÅ DJURET</span>
           <div class="falt">
             <svg viewBox="0 0 24 24"><path d="M12 3.5 20 8v8l-8 4.5L4 16V8z"/><path d="M4 8l8 4.5L20 8M12 12.5V21"/></svg>
             <span>Välj en bild från telefonen</span>
           </div>
-          <p class="bild-hjalp">Ingen bild nu? Ingen fara – vi mejlar dig efter köpet.</p>
+          <p class="bild-hjalp">Lägg till den nu, eller svara på mejlet efter köpet. Båda funkar lika bra.</p>
+        </div>
+
+        <div class="omg" id="omg">
+          <p class="omg-etikett">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 1.9"/></svg>
+            Veckans sömnadsomgång stänger om
+          </p>
+          <p class="omg-klocka" id="omgKlocka">söndag 23.00</p>
+          <p class="omg-under">Beställer du efter det syr vi din kudde i nästa omgång — <strong>en vecka senare</strong>.</p>
         </div>
 
         <button class="knapp" type="button">Förbeställ min kudde</button>
@@ -399,8 +390,8 @@
         <h4>Varför den säljer</h4>
         <ul>
           <li><b>Väntetiden blir argumentet.</b> "Din kudde finns inte än" är skälet till att den blir hennes.</li>
-          <li><b>Klockan tickar på riktigt.</b> Hinner hon inte får hon vänta en vecka — det är sant, och därför funkar det.</li>
-          <li><b>Tråden håller ihop stegen.</b> Hon ser hela vägen innan hon betalar.</li>
+          <li><b>Klockan sitter vid knappen.</b> Brådska högt upp scrollas förbi — här är den det sista hon ser.</li>
+          <li><b>Rutan svarar i frågornas ordning.</b> Vad, hur, när, pris, gör så här, varför nu, vågar jag.</li>
           <li><b>Knappen säger vad hon får.</b> "Förbeställ min kudde", inte "Lägg i varukorgen".</li>
           <li><b>Sista oron dör vid tummen.</b> Raden under knappen svarar på "betalar jag i blindo?".</li>
         </ul>
