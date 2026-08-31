@@ -101,6 +101,13 @@ enskilda creatives med stoppfel (stavning, styckpris, produktnamn), och hela
 produkten om break-even inte gick att räkna (saknad quote i batch-sheeten) —
 en kampanj utan känd break-even får aldrig spendera.
 
+⚠️ **En uträknad break-even är ALDRIG ett ägarbeslut** (Axels besked
+2026-08-30). Finns quoten i batch-sheeten: räkna talet, skriv in det i
+kampanjnamnet och aktivera. Fråga aldrig Axel om han "godkänner" en
+break-even — talet följer av inköpspris och pris, det är ingen åsikt.
+Bara en SAKNAD quote stoppar produkten, och då lyder raden på hans lista
+"quote saknas för X", aldrig "godkänn break-even X".
+
 ## Fas 4 — Efterarbete
 
 1. Flytta produktens Drive-mapp till `Products/LAUNCHED/` (mapp-id
