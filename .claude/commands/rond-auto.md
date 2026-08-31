@@ -19,7 +19,12 @@
 > gamla.
 >
 > Promten går inte att rätta från en agentsession (rutinen skapades via
-> http_api). Därför står rättelsen här, där du läser den varje körning.
+> http_api), och en ersättningsrutin går inte att skapa heller — connectors
+> kan inte sättas för den här organisationen, så en ny rutin blir blind mot
+> Meta. Därför är **Artifact-verktyget spärrat i `.claude/settings.json` på
+> den här grenen.** Försöker du publicera får du ett blankt nej, inte en
+> godkännanderuta. Det är med flit: en spärr som inte går att prata sig förbi
+> är det enda som faktiskt håller.
 
 
 Automatläget av `/rond`. **Axels stående beslut 2026-08-29:** ronden får skala

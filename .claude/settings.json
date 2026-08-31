@@ -188,7 +188,6 @@
       "mcp__github__*",
       "mcp__Claude_Code_Remote",
       "mcp__Claude_Code_Remote__*",
-      "Artifact",
       "Agent",
       "mcp__ADsmanagaer__ads_get_ad_accounts",
       "mcp__ADsmanagaer__ads_get_ad_entities",
@@ -258,6 +257,7 @@
       "ReadNotifications"
     ],
     "deny": [
+      "Artifact",
       "Bash(rm -rf *)",
       "mcp__ADsmanagaer__ads_creative_delete",
       "mcp__ADsmanagaer__ads_catalog_delete_product",
