@@ -83,16 +83,53 @@ async function main() {
   // så de överlever nästa dashboard-ombyggnad tills en push-session committat
   // dem och tömt utkorgen.
   const filer = extraheraFiler(html);
+  const skrivna = [];
+  const hoppade = [];
   for (const [sokvag, innehall] of Object.entries(filer)) {
+    const varfor = await varforInteSkriva(sokvag, innehall);
+    if (varfor) { hoppade.push(`${sokvag} (${varfor})`); continue; }
     for (const mal of [join(REPOROT, sokvag), join(HÄR, 'utkorg', sokvag)]) {
       await mkdir(dirname(mal), { recursive: true });
       await writeFile(mal, innehall, 'utf8');
     }
+    skrivna.push(sokvag);
   }
-  if (Object.keys(filer).length > 0) {
-    console.log(`filutkorg: ${Object.keys(filer).length} fil(er) utskrivna: ${Object.keys(filer).join(', ')}`);
+  if (skrivna.length > 0) {
+    console.log(`filutkorg: ${skrivna.length} fil(er) utskrivna: ${skrivna.join(', ')}`);
     console.log('En session med push-rättighet: committa filerna, töm agent/utkorg/ och publicera om dashboarden.');
   }
+  for (const h of hoppade) console.log(`VARNING: hoppade över ${h}`);
+}
+
+/**
+ * Utkorgen skrev tidigare över ALLT rakt av. Det kostade produktkartan 11
+ * kampanjer två gånger: dashboardens inbäddade kopia är från körningen som
+ * publicerade den, och har ingen aning om vad som lagts till i repot sedan
+ * dess. Budgetloggen hade en spärr mot att krympa; kartan hade ingen.
+ *
+ * Returnerar en anledning att INTE skriva, eller null när det är säkert.
+ */
+async function varforInteSkriva(sokvag, nyttInnehall) {
+  const mal = join(REPOROT, sokvag);
+  let gammalt;
+  try { gammalt = await readFile(mal, 'utf8'); } catch { return null; } // ny fil, alltid ok
+  if (gammalt === nyttInnehall) return null;
+  if (!sokvag.endsWith('.json')) return null;
+
+  let a; let b;
+  try { a = JSON.parse(gammalt); b = JSON.parse(nyttInnehall); } catch { return null; }
+
+  // En lista som krymper är nästan alltid en äldre kopia som skriver över en
+  // nyare. Hellre en varning än tyst dataförlust.
+  for (const nyckel of Object.keys(a)) {
+    if (!Array.isArray(a[nyckel])) continue;
+    const fore = a[nyckel].length;
+    const efter = Array.isArray(b?.[nyckel]) ? b[nyckel].length : 0;
+    if (efter < fore) {
+      return `${nyckel} skulle krympa ${fore} → ${efter} — dashboardens kopia är äldre`;
+    }
+  }
+  return null;
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
