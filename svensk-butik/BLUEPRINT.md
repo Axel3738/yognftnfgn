@@ -577,6 +577,36 @@ korta ner klockan, och koden är förberedd för det.
 
 Publicerat av Axel som **Twinpillow v9**.
 
+## 8q. Varv 19 (2026-08-31): sakfel rättat + Longing omskriven
+
+Axel läste redigerarnas manusutkast och rättade två saker.
+
+**1. Produkten har INGEN vit tygkant.** Kudden är skuren i djurets kontur,
+tygbitarna sys ihop och vänds ut och in, så sömmen hamnar på insidan. Ingen
+synlig kant, ingen brodyr. Antagandet kom från Temu-listningarna i varv 3 och
+hade hunnit spridas överallt. Rättat i:
+- produktbeskrivningen (live, `Funktioner`-punkten)
+- startsidans berättelsetext (tema-utkast **v10**, `156629467273`)
+- redigerarmanualen (sex ställen: låsta fakta, konceptbeskrivning, alla tre
+  Claude-prompterna, assettabellen, specen och checklistan)
+- manusdokumentet till redigerarna
+- `bilder/bilder.json` (rättelsenot högst upp)
+
+⚠️ **De 11 AI-bilderna visar alla den gamla konstruktionen med vit kant.**
+De ligger kvar på produktsidan och startsidan och visar därmed en produkt som
+inte finns. De måste genereras om innan butiken lanseras — receptet i
+`bilder.json` ska aldrig mer innehålla *white fabric margin*.
+
+**2. Longing är omskriven till en enda historia:** dottern som flyttat
+hemifrån för att plugga och saknar familjens hund; köparen är föräldern. Det
+är den vinkel som bär bäst hos den amerikanska förlagan, och Sverige är fullt
+av studenter i korridorsrum. Manualen säger uttryckligen att vinkeln inte får
+breddas till "alla som bor ifrån sitt husdjur".
+
+**3. Leveranstiden är borttagen ur Recognition-manuset** på Axels order.
+
+Nytt manusdokument: `redigerare/tvillingkudden-manus.docx`.
+
 ## 9. Kvarstående — kräver Axel
 
 1. **Publicera temat:** Online Store → Themes →
