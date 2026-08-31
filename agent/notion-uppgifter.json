@@ -33,7 +33,7 @@
       "Smiley face trash can stickers", "Vandringskängor Herr",
       "Övervakningskamera Trådlös"
     ],
-    "andrat_sedan_igar": "Inga förändringar — samma 18 i Testing, samma 2 i Ads review som 2026-08-30."
+    "andrat_sedan_igar": "Inga förändringar bland produkterna — samma 18 i Testing, samma 2 i Ads review som 2026-08-30. Statusfrågan gav idag också ett antal SOP/how-to-sidor och Grillklinikens/twinpillows rader taggade Testing/In progress — dokumentation, inte produkter, uteslutna ur listan ovan som vanligt."
   },
 
   "databas_2_creative_hubs": {
@@ -66,13 +66,20 @@
         "collection": "collection://3c3270ab-908c-8356-ad6c-87ff779e647d",
         "drafts": 0,
         "not": "48 rader, alla Approved."
+      },
+      {
+        "namn": "Men's Plush Slippers creative hub",
+        "produkt": "Plyschtofflorna Herr",
+        "collection": "collection://f88270ab-908c-83bc-963b-87f43fd99e61",
+        "drafts": 0,
+        "not": "NY sedan igår (skapad 2026-08-31 06:27, dupliceringen syns i title-timestampen). Hubben är TOM — noll rader av Typ Video/Image - Pending Approval. Detta är resten av gårdagens avbrutna /forsta-batch-försök för Plyschtofflorna Herr: bara Notion-hubben (schemat) hann skapas innan körningen stannade — inga items, ingen products/plyschtofflorna-herr/-mapp, ingen FORSTA_BATCH_KLAR-rad i budgetlogg.jsonl. annonsbehov flaggar därför Plyschtofflorna Herr som forsta_batch igen (rätt enligt regeln 'hinner en batch inte bli klar, görs den om hel'). Nästa körning som tar den här posten ska ÅTERANVÄNDA hubben, inte duplicera en ny."
       }
     ],
     "arkiverade": [
       "Beach crocs (strandtofflorna)", "Mower seat (satesoverdragaren)",
       "Trimmer belt (axelbaltet)", "Boat cover 420D"
     ],
-    "andrat_sedan_igar": "Inga nya hubbar hittade och inga nya arkiveringar sedan 2026-08-30. OBS: en pågående körning (agent/rond-auto) bygger just nu nya hubbar för Övervakningskameran och Plyschtofflorna Herr via /forsta-batch — de fanns inte än när det här svepet kördes; nästa svep hittar dem.",
+    "andrat_sedan_igar": "1 NY hubb: 'Men's Plush Slippers creative hub' (Plyschtofflorna Herr) — tom, se noten på raden. Ingen arkivering sedan 2026-08-30. Övervakningskameran fick ALDRIG en hubb trots gårdagens notering om en pågående körning — sökningar på både 'creative hub' och produktnamnet (Surveillance/Security camera) gav noll träff. Den posten står fortfarande obehandlad i annonsbehov.",
     "sok_tips": "Sok ALDRIG bara pa 'creative hub'. Hubben for fiskespohallaren heter bara 'Fish rod holder' och missas da helt. Sok aven pa produktnamnet, och las is_archived ur sokresultatet i stallet for att gissa pa namnet. Andra icke-Bäver-hubbar finns i samma sökning ('Matstrumpor creative hub', 'Creative hub prank apron', 'Creative hub golf grill kit') — de hör inte till Bäverbutiken/produktkartan och ska aldrig räknas in.",
     "drafts": [
       { "namn": "Beltgrinder_PD_5_H1", "produkt": "Balteslipmaskinen", "typ": "Video" },
