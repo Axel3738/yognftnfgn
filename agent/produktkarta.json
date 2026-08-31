@@ -332,7 +332,9 @@
       "lage": "test",
       "lage_motivering": "startad 2026-08-20, 25 köp på 3 dagar men under 30 köp totalt i NO",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "3cd270ab-908c-818f-9059-f333f67559a4",
+      "notion_hub_namn": "Fish rod holder NO creative hub"
     }
   ],
   "valutakurser": {
