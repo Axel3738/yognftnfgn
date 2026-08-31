@@ -139,9 +139,11 @@ for (const l of leveranser) l.kalla2 = 'drive';
 // (Rotorsaken till att fem fardiga bildannonser lag osynliga 2026-08-31.)
 let notionFel = null;
 let notionHubbar = 0;
+let hubbNamn = [];
 try {
   const { hubbar, rader, fel } = await allaKlaraRader();
   notionHubbar = hubbar.length;
+  hubbNamn = hubbar.map(h => h.titel).sort();
   if (Object.keys(fel).length) notionFel = Object.entries(fel).map(([h, f]) => `${h}: ${f}`).join(' · ');
   for (const r of rader) {
     const namn = annonsdel(r.namn);
@@ -228,6 +230,14 @@ if (notionFel) {
 }
 const frånDrive = leveranser.filter(l => l.kalla2 === 'drive').length;
 const frånNotion = leveranser.filter(l => l.kalla2 === 'notion').length;
+// Lista hubbarna vid namn. En integration ser bara de hubbar den blivit inbjuden
+// till, och en hub den inte ser ar helt osynlig — man kan inte sakna det man aldrig
+// vetat om. Namnen i rapporten ar enda sattet att upptacka en ny hub som glomts bort.
+if (hubbNamn.length) {
+  console.log(`Notion-hubbar som lästes (${hubbNamn.length}):`);
+  for (const n of hubbNamn) console.log(`  · ${n}`);
+  console.log(`  Saknas en hub här har integrationen inte bjudits in till den.\n`);
+}
 console.log(`Källor: ${frånDrive} i Drive · ${frånNotion} i Notion (${notionHubbar} hubbar) · ${leveranser.length - nya.length} redan i kontot · ${Object.keys(karta).length} kända prefix\n`);
 
 const perProdukt = {};

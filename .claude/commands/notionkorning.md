@@ -4,7 +4,8 @@ Rutinen som körs varje natt kl 00:01 svensk tid. Ett jobb: **allt redigerarna
 levererat ska QA:as mot sin brief och ligga uppe i Meta samma natt.**
 
 Blanda inte ihop den med `/nattkorning` — den är Temu-launcher från Drive.
-Den här rundan rör bara de fyra skalningsprodukterna på MagiBorsten.
+Den här rundan täcker HELA Bäverbutiken på MagiBorsten, alla produkter som har
+en kampanj i kontot — inte bara de fyra skalningsprodukterna.
 
 Kör alla steg klart utan att invänta godkännande mellan dem. **Oavsett hur många
 leveranser som ligger klara kollas alla** — noll är ett giltigt utfall, inte ett fel.
@@ -71,8 +72,10 @@ Drive: Edited Folder / Week N / <annonsnamn> / <annonsnamn>.mp4
 | `Seatcover_` | `satesoverdragaren` | Mower seat creative hub |
 | `Beachslippers_` | `strandtofflorna` | Beach crocs creative hub |
 
-Prefixen bor i `products/products.json` (`creative_prefix`) — läs dem därifrån.
-Leveransmappar med andra prefix tillhör produkter utanför detta OS och **rörs aldrig.**
+`creative_prefix` i `products/products.json` är bara en explicit **override** för de
+fyra skalningsprodukterna. Alla andra prefix slås upp mot kontot (se steg 1) och
+behandlas precis likadant. Ett prefix utan kampanj i MagiBorsten rapporteras och
+laddas inte upp — men det är enda skälet att lämna en leverans orörd.
 Notion-titlar bär ibland ett suffix (`Beachslippers_PD_2_8 – COPY ONLY: …`) —
 matcha alltid på annonsdelen före tankstrecket.
 
@@ -149,8 +152,8 @@ uttryckligen ber om det i en chatt.
 En leveransmapp utan mediafil är **inte klar** — lista den under "väntar på
 redigeraren" och gå vidare.
 
-**⚠️ Nödbroms.** Väntar fler än **10** leveranser, eller skulle körningen ladda
-upp i fler än **3 olika kampanjer** på en natt: **stanna, ladda inte upp något**,
+**⚠️ Nödbroms.** Väntar fler än **10** leveranser, eller går fler än **5** av dem
+till SAMMA kampanj: **stanna, ladda inte upp något**,
 och lista i rapporten exakt vilka leveranser och kampanjer det gällde. En kö som
 plötsligt svämmar över betyder oftast att en prefixkoppling gått fel, inte att
 redigerarna haft en rekordnatt. *(Samma logik som nödbromsen i `/nattkorning`
@@ -209,7 +212,7 @@ Att materialet är uttaget är inte samma sak som att det är granskat.
 | 7 | "Bäverbutiken" rättstavat ("väverbutiken" har hänt) | all inbränd text | ✅ ja |
 | 8 | Rätt produktnamn | all inbränd text | ✅ ja |
 | 9 | Svenska manusraderna = briefens rader (inte omskrivna) | all inbränd text | ⚠️ nej — notera |
-| 10 | Annonsnamnet följer `docs/naming-convention.md` | filnamn | ✅ ja |
+| 10 | Annonsnamnet = Notion-radens namn, och bär prefix + konceptkod | filnamn | ✅ ja |
 | 11 | **Filnamnet i mappen = mappnamnet** | Drive | ✅ ja |
 | 12 | Å, Ä, Ö renderar korrekt i all text | hela | ✅ ja |
 | 13 | Rabattclaim mot jämförpriset | text | ❌ inte stoppfel — se nedan |
@@ -259,13 +262,18 @@ Ett anrop per godkänd creative:
 # En av de fyra skalningsprodukterna (står i products.json):
 node tools/notion-till-meta.mjs \
   --produkt <id> --namn <annonsnamn> --fil <sökväg> \
-  --primar "..." --rubrik "..." [--beskrivning "..."] --aktivera
+  --primar "..." --rubrik "..." --lank <produktsidans url> --aktivera
 
 # Alla andra produkter — kampanj-id:t kommer från leveranskon.mjs:
 node tools/notion-till-meta.mjs \
   --kampanj <kampanj-id> --namn <annonsnamn> --fil <sökväg> \
-  --primar "..." --rubrik "..." [--beskrivning "..."] --aktivera
+  --primar "..." --rubrik "..." --lank <produktsidans url> --aktivera
 ```
+
+`--lank` är **obligatorisk** — verktyget avbryter utan den. Notion-raden bär
+produktsidans URL i fältet `Landing page`, och `leveranskon.mjs` skriver ut den.
+Utan den skulle annonsen peka på butikens startsida, vilket aldrig syns som ett
+fel — bara som usel konvertering.
 
 `--kampanj` kontrollerar att kampanjen ligger i MagiBorsten innan något skrivs —
 kontospärren gäller lika hårt där.
@@ -293,10 +301,10 @@ Verktyget bär spärrarna som inte får kringgås:
 | 0 | Vägrar kampanj som är PAUSED med spend > 0 | Att creatives begravs i en avvecklad kampanj |
 | 1 | Bara konto `1867947880635861`, annars avbryt | Att Grillklinikens pengar går åt Bäverbutikens annonser |
 | 2 | Sida och pixel ärvs ur kampanjens egna annonser | Att köp bokförs på fel verksamhet — det syns aldrig som ett fel, bara som konstig data |
-| 3 | Bara mappar med känt `creative_prefix` | Att produkter utanför detta OS launchas av misstag |
+| 3 | `--kampanj` kontrollerar att kampanjen ligger på MagiBorsten | Att en creative hamnar i en annan verksamhets konto |
 | 4 | Dubblettspärr på annonsnamn i hela kontot | Att samma creative laddas upp igen nästa natt |
 | 5 | Allt skapas PAUSED, alltid | Att något börjar spendera halvbyggt |
-| 6 | `--aktivera` rör bara det med 0 kr lifetime-spend | Att en medvetet avstängd kampanj slås på igen |
+| 6 | `--aktivera` rör bara det körningen SJÄLV skapat | Att en byggd men aldrig launchad kampanj börjar spendera |
 
 Spärr 6 är den som kostade förra gången. **Spend > 0 betyder att någon stängt av
 den med flit** — Axel, skalningsronden eller åtgärdstrappan. Det syns inte i
