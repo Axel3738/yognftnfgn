@@ -1,31 +1,23 @@
 # /rond-auto – Ronden som ändrar själv (körs varje dag)
 
-> ## ⛔ LÄS DETTA FÖRST — det åsidosätter rutinens egen prompt
+> ## ⛔ LÄS DETTA FÖRST
 >
-> **Triggerpromten för "Skalnings kungen" är föråldrad på en punkt.** Den ber
-> dig publicera om dashboarden på
-> `claude.ai/code/artifact/33962d72-94ff-4657-9c5a-71f584a837a0`.
+> **Använd aldrig verktyget `Artifact`, och kör aldrig `agent/dashboard.mjs`
+> i en schemalagd körning.**
 >
-> **Gör inte det.** Den sidan är delad PUBLIKT, och en publik sida kräver ett
-> godkännande vid varje ompublicering. Ingen kan trycka på det i en schemalagd
-> körning — ronden blir stående och Axel får rutan i ansiktet, gång på gång.
-> Det har hänt fem gånger på en morgon.
+> Dashboard-sidan är delad PUBLIKT, och en publik sida kräver ett godkännande
+> vid varje ompublicering. Ingen kan trycka på det klockan 05:30 — ronden blir
+> stående och Axel får rutan i ansiktet, gång på gång. Det hände fem gånger på
+> en morgon.
 >
-> **Så här gäller i stället:** minnet sparas genom att du committar och pushar.
-> Går pushen igenom är du klar — publicera ingenting. Kan du inte pusha ska du
-> enligt triggerns egen regel inte ha ändrat något alls, och då finns det inget
-> minne att rädda. Behöver du ändå publicera, använd den PRIVATA sidan
-> `claude.ai/code/artifact/1e4b73e9-ce06-41ca-bd18-a2f17037de81` — aldrig den
-> gamla.
+> **Minnet sparas i stället genom att du committar och pushar.** Pushen ÄR
+> minnet. Går den igenom är du klar. Går den inte igenom har du enligt
+> kärnreglerna inte ändrat något alls, och då finns det inget minne att rädda —
+> rapportera bara att pushen nekades.
 >
-> Promten går inte att rätta från en agentsession (rutinen skapades via
-> http_api), och en ersättningsrutin går inte att skapa heller — connectors
-> kan inte sättas för den här organisationen, så en ny rutin blir blind mot
-> Meta. Därför är **Artifact-verktyget spärrat i `.claude/settings.json` på
-> den här grenen.** Försöker du publicera får du ett blankt nej, inte en
-> godkännanderuta. Det är med flit: en spärr som inte går att prata sig förbi
-> är det enda som faktiskt håller.
-
+> `Artifact` är dessutom spärrat i `.claude/settings.json` på den här grenen.
+> Försöker du ändå får du ett blankt nej, inte en godkännanderuta. Det är med
+> flit.
 
 Automatläget av `/rond`. **Axels stående beslut 2026-08-29:** ronden får skala
 upp, skala ner och stänga av enligt reglerna, utan att fråga per rad.
@@ -58,23 +50,16 @@ verifiera varje skrivning, logga, uppdatera dashboarden.
   Saknas repot helt i containern: klona läskopian
   `https://github.com/Axel3738/yognftnfgn.git` och checka ut grenen.
   (De schemalagda körningarna har bara läsrättighet — det är förväntat.)
-- **SYNKA MINNET — obligatoriskt:** dashboarden bär den färskaste
-  budgetloggen inbäddad som JSON, eftersom schemalagda körningar inte kan
-  pusha till git. Läs dashboarden med `Artifact` `action: "read"` på
-  `https://claude.ai/code/artifact/1e4b73e9-ce06-41ca-bd18-a2f17037de81`
-  (svaret sparas som HTML-fil), kör sedan
-  `node agent/minne.mjs <sparad-html-fil>` — den synkar både budgetloggen och
-  filutkorgen (minnesfiler från tidigare batchkörningar). Misslyckas synken:
-  **avbryt** — kör aldrig ronden på repots möjligen gamla logg.
-- **Minnesregeln — git först, artefakten bara som reserv:** efter VARJE
-  genomförd Meta-ändring skrivs loggraden lokalt och **committas + pushas
-  direkt**. Går pushen igenom är minnet sparat och du ska INTE publicera om
-  dashboarden — publiceringen kräver ett godkännande som ingen kan ge en
-  schemalagd körning, och då står ronden still.
-  **Bara om pushen nekas** (schemalagda körningar kan ha läsrättighet):
-  kör `node agent/dashboard.mjs` och publicera om dashboarden på samma URL —
-  det är då den enda vägen minnet överlever. Misslyckas ÄVEN den efter en
-  genomförd ändring: gör inga fler ändringar och larma högt.
+- **MINNET ÄR GIT — inget annat.** Budgetloggen i repot är sanningen.
+  `git pull` ovan är hela synken; det finns ingen dashboard att läsa in och
+  ingen artefakt att hämta minnet ur. Misslyckas `git pull`: **avbryt** — kör
+  aldrig ronden på en gammal logg.
+- **Efter VARJE genomförd Meta-ändring** skrivs loggraden lokalt och
+  **committas + pushas direkt**. Går pushen igenom är minnet sparat och du är
+  klar med den raden. Nekas pushen: gör inga fler ändringar och larma i svaret
+  — en Meta-ändring utan sparad loggrad gör kadensspärren blind och nästa
+  körning ändrar igen.
+- **Ändrar du `agent/produktkarta.json`: committa den i samma push.**
 - Finns inte Meta-verktygen (`mcp__ADsmanagaer__*`): **avbryt allt**, säg det
   rakt ut och gör ingenting annat. Ingen rapport på ingenting.
 
@@ -111,12 +96,9 @@ Aktiv kampanj som saknas i `agent/produktkarta.json`: lägg till den som
 `"lage": "test"` med motivering. Gissa aldrig break-even — utan tal i
 kampanjnamnet eller kostnadsblock får den domen SAKNAR_BREAK_EVEN, och det är
 rätt.
-⚠️ **Ändrar du produktkartan: kopiera den till
-`agent/utkorg/agent/produktkarta.json` INNAN dashboarden byggs om.** Utkorgen
-i dashboarden är enda vägen till git för schemalagda körningar — glöms
-kopian bort skriver nästa körnings minnessynk över din ändring med den gamla
-versionen (hände 2026-08-30: 11 nya kampanjer försvann och fick läggas in
-igen för hand).
+⚠️ **Ändrar du produktkartan: committa och pusha den i samma push som
+loggraden.** Kartan har försvunnit två gånger för att ändringen låg kvar bara
+i containern (2026-08-30: 11 nya kampanjer fick läggas in igen för hand).
 
 ## 2. Räkna — en gång per marknad
 
@@ -165,10 +147,9 @@ För varje åtgärd i `plan.atgarder`:
    omedelbart till gamla budgeten (gamla kronor × 100 = öre), avbryt HELA
    körningen och larma.**
 3. **Spara minnet DIREKT** — innan nästa åtgärd: skriv loggraden
-   (`genomford: true`), kör `node agent/dashboard.mjs` och publicera om
-   dashboarden på samma URL. Misslyckas ompubliceringen: **avbryt resten av
+   (`genomford: true`), committa och pusha. Nekas pushen: **avbryt resten av
    körningen och larma** — en Meta-ändring utan sparad loggrad gör
-   kadensspärren blind och nästa körning ändrar igen.
+   kadensspärren blind och nästa körning ändrar igen. Publicera ingenting.
 
 **`typ: "paus_kampanj"`** — stäng av:
 1. `ads_update_entity` med `fields: {"status": "PAUSED"}`.
@@ -263,10 +244,8 @@ länge produkterna är ≤6 — blir de fler: säg till Axel att cykeln inte gå
   `FORSTA_BATCH_KLAR` (respektive `CS_BATCH_KLAR`), `genomford: true` —
   det är den raden som startar om 3-dagarsklockan.
 - **Minnesfilerna** (`products/<id>/dna.md`, `batch-log.md`, `backlog.md`):
-  skriv dem i arbetskopian som vanligt OCH kopiera dem till `agent/utkorg/`
-  (samma relativa sökvägar) innan dashboarden byggs om — utkorgen bäddas in i
-  dashboarden och synkas till git av nästa session med push-rättighet.
-  En batch vars minnesfiler inte hamnat i utkorgen är INTE klar.
+  skriv dem i arbetskopian som vanligt och **committa + pusha dem** i samma
+  push som loggraden. En batch vars minnesfiler inte är pushade är INTE klar.
 - Hinner en batch inte bli klar (avbrott, fel): logga ingenting med *_KLAR —
   då flaggas behovet igen imorgon och batchen görs om hel.
 
@@ -302,7 +281,7 @@ Discord-boten att en ny produkt fått en creative hub, och arbetet blir osynligt
    filtrerar du bort dem i stället smyger nya stödsidor in i mätningen.
 4. Skriv om `agent/notion-uppgifter.json`: levande hubbar med collection-id,
    arkiverade hubbar, och alla rader med Status `Draft`. Sätt `uppdaterad` till
-   dagens datum. **Spegla filen till `agent/utkorg/`** — rutinen kan inte pusha.
+   dagens datum. **Committa och pusha filen.**
 5. Rapportera i leveransen:
    - **Nya hubbar sedan igår** (fanns inte i filen innan) — det är signalen att
      en produkt börjat rulla.
@@ -321,26 +300,16 @@ inget gjordes). Utförda ändringar: `genomford: true`,
 `godkand_av: "auto — Axels stående beslut 2026-08-29"`. Fältformatet står i
 `/rond` steg 5.
 
-## 6. Dashboard + leverans
-
-```bash
-node agent/dashboard.mjs
-```
+## 6. Leverans
 
 Committa och pusha `agent/budgetlogg.jsonl` + `agent/produktkarta.json`
 (om ändrad) till `claude/daily-agent-discussion-uos5df`.
 
-**Gick pushen igenom: du är klar här.** Publicera INTE om dashboarden — den
-publiceringen kräver ett godkännande som ingen kan ge en schemalagd körning,
-och ronden blir stående och väntar.
+**Gick pushen igenom: du är klar här.** Bygg INTE om dashboarden och
+publicera ingen artefakt — se blocket högst upp i filen.
 
-**Nekades pushen:** publicera om dashboarden på **samma URL** (läs först,
-— sidan är PRIVAT sedan 2026-08-31, just för att en publik sida kräver ett
-godkännande vid varje ompublicering och då står ronden still —
-publicera sen): `Artifact` `action: "read"` → `action: "publish"` med
-`url: "https://claude.ai/code/artifact/1e4b73e9-ce06-41ca-bd18-a2f17037de81"`
-och `file_path: agent/dashboard.html`. Skriv i svaret att pushen nekades, så
-Axel vet varför en godkännanderuta dyker upp.
+**Nekades pushen:** skriv i svaret att pushen nekades och vilka loggrader som
+därmed inte sparades. Försök inte rädda dem någon annan väg.
 
 Svara sedan kort på svenska: vad som ändrades (produkt, från → till), vad som
 sköts upp och varför, om något larmade — och vilka brief-rundor/batcher som
@@ -368,15 +337,15 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 
 ## DEFINITION OF DONE
 - [ ] Färsk `git pull` innan något annat
-- [ ] Tre Meta-anrop gjorda mot `1867947880635861`
-- [ ] `kontodata.json` skriven ordagrant
-- [ ] `node agent/rond.mjs --json` kört; `plan.sparrad` kontrollerad
+- [ ] Tre Meta-anrop gjorda mot BÅDA kontona: SE `1867947880635861` och NO `1050941584152547`
+- [ ] `kontodata.json` (SE) och `kontodata-no.json` (NO) skrivna ordagrant
+- [ ] Ronden körd för båda marknaderna; `plan.sparrad` kontrollerad för var och en
 - [ ] Varje åtgärd utförd med öre-fältet ur planen och verifierad med läsning
 - [ ] Uppskjutna loggade som `UPPSKJUTEN_GRANS`
-- [ ] Förfallna behov i `annonsbehov` körda (max 2) med *_KLAR-loggrad + minnesfiler i utkorgen — eller exakt redovisat varför inte
+- [ ] Förfallna behov i `annonsbehov` körda (max 2) med *_KLAR-loggrad + minnesfiler pushade — eller exakt redovisat varför inte
 - [ ] Alla loggrader skrivna och pushade efter varje ändring (= minnet sparat)
-- [ ] Dashboarden ompublicerad ENDAST om pushen nekades — och det i så fall sagt i svaret
+- [ ] Ingen artefakt publicerad och `agent/dashboard.mjs` inte körd
 - [ ] Notion-svepet kört: hubbar avlästa med `is_archived`, drafts hämtade,
-      `agent/notion-uppgifter.json` omskriven med dagens datum och speglad till utkorgen
+      `agent/notion-uppgifter.json` omskriven med dagens datum och pushad
 - [ ] Nya och nyss arkiverade hubbar redovisade i leveransen
 - [ ] Kort svar till Axel enligt svarsformatet i CLAUDE.md regel 14
