@@ -213,6 +213,13 @@ Skriv i svaret, i den här ordningen:
 
 Committa rapportfilerna och pusha. De är kvittot på vad som betalades ut.
 
+⚠️ **Går pushen inte igenom är körningen ändå klar.** Den schemalagda sessionen
+saknar ibland push-behörighet till repot (git-proxyn svarar 403). Utbetalnings-
+tabellen i svaret är leveransen; rapportfilen är kvittot. Skriv en rad om att
+filen ligger kvar lokalt och gå vidare — behandla det aldrig som att körningen
+misslyckades, och be aldrig Axel öppna en annan session för att pusha. Nästa
+körning skriver samma fil igen.
+
 ## Vad som brukar gå fel
 
 - **Alla får 0 kr.** Nästan alltid namnmatchningen: kolla att steg 1 tog med
@@ -243,4 +250,4 @@ Committa rapportfilerna och pusha. De är kvittot på vad som betalades ut.
 - [ ] Sagt rakt ut om körningen är slutavräkning eller lägeskoll
 - [ ] Okända Ansvariga, namnkonflikter och olästa källor listade som åtgärder
 - [ ] Ingenting skrivet mot Meta eller Notion
-- [ ] Rapportfilen committad och pushad
+- [ ] Rapportfilen committad (pushad om sessionen har behörighet — annars en rad om det)
