@@ -504,6 +504,18 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   Rotera den inte. Status bärs alltid av ikon **och** text, aldrig färg ensam.
 - **Notion-anropen stryps till ~3/s.** Ett par hundra sidor tar några minuter.
   Det är normalt, inte en hängning.
+- **Rondens dashboard-artefakt måste vara PRIVAT.** En publik artefakt kräver
+  ett godkännande vid VARJE ompublicering, och en schemalagd körning har ingen
+  som kan trycka på det — ronden blir stående och Axel får rutan i ansiktet om
+  och om igen. Verifierat 2026-08-31: samma fil, publik sida = ruta, privat
+  sida = går rakt igenom. Dela aldrig den sidan publikt.
+  URL: `1e4b73e9-ce06-41ca-bd18-a2f17037de81`.
+- **Minnet sparas i git först, artefakten bara när pushen nekas.** Omvänd
+  ordning betyder en ompublicering per ändring, och varje sådan är ett
+  tillfälle för något att stanna och fråga.
+- **Verktygsnamn måste stå i `permissions.allow` på `main`.** Rutinerna läser
+  sina rättigheter därifrån, inte från arbetsgrenen. `ToolSearch` saknades och
+  utan den kan en rutin inte ens ladda Meta-verktygen den ska arbeta med.
 - **Språk:** allt i repot skrivs på svenska — kod, kommentarer, commit-meddelanden.
   Undantag: `basePrompt` i pipeline-vågorna är engelska (bildmodellen kräver det),
   och briefer till redigerarna är engelska.

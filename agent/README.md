@@ -87,7 +87,7 @@ dem oförändrade — inte att bedöma dem.
   `/rond-auto` körs dagligen via en Routine och utför planen själv, med
   kontospärren, öre-verifieringen och trappan i `.claude/commands/rond-auto.md`.
   `/rond` finns kvar som manuellt läge. Dashboarden för människor:
-  `agent/dashboard.mjs` → https://claude.ai/code/artifact/33962d72-94ff-4657-9c5a-71f584a837a0
+  `agent/dashboard.mjs` → https://claude.ai/code/artifact/1e4b73e9-ce06-41ca-bd18-a2f17037de81
 
 ## Annons-triggern
 

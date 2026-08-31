@@ -34,7 +34,7 @@ verifiera varje skrivning, logga, uppdatera dashboarden.
 - **SYNKA MINNET — obligatoriskt:** dashboarden bär den färskaste
   budgetloggen inbäddad som JSON, eftersom schemalagda körningar inte kan
   pusha till git. Läs dashboarden med `Artifact` `action: "read"` på
-  `https://claude.ai/code/artifact/33962d72-94ff-4657-9c5a-71f584a837a0`
+  `https://claude.ai/code/artifact/1e4b73e9-ce06-41ca-bd18-a2f17037de81`
   (svaret sparas som HTML-fil), kör sedan
   `node agent/minne.mjs <sparad-html-fil>` — den synkar både budgetloggen och
   filutkorgen (minnesfiler från tidigare batchkörningar). Misslyckas synken:
@@ -281,8 +281,10 @@ publiceringen kräver ett godkännande som ingen kan ge en schemalagd körning,
 och ronden blir stående och väntar.
 
 **Nekades pushen:** publicera om dashboarden på **samma URL** (läs först,
+— sidan är PRIVAT sedan 2026-08-31, just för att en publik sida kräver ett
+godkännande vid varje ompublicering och då står ronden still —
 publicera sen): `Artifact` `action: "read"` → `action: "publish"` med
-`url: "https://claude.ai/code/artifact/33962d72-94ff-4657-9c5a-71f584a837a0"`
+`url: "https://claude.ai/code/artifact/1e4b73e9-ce06-41ca-bd18-a2f17037de81"`
 och `file_path: agent/dashboard.html`. Skriv i svaret att pushen nekades, så
 Axel vet varför en godkännanderuta dyker upp.
 
