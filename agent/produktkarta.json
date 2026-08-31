@@ -112,9 +112,16 @@
       "campaign_id": "120249989799680291",
       "produkt": "Övervakningskameran",
       "lage": "test",
-      "lage_motivering": "3 köp sedan start",
+      "lage_motivering": "10 köp sedan start (avläst 2026-08-31, livstid) — under 30-köpsgränsen för drift. Passerat testtröskeln (3 748 kr, ROAS 3,45 mot BE 1,57) och har nu fått sin första riktiga batch via /forsta-batch.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "3cd270ab-908c-81bd-aab8-f19ec3e2d260",
+      "notion_hub_datakalla": "3b6270ab-908c-8366-a085-8705d1a9f4ef",
+      "notion_hub_namn": "Surveillance Camera creative hub",
+      "drive_produktmapp_id": "1Kv5mgwWmsRB2p3BNiUHK-MJKag-i4ZdS",
+      "drive_produktmapp_not": "Joshs befintliga produktmapp (skapad vid launch, ägs av joshnaelga146). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products (lanseringskön).",
+      "drive_senaste_batchmapp_id": "1q9ZOwgFr8f_CvZrIzvyqqbiVaWbfFopv",
+      "minne": "products/overvakningskameran/"
     },
     {
       "campaign_id": "120249989987370291",
