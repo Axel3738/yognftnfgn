@@ -10,7 +10,8 @@
 //     Notion-rad är Approved. Månadens sista körning är slutavräkningen.
 //  2. Bara redigerare får utbetalning. Rader på Axel/manager och rader utan
 //     Ansvarig redovisas var för sig — spenden syns, men betalas inte ut.
-//  3. Översatta versioner räknas till samma redigerare, men särredovisas.
+//  3. ENDAST svenska annonser räknas (Axels beslut 2026-08-31). Utlandska
+//     marknadskonton och annonser med marknadskod i namnet filtreras bort.
 
 /** 0,4 % av spenden. */
 export const SATS = 0.004;
@@ -19,6 +20,39 @@ export const SATS = 0.004;
  *  Konceptkoderna i namnkonventionen (CS, GT, PD, SP, SO, CI, UG, G) står
  *  medvetet INTE här — de får aldrig strykas. */
 export const MARKNADSKODER = ['SE', 'NO', 'DK', 'FI', 'UK', 'DE', 'NL', 'US'];
+
+/**
+ * Annonskonton som INTE är den svenska marknaden. Commission räknas bara på
+ * svenska annonser (Axels beslut 2026-08-31) — översättningarna görs av
+ * HeyGen-rutinen, inte av redigerarna.
+ *
+ * Listan är konto-id, inte namn: kontonamnen är otydliga ("Finland DK",
+ * "Norge", "nya kungen") och ett namnbyte får aldrig tyst släppa in en
+ * utländsk marknad i utbetalningen.
+ */
+export const UTLANDSKA_KONTON = new Map([
+  ['1050941584152547', 'Magiborsten NO'],
+  ['915422744950975', 'Magiborsten DK'],
+  ['1619718346388201', 'Magiborsten FI'],
+  ['1107817401910319', 'Magiborsten UK'],
+  ['918424617391896', 'Snark mexico'],
+  ['1070420775502885', 'SNarklös FI'],
+  ['1418612340124566', 'Norge'],
+  ['1356652809967926', 'Finland DK'],
+  ['1023341917138110', 'NYC Grill (USD)'],
+]);
+
+/** Marknadskod i annonsnamnet — en översatt annons kan ligga i ett svenskt konto. */
+const FRAMMANDE_MARKNAD = /(^|[_\s-])(NO|DK|FI|UK|GB|DE|NL|US|MX|ES|FR|PL)([_\s-]|$)/i;
+
+/**
+ * Är annonsen svensk? Två spärrar: kontot får inte vara ett marknadskonto, och
+ * namnet får inte bära en marknadskod. Båda måste hålla.
+ */
+export function arSvensk(annons) {
+  if (UTLANDSKA_KONTON.has(String(annons.konto?.id))) return false;
+  return !FRAMMANDE_MARKNAD.test(annons.adNamn ?? '');
+}
 
 /** Statusen som gör en rad utbetalningsgrundande. */
 export const GODKAND_STATUS = 'Approved';

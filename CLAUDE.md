@@ -435,6 +435,11 @@ Satsen är 0,4 % och står som `SATS` i `berakning.mjs`. Bara `role: "editor"` i
 `dashboard/data/team.json` får utbetalning — spend på Axels rader, på rader utan
 Ansvarig och på okända Notion-användare redovisas separat som obetald.
 
+⚠️ **Endast svenska annonser ger commission** (Axels beslut 2026-08-31).
+Marknadskontona (NO, DK, FI, UK, Snark mexico, SNarklös FI, Norge, Finland DK,
+NYC Grill) filtreras bort, liksom annonser med marknadskod i namnet. Listan står
+som `UTLANDSKA_KONTON` i `commission/berakning.mjs`.
+
 ⚠️ **Valutor summeras aldrig.** NYC Grill-kontot är i USD, resten i SEK.
 
 ⚠️ **De fyra skalningsprodukternas creative hubs är ARKIVERADE i Notion** och

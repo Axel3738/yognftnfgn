@@ -47,10 +47,15 @@ Körningarna däremellan är lägeskoll: samma månad, färre dagar mätta.
 2. **Bara redigerare får utbetalning** (`role: "editor"` i `dashboard/data/team.json`).
    Rader på Axel, på managern, eller helt utan Ansvarig redovisas separat: spenden
    syns i rapporten, men den betalas inte ut.
-3. **Översättningar räknas till samma redigerare, men särredovisas.** Gör Josh
-   `Trimmerbelt_PD_3_H1` och HeyGen-rutinen `NO_Trimmerbelt_PD_3_H1` i NO-kontot,
-   är spenden Joshs — men den står i egen kolumn så du ser hur mycket som kommer
-   från lokaliseringarna.
+3. **ENDAST svenska annonser räknas** (Axels beslut 2026-08-31). Två spärrar,
+   båda i `commission/berakning.mjs`:
+   - Marknadskontona ger aldrig commission: Magiborsten NO, DK, FI, UK,
+     Snark mexico, SNarklös FI, Norge, Finland DK och NYC Grill.
+   - En annons med marknadskod i namnet (`NO_Trimmerbelt_PD_3_H1`,
+     `Fiskespöhållare_SP_2_1_UK`) räknas inte, inte ens i ett svenskt konto.
+   Konceptkoderna i namnkonventionen (`CS GT PD SP SO CI UG`) är vinklar, inte
+   länder, och får aldrig filtrera bort en svensk annons.
+   `--alla-marknader` stänger av filtret för en engångsjämförelse.
 4. **Satsen är 0,4 %** av spenden. Den står som `SATS` i `commission/berakning.mjs`
    och ändras inte utan att Axel säger det.
 
@@ -239,6 +244,7 @@ Committa rapportfilerna och pusha. De är kvittot på vad som betalades ut.
 - [ ] Rader **utan** Ansvarig togs med i jobbfilen och redovisas som obetald spend
 - [ ] Spend läst ur samtliga annonskonton — antalet skrivet i svaret
 - [ ] Valutor redovisade var för sig, aldrig hopsummerade
+- [ ] Endast svenska annonser räknade — antal och belopp bortfiltrerat redovisat
 - [ ] Utbetalningstabellen levererad med exakt/översatt särredovisat
 - [ ] Sagt rakt ut om körningen är slutavräkning eller lägeskoll
 - [ ] Okända Ansvariga, namnkonflikter och olästa källor listade som åtgärder
