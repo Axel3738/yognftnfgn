@@ -553,27 +553,27 @@ dag.
 Förhandsvisningen:
 <https://claude.ai/code/artifact/c8bb8fba-4196-4703-a48a-d5275ed24f1f>
 
-## 8p. Varv 18 (2026-08-31): testläge i temat
+## 8p. Varv 18 (2026-08-31): testläge för klockan
 
-Axel ville se en 7-minutersklocka för att kunna visa förloppet för vänner och
-familj. En kort klocka på riktiga sidan för riktiga kunder går inte att göra
-sann, men ett **testläge** gör precis det han var ute efter — och det finns
-nu både i temat och i förhandsvisningen.
+Axel behövde kunna visa hela nedräkningsförloppet för vänner och familj utan
+att vänta en vecka. Tre vägar dit, alla utan att en enda siffra på riktig
+sida blir påhittad:
 
-**I butiken:** lägg till `?testklocka=420` i produktsidans adress. Klockan
-räknar då ner från 420 sekunder, går igenom den gula och den röda fasen och
-rullar vidare när den passerat noll. En testremsa syns högst upp i rutan så
-länge läget är på. Utan parametern finns testläget inte — kunder kan aldrig
-råka hamna i det, och länken är oduglig som marknadsföring eftersom den är
-märkt.
+1. **Eget testtema:** *"TESTKLOCKA 7 min – publicera aldrig"*
+   (`156623044745`), duplicerat från v9. Klockan står på 7 minuter direkt när
+   sidan öppnas, med en testremsa i rutan. Skillnaden mot v9 är en enda rad
+   i `templates/product.json` — inget i den delade snippeten. **Publiceras
+   aldrig.** Delas som temaförhandsvisning från Themes → ⋯ → Preview.
+2. **Adressparameter i det riktiga temat:** `?testklocka=420` på
+   produktsidan kortar klockan till 420 sekunder och visar testremsan. Utan
+   parametern finns läget inte, så kunder kan aldrig råka hamna i det.
+3. **Förhandsvisningen** (artifact): knappar för 7 minuter, 20 sekunder och
+   10 timmar (gula fasen) plus "Riktig klocka".
 
-**I förhandsvisningen:** knappar under telefonen för 7 minuter, 20 sekunder
-och 10 timmar (gula fasen), plus "Riktig klocka".
-
-Klockan i butiken står kvar på **en omgång i veckan, söndag 23.00**.
-`stang_veckodagar` tar numera flera dagar kommaseparerat (`'0,3'` = söndag
-och onsdag) — fler omgångar i verkligheten är enda ärliga sättet att korta
-ner klockan, och koden är förberedd för det.
+Klockan i det publicerade temat står kvar på **en omgång i veckan, söndag
+23.00**. `stang_veckodagar` tar numera flera dagar kommaseparerat (`'0,3'` =
+söndag och onsdag) — fler omgångar i verkligheten är enda ärliga sättet att
+korta ner klockan, och koden är förberedd för det.
 
 Publicerat av Axel som **Twinpillow v9**.
 
