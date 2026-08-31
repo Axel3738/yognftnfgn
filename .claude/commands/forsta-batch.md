@@ -74,8 +74,16 @@ Varje annons: hypotes, vad som behålls/ändras, format, exakt hook, fullständi
 6. **Kör därefter `/notion`-flödet direkt i samma session** (produktens hub +
    Batch-mappens länk) utan att invänta kommandot. Notion-hubbens id står i
    `products/products.json` (rond-produkter: `agent/produktkarta.json`).
+   ⚠️ **Har produkten redan en hub: lägg raderna DÄR.** Skapa aldrig en andra
+   hub för samma produkt. Sök på både svenskt och engelskt produktnamn innan du
+   drar slutsatsen att hubben saknas — de heter engelska (`Fish rod holder`,
+   `Surveillance Camera`), så en svensk sökning ger noll träffar och lurar dig
+   att skapa en dubblett.
    **Saknar produkten hub:** bygg aldrig en från grunden — duplicera en
    befintlig hubs schema utan innehåll, exakt procedur i `/rond-auto` steg 4b.
+   Skapa hubben och raderna i SAMMA steg — aldrig en tom hub i förväg. Blir
+   körningen avbruten däremellan står en tom hub kvar och ser ut som arbete
+   som inte finns.
 7. **Inget tracking-sheet.** Axels beslut 2026-08-29: 100k-sheetet per produkt
    utgår ur ny-produktflödet — ronden och `agent/budgetlogg.jsonl` spårar
    utfallet. `/sheet` finns kvar som separat kommando om det någon gång behövs.

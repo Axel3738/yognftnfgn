@@ -47,9 +47,18 @@ test('med token sätter vi Authorization själva', () => {
 });
 
 test('utan token skickas INGET Authorization-huvud', () => {
+  // Testet måste vara hermetiskt: står DISCORD_BOT_TOKEN i miljön tar
+  // default-parametern den och testet mäter miljön i stället för koden.
+  const sparad = process.env.DISCORD_BOT_TOKEN;
+  delete process.env.DISCORD_BOT_TOKEN;
+  try {
   // Med en API-credential på molnmiljön sätter agentproxyn huvudet åt oss efter
   // att anropet lämnat sessionen. Ett tomt eget huvud hade skrivit över det, och
   // då hade token behövt ligga som synlig miljövariabel i stället.
-  assert.deepEqual(botHuvuden(undefined), {});
-  assert.deepEqual(botHuvuden(''), {});
+    assert.deepEqual(botHuvuden(undefined), {});
+    assert.deepEqual(botHuvuden(''), {});
+  } finally {
+    if (sparad === undefined) delete process.env.DISCORD_BOT_TOKEN;
+    else process.env.DISCORD_BOT_TOKEN = sparad;
+  }
 });

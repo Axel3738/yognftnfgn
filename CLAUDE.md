@@ -493,6 +493,17 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   5 av 8 rader**. Korskolla alltid mot `amount_spent × purchase_roas`.
 - **Notion-status `In progress 2` betyder REVISION** — annonsen underkändes och
   görs om. Det betyder INTE "längre kommen". Full tabell i `docs/os/NOTION-FORMAT.md`.
+- **Skapa ALDRIG en ny creative hub för en produkt som redan har en.** Nya
+  briefer till en befintlig produkt läggs som RADER i produktens befintliga hub.
+  En ny hub skapas bara för en produkt som saknar hub helt. Sök på både det
+  svenska OCH det engelska produktnamnet innan du drar slutsatsen att den
+  saknas — hubbarna heter engelska (`Fish rod holder`, `Men's Plush Slippers`,
+  `Surveillance Camera`), så en sökning på svenska ger noll träffar och lurar
+  dig att skapa en dubblett.
+- **En hub får aldrig skapas tom.** Skapa hubben i SAMMA steg som raderna, aldrig
+  i förväg. Blir körningen avbruten däremellan står en tom hub kvar och ser ut
+  som arbete som inte finns. *(Hände 2026-08-31: en avbruten körning lämnade
+  `Men's Plush Slippers creative hub` med 0 rader. Axels besked samma dag.)*
 - **Notion-hubbarna rymmer mer än annonser.** Bara rader med Typ `… Pending Approval`
   är annonser. SOP, Guideline, Feedback och `Winning Creative` (arkiv) är
   dokumentation och räknas aldrig. Filtrera på Typ vid **varje** hubbläsning, inte
