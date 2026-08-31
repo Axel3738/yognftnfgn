@@ -5,6 +5,7 @@ pipeline/output/
 
 # Dagens råa Meta-siffror. Skrivs om varje rond.
 agent/kontodata.json
+agent/kontodata-no.json
 
 # Filbrygga: minnesfiler som väntar på en session med push-rättighet.
 agent/utkorg/
