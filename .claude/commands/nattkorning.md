@@ -120,6 +120,10 @@ sök/åtkomst är inte sanningen för läsning.
 
 ## Steg 6 — Slutrapport (mobilformat — Axel läser den som push-notis)
 
+⚠️ **Push-notisen får INTE vara en lång text.** Notisens hela innehåll är
+första raden nedan — inget mer. En notis på fem meningar är ett fel, inte en
+rapport. Samma sak i chatten: aldrig ett inledande stycke före "Läget."
+
 **FÖRSTA RADEN är hela rapporten för mobilen.** Max 12 ord, börjar med ✅ eller
 ⚠️, säger vad som hände och om något väntar på Axel. Exempel:
 
