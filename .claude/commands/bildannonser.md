@@ -2,7 +2,13 @@
 
 Kör varje kväll 20:00. Uppdraget i en mening: **gå igenom alla Bäverbutikens
 Notion-hubbar, hitta bildannonser som inte är gjorda, generera dem med kie.ai,
-och lämna dem i `To be Reviewed` åt granskningsrutinen.**
+och lämna dem i `To be Reviewed` åt **`/notionkorning` (00:01)**, som QA:ar dem mot
+briefen och laddar upp dem i produktens kampanj.**
+
+⚠️ **Bilagan i `Filer och media` är enda kopian i världen.** `bildannonser/output/`
+är gitignorerat och dör med containern. Lämnar du en rad i `To be Reviewed` utan att
+bifoga filen är arbetet borta — och raden kommer aldrig tillbaka hit, eftersom den
+här rutinen bara plockar `Draft`.
 
 Argument: `$ARGUMENTS` — normalt tomt. `--dry` = visa vad som skulle genereras
 utan att bränna credits. `<hubbnamn>` = kör bara den hubben.

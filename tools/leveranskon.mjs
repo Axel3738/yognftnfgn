@@ -13,6 +13,7 @@
 
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
+import { allaKlaraRader } from './notion-kalla.mjs';
 
 // Redigerarnas leveransrot. Innehåller "Week N"-mappar, en mapp per annons.
 const EDITED_FOLDER = '1V4V8y4QQnX0tvZ3MQUicu1Y1k-l95yFM';
@@ -93,6 +94,15 @@ for (const p of products) {
   }
 }
 
+// Prefix som inte gar att harleda ur kontot: Notion-hubben och annonskontot anvander
+// ibland olika sprak for samma produkt (hubben "Belt grinder", kampanjen
+// "Balteslipmaskinen"). Da finns ingen gemensam strang att matcha pa — kopplingen
+// skrivs upp en gang i prefix-alias.json i stallet for att gissas.
+let alias = {};
+try {
+  alias = JSON.parse(readFileSync(`${ROT}products/prefix-alias.json`, 'utf8')).alias ?? {};
+} catch { /* filen ar frivillig */ }
+
 // Notion-titlar bar ibland ett suffix: "Beachslippers_PD_2_8 – COPY ONLY: ...".
 // Drive-mappen heter bara annonsdelen. Jamfor alltid pa annonsdelen.
 
@@ -111,14 +121,53 @@ for (const v of veckor) {
     const pfx = prefixAv(namn);
     if (!pfx) continue;                       // inte ett annonsnamn — hoppa tyst
     const p = konfig[pfx] ?? null;
-    const kampanj = p ? { id: p.campaign_ids[0], name: null, status: null } : (karta[pfx] ?? null);
+    const al = alias[pfx];
+    const kampanj = p ? { id: p.campaign_ids[0], name: null, status: null }
+                  : (karta[pfx] ?? (al ? { id: al.kampanj_id, name: al.kampanj_namn, status: null } : null));
     leveranser.push({
       vecka: v.titel, mapp: m.id, namn, prefix: pfx,
       produktId: p?.id ?? pfx, kampanj,
-      kalla: p ? 'products.json' : (kampanj ? 'kontot' : null),
+      kalla: p ? 'products.json' : (karta[pfx] ? 'kontot' : (al ? 'prefix-alias.json' : null)),
     });
   }
 }
+for (const l of leveranser) l.kalla2 = 'drive';
+
+// 2b. Leveranserna i Notion. /bildannonser (20:00) lagger bildannonser som BILAGA i
+// radens "Filer och media" med status "To be Reviewed" — de passerar aldrig Drive, och
+// bildannonser/output/ ar gitignorerat, sa Notion-bilagan ar enda kopian i varlden.
+// (Rotorsaken till att fem fardiga bildannonser lag osynliga 2026-08-31.)
+let notionFel = null;
+let notionHubbar = 0;
+try {
+  const { hubbar, rader, fel } = await allaKlaraRader();
+  notionHubbar = hubbar.length;
+  if (Object.keys(fel).length) notionFel = Object.entries(fel).map(([h, f]) => `${h}: ${f}`).join(' · ');
+  for (const r of rader) {
+    const namn = annonsdel(r.namn);
+    const pfx = prefixAv(namn);
+    if (!pfx) continue;
+    const p = konfig[pfx] ?? null;
+    const al = alias[pfx];
+    // Kampanjkartan ur MagiBorsten ar ocksa teamspace-sparren: en hub vars prefix inte
+    // finns i Baverbutikens konto hor till en annan verksamhet och laddas aldrig upp.
+    const kampanj = p ? { id: p.campaign_ids[0], name: null, status: null }
+                  : (karta[pfx] ?? (al ? { id: al.kampanj_id, name: al.kampanj_namn, status: null } : null));
+    leveranser.push({
+      vecka: r.hub, mapp: r.id, namn, prefix: pfx,
+      produktId: p?.id ?? pfx, kampanj,
+      kalla: p ? 'products.json' : (karta[pfx] ? 'kontot' : (al ? 'prefix-alias.json' : null)),
+      kalla2: 'notion', notionUrl: r.url, notionFiler: r.filer, skapad: r.skapad,
+    });
+  }
+} catch (e) {
+  // ALDRIG tyst. Att Notion inte gick att lasa ar exakt den lucka som gomde
+  // fem fardiga bildannonser — den ska synas hogst upp i rapporten.
+  notionFel = e.saknarToken
+    ? 'NOTION_TOKEN saknas — Notion-källan lästes INTE. Bildannonser från /bildannonser är osynliga i den här körningen.'
+    : `Notion kunde inte läsas: ${e.message}`;
+}
+
 if (filter) {
   for (let i = leveranser.length - 1; i >= 0; i--) {
     if (leveranser[i].produktId !== filter && leveranser[i].prefix !== filter.toLowerCase()) leveranser.splice(i, 1);
@@ -130,7 +179,9 @@ const kö = [];
 for (const l of leveranser) {
   const gjort = uppe.has(l.namn.toLowerCase());
   if (gjort && !finns('alla')) continue;
-  const filer = driveLs(l.mapp).filter(f => f.typ === 'fil');
+  const filer = l.kalla2 === 'notion'
+    ? l.notionFiler.map(f => ({ typ: 'notion', id: l.mapp, titel: f.namn || `${l.namn}.jpg` }))
+    : driveLs(l.mapp).filter(f => f.typ === 'fil');
   kö.push({ ...l, gjort, filer });
 }
 
@@ -170,7 +221,14 @@ if (finns('json')) {
 const nya = kö.filter(k => !k.gjort);
 const utan = nya.filter(k => !k.kampanj);
 const hyllade = nya.filter(k => k.avvecklad);
-console.log(`Leveransmappar i Drive: ${leveranser.length} · ${leveranser.length - nya.length} redan i kontot · ${karta && Object.keys(karta).length} kända prefix i kontot\n`);
+// Ett tyst Notion-fel ar samma fella igen. Det star forst, fore allt annat.
+if (notionFel) {
+  console.log(`⚠️  NOTION-KÄLLAN: ${notionFel}`);
+  console.log(`    Kön nedan är därför OFULLSTÄNDIG — bildannonser saknas.\n`);
+}
+const frånDrive = leveranser.filter(l => l.kalla2 === 'drive').length;
+const frånNotion = leveranser.filter(l => l.kalla2 === 'notion').length;
+console.log(`Källor: ${frånDrive} i Drive · ${frånNotion} i Notion (${notionHubbar} hubbar) · ${leveranser.length - nya.length} redan i kontot · ${Object.keys(karta).length} kända prefix\n`);
 
 const perProdukt = {};
 for (const k of nya) (perProdukt[k.produktId] ??= []).push(k);
@@ -188,10 +246,16 @@ for (const [pid, rader] of Object.entries(perProdukt)) {
     console.log(`   (kopplingen kommer från ${rader[0].kalla})`);
   }
   for (const r of rader) {
-    const media = r.filer.filter(f => /\.(mp4|mov|m4v|jpg|jpeg|png)$/i.test(f.titel));
-    console.log(`  • ${r.namn}  (${r.vecka})`);
+    const media = r.filer.filter(f => f.typ === 'notion' || /\.(mp4|mov|m4v|jpg|jpeg|png)$/i.test(f.titel));
+    console.log(`  • ${r.namn}  (${r.kalla2 === 'notion' ? 'Notion: ' + r.vecka : r.vecka})`);
     if (!media.length) { console.log(`      ⚠ ingen media i mappen — inte klar`); continue; }
     for (const f of media) {
+      if (r.kalla2 === 'notion') {
+        // Signerad URL med kort livslangd — hamtas vid korning, skrivs aldrig ut.
+        console.log(`      ${f.titel}`);
+        console.log(`        hämtas med: node tools/notion-fil.mjs ${r.mapp} --ut <mapp>`);
+        continue;
+      }
       const fnamn = f.titel.replace(/\.[^.]+$/, '');
       const varning = fnamn.toLowerCase() !== r.namn.toLowerCase() ? '  ⚠ FILNAMN ≠ MAPPNAMN' : '';
       console.log(`      ${f.titel}${varning}`);

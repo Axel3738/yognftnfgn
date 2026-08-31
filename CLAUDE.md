@@ -517,6 +517,9 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 | `tools/leveranskon.mjs` | Vad redigerarna levererat i Drive som ännu inte finns i kontot (kön för `/notionkorning`) |
 | `tools/qa-frames.py` | Drar frames ur en levererad video (tätt i hooken) så briefkontrollen går att göra på riktigt |
 | `tools/notion-klara.mjs` | Läser creative-hubbarna via Notions REST API (`NOTION_TOKEN`) — reservväg när MCP:n saknas |
+| `tools/notion-kalla.mjs` | Notion som leveranskälla: hittar alla creative hubs dynamiskt, plockar rader med färdig fil |
+| `tools/notion-fil.mjs` | Hämtar hem en Notion-bilaga (signerad URL, kortlivad — hämta vid körning, cacha aldrig) |
+| `products/prefix-alias.json` | Annonsprefix som inte går att härleda ur kontot (Notion engelska, kontot svenska) |
 | `tools/notion-till-meta.mjs` | Laddar upp EN godkänd creative i produktens CBO, med spärrar mot fel konto och mot att röra avstängt |
 | `pipeline/batch.mjs`, `multi-batch.mjs`, `uk-wave.mjs`, `mastern-batch.mjs` | ⚠️ Laddar **inte** upp som PAUSED — se regeln under "Saker som är lätta att göra fel" |
 | `pipeline/waves/*.config.mjs` | Vågkonfig per marknad — `se-`, `dk-`, `no-`, `uk-` |
@@ -559,13 +562,29 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   5 av 8 rader**. Korskolla alltid mot `amount_spent × purchase_roas`.
 - **Notion-status `In progress 2` betyder REVISION** — annonsen underkändes och
   görs om. Det betyder INTE "längre kommen". Full tabell i `docs/os/NOTION-FORMAT.md`.
-- **Hubbarna använder inte hela statustabellen.** Verifierat 2026-08-30: noll rader
-  står på `To be Reviewed` i någon av de fyra hubbarna — allt hoppar direkt till
-  `Approved` (bara strandtofflorna har 12 `In Review`). Och `Filer och media` är
-  tomt på samtliga rader: **Notion bär briefen, aldrig den färdiga filen.**
-  Den ligger i Drive under `Edited Folder/Week N/<annonsnamn>/<annonsnamn>.mp4`.
-  Bygg därför aldrig en rutin som utgår från att en status markerar "klar" —
-  leveransen i Drive mot annonsnamnen i kontot är det som faktiskt stämmer.
+- **En färdig creative kan ligga på två ställen. Läs alltid båda.**
+  | Källa | Vem lägger den där | Status i Notion |
+  |---|---|---|
+  | Drive `Edited Folder/Week N/<namn>/` | redigerarna (video) | oftast redan `Approved` |
+  | Notion `Filer och media` | `/bildannonser` 20:00 (bild via kie.ai) | `To be Reviewed` |
+
+  ⚠️ **Notion-bilagan är enda kopian i världen** — `bildannonser/output/` är
+  gitignorerat och dör med containern. Läser en rutin inte Notion är arbetet borta,
+  och raden fastnar i `To be Reviewed` för alltid eftersom 20:00-rutinen bara plockar
+  `Draft`. *(Detta hände: fem färdiga bildannonser låg osynliga tills Axel upptäckte
+  dem 2026-08-31. `/notionkorning` läser sedan dess båda källorna via
+  `tools/notion-kalla.mjs` och larmar högst upp i rapporten om Notion inte gick att läsa.)*
+
+  **De fyra videohubbarna** (motorhöljet, axelbältet, sätesöverdragaren,
+  strandtofflorna) mättes 2026-08-30: där var `Filer och media` tomt på varenda rad
+  och `To be Reviewed` användes inte alls. **Det gällde de fyra hubbarna den dagen —
+  inte alla hubbar, inte för alltid.** Bildhubbarna fungerar tvärtom.
+
+- **Skriv aldrig en mätning som en evig lag.** Regeln ovan stod en gång som
+  "`Filer och media` är tomt på samtliga rader … bygg därför aldrig". Den var falsk
+  fyra minuter senare — `/bildannonser` mergades och började fylla exakt det fältet
+  varje kväll. En observation ska bära **vad som mättes, var och när**, aldrig orden
+  "alla", "aldrig" eller "samtliga" utan datum och räckvidd.
 - **Notion-hubbarna rymmer mer än annonser.** Bara rader med Typ `… Pending Approval`
   är annonser. SOP, Guideline, Feedback och `Winning Creative` (arkiv) är
   dokumentation och räknas aldrig. Filtrera på Typ vid **varje** hubbläsning, inte
