@@ -27,7 +27,8 @@ const NYA = [
   ['CN', bild(16),             { se:'Cerise/Neongrön',  no:'Cerise/Neongrønn', dk:'Cerise/Neongrøn',   fi:'Cerise/Neonvihreä',     uk:'Cerise/Neon Green' }],
 ];
 // befintliga färger som saknar variantbild
-const KOMPLETTERA = [['GU', bild(6)], ['NG', bild(19)]];
+// NG: leverantörsbilden (bild 19) har kinesisk text — använd den beskurna rena.
+const KOMPLETTERA = [['GU', bild(6)], ['NG', `${K}/neongron.jpg`]];
 const ALT = { se: (c) => `Damasker i ${c.toLowerCase()}`, no: (c) => `Gamasjer i ${c.toLowerCase()}`,
   dk: (c) => `Gamacher i ${c.toLowerCase()}`, fi: (c) => `Säärystimet – ${c.toLowerCase()}`, uk: (c) => `Gaiters in ${c.toLowerCase()}` };
 const sov = (ms) => new Promise((r) => setTimeout(r, ms));

@@ -18,6 +18,19 @@ svart och marinblå. Texten togs bort med KIE (nano-banana-edit) — **bara
 borttagning, ingen ny text**, enligt metoden i `temu/cogs/README.md`-syskonet
 `temu/bildskord/grilloverdrag-sv/README.md`. De rensade PNG:erna ligger här.
 
+### Neongrön — rättad 2026-08-31 (Axel hittade felet)
+De två färger som redan fanns men saknade variantbild (GU, NG) fick
+leverantörsbilden **rakt igenom utan textgranskning**. Neongröna bilden hade
+kvar hela textblocket 户外 / 徒步雪套 / 荧光绿（条）/黑色 och badgen 成人款.
+Fixad i alla fem butiker: `neongron-bygg.mjs` beskär bort textkolumnen
+(kolumnprofil hittar gapet vid x 216–262), bboxar produkten och centrerar den
+på vit 800×800 — **ingen AI, inget som kan hallucinera**. `ng-fix.mjs` byter
+bilden per butik: laddar upp, raderar den kinesiska bilden först (annars
+vägrar `productVariantAppendMedia` med "variant already has attached media"),
+kopplar sedan den rena. Idempotent — hoppar butiker som redan är rätt.
+Hela galleriet (22 bilder) kontaktarks-granskat efteråt: ingen kinesisk text kvar.
+Gul och orange kontrollerades i samma svep och var rena.
+
 Sex av de 21 bilderna användes inte: dubbletter av gul och grå (platta
 varianter av färger som redan hade bättre bild) samt en blå i plastpåse.
 ⚠️ Olivgrön (OL) har som enda färg bara en bild i plastpåse — den är godkänd

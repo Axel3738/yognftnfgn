@@ -513,6 +513,18 @@ Grillklinikken-butiker får ALDRIG bäver-emojin eller "Bäverbutiken" som vendo
   `adsetStatus`: `se-axelbalte-batch4`, `se-batch-20260809`, `uk-axelbalte`,
   `uk-beachslippers`, `uk-motorholje`. **Sätt båda fälten explicit i konfigen innan
   du kör** — annars börjar annonserna spendera i samma sekund som något släpps loss.
+- **Varje bild som kopplas till en variant granskas visuellt för utländsk text —
+  även bilder som går rakt igenom från skörden och bilder som redan låg i butiken.**
+  Granska **live-bilderna** efter rullningen (kontaktark av `variants { image { url } }`),
+  aldrig källmappen — det är det som ligger skarpt som räknas. *(2026-08-31: 18
+  damaskfärger rullades ut i fem butiker; de två färger som redan fanns fick
+  leverantörsbilden okontrollerad och neongröna hade kvar 户外徒步雪套 + badgen
+  成人款. Axel hittade det, inte jag.)*
+  Sitter texten i en egen kolumn: **beskär bort den** (kolumnprofil → bbox →
+  centrera på vit kvadrat, `temu/damasker/neongron-bygg.mjs`) i stället för att
+  köra KIE — deterministiskt och kan inte hallucinera.
+  `productVariantAppendMedia` vägrar med *"variant already has attached media"* —
+  radera den gamla bilden FÖRST, koppla sedan.
 - **Priset hämtas från produktsidan vid varje körning**, aldrig ur en äldre brief
   eller creative. Axelbältet höjdes 2026-08-05 från 509 → 599 kr (jämförpris 678 kr
   = spara 79 kr, 11,65 %). **509 kr, 636 kr och "20 %" är förbjudna** i all ny copy.
