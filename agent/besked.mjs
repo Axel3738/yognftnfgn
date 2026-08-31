@@ -258,11 +258,22 @@ export function besked(rad) {
   // 2026-08-29, MC-Kapellet) — under testtröskeln har den inte fått sin chans.
   const underTesttroskel = lage === 'test'
     && (!Number.isFinite(rad.spendTotal) || rad.spendTotal < TEST_TROSKEL_SEK);
+  // Larmet gäller kampanjer som INTE betalar för sig. Få köp räcker inte som
+  // skäl: Övervåkingskamera NO larmades 2026-08-31 på 2 köp trots ROAS 2,10
+  // mot break-even 1,40 — 50 % marginal beskrevs som "bränner pengar utan köp".
+  // Går den plus är den inte trasig, den är tidig. Då gäller grinden nedan.
+  // Axels invändning 2026-08-31.
+  const betalarForSig = Number.isFinite(rad.roas3d) && rad.roas3d >= breakEven;
   if (Number.isFinite(spend3d) && spend3d >= 3 * MIN_SPEND_FOR_DOM
       && (!Number.isFinite(kop3d) || kop3d < MIN_KOP_FOR_DOM)
+      && !betalarForSig
       && !underTesttroskel) {
-    return svar('STOR_SPEND_UTAN_KOP', 'Bränner pengar utan köp — larm',
-      `${kr(spend3d)} på 3 dagar men ${Number.isFinite(kop3d) ? kop3d : 'okänt antal'} köp. Det är inte "för lite data" längre — något är fel (produktsidan, priset, lagret?). En människa måste titta.`);
+    const kopText = Number.isFinite(kop3d) ? `${kop3d} köp` : 'okänt antal köp';
+    const roasText = Number.isFinite(rad.roas3d)
+      ? ` ROAS ${rad.roas3d.toFixed(2).replace('.', ',')} mot break-even ${breakEven.toFixed(2).replace('.', ',')}.`
+      : '';
+    return svar('STOR_SPEND_UTAN_KOP', 'Bränner pengar — larm',
+      `${kr(spend3d)} på 3 dagar och bara ${kopText}, utan att gå ihop.${roasText} Det är inte "för lite data" längre — något är fel (produktsidan, priset, lagret?). En människa måste titta.`);
   }
   if (!Number.isFinite(spend3d) || !Number.isFinite(kop3d)
       || spend3d < MIN_SPEND_FOR_DOM || kop3d < MIN_KOP_FOR_DOM) {

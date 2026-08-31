@@ -84,14 +84,30 @@ test('ingen dom under 300 kr spend eller 3 köp', () => {
   assert.equal(besked(rad({ roas3d: 0.1, spend3d: 200, kop3d: 1 })).kod, 'FOR_LITE_DATA');
 });
 
-test('grinden är inget evigt frikort: stor spend utan köp larmar', () => {
-  // 900+ kr på tre dagar med under 3 köp är inte "för lite data" — det är trasigt.
-  assert.equal(besked(rad({ spend3d: 1000, kop3d: 2 })).kod, 'STOR_SPEND_UTAN_KOP');
+test('grinden är inget evigt frikort: stor spend som inte går ihop larmar', () => {
+  // 900+ kr på tre dagar, under 3 köp OCH under break-even: inte "för lite
+  // data" — trasigt. BE är 2,00 i testraden, så 1,2 är förlust.
+  assert.equal(besked(rad({ spend3d: 1000, kop3d: 2, roas3d: 1.2 })).kod, 'STOR_SPEND_UTAN_KOP');
   assert.equal(besked(rad({ spend3d: 2500, kop3d: 0, roas3d: 0 })).kod, 'STOR_SPEND_UTAN_KOP');
   // Larmet föreslår ingen automatisk åtgärd — en människa ska titta.
-  assert.equal(besked(rad({ spend3d: 1000, kop3d: 2 })).kraverGodkannande, false);
+  assert.equal(besked(rad({ spend3d: 1000, kop3d: 2, roas3d: 1.2 })).kraverGodkannande, false);
   // Precis under larmgränsen: fortfarande vanlig grind.
-  assert.equal(besked(rad({ spend3d: 899, kop3d: 2 })).kod, 'FOR_LITE_DATA');
+  assert.equal(besked(rad({ spend3d: 899, kop3d: 2, roas3d: 1.2 })).kod, 'FOR_LITE_DATA');
+});
+
+test('få köp men över break-even är inte ett larm — den är tidig, inte trasig', () => {
+  // Overvåkingskamera NO 2026-08-31: 1 183 kr på 3 dagar, 2 köp, ROAS 2,10 mot
+  // break-even 1,40. Boten skrev "bränner pengar utan köp" om 50 % marginal.
+  const dom = besked(rad({
+    namn: 'Overvåkingskamera NO | BE-ROAS 1,40 | 2026-08-29',
+    lage: 'test', spend3d: 1183, kop3d: 2, roas3d: 2.10, spendTotal: 1800,
+  }));
+  assert.equal(dom.kod, 'FOR_LITE_DATA');
+
+  // Precis PÅ break-even räknas som att den betalar för sig.
+  assert.equal(besked(rad({ spend3d: 1000, kop3d: 1, roas3d: 2.00 })).kod, 'FOR_LITE_DATA');
+  // Strax under: larm igen.
+  assert.equal(besked(rad({ spend3d: 1000, kop3d: 1, roas3d: 1.99 })).kod, 'STOR_SPEND_UTAN_KOP');
 });
 
 test('utan break-even fälls ingen dom alls', () => {
@@ -335,12 +351,12 @@ test('en testprodukt som går plus behåller sin testbudget — sänk-zonen gäl
 
 test('en testprodukt under 1 500 kr totalspend larmas aldrig — MC-Kapellet-regeln', () => {
   // 1 053 kr på 3 dagar, 2 köp, 1 114 kr totalt: under testtröskeln -> samlar data.
-  const dom = besked(rad({ lage: 'test', spend3d: 1053, kop3d: 2, spendTotal: 1114 }));
+  const dom = besked(rad({ lage: 'test', spend3d: 1053, kop3d: 2, roas3d: 1.2, spendTotal: 1114 }));
   assert.equal(dom.kod, 'FOR_LITE_DATA');
   // Samma siffror ÖVER tröskeln: larm.
-  assert.equal(besked(rad({ lage: 'test', spend3d: 1053, kop3d: 2, spendTotal: 1600 })).kod, 'STOR_SPEND_UTAN_KOP');
+  assert.equal(besked(rad({ lage: 'test', spend3d: 1053, kop3d: 2, roas3d: 1.2, spendTotal: 1600 })).kod, 'STOR_SPEND_UTAN_KOP');
   // Drift larmar oavsett totalspend.
-  assert.equal(besked(rad({ lage: 'drift', spend3d: 1053, kop3d: 2, spendTotal: null })).kod, 'STOR_SPEND_UTAN_KOP');
+  assert.equal(besked(rad({ lage: 'drift', spend3d: 1053, kop3d: 2, roas3d: 1.2, spendTotal: null })).kod, 'STOR_SPEND_UTAN_KOP');
 });
 
 test('break-even läses ur BÅDA skrivsätten — Sverige och Norge', () => {

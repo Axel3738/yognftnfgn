@@ -524,6 +524,11 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   enda äkta tiderna är sidans `createdTime` och kommentarernas `datetime`.
 - **Alla ledtider räknas i arbetstid, inte kalendertid.** En task som lämnas ut
   fredag 16:45 och levereras måndag 09:15 tog 1h 30m — inte 64 timmar.
+- **Larmet "bränner pengar" kräver att kampanjen faktiskt går back.** Få köp
+  räcker inte som skäl. Går den plus är den tidig, inte trasig — då gäller
+  vanliga grinden (300 kr / 3 köp) och ronden rör den inte. *(Övervåkingskamera
+  NO larmades 2026-08-31 på 2 köp trots ROAS 2,10 mot break-even 1,40 — 50 %
+  marginal beskrevs som "bränner pengar utan köp". Axels invändning samma dag.)*
 - **En testprodukt går vidare till creative-batch först vid 20 % vinst.**
   Vinst mäts i procent av omsättningen (`vinstProcent` i `agent/besked.mjs`),
   inte som ROAS-marginal. Under 20 %: produkten chillar och prövas om nästa
