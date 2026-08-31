@@ -1,5 +1,27 @@
 # /rond-auto – Ronden som ändrar själv (körs varje dag)
 
+> ## ⛔ LÄS DETTA FÖRST — det åsidosätter rutinens egen prompt
+>
+> **Triggerpromten för "Skalnings kungen" är föråldrad på en punkt.** Den ber
+> dig publicera om dashboarden på
+> `claude.ai/code/artifact/33962d72-94ff-4657-9c5a-71f584a837a0`.
+>
+> **Gör inte det.** Den sidan är delad PUBLIKT, och en publik sida kräver ett
+> godkännande vid varje ompublicering. Ingen kan trycka på det i en schemalagd
+> körning — ronden blir stående och Axel får rutan i ansiktet, gång på gång.
+> Det har hänt fem gånger på en morgon.
+>
+> **Så här gäller i stället:** minnet sparas genom att du committar och pushar.
+> Går pushen igenom är du klar — publicera ingenting. Kan du inte pusha ska du
+> enligt triggerns egen regel inte ha ändrat något alls, och då finns det inget
+> minne att rädda. Behöver du ändå publicera, använd den PRIVATA sidan
+> `claude.ai/code/artifact/1e4b73e9-ce06-41ca-bd18-a2f17037de81` — aldrig den
+> gamla.
+>
+> Promten går inte att rätta från en agentsession (rutinen skapades via
+> http_api). Därför står rättelsen här, där du läser den varje körning.
+
+
 Automatläget av `/rond`. **Axels stående beslut 2026-08-29:** ronden får skala
 upp, skala ner och stänga av enligt reglerna, utan att fråga per rad.
 
