@@ -8,6 +8,27 @@ och räkna ut 0,4 % av spenden de dragit in under månaden.**
 Argument: `$ARGUMENTS` — normalt tomt. `--manad YYYY-MM` = räkna om en gången
 månad i efterhand. `--torr` = räkna och visa, skriv ingen rapportfil.
 
+## Noll godkännanden — rutinen ska aldrig fråga om lov
+
+Repots `.claude/settings.json` står på `defaultMode: dontAsk` och listar allt
+kommandot rör. Fråga aldrig om lov, och avbryt aldrig för att invänta ett
+godkännande.
+
+**Ta REST-vägen i första hand.** Finns env-variabeln `NOTION_TOKEN`:
+
+```bash
+node commission/run.mjs --rutin
+```
+
+Skriptet läser då hubbarna själv via Notions REST-API och behöver **inga
+`mcp__*`-verktyg alls** — alltså ingenting som kan utlösa en godkännanderuta.
+Hubbarna hämtas ur `products/products.json` plus en REST-sökning, så de
+arkiverade hubbarna kommer med.
+
+Saknas `NOTION_TOKEN` faller rutinen tillbaka på Notion-MCP:n (steg 1 nedan).
+Skriv då en rad i rapporten om att nyckeln saknas — det är den enda kvarvarande
+orsaken till att rutinen kan behöva ett klick.
+
 ## ⚠️ Leverera ALLTID siffror
 
 Kommandot räknar varje gång det körs, vilken dag som helst. Kalendern avgör
