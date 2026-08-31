@@ -11,8 +11,10 @@
 // Notion stryper till ~3 anrop/s. Ett par hundra sidor tar minuter. Normalt.
 
 import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 
 const API = 'https://api.notion.com/v1';
+const ROT = resolve(new URL('..', import.meta.url).pathname);
 const MALL = /creative hub MALL/i;
 const HUBBNAMN = /creative hub\s*$/i;
 
@@ -86,15 +88,46 @@ async function allaSidor(databaseId, opt) {
   return ut;
 }
 
-/** Hubbarna via REST-sök. Mallen räknas aldrig som en produkt. */
+/**
+ * Hubbarna som står i products.json. De fyra skalningsprodukterna är
+ * ARKIVERADE i Notion, och en sökning hoppar över arkiverade databaser —
+ * 2026-08-31 hittade rutinen därför bara 2 av 6 hubbar och rapporterade
+ * 0 kr som slutavräkning. products.json är golvet som gör det omöjligt igen.
+ */
+export function hubbarUrProdukter() {
+  const { products } = JSON.parse(readFileSync(`${ROT}/products/products.json`, 'utf8'));
+  return products
+    .filter((p) => p.notion?.database_id)
+    .map((p) => ({ id: p.notion.database_id, namn: p.notion.name, produkt: p.id, kalla: 'products.json' }));
+}
+
+/**
+ * Hubbarna via REST-sök, PLUS de som står i products.json.
+ * Sökningen finns för att nya produkter ska komma med av sig själva;
+ * products.json finns för att de gamla aldrig ska kunna falla bort.
+ * Mallen räknas aldrig som en produkt.
+ */
 export async function hittaHubbar(opt = {}) {
-  const r = await notion('search', {
-    ...opt, method: 'POST',
-    body: { query: 'creative hub', filter: { value: 'database', property: 'object' }, page_size: 100 },
-  });
-  return (r.results ?? [])
-    .map((d) => ({ id: d.id, namn: text(d.title ?? []), url: d.url }))
-    .filter((d) => HUBBNAMN.test(d.namn) && !MALL.test(d.namn));
+  let sokta = [];
+  try {
+    const r = await notion('search', {
+      ...opt, method: 'POST',
+      body: { query: 'creative hub', filter: { value: 'database', property: 'object' }, page_size: 100 },
+    });
+    sokta = (r.results ?? [])
+      .map((d) => ({ id: d.id, namn: text(d.title ?? []), url: d.url, kalla: 'sök' }))
+      .filter((d) => HUBBNAMN.test(d.namn) && !MALL.test(d.namn));
+  } catch (e) {
+    sokta = [];
+    if (!harToken()) throw e;
+  }
+
+  const pa = new Map();
+  for (const h of [...hubbarUrProdukter(), ...sokta]) {
+    const nyckel = String(h.id).replace(/-/g, '');
+    if (!pa.has(nyckel)) pa.set(nyckel, h);
+  }
+  return [...pa.values()];
 }
 
 /** Rader ur en hubb. 404 = integrationen är inte inbjuden (••• → Connections). */

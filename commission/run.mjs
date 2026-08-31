@@ -211,6 +211,25 @@ async function main() {
   }
   if (!hubbar.length) do_('Inga creative hubs kunde läsas. Avbryter hellre än rapporterar 0 kr till alla.');
 
+  // NÖDBROMS. 2026-08-31 hittade rutinen 2 hubbar av 6 — de fyra
+  // skalningsprodukternas hubbar är arkiverade i Notion och föll bort ur
+  // sökningen — och rapporterade 0 kr som augustis slutavräkning. En
+  // utbetalning på noll ska aldrig kunna komma ur en ofullständig läsning.
+  const kanda = Notion.hubbarUrProdukter();
+  const lasta = new Set(hubbar.map((h) => String(h.id).replace(/-/g, '')));
+  const saknade = kanda.filter((k) => !lasta.has(String(k.id).replace(/-/g, '')));
+  if (saknade.length) {
+    do_(`Hubbar som products.json känner till saknas i körningen: ${saknade.map((h) => h.namn).join(', ')}.\n`
+      + '  De fyra skalningsprodukternas hubbar är ARKIVERADE i Notion och faller bort ur en vanlig sökning.\n'
+      + '  Avbryter — en ofullständig läsning får aldrig bli en utbetalning.');
+  }
+  const godkanda = hubbar.reduce((n, h) => n + (h.rader ?? [])
+    .filter((r) => /pending approval/i.test(r.typ ?? '') && r.status === 'Approved').length, 0);
+  if (!godkanda) {
+    do_(`Noll godkända annonsrader i ${hubbar.length} hubbar. Det är nästan alltid ett läsfel, inte sanningen.\n`
+      + '  Avbryter hellre än rapporterar 0 kr till alla. Kontrollera Notion-åtkomsten och kör om.');
+  }
+
   // --- Meta
   const { konton, annonser, fel: metaFel } = await hamtaAllSpend({ fran: p.fran, till: p.till });
 

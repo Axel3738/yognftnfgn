@@ -437,6 +437,12 @@ Ansvarig och på okända Notion-användare redovisas separat som obetald.
 
 ⚠️ **Valutor summeras aldrig.** NYC Grill-kontot är i USD, resten i SEK.
 
+⚠️ **De fyra skalningsprodukternas creative hubs är ARKIVERADE i Notion** och
+syns inte i en teamspace-sökning. Hubbarna måste därför alltid unionsläggas med
+`products.json`. `run.mjs` avbryter om en känd hubb saknas eller om noll godkända
+rader lästes. *(Incident 2026-08-31: rutinen hittade 2 hubbar av 6 och
+rapporterade 0 kr som augustis slutavräkning.)*
+
 ### `pipeline/` — bildannonser (Grillkliniken/Mastern, legacy)
 ⚠️ **Trots mappnamnet är det här inte Bäverbutiken.** `brand.mjs` sätter
 `LOGO_WORDMARK = 'GRILLKLINIKEN'` och grillfärger, och `package.json` säger

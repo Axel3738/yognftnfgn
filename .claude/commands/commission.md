@@ -83,6 +83,13 @@ med av sig själva:
 - Sök med `teamspace_id = 3a9270ab-908c-81a8-a48c-004222d195e7` (**teamspacet
   Bäverbutiken**) efter databaser vars titel slutar på `creative hub`.
 - Uteslut `Creative hub MALL`.
+- ⚠️ **Lägg ALLTID till hubbarna ur `products/products.json` ovanpå sökträffarna.**
+  De fyra skalningsprodukternas hubbar är **arkiverade** i Notion och syns inte i
+  en vanlig sökning. 2026-08-31 hittade rutinen därför bara Belt grinder och
+  Kranskydd Frost, läste noll godkända rader och rapporterade **0 kr som augustis
+  slutavräkning** — fyra redigerare hade blivit utan betalt.
+  `commission/run.mjs` avbryter numera om en hubb ur `products.json` saknas, och
+  om körningen hittar noll godkända rader. Gå aldrig runt de spärrarna.
 - Hämta varje hubbs `collection://`-URL med `fetch` på databas-id:t.
 
 Per hubb, en fråga:
