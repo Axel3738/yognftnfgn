@@ -240,7 +240,22 @@
       "mcp__Shopify__list-orders",
       "mcp__Shopify__run-analytics-query",
       "mcp__Shopify__graphql_query",
-      "mcp__Shopify__graphql_schema"
+      "mcp__Shopify__graphql_schema",
+      "ToolSearch",
+      "LS",
+      "EnterPlanMode",
+      "TaskCreate",
+      "TaskUpdate",
+      "TaskList",
+      "TaskGet",
+      "TaskOutput",
+      "TaskStop",
+      "AskUserQuestion",
+      "ReportFindings",
+      "ScheduleWakeup",
+      "SendMessage",
+      "ListAgents",
+      "ReadNotifications"
     ],
     "deny": [
       "Bash(rm -rf *)",
