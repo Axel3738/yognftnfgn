@@ -220,7 +220,8 @@ Merga alltid till `main`, annars är rutinen bara schemalagd, inte igång.
 | 06:00 | `0 4 * * *` | Commission | `/commission` |
 
 `/commission` har daglig cron med flit: **skriptet självt avgör** om dagen är
-kördag (den 1, 4, 7 … 28, plus alltid månadens sista dag) och avslutar tyst annars.
+kördag (den 1, 4, 7 … 28, plus alltid månadens sista dag). Siffrorna räknas ändå
+varje dag — kalendern styr bara om rapporten sparas, aldrig om körningen blir av.
 Cron kan inte uttrycka "var tredje dag plus sista dagen" över månadsskiften.
 Kalenderspärren sitter på flaggan `--rutin` — kör Axel `/commission` för hand
 räknas månaden hittills oavsett datum.
