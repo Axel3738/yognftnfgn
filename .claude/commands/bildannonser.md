@@ -78,6 +78,15 @@ Hubbarna hittas dynamiskt, så nya produkter kommer med av sig själva:
   `creative hub`.
 - Uteslut `Creative hub MALL` — den är mallen nya hubbar klonas från, inte en
   produkt.
+- ⚠️ **Lägg ALLTID till hubbarna ur `products/products.json` ovanpå sökträffarna.**
+  De fyra skalningsprodukternas hubbar (Boat cover, Trimmer belt, Mower seat,
+  Beach crocs) är **arkiverade** i Notion och kommer inte med i en vanlig
+  sökning. Sökningen finns för att nya produkter ska dyka upp av sig själva;
+  `products.json` är golvet som gör att de gamla aldrig faller bort.
+  *(Incident 2026-08-31: commission-rutinen såg 2 hubbar av 6 av precis den här
+  anledningen och rapporterade 0 kr som månadens slutavräkning.)*
+- Hittar körningen färre hubbar än `products.json` känner till: avbryt och skriv
+  vilka som saknas. Kör aldrig vidare på en ofullständig hubblista.
 - Hämta varje hubbs `collection://`-URL med `fetch` på databas-id:t.
 
 **Teamspacet ÄR skyddet mot att blanda verksamheterna.** Grillkliniken,
@@ -265,6 +274,8 @@ aldrig körningen.
 
 ## DEFINITION OF DONE
 
+- [ ] Alla hubbar ur products.json fanns med i körningen (de är arkiverade och
+      syns inte i sökningen)
 - [ ] Alla hubbar i teamspacet Bäverbutiken lästa — skriv antalet, och att
       `Creative hub MALL` uteslöts
 - [ ] Ingen hubb utanför Bäverbutikens teamspace rörd
