@@ -29,6 +29,15 @@ alla 32 annonser ACTIVE, alla länkar → beverbutikken.no. Levererat i chatten 
 8 png) och uppladdat i Drive: MAKE TO NORWAY → "NO Damasker Vandring"/"NO Jättefotboll"
 (24 mp4 + 8 png + 8 adcopy-docs). Kvot 27 715 → 26 939 (~776 credits).
 
+**Rutinkörning 2026-08-31 (04:15):** inga launchbara kandidater. 6 av 7 WINNERS-produkter
+blockerade av dubblettspärren (kampanj finns redan i NO-kontot: Fiskespöhållaren ACTIVE;
+Tofflorna/Motorhöljet/Strandtofflorna/Axelbältet/Sätesöverdraget PAUSED — Axels beslut krävs
+för omstart). Skoreparationslappar har norsk sida (skoreparasjonslapper-…, 279 kr) men
+**saknar Norge-COGS**: raden i batch-sheet #1 har tomma marknadskolumner, SE-kampanjen saknar
+BE-ROAS i namnet — utan verifierad COGS ingen BE-ROAS, ingen launch (regel: hitta aldrig på).
+⚠️ Norska jämförpriset (248,75) är dessutom LÄGRE än priset (279) — ska fixas vid launch.
+0 credits brända. Discord-brief skickad.
+
 **Drive-ramverk 2026-08-30 (Axels beslut):** källa = WINNERS-mappen, mål = `NO <namn>`-dubbletter
 i MAKE TO NORWAY (f.d. huvudmappen), inga mappar flyttas. Inskrivet i `/translate-no` Fas 0 + 3.5.
 Befintliga norska mappar NO-prefixade. Rutinen är ombunden till huvudsessionen (fresh-session-
