@@ -44,7 +44,13 @@
 {%- endcomment -%}
 {%- liquid
   assign vilken = del | default: 'kort'
-  assign stang_veckodag = 0
+  comment
+    Veckodagar då ordrarna går till fabriken. 0 = söndag, 1 = måndag … 6 =
+    lördag. Flera dagar skrivs kommaseparerat, t.ex. '0,3' för söndag och
+    onsdag — klockan, mätaren och datumet följer med av sig själva. Fler
+    omgångar är också enda ärliga sättet att korta ner klockan.
+  endcomment
+  assign stang_veckodagar = '0'
   assign stang_timme = 23
   assign stang_namn = 'söndag 23.00'
 -%}
@@ -67,32 +73,38 @@
 {%- when 'klocka' -%}
   {%- comment -%}
     EN DEADLINE, MED KONSEKVENSEN UTSKRIVEN
-    Klockan räknar till när ordrarna går till fabriken. Missar hon den syr vi
-    kudden först i nästa veckas omgång — en hel vecka extra. Det är inte en
-    hotbild vi hittat på, det är vad som faktiskt händer, och därför står det
-    rakt ut i stället för att antydas.
+    Klockan räknar till nästa gång ordrarna går till fabriken. Första raden
+    säger vad klockan ger henne (kudden går med i den här omgången), andra
+    vad den kostar henne om hon missar den — och den räknar ut ett riktigt
+    datum, för "flera dagar" är en abstraktion medan ett datum går att se
+    framför sig.
+
+    KLOCKAN GÅR INTE ATT KORTA I KODEN
+    Vill man att klockan ska stå på timmar i stället för dagar är enda
+    ärliga vägen fler omgångar i verkligheten — lägg till en veckodag i
+    stang_veckodagar. En kortare klocka utan en kortare omgång bakom sig är
+    en påhittad tidsgräns, och sådana står på svarta listan.
 
     Fyra rutor — dagar, timmar, minuter, sekunder — så sekunderna alltid syns
-    röra sig, oavsett om det är sex dagar eller sex minuter kvar. En siffra i
-    löptext läses som information; rutor med etiketter under, mörk botten och
-    ett blinkande kolon läses som en klocka som går.
+    röra sig. En siffra i löptext läses som information; rutor med etiketter
+    under, mörk botten och ett blinkande kolon läses som en klocka som går.
 
-    Mätaren under visar hur mycket av veckans omgång som är kvar. Den gör
-    veckan konkret: hon ser inte bara en siffra, hon ser fönstret krympa.
-
-    Sluttiden är densamma för alla besökare och nollställs av kalendern, inte
-    av besöket. Den får aldrig byggas om till en timer som startar om vid
-    varje sidladdning — då är deadlinen påhittad, och en påhittad tidsgräns
-    som ska pressa fram ett snabbt köp står på svarta listan i
-    marknadsföringslagen (bilaga I till direktiv 2005/29/EG, punkt 7).
+    Mätaren under visar hur mycket som är kvar av den pågående omgången.
   {%- endcomment -%}
   <ms-omgang class="ms-scope ms-omg"
-    data-veckodag="{{ stang_veckodag }}"
+    data-veckodagar="{{ stang_veckodagar }}"
     data-timme="{{ stang_timme }}">
+
+    {%- comment -%}
+      Testremsan syns bara när adressen har ?testklocka=<sekunder>. Kunder
+      som surfar in normalt ser den aldrig, och den är avsiktligt skrikig så
+      att ingen råkar spela in eller dela en skärmbild från testläget.
+    {%- endcomment -%}
+    <p class="ms-omg__test" data-ms-test hidden></p>
 
     <p class="ms-omg__etikett">
       {% render 'ms-icon', name: 'clock' %}
-      Veckans sömnadsomgång stänger om
+      Nästa sömnadsomgång stänger om
     </p>
 
     <div class="ms-omg__ur">
@@ -105,26 +117,24 @@
       <span class="ms-omg__ruta"><b data-ms-sek>--</b><small>sek</small></span>
     </div>
 
-    <p class="ms-omg__matare-text">Så mycket är kvar av veckans omgång</p>
+    <p class="ms-omg__matare-text">Så mycket är kvar av omgången</p>
     <div class="ms-omg__matare" role="presentation">
       <span class="ms-omg__matare-fyll" data-ms-matare style="width: 100%"></span>
     </div>
 
     {%- comment -%}
-      Två datum, inte ett löfte om "en vecka extra". Ett datum går att se
-      framför sig; "en vecka" gör det inte. Båda räknas fram ur samma
-      deadline: sömnaden startar dagen efter att omgången stängt.
-      Reservtexten är den som syns utan JavaScript.
+      Reservtexten ("nästa omgång") är den som syns utan JavaScript — sann,
+      bara mindre skarp än datumet.
     {%- endcomment -%}
     <div class="ms-omg__varning">
       <p class="ms-omg__rad">
         <span class="ms-omg__pil ms-omg__pil--ja">Beställer du nu</span>
         <span>vi börjar med din kudde <b>så fort klockan går ut</b> —
-          den går med i veckans sömnad</span>
+          den går med i den här omgången</span>
       </p>
       <p class="ms-omg__rad">
         <span class="ms-omg__pil ms-omg__pil--nej">Missar du klockan</span>
-        <span>då syr vi den först <b data-ms-sen>veckan därpå</b> —
+        <span>då syr vi den först <b data-ms-sen>nästa omgång</b> —
           <strong>en hel vecka extra att vänta.</strong></span>
       </p>
     </div>
@@ -137,7 +147,7 @@
     (function () {
       if (window.customElements && customElements.get('ms-omgang')) return;
 
-      const VECKA = 7 * 24 * 3600 * 1000;
+      const DYGN = 24 * 3600 * 1000;
 
       class MsOmgang extends HTMLElement {
         connectedCallback() {
@@ -149,10 +159,51 @@
           this.datumSen = this.querySelector('[data-ms-sen]');
           if (!this.tim) return;
 
-          this.veckodag = parseInt(this.dataset.veckodag, 10) || 0;
+          this.veckodagar = (this.dataset.veckodagar || '0')
+            .split(',')
+            .map((d) => parseInt(d, 10))
+            .filter((d) => d >= 0 && d <= 6);
+          if (!this.veckodagar.length) this.veckodagar = [0];
           this.timme = parseInt(this.dataset.timme, 10) || 23;
+
+          this.las_testlage();
           this.rita();
           this.timer = setInterval(() => this.rita(), 1000);
+        }
+
+        /* ?testklocka=420 lägger deadlinen 420 sekunder fram, så hela
+           förloppet går att se på riktig sida: siffrorna, den gula fasen,
+           den röda, och att klockan rullar vidare när den passerat noll.
+           Utan parametern finns testläget inte — kunder kan aldrig råka
+           hamna i det. */
+        las_testlage() {
+          const remsa = this.querySelector('[data-ms-test]');
+          let sekunder = 0;
+          try {
+            sekunder = parseInt(
+              new URLSearchParams(window.location.search).get('testklocka'), 10);
+          } catch (e) {
+            sekunder = 0;
+          }
+          if (!sekunder || sekunder < 1) return;
+
+          this.testSlut = Date.now() + sekunder * 1000;
+          this.classList.add('ms-omg--test');
+          if (remsa) {
+            remsa.textContent =
+              'Testläge · klockan förkortad till ' + sekunder + ' sekunder';
+            remsa.hidden = false;
+          }
+        }
+
+        /* Sluttiden klockan räknar mot: testtiden om den är satt, annars
+           nästa riktiga omgång. Testtiden rullar vidare ett spann när den
+           passerat noll, precis som en riktig omgång gör. */
+        slutTid(nu) {
+          if (!this.testSlut) return this.stangningEfter(nu);
+          const spann = this.stangningEfter(nu) - this.stangningFore(nu);
+          while (this.testSlut <= nu) this.testSlut += spann;
+          return this.testSlut;
         }
 
         disconnectedCallback() {
@@ -162,18 +213,41 @@
         /* Besökarens klocka kan stå var som helst i världen. Vi flyttar den
            till svensk tid, räknar där, och flyttar tillbaka — annars stänger
            omgången på olika tider i olika länder. */
-        nastaStangning() {
-          const nu = new Date();
+        svenskt(tid) {
+          const nu = new Date(tid);
           const svensk = new Date(nu.toLocaleString('en-US', { timeZone: 'Europe/Stockholm' }));
-          const skillnad = nu.getTime() - svensk.getTime();
+          return { svensk: svensk, skillnad: nu.getTime() - svensk.getTime() };
+        }
 
-          const mal = new Date(svensk);
-          mal.setHours(this.timme, 0, 0, 0);
-          let dagar = (this.veckodag - svensk.getDay() + 7) % 7;
-          if (dagar === 0 && svensk.getTime() >= mal.getTime()) dagar = 7;
-          mal.setDate(mal.getDate() + dagar);
+        /* Första stängningen efter `tid`. Med flera omgångar per vecka är det
+           den närmaste av dem — därför loopen. */
+        stangningEfter(tid) {
+          const t = this.svenskt(tid);
+          let bast = null;
+          for (const veckodag of this.veckodagar) {
+            const mal = new Date(t.svensk);
+            mal.setHours(this.timme, 0, 0, 0);
+            let steg = (veckodag - t.svensk.getDay() + 7) % 7;
+            if (steg === 0 && t.svensk.getTime() >= mal.getTime()) steg = 7;
+            mal.setDate(mal.getDate() + steg);
+            if (bast === null || mal.getTime() < bast) bast = mal.getTime();
+          }
+          return bast + t.skillnad;
+        }
 
-          return new Date(mal.getTime() + skillnad);
+        /* Senaste stängningen före `tid` — mätarens startpunkt. */
+        stangningFore(tid) {
+          const t = this.svenskt(tid);
+          let bast = null;
+          for (const veckodag of this.veckodagar) {
+            const mal = new Date(t.svensk);
+            mal.setHours(this.timme, 0, 0, 0);
+            let steg = (t.svensk.getDay() - veckodag + 7) % 7;
+            if (steg === 0 && t.svensk.getTime() < mal.getTime()) steg = 7;
+            mal.setDate(mal.getDate() - steg);
+            if (bast === null || mal.getTime() > bast) bast = mal.getTime();
+          }
+          return bast + t.skillnad;
         }
 
         datum(ms) {
@@ -184,33 +258,40 @@
         }
 
         rita() {
-          const kvar = this.nastaStangning().getTime() - Date.now();
-          /* nastaStangning() rullar alltid fram när tiden passerats, så kvar
-             är normalt positiv. Skulle den ändå inte bli det, låt förra
-             siffran stå kvar hellre än att visa minustid. */
+          const nu = Date.now();
+          const nasta = this.slutTid(nu);
+          const kvar = nasta - nu;
+          /* stangningEfter() ligger alltid framåt, så kvar är normalt
+             positiv. Skulle den ändå inte bli det, låt förra siffran stå
+             kvar hellre än att visa minustid. */
           if (kvar <= 0) return;
 
           const tva = (n) => String(n).padStart(2, '0');
-          this.dag.textContent = tva(Math.floor(kvar / 86400000));
+          this.dag.textContent = tva(Math.floor(kvar / DYGN));
           this.tim.textContent = tva(Math.floor(kvar / 3600000) % 24);
           this.min.textContent = tva(Math.floor(kvar / 60000) % 60);
           this.sek.textContent = tva(Math.floor(kvar / 1000) % 60);
 
-          /* Mätaren krymper genom veckan, så fönstret syns och inte bara räknas. */
+          /* Mätaren krymper genom omgången, så fönstret syns och inte bara
+             räknas. Spannet är olika långt mellan olika omgångar (onsdag →
+             söndag är fyra dygn, söndag → onsdag tre), därför räknas det ut
+             i stället för att antas. */
           if (this.matare) {
-            this.matare.style.width = Math.max(0, Math.min(100, (kvar / VECKA) * 100)) + '%';
+            const spann = this.stangningEfter(nu) - this.stangningFore(nu);
+            const andel = spann > 0 ? (kvar / spann) * 100 : 100;
+            this.matare.style.width = Math.max(0, Math.min(100, andel)) + '%';
           }
 
-          /* Sömnaden startar dagen efter att omgången stängt. Missar hon
-             den här omgången hamnar hon i nästa — alltså sju dagar senare.
-             Datumet skrivs i svensk tid oavsett var besökaren sitter. */
+          /* Sömnaden startar dagen efter att omgången stängt. Missar hon den
+             här omgången hamnar hon i nästa. Räknas om varje sekund, så
+             datumet rullar vidare av sig självt när en omgång passerat. */
           if (this.datumSen) {
-            this.datumSen.textContent =
-              this.datum(this.nastaStangning().getTime() + 8 * 86400000);
+            const efter = this.stangningEfter(this.stangningEfter(nu) + 1000);
+            this.datumSen.textContent = this.datum(efter + DYGN);
           }
 
           /* Tonen skärps när det faktiskt är bråttom — inte tidigare. */
-          this.classList.toggle('ms-omg--brad', kvar < 24 * 3600000);
+          this.classList.toggle('ms-omg--brad', kvar < DYGN);
           this.classList.toggle('ms-omg--sist', kvar < 3 * 3600000);
         }
       }

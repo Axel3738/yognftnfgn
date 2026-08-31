@@ -305,6 +305,32 @@
   .trygg svg { width: 20px; height: 20px; color: var(--lila); margin-bottom: 3px; }
 
   /* ---- höger kolumn ---- */
+  .test {
+    margin: 16px auto 0;
+    max-width: 380px;
+    padding: 14px 16px;
+    border: 1px dashed var(--linje-stark);
+    border-radius: 14px;
+    background: transparent;
+  }
+  .test-rubrik {
+    margin: 0 0 2px; font-size: 11px; font-weight: 700;
+    letter-spacing: .12em; text-transform: uppercase; color: var(--lila);
+  }
+  .test-text { margin: 0 0 10px; font-size: 13px; color: var(--ink-svagast); }
+  .test-knappar { display: flex; flex-wrap: wrap; gap: 8px; }
+  .test-knappar button {
+    padding: 7px 12px; border-radius: 999px;
+    border: 1px solid var(--linje-stark); background: var(--kort);
+    color: var(--ink); font-family: inherit; font-size: 13px; font-weight: 600;
+    cursor: pointer; transition: border-color .15s ease, background-color .15s ease;
+  }
+  .test-knappar button:hover { border-color: var(--lila); }
+  .test-knappar button[aria-pressed="true"] {
+    background: var(--lila); border-color: var(--lila); color: var(--gradde);
+  }
+  .test-knappar button:focus-visible { outline: 3px solid var(--lila); outline-offset: 2px; }
+
   .noter { display: grid; gap: 14px; align-content: start; }
   .notkort {
     padding: 18px 18px; border: 1px solid var(--linje); border-radius: 16px;
@@ -402,7 +428,7 @@
         <div class="omg" id="omg">
           <p class="omg-etikett">
             <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 1.9"/></svg>
-            Veckans sömnadsomgång stänger om
+            Nästa sömnadsomgång stänger om
           </p>
           <div class="omg-ur">
             <span class="omg-ruta"><b id="uDag">--</b><small>dgr</small></span>
@@ -413,12 +439,12 @@
             <span class="omg-kolon" aria-hidden="true">:</span>
             <span class="omg-ruta"><b id="uSek">--</b><small>sek</small></span>
           </div>
-          <p class="omg-matare-text">Så mycket är kvar av veckans omgång</p>
+          <p class="omg-matare-text">Så mycket är kvar av omgången</p>
           <div class="omg-matare"><span class="omg-matare-fyll" id="uMatare" style="width:100%"></span></div>
           <div class="omg-varning">
             <p class="omg-rad">
               <span class="omg-pil omg-pil--ja">Beställer du nu</span>
-              <span>vi börjar med din kudde <b>så fort klockan går ut</b> — den går med i veckans sömnad</span>
+              <span>vi börjar med din kudde <b>så fort klockan går ut</b> — den går med i den här omgången</span>
             </p>
             <p class="omg-rad">
               <span class="omg-pil omg-pil--nej">Missar du klockan</span>
@@ -447,6 +473,17 @@
             <svg viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/></svg>
             <div>Klarna eller kort</div>
           </div>
+        </div>
+      </div>
+
+      <div class="test">
+        <p class="test-rubrik">Testläge</p>
+        <p class="test-text">Bara här i förhandsvisningen — knapparna finns inte i butiken.</p>
+        <div class="test-knappar">
+          <button type="button" data-test="420">7 minuter</button>
+          <button type="button" data-test="20">20 sekunder</button>
+          <button type="button" data-test="36000">10 timmar (gul fas)</button>
+          <button type="button" data-test="0">Riktig klocka</button>
         </div>
       </div>
     </div>
@@ -505,8 +542,31 @@
       });
     }
 
+    /* Testläget flyttar deadlinen till om X sekunder, så hela förloppet går
+       att se på plats: siffrorna, den bärnstensgula fasen, den röda, och att
+       klockan rullar vidare till nästa omgång när den passerat noll. Finns
+       bara i den här förhandsvisningen. */
+    let testSlut = null;
+    document.querySelectorAll('[data-test]').forEach((knapp) => {
+      knapp.addEventListener('click', () => {
+        const sek = parseInt(knapp.dataset.test, 10);
+        testSlut = sek > 0 ? Date.now() + sek * 1000 : null;
+        document.querySelectorAll('[data-test]').forEach((b) =>
+          b.setAttribute('aria-pressed', String(b === knapp && sek > 0)));
+        rita();
+      });
+    });
+
+    function slut() {
+      /* När testtiden passerat noll rullar den vidare ett helt spann, precis
+         som en riktig omgång gör. */
+      if (testSlut === null) return nastaStangning().getTime();
+      while (testSlut <= Date.now()) testSlut += 7 * 24 * 3600 * 1000;
+      return testSlut;
+    }
+
     function rita() {
-      const kvar = nastaStangning().getTime() - Date.now();
+      const kvar = slut() - Date.now();
       if (kvar <= 0) return;
       document.getElementById('uDag').textContent = tva(Math.floor(kvar / 86400000));
       document.getElementById('uTim').textContent = tva(Math.floor(kvar / 3600000) % 24);
@@ -515,7 +575,7 @@
       document.getElementById('uMatare').style.width =
         Math.max(0, Math.min(100, (kvar / VECKA) * 100)) + '%';
       document.getElementById('uSen').textContent =
-        datum(nastaStangning().getTime() + 8 * 86400000);
+        datum(slut() + 8 * 86400000);
       ruta.classList.toggle('omg--brad', kvar < 24 * 3600000);
       ruta.classList.toggle('omg--sist', kvar < 3 * 3600000);
     }

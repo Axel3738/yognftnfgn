@@ -296,6 +296,21 @@
   .ms-omg__pil { width: auto; align-self: flex-start; }
 }
 
+/* Testremsan. Bara synlig med ?testklocka=<sekunder> i adressen, och
+   avsiktligt skrikig så att ingen råkar dela en skärmbild från testläget. */
+.ms-omg__test {
+  margin: 0 0 1rem;
+  padding: .5rem .9rem;
+  border-radius: 6px;
+  background: #2a1147;
+  color: #fffdf4;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.ms-omg--test { border-style: dashed; }
+
 /* Sista dygnet, och sista tre timmarna. Bärnsten och rött i stället för lila:
    brådskan ska läsas som en annan sorts information än varumärkesfärgen. */
 .ms-omg--brad { border-color: #a1500b; }
