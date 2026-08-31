@@ -89,13 +89,27 @@ rapportens statusdel — **ALDRIG under "väntar på Axel"**. Dubblettspärren m
 annonskontot är skyddet; mapparna är ren städning och får aldrig bli Axels
 uppgift eller framställas som ett problem.
 
-## Steg 5 — Redigerarnotis
+## Steg 5 — Redigerarnotis (Axels lista ska ALDRIG innehålla "säg till redigerarna")
 
 Problem som är redigerarnas (saknade filer, TEST-platshållarrecensioner,
-QA-stoppfel i creatives): ETT sakligt engelskt meddelande via env
-`SLACK_WEBHOOK_URL` om den finns. Slack-connectorn får bara användas efter
-verifiering: sök "bäver" — noll träffar = fel workspace, avstå. Inga
-@-pingar. Infrastrukturproblem går ALDRIG till teamet, bara till Axels rapport.
+QA-stoppfel i creatives): ETT sakligt engelskt meddelande. Gå igenom
+kanalerna i ordning tills en fungerar — sluta aldrig efter första miss:
+
+1. **Slack** via env `SLACK_WEBHOOK_URL` om den finns. Connectorn får bara
+   användas efter verifiering: sök "bäver" — noll träffar = fel workspace,
+   hoppa vidare till nästa kanal.
+2. **Notion-kommentar på produktens sida** i data source
+   `collection://d80270ab-908c-839b-9dcc-8721c5f29570`
+   ("Product test center SE BÄVER"). Sidan har en **Ansvarig** — hen får
+   notisen automatiskt. Detta är den kanal som fungerar utan Slack och
+   ska användas så fort Slack inte går. En rad per fel: exakt vilka filer,
+   exakt vad som är fel, exakt rätt stavning.
+3. **Discord** via `node tools/notify-discord.mjs` som sista utväg.
+
+Finns ingen Notion-sida för produkten: skriv felet i Discord-briefen och
+gå vidare. **"Säg till redigerarna" får ALDRIG stå under "Väntar på Axel"** —
+det är rutinens jobb, inte hans. Inga @-pingar. Infrastrukturproblem går
+ALDRIG till teamet, bara till Axels rapport.
 
 ## Läsning av Drive sker ALLTID via publika länkar
 
