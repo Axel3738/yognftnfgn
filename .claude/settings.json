@@ -1,7 +1,8 @@
 {
-  "comment": "Behorighetslistan for Axels rutiner. Bash-reglerna star i TVA former med flit: Claude Code:s prefixsyntax ar kolon (Bash(node:*)), men listan i repot anvande tidigare mellanslag (Bash(node *)). Bada finns kvar sa att listan matchar oavsett vilken form runtimen tolkar. Ta aldrig bort den ena halvan for att den ser ut som en dubblett.",
+  "comment": "Behorighetslistan for Axels rutiner. Bash-reglerna star i TVA former med flit: Claude Code:s prefixsyntax ar kolon (Bash(node:*)), men listan i repot anvande tidigare mellanslag (Bash(node *)). Bada finns kvar sa att listan matchar oavsett vilken form runtimen tolkar. Ta aldrig bort den ena halvan for att den ser ut som en dubblett. disableAutoMode: auto-lagets klassificerare fragar aven nar verktyget star i allow-listan - den gor en egen bedomning ovanpa listan. En schemalagd rutin har ingen som kan svara pa en sadan fraga, sa laget stangs av har och defaultMode 'dontAsk' ovan far faktiskt galla. (Axels beslut 2026-08-31.)",
   "permissions": {
     "defaultMode": "dontAsk",
+    "disableAutoMode": "disable",
     "allow": [
       "Read",
       "Write",
@@ -221,6 +222,7 @@
       "mcp__Notion__notion-get-async-task",
       "mcp__Notion__notion-update-view",
       "mcp__Notion__notion-list-recent-pages",
+      "mcp__Notion__notion-download-attachment",
       "mcp__Google_Drive__search_files",
       "mcp__Google_Drive__get_file_metadata",
       "mcp__Google_Drive__list_recent_files",
