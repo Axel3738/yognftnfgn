@@ -202,7 +202,10 @@ uppifrån — resten av listan rapporteras och ligger kvar till imorgon.
 (Två per morgon räcker för att hinna alla produkter i en 3-dagarscykel så
 länge produkterna är ≤6 — blir de fler: säg till Axel att cykeln inte går ihop.)
 
-- Behov `forsta_batch` → följ `.claude/commands/forsta-batch.md` i sin helhet
+- Behov `forsta_batch` → produkten har passerat 1 500 kr OCH ligger på minst
+  **20 % vinst**. Under det flaggas ingenting: produkten chillar och prövas om
+  nästa dygn. Bygg ALDRIG en batch för en produkt som inte står i listan.
+  Följ `.claude/commands/forsta-batch.md` i sin helhet
   (analys → briefer → Drive → Notion). Strategin görs FÖRST, sedan läggs
   annonserna i produktens Notion-hub — det är där Jasper och redigerarna ser
   dem, via det vanliga veckoflödet. **Rutinen skriver briefer — den gör aldrig

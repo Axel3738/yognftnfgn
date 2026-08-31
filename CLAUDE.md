@@ -524,6 +524,12 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   enda äkta tiderna är sidans `createdTime` och kommentarernas `datetime`.
 - **Alla ledtider räknas i arbetstid, inte kalendertid.** En task som lämnas ut
   fredag 16:45 och levereras måndag 09:15 tog 1h 30m — inte 64 timmar.
+- **En testprodukt går vidare till creative-batch först vid 20 % vinst.**
+  Vinst mäts i procent av omsättningen (`vinstProcent` i `agent/besked.mjs`),
+  inte som ROAS-marginal. Under 20 %: produkten chillar och prövas om nästa
+  dygn. "Över break-even" räcker INTE — det gjorde att Plyschtofflorna på
+  2,4 % fick 12 briefer byggda samma morgon som ronden kallade marginalen
+  tunn. Okänd vinst är aldrig godkänd. Axels besked 2026-08-31.
 - **Trösklarna är absoluta, inte relativa.** Den sämsta i gruppen ska inte bli röd
   bara för att den är sämst — då är alltid någon röd och panelen blir ett
   mobbningsverktyg i stället för ett styrverktyg.

@@ -94,10 +94,14 @@ dem oförändrade — inte att bedöma dem.
 Ronden flaggar produkter som behöver nya annonser och startar högst EN batch
 per dygn (`/rond-auto` steg 4b):
 
-- **Klarat testet — 1 500 kr total spend OCH över break-even — utan en
+- **Klarat testet — 1 500 kr total spend OCH minst 20 % vinst — utan en
   riktig batch** → första batchen (`/forsta-batch`). Det är övergången
   test → skalning; en förlorare vid tröskeln går åtgärdstrappan i stället.
-  Axels regel 2026-08-29.
+  **Under 20 % vinst chillar produkten** och prövas om nästa dygn — ingen
+  batch byggs. Okänd vinst räknas aldrig som godkänd. Axels besked 2026-08-31.
+  *(Kravet hette bara "över break-even" fram till dess. Det var för trubbigt:
+  Plyschtofflorna låg 2,4 % över och fick 12 briefer byggda samma morgon som
+  ronden själv skrev "tunn marginal, se över priset".)*
 - **Material pausat av trappan/avstängning senaste veckan** → ersätt (`/cs`).
 - **2+ höjningar på en vecka** → mata vinnaren (`/cs`).
 

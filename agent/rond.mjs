@@ -294,7 +294,7 @@ export function planera(rader, { logg = [], idag = null } = {}) {
  * Axels regel 2026-08-29: "rutinen ska leta efter produkter som inte har fått
  * sin tre dagars brief" — var tredje dag får varje produkt med en batch en ny
  * brief-runda (/cs). Produkter utan batch fångas av forsta_batch-regeln.
- * - forsta_batch: passerat 1 500 kr OCH på/över break-even, ingen batch ännu.
+ * - forsta_batch: passerat 1 500 kr OCH minst 20 % vinst, ingen batch ännu.
  * - brief_runda: har en batch och senaste *_KLAR-raden är ≥3 dagar gammal.
  *   Fokus (ersätt pausat / mata vinnaren) bakas in i orsaken.
  * - ersatt/mata_vinnare: kvarvarande signaler för produkter utan batch.
@@ -347,18 +347,23 @@ export function annonsbehov(rader, { logg = [], idag = null } = {}) {
       continue;
     }
 
-    // Axels regel 2026-08-29 (förtydligad): CS-processen startar när produkten
-    // KLARAR testet — passerat 1 500 kr OCH ligger på/över break-even. Då går
-    // den test -> skalning och ska pumpas med nya annonser. En produkt som
-    // passerat tröskeln MED förlust hanteras av åtgärdstrappan, inte av en batch.
-    const overBreakEven = r.dom?.vinstProcent === null || r.dom?.vinstProcent === undefined
-      ? null
-      : r.dom.vinstProcent >= 0;
+    // Axels regel 2026-08-31: CS-processen startar först när produkten klarar
+    // testet ORDENTLIGT — passerat 1 500 kr OCH minst 20 % vinst av
+    // omsättningen. Under 20 % får den chilla och prövas om nästa dag.
+    //
+    // Regeln hette tidigare bara "på/över break-even". Det var för trubbigt:
+    // Plyschtofflorna låg 2,4 % över break-even och fick samma dom som en
+    // produkt på 35 %, så en full batch på 12 briefer byggdes för en produkt
+    // ronden samma morgon kallade "tunn marginal, se över priset".
+    // Okänd vinst passerade också, eftersom villkoret bara var "vet inte att
+    // den går back". Nu krävs ett tal, och talet ska hålla.
+    const vinst = r.dom?.vinstProcent;
     if (Number.isFinite(r.spendTotal) && r.spendTotal >= FORSTA_BATCH_SPEND_SEK
-        && overBreakEven !== false) {
+        && Number.isFinite(vinst) && vinst >= FORSTA_BATCH_VINST_PROCENT) {
       behov.push({
         kampanj_id: r.id, namn: r.namn, typ: 'forsta_batch',
-        orsak: `har klarat testet (${Math.round(r.spendTotal).toLocaleString('sv-SE')} kr spenderat, över break-even) utan en riktig batch — dags för /forsta-batch`,
+        vinstProcent: vinst,
+        orsak: `har klarat testet (${Math.round(r.spendTotal).toLocaleString('sv-SE')} kr spenderat, ${vinst.toFixed(1).replace('.', ',')} % vinst) utan en riktig batch — dags för /forsta-batch`,
       });
       continue;
     }
@@ -400,6 +405,14 @@ function b_spend(rader, behovsrad) {
 // produkt passerat den OCH ligger över break-even går den test -> skalning,
 // och då startar creative-strategy-processen.
 export const FORSTA_BATCH_SPEND_SEK = 1500;
+
+/**
+ * Vinstkravet för att en testprodukt ska gå vidare till en riktig creative-batch.
+ * Axels besked 2026-08-31: "över 20 % i vinst så fortsätter vi med produkten,
+ * annars låter vi den bara chilla". Mäts som vinst i procent av omsättningen
+ * (`vinstProcent` i besked.mjs), inte som ROAS-marginal.
+ */
+export const FORSTA_BATCH_VINST_PROCENT = 20;
 
 /**
  * Launchstrukturen — Axels tabell ur Bäverpanelen: hur många nya annonser en

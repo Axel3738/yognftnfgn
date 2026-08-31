@@ -323,7 +323,7 @@ test('annons-triggern glömmer det som är äldre än en vecka', () => {
 });
 
 
-test('klarat testet (1 500 kr + över break-even) utan batch flaggar första batchen', () => {
+test('klarat testet (1 500 kr + minst 20 % vinst) utan batch flaggar första batchen', () => {
   const rader = [
     { id: 'stor', namn: 'Fiskespöhållaren | BE ROAS 1.50', spendTotal: 52000, dom: { vinstProcent: 21 } },
     { id: 'liten', namn: 'Ny | BE ROAS 1.50', spendTotal: 1200, dom: { vinstProcent: 30 } },
@@ -336,6 +336,26 @@ test('klarat testet (1 500 kr + över break-even) utan batch flaggar första bat
   assert.equal(behov.length, 1);
   assert.equal(behov[0].kampanj_id, 'stor');
   assert.equal(behov[0].typ, 'forsta_batch');
+});
+
+test('tunn vinst i testfasen får chilla — ingen batch under 20 %', () => {
+  // Plyschtofflorna-fallet 2026-08-31: 2 859 kr spenderat, ROAS 1,545 mot
+  // break-even 1,49 = 2,4 % vinst. Gamla regeln ("över break-even") byggde 12
+  // briefer för den. Axels besked: under 20 % chillar produkten.
+  const tunn = [{ id: 'p', namn: 'Plyschtofflorna | BE ROAS 1.49', spendTotal: 2859, dom: { vinstProcent: 2.4 } }];
+  assert.equal(annonsbehov(tunn, { logg: [], idag: '2026-08-31' }).length, 0);
+
+  // Precis på gränsen räknas som godkänd.
+  const grans = [{ id: 'g', namn: 'Gräns | BE ROAS 1.49', spendTotal: 2859, dom: { vinstProcent: 20 } }];
+  const behov = annonsbehov(grans, { logg: [], idag: '2026-08-31' });
+  assert.equal(behov.length, 1);
+  assert.equal(behov[0].typ, 'forsta_batch');
+  assert.match(behov[0].orsak, /20,0 % vinst/);
+
+  // Okänd vinst är inte godkänd. Förr passerade den, för villkoret var bara
+  // "vet inte att den går back".
+  const okand = [{ id: 'o', namn: 'Okänd | BE ROAS 1.49', spendTotal: 9000, dom: { vinstProcent: null } }];
+  assert.equal(annonsbehov(okand, { logg: [], idag: '2026-08-31' }).length, 0);
 });
 
 test('3-dagarsrundan: tyst i tre dagar, sen brief_runda med fokus', () => {
@@ -381,8 +401,8 @@ test('första batch-behoven sorteras först, sen rundor med äldst batch först'
   const rader = [
     { id: 'v', namn: 'Vinnare | BE', spendTotal: 99000, budget: 4000, dom: { vinstProcent: 25 } },
     { id: 'g', namn: 'Gammal | BE', spendTotal: 20000, budget: 1000, dom: { vinstProcent: 20 } },
-    { id: 'a', namn: 'A | BE', spendTotal: 4000, dom: { vinstProcent: 10 } },
-    { id: 'b', namn: 'B | BE', spendTotal: 8000, dom: { vinstProcent: 12 } },
+    { id: 'a', namn: 'A | BE', spendTotal: 4000, dom: { vinstProcent: 22 } },
+    { id: 'b', namn: 'B | BE', spendTotal: 8000, dom: { vinstProcent: 24 } },
   ];
   const logg = [
     { kampanj_id: 'v', kod: 'FORSTA_BATCH_KLAR', genomford: true, datum: '2026-08-24' },
