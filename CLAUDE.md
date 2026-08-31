@@ -333,7 +333,15 @@ node agent/rond.mjs --json   # samma sak som maskindata
 `besked.mjs` = all matematik · `logg.mjs` + `budgetlogg.jsonl` = minnet
 (dagar sedan ändring, back-dagar i rad) · `produktkarta.json` = test eller drift
 per kampanj. Spärrar och öppna frågor står i `agent/README.md`.
-⚠ Ronden vägrar köra mot annat konto än MagiBorsten `1867947880635861`.
+⚠ Ronden kör **två marknader**, ett konto i taget:
+`1867947880635861` MagiBorsten (SE) och `1050941584152547` Magiborsten NO.
+Data per marknad i `agent/kontodata.json` respektive `agent/kontodata-no.json`;
+kör motorn med `--data`. Kontospärren släpper bara igenom de två.
+⚠️ Kontot `1418612340124566` heter också **"Norge"** men tillhör
+**Matstrumpor.se** — en annan verksamhet. Rör det aldrig.
+⚠️ Norska kampanjnamn skriver break-even som `| BE-ROAS 1,63 |` med
+bindestreck och komma, svenska som `| BE ROAS 1.49 |`. Parsern läser båda
+sedan 2026-08-31 — läste den bara det svenska blev hela Norge odömbart.
 
 ### `bot/` — Bävern, Discord-boten (körs på Railway)
 Realtidsbot som svarar Axel direkt i Discord med Opus. **Läsande — den ändrar

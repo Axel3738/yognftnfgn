@@ -421,3 +421,24 @@ test('launchstrukturen: budget styr veckokvoten precis som Axels tabell', () => 
   assert.deepEqual(annonskvot(4000), { antal: 4, nyaKoncept: 1 });
   assert.deepEqual(annonskvot(null), { antal: 0, nyaKoncept: 0 });
 });
+
+test('ronden kör mot både SE- och NO-kontot, aldrig mot en annan verksamhet', () => {
+  const bas = { kampanjer: [{ id: '1' }], hamtad: '2026-08-31T05:00:00Z' };
+  const ok = (id, namn) => kontrolleraKonto({ ...bas, ad_account_id: id, ad_account_namn: namn });
+
+  assert.deepEqual(ok('1867947880635861', 'MagiBorsten'), [], 'Sverige');
+  assert.deepEqual(ok('1050941584152547', 'Magiborsten NO'), [], 'Norge');
+  assert.deepEqual(ok('act_1050941584152547', 'Magiborsten NO'), [], 'act_-prefix');
+
+  // Grillkliniken och Matstrumpor är andra verksamheter. Fel konto kostar
+  // riktiga pengar och syns inte som ett felmeddelande, bara som konstig data.
+  assert.ok(ok('1346450049878358', 'SnarkLös').length > 0, 'SnarkLös måste stoppas');
+  assert.ok(ok('1418612340124566', 'Norge').length > 0, 'Matstrumpors Norge-konto måste stoppas');
+  assert.ok(ok('915422744950975', 'Magiborsten DK').length > 0, 'DK är inte upplagt än');
+});
+
+test('rätt id med fel kontonamn stoppas — två lås, inte ett', () => {
+  const bas = { kampanjer: [{ id: '1' }], hamtad: '2026-08-31T05:00:00Z' };
+  const fel = kontrolleraKonto({ ...bas, ad_account_id: '1050941584152547', ad_account_namn: 'MagiBorsten' });
+  assert.ok(fel.length > 0, 'SE-namn på NO-id ska inte släppas igenom');
+});

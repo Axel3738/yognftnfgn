@@ -78,11 +78,22 @@ verifiera varje skrivning, logga, uppdatera dashboarden.
 - Finns inte Meta-verktygen (`mcp__ADsmanagaer__*`): **avbryt allt**, säg det
   rakt ut och gör ingenting annat. Ingen rapport på ingenting.
 
-## 1. Hämta läget ur Meta
+## 1. Hämta läget ur Meta — TVÅ marknader
 
-Tre anrop till `mcp__ADsmanagaer__ads_get_ad_entities`, alla med
-`ad_account_id: "1867947880635861"` och filtrering på
-`campaign.effective_status IN ["ACTIVE"]`:
+Ronden kör **Sverige och Norge**, ett konto i taget. Norge är samma
+verksamhet (business MagiBorsten), eget annonskonto, SEK.
+
+| Marknad | Konto | Datafil |
+|---|---|---|
+| SE | `1867947880635861` MagiBorsten | `agent/kontodata.json` |
+| NO | `1050941584152547` Magiborsten NO | `agent/kontodata-no.json` |
+
+⚠️ Blanda dem ALDRIG. Kontot `1418612340124566` heter också "Norge" men
+tillhör Matstrumpor.se — en annan verksamhet. Rör det aldrig. Kontospärren i
+`agent/rond.mjs` stoppar båda felen, men den ska inte behöva.
+
+Gör de tre anropen nedan **en gång per konto**, med `ad_account_id` satt till
+marknadens konto och filtrering på `campaign.effective_status IN ["ACTIVE"]`:
 
 1. `date_preset: "last_3d"` — `fields: ["id","name","effective_status","daily_budget","amount_spent","purchase_roas","omni_purchase","created_time"]`
 2. `date_preset: "maximum"` — samma fält (ger `spend_total`)
@@ -91,6 +102,10 @@ Tre anrop till `mcp__ADsmanagaer__ads_get_ad_entities`, alla med
 Fältnamnen är exakta. Använd **aldrig** `omni_purchase_values` (buggig, se
 CLAUDE.md). Skriv siffrorna **ordagrant** till `agent/kontodata.json` i samma
 format som `/rond` beskriver. Saknas ett värde: `null`, aldrig 0, aldrig gissat.
+
+Skriv SE till `agent/kontodata.json` och NO till `agent/kontodata-no.json`.
+Sätt `ad_account_id` och `ad_account_namn` i varje fil till det konto datan
+faktiskt kommer från — kontrollen läser dem och avbryter vid minsta glapp.
 
 Aktiv kampanj som saknas i `agent/produktkarta.json`: lägg till den som
 `"lage": "test"` med motivering. Gissa aldrig break-even — utan tal i
@@ -103,7 +118,19 @@ kopian bort skriver nästa körnings minnessynk över din ändring med den gamla
 versionen (hände 2026-08-30: 11 nya kampanjer försvann och fick läggas in
 igen för hand).
 
-## 2. Räkna
+## 2. Räkna — en gång per marknad
+
+```bash
+node agent/rond.mjs --json                                 # Sverige
+node agent/rond.mjs --data agent/kontodata-no.json --json  # Norge
+```
+
+Behandla marknaderna som två separata ronder: egen plan, egna spärrar, egen
+kontospärr. Norska break-even står i kampanjnamnet med bindestreck och komma
+(`| BE-ROAS 1,63 |`) — parsern läser båda skrivsätten sedan 2026-08-31.
+
+Är den ena marknadens plan spärrad påverkar det inte den andra. Rapportera
+dem var för sig i svaret, med rubrik per marknad.
 
 ```bash
 node agent/rond.mjs --json > /tmp/rond-utfall.json

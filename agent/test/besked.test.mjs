@@ -342,3 +342,27 @@ test('en testprodukt under 1 500 kr totalspend larmas aldrig — MC-Kapellet-reg
   // Drift larmar oavsett totalspend.
   assert.equal(besked(rad({ lage: 'drift', spend3d: 1053, kop3d: 2, spendTotal: null })).kod, 'STOR_SPEND_UTAN_KOP');
 });
+
+test('break-even läses ur BÅDA skrivsätten — Sverige och Norge', () => {
+  // Norge skriver "BE-ROAS 1,63" med bindestreck och komma, Sverige
+  // "BE ROAS 1.49". Läser parsern bara det svenska får varje norsk kampanj
+  // "saknas i kampanjnamnet" och en hel marknad blir odömbar.
+  // Namnen nedan är avlästa ur kontot 1050941584152547 2026-08-31.
+  const fall = [
+    ['Motorhöljet | BE ROAS 1.49 | Launch 2026-08-27', 1.49],
+    ['Kranbeskyttelse Frost NO | BE-ROAS 1,63 | 2026-08-29', 1.63],
+    ['Kjempefotball NO | BE-ROAS 1,65 | 2026-08-30', 1.65],
+    ['Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20', 1.36],
+    ['Overvåkingskamera NO | BE-ROAS 1,40 | 2026-08-29', 1.40],
+  ];
+  for (const [namn, väntat] of fall) {
+    const { be, kalla } = lasBreakEven(namn);
+    assert.equal(be, väntat, namn);
+    assert.equal(kalla, 'kampanjnamnet');
+  }
+});
+
+test('TBC gäller även med bindestreck', () => {
+  assert.equal(lasBreakEven('Ny produkt NO | BE-ROAS TBC | 2026-08-31').be, null);
+  assert.equal(lasBreakEven('Ny produkt | BE ROAS TBC | 2026-08-31').be, null);
+});

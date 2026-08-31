@@ -47,17 +47,23 @@ export const ZON_SKALA_OVER = 25;
 export const NARA_GRANS_PP = 3;
 
 /**
- * Plockar break-even-ROAS ur kampanjnamnet. Axels namnkonvention är
- * "Produkten | BE ROAS 1.49 | Launch 2026-08-27". "TBC" betyder att talet
- * inte är satt ännu — då får ingen dom fällas.
+ * Plockar break-even-ROAS ur kampanjnamnet.
+ *
+ * Två skrivsätt finns i skarp drift och båda måste läsas:
+ *   SE: "Produkten | BE ROAS 1.49 | Launch 2026-08-27"   (mellanslag, punkt)
+ *   NO: "Kranbeskyttelse Frost NO | BE-ROAS 1,63 | ..."  (bindestreck, komma)
+ * Läser parsern bara det svenska får varje norsk kampanj "saknas i
+ * kampanjnamnet" och ronden vägrar döma en hel marknad.
+ *
+ * "TBC" betyder att talet inte är satt ännu — då får ingen dom fällas.
  * @returns {{be: number|null, kalla: string}}
  */
 export function lasBreakEven(kampanjnamn) {
   const namn = String(kampanjnamn || '');
-  if (/BE\s*ROAS\s*TBC/i.test(namn)) {
+  if (/BE[\s-]*ROAS[\s-]*TBC/i.test(namn)) {
     return { be: null, kalla: 'kampanjnamnet säger TBC' };
   }
-  const träff = namn.match(/BE\s*ROAS\s*([0-9]+[.,][0-9]+|[0-9]+)/i);
+  const träff = namn.match(/BE[\s-]*ROAS[\s-]*([0-9]+[.,][0-9]+|[0-9]+)/i);
   if (!träff) return { be: null, kalla: 'saknas i kampanjnamnet' };
   const be = Number(träff[1].replace(',', '.'));
   // Kontots verkliga break-even ligger 1,3-2,0. Under 1 är matematiskt omöjligt,

@@ -14,8 +14,16 @@ import { backDagarIRad, dagarSedanAndring, lasLogg, raknaTrasigaRader, senasteRa
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
 
-// Bäverbutiken. Enda kontot den här ronden får röra. Grillkliniken (SnarkLös
-// 1346450049878358) är en annan verksamhet — se CLAUDE.md.
+// Bäverbutikens konton — de enda ronden får röra, ett per marknad. Alla ligger
+// under business MagiBorsten. Grillkliniken (SnarkLös 1346450049878358) och
+// Matstrumpor.se är ANDRA verksamheter och får aldrig in på listan, hur likt
+// ett kontonamn än ser ut. Se CLAUDE.md.
+export const TILLATNA_KONTON = {
+  '1867947880635861': { namn: 'MagiBorsten', marknad: 'SE' },
+  '1050941584152547': { namn: 'Magiborsten NO', marknad: 'NO' },
+};
+
+// Kvar för bakåtkompatibilitet: koden och testerna som bara känner till Sverige.
 export const TILLATET_KONTO = '1867947880635861';
 export const TILLATET_KONTONAMN = 'MagiBorsten';
 
@@ -35,12 +43,20 @@ export const MAX_DATAALDER_TIMMAR = 20;
 export function kontrolleraKonto(data) {
   const fel = [];
   const konto = String(data?.ad_account_id ?? '').replace(/^act_/, '');
-  if (konto !== TILLATET_KONTO) {
-    fel.push(`Fel annonskonto: "${data?.ad_account_id}". Ronden kör bara mot ${TILLATET_KONTONAMN} ${TILLATET_KONTO}.`);
+  const tillaten = TILLATNA_KONTON[konto];
+  if (!tillaten) {
+    const lista = Object.entries(TILLATNA_KONTON)
+      .map(([id, k]) => `${k.namn} ${id} (${k.marknad})`).join(', ');
+    fel.push(`Fel annonskonto: "${data?.ad_account_id}". Ronden kör bara mot ${lista}.`);
   }
   const namn = String(data?.ad_account_namn ?? '');
-  if (namn && !namn.toLowerCase().includes(TILLATET_KONTONAMN.toLowerCase())) {
-    fel.push(`Kontonamnet är "${namn}", förväntat ${TILLATET_KONTONAMN}. Avbryter hellre än gissar.`);
+  // Namnkollen är andra låset: ett id kan vara rätt i filen och fel i verkligheten.
+  // Alla Bäverkonton heter något med "magiborsten" — SnarkLös gör det inte.
+  if (namn && !namn.toLowerCase().includes('magiborsten')) {
+    fel.push(`Kontonamnet är "${namn}", förväntat ett MagiBorsten-konto. Avbryter hellre än gissar.`);
+  }
+  if (tillaten && namn && !namn.toLowerCase().includes(tillaten.namn.toLowerCase())) {
+    fel.push(`Kontonamnet "${namn}" matchar inte id ${konto} (${tillaten.namn}). Avbryter hellre än gissar.`);
   }
   if (!Array.isArray(data?.kampanjer) || data.kampanjer.length === 0) {
     fel.push('Noll kampanjer i datan. Hellre stopp än en rapport byggd på ingenting.');
