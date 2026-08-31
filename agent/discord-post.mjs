@@ -7,9 +7,15 @@
 //   echo "text" | node agent/discord-post.mjs "Rubrik"
 //
 // Kanalnamnen översätts via alias-listan i agent/discord.json. Posten görs SOM
-// BOTEN och kräver env DISCORD_BOT_TOKEN — repot är publikt, så inga hemligheter
-// får ligga i en fil här. Skriptet kraschar aldrig en rutin: fel skrivs till
-// stderr och ger exit 1, men rutinen ska fortsätta ändå.
+// BOTEN. Repot är publikt, så token får ALDRIG ligga i en fil här. Två vägar
+// in, och skriptet klarar båda:
+//   1. env DISCORD_BOT_TOKEN (Railway, och lokalt).
+//   2. En API-credential på molnmiljön: agentproxyn sätter Authorization-huvudet
+//      åt oss efter att anropet lämnat sessionen, så nyckeln aldrig syns för
+//      Claude eller i miljövariablerna. Då finns ingen token här, och vi ska
+//      INTE sätta huvudet själva — proxyn gör det.
+// Skriptet kraschar aldrig en rutin: fel skrivs till stderr och ger exit 1,
+// men rutinen ska fortsätta ändå.
 
 import { readFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
@@ -61,18 +67,35 @@ export async function lasKonfig(fil = KONFIGFIL) {
 }
 
 /**
+ * Authorization-huvudet för Discord.
+ *
+ * Utan token skickar vi INGET huvud alls. Det är med flit: kör vi i en
+ * molnmiljö med en API-credential för discord.com sätter agentproxyn huvudet
+ * åt oss, och ett tomt eget huvud hade skrivit över det. Är varken token eller
+ * credential på plats svarar Discord 401, och felet nedan säger vad som fattas.
+ */
+export function botHuvuden(token = process.env.DISCORD_BOT_TOKEN) {
+  return token ? { Authorization: `Bot ${token}` } : {};
+}
+
+export const SAKNAS_HJALP =
+  'Discord nekade anropet (401). Token saknas eller är fel. Sätt den antingen '
+  + 'som API-credential på molnmiljön (hosts: discord.com, huvud Authorization '
+  + 'utan prefix, värde "Bot <token>") eller som env DISCORD_BOT_TOKEN. '
+  + 'Repot är publikt — den får aldrig ligga i en fil här.';
+
+/**
  * Slår upp en kanal på NAMN med bot-token. Det här är den väg vi vill gå:
  * då kan boten skapa nya kanaler själv utan att någon behöver klistra in en
  * webhook-URL, och varje rutin kan posta i sin egen kanal med bara ett namn.
- * Kräver env DISCORD_BOT_TOKEN. Returnerar null om token saknas.
  */
 export async function slaUppKanal(namn, token = process.env.DISCORD_BOT_TOKEN) {
-  if (!token) return null;
-  const huvuden = { Authorization: `Bot ${token}` };
+  const huvuden = botHuvuden(token);
   const sökt = String(namn).toLowerCase().replace(/^#/, '');
 
   const servrar = await fetch('https://discord.com/api/v10/users/@me/guilds', { headers: huvuden });
-  if (!servrar.ok) throw new Error(`Kunde inte lista servrar (${servrar.status}) — är DISCORD_BOT_TOKEN rätt?`);
+  if (servrar.status === 401) throw new Error(SAKNAS_HJALP);
+  if (!servrar.ok) throw new Error(`Kunde inte lista servrar (${servrar.status}).`);
 
   for (const server of await servrar.json()) {
     const svar = await fetch(`https://discord.com/api/v10/guilds/${server.id}/channels`, { headers: huvuden });
@@ -100,6 +123,7 @@ async function posta(url, kropp, extraHuvuden = {}) {
       await new Promise((r) => setTimeout(r, vänta * 1000));
       continue;
     }
+    if (svar.status === 401) throw new Error(SAKNAS_HJALP);
     if (!svar.ok) {
       throw new Error(`Discord svarade ${svar.status}: ${(await svar.text()).slice(0, 200)}`);
     }
@@ -114,12 +138,6 @@ async function posta(url, kropp, extraHuvuden = {}) {
  */
 export async function skicka({ rubrik = '', text = '', kanal = 'chatt', konfig = null } = {}) {
   const token = process.env.DISCORD_BOT_TOKEN;
-  if (!token) {
-    throw new Error(
-      'DISCORD_BOT_TOKEN saknas. Repot är publikt, så token får ALDRIG ligga i en fil här — '
-      + 'sätt den som env-variabel i Routine-miljön (schemalagda körningar) eller i Railway (boten).',
-    );
-  }
 
   const { alias } = konfig || (await lasKonfig());
   // Kommandofilerna säger "ronden" / "uppgifter" / "larm" — alias översätter
@@ -136,7 +154,7 @@ export async function skicka({ rubrik = '', text = '', kanal = 'chatt', konfig =
   }
 
   const url = `https://discord.com/api/v10/channels/${id}/messages`;
-  const huvuden = { Authorization: `Bot ${token}` };
+  const huvuden = botHuvuden(token);
 
   const bitar = dela(text);
   const antal = Math.max(1, bitar.length);

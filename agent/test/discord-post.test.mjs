@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { dela, MAX_TECKEN } from '../discord-post.mjs';
+import { botHuvuden, dela, MAX_TECKEN } from '../discord-post.mjs';
 
 test('kort text delas inte alls', () => {
   assert.deepEqual(dela('hej'), ['hej']);
@@ -40,4 +40,16 @@ test('kodblock stängs och återöppnas över en delning', () => {
     const antal = (b.match(/```/g) || []).length;
     assert.equal(antal % 2, 0, `bit med ${antal} kodblocksmarkörer lämnar blocket öppet`);
   }
+});
+
+test('med token sätter vi Authorization själva', () => {
+  assert.deepEqual(botHuvuden('abc123'), { Authorization: 'Bot abc123' });
+});
+
+test('utan token skickas INGET Authorization-huvud', () => {
+  // Med en API-credential på molnmiljön sätter agentproxyn huvudet åt oss efter
+  // att anropet lämnat sessionen. Ett tomt eget huvud hade skrivit över det, och
+  // då hade token behövt ligga som synlig miljövariabel i stället.
+  assert.deepEqual(botHuvuden(undefined), {});
+  assert.deepEqual(botHuvuden(''), {});
 });
