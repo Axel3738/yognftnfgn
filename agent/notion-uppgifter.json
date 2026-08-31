@@ -3,7 +3,7 @@
 
   "VARNING_LAS_DETTA_FORST": "Hittar du inget i en databas betyder det INTE att det inte finns arbete. Det betyder att du letat pa ett stalle. Sag alltid VILKA kallor du kollat, och foresla den du inte kollat. Pasta aldrig att nagot inte finns.",
 
-  "uppdaterad": "2026-08-30",
+  "uppdaterad": "2026-08-31",
   "kalla": "Notion MCP, direktfragor mot bada databasernas data sources",
   "VARNING_FARSKHET": "Ogonblicksbild. Notion andras hela tiden. Ar uppdaterad mer an nagra dagar gammalt: sag det och hamta om.",
 
@@ -32,24 +32,33 @@
       "Linupprullare Aluminium", "Motorcycle cover", "Plyschtofflor Herr",
       "Smiley face trash can stickers", "Vandringskängor Herr",
       "Övervakningskamera Trådlös"
-    ]
+    ],
+    "andrat_sedan_igar": "Inga förändringar — samma 18 i Testing, samma 2 i Ads review som 2026-08-30."
   },
 
   "databas_2_creative_hubs": {
     "vad_de_ar": "En hub per produkt som gatt vidare fran testcentret. Har ligger de enskilda annonserna som briefer.",
-    "sa_lases_de": "Bara Typ 'Video - Pending Approval' eller 'Image - Pending Approval' ar annonser. Guideline, SOP, Feedback och Winning Creative ar dokumentation. Filtrera pa INKLUDERING, aldrig uteslutning. Draft = briefen finns, ingen har borjat.",
+    "sa_lases_de": "Bara Typ 'Video - Pending Approval' eller 'Image - Pending Approval' ar annonser. Guideline, SOP, Feedback och Winning Creative ar dokumentation. Filtrera pa INKLUDERING, aldrig uteslutning. 'drafts' nedan = antal rader med Status exakt 'Draft' (briefen finns, ingen har börjat) — rader i 'To be Reviewed' räknas inte som drafts, de är redan under arbete.",
     "levande": [
       {
         "namn": "Belt grinder creative hub",
         "produkt": "Balteslipmaskinen",
         "collection": "collection://a1d270ab-908c-82e2-b3be-07b523257509",
-        "drafts": 6
+        "drafts": 4,
+        "drafts_video": 3,
+        "drafts_bild": 1,
+        "under_granskning": 2,
+        "not": "2 bildannonser (Beltgrinder_PD_4_1, Beltgrinder_SO_4_1) har gått vidare till 'To be Reviewed' sedan 2026-08-30."
       },
       {
         "namn": "Kranskydd Frost 420D creative hub",
         "produkt": "Kranskydd Frost 420D",
         "collection": "collection://088270ab-908c-8269-bd9d-87564d1dc9b6",
-        "drafts": 6
+        "drafts": 3,
+        "drafts_video": 3,
+        "drafts_bild": 0,
+        "under_granskning": 3,
+        "not": "Alla 3 bildannonser (Kranskydd_PD_3_1, Kranskydd_CI_1_1, Kranskydd_SP_3_1) har gått vidare till 'To be Reviewed' sedan 2026-08-30 — bara videorna står kvar som Draft."
       },
       {
         "namn": "Fish rod holder",
@@ -63,20 +72,16 @@
       "Beach crocs (strandtofflorna)", "Mower seat (satesoverdragaren)",
       "Trimmer belt (axelbaltet)", "Boat cover 420D"
     ],
-    "sok_tips": "Sok ALDRIG bara pa 'creative hub'. Hubben for fiskespohallaren heter bara 'Fish rod holder' och missas da helt. Sok aven pa produktnamnet, och las is_archived ur sokresultatet i stallet for att gissa pa namnet.",
+    "andrat_sedan_igar": "Inga nya hubbar hittade och inga nya arkiveringar sedan 2026-08-30. OBS: en pågående körning (agent/rond-auto) bygger just nu nya hubbar för Övervakningskameran och Plyschtofflorna Herr via /forsta-batch — de fanns inte än när det här svepet kördes; nästa svep hittar dem.",
+    "sok_tips": "Sok ALDRIG bara pa 'creative hub'. Hubben for fiskespohallaren heter bara 'Fish rod holder' och missas da helt. Sok aven pa produktnamnet, och las is_archived ur sokresultatet i stallet for att gissa pa namnet. Andra icke-Bäver-hubbar finns i samma sökning ('Matstrumpor creative hub', 'Creative hub prank apron', 'Creative hub golf grill kit') — de hör inte till Bäverbutiken/produktkartan och ska aldrig räknas in.",
     "drafts": [
-      { "namn": "Beltgrinder_PD_4_H1", "produkt": "Balteslipmaskinen", "typ": "Video" },
       { "namn": "Beltgrinder_PD_5_H1", "produkt": "Balteslipmaskinen", "typ": "Video" },
       { "namn": "Beltgrinder_SP_4_H1", "produkt": "Balteslipmaskinen", "typ": "Video" },
-      { "namn": "Beltgrinder_PD_4_1", "produkt": "Balteslipmaskinen", "typ": "Bild" },
+      { "namn": "Beltgrinder_PD_4_H1", "produkt": "Balteslipmaskinen", "typ": "Video" },
       { "namn": "Beltgrinder_PD_5_1", "produkt": "Balteslipmaskinen", "typ": "Bild" },
-      { "namn": "Beltgrinder_SO_4_1", "produkt": "Balteslipmaskinen", "typ": "Bild" },
       { "namn": "Kranskydd_SP_3_H1", "produkt": "Kranskydd Frost 420D", "typ": "Video", "prioritet": "High" },
-      { "namn": "Kranskydd_CI_1_H1", "produkt": "Kranskydd Frost 420D", "typ": "Video" },
-      { "namn": "Kranskydd_UG_1_H1", "produkt": "Kranskydd Frost 420D", "typ": "Video" },
-      { "namn": "Kranskydd_CI_1_1", "produkt": "Kranskydd Frost 420D", "typ": "Bild" },
-      { "namn": "Kranskydd_PD_3_1", "produkt": "Kranskydd Frost 420D", "typ": "Bild" },
-      { "namn": "Kranskydd_SP_3_1", "produkt": "Kranskydd Frost 420D", "typ": "Bild" }
+      { "namn": "Kranskydd_UG_1_H1", "produkt": "Kranskydd Frost 420D", "typ": "Video", "prioritet": "Medium" },
+      { "namn": "Kranskydd_CI_1_H1", "produkt": "Kranskydd Frost 420D", "typ": "Video", "prioritet": "Medium" }
     ]
   },
 
