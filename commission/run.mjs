@@ -16,7 +16,7 @@
 
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
-import { berakna, SATS, arKordag, period } from './berakning.mjs';
+import { berakna, arSvensk, SATS, arKordag, period, UTLANDSKA_KONTON } from './berakning.mjs';
 import { hamtaAllSpend } from './meta.mjs';
 import * as Notion from './notion.mjs';
 
@@ -75,6 +75,12 @@ function skrivRapport(r, kallor) {
   rad.push('');
   rad.push(`Underlag: ${r.godkandaRader} godkända annonsrader i ${kallor.hubbar.length} creative hub(bar), `
     + `spend läst ur ${kallor.konton.length} annonskonton.`);
+  if (kallor.svenskaBara) {
+    rad.push('');
+    rad.push(`**Endast svenska annonser räknas.** ${kallor.bortfiltrerat} annonser `
+      + `(${kallor.bortfiltreradSpend.toFixed(2)} SEK) filtrerades bort: utländska marknadskonton `
+      + `(${[...UTLANDSKA_KONTON.values()].join(', ')}) och annonser med marknadskod i namnet.`);
+  }
   if (!kallor.teamspaceVerifierad) {
     rad.push('');
     rad.push('> ⚠️ Hubbarna hittades via REST-sök, inte via teamspacet Bäverbutiken '
@@ -161,6 +167,7 @@ function skrivRapport(r, kallor) {
 function skrivTerminal(r, kallor) {
   const p = r.period;
   console.log(`\nCommission ${p.manad}  ·  ${p.fran} – ${p.till}${p.heltMatad ? '  (SLUTAVRÄKNING)' : '  (månaden hittills)'}`);
+  if (kallor.svenskaBara) console.log(`Endast svenska annonser — ${kallor.bortfiltrerat} utländska annonser (${kallor.bortfiltreradSpend.toFixed(0)} SEK) borträknade.`);
   console.log(`${(r.sats * 100).toFixed(1).replace('.', ',')} % av spenden · ${r.godkandaRader} godkända rader · ${kallor.konton.length} annonskonton\n`);
   if (!r.redigerare.length) console.log('  (ingen redigerare med spend i perioden)');
   for (const e of r.redigerare) {
@@ -231,7 +238,14 @@ async function main() {
   }
 
   // --- Meta
-  const { konton, annonser, fel: metaFel } = await hamtaAllSpend({ fran: p.fran, till: p.till });
+  const { konton, annonser: allaAnnonser, fel: metaFel } = await hamtaAllSpend({ fran: p.fran, till: p.till });
+
+  // Bara svenska annonser ger commission. --alla-marknader stänger av filtret.
+  const svenskaBara = !finns('alla-marknader');
+  const annonser = svenskaBara ? allaAnnonser.filter(arSvensk) : allaAnnonser;
+  const bortfiltrerat = allaAnnonser.length - annonser.length;
+  const bortfiltreradSpend = allaAnnonser.filter((a) => !annonser.includes(a))
+    .reduce((s, a) => s + a.spend, 0);
 
   const rapport = berakna({
     hubbar,
@@ -249,7 +263,8 @@ async function main() {
     }
   }
 
-  const kallor = { hubbar, konton, teamspaceVerifierad, fel: [...notionFel, ...metaFel] };
+  const kallor = { hubbar, konton, teamspaceVerifierad, svenskaBara, bortfiltrerat, bortfiltreradSpend,
+    fel: [...notionFel, ...metaFel] };
 
   if (finns('json')) {
     console.log(JSON.stringify({ ...rapport, kallor }, null, 2));
