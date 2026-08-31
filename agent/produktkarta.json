@@ -1,9 +1,15 @@
 {
-  "kommentar": "Sanningskällan för /rond. En post per kampanj som FAKTISKT kör i MagiBorsten 1867947880635861 (Bäverbutiken). Break-even läses i första hand ur kampanjnamnet ('| BE ROAS 1.49 |') — det är Axels egen konvention och den enda källa som följer med kampanjen. Fyll bara i break_even_roas här när namnet saknar talet ELLER säger TBC, och skriv då alltid var talet kommer ifrån i break_even_kalla. En kampanj som saknas här körs som testprodukt och flaggas i rapporten. Kampanjer som inte ligger här och inte är aktiva rörs aldrig.",
-  "ad_account_id": "1867947880635861",
-  "ad_account_namn": "MagiBorsten",
+  "kommentar": "Sanningskällan för /rond. En post per kampanj som FAKTISKT kör i Bäverbutiken — BÅDA marknaderna: MagiBorsten 1867947880635861 (SE) och Magiborsten NO 1050941584152547. Kartan slås upp på campaign_id, så marknaderna kan dela fil. Norska namn skriver talet som '| BE-ROAS 1,63 |'. Break-even läses i första hand ur kampanjnamnet ('| BE ROAS 1.49 |') — det är Axels egen konvention och den enda källa som följer med kampanjen. Fyll bara i break_even_roas här när namnet saknar talet ELLER säger TBC, och skriv då alltid var talet kommer ifrån i break_even_kalla. En kampanj som saknas här körs som testprodukt och flaggas i rapporten. Kampanjer som inte ligger här och inte är aktiva rörs aldrig.",
+  "ad_account_id": [
+    "1867947880635861",
+    "1050941584152547"
+  ],
+  "ad_account_namn": [
+    "MagiBorsten (SE)",
+    "Magiborsten NO (NO)"
+  ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-08-30",
+  "uppdaterad": "2026-08-31",
   "kampanjer": [
     {
       "campaign_id": "120250009747620291",
@@ -261,6 +267,70 @@
       "produkt": "14-i-1 Verktyget",
       "lage": "test",
       "lage_motivering": "aktiv i kontot men saknades i kartan — tillagd 2026-08-30 (rondens regel: okänd kampanj = test). Ingen når 30-köpsgränsen för drift ännu.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120251999916430233",
+      "produkt": "Jättefotbollen NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-08-30, för ny för data",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120251999873390233",
+      "produkt": "Damaskerna NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-08-30, för ny för data",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120251998582640233",
+      "produkt": "Övervakningskameran NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-08-29, för ny för data",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120251998498540233",
+      "produkt": "Bälteslipmaskinen NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-08-29, för ny för data",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120251998454160233",
+      "produkt": "Cykelshorts NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-08-29, för ny för data",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120251996323340233",
+      "produkt": "IBC-tanköverdraget NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-08-29, för ny för data",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120251996272390233",
+      "produkt": "Kranskydd Frost NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-08-29, för ny för data",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120251856983860233",
+      "produkt": "Fiskespöhållaren NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-08-20, 25 köp på 3 dagar men under 30 köp totalt i NO",
       "break_even_roas": null,
       "break_even_kalla": "kampanjnamnet"
     }
