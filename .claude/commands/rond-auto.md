@@ -39,12 +39,15 @@ verifiera varje skrivning, logga, uppdatera dashboarden.
   `node agent/minne.mjs <sparad-html-fil>` — den synkar både budgetloggen och
   filutkorgen (minnesfiler från tidigare batchkörningar). Misslyckas synken:
   **avbryt** — kör aldrig ronden på repots möjligen gamla logg.
-- **Minnesregeln ersätter push-kravet:** efter VARJE genomförd Meta-ändring
-  skrivs loggraden lokalt, `node agent/dashboard.mjs` körs om och dashboarden
-  **publiceras om på samma URL** (det är så minnet sparas). Misslyckas
-  ompubliceringen efter en genomförd ändring: gör inga fler ändringar och
-  larma högt. Git-push görs i slutet OM den fungerar (den gör det i
-  interaktiva sessioner) — men den är inte längre ett stoppvillkor.
+- **Minnesregeln — git först, artefakten bara som reserv:** efter VARJE
+  genomförd Meta-ändring skrivs loggraden lokalt och **committas + pushas
+  direkt**. Går pushen igenom är minnet sparat och du ska INTE publicera om
+  dashboarden — publiceringen kräver ett godkännande som ingen kan ge en
+  schemalagd körning, och då står ronden still.
+  **Bara om pushen nekas** (schemalagda körningar kan ha läsrättighet):
+  kör `node agent/dashboard.mjs` och publicera om dashboarden på samma URL —
+  det är då den enda vägen minnet överlever. Misslyckas ÄVEN den efter en
+  genomförd ändring: gör inga fler ändringar och larma högt.
 - Finns inte Meta-verktygen (`mcp__ADsmanagaer__*`): **avbryt allt**, säg det
   rakt ut och gör ingenting annat. Ingen rapport på ingenting.
 
@@ -270,15 +273,18 @@ inget gjordes). Utförda ändringar: `genomford: true`,
 node agent/dashboard.mjs
 ```
 
-Publicera om dashboarden på **samma URL** (läs först, publicera sen):
-`Artifact` `action: "read"` → `action: "publish"` med
-`url: "https://claude.ai/code/artifact/33962d72-94ff-4657-9c5a-71f584a837a0"`
-och `file_path: agent/dashboard.html`.
+Committa och pusha `agent/budgetlogg.jsonl` + `agent/produktkarta.json`
+(om ändrad) till `claude/daily-agent-discussion-uos5df`.
 
-Försök committa och pusha `agent/budgetlogg.jsonl` + `agent/produktkarta.json`
-(om ändrad) till `claude/daily-agent-discussion-uos5df`. Nekas pushen är det
-okej — minnet är redan sparat i dashboarden; nästa session med push-rättighet
-synkar ikapp git.
+**Gick pushen igenom: du är klar här.** Publicera INTE om dashboarden — den
+publiceringen kräver ett godkännande som ingen kan ge en schemalagd körning,
+och ronden blir stående och väntar.
+
+**Nekades pushen:** publicera om dashboarden på **samma URL** (läs först,
+publicera sen): `Artifact` `action: "read"` → `action: "publish"` med
+`url: "https://claude.ai/code/artifact/33962d72-94ff-4657-9c5a-71f584a837a0"`
+och `file_path: agent/dashboard.html`. Skriv i svaret att pushen nekades, så
+Axel vet varför en godkännanderuta dyker upp.
 
 Svara sedan kort på svenska: vad som ändrades (produkt, från → till), vad som
 sköts upp och varför, om något larmade — och vilka brief-rundor/batcher som
@@ -312,8 +318,8 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 - [ ] Varje åtgärd utförd med öre-fältet ur planen och verifierad med läsning
 - [ ] Uppskjutna loggade som `UPPSKJUTEN_GRANS`
 - [ ] Förfallna behov i `annonsbehov` körda (max 2) med *_KLAR-loggrad + minnesfiler i utkorgen — eller exakt redovisat varför inte
-- [ ] Alla loggrader skrivna och dashboarden ompublicerad efter varje ändring (= minnet sparat); git-push försökt
-- [ ] Dashboarden ombyggd och ompublicerad på samma URL
+- [ ] Alla loggrader skrivna och pushade efter varje ändring (= minnet sparat)
+- [ ] Dashboarden ompublicerad ENDAST om pushen nekades — och det i så fall sagt i svaret
 - [ ] Notion-svepet kört: hubbar avlästa med `is_archived`, drafts hämtade,
       `agent/notion-uppgifter.json` omskriven med dagens datum och speglad till utkorgen
 - [ ] Nya och nyss arkiverade hubbar redovisade i leveransen
