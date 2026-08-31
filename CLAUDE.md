@@ -143,10 +143,15 @@ inte röras utan att Axel ber om det.
     5,70 / 5,52 / 159,76 kr. Läggs nya creatives i skalningens CBO blir datan
     oläsbar och kvoten meningslös.)*
     ⚠️ **Ett uttryckligt undantag, Axels beslut 2026-08-30:** nattrutinen
-    `/notionkorning` laddar upp redigerarnas färdiga creatives i produktens
-    aktiva CBO (`campaign_ids[0]`), inte i ett test-ABO. Det gäller ENBART den
-    rutinen. Rätta inte tillbaka det — och allt annat nytt testande följer
-    fortfarande regel 11.
+    `/notionkorning` laddar upp redigerarnas färdiga creatives i den kampanj som
+    redan bär produktens annonser, inte i ett nytt test-ABO. Det gäller ENBART den
+    rutinen. Rätta inte tillbaka det — allt annat nytt testande följer regel 11.
+
+    Kampanjen slås upp ur **kontot** (annonsprefixet i namnet), inte ur
+    `campaign_ids[0]`. Mätt 2026-08-31: alla fyra skalningsprodukters
+    `campaign_ids[0]` är PAUSED med spend (72 234 / 47 090 / 60 205 / 38 785 kr),
+    alltså avvecklade — dit vägrar rutinen ladda upp. Skriv aldrig "produktens
+    aktiva CBO" som om det vore en garanti; kontrollera statusen först.
 12. **Fråga bara när ett beslut kräver ägaren** (prisändring, rabatt i Shopify, ny
     target-CPA). Allt annat: kör.
 13. **Om Axel skriver ett `/kommando` som klienten inte känner igen** (eller skriver
@@ -227,8 +232,10 @@ Kalenderspärren sitter på flaggan `--rutin` — kör Axel `/commission` för h
 räknas månaden hittills oavsett datum.
 
 ⚠️ **Cron står i UTC och följer inte sommartid.** Tiderna ovan gäller CEST
-(mars–oktober). Vid vinteromställningen går varje rutin en timme senare svensk
-tid — cron-uttrycken ska då minskas med en timme.
+(UTC+2, mars–oktober). Vid vinteromställningen blir Sverige UTC+1, och en cron
+som står kvar går en timme TIDIGARE svensk tid. Cron-uttrycken ska då **ökas**
+med en timme: `1 22 * * *` (00:01 CEST) blir `1 23 * * *` (00:01 CET).
+Räkna alltid om från önskad svensk tid till UTC i stället för att minnas riktningen.
 
 ⚠️ **Rutiner ärver inte sessionens MCP-connectors.** En rutin som behöver Notion,
 Drive eller Shopify måste få connectorn kopplad på själva rutinen i Routines-vyn

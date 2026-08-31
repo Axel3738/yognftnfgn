@@ -13,14 +13,17 @@
 //
 // Kräver env NOTION_TOKEN (integration inbjuden till hubbarna).
 
+import { readFileSync as fsReadFileSync } from 'node:fs';
+
 const API = 'https://api.notion.com/v1';
+const ROT = new URL('..', import.meta.url).pathname;
 
 /** Titeln pa en creative hub. Mallen raknas aldrig som en hub. */
 export const ÄR_HUB = (titel) =>
   /creative hub\s*$/i.test((titel || '').trim()) && !/\bMALL\b/i.test(titel || '');
 
 /** Statusar som betyder "redigeraren/rutinen ar klar, vantar pa upplaggning". */
-export const KLAR_STATUS = ['to be reviewed'];
+export const KLAR_STATUS = ['to be reviewed', 'in review', 'approved'];
 
 let sist = 0;
 async function notion(sökväg, { method = 'GET', body = null } = {}) {
@@ -77,28 +80,53 @@ function hittaFält(sida) {
   return { statusFält, typFält, titelFält };
 }
 
-/** Alla creative hub-databaser integrationen ser. Ingen handskriven lista —
- *  nya produkter tillkommer standigt och ska komma med av sig sjalva. */
+/** Hubbarna som star i products.json. De fyra skalningsprodukterna ar ARKIVERADE
+ *  i Notion, och en sokning hoppar over arkiverade databaser — de kan alltsa aldrig
+ *  hittas av search(). products.json ar golvet som gor det omojligt att tappa dem.
+ *  (Samma losning som commission/notion.mjs, efter incidenten 2026-08-31.) */
+function hubbarUrProdukter() {
+  const { readFileSync } = require_fs();
+  const { products } = JSON.parse(readFileSync(`${ROT}products/products.json`, 'utf8'));
+  return products
+    .filter(p => p.notion?.database_id)
+    .map(p => ({ id: p.notion.database_id, titel: p.notion.name, produkt: p.id, kalla: 'products.json' }));
+}
+function require_fs() { return { readFileSync: fsReadFileSync }; }
+
+/** Alla creative hub-databaser: sokningen PLUS products.json.
+ *  Sokningen finns for att nya produkter ska komma med av sig sjalva.
+ *  products.json finns for att de gamla aldrig ska kunna falla bort. */
 export async function hittaHubbar() {
-  const ut = [];
-  let cursor;
-  do {
-    const r = await notion('search', {
-      method: 'POST',
-      body: {
-        query: 'creative hub',
-        filter: { value: 'database', property: 'object' },
-        page_size: 100,
-        ...(cursor ? { start_cursor: cursor } : {}),
-      },
-    });
-    for (const d of r.results ?? []) {
-      const titel = text(d.title ?? []);
-      if (ÄR_HUB(titel)) ut.push({ id: d.id, titel, url: d.url });
-    }
-    cursor = r.has_more ? r.next_cursor : null;
-  } while (cursor);
-  return ut;
+  let sökta = [];
+  try {
+    let cursor;
+    do {
+      const r = await notion('search', {
+        method: 'POST',
+        body: {
+          query: 'creative hub',
+          filter: { value: 'database', property: 'object' },
+          page_size: 100,
+          ...(cursor ? { start_cursor: cursor } : {}),
+        },
+      });
+      for (const d of r.results ?? []) {
+        const titel = text(d.title ?? []);
+        if (ÄR_HUB(titel)) sökta.push({ id: d.id, titel, url: d.url, kalla: 'sök' });
+      }
+      cursor = r.has_more ? r.next_cursor : null;
+    } while (cursor);
+  } catch (e) {
+    if (e.saknarToken) throw e;
+    sökta = [];                       // sokningen kan fela; golvet nedan star kvar
+  }
+
+  const på = new Map();
+  for (const h of [...hubbarUrProdukter(), ...sökta]) {
+    const nyckel = String(h.id).replace(/-/g, '');
+    if (!på.has(nyckel)) på.set(nyckel, h);
+  }
+  return [...på.values()];
 }
 
 async function allaSidor(databaseId) {
@@ -139,7 +167,15 @@ export async function klaraRader(hub) {
       .filter(f => f.url);
     if (!filer.length) continue;                          // ingen fil = inget att ladda upp
 
-    ut.push({ id: s.id, namn, status, typ, filer, url: s.url,
+    // "Landing page" star pa raden och ar produktsidans URL. Utan den skulle
+    // annonsen peka pa butikens startsida — det syns aldrig som ett fel, bara
+    // som usel konvertering.
+    const landning = Object.entries(s.properties)
+      .filter(([n, v]) => /landing/i.test(n) && (v.type === 'rich_text' || v.type === 'url'))
+      .map(([, v]) => värde(v).match(/https?:\/\/[^\s)\]]+/)?.[0])
+      .find(Boolean) ?? null;
+
+    ut.push({ id: s.id, namn, status, typ, filer, url: s.url, landning,
               skapad: s.created_time, redigerad: s.last_edited_time, hub: hub.titel });
   }
   return ut;
@@ -159,6 +195,14 @@ export async function hämtaFil(url, målsökväg) {
  *  404 betyder "integrationen ar inte inbjuden", inte att databasen saknas. */
 export async function allaKlaraRader() {
   const hubbar = await hittaHubbar();
+  // Noll hubbar betyder ALDRIG "det finns inget arbete" — det betyder att vi ar
+  // blinda. Ett tomt svar som tolkas som tomt resultat ar exakt den tysta miss
+  // som gomde fem fardiga bildannonser. Kasta hellre an rapportera lugnande noll.
+  if (!hubbar.length) {
+    const e = new Error('Hittade NOLL creative hubs. Integrationen är troligen inte inbjuden till någon hub (••• → Connections i Notion).');
+    e.ingaHubbar = true;
+    throw e;
+  }
   const rader = [];
   const fel = {};
   for (const h of hubbar) {
@@ -168,6 +212,11 @@ export async function allaKlaraRader() {
         ? `404 — integrationen är inte inbjuden till "${h.titel}" (••• → Connections)`
         : e.message;
     }
+  }
+  if (Object.keys(fel).length === hubbar.length) {
+    const e = new Error(`Ingen av ${hubbar.length} hubbar gick att läsa: ${Object.values(fel).join(' · ')}`);
+    e.allaHubbarFelade = true;
+    throw e;
   }
   return { hubbar, rader, fel };
 }
