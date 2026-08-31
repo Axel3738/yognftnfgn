@@ -117,7 +117,32 @@ läsa — rapportera det och gör inget annat.
   **Källor** i rapporten innan du betalar ut något.
 - Saknas båda: rapportera det. Räkna aldrig commission på gissade rader.
 
-## Steg 1 — Läs de godkända raderna ur alla hubbar (MCP-vägen)
+## Så kopplas en annons till en person
+
+Två steg, i den ordningen. Logiken bor i `commission/koppling.mjs`.
+
+1. **Hubbraden, per annons.** Annonsen matchas mot en rad i en creative hub som
+   har någon i `Ansvarig`. Två namnsystem finns i kontona:
+   - Bäverbutiken: `Enginecover_PD_22_H1` — raden heter likadant.
+   - Grillkliniken/Matstrumpor: annonsen `235 H1`, raden `235`. Löpnumret först
+     i namnet är kopplingen.
+   Rader som handlar om att **översätta** en creative (`129 to norwegian`,
+   `Translation 115`) ärver aldrig den svenska spenden om en riktig rad finns.
+2. **Produkten, per kampanj.** Hittas ingen hubbrad matchas kampanjnamnet mot
+   produkten i `commission/produkter.json` (ur Notion-databasen *Product test
+   center SE BÄVER*), och spenden går till produktens ägare. Är två produkter
+   lika troliga kopplas annonsen inte alls — hellre okopplat än fel person.
+
+⚠️ **Filtrera ALDRIG hubbraderna på Typ eller Status.** En rad med `Ansvarig` är
+gjord av någon oavsett var i flödet den står. *(Incident 2026-08-31: filtret
+`Typ = "… Pending Approval" AND Status = "Approved"` dolde hela Masterns
+produktion, som ligger som `Video - Approved`. Rapporten blev 33,74 kr i stället
+för drygt 2 200 kr, och tre av fem redigerare fick noll.)*
+
+⚠️ **Hubbarna står i `commission/hubbar.json`** — 12 svenska över tre
+verksamheter. En sökning i Bäverbutikens teamspace hittar bara 2 av dem.
+
+## Steg 1 — Läs raderna ur alla hubbar (MCP-vägen)
 
 Hubbarna hittas dynamiskt, precis som i `/bildannonser`, så nya produkter kommer
 med av sig själva:
@@ -139,7 +164,7 @@ Per hubb, en fråga:
 ```sql
 SELECT url, "Namn", "Typ", "Status", "Ansvarig"
 FROM "collection://<hubbens-id>"
-WHERE "Typ" LIKE '%Pending Approval%' AND "Status" = 'Approved'
+WHERE "Ansvarig" IS NOT NULL
 ```
 
 `Typ LIKE '%Pending Approval%'` är **inkludering**, aldrig uteslutning — SOP,
