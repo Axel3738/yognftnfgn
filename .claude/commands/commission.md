@@ -55,13 +55,29 @@ redovisar dem var för sig. Ser du "1234.00 SEK + 56.00 USD" är det meningen.
 
 ## Förutsättningar — kontrollera dem FÖRST
 
-**1. Repot.** Den schemalagda sessionen startar ibland utan repo:
+**1. Repot.** Den schemalagda sessionen startar ibland utan repo.
+
+⚠️ **Kör ett kommando per anrop. Aldrig `&&`, `||` eller `;`.**
+Behörighetslistan i `.claude/settings.json` matchar på kommandots första ord
+(`Bash(git:*)`, `Bash(ls:*)`). Ett sammansatt kommando matchar ingen regel och
+utlöser en godkännanderuta — det var därför rutinen bad om lov varje körning.
 
 ```bash
-ls /home/user/yognftnfgn/.claude/commands/commission.md 2>/dev/null \
-  || git clone https://github.com/Axel3738/yognftnfgn.git /home/user/yognftnfgn
-git checkout main && git pull
+ls /home/user/yognftnfgn/.claude/commands/commission.md
 ```
+```bash
+git clone https://github.com/Axel3738/yognftnfgn.git /home/user/yognftnfgn
+```
+(bara om `ls` inte hittade filen)
+```bash
+git -C /home/user/yognftnfgn checkout main
+```
+```bash
+git -C /home/user/yognftnfgn pull
+```
+
+Samma regel gäller resten av körningen: `node commission/run.mjs --rutin` körs
+som ett eget anrop, inte hopkopplat med `cd` eller något annat.
 
 **2. `META_ACCESS_TOKEN`** (`ads_read` räcker). Saknas den finns ingen spend att
 läsa — rapportera det och gör inget annat.
