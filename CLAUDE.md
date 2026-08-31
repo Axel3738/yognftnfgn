@@ -442,6 +442,15 @@ som `UTLANDSKA_KONTON` i `commission/berakning.mjs`.
 
 ⚠️ **Valutor summeras aldrig.** NYC Grill-kontot är i USD, resten i SEK.
 
+⚠️ **Kopplingen annons → person görs i två steg** (`commission/koppling.mjs`):
+hubbraden per annons först — både `Enginecover_PD_22_H1`-systemet och
+Grillklinikens löpnummer (`235 H1` → raden `235`) — och produkten per kampanj
+som reserv via `commission/produkter.json`. **Filtrera aldrig hubbraderna på Typ
+eller Status**; en rad med Ansvarig är gjord av någon. *(Incident 2026-08-31:
+Typ-filtret dolde hela Masterns produktion och gav 33,74 kr i stället för
+2 260 kr.)* Hubbarna står i `commission/hubbar.json` — 12 svenska över tre
+verksamheter, inte bara Bäverbutikens.
+
 ⚠️ **De fyra skalningsprodukternas creative hubs är ARKIVERADE i Notion** och
 syns inte i en teamspace-sökning. Hubbarna måste därför alltid unionsläggas med
 `products.json`. `run.mjs` avbryter om en känd hubb saknas eller om noll godkända

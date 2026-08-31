@@ -246,9 +246,25 @@ export function avrunda(tal) {
  * @param {Date}  indata.datum      Körningens datum (UTC).
  * @param {number} [indata.sats]
  */
-export function berakna({ hubbar, annonser, personer, datum, sats = SATS }) {
+export function berakna({ hubbar, annonser, personer, datum, sats = SATS, koppla = null }) {
   const register = byggRegister(hubbar);
-  const { traffar, omatchade, konflikter } = matcha(annonser, register);
+  let traffar, omatchade, konflikter;
+  if (koppla) {
+    // Extern koppling (commission/koppling.mjs): hubbrad per annons, produkt som
+    // reserv. Kopplingen avgör VEM; den här funktionen räknar pengarna.
+    traffar = []; omatchade = []; konflikter = [];
+    for (const annons of annonser) {
+      const k = koppla(annons);
+      if (!k) { omatchade.push(annons); continue; }
+      traffar.push({
+        annons,
+        rad: { namn: k.radnamn ?? annons.adNamn, hubb: k.hubb ?? k.via, ansvariga: k.ansvariga, url: null },
+        typ: k.via === 'produkt' ? 'variant' : 'exakt',
+      });
+    }
+  } else {
+    ({ traffar, omatchade, konflikter } = matcha(annonser, register));
+  }
 
   const personPaNotionId = new Map(
     personer.filter((p) => p.notionUserId).map((p) => [p.notionUserId, p]),
@@ -305,7 +321,7 @@ export function berakna({ hubbar, annonser, personer, datum, sats = SATS }) {
 
   // Godkända rader som ingen annons matchade — creativen är godkänd men har
   // inte spenderat något den här månaden (eller ligger inte uppe i kontot).
-  const utanSpend = register.godkanda.filter((r) => !traffadeRader.has(r.url ?? r.namn));
+  const utanSpend = koppla ? [] : register.godkanda.filter((r) => !traffadeRader.has(r.url ?? r.namn));
 
   const valutor = [...new Set(annonser.map((a) => a.konto.valuta))].sort();
   const totalt = tomBelopp();

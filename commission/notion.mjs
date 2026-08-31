@@ -88,6 +88,13 @@ async function allaSidor(databaseId, opt) {
   return ut;
 }
 
+/** Hubbarna ur commission/hubbar.json — alla verksamheter, bara marknad SE. */
+export function hubbarUrFil() {
+  const { hubbar } = JSON.parse(readFileSync(`${ROT}/commission/hubbar.json`, 'utf8'));
+  return hubbar.filter((h) => h.marknad === 'SE')
+    .map((h) => ({ id: h.id, namn: h.namn, verksamhet: h.verksamhet, kalla: 'hubbar.json' }));
+}
+
 /**
  * Hubbarna som står i products.json. De fyra skalningsprodukterna är
  * ARKIVERADE i Notion, och en sökning hoppar över arkiverade databaser —
@@ -123,7 +130,7 @@ export async function hittaHubbar(opt = {}) {
   }
 
   const pa = new Map();
-  for (const h of [...hubbarUrProdukter(), ...sokta]) {
+  for (const h of [...hubbarUrFil(), ...hubbarUrProdukter(), ...sokta]) {
     const nyckel = String(h.id).replace(/-/g, '');
     if (!pa.has(nyckel)) pa.set(nyckel, h);
   }
@@ -133,6 +140,9 @@ export async function hittaHubbar(opt = {}) {
 /** Rader ur en hubb. 404 = integrationen är inte inbjuden (••• → Connections). */
 export async function hamtaHubb(hubb, opt = {}) {
   const sidor = await allaSidor(hubb.id, opt);
+  // Ingen filtrering på Typ eller Status: en rad med Ansvarig är gjord av
+  // någon oavsett var i flödet den står. (Incident 2026-08-31: Typ-filtret
+  // dolde Masterns annonser, som ligger som "Video - Approved".)
   return { ...hubb, rader: sidor.map(las).filter((r) => r.namn) };
 }
 
