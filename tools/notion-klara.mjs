@@ -25,6 +25,7 @@ const flagga = (n, s = null) => {
 };
 const finns = (n) => args.includes(`--${n}`);
 
+// "To be Reviewed" ar den status /bildannonser satter nar bilden ar klar och bifogad.
 const STATUSAR = (flagga('status', 'To be Reviewed,Approved')).split(',').map(s => s.trim().toLowerCase());
 const dö = (m) => { console.error(`✗ ${m}`); process.exit(1); };
 
@@ -142,9 +143,29 @@ if (finns('brief')) {
 }
 
 const filter = flagga('produkt');
-const hubbar = products.filter(p =>
-  p.scaling && p.notion?.database_id && (!filter || p.id === filter));
-if (!hubbar.length) dö(filter ? `${filter} har ingen creative hub i products.json.` : 'Inga scaling-produkter med hub.');
+
+// Hubbarna hittas DYNAMISKT, inte ur products.json. Den filen kanner fyra produkter;
+// kontot har 46 annonsprefix. En handskriven lista gjorde brief-grinden okorbar for
+// 42 av dem — och grinden ar det enda som star mellan en trasig creative och kontot.
+// (Fynd 2026-08-31, samma rotorsak som gomde fem fardiga bildannonser.)
+const { hittaHubbar } = await import('./notion-kalla.mjs');
+let hubbar;
+try {
+  hubbar = (await hittaHubbar()).map(h => ({
+    id: h.titel, notion: { name: h.titel, database_id: h.id },
+    campaign_ids: products.find(p => p.notion?.database_id?.replace(/-/g, '') === h.id.replace(/-/g, ''))?.campaign_ids ?? [],
+  }));
+} catch (e) {
+  if (e.saknarToken) dö('NOTION_TOKEN saknas i miljön.');
+  throw e;
+}
+// products.json far namnge de fyra den kanner, sa utskriften blir igenkannbar.
+for (const h of hubbar) {
+  const p = products.find(x => x.notion?.database_id?.replace(/-/g, '') === h.notion.database_id.replace(/-/g, ''));
+  if (p) h.id = p.id;
+}
+if (filter) hubbar = hubbar.filter(h => h.id === filter || new RegExp(filter, 'i').test(h.notion.name));
+if (!hubbar.length) dö(filter ? `Ingen creative hub matchar "${filter}".` : 'Hittade inga creative hub-databaser. Är integrationen inbjuden till dem?');
 
 const resultat = { hämtadAt: new Date().toISOString(), produkter: {}, fel: {} };
 
@@ -195,7 +216,8 @@ for (const p of hubbar) {
   if (fel) { console.log(`\n${p.id} — ✗ ${fel}`); continue; }
   const klara = resultat.produkter[p.id];
   totalt += klara.length;
-  console.log(`\n${p.id} (${p.notion.name}) → kampanj ${p.campaign_ids[0]} — ${klara.length} klara`);
+  const kmp = p.campaign_ids?.[0] ? `→ kampanj ${p.campaign_ids[0]}` : '(kampanj slås upp ur kontot)';
+  console.log(`\n${p.id} (${p.notion.name}) ${kmp} — ${klara.length} klara`);
   for (const k of klara) {
     console.log(`  • ${k.namn}  [${k.status}]  ${k.filer.length ? `${k.filer.length} fil(er)` : '⚠ ingen fil i itemet'}`);
     console.log(`    ${k.url}`);

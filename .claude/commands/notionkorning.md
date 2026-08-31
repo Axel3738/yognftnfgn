@@ -26,14 +26,22 @@ Torrläget är alltid säkert att köra — använd det vid minsta tvekan.
 
 ## Axels beslut 2026-08-30 (styr hela rutinen — ändra inget av detta på egen hand)
 
-1. **Klar = levererad fil i Drive som saknar annons i Meta.** Två källor, två
-   olika jobb — blanda dem aldrig:
-   - **Vad som SKA laddas upp** avgörs av redigerarnas leveransmappar i Drive.
-   - **Vad som REDAN ÄR gjort** avgörs av annonsnamnen i MagiBorsten.
-   Notion-status styr ingenting. *(Verifierat 2026-08-30: ingen av de fyra
-   hubbarna använder `To be Reviewed` — allt hoppar direkt till `Approved`, och
-   `Filer och media` är tomt på samtliga rader. Notion bär briefen, inte filen.)*
-2. **Notion används till briefen** som QA:n i steg 2 mäts mot. Rutinen ändrar
+1. **Klar = en färdig fil som saknar annons i Meta.** Filen kan ligga på
+   **två ställen**, och rutinen måste läsa båda:
+   - **Drive** — `Edited Folder/Week N/<annonsnamn>/`. Redigerarnas videor.
+   - **Notion** — radens `Filer och media` med status `To be Reviewed`.
+     Bildannonserna som `/bildannonser` genererar 20:00 varje kväll.
+   **Vad som REDAN ÄR gjort** avgörs alltid av annonsnamnen i MagiBorsten.
+
+   ⚠️ **Notion-bilagan är enda kopian i världen.** `bildannonser/output/` är
+   gitignorerat och dör med containern. Läses inte Notion är arbetet borta, och
+   ingen får veta — raden fastnar i `To be Reviewed` för alltid, för 20:00-rutinen
+   plockar bara `Draft`. *(Detta hände: fem färdiga bildannonser för Kranskydd
+   och Beltgrinder låg osynliga tills Axel upptäckte dem 2026-08-31.)*
+
+   ⚠️ **Går Notion inte att läsa är kön OFULLSTÄNDIG — säg det högst upp i
+   rapporten.** `leveranskon.mjs` larmar redan; för aldrig vidare ett tyst noll.
+2. **Notion används både till briefen och som leveranskälla.** Rutinen ändrar
    aldrig Notion-status — det är managerns beslut.
 3. **Uppladdning sker i produktens aktiva CBO** (`campaign_ids[0]` i
    `products.json`) — inte i ett test-ABO. Detta är ett **uttryckligt undantag
@@ -87,6 +95,18 @@ node tools/leveranskon.mjs --alla     # även det som redan ligger uppe
 node tools/leveranskon.mjs --json     # maskinläsbart
 ```
 
+Verktyget läser **båda källorna** och slår ihop dem: Drive via `drive-ls.py`
+(publikt, ingen connector) och alla creative hubs i Notion via `notion-kalla.mjs`
+(kräver `NOTION_TOKEN` på rutinen — rutiner ärver inte sessionens connectors).
+Varje rad bär `kalla2: 'drive' | 'notion'`.
+
+**Hämta hem en Notion-bilaga** innan QA och uppladdning:
+```bash
+node tools/notion-fil.mjs <page-id> --ut <mapp>
+```
+Notions fil-URL är signerad och kortlivad — hämta i samma körning, cacha den aldrig
+och skicka den aldrig vidare som en flagga.
+
 **Rutinen täcker HELA Bäverbutiken, inte en fast lista produkter.** Nya produkter
 tillkommer ständigt (Axels påpekande 2026-08-30), så kopplingen leverans → kampanj
 härleds ur kontot självt: annonserna i MagiBorsten lär verktyget vilket
@@ -97,6 +117,14 @@ override för de fyra skalningsprodukterna.
 
 En hårdkodad produktlista missar nya leveranser **tyst**, och en tyst missad
 leverans är värre än en rapporterad. Bygg därför aldrig tillbaka den.
+
+**När prefixet inte går att härleda** — Notion-hubben och kontot använder ibland
+olika språk för samma produkt (hubben `Belt grinder creative hub` → annonser
+`Beltgrinder_`, men kampanjen heter `Bälteslipmaskinen` och dess annonser
+`Balteslipmaskin_`). Då finns ingen gemensam sträng att matcha på.
+**Rutinen gissar aldrig.** Kopplingen skrivs upp en gång i
+`products/prefix-alias.json` med kampanj-id ur MagiBorsten; saknas den rapporteras
+raden som "ingen kampanj" och laddas inte upp.
 
 Tre utfall per leverans, och de behandlas olika:
 
@@ -295,7 +323,11 @@ managern ser var creativen hamnade.
    `SLACK_WEBHOOK_URL`. Slack-connectorn får användas först efter verifiering:
    sök "bäver" — noll träffar = fel workspace, avstå. Inga @-pingar.
    Infrastrukturproblem går aldrig till teamet.
-3. **Slutrapport (mobilformat — Axel läser den som push-notis).**
+3. **Räkna de döda raderna.** Rader som stått i `To be Reviewed` i mer än 24 timmar
+   utan att ha laddats upp är arbete som håller på att försvinna. Ta med antalet som
+   en egen rad i rapporten, varje natt, även när det är noll. Högen växer med flera
+   per kväll om ingen tittar.
+4. **Slutrapport (mobilformat — Axel läser den som push-notis).**
    **FÖRSTA RADEN är hela rapporten för mobilen.** Max 12 ord, börjar med ✅
    eller ⚠️. Exempel:
    - `✅ 3 nya annonser uppe och rullar, inget väntar på dig`
@@ -321,7 +353,9 @@ ALDRIG: Notion-behörigheter, Metas uppladdningsstrul, eller något rutinen lös
 själv nästa natt.
 
 ## DEFINITION OF DONE
-- [ ] Leveranskön hämtad — Drive mot kontot, inte mapplistan ensam
+- [ ] Leveranskön hämtad ur BÅDA källorna — Drive och Notion — mot kontot
+- [ ] Notion-källan faktiskt läst (annars: larmet högst upp i rapporten)
+- [ ] Rader döda i `To be Reviewed` >24h räknade och rapporterade
 - [ ] Hela Bäverbutiken täckt, inte bara de fyra i products.json
 - [ ] Nödbromsen respekterad (>10 leveranser eller >3 kampanjer = stanna)
 - [ ] Leveranser utan kampanj i kontot rapporterade, inte uppladdade på en gissning

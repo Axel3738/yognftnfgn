@@ -1,0 +1,11 @@
+{
+  "kommentar": "Annonsprefix som INTE gar att harleda ur kontot sjalvt. Normalt slar leveranskon.mjs upp ett prefix mot kampanjen som redan har annonser med samma prefix - det racker for de flesta produkter. Men Notion-hubben och annonskontot anvander ibland olika sprak for samma produkt (hubben 'Belt grinder creative hub' -> annonser 'Beltgrinder_', kampanjen 'Balteslipmaskinen' -> annonser 'Balteslipmaskin_'). Da finns ingen gemensam strang att matcha pa. Skriv upp kopplingen har EN gang, med kampanj-id ur MagiBorsten. Rutinen gissar aldrig sjalv - en produkt utan kampanj rapporteras och laddas inte upp.",
+  "alias": {
+    "beltgrinder": {
+      "kampanj_id": "120249902177470291",
+      "kampanj_namn": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+      "kontots_prefix": "Balteslipmaskin",
+      "noterat": "2026-08-31 — Notion-hubben 'Belt grinder creative hub' är engelsk, kontot svenskt."
+    }
+  }
+}
