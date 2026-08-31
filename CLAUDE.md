@@ -343,6 +343,14 @@ kör motorn med `--data`. Kontospärren släpper bara igenom de två.
 bindestreck och komma, svenska som `| BE ROAS 1.49 |`. Parsern läser båda
 sedan 2026-08-31 — läste den bara det svenska blev hela Norge odömbart.
 
+⚠️ **Marginalerna skiljer sig mellan marknaderna, produkt för produkt, åt
+BÅDA hållen.** Avläst 2026-08-31: bälteslipmaskinen 1,73 i SE mot 1,41 i NO,
+cykelshorts 1,68 mot 1,41, övervakningskameran 1,57 mot 1,40 — men kranskydd
+1,49 mot 1,63 och IBC 1,51 mot 1,63. Åtta av åtta jämförbara par skiljer sig.
+Använd ALDRIG ett svenskt break-even-tal på en norsk kampanj eller tvärtom.
+Talet läses per kampanj ur kampanjnamnet, aldrig ur en delad tabell — det är
+just därför konstruktionen håller när en marknad läggs till.
+
 ### `bot/` — Bävern, Discord-boten (körs på Railway)
 Realtidsbot som svarar Axel direkt i Discord med Opus. **Läsande — den ändrar
 aldrig budgetar, Notion, Drive eller repot.** Klickvägen för uppsättning står i
