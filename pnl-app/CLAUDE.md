@@ -313,7 +313,18 @@ Varje svar till honom följer detta, utan undantag:
   kräver hans inloggningar (Railway-variabler, dev dashboard, appgodkännanden).
 - Rapportera vad som är KLART och verifierat, inte vad som "borde" funka.
 
-## Kvarvarande backlog (när detta skrevs)
+## Kvarvarande backlog
+
+- **Facebook-inloggning för Meta-kopplingen (beslutad, görs EFTER App Store-godkännande).**
+  Idag måste handlaren klistra in annonskonto-ID och en systemanvändar-token
+  för hand. Riktiga användare ska i stället få en knapp "Logga in med Facebook":
+  OAuth mot Meta, `ads_read`, och sedan en lista att välja annonskonto ur.
+  Token-metoden behålls som fallback. Axels beslut 2026-08-31: bygg efter
+  godkännandet, inte före.
+- **App Store-granskning 4.5.5:** granskaren kunde inte testa Meta-kopplingen
+  utan konto. Lösning: skärminspelning som visar koppling → import → att
+  siffran matchar Meta Ads Manager. Länken klistras i "Proof of resolution".
+ (när detta skrevs)
 
 - Bundle-/antalstrappa för COGS: leverantörsofferterna har 1/2/3-set-priser;
   appen använder bara 1-set. Axel vill ha Juicy-liknande bundle-COGS.
