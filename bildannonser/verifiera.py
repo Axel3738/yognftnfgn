@@ -22,7 +22,7 @@ from pathlib import Path
 # Tecken utanför ASCII som är tillåtna i annonstext. Bäverbutiken kör svenska,
 # norska och danska marknader, så øØæÆ hör hemma här. Allt annat är mojibake
 # eller ett tecken modellen hittat på.
-TILLATNA_ICKE_ASCII = set("åäöÅÄÖøØæÆéÉüÜ–—→”“’…°✅✓•")
+TILLATNA_ICKE_ASCII = set("åäöÅÄÖøØæÆôÔéÉüÜ–—→”“’…°✅✓•")
 
 # Förbud ur CLAUDE.md och ramverkets steg 7. Träff = stoppfel, inte varning.
 FORBUD = [
