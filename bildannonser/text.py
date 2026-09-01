@@ -65,6 +65,10 @@ STILAR = {
     "citat":    {"font": FET,    "storlek": 46, "farg": "#14304A", "rader": 5},
     "attrib":   {"font": NORMAL, "storlek": 30, "farg": "#14304A", "rader": 1},
     "badge":    {"font": NORMAL, "storlek": 30, "farg": "#14304A", "rader": 2},
+    # Punktlistor och kryssbandet i briefarna: fler rader, mindre grad.
+    "lista":    {"font": NORMAL, "storlek": 34, "farg": "#141210", "rader": 7},
+    "pris":     {"font": FET,    "storlek": 96, "farg": "#141210", "rader": 1},
+    "prisover": {"font": NORMAL, "storlek": 44, "farg": "#4A443E", "rader": 1},
 }
 
 MARGINAL = 64
@@ -178,6 +182,37 @@ def rita_stryk(rita, text, stryk, font, mitt_x, y):
               width=max(3, int(hoj * 0.09)))
 
 
+BOCKFARG = "#1E9E4A"
+
+
+def rita_bock(rita, x, y, storlek):
+    """Ritar en grön bock. Briefarna skriver ✅, men den glyfen finns inte i
+    Liberation Sans och skulle bli en tom ruta — så vi ritar den i stället."""
+    b = storlek * 0.62
+    rita.line([(x, y + b * 0.55), (x + b * 0.36, y + b * 0.9)],
+              fill=BOCKFARG, width=max(3, int(b * 0.16)))
+    rita.line([(x + b * 0.36, y + b * 0.9), (x + b, y + b * 0.12)],
+              fill=BOCKFARG, width=max(3, int(b * 0.16)))
+
+
+def rita_lista(rita, rader, font, bredd, y, farg):
+    """Vänsterställd lista, centrerad som block. Rader som börjar med ✅ får en
+    ritad bock och texten flyttas in — bocken är ett grafiskt element, inte
+    ett tecken, så den kan aldrig bli en tom ruta."""
+    rensade = [(r[1:].lstrip() if r.startswith(("\u2705", "\u2713")) else r,
+                r.startswith(("\u2705", "\u2713"))) for r in rader]
+    indrag = int(_radhojd(font) * 0.85)
+    maxbredd = max(rita.textlength(t, font=font) for t, _ in rensade)
+    x0 = (bredd - (maxbredd + indrag)) / 2
+    rh = _radhojd(font)
+    for i, (t, harbock) in enumerate(rensade):
+        ry = y + i * rh
+        if harbock:
+            rita_bock(rita, x0, ry, rh)
+        rita.text((x0 + indrag, ry), t, font=font, fill=farg)
+    return rh * len(rensade)
+
+
 def rita_etikett(bild, rita, text, font, x, y):
     bredd = int(rita.textlength(text, font=font))
     hoj = _radhojd(font)
@@ -249,9 +284,12 @@ def lagg_pa_text(spec):
             rita_platta(bild, MARGINAL // 2, y_botten - 18,
                         bredd - MARGINAL // 2, y_botten + rh * len(rader) + 12)
             rita = ImageDraw.Draw(bild)
-        for i, rad in enumerate(rader):
-            rita.text((bredd / 2, y_botten + i * rh), rad, font=font,
-                      fill=stil["farg"], anchor="ma")
+        if b["stil"] == "lista":
+            rita_lista(rita, rader, font, bredd, y_botten, stil["farg"])
+        else:
+            for i, rad in enumerate(rader):
+                rita.text((bredd / 2, y_botten + i * rh), rad, font=font,
+                          fill=stil["farg"], anchor="ma")
 
     for b in toppblock:
         stil = STILAR[b["stil"]]
@@ -263,10 +301,13 @@ def lagg_pa_text(spec):
             rita_platta(bild, MARGINAL // 2, y_topp - 18,
                         bredd - MARGINAL // 2, y_topp + rh * len(rader) + 12)
             rita = ImageDraw.Draw(bild)
-        for i, rad in enumerate(rader):
-            rita.text((bredd / 2, y_topp + i * rh), rad, font=font,
-                      fill=stil["farg"], anchor="ma")
-            rita_stryk(rita, rad, b.get("stryk"), font, bredd / 2, y_topp + i * rh)
+        if b["stil"] == "lista":
+            rita_lista(rita, rader, font, bredd, y_topp, stil["farg"])
+        else:
+            for i, rad in enumerate(rader):
+                rita.text((bredd / 2, y_topp + i * rh), rad, font=font,
+                          fill=stil["farg"], anchor="ma")
+                rita_stryk(rita, rad, b.get("stryk"), font, bredd / 2, y_topp + i * rh)
         y_topp += rh * len(rader) + 20
 
     for b in block:
