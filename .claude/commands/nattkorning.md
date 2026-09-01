@@ -81,13 +81,37 @@ Underhåll av redan launchade kampanjer (steg 1–2: aktivering, komplettering a
 saknade adsets) är INTE to-do-listan — det styrs av kampanjkontot och får läsa
 sitt material varifrån mappen än ligger, LAUNCHED inräknat, via publika länkar.
 
-## Steg 4 — Drive-flytt (tyst best-effort)
+## Steg 4 — Drive-flytt (tyst best-effort, städar hela efterslpet)
 
-Försök flytta fullt launchade produkters mappar till LAUNCHED
-(id `1-vbYhYgTEv7zYptW5rGmgKAITmAz4l1X`). Misslyckas det: en (1) rad i
-rapportens statusdel — **ALDRIG under "väntar på Axel"**. Dubblettspärren mot
-annonskontot är skyddet; mapparna är ren städning och får aldrig bli Axels
-uppgift eller framställas som ett problem.
+Flytta **varje** mapp som ligger direkt i Products och redan har en kampanj i
+MagiBorsten till LAUNCHED (id `1-vbYhYgTEv7zYptW5rGmgKAITmAz4l1X`) — inte bara
+nattens egna launcher. Kampanjlistan från steg 3 är facit; mappar utan kampanj
+rörs aldrig, och LAUNCHED/NOT USED/Winners/Losers/TEMU-referens hoppas över.
+Så städas kvarliggande mappar av sig själva den natt rättigheten finns, utan
+att någon behöver be om det.
+
+Verktyget är `mcp__Google_Drive__update_file` med mappens `fileId` och
+`parentId` satt till LAUNCHED-id:t. Läs tillbaka med `get_file_metadata` och
+kontrollera att `parentId` ändrats — connectorn kan svara utan att ha flyttat.
+
+Misslyckas en flytt: en (1) rad i rapportens statusdel — **ALDRIG under
+"väntar på Axel"**. Dubblettspärren mot annonskontot är skyddet; mapparna är
+ren städning och får aldrig bli Axels uppgift eller framställas som ett problem.
+
+⚠️ **Rättighetsfel här är ett kontofel, inte ett kodfel — felsök aldrig koden.**
+Vem connectorn är inloggad som avgör om flytten går igenom, och det syns med
+`mcp__Google_Drive__search_files` på `owner = 'me'`.
+
+Mätt 2026-09-01, två gånger samma dag: först var connectorn inloggad som
+`axelodhner.business@gmail.com`, ett konto som varken äger käll-, mål- eller
+produktmappen — då nekades varje flytt. Axel kopplade samma dag om connectorn
+till `axel.odhner@stonebite.org`, kontot som äger både Products och LAUNCHED.
+Produktmapparna ägs av redigeraren (`joshnaelga146@gmail.com`) och kommer att
+fortsätta göra det — det är föräldramapparnas ägarskap som ger flytträtten.
+
+Nekas en flytt ändå: skriv statusraden och gå vidare, felsök inte koden.
+Kontrollera först vilket konto connectorn kör som; är det inte ägaren till
+Products är det enda verkliga åtgärden att koppla om den igen.
 
 ## Steg 5 — Redigerarnotis (Axels lista ska ALDRIG innehålla "säg till redigerarna")
 
