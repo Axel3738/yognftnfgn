@@ -22,16 +22,16 @@
       "roll": "editor",
       "notionUserId": "2cad872b-594c-8168-ba6d-0002611779b8",
       "exakt": {
-        "SEK": 173929.39
+        "SEK": 173929.74
       },
       "variant": {
-        "SEK": 145442.55
+        "SEK": 145464.46
       },
       "spend": {
-        "SEK": 319371.94
+        "SEK": 319394.2
       },
       "commission": {
-        "SEK": 1277.49
+        "SEK": 1277.58
       },
       "annonser": [
         {
@@ -3473,7 +3473,7 @@
           "adId": "120249902182980291",
           "adNamn": "Balteslipmaskin_PD_1",
           "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-          "spend": 1747.97,
+          "spend": 1748.45,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -3488,7 +3488,7 @@
           "adId": "120249902183550291",
           "adNamn": "Balteslipmaskin_PD_2",
           "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-          "spend": 6545.37,
+          "spend": 6548.38,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -3503,7 +3503,7 @@
           "adId": "120249902185790291",
           "adNamn": "Balteslipmaskin_PD_3",
           "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-          "spend": 3384.52,
+          "spend": 3384.75,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -3518,7 +3518,7 @@
           "adId": "120249902186320291",
           "adNamn": "Balteslipmaskin_PD_2_1",
           "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-          "spend": 1939.22,
+          "spend": 1940.4,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -3593,7 +3593,7 @@
           "adId": "120249902197250291",
           "adNamn": "Balteslipmaskin_CS_1",
           "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-          "spend": 349.59,
+          "spend": 350.07,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -3608,7 +3608,7 @@
           "adId": "120249902198460291",
           "adNamn": "Balteslipmaskin_CS_2",
           "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-          "spend": 278.45,
+          "spend": 278.51,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -3623,7 +3623,7 @@
           "adId": "120249902202700291",
           "adNamn": "Balteslipmaskin_CS_3",
           "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-          "spend": 516.43,
+          "spend": 516.57,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -3638,7 +3638,7 @@
           "adId": "120249902203330291",
           "adNamn": "Balteslipmaskin_CS_2_1",
           "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-          "spend": 3588.74,
+          "spend": 3589.77,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -4733,7 +4733,7 @@
           "adId": "120249990259240291",
           "adNamn": "Cykelshorts_SP_1",
           "kampanj": "Cykelshorts Herr | BE ROAS 1.68 | Launch 2026-08-27",
-          "spend": 3510.95,
+          "spend": 3512.67,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -4898,7 +4898,7 @@
           "adId": "120249990516530291",
           "adNamn": "MC-Kapell_PD_1",
           "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
-          "spend": 2081.58,
+          "spend": 2082.75,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -4928,7 +4928,7 @@
           "adId": "120249990520870291",
           "adNamn": "MC-Kapell_PD_3",
           "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
-          "spend": 574.61,
+          "spend": 574.81,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -5063,7 +5063,7 @@
           "adId": "120249990549040291",
           "adNamn": "MC-Kapell_CS_2_1",
           "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
-          "spend": 241.3,
+          "spend": 242.8,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -5138,7 +5138,7 @@
           "adId": "120250009296140291",
           "adNamn": "Badshorts_CS_2_1",
           "kampanj": "Badshorts med Skämttryck | BE ROAS 1.62 | Launch 2026-08-29",
-          "spend": 1046.14,
+          "spend": 1046.65,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -5198,7 +5198,7 @@
           "adId": "120250009298580291",
           "adNamn": "Badshorts_SP_1",
           "kampanj": "Badshorts med Skämttryck | BE ROAS 1.62 | Launch 2026-08-29",
-          "spend": 201.78,
+          "spend": 201.83,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -5213,7 +5213,7 @@
           "adId": "120250009300660291",
           "adNamn": "Badshorts_SP_3",
           "kampanj": "Badshorts med Skämttryck | BE ROAS 1.62 | Launch 2026-08-29",
-          "spend": 1308.64,
+          "spend": 1311.51,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -5303,7 +5303,7 @@
           "adId": "120250009503590291",
           "adNamn": "Damasker_PD_1",
           "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
-          "spend": 1383.04,
+          "spend": 1383.41,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -5378,7 +5378,7 @@
           "adId": "120250009505320291",
           "adNamn": "Damasker_SP_2",
           "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
-          "spend": 319.12,
+          "spend": 319.32,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -5393,7 +5393,7 @@
           "adId": "120250009509220291",
           "adNamn": "Damasker_SP_3",
           "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
-          "spend": 301.92,
+          "spend": 302.32,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -5573,7 +5573,7 @@
           "adId": "120250009650690291",
           "adNamn": "Gravsten_SP_3",
           "kampanj": "Gravstenspennan | BE ROAS 1.60 | Launch 2026-08-29",
-          "spend": 88.37,
+          "spend": 88.43,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -5648,7 +5648,7 @@
           "adId": "120250009790460291",
           "adNamn": "Fotboll_G_2_1",
           "kampanj": "Jättefotbollen | BE ROAS 1.61 | Launch 2026-08-29",
-          "spend": 1563.61,
+          "spend": 1564.49,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -5663,7 +5663,7 @@
           "adId": "120250009791120291",
           "adNamn": "Fotboll_G_1",
           "kampanj": "Jättefotbollen | BE ROAS 1.61 | Launch 2026-08-29",
-          "spend": 307.92,
+          "spend": 308.51,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -5843,7 +5843,7 @@
           "adId": "120250017836240291",
           "adNamn": "Gravsten_CS_2_1",
           "kampanj": "Gravstenspennan | BE ROAS 1.60 | Launch 2026-08-29",
-          "spend": 276.34,
+          "spend": 277.47,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -5858,7 +5858,7 @@
           "adId": "120250017838080291",
           "adNamn": "Gravsten_CS_1",
           "kampanj": "Gravstenspennan | BE ROAS 1.60 | Launch 2026-08-29",
-          "spend": 198.02,
+          "spend": 200.61,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -5873,7 +5873,7 @@
           "adId": "120250017840500291",
           "adNamn": "Gravsten_CS_2",
           "kampanj": "Gravstenspennan | BE ROAS 1.60 | Launch 2026-08-29",
-          "spend": 848.24,
+          "spend": 849.3,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -5903,7 +5903,7 @@
           "adId": "120246005484400074",
           "adNamn": "128 H3",
           "kampanj": "Mastern",
-          "spend": 4915.04,
+          "spend": 4915.23,
           "konto": {
             "id": "1346450049878358",
             "namn": "SnarkLös",
@@ -5978,7 +5978,7 @@
           "adId": "120247016451640074",
           "adNamn": "176 H1",
           "kampanj": "Mastern",
-          "spend": 1471.03,
+          "spend": 1471.19,
           "konto": {
             "id": "1346450049878358",
             "namn": "SnarkLös",
@@ -6930,13 +6930,13 @@
         "SEK": 12381.38
       },
       "variant": {
-        "SEK": 166798.06
+        "SEK": 152965.84
       },
       "spend": {
-        "SEK": 179179.44
+        "SEK": 165347.22
       },
       "commission": {
-        "SEK": 716.72
+        "SEK": 661.39
       },
       "annonser": [
         {
@@ -10918,7 +10918,7 @@
           "adId": "120249850557140291",
           "adNamn": "Fiskespöhållare_PD_1_H1",
           "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 9206.74,
+          "spend": 9209.48,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -10963,7 +10963,7 @@
           "adId": "120249850564380291",
           "adNamn": "Fiskespöhållare_PD_EXTRA",
           "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 8236.59,
+          "spend": 8240.08,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -11113,7 +11113,7 @@
           "adId": "120249850603660291",
           "adNamn": "Fiskespöhållare_CS_1_H1",
           "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 5254.98,
+          "spend": 5259.8,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -11143,7 +11143,7 @@
           "adId": "120249850617200291",
           "adNamn": "Fiskespöhållare_CS_1_H3",
           "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 297.35,
+          "spend": 297.52,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -12310,81 +12310,6 @@
           "typ": "variant"
         },
         {
-          "adId": "120249912526980291",
-          "adNamn": "Rodholder_PD_9_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 12.8,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_9_H1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120249912527340291",
-          "adNamn": "Rodholder_PD_10_1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 17.11,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_10_1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120249912527480291",
-          "adNamn": "Rodholder_PD_15_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 9267.93,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_15_H1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120249912527550291",
-          "adNamn": "Rodholder_PD_16_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 1840.58,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_16_H1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120249912528610291",
-          "adNamn": "Rodholder_PD_17_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 73.76,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_17_H1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
           "adId": "120249917367510291",
           "adNamn": "Sneakers_Herr_PD_1_H2",
           "kampanj": "Sneakers Herr | BE ROAS 1.19 | Launch 2026-08-21",
@@ -12655,51 +12580,6 @@
           "typ": "variant"
         },
         {
-          "adId": "120249936271890291",
-          "adNamn": "Rodholder_PD_3_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 16.88,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_3_H1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120249936272090291",
-          "adNamn": "Rodholder_PD_3_H2",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 116.69,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_3_H2",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120249936272230291",
-          "adNamn": "Rodholder_PD_8_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 10.14,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_8_H1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
           "adId": "120249936272690291",
           "adNamn": "Rodholder_PD_8_H2_H1",
           "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
@@ -12730,85 +12610,10 @@
           "typ": "variant"
         },
         {
-          "adId": "120249936273710291",
-          "adNamn": "Rodholder_PD_11_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 10.21,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_11_H1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120249936274040291",
-          "adNamn": "Rodholder_PD_11_H2",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 1921.7,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_11_H2",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120249936274240291",
-          "adNamn": "Rodholder_PD_12_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 14.49,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_12_H1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120249936274460291",
-          "adNamn": "Rodholder_PD_13_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 4.18,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_13_H1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120249936275270291",
-          "adNamn": "Rodholder_SO_3_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 172.14,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_SO_3_H1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
           "adId": "120249936610640291",
           "adNamn": "Rodholder_PD_6_1",
           "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 1462.75,
+          "spend": 1463.46,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -12891,96 +12696,6 @@
             "aktiv": true
           },
           "rad": "Rodholder_PD_3_H2_H2",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120249942030850291",
-          "adNamn": "Rodholder_PD_4_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 16.26,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_4_H1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120249942031600291",
-          "adNamn": "Rodholder_PD_15_H2",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 8.64,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_15_H2",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120249942031880291",
-          "adNamn": "Rodholder_PD_16_H2",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 85.86,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_16_H2",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120249942032210291",
-          "adNamn": "Rodholder_PD_18_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 1.17,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_18_H1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120249942032470291",
-          "adNamn": "Rodholder_PD_18_H2",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 3.25,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_18_H2",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120249942033570291",
-          "adNamn": "Rodholder_GT_3_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 20.3,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_GT_3_H1",
           "hubb": "produkt",
           "typ": "variant"
         },
@@ -13303,7 +13018,7 @@
           "adId": "120249954096890291",
           "adNamn": "Soptunneklistermarken_PD_Bild_03_sophamtningsdag",
           "kampanj": "Soptunneklistermärkena | BE ROAS 1.67 | Launch 2026-08-21",
-          "spend": 4456.06,
+          "spend": 4459.96,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -13420,21 +13135,6 @@
           "typ": "variant"
         },
         {
-          "adId": "120249960325690291",
-          "adNamn": "Rodholder_PD_5_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 7.07,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_5_H1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
           "adId": "120249960326520291",
           "adNamn": "Rodholder_PD_12_H2_H1",
           "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
@@ -13491,66 +13191,6 @@
             "aktiv": true
           },
           "rad": "Rodholder_PD_13_H2_H2",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120249960329280291",
-          "adNamn": "Rodholder_PD_21_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 1.61,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_21_H1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120249960331080291",
-          "adNamn": "Rodholder_PD_21_H2",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 12.37,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_21_H2",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120249960333600291",
-          "adNamn": "Rodholder_PD_23_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 165.71,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_23_H1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120249960334990291",
-          "adNamn": "Rodholder_PD_23_H2",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 2.64,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_23_H2",
           "hubb": "produkt",
           "typ": "variant"
         },
@@ -13903,7 +13543,7 @@
           "adId": "120249975065110291",
           "adNamn": "Kranskydd_PD_2_1",
           "kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
-          "spend": 1289.44,
+          "spend": 1290.06,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -13978,7 +13618,7 @@
           "adId": "120249975080300291",
           "adNamn": "Kranskydd_SP_1_H3",
           "kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
-          "spend": 2351.62,
+          "spend": 2351.92,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -14203,7 +13843,7 @@
           "adId": "120249989821600291",
           "adNamn": "Overvakningskamera_SP_2",
           "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
-          "spend": 3761.51,
+          "spend": 3766.24,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -14218,7 +13858,7 @@
           "adId": "120249989825580291",
           "adNamn": "Overvakningskamera_SP_3",
           "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
-          "spend": 130.48,
+          "spend": 130.53,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -14278,7 +13918,7 @@
           "adId": "120249989876850291",
           "adNamn": "Overvakningskamera_CS_3",
           "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
-          "spend": 132.81,
+          "spend": 133.86,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -14368,7 +14008,7 @@
           "adId": "120249990007030291",
           "adNamn": "Plyschtofflor_PD_2",
           "kampanj": "Plyschtofflorna Herr | BE ROAS 1.49 | Launch 2026-08-21",
-          "spend": 450.09,
+          "spend": 450.66,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -14413,7 +14053,7 @@
           "adId": "120249990035500291",
           "adNamn": "Plyschtofflor_SP_1",
           "kampanj": "Plyschtofflorna Herr | BE ROAS 1.49 | Launch 2026-08-21",
-          "spend": 110.32,
+          "spend": 110.42,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -14428,7 +14068,7 @@
           "adId": "120249990038930291",
           "adNamn": "Plyschtofflor_SP_2",
           "kampanj": "Plyschtofflorna Herr | BE ROAS 1.49 | Launch 2026-08-21",
-          "spend": 528.56,
+          "spend": 528.69,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -14458,7 +14098,7 @@
           "adId": "120249990046170291",
           "adNamn": "Plyschtofflor_SP_2_1",
           "kampanj": "Plyschtofflorna Herr | BE ROAS 1.49 | Launch 2026-08-21",
-          "spend": 937.1,
+          "spend": 940.32,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -14473,7 +14113,7 @@
           "adId": "120249990053570291",
           "adNamn": "Plyschtofflor_CS_1",
           "kampanj": "Plyschtofflorna Herr | BE ROAS 1.49 | Launch 2026-08-21",
-          "spend": 80.62,
+          "spend": 80.84,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -14518,7 +14158,7 @@
           "adId": "120249990064190291",
           "adNamn": "Plyschtofflor_CS_2_1",
           "kampanj": "Plyschtofflorna Herr | BE ROAS 1.49 | Launch 2026-08-21",
-          "spend": 653.81,
+          "spend": 656.29,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -14593,7 +14233,7 @@
           "adId": "120250005818370291",
           "adNamn": "IBC_PD_1_H1",
           "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
-          "spend": 3095.29,
+          "spend": 3097.06,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -14638,7 +14278,7 @@
           "adId": "120250005822150291",
           "adNamn": "IBC_PD_Extra",
           "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
-          "spend": 52.19,
+          "spend": 52.35,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -14743,7 +14383,7 @@
           "adId": "120250005831370291",
           "adNamn": "IBC_CS_1_H3",
           "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
-          "spend": 267.65,
+          "spend": 267.74,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -14830,246 +14470,6 @@
           "typ": "variant"
         },
         {
-          "adId": "120250005887230291",
-          "adNamn": "Rodholder_PD_17_H2",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 9.6,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_17_H2",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120250005890300291",
-          "adNamn": "Rodholder_PD_19_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 3.63,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_19_H1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120250005892680291",
-          "adNamn": "Rodholder_PD_19_H2",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 3.46,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_19_H2",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120250005895650291",
-          "adNamn": "Rodholder_PD_22_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 7.28,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_22_H1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120250005898420291",
-          "adNamn": "Rodholder_PD_22_H2",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 3.25,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_22_H2",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120250005901530291",
-          "adNamn": "Rodholder_PD_25_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 1.76,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_25_H1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120250005904840291",
-          "adNamn": "Rodholder_PD_25_H2",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 0.33,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_25_H2",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120250005909190291",
-          "adNamn": "Rodholder_PD_26_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 0.06,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_26_H1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120250005912410291",
-          "adNamn": "Rodholder_PD_26_H2",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 1.13,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_26_H2",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120250005915410291",
-          "adNamn": "Rodholder_PD_27_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 4.78,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_27_H1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120250005918300291",
-          "adNamn": "Rodholder_PD_27_H2",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 6.42,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_27_H2",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120250005923960291",
-          "adNamn": "Rodholder_PD_28_H2",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 0.75,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_28_H2",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120250005925570291",
-          "adNamn": "Rodholder_PD_29_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 1.08,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_29_H1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120250005927580291",
-          "adNamn": "Rodholder_PD_29_H2",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 9.03,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_29_H2",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120250005929810291",
-          "adNamn": "Rodholder_PD_30_H1",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 8.36,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_30_H1",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
-          "adId": "120250005932940291",
-          "adNamn": "Rodholder_PD_30_H2",
-          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "spend": 0.73,
-          "konto": {
-            "id": "1867947880635861",
-            "namn": "MagiBorsten",
-            "valuta": "SEK",
-            "aktiv": true
-          },
-          "rad": "Rodholder_PD_30_H2",
-          "hubb": "produkt",
-          "typ": "variant"
-        },
-        {
           "adId": "120250009360390291",
           "adNamn": "Batmotor_GT_2_1",
           "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
@@ -15118,7 +14518,7 @@
           "adId": "120250009361920291",
           "adNamn": "Batmotor_SP_1_H1",
           "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-          "spend": 316.86,
+          "spend": 317.03,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -15133,7 +14533,7 @@
           "adId": "120250009362290291",
           "adNamn": "Batmotor_SP_1_H2",
           "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-          "spend": 152.76,
+          "spend": 152.83,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -15148,7 +14548,7 @@
           "adId": "120250009362730291",
           "adNamn": "Batmotor_SP_1_H3",
           "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-          "spend": 1089.68,
+          "spend": 1090.27,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -15163,7 +14563,7 @@
           "adId": "120250017784490291",
           "adNamn": "Batmotor_CS_2_1",
           "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-          "spend": 609.97,
+          "spend": 610.74,
           "konto": {
             "id": "1867947880635861",
             "namn": "MagiBorsten",
@@ -16352,14 +15752,14 @@
       "roll": "editor",
       "notionUserId": "3bcd872b-594c-8133-865d-0002340f7eff",
       "exakt": {
-        "SEK": 44469.25
+        "SEK": 45203.34
       },
       "variant": {},
       "spend": {
-        "SEK": 44469.25
+        "SEK": 45203.34
       },
       "commission": {
-        "SEK": 177.88
+        "SEK": 180.81
       },
       "annonser": [
         {
@@ -16569,6 +15969,516 @@
             "aktiv": true
           },
           "rad": "Seatcover_SP_8_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249912526980291",
+          "adNamn": "Rodholder_PD_9_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 12.8,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_9_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249936271890291",
+          "adNamn": "Rodholder_PD_3_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 16.88,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_3_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249936272090291",
+          "adNamn": "Rodholder_PD_3_H2",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 116.69,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_3_H2",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249936272230291",
+          "adNamn": "Rodholder_PD_8_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 10.14,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_8_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249936274240291",
+          "adNamn": "Rodholder_PD_12_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 14.49,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_12_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249936274460291",
+          "adNamn": "Rodholder_PD_13_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 4.18,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_13_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249936275270291",
+          "adNamn": "Rodholder_SO_3_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 172.14,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_SO_3_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249942030850291",
+          "adNamn": "Rodholder_PD_4_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 16.26,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_4_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249942031600291",
+          "adNamn": "Rodholder_PD_15_H2",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 8.64,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_15_H2",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249942031880291",
+          "adNamn": "Rodholder_PD_16_H2",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 85.86,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_16_H2",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249942032210291",
+          "adNamn": "Rodholder_PD_18_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 1.17,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_18_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249942032470291",
+          "adNamn": "Rodholder_PD_18_H2",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 3.25,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_18_H2",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249942033570291",
+          "adNamn": "Rodholder_GT_3_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 20.3,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_GT_3_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249960325690291",
+          "adNamn": "Rodholder_PD_5_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 7.07,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_5_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249960329280291",
+          "adNamn": "Rodholder_PD_21_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 1.61,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_21_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249960331080291",
+          "adNamn": "Rodholder_PD_21_H2",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 12.37,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_21_H2",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249960333600291",
+          "adNamn": "Rodholder_PD_23_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 165.71,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_23_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249960334990291",
+          "adNamn": "Rodholder_PD_23_H2",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 2.64,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_23_H2",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120250005887230291",
+          "adNamn": "Rodholder_PD_17_H2",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 9.6,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_17_H2",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120250005890300291",
+          "adNamn": "Rodholder_PD_19_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 3.63,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_19_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120250005892680291",
+          "adNamn": "Rodholder_PD_19_H2",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 3.46,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_19_H2",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120250005895650291",
+          "adNamn": "Rodholder_PD_22_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 7.28,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_22_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120250005898420291",
+          "adNamn": "Rodholder_PD_22_H2",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 3.25,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_22_H2",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120250005901530291",
+          "adNamn": "Rodholder_PD_25_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 1.76,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_25_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120250005904840291",
+          "adNamn": "Rodholder_PD_25_H2",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 0.33,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_25_H2",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120250005909190291",
+          "adNamn": "Rodholder_PD_26_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 0.06,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_26_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120250005912410291",
+          "adNamn": "Rodholder_PD_26_H2",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 1.13,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_26_H2",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120250005915410291",
+          "adNamn": "Rodholder_PD_27_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 4.78,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_27_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120250005918300291",
+          "adNamn": "Rodholder_PD_27_H2",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 6.42,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_27_H2",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120250005923960291",
+          "adNamn": "Rodholder_PD_28_H2",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 0.75,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_28_H2",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120250005925570291",
+          "adNamn": "Rodholder_PD_29_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 1.08,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_29_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120250005927580291",
+          "adNamn": "Rodholder_PD_29_H2",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 9.03,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_29_H2",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120250005929810291",
+          "adNamn": "Rodholder_PD_30_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 8.36,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_30_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120250005932940291",
+          "adNamn": "Rodholder_PD_30_H2",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 0.73,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_30_H2",
           "hubb": "hubb",
           "typ": "exakt"
         },
@@ -17341,7 +17251,7 @@
           "adId": "120248915565160074",
           "adNamn": "001 REMAKE H4 08-15",
           "kampanj": "Mastern",
-          "spend": 1834.41,
+          "spend": 1834.65,
           "konto": {
             "id": "1346450049878358",
             "namn": "SnarkLös",
@@ -17465,14 +17375,14 @@
       "roll": "editor",
       "notionUserId": "1a4d872b-594c-81d8-adf3-0002a95f9e7f",
       "exakt": {
-        "SEK": 18540.32
+        "SEK": 29723.45
       },
       "variant": {},
       "spend": {
-        "SEK": 18540.32
+        "SEK": 29723.45
       },
       "commission": {
-        "SEK": 74.16
+        "SEK": 118.89
       },
       "annonser": [
         {
@@ -17532,6 +17442,51 @@
             "aktiv": true
           },
           "rad": "Seatcover_PD_18_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249912527480291",
+          "adNamn": "Rodholder_PD_15_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 9267.93,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_15_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249912527550291",
+          "adNamn": "Rodholder_PD_16_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 1840.79,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_16_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249912528610291",
+          "adNamn": "Rodholder_PD_17_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 73.76,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_17_H1",
           "hubb": "hubb",
           "typ": "exakt"
         },
@@ -19174,7 +19129,7 @@
           "adId": "120248579081160074",
           "adNamn": "249 H1",
           "kampanj": "Mastern",
-          "spend": 1955.12,
+          "spend": 1955.3,
           "konto": {
             "id": "1346450049878358",
             "namn": "SnarkLös",
@@ -19444,7 +19399,7 @@
           "adId": "120248800287390074",
           "adNamn": "277 H1 08-11",
           "kampanj": "Mastern",
-          "spend": 3205.63,
+          "spend": 3206.1,
           "konto": {
             "id": "1346450049878358",
             "namn": "SnarkLös",
@@ -19898,14 +19853,14 @@
       "roll": "editor",
       "notionUserId": "24ed872b-594c-8102-b94d-0002bde1d55a",
       "exakt": {
-        "SEK": 3615.81
+        "SEK": 5564.91
       },
       "variant": {},
       "spend": {
-        "SEK": 3615.81
+        "SEK": 5564.91
       },
       "commission": {
-        "SEK": 14.46
+        "SEK": 22.26
       },
       "annonser": [
         {
@@ -19920,6 +19875,51 @@
             "aktiv": true
           },
           "rad": "Seatcover_PD_19_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249912527340291",
+          "adNamn": "Rodholder_PD_10_1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 17.11,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_10_1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249936273710291",
+          "adNamn": "Rodholder_PD_11_H1",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 10.21,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_11_H1",
+          "hubb": "hubb",
+          "typ": "exakt"
+        },
+        {
+          "adId": "120249936274040291",
+          "adNamn": "Rodholder_PD_11_H2",
+          "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 1921.7,
+          "konto": {
+            "id": "1867947880635861",
+            "namn": "MagiBorsten",
+            "valuta": "SEK",
+            "aktiv": true
+          },
+          "rad": "Rodholder_PD_11_H2",
           "hubb": "hubb",
           "typ": "exakt"
         },
@@ -21532,7 +21532,7 @@
           "adId": "120248926905810074",
           "adNamn": "282 V2 H1 08-16",
           "kampanj": "Mastern",
-          "spend": 143.27,
+          "spend": 143.35,
           "konto": {
             "id": "1346450049878358",
             "namn": "SnarkLös",
@@ -23466,22 +23466,22 @@
     "exakt": {},
     "variant": {},
     "spend": {
-      "SEK": 565176.76
+      "SEK": 565233.12
     },
     "commission": {
-      "SEK": 2260.71
+      "SEK": 2260.93
     }
   },
-  "godkandaRader": 217,
+  "godkandaRader": 265,
   "raderUtanSpend": [],
   "annonserUtanGodkandRad": {
     "antal": 429,
     "spend": {
-      "SEK": 83690.04000000001
+      "SEK": 83691.78000000001
     }
   },
   "koppling": {
-    "hubbrader": 286,
+    "hubbrader": 330,
     "oversattningsrader": 40,
     "produkter": 49
   },
@@ -26128,6 +26128,441 @@
             "url": null
           }
         ]
+      },
+      {
+        "id": "3c3270ab-908c-80f8-824d-eed3c4aa94e1",
+        "namn": "Fish rod holder",
+        "rader": [
+          {
+            "namn": "Rodholder_PD_9_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_11_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "24ed872b-594c-8102-b94d-0002bde1d55a"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_7_1",
+            "typ": "Image - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_15_H2",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_11_H2",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "24ed872b-594c-8102-b94d-0002bde1d55a"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_SO_4_1",
+            "typ": "Image - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_17_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "1a4d872b-594c-81d8-adf3-0002a95f9e7f"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_CS_3_1",
+            "typ": "Image - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_15_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "1a4d872b-594c-81d8-adf3-0002a95f9e7f"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_8_H2",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_3_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_SO_3_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_10_1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "24ed872b-594c-8102-b94d-0002bde1d55a"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_8_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_16_H2",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_17_H2",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_3_H2",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_GT_3_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_13_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_16_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "1a4d872b-594c-81d8-adf3-0002a95f9e7f"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_12_H2",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_12_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_6_1",
+            "typ": "Image - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_5_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_4_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_13_H2",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_18_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_25_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_22_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_23_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_22_H2",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_19_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_25_H2",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_21_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_19_H2",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_18_H2",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_23_H2",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_21_H2",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_29_H2",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_27_H2",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_26_H2",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_28_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_28_H2",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_27_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_30_H2",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_30_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_26_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          },
+          {
+            "namn": "Rodholder_PD_29_H1",
+            "typ": "Video - Pending Approval",
+            "status": "Approved",
+            "ansvariga": [
+              "3bcd872b-594c-8133-865d-0002340f7eff"
+            ],
+            "url": null
+          }
+        ]
+      },
+      {
+        "id": "3ce270ab-908c-8161-bed2-e22f132a6aba",
+        "namn": "IBC Tank Cover creative hub",
+        "rader": []
       }
     ],
     "konton": [
@@ -26219,7 +26654,7 @@
     "teamspaceVerifierad": true,
     "svenskaBara": true,
     "bortfiltrerat": 908,
-    "bortfiltreradSpend": 198069.21999999988,
+    "bortfiltreradSpend": 198691.3899999999,
     "fel": []
   }
 }
