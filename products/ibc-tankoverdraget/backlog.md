@@ -5,13 +5,14 @@ fylls på av `/koncept` och kommande `/cs`-körningar.
 
 ## Väntande idéer
 
-- **SP (social proof) omgjord med riktiga recensioner.** Kräver att
-  recensions-frön (Drive `IBC-tanköverdrag_Reviews`) synkas till rätt
-  produkt-handle i Judge.me FÖRST. Bygg inte förrän minst ett par riktiga
-  recensioner finns live — se dna.md.
-- **CS (rea) omgjord med bekräftat pris.** Kräver att Axel bekräftar vilket
-  pris/jämförpris som faktiskt gäller (419/524 kr eller något annat) innan
-  ny rabatt-copy skrivs.
-- **Produktsidans identitet.** Om Axel bekräftar att sidan pekar fel
-  (kranadapter i stället för tygöverdrag): ingen ny brief behövs, men hela
-  kampanjens landningssida måste bytas/korrigeras innan fler tester har mening.
+- **SP (social proof) med belagd formulering.** 10 riktiga recensioner ligger
+  live på produktsidan — vinkeln är alltså fri att köra. Det som ska bytas är
+  storleken på påståendet: "hundratals trädgårdsägare" byts mot något som
+  matchar 10 recensioner. Läs recensionerna först och plocka en riktig rad.
+- **CS (rea) med bekräftat pris.** Priset ÄR bekräftat: 489 kr rea,
+  636 kr ordinarie, 23 % — samma som annonserna redan säger. Ingen blockering
+  kvar; CS kan skrivas om och testas med riktig budget.
+
+*(Tre poster som låg här 2026-09-01 — fel produktsida, fel pris, 0 recensioner
+— är strukna. Alla tre byggde på att körningen läst fel IBC-produkt i butiken.
+Se rättelserutan i dna.md.)*

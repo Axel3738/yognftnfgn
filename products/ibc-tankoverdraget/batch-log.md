@@ -19,15 +19,21 @@ inklusive 1 nytt koncept (CO — comparison).
 | IBC_GT_3_H1 | Video | GT (rättvis omtest) | Gåva-vinkeln fick aldrig riktig budget (34,68 kr totalt) — riktig chans denna gång, en generisk rad utbytt mot en konkret | Befintlig GT_1-manus, en rad omskriven |
 | IBC_CO_1_1 | Statisk | CO (helt nytt koncept) | Before/after-jämförelsevisual av det redan bevisade UV/alg-faktumet, aldrig testat i denna produkt | PD_1_H1:s bevisade sakfaktum, visualiserat i stället för uttalat |
 
-**Kritiska fynd, ej byggda på i briefer men flaggade till Axel:**
-1. Prisglapp: tre LIVE-annonser (CS_1_H2, CS_1_H3, CS_2_1) säger 489/636 kr,
-   den nåbara produktsidan visar 419/524 kr.
-2. Ogrundad social proof: SP-annonserna säger "hundratals trädgårdsägare",
-   sidan har 0 recensioner (ett 10-rads fröfil i Drive är fel produkt-handle,
-   aldrig synkat).
-3. **Störst:** den nåbara Shopify-produktsidan beskriver en kranadapter, inte
-   det UV-blockerande överdrag som alla 16 launch-annonser visar och säljer.
-   Kräver Axels bekräftelse — se dna.md.
+**~~Kritiska fynd~~ — ALLA TRE VAR FEL. Struket 2026-09-01 efter Axels
+invändning och verifiering mot butiken:**
+1. ~~Prisglapp~~ — annonsernas 489/636 kr är RÄTT. Produktsidan säger exakt
+   samma sak.
+2. ~~0 recensioner~~ — 10 recensioner ligger live. (Att "hundratals" är en
+   överdrift av 10 kvarstår som en copy-fråga, inte som ett larm.)
+3. ~~Fel produktsida~~ — sidan `ibc-tankoverdrag-1000-l-stoppar-alger-uv`
+   finns och är rätt produkt.
+
+**Rotorsak till felet:** Shopify-tokenen var utgången, så körningen sökte i
+butiken i stället och tog fel av de tre IBC-produkterna (kranadaptern,
+419/524 kr) som kampanjens landningssida. Larmen byggdes på den gissningen
+och skickades till Axels telefon utan verifiering. Se rättelserutan i dna.md.
+**Regeln som följer: utan Shopify-åtkomst är produktidentiteten overifierad —
+skriv det, larma inte.**
 
 **Naming:** lästes av innan numrering — upptagna ID:n PD_1/PD_2/PD_Extra,
 CS_1/CS_2, SP_1/SP_2, GT_1/GT_2. Nya: PD_3, GT_3, CO_1 (ny kod, redan använd
