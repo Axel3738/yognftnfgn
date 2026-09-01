@@ -29,6 +29,11 @@ alla 32 annonser ACTIVE, alla länkar → beverbutikken.no. Levererat i chatten 
 8 png) och uppladdat i Drive: MAKE TO NORWAY → "NO Damasker Vandring"/"NO Jättefotboll"
 (24 mp4 + 8 png + 8 adcopy-docs). Kvot 27 715 → 26 939 (~776 credits).
 
+**Rutinkörning 2026-09-01 (04:15):** inga kandidater — läget oförändrat mot 08-31.
+Skoreparationslappar fortfarande stoppad: Norge-kolumnerna i batch-sheet #1 är tomma
+(och radens ifyllda tal går inte ihop: 1,00 + 4,66 ≠ 8,56 — inte ens totalen är
+verifierbar). 0 credits. Discord-brief skickad.
+
 **Rutinkörning 2026-08-31 (04:15):** inga launchbara kandidater. 6 av 7 WINNERS-produkter
 blockerade av dubblettspärren (kampanj finns redan i NO-kontot: Fiskespöhållaren ACTIVE;
 Tofflorna/Motorhöljet/Strandtofflorna/Axelbältet/Sätesöverdraget PAUSED — Axels beslut krävs
