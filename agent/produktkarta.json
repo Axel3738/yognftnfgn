@@ -9,7 +9,7 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-08-31",
+  "uppdaterad": "2026-09-01",
   "kampanjer": [
     {
       "campaign_id": "120250009747620291",
@@ -351,11 +351,18 @@
     },
     {
       "campaign_id": "120251996272390233",
-      "produkt": "Kranskydd Frost NO",
+      "produkt": "Kranbeskyttelse Frost NO",
       "lage": "test",
-      "lage_motivering": "startad 2026-08-29, för ny för data",
+      "lage_motivering": "2 861,42 kr spenderat, 39 köp, ROAS 3,65 mot BE 1,63 (avläst 2026-09-01, maximum) — 32,6 % vinst av omsättningen, passerat testtröskeln och fått sin första riktiga batch via /forsta-batch. Under 30-köpsgränsen för drift.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "3ce270ab-908c-81a9-a0c9-cb8fbdcdeae9",
+      "notion_hub_datakalla": "de8270ab-908c-83fe-9943-87319bf904b6",
+      "notion_hub_namn": "Kranbeskyttelse Frost NO creative hub",
+      "drive_produktmapp_id": "1UlcNZRVuLeR1bCLV6XPINKBDrZ5jpthz",
+      "drive_produktmapp_not": "Joshs befintliga NO-produktmapp i MAKE TO NORWAY (\"NO Kranskydd Frost 420D\"), flat struktur utan Batch-mappar sedan launch. Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products (lanseringskön).",
+      "drive_senaste_batchmapp_id": "1mnL3D1M3wwpQ8ox9VzSG7EHfMiaIHIH_",
+      "minne": "products/kranbeskyttelse-frost-no/"
     },
     {
       "campaign_id": "120251856983860233",
