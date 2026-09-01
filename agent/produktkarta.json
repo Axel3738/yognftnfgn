@@ -52,6 +52,30 @@
       "break_even_kalla": "kampanjnamnet"
     },
     {
+      "campaign_id": "120250038618440291",
+      "produkt": "Magnethyllan för Tvättmaskin och Kylskåp",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-01, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250038598420291",
+      "produkt": "Sömnadskitet 104 Delar",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-01, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250038574360291",
+      "produkt": "Luffarschacket i Trä",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-01, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
       "campaign_id": "120249850522830291",
       "produkt": "Fiskespöhållaren",
       "lage": "drift",
