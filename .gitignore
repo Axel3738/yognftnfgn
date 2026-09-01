@@ -5,3 +5,7 @@ pipeline/output/
 
 # Genererade bildannonser — artefakter, inte källkod
 bildannonser/output/
+
+# Pythons cache — artefakter, inte källkod
+__pycache__/
+*.pyc

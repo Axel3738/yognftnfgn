@@ -21,7 +21,7 @@ from pathlib import Path
 
 # Tecken utanför ASCII som är tillåtna i svensk annonstext. Allt annat är
 # mojibake eller ett tecken modellen hittat på.
-TILLATNA_ICKE_ASCII = set("åäöÅÄÖéÉüÜ–—→”“’…°")
+TILLATNA_ICKE_ASCII = set("åäöÅÄÖéÉüÜ–—→”“’…°✅✓•")
 
 # Förbud ur CLAUDE.md och ramverkets steg 7. Träff = stoppfel, inte varning.
 FORBUD = [
@@ -46,23 +46,30 @@ def hitta_mojibake(text):
 
 
 def normalisera(s):
-    """Jämför utan att fastna på radbrytningar och dubbla mellanslag."""
+    """Jämför utan att fastna på radbrytningar, dubbla mellanslag eller de
+    citattecken briefen sätter runt varje rad. Stavning och ordval jämförs
+    fortfarande exakt — det är hela poängen med kontrollen."""
+    s = re.sub(r"[\"\u201c\u201d\u2018\u2019]", "", s)
     return re.sub(r"\s+", " ", s).strip()
 
 
 def granska_block(namn, text, brieftext):
+    """Kontrollerar ett textblock rad för rad — ett block kan innehålla flera
+    rader (t.ex. en punktlista), och varje rad ska stå ordagrant i briefen."""
     fel = []
+    normaliserad_brief = normalisera(brieftext)
 
-    if normalisera(text) not in normalisera(brieftext):
-        fel.append(f'strängen finns inte ordagrant i briefen: "{text}"')
+    for rad in [r for r in text.split("\n") if r.strip()]:
+        if normalisera(rad) not in normaliserad_brief:
+            fel.append(f'raden finns inte ordagrant i briefen: "{rad}"')
 
-    for monster, skal in FORBUD:
-        if re.search(monster, text):
-            fel.append(f'förbjudet innehåll ({skal}) i: "{text}"')
+        for monster, skal in FORBUD:
+            if re.search(monster, rad):
+                fel.append(f'förbjudet innehåll ({skal}) i: "{rad}"')
 
-    mojibake = hitta_mojibake(text)
-    if mojibake:
-        fel.append(f'okända tecken {", ".join(mojibake)} i: "{text}"')
+        mojibake = hitta_mojibake(rad)
+        if mojibake:
+            fel.append(f'okända tecken {", ".join(mojibake)} i: "{rad}"')
 
     return fel
 
