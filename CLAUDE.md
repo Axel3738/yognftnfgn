@@ -244,6 +244,17 @@ på vägar som fungerar ändå där det går: Drive läses publikt med
 `tools/drive-ls.py`, Meta via `META_ACCESS_TOKEN`, Notion via `NOTION_TOKEN`
 (`tools/notion-klara.mjs`).
 
+⚠️ **En kopplad connector räcker inte — verktyget måste också ligga i rutinens
+`allowed_tools`.** Mätt 2026-09-01 på rutinen "Ad upload and structure": den
+listar sju connectors (ADsmanagaer, Google-Drive, Notion, Slack, Shopify …) men
+har `allowed_tools` = Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch —
+**inte ett enda `mcp__*`**. Connectorlistan i Routines-vyn ser alltså rätt ut
+medan körningen ändå saknar verktygen, och ett steg som förutsätter ett
+`mcp__*`-anrop misslyckas tyst varje natt. Skriv aldrig ett rutinsteg som
+kräver ett MCP-verktyg utan att först ha läst rutinens `allowed_tools`; gå via
+Bash med token, eller via Apps Script-brevlådan (`tools/drive-brevlada.gs` +
+`tools/drive-flytta.mjs`) som kör som Axels eget Google-konto.
+
 ---
 
 ## Kommandon i terminalen

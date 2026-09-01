@@ -90,28 +90,34 @@ rörs aldrig, och LAUNCHED/NOT USED/Winners/Losers/TEMU-referens hoppas över.
 Så städas kvarliggande mappar av sig själva den natt rättigheten finns, utan
 att någon behöver be om det.
 
-Verktyget är `mcp__Google_Drive__update_file` med mappens `fileId` och
-`parentId` satt till LAUNCHED-id:t. Läs tillbaka med `get_file_metadata` och
-kontrollera att `parentId` ändrats — connectorn kan svara utan att ha flyttat.
+Verktyget är **`node tools/drive-flytta.mjs --till=1-vbYhYgTEv7zYptW5rGmgKAITmAz4l1X <mapp-id …>`**
+(kräver env `DRIVE_UPLOAD_URL` + `DRIVE_UPLOAD_KEY`). Det är idempotent och
+läser tillbaka föräldern efter flytten, så ett tyst misslyckande rapporteras
+som fel i stället för som lyckat.
+
+⚠️ **Använd INTE Google Drive-connectorn här.** Rutinen "Ad upload and
+structure" kör med `allowed_tools` = Bash, Read, Write, Edit, Glob, Grep,
+WebFetch, WebSearch — **inga `mcp__*`-verktyg alls** (verifierat i rutinens
+konfiguration 2026-09-01). Connectorn syns i rutinens connector-lista men
+finns inte som verktyg i körningen, så `mcp__Google_Drive__update_file` är
+inte en väg som existerar för rutinen — bara i Axels egna chattsessioner.
+Detta är samma mönster som Drive-läsning (`tools/drive-ls.py`) och Meta
+(`META_ACCESS_TOKEN`): rutinen går alltid via Bash, aldrig via connectors.
+
+Rättighetskedjan, mätt 2026-09-01: Products och LAUNCHED ägs av
+`axel.odhner@stonebite.org`; produktmapparna ägs av redigeraren
+(`joshnaelga146@gmail.com`) och kommer att fortsätta göra det. Det är
+föräldramapparnas ägarskap som ger flytträtten, och brevlådan (`doGet` i
+`tools/drive-brevlada.gs`) kör som det konto som distribuerade webbappen —
+därför måste den vara distribuerad av ägaren till Products.
+
+Saknas `DRIVE_UPLOAD_URL`/`DRIVE_UPLOAD_KEY`, eller svarar webbappen
+`okänd action`: brevlådan är inte installerad eller inte omdistribuerad efter
+uppdateringen. Skriv statusraden och gå vidare — felsök aldrig koden här.
 
 Misslyckas en flytt: en (1) rad i rapportens statusdel — **ALDRIG under
 "väntar på Axel"**. Dubblettspärren mot annonskontot är skyddet; mapparna är
 ren städning och får aldrig bli Axels uppgift eller framställas som ett problem.
-
-⚠️ **Rättighetsfel här är ett kontofel, inte ett kodfel — felsök aldrig koden.**
-Vem connectorn är inloggad som avgör om flytten går igenom, och det syns med
-`mcp__Google_Drive__search_files` på `owner = 'me'`.
-
-Mätt 2026-09-01, två gånger samma dag: först var connectorn inloggad som
-`axelodhner.business@gmail.com`, ett konto som varken äger käll-, mål- eller
-produktmappen — då nekades varje flytt. Axel kopplade samma dag om connectorn
-till `axel.odhner@stonebite.org`, kontot som äger både Products och LAUNCHED.
-Produktmapparna ägs av redigeraren (`joshnaelga146@gmail.com`) och kommer att
-fortsätta göra det — det är föräldramapparnas ägarskap som ger flytträtten.
-
-Nekas en flytt ändå: skriv statusraden och gå vidare, felsök inte koden.
-Kontrollera först vilket konto connectorn kör som; är det inte ägaren till
-Products är det enda verkliga åtgärden att koppla om den igen.
 
 ## Steg 5 — Redigerarnotis (Axels lista ska ALDRIG innehålla "säg till redigerarna")
 
