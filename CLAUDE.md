@@ -482,6 +482,19 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   `adsetStatus`: `se-axelbalte-batch4`, `se-batch-20260809`, `uk-axelbalte`,
   `uk-beachslippers`, `uk-motorholje`. **Sätt båda fälten explicit i konfigen innan
   du kör** — annars börjar annonserna spendera i samma sekund som något släpps loss.
+- **Identifiera ALDRIG en produktsida genom att söka i butiken och ta första
+  träffen.** Butiken har flera produkter med samma nyckelord — sökningen på "IBC"
+  ger tre olika produkter. Rätt sida är den som kampanjens annonser faktiskt
+  länkar till, inget annat. Går Shopify inte att nå (token utgången): då är
+  produktidentiteten **overifierad** — skriv det rakt ut och gå vidare. Larma
+  ALDRIG om "fel produktsida", "fel pris" eller "0 recensioner" på en sida du
+  bara gissat dig till. *(Hände 2026-09-01: `/forsta-batch` för IBC-Tanköverdraget
+  läste kranadaptern (419/524 kr) som kampanjens landningssida och byggde tre
+  falska larm på det — fel pris, fel produkt, 0 recensioner. Alla tre var fel:
+  rätt sida är `ibc-tankoverdrag-1000-l-stoppar-alger-uv`, 489/636 kr, 10
+  recensioner live — exakt vad annonserna säger. Larmen gick till Axels telefon
+  innan någon kollat. Ett falskt larm kostar mer förtroende än en utebliven
+  analys.)*
 - **Priset hämtas från produktsidan vid varje körning**, aldrig ur en äldre brief
   eller creative. Axelbältet höjdes 2026-08-05 från 509 → 599 kr (jämförpris 678 kr
   = spara 79 kr, 11,65 %). **509 kr, 636 kr och "20 %" är förbjudna** i all ny copy.
