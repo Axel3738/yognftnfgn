@@ -81,13 +81,31 @@ Underhåll av redan launchade kampanjer (steg 1–2: aktivering, komplettering a
 saknade adsets) är INTE to-do-listan — det styrs av kampanjkontot och får läsa
 sitt material varifrån mappen än ligger, LAUNCHED inräknat, via publika länkar.
 
-## Steg 4 — Drive-flytt (tyst best-effort)
+## Steg 4 — Drive-flytt (tyst best-effort, städar hela efterslpet)
 
-Försök flytta fullt launchade produkters mappar till LAUNCHED
-(id `1-vbYhYgTEv7zYptW5rGmgKAITmAz4l1X`). Misslyckas det: en (1) rad i
-rapportens statusdel — **ALDRIG under "väntar på Axel"**. Dubblettspärren mot
-annonskontot är skyddet; mapparna är ren städning och får aldrig bli Axels
-uppgift eller framställas som ett problem.
+Flytta **varje** mapp som ligger direkt i Products och redan har en kampanj i
+MagiBorsten till LAUNCHED (id `1-vbYhYgTEv7zYptW5rGmgKAITmAz4l1X`) — inte bara
+nattens egna launcher. Kampanjlistan från steg 3 är facit; mappar utan kampanj
+rörs aldrig, och LAUNCHED/NOT USED/Winners/Losers/TEMU-referens hoppas över.
+Så städas kvarliggande mappar av sig själva den natt rättigheten finns, utan
+att någon behöver be om det.
+
+Verktyget är `mcp__Google_Drive__update_file` med mappens `fileId` och
+`parentId` satt till LAUNCHED-id:t. Läs tillbaka med `get_file_metadata` och
+kontrollera att `parentId` ändrats — connectorn kan svara utan att ha flyttat.
+
+Misslyckas en flytt: en (1) rad i rapportens statusdel — **ALDRIG under
+"väntar på Axel"**. Dubblettspärren mot annonskontot är skyddet; mapparna är
+ren städning och får aldrig bli Axels uppgift eller framställas som ett problem.
+
+⚠️ **Rättighetsfel här är ett kontofel, inte ett kodfel — felsök aldrig koden.**
+Mätt 2026-09-01: Products och LAUNCHED ägs av `axel.odhner@stonebite.org`,
+produktmapparna av `joshnaelga146@gmail.com`, medan Drive-connectorn är
+inloggad som `axelodhner.business@gmail.com` — ett konto som varken äger
+käll-, mål- eller produktmappen och därför saknar organiseringsrätt i dem.
+Ingen omskrivning av det här steget kan kringgå det. Går flytten inte igenom:
+skriv statusraden och gå vidare. Enda verkliga åtgärden är att koppla om
+Drive-connectorn på rutinen till det konto som äger Products och LAUNCHED.
 
 ## Steg 5 — Redigerarnotis (Axels lista ska ALDRIG innehålla "säg till redigerarna")
 
