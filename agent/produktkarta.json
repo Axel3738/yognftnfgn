@@ -209,9 +209,16 @@
       "campaign_id": "120250001079150291",
       "produkt": "IBC-Tanköverdraget",
       "lage": "test",
-      "lage_motivering": "startad 2026-08-28, 1 köp",
+      "lage_motivering": "22 köp sedan start (avläst 2026-09-01, livstid) — under 30-köpsgränsen för drift. Passerat testtröskeln (4 171 kr, ROAS 3,30 mot BE 1,51) och har nu fått sin första riktiga batch via /forsta-batch.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "3ce270ab-908c-8161-bed2-e22f132a6aba",
+      "notion_hub_datakalla": "5ad270ab-908c-837f-b001-87c077b043cb",
+      "notion_hub_namn": "IBC Tank Cover creative hub",
+      "drive_produktmapp_id": "1EL7qjxDtCeKTUJPuCY7Asp2FshiD0nDO",
+      "drive_produktmapp_not": "Joshs befintliga produktmapp (skapad vid launch, ägs av joshnaelga146). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products (lanseringskön).",
+      "drive_senaste_batchmapp_id": "17Ts1pvT422VjV0oa721-qMQxu_LGafkP",
+      "minne": "products/ibc-tankoverdraget/"
     },
     {
       "campaign_id": "120249978017760291",
