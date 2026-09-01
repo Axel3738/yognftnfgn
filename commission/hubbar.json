@@ -1,5 +1,5 @@
 {
-  "kommentar": "Alla creative hubs som ger commission, över ALLA verksamheter. Bäverbutikens fyra skalningshubbar är arkiverade i Notion och syns inte i en sökning, och Grillklinikens och Matstrumpors hubbar ligger i egna teamspaces — en sökning på Bäverbutikens teamspace hittade bara 2 av 11. Därför står listan här. Nya hubbar kommer med via sökningen i commission/notion.mjs; den här filen är golvet som gör att de kända aldrig kan falla bort. Hubbar med marknad != SE ger aldrig commission (Axels beslut 2026-08-31: endast svenska annonser).",
+  "kommentar": "Mätt 2026-09-01: sökningen i commission/notion.mjs letar efter databaser vars titel SLUTAR på 'creative hub'. Fiskespöhållarens svenska hubb heter bara 'Fish rod holder' och är dessutom arkiverad — den föll därför bort ur augustikörningen trots 38 godkända rader. Hubbar med avvikande namn måste stå här. Alla creative hubs som ger commission, över ALLA verksamheter. Bäverbutikens fyra skalningshubbar är arkiverade i Notion och syns inte i en sökning, och Grillklinikens och Matstrumpors hubbar ligger i egna teamspaces — en sökning på Bäverbutikens teamspace hittade bara 2 av 11. Därför står listan här. Nya hubbar kommer med via sökningen i commission/notion.mjs; den här filen är golvet som gör att de kända aldrig kan falla bort. Hubbar med marknad != SE ger aldrig commission (Axels beslut 2026-08-31: endast svenska annonser).",
   "hubbar": [
     { "id": "3b0270ab-908c-80a7-8793-fa11d8c0f6e4", "namn": "Boat cover 420D creative hub", "verksamhet": "Bäverbutiken", "marknad": "SE" },
     { "id": "3aa270ab-908c-802b-a7a4-eb74d08d7eb7", "namn": "Beach crocs creative hub", "verksamhet": "Bäverbutiken", "marknad": "SE" },
@@ -9,12 +9,15 @@
     { "id": "3cc270ab-908c-8179-bde9-d11a87ed06fb", "namn": "Kranskydd Frost 420D creative hub", "verksamhet": "Bäverbutiken", "marknad": "SE" },
     { "id": "3cd270ab-908c-81bd-aab8-f19ec3e2d260", "namn": "Surveillance Camera creative hub", "verksamhet": "Bäverbutiken", "marknad": "SE" },
     { "id": "3cd270ab-908c-814f-8a98-c973f99dca9f", "namn": "Men's Plush Slippers creative hub", "verksamhet": "Bäverbutiken", "marknad": "SE" },
+    { "id": "3c3270ab-908c-80f8-824d-eed3c4aa94e1", "namn": "Fish rod holder", "verksamhet": "Bäverbutiken", "marknad": "SE" },
+    { "id": "3ce270ab-908c-8161-bed2-e22f132a6aba", "namn": "IBC Tank Cover creative hub", "verksamhet": "Bäverbutiken", "marknad": "SE" },
     { "id": "36f270ab-908c-803b-8949-ff2326f4f76c", "namn": "Creative Hub master", "verksamhet": "Grillkliniken", "marknad": "SE" },
     { "id": "3aa270ab-908c-8036-b0cd-fb49f6f37289", "namn": "Creative hub prank apron", "verksamhet": "Grillkliniken", "marknad": "SE" },
     { "id": "3aa270ab-908c-8013-85d6-cd8548c015b2", "namn": "Creative hub golf grill kit", "verksamhet": "Grillkliniken", "marknad": "SE" },
     { "id": "3a7270ab-908c-80d2-9f35-e73e51e457ff", "namn": "Matstrumpor creative hub", "verksamhet": "Matstrumpor", "marknad": "SE" },
 
     { "id": "3be270ab-908c-80f9-8dc3-c652ca05cf87", "namn": "Creative Greatgrill MEXICO", "verksamhet": "Grillkliniken", "marknad": "MX" },
-    { "id": "3cd270ab-908c-818f-9059-f333f67559a4", "namn": "Fish rod holder NO creative hub", "verksamhet": "Bäverbutiken", "marknad": "NO" }
+    { "id": "3cd270ab-908c-818f-9059-f333f67559a4", "namn": "Fish rod holder NO creative hub", "verksamhet": "Bäverbutiken", "marknad": "NO" },
+    { "id": "3ce270ab-908c-81a9-a0c9-cb8fbdcdeae9", "namn": "Kranbeskyttelse Frost NO creative hub", "verksamhet": "Bäverbutiken", "marknad": "NO" }
   ]
 }
