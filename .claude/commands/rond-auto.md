@@ -156,30 +156,43 @@ För varje åtgärd i `plan.atgarder`:
 2. Verifiera: läs tillbaka, `effective_status` ska vara PAUSED.
 3. Logga med kod `STANG_AV`, `genomford: true`.
 
-**`typ: "trappa"`** — produkten går back; pausa det minsta trasiga först.
-Läs `agent/budgetlogg.jsonl` och avgör steget med `senasteRadMedKod(logg, id,
-["TRAPPA_STEG_1","TRAPPA_STEG_2"], { maxAlderDagar: 14, idag })` (finns i
-`agent/logg.mjs`) — trapprader äldre än 14 dagar hör till en tidigare cykel
-och räknas inte:
+**`typ: "trappa"`** — produkten har passerat 1 500 kr och går back.
 
-- **Inget tidigare steg → STEG 1:** hämta kampanjens annonser (`level: "ad"`,
-  `date_preset: "last_3d"`, filtrering `campaign.id`). Finns EN aktiv annons
-  med ≥50 % av kampanjens 3-dagarsspend och 0 köp: pausa **bara den annonsen**
-  (`entity_type: "ad"`, `fields: {"status":"PAUSED"}`), verifiera, logga
-  `TRAPPA_STEG_1`. Finns ingen sådan annons: logga ändå `TRAPPA_STEG_1` med
-  motiveringen "ingen dominant annons att pausa" och **stanna där för idag** —
-  steg 2 får tas tidigast om 2 dagar. Trappan tar ALDRIG mer än ett steg per dag.
-- **STEG 1 taget → STEG 2:** bara om **minst 2 dagar** gått sedan
-  `TRAPPA_STEG_1`-raden OCH dygnen EFTER pausdatumet (ur dygnsserien i
-  `kontodata.json`) fortfarande ligger under break-even — pausen ska hinna
-  synas i siffrorna innan nästa steg tas. Blev det bättre: gör ingenting,
-  produkten läker. Annars: hämta annonsgrupperna (`level: "adset"`). Är EN
-  grupp under break-even medan minst en annan ligger över: pausa den gruppen
-  (`entity_type: "ad_set"`), verifiera, logga `TRAPPA_STEG_2`. Ser alla lika
-  dåliga ut: hela produkten går back — pausa kampanjen, logga `TRAPPA_STEG_3`.
-- **STEG 2 taget → STEG 3:** samma väntregel (2 dagar + dygnen efter pausen
-  under break-even). Står förlusten kvar: pausa kampanjen, logga
-  `TRAPPA_STEG_3`.
+**Axels beslut 2026-09-01 — den gamla femdagarstrappan är avskaffad.** Den lät
+en förlorare bränna budget i fem dygn medan den gick steg för steg. Nu finns
+bara två utgångar, och båda avgörs samma morgon:
+
+Under 1 500 kr total spend rörs kampanjen inte alls — den domen heter
+`VANTA_TROSKEL` och den ligger kvar oförändrad. Trappan börjar först efter det.
+
+Hämta kampanjens annonser (`level: "ad"`, `date_preset: "last_3d"`, filtrering
+på `campaign.id`, fälten `amount_spent`, `omni_purchase`, `purchase_roas`,
+`effective_status`) och avgör:
+
+- **POTENTIAL** = BÅDA sakerna är sanna samtidigt:
+  1. minst en aktiv annons har ≥1 köp OCH `purchase_roas` ≥ kampanjens
+     break-even, och
+  2. minst en annan aktiv annons har tagit ≥40 % av kampanjens 3-dagarsspend
+     med **noll** köp.
+
+  Då: pausa **bara** spendtjuven (`entity_type: "ad"`,
+  `fields: {"status":"PAUSED"}`), verifiera med en tillbakaläsning, låt
+  kampanjen stå kvar ACTIVE, och logga `TRAPPA_FORLANGNING` med namnet på den
+  pausade annonsen. Kampanjen får **ett** dygn till.
+- **INGEN POTENTIAL** = ingen enda aktiv annons ligger över break-even, eller
+  ingen enskild annons äter spenden. Då: pausa **hela kampanjen** i dag
+  (`entity_type: "campaign"`, `fields: {"status":"PAUSED"}`), verifiera, logga
+  `STANG_AV` med motiveringen att potentialkollen föll.
+
+**Förlängningen ges en gång.** Finns redan en `TRAPPA_FORLANGNING`-rad för
+kampanjen de senaste 14 dagarna (`senasteRadMedKod(logg, id,
+["TRAPPA_FORLANGNING"], { maxAlderDagar: 14, idag })` i `agent/logg.mjs`) och
+kampanjen fortfarande går back: stäng av hela kampanjen, ingen ny förlängning.
+Har den däremot vänt över break-even faller domen bort av sig själv — då står
+det inte längre `trappa` i planen.
+
+De gamla koderna `TRAPPA_STEG_1/2/3` skrivs aldrig mer. De ligger kvar i
+budgetloggen som historik och ska läsas, inte återanvändas.
 
 `plan.uppskjutna` utförs INTE — logga varje med kod `UPPSKJUTEN_GRANS`,
 `genomford: false`, och orsaken som motivering.
@@ -197,10 +210,29 @@ och räknas inte:
 Det här är rutinens andra jobb, lika viktigt som budgetarna: **varje produkt
 med en batch ska få sin nya brief-runda var tredje dag.** `annonsbehov` i
 utfallet listar allt som är förfallet, färdigsorterat (första batchen först,
-sen rundorna med äldst batch först). Kör **upp till TVÅ poster per morgon**,
-uppifrån — resten av listan rapporteras och ligger kvar till imorgon.
-(Två per morgon räcker för att hinna alla produkter i en 3-dagarscykel så
-länge produkterna är ≤6 — blir de fler: säg till Axel att cykeln inte går ihop.)
+sen rundorna med äldst batch först).
+
+⚠️ **BARA SVERIGE.** `annonsbehov` är tomt för NO-körningen och ska så vara.
+De norska annonserna är de svenska annonserna översatta i ett eget flöde
+(`/translate-no`) — Norge behöver aldrig egna briefer, egen Notion-hub eller
+eget produktminne. I NO-kontot gör ronden **bara** budget upp och ner.
+*(Axels besked 2026-09-01. Innan spärren byggde rutinen två norska hubbar och
+lät dem äta tre av sex briefplatser på tre morgnar.)*
+
+**Så många körs per morgon (Axels beslut 2026-09-01):**
+
+1. **Alla `forsta_batch` — inget tak.** Kör dem först och kör dem alla. En
+   produkt får en förstabatch exakt en gång, så kön tar slut av sig själv.
+   Det är här pengarna finns: en produkt som passerat 1 500 kr på ≥20 % vinst
+   står och väntar på material den redan förtjänat.
+2. **Sedan `brief_runda`, högst TVÅ per morgon**, uppifrån. Resten rapporteras
+   och ligger kvar till imorgon.
+
+*(Taket hette tidigare två poster totalt. Det räknades 2026-08-29 för sex
+produkter; kontot hade 17 aktiva kampanjer den 1 september och kön gick inte
+ihop — Soptunneklistermärkena stod 12 dagar utan runda.)* Är `brief_runda`-kön
+fortfarande längre än sex poster tre morgnar i rad: säg till Axel att tvåan
+måste höjas.
 
 - Behov `forsta_batch` → produkten har passerat 1 500 kr OCH ligger på minst
   **20 % vinst**. Under det flaggas ingenting: produkten chillar och prövas om
@@ -235,7 +267,16 @@ länge produkterna är ≤6 — blir de fler: säg till Axel att cykeln inte gå
   2. Dupliceringen är asynkron — vänta och hämta om tills databasen finns,
      döp sedan om via notion-update-data-source till
      "<Produktnamn på engelska> creative hub".
-  3. Skapa items med notion-create-pages: Status "Draft",
+  3. **Kontrollera åtkomsten innan du skapar items** (Axels krav 2026-09-01):
+     hubben ska ligga i teamspacet **Bäverbutiken** och vara öppen för hela
+     teamspacet — alla medlemmar ska nå den utan att bjudas in personligen.
+     Hämta hubben med notion-fetch och verifiera att föräldern är teamspacet,
+     inte en privat sida eller Axels eget utrymme. Ligger den fel: flytta den
+     till teamspacet med notion-move-pages och läs tillbaka. Går det inte att
+     flytta — skapa INGA items, utan säg till Axel att hubben ligger privat.
+     En hub som bara inbjudna når är osynlig för redigerarna, och då är
+     brieferna skrivna i papperskorgen.
+  4. Skapa items med notion-create-pages: Status "Draft",
      Typ **"Video - Pending Approval"** för video och
      **"Image - Pending Approval"** för bildannonser (Axels nya typ i mallen).
   Går mallen inte att hitta: skapa INGEN hub — lista i svaret exakt vilka
@@ -345,7 +386,10 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 - [ ] Ronden körd för båda marknaderna; `plan.sparrad` kontrollerad för var och en
 - [ ] Varje åtgärd utförd med öre-fältet ur planen och verifierad med läsning
 - [ ] Uppskjutna loggade som `UPPSKJUTEN_GRANS`
-- [ ] Förfallna behov i `annonsbehov` körda (max 2) med *_KLAR-loggrad + minnesfiler pushade — eller exakt redovisat varför inte
+- [ ] Alla `forsta_batch` körda (inget tak) + högst två `brief_runda`, med
+      *_KLAR-loggrad och minnesfiler pushade — eller exakt redovisat varför inte
+- [ ] Inga briefer, hubbar eller minnesfiler skapade för NO — Norge är bara budget
+- [ ] Varje ny Notion-hub verifierad att den ligger öppet i teamspacet Bäverbutiken
 - [ ] Alla loggrader skrivna och pushade efter varje ändring (= minnet sparat)
 - [ ] Ingen artefakt publicerad och `agent/dashboard.mjs` inte körd
 - [ ] Notion-svepet kört: hubbar avlästa med `is_archived`, drafts hämtade,

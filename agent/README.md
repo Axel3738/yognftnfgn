@@ -91,8 +91,10 @@ dem oförändrade — inte att bedöma dem.
 
 ## Annons-triggern
 
-Ronden flaggar produkter som behöver nya annonser och startar högst EN batch
-per dygn (`/rond-auto` steg 4b):
+Ronden flaggar produkter som behöver nya annonser (`/rond-auto` steg 4b).
+**Bara Sverige** — Norge kör översatta svenska annonser och får aldrig egna
+briefer (Axel 2026-09-01). Alla förstabatcher körs samma morgon, utan tak;
+brief-rundorna tar högst två per morgon.
 
 - **Klarat testet — 1 500 kr total spend OCH minst 20 % vinst — utan en
   riktig batch** → första batchen (`/forsta-batch`). Det är övergången

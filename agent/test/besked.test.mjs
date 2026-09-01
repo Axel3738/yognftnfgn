@@ -201,11 +201,15 @@ test('testprodukt med förlust lämnas ifred under tröskeln', () => {
   assert.equal(dom.kraverGodkannande, false);
 });
 
-test('testprodukt med förlust över tröskeln går till åtgärdstrappan, inte avstängning', () => {
+test('testprodukt med förlust över tröskeln går till åtgärdstrappan', () => {
   const dom = besked(rad({ lage: 'test', roas3d: 1.2, spendTotal: 2500 }));
   assert.equal(dom.kod, 'ATGARDSTRAPPAN');
   assert.equal(dom.nyBudget, null);
-  assert.match(dom.motivering, /Stäng INTE av produkten direkt/);
+  // Axels regel 2026-09-01: två utgångar samma morgon — pausa spendtjuven och
+  // ge ett dygn till, annars stäng av hela kampanjen. Ingen femdagarstrappa.
+  assert.match(dom.motivering, /spendtjuven/);
+  assert.match(dom.motivering, /ETT dygn till/);
+  assert.match(dom.motivering, /stängs hela kampanjen av i dag/);
 });
 
 test('driftprodukt med förlust halveras, aldrig under golvet', () => {

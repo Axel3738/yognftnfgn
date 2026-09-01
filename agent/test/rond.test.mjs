@@ -358,6 +358,22 @@ test('tunn vinst i testfasen får chilla — ingen batch under 20 %', () => {
   assert.equal(annonsbehov(okand, { logg: [], idag: '2026-08-31' }).length, 0);
 });
 
+test('Norge får aldrig briefer — bara Sverige bygger annonsbehov', () => {
+  // Axels besked 2026-09-01: de norska annonserna är de svenska översatta i
+  // ett eget flöde. I NO-kontot skalar ronden bara upp och ner. Utan spärren
+  // byggde rutinen norska Notion-hubbar och lät dem äta briefplatserna.
+  const rader = [{ id: 'no', namn: 'Kranbeskyttelse Frost NO | BE-ROAS 1,63', spendTotal: 2861, budget: 1000, dom: { vinstProcent: 32.6 } }];
+  assert.equal(annonsbehov(rader, { logg: [], idag: '2026-09-01', marknad: 'NO' }).length, 0);
+
+  // Samma rad på SE-kontot ska däremot flaggas — spärren får inte tysta Sverige.
+  const se = annonsbehov(rader, { logg: [], idag: '2026-09-01', marknad: 'SE' });
+  assert.equal(se.length, 1);
+  assert.equal(se[0].typ, 'forsta_batch');
+
+  // Utan angiven marknad gäller SE, så gamla anrop beter sig som förut.
+  assert.equal(annonsbehov(rader, { logg: [], idag: '2026-09-01' }).length, 1);
+});
+
 test('3-dagarsrundan: tyst i tre dagar, sen brief_runda med fokus', () => {
   const rader = [{ id: 'a', namn: 'X | BE ROAS 1.50', spendTotal: 9000, budget: 2000, dom: { vinstProcent: 18 } }];
   const logg = [

@@ -302,8 +302,16 @@ export function planera(rader, { logg = [], idag = null } = {}) {
  */
 export const BRIEF_INTERVALL_DAGAR = 3;
 
-export function annonsbehov(rader, { logg = [], idag = null } = {}) {
+export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE' } = {}) {
   if (idag === null) return [];
+  // Bara Sverige får briefer. Axels besked 2026-09-01: de norska annonserna ÄR
+  // de svenska annonserna, översatta i ett eget flöde (/translate-no). Ronden
+  // är inne i NO-kontot av ett enda skäl — skala upp och ner. Inga briefer,
+  // inga Notion-hubbar, inget produktminne för NO.
+  // Utan spärren byggde rutinen två norska hubbar (Fiskestangholder NO
+  // 2026-08-31, Kranbeskyttelse Frost NO 2026-09-01) och de åt dessutom tre av
+  // sex briefplatser på tre morgnar — svenska produkter fick vänta i stället.
+  if (marknad !== 'SE') return [];
   const nu = Date.parse(`${idag}T00:00:00Z`);
   const inom7 = (datum) => {
     const d = (nu - Date.parse(`${datum}T00:00:00Z`)) / 86400000;
@@ -329,7 +337,9 @@ export function annonsbehov(rader, { logg = [], idag = null } = {}) {
       : null;
 
     const senaste7 = egna.filter((rad) => inom7(rad.datum));
-    const pausat = senaste7.some((rad) => ['TRAPPA_STEG_1', 'TRAPPA_STEG_2', 'TRAPPA_STEG_3', 'STANG_AV'].includes(rad.kod));
+    // TRAPPA_STEG_* är historik från den gamla femdagarstrappan (avskaffad
+    // 2026-09-01) och läses fortfarande — TRAPPA_FORLANGNING är dagens kod.
+    const pausat = senaste7.some((rad) => ['TRAPPA_FORLANGNING', 'TRAPPA_STEG_1', 'TRAPPA_STEG_2', 'TRAPPA_STEG_3', 'STANG_AV'].includes(rad.kod));
     const skalningar = senaste7.filter((rad) => rad.kod === 'SKALA').length;
 
     if (harBatch) {
@@ -542,6 +552,10 @@ async function main() {
     process.exit(2);
   }
 
+  // Marknaden avgör om briefkön ska byggas alls — bara SE får briefer.
+  const kontoId = String(data.ad_account_id ?? '').replace(/^act_/, '');
+  const marknad = TILLATNA_KONTON[kontoId]?.marknad ?? null;
+
   const idag = flagga('--idag', data.idag);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(String(idag))) {
     console.error(`RONDEN AVBRÖTS: saknar giltigt datum (fick "${idag}"). Ange --idag YYYY-MM-DD.`);
@@ -586,9 +600,9 @@ async function main() {
     varningar.push(`${utankarta.length} kampanj(er) saknas i produktkarta.json och kördes som testprodukt: ${utankarta.map((r) => r.namn.split('|')[0].trim()).join(', ')}.`);
   }
 
-  const meta = { idag, hamtad: data.hamtad, varningar };
+  const meta = { idag, hamtad: data.hamtad, marknad, varningar };
   if (argv.includes('--json')) {
-    const behovslista = annonsbehov(rader, { logg, idag }).map((b) => {
+    const behovslista = annonsbehov(rader, { logg, idag, marknad }).map((b) => {
       const rad = rader.find((r) => r.id === b.kampanj_id);
       return { ...b, veckokvot: annonskvot(rad?.budget) };
     });
@@ -597,7 +611,7 @@ async function main() {
       veckokvot: rader.map((r) => ({ kampanj_id: r.id, namn: r.namn, ...annonskvot(r.budget) })),
     }, null, 2));
   } else {
-    console.log(rapport(rader, meta, annonsbehov(rader, { logg, idag })));
+    console.log(rapport(rader, meta, annonsbehov(rader, { logg, idag, marknad })));
   }
 }
 

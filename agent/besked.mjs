@@ -324,8 +324,8 @@ export function besked(rad) {
           `${bas} Den har spenderat ${kr(rad.spendTotal)} av ${kr(TEST_TROSKEL_SEK)} sedan start. Rör ingenting förrän den passerat tröskeln.`,
           { zon: 'stop', vinstProcent: vinst });
       }
-      return svar('ATGARDSTRAPPAN', 'Gå åtgärdstrappan',
-        `${bas} Passerad ${kr(TEST_TROSKEL_SEK)} utan att gå plus. Stäng INTE av produkten direkt: först den enskilda annonsen som ätit budgeten, vänta ett dygn, sen annonsgruppen, sist hela produkten.${gransText}`,
+      return svar('ATGARDSTRAPPAN', 'Stäng av — om den inte har potential',
+        `${bas} Passerad ${kr(TEST_TROSKEL_SEK)} utan att gå plus. Läs annonserna: finns minst en annons med köp över break-even OCH en spendtjuv utan köp, pausa spendtjuven och ge kampanjen ETT dygn till. Saknas potentialen — eller är förlängningen redan använd — stängs hela kampanjen av i dag.${gransText}`,
         { zon: 'stop', vinstProcent: vinst, kraverGodkannande: true, naraGrans });
     }
     // Drift.
