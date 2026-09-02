@@ -55,6 +55,9 @@ visas i väljaren för SSH; det är inte verifierat i praktiken (2026-09-02).
 Kräver en hyrd VPS (Linux, t.ex. Hetzner/DigitalOcean, ~50–100 kr/mån) och en
 SSH-nyckel på Windows-datorn. Repot klonas på servern.
 
+**Axels beslut 2026-09-02:** ingen lokal session och ingen SSH-server.
+Molnsessionerna körs i **Auto**. Bypass är därmed avslutat som fråga.
+
 ## Skillnaden i korthet
 
 | Läge | Frågar | Allow/deny-listor |
