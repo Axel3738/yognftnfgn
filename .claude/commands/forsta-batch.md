@@ -42,7 +42,7 @@ Ditt uppdrag: analysera verklig performance-data, förklara varför vissa annons
 - **FAS 6 – Kund- & konkurrentresearch:** kundspråk (direktcitat/mönster/hypotes), direkta + indirekta konkurrenter, 3 lånade mekanismer.
 - **FAS 7 – Variationer:** 3 per vinnare (nära iteration / format transfer / ny persuasion-angle).
 - **FAS 8 – Nya videokoncept:** 6 st med olika persuasion-mekanismer, inspelningsklara manus. *(Axel 2026-09-02: fler videor — redigerarna är många. Var 3 st förut.)*
-- **FAS 9 – Nya statiska koncept:** 6 st (demo, jämförelse, testimonial, listicle, offer, risk/cost-of-inaction). Samma nivå som förut — inte fler. BOF-bildserier är parkerade tills Axel säger till.
+- **FAS 9 – Nya statiska koncept:** 6 st (demo, jämförelse, testimonial, listicle, offer, risk/cost-of-inaction) **+ 3 BOF-bilder** (pris/erbjudande, garanti/fri frakt, invändning) **+ 2 review-bilder** med riktiga recensioner ordagrant ur produktsidan/Judge.me — finns inga recensioner blir det inga review-bilder, säg det. Aldrig påhittad recensionstext. *(Axel 2026-09-02: bilder är billiga, gör extra.)*
 - **FAS 10 – Testplan:** Tier 1/2/3. Ingen dom <300 kr/3 köp; kill när CPA överstiger **break-even-CPA** (`break_even_cpa_sek` i products.json) efter ≥500 kr spend — inte när den överstiger target-CPA. "Gör innan spend"-lista. **Testplanen ska minst matcha kvoten: kör `node pipeline/quota.mjs`.**
 
 Varje annons skrivs enligt **BRIEFMALLEN** under LEVERANSFORMAT — inget annat

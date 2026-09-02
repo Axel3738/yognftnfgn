@@ -242,10 +242,17 @@ och Soptunneklistermärkena stod 12 dagar utan runda.)*
   batch är video. Förstabatch: sex nya videokoncept + variationer på
   vinnarna + sex statiska. Brief-runda: `rundaAntal` annonser (dubbla
   veckokvoten, minst fyra), varav högst två statiska.
-- **Statiska på samma nivå som förut.** Inte fler, inte färre.
-- **BOF-bilder är parkerat.** Axel nämnde att bilder är billiga att göra och
-  att BOF-bilder kanske ska prioriteras — beslutet är att vänta. Bygg inga
-  BOF-bildserier förrän han säger till.
+- **Statiska på samma nivå som förut** — plus två extra serier som Axel
+  bestämde 2026-09-02 ("bilder är billiga, gör extra bara för att"):
+  - **+3 BOF-bilder per batch** (bottom of funnel — till den som redan sett
+    produkten): pris/erbjudande, garanti/fri frakt, jämförelse eller
+    invändning. Samma mall, samma tre-frågorstest.
+  - **+2 review-bilder per batch** byggda på **riktiga recensioner** ur
+    produktsidan eller Judge.me — citatet ordagrant, aldrig omskrivet, aldrig
+    påhittat. Finns inga recensioner: inga review-bilder, och skriv det i
+    leveransen. *(Sömnadskitet 2026-09-02: en review-bild gick ut med
+    nonsenstext som "citat". Det får aldrig hända igen.)*
+  Serierna räknas utöver `rundaAntal`/förstabatchens antal.
 - **Briefens format är mallen i `forsta-batch.md` (LEVERANSFORMAT).** Enkel,
   kort, samma struktur varje gång. Tre-frågorstabellen är obligatorisk på
   varje svensk rad — en rad med ett ❌ går inte ut.

@@ -81,7 +81,9 @@ har dödat vinnare två gånger. Kortversion av kraven:
 ### 3. Bygg nästa batch
 - Antal = `rundaAntal` ur ronden (dubbla veckokvoten, minst fyra) — Axel
   2026-09-02: hellre några för mycket, redigerarna är många. Minst två
-  tredjedelar video, högst två statiska. BOF-bildserier är parkerade.
+  tredjedelar video, högst två statiska i själva rundan — PLUS 3 BOF-bilder
+  och 2 review-bilder (riktiga recensioner, ordagrant, aldrig påhittade)
+  utöver rundan. Axel 2026-09-02: bilder är billiga, gör extra.
 - Mix: iterationer på vinnarna (isolerad variabel per iteration) + nya koncept från Losing DNA-lärdomar + **alla väntande items i backlog.md** (markera dem `[använd i batch #N]`) + det jag skickade med i argumenten ovan.
 - **Varje brief taggar sina variabler** (vinkel, hook-typ, format, proof, offer,
   visuell stil, textmängd, talare) i en rad högst upp — utan taggar kan nästa
