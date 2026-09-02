@@ -319,7 +319,11 @@ sköts upp och varför, om något larmade — och vilka brief-rundor/batcher som
 kördes (produkt + antal briefer + Notion-länk) respektive ligger kvar i kön
 till imorgon. Inga bibelsvar.
 
-**Skicka samma korta rapport till Discord** (Axels order 2026-08-30):
+**Skicka samma korta rapport till Discord** (Axels order 2026-08-30) —
+**på ENGELSKA.** Allt som postas som Bävern läses av det engelsktalande
+teamet, så varje Discord-post skrivs på engelska även när svaret till Axel
+här är på svenska. Produkt-, kanal- och kampanjnamn behåller sin svenska
+stavning; belopp skrivs "1 200 SEK". Axels besked 2026-09-02.
 
 ```bash
 node agent/discord-post.mjs --kanal ronden "Ronden <datum>" "<rapporten i Markdown>"

@@ -53,7 +53,7 @@ test('skyddade kanaler går inte att röra — rutinen postar där', () => {
 
   assert.equal(ut.atgarder.length, 0, 'ingen av dem får släppas igenom');
   assert.equal(ut.avvisade.length, 3);
-  for (const a of ut.avvisade) assert.match(a.varfor, /skyddad/);
+  for (const a of ut.avvisade) assert.match(a.varfor, /protected/);
 });
 
 test('åtgärder på kanaler som inte finns avvisas i stället för att krascha', () => {
@@ -79,7 +79,7 @@ test('kanal i en kategori som inte finns avvisas', () => {
     { typ: 'skapa_kanal', namn: 'x', kategori: 'Finns Inte', motiv: '' },
   ), LÄGE);
   assert.equal(ut.atgarder.length, 0);
-  assert.match(ut.avvisade[0].varfor, /finns inte/);
+  assert.match(ut.avvisade[0].varfor, /does not exist/);
 });
 
 test('dubbletter fångas — både mot servern och inom samma plan', () => {
@@ -90,7 +90,7 @@ test('dubbletter fångas — både mot servern och inom samma plan', () => {
   ), LÄGE);
   assert.equal(ut.atgarder.length, 1);
   assert.equal(ut.avvisade.length, 2);
-  for (const a of ut.avvisade) assert.match(a.varfor, /finns redan/);
+  for (const a of ut.avvisade) assert.match(a.varfor, /already exists/);
 });
 
 test('namnbyte frigör det gamla namnet och tar det nya', () => {
@@ -102,7 +102,7 @@ test('namnbyte frigör det gamla namnet och tar det nya', () => {
   assert.equal(ut.atgarder.length, 2, 'gamla namnet blir ledigt, nya blir upptaget');
   assert.equal(ut.avvisade.length, 1);
   assert.equal(ut.avvisade[0].namn, 'nytt-namn');
-  assert.match(ut.avvisade[0].varfor, /finns redan/);
+  assert.match(ut.avvisade[0].varfor, /already exists/);
 });
 
 test('Discords tak på namnbyten per kanal respekteras', () => {
@@ -115,7 +115,7 @@ test('Discords tak på namnbyten per kanal respekteras', () => {
   // nollställs det vid varje byte och alla släpps igenom — då köar Discord
   // anropen i tysthet i tiotals minuter.
   assert.equal(ut.atgarder.length, MAX_NAMNBYTEN, 'taket räknas per kanal, inte per namn');
-  assert.match(ut.avvisade[0].varfor, /namnbyten/);
+  assert.match(ut.avvisade[0].varfor, /renames/);
 });
 
 test('kategorier fylls inte över Discords gräns', () => {
@@ -145,14 +145,14 @@ test('beskriv redovisar både det som körs och det som ströks', () => {
   ), LÄGE);
   const text = beskriv(ut);
   assert.match(text, /ny-kanal/);
-  assert.match(text, /Struket/, 'en tyst bortsållad åtgärd ser ut som att den kördes');
+  assert.match(text, /Dropped/, 'en tyst bortsållad åtgärd ser ut som att den kördes');
   assert.match(text, /skalning/);
-  assert.match(text, /Inget raderas/);
+  assert.match(text, /Nothing is deleted/);
 });
 
 test('tom plan går att beskriva utan att krascha', () => {
   const text = beskriv(validera(plan(), LÄGE));
-  assert.match(text, /Ingenting att göra/);
+  assert.match(text, /Nothing to do/);
   assert.doesNotMatch(beskriv({ atgarder: [], avvisade: [] }), /undefined/);
 });
 
@@ -263,8 +263,8 @@ test('en roll över Bävern går inte att ändra', () => {
     { typ: 'satt_roll', namn: 'Bävern', niva: 'medlem', motiv: '' },
   ), { ...LÄGE, ...ROLLAGE });
   assert.equal(ut.atgarder.length, 0);
-  assert.match(ut.avvisade[0].varfor, /över Bävern/);
-  assert.match(ut.avvisade[1].varfor, /egen roll/);
+  assert.match(ut.avvisade[0].varfor, /above Bävern/);
+  assert.match(ut.avvisade[1].varfor, /own role/);
 });
 
 test('roller under Bävern går att sätta, och @everyone med', () => {
@@ -275,8 +275,8 @@ test('roller under Bävern går att sätta, och @everyone med', () => {
     { typ: 'satt_roll', namn: 'CEO', niva: 'gudanivå', motiv: '' },
   ), { ...LÄGE, ...ROLLAGE });
   assert.equal(ut.atgarder.length, 2);
-  assert.match(ut.avvisade[0].varfor, /finns inte/);
-  assert.match(ut.avvisade[1].varfor, /okänd nivå/);
+  assert.match(ut.avvisade[0].varfor, /does not exist/);
+  assert.match(ut.avvisade[1].varfor, /unknown level/);
 });
 
 test('skyddade kanaler FÅR låsas — det är precis de som ska låsas', () => {
@@ -288,7 +288,7 @@ test('skyddade kanaler FÅR låsas — det är precis de som ska låsas', () => 
   ), LÄGE);
   assert.equal(ut.atgarder.length, 1, 'låsningen ska igenom');
   assert.equal(ut.atgarder[0].typ, 'las_kanal');
-  assert.match(ut.avvisade[0].varfor, /skyddad/, 'namnbytet ska stoppas');
+  assert.match(ut.avvisade[0].varfor, /protected/, 'namnbytet ska stoppas');
 });
 
 test('låsning av en kanal som inte finns avvisas', () => {

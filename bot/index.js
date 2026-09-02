@@ -143,9 +143,9 @@ async function byggPlan(message, önskemål) {
   setTimeout(() => väntande.delete(id), PLAN_TIMEOUT_MS).unref?.();
 
   const knappar = new ActionRowBuilder().addComponents(
-    new ButtonBuilder().setCustomId(`${id}:kor`).setLabel('Kör').setStyle(ButtonStyle.Success)
+    new ButtonBuilder().setCustomId(`${id}:kor`).setLabel('Run').setStyle(ButtonStyle.Success)
       .setDisabled(plan.atgarder.length === 0),
-    new ButtonBuilder().setCustomId(`${id}:avbryt`).setLabel('Avbryt').setStyle(ButtonStyle.Secondary),
+    new ButtonBuilder().setCustomId(`${id}:avbryt`).setLabel('Cancel').setStyle(ButtonStyle.Secondary),
   );
 
   const bitar = dela(beskriv(plan));
@@ -167,24 +167,24 @@ client.on(Events.InteractionCreate, async (interaction) => {
   const post = väntande.get(id);
 
   if (!post) {
-    await interaction.reply({ content: 'Planen har gått ut. Kör `!bygg` igen.', flags: MessageFlags.Ephemeral });
+    await interaction.reply({ content: 'This plan has expired. Run `!bygg` again.', flags: MessageFlags.Ephemeral });
     return;
   }
   // Bara den som bad om planen får köra den — annars kan vem som helst i
   // servern trycka på någon annans knapp.
   if (interaction.user.id !== post.ägare) {
-    await interaction.reply({ content: 'Det är inte din plan.', flags: MessageFlags.Ephemeral });
+    await interaction.reply({ content: 'That is not your plan.', flags: MessageFlags.Ephemeral });
     return;
   }
 
   väntande.delete(id);
   if (vad === 'avbryt') {
-    await interaction.update({ content: '❌ Avbrutet. Ingenting ändrades.', components: [] });
+    await interaction.update({ content: '❌ Cancelled. Nothing was changed.', components: [] });
     return;
   }
 
   // Bygget tar längre tid än Discords 3-sekundersgräns för en knapp.
-  await interaction.update({ content: '⏳ Bygger …', components: [] });
+  await interaction.update({ content: '⏳ Building …', components: [] });
   try {
     const { gjort, misslyckades } = await utfor({ atgarder: post.plan.atgarder, guild: interaction.guild });
     const rader = [`✅ Klart: ${gjort.length} av ${post.plan.atgarder.length}.`];
@@ -195,7 +195,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
     }
   } catch (fel) {
     console.error('[bygg]', fel);
-    await interaction.followUp({ content: `Bygget sket sig: ${String(fel.message).slice(0, 300)}` }).catch(() => {});
+    await interaction.followUp({ content: `The build failed: ${String(fel.message).slice(0, 300)}` }).catch(() => {});
   }
 });
 
@@ -206,12 +206,12 @@ client.on(Events.MessageCreate, (message) => {
   // Två små kommandon så Axel kan se skillnad på "boten är död" och
   // "Claude tänker" utan att läsa Railway-loggar.
   if (/^!ping\b/i.test(text)) {
-    message.reply(`Vaken. Modell: ${MODELL}. Uppe i ${Math.round(process.uptime() / 60)} min.`).catch(() => {});
+    message.reply(`Awake. Model: ${MODELL}. Up for ${Math.round(process.uptime() / 60)} min.`).catch(() => {});
     return;
   }
   if (/^!glöm\b/i.test(text) || /^!glom\b/i.test(text)) {
     nollstallHistorik(message.channelId);
-    message.reply('Glömde konversationen i den här kanalen. Vi börjar om.').catch(() => {});
+    message.reply('Forgot the conversation in this channel. Starting over.').catch(() => {});
     return;
   }
 
@@ -219,7 +219,7 @@ client.on(Events.MessageCreate, (message) => {
   if (bygg) {
     const önskemål = bygg[1].trim();
     if (!önskemål) {
-      message.reply('Skriv vad du vill ha, t.ex. `!bygg en kanal per skalningsprodukt under en kategori Produkter`.').catch(() => {});
+      message.reply('Tell me what you want, e.g. `!bygg one channel per scaling product under a category Products`.').catch(() => {});
       return;
     }
     kö = kö.then(async () => {
@@ -230,7 +230,7 @@ client.on(Events.MessageCreate, (message) => {
         await byggPlan(message, önskemål);
       } catch (fel) {
         console.error('[bygg]', fel);
-        await message.reply(`Kunde inte planera: ${String(fel.message).slice(0, 400)}`).catch(() => {});
+        await message.reply(`Could not plan this: ${String(fel.message).slice(0, 400)}`).catch(() => {});
       } finally {
         if (puls) clearInterval(puls);
       }
@@ -253,7 +253,7 @@ client.on(Events.MessageCreate, (message) => {
       await svara(message, svarstext);
     } catch (fel) {
       console.error('[fel]', fel);
-      await message.reply(`Det sket sig: ${String(fel.message).slice(0, 300)}`).catch(() => {});
+      await message.reply(`Something went wrong: ${String(fel.message).slice(0, 300)}`).catch(() => {});
     } finally {
       if (puls) clearInterval(puls);
     }

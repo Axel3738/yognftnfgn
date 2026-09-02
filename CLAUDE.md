@@ -556,7 +556,12 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   utan den kan en rutin inte ens ladda Meta-verktygen den ska arbeta med.
 - **Språk:** allt i repot skrivs på svenska — kod, kommentarer, commit-meddelanden.
   Undantag: `basePrompt` i pipeline-vågorna är engelska (bildmodellen kräver det),
-  och briefer till redigerarna är engelska.
+  briefer till redigerarna är engelska, och **allt som postas i Discord är
+  engelska** — botens svar, knapptexter, felmeddelanden och rutinernas rapporter.
+  Teamet i servern är engelsktalande. Frågan kan komma på svenska; svaret blir
+  ändå engelska, utan kommentar om språkvalet. Produkt-, kanal- och
+  kampanjnamn behåller svensk stavning, belopp skrivs "1 200 SEK".
+  Axels besked 2026-09-02.
 
 ---
 
