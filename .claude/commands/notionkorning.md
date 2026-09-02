@@ -1,6 +1,7 @@
-# /notionkorning — daglig leveransrunda för Bäverbutiken (00:01)
+# /notionkorning — daglig leveransrunda för Bäverbutiken (13:20)
 
-Rutinen som körs varje natt kl 00:01 svensk tid. Ett jobb: **allt som står i
+Rutinen som körs varje dag kl 13:20 svensk tid (Axels beslut 2026-09-02, tidigare
+00:01). Ett jobb: **allt som står i
 `To be Reviewed` i Notion ska QA:as mot sin brief och ligga uppe i Meta samma natt.**
 
 Blanda inte ihop den med `/nattkorning` — den är Temu-launcher från Drive.
