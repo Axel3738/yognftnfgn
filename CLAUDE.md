@@ -464,6 +464,9 @@ Sidmallen är `commission/leaderboard-sida.html`.
 Claude-konton, och en sida med `db` blir organisationsintern och släcks för dem.
 Datan ligger därför inbakad i HTML:en och sidan delas med en öppen länk.
 
+⚠️ **Sidans text är på engelska** — den läses av redigerarna, precis som
+briefarna. Koden och kommentarerna i filen är svenska som resten av repot.
+
 ⚠️ **Två regler för topplistan, Axels beslut 2026-09-02:**
 - **Spend visas aldrig** — varken totalt eller per person. `leaderboard.json`
   innehåller ingen spend alls. Bygg inte tillbaka den.

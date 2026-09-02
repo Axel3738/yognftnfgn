@@ -281,6 +281,10 @@ ska stå kvar — hellre ett sant gammalt läge än ett halvt nytt.
 Går publiceringen inte igenom: skriv en rad om det i rapporten och gå vidare.
 Datan ligger kvar i repot och läggs upp vid nästa körning.
 
+⚠️ **Sidan är på engelska.** Redigerarna är engelsktalande — all text de ser
+skrivs på engelska, precis som briefarna. Koden och kommentarerna i filen är
+svenska som resten av repot.
+
 Sidmallen bor i `commission/leaderboard-sida.html` — den redigeras bara när
 utseendet ska ändras. `leaderboard-publicerad.html` är genererad; handredigera
 den aldrig.

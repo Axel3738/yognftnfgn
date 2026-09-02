@@ -1,4 +1,4 @@
-<title>Redigerarnas topplista</title>
+<title>Editor Leaderboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -360,9 +360,9 @@
 
 <div class="sida">
   <header class="huvud">
-    <p class="ögonbryn">Bäverbutiken · redigerarnas 0,4 %</p>
-    <h1>Topplistan</h1>
-    <p class="period" id="period">Läser in …</p>
+    <p class="ögonbryn">Bäverbutiken · editors’ 0.4%</p>
+    <h1>Leaderboard</h1>
+    <p class="period" id="period">Loading …</p>
     <div class="märken" id="märken"></div>
   </header>
 
@@ -379,9 +379,9 @@
   // Datan bakas in i sidan av commission/leaderboard.mjs och rutinen publicerar
   // om sidan varje morgon mot samma adress. Inget hämtas vid öppning: sidan
   // kräver ingen inloggning, så redigerarna kan öppna den med bara länken.
-  const INBÄDDAD = {"uppdaterad":"2026-09-02T06:33:26.377Z","kord":"2026-08-31T00:00:00.000Z","manad":"2026-08","period":{"fran":"2026-08-01","till":"2026-08-31"},"slutavrakning":true,"sats":0.004,"valuta":{"kod":"USD","kurs":0.10428,"datum":"2026-09-01","gammal":false},"rader":[{"plats":1,"id":"annabelle","namn":"Annabelle Gonzales","usd":133.22,"annonser":459,"kampanjer":[{"namn":"Mastern","usd":31.37},{"namn":"235","usd":26.77},{"namn":"Motorhöljet","usd":25.08}],"basta":{"namn":"235 H1","usd":20.62},"okning":null,"forraPlats":null,"flytt":0},{"plats":2,"id":"josh","namn":"Josh Naelga","usd":74.74,"annonser":627,"kampanjer":[{"namn":"Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18","usd":23.13},{"namn":"Strandtofflorna","usd":12.19},{"namn":"Axelbältet","usd":11.81}],"basta":{"namn":"Beachslippers_PD_13_1","usd":5.58},"okning":null,"forraPlats":null,"flytt":0},{"plats":3,"id":"jasper","namn":"Jasper Tomboc","usd":18.55,"annonser":73,"kampanjer":[{"namn":"Mastern","usd":10.81},{"namn":"279","usd":4.16},{"namn":"279 separat listicle 08-14","usd":2.83}],"basta":{"namn":"279 H1 08-11","usd":4.3},"okning":null,"forraPlats":null,"flytt":0},{"plats":4,"id":"gilz","namn":"Gilz Bruce Biazon","usd":7.73,"annonser":161,"kampanjer":[{"namn":"Mastern","usd":7.27},{"namn":"Motorhöljet CBO 2026-08-20","usd":0.39},{"namn":"Sätesöverdragaren","usd":0.06}],"basta":{"namn":"277 H1 08-11","usd":1.34},"okning":null,"forraPlats":null,"flytt":0},{"plats":5,"id":"carl","namn":"Carl Vicente","usd":1.51,"annonser":133,"kampanjer":[{"namn":"Mastern","usd":1.46},{"namn":"Sätesöverdragaren","usd":0.05}],"basta":{"namn":"233 H4","usd":0.74},"okning":null,"forraPlats":null,"flytt":0}],"totalt":{"usd":235.75,"annonser":1453,"redigerare":5},"obetald":{"utanAnsvarig":0,"okanda":0.01,"ejRedigerare":[{"namn":"Axel Odhner","roll":"admin","usd":27.42}],"konflikter":0},"kallor":{"hubbar":12,"konton":14,"fel":0},"historik":[{"datum":"2026-08-31","per":{"annabelle":133.22,"josh":74.74,"jasper":18.55,"gilz":7.73,"carl":1.51}}]};
+  const INBÄDDAD = {"uppdaterad":"2026-09-02T07:23:58.805Z","kord":"2026-08-31T00:00:00.000Z","manad":"2026-08","period":{"fran":"2026-08-01","till":"2026-08-31"},"slutavrakning":true,"sats":0.004,"valuta":{"kod":"USD","kurs":0.10428,"datum":"2026-09-01","gammal":false},"rader":[{"plats":1,"id":"annabelle","namn":"Annabelle Gonzales","usd":133.22,"annonser":459,"kampanjer":[{"namn":"Mastern","usd":31.37},{"namn":"235","usd":26.77},{"namn":"Motorhöljet","usd":25.08}],"basta":{"namn":"235 H1","usd":20.62},"okning":null,"forraPlats":null,"flytt":0},{"plats":2,"id":"josh","namn":"Josh Naelga","usd":74.74,"annonser":627,"kampanjer":[{"namn":"Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18","usd":23.13},{"namn":"Strandtofflorna","usd":12.19},{"namn":"Axelbältet","usd":11.81}],"basta":{"namn":"Beachslippers_PD_13_1","usd":5.58},"okning":null,"forraPlats":null,"flytt":0},{"plats":3,"id":"jasper","namn":"Jasper Tomboc","usd":18.55,"annonser":73,"kampanjer":[{"namn":"Mastern","usd":10.81},{"namn":"279","usd":4.16},{"namn":"279 separat listicle 08-14","usd":2.83}],"basta":{"namn":"279 H1 08-11","usd":4.3},"okning":null,"forraPlats":null,"flytt":0},{"plats":4,"id":"gilz","namn":"Gilz Bruce Biazon","usd":7.73,"annonser":161,"kampanjer":[{"namn":"Mastern","usd":7.27},{"namn":"Motorhöljet CBO 2026-08-20","usd":0.39},{"namn":"Sätesöverdragaren","usd":0.06}],"basta":{"namn":"277 H1 08-11","usd":1.34},"okning":null,"forraPlats":null,"flytt":0},{"plats":5,"id":"carl","namn":"Carl Vicente","usd":1.51,"annonser":133,"kampanjer":[{"namn":"Mastern","usd":1.46},{"namn":"Sätesöverdragaren","usd":0.05}],"basta":{"namn":"233 H4","usd":0.74},"okning":null,"forraPlats":null,"flytt":0}],"totalt":{"usd":235.75,"annonser":1453,"redigerare":5},"obetald":{"utanAnsvarig":0,"okanda":0.01,"ejRedigerare":[{"namn":"Axel Odhner","roll":"admin","usd":27.42}],"konflikter":0},"kallor":{"hubbar":12,"konton":14,"fel":0},"historik":[{"datum":"2026-08-31","per":{"annabelle":133.22,"josh":74.74,"jasper":18.55,"gilz":7.73,"carl":1.51}}]};
 
-  const antalFmt = new Intl.NumberFormat('sv-SE', { maximumFractionDigits: 0 });
+  const antalFmt = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
   const usdFmt = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   // Topplistan visar bara vad redigeraren tjänat, aldrig annonsbudgeten.
   const pengar = (n) => '$' + usdFmt.format(n);
@@ -394,10 +394,10 @@
   };
 
   function dagText(iso) {
-    if (!iso) return 'okänd tid';
+    if (!iso) return 'unknown time';
     const d = new Date(iso);
     if (Number.isNaN(d.getTime())) return iso;
-    return d.toLocaleString('sv-SE', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+    return d.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
   }
 
   function ålder(iso) {
@@ -425,7 +425,7 @@
     svg.setAttribute('viewBox', '0 0 ' + b + ' ' + h);
     svg.setAttribute('preserveAspectRatio', 'none');
     svg.setAttribute('role', 'img');
-    svg.setAttribute('aria-label', 'Intjänat per dygn, senast ' + pengar(punkter.at(-1).värde));
+    svg.setAttribute('aria-label', 'Earned per day, latest ' + pengar(punkter.at(-1).värde));
 
     const fyll = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     fyll.setAttribute('d', yta);
@@ -451,25 +451,25 @@
 
   function ritaHuvud(d) {
     const månad = new Date(d.period.fran + 'T12:00:00Z')
-      .toLocaleDateString('sv-SE', { month: 'long', year: 'numeric' });
+      .toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
     document.getElementById('period').textContent =
       månad.charAt(0).toUpperCase() + månad.slice(1) + ' · ' + d.period.fran + ' – ' + d.period.till;
 
     const märken = document.getElementById('märken');
     märken.replaceChildren();
     märken.append(el('span', d.slutavrakning ? 'märke märke--slut' : 'märke',
-      d.slutavrakning ? 'Slutavräkning — det här betalas ut' : 'Lägeskoll — månaden hittills'));
-    märken.append(el('span', 'märke', 'Uppdaterad ' + dagText(d.uppdaterad)));
+      d.slutavrakning ? 'Final — this is what gets paid' : 'Month so far'));
+    märken.append(el('span', 'märke', 'Updated ' + dagText(d.uppdaterad)));
 
     const timmar = ålder(d.uppdaterad);
     if (timmar !== null && timmar > 30) {
-      märken.append(el('span', 'märke märke--varning', 'Ingen ny körning på ' + Math.floor(timmar / 24) + ' dygn'));
+      märken.append(el('span', 'märke märke--varning', 'No update for ' + Math.floor(timmar / 24) + ' days'));
     }
     if (d.valuta && d.valuta.gammal) {
-      märken.append(el('span', 'märke märke--varning', 'Kursen är från ' + d.valuta.datum));
+      märken.append(el('span', 'märke märke--varning', 'Rate is from ' + d.valuta.datum));
     }
     if (d.kallor && d.kallor.fel > 0) {
-      märken.append(el('span', 'märke märke--varning', d.kallor.fel + ' källor gick inte att läsa'));
+      märken.append(el('span', 'märke märke--varning', d.kallor.fel + ' sources could not be read'));
     }
   }
 
@@ -477,9 +477,9 @@
     const dl = document.getElementById('summa');
     dl.replaceChildren();
     const par = [
-      ['Intjänat i månaden', pengar(d.totalt.usd), true],
-      ['Redigerare', antalFmt.format(d.totalt.redigerare), false],
-      ['Annonser', antalFmt.format(d.totalt.annonser), false],
+      ['Earned this month', pengar(d.totalt.usd), true],
+      ['Editors', antalFmt.format(d.totalt.redigerare), false],
+      ['Ads', antalFmt.format(d.totalt.annonser), false],
     ];
     for (const [etikett, värde, guld] of par) {
       const ruta = el('div');
@@ -504,19 +504,19 @@
     block.append(el('div', 'namn', r.namn));
     const under = el('div', 'under');
     if (r.okning !== null && r.okning !== undefined && r.okning > 0) {
-      under.append(el('span', null, '+' + pengar(r.okning) + ' i dag'));
+      under.append(el('span', null, '+' + pengar(r.okning) + ' today'));
     }
     if (r.flytt) {
       under.append(el('span', 'flytt ' + (r.flytt > 0 ? 'flytt--upp' : 'flytt--ner'),
-        (r.flytt > 0 ? '▲ ' : '▼ ') + Math.abs(r.flytt) + ' plats' + (Math.abs(r.flytt) > 1 ? 'er' : '')));
+        (r.flytt > 0 ? '▲ ' : '▼ ') + Math.abs(r.flytt) + (Math.abs(r.flytt) > 1 ? ' places' : ' place')));
     }
-    under.append(el('span', null, r.annonser + ' annonser'));
+    under.append(el('span', null, r.annonser + (r.annonser === 1 ? ' ad' : ' ads')));
     block.append(under);
     summering.append(block);
 
     const belopp = el('div', 'belopp');
     belopp.append(el('div', 'commission', pengar(r.usd)));
-    belopp.append(el('div', 'commission-etikett', 'intjänat'));
+    belopp.append(el('div', 'commission-etikett', 'earned'));
     summering.append(belopp);
     detaljer.append(summering);
 
@@ -524,13 +524,13 @@
     const linje = kurva(historik, r.id);
     if (linje) {
       const box = el('div', 'kurva');
-      box.append(el('h3', null, 'Intjänat i månaden · ' + linje.dagar + ' dygn'));
+      box.append(el('h3', null, 'Earned this month · ' + linje.dagar + ' days'));
       box.append(linje.svg);
       detalj.append(box);
     }
     if (r.kampanjer && r.kampanjer.length) {
       const box = el('div');
-      box.append(el('h3', null, 'Ger mest just nu'));
+      box.append(el('h3', null, 'Earning most right now'));
       const ul = el('ul', 'kampanjer');
       for (const k of r.kampanjer) {
         const rad = el('li', 'kampanj');
@@ -543,14 +543,14 @@
     }
     if (r.basta) {
       const box = el('div');
-      box.append(el('h3', null, 'Bästa annonsen'));
+      box.append(el('h3', null, 'Best ad'));
       const rad = el('div', 'kampanj');
       rad.append(el('span', 'annonsnamn', r.basta.namn));
       rad.append(el('span', null, pengar(r.basta.usd)));
       box.append(rad);
       detalj.append(box);
     }
-    if (!detalj.children.length) detalj.append(el('p', 'tom', 'Inga godkända annonser med resultat ännu den här månaden.'));
+    if (!detalj.children.length) detalj.append(el('p', 'tom', 'No approved ads with results yet this month.'));
     detaljer.append(detalj);
 
     li.append(detaljer);
@@ -562,7 +562,7 @@
     lista.replaceChildren();
     if (!d.rader.length) {
       const li = el('li', 'block');
-      li.append(el('p', 'tom', 'Ingen redigerare har tjänat något på en godkänd annons den här månaden ännu.'));
+      li.append(el('p', 'tom', 'No editor has earned anything on an approved ad yet this month.'));
       lista.append(li);
       return;
     }
@@ -573,16 +573,16 @@
   function ritaObetald(d) {
     const block = document.getElementById('obetald');
     block.replaceChildren();
-    block.append(el('h2', null, 'Går inte till någon redigerare'));
+    block.append(el('h2', null, 'Not going to any editor'));
 
     const poster = [];
-    if (d.obetald.utanAnsvarig) poster.push(['Rader utan Ansvarig', 'Ingen är satt som Ansvarig i Notion', d.obetald.utanAnsvarig]);
-    for (const p of d.obetald.ejRedigerare || []) poster.push([p.namn, 'Inte redigerare (' + p.roll + ')', p.usd]);
-    if (d.obetald.okanda) poster.push(['Okända Notion-användare', 'Saknas i teamlistan — läggs in av Axel', d.obetald.okanda]);
-    if (d.obetald.konflikter) poster.push(['Namnkonflikter', d.obetald.konflikter + ' annonsnamn står på två personer', null]);
+    if (d.obetald.utanAnsvarig) poster.push(['Rows with no Assignee', 'Nobody is set as Assignee in Notion', d.obetald.utanAnsvarig]);
+    for (const p of d.obetald.ejRedigerare || []) poster.push([p.namn, 'Not an editor (' + p.roll + ')', p.usd]);
+    if (d.obetald.okanda) poster.push(['Unknown Notion users', 'Missing from the team list — Axel adds them', d.obetald.okanda]);
+    if (d.obetald.konflikter) poster.push(['Name conflicts', d.obetald.konflikter + ' ad names belong to two people', null]);
 
     if (!poster.length) {
-      block.append(el('p', 'tom', 'Allt som tjänats in går till en redigerare.'));
+      block.append(el('p', 'tom', 'Everything earned goes to an editor.'));
       return;
     }
     const ul = el('ul', 'poster');
@@ -601,14 +601,14 @@
   function ritaFot(d) {
     const fot = document.getElementById('fot');
     fot.replaceChildren();
-    fot.append(el('div', null, 'Du tjänar ' + (d.sats * 100).toFixed(1).replace('.', ',')
-      + ' % på annonserna du står som Ansvarig för i Notion, så länge de är godkända och körs.'));
+    fot.append(el('div', null, 'You earn ' + (d.sats * 100).toFixed(1)
+      + '% on the ads you are Assignee for in Notion, as long as they are approved and running.'));
     if (d.valuta) {
-      fot.append(el('div', null, 'Belopp i USD, växlade på ECB-kursen ' + d.valuta.kurs
-        + ' den ' + d.valuta.datum + (d.valuta.gammal ? ' (senast hämtade kursen)' : '') + '.'));
+      fot.append(el('div', null, 'Amounts in USD, converted at the ECB rate ' + d.valuta.kurs
+        + ' on ' + d.valuta.datum + (d.valuta.gammal ? ' (latest rate we could fetch)' : '') + '.'));
     }
-    fot.append(el('div', null, 'Uppdateras en gång per dygn, tidigt på morgonen. '
-      + 'Månaden börjar om på noll den 1:a.'));
+    fot.append(el('div', null, 'Updated once a day, early in the morning. '
+      + 'The month resets to zero on the 1st.'));
   }
 
   function rita(d) {
