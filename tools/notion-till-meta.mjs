@@ -77,6 +77,16 @@ const logg = (...a) => console.log(...a);
 
 // ---------------------------------------------------------------- Meta API
 
+const vänta = (ms) => new Promise(r => setTimeout(r, ms));
+
+// Kontot ligger på Metas "development access"-nivå för Marketing API, med ett
+// betydligt lägre och kortare (sekund-/minutbaserat, inte timbaserat) tak än
+// x-business-use-case-usage-headern visar — den stod kvar på call_count 1
+// genom hela blockeringen 2026-09-02. Ett fast litet mellanrum plus en
+// inbyggd backoff på just detta felet (kod 17 / "User request limit
+// reached") gör skriptet självläkande i stället för att kasta efter första
+// träffen.
+let senastAnrop = 0;
 async function api(sökväg, { method = 'GET', params = {}, form = null } = {}) {
   if (!TOKEN) dö('META_ACCESS_TOKEN saknas i miljön.');
   const url = new URL(`${API}/${sökväg}`);
@@ -90,13 +100,27 @@ async function api(sökväg, { method = 'GET', params = {}, form = null } = {}) 
   for (const [k, v] of Object.entries(params)) {
     url.searchParams.set(k, typeof v === 'object' ? JSON.stringify(v) : String(v));
   }
-  const res = await fetch(url, { method: form ? 'POST' : method, body });
-  const json = await res.json().catch(() => ({}));
-  if (!res.ok || json.error) {
+
+  const FÖRDRÖJNING_MS = 1500;
+  const BACKOFF_MS = [5000, 10000, 20000, 40000, 60000];
+  for (let försök = 0; ; försök++) {
+    const väntaTill = senastAnrop + FÖRDRÖJNING_MS;
+    if (väntaTill > Date.now()) await vänta(väntaTill - Date.now());
+    senastAnrop = Date.now();
+
+    const res = await fetch(url, { method: form ? 'POST' : method, body });
+    const json = await res.json().catch(() => ({}));
+    if (res.ok && !json.error) return json;
+
     const e = json.error || {};
+    const rateLimited = e.code === 17 || /user request limit reached/i.test(e.message || '');
+    if (rateLimited && försök < BACKOFF_MS.length) {
+      logg(`  ⏳ Meta rate limit (försök ${försök + 1}/${BACKOFF_MS.length}) — väntar ${BACKOFF_MS[försök] / 1000}s`);
+      await vänta(BACKOFF_MS[försök]);
+      continue;
+    }
     throw new Error(`Meta ${res.status}: ${e.message || res.statusText}${e.error_user_msg ? ` — ${e.error_user_msg}` : ''}`);
   }
-  return json;
 }
 
 /** Alla sidor av ett edge-anrop. Kontot har fler än 25 annonser. */
