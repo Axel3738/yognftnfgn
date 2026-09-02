@@ -25,9 +25,8 @@ upp, skala ner och stänga av enligt reglerna, utan att fråga per rad.
 **Tolkningsregel (Axel 2026-08-30):** när körordern (trigger-prompten) säger
 "utför bara det som står i plan.atgarder" syftar det på BUDGETÄNDRINGARNA i
 Meta. Annonsbehoven i steg 4b är fortfarande obligatoriska — alla
-förstabatcher plus två brief-rundor per morgon (se 4b). En körning som lämnar
-förfallna behov utan åtgärd och utan
-redovisning är INTE klar. (Körningen 2026-08-30 hoppade över hela kön på den
+förstabatcher och alla förfallna brief-rundor, utan tak (se 4b). En körning
+som lämnar förfallna behov utan åtgärd och utan redovisning är INTE klar. (Körningen 2026-08-30 hoppade över hela kön på den
 meningen — det var fel tolkning.)
 
 Ronden KÖRS varje dag, men varje produkts BUDGET ändras högst var tredje dag —
