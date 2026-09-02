@@ -207,7 +207,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/launch <produktnamn>` | **Temu-flödet:** Drive → QA → Judge.me → Meta som PAUSED (`docs/temu-launch-flow.md`) |
 | `/bildannonser [--dry]` | **Rutin 20:00 varje dag:** alla Notion-hubbar → ogjorda bildannonser → kie.ai → `To be Reviewed`. **Aldrig video.** |
 | `/nattkorning` | Rutinen "Ad upload and structure": Drive-kön → QA → Meta |
-| `/notionkorning` | **Nattrutin 00:01:** Notion `To be Reviewed` (video + bild) → brief-QA → upp i produktens kampanj → Discord `#ads-launching` / `#problem-and-revisions-ads` |
+| `/notionkorning` | **Rutin 13:20 varje dag:** Notion `To be Reviewed` (video + bild) → brief-QA → upp i produktens kampanj → Discord `#ads-launching` / `#problem-and-revisions-ads` |
 | `/commission` | **Var tredje dag + månadens sista dag:** godkända Notion-rader → spend i alla annonskonton → 0,4 % till redigeraren |
 
 ### Nattrutinerna
@@ -221,7 +221,7 @@ Merga alltid till `main`, annars är rutinen bara schemalagd, inte igång.
 | 04:15 | `15 2 * * *` | Daglig NO-videobatch | `/translate-no` |
 | 05:30 | `30 3 * * *` | Norska recensioner | `/no-recensioner` |
 | 20:00 | `0 18 * * *` | Bildannonser | `/bildannonser` |
-| 00:01 | `1 22 * * *` | Leveransrundan | `/notionkorning` |
+| 13:20 | `20 11 * * *` | Leveransrundan | `/notionkorning` |
 | 06:00 | `0 4 * * *` | Commission | `/commission` |
 
 `/commission` har daglig cron med flit: **skriptet självt avgör** om dagen är
@@ -234,7 +234,7 @@ räknas månaden hittills oavsett datum.
 ⚠️ **Cron står i UTC och följer inte sommartid.** Tiderna ovan gäller CEST
 (UTC+2, mars–oktober). Vid vinteromställningen blir Sverige UTC+1, och en cron
 som står kvar går en timme TIDIGARE svensk tid. Cron-uttrycken ska då **ökas**
-med en timme: `1 22 * * *` (00:01 CEST) blir `1 23 * * *` (00:01 CET).
+med en timme: `20 11 * * *` (13:20 CEST) blir `20 12 * * *` (13:20 CET).
 Räkna alltid om från önskad svensk tid till UTC i stället för att minnas riktningen.
 
 ⚠️ **Rutiner ärver inte sessionens MCP-connectors.** En rutin som behöver Notion,
