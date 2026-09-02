@@ -66,19 +66,41 @@ export async function lasKonfig(fil = KONFIGFIL) {
   // Vilka som ska pingas i varje post (Axel 2026-09-02). Användarnamn, inte id.
   const pinga = Array.isArray(rå.pinga) ? rå.pinga.map((n) => String(n).replace(/^@/, '').trim()).filter(Boolean) : [];
   const guildId = rå.guild_id ? String(rå.guild_id) : null;
-  return { alias, pinga, guildId };
+  // Roller per alias (Axel 2026-09-02: uppgifter-poster pingar rollen Video editor).
+  const pingaRoll = rå.pinga_roll && typeof rå.pinga_roll === 'object' ? rå.pinga_roll : {};
+  return { alias, pinga, guildId, pingaRoll };
 }
 
 /**
- * Pingraden överst i posten. Discord pingar BARA på formen <@id> — texten
- * "@namn" ser ut som en ping men når ingen. Därför slås namnen upp till id
- * först; det som inte gick att slå upp skrivs som text så att ingen tystas.
- * @param {{namn: string, id: string|null}[]} personer
+ * Slår upp en roll på namn i servern. Exakt träff, skiftlägesokänsligt.
+ * Returnerar id eller null — aldrig ett fel.
  */
-export function pingRad(personer) {
-  const delar = (personer || [])
-    .filter((p) => p && p.namn)
-    .map((p) => (p.id ? `<@${p.id}>` : `@${p.namn}`));
+export async function slaUppRoll(namn, guildId, token = process.env.DISCORD_BOT_TOKEN) {
+  if (!guildId || !namn) return null;
+  try {
+    const svar = await fetch(`https://discord.com/api/v10/guilds/${guildId}/roles`, { headers: botHuvuden(token) });
+    if (!svar.ok) return null;
+    const sökt = String(namn).toLowerCase();
+    const träff = (await svar.json()).find((r) => String(r?.name || '').toLowerCase() === sökt);
+    return träff?.id ?? null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Pingraden överst i posten. Discord pingar BARA på formen <@id> (användare)
+ * och <@&id> (roll) — texten "@namn" ser ut som en ping men når ingen. Därför
+ * slås namnen upp till id först; det som inte gick att slå upp skrivs som
+ * text så att ingen tystas.
+ * @param {{namn: string, id: string|null}[]} personer
+ * @param {{namn: string, id: string|null}[]} roller
+ */
+export function pingRad(personer, roller = []) {
+  const delar = [
+    ...(roller || []).filter((r) => r && r.namn).map((r) => (r.id ? `<@&${r.id}>` : `@${r.namn}`)),
+    ...(personer || []).filter((p) => p && p.namn).map((p) => (p.id ? `<@${p.id}>` : `@${p.namn}`)),
+  ];
   return delar.length ? delar.join(' ') : '';
 }
 
@@ -174,7 +196,7 @@ async function posta(url, kropp, extraHuvuden = {}) {
 export async function skicka({ rubrik = '', text = '', kanal = 'chatt', konfig = null } = {}) {
   const token = process.env.DISCORD_BOT_TOKEN;
 
-  const { alias, pinga = [], guildId = null } = konfig || (await lasKonfig());
+  const { alias, pinga = [], guildId = null, pingaRoll = {} } = konfig || (await lasKonfig());
   // Kommandofilerna säger "ronden" / "uppgifter" / "larm" — alias översätter
   // till det kanalnamn servern faktiskt har, så en omdöpt kanal bara kräver
   // en rad i discord.json i stället för ändringar i varje kommandofil.
@@ -195,8 +217,12 @@ export async function skicka({ rubrik = '', text = '', kanal = 'chatt', konfig =
   // användarna i allowed_mentions — @everyone och roller är fortfarande spärrade.
   const personer = [];
   for (const namn of pinga) personer.push({ namn, id: await slaUppAnvandare(namn, guildId, token) });
-  const ping = pingRad(personer);
+  // Rollerna hänger på aliaset (t.ex. uppgifter → Video editor), inte på kanalnamnet.
+  const roller = [];
+  for (const namn of (pingaRoll[kanal] || [])) roller.push({ namn, id: await slaUppRoll(namn, guildId, token) });
+  const ping = pingRad(personer, roller);
   const tillatnaIdn = personer.map((p) => p.id).filter(Boolean);
+  const tillatnaRoller = roller.map((r) => r.id).filter(Boolean);
 
   const bitar = dela(text);
   const antal = Math.max(1, bitar.length);
@@ -210,11 +236,11 @@ export async function skicka({ rubrik = '', text = '', kanal = 'chatt', konfig =
     await posta(url, {
       content: `${huvud}${bitar[i] ?? ''}`.trim(),
       // parse: [] stoppar @everyone/@here/roller; users: listar de enda som får pingas.
-      allowed_mentions: { parse: [], users: i === 0 ? tillatnaIdn : [] },
+      allowed_mentions: { parse: [], users: i === 0 ? tillatnaIdn : [], roles: i === 0 ? tillatnaRoller : [] },
     }, huvuden);
   }
-  const ejHittade = personer.filter((p) => !p.id).map((p) => p.namn);
-  return { kanal: riktigtNamn, delar: antal, pingade: tillatnaIdn.length, ejHittade };
+  const ejHittade = [...personer, ...roller].filter((p) => !p.id).map((p) => p.namn);
+  return { kanal: riktigtNamn, delar: antal, pingade: tillatnaIdn.length + tillatnaRoller.length, ejHittade };
 }
 
 async function main() {

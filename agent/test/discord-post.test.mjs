@@ -74,8 +74,15 @@ test('pingraden pingar bara på <@id> — namn utan id skrivs som text', () => {
   assert.equal(pingRad(undefined), '');
 });
 
-test('discord.json bär de två som ska pingas och serverns id', async () => {
-  const { pinga, guildId } = await lasKonfig();
+test('discord.json bär de två som ska pingas, serverns id och rollen för uppgifter', async () => {
+  const { pinga, guildId, pingaRoll } = await lasKonfig();
   assert.deepEqual(pinga, ['confident_otter_25993', 'ecom_chadking']);
   assert.equal(guildId, '1540322130388983921');
+  // Axel 2026-09-02: nya briefer/rundor ska pinga @Video editor.
+  assert.deepEqual(pingaRoll, { uppgifter: ['Video editor'] });
+});
+
+test('rollpingen skrivs som <@&id> och står först på raden', () => {
+  assert.equal(pingRad([{ namn: 'ecom_chadking', id: '1' }], [{ namn: 'Video editor', id: '77' }]), '<@&77> <@1>');
+  assert.equal(pingRad([], [{ namn: 'Video editor', id: null }]), '@Video editor');
 });

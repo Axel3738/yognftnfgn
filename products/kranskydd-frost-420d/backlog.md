@@ -10,8 +10,9 @@
 - **Karusell/offer-sekvens** (pris → montering → material → garanti), samma
   mönster som fungerat för andra produkter (`Enginecover_SO_9_C1`) — obevisat
   för denna produkt, ingen data att luta sig mot ännu.
-- **Recensionsbaserad annons** — inga recensioner hämtade än (lucka, se
-  dna.md). Bygg när recensioner finns.
+- **Recensionsbaserad annons** — [använd i batch #3] 10 Judge.me-recensioner
+  hämtade 2026-09-02, två använda ordagrant i Kranskydd_REV_1_1/REV_2_1.
+  Åtta kvar för framtida batcher.
 - **Kostnad av vattenskada/rörmokare, konkret siffra:** vinkeln finns i denna
   batch (`Kranskydd_CI_1_H1`/`_1_1`) men UTAN en verifierad kronsumma — om
   Axel har en riktig svensk siffra för akut rörmokarbesök/vattenskaderemont,

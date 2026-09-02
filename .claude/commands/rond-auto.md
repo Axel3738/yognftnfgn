@@ -186,10 +186,16 @@ på `campaign.id`, fälten `amount_spent`, `omni_purchase`, `purchase_roas`,
   (`entity_type: "campaign"`, `fields: {"status":"PAUSED"}`), verifiera, logga
   `STANG_AV` med motiveringen att potentialkollen föll.
 
-**Förlängningen ges en gång.** Finns redan en `TRAPPA_FORLANGNING`-rad för
-kampanjen de senaste 14 dagarna (`senasteRadMedKod(logg, id,
-["TRAPPA_FORLANGNING"], { maxAlderDagar: 14, idag })` i `agent/logg.mjs`) och
-kampanjen fortfarande går back: stäng av hela kampanjen, ingen ny förlängning.
+**Förlängningen ges en gång, och den gäller ett HELT dygn.** Finns redan en
+`TRAPPA_FORLANGNING`-rad för kampanjen de senaste 14 dagarna
+(`senasteRadMedKod(logg, id, ["TRAPPA_FORLANGNING"], { maxAlderDagar: 14,
+idag })` i `agent/logg.mjs`):
+- är raden **från i dag** → rör inte kampanjen, logga `VANTA_FORLANGNING`
+  (`genomford: false`). Dygnet har inte gått. *(2026-09-02: Badshorts och
+  Plyschtofflorna fick förlängning på morgonen och stängdes av av samma dags
+  körning några timmar senare — det var fel. Ett dygn är ett dygn.)*
+- är raden **från ett tidigare datum** och kampanjen fortfarande går back →
+  stäng av hela kampanjen, ingen ny förlängning.
 Har den däremot vänt över break-even faller domen bort av sig själv — då står
 det inte längre `trappa` i planen.
 
@@ -395,18 +401,36 @@ sköts upp och varför, om något larmade — och vilka brief-rundor/batcher som
 kördes (produkt + antal briefer + Notion-länk) respektive ligger kvar i kön
 till imorgon. Inga bibelsvar.
 
-**Skicka samma korta rapport till Discord** (Axels order 2026-08-30):
+**Skicka samma korta rapport till Discord** (Axels order 2026-08-30) —
+**på ENGELSKA.** Allt som postas som Bävern läses av det engelsktalande
+teamet, så varje Discord-post skrivs på engelska även när svaret till Axel
+här är på svenska. Produkt-, kanal- och kampanjnamn behåller sin svenska
+stavning; belopp skrivs "1 200 SEK". Axels besked 2026-09-02.
 
 ```bash
-node agent/discord-post.mjs --kanal ronden "Ronden <datum>" "<rapporten i Markdown>"
+node agent/discord-post.mjs --kanal ronden "Daily round <datum>" "<rapporten i Markdown, på engelska>"
 ```
 
+<<<<<<< HEAD
 Skriptet sköter kanalval, delning över 2 000-teckengränsen, rate limits och
 **pingarna** (Axel 2026-09-02: varje post pingar personerna i `pinga` i
 `agent/discord.json` — i dag confident_otter_25993 och ecom_chadking). Skriv
 aldrig egen curl-kod mot Discord, och skriv aldrig "@namn" själv i texten —
 det pingar ingen. Säger skriptet att ett namn inte gick att slå upp: nämn
 det på en rad i svaret. Varje rutin har sin egen kanal
+=======
+⚠️ **ALLT som postas i Discord skrivs på ENGELSKA** — rubrik och brödtext, i
+alla tre kanalerna (`ronden`, `uppgifter`, `larm`). Redigerarna läser samma
+kanaler som Axel och förstår inte svenska. Produktnamnen behålls som de heter i
+Meta (t.ex. "Båtmotorskyddet 420D"), resten översätts: SKALA → "Scaled up",
+SANK → "Scaled down", STÄNG AV → "Paused", uppskjuten → "Deferred",
+brief-runda → "brief round", förstabatch → "first batch". Svaret till Axel i
+chatten är fortfarande på svenska. *(Axels order 2026-09-02 — samma dag
+postades rapporten på svenska och redigerarna kunde inte läsa den.)*
+
+Skriptet sköter kanalval, delning över 2 000-teckengränsen och rate limits —
+skriv aldrig egen curl-kod mot Discord. Varje rutin har sin egen kanal
+>>>>>>> origin/claude/daily-agent-discussion-uos5df
 (`kanalplan` i `agent/discord.json`); finns kanalen inte än postas det i
 standardkanalen i stället för att tystna.
 

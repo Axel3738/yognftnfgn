@@ -77,7 +77,9 @@ inte röras utan att Axel ber om det.
    analysen inte att göra. Läs av upptagna AD-ID:n i kontot innan du numrerar.
 9. **Briefer på engelska** (redigerarna är engelsktalande), svenska manusrader i
    tabell `Swedish (use this) | English meaning`. SOP:er och svar till Axel på
-   svenska.
+   svenska. **Allt som postas i Discord skrivs på ENGELSKA** — alla kanaler,
+   alla rutiner (`agent/discord-post.mjs`). Redigerarna läser samma kanaler som
+   Axel. Produktnamn behålls som de heter i Meta. *(Axels order 2026-09-02.)*
 10. **En task är aldrig klar för att någon säger det.** Levererat och godkänt är
     två olika saker. Godkännande kräver grön checklista (eller override med
     skriven motivering), och bara godkända creatives räknas mot kvoten.
@@ -569,7 +571,12 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   utan den kan en rutin inte ens ladda Meta-verktygen den ska arbeta med.
 - **Språk:** allt i repot skrivs på svenska — kod, kommentarer, commit-meddelanden.
   Undantag: `basePrompt` i pipeline-vågorna är engelska (bildmodellen kräver det),
-  och briefer till redigerarna är engelska.
+  briefer till redigerarna är engelska, och **allt som postas i Discord är
+  engelska** — botens svar, knapptexter, felmeddelanden och rutinernas rapporter.
+  Teamet i servern är engelsktalande. Frågan kan komma på svenska; svaret blir
+  ändå engelska, utan kommentar om språkvalet. Produkt-, kanal- och
+  kampanjnamn behåller svensk stavning, belopp skrivs "1 200 SEK".
+  Axels besked 2026-09-02.
 
 ---
 

@@ -66,13 +66,13 @@ export function felorsak(svar) {
     const reset = Number(svar.headers.get('x-ratelimit-reset') || 0) * 1000;
     const min = reset ? Math.max(1, Math.ceil((reset - Date.now()) / 60000)) : null;
     return process.env.GITHUB_TOKEN
-      ? `Rate limit slut${min ? `, öppnar om ~${min} min` : ''}.`
-      : `Rate limit slut${min ? `, öppnar om ~${min} min` : ''}. Utan GITHUB_TOKEN `
-        + 'får boten bara 60 anrop/timme — lägg in en token i Railway.';
+      ? `Rate limit reached${min ? `, opens in ~${min} min` : ''}.`
+      : `Rate limit reached${min ? `, opens in ~${min} min` : ''}. Without GITHUB_TOKEN `
+        + 'the bot only gets 60 calls/hour — add a token in Railway.';
   }
   return process.env.GITHUB_TOKEN
-    ? 'GITHUB_TOKEN kan vara utgången eller sakna Contents:Read på repot.'
-    : 'Repot kan vara privat och GITHUB_TOKEN saknas i Railway.';
+    ? 'GITHUB_TOKEN may have expired or lack Contents:Read on the repo.'
+    : 'The repo may be private and GITHUB_TOKEN is missing in Railway.';
 }
 
 /**

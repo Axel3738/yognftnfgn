@@ -121,8 +121,8 @@ upp för förlusterna nedan.
   rad-för-rad-analys av vad som händer i bild. Be Axel/redigerarna om
   transkript för SP_1_H3 (vinnare) och PD_1_H2/H3 (underpresterare) till
   nästa `/cs`-körning.
-- Recensioner: ej försökt hämtas i denna körning (ingen recensionsplattform
-  identifierad för produkten) — lucka, inte ett nekat försök.
+- Recensioner: hämtade 2026-09-02 (Judge.me), 10 st, 4–5 stjärnor. Två
+  använda ordagrant i batch #3 (REV_1_1, REV_2_1).
 - Konkurrenter: 0 träffar i Meta Ad Library på "kranskydd", "frostskydd kran"
   och "utekran vinter" i Sverige — nischen verkar obevakad av andra
   annonsörer just nu (bara Bäverbutikens egna annonser kom upp).

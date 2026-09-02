@@ -3,7 +3,8 @@
 
   "VARNING_LAS_DETTA_FORST": "Hittar du inget i en databas betyder det INTE att det inte finns arbete. Det betyder att du letat pa ett stalle. Sag alltid VILKA kallor du kollat, och foresla den du inte kollat. Pasta aldrig att nagot inte finns.",
 
-  "uppdaterad": "2026-09-01",
+  "uppdaterad": "2026-09-02",
+  "TILLAGG_SENARE_SAMMA_DAG": "En andra /rond-auto-korning samma morgon (efter kl 05:00 UTC) lade till 9 Draft-rader i Belt grinder creative hub och 9 i Kranskydd Frost 420D creative hub (batch #3, brief_runda). Bara dessa tva hubbars siffror ar uppdaterade punktvis - inget nytt fullt teamspace-svep kordes, eftersom ett sadant redan gjordes tidigare samma morgon (se commit a8581df).",
   "kalla": "Notion MCP, direktfragor mot bada databasernas data sources",
   "VARNING_FARSKHET": "Ogonblicksbild. Notion andras hela tiden. Ar uppdaterad mer an nagra dagar gammalt: sag det och hamta om.",
 
@@ -25,10 +26,14 @@
       { "namn": "Kamouflagetejp 3-pack", "status": "Ads review" },
       { "namn": "5.1 Luffarschack i Trä", "status": "Ads review" },
       { "namn": "5.1 Magnethylla Tvättmaskin/Kylskåp", "status": "Ads review" },
-      { "namn": "5.1 Sömnadskit 104 Delar", "status": "Ads review" }
+      { "namn": "5.1 Sömnadskit 104 Delar", "status": "Ads review" },
+      { "namn": "5.1 Kasta & Fånga-set", "status": "Ads review", "not": "Flyttad hit sedan igår, var In progress. Kampanjen kör redan skarpt i Meta SE (120250053637760291)." },
+      { "namn": "animal pillow Beware this product is for twinpillow", "status": "Ads review", "not": "EJ Bäverbutiken — tillhör Twinpillow. Ignorerad." }
     ],
     "i_progress": [
-      { "namn": "5.1 Kasta & Fånga-set", "status": "In progress", "not": "Ny produktkandidat, ännu inte i produktkartan eller launchad i Meta." }
+      { "namn": "5.1 Medicinask i Fickformat", "status": "In progress", "not": "Kampanjen kör redan skarpt i Meta SE (120250053730340291) — Notion har inte hunnit ikapp." },
+      { "namn": "5.1 Magnetplattor i Storformat 46/60", "status": "In progress", "not": "Ny produktkandidat, ingen kampanj i Meta ännu, ingen post i produktkartan." },
+      { "namn": "Grill cover BEWARE: This product is for grillkliniken.se", "status": "Ready to launch", "not": "EJ Bäverbutiken — tillhör Grillkliniken. Ignorerad." }
     ],
     "i_testing": [
       "Anti freeze cover for water tap", "Badshorts med Skämttryck", "Boxboll",
@@ -39,96 +44,84 @@
       "Smiley face trash can stickers", "Vandringskängor Herr",
       "Övervakningskamera Trådlös", "Cykelshorts Herr – Vadderade med Kompression"
     ],
-    "andrat_sedan_igar": "3 NYA rader i Ads review: '5.1 Luffarschack i Trä', '5.1 Magnethylla Tvättmaskin/Kylskåp', '5.1 Sömnadskit 104 Delar' — matchar exakt de tre kampanjerna som launchades i Meta SE natten till 2026-09-01 (Notion-statusen har inte hunnit uppdateras till att spegla att de redan spenderar). 1 NY rad i In progress: '5.1 Kasta & Fånga-set' — okänd produkt, ingen kampanj i Meta ännu, ingen post i produktkartan. Två rader utan namn i 'Ads review'/'Ready to launch' är tomma skalrader från 2026-07-24 (ingen Typ, ingen fil) — inte riktigt arbete, uteslutna ur listorna ovan."
+    "andrat_sedan_igar": "'5.1 Kasta & Fånga-set' flyttad In progress → Ads review (kampanjen kör redan i Meta SE). 2 NYA rader i In progress: '5.1 Medicinask i Fickformat' (kampanj kör redan i Meta SE) och '5.1 Magnetplattor i Storformat 46/60' (helt ny kandidat, ingen kampanj än). 2 rader hör INTE till Bäverbutiken (Twinpillow-kudde i Ads review, Grillkliniken-grillcover i Ready to launch) — flaggade, aldrig räknade."
   },
 
   "databas_2_creative_hubs": {
     "vad_de_ar": "En hub per produkt som gatt vidare fran testcentret. Har ligger de enskilda annonserna som briefer.",
-    "sa_lases_de": "Bara Typ 'Video - Pending Approval' eller 'Image - Pending Approval' ar annonser. Guideline, SOP, Feedback och Winning Creative ar dokumentation. Filtrera pa INKLUDERING, aldrig uteslutning. 'drafts' nedan = antal rader med Status exakt 'Draft' (briefen finns, ingen har börjat) — rader i 'To be Reviewed'/'In progress' räknas inte som drafts, de är redan under arbete.",
+    "sa_lases_de": "Bara Typ 'Video - Pending Approval' eller 'Image - Pending Approval' ar annonser. Guideline, SOP, Feedback och Winning Creative ar dokumentation. Filtrera pa INKLUDERING, aldrig uteslutning. 'drafts' nedan = antal rader med Status exakt 'Draft' (briefen finns, ingen har börjat) — rader i 'To be Reviewed'/'In progress'/'Creative strat review' räknas inte som drafts, de är redan under arbete.",
     "levande": [
       {
         "namn": "Belt grinder creative hub",
         "produkt": "Balteslipmaskinen",
         "collection": "collection://a1d270ab-908c-82e2-b3be-07b523257509",
-        "drafts": 2,
+        "drafts": 9,
         "drafts_video": 2,
-        "drafts_bild": 0,
+        "drafts_bild": 7,
         "under_granskning": 3,
-        "in_progress": 1
+        "creative_strat_review": 3,
+        "not": "9 NYA Draft-rader tillagda 2026-09-02 kl ~05:50 UTC av /rond-auto batch #3 (2 video + 2 statisk i rundan, 3 BOF-bilder, 2 review-bilder). Räknat direkt efter uppladdning, inte via ett fullt svep av hela teamspacet denna körning."
       },
       {
         "namn": "Kranskydd Frost 420D creative hub",
         "produkt": "Kranskydd Frost 420D",
         "collection": "collection://088270ab-908c-8269-bd9d-87564d1dc9b6",
-        "drafts": 3,
-        "drafts_video": 3,
-        "drafts_bild": 0,
-        "under_granskning": 3
+        "drafts": 9,
+        "drafts_video": 2,
+        "drafts_bild": 7,
+        "under_granskning": 6,
+        "not": "9 NYA Draft-rader tillagda 2026-09-02 kl ~05:56 UTC av /rond-auto batch #3 (2 video + 2 statisk i rundan, 3 BOF-bilder, 2 review-bilder). Räknat direkt efter uppladdning, inte via ett fullt svep av hela teamspacet denna körning."
       },
       {
         "namn": "Fish rod holder",
         "produkt": "Fiskespohallaren",
         "collection": "collection://3c3270ab-908c-8356-ad6c-87ff779e647d",
         "drafts": 0,
-        "not": "57 rader, alla Approved (växt från 48 sedan 2026-08-31)."
+        "not": "49 rader, alla Approved."
       },
       {
         "namn": "Men's Plush Slippers creative hub",
         "produkt": "Plyschtofflorna Herr",
         "collection": "collection://f88270ab-908c-83bc-963b-87f43fd99e61",
         "drafts": 0,
-        "not": "Fortfarande TOM — noll rader av Typ Video/Image - Pending Approval. annonsbehov flaggar produkten som 'ersatt' idag; ingen batch har startats sedan hubben skapades 2026-08-31."
+        "not": "Fortfarande TOM — noll rader av Typ Video/Image - Pending Approval. Kampanjen stängdes av helt av rond-auto 2026-09-02 (åtgärdstrappans förlängning redan använd, fortsatt back). annonsbehov flaggar produkten som 'ersatt' — obehandlad."
       },
       {
         "namn": "Surveillance Camera creative hub",
         "produkt": "Övervakningskameran",
         "collection": "collection://3b6270ab-908c-8366-a085-8705d1a9f4ef",
-        "drafts": 6,
-        "drafts_video": 6,
-        "drafts_bild": 0,
+        "drafts": 2,
+        "drafts_video": 2,
         "under_granskning": 6,
-        "not": "NY sedan 2026-08-31 — hubben existerade inte vid gårdagens svep (sökning gav då noll träff). Har redan 12 annonsrader (6 Draft video + 6 To be Reviewed bild). Batchen som annonsbehov flaggade som obehandlad är alltså gjord."
+        "in_progress": 4,
+        "not": "12 rader totalt. 4 av gårdagens 6 Draft-videor har gått vidare (In progress/To be Reviewed), 2 kvar i Draft."
+      },
+      {
+        "namn": "IBC Tank Cover creative hub",
+        "produkt": "IBC-Tanköverdraget",
+        "collection": "collection://5ad270ab-908c-837f-b001-87c077b043cb",
+        "drafts": 3,
+        "drafts_video": 1,
+        "drafts_bild": 2,
+        "in_progress": 1,
+        "not": "HELT NY hubb, fanns inte vid gårdagens svep. 4 rader totalt (3 Draft + 1 In progress)."
       },
       {
         "namn": "Fish rod holder NO creative hub",
         "produkt": "Fiskespöhållaren NO",
         "collection": "collection://c21270ab-908c-8247-9160-8793a8116601",
-        "drafts": 8,
+        "drafts": 6,
         "drafts_video": 6,
-        "drafts_bild": 2,
-        "under_granskning": 2,
-        "not": "Stor tillväxt sedan 2026-08-31 (då 0 rader) — 10 pending-approval-rader totalt, senast redigerad idag 03:49-03:52."
+        "drafts_bild": 0,
+        "not": "6 videorader i Draft. De 4 bildraderna som fanns 2026-09-01 (RI_1_1, LI_1_1, SO_3_1, OF_1_1) syns inte längre i pending-approval-frågan."
       }
     ],
     "arkiverade": [
       "Beach crocs (strandtofflorna)", "Mower seat (satesoverdragaren)",
       "Trimmer belt (axelbaltet)", "Boat cover 420D"
     ],
-    "andrat_sedan_igar": "2 NYA hubbar upptäckta sedan 2026-08-31: 'Surveillance Camera creative hub' (Övervakningskameran, 12 rader) och stor tillväxt i 'Fish rod holder NO creative hub' (0→10 rader). Ingen arkivering sedan 2026-08-30. En separat databas 'Creative Hub master' hittades i sökningen ('creative hub') men innehåller generiskt SOP/guideline/översättningsmaterial (inga produktspecifika rader, statusar som 'To be translated') — hör inte till en enskild produkt i produktkartan och räknas inte som en produkthubb.",
-    "sok_tips": "Sok ALDRIG bara pa 'creative hub'. Hubben for fiskespohallaren heter bara 'Fish rod holder' och missas da helt (kräver sökning på produktnamnet, men även då gav 'Fiskespöhållaren' 0 träffar — hubbens namn är på engelska). Las is_archived ur sokresultatet i stallet for att gissa pa namnet dar det finns. Andra icke-Bäver-hubbar finns i samma sökning ('Matstrumpor creative hub', 'Creative hub prank apron', 'Creative hub golf grill kit', 'Creative hub MALL') — de hör inte till Bäverbutiken/produktkartan och ska aldrig räknas in.",
-    "drafts": [
-      { "namn": "Beltgrinder_SP_4_H1", "produkt": "Balteslipmaskinen", "typ": "Video" },
-      { "namn": "Beltgrinder_PD_4_H1", "produkt": "Balteslipmaskinen", "typ": "Video" },
-      { "namn": "Kranskydd_SP_3_H1", "produkt": "Kranskydd Frost 420D", "typ": "Video" },
-      { "namn": "Kranskydd_UG_1_H1", "produkt": "Kranskydd Frost 420D", "typ": "Video" },
-      { "namn": "Kranskydd_CI_1_H1", "produkt": "Kranskydd Frost 420D", "typ": "Video" },
-      { "namn": "Overvakningskamera_SP_4_H1", "produkt": "Övervakningskameran", "typ": "Video" },
-      { "namn": "Overvakningskamera_RI_1_H1", "produkt": "Övervakningskameran", "typ": "Video" },
-      { "namn": "Overvakningskamera_SP_5_H1", "produkt": "Övervakningskameran", "typ": "Video" },
-      { "namn": "Overvakningskamera_CO_1_H1", "produkt": "Övervakningskameran", "typ": "Video" },
-      { "namn": "Overvakningskamera_SP_6_H1", "produkt": "Övervakningskameran", "typ": "Video" },
-      { "namn": "Overvakningskamera_AU_1_H1", "produkt": "Övervakningskameran", "typ": "Video" },
-      { "namn": "Rodholder_NO_SP_3_H1", "produkt": "Fiskespöhållaren NO", "typ": "Video" },
-      { "namn": "Rodholder_NO_PD_3_H2", "produkt": "Fiskespöhållaren NO", "typ": "Video" },
-      { "namn": "Rodholder_NO_CS_3_H1", "produkt": "Fiskespöhållaren NO", "typ": "Video" },
-      { "namn": "Rodholder_NO_PD_3_H3", "produkt": "Fiskespöhållaren NO", "typ": "Video" },
-      { "namn": "Rodholder_NO_RI_1_1", "produkt": "Fiskespöhållaren NO", "typ": "Bild" },
-      { "namn": "Rodholder_NO_LI_1_1", "produkt": "Fiskespöhållaren NO", "typ": "Bild" },
-      { "namn": "Rodholder_NO_GT_3_H1", "produkt": "Fiskespöhållaren NO", "typ": "Video" },
-      { "namn": "Rodholder_NO_PD_3_H1", "produkt": "Fiskespöhållaren NO", "typ": "Video" },
-      { "namn": "Rodholder_NO_SO_3_1", "produkt": "Fiskespöhållaren NO", "typ": "Bild" },
-      { "namn": "Rodholder_NO_OF_1_1", "produkt": "Fiskespöhållaren NO", "typ": "Bild" }
-    ]
+    "andrat_sedan_igar": "1 NY hubb: 'IBC Tank Cover creative hub' (IBC-Tanköverdraget, 4 rader). Ingen arkivering sedan 2026-08-30. Belt grinder och Kranskydd Frost har inga kvarvarande Draft-rader (allt har gått vidare till review). Övervakningskameran ned från 6 till 2 Draft-videor. En separat databas 'Creative Hub master' hittades i sökningen ('creative hub') men innehåller generiskt SOP/guideline/översättningsmaterial (inga produktspecifika rader) — hör inte till en enskild produkt och räknas inte som en produkthubb.",
+    "sok_tips": "Sok ALDRIG bara pa 'creative hub'. Hubben for fiskespohallaren heter bara 'Fish rod holder' och missas da helt. Andra icke-Bäver-hubbar finns i samma sökning ('Matstrumpor creative hub', 'Creative hub prank apron', 'Creative hub golf grill kit', 'Creative hub MALL') — de hör inte till Bäverbutiken/produktkartan och ska aldrig räknas in."
   },
 
   "dod_data": "dashboard/data/tasks.json ar fran 2026-08-06 och varenda rad tillhor produkter som inte kors langre. Anvand den aldrig for att svara om arbete.",

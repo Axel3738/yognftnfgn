@@ -9,8 +9,32 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-09-01",
+  "uppdaterad": "2026-09-02",
   "kampanjer": [
+    {
+      "campaign_id": "120250053730340291",
+      "produkt": "Medicinasken i Fickformat",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-02, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250053637760291",
+      "produkt": "Kasta & Fånga-settet",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-02, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250011459910291",
+      "produkt": "Bordtennisnätet Infällbart",
+      "lage": "test",
+      "lage_motivering": "startad 2026-08-29, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
     {
       "campaign_id": "120250009747620291",
       "produkt": "Jättefotbollen",
@@ -31,17 +55,31 @@
       "campaign_id": "120250009391470291",
       "produkt": "Damasker Vandring",
       "lage": "test",
-      "lage_motivering": "startad 2026-08-29, för ny för att ha data i 3-dagarsfönstret",
+      "lage_motivering": "3 440 kr spend, 16 köp, ROAS 2,71 mot BE 1,60 (avläst 2026-09-02, maximum) — 21,7 % vinst av omsättningen. Passerat testtröskeln och fått sin första riktiga batch via /forsta-batch. Under 30-köpsgränsen för drift.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "3cf270ab-908c-81a0-9b0d-c486f6467ce7",
+      "notion_hub_datakalla": "7bf270ab-908c-8298-85aa-07f256f21f07",
+      "notion_hub_namn": "Hiking Gaiters creative hub",
+      "drive_produktmapp_id": "19ZOAuKDKFdoy-O6EW-306hQyjU6CG-ju",
+      "drive_produktmapp_not": "Joshs befintliga produktmapp (skapad vid launch, ligger i BÄVER/Products/LAUNCHED). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products (lanseringskön). OBS: en mapp med samma namn 'NO Damasker Vandring' (id 1yWYmgGDKL4n7rBnw4a8VPzrTz_Qls8tZ) finns separat för den norska marknaden — förväxla inte.",
+      "drive_senaste_batchmapp_id": "1N8qyU2lN0OPQYbj2Uj6LPL3Z6ziqVTS1",
+      "minne": "products/damasker-vandring/"
     },
     {
       "campaign_id": "120250009325850291",
       "produkt": "Båtmotorskyddet 420D",
       "lage": "test",
-      "lage_motivering": "startad 2026-08-29, för ny för att ha data i 3-dagarsfönstret",
+      "lage_motivering": "3 926,27 kr spend, 23 köp, ROAS 3,96 mot BE 1,62 (avläst 2026-09-02, maximum) — 36,5 % vinst av omsättningen. Passerat testtröskeln och fått sin första riktiga batch via /forsta-batch. Under 30-köpsgränsen för drift.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "3cf270ab-908c-8113-a35c-f9c1cd61d727",
+      "notion_hub_datakalla": "1dc270ab-908c-836b-a048-073bfaa48353",
+      "notion_hub_namn": "Boat motor cover creative hub",
+      "drive_produktmapp_id": "1OxYYsENFuZLSlsOD4kwDIJzbDwO0bbB2",
+      "drive_produktmapp_not": "Joshs befintliga produktmapp \"Båtmotorskydd 420D\" (ägs av joshnaelga146). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products (lanseringskön).",
+      "drive_senaste_batchmapp_id": "1yp6mhvueZyfdkaL3C032n61Qc8Tpn-hf",
+      "minne": "products/batmotorskyddet-420d/"
     },
     {
       "campaign_id": "120250009266750291",

@@ -217,8 +217,8 @@ export function validera(plan, {
 
     if (a.typ === 'skapa_kategori') {
       a.namn = String(a.namn || '').trim().slice(0, 100);
-      if (!a.namn) { neka(a, 'tomt namn'); continue; }
-      if (kategoriFinns.has(a.namn.toLowerCase())) { neka(a, 'kategorin finns redan'); continue; }
+      if (!a.namn) { neka(a, 'empty name'); continue; }
+      if (kategoriFinns.has(a.namn.toLowerCase())) { neka(a, 'category already exists'); continue; }
       kategoriFinns.add(a.namn.toLowerCase());
       atgarder.push(a);
       continue;
@@ -226,13 +226,13 @@ export function validera(plan, {
 
     if (a.typ === 'skapa_kanal') {
       a.namn = kanalnamn(a.namn);
-      if (!a.namn) { neka(a, 'namnet blev tomt efter städning'); continue; }
-      if (finns.has(a.namn)) { neka(a, 'kanalen finns redan'); continue; }
-      if (antalKanaler >= MAX_KANALER) { neka(a, `servern är full (${MAX_KANALER} kanaler)`); continue; }
+      if (!a.namn) { neka(a, 'name was empty after cleanup'); continue; }
+      if (finns.has(a.namn)) { neka(a, 'channel already exists'); continue; }
+      if (antalKanaler >= MAX_KANALER) { neka(a, `server is full (${MAX_KANALER} channels)`); continue; }
       const key = (a.kategori || '').toLowerCase();
-      if (a.kategori && !kategoriFinns.has(key)) { neka(a, `kategorin ${a.kategori} finns inte`); continue; }
+      if (a.kategori && !kategoriFinns.has(key)) { neka(a, `category ${a.kategori} does not exist`); continue; }
       if ((perKategori.get(key) || 0) >= MAX_PER_KATEGORI) {
-        neka(a, `kategorin rymmer max ${MAX_PER_KATEGORI} kanaler`); continue;
+        neka(a, `a category holds at most ${MAX_PER_KATEGORI} channels`); continue;
       }
       perKategori.set(key, (perKategori.get(key) || 0) + 1);
       antalKanaler += 1;
@@ -243,16 +243,16 @@ export function validera(plan, {
 
     if (a.typ === 'satt_roll') {
       a.namn = String(a.namn || '').trim();
-      if (!a.namn) { neka(a, 'tomt rollnamn'); continue; }
-      if (!NIVAER[a.niva]) { neka(a, `okänd nivå: ${a.niva}`); continue; }
+      if (!a.namn) { neka(a, 'empty role name'); continue; }
+      if (!NIVAER[a.niva]) { neka(a, `unknown level: ${a.niva}`); continue; }
       // Discords rollhierarki är absolut. En roll på eller över botens egen
       // position går inte att röra ens med Administrator — säg det här i
       // stället för att låta Discord svara 403 mitt i bygget.
       const r = roller.find((x) => x.namn.toLowerCase() === a.namn.toLowerCase());
-      if (!r) { neka(a, 'rollen finns inte'); continue; }
-      if (r.egen) { neka(a, 'det är botens egen roll — den kan inte ändra sig själv'); continue; }
+      if (!r) { neka(a, 'role does not exist'); continue; }
+      if (r.egen) { neka(a, "that is the bot's own role — it cannot change itself"); continue; }
       if (r.position >= botPosition && !r.everyone) {
-        neka(a, `ligger över Bävern i rollistan (position ${r.position}) — dra ner den först`);
+        neka(a, `sits above Bävern in the role list (position ${r.position}) — move it down first`);
         continue;
       }
       atgarder.push(a);
@@ -261,7 +261,7 @@ export function validera(plan, {
 
     // Härifrån och ner: åtgärder på något som redan finns.
     const mål = kanalnamn(a.namn);
-    if (!finns.has(mål)) { neka(a, 'kanalen finns inte'); continue; }
+    if (!finns.has(mål)) { neka(a, 'channel does not exist'); continue; }
 
     if (a.typ === 'las_kanal' || a.typ === 'las_upp_kanal') {
       // Låsning är TILLÅTEN på skyddade kanaler — det är precis dem som ska
@@ -270,16 +270,16 @@ export function validera(plan, {
       continue;
     }
 
-    if (skydd.has(mål)) { neka(a, 'skyddad kanal — en rutin postar här'); continue; }
+    if (skydd.has(mål)) { neka(a, 'protected channel — a routine posts here'); continue; }
 
     if (a.typ === 'byt_namn') {
       a.nytt_namn = kanalnamn(a.nytt_namn);
-      if (!a.nytt_namn) { neka(a, 'nytt_namn saknas'); continue; }
-      if (a.nytt_namn === mål) { neka(a, 'namnet är redan så'); continue; }
-      if (finns.has(a.nytt_namn)) { neka(a, 'det namnet är upptaget'); continue; }
+      if (!a.nytt_namn) { neka(a, 'nytt_namn is missing'); continue; }
+      if (a.nytt_namn === mål) { neka(a, 'the name is already that'); continue; }
+      if (finns.has(a.nytt_namn)) { neka(a, 'that name is taken'); continue; }
       const post = finns.get(mål);
       const gjorda = namnbyten.get(post.nyckel) || 0;
-      if (gjorda >= MAX_NAMNBYTEN) { neka(a, `max ${MAX_NAMNBYTEN} namnbyten per kanal och 10 min`); continue; }
+      if (gjorda >= MAX_NAMNBYTEN) { neka(a, `at most ${MAX_NAMNBYTEN} renames per channel per 10 min`); continue; }
       namnbyten.set(post.nyckel, gjorda + 1);
       finns.delete(mål);
       finns.set(a.nytt_namn, { ...post, namn: a.nytt_namn });
@@ -289,9 +289,9 @@ export function validera(plan, {
 
     if (a.typ === 'flytta') {
       const key = (a.kategori || '').toLowerCase();
-      if (a.kategori && !kategoriFinns.has(key)) { neka(a, `kategorin ${a.kategori} finns inte`); continue; }
+      if (a.kategori && !kategoriFinns.has(key)) { neka(a, `category ${a.kategori} does not exist`); continue; }
       if ((perKategori.get(key) || 0) >= MAX_PER_KATEGORI) {
-        neka(a, `kategorin rymmer max ${MAX_PER_KATEGORI} kanaler`); continue;
+        neka(a, `a category holds at most ${MAX_PER_KATEGORI} channels`); continue;
       }
       const post = finns.get(mål);
       perKategori.set((post.kategori || '').toLowerCase(), (perKategori.get((post.kategori || '').toLowerCase()) || 1) - 1);
@@ -312,22 +312,22 @@ export function validera(plan, {
       continue;
     }
 
-    neka(a, `okänd åtgärdstyp: ${a.typ}`);
+    neka(a, `unknown action type: ${a.typ}`);
   }
 
   return { sammanfattning: plan?.sammanfattning || '', atgarder, avvisade };
 }
 
 const ORD = {
-  skapa_kategori: (a) => `Ny kategori **${a.namn}**`,
-  skapa_kanal: (a) => `Ny kanal **#${a.namn}**${a.kategori ? ` i ${a.kategori}` : ''}`,
-  byt_namn: (a) => `Döp om **#${kanalnamn(a.namn)}** → **#${a.nytt_namn}**`,
-  flytta: (a) => `Flytta **#${kanalnamn(a.namn)}** till ${a.kategori || '(ingen kategori)'}`,
-  satt_amne: (a) => `Ämnesrad på **#${kanalnamn(a.namn)}**`,
-  arkivera: (a) => `Arkivera **#${kanalnamn(a.namn)}** (raderas inte)`,
-  las_kanal: (a) => `Lås **#${kanalnamn(a.namn)}** — teamet läser, bara Bävern skriver`,
-  las_upp_kanal: (a) => `Lås upp **#${kanalnamn(a.namn)}** — alla får skriva igen`,
-  satt_roll: (a) => `Rollen **${a.namn}** blir *${a.niva}*`,
+  skapa_kategori: (a) => `New category **${a.namn}**`,
+  skapa_kanal: (a) => `New channel **#${a.namn}**${a.kategori ? ` in ${a.kategori}` : ''}`,
+  byt_namn: (a) => `Rename **#${kanalnamn(a.namn)}** → **#${a.nytt_namn}**`,
+  flytta: (a) => `Move **#${kanalnamn(a.namn)}** to ${a.kategori || '(no category)'}`,
+  satt_amne: (a) => `Set topic on **#${kanalnamn(a.namn)}**`,
+  arkivera: (a) => `Archive **#${kanalnamn(a.namn)}** (not deleted)`,
+  las_kanal: (a) => `Lock **#${kanalnamn(a.namn)}** — the team reads, only Bävern posts`,
+  las_upp_kanal: (a) => `Unlock **#${kanalnamn(a.namn)}** — everyone can post again`,
+  satt_roll: (a) => `Role **${a.namn}** becomes *${a.niva}*`,
 };
 
 /** Diffen Axel läser innan han trycker Kör. Ingen jargong, en rad per sak. */
@@ -335,18 +335,18 @@ export function beskriv({ sammanfattning, atgarder, avvisade }) {
   const rader = [];
   if (sammanfattning) rader.push(sammanfattning, '');
 
-  if (!atgarder.length) rader.push('**Ingenting att göra.**');
+  if (!atgarder.length) rader.push('**Nothing to do.**');
   else {
-    rader.push(`**Detta händer om du trycker Kör (${atgarder.length} st):**`);
+    rader.push(`**This happens if you press Run (${atgarder.length}):**`);
     atgarder.forEach((a, i) => rader.push(`${i + 1}. ${(ORD[a.typ] || ((x) => x.typ))(a)}`));
   }
 
   if (avvisade?.length) {
-    rader.push('', `**Struket (${avvisade.length} st):**`);
+    rader.push('', `**Dropped (${avvisade.length}):**`);
     for (const a of avvisade) rader.push(`- ${a.namn} — ${a.varfor}`);
   }
 
-  rader.push('', 'Inget raderas. Arkiverade kanaler går att flytta tillbaka.');
+  rader.push('', 'Nothing is deleted. Archived channels can be moved back.');
   return rader.join('\n');
 }
 

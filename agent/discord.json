@@ -2,6 +2,7 @@
   "kommentar": "Discord-kanaler för rutinernas rapporter. ALLA rutiner postar via agent/discord-post.mjs — skriv aldrig egen curl-kod mot Discord i en kommandofil.",
   "VARNING_HEMLIGHETER": "REPOT ÄR PUBLIKT (github.com/Axel3738/yognftnfgn). Lägg ALDRIG en webhook-URL, bot-token eller API-nyckel i den här filen eller någon annan spårad fil. En webhook-URL i ett publikt repo låter vem som helst posta i Axels Discord. Allt hemligt går via env-variabler. En webhook låg här 2026-08-30 och spärrades av Axel samma dag.",
   "sa_valjs_kanal": "Kommandofilerna använder de LOGISKA namnen i alias nedan (ronden, uppgifter, launcher, larm). Skriptet slår upp den riktiga kanalen på namn via Discords API och postar SOM BOTEN. Det kräver env DISCORD_BOT_TOKEN — i Routine-miljön för schemalagda körningar, i Railway för realtidsboten.",
+  "sprak": "ENGELSKA. Allt som postas via discord-post.mjs skrivs på engelska — rubrik och text, alla kanaler. Redigerarna läser samma kanaler som Axel. Produktnamn behålls som i Meta. Axels order 2026-09-02.",
   "server": "Bäverbutiken (1540322130388983921)",
   "guild_id": "1540322130388983921",
   "pinga": [
@@ -9,6 +10,12 @@
     "ecom_chadking"
   ],
   "pinga_kommentar": "Axels beslut 2026-09-02: varje rutinpost pingar de har anvandarna. Skriv Discord-ANVANDARNAMNET (utan @). discord-post.mjs slar upp id:t via guild-members-search och skriver <@id> - det ar det enda som faktiskt pingar; en ren '@namn'-text pingar ingen. Hittas inte namnet skrivs det som text och rutinen fortsatter.",
+  "pinga_roll": {
+    "uppgifter": [
+      "Video editor"
+    ]
+  },
+  "pinga_roll_kommentar": "Axels beslut 2026-09-02: poster om nya briefer/rundor (alias uppgifter) pingar dessutom ROLLEN Video editor - <@&rollid>. Nyckeln ar aliaset, vardet ar rollnamnen exakt som de heter i Discord.",
   "alias": {
     "ronden": "scaling",
     "uppgifter": "ads-to-edit",
