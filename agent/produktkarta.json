@@ -9,8 +9,32 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-08-31",
+  "uppdaterad": "2026-09-02",
   "kampanjer": [
+    {
+      "campaign_id": "120250053730340291",
+      "produkt": "Medicinasken i Fickformat",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-02, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250053637760291",
+      "produkt": "Kasta & Fånga-settet",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-02, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250011459910291",
+      "produkt": "Bordtennisnätet Infällbart",
+      "lage": "test",
+      "lage_motivering": "startad 2026-08-29, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
     {
       "campaign_id": "120250009747620291",
       "produkt": "Jättefotbollen",
@@ -31,23 +55,61 @@
       "campaign_id": "120250009391470291",
       "produkt": "Damasker Vandring",
       "lage": "test",
-      "lage_motivering": "startad 2026-08-29, för ny för att ha data i 3-dagarsfönstret",
+      "lage_motivering": "3 440 kr spend, 16 köp, ROAS 2,71 mot BE 1,60 (avläst 2026-09-02, maximum) — 21,7 % vinst av omsättningen. Passerat testtröskeln och fått sin första riktiga batch via /forsta-batch. Under 30-köpsgränsen för drift.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "3cf270ab-908c-81a0-9b0d-c486f6467ce7",
+      "notion_hub_datakalla": "7bf270ab-908c-8298-85aa-07f256f21f07",
+      "notion_hub_namn": "Hiking Gaiters creative hub",
+      "drive_produktmapp_id": "19ZOAuKDKFdoy-O6EW-306hQyjU6CG-ju",
+      "drive_produktmapp_not": "Joshs befintliga produktmapp (skapad vid launch, ligger i BÄVER/Products/LAUNCHED). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products (lanseringskön). OBS: en mapp med samma namn 'NO Damasker Vandring' (id 1yWYmgGDKL4n7rBnw4a8VPzrTz_Qls8tZ) finns separat för den norska marknaden — förväxla inte.",
+      "drive_senaste_batchmapp_id": "1N8qyU2lN0OPQYbj2Uj6LPL3Z6ziqVTS1",
+      "minne": "products/damasker-vandring/"
     },
     {
       "campaign_id": "120250009325850291",
       "produkt": "Båtmotorskyddet 420D",
       "lage": "test",
-      "lage_motivering": "startad 2026-08-29, för ny för att ha data i 3-dagarsfönstret",
+      "lage_motivering": "3 926,27 kr spend, 23 köp, ROAS 3,96 mot BE 1,62 (avläst 2026-09-02, maximum) — 36,5 % vinst av omsättningen. Passerat testtröskeln och fått sin första riktiga batch via /forsta-batch. Under 30-köpsgränsen för drift.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "3cf270ab-908c-8113-a35c-f9c1cd61d727",
+      "notion_hub_datakalla": "1dc270ab-908c-836b-a048-073bfaa48353",
+      "notion_hub_namn": "Boat motor cover creative hub",
+      "drive_produktmapp_id": "1OxYYsENFuZLSlsOD4kwDIJzbDwO0bbB2",
+      "drive_produktmapp_not": "Joshs befintliga produktmapp \"Båtmotorskydd 420D\" (ägs av joshnaelga146). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products (lanseringskön).",
+      "drive_senaste_batchmapp_id": "1yp6mhvueZyfdkaL3C032n61Qc8Tpn-hf",
+      "minne": "products/batmotorskyddet-420d/"
     },
     {
       "campaign_id": "120250009266750291",
       "produkt": "Badshorts med Skämttryck",
       "lage": "test",
       "lage_motivering": "startad 2026-08-29, för ny för att ha data i 3-dagarsfönstret",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250038618440291",
+      "produkt": "Magnethyllan för Tvättmaskin och Kylskåp",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-01, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250038598420291",
+      "produkt": "Sömnadskitet 104 Delar",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-01, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250038574360291",
+      "produkt": "Luffarschacket i Trä",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-01, saknades i kartan — tillagd av /rond-auto",
       "break_even_roas": null,
       "break_even_kalla": "kampanjnamnet"
     },
@@ -185,9 +247,16 @@
       "campaign_id": "120250001079150291",
       "produkt": "IBC-Tanköverdraget",
       "lage": "test",
-      "lage_motivering": "startad 2026-08-28, 1 köp",
+      "lage_motivering": "22 köp sedan start (avläst 2026-09-01, livstid) — under 30-köpsgränsen för drift. Passerat testtröskeln (4 171 kr, ROAS 3,30 mot BE 1,51) och har nu fått sin första riktiga batch via /forsta-batch.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "3ce270ab-908c-8161-bed2-e22f132a6aba",
+      "notion_hub_datakalla": "5ad270ab-908c-837f-b001-87c077b043cb",
+      "notion_hub_namn": "IBC Tank Cover creative hub",
+      "drive_produktmapp_id": "1EL7qjxDtCeKTUJPuCY7Asp2FshiD0nDO",
+      "drive_produktmapp_not": "Joshs befintliga produktmapp (skapad vid launch, ägs av joshnaelga146). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products (lanseringskön).",
+      "drive_senaste_batchmapp_id": "17Ts1pvT422VjV0oa721-qMQxu_LGafkP",
+      "minne": "products/ibc-tankoverdraget/"
     },
     {
       "campaign_id": "120249978017760291",
@@ -327,11 +396,18 @@
     },
     {
       "campaign_id": "120251996272390233",
-      "produkt": "Kranskydd Frost NO",
+      "produkt": "Kranbeskyttelse Frost NO",
       "lage": "test",
-      "lage_motivering": "startad 2026-08-29, för ny för data",
+      "lage_motivering": "2 861,42 kr spenderat, 39 köp, ROAS 3,65 mot BE 1,63 (avläst 2026-09-01, maximum) — 32,6 % vinst av omsättningen, passerat testtröskeln och fått sin första riktiga batch via /forsta-batch. Under 30-köpsgränsen för drift.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "3ce270ab-908c-81a9-a0c9-cb8fbdcdeae9",
+      "notion_hub_datakalla": "de8270ab-908c-83fe-9943-87319bf904b6",
+      "notion_hub_namn": "Kranbeskyttelse Frost NO creative hub",
+      "drive_produktmapp_id": "1UlcNZRVuLeR1bCLV6XPINKBDrZ5jpthz",
+      "drive_produktmapp_not": "Joshs befintliga NO-produktmapp i MAKE TO NORWAY (\"NO Kranskydd Frost 420D\"), flat struktur utan Batch-mappar sedan launch. Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products (lanseringskön).",
+      "drive_senaste_batchmapp_id": "1mnL3D1M3wwpQ8ox9VzSG7EHfMiaIHIH_",
+      "minne": "products/kranbeskyttelse-frost-no/"
     },
     {
       "campaign_id": "120251856983860233",

@@ -24,15 +24,17 @@ upp, skala ner och stänga av enligt reglerna, utan att fråga per rad.
 
 **Tolkningsregel (Axel 2026-08-30):** när körordern (trigger-prompten) säger
 "utför bara det som står i plan.atgarder" syftar det på BUDGETÄNDRINGARNA i
-Meta. Annonsbehoven i steg 4b är fortfarande obligatoriska — kör upp till två
-per morgon. En körning som lämnar förfallna behov utan åtgärd och utan
-redovisning är INTE klar. (Körningen 2026-08-30 hoppade över hela kön på den
+Meta. Annonsbehoven i steg 4b är fortfarande obligatoriska — alla
+förstabatcher och alla förfallna brief-rundor, utan tak (se 4b). En körning
+som lämnar förfallna behov utan åtgärd och utan redovisning är INTE klar. (Körningen 2026-08-30 hoppade över hela kön på den
 meningen — det var fel tolkning.)
 
-Ronden KÖRS varje dag, men varje produkt ÄNDRAS högst var tredje dag —
+Ronden KÖRS varje dag, men varje produkts BUDGET ändras högst var tredje dag —
 utom snabbspåret: en produkt i skalningszonen med ROAS ≥ 3 får höjas 20 %
-redan dagen efter förra höjningen. Sänkningar och avstängningar väntar alltid
-sina tre dagar. Allt det räknar `agent/besked.mjs` ut — inte du.
+redan dagen efter förra höjningen. Sänkningar väntar alltid sina tre dagar.
+**Avstängning av en testprodukt som går back väntar ALDRIG** — passerad
+1 500 kr och under break-even går den trappan samma morgon (Axel 2026-09-02).
+Allt det räknar `agent/besked.mjs` ut — inte du.
 
 Gäller **bara Bäverbutiken / MagiBorsten `1867947880635861`**. Grillkliniken
 (SnarkLös `1346450049878358`) rörs aldrig.
@@ -156,30 +158,43 @@ För varje åtgärd i `plan.atgarder`:
 2. Verifiera: läs tillbaka, `effective_status` ska vara PAUSED.
 3. Logga med kod `STANG_AV`, `genomford: true`.
 
-**`typ: "trappa"`** — produkten går back; pausa det minsta trasiga först.
-Läs `agent/budgetlogg.jsonl` och avgör steget med `senasteRadMedKod(logg, id,
-["TRAPPA_STEG_1","TRAPPA_STEG_2"], { maxAlderDagar: 14, idag })` (finns i
-`agent/logg.mjs`) — trapprader äldre än 14 dagar hör till en tidigare cykel
-och räknas inte:
+**`typ: "trappa"`** — produkten har passerat 1 500 kr och går back.
 
-- **Inget tidigare steg → STEG 1:** hämta kampanjens annonser (`level: "ad"`,
-  `date_preset: "last_3d"`, filtrering `campaign.id`). Finns EN aktiv annons
-  med ≥50 % av kampanjens 3-dagarsspend och 0 köp: pausa **bara den annonsen**
-  (`entity_type: "ad"`, `fields: {"status":"PAUSED"}`), verifiera, logga
-  `TRAPPA_STEG_1`. Finns ingen sådan annons: logga ändå `TRAPPA_STEG_1` med
-  motiveringen "ingen dominant annons att pausa" och **stanna där för idag** —
-  steg 2 får tas tidigast om 2 dagar. Trappan tar ALDRIG mer än ett steg per dag.
-- **STEG 1 taget → STEG 2:** bara om **minst 2 dagar** gått sedan
-  `TRAPPA_STEG_1`-raden OCH dygnen EFTER pausdatumet (ur dygnsserien i
-  `kontodata.json`) fortfarande ligger under break-even — pausen ska hinna
-  synas i siffrorna innan nästa steg tas. Blev det bättre: gör ingenting,
-  produkten läker. Annars: hämta annonsgrupperna (`level: "adset"`). Är EN
-  grupp under break-even medan minst en annan ligger över: pausa den gruppen
-  (`entity_type: "ad_set"`), verifiera, logga `TRAPPA_STEG_2`. Ser alla lika
-  dåliga ut: hela produkten går back — pausa kampanjen, logga `TRAPPA_STEG_3`.
-- **STEG 2 taget → STEG 3:** samma väntregel (2 dagar + dygnen efter pausen
-  under break-even). Står förlusten kvar: pausa kampanjen, logga
-  `TRAPPA_STEG_3`.
+**Axels beslut 2026-09-01 — den gamla femdagarstrappan är avskaffad.** Den lät
+en förlorare bränna budget i fem dygn medan den gick steg för steg. Nu finns
+bara två utgångar, och båda avgörs samma morgon:
+
+Under 1 500 kr total spend rörs kampanjen inte alls — den domen heter
+`VANTA_TROSKEL` och den ligger kvar oförändrad. Trappan börjar först efter det.
+
+Hämta kampanjens annonser (`level: "ad"`, `date_preset: "last_3d"`, filtrering
+på `campaign.id`, fälten `amount_spent`, `omni_purchase`, `purchase_roas`,
+`effective_status`) och avgör:
+
+- **POTENTIAL** = BÅDA sakerna är sanna samtidigt:
+  1. minst en aktiv annons har ≥1 köp OCH `purchase_roas` ≥ kampanjens
+     break-even, och
+  2. minst en annan aktiv annons har tagit ≥40 % av kampanjens 3-dagarsspend
+     med **noll** köp.
+
+  Då: pausa **bara** spendtjuven (`entity_type: "ad"`,
+  `fields: {"status":"PAUSED"}`), verifiera med en tillbakaläsning, låt
+  kampanjen stå kvar ACTIVE, och logga `TRAPPA_FORLANGNING` med namnet på den
+  pausade annonsen. Kampanjen får **ett** dygn till.
+- **INGEN POTENTIAL** = ingen enda aktiv annons ligger över break-even, eller
+  ingen enskild annons äter spenden. Då: pausa **hela kampanjen** i dag
+  (`entity_type: "campaign"`, `fields: {"status":"PAUSED"}`), verifiera, logga
+  `STANG_AV` med motiveringen att potentialkollen föll.
+
+**Förlängningen ges en gång.** Finns redan en `TRAPPA_FORLANGNING`-rad för
+kampanjen de senaste 14 dagarna (`senasteRadMedKod(logg, id,
+["TRAPPA_FORLANGNING"], { maxAlderDagar: 14, idag })` i `agent/logg.mjs`) och
+kampanjen fortfarande går back: stäng av hela kampanjen, ingen ny förlängning.
+Har den däremot vänt över break-even faller domen bort av sig själv — då står
+det inte längre `trappa` i planen.
+
+De gamla koderna `TRAPPA_STEG_1/2/3` skrivs aldrig mer. De ligger kvar i
+budgetloggen som historik och ska läsas, inte återanvändas.
 
 `plan.uppskjutna` utförs INTE — logga varje med kod `UPPSKJUTEN_GRANS`,
 `genomford: false`, och orsaken som motivering.
@@ -197,10 +212,50 @@ och räknas inte:
 Det här är rutinens andra jobb, lika viktigt som budgetarna: **varje produkt
 med en batch ska få sin nya brief-runda var tredje dag.** `annonsbehov` i
 utfallet listar allt som är förfallet, färdigsorterat (första batchen först,
-sen rundorna med äldst batch först). Kör **upp till TVÅ poster per morgon**,
-uppifrån — resten av listan rapporteras och ligger kvar till imorgon.
-(Två per morgon räcker för att hinna alla produkter i en 3-dagarscykel så
-länge produkterna är ≤6 — blir de fler: säg till Axel att cykeln inte går ihop.)
+sen rundorna med äldst batch först).
+
+⚠️ **BARA SVERIGE.** `annonsbehov` är tomt för NO-körningen och ska så vara.
+De norska annonserna är de svenska annonserna översatta i ett eget flöde
+(`/translate-no`) — Norge behöver aldrig egna briefer, egen Notion-hub eller
+eget produktminne. I NO-kontot gör ronden **bara** budget upp och ner.
+*(Axels besked 2026-09-01. Innan spärren byggde rutinen två norska hubbar och
+lät dem äta tre av sex briefplatser på tre morgnar.)*
+
+**Så många körs per morgon (Axels beslut 2026-09-01):**
+
+1. **Alla `forsta_batch` — inget tak.** Kör dem först och kör dem alla. En
+   produkt får en förstabatch exakt en gång, så kön tar slut av sig själv.
+   Det är här pengarna finns: en produkt som passerat 1 500 kr på ≥20 % vinst
+   står och väntar på material den redan förtjänat.
+2. **Sedan alla `brief_runda` — inget tak heller**, äldst först. Axels
+   besked 2026-09-02: "jag tar hellre några briefs för mycket, jag har ett
+   överflöd av redigerare." Hinner körningen inte hela kön: det som inte
+   fick sin `*_KLAR`-rad flaggas igen imorgon (det är så kön är byggd) —
+   lista i svaret exakt vilka som blev kvar.
+
+*(Taket hette tidigare två poster totalt, sedan två rundor. Bägge var
+räknade för sex produkter; kontot hade 17 aktiva kampanjer den 1 september
+och Soptunneklistermärkena stod 12 dagar utan runda.)*
+
+**Batchens innehåll (Axel 2026-09-02):**
+- **Fler videor.** Redigerarna är många — minst två tredjedelar av varje
+  batch är video. Förstabatch: sex nya videokoncept + variationer på
+  vinnarna + sex statiska. Brief-runda: `rundaAntal` annonser (dubbla
+  veckokvoten, minst fyra), varav högst två statiska.
+- **Statiska på samma nivå som förut** — plus två extra serier som Axel
+  bestämde 2026-09-02 ("bilder är billiga, gör extra bara för att"):
+  - **+3 BOF-bilder per batch** (bottom of funnel — till den som redan sett
+    produkten): pris/erbjudande, garanti/fri frakt, jämförelse eller
+    invändning. Samma mall, samma tre-frågorstest.
+  - **+2 review-bilder per batch** byggda på **riktiga recensioner** ur
+    produktsidan eller Judge.me — citatet ordagrant, aldrig omskrivet, aldrig
+    påhittat. Finns inga recensioner: inga review-bilder, och skriv det i
+    leveransen. *(Sömnadskitet 2026-09-02: en review-bild gick ut med
+    nonsenstext som "citat". Det får aldrig hända igen.)*
+  Serierna räknas utöver `rundaAntal`/förstabatchens antal.
+- **Briefens format är mallen i `forsta-batch.md` (LEVERANSFORMAT).** Enkel,
+  kort, samma struktur varje gång. Tre-frågorstabellen är obligatorisk på
+  varje svensk rad — en rad med ett ❌ går inte ut.
 
 - Behov `forsta_batch` → produkten har passerat 1 500 kr OCH ligger på minst
   **20 % vinst**. Under det flaggas ingenting: produkten chillar och prövas om
@@ -235,11 +290,32 @@ länge produkterna är ≤6 — blir de fler: säg till Axel att cykeln inte gå
   2. Dupliceringen är asynkron — vänta och hämta om tills databasen finns,
      döp sedan om via notion-update-data-source till
      "<Produktnamn på engelska> creative hub".
-  3. Skapa items med notion-create-pages: Status "Draft",
+  3. **Kontrollera åtkomsten innan du skapar items** (Axels krav 2026-09-01):
+     hubben ska ligga i teamspacet **Bäverbutiken** och vara öppen för hela
+     teamspacet — alla medlemmar ska nå den utan att bjudas in personligen.
+     Hämta hubben med notion-fetch och verifiera att föräldern är teamspacet,
+     inte en privat sida eller Axels eget utrymme. Ligger den fel: flytta den
+     till teamspacet med notion-move-pages och läs tillbaka. Går det inte att
+     flytta — skapa INGA items, utan säg till Axel att hubben ligger privat.
+     En hub som bara inbjudna når är osynlig för redigerarna, och då är
+     brieferna skrivna i papperskorgen.
+  4. Skapa items med notion-create-pages: Status "Draft",
      Typ **"Video - Pending Approval"** för video och
      **"Image - Pending Approval"** för bildannonser (Axels nya typ i mallen).
   Går mallen inte att hitta: skapa INGEN hub — lista i svaret exakt vilka
   items som skulle skapats och säg det till Axel.
+  **HELA BRIEFEN SKA LIGGA I NOTION-ITEMET** (Axels besked 2026-09-02). Sidans
+  innehåll ÄR briefen: hypotes, hook-tabell, shot list med svenska rader i
+  `Swedish (use this) | English meaning`, creator/editing direction, CTA, KPI,
+  globala regler — allt. Drive-länken till batchmappen är ett komplement som
+  läggs överst, aldrig ersättningen. **Skriv ALDRIG "se brief.md i Drive" eller
+  en länk till en .md-fil** — redigerarna kan inte öppna dem, och en Notion-sida
+  med bara en länk är en tom brief. *(Hände 2026-08-31: alla 12 kamera-items
+  innehöll tre rader och länken `http://brief.md`. Redigerarna stod stilla en
+  hel dag och Axel fick "I can't access the links" i Slack.)*
+  Innan `*_KLAR` loggas: öppna ETT av de skapade itemen med notion-fetch och
+  kontrollera att shot list/design brief faktiskt står där. Saknas den är
+  batchen inte klar.
   **ALLT som skrivs i Notion är på ENGELSKA** — itemnamn, statusar, innehåll,
   kommentarer. Redigerarna läser inte svenska.
   Anteckna hubbens id + Drive-mappens id i `agent/produktkarta.json`.
@@ -326,8 +402,17 @@ här är på svenska. Produkt-, kanal- och kampanjnamn behåller sin svenska
 stavning; belopp skrivs "1 200 SEK". Axels besked 2026-09-02.
 
 ```bash
-node agent/discord-post.mjs --kanal ronden "Ronden <datum>" "<rapporten i Markdown>"
+node agent/discord-post.mjs --kanal ronden "Daily round <datum>" "<rapporten i Markdown, på engelska>"
 ```
+
+⚠️ **ALLT som postas i Discord skrivs på ENGELSKA** — rubrik och brödtext, i
+alla tre kanalerna (`ronden`, `uppgifter`, `larm`). Redigerarna läser samma
+kanaler som Axel och förstår inte svenska. Produktnamnen behålls som de heter i
+Meta (t.ex. "Båtmotorskyddet 420D"), resten översätts: SKALA → "Scaled up",
+SANK → "Scaled down", STÄNG AV → "Paused", uppskjuten → "Deferred",
+brief-runda → "brief round", förstabatch → "first batch". Svaret till Axel i
+chatten är fortfarande på svenska. *(Axels order 2026-09-02 — samma dag
+postades rapporten på svenska och redigerarna kunde inte läsa den.)*
 
 Skriptet sköter kanalval, delning över 2 000-teckengränsen och rate limits —
 skriv aldrig egen curl-kod mot Discord. Varje rutin har sin egen kanal
@@ -349,7 +434,11 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 - [ ] Ronden körd för båda marknaderna; `plan.sparrad` kontrollerad för var och en
 - [ ] Varje åtgärd utförd med öre-fältet ur planen och verifierad med läsning
 - [ ] Uppskjutna loggade som `UPPSKJUTEN_GRANS`
-- [ ] Förfallna behov i `annonsbehov` körda (max 2) med *_KLAR-loggrad + minnesfiler pushade — eller exakt redovisat varför inte
+- [ ] Alla `forsta_batch` körda (inget tak) + högst två `brief_runda`, med
+      *_KLAR-loggrad och minnesfiler pushade — eller exakt redovisat varför inte
+- [ ] Inga briefer, hubbar eller minnesfiler skapade för NO — Norge är bara budget
+- [ ] Varje ny Notion-hub verifierad att den ligger öppet i teamspacet Bäverbutiken
+- [ ] Ett skapat Notion-item öppnat och kontrollerat: hela briefen står i sidan, ingen `.md`-länk
 - [ ] Alla loggrader skrivna och pushade efter varje ändring (= minnet sparat)
 - [ ] Ingen artefakt publicerad och `agent/dashboard.mjs` inte körd
 - [ ] Notion-svepet kört: hubbar avlästa med `is_archived`, drafts hämtade,

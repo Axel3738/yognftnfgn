@@ -13,3 +13,7 @@ agent/utkorg/
 # Discord-botens token ska ALDRIG ligga i repot.
 agent/discord-bot.json
 bot/.env
+
+# Lokala git-worktrees för bakgrundsagenter (isolation: "worktree"). Hör till
+# containern, inte till repots innehåll.
+.claude/worktrees/

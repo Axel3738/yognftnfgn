@@ -61,7 +61,13 @@ Hook-proxy (thruplay/impr): PD_2 15,4 % · PD_1 14,4 % · PD_3 13,6 %.
 - **Undvik:** falsk knapphet/rabatt · mörk rea-estetik som enda variant ·
   fler annonser i skalnings-CBO:n.
 - **Obevisat:** SP/G-seriernas koncept (aldrig levererade) · karusell ·
-  recensioner/social proof (inga recensioner hämtade än).
+  batch #3:s trust/proof-vinkel (PD_6_H1/PD_7_H1) och review-annonser
+  (REV_1_1/REV_2_1) — briefade 2026-09-02, inga resultat än.
+
+## Recensioner (hämtade 2026-09-02, Judge.me)
+11 recensioner, alla 4–5 stjärnor. Två använda ordagrant i batch #3:s
+REV_1_1 ("Liten och smidig. Gör jobbet snabbt.") och REV_2_1 ("Bra för att
+slipa och polera hemma."). Resten finns kvar för framtida batcher.
 
 ## Luckor (fyll före nästa körning)
 - Transkript för PD_2 och PD_3 (video kan inte öppnas härifrån) — behövs för

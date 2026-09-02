@@ -358,6 +358,22 @@ test('tunn vinst i testfasen får chilla — ingen batch under 20 %', () => {
   assert.equal(annonsbehov(okand, { logg: [], idag: '2026-08-31' }).length, 0);
 });
 
+test('Norge får aldrig briefer — bara Sverige bygger annonsbehov', () => {
+  // Axels besked 2026-09-01: de norska annonserna är de svenska översatta i
+  // ett eget flöde. I NO-kontot skalar ronden bara upp och ner. Utan spärren
+  // byggde rutinen norska Notion-hubbar och lät dem äta briefplatserna.
+  const rader = [{ id: 'no', namn: 'Kranbeskyttelse Frost NO | BE-ROAS 1,63', spendTotal: 2861, budget: 1000, dom: { vinstProcent: 32.6 } }];
+  assert.equal(annonsbehov(rader, { logg: [], idag: '2026-09-01', marknad: 'NO' }).length, 0);
+
+  // Samma rad på SE-kontot ska däremot flaggas — spärren får inte tysta Sverige.
+  const se = annonsbehov(rader, { logg: [], idag: '2026-09-01', marknad: 'SE' });
+  assert.equal(se.length, 1);
+  assert.equal(se[0].typ, 'forsta_batch');
+
+  // Utan angiven marknad gäller SE, så gamla anrop beter sig som förut.
+  assert.equal(annonsbehov(rader, { logg: [], idag: '2026-09-01' }).length, 1);
+});
+
 test('3-dagarsrundan: tyst i tre dagar, sen brief_runda med fokus', () => {
   const rader = [{ id: 'a', namn: 'X | BE ROAS 1.50', spendTotal: 9000, budget: 2000, dom: { vinstProcent: 18 } }];
   const logg = [
@@ -371,7 +387,7 @@ test('3-dagarsrundan: tyst i tre dagar, sen brief_runda med fokus', () => {
   assert.equal(behov.length, 1);
   assert.equal(behov[0].typ, 'brief_runda');
   assert.equal(behov[0].dagarSedanBatch, 3);
-  assert.equal(behov[0].rundaAntal, 2); // budget 2 000 → veckokvot 3 → runda 2
+  assert.equal(behov[0].rundaAntal, 6); // budget 2 000 → veckokvot 3 → runda 6 (dubbla, Axel 2026-09-02)
   assert.match(behov[0].orsak, /3 dagar sedan/);
   assert.match(behov[0].orsak, /ersätt det som pausats/);
 });
@@ -388,11 +404,11 @@ test('frysta produkter ger inga behov alls — inte ens första batchen', () => 
   assert.equal(annonsbehov(utanBudget, { logg, idag: '2026-08-29' }).length, 0);
 });
 
-test('rundkvoten är halva veckokvoten avrundad uppåt', () => {
-  assert.equal(rundkvot(500), 1);   // veckokvot 1
-  assert.equal(rundkvot(1000), 1);  // veckokvot 2
-  assert.equal(rundkvot(2000), 2);  // veckokvot 3
-  assert.equal(rundkvot(4000), 2);  // veckokvot 4
+test('rundkvoten är dubbla veckokvoten, aldrig under fyra (Axel 2026-09-02)', () => {
+  assert.equal(rundkvot(500), 4);   // veckokvot 1 → golvet 4
+  assert.equal(rundkvot(1000), 4);  // veckokvot 2 → golvet 4
+  assert.equal(rundkvot(2000), 6);  // veckokvot 3 → 6
+  assert.equal(rundkvot(4000), 8);  // veckokvot 4 → 8
   assert.equal(rundkvot(0), 0);
   assert.equal(rundkvot(undefined), 0);
 });
