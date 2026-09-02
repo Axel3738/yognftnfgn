@@ -32,8 +32,15 @@ Två källor, två olika jobb — blanda aldrig ihop dem:
    steg 4 städar den). Aldrig omlaunch, aldrig om-QA, aldrig en rad på Axels
    lista.
 
-Kandidat = ligger i Products (källa 1) OCH saknar kampanj (källa 2). Kör
-/launch (launch.md) på varje komplett kandidat tills kön är tom. Radera
+Kandidat = ligger i Products (källa 1) OCH saknar kampanj (källa 2) OCH är
+**komplett** (källa 3, Axels besked 2026-09-02): en mapp är inte automatiskt
+en produkt att launcha — den ska innehålla **alla koncept** (video för varje
+vinkel CS/GT/PD/SP), **recensionssheeten** (`_REVIEWS`) och **ad copy** för
+varje vinkel (`_ADCOPY`). Saknas något av det launchas mappen INTE alls —
+inte "det som finns". I stället: pinga redigerarna i Discord (steg 5) med
+exakt vilka filer som saknas, och skriv en rad i Discord-briefen. Mappen
+ligger kvar i Products och plockas upp av nästa körning när den är komplett.
+Kör /launch (launch.md) på varje komplett kandidat tills kön är tom. Radera
 nedladdad media ur scratchpad mellan produkterna.
 
 Underhåll av redan launchade kampanjer (steg 2–3: komplettering av saknade
@@ -121,25 +128,29 @@ ren städning och får aldrig bli Axels uppgift eller framställas som ett probl
 
 ## Steg 5 — Redigerarnotis (Axels lista ska ALDRIG innehålla "säg till redigerarna")
 
-Problem som är redigerarnas (saknade filer, TEST-platshållarrecensioner,
-QA-stoppfel i creatives): ETT sakligt engelskt meddelande. Gå igenom
-kanalerna i ordning tills en fungerar — sluta aldrig efter första miss:
+Problem som är redigerarnas (ofullständig mapp — saknade koncept, saknad
+`_REVIEWS`, saknad `_ADCOPY` — TEST-platshållarrecensioner, fel produktnamn
+i en creative): ETT sakligt engelskt meddelande. **Stavfel rapporteras
+inte** — de ignoreras helt (Axels beslut 2026-09-02, "det kommer det typ
+alltid vara"). Gå igenom kanalerna i ordning tills en fungerar — sluta
+aldrig efter första miss:
 
-1. **Slack** via env `SLACK_WEBHOOK_URL` om den finns. Connectorn får bara
-   användas efter verifiering: sök "bäver" — noll träffar = fel workspace,
-   hoppa vidare till nästa kanal.
+1. **Discord** (förstahandsvägen, Axels beslut 2026-09-02) via
+   `node tools/notify-discord.mjs --ping "<meddelandet>"`. Flaggan `--ping`
+   @-pingar redigerarna **@carlvicente.working** och **@jazzer1522**
+   (som riktiga `<@id>`-omnämnanden — ren text pingar inte). En rad per
+   fel: exakt vilken produkt, exakt vilka filer, exakt vad som saknas.
 2. **Notion-kommentar på produktens sida** i data source
    `collection://d80270ab-908c-839b-9dcc-8721c5f29570`
-   ("Product test center SE BÄVER"). Sidan har en **Ansvarig** — hen får
-   notisen automatiskt. Detta är den kanal som fungerar utan Slack och
-   ska användas så fort Slack inte går. En rad per fel: exakt vilka filer,
-   exakt vad som är fel, exakt rätt stavning.
-3. **Discord** via `node tools/notify-discord.mjs` som sista utväg.
+   ("Product test center SE BÄVER"), bara om Discord inte gick. Sidan har
+   en **Ansvarig** — hen får notisen automatiskt.
+3. **Slack** via env `SLACK_WEBHOOK_URL` som sista utväg. Connectorn får
+   bara användas efter verifiering: sök "bäver" — noll träffar = fel
+   workspace, avstå.
 
-Finns ingen Notion-sida för produkten: skriv felet i Discord-briefen och
-gå vidare. **"Säg till redigerarna" får ALDRIG stå under "Väntar på Axel"** —
-det är rutinens jobb, inte hans. Inga @-pingar. Infrastrukturproblem går
-ALDRIG till teamet, bara till Axels rapport.
+**"Säg till redigerarna" får ALDRIG stå under "Väntar på Axel"** — det är
+rutinens jobb, inte hans. Infrastrukturproblem går ALDRIG till teamet, bara
+till Axels rapport.
 
 ## Läsning av Drive sker ALLTID via publika länkar
 
@@ -160,10 +171,16 @@ rapport. Samma sak i chatten: aldrig ett inledande stycke före "Läget."
 - `✅ 2 launchade, 7 rullar, inget väntar på dig`
 - `✅ Inget nytt i kön, allt rullar`
 - `⚠️ 1 sak väntar: quote för Bordtennisnätet`
+- `⚠️ Badshorts CS_2 visar 299 kr, butiken 399 kr`
 
 Sedan max 5 korta rader på vanlig svenska: vad som launchades/aktiverades/
 kompletterades (produktnamn + budget, INGA id:n), vad som hoppades över och
 varför, i en mening var. Inga tabeller, inga rubriker, inga tekniska termer.
+**En annons med mycket lägre pris än butiken (launch.md fas 1) står ALLTID
+med i Discord-briefen, tydligt och med båda priserna** — det är den enda
+QA-avvikelsen som ska nå Axel, och den får aldrig gömmas under "Detaljer:".
+Ofullständiga mappar (steg 1) nämns med en rad: produkt + vad som saknas +
+att redigerarna är pingade.
 Kampanj-id:n och tekniska detaljer läggs allra sist under en enda rad
 "Detaljer:" — den delen är för felsökning, inte för Axel.
 
@@ -187,8 +204,9 @@ saknas auth): nämn det på en rad i chattrapporten och fortsätt —
 Discord-strul får aldrig stoppa körningen eller hamna under "Väntar på Axel".
 
 **"Väntar på Axel" är en skyddad rubrik.** Där får BARA stå: leverantörsquotes
-som saknas, riktiga ägarbeslut (pris, budget, ny målnivå), och redigerarfel som
-inte kunnat skickas till teamet. ALDRIG: mappstädning, connector-rättigheter,
+som saknas, riktiga ägarbeslut (pris, budget, ny målnivå — dit hör en annons
+vars pris är mycket lägre än butikens: sänka priset eller skrota annonsen är
+hans val), och redigerarfel som inte kunnat skickas till teamet. ALDRIG: mappstädning, connector-rättigheter,
 Metas uppladdnings-rollout (skriv "väntar på Meta"), eller något rutinen kan
 lösa själv nästa körning. Varje rad där är ett avbrott i Axels dag — förtjäna den.
 

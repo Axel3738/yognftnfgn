@@ -12,17 +12,25 @@ stanna bara vid ❌ i QA:n eller när något kräver ägarbeslut (pris, budgetä
 1. Lista `Products/` (mapp-id `1Gga4QfZ0UfVC-q06BGGHN_fkSFN0Iygm`):
    `python3 tools/drive-ls.py <mapp-id>` — hämta produktmappens id, lista innehållet.
 2. Förvänta 21 filer: 12 mp4 (4 vinklar × 3), 4 bildannonser (`_<vinkel>_2_1`),
-   4 ADCOPY-docs (`_<vinkel>_ADCOPY_1`), 1 `_REVIEWS`-sheet. Saknas något:
-   rapportera exakt vad och fortsätt med det som finns.
+   4 ADCOPY-docs (`_<vinkel>_ADCOPY_1`), 1 `_REVIEWS`-sheet.
+   **Komplett-kravet (Axels besked 2026-09-02):** produkten launchas BARA om
+   mappen har minst en video per koncept (CS, GT, PD, SP), `_REVIEWS`-sheeten
+   och en ADCOPY-doc per koncept som har creatives. Saknas något av det:
+   avbryt launchen för den produkten, pinga redigerarna (nattkorning.md
+   steg 5) med exakt vilka filer som saknas, och skriv en rad i rapporten.
+   Launcha aldrig "det som finns" — mappen plockas upp när den är komplett.
+   Bildannonsen per vinkel är önskvärd men inte ett krav.
 3. Ladda ner: media via `https://drive.google.com/uc?export=download&id=<id>`,
    docs via `https://docs.google.com/document/d/<id>/export?format=txt`,
    sheet via `https://docs.google.com/spreadsheets/d/<id>/export?format=csv`.
 4. Hitta produkten i Shopify (SE-butiken): handle, produkt-id, pris, jämförpris,
    varianter. Connectorn om den är kopplad; annars Admin API direkt med
    `SHOPIFY_TOKEN_SE` (`shpat_`) — se "Shopify utan connector" i
-   `docs/temu-launch-flow.md`. Hitta COGS i batch-sheeten (länkade i
-   masterdokumentet, se `docs/temu-launch-flow.md`) — sök på produktens
-   engelska namn. Total inköpskostnad SE = Total tax exclusive + 2,9 EUR.
+   `docs/temu-launch-flow.md`. Hitta COGS i batch-sheeten: länkarna till alla
+   sheets står i masterdokumentet
+   `1BtFJj1A3J2ciZZS_f3lKU0cM0g5-ncWO7LFySuc3peo` (Axel 2026-09-02, läses
+   publikt via `/export?format=txt`) — sök på produktens engelska namn i
+   varje sheet. Total inköpskostnad SE = Total tax exclusive + 2,9 EUR.
 
 ## Fas 0.5 — Dubblettspärr (OBLIGATORISK innan launch)
 
@@ -46,18 +54,29 @@ Två undantag där en befintlig kampanj ÄR åtgärdbar:
 ## Fas 1 — QA (gratis, gör den alltid komplett)
 
 1. Dra frames ur varje video (`imageio-ffmpeg` via pip om ffmpeg saknas), läs ALL
-   inbränd text. Kolla: **butiksnamnets stavning** ("Bäverbutiken" — väverbutiken
-   har hänt), priser mot Shopify, rabattclaims mot jämförpriset (50 % kräver
-   jämförpris = 2× priset), produktnamn.
+   inbränd text. Kolla: priser mot Shopify, rabattclaims mot jämförpriset
+   (50 % kräver jämförpris = 2× priset), produktnamn.
 2. Samma kontroll på de 4 bildannonserna och ADCOPY-texterna.
 3. Räkna break-even-ROAS = pris / (pris − inköpskostnad i SEK). **Utan moms** —
    Bäverbutiken säljer utan moms, dra ALDRIG av 25 %.
-4. **Rabattclaim som inte stämmer är INTE ett stoppfel** (Axels policy
+4. **Stavfel ignoreras helt** (Axels beslut 2026-09-02): inget stoppfel, ingen
+   rad i rapporten, ingen notis till redigerarna — "väverbutiken" i en video
+   launchas som den är.
+5. **Rabattclaim som inte stämmer är INTE ett stoppfel** (Axels policy
    2026-08-29): annonsen ändras aldrig — jämförpriset höjs så claimen stämmer.
    Kör `node tools/shopify-fix-compareat.mjs --product-id <id> --rabatt <claimad procent>`
-   och rapportera ändringen. Stavfel i inbränd text, fel produktnamn och fel
-   *styckpris* är däremot fortfarande stoppfel för den creativen.
-5. Leverera QA-tabell: ✅/❌ per creative med exakta fynd. Creative med stoppfel
+   och rapportera ändringen.
+6. **Styckpris i annonsen mot butikspriset** (Axels beslut 2026-09-02):
+   - Annonsens pris lika med eller högre än butikens, eller lägre med högst
+     10 %: ignoreras, launchas.
+   - Annonsens pris **mycket lägre** än butikens (mer än 10 % under): den
+     creativen lämnas PAUSED och **flaggas TYDLIGT** — som ⚠️-rad i
+     Discord-briefen med båda priserna (`⚠️ Badshorts CS_2 visar 299 kr,
+     butiken 399 kr`) och under "Väntar på Axel" med frågan sänka priset
+     eller skrota annonsen. Övriga creatives i produkten launchas som vanligt.
+   Fel produktnamn i en creative är fortfarande stoppfel för den creativen
+   och går till redigerarna.
+7. Leverera QA-tabell: ✅/❌ per creative med exakta fynd. Creative med stoppfel
    launchas inte (övriga i produkten launchas som vanligt).
 
 ## Fas 2 — Recensioner (Judge.me)
@@ -97,7 +116,8 @@ i kontot som facit, aldrig en gissning. Verifierat 2026-08-29 mot ~20 launcher:*
 **Aktivering (Axels beslut 2026-08-29 — han vill inte slå på manuellt):**
 när produktens ALLA annonser är uppladdade och QA:n är grön aktiveras kampanj,
 adsets och annonser direkt. Undantag som förblir PAUSED och rapporteras:
-enskilda creatives med stoppfel (stavning, styckpris, produktnamn), och hela
+enskilda creatives med stoppfel (mycket lägre pris än butiken, fel
+produktnamn — aldrig stavning), och hela
 produkten om break-even inte gick att räkna (saknad quote i batch-sheeten) —
 en kampanj utan känd break-even får aldrig spendera.
 
