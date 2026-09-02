@@ -13,7 +13,8 @@
 // SPÄRRAR SOM INTE GÅR ATT FLAGGA BORT:
 //  1. Endast MagiBorsten 1867947880635861 (Bäverbutiken). Fel konto = avbryt.
 //     Sidan och pixeln ärvs alltid från kampanjen — kopieras aldrig in för hand.
-//  2. Allt skapas PAUSED. --aktivera slår på det körningen SJÄLV skapade, inget annat.
+//  2. Allt skapas PAUSED. --aktivera slar pa annonsen och det adset korningen SJALV
+//     skapade — aldrig ett befintligt adset eller en befintlig kampanj, oavsett spend.
 //  3. Ingenting med lifetime-spend > 0 får någonsin statusändras. PAUSED med spend
 //     är ett beslut (Axels, skalningsrondens eller åtgärdstrappans) — heligt.
 //     (Incident 2026-08-29/30: ett namnsvep slog på ett dussin avstängda kampanjer.)
@@ -100,13 +101,19 @@ function laddaProdukt(id) {
   return p;
 }
 
-/** Konceptkoden ur annonsnamnet: MAGI_boatcover_pain_ugc_stains_v1 → "pain".
- *  Äldre namnformat (Enginecover_SP_6_H1) → "SP". Hittas inget: null. */
+/** Konceptkoden ur annonsnamnet: Enginecover_SP_6_H1 → "SP", Kranskydd_CI_1_1 → "CI".
+ *
+ *  Koden ar bokstaverna i ANDRA faltet. Den far ALDRIG gissas fram ur ett numeriskt
+ *  falt: en tidigare version foll tillbaka pa delar[2] och gav konceptet "1" for
+ *  Kranskydd_CI_1_1, vilket matchade vilket adset som helst med en etta i namnet —
+ *  och nar inget matchade skapades ett skrapadset som hette "1 | Notionrunda".
+ *  Kontot innehaller minst CS GT PD SP SO CI UG G SAG SF REA; en fast lista blir
+ *  alltid inaktuell. Bokstaver = kod, siffror = ingen kod. */
 function konceptUrNamn(namn) {
-  const gammalt = namn.match(/_(CS|GT|PD|SP|SO)_/i);
-  if (gammalt) return gammalt[1].toUpperCase();
-  const delar = namn.split('_');
-  return delar.length >= 3 ? delar[2].toLowerCase() : null;
+  const fält = namn.split('_');
+  if (fält.length < 2) return null;
+  const kandidat = fält[1].trim();
+  return /^[A-Za-z]{1,4}$/.test(kandidat) ? kandidat.toUpperCase() : null;
 }
 
 // --------------------------------------------------------- Adset i CBO:n
@@ -240,7 +247,17 @@ async function main() {
   const primär = flagga('primar');
   const rubrik = flagga('rubrik');
   const beskrivning = flagga('beskrivning', '');
-  const länk = flagga('lank', produkt.landing_url || 'https://xn--bverbutiken-w8a.se');
+  // Lanken MASTE anges. Tidigare foll den tillbaka pa produkt.landing_url (ett falt
+  // som inte finns pa en enda produkt i repot) och sedan pa butikens startsida — sa
+  // varje uppladdad annons hade skickat trafiken till forstasidan i stallet for
+  // produktsidan, varje natt, utan felmeddelande. Hellre avbryta an gissa.
+  const länk = flagga('lank', produkt.landing_url || null);
+  if (!länk) {
+    dö(`Ingen landningssida angiven för "${namn}". Ange --lank <produktsidans url>.\n`
+     + `   Notion-raden bär den i fältet "Landing page"; leveranskon.mjs skriver ut den.\n`
+     + `   Utan den skulle annonsen peka på butikens startsida.`);
+  }
+  if (!/^https?:\/\//.test(länk)) dö(`--lank måste vara en full URL, fick: ${länk}`);
   if (!namn) dö('Ange --namn <annonsnamn enligt docs/naming-convention.md>.');
   if (!fil || !existsSync(fil)) dö(`Filen finns inte: ${fil}`);
   if (!primär || !rubrik) dö('Ange både --primar och --rubrik (ad copy ur briefen).');
@@ -274,7 +291,11 @@ async function main() {
   }
 
   const koncept = flagga('koncept') || konceptUrNamn(namn);
-  if (!koncept) dö(`Kan inte läsa konceptet ur "${namn}". Ange --koncept, eller döp om enligt namnkonventionen.`);
+  if (!koncept) {
+    dö(`Kan inte läsa konceptkoden ur "${namn}" — andra fältet är inte bokstäver.\n`
+     + `   Ange --koncept <kod> explicit. Verktyget gissar aldrig: en felgissad kod\n`
+     + `   lägger annonsen i fel adset eller skapar ett skräpadset.`);
+  }
 
   const { adset, skapad } = await hittaEllerSkapaAdset(kampanjId, koncept, produkt);
   logg(`  · Adset: ${adset.name} (${adset.id})${skapad ? ' — nyskapat' : ''}`);
@@ -340,7 +361,14 @@ async function main() {
     return;
   }
 
-  // Spärr 3 — aktivera bara uppåt genom det som aldrig kommit igång.
+  // Spärr 3 — aktivera BARA det körningen sjalv skapat.
+  //
+  // Tidigare rackte det att lifetime-spend var 0 kr for att ett befintligt adset
+  // eller en befintlig kampanj skulle slas pa. Det ar fel: en kampanj kan vara
+  // byggd och medvetet aldrig launchad, och da borjar den spendera sin dagsbudget
+  // kl 00:01 utan att nagon bett om det. 0 kr spend betyder "har aldrig kommit
+  // igang", inte "far startas". Axels regel i CLAUDE.md sager samma sak:
+  // aktivering galler enbart det korningen sjalv skapat.
   const ändringar = [];
   if (skapad) {
     await api(adset.id, { form: { status: 'ACTIVE' } });
@@ -348,15 +376,13 @@ async function main() {
   } else {
     const a = await api(adset.id, { params: { fields: 'name,status' } });
     if (a.status !== 'ACTIVE') {
-      const s = await spend(adset.id);
-      if (s > 0) logg(`  ⚠ Adset "${a.name}" är PAUSED med ${s} kr spend — RÖRS INTE. Annonsen ligger pausad bakom det.`);
-      else { await api(adset.id, { form: { status: 'ACTIVE' } }); ändringar.push(`adset ${a.name}: ${a.status} → ACTIVE (0 kr spend)`); }
+      logg(`  ⚠ Adset "${a.name}" är ${a.status} och skapades inte av den här körningen — RÖRS INTE.`);
+      logg(`     Annonsen ligger pausad bakom det. Slå på adsetet själv om den ska rulla.`);
     }
   }
   if (kampanj.status !== 'ACTIVE') {
-    const s = await spend(kampanjId);
-    if (s > 0) logg(`  ⚠ Kampanj "${kampanj.name}" är ${kampanj.status} med ${s} kr spend — RÖRS INTE.`);
-    else { await api(kampanjId, { form: { status: 'ACTIVE' } }); ändringar.push(`kampanj ${kampanj.name}: ${kampanj.status} → ACTIVE (0 kr spend)`); }
+    logg(`  ⚠ Kampanj "${kampanj.name}" är ${kampanj.status} — RÖRS INTE (skapades inte av körningen).`);
+    logg(`     Annonsen spenderar ingenting förrän du slår på kampanjen.`);
   }
 
   await api(annons.id, { form: { status: 'ACTIVE' } });

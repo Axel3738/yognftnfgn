@@ -68,7 +68,7 @@ export async function hamtaKonton(opt = {}) {
 export async function hamtaSpend(konto, { fran, till }, opt = {}) {
   const rader = await alla(`act_${konto.id}/insights`, {
     level: 'ad',
-    fields: 'ad_id,ad_name,spend',
+    fields: 'ad_id,ad_name,campaign_name,spend',
     time_range: { since: fran, until: till },
     limit: 500,
   }, opt);
@@ -76,6 +76,7 @@ export async function hamtaSpend(konto, { fran, till }, opt = {}) {
     .map((r) => ({
       adId: r.ad_id,
       adNamn: r.ad_name ?? '',
+      kampanj: r.campaign_name ?? '',
       spend: Number(r.spend ?? 0),
       konto,
     }))

@@ -143,10 +143,15 @@ inte röras utan att Axel ber om det.
     5,70 / 5,52 / 159,76 kr. Läggs nya creatives i skalningens CBO blir datan
     oläsbar och kvoten meningslös.)*
     ⚠️ **Ett uttryckligt undantag, Axels beslut 2026-08-30:** nattrutinen
-    `/notionkorning` laddar upp redigerarnas färdiga creatives i produktens
-    aktiva CBO (`campaign_ids[0]`), inte i ett test-ABO. Det gäller ENBART den
-    rutinen. Rätta inte tillbaka det — och allt annat nytt testande följer
-    fortfarande regel 11.
+    `/notionkorning` laddar upp redigerarnas färdiga creatives i den kampanj som
+    redan bär produktens annonser, inte i ett nytt test-ABO. Det gäller ENBART den
+    rutinen. Rätta inte tillbaka det — allt annat nytt testande följer regel 11.
+
+    Kampanjen slås upp ur **kontot** (annonsprefixet i namnet), inte ur
+    `campaign_ids[0]`. Mätt 2026-08-31: alla fyra skalningsprodukters
+    `campaign_ids[0]` är PAUSED med spend (72 234 / 47 090 / 60 205 / 38 785 kr),
+    alltså avvecklade — dit vägrar rutinen ladda upp. Skriv aldrig "produktens
+    aktiva CBO" som om det vore en garanti; kontrollera statusen först.
 12. **Fråga bara när ett beslut kräver ägaren** (prisändring, rabatt i Shopify, ny
     target-CPA). Allt annat: kör.
 13. **Om Axel skriver ett `/kommando` som klienten inte känner igen** (eller skriver
@@ -227,8 +232,10 @@ Kalenderspärren sitter på flaggan `--rutin` — kör Axel `/commission` för h
 räknas månaden hittills oavsett datum.
 
 ⚠️ **Cron står i UTC och följer inte sommartid.** Tiderna ovan gäller CEST
-(mars–oktober). Vid vinteromställningen går varje rutin en timme senare svensk
-tid — cron-uttrycken ska då minskas med en timme.
+(UTC+2, mars–oktober). Vid vinteromställningen blir Sverige UTC+1, och en cron
+som står kvar går en timme TIDIGARE svensk tid. Cron-uttrycken ska då **ökas**
+med en timme: `1 22 * * *` (00:01 CEST) blir `1 23 * * *` (00:01 CET).
+Räkna alltid om från önskad svensk tid till UTC i stället för att minnas riktningen.
 
 ⚠️ **Rutiner ärver inte sessionens MCP-connectors.** En rutin som behöver Notion,
 Drive eller Shopify måste få connectorn kopplad på själva rutinen i Routines-vyn
@@ -236,6 +243,18 @@ på claude.ai — annars står den helt utan `mcp__*`-verktyg. Bygg därför rut
 på vägar som fungerar ändå där det går: Drive läses publikt med
 `tools/drive-ls.py`, Meta via `META_ACCESS_TOKEN`, Notion via `NOTION_TOKEN`
 (`tools/notion-klara.mjs`).
+
+⚠️ **Rutinens konfiguration och rutinens körning är två olika saker.** Mätt
+2026-09-01 på rutinen "Ad upload and structure": den listar sju connectors
+(ADsmanagaer, Google-Drive, Notion, Slack, Shopify …) men har `allowed_tools`
+= Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch — inga `mcp__*`.
+Vad det betyder i praktiken är **inte fastställt**: ingen har läst en
+rutinkörnings transkript och sett om connector-verktygen fanns eller inte.
+Därför ber `/nattkorning` steg 4 rutinen själv rapportera om
+`mcp__Google_Drive`-verktygen fanns. Läs den raden i morgonrapporten innan
+du drar någon slutsats åt något håll — och bygg aldrig en parallell
+infrastruktur (Apps Script, token-vägar) för något connectorn kanske redan
+klarar. Axels besked 2026-09-02: ingen ny Google-app för Drive-flytten.
 
 ---
 
@@ -441,6 +460,15 @@ NYC Grill) filtreras bort, liksom annonser med marknadskod i namnet. Listan stå
 som `UTLANDSKA_KONTON` i `commission/berakning.mjs`.
 
 ⚠️ **Valutor summeras aldrig.** NYC Grill-kontot är i USD, resten i SEK.
+
+⚠️ **Kopplingen annons → person görs i två steg** (`commission/koppling.mjs`):
+hubbraden per annons först — både `Enginecover_PD_22_H1`-systemet och
+Grillklinikens löpnummer (`235 H1` → raden `235`) — och produkten per kampanj
+som reserv via `commission/produkter.json`. **Filtrera aldrig hubbraderna på Typ
+eller Status**; en rad med Ansvarig är gjord av någon. *(Incident 2026-08-31:
+Typ-filtret dolde hela Masterns produktion och gav 33,74 kr i stället för
+2 260 kr.)* Hubbarna står i `commission/hubbar.json` — 12 svenska över tre
+verksamheter, inte bara Bäverbutikens.
 
 ⚠️ **De fyra skalningsprodukternas creative hubs är ARKIVERADE i Notion** och
 syns inte i en teamspace-sökning. Hubbarna måste därför alltid unionsläggas med

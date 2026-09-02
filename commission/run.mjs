@@ -19,6 +19,7 @@ import { dirname, resolve } from 'node:path';
 import { berakna, arSvensk, SATS, arKordag, period, UTLANDSKA_KONTON } from './berakning.mjs';
 import { hamtaAllSpend } from './meta.mjs';
 import * as Notion from './notion.mjs';
+import { byggHubbregister, kopplaAnnons } from './koppling.mjs';
 
 const ROT = resolve(new URL('..', import.meta.url).pathname);
 const args = process.argv.slice(2);
@@ -73,8 +74,8 @@ function skrivRapport(r, kallor) {
   rad.push(`Period: **${p.fran} – ${p.till}**${p.heltMatad ? ' (hela månaden — slutavräkning)' : ' (månaden hittills)'}`);
   rad.push(`Körd: ${r.kord} · sats ${satsText} · ${r.kordag.skal}`);
   rad.push('');
-  rad.push(`Underlag: ${r.godkandaRader} godkända annonsrader i ${kallor.hubbar.length} creative hub(bar), `
-    + `spend läst ur ${kallor.konton.length} annonskonton.`);
+  rad.push(`Underlag: ${r.koppling?.hubbrader ?? r.godkandaRader} hubbrader med Ansvarig i ${kallor.hubbar.length} creative hub(bar), `
+    + `${r.koppling ? `${r.koppling.produkter} produkter som reserv, ` : ''}spend läst ur ${kallor.konton.length} annonskonton.`);
   if (kallor.svenskaBara) {
     rad.push('');
     rad.push(`**Endast svenska annonser räknas.** ${kallor.bortfiltrerat} annonser `
@@ -93,7 +94,7 @@ function skrivRapport(r, kallor) {
   if (!r.redigerare.length) {
     rad.push('_Ingen redigerare har godkända rader med spend i perioden._');
   } else {
-    rad.push('| Redigerare | Spend (exakt) | Spend (översatt) | Spend totalt | Commission |');
+    rad.push('| Redigerare | Spend via hubb | Spend via produkt | Spend totalt | Commission |');
     rad.push('|---|---:|---:|---:|---:|');
     for (const e of r.redigerare) {
       rad.push(`| ${e.namn} | ${allaValutor(e.exakt)} | ${allaValutor(e.variant)} | ${allaValutor(e.spend)} | **${allaValutor(e.commission)}** |`);
@@ -222,7 +223,7 @@ async function main() {
   // skalningsprodukternas hubbar är arkiverade i Notion och föll bort ur
   // sökningen — och rapporterade 0 kr som augustis slutavräkning. En
   // utbetalning på noll ska aldrig kunna komma ur en ofullständig läsning.
-  const kanda = Notion.hubbarUrProdukter();
+  const kanda = [...Notion.hubbarUrFil(), ...Notion.hubbarUrProdukter()];
   const lasta = new Set(hubbar.map((h) => String(h.id).replace(/-/g, '')));
   const saknade = kanda.filter((k) => !lasta.has(String(k.id).replace(/-/g, '')));
   if (saknade.length) {
@@ -230,10 +231,9 @@ async function main() {
       + '  De fyra skalningsprodukternas hubbar är ARKIVERADE i Notion och faller bort ur en vanlig sökning.\n'
       + '  Avbryter — en ofullständig läsning får aldrig bli en utbetalning.');
   }
-  const godkanda = hubbar.reduce((n, h) => n + (h.rader ?? [])
-    .filter((r) => /pending approval/i.test(r.typ ?? '') && r.status === 'Approved').length, 0);
-  if (!godkanda) {
-    do_(`Noll godkända annonsrader i ${hubbar.length} hubbar. Det är nästan alltid ett läsfel, inte sanningen.\n`
+  const medAnsvarig = hubbar.reduce((n, h) => n + (h.rader ?? []).filter((r) => r.ansvariga?.length).length, 0);
+  if (!medAnsvarig) {
+    do_(`Noll hubbrader med Ansvarig i ${hubbar.length} hubbar. Det är nästan alltid ett läsfel, inte sanningen.\n`
       + '  Avbryter hellre än rapporterar 0 kr till alla. Kontrollera Notion-åtkomsten och kör om.');
   }
 
@@ -247,13 +247,20 @@ async function main() {
   const bortfiltreradSpend = allaAnnonser.filter((a) => !annonser.includes(a))
     .reduce((s, a) => s + a.spend, 0);
 
+  // Kopplingen: hubbrad per annons (båda namnsystemen), produkt som reserv.
+  const { produkter } = JSON.parse(readFileSync(`${ROT}/commission/produkter.json`, 'utf8'));
+  const register = byggHubbregister(hubbar);
+  const koppla = (a) => kopplaAnnons(a, register, produkter);
+
   const rapport = berakna({
     hubbar,
     annonser,
     personer: laddaPersoner(),
     datum,
     sats: Number(flagga('sats', SATS)),
+    koppla,
   });
+  rapport.koppling = { hubbrader: register.rader, oversattningsrader: register.oversattningar, produkter: produkter.length };
 
   // Namnge okända Ansvariga när Notion går att fråga — ett id säger ingenting.
   if (Notion.harToken()) {
