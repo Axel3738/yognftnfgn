@@ -4,6 +4,7 @@
   "VARNING_LAS_DETTA_FORST": "Hittar du inget i en databas betyder det INTE att det inte finns arbete. Det betyder att du letat pa ett stalle. Sag alltid VILKA kallor du kollat, och foresla den du inte kollat. Pasta aldrig att nagot inte finns.",
 
   "uppdaterad": "2026-09-02",
+  "TILLAGG_SENARE_SAMMA_DAG": "En andra /rond-auto-korning samma morgon (efter kl 05:00 UTC) lade till 9 Draft-rader i Belt grinder creative hub och 9 i Kranskydd Frost 420D creative hub (batch #3, brief_runda). Bara dessa tva hubbars siffror ar uppdaterade punktvis - inget nytt fullt teamspace-svep kordes, eftersom ett sadant redan gjordes tidigare samma morgon (se commit a8581df).",
   "kalla": "Notion MCP, direktfragor mot bada databasernas data sources",
   "VARNING_FARSKHET": "Ogonblicksbild. Notion andras hela tiden. Ar uppdaterad mer an nagra dagar gammalt: sag det och hamta om.",
 
@@ -54,18 +55,22 @@
         "namn": "Belt grinder creative hub",
         "produkt": "Balteslipmaskinen",
         "collection": "collection://a1d270ab-908c-82e2-b3be-07b523257509",
-        "drafts": 0,
+        "drafts": 9,
+        "drafts_video": 2,
+        "drafts_bild": 7,
         "under_granskning": 3,
         "creative_strat_review": 3,
-        "not": "De 2 tidigare dragen (Beltgrinder_SP_4_H1, Beltgrinder_PD_4_H1) har gått vidare till 'Creative strat review' — ingen brief väntar längre i Draft."
+        "not": "9 NYA Draft-rader tillagda 2026-09-02 kl ~05:50 UTC av /rond-auto batch #3 (2 video + 2 statisk i rundan, 3 BOF-bilder, 2 review-bilder). Räknat direkt efter uppladdning, inte via ett fullt svep av hela teamspacet denna körning."
       },
       {
         "namn": "Kranskydd Frost 420D creative hub",
         "produkt": "Kranskydd Frost 420D",
         "collection": "collection://088270ab-908c-8269-bd9d-87564d1dc9b6",
-        "drafts": 0,
+        "drafts": 9,
+        "drafts_video": 2,
+        "drafts_bild": 7,
         "under_granskning": 6,
-        "not": "De 3 tidigare Draft-videorna har gått vidare till 'Creative strat review'. 3 bildrader nu 'To be Reviewed'."
+        "not": "9 NYA Draft-rader tillagda 2026-09-02 kl ~05:56 UTC av /rond-auto batch #3 (2 video + 2 statisk i rundan, 3 BOF-bilder, 2 review-bilder). Räknat direkt efter uppladdning, inte via ett fullt svep av hela teamspacet denna körning."
       },
       {
         "namn": "Fish rod holder",
