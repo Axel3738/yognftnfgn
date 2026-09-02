@@ -29,6 +29,35 @@ alla 32 annonser ACTIVE, alla länkar → beverbutikken.no. Levererat i chatten 
 8 png) och uppladdat i Drive: MAKE TO NORWAY → "NO Damasker Vandring"/"NO Jättefotboll"
 (24 mp4 + 8 png + 8 adcopy-docs). Kvot 27 715 → 26 939 (~776 credits).
 
+**Ombyggnad 2026-09-02 (Axels beslut):** källan är nu **LAUNCHED**
+(`1-vbYhYgTEv7zYptW5rGmgKAITmAz4l1X`) — alla svenska produkter ska testas i Norge.
+WINNERS (redan gjorda), LOSERS (floppar) och MAKE TO NORWAY listas inte som kandidater.
+Max 3 produkter per natt. Diskord: brief i `#translation-till-norge-av-nya-produkter`,
+problem (saknad norsk sida / saknad Norge-COGS) i `#problems-no`, båda pingar Axel +
+ECOM CHADKING (`market-expansion/no/discord.json`). COGS-källa: Axels doc
+`1BtFJj1A3J2ciZZS_f3lKU0cM0g5-ncWO7LFySuc3peo` (batch-sheets #1–#5.1, NORWAY-blocket,
+ingen tull). Kandidater vid ombyggnaden: 13 produktmappar i LAUNCHED utan NO-mapp och
+utan NO-kampanj (Medicinask, Badshorts, Bordtennisnät, Båtmotorskydd, Gravstenspenna,
+Kamouflagetejp, Kasta & Fånga-set, Luffarschack, Magnethylla, Motorcycle cover,
+Plyschtofflor, Smiley face stickers, Sömnadskit). Rutin-prompten ombunden till `main`
+(den stod på en gren som låg 13 000 rader efter).
+
+**Rutinkörning 2026-09-02 (04:15):** inga kandidater, oförändrat. 0 credits. Brief skickad.
+
+**Rutinkörning 2026-09-01 (04:15):** inga kandidater — läget oförändrat mot 08-31.
+Skoreparationslappar fortfarande stoppad: Norge-kolumnerna i batch-sheet #1 är tomma
+(och radens ifyllda tal går inte ihop: 1,00 + 4,66 ≠ 8,56 — inte ens totalen är
+verifierbar). 0 credits. Discord-brief skickad.
+
+**Rutinkörning 2026-08-31 (04:15):** inga launchbara kandidater. 6 av 7 WINNERS-produkter
+blockerade av dubblettspärren (kampanj finns redan i NO-kontot: Fiskespöhållaren ACTIVE;
+Tofflorna/Motorhöljet/Strandtofflorna/Axelbältet/Sätesöverdraget PAUSED — Axels beslut krävs
+för omstart). Skoreparationslappar har norsk sida (skoreparasjonslapper-…, 279 kr) men
+**saknar Norge-COGS**: raden i batch-sheet #1 har tomma marknadskolumner, SE-kampanjen saknar
+BE-ROAS i namnet — utan verifierad COGS ingen BE-ROAS, ingen launch (regel: hitta aldrig på).
+⚠️ Norska jämförpriset (248,75) är dessutom LÄGRE än priset (279) — ska fixas vid launch.
+0 credits brända. Discord-brief skickad.
+
 **Drive-ramverk 2026-08-30 (Axels beslut):** källa = WINNERS-mappen, mål = `NO <namn>`-dubbletter
 i MAKE TO NORWAY (f.d. huvudmappen), inga mappar flyttas. Inskrivet i `/translate-no` Fas 0 + 3.5.
 Befintliga norska mappar NO-prefixade. Rutinen är ombunden till huvudsessionen (fresh-session-

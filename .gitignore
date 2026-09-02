@@ -5,3 +5,6 @@ pipeline/output/
 
 # Genererade bildannonser — artefakter, inte källkod
 bildannonser/output/
+
+# Python-bytekod (py_compile, tester)
+__pycache__/

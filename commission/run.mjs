@@ -20,6 +20,7 @@ import { berakna, arSvensk, SATS, arKordag, period, UTLANDSKA_KONTON } from './b
 import { hamtaAllSpend } from './meta.mjs';
 import * as Notion from './notion.mjs';
 import { byggHubbregister, kopplaAnnons } from './koppling.mjs';
+import { uppdateraLeaderboard, skrivTerminal as skrivLeaderboard } from './leaderboard.mjs';
 
 const ROT = resolve(new URL('..', import.meta.url).pathname);
 const args = process.argv.slice(2);
@@ -281,6 +282,12 @@ async function main() {
   skrivTerminal(rapport, kallor);
 
   if (finns('torr')) { console.log('\n[TORR] Ingen rapportfil skriven.'); return; }
+
+  // Leaderboarden uppdateras VARJE körning, också de dagar ingen rapport ska
+  // sparas. Rapporten är kvittot på utbetalningen; leaderboarden är dagens
+  // läge, och en topplista som står stilla två dagar i sträck är värdelös.
+  const leaderboard = await uppdateraLeaderboard(rapport, kallor);
+  skrivLeaderboard(leaderboard);
   if (!sparaRapport) { console.log('\nIngen rapportfil — i dag är ingen kördag. Nästa rapport: den 1, 4, 7 … 28 eller månadens sista dag.'); return; }
 
   const md = skrivRapport(rapport, kallor);

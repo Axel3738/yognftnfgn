@@ -244,6 +244,18 @@ på vägar som fungerar ändå där det går: Drive läses publikt med
 `tools/drive-ls.py`, Meta via `META_ACCESS_TOKEN`, Notion via `NOTION_TOKEN`
 (`tools/notion-klara.mjs`).
 
+⚠️ **Rutinens konfiguration och rutinens körning är två olika saker.** Mätt
+2026-09-01 på rutinen "Ad upload and structure": den listar sju connectors
+(ADsmanagaer, Google-Drive, Notion, Slack, Shopify …) men har `allowed_tools`
+= Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch — inga `mcp__*`.
+Vad det betyder i praktiken är **inte fastställt**: ingen har läst en
+rutinkörnings transkript och sett om connector-verktygen fanns eller inte.
+Därför ber `/nattkorning` steg 4 rutinen själv rapportera om
+`mcp__Google_Drive`-verktygen fanns. Läs den raden i morgonrapporten innan
+du drar någon slutsats åt något håll — och bygg aldrig en parallell
+infrastruktur (Apps Script, token-vägar) för något connectorn kanske redan
+klarar. Axels besked 2026-09-02: ingen ny Google-app för Drive-flytten.
+
 ---
 
 ## Kommandon i terminalen
@@ -437,6 +449,28 @@ node commission/run.mjs --manad 2026-07           # räkna om en gången månad
 `berakning.mjs` är ren räknelogik (16 tester), `meta.mjs` läser spend ur **alla**
 annonskonton token:en når, `notion.mjs` läser hubbarna, `run.mjs` skriver
 rapporten till `commission/korningar/<YYYY-MM>/<datum>.md`.
+
+**Leaderboarden** (`leaderboard.mjs` + `valuta.mjs`, 18 tester) är samma siffror
+som topplista för redigerarna:
+https://claude.ai/code/artifact/77145ba8-a1cc-4791-9757-0715a8d97ff8
+Den räknar aldrig om något — den läser rapportens tal, så sidan och utbetalningen
+kan inte säga olika saker. `run.mjs` skriver `commission/leaderboard.json` vid
+**varje** körning (även icke-kördagar); `leaderboard.mjs` bakar in datan i
+`commission/leaderboard-publicerad.html` och rutinen publicerar om den filen mot
+**samma URL** (`url`-parametern — utan den blir det en ny länk).
+Sidmallen är `commission/leaderboard-sida.html`.
+
+⚠️ **Sidan får aldrig deklarera runtime-capabilities.** Redigerarna har inga
+Claude-konton, och en sida med `db` blir organisationsintern och släcks för dem.
+Datan ligger därför inbakad i HTML:en och sidan delas med en öppen länk.
+
+⚠️ **Två regler för topplistan, Axels beslut 2026-09-02:**
+- **Spend visas aldrig** — varken totalt eller per person. `leaderboard.json`
+  innehåller ingen spend alls. Bygg inte tillbaka den.
+- **Beloppen står i USD.** Kursen hämtas en gång per dygn från ECB
+  (`commission/valuta.mjs` → `valutakurs.json`) och visas med sitt datum på
+  sidan. Rapporten i `korningar/` räknar fortfarande i SEK — den är kvittot.
+- Perioden är kalendermånaden och nollställs av sig själv den 1:a.
 
 Satsen är 0,4 % och står som `SATS` i `berakning.mjs`. Bara `role: "editor"` i
 `dashboard/data/team.json` får utbetalning — spend på Axels rader, på rader utan

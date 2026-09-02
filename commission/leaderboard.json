@@ -1,0 +1,189 @@
+{
+  "uppdaterad": "2026-09-02T06:33:26.377Z",
+  "kord": "2026-08-31T00:00:00.000Z",
+  "manad": "2026-08",
+  "period": {
+    "fran": "2026-08-01",
+    "till": "2026-08-31"
+  },
+  "slutavrakning": true,
+  "sats": 0.004,
+  "valuta": {
+    "kod": "USD",
+    "kurs": 0.10428,
+    "datum": "2026-09-01",
+    "gammal": false
+  },
+  "rader": [
+    {
+      "plats": 1,
+      "id": "annabelle",
+      "namn": "Annabelle Gonzales",
+      "usd": 133.22,
+      "annonser": 459,
+      "kampanjer": [
+        {
+          "namn": "Mastern",
+          "usd": 31.37
+        },
+        {
+          "namn": "235",
+          "usd": 26.77
+        },
+        {
+          "namn": "Motorhöljet",
+          "usd": 25.08
+        }
+      ],
+      "basta": {
+        "namn": "235 H1",
+        "usd": 20.62
+      },
+      "okning": null,
+      "forraPlats": null,
+      "flytt": 0
+    },
+    {
+      "plats": 2,
+      "id": "josh",
+      "namn": "Josh Naelga",
+      "usd": 74.74,
+      "annonser": 627,
+      "kampanjer": [
+        {
+          "namn": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "usd": 23.13
+        },
+        {
+          "namn": "Strandtofflorna",
+          "usd": 12.19
+        },
+        {
+          "namn": "Axelbältet",
+          "usd": 11.81
+        }
+      ],
+      "basta": {
+        "namn": "Beachslippers_PD_13_1",
+        "usd": 5.58
+      },
+      "okning": null,
+      "forraPlats": null,
+      "flytt": 0
+    },
+    {
+      "plats": 3,
+      "id": "jasper",
+      "namn": "Jasper Tomboc",
+      "usd": 18.55,
+      "annonser": 73,
+      "kampanjer": [
+        {
+          "namn": "Mastern",
+          "usd": 10.81
+        },
+        {
+          "namn": "279",
+          "usd": 4.16
+        },
+        {
+          "namn": "279 separat listicle 08-14",
+          "usd": 2.83
+        }
+      ],
+      "basta": {
+        "namn": "279 H1 08-11",
+        "usd": 4.3
+      },
+      "okning": null,
+      "forraPlats": null,
+      "flytt": 0
+    },
+    {
+      "plats": 4,
+      "id": "gilz",
+      "namn": "Gilz Bruce Biazon",
+      "usd": 7.73,
+      "annonser": 161,
+      "kampanjer": [
+        {
+          "namn": "Mastern",
+          "usd": 7.27
+        },
+        {
+          "namn": "Motorhöljet CBO 2026-08-20",
+          "usd": 0.39
+        },
+        {
+          "namn": "Sätesöverdragaren",
+          "usd": 0.06
+        }
+      ],
+      "basta": {
+        "namn": "277 H1 08-11",
+        "usd": 1.34
+      },
+      "okning": null,
+      "forraPlats": null,
+      "flytt": 0
+    },
+    {
+      "plats": 5,
+      "id": "carl",
+      "namn": "Carl Vicente",
+      "usd": 1.51,
+      "annonser": 133,
+      "kampanjer": [
+        {
+          "namn": "Mastern",
+          "usd": 1.46
+        },
+        {
+          "namn": "Sätesöverdragaren",
+          "usd": 0.05
+        }
+      ],
+      "basta": {
+        "namn": "233 H4",
+        "usd": 0.74
+      },
+      "okning": null,
+      "forraPlats": null,
+      "flytt": 0
+    }
+  ],
+  "totalt": {
+    "usd": 235.75,
+    "annonser": 1453,
+    "redigerare": 5
+  },
+  "obetald": {
+    "utanAnsvarig": 0,
+    "okanda": 0.01,
+    "ejRedigerare": [
+      {
+        "namn": "Axel Odhner",
+        "roll": "admin",
+        "usd": 27.42
+      }
+    ],
+    "konflikter": 0
+  },
+  "kallor": {
+    "hubbar": 12,
+    "konton": 14,
+    "fel": 0
+  },
+  "historik": [
+    {
+      "datum": "2026-08-31",
+      "per": {
+        "annabelle": 133.22,
+        "josh": 74.74,
+        "jasper": 18.55,
+        "gilz": 7.73,
+        "carl": 1.51
+      }
+    }
+  ]
+}
