@@ -638,7 +638,8 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   Shopify-sidan** (inget pris i annonsen = grön). En creative med problem, video
   som bild, får kommentar i Notion och flyttas till `Draft`. För bild är varje fel
   ett problem; för video bara priset — felstavningar i video laddas upp ändå med
-  en anmärkning. Ingen nödbroms på antal leveranser.
+  en anmärkning. Ingen nödbroms på antal leveranser. **Uppladdad rad flyttas till
+  `SE-ACTIVE to be translated`** (översättningskön), aldrig till `Approved`.
 
 - **Skriv aldrig en mätning som en evig lag.** Regeln ovan stod en gång som
   "`Filer och media` är tomt på samtliga rader … bygg därför aldrig". Den var falsk
