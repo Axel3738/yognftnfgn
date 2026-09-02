@@ -197,11 +197,14 @@ Varje produktmapp har ~4 bildannonser som ska med i kampanjen. Flöde (verifiera
 Färdiga videor + norska adcopy-docs ska in i Drive: i **MAKE TO NORWAY**
 (`1z6oJt1dTu1kwXU-s1_RQkwIRFar3zeOw`) skapas mappen **`NO <källmappens namn>`**
 per produkt (se ramverket i Fas 0 — gamla `NO`-wrappermappen finns inte längre).
-Docs skapas via Drive-connectorn (`create_file`, textContent → Google Doc). Videorna är för stora
-för connectorn — de laddas upp med `node pipeline/drive-push.mjs
---folder=<mapp-id> final/<slug>/*.mp4`, som kräver env `DRIVE_UPLOAD_URL` +
-`DRIVE_UPLOAD_KEY` (Apps Script-brevlådan, installation: `tools/drive-brevlada.gs`).
-Saknas env-variablerna: be Axel installera brevlådan, leverera docs ändå.
+Allt laddas upp med `node pipeline/drive-push.mjs --folder=<mapp-id> <filer…>`
+(Apps Script-brevlådan, env `DRIVE_UPLOAD_URL` + `DRIVE_UPLOAD_KEY`, installation:
+`tools/drive-brevlada.gs`). Skriptet sätter MIME-typ efter filändelsen, så videor
+(`.mp4`), bildannonser (`.png`) och adcopy (`.txt`, en fil per koncept:
+`ADCOPY_NO_<K>.txt`) går samma väg — rutinen behöver ingen Drive-connector.
+Finns connectorn ändå får adcopyn gärna bli ett Google Doc (`create_file`), men det
+är ett tillägg, inte ett krav. Saknas env-variablerna: be Axel installera
+brevlådan, leverera i chatten ändå.
 REVIEWS-arken kopieras INTE: påhittade kundrecensioner översätts/publiceras inte
 av rutinen (beslut 2026-08-29) — raden lämnas till Axel.
 
