@@ -39,10 +39,16 @@ klart utan att invänta godkännande; stanna bara vid ägarbeslut eller ❌ neda
   en norsk dubblettmapp **`NO <källmappens namn>`** per produkt och lägger ALLT
   där (videor, bilder, adcopy-docs). Prefixet `NO ` är obligatoriskt.
 - **Inga mappar flyttas någonsin** — källmappen i LAUNCHED rörs inte.
-  Dubblettspärr i Drive: finns `NO <namn>` redan i MAKE TO NORWAY **eller i någon
-  av dess undermappar** (mätt 2026-09-02: tre NO-mappar ligger i
-  `MAKE TO NORWAY/WINNERS`) är produkten behandlad → hoppa (komplettera bara om
-  mappen är halvfärdig). Lista därför MAKE TO NORWAY rekursivt.
+  Dubblettspärr i Drive: finns `NO <namn>` redan i MAKE TO NORWAY är produkten
+  behandlad → hoppa (komplettera bara om mappen är halvfärdig).
+  ⚠️ **Leta i HELA MAKE TO NORWAY, även i undermapparna** (Axel 2026-09-02):
+  Axel sorterar norska vinnare/förlorare i egna mappar (t.ex. `WINNERS`,
+  `LOSERS`) inuti MAKE TO NORWAY — mätt 2026-09-02 låg tre NO-mappar i
+  `MAKE TO NORWAY/WINNERS`. En `NO <namn>` som ligger där är lika behandlad
+  som en direkt i roten — skapa ALDRIG en ny `NO <namn>` bara för att den
+  flyttats ner en nivå. Lista därför MAKE TO NORWAY rekursivt
+  (`tools/drive-ls.py` på varje undermapp) innan något översätts. Mappar
+  utan `NO `-prefix i MAKE TO NORWAY är Axels sorteringsmappar, inte produkter.
   (Samma ramverk återanvänds per marknad senare: `DK <namn>`, `UK <namn>` osv.)
 - **Kandidat** = produktmapp i LAUNCHED som saknar `NO <namn>`-mapp OCH saknar
   kampanj med produktnamnet i `act_1050941584152547` (oavsett status).

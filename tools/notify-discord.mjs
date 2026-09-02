@@ -4,6 +4,18 @@
 //
 //   node tools/notify-discord.mjs "✅ 2 launchade, allt rullar"
 //   cat rapport.txt | node tools/notify-discord.mjs
+//   node tools/notify-discord.mjs --ping "Missing files for Badshorts: ..."
+//   node tools/notify-discord.mjs --ping-axel "Kunde inte flytta: Badshorts, Luffarschack"
+//
+// --ping-axel (Axels beslut 2026-09-02): mappar i Products som redan har
+// kampanj men inte gått att flytta till LAUNCHED pingas till Axels båda
+// konton, confident_otter_25993 och ecom_chadking.
+//
+// --ping (Axels beslut 2026-09-02): redigerarnotiser går via Discord och ska
+// @-pinga redigerarna. Flaggan sätter <@id> för carlvicente.working och
+// jazzer1522 först i meddelandet. Id:n slås upp på användarnamnet via boten
+// (members/search) med de kända id:na som reserv — ren text "@namn" pingar
+// aldrig i Discord, det måste vara <@id>.
 //
 // Auth (hemligheterna ligger i environmentet, ALDRIG i repot):
 //   1. Bot-token — env DISCORD_BOT_TOKEN / DISCORD_TOKEN / DISCORD_ACCESS_TOKEN,
@@ -32,6 +44,39 @@ if (process.env.HTTPS_PROXY && process.env.NODE_USE_ENV_PROXY !== '1') {
 const GUILD = '1540322130388983921';
 const KANALNAMN = (process.env.DISCORD_CHANNEL_NAME || 'new-products-coing-out').replace(/^#/, '');
 const RESERVKANAL = '1543546469884362833'; // "mamma jobb"
+
+// Redigerarna som pingas med --ping. Id:n verifierade via members/search 2026-09-02.
+const REDIGERARE = [
+  { namn: 'carlvicente.working', id: '1411720622484095089' },
+  { namn: 'jazzer1522', id: '740814777374343259' },
+];
+// Axels två konton, pingas med --ping-axel (mappar som inte gått att flytta).
+// Id:n verifierade via members/search 2026-09-02.
+const AXEL = [
+  { namn: 'confident_otter_25993', id: '1469423029783236689' },
+  { namn: 'ecom_chadking', id: '1543537450335477836' },
+];
+
+async function pingRad(token, personer) {
+  const idn = [];
+  for (const r of personer) {
+    let id = r.id;
+    if (token) {
+      try {
+        const res = await fetch(
+          `https://discord.com/api/v10/guilds/${GUILD}/members/search?query=${encodeURIComponent(r.namn)}&limit=5`,
+          { headers: { Authorization: `Bot ${token}` } },
+        );
+        if (res.ok) {
+          const träff = (await res.json()).find(m => m.user?.username === r.namn);
+          if (träff) id = träff.user.id;
+        }
+      } catch { /* reserv-id:t används */ }
+    }
+    idn.push(`<@${id}>`);
+  }
+  return idn.join(' ');
+}
 
 async function hittaKanal(token) {
   if (process.env.DISCORD_CHANNEL_ID) return process.env.DISCORD_CHANNEL_ID;
@@ -75,13 +120,21 @@ if (!auth) {
   process.exit(2);
 }
 
-let text = process.argv.slice(2).join(' ').trim();
+const argv = process.argv.slice(2);
+const ping = argv.includes('--ping');
+const pingAxel = argv.includes('--ping-axel');
+let text = argv.filter(a => a !== '--ping' && a !== '--ping-axel').join(' ').trim();
 if (!text) {
   const chunks = [];
   for await (const c of process.stdin) chunks.push(c);
   text = Buffer.concat(chunks).toString('utf8').trim();
 }
 if (!text) { console.error('Inget meddelande. Ge texten som argument eller på stdin.'); process.exit(2); }
+const bot = auth.typ === 'bot' ? auth.token : null;
+const pingar = [];
+if (ping) pingar.push(await pingRad(bot, REDIGERARE));
+if (pingAxel) pingar.push(await pingRad(bot, AXEL));
+if (pingar.length) text = `${pingar.join(' ')}\n${text}`;
 
 // Discord tar max 2000 tecken per meddelande — dela på radgränser vid behov.
 const parts = [];

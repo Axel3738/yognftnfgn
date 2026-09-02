@@ -244,6 +244,18 @@ på vägar som fungerar ändå där det går: Drive läses publikt med
 `tools/drive-ls.py`, Meta via `META_ACCESS_TOKEN`, Notion via `NOTION_TOKEN`
 (`tools/notion-klara.mjs`).
 
+⚠️ **Rutinens konfiguration och rutinens körning är två olika saker.** Mätt
+2026-09-01 på rutinen "Ad upload and structure": den listar sju connectors
+(ADsmanagaer, Google-Drive, Notion, Slack, Shopify …) men har `allowed_tools`
+= Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch — inga `mcp__*`.
+Vad det betyder i praktiken är **inte fastställt**: ingen har läst en
+rutinkörnings transkript och sett om connector-verktygen fanns eller inte.
+Därför ber `/nattkorning` steg 4 rutinen själv rapportera om
+`mcp__Google_Drive`-verktygen fanns. Läs den raden i morgonrapporten innan
+du drar någon slutsats åt något håll — och bygg aldrig en parallell
+infrastruktur (Apps Script, token-vägar) för något connectorn kanske redan
+klarar. Axels besked 2026-09-02: ingen ny Google-app för Drive-flytten.
+
 ---
 
 ## Kommandon i terminalen
@@ -437,6 +449,15 @@ node commission/run.mjs --manad 2026-07           # räkna om en gången månad
 `berakning.mjs` är ren räknelogik (16 tester), `meta.mjs` läser spend ur **alla**
 annonskonton token:en når, `notion.mjs` läser hubbarna, `run.mjs` skriver
 rapporten till `commission/korningar/<YYYY-MM>/<datum>.md`.
+
+**Leaderboarden** (`leaderboard.mjs`, 15 tester) är samma siffror som topplista
+för redigerarna: https://claude.ai/code/artifact/77145ba8-a1cc-4791-9757-0715a8d97ff8
+Den räknar aldrig om något — den läser rapportens tal, så sidan och utbetalningen
+kan inte säga olika saker. `run.mjs` skriver `commission/leaderboard.json` vid
+**varje** körning (även icke-kördagar) och rutinen lägger upp den på sidan med
+`Artifact write_db` → `leaderboard/aktuell`. Sidmallen är
+`commission/leaderboard-sida.html`; själva sidan behöver bara publiceras om när
+utseendet ändras, och då mot samma URL.
 
 Satsen är 0,4 % och står som `SATS` i `berakning.mjs`. Bara `role: "editor"` i
 `dashboard/data/team.json` får utbetalning — spend på Axels rader, på rader utan

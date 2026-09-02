@@ -227,7 +227,40 @@ på samma rad, och skriver
    inte att veta vems pengarna är: raden flaggas som namnkonflikt och betalas
    inte ut förrän Axel rett ut den.
 
-## Steg 3 — Leverera
+## Steg 3 — Uppdatera leaderboarden
+
+Topplistan är sidan redigerarna själva öppnar:
+**https://claude.ai/code/artifact/77145ba8-a1cc-4791-9757-0715a8d97ff8**
+
+`run.mjs` skriver `commission/leaderboard.json` **varje körning**, också de dagar
+ingen rapport ska sparas — en topplista som står stilla två dygn är värdelös.
+Lägg upp den nya datan på sidan:
+
+```
+Artifact  action: write_db  db_op: set
+  url:        https://claude.ai/code/artifact/77145ba8-a1cc-4791-9757-0715a8d97ff8
+  collection: leaderboard
+  doc_id:     aktuell
+  file_path:  commission/leaderboard.json
+```
+
+Sidan lyssnar på det dokumentet och ritar om sig direkt. Du behöver aldrig
+publicera om själva sidan; bara datan byts.
+
+⚠️ **Uppdatera aldrig sidan med siffror från en avbruten körning.** Avbryter
+`run.mjs` på en nödbroms finns ingen ny `leaderboard.json`, och den gamla ska
+stå kvar — hellre gårdagens sanna läge än dagens halva.
+
+Går `write_db` inte igenom (verktyget saknas i den schemalagda sessionen):
+skriv en rad om det i rapporten och gå vidare. Datan ligger kvar i repot och
+läggs upp vid nästa körning; sidan märker själv ut när den inte fått ny data.
+
+Sidmallen bor i `commission/leaderboard-sida.html`. Ska sidans utseende ändras:
+kör `node commission/leaderboard.mjs` (bakar in datan i
+`commission/leaderboard-publicerad.html`) och publicera om den filen mot samma
+URL med `url`-parametern — annars blir det en ny sida med en ny länk.
+
+## Steg 4 — Leverera
 
 Skriv i svaret, i den här ordningen:
 
@@ -278,6 +311,7 @@ körning skriver samma fil igen.
 - [ ] Valutor redovisade var för sig, aldrig hopsummerade
 - [ ] Endast svenska annonser räknade — antal och belopp bortfiltrerat redovisat
 - [ ] Utbetalningstabellen levererad med exakt/översatt särredovisat
+- [ ] Leaderboarden uppdaterad med dagens data (eller orsaken skriven i rapporten)
 - [ ] Sagt rakt ut om körningen är slutavräkning eller lägeskoll
 - [ ] Okända Ansvariga, namnkonflikter och olästa källor listade som åtgärder
 - [ ] Ingenting skrivet mot Meta eller Notion

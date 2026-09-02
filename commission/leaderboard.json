@@ -1,0 +1,193 @@
+{
+  "uppdaterad": "2026-09-02T05:29:24.198Z",
+  "kord": "2026-08-31T00:00:00.000Z",
+  "manad": "2026-08",
+  "period": {
+    "fran": "2026-08-01",
+    "till": "2026-08-31"
+  },
+  "slutavrakning": true,
+  "sats": 0.004,
+  "rader": [
+    {
+      "plats": 1,
+      "id": "annabelle",
+      "namn": "Annabelle Gonzales",
+      "spend": 319371.94,
+      "commission": 1277.49,
+      "annonser": 459,
+      "kampanjer": [
+        {
+          "namn": "Mastern",
+          "spend": 75197.25
+        },
+        {
+          "namn": "235",
+          "spend": 64170.86
+        },
+        {
+          "namn": "Motorhöljet",
+          "spend": 60132.76
+        }
+      ],
+      "basta": {
+        "namn": "235 H1",
+        "spend": 49424.45
+      },
+      "ovriga": [],
+      "okning": null,
+      "forraPlats": null,
+      "flytt": 0
+    },
+    {
+      "plats": 2,
+      "id": "josh",
+      "namn": "Josh Naelga",
+      "spend": 179179.44,
+      "commission": 716.72,
+      "annonser": 627,
+      "kampanjer": [
+        {
+          "namn": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "spend": 55455.35
+        },
+        {
+          "namn": "Strandtofflorna",
+          "spend": 29236.15
+        },
+        {
+          "namn": "Axelbältet",
+          "spend": 28313.66
+        }
+      ],
+      "basta": {
+        "namn": "Beachslippers_PD_13_1",
+        "spend": 13387.51
+      },
+      "ovriga": [],
+      "okning": null,
+      "forraPlats": null,
+      "flytt": 0
+    },
+    {
+      "plats": 3,
+      "id": "jasper",
+      "namn": "Jasper Tomboc",
+      "spend": 44469.25,
+      "commission": 177.88,
+      "annonser": 73,
+      "kampanjer": [
+        {
+          "namn": "Mastern",
+          "spend": 25927.15
+        },
+        {
+          "namn": "279",
+          "spend": 9983.01
+        },
+        {
+          "namn": "279 separat listicle 08-14",
+          "spend": 6792.97
+        }
+      ],
+      "basta": {
+        "namn": "279 H1 08-11",
+        "spend": 10312.12
+      },
+      "ovriga": [],
+      "okning": null,
+      "forraPlats": null,
+      "flytt": 0
+    },
+    {
+      "plats": 4,
+      "id": "gilz",
+      "namn": "Gilz Bruce Biazon",
+      "spend": 18540.32,
+      "commission": 74.16,
+      "annonser": 161,
+      "kampanjer": [
+        {
+          "namn": "Mastern",
+          "spend": 17418.69
+        },
+        {
+          "namn": "Motorhöljet CBO 2026-08-20",
+          "spend": 935.51
+        },
+        {
+          "namn": "Sätesöverdragaren",
+          "spend": 135.56
+        }
+      ],
+      "basta": {
+        "namn": "277 H1 08-11",
+        "spend": 3205.63
+      },
+      "ovriga": [],
+      "okning": null,
+      "forraPlats": null,
+      "flytt": 0
+    },
+    {
+      "plats": 5,
+      "id": "carl",
+      "namn": "Carl Vicente",
+      "spend": 3615.81,
+      "commission": 14.46,
+      "annonser": 133,
+      "kampanjer": [
+        {
+          "namn": "Mastern",
+          "spend": 3503.24
+        },
+        {
+          "namn": "Sätesöverdragaren",
+          "spend": 112.57
+        }
+      ],
+      "basta": {
+        "namn": "233 H4",
+        "spend": 1777.35
+      },
+      "ovriga": [],
+      "okning": null,
+      "forraPlats": null,
+      "flytt": 0
+    }
+  ],
+  "totalt": {
+    "spend": 565176.76,
+    "commission": 2260.71,
+    "annonser": 1453
+  },
+  "obetald": {
+    "utanAnsvarig": 0,
+    "okanda": 22.49,
+    "ejRedigerare": [
+      {
+        "namn": "Axel Odhner",
+        "roll": "admin",
+        "spend": 65735.77
+      }
+    ],
+    "konflikter": 0
+  },
+  "kallor": {
+    "hubbar": 12,
+    "konton": 14,
+    "fel": 0
+  },
+  "historik": [
+    {
+      "datum": "2026-08-31",
+      "per": {
+        "annabelle": 319371.94,
+        "josh": 179179.44,
+        "jasper": 44469.25,
+        "gilz": 18540.32,
+        "carl": 3615.81
+      }
+    }
+  ]
+}

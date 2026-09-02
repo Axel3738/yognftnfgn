@@ -1,0 +1,23 @@
+{
+  "uppdaterad": "2026-09-02T05:29:24.198Z",
+  "dagar": [
+    {
+      "datum": "2026-08-31",
+      "manad": "2026-08",
+      "per": {
+        "annabelle": 319371.94,
+        "josh": 179179.44,
+        "jasper": 44469.25,
+        "gilz": 18540.32,
+        "carl": 3615.81
+      },
+      "platser": {
+        "annabelle": 1,
+        "josh": 2,
+        "jasper": 3,
+        "gilz": 4,
+        "carl": 5
+      }
+    }
+  ]
+}
