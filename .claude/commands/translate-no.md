@@ -123,18 +123,20 @@ klart utan att invänta godkännande; stanna bara vid ägarbeslut eller ❌ neda
 
    Så här ska det se ut (facit: `Beltesliper_NO_PD_3` — "jag blir glad bara av
    att kolla på dom captionsen"):
-   - **Ett enda helsvart band över hela bredden**, exakt där den svenska
-     textremsan satt (uppmätt per video; standardband 1388–1500 när mätningen
-     inte hittar något). Bandet ligger hela videon.
-   - **Vit fet text (Liberation Sans Bold, ~46 px) mitt i bandet**, centrerad
-     i höjd och sidled, max 2 rader.
+   - **Ett utsuddat band över hela bredden**, exakt där den svenska textremsan
+     satt (uppmätt per video; standardband 1388–1500 när mätningen inte hittar
+     något). Suddet är intilliggande bildinnehåll som blurrats — aldrig den
+     svenska texten suddad på plats. Bandet ligger hela videon.
+   - **En textruta med vit bakgrund och svart fet text** (Liberation Sans Bold,
+     ~46 px) mitt i bandet, centrerad i höjd och sidled, max 2 rader. Rutan är
+     tajt runt texten, inte över hela bredden.
    - **Ingenting av det svenska syns.** Inte en bokstav, inte en kontur.
 
    Så här får det ALDRIG se ut (motexempel: `Overvåkingskamera_NO_CS_1`):
-   - svensk text kvar bakom en halvgenomskinlig eller suddig platta,
-   - en suddig kopia av det svenska bandet (crop + blur) i stället för svart,
+   - svensk text kvar bakom en halvgenomskinlig platta eller synlig genom suddet,
+   - en suddig kopia av det svenska bandet där texten fortfarande anas,
    - norsk text i en egen ruta ovanför eller under det svenska bandet,
-   - två rutor i bild samtidigt.
+   - två rutor i bild samtidigt, eller en helsvart platta.
 
    Skriptet skannar resultatet 60 px ovanför/under bandet och stannar med exit 3
    om svensk text sticker ut — kör då om med `--band=Y0:Y1` som täcker allt.
