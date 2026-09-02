@@ -1,5 +1,5 @@
 {
-  "comment": "Behorighetslistan for Axels rutiner. Bash-reglerna star i TVA former med flit: Claude Code:s prefixsyntax ar kolon (Bash(node:*)), men listan i repot anvande tidigare mellanslag (Bash(node *)). Bada finns kvar sa att listan matchar oavsett vilken form runtimen tolkar. Ta aldrig bort den ena halvan for att den ser ut som en dubblett. LAGET (defaultMode) SPELAR INGEN ROLL PA WEBBEN: enligt Claude Codes dokumentation ignorerar Claude Code on the web bade 'dontAsk' och 'bypassPermissions' fran settings-filer, och en Routine kor alltid utan fragor - det finns inget lage att valja for en rutin (verifierat mot code.claude.com/docs 2026-09-02, Axels fraga om bypass). Det som FAKTISKT styr en rutin ar: (1) allow-listan, som forhandsgodkanner verktygen och darfor maste vara komplett - saknas ett verktyg har nekas det tyst; (2) deny-listan, som galler i ALLA lagen inklusive bypass - det ar den som stoppar Artifact, rm -rf och raderingsverktygen; (3) disableAutoMode, som stanger av klassificeraren (Axels beslut 2026-08-31). defaultMode 'dontAsk' star kvar for lokala korningar.",
+  "comment": "Behorighetslistan for Axels rutiner. Bash-reglerna star i TVA former med flit: Claude Code:s prefixsyntax ar kolon (Bash(node:*)), men listan i repot anvande tidigare mellanslag (Bash(node *)). Bada finns kvar sa att listan matchar oavsett vilken form runtimen tolkar. Ta aldrig bort den ena halvan for att den ser ut som en dubblett. LAGET (defaultMode) SPELAR INGEN ROLL PA WEBBEN: enligt Claude Codes dokumentation ignorerar Claude Code on the web bade 'dontAsk' och 'bypassPermissions' fran settings-filer, och en Routine kor alltid utan fragor - det finns inget lage att valja for en rutin (verifierat mot code.claude.com/docs 2026-09-02, Axels fraga om bypass). Det som FAKTISKT styr en rutin ar: (1) allow-listan, som forhandsgodkanner verktygen och darfor maste vara komplett - saknas ett verktyg har nekas det tyst; (2) deny-listan, som galler i ALLA lagen inklusive bypass - det ar den som stoppar Artifact, rm -rf och raderingsverktygen; (3) disableAutoMode, som stanger av klassificeraren (Axels beslut 2026-08-31). defaultMode 'dontAsk' star kvar for lokala korningar. AskUserQuestion och SendMessage ligger i deny: de ar de enda verktygen som inget lage auto-godkanner, och en rutin har ingen som kan svara - hellre nekat direkt an en korning som star och vantar (Axel 2026-09-02: 'om jag maste trycka pa allow for en enda grej').",
   "permissions": {
     "defaultMode": "dontAsk",
     "allow": [
@@ -249,10 +249,8 @@
       "TaskGet",
       "TaskOutput",
       "TaskStop",
-      "AskUserQuestion",
       "ReportFindings",
       "ScheduleWakeup",
-      "SendMessage",
       "ListAgents",
       "ReadNotifications"
     ],
@@ -262,7 +260,9 @@
       "mcp__ADsmanagaer__ads_creative_delete",
       "mcp__ADsmanagaer__ads_catalog_delete_product",
       "mcp__ADsmanagaer__ads_delete_custom_audience",
-      "mcp__Google_Drive__trash_file"
+      "mcp__Google_Drive__trash_file",
+      "AskUserQuestion",
+      "SendMessage"
     ]
   }
 }
