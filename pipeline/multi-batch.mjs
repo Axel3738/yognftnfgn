@@ -90,7 +90,9 @@ for (const i of await apiAll('adimages', 'name,hash'))
 for (const v of await apiAll('advideos', 'title,id,status'))
   if (v.status?.video_status === 'ready') vids.set((v.title || '').replace(/\.\w+$/, '').trim(), v.id);
 
-function resolveMotif(motif) {
+function resolveMotif(motif, mediaId) {
+  // m.mediaId: exakt video-id när flera biblioteksfiler delar titel
+  if (mediaId) return { kind: 'video', videoId: mediaId };
   if (vids.has(motif)) return { kind: 'video', videoId: vids.get(motif) };
   const variants = {};
   for (const suffix of ['1x1', '4x5', '9x16'])
@@ -217,7 +219,7 @@ for (const camp of cfg.campaigns) {
 
     if (DRY) {
       for (const m of motifs) {
-        const r = resolveMotif(m.media || m.name);
+        const r = resolveMotif(m.media || m.name, m.mediaId);
         const c = m.copy ? ` · egen copy: ${m.copy.headline}` : '';
         console.log(`  · ${m.name}: ${r ? (r.kind === 'video' ? 'video' : 'bild [' + Object.keys(r.variants).join('+') + ']') : 'SAKNAS'}${c}`);
       }
@@ -250,7 +252,7 @@ for (const camp of cfg.campaigns) {
       try {
         // m.media: bibliotekstitel när den skiljer sig från annonsnamnet
         // (t.ex. filen "..._4x5" ska bli annonsen "Enginecover_SO_21_H1")
-        const r = resolveMotif(m.media || motif);
+        const r = resolveMotif(m.media || motif, m.mediaId);
         if (!r) throw new Error('media saknas i biblioteket');
         const form = { name: `${motif}_creative`, degrees_of_freedom_spec: NO_ENHANCEMENTS };
         if (r.kind === 'video') {
