@@ -77,7 +77,9 @@ inte röras utan att Axel ber om det.
    analysen inte att göra. Läs av upptagna AD-ID:n i kontot innan du numrerar.
 9. **Briefer på engelska** (redigerarna är engelsktalande), svenska manusrader i
    tabell `Swedish (use this) | English meaning`. SOP:er och svar till Axel på
-   svenska.
+   svenska. **Allt som postas i Discord skrivs på ENGELSKA** — alla kanaler,
+   alla rutiner (`agent/discord-post.mjs`). Redigerarna läser samma kanaler som
+   Axel. Produktnamn behålls som de heter i Meta. *(Axels order 2026-09-02.)*
 10. **En task är aldrig klar för att någon säger det.** Levererat och godkänt är
     två olika saker. Godkännande kräver grön checklista (eller override med
     skriven motivering), och bara godkända creatives räknas mot kvoten.

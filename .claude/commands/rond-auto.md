@@ -398,8 +398,17 @@ till imorgon. Inga bibelsvar.
 **Skicka samma korta rapport till Discord** (Axels order 2026-08-30):
 
 ```bash
-node agent/discord-post.mjs --kanal ronden "Ronden <datum>" "<rapporten i Markdown>"
+node agent/discord-post.mjs --kanal ronden "Daily round <datum>" "<rapporten i Markdown, på engelska>"
 ```
+
+⚠️ **ALLT som postas i Discord skrivs på ENGELSKA** — rubrik och brödtext, i
+alla tre kanalerna (`ronden`, `uppgifter`, `larm`). Redigerarna läser samma
+kanaler som Axel och förstår inte svenska. Produktnamnen behålls som de heter i
+Meta (t.ex. "Båtmotorskyddet 420D"), resten översätts: SKALA → "Scaled up",
+SANK → "Scaled down", STÄNG AV → "Paused", uppskjuten → "Deferred",
+brief-runda → "brief round", förstabatch → "first batch". Svaret till Axel i
+chatten är fortfarande på svenska. *(Axels order 2026-09-02 — samma dag
+postades rapporten på svenska och redigerarna kunde inte läsa den.)*
 
 Skriptet sköter kanalval, delning över 2 000-teckengränsen och rate limits —
 skriv aldrig egen curl-kod mot Discord. Varje rutin har sin egen kanal
