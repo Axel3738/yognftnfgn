@@ -225,9 +225,16 @@
       "campaign_id": "120249990507280291",
       "produkt": "MC-Kapellet",
       "lage": "test",
-      "lage_motivering": "2 köp sedan start",
+      "lage_motivering": "5 020,09 kr spend, 24 köp, ROAS 2,01 mot break-even 1,49 (avläst 2026-09-02, livstid) — 26,8 % vinst senaste 3 dygnen. Under 30-köpsgränsen för drift. Passerat testtröskeln och fått sin första riktiga batch via /forsta-batch.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "3cf270ab-908c-81c1-bfd2-d78f9a45b3d8",
+      "notion_hub_datakalla": "632270ab-908c-8307-a318-873192ba664a",
+      "notion_hub_namn": "Motorcycle Cover creative hub",
+      "drive_produktmapp_id": "1hwYK5Qa-Dh4iltlfr4FLyndvlCEHmqI7",
+      "drive_produktmapp_not": "Joshs befintliga produktmapp (\"Motorcycle cover\", skapad vid launch, ägd av joshnaelga146). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products (lanseringskön).",
+      "drive_senaste_batchmapp_id": "1eLTdYa_SQV6yXVXy_MWb8pcgE3vhXdo1",
+      "minne": "products/mc-kapellet/"
     },
     {
       "campaign_id": "120250001079150291",
