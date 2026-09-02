@@ -22,11 +22,47 @@
 
 import { readFileSync, existsSync, statSync } from 'node:fs';
 import { basename, extname, resolve } from 'node:path';
+import { spawnSync } from 'node:child_process';
+
+// Utan detta går fetch() rakt ut förbi miljöns agentproxy och Metas Graph-API
+// slår i ett delat per-IP-tak nästan direkt ("User request limit reached"
+// efter en handfull anrop). Samma fix som tools/notify-discord.mjs.
+if (process.env.HTTPS_PROXY && process.env.NODE_USE_ENV_PROXY !== '1') {
+  const r = spawnSync(process.execPath, process.argv.slice(1), {
+    stdio: 'inherit', env: { ...process.env, NODE_USE_ENV_PROXY: '1' },
+  });
+  process.exit(r.status ?? 1);
+}
 
 const API = `https://graph.facebook.com/${process.env.META_API_VERSION || 'v23.0'}`;
 const TOKEN = process.env.META_ACCESS_TOKEN;
 const BAVERBUTIKEN_ACT = '1867947880635861';   // MagiBorsten (SEK) — enda tillåtna kontot
 const ROT = new URL('..', import.meta.url).pathname;
+
+// Meta pensionerade den samlade "standard_enhancements"-flaggan (400 Invalid
+// parameter) — samma fix som redan finns i pipeline/batch.mjs m.fl.: stäng av
+// varje enskild enhancement för sig.
+const NO_ENHANCEMENTS = {
+  creative_features_spec: {
+    ...Object.fromEntries(
+      ['adapt_to_placement', 'add_text_overlay', 'ads_with_benefits', 'advantage_plus_creative',
+       'app_highlights', 'audio', 'biz_ai', 'carousel_to_video', 'catalog_feed_tag',
+       'creative_stickers', 'cv_transformation', 'description_automation', 'dha_optimization',
+       'dynamic_partner_content', 'enable_ncs_testimonials', 'enhance_cta',
+       'feed_caption_optimization', 'generate_cta', 'hide_price', 'ig_glados_feed',
+       'ig_video_native_subtitle', 'image_animation', 'image_auto_crop', 'image_background_gen',
+       'image_brightness_and_contrast', 'image_enhancement', 'image_templates',
+       'image_text_translation', 'image_touchups', 'image_uncrop', 'local_store_extension',
+       'media_liquidity_animated_image', 'media_order', 'media_type_automation',
+       'multi_photo_to_video', 'pac_relaxation', 'product_browsing', 'product_extensions',
+       'product_metadata_automation', 'profile_card', 'replace_media_text',
+       'reveal_details_over_time', 'show_destination_blurbs', 'show_summary', 'site_extensions',
+       'text_optimizations', 'text_translation', 'translate_voiceover', 'video_auto_crop',
+       'video_filtering', 'video_highlight', 'video_highlights', 'video_to_image',
+       'video_uncrop', 'wa_mm_image_filtering'].map(f => [f, { enroll_status: 'OPT_OUT' }])
+    ),
+  },
+};
 
 const args = process.argv.slice(2);
 const flagga = (namn, standard = null) => {
@@ -343,7 +379,7 @@ async function main() {
       name: namn,
       object_story_spec: JSON.stringify(spec),
       // Inga creative enhancements — samma linje som launch.md.
-      degrees_of_freedom_spec: JSON.stringify({ creative_features_spec: { standard_enhancements: { enroll_status: 'OPT_OUT' } } }),
+      degrees_of_freedom_spec: JSON.stringify(NO_ENHANCEMENTS),
     },
   });
 
