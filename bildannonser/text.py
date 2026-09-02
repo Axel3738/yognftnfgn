@@ -122,8 +122,15 @@ def dela_meningar(text):
     for d in delar:
         if hopslaget and not any(t.isalnum() for t in d):
             hopslaget[-1] += d
-        else:
-            hopslaget.append(d)
+            continue
+        # Ett avslutande citattecken hör ihop med meningen det stänger, även när
+        # en attribution följer på samma bit ("... regn.” — Johan Nilsson").
+        if hopslaget and d[0] in "”\"'’":
+            hopslaget[-1] += d[0]
+            d = d[1:].lstrip()
+            if not d:
+                continue
+        hopslaget.append(d)
     return "\n".join(hopslaget) if len(hopslaget) > 1 else text
 
 
