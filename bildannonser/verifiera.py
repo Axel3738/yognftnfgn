@@ -54,9 +54,14 @@ def normalisera(s):
     return re.sub(r"\s+", " ", s).strip()
 
 
-def granska_block(namn, text, brieftext):
+def granska_block(namn, text, brieftext, pris_verifierat=False):
     """Kontrollerar ett textblock rad för rad — ett block kan innehålla flera
-    rader (t.ex. en punktlista), och varje rad ska stå ordagrant i briefen."""
+    rader (t.ex. en punktlista), och varje rad ska stå ordagrant i briefen.
+
+    `pris_verifierat` släpper igenom EN sak: en procentsats som är uträknad ur
+    ett jämförpris som körningen läst på produktsidan. Undantaget kräver att
+    briefen bär en rad som börjar med PRIS VERIFIERAT, så att siffran alltid
+    går att spåra till avläsningen. Allt annat i FORBUD gäller oförändrat."""
     fel = []
     normaliserad_brief = normalisera(brieftext)
 
@@ -65,6 +70,8 @@ def granska_block(namn, text, brieftext):
             fel.append(f'raden finns inte ordagrant i briefen: "{rad}"')
 
         for monster, skal in FORBUD:
+            if pris_verifierat and skal.startswith("procentsats"):
+                continue
             if re.search(monster, rad):
                 fel.append(f'förbjudet innehåll ({skal}) i: "{rad}"')
 
@@ -97,9 +104,15 @@ def main():
             continue
 
         brieftext = brieffil.read_text(encoding="utf-8")
+        pris_verifierat = bool(spec.get("pris_verifierat"))
         fel = []
+        if pris_verifierat and not re.search(r"^PRIS VERIFIERAT", brieftext, re.M):
+            fel.append("pris_verifierat är satt men briefen saknar en rad som "
+                       "börjar med PRIS VERIFIERAT — utan avläsningen i skrift "
+                       "får procentsatsen inte renderas")
+            pris_verifierat = False
         for b in spec.get("block", []):
-            fel += granska_block(namn, b["text"], brieftext)
+            fel += granska_block(namn, b["text"], brieftext, pris_verifierat)
 
         if fel:
             totalt_fel += len(fel)

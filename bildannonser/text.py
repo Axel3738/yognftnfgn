@@ -83,6 +83,15 @@ def _font(sokvag, storlek):
         raise TextFel(f"Hittar inte typsnittet {sokvag}: {fel}") from fel
 
 
+def _blackfarg(stil, block):
+    """Vit text på en ljus platta är osynlig. Plattan finns just för att bära
+    mörk text, så en ljus stil vänds till mörkt bläck när plattan ritas.
+    (Knappen har sin egen mörka pill och går aldrig via plattan.)"""
+    if block.get("platta") and stil["farg"].upper() == "#FFFFFF":
+        return "#141210"
+    return stil["farg"]
+
+
 def bryt_rader(text, font, maxbredd, rita):
     """Bryter texten på ordgränser så varje rad ryms inom maxbredd."""
     rader = []
@@ -260,9 +269,9 @@ def lagg_pa_text(spec):
     # Scrim bara där det faktiskt ligger text, och bara när stilen är ljus.
     toppblock = [b for b in block if b["zon"].startswith("topp")]
     bottenblock = [b for b in block if b["zon"].startswith("botten")]
-    if any(STILAR[b["stil"]]["farg"].upper() == "#FFFFFF" for b in toppblock):
+    if any(_blackfarg(STILAR[b["stil"]], b).upper() == "#FFFFFF" for b in toppblock):
         rita_scrim(bild, 0, int(hojd * 0.34), uppifran=True)
-    if any(STILAR[b["stil"]]["farg"].upper() == "#FFFFFF" for b in bottenblock):
+    if any(_blackfarg(STILAR[b["stil"]], b).upper() == "#FFFFFF" for b in bottenblock):
         rita_scrim(bild, int(hojd * 0.66), int(hojd * 0.34), uppifran=False)
     rita = ImageDraw.Draw(bild)
 
@@ -284,12 +293,13 @@ def lagg_pa_text(spec):
             rita_platta(bild, MARGINAL // 2, y_botten - 18,
                         bredd - MARGINAL // 2, y_botten + rh * len(rader) + 12)
             rita = ImageDraw.Draw(bild)
+        farg = _blackfarg(stil, b)
         if b["stil"] == "lista":
-            rita_lista(rita, rader, font, bredd, y_botten, stil["farg"])
+            rita_lista(rita, rader, font, bredd, y_botten, farg)
         else:
             for i, rad in enumerate(rader):
                 rita.text((bredd / 2, y_botten + i * rh), rad, font=font,
-                          fill=stil["farg"], anchor="ma")
+                          fill=farg, anchor="ma")
 
     for b in toppblock:
         stil = STILAR[b["stil"]]
@@ -301,12 +311,13 @@ def lagg_pa_text(spec):
             rita_platta(bild, MARGINAL // 2, y_topp - 18,
                         bredd - MARGINAL // 2, y_topp + rh * len(rader) + 12)
             rita = ImageDraw.Draw(bild)
+        farg = _blackfarg(stil, b)
         if b["stil"] == "lista":
-            rita_lista(rita, rader, font, bredd, y_topp, stil["farg"])
+            rita_lista(rita, rader, font, bredd, y_topp, farg)
         else:
             for i, rad in enumerate(rader):
                 rita.text((bredd / 2, y_topp + i * rh), rad, font=font,
-                          fill=stil["farg"], anchor="ma")
+                          fill=farg, anchor="ma")
                 rita_stryk(rita, rad, b.get("stryk"), font, bredd / 2, y_topp + i * rh)
         y_topp += rh * len(rader) + 20
 
