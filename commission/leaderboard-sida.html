@@ -376,9 +376,9 @@
 </div>
 
 <script>
-  // Datan skrivs av commission-rutinen varje morgon (commission/leaderboard.mjs
-  // → Artifact write_db på leaderboard/aktuell). Den inbäddade kopian nedan är
-  // senast kända läge, så sidan aldrig står tom när db inte svarar.
+  // Datan bakas in i sidan av commission/leaderboard.mjs och rutinen publicerar
+  // om sidan varje morgon mot samma adress. Inget hämtas vid öppning: sidan
+  // kräver ingen inloggning, så redigerarna kan öppna den med bara länken.
   const INBÄDDAD = __DATA__;
 
   const antalFmt = new Intl.NumberFormat('sv-SE', { maximumFractionDigits: 0 });
@@ -598,7 +598,7 @@
     block.append(ul);
   }
 
-  function ritaFot(d, källa) {
+  function ritaFot(d) {
     const fot = document.getElementById('fot');
     fot.replaceChildren();
     fot.append(el('div', null, 'Du tjänar ' + (d.sats * 100).toFixed(1).replace('.', ',')
@@ -609,28 +609,15 @@
     }
     fot.append(el('div', null, 'Uppdateras en gång per dygn, tidigt på morgonen. '
       + 'Månaden börjar om på noll den 1:a.'));
-    if (källa !== 'db') fot.append(el('div', null, 'Visar senast sparade läge — sidan nådde inte dagens data.'));
   }
 
-  function rita(d, källa) {
+  function rita(d) {
     ritaHuvud(d);
     ritaSumma(d);
     ritaLista(d);
     ritaObetald(d);
-    ritaFot(d, källa);
+    ritaFot(d);
   }
 
-  rita(INBÄDDAD, 'inbäddad');
-
-  const anslut = window.claude && typeof window.claude.use === 'function'
-    ? window.claude.use('db')
-    : Promise.resolve(null);
-
-  anslut.then((db) => {
-    if (!db) return;
-    db.doc('leaderboard/aktuell').onSnapshot(
-      (snap) => { if (snap.exists) rita(snap.data(), 'db'); },
-      () => { /* datan i sidan står kvar — hellre gårdagens siffror än en tom sida */ },
-    );
-  }).catch(() => { /* samma sak: den inbäddade kopian får stå */ });
+  rita(INBÄDDAD);
 </script>

@@ -254,29 +254,36 @@ ingen rapport ska sparas — en topplista som står stilla två dygn är värdel
 Perioden är kalendermånaden: sidan nollställs av sig själv den 1:a.
 Lägg upp den nya datan på sidan:
 
-```
-Artifact  action: write_db  db_op: set
-  url:        https://claude.ai/code/artifact/77145ba8-a1cc-4791-9757-0715a8d97ff8
-  collection: leaderboard
-  doc_id:     aktuell
-  file_path:  commission/leaderboard.json
+```bash
+node commission/leaderboard.mjs
 ```
 
-Sidan lyssnar på det dokumentet och ritar om sig direkt. Du behöver aldrig
-publicera om själva sidan; bara datan byts.
+Det bakar in dagens siffror i `commission/leaderboard-publicerad.html`.
+Publicera sedan om den filen mot **samma adress**:
+
+```
+Artifact  file_path: /home/user/yognftnfgn/commission/leaderboard-publicerad.html
+          url:       https://claude.ai/code/artifact/77145ba8-a1cc-4791-9757-0715a8d97ff8
+```
+
+⚠️ **`url` måste vara med.** Utan den skapas en ny sida med en ny länk, och
+redigerarna sitter kvar på den gamla som slutat uppdateras.
+
+⚠️ **Sidan har inga runtime-capabilities och ska inte få några.** Datan ligger
+inbakad i HTML:en, och det är precis det som gör att sidan kan delas med en
+öppen länk — redigerarna har inga Claude-konton. En sida som deklarerar `db`
+blir organisationsintern och släcks för dem. Skicka aldrig `capabilities` här.
 
 ⚠️ **Uppdatera aldrig sidan med siffror från en avbruten körning.** Avbryter
-`run.mjs` på en nödbroms finns ingen ny `leaderboard.json`, och den gamla ska
-stå kvar — hellre gårdagens sanna läge än dagens halva.
+`run.mjs` på en nödbroms finns ingen ny `leaderboard.json`, och gårdagens sida
+ska stå kvar — hellre ett sant gammalt läge än ett halvt nytt.
 
-Går `write_db` inte igenom (verktyget saknas i den schemalagda sessionen):
-skriv en rad om det i rapporten och gå vidare. Datan ligger kvar i repot och
-läggs upp vid nästa körning; sidan märker själv ut när den inte fått ny data.
+Går publiceringen inte igenom: skriv en rad om det i rapporten och gå vidare.
+Datan ligger kvar i repot och läggs upp vid nästa körning.
 
-Sidmallen bor i `commission/leaderboard-sida.html`. Ska sidans utseende ändras:
-kör `node commission/leaderboard.mjs` (bakar in datan i
-`commission/leaderboard-publicerad.html`) och publicera om den filen mot samma
-URL med `url`-parametern — annars blir det en ny sida med en ny länk.
+Sidmallen bor i `commission/leaderboard-sida.html` — den redigeras bara när
+utseendet ska ändras. `leaderboard-publicerad.html` är genererad; handredigera
+den aldrig.
 
 ## Steg 4 — Leverera
 

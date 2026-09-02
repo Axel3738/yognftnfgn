@@ -455,10 +455,14 @@ som topplista för redigerarna:
 https://claude.ai/code/artifact/77145ba8-a1cc-4791-9757-0715a8d97ff8
 Den räknar aldrig om något — den läser rapportens tal, så sidan och utbetalningen
 kan inte säga olika saker. `run.mjs` skriver `commission/leaderboard.json` vid
-**varje** körning (även icke-kördagar) och rutinen lägger upp den på sidan med
-`Artifact write_db` → `leaderboard/aktuell`. Sidmallen är
-`commission/leaderboard-sida.html`; själva sidan behöver bara publiceras om när
-utseendet ändras, och då mot samma URL.
+**varje** körning (även icke-kördagar); `leaderboard.mjs` bakar in datan i
+`commission/leaderboard-publicerad.html` och rutinen publicerar om den filen mot
+**samma URL** (`url`-parametern — utan den blir det en ny länk).
+Sidmallen är `commission/leaderboard-sida.html`.
+
+⚠️ **Sidan får aldrig deklarera runtime-capabilities.** Redigerarna har inga
+Claude-konton, och en sida med `db` blir organisationsintern och släcks för dem.
+Datan ligger därför inbakad i HTML:en och sidan delas med en öppen länk.
 
 ⚠️ **Två regler för topplistan, Axels beslut 2026-09-02:**
 - **Spend visas aldrig** — varken totalt eller per person. `leaderboard.json`
