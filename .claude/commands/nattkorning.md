@@ -3,6 +3,10 @@
 Detta är facit för rutinen "Ad upload and structure". UI-promptens enda jobb är
 att klona repot och peka hit — ALLT annat står här och underhålls via git.
 
+Ordningen är Axels (2026-09-02): **Drive-listan läses först** — den är
+att-göra-listan, och utan den vet rutinen inte vad den ska göra. Sedan byggs
+nytt, sedan kompletteras, sedan aktiveras det rutinen själv byggt, sedan städas.
+
 ## Steg 0 — Repot (läsning räcker)
 
 Repot är redan klonat när du läser det här. **Launch-flödet skriver ALDRIG till
@@ -11,7 +15,41 @@ förväntat och irrelevant. CS OS:ets commit-regler i CLAUDE.md gäller
 /cs-flödet, inte nattkörningen. Läs sedan: `docs/temu-launch-flow.md` och
 `.claude/commands/launch.md` — launch.md är facit för varje produktkörning.
 
-## Steg 1 — Aktiveringssvep (HÅRT AVGRÄNSAT — läs varje ord)
+## Steg 1 — Launch-kön (Axels kontrakt, ordagrant)
+
+**Driven ÄR to-do-listan. Kampanjkontot är kvittot på vad som är gjort.**
+Två källor, två olika jobb — blanda aldrig ihop dem:
+
+1. **Vad som SKA göras** avgörs ENBART av Drive: mappar som ligger direkt i
+   Products (id `1Gga4QfZ0UfVC-q06BGGHN_fkSFN0Iygm`), listade med
+   `python3 tools/drive-ls.py`. Axel styr listan genom att lägga och flytta
+   mappar. Det som inte ligger där finns inte på to-do-listan och rörs aldrig
+   som ny launch. (LAUNCHED/NOT USED/Winners/Losers/TEMU-referens/"avvaktas"
+   är aldrig to-do.)
+2. **Vad som redan ÄR gjort** avgörs ENBART av kampanjlistan från MagiBorsten,
+   hämtad INNAN någon mapp bedöms: matchar mappens produktnamn en befintlig
+   kampanj är den GJORD — hoppa över TYST (mappen har bara inte flyttats än;
+   steg 4 städar den). Aldrig omlaunch, aldrig om-QA, aldrig en rad på Axels
+   lista.
+
+Kandidat = ligger i Products (källa 1) OCH saknar kampanj (källa 2). Kör
+/launch (launch.md) på varje komplett kandidat tills kön är tom. Radera
+nedladdad media ur scratchpad mellan produkterna.
+
+Underhåll av redan launchade kampanjer (steg 2–3: komplettering av saknade
+adsets, aktivering) är INTE to-do-listan — det styrs av kampanjkontot och får
+läsa sitt material varifrån mappen än ligger, LAUNCHED inräknat, via publika
+länkar. Rutinen bygger nytt och gör klart sitt eget; den redigerar aldrig
+kampanjer som Axel eller skalningsronden äger.
+
+## Steg 2 — Komplettera halvbyggda kampanjer
+
+Kampanjer som rutinen själv skapat men som saknar koncept-adsets eller annonser
+(Metas uppladdning kan vara tillfälligt avstängd för kontot): försök ladda upp
+de saknade creatives och bygg klart enligt launch.md. Funkar uppladdningen
+fortfarande inte: notera och gå vidare.
+
+## Steg 3 — Aktiveringssvep (HÅRT AVGRÄNSAT — läs varje ord)
 
 **Axels regel, ordagrant (2026-08-30): svepet får bara aktivera nya launcher
 som aldrig kommit igång — aldrig kampanjer eller annonser som Axel,
@@ -25,7 +63,7 @@ BÅDA villkoren är uppfyllda:
    spenderat en enda krona har den varit igång — då är PAUSED ett beslut
    (Axels, skalningsrondens eller åtgärdstrappans) och statusen är HELIG.
    Besluten syns inte i någon metadata, så spend > 0 är enda säkra testet.
-2. **Den är en ny launch:** skapad av DENNA körning i steg 3, eller har
+2. **Den är en ny launch:** skapad av DENNA körning i steg 1, eller har
    dagens datum i `Launch YYYY-MM-DD`-delen av namnet.
 
 Faller något av villkoren: rör ALDRIG status. Inte "aktivera tillbaka",
@@ -42,78 +80,40 @@ QA-stoppfel på enskilda annonser. Metas API tvångspausar vid budget-/
 strukturändringar — verifiera med tillbakaläsning efter varje aktivering.
 
 **Nödbroms:** vill svepet aktivera fler kampanjer än körningen själv skapade
-i steg 3 plus TVÅ till — avbryt HELA svepet utan att röra något och skriv i
+i steg 1 plus TVÅ till — avbryt HELA svepet utan att röra något och skriv i
 rapporten exakt vilka kampanjer det ville aktivera och varför. Ett svep som
 "hittar" många kandidater är per definition trasigt. Dessutom: VARJE
 statusändring körningen gör (aktivering och pausning, alla nivåer) listas
 med namn + gammal→ny status under "Detaljer:" i slutrapporten, så att Axel
 alltid kan se på morgonen exakt vad som slogs på och av.
 
-## Steg 2 — Komplettera halvbyggda kampanjer
-
-Kampanjer med saknade koncept-adsets eller utan annonser (Metas uppladdning
-kan vara tillfälligt avstängd för kontot): försök ladda upp de saknade
-creatives och bygg klart enligt launch.md. Funkar uppladdningen fortfarande
-inte: notera och gå vidare.
-
-## Steg 3 — Launch-kön (Axels kontrakt, ordagrant)
-
-**Driven ÄR to-do-listan. Kampanjkontot är kvittot på vad som är gjort.**
-Två källor, två olika jobb — blanda aldrig ihop dem:
-
-1. **Vad som SKA göras** avgörs ENBART av Drive: mappar som ligger direkt i
-   Products (id `1Gga4QfZ0UfVC-q06BGGHN_fkSFN0Iygm`), listade med
-   `python3 tools/drive-ls.py`. Axel styr listan genom att lägga och flytta
-   mappar. Det som inte ligger där finns inte på to-do-listan och rörs aldrig
-   som ny launch. (LAUNCHED/NOT USED/Winners/Losers/TEMU-referens/"avvaktas"
-   är aldrig to-do.)
-2. **Vad som redan ÄR gjort** avgörs ENBART av kampanjlistan från MagiBorsten,
-   hämtad INNAN någon mapp bedöms: matchar mappens produktnamn en befintlig
-   kampanj är den GJORD — hoppa över TYST (mappen har bara inte flyttats än;
-   flyttar nekas ibland på rättigheter). Aldrig omlaunch, aldrig om-QA,
-   aldrig en rad på Axels lista.
-
-Kandidat = ligger i Products (källa 1) OCH saknar kampanj (källa 2). Kör
-/launch (launch.md) på varje komplett kandidat tills kön är tom. Radera
-nedladdad media ur scratchpad mellan produkterna.
-
-Underhåll av redan launchade kampanjer (steg 1–2: aktivering, komplettering av
-saknade adsets) är INTE to-do-listan — det styrs av kampanjkontot och får läsa
-sitt material varifrån mappen än ligger, LAUNCHED inräknat, via publika länkar.
-
 ## Steg 4 — Drive-flytt (tyst best-effort, städar hela efterslpet)
 
 Flytta **varje** mapp som ligger direkt i Products och redan har en kampanj i
 MagiBorsten till LAUNCHED (id `1-vbYhYgTEv7zYptW5rGmgKAITmAz4l1X`) — inte bara
-nattens egna launcher. Kampanjlistan från steg 3 är facit; mappar utan kampanj
+nattens egna launcher. Kampanjlistan från steg 1 är facit; mappar utan kampanj
 rörs aldrig, och LAUNCHED/NOT USED/Winners/Losers/TEMU-referens hoppas över.
-Så städas kvarliggande mappar av sig själva den natt rättigheten finns, utan
-att någon behöver be om det.
+Så städas kvarliggande mappar av sig själva, utan att någon behöver be om det.
 
-Verktyget är **`node tools/drive-flytta.mjs --till=1-vbYhYgTEv7zYptW5rGmgKAITmAz4l1X <mapp-id …>`**
-(kräver env `DRIVE_UPLOAD_URL` + `DRIVE_UPLOAD_KEY`). Det är idempotent och
-läser tillbaka föräldern efter flytten, så ett tyst misslyckande rapporteras
-som fel i stället för som lyckat.
+**Förstahandsvägen är Google Drive-connectorn:** `mcp__Google_Drive__update_file`
+med mappens `fileId` och `parentId` = LAUNCHED-id:t. Läs tillbaka med
+`get_file_metadata` och kontrollera att `parentId` ändrats — connectorn kan
+svara utan att ha flyttat. Connectorn är kopplad på rutinen och kör sedan
+2026-09-01 som `axel.odhner@stonebite.org`, kontot som äger både Products och
+LAUNCHED; produktmapparna ägs av redigeraren och det är föräldramapparnas
+ägarskap som ger flytträtten.
 
-⚠️ **Använd INTE Google Drive-connectorn här.** Rutinen "Ad upload and
-structure" kör med `allowed_tools` = Bash, Read, Write, Edit, Glob, Grep,
-WebFetch, WebSearch — **inga `mcp__*`-verktyg alls** (verifierat i rutinens
-konfiguration 2026-09-01). Connectorn syns i rutinens connector-lista men
-finns inte som verktyg i körningen, så `mcp__Google_Drive__update_file` är
-inte en väg som existerar för rutinen — bara i Axels egna chattsessioner.
-Detta är samma mönster som Drive-läsning (`tools/drive-ls.py`) och Meta
-(`META_ACCESS_TOKEN`): rutinen går alltid via Bash, aldrig via connectors.
+**Reserv, bara om connector-verktyget inte finns i körningen:**
+`node tools/drive-flytta.mjs --till=1-vbYhYgTEv7zYptW5rGmgKAITmAz4l1X <mapp-id …>`
+(kräver env `DRIVE_UPLOAD_URL` + `DRIVE_UPLOAD_KEY`, Apps Script-brevlådan i
+`tools/drive-brevlada.gs`). Saknas även de: skriv statusraden och gå vidare.
+Be aldrig Axel installera något för det här steget.
 
-Rättighetskedjan, mätt 2026-09-01: Products och LAUNCHED ägs av
-`axel.odhner@stonebite.org`; produktmapparna ägs av redigeraren
-(`joshnaelga146@gmail.com`) och kommer att fortsätta göra det. Det är
-föräldramapparnas ägarskap som ger flytträtten, och brevlådan (`doGet` i
-`tools/drive-brevlada.gs`) kör som det konto som distribuerade webbappen —
-därför måste den vara distribuerad av ägaren till Products.
-
-Saknas `DRIVE_UPLOAD_URL`/`DRIVE_UPLOAD_KEY`, eller svarar webbappen
-`okänd action`: brevlådan är inte installerad eller inte omdistribuerad efter
-uppdateringen. Skriv statusraden och gå vidare — felsök aldrig koden här.
+Rapportera under "Detaljer:" **vilken väg som användes och om
+`mcp__Google_Drive`-verktygen fanns i körningen** — rutinens `allowed_tools`
+listar inga `mcp__*`-verktyg (mätt i konfigurationen 2026-09-01), och bara
+en verklig körning kan visa om connectorn ändå är åtkomlig. Den raden avgör
+om reserven behövs alls.
 
 Misslyckas en flytt: en (1) rad i rapportens statusdel — **ALDRIG under
 "väntar på Axel"**. Dubblettspärren mot annonskontot är skyddet; mapparna är
