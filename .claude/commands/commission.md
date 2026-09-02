@@ -14,7 +14,8 @@ Repots `.claude/settings.json` står på `defaultMode: dontAsk` och listar allt
 kommandot rör. Fråga aldrig om lov, och avbryt aldrig för att invänta ett
 godkännande.
 
-**Ta REST-vägen i första hand.** Finns env-variabeln `NOTION_TOKEN`:
+**Prova REST-vägen först, men räkna med att den inte räcker.** Finns
+env-variabeln `NOTION_TOKEN`:
 
 ```bash
 node commission/run.mjs --rutin
@@ -22,12 +23,15 @@ node commission/run.mjs --rutin
 
 Skriptet läser då hubbarna själv via Notions REST-API och behöver **inga
 `mcp__*`-verktyg alls** — alltså ingenting som kan utlösa en godkännanderuta.
-Hubbarna hämtas ur `products/products.json` plus en REST-sökning, så de
-arkiverade hubbarna kommer med.
 
-Saknas `NOTION_TOKEN` faller rutinen tillbaka på Notion-MCP:n (steg 1 nedan).
-Skriv då en rad i rapporten om att nyckeln saknas — det är den enda kvarvarande
-orsaken till att rutinen kan behöva ett klick.
+⚠️ **Mätt 2026-09-02: den vägen gav 404 på samtliga 14 hubbar** — integrationen
+bakom `NOTION_TOKEN` är inte inbjuden till dem (`•••` → Connections per sida).
+`run.mjs` avbryter då med "Inga creative hubs kunde läsas", vilket är rätt
+beteende: en ofullständig läsning får aldrig bli en utbetalning. **Gå då vidare
+till steg 1 och bygg jobbfilen med `mcp__Notion__*`-verktygen** — rutinen har
+Notion-connectorn kopplad. Skriv i rapporten vilken väg som användes.
+
+Saknas både `NOTION_TOKEN` och MCP:n: rapportera det och räkna ingenting.
 
 ## ⚠️ Leverera ALLTID siffror
 
@@ -232,8 +236,22 @@ på samma rad, och skriver
 Topplistan är sidan redigerarna själva öppnar:
 **https://claude.ai/code/artifact/77145ba8-a1cc-4791-9757-0715a8d97ff8**
 
+Två regler styr vad sidan visar (Axels beslut 2026-09-02):
+
+1. **Spend visas aldrig** — varken totalt eller per person. Sidan handlar om vad
+   redigeraren tjänat. `commission/leaderboard.json` bär därför ingen spend alls;
+   bygg aldrig tillbaka den.
+2. **Beloppen står i USD.** Kursen hämtas från ECB via `commission/valuta.mjs`
+   en gång per dygn och sparas i `commission/valutakurs.json`. Kursen och dess
+   datum visas på sidan. **Hitta aldrig på en kurs** — svarar inte nätet används
+   den sparade, och sidan märker ut att den är gammal.
+
+Rapporten i `commission/korningar/` är oförändrad: den räknar i SEK och är
+kvittot på utbetalningen. Topplistan är samma siffror växlade till dollar.
+
 `run.mjs` skriver `commission/leaderboard.json` **varje körning**, också de dagar
 ingen rapport ska sparas — en topplista som står stilla två dygn är värdelös.
+Perioden är kalendermånaden: sidan nollställs av sig själv den 1:a.
 Lägg upp den nya datan på sidan:
 
 ```
@@ -312,6 +330,7 @@ körning skriver samma fil igen.
 - [ ] Endast svenska annonser räknade — antal och belopp bortfiltrerat redovisat
 - [ ] Utbetalningstabellen levererad med exakt/översatt särredovisat
 - [ ] Leaderboarden uppdaterad med dagens data (eller orsaken skriven i rapporten)
+- [ ] Topplistan bär ingen spend, bara intjänat i USD, med kursens datum
 - [ ] Sagt rakt ut om körningen är slutavräkning eller lägeskoll
 - [ ] Okända Ansvariga, namnkonflikter och olästa källor listade som åtgärder
 - [ ] Ingenting skrivet mot Meta eller Notion

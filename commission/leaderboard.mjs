@@ -2,46 +2,45 @@
 // leaderboard.mjs — gör om en commission-körning till en daglig topplista.
 //
 // Commission-rapporten är ett kvitto: den räknar pengar och skrivs bara på
-// kördagar. Leaderboarden är motsatsen — den ska uppdateras VARJE dag, visa
-// läget just nu och kunna öppnas på en mobil av redigerarna i Manila.
+// kördagar. Leaderboarden är motsatsen — den uppdateras EN gång per dygn, visar
+// månaden hittills och öppnas på mobil av redigerarna i Manila.
 //
 //   node commission/leaderboard.mjs                 bygg ur senaste rapporten
 //   node commission/leaderboard.mjs --rapport <fil> bygg ur en viss rapport
-//   node commission/leaderboard.mjs --visa          skriv ut i terminalen
+//
+// TVÅ REGLER SOM STYR ALLT HÄR (Axels beslut 2026-09-02):
+//  1. Spend visas aldrig — varken totalt eller per person. Topplistan handlar
+//     om vad redigeraren tjänat, inget annat.
+//  2. Beloppen står i USD. Kursen hämtas från ECB via commission/valuta.mjs,
+//     aldrig ur huvudet, och sidan visar vilken dag kursen gäller.
+//
+// Perioden är kalendermånaden och nollställs av sig själv vid månadsskiftet:
+// september räknas från 1 september, oktober börjar om på noll den 1 oktober.
 //
 // Två filer skrivs:
-//   commission/leaderboard.json      — datan som läggs upp på leaderboard-sidan
-//   commission/leaderboard-historik.json — en rad per dag, ger dagens ökning
-//
-// ⚠️ Läs-bara som resten av /commission. Den räknar inte om något: den läser
-// rapportens egna siffror, så tabellen på sidan och utbetalningen kan aldrig
-// säga olika saker.
+//   commission/leaderboard.json          — datan som läggs upp på sidan
+//   commission/leaderboard-historik.json — en rad per dygn, ger dagens ökning
 
 import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
+import { hamtaKurs, tillUsd } from './valuta.mjs';
 
 const ROT = resolve(new URL('..', import.meta.url).pathname);
 export const DATAFIL = `${ROT}/commission/leaderboard.json`;
 export const HISTORIKFIL = `${ROT}/commission/leaderboard-historik.json`;
 
-/** Så många dagar historik som sparas — en månad räcker för sidans kurvor. */
+/** Så många dygn historik som sparas — en månad räcker för sidans kurvor. */
 export const HISTORIKDAGAR = 40;
 
 const sek = (karta) => Number(karta?.SEK ?? 0);
 const avrunda = (tal) => Math.round(tal * 100) / 100;
 
-/** Valutor utöver SEK, om någon skulle dyka upp. Summeras aldrig ihop. */
-function ovrigaValutor(karta) {
-  return Object.entries(karta ?? {})
-    .filter(([v, b]) => v !== 'SEK' && b)
-    .map(([valuta, belopp]) => ({ valuta, belopp: avrunda(belopp) }));
-}
-
 /**
- * De tre kampanjer redigeraren dragit mest spend på. Kampanjnamnet är det
- * närmaste vi kommer "vilken produkt" utan att slå upp något nytt.
+ * Redigerarens commission per kampanj. Kampanjnamnet är det närmaste vi kommer
+ * "vilken produkt" utan att slå upp något nytt. Beloppen är commission, aldrig
+ * spend — spenden lämnar aldrig rapporten.
  */
-export function toppkampanjer(annonser = [], antal = 3) {
+export function toppkampanjer(annonser = [], sats, kurs, antal = 3) {
   const per = new Map();
   for (const a of annonser) {
     const namn = String(a.kampanj ?? a.hubb ?? '').trim() || '—';
@@ -50,27 +49,27 @@ export function toppkampanjer(annonser = [], antal = 3) {
   return [...per.entries()]
     .sort((a, b) => b[1] - a[1])
     .slice(0, antal)
-    .map(([namn, spend]) => ({ namn, spend: avrunda(spend) }));
+    .map(([namn, spend]) => ({ namn, usd: tillUsd(spend * sats, kurs) }));
 }
 
-/** Annonsen som dragit mest spend — den som faktiskt bär personens månad. */
-export function bastaAnnons(annonser = []) {
+/** Annonsen som gett mest commission — den som bär personens månad. */
+export function bastaAnnons(annonser = [], sats, kurs) {
   const b = [...annonser].sort((a, b2) => (b2.spend ?? 0) - (a.spend ?? 0))[0];
-  return b ? { namn: b.adNamn, spend: avrunda(b.spend ?? 0) } : null;
+  return b ? { namn: b.adNamn, usd: tillUsd((b.spend ?? 0) * sats, kurs) } : null;
 }
 
 /**
- * Historiken är kumulativ spend per dag och person. Dagens ökning är
- * skillnaden mot föregående dag I SAMMA MÅNAD — den 1:a är hela dagens spend,
- * för då nollställs perioden.
+ * Historiken är kumulativ commission per dygn och person, i USD. Dagens ökning
+ * är skillnaden mot föregående dygn I SAMMA MÅNAD — den 1:a är hela dagen, för
+ * då nollställs perioden.
  */
-export function dagensOkning(historik, manad, datum, id, spendNu) {
+export function dagensOkning(historik, manad, datum, id, usdNu) {
   const tidigare = historik
     .filter((h) => h.manad === manad && h.datum < datum)
     .sort((a, b) => a.datum.localeCompare(b.datum))
     .pop();
   if (!tidigare) return null;
-  return avrunda(spendNu - Number(tidigare.per?.[id] ?? 0));
+  return avrunda(usdNu - Number(tidigare.per?.[id] ?? 0));
 }
 
 /** Platsen personen hade i den senaste tidigare mätningen, oavsett månad. */
@@ -88,11 +87,15 @@ export function forraPlatsen(historik, datum, id) {
  * Bygger leaderboard-datan ur en färdig commission-rapport.
  *
  * @param {object} rapport  Rapporten från commission/berakning.mjs.
- * @param {object} [opt]
- * @param {Array}  [opt.historik]  Tidigare dagsmätningar.
+ * @param {object} opt
+ * @param {{kurs:number,datum:string,gammal:boolean}} opt.valuta  Kursen SEK→USD.
+ * @param {Array}  [opt.historik]  Tidigare dygnsmätningar.
  * @param {object} [opt.kallor]    Källorna från run.mjs (hubbar, konton).
  */
-export function byggLeaderboard(rapport, { historik = [], kallor = null } = {}) {
+export function byggLeaderboard(rapport, { valuta, historik = [], kallor = null }) {
+  if (!valuta?.kurs) throw new Error('Ingen växelkurs — topplistan får aldrig visa gissade dollar.');
+  const kurs = valuta.kurs;
+  const sats = rapport.sats;
   const datum = rapport.period.till;
   const manad = rapport.period.manad;
 
@@ -100,27 +103,25 @@ export function byggLeaderboard(rapport, { historik = [], kallor = null } = {}) 
     .map((e) => ({
       id: e.id,
       namn: e.namn,
-      spend: avrunda(sek(e.spend)),
-      commission: avrunda(sek(e.commission)),
+      usd: tillUsd(sek(e.commission), kurs),
       annonser: (e.annonser ?? []).length,
-      kampanjer: toppkampanjer(e.annonser),
-      basta: bastaAnnons(e.annonser),
-      ovriga: ovrigaValutor(e.spend),
+      kampanjer: toppkampanjer(e.annonser, sats, kurs),
+      basta: bastaAnnons(e.annonser, sats, kurs),
     }))
-    .sort((a, b) => b.spend - a.spend)
+    .sort((a, b) => b.usd - a.usd)
     .map((r, i) => ({ plats: i + 1, ...r }));
 
   for (const r of rader) {
-    r.okning = dagensOkning(historik, manad, datum, r.id, r.spend);
+    r.okning = dagensOkning(historik, manad, datum, r.id, r.usd);
     r.forraPlats = forraPlatsen(historik, datum, r.id);
     r.flytt = r.forraPlats === null ? 0 : r.forraPlats - r.plats;
   }
 
   const obetald = {
-    utanAnsvarig: avrunda(sek(rapport.utanMottagare?.spend)),
-    okanda: avrunda((rapport.okandaAnsvariga ?? []).reduce((s, o) => s + sek(o.spend), 0)),
+    utanAnsvarig: tillUsd(sek(rapport.utanMottagare?.commission), kurs),
+    okanda: tillUsd((rapport.okandaAnsvariga ?? []).reduce((s, o) => s + sek(o.commission), 0), kurs),
     ejRedigerare: (rapport.ejRedigerare ?? []).map((p) => ({
-      namn: p.namn, roll: p.roll, spend: avrunda(sek(p.spend)),
+      namn: p.namn, roll: p.roll, usd: tillUsd(sek(p.commission), kurs),
     })),
     konflikter: (rapport.konflikter ?? []).length,
   };
@@ -131,12 +132,13 @@ export function byggLeaderboard(rapport, { historik = [], kallor = null } = {}) 
     manad,
     period: { fran: rapport.period.fran, till: rapport.period.till },
     slutavrakning: Boolean(rapport.period.heltMatad),
-    sats: rapport.sats,
+    sats,
+    valuta: { kod: 'USD', kurs, datum: valuta.datum, gammal: Boolean(valuta.gammal) },
     rader,
     totalt: {
-      spend: avrunda(sek(rapport.totalt?.spend)),
-      commission: avrunda(sek(rapport.totalt?.commission)),
+      usd: tillUsd(sek(rapport.totalt?.commission), kurs),
       annonser: rader.reduce((s, r) => s + r.annonser, 0),
+      redigerare: rader.length,
     },
     obetald,
     kallor: kallor
@@ -148,17 +150,18 @@ export function byggLeaderboard(rapport, { historik = [], kallor = null } = {}) 
   };
 }
 
-/** Dagens mätning, som den sparas i historiken. En rad per dag. */
+/** Dygnets mätning, som den sparas i historiken. En rad per dygn. */
 export function dagsrad(leaderboard) {
   return {
     datum: leaderboard.period.till,
     manad: leaderboard.manad,
-    per: Object.fromEntries(leaderboard.rader.map((r) => [r.id, r.spend])),
+    valuta: 'USD',
+    per: Object.fromEntries(leaderboard.rader.map((r) => [r.id, r.usd])),
     platser: Object.fromEntries(leaderboard.rader.map((r) => [r.id, r.plats])),
   };
 }
 
-/** Lägger dagens rad i historiken. Samma datum skrivs över, aldrig dubbleras. */
+/** Lägger dygnets rad i historiken. Samma datum skrivs över, aldrig dubbleras. */
 export function laggIHistorik(historik, rad, max = HISTORIKDAGAR) {
   return [...historik.filter((h) => h.datum !== rad.datum), rad]
     .sort((a, b) => a.datum.localeCompare(b.datum))
@@ -171,7 +174,9 @@ export function lasHistorik(fil = HISTORIKFIL) {
   if (!existsSync(fil)) return [];
   try {
     const data = JSON.parse(readFileSync(fil, 'utf8'));
-    return Array.isArray(data?.dagar) ? data.dagar : [];
+    // Historiken bar kronor och spend före 2026-09-02. De raderna går inte att
+    // jämföra med dollarraderna och kastas hellre än blandas ihop.
+    return Array.isArray(data?.dagar) ? data.dagar.filter((d) => d.valuta === 'USD') : [];
   } catch {
     return [];
   }
@@ -187,11 +192,13 @@ function skriv(fil, data) {
  * körning — även på icke-kördagar, för sidan ska aldrig visa gamla siffror
  * bara för att kalendern säger att ingen rapport ska sparas.
  */
-export function uppdateraLeaderboard(rapport, kallor = null, { datafil = DATAFIL, historikfil = HISTORIKFIL } = {}) {
+export async function uppdateraLeaderboard(rapport, kallor = null,
+  { datafil = DATAFIL, historikfil = HISTORIKFIL, valuta = null } = {}) {
+  const kurs = valuta ?? await hamtaKurs();
   const historik = lasHistorik(historikfil);
-  const leaderboard = byggLeaderboard(rapport, { historik, kallor });
+  const leaderboard = byggLeaderboard(rapport, { valuta: kurs, historik, kallor });
   const dagar = laggIHistorik(historik, dagsrad(leaderboard));
-  skriv(historikfil, { uppdaterad: leaderboard.uppdaterad, dagar });
+  skriv(historikfil, { uppdaterad: leaderboard.uppdaterad, valuta: 'USD', dagar });
   skriv(datafil, leaderboard);
   return leaderboard;
 }
@@ -199,7 +206,7 @@ export function uppdateraLeaderboard(rapport, kallor = null, { datafil = DATAFIL
 /**
  * Bakar in dagens data i sidmallen och skriver den publicerbara filen.
  * Sidan hämtar sin data live ur artifact-databasen; den inbäddade kopian är
- * bara reservläget, så att sidan aldrig står tom om datan inte kan läsas.
+ * bara reservläget, så att sidan aldrig står tom.
  */
 export function byggSida({ mall = `${ROT}/commission/leaderboard-sida.html`,
   data = DATAFIL, ut = `${ROT}/commission/leaderboard-publicerad.html` } = {}) {
@@ -226,17 +233,18 @@ export function senasteRapporten(rot = ROT) {
 
 /** Terminalvy — samma ordning som sidan, så de aldrig kan säga olika. */
 export function skrivTerminal(l) {
-  const kr = (n) => `${n.toLocaleString('sv-SE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} kr`;
-  console.log(`\nLeaderboard ${l.manad}  ·  ${l.period.fran} – ${l.period.till}`
+  const usd = (n) => `$${n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  console.log(`\nTopplista ${l.manad}  ·  ${l.period.fran} – ${l.period.till}`
     + `${l.slutavrakning ? '  (SLUTAVRÄKNING)' : '  (månaden hittills)'}`);
-  console.log(`${(l.sats * 100).toFixed(1).replace('.', ',')} % av spenden · ${l.rader.length} redigerare\n`);
+  console.log(`Commission i USD · kurs ${l.valuta.kurs} (${l.valuta.datum})`
+    + `${l.valuta.gammal ? ' — sparad kurs, nätet svarade inte' : ''}\n`);
   for (const r of l.rader) {
     const pil = r.flytt > 0 ? `▲${r.flytt}` : r.flytt < 0 ? `▼${-r.flytt}` : '–';
-    const idag = r.okning === null ? '' : `  i dag ${kr(r.okning)}`;
-    console.log(`  ${String(r.plats).padStart(2)}. ${r.namn.padEnd(22)} ${kr(r.spend).padStart(16)}`
-      + `  →  ${kr(r.commission).padStart(12)}  ${pil}${idag}`);
+    const idag = r.okning === null ? '' : `  i dag ${usd(r.okning)}`;
+    console.log(`  ${String(r.plats).padStart(2)}. ${r.namn.padEnd(22)} ${usd(r.usd).padStart(12)}`
+      + `  ${r.annonser} annonser  ${pil}${idag}`);
   }
-  console.log(`      ${'SUMMA'.padEnd(22)} ${kr(l.totalt.spend).padStart(16)}  →  ${kr(l.totalt.commission).padStart(12)}\n`);
+  console.log(`      ${'SUMMA'.padEnd(22)} ${usd(l.totalt.usd).padStart(12)}\n`);
 }
 
 // -------------------------------------------------------------------- CLI
@@ -253,7 +261,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     process.exit(1);
   }
   const rapport = JSON.parse(readFileSync(fil, 'utf8'));
-  const l = uppdateraLeaderboard(rapport, rapport.kallor ?? null);
+  const l = await uppdateraLeaderboard(rapport, rapport.kallor ?? null);
   skrivTerminal(l);
   const sida = byggSida();
   console.log(`Data: commission/leaderboard.json  (ur ${fil.replace(`${ROT}/`, '')})`);
