@@ -21,6 +21,14 @@ klart utan att invänta godkännande; stanna bara vid ägarbeslut eller ❌ neda
 - **Inga mappar flyttas någonsin** — källmappen i WINNERS rörs inte.
   Dubblettspärr i Drive: finns `NO <namn>` redan i MAKE TO NORWAY är produkten
   behandlad → hoppa (komplettera bara om mappen är halvfärdig).
+  ⚠️ **Leta i HELA MAKE TO NORWAY, även i undermapparna** (Axel 2026-09-02):
+  Axel sorterar norska vinnare/förlorare i egna mappar (t.ex. `WINNERS`,
+  `LOSERS`) inuti MAKE TO NORWAY. En `NO <namn>` som ligger där är lika
+  behandlad som en direkt i roten — skapa ALDRIG en ny `NO <namn>` bara för
+  att den flyttats ner en nivå. Lista därför MAKE TO NORWAY rekursivt
+  (`tools/drive-ls.py` på varje undermapp) innan något översätts. Mappar
+  utan `NO `-prefix i MAKE TO NORWAY är Axels sorteringsmappar, inte
+  produkter.
   (Samma ramverk återanvänds per marknad senare: `DK <namn>`, `UK <namn>` osv.)
 
 1. Lista WINNERS. En undermapp = en produkt. Annonsvideor =
