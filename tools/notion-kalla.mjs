@@ -1,10 +1,12 @@
 #!/usr/bin/env node
-// notion-kalla.mjs — Notion som leveranskälla, vid sidan av Drive.
+// notion-kalla.mjs — Notion som leveranskälla. Sedan 2026-09-02 den ENDA källan
+// för /notionkorning (Axels beslut): allt färdigt, video som bild, ligger som
+// bilaga i radens "Filer och media" med status "To be Reviewed".
 //
 // Bakgrund: /bildannonser (20:00) genererar bildannonser med kie.ai och lämnar dem
-// som BILAGA i Notion-radens "Filer och media" med status "To be Reviewed".
-// bildannonser/output/ är gitignorerat och dör med containern — Notion-bilagan är
-// darfor ENDA kopian i världen. Läses den inte här är arbetet borta.
+// där; redigerarna lägger sina videor på samma sätt. bildannonser/output/ är
+// gitignorerat och dör med containern — Notion-bilagan är darfor ENDA kopian i
+// världen. Läses den inte här är arbetet borta.
 //
 // Anvands av tools/leveranskon.mjs. Kan även köras fristående:
 //   node tools/notion-kalla.mjs                 lista klara Notion-rader
@@ -22,8 +24,11 @@ const ROT = new URL('..', import.meta.url).pathname;
 export const ÄR_HUB = (titel) =>
   /creative hub\s*$/i.test((titel || '').trim()) && !/\bMALL\b/i.test(titel || '');
 
-/** Statusar som betyder "redigeraren/rutinen ar klar, vantar pa upplaggning". */
-export const KLAR_STATUS = ['to be reviewed', 'in review', 'approved'];
+/** Statusen som betyder "klar, vantar pa upplaggning". Axels beslut 2026-09-02:
+ *  ENBART "To be Reviewed" — bade video och bild. Allt som star dar har aldrig
+ *  legat uppe i Meta, sa kon ar exakt de raderna. "Approved" och "In Review" raknas
+ *  inte langre (de var Drive-flodets statusar, och Drive ar inte langre en kalla). */
+export const KLAR_STATUS = ['to be reviewed'];
 
 let sist = 0;
 async function notion(sökväg, { method = 'GET', body = null } = {}) {

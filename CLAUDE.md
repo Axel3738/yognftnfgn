@@ -207,7 +207,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/launch <produktnamn>` | **Temu-flödet:** Drive → QA → Judge.me → Meta som PAUSED (`docs/temu-launch-flow.md`) |
 | `/bildannonser [--dry]` | **Rutin 20:00 varje dag:** alla Notion-hubbar → ogjorda bildannonser → kie.ai → `To be Reviewed`. **Aldrig video.** |
 | `/nattkorning` | Rutinen "Ad upload and structure": Drive-kön → QA → Meta |
-| `/notionkorning` | **Nattrutin 00:01:** redigerarnas leveranser → brief-QA → upp i produktens CBO |
+| `/notionkorning` | **Nattrutin 00:01:** Notion `To be Reviewed` (video + bild) → brief-QA → upp i produktens kampanj → Discord `#ads-launching` / `#problem-and-revisions-ads` |
 | `/commission` | **Var tredje dag + månadens sista dag:** godkända Notion-rader → spend i alla annonskonton → 0,4 % till redigeraren |
 
 ### Nattrutinerna
@@ -535,7 +535,8 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 | Mapp/fil | Vad |
 |---|---|
 | `pipeline/ads.mjs`, `meta.mjs` | Laddar upp creatives till Meta som **PAUSED** |
-| `tools/leveranskon.mjs` | Vad redigerarna levererat i Drive som ännu inte finns i kontot (kön för `/notionkorning`) |
+| `tools/leveranskon.mjs` | Kön för `/notionkorning`: Notion-rader i `To be Reviewed` med fil, kopplade till kampanj i kontot (`--drive` läser även gamla Drive-mappar) |
+| `tools/notion-aterkoppling.mjs` | Kommentar på en Notion-rad, och `--status Draft` för en stoppad bildannons (REST, `NOTION_TOKEN`) |
 | `tools/qa-frames.py` | Drar frames ur en levererad video (tätt i hooken) så briefkontrollen går att göra på riktigt |
 | `tools/notion-klara.mjs` | Läser creative-hubbarna via Notions REST API (`NOTION_TOKEN`) — reservväg när MCP:n saknas |
 | `tools/notion-kalla.mjs` | Notion som leveranskälla: hittar alla creative hubs dynamiskt, plockar rader med färdig fil |
@@ -583,23 +584,25 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   5 av 8 rader**. Korskolla alltid mot `amount_spent × purchase_roas`.
 - **Notion-status `In progress 2` betyder REVISION** — annonsen underkändes och
   görs om. Det betyder INTE "längre kommen". Full tabell i `docs/os/NOTION-FORMAT.md`.
-- **En färdig creative kan ligga på två ställen. Läs alltid båda.**
-  | Källa | Vem lägger den där | Status i Notion |
-  |---|---|---|
-  | Drive `Edited Folder/Week N/<namn>/` | redigerarna (video) | oftast redan `Approved` |
-  | Notion `Filer och media` | `/bildannonser` 20:00 (bild via kie.ai) | `To be Reviewed` |
+- **En färdig creative ligger i Notion. Bara där.** (Axels beslut 2026-09-02.)
+  Klar = rad med Typ `… Pending Approval`, status `To be Reviewed` och fil i
+  `Filer och media` — video från redigerarna såväl som bild från `/bildannonser`.
+  Drive `Edited Folder/Week N/` är inte längre en källa för `/notionkorning`
+  (`leveranskon.mjs --drive` finns kvar för gamla mappar). Allt i `To be Reviewed`
+  har aldrig legat uppe i Meta, så ingen avstämning mot kontot behövs för att
+  veta vad som är gjort.
 
   ⚠️ **Notion-bilagan är enda kopian i världen** — `bildannonser/output/` är
   gitignorerat och dör med containern. Läser en rutin inte Notion är arbetet borta,
   och raden fastnar i `To be Reviewed` för alltid eftersom 20:00-rutinen bara plockar
   `Draft`. *(Detta hände: fem färdiga bildannonser låg osynliga tills Axel upptäckte
-  dem 2026-08-31. `/notionkorning` läser sedan dess båda källorna via
-  `tools/notion-kalla.mjs` och larmar högst upp i rapporten om Notion inte gick att läsa.)*
+  dem 2026-08-31. `/notionkorning` larmar högst upp i rapporten om Notion inte gick
+  att läsa.)*
 
-  **De fyra videohubbarna** (motorhöljet, axelbältet, sätesöverdragaren,
-  strandtofflorna) mättes 2026-08-30: där var `Filer och media` tomt på varenda rad
-  och `To be Reviewed` användes inte alls. **Det gällde de fyra hubbarna den dagen —
-  inte alla hubbar, inte för alltid.** Bildhubbarna fungerar tvärtom.
+  **Stoppregeln i `/notionkorning` är en enda: pris som avviker mer än 20 % från
+  Shopify-sidan.** Allt annat är anmärkning på video (laddas upp ändå, felstavning
+  är okej) och `Draft`-retur med kommentar på bild (görs om 20:00). Ingen nödbroms
+  på antal leveranser.
 
 - **Skriv aldrig en mätning som en evig lag.** Regeln ovan stod en gång som
   "`Filer och media` är tomt på samtliga rader … bygg därför aldrig". Den var falsk
