@@ -90,8 +90,13 @@ väntar på tokenen. Kör aldrig mot den svenska butiken i stället.
 
 ## Fas 5 — Rapportera
 
+Rapporten går till Discord-kanalen **#reviews** (Axels beslut 2026-09-02),
+`1544586846787477504`. Kanal-id:t skrivs ut explicit — environmentets
+`DISCORD_CHANNEL_ID` pekar på en annan kanal, och namnuppslaget i verktyget
+faller tillbaka på `new-products…` om namnet inte hittas.
+
 ```bash
-node tools/notify-discord.mjs "<rapporten>"
+DISCORD_CHANNEL_ID=1544586846787477504 node tools/notify-discord.mjs "<rapporten>"
 ```
 
 Verktyget skickar via boten (`DISCORD_BOT_TOKEN` + `DISCORD_CHANNEL_ID`) om de
@@ -113,5 +118,5 @@ Committa `sources.json`, kartorna och `output/`, och pusha.
 - [ ] Bygget kört, bortvalslistan läst och redovisad
 - [ ] `--dry` granskad före skarp import
 - [ ] Importen körd, eller blockeringen skriven i rapporten
-- [ ] Rapport skickad i Discord
+- [ ] Rapport skickad i Discord-kanalen #reviews
 - [ ] Allt committat och pushat
