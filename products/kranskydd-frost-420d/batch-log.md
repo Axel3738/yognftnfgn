@@ -40,3 +40,46 @@ explicit här och i leveransrapporten. Tre-frågorstestet (copy-regler.md) är
 **Levererat 2026-08-29:** se leveransrapporten
 (`docs/briefs/kranskydd-frost-420d-batch1/RAPPORT.md`) för Drive-/Notion-status
 och fullständig Definition of Done.
+
+## Batch #3 — 2026-09-02 (`/rond-auto`, brief_runda, 4 dagar sedan batch #2)
+
+**Feedback loop:** batch #2:s 6 annonser (SP_3_H1, SP_3_1, UG_1_H1, PD_3_1,
+CI_1_H1, CI_1_1) syns ännu INTE i Meta-kontot — bara batch #1:s 18
+originalannonser finns (verifierat via `ads_get_ad_entities`, `level: ad`,
+`date_preset: maximum`, kampanj `120249975043720291`). SP_1_H3 (vinnaren)
+har växt till 3 086 kr spend / 15 köp / ROAS 1,99 sedan `dna.md` skrevs
+(1 730 kr / 7 köp) — mönstret håller och stärks, men ingen ny teardown gjord
+denna körning (samma kvalitativa slutsats). Alla fyra "Testa
+kontrollerat"-idéer utom en (PD-copy som statisk retest) är redan förbrukade
+av batch #2. Recensionsluckan i backlog.md ("inga recensioner hämtade än")
+är nu fylld: 10 Judge.me-recensioner hittade.
+
+9 briefer (2 video + 2 statisk i rundan, 3 BOF-bilder, 2 review-bilder):
+
+| Annons | Format | Hypotes | Källa |
+|---|---|---|---|
+| Kranskydd_PD_4_1 | statisk | PD-copy som statisk retest (isolerad formatvariabel) | explicit flaggad i dna.md "Testa kontrollerat" |
+| Kranskydd_SP_4_H1 | video | Ny SP-persona: fastighetsskötare/hyresvärd, flera kranar | ny segmentiteration på bevisad SP-vinkel |
+| Kranskydd_SP_4_1 | statisk | SP:s struktur + ärlig säsongsbrådska ersätter rabatt-brådska | dna.md: "ny copy utan rabatt ska ersätta CS" |
+| Kranskydd_SP_5_H1 | video | Ny SP-persona: stugägare, obebodd fastighet på vintern | ny segmentiteration på bevisad SP-vinkel |
+| Kranskydd_PD_6_1 | statisk (BOF) | Pris/erbjudande-retargeting | Axel 2026-09-02: obligatorisk BOF-serie |
+| Kranskydd_PD_7_1 | statisk (BOF) | Garanti/frakt (30 dagar, Klarna, fri frakt) | Axel 2026-09-02: obligatorisk BOF-serie |
+| Kranskydd_PD_8_1 | statisk (BOF) | Tidsförlust vid spräckt kran vs 10 sek skydd, ingen påhittad kr-siffra | Axel 2026-09-02: obligatorisk BOF-serie + dna.md:s regel mot påhittade summor |
+| Kranskydd_REV_1_1 | statisk (review) | Verklig recension "Bra kvalitet" | Judge.me, verifierad, ordagrant — fyller backlog-luckan |
+| Kranskydd_REV_2_1 | statisk (review) | Verklig recension "Fungerar bra" | Judge.me, verifierad, ordagrant — fyller backlog-luckan |
+
+**GT (gåva) och CS (rea) fick INGA nya annonser igen** — GT fortsatt pausad
+till november, CS fortsatt BLOCKER (ingen riktig rabatt i Shopify).
+
+Launch-regel: **separat test-ABO, lika budget per annons** (CLAUDE.md regel 11).
+
+**Modellpolicy:** all svensk copy skriven av sonnet-subagent denna gång
+(Agent-verktyget fanns tillgängligt, till skillnad från batch #2) —
+tre-frågorstestet kört rad för rad i subagentens leverans, verifierat av
+huvudsessionen innan Notion-uppladdning.
+
+**Levererad 2026-09-02:** 9 Notion-items i befintlig hub "Kranskydd Frost
+420D creative hub" (Status Draft, Typ Video/Image - Pending Approval, hela
+briefen i sidan). Drive Batch #3 (`1MJatX6MH1n8QXhclX5y9SV_1uBK6xBA0`): en
+översiktsdoc med alla 9 briefer länkade till Notion. `CS_BATCH_KLAR` loggad
+i `agent/budgetlogg.jsonl`.
