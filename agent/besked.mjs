@@ -21,8 +21,9 @@ export const MIN_DAGAR_MELLAN_ANDRINGAR = 3;
 
 // Snabbspåret (Axels beslut 2026-08-29): en produkt i skalningszonen med
 // ROAS ≥ 3 får höjas 20 % redan dagen efter förra ändringen, inte var tredje
-// dag. Gäller BARA höjningar — sänkningar och avstängningar väntar alltid
-// sina tre dagar, eftersom färska minus-siffror revideras uppåt i efterhand.
+// dag. Gäller BARA höjningar — sänkningar väntar alltid sina tre dagar,
+// eftersom färska minus-siffror revideras uppåt i efterhand. Avstängning av
+// en testprodukt som går back väntar däremot ALDRIG (Axel 2026-09-02).
 export const SNABB_SKALNING_ROAS = 3.0;
 export const SNABB_MIN_DAGAR = 1;
 
@@ -272,6 +273,16 @@ export function besked(rad) {
     const roasText = Number.isFinite(rad.roas3d)
       ? ` ROAS ${rad.roas3d.toFixed(2).replace('.', ',')} mot break-even ${breakEven.toFixed(2).replace('.', ',')}.`
       : '';
+    // Axels order 2026-09-02: ett larm som ingen agerar på är ingen spärr.
+    // Jättefotbollen fick STOR_SPEND_UTAN_KOP tre morgnar i rad (31/8, 31/8,
+    // 1/9) med "en människa måste titta" och brände ~1 000 kr om dagen tills
+    // Axel själv såg det. En testprodukt över 1 500 kr som bränner utan att gå
+    // ihop går därför ÅTGÄRDSTRAPPAN direkt — samma morgon, oavsett kadens.
+    if (lage === 'test') {
+      return svar('ATGARDSTRAPPAN', 'Bränner pengar — stäng av om potential saknas',
+        `${kr(spend3d)} på 3 dagar och bara ${kopText}, utan att gå ihop.${roasText} Över ${kr(TEST_TROSKEL_SEK)} sedan start. Läs annonserna: finns minst en annons med köp över break-even OCH en spendtjuv, pausa spendtjuven och ge kampanjen ETT dygn till. Annars stängs hela kampanjen av i dag.`,
+        { zon: 'stop', kraverGodkannande: true });
+    }
     return svar('STOR_SPEND_UTAN_KOP', 'Bränner pengar — larm',
       `${kr(spend3d)} på 3 dagar och bara ${kopText}, utan att gå ihop.${roasText} Det är inte "för lite data" längre — något är fel (produktsidan, priset, lagret?). En människa måste titta.`);
   }
@@ -297,7 +308,12 @@ export function besked(rad) {
   const snabbspar = rad.roas3d >= SNABB_SKALNING_ROAS && vinst >= ZON_SKALA_OVER
     && rad.senasteAndringKod === 'SKALA';
   const minDagar = snabbspar ? SNABB_MIN_DAGAR : MIN_DAGAR_MELLAN_ANDRINGAR;
-  if (Number.isFinite(dagar) && dagar < minDagar) {
+  // Kadensen skyddar Metas inlärning mellan BUDGETÄNDRINGAR. En testprodukt
+  // som går back ska inte få bränna tre dygn till bara för att budgeten
+  // rördes nyligen — förlusten går vidare till trappan/tröskeln nedan
+  // (Axel 2026-09-02: "om det ser dåligt ut stänger vi av direkt").
+  const forlustITest = vinst < 0 && lage === 'test';
+  if (!forlustITest && Number.isFinite(dagar) && dagar < minDagar) {
     return svar('VANTA_KADENS', 'Vänta — ändrad för nyligen',
       `Budgeten ändrades för ${dagar} ${dagar === 1 ? 'dag' : 'dagar'} sedan. Nästa ändring tidigast efter ${minDagar} ${minDagar === 1 ? 'dag' : 'dagar'}.`,
       { vinstProcent: vinst });

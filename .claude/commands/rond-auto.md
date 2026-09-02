@@ -24,15 +24,18 @@ upp, skala ner och stänga av enligt reglerna, utan att fråga per rad.
 
 **Tolkningsregel (Axel 2026-08-30):** när körordern (trigger-prompten) säger
 "utför bara det som står i plan.atgarder" syftar det på BUDGETÄNDRINGARNA i
-Meta. Annonsbehoven i steg 4b är fortfarande obligatoriska — kör upp till två
-per morgon. En körning som lämnar förfallna behov utan åtgärd och utan
+Meta. Annonsbehoven i steg 4b är fortfarande obligatoriska — alla
+förstabatcher plus två brief-rundor per morgon (se 4b). En körning som lämnar
+förfallna behov utan åtgärd och utan
 redovisning är INTE klar. (Körningen 2026-08-30 hoppade över hela kön på den
 meningen — det var fel tolkning.)
 
-Ronden KÖRS varje dag, men varje produkt ÄNDRAS högst var tredje dag —
+Ronden KÖRS varje dag, men varje produkts BUDGET ändras högst var tredje dag —
 utom snabbspåret: en produkt i skalningszonen med ROAS ≥ 3 får höjas 20 %
-redan dagen efter förra höjningen. Sänkningar och avstängningar väntar alltid
-sina tre dagar. Allt det räknar `agent/besked.mjs` ut — inte du.
+redan dagen efter förra höjningen. Sänkningar väntar alltid sina tre dagar.
+**Avstängning av en testprodukt som går back väntar ALDRIG** — passerad
+1 500 kr och under break-even går den trappan samma morgon (Axel 2026-09-02).
+Allt det räknar `agent/besked.mjs` ut — inte du.
 
 Gäller **bara Bäverbutiken / MagiBorsten `1867947880635861`**. Grillkliniken
 (SnarkLös `1346450049878358`) rörs aldrig.
@@ -281,6 +284,18 @@ måste höjas.
      **"Image - Pending Approval"** för bildannonser (Axels nya typ i mallen).
   Går mallen inte att hitta: skapa INGEN hub — lista i svaret exakt vilka
   items som skulle skapats och säg det till Axel.
+  **HELA BRIEFEN SKA LIGGA I NOTION-ITEMET** (Axels besked 2026-09-02). Sidans
+  innehåll ÄR briefen: hypotes, hook-tabell, shot list med svenska rader i
+  `Swedish (use this) | English meaning`, creator/editing direction, CTA, KPI,
+  globala regler — allt. Drive-länken till batchmappen är ett komplement som
+  läggs överst, aldrig ersättningen. **Skriv ALDRIG "se brief.md i Drive" eller
+  en länk till en .md-fil** — redigerarna kan inte öppna dem, och en Notion-sida
+  med bara en länk är en tom brief. *(Hände 2026-08-31: alla 12 kamera-items
+  innehöll tre rader och länken `http://brief.md`. Redigerarna stod stilla en
+  hel dag och Axel fick "I can't access the links" i Slack.)*
+  Innan `*_KLAR` loggas: öppna ETT av de skapade itemen med notion-fetch och
+  kontrollera att shot list/design brief faktiskt står där. Saknas den är
+  batchen inte klar.
   **ALLT som skrivs i Notion är på ENGELSKA** — itemnamn, statusar, innehåll,
   kommentarer. Redigerarna läser inte svenska.
   Anteckna hubbens id + Drive-mappens id i `agent/produktkarta.json`.
@@ -390,6 +405,7 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
       *_KLAR-loggrad och minnesfiler pushade — eller exakt redovisat varför inte
 - [ ] Inga briefer, hubbar eller minnesfiler skapade för NO — Norge är bara budget
 - [ ] Varje ny Notion-hub verifierad att den ligger öppet i teamspacet Bäverbutiken
+- [ ] Ett skapat Notion-item öppnat och kontrollerat: hela briefen står i sidan, ingen `.md`-länk
 - [ ] Alla loggrader skrivna och pushade efter varje ändring (= minnet sparat)
 - [ ] Ingen artefakt publicerad och `agent/dashboard.mjs` inte körd
 - [ ] Notion-svepet kört: hubbar avlästa med `is_archived`, drafts hämtade,

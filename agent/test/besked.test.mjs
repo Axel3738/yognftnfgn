@@ -358,7 +358,12 @@ test('en testprodukt under 1 500 kr totalspend larmas aldrig — MC-Kapellet-reg
   const dom = besked(rad({ lage: 'test', spend3d: 1053, kop3d: 2, roas3d: 1.2, spendTotal: 1114 }));
   assert.equal(dom.kod, 'FOR_LITE_DATA');
   // Samma siffror ÖVER tröskeln: larm.
-  assert.equal(besked(rad({ lage: 'test', spend3d: 1053, kop3d: 2, roas3d: 1.2, spendTotal: 1600 })).kod, 'STOR_SPEND_UTAN_KOP');
+  // Axel 2026-09-02: över tröskeln är det inte ett larm längre utan trappan —
+  // Jättefotbollen fick larmet tre morgnar i rad utan att någon stängde av.
+  const over = besked(rad({ lage: 'test', spend3d: 1053, kop3d: 2, roas3d: 1.2, spendTotal: 1600 }));
+  assert.equal(over.kod, 'ATGARDSTRAPPAN');
+  assert.equal(over.kraverGodkannande, true);
+  assert.match(over.motivering, /Bränner|utan att gå ihop/);
   // Drift larmar oavsett totalspend.
   assert.equal(besked(rad({ lage: 'drift', spend3d: 1053, kop3d: 2, roas3d: 1.2, spendTotal: null })).kod, 'STOR_SPEND_UTAN_KOP');
 });
@@ -385,4 +390,15 @@ test('break-even läses ur BÅDA skrivsätten — Sverige och Norge', () => {
 test('TBC gäller även med bindestreck', () => {
   assert.equal(lasBreakEven('Ny produkt NO | BE-ROAS TBC | 2026-08-31').be, null);
   assert.equal(lasBreakEven('Ny produkt | BE ROAS TBC | 2026-08-31').be, null);
+});
+
+
+test('kadensspärren stoppar aldrig avstängningen av en testprodukt som går back', () => {
+  // Axel 2026-09-02: "om det ser dåligt ut stänger vi av direkt". Budgeten
+  // ändrades igår — det ska inte ge en förlorare tre dygn till.
+  const dom = besked(rad({ lage: 'test', roas3d: 1.2, spendTotal: 2500, dagarSedanAndring: 1 }));
+  assert.equal(dom.kod, 'ATGARDSTRAPPAN');
+  // Men en driftprodukt som ska SÄNKAS väntar fortfarande på kadensen.
+  const drift = besked(rad({ lage: 'drift', roas3d: 1.2, spendTotal: 9000, budget: 2000, dagarSedanAndring: 1 }));
+  assert.equal(drift.kod, 'VANTA_KADENS');
 });
