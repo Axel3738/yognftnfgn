@@ -31,11 +31,15 @@ Torrläget är alltid säkert att köra — använd det vid minsta tvekan.
 
 Beslut 2026-08-30, uppdaterade 2026-09-02:
 
-1. **Källan är Notion. Bara Notion.** Klar = en rad i någon creative hub med
-   Typ `… Pending Approval`, status **`To be Reviewed`** och en fil i
-   `Filer och media`. Det gäller **både video och bild.** Redigerarna lägger sina
-   videor där; `/bildannonser` lägger bilderna där 20:00 varje kväll.
+1. **Källan är Notion. Bara Notion. Hela teamspacet Bäverbutiken.** Klar = en rad
+   i **vilken databas som helst under teamspacet Bäverbutiken**
+   (`3a9270ab-908c-81a8-a48c-004222d195e7`) med status **`To be Reviewed`** och en
+   fil i `Filer och media`. Det gäller **både video och bild**, och det kräver
+   ingen särskild Typ och inget särskilt hubbnamn. Redigerarna lägger sina videor
+   där; `/bildannonser` lägger bilderna där 20:00 varje kväll. Nya databaser i
+   teamspacet kommer med av sig själva.
    Drive `Edited Folder/Week N/` är **inte längre en källa** (Axel 2026-09-02).
+   Andra teamspaces (Grillkliniken, Matstrumpor, Ploomi) läses aldrig.
 
    ⚠️ **Notion-bilagan är enda kopian i världen.** `bildannonser/output/` är
    gitignorerat och dör med containern. Läses inte Notion är arbetet borta, och
@@ -55,12 +59,16 @@ Beslut 2026-08-30, uppdaterade 2026-09-02:
 4. **Grön QA aktiveras direkt.** Rutinen väntar inte på att Axel slår på.
 5. **Stoppregeln är en enda: priset.** Skiljer priset i annonsen mer än **20 %**
    (upp eller ner) från produktsidans pris i Shopify just nu, stoppas annonsen.
+   **Nämner annonsen inget pris finns inget att stoppa på** — den är grön.
    Allt annat i checklistan är anmärkningar som rapporteras, inte stopp.
    Felstavningar i **videoannonser** är okej.
-6. **Bildannonser med problem** — vilket problem som helst, även en felstavning —
-   får en kommentar i Notion med vad som är fel och flyttas tillbaka till
-   **`Draft`** så 20:00-rutinen gör om dem. De laddas inte upp.
-   **Videoannonser** som stoppas får bara en kommentar; statusen rörs inte.
+6. **Problem = kommentar + tillbaka till `Draft`. Video som bild.** En creative
+   med problem laddas inte upp: den får en kommentar i Notion med vad som är
+   fel och flyttas tillbaka till **`Draft`** så den görs om (bild av 20:00-rutinen,
+   video av redigeraren). Vad som räknas som problem skiljer sig:
+   - **Bild:** vilket problem som helst, även en felstavning.
+   - **Video:** bara priset (regel 5). Småfel och felstavningar laddas upp ändå,
+     med en anmärkning i rapporten.
    Det är den enda gången rutinen ändrar en Notion-status.
 7. **Ingen nödbroms på antal.** Tio, tjugo eller femtio leveranser en natt är
    bara bra — alla kollas och alla godkända laddas upp.
@@ -110,13 +118,13 @@ node tools/leveranskon.mjs --json     # maskinläsbart
 node tools/leveranskon.mjs --alla     # även rader vars namn redan finns i kontot
 ```
 
-Verktyget läser **alla creative hubs i Notion** via `notion-kalla.mjs` (kräver
-`NOTION_TOKEN` på rutinen — rutiner ärver inte sessionens connectors) och slår
-upp kampanjen per prefix i MagiBorsten. Är Notion-MCP:n kopplad går det lika bra
-att läsa hubbarna den vägen: teamspacet Bäverbutiken
-(`3a9270ab-908c-81a8-a48c-004222d195e7`), databaser vars titel slutar på
-`creative hub`, rader med Typ `… Pending Approval` + status `To be Reviewed` +
-fil. Skriv i rapporten vilken väg du gick.
+Verktyget läser **alla databaser integrationen ser** via `notion-kalla.mjs`
+(kräver `NOTION_TOKEN` på rutinen — rutiner ärver inte sessionens connectors)
+och slår upp kampanjen per prefix i MagiBorsten. Är Notion-MCP:n kopplad är den
+förstahandsvägen: **alla databaser under teamspacet Bäverbutiken**
+(`3a9270ab-908c-81a8-a48c-004222d195e7`), varje rad med status `To be Reviewed`
+och fil i `Filer och media`. Inget krav på Typ, inget krav på hubbnamn. Skriv i
+rapporten vilken väg du gick och vilka databaser som lästes.
 
 **Hämta hem bilagan** innan QA och uppladdning:
 ```bash
@@ -206,7 +214,7 @@ Att materialet är uttaget är inte samma sak som att det är granskat.
 
 | # | Punkt | Var | Video | Bild |
 |---|-------|-----|-------|------|
-| 1 | **Priset i annonsen mot Shopify-priset: avvikelse ≤ 20 %** | all inbränd text | 🛑 stopp | 🛑 stopp |
+| 1 | **Priset i annonsen mot Shopify-priset: avvikelse ≤ 20 %** (inget pris i annonsen = grön) | all inbränd text | 🔁 Draft | 🔁 Draft |
 | 2 | Hooken i briefen är hooken i bild | frames 0–3 s | anmärkning | 🔁 Draft |
 | 3 | Formatet stämmer (UGC / before-after / comparison …) | hela | anmärkning | 🔁 Draft |
 | 4 | Vinkeln stämmer (pain / benefit / social …) | hela | anmärkning | 🔁 Draft |
@@ -220,14 +228,13 @@ Att materialet är uttaget är inte samma sak som att det är granskat.
 
 Läs tabellen så här:
 
-- **🛑 stopp** — annonsen laddas inte upp. Gäller video och bild, och bara
-  punkt 1. Räkna: `|annonspris − shopifypris| / shopifypris`. Över 0,20 = stopp.
-  Ingen pris i annonsen alls = grön på punkt 1.
+- **🔁 Draft** — annonsen laddas inte upp. Kommentar i Notion med vad som är
+  fel, sedan status → `Draft`. Bild görs om av 20:00-rutinen nästa kväll, video
+  av redigeraren. För video gäller det bara punkt 1; för bild alla punkter.
+  Punkt 1 räknas: `|annonspris − shopifypris| / shopifypris`. Över 0,20 = Draft.
+  Inget pris i annonsen alls = grön på punkt 1, oroa dig inte för den.
 - **anmärkning** (video) — annonsen laddas upp ändå. Anmärkningen står i
   rapporten så Axel och managern ser den. Felstavningar i video är okej.
-- **🔁 Draft** (bild) — annonsen laddas inte upp. Kommentar i Notion med vad som
-  är fel, sedan status → `Draft`. Bilder är gratis att göra om; 20:00-rutinen
-  tar den igen nästa kväll.
 
 **Rabattclaim som inte stämmer ändras aldrig i annonsen** (Axels policy
 2026-08-29) — jämförpriset höjs i stället så claimen stämmer:
@@ -243,11 +250,11 @@ En QA-rad per creative: ✅ / anmärkning / 🛑 / 🔁 per punkt. **Varje fynd 
 peka ut var det sitter** — frame-nummer och sekund för video, plats i bilden för
 statiska. Ett fynd utan plats är inte ett fynd, det är en gissning.
 
-Stoppad eller Draft-flyttad creative → återkoppling i Notion, i samma körning:
+Creative med problem → återkoppling i Notion, i samma körning, video som bild:
 
 ```bash
-# Video som stoppats på pris — bara kommentar:
-node tools/notion-aterkoppling.mjs <page-id> --kommentar "Priset i bild är 799 kr, produktsidan säger 599 kr (33 % fel). Rätta till 599 kr."
+# Video med fel pris — kommentar + tillbaka till Draft:
+node tools/notion-aterkoppling.mjs <page-id> --kommentar "Priset i bild (frame 12, 8,5 s) är 799 kr, produktsidan säger 599 kr (33 % fel). Rätta till 599 kr." --status Draft
 
 # Bild med problem — kommentar + tillbaka till Draft:
 node tools/notion-aterkoppling.mjs <page-id> --kommentar "Bäverbutiken stavat 'Väverbutiken' i nedre högra hörnet." --status Draft
@@ -384,7 +391,7 @@ redigerarfel (de går till `#problem-and-revisions-ads`) eller något rutinen
 löser själv nästa natt.
 
 ## DEFINITION OF DONE
-- [ ] Kön hämtad ur Notion: alla creative hubs, status `To be Reviewed`, video och bild
+- [ ] Kön hämtad ur Notion: alla databaser i teamspacet Bäverbutiken, status `To be Reviewed`, video och bild
 - [ ] Notion faktiskt läst (annars: larmet högst upp i rapporten, och i `#problem-and-revisions-ads`)
 - [ ] Rader döda i `To be Reviewed` >24h räknade och rapporterade
 - [ ] Hela Bäverbutiken täckt, inte bara de fyra i products.json
@@ -394,9 +401,8 @@ löser själv nästa natt.
 - [ ] Varje frame läst, och QA-raden ifylld per creative mot dess egen brief
       (eller uttryckligen: briefen gick inte att läsa, och varför)
 - [ ] Varje fynd utpekat med frame-nummer och sekund (eller plats i bilden)
-- [ ] Ingen creative med prisavvikelse > 20 % uppladdad
-- [ ] Varje bild med problem: kommentar i Notion + status → `Draft`, inte uppladdad
-- [ ] Varje stoppad video: kommentar i Notion, status orörd
+- [ ] Ingen creative med prisavvikelse > 20 % uppladdad (inget pris i annonsen = grön)
+- [ ] Varje creative med problem, video som bild: kommentar i Notion + status → `Draft`, inte uppladdad
 - [ ] Uppladdade i rätt produkts kampanj, sida/pixel ärvd, inget med spend > 0 rört
 - [ ] Inga creatives lagda i en avvecklad kampanj (PAUSED med spend) — bara rapporterade
 - [ ] Kvoten loggad + nytt läge visat + pushad

@@ -20,9 +20,13 @@ import { readFileSync as fsReadFileSync } from 'node:fs';
 const API = 'https://api.notion.com/v1';
 const ROT = new URL('..', import.meta.url).pathname;
 
-/** Titeln pa en creative hub. Mallen raknas aldrig som en hub. */
-export const ÄR_HUB = (titel) =>
-  /creative hub\s*$/i.test((titel || '').trim()) && !/\bMALL\b/i.test(titel || '');
+/** Vilka databaser som ar kallor. Axels beslut 2026-09-02: ALLA databaser under
+ *  teamspacet Baverbutiken, inte bara de som heter "creative hub". REST-API:t kan
+ *  inte fraga pa teamspace, sa har tas varje databas integrationen ser — bara
+ *  mallen ("MALL") raknas bort. Teamspace-gransen halls av tva saker: integrationen
+ *  ar bara inbjuden i Baverbutiken, och en rad vars prefix inte finns i MagiBorsten
+ *  laddas aldrig upp (leveranskon.mjs). */
+export const ÄR_HUB = (titel) => !/\bMALL\b/i.test(titel || '');
 
 /** Statusen som betyder "klar, vantar pa upplaggning". Axels beslut 2026-09-02:
  *  ENBART "To be Reviewed" — bade video och bild. Allt som star dar har aldrig
@@ -109,7 +113,7 @@ export async function hittaHubbar() {
       const r = await notion('search', {
         method: 'POST',
         body: {
-          query: 'creative hub',
+          // Ingen sokterm: alla databaser integrationen ser (teamspacet Baverbutiken).
           filter: { value: 'database', property: 'object' },
           page_size: 100,
           ...(cursor ? { start_cursor: cursor } : {}),
@@ -148,9 +152,11 @@ async function allaSidor(databaseId) {
   return ut;
 }
 
-/** Rader som ar klara att laddas upp: Typ "… Pending Approval" (INKLUDERING, aldrig
- *  uteslutning), status i KLAR_STATUS, OCH minst en fil i "Filer och media".
- *  Kravet pa fil ar avgorande — utan den finns ingen creative att ladda upp. */
+/** Rader som ar klara att laddas upp: status i KLAR_STATUS OCH minst en fil i
+ *  "Filer och media". Axels beslut 2026-09-02: allt i "To be Reviewed" under
+ *  teamspacet raknas — Typ-faltet ar inte langre ett krav (det foljer med i
+ *  utdatan som information). Kravet pa fil ar avgorande — utan den finns ingen
+ *  creative att ladda upp. */
 export async function klaraRader(hub) {
   const sidor = await allaSidor(hub.id);
   const ut = [];
@@ -159,7 +165,6 @@ export async function klaraRader(hub) {
     const namn = titelFält ? värde(s.properties[titelFält]) : '';
     if (!namn || /^Skärmavbild/i.test(namn)) continue;
     const typ = typFält ? värde(s.properties[typFält]) : '';
-    if (!/pending approval/i.test(typ)) continue;
     const status = statusFält ? värde(s.properties[statusFält]) : '';
     if (!KLAR_STATUS.includes(status.toLowerCase())) continue;
 

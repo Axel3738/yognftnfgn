@@ -585,8 +585,9 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 - **Notion-status `In progress 2` betyder REVISION** — annonsen underkändes och
   görs om. Det betyder INTE "längre kommen". Full tabell i `docs/os/NOTION-FORMAT.md`.
 - **En färdig creative ligger i Notion. Bara där.** (Axels beslut 2026-09-02.)
-  Klar = rad med Typ `… Pending Approval`, status `To be Reviewed` och fil i
-  `Filer och media` — video från redigerarna såväl som bild från `/bildannonser`.
+  Klar = rad i vilken databas som helst under teamspacet Bäverbutiken med status
+  `To be Reviewed` och fil i `Filer och media` — video från redigerarna såväl som
+  bild från `/bildannonser`. Inget krav på Typ eller hubbnamn för `/notionkorning`.
   Drive `Edited Folder/Week N/` är inte längre en källa för `/notionkorning`
   (`leveranskon.mjs --drive` finns kvar för gamla mappar). Allt i `To be Reviewed`
   har aldrig legat uppe i Meta, så ingen avstämning mot kontot behövs för att
@@ -600,9 +601,10 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   att läsa.)*
 
   **Stoppregeln i `/notionkorning` är en enda: pris som avviker mer än 20 % från
-  Shopify-sidan.** Allt annat är anmärkning på video (laddas upp ändå, felstavning
-  är okej) och `Draft`-retur med kommentar på bild (görs om 20:00). Ingen nödbroms
-  på antal leveranser.
+  Shopify-sidan** (inget pris i annonsen = grön). En creative med problem, video
+  som bild, får kommentar i Notion och flyttas till `Draft`. För bild är varje fel
+  ett problem; för video bara priset — felstavningar i video laddas upp ändå med
+  en anmärkning. Ingen nödbroms på antal leveranser.
 
 - **Skriv aldrig en mätning som en evig lag.** Regeln ovan stod en gång som
   "`Filer och media` är tomt på samtliga rader … bygg därför aldrig". Den var falsk
