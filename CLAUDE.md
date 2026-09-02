@@ -450,6 +450,15 @@ node commission/run.mjs --manad 2026-07           # räkna om en gången månad
 annonskonton token:en når, `notion.mjs` läser hubbarna, `run.mjs` skriver
 rapporten till `commission/korningar/<YYYY-MM>/<datum>.md`.
 
+**Leaderboarden** (`leaderboard.mjs`, 15 tester) är samma siffror som topplista
+för redigerarna: https://claude.ai/code/artifact/77145ba8-a1cc-4791-9757-0715a8d97ff8
+Den räknar aldrig om något — den läser rapportens tal, så sidan och utbetalningen
+kan inte säga olika saker. `run.mjs` skriver `commission/leaderboard.json` vid
+**varje** körning (även icke-kördagar) och rutinen lägger upp den på sidan med
+`Artifact write_db` → `leaderboard/aktuell`. Sidmallen är
+`commission/leaderboard-sida.html`; själva sidan behöver bara publiceras om när
+utseendet ändras, och då mot samma URL.
+
 Satsen är 0,4 % och står som `SATS` i `berakning.mjs`. Bara `role: "editor"` i
 `dashboard/data/team.json` får utbetalning — spend på Axels rader, på rader utan
 Ansvarig och på okända Notion-användare redovisas separat som obetald.
