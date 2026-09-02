@@ -5,7 +5,7 @@ att klona repot och peka hit — ALLT annat står här och underhålls via git.
 
 Ordningen är Axels (2026-09-02): **Drive-listan läses först** — den är
 att-göra-listan, och utan den vet rutinen inte vad den ska göra. Sedan byggs
-nytt, sedan kompletteras, sedan aktiveras det rutinen själv byggt, sedan städas.
+nytt, sedan aktiveras det rutinen själv byggt, sedan städas.
 
 ## Steg 0 — Repot (läsning räcker)
 
@@ -29,7 +29,7 @@ Två källor, två olika jobb — blanda aldrig ihop dem:
 2. **Vad som redan ÄR gjort** avgörs ENBART av kampanjlistan från MagiBorsten,
    hämtad INNAN någon mapp bedöms: matchar mappens produktnamn en befintlig
    kampanj är den GJORD — hoppa över TYST (mappen har bara inte flyttats än;
-   steg 4 städar den). Aldrig omlaunch, aldrig om-QA, aldrig en rad på Axels
+   steg 3 städar den). Aldrig omlaunch, aldrig om-QA, aldrig en rad på Axels
    lista.
 
 Kandidat = ligger i Products (källa 1) OCH saknar kampanj (källa 2) OCH är
@@ -37,26 +37,22 @@ Kandidat = ligger i Products (källa 1) OCH saknar kampanj (källa 2) OCH är
 en produkt att launcha — den ska innehålla **alla koncept** (video för varje
 vinkel CS/GT/PD/SP), **recensionssheeten** (`_REVIEWS`) och **ad copy** för
 varje vinkel (`_ADCOPY`). Saknas något av det launchas mappen INTE alls —
-inte "det som finns". I stället: pinga redigerarna i Discord (steg 5) med
+inte "det som finns". I stället: pinga redigerarna i Discord (steg 4) med
 exakt vilka filer som saknas, och skriv en rad i Discord-briefen. Mappen
 ligger kvar i Products och plockas upp av nästa körning när den är komplett.
-Kör /launch (launch.md) på varje komplett kandidat tills kön är tom. Radera
-nedladdad media ur scratchpad mellan produkterna.
+Kör /launch (launch.md) på varje komplett kandidat tills kön är tom. **En
+launch är hel eller inte alls:** går en uppladdning fel mitt i (Metas
+anropsgräns, tillfälligt avstängd uppladdning) — vänta och försök igen i
+samma körning tills produktens alla creatives är uppe. Det finns inget
+senare "kompletteringssteg" (borttaget på Axels besked 2026-09-02: med de
+nya QA-reglerna lämnas inga halvbyggda kampanjer). Radera nedladdad media
+ur scratchpad mellan produkterna.
 
-Underhåll av redan launchade kampanjer (steg 2–3: komplettering av saknade
-adsets, aktivering) är INTE to-do-listan — det styrs av kampanjkontot och får
-läsa sitt material varifrån mappen än ligger, LAUNCHED inräknat, via publika
-länkar. Rutinen bygger nytt och gör klart sitt eget; den redigerar aldrig
-kampanjer som Axel eller skalningsronden äger.
+Aktivering (steg 2) är INTE to-do-listan — den styrs av kampanjkontot.
+Rutinen bygger nytt och gör klart sitt eget; den redigerar aldrig kampanjer
+som Axel eller skalningsronden äger.
 
-## Steg 2 — Komplettera halvbyggda kampanjer
-
-Kampanjer som rutinen själv skapat men som saknar koncept-adsets eller annonser
-(Metas uppladdning kan vara tillfälligt avstängd för kontot): försök ladda upp
-de saknade creatives och bygg klart enligt launch.md. Funkar uppladdningen
-fortfarande inte: notera och gå vidare.
-
-## Steg 3 — Aktiveringssvep (HÅRT AVGRÄNSAT — läs varje ord)
+## Steg 2 — Aktiveringssvep (HÅRT AVGRÄNSAT — läs varje ord)
 
 **Axels regel, ordagrant (2026-08-30): svepet får bara aktivera nya launcher
 som aldrig kommit igång — aldrig kampanjer eller annonser som Axel,
@@ -94,7 +90,7 @@ statusändring körningen gör (aktivering och pausning, alla nivåer) listas
 med namn + gammal→ny status under "Detaljer:" i slutrapporten, så att Axel
 alltid kan se på morgonen exakt vad som slogs på och av.
 
-## Steg 4 — Drive-flytt (tyst best-effort, städar hela efterslpet)
+## Steg 3 — Drive-flytt (tyst best-effort, städar hela efterslpet)
 
 Flytta **varje** mapp som ligger direkt i Products och redan har en kampanj i
 MagiBorsten till LAUNCHED (id `1-vbYhYgTEv7zYptW5rGmgKAITmAz4l1X`) — inte bara
@@ -126,7 +122,7 @@ Misslyckas en flytt: en (1) rad i rapportens statusdel — **ALDRIG under
 "väntar på Axel"**. Dubblettspärren mot annonskontot är skyddet; mapparna är
 ren städning och får aldrig bli Axels uppgift eller framställas som ett problem.
 
-## Steg 5 — Redigerarnotis (Axels lista ska ALDRIG innehålla "säg till redigerarna")
+## Steg 4 — Redigerarnotis (Axels lista ska ALDRIG innehålla "säg till redigerarna")
 
 Problem som är redigerarnas (ofullständig mapp — saknade koncept, saknad
 `_REVIEWS`, saknad `_ADCOPY` — TEST-platshållarrecensioner, fel produktnamn
@@ -159,7 +155,7 @@ alla produktmappar, var de än ligger (Products eller LAUNCHED). Påstå ALDRIG
 att material är oåtkomligt utan att ha provat den publika vägen — connectorns
 sök/åtkomst är inte sanningen för läsning.
 
-## Steg 6 — Slutrapport (mobilformat — Axel läser den som push-notis)
+## Steg 5 — Slutrapport (mobilformat — Axel läser den som push-notis)
 
 ⚠️ **Push-notisen får INTE vara en lång text.** Notisens hela innehåll är
 första raden nedan — inget mer. En notis på fem meningar är ett fel, inte en

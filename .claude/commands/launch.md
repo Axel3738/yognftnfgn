@@ -17,7 +17,7 @@ stanna bara vid ❌ i QA:n eller när något kräver ägarbeslut (pris, budgetä
    mappen har minst en video per koncept (CS, GT, PD, SP), `_REVIEWS`-sheeten
    och en ADCOPY-doc per koncept som har creatives. Saknas något av det:
    avbryt launchen för den produkten, pinga redigerarna (nattkorning.md
-   steg 5) med exakt vilka filer som saknas, och skriv en rad i rapporten.
+   steg 4) med exakt vilka filer som saknas, och skriv en rad i rapporten.
    Launcha aldrig "det som finns" — mappen plockas upp när den är komplett.
    Bildannonsen per vinkel är önskvärd men inte ett krav.
 3. Ladda ner: media via `https://drive.google.com/uc?export=download&id=<id>`,
