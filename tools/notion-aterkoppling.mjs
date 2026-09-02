@@ -6,11 +6,12 @@
 //   node tools/notion-aterkoppling.mjs <page-id> --kommentar "Priset 799 kr, sidan säger 599 kr"
 //   node tools/notion-aterkoppling.mjs <page-id> --kommentar "..." --status Draft
 //   node tools/notion-aterkoppling.mjs <page-id> --kommentar "..." --status Draft --torr
+//   node tools/notion-aterkoppling.mjs <page-id> --kommentar "Uppe i Meta: ..." --status "SE-ACTIVE to be translated"
 //
 // Axels regler 2026-09-02:
-//   • Bildannons med problem  → kommentar + status "Draft" (20:00-rutinen gör om den).
-//   • Videoannons med problem → bara kommentar. Statusen rörs inte; redigeraren
-//     och managern hanterar revisionen.
+//   • Creative med problem (bild: allt, video: bara priset) → kommentar + "Draft".
+//   • Uppladdad creative → kommentar med id:n + "SE-ACTIVE to be translated"
+//     (översättningskön). Aldrig "Approved".
 //
 // Kommentaren skrivs alltid FÖRE statusbytet, så att raden aldrig hamnar i Draft
 // utan förklaring om något går fel halvvägs. --torr visar bara vad som skulle göras.

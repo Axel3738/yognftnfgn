@@ -69,7 +69,14 @@ Beslut 2026-08-30, uppdaterade 2026-09-02:
    - **Bild:** vilket problem som helst, även en felstavning.
    - **Video:** bara priset (regel 5). Småfel och felstavningar laddas upp ändå,
      med en anmärkning i rapporten.
-   Det är den enda gången rutinen ändrar en Notion-status.
+8. **Uppladdad = status `SE-ACTIVE to be translated`.** (Axels beslut 2026-09-02.)
+   När en creative ligger uppe i Meta flyttas Notion-raden från `To be Reviewed`
+   till **`SE-ACTIVE to be translated`** — aldrig till `Approved`. Det är kön för
+   översättning till nya marknader. Bara rader som faktiskt laddats upp flyttas;
+   misslyckas uppladdningen står raden kvar i `To be Reviewed`.
+
+   Rutinen ändrar alltså Notion-status i exakt två lägen: problem → `Draft`,
+   uppladdad → `SE-ACTIVE to be translated`. Aldrig något annat.
 7. **Ingen nödbroms på antal.** Tio, tjugo eller femtio leveranser en natt är
    bara bra — alla kollas och alla godkända laddas upp.
 
@@ -335,9 +342,20 @@ uppladdning är ibland avstängd för kontot): notera creativen och ta den näst
 natt — hitta aldrig på att den ligger uppe. Raden står kvar i `To be Reviewed`
 och kommer med i nästa körning av sig själv.
 
-Skriv en kommentar i Notion-raden med kampanj-, adset- och annons-id så
-managern ser var creativen hamnade. Statusen rörs inte — uppladdade rader
-lämnas i `To be Reviewed` åt managern.
+**Efter varje lyckad uppladdning:** kommentar i Notion-raden med kampanj-,
+adset- och annons-id, och status → **`SE-ACTIVE to be translated`** (beslut 8).
+Ett anrop gör båda, kommentaren först:
+
+```bash
+node tools/notion-aterkoppling.mjs <page-id> \
+  --kommentar "Uppe i Meta: kampanj <id>, adset <id>, annons <id>. Aktiv." \
+  --status "SE-ACTIVE to be translated"
+```
+
+Med Notion-MCP:n: `notion-create-comment` + `notion-update-page`, samma ordning.
+Verktyget läser tillbaka statusen och avbryter om den inte blev rätt — saknas
+alternativet i den databasen står det i rapporten och raden lämnas i
+`To be Reviewed`.
 
 ## Steg 5 — Kvot och rapporter
 
@@ -405,6 +423,7 @@ löser själv nästa natt.
 - [ ] Varje creative med problem, video som bild: kommentar i Notion + status → `Draft`, inte uppladdad
 - [ ] Uppladdade i rätt produkts kampanj, sida/pixel ärvd, inget med spend > 0 rört
 - [ ] Inga creatives lagda i en avvecklad kampanj (PAUSED med spend) — bara rapporterade
+- [ ] Varje uppladdad rad flyttad till `SE-ACTIVE to be translated` med kommentar (id:n)
 - [ ] Kvoten loggad + nytt läge visat + pushad
 - [ ] Ett meddelande per problem i `#problem-and-revisions-ads`
 - [ ] Körningens brief skickad till `#ads-launching`
