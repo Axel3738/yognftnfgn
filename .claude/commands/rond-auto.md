@@ -401,8 +401,12 @@ till imorgon. Inga bibelsvar.
 node agent/discord-post.mjs --kanal ronden "Ronden <datum>" "<rapporten i Markdown>"
 ```
 
-Skriptet sköter kanalval, delning över 2 000-teckengränsen och rate limits —
-skriv aldrig egen curl-kod mot Discord. Varje rutin har sin egen kanal
+Skriptet sköter kanalval, delning över 2 000-teckengränsen, rate limits och
+**pingarna** (Axel 2026-09-02: varje post pingar personerna i `pinga` i
+`agent/discord.json` — i dag confident_otter_25993 och ecom_chadking). Skriv
+aldrig egen curl-kod mot Discord, och skriv aldrig "@namn" själv i texten —
+det pingar ingen. Säger skriptet att ett namn inte gick att slå upp: nämn
+det på en rad i svaret. Varje rutin har sin egen kanal
 (`kanalplan` i `agent/discord.json`); finns kanalen inte än postas det i
 standardkanalen i stället för att tystna.
 

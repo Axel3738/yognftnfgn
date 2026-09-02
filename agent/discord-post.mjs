@@ -63,7 +63,42 @@ export function dela(text, max = MAX_TECKEN) {
 export async function lasKonfig(fil = KONFIGFIL) {
   const rå = JSON.parse(await readFile(fil, 'utf8'));
   const alias = rå.alias && typeof rå.alias === 'object' ? rå.alias : {};
-  return { alias };
+  // Vilka som ska pingas i varje post (Axel 2026-09-02). Användarnamn, inte id.
+  const pinga = Array.isArray(rå.pinga) ? rå.pinga.map((n) => String(n).replace(/^@/, '').trim()).filter(Boolean) : [];
+  const guildId = rå.guild_id ? String(rå.guild_id) : null;
+  return { alias, pinga, guildId };
+}
+
+/**
+ * Pingraden överst i posten. Discord pingar BARA på formen <@id> — texten
+ * "@namn" ser ut som en ping men når ingen. Därför slås namnen upp till id
+ * först; det som inte gick att slå upp skrivs som text så att ingen tystas.
+ * @param {{namn: string, id: string|null}[]} personer
+ */
+export function pingRad(personer) {
+  const delar = (personer || [])
+    .filter((p) => p && p.namn)
+    .map((p) => (p.id ? `<@${p.id}>` : `@${p.namn}`));
+  return delar.length ? delar.join(' ') : '';
+}
+
+/**
+ * Slår upp en användare på användarnamn i servern. Exakt träff på username
+ * (skiftlägesokänsligt); Discords sökning är prefix-baserad, så vi filtrerar
+ * själv. Returnerar id eller null — aldrig ett fel, posten ska gå ändå.
+ */
+export async function slaUppAnvandare(namn, guildId, token = process.env.DISCORD_BOT_TOKEN) {
+  if (!guildId || !namn) return null;
+  try {
+    const url = `https://discord.com/api/v10/guilds/${guildId}/members/search?query=${encodeURIComponent(namn)}&limit=25`;
+    const svar = await fetch(url, { headers: botHuvuden(token) });
+    if (!svar.ok) return null;
+    const sökt = String(namn).toLowerCase();
+    const träff = (await svar.json()).find((m) => String(m?.user?.username || '').toLowerCase() === sökt);
+    return träff?.user?.id ?? null;
+  } catch {
+    return null;
+  }
 }
 
 /**
@@ -139,7 +174,7 @@ async function posta(url, kropp, extraHuvuden = {}) {
 export async function skicka({ rubrik = '', text = '', kanal = 'chatt', konfig = null } = {}) {
   const token = process.env.DISCORD_BOT_TOKEN;
 
-  const { alias } = konfig || (await lasKonfig());
+  const { alias, pinga = [], guildId = null } = konfig || (await lasKonfig());
   // Kommandofilerna säger "ronden" / "uppgifter" / "larm" — alias översätter
   // till det kanalnamn servern faktiskt har, så en omdöpt kanal bara kräver
   // en rad i discord.json i stället för ändringar i varje kommandofil.
@@ -156,22 +191,30 @@ export async function skicka({ rubrik = '', text = '', kanal = 'chatt', konfig =
   const url = `https://discord.com/api/v10/channels/${id}/messages`;
   const huvuden = botHuvuden(token);
 
+  // Pingarna (Axel 2026-09-02): slå upp id:n, bygg raden, och tillåt EXAKT de
+  // användarna i allowed_mentions — @everyone och roller är fortfarande spärrade.
+  const personer = [];
+  for (const namn of pinga) personer.push({ namn, id: await slaUppAnvandare(namn, guildId, token) });
+  const ping = pingRad(personer);
+  const tillatnaIdn = personer.map((p) => p.id).filter(Boolean);
+
   const bitar = dela(text);
   const antal = Math.max(1, bitar.length);
   for (let i = 0; i < antal; i += 1) {
     const huvud = i === 0
-      ? (rubrik ? `**${rubrik}**\n` : '')
+      ? `${ping ? `${ping}\n` : ''}${rubrik ? `**${rubrik}**\n` : ''}`
       : (rubrik ? `**${rubrik}** _(${i + 1}/${antal})_\n` : '');
     // Discord tillåter ~5 meddelanden per 5 sekunder per kanal — en paus
     // mellan bitarna gör att en lång rapport inte rate-limitas.
     if (i > 0) await new Promise((r) => setTimeout(r, 350));
     await posta(url, {
       content: `${huvud}${bitar[i] ?? ''}`.trim(),
-      // Utan detta pingar en rapport som råkar innehålla @everyone hela servern.
-      allowed_mentions: { parse: [] },
+      // parse: [] stoppar @everyone/@here/roller; users: listar de enda som får pingas.
+      allowed_mentions: { parse: [], users: i === 0 ? tillatnaIdn : [] },
     }, huvuden);
   }
-  return { kanal: riktigtNamn, delar: antal };
+  const ejHittade = personer.filter((p) => !p.id).map((p) => p.namn);
+  return { kanal: riktigtNamn, delar: antal, pingade: tillatnaIdn.length, ejHittade };
 }
 
 async function main() {
@@ -195,8 +238,9 @@ async function main() {
     process.exit(2);
   }
 
-  const { kanal: använd, delar } = await skicka({ rubrik, text, kanal });
-  console.log(`Postat till Discord (#${använd}, ${delar} ${delar === 1 ? 'meddelande' : 'meddelanden'}).`);
+  const { kanal: använd, delar, pingade, ejHittade } = await skicka({ rubrik, text, kanal });
+  console.log(`Postat till Discord (#${använd}, ${delar} ${delar === 1 ? 'meddelande' : 'meddelanden'}, ${pingade} pingade).`);
+  if (ejHittade.length) console.error(`Kunde inte slå upp Discord-användare: ${ejHittade.join(', ')} — skrevs som text, pingade inte.`);
 }
 
 if (process.argv[1] && import.meta.url.endsWith(process.argv[1].split('/').pop())) {

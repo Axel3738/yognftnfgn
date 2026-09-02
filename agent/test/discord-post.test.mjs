@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { botHuvuden, dela, MAX_TECKEN } from '../discord-post.mjs';
+import { botHuvuden, dela, lasKonfig, MAX_TECKEN, pingRad } from '../discord-post.mjs';
 
 test('kort text delas inte alls', () => {
   assert.deepEqual(dela('hej'), ['hej']);
@@ -61,4 +61,21 @@ test('utan token skickas INGET Authorization-huvud', () => {
     if (sparad === undefined) delete process.env.DISCORD_BOT_TOKEN;
     else process.env.DISCORD_BOT_TOKEN = sparad;
   }
+});
+
+
+test('pingraden pingar bara på <@id> — namn utan id skrivs som text', () => {
+  // Axel 2026-09-02: varje post ska pinga två personer. "@namn" i klartext
+  // pingar ingen på Discord, bara <@id> gör det.
+  assert.equal(pingRad([{ namn: 'ecom_chadking', id: '123' }]), '<@123>');
+  assert.equal(pingRad([{ namn: 'ecom_chadking', id: '123' }, { namn: 'confident_otter_25993', id: null }]),
+    '<@123> @confident_otter_25993');
+  assert.equal(pingRad([]), '');
+  assert.equal(pingRad(undefined), '');
+});
+
+test('discord.json bär de två som ska pingas och serverns id', async () => {
+  const { pinga, guildId } = await lasKonfig();
+  assert.deepEqual(pinga, ['confident_otter_25993', 'ecom_chadking']);
+  assert.equal(guildId, '1540322130388983921');
 });
