@@ -1,15 +1,20 @@
 #!/usr/bin/env node
-// leveranskon.mjs — vad redigerarna har levererat som ännu inte ligger i Meta.
-// Kön för /notionkorning. Två källor, två olika jobb (samma logik som /nattkorning):
+// leveranskon.mjs — vad som är klart i Notion och ska upp i Meta.
+// Kön för /notionkorning.
 //
-//   Vad som SKA laddas upp  = redigerarnas leveransmappar i Drive.
-//   Vad som REDAN ÄR gjort  = annonsnamnen i MagiBorsten.
-//   Kön = leverans i Drive  −  annons i kontot.
+//   Vad som SKA laddas upp  = Notion-rader med status "To be Reviewed" och en fil
+//                             i "Filer och media" — video OCH bild (Axels beslut
+//                             2026-09-02: Notion är enda källan).
+//   Vilken kampanj           = annonsprefixet slås upp mot MagiBorsten.
+//   Dubblettspärren mot annonsnamnen i kontot finns kvar som säkerhet, men den är
+//   inte grinden: det som står i "To be Reviewed" har aldrig legat uppe.
 //
-//   node tools/leveranskon.mjs [--produkt <id>] [--json] [--alla]
+//   node tools/leveranskon.mjs [--produkt <id>] [--json] [--alla] [--drive]
 //
-// Kräver env: META_ACCESS_TOKEN. Drive läses via publika länkar
-// (tools/drive-ls.py) — ingen connector behövs, så rutiner kan köra det.
+//   --drive  läser dessutom redigerarnas gamla leveransmappar i Drive
+//            (Edited Folder/Week N). Av som standard sedan 2026-09-02.
+//
+// Kräver env: META_ACCESS_TOKEN (prefix → kampanj) och NOTION_TOKEN (kön).
 
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
@@ -111,8 +116,9 @@ const annonser = await metaAnnonser(BAVERBUTIKEN_ACT);
 const uppe = new Set(annonser.map(a => a.name.trim().toLowerCase()));
 const karta = prefixKarta(annonser);
 
-// 2. Leveranserna i Drive.
-const veckor = driveLs(EDITED_FOLDER).filter(x => x.typ === 'mapp');
+// 2. Leveranserna i Drive — bara med --drive. Sedan 2026-09-02 är Notion enda
+// källan; Drive-vägen finns kvar för att kunna läsa gamla leveransmappar vid behov.
+const veckor = finns('drive') ? driveLs(EDITED_FOLDER).filter(x => x.typ === 'mapp') : [];
 const leveranser = [];
 for (const v of veckor) {
   for (const m of driveLs(v.id)) {
@@ -133,10 +139,11 @@ for (const v of veckor) {
 }
 for (const l of leveranser) l.kalla2 = 'drive';
 
-// 2b. Leveranserna i Notion. /bildannonser (20:00) lagger bildannonser som BILAGA i
-// radens "Filer och media" med status "To be Reviewed" — de passerar aldrig Drive, och
-// bildannonser/output/ ar gitignorerat, sa Notion-bilagan ar enda kopian i varlden.
-// (Rotorsaken till att fem fardiga bildannonser lag osynliga 2026-08-31.)
+// 2b. Leveranserna i Notion — huvudkallan. Allt fardigt (video fran redigerarna,
+// bild fran /bildannonser 20:00) ligger som BILAGA i radens "Filer och media" med
+// status "To be Reviewed". bildannonser/output/ ar gitignorerat, sa Notion-bilagan
+// ar enda kopian i varlden. (Rotorsaken till att fem fardiga bildannonser lag
+// osynliga 2026-08-31.)
 let notionFel = null;
 let notionHubbar = 0;
 let hubbNamn = [];
@@ -226,7 +233,7 @@ const hyllade = nya.filter(k => k.avvecklad);
 // Ett tyst Notion-fel ar samma fella igen. Det star forst, fore allt annat.
 if (notionFel) {
   console.log(`⚠️  NOTION-KÄLLAN: ${notionFel}`);
-  console.log(`    Kön nedan är därför OFULLSTÄNDIG — bildannonser saknas.\n`);
+  console.log(`    Notion är enda källan — kön nedan är därför TOM eller OFULLSTÄNDIG.\n`);
 }
 const frånDrive = leveranser.filter(l => l.kalla2 === 'drive').length;
 const frånNotion = leveranser.filter(l => l.kalla2 === 'notion').length;
@@ -238,7 +245,7 @@ if (hubbNamn.length) {
   for (const n of hubbNamn) console.log(`  · ${n}`);
   console.log(`  Saknas en hub här har integrationen inte bjudits in till den.\n`);
 }
-console.log(`Källor: ${frånDrive} i Drive · ${frånNotion} i Notion (${notionHubbar} hubbar) · ${leveranser.length - nya.length} redan i kontot · ${Object.keys(karta).length} kända prefix\n`);
+console.log(`Källor: ${frånNotion} i Notion (${notionHubbar} hubbar)${finns('drive') ? ` · ${frånDrive} i Drive` : ''} · ${leveranser.length - nya.length} redan i kontot · ${Object.keys(karta).length} kända prefix\n`);
 
 const perProdukt = {};
 for (const k of nya) (perProdukt[k.produktId] ??= []).push(k);
