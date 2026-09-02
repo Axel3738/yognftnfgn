@@ -3,15 +3,22 @@
 // (Apps Script-webbappen i tools/drive-brevlada.gs — se installationen där).
 //
 //   DRIVE_UPLOAD_URL=... DRIVE_UPLOAD_KEY=... \
-//   node drive-push.mjs --folder=<drive-mapp-id> <fil1.mp4> [fil2 …]
+//   node drive-push.mjs --folder=<drive-mapp-id> <fil1.mp4> [fil2.png ADCOPY_NO_CS.txt …]
 //
 // Apps Script tar emot ~50 MB per anrop — komprimera större filer först.
 // Skickar base64 i POST-kroppen; curl används för att slippa Node-proxystrul.
 
 import { execFileSync } from 'node:child_process';
 import { readFileSync, statSync, writeFileSync, rmSync } from 'node:fs';
-import { basename } from 'node:path';
+import { basename, extname } from 'node:path';
 import { tmpdir } from 'node:os';
+
+// MIME-typ efter filändelse — videor, bildannonser och adcopy går samma väg.
+const MIME = {
+  '.mp4': 'video/mp4', '.mov': 'video/quicktime', '.png': 'image/png', '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg', '.txt': 'text/plain', '.md': 'text/plain', '.json': 'application/json',
+  '.csv': 'text/csv', '.srt': 'text/plain', '.zip': 'application/zip',
+};
 
 const URL = process.env.DRIVE_UPLOAD_URL;
 const KEY = process.env.DRIVE_UPLOAD_KEY;
@@ -28,7 +35,8 @@ for (const f of files) {
   const b64 = readFileSync(f).toString('base64');
   const tmp = `${tmpdir()}/drive-push-${process.pid}.b64`;
   writeFileSync(tmp, b64);
-  const u = `${URL}?key=${encodeURIComponent(KEY)}&folderId=${encodeURIComponent(folder)}&name=${encodeURIComponent(basename(f))}&mimeType=video/mp4`;
+  const mime = MIME[extname(f).toLowerCase()] || 'application/octet-stream';
+  const u = `${URL}?key=${encodeURIComponent(KEY)}&folderId=${encodeURIComponent(folder)}&name=${encodeURIComponent(basename(f))}&mimeType=${encodeURIComponent(mime)}`;
   try {
     // Apps Script svarar 302 → echo-URL som ska hämtas med GET (curl behåller POST
     // vid 302, därför två steg i stället för -L).
