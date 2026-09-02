@@ -42,6 +42,19 @@ Närmast bypass är **Auto**: en klassificerare granskar i stället för att fr�
 valet kommer ihåg till nästa session. Auto syns bara när organisationen tillåter det
 och modellen stödjer det.
 
+## Enda vägen till bypass utan lokal session: SSH till en egen server
+
+Appen kan även köra sessionen på en **egen Linux-maskin via SSH** (miljörullistan →
+**+ Add SSH connection**: namn, `user@host`, port, nyckelfil). Claude Code
+installeras automatiskt på maskinen vid första anslutningen och "SSH sessions
+support permission modes". SSH-sessioner är inte molnsessioner, så
+molnspärren mot bypass gäller inte dem – bypass slås på med samma toggle i
+**Settings → Claude Code**. Dokumentationen säger inte uttryckligen att Bypass
+visas i väljaren för SSH; det är inte verifierat i praktiken (2026-09-02).
+
+Kräver en hyrd VPS (Linux, t.ex. Hetzner/DigitalOcean, ~50–100 kr/mån) och en
+SSH-nyckel på Windows-datorn. Repot klonas på servern.
+
 ## Skillnaden i korthet
 
 | Läge | Frågar | Allow/deny-listor |
