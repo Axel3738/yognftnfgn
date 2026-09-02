@@ -5,6 +5,11 @@
 //   node tools/notify-discord.mjs "✅ 2 launchade, allt rullar"
 //   cat rapport.txt | node tools/notify-discord.mjs
 //   node tools/notify-discord.mjs --ping "Missing files for Badshorts: ..."
+//   node tools/notify-discord.mjs --ping-axel "Kunde inte flytta: Badshorts, Luffarschack"
+//
+// --ping-axel (Axels beslut 2026-09-02): mappar i Products som redan har
+// kampanj men inte gått att flytta till LAUNCHED pingas till Axels båda
+// konton, confident_otter_25993 och ecom_chadking.
 //
 // --ping (Axels beslut 2026-09-02): redigerarnotiser går via Discord och ska
 // @-pinga redigerarna. Flaggan sätter <@id> för carlvicente.working och
@@ -45,10 +50,16 @@ const REDIGERARE = [
   { namn: 'carlvicente.working', id: '1411720622484095089' },
   { namn: 'jazzer1522', id: '740814777374343259' },
 ];
+// Axels två konton, pingas med --ping-axel (mappar som inte gått att flytta).
+// Id:n verifierade via members/search 2026-09-02.
+const AXEL = [
+  { namn: 'confident_otter_25993', id: '1469423029783236689' },
+  { namn: 'ecom_chadking', id: '1543537450335477836' },
+];
 
-async function pingRad(token) {
+async function pingRad(token, personer) {
   const idn = [];
-  for (const r of REDIGERARE) {
+  for (const r of personer) {
     let id = r.id;
     if (token) {
       try {
@@ -111,14 +122,19 @@ if (!auth) {
 
 const argv = process.argv.slice(2);
 const ping = argv.includes('--ping');
-let text = argv.filter(a => a !== '--ping').join(' ').trim();
+const pingAxel = argv.includes('--ping-axel');
+let text = argv.filter(a => a !== '--ping' && a !== '--ping-axel').join(' ').trim();
 if (!text) {
   const chunks = [];
   for await (const c of process.stdin) chunks.push(c);
   text = Buffer.concat(chunks).toString('utf8').trim();
 }
 if (!text) { console.error('Inget meddelande. Ge texten som argument eller på stdin.'); process.exit(2); }
-if (ping) text = `${await pingRad(auth.typ === 'bot' ? auth.token : null)}\n${text}`;
+const bot = auth.typ === 'bot' ? auth.token : null;
+const pingar = [];
+if (ping) pingar.push(await pingRad(bot, REDIGERARE));
+if (pingAxel) pingar.push(await pingRad(bot, AXEL));
+if (pingar.length) text = `${pingar.join(' ')}\n${text}`;
 
 // Discord tar max 2000 tecken per meddelande — dela på radgränser vid behov.
 const parts = [];

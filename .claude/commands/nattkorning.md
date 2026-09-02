@@ -118,9 +118,18 @@ listar inga `mcp__*`-verktyg (mätt i konfigurationen 2026-09-01), och bara
 en verklig körning kan visa om connectorn ändå är åtkomlig. Den raden avgör
 om reserven behövs alls.
 
-Misslyckas en flytt: en (1) rad i rapportens statusdel — **ALDRIG under
-"väntar på Axel"**. Dubblettspärren mot annonskontot är skyddet; mapparna är
-ren städning och får aldrig bli Axels uppgift eller framställas som ett problem.
+**Misslyckas en flytt (Axels beslut 2026-09-02): pinga Axel i Discord** så
+han flyttar mappen själv — ETT meddelande för alla mappar som blev kvar:
+
+```bash
+node tools/notify-discord.mjs --ping-axel "Mappar som redan har kampanj men inte gick att flytta till LAUNCHED: <produkt>, <produkt>"
+```
+
+Flaggan `--ping-axel` pingar båda hans konton, **@confident_otter_25993** och
+**@ecom_chadking**, som riktiga `<@id>`-omnämnanden. Skriv bara mappnamnen,
+inga id:n och ingen förklaring. Samma rad står också i Discord-briefen.
+Dubblettspärren mot annonskontot gör att en kvarliggande mapp aldrig
+launchas igen — pingen är bara så att listan i Products stämmer.
 
 ## Steg 4 — Redigerarnotis (Axels lista ska ALDRIG innehålla "säg till redigerarna")
 
@@ -202,7 +211,8 @@ Discord-strul får aldrig stoppa körningen eller hamna under "Väntar på Axel"
 **"Väntar på Axel" är en skyddad rubrik.** Där får BARA stå: leverantörsquotes
 som saknas, riktiga ägarbeslut (pris, budget, ny målnivå — dit hör en annons
 vars pris är mycket lägre än butikens: sänka priset eller skrota annonsen är
-hans val), och redigerarfel som inte kunnat skickas till teamet. ALDRIG: mappstädning, connector-rättigheter,
+hans val), mappar som inte gick att flytta (steg 3, han är redan pingad),
+och redigerarfel som inte kunnat skickas till teamet. ALDRIG: mappstädning, connector-rättigheter,
 Metas uppladdnings-rollout (skriv "väntar på Meta"), eller något rutinen kan
 lösa själv nästa körning. Varje rad där är ett avbrott i Axels dag — förtjäna den.
 
