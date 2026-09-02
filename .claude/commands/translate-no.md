@@ -74,9 +74,15 @@ klart utan att invänta godkännande; stanna bara vid ägarbeslut eller ❌ neda
    påbörjad videominut**. Räcker inte kvoten: STANNA, be Axel fylla på, launcha inget.
 5. **COGS ur batch-sheeten.** Axels COGS-dokument (2026-09-02):
    `https://docs.google.com/document/d/1BtFJj1A3J2ciZZS_f3lKU0cM0g5-ncWO7LFySuc3peo`
-   — det listar batch-sheets **#1–#5.1** med alla produkter, även kommande. Läs
-   docet via Drive-connectorn, följ länken till varje sheet och sök produktens rad
-   (matcha på Bäverbutiken-länken eller produktnamnet, inte på position).
+   — det listar batch-sheets **#1–#5.1** med alla produkter, även kommande.
+   Både docet och sheeten är länkdelade och läses **utan connector** (verifierat
+   2026-09-02, funkar i rutinen utan MCP):
+   ```bash
+   curl -sL "https://docs.google.com/document/d/1BtFJj1A3J2ciZZS_f3lKU0cM0g5-ncWO7LFySuc3peo/export?format=txt"
+   curl -sL "https://docs.google.com/spreadsheets/d/<sheet-id>/export?format=csv"   # första fliken; fler flikar: &gid=<n>
+   ```
+   Sök produktens rad i varje sheet (matcha på Bäverbutiken-länken eller
+   produktnamnet, aldrig på radnummer).
    Sheetens struktur (verifierad 2026-09-02): en rad per produkt och kvantitet,
    marknadsblock **SWEDEN / NORWAY / FINLAND / DENMARK / UK**, varje block med
    `Qty | Product cost | Shipping cost | Total ex. tax | Delivery time | Shipping method`
@@ -110,11 +116,32 @@ klart utan att invänta godkännande; stanna bara vid ägarbeslut eller ❌ neda
 
 1. `node translate-batch.mjs render` följt av `download`. Status via v3-API:t
    (v2 ljuger om moderation). Fastnar något i moderering: leverera resten.
-2. **Järnregel 2:** skanna KÄLLVIDEON efter inbränd svensk text (2 fps, numpy-
-   bandprofil). Standardstil (Axels beslut 2026-08-29): norska captions läggs
-   **exakt över den befintliga textremsan, så diskret som möjligt** — tajt platta
-   i samma mått som originalets band, max 2 rader, aldrig mer täckning än
-   nödvändigt (`pipeline/cover-srt.py`; MarginV/FontSize är i ASS-skala, höjd 288).
+2. **Järnregel 2 + Beltesliper-stilen (Axels facit 2026-09-02).** Skanna
+   KÄLLVIDEON efter inbränd svensk text (2 fps, numpy-bandprofil) och bränn
+   captions med **`python3 pipeline/no-captions.py <render.mp4> <fixed.srt> <out.mp4>`**
+   — det skriptet ÄR standarden, bygg inte egna varianter per batch.
+
+   Så här ska det se ut (facit: `Beltesliper_NO_PD_3` — "jag blir glad bara av
+   att kolla på dom captionsen"):
+   - **Ett enda helsvart band över hela bredden**, exakt där den svenska
+     textremsan satt (uppmätt per video; standardband 1388–1500 när mätningen
+     inte hittar något). Bandet ligger hela videon.
+   - **Vit fet text (Liberation Sans Bold, ~46 px) mitt i bandet**, centrerad
+     i höjd och sidled, max 2 rader.
+   - **Ingenting av det svenska syns.** Inte en bokstav, inte en kontur.
+
+   Så här får det ALDRIG se ut (motexempel: `Overvåkingskamera_NO_CS_1`):
+   - svensk text kvar bakom en halvgenomskinlig eller suddig platta,
+   - en suddig kopia av det svenska bandet (crop + blur) i stället för svart,
+   - norsk text i en egen ruta ovanför eller under det svenska bandet,
+   - två rutor i bild samtidigt.
+
+   Skriptet skannar resultatet 60 px ovanför/under bandet och stannar med exit 3
+   om svensk text sticker ut — kör då om med `--band=Y0:Y1` som täcker allt.
+   Det sparar dessutom tre QA-bilder (`<out>.qa-1..3.png`, 10/50/90 %) per video:
+   **läs varje QA-bild innan leverans.** Svensk text i någon av dem = underkänd,
+   gör om. Källvideons remsa kan sitta olika i olika klipp — lita aldrig på att
+   bandet från förra videon passar nästa.
    Video utan inbränd text får INGA captions (opt-in-regeln).
 3. Slutkortssvep: sista sekunden × alla videor — svensk butiksdomän/pris i bild
    ska ersättas eller rapporteras.
