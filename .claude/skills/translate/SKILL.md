@@ -62,10 +62,18 @@ Fråga med AskUserQuestion om något av detta saknas: **marknader** och **priser
    - Fastnar en video i moderationskön: polla i bakgrunden, leverera resten direkt.
 7. **Järnregel 2:** skanna källvideon (2 bilder/sek, hitta ljusa textplattor via
    numpy: rader där 40 < vita pixlar < 240 vid 270 px bredd). Hittas inbränd text:
-   täck bandet med intilliggande bildinnehåll (crop + lätt blur + overlay — INTE ren
-   sudd, det ger grå skugga) och bränn lokaliserade captions ovanpå
-   (`pipeline/cover-srt.py` för ≤2-radiga cues; vit platta, svart fet text).
-   OBS: MarginV/FontSize i force_style är i ASS-skala (höjd 288), inte pixlar.
+   bränn lokaliserade captions med **`pipeline/no-captions.py`** — Axels facit
+   2026-09-02 (`Beltesliper_NO_PD_3`): ett utsuddat band över hela bredden exakt
+   där källremsan satt (blurrad kopia av intilliggande bildinnehåll — inte
+   källtexten suddad på plats), och ovanpå en tajt ruta med vit bakgrund och
+   svart fet text mitt i bandet, max 2 rader, inget av källtexten synligt.
+   Skriptet mäter bandet, väljer remsa utan text (under, annars ovanför, annars
+   hård blur på plats), gör cover-SRT:n gapless, kontrollerar att ingen text
+   sticker ut och sparar QA-bilder som ska tittas på före leverans.
+   Motexemplet `Overvåkingskamera_NO_CS_1` (svensk text kvar bakom plattan, norsk
+   text i egen ruta under) kom av att bandet mättes fel — därför är QA-bilderna
+   obligatoriska. Vill användaren ha en annan stil för en annan marknad:
+   `--band=Y0:Y1`/`--font-px`/`--blur` i första hand, egen ffmpeg-kedja i sista.
    ffmpeg i loopar: alltid `-nostdin` och `</dev/null`.
 8. **Leverera.** Döp om till `{MARKNAD}_{namn}.mp4` (NO_/DK_/FI_/UK_/AU_/MX_/NL_).
    Zippa ≤30 MiB per zip (chattens gräns), `zip -0`. Filer >30 MiB: komprimera crf 23–26,
