@@ -70,9 +70,16 @@
       "campaign_id": "120250009325850291",
       "produkt": "Båtmotorskyddet 420D",
       "lage": "test",
-      "lage_motivering": "startad 2026-08-29, för ny för att ha data i 3-dagarsfönstret",
+      "lage_motivering": "3 926,27 kr spend, 23 köp, ROAS 3,96 mot BE 1,62 (avläst 2026-09-02, maximum) — 36,5 % vinst av omsättningen. Passerat testtröskeln och fått sin första riktiga batch via /forsta-batch. Under 30-köpsgränsen för drift.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "3cf270ab-908c-8113-a35c-f9c1cd61d727",
+      "notion_hub_datakalla": "1dc270ab-908c-836b-a048-073bfaa48353",
+      "notion_hub_namn": "Boat motor cover creative hub",
+      "drive_produktmapp_id": "1OxYYsENFuZLSlsOD4kwDIJzbDwO0bbB2",
+      "drive_produktmapp_not": "Joshs befintliga produktmapp \"Båtmotorskydd 420D\" (ägs av joshnaelga146). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products (lanseringskön).",
+      "drive_senaste_batchmapp_id": "1yp6mhvueZyfdkaL3C032n61Qc8Tpn-hf",
+      "minne": "products/batmotorskyddet-420d/"
     },
     {
       "campaign_id": "120250009266750291",
