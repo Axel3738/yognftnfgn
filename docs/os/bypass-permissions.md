@@ -5,6 +5,14 @@ Verifierat mot Claude Codes officiella dokumentation 2026-09-02
 
 ## Windows-appen (Claude Desktop, fliken Code)
 
+⚠️ **Bypass finns bara i sessioner som körs LOKALT på datorn.** Startar man
+sessionen med miljön **Cloud** (rullistan i promptrutan) visar lägesväljaren bara
+Accept edits / Plan / Auto, oavsett vad som är påslaget i inställningarna. Mätt
+2026-09-02: Axels sessioner från appen kör i molnet (`origin: desktop_app`,
+`environment_kind: anthropic_cloud`) – därför "går det inte att välja läget".
+Lösningen är att välja **Local** i miljörullistan när sessionen skapas.
+Lokala sessioner kräver Git for Windows och en lokal klon av repot.
+
 Bypass-läget finns i appen men är avstängt tills det slås på i inställningarna.
 
 1. **Settings → Claude Code** → slå på **Allow bypass permissions mode**
