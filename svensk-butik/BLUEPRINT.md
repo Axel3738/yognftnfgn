@@ -607,6 +607,16 @@ breddas till "alla som bor ifrån sitt husdjur".
 
 Nytt manusdokument: `redigerare/tvillingkudden-manus.docx`.
 
+## 8r. Varv 20 (2026-08-31): annonscopy för alla fyra koncept
+
+Meta feed ad copy (PRIMÄRTEXT × 3 varianter, RUBRIK, BESKRIVNING) skriven av
+sonnet-subagent enligt regel 6, med de rättade fakta från varv 19 (ingen vit
+kant, Longing = studentvinkeln, ingen leveranstid i Recognition) och
+copy-reglernas tre-frågorstest kört på varje primärtext-variant.
+
+- Leveransfil: `copy/tvillingkudden-annonscopy.docx` (ren, klistra-in-klar).
+- Fullt facit med tre-frågorstestet: `copy/annonscopy-live.md`.
+
 ## 9. Kvarstående — kräver Axel
 
 1. **Publicera temat:** Online Store → Themes →
