@@ -79,12 +79,18 @@ har dödat vinnare två gånger. Kortversion av kraven:
 - **Uppdatera `products/<id>/dna.md`:** flytta bekräftade mönster till Winning/Losing DNA, markera vad som fortfarande är hypotes. DNA-filen är produktens ackumulerade minne — skriv den så att nästa session förstår utan kontext.
 
 ### 3. Bygg nästa batch
-- Antal = minst kvoten per 3-dagarscykel för produkten.
+- Antal = `rundaAntal` ur ronden (dubbla veckokvoten, minst fyra) — Axel
+  2026-09-02: hellre några för mycket, redigerarna är många. Minst två
+  tredjedelar video, högst två statiska. BOF-bildserier är parkerade.
 - Mix: iterationer på vinnarna (isolerad variabel per iteration) + nya koncept från Losing DNA-lärdomar + **alla väntande items i backlog.md** (markera dem `[använd i batch #N]`) + det jag skickade med i argumenten ovan.
 - **Varje brief taggar sina variabler** (vinkel, hook-typ, format, proof, offer,
   visuell stil, textmängd, talare) i en rad högst upp — utan taggar kan nästa
   `/cs` inte gruppera vinstbidrag per variabel och lärandet dör.
-- Varje annons: hypotes, vad som behålls/ändras, format, exakt hook, komplett brief enligt leveransformatet i `.claude/commands/forsta-batch.md` (engelska briefer, `Swedish (use this) | English meaning`-tabeller, naming-strukturen, upptagna AD-ID:n avlästa i kontot).
+- Varje annons: brief enligt **BRIEFMALLEN** i `.claude/commands/forsta-batch.md`
+  (LEVERANSFORMAT) — enkel, kort, samma rubriker varje gång, engelska,
+  `Swedish (use this) | English meaning`-tabeller, och tre-frågorstabellen
+  på varje svensk rad. Hypotes och "vad vi lär oss" skrivs i `batch-log.md`,
+  inte i briefen. Naming enligt strukturen, upptagna AD-ID:n avlästa i kontot.
 
 ### 4. Modellpolicy (obligatorisk)
 - **All slutgiltig ad copy, alla svenska manusrader och voiceovers skrivs av en subagent via Agent-verktyget med `model: "sonnet"`** (eller `"haiku"` för bulkvarianter av samma line). Skicka subagenten: produktens DNA, hypotesen, hooken och formatkraven — den skriver bara text, inga strategibeslut.

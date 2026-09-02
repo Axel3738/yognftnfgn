@@ -93,8 +93,9 @@ dem oförändrade — inte att bedöma dem.
 
 Ronden flaggar produkter som behöver nya annonser (`/rond-auto` steg 4b).
 **Bara Sverige** — Norge kör översatta svenska annonser och får aldrig egna
-briefer (Axel 2026-09-01). Alla förstabatcher körs samma morgon, utan tak;
-brief-rundorna tar högst två per morgon.
+briefer (Axel 2026-09-01). Alla förstabatcher och alla förfallna brief-rundor
+körs samma morgon, utan tak — Axel har fler redigerare än briefer
+(2026-09-02). Rundan är dubbla veckokvoten, minst fyra, mest video.
 
 - **Klarat testet — 1 500 kr total spend OCH minst 20 % vinst — utan en
   riktig batch** → första batchen (`/forsta-batch`). Det är övergången

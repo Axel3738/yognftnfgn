@@ -41,11 +41,13 @@ Ditt uppdrag: analysera verklig performance-data, förklara varför vissa annons
 - **FAS 5 – Creative DNA:** Winning/Losing DNA + Behåll alltid/Testa kontrollerat/Undvik/Obevisat. **Skriv till `products/<id>/dna.md`.**
 - **FAS 6 – Kund- & konkurrentresearch:** kundspråk (direktcitat/mönster/hypotes), direkta + indirekta konkurrenter, 3 lånade mekanismer.
 - **FAS 7 – Variationer:** 3 per vinnare (nära iteration / format transfer / ny persuasion-angle).
-- **FAS 8 – Nya videokoncept:** 3 st med olika persuasion-mekanismer, inspelningsklara manus.
-- **FAS 9 – Nya statiska koncept:** 6 st (demo, jämförelse, testimonial, listicle, offer, risk/cost-of-inaction).
+- **FAS 8 – Nya videokoncept:** 6 st med olika persuasion-mekanismer, inspelningsklara manus. *(Axel 2026-09-02: fler videor — redigerarna är många. Var 3 st förut.)*
+- **FAS 9 – Nya statiska koncept:** 6 st (demo, jämförelse, testimonial, listicle, offer, risk/cost-of-inaction). Samma nivå som förut — inte fler. BOF-bildserier är parkerade tills Axel säger till.
 - **FAS 10 – Testplan:** Tier 1/2/3. Ingen dom <300 kr/3 köp; kill när CPA överstiger **break-even-CPA** (`break_even_cpa_sek` i products.json) efter ≥500 kr spend — inte när den överstiger target-CPA. "Gör innan spend"-lista. **Testplanen ska minst matcha kvoten: kör `node pipeline/quota.mjs`.**
 
-Varje annons: hypotes, vad som behålls/ändras, format, exakt hook, fullständigt manus/designbrief, shot list med tidskoder, exakta text-overlays, creator direction, editing direction, CTA, produktionsnivå, primärt KPI, "vad vi lär oss oavsett utfall".
+Varje annons skrivs enligt **BRIEFMALLEN** under LEVERANSFORMAT — inget annat
+format. Strategiresonemang (vad som behålls/ändras, KPI, "vad vi lär oss")
+hör hemma i `products/<id>/batch-log.md`, inte i briefen redigeraren läser.
 
 ## NAMING (obligatorisk)
 
@@ -53,8 +55,49 @@ Varje annons: hypotes, vad som behålls/ändras, format, exakt hook, fullständi
 
 ## LEVERANSFORMAT
 
+### BRIEFMALLEN (Axel 2026-09-02: enklare, kortare, samma struktur varje gång)
+
+Redigeraren ska förstå briefen på 30 sekunder. Exakt de här rubrikerna, i den
+här ordningen, på engelska, ingenting mer:
+
+```
+# <AD NAME>
+**Make:** <one sentence: what the editor is producing>
+**Format:** Video 9:16 + 4:5, 20–25 s   |   Static 4:5 (1080x1350) + 1:1
+**Why:** <one sentence — the hypothesis, plain words>
+**Drive folder:** <link>   **Landing page:** <link>
+
+## Hook
+| Swedish (use this) | English meaning |
+
+## Three-question test — every Swedish line
+| Line | Visualize? | Falsifiable? | Competitor-signable? | Verdict |
+(✅/❌ per cell. "Competitor-signable? ❌" is the GOOD answer. A line with a ❌
+in Visualize or Falsifiable, or a ✅ in Competitor-signable, is rewritten
+before delivery — it never goes out.)
+
+## Script / shot list
+| Time | Show | Swedish (use this) | English meaning | Caption |
+(static ads: Layout / Headline / Sub-line / Bottom band / CTA in the same table shape)
+
+## Rules
+- Price exactly <X kr> (compare-at <Y kr>). Never invented urgency or "thousands of customers".
+- Product in frame before second 4. Swedish captions word for word.
+- Export: <formats>.
+```
+
+Inga andra rubriker. Ingen "creator direction", "editing direction",
+"production level", "primary KPI" eller "what we learn" i briefen — det är
+strategens anteckningar och skrivs i `batch-log.md`. Behöver redigeraren
+en ton- eller klippanvisning: en rad under **Make**, inte en egen rubrik.
+
+Tre-frågorstestet är inte valfritt och inte en sammanfattning: **varje** svensk
+rad i briefen (hook, manusrader, headline, sub-line, band, CTA) står i tabellen
+med sitt eget utfall. Testet kommer ur `docs/copy-regler.md` och Axel har sett
+det fungera — det ska stå i varje kommande brief, för alla produkter.
+
 1. Slutrapport som EN markdown-fil: executive summary → datakvalitet → FAS 1–10 → lärdomar.
-2. Varje annons i testplanen: egen självständig brief i egen mapp — en klippare ska kunna jobba utan att läsa något annat.
+2. Varje annons i testplanen: egen självständig brief enligt BRIEFMALLEN — en klippare ska kunna jobba utan att läsa något annat. Samma text klistras in i Notion-itemet.
 3. **Engelska briefer**; svenska manusrader/voiceovers/text-i-bild i tabell `Swedish (use this) | English meaning`.
 4. Två zip: `video-ads-briefs.zip` + `image-ads-briefs.zip`, vardera med README (globala regler: rätt pris, produkt i bild före sekund 4, svenska captions ord-för-ord, exportformat 9:16 + 4:5 resp. 1:1 + 1080×1350, stavfällor) och i bild-zippen `reference-assets` med befintliga annonsbilder (vinnare tydligt döpta, ej-återanvändbara som `DO_NOT_REUSE_...`).
 5. **Drive görs av dig, inte av Axel** (Google Drive-kopplingen).

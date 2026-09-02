@@ -387,7 +387,7 @@ test('3-dagarsrundan: tyst i tre dagar, sen brief_runda med fokus', () => {
   assert.equal(behov.length, 1);
   assert.equal(behov[0].typ, 'brief_runda');
   assert.equal(behov[0].dagarSedanBatch, 3);
-  assert.equal(behov[0].rundaAntal, 2); // budget 2 000 → veckokvot 3 → runda 2
+  assert.equal(behov[0].rundaAntal, 6); // budget 2 000 → veckokvot 3 → runda 6 (dubbla, Axel 2026-09-02)
   assert.match(behov[0].orsak, /3 dagar sedan/);
   assert.match(behov[0].orsak, /ersätt det som pausats/);
 });
@@ -404,11 +404,11 @@ test('frysta produkter ger inga behov alls — inte ens första batchen', () => 
   assert.equal(annonsbehov(utanBudget, { logg, idag: '2026-08-29' }).length, 0);
 });
 
-test('rundkvoten är halva veckokvoten avrundad uppåt', () => {
-  assert.equal(rundkvot(500), 1);   // veckokvot 1
-  assert.equal(rundkvot(1000), 1);  // veckokvot 2
-  assert.equal(rundkvot(2000), 2);  // veckokvot 3
-  assert.equal(rundkvot(4000), 2);  // veckokvot 4
+test('rundkvoten är dubbla veckokvoten, aldrig under fyra (Axel 2026-09-02)', () => {
+  assert.equal(rundkvot(500), 4);   // veckokvot 1 → golvet 4
+  assert.equal(rundkvot(1000), 4);  // veckokvot 2 → golvet 4
+  assert.equal(rundkvot(2000), 6);  // veckokvot 3 → 6
+  assert.equal(rundkvot(4000), 8);  // veckokvot 4 → 8
   assert.equal(rundkvot(0), 0);
   assert.equal(rundkvot(undefined), 0);
 });

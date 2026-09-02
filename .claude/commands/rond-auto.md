@@ -228,14 +228,28 @@ lät dem äta tre av sex briefplatser på tre morgnar.)*
    produkt får en förstabatch exakt en gång, så kön tar slut av sig själv.
    Det är här pengarna finns: en produkt som passerat 1 500 kr på ≥20 % vinst
    står och väntar på material den redan förtjänat.
-2. **Sedan `brief_runda`, högst TVÅ per morgon**, uppifrån. Resten rapporteras
-   och ligger kvar till imorgon.
+2. **Sedan alla `brief_runda` — inget tak heller**, äldst först. Axels
+   besked 2026-09-02: "jag tar hellre några briefs för mycket, jag har ett
+   överflöd av redigerare." Hinner körningen inte hela kön: det som inte
+   fick sin `*_KLAR`-rad flaggas igen imorgon (det är så kön är byggd) —
+   lista i svaret exakt vilka som blev kvar.
 
-*(Taket hette tidigare två poster totalt. Det räknades 2026-08-29 för sex
-produkter; kontot hade 17 aktiva kampanjer den 1 september och kön gick inte
-ihop — Soptunneklistermärkena stod 12 dagar utan runda.)* Är `brief_runda`-kön
-fortfarande längre än sex poster tre morgnar i rad: säg till Axel att tvåan
-måste höjas.
+*(Taket hette tidigare två poster totalt, sedan två rundor. Bägge var
+räknade för sex produkter; kontot hade 17 aktiva kampanjer den 1 september
+och Soptunneklistermärkena stod 12 dagar utan runda.)*
+
+**Batchens innehåll (Axel 2026-09-02):**
+- **Fler videor.** Redigerarna är många — minst två tredjedelar av varje
+  batch är video. Förstabatch: sex nya videokoncept + variationer på
+  vinnarna + sex statiska. Brief-runda: `rundaAntal` annonser (dubbla
+  veckokvoten, minst fyra), varav högst två statiska.
+- **Statiska på samma nivå som förut.** Inte fler, inte färre.
+- **BOF-bilder är parkerat.** Axel nämnde att bilder är billiga att göra och
+  att BOF-bilder kanske ska prioriteras — beslutet är att vänta. Bygg inga
+  BOF-bildserier förrän han säger till.
+- **Briefens format är mallen i `forsta-batch.md` (LEVERANSFORMAT).** Enkel,
+  kort, samma struktur varje gång. Tre-frågorstabellen är obligatorisk på
+  varje svensk rad — en rad med ett ❌ går inte ut.
 
 - Behov `forsta_batch` → produkten har passerat 1 500 kr OCH ligger på minst
   **20 % vinst**. Under det flaggas ingenting: produkten chillar och prövas om

@@ -397,13 +397,16 @@ export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE' } = 
 }
 
 /**
- * Storleken på en 3-dagarsrunda: halva veckokvoten, avrundad uppåt (två rundor
- * per vecka ≈ veckokvoten). ANTAGANDE 2026-08-29, säg till Axel om delningen
- * ska vara en annan.
+ * Storleken på en 3-dagarsrunda. Axels beslut 2026-09-02: "jag tar hellre
+ * några briefs för mycket, jag har ett överflöd av redigerare". Rundan är
+ * därför dubbla veckokvoten, aldrig under fyra — och minst två tredjedelar
+ * video (rond-auto 4b). Förr var den halva veckokvoten (1–2 annonser), vilket
+ * lämnade redigerarna utan jobb.
  */
+export const RUNDA_MINST = 4;
 export function rundkvot(budgetSek) {
   const vecka = annonskvot(budgetSek).antal;
-  return vecka === 0 ? 0 : Math.ceil(vecka / 2);
+  return vecka === 0 ? 0 : Math.max(RUNDA_MINST, vecka * 2);
 }
 
 function b_spend(rader, behovsrad) {
