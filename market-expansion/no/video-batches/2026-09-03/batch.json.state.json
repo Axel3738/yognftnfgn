@@ -14,7 +14,8 @@
  "stickers_CS_3": {
   "assetUrl": "https://resource2.heygen.ai/video/fd20f6113ca24cbfa8dc4545c40a76b6/original.mp4",
   "proofreadId": "517ca74356054b10bf8af5f2c1c30134-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true
  },
  "stickers_G_1": {
   "assetUrl": "https://resource2.heygen.ai/video/5cbc90da031a47329475d259633bcad8/original.mp4",
