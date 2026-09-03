@@ -47,9 +47,16 @@
       "campaign_id": "120250009539570291",
       "produkt": "Gravstenspennan",
       "lage": "test",
-      "lage_motivering": "startad 2026-08-29, för ny för att ha data i 3-dagarsfönstret",
+      "lage_motivering": "3 265,89 kr spend (3d), 15 köp, ROAS 1,83 mot BE 1,60 (avläst 2026-09-03) — 7,9 % vinst, tunn marginal, LÅT VARA-läge på budgeten. Fick sin första riktiga batch via /forsta-batch-flödet (behovet var märkt 'ersatt', men ingen annons var faktiskt PAUSED i Meta — se dna.md FAS 1b).",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "3d0270ab-908c-81ca-bd04-c2acadd0b2e9",
+      "notion_hub_datakalla": "fea270ab-908c-83f2-b390-874797ca5497",
+      "notion_hub_namn": "Gravstenspenna creative hub",
+      "drive_produktmapp_id": "1xnqjyv-JSa2l9eMziNf_XgQZSidhU9tY",
+      "drive_produktmapp_not": "Joshs befintliga produktmapp 'Gravstenspenna' (ligger i LAUNCHED-mappen under BÄVER/Products). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products (lanseringskön).",
+      "drive_senaste_batchmapp_id": "1hfq4bHJpCmhz7KUp-UFb2752kxJpM434",
+      "minne": "products/gravstenspennan/"
     },
     {
       "campaign_id": "120250009391470291",
