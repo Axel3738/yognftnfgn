@@ -71,16 +71,20 @@ def i_drive(folder):
 
 
 _VIDEOKÄLLOR = None
-def videokälla(video_id):
+def videokälla(video_id, adnamn):
     """/{video_id}?fields=source ger (#10) permission — men kontots advideos-kant
-    lämnar ut source. Hämtas en gång för hela kontot (små sidor, annars 'reduce data')."""
+    lämnar ut source. Hämtas en gång för hela kontot (små sidor, annars 'reduce data').
+    Creativens video_id är ofta ett ANNAT objekt än advideos-id:t (verifierat
+    2026-09-03), så matcha i andra hand på titeln = annonsnamnet."""
     global _VIDEOKÄLLOR
     if _VIDEOKÄLLOR is None:
         _VIDEOKÄLLOR = {}
-        for v in alla(f'{KONTO}/advideos', fields='id,source', limit=25):
-            if v.get('source'): _VIDEOKÄLLOR[v['id']] = v['source']
-        print(f'  · {len(_VIDEOKÄLLOR)} videokällor lästa ur kontot', flush=True)
-    return _VIDEOKÄLLOR.get(video_id)
+        for v in alla(f'{KONTO}/advideos', fields='id,title,source', limit=25):
+            if not v.get('source'): continue
+            _VIDEOKÄLLOR[v['id']] = v['source']
+            if v.get('title'): _VIDEOKÄLLOR.setdefault('titel:' + v['title'], v['source'])
+        print(f'  · {sum(1 for k in _VIDEOKÄLLOR if not k.startswith("titel:"))} videokällor lästa ur kontot', flush=True)
+    return _VIDEOKÄLLOR.get(video_id) or _VIDEOKÄLLOR.get('titel:' + adnamn)
 
 
 def koncept(adnamn):
@@ -138,7 +142,7 @@ def main():
                 fil = os.path.join(mapp, ad['name'] + '.mp4')
                 if os.path.basename(fil) in finns: continue
                 if dry: print('  video', ad['name']); continue
-                src = videokälla(cr['video_id'])
+                src = videokälla(cr['video_id'], ad['name'])
                 if not src: print('  ✗ ingen source för', ad['name']); continue
                 hämta(src, fil); att_ladda.append(fil); print('  ↓', os.path.basename(fil), flush=True)
             elif cr.get('image_hash'):
