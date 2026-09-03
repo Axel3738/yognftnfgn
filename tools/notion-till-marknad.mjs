@@ -87,7 +87,12 @@ async function main() {
       if (!c?.message || !c?.headline) { j.mal.status = 'SAKNAR_COPY'; hopp++; logg('  ⏭ ingen copy i copy-filen'); continue; }
       const fil = hittaMedia(namn);
       if (!fil) { j.mal.status = 'SAKNAR_MEDIA'; hopp++; logg(`  ⏭ ingen fil ${namn}.* i ${mediaMapp}`); continue; }
-      if (befintliga.has(namn.toLowerCase())) { j.mal.status = 'DUBBLETT'; hopp++; logg('  ⏭ finns redan i kontot'); continue; }
+      if (befintliga.has(namn.toLowerCase())) {
+        // Raden har redan ett annons-id från en tidigare körning (t.ex. avbruten av
+        // Metas strypning) → klar, inte dubblett. Utan id är det en främmande dubblett.
+        if (j.mal.annonsId) { ok++; logg(`  ✓ redan uppe sedan tidigare körning (${j.mal.annonsId})`); continue; }
+        j.mal.status = 'DUBBLETT'; hopp++; logg('  ⏭ finns redan i kontot'); continue;
+      }
 
       // Kampanjen: utfall + kontospärr, live.
       if (!kampanjCache.has(j.mal.kampanjId)) kampanjCache.set(j.mal.kampanjId, await kampanjUtfall(j.mal.kampanjId));

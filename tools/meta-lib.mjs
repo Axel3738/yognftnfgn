@@ -68,8 +68,11 @@ export function ingaEnhancements({ inlineKommentar = false } = {}) {
 // ------------------------------------------------------------------ anrop
 
 let senastAnrop = 0;
-const FÖRDRÖJNING_MS = 1500;
-const BACKOFF_MS = [5000, 10000, 20000, 40000, 60000];
+const FÖRDRÖJNING_MS = 2500;
+// Kontots skrivbudget ("User request limit reached", kod 17) lyfter inte på
+// sekunder: mätt 2026-09-03 i Magiborsten NO tog 4 annonser (+ 4 nya adset)
+// hela budgeten, och 5+10+20+40+60 s räckte inte för en enda. Vänta i minuter.
+const BACKOFF_MS = [30000, 60000, 120000, 240000, 300000, 300000, 300000, 300000];
 
 /** Ett Graph-anrop. GET med params, eller POST med form (objekt eller FormData).
  *  Fast mellanrum + backoff på kod 17 / transienta fel — kontot ligger på
