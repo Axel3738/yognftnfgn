@@ -1,0 +1,21 @@
+{
+  "titel": "Roskisastian Tarrat 4 kpl – Piirroshahmot",
+  "problemH": "Kaikki harmaat roskikset näyttävät samalta. Myös sinun.",
+  "problemP": "Roskis seisoo pihatien alussa ja on ensimmäinen asia, jonka ohikulkijat näkevät. Harmaata muovia, tussilla raapustettu talon numero – ja täsmälleen samanlainen kuin naapurin, joten tyhjennyspäivän jälkeen joudut silti nostamaan kantta selvittääksesi, kumpi astioista on teidän.",
+  "losningH": "Ratkaisu: neljä kasvoa, neljä astiaa joilla oma luonteensa",
+  "losningP": "Yksi remahtaa nauruun ja iskee silmää, yksi näyttää kieltä, yksi hymyilee leveästi – ja yksi itkee, että juuri hänestä tuli roskis. Painele yksi jokaiseen astiaan, niin näet jo ovelta, kumpi on teidän, ja astiasta, jota kaikki teeskentelevät olemattomaksi, tulee kadun hauskin.",
+  "bullets": [
+    "<strong>Näet jo ovelta, kumpi astia on sinun</strong> – neljä erilaista kasvoa: nauravainen silmäniskijä, kieli ulkona, leveä hymy ja itkijä",
+    "<strong>Sade ja loska pyyhkiytyvät pois rätillä</strong> – sileä PVC-pinta ilman pintarakennetta, joka keräisi likaa",
+    "<strong>Kiinnittyy käsin suoraan astiaan</strong> – itsekiinnittyvä tausta, ei työkaluja eikä liimaa",
+    "<strong>Pysyy sileänä ilman kuplia reunoilla</strong> – litteä 2D-tuloste, joka myötäilee astian pintaa",
+    "<strong>Riittää koko roskisrivin astioihin</strong> – neljä 20 × 20 cm arkkia, tai kiinnitä ne jääkaappiin, oviin ja kaapinluukkuihin"
+  ],
+  "tags": ["roskisastian tarrat", "piha", "koristetarrat"],
+  "alt": {
+    "main": "Neljä erilaista kasvotarraa roskisastioiden kyljessä",
+    "kylskap": "Itkevä kasvotarra kiinnitettynä jääkaapin oveen",
+    "miljo": "Neljä värikästä roskisastiaa kasvotarroineen valkoisen aidan edessä",
+    "storlek": "Kokovertailu: tarra-arkin mitat 20 × 20 cm"
+  }
+}
