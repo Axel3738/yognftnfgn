@@ -63,7 +63,12 @@
         "annonsNamn": "MCtrekk_NO_RE_2_1",
         "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
         "prefix": "MCtrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252065655010233",
+        "creativeId": "1078725605074179",
+        "adsetId": "120252065651640233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "269.00",
@@ -128,7 +133,12 @@
         "annonsNamn": "MCtrekk_NO_GA_1_1",
         "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
         "prefix": "MCtrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252065657940233",
+        "creativeId": "1422115903108677",
+        "adsetId": "120252065656110233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "269.00",
@@ -193,7 +203,12 @@
         "annonsNamn": "MCtrekk_NO_OF_1_1",
         "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
         "prefix": "MCtrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252065660990233",
+        "creativeId": "1817335332601406",
+        "adsetId": "120252065659150233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "269.00",
@@ -258,7 +273,12 @@
         "annonsNamn": "MCtrekk_NO_DE_2_1",
         "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
         "prefix": "MCtrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252065663110233",
+        "creativeId": "1072224078723327",
+        "adsetId": "120252065661870233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "269.00",
@@ -323,7 +343,13 @@
         "annonsNamn": "MCtrekk_NO_RE_1_1",
         "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
         "prefix": "MCtrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "fel": "Meta 400: User request limit reached — Det har gjorts för många anrop från det här annonskontot. Vänta en stund och försök sedan igen.",
+        "annonsId": "120252065793230233",
+        "creativeId": "908963618958860",
+        "adsetId": "120252065651640233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "269.00",
@@ -388,7 +414,13 @@
         "annonsNamn": "MCtrekk_NO_OB_1_1",
         "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
         "prefix": "MCtrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "fel": "Meta 400: User request limit reached — Det har gjorts för många anrop från det här annonskontot. Vänta en stund och försök sedan igen.",
+        "annonsId": "120252065881760233",
+        "creativeId": "1067411749251461",
+        "adsetId": "120252065879990233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "269.00",
@@ -453,7 +485,13 @@
         "annonsNamn": "MCtrekk_NO_PD_6_1",
         "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
         "prefix": "MCtrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "fel": "Meta 400: User request limit reached — Det har gjorts för många anrop från det här annonskontot. Vänta en stund och försök sedan igen.",
+        "annonsId": "120252065883010233",
+        "creativeId": "1097692949286179",
+        "adsetId": "120252051417660233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "269.00",
@@ -518,7 +556,13 @@
         "annonsNamn": "MCtrekk_NO_LI_1_1",
         "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
         "prefix": "MCtrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "fel": "Meta 400: User request limit reached — Det har gjorts för många anrop från det här annonskontot. Vänta en stund och försök sedan igen.",
+        "annonsId": "120252065884860233",
+        "creativeId": "1559694238755562",
+        "adsetId": "120252065883830233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "269.00",
@@ -583,7 +627,12 @@
         "annonsNamn": "MCtrekk_NO_SP_4_1",
         "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
         "prefix": "MCtrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252065945770233",
+        "creativeId": "1431300785536727",
+        "adsetId": "120252051532230233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "269.00",
@@ -648,7 +697,12 @@
         "annonsNamn": "MCtrekk_NO_CO_2_1",
         "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
         "prefix": "MCtrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252065947770233",
+        "creativeId": "1370767495221455",
+        "adsetId": "120252065946260233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "269.00",
@@ -713,7 +767,12 @@
         "annonsNamn": "MCtrekk_NO_RI_2_1",
         "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
         "prefix": "MCtrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252065949850233",
+        "creativeId": "1624952032664731",
+        "adsetId": "120252065949120233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "269.00",
@@ -778,7 +837,12 @@
         "annonsNamn": "Overvåkingskamera_NO_RI_2_1",
         "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
         "prefix": "Overvåkingskamera",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066009010233",
+        "creativeId": "1392698023060060",
+        "adsetId": "120252066007770233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "899.00",
@@ -843,7 +907,12 @@
         "annonsNamn": "Overvåkingskamera_NO_SP_7_1",
         "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
         "prefix": "Overvåkingskamera",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066010650233",
+        "creativeId": "1419703060037963",
+        "adsetId": "120251998602380233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "899.00",
@@ -908,7 +977,12 @@
         "annonsNamn": "Overvåkingskamera_NO_PD_4_1",
         "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
         "prefix": "Overvåkingskamera",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066012100233",
+        "creativeId": "1086603173773253",
+        "adsetId": "120251998600280233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "899.00",
@@ -973,7 +1047,12 @@
         "annonsNamn": "Overvåkingskamera_NO_CO_2_1",
         "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
         "prefix": "Overvåkingskamera",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066105860233",
+        "creativeId": "1064373582878735",
+        "adsetId": "120252066104840233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "899.00",
@@ -1038,7 +1117,12 @@
         "annonsNamn": "Overvåkingskamera_NO_LI_1_1",
         "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
         "prefix": "Overvåkingskamera",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066108590233",
+        "creativeId": "2017707062080285",
+        "adsetId": "120252066107610233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "899.00",
@@ -1103,7 +1187,12 @@
         "annonsNamn": "Overvåkingskamera_NO_CS_4_1",
         "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
         "prefix": "Overvåkingskamera",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066188630233",
+        "creativeId": "1937936466876073",
+        "adsetId": "120251998624020233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "899.00",
@@ -1168,7 +1257,12 @@
         "annonsNamn": "Beltesliper_NO_PD_5_1",
         "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
         "prefix": "Beltesliper",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066192290233",
+        "creativeId": "1393908789603065",
+        "adsetId": "120251998517140233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1029.00",
@@ -1233,7 +1327,12 @@
         "annonsNamn": "Beltesliper_NO_PD_4_1",
         "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
         "prefix": "Beltesliper",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066194900233",
+        "creativeId": "1080863584356416",
+        "adsetId": "120251998517140233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1029.00",
@@ -1298,7 +1397,12 @@
         "annonsNamn": "Beltesliper_NO_SO_4_1",
         "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
         "prefix": "Beltesliper",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066314870233",
+        "creativeId": "1057118353866831",
+        "adsetId": "120252066313130233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1029.00",
@@ -1363,7 +1467,12 @@
         "annonsNamn": "Beltesliper_NO_PD_8_1",
         "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
         "prefix": "Beltesliper",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066317800233",
+        "creativeId": "2147349859537936",
+        "adsetId": "120251998517140233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1029.00",
@@ -1428,7 +1537,12 @@
         "annonsNamn": "Beltesliper_NO_SO_5_1",
         "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
         "prefix": "Beltesliper",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066320530233",
+        "creativeId": "1394330219549692",
+        "adsetId": "120252066313130233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1029.00",
@@ -1493,7 +1607,12 @@
         "annonsNamn": "Beltesliper_NO_SP_5_1",
         "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
         "prefix": "Beltesliper",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066395150233",
+        "creativeId": "1540206817876300",
+        "adsetId": "120251998518650233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1029.00",
@@ -1558,7 +1677,12 @@
         "annonsNamn": "Beltesliper_NO_REV_2_1",
         "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
         "prefix": "Beltesliper",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066397340233",
+        "creativeId": "1354644254387907",
+        "adsetId": "120252066395990233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1029.00",
@@ -1623,7 +1747,12 @@
         "annonsNamn": "Beltesliper_NO_PD_10_1",
         "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
         "prefix": "Beltesliper",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066399980233",
+        "creativeId": "1045890954955914",
+        "adsetId": "120251998517140233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1029.00",
@@ -1688,7 +1817,12 @@
         "annonsNamn": "Batmotortrekk_NO_PD_5_1",
         "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
         "prefix": "Batmotortrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066496960233",
+        "creativeId": "28166540506333554",
+        "adsetId": "120252047563920233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "529.00",
@@ -1753,7 +1887,12 @@
         "annonsNamn": "Batmotortrekk_NO_CO_1_1",
         "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
         "prefix": "Batmotortrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066500510233",
+        "creativeId": "1635445374767361",
+        "adsetId": "120252066499320233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "529.00",
@@ -1818,7 +1957,12 @@
         "annonsNamn": "Batmotortrekk_NO_BF_1_1",
         "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
         "prefix": "Batmotortrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066503040233",
+        "creativeId": "1377841831175420",
+        "adsetId": "120252066501740233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "529.00",
@@ -1883,7 +2027,12 @@
         "annonsNamn": "Batmotortrekk_NO_BF_2_1",
         "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
         "prefix": "Batmotortrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066584250233",
+        "creativeId": "1606790534316097",
+        "adsetId": "120252066501740233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "529.00",
@@ -1948,7 +2097,12 @@
         "annonsNamn": "Batmotortrekk_NO_RI_1_1",
         "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
         "prefix": "Batmotortrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066587820233",
+        "creativeId": "1058996523789818",
+        "adsetId": "120252066586160233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "529.00",
@@ -2013,7 +2167,12 @@
         "annonsNamn": "Batmotortrekk_NO_TR_1_1",
         "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
         "prefix": "Batmotortrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066590290233",
+        "creativeId": "1112711344760680",
+        "adsetId": "120252066589460233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "529.00",
@@ -2078,7 +2237,12 @@
         "annonsNamn": "Batmotortrekk_NO_CS_4_1",
         "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
         "prefix": "Batmotortrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066650250233",
+        "creativeId": "1413821854044724",
+        "adsetId": "120252047986380233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "529.00",
@@ -2143,7 +2307,12 @@
         "annonsNamn": "Batmotortrekk_NO_LI_1_1",
         "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
         "prefix": "Batmotortrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066675440233",
+        "creativeId": "2699388600463438",
+        "adsetId": "120252066663510233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "529.00",
@@ -2208,7 +2377,12 @@
         "annonsNamn": "Batmotortrekk_NO_RV_3_1",
         "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
         "prefix": "Batmotortrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066688770233",
+        "creativeId": "1393640115465685",
+        "adsetId": "120252066687580233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "529.00",
@@ -2273,7 +2447,12 @@
         "annonsNamn": "Batmotortrekk_NO_BF_3_1",
         "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
         "prefix": "Batmotortrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066964180233",
+        "creativeId": "1614608137061514",
+        "adsetId": "120252066501740233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "529.00",
@@ -2338,7 +2517,12 @@
         "annonsNamn": "Batmotortrekk_NO_RV_2_1",
         "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
         "prefix": "Batmotortrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066975900233",
+        "creativeId": "4447847588812939",
+        "adsetId": "120252066687580233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "529.00",
@@ -2403,7 +2587,12 @@
         "annonsNamn": "Kranbeskyttelse_NO_PD_3_1",
         "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
         "prefix": "Kranbeskyttelse",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252066987570233",
+        "creativeId": "2943744432462820",
+        "adsetId": "120251996272710233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "219.00",
@@ -2468,7 +2657,12 @@
         "annonsNamn": "Kranbeskyttelse_NO_SP_3_1",
         "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
         "prefix": "Kranbeskyttelse",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252067072640233",
+        "creativeId": "1678662889890751",
+        "adsetId": "120251996274400233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "219.00",
@@ -2533,7 +2727,12 @@
         "annonsNamn": "Kranbeskyttelse_NO_REV_2_1",
         "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
         "prefix": "Kranbeskyttelse",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252067078690233",
+        "creativeId": "3016297295369119",
+        "adsetId": "120252067076170233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "219.00",
@@ -2598,7 +2797,12 @@
         "annonsNamn": "Kranbeskyttelse_NO_PD_4_1",
         "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
         "prefix": "Kranbeskyttelse",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252067181690233",
+        "creativeId": "1084430923975638",
+        "adsetId": "120251996272710233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "219.00",
@@ -2663,7 +2867,12 @@
         "annonsNamn": "Kranbeskyttelse_NO_PD_8_1",
         "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
         "prefix": "Kranbeskyttelse",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252067186260233",
+        "creativeId": "2557331328047247",
+        "adsetId": "120251996272710233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "219.00",
@@ -2728,7 +2937,12 @@
         "annonsNamn": "Kranbeskyttelse_NO_PD_6_1",
         "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
         "prefix": "Kranbeskyttelse",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252067194260233",
+        "creativeId": "2574497119640075",
+        "adsetId": "120251996272710233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "219.00",
@@ -2793,7 +3007,12 @@
         "annonsNamn": "Kranbeskyttelse_NO_REV_1_1",
         "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
         "prefix": "Kranbeskyttelse",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252067198840233",
+        "creativeId": "4510936545845741",
+        "adsetId": "120252067076170233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "219.00",
@@ -2858,7 +3077,12 @@
         "annonsNamn": "Kranbeskyttelse_NO_SP_4_1",
         "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
         "prefix": "Kranbeskyttelse",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252067290370233",
+        "creativeId": "1603385924773118",
+        "adsetId": "120251996274400233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "219.00",

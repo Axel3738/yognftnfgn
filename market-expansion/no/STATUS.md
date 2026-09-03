@@ -46,3 +46,9 @@ startsidan; städas eller översätts vid behov.
 - Betalning (Shopify Payments/Klarna/ev. Vipps), domänkoppling beverbutikken.no, supportmail
 - Juridisk slutgranskning: alla `[JURIDISK GRANSKNING]`-flaggor i `output/build-report.md` + sidorna
 - Aktivering av produkterna (draft → active) — görs på ditt GO, kan göras i bulk per kollektion
+
+## 🇳🇴 /oversatt — körlogg (Notion-kön `SE-ACTIVE to be translated` → Magiborsten NO)
+
+| Datum | Kö | Bilder | Video | Upp i kontot | Hoppade | Krediter | Anm |
+|---|---|---|---|---|---|---|---|
+| 2026-09-03 | 44 rader, 5 produkter | 44 | 0 | 44 ACTIVE i produkternas befintliga kampanjer; 20 nya adset klonade från syskon-adset (nya vinklar) | 0 | Kie 16 593 → 16 593 (bilderna översätts lokalt), HeyGen orörd | Första körningen. Metas skrivbudget (kod 17) stoppade efter 4 annonser — backoff i minuter (`tools/meta-lib.mjs`) löste det, omkörningen räknade de 4 som klara. Alla 44 QA-bilder lästa. Notion: kommentar + Translated url + `Translation in review`. |
