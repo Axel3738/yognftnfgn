@@ -39,10 +39,11 @@ att lägga till en rad i en lista — inte genom att bygga om roboten.
 | PAUSED med budget | Motorhöljet NO, Axelbältet NO, Sätesöverdraget NO, Strandtofflorna NO, Tofflorna NO, Fiskespöhållaren NO, Sykkelshorts NO, Gamasjer NO, Kjempefotball NO, Medisinboks NO | Dit laddar rutinen **aldrig** upp (PAUSED är ett beslut) — raden rapporteras som "väntar" |
 | NO-annonsernas form (MC-Trekk NO) | adset `MC-Trekk NO - <K>`, annons `MCtrekk_NO_<K>_<n>` (video) / `MCtrekk_NO_<K>_2_1` (bild), page `879054088633562`, geo NO, länk beverbutikken.no, alla enhancements OPT_OUT, allt ACTIVE | Facit för hur nya annonser ska se ut |
 | SE-källan (`MC-Kapell_RE_2_1`) | Finns i MagiBorsten SE, adset `RE \| Notionrunda 2026-09-02`, copy + rubrik + länk i creativen | Copy och länk hämtas ur SE-kontot, inte ur Notion |
-| HeyGen api-kvot | **621 krediter** (~1/videominut, ~30/video) | Räcker till ~20 videor. Kön har 0 videor i dag, men Axel bör fylla på innan videor dyker upp |
+| HeyGen api-kvot | **621 krediter**. Körloggen visar ~80 krediter per videominut (23 videor = 1 127, 12 videor = 466), inte "1/min" som kodkommentaren säger | Räcker till ~12 videor. Kön har 0 videor i dag, men Axel bör fylla på innan videor dyker upp |
 | Kie.ai | 16 593 krediter, `KIE_API_KEY` satt | Bildmotorn är klar att köra |
 | Meta | `META_ACCESS_TOKEN` når både SE och NO | ✅ |
-| Notion | MCP finns i sessionen; `NOTION_TOKEN` saknas i env | Rutinen måste få Notion-connectorn kopplad ELLER `NOTION_TOKEN` (se "Rutinen") |
+| Notion | MCP finns i sessionen; `NOTION_TOKEN` saknas i env | Bilagan hämtas med `tools/notion-fil.mjs` som kräver `NOTION_TOKEN`. Rutinen behöver nyckeln i env (klickfritt, inga MCP-godkännanden) — se "Rutinen" |
+| Python-beroenden | ffmpeg, numpy, pillow saknas i containern; `pip install numpy pillow imageio-ffmpeg` fungerar (testat 2026-09-03) | Rutinen installerar dem i steg 0, som `/notionkorning` redan gör |
 | Discord | `DISCORD_BOT_TOKEN` satt, kanaler i `market-expansion/no/discord.json` | ✅ `pipeline/discord-brief.mjs` fungerar |
 | Notion-statusar i hubbarna | `SE-ACTIVE to be translated`, `To be translated`, `Translation in review`, `Translation archived` finns; fältet **`Translated url`** finns | Färdig översättning = `Translation in review` + `Translated url` ifylld |
 | ⚠️ De fyra arkiverade skalningshubbarna (Beach crocs, Mower seat, Trimmer belt, Boat cover 420D) | Saknar statusen `SE-ACTIVE to be translated` | `/notionkorning` kan inte lägga deras rader i kön. Deras NO-kampanjer är dessutom PAUSED. Inget att bygga för nu — men Axel bör veta |
@@ -260,19 +261,33 @@ Notion-kön dynamiskt.
 |---|---|
 | Kommando | `/oversatt` (alla aktiva marknader) |
 | Tid | 15:00 svensk tid = `0 13 * * *` (CEST). Efter `/notionkorning` 13:20 så dagens SE-launcher hinner med. Vinter: `0 14 * * *`. |
-| Connectors | **Notion** måste kopplas på rutinen (eller `NOTION_TOKEN` i env — då går allt via REST utan MCP). Meta, HeyGen, Kie, Discord går via env-nycklar. |
-| Env | `META_ACCESS_TOKEN`, `HEYGEN_API_KEY`, `KIE_API_KEY`, `DISCORD_BOT_TOKEN`, `NOTION_TOKEN` (rekommenderas) |
+| Connectors | Inga krävs. Allt går via env-nycklar (REST), så rutinen är klickfri och inget MCP-godkännande kan stoppa den. |
+| Env | `META_ACCESS_TOKEN`, `HEYGEN_API_KEY`, `KIE_API_KEY`, `DISCORD_BOT_TOKEN` finns. **`NOTION_TOKEN` saknas** i environmentet 2026-09-03 och krävs: `tools/notion-fil.mjs` (bilagan), `tools/notion-aterkoppling.mjs` (kommentar + status) och `tools/notion-kalla.mjs` (kön) går alla via REST. |
+| Steg 0 i rutinen | `pip install numpy pillow imageio-ffmpeg` (imageio-ffmpeg:s binär har libass, verifierat 2026-09-03 — `no-captions.py` fungerar med den) |
 | Klonar | `main` — kommandofilen måste vara mergad till `main` innan rutinen fungerar |
 
 ---
 
-## Frågor som avgör bygget (Axel)
+## Det Axel behöver göra (två saker, inget annat)
 
-1. **Nya vinklar i NO-kampanjen.** SE har nu vinklar (RE, GA, OF, DE …) som
-   NO-kampanjerna saknar. Plan: skapa adsetet automatiskt i CBO:n. Alternativ:
-   lägg alla nya i ett enda adset "NO - Notion". Planen väljer **eget adset per
-   vinkel** (samma struktur som SE och NO redan har).
-2. **HeyGen-kvoten är 621.** Fyll på innan videor hamnar i kön.
+1. **Lägg in `NOTION_TOKEN`** i environmentets miljövariabler på claude.ai
+   (samma nyckel som `/commission` använder). Utan den kan rutinen inte hämta
+   bilagorna eller flytta raderna.
+2. **Fyll på HeyGen-krediter.** 621 räcker till ~12 videor. Bildkön (45) går
+   utan HeyGen.
+
+## Beslut planen tar åt Axel (säg till om något ska ändras)
+
+- **Nya vinklar i NO-kampanjen.** SE har nu vinklar (RE, GA, OF, DE, OB, LI,
+  CO, RI, SO, REV, BF, TR, RV) som NO-kampanjerna saknar (de har CS/G/PD/SP).
+  Planen skapar **ett adset per vinkel** i den befintliga CBO:n, klonat ur ett
+  syskonadset — samma struktur som SE (`RE | Notionrunda …`) och NO redan har.
+- **Status ACTIVE direkt** för NO (Axels beslut 2026-08-29 för hela NO-flödet).
+- **Egen copy per annons** (översatt ur SE-annonsen), inte adsetets gamla copy.
+- **Raden flyttas till `Translation in review`** först när alla aktiva
+  marknader är klara; `Translated url` + kommentar sätts per marknad.
+- **Kampanjer som är PAUSED med spend** får inga nya annonser, raden rapporteras
+  som "väntar" och ligger kvar i kön.
 
 ---
 
