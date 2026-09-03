@@ -1,0 +1,72 @@
+# NO-videobatch 2026-09-03 — status
+
+Rutin: `/translate-no` (`.claude/skills/translate-no/SKILL.md`). Källa: Drive-mappen
+LAUNCHED (`1-vbYhYgTEv7zYptW5rGmgKAITmAz4l1X`).
+
+## Inventering (Fas 0)
+
+22 produktmappar i LAUNCHED (exkl. WINNERS/LOSERS/MAKE TO NORWAY). Live-koll i
+Meta (`act_1050941584152547`, 24 kampanjer totalt) + rekursiv listning av
+MAKE TO NORWAY (inkl. undermappen WINNERS) visade att **19 av 22** redan var
+täckta — antingen en `NO <namn>`-mapp (7 st: Bälteslipmaskin, Cykelshorts,
+Damasker, IBC, Jättefotboll, Kranskydd, Övervakningskamera) eller en kampanj i
+kontot (10 st, launchade 2026-09-02 av en tidigare körning som inte loggades i
+den här filen: Sysett/Magnethylle/Kryss og Bolle/Kamuflasjeteip/Plysjtøfler/
+MC-Trekk/Kast & Fang/Gravsteinspenn/Båtmotortrekk/Badeshorts).
+
+**3 kandidater** kvar, bokstavsordning: Bordtennisnät Infällbart, Medicinask i
+Fickformat, Smiley face trash can stickers.
+
+## Resultat
+
+| Produkt | Läge | Orsak |
+|---|---|---|
+| Bordtennisnät Infällbart | ⚠️ Överhoppad | Norsk sida finns (`bordtennisnett-uttrekkbart-…`), men INGEN Norge-kostnad i något av batch-sheet #1–#5.1 — sheeten har bara en annan produkt ("Bordtennistränare – Pingis Utan Bord"), inte denna. Problemmeddelande skickat till #problems-no. |
+| Medicinask i Fickformat | ✅ Launchad ACTIVE | Se nedan. |
+| Smiley face trash can stickers | ⚠️ Överhoppad | Finns inte på beverbutikken.no (167 produkter kontrollerade, ingen träff). Problemmeddelande skickat till #problems-no. |
+
+Ingen kö till i morgon — de tre kandidaterna är nu antingen klara eller
+blockerade på ett faktiskt Axel-beslut (butikssida saknas / COGS saknas).
+
+### Medicinask i Fickformat → Medisinboks NO
+
+⚠️ **Produkten hade INGA annonsvideor i Drive-mappen** — bara 4 bildannonser
+(CS/G/PD/SP `_2_1.png`) + 4 ADCOPY-docs. Hela Fas 1/2 (proofread, HeyGen,
+captions) utgick därför — noll HeyGen-krediter förbrukade (kvot oförändrad
+22 731 → 22 731). Fas 3.2 (bildannonser) + Fas 3 (launch) kördes komplett med
+en ny, dedikerad `no-image-launch.mjs` (samma struktur/enhancements som
+video+bild-flödet, men utan videoberoendet).
+
+- **Pris:** 219 kr (var 285 kr = 23,2 % rabatt). CS-bilden claimar "24 % RABATT"
+  → jämförpriset höjt till 289 kr i Shopify NO (`tools/shopify-fix-compareat.mjs
+  --market NO`) per prispolicyn, så claimen stämmer (24,2 % verklig rabatt).
+- **COGS:** batch-sheet #5.1, "Pocket pill box, 7 compartments", NORWAY-blockets
+  Total ex. tax Qty 1 = 7,92 EUR × 10,80 NOK/EUR (ECB-dagskurs) = 85,54 NOK.
+  BE-ROAS = 219/(219−85,54) = **1,64**.
+- **Bilder:** Kie AI (`google/nano-banana-edit`) rensade svensk text ur CS/PD/SP
+  (G hade ingen text, kopierades orörd). Norsk text målad deterministiskt med
+  PIL (`compose-no.py`). Alla 4 QA-godkända — inget svenskt kvar.
+- **Copy:** norsk adcopy + bildtext skriven av sonnet-subagent ur de svenska
+  ADCOPY-docsen, tre-frågorstestet redovisat (de flesta rader 1-2/3 — ren
+  lokalisering av redan godkänd svensk copy, inga nya rader). Ingen fri frakt
+  nämnd (219 kr < 300 kr-gränsen). "30 dagers åpent kjøp" bekräftat OK-claim.
+- **Levererat:** 4 png i chatten. Drive: MAKE TO NORWAY → "NO Medicinask i
+  Fickformat" (skapad via Google-Drive-connectorn — **fanns tillgänglig i den
+  här rutinkörningen**, se anteckning nedan) — 4 png + 4 adcopy-txt uppladdade
+  via `drive-push.mjs`.
+- **Launchad ACTIVE:** kampanj-ID 120252062027980233, "Medisinboks NO |
+  BE-ROAS 1,64 | 2026-09-03", CBO 1000 kr/dag. 4 adsets (CS/G/PD/SP), 1
+  bildannons vardera, alla ACTIVE. API-verifierat: kampanj ACTIVE, alla 4
+  adsets ACTIVE, alla 4 annonser ACTIVE, alla länkar → beverbutikken.no.
+
+⚠️ **Anteckning till CLAUDE.md-varningen om rutiners MCP-verktyg:** den här
+körningen (Routine, `/translate-no`) HADE `mcp__Google-Drive__*`-verktyg
+tillgängliga (använde `create_file` för att skapa NO-mappen). Alltså minst en
+konfiguration av rutinen ärver Drive-connectorn — avviker från nattrutinens
+("Ad upload and structure") observerade `allowed_tools` utan `mcp__*`. Två
+olika rutiner, inte nödvändigtvis samma beteende.
+
+⚠️ **Nytt verktyg skapat:** `pipeline/no-image-launch.mjs` — samma
+struktur/enhancements som `no-video-launch.mjs`+`no-image-ads.mjs` men för
+produkter helt utan video. Konfig: `pipeline/waves/no-<produkt>-image.config.mjs`
+(se `no-medicinask-image.config.mjs`).
