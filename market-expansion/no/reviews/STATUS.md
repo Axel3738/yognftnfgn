@@ -69,6 +69,25 @@ Rutinen gör det aldrig själv.
   Produkten behöver det inte — recensionerna finns redan namngivna i
   Judge.me sedan 2026-08-30. `output/gamasjer.no.csv` är den gamla filen.
 - Beltesliper-arket heter `_REVEW` (felstavat); kommandot matchar på "rev".
+- `output/beltesliper.no.csv` i repot är **kvittot på det som ligger i
+  Judge.me** (namnen Steinar Bjerke, Randi Løvaas … från omkörningen
+  2026-08-30). Bygget skriver om filen med standardnamnen (Anne Dahl, Lars
+  Vik …) varje gång — den versionen är inte importerad. Committa aldrig den
+  ombyggda filen; återställ den med `git checkout -- <fil>` efter bygget.
+
+### Kontrollkörningen 2026-09-03 — två sessioner körde samtidigt
+
+Två sessioner körde `/no-recensioner` parallellt förmiddagen 2026-09-03
+(`session_01TzdZVgj95nEMGAjsrfWqcx` importerade de 34 ovan och pushade
+`abb59f8`; `session_01V9jWZKyEyJ55W9RPcNPQR5` kom fram till exakt samma
+`sources.json`, samma tio CSV:er och samma handles, men hann inte importera
+något — spärren svarade "har redan synliga recensioner" på alla tio).
+Dubblettspärren höll, inga dubbletter. Den andra sessionens commit kastades
+och den här filen byggdes vidare på den första. Rutinen
+"Norska recensioner till Judge.me" (`trig_0143SCAzTsLzLn33tk5uTSrW`, 03:30
+UTC) är bunden till den första sessionen — den andra var en manuellt startad
+kontrollkörning. Starta aldrig en kontrollkörning medan rutinen kan vara
+igång: spärren skyddar bara om importerna inte landar i samma minut.
 
 ## Dubblettspärr
 
