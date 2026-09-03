@@ -3,63 +3,96 @@
   "assetUrl": "https://resource2.heygen.ai/video/9863903d5bb5442a9f90475e8ba31d85/original.mp4",
   "proofreadId": "f1b2b9324f3a403eb856d11d1df7c52d-nb-nb-NO",
   "srtDone": true,
-  "srtApplied": true
+  "srtApplied": true,
+  "renderId": "d6d5df559f894241839b4e4f81fd1d4c-nb",
+  "downloaded": true
  },
  "stickers_CS_2": {
   "assetUrl": "https://resource2.heygen.ai/video/c9f01a25617345a4a1d86ece8991363a/original.mp4",
   "proofreadId": "d455cb0f52f647c4bc338a6dd4541428-nb-nb-NO",
   "srtDone": true,
-  "srtApplied": true
+  "srtApplied": true,
+  "renderId": "42291cce547d4416bbc8d63777eb90bc-nb",
+  "downloaded": true
  },
  "stickers_CS_3": {
   "assetUrl": "https://resource2.heygen.ai/video/fd20f6113ca24cbfa8dc4545c40a76b6/original.mp4",
   "proofreadId": "517ca74356054b10bf8af5f2c1c30134-nb-nb-NO",
   "srtDone": true,
-  "srtApplied": true
+  "srtApplied": true,
+  "renderId": "da1189406738470d8d3c4f876f00ca4c-nb",
+  "downloaded": true
  },
  "stickers_G_1": {
   "assetUrl": "https://resource2.heygen.ai/video/5cbc90da031a47329475d259633bcad8/original.mp4",
   "proofreadId": "cfd4c7ee88634aa4a6ac7a7bac41cbb3-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "2aac50e33f1c49f78091ea55e208a209-nb",
+  "downloaded": true
  },
  "stickers_G_2": {
   "assetUrl": "https://resource2.heygen.ai/video/6c709fece2094855ac57389df0bd729b/original.mp4",
   "proofreadId": "1839636ff0af496a8bb348728f9f5cff-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "a929f665f8fc4a379e56ccb1e75ce79e-nb",
+  "downloaded": true
  },
  "stickers_G_3": {
   "assetUrl": "https://resource2.heygen.ai/video/e9072145a32d4726bd5cb2382fda4a21/original.mp4",
   "proofreadId": "52f1726ec6864e4ea9f46cfa09947dcd-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "86046fb9216d4476b8b5d8aca11b51f9-nb",
+  "downloaded": true
  },
  "stickers_PD_1": {
   "assetUrl": "https://resource2.heygen.ai/video/b38a482750c3461d81fec9b7fcc2f481/original.mp4",
   "proofreadId": "e8aec7d04a8d4e3b97060455d190e4a3-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "dfbb51525d424dae958219b21e730689-nb",
+  "downloaded": true
  },
  "stickers_PD_2": {
   "assetUrl": "https://resource2.heygen.ai/video/3eeff9428b8746e9b95ca32f4d4c9ded/original.mp4",
   "proofreadId": "c15d3865375a482a9f7ecbbc4b451f2d-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "79609c1c7d1c496dbdc998cdc260482b-nb",
+  "downloaded": true
  },
  "stickers_PD_3": {
   "assetUrl": "https://resource2.heygen.ai/video/8c3d61a6e39e4f7bb94967b33d91af3e/original.mp4",
   "proofreadId": "1628f566f44a4e2a959b62581fad7339-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "64dac949860f4a84a68cf191e5ae4526-nb",
+  "downloaded": true
  },
  "stickers_SP_1": {
   "assetUrl": "https://resource2.heygen.ai/video/27a0440a5e5e4055a208f5bf2231d5e5/original.mp4",
   "proofreadId": "599d2cd1f1954abbb5c362d45031fbba-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "fd83254991ff4054946b80699a88a023-nb",
+  "downloaded": true
  },
  "stickers_SP_2": {
   "assetUrl": "https://resource2.heygen.ai/video/ad613d294d36414e9beb3ece021ebae1/original.mp4",
   "proofreadId": "6644534ba0734d05a7c8e159e4f488f9-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "56686b9931144f1f82e55e2c39cea65f-nb",
+  "downloaded": true
  },
  "stickers_SP_3": {
   "assetUrl": "https://resource2.heygen.ai/video/1bb9b814fa694164898d3519d886ca2d/original.mp4",
   "proofreadId": "3b33434ec40d4ce2b63b32dcefda5f11-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "5697b6781e8b4ed9a65fc35f045f6fc2-nb",
+  "downloaded": true
  }
 }
