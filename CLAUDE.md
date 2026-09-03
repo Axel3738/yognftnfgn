@@ -207,7 +207,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/launch <produktnamn>` | **Temu-flödet:** Drive → QA → Judge.me → Meta som PAUSED (`docs/temu-launch-flow.md`) |
 | `/bildannonser [--dry]` | **Rutin 20:00 varje dag:** alla Notion-hubbar → ogjorda bildannonser → kie.ai → `To be Reviewed`. **Aldrig video.** |
 | `/nattkorning` | Rutinen "Ad upload and structure": Drive-kön → QA → Meta |
-| `/notionkorning` | **Nattrutin 00:01:** redigerarnas leveranser → brief-QA → upp i produktens CBO |
+| `/notionkorning` | **Rutin 13:20 varje dag:** Notion `To be Reviewed` (video + bild) → brief-QA → upp i produktens kampanj → Discord `#ads-launching` / `#problem-and-revisions-ads` |
 | `/commission` | **Var tredje dag + månadens sista dag:** godkända Notion-rader → spend i alla annonskonton → 0,4 % till redigeraren |
 
 ### Nattrutinerna
@@ -221,7 +221,7 @@ Merga alltid till `main`, annars är rutinen bara schemalagd, inte igång.
 | 04:15 | `15 2 * * *` | Daglig NO-videobatch | `/translate-no` |
 | 05:30 | `30 3 * * *` | Norska recensioner | `/no-recensioner` |
 | 20:00 | `0 18 * * *` | Bildannonser | `/bildannonser` |
-| 00:01 | `1 22 * * *` | Leveransrundan | `/notionkorning` |
+| 13:20 | `20 11 * * *` | Leveransrundan | `/notionkorning` |
 | 06:00 | `0 4 * * *` | Commission | `/commission` |
 
 `/commission` har daglig cron med flit: **skriptet självt avgör** om dagen är
@@ -234,7 +234,7 @@ räknas månaden hittills oavsett datum.
 ⚠️ **Cron står i UTC och följer inte sommartid.** Tiderna ovan gäller CEST
 (UTC+2, mars–oktober). Vid vinteromställningen blir Sverige UTC+1, och en cron
 som står kvar går en timme TIDIGARE svensk tid. Cron-uttrycken ska då **ökas**
-med en timme: `1 22 * * *` (00:01 CEST) blir `1 23 * * *` (00:01 CET).
+med en timme: `20 11 * * *` (13:20 CEST) blir `20 12 * * *` (13:20 CET).
 Räkna alltid om från önskad svensk tid till UTC i stället för att minnas riktningen.
 
 ⚠️ **Rutiner ärver inte sessionens MCP-connectors.** En rutin som behöver Notion,
@@ -243,6 +243,18 @@ på claude.ai — annars står den helt utan `mcp__*`-verktyg. Bygg därför rut
 på vägar som fungerar ändå där det går: Drive läses publikt med
 `tools/drive-ls.py`, Meta via `META_ACCESS_TOKEN`, Notion via `NOTION_TOKEN`
 (`tools/notion-klara.mjs`).
+
+⚠️ **Rutinens konfiguration och rutinens körning är två olika saker.** Mätt
+2026-09-01 på rutinen "Ad upload and structure": den listar sju connectors
+(ADsmanagaer, Google-Drive, Notion, Slack, Shopify …) men har `allowed_tools`
+= Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch — inga `mcp__*`.
+Vad det betyder i praktiken är **inte fastställt**: ingen har läst en
+rutinkörnings transkript och sett om connector-verktygen fanns eller inte.
+Därför ber `/nattkorning` steg 4 rutinen själv rapportera om
+`mcp__Google_Drive`-verktygen fanns. Läs den raden i morgonrapporten innan
+du drar någon slutsats åt något håll — och bygg aldrig en parallell
+infrastruktur (Apps Script, token-vägar) för något connectorn kanske redan
+klarar. Axels besked 2026-09-02: ingen ny Google-app för Drive-flytten.
 
 ---
 
@@ -438,6 +450,31 @@ node commission/run.mjs --manad 2026-07           # räkna om en gången månad
 annonskonton token:en når, `notion.mjs` läser hubbarna, `run.mjs` skriver
 rapporten till `commission/korningar/<YYYY-MM>/<datum>.md`.
 
+**Leaderboarden** (`leaderboard.mjs` + `valuta.mjs`, 18 tester) är samma siffror
+som topplista för redigerarna:
+https://claude.ai/code/artifact/77145ba8-a1cc-4791-9757-0715a8d97ff8
+Den räknar aldrig om något — den läser rapportens tal, så sidan och utbetalningen
+kan inte säga olika saker. `run.mjs` skriver `commission/leaderboard.json` vid
+**varje** körning (även icke-kördagar); `leaderboard.mjs` bakar in datan i
+`commission/leaderboard-publicerad.html` och rutinen publicerar om den filen mot
+**samma URL** (`url`-parametern — utan den blir det en ny länk).
+Sidmallen är `commission/leaderboard-sida.html`.
+
+⚠️ **Sidan får aldrig deklarera runtime-capabilities.** Redigerarna har inga
+Claude-konton, och en sida med `db` blir organisationsintern och släcks för dem.
+Datan ligger därför inbakad i HTML:en och sidan delas med en öppen länk.
+
+⚠️ **Sidans text är på engelska** — den läses av redigerarna, precis som
+briefarna. Koden och kommentarerna i filen är svenska som resten av repot.
+
+⚠️ **Två regler för topplistan, Axels beslut 2026-09-02:**
+- **Spend visas aldrig** — varken totalt eller per person. `leaderboard.json`
+  innehåller ingen spend alls. Bygg inte tillbaka den.
+- **Beloppen står i USD.** Kursen hämtas en gång per dygn från ECB
+  (`commission/valuta.mjs` → `valutakurs.json`) och visas med sitt datum på
+  sidan. Rapporten i `korningar/` räknar fortfarande i SEK — den är kvittot.
+- Perioden är kalendermånaden och nollställs av sig själv den 1:a.
+
 Satsen är 0,4 % och står som `SATS` i `berakning.mjs`. Bara `role: "editor"` i
 `dashboard/data/team.json` får utbetalning — spend på Axels rader, på rader utan
 Ansvarig och på okända Notion-användare redovisas separat som obetald.
@@ -535,7 +572,8 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 | Mapp/fil | Vad |
 |---|---|
 | `pipeline/ads.mjs`, `meta.mjs` | Laddar upp creatives till Meta som **PAUSED** |
-| `tools/leveranskon.mjs` | Vad redigerarna levererat i Drive som ännu inte finns i kontot (kön för `/notionkorning`) |
+| `tools/leveranskon.mjs` | Kön för `/notionkorning`: Notion-rader i `To be Reviewed` med fil, kopplade till kampanj i kontot (`--drive` läser även gamla Drive-mappar) |
+| `tools/notion-aterkoppling.mjs` | Kommentar på en Notion-rad, och `--status Draft` för en stoppad bildannons (REST, `NOTION_TOKEN`) |
 | `tools/qa-frames.py` | Drar frames ur en levererad video (tätt i hooken) så briefkontrollen går att göra på riktigt |
 | `tools/notion-klara.mjs` | Läser creative-hubbarna via Notions REST API (`NOTION_TOKEN`) — reservväg när MCP:n saknas |
 | `tools/notion-kalla.mjs` | Notion som leveranskälla: hittar alla creative hubs dynamiskt, plockar rader med färdig fil |
@@ -583,23 +621,28 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   5 av 8 rader**. Korskolla alltid mot `amount_spent × purchase_roas`.
 - **Notion-status `In progress 2` betyder REVISION** — annonsen underkändes och
   görs om. Det betyder INTE "längre kommen". Full tabell i `docs/os/NOTION-FORMAT.md`.
-- **En färdig creative kan ligga på två ställen. Läs alltid båda.**
-  | Källa | Vem lägger den där | Status i Notion |
-  |---|---|---|
-  | Drive `Edited Folder/Week N/<namn>/` | redigerarna (video) | oftast redan `Approved` |
-  | Notion `Filer och media` | `/bildannonser` 20:00 (bild via kie.ai) | `To be Reviewed` |
+- **En färdig creative ligger i Notion. Bara där.** (Axels beslut 2026-09-02.)
+  Klar = rad i vilken databas som helst under teamspacet Bäverbutiken med status
+  `To be Reviewed` och fil i `Filer och media` — video från redigerarna såväl som
+  bild från `/bildannonser`. Inget krav på Typ eller hubbnamn för `/notionkorning`.
+  Drive `Edited Folder/Week N/` är inte längre en källa för `/notionkorning`
+  (`leveranskon.mjs --drive` finns kvar för gamla mappar). Allt i `To be Reviewed`
+  har aldrig legat uppe i Meta, så ingen avstämning mot kontot behövs för att
+  veta vad som är gjort.
 
   ⚠️ **Notion-bilagan är enda kopian i världen** — `bildannonser/output/` är
   gitignorerat och dör med containern. Läser en rutin inte Notion är arbetet borta,
   och raden fastnar i `To be Reviewed` för alltid eftersom 20:00-rutinen bara plockar
   `Draft`. *(Detta hände: fem färdiga bildannonser låg osynliga tills Axel upptäckte
-  dem 2026-08-31. `/notionkorning` läser sedan dess båda källorna via
-  `tools/notion-kalla.mjs` och larmar högst upp i rapporten om Notion inte gick att läsa.)*
+  dem 2026-08-31. `/notionkorning` larmar högst upp i rapporten om Notion inte gick
+  att läsa.)*
 
-  **De fyra videohubbarna** (motorhöljet, axelbältet, sätesöverdragaren,
-  strandtofflorna) mättes 2026-08-30: där var `Filer och media` tomt på varenda rad
-  och `To be Reviewed` användes inte alls. **Det gällde de fyra hubbarna den dagen —
-  inte alla hubbar, inte för alltid.** Bildhubbarna fungerar tvärtom.
+  **Stoppregeln i `/notionkorning` är en enda: pris som avviker mer än 20 % från
+  Shopify-sidan** (inget pris i annonsen = grön). En creative med problem, video
+  som bild, får kommentar i Notion och flyttas till `Draft`. För bild är varje fel
+  ett problem; för video bara priset — felstavningar i video laddas upp ändå med
+  en anmärkning. Ingen nödbroms på antal leveranser. **Uppladdad rad flyttas till
+  `SE-ACTIVE to be translated`** (översättningskön), aldrig till `Approved`.
 
 - **Skriv aldrig en mätning som en evig lag.** Regeln ovan stod en gång som
   "`Filer och media` är tomt på samtliga rader … bygg därför aldrig". Den var falsk

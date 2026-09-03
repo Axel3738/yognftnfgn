@@ -22,11 +22,47 @@
 
 import { readFileSync, existsSync, statSync } from 'node:fs';
 import { basename, extname, resolve } from 'node:path';
+import { spawnSync } from 'node:child_process';
+
+// Utan detta går fetch() rakt ut förbi miljöns agentproxy och Metas Graph-API
+// slår i ett delat per-IP-tak nästan direkt ("User request limit reached"
+// efter en handfull anrop). Samma fix som tools/notify-discord.mjs.
+if (process.env.HTTPS_PROXY && process.env.NODE_USE_ENV_PROXY !== '1') {
+  const r = spawnSync(process.execPath, process.argv.slice(1), {
+    stdio: 'inherit', env: { ...process.env, NODE_USE_ENV_PROXY: '1' },
+  });
+  process.exit(r.status ?? 1);
+}
 
 const API = `https://graph.facebook.com/${process.env.META_API_VERSION || 'v23.0'}`;
 const TOKEN = process.env.META_ACCESS_TOKEN;
 const BAVERBUTIKEN_ACT = '1867947880635861';   // MagiBorsten (SEK) — enda tillåtna kontot
 const ROT = new URL('..', import.meta.url).pathname;
+
+// Meta pensionerade den samlade "standard_enhancements"-flaggan (400 Invalid
+// parameter) — samma fix som redan finns i pipeline/batch.mjs m.fl.: stäng av
+// varje enskild enhancement för sig.
+const NO_ENHANCEMENTS = {
+  creative_features_spec: {
+    ...Object.fromEntries(
+      ['adapt_to_placement', 'add_text_overlay', 'ads_with_benefits', 'advantage_plus_creative',
+       'app_highlights', 'audio', 'biz_ai', 'carousel_to_video', 'catalog_feed_tag',
+       'creative_stickers', 'cv_transformation', 'description_automation', 'dha_optimization',
+       'dynamic_partner_content', 'enable_ncs_testimonials', 'enhance_cta',
+       'feed_caption_optimization', 'generate_cta', 'hide_price', 'ig_glados_feed',
+       'ig_video_native_subtitle', 'image_animation', 'image_auto_crop', 'image_background_gen',
+       'image_brightness_and_contrast', 'image_enhancement', 'image_templates',
+       'image_text_translation', 'image_touchups', 'image_uncrop', 'local_store_extension',
+       'media_liquidity_animated_image', 'media_order', 'media_type_automation',
+       'multi_photo_to_video', 'pac_relaxation', 'product_browsing', 'product_extensions',
+       'product_metadata_automation', 'profile_card', 'replace_media_text',
+       'reveal_details_over_time', 'show_destination_blurbs', 'show_summary', 'site_extensions',
+       'text_optimizations', 'text_translation', 'translate_voiceover', 'video_auto_crop',
+       'video_filtering', 'video_highlight', 'video_highlights', 'video_to_image',
+       'video_uncrop', 'wa_mm_image_filtering'].map(f => [f, { enroll_status: 'OPT_OUT' }])
+    ),
+  },
+};
 
 const args = process.argv.slice(2);
 const flagga = (namn, standard = null) => {
@@ -41,6 +77,16 @@ const logg = (...a) => console.log(...a);
 
 // ---------------------------------------------------------------- Meta API
 
+const vänta = (ms) => new Promise(r => setTimeout(r, ms));
+
+// Kontot ligger på Metas "development access"-nivå för Marketing API, med ett
+// betydligt lägre och kortare (sekund-/minutbaserat, inte timbaserat) tak än
+// x-business-use-case-usage-headern visar — den stod kvar på call_count 1
+// genom hela blockeringen 2026-09-02. Ett fast litet mellanrum plus en
+// inbyggd backoff på just detta felet (kod 17 / "User request limit
+// reached") gör skriptet självläkande i stället för att kasta efter första
+// träffen.
+let senastAnrop = 0;
 async function api(sökväg, { method = 'GET', params = {}, form = null } = {}) {
   if (!TOKEN) dö('META_ACCESS_TOKEN saknas i miljön.');
   const url = new URL(`${API}/${sökväg}`);
@@ -54,13 +100,27 @@ async function api(sökväg, { method = 'GET', params = {}, form = null } = {}) 
   for (const [k, v] of Object.entries(params)) {
     url.searchParams.set(k, typeof v === 'object' ? JSON.stringify(v) : String(v));
   }
-  const res = await fetch(url, { method: form ? 'POST' : method, body });
-  const json = await res.json().catch(() => ({}));
-  if (!res.ok || json.error) {
+
+  const FÖRDRÖJNING_MS = 1500;
+  const BACKOFF_MS = [5000, 10000, 20000, 40000, 60000];
+  for (let försök = 0; ; försök++) {
+    const väntaTill = senastAnrop + FÖRDRÖJNING_MS;
+    if (väntaTill > Date.now()) await vänta(väntaTill - Date.now());
+    senastAnrop = Date.now();
+
+    const res = await fetch(url, { method: form ? 'POST' : method, body });
+    const json = await res.json().catch(() => ({}));
+    if (res.ok && !json.error) return json;
+
     const e = json.error || {};
+    const rateLimited = e.code === 17 || /user request limit reached/i.test(e.message || '');
+    if (rateLimited && försök < BACKOFF_MS.length) {
+      logg(`  ⏳ Meta rate limit (försök ${försök + 1}/${BACKOFF_MS.length}) — väntar ${BACKOFF_MS[försök] / 1000}s`);
+      await vänta(BACKOFF_MS[försök]);
+      continue;
+    }
     throw new Error(`Meta ${res.status}: ${e.message || res.statusText}${e.error_user_msg ? ` — ${e.error_user_msg}` : ''}`);
   }
-  return json;
 }
 
 /** Alla sidor av ett edge-anrop. Kontot har fler än 25 annonser. */
@@ -343,7 +403,7 @@ async function main() {
       name: namn,
       object_story_spec: JSON.stringify(spec),
       // Inga creative enhancements — samma linje som launch.md.
-      degrees_of_freedom_spec: JSON.stringify({ creative_features_spec: { standard_enhancements: { enroll_status: 'OPT_OUT' } } }),
+      degrees_of_freedom_spec: JSON.stringify(NO_ENHANCEMENTS),
     },
   });
 

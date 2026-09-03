@@ -8,8 +8,9 @@ Ads Manager, importera recensioner.
 
 | Vad | Var |
 |---|---|
-| Masterdokument (uppladdningsprompter + batch-sheet-länkar) | Google Doc `1CahFECAuXCFIzddKYD71vK3xWZM12DMUEkvmWSsIWJ0` |
-| Batch-sheets #1–#5.1 (COGS per produkt och marknad, EUR) | Länkade i masterdokumentet — nya quotes läggs alltid där |
+| **Sheet-länkarna** (batch #1–#5.1, en rad per batch) | Google Doc `1BtFJj1A3J2ciZZS_f3lKU0cM0g5-ncWO7LFySuc3peo` — Axels besked 2026-09-02, publikt läsbar via `/export?format=txt` |
+| Masterdokument (uppladdningsprompter, äldre) | Google Doc `1CahFECAuXCFIzddKYD71vK3xWZM12DMUEkvmWSsIWJ0` |
+| Batch-sheets #1–#5.1 (COGS per produkt och marknad, EUR) | Länkade i sheet-länk-dokumentet ovan — nya quotes läggs alltid där. Läst 2026-09-02: #1 `1N-5uz6d0_tEVhW5ZuGarG1xrAQl7o0AnoHM8MxWOKaA`, #2 `1DsnNutLzkDh3MO5A74VwWKF9wLMxzZTevTfOraGEdHE`, #3 `1grWLaWOI1tO2L0JUKgSBsM_RyH09vNa_uuRLwWuknOw`, #4 `1PrHS6gkJ230-wQNJNLoiFKuHM2RXYpZ6` (xlsx), #5.1 `1Pcdt9VDHzWgsR3ei1XqTZEn3vYB383ALinZT-wyJ2LM`. Läs alltid dokumentet vid körning — listan här är en ögonblicksbild |
 | Creatives per produkt | Drive: `Products/<produktnamn>/` (mapp `1Gga4QfZ0UfVC-q06BGGHN_fkSFN0Iygm`) |
 | Launchade produkter | `Products/LAUNCHED/` · utfall i `Winners/` och `Losers/` |
 | Judge.me-importmall | `Products/../Instructions for new test/Always do this .../direct_import_sample (1).csv` |
@@ -43,14 +44,22 @@ den stora posten — nästan dubbla produktkostnaden här (make-to-order, 3D-pri
 
 ## QA före launch (det gamla "mamma-jobbet", nu maskinellt)
 
+0. **Mappen ska vara komplett** innan något launchas (Axel 2026-09-02): alla
+   koncept, `_REVIEWS` och `_ADCOPY`. Annars: ingen launch, redigerarna
+   pingas i Discord (`@carlvicente.working`, `@jazzer1522`) med vad som saknas.
 1. Ladda ner alla creatives ur produktmappen.
 2. Dra frames ur videorna (ffmpeg via `imageio-ffmpeg`), läs ALL inbränd text.
 3. Kontrollera mot Shopify-produkten: pris, rabattclaims mot jämförpris,
-   stavning (butiksnamnet!), produktnamn.
+   produktnamn. **Stavfel ignoreras** (Axel 2026-09-02).
 4. Bildannonser: samma kontroll.
-5. Verifierade fynd 2026-08-29 (badshorts, första testkörningen):
-   "väverbutiken" felstavat i CS_1 vid ~13 s; "50% RABATT" när jämförpriset gav
-   23 % → jämförpris höjt till 798 kr (Axels beslut).
+5. Utfall per fynd: rabattclaim → jämförpriset höjs (nedan). Pris i annonsen
+   **mycket lägre** än i butiken (> 10 % under) → creativen förblir PAUSED
+   och flaggas tydligt i Discord-briefen med båda priserna + på Axels lista.
+   Allt annat prisrelaterat ignoreras.
+6. Verifierade fynd 2026-08-29 (badshorts, första testkörningen):
+   "väverbutiken" felstavat i CS_1 vid ~13 s (skulle i dag ignoreras);
+   "50% RABATT" när jämförpriset gav 23 % → jämförpris höjt till 798 kr
+   (Axels beslut).
 
 ## Uppladdning till Meta (ur masterdokumentets prompter)
 

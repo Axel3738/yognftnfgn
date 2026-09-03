@@ -1,0 +1,12 @@
+{
+  "_kommentar": "Discord-adresser för NO-rutinen (/translate-no). Slagna ur servern via boten 2026-09-02. ID:n är stabila; namnen kan Axel döpa om.",
+  "guild": "1540322130388983921",
+  "kanaler": {
+    "brief": { "namn": "translation-till-norge-av-nya-produkter", "id": "1543546518785495151" },
+    "problem": { "namn": "problems-no", "id": "1544567111475535892" }
+  },
+  "pinga": [
+    { "namn": "Axel", "discord": "confident_otter_25993", "id": "1469423029783236689" },
+    { "namn": "ECOM CHADKING", "discord": "ecom_chadking", "id": "1543537450335477836" }
+  ]
+}

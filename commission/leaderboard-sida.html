@@ -1,0 +1,623 @@
+<title>Editor Leaderboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    --ground: #EEF1F0;
+    --yta: #FFFFFF;
+    --yta-2: #F7F9F8;
+    --ink: #14201E;
+    --ink-svag: #5D6E6A;
+    --linje: #DBE2DF;
+    --linje-stark: #C3CECA;
+    --mässing: #9C6C21;
+    --mässing-yta: #F3E7D2;
+    --upp: #2C7452;
+    --ner: #A34428;
+    --stapel: rgba(156, 108, 33, 0.17);
+    --skugga: 0 1px 2px rgba(20, 32, 30, 0.06), 0 8px 24px -16px rgba(20, 32, 30, 0.35);
+
+    --display: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --brod: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0E1513;
+      --yta: #161F1D;
+      --yta-2: #1B2523;
+      --ink: #E9EFEC;
+      --ink-svag: #90A29E;
+      --linje: #253230;
+      --linje-stark: #35443F;
+      --mässing: #DDA855;
+      --mässing-yta: #33291A;
+      --upp: #5BBE8B;
+      --ner: #E0805F;
+      --stapel: rgba(221, 168, 85, 0.19);
+      --skugga: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px -16px rgba(0, 0, 0, 0.9);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground: #0E1513;
+    --yta: #161F1D;
+    --yta-2: #1B2523;
+    --ink: #E9EFEC;
+    --ink-svag: #90A29E;
+    --linje: #253230;
+    --linje-stark: #35443F;
+    --mässing: #DDA855;
+    --mässing-yta: #33291A;
+    --upp: #5BBE8B;
+    --ner: #E0805F;
+    --stapel: rgba(221, 168, 85, 0.15);
+    --skugga: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px -16px rgba(0, 0, 0, 0.9);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    overflow-x: hidden;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--brod);
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sida {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 28px 18px 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  /* ---------------------------------------------------------- Sidhuvud */
+
+  .huvud { display: flex; flex-direction: column; gap: 10px; }
+
+  .ögonbryn {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-svag);
+  }
+
+  h1 {
+    margin: 0;
+    font-family: var(--display);
+    font-size: clamp(34px, 9vw, 46px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.02;
+    text-wrap: balance;
+  }
+
+  .period {
+    margin: 0;
+    color: var(--ink-svag);
+    font-size: 14px;
+  }
+
+  .märken { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+
+  .märke {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border: 1px solid var(--linje-stark);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-svag);
+    white-space: nowrap;
+  }
+
+  .märke--slut {
+    border-color: var(--mässing);
+    background: var(--mässing-yta);
+    color: var(--mässing);
+    font-weight: 600;
+  }
+
+  .märke--varning { border-color: var(--ner); color: var(--ner); }
+
+  /* ----------------------------------------------------------- Summan */
+
+  .summa {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    background: var(--linje);
+    border: 1px solid var(--linje);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .summa div { background: var(--yta); padding: 12px 14px; }
+
+  .summa dt {
+    margin: 0 0 3px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-svag);
+  }
+
+  .summa dd {
+    margin: 0;
+    font-family: var(--display);
+    font-size: clamp(17px, 4.8vw, 21px);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+
+  .summa dd.pengar { color: var(--mässing); }
+
+  /* ------------------------------------------------------------ Listan */
+
+  .lista { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+
+  .rad {
+    position: relative;
+    background: var(--yta);
+    border: 1px solid var(--linje);
+    border-radius: 10px;
+    box-shadow: var(--skugga);
+    overflow: hidden;
+  }
+
+  .rad--etta { border-color: var(--mässing); }
+
+  /* Stapeln bakom raden = personens andel av månadens spend. */
+  .stapel {
+    position: absolute;
+    inset: 0 auto 0 0;
+    background: var(--stapel);
+    pointer-events: none;
+  }
+
+  .rad summary {
+    position: relative;
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 14px;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .rad summary::-webkit-details-marker { display: none; }
+  .rad summary:focus-visible { outline: 2px solid var(--mässing); outline-offset: -3px; }
+
+  .plats {
+    font-family: var(--display);
+    font-size: 24px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--linje-stark);
+    text-align: center;
+    line-height: 1;
+  }
+
+  .rad--etta .plats { color: var(--mässing); }
+
+  .namnblock { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+
+  .namn {
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .under {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 10px;
+    font-size: 12.5px;
+    color: var(--ink-svag);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .flytt { display: inline-flex; align-items: center; gap: 3px; font-weight: 600; }
+  .flytt--upp { color: var(--upp); }
+  .flytt--ner { color: var(--ner); }
+
+  .belopp { text-align: right; display: flex; flex-direction: column; gap: 1px; }
+
+  .commission {
+    font-family: var(--display);
+    font-size: clamp(15px, 4.4vw, 19px);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--mässing);
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+
+  .commission-etikett {
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-svag);
+  }
+
+  /* ----------------------------------------------------------- Detalj */
+
+  .detalj {
+    position: relative;
+    border-top: 1px solid var(--linje);
+    background: var(--yta-2);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 13px;
+  }
+
+  .detalj h3 {
+    margin: 0;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-svag);
+    font-weight: 600;
+  }
+
+  .kampanjer { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+
+  .kampanj {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: baseline;
+    border-bottom: 1px dotted var(--linje-stark);
+    padding-bottom: 4px;
+  }
+
+  .kampanj span:last-child { font-variant-numeric: tabular-nums; color: var(--ink-svag); white-space: nowrap; }
+
+  .annonsnamn { font-family: var(--mono); font-size: 12px; word-break: break-all; }
+
+  .kurva { display: flex; flex-direction: column; gap: 4px; }
+  .kurva svg { display: block; width: 100%; height: 46px; }
+
+  /* -------------------------------------------------------- Obetald spend */
+
+  .block {
+    background: var(--yta);
+    border: 1px solid var(--linje);
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .block h2 {
+    margin: 0;
+    font-family: var(--display);
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .poster { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; font-size: 13.5px; }
+
+  .post {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    align-items: baseline;
+    border-bottom: 1px solid var(--linje);
+    padding-bottom: 6px;
+  }
+
+  .post:last-child { border-bottom: 0; padding-bottom: 0; }
+  .post b { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowrap; }
+  .post small { display: block; color: var(--ink-svag); font-size: 12px; }
+
+  footer {
+    color: var(--ink-svag);
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-top: 1px solid var(--linje);
+    padding-top: 14px;
+  }
+
+  .tom { color: var(--ink-svag); font-size: 13.5px; margin: 0; }
+
+  @media (max-width: 520px) {
+    .summa { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .summa div:first-child { grid-column: 1 / -1; }
+    .rad summary { grid-template-columns: 30px minmax(0, 1fr) auto; gap: 10px; padding: 12px 12px; }
+    .namn { font-size: 16.5px; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .rad { transition: border-color 0.15s ease; }
+  }
+</style>
+
+<div class="sida">
+  <header class="huvud">
+    <p class="ögonbryn">Bäverbutiken · editors’ 0.4%</p>
+    <h1>Leaderboard</h1>
+    <p class="period" id="period">Loading …</p>
+    <div class="märken" id="märken"></div>
+  </header>
+
+  <dl class="summa" id="summa"></dl>
+
+  <ol class="lista" id="lista"></ol>
+
+  <section class="block" id="obetald"></section>
+
+  <footer id="fot"></footer>
+</div>
+
+<script>
+  // Datan bakas in i sidan av commission/leaderboard.mjs och rutinen publicerar
+  // om sidan varje morgon mot samma adress. Inget hämtas vid öppning: sidan
+  // kräver ingen inloggning, så redigerarna kan öppna den med bara länken.
+  const INBÄDDAD = __DATA__;
+
+  const antalFmt = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
+  const usdFmt = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  // Topplistan visar bara vad redigeraren tjänat, aldrig annonsbudgeten.
+  const pengar = (n) => '$' + usdFmt.format(n);
+
+  const el = (tagg, klass, text) => {
+    const e = document.createElement(tagg);
+    if (klass) e.className = klass;
+    if (text !== undefined) e.textContent = text;
+    return e;
+  };
+
+  function dagText(iso) {
+    if (!iso) return 'unknown time';
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return iso;
+    return d.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+  }
+
+  function ålder(iso) {
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return null;
+    return (Date.now() - d.getTime()) / 36e5;
+  }
+
+  // Intjänat per dygn för en person — bara när det finns nog med dygn att dra
+  // en linje mellan. En kurva på två punkter säger ingenting.
+  function kurva(historik, id) {
+    const punkter = (historik || [])
+      .map((h) => ({ datum: h.datum, värde: Number(h.per?.[id] ?? 0) }))
+      .sort((a, b) => a.datum.localeCompare(b.datum));
+    if (punkter.length < 3) return null;
+
+    const b = 320, h = 46, m = 4;
+    const max = Math.max(...punkter.map((p) => p.värde), 1);
+    const steg = punkter.length > 1 ? (b - m * 2) / (punkter.length - 1) : 0;
+    const xy = punkter.map((p, i) => [m + i * steg, h - m - (p.värde / max) * (h - m * 2)]);
+    const linje = xy.map(([x, y], i) => (i ? 'L' : 'M') + x.toFixed(1) + ' ' + y.toFixed(1)).join(' ');
+    const yta = linje + ' L' + xy.at(-1)[0].toFixed(1) + ' ' + (h - m) + ' L' + xy[0][0].toFixed(1) + ' ' + (h - m) + ' Z';
+
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 ' + b + ' ' + h);
+    svg.setAttribute('preserveAspectRatio', 'none');
+    svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', 'Earned per day, latest ' + pengar(punkter.at(-1).värde));
+
+    const fyll = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    fyll.setAttribute('d', yta);
+    fyll.setAttribute('fill', 'var(--stapel)');
+    fyll.setAttribute('stroke', 'none');
+
+    const strek = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    strek.setAttribute('d', linje);
+    strek.setAttribute('fill', 'none');
+    strek.setAttribute('stroke', 'var(--mässing)');
+    strek.setAttribute('stroke-width', '1.6');
+    strek.setAttribute('stroke-linejoin', 'round');
+
+    const slut = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    slut.setAttribute('cx', xy.at(-1)[0].toFixed(1));
+    slut.setAttribute('cy', xy.at(-1)[1].toFixed(1));
+    slut.setAttribute('r', '2.6');
+    slut.setAttribute('fill', 'var(--mässing)');
+
+    svg.append(fyll, strek, slut);
+    return { svg, dagar: punkter.length };
+  }
+
+  function ritaHuvud(d) {
+    const månad = new Date(d.period.fran + 'T12:00:00Z')
+      .toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+    document.getElementById('period').textContent =
+      månad.charAt(0).toUpperCase() + månad.slice(1) + ' · ' + d.period.fran + ' – ' + d.period.till;
+
+    const märken = document.getElementById('märken');
+    märken.replaceChildren();
+    märken.append(el('span', d.slutavrakning ? 'märke märke--slut' : 'märke',
+      d.slutavrakning ? 'Final — this is what gets paid' : 'Month so far'));
+    märken.append(el('span', 'märke', 'Updated ' + dagText(d.uppdaterad)));
+
+    const timmar = ålder(d.uppdaterad);
+    if (timmar !== null && timmar > 30) {
+      märken.append(el('span', 'märke märke--varning', 'No update for ' + Math.floor(timmar / 24) + ' days'));
+    }
+    if (d.valuta && d.valuta.gammal) {
+      märken.append(el('span', 'märke märke--varning', 'Rate is from ' + d.valuta.datum));
+    }
+    if (d.kallor && d.kallor.fel > 0) {
+      märken.append(el('span', 'märke märke--varning', d.kallor.fel + ' sources could not be read'));
+    }
+  }
+
+  function ritaSumma(d) {
+    const dl = document.getElementById('summa');
+    dl.replaceChildren();
+    const par = [
+      ['Earned this month', pengar(d.totalt.usd), true],
+      ['Editors', antalFmt.format(d.totalt.redigerare), false],
+      ['Ads', antalFmt.format(d.totalt.annonser), false],
+    ];
+    for (const [etikett, värde, guld] of par) {
+      const ruta = el('div');
+      ruta.append(el('dt', null, etikett));
+      ruta.append(el('dd', guld ? 'pengar' : null, värde));
+      dl.append(ruta);
+    }
+  }
+
+  function ritaRad(r, störst, historik) {
+    const li = el('li');
+    const detaljer = el('details', 'rad' + (r.plats === 1 ? ' rad--etta' : ''));
+
+    const stapel = el('div', 'stapel');
+    stapel.style.width = Math.max(2, (r.usd / störst) * 100) + '%';
+    detaljer.append(stapel);
+
+    const summering = el('summary');
+    summering.append(el('div', 'plats', String(r.plats)));
+
+    const block = el('div', 'namnblock');
+    block.append(el('div', 'namn', r.namn));
+    const under = el('div', 'under');
+    if (r.okning !== null && r.okning !== undefined && r.okning > 0) {
+      under.append(el('span', null, '+' + pengar(r.okning) + ' today'));
+    }
+    if (r.flytt) {
+      under.append(el('span', 'flytt ' + (r.flytt > 0 ? 'flytt--upp' : 'flytt--ner'),
+        (r.flytt > 0 ? '▲ ' : '▼ ') + Math.abs(r.flytt) + (Math.abs(r.flytt) > 1 ? ' places' : ' place')));
+    }
+    under.append(el('span', null, r.annonser + (r.annonser === 1 ? ' ad' : ' ads')));
+    block.append(under);
+    summering.append(block);
+
+    const belopp = el('div', 'belopp');
+    belopp.append(el('div', 'commission', pengar(r.usd)));
+    belopp.append(el('div', 'commission-etikett', 'earned'));
+    summering.append(belopp);
+    detaljer.append(summering);
+
+    const detalj = el('div', 'detalj');
+    const linje = kurva(historik, r.id);
+    if (linje) {
+      const box = el('div', 'kurva');
+      box.append(el('h3', null, 'Earned this month · ' + linje.dagar + ' days'));
+      box.append(linje.svg);
+      detalj.append(box);
+    }
+    if (r.kampanjer && r.kampanjer.length) {
+      const box = el('div');
+      box.append(el('h3', null, 'Earning most right now'));
+      const ul = el('ul', 'kampanjer');
+      for (const k of r.kampanjer) {
+        const rad = el('li', 'kampanj');
+        rad.append(el('span', null, k.namn));
+        rad.append(el('span', null, pengar(k.usd)));
+        ul.append(rad);
+      }
+      box.append(ul);
+      detalj.append(box);
+    }
+    if (r.basta) {
+      const box = el('div');
+      box.append(el('h3', null, 'Best ad'));
+      const rad = el('div', 'kampanj');
+      rad.append(el('span', 'annonsnamn', r.basta.namn));
+      rad.append(el('span', null, pengar(r.basta.usd)));
+      box.append(rad);
+      detalj.append(box);
+    }
+    if (!detalj.children.length) detalj.append(el('p', 'tom', 'No approved ads with results yet this month.'));
+    detaljer.append(detalj);
+
+    li.append(detaljer);
+    return li;
+  }
+
+  function ritaLista(d) {
+    const lista = document.getElementById('lista');
+    lista.replaceChildren();
+    if (!d.rader.length) {
+      const li = el('li', 'block');
+      li.append(el('p', 'tom', 'No editor has earned anything on an approved ad yet this month.'));
+      lista.append(li);
+      return;
+    }
+    const störst = Math.max(...d.rader.map((r) => r.usd), 1);
+    for (const r of d.rader) lista.append(ritaRad(r, störst, d.historik));
+  }
+
+  function ritaObetald(d) {
+    const block = document.getElementById('obetald');
+    block.replaceChildren();
+    block.append(el('h2', null, 'Not going to any editor'));
+
+    const poster = [];
+    if (d.obetald.utanAnsvarig) poster.push(['Rows with no Assignee', 'Nobody is set as Assignee in Notion', d.obetald.utanAnsvarig]);
+    for (const p of d.obetald.ejRedigerare || []) poster.push([p.namn, 'Not an editor (' + p.roll + ')', p.usd]);
+    if (d.obetald.okanda) poster.push(['Unknown Notion users', 'Missing from the team list — Axel adds them', d.obetald.okanda]);
+    if (d.obetald.konflikter) poster.push(['Name conflicts', d.obetald.konflikter + ' ad names belong to two people', null]);
+
+    if (!poster.length) {
+      block.append(el('p', 'tom', 'Everything earned goes to an editor.'));
+      return;
+    }
+    const ul = el('ul', 'poster');
+    for (const [namn, varför, belopp] of poster) {
+      const li = el('li', 'post');
+      const vänster = el('div');
+      vänster.append(el('span', null, namn));
+      vänster.append(el('small', null, varför));
+      li.append(vänster);
+      li.append(el('b', null, belopp === null ? '—' : pengar(belopp)));
+      ul.append(li);
+    }
+    block.append(ul);
+  }
+
+  function ritaFot(d) {
+    const fot = document.getElementById('fot');
+    fot.replaceChildren();
+    fot.append(el('div', null, 'You earn ' + (d.sats * 100).toFixed(1)
+      + '% on the ads you are Assignee for in Notion, as long as they are approved and running.'));
+    if (d.valuta) {
+      fot.append(el('div', null, 'Amounts in USD, converted at the ECB rate ' + d.valuta.kurs
+        + ' on ' + d.valuta.datum + (d.valuta.gammal ? ' (latest rate we could fetch)' : '') + '.'));
+    }
+    fot.append(el('div', null, 'Updated once a day, early in the morning. '
+      + 'The month resets to zero on the 1st.'));
+  }
+
+  function rita(d) {
+    ritaHuvud(d);
+    ritaSumma(d);
+    ritaLista(d);
+    ritaObetald(d);
+    ritaFot(d);
+  }
+
+  rita(INBÄDDAD);
+</script>
