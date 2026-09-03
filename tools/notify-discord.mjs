@@ -79,7 +79,12 @@ async function pingRad(token, personer) {
 }
 
 async function hittaKanal(token) {
-  if (process.env.DISCORD_CHANNEL_ID) return process.env.DISCORD_CHANNEL_ID;
+  // Ett uttryckligt kanalnamn vinner över ett fast id. Miljön hade
+  // DISCORD_CHANNEL_ID satt globalt, så varje `DISCORD_CHANNEL_NAME=ads-launching`
+  // gick tyst till fel kanal hela 2026-09-02 — Axel såg en tom kanal.
+  if (process.env.DISCORD_CHANNEL_ID && !process.env.DISCORD_CHANNEL_NAME) {
+    return process.env.DISCORD_CHANNEL_ID;
+  }
   try {
     const r = await fetch(`https://discord.com/api/v10/guilds/${GUILD}/channels`, {
       headers: { Authorization: `Bot ${token}` },
