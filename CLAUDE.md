@@ -525,6 +525,18 @@ Grillklinikken-butiker får ALDRIG bäver-emojin eller "Bäverbutiken" som vendo
   köra KIE — deterministiskt och kan inte hallucinera.
   `productVariantAppendMedia` vägrar med *"variant already has attached media"* —
   radera den gamla bilden FÖRST, koppla sedan.
+- **Granska källprodukten innan den klonas till fler butiker.** Hittas en
+  butikslucka: läs den befintliga produktens skarpa `descriptionHtml`, pris,
+  jämförpris, alt-texter och infografikernas språk FÖRST — annars multipliceras
+  varje fel med antalet nya butiker. *(2026-09-03: klistermärkena fanns bara i
+  SE och hade "snabb leverans" i garantin, bullets utan utfall i fetstil, inget
+  jämförpris och en engelsk storleksguide. Utan granskningen hade allt hamnat i
+  fyra butiker till.)*
+  **Och sätt aldrig punkt vid den enskilda produkten** — samma defekt sitter oftast
+  i katalogen: samma svep hittade "Hurtig levering" på 12 danska produkter och
+  kvarglömda `<!-- GIF … -->`-platshållare på 6 produkter i SE/NO/FI. Svepen körs
+  med `temu/klistermarken/fartsvep.mjs` och `kommentarsvep.mjs`.
+  Tas en platshållare bort ur butiken ska TODO:n den bar skrivas in i repot först.
 - **Priset hämtas från produktsidan vid varje körning**, aldrig ur en äldre brief
   eller creative. Axelbältet höjdes 2026-08-05 från 509 → 599 kr (jämförpris 678 kr
   = spara 79 kr, 11,65 %). **509 kr, 636 kr och "20 %" är förbjudna** i all ny copy.

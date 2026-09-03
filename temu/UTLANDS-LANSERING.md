@@ -591,3 +591,17 @@ copy (sonnet-subagent, stilfacit texter5-no.mjs), receptets NO-priser
 taxable false, publicerade på alla 4 kanaler. Verifierade READY.
 Lärdom: inventera ALLA butiker per SKU efter varje utrullning — NO-luckan satt
 i veckor utan att synas.
+
+## Lagning 2026-09-03: klistermärken för soptunnan saknades i FYRA butiker
+
+Axel frågade om produkten fanns i Norge. Den fanns bara i SE — alltså saknades
+den i NO, DK, FI **och** UK. Full detalj i `temu/klistermarken/README.md`.
+Priser: 199 SEK / 229 NOK / 149 DKK / 19,90 € / £14,99, jämförpris ×1,3.
+COGS 47,56 / 52,93 / 36,87 / 5,47 / 3,50 enligt cogs-metoden.
+
+**Nytt steg som ska ingå i varje lagning:** granska KÄLLPRODUKTEN innan den
+klonas. Den här hade "snabb leverans" i garantin, bullets utan utfall i fetstil,
+inget jämförpris, fem bilder utan alt-text och en engelsk storleksguide — allt
+hade följt med till fyra butiker till. Samma svep hittade "Hurtig levering" på
+12 danska produkter och kvarglömda GIF-platshållarkommentarer på 6 produkter i
+SE/NO/FI. Svepskripten ligger i `temu/klistermarken/`.
