@@ -87,3 +87,34 @@ produkter helt utan video. Konfig: `pipeline/waves/no-<produkt>-image.config.mjs
   NO Luffarschack 20 · NO Magnethylla 20 · NO Motorcycle cover 20 ·
   NO Plyschtofflor 20 · NO Sömnadskit 15 (9 mp4 + 3 png + 3 txt). Inga fel.
 - Tidsbudget 4 h + parallell körning inskrivet i rutinen efter 18-timmarskörningen.
+
+## Smiley face trash can stickers → Klistremerker til Søppeldunken (Axels order i chatten 2026-09-03)
+
+Norska sidan publicerades 08:21 (efter nattens koll) — Axel skickade länken och bad
+rutinen köra produkten direkt.
+
+- **Källa:** Drive-mappen i LAUNCHED: 12 videor (CS/G/PD/SP × 3, `…_CS_2 .mp4` felnamnad
+  i Drive) + 4 bildannonser (utan `_2_1`-suffix) + 4 ADCOPY-docs + REVIEW-sheet (rörs inte).
+- **Pris:** 199 kr (var 259 kr = 23 %). CS-bilden claimar "50 % RABATT" → jämförpriset höjt
+  259→398 kr i Shopify NO per prispolicyn (`tools/shopify-fix-compareat.mjs --market NO`).
+  Josh's README i Drive säger "never write a % discount" för NYA annonser — den befintliga
+  CS-bilden har ändå 50 %, så den lokaliserades oförändrad enligt prispolicyn.
+- **COGS: SAKNAS.** Produkten finns inte i något av batch-sheet #1–#5.1 (alla fem lästa i
+  sin helhet via Drive-connectorn, 0 träffar på sticker/klisterm/soptunn/tecknade/cartoon).
+  `products/soptunneklistermarkena/` som README pekar på finns inte i main eller någon gren.
+  → Ingen BE-ROAS, **ingen launch** än. Axel tillfrågad i chatten (tre gånger).
+- **Videor:** proofread 12/12 → SRT-lokalisering (sonnet-subagent): dagslöften → lagerurgency,
+  "norske/svenske familier" → generaliserat, søppelbøtte/-kasse/søpla → søppeldunk (butikens
+  namn), prisuttal normaliserat (hundre og nittini), förvanskade rader (CS_3 b1, G_2 b8) lagade.
+  `verify-srt.py` grön (12/12, timecodes identiska). Apply → render → download 12/12.
+  Captions `pipeline/no-captions.py`, standardband (textscan: alla 12 y≈1396–1488), exit 0 ×12.
+  **36 QA-bilder lästa + slutkortssvep 12/12: inget svenskt, ingen svensk domän/pris.**
+  Kvot 22 731 → 22 265 (466 krediter, ~5,7 videominuter).
+- **Bilder:** Kie-rensning i två omgångar — första prompten tog bort de tecknade ansiktena
+  (= produkten); omkörning med "keep the cartoon faces" för CS/PD/SP. PIL-komposition
+  (`stickers/compose-no.py`), 4/4 QA-godkända.
+- **Levererat:** 12 mp4 + 4 png i chatten. Drive: MAKE TO NORWAY → "NO Smiley face trash can
+  stickers" (`1VUJCD-biIIuLrGxCv-FNSojwpzTUovs9`, skapad via Drive-connectorn): 4 png +
+  4 adcopy-txt uppladdade, 12 mp4 uppladdas via drive-push.
+- **Launch:** vågkonfig `pipeline/waves/no-stickers-video.config.mjs` klar med `__BEROAS__`
+  som platshållare. Körs så fort Norge-kostnaden finns.
