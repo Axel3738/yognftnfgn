@@ -38,7 +38,7 @@ att lägga till en rad i en lista — inte genom att bygga om roboten.
 | `Magiborsten NO` (`act_1050941584152547`) | 24 kampanjer, valuta **SEK**, tidszon Oslo, 15 ACTIVE / 9 PAUSED | Kampanj finns → annonsen läggs till, ingen ny kampanj byggs |
 | PAUSED med budget | Motorhöljet NO, Axelbältet NO, Sätesöverdraget NO, Strandtofflorna NO, Tofflorna NO, Fiskespöhållaren NO, Sykkelshorts NO, Gamasjer NO, Kjempefotball NO, Medisinboks NO | Dit laddar rutinen **aldrig** upp (PAUSED är ett beslut) — raden rapporteras som "väntar" |
 | NO-annonsernas form (MC-Trekk NO) | adset `MC-Trekk NO - <K>`, annons `MCtrekk_NO_<K>_<n>` (video) / `MCtrekk_NO_<K>_2_1` (bild), page `879054088633562`, geo NO, länk beverbutikken.no, alla enhancements OPT_OUT, allt ACTIVE | Facit för hur nya annonser ska se ut |
-| SE-källan (`MC-Kapell_RE_2_1`) | Finns i MagiBorsten SE, adset `RE \| Notionrunda 2026-09-02`, copy + rubrik + länk i creativen | Copy och länk hämtas ur SE-kontot, inte ur Notion |
+| SE-källan (`MC-Kapell_RE_2_1`) | Finns i MagiBorsten SE, adset `RE \| Notionrunda 2026-09-02`, copy + rubrik + länk i creativen; bilden hämtbar via `image_hash` → `adimages.url` (video: `advideos` `source`) | Copy, länk **och media** hämtas ur SE-kontot. Notion är kön och statusen, inte enda kopian längre |
 | HeyGen api-kvot | **621 krediter**. Körloggen visar ~80 krediter per videominut (23 videor = 1 127, 12 videor = 466), inte "1/min" som kodkommentaren säger | Räcker till ~12 videor. Kön har 0 videor i dag, men Axel bör fylla på innan videor dyker upp |
 | Kie.ai | 16 593 krediter, `KIE_API_KEY` satt | Bildmotorn är klar att köra |
 | Meta | `META_ACCESS_TOKEN` når både SE och NO | ✅ |
@@ -108,21 +108,32 @@ adsetets gamla copy. Så bär varje annons sin egen vinkel, precis som i SE.
 
 ### Fas 2 — Media
 
-**Bild** (`pipeline/oversatt-bild.py`, samma teknik som `/translate-no` Fas 3.2):
-1. Hämta Notion-bilagan (signerad URL, kortlivad — hämta vid körning, cacha aldrig).
-   Läs bilden och inventera all svensk text (Claude läser bilden).
-2. **Kie** `google/nano-banana-edit`: "Remove ALL text, letters and numbers …
-   keep buttons as empty shapes, keep the cartoon faces/product exactly". Input är
-   `image_urls` = en publik URL. Notions signerade URL är publik i ~1 h —
-   räcker för Kie. Faller det: ladda upp bilden till Drive via
-   `pipeline/drive-push.mjs` och ge Kie den länken.
-3. **Textytor mäts, inte gissas:** diffa originalet mot Kie-plattan → mask →
-   sammanhängande rutor = exakt där den svenska texten satt. Textfärg samplas ur
-   originalets textpixlar. Ingen handmätning per bild — det är det som gör att
-   det går att köra som rutin.
-4. **PIL** ritar den norska texten i samma rutor (LiberationSans-Bold, storlek
-   anpassad till rutans höjd, max 2 rader, ✓ ritas med linjer, knappar som
-   rounded rectangles). Pris = marknadens pris.
+**Bild** (`pipeline/oversatt-bild.py` — samma process som `/bildannonser` bygger
+bilderna med, fast baklänges):
+
+Så här är SE-bilderna gjorda (verifierat i `bildannonser/text.py` + bilden
+`MC-Kapell_RE_2_1` 2026-09-03): Kie genererar **fotot utan text**, sedan lägger
+`text.py` på all text som vektortext i fasta zoner — vit platta (rubrik/citat/
+pris-band), blå knapp (CTA), mörk etikett, badge. Texten står alltså **alltid på
+en enfärgad form**, aldrig direkt på fotot. Det gör översättningen deterministisk:
+
+1. Hämta källbilden. Primärt ur **Meta SE** (creativens `image_hash` →
+   `adimages.url`, verifierat 2026-09-03: 1080×1350, 152 kB) — annonsen ligger
+   ju redan uppe i Sverige. Notion-bilagan är reserv (`tools/notion-fil.mjs`).
+2. Inventera texten. Svenska strängarna står i Notion-briefen (tabellen
+   *Script / shot list*: Headline, Sub-line, Bottom band, CTA) och Claude läser
+   bilden som facit. Sonnet-subagenten levererar norska motsvarigheter med
+   marknadens pris.
+3. **Formerna mäts, inte gissas:** hitta varje enfärgad textform (platta, knapp,
+   etikett, badge) som sammanhängande yta med en färg; fyll den helt med sin
+   egen färg (då är den svenska texten borta utan ett spår) och rita den norska
+   texten i **samma ruta**, samma stil ur `text.py`:s `STILAR` (font, färg,
+   storlek krymps tills det får plats, max samma antal rader). Pris = marknadens
+   pris. 0 krediter, pixelstabilt, ingen handmätning per bild.
+4. **Kie som reserv**, bara för bilder som inte är byggda så (redigerarnas egna
+   med text direkt på fotot): `google/nano-banana-edit` "Remove ALL text …",
+   input `image_urls` = publik URL (Metas `adimages.url` duger), sedan samma
+   PIL-steg på diff-mätta rutor. Exakt `/translate-no` Fas 3.2.
 5. QA: läs varje färdig bild. Stavning, siffror, layout, ingen svensk rest.
    Fel → gör om. Aldrig leverera en bild med fel.
 
