@@ -2,12 +2,14 @@
  "stickers_CS_1": {
   "assetUrl": "https://resource2.heygen.ai/video/9863903d5bb5442a9f90475e8ba31d85/original.mp4",
   "proofreadId": "f1b2b9324f3a403eb856d11d1df7c52d-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true
  },
  "stickers_CS_2": {
   "assetUrl": "https://resource2.heygen.ai/video/c9f01a25617345a4a1d86ece8991363a/original.mp4",
   "proofreadId": "d455cb0f52f647c4bc338a6dd4541428-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true
  },
  "stickers_CS_3": {
   "assetUrl": "https://resource2.heygen.ai/video/fd20f6113ca24cbfa8dc4545c40a76b6/original.mp4",
