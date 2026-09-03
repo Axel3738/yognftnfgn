@@ -1,0 +1,26 @@
+{
+  "_kommentar": "Manuella rutor för det detektorn inte hittar (plattor över röriga foton, badges med text direkt på fotot). box = [x0,y0,x1,y1] i pixlar, post = index i den norska formens texter. Mätt ur bilderna 2026-09-03.",
+  "Beltgrinder_PD_5_1": {
+    "box_for_form": {
+      "0": [
+        {"box": [33, 55, 1047, 290], "post": 0, "fet": true, "storlek": 72, "rader": 2, "farg": [20, 18, 16]},
+        {"box": [33, 295, 1047, 420], "post": 1, "fet": true, "storlek": 72, "rader": 1, "farg": [20, 18, 16]}
+      ]
+    }
+  },
+  "Beltgrinder_PD_10_1": {
+    "box_for_form": {
+      "0": [
+        {"box": [33, 55, 1047, 290], "post": 0, "fet": true, "storlek": 70, "rader": 2, "farg": [20, 18, 16]},
+        {"box": [33, 295, 1047, 420], "post": 1, "fet": true, "storlek": 70, "rader": 1, "farg": [20, 18, 16]},
+        {"box": [33, 435, 1047, 515], "post": 2, "fet": false, "storlek": 38, "rader": 1, "farg": [20, 18, 16]}
+      ]
+    }
+  },
+  "Kranskydd_SP_3_1": {
+    "box_for_form": {
+      "1": [{"box": [66, 1050, 507, 1125], "post": 0, "fet": false, "storlek": 30, "rader": 1, "farg": [24, 50, 76], "outline": [27, 76, 122], "radie": 24, "kant": 3}],
+      "2": [{"box": [574, 1050, 1015, 1125], "post": 0, "fet": false, "storlek": 30, "rader": 1, "farg": [24, 50, 76], "outline": [27, 76, 122], "radie": 24, "kant": 3}]
+    }
+  }
+}

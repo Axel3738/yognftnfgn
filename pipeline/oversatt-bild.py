@@ -103,13 +103,17 @@ def _dominant_farg(pixlar):
     return vals[cnt.argmax()].astype(int)
 
 
-def hitta_former(im, min_andel=0.012):
+def hitta_former(im, min_andel=0.003):
     """Enfärgade former som bär text. im = HxWx3 int.
-    En form = stort sammanhängande område med låg lokal variation vars färg
-    dominerar området; texten är hålen (pixlar som avviker från formens färg)."""
+    Tre kandidatmasker, för formerna ser olika ut i pixlarna:
+      • platt  — låg lokal variation (knappar, plattor över lugna foton)
+      • ljus   — nästan vitt och omättat (den halvgenomskinliga plattan över ett
+                 rörigt foto: fotot skymtar, men aldrig under ~195)
+      • mörk   — nästan svart och omättat (etiketter, mörka knappar)
+    Varje kandidat prövas likadant; texten är hålen (pixlar av EN annan färg).
+    Överlappande kandidater slås ihop till den med flest bokstäver."""
     h, w, _ = im.shape
     g = im.astype(np.int32)
-    # Lokal variation: skillnad mot grannen till höger/nedåt.
     dx = np.abs(g[:, 1:] - g[:, :-1]).sum(axis=2)
     dy = np.abs(g[1:, :] - g[:-1, :]).sum(axis=2)
     platt = np.ones((h, w), dtype=bool)
@@ -117,14 +121,24 @@ def hitta_former(im, min_andel=0.012):
     platt[:, :-1] &= dx < 18
     platt[1:, :] &= dy < 18
     platt[:-1, :] &= dy < 18
-    etik, k = _komponenter(platt)
+    mx, mn = g.max(axis=2), g.min(axis=2)
+    ljus = (mn > 195) & (mx - mn < 30)
+    # En vit platta på en gräddvit bakgrund smälter ihop i ljus-masken; den rena
+    # vita (>238, nästan omättad) skiljer plattan från bakgrunden.
+    vit = (mn > 238) & (mx - mn < 12)
+    mork = (mx < 70) & (mx - mn < 30)
+    kandidater = []
+    for mask in (platt, ljus, vit, mork):
+        etik, k = _komponenter(mask)
+        min_px = int(min_andel * h * w)
+        storlekar = np.bincount(etik.ravel())
+        for e in range(1, k + 1):
+            if storlekar[e] < min_px:
+                continue
+            kandidater.append(etik == e)
     former = []
-    min_px = int(min_andel * h * w)
-    for e in range(1, k + 1):
-        m = etik == e
+    for m in kandidater:
         antal = int(m.sum())
-        if antal < min_px:
-            continue
         ys, xs = np.where(m)
         y0, y1, x0, x1 = ys.min(), ys.max() + 1, xs.min(), xs.max() + 1
         farg = _dominant_farg(g[m])
@@ -170,9 +184,25 @@ def hitta_former(im, min_andel=0.012):
         rader = _textrader(f)
         if not rader or max(r["y1"] - r["y0"] for r in rader) > 140:
             continue
+        f["glyfer"] = int(len(glyfer))
         former.append(f)
-    former.sort(key=lambda f: (f["y0"], f["x0"]))
-    return former
+    # Samma form kan hittas av två masker — behåll den med flest bokstäver.
+    former.sort(key=lambda f: -f["glyfer"])
+    unika = []
+    for f in former:
+        dubbel = False
+        for u in unika:
+            ox = max(0, min(f["x1"], u["x1"]) - max(f["x0"], u["x0"]))
+            oy = max(0, min(f["y1"], u["y1"]) - max(f["y0"], u["y0"]))
+            yta = ox * oy
+            minsta = min((f["x1"] - f["x0"]) * (f["y1"] - f["y0"]), (u["x1"] - u["x0"]) * (u["y1"] - u["y0"]))
+            if minsta and yta / minsta > 0.6:
+                dubbel = True
+                break
+        if not dubbel:
+            unika.append(f)
+    unika.sort(key=lambda f: (f["y0"], f["x0"]))
+    return unika
 
 
 def _textrader(form):
@@ -369,9 +399,10 @@ def rita_text(bild, form, analys, text):
             rita.text((xv, y), rad, font=font, fill=farg, anchor="la")
 
 
-def rita_rad(bild, form, ri, text):
+def rita_rad(bild, form, ri, text, stryk=False):
     """En textrad i sin egen ruta: samma höjd, fet/normal, färg och justering som
-    SE-raden. Krymper tills den får plats på EN rad."""
+    SE-raden. Krymper tills den får plats på EN rad. stryk=True drar ett streck
+    genom texten (överstruket jämförpris)."""
     rita = ImageDraw.Draw(bild)
     x0, x1 = form["x0"], form["x1"]
     w = x1 - x0
@@ -387,10 +418,112 @@ def rita_rad(bild, form, ri, text):
     mitt = (ri["y0"] + ri["y1"]) / 2
     y = int(mitt - asc * 0.72 / 2)
     farg = tuple(ri["textfarg"])
+    bredd = rita.textlength(text, font=font)
     if ri["centrerad"]:
-        rita.text(((x0 + x1) / 2, y), text, font=font, fill=farg, anchor="la" if False else "ma")
+        xs = (x0 + x1) / 2 - bredd / 2
+        rita.text(((x0 + x1) / 2, y), text, font=font, fill=farg, anchor="ma")
     else:
+        xs = ri["x0"]
         rita.text((ri["x0"], y), text, font=font, fill=farg, anchor="la")
+    if stryk:
+        # stryk=True: hela raden. stryk="1 169 kr": bara den delsträngen (första träffen).
+        ym = y + asc * 0.72 / 2
+        sx0, sx1 = xs, xs + bredd
+        if isinstance(stryk, str) and stryk in text:
+            i = text.index(stryk)
+            sx0 = xs + rita.textlength(text[:i], font=font)
+            sx1 = sx0 + rita.textlength(stryk, font=font)
+        rita.line([(sx0 - 4, ym), (sx1 + 4, ym)], fill=farg, width=max(2, storlek // 14))
+
+
+def rita_block(bild, form, radinfo, text):
+    """Flera SE-rader som EN text (en rubrik som radbrutits): radbryts om inom
+    samma vertikala spann, med första radens stil. Får bli lika många rader som
+    SE, eller en färre; krymper tills det får plats."""
+    rita = ImageDraw.Draw(bild)
+    x0, x1 = form["x0"], form["x1"]
+    w = x1 - x0
+    marg = max(24, int(w * 0.05))
+    maxbredd = w - 2 * marg
+    forsta = radinfo[0]
+    storlek = max(16, int(round(forsta["hojd"] * 1.08)))
+    maxrader = len(radinfo)
+    font, rader = _passa(text, forsta["fet"], storlek, maxbredd, maxrader, rita)
+    asc, desc = font.getmetrics()
+    # radavstånd = SE-radernas avstånd om flera, annars 1,25 × höjd
+    if len(radinfo) > 1:
+        lh = int((radinfo[-1]["y0"] - radinfo[0]["y0"]) / (len(radinfo) - 1))
+    else:
+        lh = int((asc + desc) * 1.15)
+    ytop_se = radinfo[0]["y0"]
+    ybot_se = radinfo[-1]["y1"]
+    mitt = (ytop_se + ybot_se) / 2
+    blockh = lh * (len(rader) - 1) + asc * 0.72
+    ytop = int(mitt - blockh / 2)
+    farg = tuple(forsta["textfarg"])
+    for i, rad in enumerate(rader):
+        y = ytop + i * lh
+        if forsta["centrerad"]:
+            rita.text(((x0 + x1) / 2, y), rad, font=font, fill=farg, anchor="ma")
+        else:
+            rita.text((forsta["x0"], y), rad, font=font, fill=farg, anchor="la")
+
+
+def rita_box(bild, im, b):
+    """Manuell ruta för det detektorn inte hittar (badge med text direkt på fotot,
+    en platta som smälter ihop med bakgrunden). b = {"box": [x0,y0,x1,y1],
+    "text": ..., "fet": bool, "farg": [r,g,b], "fyll": "ljus"|"mork"|null,
+    "outline": [r,g,b]|null, "radie": px, "storlek": px}. fyll=ljus lägger en
+    nästan vit platta (som text.py:s platta) över rutan, mork en mörk."""
+    x0, y0, x1, y1 = [int(v) for v in b["box"]]
+    # Sudda befintlig text i rutan först: pixlar som avviker mörkt (ljus platta)
+    # eller ljust (mörk platta) från radens median fylls med radens median.
+    arr = np.asarray(bild).astype(np.int32).copy()
+    box = arr[y0:y1, x0:x1]
+    if box.size:
+        med = np.median(box.reshape(-1, 3), axis=0)
+        ljus_platta = med.mean() > 128
+        for y in range(box.shape[0]):
+            rad = box[y]
+            rm = np.median(rad, axis=0)
+            avvik = (rad.sum(axis=1) < rm.sum() - 150) if ljus_platta else (rad.sum(axis=1) > rm.sum() + 150)
+            if avvik.any():
+                # utvidga 2 px
+                a2 = avvik.copy(); a2[1:] |= avvik[:-1]; a2[:-1] |= avvik[1:]; a2[2:] |= avvik[:-2]; a2[:-2] |= avvik[2:]
+                rena = rad[~a2]
+                rad[a2] = np.median(rena, axis=0) if len(rena) > 8 else rm
+        arr[y0:y1, x0:x1] = box
+    bild = Image.fromarray(arr.astype(np.uint8))
+    lager = bild.convert("RGBA")
+    if b.get("fyll"):
+        platta = Image.new("RGBA", (x1 - x0, y1 - y0),
+                           (248, 248, 248, 225) if b["fyll"] == "ljus" else (10, 14, 18, 200))
+        mask = Image.new("L", platta.size, 0)
+        ImageDraw.Draw(mask).rounded_rectangle([0, 0, platta.width - 1, platta.height - 1],
+                                               radius=int(b.get("radie", 24)), fill=255)
+        platta.putalpha(Image.fromarray((np.asarray(mask) * (225 if b["fyll"] == "ljus" else 200) // 255).astype(np.uint8)))
+        lager.alpha_composite(platta, (x0, y0))
+    rita = ImageDraw.Draw(lager)
+    if b.get("outline"):
+        rita.rounded_rectangle([x0, y0, x1, y1], radius=int(b.get("radie", 24)),
+                               outline=tuple(b["outline"]), width=int(b.get("kant", 3)))
+    text = b.get("text", "").strip()
+    if text:
+        storlek = int(b.get("storlek", 32))
+        maxrader = int(b.get("rader", 1))
+        maxbredd = (x1 - x0) - 2 * max(16, int((x1 - x0) * 0.06))
+        font, rader = _passa(text, bool(b.get("fet")), storlek, maxbredd, maxrader, rita, minsta=14)
+        asc, desc = font.getmetrics()
+        lh = int(font.size * float(b.get("radavstand", 1.35)))
+        blockh = lh * (len(rader) - 1) + asc * 0.72
+        ytop = (y0 + y1) / 2 - blockh / 2
+        farg = tuple(b.get("farg", [20, 48, 74]))
+        for i, rad in enumerate(rader):
+            if b.get("vanster"):
+                rita.text((x0 + max(16, int((x1 - x0) * 0.06)), ytop + i * lh), rad, font=font, fill=farg, anchor="la")
+            else:
+                rita.text(((x0 + x1) / 2, ytop + i * lh), rad, font=font, fill=farg, anchor="ma")
+    return lager.convert("RGB")
 
 
 def qa_bild(se, no, ut):
@@ -425,8 +558,16 @@ def main():
 
     if a.analys or not a.ut:
         if a.json:
+            def _ren(o):
+                if isinstance(o, (np.bool_,)):
+                    return bool(o)
+                if isinstance(o, (np.integer,)):
+                    return int(o)
+                if isinstance(o, (np.floating,)):
+                    return float(o)
+                raise TypeError(str(type(o)))
             print(json.dumps([{k: v for k, v in x.items() if not k.startswith("_")} for x in analys] +
-                             [{"kant_utanfor": kant_andel}], ensure_ascii=False))
+                             [{"kant_utanfor": kant_andel}], ensure_ascii=False, default=_ren))
         else:
             print(f"{a.inp}: {w}×{h}, {len(analys)} textformer")
             for x in analys:
@@ -444,15 +585,25 @@ def main():
     # Två lägen per post: {"form": i, "rad": k, "text": ...} ritar raden i sin egen
     # ruta (behåller blandade stilar i en platta); {"form": i, "text": ...} ritar
     # om hela formen som ett block (radbrytning tillåten).
+    # Tre lägen per post:
+    #   {"form": i, "rad": k, "text": ...}        raden i sin egen ruta
+    #   {"form": i, "rader": [k0, k1], "text": ...}  flera SE-rader som ETT block (radbruten rubrik)
+    #   {"form": i, "text": ...}                  hela formen som ett block
     per_form = {}
     per_rad = {}
+    per_block = {}
+    boxar = [t for t in texter if t.get("box")]
     for t in texter:
+        if t.get("box"):
+            continue
         fi = int(t["form"])
-        if "rad" in t and t["rad"] is not None:
-            per_rad.setdefault(fi, {})[int(t["rad"])] = t.get("text", "")
+        if t.get("rader"):
+            per_block.setdefault(fi, []).append((sorted(int(k) for k in t["rader"]), t.get("text", "")))
+        elif "rad" in t and t["rad"] is not None:
+            per_rad.setdefault(fi, {})[int(t["rad"])] = (t.get("text", ""), t.get("stryk") or False)
         else:
             per_form[fi] = t.get("text", "")
-    berorda = set(per_form) | set(per_rad)
+    berorda = set(per_form) | set(per_rad) | set(per_block)
 
     ny = im.copy()
     for x in analys:
@@ -460,17 +611,24 @@ def main():
             sudda(ny, x["_form"])
     ut_bild = Image.fromarray(ny.astype(np.uint8))
     for x in analys:
-        if x["form"] in per_rad:
-            for k, text in per_rad[x["form"]].items():
+        if x["form"] in per_rad or x["form"] in per_block:
+            for k, (text, stryk) in per_rad.get(x["form"], {}).items():
                 if k >= len(x["radinfo"]):
                     sys.exit(f"form {x['form']} har bara {len(x['radinfo'])} rader, rad {k} finns inte")
                 if text.strip():
-                    rita_rad(ut_bild, x["_form"], x["radinfo"][k], text.strip())
+                    rita_rad(ut_bild, x["_form"], x["radinfo"][k], text.strip(), stryk=stryk)
+            for ks, text in per_block.get(x["form"], []):
+                if ks[-1] >= len(x["radinfo"]):
+                    sys.exit(f"form {x['form']} har bara {len(x['radinfo'])} rader, rad {ks[-1]} finns inte")
+                if text.strip():
+                    rita_block(ut_bild, x["_form"], [x["radinfo"][k] for k in ks], text.strip())
         elif x["form"] in per_form:
             text = per_form[x["form"]].strip()
             if text:
                 rita_text(ut_bild, x["_form"], x, text)
-    per_form = {**per_form, **{k: '' for k in per_rad}}
+    for b in boxar:
+        ut_bild = rita_box(ut_bild, im, b)
+    per_form = {**per_form, **{k: '' for k in per_rad}, **{k: '' for k in per_block}}
 
     ut = Path(a.ut)
     ut.parent.mkdir(parents=True, exist_ok=True)
