@@ -1,188 +1,168 @@
 {
-  "uppdaterad": "2026-09-02T07:23:58.805Z",
-  "kord": "2026-08-31T00:00:00.000Z",
-  "manad": "2026-08",
+  "uppdaterad": "2026-09-03T06:19:34.865Z",
+  "kord": "2026-09-03T06:19:20.672Z",
+  "manad": "2026-09",
   "period": {
-    "fran": "2026-08-01",
-    "till": "2026-08-31"
+    "fran": "2026-09-01",
+    "till": "2026-09-03"
   },
-  "slutavrakning": true,
+  "slutavrakning": false,
   "sats": 0.004,
   "valuta": {
     "kod": "USD",
-    "kurs": 0.10428,
-    "datum": "2026-09-01",
+    "kurs": 0.10377,
+    "datum": "2026-09-02",
     "gammal": false
   },
   "rader": [
     {
       "plats": 1,
-      "id": "annabelle",
-      "namn": "Annabelle Gonzales",
-      "usd": 133.22,
-      "annonser": 459,
-      "kampanjer": [
-        {
-          "namn": "Mastern",
-          "usd": 31.37
-        },
-        {
-          "namn": "235",
-          "usd": 26.77
-        },
-        {
-          "namn": "Motorhöljet",
-          "usd": 25.08
-        }
-      ],
-      "basta": {
-        "namn": "235 H1",
-        "usd": 20.62
-      },
-      "okning": null,
-      "forraPlats": null,
-      "flytt": 0
-    },
-    {
-      "plats": 2,
       "id": "josh",
       "namn": "Josh Naelga",
-      "usd": 74.74,
-      "annonser": 627,
-      "kampanjer": [
-        {
-          "namn": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "usd": 23.13
-        },
-        {
-          "namn": "Strandtofflorna",
-          "usd": 12.19
-        },
-        {
-          "namn": "Axelbältet",
-          "usd": 11.81
-        }
-      ],
-      "basta": {
-        "namn": "Beachslippers_PD_13_1",
-        "usd": 5.58
-      },
-      "okning": null,
-      "forraPlats": null,
-      "flytt": 0
-    },
-    {
-      "plats": 3,
-      "id": "jasper",
-      "namn": "Jasper Tomboc",
-      "usd": 18.55,
-      "annonser": 73,
-      "kampanjer": [
-        {
-          "namn": "Mastern",
-          "usd": 10.81
-        },
-        {
-          "namn": "279",
-          "usd": 4.16
-        },
-        {
-          "namn": "279 separat listicle 08-14",
-          "usd": 2.83
-        }
-      ],
-      "basta": {
-        "namn": "279 H1 08-11",
-        "usd": 4.3
-      },
-      "okning": null,
-      "forraPlats": null,
-      "flytt": 0
-    },
-    {
-      "plats": 4,
-      "id": "gilz",
-      "namn": "Gilz Bruce Biazon",
-      "usd": 7.73,
+      "usd": 8.42,
       "annonser": 161,
       "kampanjer": [
         {
+          "namn": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+          "usd": 1.59
+        },
+        {
+          "namn": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+          "usd": 1.43
+        },
+        {
+          "namn": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+          "usd": 1.26
+        }
+      ],
+      "basta": {
+        "namn": "Overvakningskamera_SP_2",
+        "usd": 1.43
+      },
+      "okning": null,
+      "forraPlats": 2,
+      "flytt": 1
+    },
+    {
+      "plats": 2,
+      "id": "annabelle",
+      "namn": "Annabelle Gonzales",
+      "usd": 5.82,
+      "annonser": 97,
+      "kampanjer": [
+        {
+          "namn": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+          "usd": 1.27
+        },
+        {
+          "namn": "Gravstenspennan | BE ROAS 1.60 | Launch 2026-08-29",
+          "usd": 1.07
+        },
+        {
+          "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+          "usd": 0.94
+        }
+      ],
+      "basta": {
+        "namn": "Cykelshorts_SP_1",
+        "usd": 0.71
+      },
+      "okning": null,
+      "forraPlats": 1,
+      "flytt": -1
+    },
+    {
+      "plats": 3,
+      "id": "gilz",
+      "namn": "Gilz Bruce Biazon",
+      "usd": 0.35,
+      "annonser": 18,
+      "kampanjer": [
+        {
           "namn": "Mastern",
-          "usd": 7.27
-        },
-        {
-          "namn": "Motorhöljet CBO 2026-08-20",
-          "usd": 0.39
-        },
-        {
-          "namn": "Sätesöverdragaren",
-          "usd": 0.06
+          "usd": 0.35
         }
       ],
       "basta": {
         "namn": "277 H1 08-11",
-        "usd": 1.34
+        "usd": 0.3
       },
       "okning": null,
-      "forraPlats": null,
-      "flytt": 0
+      "forraPlats": 4,
+      "flytt": 1
+    },
+    {
+      "plats": 4,
+      "id": "jasper",
+      "namn": "Jasper Tomboc",
+      "usd": 0.25,
+      "annonser": 17,
+      "kampanjer": [
+        {
+          "namn": "Mastern",
+          "usd": 0.25
+        }
+      ],
+      "basta": {
+        "namn": "001 REMAKE H4 08-15",
+        "usd": 0.15
+      },
+      "okning": null,
+      "forraPlats": 3,
+      "flytt": -1
     },
     {
       "plats": 5,
       "id": "carl",
       "namn": "Carl Vicente",
-      "usd": 1.51,
-      "annonser": 133,
+      "usd": 0.02,
+      "annonser": 10,
       "kampanjer": [
         {
           "namn": "Mastern",
-          "usd": 1.46
-        },
-        {
-          "namn": "Sätesöverdragaren",
-          "usd": 0.05
+          "usd": 0.02
         }
       ],
       "basta": {
-        "namn": "233 H4",
-        "usd": 0.74
+        "namn": "282 V2 H1 08-16",
+        "usd": 0.01
       },
       "okning": null,
-      "forraPlats": null,
+      "forraPlats": 5,
       "flytt": 0
     }
   ],
   "totalt": {
-    "usd": 235.75,
-    "annonser": 1453,
+    "usd": 14.85,
+    "annonser": 303,
     "redigerare": 5
   },
   "obetald": {
     "utanAnsvarig": 0,
-    "okanda": 0.01,
+    "okanda": 0,
     "ejRedigerare": [
       {
         "namn": "Axel Odhner",
         "roll": "admin",
-        "usd": 27.42
+        "usd": 0.07
       }
     ],
     "konflikter": 0
   },
   "kallor": {
-    "hubbar": 12,
+    "hubbar": 15,
     "konton": 14,
     "fel": 0
   },
   "historik": [
     {
-      "datum": "2026-08-31",
+      "datum": "2026-09-03",
       "per": {
-        "annabelle": 133.22,
-        "josh": 74.74,
-        "jasper": 18.55,
-        "gilz": 7.73,
-        "carl": 1.51
+        "josh": 8.42,
+        "annabelle": 5.82,
+        "gilz": 0.35,
+        "jasper": 0.25,
+        "carl": 0.02
       }
     }
   ]
