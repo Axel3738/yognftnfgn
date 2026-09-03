@@ -1,0 +1,210 @@
+{
+  "_kommentar": "Koppling SE-annonsprefix → norsk kampanj för /oversatt. Går inte att härleda ur kontona (SE 'MC-Kapell' ↔ NO 'MCtrekk'). Nyckel = SE-prefixet (allt före första _ i annonsnamnet, gemener). Seedad ur Magiborsten NO + MagiBorsten SE 2026-09-03. Kampanjstatus verifieras ändå live varje körning — en PAUSED kampanj med spend får aldrig nya annonser. Saknas ett prefix här larmar rutinen i #problems-no; lägg då till raden. Detta är en KOPPLING, inte en produktlista: kön läses fortfarande dynamiskt ur Notion.",
+  "mc-kapell": {
+    "se_prefix": "MC-Kapell",
+    "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+    "no_prefix": "MCtrekk",
+    "adset_prefix": "MC-Trekk NO",
+    "campaign_id": "120252050710680233",
+    "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+  },
+  "batmotor": {
+    "se_prefix": "Batmotor",
+    "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+    "no_prefix": "Batmotortrekk",
+    "adset_prefix": "Båtmotortrekk NO",
+    "campaign_id": "120252047563660233",
+    "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+  },
+  "beltgrinder": {
+    "se_prefix": "Beltgrinder",
+    "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+    "no_prefix": "Beltesliper",
+    "adset_prefix": "Beltesliper NO",
+    "campaign_id": "120251998498540233",
+    "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+  },
+  "balteslipmaskin": {
+    "se_prefix": "Balteslipmaskin",
+    "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+    "no_prefix": "Beltesliper",
+    "adset_prefix": "Beltesliper NO",
+    "campaign_id": "120251998498540233",
+    "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+  },
+  "kranskydd": {
+    "se_prefix": "Kranskydd",
+    "se_kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
+    "no_prefix": "Kranbeskyttelse",
+    "adset_prefix": "Kranbeskyttelse NO",
+    "campaign_id": "120251996272390233",
+    "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+  },
+  "overvakningskamera": {
+    "se_prefix": "Overvakningskamera",
+    "se_kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+    "no_prefix": "Overvåkingskamera",
+    "adset_prefix": "Overvåkingskamera NO",
+    "campaign_id": "120251998582640233",
+    "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+  },
+  "ibc": {
+    "se_prefix": "IBC",
+    "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+    "no_prefix": "IBC-tanktrekk",
+    "adset_prefix": "IBC-tanktrekk NO",
+    "campaign_id": "120251996323340233",
+    "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+  },
+  "gravsten": {
+    "se_prefix": "Gravsten",
+    "se_kampanj": "Gravstenspennan | BE ROAS 1.60 | Launch 2026-08-29",
+    "no_prefix": "Gravsteinspenn",
+    "adset_prefix": "Gravsteinspenn NO",
+    "campaign_id": "120252047604260233",
+    "link": "https://beverbutikken.no/products/gravsteinspenn-gjenoppretter-blek-tekst-pa-stein"
+  },
+  "badshorts": {
+    "se_prefix": "Badshorts",
+    "se_kampanj": "Badshorts med Skämttryck | BE ROAS 1.62 | Launch 2026-08-29",
+    "no_prefix": "Badeshorts",
+    "adset_prefix": "Badeshorts NO",
+    "campaign_id": "120252045588790233",
+    "link": "https://beverbutikken.no/products/badeshorts-med-spoketrykk-rumpa-bak"
+  },
+  "kamouflagetejp": {
+    "se_prefix": "Kamouflagetejp",
+    "se_kampanj": "Kamouflagetejpen | BE ROAS TBC | Launch 2026-08-28",
+    "no_prefix": "Kamuflasjeteip",
+    "adset_prefix": "Kamuflasjeteip NO",
+    "campaign_id": "120252058615860233",
+    "link": "https://beverbutikken.no/products/kamuflasjeteip-3-pakk-selvklebende-vev-5-450-cm"
+  },
+  "magnethylla": {
+    "se_prefix": "Magnethylla",
+    "se_kampanj": "Magnethyllan för Tvättmaskin och Kylskåp | BE ROAS 1.62",
+    "no_prefix": "Magnethylle",
+    "adset_prefix": "Magnethylle NO",
+    "campaign_id": "120252059104810233",
+    "link": "https://beverbutikken.no/products/magnethylle-for-vaskemaskin-og-kjoleskap-oppbevaring-uten-boring"
+  },
+  "luffarschack": {
+    "se_prefix": "Luffarschack",
+    "se_kampanj": "Luffarschacket i Trä | BE ROAS 1.59 | Launch 2026-09-01",
+    "no_prefix": "KryssBolle",
+    "adset_prefix": "Kryss og Bolle NO",
+    "campaign_id": "120252058751160233",
+    "link": "https://beverbutikken.no/products/kryss-og-bolle-i-tre-klassikeren-som-ligger-fremme"
+  },
+  "somnadskit": {
+    "se_prefix": "Somnadskit",
+    "se_kampanj": "Sömnadskitet 104 Delar | BE ROAS 1.60 | Launch 2026-09-01",
+    "no_prefix": "Sysett",
+    "adset_prefix": "Sysett NO",
+    "campaign_id": "120252059257850233",
+    "link": "https://beverbutikken.no/products/sysett-104-deler-alt-i-ett-etui"
+  },
+  "plyschtofflor": {
+    "se_prefix": "Plyschtofflor",
+    "se_kampanj": "Plyschtofflorna Herr | BE ROAS 1.49 | Launch 2026-08-21",
+    "no_prefix": "Plysjtofler",
+    "adset_prefix": "Plysjtøfler NO",
+    "campaign_id": "120252053077300233",
+    "link": "https://beverbutikken.no/products/plysjtofler-herre-varme-med-tpr-sale-for-inne-ute"
+  },
+  "kastafanga": {
+    "se_prefix": "Kastafanga",
+    "se_kampanj": "Kasta & Fånga-settet | BE ROAS 1.61 | Launch 2026-09-02",
+    "no_prefix": "KastFang",
+    "adset_prefix": "Kast & Fang NO",
+    "campaign_id": "120252050378890233",
+    "link": "https://beverbutikken.no/products/kast-fang-sett-4-kurver-og-baller-pa-snor"
+  },
+  "medicinask": {
+    "se_prefix": "Medicinask",
+    "se_kampanj": "Medicinasken i Fickformat | BE ROAS 1.60",
+    "no_prefix": "Medisinboks",
+    "adset_prefix": "Medisinboks NO",
+    "campaign_id": "120252062027980233",
+    "link": "https://beverbutikken.no/products/medisinboks-i-lommeformat-7-rom-med-tettsittende-lokk",
+    "anm": "NO-kampanjen pausad 2026-09-03 (bara bilder, ingen video)"
+  },
+  "fotboll": {
+    "se_prefix": "Fotboll",
+    "se_kampanj": "Jättefotbollen | BE ROAS 1.61 | Launch 2026-08-29",
+    "no_prefix": "Kjempefotball",
+    "adset_prefix": "Kjempefotball NO",
+    "campaign_id": "120251999916430233",
+    "link": "https://beverbutikken.no/products/kjempefotball-60-cm-oppblasbar-for-hage-basseng"
+  },
+  "damasker": {
+    "se_prefix": "Damasker",
+    "se_kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+    "no_prefix": "Gamasjer",
+    "adset_prefix": "Gamasjer NO",
+    "campaign_id": "120251999873390233",
+    "link": "https://beverbutikken.no/products/gamasjer-tur-holder-sno-vaete-grus-ute"
+  },
+  "cykelshorts": {
+    "se_prefix": "Cykelshorts",
+    "se_kampanj": "Cykelshorts Herr | BE ROAS 1.68 | Launch 2026-08-27",
+    "no_prefix": "Sykkelshorts",
+    "adset_prefix": "Sykkelshorts NO",
+    "campaign_id": "120251998454160233",
+    "link": "https://beverbutikken.no/products/sykkelshorts-herre-polstret-med-kompresjon"
+  },
+  "rodholder": {
+    "se_prefix": "Rodholder",
+    "se_kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+    "no_prefix": "Fiskestangholder",
+    "adset_prefix": "Fiskespöhållare NO",
+    "campaign_id": "120251856983860233",
+    "link": "https://beverbutikken.no/products/fiskestangholder-4-pakning-kraftig-oppbevaring",
+    "anm": "NO-kampanjen PAUSED med spend; no_prefix satt ur produktens handle, verifiera om kampanjen aktiveras"
+  },
+  "enginecover": {
+    "se_prefix": "Enginecover",
+    "se_kampanj": "Motorhöljet",
+    "no_prefix": "Motortrekk",
+    "adset_prefix": "Motorhölje NO",
+    "campaign_id": "120251488890460233",
+    "link": "https://beverbutikken.no/products/marint-motortrekk-420d-universell-beskyttelse",
+    "anm": "NO-kampanjen PAUSED med spend; no_prefix satt ur produktens handle, verifiera om kampanjen aktiveras"
+  },
+  "trimmerbelt": {
+    "se_prefix": "Trimmerbelt",
+    "se_kampanj": "Axelbältet",
+    "no_prefix": "Skulderbelte",
+    "adset_prefix": "Axelbälte NO",
+    "campaign_id": "120251488904660233",
+    "link": "https://beverbutikken.no/products/skulderbelte-for-trimmer-justerbart-nylonbelte",
+    "anm": "NO-kampanjen PAUSED med spend; no_prefix satt ur produktens handle, verifiera om kampanjen aktiveras"
+  },
+  "seatcover": {
+    "se_prefix": "Seatcover",
+    "se_kampanj": "Sätesöverdragaren",
+    "no_prefix": "Seteovertrekk",
+    "adset_prefix": "Seatcover NO",
+    "campaign_id": "120251488963590233",
+    "link": "https://beverbutikken.no/products/seteovertrekk-for-ridegressklipper-slitesterkt-600d-oxford",
+    "anm": "NO-kampanjen PAUSED med spend; no_prefix satt ur produktens handle, verifiera om kampanjen aktiveras"
+  },
+  "beachslippers": {
+    "se_prefix": "Beachslippers",
+    "se_kampanj": "Strandtofflorna",
+    "no_prefix": "Strandtofler",
+    "adset_prefix": "Beachslippers NO",
+    "campaign_id": "120251489006320233",
+    "link": "https://beverbutikken.no/products/strandtofler-for-herre-sklisikre-hagesko",
+    "anm": "NO-kampanjen PAUSED med spend; no_prefix satt ur produktens handle, verifiera om kampanjen aktiveras"
+  },
+  "tofflor": {
+    "se_prefix": "Tofflor",
+    "se_kampanj": "Ergonomiska Tofflorna",
+    "no_prefix": "Tofler",
+    "adset_prefix": "Tofflor NO",
+    "campaign_id": "120251818047850233",
+    "link": "https://beverbutikken.no/products/tofler-ergonomiske-tykksalede-for-inne-ute",
+    "anm": "NO-kampanjen PAUSED med spend; no_prefix satt ur produktens handle, verifiera om kampanjen aktiveras"
+  }
+}
