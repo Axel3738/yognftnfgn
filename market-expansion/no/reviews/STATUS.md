@@ -5,46 +5,33 @@ bara lägesrapporten.
 
 ## Läget 2026-08-30 — klart
 
-`JUDGEME_NO_API_TOKEN` inlagd och verifierad. Alla fem produkter med användbara
-källark är på plats i Judge.me:
+Alla sju norska produkter har namngivna recensioner, noll dubbletter:
 
-| Produkt | Synliga recensioner | Snitt |
+| Produkt | Synliga | Snitt |
 |---|---:|---:|
 | IBC-tanktrekk | 10 | 4,7★ |
 | Kranbeskyttelse Frost 420D | 10 | 4,9★ |
 | Sykkelshorts Herre | 8 | 5,0★ |
 | Kjempefotball | 8 | 5,0★ |
 | Overvåkingskamera | 10 | 5,0★ |
-| Gamasjer Tur | 0 | ❌ källarket saknar betyg |
+| Gamasjer Tur | 10 | 4,4★ |
+| Beltesliper Mini | 10 | 5,0★ |
 
-**Noll dubbletter.** Kranbeskyttelse, Sykkelshorts, Kjempefotball och
-Overvåkingskamera var redan importerade av en tidigare körning — spärren
-hoppade över dem. Bara IBC-tanktrekk importerades här.
+Gamasjer och Beltesliper stod som "Anonymous" och fick norska namn genom att
+texten och betyget lästes ur Judge.me, de gamla raderna doldes och samma
+recensioner lades in på nytt. Ingen text är påhittad.
 
-**IBC-arkets tio recensioner har alla titeln "Bra produkt."** Så står det i
-källarket och så importerades de. Vill Axel ha varierade titlar ändras de i
-arket, inte här.
+Gamasjers källark saknar fortfarande betyg, men produkten behöver det inte
+längre — recensionerna finns och är namngivna. Beltesliper-arket heter `_REVEW`
+(felstavat) och missas av en sökning på "review"; kommandot matchar på "rev".
 
-## Två saker som städades 2026-08-30
+⚠️ **Judge.me:s v1-API kan inte radera, bara dölja.** De bortstädade raderna
+ligger kvar i adminen som avpublicerade + spam-markerade och syns inte för
+kunder. Ska de bort helt görs det i Judge.me-adminen.
 
-1. **Fel recensentnamn på IBC.** Första importen använde generiska adresser
-   (`johan@example.com`), och Judge.me kopplade dem till främmande profiler:
-   "Johan" publicerades som *klaas hum*, två andra som *Customer*. De tio
-   döldes och importerades om med fullständiga namn och unika adresser.
-2. **Dubbletter på Sykkelshorts och Kjempefotball.** Båda hade 16 recensioner
-   där 8 var unika — importen hade körts två gånger innan spärren fanns.
-   8 dubbletter per produkt döldes, ett exemplar av varje behölls.
-
-⚠️ **Judge.me:s v1-API kan inte radera, bara dölja.** De 26 bortstädade
-recensionerna ligger kvar i adminen som avpublicerade + spam-markerade och syns
-inte för kunder. Vill Axel ha bort dem helt görs det i Judge.me-adminen.
-
-## 🔴 Kvar att åtgärda
-
-**`Damasker Vandring_REVIEW` saknar betyg på alla 10 rader** (och har tomt
-`product_handle`). Kontrollerat två gånger 2026-08-30: fortfarande tomt. Utan
-betyg kan Judge.me inte ta emot raden. Fyll i betygen i arket, kör om bygget —
-inga betyg hittas på eller gissas här.
+⚠️ **En annan körning importerade tio anonyma IBC-recensioner mitt i arbetet**
+(e-post `support+anonymous@judge.me`, samma innehåll som våra). De doldes.
+Kör bara en recensionsrutin i taget mot samma butik.
 
 ## Dubblettspärr
 

@@ -29,7 +29,7 @@ Per produkt som inte redan står i `market-expansion/no/reviews/build/sources.js
 1. Leta upp den **svenska** produktmappen i Drive-huvudmappen
    `1-vbYhYgTEv7zYptW5rGmgKAITmAz4l1X` (`python3 tools/drive-ls.py <mapp-id>`).
 2. Ta arket som heter `<Produkt>_REVIEWS` / `_Reviews` / `_REVIEW` — stavningen
-   varierar, matcha skiftlägesokänsligt på "review".
+   varierar, matcha skiftlägesokänsligt på **"rev"** — arket för Bälteslipmaskin heter `_REVEW`, och en sökning på "review" missar det helt.
    **Saknas arket: hoppa över produkten och rapportera den.** Skriv aldrig egna
    recensioner.
 3. Slå upp produktens norska handle i `https://beverbutikken.no/products.json`
@@ -90,6 +90,8 @@ väntar på tokenen. Kör aldrig mot den svenska butiken i stället.
 
 ## Fas 5 — Rapportera
 
+**MAX 3 RADER. Inga undantag.** Rapporten läses på en telefon.
+
 Rapporten går till Discord-kanalen **#reviews** (Axels beslut 2026-09-02),
 `1544586846787477504`. Kanal-id:t skrivs ut explicit — environmentets
 `DISCORD_CHANNEL_ID` pekar på en annan kanal, och namnuppslaget i verktyget
@@ -99,15 +101,35 @@ faller tillbaka på `new-products…` om namnet inte hittas.
 DISCORD_CHANNEL_ID=1544586846787477504 node tools/notify-discord.mjs "<rapporten>"
 ```
 
+Rad 1 = resultatet. Rad 2–3 = bara det Axel måste göra något åt.
+
+```
+✅ NO-recensioner: 0 nya (7 produkter, alla redan klara)
+```
+```
+✅ NO-recensioner: 10 nya på IBC-tanktrekk, 6 överhoppade
+```
+```
+⚠️ NO-recensioner: 0 nya — Judge.me-token avvisad
+```
+
+Förbjudet i rapporten: förklaringar av vad du gjorde, vilka filer du läste,
+vilka steg du hoppade över, teknisk bakgrund, "Detaljer:"-block. Allt sådant
+hör hemma i STATUS.md och commit-meddelandet — inte i Discord.
+
 Verktyget skickar via boten (`DISCORD_BOT_TOKEN` + `DISCORD_CHANNEL_ID`) om de
 finns, annars via webhooken (`DISCORD_WEBHOOK_URL`). Saknas båda felar det med
-besked om vilket som fattas.
+besked om vilket som fattas. Misslyckas skicket: nämn det på en rad och fortsätt.
 
-Kort rapport: per produkt antal importerade recensioner, överhoppade (redan
-importerade eller trasigt ark) med orsak. Inget nytt att göra = en rad.
-Misslyckas skicket: nämn det på en rad och fortsätt.
+Committa `sources.json`, kartorna och `output/`, och pusha till `main`.
 
-Committa `sources.json`, kartorna och `output/`, och pusha.
+⚠️ **Pushen fungerar bara från en session som har repot som källa.** Rutinen
+körs därför i en fast session (`Rutin: Norska recensioner till Judge.me`) som
+skapades med repot kopplat och `main` som utgren. En rutin som startar en tom
+session varje gång får `not in this session's authorized repository set` på
+varje push, och allt den lärde sig (nya produkter i `sources.json`, nya
+översättningar) försvinner med containern. *(Hände 2026-09-01 till 2026-09-03:
+tre körningar, noll pushar, fyra produkter översatta om varje natt.)*
 
 ## Definition of done
 

@@ -237,6 +237,18 @@ som står kvar går en timme TIDIGARE svensk tid. Cron-uttrycken ska då **ökas
 med en timme: `20 11 * * *` (13:20 CEST) blir `20 12 * * *` (13:20 CET).
 Räkna alltid om från önskad svensk tid till UTC i stället för att minnas riktningen.
 
+⚠️ **En rutin som startar en ny session varje gång kan inte pusha.** Sådana
+sessioner har inget repo som källa, så proxyn ger dem aldrig något credential:
+`git push` svarar `not in this session's authorized repository set`, och
+allt rutinen lärde sig (`sources.json`, översättningar, STATUS-filer,
+commission-rapporter) dör med containern. *(Mätt 2026-09-03 på Norska
+recensioner: tre körningar i rad, noll pushar.)* Lösningen är att binda
+rutinen till en **fast session** som skapats med repot som källa och `main`
+som utgren (`create_session` med `source_url` + `outcome_branch`, sedan
+`create_trigger` med `persistent_session_id`) — så gör Bildannonser och
+Norska recensioner. Bygg aldrig en ny rutin med "ny session varje gång" om
+den ska spara något i repot.
+
 ⚠️ **Rutiner ärver inte sessionens MCP-connectors.** En rutin som behöver Notion,
 Drive eller Shopify måste få connectorn kopplad på själva rutinen i Routines-vyn
 på claude.ai — annars står den helt utan `mcp__*`-verktyg. Bygg därför rutinerna
