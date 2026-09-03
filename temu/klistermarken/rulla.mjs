@@ -11,7 +11,7 @@ const url = (frag) => SE.find((m) => m.image.url.includes(frag)).image.url;
 const BILDER = { main: url('e7b71aa2'), uppfart: url('162214'), kylskap: url('616-o4XloTL'), inne: url('161815'), ansikten: url('161813'), miljo: url('161828') };
 
 const LAND = {
-  no: { vendor: 'Beverbutikken', pris: '229.00', jamfor: '299.00', cogs: '52.93', sprak: 'no' },
+  no: { vendor: 'Beverbutikken', pris: '199.00', jamfor: '259.00', cogs: '52.93', sprak: 'no' },
   dk: { vendor: 'Bæverbutiken', pris: '149.00', jamfor: '199.00', cogs: '36.87', sprak: 'da' },
   fi: { vendor: 'Majavakauppa', pris: '19.90', jamfor: '25.90', cogs: '5.47', sprak: 'fi' },
   uk: { vendor: 'BeaverShop', pris: '14.99', jamfor: '19.99', cogs: '3.50', sprak: 'en' },

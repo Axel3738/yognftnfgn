@@ -11,7 +11,7 @@ SKU `TEMU-601102867393554` (samma i alla butiker). Kategori
 | Butik | Pris | Jämförpris | COGS |
 |---|---|---|---|
 | SE | 199 SEK | 259 SEK | 47,56 (fanns) |
-| NO | 229 NOK | 299 NOK | 52,93 |
+| NO | 199 NOK | 259 NOK | 52,93 |
 | DK | 149 DKK | 199 DKK | 36,87 |
 | FI | 19,90 € | 25,90 € | 5,47 |
 | UK | £14,99 | £19,99 | 3,50 |

@@ -596,7 +596,7 @@ i veckor utan att synas.
 
 Axel frågade om produkten fanns i Norge. Den fanns bara i SE — alltså saknades
 den i NO, DK, FI **och** UK. Full detalj i `temu/klistermarken/README.md`.
-Priser: 199 SEK / 229 NOK / 149 DKK / 19,90 € / £14,99, jämförpris ×1,3.
+Priser: 199 SEK / 199 NOK / 149 DKK / 19,90 € / £14,99, jämförpris ×1,3.
 COGS 47,56 / 52,93 / 36,87 / 5,47 / 3,50 enligt cogs-metoden.
 
 **Nytt steg som ska ingå i varje lagning:** granska KÄLLPRODUKTEN innan den
