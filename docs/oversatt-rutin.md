@@ -346,13 +346,16 @@ fortfarande hela Notion-kön dynamiskt.
 
 ---
 
-## Det Axel behöver göra (två saker, inget annat)
+## Det Axel behöver göra (en sak, inget annat)
 
-1. **Lägg in `NOTION_TOKEN`** i environmentets miljövariabler på claude.ai
-   (samma nyckel som `/commission` använder). Utan den kan rutinen inte läsa
-   kön, hämta bilagorna eller flytta raderna.
-2. **Fyll på HeyGen-krediter.** 621 räcker till ~12 videor. Bildkön (45) går
-   utan HeyGen.
+1. **Fyll på HeyGen-krediter.** 621 räcker till ~12 videor. Bildkön (45) går
+   utan HeyGen. Axels besked 2026-09-03: wallet har ≥ 250 USD att köpa
+   krediter för — köpet görs i HeyGens webbgränssnitt, API:t kan inte köpa.
+
+`NOTION_TOKEN`: Axels besked 2026-09-03 är att nyckeln redan är kopplad
+överallt (rutinernas environment). Den saknades bara i just den här sessionens
+container. Byggsessionen kontrollerar med `node tools/notion-kalla.mjs --hubbar`
+innan den drar någon slutsats.
 
 ## Beslut planen tar åt Axel (säg till om något ska ändras)
 
