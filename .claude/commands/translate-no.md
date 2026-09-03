@@ -55,11 +55,24 @@ klart utan att invänta godkännande; stanna bara vid ägarbeslut eller ❌ neda
 - **Max 3 produkter per körning**, i bokstavsordning. Resten står i kö till nästa
   natt och listas i briefen ("i kö: …"). Tre produkter är ~36 videor och
   ~1 100 HeyGen-krediter — mer än så per natt går inte att QA:a ordentligt.
+- **Tidsbudget: körningen ska vara klar inom 4 timmar** (mätt 2026-09-02: tio
+  produkter i en körning tog 18 timmar, och en körning med EN produkt utan videor
+  tog nästan 4). Kör produkterna **parallellt, inte i rad**: proofread för alla
+  tre på en gång, SRT-lokalisering med en subagent per produkt samtidigt,
+  rendering för alla tre startas direkt när deras SRT:er är gröna, captions
+  medan resten renderar. Bara Meta-uppladdningen är sekventiell (rate limit).
+  Committa batchmappen (manifest, state, SRT:er) **så fort proofread är klar**
+  — inte i slutet — så att inget går förlorat om sessionen dör.
 
 1. Lista LAUNCHED. En undermapp = en produkt (minus de tre ovan). Annonsvideor =
    `*_<KONCEPT>_<nr>[_H<n>].mp4` (CS/PD/SP/G/GT).
    `*_Extra`, PNG:er (utom `*_<vinkel>_2_1.png`-bildannonserna, se Fas 3.2),
    ADCOPY-docs och REVIEW-sheets är inte annonsvideor.
+   **Inga annonsvideor i mappen = produkten är inte klar.** Den launchas INTE
+   (inte heller "bara bilderna" — Axels beslut 2026-09-03 efter Medisinboks som
+   gick upp med 4 bilder och 0 videor). Problemmeddelande till `#problems-no`
+   ("⚠️ <Produkt> saknar videor i Drive-mappen. Lägg in videorna. Sen tar
+   rutinen den nästa natt.") och hoppa över.
 2. Bygg/uppdatera batchmanifestet `market-expansion/no/video-batches/<datum>/batch.json`
    (format: se befintlig batch). Ladda ner videorna, komprimera >31 MB till crf 24–26.
 3. **Norsk produktsida per produkt:** sök `https://beverbutikken.no/products.json`
@@ -203,6 +216,15 @@ Varje produktmapp har ~4 bildannonser som ska med i kampanjen. Flöde (verifiera
 Färdiga videor + norska adcopy-docs ska in i Drive: i **MAKE TO NORWAY**
 (`1z6oJt1dTu1kwXU-s1_RQkwIRFar3zeOw`) skapas mappen **`NO <källmappens namn>`**
 per produkt (se ramverket i Fas 0 — gamla `NO`-wrappermappen finns inte längre).
+**Mappen skapar rutinen själv** med Drive-connectorn
+(`mcp__Google_Drive__create_file`, `contentMimeType` =
+`application/vnd.google-apps.folder`, `parentId` = MAKE TO NORWAY — verifierat
+2026-09-03, connectorn finns i rutinen). **Be ALDRIG Axel skapa mappar** (körningen
+2026-09-02 lämnade tio produkter utan Drive-leverans med en instruktion till
+Axel — det är precis det som inte får hända). Saknas connectorn: leverera i
+chatten, committa filerna i batchmappen och skriv i briefen att Drive-leveransen
+görs av nästa körning — `pipeline/no-drive-fran-meta.py` hämtar allt ur
+Meta-kampanjen i efterhand, inget behöver renderas om.
 Allt laddas upp med `node pipeline/drive-push.mjs --folder=<mapp-id> <filer…>`
 (Apps Script-brevlådan, env `DRIVE_UPLOAD_URL` + `DRIVE_UPLOAD_KEY`, installation:
 `tools/drive-brevlada.gs`). Skriptet sätter MIME-typ efter filändelsen, så videor
