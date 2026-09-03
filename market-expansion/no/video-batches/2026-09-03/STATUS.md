@@ -70,3 +70,20 @@ olika rutiner, inte nödvändigtvis samma beteende.
 struktur/enhancements som `no-video-launch.mjs`+`no-image-ads.mjs` men för
 produkter helt utan video. Konfig: `pipeline/waves/no-<produkt>-image.config.mjs`
 (se `no-medicinask-image.config.mjs`).
+
+## Efterarbete 2026-09-03 (Axels beslut, huvudsessionen)
+
+- **Medisinboks NO (120252062027980233) PAUSAD** på Axels beslut: produkten har inga
+  annonsvideor (varken i Drive eller i SE-kontot), och en kampanj med bara 4 bilder
+  ska inte ligga uppe. Ny regel i `/translate-no` Fas 0: inga videor = ingen launch.
+- **Drive-leveransen för de tio produkterna från 2026-09-02 är gjord.** Körningen
+  09-02 skapade inga NO-mappar utan bad Axel göra det (fel — regeln är nu att
+  rutinen skapar mapparna själv via Drive-connectorn). Mapparna skapades av
+  huvudsessionen och fylldes ur Meta-kampanjerna med `pipeline/no-drive-fran-meta.py`
+  (videor via kontots advideos-kant matchade på titel, bilder via adimages, adcopy
+  ur object_story_spec — inget renderades om, 0 krediter). Resultat i MAKE TO NORWAY:
+  NO Badshorts 19 filer (12 mp4 + 3 png + 4 txt) · NO Båtmotorskydd 20 ·
+  NO Gravstenspenna 20 · NO Kamouflagetejp 20 · NO Kasta & Fånga-set 19 (11 mp4) ·
+  NO Luffarschack 20 · NO Magnethylla 20 · NO Motorcycle cover 20 ·
+  NO Plyschtofflor 20 · NO Sömnadskit 15 (9 mp4 + 3 png + 3 txt). Inga fel.
+- Tidsbudget 4 h + parallell körning inskrivet i rutinen efter 18-timmarskörningen.
