@@ -1,174 +1,1285 @@
 {
-  "_kommentar": "Svensk text per bild, läst ur bilden (facit) av huvudsessionen 2026-09-03. Ordning = formerna uppifrån och ned, rader inom formen uppifrån och ned. 'block' = rader som är EN radbruten text.",
-  "MC-Kapell_RE_2_1": {"former": [
-    {"typ": "platta", "rader": ["”Skyddar hojen bra när den står ute.”", "— Andreas Holm", "Verklig recension, Bäverbutiken (Judge.me)"]},
-    {"typ": "band", "rader": ["349 kr"]},
-    {"typ": "knapp", "rader": ["Läs fler recensioner"]}]},
-  "MC-Kapell_GA_1_1": {"former": [
-    {"typ": "platta", "rader": ["30 dagars öppet köp.", "Gillar du inte kapellet? Pengarna tillbaka."]},
-    {"typ": "band", "rader": ["Fri frakt inom Sverige. Trygg betalning med Klarna."]},
-    {"typ": "knapp", "rader": ["Handla tryggt"]}]},
-  "MC-Kapell_OF_1_1": {"former": [
-    {"typ": "platta", "rader": ["349 kr istället för 582 kr.", "Spara 40 % — samma kapell, samma garanti."]},
-    {"typ": "band", "rader": ["Fri frakt inom Sverige."]},
-    {"typ": "knapp", "rader": ["Handla nu"]}]},
-  "MC-Kapell_DE_2_1": {"former": [
-    {"typ": "platta", "rader": ["Ett skal som tar vädret i", "ställat"], "block": [[0, 1]]},
-    {"typ": "platta", "rader": ["Resårkant håller kvar", "Vattenavvisande + UV-skydd", "Viker ihop litet", "349 kr"], "vanster": true},
-    {"typ": "knapp", "rader": ["Se funktionerna"]}]},
-  "MC-Kapell_RE_1_1": {"former": [
-    {"typ": "platta", "rader": ["”Lätt att dra över och skyddar bra mot", "regn.”", "— Johan Nilsson", "Verklig recension, Bäverbutiken (Judge.me)"], "block": [[0, 1]]},
-    {"typ": "band", "rader": ["349 kr"]},
-    {"typ": "knapp", "rader": ["Läs fler recensioner"]}]},
-  "MC-Kapell_OB_1_1": {"former": [
-    {"typ": "platta", "rader": ["218×118,5 cm täcker de", "flesta MC, mopeder och", "scooters.", "Passar den inte: pengarna tillbaka inom 30 dagar."], "block": [[0, 1, 2]]},
-    {"typ": "band", "rader": ["349 kr."]},
-    {"typ": "knapp", "rader": ["Testa riskfritt"]}]},
-  "MC-Kapell_PD_6_1": {"former": [
-    {"typ": "platta", "rader": ["218 × 118,5 cm", "Passar de flesta motorcyklar, mopeder och scooters."]},
-    {"typ": "band", "rader": ["349 kr"]},
-    {"typ": "knapp", "rader": ["Kolla måtten"]}]},
-  "MC-Kapell_LI_1_1": {"former": [
-    {"typ": "platta", "rader": ["5 saker kapellet gör", "Lacken slipper regn och sol", "På och av på en minut", "Sitter kvar i blåst", "Täcker hela hojen, 218 × 118,5 cm", "Viker ihop till en liten packe"]},
-    {"typ": "band", "rader": ["349 kr (ord. 582 kr)"]},
-    {"typ": "knapp", "rader": ["Handla nu"]}]},
-  "MC-Kapell_SP_4_1": {"former": [
-    {"typ": "platta", "rader": ["”Lätt material och går snabbt att sätta på.”", "— Linda Berg", "Verklig recension, Bäverbutiken"]},
-    {"typ": "band", "rader": ["349 kr. Fri frakt inom Sverige."]},
-    {"typ": "knapp", "rader": ["Handla nu"]}]},
-  "MC-Kapell_CO_2_1": {"former": [
-    {"typ": "platta", "rader": ["Samma modell.", "Olika sommar.", "Regn och sol jobbar på lacken varje natt du står ute."]},
-    {"typ": "band", "rader": ["349 kr — skydda din innan nästa regn"]},
-    {"typ": "knapp", "rader": ["Se kapellet"]}]},
-  "MC-Kapell_RI_2_1": {"former": [
-    {"typ": "platta", "rader": ["Efter en säsong utan", "skydd: matt lack, rost på", "kromet.", "Kapellet tar smällen i stället för lacken."], "block": [[0, 1, 2]]},
-    {"typ": "band", "rader": ["349 kr — stoppa skadan innan den börjar"]},
-    {"typ": "knapp", "rader": ["Skydda din MC"]}]},
-  "Overvakningskamera_RI_2_1": {"former": [
-    {"typ": "platta", "rader": ["799 kr för att veta.", "Obetalbart att inte veta.", "Direkt notis om något händer hemma"]},
-    {"typ": "platta", "rader": ["355° täckning, AI-spårning", "Fri frakt över 300 kr", "30 dagars nöjd-kund-garanti"], "vanster": true, "bock": true},
-    {"typ": "knapp", "rader": ["Handla nu"]}]},
-  "Overvakningskamera_SP_7_1": {"former": [
-    {"typ": "platta", "rader": ["Jag slapp gå ut i mörkret för att kolla.", "— Verifierad kund"]},
-    {"typ": "platta", "rader": ["Direkt notis i mobilen", "AI-spårning, färre falsklarm", "30 dagars nöjd-kund-garanti"], "vanster": true, "bock": true},
-    {"typ": "knapp", "rader": ["Handla nu"]}]},
-  "Overvakningskamera_PD_4_1": {"former": [
-    {"typ": "platta", "rader": ["Dag eller natt — den", "missar aldrig något", "AI-spårning, 355° täckning"], "block": [[0, 1]]},
-    {"typ": "platta", "rader": ["Två linser — inga döda vinklar", "Vet skillnad på människa och katt", "30 dagars nöjd-kund-garanti"], "vanster": true, "bock": true},
-    {"typ": "knapp", "rader": ["Handla nu"]}]},
-  "Overvakningskamera_CO_2_1": {"former": [
-    {"typ": "platta", "rader": ["Ser du skillnad?", "Det gör den."]},
-    {"typ": "etikett", "rader": ["Vanlig kamera"]},
-    {"typ": "etikett", "rader": ["Denna kamera"]},
-    {"typ": "platta", "rader": ["355° täckning i stället för en fast vinkel", "Vet skillnad på människa och katt", "799 kr, 30 dagars garanti"], "vanster": true, "bock": true},
-    {"typ": "knapp", "rader": ["Uppgradera"]}]},
-  "Overvakningskamera_LI_1_1": {"former": [
-    {"typ": "platta", "rader": ["5 saker att kolla innan du", "köper en", "övervakningskamera", "1. En lins eller två? Två täcker 355°.", "2. Kan den skilja på människa och katt?", "3. Får du notis direkt, eller för sent?", "4. Klarar den svenskt väder utomhus?", "5. Finns det en riktig garanti?"], "block": [[0, 1, 2]], "vanster_fran": 3},
-    {"typ": "band", "rader": ["Den här klarar alla fem. 799 kr, 30 dagars garanti."]},
-    {"typ": "knapp", "rader": ["Handla nu"]}]},
-  "Overvakningskamera_CS_4_1": {"former": [
-    {"typ": "platta", "rader": ["Spara 201 kr i dag", "1 000 kr", "799 kr"], "stryk": [1]},
-    {"typ": "platta", "rader": ["Fri frakt över 300 kr", "Klarna – betala senare", "30 dagars nöjd-kund-garanti"], "vanster": true, "bock": true},
-    {"typ": "knapp", "rader": ["Handla nu"]}]},
-  "Beltgrinder_PD_5_1": {"former": [
-    {"typ": "platta", "rader": ["Från slö till", "rakbladsvass.", "10 sekunder."], "block": [[0, 1]]},
-    {"typ": "etikett", "rader": ["FÖRE"]},
-    {"typ": "etikett", "rader": ["EFTER"]}]},
-  "Beltgrinder_PD_4_1": {"former": [
-    {"typ": "platta", "rader": ["Slöa mejslar?", "Vässade på 10 sekunder."]},
-    {"typ": "platta", "rader": ["Slipstenen vässar, slipbandet formar trä och metall, polertrissan", "polerar — 3 stationer i en maskin."], "block": [[0, 1]]}]},
-  "Beltgrinder_SO_4_1": {"former": [
-    {"typ": "platta", "rader": ["1 182 kr → 909 kr.", "Spara 273 kr."], "stryk_del": {"0": "1 182 kr"}},
-    {"typ": "band", "rader": ["Slipband, slipskivor, polervax och insexnycklar följer med."]},
-    {"typ": "knapp", "rader": ["Beställ till 909 kr."]}]},
-  "Beltgrinder_PD_8_1": {"former": [
-    {"typ": "platta", "rader": ["909 kr.", "Spara 273 kr (23 %) mot", "ordinarie pris.", "Bälteslipmaskin Mini 3-i-1 — kniv, sax, yxa, en", "maskin."], "block": [[1, 2], [3, 4]]},
-    {"typ": "platta", "rader": ["909 kr", "Ord. 1 182 kr", "Spara 273 kr (23 %)"], "vanster": true},
-    {"typ": "knapp", "rader": ["Beställ till 909 kr"]}]},
-  "Beltgrinder_SO_5_1": {"former": [
-    {"typ": "platta", "rader": ["3 verktyg i ett.", "Priset av ett.", "Kniv, sax och yxa — samma verktyg, samma köp."]},
-    {"typ": "band", "rader": ["909 kr (ord. 1 182 kr) — spara 273 kr, 23 %"]},
-    {"typ": "knapp", "rader": ["Beställ Bälteslipmaskinen"]}]},
-  "Beltgrinder_SP_5_1": {"former": [
-    {"typ": "platta", "rader": ["Slipbandet i rörelse.", "10 sekunder till vass", "kniv.", "Samma slipband, tre verktyg: kniv, sax, yxa."], "block": [[1, 2]]},
-    {"typ": "band", "rader": ["909 kr (ord. 1 182 kr) — spara 273 kr"]},
-    {"typ": "knapp", "rader": ["Se den i action — beställ nu"]}]},
-  "Beltgrinder_REV_2_1": {"former": [
-    {"typ": "platta", "rader": ["Verifierad recension", "Fungerar fint", "”Bra för att slipa och polera hemma.”"]},
-    {"typ": "platta", "rader": ["— verifierad recension", "909 kr (ord. 1 182 kr)"]},
-    {"typ": "knapp", "rader": ["Beställ din egen — 909 kr"]}]},
-  "Beltgrinder_PD_10_1": {"former": [
-    {"typ": "platta", "rader": ["Nya knivar kostar varje", "gång.", "Slipning kostar en gång.", "En slipmaskin vässar samma knivar i åratal."], "block": [[0, 1]]},
-    {"typ": "band", "rader": ["909 kr en gång vs. nya knivar varje gång"]},
-    {"typ": "knapp", "rader": ["Sluta köpa nytt — slipa istället"]}]},
-  "Batmotor_PD_5_1": {"former": [
-    {"typ": "platta", "rader": ["Kåpa till rigg.", "Inte bara toppen.", "420D Oxford-tyg mot regn, snö och UV."]},
-    {"typ": "band", "rader": ["9 storlekar, 0–5 hk till 250–350 hk."]},
-    {"typ": "knapp", "rader": ["579 kr. Handla nu."]}]},
-  "Batmotor_CO_1_1": {"former": [
-    {"typ": "platta", "rader": ["Utan skydd.", "Med skydd.", "420D Oxford-tyg, kåpa till rigg."]},
-    {"typ": "band", "rader": ["579 kr. 30 dagars öppet köp."]}]},
-  "Batmotor_BF_1_1": {"former": [
-    {"typ": "platta", "rader": ["579 kr.", "Ord.", "965 kr.", "40% rabatt, avdraget direkt i kassan. Ingen kod."]},
-    {"typ": "knapp", "rader": ["Handla nu."]}]},
-  "Batmotor_BF_2_1": {"former": [
-    {"typ": "platta", "rader": ["30 dagars öppet köp.", "Gillar du den inte, får du pengarna tillbaka. Trygg", "betalning med Klarna."], "block": [[1, 2]]},
-    {"typ": "knapp", "rader": ["Handla tryggt. 579 kr."]}]},
-  "Batmotor_RI_1_1": {"former": [
-    {"typ": "platta", "rader": ["Rost syns inte förrän det", "är för sent.", "Skyddet täcker hela motorn – kåpa till rigg – inte bara", "toppen."], "block": [[0, 1], [2, 3]]},
-    {"typ": "band", "rader": ["579 kr skyddar mot sex månader i regn, snö och salt."]},
-    {"typ": "knapp", "rader": ["Handla nu."]}]},
-  "Batmotor_TR_1_1": {"former": [
-    {"typ": "platta", "rader": ["5,0 av 5 stjärnor.", "8 av 8 recensioner.", "”Skyddet känns hållbart och är lätt att sätta", "på.”", "– Fredrik L."], "block": [[2, 3]], "varning": "SE-butikens betyg/antal — måste verifieras mot norska produktsidan, annars hoppa"},
-    {"typ": "knapp", "rader": ["579 kr. Handla nu."]}]},
-  "Batmotor_CS_4_1": {"former": [
-    {"typ": "platta", "rader": ["965 kr → 579 kr.", "40% rabatt, redan", "avdraget.", "Ingen kod behövs. Priset syns i kassan."], "block": [[1, 2]]},
-    {"typ": "knapp", "rader": ["Handla nu."]}]},
-  "Batmotor_LI_1_1": {"former": [
-    {"typ": "platta", "rader": ["5 saker skyddet gör", "Täcker kåpa till rigg", "420D Oxford-tyg mot regn, snö, UV", "9 storlekar, 0–5 hk till 250–350 hk", "Inga verktyg – dra över, spänn remmen", "30 dagars öppet köp"], "bock_fran": 1},
-    {"typ": "knapp", "rader": ["579 kr. Handla nu."]}]},
-  "Batmotor_RV_3_1": {"former": [
-    {"typ": "platta", "rader": ["”Bra skydd mot regn och smuts.", "Jag är nöjd.”", "– Johan K., recension på baverbutiken.se"], "block": [[0, 1]]},
-    {"typ": "knapp", "rader": ["5,0 (8 recensioner). Handla nu."], "varning": "SE-betyg — norska butiken har 1 anmeldelse, betyget stryks ur knappen"}]},
-  "Batmotor_BF_3_1": {"former": [
-    {"typ": "platta", "rader": ["Fel storlek?", "Se måttguiden innan du", "beställer.", "9 storlekar, 0–5 hk till 250–350 hk. Hitta din."], "block": [[1, 2]]},
-    {"typ": "knapp", "rader": ["Se din storlek. Handla nu."]}]},
-  "Batmotor_RV_2_1": {"former": [
-    {"typ": "platta", "rader": ["”Skyddet känns hållbart och är lätt att sätta", "på.”", "– Fredrik L., recension på baverbutiken.se"], "block": [[0, 1]]},
-    {"typ": "knapp", "rader": ["5,0 (8 recensioner). Handla nu."], "varning": "SE-betyg — stryks ur knappen"}]},
-  "Kranskydd_PD_3_1": {"former": [
-    {"typ": "platta", "rader": ["Oskyddad.", "Eller skyddad.", "Isolerande foder håller frosten borta hela vintern"]},
-    {"typ": "etikett", "rader": ["FÖRE"]},
-    {"typ": "etikett", "rader": ["EFTER"]},
-    {"typ": "band", "rader": ["309 kr — på plats på 10 sekunder"]},
-    {"typ": "knapp", "rader": ["Handla nu →"]}]},
-  "Kranskydd_SP_3_1": {"former": [
-    {"typ": "platta", "rader": ["”Jag slapp en spräckt kran i vinter tack", "vare den här.", "Sitter perfekt och känns väldigt tåligt!”", "– Verifierad kund"], "block": [[0, 1]]},
-    {"typ": "badge", "rader": ["30 dagars öppet köp"]},
-    {"typ": "badge", "rader": ["420D Oxford-tyg"]},
-    {"typ": "knapp", "rader": ["Skydda din kran →"]}]},
-  "Kranskydd_REV_2_1": {"former": [
-    {"typ": "platta", "rader": ["Verifierad recension", "Fungerar bra", "”Skyddar kranen bra mot kyla.", "Mycket nöjd.”"], "block": [[2, 3]]},
-    {"typ": "platta", "rader": ["— verifierad recension", "309 kr"]},
-    {"typ": "knapp", "rader": ["Skydda din kran – 309 kr"]}]},
-  "Kranskydd_PD_4_1": {"former": [
-    {"typ": "platta", "rader": ["Dra åt dragskon på 10", "sekunder – innan kylan", "hinner före.", "Isolerande foder håller kylan borta från kranen, hela", "säsongen."], "block": [[0, 1, 2], [3, 4]]},
-    {"typ": "band", "rader": ["22×14 cm – täcker hela kranen, inte bara toppen som en trasa gör."]},
-    {"typ": "knapp", "rader": ["Skydda kranen – 309 kr"]}]},
-  "Kranskydd_PD_8_1": {"former": [
-    {"typ": "platta", "rader": ["En spräckt kran kostar", "mer tid än 309 kr och 10", "sekunder gör.", "Skyddet sitter på plats direkt – ingen verktygslåda,", "ingen krångel."], "block": [[0, 1, 2], [3, 4]]},
-    {"typ": "band", "rader": ["420D Oxford-tyg mellan kranen och kylan, hela vintern."]},
-    {"typ": "knapp", "rader": ["Skydda kranen – 309 kr"]}]},
-  "Kranskydd_PD_6_1": {"former": [
-    {"typ": "platta", "rader": ["309 kr.", "Fri frakt.", "30 dagars öppet köp.", "Ingen risk – skicka tillbaka det inom 30 dagar och få", "pengarna."], "block": [[3, 4]], "varning": "Fri frakt gäller inte i Norge under 300 kr — raden måste bytas"},
-    {"typ": "band", "rader": ["420D Oxford-tyg, 22×14 cm. Klarna på fakturan."]},
-    {"typ": "knapp", "rader": ["Beställ nu – 309 kr"]}]},
-  "Kranskydd_REV_1_1": {"former": [
-    {"typ": "platta", "rader": ["Verifierad recension", "Bra kvalitet", "”Känns rejält och sitter bra på kranen.”"]},
-    {"typ": "platta", "rader": ["— verifierad recension", "309 kr"]},
-    {"typ": "knapp", "rader": ["Skydda din kran – 309 kr"]}]},
-  "Kranskydd_SP_4_1": {"former": [
-    {"typ": "platta", "rader": ["Innan frosten kommer:", "kranen skyddad på 10", "sekunder.", "”Skyddar kranen bra mot kyla.", "Mycket nöjd.”", "— verifierad recension."], "block": [[0, 1, 2], [3, 4]]},
-    {"typ": "platta", "rader": ["420D Oxford-tyg och isolerande foder", "22×14 cm, 10 sekunder, utan verktyg", "Dragsko håller skyddet på plats", "30 dagars öppet köp. Fri frakt."], "bock_till": 2, "varning": "sista raden: Fri frakt gäller inte under 300 kr i Norge"},
-    {"typ": "knapp", "rader": ["Skydda kranen – 309 kr"]}]}
+ "_kommentar": "Svensk text per bild, läst ur bilden (facit) av huvudsessionen 2026-09-03. Ordning = formerna uppifrån och ned, rader inom formen uppifrån och ned. 'block' = rader som är EN radbruten text.",
+ "MC-Kapell_RE_2_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "”Skyddar hojen bra när den står ute.”",
+     "— Andreas Holm",
+     "Verklig recension, Bäverbutiken (Judge.me)"
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "349 kr"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Läs fler recensioner"
+    ]
+   }
+  ]
+ },
+ "MC-Kapell_GA_1_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "30 dagars öppet köp.",
+     "Gillar du inte kapellet? Pengarna tillbaka."
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "Fri frakt inom Sverige. Trygg betalning med Klarna."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla tryggt"
+    ]
+   }
+  ]
+ },
+ "MC-Kapell_OF_1_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "349 kr istället för 582 kr.",
+     "Spara 40 % — samma kapell, samma garanti."
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "Fri frakt inom Sverige."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu"
+    ]
+   }
+  ]
+ },
+ "MC-Kapell_DE_2_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Ett skal som tar vädret i",
+     "ställat"
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "Resårkant håller kvar",
+     "Vattenavvisande + UV-skydd",
+     "Viker ihop litet"
+    ],
+    "vanster": true
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "349 kr"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Se funktionerna"
+    ]
+   }
+  ]
+ },
+ "MC-Kapell_RE_1_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "”Lätt att dra över och skyddar bra mot",
+     "regn.”",
+     "— Johan Nilsson",
+     "Verklig recension, Bäverbutiken (Judge.me)"
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "349 kr"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Läs fler recensioner"
+    ]
+   }
+  ]
+ },
+ "MC-Kapell_OB_1_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "218×118,5 cm täcker de",
+     "flesta MC, mopeder och",
+     "scooters.",
+     "Passar den inte: pengarna tillbaka inom 30 dagar."
+    ],
+    "block": [
+     [
+      0,
+      1,
+      2
+     ]
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "349 kr."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Testa riskfritt"
+    ]
+   }
+  ]
+ },
+ "MC-Kapell_PD_6_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "218 × 118,5 cm",
+     "Passar de flesta motorcyklar, mopeder och scooters."
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "349 kr"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Kolla måtten"
+    ]
+   }
+  ]
+ },
+ "MC-Kapell_LI_1_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "5 saker kapellet gör",
+     "Lacken slipper regn och sol",
+     "På och av på en minut",
+     "Sitter kvar i blåst",
+     "Täcker hela hojen, 218 × 118,5 cm",
+     "Viker ihop till en liten packe"
+    ],
+    "vanster_fran": 1
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "349 kr (ord. 582 kr)"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu"
+    ]
+   }
+  ]
+ },
+ "MC-Kapell_SP_4_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "”Lätt material och går snabbt att sätta på.”",
+     "— Linda Berg",
+     "Verklig recension, Bäverbutiken"
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "349 kr. Fri frakt inom Sverige."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu"
+    ]
+   }
+  ]
+ },
+ "MC-Kapell_CO_2_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Samma modell.",
+     "Olika sommar.",
+     "Regn och sol jobbar på lacken varje natt du står ute."
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "349 kr — skydda din innan nästa regn"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Se kapellet"
+    ]
+   }
+  ]
+ },
+ "MC-Kapell_RI_2_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Efter en säsong utan",
+     "skydd: matt lack, rost på",
+     "kromet.",
+     "Kapellet tar smällen i stället för lacken."
+    ],
+    "block": [
+     [
+      0,
+      1,
+      2
+     ]
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "349 kr — stoppa skadan innan den börjar"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda din MC"
+    ]
+   }
+  ]
+ },
+ "Overvakningskamera_RI_2_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "799 kr för att veta.",
+     "Obetalbart att inte veta.",
+     "Direkt notis om något händer hemma"
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "355° täckning, AI-spårning",
+     "Fri frakt över 300 kr",
+     "30 dagars nöjd-kund-garanti"
+    ],
+    "vanster": true,
+    "bock": true
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu"
+    ]
+   }
+  ]
+ },
+ "Overvakningskamera_SP_7_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Jag slapp gå ut i mörkret för att kolla.",
+     "— Verifierad kund"
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "Direkt notis i mobilen",
+     "AI-spårning, färre falsklarm",
+     "30 dagars nöjd-kund-garanti"
+    ],
+    "vanster": true,
+    "bock": true
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu"
+    ]
+   }
+  ]
+ },
+ "Overvakningskamera_PD_4_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Dag eller natt — den",
+     "missar aldrig något",
+     "AI-spårning, 355° täckning"
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "Två linser — inga döda vinklar",
+     "Vet skillnad på människa och katt",
+     "30 dagars nöjd-kund-garanti"
+    ],
+    "vanster": true,
+    "bock": true
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu"
+    ]
+   }
+  ]
+ },
+ "Overvakningskamera_CO_2_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Ser du skillnad?",
+     "Det gör den."
+    ]
+   },
+   {
+    "typ": "etikett",
+    "rader": [
+     "Vanlig kamera"
+    ]
+   },
+   {
+    "typ": "etikett",
+    "rader": [
+     "Denna kamera"
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "355° täckning i stället för en fast vinkel",
+     "Vet skillnad på människa och katt",
+     "799 kr, 30 dagars garanti"
+    ],
+    "vanster": true,
+    "bock": true
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Uppgradera"
+    ]
+   }
+  ]
+ },
+ "Overvakningskamera_LI_1_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "5 saker att kolla innan du",
+     "köper en",
+     "övervakningskamera",
+     "1. En lins eller två? Två täcker 355°.",
+     "2. Kan den skilja på människa och katt?",
+     "3. Får du notis direkt, eller för sent?",
+     "4. Klarar den svenskt väder utomhus?",
+     "5. Finns det en riktig garanti?"
+    ],
+    "block": [
+     [
+      0,
+      1,
+      2
+     ]
+    ],
+    "vanster_fran": 3
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "Den här klarar alla fem. 799 kr, 30 dagars garanti."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu"
+    ]
+   }
+  ]
+ },
+ "Overvakningskamera_CS_4_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Spara 201 kr i dag",
+     "1 000 kr",
+     "799 kr"
+    ],
+    "stryk": [
+     1
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "Fri frakt över 300 kr",
+     "Klarna – betala senare",
+     "30 dagars nöjd-kund-garanti"
+    ],
+    "vanster": true,
+    "bock": true
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu"
+    ]
+   }
+  ]
+ },
+ "Beltgrinder_PD_5_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Från slö till",
+     "rakbladsvass.",
+     "10 sekunder."
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "typ": "etikett",
+    "rader": [
+     "FÖRE"
+    ]
+   },
+   {
+    "typ": "etikett",
+    "rader": [
+     "EFTER"
+    ]
+   }
+  ]
+ },
+ "Beltgrinder_PD_4_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Slöa mejslar?",
+     "Vässade på 10 sekunder."
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "Slipstenen vässar, slipbandet formar trä och metall, polertrissan",
+     "polerar — 3 stationer i en maskin."
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   }
+  ]
+ },
+ "Beltgrinder_SO_4_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "1 182 kr → 909 kr.",
+     "Spara 273 kr."
+    ],
+    "stryk_del": {
+     "0": "1 182 kr"
+    }
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "Slipband, slipskivor, polervax och insexnycklar följer med."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ till 909 kr."
+    ]
+   }
+  ]
+ },
+ "Beltgrinder_PD_8_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "909 kr.",
+     "Spara 273 kr (23 %) mot",
+     "ordinarie pris.",
+     "Bälteslipmaskin Mini 3-i-1 — kniv, sax, yxa, en",
+     "maskin."
+    ],
+    "block": [
+     [
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ]
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "909 kr",
+     "Ord. 1 182 kr",
+     "Spara 273 kr (23 %)"
+    ],
+    "vanster": true
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ till 909 kr"
+    ]
+   }
+  ]
+ },
+ "Beltgrinder_SO_5_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "3 verktyg i ett.",
+     "Priset av ett.",
+     "Kniv, sax och yxa — samma verktyg, samma köp."
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "909 kr (ord. 1 182 kr) — spara 273 kr, 23 %"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ Bälteslipmaskinen"
+    ]
+   }
+  ]
+ },
+ "Beltgrinder_SP_5_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Slipbandet i rörelse.",
+     "10 sekunder till vass",
+     "kniv.",
+     "Samma slipband, tre verktyg: kniv, sax, yxa."
+    ],
+    "block": [
+     [
+      1,
+      2
+     ]
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "909 kr (ord. 1 182 kr) — spara 273 kr"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Se den i action — beställ nu"
+    ]
+   }
+  ]
+ },
+ "Beltgrinder_REV_2_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Verifierad recension",
+     "Fungerar fint",
+     "”Bra för att slipa och polera hemma.”"
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "— verifierad recension",
+     "909 kr (ord. 1 182 kr)"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ din egen — 909 kr"
+    ]
+   }
+  ]
+ },
+ "Beltgrinder_PD_10_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Nya knivar kostar varje",
+     "gång.",
+     "Slipning kostar en gång.",
+     "En slipmaskin vässar samma knivar i åratal."
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "909 kr en gång vs. nya knivar varje gång"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Sluta köpa nytt — slipa istället"
+    ]
+   }
+  ]
+ },
+ "Batmotor_PD_5_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Kåpa till rigg.",
+     "Inte bara toppen.",
+     "420D Oxford-tyg mot regn, snö och UV."
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "9 storlekar, 0–5 hk till 250–350 hk."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "579 kr. Handla nu."
+    ]
+   }
+  ]
+ },
+ "Batmotor_CO_1_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Utan skydd.",
+     "Med skydd.",
+     "420D Oxford-tyg, kåpa till rigg."
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "579 kr. 30 dagars öppet köp."
+    ]
+   }
+  ]
+ },
+ "Batmotor_BF_1_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "579 kr.",
+     "Ord.",
+     "965 kr.",
+     "40% rabatt, avdraget direkt i kassan. Ingen kod."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu."
+    ]
+   }
+  ]
+ },
+ "Batmotor_BF_2_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "30 dagars öppet köp.",
+     "Gillar du den inte, får du pengarna tillbaka. Trygg",
+     "betalning med Klarna."
+    ],
+    "block": [
+     [
+      1,
+      2
+     ]
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla tryggt. 579 kr."
+    ]
+   }
+  ]
+ },
+ "Batmotor_RI_1_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Rost syns inte förrän det",
+     "är för sent.",
+     "Skyddet täcker hela motorn – kåpa till rigg – inte bara",
+     "toppen."
+    ],
+    "block": [
+     [
+      0,
+      1
+     ],
+     [
+      2,
+      3
+     ]
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "579 kr skyddar mot sex månader i regn, snö och salt."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu."
+    ]
+   }
+  ]
+ },
+ "Batmotor_TR_1_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "5,0 av 5 stjärnor.",
+     "8 av 8 recensioner.",
+     "”Skyddet känns hållbart och är lätt att sätta",
+     "på.”",
+     "– Fredrik L."
+    ],
+    "block": [
+     [
+      2,
+      3
+     ]
+    ],
+    "varning": "SE-butikens betyg/antal — måste verifieras mot norska produktsidan, annars hoppa"
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "579 kr. Handla nu."
+    ]
+   }
+  ]
+ },
+ "Batmotor_CS_4_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "965 kr → 579 kr.",
+     "40% rabatt, redan",
+     "avdraget.",
+     "Ingen kod behövs. Priset syns i kassan."
+    ],
+    "block": [
+     [
+      1,
+      2
+     ]
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu."
+    ]
+   }
+  ]
+ },
+ "Batmotor_LI_1_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "5 saker skyddet gör",
+     "Täcker kåpa till rigg",
+     "420D Oxford-tyg mot regn, snö, UV",
+     "9 storlekar, 0–5 hk till 250–350 hk",
+     "Inga verktyg – dra över, spänn remmen",
+     "30 dagars öppet köp"
+    ],
+    "bock_fran": 1
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "579 kr. Handla nu."
+    ]
+   }
+  ]
+ },
+ "Batmotor_RV_3_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "”Bra skydd mot regn och smuts.",
+     "Jag är nöjd.”",
+     "– Johan K., recension på baverbutiken.se"
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "5,0 (8 recensioner). Handla nu."
+    ],
+    "varning": "SE-betyg — norska butiken har 1 anmeldelse, betyget stryks ur knappen"
+   }
+  ]
+ },
+ "Batmotor_BF_3_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Fel storlek?",
+     "Se måttguiden innan du",
+     "beställer."
+    ],
+    "block": [
+     [
+      1,
+      2
+     ]
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "9 storlekar, 0–5 hk till 250–350 hk. Hitta din."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Se din storlek. Handla nu."
+    ]
+   }
+  ]
+ },
+ "Batmotor_RV_2_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "”Skyddet känns hållbart och är lätt att sätta",
+     "på.”",
+     "– Fredrik L., recension på baverbutiken.se"
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "5,0 (8 recensioner). Handla nu."
+    ],
+    "varning": "SE-betyg — stryks ur knappen"
+   }
+  ]
+ },
+ "Kranskydd_PD_3_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Oskyddad.",
+     "Eller skyddad.",
+     "Isolerande foder håller frosten borta hela vintern"
+    ]
+   },
+   {
+    "typ": "etikett",
+    "rader": [
+     "FÖRE"
+    ]
+   },
+   {
+    "typ": "etikett",
+    "rader": [
+     "EFTER"
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "309 kr — på plats på 10 sekunder"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu →"
+    ]
+   }
+  ]
+ },
+ "Kranskydd_SP_3_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "”Jag slapp en spräckt kran i vinter tack",
+     "vare den här.",
+     "Sitter perfekt och känns väldigt tåligt!”",
+     "– Verifierad kund"
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "typ": "badge",
+    "rader": [
+     "30 dagars öppet köp"
+    ]
+   },
+   {
+    "typ": "badge",
+    "rader": [
+     "420D Oxford-tyg"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda din kran →"
+    ]
+   }
+  ]
+ },
+ "Kranskydd_REV_2_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Verifierad recension",
+     "Fungerar bra",
+     "”Skyddar kranen bra mot kyla.",
+     "Mycket nöjd.”"
+    ],
+    "block": [
+     [
+      2,
+      3
+     ]
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "— verifierad recension",
+     "309 kr"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda din kran – 309 kr"
+    ]
+   }
+  ]
+ },
+ "Kranskydd_PD_4_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Dra åt dragskon på 10",
+     "sekunder – innan kylan",
+     "hinner före.",
+     "Isolerande foder håller kylan borta från kranen, hela",
+     "säsongen."
+    ],
+    "block": [
+     [
+      0,
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ]
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "22×14 cm – täcker hela kranen, inte bara toppen som en trasa gör."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda kranen – 309 kr"
+    ]
+   }
+  ]
+ },
+ "Kranskydd_PD_8_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "En spräckt kran kostar",
+     "mer tid än 309 kr och 10",
+     "sekunder gör.",
+     "Skyddet sitter på plats direkt – ingen verktygslåda,",
+     "ingen krångel."
+    ],
+    "block": [
+     [
+      0,
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ]
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "420D Oxford-tyg mellan kranen och kylan, hela vintern."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda kranen – 309 kr"
+    ]
+   }
+  ]
+ },
+ "Kranskydd_PD_6_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "309 kr.",
+     "Fri frakt.",
+     "30 dagars öppet köp.",
+     "Ingen risk – skicka tillbaka det inom 30 dagar och få",
+     "pengarna."
+    ],
+    "block": [
+     [
+      3,
+      4
+     ]
+    ],
+    "varning": "Fri frakt gäller inte i Norge under 300 kr — raden måste bytas"
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "420D Oxford-tyg, 22×14 cm. Klarna på fakturan."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ nu – 309 kr"
+    ]
+   }
+  ]
+ },
+ "Kranskydd_REV_1_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Verifierad recension",
+     "Bra kvalitet",
+     "”Känns rejält och sitter bra på kranen.”"
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "— verifierad recension",
+     "309 kr"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda din kran – 309 kr"
+    ]
+   }
+  ]
+ },
+ "Kranskydd_SP_4_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Innan frosten kommer:",
+     "kranen skyddad på 10",
+     "sekunder.",
+     "”Skyddar kranen bra mot kyla.",
+     "Mycket nöjd.”",
+     "— verifierad recension."
+    ],
+    "block": [
+     [
+      0,
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ]
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "420D Oxford-tyg och isolerande foder",
+     "22×14 cm, 10 sekunder, utan verktyg",
+     "Dragsko håller skyddet på plats",
+     "30 dagars öppet köp. Fri frakt."
+    ],
+    "bock_till": 2,
+    "varning": "sista raden: Fri frakt gäller inte under 300 kr i Norge"
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda kranen – 309 kr"
+    ]
+   }
+  ]
+ }
 }

@@ -1,0 +1,50 @@
+[
+ {
+  "box": [
+   33,
+   55,
+   1047,
+   290
+  ],
+  "fet": true,
+  "storlek": 72,
+  "rader": 2,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "Fra sløv til barberbladsskarp."
+ },
+ {
+  "box": [
+   33,
+   295,
+   1047,
+   420
+  ],
+  "fet": true,
+  "storlek": 72,
+  "rader": 1,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "10 sekunder."
+ },
+ {
+  "form": 0,
+  "text": "FØR",
+  "rad": 0,
+  "se": "FÖRE",
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "ETTER",
+  "rad": 0,
+  "se": "EFTER",
+  "vanster": false
+ }
+]

@@ -1,0 +1,50 @@
+[
+ {
+  "box": [
+   33,
+   55,
+   1047,
+   410
+  ],
+  "fet": true,
+  "storlek": 72,
+  "rader": 3,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "En sprukket kran koster mer tid enn 219 kr og 10 sekunder gjør."
+ },
+ {
+  "box": [
+   33,
+   435,
+   1047,
+   570
+  ],
+  "fet": false,
+  "storlek": 40,
+  "rader": 2,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "Beskyttelsen sitter på plass med en gang – ingen verktøykasse, ingen krøll."
+ },
+ {
+  "form": 2,
+  "text": "420D Oxford-stoff mellom kranen og kulden, hele vinteren.",
+  "rad": 0,
+  "se": "420D Oxford-tyg mellan kranen och kylan, hela vintern.",
+  "vanster": false
+ },
+ {
+  "form": 3,
+  "text": "Beskytt kranen – 219 kr",
+  "rad": 0,
+  "se": "Skydda kranen – 309 kr",
+  "vanster": false
+ }
+]

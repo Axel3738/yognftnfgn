@@ -1,0 +1,29 @@
+[
+ {
+  "form": 0,
+  "text": "30 dagers åpent kjøp.",
+  "rad": 0,
+  "se": "30 dagars öppet köp.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Liker du det ikke, får du pengene tilbake. Trygg betaling med Klarna.",
+  "rader": [
+   1,
+   2
+  ],
+  "se_rader": [
+   "Gillar du den inte, får du pengarna tillbaka. Trygg",
+   "betalning med Klarna."
+  ],
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "Handle trygt. 529 kr.",
+  "rad": 0,
+  "se": "Handla tryggt. 579 kr.",
+  "vanster": false
+ }
+]

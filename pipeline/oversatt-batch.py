@@ -19,6 +19,7 @@ Stämmer inte antalet är det MISMATCH — då behövs en override, inte en giss
 """
 import argparse
 import json
+import numpy as np
 import subprocess
 import sys
 from pathlib import Path
@@ -36,15 +37,56 @@ def analysera(fil):
     return [x for x in d if "form" in x]
 
 
-def matcha(se_former, det_former):
-    """Returnerar lista med detekterat form-index per SE-form (None = ingen träff)."""
+MORKA = {"knapp", "etikett"}
+
+
+def _passar(sf, df, k, n_se, hojd, bredd=1080):
+    """Typ- och zonkontroll så att en saknad form inte förskjuter matchningen tyst
+    (checklistan får aldrig matchas mot rubrikplattan)."""
+    typ = sf.get("typ", "platta")
+    ljus = df["typ"] in ("platta", "band")
+    if typ in MORKA and ljus:
+        return False
+    if typ not in MORKA and typ != "badge" and not ljus:
+        return False
+    y = df["y0"] / hojd
+    if k == 0 and typ not in MORKA and y > 0.45:
+        return False               # första plattan sitter alltid högst upp
+    if typ == "knapp" and y < 0.7:
+        return False               # knappen sitter alltid längst ned
+    if typ in MORKA and np.mean(df["textfarg"]) < 180:
+        return False               # knapp/etikett har alltid vit text — en mörk remsa
+                                   # mellan band och knapp är inte knappen (Beltgrinder_REV_2_1)
+    if typ in ("band", "platta"):
+        # text.py:s plattor och band är alltid fullbreda (marginal 33 px) — en smal
+        # "platta" är ett snöfält, en husvägg eller en halvdetekterad platta
+        # (Overvakningskamera_SP_7_1: checklistan hamnade på huset, 2026-09-03)
+        if (df["x1"] - df["x0"]) < 0.8 * bredd:
+            return False
+    return True
+
+
+def matcha(se_former, det_former, hoppa=(), hojd=1350, bredd=1080):
+    """Returnerar lista med (det-index, antal SE-rader) per SE-form; None = ingen träff.
+    En detekterad form får ha FLER rader än SE om de extra ligger sist och är låga
+    (skräprader vid formens kant) — de ritas inte om och suddas inte."""
     lediga = list(range(len(det_former)))
     ut = []
-    for sf in se_former:
+    n_se = len(se_former)
+    for k, sf in enumerate(se_former):
+        if k in hoppa:
+            ut.append(None)
+            continue
         n = len(sf["rader"])
         träff = None
         for i in lediga:
-            if det_former[i]["rader"] == n:
+            df = det_former[i]
+            if not _passar(sf, df, k, n_se, hojd, bredd):
+                continue
+            if df["rader"] == n:
+                träff = i
+                break
+            if df["rader"] > n and all(r["hojd"] <= 26 for r in df["radinfo"][n:]):
                 träff = i
                 break
         if träff is None:
@@ -86,11 +128,14 @@ def main():
                 r["status"] = "FEL"; r["skal"] = f"norska svaret har {len(nf)} former, svenska har {len(sf)}"; continue
             det = analysera(B / "se" / f"{namn}.jpg")
             ov = overrides.get(namn, {})
-            karta = matcha(sf, det)
+            from PIL import Image as _I
+            _bild = _I.open(B / "se" / f"{namn}.jpg"); hojd, bredd = _bild.height, _bild.width
+            overr = {int(k) for k in ov.get("box_for_form", {})}
+            karta = matcha(sf, det, hoppa=overr, hojd=hojd, bredd=bredd)
             texter = []
             saknade = []
             for k, (s, n_, di) in enumerate(zip(sf, nf, karta)):
-                if str(k) in ov.get("box_for_form", {}):
+                if k in overr:
                     # Manuell ruta ersätter formen helt. "post" pekar på vilken norsk
                     # textpost (index i former[k].texter) som ska in i rutan.
                     for bx in ov["box_for_form"][str(k)]:
@@ -102,14 +147,36 @@ def main():
                 if di is None:
                     saknade.append(k)
                     continue
+                # Vänsterjustering ur SE-strukturen: hela formen, från rad k, eller bocklistor.
+                def vanster_for(rad):
+                    if s.get("vanster") or s.get("bock"):
+                        return True
+                    if "vanster_fran" in s and rad >= s["vanster_fran"]:
+                        return True
+                    if "bock_fran" in s and rad >= s["bock_fran"]:
+                        return True
+                    if "bock_till" in s and rad <= s["bock_till"]:
+                        return True
+                    # Ingen vänsterflagga i SE-strukturen = centrerad. Detektorns egen
+                    # bedömning litar vi inte på här: en rad-bbox som smält ihop med
+                    # plattkanten ser "vänster" ut (Batmotor_PD_5_1, mätt 2026-09-03).
+                    return False
+                n_rader = len(s["rader"])
+                if det[di]["rader"] > n_rader:
+                    texter.append({"form": di, "klipp_efter_rad": n_rader - 1, "rad": None})
                 for post in n_["texter"]:
                     e = {"form": di, "text": post.get("text", "")}
                     if len(post["rader"]) == 1:
                         e["rad"] = post["rader"][0]
+                        e["se"] = s["rader"][post["rader"][0]]
                     else:
                         e["rader"] = post["rader"]
+                        e["se_rader"] = [s["rader"][k] for k in post["rader"]]
                     if post.get("stryk"):
                         e["stryk"] = post["stryk"]
+                    v = vanster_for(post["rader"][0])
+                    if v is not None:
+                        e["vanster"] = v
                     texter.append(e)
             texter.extend(ov.get("extra_boxar", []))
             r["karta"] = karta

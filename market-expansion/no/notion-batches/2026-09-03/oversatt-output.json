@@ -1,0 +1,2536 @@
+{
+ "MC-Kapell_RE_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "”Beskytter sykkelen godt når den står ute.”"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "— Andreas Holm"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "Ekte kundeomtale, Bäverbutiken (Judge.me)"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "269 kr"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Les flere omtaler"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "\"Beskytter sykkelen godt når den står ute.\" – Andreas Holm\nEkte kundeomtale, Bäverbutiken (Judge.me).\n269 kr.",
+   "headline": "Andreas' omtale – MC-trekk",
+   "description": ""
+  },
+  "andringar": [
+   "349 kr → 269 kr"
+  ],
+  "hoppa": null
+ },
+ "MC-Kapell_GA_1_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "30 dagers åpent kjøp."
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Liker du ikke trekket? Du får pengene tilbake."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Trygg betaling med Klarna."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Handle trygt"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "30 dagers åpent kjøp på trekket.\nPasser det ikke sykkelen din – du får pengene tilbake.\nBetal trygt med Klarna.",
+   "headline": "30 dagers åpent kjøp – MC-trekk",
+   "description": ""
+  },
+  "andringar": [
+   "Fri frakt strøket (ikke gratis frakt i NO) → 'Trygg betaling med Klarna'"
+  ],
+  "hoppa": null
+ },
+ "MC-Kapell_OF_1_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "269 kr i stedet for 449 kr."
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Spar 40 % — samme trekk, samme garanti."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "30 dagers åpent kjøp."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Handle nå"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "449 kr ble 269 kr – for samme trekk.\nIngen nedskalert variant, bare lavere pris.\n30 dagers åpent kjøp.",
+   "headline": "269 kr (spar 40 %) – MC-trekk",
+   "description": ""
+  },
+  "andringar": [
+   "582 kr → 449 kr (jamførpris)",
+   "349 kr → 269 kr",
+   "Fri frakt strøket → 30 dagers åpent kjøp"
+  ],
+  "hoppa": null
+ },
+ "MC-Kapell_DE_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Et deksel som tar været i ditt sted."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Strikkekant holder den på plass"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Vannavvisende + UV-beskyttelse"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "Slår sammen til lite"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "269 kr"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Se funksjonene"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Strikkekanten låser trekket fast i vind.\nVannavvisende stoff og UV-beskyttelse holder lakken hel.\nSammenlagt får den plass i sadelvesken din.",
+   "headline": "3 funksjoner, 269 kr – MC-trekk",
+   "description": ""
+  },
+  "andringar": [
+   "349 kr → 269 kr",
+   "Uklar SE-linje ('...i ställat') tolket og skrevet om til en hel norsk setning"
+  ],
+  "hoppa": null
+ },
+ "MC-Kapell_RE_1_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "”Lett å dra over og beskytter godt mot regn.”"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "— Johan Nilsson"
+     },
+     {
+      "rader": [
+       3
+      ],
+      "text": "Ekte kundeomtale, Bäverbutiken (Judge.me)"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "269 kr"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Les flere omtaler"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Johan Nilsson satte på trekket på MC-en sin.\n\"Lett å dra over og beskytter godt mot regn.\"\n269 kr, ekte kundeomtale fra Bäverbutiken.",
+   "headline": "Johans omtale – MC-trekk",
+   "description": ""
+  },
+  "andringar": [
+   "349 kr → 269 kr"
+  ],
+  "hoppa": null
+ },
+ "MC-Kapell_OB_1_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1,
+       2
+      ],
+      "text": "218 × 118,5 cm dekker de fleste MC-er, mopeder og scootere."
+     },
+     {
+      "rader": [
+       3
+      ],
+      "text": "Passer den ikke: du får pengene tilbake innen 30 dager."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "269 kr."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Test risikofritt"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "218 × 118,5 cm – dekker de fleste motorsykler.\nPasser den ikke din? Du får pengene tilbake innen 30 dager.\nIngen risiko å teste for 269 kr.",
+   "headline": "Passer den ikke? Pengene tilbake",
+   "description": ""
+  },
+  "andringar": [
+   "349 kr → 269 kr"
+  ],
+  "hoppa": null
+ },
+ "MC-Kapell_PD_6_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "218 × 118,5 cm"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Passer de fleste motorsykler, mopeder og scootere."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "269 kr"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Sjekk målene"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "218 × 118,5 cm – målet som dekker hele sykkelen.\nPasser de fleste motorsykler, mopeder og scootere.\n269 kr for riktig størrelse på trekket.",
+   "headline": "218×118,5 cm – MC-trekk, 269 kr",
+   "description": ""
+  },
+  "andringar": [
+   "349 kr → 269 kr"
+  ],
+  "hoppa": null
+ },
+ "MC-Kapell_LI_1_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "5 ting trekket gjør"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Lakken slipper unna regn og sol"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "På og av på ett minutt"
+     },
+     {
+      "rader": [
+       3
+      ],
+      "text": "Sitter fast i vind"
+     },
+     {
+      "rader": [
+       4
+      ],
+      "text": "Dekker hele sykkelen, 218 × 118,5 cm"
+     },
+     {
+      "rader": [
+       5
+      ],
+      "text": "Brettes sammen til en liten pakke"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "269 kr (ord. 449 kr)"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Handle nå"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "På på ett minutt, av på ett minutt.\nSitter fast selv i kraftig vind.\n269 kr i stedet for 449 kr.",
+   "headline": "5 ting trekket gjør – 269 kr",
+   "description": ""
+  },
+  "andringar": [
+   "349 kr → 269 kr",
+   "582 kr → 449 kr"
+  ],
+  "hoppa": null
+ },
+ "MC-Kapell_SP_4_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "”Lett materiale og raskt å sette på.”"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "— Linda Berg"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "Ekte kundeomtale, Bäverbutiken"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "269 kr. 30 dagers åpent kjøp."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Handle nå"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Linda Berg valgte trekket til MC-en sin.\n\"Lett materiale og raskt å sette på.\"\n269 kr, 30 dagers åpent kjøp.",
+   "headline": "Lindas omtale – MC-trekk",
+   "description": ""
+  },
+  "andringar": [
+   "349 kr → 269 kr",
+   "Fri frakt strøket (ikke gratis frakt i NO) → 30 dagers åpent kjøp"
+  ],
+  "hoppa": null
+ },
+ "MC-Kapell_CO_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Samme modell."
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Ulik sommer."
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "Regn og sol jobber på lakken hver natt den står ute."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "269 kr — beskytt din før neste regnskyll"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Se trekket"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Samme MC. Én står under trekk, én gjør det ikke.\nRegn og sol jobber på lakken hver natt den står ute.\n269 kr beskytter din før neste regnskyll.",
+   "headline": "Samme MC, ulik beskyttelse – 269 kr",
+   "description": ""
+  },
+  "andringar": [
+   "349 kr → 269 kr"
+  ],
+  "hoppa": null
+ },
+ "MC-Kapell_RI_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1,
+       2
+      ],
+      "text": "Etter en sesong uten beskyttelse: matt lakk, rust på kromet."
+     },
+     {
+      "rader": [
+       3
+      ],
+      "text": "Trekket tar støyten i stedet for lakken."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "269 kr — stopp skaden før den starter"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Beskytt MC-en din"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "En sesong uten beskyttelse gir matt lakk og rust på kromet.\nTrekket tar støyten, ikke motorsykkelen din.\n269 kr stopper skaden før den starter.",
+   "headline": "Stopp skaden før den starter",
+   "description": ""
+  },
+  "andringar": [
+   "349 kr → 269 kr"
+  ],
+  "hoppa": null
+ },
+ "Overvakningskamera_RI_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "899 kr for å vite."
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Uvurderlig å ikke vite."
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "Direkte varsel når noe skjer hjemme"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "355° dekning, AI-sporing"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Gratis frakt over 300 kr"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "30 dagers fornøyd-kunde-garanti"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Handle nå"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Varselet kommer før du rekker å lure.\nDobbel linse og AI-sporing ser det øyet går glipp av.\n899 kr (ord. 1 169 kr). 30 dagers garanti.",
+   "headline": "Vet med en gang hva som skjer",
+   "description": ""
+  },
+  "andringar": [
+   "799 kr → 899 kr",
+   "1000 kr → 1 169 kr"
+  ],
+  "hoppa": null
+ },
+ "Overvakningskamera_SP_7_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Jeg slapp å gå ut i mørket for å sjekke."
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "— Verifisert kunde"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Direkte varsel i mobilen"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "AI-sporing, færre falske alarmer"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "30 dagers fornøyd-kunde-garanti"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Handle nå"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Lyden om natten kjenner du igjen på skjermen, ikke i mørket.\nAI-sporingen skiller menneske fra katt — færre falske alarmer.\n899 kr. 30 dagers garanti.",
+   "headline": "Slipp å gå ut i mørket",
+   "description": ""
+  },
+  "andringar": [
+   "799 kr → 899 kr"
+  ],
+  "hoppa": null
+ },
+ "Overvakningskamera_PD_4_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Dag eller natt — den går aldri glipp av noe"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "AI-sporing, 355° dekning"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "To linser — ingen døde vinkler"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Vet forskjell på menneske og katt"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "30 dagers fornøyd-kunde-garanti"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Handle nå"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Én linse for dagslys, én for mørke — like skarpt begge ganger.\n355° dekning betyr at den svinger dit bevegelsen er.\n899 kr. 30 dagers garanti.",
+   "headline": "Dag eller natt. Like skarpt.",
+   "description": ""
+  },
+  "andringar": [
+   "799 kr → 899 kr"
+  ],
+  "hoppa": null
+ },
+ "Overvakningskamera_CO_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Ser du forskjellen?"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Det gjør den."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Vanlig kamera"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Dette kameraet"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "355° dekning i stedet for en fast vinkel"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Vet forskjell på menneske og katt"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "899 kr, 30 dagers garanti"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Oppgrader"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Et fast kamera filmer det samme hjørnet i evighet.\nDette svinger 355° og følger bevegelsen dit den går.\n899 kr (ord. 1 169 kr). 30 dagers garanti.",
+   "headline": "Fast vinkel vs 355°. Oppgrader.",
+   "description": ""
+  },
+  "andringar": [
+   "799 kr → 899 kr",
+   "1000 kr → 1 169 kr"
+  ],
+  "hoppa": null
+ },
+ "Overvakningskamera_LI_1_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1,
+       2
+      ],
+      "text": "5 ting å sjekke før du kjøper et overvåkingskamera"
+     },
+     {
+      "rader": [
+       3
+      ],
+      "text": "1. Én linse eller to? To dekker 355°."
+     },
+     {
+      "rader": [
+       4
+      ],
+      "text": "2. Kan det skille menneske fra katt?"
+     },
+     {
+      "rader": [
+       5
+      ],
+      "text": "3. Får du varsel med én gang, eller for sent?"
+     },
+     {
+      "rader": [
+       6
+      ],
+      "text": "4. Tåler det norsk vær utendørs?"
+     },
+     {
+      "rader": [
+       7
+      ],
+      "text": "5. Finnes det en ekte garanti?"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Dette klarer alle fem. 899 kr, 30 dagers garanti."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Handle nå"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "De fleste kameraer klarer ett eller to av punktene.\nDette har dobbel linse, AI-sporing, varsel, værbeskyttelse og garanti — samtidig.\n899 kr (ord. 1 169 kr).",
+   "headline": "5 av 5. Ingen kompromisser.",
+   "description": ""
+  },
+  "andringar": [
+   "799 kr → 899 kr",
+   "1000 kr → 1 169 kr",
+   "'svenskt väder' → 'norsk vær'"
+  ],
+  "hoppa": null
+ },
+ "Overvakningskamera_CS_4_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Spar 270 kr i dag"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "1 169 kr",
+      "stryk": "1 169 kr"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "899 kr"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Gratis frakt over 300 kr"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Klarna – betal senere"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "30 dagers fornøyd-kunde-garanti"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Handle nå"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "1 169 kr blir 899 kr — ingen kode, ingen krøll.\nGratis frakt over 300 kr, og Klarna om du vil dele opp.\n30 dagers garanti hvis det ikke føles riktig.",
+   "headline": "899 kr i dag, ord. 1 169 kr",
+   "description": ""
+  },
+  "andringar": [
+   "1000 kr → 1 169 kr",
+   "799 kr → 899 kr",
+   "Spara 201 kr → Spar 270 kr"
+  ],
+  "hoppa": null
+ },
+ "Beltgrinder_PD_5_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Fra sløv til barberbladsskarp."
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "10 sekunder."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "FØR"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "ETTER"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "En sløv kniv river tomaten. En skarp kniv deler den.\nBeltesliper Mini sliper skarp på 10 sekunder — slipestein, slipebånd og polertrinse i én maskin.\n1 029 kr (ord. 1 715 kr). Spar 686 kr.\nBestill din her.",
+   "headline": "Skarpslipt på 10 sekunder",
+   "description": ""
+  },
+  "andringar": [
+   "909 kr → 1 029 kr",
+   "1 182 kr → 1 715 kr",
+   "273 kr → 686 kr",
+   "23 % → 40 % (faktisk NO-rabatt)"
+  ],
+  "hoppa": null
+ },
+ "Beltgrinder_PD_4_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Sløve meisler?"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Skarpe på 10 sekunder."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Slipesteinen sliper, slipebåndet former tre og metall, polertrinsen polerer — 3 stasjoner i én maskin."
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Lei av sløve kniver og verktøy som ikke funker som de skal? 🔪\nBeltesliper Mini 3-i-1: slipestein sliper, slipebånd former, polertrinse polerer.\nSlipebånd, slipeskiver, polérvoks, lader og sekskantnøkler følger med.\n1 715 kr → 1 029 kr. Spar 686 kr, alltid samme pris.\nBestill din her.",
+   "headline": "Sløve meisler? Skarpe på 10 sek",
+   "description": ""
+  },
+  "andringar": [
+   "1 182 kr → 1 715 kr",
+   "909 kr → 1 029 kr",
+   "273 kr → 686 kr"
+  ],
+  "hoppa": null
+ },
+ "Beltgrinder_SO_4_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "1 715 kr → 1 029 kr.",
+      "stryk": "1 715 kr"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Spar 686 kr."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Slipebånd, slipeskiver, polérvoks og sekskantnøkler følger med."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Bestill for 1 029 kr"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Lei av sløve kniver og verktøy som ikke funker som de skal? 🔪\nBeltesliper Mini 3-i-1: slipestein sliper, slipebånd former, polertrinse polerer.\nSlipebånd, slipeskiver, polérvoks, lader og sekskantnøkler følger med.\n1 715 kr → 1 029 kr. Spar 686 kr, alltid samme pris.\nBestill din her.",
+   "headline": "1 029 kr — alt tilbehør inkludert",
+   "description": ""
+  },
+  "andringar": [
+   "1 182 kr → 1 715 kr",
+   "909 kr → 1 029 kr",
+   "273 kr → 686 kr"
+  ],
+  "hoppa": null
+ },
+ "Beltgrinder_PD_8_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "1 029 kr."
+     },
+     {
+      "rader": [
+       1,
+       2
+      ],
+      "text": "Spar 686 kr (40 %) mot ordinær pris."
+     },
+     {
+      "rader": [
+       3,
+       4
+      ],
+      "text": "Beltesliper Mini 3-i-1 — kniv, saks, øks, én maskin."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "1 029 kr"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Ord. 1 715 kr"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "Spar 686 kr (40 %)"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Bestill for 1 029 kr"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Kniv, saks og øks — tre verktøy som blir sløve hver for seg.\nBeltesliper Mini sliper alle tre i samme maskin.\n1 029 kr, ord. 1 715 kr. Spar 686 kr, ingen krøll.\nBestill din her.",
+   "headline": "1 029 kr — spar 686 kr (40 %)",
+   "description": ""
+  },
+  "andringar": [
+   "909 kr → 1 029 kr",
+   "1 182 kr → 1 715 kr",
+   "273 kr → 686 kr",
+   "23 % → 40 %"
+  ],
+  "hoppa": null
+ },
+ "Beltgrinder_SO_5_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "3 verktøy i ett."
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Prisen av ett."
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "Kniv, saks og øks — samme verktøy, samme kjøp."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "1 029 kr (ord. 1 715 kr) — spar 686 kr, 40 %"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Bestill beltesliperen"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Tre verktøy. Tre ulike slipemetoder. Én maskin.\nSlipestein sliper, slipebånd former, polertrinse polerer — alt i Beltesliper Mini.\n1 029 kr i stedet for 1 715 kr. Spar 686 kr.\nBestill din her.",
+   "headline": "3 verktøy, 1 maskin, 1 pris",
+   "description": ""
+  },
+  "andringar": [
+   "909 kr → 1 029 kr",
+   "1 182 kr → 1 715 kr",
+   "273 kr → 686 kr",
+   "23 % → 40 %"
+  ],
+  "hoppa": null
+ },
+ "Beltgrinder_SP_5_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Slipebåndet i bevegelse."
+     },
+     {
+      "rader": [
+       1,
+       2
+      ],
+      "text": "10 sekunder til skarp kniv."
+     },
+     {
+      "rader": [
+       3
+      ],
+      "text": "Samme slipebånd, tre verktøy: kniv, saks, øks."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "1 029 kr (ord. 1 715 kr) — spar 686 kr"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Se aksjonen – bestill"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Høres det for godt ut til å være sant? Se båndet snurre selv.\n10 sekunder fra sløv til skarp — ikke mer.\nSamme slipebånd til kniv, saks og øks. 1 029 kr, spar 686 kr.\nBestill din her.",
+   "headline": "Se slipebåndet i bevegelse",
+   "description": ""
+  },
+  "andringar": [
+   "909 kr → 1 029 kr",
+   "1 182 kr → 1 715 kr",
+   "273 kr → 686 kr"
+  ],
+  "hoppa": null
+ },
+ "Beltgrinder_REV_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Verifisert omtale"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Fungerer fint"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "”Bra til å slipe og polere hjemme.”"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "— verifisert omtale"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "1 029 kr (ord. 1 715 kr)"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Bestill din egen"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "\"Bra til å slipe og polere hjemme.\" — verifisert omtale, Fungerer fint.\nBeltesliper Mini: slipestein, slipebånd og polertrinse i én maskin.\n1 029 kr (ord. 1 715 kr). Spar 686 kr.\nBestill din her.",
+   "headline": "Fungerer fint – verifisert omtale",
+   "description": ""
+  },
+  "andringar": [
+   "909 kr → 1 029 kr",
+   "1 182 kr → 1 715 kr"
+  ],
+  "hoppa": null
+ },
+ "Beltgrinder_PD_10_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Nye kniver koster hver gang."
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "Sliping koster én gang."
+     },
+     {
+      "rader": [
+       3
+      ],
+      "text": "En slipemaskin sliper de samme knivene i årevis."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "1 029 kr én gang vs. nye kniver hver gang"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Spar – slip i stedet"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "En ny kniv koster deg igjen om ett år.\nEn slipt kniv koster deg én gang — så er den skarp i årevis.\nBeltesliper Mini: 1 029 kr, ord. 1 715 kr. Spar 686 kr.\nBestill din her.",
+   "headline": "Sliping koster én gang",
+   "description": ""
+  },
+  "andringar": [
+   "909 kr → 1 029 kr",
+   "1 182 kr → 1 715 kr",
+   "273 kr → 686 kr"
+  ],
+  "hoppa": null
+ },
+ "Batmotor_PD_5_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Deksel til rigg."
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Ikke bare toppen."
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "420D Oxford-stoff mot regn, snø og UV."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "9 størrelser, 0–5 hk til 250–350 hk."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "529 kr. Handle nå."
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "De fleste deksler stopper ved toppen av motoren.\nDette går ned over riggen også.\n420D Oxford-stoff, 9 størrelser for alt fra 0–5 hk til 250–350 hk.\n529 kr.",
+   "headline": "Deksel til rigg. Ikke bare toppen.",
+   "description": ""
+  },
+  "andringar": [
+   "579 kr → 529 kr"
+  ],
+  "hoppa": null
+ },
+ "Batmotor_CO_1_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Uten beskyttelse."
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Med beskyttelse."
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "420D Oxford-stoff, deksel til rigg."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "529 kr. 30 dagers åpent kjøp."
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Uten beskyttelse: regn, snø og UV rett på motoren.\nMed beskyttelse: 420D Oxford-stoff og deksel ned til riggen.\n529 kr, med 30 dagers åpent kjøp hvis du ombestemmer deg.",
+   "headline": "Uten beskyttelse. Med beskyttelse.",
+   "description": ""
+  },
+  "andringar": [
+   "579 kr → 529 kr"
+  ],
+  "hoppa": null
+ },
+ "Batmotor_BF_1_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "529 kr."
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Ord."
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "882 kr."
+     },
+     {
+      "rader": [
+       3
+      ],
+      "text": "40 % rabatt, trukket fra direkte i kassen. Ingen kode."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Handle nå."
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "882 kr ned til 529 kr.\n40 % rabatt, trukket fra direkte i kassen.\nIngen kode å skrive inn, ingenting å huske.",
+   "headline": "529 kr. Ord. 882 kr.",
+   "description": ""
+  },
+  "andringar": [
+   "965 kr → 882 kr",
+   "579 kr → 529 kr"
+  ],
+  "hoppa": null
+ },
+ "Batmotor_BF_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "30 dagers åpent kjøp."
+     },
+     {
+      "rader": [
+       1,
+       2
+      ],
+      "text": "Liker du det ikke, får du pengene tilbake. Trygg betaling med Klarna."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Handle trygt. 529 kr."
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Dekker ikke beskyttelsen riggen slik du forventet?\nSend det tilbake innen 30 dager, du får pengene tilbake.\nBetal trygt med Klarna.",
+   "headline": "30 dagers åpent kjøp.",
+   "description": ""
+  },
+  "andringar": [
+   "579 kr → 529 kr"
+  ],
+  "hoppa": null
+ },
+ "Batmotor_RI_1_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Rust synes ikke før det er for sent."
+     },
+     {
+      "rader": [
+       2,
+       3
+      ],
+      "text": "Trekket dekker hele motoren – deksel til rigg – ikke bare toppen."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "529 kr beskytter mot seks måneder med regn, snø og salt."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Handle nå."
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Rust synes ikke før det er for sent.\nTrekket dekker hele motoren, deksel til rigg – ikke bare toppen.\n529 kr beskytter mot seks måneder med regn, snø og salt.",
+   "headline": "Rust synes ikke før det er for sent.",
+   "description": ""
+  },
+  "andringar": [
+   "579 kr → 529 kr"
+  ],
+  "hoppa": null
+ },
+ "Batmotor_TR_1_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Ekte kundeomtale"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": ""
+     },
+     {
+      "rader": [
+       2,
+       3
+      ],
+      "text": "”Trekket kjennes solid og er lett å sette på.”"
+     },
+     {
+      "rader": [
+       4
+      ],
+      "text": "– Fredrik L., kundeomtale på baverbutiken.se"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "529 kr. Handle nå."
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Ekte kundeomtale fra Bäverbutiken.\n\"Trekket kjennes solid og er lett å sette på.\" – Fredrik L., kundeomtale på baverbutiken.se.\n529 kr.",
+   "headline": "Ekte kundeomtale – Fredrik L.",
+   "description": ""
+  },
+  "andringar": [
+   "579 kr → 529 kr",
+   "'5,0 av 5 stjärnor. 8 av 8 recensioner' strøket (NO har kun 1 anmeldelse) → 'Ekte kundeomtale'",
+   "Sitatet attribuert til baverbutiken.se, ikke beverbutikken.no"
+  ],
+  "hoppa": null
+ },
+ "Batmotor_CS_4_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "882 kr → 529 kr."
+     },
+     {
+      "rader": [
+       1,
+       2
+      ],
+      "text": "40 % rabatt, allerede trukket fra."
+     },
+     {
+      "rader": [
+       3
+      ],
+      "text": "Ingen kode nødvendig. Prisen vises i kassen."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Handle nå."
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "882 kr → 529 kr.\n40 % rabatt er allerede trukket fra, du trenger ingen kode.\nPrisen du ser er prisen du betaler.",
+   "headline": "882 kr → 529 kr, allerede trukket",
+   "description": ""
+  },
+  "andringar": [
+   "965 kr → 882 kr",
+   "579 kr → 529 kr"
+  ],
+  "hoppa": null
+ },
+ "Batmotor_LI_1_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "5 ting trekket gjør"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Dekker deksel til rigg"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "420D Oxford-stoff mot regn, snø, UV"
+     },
+     {
+      "rader": [
+       3
+      ],
+      "text": "9 størrelser, 0–5 hk til 250–350 hk"
+     },
+     {
+      "rader": [
+       4
+      ],
+      "text": "Ingen verktøy – dra over, stram remmen"
+     },
+     {
+      "rader": [
+       5
+      ],
+      "text": "30 dagers åpent kjøp"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "529 kr. Handle nå."
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "5 ting trekket gjør:\n1. Dekker hele motoren, deksel til rigg.\n2. 420D Oxford-stoff mot regn, snø og UV.\n3. 9 størrelser, 0–5 hk til 250–350 hk.\n4. Monteres uten verktøy.\n5. 30 dagers åpent kjøp.\n529 kr.",
+   "headline": "5 ting trekket gjør",
+   "description": ""
+  },
+  "andringar": [
+   "579 kr → 529 kr"
+  ],
+  "hoppa": null
+ },
+ "Batmotor_RV_3_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "”Bra beskyttelse mot regn og smuss. Jeg er fornøyd.”"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "– Johan K., kundeomtale på baverbutiken.se"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Handle nå."
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "\"Bra beskyttelse mot regn og smuss. Jeg er fornøyd.\" – Johan K.\nEkte kundeomtale, baverbutiken.se.\n529 kr.",
+   "headline": "Bra beskyttelse – Johan K.",
+   "description": ""
+  },
+  "andringar": [
+   "'5,0 av 5 (8 recensioner)' strøket (NO har kun 1 anmeldelse)"
+  ],
+  "hoppa": null
+ },
+ "Batmotor_BF_3_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Feil størrelse?"
+     },
+     {
+      "rader": [
+       1,
+       2
+      ],
+      "text": "Se målguiden før du bestiller."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "9 størrelser, 0–5 hk til 250–350 hk. Finn din."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Se din størrelse"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Størrelser for alt fra 5 hk jolle til 350 hk storbåt.\nMål motoren din på 30 sekunder i målguiden.\nBestill riktig med en gang – ingen gjetting. 529 kr, trekket i din størrelse.",
+   "headline": "0–350 hk. Én dekker din.",
+   "description": ""
+  },
+  "andringar": [
+   "579 kr → 529 kr"
+  ],
+  "hoppa": null
+ },
+ "Batmotor_RV_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "”Trekket kjennes solid og er lett å sette på.”"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "– Fredrik L., kundeomtale på baverbutiken.se"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Handle nå."
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "\"Trekket kjennes solid og er lett å sette på.\" – Fredrik L.\nEkte kundeomtale, baverbutiken.se.\n529 kr.",
+   "headline": "Trekket kjennes solid – Fredrik L.",
+   "description": ""
+  },
+  "andringar": [
+   "'5,0 av 5 (8 recensioner)' strøket (NO har kun 1 anmeldelse)"
+  ],
+  "hoppa": null
+ },
+ "Kranskydd_PD_3_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Ubeskyttet."
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Eller beskyttet."
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "Isolerende fôr holder frosten borte hele vinteren"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "FØR"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "ETTER"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "219 kr — på plass på 10 sekunder"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Handle nå →"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "To kraner. Én sprekker i vinter, én gjør det ikke.\nIsolerende fôr holder frosten ute hele sesongen.\n219 kr, på plass på 10 sekunder.",
+   "headline": "Ubeskyttet kran, eller beskyttet kran",
+   "description": ""
+  },
+  "andringar": [
+   "309 kr → 219 kr"
+  ],
+  "hoppa": null
+ },
+ "Kranskydd_SP_3_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "”Jeg slapp en sprukket kran i vinter takket være denne."
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "Sitter perfekt og kjennes veldig solid!”"
+     },
+     {
+      "rader": [
+       3
+      ],
+      "text": "– Verifisert kunde"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "30 dagers åpent kjøp"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "420D Oxford-stoff"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Beskytt kranen din →"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "\"Jeg slapp en sprukket kran i vinter takket være denne.\" – verifisert kunde.\n420D Oxford-stoff, 30 dagers åpent kjøp.\n219 kr for en trygg vinter.",
+   "headline": "Slapp en sprukket kran – ekte kunde",
+   "description": ""
+  },
+  "andringar": [
+   "309 kr → 219 kr"
+  ],
+  "hoppa": null
+ },
+ "Kranskydd_REV_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Verifisert omtale"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Fungerer bra"
+     },
+     {
+      "rader": [
+       2,
+       3
+      ],
+      "text": "”Beskytter kranen godt mot kulde. Veldig fornøyd.”"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "— verifisert omtale"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "219 kr"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Beskytt kranen – 219 kr"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "\"Fungerer bra\" – ekte kundeomtale.\nKranen beskyttet mot kulde uten at du tenker på det.\n219 kr, på plass på 10 sekunder.",
+   "headline": "Beskytter kranen. Ekte omtale.",
+   "description": ""
+  },
+  "andringar": [
+   "309 kr → 219 kr"
+  ],
+  "hoppa": null
+ },
+ "Kranskydd_PD_4_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1,
+       2
+      ],
+      "text": "Stram til snoren på 10 sekunder – før kulden rekker frem."
+     },
+     {
+      "rader": [
+       3,
+       4
+      ],
+      "text": "Isolerende fôr holder kulden borte fra kranen, hele sesongen."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "22×14 cm – dekker hele kranen, ikke bare toppen slik en klut gjør."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Beskytt kranen – 219 kr"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Stram til snoren – klart før kulden rekker frem.\n22×14 cm dekker hele kranen, ikke bare toppen.\n219 kr for en vinter uten sprukne rør.",
+   "headline": "Dekker hele kranen, ikke bare toppen",
+   "description": ""
+  },
+  "andringar": [
+   "309 kr → 219 kr"
+  ],
+  "hoppa": null
+ },
+ "Kranskydd_PD_8_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1,
+       2
+      ],
+      "text": "En sprukket kran koster mer tid enn 219 kr og 10 sekunder gjør."
+     },
+     {
+      "rader": [
+       3,
+       4
+      ],
+      "text": "Beskyttelsen sitter på plass med en gang – ingen verktøykasse, ingen krøll."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "420D Oxford-stoff mellom kranen og kulden, hele vinteren."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Beskytt kranen – 219 kr"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "En sprukket kran koster mer enn 219 kr å reparere.\n10 sekunder å sette på – ingen verktøy nødvendig.\n420D Oxford-stoff holder kulden borte hele vinteren.",
+   "headline": "10 sekunder mot en sprukket kran",
+   "description": ""
+  },
+  "andringar": [
+   "309 kr → 219 kr"
+  ],
+  "hoppa": null
+ },
+ "Kranskydd_PD_6_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "219 kr."
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Trygg betaling med Klarna."
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "30 dagers åpent kjøp."
+     },
+     {
+      "rader": [
+       3,
+       4
+      ],
+      "text": "Ingen risiko – send det tilbake innen 30 dager og få pengene."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "420D Oxford-stoff, 22×14 cm. Klarna på faktura."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Bestill nå – 219 kr"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "219 kr. Ikke mer, ikke mindre.\nTrygg betaling med Klarna og 30 dagers åpent kjøp om du ombestemmer deg.\n420D Oxford-stoff, 22×14 cm.",
+   "headline": "219 kr – trygg betaling, åpent kjøp",
+   "description": ""
+  },
+  "andringar": [
+   "309 kr → 219 kr",
+   "Fri frakt strøket (ikke gratis frakt <300 kr i NO) → 'Trygg betaling med Klarna'"
+  ],
+  "hoppa": null
+ },
+ "Kranskydd_REV_1_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Verifisert omtale"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Bra kvalitet"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "”Kjennes solid og sitter godt på kranen.”"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "— verifisert omtale"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "219 kr"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Bestill – 219 kr"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "\"Bra kvalitet\" – ekte kundeomtale.\nSitter på kranen uten å skli eller løsne.\n219 kr, klart på 10 sekunder.",
+   "headline": "Sitter bra – ekte kunde sier det",
+   "description": ""
+  },
+  "andringar": [
+   "309 kr → 219 kr"
+  ],
+  "hoppa": null
+ },
+ "Kranskydd_SP_4_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1,
+       2
+      ],
+      "text": "Før frosten kommer: kranen beskyttet på 10 sekunder."
+     },
+     {
+      "rader": [
+       3,
+       4
+      ],
+      "text": "”Beskytter kranen godt mot kulde. Veldig fornøyd.”"
+     },
+     {
+      "rader": [
+       5
+      ],
+      "text": "— verifisert omtale."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "420D Oxford-stoff og isolerende fôr"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "22×14 cm, 10 sekunder, uten verktøy"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "Snor holder beskyttelsen på plass"
+     },
+     {
+      "rader": [
+       3
+      ],
+      "text": "30 dagers åpent kjøp. Trygg betaling."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Beskytt kranen – 219 kr"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Frosten er på vei – beskytt kranen før den kommer.\n\"Beskytter kranen godt mot kulde. Veldig fornøyd.\" – ekte kunde.\n420D-stoff, riktig mål, snor på 10 sekunder.\n219 kr, 30 dagers åpent kjøp.",
+   "headline": "Beskytt kranen før frosten kommer",
+   "description": ""
+  },
+  "andringar": [
+   "309 kr → 219 kr",
+   "Fri frakt strøket (ikke gratis frakt <300 kr i NO) → 'Trygg betaling'"
+  ],
+  "hoppa": null
+ }
+}

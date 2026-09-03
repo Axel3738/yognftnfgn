@@ -1,0 +1,54 @@
+[
+ {
+  "form": 0,
+  "text": "Jeg slapp å gå ut i mørket for å sjekke.",
+  "rad": 0,
+  "se": "Jag slapp gå ut i mörkret för att kolla.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "— Verifisert kunde",
+  "rad": 1,
+  "se": "— Verifierad kund",
+  "vanster": false
+ },
+ {
+  "form": 3,
+  "text": "Direkte varsel i mobilen",
+  "rad": 0,
+  "se": "Direkt notis i mobilen",
+  "vanster": true
+ },
+ {
+  "form": 3,
+  "text": "AI-sporing, færre falske alarmer",
+  "rad": 1,
+  "se": "AI-spårning, färre falsklarm",
+  "vanster": true
+ },
+ {
+  "form": 3,
+  "text": "30 dagers fornøyd-kunde-garanti",
+  "rad": 2,
+  "se": "30 dagars nöjd-kund-garanti",
+  "vanster": true
+ },
+ {
+  "box": [
+   395,
+   1205,
+   685,
+   1304
+  ],
+  "fet": true,
+  "storlek": 42,
+  "rader": 1,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Handle nå"
+ }
+]

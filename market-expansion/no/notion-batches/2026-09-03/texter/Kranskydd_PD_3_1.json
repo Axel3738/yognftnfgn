@@ -1,0 +1,91 @@
+[
+ {
+  "box": [
+   33,
+   55,
+   1047,
+   165
+  ],
+  "fet": true,
+  "storlek": 72,
+  "rader": 1,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "Ubeskyttet."
+ },
+ {
+  "box": [
+   33,
+   172,
+   1047,
+   290
+  ],
+  "fet": true,
+  "storlek": 72,
+  "rader": 1,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "Eller beskyttet."
+ },
+ {
+  "box": [
+   33,
+   318,
+   1047,
+   392
+  ],
+  "fet": false,
+  "storlek": 40,
+  "rader": 1,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "Isolerende fôr holder frosten borte hele vinteren"
+ },
+ {
+  "form": 1,
+  "text": "FØR",
+  "rad": 0,
+  "se": "FÖRE",
+  "vanster": false
+ },
+ {
+  "box": [
+   557,
+   608,
+   685,
+   681
+  ],
+  "fet": true,
+  "storlek": 26,
+  "rader": 1,
+  "farg": [
+   254,
+   255,
+   255
+  ],
+  "text": "ETTER"
+ },
+ {
+  "form": 2,
+  "text": "219 kr — på plass på 10 sekunder",
+  "rad": 0,
+  "se": "309 kr — på plats på 10 sekunder",
+  "vanster": false
+ },
+ {
+  "form": 3,
+  "text": "Handle nå →",
+  "rad": 0,
+  "se": "Handla nu →",
+  "vanster": false
+ }
+]

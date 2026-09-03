@@ -1,0 +1,38 @@
+[
+ {
+  "form": 0,
+  "text": "Etter en sesong uten beskyttelse: matt lakk, rust på kromet.",
+  "rader": [
+   0,
+   1,
+   2
+  ],
+  "se_rader": [
+   "Efter en säsong utan",
+   "skydd: matt lack, rost på",
+   "kromet."
+  ],
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Trekket tar støyten i stedet for lakken.",
+  "rad": 3,
+  "se": "Kapellet tar smällen i stället för lacken.",
+  "vanster": false
+ },
+ {
+  "form": 4,
+  "text": "269 kr — stopp skaden før den starter",
+  "rad": 0,
+  "se": "349 kr — stoppa skadan innan den börjar",
+  "vanster": false
+ },
+ {
+  "form": 5,
+  "text": "Beskytt MC-en din",
+  "rad": 0,
+  "se": "Skydda din MC",
+  "vanster": false
+ }
+]

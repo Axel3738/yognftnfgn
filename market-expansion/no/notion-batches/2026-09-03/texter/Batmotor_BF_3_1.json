@@ -1,0 +1,65 @@
+[
+ {
+  "box": [
+   33,
+   55,
+   1047,
+   165
+  ],
+  "fet": true,
+  "storlek": 76,
+  "rader": 1,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "Feil størrelse?"
+ },
+ {
+  "box": [
+   33,
+   172,
+   1047,
+   410
+  ],
+  "fet": true,
+  "storlek": 76,
+  "rader": 2,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "Se målguiden før du bestiller."
+ },
+ {
+  "box": [
+   33,
+   435,
+   1047,
+   520
+  ],
+  "fet": false,
+  "storlek": 40,
+  "rader": 1,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "9 størrelser, 0–5 hk til 250–350 hk. Finn din."
+ },
+ {
+  "form": 2,
+  "klipp_efter_rad": 0,
+  "rad": null
+ },
+ {
+  "form": 2,
+  "text": "Se din størrelse",
+  "rad": 0,
+  "se": "Se din storlek. Handla nu.",
+  "vanster": false
+ }
+]

@@ -1,0 +1,50 @@
+[
+ {
+  "form": 0,
+  "text": "Et deksel som tar været i ditt sted.",
+  "rader": [
+   0,
+   1
+  ],
+  "se_rader": [
+   "Ett skal som tar vädret i",
+   "ställat"
+  ],
+  "vanster": false
+ },
+ {
+  "form": 2,
+  "text": "Strikkekant holder den på plass",
+  "rad": 0,
+  "se": "Resårkant håller kvar",
+  "vanster": true
+ },
+ {
+  "form": 2,
+  "text": "Vannavvisende + UV-beskyttelse",
+  "rad": 1,
+  "se": "Vattenavvisande + UV-skydd",
+  "vanster": true
+ },
+ {
+  "form": 2,
+  "text": "Slår sammen til lite",
+  "rad": 2,
+  "se": "Viker ihop litet",
+  "vanster": true
+ },
+ {
+  "form": 3,
+  "text": "269 kr",
+  "rad": 0,
+  "se": "349 kr",
+  "vanster": false
+ },
+ {
+  "form": 4,
+  "text": "Se funksjonene",
+  "rad": 0,
+  "se": "Se funktionerna",
+  "vanster": false
+ }
+]

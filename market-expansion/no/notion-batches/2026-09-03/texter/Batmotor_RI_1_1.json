@@ -1,0 +1,52 @@
+[
+ {
+  "form": 0,
+  "text": "Rust synes ikke før det er for sent.",
+  "rader": [
+   0,
+   1
+  ],
+  "se_rader": [
+   "Rost syns inte förrän det",
+   "är för sent."
+  ],
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Trekket dekker hele motoren – deksel til rigg – ikke bare toppen.",
+  "rader": [
+   2,
+   3
+  ],
+  "se_rader": [
+   "Skyddet täcker hela motorn – kåpa till rigg – inte bara",
+   "toppen."
+  ],
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "529 kr beskytter mot seks måneder med regn, snø og salt.",
+  "rad": 0,
+  "se": "579 kr skyddar mot sex månader i regn, snö och salt.",
+  "vanster": false
+ },
+ {
+  "box": [
+   388,
+   1205,
+   692,
+   1304
+  ],
+  "fet": true,
+  "storlek": 42,
+  "rader": 1,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Handle nå."
+ }
+]
