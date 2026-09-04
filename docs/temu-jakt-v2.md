@@ -1,5 +1,8 @@
 # Produktjakt V2 — fingeravtrycket i drift (2026-09-04)
 
+> **Beslutsgrund: `docs/temu-jakt-slutrapport.md`** (konsoliderad slutrapport 2026-09-04
+> 11:00 UTC, båda passen sammanvägda). Den här filen är V2/V2.1-passets arbetsrapport.
+
 Uppföljning till `docs/temu-vinnar-dna.md`. Den här filen gör ingen ny analys av
 vinnarna — den **kör** fingeravtrycket (avsnitt 12 där) som en jakt: ägarjakt →
 objektjakt → materialjakt, åtta gater i ordning, ett dataset med varje kandidat
