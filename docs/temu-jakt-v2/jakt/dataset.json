@@ -20,12 +20,12 @@
   "AFTER OBJECT": 417,
   "AFTER PRESENCE": 373,
   "AFTER SHELF": 186,
-  "AFTER MATERIAL": 182,
-  "AFTER ECONOMICS": 156,
-  "AFTER VARIANT": 127,
-  "AFTER HOOK": 127,
-  "AFTER AUDIENCE": 122,
-  "FINAL TIER A (villkorad — gate 4/5 ej körda)": 5
+  "AFTER MATERIAL": 180,
+  "AFTER ECONOMICS": 154,
+  "AFTER VARIANT": 125,
+  "AFTER HOOK": 125,
+  "AFTER AUDIENCE": 120,
+  "FINAL TIER A": 0
  },
  "tiers": {
   "ELIM": 372,
@@ -42,10 +42,11 @@
   "C (< 300 + FEL OBJEKT)": 1,
   "C (ANKARE UNDER VÅRT PRIS)": 3,
   "C (PROVISORISK — MATERIAL/PRIS EJ HÄMTAT)": 1,
-  "A (VILLKORAD)": 5,
+  "B (NÄRMAST A)": 4,
   "C (COMMODITY)": 2,
   "C (PROVISORISK)": 2,
   "C (TIPS TILL ANNAT KLUSTER)": 1,
+  "C (EKONOMI PÅ US-PRIS)": 1,
   "C (LÅGT FACKHANDELSANKARE)": 1,
   "C (> 1 000 KR + MONTERING)": 1,
   "C (GENERISK OLD WAY ∧ < 300)": 1,
@@ -28539,14 +28540,14 @@
    "url_se": "https://www.temu.com/se/g-601099566089885.html",
    "title": "Camo hunting chest pack with binocular harness, rangefinder pocket, rain cover (Temu UK-titel ur sökträff)",
    "temu_price_sek": null,
-   "rating": null,
-   "review_count": null,
+   "rating": 4.7,
+   "review_count": 303,
    "review_dates": [],
    "category_path": null,
-   "image_count": null,
-   "hero_url": null,
-   "video_url": null,
-   "video_checked": false,
+   "image_count": 3,
+   "hero_url": "https://img.kwcdn.com/product/fancy/cb93eed1-06b5-4d7f-b8e7-c6f305bdba75.jpg",
+   "video_url": "https://goods-vod.kwcdn.com/goods-video/6da795034658718678136ffde42508122e4787f3.f30.mp4",
+   "video_checked": true,
    "object": "Handkikare",
    "owner_owns": "Ja — varje jägare på pass har en kikare i nackrem",
    "friction": "Nackrem skär, kikaren slår mot bröstet när man går, regn på okularen i passet",
@@ -28601,10 +28602,20 @@
      "reason": "271 000 jaktkort + fågelskådare; kikare + kamouflage är omisskännligt i flödet; man 45–70 dominerar."
     },
     "material": {
-     "result": "UNKNOWN",
-     "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
-     "sec_0_3": null,
-     "hero_note": null
+     "result": "PASS (villkorat)",
+     "reason": "Riktig jägare, riktig kikare, riktig höstskog inom 3 s — det är strukturen. Men bara ~10 användbara sekunder utan båge/kamerarigg, och logotypkortet först.",
+     "source": "US-sidan 2026-09-04 07:22 UTC (SE blockerad). Galleri identiskt mellan SE och US på IBC-kontrollen; video finns på US-sidan här.",
+     "verified_by": "a-kandidater.json",
+     "video_len_s": 37.1,
+     "sec_0_3": "0–1 s: svart titelkort med logotypen 'NEW VIEW HUNTING'. 1–3,5 s: jägare i camo i höstskog öppnar bröstväskan, tar upp kikaren, lyfter den mot ögonen. En Canon-kamerarigg står i bild till höger.",
+     "product_in_use_by_3s": "JA (efter 1 s logotyp)",
+     "same_product_as_hero": "JA — camo bröstväska med orange NEW VIEW-logga",
+     "burned_text": "Logotypkort 0–1 s (klipps bort). Varumärket är broderat på själva väskan (inte inbränd text, men ett utländskt märkesnamn i bild).",
+     "muted_ok": "JA — öppna, ta upp, titta: självförklarande",
+     "owner_or_object_visible": "JA — jägare, kikare, höstskog (lövfällning)",
+     "clean_framing": "NEJ — Canon-kamerarigg i bild i de flesta bilder; från ~5 s bågjägare med compoundbåge i trädstand (bågjakt är förbjuden i Sverige = amerikansk kod); en vertikal unboxing-klipp mitt i",
+     "raw_plus_captions_viable": "KANSKE — sekvensen 1–6 s (öppna väskan, ta kikaren, spana) + 14–20 s duger med tight beskärning; bågen och riggen måste klippas bort; kvadratformat kräver 9:16-crop",
+     "hero_alone_viable": "NEJ — studio-packshot utan ägare/objekt (textfri, ren)"
     },
     "economics": {
      "landed_est_sek": null,
@@ -28613,6 +28624,30 @@
      "be_cpa_est": null,
      "multibuy_reason": null,
      "result": "UNKNOWN"
+    },
+    "economics_us": {
+     "result": "FAIL",
+     "reason": "US-pris 26.59 USD → SE-Temu ≈ 185–217 kr → landad ≈ 278–326 kr. Vid 624 kr: 1.9–2.2× (krav 2,4×), BE-CPA 298–346 kr (krav ≥ 190). 2,4× kräver 667–782 kr; ankare 999 kr",
+     "price_usd": 26.59,
+     "se_temu_est_sek": [
+      185,
+      217
+     ],
+     "landed_est_sek": [
+      278,
+      326
+     ],
+     "se_price_needed_sek": [
+      667,
+      782
+     ],
+     "se_price_used_sek": 624,
+     "anchor_sek": 999,
+     "kurs_sek_per_usd": [
+      6.96,
+      8.16
+     ],
+     "note": "USA-pris som proxy — SE-pris okänt (blockerat). Kalibrering på två punkter; frakt på tunga/skrymmande varor kan överstiga 1,5×."
     }
    },
    "negative_space_flags": [
@@ -28621,7 +28656,7 @@
    "eliminated_at": null,
    "structure_match": 72,
    "category_novelty": 85,
-   "tier": "A (villkorad)",
+   "tier": "B (närmast A)",
    "biggest_risk": "Max-On-remmen för 149 kr i fackhandeln: ser vår produkt ut som en rem och inte som en bröstväska faller prisankaret. Pris/material ej hämtade.",
    "confidence": "MEDIUM",
    "sources": [
@@ -28631,7 +28666,41 @@
     "https://www.temu.com/uk/camo-hunting-chest-pack-with-binocular-harness-rangefinder-pocket-patented-camouflage-pattern-polyester-tassel-embellishment-rain-cover-multiple-storage-compartments-for-outdoor-gear-g-601099566089885.html"
    ],
    "tier_agent": "A",
-   "tier_reason": "hylla verifierad (Blaser 999 / Härkila 1 295, ingen kedja); en storlek; älgjakt pågår; kroppslig payoff som axelbältet. Material och Temu-pris osedda."
+   "tier_reason": "gate 4 PASS villkorat (riktig jägare tar upp kikaren ur väskan inom 3 s; logotypkort 0–1 s, compoundbåge + kamerarigg efter 5 s); gate 5 FAIL på US-pris (26,59 USD → landad 278–326 → 1,9–2,2× vid 624 kr; 2,4× kräver 667–782 kr där ankaret 999 bara är 1,3–1,5×). Blir A om SE-Temu-priset är ≤ ~150 kr.",
+   "temu_us": {
+    "title": "Camouflage Large Chest Bag, Can Hold Binoculars, Patented Camouflage Pattern",
+    "price_usd": "26.59",
+    "currency": "USD",
+    "rating": 4.7,
+    "review_count": 303,
+    "review_dates": [
+     "2024-*-29",
+     "2025-11-29",
+     "2024-11-22",
+     "2025-01-07"
+    ],
+    "category_path": [
+     "Sports & Outdoors",
+     "Bags & Backpacks"
+    ],
+    "images": [
+     "https://img.kwcdn.com/product/fancy/cb93eed1-06b5-4d7f-b8e7-c6f305bdba75.jpg",
+     "https://img.kwcdn.com/product/fancy/196ed548-bf6b-482b-b614-81947f7dbded.jpg",
+     "https://img.kwcdn.com/product/fancy/b8b9b7da-f487-496f-86f6-626d5962dc7e.jpg"
+    ],
+    "image_descriptions": [
+     "camouflage large chest bag can hold binoculars patented camouflage pattern",
+     "camouflage large chest bag can hold binoculars patented camouflage pattern camouflage l",
+     "camouflage large chest bag can hold binoculars patented camouflage pattern camouflage"
+    ],
+    "video_url": "https://goods-vod.kwcdn.com/goods-video/6da795034658718678136ffde42508122e4787f3.f30.mp4",
+    "video_file": "/tmp/claude-0/-home-user-yognftnfgn/fa9ffb6d-2d2f-568d-b393-1be1d0c64390/scratchpad/temu/hunt/video/us/601099566089885.mp4",
+    "fetched": "2026-09-04T07:23:35.572070Z"
+   },
+   "temu_market": "us",
+   "title_temu": "Camouflage Large Chest Bag, Can Hold Binoculars, Patented Camouflage Pattern",
+   "video_file": "/tmp/claude-0/-home-user-yognftnfgn/fa9ffb6d-2d2f-568d-b393-1be1d0c64390/scratchpad/temu/hunt/video/us/601099566089885.mp4",
+   "temu_fetched": "2026-09-04T07:23:35.572070Z"
   },
   {
    "kluster": "jakt",
@@ -34678,12 +34747,12 @@
    "url_se": "https://www.temu.com/se/g-601099619866532.html",
    "title": "Hot Tub Cover Rainproof Dustproof Bathtub Protector Cover — cover cap, hot tub covers for winter, brown (ur söktitel; svensk Temu-titel ej hämtad)",
    "temu_price_sek": null,
-   "rating": null,
-   "review_count": null,
+   "rating": 4.7,
+   "review_count": 204,
    "review_dates": [],
    "category_path": null,
-   "image_count": null,
-   "hero_url": null,
+   "image_count": 1,
+   "hero_url": "https://img.kwcdn.com/product/open/2024-07-23/1721724244538-7760810163bb4e1e91f89a02cd031e81-goods.jpeg",
    "video_url": null,
    "video_checked": false,
    "object": "Spalocket (det styva isolerade locket) på ett fast utomhusspabad",
@@ -34728,10 +34797,20 @@
      "concept": "Lockskydd/skyddsöverdrag (cover cap) för fast spabad, över det isolerade locket"
     },
     "material": {
-     "result": "UNKNOWN",
-     "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
-     "sec_0_3": null,
-     "hero_note": null
+     "result": "FAIL på heron (video UNKNOWN)",
+     "reason": "Det enda material som finns att se visar fel objekt (badkar) och produkten hopvikt. Ett lockskydd i bruk på ett spalock med löv syns ingenstans.",
+     "source": "US-sidan 2026-09-04. 1 bild, ingen video på US-sidan (SE-sidans video okänd — US-sidan utelämnade IBC:s video som SE-sidan hade).",
+     "verified_by": "a-kandidater.json",
+     "video_len_s": null,
+     "sec_0_3": "UNKNOWN — ingen video via US",
+     "product_in_use_by_3s": "UNKNOWN",
+     "same_product_as_hero": "—",
+     "burned_text": "Heron: ingen text. Men motivet är ett hopvikt brunt överdrag framför ett FRISTÅENDE BADKAR i djungelmiljö — inte ett spabad, inte ett spalock, produkten inte i bruk.",
+     "muted_ok": "—",
+     "owner_or_object_visible": "NEJ — badkar, inte spabad",
+     "clean_framing": null,
+     "raw_plus_captions_viable": "UNKNOWN (ingen video sedd)",
+     "hero_alone_viable": "NEJ — fel objekt, produkten hopvikt"
     },
     "economics": {
      "landed_est_sek": null,
@@ -34753,6 +34832,30 @@
     "audience": {
      "result": "PASS",
      "reason": "Spabad i bild är omisskännligt; ägarklass uppskattad 130–270 k hushåll (se md, ej verifierad källa); man/par 45–70 i småhus."
+    },
+    "economics_us": {
+     "result": "PASS",
+     "reason": "US-pris 19.39 USD → SE-Temu ≈ 135–158 kr → landad ≈ 202–237 kr. Vid 599 kr: 2.5–3.0× (krav 2,4×), BE-CPA 362–397 kr (krav ≥ 190). 2,4× kräver 485–569 kr; ankare 1295 kr",
+     "price_usd": 19.39,
+     "se_temu_est_sek": [
+      135,
+      158
+     ],
+     "landed_est_sek": [
+      202,
+      237
+     ],
+     "se_price_needed_sek": [
+      485,
+      569
+     ],
+     "se_price_used_sek": 599.0,
+     "anchor_sek": 1295,
+     "kurs_sek_per_usd": [
+      6.96,
+      8.16
+     ],
+     "note": "USA-pris som proxy — SE-pris okänt (blockerat). Kalibrering på två punkter; frakt på tunga/skrymmande varor kan överstiga 1,5×."
     }
    },
    "negative_space_flags": [
@@ -34761,7 +34864,7 @@
    "eliminated_at": null,
    "structure_match": 78,
    "category_novelty": 70,
-   "tier": "A (villkorad)",
+   "tier": "B (närmast A)",
    "biggest_risk": "Passform/SKU-djungel: ett lockskydd som inte sitter fast i höststorm ger returer; leverantörsvideon ej sedd.",
    "confidence": "MEDIUM",
    "sources": [
@@ -34772,7 +34875,37 @@
    "sub_cluster": "SPABAD",
    "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt.",
    "tier_agent": "A (provisorisk — material ej verifierad)",
-   "tier_reason": "hylla verifierad (Spabadsbutiken 1 295–1 495 kr, ingen kedja); presens + publik PASS; variant = spabadets mått (ägaren vet ungefär). Material och Temu-pris osedda."
+   "tier_reason": "gate 5 PASS på US-pris (19,39 USD → landad 202–237 → 2,5–3,0× vid 599); gate 4 FAIL på det som syns: enda bilden är ett hopvikt överdrag framför ett BADKAR, ingen video på US-sidan (SE-video okänd). Blir A om en leverantörsvideo visar skyddet på ett riktigt spalock.",
+   "temu_us": {
+    "title": "Hot Tub Cover, Rainproof Dustproof Bathtub Protector * Covers, Outdoor Square * Bath Cover Cap Hot Tub Covers for Winter (Brown)",
+    "price_usd": "19.39",
+    "currency": "USD",
+    "rating": 4.7,
+    "review_count": 204,
+    "review_dates": [
+     "2025-01-03",
+     "2025-02-18",
+     "2025-02-11",
+     "2025-02-04"
+    ],
+    "category_path": [
+     "Patio, Lawn & Garden",
+     "Pools & Hot Tubs"
+    ],
+    "images": [
+     "https://img.kwcdn.com/product/open/2024-07-23/1721724244538-7760810163bb4e1e91f89a02cd031e81-goods.jpeg"
+    ],
+    "image_descriptions": [
+     "hot tub cover rainproof dustproof bathtub protector * covers outdoor square * bath cover cap hot tub covers for winter brown"
+    ],
+    "video_url": null,
+    "video_file": null,
+    "fetched": "2026-09-04T07:23:53.220239Z"
+   },
+   "temu_market": "us",
+   "title_temu": "Hot Tub Cover, Rainproof Dustproof Bathtub Protector * Covers, Outdoor Square * Bath Cover Cap Hot Tub Covers for Winter (Brown)",
+   "video_file": null,
+   "temu_fetched": "2026-09-04T07:23:53.220239Z"
   },
   {
    "kluster": "pool",
@@ -35078,12 +35211,12 @@
    "url_se": "https://www.temu.com/se/g-601099575291512.html",
    "title": "221lbs Steel 48\" Hot Tub Handrail Spa Stair Ladder Side Hand Rail Railing, silver (ur söktitel)",
    "temu_price_sek": null,
-   "rating": null,
-   "review_count": null,
+   "rating": 4.5,
+   "review_count": 118,
    "review_dates": [],
    "category_path": null,
-   "image_count": null,
-   "hero_url": null,
+   "image_count": 2,
+   "hero_url": "https://img.kwcdn.com/product/fancy/591e2ebc-d27d-45a5-bcca-79dd6f8dfeb5.jpg",
    "video_url": null,
    "video_checked": false,
    "object": "Kanten/insteget på ett fast spabad",
@@ -35128,10 +35261,20 @@
      "concept": "Spa-räcke/handledare för spabad"
     },
     "material": {
-     "result": "UNKNOWN",
-     "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
-     "sec_0_3": null,
-     "hero_note": null
+     "result": "PASS (hero) / video UNKNOWN",
+     "reason": "Heron visar produkten i bruk på rätt objekt utan text (ikonerna kan beskäras). Ingen rörlig bild sedd.",
+     "source": "US-sidan 2026-09-04. 2 bilder, ingen video på US-sidan.",
+     "verified_by": "a-kandidater.json",
+     "video_len_s": null,
+     "sec_0_3": "UNKNOWN — ingen video via US",
+     "product_in_use_by_3s": "UNKNOWN",
+     "same_product_as_hero": "—",
+     "burned_text": "Heron: rendering av spabad med räcket monterat + produkt-cutout; två orange ikoner (sol/snöflinga) uppe till vänster — beskärbara.",
+     "muted_ok": "—",
+     "owner_or_object_visible": "Objekt JA (spabad, rendering), ägare NEJ",
+     "clean_framing": null,
+     "raw_plus_captions_viable": "UNKNOWN",
+     "hero_alone_viable": "KANSKE — tydlig, räcket i bruk, men en rendering utan människa"
     },
     "economics": {
      "landed_est_sek": null,
@@ -35153,6 +35296,30 @@
     "audience": {
      "result": "PASS",
      "reason": "Exakt 45–70; fall-rädsla; spabad i bild."
+    },
+    "economics_us": {
+     "result": "FAIL",
+     "reason": "US-pris 79.99 USD → SE-Temu ≈ 557–653 kr → landad ≈ 836–980 kr. Vid 899 kr: 0.9–1.1× (krav 2,4×), BE-CPA -81–63 kr (krav ≥ 190). 2,4× kräver 2006–2352 kr; ankare 2995 kr",
+     "price_usd": 79.99,
+     "se_temu_est_sek": [
+      557,
+      653
+     ],
+     "landed_est_sek": [
+      836,
+      980
+     ],
+     "se_price_needed_sek": [
+      2006,
+      2352
+     ],
+     "se_price_used_sek": 899.0,
+     "anchor_sek": 2995,
+     "kurs_sek_per_usd": [
+      6.96,
+      8.16
+     ],
+     "note": "USA-pris som proxy — SE-pris okänt (blockerat). Kalibrering på två punkter; frakt på tunga/skrymmande varor kan överstiga 1,5×."
     }
    },
    "negative_space_flags": [
@@ -35161,7 +35328,7 @@
    "eliminated_at": null,
    "structure_match": 72,
    "category_novelty": 85,
-   "tier": "A (villkorad)",
+   "tier": "C (ekonomi på US-pris)",
    "biggest_risk": "Frakt/vikt på 1,2 m stål från Temu; passar inte spabad på trädäck med inbyggd kabinett; videon kan visa husbil (RV) i stället för spa.",
    "confidence": "LOW",
    "sources": [
@@ -35170,7 +35337,39 @@
    "sub_cluster": "SPABAD",
    "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt.",
    "tier_agent": "A (provisorisk — material ej verifierad)",
-   "tier_reason": "hylla verifierad (Folkpool 2 995, Bauhaus 1 795, ingen kedja); en variant; rädsla/fall som kameran; > 500 kr-zonen. Material, frakt och Temu-pris osedda."
+   "tier_reason": "spa-räcke: 79,99 USD → SE-Temu 557–653 → landad 836–980 kr → 2,4× kräver 2 006–2 352 kr; ingen svensk prisnivå under 2 000 kr (Folkpool 2 995 är enda ankaret där). Heron PASS (räcket monterat på spabad, rendering). Lärdom: > 1 000 kr-taket slår före hyllan.",
+   "temu_us": {
+    "title": "221lbs Steel 48&*; Hot Tub Handrail Spa Stair Ladder Side Hand Rail Railing Silver",
+    "price_usd": "79.99",
+    "currency": "USD",
+    "rating": 4.5,
+    "review_count": 118,
+    "review_dates": [
+     "2026-05-06",
+     "2024-05-23",
+     "2024-06-06",
+     "2026-07-29"
+    ],
+    "category_path": [
+     "Health & Household",
+     "Mobility & *"
+    ],
+    "images": [
+     "https://img.kwcdn.com/product/fancy/591e2ebc-d27d-45a5-bcca-79dd6f8dfeb5.jpg",
+     "https://img.kwcdn.com/product/fancy/c0a76be5-4f90-4d7d-8076-150d51b39029.jpg"
+    ],
+    "image_descriptions": [
+     "221lbs steel 48 hot tub handrail spa stair ladder side hand rail railing silver",
+     "221lbs steel 48 hot tub handrail spa stair ladder side hand rail railing silver silvery"
+    ],
+    "video_url": null,
+    "video_file": null,
+    "fetched": "2026-09-04T07:24:09.219225Z"
+   },
+   "temu_market": "us",
+   "title_temu": "221lbs Steel 48&*; Hot Tub Handrail Spa Stair Ladder Side Hand Rail Railing Silver",
+   "video_file": null,
+   "temu_fetched": "2026-09-04T07:24:09.219225Z"
   },
   {
    "kluster": "pool",
@@ -43153,12 +43352,12 @@
    "url_se": "https://www.temu.com/se/g-601099615828436.html",
    "title": "Vedställsöverdrag 4–8 ft, PU-belagt, 4 nylonspännen (endast överdrag)",
    "temu_price_sek": null,
-   "rating": null,
-   "review_count": null,
+   "rating": 4.4,
+   "review_count": 10,
    "review_dates": [],
    "category_path": null,
-   "image_count": null,
-   "hero_url": null,
+   "image_count": 1,
+   "hero_url": "https://img.kwcdn.com/product/fancy/e61bd911-8d5b-438e-9849-5adab393576b.jpg",
    "video_url": null,
    "video_checked": false,
    "temu_slug_en": "outdoor-firewood-rack-cover-waterproof-wood-rack-covers-firewood-log-storage-covering-for-patio-logs-holder-4-8-ft-wood-holder-cover-weather-protection-pu-coating-log-rack-cover-with-4-nylon-buckles-only-cover-no-rack",
@@ -43204,10 +43403,20 @@
      "concept": "Vedställsöverdrag (bara överdrag, 4–8 ft, spännen)"
     },
     "material": {
-     "result": "UNKNOWN — ej hämtad",
-     "reason": "Temu blockerade alla hämtningar 2026-09-04 (tomt skal utan JSON-LD); koordinatorn hämtar video + hero centralt när blocket släppt.",
-     "sec_0_3": null,
-     "hero_note": null
+     "result": "PASS (hero, beskuren) / video UNKNOWN",
+     "reason": "Heron visar överdraget på ett vedställ; den röda texten sitter i nederkanten och går att beskära. Ingen video sedd.",
+     "source": "US-sidan 2026-09-04. 1 bild, ingen video på US-sidan. Bildbeskrivningen säger '8 ft … only cover no rack'.",
+     "verified_by": "a-kandidater.json",
+     "video_len_s": null,
+     "sec_0_3": "UNKNOWN — ingen video via US",
+     "product_in_use_by_3s": "UNKNOWN",
+     "same_product_as_hero": "—",
+     "burned_text": "Heron: rendering av överdraget på ett fullt vedställ med 'cutaway' som visar veden; röd inbränd text längst ner 'NOTE: Cover Only, No Rack' — i kanten, beskärbar.",
+     "muted_ok": "—",
+     "owner_or_object_visible": "Objekt JA (vedställ med ved, rendering), ägare NEJ",
+     "clean_framing": null,
+     "raw_plus_captions_viable": "UNKNOWN",
+     "hero_alone_viable": "KANSKE — produkten i bruk på rätt objekt, rendering, text i kanten"
     },
     "economics": {
      "landed_est_sek": null,
@@ -43230,6 +43439,30 @@
     "audience": {
      "result": "PASS",
      "reason": "Vedställ/vedhög är omisskännlig i flödet; ~1 M+ hushåll eldar med ved (uppskattning, ej verifierad); man 45–70 småhus/fritidshus."
+    },
+    "economics_us": {
+     "result": "FAIL",
+     "reason": "US-pris 34.47 USD → SE-Temu ≈ 240–281 kr → landad ≈ 360–422 kr. Vid 343 kr: 0.8–1.0× (krav 2,4×), BE-CPA -79–-17 kr (krav ≥ 190). 2,4× kräver 864–1013 kr; ankare 549 kr",
+     "price_usd": 34.47,
+     "se_temu_est_sek": [
+      240,
+      281
+     ],
+     "landed_est_sek": [
+      360,
+      422
+     ],
+     "se_price_needed_sek": [
+      864,
+      1013
+     ],
+     "se_price_used_sek": 343,
+     "anchor_sek": 549,
+     "kurs_sek_per_usd": [
+      6.96,
+      8.16
+     ],
+     "note": "USA-pris som proxy — SE-pris okänt (blockerat). Kalibrering på två punkter; frakt på tunga/skrymmande varor kan överstiga 1,5×."
     }
    },
    "negative_space_flags": [
@@ -43239,7 +43472,7 @@
    "eliminated_at": null,
    "structure_match": 78,
    "category_novelty": 70,
-   "tier": "A (villkorad)",
+   "tier": "B (närmast A)",
    "biggest_risk": "Jula/Biltema kan ha ett överdrag i samma form för 149–249 kr — då krävs en synlig spec-skillnad (600D/PU + spännen mot tunn presenning) precis som 420D mot 85 g/m² på motorhöljet.",
    "confidence": "MEDIUM",
    "sources": [
@@ -43247,7 +43480,37 @@
     "Ad Library SE 'vedställ' = 0 aktiva; 'presenning ved' = 4 (presenningar, ej överdrag)"
    ],
    "tier_agent": "B",
-   "tier_reason": "hylla verifierad (Dealproffsen 549–899, ingen kedja); en parameter ägaren vet (4/8 ft); vedhög = omisskännligt objekt. Material och Temu-pris osedda; överdragskategori (novelty 70)."
+   "tier_reason": "gate 4 PASS på heron (överdraget på ett vedställ, röd text i nederkanten beskärbar), video okänd; gate 5 FAIL på US-pris för 8 ft-varianten (34,47 USD → landad 360–422 → 2,4× kräver 864–1 013 kr mot ankare 549). 4 ft-priset okänt. Blir A om 4 ft-varianten kostar ≤ ~110 kr på Temu SE.",
+   "temu_us": {
+    "title": "Outdoor Firewood Rack Cover, Waterproof Wood Rack Covers, Firewood Log Storage Covering For Patio Logs Holder, 8 FT Wood Holder Cover Weather Protecti",
+    "price_usd": "34.47",
+    "currency": "USD",
+    "rating": 4.4,
+    "review_count": 10,
+    "review_dates": [
+     "2025-12-26",
+     "2025-02-27",
+     "2026-01-07",
+     "2024-11-27"
+    ],
+    "category_path": [
+     "Patio, Lawn & Garden",
+     "Outdoor Heating & Cooling"
+    ],
+    "images": [
+     "https://img.kwcdn.com/product/fancy/e61bd911-8d5b-438e-9849-5adab393576b.jpg"
+    ],
+    "image_descriptions": [
+     "outdoor firewood rack cover waterproof wood rack covers firewood log storage covering for patio logs holder 8 ft wood holder cover weather protection pu coating log rack cover with 4 nylon buckles only cover no rack"
+    ],
+    "video_url": null,
+    "video_file": null,
+    "fetched": "2026-09-04T07:24:24.608279Z"
+   },
+   "temu_market": "us",
+   "title_temu": "Outdoor Firewood Rack Cover, Waterproof Wood Rack Covers, Firewood Log Storage Covering For Patio Logs Holder, 8 FT Wood Holder Cover Weather Protecti",
+   "video_file": null,
+   "temu_fetched": "2026-09-04T07:24:24.608279Z"
   },
   {
    "kluster": "ved",
@@ -43960,12 +44223,12 @@
    "url_se": "https://www.temu.com/se/g-601099583674464.html",
    "title": "Tändvedsklyv i gjutjärn, dubbla blad (Kindling Cracker-typ)",
    "temu_price_sek": null,
-   "rating": null,
-   "review_count": null,
+   "rating": 4.9,
+   "review_count": 28,
    "review_dates": [],
    "category_path": null,
-   "image_count": null,
-   "hero_url": null,
+   "image_count": 1,
+   "hero_url": "https://img.kwcdn.com/product/open/2024-05-27/1716805781567-4a70bab04675401089a4082cd52b9bc8-goods.jpeg",
    "video_url": null,
    "video_checked": false,
    "temu_slug_en": "kindling-splitter-with-dual-blades-upgraded-hand-log-splitter-manual-wood-splitting-wedge-cast-iron-firewood-cracker-cutter-tool-for-outdoor-camping-picnic",
@@ -44011,10 +44274,20 @@
      "concept": "Tändvedsklyv i gjutjärn (Kindling Cracker-typ)"
     },
     "material": {
-     "result": "UNKNOWN — ej hämtad",
-     "reason": "Temu blockerade alla hämtningar 2026-09-04 (tomt skal utan JSON-LD); koordinatorn hämtar video + hero centralt när blocket släppt.",
-     "sec_0_3": null,
-     "hero_note": null
+     "result": "FAIL på heron (video UNKNOWN)",
+     "reason": "Det enda som syns är produkten ensam. Handlingen (slaget, stickan) som bär hela annonsen finns inte i materialet som gick att läsa.",
+     "source": "US-sidan 2026-09-04. 1 bild, ingen video på US-sidan.",
+     "verified_by": "a-kandidater.json",
+     "video_len_s": null,
+     "sec_0_3": "UNKNOWN — ingen video via US",
+     "product_in_use_by_3s": "UNKNOWN",
+     "same_product_as_hero": "—",
+     "burned_text": "Heron: textfri packshot på vitt — klyven ensam, ingen ved, ingen klubba, ingen hand.",
+     "muted_ok": "—",
+     "owner_or_object_visible": "NEJ",
+     "clean_framing": null,
+     "raw_plus_captions_viable": "UNKNOWN",
+     "hero_alone_viable": "NEJ — packshot utan handling"
     },
     "economics": {
      "landed_est_sek": null,
@@ -44037,6 +44310,30 @@
     "audience": {
      "result": "PASS",
      "reason": "Huggkubb/yxa/ved är omisskännligt; man 45–70 med kamin; kroppslig risk (fingrar) = rädslakomponent."
+    },
+    "economics_us": {
+     "result": "PASS",
+     "reason": "US-pris 16.25 USD → SE-Temu ≈ 113–133 kr → landad ≈ 170–200 kr. Vid 781 kr: 3.9–4.6× (krav 2,4×), BE-CPA 581–611 kr (krav ≥ 190). 2,4× kräver 408–480 kr; ankare 1249 kr",
+     "price_usd": 16.25,
+     "se_temu_est_sek": [
+      113,
+      133
+     ],
+     "landed_est_sek": [
+      170,
+      200
+     ],
+     "se_price_needed_sek": [
+      408,
+      480
+     ],
+     "se_price_used_sek": 781,
+     "anchor_sek": 1249,
+     "kurs_sek_per_usd": [
+      6.96,
+      8.16
+     ],
+     "note": "USA-pris som proxy — SE-pris okänt (blockerat). Kalibrering på två punkter; frakt på tunga/skrymmande varor kan överstiga 1,5×."
     }
    },
    "negative_space_flags": [
@@ -44047,7 +44344,7 @@
    "eliminated_at": null,
    "structure_match": 68,
    "category_novelty": 85,
-   "tier": "A (villkorad)",
+   "tier": "B (närmast A)",
    "biggest_risk": "Om Jula säljer samma form för 299 kr utan att vi kan visa Kindling Cracker-ankaret i bild faller prisutrymmet.",
    "confidence": "MEDIUM",
    "sources": [
@@ -44055,7 +44352,37 @@
     "Ad Library SE 'vedklyv' = 68 (alla bolist.se-katalog, hydraulklyv AL-KO) ; 'tändved klyv' = 0"
    ],
    "tier_agent": "B",
-   "tier_reason": "hylla verifierad: Jula/Clas säljer samma form för 999–1 249 = ankare ≥ 1,6×; en variant; fingrar/rädsla; daglig friktion från oktober. Material, vikt/frakt och Temu-pris osedda."
+   "tier_reason": "gate 5 PASS på US-pris (16,25 USD → landad 170–200 → 3,0× vid 599; frakt på gjutjärn kan äta det); gate 4 FAIL på det som syns: textfri packshot utan ved, klubba eller hand, ingen video på US-sidan. Blir A om en video visar slaget och stickan inom 3 s.",
+   "temu_us": {
+    "title": "* Splitter with Dual *, * Hand Log Splitter Manual Wood Splitting Wedge, * Firewood Cracker Cutter Tool for Outdoor Camping",
+    "price_usd": "16.25",
+    "currency": "USD",
+    "rating": 4.9,
+    "review_count": 28,
+    "review_dates": [
+     "2024-*-09",
+     "2024-11-12",
+     "2024-11-11",
+     "2024-11-18"
+    ],
+    "category_path": [
+     "Patio, Lawn & Garden",
+     "Mowers & Outdoor Power Tools"
+    ],
+    "images": [
+     "https://img.kwcdn.com/product/open/2024-05-27/1716805781567-4a70bab04675401089a4082cd52b9bc8-goods.jpeg"
+    ],
+    "image_descriptions": [
+     "* splitter with dual * * hand log splitter manual wood splitting wedge * firewood cracker cutter tool for outdoor camping picnic"
+    ],
+    "video_url": null,
+    "video_file": null,
+    "fetched": "2026-09-04T07:24:40.287928Z"
+   },
+   "temu_market": "us",
+   "title_temu": "* Splitter with Dual *, * Hand Log Splitter Manual Wood Splitting Wedge, * Firewood Cracker Cutter Tool for Outdoor Camping",
+   "video_file": null,
+   "temu_fetched": "2026-09-04T07:24:40.287928Z"
   },
   {
    "kluster": "ved",

@@ -9,12 +9,14 @@ D = {}
 def s(tier, reason, *ids):
     for i in ids: D[str(i)] = (tier, reason)
 
-# ---- A (villkorad): hylla verifierad PASS med ankare, presens PASS, variant PASS/ägarkänd, publik PASS ----
-s("A (villkorad)", "hylla verifierad (Spabadsbutiken 1 295–1 495 kr, ingen kedja); presens + publik PASS; variant = spabadets mått (ägaren vet ungefär). Material och Temu-pris osedda.", 601099619866532)
-s("A (villkorad)", "hylla verifierad (Blaser 999 / Härkila 1 295, ingen kedja); en storlek; älgjakt pågår; kroppslig payoff som axelbältet. Material och Temu-pris osedda.", 601099566089885)
-s("A (villkorad)", "hylla verifierad (Folkpool 2 995, Bauhaus 1 795, ingen kedja); en variant; rädsla/fall som kameran; > 500 kr-zonen. Material, frakt och Temu-pris osedda.", 601099575291512)
-s("A (villkorad)", "hylla verifierad (Dealproffsen 549–899, ingen kedja); en parameter ägaren vet (4/8 ft); vedhög = omisskännligt objekt. Material och Temu-pris osedda; överdragskategori (novelty 70).", 601099615828436)
-s("A (villkorad)", "hylla verifierad: Jula/Clas säljer samma form för 999–1 249 = ankare ≥ 1,6×; en variant; fingrar/rädsla; daglig friktion från oktober. Material, vikt/frakt och Temu-pris osedda.", 601099583674464)
+# ---- Gate 4+5 körda på USA-data 2026-09-04 07:22 UTC (SE-sidan blockerad; galleri = SE, video okänd) ----
+# Ingen av de fem villkorade A håller: varje har antingen en hård gate som faller på det som gick att se,
+# eller en gate som fortfarande är osedd. Därför 0 Tier A. De står som "B — närmast A" med exakt vad som fattas.
+s("B (närmast A)", "gate 5 PASS på US-pris (19,39 USD → landad 202–237 → 2,5–3,0× vid 599); gate 4 FAIL på det som syns: enda bilden är ett hopvikt överdrag framför ett BADKAR, ingen video på US-sidan (SE-video okänd). Blir A om en leverantörsvideo visar skyddet på ett riktigt spalock.", 601099619866532)
+s("B (närmast A)", "gate 4 PASS villkorat (riktig jägare tar upp kikaren ur väskan inom 3 s; logotypkort 0–1 s, compoundbåge + kamerarigg efter 5 s); gate 5 FAIL på US-pris (26,59 USD → landad 278–326 → 1,9–2,2× vid 624 kr; 2,4× kräver 667–782 kr där ankaret 999 bara är 1,3–1,5×). Blir A om SE-Temu-priset är ≤ ~150 kr.", 601099566089885)
+s("B (närmast A)", "gate 5 PASS på US-pris (16,25 USD → landad 170–200 → 3,0× vid 599; frakt på gjutjärn kan äta det); gate 4 FAIL på det som syns: textfri packshot utan ved, klubba eller hand, ingen video på US-sidan. Blir A om en video visar slaget och stickan inom 3 s.", 601099583674464)
+s("B (närmast A)", "gate 4 PASS på heron (överdraget på ett vedställ, röd text i nederkanten beskärbar), video okänd; gate 5 FAIL på US-pris för 8 ft-varianten (34,47 USD → landad 360–422 → 2,4× kräver 864–1 013 kr mot ankare 549). 4 ft-priset okänt. Blir A om 4 ft-varianten kostar ≤ ~110 kr på Temu SE.", 601099615828436)
+s("C (ekonomi på US-pris)", "spa-räcke: 79,99 USD → SE-Temu 557–653 → landad 836–980 kr → 2,4× kräver 2 006–2 352 kr; ingen svensk prisnivå under 2 000 kr (Folkpool 2 995 är enda ankaret där). Heron PASS (räcket monterat på spabad, rendering). Lärdom: > 1 000 kr-taket slår före hyllan.", 601099575291512)
 
 # ---- B: en meningsfull osäkerhet kvar ----
 s("B (dubblett)", "dubblett av spa-lockskyddet 601099619866532 — välj den med bäst video när Temu går att läsa", 601099524126091, 601099527353718)

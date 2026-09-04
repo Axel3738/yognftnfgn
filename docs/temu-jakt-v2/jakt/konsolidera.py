@@ -43,7 +43,7 @@ for g in GATES:
     alive = [r for r in alive if res(r, g) in ("PASS", "UNCERTAIN")]
     funnel["AFTER " + g.upper()] = len(alive)
 tiers = collections.Counter((r.get("tier") or "ELIM").upper() for r in rows)
-funnel["FINAL TIER A (villkorad — gate 4/5 ej körda)"] = sum(v for k, v in tiers.items() if k.startswith("A"))
+funnel["FINAL TIER A"] = sum(v for k, v in tiers.items() if k.startswith("A"))
 
 out = {"generated_from": sorted(set(r["kluster"] for r in rows)), "n": len(rows), "funnel": funnel,
        "tiers": dict(tiers), "candidates": rows}

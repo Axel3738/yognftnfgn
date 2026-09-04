@@ -5,14 +5,14 @@
   "url_se": "https://www.temu.com/se/g-601099566089885.html",
   "title": "Camo hunting chest pack with binocular harness, rangefinder pocket, rain cover (Temu UK-titel ur sökträff)",
   "temu_price_sek": null,
-  "rating": null,
-  "review_count": null,
+  "rating": 4.7,
+  "review_count": 303,
   "review_dates": [],
   "category_path": null,
-  "image_count": null,
-  "hero_url": null,
-  "video_url": null,
-  "video_checked": false,
+  "image_count": 3,
+  "hero_url": "https://img.kwcdn.com/product/fancy/cb93eed1-06b5-4d7f-b8e7-c6f305bdba75.jpg",
+  "video_url": "https://goods-vod.kwcdn.com/goods-video/6da795034658718678136ffde42508122e4787f3.f30.mp4",
+  "video_checked": true,
   "object": "Handkikare",
   "owner_owns": "Ja — varje jägare på pass har en kikare i nackrem",
   "friction": "Nackrem skär, kikaren slår mot bröstet när man går, regn på okularen i passet",
@@ -67,10 +67,20 @@
     "reason": "271 000 jaktkort + fågelskådare; kikare + kamouflage är omisskännligt i flödet; man 45–70 dominerar."
    },
    "material": {
-    "result": "UNKNOWN",
-    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
-    "sec_0_3": null,
-    "hero_note": null
+    "result": "PASS (villkorat)",
+    "reason": "Riktig jägare, riktig kikare, riktig höstskog inom 3 s — det är strukturen. Men bara ~10 användbara sekunder utan båge/kamerarigg, och logotypkortet först.",
+    "source": "US-sidan 2026-09-04 07:22 UTC (SE blockerad). Galleri identiskt mellan SE och US på IBC-kontrollen; video finns på US-sidan här.",
+    "verified_by": "a-kandidater.json",
+    "video_len_s": 37.1,
+    "sec_0_3": "0–1 s: svart titelkort med logotypen 'NEW VIEW HUNTING'. 1–3,5 s: jägare i camo i höstskog öppnar bröstväskan, tar upp kikaren, lyfter den mot ögonen. En Canon-kamerarigg står i bild till höger.",
+    "product_in_use_by_3s": "JA (efter 1 s logotyp)",
+    "same_product_as_hero": "JA — camo bröstväska med orange NEW VIEW-logga",
+    "burned_text": "Logotypkort 0–1 s (klipps bort). Varumärket är broderat på själva väskan (inte inbränd text, men ett utländskt märkesnamn i bild).",
+    "muted_ok": "JA — öppna, ta upp, titta: självförklarande",
+    "owner_or_object_visible": "JA — jägare, kikare, höstskog (lövfällning)",
+    "clean_framing": "NEJ — Canon-kamerarigg i bild i de flesta bilder; från ~5 s bågjägare med compoundbåge i trädstand (bågjakt är förbjuden i Sverige = amerikansk kod); en vertikal unboxing-klipp mitt i",
+    "raw_plus_captions_viable": "KANSKE — sekvensen 1–6 s (öppna väskan, ta kikaren, spana) + 14–20 s duger med tight beskärning; bågen och riggen måste klippas bort; kvadratformat kräver 9:16-crop",
+    "hero_alone_viable": "NEJ — studio-packshot utan ägare/objekt (textfri, ren)"
    },
    "economics": {
     "landed_est_sek": null,
@@ -79,6 +89,30 @@
     "be_cpa_est": null,
     "multibuy_reason": null,
     "result": "UNKNOWN"
+   },
+   "economics_us": {
+    "result": "FAIL",
+    "reason": "US-pris 26.59 USD → SE-Temu ≈ 185–217 kr → landad ≈ 278–326 kr. Vid 624 kr: 1.9–2.2× (krav 2,4×), BE-CPA 298–346 kr (krav ≥ 190). 2,4× kräver 667–782 kr; ankare 999 kr",
+    "price_usd": 26.59,
+    "se_temu_est_sek": [
+     185,
+     217
+    ],
+    "landed_est_sek": [
+     278,
+     326
+    ],
+    "se_price_needed_sek": [
+     667,
+     782
+    ],
+    "se_price_used_sek": 624,
+    "anchor_sek": 999,
+    "kurs_sek_per_usd": [
+     6.96,
+     8.16
+    ],
+    "note": "USA-pris som proxy — SE-pris okänt (blockerat). Kalibrering på två punkter; frakt på tunga/skrymmande varor kan överstiga 1,5×."
    }
   },
   "negative_space_flags": [
@@ -87,7 +121,7 @@
   "eliminated_at": null,
   "structure_match": 72,
   "category_novelty": 85,
-  "tier": "A (villkorad)",
+  "tier": "B (närmast A)",
   "biggest_risk": "Max-On-remmen för 149 kr i fackhandeln: ser vår produkt ut som en rem och inte som en bröstväska faller prisankaret. Pris/material ej hämtade.",
   "confidence": "MEDIUM",
   "sources": [
@@ -97,7 +131,41 @@
    "https://www.temu.com/uk/camo-hunting-chest-pack-with-binocular-harness-rangefinder-pocket-patented-camouflage-pattern-polyester-tassel-embellishment-rain-cover-multiple-storage-compartments-for-outdoor-gear-g-601099566089885.html"
   ],
   "tier_agent": "A",
-  "tier_reason": "hylla verifierad (Blaser 999 / Härkila 1 295, ingen kedja); en storlek; älgjakt pågår; kroppslig payoff som axelbältet. Material och Temu-pris osedda."
+  "tier_reason": "gate 4 PASS villkorat (riktig jägare tar upp kikaren ur väskan inom 3 s; logotypkort 0–1 s, compoundbåge + kamerarigg efter 5 s); gate 5 FAIL på US-pris (26,59 USD → landad 278–326 → 1,9–2,2× vid 624 kr; 2,4× kräver 667–782 kr där ankaret 999 bara är 1,3–1,5×). Blir A om SE-Temu-priset är ≤ ~150 kr.",
+  "temu_us": {
+   "title": "Camouflage Large Chest Bag, Can Hold Binoculars, Patented Camouflage Pattern",
+   "price_usd": "26.59",
+   "currency": "USD",
+   "rating": 4.7,
+   "review_count": 303,
+   "review_dates": [
+    "2024-*-29",
+    "2025-11-29",
+    "2024-11-22",
+    "2025-01-07"
+   ],
+   "category_path": [
+    "Sports & Outdoors",
+    "Bags & Backpacks"
+   ],
+   "images": [
+    "https://img.kwcdn.com/product/fancy/cb93eed1-06b5-4d7f-b8e7-c6f305bdba75.jpg",
+    "https://img.kwcdn.com/product/fancy/196ed548-bf6b-482b-b614-81947f7dbded.jpg",
+    "https://img.kwcdn.com/product/fancy/b8b9b7da-f487-496f-86f6-626d5962dc7e.jpg"
+   ],
+   "image_descriptions": [
+    "camouflage large chest bag can hold binoculars patented camouflage pattern",
+    "camouflage large chest bag can hold binoculars patented camouflage pattern camouflage l",
+    "camouflage large chest bag can hold binoculars patented camouflage pattern camouflage"
+   ],
+   "video_url": "https://goods-vod.kwcdn.com/goods-video/6da795034658718678136ffde42508122e4787f3.f30.mp4",
+   "video_file": "/tmp/claude-0/-home-user-yognftnfgn/fa9ffb6d-2d2f-568d-b393-1be1d0c64390/scratchpad/temu/hunt/video/us/601099566089885.mp4",
+   "fetched": "2026-09-04T07:23:35.572070Z"
+  },
+  "temu_market": "us",
+  "title_temu": "Camouflage Large Chest Bag, Can Hold Binoculars, Patented Camouflage Pattern",
+  "video_file": "/tmp/claude-0/-home-user-yognftnfgn/fa9ffb6d-2d2f-568d-b393-1be1d0c64390/scratchpad/temu/hunt/video/us/601099566089885.mp4",
+  "temu_fetched": "2026-09-04T07:23:35.572070Z"
  },
  {
   "kluster": "jakt",
