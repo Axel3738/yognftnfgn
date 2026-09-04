@@ -1,0 +1,5299 @@
+[
+ {
+  "kluster": "bat",
+  "goods_id": "601099699520443",
+  "url": "https://www.temu.com/se/g-601099699520443.html",
+  "title": "5W solar powered roof vent fan, metal shell, no battery, up to 238 sq ft — sheds/chicken coops/greenhouses/cabins",
+  "already_known": false,
+  "concept": "solcellsdriven-ventilation-vinterforvarad-bat",
+  "object": "Båten som ligger uppallad under presenning september–april",
+  "owner_owns": "Båt + presenning/täckställning (19 % av hushållen äger båt)",
+  "friction": "Fukt och kondens under presenningen; dynor, kapell och inredning möglar och luktar till våren. Ingen el på uppläggningsplatsen.",
+  "old_way": "Fuktabsorbent i hink (1852 Marine Luftavfuktare 85 kr, förbrukning), lämna en glipa i presenningen, eller ta hem alla dynor",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "En variant per listning (5W / 10W / 2-pack)",
+  "swedish_shelf": {
+   "verdict": "PASS (ankarundantaget)",
+   "chain_same_form": false,
+   "anchor_name": "Seatec solcellsventilator rostfri kåpa Ø191 mm (billigaste marina i svensk kanal); Marinco 3\"/4\" hos SeaSea 2 792–3 550 kr; Solar Plus Select RV Mini V2 3 056 kr",
+   "anchor_price_sek": 1249,
+   "anchor_url": "https://www.pricerunner.se/search?q=solcellsventilator",
+   "searches": [
+    "PriceRunner solcellsventilator",
+    "PriceRunner solcellsventilator båt marinco seatec",
+    "WebSearch solcellsventilator båt seasea watski",
+    "curl biltema.se/bat/ — ingen ventilationskategori finns i Biltemas båtavdelning (mätt 2026-09-04)"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "OSÄKER",
+   "shelf": "PASS",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Luktar båten mögel varje vår?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Metallkåpa, rund form — närmast den marina ventilatorn av de funna; ingen batteribuffert (går bara i solsken)"
+  },
+  "negative_space_flags": [
+   "fördröjd/osynlig payoff (mögel syns i april, inte i oktober)",
+   "montering: marin ventilator kräver hål i däck eller lucka"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 55,
+  "category_novelty_0_100": 80,
+  "tier": "B",
+  "main_risk": "Presensgaten: skadan ligger i vinterhalvåret, precis som kranskyddet som föll. Dessutom är ingen av de funna listningarna den marina runda däcksventilatorn som ankaret ser ut som.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com boat solar powered vent ventilator cabin moisture",
+   "WebSearch solcellsventilator solcellsfläkt båt vinterförvaring seasea watski",
+   "https://www.pricerunner.se/search?q=solcellsventilator"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099624855365",
+  "url": "https://www.temu.com/se/g-601099624855365.html",
+  "title": "10W 12V solar powered exhaust fan for round pipe, ventilation fan kit for attics/greenhouses/RVs/boats",
+  "already_known": false,
+  "concept": "solcellsdriven-ventilation-vinterforvarad-bat",
+  "object": "Båten som ligger uppallad under presenning september–april",
+  "owner_owns": "Båt + presenning/täckställning (19 % av hushållen äger båt)",
+  "friction": "Fukt och kondens under presenningen; dynor, kapell och inredning möglar och luktar till våren. Ingen el på uppläggningsplatsen.",
+  "old_way": "Fuktabsorbent i hink (1852 Marine Luftavfuktare 85 kr, förbrukning), lämna en glipa i presenningen, eller ta hem alla dynor",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "En variant per listning (5W / 10W / 2-pack)",
+  "swedish_shelf": {
+   "verdict": "PASS (ankarundantaget)",
+   "chain_same_form": false,
+   "anchor_name": "Seatec solcellsventilator rostfri kåpa Ø191 mm (billigaste marina i svensk kanal); Marinco 3\"/4\" hos SeaSea 2 792–3 550 kr; Solar Plus Select RV Mini V2 3 056 kr",
+   "anchor_price_sek": 1249,
+   "anchor_url": "https://www.pricerunner.se/search?q=solcellsventilator",
+   "searches": [
+    "PriceRunner solcellsventilator",
+    "PriceRunner solcellsventilator båt marinco seatec",
+    "WebSearch solcellsventilator båt seasea watski",
+    "curl biltema.se/bat/ — ingen ventilationskategori finns i Biltemas båtavdelning (mätt 2026-09-04)"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "OSÄKER",
+   "shelf": "PASS",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Luktar båten mögel varje vår?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Rörmonterad — kräver hål/kanal, längre från den marina formen"
+  },
+  "negative_space_flags": [
+   "fördröjd/osynlig payoff (mögel syns i april, inte i oktober)",
+   "montering: marin ventilator kräver hål i däck eller lucka"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 55,
+  "category_novelty_0_100": 80,
+  "tier": "B",
+  "main_risk": "Presensgaten: skadan ligger i vinterhalvåret, precis som kranskyddet som föll. Dessutom är ingen av de funna listningarna den marina runda däcksventilatorn som ankaret ser ut som.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com boat solar powered vent ventilator cabin moisture",
+   "WebSearch solcellsventilator solcellsfläkt båt vinterförvaring seasea watski",
+   "https://www.pricerunner.se/search?q=solcellsventilator"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099738026028",
+  "url": "https://www.temu.com/se/g-601099738026028.html",
+  "title": "2-pack solar powered RV ceiling vent fan, ABS, waterproof, for RV/marine/shed/trailer (Google-titel)",
+  "already_known": false,
+  "concept": "solcellsdriven-ventilation-vinterforvarad-bat",
+  "object": "Båten som ligger uppallad under presenning september–april",
+  "owner_owns": "Båt + presenning/täckställning (19 % av hushållen äger båt)",
+  "friction": "Fukt och kondens under presenningen; dynor, kapell och inredning möglar och luktar till våren. Ingen el på uppläggningsplatsen.",
+  "old_way": "Fuktabsorbent i hink (1852 Marine Luftavfuktare 85 kr, förbrukning), lämna en glipa i presenningen, eller ta hem alla dynor",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "En variant per listning (5W / 10W / 2-pack)",
+  "swedish_shelf": {
+   "verdict": "PASS (ankarundantaget)",
+   "chain_same_form": false,
+   "anchor_name": "Seatec solcellsventilator rostfri kåpa Ø191 mm (billigaste marina i svensk kanal); Marinco 3\"/4\" hos SeaSea 2 792–3 550 kr; Solar Plus Select RV Mini V2 3 056 kr",
+   "anchor_price_sek": 1249,
+   "anchor_url": "https://www.pricerunner.se/search?q=solcellsventilator",
+   "searches": [
+    "PriceRunner solcellsventilator",
+    "PriceRunner solcellsventilator båt marinco seatec",
+    "WebSearch solcellsventilator båt seasea watski",
+    "curl biltema.se/bat/ — ingen ventilationskategori finns i Biltemas båtavdelning (mätt 2026-09-04)"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "OSÄKER",
+   "shelf": "PASS",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Luktar båten mögel varje vår?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "OBS: /se-sidan svarade en gång och visade i stället '2 st RV-ventilationsfläktblad, 69,64 kr, 25 omdömen, ej tillgänglig för köp' — titel och listning går isär, indicium på reservdelsblad, inte ventilator"
+  },
+  "negative_space_flags": [
+   "fördröjd/osynlig payoff (mögel syns i april, inte i oktober)",
+   "montering: marin ventilator kräver hål i däck eller lucka"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 55,
+  "category_novelty_0_100": 80,
+  "tier": "B",
+  "main_risk": "Presensgaten: skadan ligger i vinterhalvåret, precis som kranskyddet som föll. Dessutom är ingen av de funna listningarna den marina runda däcksventilatorn som ankaret ser ut som.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com boat solar powered vent ventilator cabin moisture",
+   "WebSearch solcellsventilator solcellsfläkt båt vinterförvaring seasea watski",
+   "https://www.pricerunner.se/search?q=solcellsventilator"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099521976797",
+  "url": "https://www.temu.com/se/g-601099521976797.html",
+  "title": "Solar powered car air vent cool fan, auto cooler ventilation exhaust fan",
+  "already_known": false,
+  "concept": "solcellsdriven-ventilation-vinterforvarad-bat",
+  "object": "Båten som ligger uppallad under presenning september–april",
+  "owner_owns": "Båt + presenning/täckställning (19 % av hushållen äger båt)",
+  "friction": "Fukt och kondens under presenningen; dynor, kapell och inredning möglar och luktar till våren. Ingen el på uppläggningsplatsen.",
+  "old_way": "Fuktabsorbent i hink (1852 Marine Luftavfuktare 85 kr, förbrukning), lämna en glipa i presenningen, eller ta hem alla dynor",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "En variant per listning (5W / 10W / 2-pack)",
+  "swedish_shelf": {
+   "verdict": "PASS (ankarundantaget)",
+   "chain_same_form": false,
+   "anchor_name": "Seatec solcellsventilator rostfri kåpa Ø191 mm (billigaste marina i svensk kanal); Marinco 3\"/4\" hos SeaSea 2 792–3 550 kr; Solar Plus Select RV Mini V2 3 056 kr",
+   "anchor_price_sek": 1249,
+   "anchor_url": "https://www.pricerunner.se/search?q=solcellsventilator",
+   "searches": [
+    "PriceRunner solcellsventilator",
+    "PriceRunner solcellsventilator båt marinco seatec",
+    "WebSearch solcellsventilator båt seasea watski",
+    "curl biltema.se/bat/ — ingen ventilationskategori finns i Biltemas båtavdelning (mätt 2026-09-04)"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "OSÄKER",
+   "shelf": "PASS",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Luktar båten mögel varje vår?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilfönsterform — fel objekt, tas med som alternativ listning"
+  },
+  "negative_space_flags": [
+   "fördröjd/osynlig payoff (mögel syns i april, inte i oktober)",
+   "montering: marin ventilator kräver hål i däck eller lucka"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 55,
+  "category_novelty_0_100": 80,
+  "tier": "B",
+  "main_risk": "Presensgaten: skadan ligger i vinterhalvåret, precis som kranskyddet som föll. Dessutom är ingen av de funna listningarna den marina runda däcksventilatorn som ankaret ser ut som.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com boat solar powered vent ventilator cabin moisture",
+   "WebSearch solcellsventilator solcellsfläkt båt vinterförvaring seasea watski",
+   "https://www.pricerunner.se/search?q=solcellsventilator"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "602767166902424",
+  "url": "https://www.temu.com/se/g-602767166902424.html",
+  "title": "Gray waterproof heavy duty boat center console cover, fits up to 36\" W x 44\" L x 60\" H",
+  "already_known": false,
+  "concept": "styrpulpet-konsolskydd",
+  "object": "Styrpulpeten med ratt, reglage och instrument på en öppen styrpulpetbåt",
+  "owner_owns": "Styrpulpetbåt (den vanligaste svenska motorbåtstypen)",
+  "friction": "Pulpeten är det dyraste på en öppen båt och står blottad när båten ligger uppallad eller vid bryggan sent i säsongen; vinyl och instrument blir grå och spröda.",
+  "old_way": "Helpresenning över hela båten, eller ingenting",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Mått i tum (36x44x60) — ägaren måste mäta",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": false,
+   "anchor_name": "Ingen träff alls på PriceRunner för 'styrpulpetkapell'/'konsolkapell'; svensk kanal är kapellmakare (sytt på mått). Biltema har bara båtöverdrag/båtpresenning, ingen konsolprodukt.",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.pricerunner.se/search?q=styrpulpetkapell",
+   "searches": [
+    "PriceRunner styrpulpetkapell",
+    "PriceRunner konsolkapell båt",
+    "curl biltema.se/bat/batupplaggning/ (4 underkategorier: batoverdrag, batpresenning, batstottor, tackstallning)"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "OSÄKER",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Står styrpulpeten oskyddad i vinter?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Tumangivelser i titeln = ägaren måste mäta pulpeten"
+  },
+  "negative_space_flags": [
+   "variant kräver att ägaren mäter",
+   "redundant om båten ändå helpresennas"
+  ],
+  "eliminated_at": "variant",
+  "winner_dna_match_0_100": 45,
+  "category_novelty_0_100": 70,
+  "tier": "C",
+  "main_risk": "Ägaren måste mäta pulpeten i tum (motorhöljets storlekstabell i bild gav −869 kr) och skyddet är överflödigt för den som täcker hela båten.",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch site:temu.com boat center console cover steering wheel helm marine",
+   "https://www.pricerunner.se/search?q=styrpulpetkapell"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "602857361244554",
+  "url": "https://www.temu.com/se/g-602857361244554.html",
+  "title": "Boat cover for center console with T-top roofs, heavy duty, 20', blue",
+  "already_known": false,
+  "concept": "styrpulpet-konsolskydd",
+  "object": "Styrpulpeten med ratt, reglage och instrument på en öppen styrpulpetbåt",
+  "owner_owns": "Styrpulpetbåt (den vanligaste svenska motorbåtstypen)",
+  "friction": "Pulpeten är det dyraste på en öppen båt och står blottad när båten ligger uppallad eller vid bryggan sent i säsongen; vinyl och instrument blir grå och spröda.",
+  "old_way": "Helpresenning över hela båten, eller ingenting",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Mått i tum (36x44x60) — ägaren måste mäta",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": false,
+   "anchor_name": "Ingen träff alls på PriceRunner för 'styrpulpetkapell'/'konsolkapell'; svensk kanal är kapellmakare (sytt på mått). Biltema har bara båtöverdrag/båtpresenning, ingen konsolprodukt.",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.pricerunner.se/search?q=styrpulpetkapell",
+   "searches": [
+    "PriceRunner styrpulpetkapell",
+    "PriceRunner konsolkapell båt",
+    "curl biltema.se/bat/batupplaggning/ (4 underkategorier: batoverdrag, batpresenning, batstottor, tackstallning)"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "OSÄKER",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Står styrpulpeten oskyddad i vinter?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "T-top är en amerikansk båtform, ovanlig i Sverige"
+  },
+  "negative_space_flags": [
+   "variant kräver att ägaren mäter",
+   "redundant om båten ändå helpresennas"
+  ],
+  "eliminated_at": "variant",
+  "winner_dna_match_0_100": 45,
+  "category_novelty_0_100": 70,
+  "tier": "C",
+  "main_risk": "Ägaren måste mäta pulpeten i tum (motorhöljets storlekstabell i bild gav −869 kr) och skyddet är överflödigt för den som täcker hela båten.",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch site:temu.com boat center console cover steering wheel helm marine",
+   "https://www.pricerunner.se/search?q=styrpulpetkapell"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601104018674339",
+  "url": "https://www.temu.com/se/g-601104018674339.html",
+  "title": "Bell boat steering wheel cover, microfiber leather, 13-13.5 inch, marine steering gear",
+  "already_known": false,
+  "concept": "ratt-overdrag-bat",
+  "object": "Båtratten",
+  "owner_owns": "Motorbåt med ratt",
+  "friction": "Ratten blir klibbig och solblekt",
+  "old_way": "Ingenting",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Diameter i tum",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": []
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "FAIL",
+   "shelf": "UNKNOWN",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "OSÄKER",
+   "hook": "FAIL",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "kosmetisk variation",
+   "ingen friktion i oktober",
+   "för billig"
+  ],
+  "eliminated_at": "presence",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Ingen höstfriktion, för lågt pris.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com boat center console cover steering wheel helm marine"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "607430897443167",
+  "url": "https://www.temu.com/se/g-607430897443167.html",
+  "title": "Oversize Bimini Top Storage Boot Cover",
+  "already_known": false,
+  "concept": "bimini-forvaringsoverdrag",
+  "object": "Soltaket/biminin som fälls ned över hösten",
+  "owner_owns": "Motorbåt med bimini/sufflett",
+  "friction": "Det nedfällda soltaket ligger i en hög på däck hela vintern, skaver mot rören, blir svart av smuts och möglar i vecken.",
+  "old_way": "Sopsäck och tejp, eller inget alls",
+  "price_usd": 29.48,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 0,
+  "sold": null,
+  "variants": "Längdklasser",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": false,
+   "anchor_name": "Svensk kanal säljer själva biminin (vidaXL/VEVOR båtkapell 1 203–3 428 kr på PriceRunner); förvaringsöverdraget ('boot') syns inte i sökningen. Biltema har ingen biminikategori.",
+   "anchor_price_sek": 1203,
+   "anchor_url": "https://www.pricerunner.se/search?q=bimini+b%C3%A5t",
+   "searches": [
+    "PriceRunner bimini båt",
+    "PriceRunner kapellpåse båt",
+    "Seznam site:temu.com bimini top boot storage cover marine"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": 307.8,
+   "landed_high_sek": 360.8,
+   "se_price_sek": 849,
+   "multiple_low": 2.35,
+   "multiple_high": 2.76,
+   "be_cpa": 488.2,
+   "verdict": "FAIL"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "OSÄKER",
+   "hook": "PASS",
+   "audience": "OSÄKER"
+  },
+  "hook_sv": "Har du soltak på båten?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Titeln antyder ett enkelt tygrör med dragsko; heron är sannolikt en packshot utan båt"
+  },
+  "negative_space_flags": [
+   "ytterligare ett kapell — kategorin är trött i kontot",
+   "publiken osäker: svenska båtar har oftare helkapell än bimini"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 50,
+  "category_novelty_0_100": 65,
+  "tier": "C",
+  "main_risk": "Bimini är en amerikansk båtform; hur många svenska hushåll som har en bimini att förvara är overifierat, och 849 kr ger bara 2,35× på den dyra landningen.",
+  "confidence": "LOW",
+  "sources": [
+   "Seznam site:temu.com bimini top boot storage cover marine",
+   "https://www.temu.com/boat-cover-accessories-s.html"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099546564561",
+  "url": "https://www.temu.com/se/g-601099546564561.html",
+  "title": "One dark blue bimini top replacement cover, 600D marine canopy",
+  "already_known": false,
+  "concept": "bimini-soltak",
+  "object": "Soltak till båt",
+  "owner_owns": "Motorbåt",
+  "friction": "Sol i sittbrunnen",
+  "old_way": "Ingenting",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "vidaXL/VEVOR båtkapell 1 203–3 428 kr (PriceRunner, samma form)",
+   "anchor_price_sek": 1203,
+   "anchor_url": "https://www.pricerunner.se/search?q=bimini+b%C3%A5t",
+   "searches": [
+    "PriceRunner bimini båt"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "FAIL",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "FAIL",
+   "audience": "OSÄKER"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "sommarprodukt",
+   "samma form i svensk marketplace"
+  ],
+  "eliminated_at": "presence",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Soltak köps i maj, inte i oktober.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Seznam site:temu.com bimini top boot storage cover marine",
+   "https://www.pricerunner.se/search?q=bimini+b%C3%A5t"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "606009565232204",
+  "url": "https://www.temu.com/se/g-606009565232204.html",
+  "title": "Bimini boat cover, bimini top sunshade boat cover, universal",
+  "already_known": false,
+  "concept": "bimini-soltak",
+  "object": "Soltak till båt",
+  "owner_owns": "Motorbåt",
+  "friction": "Sol i sittbrunnen",
+  "old_way": "Ingenting",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "vidaXL/VEVOR båtkapell 1 203–3 428 kr (PriceRunner, samma form)",
+   "anchor_price_sek": 1203,
+   "anchor_url": "https://www.pricerunner.se/search?q=bimini+b%C3%A5t",
+   "searches": [
+    "PriceRunner bimini båt"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "FAIL",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "FAIL",
+   "audience": "OSÄKER"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "sommarprodukt",
+   "samma form i svensk marketplace"
+  ],
+  "eliminated_at": "presence",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Soltak köps i maj, inte i oktober.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Seznam site:temu.com bimini top boot storage cover marine",
+   "https://www.pricerunner.se/search?q=bimini+b%C3%A5t"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "606496154835704",
+  "url": "https://www.temu.com/se/g-606496154835704.html",
+  "title": "900D Marine Grade Boat Bimini Top",
+  "already_known": false,
+  "concept": "bimini-soltak",
+  "object": "Soltak till båt",
+  "owner_owns": "Motorbåt",
+  "friction": "Sol i sittbrunnen",
+  "old_way": "Ingenting",
+  "price_usd": 53.18,
+  "price_source": "temu.com/boat-cover-accessories-s.html",
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "vidaXL/VEVOR båtkapell 1 203–3 428 kr (PriceRunner, samma form)",
+   "anchor_price_sek": 1203,
+   "anchor_url": "https://www.pricerunner.se/search?q=bimini+b%C3%A5t",
+   "searches": [
+    "PriceRunner bimini båt"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "FAIL",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "FAIL",
+   "audience": "OSÄKER"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "sommarprodukt",
+   "samma form i svensk marketplace"
+  ],
+  "eliminated_at": "presence",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Soltak köps i maj, inte i oktober.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Seznam site:temu.com bimini top boot storage cover marine",
+   "https://www.pricerunner.se/search?q=bimini+b%C3%A5t"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601102088261064",
+  "url": "https://www.temu.com/se/g-601102088261064.html",
+  "title": "4 Bow Marine Grade Bimini Top Cover",
+  "already_known": false,
+  "concept": "bimini-soltak",
+  "object": "Soltak till båt",
+  "owner_owns": "Motorbåt",
+  "friction": "Sol i sittbrunnen",
+  "old_way": "Ingenting",
+  "price_usd": 67.21,
+  "price_source": "temu.com/boat-cover-accessories-s.html",
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "vidaXL/VEVOR båtkapell 1 203–3 428 kr (PriceRunner, samma form)",
+   "anchor_price_sek": 1203,
+   "anchor_url": "https://www.pricerunner.se/search?q=bimini+b%C3%A5t",
+   "searches": [
+    "PriceRunner bimini båt"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "FAIL",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "FAIL",
+   "audience": "OSÄKER"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "sommarprodukt",
+   "samma form i svensk marketplace"
+  ],
+  "eliminated_at": "presence",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Soltak köps i maj, inte i oktober.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Seznam site:temu.com bimini top boot storage cover marine",
+   "https://www.pricerunner.se/search?q=bimini+b%C3%A5t"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "606266978080619",
+  "url": "https://www.temu.com/se/g-606266978080619.html",
+  "title": "4-Bow Bimini Top Replacement Cover",
+  "already_known": false,
+  "concept": "bimini-soltak",
+  "object": "Soltak till båt",
+  "owner_owns": "Motorbåt",
+  "friction": "Sol i sittbrunnen",
+  "old_way": "Ingenting",
+  "price_usd": 69.44,
+  "price_source": "temu.com/boat-cover-accessories-s.html",
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "vidaXL/VEVOR båtkapell 1 203–3 428 kr (PriceRunner, samma form)",
+   "anchor_price_sek": 1203,
+   "anchor_url": "https://www.pricerunner.se/search?q=bimini+b%C3%A5t",
+   "searches": [
+    "PriceRunner bimini båt"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "FAIL",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "FAIL",
+   "audience": "OSÄKER"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "sommarprodukt",
+   "samma form i svensk marketplace"
+  ],
+  "eliminated_at": "presence",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Soltak köps i maj, inte i oktober.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Seznam site:temu.com bimini top boot storage cover marine",
+   "https://www.pricerunner.se/search?q=bimini+b%C3%A5t"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601102886923859",
+  "url": "https://www.temu.com/se/g-601102886923859.html",
+  "title": "Marine Waterproof Protective Cover Vent",
+  "already_known": false,
+  "concept": "presenningsluftare",
+  "object": "Presenningen över den uppallade båten",
+  "owner_owns": "Båt + presenning",
+  "friction": "Under en tät presenning står luften still; kondens droppar ner på dynor och inredning. Täckningen görs just nu.",
+  "old_way": "Lämna en glipa i presenningen, eller skära ett hål och tejpa fast ett nät",
+  "price_usd": 10.53,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 2,
+  "sold": null,
+  "variants": "En variant",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": null,
+   "anchor_name": "Ingen träff på 'presenningsventil båt' i PriceRunner; Biltemas täckställningskategori ej produktläst (JS-renderad)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.pricerunner.se/search?q=presenningsventil+b%C3%A5t",
+   "searches": [
+    "PriceRunner presenningsventil båt",
+    "curl biltema.se/bat/batupplaggning/tackstallning/"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": 109.9,
+   "landed_high_sek": 128.9,
+   "se_price_sek": 349,
+   "multiple_low": 2.71,
+   "multiple_high": 3.18,
+   "be_cpa": 220.1,
+   "verdict": "PASS"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Bildas det kondens under båtpresenningen?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Liten plastdetalj — heron är med största sannolikhet en packshot utan båt; svår att göra till annons"
+  },
+  "negative_space_flags": [
+   "låg upplevd värde per styck",
+   "old way (en glipa) är gratis och fungerar"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 40,
+  "category_novelty_0_100": 60,
+  "tier": "C",
+  "main_risk": "En 10 cm plastventil för 349 kr är svår att försvara i flödet, och gratislösningen fungerar.",
+  "confidence": "LOW",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "606169871528449",
+  "url": "https://www.temu.com/se/g-606169871528449.html",
+  "title": "Boat Cover Support Pole Vent Cap",
+  "already_known": false,
+  "concept": "presenningsluftare",
+  "object": "Presenningen över den uppallade båten",
+  "owner_owns": "Båt + presenning",
+  "friction": "Under en tät presenning står luften still; kondens droppar ner på dynor och inredning. Täckningen görs just nu.",
+  "old_way": "Lämna en glipa i presenningen, eller skära ett hål och tejpa fast ett nät",
+  "price_usd": 13.55,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 0,
+  "sold": null,
+  "variants": "En variant",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": null,
+   "anchor_name": "Ingen träff på 'presenningsventil båt' i PriceRunner; Biltemas täckställningskategori ej produktläst (JS-renderad)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.pricerunner.se/search?q=presenningsventil+b%C3%A5t",
+   "searches": [
+    "PriceRunner presenningsventil båt",
+    "curl biltema.se/bat/batupplaggning/tackstallning/"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": 141.5,
+   "landed_high_sek": 165.9,
+   "se_price_sek": 349,
+   "multiple_low": 2.1,
+   "multiple_high": 2.47,
+   "be_cpa": 183.1,
+   "verdict": "FAIL"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "OSÄKER",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Bildas det kondens under båtpresenningen?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Liten plastdetalj — heron är med största sannolikhet en packshot utan båt; svår att göra till annons"
+  },
+  "negative_space_flags": [
+   "låg upplevd värde per styck",
+   "old way (en glipa) är gratis och fungerar"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 40,
+  "category_novelty_0_100": 60,
+  "tier": "C",
+  "main_risk": "En 10 cm plastventil för 349 kr är svår att försvara i flödet, och gratislösningen fungerar.",
+  "confidence": "LOW",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099611097919",
+  "url": "https://www.temu.com/se/g-601099611097919.html",
+  "title": "Adjustable Trailer Dolly, boat trailer dolly, 1200 lbs, carbon steel, 19-27.5 in",
+  "already_known": false,
+  "concept": "trailerflyttare-for-hand",
+  "object": "Båttrailern som ska rangeras på tomten inför vintern",
+  "owner_owns": "Båttrailer",
+  "friction": "Trailern med båt ska in i hörnet av tomten; bilen får inte plats att backa",
+  "old_way": "Backa bilen sju gånger, eller dra för hand",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Lastkapacitet",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "vidaXL Motoriserat stödhjul trailer 12V 3 369 kr; vidaXL stödhjul med klämma 987 kr; VEVOR domkraft med hjul 1 744 kr (PriceRunner)",
+   "anchor_price_sek": 987,
+   "anchor_url": "https://www.pricerunner.se/search?q=trailerflyttare",
+   "searches": [
+    "PriceRunner trailerflyttare"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "FAIL — tung stålvara, landad kostnad hamnar över 420 kr-taket och svenskt pris över 1 000 kr"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Svårt att flytta båttrailern på tomten?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "> 1 000 kr",
+   "skrymmande fraktvara",
+   "samma form finns i svensk marketplace"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Stål och frakt spräcker både taket och uppslaget.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com boat trailer dolly mover hand tow jockey wheel",
+   "https://www.pricerunner.se/search?q=trailerflyttare"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099580692166",
+  "url": "https://www.temu.com/se/g-601099580692166.html",
+  "title": "1500 lbs Trailer Dolly, carbon steel, 24-35 in, 16 in solid tires, 2 in hitch ball",
+  "already_known": false,
+  "concept": "trailerflyttare-for-hand",
+  "object": "Båttrailern som ska rangeras på tomten inför vintern",
+  "owner_owns": "Båttrailer",
+  "friction": "Trailern med båt ska in i hörnet av tomten; bilen får inte plats att backa",
+  "old_way": "Backa bilen sju gånger, eller dra för hand",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Lastkapacitet",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "vidaXL Motoriserat stödhjul trailer 12V 3 369 kr; vidaXL stödhjul med klämma 987 kr; VEVOR domkraft med hjul 1 744 kr (PriceRunner)",
+   "anchor_price_sek": 987,
+   "anchor_url": "https://www.pricerunner.se/search?q=trailerflyttare",
+   "searches": [
+    "PriceRunner trailerflyttare"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "FAIL — tung stålvara, landad kostnad hamnar över 420 kr-taket och svenskt pris över 1 000 kr"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Svårt att flytta båttrailern på tomten?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "> 1 000 kr",
+   "skrymmande fraktvara",
+   "samma form finns i svensk marketplace"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Stål och frakt spräcker både taket och uppslaget.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com boat trailer dolly mover hand tow jockey wheel",
+   "https://www.pricerunner.se/search?q=trailerflyttare"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099576247057",
+  "url": "https://www.temu.com/se/g-601099576247057.html",
+  "title": "Goplus 600 lbs Utility Trailer Mover Hitch Boat/Jet Ski/Camper Hand Dolly",
+  "already_known": false,
+  "concept": "trailerflyttare-for-hand",
+  "object": "Båttrailern som ska rangeras på tomten inför vintern",
+  "owner_owns": "Båttrailer",
+  "friction": "Trailern med båt ska in i hörnet av tomten; bilen får inte plats att backa",
+  "old_way": "Backa bilen sju gånger, eller dra för hand",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Lastkapacitet",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "vidaXL Motoriserat stödhjul trailer 12V 3 369 kr; vidaXL stödhjul med klämma 987 kr; VEVOR domkraft med hjul 1 744 kr (PriceRunner)",
+   "anchor_price_sek": 987,
+   "anchor_url": "https://www.pricerunner.se/search?q=trailerflyttare",
+   "searches": [
+    "PriceRunner trailerflyttare"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "FAIL — tung stålvara, landad kostnad hamnar över 420 kr-taket och svenskt pris över 1 000 kr"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Svårt att flytta båttrailern på tomten?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "> 1 000 kr",
+   "skrymmande fraktvara",
+   "samma form finns i svensk marketplace"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Stål och frakt spräcker både taket och uppslaget.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com boat trailer dolly mover hand tow jockey wheel",
+   "https://www.pricerunner.se/search?q=trailerflyttare"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099968737701",
+  "url": "https://www.temu.com/se/g-601099968737701.html",
+  "title": "Electric trailer dolly 5000 lbs, 350W 12V",
+  "already_known": false,
+  "concept": "trailerflyttare-for-hand",
+  "object": "Båttrailern som ska rangeras på tomten inför vintern",
+  "owner_owns": "Båttrailer",
+  "friction": "Trailern med båt ska in i hörnet av tomten; bilen får inte plats att backa",
+  "old_way": "Backa bilen sju gånger, eller dra för hand",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Lastkapacitet",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "vidaXL Motoriserat stödhjul trailer 12V 3 369 kr; vidaXL stödhjul med klämma 987 kr; VEVOR domkraft med hjul 1 744 kr (PriceRunner)",
+   "anchor_price_sek": 987,
+   "anchor_url": "https://www.pricerunner.se/search?q=trailerflyttare",
+   "searches": [
+    "PriceRunner trailerflyttare"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "FAIL — tung stålvara, landad kostnad hamnar över 420 kr-taket och svenskt pris över 1 000 kr"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Svårt att flytta båttrailern på tomten?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "> 1 000 kr",
+   "skrymmande fraktvara",
+   "samma form finns i svensk marketplace"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Stål och frakt spräcker både taket och uppslaget.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com boat trailer dolly mover hand tow jockey wheel",
+   "https://www.pricerunner.se/search?q=trailerflyttare"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "606303099437289",
+  "url": "https://www.temu.com/se/g-606303099437289.html",
+  "title": "Electric trailer dolly 5500 lbs, 380W 12V",
+  "already_known": false,
+  "concept": "trailerflyttare-for-hand",
+  "object": "Båttrailern som ska rangeras på tomten inför vintern",
+  "owner_owns": "Båttrailer",
+  "friction": "Trailern med båt ska in i hörnet av tomten; bilen får inte plats att backa",
+  "old_way": "Backa bilen sju gånger, eller dra för hand",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Lastkapacitet",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "vidaXL Motoriserat stödhjul trailer 12V 3 369 kr; vidaXL stödhjul med klämma 987 kr; VEVOR domkraft med hjul 1 744 kr (PriceRunner)",
+   "anchor_price_sek": 987,
+   "anchor_url": "https://www.pricerunner.se/search?q=trailerflyttare",
+   "searches": [
+    "PriceRunner trailerflyttare"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "FAIL — tung stålvara, landad kostnad hamnar över 420 kr-taket och svenskt pris över 1 000 kr"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Svårt att flytta båttrailern på tomten?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "> 1 000 kr",
+   "skrymmande fraktvara",
+   "samma form finns i svensk marketplace"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Stål och frakt spräcker både taket och uppslaget.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com boat trailer dolly mover hand tow jockey wheel",
+   "https://www.pricerunner.se/search?q=trailerflyttare"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099605690934",
+  "url": "https://www.temu.com/se/g-601099605690934.html",
+  "title": "Aluminum motorized jockey wheel trailer mover 12V 350W",
+  "already_known": false,
+  "concept": "trailerflyttare-for-hand",
+  "object": "Båttrailern som ska rangeras på tomten inför vintern",
+  "owner_owns": "Båttrailer",
+  "friction": "Trailern med båt ska in i hörnet av tomten; bilen får inte plats att backa",
+  "old_way": "Backa bilen sju gånger, eller dra för hand",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Lastkapacitet",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "vidaXL Motoriserat stödhjul trailer 12V 3 369 kr; vidaXL stödhjul med klämma 987 kr; VEVOR domkraft med hjul 1 744 kr (PriceRunner)",
+   "anchor_price_sek": 987,
+   "anchor_url": "https://www.pricerunner.se/search?q=trailerflyttare",
+   "searches": [
+    "PriceRunner trailerflyttare"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "FAIL — tung stålvara, landad kostnad hamnar över 420 kr-taket och svenskt pris över 1 000 kr"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Svårt att flytta båttrailern på tomten?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "> 1 000 kr",
+   "skrymmande fraktvara",
+   "samma form finns i svensk marketplace"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Stål och frakt spräcker både taket och uppslaget.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com boat trailer dolly mover hand tow jockey wheel",
+   "https://www.pricerunner.se/search?q=trailerflyttare"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099711141015",
+  "url": "https://www.temu.com/se/g-601099711141015.html",
+  "title": "Beach fishing cart 200 lbs, marine cart, two 11 in balloon tires, 7 rod holders",
+  "already_known": false,
+  "concept": "hamnvagn-bryggvagn",
+  "object": "Bryggan/hamnplanen där båten töms i oktober",
+  "owner_owns": "Båtplats + massor av prylar att bära",
+  "friction": "Dynor, batteri, kapell och elektronik bärs famnvis mellan båten och bilen",
+  "old_way": "Bära, eller låna hamnens vagn",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Lastkapacitet",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Hopfällbara transportvagnar/skrindor 379–1 879 kr i svensk kanal (HOME It, tectake, Northio, VONROC m.fl.)",
+   "anchor_price_sek": 379,
+   "anchor_url": "https://www.pricerunner.se/search?q=hamnvagn",
+   "searches": [
+    "PriceRunner hamnvagn"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "OSÄKER",
+   "presence": "FAIL",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "PASS",
+   "hook": "OSÄKER",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "strandvagn = sommarprodukt",
+   "svensk mass-commoditisering (skrindor i varje kedja)"
+  ],
+  "eliminated_at": "presence",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Marknadsförs som strandvagn, säljs i varje svensk kedja som skrinda.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com dock cart marine harbor trolley balloon wheels",
+   "https://www.pricerunner.se/search?q=hamnvagn"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099756089537",
+  "url": "https://www.temu.com/se/g-601099756089537.html",
+  "title": "Heavy duty fishing cart 350 lbs, aluminum pier wagon, 16 in PU balloon tires, 8 rod holders",
+  "already_known": false,
+  "concept": "hamnvagn-bryggvagn",
+  "object": "Bryggan/hamnplanen där båten töms i oktober",
+  "owner_owns": "Båtplats + massor av prylar att bära",
+  "friction": "Dynor, batteri, kapell och elektronik bärs famnvis mellan båten och bilen",
+  "old_way": "Bära, eller låna hamnens vagn",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Lastkapacitet",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Hopfällbara transportvagnar/skrindor 379–1 879 kr i svensk kanal (HOME It, tectake, Northio, VONROC m.fl.)",
+   "anchor_price_sek": 379,
+   "anchor_url": "https://www.pricerunner.se/search?q=hamnvagn",
+   "searches": [
+    "PriceRunner hamnvagn"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "OSÄKER",
+   "presence": "FAIL",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "PASS",
+   "hook": "OSÄKER",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "strandvagn = sommarprodukt",
+   "svensk mass-commoditisering (skrindor i varje kedja)"
+  ],
+  "eliminated_at": "presence",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Marknadsförs som strandvagn, säljs i varje svensk kedja som skrinda.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com dock cart marine harbor trolley balloon wheels",
+   "https://www.pricerunner.se/search?q=hamnvagn"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "602650665928088",
+  "url": "https://www.temu.com/se/g-602650665928088.html",
+  "title": "Beach fishing cart wagon trolley, 12 in balloon wheels, 23x15 cargo deck, hand pump",
+  "already_known": false,
+  "concept": "hamnvagn-bryggvagn",
+  "object": "Bryggan/hamnplanen där båten töms i oktober",
+  "owner_owns": "Båtplats + massor av prylar att bära",
+  "friction": "Dynor, batteri, kapell och elektronik bärs famnvis mellan båten och bilen",
+  "old_way": "Bära, eller låna hamnens vagn",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Lastkapacitet",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Hopfällbara transportvagnar/skrindor 379–1 879 kr i svensk kanal (HOME It, tectake, Northio, VONROC m.fl.)",
+   "anchor_price_sek": 379,
+   "anchor_url": "https://www.pricerunner.se/search?q=hamnvagn",
+   "searches": [
+    "PriceRunner hamnvagn"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "OSÄKER",
+   "presence": "FAIL",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "PASS",
+   "hook": "OSÄKER",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "strandvagn = sommarprodukt",
+   "svensk mass-commoditisering (skrindor i varje kedja)"
+  ],
+  "eliminated_at": "presence",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Marknadsförs som strandvagn, säljs i varje svensk kedja som skrinda.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com dock cart marine harbor trolley balloon wheels",
+   "https://www.pricerunner.se/search?q=hamnvagn"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099859946047",
+  "url": "https://www.temu.com/se/g-601099859946047.html",
+  "title": "Adjustable height aluminum beach cart, PVC balloon wheels, 15x15 deck",
+  "already_known": false,
+  "concept": "hamnvagn-bryggvagn",
+  "object": "Bryggan/hamnplanen där båten töms i oktober",
+  "owner_owns": "Båtplats + massor av prylar att bära",
+  "friction": "Dynor, batteri, kapell och elektronik bärs famnvis mellan båten och bilen",
+  "old_way": "Bära, eller låna hamnens vagn",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Lastkapacitet",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Hopfällbara transportvagnar/skrindor 379–1 879 kr i svensk kanal (HOME It, tectake, Northio, VONROC m.fl.)",
+   "anchor_price_sek": 379,
+   "anchor_url": "https://www.pricerunner.se/search?q=hamnvagn",
+   "searches": [
+    "PriceRunner hamnvagn"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "OSÄKER",
+   "presence": "FAIL",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "PASS",
+   "hook": "OSÄKER",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "strandvagn = sommarprodukt",
+   "svensk mass-commoditisering (skrindor i varje kedja)"
+  ],
+  "eliminated_at": "presence",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Marknadsförs som strandvagn, säljs i varje svensk kedja som skrinda.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com dock cart marine harbor trolley balloon wheels",
+   "https://www.pricerunner.se/search?q=hamnvagn"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099580834784",
+  "url": "https://www.temu.com/se/g-601099580834784.html",
+  "title": "VEVOR beach cart, 13 in TPU balloon wheels, 165 lbs, aviation aluminium",
+  "already_known": false,
+  "concept": "hamnvagn-bryggvagn",
+  "object": "Bryggan/hamnplanen där båten töms i oktober",
+  "owner_owns": "Båtplats + massor av prylar att bära",
+  "friction": "Dynor, batteri, kapell och elektronik bärs famnvis mellan båten och bilen",
+  "old_way": "Bära, eller låna hamnens vagn",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Lastkapacitet",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Hopfällbara transportvagnar/skrindor 379–1 879 kr i svensk kanal (HOME It, tectake, Northio, VONROC m.fl.)",
+   "anchor_price_sek": 379,
+   "anchor_url": "https://www.pricerunner.se/search?q=hamnvagn",
+   "searches": [
+    "PriceRunner hamnvagn"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "OSÄKER",
+   "presence": "FAIL",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "PASS",
+   "hook": "OSÄKER",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "strandvagn = sommarprodukt",
+   "svensk mass-commoditisering (skrindor i varje kedja)"
+  ],
+  "eliminated_at": "presence",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Marknadsförs som strandvagn, säljs i varje svensk kedja som skrinda.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com dock cart marine harbor trolley balloon wheels",
+   "https://www.pricerunner.se/search?q=hamnvagn"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099661067233",
+  "url": "https://www.temu.com/se/g-601099661067233.html",
+  "title": "Beach fishing cart balloon wheels, aluminium, 32x14 basket, anti-corrosion",
+  "already_known": false,
+  "concept": "hamnvagn-bryggvagn",
+  "object": "Bryggan/hamnplanen där båten töms i oktober",
+  "owner_owns": "Båtplats + massor av prylar att bära",
+  "friction": "Dynor, batteri, kapell och elektronik bärs famnvis mellan båten och bilen",
+  "old_way": "Bära, eller låna hamnens vagn",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Lastkapacitet",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Hopfällbara transportvagnar/skrindor 379–1 879 kr i svensk kanal (HOME It, tectake, Northio, VONROC m.fl.)",
+   "anchor_price_sek": 379,
+   "anchor_url": "https://www.pricerunner.se/search?q=hamnvagn",
+   "searches": [
+    "PriceRunner hamnvagn"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "OSÄKER",
+   "presence": "FAIL",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "PASS",
+   "hook": "OSÄKER",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "strandvagn = sommarprodukt",
+   "svensk mass-commoditisering (skrindor i varje kedja)"
+  ],
+  "eliminated_at": "presence",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Marknadsförs som strandvagn, säljs i varje svensk kedja som skrinda.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com dock cart marine harbor trolley balloon wheels",
+   "https://www.pricerunner.se/search?q=hamnvagn"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "602852596533926",
+  "url": "https://www.temu.com/se/g-602852596533926.html",
+  "title": "15W solar trickle charger maintainer with MPPT controller for car/RV/boat/marine",
+  "already_known": false,
+  "concept": "solcells-underhallsladdare-batbatteri",
+  "object": "Startbatteriet i båten som står på uppläggningsplatsen utan el",
+  "owner_owns": "Båt med 12V-batteri",
+  "friction": "Batteriet självurladdas och är dött i maj; det finns ingen el på uppläggningsplatsen",
+  "old_way": "Bära hem batteriet till garaget och koppla underhållsladdare",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Watt",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Bil 12V batteriladdare solpanel 396,55 kr; 12W laddarkit 279,99 kr; 12V 5,5W solcellspanel batteriladdare 675 kr (PriceRunner)",
+   "anchor_price_sek": 279,
+   "anchor_url": "https://www.pricerunner.se/search?q=solcellsladdare+12v",
+   "searches": [
+    "PriceRunner solcellsladdare 12v underhållsladdning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "FAIL — svensk marketplace ligger på 280–675 kr, vilket äter hela prisutrymmet"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "OSÄKER",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Är båtbatteriet dött varje vår?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "köpt fungerande old way ∧ jämförelsehandlad",
+   "samma form i svensk kanal under vårt tänkta pris"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Priskrig mot 280-kronorspaneler.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com boat battery solar trickle charger maintainer 12v marine",
+   "https://www.pricerunner.se/search?q=solcellsladdare+12v"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099604841749",
+  "url": "https://www.temu.com/se/g-601099604841749.html",
+  "title": "12V 25W solar battery charger maintainer, portable panel, SAE cables",
+  "already_known": false,
+  "concept": "solcells-underhallsladdare-batbatteri",
+  "object": "Startbatteriet i båten som står på uppläggningsplatsen utan el",
+  "owner_owns": "Båt med 12V-batteri",
+  "friction": "Batteriet självurladdas och är dött i maj; det finns ingen el på uppläggningsplatsen",
+  "old_way": "Bära hem batteriet till garaget och koppla underhållsladdare",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Watt",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Bil 12V batteriladdare solpanel 396,55 kr; 12W laddarkit 279,99 kr; 12V 5,5W solcellspanel batteriladdare 675 kr (PriceRunner)",
+   "anchor_price_sek": 279,
+   "anchor_url": "https://www.pricerunner.se/search?q=solcellsladdare+12v",
+   "searches": [
+    "PriceRunner solcellsladdare 12v underhållsladdning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "FAIL — svensk marketplace ligger på 280–675 kr, vilket äter hela prisutrymmet"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "OSÄKER",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Är båtbatteriet dött varje vår?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "köpt fungerande old way ∧ jämförelsehandlad",
+   "samma form i svensk kanal under vårt tänkta pris"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Priskrig mot 280-kronorspaneler.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com boat battery solar trickle charger maintainer 12v marine",
+   "https://www.pricerunner.se/search?q=solcellsladdare+12v"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099591486412",
+  "url": "https://www.temu.com/se/g-601099591486412.html",
+  "title": "20W solar panel 12V trickle charger kit for RV/boat battery maintenance",
+  "already_known": false,
+  "concept": "solcells-underhallsladdare-batbatteri",
+  "object": "Startbatteriet i båten som står på uppläggningsplatsen utan el",
+  "owner_owns": "Båt med 12V-batteri",
+  "friction": "Batteriet självurladdas och är dött i maj; det finns ingen el på uppläggningsplatsen",
+  "old_way": "Bära hem batteriet till garaget och koppla underhållsladdare",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Watt",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Bil 12V batteriladdare solpanel 396,55 kr; 12W laddarkit 279,99 kr; 12V 5,5W solcellspanel batteriladdare 675 kr (PriceRunner)",
+   "anchor_price_sek": 279,
+   "anchor_url": "https://www.pricerunner.se/search?q=solcellsladdare+12v",
+   "searches": [
+    "PriceRunner solcellsladdare 12v underhållsladdning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "FAIL — svensk marketplace ligger på 280–675 kr, vilket äter hela prisutrymmet"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "OSÄKER",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Är båtbatteriet dött varje vår?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "köpt fungerande old way ∧ jämförelsehandlad",
+   "samma form i svensk kanal under vårt tänkta pris"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Priskrig mot 280-kronorspaneler.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com boat battery solar trickle charger maintainer 12v marine",
+   "https://www.pricerunner.se/search?q=solcellsladdare+12v"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099645919958",
+  "url": "https://www.temu.com/se/g-601099645919958.html",
+  "title": "Solar battery trickle charger maintainer 12V portable kit",
+  "already_known": false,
+  "concept": "solcells-underhallsladdare-batbatteri",
+  "object": "Startbatteriet i båten som står på uppläggningsplatsen utan el",
+  "owner_owns": "Båt med 12V-batteri",
+  "friction": "Batteriet självurladdas och är dött i maj; det finns ingen el på uppläggningsplatsen",
+  "old_way": "Bära hem batteriet till garaget och koppla underhållsladdare",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Watt",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Bil 12V batteriladdare solpanel 396,55 kr; 12W laddarkit 279,99 kr; 12V 5,5W solcellspanel batteriladdare 675 kr (PriceRunner)",
+   "anchor_price_sek": 279,
+   "anchor_url": "https://www.pricerunner.se/search?q=solcellsladdare+12v",
+   "searches": [
+    "PriceRunner solcellsladdare 12v underhållsladdning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "FAIL — svensk marketplace ligger på 280–675 kr, vilket äter hela prisutrymmet"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "OSÄKER",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Är båtbatteriet dött varje vår?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "köpt fungerande old way ∧ jämförelsehandlad",
+   "samma form i svensk kanal under vårt tänkta pris"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Priskrig mot 280-kronorspaneler.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com boat battery solar trickle charger maintainer 12v marine",
+   "https://www.pricerunner.se/search?q=solcellsladdare+12v"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "603145124056199",
+  "url": "https://www.temu.com/se/g-603145124056199.html",
+  "title": "Rodent repellent 8-pack for house/car/RV/boat/garage/shed/cabin",
+  "already_known": false,
+  "concept": "gnagarskydd-vinterforvarad-bat",
+  "object": "Båten som står täckt hela vintern",
+  "owner_owns": "Båt",
+  "friction": "Möss flyttar in i dynor och kablage under vintern",
+  "old_way": "Råttfällor, giftbeten",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": []
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "OSÄKER",
+   "shelf": "UNKNOWN",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Har du haft möss i båten?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "förbrukningsvara",
+   "ultraljudsvarianten kräver 12V-matning"
+  ],
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Förbrukningsvara — utesluten i gate 1.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com rodent mouse repellent boat rv winter storage protection"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "602556377962741",
+  "url": "https://www.temu.com/se/g-602556377962741.html",
+  "title": "Mouse repellent pouches cinnamon/peppermint, pack of 10",
+  "already_known": false,
+  "concept": "gnagarskydd-vinterforvarad-bat",
+  "object": "Båten som står täckt hela vintern",
+  "owner_owns": "Båt",
+  "friction": "Möss flyttar in i dynor och kablage under vintern",
+  "old_way": "Råttfällor, giftbeten",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": []
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "OSÄKER",
+   "shelf": "UNKNOWN",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Har du haft möss i båten?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "förbrukningsvara",
+   "ultraljudsvarianten kräver 12V-matning"
+  ],
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Förbrukningsvara — utesluten i gate 1.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com rodent mouse repellent boat rv winter storage protection"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "603082847003028",
+  "url": "https://www.temu.com/se/g-603082847003028.html",
+  "title": "Rodent repellent 12-pack, outdoor mouse repellent",
+  "already_known": false,
+  "concept": "gnagarskydd-vinterforvarad-bat",
+  "object": "Båten som står täckt hela vintern",
+  "owner_owns": "Båt",
+  "friction": "Möss flyttar in i dynor och kablage under vintern",
+  "old_way": "Råttfällor, giftbeten",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": []
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "OSÄKER",
+   "shelf": "UNKNOWN",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Har du haft möss i båten?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "förbrukningsvara",
+   "ultraljudsvarianten kräver 12V-matning"
+  ],
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Förbrukningsvara — utesluten i gate 1.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com rodent mouse repellent boat rv winter storage protection"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099515454774",
+  "url": "https://www.temu.com/se/g-601099515454774.html",
+  "title": "Under hood ultrasonic rodent repeller 12V with strobe light",
+  "already_known": false,
+  "concept": "gnagarskydd-vinterforvarad-bat",
+  "object": "Båten som står täckt hela vintern",
+  "owner_owns": "Båt",
+  "friction": "Möss flyttar in i dynor och kablage under vintern",
+  "old_way": "Råttfällor, giftbeten",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": []
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "OSÄKER",
+   "shelf": "UNKNOWN",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Har du haft möss i båten?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "förbrukningsvara",
+   "ultraljudsvarianten kräver 12V-matning"
+  ],
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Förbrukningsvara — utesluten i gate 1.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com rodent mouse repellent boat rv winter storage protection"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099513944144",
+  "url": "https://www.temu.com/se/g-601099513944144.html",
+  "title": "10 pcs natural peppermint rodent repellent balls",
+  "already_known": false,
+  "concept": "gnagarskydd-vinterforvarad-bat",
+  "object": "Båten som står täckt hela vintern",
+  "owner_owns": "Båt",
+  "friction": "Möss flyttar in i dynor och kablage under vintern",
+  "old_way": "Råttfällor, giftbeten",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": []
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "OSÄKER",
+   "shelf": "UNKNOWN",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Har du haft möss i båten?",
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "förbrukningsvara",
+   "ultraljudsvarianten kräver 12V-matning"
+  ],
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Förbrukningsvara — utesluten i gate 1.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com rodent mouse repellent boat rv winter storage protection"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "602380619876633",
+  "url": "https://www.temu.com/se/g-602380619876633.html",
+  "title": "4-pack moisture absorber hanging bags, charcoal dehumidifier",
+  "already_known": true,
+  "concept": "fuktabsorbent-bat",
+  "object": "Båtens kajuta/sittbrunn under presenning",
+  "owner_owns": "Båt",
+  "friction": "Fukt och mögellukt",
+  "old_way": "1852 Marine Luftavfuktare 85 kr (samma form, svensk marin kanal)",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "1852 Marine Luftavfuktare",
+   "anchor_price_sek": 85,
+   "anchor_url": "https://www.pricerunner.se/search?q=avfuktare+b%C3%A5t+vinterf%C3%B6rvaring",
+   "searches": [
+    "PriceRunner avfuktare båt vinterförvaring"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "OSÄKER",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "förbrukningsvara",
+   "85 kr-ankare i svensk marin kanal"
+  ],
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Förbrukning + billigt svenskt ankare.",
+  "confidence": "HIGH",
+  "sources": [
+   "Seznam site:temu.com marine dehumidifier moisture absorber boat cabin renewable",
+   "https://www.pricerunner.se/search?q=avfuktare+b%C3%A5t+vinterf%C3%B6rvaring"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "603230822092933",
+  "url": "https://www.temu.com/se/g-603230822092933.html",
+  "title": "14 oz portable dehumidifier box, odor absorber",
+  "already_known": false,
+  "concept": "fuktabsorbent-bat",
+  "object": "Båtens kajuta/sittbrunn under presenning",
+  "owner_owns": "Båt",
+  "friction": "Fukt och mögellukt",
+  "old_way": "1852 Marine Luftavfuktare 85 kr (samma form, svensk marin kanal)",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "1852 Marine Luftavfuktare",
+   "anchor_price_sek": 85,
+   "anchor_url": "https://www.pricerunner.se/search?q=avfuktare+b%C3%A5t+vinterf%C3%B6rvaring",
+   "searches": [
+    "PriceRunner avfuktare båt vinterförvaring"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "OSÄKER",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "förbrukningsvara",
+   "85 kr-ankare i svensk marin kanal"
+  ],
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Förbrukning + billigt svenskt ankare.",
+  "confidence": "HIGH",
+  "sources": [
+   "Seznam site:temu.com marine dehumidifier moisture absorber boat cabin renewable",
+   "https://www.pricerunner.se/search?q=avfuktare+b%C3%A5t+vinterf%C3%B6rvaring"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601100977083624",
+  "url": "https://www.temu.com/se/g-601100977083624.html",
+  "title": "Heavy duty stainless steel 3-step telescoping pontoon boat ladder with handrails",
+  "already_known": false,
+  "concept": "badstege-bat",
+  "object": "Badstegen på akterspegeln",
+  "owner_owns": "Motorbåt",
+  "friction": "Svårt att ta sig upp ur vattnet",
+  "old_way": "Befintlig stege",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "VEVOR teleskopisk hopfällbar båtstege rostfritt stål 728,92–1 513 kr (PriceRunner, samma form); Nuova Rade/Båtsystem 2 699–8 079 kr",
+   "anchor_price_sek": 728,
+   "anchor_url": "https://www.pricerunner.se/search?q=b%C3%A5tstege+uppl%C3%A4ggning",
+   "searches": [
+    "PriceRunner båtstege uppläggning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "FAIL",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "FAIL",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "sommarprodukt",
+   "montering med bultar",
+   "samma form i svensk marketplace"
+  ],
+  "eliminated_at": "presence",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Badstege köps i juni; dessutom borrmontage.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com boat boarding ladder folding telescoping marine stainless",
+   "https://www.pricerunner.se/search?q=b%C3%A5tstege+uppl%C3%A4ggning"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099547063138",
+  "url": "https://www.temu.com/se/g-601099547063138.html",
+  "title": "Marine 4-step telescoping stainless steel folding swim platform ladder",
+  "already_known": false,
+  "concept": "badstege-bat",
+  "object": "Badstegen på akterspegeln",
+  "owner_owns": "Motorbåt",
+  "friction": "Svårt att ta sig upp ur vattnet",
+  "old_way": "Befintlig stege",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "VEVOR teleskopisk hopfällbar båtstege rostfritt stål 728,92–1 513 kr (PriceRunner, samma form); Nuova Rade/Båtsystem 2 699–8 079 kr",
+   "anchor_price_sek": 728,
+   "anchor_url": "https://www.pricerunner.se/search?q=b%C3%A5tstege+uppl%C3%A4ggning",
+   "searches": [
+    "PriceRunner båtstege uppläggning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "FAIL",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "FAIL",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "sommarprodukt",
+   "montering med bultar",
+   "samma form i svensk marketplace"
+  ],
+  "eliminated_at": "presence",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Badstege köps i juni; dessutom borrmontage.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com boat boarding ladder folding telescoping marine stainless",
+   "https://www.pricerunner.se/search?q=b%C3%A5tstege+uppl%C3%A4ggning"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099537194002",
+  "url": "https://www.temu.com/se/g-601099537194002.html",
+  "title": "3-step folding marine stainless steel telescopic ladder",
+  "already_known": false,
+  "concept": "badstege-bat",
+  "object": "Badstegen på akterspegeln",
+  "owner_owns": "Motorbåt",
+  "friction": "Svårt att ta sig upp ur vattnet",
+  "old_way": "Befintlig stege",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "VEVOR teleskopisk hopfällbar båtstege rostfritt stål 728,92–1 513 kr (PriceRunner, samma form); Nuova Rade/Båtsystem 2 699–8 079 kr",
+   "anchor_price_sek": 728,
+   "anchor_url": "https://www.pricerunner.se/search?q=b%C3%A5tstege+uppl%C3%A4ggning",
+   "searches": [
+    "PriceRunner båtstege uppläggning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "FAIL",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "FAIL",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "sommarprodukt",
+   "montering med bultar",
+   "samma form i svensk marketplace"
+  ],
+  "eliminated_at": "presence",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Badstege köps i juni; dessutom borrmontage.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com boat boarding ladder folding telescoping marine stainless",
+   "https://www.pricerunner.se/search?q=b%C3%A5tstege+uppl%C3%A4ggning"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601103122971382",
+  "url": "https://www.temu.com/se/g-601103122971382.html",
+  "title": "3-step stainless telescoping boat ladder, 900 lb, mounting hardware",
+  "already_known": false,
+  "concept": "badstege-bat",
+  "object": "Badstegen på akterspegeln",
+  "owner_owns": "Motorbåt",
+  "friction": "Svårt att ta sig upp ur vattnet",
+  "old_way": "Befintlig stege",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "VEVOR teleskopisk hopfällbar båtstege rostfritt stål 728,92–1 513 kr (PriceRunner, samma form); Nuova Rade/Båtsystem 2 699–8 079 kr",
+   "anchor_price_sek": 728,
+   "anchor_url": "https://www.pricerunner.se/search?q=b%C3%A5tstege+uppl%C3%A4ggning",
+   "searches": [
+    "PriceRunner båtstege uppläggning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "FAIL",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "FAIL",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "sommarprodukt",
+   "montering med bultar",
+   "samma form i svensk marketplace"
+  ],
+  "eliminated_at": "presence",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Badstege köps i juni; dessutom borrmontage.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com boat boarding ladder folding telescoping marine stainless",
+   "https://www.pricerunner.se/search?q=b%C3%A5tstege+uppl%C3%A4ggning"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601102969034376",
+  "url": "https://www.temu.com/se/g-601102969034376.html",
+  "title": "4-step heavy duty pontoon boat ladder, 600 lb, quick release brackets",
+  "already_known": false,
+  "concept": "badstege-bat",
+  "object": "Badstegen på akterspegeln",
+  "owner_owns": "Motorbåt",
+  "friction": "Svårt att ta sig upp ur vattnet",
+  "old_way": "Befintlig stege",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "VEVOR teleskopisk hopfällbar båtstege rostfritt stål 728,92–1 513 kr (PriceRunner, samma form); Nuova Rade/Båtsystem 2 699–8 079 kr",
+   "anchor_price_sek": 728,
+   "anchor_url": "https://www.pricerunner.se/search?q=b%C3%A5tstege+uppl%C3%A4ggning",
+   "searches": [
+    "PriceRunner båtstege uppläggning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "FAIL",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "FAIL",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "sommarprodukt",
+   "montering med bultar",
+   "samma form i svensk marketplace"
+  ],
+  "eliminated_at": "presence",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Badstege köps i juni; dessutom borrmontage.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com boat boarding ladder folding telescoping marine stainless",
+   "https://www.pricerunner.se/search?q=b%C3%A5tstege+uppl%C3%A4ggning"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099528916951",
+  "url": "https://www.temu.com/se/g-601099528916951.html",
+  "title": "3-step telescopic stainless boat ladder with handrail, 400 lbs",
+  "already_known": false,
+  "concept": "badstege-bat",
+  "object": "Badstegen på akterspegeln",
+  "owner_owns": "Motorbåt",
+  "friction": "Svårt att ta sig upp ur vattnet",
+  "old_way": "Befintlig stege",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "VEVOR teleskopisk hopfällbar båtstege rostfritt stål 728,92–1 513 kr (PriceRunner, samma form); Nuova Rade/Båtsystem 2 699–8 079 kr",
+   "anchor_price_sek": 728,
+   "anchor_url": "https://www.pricerunner.se/search?q=b%C3%A5tstege+uppl%C3%A4ggning",
+   "searches": [
+    "PriceRunner båtstege uppläggning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "FAIL",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "FAIL",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "sommarprodukt",
+   "montering med bultar",
+   "samma form i svensk marketplace"
+  ],
+  "eliminated_at": "presence",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Badstege köps i juni; dessutom borrmontage.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com boat boarding ladder folding telescoping marine stainless",
+   "https://www.pricerunner.se/search?q=b%C3%A5tstege+uppl%C3%A4ggning"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601104640447212",
+  "url": "https://www.temu.com/se/g-601104640447212.html",
+  "title": "Boat cover 800D 22 ft heavy duty waterproof, fits V-hull fish&ski, with storage bag",
+  "already_known": false,
+  "concept": "kapell-och-overdrag-bat-kajak",
+  "object": "Båten/kajaken/motorn under täckning",
+  "owner_owns": "Båt, kajak eller utombordare",
+  "friction": "Regn, löv, UV under uppläggningen",
+  "old_way": "Presenning",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Båtuppläggning: båtöverdrag, båtpresenning, båtstöttor, täckställning (fyra egna underkategorier, kartlagt 2026-09-04)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bat/batupplaggning/",
+   "searches": [
+    "curl biltema.se/bat/batupplaggning/",
+    "WebSearch biltema båtuppläggning täckställning presenningsstöd bockar sortiment"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "Biltema äger hela täckkategorin",
+   "motorhölje/båtmotorskydd/kajaköverdrag står på uppdragets uteslutningslista"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Redan testad kategori i kontot och Biltemas kärnsortiment.",
+  "confidence": "HIGH",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html",
+   "https://www.biltema.se/bat/batupplaggning/"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601103523369213",
+  "url": "https://www.temu.com/se/g-601103523369213.html",
+  "title": "Inflatable boat cover, 420D marine grade oxford, waterproof",
+  "already_known": false,
+  "concept": "kapell-och-overdrag-bat-kajak",
+  "object": "Båten/kajaken/motorn under täckning",
+  "owner_owns": "Båt, kajak eller utombordare",
+  "friction": "Regn, löv, UV under uppläggningen",
+  "old_way": "Presenning",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Båtuppläggning: båtöverdrag, båtpresenning, båtstöttor, täckställning (fyra egna underkategorier, kartlagt 2026-09-04)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bat/batupplaggning/",
+   "searches": [
+    "curl biltema.se/bat/batupplaggning/",
+    "WebSearch biltema båtuppläggning täckställning presenningsstöd bockar sortiment"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "Biltema äger hela täckkategorin",
+   "motorhölje/båtmotorskydd/kajaköverdrag står på uppdragets uteslutningslista"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Redan testad kategori i kontot och Biltemas kärnsortiment.",
+  "confidence": "HIGH",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html",
+   "https://www.biltema.se/bat/batupplaggning/"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601100780626348",
+  "url": "https://www.temu.com/se/g-601100780626348.html",
+  "title": "Heavy duty reinforced 420D kayak canoe cover",
+  "already_known": false,
+  "concept": "kapell-och-overdrag-bat-kajak",
+  "object": "Båten/kajaken/motorn under täckning",
+  "owner_owns": "Båt, kajak eller utombordare",
+  "friction": "Regn, löv, UV under uppläggningen",
+  "old_way": "Presenning",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Båtuppläggning: båtöverdrag, båtpresenning, båtstöttor, täckställning (fyra egna underkategorier, kartlagt 2026-09-04)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bat/batupplaggning/",
+   "searches": [
+    "curl biltema.se/bat/batupplaggning/",
+    "WebSearch biltema båtuppläggning täckställning presenningsstöd bockar sortiment"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "Biltema äger hela täckkategorin",
+   "motorhölje/båtmotorskydd/kajaköverdrag står på uppdragets uteslutningslista"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Redan testad kategori i kontot och Biltemas kärnsortiment.",
+  "confidence": "HIGH",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html",
+   "https://www.biltema.se/bat/batupplaggning/"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099703178480",
+  "url": "https://www.temu.com/se/g-601099703178480.html",
+  "title": "Boat cover replacement for jon boats 14 ft, heavy duty marine grade, trailerable",
+  "already_known": false,
+  "concept": "kapell-och-overdrag-bat-kajak",
+  "object": "Båten/kajaken/motorn under täckning",
+  "owner_owns": "Båt, kajak eller utombordare",
+  "friction": "Regn, löv, UV under uppläggningen",
+  "old_way": "Presenning",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Båtuppläggning: båtöverdrag, båtpresenning, båtstöttor, täckställning (fyra egna underkategorier, kartlagt 2026-09-04)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bat/batupplaggning/",
+   "searches": [
+    "curl biltema.se/bat/batupplaggning/",
+    "WebSearch biltema båtuppläggning täckställning presenningsstöd bockar sortiment"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "Biltema äger hela täckkategorin",
+   "motorhölje/båtmotorskydd/kajaköverdrag står på uppdragets uteslutningslista"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Redan testad kategori i kontot och Biltemas kärnsortiment.",
+  "confidence": "HIGH",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html",
+   "https://www.biltema.se/bat/batupplaggning/"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099988170240",
+  "url": "https://www.temu.com/se/g-601099988170240.html",
+  "title": "Waterproof gray kayak cover",
+  "already_known": false,
+  "concept": "kapell-och-overdrag-bat-kajak",
+  "object": "Båten/kajaken/motorn under täckning",
+  "owner_owns": "Båt, kajak eller utombordare",
+  "friction": "Regn, löv, UV under uppläggningen",
+  "old_way": "Presenning",
+  "price_usd": 16.63,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 0,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Båtuppläggning: båtöverdrag, båtpresenning, båtstöttor, täckställning (fyra egna underkategorier, kartlagt 2026-09-04)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bat/batupplaggning/",
+   "searches": [
+    "curl biltema.se/bat/batupplaggning/",
+    "WebSearch biltema båtuppläggning täckställning presenningsstöd bockar sortiment"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "Biltema äger hela täckkategorin",
+   "motorhölje/båtmotorskydd/kajaköverdrag står på uppdragets uteslutningslista"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Redan testad kategori i kontot och Biltemas kärnsortiment.",
+  "confidence": "HIGH",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html",
+   "https://www.biltema.se/bat/batupplaggning/"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601100259303834",
+  "url": "https://www.temu.com/se/g-601100259303834.html",
+  "title": "Gray waterproof kayak cover",
+  "already_known": false,
+  "concept": "kapell-och-overdrag-bat-kajak",
+  "object": "Båten/kajaken/motorn under täckning",
+  "owner_owns": "Båt, kajak eller utombordare",
+  "friction": "Regn, löv, UV under uppläggningen",
+  "old_way": "Presenning",
+  "price_usd": 14.97,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 2,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Båtuppläggning: båtöverdrag, båtpresenning, båtstöttor, täckställning (fyra egna underkategorier, kartlagt 2026-09-04)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bat/batupplaggning/",
+   "searches": [
+    "curl biltema.se/bat/batupplaggning/",
+    "WebSearch biltema båtuppläggning täckställning presenningsstöd bockar sortiment"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "Biltema äger hela täckkategorin",
+   "motorhölje/båtmotorskydd/kajaköverdrag står på uppdragets uteslutningslista"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Redan testad kategori i kontot och Biltemas kärnsortiment.",
+  "confidence": "HIGH",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html",
+   "https://www.biltema.se/bat/batupplaggning/"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099638462699",
+  "url": "https://www.temu.com/se/g-601099638462699.html",
+  "title": "Oxford cloth kayak dust cover",
+  "already_known": false,
+  "concept": "kapell-och-overdrag-bat-kajak",
+  "object": "Båten/kajaken/motorn under täckning",
+  "owner_owns": "Båt, kajak eller utombordare",
+  "friction": "Regn, löv, UV under uppläggningen",
+  "old_way": "Presenning",
+  "price_usd": 25.72,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 47,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Båtuppläggning: båtöverdrag, båtpresenning, båtstöttor, täckställning (fyra egna underkategorier, kartlagt 2026-09-04)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bat/batupplaggning/",
+   "searches": [
+    "curl biltema.se/bat/batupplaggning/",
+    "WebSearch biltema båtuppläggning täckställning presenningsstöd bockar sortiment"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "Biltema äger hela täckkategorin",
+   "motorhölje/båtmotorskydd/kajaköverdrag står på uppdragets uteslutningslista"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Redan testad kategori i kontot och Biltemas kärnsortiment.",
+  "confidence": "HIGH",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html",
+   "https://www.biltema.se/bat/batupplaggning/"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "603269678113942",
+  "url": "https://www.temu.com/se/g-603269678113942.html",
+  "title": "Kayak cover 210D thicken waterproof",
+  "already_known": false,
+  "concept": "kapell-och-overdrag-bat-kajak",
+  "object": "Båten/kajaken/motorn under täckning",
+  "owner_owns": "Båt, kajak eller utombordare",
+  "friction": "Regn, löv, UV under uppläggningen",
+  "old_way": "Presenning",
+  "price_usd": 14.1,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 17,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Båtuppläggning: båtöverdrag, båtpresenning, båtstöttor, täckställning (fyra egna underkategorier, kartlagt 2026-09-04)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bat/batupplaggning/",
+   "searches": [
+    "curl biltema.se/bat/batupplaggning/",
+    "WebSearch biltema båtuppläggning täckställning presenningsstöd bockar sortiment"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "Biltema äger hela täckkategorin",
+   "motorhölje/båtmotorskydd/kajaköverdrag står på uppdragets uteslutningslista"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Redan testad kategori i kontot och Biltemas kärnsortiment.",
+  "confidence": "HIGH",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html",
+   "https://www.biltema.se/bat/batupplaggning/"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601100376433772",
+  "url": "https://www.temu.com/se/g-601100376433772.html",
+  "title": "420D oxford cloth kayak cockpit cover",
+  "already_known": false,
+  "concept": "kapell-och-overdrag-bat-kajak",
+  "object": "Båten/kajaken/motorn under täckning",
+  "owner_owns": "Båt, kajak eller utombordare",
+  "friction": "Regn, löv, UV under uppläggningen",
+  "old_way": "Presenning",
+  "price_usd": 17.52,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 6,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Båtuppläggning: båtöverdrag, båtpresenning, båtstöttor, täckställning (fyra egna underkategorier, kartlagt 2026-09-04)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bat/batupplaggning/",
+   "searches": [
+    "curl biltema.se/bat/batupplaggning/",
+    "WebSearch biltema båtuppläggning täckställning presenningsstöd bockar sortiment"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "Biltema äger hela täckkategorin",
+   "motorhölje/båtmotorskydd/kajaköverdrag står på uppdragets uteslutningslista"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Redan testad kategori i kontot och Biltemas kärnsortiment.",
+  "confidence": "HIGH",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html",
+   "https://www.biltema.se/bat/batupplaggning/"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "607184003898156",
+  "url": "https://www.temu.com/se/g-607184003898156.html",
+  "title": "Kayak cover with bag",
+  "already_known": false,
+  "concept": "kapell-och-overdrag-bat-kajak",
+  "object": "Båten/kajaken/motorn under täckning",
+  "owner_owns": "Båt, kajak eller utombordare",
+  "friction": "Regn, löv, UV under uppläggningen",
+  "old_way": "Presenning",
+  "price_usd": 10.3,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 0,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Båtuppläggning: båtöverdrag, båtpresenning, båtstöttor, täckställning (fyra egna underkategorier, kartlagt 2026-09-04)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bat/batupplaggning/",
+   "searches": [
+    "curl biltema.se/bat/batupplaggning/",
+    "WebSearch biltema båtuppläggning täckställning presenningsstöd bockar sortiment"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "Biltema äger hela täckkategorin",
+   "motorhölje/båtmotorskydd/kajaköverdrag står på uppdragets uteslutningslista"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Redan testad kategori i kontot och Biltemas kärnsortiment.",
+  "confidence": "HIGH",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html",
+   "https://www.biltema.se/bat/batupplaggning/"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601105243949931",
+  "url": "https://www.temu.com/se/g-601105243949931.html",
+  "title": "46x40x45 inch boat cover",
+  "already_known": false,
+  "concept": "kapell-och-overdrag-bat-kajak",
+  "object": "Båten/kajaken/motorn under täckning",
+  "owner_owns": "Båt, kajak eller utombordare",
+  "friction": "Regn, löv, UV under uppläggningen",
+  "old_way": "Presenning",
+  "price_usd": 15.12,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 0,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Båtuppläggning: båtöverdrag, båtpresenning, båtstöttor, täckställning (fyra egna underkategorier, kartlagt 2026-09-04)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bat/batupplaggning/",
+   "searches": [
+    "curl biltema.se/bat/batupplaggning/",
+    "WebSearch biltema båtuppläggning täckställning presenningsstöd bockar sortiment"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "Biltema äger hela täckkategorin",
+   "motorhölje/båtmotorskydd/kajaköverdrag står på uppdragets uteslutningslista"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Redan testad kategori i kontot och Biltemas kärnsortiment.",
+  "confidence": "HIGH",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html",
+   "https://www.biltema.se/bat/batupplaggning/"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "602352702605124",
+  "url": "https://www.temu.com/se/g-602352702605124.html",
+  "title": "600D boat motor covers",
+  "already_known": false,
+  "concept": "kapell-och-overdrag-bat-kajak",
+  "object": "Båten/kajaken/motorn under täckning",
+  "owner_owns": "Båt, kajak eller utombordare",
+  "friction": "Regn, löv, UV under uppläggningen",
+  "old_way": "Presenning",
+  "price_usd": 10.17,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 2,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Båtuppläggning: båtöverdrag, båtpresenning, båtstöttor, täckställning (fyra egna underkategorier, kartlagt 2026-09-04)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bat/batupplaggning/",
+   "searches": [
+    "curl biltema.se/bat/batupplaggning/",
+    "WebSearch biltema båtuppläggning täckställning presenningsstöd bockar sortiment"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "Biltema äger hela täckkategorin",
+   "motorhölje/båtmotorskydd/kajaköverdrag står på uppdragets uteslutningslista"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Redan testad kategori i kontot och Biltemas kärnsortiment.",
+  "confidence": "HIGH",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html",
+   "https://www.biltema.se/bat/batupplaggning/"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "607672556435462",
+  "url": "https://www.temu.com/se/g-607672556435462.html",
+  "title": "Marine engine covers",
+  "already_known": false,
+  "concept": "kapell-och-overdrag-bat-kajak",
+  "object": "Båten/kajaken/motorn under täckning",
+  "owner_owns": "Båt, kajak eller utombordare",
+  "friction": "Regn, löv, UV under uppläggningen",
+  "old_way": "Presenning",
+  "price_usd": 16.01,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 0,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Båtuppläggning: båtöverdrag, båtpresenning, båtstöttor, täckställning (fyra egna underkategorier, kartlagt 2026-09-04)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bat/batupplaggning/",
+   "searches": [
+    "curl biltema.se/bat/batupplaggning/",
+    "WebSearch biltema båtuppläggning täckställning presenningsstöd bockar sortiment"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "Biltema äger hela täckkategorin",
+   "motorhölje/båtmotorskydd/kajaköverdrag står på uppdragets uteslutningslista"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Redan testad kategori i kontot och Biltemas kärnsortiment.",
+  "confidence": "HIGH",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html",
+   "https://www.biltema.se/bat/batupplaggning/"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "606376650766625",
+  "url": "https://www.temu.com/se/g-606376650766625.html",
+  "title": "Outdoor inflatable boat sunshade canopy",
+  "already_known": false,
+  "concept": "kapell-och-overdrag-bat-kajak",
+  "object": "Båten/kajaken/motorn under täckning",
+  "owner_owns": "Båt, kajak eller utombordare",
+  "friction": "Regn, löv, UV under uppläggningen",
+  "old_way": "Presenning",
+  "price_usd": 42.4,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 13,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Båtuppläggning: båtöverdrag, båtpresenning, båtstöttor, täckställning (fyra egna underkategorier, kartlagt 2026-09-04)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bat/batupplaggning/",
+   "searches": [
+    "curl biltema.se/bat/batupplaggning/",
+    "WebSearch biltema båtuppläggning täckställning presenningsstöd bockar sortiment"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "Biltema äger hela täckkategorin",
+   "motorhölje/båtmotorskydd/kajaköverdrag står på uppdragets uteslutningslista"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Redan testad kategori i kontot och Biltemas kärnsortiment.",
+  "confidence": "HIGH",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html",
+   "https://www.biltema.se/bat/batupplaggning/"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "605881320230542",
+  "url": "https://www.temu.com/se/g-605881320230542.html",
+  "title": "Yacht sunshade canopy",
+  "already_known": false,
+  "concept": "kapell-och-overdrag-bat-kajak",
+  "object": "Båten/kajaken/motorn under täckning",
+  "owner_owns": "Båt, kajak eller utombordare",
+  "friction": "Regn, löv, UV under uppläggningen",
+  "old_way": "Presenning",
+  "price_usd": 48.66,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 2,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Båtuppläggning: båtöverdrag, båtpresenning, båtstöttor, täckställning (fyra egna underkategorier, kartlagt 2026-09-04)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bat/batupplaggning/",
+   "searches": [
+    "curl biltema.se/bat/batupplaggning/",
+    "WebSearch biltema båtuppläggning täckställning presenningsstöd bockar sortiment"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "OSÄKER",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "Biltema äger hela täckkategorin",
+   "motorhölje/båtmotorskydd/kajaköverdrag står på uppdragets uteslutningslista"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Redan testad kategori i kontot och Biltemas kärnsortiment.",
+  "confidence": "HIGH",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html",
+   "https://www.biltema.se/bat/batupplaggning/"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099524076707",
+  "url": "https://www.temu.com/se/g-601099524076707.html",
+  "title": "Adjustable boat cover support poles",
+  "already_known": false,
+  "concept": "presenningsstod",
+  "object": "Båten/trailern/kapellet",
+  "owner_owns": "Båtägare",
+  "friction": "(se avslagsskäl)",
+  "old_way": null,
+  "price_usd": 67.24,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 41,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": []
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "svensk hylla i samma form"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Uteslutet av uppdraget; Biltema Presenningsstötta teleskopisk finns i sortimentet. Ekonomin faller dessutom: 67,24 USD ger landad 702–823 kr, 999 kr blir bara 1,21–1,42×.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "603262161892743",
+  "url": "https://www.temu.com/se/g-603262161892743.html",
+  "title": "Boat cover support poles support systems",
+  "already_known": true,
+  "concept": "presenningsstod",
+  "object": "Båten/trailern/kapellet",
+  "owner_owns": "Båtägare",
+  "friction": "(se avslagsskäl)",
+  "old_way": null,
+  "price_usd": 54.55,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 26,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": []
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "svensk hylla i samma form"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Redan känd goods-id (kanda-goods-id.txt) och uteslutet koncept.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "606413006967366",
+  "url": "https://www.temu.com/se/g-606413006967366.html",
+  "title": "Boat cover support pole",
+  "already_known": false,
+  "concept": "presenningsstod",
+  "object": "Båten/trailern/kapellet",
+  "owner_owns": "Båtägare",
+  "friction": "(se avslagsskäl)",
+  "old_way": null,
+  "price_usd": 84.52,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 0,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": []
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "svensk hylla i samma form"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Uteslutet koncept, dyrast av de tre.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "602852437155628",
+  "url": "https://www.temu.com/se/g-602852437155628.html",
+  "title": "Boat cover water bag with hook (presenningsvikt)",
+  "already_known": false,
+  "concept": "presenningsvikter",
+  "object": "Båten/trailern/kapellet",
+  "owner_owns": "Båtägare",
+  "friction": "(se avslagsskäl)",
+  "old_way": null,
+  "price_usd": 144.54,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 0,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": []
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PASS",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "< 199 kr eller > 1 000 kr"
+  ],
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "144,54 USD ger landad 1 509–1 769 kr — långt över 420 kr-taket.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "607204673485461",
+  "url": "https://www.temu.com/se/g-607204673485461.html",
+  "title": "Heavy-duty marine winch cover",
+  "already_known": false,
+  "concept": "vinschoverdrag",
+  "object": "Båten/trailern/kapellet",
+  "owner_owns": "Båtägare",
+  "friction": "(se avslagsskäl)",
+  "old_way": null,
+  "price_usd": 4.48,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 0,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": []
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PASS",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "< 199 kr eller > 1 000 kr"
+  ],
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "4,48 USD: svenskt pris kan aldrig nå 300 kr utan att bli löjligt; ingen ägarfråga bär en vinschkåpa.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601103660586817",
+  "url": "https://www.temu.com/se/g-601103660586817.html",
+  "title": "Stainless steel snaps buttons kit (kapellknappar)",
+  "already_known": false,
+  "concept": "kapellknappar",
+  "object": "Båten/trailern/kapellet",
+  "owner_owns": "Båtägare",
+  "friction": "(se avslagsskäl)",
+  "old_way": null,
+  "price_usd": 5.15,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 1,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": []
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PASS",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "< 199 kr eller > 1 000 kr"
+  ],
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Under 199 kr-golvet; reservdel, inte produkt.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "606504895788302",
+  "url": "https://www.temu.com/se/g-606504895788302.html",
+  "title": "Marine boat cover snap fastener kit",
+  "already_known": false,
+  "concept": "kapellknappar",
+  "object": "Båten/trailern/kapellet",
+  "owner_owns": "Båtägare",
+  "friction": "(se avslagsskäl)",
+  "old_way": null,
+  "price_usd": 167.26,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 0,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": []
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PASS",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "< 199 kr eller > 1 000 kr"
+  ],
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "167 USD för en knappsats = landad 1 746–2 047 kr. Orimligt.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "605536766507649",
+  "url": "https://www.temu.com/se/g-605536766507649.html",
+  "title": "Geometric pattern marine EVA deck pad",
+  "already_known": false,
+  "concept": "eva-dackmatta",
+  "object": "Båten/trailern/kapellet",
+  "owner_owns": "Båtägare",
+  "friction": "(se avslagsskäl)",
+  "old_way": null,
+  "price_usd": 28.49,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 2,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": []
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "FAIL",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "svensk hylla i samma form"
+  ],
+  "eliminated_at": "presence",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Limmas fast och köps när båten används, inte när den täcks; 499 kr ger bara 1,43–1,68×.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601101786729460",
+  "url": "https://www.temu.com/se/g-601101786729460.html",
+  "title": "Yacht anti-collision ball cover (fenderöverdrag)",
+  "already_known": false,
+  "concept": "fenderoverdrag",
+  "object": "Båten/trailern/kapellet",
+  "owner_owns": "Båtägare",
+  "friction": "(se avslagsskäl)",
+  "old_way": null,
+  "price_usd": 7.12,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 5,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": []
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "svensk hylla i samma form"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Osculati fenderöverdrag 99–169 kr i svensk kanal — samma form, lägre pris.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099603066244",
+  "url": "https://www.temu.com/se/g-601099603066244.html",
+  "title": "Upgraded boat storage bag, nylon mesh gear organizer",
+  "already_known": false,
+  "concept": "forvaringsnat-ombord",
+  "object": "Båten/trailern/kapellet",
+  "owner_owns": "Båtägare",
+  "friction": "(se avslagsskäl)",
+  "old_way": null,
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": []
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "FAIL",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "svensk hylla i samma form"
+  ],
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Nät utan ägt objekt och utan höstfriktion; under priströskeln.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "605795353740182",
+  "url": "https://www.temu.com/se/g-605795353740182.html",
+  "title": "Marine boat rail cup holder",
+  "already_known": false,
+  "concept": "mugghallare-bat",
+  "object": "Båten/trailern/kapellet",
+  "owner_owns": "Båtägare",
+  "friction": "(se avslagsskäl)",
+  "old_way": null,
+  "price_usd": 6.63,
+  "price_source": "temu.com/boat-cover-accessories-s.html (WebFetch 2026-09-04, USD)",
+  "rating": null,
+  "review_count": 0,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": []
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "FAIL",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "svensk hylla i samma form"
+  ],
+  "eliminated_at": "presence",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Komfortdetalj i säsong, under priströskeln.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099519676457",
+  "url": "https://www.temu.com/se/g-601099519676457.html",
+  "title": "Universal tow bar ball cover cap (dragkulskydd)",
+  "already_known": false,
+  "concept": "dragkulskydd",
+  "object": "Båten/trailern/kapellet",
+  "owner_owns": "Båtägare",
+  "friction": "(se avslagsskäl)",
+  "old_way": null,
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": []
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [
+   "svensk hylla i samma form"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Biltema Dragskydd 99,90 kr (fastställt i husvagnsklustret).",
+  "confidence": "MEDIUM",
+  "sources": [
+   "https://www.temu.com/boat-cover-accessories-s.html"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": null,
+  "url": null,
+  "title": null,
+  "already_known": false,
+  "concept": "motorlas-utombordare",
+  "object": "Utombordaren som sitter kvar på båten över vintern",
+  "owner_owns": "Båtägare",
+  "friction": "Finns i september–oktober",
+  "old_way": null,
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Motorlås för utombordare (egen underkategori /bat/batmotor/motorlas/), Happy Angler, SeaSea, Watski, Compass24",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bat/batmotor/motorlas/",
+   "searches": [
+    "WebSearch motorlås utombordare stöldskydd biltema jula pris",
+    "curl biltema.se/bat/batmotor/"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "UNKNOWN",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Biltema har en egen underkategori för motorlås. Gate 3 fäller konceptet innan en enda Temu-sökning.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch motorlås utombordare stöldskydd biltema jula pris",
+   "curl biltema.se/bat/batmotor/"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": null,
+  "url": null,
+  "title": null,
+  "already_known": false,
+  "concept": "spolmuff-motorspolning",
+  "object": "Utombordaren som konserveras vid upptagningen",
+  "owner_owns": "Båtägare",
+  "friction": "Finns i september–oktober",
+  "old_way": null,
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Spolmuffar (enkel/dubbel, /bat/batmotor/motorvard/) och Jula Kayoba Marine Spolmuff",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.jula.se/catalog/fritid/bat/batar/motorer-och-tillbehor/spolmuff-650071/",
+   "searches": [
+    "WebSearch motorspolare spolöron utombordare biltema jula pris"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "UNKNOWN",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Både Biltema och Jula säljer exakt samma form. Konserveringen är höstens starkaste handling — men hyllan är tagen.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch motorspolare spolöron utombordare biltema jula pris"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": null,
+  "url": null,
+  "title": null,
+  "already_known": false,
+  "concept": "skrovtvatt-bottenborste",
+  "object": "Skrovet som spolas direkt vid upptagningen",
+  "owner_owns": "Båtägare",
+  "friction": "Finns i september–oktober",
+  "old_way": null,
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Båtvård/Skrovvård (egen underkategori)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bat/batvard/skrovvard/",
+   "searches": [
+    "curl biltema.se/bat/batvard/",
+    "WebSearch site:temu.com boat hull cleaning brush scraper barnacle bottom telescopic"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "UNKNOWN",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Temu-sökningen gav bara bilborstar; Biltema har skrovvård som egen kategori.",
+  "confidence": "HIGH",
+  "sources": [
+   "curl biltema.se/bat/batvard/",
+   "WebSearch site:temu.com boat hull cleaning brush scraper barnacle bottom telescopic"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": null,
+  "url": null,
+  "title": null,
+  "already_known": false,
+  "concept": "brygga-tas-upp",
+  "object": "Bryggan/Y-bommen som ska tas upp före isen",
+  "owner_owns": "Båtägare",
+  "friction": "Finns i september–oktober",
+  "old_way": null,
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "V2-rapporten: 0 Temu-träffar på höstens bryggbehov"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "UNKNOWN",
+   "material": "UNKNOWN",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "PASS"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~1,3 milj fritidsbåtar i sjövärdigt skick; 19 % av svenska hushåll äger minst en fritidsbåt (≈900 000 hushåll)",
+   "source": "Båtlivsundersökningen 2025, Transportstyrelsen (https://www.transportstyrelsen.se/sv/sjofart/Fritidsbatar/batlivsundersokningen/)",
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": null
+  },
+  "negative_space_flags": [],
+  "eliminated_at": "listing",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "tier": "ELIM",
+  "main_risk": "Noll Temu-listningar både i V2 och nu. Bryggan är dessutom det enda objektet Biltemas båtavdelning inte har någon kategori för — men leverantörsledet saknar produkten.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "V2-rapporten: 0 Temu-träffar på höstens bryggbehov"
+  ]
+ }
+]

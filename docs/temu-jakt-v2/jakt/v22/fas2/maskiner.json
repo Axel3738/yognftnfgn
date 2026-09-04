@@ -628,8 +628,8 @@
   "sold": null,
   "variants": "1 variant (diameter)",
   "swedish_shelf": {
-   "verdict": "FAIL",
-   "chain_same_form": true,
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": null,
    "anchor_name": "Topway Bärbar Väggmonterad Vedklyvare 40 cm (PriceRunner)",
    "anchor_price_sek": 626.06,
    "anchor_url": "https://www.pricerunner.se/results?q=vedklyv+manuell+klyvj%C3%A4rn",
@@ -637,7 +637,7 @@
     "pricerunner.se/results?q=vedklyv manuell klyvjärn",
     "klyvring vedklyvning huggkubbe (WebSearch)"
    ],
-   "note": "Samma form på hyllan billigare: Blostm Manuell Vedsplitter Kil 1,8 kg 210,59 kr, Husqvarna Fäll-/klyvkil 550 g 299 kr. Ankaret 626 kr är bara 1,39x ett tänkt pris på 449 kr - under 1,6x-kravet, så ankarundantaget gäller inte."
+   "note": "Näraliggande former på hyllan: Topway Bärbar Väggmonterad Vedklyvare 40 cm 626,06 kr (närmast samma form), Blostm Manuell Vedsplitter Kil 1,8 kg 210,59 kr och Husqvarna Fäll-/klyvkil 550 g 299 kr (kilar = annan form). Ringformen syns inte i kedjorna. Ankaret 626 kr är bara 1,39x ett tänkt pris på 449 kr - under 1,6x-kravet. Gaten avgjordes aldrig: konceptet dog på ekonomin."
   },
   "economics": {
    "landed_low_sek": 540.9,
@@ -652,7 +652,7 @@
   "gates": {
    "object": "PASS",
    "presence": "PASS",
-   "shelf": "FAIL",
+   "shelf": "PENDING_VERIFICATION",
    "material": "BLOCKED_SOURCE",
    "economics": "FAIL",
    "variant": "PASS",
@@ -750,8 +750,8 @@
   "sold": null,
   "variants": "1 variant (diameter)",
   "swedish_shelf": {
-   "verdict": "FAIL",
-   "chain_same_form": true,
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": null,
    "anchor_name": "Topway Bärbar Väggmonterad Vedklyvare 40 cm (PriceRunner)",
    "anchor_price_sek": 626.06,
    "anchor_url": "https://www.pricerunner.se/results?q=vedklyv+manuell+klyvj%C3%A4rn",
@@ -759,7 +759,7 @@
     "pricerunner.se/results?q=vedklyv manuell klyvjärn",
     "klyvring vedklyvning huggkubbe (WebSearch)"
    ],
-   "note": "Samma form på hyllan billigare: Blostm Manuell Vedsplitter Kil 1,8 kg 210,59 kr, Husqvarna Fäll-/klyvkil 550 g 299 kr. Ankaret 626 kr är bara 1,39x ett tänkt pris på 449 kr - under 1,6x-kravet, så ankarundantaget gäller inte."
+   "note": "Näraliggande former på hyllan: Topway Bärbar Väggmonterad Vedklyvare 40 cm 626,06 kr (närmast samma form), Blostm Manuell Vedsplitter Kil 1,8 kg 210,59 kr och Husqvarna Fäll-/klyvkil 550 g 299 kr (kilar = annan form). Ringformen syns inte i kedjorna. Ankaret 626 kr är bara 1,39x ett tänkt pris på 449 kr - under 1,6x-kravet. Gaten avgjordes aldrig: konceptet dog på ekonomin."
   },
   "economics": {
    "landed_low_sek": null,
@@ -774,7 +774,7 @@
   "gates": {
    "object": "PASS",
    "presence": "PASS",
-   "shelf": "FAIL",
+   "shelf": "PENDING_VERIFICATION",
    "material": "BLOCKED_SOURCE",
    "economics": "FAIL",
    "variant": "PASS",
@@ -872,8 +872,8 @@
   "sold": null,
   "variants": "1 variant (diameter)",
   "swedish_shelf": {
-   "verdict": "FAIL",
-   "chain_same_form": true,
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": null,
    "anchor_name": "Topway Bärbar Väggmonterad Vedklyvare 40 cm (PriceRunner)",
    "anchor_price_sek": 626.06,
    "anchor_url": "https://www.pricerunner.se/results?q=vedklyv+manuell+klyvj%C3%A4rn",
@@ -881,7 +881,7 @@
     "pricerunner.se/results?q=vedklyv manuell klyvjärn",
     "klyvring vedklyvning huggkubbe (WebSearch)"
    ],
-   "note": "Samma form på hyllan billigare: Blostm Manuell Vedsplitter Kil 1,8 kg 210,59 kr, Husqvarna Fäll-/klyvkil 550 g 299 kr. Ankaret 626 kr är bara 1,39x ett tänkt pris på 449 kr - under 1,6x-kravet, så ankarundantaget gäller inte."
+   "note": "Näraliggande former på hyllan: Topway Bärbar Väggmonterad Vedklyvare 40 cm 626,06 kr (närmast samma form), Blostm Manuell Vedsplitter Kil 1,8 kg 210,59 kr och Husqvarna Fäll-/klyvkil 550 g 299 kr (kilar = annan form). Ringformen syns inte i kedjorna. Ankaret 626 kr är bara 1,39x ett tänkt pris på 449 kr - under 1,6x-kravet. Gaten avgjordes aldrig: konceptet dog på ekonomin."
   },
   "economics": {
    "landed_low_sek": null,
@@ -896,7 +896,7 @@
   "gates": {
    "object": "PASS",
    "presence": "PASS",
-   "shelf": "FAIL",
+   "shelf": "PENDING_VERIFICATION",
    "material": "BLOCKED_SOURCE",
    "economics": "FAIL",
    "variant": "PASS",
@@ -994,8 +994,8 @@
   "sold": null,
   "variants": "1 variant (diameter)",
   "swedish_shelf": {
-   "verdict": "FAIL",
-   "chain_same_form": true,
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": null,
    "anchor_name": "Topway Bärbar Väggmonterad Vedklyvare 40 cm (PriceRunner)",
    "anchor_price_sek": 626.06,
    "anchor_url": "https://www.pricerunner.se/results?q=vedklyv+manuell+klyvj%C3%A4rn",
@@ -1003,7 +1003,7 @@
     "pricerunner.se/results?q=vedklyv manuell klyvjärn",
     "klyvring vedklyvning huggkubbe (WebSearch)"
    ],
-   "note": "Samma form på hyllan billigare: Blostm Manuell Vedsplitter Kil 1,8 kg 210,59 kr, Husqvarna Fäll-/klyvkil 550 g 299 kr. Ankaret 626 kr är bara 1,39x ett tänkt pris på 449 kr - under 1,6x-kravet, så ankarundantaget gäller inte."
+   "note": "Näraliggande former på hyllan: Topway Bärbar Väggmonterad Vedklyvare 40 cm 626,06 kr (närmast samma form), Blostm Manuell Vedsplitter Kil 1,8 kg 210,59 kr och Husqvarna Fäll-/klyvkil 550 g 299 kr (kilar = annan form). Ringformen syns inte i kedjorna. Ankaret 626 kr är bara 1,39x ett tänkt pris på 449 kr - under 1,6x-kravet. Gaten avgjordes aldrig: konceptet dog på ekonomin."
   },
   "economics": {
    "landed_low_sek": 151.0,
@@ -1018,7 +1018,7 @@
   "gates": {
    "object": "PASS",
    "presence": "PASS",
-   "shelf": "FAIL",
+   "shelf": "PENDING_VERIFICATION",
    "material": "BLOCKED_SOURCE",
    "economics": "FAIL",
    "variant": "PASS",
