@@ -46,9 +46,16 @@
       "campaign_id": "120250053637760291",
       "produkt": "Kasta & Fånga-settet",
       "lage": "test",
-      "lage_motivering": "startad 2026-09-02, saknades i kartan — tillagd av /rond-auto",
+      "lage_motivering": "1 998,93 kr spend (livstid, avläst 2026-09-04), 1 köp, ROAS 0,58 mot BE 1,61 — under break-even. Stängdes AV av /rond-auto:s huvudflöde 2026-09-04 (trappan, potentialkollen föll: en annons med köp/ROAS över break-even fanns, men ingen spendtjuv nådde 40 % av spenden med noll köp). Saknade helt minnesfiler trots 15 launchade annonser — fick sin första riktiga batch via forsta-batch.md-flödet (specialregeln i rond-auto.md 4b), loggad CS_BATCH_KLAR inte FORSTA_BATCH_KLAR eftersom produkten redan haft spend/annonser innan minnessystemet fanns. Kampanjen förblir PAUSED — denna körning rörde inte Meta-status.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "3d1270ab-908c-8180-bad7-d625976be83a",
+      "notion_hub_datakalla": "collection://d66270ab-908c-82fd-8040-07dc00c4fc84",
+      "notion_hub_namn": "Throw and catch set creative hub",
+      "drive_produktmapp_id": "1YUVklEJDjq7kR3Pjkhq9uZU68sRa29iy",
+      "drive_produktmapp_not": "Joshs befintliga produktmapp \"Kasta & Fånga-set\" (ägs av joshnaelga146). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products (lanseringskön).",
+      "drive_senaste_batchmapp_id": "1BotXInKJ4XoBb3MVvD4_sTYOYFMAYvb3",
+      "minne": "products/kasta-fanga-settet/"
     },
     {
       "campaign_id": "120250011459910291",
