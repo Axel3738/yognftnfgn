@@ -1,0 +1,1752 @@
+[
+ {
+  "kluster": "tomt",
+  "goods_id": "601101587576926",
+  "url_se": "https://www.temu.com/se/g-601101587576926.html",
+  "title": "Heavy Duty Trash Lock with Adjustable Strap 31.5–51.2\" Animal-Proof Garbage Bin Lid Security, Windproof, Nylon Strap, No Tools (ur sökutdrag)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Sopkärlet (kommunalt 140–370 l kärl vid gatan)",
+  "owner_owns": "Ja — står vid tomtgränsen hos ~1,9 M småhus, synligt året om",
+  "friction": "Locket blåser upp i höststormar → regn i kärlet, blöta tunga påsar; kråkor/skator/måsar/räv drar ut matavfall och sprider det på uppfarten",
+  "old_way": "Sten eller tegelsten på locket, gummisnodd/spännband från Biltema, eller inget alls",
+  "variants": "Justerbar rem (80–130 cm), 1 storlek; 1-pack eller 2-pack",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Clas Ohlson/Rusta",
+   "price_sek": null,
+   "url": null,
+   "same_form": null,
+   "note": "EJ VERIFIERAD 2026-09-04 — kedjornas sök svarar 403/JS-skal; ur minne finns ingen sopkärls-locklås-rem hos de fyra, men det är ett minne, inte en mätning. Amazon.de har 28 träffar 'Mülltonnenverschluss' 10–43 USD (curl 2026-09-04) → kategorin finns i EU-marknaden."
+  },
+  "brand_anchor": {
+   "name": "Smartaskydd – Lås till avfallskärl (gravitationslås)",
+   "price_sek": 459,
+   "url": "https://smartaskydd.se/products/53-las/las-till-soptunna-avfallskarl/las-till-soptunna-oppnas-automatiskt-vid-tomning"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på ett objekt ägaren redan har och som står ute vid gatan; universellt i småhusklassen"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Höststormar sep–nov blåser upp lock; fåglar/räv vid matavfallskärlet syns i uppfarten — fotograferbart i oktober",
+    "season_sep_oct": "i säsong (storm, mörker, blöta löv i kärlet)"
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Ingen av kedjorna säljer ett locklås med rem – de säljer bara tunnor med lock. Enda svenska konkurrenten med samma form är en Fyndiq-listning på 179 kr (+frakt), och det premiumlås kunden googlar fram kostar 459 kr, så 249–279 kr är rimligt.",
+    "verified": true,
+    "verified_by": "h2.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Smartaskydd – Lås till avfallskärl (gravitationslås)",
+     "price_sek": 459,
+     "url": "https://smartaskydd.se/products/53-las/las-till-soptunna-avfallskarl/las-till-soptunna-oppnas-automatiskt-vid-tomning"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Sopkärlslocklås med rem (mot vind/djur)"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade IP:n 2026-09-04; video/hero granskas centralt av koordinatorn",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN (Temu-pris blockerat; DE-marknad 10–20 USD → gissning märkt som gissning: landad ~60–90 kr)",
+    "se_price_est_sek": 249,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Fyrfackssystem/matavfall = 2–4 kärl per hushåll → 2-pack 299 kr strax under fri-fraktgränsen (samma hävstång som spöhållaren)",
+    "result": "UNKNOWN — kräver Temu-pris"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant, justerbar rem; ingen parameter att kunna"
+   },
+   "hook": {
+    "text": "Blåser locket upp på soptunnan?",
+    "result": "PASS (6 ord, bara ägare med problemet svarar ja)"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Kärlet är omisskännligt i flödet (klistermärkena bevisade objektet: CPM/igenkänning), ägarklass ~1,9 M hushåll, man/kvinna 55+ småhus"
+   }
+  },
+  "negative_space_flags": [
+   "Delvis annonsskapad önskan: vindproblemet är verkligt men inte dagligt",
+   "Kommunens tömning: remmen måste lossas varje hämtdag (sopbilens lyft öppnar locket med tyngden) — beteendekrav",
+   "US-video visar tvättbjörn (raccoon) — fel djur för Sverige, kräver egen caption/klipp"
+  ],
+  "eliminated_at": null,
+  "structure_match": 62,
+  "category_novelty": 55,
+  "tier": "B",
+  "biggest_risk": "Att locket måste låsas upp varje hämtdag gör produkten till ett dagligt handgrepp — och att fyrfackskärlen (tunga lock) sällan blåser upp, så problemet är smalare än 1,9 M hushåll",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com trash can lid lock raccoon garbage bin",
+   "https://www.temu.com/heavy-duty--trash--with-adjustable-strap-31-5-51-2-animal-proof-garbage-bin-lid-security-for-outdoor-indoor-use-windproof-trash-can-tie-no-tools-installation-nylon-strap-for--raccoons-squirrels-fits-most-waste-bins-g-601101587576926.html",
+   "curl amazon.de 'mülltonne deckelverschluss wind' 2026-09-04: 28 träffar"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag",
+  "tier_agent": "B",
+  "tier_reason": "sopkärlslocklås: Smartaskydd 459 som ankare, objektet bevisat (klistermärkena); Temu-pris troligen < 100 kr → 300-kronorsgränsen; låses upp varje hämtdag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "601099601018284",
+  "url_se": "https://www.temu.com/se/g-601099601018284.html",
+  "title": "Trash Lid Lock — Secure Garbage Bin Bungee Cord System, keeps out pests (ur sökutdrag)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Sopkärlet (kommunalt 140–370 l kärl vid gatan)",
+  "owner_owns": "Ja — står vid tomtgränsen hos ~1,9 M småhus, synligt året om",
+  "friction": "Locket blåser upp i höststormar → regn i kärlet, blöta tunga påsar; kråkor/skator/måsar/räv drar ut matavfall och sprider det på uppfarten",
+  "old_way": "Sten eller tegelsten på locket, gummisnodd/spännband från Biltema, eller inget alls",
+  "variants": "Justerbar rem (80–130 cm), 1 storlek; 1-pack eller 2-pack",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Clas Ohlson/Rusta",
+   "price_sek": null,
+   "url": null,
+   "same_form": null,
+   "note": "EJ VERIFIERAD 2026-09-04 — kedjornas sök svarar 403/JS-skal; ur minne finns ingen sopkärls-locklås-rem hos de fyra, men det är ett minne, inte en mätning. Amazon.de har 28 träffar 'Mülltonnenverschluss' 10–43 USD (curl 2026-09-04) → kategorin finns i EU-marknaden."
+  },
+  "brand_anchor": {
+   "name": "Smartaskydd – Lås till avfallskärl (gravitationslås)",
+   "price_sek": 459,
+   "url": "https://smartaskydd.se/products/53-las/las-till-soptunna-avfallskarl/las-till-soptunna-oppnas-automatiskt-vid-tomning"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på ett objekt ägaren redan har och som står ute vid gatan; universellt i småhusklassen"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Höststormar sep–nov blåser upp lock; fåglar/räv vid matavfallskärlet syns i uppfarten — fotograferbart i oktober",
+    "season_sep_oct": "i säsong (storm, mörker, blöta löv i kärlet)"
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Ingen av kedjorna säljer ett locklås med rem – de säljer bara tunnor med lock. Enda svenska konkurrenten med samma form är en Fyndiq-listning på 179 kr (+frakt), och det premiumlås kunden googlar fram kostar 459 kr, så 249–279 kr är rimligt.",
+    "verified": true,
+    "verified_by": "h2.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Smartaskydd – Lås till avfallskärl (gravitationslås)",
+     "price_sek": 459,
+     "url": "https://smartaskydd.se/products/53-las/las-till-soptunna-avfallskarl/las-till-soptunna-oppnas-automatiskt-vid-tomning"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Sopkärlslocklås med rem (mot vind/djur)"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade IP:n 2026-09-04; video/hero granskas centralt av koordinatorn",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN (Temu-pris blockerat; DE-marknad 10–20 USD → gissning märkt som gissning: landad ~60–90 kr)",
+    "se_price_est_sek": 249,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Fyrfackssystem/matavfall = 2–4 kärl per hushåll → 2-pack 299 kr strax under fri-fraktgränsen (samma hävstång som spöhållaren)",
+    "result": "UNKNOWN — kräver Temu-pris"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "Bungee-variant, en storlek"
+   },
+   "hook": {
+    "text": "Blåser locket upp på soptunnan?",
+    "result": "PASS (6 ord, bara ägare med problemet svarar ja)"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Kärlet är omisskännligt i flödet (klistermärkena bevisade objektet: CPM/igenkänning), ägarklass ~1,9 M hushåll, man/kvinna 55+ småhus"
+   }
+  },
+  "negative_space_flags": [
+   "Samma som 601101587576926",
+   "Bungee kräver manuell av/på varje hämtdag"
+  ],
+  "eliminated_at": null,
+  "structure_match": 58,
+  "category_novelty": 55,
+  "tier": "B (dubblett)",
+  "biggest_risk": "Dubblett av 601101587576926 — samma risk; bungee-formen ser mer 'improviserad' ut än remmen med spänne",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com trash can lid lock raccoon garbage bin",
+   "https://www.temu.com/-lid----bin------out-pests--g-601099601018284.html"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag",
+  "tier_agent": "B",
+  "tier_reason": "dubblett av sopkärlslocklåset 601101587576926"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "605655280787928",
+  "url_se": "https://www.temu.com/se/g-605655280787928.html",
+  "title": "Premium 2X Outdoor Trash Can Locks for Animals — Universal Garbage Straps, Wheelie Bin Locks (ur Temu-söksida, USD-pris 136,59 visades — troligen fel/valutabugg, ej litad)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Sopkärlet (kommunalt 140–370 l kärl vid gatan)",
+  "owner_owns": "Ja — står vid tomtgränsen hos ~1,9 M småhus, synligt året om",
+  "friction": "Locket blåser upp i höststormar → regn i kärlet, blöta tunga påsar; kråkor/skator/måsar/räv drar ut matavfall och sprider det på uppfarten",
+  "old_way": "Sten eller tegelsten på locket, gummisnodd/spännband från Biltema, eller inget alls",
+  "variants": "Justerbar rem (80–130 cm), 1 storlek; 1-pack eller 2-pack",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Clas Ohlson/Rusta",
+   "price_sek": null,
+   "url": null,
+   "same_form": null,
+   "note": "EJ VERIFIERAD 2026-09-04 — kedjornas sök svarar 403/JS-skal; ur minne finns ingen sopkärls-locklås-rem hos de fyra, men det är ett minne, inte en mätning. Amazon.de har 28 träffar 'Mülltonnenverschluss' 10–43 USD (curl 2026-09-04) → kategorin finns i EU-marknaden."
+  },
+  "brand_anchor": {
+   "name": "Smartaskydd – Lås till avfallskärl (gravitationslås)",
+   "price_sek": 459,
+   "url": "https://smartaskydd.se/products/53-las/las-till-soptunna-avfallskarl/las-till-soptunna-oppnas-automatiskt-vid-tomning"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på ett objekt ägaren redan har och som står ute vid gatan; universellt i småhusklassen"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Höststormar sep–nov blåser upp lock; fåglar/räv vid matavfallskärlet syns i uppfarten — fotograferbart i oktober",
+    "season_sep_oct": "i säsong (storm, mörker, blöta löv i kärlet)"
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Ingen av kedjorna säljer ett locklås med rem – de säljer bara tunnor med lock. Enda svenska konkurrenten med samma form är en Fyndiq-listning på 179 kr (+frakt), och det premiumlås kunden googlar fram kostar 459 kr, så 249–279 kr är rimligt.",
+    "verified": true,
+    "verified_by": "h2.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Smartaskydd – Lås till avfallskärl (gravitationslås)",
+     "price_sek": 459,
+     "url": "https://smartaskydd.se/products/53-las/las-till-soptunna-avfallskarl/las-till-soptunna-oppnas-automatiskt-vid-tomning"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Sopkärlslocklås med rem (mot vind/djur)"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade IP:n 2026-09-04; video/hero granskas centralt av koordinatorn",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN (Temu-pris blockerat; DE-marknad 10–20 USD → gissning märkt som gissning: landad ~60–90 kr)",
+    "se_price_est_sek": 249,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Fyrfackssystem/matavfall = 2–4 kärl per hushåll → 2-pack 299 kr strax under fri-fraktgränsen (samma hävstång som spöhållaren)",
+    "result": "UNKNOWN — kräver Temu-pris"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant, justerbar rem; ingen parameter att kunna"
+   },
+   "hook": {
+    "text": "Blåser locket upp på soptunnan?",
+    "result": "PASS (6 ord, bara ägare med problemet svarar ja)"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Kärlet är omisskännligt i flödet (klistermärkena bevisade objektet: CPM/igenkänning), ägarklass ~1,9 M hushåll, man/kvinna 55+ småhus"
+   }
+  },
+  "negative_space_flags": [
+   "Samma som 601101587576926",
+   "Visat pris 136,59 USD orimligt — pris UNKNOWN"
+  ],
+  "eliminated_at": null,
+  "structure_match": 58,
+  "category_novelty": 55,
+  "tier": "B (dubblett)",
+  "biggest_risk": "Som 601101587576926; 2-pack är dock rätt förpackning för fyrfackshushåll",
+  "confidence": "LOW",
+  "sources": [
+   "WebFetch temu.com/search_result.html?search_key=wheelie bin lid strap (2026-09-04)"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag",
+  "tier_agent": "B",
+  "tier_reason": "dubblett av sopkärlslocklåset 601101587576926"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "601099530267994",
+  "url_se": "https://www.temu.com/se/g-601099530267994.html",
+  "title": "2pcs Trash Can Lock, Adjustable Lid Lock for 30–50 Gallon Bins, Sturdy Nylon Strap (ur sökutdrag)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Sopkärlet (kommunalt 140–370 l kärl vid gatan)",
+  "owner_owns": "Ja — står vid tomtgränsen hos ~1,9 M småhus, synligt året om",
+  "friction": "Locket blåser upp i höststormar → regn i kärlet, blöta tunga påsar; kråkor/skator/måsar/räv drar ut matavfall och sprider det på uppfarten",
+  "old_way": "Sten eller tegelsten på locket, gummisnodd/spännband från Biltema, eller inget alls",
+  "variants": "Justerbar rem (80–130 cm), 1 storlek; 1-pack eller 2-pack",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Clas Ohlson/Rusta",
+   "price_sek": null,
+   "url": null,
+   "same_form": null,
+   "note": "EJ VERIFIERAD 2026-09-04 — kedjornas sök svarar 403/JS-skal; ur minne finns ingen sopkärls-locklås-rem hos de fyra, men det är ett minne, inte en mätning. Amazon.de har 28 träffar 'Mülltonnenverschluss' 10–43 USD (curl 2026-09-04) → kategorin finns i EU-marknaden."
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Passar 30–50 gal = 115–190 l; svenska kärl 140–370 l — de stora fyrfackskärlen (370 l) faller utanför måttet"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Höststormar sep–nov blåser upp lock; fåglar/räv vid matavfallskärlet syns i uppfarten — fotograferbart i oktober",
+    "season_sep_oct": "i säsong (storm, mörker, blöta löv i kärlet)"
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Kunde inte verifieras (403). Ur minne: ingen av de fyra kedjorna har locklås-rem för sopkärl; halkrisk = Jula kan ha 'spännband' i samma funktion. Amazon.de bekräftar kategori i EU."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade IP:n 2026-09-04; video/hero granskas centralt av koordinatorn",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN (Temu-pris blockerat; DE-marknad 10–20 USD → gissning märkt som gissning: landad ~60–90 kr)",
+    "se_price_est_sek": 249,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Fyrfackssystem/matavfall = 2–4 kärl per hushåll → 2-pack 299 kr strax under fri-fraktgränsen (samma hävstång som spöhållaren)",
+    "result": "UNKNOWN — kräver Temu-pris"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant, justerbar rem; ingen parameter att kunna"
+   },
+   "hook": {
+    "text": "Blåser locket upp på soptunnan?",
+    "result": "PASS (6 ord, bara ägare med problemet svarar ja)"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Kärlet är omisskännligt i flödet (klistermärkena bevisade objektet: CPM/igenkänning), ägarklass ~1,9 M hushåll, man/kvinna 55+ småhus"
+   }
+  },
+  "negative_space_flags": [
+   "Samma som 601101587576926",
+   "Måttgräns 190 l utesluter 240/370 l-kärl"
+  ],
+  "eliminated_at": null,
+  "structure_match": 52,
+  "category_novelty": 55,
+  "tier": "C",
+  "biggest_risk": "Passar inte 240/370 l — halva kärlparken",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com wheelie bin lid lock strap wind",
+   "https://www.temu.com/sa-en/2pcs-trash-can-lock-adjustable-trash-can-lid-lock-for-30-to-50-gallon-bins-sturdy-nylon-strap-garbage-lid-lock-for-trash-buckle-square-bins-kitchen-organizers-and-storage-kitchen-accessories-g-601099530267994.html"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "601099546577446",
+  "url_se": "https://www.temu.com/se/g-601099546577446.html",
+  "title": "4/8pcs Wheelie Bin Lid Hinge Pins — replacement for broken hinge pins (ur sökutdrag)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Sopkärlets lockgångjärn",
+  "owner_owns": "Kärlet ägs oftast av kommunen/entreprenören, som byter trasiga delar själv",
+  "friction": "Bara om gångjärnspinnen är trasig — sällsynt, och då ringer man kommunen",
+  "old_way": "Felanmälan till kommunen, gratis byte",
+  "variants": "4- eller 8-pack",
+  "swedish_equivalent": null,
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på kärlet"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Problemet finns bara hos den bråkdel vars pinne gått av; kommunen byter gratis — annonsen måste skapa behovet",
+    "season_sep_oct": "ingen säsong"
+   }
+  },
+  "negative_space_flags": [
+   "Behovet måste skapas",
+   "Reservdel/commodity",
+   "< 199 kr"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 15,
+  "category_novelty": 40,
+  "tier": "ELIM",
+  "biggest_risk": "Inget behov",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com wheelie bin wheels replacement 240L"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "601100272045466",
+  "url_se": "https://www.temu.com/se/g-601100272045466.html",
+  "title": "Stainless Steel Wheelie Bin Storage Shed for 240L bins (ur sökutdrag, Temu AU)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Sopkärlet / tomten",
+  "owner_owns": "Ja",
+  "friction": "Kärlet står fult vid entrén; vill dölja det",
+  "old_way": "Spaljé, plank, eller inget",
+  "variants": "Storlek per antal kärl",
+  "swedish_equivalent": {
+   "retailer": "Jula/Bauhaus/Hornbach (sopkärlsskjul i trä/metall)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true,
+   "note": "ur minne, ej verifierad"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Objekt = kärlet, står ute"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Estetiskt vill, inte ett höstproblem",
+    "season_sep_oct": "ej säsongsbundet"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Sopkärlsskjul säljs av Jula/Bauhaus/Hornbach i samma form (ur minne, ej verifierad)"
+   }
+  },
+  "negative_space_flags": [
+   "Montering",
+   "Fraktvolym/vikt → pris sannolikt > 1 000 kr (pris UNKNOWN)",
+   "Abstrakt/estetisk payoff"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 20,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "Montering + frakt",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com wheelie bin wheels replacement 240L"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "602444314566497",
+  "url_se": "https://www.temu.com/se/g-602444314566497.html",
+  "title": "Post Mount Mailbox, Anti-Pry & Anti-Theft, lockable, magnetic door, 21×10.6×11.2 in (ur sökutdrag)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Brevlådan (ersätter den)",
+  "owner_owns": "Ja — men produkten är en ny brevlåda, inte ett tillbehör",
+  "friction": "Post stjäls / brevlådan rostig",
+  "old_way": "Köpa ny låda på Biltema/Jula",
+  "variants": "Färg",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Clas Ohlson/Rusta",
+   "price_sek": null,
+   "url": null,
+   "same_form": true,
+   "note": "Låsbara brevlådor är standardsortiment hos alla fyra (ur minne, ej verifierad idag)"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Byter ut objektet i stället för att fästa på det"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Poststöld/rost är inte säsongsbundet",
+    "season_sep_oct": "ej säsong"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form på alla fyra kedjorna; US-format (post mount, flagga) passar dessutom sämre svensk stolpe"
+   }
+  },
+  "negative_space_flags": [
+   "Svensk mass-commoditisering",
+   "Tung frakt",
+   "US-form"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 15,
+  "category_novelty": 50,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com mailbox lock post mount outdoor"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "607158838067971",
+  "url_se": "https://www.temu.com/se/g-607158838067971.html",
+  "title": "Outdoor Mailbox Cover, Weather Resistant Protective Wrap (ur Temu-söksida, 2,67 USD)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "US-brevlåda (rundad 'rural mailbox')",
+  "owner_owns": "Nej — svenska brevlådor har annan form; överdraget passar inte",
+  "friction": "—",
+  "old_way": "—",
+  "variants": "Mönster",
+  "swedish_equivalent": null,
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Passar bara amerikansk brevlådeform; dekor, inte skydd"
+   }
+  },
+  "negative_space_flags": [
+   "Objektet finns inte i Sverige",
+   "Dekor/vill",
+   "< 199 kr"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 5,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "Fel objekt",
+  "confidence": "HIGH",
+  "sources": [
+   "WebFetch temu.com/search_result.html?search_key=mailbox snow cover (2026-09-04)"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "609997207518178",
+  "url_se": "https://www.temu.com/se/g-609997207518178.html",
+  "title": "Protects Mailbox & Fence Posts From Grass Trimmer Damage, 4×4×6 in (ur Temu-söksida, 104 USD)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Brevlådestolpe/staketstolpe",
+  "owner_owns": "Ja (4×4-tums stolpe är dock US-mått)",
+  "friction": "Trimmern flisar stolpen — sommarproblem",
+  "old_way": "Trimma försiktigt / måla om",
+  "variants": "4×4 in, två höjder",
+  "swedish_equivalent": null,
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "US-stolpmått 4×4 in; svenska stolpar 70×70/95×95 mm"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Trimmersäsongen är slut i september",
+    "season_sep_oct": "ur säsong"
+   }
+  },
+  "negative_space_flags": [
+   "Fel säsong",
+   "> 1 000 kr troligt (104 USD listat)",
+   "Passform mot stolpmått"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 20,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "Säsong + pris",
+  "confidence": "HIGH",
+  "sources": [
+   "WebFetch temu.com/search_result.html?search_key=mailbox post accessories (2026-09-04)"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "605649106764684",
+  "url_se": "https://www.temu.com/se/g-605649106764684.html",
+  "title": "Customizable Luminous Number Mailbox Stickers (ur Temu-söksida, 6,54 USD)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Brevlådan / husnumret",
+  "owner_owns": "Ja",
+  "friction": "Budet/ambulansen hittar inte huset i höstmörkret — men det är sällan ägaren som märker det",
+  "old_way": "Biltema-siffror, reflextejp, inget",
+  "variants": "Siffror väljs per hus (SKU-val i annons)",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Clas Ohlson",
+   "price_sek": null,
+   "url": null,
+   "same_form": null,
+   "note": "Husnummer/reflexsiffror är standardsortiment (ur minne, ej verifierad)"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på brevlådan, universellt objekt vid gatan"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Mörker i säsong men problemet 'syns' hos besökaren, inte ägaren — vill, inte behov",
+    "season_sep_oct": "mörker = i säsong"
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Reflexsiffror finns i kedjorna (ur minne); självlysande utförande är en nyans, inte en ny form"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade IP:n 2026-09-04; video/hero granskas centralt av koordinatorn",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN (Temu-pris blockerat; söksida visade 6,54 USD → landad ~100 kr gissning)",
+    "se_price_est_sek": 149,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej (ett nummer per hus)",
+    "result": "FAIL — kan inte nå 300 kr; undantagsklustret kräver kostnad ≤ 80 kr"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Siffror väljs på sidan; går bra om sidan är byggd för det"
+   },
+   "hook": {
+    "text": "Syns ditt husnummer i mörkret?",
+    "result": "PASS (5 ord)"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Alla småhus"
+   }
+  },
+  "negative_space_flags": [
+   "< 199 kr",
+   "Behovet måste skapas (payoff hos besökaren)",
+   "Nära soptunneklistermärkena i mekanik men utan humorn"
+  ],
+  "eliminated_at": "economics",
+  "structure_match": 35,
+  "category_novelty": 35,
+  "tier": "C",
+  "biggest_risk": "Prisgolvet — ett pris under 199 kr har aldrig vunnit utom klistermärkena, och där bar humorn",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebFetch temu.com/search_result.html?search_key=wheelie bin accessories (2026-09-04)"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "601099540617480",
+  "url_se": "https://www.temu.com/se/g-601099540617480.html",
+  "title": "11pcs Flag Pole Accessories Kit — 30 ft rope, 4 nylon flag clips, 2 in pulley truck, cleat hook, 9–14 m poles (ur sökutdrag)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Flaggstången (6–12 m, ~hundratusentals svenska tomter)",
+  "owner_owns": "Ja — står ute, synlig, tydlig ägarklass",
+  "friction": "Sliten/avsliten lina, trasigt hjul i knoppen, smällande lina i höstvinden",
+  "old_way": "Jula-lina 8 mm + flaggstångsknop, eller ringa flaggstångsfirman",
+  "variants": "Kit (11 delar)",
+  "swedish_equivalent": {
+   "retailer": "Jula/Biltema/Clas Ohlson (flagglina 8 mm, flaggstångsknop, karbinhakar, vimpel)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true,
+   "note": "Standardsortiment hos alla tre (ur minne, ej verifierad idag)"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Tillbehör till ägt utomhusobjekt med stark ägarklass"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Linbyte görs när linan gått av — höststormar ger det, men inte hos många samtidigt; vimpel byts vår",
+    "season_sep_oct": "delvis"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Flagglina/knop/hakar finns hos Jula, Biltema, Clas Ohlson i samma form; US-kitets 1/4-tums lina och 'truck' passar inte svensk stång (svensk stång har fast knopp med hjul, lina 6–8 mm)"
+   }
+  },
+  "negative_space_flags": [
+   "Kit",
+   "Kräver att linan redan gått av",
+   "US-spec passar inte svensk stång"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 25,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "Passform mot svensk stång",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com flagpole rope halyard clip cleat"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "601102744832294",
+  "url_se": "https://www.temu.com/se/g-601102744832294.html",
+  "title": "50ft × 1/4\" Flag Pole Rope with 4pcs Stainless Steel Hook Clips (ur Temu-söksida, 7,76 USD)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Flaggstången",
+  "owner_owns": "Ja",
+  "friction": "Sliten lina",
+  "old_way": "Jula-lina",
+  "variants": "En",
+  "swedish_equivalent": {
+   "retailer": "Jula/Biltema/Clas Ohlson (flagglina 8 mm, flaggstångsknop, karbinhakar, vimpel)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true,
+   "note": "Standardsortiment hos alla tre (ur minne, ej verifierad idag)"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Tillbehör till flaggstång"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Bara vid avsliten lina",
+    "season_sep_oct": "delvis"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Flagglina finns i alla kedjor, samma form; 15 m räcker inte till 8 m-stång (kräver 2×höjd + 1 m)"
+   }
+  },
+  "negative_space_flags": [
+   "Commodity",
+   "< 199 kr"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 20,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebFetch temu.com/flagpole-clips-5020009954551-s.html (2026-09-04)"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "601099834639494",
+  "url_se": "https://www.temu.com/se/g-601099834639494.html",
+  "title": "4pcs Rope Cleats Steel 5.94 in Flagpole Cleat Hooks (ur sökutdrag)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Flaggstång/båt",
+  "owner_owns": "Ja",
+  "friction": "Ingen — knapen sitter redan på stången",
+  "old_way": "—",
+  "variants": "4-pack",
+  "swedish_equivalent": {
+   "retailer": "Biltema (båtknapar)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true,
+   "note": "ur minne"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Tillbehör"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Inget problem att lösa hos ägaren",
+    "season_sep_oct": "ingen"
+   }
+  },
+  "negative_space_flags": [
+   "Behov saknas",
+   "Reservdel"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 10,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "Inget behov",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com flagpole rope halyard clip cleat"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "601099534211372",
+  "url_se": "https://www.temu.com/se/g-601099534211372.html",
+  "title": "Heavy Duty Rust-Proof Automatic Gate Spring Closer, self-closing, 8 in, for wooden fence and pool gates (ur sökutdrag)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Trädgårdsgrinden",
+  "owner_owns": "Ja — står ute, används dagligen",
+  "friction": "Grinden står öppen/blåser upp i höstvinden; hunden smiter, rådjur går in",
+  "old_way": "Hasp, kroken, snöre, eller Jula-fjäder",
+  "variants": "8 in / 11,5 in / 14 in (längd)",
+  "swedish_equivalent": {
+   "retailer": "Jula/Biltema (grindfjäder/dörrfjäder)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true,
+   "note": "Ur minne: Jula säljer 'Grindstängare fjäder' och Biltema 'Dörrfjäder' i exakt denna form — ej verifierad idag (403)"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på ägd grind utomhus"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Höstvind + löv; grind som står öppen är fotograferbar",
+    "season_sep_oct": "i säsong"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Fjäderstängare i samma form säljs av Jula och Biltema (ur minne) för < 150 kr — och Temu-priset lär ligga < 60 kr → inget prisutrymme"
+   }
+  },
+  "negative_space_flags": [
+   "Svensk mass-commoditisering",
+   "< 199 kr",
+   "Montering (skruv, justering)"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 65,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan + prisgolv",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com gate closer spring self closing latch outdoor"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "601101455895551",
+  "url_se": "https://www.temu.com/se/g-601101455895551.html",
+  "title": "11.5\" Heavy Duty Self-Closing Gate Spring, adjustable, wooden/vinyl fences (ur sökutdrag)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Trädgårdsgrinden",
+  "owner_owns": "Ja",
+  "friction": "Som 601099534211372",
+  "old_way": "Som ovan",
+  "variants": "En längd",
+  "swedish_equivalent": {
+   "retailer": "Jula/Biltema (grindfjäder/dörrfjäder)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true,
+   "note": "Ur minne: Jula säljer 'Grindstängare fjäder' och Biltema 'Dörrfjäder' i exakt denna form — ej verifierad idag (403)"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Grind"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Höstvind",
+    "season_sep_oct": "i säsong"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form hos Jula/Biltema (ur minne)"
+   }
+  },
+  "negative_space_flags": [
+   "Commodity",
+   "< 199 kr"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 65,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com gate closer spring self closing latch outdoor"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "601099763267936",
+  "url_se": "https://www.temu.com/se/g-601099763267936.html",
+  "title": "50pcs High Visibility Orange Fiberglass Driveway Markers 48\" Reflective Snow Stakes 5/16\" (ur sökutdrag)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Uppfarten / infartens kant",
+  "owner_owns": "Ja (alla småhus)",
+  "friction": "Plogbilen/egen plog kör sönder gräskant, häck, brunnslock — skadan syns i april, käpparna sätts i oktober",
+  "old_way": "Bambukäppar från Granngården, gamla skidstavar, inget",
+  "variants": "Antal (25/50/100), färg",
+  "swedish_equivalent": {
+   "retailer": "Granngården (Bergman Plast PP 200 cm, Millarco WorkIT PP 200 cm, Millarco bambu 180 cm 10-p, Provia bambu 180 cm) — VERIFIERAT curl 2026-09-04; Biltema/Jula ur minne",
+   "price_sek": null,
+   "url": "https://www.granngarden.se/sok?q=sn%C3%B6k%C3%A4pp",
+   "same_form": true,
+   "note": "Priser gick inte att parsa ur sidan"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Universellt objekt (uppfart), står ute"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Sättningsfönstret (före tjäle) är sep–okt, men skadan är framtida — ägarpresens 1",
+    "season_sep_oct": "förberedelse i säsong"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form (PP/fiberglas-käpp med reflex) på Granngården, verifierat; Biltema/Jula ur minne"
+   }
+  },
+  "negative_space_flags": [
+   "Framtida skada",
+   "Commodity"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com driveway marker reflective snow stake",
+   "curl granngarden.se/sok?q=snökäpp 2026-09-04"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "601100230272566",
+  "url_se": "https://www.temu.com/se/g-601100230272566.html",
+  "title": "4pcs Stake Stainless Steel Driveway Reflective Poles, Spring-Type Snow Plow Markers, Driveway Guide Stake (ur sökutdrag, Temu CH)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Uppfarten / infartens kant",
+  "owner_owns": "Ja (alla småhus med plogad väg/uppfart)",
+  "friction": "Plogen kör sönder kanten; vanliga käppar bryts av plogen och sitter kvar som stumpar till våren",
+  "old_way": "Bambukäppar/PP-käppar som byts varje år",
+  "variants": "4-pack, en höjd",
+  "swedish_equivalent": {
+   "retailer": "Granngården (Bergman Plast PP 200 cm, Millarco WorkIT PP 200 cm, Millarco bambu 180 cm 10-p, Provia bambu 180 cm) — VERIFIERAT curl 2026-09-04; Biltema/Jula ur minne",
+   "price_sek": null,
+   "url": "https://www.granngarden.se/sok?q=sn%C3%B6k%C3%A4pp",
+   "same_form": false,
+   "note": "Kategorin finns (snökäppar) men fjädrande rostfri stolpe som reser sig efter påkörning är annan form/spec än engångskäpp — ej verifierad om Biltema/Jula har fjädrande variant"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Universellt objekt, står ute hela vintern, synligt från gatan"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Sätts i marken sep–okt före tjälen (rätt fönster), men problemet (plogskador) är minne från i våras — ägarpresens 1, inte 2",
+    "season_sep_oct": "förberedelse i säsong; ≥ 6 v kvar av sättningsfönstret"
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Samma kategori på Granngården (verifierat) men annan form; fjädrande rostfri variant hos de fyra kedjorna ej verifierad"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade IP:n 2026-09-04; video/hero granskas centralt av koordinatorn",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN (Temu-pris blockerat)",
+    "se_price_est_sek": 349,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Lång uppfart = 2–3 pack; 4-pack per köp",
+    "result": "UNKNOWN — kräver Temu-pris"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant"
+   },
+   "hook": {
+    "text": "Kör plogen sönder din gräskant varje vinter?",
+    "result": "PASS (7 ord)"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Villaägare 45–70 på landet/förort med plogning; uppfarten är mindre omisskännlig i bild än ett kärl (CPM-proxy medel)"
+   }
+  },
+  "negative_space_flags": [
+   "Framtida skada (presens 1)",
+   "Nära commodity-kategori",
+   "Rostfritt + fjäder = tung frakt per styck"
+  ],
+  "eliminated_at": null,
+  "structure_match": 48,
+  "category_novelty": 60,
+  "tier": "C",
+  "biggest_risk": "Presens: skadan ligger i februari och kunden köper bambu för 15 kr/st på Granngården i oktober",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com driveway marker reflective snow stake",
+   "https://www.temu.com/ch-en/4pcs--stake-stainless-steel-driveway-reflective-poles-spring-type-snow-plow-markers--driveway-guide-stake-stable--marker-for-driveway-g-601100230272566.html"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "601100552117461",
+  "url_se": "https://www.temu.com/se/g-601100552117461.html",
+  "title": "2 Pack Parking Curb Heavy Duty Rubber Garage Driveway Car Wheel Stopper (ur sökutdrag)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Garaget/uppfarten",
+  "owner_owns": "Ja",
+  "friction": "Kör för långt in i garaget — bekvämlighet, inte skada som syns nu",
+  "old_way": "Tennisboll i snöre, tejp på golvet",
+  "variants": "1/2-pack",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula (parkeringsstopp/hjulstopp gummi)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true,
+   "note": "ur minne, ej verifierad"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Universellt objekt"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Inte säsong; önskan mer än problem",
+    "season_sep_oct": "ej säsong"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Gummi-parkeringsstopp finns hos Biltema/Jula i samma form (ur minne)"
+   }
+  },
+  "negative_space_flags": [
+   "Jämförelsehandlad commodity",
+   "Tung frakt (gummi)"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 20,
+  "category_novelty": 65,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan + vikt",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com parking stop wheel stopper driveway"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "607660812405903",
+  "url_se": "https://www.temu.com/se/g-607660812405903.html",
+  "title": "2-Pack Handheld Spreader Set (salt/sand) (ur Temu-söksida, 15,91 USD)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Uppfarten/trappan vintertid",
+  "owner_owns": "Ja",
+  "friction": "Halka — kommer i november, inte i september",
+  "old_way": "Hink och skopa, Jula-handspridare",
+  "variants": "2-pack",
+  "swedish_equivalent": {
+   "retailer": "Jula/Biltema/Granngården (handspridare)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true,
+   "note": "ur minne"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Universellt"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Halkan finns inte i sep–okt; framtida problem",
+    "season_sep_oct": "ur säsong (för tidigt)"
+   }
+  },
+  "negative_space_flags": [
+   "Fel säsong",
+   "Commodity"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 20,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "Säsong",
+  "confidence": "HIGH",
+  "sources": [
+   "WebFetch temu.com/search_result.html?search_key=snow shovel (2026-09-04)"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "607629673883647",
+  "url_se": "https://www.temu.com/se/g-607629673883647.html",
+  "title": "Odoland 33\" Extendable Snow Brush with Detachable Ice Scraper (ur Temu-söksida, 26,40 USD)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Bilen",
+  "owner_owns": "Ja",
+  "friction": "Frost på rutan — börjar oktober",
+  "old_way": "Isskrapa från macken/Biltema",
+  "variants": "En",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Clas Ohlson/Rusta + varje bensinmack",
+   "price_sek": null,
+   "url": null,
+   "same_form": true,
+   "note": "ur minne"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Bilen"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Frostnätter från oktober",
+    "season_sep_oct": "i säsong från okt"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jämförelsehandlad commodity i alla kedjor och på macken"
+   }
+  },
+  "negative_space_flags": [
+   "Svensk mass-commoditisering",
+   "Jämförelsehandlad < 300 kr"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 15,
+  "category_novelty": 50,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan",
+  "confidence": "HIGH",
+  "sources": [
+   "WebFetch temu.com/search_result.html?search_key=ice scraper car (2026-09-04)"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "601099608118455",
+  "url_se": "https://www.temu.com/se/g-601099608118455.html",
+  "title": "Snow Removal Tool — Adjustable 21 ft Telescoping Aluminum Snow Roof Rake with wheels (ur sökutdrag)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Hustaket",
+  "owner_owns": "Ja",
+  "friction": "Snölast/istappar — finns i januari, inte i september",
+  "old_way": "Jula/Biltema takskrapa, eller stege",
+  "variants": "En",
+  "swedish_equivalent": {
+   "retailer": "Jula/Biltema (takskrapa/snöraka 300–600 kr)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true,
+   "note": "ur minne"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Huset"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Ingen snö i sep–okt; framtida skada",
+    "season_sep_oct": "ur säsong"
+   }
+  },
+  "negative_space_flags": [
+   "Framtida skada",
+   "Commodity",
+   "Lång frakt (6 m i delar)"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 20,
+  "category_novelty": 55,
+  "tier": "ELIM",
+  "biggest_risk": "Säsong",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com roof snow rake removal tool"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "607047705824065",
+  "url_se": "https://www.temu.com/se/g-607047705824065.html",
+  "title": "Heavy-Duty Snow Shovel with 29\" Blade & 10-Wheel Rolling Pusher (ur Temu-söksida, 94,46 USD)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Uppfarten",
+  "owner_owns": "Ja",
+  "friction": "Snöskottning — januari",
+  "old_way": "Snöskyffel/snöskuffa",
+  "variants": "En",
+  "swedish_equivalent": {
+   "retailer": "Jula/Biltema (snöskuffa på hjul)",
+   "price_sek": null,
+   "url": null,
+   "same_form": null,
+   "note": "ur minne, osäker"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Universellt"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Ingen snö i sep–okt",
+    "season_sep_oct": "ur säsong"
+   }
+  },
+  "negative_space_flags": [
+   "Fel säsong",
+   "> 1 000 kr troligt (94 USD)",
+   "Montering"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 20,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "Säsong + pris",
+  "confidence": "HIGH",
+  "sources": [
+   "WebFetch temu.com/search_result.html?search_key=snow shovel (2026-09-04)"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "601099524098765",
+  "url_se": "https://www.temu.com/se/g-601099524098765.html",
+  "title": "1pc Patio Furniture Covers Waterproof Heavy Duty for outdoor table and chairs, UV, snow protection (ur sökutdrag)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Utemöblerna",
+  "owner_owns": "Ja — står ute nu, ska täckas i oktober",
+  "friction": "Möblerna står kvar ute i regn/löv; för tungt att bära in",
+  "old_way": "Presenning + tegelstenar, eller Rusta-skydd",
+  "variants": "Många mått (bord+stolar-set)",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Rusta/Clas Ohlson (möbelskydd Oxford, 150–500 kr)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true,
+   "note": "Standardsortiment i september hos alla fyra (ur minne, ej verifierad idag)"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Ägt utomhusobjekt"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Exakt i säsong (möbler in/täcks i oktober)",
+    "season_sep_oct": "i säsong"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form och tyg hos alla fyra kedjorna; jämförelsehandlad — gräsklippartäcket (samma tyg, samma hyllstatus) var en förlorare"
+   }
+  },
+  "negative_space_flags": [
+   "Svensk mass-commoditisering",
+   "Jämförelsehandlad",
+   "Många mått (variant OSÄKER)"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 35,
+  "category_novelty": 30,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com patio furniture cover waterproof winter"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "601099521190155",
+  "url_se": "https://www.temu.com/se/g-601099521190155.html",
+  "title": "1pc Garden Bench Cover Oxford, drawstring, waterproof windproof anti-UV (ur sökutdrag)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Trädgårdsbänken",
+  "owner_owns": "Ja",
+  "friction": "Som ovan",
+  "old_way": "Som ovan",
+  "variants": "Längd (2/3-sits)",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Rusta/Clas Ohlson (möbelskydd Oxford, 150–500 kr)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true,
+   "note": "Standardsortiment i september hos alla fyra (ur minne, ej verifierad idag)"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Ägt"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "I säsong",
+    "season_sep_oct": "i säsong"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Bänkskydd finns hos Jula/Rusta (ur minne)"
+   }
+  },
+  "negative_space_flags": [
+   "Commodity",
+   "Mått"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 35,
+  "category_novelty": 35,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com patio furniture cover waterproof winter"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "603293367547124",
+  "url_se": "https://www.temu.com/se/g-603293367547124.html",
+  "title": "8-Pack 16 × 3.75 in Aluminum Anti-Slip Stair Strip with screws, coated black, stair nosing for wooden ramp/deck steps (ur sökutdrag)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Altantrappan / trätrappan till entrén",
+  "owner_owns": "Ja — står ute, används varje dag",
+  "friction": "Vått trä + löv + första frosten = halt i september–oktober; någon har redan halkat",
+  "old_way": "Halktejp från Biltema (butiksprodukt — testad förlorare), hönsnät, sand, inget",
+  "variants": "8-pack, en storlek (40 × 9,5 cm)",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula (halktejp — samma kategori, annan form); Bauhaus/Hornbach (trappnos aluminium — fackhandel)",
+   "price_sek": null,
+   "url": null,
+   "same_form": null,
+   "note": "EJ VERIFIERAD (403/JS-skal). Ur minne: skruvad aluminiumlist med halkbeläggning finns i bygghandeln men inte hos de fyra kedjorna i konsumentförpackning"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på ägd trätrappa utomhus"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Halka på vått trä är fotograferbar i september; löv + frost i oktober",
+    "season_sep_oct": "i säsong"
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Kategorin (halkskydd trappa) finns överallt; den skruvade aluminiumformen är sannolikt bara fackhandel — ej verifierad"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade IP:n 2026-09-04; video/hero granskas centralt av koordinatorn",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN (Temu-pris blockerat)",
+    "se_price_est_sek": 399,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Två trappor (altan + entré) = 2 pack; 8 st räcker till en trappa med 40 cm i mitten",
+    "result": "UNKNOWN — kräver Temu-pris"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "40 cm bred list på ett 90–120 cm trappsteg — kunden måste avgöra om 'mitten räcker' eller om han behöver 2–3 per steg (mätning = variantfriktion)"
+   },
+   "hook": {
+    "text": "Halt på altantrappan när det regnar?",
+    "result": "PASS (6 ord)"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Alla småhus med trätrapp; man 45–70 känner igen sin egen trappa"
+   }
+  },
+  "negative_space_flags": [
+   "Montering (skruv, 16 skruvar per trappa)",
+   "Kategorin har redan en förlorare (anti-slip tejp = butiksprodukt)",
+   "Mätfriktion (bredd)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 50,
+  "category_novelty": 40,
+  "tier": "C",
+  "biggest_risk": "Att kunden ser 'halktejp med skruv' och jämför med Biltemas 79-kronorsrulle — anchor saknas",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com deck anti slip strips outdoor stairs wood",
+   "https://www.temu.com/8-pack-16-x-3-75-inch-aluminum-antislip-stair-strip-with-screws-anti-slip-outdoor-stair-treads-coated-black-metal-stair-nosing-stair-treads-for-wooden-ramp-deck-steps-g-603293367547124.html"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "601099552627637",
+  "url_se": "https://www.temu.com/se/g-601099552627637.html",
+  "title": "2/3/10pcs Anti-Slip Stair Treads 30×6 in, black grip tape, 80 grit, peel-and-stick (ur sökutdrag)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Trappan",
+  "owner_owns": "Ja",
+  "friction": "Halka",
+  "old_way": "Biltema-tejp",
+  "variants": "Antal",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Clas Ohlson (halktejp)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true,
+   "note": "Redan testad av Axel: 'anti-slip tejp = butiksprodukt'"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Trappan"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "I säsong",
+    "season_sep_oct": "i säsong"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Exakt samma form som kedjornas halktejp — redan testad, butiksprodukt"
+   }
+  },
+  "negative_space_flags": [
+   "Redan testad/förlorare",
+   "Commodity"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 25,
+  "category_novelty": 10,
+  "tier": "ELIM",
+  "biggest_risk": "Redan avgjord",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com deck anti slip strips outdoor stairs wood"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ },
+ {
+  "kluster": "tomt",
+  "goods_id": "606938184154480",
+  "url_se": "https://www.temu.com/se/g-606938184154480.html",
+  "title": "48in Heavy Duty Steel Leaf Collector Tool (ur Temu-söksida, 181,75 USD)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Tomten/gräsmattan",
+  "owner_owns": "Ja",
+  "friction": "Löv i oktober — i säsong",
+  "old_way": "Kratta + presenning, lövblås",
+  "variants": "En",
+  "swedish_equivalent": {
+   "retailer": "Jula/Biltema (lövsamlare, lövkrattor)",
+   "price_sek": null,
+   "url": null,
+   "same_form": null,
+   "note": "ur minne"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Universellt"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Löv nu",
+    "season_sep_oct": "i säsong"
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Lövredskap finns överallt; exakt form okänd"
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN (listat 181,75 USD → landad > 2 500 kr)",
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "FAIL — > 1 000 kr"
+   }
+  },
+  "negative_space_flags": [
+   "> 1 000 kr",
+   "Montering"
+  ],
+  "eliminated_at": "economics",
+  "structure_match": 20,
+  "category_novelty": 55,
+  "tier": "ELIM",
+  "biggest_risk": "Pris",
+  "confidence": "HIGH",
+  "sources": [
+   "WebFetch temu.com/search_result.html?search_key=leaf scoops grabber (2026-09-04)"
+  ],
+  "temu_fetch": "EJ HÄMTAD — Temu-block 2026-09-04, hämtas centralt; titel ur sökutdrag"
+ }
+]

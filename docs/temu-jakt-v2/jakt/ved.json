@@ -1,0 +1,1934 @@
+[
+ {
+  "kluster": "ved",
+  "goods_id": "601099615828436",
+  "url_se": "https://www.temu.com/se/g-601099615828436.html",
+  "title": "Vedställsöverdrag 4–8 ft, PU-belagt, 4 nylonspännen (endast överdrag)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_slug_en": "outdoor-firewood-rack-cover-waterproof-wood-rack-covers-firewood-log-storage-covering-for-patio-logs-holder-4-8-ft-wood-holder-cover-weather-protection-pu-coating-log-rack-cover-with-4-nylon-buckles-only-cover-no-rack",
+  "object": "vedställ / vedhög utomhus",
+  "owner_owns": true,
+  "friction": "Veden kommer hem i september–oktober och står ute; presenningen blåser av, regn och snö går ner i högen, veden blir blöt och ser slarvig ut på tomten.",
+  "old_way": "Presenning + tegelstenar/sten, eller ingenting.",
+  "variants": "längd 4 ft / 8 ft (ägaren vet ungefär sitt ställs längd) — exakt SKU-lista UNKNOWN (listning ej läst)",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": "Vedställsöverdrag 2 st 174x173 cm (Dealproffsen, ord. 899)",
+   "price_sek": 549,
+   "url": "https://www.dealproffsen.se/vedforvaring/58799-vedstallsoverdrag-2-st-174-x-173-174-x-1615-svart-4255633584984.html"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på vedstället som står utomhus hela hösten/vintern."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Ved hem + höstregn + presenning som blåser av = fotograferbart i varje svensk villaträdgård i oktober.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Ingen kedja (Biltema/Jula/Rusta/Granngården/Bauhaus/Hornbach/Byggmax) säljer ett fristående vedställsöverdrag – bara möbelöverdrag, presenningar eller hela ställ (ur sökutdrag). Enda synliga svenska ankaret är en rea-marknadsplats (Dealproffsen 549 kr för 2 st, ord. 899), så ett pris runt 349–399 kr har luft men inget starkt märkesankare.",
+    "verified": true,
+    "verified_by": "h1.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Vedställsöverdrag 2 st 174x173 cm (Dealproffsen, ord. 899)",
+     "price_sek": 549,
+     "url": "https://www.dealproffsen.se/vedforvaring/58799-vedstallsoverdrag-2-st-174-x-173-174-x-1615-svart-4255633584984.html"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Vedställsöverdrag (bara överdrag, 4–8 ft, spännen)"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade alla hämtningar 2026-09-04 (tomt skal utan JSON-LD); koordinatorn hämtar video + hero centralt när blocket släppt.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Två vedställ (villa + fritidshus) eller 2×4 ft i rad = 2-pack meningsfullt.",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej läst (blockerat). Villkor för PASS: Temu-pris ≤ ~200 kr → landad ~300 → svenskt pris 599–699 (samma band som IBC-överdraget 489)."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En parameter ägaren kan ungefär: längd på stället (4/8 ft ≈ 1,2/2,4 m). Inga mått att ta med tumstock."
+   },
+   "hook": {
+    "result": "PASS",
+    "reason": "Blåser presenningen av veden igen?",
+    "text": "Blåser presenningen av veden igen?"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Vedställ/vedhög är omisskännlig i flödet; ~1 M+ hushåll eldar med ved (uppskattning, ej verifierad); man 45–70 småhus/fritidshus."
+   }
+  },
+  "negative_space_flags": [
+   "material ej verifierad",
+   "hylla ej verifierad"
+  ],
+  "eliminated_at": null,
+  "structure_match": 78,
+  "category_novelty": 70,
+  "tier": "A (villkorad)",
+  "biggest_risk": "Jula/Biltema kan ha ett överdrag i samma form för 149–249 kr — då krävs en synlig spec-skillnad (600D/PU + spännen mot tunn presenning) precis som 420D mot 85 g/m² på motorhöljet.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com firewood rack cover outdoor waterproof",
+   "Ad Library SE 'vedställ' = 0 aktiva; 'presenning ved' = 4 (presenningar, ej överdrag)"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "hylla verifierad (Dealproffsen 549–899, ingen kedja); en parameter ägaren vet (4/8 ft); vedhög = omisskännligt objekt. Material och Temu-pris osedda; överdragskategori (novelty 70)."
+ },
+ {
+  "kluster": "ved",
+  "goods_id": "601099588053506",
+  "url_se": "https://www.temu.com/se/g-601099588053506.html",
+  "title": "Vedställsöverdrag med öppningsbar front (för 2-plans litet ställ, endast överdrag)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_slug_en": "firewood-rack-cover-outdoor-log-rack-cover-with-openable-front-flap-firewood-rack-cover-waterproof-indoor-outdoor-log-storage-rack--2-tiers-small-firewood-rack-only-cover-log-rack-not-included",
+  "object": "vedställ utomhus",
+  "owner_owns": true,
+  "friction": "Samma som ovan, plus: varje gång han ska hämta ved måste hela presenningen av och på igen — i mörker och regn.",
+  "old_way": "Presenning som lyfts av vid varje vedhämtning.",
+  "variants": "passar 'liten 2-plans' ställ — passform mot ett specifikt ställ → mått krävs (UNKNOWN exakt)",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": "Vedställsöverdrag 2 st 174x173 cm (Dealproffsen, ord. 899)",
+   "price_sek": 549,
+   "url": "https://www.dealproffsen.se/vedforvaring/58799-vedstallsoverdrag-2-st-174-x-173-174-x-1615-svart-4255633584984.html"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på vedstället utomhus."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Daglig vedhämtning i oktober-mörkret; fliken är payoffen i bild.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Ingen kedja (Biltema/Jula/Rusta/Granngården/Bauhaus/Hornbach/Byggmax) säljer ett fristående vedställsöverdrag – bara möbelöverdrag, presenningar eller hela ställ (ur sökutdrag). Enda synliga svenska ankaret är en rea-marknadsplats (Dealproffsen 549 kr för 2 st, ord. 899), så ett pris runt 349–399 kr har luft men inget starkt märkesankare.",
+    "verified": true,
+    "verified_by": "h1.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Vedställsöverdrag 2 st 174x173 cm (Dealproffsen, ord. 899)",
+     "price_sek": 549,
+     "url": "https://www.dealproffsen.se/vedforvaring/58799-vedstallsoverdrag-2-st-174-x-173-174-x-1615-svart-4255633584984.html"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Vedställsöverdrag (bara överdrag, 4–8 ft, spännen)"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade alla hämtningar 2026-09-04 (tomt skal utan JSON-LD); koordinatorn hämtar video + hero centralt när blocket släppt.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Flera ställ = flera överdrag.",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej läst."
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "'2 tiers small' antyder passform mot ett visst ställ; om måtten kräver tumstock är ägarkunskapen 0–1."
+   },
+   "hook": {
+    "result": "PASS",
+    "reason": "Lyfter du presenningen varje vedhämtning?",
+    "text": "Lyfter du presenningen varje vedhämtning?"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Samma publik som #1; objektet omisskännligt."
+   }
+  },
+  "negative_space_flags": [
+   "passform mot specifikt ställ",
+   "material ej verifierad"
+  ],
+  "eliminated_at": null,
+  "structure_match": 70,
+  "category_novelty": 72,
+  "tier": "B",
+  "biggest_risk": "Passformen: överdraget är sytt för ett USA-ställ; svenska ställ har andra mått → returer.",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com firewood rack cover outdoor waterproof",
+   "Ad Library SE 'vedställ' = 0 aktiva; 'presenning ved' = 4 (presenningar, ej överdrag)"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "vedställsöverdrag med öppningsbar front — passform mot ett specifikt (USA-)ställ"
+ },
+ {
+  "kluster": "ved",
+  "goods_id": "601100317742962",
+  "url_se": "https://www.temu.com/se/g-601100317742962.html",
+  "title": "Vedställsöverdrag 4 ft 500D, 48×24×41 tum (fast mått)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_slug_en": "firewood-rack-cover-4-feet-500d-wood-rack-cover-waterproof-heavy-duty-4--outdoor-log-pile-holder-covers-storage-for-4ft-standard-fire-wood-rack-stands-48-x-24-x-41-inch",
+  "object": "vedställ utomhus",
+  "owner_owns": true,
+  "friction": "Som #1.",
+  "old_way": "Presenning.",
+  "variants": "ett fast mått 122×61×104 cm — passar bara 'standard 4 ft rack' (USA-format)",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Vedställ ute."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som #1.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Som #1. EJ VERIFIERAD 2026-09-04: WebSearch-budgeten var slut och Jula/Biltema/Rusta/Clas Ohlson/Bauhaus svarade 403/404/JS-skal på direktanrop. Hyllbedömningen är ur minne och markerad så. Ad Library SE (Meta MCP, aktiva annonser) är verifierad."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade alla hämtningar 2026-09-04 (tomt skal utan JSON-LD); koordinatorn hämtar video + hero centralt när blocket släppt.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Fast mått i tum för ett amerikanskt standardställ; svensk ägare måste mäta och gissa → returrisk. #1 (4–8 ft, spännen) täcker samma behov bättre."
+   },
+   "hook": {
+    "result": "PASS",
+    "reason": "Blåser presenningen av veden igen?",
+    "text": "Blåser presenningen av veden igen?"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Som #1."
+   }
+  },
+  "negative_space_flags": [
+   "passform utan ägarkunskap"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 55,
+  "category_novelty": 70,
+  "tier": "C",
+  "biggest_risk": "Måttet.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com firewood rack cover outdoor waterproof",
+   "Ad Library SE 'vedställ' = 0 aktiva; 'presenning ved' = 4 (presenningar, ej överdrag)"
+  ]
+ },
+ {
+  "kluster": "ved",
+  "goods_id": "601099610710547",
+  "url_se": "https://www.temu.com/se/g-601099610710547.html",
+  "title": "Vedställsbeslag för 45×95-regel, 1 par med sidostag (bygg eget ställ)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_slug_en": "firewood-log-rack-bracket-kit-firewood-holder-installed-by-2x4-lumber-diy-log-storage-rack-brackets-with-sidebars-iron-steel-wood-stacking-stand-accessory-for-outdoor-indoor-black-1-pair",
+  "object": "vedhögen (ägaren har ved men inget ställ)",
+  "owner_owns": true,
+  "friction": "Veden ligger i en hög på marken under presenning; nedersta lagret ruttnar.",
+  "old_way": "Pallar + presenning, eller stapel mot husväggen.",
+  "variants": "en variant (par)",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Fäster inte på något ägaren har — han måste köpa reglar och bygga. Objektet är veden, men produkten är ett byggprojekt."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Vedhög under presenning syns i oktober.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Vedställsbeslag för egna reglar finns sannolikt hos Biltema och Jula (ur minne, 99–249 kr) — samma form. EJ VERIFIERAD 2026-09-04: WebSearch-budgeten var slut och Jula/Biltema/Rusta/Clas Ohlson/Bauhaus svarade 403/404/JS-skal på direktanrop. Hyllbedömningen är ur minne och markerad så. Ad Library SE (Meta MCP, aktiva annonser) är verifierad."
+   },
+   "material": {
+    "result": "SKIPPED",
+    "reason": "Föll i tidigare gate — ingen dyr research."
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant."
+   },
+   "hook": {
+    "result": "PASS",
+    "reason": "Ligger veden i en hög under presenning?",
+    "text": "Ligger veden i hög under presenning?"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Ved-hushåll."
+   }
+  },
+  "negative_space_flags": [
+   "montering (bygga med reglar)",
+   "hylla sannolikt samma form"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 45,
+  "category_novelty": 60,
+  "tier": "C",
+  "biggest_risk": "Biltema/Jula-hyllan + att kunden måste köpa reglar och skruva.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com firewood rack bracket 2x4 outdoor log storage kit",
+   "Ad Library SE 'vedställ' = 0"
+  ]
+ },
+ {
+  "kluster": "ved",
+  "goods_id": "601101098895206",
+  "url_se": "https://www.temu.com/se/g-601101098895206.html",
+  "title": "Vedställsbeslag med 4 stödstänger, par",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_slug_en": "outdoor-firewood-rack-bracket-kit-with-4-support-bars-for-fire-wood-pile-storage-diy-fireplace-log-stacking-stand-holder-for-2x4--pair",
+  "object": "vedhögen",
+  "owner_owns": true,
+  "friction": "Som #4.",
+  "old_way": "Som #4.",
+  "variants": "en variant",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Som #4 — byggprojekt."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som #4.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Som #4. EJ VERIFIERAD 2026-09-04: WebSearch-budgeten var slut och Jula/Biltema/Rusta/Clas Ohlson/Bauhaus svarade 403/404/JS-skal på direktanrop. Hyllbedömningen är ur minne och markerad så. Ad Library SE (Meta MCP, aktiva annonser) är verifierad."
+   },
+   "material": {
+    "result": "SKIPPED",
+    "reason": "Föll i tidigare gate — ingen dyr research."
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant."
+   },
+   "hook": {
+    "result": "PASS",
+    "reason": "",
+    "text": "Ligger veden i hög under presenning?"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Ved-hushåll."
+   }
+  },
+  "negative_space_flags": [
+   "montering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 45,
+  "category_novelty": 60,
+  "tier": "C",
+  "biggest_risk": "Som #4.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com firewood rack bracket 2x4 outdoor log storage kit",
+   "Ad Library SE 'vedställ' = 0"
+  ]
+ },
+ {
+  "kluster": "ved",
+  "goods_id": "601099780785804",
+  "url_se": "https://www.temu.com/se/g-601099780785804.html",
+  "title": "Vedbärare canvas XL, förstärkta handtag",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_slug_en": "extra-large-heavy-duty-canvas-firewood-carrier-bag-with-reinforced-handles--fireplace-camping",
+  "object": "veden / kaminen",
+  "owner_owns": true,
+  "friction": "Bära ved från vedbod till kamin utan spån i hallen.",
+  "old_way": "Famnen, hink, IKEA-kasse.",
+  "variants": "en variant",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Används med veden varje dag från oktober."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Ja — daglig vedbärning.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Vedbärare i canvas säljs av Jula, Clas Ohlson, Rusta och Biltema för ~99–199 kr (ur minne, hög säkerhet) — samma form. Mass-commodity. EJ VERIFIERAD 2026-09-04: WebSearch-budgeten var slut och Jula/Biltema/Rusta/Clas Ohlson/Bauhaus svarade 403/404/JS-skal på direktanrop. Hyllbedömningen är ur minne och markerad så. Ad Library SE (Meta MCP, aktiva annonser) är verifierad."
+   },
+   "material": {
+    "result": "SKIPPED",
+    "reason": "Föll i tidigare gate — ingen dyr research."
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant."
+   },
+   "hook": {
+    "result": "PASS",
+    "reason": "",
+    "text": "Bär du in veden i famnen?"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Ved-hushåll."
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "köpt old way som fungerar < 300 kr"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 30,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com firewood log carrier bag canvas",
+   "Ad Library SE 'vedbärare' = 0, 'vedkorg' = 2 (Byggfabriken katalog)"
+  ]
+ },
+ {
+  "kluster": "ved",
+  "goods_id": "601099518526144",
+  "url_se": "https://www.temu.com/se/g-601099518526144.html",
+  "title": "1st, vattentät canvas stock tygväska, vedbärare (Temu-titel, läst 01:00 UTC innan blockeringen)",
+  "temu_price_sek": 44.99,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": [
+   "Hem & kök",
+   "Fläktar, AC & värme"
+  ],
+  "image_count": 1,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_slug_en": "1pc-waterproof-canvas-log-tote-bag-firewood-carrier-fireplace-log-carrier-waterproof-canvas-log-carrier-tote-wood-carrying-bag-for-firewood-foldable-wood-carrier-padded-handles-for-indoor-outdoor-fireplace-camping",
+  "object": "veden / kaminen",
+  "owner_owns": true,
+  "friction": "Som #6.",
+  "old_way": "Som #6.",
+  "variants": "en variant",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som #6."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som #6.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Som #6 — samma form hos alla fyra kedjor (ur minne). EJ VERIFIERAD 2026-09-04: WebSearch-budgeten var slut och Jula/Biltema/Rusta/Clas Ohlson/Bauhaus svarade 403/404/JS-skal på direktanrop. Hyllbedömningen är ur minne och markerad så. Ad Library SE (Meta MCP, aktiva annonser) är verifierad."
+   },
+   "material": {
+    "result": "SKIPPED",
+    "reason": "Föll i tidigare gate — ingen dyr research."
+   },
+   "economics": {
+    "landed_est_sek": 67,
+    "se_price_est_sek": 162,
+    "multiple": 2.4,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "FAIL",
+    "note": "Temu-pris 44,99 kr (LÄST) × 1,5 = ~67 kr landad; 2,4× = ~162 kr < 300 kr. Faller även utan hyllan."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant."
+   },
+   "hook": {
+    "result": "PASS",
+    "reason": "",
+    "text": "Bär du in veden i famnen?"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Ved-hushåll."
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "< 199 kr-klass"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 30,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan + priset.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com firewood log carrier bag canvas",
+   "Ad Library SE 'vedbärare' = 0, 'vedkorg' = 2 (Byggfabriken katalog)"
+  ]
+ },
+ {
+  "kluster": "ved",
+  "goods_id": "601099604664045",
+  "url_se": "https://www.temu.com/se/g-601099604664045.html",
+  "title": "Vedkärra i stål med hjul",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_slug_en": "firewood-cart-firewood-log-cart-with-wheels-firewood-carrier-cart-for-fireplace-heavy-duty-steel-wood-rolling--outdoor-and-indoor-wood-rack-storage-mover",
+  "object": "veden",
+  "owner_owns": true,
+  "friction": "Köra ved från vedbod till dörr.",
+  "old_way": "Skottkärra (som han redan har).",
+  "variants": "en variant",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Används med veden ute."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Ved hem i höst.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula och Biltema säljer vedkärror (ur minne) — samma form; dessutom har ägaren en skottkärra = köpt old way som fungerar. EJ VERIFIERAD 2026-09-04: WebSearch-budgeten var slut och Jula/Biltema/Rusta/Clas Ohlson/Bauhaus svarade 403/404/JS-skal på direktanrop. Hyllbedömningen är ur minne och markerad så. Ad Library SE (Meta MCP, aktiva annonser) är verifierad."
+   },
+   "material": {
+    "result": "SKIPPED",
+    "reason": "Föll i tidigare gate — ingen dyr research."
+   },
+   "economics": {
+    "result": "UNKNOWN",
+    "reason": "Skrymmande stålgods — landad kostnad sannolikt > Temu × 1,5; svenskt pris riskerar > 1 000 kr."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant."
+   },
+   "hook": {
+    "result": "OSÄKER",
+    "reason": "",
+    "text": "Kör du veden i skottkärran?"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Ved-hushåll."
+   }
+  },
+  "negative_space_flags": [
+   "köpt old way som fungerar",
+   "> 1 000 kr-risk",
+   "fraktvolym"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 35,
+  "category_novelty": 55,
+  "tier": "ELIM",
+  "biggest_risk": "Skottkärran finns redan.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com firewood cart wheels log hauler",
+   "Ad Library SE 'vedkärra' = 0"
+  ]
+ },
+ {
+  "kluster": "ved",
+  "goods_id": "601099524464699",
+  "url_se": "https://www.temu.com/se/g-601099524464699.html",
+  "title": "Fuktmätare för ved (stift)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_slug_en": "wood-moisture-meter-firewood-moisture-tester-moisture-detector-paper-humidity-tester-for--material-firewood-moisture-meter",
+  "object": "veden",
+  "owner_owns": true,
+  "friction": "Blöt ved sotar glaset och ger dålig värme — men ägaren vet inte att det är fukten.",
+  "old_way": "Slå ihop två vedträn och lyssna, eller ingenting.",
+  "variants": "en variant",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Används på veden."
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Latent: problemet (fukthalt) syns inte; annonsen måste först övertyga om att veden är för blöt. Sotigt glas är symptomet, mätaren är ett steg bort.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema, Jula, Clas Ohlson säljer fuktmätare 149–299 kr (ur minne) — jämförelsehandlad commodity. Ad Library 'fuktmätare ved' = 0. EJ VERIFIERAD 2026-09-04: WebSearch-budgeten var slut och Jula/Biltema/Rusta/Clas Ohlson/Bauhaus svarade 403/404/JS-skal på direktanrop. Hyllbedömningen är ur minne och markerad så. Ad Library SE (Meta MCP, aktiva annonser) är verifierad."
+   },
+   "material": {
+    "result": "SKIPPED",
+    "reason": "Föll i tidigare gate — ingen dyr research."
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant."
+   },
+   "hook": {
+    "result": "FAIL",
+    "reason": "Kräver agitation.",
+    "text": "Vet du hur torr din ved är?"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Ved-hushåll."
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas",
+   "jämförelsehandlad < 300 kr"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 25,
+  "category_novelty": 50,
+  "tier": "ELIM",
+  "biggest_risk": "Latent behov.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com wood moisture meter firewood",
+   "Ad Library SE 'fuktmätare ved' = 0"
+  ]
+ },
+ {
+  "kluster": "ved",
+  "goods_id": "601099583674464",
+  "url_se": "https://www.temu.com/se/g-601099583674464.html",
+  "title": "Tändvedsklyv i gjutjärn, dubbla blad (Kindling Cracker-typ)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_slug_en": "kindling-splitter-with-dual-blades-upgraded-hand-log-splitter-manual-wood-splitting-wedge-cast-iron-firewood-cracker-cutter-tool-for-outdoor-camping-picnic",
+  "object": "veden + hammare/klubba (ägd); huggkubben",
+  "owner_owns": true,
+  "friction": "Tändved behövs varje dag från oktober; klyva små stickor med yxa på huggkubb = fingrar i vägen, stickor som flyger, tar tid i mörkret.",
+  "old_way": "Yxa/handyxa på huggkubb, eller köpta tändvedspåsar 60–100 kr/säck.",
+  "variants": "en variant (dubbelblad) — SKU-lista UNKNOWN",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": "Kindling Cracker Original (Jula / Hylte / Pricerunner 11 butiker)",
+   "price_sek": 1249,
+   "url": "https://www.pricerunner.se/pl/348-4580406/Traedgaardsredskap/Kindling-Cracker-Standard-priser"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Används med veden ute/i vedboden, kroppsligt varje dag i eldningssäsongen."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Tändvedsklyvning i oktober är daglig; huggkubb + yxa fotograferas i varje vedbod.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Både Jula (Kindling Cracker Original, ~999) och Clas Ohlson (egen gjutjärnsklyv med slägga, 999) säljer samma form, men ingen under 999 kr – originalet ligger 1 249–1 395 i 11 butiker, vilket är >1,6× ett pris runt 499–599 kr. Regeln ger PASS, men kunden har ett kedjealternativ i handen och kopior finns redan online från 295–419 kr, så positionen är 'samma sak för halva Julas pris', inte unik.",
+    "verified": true,
+    "verified_by": "h1.json",
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 999,
+    "anchor": {
+     "name": "Kindling Cracker Original (Jula / Hylte / Pricerunner 11 butiker)",
+     "price_sek": 1249,
+     "url": "https://www.pricerunner.se/pl/348-4580406/Traedgaardsredskap/Kindling-Cracker-Standard-priser"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Tändvedsklyv i gjutjärn (Kindling Cracker-typ)"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade alla hämtningar 2026-09-04 (tomt skal utan JSON-LD); koordinatorn hämtar video + hero centralt när blocket släppt.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Villa + fritidshus = 2 st.",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej läst. Gjutjärn 3–5 kg → fraktandelen gör ×1,5 osäker; villkor för PASS: landad ≤ 290 kr vid pris 699."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant."
+   },
+   "hook": {
+    "result": "PASS",
+    "reason": "Klyver du tändved med yxa?",
+    "text": "Klyver du tändved med yxa?"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Huggkubb/yxa/ved är omisskännligt; man 45–70 med kamin; kroppslig risk (fingrar) = rädslakomponent."
+   }
+  },
+  "negative_space_flags": [
+   "material ej verifierad",
+   "hylla ej verifierad",
+   "vikt/frakt"
+  ],
+  "eliminated_at": null,
+  "structure_match": 68,
+  "category_novelty": 85,
+  "tier": "A (villkorad)",
+  "biggest_risk": "Om Jula säljer samma form för 299 kr utan att vi kan visa Kindling Cracker-ankaret i bild faller prisutrymmet.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com kindling cracker log splitter wedge",
+   "Ad Library SE 'vedklyv' = 68 (alla bolist.se-katalog, hydraulklyv AL-KO) ; 'tändved klyv' = 0"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "hylla verifierad: Jula/Clas säljer samma form för 999–1 249 = ankare ≥ 1,6×; en variant; fingrar/rädsla; daglig friktion från oktober. Material, vikt/frakt och Temu-pris osedda."
+ },
+ {
+  "kluster": "ved",
+  "goods_id": "601099610405543",
+  "url_se": "https://www.temu.com/se/g-601099610405543.html",
+  "title": "Tändvedsklyv i stål, enkelblad",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_slug_en": "wood-kindling-cracker-firewood-kindling-splitter-steel-firewood-splitting-wedge-firewood-splitting-wedge",
+  "object": "veden",
+  "owner_owns": true,
+  "friction": "Som #10.",
+  "old_way": "Som #10.",
+  "variants": "en variant",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som #10."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som #10.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Som #10. EJ VERIFIERAD 2026-09-04: WebSearch-budgeten var slut och Jula/Biltema/Rusta/Clas Ohlson/Bauhaus svarade 403/404/JS-skal på direktanrop. Hyllbedömningen är ur minne och markerad så. Ad Library SE (Meta MCP, aktiva annonser) är verifierad."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade alla hämtningar 2026-09-04 (tomt skal utan JSON-LD); koordinatorn hämtar video + hero centralt när blocket släppt.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant."
+   },
+   "hook": {
+    "result": "PASS",
+    "reason": "",
+    "text": "Klyver du tändved med yxa?"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Som #10."
+   }
+  },
+  "negative_space_flags": [
+   "dubblett av #10"
+  ],
+  "eliminated_at": null,
+  "structure_match": 60,
+  "category_novelty": 85,
+  "tier": "C",
+  "biggest_risk": "Samma kategori som #10 — välj den med bäst leverantörsvideo när Temu går att läsa.",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com kindling cracker log splitter wedge",
+   "Ad Library SE 'vedklyv' = 68 (alla bolist.se-katalog, hydraulklyv AL-KO) ; 'tändved klyv' = 0"
+  ]
+ },
+ {
+  "kluster": "ved",
+  "goods_id": "601099511882116",
+  "url_se": "https://www.temu.com/se/g-601099511882116.html",
+  "title": "Kaminfläkt utan el, 6 blad, med magnettermometer",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_slug_en": "1pc-aluminum-alloy-fireplace-fan-non-electric-with-magnetic-thermometer-quiet-safe-heat-powered-wood-stove-fan-with-6-blade-for-big-house-wood-burning-stove-heater",
+  "object": "braskaminen",
+  "owner_owns": true,
+  "friction": "Värmen stannar vid kaminen/taket; resten av rummet kallt.",
+  "old_way": "Ingenting, eller bordsfläkt.",
+  "variants": "en variant",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Står på kaminen som används varje dag från oktober (inomhus, men i bruk — C2 = 0)."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Kaminen tänds i oktober.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jämförelsehandlad: Jula (Anslut), Clas Ohlson, Rusta, Biltema säljer kaminfläktar ~299–599 kr (ur minne). Jula annonserar den aktivt (Ad Library SE 'kaminfläkt' = 1, Jula-katalog, verifierat). Märkesankare Ecofan ~1 500 kr finns men vår ser ut som Julas, inte som Ecofan. Uppdraget flaggade 'jämförelsehandlad?' — ja. EJ VERIFIERAD 2026-09-04: WebSearch-budgeten var slut och Jula/Biltema/Rusta/Clas Ohlson/Bauhaus svarade 403/404/JS-skal på direktanrop. Hyllbedömningen är ur minne och markerad så. Ad Library SE (Meta MCP, aktiva annonser) är verifierad."
+   },
+   "material": {
+    "result": "SKIPPED",
+    "reason": "Föll i tidigare gate — ingen dyr research."
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant."
+   },
+   "hook": {
+    "result": "PASS",
+    "reason": "",
+    "text": "Blir bara kaminhörnet varmt?"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Kaminhushåll."
+   }
+  },
+  "negative_space_flags": [
+   "jämförelsehandlad",
+   "objekt inomhus"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 35,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "Jula-hyllan + Jula-annonsen.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com stove fan heat powered wood burning",
+   "Ad Library SE 'kaminfläkt' = 1 (Jula)"
+  ]
+ },
+ {
+  "kluster": "ved",
+  "goods_id": "601099741237569",
+  "url_se": "https://www.temu.com/se/g-601099741237569.html",
+  "title": "Askdammsugare sladdlös 15 l, för DeWalt 20V-batteri (batteri ingår ej)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_slug_en": "1pc-cordless-ash-vacuum-cleaner-4-gallon-portable-dustbin-with-hepa-filters-hose-nozzles-wheels-36-120w-compatible-with-dewalt-20-batteries-bagless-for-pellet-wood-stove-bbq-grill--tool",
+  "object": "braskaminen",
+  "owner_owns": true,
+  "friction": "Aska varje vecka; vanlig dammsugare tar eld/blir förstörd.",
+  "old_way": "Askspade + hink.",
+  "variants": "en variant, kräver DeWalt-batteri",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Kräver ett DeWalt 20V-batteri som de flesta inte har — produkten fungerar inte som den kommer. Dessutom askdammsugare med sladd hos Biltema/Jula 399–799 kr (ur minne)."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Aska i oktober.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "SKIPPED",
+    "reason": "Föll i tidigare gate — ingen dyr research."
+   },
+   "material": {
+    "result": "SKIPPED",
+    "reason": "Föll i tidigare gate — ingen dyr research."
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "hook": {
+    "result": "PASS",
+    "reason": "",
+    "text": "Dammsuger du askan ur kaminen?"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "kompatibilitet/batteri",
+   "jämförelsehandlad"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 25,
+  "category_novelty": 50,
+  "tier": "ELIM",
+  "biggest_risk": "Batteriet.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com ash vacuum fireplace cleaner",
+   "Ad Library SE 'askdammsugare' = 0"
+  ]
+ },
+ {
+  "kluster": "ved",
+  "goods_id": "601099550601878",
+  "url_se": "https://www.temu.com/se/g-601099550601878.html",
+  "title": "Cyklonavskiljare till grovdammsugare (aska)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_slug_en": "1pc-cyclone-for-vacuum-cleaners-cyclone-dust-collector-separator-for-shop-vac-separator-dust-powder-filter-for-vacuums-dust-extractor-accessories-woodworking-cyclone-for-vacuum-cleaner-powder-fireplace-ash-suction-tool-white-black",
+  "object": "grovdammsugaren + kaminen",
+  "owner_owns": true,
+  "friction": "Askan sätter igen grovdammsugarens filter efter en tömning.",
+  "old_way": "Askspade + hink.",
+  "variants": "färg vit/svart",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Monteras på en hink och kopplas till grovdammsugaren ägaren har."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Aska varje vecka från oktober.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema säljer cyklonavskiljare ~299 kr (ur minne); kräver egen hink + två slangar = montering; sannolikt < 199 kr på Temu. EJ VERIFIERAD 2026-09-04: WebSearch-budgeten var slut och Jula/Biltema/Rusta/Clas Ohlson/Bauhaus svarade 403/404/JS-skal på direktanrop. Hyllbedömningen är ur minne och markerad så. Ad Library SE (Meta MCP, aktiva annonser) är verifierad."
+   },
+   "material": {
+    "result": "SKIPPED",
+    "reason": "Föll i tidigare gate — ingen dyr research."
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "hook": {
+    "result": "OSÄKER",
+    "reason": "Kräver förklaring av mekanismen.",
+    "text": "Sätter askan igen dammsugaren?"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "montering",
+   "kräver förklaring",
+   "< 199 kr"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 65,
+  "tier": "C",
+  "biggest_risk": "Montering + förklaring.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com ash vacuum fireplace cleaner"
+  ]
+ },
+ {
+  "kluster": "ved",
+  "goods_id": "601099911311895",
+  "url_se": "https://www.temu.com/se/g-601099911311895.html",
+  "title": "Sotningsset 8 m, borrdrivet, roterande borste",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_slug_en": "1pc-26ft-drill-driven-chimney-sweep-kit-metal-nylon-flexible-rods-with-rotary-brush-heads-fireplace-cleaning-tool-set-for--chimney-maintenance",
+  "object": "skorstenen",
+  "owner_owns": true,
+  "friction": "Sot i rökkanalen.",
+  "old_way": "Sotaren (lagstadgad brandskyddskontroll + sotning i kommunens regi; egensotning kräver tillstånd).",
+  "variants": "en variant",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Skorstenen ägs och står ute."
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Ägaren ser inte sotet, och sotningen sköts av sotaren enligt lag — old way är en köpt tjänst som fungerar. Annonsen måste skapa både behovet och rätten att göra det själv."
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula/Biltema säljer sotningsset 299–499 kr (ur minne). Ad Library 'sotning skorsten borste' = 0. EJ VERIFIERAD 2026-09-04: WebSearch-budgeten var slut och Jula/Biltema/Rusta/Clas Ohlson/Bauhaus svarade 403/404/JS-skal på direktanrop. Hyllbedömningen är ur minne och markerad så. Ad Library SE (Meta MCP, aktiva annonser) är verifierad."
+   },
+   "material": {
+    "result": "SKIPPED",
+    "reason": "Föll i tidigare gate — ingen dyr research."
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "hook": {
+    "result": "FAIL",
+    "reason": "",
+    "text": "Sotar du skorstenen själv?"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "Bara egensotare."
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas",
+   "köpt old way (tjänst) som fungerar",
+   "juridik"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 20,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "Sotaren.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com chimney sweep kit rods brush",
+   "Ad Library SE 'sotning skorsten borste' = 0"
+  ]
+ },
+ {
+  "kluster": "ved",
+  "goods_id": "601099574114798",
+  "url_se": "https://www.temu.com/se/g-601099574114798.html",
+  "title": "Kamintermometer magnetisk",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_slug_en": "wood-stove-thermometer-magnetic-stove-temperature-stove-top-thermometer-for-wood-burning-stove-gas-stove-pellet-stove-temperature-meter-for-fireplace-pipe-thermometer-wood-stove",
+  "object": "braskaminen",
+  "owner_owns": true,
+  "friction": "Eldar för hett/för kallt utan att veta.",
+  "old_way": "Ingenting.",
+  "variants": "en variant",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "På kaminen."
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Latent — ägaren märker inte problemet.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula/Clas Ohlson ~99–149 kr (ur minne); < 199 kr-klass. EJ VERIFIERAD 2026-09-04: WebSearch-budgeten var slut och Jula/Biltema/Rusta/Clas Ohlson/Bauhaus svarade 403/404/JS-skal på direktanrop. Hyllbedömningen är ur minne och markerad så. Ad Library SE (Meta MCP, aktiva annonser) är verifierad."
+   },
+   "material": {
+    "result": "SKIPPED",
+    "reason": "Föll i tidigare gate — ingen dyr research."
+   },
+   "economics": {
+    "result": "FAIL",
+    "reason": "< 199 kr-klass."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "hook": {
+    "result": "FAIL",
+    "reason": "",
+    "text": "Vet du hur varm kaminen är?"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "< 199 kr",
+   "behovet måste skapas"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 20,
+  "category_novelty": 40,
+  "tier": "ELIM",
+  "biggest_risk": "Pris.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com stove thermometer magnetic wood burner"
+  ]
+ },
+ {
+  "kluster": "ved",
+  "goods_id": "601099678152168",
+  "url_se": "https://www.temu.com/se/g-601099678152168.html",
+  "title": "Packningsband glasfiber till kaminlucka, 10 mm × 2 m",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_slug_en": "fireproof-fiberglass-gasket-tape-for-wood-stove-door-self--replacement-seal-rope-fireplace-oven-sealing-strip-heat-resistant-black-spacer-tape-10mm-wide-2m--length-options",
+  "object": "braskaminen",
+  "owner_owns": true,
+  "friction": "Luckan läcker luft, kaminen drar dåligt.",
+  "old_way": "Beställa packning från kamintillverkaren.",
+  "variants": "bredd/längd-varianter",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Förbrukning/reparationsdel med måttvarianter (bredd) — negativ rymd (förbrukning) och < 199 kr."
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": ""
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula/Biltema säljer packningssnöre (ur minne)."
+   },
+   "material": {
+    "result": "SKIPPED",
+    "reason": "Föll i tidigare gate — ingen dyr research."
+   },
+   "economics": {
+    "result": "FAIL",
+    "reason": "< 199 kr."
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Bredd måste mätas."
+   },
+   "hook": {
+    "result": "FAIL",
+    "reason": "",
+    "text": ""
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "förbrukning",
+   "< 199 kr",
+   "mått"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 10,
+  "category_novelty": 40,
+  "tier": "ELIM",
+  "biggest_risk": "Förbrukning.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com fireplace glass cleaner wood stove door"
+  ]
+ },
+ {
+  "kluster": "ved",
+  "goods_id": "601099522402371",
+  "url_se": "https://www.temu.com/se/g-601099522402371.html",
+  "title": "Eldstadsöverdrag runt 28–48 tum, vattentätt (endast överdrag)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_slug_en": "1pc-fire-pit-cover-round-for-fire-pit-28-48-inches-waterproof-outdoor-fire-pit-cover-full-coverage-patio-round-fire-pit-cover-dustproof-anti-uv-and-tear-resistant-outdoor-patio-cover",
+  "object": "eldstaden/fire pit på altanen",
+  "owner_owns": true,
+  "friction": "Eldstaden står ute i höstregnet; rostvatten i skålen, aska som blir sörja, rost på stålet.",
+  "old_way": "Ingenting, eller en presenning/ett lock.",
+  "variants": "diameter 28/32/36/40/44/48 tum — ägaren måste mäta (UNKNOWN exakt SKU-lista)",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Eldstaden står ute på altanen/gräsmattan."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "September–oktober är höstbrasans säsong; regnet fyller skålen samma vecka.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Jula och Rusta säljer överdrag till eldstad ~149–349 kr (ur minne) i samma form (rund med dragsko). Ad Library 'eldstad överdrag' = 0, 'eldstad skydd' = 1 (generisk). Samma läge som IBC-överdraget (billigare alternativ fanns, ingen annonserade) — men utan tydlig spec-skillnad. EJ VERIFIERAD 2026-09-04: WebSearch-budgeten var slut och Jula/Biltema/Rusta/Clas Ohlson/Bauhaus svarade 403/404/JS-skal på direktanrop. Hyllbedömningen är ur minne och markerad så. Ad Library SE (Meta MCP, aktiva annonser) är verifierad."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade alla hämtningar 2026-09-04 (tomt skal utan JSON-LD); koordinatorn hämtar video + hero centralt när blocket släppt.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Diametern måste mätas (ägarkunskap 0–1) — sex storlekar i tum. Storlekstabell i annons förstörde för motorhöljet."
+   },
+   "hook": {
+    "result": "PASS",
+    "reason": "Står eldstaden ute i regnet?",
+    "text": "Står eldstaden ute i regnet?"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Eldstad/eldkorg är vanlig och omisskännlig; man 45–70 småhus."
+   }
+  },
+  "negative_space_flags": [
+   "mått utan ägarkunskap",
+   "hylla sannolikt samma form",
+   "material ej verifierad"
+  ],
+  "eliminated_at": null,
+  "structure_match": 58,
+  "category_novelty": 60,
+  "tier": "C",
+  "biggest_risk": "Storleken i tum + att Jula/Rusta har samma form. Lärorik: presens och objekt är perfekta, men variant + hylla fäller.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com fire pit cover round waterproof",
+   "Ad Library SE 'eldstad överdrag' = 0, 'eldstad skydd' = 1 (KungDesign, generisk)"
+  ]
+ },
+ {
+  "kluster": "ved",
+  "goods_id": "601101387399211",
+  "url_se": "https://www.temu.com/se/g-601101387399211.html",
+  "title": "Överdrag 145 cm 420D för murad/inbyggd eldstad",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_slug_en": "57-round-built--fire-pit-cover-waterproof-heavy-duty-420d-oxford-fabric-with-windproof-drawstring-closure-elastic-edges-for-fit-black-outdoor-protector-for-patio-yard-fire-pit-cover-round-waterproof-yard-protection--reinforced-stitching-backyard-decor",
+  "object": "murad eldstadsring",
+  "owner_owns": false,
+  "friction": "Som #18.",
+  "old_way": "Ingenting.",
+  "variants": "en storlek (145 cm)",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Ute."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Nisch — ingen kedja (ur minne)."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade alla hämtningar 2026-09-04 (tomt skal utan JSON-LD); koordinatorn hämtar video + hero centralt när blocket släppt.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En storlek."
+   },
+   "hook": {
+    "result": "PASS",
+    "reason": "",
+    "text": "Har du en murad eldstad på tomten?"
+   },
+   "audience": {
+    "result": "FAIL",
+    "reason": "Inbyggda stenringar på 145 cm är ett amerikanskt fenomen; ägarklassen i Sverige långt under 100 000 hushåll (uppskattning)."
+   }
+  },
+  "negative_space_flags": [
+   "oklart ägande",
+   "liten publik"
+  ],
+  "eliminated_at": "audience",
+  "structure_match": 40,
+  "category_novelty": 75,
+  "tier": "ELIM",
+  "biggest_risk": "Publiken.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com fire pit cover round waterproof",
+   "Ad Library SE 'eldstad överdrag' = 0, 'eldstad skydd' = 1 (KungDesign, generisk)"
+  ]
+ },
+ {
+  "kluster": "ved",
+  "goods_id": "601099606133498",
+  "url_se": "https://www.temu.com/se/g-601099606133498.html",
+  "title": "Gnistskydd runt 50 cm (20 tum), stål",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_slug_en": "fire-pit-spark-screen-round-20-reinforced-heavy-duty-steel-metal-cover",
+  "object": "eldstaden",
+  "owner_owns": true,
+  "friction": "Gnistor på altanen/kläderna i höstmörkret.",
+  "old_way": "Ingenting, eller det som följde med eldstaden.",
+  "variants": "20 tum (måste matcha skålens diameter)",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "På eldstaden ute."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Höstbrasa = gnistor.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Gnistskydd följer ofta med eldstaden; separata hos Jula/Rusta ej verifierat. Ad Library 'gnistskydd' = 1 (orelaterad). EJ VERIFIERAD 2026-09-04: WebSearch-budgeten var slut och Jula/Biltema/Rusta/Clas Ohlson/Bauhaus svarade 403/404/JS-skal på direktanrop. Hyllbedömningen är ur minne och markerad så. Ad Library SE (Meta MCP, aktiva annonser) är verifierad."
+   },
+   "material": {
+    "result": "SKIPPED",
+    "reason": "Föll i tidigare gate — ingen dyr research."
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Exakt diameter måste passa skålen — 50 cm passar en bråkdel; ägaren kan inte måttet utantill."
+   },
+   "hook": {
+    "result": "PASS",
+    "reason": "",
+    "text": "Flyger det gnistor från eldstaden?"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "passform utan ägarkunskap"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 40,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "Passformen.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com fireplace spark screen guard",
+   "Ad Library SE 'gnistskydd' = 1"
+  ]
+ },
+ {
+  "kluster": "ved",
+  "goods_id": "601104025759246",
+  "url_se": "https://www.temu.com/se/g-601104025759246.html",
+  "title": "Grillöverdrag 165 cm, polyester",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_slug_en": "65-inch-heavy-duty-bbq-grill-cover-waterproof-fade-resistant-weatherproof-outdoor-grill-cover-with-easy-on-off-hook-and-loop-straps-black-polyester-grill-cover-for-outside-patio-protection-durable-fabric",
+  "object": "gasolgrillen",
+  "owner_owns": true,
+  "friction": "Grillen ställs undan i oktober; regn/löv/snö.",
+  "old_way": "Grillens eget/originalöverdrag eller presenning.",
+  "variants": "165 cm (en storlek)",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Grillen står ute."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Grillen täcks in i oktober.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Grillöverdrag säljs av alla fyra kedjor + Weber/Bluegaz-original; 5 aktiva Meta-annonsörer (verifierat: Teknikdelar, Bluegaz, m.fl.). Uppdraget: 'grillskydd — jämförelsehandlat'. EJ VERIFIERAD 2026-09-04: WebSearch-budgeten var slut och Jula/Biltema/Rusta/Clas Ohlson/Bauhaus svarade 403/404/JS-skal på direktanrop. Hyllbedömningen är ur minne och markerad så. Ad Library SE (Meta MCP, aktiva annonser) är verifierad."
+   },
+   "material": {
+    "result": "SKIPPED",
+    "reason": "Föll i tidigare gate — ingen dyr research."
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Bredden måste mätas."
+   },
+   "hook": {
+    "result": "PASS",
+    "reason": "",
+    "text": "Står grillen ute i vinter?"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "jämförelsehandlad",
+   "svensk mass-commoditisering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 35,
+  "category_novelty": 20,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com smoker cover waterproof vertical (gav grillöverdrag)",
+   "Ad Library SE 'grillöverdrag' = 5"
+  ]
+ },
+ {
+  "kluster": "ved",
+  "goods_id": "601101536656064",
+  "url_se": "https://www.temu.com/se/g-601101536656064.html",
+  "title": "Presenningsklämmor 20-pack, låsande",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_slug_en": "heavy-duty-tarp-clips-with-locking-grip-windproof-clamps-for-awnings-camping-rv-canopies-secure-tarps-bungee-cords-outdoor-equipment-20pcs-all-terrain-use-sturdy---clips--construction",
+  "object": "presenningen över veden",
+  "owner_owns": true,
+  "friction": "Presenningen blåser av veden.",
+  "old_way": "Tegelstenar, snöre.",
+  "variants": "20-pack",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "På presenningen ägaren redan har över veden."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Höststormar.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema/Jula säljer presenningsklämmor 30–80 kr (ur minne); < 199 kr-klass. Löser symptomet — vedställsöverdraget (#1) löser objektet. EJ VERIFIERAD 2026-09-04: WebSearch-budgeten var slut och Jula/Biltema/Rusta/Clas Ohlson/Bauhaus svarade 403/404/JS-skal på direktanrop. Hyllbedömningen är ur minne och markerad så. Ad Library SE (Meta MCP, aktiva annonser) är verifierad."
+   },
+   "material": {
+    "result": "SKIPPED",
+    "reason": "Föll i tidigare gate — ingen dyr research."
+   },
+   "economics": {
+    "result": "FAIL",
+    "reason": "< 199 kr."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "hook": {
+    "result": "PASS",
+    "reason": "",
+    "text": "Blåser presenningen av veden igen?"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "< 199 kr",
+   "jämförelsehandlad"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 30,
+  "tier": "ELIM",
+  "biggest_risk": "Pris.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com tarp clips heavy duty tarpaulin clamp windproof"
+  ]
+ }
+]

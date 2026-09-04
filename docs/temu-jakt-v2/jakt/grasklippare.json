@@ -1,0 +1,2390 @@
+[
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601103248788835",
+  "url_se": "https://www.temu.com/se/g-601103248788835.html",
+  "title": "Universal leaf blower gutter attachment, telescopic hose, 11 ft",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Lövblås (handhållen/batteri) + hängränna",
+  "owner_owns": "ja — lövblås är standard i småhus/fritidshus; hängrännan sitter på huset",
+  "friction": "Hängrännan är full av löv i oktober; vatten rinner över kanten, isproppar i november",
+  "old_way": "Stege + handskar/skopa, eller struntar i det tills det svämmar över",
+  "variants": "UNKNOWN (adaptrar för 4 munstycksstorlekar enligt titel) — passform mot svenska blåsar (Stihl/Husqvarna/Ryobi/Bosch) ej verifierad",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner: Einhell Gutter kit 3433559 (märkesspecifik)",
+   "price_sek": 359,
+   "url": "pricerunner.se sök 'takrengöringsset lövblås'",
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Stihl Takrengöringsset (Duab); Husqvarna Hängrännesats 359–399 kr (Söderströms/GPLshop) som sekundärt ankare",
+   "price_sek": 745,
+   "url": "https://duab.se/skog-tradgard/skog-tradgardsmaskiner/lovblasar-tillbehor/tillbehor-lovblasar"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på lövblåsen ägaren redan har; rännan sitter på huset — ute, synlig"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Rännan är full av löv i sep–okt; fotograferbar i varje svensk villagata i oktober",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Biltema/Jula/Clas säljer bara skrapor på skaft eller Kärcher-högtryckssatser, ingen rörsats till lövblås (ur sökutdrag). Märkesankarna är modellspecifika: Husqvarna 329–399 kr, Stihl 745 kr – en universalsats kan tas betalt runt 399–449 kr.",
+    "verified": true,
+    "verified_by": "h2.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Stihl Takrengöringsset (Duab); Husqvarna Hängrännesats 359–399 kr (Söderströms/GPLshop) som sekundärt ankare",
+     "price_sek": 745,
+     "url": "https://duab.se/skog-tradgard/skog-tradgardsmaskiner/lovblasar-tillbehor/tillbehor-lovblasar"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Hängrännerensar-sats till lövblås (universal, teleskoprör 11 ft)"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerat för vår IP 2026-09-04; koordinatorn kör hämtning + materialgate centralt",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "'passar de flesta' med adaptrar — ägaren vet inte sitt munstycksmått; returrisk"
+   },
+   "hook": {
+    "text": "Har du en lövblås? Slipp stegen.",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Man 45–70 med villa + lövblås; lövblås igenkännbar i bild; rännan universell"
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 449,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "nej (ett hus, en blås)",
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-pris ej hämtat (blockerat). Ankare Stihl 745 tillåter 449–499"
+   }
+  },
+  "negative_space_flags": [
+   "passform via adaptrar ('passar de flesta')"
+  ],
+  "eliminated_at": null,
+  "structure_match": 68,
+  "category_novelty": 90,
+  "tier": "B",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "Passar inte svenska batteriblåsars munstycken (Ryobi/Bosch/Husqvarna) → returer; material ej sedd",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch site:temu.com leaf blower gutter cleaning attachment kit",
+   "pricerunner.se 'takrengöringsset lövblås', 'hängrännerensare'"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "hängrännesats till lövblås: adapterpassform mot svenska blåsar; Husqvarna-sats 359–399 kr är ett lågt sekundärankare"
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601103296007046",
+  "url_se": "https://www.temu.com/se/g-601103296007046.html",
+  "title": "Gutter cleaning kit, supportive structure, 11 ft reach, fits most blower brands, 4 adapters",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Lövblås (handhållen/batteri) + hängränna",
+  "owner_owns": "ja — lövblås är standard i småhus/fritidshus; hängrännan sitter på huset",
+  "friction": "Hängrännan är full av löv i oktober; vatten rinner över kanten, isproppar i november",
+  "old_way": "Stege + handskar/skopa, eller struntar i det tills det svämmar över",
+  "variants": "UNKNOWN (adaptrar för 4 munstycksstorlekar enligt titel) — passform mot svenska blåsar (Stihl/Husqvarna/Ryobi/Bosch) ej verifierad",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner: Einhell Gutter kit 3433559 (märkesspecifik)",
+   "price_sek": 359,
+   "url": "pricerunner.se sök 'takrengöringsset lövblås'",
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Stihl Takrengöringsset (Duab); Husqvarna Hängrännesats 359–399 kr (Söderströms/GPLshop) som sekundärt ankare",
+   "price_sek": 745,
+   "url": "https://duab.se/skog-tradgard/skog-tradgardsmaskiner/lovblasar-tillbehor/tillbehor-lovblasar"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på lövblåsen ägaren redan har; rännan sitter på huset — ute, synlig"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Rännan är full av löv i sep–okt; fotograferbar i varje svensk villagata i oktober",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Biltema/Jula/Clas säljer bara skrapor på skaft eller Kärcher-högtryckssatser, ingen rörsats till lövblås (ur sökutdrag). Märkesankarna är modellspecifika: Husqvarna 329–399 kr, Stihl 745 kr – en universalsats kan tas betalt runt 399–449 kr.",
+    "verified": true,
+    "verified_by": "h2.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Stihl Takrengöringsset (Duab); Husqvarna Hängrännesats 359–399 kr (Söderströms/GPLshop) som sekundärt ankare",
+     "price_sek": 745,
+     "url": "https://duab.se/skog-tradgard/skog-tradgardsmaskiner/lovblasar-tillbehor/tillbehor-lovblasar"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Hängrännerensar-sats till lövblås (universal, teleskoprör 11 ft)"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerat för vår IP 2026-09-04; koordinatorn kör hämtning + materialgate centralt",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "'passar de flesta' med adaptrar — ägaren vet inte sitt munstycksmått; returrisk"
+   },
+   "hook": {
+    "text": "Har du en lövblås? Slipp stegen.",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Man 45–70 med villa + lövblås; lövblås igenkännbar i bild; rännan universell"
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 449,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "nej (ett hus, en blås)",
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-pris ej hämtat (blockerat). Ankare Stihl 745 tillåter 449–499"
+   }
+  },
+  "negative_space_flags": [
+   "passform via adaptrar ('passar de flesta')"
+  ],
+  "eliminated_at": null,
+  "structure_match": 68,
+  "category_novelty": 90,
+  "tier": "B",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "Passar inte svenska batteriblåsars munstycken (Ryobi/Bosch/Husqvarna) → returer; material ej sedd",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch site:temu.com leaf blower gutter cleaning attachment kit",
+   "pricerunner.se 'takrengöringsset lövblås', 'hängrännerensare'"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "hängrännesats till lövblås: adapterpassform mot svenska blåsar; Husqvarna-sats 359–399 kr är ett lågt sekundärankare"
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601100183382557",
+  "url_se": "https://www.temu.com/se/g-601100183382557.html",
+  "title": "Robotic lawnmower non-slip spikes set, metal, compatible with SA/SC/SE/R/MR/Classic/NX (Robomow?)",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Robotgräsklippare (står ute hela säsongen)",
+  "owner_owns": "ja — ~30 % av svenska villor med gräsmatta har robotklippare (uppskattning, ej mätt)",
+  "friction": "Slirar och fastnar i blött gräs och löv i sep–okt; 'fast'-larm i appen varje kväll",
+  "old_way": "Går ut och lyfter den, klipper senare på dagen, eller struntar i sluttningen",
+  "variants": "modellspecifik (Robomow-serier enligt titel)",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner: 'Worx Landroid S/M Halkskydd Hjulskydd Spikar' 353 kr; MTP TLDM-01 Dreame 273 kr",
+   "price_sek": 353,
+   "url": "pricerunner.se sök 'slirskydd robotgräsklippare'",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Skoterdelen – Dubbar för robotgräsklippare, 40 universella spikar",
+   "price_sek": 539,
+   "url": "https://www.skoterdelen.com/skog-tradgard/robotgrasklippare/tillbehor/dubbar-for-robotgrasklippare"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Skruvas på hjulen på en robot som står ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Blött gräs + löv i sep–okt = slirsäsongen; fotograferbar (hjulspår, robot fast i slänten)",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Ingen kedja (Bauhaus läst, Clas/Jula/Biltema ur utdrag) säljer piggar eller dubbar – bara knivar, kabel och originalhjul. Svenska fackhandelsankare för samma form ligger på 289–539 kr och Husqvarnas terrängkit på 999 kr.",
+    "verified": true,
+    "verified_by": "h2.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Skoterdelen – Dubbar för robotgräsklippare, 40 universella spikar",
+     "price_sek": 539,
+     "url": "https://www.skoterdelen.com/skog-tradgard/robotgrasklippare/tillbehor/dubbar-for-robotgrasklippare"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Hjulpiggar/antislip-piggar till robotgräsklippare"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerat för vår IP 2026-09-04; koordinatorn kör hämtning + materialgate centralt",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Måste matcha märke + hjulstorlek — ägaren vet märket, sällan hjulmåttet; många SKU:er över modeller"
+   },
+   "hook": {
+    "text": "Fastnar robotklipparen i blött gräs?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Robotklippare = omisskännlig i flödet; ägare 45–70 villa"
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 349,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "nej",
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-pris ej hämtat (blockerat)"
+   }
+  },
+  "negative_space_flags": [
+   "många SKU:er per märke",
+   "monteringssteg (skruvar)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 60,
+  "category_novelty": 90,
+  "tier": "B",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "Modellsplittring: en annons per märke krävs, och Temu-priset kan vara < 100 kr (≥ 300 kr blir 3×+ mot 353 kr-alternativ utan synlig skillnad)",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch site:temu.com robot mower wheel spikes anti-slip cover",
+   "pricerunner.se 'slirskydd robotgräsklippare', 'piggar robotgräsklippare hjul'"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "hjulpiggar robotgräsklippare: ingen kedja; men SKU per märke/hjulmått och Temu-pris troligen < 100 kr"
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601099514177508",
+  "url_se": "https://www.temu.com/se/g-601099514177508.html",
+  "title": "Stainless steel robotic lawnmower spikes, wheel size 225 mm, 12 screws (Worx L / Landroid)",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Robotgräsklippare (står ute hela säsongen)",
+  "owner_owns": "ja — ~30 % av svenska villor med gräsmatta har robotklippare (uppskattning, ej mätt)",
+  "friction": "Slirar och fastnar i blött gräs och löv i sep–okt; 'fast'-larm i appen varje kväll",
+  "old_way": "Går ut och lyfter den, klipper senare på dagen, eller struntar i sluttningen",
+  "variants": "hjulstorlek 225 mm — passar Worx Landroid L; ägaren vet modell",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner: 'Worx Landroid S/M Halkskydd Hjulskydd Spikar' 353 kr; MTP TLDM-01 Dreame 273 kr",
+   "price_sek": 353,
+   "url": "pricerunner.se sök 'slirskydd robotgräsklippare'",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Skoterdelen – Dubbar för robotgräsklippare, 40 universella spikar",
+   "price_sek": 539,
+   "url": "https://www.skoterdelen.com/skog-tradgard/robotgrasklippare/tillbehor/dubbar-for-robotgrasklippare"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Skruvas på hjulen på en robot som står ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Blött gräs + löv i sep–okt = slirsäsongen; fotograferbar (hjulspår, robot fast i slänten)",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Ingen kedja (Bauhaus läst, Clas/Jula/Biltema ur utdrag) säljer piggar eller dubbar – bara knivar, kabel och originalhjul. Svenska fackhandelsankare för samma form ligger på 289–539 kr och Husqvarnas terrängkit på 999 kr.",
+    "verified": true,
+    "verified_by": "h2.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Skoterdelen – Dubbar för robotgräsklippare, 40 universella spikar",
+     "price_sek": 539,
+     "url": "https://www.skoterdelen.com/skog-tradgard/robotgrasklippare/tillbehor/dubbar-for-robotgrasklippare"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Hjulpiggar/antislip-piggar till robotgräsklippare"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerat för vår IP 2026-09-04; koordinatorn kör hämtning + materialgate centralt",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Måste matcha märke + hjulstorlek — ägaren vet märket, sällan hjulmåttet; många SKU:er över modeller"
+   },
+   "hook": {
+    "text": "Fastnar robotklipparen i blött gräs?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Robotklippare = omisskännlig i flödet; ägare 45–70 villa"
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 349,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "nej",
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-pris ej hämtat (blockerat)"
+   }
+  },
+  "negative_space_flags": [
+   "många SKU:er per märke",
+   "monteringssteg (skruvar)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 60,
+  "category_novelty": 90,
+  "tier": "B",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "Modellsplittring: en annons per märke krävs, och Temu-priset kan vara < 100 kr (≥ 300 kr blir 3×+ mot 353 kr-alternativ utan synlig skillnad)",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch site:temu.com robot mower wheel spikes anti-slip cover",
+   "pricerunner.se 'slirskydd robotgräsklippare', 'piggar robotgräsklippare hjul'"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "hjulpiggar robotgräsklippare: ingen kedja; men SKU per märke/hjulmått och Temu-pris troligen < 100 kr"
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601101022004142",
+  "url_se": "https://www.temu.com/se/g-601101022004142.html",
+  "title": "2 pcs rubber anti-slip wheels for lawn mower robot compatible with A1 (Dreame)",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Robotgräsklippare (står ute hela säsongen)",
+  "owner_owns": "ja — ~30 % av svenska villor med gräsmatta har robotklippare (uppskattning, ej mätt)",
+  "friction": "Slirar och fastnar i blött gräs och löv i sep–okt; 'fast'-larm i appen varje kväll",
+  "old_way": "Går ut och lyfter den, klipper senare på dagen, eller struntar i sluttningen",
+  "variants": "modellspecifik Dreame A1",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner: 'Worx Landroid S/M Halkskydd Hjulskydd Spikar' 353 kr; MTP TLDM-01 Dreame 273 kr",
+   "price_sek": 353,
+   "url": "pricerunner.se sök 'slirskydd robotgräsklippare'",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Skoterdelen – Dubbar för robotgräsklippare, 40 universella spikar",
+   "price_sek": 539,
+   "url": "https://www.skoterdelen.com/skog-tradgard/robotgrasklippare/tillbehor/dubbar-for-robotgrasklippare"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Skruvas på hjulen på en robot som står ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Blött gräs + löv i sep–okt = slirsäsongen; fotograferbar (hjulspår, robot fast i slänten)",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Ingen kedja (Bauhaus läst, Clas/Jula/Biltema ur utdrag) säljer piggar eller dubbar – bara knivar, kabel och originalhjul. Svenska fackhandelsankare för samma form ligger på 289–539 kr och Husqvarnas terrängkit på 999 kr.",
+    "verified": true,
+    "verified_by": "h2.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Skoterdelen – Dubbar för robotgräsklippare, 40 universella spikar",
+     "price_sek": 539,
+     "url": "https://www.skoterdelen.com/skog-tradgard/robotgrasklippare/tillbehor/dubbar-for-robotgrasklippare"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Hjulpiggar/antislip-piggar till robotgräsklippare"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerat för vår IP 2026-09-04; koordinatorn kör hämtning + materialgate centralt",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Måste matcha märke + hjulstorlek — ägaren vet märket, sällan hjulmåttet; många SKU:er över modeller"
+   },
+   "hook": {
+    "text": "Fastnar robotklipparen i blött gräs?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Robotklippare = omisskännlig i flödet; ägare 45–70 villa"
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 349,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "nej",
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-pris ej hämtat (blockerat)"
+   }
+  },
+  "negative_space_flags": [
+   "många SKU:er per märke",
+   "monteringssteg (skruvar)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 60,
+  "category_novelty": 90,
+  "tier": "B",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "Modellsplittring: en annons per märke krävs, och Temu-priset kan vara < 100 kr (≥ 300 kr blir 3×+ mot 353 kr-alternativ utan synlig skillnad)",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch site:temu.com robot mower wheel spikes anti-slip cover",
+   "pricerunner.se 'slirskydd robotgräsklippare', 'piggar robotgräsklippare hjul'"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "hjulpiggar robotgräsklippare: ingen kedja; men SKU per märke/hjulmått och Temu-pris troligen < 100 kr"
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601099948568436",
+  "url_se": "https://www.temu.com/se/g-601099948568436.html",
+  "title": "Outdoor shade cover for robotic lawn mowers, portable garage roof, polycarbonate canopy",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Robotgräsklippare + laddstation (står ute)",
+  "owner_owns": "ja",
+  "friction": "Roboten står i regn och löv hela hösten; laddstationens kontakter oxiderar, plasten bleks",
+  "old_way": "Ingenting, eller en upp-och-nedvänd back",
+  "variants": "en storlek ('universal') — passar inte alla stationer (Navimow/Mammotion har egna); ägaren vet inte måttet",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner: Worx WA0194 399 kr, Herrselsam polykarbonat 636 kr, tectake Domus 709 kr, Hyma 895 kr, vidaXL 906 kr — universalgarage är masshandlad i Sverige",
+   "price_sek": 399,
+   "url": "pricerunner.se sök 'robotgräsklippare garage'",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Husqvarna Automower House 1 567–2 691 kr; Stiga Skyddstak 2 499 kr",
+   "price_sek": 1567,
+   "url": "pricerunner.se sök 'robotgräsklippare garage'"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Står över roboten som redan står ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Regn, löv och fallande frukt på roboten i sep–okt; fotograferbar",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form (universalgarage/tak) säljs brett i svensk e-handel 399–906 kr (Pricerunner); kategorin är hyllad. Märkesankaret finns (Husqvarna 1 567) men vår produkt ser ut som 399-kronorsvaran, inte som ankaret"
+   },
+   "material": {
+    "result": "EJ KÖRD",
+    "reason": "föll före gate 4",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "'universal' utan mått"
+   },
+   "hook": {
+    "text": "Står din robotklippare ute i regnet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Robotklippare omisskännlig; ägare 45–70 villa"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "montering (ankare/skruv)",
+   "oklart om den passar stationen"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "Jämförelsehandlad kategori: kunden googlar 'robotgräsklippare garage' och hittar 399 kr",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com robot lawn mower garage roof canopy",
+   "WebSearch site:temu.com robot mower charging station cover rain protection",
+   "WebSearch site:temu.com robot lawn mower winter storage cover bag",
+   "pricerunner.se 'robotgräsklippare garage', 'robotgräsklippare skyddstak universal'"
+  ]
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "604291880306323",
+  "url_se": "https://www.temu.com/se/g-604291880306323.html",
+  "title": "Lawn mower garage folding canopy, carport 73x57x40, metal powder-coated roof",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Robotgräsklippare + laddstation (står ute)",
+  "owner_owns": "ja",
+  "friction": "Roboten står i regn och löv hela hösten; laddstationens kontakter oxiderar, plasten bleks",
+  "old_way": "Ingenting, eller en upp-och-nedvänd back",
+  "variants": "en storlek ('universal') — passar inte alla stationer (Navimow/Mammotion har egna); ägaren vet inte måttet",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner: Worx WA0194 399 kr, Herrselsam polykarbonat 636 kr, tectake Domus 709 kr, Hyma 895 kr, vidaXL 906 kr — universalgarage är masshandlad i Sverige",
+   "price_sek": 399,
+   "url": "pricerunner.se sök 'robotgräsklippare garage'",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Husqvarna Automower House 1 567–2 691 kr; Stiga Skyddstak 2 499 kr",
+   "price_sek": 1567,
+   "url": "pricerunner.se sök 'robotgräsklippare garage'"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Står över roboten som redan står ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Regn, löv och fallande frukt på roboten i sep–okt; fotograferbar",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form (universalgarage/tak) säljs brett i svensk e-handel 399–906 kr (Pricerunner); kategorin är hyllad. Märkesankaret finns (Husqvarna 1 567) men vår produkt ser ut som 399-kronorsvaran, inte som ankaret"
+   },
+   "material": {
+    "result": "EJ KÖRD",
+    "reason": "föll före gate 4",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "'universal' utan mått"
+   },
+   "hook": {
+    "text": "Står din robotklippare ute i regnet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Robotklippare omisskännlig; ägare 45–70 villa"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "montering (ankare/skruv)",
+   "oklart om den passar stationen"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "Jämförelsehandlad kategori: kunden googlar 'robotgräsklippare garage' och hittar 399 kr",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com robot lawn mower garage roof canopy",
+   "WebSearch site:temu.com robot mower charging station cover rain protection",
+   "WebSearch site:temu.com robot lawn mower winter storage cover bag",
+   "pricerunner.se 'robotgräsklippare garage', 'robotgräsklippare skyddstak universal'"
+  ]
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601100160198616",
+  "url_se": "https://www.temu.com/se/g-601100160198616.html",
+  "title": "Weatherproof robot lawn mower garage, black 31.5x39.8x18.1 in, aluminium/PC, anchors included",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Robotgräsklippare + laddstation (står ute)",
+  "owner_owns": "ja",
+  "friction": "Roboten står i regn och löv hela hösten; laddstationens kontakter oxiderar, plasten bleks",
+  "old_way": "Ingenting, eller en upp-och-nedvänd back",
+  "variants": "en storlek ('universal') — passar inte alla stationer (Navimow/Mammotion har egna); ägaren vet inte måttet",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner: Worx WA0194 399 kr, Herrselsam polykarbonat 636 kr, tectake Domus 709 kr, Hyma 895 kr, vidaXL 906 kr — universalgarage är masshandlad i Sverige",
+   "price_sek": 399,
+   "url": "pricerunner.se sök 'robotgräsklippare garage'",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Husqvarna Automower House 1 567–2 691 kr; Stiga Skyddstak 2 499 kr",
+   "price_sek": 1567,
+   "url": "pricerunner.se sök 'robotgräsklippare garage'"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Står över roboten som redan står ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Regn, löv och fallande frukt på roboten i sep–okt; fotograferbar",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form (universalgarage/tak) säljs brett i svensk e-handel 399–906 kr (Pricerunner); kategorin är hyllad. Märkesankaret finns (Husqvarna 1 567) men vår produkt ser ut som 399-kronorsvaran, inte som ankaret"
+   },
+   "material": {
+    "result": "EJ KÖRD",
+    "reason": "föll före gate 4",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "'universal' utan mått"
+   },
+   "hook": {
+    "text": "Står din robotklippare ute i regnet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Robotklippare omisskännlig; ägare 45–70 villa"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "montering (ankare/skruv)",
+   "oklart om den passar stationen"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "Jämförelsehandlad kategori: kunden googlar 'robotgräsklippare garage' och hittar 399 kr",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com robot lawn mower garage roof canopy",
+   "WebSearch site:temu.com robot mower charging station cover rain protection",
+   "WebSearch site:temu.com robot lawn mower winter storage cover bag",
+   "pricerunner.se 'robotgräsklippare garage', 'robotgräsklippare skyddstak universal'"
+  ]
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "604023444871530",
+  "url_se": "https://www.temu.com/se/g-604023444871530.html",
+  "title": "Folding garage for robot lawn mowers, UV protection",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Robotgräsklippare + laddstation (står ute)",
+  "owner_owns": "ja",
+  "friction": "Roboten står i regn och löv hela hösten; laddstationens kontakter oxiderar, plasten bleks",
+  "old_way": "Ingenting, eller en upp-och-nedvänd back",
+  "variants": "en storlek ('universal') — passar inte alla stationer (Navimow/Mammotion har egna); ägaren vet inte måttet",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner: Worx WA0194 399 kr, Herrselsam polykarbonat 636 kr, tectake Domus 709 kr, Hyma 895 kr, vidaXL 906 kr — universalgarage är masshandlad i Sverige",
+   "price_sek": 399,
+   "url": "pricerunner.se sök 'robotgräsklippare garage'",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Husqvarna Automower House 1 567–2 691 kr; Stiga Skyddstak 2 499 kr",
+   "price_sek": 1567,
+   "url": "pricerunner.se sök 'robotgräsklippare garage'"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Står över roboten som redan står ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Regn, löv och fallande frukt på roboten i sep–okt; fotograferbar",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form (universalgarage/tak) säljs brett i svensk e-handel 399–906 kr (Pricerunner); kategorin är hyllad. Märkesankaret finns (Husqvarna 1 567) men vår produkt ser ut som 399-kronorsvaran, inte som ankaret"
+   },
+   "material": {
+    "result": "EJ KÖRD",
+    "reason": "föll före gate 4",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "'universal' utan mått"
+   },
+   "hook": {
+    "text": "Står din robotklippare ute i regnet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Robotklippare omisskännlig; ägare 45–70 villa"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "montering (ankare/skruv)",
+   "oklart om den passar stationen"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "Jämförelsehandlad kategori: kunden googlar 'robotgräsklippare garage' och hittar 399 kr",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com robot lawn mower garage roof canopy",
+   "WebSearch site:temu.com robot mower charging station cover rain protection",
+   "WebSearch site:temu.com robot lawn mower winter storage cover bag",
+   "pricerunner.se 'robotgräsklippare garage', 'robotgräsklippare skyddstak universal'"
+  ]
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601099600965852",
+  "url_se": "https://www.temu.com/se/g-601099600965852.html",
+  "title": "Lawn mower garage roof cover, robot mower shelter, rain cover sunshade",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Robotgräsklippare + laddstation (står ute)",
+  "owner_owns": "ja",
+  "friction": "Roboten står i regn och löv hela hösten; laddstationens kontakter oxiderar, plasten bleks",
+  "old_way": "Ingenting, eller en upp-och-nedvänd back",
+  "variants": "en storlek ('universal') — passar inte alla stationer (Navimow/Mammotion har egna); ägaren vet inte måttet",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner: Worx WA0194 399 kr, Herrselsam polykarbonat 636 kr, tectake Domus 709 kr, Hyma 895 kr, vidaXL 906 kr — universalgarage är masshandlad i Sverige",
+   "price_sek": 399,
+   "url": "pricerunner.se sök 'robotgräsklippare garage'",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Husqvarna Automower House 1 567–2 691 kr; Stiga Skyddstak 2 499 kr",
+   "price_sek": 1567,
+   "url": "pricerunner.se sök 'robotgräsklippare garage'"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Står över roboten som redan står ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Regn, löv och fallande frukt på roboten i sep–okt; fotograferbar",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form (universalgarage/tak) säljs brett i svensk e-handel 399–906 kr (Pricerunner); kategorin är hyllad. Märkesankaret finns (Husqvarna 1 567) men vår produkt ser ut som 399-kronorsvaran, inte som ankaret"
+   },
+   "material": {
+    "result": "EJ KÖRD",
+    "reason": "föll före gate 4",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "'universal' utan mått"
+   },
+   "hook": {
+    "text": "Står din robotklippare ute i regnet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Robotklippare omisskännlig; ägare 45–70 villa"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "montering (ankare/skruv)",
+   "oklart om den passar stationen"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "Jämförelsehandlad kategori: kunden googlar 'robotgräsklippare garage' och hittar 399 kr",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com robot lawn mower garage roof canopy",
+   "WebSearch site:temu.com robot mower charging station cover rain protection",
+   "WebSearch site:temu.com robot lawn mower winter storage cover bag",
+   "pricerunner.se 'robotgräsklippare garage', 'robotgräsklippare skyddstak universal'"
+  ]
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601099620225730",
+  "url_se": "https://www.temu.com/se/g-601099620225730.html",
+  "title": "Poly rattan outdoor lawn robot shelter, weather resistant",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Robotgräsklippare + laddstation (står ute)",
+  "owner_owns": "ja",
+  "friction": "Roboten står i regn och löv hela hösten; laddstationens kontakter oxiderar, plasten bleks",
+  "old_way": "Ingenting, eller en upp-och-nedvänd back",
+  "variants": "en storlek ('universal') — passar inte alla stationer (Navimow/Mammotion har egna); ägaren vet inte måttet",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner: Worx WA0194 399 kr, Herrselsam polykarbonat 636 kr, tectake Domus 709 kr, Hyma 895 kr, vidaXL 906 kr — universalgarage är masshandlad i Sverige",
+   "price_sek": 399,
+   "url": "pricerunner.se sök 'robotgräsklippare garage'",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Husqvarna Automower House 1 567–2 691 kr; Stiga Skyddstak 2 499 kr",
+   "price_sek": 1567,
+   "url": "pricerunner.se sök 'robotgräsklippare garage'"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Står över roboten som redan står ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Regn, löv och fallande frukt på roboten i sep–okt; fotograferbar",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form (universalgarage/tak) säljs brett i svensk e-handel 399–906 kr (Pricerunner); kategorin är hyllad. Märkesankaret finns (Husqvarna 1 567) men vår produkt ser ut som 399-kronorsvaran, inte som ankaret"
+   },
+   "material": {
+    "result": "EJ KÖRD",
+    "reason": "föll före gate 4",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "'universal' utan mått"
+   },
+   "hook": {
+    "text": "Står din robotklippare ute i regnet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Robotklippare omisskännlig; ägare 45–70 villa"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "montering (ankare/skruv)",
+   "oklart om den passar stationen"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "Jämförelsehandlad kategori: kunden googlar 'robotgräsklippare garage' och hittar 399 kr",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com robot lawn mower garage roof canopy",
+   "WebSearch site:temu.com robot mower charging station cover rain protection",
+   "WebSearch site:temu.com robot lawn mower winter storage cover bag",
+   "pricerunner.se 'robotgräsklippare garage', 'robotgräsklippare skyddstak universal'"
+  ]
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601099514395587",
+  "url_se": "https://www.temu.com/se/g-601099514395587.html",
+  "title": "20 pcs waterproof gel-filled 3-wire connectors for robotic lawn mower boundary wire",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Robotgräsklipparens begränsningskabel",
+  "owner_owns": "ja",
+  "friction": "Kabelbrott efter höstkrattning/grävning — roboten larmar 'ingen slinga'",
+  "old_way": "Husqvarna/Gardena-skarvar 15–151 kr i fackhandel, eller tejp",
+  "variants": "antal i pack",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner: Husqvarna skarvdon 15–119 kr, Gardena 151, Grimsholm 4-pack 29,95",
+   "price_sek": 15,
+   "url": "pricerunner.se 'kabelskarv robotgräsklippare'",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Förbrukningsvara/reservdel, inte ett tillbehör som förbättrar objektet"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Kabelbrott är vanliga på hösten",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Identisk form hos alla märken 15–151 kr"
+   },
+   "material": {
+    "result": "EJ KÖRD",
+    "reason": "föll före gate 4",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en variant"
+   },
+   "hook": {
+    "text": "Har roboten tappat slingan?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "förbrukning",
+   "< 199 kr",
+   "köpt fungerande old way, jämförelsehandlad"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 15,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com robot mower boundary wire connector repair kit",
+   "pricerunner.se 'kabelskarv robotgräsklippare'"
+  ]
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601099599310345",
+  "url_se": "https://www.temu.com/se/g-601099599310345.html",
+  "title": "45 * ersättningsblad för Automobile * Robotgräsklippare",
+  "title_source": "temu-ld.py (svensk Temu-titel)",
+  "temu_price_sek": 170.17,
+  "rating": 4.8,
+  "review_count": 118,
+  "review_dates": [
+   "2024-*-31",
+   "2024-08-19",
+   "2024-09-24",
+   "2024-*-11"
+  ],
+  "category_path": [
+   "Gräsmatta, trädgård & *",
+   "Gräsklippare & elverktyg utomhus"
+  ],
+  "image_count": 2,
+  "hero_url": "https://img.kwcdn.com/product/open/2024-06-24/1719212396951-439dfd035f40440fbf6b479563b8fc7d-goods.jpeg",
+  "video_url": null,
+  "video_checked": false,
+  "object": "Robotgräsklipparens knivar",
+  "owner_owns": "ja",
+  "friction": "Slöa knivar → fransigt gräs",
+  "old_way": "Originalknivar 24-pack 179 kr (Pricerunner) / Biltema-knivar",
+  "variants": "en (45-pack)",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner: 24-pack Mammotion 179 kr; INF 6-pack knivslip 169",
+   "price_sek": 179,
+   "url": "pricerunner.se 'knivslip gräsklippare'",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Förbrukningsvara (knivar byts var 4–8 vecka)"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "sista bytet före vintern görs i oktober",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema/Jula/fackhandel säljer samma knivar; jämförelsehandlad på styckpris"
+   },
+   "material": {
+    "result": "EJ KÖRD",
+    "reason": "föll före gate 4",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en"
+   },
+   "hook": {
+    "text": "Dags att byta robotens knivar?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "förbrukning",
+   "svensk mass-commoditisering"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 20,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com robot mower blades titanium replacement automower",
+   "temu-ld.py 2026-09-04 (enda listningen som gick att läsa före blockeringen)"
+  ]
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601099715207840",
+  "url_se": "https://www.temu.com/se/g-601099715207840.html",
+  "title": "Universal snow plow kit, heavy-duty steel blade, adjustable, complete mounting package",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Åkgräsklippare/trädgårdstraktor (används sep–okt, plogar nov–mars)",
+  "owner_owns": "ja — ~250 000 hushåll (uppskattning, ej mätt)",
+  "friction": "Uppfarten ska skottas i vinter; traktorn står oanvänd nov–mars",
+  "old_way": "Skyffel, eller Husqvarna/Stiga-blad 5 990–18 900 kr",
+  "variants": "universalfäste — passar 'de flesta' traktorer; ägaren vet märke, inte fästmått",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner: Texas Snow Scraper 75 cm 2 734 kr; Stiga Snow Blade 107 cm 5 990; Husqvarna 7 990–18 900",
+   "price_sek": 2734,
+   "url": "pricerunner.se 'snökedjor åkgräsklippare'",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Husqvarna Snowplow 120 cm",
+   "price_sek": 7990,
+   "url": "pricerunner.se"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Monteras på traktorn ägaren har"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Snön kommer i nov–dec; i sep–okt är problemet framtida (kranskyddsfällan). Förberedelseköp — presens 1, inte 2",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Samma form i fackhandel 2 734+ kr; ankare 7 990 är 5× — men produkten kräver traktorspecifik montering"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerat för vår IP 2026-09-04; koordinatorn kör hämtning + materialgate centralt",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Fästet måste passa chassit — ägaren kan inte parametern; montering med bultar/vajer"
+   },
+   "hook": {
+    "text": "Har du en trädgårdstraktor? Ploga med den.",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Traktor omisskännlig; ägare 45–70 med lång uppfart"
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "nej",
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-pris ej hämtat (blockerat); sannolikt > 1 000 kr landat"
+   }
+  },
+  "negative_space_flags": [
+   "montering",
+   "framtida skada/behov",
+   "troligen > 1 000 kr (US-listningar $150–300, fraktvikt) — pris UNKNOWN"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 35,
+  "category_novelty": 85,
+  "tier": "C",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "Pris över 1 000 kr + montering på okänt chassi + snön kommer om 8–10 veckor",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch site:temu.com riding lawn mower snow plow blade",
+   "pricerunner.se 'snökedjor åkgräsklippare'"
+  ]
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601099603830063",
+  "url_se": "https://www.temu.com/se/g-601099603830063.html",
+  "title": "Dump cart tow-behind, 350 lb steel, black, for lawn tractor/UTV",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Åkgräsklippare (dragkrok)",
+  "owner_owns": "ja",
+  "friction": "Löv, ved och jord ska flyttas i höst",
+  "old_way": "Skottkärra; Biltema/Jula trädgårdsvagn (ej verifierat pris, 403)",
+  "variants": "en",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula säljer tippkärror till åkgräsklippare (kategorikunskap, EJ verifierat — 403)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Kopplas på traktorn"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Höstens lövtransport",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Kedjorna säljer samma form (tippkärra 350 lb) — ej verifierat mot pris, men kategorin är hyllad"
+   },
+   "material": {
+    "result": "EJ KÖRD",
+    "reason": "föll före gate 4",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en"
+   },
+   "hook": {
+    "text": "Kör du lövsäckarna med skottkärra?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "> 1 000 kr troligt (stål, 20+ kg frakt)",
+   "montering",
+   "svensk mass-commoditisering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 25,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com lawn tractor dump cart trailer"
+  ]
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601099640954950",
+  "url_se": "https://www.temu.com/se/g-601099640954950.html",
+  "title": "350 lbs heavy-duty tow-behind dump cart for lawn/garden tractor",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Åkgräsklippare (dragkrok)",
+  "owner_owns": "ja",
+  "friction": "Löv, ved och jord ska flyttas i höst",
+  "old_way": "Skottkärra; Biltema/Jula trädgårdsvagn (ej verifierat pris, 403)",
+  "variants": "en",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula säljer tippkärror till åkgräsklippare (kategorikunskap, EJ verifierat — 403)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Kopplas på traktorn"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Höstens lövtransport",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Kedjorna säljer samma form (tippkärra 350 lb) — ej verifierat mot pris, men kategorin är hyllad"
+   },
+   "material": {
+    "result": "EJ KÖRD",
+    "reason": "föll före gate 4",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en"
+   },
+   "hook": {
+    "text": "Kör du lövsäckarna med skottkärra?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "> 1 000 kr troligt (stål, 20+ kg frakt)",
+   "montering",
+   "svensk mass-commoditisering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 25,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com lawn tractor dump cart trailer"
+  ]
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601099865900714",
+  "url_se": "https://www.temu.com/se/g-601099865900714.html",
+  "title": "Trailer towing hitch for lawn mower/garden tractor 'Pro Hi Hitch', John Deere/Husqvarna",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Åkgräsklippare (bakre chassi)",
+  "owner_owns": "ja",
+  "friction": "Ingen — kroken behövs bara om han redan har/köper en kärra",
+  "old_way": "Medföljande krok; Husqvarna krok 176 kr, Alpina 592, Stiga 749 (Pricerunner)",
+  "variants": "modellberoende bultmönster",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner: Husqvarna Upphängningskrok 176 kr; solo by AL-KO 571; Alpina 592; Stiga 749",
+   "price_sek": 176,
+   "url": "pricerunner.se 'dragkrok åkgräsklippare'",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Stiga Dragkrok Tornado",
+   "price_sek": 749,
+   "url": "pricerunner.se"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Bultas på traktorn"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Behovet är latent — kroken löser inget ägaren ser i oktober; annonsen måste skapa det (kärra först)",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Fackhandel 176–749, Biltema troligen billigare (ej verifierat)"
+   },
+   "material": {
+    "result": "EJ KÖRD",
+    "reason": "föll före gate 4",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "bultmönster per chassi"
+   },
+   "hook": {
+    "text": "—",
+    "result": "FAIL"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas",
+   "montering",
+   "oklart om det passar"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 20,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com riding mower hitch receiver tow",
+   "pricerunner.se 'dragkrok åkgräsklippare'"
+  ]
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601099675095010",
+  "url_se": "https://www.temu.com/se/g-601099675095010.html",
+  "title": "Zero-turn lawn mower trailer tow hitch, universal fit 42/50/54",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Åkgräsklippare (bakre chassi)",
+  "owner_owns": "ja",
+  "friction": "Ingen — kroken behövs bara om han redan har/köper en kärra",
+  "old_way": "Medföljande krok; Husqvarna krok 176 kr, Alpina 592, Stiga 749 (Pricerunner)",
+  "variants": "modellberoende bultmönster",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner: Husqvarna Upphängningskrok 176 kr; solo by AL-KO 571; Alpina 592; Stiga 749",
+   "price_sek": 176,
+   "url": "pricerunner.se 'dragkrok åkgräsklippare'",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Stiga Dragkrok Tornado",
+   "price_sek": 749,
+   "url": "pricerunner.se"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Bultas på traktorn"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Behovet är latent — kroken löser inget ägaren ser i oktober; annonsen måste skapa det (kärra först)",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Fackhandel 176–749, Biltema troligen billigare (ej verifierat)"
+   },
+   "material": {
+    "result": "EJ KÖRD",
+    "reason": "föll före gate 4",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "bultmönster per chassi"
+   },
+   "hook": {
+    "text": "—",
+    "result": "FAIL"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas",
+   "montering",
+   "oklart om det passar"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 20,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com riding mower hitch receiver tow",
+   "pricerunner.se 'dragkrok åkgräsklippare'"
+  ]
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601099593324713",
+  "url_se": "https://www.temu.com/se/g-601099593324713.html",
+  "title": "Bolt-on 2-inch hitch receiver tube for lawn tractor",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Åkgräsklippare (bakre chassi)",
+  "owner_owns": "ja",
+  "friction": "Ingen — kroken behövs bara om han redan har/köper en kärra",
+  "old_way": "Medföljande krok; Husqvarna krok 176 kr, Alpina 592, Stiga 749 (Pricerunner)",
+  "variants": "modellberoende bultmönster",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner: Husqvarna Upphängningskrok 176 kr; solo by AL-KO 571; Alpina 592; Stiga 749",
+   "price_sek": 176,
+   "url": "pricerunner.se 'dragkrok åkgräsklippare'",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Stiga Dragkrok Tornado",
+   "price_sek": 749,
+   "url": "pricerunner.se"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Bultas på traktorn"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Behovet är latent — kroken löser inget ägaren ser i oktober; annonsen måste skapa det (kärra först)",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Fackhandel 176–749, Biltema troligen billigare (ej verifierat)"
+   },
+   "material": {
+    "result": "EJ KÖRD",
+    "reason": "föll före gate 4",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "bultmönster per chassi"
+   },
+   "hook": {
+    "text": "—",
+    "result": "FAIL"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas",
+   "montering",
+   "oklart om det passar"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 20,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com riding mower hitch receiver tow",
+   "pricerunner.se 'dragkrok åkgräsklippare'"
+  ]
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601099624750387",
+  "url_se": "https://www.temu.com/se/g-601099624750387.html",
+  "title": "48-inch tow-behind lawn sweeper, leaf collector hopper",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Åkgräsklippare (dragkrok) + gräsmattan",
+  "owner_owns": "ja",
+  "friction": "Löven ligger på gräsmattan i oktober — krattas för hand eller körs sönder",
+  "old_way": "Kratta, lövblås, eller Jula/fackhandel lövuppsamlare (ej prisverifierat)",
+  "variants": "bredd 42/48 tum",
+  "swedish_equivalent": {
+   "retailer": "Jula/Biltema/fackhandel säljer lövuppsamlare till åkgräsklippare (kategorikunskap, EJ verifierat — 403; Pricerunner-sök gav bara traktorer)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Husqvarna Stötfångare/Löv- & gräsuppsamlare-kategori",
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Dras efter traktorn"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Lövsäsong — starkast tänkbara presens",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form (gräsmattesop 42–48\") hyllad i Sverige"
+   },
+   "material": {
+    "result": "EJ KÖRD",
+    "reason": "föll före gate 4",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "bredd vet han ungefär"
+   },
+   "hook": {
+    "text": "Krattar du löven på tomten själv?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "> 1 000 kr (stort stålpaket, frakt)",
+   "montering",
+   "svensk mass-commoditisering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com tow behind lawn sweeper leaf collector",
+   "pricerunner.se 'lövuppsamlare åkgräsklippare'"
+  ]
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601100086553587",
+  "url_se": "https://www.temu.com/se/g-601100086553587.html",
+  "title": "42-inch tow-behind lawn sweeper, 12 cu ft, for garden tractors",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Åkgräsklippare (dragkrok) + gräsmattan",
+  "owner_owns": "ja",
+  "friction": "Löven ligger på gräsmattan i oktober — krattas för hand eller körs sönder",
+  "old_way": "Kratta, lövblås, eller Jula/fackhandel lövuppsamlare (ej prisverifierat)",
+  "variants": "bredd 42/48 tum",
+  "swedish_equivalent": {
+   "retailer": "Jula/Biltema/fackhandel säljer lövuppsamlare till åkgräsklippare (kategorikunskap, EJ verifierat — 403; Pricerunner-sök gav bara traktorer)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Husqvarna Stötfångare/Löv- & gräsuppsamlare-kategori",
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Dras efter traktorn"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Lövsäsong — starkast tänkbara presens",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form (gräsmattesop 42–48\") hyllad i Sverige"
+   },
+   "material": {
+    "result": "EJ KÖRD",
+    "reason": "föll före gate 4",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "bredd vet han ungefär"
+   },
+   "hook": {
+    "text": "Krattar du löven på tomten själv?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "> 1 000 kr (stort stålpaket, frakt)",
+   "montering",
+   "svensk mass-commoditisering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com tow behind lawn sweeper leaf collector",
+   "pricerunner.se 'lövuppsamlare åkgräsklippare'"
+  ]
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601099634319441",
+  "url_se": "https://www.temu.com/se/g-601099634319441.html",
+  "title": "Riding lawn mower lift jack, 890 lbs, telescopic, 45° tilt",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Åkgräsklippare (underhåll av klippdäck)",
+  "owner_owns": "ja",
+  "friction": "Klippdäcket ska rengöras/knivar bytas inför vinterförvaring",
+  "old_way": "Domkraft + pallbockar, eller fackhandelslyft",
+  "variants": "en",
+  "swedish_equivalent": {
+   "retailer": "Jula/Biltema säljer gräsklipparlyft (kategorikunskap, EJ verifierat — 403)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Används med traktorn"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Vinterservicen görs i oktober–november; problemet syns inte (gräs under däcket)",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form i kedjorna (ej prisverifierat)"
+   },
+   "material": {
+    "result": "EJ KÖRD",
+    "reason": "föll före gate 4",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en"
+   },
+   "hook": {
+    "text": "Tvättar du klippdäcket liggande på rygg?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "> 1 000 kr troligt",
+   "svensk mass-commoditisering",
+   "osynligt problem"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com lawn mower lift jack riding mower maintenance"
+  ]
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601099565993130",
+  "url_se": "https://www.temu.com/se/g-601099565993130.html",
+  "title": "Universal lawn mower blade sharpener, rotary drill attachment",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Gräsklipparkniv (klipparen står i förrådet)",
+  "owner_owns": "ja",
+  "friction": "Slö kniv — syns inte",
+  "old_way": "Fil/bänkslip; Pricerunner 50 mm knivslip 195–215 kr, INF 6-pack 169",
+  "variants": "en",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner: '50mm Gräsklippare Knivslip' 195–215 kr",
+   "price_sek": 195,
+   "url": "pricerunner.se 'knivslip gräsklippare'",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Objektet (gräsklipparen) förvaras inomhus; kniven osynlig — samma struktur som kedjeslipen (förlorare)"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Slö kniv märks inte i oktober",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Identisk form 169–215 kr"
+   },
+   "material": {
+    "result": "EJ KÖRD",
+    "reason": "föll före gate 4",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en"
+   },
+   "hook": {
+    "text": "—",
+    "result": "FAIL"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "inomhusförvarat objekt",
+   "osynlig skada",
+   "köpt old way < 300 kr jämförelsehandlad",
+   "< 199 kr"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 10,
+  "category_novelty": 30,
+  "tier": "ELIM",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com lawn mower blade sharpener drill attachment",
+   "pricerunner.se 'knivslip gräsklippare'"
+  ]
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601099595795067",
+  "url_se": "https://www.temu.com/se/g-601099595795067.html",
+  "title": "Smart 12V/24V trickle charger 6A, car/motorcycle/lawn mower",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Åkgräsklipparens batteri (vinterförvaring)",
+  "owner_owns": "ja",
+  "friction": "Batteriet är dött i april",
+  "old_way": "Biltema/Jula/Clas Ohlson underhållsladdare 199–599 (kategorikunskap, ej prisverifierat)",
+  "variants": "en",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Clas Ohlson/Rusta — underhållsladdare är hyllvara (ej verifierat pris, 403)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "CTEK MXS 5.0",
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Generisk laddare, inte traktorspecifik; batteriet tas in på vintern"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Skadan (dött batteri) ligger i april — framtida",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Alla fyra kedjor säljer samma form"
+   },
+   "material": {
+    "result": "EJ KÖRD",
+    "reason": "föll före gate 4",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en"
+   },
+   "hook": {
+    "text": "Startar traktorn i vår?",
+    "result": "OSÄKER"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "framtida skada",
+   "svensk mass-commoditisering",
+   "jämförelsehandlad"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 15,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com lawn tractor battery maintainer trickle charger 12v"
+  ]
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601099701719415",
+  "url_se": "https://www.temu.com/se/g-601099701719415.html",
+  "title": "20-pack high-index plastic tire chains, winter car wheel anti-slip (garden/lawn)",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Bilhjul/traktorhjul",
+  "owner_owns": "ja",
+  "friction": "Halka i vinter",
+  "old_way": "Riktiga snökedjor: Stiga 869 kr, Husqvarna 2 339–2 490 (Pricerunner)",
+  "variants": "antal/storlek",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner: Stiga Snow Chains 13x5\" 869 kr; MTD 1 895; Husqvarna 2 339",
+   "price_sek": 869,
+   "url": "pricerunner.se 'snökedjor åkgräsklippare'",
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Husqvarna snökedja",
+   "price_sek": 2339,
+   "url": "pricerunner.se"
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Bilprodukt (buntband-kedjor), inte gjord för traktorn; sökningen hittade INGEN traktorspecifik snökedja på Temu"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "snö = framtid",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "riktiga traktorkedjor finns bara i fackhandel 869+"
+   },
+   "material": {
+    "result": "EJ KÖRD",
+    "reason": "föll före gate 4",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "däckmått"
+   },
+   "hook": {
+    "text": "—",
+    "result": "FAIL"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "framtida",
+   "fel objekt"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 10,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com lawn tractor tire chains snow — gav bara bilkedjor; luckan noterad (traktorkedjor Stiga 869 / Husqvarna 2 339 finns, ingen Temu-motsvarighet hittad)"
+  ]
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601099638494338",
+  "url_se": "https://www.temu.com/se/g-601099638494338.html",
+  "title": "2 pcs backpack blower straps, for Echo PB-265L/PB-403",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Ryggburen lövblås (Echo)",
+  "owner_owns": "få — Echo är ovanligt i Sverige",
+  "friction": "Slitna remmar",
+  "old_way": "Originalremmar",
+  "variants": "modellspecifik",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Reservdel till ett specifikt amerikanskt märke"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "material": {
+    "result": "EJ KÖRD",
+    "reason": "föll före gate 4",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "modell"
+   },
+   "hook": {
+    "text": "—",
+    "result": "FAIL"
+   },
+   "audience": {
+    "result": "FAIL",
+    "reason": "Echo-ägare i Sverige är för få"
+   }
+  },
+  "negative_space_flags": [
+   "oklart ägande",
+   "reservdel"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 5,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com backpack leaf blower harness shoulder strap"
+  ]
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601099887718525",
+  "url_se": "https://www.temu.com/se/g-601099887718525.html",
+  "title": "Backpack blower/sprayer rack, wall mount hanger for garage",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Garagevägg",
+  "owner_owns": "ja",
+  "friction": "Blåsen står på golvet",
+  "old_way": "Krok",
+  "variants": "en",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula redskapskrokar (kategorikunskap)",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Inomhusförvaring — samma struktur som väggfäste trimmer (förlorare)"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": ""
+   },
+   "material": {
+    "result": "EJ KÖRD",
+    "reason": "föll före gate 4",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "hook": {
+    "text": "—",
+    "result": "FAIL"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "inomhus-commodity"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 10,
+  "category_novelty": 20,
+  "tier": "ELIM",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com backpack leaf blower harness shoulder strap"
+  ]
+ },
+ {
+  "kluster": "grasklippare",
+  "goods_id": "601099638514486",
+  "url_se": "https://www.temu.com/se/g-601099638514486.html",
+  "title": "Leaf scoop hand rakes with claws, portable garden leaf collector",
+  "title_source": "sökutdrag (engelsk titel) — listningen blockerad för vår IP 2026-09-04",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Löven på tomten (universellt)",
+  "owner_owns": "ja",
+  "friction": "Löv ska i säcken",
+  "old_way": "Två krattor/händerna; Biltema/Jula/Rusta lövplockare 49–99 kr (kategorikunskap, ej prisverifierat)",
+  "variants": "en",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Rusta/Clas Ohlson säljer lövplockare (ej prisverifierat — 403)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Fäster inte på något ägt — universellt trädgårdsobjekt (löv)"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Lövsäsong",
+    "season_sep_oct": "höst: PASS"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Alla fyra kedjor säljer samma form under 100 kr"
+   },
+   "material": {
+    "result": "EJ KÖRD",
+    "reason": "föll före gate 4",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en"
+   },
+   "hook": {
+    "text": "Plockar du löv med händerna?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "< 199 kr",
+   "köpt fungerande old way"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 20,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "tier_note": "provisorisk — satt på gate 1–3 + 6–8; material (gate 4) och ekonomi (gate 5) ej körda, Temu blockerat 2026-09-04",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com leaf scoops hand rakes grabber"
+  ]
+ }
+]

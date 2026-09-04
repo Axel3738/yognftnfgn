@@ -1,0 +1,3653 @@
+[
+ {
+  "kluster": "pool",
+  "goods_id": "601099619866532",
+  "url_se": "https://www.temu.com/se/g-601099619866532.html",
+  "title": "Hot Tub Cover Rainproof Dustproof Bathtub Protector Cover — cover cap, hot tub covers for winter, brown (ur söktitel; svensk Temu-titel ej hämtad)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Spalocket (det styva isolerade locket) på ett fast utomhusspabad",
+  "owner_owns": true,
+  "friction": "Löv, regn, snö och UV ligger på spalocket sep–okt; vinylen spricker i sömmarna, skummet suger vatten och locket blir tungt och vattensjukt (byte kostar 8 495–12 695 kr, spabadsbutiken.se). Syns direkt: blött, lövtäckt lock i höstträdgården.",
+  "old_way": "Ingenting, eller en presenning som blåser av / samlar vatten",
+  "variants": "Storlek efter spabadets mått (200×200, 210×210, 230×230 cm är standard) — ägaren vet ungefär; exakta SKU:er ej lästa (bilder ej hämtade)",
+  "swedish_equivalent": {
+   "retailer": "Spabadsbutiken.se (fackhandel)",
+   "price_sek": 895,
+   "url": "https://www.spabadsbutiken.se/spatillbehor",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Spabadsbutiken Cover Cap deLuxe 210x210 cm",
+   "price_sek": 1295,
+   "url": "https://spabadsbutiken.se/spabad/spatillbehor/cover-cap-deluxe-210-x-210-cm-skyddande-overdrag-till-spalock/"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Skyddar det dyraste slitdelen på ett ägt objekt som står ute året runt."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Löv/regn/frost på locket är fotograferbart i varje svensk trädgård i september–oktober; spabadet används året runt så locket ligger ute.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Biltema/Jula/Clas/Rusta saknar formen (Julas 'spaskydd' är ett tält, Hornbachs ett helöverdrag för uppblåsbart spa); bara Bauhaus/Bygghemma säljer samma form och då för 1 495 kr. Ankaret 1 295 kr (spabadsbutiken/kuben 1 290) ligger ≥1,6× över ett rimligt pris runt 699–799 kr; lägsta synliga pris på Pricerunner är dock 499–785 kr från okänd säljare.",
+    "verified": true,
+    "verified_by": "h4.json",
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 1495,
+    "anchor": {
+     "name": "Spabadsbutiken Cover Cap deLuxe 210x210 cm",
+     "price_sek": 1295,
+     "url": "https://spabadsbutiken.se/spabad/spatillbehor/cover-cap-deluxe-210-x-210-cm-skyddande-overdrag-till-spalock/"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Lockskydd/skyddsöverdrag (cover cap) för fast spabad, över det isolerade locket"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 599,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej — ett lock per spa (ev. present till grannen med spa)",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. Ankare 895–1 295 kr ger utrymme för 499–599 kr = ankare ≥1,5–2,2×."
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Måttberoende. Ägaren vet spabadets mått ungefär (2 = utantill gäller inte alla). Antal SKU:er ej läst."
+   },
+   "hook": {
+    "text": "Ligger löven på ditt spalock?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Spabad i bild är omisskännligt; ägarklass uppskattad 130–270 k hushåll (se md, ej verifierad källa); man/par 45–70 i småhus."
+   }
+  },
+  "negative_space_flags": [
+   "storleksval (mått)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 78,
+  "category_novelty": 70,
+  "tier": "A (villkorad)",
+  "biggest_risk": "Passform/SKU-djungel: ett lockskydd som inte sitter fast i höststorm ger returer; leverantörsvideon ej sedd.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com spa cover cap protector weatherproof",
+   "site:temu.com hot tub cover lifter",
+   "https://www.spabadsbutiken.se/spatillbehor"
+  ],
+  "sub_cluster": "SPABAD",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt.",
+  "tier_agent": "A (provisorisk — material ej verifierad)",
+  "tier_reason": "hylla verifierad (Spabadsbutiken 1 295–1 495 kr, ingen kedja); presens + publik PASS; variant = spabadets mått (ägaren vet ungefär). Material och Temu-pris osedda."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099524126091",
+  "url_se": "https://www.temu.com/se/g-601099524126091.html",
+  "title": "1pc Hot Tub Cover Cap Heavy Duty Polyester Spa Sun Shield and Hot Tub Cover Protector (ur söktitel, NZ-listning)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Spalocket på fast spabad",
+  "owner_owns": true,
+  "friction": "Samma som 601099619866532",
+  "old_way": "Ingenting/presenning",
+  "variants": "Okänt — bilder ej hämtade",
+  "swedish_equivalent": {
+   "retailer": "Spabadsbutiken.se",
+   "price_sek": 895,
+   "url": "https://www.spabadsbutiken.se/spatillbehor",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Spabadsbutiken Cover Cap deLuxe 210x210 cm",
+   "price_sek": 1295,
+   "url": "https://spabadsbutiken.se/spabad/spatillbehor/cover-cap-deluxe-210-x-210-cm-skyddande-overdrag-till-spalock/"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som ovan."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som ovan.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Biltema/Jula/Clas/Rusta saknar formen (Julas 'spaskydd' är ett tält, Hornbachs ett helöverdrag för uppblåsbart spa); bara Bauhaus/Bygghemma säljer samma form och då för 1 495 kr. Ankaret 1 295 kr (spabadsbutiken/kuben 1 290) ligger ≥1,6× över ett rimligt pris runt 699–799 kr; lägsta synliga pris på Pricerunner är dock 499–785 kr från okänd säljare.",
+    "verified": true,
+    "verified_by": "h4.json",
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 1495,
+    "anchor": {
+     "name": "Spabadsbutiken Cover Cap deLuxe 210x210 cm",
+     "price_sek": 1295,
+     "url": "https://spabadsbutiken.se/spabad/spatillbehor/cover-cap-deluxe-210-x-210-cm-skyddande-overdrag-till-spalock/"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Lockskydd/skyddsöverdrag (cover cap) för fast spabad, över det isolerade locket"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 599,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. "
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Mått."
+   },
+   "hook": {
+    "text": "Ligger löven på ditt spalock?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Som ovan."
+   }
+  },
+  "negative_space_flags": [
+   "storleksval (mått)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 75,
+  "category_novelty": 70,
+  "tier": "B (dubblett)",
+  "biggest_risk": "Passform; material okänt.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com spa cover cap protector weatherproof"
+  ],
+  "sub_cluster": "SPABAD",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt.",
+  "tier_agent": "B (dubblett av 601099619866532 — välj den med bäst video när Temu går att läsa)",
+  "tier_reason": "dubblett av spa-lockskyddet 601099619866532 — välj den med bäst video när Temu går att läsa"
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099527353718",
+  "url_se": "https://www.temu.com/se/g-601099527353718.html",
+  "title": "1 pack heavy duty 600D polyester spa cover for hot tub outdoor waterproof, brown (ur söktitel, AU-listning)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Spalocket/hela spabadet",
+  "owner_owns": true,
+  "friction": "Som ovan; 600D är den synliga spec som kan motivera priset (jfr motorhöljets 420D mot Julas 85 g/m²)",
+  "old_way": "Ingenting/presenning",
+  "variants": "Okänt",
+  "swedish_equivalent": {
+   "retailer": "Spabadsbutiken.se",
+   "price_sek": 895,
+   "url": "https://www.spabadsbutiken.se/spatillbehor",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Spabadsbutiken Cover Cap deLuxe 210x210 cm",
+   "price_sek": 1295,
+   "url": "https://spabadsbutiken.se/spabad/spatillbehor/cover-cap-deluxe-210-x-210-cm-skyddande-overdrag-till-spalock/"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som ovan."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som ovan.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Biltema/Jula/Clas/Rusta saknar formen (Julas 'spaskydd' är ett tält, Hornbachs ett helöverdrag för uppblåsbart spa); bara Bauhaus/Bygghemma säljer samma form och då för 1 495 kr. Ankaret 1 295 kr (spabadsbutiken/kuben 1 290) ligger ≥1,6× över ett rimligt pris runt 699–799 kr; lägsta synliga pris på Pricerunner är dock 499–785 kr från okänd säljare.",
+    "verified": true,
+    "verified_by": "h4.json",
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 1495,
+    "anchor": {
+     "name": "Spabadsbutiken Cover Cap deLuxe 210x210 cm",
+     "price_sek": 1295,
+     "url": "https://spabadsbutiken.se/spabad/spatillbehor/cover-cap-deluxe-210-x-210-cm-skyddande-overdrag-till-spalock/"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Lockskydd/skyddsöverdrag (cover cap) för fast spabad, över det isolerade locket"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 649,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. "
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Mått."
+   },
+   "hook": {
+    "text": "Står ditt spabad ute i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Som ovan."
+   }
+  },
+  "negative_space_flags": [
+   "storleksval (mått)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 74,
+  "category_novelty": 70,
+  "tier": "B (dubblett)",
+  "biggest_risk": "Passform; material okänt.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com hot tub cover wind straps clips"
+  ],
+  "sub_cluster": "SPABAD",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt.",
+  "tier_agent": "B (dubblett — 600D-spec talar för denna om videon duger)",
+  "tier_reason": "dubblett av spa-lockskyddet 601099619866532 — välj den med bäst video när Temu går att läsa"
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099612894629",
+  "url_se": "https://www.temu.com/se/g-601099612894629.html",
+  "title": "Hot Tub Vacuum Spa Vac — spa vacuum for hot tub with strong suction, portable handheld, for hot tub/pond/inflatable pools (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Bottnen i ett fast utomhusspabad",
+  "owner_owns": true,
+  "friction": "Löv, barr, sand och grus hamnar på spabadets botten varje gång locket är av i höst; filtret tar inte det som sjunkit. Syns tydligt i klart vatten.",
+  "old_way": "Håv som inte når botten, handen, eller tömma badet",
+  "variants": "Okänt (hand-pump eller batteri? — ej läst). Troligen en variant.",
+  "swedish_equivalent": {
+   "retailer": "Poolkungen.se / Spabadsbutiken.se (fackhandel)",
+   "price_sek": 990,
+   "url": "https://poolkungen.se/webbshop/kategori/spatillbehor-kemi/",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Spabadsbutiken Pool Blaster Spa Vac Plus Bottensug",
+   "price_sek": 1189,
+   "url": "https://spabadsbutiken.se/spabad/spatillbehor/pool-blaster-spa-vac-plus-bottensug/"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Rengör ett ägt objekt som står ute och används varje vecka året runt."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Löv och skräp på spabadsbotten i oktober är ett per-bad-problem, fotograferbart.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula säljer exakt formen (sladdlös handhållen spa-dammsugare, Bestway Lay-Z-Spa) för 399 kr på rea / 599 kr ordinarie, och Pricerunner har samma form från 289 kr. Fackhandelns 1 189–1 295 kr är märkesvaror (Pool Blaster) som inte bär ett Temu-pris över Julas.",
+    "verified": true,
+    "verified_by": "h4.json",
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 399,
+    "anchor": {
+     "name": "Spabadsbutiken Pool Blaster Spa Vac Plus Bottensug",
+     "price_sek": 1189,
+     "url": "https://spabadsbutiken.se/spabad/spatillbehor/pool-blaster-spa-vac-plus-bottensug/"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Handhållen batteridriven bottensug/spa-dammsugare för spabad"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 599,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej (en per hushåll)",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. Ankare 990 kr."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "Universell, ingen passform."
+   },
+   "hook": {
+    "text": "Ligger det skräp på botten i spabadet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Spabad i bild; samma ägarklass."
+   }
+  },
+  "negative_space_flags": [],
+  "eliminated_at": "shelf",
+  "structure_match": 76,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "Sugkraft/kvalitet på en billig handpump-modell kan ge dåliga recensioner; om videon visar pool i stället för spabad faller den (fel objekt i material).",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com spa vacuum handheld hot tub cleaner",
+   "https://poolkungen.se/webbshop/kategori/spatillbehor-kemi/",
+   "https://www.spabadsbutiken.se/spatillbehor"
+  ],
+  "sub_cluster": "SPABAD",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099575291512",
+  "url_se": "https://www.temu.com/se/g-601099575291512.html",
+  "title": "221lbs Steel 48\" Hot Tub Handrail Spa Stair Ladder Side Hand Rail Railing, silver (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Kanten/insteget på ett fast spabad",
+  "owner_owns": true,
+  "friction": "Att kliva i och ur ett 90 cm högt spabad i mörker, kyla och halka i oktober — inget att hålla i. Ägare 45–70 och äldre föräldrar. Rädsla/fall-komponent.",
+  "old_way": "Hålla i lockkanten eller en person; ingenting",
+  "variants": "En variant (48\", 100 kg). Basen skjuts in under spabadets kabinett (spabadets vikt håller den) — ej läst i detalj.",
+  "swedish_equivalent": {
+   "retailer": "Ingen träff i Spabadsbutiken/Poolkungen (sökt 'räcke' 2026-09-04); övriga spahandlare ej nåbara",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": "Folkpool SPA Side LED Handrail",
+   "price_sek": 2995,
+   "url": "https://www.folkpool.se/produkter/spa/spatrappa-och-racken/sparacken/spa-side-led-handrail.html"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fästs vid ett ägt objekt som står ute och används kroppsligt."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Halt, mörkt och kallt insteg är oktobers verklighet för varje spabadsägare — inget behov behöver skapas.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Ingen av Biltema/Jula/Clas/Rusta säljer ett spa-räcke; enda kedjeträffen är Bauhaus säkerhetsgrepp Denform för 1 795 kr. Fackhandelns ankare är Folkpool 2 995 kr, vilket är ≥1,6× ett rimligt pris på 999–1 495 kr — billigaste synliga jämförelse är VEVOR 860 kr på Pricerunner.",
+    "verified": true,
+    "verified_by": "h4.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": 1795,
+    "anchor": {
+     "name": "Folkpool SPA Side LED Handrail",
+     "price_sek": 2995,
+     "url": "https://www.folkpool.se/produkter/spa/spatrappa-och-racken/sparacken/spa-side-led-handrail.html"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Spa-räcke/handledare för spabad"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 899,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. Pris > 500 kr-klassen (aldrig förlorat) är rimlig för stål 48\"."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant."
+   },
+   "hook": {
+    "text": "Svårt att kliva ur spabadet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Exakt 45–70; fall-rädsla; spabad i bild."
+   }
+  },
+  "negative_space_flags": [
+   "lätt montering (skjuts under kabinettet) — kontrollera i video"
+  ],
+  "eliminated_at": null,
+  "structure_match": 72,
+  "category_novelty": 85,
+  "tier": "A (villkorad)",
+  "biggest_risk": "Frakt/vikt på 1,2 m stål från Temu; passar inte spabad på trädäck med inbyggd kabinett; videon kan visa husbil (RV) i stället för spa.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com hot tub handrail safety grab bar"
+  ],
+  "sub_cluster": "SPABAD",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt.",
+  "tier_agent": "A (provisorisk — material ej verifierad)",
+  "tier_reason": "hylla verifierad (Folkpool 2 995, Bauhaus 1 795, ingen kedja); en variant; rädsla/fall som kameran; > 500 kr-zonen. Material, frakt och Temu-pris osedda."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601101133629438",
+  "url_se": "https://www.temu.com/se/g-601101133629438.html",
+  "title": "Pool filter cartridge cleaning tool, quick removal of dirt, adjustable flow cleaning wand for spa/hot tub, fits standard US garden hoses (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Filterpatronen i ett fast spabad (rengörs varje/varannan vecka året runt)",
+  "owner_owns": true,
+  "friction": "Att spola vecken på filterpatronen med trädgårdsslangen tar 10 minuter, stänker och blir aldrig rent; smutsigt filter = grumligt vatten och kemidosering som inte tar.",
+  "old_way": "Slangen och fingrarna; blötlägga i hink; köpa nytt filter (300–600 kr)",
+  "variants": "En variant. Gänga: 'standard US garden hose' (3/4\" GHT) — svenska slangar har Gardena-klick → adapter behövs (negativ flagga).",
+  "swedish_equivalent": {
+   "retailer": "Spabadsbutiken.se (SPA Water Wand 255 kr) / Poolkungen (Filter Flosser 590 kr)",
+   "price_sek": 255,
+   "url": "https://www.spabadsbutiken.se/search?q=water+wand",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Kuben Filtertvätt till spafilter, Kerlis",
+   "price_sek": 269,
+   "url": "https://www.kuben.se/spa-ovrigt/spabad-tillbehor/"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Underhåller en del av ett ägt objekt; filtret hanteras utomhus vid spabadet."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Filterrengöring är veckorutin året runt; i höst mer löv/pollen. Inte säsongsdriven men befintlig friktion.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Ingen kedja säljer spolmunstycket — Bauhaus/Bygghemma har bara Denforms hinksystem för 1 495–1 599 kr. Fackhandeln ligger tätt på 239–299 kr, så prisutrymmet är litet (rimligt pris ~199–249 kr) och ankaret når inte 1,6×.",
+    "verified": true,
+    "verified_by": "h4.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Kuben Filtertvätt till spafilter, Kerlis",
+     "price_sek": 269,
+     "url": "https://www.kuben.se/spa-ovrigt/spabad-tillbehor/"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Filtertvätt/spolmunstycke för patronfilter (spa)"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 349,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. Lågt fackhandelsankare (255 kr) begränsar prisutrymmet — under 300 kr kräver kostnad ≤ 100 kr och gratis material."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant — men slangkoppling kräver adapter."
+   },
+   "hook": {
+    "text": "Spolar du spafiltret med slangen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "Filterpatronen i hand är inte lika omisskännlig som spabadet självt — CPM-proxy svagare; spabadet måste synas i bild."
+   }
+  },
+  "negative_space_flags": [
+   "kräver adapter/förklaring (US-gänga)",
+   "lågt prisläge (< 300 kr) om ankaret 255 kr styr"
+  ],
+  "eliminated_at": null,
+  "structure_match": 60,
+  "category_novelty": 75,
+  "tier": "C (lågt fackhandelsankare)",
+  "biggest_risk": "Prisutrymme: fackhandeln säljer samma sak för 255 kr; Gardena-adapter måste medfölja eller förklaras.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com hot tub filter cleaner wand",
+   "https://www.spabadsbutiken.se/search?q=water+wand",
+   "https://poolkungen.se/webbshop/kategori/spatillbehor-kemi/"
+  ],
+  "sub_cluster": "SPABAD",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt.",
+  "tier_agent": "B (provisorisk)",
+  "tier_reason": "filtertvätt: Spabadsbutiken 255 / Kuben 269 — lika dödligt som en kedja; US-gänga kräver adapter"
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601101853422243",
+  "url_se": "https://www.temu.com/se/g-601101853422243.html",
+  "title": "Heavy duty hydraulic hot tub spa cover lift with automatic mechanism, adjustable height 30–40\", width 53–93\", underwater/under-mounting (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Spalocket på fast spabad",
+  "owner_owns": true,
+  "friction": "Locket väger 20–35 kg (mer när det sugit vatten i höst) och ska av och på vid varje bad — tungt, blött, ryggen; två personer behövs.",
+  "old_way": "Lyfta för hand, luta mot väggen (skadar locket), hoppa över bad",
+  "variants": "Justerbar 30–40\" höjd / 53–93\" bredd — ägaren vet spabadets mått ungefär. Kräver skruvmontering i kabinettet.",
+  "swedish_equivalent": {
+   "retailer": "Spabadsbutiken.se / Poolkungen.se",
+   "price_sek": 3595,
+   "url": "https://www.spabadsbutiken.se/spatillbehor/locklyftar",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Locklyft 3/4 (Spabadsbutiken 3 595–3 995 kr), Locklyft Universal (Poolkungen 3 995 kr)",
+   "price_sek": 3595,
+   "url": "https://www.spabadsbutiken.se/spatillbehor/locklyftar"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fästs på ägt objekt ute."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Varje bad i höst = lyfta ett blött, tungt lock. Kroppslig friktion, finns nu.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS (ej verifierad)",
+    "reason": "Fackhandel 3 595–3 995 kr = ankare 2,4–4× vid 999–1 499 kr. Kedjorna säljer inte locklyftar enligt kännedom (ej verifierad). Kedjesajterna (Jula 403, Biltema 403, Rusta 404, Clas Ohlson JS-skal) och alla sökmotorer (WebSearch-kvot slut, DDG captcha, Bing brus, Mojeek 403, Brave 429) var oåtkomliga 2026-09-04 — kedjestatus bygger på kännedom och är märkt 'ej verifierad'. Fackhandelsankare är hämtade live från spabadsbutiken.se och poolkungen.se 2026-09-04."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 1299,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. Sannolikt > 1 000 kr i Sverige (negativ rymd) — avgörs av Temu-priset. Om det landar ≤ 999 kr blir den A-kandidat."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "Justerbar, en SKU."
+   },
+   "hook": {
+    "text": "Tungt att lyfta spalocket?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Spabad i bild; 45–70 med rygg."
+   }
+  },
+  "negative_space_flags": [
+   "montering (skruvas i kabinett)",
+   "pris troligen > 1 000 kr",
+   "skrymmande frakt"
+  ],
+  "eliminated_at": null,
+  "structure_match": 62,
+  "category_novelty": 85,
+  "tier": "C (> 1 000 kr + montering)",
+  "biggest_risk": "Pris över 1 000 kr och skruvmontering — två negativa-rymd-flaggor samtidigt; frakt på metallarmar.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com hot tub cover lifter",
+   "https://www.spabadsbutiken.se/spatillbehor/locklyftar"
+  ],
+  "sub_cluster": "SPABAD",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt.",
+  "tier_agent": "B (provisorisk)",
+  "tier_reason": "hydraulisk locklyft: två negativa-rymd-flaggor samtidigt"
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099592127596",
+  "url_se": "https://www.temu.com/se/g-601099592127596.html",
+  "title": "1pc Hot Tub Cover Strap Set for heavy duty bath tub cover fixation, no electricity required (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Spalocket (spännband över locket vid storm)",
+  "owner_owns": true,
+  "friction": "Höststormar lyfter och blåser av spalocket (skadar locket, kyler badet); lockets egna plastspännen är ofta trasiga.",
+  "old_way": "Ingenting, spännband från Biltema, tunga saker på locket",
+  "variants": "En variant (troligen). Ej läst.",
+  "swedish_equivalent": {
+   "retailer": "Spabadsbutiken.se (Stormband)",
+   "price_sek": 359,
+   "url": "https://www.spabadsbutiken.se/search?q=stormband",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Stormband (Spabadsbutiken)",
+   "price_sek": 359,
+   "url": "https://www.spabadsbutiken.se/search?q=stormband"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fästs på ägt objekt ute."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Storm/blåst i september–oktober är i säsong; problemet syns (lock på sned, i gräset).",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Biltema/Jula säljer generiska spännband (samma funktion, annan form) — ankaret 359 kr i fackhandel är lågt. Ej verifierad. Kedjesajterna (Jula 403, Biltema 403, Rusta 404, Clas Ohlson JS-skal) och alla sökmotorer (WebSearch-kvot slut, DDG captcha, Bing brus, Mojeek 403, Brave 429) var oåtkomliga 2026-09-04 — kedjestatus bygger på kännedom och är märkt 'ej verifierad'. Fackhandelsankare är hämtade live från spabadsbutiken.se och poolkungen.se 2026-09-04."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 299,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Ja — 2 band per lock är naturligt",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. Pris strax under fri-fraktgränsen 300 kr + 2-pack = spöhållar-hävstången."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant."
+   },
+   "hook": {
+    "text": "Blåser locket av ditt spabad?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Spabad i bild."
+   }
+  },
+  "negative_space_flags": [
+   "köpt old way som fungerar (generiskt spännband) ∧ < 300 kr"
+  ],
+  "eliminated_at": null,
+  "structure_match": 55,
+  "category_novelty": 75,
+  "tier": "C (generisk old way ∧ < 300)",
+  "biggest_risk": "Generiska spännband för 79 kr gör samma jobb — bara flerköp och material kan bära den.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com hot tub cover wind straps clips",
+   "https://www.spabadsbutiken.se/search?q=stormband"
+  ],
+  "sub_cluster": "SPABAD",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt.",
+  "tier_agent": "B (svag, provisorisk)",
+  "tier_reason": "stormband: Biltema-spännband för 79 kr gör samma jobb"
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099548575279",
+  "url_se": "https://www.temu.com/se/g-601099548575279.html",
+  "title": "Spa Hot Tub Cover Broken Repair Kit — latches with slot, keys and hardware (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Lockspännena på spalocket",
+  "owner_owns": true,
+  "friction": "Trasiga spännen → locket blåser upp; verkligt och vanligt.",
+  "old_way": "Tejp, ingenting",
+  "variants": "Center push / side push, med/utan nyckel — ägaren måste veta typ → OSÄKER",
+  "swedish_equivalent": {
+   "retailer": "Spabadsbutiken.se (Lockfästen 4 st)",
+   "price_sek": 279,
+   "url": "https://www.spabadsbutiken.se/spatillbehor",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Lockfästen till Thermolock 4 st",
+   "price_sek": 279,
+   "url": "https://www.spabadsbutiken.se/spatillbehor"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Reservdel till ägt objekt ute."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Trasigt spänne syns; höststorm gör det akut.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS (ej verifierad)",
+    "reason": "Fackhandel 279 kr — samma form, lågt ankare."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 249,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "FAIL (provisorisk)",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. Ankaret 279 kr sätter taket under 300 kr; ingen chans till ≥ 300 kr."
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Typ av spänne/nyckel måste matcha lockets."
+   },
+   "hook": {
+    "text": "Trasigt spänne på spalocket?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Spabad."
+   }
+  },
+  "negative_space_flags": [
+   "< 300 kr med lågt ankare",
+   "passform (spännetyp)"
+  ],
+  "eliminated_at": "economics",
+  "structure_match": 40,
+  "category_novelty": 75,
+  "tier": "C",
+  "biggest_risk": "Pristak 279 kr i fackhandel.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com hot tub cover lifter"
+  ],
+  "sub_cluster": "SPABAD",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099514985433",
+  "url_se": "https://www.temu.com/se/g-601099514985433.html",
+  "title": "4 sets spa hot tub cover clips kit — latches for cover straps with keys and hardware (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Lockspännena",
+  "owner_owns": true,
+  "friction": "Som ovan",
+  "old_way": "Som ovan",
+  "variants": "Som ovan",
+  "swedish_equivalent": {
+   "retailer": "Spabadsbutiken.se",
+   "price_sek": 279,
+   "url": "https://www.spabadsbutiken.se/spatillbehor",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Lockfästen 4 st",
+   "price_sek": 279,
+   "url": "https://www.spabadsbutiken.se/spatillbehor"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som ovan."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som ovan.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS (ej verifierad)",
+    "reason": "Som ovan."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 249,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "FAIL (provisorisk)",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. Som ovan."
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Som ovan."
+   },
+   "hook": {
+    "text": "Trasigt spänne på spalocket?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Spabad."
+   }
+  },
+  "negative_space_flags": [
+   "< 300 kr",
+   "passform"
+  ],
+  "eliminated_at": "economics",
+  "structure_match": 40,
+  "category_novelty": 75,
+  "tier": "C",
+  "biggest_risk": "Pristak.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com hot tub cover wind straps clips"
+  ],
+  "sub_cluster": "SPABAD",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601105450656033",
+  "url_se": "https://www.temu.com/se/g-601105450656033.html",
+  "title": "Heavy duty 16 mil thermal insulation solar bubble cover for hot tubs/spas, square spa blanket, evaporation/heat barrier, cut to fit (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Vattenytan i spabadet under locket",
+  "owner_owns": true,
+  "friction": "Värmeförlust/avdunstning under locket → högre elräkning i höst och blött lock. Payoffen (lägre elförbrukning) är ABSTRAKT och fördröjd — syns inte i bild.",
+  "old_way": "Ingenting",
+  "variants": "Klipps till passform ('fits most') → OSÄKER",
+  "swedish_equivalent": {
+   "retailer": "Spabadsbutiken.se (termofolie för pool 745–955 kr; spa-storlek ej sedd)",
+   "price_sek": 745,
+   "url": "https://www.spabadsbutiken.se/search?q=termofolie",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Planet Pool Termofolie (pool)",
+   "price_sek": 745,
+   "url": "https://www.spabadsbutiken.se/search?q=termofolie"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Används med ägt objekt ute."
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Elpriset i höst är verkligt, men friktionen syns inte — 'osynlig långsam skada'-klassen (avsnitt 6).",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Jula/Biltema säljer solfolie för pool (samma material, annan storlek) enligt kännedom — ej verifierad. Kedjesajterna (Jula 403, Biltema 403, Rusta 404, Clas Ohlson JS-skal) och alla sökmotorer (WebSearch-kvot slut, DDG captcha, Bing brus, Mojeek 403, Brave 429) var oåtkomliga 2026-09-04 — kedjestatus bygger på kännedom och är märkt 'ej verifierad'. Fackhandelsankare är hämtade live från spabadsbutiken.se och poolkungen.se 2026-09-04."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 399,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. "
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Klipp-till-passform."
+   },
+   "hook": {
+    "text": "Kostar spabadet för mycket el i höst?",
+    "result": "PASS (7 ord, men agitation)"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Spabad."
+   }
+  },
+  "negative_space_flags": [
+   "abstrakt/fördröjd payoff",
+   "'passar de flesta' utan mått",
+   "kräver förklaring"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 45,
+  "category_novelty": 70,
+  "tier": "C",
+  "biggest_risk": "Annonsen måste bevisa en osynlig besparing.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com wood fired hot tub cover insulation"
+  ],
+  "sub_cluster": "SPABAD",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099596495697",
+  "url_se": "https://www.temu.com/se/g-601099596495697.html",
+  "title": "Hot Tub Steps, universal spa steps 23.6\" wide, outdoor/indoor, fits any hot tub shape, heavy duty anti-scratch, brown (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Insteget till fast spabad",
+  "owner_owns": true,
+  "friction": "90 cm hög kant; kliva i/ur i mörker och halka i oktober; medföljande trappa saknas ofta eller är trasig.",
+  "old_way": "Pall, sten, ingenting",
+  "variants": "En variant (universal, 60 cm bred).",
+  "swedish_equivalent": {
+   "retailer": "Spabadsbutiken.se",
+   "price_sek": 1395,
+   "url": "https://www.spabadsbutiken.se/spatillbehor/trappor",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Folkpool Spatrappa Robust svart",
+   "price_sek": 1290,
+   "url": "https://www.folkpool.se/produkter/spa/spatrappa-och-racken/spatrappa/spatrappor-universal/spatrappa-robust-svart.html"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Används med ägt objekt ute."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Mörkt, halt insteg är oktober.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Bara Bauhaus säljer samma form och då för 1 495–1 995 kr; Jula/Rusta/Biltema/Clas har ingen spatrappa alls. Fackhandeln ligger 1 290–1 595 kr (Folkpool) vilket ger ≥1,6× mot ett rimligt pris på 699–799 kr; billigaste synliga jämförelse är VEVOR 817 kr på Pricerunner.",
+    "verified": true,
+    "verified_by": "h4.json",
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 1495,
+    "anchor": {
+     "name": "Folkpool Spatrappa Robust svart",
+     "price_sek": 1290,
+     "url": "https://www.folkpool.se/produkter/spa/spatrappa-och-racken/spatrappa/spatrappor-universal/spatrappa-robust-svart.html"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Spatrappa universal (plast, 2 steg)"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 899,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. Skrymmande plast → frakt tung del av landad kostnad; priset hamnar nära 1 000 kr."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "Universal."
+   },
+   "hook": {
+    "text": "Har du trappa till spabadet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Spabad."
+   }
+  },
+  "negative_space_flags": [
+   "skrymmande frakt",
+   "pris nära 1 000 kr"
+  ],
+  "eliminated_at": null,
+  "structure_match": 58,
+  "category_novelty": 80,
+  "tier": "B",
+  "biggest_risk": "Frakt/volym äter uppslaget; en plasttrappa för 899 kr måste se ut som ankarets 1 395-kronorstrappa.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com hot tub steps outdoor",
+   "https://www.spabadsbutiken.se/spatillbehor/trappor"
+  ],
+  "sub_cluster": "SPABAD",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt.",
+  "tier_agent": "B (provisorisk)",
+  "tier_reason": "spatrappa: Folkpool 1 290 / Bauhaus 1 495 som ankare; skrymmande frakt, pris nära 1 000 kr"
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "603097879412135",
+  "url_se": "https://www.temu.com/se/g-603097879412135.html",
+  "title": "36\" wide spa step, universal fit, deluxe spa hot tub with storage compartment, 2 steps, black/brown plastic (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Insteget till fast spabad",
+  "owner_owns": true,
+  "friction": "Som ovan + förvaring av kemi/filter",
+  "old_way": "Som ovan",
+  "variants": "En variant",
+  "swedish_equivalent": {
+   "retailer": "Spabadsbutiken.se",
+   "price_sek": 1395,
+   "url": "https://www.spabadsbutiken.se/spatillbehor/trappor",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Folkpool Spatrappa Robust svart",
+   "price_sek": 1290,
+   "url": "https://www.folkpool.se/produkter/spa/spatrappa-och-racken/spatrappa/spatrappor-universal/spatrappa-robust-svart.html"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som ovan."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som ovan.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Bara Bauhaus säljer samma form och då för 1 495–1 995 kr; Jula/Rusta/Biltema/Clas har ingen spatrappa alls. Fackhandeln ligger 1 290–1 595 kr (Folkpool) vilket ger ≥1,6× mot ett rimligt pris på 699–799 kr; billigaste synliga jämförelse är VEVOR 817 kr på Pricerunner.",
+    "verified": true,
+    "verified_by": "h4.json",
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 1495,
+    "anchor": {
+     "name": "Folkpool Spatrappa Robust svart",
+     "price_sek": 1290,
+     "url": "https://www.folkpool.se/produkter/spa/spatrappa-och-racken/spatrappa/spatrappor-universal/spatrappa-robust-svart.html"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Spatrappa universal (plast, 2 steg)"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 999,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. Ännu mer skrymmande (91 cm)."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "Universal."
+   },
+   "hook": {
+    "text": "Har du trappa till spabadet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Spabad."
+   }
+  },
+  "negative_space_flags": [
+   "skrymmande frakt",
+   "pris nära/över 1 000 kr"
+  ],
+  "eliminated_at": null,
+  "structure_match": 55,
+  "category_novelty": 80,
+  "tier": "B (dubblett)",
+  "biggest_risk": "Frakt.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com hot tub steps outdoor"
+  ],
+  "sub_cluster": "SPABAD",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt.",
+  "tier_agent": "B (dubblett av 601099596495697)",
+  "tier_reason": "dubblett av spatrappan 601099596495697"
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099572188942",
+  "url_se": "https://www.temu.com/se/g-601099572188942.html",
+  "title": "Hot tub cover windproof outdoor portable round inflatable hot spa cover protector, 73×43 in / 185×110 cm (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Uppblåsbart spa (Lay-Z-Spa-typ) med lock",
+  "owner_owns": true,
+  "friction": "Regn/löv/frost på det uppblåsbara spat — men de flesta svenska ägare packar ner det i oktober.",
+  "old_way": "Packa ner; presenning",
+  "variants": "En storlek 185×110 (rund).",
+  "swedish_equivalent": {
+   "retailer": "Rusta/Jula/Biltema säljer Lay-Z-Spa och Bestways egna tillbehör enligt kännedom — ej verifierad",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Bestway Lay-Z-Spa originaltillbehör",
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Ägt objekt — men det förvaras inomhus större delen av året (negativ rymd)."
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Bara de som kör spat över hösten har problemet; september är när de flesta packar ner.",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL (ej verifierad)",
+    "reason": "Bestway-tillbehör säljs i kedjorna enligt kännedom. Kedjesajterna (Jula 403, Biltema 403, Rusta 404, Clas Ohlson JS-skal) och alla sökmotorer (WebSearch-kvot slut, DDG captcha, Bing brus, Mojeek 403, Brave 429) var oåtkomliga 2026-09-04 — kedjestatus bygger på kännedom och är märkt 'ej verifierad'. Fackhandelsankare är hämtade live från spabadsbutiken.se och poolkungen.se 2026-09-04."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. "
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En storlek."
+   },
+   "hook": {
+    "text": "Står din Lay-Z-Spa ute i höst?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "Yngre familjer snarare än 45–70."
+   }
+  },
+  "negative_space_flags": [
+   "objekt förvaras inomhus",
+   "svensk mass-commoditisering (Bestway i kedjorna)"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 65,
+  "tier": "ELIM",
+  "biggest_risk": "Fel objekt för säsongen.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com hot tub cover lifter"
+  ],
+  "sub_cluster": "SPABAD (uppblåsbart)",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099514931575",
+  "url_se": "https://www.temu.com/se/g-601099514931575.html",
+  "title": "1 set balcony round hot tub cover cap with air vent, waterproof (UK-listning, uppblåsbart spa) (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Uppblåsbart spa",
+  "owner_owns": true,
+  "friction": "Som 601099572188942",
+  "old_way": "Som ovan",
+  "variants": "Okänt",
+  "swedish_equivalent": {
+   "retailer": "Kedjorna (Bestway-tillbehör) enligt kännedom — ej verifierad",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Bestway Lay-Z-Spa",
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Förvaras inomhus större delen av året."
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Packas ner i september.",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL (ej verifierad)",
+    "reason": "Kedjesajterna (Jula 403, Biltema 403, Rusta 404, Clas Ohlson JS-skal) och alla sökmotorer (WebSearch-kvot slut, DDG captcha, Bing brus, Mojeek 403, Brave 429) var oåtkomliga 2026-09-04 — kedjestatus bygger på kännedom och är märkt 'ej verifierad'. Fackhandelsankare är hämtade live från spabadsbutiken.se och poolkungen.se 2026-09-04."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. "
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Ej läst."
+   },
+   "hook": {
+    "text": "Står din Lay-Z-Spa ute i höst?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "Yngre publik."
+   }
+  },
+  "negative_space_flags": [
+   "objekt förvaras inomhus",
+   "commoditisering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 28,
+  "category_novelty": 65,
+  "tier": "ELIM",
+  "biggest_risk": "Fel objekt/säsong.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com spa cover cap protector weatherproof",
+   "site:temu.com wood fired hot tub cover insulation"
+  ],
+  "sub_cluster": "SPABAD (uppblåsbart)",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099582142042",
+  "url_se": "https://www.temu.com/se/g-601099582142042.html",
+  "title": "Spa & hot tub cover thermal blanket, round hot tub insulation/solar bubble cover for outdoor (uppblåsbara) hot tubs (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Uppblåsbart spa",
+  "owner_owns": true,
+  "friction": "Som 601099572188942",
+  "old_way": "Som ovan",
+  "variants": "Okänt",
+  "swedish_equivalent": {
+   "retailer": "Kedjorna (Bestway-tillbehör) enligt kännedom — ej verifierad",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Bestway Lay-Z-Spa",
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Förvaras inomhus större delen av året."
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Packas ner i september.",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL (ej verifierad)",
+    "reason": "Kedjesajterna (Jula 403, Biltema 403, Rusta 404, Clas Ohlson JS-skal) och alla sökmotorer (WebSearch-kvot slut, DDG captcha, Bing brus, Mojeek 403, Brave 429) var oåtkomliga 2026-09-04 — kedjestatus bygger på kännedom och är märkt 'ej verifierad'. Fackhandelsankare är hämtade live från spabadsbutiken.se och poolkungen.se 2026-09-04."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. "
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Ej läst."
+   },
+   "hook": {
+    "text": "Står din Lay-Z-Spa ute i höst?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "Yngre publik."
+   }
+  },
+  "negative_space_flags": [
+   "objekt förvaras inomhus",
+   "commoditisering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 28,
+  "category_novelty": 65,
+  "tier": "ELIM",
+  "biggest_risk": "Fel objekt/säsong.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com spa cover cap protector weatherproof",
+   "site:temu.com wood fired hot tub cover insulation"
+  ],
+  "sub_cluster": "SPABAD (uppblåsbart)",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099574265220",
+  "url_se": "https://www.temu.com/se/g-601099574265220.html",
+  "title": "Waterproof hot tub heater pump cover with zipper, insulated outdoor, fits most models, black (Lay-Z-Spa-pump) (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Pumpenheten till uppblåsbart spa",
+  "owner_owns": true,
+  "friction": "Pumpen fryser/kyls när spat körs på hösten — verkligt för den minoritet som kör året runt.",
+  "old_way": "Handduk, presenning, packa ner",
+  "variants": "'Fits most models' → OSÄKER",
+  "swedish_equivalent": {
+   "retailer": "Bestway säljer eget termopumpskydd; Rusta/Jula enligt kännedom — ej verifierad",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Bestway Lay-Z-Spa pump cover",
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Uppblåsbart spa — inomhusförvarat merparten av året."
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Gäller bara helårskörare; vanligast är nedpackning i september.",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL (ej verifierad)",
+    "reason": "Kedjesajterna (Jula 403, Biltema 403, Rusta 404, Clas Ohlson JS-skal) och alla sökmotorer (WebSearch-kvot slut, DDG captcha, Bing brus, Mojeek 403, Brave 429) var oåtkomliga 2026-09-04 — kedjestatus bygger på kännedom och är märkt 'ej verifierad'. Fackhandelsankare är hämtade live från spabadsbutiken.se och poolkungen.se 2026-09-04."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. "
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "'Passar de flesta'."
+   },
+   "hook": {
+    "text": "Kör du Lay-Z-Span i höst?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "Yngre publik."
+   }
+  },
+  "negative_space_flags": [
+   "objekt förvaras inomhus",
+   "commoditisering",
+   "passar de flesta"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 70,
+  "tier": "ELIM (C om Temu-video visar pump i höstträdgård)",
+  "biggest_risk": "Publik och kedjor.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com pool cover pump automatic winter",
+   "site:temu.com wood fired hot tub cover insulation"
+  ],
+  "sub_cluster": "SPABAD (uppblåsbart)",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099624431230",
+  "url_se": "https://www.temu.com/se/g-601099624431230.html",
+  "title": "Spa hot tub pump cover waterproof insulated outdoor protector with handle, quick-release buckle, drawstring (UK-listning) (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Pumpenheten till uppblåsbart spa",
+  "owner_owns": true,
+  "friction": "Pumpen fryser/kyls när spat körs på hösten — verkligt för den minoritet som kör året runt.",
+  "old_way": "Handduk, presenning, packa ner",
+  "variants": "'Fits most models' → OSÄKER",
+  "swedish_equivalent": {
+   "retailer": "Bestway säljer eget termopumpskydd; Rusta/Jula enligt kännedom — ej verifierad",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Bestway Lay-Z-Spa pump cover",
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Uppblåsbart spa — inomhusförvarat merparten av året."
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Gäller bara helårskörare; vanligast är nedpackning i september.",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL (ej verifierad)",
+    "reason": "Kedjesajterna (Jula 403, Biltema 403, Rusta 404, Clas Ohlson JS-skal) och alla sökmotorer (WebSearch-kvot slut, DDG captcha, Bing brus, Mojeek 403, Brave 429) var oåtkomliga 2026-09-04 — kedjestatus bygger på kännedom och är märkt 'ej verifierad'. Fackhandelsankare är hämtade live från spabadsbutiken.se och poolkungen.se 2026-09-04."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. "
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "'Passar de flesta'."
+   },
+   "hook": {
+    "text": "Kör du Lay-Z-Span i höst?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "Yngre publik."
+   }
+  },
+  "negative_space_flags": [
+   "objekt förvaras inomhus",
+   "commoditisering",
+   "passar de flesta"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 70,
+  "tier": "ELIM (C om Temu-video visar pump i höstträdgård)",
+  "biggest_risk": "Publik och kedjor.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com pool cover pump automatic winter",
+   "site:temu.com wood fired hot tub cover insulation"
+  ],
+  "sub_cluster": "SPABAD (uppblåsbart)",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099643340514",
+  "url_se": "https://www.temu.com/se/g-601099643340514.html",
+  "title": "Hot tub table, adjustable hot tub tray with 2 cup holders, non-slip, for above-ground bathtub/spa with wall thickness 2–5 in (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Kanten på uppblåsbart spa",
+  "owner_owns": true,
+  "friction": "Ingen — en önskan (dryck i badet).",
+  "old_way": "Ingenting",
+  "variants": "En variant",
+  "swedish_equivalent": {
+   "retailer": "Spabadsbutiken (Poolbar 399–899 kr, Kirami flytande bar 399 kr)",
+   "price_sek": 399,
+   "url": "https://www.spabadsbutiken.se/spatillbehor",
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Poolbar",
+   "price_sek": 769,
+   "url": "https://www.spabadsbutiken.se/spatillbehor"
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Uppblåsbar vägg 2–5 tum — passar inte fasta spabad."
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Behovet måste skapas (want).",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": ""
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. "
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "hook": {
+    "text": "—",
+    "result": "FAIL (ingen ägarfråga, bara önskan)"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas",
+   "objekt inomhusförvarat"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 20,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "Want, inte need.",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com hot tub tray holder drink caddy"
+  ],
+  "sub_cluster": "SPABAD (uppblåsbart)",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601101483515717",
+  "url_se": "https://www.temu.com/se/g-601101483515717.html",
+  "title": "Cup holder for spa wall, pool and hot tub — holds 2 standard beverages, tan (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Spakanten",
+  "owner_owns": true,
+  "friction": "Ingen (want).",
+  "old_way": "Ingenting",
+  "variants": "En",
+  "swedish_equivalent": {
+   "retailer": "Spabadsbutiken (Poolbar 399–899)",
+   "price_sek": 399,
+   "url": "https://www.spabadsbutiken.se/spatillbehor",
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Want; ingen friktion i höst.",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": ""
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 149,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Ja (2–4 st)",
+    "result": "FAIL (provisorisk)",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. Småpryl < 199 kr."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "hook": {
+    "text": "—",
+    "result": "FAIL"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas",
+   "< 199 kr"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 15,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com hot tub tray holder drink caddy"
+  ],
+  "sub_cluster": "SPABAD",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099550700140",
+  "url_se": "https://www.temu.com/se/g-601099550700140.html",
+  "title": "1pc adjustable tub side tray table with non-slip, 2 cup holders, snack/beverage holder, fits spa/pool/bathtub (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Badkar inomhus (i praktiken)",
+  "owner_owns": true,
+  "friction": "Ingen",
+  "old_way": "—",
+  "variants": "En",
+  "swedish_equivalent": {
+   "retailer": "Rusta/Clas Ohlson badkarsbrickor enligt kännedom — ej verifierad",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Inomhus-commodity (badkarsbricka)."
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Want.",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL (ej verifierad)",
+    "reason": ""
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. "
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "hook": {
+    "text": "—",
+    "result": "FAIL"
+   },
+   "audience": {
+    "result": "FAIL",
+    "reason": "Kvinnor 25–45."
+   }
+  },
+  "negative_space_flags": [
+   "inomhus-commodity",
+   "annan publik"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 5,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com hot tub tray holder drink caddy"
+  ],
+  "sub_cluster": "SPABAD",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099512985572",
+  "url_se": "https://www.temu.com/se/g-601099512985572.html",
+  "title": "Bath pillow for tub, non-slip 4D air mesh, 6 suction cups, spa cushion (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Badkar inomhus",
+  "owner_owns": true,
+  "friction": "Ingen",
+  "old_way": "—",
+  "variants": "En",
+  "swedish_equivalent": {
+   "retailer": "Rusta/Clas Ohlson enligt kännedom — ej verifierad",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Inomhus, personlig komfort."
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL (ej verifierad)",
+    "reason": ""
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. "
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "hook": {
+    "text": "—",
+    "result": "FAIL"
+   },
+   "audience": {
+    "result": "FAIL",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "inomhus-commodity",
+   "annan publik"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 5,
+  "category_novelty": 55,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com spa headrest pillow suction cup hot tub"
+  ],
+  "sub_cluster": "SPABAD",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "602975472846485",
+  "url_se": "https://www.temu.com/se/g-602975472846485.html",
+  "title": "Cushioned foam headrest pillow, hot tub spa accessory, white, 4-pack (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Nackkuddarna i fast spabad (slits/spricker efter några år)",
+  "owner_owns": true,
+  "friction": "Originalkuddarna spricker och möglar — verklig friktion, men reservkuddar är märkesspecifika (stiftavstånd).",
+  "old_way": "Köpa original från spahandlaren (300–600 kr/st)",
+  "variants": "Fäste/stift måste matcha → FAIL",
+  "swedish_equivalent": {
+   "retailer": "Spabadsbutiken (Spa Pillow uppblåsbar 199 kr)",
+   "price_sek": 199,
+   "url": "https://www.spabadsbutiken.se/spatillbehor",
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Originalkuddar hos spahandlare (ej verifierat pris)",
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Reservdel till ägt objekt ute."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Trasig kudde syns.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS (ej verifierad)",
+    "reason": ""
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Ja (4-pack)",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. "
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Passar bara spabad med exakt det stiftfästet — kunden kan inte parametern."
+   },
+   "hook": {
+    "text": "Spruckna nackkuddar i spabadet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "passform utan känd parameter"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 35,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "Returer på passform.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com spa headrest pillow suction cup hot tub"
+  ],
+  "sub_cluster": "SPABAD",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601100966595172",
+  "url_se": "https://www.temu.com/se/g-601100966595172.html",
+  "title": "Floating pool thermometer, battery free, Celsius dial, stainless probe with ABS float, suction cup, rope — pools/spas/hot tubs (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Spabad/pool",
+  "owner_owns": true,
+  "friction": "Låg",
+  "old_way": "Spabadets display",
+  "variants": "En",
+  "swedish_equivalent": {
+   "retailer": "Jula/Biltema/Rusta pooltermometer 39–99 kr enligt kännedom — ej verifierad; Spabadsbutiken Termometer Boll 109 kr, Poolkungen 195 kr",
+   "price_sek": 109,
+   "url": "https://www.spabadsbutiken.se/spatillbehor",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Spabadet har egen display.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL (ej verifierad)",
+    "reason": "Commodity i alla kedjor."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "FAIL (provisorisk)",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. < 199 kr-klass."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "hook": {
+    "text": "—",
+    "result": "FAIL"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "< 199 kr"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 15,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com hot tub thermometer floating"
+  ],
+  "sub_cluster": "SPABAD",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601103300703848",
+  "url_se": "https://www.temu.com/se/g-601103300703848.html",
+  "title": "Pool pump cover heavy duty waterproof outdoor heater cover, no-hose-removal installation, all-weather, compatible with pool heaters/spas/HVAC, winter-ready, non-woven fabric, fits most standard pumps (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Poolvärmepumpen (står ute året runt bredvid poolen)",
+  "owner_owns": true,
+  "friction": "Värmepumpen stängs av i september–oktober och står sedan i regn, löv och snö till maj; lamellerna korroderar, löv i fläkten. Skyddet sätts på exakt nu — timingen som Kranskyddet saknade.",
+  "old_way": "Presenning som blåser av, ingenting",
+  "variants": "'Fits most standard pumps' — mått ej lästa → OSÄKER (poolvärmepumpar varierar 60–110 cm)",
+  "swedish_equivalent": {
+   "retailer": "Poolkungen: sökning 'vinteröverdrag' gav 0 träffar 2026-09-04; övriga poolshoppar ej nåbara",
+   "price_sek": null,
+   "url": "https://poolkungen.se/?s=vinter%C3%B6verdrag",
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": "Österlens Poolcenter Vintertäcke Poolvärmepump Gullberg & Jansson Pelago 40",
+   "price_sek": 499,
+   "url": "https://osterlenspoolcenter.se/pool/poolvarmare/poolvarmepump/tillbehor-poolvarmepump/vintertacke-poolvarmepump-gullberg-jansson-pelago-40/"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Skyddar ett ägt objekt (10–30 tkr) som står ute året runt."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Avstängning + första höstregnet = nu. Fotograferbart: lövtäckt värmepump i oktober.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Ingen kedja säljer ett mjukt överdrag för poolvärmepump (Julas och Pricerunners träffar är hårda aluminiumhöljen för luftvärmepump). Ankaret är bara 499 kr och flera pumpar levereras med överdrag i paketet, så prisutrymmet är litet — rimligt pris ~299–349 kr.",
+    "verified": true,
+    "verified_by": "h4.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Österlens Poolcenter Vintertäcke Poolvärmepump Gullberg & Jansson Pelago 40",
+     "price_sek": 499,
+     "url": "https://osterlenspoolcenter.se/pool/poolvarmare/poolvarmepump/tillbehor-poolvarmepump/vintertacke-poolvarmepump-gullberg-jansson-pelago-40/"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Skydd/vinteröverdrag för poolvärmepump"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 499,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. IBC-överdraget (489 kr, samma Oxford-familj) är närmaste vinnare."
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "'Passar de flesta' utan mått."
+   },
+   "hook": {
+    "text": "Har du en värmepump till poolen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "Pooler med värmepump — ägarklass ej verifierad, troligen < 100 k hushåll. Objektet är omisskännligt i bild."
+   }
+  },
+  "negative_space_flags": [
+   "passar de flesta",
+   "publik ev. < 100 k",
+   "risk för luftvärmepumpsskydd-förväxling i kedjorna"
+  ],
+  "eliminated_at": null,
+  "structure_match": 64,
+  "category_novelty": 60,
+  "tier": "B",
+  "biggest_risk": "Publikstorlek och att Biltema/Jula-luftvärmepumpsskydd ser likadant ut för 199–299 kr.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com pool cover pump automatic winter",
+   "https://poolkungen.se/?s=vinter%C3%B6verdrag"
+  ],
+  "sub_cluster": "POOL",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt.",
+  "tier_agent": "B (provisorisk)",
+  "tier_reason": "poolvärmepumpsskydd: Österlens 499 som ankare; 'passar de flesta' utan mått; publik troligen < 100 000"
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099529094177",
+  "url_se": "https://www.temu.com/se/g-601099529094177.html",
+  "title": "1pc leaf net cover for inground and above-ground pool, winter cover mesh, catches leaves (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Poolen (vintertäckt)",
+  "owner_owns": true,
+  "friction": "Löv på vintertäcket/i poolen i oktober — mycket synligt.",
+  "old_way": "Håva, ingenting",
+  "variants": "Många storlekar; poolen måste mätas → FAIL/OSÄKER",
+  "swedish_equivalent": {
+   "retailer": "Poolshoppar säljer lövnät (ej nåbara); Rusta/Jula säljer Intex/Bestway-överdrag enligt kännedom — ej verifierad",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Lövfall = oktober.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Kedjesajterna (Jula 403, Biltema 403, Rusta 404, Clas Ohlson JS-skal) och alla sökmotorer (WebSearch-kvot slut, DDG captcha, Bing brus, Mojeek 403, Brave 429) var oåtkomliga 2026-09-04 — kedjestatus bygger på kännedom och är märkt 'ej verifierad'. Fackhandelsankare är hämtade live från spabadsbutiken.se och poolkungen.se 2026-09-04."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. "
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Storlek efter poolmått; kunden måste mäta."
+   },
+   "hook": {
+    "text": "Full av löv, poolen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Pool i bild."
+   }
+  },
+  "negative_space_flags": [
+   "storlek utan känd parameter",
+   "commodity-form"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 40,
+  "category_novelty": 65,
+  "tier": "C",
+  "biggest_risk": "Storlekar.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com pool winter cover"
+  ],
+  "sub_cluster": "POOL",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601102121472414",
+  "url_se": "https://www.temu.com/se/g-601102121472414.html",
+  "title": "21 ft round pool winter cover for above-ground pools, cold/UV resistant, winch cable included (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Ovanmarkpool (stålvägg/ram)",
+  "owner_owns": true,
+  "friction": "Vintertäckning nu.",
+  "old_way": "Intex/Bestway-överdrag, presenning",
+  "variants": "Diameter i fot (US-mått 18–30 ft) — svenska pooler 3,66/4,57/5,49 m → förvirring",
+  "swedish_equivalent": {
+   "retailer": "Rusta/Jula/Biltema säljer Intex/Bestway pool-överdrag; poolshoppar vintertäcken — enligt kännedom, ej verifierad",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Stängning nu.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL (ej verifierad)",
+    "reason": "Samma form i kedjorna. Kedjesajterna (Jula 403, Biltema 403, Rusta 404, Clas Ohlson JS-skal) och alla sökmotorer (WebSearch-kvot slut, DDG captcha, Bing brus, Mojeek 403, Brave 429) var oåtkomliga 2026-09-04 — kedjestatus bygger på kännedom och är märkt 'ej verifierad'. Fackhandelsankare är hämtade live från spabadsbutiken.se och poolkungen.se 2026-09-04."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. "
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Många storlekar i fot."
+   },
+   "hook": {
+    "text": "Är poolen täckt inför vintern?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "commoditisering",
+   "storleksval"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "Kedjorna.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com pool winter cover"
+  ],
+  "sub_cluster": "POOL",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099593502009",
+  "url_se": "https://www.temu.com/se/g-601099593502009.html",
+  "title": "18–30 ft round pool cover for winter, foldable, above-ground, thickened mesh leaf catcher (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Ovanmarkpool (stålvägg/ram)",
+  "owner_owns": true,
+  "friction": "Vintertäckning nu.",
+  "old_way": "Intex/Bestway-överdrag, presenning",
+  "variants": "Diameter i fot (US-mått 18–30 ft) — svenska pooler 3,66/4,57/5,49 m → förvirring",
+  "swedish_equivalent": {
+   "retailer": "Rusta/Jula/Biltema säljer Intex/Bestway pool-överdrag; poolshoppar vintertäcken — enligt kännedom, ej verifierad",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Stängning nu.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL (ej verifierad)",
+    "reason": "Samma form i kedjorna. Kedjesajterna (Jula 403, Biltema 403, Rusta 404, Clas Ohlson JS-skal) och alla sökmotorer (WebSearch-kvot slut, DDG captcha, Bing brus, Mojeek 403, Brave 429) var oåtkomliga 2026-09-04 — kedjestatus bygger på kännedom och är märkt 'ej verifierad'. Fackhandelsankare är hämtade live från spabadsbutiken.se och poolkungen.se 2026-09-04."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. "
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Många storlekar i fot."
+   },
+   "hook": {
+    "text": "Är poolen täckt inför vintern?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "commoditisering",
+   "storleksval"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "Kedjorna.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com pool winter cover"
+  ],
+  "sub_cluster": "POOL",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099654587636",
+  "url_se": "https://www.temu.com/se/g-601099654587636.html",
+  "title": "Pool above-ground water pump for pool draining, submersible sump pump with 16 ft hose, 25 ft cord, 840 GPH (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Poolen/vintertäcket (sänka vattennivån vid stängning, pumpa regnvatten av täcket)",
+  "owner_owns": true,
+  "friction": "Verklig i höst: sänka nivån under bräddavloppet, tömma spabadet, regnvatten på täcket.",
+  "old_way": "Biltema-pump, hävert",
+  "variants": "Kapacitet i GPH (US-enhet), 110 V-risk måste kontrolleras",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula 'Dränkbar pump' — samma form, enligt kännedom ~300–700 kr, ej verifierad",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Stängning/tömning i sep–okt.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL (ej verifierad)",
+    "reason": "Dränkbar pump är hyllvara hos Biltema/Jula i samma form (jämförelsehandlad). Kedjesajterna (Jula 403, Biltema 403, Rusta 404, Clas Ohlson JS-skal) och alla sökmotorer (WebSearch-kvot slut, DDG captcha, Bing brus, Mojeek 403, Brave 429) var oåtkomliga 2026-09-04 — kedjestatus bygger på kännedom och är märkt 'ej verifierad'. Fackhandelsankare är hämtade live från spabadsbutiken.se och poolkungen.se 2026-09-04."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. "
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "840 GPH — US-enhet; spänning måste vara 230 V."
+   },
+   "hook": {
+    "text": "Ska poolen tömmas i höst?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "köpt old way som fungerar ∧ jämförelsehandlad",
+   "elsäkerhet/230 V okänt"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "Biltema.",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com submersible pump pool drain"
+  ],
+  "sub_cluster": "POOL",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601101770891049",
+  "url_se": "https://www.temu.com/se/g-601101770891049.html",
+  "title": "1/2 HP submersible water pump 2500 GPH portable sump pump for pool draining, hot tub, garden, 25 ft cord (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Poolen/vintertäcket (sänka vattennivån vid stängning, pumpa regnvatten av täcket)",
+  "owner_owns": true,
+  "friction": "Verklig i höst: sänka nivån under bräddavloppet, tömma spabadet, regnvatten på täcket.",
+  "old_way": "Biltema-pump, hävert",
+  "variants": "Kapacitet i GPH (US-enhet), 110 V-risk måste kontrolleras",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula 'Dränkbar pump' — samma form, enligt kännedom ~300–700 kr, ej verifierad",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Stängning/tömning i sep–okt.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL (ej verifierad)",
+    "reason": "Dränkbar pump är hyllvara hos Biltema/Jula i samma form (jämförelsehandlad). Kedjesajterna (Jula 403, Biltema 403, Rusta 404, Clas Ohlson JS-skal) och alla sökmotorer (WebSearch-kvot slut, DDG captcha, Bing brus, Mojeek 403, Brave 429) var oåtkomliga 2026-09-04 — kedjestatus bygger på kännedom och är märkt 'ej verifierad'. Fackhandelsankare är hämtade live från spabadsbutiken.se och poolkungen.se 2026-09-04."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. "
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "2500 GPH — US-enhet; spänning måste vara 230 V."
+   },
+   "hook": {
+    "text": "Ska poolen tömmas i höst?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "köpt old way som fungerar ∧ jämförelsehandlad",
+   "elsäkerhet/230 V okänt"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "Biltema.",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com submersible pump pool drain"
+  ],
+  "sub_cluster": "POOL",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601100966676347",
+  "url_se": "https://www.temu.com/se/g-601100966676347.html",
+  "title": "Sump pump with float switch, submersible, automatic, 4000 GPH, dirty/clean water transfer for pool draining, hot tub, basement (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Poolen/vintertäcket (sänka vattennivån vid stängning, pumpa regnvatten av täcket)",
+  "owner_owns": true,
+  "friction": "Verklig i höst: sänka nivån under bräddavloppet, tömma spabadet, regnvatten på täcket.",
+  "old_way": "Biltema-pump, hävert",
+  "variants": "Kapacitet i GPH (US-enhet), 110 V-risk måste kontrolleras",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula 'Dränkbar pump' — samma form, enligt kännedom ~300–700 kr, ej verifierad",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Stängning/tömning i sep–okt.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL (ej verifierad)",
+    "reason": "Dränkbar pump är hyllvara hos Biltema/Jula i samma form (jämförelsehandlad). Kedjesajterna (Jula 403, Biltema 403, Rusta 404, Clas Ohlson JS-skal) och alla sökmotorer (WebSearch-kvot slut, DDG captcha, Bing brus, Mojeek 403, Brave 429) var oåtkomliga 2026-09-04 — kedjestatus bygger på kännedom och är märkt 'ej verifierad'. Fackhandelsankare är hämtade live från spabadsbutiken.se och poolkungen.se 2026-09-04."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. "
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "4000 GPH — US-enhet; spänning måste vara 230 V."
+   },
+   "hook": {
+    "text": "Ska poolen tömmas i höst?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "köpt old way som fungerar ∧ jämförelsehandlad",
+   "elsäkerhet/230 V okänt"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "Biltema.",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com submersible pump pool drain"
+  ],
+  "sub_cluster": "POOL",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099525000589",
+  "url_se": "https://www.temu.com/se/g-601099525000589.html",
+  "title": "2/4 pcs 1.5\" threaded pool winterizing plugs, return line plugs with O-ring (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Poolens inlopp/bräddavlopp",
+  "owner_owns": true,
+  "friction": "Frostsäkring vid stängning — verklig och nu.",
+  "old_way": "Poolshoppens vinterplugg",
+  "variants": "Gänga/diameter måste matcha (1,5\" vs svenska 50 mm) → OSÄKER",
+  "swedish_equivalent": {
+   "retailer": "Poolkungen: Vinterplugg 80–200 kr (hämtat live 2026-09-04)",
+   "price_sek": 150,
+   "url": "https://www.poolkungen.se/pooltillbehor/vinterstangning",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Stängning nu.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS (fackhandel)",
+    "reason": "Poolkungen 80–200 kr — lågt ankare."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 149,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Ja (flera inlopp)",
+    "result": "FAIL (provisorisk)",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. < 199 kr-klass; ankare 80–200 kr."
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Gänga/diameter."
+   },
+   "hook": {
+    "text": "Är poolens inlopp frostsäkrade?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "< 199 kr",
+   "passform (gänga)"
+  ],
+  "eliminated_at": "economics",
+  "structure_match": 30,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "Pris.",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com pool winterizing plug skimmer cover gizmo",
+   "https://www.poolkungen.se/pooltillbehor/vinterstangning"
+  ],
+  "sub_cluster": "POOL",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099513299678",
+  "url_se": "https://www.temu.com/se/g-601099513299678.html",
+  "title": "Winter swimming pool rubber expansion plug, antifreeze plug for return inlet (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Poolens inlopp/bräddavlopp",
+  "owner_owns": true,
+  "friction": "Frostsäkring vid stängning — verklig och nu.",
+  "old_way": "Poolshoppens vinterplugg",
+  "variants": "Gänga/diameter måste matcha (1,5\" vs svenska 50 mm) → OSÄKER",
+  "swedish_equivalent": {
+   "retailer": "Poolkungen: Vinterplugg 80–200 kr (hämtat live 2026-09-04)",
+   "price_sek": 150,
+   "url": "https://www.poolkungen.se/pooltillbehor/vinterstangning",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Stängning nu.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS (fackhandel)",
+    "reason": "Poolkungen 80–200 kr — lågt ankare."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 149,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Ja (flera inlopp)",
+    "result": "FAIL (provisorisk)",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. < 199 kr-klass; ankare 80–200 kr."
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Gänga/diameter."
+   },
+   "hook": {
+    "text": "Är poolens inlopp frostsäkrade?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "< 199 kr",
+   "passform (gänga)"
+  ],
+  "eliminated_at": "economics",
+  "structure_match": 30,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "Pris.",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com pool winterizing plug skimmer cover gizmo",
+   "https://www.poolkungen.se/pooltillbehor/vinterstangning"
+  ],
+  "sub_cluster": "POOL",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099736384653",
+  "url_se": "https://www.temu.com/se/g-601099736384653.html",
+  "title": "Inflatable swimming pool winter cover pillow, durable PVC, cold-resistant, blue, support cushion for above-ground pools (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Vintertäcket på ovanmarkpool",
+  "owner_owns": true,
+  "friction": "Istryck/vatten på täcket — verklig vid stängning.",
+  "old_way": "Bildäck, ingenting",
+  "variants": "En",
+  "swedish_equivalent": {
+   "retailer": "Poolshoppar 'iskudde' ~150–300 kr enligt kännedom — ej verifierad",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Stängning nu.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Kedjesajterna (Jula 403, Biltema 403, Rusta 404, Clas Ohlson JS-skal) och alla sökmotorer (WebSearch-kvot slut, DDG captcha, Bing brus, Mojeek 403, Brave 429) var oåtkomliga 2026-09-04 — kedjestatus bygger på kännedom och är märkt 'ej verifierad'. Fackhandelsankare är hämtade live från spabadsbutiken.se och poolkungen.se 2026-09-04."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 149,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "FAIL (provisorisk)",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. Uppblåsbar PVC-kudde < 199 kr."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "hook": {
+    "text": "Har du iskudde under pooltäcket?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "< 199 kr"
+  ],
+  "eliminated_at": "economics",
+  "structure_match": 30,
+  "category_novelty": 75,
+  "tier": "ELIM",
+  "biggest_risk": "Pris.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com pool winter cover"
+  ],
+  "sub_cluster": "POOL",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099527101605",
+  "url_se": "https://www.temu.com/se/g-601099527101605.html",
+  "title": "Swimming pool cover cable winch kit 150 ft plastic-coated steel cable, aluminum spring-loaded winch, for above-ground winter covers (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "US-typ ovanmark-/markpool med vinterduk",
+  "owner_owns": false,
+  "friction": "Amerikansk stängningsmetod; svenska pooler använder spännlock, säkerhetstäcke eller Intex-överdrag.",
+  "old_way": "—",
+  "variants": "—",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Objektet (US-vinterduk med vajer/vattentuber) är ovanligt i Sverige — oklart ägande."
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": ""
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. "
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": ""
+   },
+   "hook": {
+    "text": "—",
+    "result": "FAIL"
+   },
+   "audience": {
+    "result": "FAIL",
+    "reason": "Publik < 100 k."
+   }
+  },
+  "negative_space_flags": [
+   "oklart ägande"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 10,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com pool winter cover",
+   "site:temu.com pool winterizing plug skimmer cover gizmo"
+  ],
+  "sub_cluster": "POOL",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099521750983",
+  "url_se": "https://www.temu.com/se/g-601099521750983.html",
+  "title": "1pc swimming pool cover winch / ratchet winch, winter cover cable tightener for above-ground pools (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "US-typ ovanmark-/markpool med vinterduk",
+  "owner_owns": false,
+  "friction": "Amerikansk stängningsmetod; svenska pooler använder spännlock, säkerhetstäcke eller Intex-överdrag.",
+  "old_way": "—",
+  "variants": "—",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Objektet (US-vinterduk med vajer/vattentuber) är ovanligt i Sverige — oklart ägande."
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": ""
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. "
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": ""
+   },
+   "hook": {
+    "text": "—",
+    "result": "FAIL"
+   },
+   "audience": {
+    "result": "FAIL",
+    "reason": "Publik < 100 k."
+   }
+  },
+  "negative_space_flags": [
+   "oklart ägande"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 10,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com pool winter cover",
+   "site:temu.com pool winterizing plug skimmer cover gizmo"
+  ],
+  "sub_cluster": "POOL",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099522089231",
+  "url_se": "https://www.temu.com/se/g-601099522089231.html",
+  "title": "2/3/6 pcs heavy duty double-chamber water tubes for swimming pool winter covers, inground cover weights (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "US-typ ovanmark-/markpool med vinterduk",
+  "owner_owns": false,
+  "friction": "Amerikansk stängningsmetod; svenska pooler använder spännlock, säkerhetstäcke eller Intex-överdrag.",
+  "old_way": "—",
+  "variants": "—",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Objektet (US-vinterduk med vajer/vattentuber) är ovanligt i Sverige — oklart ägande."
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": ""
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. "
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": ""
+   },
+   "hook": {
+    "text": "—",
+    "result": "FAIL"
+   },
+   "audience": {
+    "result": "FAIL",
+    "reason": "Publik < 100 k."
+   }
+  },
+  "negative_space_flags": [
+   "oklart ägande"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 10,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com pool winter cover",
+   "site:temu.com pool winterizing plug skimmer cover gizmo"
+  ],
+  "sub_cluster": "POOL",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601101734847331",
+  "url_se": "https://www.temu.com/se/g-601101734847331.html",
+  "title": "Pool thermometer with floating tube, quick-read scale, cartoon-style figure (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Pool",
+  "owner_owns": true,
+  "friction": "Ingen i oktober (poolen stängs).",
+  "old_way": "—",
+  "variants": "En",
+  "swedish_equivalent": {
+   "retailer": "Jula/Biltema/Rusta 39–99 kr enligt kännedom — ej verifierad",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Sommarobjekt — poolen är stängd.",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL (ej verifierad)",
+    "reason": ""
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "FAIL (provisorisk)",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. < 199 kr."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "hook": {
+    "text": "—",
+    "result": "FAIL"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "fel säsong",
+   "commodity",
+   "< 199 kr"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 5,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com hot tub thermometer floating"
+  ],
+  "sub_cluster": "POOL",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099561382048",
+  "url_se": "https://www.temu.com/se/g-601099561382048.html",
+  "title": "Stainless steel sauna thermometer & hygrometer, wall mounted, clear scale (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Bastun (inomhusrum, även i bastubyggnad)",
+  "owner_owns": true,
+  "friction": "Låg — de flesta bastur har redan termometer.",
+  "old_way": "Befintlig termometer",
+  "variants": "En",
+  "swedish_equivalent": {
+   "retailer": "Jula/Clas Ohlson/Biltema bastutermometer 99–249 kr enligt kännedom — ej verifierad",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Inomhusobjekt; commodity."
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Bastusäsongen börjar i höst, men problemet saknas.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL (ej verifierad)",
+    "reason": "Samma form i kedjorna. Kedjesajterna (Jula 403, Biltema 403, Rusta 404, Clas Ohlson JS-skal) och alla sökmotorer (WebSearch-kvot slut, DDG captcha, Bing brus, Mojeek 403, Brave 429) var oåtkomliga 2026-09-04 — kedjestatus bygger på kännedom och är märkt 'ej verifierad'. Fackhandelsankare är hämtade live från spabadsbutiken.se och poolkungen.se 2026-09-04."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "FAIL (provisorisk)",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. < 199 kr-klass."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "hook": {
+    "text": "—",
+    "result": "FAIL"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Bastuägare 45–70."
+   }
+  },
+  "negative_space_flags": [
+   "inomhus-commodity",
+   "behovet måste skapas"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 10,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com sauna bucket ladle thermometer hygrometer"
+  ],
+  "sub_cluster": "BASTU",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ },
+ {
+  "kluster": "pool",
+  "goods_id": "601099565455551",
+  "url_se": "https://www.temu.com/se/g-601099565455551.html",
+  "title": "Wood sauna thermometer hygrometer, wall mounted, mechanical, no battery (ur söktitel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Bastun (inomhusrum, även i bastubyggnad)",
+  "owner_owns": true,
+  "friction": "Låg — de flesta bastur har redan termometer.",
+  "old_way": "Befintlig termometer",
+  "variants": "En",
+  "swedish_equivalent": {
+   "retailer": "Jula/Clas Ohlson/Biltema bastutermometer 99–249 kr enligt kännedom — ej verifierad",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Inomhusobjekt; commodity."
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Bastusäsongen börjar i höst, men problemet saknas.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL (ej verifierad)",
+    "reason": "Samma form i kedjorna. Kedjesajterna (Jula 403, Biltema 403, Rusta 404, Clas Ohlson JS-skal) och alla sökmotorer (WebSearch-kvot slut, DDG captcha, Bing brus, Mojeek 403, Brave 429) var oåtkomliga 2026-09-04 — kedjestatus bygger på kännedom och är märkt 'ej verifierad'. Fackhandelsankare är hämtade live från spabadsbutiken.se och poolkungen.se 2026-09-04."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad. Temu spärrade IP:n 2026-09-04 (tomt skal utan JSON-LD på 40/40 anrop 00:58–01:11 UTC); koordinatorn stoppade temu-ld.py. Video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej",
+    "result": "FAIL (provisorisk)",
+    "note": "Temu-pris ej hämtat → landad kostnad, uppslag och BE-CPA kan inte räknas. se_price_est_sek är en positionering mot svenska ankare, inte räknad på Temu-pris. < 199 kr-klass."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "hook": {
+    "text": "—",
+    "result": "FAIL"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Bastuägare 45–70."
+   }
+  },
+  "negative_space_flags": [
+   "inomhus-commodity",
+   "behovet måste skapas"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 10,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com sauna bucket ladle thermometer hygrometer"
+  ],
+  "sub_cluster": "BASTU",
+  "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt."
+ }
+]

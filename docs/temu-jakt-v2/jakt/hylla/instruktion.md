@@ -1,0 +1,11 @@
+# Hyllverifiering (gate 3) — instruktion
+
+Du verifierar GATE 3 "Svenska hyllan" för en lista produktkoncept som en tidigare jakt satt som Tier A/B utan att kunna kontrollera kedjorna (deras sökbudget tog slut). Rör INTE temu.com (vår IP är blockerad där och varje anrop förlänger blocket).
+
+För varje koncept:
+1. **Kedjorna:** sök efter samma FORM hos Biltema, Jula, Clas Ohlson, Rusta (och Bauhaus/Byggmax/Granngården/Hornbach där det är relevant). Använd WebSearch med svenska produktord + kedjenamn, `site:biltema.se …`, `site:jula.se …`. Sajterna själva svarar ofta 403 — sökutdraget räcker; skriv "ur sökutdrag". Pricerunner (`curl -sS -A "Mozilla/5.0" "https://www.pricerunner.se/search?q=<ord>"`) och Prisjakt fungerar ofta via curl och indexerar Jula/Clas/Rusta. Skilj **samma kategori** (kedjan säljer "sittdyna") från **samma form/spec** (kedjan säljer just en spänn-fast tornsits i camo).
+2. **Fackhandel / märkesankare:** hitta det svenska pris kunden ser om han googlar (jakt: Hylte, Widforss, Jaktia; spa: spabadsbutiken, poolkungen; båt: Hjertmans, Marinshopen, Watski; trädgårdsmaskin: Husqvarna, Stiga, maskinklippet; el/laddning: Kjell, Elgiganten, laddkabelbutiker; hus: Bauhaus, Beijer). Ange namn, pris och URL.
+3. **Meta Ad Library SE:** WebFetch `https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=SE&q=<svenskt ord>&search_type=keyword_unordered` och ange antal aktiva annonsörer/annonser du kan utläsa (skriv "gick ej att läsa" om sidan är tom).
+4. **Dom:** `same_form_in_chain` (JA/NEJ/OSÄKER), `chain_min_price_sek`, `anchor` {name, price_sek, url}, `adlib_active` (tal eller "ej läsbar"), `verdict` PASS/FAIL/UNCERTAIN mot regeln: PASS = ingen kedja säljer samma form/spec, eller ett synligt ankare ≥ 1,6× ett rimligt svenskt pris finns; FAIL = kedjan säljer samma form billigare än vi rimligen kan ta betalt; UNCERTAIN = kunde inte verifieras. Plus `reason` (≤ 2 meningar) och `queries` (listan du körde).
+
+Leverans: JSON-array till angiven fil med ett objekt per koncept: `{concept, goods_ids, queries, findings:[{source, item, price_sek, url, same_form}], same_form_in_chain, chain_min_price_sek, anchor, adlib_active, verdict, reason}`. Hitta aldrig på ett pris; saknas det skriv null. Sista chattsvaret: "klar: <fil>" + en rad per koncept med verdict.

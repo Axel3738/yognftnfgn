@@ -1,0 +1,3615 @@
+[
+ {
+  "kluster": "jakt",
+  "goods_id": "601099566089885",
+  "url_se": "https://www.temu.com/se/g-601099566089885.html",
+  "title": "Camo hunting chest pack with binocular harness, rangefinder pocket, rain cover (Temu UK-titel ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Handkikare",
+  "owner_owns": "Ja — varje jägare på pass har en kikare i nackrem",
+  "friction": "Nackrem skär, kikaren slår mot bröstet när man går, regn på okularen i passet",
+  "old_way": "Nackremmen som följde med kikaren; kikaren i jackfickan",
+  "variants": "En storlek, justerbar (ur titel)",
+  "swedish_equivalent": {
+   "retailer": "Hylte Jakt & Lantman (fackhandel)",
+   "price_sek": 149,
+   "url": "https://www.hylte-lantman.com/max-on-kikarsele-pro",
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Blaser Kikarväska med Sele HunTec Camo (Jakt och Fiskebutiken)",
+   "price_sek": 999,
+   "url": "https://jaktochfiskebutiken.se/ryggsaeckar-vaeskor/1713-blaser-kikarvaska-med-sele-huntec-camo-80409312.html"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på kikaren (ägd, 1 500–30 000 kr) och bärs på kroppen hela jaktdagen."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Älgjakten pågår sept–okt; kikaren hänger i nackremmen hela passet — nacksmärta och kikare som slår mot bröstet är befintlig friktion, fotograferbar i tornet.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Ingen av Biltema/Jula/Clas/Rusta säljer kikarsele eller kikarbröstväska (ur sökutdrag); fackhandelns bröstväskor med lock ligger 995–1 195 kr, vilket är >1,6× ett rimligt pris runt 349–449 kr. Kundens billigaste referens är en ren resårsele (Max-On 149 kr) – annonsen måste sälja väskan/regnskyddet, inte selen.",
+    "verified": true,
+    "verified_by": "h1.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Blaser Kikarväska med Sele HunTec Camo (Jakt och Fiskebutiken)",
+     "price_sek": 999,
+     "url": "https://jaktochfiskebutiken.se/ryggsaeckar-vaeskor/1713-blaser-kikarvaska-med-sele-huntec-camo-80409312.html"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Kikarsele/bröstväska med kikarhållare och regnskydd"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En storlek, justerbara remmar (ur titeln). Kikarens mått spelar ingen roll."
+   },
+   "hook": {
+    "text": "Får du ont i nacken av kikaren?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "271 000 jaktkort + fågelskådare; kikare + kamouflage är omisskännligt i flödet; man 45–70 dominerar."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "kroppslig payoff (nacksmärta) — katalogbild räcker kanske inte, jfr axelbältet som krävde UGC"
+  ],
+  "eliminated_at": null,
+  "structure_match": 72,
+  "category_novelty": 85,
+  "tier": "A (villkorad)",
+  "biggest_risk": "Max-On-remmen för 149 kr i fackhandeln: ser vår produkt ut som en rem och inte som en bröstväska faller prisankaret. Pris/material ej hämtade.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com binoculars harness strap chest",
+   "https://www.pricerunner.se/results?q=kikarsele",
+   "https://www.hylte-lantman.com/sok?q=kikarsele",
+   "https://www.temu.com/uk/camo-hunting-chest-pack-with-binocular-harness-rangefinder-pocket-patented-camouflage-pattern-polyester-tassel-embellishment-rain-cover-multiple-storage-compartments-for-outdoor-gear-g-601099566089885.html"
+  ],
+  "tier_agent": "A",
+  "tier_reason": "hylla verifierad (Blaser 999 / Härkila 1 295, ingen kedja); en storlek; älgjakt pågår; kroppslig payoff som axelbältet. Material och Temu-pris osedda."
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099523680456",
+  "url_se": "https://www.temu.com/se/g-601099523680456.html",
+  "title": "Binocular harness chest pack with detachable rangefinder pouch, adjustable bino harness, rain cover (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Handkikare",
+  "owner_owns": "Ja",
+  "friction": "Som ovan",
+  "old_way": "Nackremmen",
+  "variants": "En storlek (ur titel)",
+  "swedish_equivalent": {
+   "retailer": "Hylte Jakt & Lantman (fackhandel)",
+   "price_sek": 149,
+   "url": "https://www.hylte-lantman.com/max-on-kikarsele-pro",
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Blaser Kikarväska med Sele HunTec Camo (Jakt och Fiskebutiken)",
+   "price_sek": 999,
+   "url": "https://jaktochfiskebutiken.se/ryggsaeckar-vaeskor/1713-blaser-kikarvaska-med-sele-huntec-camo-80409312.html"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på kikaren (ägd, 1 500–30 000 kr) och bärs på kroppen hela jaktdagen."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Älgjakten pågår sept–okt; kikaren hänger i nackremmen hela passet — nacksmärta och kikare som slår mot bröstet är befintlig friktion, fotograferbar i tornet.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Ingen av Biltema/Jula/Clas/Rusta säljer kikarsele eller kikarbröstväska (ur sökutdrag); fackhandelns bröstväskor med lock ligger 995–1 195 kr, vilket är >1,6× ett rimligt pris runt 349–449 kr. Kundens billigaste referens är en ren resårsele (Max-On 149 kr) – annonsen måste sälja väskan/regnskyddet, inte selen.",
+    "verified": true,
+    "verified_by": "h1.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Blaser Kikarväska med Sele HunTec Camo (Jakt och Fiskebutiken)",
+     "price_sek": 999,
+     "url": "https://jaktochfiskebutiken.se/ryggsaeckar-vaeskor/1713-blaser-kikarvaska-med-sele-huntec-camo-80409312.html"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Kikarsele/bröstväska med kikarhållare och regnskydd"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En storlek, justerbara remmar (ur titeln). Kikarens mått spelar ingen roll."
+   },
+   "hook": {
+    "text": "Får du ont i nacken av kikaren?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "271 000 jaktkort + fågelskådare; kikare + kamouflage är omisskännligt i flödet; man 45–70 dominerar."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "kroppslig payoff"
+  ],
+  "eliminated_at": null,
+  "structure_match": 70,
+  "category_novelty": 85,
+  "tier": "B (dubblett)",
+  "biggest_risk": "WebFetch på /se-sidan 2026-09-04 01:05 UTC visade 'Ej tillgänglig för köp' — kan vara SSR-skalet eller att listningen är borta på SE. Verifiera vid central hämtning; annars reserv till 601099566089885.",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com binoculars harness strap chest",
+   "https://www.pricerunner.se/results?q=kikarsele",
+   "https://www.hylte-lantman.com/sok?q=kikarsele",
+   "https://www.temu.com/binocular-harness-chest-pack-with-detachable-rangefinder-pouch-adjustable-bino-harness-rain-cover-ideal-for-hiking-and-bird-watching-g-601099523680456.html"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "dubblett av kikarselen 601099566089885"
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "602352702587042",
+  "url_se": "https://www.temu.com/se/g-602352702587042.html",
+  "title": "Binocular harness strap adjustable deluxe for hunting (sökträff: 'This item was discontinued')",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Handkikare",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "variants": null,
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Kikarsele."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som ovan.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Ren rem-form = samma form som Max-On Kikarsele Pro 149 kr (Hylte). Dessutom utgången listning."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [],
+  "eliminated_at": "shelf",
+  "structure_match": null,
+  "category_novelty": null,
+  "tier": "ELIM",
+  "biggest_risk": "Utgången.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com binoculars harness strap chest",
+   "https://www.pricerunner.se/results?q=kikarsele",
+   "https://www.hylte-lantman.com/sok?q=kikarsele"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601102428354243",
+  "url_se": "https://www.temu.com/se/g-601102428354243.html",
+  "title": "10x42 rubber lens caps for binoculars + rain guard (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Handkikare (objektiv 42 mm)",
+  "owner_owns": "Ja",
+  "friction": "Regn/skräp på linserna i passet",
+  "old_way": "Torka med tröjärmen; originalskydden tappade",
+  "variants": "Objektivmått (42 mm) — jägaren vet oftast '8x42' utantill",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på kikaren."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Höstregn i passet.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Pricerunner 'linsskydd kikare' 2026-09-04: bara Kowa-fodral 394 kr — ingen svensk hylla för lösa linslock."
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Måste matcha objektivdiameter; många vet '42' men inte alla."
+   },
+   "hook": {
+    "text": "Regn på kikarlinserna i passet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Kikarägare, jägare 45–70."
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "En kikare = ett par lock",
+    "result": "OSÄKER — kategorin är gummilock, sannolikt under 100 kr på Temu (ej hämtat); når svårligen 300 kr"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   }
+  },
+  "negative_space_flags": [
+   "sannolikt < 199 kr",
+   "abstrakt liten payoff"
+  ],
+  "eliminated_at": null,
+  "structure_match": 35,
+  "category_novelty": 80,
+  "tier": "C",
+  "biggest_risk": "Prisklassen: ett gummilock bär inte 300 kr.",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com binocular rain guard objective lens cover",
+   "https://www.pricerunner.se/results?q=linsskydd kikare"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601103949421856",
+  "url_se": "https://www.temu.com/se/g-601103949421856.html",
+  "title": "58\" heavy duty tree stand hunting umbrella, camo canopy, tool-free setup, compatible with tree stands/ground blinds (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Jakttornet/passet (öppet torn, stege, markpass)",
+  "owner_owns": "Ja — jaktlaget äger tornen; passet är ägarens plats hela hösten",
+  "friction": "Regn rakt ned i öppet torn/stege under älgjakten; blöt bössa, blöt kikare, sitter i regnkläder hela passet",
+  "old_way": "Presenning som knyts upp, regnkläder, sitta hemma",
+  "variants": "En storlek (ur titel)",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Ameristep Hunter's Paraply för jaktstege (Dangate)",
+   "price_sek": 479,
+   "url": "https://dangate.se/produkt/ameristep-hunters-paraply-for-jaktstege/"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fästs i trädet/tornet där jägaren sitter; utomhus hela säsongen."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Älgjakt sept–okt = regnigaste jaktveckorna; öppna torn/stegar och markpass saknar tak. Går att fotografera i vilken skog som helst.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Ingen kedja säljer ett stam-/trädmonterat camo-paraply (ur sökutdrag); enda svenska ankaret i samma form är Ameristep 479 kr hos Dangate, vilket ger tak runt 299–349 kr snarare än 1,6×-marginal. Handhållna camo-paraplyer finns från 149 kr, så copyn måste bära 'händerna fria på passet'.",
+    "verified": true,
+    "verified_by": "h1.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Ameristep Hunter's Paraply för jaktstege (Dangate)",
+     "price_sek": 479,
+     "url": "https://dangate.se/produkt/ameristep-hunters-paraply-for-jaktstege/"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Jaktparaply för torn/pass, 58\", camo, spänns runt stam"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant."
+   },
+   "hook": {
+    "text": "Regnar det in i jakttornet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Jägare 45–70 med torn/pass; camo-paraply på trädstam är omisskännligt i flödet."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "montering (spänns fast runt stam/stolpe — enkel men ett steg)",
+   "många svenska torn har redan tak → publiken är den med öppet torn/stege/markpass"
+  ],
+  "eliminated_at": null,
+  "structure_match": 68,
+  "category_novelty": 90,
+  "tier": "B",
+  "biggest_risk": "Priset: paraplyet är stort och dyrt att frakta — Temu-pris okänt; hamnar landad kostnad över ~350 kr slår 2,4× i taket på 1 000 kr. Samt: hur många av 271 000 sitter faktiskt utan tak?",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com hunting umbrella tree stand blind rain cover",
+   "https://www.pricerunner.se/results?q=jaktparaply",
+   "https://www.hylte-lantman.com/sok?q=jaktparaply",
+   "https://www.temu.com/58-wide-heavy-duty-tree-stand-hunting-umbrella-with-camo-canopy-large-outdoor-umbrella-for-hunters-portable--shelter-free-setup-lightweight-windproof-compatible-with-tree-stands-ground-blinds-realistic-camo-leaf-pattern-g-601103949421856.html"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "jaktparaply: Ameristep 479 kr enda ankaret; stor/dyr frakt; många svenska torn har tak"
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099667428425",
+  "url_se": "https://www.temu.com/se/g-601099667428425.html",
+  "title": "Adjustable lightweight hunting tree stand seat, thick foam padding, camo Oxford (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Jakttornets bänk / passets sittplats",
+  "owner_owns": "Ja (jaktlagets torn)",
+  "friction": "Kall, blöt, hård bänk i timmar; skumdynan glider av",
+  "old_way": "Sittunderlag 49 kr som glider, tidning, gammal kudde",
+  "variants": "En storlek (ur titel)",
+  "swedish_equivalent": {
+   "retailer": "Hylte/Pricerunner (sittunderlag, annan form)",
+   "price_sek": 49,
+   "url": "https://www.hylte-lantman.com/sok?q=sittunderlag",
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Carinthia Ansitsdyna Olive (Jaktmagasinet)",
+   "price_sek": 559,
+   "url": "https://jaktmagasinet.se/collections/sittunderlag"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Spänns fast på tornets bänk/räcke; tornet står ute hela hösten."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Sept–okt: kall, blöt, hård träbänk i tornet från första morgonpasset. Fotograferbart i varje torn.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Kedjorna säljer bara vanliga vikbara sittunderlag utan spännremmar och utan camo (ur sökutdrag), ingen spännfast tornsits; fackhandelns vadderade jaktdynor ligger 445–759 kr, >1,6× ett rimligt pris runt 249–299 kr. Kategoritrycket är hårt nedåt (camo-sittunderlag från 49 kr), så remmarna/fästet är hela differentieringen.",
+    "verified": true,
+    "verified_by": "h1.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Carinthia Ansitsdyna Olive (Jaktmagasinet)",
+     "price_sek": 559,
+     "url": "https://jaktmagasinet.se/collections/sittunderlag"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Tornsits/sittdyna med spännremmar för jakttorn, camo, vadderad"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "Universal, en storlek (ur titel)."
+   },
+   "hook": {
+    "text": "Kallt och hårt i jakttornet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Alla med torn/pass; sitsen på tornbänken är igenkännbar."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "köpt old way som fungerar (sittunderlag 49 kr) — vår form måste synas vara mer än en dyna"
+  ],
+  "eliminated_at": null,
+  "structure_match": 60,
+  "category_novelty": 80,
+  "tier": "B",
+  "biggest_risk": "Bästa formen enligt titel (tjock skumsits + rem). Ser den ut som ett 49-kronors sittunderlag i annonsen vinner hyllan.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com hunting seat cushion tree stand insulated",
+   "https://www.pricerunner.se/results?q=sittdyna jakt",
+   "https://www.pricerunner.se/results?q=sittunderlag",
+   "https://www.hylte-lantman.com/sok?q=sittdyna jakt",
+   "https://www.hylte-lantman.com/sok?q=sittunderlag",
+   "https://www.pricerunner.se/results?q=jakttornsdyna"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "tornsits med spännrem: Carinthia 559 som ankare; ser den ut som ett 49-kronors sittunderlag vinner hyllan"
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099904892660",
+  "url_se": "https://www.temu.com/se/g-601099904892660.html",
+  "title": "Adjustable tree stand seat cushion camo lightweight for hunting and fishing (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Jakttornets bänk / passets sittplats",
+  "owner_owns": "Ja (jaktlagets torn)",
+  "friction": "Kall, blöt, hård bänk i timmar; skumdynan glider av",
+  "old_way": "Sittunderlag 49 kr som glider, tidning, gammal kudde",
+  "variants": "En storlek (ur titel)",
+  "swedish_equivalent": {
+   "retailer": "Hylte/Pricerunner (sittunderlag, annan form)",
+   "price_sek": 49,
+   "url": "https://www.hylte-lantman.com/sok?q=sittunderlag",
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Carinthia Ansitsdyna Olive (Jaktmagasinet)",
+   "price_sek": 559,
+   "url": "https://jaktmagasinet.se/collections/sittunderlag"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Spänns fast på tornets bänk/räcke; tornet står ute hela hösten."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Sept–okt: kall, blöt, hård träbänk i tornet från första morgonpasset. Fotograferbart i varje torn.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Kedjorna säljer bara vanliga vikbara sittunderlag utan spännremmar och utan camo (ur sökutdrag), ingen spännfast tornsits; fackhandelns vadderade jaktdynor ligger 445–759 kr, >1,6× ett rimligt pris runt 249–299 kr. Kategoritrycket är hårt nedåt (camo-sittunderlag från 49 kr), så remmarna/fästet är hela differentieringen.",
+    "verified": true,
+    "verified_by": "h1.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Carinthia Ansitsdyna Olive (Jaktmagasinet)",
+     "price_sek": 559,
+     "url": "https://jaktmagasinet.se/collections/sittunderlag"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Tornsits/sittdyna med spännremmar för jakttorn, camo, vadderad"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "Universal, en storlek (ur titel)."
+   },
+   "hook": {
+    "text": "Kallt och hårt i jakttornet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Alla med torn/pass; sitsen på tornbänken är igenkännbar."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "köpt old way som fungerar (sittunderlag 49 kr) — vår form måste synas vara mer än en dyna"
+  ],
+  "eliminated_at": null,
+  "structure_match": 60,
+  "category_novelty": 80,
+  "tier": "B (dubblett)",
+  "biggest_risk": "Enklare dyna med rem. Ser den ut som ett 49-kronors sittunderlag i annonsen vinner hyllan.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com hunting seat cushion tree stand insulated",
+   "https://www.pricerunner.se/results?q=sittdyna jakt",
+   "https://www.pricerunner.se/results?q=sittunderlag",
+   "https://www.hylte-lantman.com/sok?q=sittdyna jakt",
+   "https://www.hylte-lantman.com/sok?q=sittunderlag",
+   "https://www.pricerunner.se/results?q=jakttornsdyna"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "dubblett av tornsitsen 601099667428425"
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099744439687",
+  "url_se": "https://www.temu.com/se/g-601099744439687.html",
+  "title": "Adjustable tree stand seat cushion camo (andra listningen, ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Jakttornets bänk / passets sittplats",
+  "owner_owns": "Ja (jaktlagets torn)",
+  "friction": "Kall, blöt, hård bänk i timmar; skumdynan glider av",
+  "old_way": "Sittunderlag 49 kr som glider, tidning, gammal kudde",
+  "variants": "En storlek (ur titel)",
+  "swedish_equivalent": {
+   "retailer": "Hylte/Pricerunner (sittunderlag, annan form)",
+   "price_sek": 49,
+   "url": "https://www.hylte-lantman.com/sok?q=sittunderlag",
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Carinthia Ansitsdyna Olive (Jaktmagasinet)",
+   "price_sek": 559,
+   "url": "https://jaktmagasinet.se/collections/sittunderlag"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Spänns fast på tornets bänk/räcke; tornet står ute hela hösten."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Sept–okt: kall, blöt, hård träbänk i tornet från första morgonpasset. Fotograferbart i varje torn.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Kedjorna säljer bara vanliga vikbara sittunderlag utan spännremmar och utan camo (ur sökutdrag), ingen spännfast tornsits; fackhandelns vadderade jaktdynor ligger 445–759 kr, >1,6× ett rimligt pris runt 249–299 kr. Kategoritrycket är hårt nedåt (camo-sittunderlag från 49 kr), så remmarna/fästet är hela differentieringen.",
+    "verified": true,
+    "verified_by": "h1.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Carinthia Ansitsdyna Olive (Jaktmagasinet)",
+     "price_sek": 559,
+     "url": "https://jaktmagasinet.se/collections/sittunderlag"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Tornsits/sittdyna med spännremmar för jakttorn, camo, vadderad"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "Universal, en storlek (ur titel)."
+   },
+   "hook": {
+    "text": "Kallt och hårt i jakttornet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Alla med torn/pass; sitsen på tornbänken är igenkännbar."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "köpt old way som fungerar (sittunderlag 49 kr) — vår form måste synas vara mer än en dyna"
+  ],
+  "eliminated_at": null,
+  "structure_match": 60,
+  "category_novelty": 80,
+  "tier": "B (dubblett)",
+  "biggest_risk": "Dublett av 904892660 — välj den med video. Ser den ut som ett 49-kronors sittunderlag i annonsen vinner hyllan.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com hunting seat cushion tree stand insulated",
+   "https://www.pricerunner.se/results?q=sittdyna jakt",
+   "https://www.pricerunner.se/results?q=sittunderlag",
+   "https://www.hylte-lantman.com/sok?q=sittdyna jakt",
+   "https://www.hylte-lantman.com/sok?q=sittunderlag",
+   "https://www.pricerunner.se/results?q=jakttornsdyna"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "dubblett av tornsitsen 601099667428425"
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099521871802",
+  "url_se": "https://www.temu.com/se/g-601099521871802.html",
+  "title": "Universal tree stand seat replacement, adjustable strap, fits ladder/lock-on stands (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Jakttornets bänk / passets sittplats",
+  "owner_owns": "Ja (jaktlagets torn)",
+  "friction": "Kall, blöt, hård bänk i timmar; skumdynan glider av",
+  "old_way": "Sittunderlag 49 kr som glider, tidning, gammal kudde",
+  "variants": "En storlek (ur titel)",
+  "swedish_equivalent": {
+   "retailer": "Hylte/Pricerunner (sittunderlag, annan form)",
+   "price_sek": 49,
+   "url": "https://www.hylte-lantman.com/sok?q=sittunderlag",
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Woodline Värmesittdyna Keflavik",
+   "price_sek": 716,
+   "url": "https://www.hylte-lantman.com/sok?q=sittdyna%20jakt"
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Byggd för amerikanska ladder/lock-on-stands med ram; svenska torn har träbänk — passningen är oklar."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Sept–okt: kall, blöt, hård träbänk i tornet från första morgonpasset. Fotograferbart i varje torn.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Samma KATEGORI finns (sittunderlag: 5etta 49–69 kr, Woolpower 99, Härkila 149 — Hylte/Pricerunner 2026-09-04) men inte samma FORM (vadderad sits med spännremmar för torn). Ankare i jaktversion: Woodline Värmesittdyna 716 kr (Hylte), Hunter Heat 599 (Pricerunner). Biltema/Jula/Rusta ej verifierade direkt (403)."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "Universal, en storlek (ur titel)."
+   },
+   "hook": {
+    "text": "Kallt och hårt i jakttornet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Alla med torn/pass; sitsen på tornbänken är igenkännbar."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "köpt old way som fungerar (sittunderlag 49 kr) — vår form måste synas vara mer än en dyna"
+  ],
+  "eliminated_at": null,
+  "structure_match": 60,
+  "category_novelty": 80,
+  "tier": "C",
+  "biggest_risk": "Ersättningssits för amerikanska stands — passar svensk träbänk sämre. Ser den ut som ett 49-kronors sittunderlag i annonsen vinner hyllan.",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com hunting seat cushion tree stand insulated",
+   "https://www.pricerunner.se/results?q=sittdyna jakt",
+   "https://www.pricerunner.se/results?q=sittunderlag",
+   "https://www.hylte-lantman.com/sok?q=sittdyna jakt",
+   "https://www.hylte-lantman.com/sok?q=sittunderlag",
+   "https://www.pricerunner.se/results?q=jakttornsdyna"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099513456216",
+  "url_se": "https://www.temu.com/se/g-601099513456216.html",
+  "title": "Universal tree stand seat replacement, lightweight adjustable (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Jakttornets bänk / passets sittplats",
+  "owner_owns": "Ja (jaktlagets torn)",
+  "friction": "Kall, blöt, hård bänk i timmar; skumdynan glider av",
+  "old_way": "Sittunderlag 49 kr som glider, tidning, gammal kudde",
+  "variants": "En storlek (ur titel)",
+  "swedish_equivalent": {
+   "retailer": "Hylte/Pricerunner (sittunderlag, annan form)",
+   "price_sek": 49,
+   "url": "https://www.hylte-lantman.com/sok?q=sittunderlag",
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Woodline Värmesittdyna Keflavik",
+   "price_sek": 716,
+   "url": "https://www.hylte-lantman.com/sok?q=sittdyna%20jakt"
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Byggd för amerikanska ladder/lock-on-stands med ram; svenska torn har träbänk — passningen är oklar."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Sept–okt: kall, blöt, hård träbänk i tornet från första morgonpasset. Fotograferbart i varje torn.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Samma KATEGORI finns (sittunderlag: 5etta 49–69 kr, Woolpower 99, Härkila 149 — Hylte/Pricerunner 2026-09-04) men inte samma FORM (vadderad sits med spännremmar för torn). Ankare i jaktversion: Woodline Värmesittdyna 716 kr (Hylte), Hunter Heat 599 (Pricerunner). Biltema/Jula/Rusta ej verifierade direkt (403)."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "Universal, en storlek (ur titel)."
+   },
+   "hook": {
+    "text": "Kallt och hårt i jakttornet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Alla med torn/pass; sitsen på tornbänken är igenkännbar."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "köpt old way som fungerar (sittunderlag 49 kr) — vår form måste synas vara mer än en dyna"
+  ],
+  "eliminated_at": null,
+  "structure_match": 60,
+  "category_novelty": 80,
+  "tier": "C",
+  "biggest_risk": "Som ovan. Ser den ut som ett 49-kronors sittunderlag i annonsen vinner hyllan.",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com hunting seat cushion tree stand insulated",
+   "https://www.pricerunner.se/results?q=sittdyna jakt",
+   "https://www.pricerunner.se/results?q=sittunderlag",
+   "https://www.hylte-lantman.com/sok?q=sittdyna jakt",
+   "https://www.hylte-lantman.com/sok?q=sittunderlag",
+   "https://www.pricerunner.se/results?q=jakttornsdyna"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601103482843682",
+  "url_se": "https://www.temu.com/se/g-601103482843682.html",
+  "title": "Camouflage hunting tree stand seat cushion cover with removable cover & straps, foldable stool pad (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Jakttornets bänk / passets sittplats",
+  "owner_owns": "Ja (jaktlagets torn)",
+  "friction": "Kall, blöt, hård bänk i timmar; skumdynan glider av",
+  "old_way": "Sittunderlag 49 kr som glider, tidning, gammal kudde",
+  "variants": "En storlek (ur titel)",
+  "swedish_equivalent": {
+   "retailer": "Hylte/Pricerunner (sittunderlag, annan form)",
+   "price_sek": 49,
+   "url": "https://www.hylte-lantman.com/sok?q=sittunderlag",
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Carinthia Ansitsdyna Olive (Jaktmagasinet)",
+   "price_sek": 559,
+   "url": "https://jaktmagasinet.se/collections/sittunderlag"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Spänns fast på tornets bänk/räcke; tornet står ute hela hösten."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Sept–okt: kall, blöt, hård träbänk i tornet från första morgonpasset. Fotograferbart i varje torn.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Kedjorna säljer bara vanliga vikbara sittunderlag utan spännremmar och utan camo (ur sökutdrag), ingen spännfast tornsits; fackhandelns vadderade jaktdynor ligger 445–759 kr, >1,6× ett rimligt pris runt 249–299 kr. Kategoritrycket är hårt nedåt (camo-sittunderlag från 49 kr), så remmarna/fästet är hela differentieringen.",
+    "verified": true,
+    "verified_by": "h1.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Carinthia Ansitsdyna Olive (Jaktmagasinet)",
+     "price_sek": 559,
+     "url": "https://jaktmagasinet.se/collections/sittunderlag"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Tornsits/sittdyna med spännremmar för jakttorn, camo, vadderad"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "Universal, en storlek (ur titel)."
+   },
+   "hook": {
+    "text": "Kallt och hårt i jakttornet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Alla med torn/pass; sitsen på tornbänken är igenkännbar."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "köpt old way som fungerar (sittunderlag 49 kr) — vår form måste synas vara mer än en dyna"
+  ],
+  "eliminated_at": null,
+  "structure_match": 60,
+  "category_novelty": 80,
+  "tier": "B (dubblett)",
+  "biggest_risk": "Överdrag + dyna. Ser den ut som ett 49-kronors sittunderlag i annonsen vinner hyllan.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com hunting seat cushion tree stand insulated",
+   "https://www.pricerunner.se/results?q=sittdyna jakt",
+   "https://www.pricerunner.se/results?q=sittunderlag",
+   "https://www.hylte-lantman.com/sok?q=sittdyna jakt",
+   "https://www.hylte-lantman.com/sok?q=sittunderlag",
+   "https://www.pricerunner.se/results?q=jakttornsdyna"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "dubblett av tornsitsen 601099667428425"
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099898313877",
+  "url_se": "https://www.temu.com/se/g-601099898313877.html",
+  "title": "Outdoor heated multi-purpose seat cushion, 3-mode USB, Oxford cloth (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Sittplatsen i tornet/passet",
+  "owner_owns": "Ja",
+  "friction": "Kall bänk i timmar",
+  "old_way": "Skumdyna, fårskinn, värmepåsar",
+  "variants": "En storlek; batteri/powerbank ingår ej (ur titel)",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner (USB-värmedyna, commodity)",
+   "price_sek": 155,
+   "url": "https://www.pricerunner.se/results?q=värmedyna uppladdningsbar",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Hunter Heat Värmedyna (Jakt.se, rek. 599)",
+   "price_sek": 569,
+   "url": "https://www.jakt.se/hunter-heat-v%C3%A4rmedyna"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Sittplatsen i tornet/passet + powerbank jägaren redan har."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Oktobermorgnar 0–5 °C på pass i timmar — kylan är där.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Clas Ohlson har haft exakt samma form (HeatX) men den är utgått; Biltema/Jula/Rusta säljer bara 230 V- eller 12 V-dynor. Jaktfackhandeln ligger 459–819 kr för samma sak, vilket ger 1,6× mot ett pris runt 349–399 kr – men marknadsplatspriser ner till 179 kr (INF) och risken att Clas tar tillbaka HeatX gör ankaret skörare än det ser ut.",
+    "verified": true,
+    "verified_by": "h1.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Hunter Heat Värmedyna (Jakt.se, rek. 599)",
+     "price_sek": 569,
+     "url": "https://www.jakt.se/hunter-heat-v%C3%A4rmedyna"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "USB-uppvärmd sittdyna för jakt"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En storlek."
+   },
+   "hook": {
+    "text": "Fryser du om baken i jakttornet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Jägare + fiskare 45–70."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "kräver powerbank (ingår ej)",
+   "svensk commodity i grundform"
+  ],
+  "eliminated_at": null,
+  "structure_match": 52,
+  "category_novelty": 75,
+  "tier": "C (commodity)",
+  "biggest_risk": "Commodity-formen (155 kr) syns i samma flöde; utan Woodline-look ingen prismarginal.",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com heated seat cushion outdoor usb rechargeable hunting",
+   "https://www.pricerunner.se/results?q=värmedyna uppladdningsbar",
+   "https://www.pricerunner.se/results?q=sittunderlag",
+   "https://www.hylte-lantman.com/sok?q=sittdyna jakt"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "USB-värmedyna: samma form för 155 kr på PriceRunner; kräver powerbank"
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099772450298",
+  "url_se": "https://www.temu.com/se/g-601099772450298.html",
+  "title": "Portable folding heated seat cushion, 3 levels, USB, waterproof polyester (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Sittplatsen i tornet/passet",
+  "owner_owns": "Ja",
+  "friction": "Kall bänk i timmar",
+  "old_way": "Skumdyna, fårskinn, värmepåsar",
+  "variants": "En storlek; batteri/powerbank ingår ej (ur titel)",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner (USB-värmedyna, commodity)",
+   "price_sek": 155,
+   "url": "https://www.pricerunner.se/results?q=värmedyna uppladdningsbar",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Hunter Heat Värmedyna (Jakt.se, rek. 599)",
+   "price_sek": 569,
+   "url": "https://www.jakt.se/hunter-heat-v%C3%A4rmedyna"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Sittplatsen i tornet/passet + powerbank jägaren redan har."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Oktobermorgnar 0–5 °C på pass i timmar — kylan är där.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Clas Ohlson har haft exakt samma form (HeatX) men den är utgått; Biltema/Jula/Rusta säljer bara 230 V- eller 12 V-dynor. Jaktfackhandeln ligger 459–819 kr för samma sak, vilket ger 1,6× mot ett pris runt 349–399 kr – men marknadsplatspriser ner till 179 kr (INF) och risken att Clas tar tillbaka HeatX gör ankaret skörare än det ser ut.",
+    "verified": true,
+    "verified_by": "h1.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Hunter Heat Värmedyna (Jakt.se, rek. 599)",
+     "price_sek": 569,
+     "url": "https://www.jakt.se/hunter-heat-v%C3%A4rmedyna"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "USB-uppvärmd sittdyna för jakt"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En storlek."
+   },
+   "hook": {
+    "text": "Fryser du om baken i jakttornet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Jägare + fiskare 45–70."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "kräver powerbank (ingår ej)",
+   "svensk commodity i grundform"
+  ],
+  "eliminated_at": null,
+  "structure_match": 52,
+  "category_novelty": 75,
+  "tier": "C (commodity)",
+  "biggest_risk": "Commodity-formen (155 kr) syns i samma flöde; utan Woodline-look ingen prismarginal.",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com heated seat cushion outdoor usb rechargeable hunting",
+   "https://www.pricerunner.se/results?q=värmedyna uppladdningsbar",
+   "https://www.pricerunner.se/results?q=sittunderlag",
+   "https://www.hylte-lantman.com/sok?q=sittdyna jakt"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "USB-värmedyna: samma form för 155 kr på PriceRunner; kräver powerbank"
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099522798994",
+  "url_se": "https://www.temu.com/se/g-601099522798994.html",
+  "title": "Shooting sandbags / gun rest bag for outdoor shooting (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Geväret + tornkanten",
+  "owner_owns": "Ja (bössa + torn)",
+  "friction": "Bössan skakar/glider mot tornkanten; skjuter från armbågen",
+  "old_way": "Jackan hoprullad på kanten, handen som stöd",
+  "variants": "En variant (ur titel)",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner/Hylte (fackhandel)",
+   "price_sek": 495,
+   "url": "https://www.pricerunner.se/results?q=skjutstöd",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Caldwell Universal Front Shooting Rest Bag",
+   "price_sek": 495,
+   "url": "https://www.pricerunner.se/results?q=skjutstöd"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Tillbehör som vilar bössan — rör inte vapenfunktion. Förtroende/regelrisk flaggad."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Skjuts från torn/pass sept–okt.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Fackhandel har formen: Caldwell Universal Front Rest Bag 495, Champion Rear Bag 499 (Pricerunner), 5etta Skjutstöd Singel 165 / Bipod 279 / Flex Five 749, Vanguard 583–1 430 (Hylte, 2026-09-04). Inte big-box (ej verifierat). Ankare 495–499 räcker bara om vårt pris ≤ ~310 kr."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant."
+   },
+   "hook": {
+    "text": "Vilar du bössan på tornkanten?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Jägare 45–70, bössa + torn i bild."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "vapentillbehör — Meta-policyrisk",
+   "fackhandel har formen",
+   "sannolikt < 199 kr (sandsäck)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 45,
+  "category_novelty": 85,
+  "tier": "C",
+  "biggest_risk": "Meta kan neka vapentillbehör; Caldwell 495 sätter taket lågt; Temu-pris sannolikt < 100 kr.",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com shooting rest tripod hunting blind rifle rest",
+   "WebSearch: site:temu.com shooting sticks tripod hunting rest telescopic",
+   "WebFetch: https://www.temu.com/shooting-rest-s.html",
+   "https://www.pricerunner.se/results?q=skjutstöd",
+   "https://www.hylte-lantman.com/sok?q=skjutstöd",
+   "https://www.hylte-lantman.com/sok?q=skjutstöd fönster"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099536908795",
+  "url_se": "https://www.temu.com/se/g-601099536908795.html",
+  "title": "Hunting bag stand support / window support bag (ur WebFetch shooting-rest-s.html, $11.66)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Tornets fönsterkarm/räcke",
+  "owner_owns": "Ja (bössa + torn)",
+  "friction": "Bössan skakar/glider mot tornkanten; skjuter från armbågen",
+  "old_way": "Jackan hoprullad på kanten, handen som stöd",
+  "variants": "En variant (ur titel)",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner/Hylte (fackhandel)",
+   "price_sek": 495,
+   "url": "https://www.pricerunner.se/results?q=skjutstöd",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Caldwell Universal Front Shooting Rest Bag",
+   "price_sek": 495,
+   "url": "https://www.pricerunner.se/results?q=skjutstöd"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Tillbehör som vilar bössan — rör inte vapenfunktion. Förtroende/regelrisk flaggad."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Skjuts från torn/pass sept–okt.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Fackhandel har formen: Caldwell Universal Front Rest Bag 495, Champion Rear Bag 499 (Pricerunner), 5etta Skjutstöd Singel 165 / Bipod 279 / Flex Five 749, Vanguard 583–1 430 (Hylte, 2026-09-04). Inte big-box (ej verifierat). Ankare 495–499 räcker bara om vårt pris ≤ ~310 kr."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant."
+   },
+   "hook": {
+    "text": "Vilar du bössan på tornkanten?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Jägare 45–70, bössa + torn i bild."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "vapentillbehör — Meta-policyrisk",
+   "fackhandel har formen",
+   "sannolikt < 199 kr (sandsäck)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 45,
+  "category_novelty": 85,
+  "tier": "C",
+  "biggest_risk": "Samma som ovan; formen finns hos Caldwell/Champion.",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com shooting rest tripod hunting blind rifle rest",
+   "WebSearch: site:temu.com shooting sticks tripod hunting rest telescopic",
+   "WebFetch: https://www.temu.com/shooting-rest-s.html",
+   "https://www.pricerunner.se/results?q=skjutstöd",
+   "https://www.hylte-lantman.com/sok?q=skjutstöd",
+   "https://www.hylte-lantman.com/sok?q=skjutstöd fönster"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601103794016378",
+  "url_se": "https://www.temu.com/se/g-601103794016378.html",
+  "title": "Shooting rest for hunting, shooting sticks/tripod, heavy-duty iron, adjustable height/angle (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Geväret (markpass)",
+  "owner_owns": "Ja (bössa + torn)",
+  "friction": "Bössan skakar/glider mot tornkanten; skjuter från armbågen",
+  "old_way": "Jackan hoprullad på kanten, handen som stöd",
+  "variants": "En variant (ur titel)",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner/Hylte (fackhandel)",
+   "price_sek": 495,
+   "url": "https://www.pricerunner.se/results?q=skjutstöd",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Caldwell Universal Front Shooting Rest Bag",
+   "price_sek": 495,
+   "url": "https://www.pricerunner.se/results?q=skjutstöd"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Tillbehör som vilar bössan — rör inte vapenfunktion. Förtroende/regelrisk flaggad."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Skjuts från torn/pass sept–okt.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Fackhandel har formen: Caldwell Universal Front Rest Bag 495, Champion Rear Bag 499 (Pricerunner), 5etta Skjutstöd Singel 165 / Bipod 279 / Flex Five 749, Vanguard 583–1 430 (Hylte, 2026-09-04). Inte big-box (ej verifierat). Ankare 495–499 räcker bara om vårt pris ≤ ~310 kr."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant."
+   },
+   "hook": {
+    "text": "Skakar bössan när du siktar?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Jägare 45–70, bössa + torn i bild."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "vapentillbehör — Meta-policyrisk",
+   "fackhandel har formen",
+   "sannolikt < 199 kr (sandsäck)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 45,
+  "category_novelty": 85,
+  "tier": "C",
+  "biggest_risk": "Tungt = dyr frakt; 5etta/Vanguard 583–1 680 är ett bra ankare men Temu-priset okänt; vapentillbehör i Meta.",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com shooting rest tripod hunting blind rifle rest",
+   "WebSearch: site:temu.com shooting sticks tripod hunting rest telescopic",
+   "WebFetch: https://www.temu.com/shooting-rest-s.html",
+   "https://www.pricerunner.se/results?q=skjutstöd",
+   "https://www.hylte-lantman.com/sok?q=skjutstöd",
+   "https://www.hylte-lantman.com/sok?q=skjutstöd fönster"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601102189720371",
+  "url_se": "https://www.temu.com/se/g-601102189720371.html",
+  "title": "Shooting rest with ball head for shooting sticks & stands (ur WebFetch, $24.46)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Skjutkäppen jägaren redan har",
+  "owner_owns": "Ja (bössa + torn)",
+  "friction": "Bössan skakar/glider mot tornkanten; skjuter från armbågen",
+  "old_way": "Jackan hoprullad på kanten, handen som stöd",
+  "variants": "En variant (ur titel)",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner/Hylte (fackhandel)",
+   "price_sek": 495,
+   "url": "https://www.pricerunner.se/results?q=skjutstöd",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Caldwell Universal Front Shooting Rest Bag",
+   "price_sek": 495,
+   "url": "https://www.pricerunner.se/results?q=skjutstöd"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Tillbehör som vilar bössan — rör inte vapenfunktion. Förtroende/regelrisk flaggad."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Skjuts från torn/pass sept–okt.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Fackhandel har formen: Caldwell Universal Front Rest Bag 495, Champion Rear Bag 499 (Pricerunner), 5etta Skjutstöd Singel 165 / Bipod 279 / Flex Five 749, Vanguard 583–1 430 (Hylte, 2026-09-04). Inte big-box (ej verifierat). Ankare 495–499 räcker bara om vårt pris ≤ ~310 kr."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant."
+   },
+   "hook": {
+    "text": "Glider bössan på skjutkäppen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Jägare 45–70, bössa + torn i bild."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "vapentillbehör — Meta-policyrisk",
+   "fackhandel har formen",
+   "sannolikt < 199 kr (sandsäck)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 45,
+  "category_novelty": 85,
+  "tier": "C",
+  "biggest_risk": "Kräver att ägaren har käpp med gänga; smal publik.",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com shooting rest tripod hunting blind rifle rest",
+   "WebSearch: site:temu.com shooting sticks tripod hunting rest telescopic",
+   "WebFetch: https://www.temu.com/shooting-rest-s.html",
+   "https://www.pricerunner.se/results?q=skjutstöd",
+   "https://www.hylte-lantman.com/sok?q=skjutstöd",
+   "https://www.hylte-lantman.com/sok?q=skjutstöd fönster"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099590111540",
+  "url_se": "https://www.temu.com/se/g-601099590111540.html",
+  "title": "2pcs classic neoprene gun stock covers / pull-on recoil pads (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Gevärskolven",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "variants": null,
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Passform mot kolven + rör skjutupplevelsen (rekyl) = vapenfunktion/förtroende. Uteslutet enligt uppdraget."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [],
+  "eliminated_at": "object",
+  "structure_match": null,
+  "category_novelty": null,
+  "tier": "ELIM",
+  "biggest_risk": "Vapenfunktion.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com rifle scope cover neoprene protective lens cap",
+   "WebSearch: site:temu.com rifle scope cover neoprene scope coat",
+   "https://www.pricerunner.se/results?q=kikarsikte skydd neopren"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099533841174",
+  "url_se": "https://www.temu.com/se/g-601099533841174.html",
+  "title": "Neoprene scope optic cover, riflescope protective cover (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Kikarsiktet på bössan",
+  "owner_owns": "Ja",
+  "friction": "Regn/skräp på linser, repor i bilen",
+  "old_way": "Strumpa över siktet, linslock",
+  "variants": "Storlek efter siktets längd/objektiv (ur titel: flera mått)",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner (Mjoelner Hunting neoprenfodral kikarsikte)",
+   "price_sek": 224,
+   "url": "https://www.pricerunner.se/results?q=kikarsikte skydd neopren",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på kikarsiktet; rör inte funktionen."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Höstregn i passet.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form finns: Mjoelner Hunting Neoprenfodral för kikarsikte 223,95 kr (Pricerunner 2026-09-04). Ingen ankare över 1,6×."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "< 250 kr-kategori",
+   "vapentillbehör i Meta"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan + prisklass.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com rifle scope cover neoprene protective lens cap",
+   "WebSearch: site:temu.com rifle scope cover neoprene scope coat",
+   "https://www.pricerunner.se/results?q=kikarsikte skydd neopren"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099600093447",
+  "url_se": "https://www.temu.com/se/g-601099600093447.html",
+  "title": "2-pack reversible neoprene rifle scope cover (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Kikarsiktet på bössan",
+  "owner_owns": "Ja",
+  "friction": "Regn/skräp på linser, repor i bilen",
+  "old_way": "Strumpa över siktet, linslock",
+  "variants": "Storlek efter siktets längd/objektiv (ur titel: flera mått)",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner (Mjoelner Hunting neoprenfodral kikarsikte)",
+   "price_sek": 224,
+   "url": "https://www.pricerunner.se/results?q=kikarsikte skydd neopren",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på kikarsiktet; rör inte funktionen."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Höstregn i passet.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form finns: Mjoelner Hunting Neoprenfodral för kikarsikte 223,95 kr (Pricerunner 2026-09-04). Ingen ankare över 1,6×."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "< 250 kr-kategori",
+   "vapentillbehör i Meta"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan + prisklass.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com rifle scope cover neoprene protective lens cap",
+   "WebSearch: site:temu.com rifle scope cover neoprene scope coat",
+   "https://www.pricerunner.se/results?q=kikarsikte skydd neopren"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099536664578",
+  "url_se": "https://www.temu.com/se/g-601099536664578.html",
+  "title": "Neoprene scope cover sleeve with red zipper & carry handle (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Kikarsiktet på bössan",
+  "owner_owns": "Ja",
+  "friction": "Regn/skräp på linser, repor i bilen",
+  "old_way": "Strumpa över siktet, linslock",
+  "variants": "Storlek efter siktets längd/objektiv (ur titel: flera mått)",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner (Mjoelner Hunting neoprenfodral kikarsikte)",
+   "price_sek": 224,
+   "url": "https://www.pricerunner.se/results?q=kikarsikte skydd neopren",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på kikarsiktet; rör inte funktionen."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Höstregn i passet.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form finns: Mjoelner Hunting Neoprenfodral för kikarsikte 223,95 kr (Pricerunner 2026-09-04). Ingen ankare över 1,6×."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "< 250 kr-kategori",
+   "vapentillbehör i Meta"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan + prisklass.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com rifle scope cover neoprene protective lens cap",
+   "WebSearch: site:temu.com rifle scope cover neoprene scope coat",
+   "https://www.pricerunner.se/results?q=kikarsikte skydd neopren"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099528730356",
+  "url_se": "https://www.temu.com/se/g-601099528730356.html",
+  "title": "Trail camera tree mount, quick mount, screw-in, 360° rotating (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Åtelkameran",
+  "owner_owns": "Ja",
+  "friction": "Remmen ger fel vinkel; kameran halkar; kräver rak stam",
+  "old_way": "Spännrem runt stammen + pinne bakom kameran",
+  "variants": "En variant (1/4-20)",
+  "swedish_equivalent": {
+   "retailer": "Hylte Jakt & Lantman",
+   "price_sek": 149,
+   "url": "https://www.hylte-lantman.com/sok?q=åtelkamera fäste",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Flexifästet för åtelkamera",
+   "price_sek": 239,
+   "url": "https://www.hylte-lantman.com/sok?q=åtelkamera fäste"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster åtelkameran på trädet; kameran sitter ute hela hösten."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Sept–okt sätts/flyttas kamerorna inför älg- och vildsvinsjakt; remmen ger sned vinkel och kameran halkar.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Fackhandel har formen: 5etta Universal kamerafäste 149 kr, Flexifästet för åtelkamera 239 kr (Hylte 2026-09-04); Pricerunner: Pro Kamerafäste 185. Inte big-box (ej verifierat). Ingen ankare ≥ 1,6× över 300 kr."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "1/4-20-gänga är standard på alla åtelkameror — en variant."
+   },
+   "hook": {
+    "text": "Hänger åtelkameran snett på trädet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Åtelkameran är omisskännlig i bild; jägare + tomtägare 45–70."
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Jägare har 2–5 kameror — 2/3-pack är naturligt",
+    "result": "OSÄKER — fackhandelns 149 kr sätter taket; bara ett flerpack (2–3 st ≥ 349 kr) når 300 kr"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   }
+  },
+  "negative_space_flags": [
+   "fackhandel har formen billigt",
+   "sannolikt < 199 kr styck"
+  ],
+  "eliminated_at": null,
+  "structure_match": 48,
+  "category_novelty": 85,
+  "tier": "C",
+  "biggest_risk": "149 kr i fackhandeln — bara som 3-pack blir det affär, och då konkurrerar vi med 'köp tre hos Hylte'.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com trail camera mount tree bracket strap",
+   "https://www.pricerunner.se/results?q=åtelkamera fäste",
+   "https://www.hylte-lantman.com/sok?q=åtelkamera fäste"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601101388285623",
+  "url_se": "https://www.temu.com/se/g-601101388285623.html",
+  "title": "Trail camera mounting bracket 1/4-20, 360° rotating, aluminium alloy (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Åtelkameran",
+  "owner_owns": "Ja",
+  "friction": "Remmen ger fel vinkel; kameran halkar; kräver rak stam",
+  "old_way": "Spännrem runt stammen + pinne bakom kameran",
+  "variants": "En variant (1/4-20)",
+  "swedish_equivalent": {
+   "retailer": "Hylte Jakt & Lantman",
+   "price_sek": 149,
+   "url": "https://www.hylte-lantman.com/sok?q=åtelkamera fäste",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Flexifästet för åtelkamera",
+   "price_sek": 239,
+   "url": "https://www.hylte-lantman.com/sok?q=åtelkamera fäste"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster åtelkameran på trädet; kameran sitter ute hela hösten."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Sept–okt sätts/flyttas kamerorna inför älg- och vildsvinsjakt; remmen ger sned vinkel och kameran halkar.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Fackhandel har formen: 5etta Universal kamerafäste 149 kr, Flexifästet för åtelkamera 239 kr (Hylte 2026-09-04); Pricerunner: Pro Kamerafäste 185. Inte big-box (ej verifierat). Ingen ankare ≥ 1,6× över 300 kr."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "1/4-20-gänga är standard på alla åtelkameror — en variant."
+   },
+   "hook": {
+    "text": "Hänger åtelkameran snett på trädet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Åtelkameran är omisskännlig i bild; jägare + tomtägare 45–70."
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Jägare har 2–5 kameror — 2/3-pack är naturligt",
+    "result": "OSÄKER — fackhandelns 149 kr sätter taket; bara ett flerpack (2–3 st ≥ 349 kr) når 300 kr"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   }
+  },
+  "negative_space_flags": [
+   "fackhandel har formen billigt",
+   "sannolikt < 199 kr styck"
+  ],
+  "eliminated_at": null,
+  "structure_match": 48,
+  "category_novelty": 85,
+  "tier": "C",
+  "biggest_risk": "149 kr i fackhandeln — bara som 3-pack blir det affär, och då konkurrerar vi med 'köp tre hos Hylte'.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com trail camera mount tree bracket strap",
+   "https://www.pricerunner.se/results?q=åtelkamera fäste",
+   "https://www.hylte-lantman.com/sok?q=åtelkamera fäste"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099538457690",
+  "url_se": "https://www.temu.com/se/g-601099538457690.html",
+  "title": "Trail camera tree bracket + solar panel bracket (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Åtelkameran",
+  "owner_owns": "Ja",
+  "friction": "Remmen ger fel vinkel; kameran halkar; kräver rak stam",
+  "old_way": "Spännrem runt stammen + pinne bakom kameran",
+  "variants": "En variant (1/4-20)",
+  "swedish_equivalent": {
+   "retailer": "Hylte Jakt & Lantman",
+   "price_sek": 149,
+   "url": "https://www.hylte-lantman.com/sok?q=åtelkamera fäste",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Flexifästet för åtelkamera",
+   "price_sek": 239,
+   "url": "https://www.hylte-lantman.com/sok?q=åtelkamera fäste"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster åtelkameran på trädet; kameran sitter ute hela hösten."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Sept–okt sätts/flyttas kamerorna inför älg- och vildsvinsjakt; remmen ger sned vinkel och kameran halkar.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Fackhandel har formen: 5etta Universal kamerafäste 149 kr, Flexifästet för åtelkamera 239 kr (Hylte 2026-09-04); Pricerunner: Pro Kamerafäste 185. Inte big-box (ej verifierat). Ingen ankare ≥ 1,6× över 300 kr."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "1/4-20-gänga är standard på alla åtelkameror — en variant."
+   },
+   "hook": {
+    "text": "Hänger åtelkameran snett på trädet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Åtelkameran är omisskännlig i bild; jägare + tomtägare 45–70."
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Jägare har 2–5 kameror — 2/3-pack är naturligt",
+    "result": "OSÄKER — fackhandelns 149 kr sätter taket; bara ett flerpack (2–3 st ≥ 349 kr) når 300 kr"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   }
+  },
+  "negative_space_flags": [
+   "fackhandel har formen billigt",
+   "sannolikt < 199 kr styck"
+  ],
+  "eliminated_at": null,
+  "structure_match": 48,
+  "category_novelty": 85,
+  "tier": "C",
+  "biggest_risk": "149 kr i fackhandeln — bara som 3-pack blir det affär, och då konkurrerar vi med 'köp tre hos Hylte'.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com trail camera mount tree bracket strap",
+   "https://www.pricerunner.se/results?q=åtelkamera fäste",
+   "https://www.hylte-lantman.com/sok?q=åtelkamera fäste"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099512956096",
+  "url_se": "https://www.temu.com/se/g-601099512956096.html",
+  "title": "Wilderness trail camera mounting bracket, hunting (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Åtelkameran",
+  "owner_owns": "Ja",
+  "friction": "Remmen ger fel vinkel; kameran halkar; kräver rak stam",
+  "old_way": "Spännrem runt stammen + pinne bakom kameran",
+  "variants": "En variant (1/4-20)",
+  "swedish_equivalent": {
+   "retailer": "Hylte Jakt & Lantman",
+   "price_sek": 149,
+   "url": "https://www.hylte-lantman.com/sok?q=åtelkamera fäste",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Flexifästet för åtelkamera",
+   "price_sek": 239,
+   "url": "https://www.hylte-lantman.com/sok?q=åtelkamera fäste"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster åtelkameran på trädet; kameran sitter ute hela hösten."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Sept–okt sätts/flyttas kamerorna inför älg- och vildsvinsjakt; remmen ger sned vinkel och kameran halkar.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Fackhandel har formen: 5etta Universal kamerafäste 149 kr, Flexifästet för åtelkamera 239 kr (Hylte 2026-09-04); Pricerunner: Pro Kamerafäste 185. Inte big-box (ej verifierat). Ingen ankare ≥ 1,6× över 300 kr."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "1/4-20-gänga är standard på alla åtelkameror — en variant."
+   },
+   "hook": {
+    "text": "Hänger åtelkameran snett på trädet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Åtelkameran är omisskännlig i bild; jägare + tomtägare 45–70."
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Jägare har 2–5 kameror — 2/3-pack är naturligt",
+    "result": "OSÄKER — fackhandelns 149 kr sätter taket; bara ett flerpack (2–3 st ≥ 349 kr) når 300 kr"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   }
+  },
+  "negative_space_flags": [
+   "fackhandel har formen billigt",
+   "sannolikt < 199 kr styck"
+  ],
+  "eliminated_at": null,
+  "structure_match": 48,
+  "category_novelty": 85,
+  "tier": "C",
+  "biggest_risk": "149 kr i fackhandeln — bara som 3-pack blir det affär, och då konkurrerar vi med 'köp tre hos Hylte'.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com trail camera mount tree bracket strap",
+   "https://www.pricerunner.se/results?q=åtelkamera fäste",
+   "https://www.hylte-lantman.com/sok?q=åtelkamera fäste"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099604588367",
+  "url_se": "https://www.temu.com/se/g-601099604588367.html",
+  "title": "Dog bath towel robe, quick-drying absorbent hooded dog bathrobe, adjustable (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Jakthunden",
+  "owner_owns": "Ja",
+  "friction": "Blöt hund som fryser i bilen/buren, lera i baksätet",
+  "old_way": "Gammal handduk, hunden får torka i buren",
+  "variants": "S–XXL efter rygglängd (ur titel)",
+  "swedish_equivalent": {
+   "retailer": "Zoofackhandel via Pricerunner",
+   "price_sek": 319,
+   "url": "https://www.pricerunner.se/results?q=torkrock hund",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Siccaro Smart Drying Coat",
+   "price_sek": 799,
+   "url": "https://www.pricerunner.se/results?q=torkrock hund siccaro"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Bärs av hunden efter drev/apport; hunden är ägd och används utomhus varje jaktdag."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Blöt, lerig hund i bilen/köket efter varje septemberpass — fotograferbart.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Zoofackhandel har kategorin med starka ankare: Rukka Badrock 349–539, Danish Design 319–405, Siccaro Smart Drying Coat 645–1 149, Siccaro Supreme 1 749–1 849 (Pricerunner 2026-09-04). Big-box ej verifierat. Villkorat: vår måste se ut som Siccaro."
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "S–XXL efter rygglängd (ur titel) — ägaren måste mäta; 'passar små/medelstora/stora' utan mått."
+   },
+   "hook": {
+    "text": "Blöt hund i bilen efter jakten?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Alla hundägare 45+ med hus; jakthundar i synnerhet."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "passform/storlek",
+   "jämförelsehandlad kategori med etablerade märken"
+  ],
+  "eliminated_at": null,
+  "structure_match": 50,
+  "category_novelty": 80,
+  "tier": "C",
+  "biggest_risk": "Storleksvalet (rygglängd) + Siccaro/Rukka annonserar själva — vi blir look-alike utan att äga ankaret.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com dog drying coat towel robe after swim",
+   "https://www.pricerunner.se/results?q=torkrock hund",
+   "https://www.pricerunner.se/results?q=torkrock hund siccaro"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601100331031944",
+  "url_se": "https://www.temu.com/se/g-601100331031944.html",
+  "title": "Super absorbent microfiber dog bathrobe S–XL, warm keeping drying coat (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Jakthunden",
+  "owner_owns": "Ja",
+  "friction": "Blöt hund som fryser i bilen/buren, lera i baksätet",
+  "old_way": "Gammal handduk, hunden får torka i buren",
+  "variants": "S–XXL efter rygglängd (ur titel)",
+  "swedish_equivalent": {
+   "retailer": "Zoofackhandel via Pricerunner",
+   "price_sek": 319,
+   "url": "https://www.pricerunner.se/results?q=torkrock hund",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Siccaro Smart Drying Coat",
+   "price_sek": 799,
+   "url": "https://www.pricerunner.se/results?q=torkrock hund siccaro"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Bärs av hunden efter drev/apport; hunden är ägd och används utomhus varje jaktdag."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Blöt, lerig hund i bilen/köket efter varje septemberpass — fotograferbart.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Zoofackhandel har kategorin med starka ankare: Rukka Badrock 349–539, Danish Design 319–405, Siccaro Smart Drying Coat 645–1 149, Siccaro Supreme 1 749–1 849 (Pricerunner 2026-09-04). Big-box ej verifierat. Villkorat: vår måste se ut som Siccaro."
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "S–XXL efter rygglängd (ur titel) — ägaren måste mäta; 'passar små/medelstora/stora' utan mått."
+   },
+   "hook": {
+    "text": "Blöt hund i bilen efter jakten?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Alla hundägare 45+ med hus; jakthundar i synnerhet."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "passform/storlek",
+   "jämförelsehandlad kategori med etablerade märken"
+  ],
+  "eliminated_at": null,
+  "structure_match": 50,
+  "category_novelty": 80,
+  "tier": "C",
+  "biggest_risk": "Storleksvalet (rygglängd) + Siccaro/Rukka annonserar själva — vi blir look-alike utan att äga ankaret.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com dog drying coat towel robe after swim",
+   "https://www.pricerunner.se/results?q=torkrock hund",
+   "https://www.pricerunner.se/results?q=torkrock hund siccaro"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "606573330037589",
+  "url_se": "https://www.temu.com/se/g-606573330037589.html",
+  "title": "Reflective dog vest flame-orange (ur WebFetch hunting-dog-vest-s, $12.03)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Jakthunden",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "variants": null,
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Bärs av hunden."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Jaktsäsong.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Reflexväst hund finns för 62–64 kr (Millu, PETCARE — Pricerunner 2026-09-04) = samma form, commodity."
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Storlekar S–XL."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [],
+  "eliminated_at": "shelf",
+  "structure_match": null,
+  "category_novelty": null,
+  "tier": "ELIM",
+  "biggest_risk": "Reflexväst hund finns för 62–64 kr (Millu, PETCARE — Pricerunner 2026-09-04) = samma form, commodity.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com hunting dog vest protection orange reflective",
+   "WebFetch: https://www.temu.com/hunting-dog-vest-5030161644324-s.html",
+   "https://www.pricerunner.se/results?q=hundväst jakt",
+   "https://www.hylte-lantman.com/sok?q=hundväst jakt"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601102908589955",
+  "url_se": "https://www.temu.com/se/g-601102908589955.html",
+  "title": "2pcs dog reflective vest high visibility (ur WebFetch, $14.47)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Jakthunden",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "variants": null,
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Bärs av hunden."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Jaktsäsong.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma: 62–64 kr commodity."
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Storlekar S–XL."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [],
+  "eliminated_at": "shelf",
+  "structure_match": null,
+  "category_novelty": null,
+  "tier": "ELIM",
+  "biggest_risk": "Samma: 62–64 kr commodity.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com hunting dog vest protection orange reflective",
+   "WebFetch: https://www.temu.com/hunting-dog-vest-5030161644324-s.html",
+   "https://www.pricerunner.se/results?q=hundväst jakt",
+   "https://www.hylte-lantman.com/sok?q=hundväst jakt"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099927608371",
+  "url_se": "https://www.temu.com/se/g-601099927608371.html",
+  "title": "Adjustable coyote-proof dog vest harness with zipper, small–medium breeds (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Jakthunden",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "variants": null,
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Bärs av hunden."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Jaktsäsong.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Små hundar, storlekar; svensk skyddsväst (Genzo 2 395–2 999) är en förtroendeprodukt vi inte kan matcha."
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Storlekar S–XL."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [],
+  "eliminated_at": "shelf",
+  "structure_match": null,
+  "category_novelty": null,
+  "tier": "ELIM",
+  "biggest_risk": "Små hundar, storlekar; svensk skyddsväst (Genzo 2 395–2 999) är en förtroendeprodukt vi inte kan matcha.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com hunting dog vest protection orange reflective",
+   "WebFetch: https://www.temu.com/hunting-dog-vest-5030161644324-s.html",
+   "https://www.pricerunner.se/results?q=hundväst jakt",
+   "https://www.hylte-lantman.com/sok?q=hundväst jakt"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099610415303",
+  "url_se": "https://www.temu.com/se/g-601099610415303.html",
+  "title": "Dog car seat cover hammock with hard bottom, holds 330 lbs (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Bilens baksäte + hunden",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "variants": null,
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Ligger i bilen, används varje jaktdag."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Lerig hund i september.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form (hängmatta/baksätesskydd) finns brett: Trixie Car Seat Cover 224, Teknikproffset 138, Kurgo 599, Trixie delbart 240–418 (Pricerunner 2026-09-04). Biltema/Jula ej verifierade men kategorin är mass-commoditiserad."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": null,
+  "category_novelty": null,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com dog car seat cover trunk hammock waterproof back seat",
+   "https://www.pricerunner.se/results?q=hundskydd bil baksäte"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099676550516",
+  "url_se": "https://www.temu.com/se/g-601099676550516.html",
+  "title": "Waterproof dog hammock for cars/SUV with hard bottom, mesh window (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Bilens baksäte + hunden",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "variants": null,
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Ligger i bilen, används varje jaktdag."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Lerig hund i september.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form (hängmatta/baksätesskydd) finns brett: Trixie Car Seat Cover 224, Teknikproffset 138, Kurgo 599, Trixie delbart 240–418 (Pricerunner 2026-09-04). Biltema/Jula ej verifierade men kategorin är mass-commoditiserad."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": null,
+  "category_novelty": null,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com dog car seat cover trunk hammock waterproof back seat",
+   "https://www.pricerunner.se/results?q=hundskydd bil baksäte"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099543622514",
+  "url_se": "https://www.temu.com/se/g-601099543622514.html",
+  "title": "Adjustable dog suspenders boots / paw protector boot pants (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Hundens tassar",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "variants": null,
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Passform per hund (skostorlek för hund) + inlärning för hunden = personlig passform."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [],
+  "eliminated_at": "object",
+  "structure_match": null,
+  "category_novelty": null,
+  "tier": "ELIM",
+  "biggest_risk": "Passform.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com dog boots paw protection hunting dog leg"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099993015937",
+  "url_se": "https://www.temu.com/se/g-601099993015937.html",
+  "title": "Deer drag sled / ice fishing sled with rope, multi-purpose game sled (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Viltet / jaktmarken (ingen ägd sak)",
+  "owner_owns": null,
+  "friction": "Dra ut vilt ur skogen",
+  "old_way": null,
+  "variants": null,
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Inte tillbehör till en ägd sak — ett fristående verktyg (uppdraget: 'viltet — undvik')."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Älgjakt.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form finns: 'Jaktpulka Låg Rygg Dragtråd Svart' 499 kr (Pricerunner 2026-09-04). Dessutom skrymmande = dyr frakt."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "skrymmande"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": null,
+  "category_novelty": null,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan + frakt.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com game sled deer drag sled hunting",
+   "https://www.pricerunner.se/results?q=viltsläde"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099658421093",
+  "url_se": "https://www.temu.com/se/g-601099658421093.html",
+  "title": "Multi-functional deer drag heavy duty utility sled with pull cable (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Viltet / jaktmarken (ingen ägd sak)",
+  "owner_owns": null,
+  "friction": "Dra ut vilt ur skogen",
+  "old_way": null,
+  "variants": null,
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Inte tillbehör till en ägd sak — ett fristående verktyg (uppdraget: 'viltet — undvik')."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Älgjakt.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form finns: 'Jaktpulka Låg Rygg Dragtråd Svart' 499 kr (Pricerunner 2026-09-04). Dessutom skrymmande = dyr frakt."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "skrymmande"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": null,
+  "category_novelty": null,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan + frakt.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com game sled deer drag sled hunting",
+   "https://www.pricerunner.se/results?q=viltsläde"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099539320448",
+  "url_se": "https://www.temu.com/se/g-601099539320448.html",
+  "title": "Fishing wader boots hanger, boot rack, adjustable strap, for closets/garages (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Vadarstövlar/vadarbyxor",
+  "owner_owns": "Ja",
+  "friction": "Blöta vadare på golvet i garaget, torkar inte, luktar",
+  "old_way": "Upp och ned över en stol/spik",
+  "variants": "En variant",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner (marketplace)",
+   "price_sek": 255,
+   "url": "https://www.pricerunner.se/results?q=vadarstövlar hängare",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Vadarstövlarna är ägda och används ute — men förvaras inomhus/garage (negativ rymd: inomhusförvarat objekt)."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Gäddfiske sept–okt = blöta vadare som ska torka varje vecka.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Pricerunner 'vadarstövlar hängare' 2026-09-04: en marketplace-listning 255 kr ('Skor Torkställningsstövel … Hängare Fiske'), inget märke, ingen kedja. Hylte: noll."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant, justerbar rem."
+   },
+   "hook": {
+    "text": "Var hänger du vadarna efter fisket?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "Vadar-ägare är en smal klass (flug-/gäddfiskare); en galge är inte omisskännlig i flödet."
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "OSÄKER — plastgalge, sannolikt långt under 100 kr på Temu (ej hämtat); når inte 300 kr"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   }
+  },
+  "negative_space_flags": [
+   "inomhusförvarat objekt",
+   "sannolikt < 199 kr"
+  ],
+  "eliminated_at": null,
+  "structure_match": 38,
+  "category_novelty": 85,
+  "tier": "C",
+  "biggest_risk": "Prisklass + smal publik.",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com wader hanger boot dryer hanging rack",
+   "https://www.pricerunner.se/results?q=vadarstövlar hängare"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099529732714",
+  "url_se": "https://www.temu.com/se/g-601099529732714.html",
+  "title": "Fishing wader boots hanger, adjustable hanging strap (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Vadarstövlar/vadarbyxor",
+  "owner_owns": "Ja",
+  "friction": "Blöta vadare på golvet i garaget, torkar inte, luktar",
+  "old_way": "Upp och ned över en stol/spik",
+  "variants": "En variant",
+  "swedish_equivalent": {
+   "retailer": "Pricerunner (marketplace)",
+   "price_sek": 255,
+   "url": "https://www.pricerunner.se/results?q=vadarstövlar hängare",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Vadarstövlarna är ägda och används ute — men förvaras inomhus/garage (negativ rymd: inomhusförvarat objekt)."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Gäddfiske sept–okt = blöta vadare som ska torka varje vecka.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Pricerunner 'vadarstövlar hängare' 2026-09-04: en marketplace-listning 255 kr ('Skor Torkställningsstövel … Hängare Fiske'), inget märke, ingen kedja. Hylte: noll."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant, justerbar rem."
+   },
+   "hook": {
+    "text": "Var hänger du vadarna efter fisket?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "Vadar-ägare är en smal klass (flug-/gäddfiskare); en galge är inte omisskännlig i flödet."
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "OSÄKER — plastgalge, sannolikt långt under 100 kr på Temu (ej hämtat); når inte 300 kr"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   }
+  },
+  "negative_space_flags": [
+   "inomhusförvarat objekt",
+   "sannolikt < 199 kr"
+  ],
+  "eliminated_at": null,
+  "structure_match": 38,
+  "category_novelty": 85,
+  "tier": "C",
+  "biggest_risk": "Prisklass + smal publik.",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com wader hanger boot dryer hanging rack",
+   "https://www.pricerunner.se/results?q=vadarstövlar hängare"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099522371360",
+  "url_se": "https://www.temu.com/se/g-601099522371360.html",
+  "title": "2pcs foldable outdoor seat pad, waterproof thermal, Oxford (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Sittplatsen (universell)",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "variants": null,
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Universellt utomhusobjekt."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Kall mark i oktober.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form: 5etta Sittunderlag ihopvikbart 49–69 kr, Woolpower 99, Härkila 149 (Hylte/Pricerunner 2026-09-04) — mass-commodity."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [],
+  "eliminated_at": "shelf",
+  "structure_match": null,
+  "category_novelty": null,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com foam sitting pad folding outdoor insulated seat mat",
+   "https://www.pricerunner.se/results?q=sittunderlag",
+   "https://www.hylte-lantman.com/sok?q=sittunderlag"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "606037348299126",
+  "url_se": "https://www.temu.com/se/g-606037348299126.html",
+  "title": "Four-fold XPE outdoor cushion, honeycomb, hunting cushion (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Sittplatsen (universell)",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "variants": null,
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Universellt utomhusobjekt."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Kall mark i oktober.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form: 5etta Sittunderlag ihopvikbart 49–69 kr, Woolpower 99, Härkila 149 (Hylte/Pricerunner 2026-09-04) — mass-commodity."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [],
+  "eliminated_at": "shelf",
+  "structure_match": null,
+  "category_novelty": null,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com foam sitting pad folding outdoor insulated seat mat",
+   "https://www.pricerunner.se/results?q=sittunderlag",
+   "https://www.hylte-lantman.com/sok?q=sittunderlag"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "603089893465746",
+  "url_se": "https://www.temu.com/se/g-603089893465746.html",
+  "title": "2-pack folding hunting tripod stool with shoulder strap (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Sittplatsen (universell)",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "variants": null,
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Universell."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Jaktsäsong.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "5etta Jaktstol trebent 369–498 kr (Hylte/Pricerunner) = samma form."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [],
+  "eliminated_at": "shelf",
+  "structure_match": null,
+  "category_novelty": null,
+  "tier": "ELIM",
+  "biggest_risk": "5etta Jaktstol trebent 369–498 kr (Hylte/Pricerunner) = samma form.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com backpack stool hunting folding seat chair",
+   "https://www.pricerunner.se/results?q=jaktstol",
+   "https://www.hylte-lantman.com/sok?q=jaktstol",
+   "https://www.pricerunner.se/results?q=stolsryggsäck",
+   "https://www.hylte-lantman.com/sok?q=stolsryggsäck"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099571255467",
+  "url_se": "https://www.temu.com/se/g-601099571255467.html",
+  "title": "Folding portable stool, titanium alloy bracket, with carry bag (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Sittplatsen (universell)",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "variants": null,
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Universell."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Jaktsäsong.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma: trebensstol finns brett."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [],
+  "eliminated_at": "shelf",
+  "structure_match": null,
+  "category_novelty": null,
+  "tier": "ELIM",
+  "biggest_risk": "Samma: trebensstol finns brett.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com backpack stool hunting folding seat chair",
+   "https://www.pricerunner.se/results?q=jaktstol",
+   "https://www.hylte-lantman.com/sok?q=jaktstol",
+   "https://www.pricerunner.se/results?q=stolsryggsäck",
+   "https://www.hylte-lantman.com/sok?q=stolsryggsäck"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "606204784927640",
+  "url_se": "https://www.temu.com/se/g-606204784927640.html",
+  "title": "Heavy duty folding backpack chair / backrest stool for camping, hunting, fishing (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Sittplatsen (universell)",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "variants": null,
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Universell."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Jaktsäsong.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Stolsryggsäck: 5etta Berge 449, Mil-Tec 349–357, Abu Garcia 504 (Pricerunner 2026-09-04) = samma form."
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [],
+  "eliminated_at": "shelf",
+  "structure_match": null,
+  "category_novelty": null,
+  "tier": "ELIM",
+  "biggest_risk": "Stolsryggsäck: 5etta Berge 449, Mil-Tec 349–357, Abu Garcia 504 (Pricerunner 2026-09-04) = samma form.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com backpack stool hunting folding seat chair",
+   "https://www.pricerunner.se/results?q=jaktstol",
+   "https://www.hylte-lantman.com/sok?q=jaktstol",
+   "https://www.pricerunner.se/results?q=stolsryggsäck",
+   "https://www.hylte-lantman.com/sok?q=stolsryggsäck"
+  ]
+ },
+ {
+  "kluster": "jakt",
+  "goods_id": "601099559253143",
+  "url_se": "https://www.temu.com/se/g-601099559253143.html",
+  "title": "Hunting tree stand blind / camo blind cover with zipper, frames not included (ur sökträff)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Jakttornet (amerikansk ladder stand)",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "variants": null,
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fästs på tornet."
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Svenska jakttorn är byggda med väggar; camo-kjolen löser ett amerikanskt ladder-stand-problem som inte finns här.",
+    "season_sep_oct": true
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade IP:n 2026-09-04 01:00–01:15 UTC, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": null,
+  "category_novelty": null,
+  "tier": "ELIM",
+  "biggest_risk": "Fel torn-form för Sverige.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com hunting umbrella tree stand blind rain cover",
+   "https://www.pricerunner.se/results?q=jaktparaply",
+   "https://www.hylte-lantman.com/sok?q=jaktparaply"
+  ]
+ }
+]
