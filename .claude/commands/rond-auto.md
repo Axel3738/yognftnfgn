@@ -243,6 +243,17 @@ lät dem äta tre av sex briefplatser på tre morgnar.)*
 räknade för sex produkter; kontot hade 17 aktiva kampanjer den 1 september
 och Soptunneklistermärkena stod 12 dagar utan runda.)*
 
+⚠️ **LÄS KAMPANJENS STATUS INNAN DU SKRIVER EN ENDA BRIEF.** Hämta kampanjen
+med `ads_get_ad_entities` (`effective_status`) direkt före batchen. Är den
+något annat än `ACTIVE` — hoppa över produkten, logga INGEN `*_KLAR`-rad, och
+skriv en rad i leveransen om att den hoppades över för att den är pausad.
+`kontodata.json` hämtades i steg 1 och kan vara timmar gammal; Axel eller
+trappan kan ha pausat kampanjen sedan dess. `annonsbehov` filtrerar redan bort
+domarna `STANG_AV` och `ATGARDSTRAPPAN`, men den ser inte en paus som skett
+utanför ronden. *(Axels larm 2026-09-02: Kranskydd Frost 420D var pausad och
+fick ändå 9 briefer — redigerarna byggde material till en kampanj som inte
+kör.)*
+
 **Batchens innehåll (Axel 2026-09-02):**
 - **Fler videor.** Redigerarna är många — minst två tredjedelar av varje
   batch är video. Förstabatch: sex nya videokoncept + variationer på

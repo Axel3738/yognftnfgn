@@ -478,3 +478,15 @@ test('rätt id med fel kontonamn stoppas — två lås, inte ett', () => {
   const fel = kontrolleraKonto({ ...bas, ad_account_id: '1050941584152547', ad_account_namn: 'MagiBorsten' });
   assert.ok(fel.length > 0, 'SE-namn på NO-id ska inte släppas igenom');
 });
+
+
+test('en produkt som stängs av eller går trappan får aldrig briefer', () => {
+  // Axels larm 2026-09-02: Kranskydd Frost 420D var PAUSAD och fick 9 briefer.
+  const stangd = [{ id: 'a', namn: 'X | BE ROAS 1.50', spendTotal: 9000, budget: 1000, dom: { kod: 'STANG_AV', vinstProcent: -20 } }];
+  assert.equal(annonsbehov(stangd, { logg: [], idag: '2026-09-02' }).length, 0);
+  const trappa = [{ id: 'b', namn: 'Y | BE ROAS 1.50', spendTotal: 9000, budget: 1000, dom: { kod: 'ATGARDSTRAPPAN', vinstProcent: -10 } }];
+  assert.equal(annonsbehov(trappa, { logg: [], idag: '2026-09-02' }).length, 0);
+  // En frisk produkt påverkas inte.
+  const frisk = [{ id: 'c', namn: 'Z | BE ROAS 1.50', spendTotal: 9000, budget: 1000, dom: { kod: 'SKALA', vinstProcent: 30 } }];
+  assert.equal(annonsbehov(frisk, { logg: [], idag: '2026-09-02' }).length, 1);
+});

@@ -324,6 +324,11 @@ export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE' } = 
     // prishöjning på väg). En brief skriven nu skulle bygga på fel siffror
     // eller fel pris. Gäller alla behovstyper, inte bara rundorna.
     if (r.dom?.kod === 'FRYST') continue;
+    // Aldrig briefer till en produkt som ronden samma morgon stänger av eller
+    // skickar till trappan. Axels larm 2026-09-02: Kranskydd Frost 420D var
+    // PAUSAD och fick ändå 9 briefer — redigerarna bygger material till en
+    // kampanj som inte kör. Domen är sanningen om produkten lever.
+    if (r.dom?.kod === 'STANG_AV' || r.dom?.kod === 'ATGARDSTRAPPAN') continue;
     const egna = logg.filter((rad) => rad.kampanj_id === r.id && rad.genomford === true);
     const klarRader = egna.filter((rad) => KLAR.includes(rad.kod));
     const harBatch = klarRader.length > 0;
