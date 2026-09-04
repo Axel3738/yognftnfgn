@@ -1,0 +1,66 @@
+[
+ {
+  "form": 0,
+  "text": "5 ting å sjekke før du kjøper et overvåkingskamera",
+  "rader": [
+   0,
+   1,
+   2
+  ],
+  "se_rader": [
+   "5 saker att kolla innan du",
+   "köper en",
+   "övervakningskamera"
+  ],
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "1. Én linse eller to? To dekker 355°.",
+  "rad": 3,
+  "se": "1. En lins eller två? Två täcker 355°.",
+  "vanster": true
+ },
+ {
+  "form": 0,
+  "text": "2. Kan det skille menneske fra katt?",
+  "rad": 4,
+  "se": "2. Kan den skilja på människa och katt?",
+  "vanster": true
+ },
+ {
+  "form": 0,
+  "text": "3. Får du varsel med én gang, eller for sent?",
+  "rad": 5,
+  "se": "3. Får du notis direkt, eller för sent?",
+  "vanster": true
+ },
+ {
+  "form": 0,
+  "text": "4. Tåler det norsk vær utendørs?",
+  "rad": 6,
+  "se": "4. Klarar den svenskt väder utomhus?",
+  "vanster": true
+ },
+ {
+  "form": 0,
+  "text": "5. Finnes det en ekte garanti?",
+  "rad": 7,
+  "se": "5. Finns det en riktig garanti?",
+  "vanster": true
+ },
+ {
+  "form": 2,
+  "text": "Dette klarer alle fem. 899 kr, 30 dagers garanti.",
+  "rad": 0,
+  "se": "Den här klarar alla fem. 799 kr, 30 dagars garanti.",
+  "vanster": false
+ },
+ {
+  "form": 4,
+  "text": "Handle nå",
+  "rad": 0,
+  "se": "Handla nu",
+  "vanster": false
+ }
+]

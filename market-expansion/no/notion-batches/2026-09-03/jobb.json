@@ -1,0 +1,3095 @@
+{
+  "marknad": "NO",
+  "datum": "2026-09-03",
+  "skapad": "2026-09-03T08:39:55.856Z",
+  "kvot": {
+    "heygen": null,
+    "kie": 16593.2
+  },
+  "jobb": [
+    {
+      "notion": {
+        "id": "3cf270ab908c8135973be0684f5daed2",
+        "namn": "MC-Kapell_RE_2_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c8135973be0684f5daed2",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_RE_2_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250065308430291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "RE | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "\"Skyddar hojen bra när den står ute.\" – Andreas Holm\nVerklig recension, Bäverbutiken (Judge.me).\n349 kr.",
+          "headline": "Andreas recension – MC-kapell",
+          "description": "",
+          "link": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "cfa5f8c6cbec7433a4e7eba9505ff22b",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/793567625_2051604045553188_6408709197567750191_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=IxICL10FQwgQ7kNvwFh4yWe&_nc_oc=AdpLknmtROktvh34lDq8_8AhLV6lPi6Y4Sr_dwUWdTL05yL_OzJEfAGbz3BfkQIaeqo&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=m55j2trDuD4fVFITw4Dv-A&_nc_tpa=Q5bMBQK2UCM2Pz7cg6Uz6T6aywMMlVe0HFX2kQCKOmNU-a5fUOP4gQEBSznY0IvppsEhGR4UjrxtlC9wEw&oh=00_AQIMrrXcJYA767F1eEzoN0l3F8GlHq9gluAraNZmtBdJkA&oe=6A9F0C06",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "MC-Kapell",
+      "K": "RE",
+      "nr": "2",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "MC-Trekk NO - RE",
+        "annonsNamn": "MCtrekk_NO_RE_2_1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252065655010233",
+        "creativeId": "1078725605074179",
+        "adsetId": "120252065651640233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "269.00",
+        "jamforpris": "449.00",
+        "titel": "MC-Trekk 218×118 cm – Regn, Støv & UV",
+        "handle": "mc-trekk-220-120-regn-stov-uv"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c813994fcd3ccf2a520f9",
+        "namn": "MC-Kapell_GA_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c813994fcd3ccf2a520f9",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_GA_1_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250065380270291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "GA | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "30 dagars öppet köp på kapellet.\nPassar det inte din hoj – pengarna tillbaka.\nFri frakt. Betala tryggt med Klarna.",
+          "headline": "30 dagars öppet köp – MC-kapell",
+          "description": "",
+          "link": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "4c5a3f6eeba7ad5d30732a6b5c7f8a01",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/793352107_2051609505552642_5055135243085128193_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=slaE-U0NB-EQ7kNvwFkTAX0&_nc_oc=AdqKjnbjKqL5WxfVxrLMQfx6IO_scMobp-7jdzGf4Hhuc8dNCgNfEuTm9Ry5lNxa_kU&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=m55j2trDuD4fVFITw4Dv-A&_nc_tpa=Q5bMBQI7_2O52JwVIB2QESdhe05gbj3rZznUYAprWdHVGL_AqU7vOT8S8bAaUHkTJI2p6xOZCGmEsX-ztw&oh=00_AQJP7xQIzAbdfyimXctAMS7Ke_kydp5_VzSuRJj5Q744iA&oe=6A9F1C4B",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "MC-Kapell",
+      "K": "GA",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "MC-Trekk NO - GA",
+        "annonsNamn": "MCtrekk_NO_GA_1_1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252065657940233",
+        "creativeId": "1422115903108677",
+        "adsetId": "120252065656110233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "269.00",
+        "jamforpris": "449.00",
+        "titel": "MC-Trekk 218×118 cm – Regn, Støv & UV",
+        "handle": "mc-trekk-220-120-regn-stov-uv"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c8157a1adc7da0ea4499e",
+        "namn": "MC-Kapell_OF_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c8157a1adc7da0ea4499e",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_OF_1_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250065383200291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "OF | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "582 kr blev 349 kr – för samma kapell.\nIngen nedbantad variant, bara lägre pris.\nFri frakt inom Sverige.",
+          "headline": "349 kr (spara 40 %) – MC-kapell",
+          "description": "",
+          "link": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "944ee9943a1aedef2965e59be70b3e86",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/793458265_2051609925552600_2502304746036066451_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=gxFuhcUZ8x8Q7kNvwGKAjoW&_nc_oc=AdqleMFcfro8sk2SltzhmJdTEmmo9CfjO48Br4rsDCrjCrs3kfR0F7xxAedwc2zXOoY&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=m55j2trDuD4fVFITw4Dv-A&_nc_tpa=Q5bMBQK5gkpLDlyqQb3QdL_z3FORGkj-VTELslu_H0F99q4KP_Gs_FRb-CBCZE4iEPFwW6X6w7j1yKGPMQ&oh=00_AQKorJShuy1Hs1h1siHx-mwIBUa7c2mRcg0gfUXKCAVTJA&oe=6A9F0F6B",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "MC-Kapell",
+      "K": "OF",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "MC-Trekk NO - OF",
+        "annonsNamn": "MCtrekk_NO_OF_1_1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252065660990233",
+        "creativeId": "1817335332601406",
+        "adsetId": "120252065659150233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "269.00",
+        "jamforpris": "449.00",
+        "titel": "MC-Trekk 218×118 cm – Regn, Støv & UV",
+        "handle": "mc-trekk-220-120-regn-stov-uv"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c816db411d607d75f3b2e",
+        "namn": "MC-Kapell_DE_2_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c816db411d607d75f3b2e",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_DE_2_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250065466650291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "DE | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "Resårkanten låser fast kapellet i blåst.\nVattenavvisande tyg och UV-skydd håller lacken hel.\nVikt ihop får det plats i en sadelväska.",
+          "headline": "3 funktioner, 349 kr – MC-kapell",
+          "description": "",
+          "link": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "3bf10b06415c2af6c9af9eafb4829dae",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/794144860_2051615832218676_2484864420824529178_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=X02zaGqF7KkQ7kNvwHZZmtC&_nc_oc=AdoRiTrhTwJw8sDwDT6TEsi0JRTFfNBzSyggIf2a70BILzeMXWTmvMJyY3OEciSn9Pw&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=m55j2trDuD4fVFITw4Dv-A&_nc_tpa=Q5bMBQKzaysMjRMTlLDRP6pLC44YycvHdXlHwGWsVQS4bW6cWPO2GMZuy8Kor87sh6j_mqEPo5-Jet-hIg&oh=00_AQKADAAS_rW-WaQW-FSXhl96a20keW6D0HLSy_FNPCixuQ&oe=6A9EFD49",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "MC-Kapell",
+      "K": "DE",
+      "nr": "2",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "MC-Trekk NO - DE",
+        "annonsNamn": "MCtrekk_NO_DE_2_1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252065663110233",
+        "creativeId": "1072224078723327",
+        "adsetId": "120252065661870233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "269.00",
+        "jamforpris": "449.00",
+        "titel": "MC-Trekk 218×118 cm – Regn, Støv & UV",
+        "handle": "mc-trekk-220-120-regn-stov-uv"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c8174be7ad5c2632dda0f",
+        "namn": "MC-Kapell_RE_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c8174be7ad5c2632dda0f",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_RE_1_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250065473770291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "RE | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "Johan Nilsson satte på kapellet på sin MC.\n\"Lätt att dra över och skyddar bra mot regn.\"\n349 kr, riktig recension från Bäverbutiken.",
+          "headline": "Johans recension – MC-kapell",
+          "description": "",
+          "link": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "c5cf49fd5db76bd4f379419a51a0b6fe",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/793551339_2051616295551963_5196700832973094517_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=yLiCt0RigocQ7kNvwHZh1fW&_nc_oc=AdrZ5IbolENL7Q0uwe00v-O5UJ8xyZCScAkBn8RwlNjvhwgTsiVJPL2xayzkGbEfttw&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=m55j2trDuD4fVFITw4Dv-A&_nc_tpa=Q5bMBQKPE7upKU2790KP0s_RMDj3mh3kQeCVKovlJ3kpItaNlqOh5yQgfobaednMknSMT3ufWxH-aL_omA&oh=00_AQKfm_q3hwwro_k8eqauNcWixph6XAUxC_GPYmda3vZVkw&oe=6A9F0D02",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "MC-Kapell",
+      "K": "RE",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "MC-Trekk NO - RE",
+        "annonsNamn": "MCtrekk_NO_RE_1_1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk",
+        "status": "ACTIVE",
+        "fel": "Meta 400: User request limit reached — Det har gjorts för många anrop från det här annonskontot. Vänta en stund och försök sedan igen.",
+        "annonsId": "120252065793230233",
+        "creativeId": "908963618958860",
+        "adsetId": "120252065651640233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "269.00",
+        "jamforpris": "449.00",
+        "titel": "MC-Trekk 218×118 cm – Regn, Støv & UV",
+        "handle": "mc-trekk-220-120-regn-stov-uv"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c8193b83ae73f9b53be99",
+        "namn": "MC-Kapell_OB_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c8193b83ae73f9b53be99",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_OB_1_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250065555440291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "OB | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "218×118,5 cm – täcker de flesta motorcyklar.\nPassar inte just din? Pengarna tillbaka inom 30 dagar.\nIngen risk att testa för 349 kr.",
+          "headline": "Passar den inte? Pengarna tillbaka",
+          "description": "",
+          "link": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "f19febfd2edb3befda68d48fc847bfb4",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/794031372_2051622898884636_5829733786426251589_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=Rf1Jk8OO8ukQ7kNvwFQxT7E&_nc_oc=Adr6HGXb151CIZXZNRBysn_Ent2DRs1sf3-2NA6jk03Zc_NBal6H_bk1fTdapfVF5Ns&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=m55j2trDuD4fVFITw4Dv-A&_nc_tpa=Q5bMBQKVz94paJ62D72uycttveQHSJJeaFkqyW0dKQLPYLSMOEHUPPWu2-Dv8uo9rEpk93gt6s_IVD4-lA&oh=00_AQLZ1tsZb84up498x_Y6ThPdDHDxsfaNd25BFwY4J59fVw&oe=6A9EED5F",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "MC-Kapell",
+      "K": "OB",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "MC-Trekk NO - OB",
+        "annonsNamn": "MCtrekk_NO_OB_1_1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk",
+        "status": "ACTIVE",
+        "fel": "Meta 400: User request limit reached — Det har gjorts för många anrop från det här annonskontot. Vänta en stund och försök sedan igen.",
+        "annonsId": "120252065881760233",
+        "creativeId": "1067411749251461",
+        "adsetId": "120252065879990233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "269.00",
+        "jamforpris": "449.00",
+        "titel": "MC-Trekk 218×118 cm – Regn, Støv & UV",
+        "handle": "mc-trekk-220-120-regn-stov-uv"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c81d092a4ca14ba58439a",
+        "namn": "MC-Kapell_PD_6_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c81d092a4ca14ba58439a",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_PD_6_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250065561040291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "PD",
+        "copy": {
+          "message": "218 × 118,5 cm – måttet som täcker hela hojen.\nPassar de flesta motorcyklar, mopeder och scooters.\n349 kr för rätt storlek på skyddet.",
+          "headline": "218×118,5 cm – MC-kapell, 349 kr",
+          "description": "",
+          "link": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "58451580d4934f01b0a008f6e145aba0",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/793352294_2051623218884604_6427487903504650502_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=p4ZMNmNBdhgQ7kNvwGyyKGR&_nc_oc=AdqYVVxpEFvLplheh4k6gCFPincJN3ZPRu1zHG6OOl6ArVinBFiiKRJxlX8YCzeUHqk&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=m55j2trDuD4fVFITw4Dv-A&_nc_tpa=Q5bMBQIMDDG8QqxtYzHrHdMRiC-Za9qCtb52KYX7Z0aXIu7SA7H_adeXKf93huNUnLKswbqLeixVSQoJYw&oh=00_AQIwoSz3PaSahs4cbVfO9wIhBNFKhlRsG6QUx10XkO3Dbg&oe=6A9F0116",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "MC-Kapell",
+      "K": "PD",
+      "nr": "6",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "MC-Trekk NO - PD",
+        "annonsNamn": "MCtrekk_NO_PD_6_1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk",
+        "status": "ACTIVE",
+        "fel": "Meta 400: User request limit reached — Det har gjorts för många anrop från det här annonskontot. Vänta en stund och försök sedan igen.",
+        "annonsId": "120252065883010233",
+        "creativeId": "1097692949286179",
+        "adsetId": "120252051417660233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "269.00",
+        "jamforpris": "449.00",
+        "titel": "MC-Trekk 218×118 cm – Regn, Støv & UV",
+        "handle": "mc-trekk-220-120-regn-stov-uv"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c81e5934bd9ecb482f62e",
+        "namn": "MC-Kapell_LI_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c81e5934bd9ecb482f62e",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_LI_1_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250065666330291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "LI | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "På på en minut, av på en minut.\nSitter kvar även när det blåser rejält.\n349 kr i stället för 582 kr.",
+          "headline": "5 saker kapellet gör – 349 kr",
+          "description": "",
+          "link": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "3fbe4ab6b69957abda11e1478964b4a3",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/793869103_2051628482217411_7073059545073020262_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=CZw7gb-G5jQQ7kNvwFtKJ4m&_nc_oc=AdrjsGZ3_zJFBoSZQoGB8C_b5LxSsoYPDX4sxkry7JlJQk5far-kt1A56vOdwR9Z7-w&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=m55j2trDuD4fVFITw4Dv-A&_nc_tpa=Q5bMBQKB4i3CFwMk9dEcxYLT67M_H4eLxqLI8FNar-bGeeGRTXZu9dVdbFudQZUk5dPeR0jy14jxaQuODw&oh=00_AQJJGwfuo4IcLkqSNavnIbA2JHfxN0xtZWu68fgdbODlLw&oe=6A9F1C2E",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "MC-Kapell",
+      "K": "LI",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "MC-Trekk NO - LI",
+        "annonsNamn": "MCtrekk_NO_LI_1_1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk",
+        "status": "ACTIVE",
+        "fel": "Meta 400: User request limit reached — Det har gjorts för många anrop från det här annonskontot. Vänta en stund och försök sedan igen.",
+        "annonsId": "120252065884860233",
+        "creativeId": "1559694238755562",
+        "adsetId": "120252065883830233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "269.00",
+        "jamforpris": "449.00",
+        "titel": "MC-Trekk 218×118 cm – Regn, Støv & UV",
+        "handle": "mc-trekk-220-120-regn-stov-uv"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c81e8984cf96c2b9b943f",
+        "namn": "MC-Kapell_SP_4_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c81e8984cf96c2b9b943f",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_SP_4_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250065671360291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "SP",
+        "copy": {
+          "message": "Linda Berg valde kapellet till sin MC.\n\"Lätt material och går snabbt att sätta på.\"\n349 kr, fri frakt inom Sverige.",
+          "headline": "Lindas recension – MC-kapell",
+          "description": "",
+          "link": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "c7a01b2803a68c40f8cd0e52c541b4b8",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/793245349_2051628738884052_3252747485036062166_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=kHxot_BxuRcQ7kNvwEOzLE6&_nc_oc=Adp3WdprcJDW9STMYS6w7v1WcLO_nNQfY46Rg9hDOsW085RdJfwrIr40ZMJttIFvOBE&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=m55j2trDuD4fVFITw4Dv-A&_nc_tpa=Q5bMBQIJyh_JttUAQFWEN7vLX7fcHSWLZ6rtGP6o33ELr9mUwmWvsgniXB7dmw49HYhetRxq2W-9wKyZCg&oh=00_AQL4RSEGGq-3d4_pB-aGIAJ0XKmFfE8luOSmtPP1Emi-Iw&oe=6A9F19BD",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "MC-Kapell",
+      "K": "SP",
+      "nr": "4",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "MC-Trekk NO - SP",
+        "annonsNamn": "MCtrekk_NO_SP_4_1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252065945770233",
+        "creativeId": "1431300785536727",
+        "adsetId": "120252051532230233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "269.00",
+        "jamforpris": "449.00",
+        "titel": "MC-Trekk 218×118 cm – Regn, Støv & UV",
+        "handle": "mc-trekk-220-120-regn-stov-uv"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c81f38c32d8752736ff96",
+        "namn": "MC-Kapell_CO_2_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c81f38c32d8752736ff96",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_CO_2_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250065884880291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "CO | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "Samma MC. En står under kapell, en gör det inte.\nRegn och sol jobbar på lacken varje natt utomhus.\n349 kr skyddar din innan nästa skur.",
+          "headline": "Samma hoj, olika skydd – 349 kr",
+          "description": "",
+          "link": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "f618efe3b55639533c7dd5a30eb429be",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/793567313_2051634242216835_6966683007709038588_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=3IJKFw7sV-kQ7kNvwGreZXc&_nc_oc=AdoebWwR1LB7zV2ShmfQ2vMabXENvofLMs2e1P14sh8xrIyxmnvt8w4fHdKYz-xK3iE&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=m55j2trDuD4fVFITw4Dv-A&_nc_tpa=Q5bMBQK5F4Fjn1sovZK7JFvC2dFmYbEDTfWwmm8nSAa76b7gW_6KDKxevUlh4djI3YUSsJk2P4Dj377lKA&oh=00_AQLPxG-faK2PFXVGtiv7hVVyTDoHrFQR2A9bJOITdnjO8A&oe=6A9EF523",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "MC-Kapell",
+      "K": "CO",
+      "nr": "2",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "MC-Trekk NO - CO",
+        "annonsNamn": "MCtrekk_NO_CO_2_1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252065947770233",
+        "creativeId": "1370767495221455",
+        "adsetId": "120252065946260233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "269.00",
+        "jamforpris": "449.00",
+        "titel": "MC-Trekk 218×118 cm – Regn, Støv & UV",
+        "handle": "mc-trekk-220-120-regn-stov-uv"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c81fa8123c347d86e6463",
+        "namn": "MC-Kapell_RI_2_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c81fa8123c347d86e6463",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_RI_2_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250065896240291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "RI | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "En säsong utan skydd ger matt lack och rost på kromet.\nKapellet tar smällen, inte din motorcykel.\n349 kr stoppar skadan innan den börjar.",
+          "headline": "Stoppa skadan innan den börjar",
+          "description": "",
+          "link": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "0aaa4fa74ae1bc5ba8e85f973b4bfe9e",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/793567626_2051634612216798_7371103723971405891_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=q6YwFIgfVekQ7kNvwGp_C6q&_nc_oc=AdpPlKF4b_Z7L80ns7l3npTLlbywd8VcnViuMT-gO4dV5P6jTC-bm5NxGY7IUOef5as&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=m55j2trDuD4fVFITw4Dv-A&_nc_tpa=Q5bMBQIXsSFu-cUXAsR_YjPAk74HskBaAh5PX2hop7QM92B4xHQnCiNbt53SCW0JRpFR9w6_yzlp-NcMKw&oh=00_AQIhGpx39t1s0I6vmC3Rasy3epAg2BoiKwxLxRe5EFgrXg&oe=6A9F1566",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "MC-Kapell",
+      "K": "RI",
+      "nr": "2",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "MC-Trekk NO - RI",
+        "annonsNamn": "MCtrekk_NO_RI_2_1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252065949850233",
+        "creativeId": "1624952032664731",
+        "adsetId": "120252065949120233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "269.00",
+        "jamforpris": "449.00",
+        "titel": "MC-Trekk 218×118 cm – Regn, Støv & UV",
+        "handle": "mc-trekk-220-120-regn-stov-uv"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cd270ab908c812b9f10f1c5a4030bd2",
+        "namn": "Overvakningskamera_RI_2_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Surveillance Camera creative hub",
+        "url": "https://app.notion.com/3cd270ab908c812b9f10f1c5a4030bd2",
+        "kalla": "rader-fil"
+      },
+      "namn": "Overvakningskamera_RI_2_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250064251260291",
+        "status": "ACTIVE",
+        "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+        "kampanjId": "120249989799680291",
+        "adset": "RI | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "Notisen kommer innan du hinner undra.\nDubbellins och AI-spårning ser det ögat missar.\n799 kr (ord. 1000 kr). 30 dagars garanti.",
+          "headline": "Vet direkt vad som händer",
+          "description": "",
+          "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "9284f5f19653e9f535b2e0b896ab05ec",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/788816644_2051551398891786_795177182025829233_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=FBl5SsNrSqoQ7kNvwEj7rCh&_nc_oc=Adpa1cP5zEREEgHY1FPsZKanRSAE348eJtf1lIEZf4dXmxWTEo7ZMJMjqMb6hW0nX0k&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=m55j2trDuD4fVFITw4Dv-A&_nc_tpa=Q5bMBQLjCMeEvidT8mnYwaxBTa9ZGUYrcCLgBrBAye2N7ISX5N-L4U8-k1TqbmkP3HFKCDarT1dg4Cj83A&oh=00_AQIBrTFel1QoymhbavwIr80addbcUQxO6Xva4jp0SivHag&oe=6A9EF181",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Overvakningskamera",
+      "K": "RI",
+      "nr": "2",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Overvakningskamera",
+        "se_kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+        "no_prefix": "Overvåkingskamera",
+        "adset_prefix": "Overvåkingskamera NO",
+        "campaign_id": "120251998582640233",
+        "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998582640233",
+        "kampanjNamn": "Overvåkingskamera NO | BE-ROAS 1,40 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Overvåkingskamera NO - RI",
+        "annonsNamn": "Overvåkingskamera_NO_RI_2_1",
+        "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
+        "prefix": "Overvåkingskamera",
+        "status": "ACTIVE",
+        "annonsId": "120252066009010233",
+        "creativeId": "1392698023060060",
+        "adsetId": "120252066007770233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "899.00",
+        "jamforpris": "1169.00",
+        "titel": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+        "handle": "overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cd270ab908c813c99bee32f43f85122",
+        "namn": "Overvakningskamera_SP_7_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Surveillance Camera creative hub",
+        "url": "https://app.notion.com/3cd270ab908c813c99bee32f43f85122",
+        "kalla": "rader-fil"
+      },
+      "namn": "Overvakningskamera_SP_7_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250064256480291",
+        "status": "ACTIVE",
+        "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+        "kampanjId": "120249989799680291",
+        "adset": "Overvakningskamera SP",
+        "copy": {
+          "message": "Ljudet på natten känns igen på skärmen, inte i mörkret.\nAI-spårningen skiljer människa från katt — färre falsklarm.\n799 kr. 30 dagars garanti.",
+          "headline": "Slipp gå ut i mörkret",
+          "description": "",
+          "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "9cfa144604c28899eaf4921dda6c0ac8",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/793405737_2051551725558420_4901420899610159513_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=rqO36GhlqA8Q7kNvwG16ecg&_nc_oc=AdrD9TFT2X_KkhbISr8LITIQcAtKMJyYpJV3cfZ3_YKDMmbl9B1tJApgRvk05s-CL1U&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=m55j2trDuD4fVFITw4Dv-A&_nc_tpa=Q5bMBQIR4DRUpkjsBkjznuczVesFLmnnhmss2vFzPi9N6VBPez6Li_70LZmoT2WUASt746jrK9XBuUDbfg&oh=00_AQIIrpJTJzsH-qViEm-fODQVR8XywFDHNvTkhaSuskc3VQ&oe=6A9EE9C6",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Overvakningskamera",
+      "K": "SP",
+      "nr": "7",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Overvakningskamera",
+        "se_kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+        "no_prefix": "Overvåkingskamera",
+        "adset_prefix": "Overvåkingskamera NO",
+        "campaign_id": "120251998582640233",
+        "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998582640233",
+        "kampanjNamn": "Overvåkingskamera NO | BE-ROAS 1,40 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Overvåkingskamera NO - SP",
+        "annonsNamn": "Overvåkingskamera_NO_SP_7_1",
+        "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
+        "prefix": "Overvåkingskamera",
+        "status": "ACTIVE",
+        "annonsId": "120252066010650233",
+        "creativeId": "1419703060037963",
+        "adsetId": "120251998602380233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "899.00",
+        "jamforpris": "1169.00",
+        "titel": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+        "handle": "overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cd270ab908c815c8429f26c5d85f059",
+        "namn": "Overvakningskamera_PD_4_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Surveillance Camera creative hub",
+        "url": "https://app.notion.com/3cd270ab908c815c8429f26c5d85f059",
+        "kalla": "rader-fil"
+      },
+      "namn": "Overvakningskamera_PD_4_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250064373060291",
+        "status": "ACTIVE",
+        "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+        "kampanjId": "120249989799680291",
+        "adset": "Overvakningskamera PD",
+        "copy": {
+          "message": "En lins för dagsljus, en för mörker — samma skärpa båda gångerna.\n355° täckning betyder att den vrider sig dit rörelsen är.\n799 kr. 30 dagars garanti.",
+          "headline": "Dag eller natt. Lika skarpt.",
+          "description": "",
+          "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "cb0b1b184b095fb68e43d1ca3498de11",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/789653070_2051558002224459_2327574911751401896_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=D9zUatVaJLUQ7kNvwFdWTi_&_nc_oc=AdqIsuemKDYZAaCzugUCcN5vEm6zt803OCnr7UxWljstzdDjWcbuoTrZ1zBuX9XrKL4&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=m55j2trDuD4fVFITw4Dv-A&_nc_tpa=Q5bMBQK3se18oaIdQx_XJ0wZA2qVG_hGb_qLgr3C9fk3kpXKNvns-gw08wfM1LearhTAQOs5sjMAWskYCg&oh=00_AQKKvYxjgAbMg3DEApYe2fkVqbfrKkxs48MLMqhzZmKb_A&oe=6A9F035D",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Overvakningskamera",
+      "K": "PD",
+      "nr": "4",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Overvakningskamera",
+        "se_kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+        "no_prefix": "Overvåkingskamera",
+        "adset_prefix": "Overvåkingskamera NO",
+        "campaign_id": "120251998582640233",
+        "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998582640233",
+        "kampanjNamn": "Overvåkingskamera NO | BE-ROAS 1,40 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Overvåkingskamera NO - PD",
+        "annonsNamn": "Overvåkingskamera_NO_PD_4_1",
+        "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
+        "prefix": "Overvåkingskamera",
+        "status": "ACTIVE",
+        "annonsId": "120252066012100233",
+        "creativeId": "1086603173773253",
+        "adsetId": "120251998600280233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "899.00",
+        "jamforpris": "1169.00",
+        "titel": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+        "handle": "overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cd270ab908c8172ada7e9c715b42976",
+        "namn": "Overvakningskamera_CO_2_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Surveillance Camera creative hub",
+        "url": "https://app.notion.com/3cd270ab908c8172ada7e9c715b42976",
+        "kalla": "rader-fil"
+      },
+      "namn": "Overvakningskamera_CO_2_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250064378490291",
+        "status": "ACTIVE",
+        "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+        "kampanjId": "120249989799680291",
+        "adset": "CO | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "En fast kamera filmar samma hörn i evighet.\nDen här vrider sig 355° och följer rörelsen dit den går.\n799 kr (ord. 1000 kr). 30 dagars garanti.",
+          "headline": "Fast vinkel vs 355°. Uppgradera.",
+          "description": "",
+          "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "d7d48aaeb9bec9ea60834eb00a05004f",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/793142298_2051558318891094_1312829756395291710_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=ekYs8HiQVXcQ7kNvwGvA_OL&_nc_oc=AdqtRW8OxiYWCIFV-QcjqW3o_Teu9x2PyBz_iYRXBRoCTjyr5HJoMHwTSGKQKiRmqAw&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=m55j2trDuD4fVFITw4Dv-A&_nc_tpa=Q5bMBQL_IOhJol5njmusOgWJPqeDEtgPhMZ-7YftZjVrCr7o014xYGty7z2lWUtWP3aokcqemsdY0jWnpw&oh=00_AQI3zRraAjBYOQdfQ2k7gsXXnK2E4-y-1SkaAQbvfEpQRg&oe=6A9F1A57",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Overvakningskamera",
+      "K": "CO",
+      "nr": "2",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Overvakningskamera",
+        "se_kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+        "no_prefix": "Overvåkingskamera",
+        "adset_prefix": "Overvåkingskamera NO",
+        "campaign_id": "120251998582640233",
+        "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998582640233",
+        "kampanjNamn": "Overvåkingskamera NO | BE-ROAS 1,40 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Overvåkingskamera NO - CO",
+        "annonsNamn": "Overvåkingskamera_NO_CO_2_1",
+        "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
+        "prefix": "Overvåkingskamera",
+        "status": "ACTIVE",
+        "annonsId": "120252066105860233",
+        "creativeId": "1064373582878735",
+        "adsetId": "120252066104840233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "899.00",
+        "jamforpris": "1169.00",
+        "titel": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+        "handle": "overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cd270ab908c817a923be0eef752d4b0",
+        "namn": "Overvakningskamera_LI_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Surveillance Camera creative hub",
+        "url": "https://app.notion.com/3cd270ab908c817a923be0eef752d4b0",
+        "kalla": "rader-fil"
+      },
+      "namn": "Overvakningskamera_LI_1_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250064477240291",
+        "status": "ACTIVE",
+        "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+        "kampanjId": "120249989799680291",
+        "adset": "LI | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "De flesta kameror klarar en eller två av punkterna i bilden.\nDen här har dubbellins, AI-spårning, notis, väderskydd och garanti — samtidigt.\n799 kr (ord. 1000 kr).",
+          "headline": "5 av 5. Inga kompromisser.",
+          "description": "",
+          "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "e4264f0b9aa24259eeae8491d1536570",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/789633507_2051564452223814_6402568326891833059_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=7-uBNHvMwMwQ7kNvwFUJPyk&_nc_oc=AdptyYo6lBnHwEuULpJFj2zxb4vaOCcvIo2iZJbZ3wg2_YeIx2gEi50bGiqhNyy4z04&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=m55j2trDuD4fVFITw4Dv-A&_nc_tpa=Q5bMBQIqVSxQ_ioxCz1IS8ywiBOxJYocNPNI2Vd0r8LI91RQxRX8V000UzFnbhag42NMVbwQ1ietwOG7Tw&oh=00_AQIIErbWSIHyE5r1AgVa5NV4-lRORJyiRTvhgQBJZqMAwQ&oe=6A9EF5F0",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Overvakningskamera",
+      "K": "LI",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Overvakningskamera",
+        "se_kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+        "no_prefix": "Overvåkingskamera",
+        "adset_prefix": "Overvåkingskamera NO",
+        "campaign_id": "120251998582640233",
+        "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998582640233",
+        "kampanjNamn": "Overvåkingskamera NO | BE-ROAS 1,40 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Overvåkingskamera NO - LI",
+        "annonsNamn": "Overvåkingskamera_NO_LI_1_1",
+        "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
+        "prefix": "Overvåkingskamera",
+        "status": "ACTIVE",
+        "annonsId": "120252066108590233",
+        "creativeId": "2017707062080285",
+        "adsetId": "120252066107610233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "899.00",
+        "jamforpris": "1169.00",
+        "titel": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+        "handle": "overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cd270ab908c81d19291d2849d0b760f",
+        "namn": "Overvakningskamera_CS_4_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Surveillance Camera creative hub",
+        "url": "https://app.notion.com/3cd270ab908c81d19291d2849d0b760f",
+        "kalla": "rader-fil"
+      },
+      "namn": "Overvakningskamera_CS_4_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250064617710291",
+        "status": "ACTIVE",
+        "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+        "kampanjId": "120249989799680291",
+        "adset": "Overvakningskamera CS",
+        "copy": {
+          "message": "1000 kr blir 799 kr — ingen kod, inget krångel.\nFri frakt över 300 kr, och Klarna om du vill dela upp.\n30 dagars garanti om den inte känns rätt.",
+          "headline": "799 kr i dag, ord. 1000 kr",
+          "description": "",
+          "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "36d4d25a035b8f9851d99febadbc44c0",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/793627026_2051570012223258_148056656148816834_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=Lfosgs0Cp7oQ7kNvwHv4aHj&_nc_oc=AdqB-yNOtDf8dmch-yE4mR36IXMRpik8yXIIomn9Q6qhPs1Ht5BFbcLXVIrv42SsMRs&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=m55j2trDuD4fVFITw4Dv-A&_nc_tpa=Q5bMBQKfkws8oSWQUo8DCGwKVEDrQ0JGmZuTtmpuyI7SXpSwsfZ3Fj72hVv0RrTfpOX8pm4flitEA8xOfg&oh=00_AQI6XbtDc9RlMHnEyCQDV2EW6MNtIayQujmXiJP9DpIDtg&oe=6A9F1D99",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Overvakningskamera",
+      "K": "CS",
+      "nr": "4",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Overvakningskamera",
+        "se_kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+        "no_prefix": "Overvåkingskamera",
+        "adset_prefix": "Overvåkingskamera NO",
+        "campaign_id": "120251998582640233",
+        "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998582640233",
+        "kampanjNamn": "Overvåkingskamera NO | BE-ROAS 1,40 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Overvåkingskamera NO - CS",
+        "annonsNamn": "Overvåkingskamera_NO_CS_4_1",
+        "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
+        "prefix": "Overvåkingskamera",
+        "status": "ACTIVE",
+        "annonsId": "120252066188630233",
+        "creativeId": "1937936466876073",
+        "adsetId": "120251998624020233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "899.00",
+        "jamforpris": "1169.00",
+        "titel": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+        "handle": "overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cc270ab908c815a90eee1b1796d8d31",
+        "namn": "Beltgrinder_PD_5_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Belt grinder creative hub",
+        "url": "https://app.notion.com/3cc270ab908c815a90eee1b1796d8d31",
+        "kalla": "rader-fil"
+      },
+      "namn": "Beltgrinder_PD_5_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250062736560291",
+        "status": "ACTIVE",
+        "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "kampanjId": "120249902177470291",
+        "adset": "Balteslipmaskin PD",
+        "copy": {
+          "message": "En slö kniv river tomaten. En vass kniv delar den.\nBälteslipmaskin Mini vässar på 10 sekunder — slipsten, slipband och polertrissa i en maskin.\n909 kr (ord. 1 182 kr). Spara 273 kr.\nBeställ din här.",
+          "headline": "Vässad på 10 sekunder",
+          "description": "",
+          "link": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "86dbbf60a5b3d8a9239467effa83593e",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/789926268_2051465458900380_6455675055296736707_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=QjOdDRd_gSMQ7kNvwFd6Z5i&_nc_oc=Ador8cVljb373bTLOCgYgjfdYnlrtVcpO1iM1rtqud01gtR4nxGQItE8NreJ5y2HOGQ&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=m55j2trDuD4fVFITw4Dv-A&_nc_tpa=Q5bMBQIlU2sGAZKvKl9bxVWkcuxGF7ZvzSOgQYdUSZbY0rkvqD8PhsMNwb-xqE7uleOtfBvajtaFGEB9yA&oh=00_AQLkHzH0TzgzWT1F4VFCLuyUYhVCzDkdxUWcwUUxLlL7nA&oe=6A9F0362",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Beltgrinder",
+      "K": "PD",
+      "nr": "5",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Beltgrinder",
+        "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "no_prefix": "Beltesliper",
+        "adset_prefix": "Beltesliper NO",
+        "campaign_id": "120251998498540233",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998498540233",
+        "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Beltesliper NO - PD",
+        "annonsNamn": "Beltesliper_NO_PD_5_1",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
+        "prefix": "Beltesliper",
+        "status": "ACTIVE",
+        "annonsId": "120252066192290233",
+        "creativeId": "1393908789603065",
+        "adsetId": "120251998517140233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "1029.00",
+        "jamforpris": "1715.00",
+        "titel": "Beltesliper Mini 3-i-1 – Knivsliper & Polerer",
+        "handle": "beltesliper-mini-3-i-1-knivsliper-polerer"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cc270ab908c81de9a8ef293ec44a062",
+        "namn": "Beltgrinder_PD_4_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Belt grinder creative hub",
+        "url": "https://app.notion.com/3cc270ab908c81de9a8ef293ec44a062",
+        "kalla": "rader-fil"
+      },
+      "namn": "Beltgrinder_PD_4_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250062744500291",
+        "status": "ACTIVE",
+        "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "kampanjId": "120249902177470291",
+        "adset": "Balteslipmaskin PD",
+        "copy": {
+          "message": "Trötta på slöa knivar och verktyg som inte funkar som dom ska? 🔪\nBälteslipmaskin Mini 3-i-1: slipsten vässar, slipband formar, polertrissa polerar.\nSlipband, slipskivor, polervax, laddare och insexnycklar följer med.\n1 182 kr → 909 kr. Spara 273 kr, alltid samma pris.\nBeställ din här.",
+          "headline": "Slöa mejslar? Vässade på 10 sek",
+          "description": "",
+          "link": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "c8b3aaabada5a77de542428c44df04da",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/787598518_2051465542233705_473205640225299271_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=rE5U2MEBOekQ7kNvwFqHLFc&_nc_oc=AdpvfRx93iqZrDlhmixcZC2jOS7ZMBW7Caiy9R3HsfyLqs1RKFQt9Ky1CK6WHU8aLek&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=m55j2trDuD4fVFITw4Dv-A&_nc_tpa=Q5bMBQJ-8UEIZSz0mZc_eMUFF1F6t1UXCWgNyZIFue6bNP5ofY0XZLrI3Qke4yAmGA-SJQKttNgIRR0D3Q&oh=00_AQL1l9S_M0gRJHP-bHYzOmvuaozdvEQ0Thqq9Mk6RejdJQ&oe=6A9EFA70",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Beltgrinder",
+      "K": "PD",
+      "nr": "4",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Beltgrinder",
+        "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "no_prefix": "Beltesliper",
+        "adset_prefix": "Beltesliper NO",
+        "campaign_id": "120251998498540233",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998498540233",
+        "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Beltesliper NO - PD",
+        "annonsNamn": "Beltesliper_NO_PD_4_1",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
+        "prefix": "Beltesliper",
+        "status": "ACTIVE",
+        "annonsId": "120252066194900233",
+        "creativeId": "1080863584356416",
+        "adsetId": "120251998517140233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "1029.00",
+        "jamforpris": "1715.00",
+        "titel": "Beltesliper Mini 3-i-1 – Knivsliper & Polerer",
+        "handle": "beltesliper-mini-3-i-1-knivsliper-polerer"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cc270ab908c81f8833dcba52755968c",
+        "namn": "Beltgrinder_SO_4_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Belt grinder creative hub",
+        "url": "https://app.notion.com/3cc270ab908c81f8833dcba52755968c",
+        "kalla": "rader-fil"
+      },
+      "namn": "Beltgrinder_SO_4_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250062747910291",
+        "status": "ACTIVE",
+        "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "kampanjId": "120249902177470291",
+        "adset": "SO | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "Trötta på slöa knivar och verktyg som inte funkar som dom ska? 🔪\nBälteslipmaskin Mini 3-i-1: slipsten vässar, slipband formar, polertrissa polerar.\nSlipband, slipskivor, polervax, laddare och insexnycklar följer med.\n1 182 kr → 909 kr. Spara 273 kr, alltid samma pris.\nBeställ din här.",
+          "headline": "909 kr — allt tillbehör ingår",
+          "description": "",
+          "link": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "8714bd1cceac52218cb86e8fa2807d74",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/793142301_2051467278900198_1539635780124761042_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=Dk64lSgg8C4Q7kNvwGvQw6w&_nc_oc=AdrO5BQfUmQDbSnxpgmCre2n_T6DZ8CpkLJdXjVqigw0TfmXD_8zs05dfWqHocPE9qY&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=m55j2trDuD4fVFITw4Dv-A&_nc_tpa=Q5bMBQITTMsMbxoCrLq5FcdUo-wKxB9fF07P24NL-JA8QigLdiZdgHrT8dUC1QzR3h8nqi_kym-JfkPMfg&oh=00_AQLrXOebEbXGPbH5fgdq-VaVMFWCMY0pKqPwl5wm_vvJJg&oe=6A9EF8C2",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Beltgrinder",
+      "K": "SO",
+      "nr": "4",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Beltgrinder",
+        "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "no_prefix": "Beltesliper",
+        "adset_prefix": "Beltesliper NO",
+        "campaign_id": "120251998498540233",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998498540233",
+        "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Beltesliper NO - SO",
+        "annonsNamn": "Beltesliper_NO_SO_4_1",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
+        "prefix": "Beltesliper",
+        "status": "ACTIVE",
+        "annonsId": "120252066314870233",
+        "creativeId": "1057118353866831",
+        "adsetId": "120252066313130233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "1029.00",
+        "jamforpris": "1715.00",
+        "titel": "Beltesliper Mini 3-i-1 – Knivsliper & Polerer",
+        "handle": "beltesliper-mini-3-i-1-knivsliper-polerer"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c81298392f3b52e854140",
+        "namn": "Beltgrinder_PD_8_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Belt grinder creative hub",
+        "url": "https://app.notion.com/3cf270ab908c81298392f3b52e854140",
+        "kalla": "rader-fil"
+      },
+      "namn": "Beltgrinder_PD_8_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250063247560291",
+        "status": "ACTIVE",
+        "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "kampanjId": "120249902177470291",
+        "adset": "Balteslipmaskin PD",
+        "copy": {
+          "message": "Kniv, sax och yxa — tre verktyg som blir slöa var för sig.\nBälteslipmaskin Mini vässar alla tre i samma maskin.\n909 kr, ord. 1 182 kr. Spara 273 kr, ingen krångel.\nBeställ din här.",
+          "headline": "909 kr — spara 273 kr (23%)",
+          "description": "",
+          "link": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "cc68088ba08cbfb6d03a32c9124d7752",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/793945687_2051493198897606_3394160716429655017_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=4sOIL4BuBMMQ7kNvwGsoQbs&_nc_oc=AdoX9mHLJJIWWcRXG6oI-h5R9bhE5r-MbxiBuE88WadozYlFB6o__E7r3bmIJzoEsy8&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=4wfYotvCbUSw5pJzjf6uJA&_nc_tpa=Q5bMBQI446ln_dN8OtrB4ntJMsVO_4UNJ5xeziPmgzbmVq2vYkWJ9YOCQfX7e18lVyPhGg02iVZ8HJ1Tyg&oh=00_AQJGu_aP2CZ0c5-Zf_VooH9Qz9aTgSXq4jS_AMtjn7E51g&oe=6A9F0211",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Beltgrinder",
+      "K": "PD",
+      "nr": "8",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Beltgrinder",
+        "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "no_prefix": "Beltesliper",
+        "adset_prefix": "Beltesliper NO",
+        "campaign_id": "120251998498540233",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998498540233",
+        "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Beltesliper NO - PD",
+        "annonsNamn": "Beltesliper_NO_PD_8_1",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
+        "prefix": "Beltesliper",
+        "status": "ACTIVE",
+        "annonsId": "120252066317800233",
+        "creativeId": "2147349859537936",
+        "adsetId": "120251998517140233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "1029.00",
+        "jamforpris": "1715.00",
+        "titel": "Beltesliper Mini 3-i-1 – Knivsliper & Polerer",
+        "handle": "beltesliper-mini-3-i-1-knivsliper-polerer"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c81369ff0c07ddb7b3e2a",
+        "namn": "Beltgrinder_SO_5_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Belt grinder creative hub",
+        "url": "https://app.notion.com/3cf270ab908c81369ff0c07ddb7b3e2a",
+        "kalla": "rader-fil"
+      },
+      "namn": "Beltgrinder_SO_5_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250063249150291",
+        "status": "ACTIVE",
+        "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "kampanjId": "120249902177470291",
+        "adset": "SO | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "Tre verktyg. Tre olika slipmetoder. En maskin.\nSlipsten vässar, slipband formar, polertrissa polerar — allt i Bälteslipmaskin Mini.\n909 kr istället för 1 182 kr. Spara 273 kr.\nBeställ din här.",
+          "headline": "3 verktyg, 1 maskin, 1 pris",
+          "description": "",
+          "link": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "034e6905807f3dc8e5fbfd8c9cf9da02",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/793386678_2051493615564231_8847766342951547286_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=do33--YrN7EQ7kNvwEMhtqa&_nc_oc=Adr-XFzDE8hhg2NxqRTizm1_lwUJgbfMuVpJ3toKUKOdmwC8Qs-2HeaDKP0YS136vEQ&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=4wfYotvCbUSw5pJzjf6uJA&_nc_tpa=Q5bMBQLuSzxZUVEp6pbu49UVQHG3JxbQVZR87-9qTPoEugFhRQEVuqp7VUs1oYP52y6iczGn85OWxAgUlQ&oh=00_AQJ2A6TRMgekd2iMW56KAR7JTCcMSfVhaWrKnkakXxn9PQ&oe=6A9EEC79",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Beltgrinder",
+      "K": "SO",
+      "nr": "5",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Beltgrinder",
+        "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "no_prefix": "Beltesliper",
+        "adset_prefix": "Beltesliper NO",
+        "campaign_id": "120251998498540233",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998498540233",
+        "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Beltesliper NO - SO",
+        "annonsNamn": "Beltesliper_NO_SO_5_1",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
+        "prefix": "Beltesliper",
+        "status": "ACTIVE",
+        "annonsId": "120252066320530233",
+        "creativeId": "1394330219549692",
+        "adsetId": "120252066313130233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "1029.00",
+        "jamforpris": "1715.00",
+        "titel": "Beltesliper Mini 3-i-1 – Knivsliper & Polerer",
+        "handle": "beltesliper-mini-3-i-1-knivsliper-polerer"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c8136a624c1518d273492",
+        "namn": "Beltgrinder_SP_5_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Belt grinder creative hub",
+        "url": "https://app.notion.com/3cf270ab908c8136a624c1518d273492",
+        "kalla": "rader-fil"
+      },
+      "namn": "Beltgrinder_SP_5_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250063250940291",
+        "status": "ACTIVE",
+        "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "kampanjId": "120249902177470291",
+        "adset": "Balteslipmaskin SP",
+        "copy": {
+          "message": "Låter det för bra för att vara sant? Se bandet snurra själv.\n10 sekunder från slö till vass — inget mer.\nSamma slipband till kniv, sax och yxa. 909 kr, spara 273 kr.\nBeställ din här.",
+          "headline": "Se slipbandet i rörelse",
+          "description": "",
+          "link": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "0e88ecacdf6ad3315edd5891871b26a2",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/793458237_2051493848897541_7516113573439069854_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=krUDkc6ATFcQ7kNvwFnvFO_&_nc_oc=AdqjAbmUGo6YSuXog0GgjwyT4yQ7zMZrATbR-fdDm8ezTItVNbWytxVrqwxFbWa_W1I&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=4wfYotvCbUSw5pJzjf6uJA&_nc_tpa=Q5bMBQLFZc5e7N7hxmoKP-DDpMATt6VcPxXTWWbu5uDS0Dx6u7-9gi3FgIzD5IDuebUuk5HGE2c9Y-70EA&oh=00_AQJsyns-xmryuNqq72nXR_o3dil1cYPDqiEqUO55euvIiQ&oe=6A9EF3AC",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Beltgrinder",
+      "K": "SP",
+      "nr": "5",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Beltgrinder",
+        "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "no_prefix": "Beltesliper",
+        "adset_prefix": "Beltesliper NO",
+        "campaign_id": "120251998498540233",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998498540233",
+        "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Beltesliper NO - SP",
+        "annonsNamn": "Beltesliper_NO_SP_5_1",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
+        "prefix": "Beltesliper",
+        "status": "ACTIVE",
+        "annonsId": "120252066395150233",
+        "creativeId": "1540206817876300",
+        "adsetId": "120251998518650233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "1029.00",
+        "jamforpris": "1715.00",
+        "titel": "Beltesliper Mini 3-i-1 – Knivsliper & Polerer",
+        "handle": "beltesliper-mini-3-i-1-knivsliper-polerer"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c8173a8bfc558c328f36a",
+        "namn": "Beltgrinder_REV_2_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Belt grinder creative hub",
+        "url": "https://app.notion.com/3cf270ab908c8173a8bfc558c328f36a",
+        "kalla": "rader-fil"
+      },
+      "namn": "Beltgrinder_REV_2_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250063374440291",
+        "status": "DISAPPROVED",
+        "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "kampanjId": "120249902177470291",
+        "adset": "REV | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "\"Bra för att slipa och polera hemma.\" — verifierad recension, Fungerar fint.\nBälteslipmaskin Mini: slipsten, slipband och polertrissa i en maskin.\n909 kr (ord. 1 182 kr). Spara 273 kr.\nBeställ din här.",
+          "headline": "Fungerar fint – verifierad recension",
+          "description": "",
+          "link": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "16a06b6fcf94f88b2fa9c08975526a69",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/793627049_2051502422230017_3641092367175718422_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=iigPpszJHMQQ7kNvwER_3O5&_nc_oc=AdrhVN8BKTDd2Ka2M3LGmNskZhOEJhvcnfjvc2OyCe_iSvbBNeJs1P4XTrXZxdBmuHM&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=4wfYotvCbUSw5pJzjf6uJA&_nc_tpa=Q5bMBQLVjVH1t4N6GOe01PRTfj1xsvt14vuhTuHkVB039FaY8HY1282unw6EcEyl0OqrZiS8sW7H1k-e0A&oh=00_AQKOBHCEzHk4qrw7OTuk_dscRt9wZ_Qmb1HnFc3jFP9new&oe=6A9EF329",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Beltgrinder",
+      "K": "REV",
+      "nr": "2",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Beltgrinder",
+        "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "no_prefix": "Beltesliper",
+        "adset_prefix": "Beltesliper NO",
+        "campaign_id": "120251998498540233",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998498540233",
+        "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Beltesliper NO - REV",
+        "annonsNamn": "Beltesliper_NO_REV_2_1",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
+        "prefix": "Beltesliper",
+        "status": "ACTIVE",
+        "annonsId": "120252066397340233",
+        "creativeId": "1354644254387907",
+        "adsetId": "120252066395990233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "1029.00",
+        "jamforpris": "1715.00",
+        "titel": "Beltesliper Mini 3-i-1 – Knivsliper & Polerer",
+        "handle": "beltesliper-mini-3-i-1-knivsliper-polerer"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c81788fd8d044b0409761",
+        "namn": "Beltgrinder_PD_10_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Belt grinder creative hub",
+        "url": "https://app.notion.com/3cf270ab908c81788fd8d044b0409761",
+        "kalla": "rader-fil"
+      },
+      "namn": "Beltgrinder_PD_10_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250063377390291",
+        "status": "ACTIVE",
+        "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "kampanjId": "120249902177470291",
+        "adset": "Balteslipmaskin PD",
+        "copy": {
+          "message": "En ny kniv kostar dig igen om ett år.\nEn vässad kniv kostar dig en gång — sen är den vass i åratal.\nBälteslipmaskin Mini: 909 kr, ord. 1 182 kr. Spara 273 kr.\nBeställ din här.",
+          "headline": "Slipning kostar en gång",
+          "description": "",
+          "link": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "10937ffd9f656ba1846c53d8e7a4cbfc",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/793576703_2051502768896649_7043650831930890389_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=hqvXGvOrTKoQ7kNvwEHHru1&_nc_oc=AdqM2TxGPivj-jdsUzKYV04v9SrnAs7OcJXsi7ZswQjVKTHc1GAKlkI7e6QzM7HyTAI&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=4wfYotvCbUSw5pJzjf6uJA&_nc_tpa=Q5bMBQI2fCuDjczie9cu0zqV8cdTBvfHhGH8U9QToeOoSmHScu3El5gdGQKuP-8-v70qlOt56kYgpeyfqA&oh=00_AQKSw2bBYp-C20IGbFOXd83YnifdE8BKKWCyHzMw3Emqsg&oe=6A9EF757",
+          "bredd": 1080,
+          "hojd": 1080
+        }
+      },
+      "prefix": "Beltgrinder",
+      "K": "PD",
+      "nr": "10",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Beltgrinder",
+        "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "no_prefix": "Beltesliper",
+        "adset_prefix": "Beltesliper NO",
+        "campaign_id": "120251998498540233",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998498540233",
+        "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Beltesliper NO - PD",
+        "annonsNamn": "Beltesliper_NO_PD_10_1",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
+        "prefix": "Beltesliper",
+        "status": "ACTIVE",
+        "annonsId": "120252066399980233",
+        "creativeId": "1045890954955914",
+        "adsetId": "120251998517140233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "1029.00",
+        "jamforpris": "1715.00",
+        "titel": "Beltesliper Mini 3-i-1 – Knivsliper & Polerer",
+        "handle": "beltesliper-mini-3-i-1-knivsliper-polerer"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c8111a9abd9d1e8c5938a",
+        "namn": "Batmotor_PD_5_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c8111a9abd9d1e8c5938a",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_PD_5_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250064627690291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "Båtmotorskydd 420D | PD | 2026-08-29",
+        "copy": {
+          "message": "De flesta kåpor stannar vid toppen av motorn.\nDen här går ner över riggen också.\n420D Oxford-tyg, 9 storlekar för allt från 0–5 hk till 250–350 hk.\n579 kr.",
+          "headline": "Kåpa till rigg. Inte bara toppen.",
+          "description": "",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "c754293e18b3ec3a30c8d48ceedd72ee",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/792911995_2051570382223221_7769797989637180649_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=VAOkPmSzs4AQ7kNvwEtwLn3&_nc_oc=Adp5EtH_pIkjmWKxnauNWb2TX4JXs-MMh2ucYs-sDWPKGYwlYFf5GziEsNBvTuJSna0&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=4wfYotvCbUSw5pJzjf6uJA&_nc_tpa=Q5bMBQLDJ3gsOqUguzGZQDv_sRxuheYo6rg95jsn4meV7eseFCY7tW5evXccZp4Teo0q9W9q5VfkNl3z1A&oh=00_AQI4vYPIYZYluTjLMPzHIYlvESgzB6wkNrBqL1Aap6aSkA&oe=6A9EEDFA",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "PD",
+      "nr": "5",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - PD",
+        "annonsNamn": "Batmotortrekk_NO_PD_5_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252066496960233",
+        "creativeId": "28166540506333554",
+        "adsetId": "120252047563920233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c816a9725efa66647d6f4",
+        "namn": "Batmotor_CO_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c816a9725efa66647d6f4",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_CO_1_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250064854480291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "CO | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "Utan skydd: regn, snö och UV rakt på motorn.\nMed skydd: 420D Oxford-tyg och kåpa ner till riggen.\n579 kr, med 30 dagars öppet köp om du ändrar dig.",
+          "headline": "Utan skydd. Med skydd.",
+          "description": "",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "589de88104b3244bd25dc9d1c4836bc3",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/793580974_2051576735555919_1368114030574253728_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=44RjwRblnoYQ7kNvwEPzl0Y&_nc_oc=AdrL3eNo4E8Vd9Od9fnivXUtvgJjDKCTAzl3QpVchupkc2MPPPiHGPF41a4hxY3C5B8&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=4wfYotvCbUSw5pJzjf6uJA&_nc_tpa=Q5bMBQKeoEHYgsUBhFvNicipdwp5X-7F1jWhRa6wS6ID8YAsHqSNK5gwUf59lyjQTCXO_L8bvjrdb_rhLA&oh=00_AQLgLLtm-uJXtiM-lyLi8B3_jSHegBRd2Fa-WE9ekV6D9Q&oe=6A9F0197",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "CO",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - CO",
+        "annonsNamn": "Batmotortrekk_NO_CO_1_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252066500510233",
+        "creativeId": "1635445374767361",
+        "adsetId": "120252066499320233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c816d8e96cbe2ae05939a",
+        "namn": "Batmotor_BF_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c816d8e96cbe2ae05939a",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_BF_1_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250064868580291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "BF | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "965 kr ner till 579 kr.\n40% rabatt, avdraget direkt i kassan.\nIngen kod att skriva in, inget att komma ihåg.",
+          "headline": "579 kr. Ord. 965 kr.",
+          "description": "",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "6b746aa71416123912b343e4e4eabb78",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/793576703_2051577088889217_2737650027745845477_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=ngmnlfHLLysQ7kNvwFUEukW&_nc_oc=AdqkwS2lOP8-f5MF16KAHH1xISx8R3WvVBmexoldtTyQvF9WsTgyY5MIpr9f7oYiQSo&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=4wfYotvCbUSw5pJzjf6uJA&_nc_tpa=Q5bMBQI7gQtGAvmEr622sl3jPl9n5RlK1XF0pAt8ia09TX_xoCAoPOWgWTrwxZa5-JfR-04VQgAgxub3LQ&oh=00_AQKoKYdcgjfhJnAptsoCus1x4yCUROBiQapp8YkoXaxcfA&oe=6A9F11B3",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "BF",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - BF",
+        "annonsNamn": "Batmotortrekk_NO_BF_1_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252066503040233",
+        "creativeId": "1377841831175420",
+        "adsetId": "120252066501740233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c819486d6fb8c3ba83338",
+        "namn": "Batmotor_BF_2_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c819486d6fb8c3ba83338",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_BF_2_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250064958220291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "BF | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "Täcker skyddet inte riggen som du väntat dig?\nSkicka tillbaka det inom 30 dagar, pengarna tillbaka.\nBetala tryggt med Klarna.",
+          "headline": "30 dagars öppet köp.",
+          "description": "",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "7f9a1725226a782398510cd1242c3a4f",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/793581031_2051582672221992_6159957306494940299_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=sBDgPpBUkAAQ7kNvwF4a9C0&_nc_oc=AdoaBD2gH_ADcPt5OOJ7sHxl2Du1Rau4yaMDgkmxQQHPbVbsImMVBhxSVhZ_8k2YcF8&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=4wfYotvCbUSw5pJzjf6uJA&_nc_tpa=Q5bMBQJ1vmVoOI_FuPN4dBOAn_S7-U1CLtHMHoKvsk0CCsooPt73-nDQkBjur9GImLhUVNEMDBtzW8hWmQ&oh=00_AQIUqHURHoUMg7jmr2btCKIDVQusO6cHDNvAHFDMQFGHmQ&oe=6A9F0AEA",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "BF",
+      "nr": "2",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - BF",
+        "annonsNamn": "Batmotortrekk_NO_BF_2_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252066584250233",
+        "creativeId": "1606790534316097",
+        "adsetId": "120252066501740233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c819fae8ec5c609a3e65b",
+        "namn": "Batmotor_RI_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c819fae8ec5c609a3e65b",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_RI_1_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250064963380291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "RI | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "Rost syns inte förrän det är för sent.\nSkyddet täcker hela motorn, kåpa till rigg – inte bara toppen.\n579 kr skyddar mot sex månader i regn, snö och salt.",
+          "headline": "Rost syns inte förrän det är för sent.",
+          "description": "",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "4bf53fab5852b9288deb7fc08c8f9142",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/793478806_2051583055555287_5754917145035044951_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=AoSWtV81byQQ7kNvwHQ6hOp&_nc_oc=AdrW5GmZPPo17lotZRpOULVBGuq-Hd4cG5hD--J4qHUUQua17Sah9eFHYnq1QSFDWao&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=4wfYotvCbUSw5pJzjf6uJA&_nc_tpa=Q5bMBQISIKbSiohv6EJBfOyUbV26kVF6LqlvwD1ytaHfI3InmkOTSPCvSpL6M3_YPC2Uih4awjfe0ibtmw&oh=00_AQLCYZlp_cN9_OXFOaxK1CXRouh_wlzPLfc8od1DlVUATg&oe=6A9EEE61",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "RI",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - RI",
+        "annonsNamn": "Batmotortrekk_NO_RI_1_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252066587820233",
+        "creativeId": "1058996523789818",
+        "adsetId": "120252066586160233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c81a3ae70ec01a0629b6f",
+        "namn": "Batmotor_TR_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c81a3ae70ec01a0629b6f",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_TR_1_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250065032980291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "TR | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "5,0 av 5 stjärnor. 8 av 8 recensioner.\n\"Skyddet känns hållbart och är lätt att sätta på.\" – Fredrik L.\n579 kr.",
+          "headline": "5,0 av 5 stjärnor (8 recensioner)",
+          "description": "",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "a9c921f67a03b3bb444b71e6539b3147",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/793597477_2051589088888017_4412389386078301456_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=abQezaVRJDsQ7kNvwFOVt2w&_nc_oc=Ado2wd-lIvzzqc-U0YMkASSaGsBy7Rqz8A4jQH9rBjqErOTPVF9jjiqRL-6UBb1h0lY&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=4wfYotvCbUSw5pJzjf6uJA&_nc_tpa=Q5bMBQJtbg5AJUv-bv5haudyjOECVtadgtlU5LpaoQ0NsAEP_Dxv_XQ4WeUCXqKU18CDY6ccLEb__XRkYg&oh=00_AQIqHBYJ_o1D3n1l8_P3r4MnTKo43UJ7bR41DVRBbMKwpQ&oe=6A9F124F",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "TR",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - TR",
+        "annonsNamn": "Batmotortrekk_NO_TR_1_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252066590290233",
+        "creativeId": "1112711344760680",
+        "adsetId": "120252066589460233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c81a7a29fc9b69befb061",
+        "namn": "Batmotor_CS_4_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c81a7a29fc9b69befb061",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_CS_4_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250065038000291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "Båtmotorskydd 420D | CS | 2026-08-29",
+        "copy": {
+          "message": "965 kr → 579 kr.\n40% rabatt är redan avdraget, du behöver ingen kod.\nPriset du ser är priset du betalar.",
+          "headline": "965 kr → 579 kr, redan avdraget",
+          "description": "",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "a0fa91be12f81230e7b249e4700be502",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/793142315_2051589662221293_7075035445803156196_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=SEyC7UQlhrMQ7kNvwFQdm_I&_nc_oc=AdpBjJ3GtWjkaVg6nQ28iQOlekXnnJzhSI61P-ZQqkvxBZ7ETVNTecbCQ0gQAwQnNi4&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=4wfYotvCbUSw5pJzjf6uJA&_nc_tpa=Q5bMBQKoL6dAkT98aIZxXwGRvygc4IbfCq63qqaxunXaU_lM_krMb4aVz_2LbKoghgVggSdP9uc97vCWSQ&oh=00_AQKsbA5uT7FQquYy9IqGEXEDr3EfMuM1oZQ3FwM5GaUxDQ&oe=6A9F02AA",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "CS",
+      "nr": "4",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - CS",
+        "annonsNamn": "Batmotortrekk_NO_CS_4_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252066650250233",
+        "creativeId": "1413821854044724",
+        "adsetId": "120252047986380233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c81c1bd59ee58f04f9e89",
+        "namn": "Batmotor_LI_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c81c1bd59ee58f04f9e89",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_LI_1_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250065179450291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "LI | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "5 saker skyddet gör:\n1. Täcker hela motorn, kåpa till rigg.\n2. 420D Oxford-tyg mot regn, snö och UV.\n3. 9 storlekar, 0–5 hk till 250–350 hk.\n4. Monteras utan verktyg.\n5. 30 dagars öppet köp.\n579 kr.",
+          "headline": "5 saker skyddet gör",
+          "description": "",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "70e0142558bdd8d890bd5f88822f0314",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/793479554_2051595725554020_312026254089447079_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=h7PV5ylx6s0Q7kNvwHTMURT&_nc_oc=AdoigwccdRb3TCdy9jqUlXcxIqbmmbLkTXgzP7FzUZF-aXhnBZKp-crbP2HdItglQg4&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=4wfYotvCbUSw5pJzjf6uJA&_nc_tpa=Q5bMBQJKV0uuLc9GId81rcWcotWxj8pCrwl2bxTFUCC83UwS5Ag_zS2qzdD_fkKVVxOFWf1uO1QvI3txLA&oh=00_AQJSV1XVYwIkUGLu09v88Eh-1OUnaH9E0whp9v_924YgDw&oe=6A9F0DB0",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "LI",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - LI",
+        "annonsNamn": "Batmotortrekk_NO_LI_1_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252066675440233",
+        "creativeId": "2699388600463438",
+        "adsetId": "120252066663510233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c81d59be8f2519a72ac11",
+        "namn": "Batmotor_RV_3_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c81d59be8f2519a72ac11",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_RV_3_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250065193470291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "RV | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "\"Bra skydd mot regn och smuts. Jag är nöjd.\" – Johan K.\nVerklig recension, baverbutiken.se.\n5,0 av 5 (8 recensioner). 579 kr.",
+          "headline": "\"Bra skydd mot regn och smuts.\" – Johan K.",
+          "description": "",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "5cb86c8ced39c6053292f9123f18e339",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/789708893_2051596115553981_7049134656024268497_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=c-VwsCWcnLgQ7kNvwGUm9nt&_nc_oc=AdrH4eGdpKUU7yH0LLHFVlMPkVmZdN-x9tBRZEw5GABndTUHx2X8vMbwEIK19KS756c&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=4wfYotvCbUSw5pJzjf6uJA&_nc_tpa=Q5bMBQIjQXEfSe9dLO59_q1cv9BgpADztIIEm3yW95jSFzn_mH-jQe7Bm08tf1tJi28jFDHB7quvLUin5Q&oh=00_AQILSlWQxenCmsgx6is5UIkSASNQEsonGLXQtFZXv8JZOw&oe=6A9F0D33",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "RV",
+      "nr": "3",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - RV",
+        "annonsNamn": "Batmotortrekk_NO_RV_3_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252066688770233",
+        "creativeId": "1393640115465685",
+        "adsetId": "120252066687580233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c81d79c68c968220e0c78",
+        "namn": "Batmotor_BF_3_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c81d79c68c968220e0c78",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_BF_3_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250065298370291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "BF | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "Storlekar för allt från 5 hk jolle till 350 hk storbåt.\nMät din motor på 30 sekunder i måttguiden.\nBeställ rätt direkt – inget gissande. 579 kr, skyddet i din storlek.",
+          "headline": "0–350 hk. En skyddar din.",
+          "description": "",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "ac06e21e78123ac1419fabc53b4fae03",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/793868191_2051602845553308_945414572472178710_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=fBzp_slIjxQQ7kNvwHZCVd3&_nc_oc=AdrPWEOBtzkuV6Rdi6vK3wdF09QS73UeOlMv4toimy5W5D9ZJpbCH7JRWl6wMh8srSQ&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=4wfYotvCbUSw5pJzjf6uJA&_nc_tpa=Q5bMBQJa7XLjlB97ZeNofXLR4hPpTBPO3igKORGbDobyDEn6huQRMr6vOK8T6SWcFbNCn2gSX43ZLf2V_A&oh=00_AQIDSTkdlRATogKKJ8qjeVJsbB_jAqh6976kGHy8dngShw&oe=6A9EF830",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "BF",
+      "nr": "3",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - BF",
+        "annonsNamn": "Batmotortrekk_NO_BF_3_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252066964180233",
+        "creativeId": "1614608137061514",
+        "adsetId": "120252066501740233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c81e8ae28e78b56c7fb04",
+        "namn": "Batmotor_RV_2_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c81e8ae28e78b56c7fb04",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_RV_2_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250065304340291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "RV | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "\"Skyddet känns hållbart och är lätt att sätta på.\" – Fredrik L.\nVerklig recension, baverbutiken.se.\n5,0 av 5 (8 recensioner). 579 kr.",
+          "headline": "\"Skyddet känns hållbart.\" – Fredrik L.",
+          "description": "",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "8d9eafc2effd3cb2bc659694098889e3",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/789653063_2051603432219916_6182142412675080228_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=umN3AE-9oGMQ7kNvwGycT5I&_nc_oc=AdoYwfRO0-QRqpdNxdGZQ4P-kKdijvkorvHDjgWCOHkNSXTNBiYZ9FkL9TWP_x1r3sc&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=4wfYotvCbUSw5pJzjf6uJA&_nc_tpa=Q5bMBQIv4-4oNcafPxvVJCtC07fHYcZTjbLmAfRLv_yY373FSqpaL5x0354d2LbTkYl1-kxDlfNYn1rK4Q&oh=00_AQK15wGNs8Qw7EXw00YyHOwqBasvyHmOUeZRkrViMktDRQ&oe=6A9F0B6F",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "RV",
+      "nr": "2",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - RV",
+        "annonsNamn": "Batmotortrekk_NO_RV_2_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252066975900233",
+        "creativeId": "4447847588812939",
+        "adsetId": "120252066687580233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cc270ab908c817b97c2f74bc93ceaf7",
+        "namn": "Kranskydd_PD_3_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Kranskydd Frost 420D creative hub",
+        "url": "https://app.notion.com/3cc270ab908c817b97c2f74bc93ceaf7",
+        "kalla": "rader-fil"
+      },
+      "namn": "Kranskydd_PD_3_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250064056960291",
+        "status": "CAMPAIGN_PAUSED",
+        "kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
+        "kampanjId": "120249975043720291",
+        "adset": "Kranskydd PD",
+        "copy": {
+          "message": "Två kranar. En spricker i vinter, en gör det inte.\nIsolerande foder håller frosten ute hela säsongen.\n309 kr, på plats på 10 sekunder.",
+          "headline": "Oskyddad kran, eller skyddad kran",
+          "description": "",
+          "link": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "b0dc1554edf013c7c6e5bb570892c761",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/793070265_2051545315559061_7531547894529247159_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=k8-782ucl4sQ7kNvwEoN6XA&_nc_oc=AdpPQMa812_wLWmhhTRtt0-A7Ig1WWVbKoBOno0SFNTHYAfcYxfCBFFkOV4z9VS_oI0&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=4wfYotvCbUSw5pJzjf6uJA&_nc_tpa=Q5bMBQJbb6pQKU3QBzR_WAoguOnJoObIska4FEl5v5aWM-QrEi2Efi1q2T8IpPXvq-N9MpZRF3pldktI2g&oh=00_AQLXtQ5osA2Q6t1WZ_Vo_rcPijJc4_2vuP62--S_WCUsTg&oe=6A9EFAB1",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Kranskydd",
+      "K": "PD",
+      "nr": "3",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Kranskydd",
+        "se_kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
+        "no_prefix": "Kranbeskyttelse",
+        "adset_prefix": "Kranbeskyttelse NO",
+        "campaign_id": "120251996272390233",
+        "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996272390233",
+        "kampanjNamn": "Kranbeskyttelse Frost NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Kranbeskyttelse NO - PD",
+        "annonsNamn": "Kranbeskyttelse_NO_PD_3_1",
+        "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
+        "prefix": "Kranbeskyttelse",
+        "status": "ACTIVE",
+        "annonsId": "120252066987570233",
+        "creativeId": "2943744432462820",
+        "adsetId": "120251996272710233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "219.00",
+        "jamforpris": "285.00",
+        "titel": "Kranbeskyttelse Frost 420D – Beskytter Utekranen i Vinter",
+        "handle": "kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cc270ab908c81da8be6e45e3b0e3eda",
+        "namn": "Kranskydd_SP_3_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Kranskydd Frost 420D creative hub",
+        "url": "https://app.notion.com/3cc270ab908c81da8be6e45e3b0e3eda",
+        "kalla": "rader-fil"
+      },
+      "namn": "Kranskydd_SP_3_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250064064800291",
+        "status": "CAMPAIGN_PAUSED",
+        "kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
+        "kampanjId": "120249975043720291",
+        "adset": "Kranskydd SP",
+        "copy": {
+          "message": "\"Jag slapp en spräckt kran i vinter tack vare den här.\" – verifierad kund.\n420D Oxford-tyg, 30 dagars öppet köp.\n309 kr för en trygg vinter.",
+          "headline": "Slapp en spräckt kran – riktig kund",
+          "description": "",
+          "link": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "a562d66554841205875ad1200ef92c1e",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/794144810_2051545662225693_7837049283526822422_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=JmjrOetMxksQ7kNvwGV2qbf&_nc_oc=AdriRWF8py6LYu-M4Kh-WlFmDsPU5cjthul3_YVk6diEVoVhCc5y_n8U3zV2eU0UFkU&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=4wfYotvCbUSw5pJzjf6uJA&_nc_tpa=Q5bMBQK2JB8LmC_h3w-0DM1bX0HMy8kwx56zO8nF1ueQBWNuf_CKrnaCihoD-INga0CtJylBffIEKjIb0w&oh=00_AQJIJ_mJ7teWElq86oD4FWjm8__2N4RS0MxKJBLoOouTpQ&oe=6A9F0417",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Kranskydd",
+      "K": "SP",
+      "nr": "3",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Kranskydd",
+        "se_kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
+        "no_prefix": "Kranbeskyttelse",
+        "adset_prefix": "Kranbeskyttelse NO",
+        "campaign_id": "120251996272390233",
+        "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996272390233",
+        "kampanjNamn": "Kranbeskyttelse Frost NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Kranbeskyttelse NO - SP",
+        "annonsNamn": "Kranbeskyttelse_NO_SP_3_1",
+        "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
+        "prefix": "Kranbeskyttelse",
+        "status": "ACTIVE",
+        "annonsId": "120252067072640233",
+        "creativeId": "1678662889890751",
+        "adsetId": "120251996274400233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "219.00",
+        "jamforpris": "285.00",
+        "titel": "Kranbeskyttelse Frost 420D – Beskytter Utekranen i Vinter",
+        "handle": "kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c8101a57dfe60d0486902",
+        "namn": "Kranskydd_REV_2_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Kranskydd Frost 420D creative hub",
+        "url": "https://app.notion.com/3cf270ab908c8101a57dfe60d0486902",
+        "kalla": "rader-fil"
+      },
+      "namn": "Kranskydd_REV_2_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250063787560291",
+        "status": "CAMPAIGN_PAUSED",
+        "kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
+        "kampanjId": "120249975043720291",
+        "adset": "REV | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "\"Fungerar bra\" – riktig kundrecension.\nKranen skyddad mot kyla utan att du tänker på det.\n309 kr, på plats på 10 sekunder.",
+          "headline": "Skyddar kranen. Riktig recension.",
+          "description": "",
+          "link": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "f3543842e208fc5df255c84532b2084d",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/793457972_2051524918894434_4259600216917134003_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=SzaYf7Uq9LAQ7kNvwHgFoR8&_nc_oc=AdrjwWfoy1RYTItc_kC0kNFPzoC_UXn4LWpU-M8GuBYqxBQ8A2bcMQgfJ3yp8GwbAcM&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=4wfYotvCbUSw5pJzjf6uJA&_nc_tpa=Q5bMBQKubs6r5Qi-K4Qf8FPj6T3CbTWTWZfYHP1M1D6gyXDsmKwW768y-ecVnVWeoAJcm7XyjtbPEpJ-3Q&oh=00_AQJsapH-QvGt_PRH2f2VvWGOr89NtJjTXndsKoSlkQnlVQ&oe=6A9F18D2",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Kranskydd",
+      "K": "REV",
+      "nr": "2",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Kranskydd",
+        "se_kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
+        "no_prefix": "Kranbeskyttelse",
+        "adset_prefix": "Kranbeskyttelse NO",
+        "campaign_id": "120251996272390233",
+        "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996272390233",
+        "kampanjNamn": "Kranbeskyttelse Frost NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Kranbeskyttelse NO - REV",
+        "annonsNamn": "Kranbeskyttelse_NO_REV_2_1",
+        "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
+        "prefix": "Kranbeskyttelse",
+        "status": "ACTIVE",
+        "annonsId": "120252067078690233",
+        "creativeId": "3016297295369119",
+        "adsetId": "120252067076170233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "219.00",
+        "jamforpris": "285.00",
+        "titel": "Kranbeskyttelse Frost 420D – Beskytter Utekranen i Vinter",
+        "handle": "kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c8146be50ecadc6254300",
+        "namn": "Kranskydd_PD_4_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Kranskydd Frost 420D creative hub",
+        "url": "https://app.notion.com/3cf270ab908c8146be50ecadc6254300",
+        "kalla": "rader-fil"
+      },
+      "namn": "Kranskydd_PD_4_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250063973680291",
+        "status": "CAMPAIGN_PAUSED",
+        "kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
+        "kampanjId": "120249975043720291",
+        "adset": "Kranskydd PD",
+        "copy": {
+          "message": "Dra åt dragskon – klart innan kylan hinner fram.\n22×14 cm täcker hela kranen, inte bara toppen.\n309 kr för en vinter utan spräckta rör.",
+          "headline": "Täcker hela kranen, inte bara toppen",
+          "description": "",
+          "link": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "cd3b3629714e564e754a790288004f6d",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/793142347_2051538575559735_8064948375220498986_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=gMjoHg_1YsgQ7kNvwEOvI_c&_nc_oc=AdpfIXXymFESoiwM2ZQ7OSOp7mwqLLxWuQUNlZHH54fuA5ybOWvhNuBTh3jFlfkLo6k&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=4wfYotvCbUSw5pJzjf6uJA&_nc_tpa=Q5bMBQIAJ1q8djhwiYybE-bX1dqrOP9ZT968RiMTfM35ARJiMfSffzzSDTOuK7eZj-DSdWchlw-w42Ca_A&oh=00_AQKmZ1Eg3YrSDrW9HKB0wjrJWpSb5aR9mb_pDklp9dicwQ&oe=6A9F1855",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Kranskydd",
+      "K": "PD",
+      "nr": "4",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Kranskydd",
+        "se_kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
+        "no_prefix": "Kranbeskyttelse",
+        "adset_prefix": "Kranbeskyttelse NO",
+        "campaign_id": "120251996272390233",
+        "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996272390233",
+        "kampanjNamn": "Kranbeskyttelse Frost NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Kranbeskyttelse NO - PD",
+        "annonsNamn": "Kranbeskyttelse_NO_PD_4_1",
+        "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
+        "prefix": "Kranbeskyttelse",
+        "status": "ACTIVE",
+        "annonsId": "120252067181690233",
+        "creativeId": "1084430923975638",
+        "adsetId": "120251996272710233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "219.00",
+        "jamforpris": "285.00",
+        "titel": "Kranbeskyttelse Frost 420D – Beskytter Utekranen i Vinter",
+        "handle": "kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c81a4852bdfebc1e53185",
+        "namn": "Kranskydd_PD_8_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Kranskydd Frost 420D creative hub",
+        "url": "https://app.notion.com/3cf270ab908c81a4852bdfebc1e53185",
+        "kalla": "rader-fil"
+      },
+      "namn": "Kranskydd_PD_8_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250063799490291",
+        "status": "CAMPAIGN_PAUSED",
+        "kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
+        "kampanjId": "120249975043720291",
+        "adset": "Kranskydd PD",
+        "copy": {
+          "message": "En spräckt kran kostar mer än 309 kr att laga.\n10 sekunder att sätta på – inga verktyg behövs.\n420D Oxford-tyg håller kylan borta hela vintern.",
+          "headline": "10 sekunder mot en spräckt kran",
+          "description": "",
+          "link": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "449c672cc1d7ed632f6e2ca817c7c604",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/789695186_2051525615561031_3995304672253003276_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=qKALVfln-XMQ7kNvwGImGa0&_nc_oc=Adp9sGTWXfIe4RsQsyiaZ3pn6B_2PXuGOq-vwW5RPzhwyDmWqisVFykqbqQW6Usd9_Q&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=ZNZ6OuiWKtK54KhuVaxAuA&_nc_tpa=Q5bMBQLxXSILENt2xzdMmV4Try_dmXqKYAlS-B8W5YMxQaRfsrvrS45BZdRZQaJzaOiWCsno1IDw0P_tgA&oh=00_AQKRuaHJaw4pKNqee-PwEHmNWQGsA4rXCDgMFFb4Ew6kUQ&oe=6A9EF283",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Kranskydd",
+      "K": "PD",
+      "nr": "8",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Kranskydd",
+        "se_kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
+        "no_prefix": "Kranbeskyttelse",
+        "adset_prefix": "Kranbeskyttelse NO",
+        "campaign_id": "120251996272390233",
+        "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996272390233",
+        "kampanjNamn": "Kranbeskyttelse Frost NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Kranbeskyttelse NO - PD",
+        "annonsNamn": "Kranbeskyttelse_NO_PD_8_1",
+        "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
+        "prefix": "Kranbeskyttelse",
+        "status": "ACTIVE",
+        "annonsId": "120252067186260233",
+        "creativeId": "2557331328047247",
+        "adsetId": "120251996272710233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "219.00",
+        "jamforpris": "285.00",
+        "titel": "Kranbeskyttelse Frost 420D – Beskytter Utekranen i Vinter",
+        "handle": "kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c81bbb6e7d20173458e36",
+        "namn": "Kranskydd_PD_6_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Kranskydd Frost 420D creative hub",
+        "url": "https://app.notion.com/3cf270ab908c81bbb6e7d20173458e36",
+        "kalla": "rader-fil"
+      },
+      "namn": "Kranskydd_PD_6_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250063812800291",
+        "status": "CAMPAIGN_PAUSED",
+        "kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
+        "kampanjId": "120249975043720291",
+        "adset": "Kranskydd PD",
+        "copy": {
+          "message": "309 kr. Inget mer, inget mindre.\nFri frakt och 30 dagars öppet köp om du ändrar dig.\n420D Oxford-tyg, 22×14 cm.",
+          "headline": "309 kr – fri frakt, öppet köp",
+          "description": "",
+          "link": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "38403f7275c5ae45e2b49f6136cd5cf0",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/793850222_2051526285560964_8734116129348127104_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=G8FaNLMlEQ8Q7kNvwGtmync&_nc_oc=Ado4egqk8Cgf6cXZBFjVDG_MSENc7xSC0PkCio-QkEwtqlqmulNmwmMK5jmYrw6Seyk&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=ZNZ6OuiWKtK54KhuVaxAuA&_nc_tpa=Q5bMBQJkSUEwhViWabLfn_f8Et_AsMX4UQKcsu6bu8bi10-ga-8eIKB8igVGlDlf3S_XZm4loBoNMVWD6Q&oh=00_AQKnOnfVXSHERxweqWqdYFCOUza9IZh4OlzHXLkkWC6RwA&oe=6A9F1C57",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Kranskydd",
+      "K": "PD",
+      "nr": "6",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Kranskydd",
+        "se_kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
+        "no_prefix": "Kranbeskyttelse",
+        "adset_prefix": "Kranbeskyttelse NO",
+        "campaign_id": "120251996272390233",
+        "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996272390233",
+        "kampanjNamn": "Kranbeskyttelse Frost NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Kranbeskyttelse NO - PD",
+        "annonsNamn": "Kranbeskyttelse_NO_PD_6_1",
+        "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
+        "prefix": "Kranbeskyttelse",
+        "status": "ACTIVE",
+        "annonsId": "120252067194260233",
+        "creativeId": "2574497119640075",
+        "adsetId": "120251996272710233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "219.00",
+        "jamforpris": "285.00",
+        "titel": "Kranbeskyttelse Frost 420D – Beskytter Utekranen i Vinter",
+        "handle": "kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c81d181f8f0bb459446a3",
+        "namn": "Kranskydd_REV_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Kranskydd Frost 420D creative hub",
+        "url": "https://app.notion.com/3cf270ab908c81d181f8f0bb459446a3",
+        "kalla": "rader-fil"
+      },
+      "namn": "Kranskydd_REV_1_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250063898210291",
+        "status": "DISAPPROVED",
+        "kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
+        "kampanjId": "120249975043720291",
+        "adset": "REV | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "\"Bra kvalitet\" – riktig kundrecension.\nSitter på kranen utan att glida eller lossna.\n309 kr, klart på 10 sekunder.",
+          "headline": "Sitter bra – riktig kund säger det",
+          "description": "",
+          "link": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "8c1010d821dee7360a7281ba63ea611a",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/793580974_2051532052227054_1599858653554215099_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=su6tct9NpoUQ7kNvwEurn3V&_nc_oc=AdqPD7wQgPq1ft_UWcPAwAsyKU7fLBUmSyfD3RVs0aB1a2t90L74eyDy34yxdxr9jhs&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=ZNZ6OuiWKtK54KhuVaxAuA&_nc_tpa=Q5bMBQImbO7AxzTZrdSfYoHpSR4OMgU7Sxcezo5U3LR40dCimu6p3g4AVzOA7roVZVp4_SOez6ZCc1hvTg&oh=00_AQKREP1NmP-HMDEjS8N0Vssd7pOJbjCCUhPif3Ylst21pQ&oe=6A9EF095",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Kranskydd",
+      "K": "REV",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Kranskydd",
+        "se_kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
+        "no_prefix": "Kranbeskyttelse",
+        "adset_prefix": "Kranbeskyttelse NO",
+        "campaign_id": "120251996272390233",
+        "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996272390233",
+        "kampanjNamn": "Kranbeskyttelse Frost NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Kranbeskyttelse NO - REV",
+        "annonsNamn": "Kranbeskyttelse_NO_REV_1_1",
+        "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
+        "prefix": "Kranbeskyttelse",
+        "status": "ACTIVE",
+        "annonsId": "120252067198840233",
+        "creativeId": "4510936545845741",
+        "adsetId": "120252067076170233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "219.00",
+        "jamforpris": "285.00",
+        "titel": "Kranbeskyttelse Frost 420D – Beskytter Utekranen i Vinter",
+        "handle": "kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c81e59319f140515be104",
+        "namn": "Kranskydd_SP_4_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Kranskydd Frost 420D creative hub",
+        "url": "https://app.notion.com/3cf270ab908c81e59319f140515be104",
+        "kalla": "rader-fil"
+      },
+      "namn": "Kranskydd_SP_4_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250063978340291",
+        "status": "CAMPAIGN_PAUSED",
+        "kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
+        "kampanjId": "120249975043720291",
+        "adset": "Kranskydd SP",
+        "copy": {
+          "message": "Frosten är på väg – skydda kranen innan den kommer.\n\"Skyddar kranen bra mot kyla. Mycket nöjd.\" – riktig kund.\n420D-tyg, rätt mått, dragsko på 10 sekunder.\n309 kr, 30 dagars öppet köp.",
+          "headline": "Skydda kranen innan frosten kommer",
+          "description": "",
+          "link": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "949cd3670f725ead933a659d353b167a",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/793567633_2051538985559694_8021195217653438574_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=ytr5f1INmq8Q7kNvwGRiLOj&_nc_oc=AdoZ-J1Tf0NEj2-ImqyFzm57GO6l0jmTMseau8eDpqLkb3QYHOF4ix40BdDV2cDbupw&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=ZNZ6OuiWKtK54KhuVaxAuA&_nc_tpa=Q5bMBQJzvSilC6dCvf0bHmDd2nQIpfL5LIVYKfO5CH6Zojg8kc7_eybR84VE6YNmeFsxyVJ7SlKIrq501A&oh=00_AQL84wI9Wumy_v3XN4c5RTAoVePYZYfdLwkKjLONYy8W8Q&oe=6A9F0F86",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Kranskydd",
+      "K": "SP",
+      "nr": "4",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Kranskydd",
+        "se_kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
+        "no_prefix": "Kranbeskyttelse",
+        "adset_prefix": "Kranbeskyttelse NO",
+        "campaign_id": "120251996272390233",
+        "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996272390233",
+        "kampanjNamn": "Kranbeskyttelse Frost NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Kranbeskyttelse NO - SP",
+        "annonsNamn": "Kranbeskyttelse_NO_SP_4_1",
+        "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
+        "prefix": "Kranbeskyttelse",
+        "status": "ACTIVE",
+        "annonsId": "120252067290370233",
+        "creativeId": "1603385924773118",
+        "adsetId": "120251996274400233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "219.00",
+        "jamforpris": "285.00",
+        "titel": "Kranbeskyttelse Frost 420D – Beskytter Utekranen i Vinter",
+        "handle": "kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+      }
+    }
+  ]
+}

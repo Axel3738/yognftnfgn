@@ -1,0 +1,58 @@
+[
+ {
+  "form": 0,
+  "text": "Ser du forskjellen?",
+  "rad": 0,
+  "se": "Ser du skillnad?",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Det gjør den.",
+  "rad": 1,
+  "se": "Det gör den.",
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "Vanlig kamera",
+  "rad": 0,
+  "se": "Vanlig kamera",
+  "vanster": false
+ },
+ {
+  "form": 2,
+  "text": "Dette kameraet",
+  "rad": 0,
+  "se": "Denna kamera",
+  "vanster": false
+ },
+ {
+  "form": 3,
+  "text": "355° dekning i stedet for en fast vinkel",
+  "rad": 0,
+  "se": "355° täckning i stället för en fast vinkel",
+  "vanster": true
+ },
+ {
+  "form": 3,
+  "text": "Vet forskjell på menneske og katt",
+  "rad": 1,
+  "se": "Vet skillnad på människa och katt",
+  "vanster": true
+ },
+ {
+  "form": 3,
+  "text": "899 kr, 30 dagers garanti",
+  "rad": 2,
+  "se": "799 kr, 30 dagars garanti",
+  "vanster": true
+ },
+ {
+  "form": 4,
+  "text": "Oppgrader",
+  "rad": 0,
+  "se": "Uppgradera",
+  "vanster": false
+ }
+]

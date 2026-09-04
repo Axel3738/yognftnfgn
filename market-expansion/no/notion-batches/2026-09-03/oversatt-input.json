@@ -1,0 +1,2227 @@
+[
+ {
+  "namn": "MC-Kapell_RE_2_1",
+  "malnamn": "MCtrekk_NO_RE_2_1",
+  "prefix": "MC-Kapell",
+  "vinkel": "RE",
+  "fakta": {
+   "produkt_no": "MC-Trekk 218×118 cm – Regn, Støv & UV",
+   "pris": "269 kr",
+   "jamforpris": "449 kr",
+   "spar": "180 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": false,
+   "anmeldelser": "ingen på beverbutikken.no",
+   "matt": "218 × 118,5 cm (står så på norska sidan)",
+   "material": "regn, støv og UV"
+  },
+  "se_copy": {
+   "message": "\"Skyddar hojen bra när den står ute.\" – Andreas Holm\nVerklig recension, Bäverbutiken (Judge.me).\n349 kr.",
+   "headline": "Andreas recension – MC-kapell",
+   "description": "",
+   "link": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "”Skyddar hojen bra när den står ute.”",
+     "— Andreas Holm",
+     "Verklig recension, Bäverbutiken (Judge.me)"
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "349 kr"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Läs fler recensioner"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+ },
+ {
+  "namn": "MC-Kapell_GA_1_1",
+  "malnamn": "MCtrekk_NO_GA_1_1",
+  "prefix": "MC-Kapell",
+  "vinkel": "GA",
+  "fakta": {
+   "produkt_no": "MC-Trekk 218×118 cm – Regn, Støv & UV",
+   "pris": "269 kr",
+   "jamforpris": "449 kr",
+   "spar": "180 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": false,
+   "anmeldelser": "ingen på beverbutikken.no",
+   "matt": "218 × 118,5 cm (står så på norska sidan)",
+   "material": "regn, støv og UV"
+  },
+  "se_copy": {
+   "message": "30 dagars öppet köp på kapellet.\nPassar det inte din hoj – pengarna tillbaka.\nFri frakt. Betala tryggt med Klarna.",
+   "headline": "30 dagars öppet köp – MC-kapell",
+   "description": "",
+   "link": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "30 dagars öppet köp.",
+     "Gillar du inte kapellet? Pengarna tillbaka."
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "Fri frakt inom Sverige. Trygg betalning med Klarna."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla tryggt"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+ },
+ {
+  "namn": "MC-Kapell_OF_1_1",
+  "malnamn": "MCtrekk_NO_OF_1_1",
+  "prefix": "MC-Kapell",
+  "vinkel": "OF",
+  "fakta": {
+   "produkt_no": "MC-Trekk 218×118 cm – Regn, Støv & UV",
+   "pris": "269 kr",
+   "jamforpris": "449 kr",
+   "spar": "180 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": false,
+   "anmeldelser": "ingen på beverbutikken.no",
+   "matt": "218 × 118,5 cm (står så på norska sidan)",
+   "material": "regn, støv og UV"
+  },
+  "se_copy": {
+   "message": "582 kr blev 349 kr – för samma kapell.\nIngen nedbantad variant, bara lägre pris.\nFri frakt inom Sverige.",
+   "headline": "349 kr (spara 40 %) – MC-kapell",
+   "description": "",
+   "link": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "349 kr istället för 582 kr.",
+     "Spara 40 % — samma kapell, samma garanti."
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "Fri frakt inom Sverige."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+ },
+ {
+  "namn": "MC-Kapell_DE_2_1",
+  "malnamn": "MCtrekk_NO_DE_2_1",
+  "prefix": "MC-Kapell",
+  "vinkel": "DE",
+  "fakta": {
+   "produkt_no": "MC-Trekk 218×118 cm – Regn, Støv & UV",
+   "pris": "269 kr",
+   "jamforpris": "449 kr",
+   "spar": "180 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": false,
+   "anmeldelser": "ingen på beverbutikken.no",
+   "matt": "218 × 118,5 cm (står så på norska sidan)",
+   "material": "regn, støv og UV"
+  },
+  "se_copy": {
+   "message": "Resårkanten låser fast kapellet i blåst.\nVattenavvisande tyg och UV-skydd håller lacken hel.\nVikt ihop får det plats i en sadelväska.",
+   "headline": "3 funktioner, 349 kr – MC-kapell",
+   "description": "",
+   "link": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Ett skal som tar vädret i",
+     "ställat"
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "Resårkant håller kvar",
+     "Vattenavvisande + UV-skydd",
+     "Viker ihop litet",
+     "349 kr"
+    ],
+    "vanster": true
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Se funktionerna"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+ },
+ {
+  "namn": "MC-Kapell_RE_1_1",
+  "malnamn": "MCtrekk_NO_RE_1_1",
+  "prefix": "MC-Kapell",
+  "vinkel": "RE",
+  "fakta": {
+   "produkt_no": "MC-Trekk 218×118 cm – Regn, Støv & UV",
+   "pris": "269 kr",
+   "jamforpris": "449 kr",
+   "spar": "180 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": false,
+   "anmeldelser": "ingen på beverbutikken.no",
+   "matt": "218 × 118,5 cm (står så på norska sidan)",
+   "material": "regn, støv og UV"
+  },
+  "se_copy": {
+   "message": "Johan Nilsson satte på kapellet på sin MC.\n\"Lätt att dra över och skyddar bra mot regn.\"\n349 kr, riktig recension från Bäverbutiken.",
+   "headline": "Johans recension – MC-kapell",
+   "description": "",
+   "link": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "”Lätt att dra över och skyddar bra mot",
+     "regn.”",
+     "— Johan Nilsson",
+     "Verklig recension, Bäverbutiken (Judge.me)"
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "349 kr"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Läs fler recensioner"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+ },
+ {
+  "namn": "MC-Kapell_OB_1_1",
+  "malnamn": "MCtrekk_NO_OB_1_1",
+  "prefix": "MC-Kapell",
+  "vinkel": "OB",
+  "fakta": {
+   "produkt_no": "MC-Trekk 218×118 cm – Regn, Støv & UV",
+   "pris": "269 kr",
+   "jamforpris": "449 kr",
+   "spar": "180 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": false,
+   "anmeldelser": "ingen på beverbutikken.no",
+   "matt": "218 × 118,5 cm (står så på norska sidan)",
+   "material": "regn, støv og UV"
+  },
+  "se_copy": {
+   "message": "218×118,5 cm – täcker de flesta motorcyklar.\nPassar inte just din? Pengarna tillbaka inom 30 dagar.\nIngen risk att testa för 349 kr.",
+   "headline": "Passar den inte? Pengarna tillbaka",
+   "description": "",
+   "link": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "218×118,5 cm täcker de",
+     "flesta MC, mopeder och",
+     "scooters.",
+     "Passar den inte: pengarna tillbaka inom 30 dagar."
+    ],
+    "block": [
+     [
+      0,
+      1,
+      2
+     ]
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "349 kr."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Testa riskfritt"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+ },
+ {
+  "namn": "MC-Kapell_PD_6_1",
+  "malnamn": "MCtrekk_NO_PD_6_1",
+  "prefix": "MC-Kapell",
+  "vinkel": "PD",
+  "fakta": {
+   "produkt_no": "MC-Trekk 218×118 cm – Regn, Støv & UV",
+   "pris": "269 kr",
+   "jamforpris": "449 kr",
+   "spar": "180 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": false,
+   "anmeldelser": "ingen på beverbutikken.no",
+   "matt": "218 × 118,5 cm (står så på norska sidan)",
+   "material": "regn, støv og UV"
+  },
+  "se_copy": {
+   "message": "218 × 118,5 cm – måttet som täcker hela hojen.\nPassar de flesta motorcyklar, mopeder och scooters.\n349 kr för rätt storlek på skyddet.",
+   "headline": "218×118,5 cm – MC-kapell, 349 kr",
+   "description": "",
+   "link": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "218 × 118,5 cm",
+     "Passar de flesta motorcyklar, mopeder och scooters."
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "349 kr"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Kolla måtten"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+ },
+ {
+  "namn": "MC-Kapell_LI_1_1",
+  "malnamn": "MCtrekk_NO_LI_1_1",
+  "prefix": "MC-Kapell",
+  "vinkel": "LI",
+  "fakta": {
+   "produkt_no": "MC-Trekk 218×118 cm – Regn, Støv & UV",
+   "pris": "269 kr",
+   "jamforpris": "449 kr",
+   "spar": "180 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": false,
+   "anmeldelser": "ingen på beverbutikken.no",
+   "matt": "218 × 118,5 cm (står så på norska sidan)",
+   "material": "regn, støv og UV"
+  },
+  "se_copy": {
+   "message": "På på en minut, av på en minut.\nSitter kvar även när det blåser rejält.\n349 kr i stället för 582 kr.",
+   "headline": "5 saker kapellet gör – 349 kr",
+   "description": "",
+   "link": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "5 saker kapellet gör",
+     "Lacken slipper regn och sol",
+     "På och av på en minut",
+     "Sitter kvar i blåst",
+     "Täcker hela hojen, 218 × 118,5 cm",
+     "Viker ihop till en liten packe"
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "349 kr (ord. 582 kr)"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+ },
+ {
+  "namn": "MC-Kapell_SP_4_1",
+  "malnamn": "MCtrekk_NO_SP_4_1",
+  "prefix": "MC-Kapell",
+  "vinkel": "SP",
+  "fakta": {
+   "produkt_no": "MC-Trekk 218×118 cm – Regn, Støv & UV",
+   "pris": "269 kr",
+   "jamforpris": "449 kr",
+   "spar": "180 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": false,
+   "anmeldelser": "ingen på beverbutikken.no",
+   "matt": "218 × 118,5 cm (står så på norska sidan)",
+   "material": "regn, støv og UV"
+  },
+  "se_copy": {
+   "message": "Linda Berg valde kapellet till sin MC.\n\"Lätt material och går snabbt att sätta på.\"\n349 kr, fri frakt inom Sverige.",
+   "headline": "Lindas recension – MC-kapell",
+   "description": "",
+   "link": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "”Lätt material och går snabbt att sätta på.”",
+     "— Linda Berg",
+     "Verklig recension, Bäverbutiken"
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "349 kr. Fri frakt inom Sverige."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+ },
+ {
+  "namn": "MC-Kapell_CO_2_1",
+  "malnamn": "MCtrekk_NO_CO_2_1",
+  "prefix": "MC-Kapell",
+  "vinkel": "CO",
+  "fakta": {
+   "produkt_no": "MC-Trekk 218×118 cm – Regn, Støv & UV",
+   "pris": "269 kr",
+   "jamforpris": "449 kr",
+   "spar": "180 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": false,
+   "anmeldelser": "ingen på beverbutikken.no",
+   "matt": "218 × 118,5 cm (står så på norska sidan)",
+   "material": "regn, støv og UV"
+  },
+  "se_copy": {
+   "message": "Samma MC. En står under kapell, en gör det inte.\nRegn och sol jobbar på lacken varje natt utomhus.\n349 kr skyddar din innan nästa skur.",
+   "headline": "Samma hoj, olika skydd – 349 kr",
+   "description": "",
+   "link": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Samma modell.",
+     "Olika sommar.",
+     "Regn och sol jobbar på lacken varje natt du står ute."
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "349 kr — skydda din innan nästa regn"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Se kapellet"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+ },
+ {
+  "namn": "MC-Kapell_RI_2_1",
+  "malnamn": "MCtrekk_NO_RI_2_1",
+  "prefix": "MC-Kapell",
+  "vinkel": "RI",
+  "fakta": {
+   "produkt_no": "MC-Trekk 218×118 cm – Regn, Støv & UV",
+   "pris": "269 kr",
+   "jamforpris": "449 kr",
+   "spar": "180 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": false,
+   "anmeldelser": "ingen på beverbutikken.no",
+   "matt": "218 × 118,5 cm (står så på norska sidan)",
+   "material": "regn, støv og UV"
+  },
+  "se_copy": {
+   "message": "En säsong utan skydd ger matt lack och rost på kromet.\nKapellet tar smällen, inte din motorcykel.\n349 kr stoppar skadan innan den börjar.",
+   "headline": "Stoppa skadan innan den börjar",
+   "description": "",
+   "link": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Efter en säsong utan",
+     "skydd: matt lack, rost på",
+     "kromet.",
+     "Kapellet tar smällen i stället för lacken."
+    ],
+    "block": [
+     [
+      0,
+      1,
+      2
+     ]
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "349 kr — stoppa skadan innan den börjar"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda din MC"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+ },
+ {
+  "namn": "Overvakningskamera_RI_2_1",
+  "malnamn": "Overvåkingskamera_NO_RI_2_1",
+  "prefix": "Overvakningskamera",
+  "vinkel": "RI",
+  "fakta": {
+   "produkt_no": "Overvåkingskamera trådløst dobbeltlinse PTZ med AI-sporing",
+   "pris": "899 kr",
+   "jamforpris": "1 169 kr",
+   "spar": "270 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": true,
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": null
+  },
+  "se_copy": {
+   "message": "Notisen kommer innan du hinner undra.\nDubbellins och AI-spårning ser det ögat missar.\n799 kr (ord. 1000 kr). 30 dagars garanti.",
+   "headline": "Vet direkt vad som händer",
+   "description": "",
+   "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "799 kr för att veta.",
+     "Obetalbart att inte veta.",
+     "Direkt notis om något händer hemma"
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "355° täckning, AI-spårning",
+     "Fri frakt över 300 kr",
+     "30 dagars nöjd-kund-garanti"
+    ],
+    "vanster": true,
+    "bock": true
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+ },
+ {
+  "namn": "Overvakningskamera_SP_7_1",
+  "malnamn": "Overvåkingskamera_NO_SP_7_1",
+  "prefix": "Overvakningskamera",
+  "vinkel": "SP",
+  "fakta": {
+   "produkt_no": "Overvåkingskamera trådløst dobbeltlinse PTZ med AI-sporing",
+   "pris": "899 kr",
+   "jamforpris": "1 169 kr",
+   "spar": "270 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": true,
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": null
+  },
+  "se_copy": {
+   "message": "Ljudet på natten känns igen på skärmen, inte i mörkret.\nAI-spårningen skiljer människa från katt — färre falsklarm.\n799 kr. 30 dagars garanti.",
+   "headline": "Slipp gå ut i mörkret",
+   "description": "",
+   "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Jag slapp gå ut i mörkret för att kolla.",
+     "— Verifierad kund"
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "Direkt notis i mobilen",
+     "AI-spårning, färre falsklarm",
+     "30 dagars nöjd-kund-garanti"
+    ],
+    "vanster": true,
+    "bock": true
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+ },
+ {
+  "namn": "Overvakningskamera_PD_4_1",
+  "malnamn": "Overvåkingskamera_NO_PD_4_1",
+  "prefix": "Overvakningskamera",
+  "vinkel": "PD",
+  "fakta": {
+   "produkt_no": "Overvåkingskamera trådløst dobbeltlinse PTZ med AI-sporing",
+   "pris": "899 kr",
+   "jamforpris": "1 169 kr",
+   "spar": "270 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": true,
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": null
+  },
+  "se_copy": {
+   "message": "En lins för dagsljus, en för mörker — samma skärpa båda gångerna.\n355° täckning betyder att den vrider sig dit rörelsen är.\n799 kr. 30 dagars garanti.",
+   "headline": "Dag eller natt. Lika skarpt.",
+   "description": "",
+   "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Dag eller natt — den",
+     "missar aldrig något",
+     "AI-spårning, 355° täckning"
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "Två linser — inga döda vinklar",
+     "Vet skillnad på människa och katt",
+     "30 dagars nöjd-kund-garanti"
+    ],
+    "vanster": true,
+    "bock": true
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+ },
+ {
+  "namn": "Overvakningskamera_CO_2_1",
+  "malnamn": "Overvåkingskamera_NO_CO_2_1",
+  "prefix": "Overvakningskamera",
+  "vinkel": "CO",
+  "fakta": {
+   "produkt_no": "Overvåkingskamera trådløst dobbeltlinse PTZ med AI-sporing",
+   "pris": "899 kr",
+   "jamforpris": "1 169 kr",
+   "spar": "270 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": true,
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": null
+  },
+  "se_copy": {
+   "message": "En fast kamera filmar samma hörn i evighet.\nDen här vrider sig 355° och följer rörelsen dit den går.\n799 kr (ord. 1000 kr). 30 dagars garanti.",
+   "headline": "Fast vinkel vs 355°. Uppgradera.",
+   "description": "",
+   "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Ser du skillnad?",
+     "Det gör den."
+    ]
+   },
+   {
+    "typ": "etikett",
+    "rader": [
+     "Vanlig kamera"
+    ]
+   },
+   {
+    "typ": "etikett",
+    "rader": [
+     "Denna kamera"
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "355° täckning i stället för en fast vinkel",
+     "Vet skillnad på människa och katt",
+     "799 kr, 30 dagars garanti"
+    ],
+    "vanster": true,
+    "bock": true
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Uppgradera"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+ },
+ {
+  "namn": "Overvakningskamera_LI_1_1",
+  "malnamn": "Overvåkingskamera_NO_LI_1_1",
+  "prefix": "Overvakningskamera",
+  "vinkel": "LI",
+  "fakta": {
+   "produkt_no": "Overvåkingskamera trådløst dobbeltlinse PTZ med AI-sporing",
+   "pris": "899 kr",
+   "jamforpris": "1 169 kr",
+   "spar": "270 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": true,
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": null
+  },
+  "se_copy": {
+   "message": "De flesta kameror klarar en eller två av punkterna i bilden.\nDen här har dubbellins, AI-spårning, notis, väderskydd och garanti — samtidigt.\n799 kr (ord. 1000 kr).",
+   "headline": "5 av 5. Inga kompromisser.",
+   "description": "",
+   "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "5 saker att kolla innan du",
+     "köper en",
+     "övervakningskamera",
+     "1. En lins eller två? Två täcker 355°.",
+     "2. Kan den skilja på människa och katt?",
+     "3. Får du notis direkt, eller för sent?",
+     "4. Klarar den svenskt väder utomhus?",
+     "5. Finns det en riktig garanti?"
+    ],
+    "block": [
+     [
+      0,
+      1,
+      2
+     ]
+    ],
+    "vanster_fran": 3
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "Den här klarar alla fem. 799 kr, 30 dagars garanti."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+ },
+ {
+  "namn": "Overvakningskamera_CS_4_1",
+  "malnamn": "Overvåkingskamera_NO_CS_4_1",
+  "prefix": "Overvakningskamera",
+  "vinkel": "CS",
+  "fakta": {
+   "produkt_no": "Overvåkingskamera trådløst dobbeltlinse PTZ med AI-sporing",
+   "pris": "899 kr",
+   "jamforpris": "1 169 kr",
+   "spar": "270 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": true,
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": null
+  },
+  "se_copy": {
+   "message": "1000 kr blir 799 kr — ingen kod, inget krångel.\nFri frakt över 300 kr, och Klarna om du vill dela upp.\n30 dagars garanti om den inte känns rätt.",
+   "headline": "799 kr i dag, ord. 1000 kr",
+   "description": "",
+   "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Spara 201 kr i dag",
+     "1 000 kr",
+     "799 kr"
+    ],
+    "stryk": [
+     1
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "Fri frakt över 300 kr",
+     "Klarna – betala senare",
+     "30 dagars nöjd-kund-garanti"
+    ],
+    "vanster": true,
+    "bock": true
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+ },
+ {
+  "namn": "Beltgrinder_PD_5_1",
+  "malnamn": "Beltesliper_NO_PD_5_1",
+  "prefix": "Beltgrinder",
+  "vinkel": "PD",
+  "fakta": {
+   "produkt_no": "Beltesliper Mini 3-i-1 – knivsliper & polerer",
+   "pris": "1 029 kr",
+   "jamforpris": "1 715 kr",
+   "spar": "686 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": null
+  },
+  "se_copy": {
+   "message": "En slö kniv river tomaten. En vass kniv delar den.\nBälteslipmaskin Mini vässar på 10 sekunder — slipsten, slipband och polertrissa i en maskin.\n909 kr (ord. 1 182 kr). Spara 273 kr.\nBeställ din här.",
+   "headline": "Vässad på 10 sekunder",
+   "description": "",
+   "link": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Från slö till",
+     "rakbladsvass.",
+     "10 sekunder."
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "typ": "etikett",
+    "rader": [
+     "FÖRE"
+    ]
+   },
+   {
+    "typ": "etikett",
+    "rader": [
+     "EFTER"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+ },
+ {
+  "namn": "Beltgrinder_PD_4_1",
+  "malnamn": "Beltesliper_NO_PD_4_1",
+  "prefix": "Beltgrinder",
+  "vinkel": "PD",
+  "fakta": {
+   "produkt_no": "Beltesliper Mini 3-i-1 – knivsliper & polerer",
+   "pris": "1 029 kr",
+   "jamforpris": "1 715 kr",
+   "spar": "686 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": null
+  },
+  "se_copy": {
+   "message": "Trötta på slöa knivar och verktyg som inte funkar som dom ska? 🔪\nBälteslipmaskin Mini 3-i-1: slipsten vässar, slipband formar, polertrissa polerar.\nSlipband, slipskivor, polervax, laddare och insexnycklar följer med.\n1 182 kr → 909 kr. Spara 273 kr, alltid samma pris.\nBeställ din här.",
+   "headline": "Slöa mejslar? Vässade på 10 sek",
+   "description": "",
+   "link": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Slöa mejslar?",
+     "Vässade på 10 sekunder."
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "Slipstenen vässar, slipbandet formar trä och metall, polertrissan",
+     "polerar — 3 stationer i en maskin."
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+ },
+ {
+  "namn": "Beltgrinder_SO_4_1",
+  "malnamn": "Beltesliper_NO_SO_4_1",
+  "prefix": "Beltgrinder",
+  "vinkel": "SO",
+  "fakta": {
+   "produkt_no": "Beltesliper Mini 3-i-1 – knivsliper & polerer",
+   "pris": "1 029 kr",
+   "jamforpris": "1 715 kr",
+   "spar": "686 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": null
+  },
+  "se_copy": {
+   "message": "Trötta på slöa knivar och verktyg som inte funkar som dom ska? 🔪\nBälteslipmaskin Mini 3-i-1: slipsten vässar, slipband formar, polertrissa polerar.\nSlipband, slipskivor, polervax, laddare och insexnycklar följer med.\n1 182 kr → 909 kr. Spara 273 kr, alltid samma pris.\nBeställ din här.",
+   "headline": "909 kr — allt tillbehör ingår",
+   "description": "",
+   "link": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "1 182 kr → 909 kr.",
+     "Spara 273 kr."
+    ],
+    "stryk_del": {
+     "0": "1 182 kr"
+    }
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "Slipband, slipskivor, polervax och insexnycklar följer med."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ till 909 kr."
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+ },
+ {
+  "namn": "Beltgrinder_PD_8_1",
+  "malnamn": "Beltesliper_NO_PD_8_1",
+  "prefix": "Beltgrinder",
+  "vinkel": "PD",
+  "fakta": {
+   "produkt_no": "Beltesliper Mini 3-i-1 – knivsliper & polerer",
+   "pris": "1 029 kr",
+   "jamforpris": "1 715 kr",
+   "spar": "686 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": null
+  },
+  "se_copy": {
+   "message": "Kniv, sax och yxa — tre verktyg som blir slöa var för sig.\nBälteslipmaskin Mini vässar alla tre i samma maskin.\n909 kr, ord. 1 182 kr. Spara 273 kr, ingen krångel.\nBeställ din här.",
+   "headline": "909 kr — spara 273 kr (23%)",
+   "description": "",
+   "link": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "909 kr.",
+     "Spara 273 kr (23 %) mot",
+     "ordinarie pris.",
+     "Bälteslipmaskin Mini 3-i-1 — kniv, sax, yxa, en",
+     "maskin."
+    ],
+    "block": [
+     [
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ]
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "909 kr",
+     "Ord. 1 182 kr",
+     "Spara 273 kr (23 %)"
+    ],
+    "vanster": true
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ till 909 kr"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+ },
+ {
+  "namn": "Beltgrinder_SO_5_1",
+  "malnamn": "Beltesliper_NO_SO_5_1",
+  "prefix": "Beltgrinder",
+  "vinkel": "SO",
+  "fakta": {
+   "produkt_no": "Beltesliper Mini 3-i-1 – knivsliper & polerer",
+   "pris": "1 029 kr",
+   "jamforpris": "1 715 kr",
+   "spar": "686 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": null
+  },
+  "se_copy": {
+   "message": "Tre verktyg. Tre olika slipmetoder. En maskin.\nSlipsten vässar, slipband formar, polertrissa polerar — allt i Bälteslipmaskin Mini.\n909 kr istället för 1 182 kr. Spara 273 kr.\nBeställ din här.",
+   "headline": "3 verktyg, 1 maskin, 1 pris",
+   "description": "",
+   "link": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "3 verktyg i ett.",
+     "Priset av ett.",
+     "Kniv, sax och yxa — samma verktyg, samma köp."
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "909 kr (ord. 1 182 kr) — spara 273 kr, 23 %"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ Bälteslipmaskinen"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+ },
+ {
+  "namn": "Beltgrinder_SP_5_1",
+  "malnamn": "Beltesliper_NO_SP_5_1",
+  "prefix": "Beltgrinder",
+  "vinkel": "SP",
+  "fakta": {
+   "produkt_no": "Beltesliper Mini 3-i-1 – knivsliper & polerer",
+   "pris": "1 029 kr",
+   "jamforpris": "1 715 kr",
+   "spar": "686 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": null
+  },
+  "se_copy": {
+   "message": "Låter det för bra för att vara sant? Se bandet snurra själv.\n10 sekunder från slö till vass — inget mer.\nSamma slipband till kniv, sax och yxa. 909 kr, spara 273 kr.\nBeställ din här.",
+   "headline": "Se slipbandet i rörelse",
+   "description": "",
+   "link": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Slipbandet i rörelse.",
+     "10 sekunder till vass",
+     "kniv.",
+     "Samma slipband, tre verktyg: kniv, sax, yxa."
+    ],
+    "block": [
+     [
+      1,
+      2
+     ]
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "909 kr (ord. 1 182 kr) — spara 273 kr"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Se den i action — beställ nu"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+ },
+ {
+  "namn": "Beltgrinder_REV_2_1",
+  "malnamn": "Beltesliper_NO_REV_2_1",
+  "prefix": "Beltgrinder",
+  "vinkel": "REV",
+  "fakta": {
+   "produkt_no": "Beltesliper Mini 3-i-1 – knivsliper & polerer",
+   "pris": "1 029 kr",
+   "jamforpris": "1 715 kr",
+   "spar": "686 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": null
+  },
+  "se_copy": {
+   "message": "\"Bra för att slipa och polera hemma.\" — verifierad recension, Fungerar fint.\nBälteslipmaskin Mini: slipsten, slipband och polertrissa i en maskin.\n909 kr (ord. 1 182 kr). Spara 273 kr.\nBeställ din här.",
+   "headline": "Fungerar fint – verifierad recension",
+   "description": "",
+   "link": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Verifierad recension",
+     "Fungerar fint",
+     "”Bra för att slipa och polera hemma.”"
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "— verifierad recension",
+     "909 kr (ord. 1 182 kr)"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ din egen — 909 kr"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+ },
+ {
+  "namn": "Beltgrinder_PD_10_1",
+  "malnamn": "Beltesliper_NO_PD_10_1",
+  "prefix": "Beltgrinder",
+  "vinkel": "PD",
+  "fakta": {
+   "produkt_no": "Beltesliper Mini 3-i-1 – knivsliper & polerer",
+   "pris": "1 029 kr",
+   "jamforpris": "1 715 kr",
+   "spar": "686 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": null
+  },
+  "se_copy": {
+   "message": "En ny kniv kostar dig igen om ett år.\nEn vässad kniv kostar dig en gång — sen är den vass i åratal.\nBälteslipmaskin Mini: 909 kr, ord. 1 182 kr. Spara 273 kr.\nBeställ din här.",
+   "headline": "Slipning kostar en gång",
+   "description": "",
+   "link": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Nya knivar kostar varje",
+     "gång.",
+     "Slipning kostar en gång.",
+     "En slipmaskin vässar samma knivar i åratal."
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "909 kr en gång vs. nya knivar varje gång"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Sluta köpa nytt — slipa istället"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+ },
+ {
+  "namn": "Batmotor_PD_5_1",
+  "malnamn": "Batmotortrekk_NO_PD_5_1",
+  "prefix": "Batmotor",
+  "vinkel": "PD",
+  "fakta": {
+   "produkt_no": "Båtmotortrekk 420D heldekkende for påhengsmotor",
+   "pris": "529 kr",
+   "jamforpris": "882 kr",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "anmeldelser": "1 anmeldelse på beverbutikken.no (INTE 8, inget snittbetyg att visa)",
+   "matt": "9 størrelser, 0–5 hk til 250–350 hk (verifierat i norska butiken)",
+   "material": "420D"
+  },
+  "se_copy": {
+   "message": "De flesta kåpor stannar vid toppen av motorn.\nDen här går ner över riggen också.\n420D Oxford-tyg, 9 storlekar för allt från 0–5 hk till 250–350 hk.\n579 kr.",
+   "headline": "Kåpa till rigg. Inte bara toppen.",
+   "description": "",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Kåpa till rigg.",
+     "Inte bara toppen.",
+     "420D Oxford-tyg mot regn, snö och UV."
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "9 storlekar, 0–5 hk till 250–350 hk."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "579 kr. Handla nu."
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+ },
+ {
+  "namn": "Batmotor_CO_1_1",
+  "malnamn": "Batmotortrekk_NO_CO_1_1",
+  "prefix": "Batmotor",
+  "vinkel": "CO",
+  "fakta": {
+   "produkt_no": "Båtmotortrekk 420D heldekkende for påhengsmotor",
+   "pris": "529 kr",
+   "jamforpris": "882 kr",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "anmeldelser": "1 anmeldelse på beverbutikken.no (INTE 8, inget snittbetyg att visa)",
+   "matt": "9 størrelser, 0–5 hk til 250–350 hk (verifierat i norska butiken)",
+   "material": "420D"
+  },
+  "se_copy": {
+   "message": "Utan skydd: regn, snö och UV rakt på motorn.\nMed skydd: 420D Oxford-tyg och kåpa ner till riggen.\n579 kr, med 30 dagars öppet köp om du ändrar dig.",
+   "headline": "Utan skydd. Med skydd.",
+   "description": "",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Utan skydd.",
+     "Med skydd.",
+     "420D Oxford-tyg, kåpa till rigg."
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "579 kr. 30 dagars öppet köp."
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+ },
+ {
+  "namn": "Batmotor_BF_1_1",
+  "malnamn": "Batmotortrekk_NO_BF_1_1",
+  "prefix": "Batmotor",
+  "vinkel": "BF",
+  "fakta": {
+   "produkt_no": "Båtmotortrekk 420D heldekkende for påhengsmotor",
+   "pris": "529 kr",
+   "jamforpris": "882 kr",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "anmeldelser": "1 anmeldelse på beverbutikken.no (INTE 8, inget snittbetyg att visa)",
+   "matt": "9 størrelser, 0–5 hk til 250–350 hk (verifierat i norska butiken)",
+   "material": "420D"
+  },
+  "se_copy": {
+   "message": "965 kr ner till 579 kr.\n40% rabatt, avdraget direkt i kassan.\nIngen kod att skriva in, inget att komma ihåg.",
+   "headline": "579 kr. Ord. 965 kr.",
+   "description": "",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "579 kr.",
+     "Ord.",
+     "965 kr.",
+     "40% rabatt, avdraget direkt i kassan. Ingen kod."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu."
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+ },
+ {
+  "namn": "Batmotor_BF_2_1",
+  "malnamn": "Batmotortrekk_NO_BF_2_1",
+  "prefix": "Batmotor",
+  "vinkel": "BF",
+  "fakta": {
+   "produkt_no": "Båtmotortrekk 420D heldekkende for påhengsmotor",
+   "pris": "529 kr",
+   "jamforpris": "882 kr",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "anmeldelser": "1 anmeldelse på beverbutikken.no (INTE 8, inget snittbetyg att visa)",
+   "matt": "9 størrelser, 0–5 hk til 250–350 hk (verifierat i norska butiken)",
+   "material": "420D"
+  },
+  "se_copy": {
+   "message": "Täcker skyddet inte riggen som du väntat dig?\nSkicka tillbaka det inom 30 dagar, pengarna tillbaka.\nBetala tryggt med Klarna.",
+   "headline": "30 dagars öppet köp.",
+   "description": "",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "30 dagars öppet köp.",
+     "Gillar du den inte, får du pengarna tillbaka. Trygg",
+     "betalning med Klarna."
+    ],
+    "block": [
+     [
+      1,
+      2
+     ]
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla tryggt. 579 kr."
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+ },
+ {
+  "namn": "Batmotor_RI_1_1",
+  "malnamn": "Batmotortrekk_NO_RI_1_1",
+  "prefix": "Batmotor",
+  "vinkel": "RI",
+  "fakta": {
+   "produkt_no": "Båtmotortrekk 420D heldekkende for påhengsmotor",
+   "pris": "529 kr",
+   "jamforpris": "882 kr",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "anmeldelser": "1 anmeldelse på beverbutikken.no (INTE 8, inget snittbetyg att visa)",
+   "matt": "9 størrelser, 0–5 hk til 250–350 hk (verifierat i norska butiken)",
+   "material": "420D"
+  },
+  "se_copy": {
+   "message": "Rost syns inte förrän det är för sent.\nSkyddet täcker hela motorn, kåpa till rigg – inte bara toppen.\n579 kr skyddar mot sex månader i regn, snö och salt.",
+   "headline": "Rost syns inte förrän det är för sent.",
+   "description": "",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Rost syns inte förrän det",
+     "är för sent.",
+     "Skyddet täcker hela motorn – kåpa till rigg – inte bara",
+     "toppen."
+    ],
+    "block": [
+     [
+      0,
+      1
+     ],
+     [
+      2,
+      3
+     ]
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "579 kr skyddar mot sex månader i regn, snö och salt."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu."
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+ },
+ {
+  "namn": "Batmotor_TR_1_1",
+  "malnamn": "Batmotortrekk_NO_TR_1_1",
+  "prefix": "Batmotor",
+  "vinkel": "TR",
+  "fakta": {
+   "produkt_no": "Båtmotortrekk 420D heldekkende for påhengsmotor",
+   "pris": "529 kr",
+   "jamforpris": "882 kr",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "anmeldelser": "1 anmeldelse på beverbutikken.no (INTE 8, inget snittbetyg att visa)",
+   "matt": "9 størrelser, 0–5 hk til 250–350 hk (verifierat i norska butiken)",
+   "material": "420D"
+  },
+  "se_copy": {
+   "message": "5,0 av 5 stjärnor. 8 av 8 recensioner.\n\"Skyddet känns hållbart och är lätt att sätta på.\" – Fredrik L.\n579 kr.",
+   "headline": "5,0 av 5 stjärnor (8 recensioner)",
+   "description": "",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "5,0 av 5 stjärnor.",
+     "8 av 8 recensioner.",
+     "”Skyddet känns hållbart och är lätt att sätta",
+     "på.”",
+     "– Fredrik L."
+    ],
+    "block": [
+     [
+      2,
+      3
+     ]
+    ],
+    "varning": "SE-butikens betyg/antal — måste verifieras mot norska produktsidan, annars hoppa"
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "579 kr. Handla nu."
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+ },
+ {
+  "namn": "Batmotor_CS_4_1",
+  "malnamn": "Batmotortrekk_NO_CS_4_1",
+  "prefix": "Batmotor",
+  "vinkel": "CS",
+  "fakta": {
+   "produkt_no": "Båtmotortrekk 420D heldekkende for påhengsmotor",
+   "pris": "529 kr",
+   "jamforpris": "882 kr",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "anmeldelser": "1 anmeldelse på beverbutikken.no (INTE 8, inget snittbetyg att visa)",
+   "matt": "9 størrelser, 0–5 hk til 250–350 hk (verifierat i norska butiken)",
+   "material": "420D"
+  },
+  "se_copy": {
+   "message": "965 kr → 579 kr.\n40% rabatt är redan avdraget, du behöver ingen kod.\nPriset du ser är priset du betalar.",
+   "headline": "965 kr → 579 kr, redan avdraget",
+   "description": "",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "965 kr → 579 kr.",
+     "40% rabatt, redan",
+     "avdraget.",
+     "Ingen kod behövs. Priset syns i kassan."
+    ],
+    "block": [
+     [
+      1,
+      2
+     ]
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu."
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+ },
+ {
+  "namn": "Batmotor_LI_1_1",
+  "malnamn": "Batmotortrekk_NO_LI_1_1",
+  "prefix": "Batmotor",
+  "vinkel": "LI",
+  "fakta": {
+   "produkt_no": "Båtmotortrekk 420D heldekkende for påhengsmotor",
+   "pris": "529 kr",
+   "jamforpris": "882 kr",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "anmeldelser": "1 anmeldelse på beverbutikken.no (INTE 8, inget snittbetyg att visa)",
+   "matt": "9 størrelser, 0–5 hk til 250–350 hk (verifierat i norska butiken)",
+   "material": "420D"
+  },
+  "se_copy": {
+   "message": "5 saker skyddet gör:\n1. Täcker hela motorn, kåpa till rigg.\n2. 420D Oxford-tyg mot regn, snö och UV.\n3. 9 storlekar, 0–5 hk till 250–350 hk.\n4. Monteras utan verktyg.\n5. 30 dagars öppet köp.\n579 kr.",
+   "headline": "5 saker skyddet gör",
+   "description": "",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "5 saker skyddet gör",
+     "Täcker kåpa till rigg",
+     "420D Oxford-tyg mot regn, snö, UV",
+     "9 storlekar, 0–5 hk till 250–350 hk",
+     "Inga verktyg – dra över, spänn remmen",
+     "30 dagars öppet köp"
+    ],
+    "bock_fran": 1
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "579 kr. Handla nu."
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+ },
+ {
+  "namn": "Batmotor_RV_3_1",
+  "malnamn": "Batmotortrekk_NO_RV_3_1",
+  "prefix": "Batmotor",
+  "vinkel": "RV",
+  "fakta": {
+   "produkt_no": "Båtmotortrekk 420D heldekkende for påhengsmotor",
+   "pris": "529 kr",
+   "jamforpris": "882 kr",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "anmeldelser": "1 anmeldelse på beverbutikken.no (INTE 8, inget snittbetyg att visa)",
+   "matt": "9 størrelser, 0–5 hk til 250–350 hk (verifierat i norska butiken)",
+   "material": "420D"
+  },
+  "se_copy": {
+   "message": "\"Bra skydd mot regn och smuts. Jag är nöjd.\" – Johan K.\nVerklig recension, baverbutiken.se.\n5,0 av 5 (8 recensioner). 579 kr.",
+   "headline": "\"Bra skydd mot regn och smuts.\" – Johan K.",
+   "description": "",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "”Bra skydd mot regn och smuts.",
+     "Jag är nöjd.”",
+     "– Johan K., recension på baverbutiken.se"
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "5,0 (8 recensioner). Handla nu."
+    ],
+    "varning": "SE-betyg — norska butiken har 1 anmeldelse, betyget stryks ur knappen"
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+ },
+ {
+  "namn": "Batmotor_BF_3_1",
+  "malnamn": "Batmotortrekk_NO_BF_3_1",
+  "prefix": "Batmotor",
+  "vinkel": "BF",
+  "fakta": {
+   "produkt_no": "Båtmotortrekk 420D heldekkende for påhengsmotor",
+   "pris": "529 kr",
+   "jamforpris": "882 kr",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "anmeldelser": "1 anmeldelse på beverbutikken.no (INTE 8, inget snittbetyg att visa)",
+   "matt": "9 størrelser, 0–5 hk til 250–350 hk (verifierat i norska butiken)",
+   "material": "420D"
+  },
+  "se_copy": {
+   "message": "Storlekar för allt från 5 hk jolle till 350 hk storbåt.\nMät din motor på 30 sekunder i måttguiden.\nBeställ rätt direkt – inget gissande. 579 kr, skyddet i din storlek.",
+   "headline": "0–350 hk. En skyddar din.",
+   "description": "",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Fel storlek?",
+     "Se måttguiden innan du",
+     "beställer.",
+     "9 storlekar, 0–5 hk till 250–350 hk. Hitta din."
+    ],
+    "block": [
+     [
+      1,
+      2
+     ]
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Se din storlek. Handla nu."
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+ },
+ {
+  "namn": "Batmotor_RV_2_1",
+  "malnamn": "Batmotortrekk_NO_RV_2_1",
+  "prefix": "Batmotor",
+  "vinkel": "RV",
+  "fakta": {
+   "produkt_no": "Båtmotortrekk 420D heldekkende for påhengsmotor",
+   "pris": "529 kr",
+   "jamforpris": "882 kr",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "anmeldelser": "1 anmeldelse på beverbutikken.no (INTE 8, inget snittbetyg att visa)",
+   "matt": "9 størrelser, 0–5 hk til 250–350 hk (verifierat i norska butiken)",
+   "material": "420D"
+  },
+  "se_copy": {
+   "message": "\"Skyddet känns hållbart och är lätt att sätta på.\" – Fredrik L.\nVerklig recension, baverbutiken.se.\n5,0 av 5 (8 recensioner). 579 kr.",
+   "headline": "\"Skyddet känns hållbart.\" – Fredrik L.",
+   "description": "",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "”Skyddet känns hållbart och är lätt att sätta",
+     "på.”",
+     "– Fredrik L., recension på baverbutiken.se"
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "5,0 (8 recensioner). Handla nu."
+    ],
+    "varning": "SE-betyg — stryks ur knappen"
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+ },
+ {
+  "namn": "Kranskydd_PD_3_1",
+  "malnamn": "Kranbeskyttelse_NO_PD_3_1",
+  "prefix": "Kranskydd",
+  "vinkel": "PD",
+  "fakta": {
+   "produkt_no": "Kranbeskyttelse Frost 420D",
+   "pris": "219 kr",
+   "jamforpris": "285 kr",
+   "spar": "66 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": false,
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": "22 × 14 cm (verifierat)",
+   "material": "420D"
+  },
+  "se_copy": {
+   "message": "Två kranar. En spricker i vinter, en gör det inte.\nIsolerande foder håller frosten ute hela säsongen.\n309 kr, på plats på 10 sekunder.",
+   "headline": "Oskyddad kran, eller skyddad kran",
+   "description": "",
+   "link": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Oskyddad.",
+     "Eller skyddad.",
+     "Isolerande foder håller frosten borta hela vintern"
+    ]
+   },
+   {
+    "typ": "etikett",
+    "rader": [
+     "FÖRE"
+    ]
+   },
+   {
+    "typ": "etikett",
+    "rader": [
+     "EFTER"
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "309 kr — på plats på 10 sekunder"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu →"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+ },
+ {
+  "namn": "Kranskydd_SP_3_1",
+  "malnamn": "Kranbeskyttelse_NO_SP_3_1",
+  "prefix": "Kranskydd",
+  "vinkel": "SP",
+  "fakta": {
+   "produkt_no": "Kranbeskyttelse Frost 420D",
+   "pris": "219 kr",
+   "jamforpris": "285 kr",
+   "spar": "66 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": false,
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": "22 × 14 cm (verifierat)",
+   "material": "420D"
+  },
+  "se_copy": {
+   "message": "\"Jag slapp en spräckt kran i vinter tack vare den här.\" – verifierad kund.\n420D Oxford-tyg, 30 dagars öppet köp.\n309 kr för en trygg vinter.",
+   "headline": "Slapp en spräckt kran – riktig kund",
+   "description": "",
+   "link": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "”Jag slapp en spräckt kran i vinter tack",
+     "vare den här.",
+     "Sitter perfekt och känns väldigt tåligt!”",
+     "– Verifierad kund"
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "typ": "badge",
+    "rader": [
+     "30 dagars öppet köp"
+    ]
+   },
+   {
+    "typ": "badge",
+    "rader": [
+     "420D Oxford-tyg"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda din kran →"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+ },
+ {
+  "namn": "Kranskydd_REV_2_1",
+  "malnamn": "Kranbeskyttelse_NO_REV_2_1",
+  "prefix": "Kranskydd",
+  "vinkel": "REV",
+  "fakta": {
+   "produkt_no": "Kranbeskyttelse Frost 420D",
+   "pris": "219 kr",
+   "jamforpris": "285 kr",
+   "spar": "66 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": false,
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": "22 × 14 cm (verifierat)",
+   "material": "420D"
+  },
+  "se_copy": {
+   "message": "\"Fungerar bra\" – riktig kundrecension.\nKranen skyddad mot kyla utan att du tänker på det.\n309 kr, på plats på 10 sekunder.",
+   "headline": "Skyddar kranen. Riktig recension.",
+   "description": "",
+   "link": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Verifierad recension",
+     "Fungerar bra",
+     "”Skyddar kranen bra mot kyla.",
+     "Mycket nöjd.”"
+    ],
+    "block": [
+     [
+      2,
+      3
+     ]
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "— verifierad recension",
+     "309 kr"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda din kran – 309 kr"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+ },
+ {
+  "namn": "Kranskydd_PD_4_1",
+  "malnamn": "Kranbeskyttelse_NO_PD_4_1",
+  "prefix": "Kranskydd",
+  "vinkel": "PD",
+  "fakta": {
+   "produkt_no": "Kranbeskyttelse Frost 420D",
+   "pris": "219 kr",
+   "jamforpris": "285 kr",
+   "spar": "66 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": false,
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": "22 × 14 cm (verifierat)",
+   "material": "420D"
+  },
+  "se_copy": {
+   "message": "Dra åt dragskon – klart innan kylan hinner fram.\n22×14 cm täcker hela kranen, inte bara toppen.\n309 kr för en vinter utan spräckta rör.",
+   "headline": "Täcker hela kranen, inte bara toppen",
+   "description": "",
+   "link": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Dra åt dragskon på 10",
+     "sekunder – innan kylan",
+     "hinner före.",
+     "Isolerande foder håller kylan borta från kranen, hela",
+     "säsongen."
+    ],
+    "block": [
+     [
+      0,
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ]
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "22×14 cm – täcker hela kranen, inte bara toppen som en trasa gör."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda kranen – 309 kr"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+ },
+ {
+  "namn": "Kranskydd_PD_8_1",
+  "malnamn": "Kranbeskyttelse_NO_PD_8_1",
+  "prefix": "Kranskydd",
+  "vinkel": "PD",
+  "fakta": {
+   "produkt_no": "Kranbeskyttelse Frost 420D",
+   "pris": "219 kr",
+   "jamforpris": "285 kr",
+   "spar": "66 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": false,
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": "22 × 14 cm (verifierat)",
+   "material": "420D"
+  },
+  "se_copy": {
+   "message": "En spräckt kran kostar mer än 309 kr att laga.\n10 sekunder att sätta på – inga verktyg behövs.\n420D Oxford-tyg håller kylan borta hela vintern.",
+   "headline": "10 sekunder mot en spräckt kran",
+   "description": "",
+   "link": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "En spräckt kran kostar",
+     "mer tid än 309 kr och 10",
+     "sekunder gör.",
+     "Skyddet sitter på plats direkt – ingen verktygslåda,",
+     "ingen krångel."
+    ],
+    "block": [
+     [
+      0,
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ]
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "420D Oxford-tyg mellan kranen och kylan, hela vintern."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda kranen – 309 kr"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+ },
+ {
+  "namn": "Kranskydd_PD_6_1",
+  "malnamn": "Kranbeskyttelse_NO_PD_6_1",
+  "prefix": "Kranskydd",
+  "vinkel": "PD",
+  "fakta": {
+   "produkt_no": "Kranbeskyttelse Frost 420D",
+   "pris": "219 kr",
+   "jamforpris": "285 kr",
+   "spar": "66 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": false,
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": "22 × 14 cm (verifierat)",
+   "material": "420D"
+  },
+  "se_copy": {
+   "message": "309 kr. Inget mer, inget mindre.\nFri frakt och 30 dagars öppet köp om du ändrar dig.\n420D Oxford-tyg, 22×14 cm.",
+   "headline": "309 kr – fri frakt, öppet köp",
+   "description": "",
+   "link": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "309 kr.",
+     "Fri frakt.",
+     "30 dagars öppet köp.",
+     "Ingen risk – skicka tillbaka det inom 30 dagar och få",
+     "pengarna."
+    ],
+    "block": [
+     [
+      3,
+      4
+     ]
+    ],
+    "varning": "Fri frakt gäller inte i Norge under 300 kr — raden måste bytas"
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "420D Oxford-tyg, 22×14 cm. Klarna på fakturan."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ nu – 309 kr"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+ },
+ {
+  "namn": "Kranskydd_REV_1_1",
+  "malnamn": "Kranbeskyttelse_NO_REV_1_1",
+  "prefix": "Kranskydd",
+  "vinkel": "REV",
+  "fakta": {
+   "produkt_no": "Kranbeskyttelse Frost 420D",
+   "pris": "219 kr",
+   "jamforpris": "285 kr",
+   "spar": "66 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": false,
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": "22 × 14 cm (verifierat)",
+   "material": "420D"
+  },
+  "se_copy": {
+   "message": "\"Bra kvalitet\" – riktig kundrecension.\nSitter på kranen utan att glida eller lossna.\n309 kr, klart på 10 sekunder.",
+   "headline": "Sitter bra – riktig kund säger det",
+   "description": "",
+   "link": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Verifierad recension",
+     "Bra kvalitet",
+     "”Känns rejält och sitter bra på kranen.”"
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "— verifierad recension",
+     "309 kr"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda din kran – 309 kr"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+ },
+ {
+  "namn": "Kranskydd_SP_4_1",
+  "malnamn": "Kranbeskyttelse_NO_SP_4_1",
+  "prefix": "Kranskydd",
+  "vinkel": "SP",
+  "fakta": {
+   "produkt_no": "Kranbeskyttelse Frost 420D",
+   "pris": "219 kr",
+   "jamforpris": "285 kr",
+   "spar": "66 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": false,
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": "22 × 14 cm (verifierat)",
+   "material": "420D"
+  },
+  "se_copy": {
+   "message": "Frosten är på väg – skydda kranen innan den kommer.\n\"Skyddar kranen bra mot kyla. Mycket nöjd.\" – riktig kund.\n420D-tyg, rätt mått, dragsko på 10 sekunder.\n309 kr, 30 dagars öppet köp.",
+   "headline": "Skydda kranen innan frosten kommer",
+   "description": "",
+   "link": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Innan frosten kommer:",
+     "kranen skyddad på 10",
+     "sekunder.",
+     "”Skyddar kranen bra mot kyla.",
+     "Mycket nöjd.”",
+     "— verifierad recension."
+    ],
+    "block": [
+     [
+      0,
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ]
+    ]
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "420D Oxford-tyg och isolerande foder",
+     "22×14 cm, 10 sekunder, utan verktyg",
+     "Dragsko håller skyddet på plats",
+     "30 dagars öppet köp. Fri frakt."
+    ],
+    "bock_till": 2,
+    "varning": "sista raden: Fri frakt gäller inte under 300 kr i Norge"
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda kranen – 309 kr"
+    ]
+   }
+  ],
+  "link_no": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+ }
+]

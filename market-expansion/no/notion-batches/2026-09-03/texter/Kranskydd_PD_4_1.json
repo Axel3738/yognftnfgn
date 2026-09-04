@@ -1,0 +1,54 @@
+[
+ {
+  "form": 1,
+  "text": "Stram til snoren på 10 sekunder – før kulden rekker frem.",
+  "rader": [
+   0,
+   1,
+   2
+  ],
+  "se_rader": [
+   "Dra åt dragskon på 10",
+   "sekunder – innan kylan",
+   "hinner före."
+  ],
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "Isolerende fôr holder kulden borte fra kranen, hele sesongen.",
+  "rader": [
+   3,
+   4
+  ],
+  "se_rader": [
+   "Isolerande foder håller kylan borta från kranen, hela",
+   "säsongen."
+  ],
+  "vanster": false
+ },
+ {
+  "form": 2,
+  "text": "22×14 cm – dekker hele kranen, ikke bare toppen slik en klut gjør.",
+  "rad": 0,
+  "se": "22×14 cm – täcker hela kranen, inte bara toppen som en trasa gör.",
+  "vanster": false
+ },
+ {
+  "box": [
+   262,
+   1205,
+   818,
+   1304
+  ],
+  "fet": true,
+  "storlek": 42,
+  "rader": 1,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Beskytt kranen – 219 kr"
+ }
+]

@@ -1,0 +1,72 @@
+[
+ {
+  "box": [
+   33,
+   55,
+   1047,
+   290
+  ],
+  "fet": true,
+  "storlek": 70,
+  "rader": 2,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "Nye kniver koster hver gang."
+ },
+ {
+  "box": [
+   33,
+   295,
+   1047,
+   420
+  ],
+  "fet": true,
+  "storlek": 70,
+  "rader": 1,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "Sliping koster én gang."
+ },
+ {
+  "box": [
+   33,
+   435,
+   1047,
+   515
+  ],
+  "fet": false,
+  "storlek": 38,
+  "rader": 1,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "En slipemaskin sliper de samme knivene i årevis."
+ },
+ {
+  "form": 0,
+  "text": "1 029 kr én gang vs. nye kniver hver gang",
+  "rad": 0,
+  "se": "909 kr en gång vs. nya knivar varje gång",
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "klipp_efter_rad": 0,
+  "rad": null
+ },
+ {
+  "form": 1,
+  "text": "Spar – slip i stedet",
+  "rad": 0,
+  "se": "Sluta köpa nytt — slipa istället",
+  "vanster": false
+ }
+]

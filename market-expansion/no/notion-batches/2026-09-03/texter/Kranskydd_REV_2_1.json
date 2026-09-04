@@ -1,0 +1,50 @@
+[
+ {
+  "form": 0,
+  "text": "Verifisert omtale",
+  "rad": 0,
+  "se": "Verifierad recension",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Fungerer bra",
+  "rad": 1,
+  "se": "Fungerar bra",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "”Beskytter kranen godt mot kulde. Veldig fornøyd.”",
+  "rader": [
+   2,
+   3
+  ],
+  "se_rader": [
+   "”Skyddar kranen bra mot kyla.",
+   "Mycket nöjd.”"
+  ],
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "— verifisert omtale",
+  "rad": 0,
+  "se": "— verifierad recension",
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "219 kr",
+  "rad": 1,
+  "se": "309 kr",
+  "vanster": false
+ },
+ {
+  "form": 2,
+  "text": "Beskytt kranen – 219 kr",
+  "rad": 0,
+  "se": "Skydda din kran – 309 kr",
+  "vanster": false
+ }
+]

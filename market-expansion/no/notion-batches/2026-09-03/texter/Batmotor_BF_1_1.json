@@ -1,0 +1,37 @@
+[
+ {
+  "form": 0,
+  "text": "529 kr.",
+  "rad": 0,
+  "se": "579 kr.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Ord.",
+  "rad": 1,
+  "se": "Ord.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "882 kr.",
+  "rad": 2,
+  "se": "965 kr.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "40 % rabatt, trukket fra direkte i kassen. Ingen kode.",
+  "rad": 3,
+  "se": "40% rabatt, avdraget direkt i kassan. Ingen kod.",
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "Handle nå.",
+  "rad": 0,
+  "se": "Handla nu.",
+  "vanster": false
+ }
+]

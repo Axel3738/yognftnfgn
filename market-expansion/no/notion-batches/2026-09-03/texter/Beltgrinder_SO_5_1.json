@@ -1,0 +1,37 @@
+[
+ {
+  "form": 0,
+  "text": "3 verktøy i ett.",
+  "rad": 0,
+  "se": "3 verktyg i ett.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Prisen av ett.",
+  "rad": 1,
+  "se": "Priset av ett.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Kniv, saks og øks — samme verktøy, samme kjøp.",
+  "rad": 2,
+  "se": "Kniv, sax och yxa — samma verktyg, samma köp.",
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "1 029 kr (ord. 1 715 kr) — spar 686 kr, 40 %",
+  "rad": 0,
+  "se": "909 kr (ord. 1 182 kr) — spara 273 kr, 23 %",
+  "vanster": false
+ },
+ {
+  "form": 2,
+  "text": "Bestill beltesliperen",
+  "rad": 0,
+  "se": "Beställ Bälteslipmaskinen",
+  "vanster": false
+ }
+]

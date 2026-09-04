@@ -1,0 +1,84 @@
+[
+ {
+  "form": 0,
+  "text": "”Jeg slapp en sprukket kran i vinter takket være denne.",
+  "rader": [
+   0,
+   1
+  ],
+  "se_rader": [
+   "”Jag slapp en spräckt kran i vinter tack",
+   "vare den här."
+  ],
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Sitter perfekt og kjennes veldig solid!”",
+  "rad": 2,
+  "se": "Sitter perfekt och känns väldigt tåligt!”",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "– Verifisert kunde",
+  "rad": 3,
+  "se": "– Verifierad kund",
+  "vanster": false
+ },
+ {
+  "box": [
+   66,
+   1050,
+   507,
+   1125
+  ],
+  "fet": false,
+  "storlek": 30,
+  "rader": 1,
+  "farg": [
+   24,
+   50,
+   76
+  ],
+  "outline": [
+   27,
+   76,
+   122
+  ],
+  "radie": 24,
+  "kant": 3,
+  "text": "30 dagers åpent kjøp"
+ },
+ {
+  "box": [
+   574,
+   1050,
+   1015,
+   1125
+  ],
+  "fet": false,
+  "storlek": 30,
+  "rader": 1,
+  "farg": [
+   24,
+   50,
+   76
+  ],
+  "outline": [
+   27,
+   76,
+   122
+  ],
+  "radie": 24,
+  "kant": 3,
+  "text": "420D Oxford-stoff"
+ },
+ {
+  "form": 3,
+  "text": "Beskytt kranen din →",
+  "rad": 0,
+  "se": "Skydda din kran →",
+  "vanster": false
+ }
+]

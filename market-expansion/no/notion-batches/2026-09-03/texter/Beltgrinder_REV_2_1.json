@@ -1,0 +1,44 @@
+[
+ {
+  "form": 0,
+  "text": "Verifisert omtale",
+  "rad": 0,
+  "se": "Verifierad recension",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Fungerer fint",
+  "rad": 1,
+  "se": "Fungerar fint",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "”Bra til å slipe og polere hjemme.”",
+  "rad": 2,
+  "se": "”Bra för att slipa och polera hemma.”",
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "— verifisert omtale",
+  "rad": 0,
+  "se": "— verifierad recension",
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "1 029 kr (ord. 1 715 kr)",
+  "rad": 1,
+  "se": "909 kr (ord. 1 182 kr)",
+  "vanster": false
+ },
+ {
+  "form": 3,
+  "text": "Bestill din egen",
+  "rad": 0,
+  "se": "Beställ din egen — 909 kr",
+  "vanster": false
+ }
+]

@@ -1,0 +1,36 @@
+[
+ {
+  "form": 0,
+  "text": "882 kr → 529 kr.",
+  "rad": 0,
+  "se": "965 kr → 579 kr.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "40 % rabatt, allerede trukket fra.",
+  "rader": [
+   1,
+   2
+  ],
+  "se_rader": [
+   "40% rabatt, redan",
+   "avdraget."
+  ],
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Ingen kode nødvendig. Prisen vises i kassen.",
+  "rad": 3,
+  "se": "Ingen kod behövs. Priset syns i kassan.",
+  "vanster": false
+ },
+ {
+  "form": 3,
+  "text": "Handle nå.",
+  "rad": 0,
+  "se": "Handla nu.",
+  "vanster": false
+ }
+]

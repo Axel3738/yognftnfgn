@@ -1,0 +1,44 @@
+[
+ {
+  "form": 0,
+  "text": "Verifisert omtale",
+  "rad": 0,
+  "se": "Verifierad recension",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Bra kvalitet",
+  "rad": 1,
+  "se": "Bra kvalitet",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "”Kjennes solid og sitter godt på kranen.”",
+  "rad": 2,
+  "se": "”Känns rejält och sitter bra på kranen.”",
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "— verifisert omtale",
+  "rad": 0,
+  "se": "— verifierad recension",
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "219 kr",
+  "rad": 1,
+  "se": "309 kr",
+  "vanster": false
+ },
+ {
+  "form": 2,
+  "text": "Bestill – 219 kr",
+  "rad": 0,
+  "se": "Skydda din kran – 309 kr",
+  "vanster": false
+ }
+]

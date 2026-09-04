@@ -1,0 +1,72 @@
+[
+ {
+  "form": 0,
+  "text": "Før frosten kommer: kranen beskyttet på 10 sekunder.",
+  "rader": [
+   0,
+   1,
+   2
+  ],
+  "se_rader": [
+   "Innan frosten kommer:",
+   "kranen skyddad på 10",
+   "sekunder."
+  ],
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "”Beskytter kranen godt mot kulde. Veldig fornøyd.”",
+  "rader": [
+   3,
+   4
+  ],
+  "se_rader": [
+   "”Skyddar kranen bra mot kyla.",
+   "Mycket nöjd.”"
+  ],
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "— verifisert omtale.",
+  "rad": 5,
+  "se": "— verifierad recension.",
+  "vanster": false
+ },
+ {
+  "form": 2,
+  "text": "420D Oxford-stoff og isolerende fôr",
+  "rad": 0,
+  "se": "420D Oxford-tyg och isolerande foder",
+  "vanster": true
+ },
+ {
+  "form": 2,
+  "text": "22×14 cm, 10 sekunder, uten verktøy",
+  "rad": 1,
+  "se": "22×14 cm, 10 sekunder, utan verktyg",
+  "vanster": true
+ },
+ {
+  "form": 2,
+  "text": "Snor holder beskyttelsen på plass",
+  "rad": 2,
+  "se": "Dragsko håller skyddet på plats",
+  "vanster": true
+ },
+ {
+  "form": 2,
+  "text": "30 dagers åpent kjøp. Trygg betaling.",
+  "rad": 3,
+  "se": "30 dagars öppet köp. Fri frakt.",
+  "vanster": false
+ },
+ {
+  "form": 3,
+  "text": "Beskytt kranen – 219 kr",
+  "rad": 0,
+  "se": "Skydda kranen – 309 kr",
+  "vanster": false
+ }
+]

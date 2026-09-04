@@ -1,0 +1,43 @@
+[
+ {
+  "form": 0,
+  "text": "Ekte kundeomtale",
+  "rad": 0,
+  "se": "5,0 av 5 stjärnor.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "",
+  "rad": 1,
+  "se": "8 av 8 recensioner.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "”Trekket kjennes solid og er lett å sette på.”",
+  "rader": [
+   2,
+   3
+  ],
+  "se_rader": [
+   "”Skyddet känns hållbart och är lätt att sätta",
+   "på.”"
+  ],
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "– Fredrik L., kundeomtale på baverbutiken.se",
+  "rad": 4,
+  "se": "– Fredrik L.",
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "529 kr. Handle nå.",
+  "rad": 0,
+  "se": "579 kr. Handla nu.",
+  "vanster": false
+ }
+]
