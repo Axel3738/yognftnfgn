@@ -27,6 +27,7 @@ Kräver Pillow och ett typsnitt med å/ä/ö (DejaVu finns i standardmiljön).
 """
 import argparse
 import json
+import math
 import re
 import sys
 from pathlib import Path
@@ -199,6 +200,28 @@ def rita_stryk(rita, text, stryk, font, mitt_x, y):
 
 
 BOCKFARG = "#1E9E4A"
+STJARNFARG = "#F5A623"
+
+
+def rita_stjarna(rita, mitt_x, mitt_y, radie):
+    """Ritar en femuddig stjärna. Briefarna skriver ★, men glyfen saknas i
+    Liberation Sans och skulle bli en tom ruta — så vi ritar den i stället."""
+    punkter = []
+    for i in range(10):
+        vinkel = -math.pi / 2 + i * math.pi / 5
+        r = radie if i % 2 == 0 else radie * 0.42
+        punkter.append((mitt_x + r * math.cos(vinkel), mitt_y + r * math.sin(vinkel)))
+    rita.polygon(punkter, fill=STJARNFARG)
+
+
+def rita_stjarnrad(rita, antal, bredd, y, hojd):
+    """Centrerad rad med `antal` stjärnor. Antalet kommer ur den avlästa
+    recensionen, aldrig ur briefens tecken — så siffran går att spåra."""
+    radie = hojd * 0.45
+    steg = radie * 2.4
+    x0 = (bredd - steg * (antal - 1)) / 2
+    for i in range(antal):
+        rita_stjarna(rita, x0 + i * steg, y + hojd / 2, radie)
 
 
 def rita_bock(rita, x, y, storlek):
@@ -314,19 +337,25 @@ def lagg_pa_text(spec):
         font, rader = passa_in(kalla, stil["font"], stil["storlek"],
                                maxbredd, stil["rader"], rita)
         rh = _radhojd(font)
+        stjarnor = int(b.get("stjarnor") or 0)
+        stjarnhojd = int(rh * 0.9) + 12 if stjarnor else 0
         if b.get("platta"):
             rita_platta(bild, MARGINAL // 2, y_topp - 18,
-                        bredd - MARGINAL // 2, y_topp + rh * len(rader) + 12)
+                        bredd - MARGINAL // 2,
+                        y_topp + stjarnhojd + rh * len(rader) + 12)
             rita = ImageDraw.Draw(bild)
+        if stjarnor:
+            rita_stjarnrad(rita, stjarnor, bredd, y_topp, stjarnhojd - 12)
+        y_text = y_topp + stjarnhojd
         farg = _blackfarg(stil, b)
         if b["stil"] == "lista":
-            rita_lista(rita, rader, font, bredd, y_topp, farg)
+            rita_lista(rita, rader, font, bredd, y_text, farg)
         else:
             for i, rad in enumerate(rader):
-                rita.text((bredd / 2, y_topp + i * rh), rad, font=font,
+                rita.text((bredd / 2, y_text + i * rh), rad, font=font,
                           fill=farg, anchor="ma")
-                rita_stryk(rita, rad, b.get("stryk"), font, bredd / 2, y_topp + i * rh)
-        y_topp += rh * len(rader) + 20
+                rita_stryk(rita, rad, b.get("stryk"), font, bredd / 2, y_text + i * rh)
+        y_topp += stjarnhojd + rh * len(rader) + 20
 
     for b in block:
         zon = b["zon"]
