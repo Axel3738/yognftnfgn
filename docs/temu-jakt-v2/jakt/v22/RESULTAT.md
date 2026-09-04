@@ -14,7 +14,7 @@ Datavägar när Temu är blockerat: `v22/DATAVAGAR.md`.
 > | Produkt | Före | Efter | Varför |
 > |---|---|---|---|
 > | Utekattkoja | TEST NOW | **TEST NOW** | oförändrad, materialet var redan sett |
-> | Staketstolps-bygel | TEST IF VERIFIED | **TEST NOW** | heron är textfri och visar mekanismen i marken |
+> | Staketstolps-bygel | TEST IF VERIFIED | **TEST IF VERIFIED** | materialet klarar sig, men Sverige-viabilitetslagret säger att formen är obevisad här |
 > | Husvagns-taköverdrag | TEST IF VERIFIED | **ALTERNATIVE_LISTING_REQUIRED** | videon visar en röd pickup, inte en husvagn |
 > | Tändvedsklyv | TEST IF VERIFIED | **WATCH** | den strukturellt bästa listningen kostar 34,11 USD, inte 16 |
 >
@@ -262,3 +262,27 @@ och erfarenheten säger att okänt oftare är dåligt".
 Priserna rörde sig också: 25 → 26,52 USD, 16 → 16,95 USD, och den strukturellt bästa klyven
 visade sig kosta dubbelt så mycket som antaget. **Sökutdragens pris är en uppskattning, inte
 ett pris.** Räkna aldrig en slutgiltig ekonomi på ett snippet-pris.
+
+## Avstämning mot Sverige-viabilitetslagret
+
+En parallell körning la till `jakt/sverige-viabilitet-bedomning.md` (TAM, säsonglängd,
+konkurrens och efterfrågebevis per kandidat). Den ändrar en av mina domar och stärker en annan.
+
+**Staketstolps-bygeln: TEST NOW → TEST IF VERIFIED.** Materialet klarar sig — det står fast.
+Men viabilitetslagret pekar på något materialgranskningen inte kan se: **formen är obevisad i
+Sverige.** Noll svensk kedja, noll fackhandel, noll annonsörer — och svenska staket byggs
+traditionellt med stolpsko eller gjutning, inte med reparationsbygel. Hyllfrånvaro är en styrka
+när efterfrågan finns och en varning när den inte gör det. Här går de två inte att skilja åt på
+befintlig data. Testbar, men inte först, och inte utan att den frågan ställs medvetet.
+
+**Tändvedsklyven är större än jag skrev.** Viabilitetslagret gör den till listans enda
+S-marknad: ~1,1 M vedeldade eldstäder, sex månaders säsong, bevisad efterfrågan (Kindling
+Cracker i 9+ svenska butiker, Viking FireTools annonserade okt–nov 2025) och **noll aktiva
+annonsörer nu**. Håller materialet är den alltså större än utekattkojan. Flaskhalsen är exakt
+en sak: **en listning under ~20 USD vars bilder visar slaget.** Den billiga har 1 bild och ingen
+video; den bra kostar 34,11 USD. Det är den enda frågan som återstår för hela konceptet.
+
+**Utekattkojan står kvar som förstahandsvalet** — men lagret skärper risken: TAM 330 000–540 000
+hushåll med utekatt är gott om utrymme, medan konkurrensen är den enda "KONKURRENS"-märkningen
+i hela listan (tre annonsörer sedan 18–29 augusti plus look-alikes 157–504 kr). Det är ett
+skäl att launcha snart, inte att vänta.
