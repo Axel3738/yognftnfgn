@@ -31,6 +31,31 @@ Utdragen ger **pris i USD**, **betyg** (t.ex. "4.8 / 96%"), **antal recensioner*
 lagerstatus. Skriv av EXAKT och märk `source: "seznam-snippet"`. Hitta aldrig på ett tal.
 Verifierat: 601099539458313 = $23, 4.8/96% (99+); 601104628431264 = $44, 4.6/92%.
 
+## 2b. PRIS — Temus EGNA sökresultatsidor via WebFetch (mätt 2026-09-04 10:0x UTC)
+
+Produktsidorna är blockerade, men **sökresultatsidorna är serverrenderade och visar pris.**
+Två former, båda via `WebFetch` (containerns curl får ett skal utan priser — använd WebFetch):
+
+```
+WebFetch https://www.temu.com/search_result.html?search_key=<sokord+med+%20>
+WebFetch https://www.temu.com/<slug>-<id>-s.html        (t.ex. 8ft-firewood-rack-cover-5040226697568-s.html)
+```
+Prompt: "list every product with its exact full title and price in USD".
+
+Ger **titel + pris i USD + rabattsats**, 14–36 rader per sida. Ger **inte** goods_id — priset går
+alltså inte att koppla till en specifik listning, så märk `price_source: "temu-sok-sida"` och
+konfidens MEDIUM. `-s.html`-sidorna finns bara förgenererade (påhittad slug ⇒ 404); hitta dem via
+WebSearch. `-s.html`-sidans JSON-LD innehåller dessutom ibland en **VideoObject med
+`contentURL` till leverantörsvideon** på `goods-vod.kwcdn.com` — enda vägen till gate 5-material
+just nu.
+
+⚠️ **Stryps efter ~2 lyckade anrop.** Sedan svarar sidan med bara ordet "Temu". Vila och kom
+tillbaka; kör aldrig flera parallellt. Mätt: 2 lyckade av 8 försök på 12 minuter.
+
+⚠️ Seznam (avsnitt 2) hade **noll** täckning på cover-only-listningar i vedkategorin — inte ens
+originalet vars pris vi känner. Är Seznam tom för ett kluster betyder det inte att priset är
+ohämtbart; testa den här vägen innan du skriver UNKNOWN.
+
 ## 3. SVENSK TITEL — WebFetch på temu.com
 
 `WebFetch https://www.temu.com/se/g-<id>.html` ger `<title>` (svensk produkttitel) även när
