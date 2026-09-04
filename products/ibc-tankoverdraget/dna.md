@@ -117,5 +117,56 @@ vinstbidraget till 2 354 kr.)
   session.
 - Konkurrenter: bara 1 träff i Meta Ad Library på "IBC tank cover" (Sverige),
   ingen läsbar brödtext — inget användbart swipe-material hittades.
-- Recensionerna (10 st) är inte lästa rad för rad — nästa körning bör hämta
-  dem och plocka en formulering som går att belägga.
+
+---
+
+## Uppdatering 2026-09-04 (`/cs`-körning, batch #2, automatisk rond-4b, fokus "mata vinnaren")
+
+**Källa:** MagiBorsten `1867947880635861`, kampanj `120250001079150291`, ad-nivå,
+`date_preset: maximum`, hämtat 2026-09-04. `amount_spent × purchase_roas`
+verifierad mot `omni_purchase_values` på alla rader — matchar exakt (t.ex.
+PD_1_H1: 7 980,48 × 3,07734 = 24 558,65 kr = fältets värde). Ingen trasig rad.
+Kampanjsumman (9 176,92 kr, 43 köp) matchar summan av alla 18 ads exakt.
+
+**Vinnaren skalas kraftigt.** PD_1_H1 gick från 3 455 kr/20 köp (2026-09-01)
+till **7 980,48 kr / 39 köp** på tre dagar — nästan en fördubbling. Den bär nu
+**87 % av kampanjens spend och 91 % av köpen (39/43)**. CPA har stigit något
+(172,76 → 204,63 kr) i takt med skalningen, väntat enligt ANALYSMETOD.md steg 5
+("räkna med regression") — men ligger fortfarande klart under break-even
+(323,84 kr) och ROAS (3,08) är stabilt över break-even (1,51).
+
+**Vinstbidragstabell (bedömbara annonser, ≥300 kr + ≥3 köp):**
+
+| Annons | Spend | Andel spend | Köp | CPA | ROAS | Vinstbidrag |
+|---|---|---|---|---|---|---|
+| **PD_1_H1** (benchmark) | 7 980,48 kr | 87,0 % | 39 | 204,63 kr | 3,08 | **+4 649 kr** |
+
+Ingen annan annons är bedömbar. CS_1_H3 har passerat 300 kr spend (373,74 kr)
+men bara 2 köp — under 3-köpsgränsen, kvar i "för tidigt". Alla övriga
+(PD_2_1, PD_1_H2/H3, SP_1_H1/H2/H3, SP_2_1, CS_2_1, PD_Extra, CS_1_H2, GT_1_*,
+GT_2_1, CO_1_1, PD_3_1) ligger under 300 kr — ren svält, ingen dom.
+
+**Batch #1-uppföljning (feedbackloop):** `IBC_PD_3_H1` och `IBC_GT_3_H1`
+(video, briefade 2026-09-01) syns INTE i kontot — redigerarna har inte
+producerat dem än. `IBC_PD_3_1` och `IBC_CO_1_1` (statiska) är live men har
+fått 3,53 kr respektive 23,56 kr — för lite för någon dom. Ingen av batch #1:s
+fyra briefer har alltså gett läsbar data ännu. Ingen hypotes kan bekräftas
+eller motbevisas denna körning.
+
+**Produktfakta kompletterade (verifierade mot produktsidan 2026-09-04):**
+fri frakt över 300 kr (alltid uppfyllt vid 489 kr), 30 dagars öppet köp med
+pengarna tillbaka, Klarna "Få först, betala sen", mått 120×100×116 cm
+(standard 1000 L IBC-tank). De 10 recensionerna är nu lästa rad för rad —
+7 av 10 är 5 stjärnor, 3 är 4 stjärnor (inte "alla positiva" rakt av som
+tidigare skrivning antydde, men samtliga är positiva i sak).
+
+**Winning DNA, tillägg:** vinnarens exakta manus (hook: "Trött på grönt,
+algfyllt regnvatten?", struktur fråga→mekanism→3×✅→CTA, inget pris i bild)
+är nu extraherat ordagrant ur `ads_get_creatives` och används som bas för
+batch #2:s near-iterations i stället för att omskrivas fritt.
+
+**Batch #2 (2026-09-04):** 6 briefer i rundan (4 video: PD_4_H1 fact-first
+hook, PD_4_H2 creator-on-camera format, PD_4_H3 12–15s pacing-cut, SP_3_H1
+belagd recension; 2 statiska: CS_3_1 rea+fakta, PD_4_1 format-transfer) +
+3 BOF (pris, garanti, storleksinvändning) + 2 review-bilder (Maria, Lena —
+verbatim). Se `batch-log.md` för fullständig lista och hypoteser.
