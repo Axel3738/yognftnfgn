@@ -124,7 +124,7 @@
   "eliminated_at": null,
   "structure_match": 78,
   "category_novelty": 85,
-  "tier": "A (villkorad: publik)",
+  "tier": "A (TEST NOW — V2.2)",
   "biggest_risk": "Materialet ej sett: om leverantörsvideon är en studiorendering utan katt faller den till B. Prisläge okänt.",
   "confidence": "MEDIUM",
   "sources": {
@@ -137,7 +137,7 @@
    ]
   },
   "tier_agent": "A",
-  "tier_reason": "gate 4 PASS på heron (riktig katt sover i kojan utomhus i höstlöv, textfri) — videon är en studiodemo (hopfällning + vattenpärlning) och duger som bevisklipp, inte öppning; gate 5 PASS på US-pris (10,93 USD → landad 114–134 → 4,5–5,3× vid 599, ankare Supercat 1 799 / Kerbl 1 017); hylla verifierad PASS. Enda kvarvarande osäkerhet: publiken — köparen skev mot kvinna, fingeravtrycket säger man 45–70. Varianter: färger + troligen två storlekar (SKU-lista ej läst).",
+  "tier_reason": "V2.2: alla nio gater PASS, materialet sett; publikinvändningen faller (Agria 2025: 59 % innekatt bland 55–74 mot 79 % bland 18–39; Hedvig 2025: landsbygd 51 % mot Stockholm 76–77 %; klistermärkena vann på 55+). Sälj EN SKU (störst, svart) så försvinner variantgaten. Pris 599. Risk: look-alikes 157–504 kr + tre annonsörer igång sedan 18–29 aug — trähusankaret 1 017–1 799 ska stå i creativen. Tidigare bedömning: gate 4 PASS på heron (riktig katt sover i kojan utomhus i höstlöv, textfri) — videon är en studiodemo (hopfällning + vattenpärlning) och duger som bevisklipp, inte öppning; gate 5 PASS på US-pris (10,93 USD → landad 114–134 → 4,5–5,3× vid 599, ankare Supercat 1 799 / Kerbl 1 017); hylla verifierad PASS. Enda kvarvarande osäkerhet: publiken — köparen skev mot kvinna, fingeravtrycket säger man 45–70. Varianter: färger + troligen två storlekar (SKU-lista ej läst).",
   "temu_us": {
    "title": "Outdoor Shelter for Cats, Suitable for * Cats, Designed to * And Insulated for All Weather *. This Cat House Can * Serve As a Do",
    "price_usd": "10.93",

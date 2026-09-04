@@ -55,6 +55,18 @@ def lasa():
                         print(f"{now()} {gid} fylld ur cache", flush=True); continue
                 except Exception: pass
             queue.append((gid, r, f, pri))
+    # prio.txt: id som ska hämtas FÖRST (V2.2:s TEST IF VERIFIED — material saknas), prioritet 0
+    pf = os.path.join(H, "prio.txt")
+    if os.path.exists(pf):
+        for line in open(pf, encoding="utf-8"):
+            pid = line.split()[0] if line.strip() and not line.startswith("#") else ""
+            if not pid.isdigit(): continue
+            rawf = os.path.join(H, "raw", "us", f"{pid}.json")
+            if os.path.exists(rawf):
+                try:
+                    if not json.load(open(rawf, encoding="utf-8")).get("blocked"): continue
+                except Exception: pass
+            queue.append((pid, {"tier": "PRIO", "_alt": True}, None, 0))
     # alternativa listningar (alt/*.json) för koncept som fällts på en listning: prioritet strax efter A
     for f in sorted(glob.glob(os.path.join(H, "alt", "*.json"))):
         try: alt = json.load(open(f, encoding="utf-8"))
