@@ -9,7 +9,7 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-09-03",
+  "uppdaterad": "2026-09-04",
   "kampanjer": [
     {
       "campaign_id": "120250069623310291",
@@ -448,6 +448,94 @@
       "break_even_kalla": "kampanjnamnet",
       "notion_hub_id": "3cd270ab-908c-818f-9059-f333f67559a4",
       "notion_hub_namn": "Fish rod holder NO creative hub"
+    },
+    {
+      "campaign_id": "120250083675400291",
+      "produkt": "Arbetslampan för Makita-batteri",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-04, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252059257850233",
+      "produkt": "Sysett NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-02/03, NO-marknad, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252059104810233",
+      "produkt": "Magnethylle NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-02/03, NO-marknad, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252058751160233",
+      "produkt": "Kryss og Bolle NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-02, NO-marknad, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252058615860233",
+      "produkt": "Kamuflasjeteip NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-02, NO-marknad, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252053077300233",
+      "produkt": "Plysjtøfler NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-02, NO-marknad, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252050710680233",
+      "produkt": "MC-Trekk NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-02, NO-marknad, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252050378890233",
+      "produkt": "Kast & Fang NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-02, NO-marknad, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252047604260233",
+      "produkt": "Gravsteinspenn NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-02, NO-marknad, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252047563660233",
+      "produkt": "Båtmotortrekk NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-02, NO-marknad, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252045588790233",
+      "produkt": "Badeshorts NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-02, NO-marknad, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
     }
   ],
   "valutakurser": {
