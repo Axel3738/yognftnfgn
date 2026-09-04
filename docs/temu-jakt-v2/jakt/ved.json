@@ -125,7 +125,7 @@
   "eliminated_at": null,
   "structure_match": 78,
   "category_novelty": 70,
-  "tier": "B (närmast A)",
+  "tier": "C (strukturellt: marketplace-golv)",
   "biggest_risk": "Jula/Biltema kan ha ett överdrag i samma form för 149–249 kr — då krävs en synlig spec-skillnad (600D/PU + spännen mot tunn presenning) precis som 420D mot 85 g/m² på motorhöljet.",
   "confidence": "MEDIUM",
   "sources": [
@@ -133,7 +133,7 @@
    "Ad Library SE 'vedställ' = 0 aktiva; 'presenning ved' = 4 (presenningar, ej överdrag)"
   ],
   "tier_agent": "B",
-  "tier_reason": "gate 4 PASS på heron (överdraget på ett vedställ, röd text i nederkanten beskärbar), video okänd; gate 5 FAIL på US-pris för 8 ft-varianten (34,47 USD → landad 360–422 → 2,4× kräver 864–1 013 kr mot ankare 549). 4 ft-priset okänt. Blir A om 4 ft-varianten kostar ≤ ~110 kr på Temu SE.",
+  "tier_reason": "V2.2 fas 1 (v22/fas1/vedstallsoverdrag.md): fyra prisobservationer 24,22 / 29,71 / 29,99 / 34,47 USD — billigaste ger landad 253–296 → 2,4× kräver 607–711 kr; vidaXL.se säljer exakt samma form för 293 kr i lager, under DNA:ns 300-kronorsgolv. Inget svenskt pris klarar 2,4×, 300 kr och hyllan samtidigt. Materialet (hero på fullt vedställ) var aldrig problemet.",
   "temu_us": {
    "title": "Outdoor Firewood Rack Cover, Waterproof Wood Rack Covers, Firewood Log Storage Covering For Patio Logs Holder, 8 FT Wood Holder Cover Weather Protecti",
    "price_usd": "34.47",
@@ -997,7 +997,7 @@
   "eliminated_at": null,
   "structure_match": 68,
   "category_novelty": 85,
-  "tier": "B (närmast A)",
+  "tier": "B (närmast A — TEST IF VERIFIED, V2.2)",
   "biggest_risk": "Om Jula säljer samma form för 299 kr utan att vi kan visa Kindling Cracker-ankaret i bild faller prisutrymmet.",
   "confidence": "MEDIUM",
   "sources": [
@@ -1005,7 +1005,7 @@
    "Ad Library SE 'vedklyv' = 68 (alla bolist.se-katalog, hydraulklyv AL-KO) ; 'tändved klyv' = 0"
   ],
   "tier_agent": "B",
-  "tier_reason": "gate 5 PASS på US-pris (16,25 USD → landad 170–200 → 3,0× vid 599; frakt på gjutjärn kan äta det); gate 4 FAIL på det som syns: textfri packshot utan ved, klubba eller hand, ingen video på US-sidan. Blir A om en video visar slaget och stickan inom 3 s.",
+  "tier_reason": "V2.2: pris 599 (inte 499), landad 170–199 → 3,0–3,5×; köp 3–5 kg-versionen; setrimmer.se säljer samma form 288/365 kr i lager — spela mot ankaret Kindling Cracker 1 249, aldrig mot 288. Material BLOCKED_SOURCE på alla 25 listningar utom packshoten; prioritera 601099702553211 (handskar → hand i bild), 601099595396016 (GoPlus) och 601099561039096 (9 lbs halv-ring). Blir A när en video visar slaget och stickan inom 3 s.",
   "temu_us": {
    "title": "* Splitter with Dual *, * Hand Log Splitter Manual Wood Splitting Wedge, * Firewood Cracker Cutter Tool for Outdoor Camping",
    "price_usd": "16.25",

@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-04T09:37:29.938427Z",
+ "generated": "2026-09-04T10:41:27.136878Z",
  "n_concepts": 386,
  "concept_funnel": {
   "listningar": 519,
@@ -8,25 +8,25 @@
   "presens PASS": 255,
   "hyllkvalificerade (verifierad PASS)": 26,
   "hylla PENDING_VERIFICATION": 83,
-  "strukturkvalificerade (variant/hook/publik ej FAIL, ej strukturellt fällda)": 25,
-  "slutliga konceptöverlevare (status ≠ FAIL)": 25
+  "strukturkvalificerade (variant/hook/publik ej FAIL, ej strukturellt fällda)": 23,
+  "slutliga konceptöverlevare (status ≠ FAIL)": 23
  },
  "listing_funnel": {
-  "kandidatkoncept (≠ FAIL)": 25,
-  "listningar i dem": 61,
-  "listningar hämtade (Temu-data)": 5,
-  "material PASS": 3,
-  "ekonomi PASS": 4,
-  "bästa listning vald (material + ekonomi PASS)": 2,
-  "koncept ALTERNATIVE_LISTING_REQUIRED": 3,
+  "kandidatkoncept (≠ FAIL)": 23,
+  "listningar i dem": 54,
+  "listningar hämtade (Temu-data)": 3,
+  "material PASS": 2,
+  "ekonomi PASS": 3,
+  "bästa listning vald (material + ekonomi PASS)": 1,
+  "koncept ALTERNATIVE_LISTING_REQUIRED": 2,
   "koncept BLOCKED_SOURCE": 6
  },
  "status_count": {
-  "FAIL": 361,
+  "FAIL": 363,
   "BLOCKED_SOURCE": 6,
-  "ALTERNATIVE_LISTING_REQUIRED": 3,
+  "ALTERNATIVE_LISTING_REQUIRED": 2,
   "PENDING_VERIFICATION": 14,
-  "PASS": 2
+  "PASS": 1
  },
  "concepts": [
   {
@@ -68,6 +68,123 @@
    "verification_timestamp": "2026-09-04T08:46:33.018954Z",
    "hook": "Har du en utekatt?",
    "structure_match": 78
+  },
+  {
+   "concept_id": "tandvedsklyv-i-gjutjarn-kindling-cracker-typ",
+   "name": "Tändvedsklyv i gjutjärn (Kindling Cracker-typ)",
+   "kluster": "ved",
+   "object": "veden + hammare/klubba (ägd); huggkubben",
+   "listing_ids": [
+    "601099583674464",
+    "601099610405543"
+   ],
+   "listing_count": 2,
+   "alternate_listing_count": 11,
+   "alt_listings_found": 10,
+   "alt_listings_checked": 33,
+   "alt_listings": [
+    {
+     "goods_id": "601099792195367",
+     "title": "Cast Steel Manual Log Splitter, Heavy Duty Double-blade Wood Firewood Splitter, Metal Fire Pit Ring Stand, no electricity or batteries needed, for home use",
+     "snippet_price": null,
+     "snippet_rating": null,
+     "fetched": null,
+     "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+     "goods_id": "601099555665183",
+     "title": "10x14.5in Kindling Splitter Solid Cast Log Splitter for Wood, 9lbs Heavy Duty with Half-Ring, Manual Firewood Cracker Splitting Tool for Outdoor Camping",
+     "snippet_price": null,
+     "snippet_rating": null,
+     "fetched": null,
+     "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+     "goods_id": "601099811562065",
+     "title": "1pc Heavy Duty Cast Iron Log Splitter, 18lbs, Firewood Splitter with Axe-style Blade, Weld-free Painted, Firewood Rack Stand for Outdoor Use",
+     "snippet_price": null,
+     "snippet_rating": null,
+     "fetched": null,
+     "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+     "goods_id": "601099733399693",
+     "title": "Heavy Duty Iron Manual Log Splitter Single Pack, Cast Iron Wood Splitting Stand for Camping, Fireplace, Fire Pits, Indoor Outdoor Use",
+     "snippet_price": null,
+     "snippet_rating": null,
+     "fetched": null,
+     "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+     "goods_id": "601099600046272",
+     "title": "Wood Splitter 6.5 inch Firewood Splitter Log Splitter, Sharpened Alloy Steel Opening, Iron Made Solid Base, 8.7 pound weight, Heavy Duty Cast Iron, Black",
+     "snippet_price": null,
+     "snippet_rating": null,
+     "fetched": null,
+     "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+     "goods_id": "601099572734123",
+     "title": "Log Splitter Axe Wood Splitter with Cast Steel Wedge, Kindling Cracker, Log Splitters for Firewood, Heavy Duty Maul Splitting Wedge Stand for Wood Cutter, 13lbs",
+     "snippet_price": null,
+     "snippet_rating": null,
+     "fetched": null,
+     "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+     "goods_id": "601099513384307",
+     "title": "Firewood Kindling Splitter Cast Iron Heavy Duty Manual Log Splitter, Portable Wood Splitting Wedge, Firewood Log Kindling Cracker Tool for Home Camping Picnic Outdoor",
+     "snippet_price": null,
+     "snippet_rating": null,
+     "fetched": null,
+     "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+     "goods_id": "601099520275736",
+     "title": "1pc Firewood Kindling Splitter For Wood Cast Iron Wood Splitter Hand Cutter Kindling Racker Manual Log Splitter Wedge Firewood Cutter, Splits Firewood Safely for Campsite Home",
+     "snippet_price": null,
+     "snippet_rating": null,
+     "fetched": null,
+     "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+     "goods_id": "601099629002416",
+     "title": "Firewood Kindling Splitter 9x17 XL Wood Splitter, Unique V-shaped Finger Safety Blade, Manual Log Splitter for Wood Splitting, Heavy Duty Strong Steel Structure Stability",
+     "snippet_price": null,
+     "snippet_rating": null,
+     "fetched": null,
+     "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+     "goods_id": "601099519706360",
+     "title": "Firewood Kindling Splitter, Power Log Splitter, Heavy Duty Manual Wood Splitter, Kindling Cracker, Manganese Steel Splitting Wedge for Home Camping",
+     "snippet_price": null,
+     "snippet_rating": null,
+     "fetched": null,
+     "listing_status": "BLOCKED_SOURCE"
+    }
+   ],
+   "tier": "NA",
+   "concept_status": "ALTERNATIVE_LISTING_REQUIRED",
+   "status_reason": "V2.2: pris 599 (inte 499), landad 170–199 → 3,0–3,5×; köp 3–5 kg-versionen; setrimmer.se säljer samma form 288/365 kr i lager — spela mot ankaret Kindling Cracker 1 249, aldrig mot 288. Material BLOCKED_SOURCE på alla 25 listningar utom packshoten; prioritera 601099702553211 (handskar → hand i bild), 601099595396016 (GoPlus) och 601099561039096 (9 lbs halv-ring). Blir A när en video visar slaget och stickan inom 3 s.",
+   "gates": {
+    "object": "PASS",
+    "presence": "PASS",
+    "shelf": "PASS",
+    "variant": "PASS",
+    "hook": "PASS",
+    "audience": "PASS"
+   },
+   "shelf_verified": true,
+   "listings_fetched": 1,
+   "material_pass": 0,
+   "economics_pass": 1,
+   "best_listing_id": null,
+   "failure_is_structural": false,
+   "failure_is_listing_specific": true,
+   "verification_timestamp": "2026-09-04T07:24:40.287928Z",
+   "hook": "Klyver du tändved med yxa?",
+   "structure_match": 68
   },
   {
    "concept_id": "vedstallsoverdrag-bara-overdrag-48-ft-spannen",
@@ -141,9 +258,9 @@
      "listing_status": "BLOCKED_SOURCE"
     }
    ],
-   "tier": "NA",
-   "concept_status": "ALTERNATIVE_LISTING_REQUIRED",
-   "status_reason": "gate 4 PASS på heron (överdraget på ett vedställ, röd text i nederkanten beskärbar), video okänd; gate 5 FAIL på US-pris för 8 ft-varianten (34,47 USD → landad 360–422 → 2,4× kräver 864–1 013 kr mot ankare 549). 4 ft-priset okänt. Blir A om 4 ft-varianten kostar ≤ ~110 kr på Temu SE.",
+   "tier": "B",
+   "concept_status": "FAIL",
+   "status_reason": "V2.2 fas 1 (v22/fas1/vedstallsoverdrag.md): fyra prisobservationer 24,22 / 29,71 / 29,99 / 34,47 USD — billigaste ger landad 253–296 → 2,4× kräver 607–711 kr; vidaXL.se säljer exakt samma form för 293 kr i lager, under DNA:ns 300-kronorsgolv. Inget svenskt pris klarar 2,4×, 300 kr och hyllan samtidigt. Materialet (hero på fullt vedställ) var aldrig problemet.",
    "gates": {
     "object": "PASS",
     "presence": "PASS",
@@ -157,8 +274,8 @@
    "material_pass": 1,
    "economics_pass": 0,
    "best_listing_id": null,
-   "failure_is_structural": false,
-   "failure_is_listing_specific": true,
+   "failure_is_structural": true,
+   "failure_is_listing_specific": false,
    "verification_timestamp": "2026-09-04T07:24:24.608279Z",
    "hook": "Blåser presenningen av veden igen?",
    "structure_match": 78
@@ -292,9 +409,9 @@
      "listing_status": "BLOCKED_SOURCE"
     }
    ],
-   "tier": "NA",
-   "concept_status": "PASS",
-   "status_reason": "minst en listning klarar material + ekonomi (alternativ listning)",
+   "tier": "B",
+   "concept_status": "FAIL",
+   "status_reason": "V2.2 fas 1 (v22/fas1/lockskydd-spabad.md): Fyndiq säljer identisk oxford cover cap 218×218×30 cm för 343–389 kr, Hemson 499, Amazon.se 634 — identiskt billigt alternativ under vårt pris; ankaret 1 290–1 495 räddar inte det. Ekonomin var grön (19,39 USD → 2,5–3,0×) och alternativ listning 601099816288753 hade en användbar hero — men hyllan (marketplace-golvet) fäller konceptet, inte listningen. Lärdom: h4.json noterade 499–785 på PriceRunner i fritext efter ordet 'dock' — ett tal som fäller får aldrig stå i en kommentar.",
    "gates": {
     "object": "PASS",
     "presence": "PASS",
@@ -308,128 +425,11 @@
    "material_pass": 0,
    "economics_pass": 1,
    "best_listing_id": "601099816288753",
-   "failure_is_structural": false,
+   "failure_is_structural": true,
    "failure_is_listing_specific": false,
    "verification_timestamp": "2026-09-04T07:23:53.220239Z",
    "hook": "Ligger löven på ditt spalock?",
    "structure_match": 78
-  },
-  {
-   "concept_id": "tandvedsklyv-i-gjutjarn-kindling-cracker-typ",
-   "name": "Tändvedsklyv i gjutjärn (Kindling Cracker-typ)",
-   "kluster": "ved",
-   "object": "veden + hammare/klubba (ägd); huggkubben",
-   "listing_ids": [
-    "601099583674464",
-    "601099610405543"
-   ],
-   "listing_count": 2,
-   "alternate_listing_count": 11,
-   "alt_listings_found": 10,
-   "alt_listings_checked": 33,
-   "alt_listings": [
-    {
-     "goods_id": "601099792195367",
-     "title": "Cast Steel Manual Log Splitter, Heavy Duty Double-blade Wood Firewood Splitter, Metal Fire Pit Ring Stand, no electricity or batteries needed, for home use",
-     "snippet_price": null,
-     "snippet_rating": null,
-     "fetched": null,
-     "listing_status": "BLOCKED_SOURCE"
-    },
-    {
-     "goods_id": "601099555665183",
-     "title": "10x14.5in Kindling Splitter Solid Cast Log Splitter for Wood, 9lbs Heavy Duty with Half-Ring, Manual Firewood Cracker Splitting Tool for Outdoor Camping",
-     "snippet_price": null,
-     "snippet_rating": null,
-     "fetched": null,
-     "listing_status": "BLOCKED_SOURCE"
-    },
-    {
-     "goods_id": "601099811562065",
-     "title": "1pc Heavy Duty Cast Iron Log Splitter, 18lbs, Firewood Splitter with Axe-style Blade, Weld-free Painted, Firewood Rack Stand for Outdoor Use",
-     "snippet_price": null,
-     "snippet_rating": null,
-     "fetched": null,
-     "listing_status": "BLOCKED_SOURCE"
-    },
-    {
-     "goods_id": "601099733399693",
-     "title": "Heavy Duty Iron Manual Log Splitter Single Pack, Cast Iron Wood Splitting Stand for Camping, Fireplace, Fire Pits, Indoor Outdoor Use",
-     "snippet_price": null,
-     "snippet_rating": null,
-     "fetched": null,
-     "listing_status": "BLOCKED_SOURCE"
-    },
-    {
-     "goods_id": "601099600046272",
-     "title": "Wood Splitter 6.5 inch Firewood Splitter Log Splitter, Sharpened Alloy Steel Opening, Iron Made Solid Base, 8.7 pound weight, Heavy Duty Cast Iron, Black",
-     "snippet_price": null,
-     "snippet_rating": null,
-     "fetched": null,
-     "listing_status": "BLOCKED_SOURCE"
-    },
-    {
-     "goods_id": "601099572734123",
-     "title": "Log Splitter Axe Wood Splitter with Cast Steel Wedge, Kindling Cracker, Log Splitters for Firewood, Heavy Duty Maul Splitting Wedge Stand for Wood Cutter, 13lbs",
-     "snippet_price": null,
-     "snippet_rating": null,
-     "fetched": null,
-     "listing_status": "BLOCKED_SOURCE"
-    },
-    {
-     "goods_id": "601099513384307",
-     "title": "Firewood Kindling Splitter Cast Iron Heavy Duty Manual Log Splitter, Portable Wood Splitting Wedge, Firewood Log Kindling Cracker Tool for Home Camping Picnic Outdoor",
-     "snippet_price": null,
-     "snippet_rating": null,
-     "fetched": null,
-     "listing_status": "BLOCKED_SOURCE"
-    },
-    {
-     "goods_id": "601099520275736",
-     "title": "1pc Firewood Kindling Splitter For Wood Cast Iron Wood Splitter Hand Cutter Kindling Racker Manual Log Splitter Wedge Firewood Cutter, Splits Firewood Safely for Campsite Home",
-     "snippet_price": null,
-     "snippet_rating": null,
-     "fetched": null,
-     "listing_status": "BLOCKED_SOURCE"
-    },
-    {
-     "goods_id": "601099629002416",
-     "title": "Firewood Kindling Splitter 9x17 XL Wood Splitter, Unique V-shaped Finger Safety Blade, Manual Log Splitter for Wood Splitting, Heavy Duty Strong Steel Structure Stability",
-     "snippet_price": null,
-     "snippet_rating": null,
-     "fetched": null,
-     "listing_status": "BLOCKED_SOURCE"
-    },
-    {
-     "goods_id": "601099519706360",
-     "title": "Firewood Kindling Splitter, Power Log Splitter, Heavy Duty Manual Wood Splitter, Kindling Cracker, Manganese Steel Splitting Wedge for Home Camping",
-     "snippet_price": null,
-     "snippet_rating": null,
-     "fetched": null,
-     "listing_status": "BLOCKED_SOURCE"
-    }
-   ],
-   "tier": "NA",
-   "concept_status": "ALTERNATIVE_LISTING_REQUIRED",
-   "status_reason": "gate 5 PASS på US-pris (16,25 USD → landad 170–200 → 3,0× vid 599; frakt på gjutjärn kan äta det); gate 4 FAIL på det som syns: textfri packshot utan ved, klubba eller hand, ingen video på US-sidan. Blir A om en video visar slaget och stickan inom 3 s.",
-   "gates": {
-    "object": "PASS",
-    "presence": "PASS",
-    "shelf": "PASS",
-    "variant": "PASS",
-    "hook": "PASS",
-    "audience": "PASS"
-   },
-   "shelf_verified": true,
-   "listings_fetched": 1,
-   "material_pass": 0,
-   "economics_pass": 1,
-   "best_listing_id": null,
-   "failure_is_structural": false,
-   "failure_is_listing_specific": true,
-   "verification_timestamp": "2026-09-04T07:24:40.287928Z",
-   "hook": "Klyver du tändved med yxa?",
-   "structure_match": 68
   },
   {
    "concept_id": "kikarsele-brostvaska-med-kikarhallare-och-regnsk",

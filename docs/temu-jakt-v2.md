@@ -1,5 +1,8 @@
 # Produktjakt V2 — fingeravtrycket i drift (2026-09-04)
 
+> **Beslutsgrund: `docs/temu-jakt-slutrapport.md`** (konsoliderad slutrapport 2026-09-04
+> 11:00 UTC, båda passen sammanvägda). Den här filen är V2/V2.1-passets arbetsrapport.
+
 Uppföljning till `docs/temu-vinnar-dna.md`. Den här filen gör ingen ny analys av
 vinnarna — den **kör** fingeravtrycket (avsnitt 12 där) som en jakt: ägarjakt →
 objektjakt → materialjakt, åtta gater i ordning, ett dataset med varje kandidat
@@ -38,16 +41,10 @@ var fjärde minut) går i bakgrunden för resten av A/B-listan.
 | 7 HOOK | ✅ | — |
 | 8 PUBLIK | ✅ | — |
 
-**Läget efter V2.1 (avsnittet nedan), uppdaterat 09:40 UTC:** två koncept har
-en kommersiellt användbar listning. **Utekattkojan** (hero: riktig katt i kojan i
-höstlöv; 10,93 USD → 4,5–5,3× vid 599; Supercat 1 799 som ankare) — kvar:
-publikfrågan (köparen skev mot kvinna). **Spa-lockskyddet** via alternativ
-listning 601099816288753 (24,58 USD, ★4,9; hero = textfri rendering på ett
-spabad; 2,7–3,1× vid 809) — kvar: bara hero-material (unboxing-video) och sex
-storlekar. **Kikarselen är struken:** fem listningar av formen kostar 26,59–68,59
-USD, alla över vad ankaret bär — felet sitter i formen (V2.1-regel A). Tre
-koncept står på `ALTERNATIVE_LISTING_REQUIRED` med 24 alternativ i hämtkön:
-tändvedsklyv, vedställsöverdrag, spa-räcke.
+**Läget 10:45 UTC:** se avsnittet **V2.2 — slutläget** nedan. En produkt är
+TEST NOW (utekattkojan, 599 kr, en SKU), tre är TEST IF VERIFIED i väntan på
+leverantörsmaterialet, och lockskyddet/vedställsöverdraget/kikarselen är fällda
+strukturellt — marketplace-golvet, inte kedjan, visade sig vara den verkliga hyllan.
 
 Det som **inte** är UNKNOWN är själva jakten: 96 ägda objekt kartlagda, 519
 listningar hittade, 374 avslagna med orsak, och en hylla som är verifierad på
@@ -55,8 +52,50 @@ riktigt för de koncept som överlevde.
 
 ---
 
+<!-- V22:START -->
+## V2.2 — slutläget (ett parallellt pass, 09:05–10:25 UTC)
+
+Ett andra pass körde **V2.2** på samma gren: fas 1 färdigställde de fyra
+överlevarna, fas 2 jagade **523 nya listningar i nio kluster** (0 dubbletter mot de
+518 kända) med datavägar som fungerar när Temu är blockerat (Seznam-utdrag,
+Temus serverrenderade söksidor). Slutrapporten är facit för konceptdomarna:
+`jakt/v22/RESULTAT.md`. Datasetet och trattarna nedan är avstämda mot den.
+
+| Dom | Produkt | Temu | Pris | Varför |
+|---|---|---|---|---|
+| **TEST NOW** | Isolerad utekattkoja | 601101118338671 | 599 kr | Alla nio gater PASS, materialet sett (riktig katt i kojan i höstlöv). Publikinvändningen faller: utekatt = äldre + landsbygd + småhus (Agria/Hedvig 2025); klistermärkena vann på 55+. **Sälj EN SKU: störst, svart.** Risk: look-alikes 157–504 kr och tre annonsörer igång sedan 18–29 aug — trähusankaret 1 017–1 799 ska stå i creativen |
+| TEST IF VERIFIED | Taköverdrag husvagn/husbil (5–12 m) | 601101311828193 | 799 kr | Motorhöljets struktur punkt för punkt; Campmaster takskydd 1 495 = 1,87×; ingen kedja i tak-only-formen; 25 USD → 2,6–3,1×; längd i meter = ägarkänd. **Materialet osett** (BLOCKED_SOURCE). 283 840 husvagnar, 116 344 avställda |
+| TEST IF VERIFIED | Staketstolps-reparationsbygel | 601103866118857 | 499 / 799 kr (2/4-set) | Stolpen ruttnad i marklinjen, septemberstormen lägger sektionen på sned; Bauhaus: 232 stolptillbehör, noll reparationsbyglar; 16 USD → 2,6–3,0×; flerköp inbyggt. Materialet osett; Biltema i butik kvar |
+| TEST IF VERIFIED | Tändvedsklyv gjutjärn | 601099583674464 m.fl. | 599 kr | 3,0–3,5×, köp 3–5 kg-versionen; setrimmer 288/365 i lager — spela mot Kindling Cracker 1 249. Materialet osett på alla 25 listningar utom packshoten |
+
+**Fällda högpoängare** — sex av sju på samma sak: *svensk handel säljer redan samma
+form under vårt pris*. Lockskydd spabad (Fyndiq 343–389, Hemson 499), vedställsöverdrag
+(vidaXL 293), mossräfsa (Jula 199 i 75 varuhus), kikarsele (formens pris), bildörrsteg
+(Taktältarna 289), hängrännerensare (PriceRunner 270), åkgräsklipparöverdrag (742
+recensioner — men klipparen står i garaget, som kontots gräsklippartäcke).
+
+**Near-misses att bevaka:** vinterhuv hönsgård (DNA 82 — men 35–70 000 hushåll,
+under publikgolvet), överdrag till hydraulisk vedklyv (SE-pris 437–494 = för dyrt),
+stödhjul till grinden (pris olöst), solpanel till åtelkameran ($18–25 gör den till A),
+fruktplockare (backlog augusti 2027), solcellsventilation båt (kranskyddsfällan),
+frontskydd husvagn (konceptet lever, listningen saknas).
+
+**Vad V2.2 lärde:** marketplace-golvet (Fyndiq, vidaXL, setrimmer, Taktältarna,
+PriceRunner) är den verkliga hyllan — sök alltid det *billigaste* svenska priset först;
+ett tal som fäller får aldrig stå i en kommentar (h4.json hade Fyndiq-nivån i fritext
+efter ordet "dock"); huset är bygghandelns hemmaplan (10 av 13 hus-koncept föll,
+noll verifierade PASS) — kontots vinnare är tillbehör till **maskiner, fordon och
+kärl som står stilla utomhus**; tummen är variantfällan; Temu-popularitet
+diskriminerar inte; PPE är egen negativ rymd; och **kontots sätesöverdrag ligger på
+PriceRunner för 485 kr mot vårt 649** — en `/cs`-fråga.
+
+**Nästa steg (pågår i det här passet):** gate 5-materialet på de tre TEST IF
+VERIFIED-listningarna hämtas i skurar (Temu ger ~8 anrop per timme, `jakt/prio.txt`)
+och bedöms; TEST IF VERIFIED blir TEST NOW eller FAIL.
+<!-- V22:END -->
+
 <!-- V21:START -->
-## V2.1 — koncept skilt från listning (patch 2026-09-04 09:37 UTC)
+## V2.1 — koncept skilt från listning (patch 2026-09-04 10:41 UTC)
 
 Axels patch V2.1 är i drift: hyllan verifieras **före** Temu-jakten, PRODUKTKONCEPT och LISTNING är två entiteter, statusmodellen är `PASS / FAIL / UNKNOWN / BLOCKED_SOURCE / PENDING_VERIFICATION / ALTERNATIVE_LISTING_REQUIRED`, och ett tekniskt fel (blockerad källa) blir aldrig ett kommersiellt. Hela pipelinen: `jakt/PIPELINE-V2.1.md`. Koncepttabellen: `jakt/koncept.json`.
 
@@ -69,35 +108,33 @@ objekt PASS                                                                  291
 presens PASS                                                                 255
 hyllkvalificerade (verifierad PASS)                                           26
 hylla PENDING_VERIFICATION                                                    83
-strukturkvalificerade (variant/hook/publik ej FAIL, ej strukturellt fällda)   25
-slutliga konceptöverlevare (status ≠ FAIL)                                    25
+strukturkvalificerade (variant/hook/publik ej FAIL, ej strukturellt fällda)   23
+slutliga konceptöverlevare (status ≠ FAIL)                                    23
 ```
 
-Statusfördelning bland koncepten: FAIL 361, PENDING_VERIFICATION 14, BLOCKED_SOURCE 6, ALTERNATIVE_LISTING_REQUIRED 3, PASS 2.
+Statusfördelning bland koncepten: FAIL 363, PENDING_VERIFICATION 14, BLOCKED_SOURCE 6, ALTERNATIVE_LISTING_REQUIRED 2, PASS 1.
 
 ### Listnings-tratten
 
 ```
-kandidatkoncept (≠ FAIL)                                  25
-listningar i dem                                          61
-listningar hämtade (Temu-data)                             5
-material PASS                                              3
-ekonomi PASS                                               4
-bästa listning vald (material + ekonomi PASS)              2
-koncept ALTERNATIVE_LISTING_REQUIRED                       3
+kandidatkoncept (≠ FAIL)                                  23
+listningar i dem                                          54
+listningar hämtade (Temu-data)                             3
+material PASS                                              2
+ekonomi PASS                                               3
+bästa listning vald (material + ekonomi PASS)              1
+koncept ALTERNATIVE_LISTING_REQUIRED                       2
 koncept BLOCKED_SOURCE                                     6
 ```
 
-Målet är ett starkt koncept parat med en användbar listning. Hittills har **2** koncept en sådan listning.
+Målet är ett starkt koncept parat med en användbar listning. Hittills har **1** koncept en sådan listning.
 
 ### Konceptöverlevare (status ≠ FAIL)
 
 | Tier | Koncept | Status | Listn. | Alt. | Hämtade | Hylla | Vad som fattas |
 |---|---|---|---|---|---|---|---|
 | A | Isolerad utekattkoja i Oxford-tyg, vinter (`isolerad-utekattkoja-i-oxford-`) | `PASS` | 6 | 0 | 1 | PASS | — |
-| B (närmast A) | Vedställsöverdrag (bara överdrag, 4–8 ft, spännen) (`vedstallsoverdrag-bara-overdra`) | `ALTERNATIVE_LISTING_REQUIRED` | 3 | 7 | 1 | PASS | annan listning: 7 funna, 0 hämtade — gate 4 PASS på heron (överdraget på ett vedställ, röd text i nederkanten beskärbar), video |
-| B (närmast A) | Lockskydd/skyddsöverdrag (cover cap) för fast spabad, över d (`lockskydd-skyddsoverdrag-cover`) | `PASS` | 4 | 10 | 1 | PASS | — |
-| B (närmast A) | Tändvedsklyv i gjutjärn (Kindling Cracker-typ) (`tandvedsklyv-i-gjutjarn-kindli`) | `ALTERNATIVE_LISTING_REQUIRED` | 2 | 10 | 1 | PASS | annan listning: 10 funna, 0 hämtade — gate 5 PASS på US-pris (16,25 USD → landad 170–200 → 3,0× vid 599; frakt på gjutjärn kan ä |
+| B (närmast A) | Tändvedsklyv i gjutjärn (Kindling Cracker-typ) (`tandvedsklyv-i-gjutjarn-kindli`) | `ALTERNATIVE_LISTING_REQUIRED` | 2 | 10 | 1 | PASS | annan listning: 10 funna, 0 hämtade — V2.2: pris 599 (inte 499), landad 170–199 → 3,0–3,5×; köp 3–5 kg-versionen; setrimmer.se s |
 | B | Jaktparaply för torn/pass, 58", camo, spänns runt stam (`jaktparaply-for-torn-pass-58-c`) | `BLOCKED_SOURCE` | 1 | 0 | 0 | PASS | Temu-hämtning (material + pris) |
 | B | Hängrännerensar-sats till lövblås (universal, teleskoprör 11 (`hangrannerensar-sats-till-lovb`) | `PENDING_VERIFICATION` | 2 | 0 | 0 | PASS | variant/SKU-lista, Temu-hämtning |
 | B | Skydd/vinteröverdrag för poolvärmepump (`skydd-vinteroverdrag-for-poolv`) | `PENDING_VERIFICATION` | 1 | 0 | 0 | PASS | variant/SKU-lista, publikstorlek, Temu-hämtning |
@@ -120,7 +157,7 @@ Målet är ett starkt koncept parat med en användbar listning. Hittills har **2
 | C | handskydd/vindskydd för styre (PVC), MC/scooter (`auto:mc-handskydd-vindskydd-fo`) | `PENDING_VERIFICATION` | 1 | 0 | 0 | PENDING_VERIFICATION | hylla verifierad, variant/SKU-lista, publikstorlek, Temu-hämtning |
 | C | kapell för promenadscooter/elrullstol (420D Oxford, reflex,  (`auto:mc-kapell-for-promenadsco`) | `PENDING_VERIFICATION` | 1 | 0 | 0 | PENDING_VERIFICATION | hylla verifierad, variant/SKU-lista, publikstorlek, Temu-hämtning |
 
-Koncept med `FAIL`: 361 — alla med orsak i `koncept.json` (`status_reason`, `failure_is_structural`). 141 av dem föll på en hylla som bara är läst ur sökutdrag/minne (`shelf_verified = false`) — det är nästa verifieringskö enligt den nya ordningen.
+Koncept med `FAIL`: 363 — alla med orsak i `koncept.json` (`status_reason`, `failure_is_structural`). 141 av dem föll på en hylla som bara är läst ur sökutdrag/minne (`shelf_verified = false`) — det är nästa verifieringskö enligt den nya ordningen.
 
 <!-- V21:END -->
 
