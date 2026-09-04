@@ -93,6 +93,8 @@ export function bedomKampanj(kampanj, { logg, idag, karta, fx }) {
   const budget = lasBelopp(kampanj.daily_budget);
   const spend3d = lasBelopp(kampanj.spend_3d);
   const spendTotal = lasBelopp(kampanj.spend_total);
+  // Livstids-ROAS: spärren mot att stänga av en kampanj som gått plus totalt.
+  const roasTotal = lasBelopp(kampanj.roas_total);
   const roas3d = lasBelopp(kampanj.roas_3d);
   const kop3d = lasBelopp(kampanj.kop_3d);
 
@@ -105,6 +107,7 @@ export function bedomKampanj(kampanj, { logg, idag, karta, fx }) {
     spendTotal,
     roas3d,
     kop3d,
+    roasTotal,
   };
 
   // Fryst på Axels order: rörs inte alls till och med frys_till-datumet.
@@ -170,6 +173,7 @@ export function bedomKampanj(kampanj, { logg, idag, karta, fx }) {
       spend3d,
       kop3d,
       spendTotal,
+      roasTotal,
       budget,
       dagarSedanAndring: dagarSedanAndring(logg, kampanj.id, idag),
       senasteAndringKod: senasteRadMedKod(logg, kampanj.id, ['SKALA', 'SANK', 'HALVERA'])?.kod ?? null,
@@ -302,6 +306,30 @@ export function planera(rader, { logg = [], idag = null } = {}) {
  */
 export const BRIEF_INTERVALL_DAGAR = 3;
 
+/**
+ * Är kampanjen avstängd just nu, enligt rondens eget minne?
+ *
+ * Den enda frågan som avgör om en produkt får briefer. Domen räcker inte:
+ * dagen EFTER en avstängning får kampanjen ofta en helt annan kod (VANTA_KADENS,
+ * FOR_LITE_DATA, LAT_VARA) eftersom budgeten just ändrats eller spenden dött —
+ * och då släppte den gamla domkoll-spärren igenom den. Det var precis så
+ * Medicinasken i Fickformat och Kasta & Fånga-settet fick 32 briefer och två
+ * nya Notion-hubbar den 2026-09-04, samma morgon som ronden stängde av dem.
+ *
+ * Logiken är enkel: senaste genomförda raden med STANG_AV eller ATERAKTIVERA
+ * vinner. Samma datum? Då vinner den som skrevs sist, för loggen är kronologisk.
+ */
+export function arAvstangd(logg, kampanjId) {
+  let senaste = null;
+  for (const rad of logg) {
+    if (rad.kampanj_id !== kampanjId) continue;
+    if (rad.genomford !== true) continue;
+    if (rad.kod !== 'STANG_AV' && rad.kod !== 'ATERAKTIVERA') continue;
+    if (senaste === null || String(rad.datum) >= String(senaste.datum)) senaste = rad;
+  }
+  return senaste !== null && senaste.kod === 'STANG_AV';
+}
+
 export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE' } = {}) {
   if (idag === null) return [];
   // Bara Sverige får briefer. Axels besked 2026-09-01: de norska annonserna ÄR
@@ -329,6 +357,10 @@ export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE' } = 
     // PAUSAD och fick ändå 9 briefer — redigerarna bygger material till en
     // kampanj som inte kör. Domen är sanningen om produkten lever.
     if (r.dom?.kod === 'STANG_AV' || r.dom?.kod === 'ATGARDSTRAPPAN') continue;
+    // ...och aldrig till en kampanj som ronden redan HAR stängt av, oavsett
+    // vilken kod dagens dom råkar landa på. Domen beskriver dagens siffror,
+    // loggen beskriver om kampanjen kör. Bara loggen kan svara på den frågan.
+    if (arAvstangd(logg, r.id)) continue;
     const egna = logg.filter((rad) => rad.kampanj_id === r.id && rad.genomford === true);
     const klarRader = egna.filter((rad) => KLAR.includes(rad.kod));
     const harBatch = klarRader.length > 0;
@@ -342,9 +374,13 @@ export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE' } = 
       : null;
 
     const senaste7 = egna.filter((rad) => inom7(rad.datum));
+    // "Pausat material" = enskilda annonser pausade medan kampanjen kör vidare
+    // (trappans förlängning). STANG_AV hörde ALDRIG hemma här: en avstängd
+    // kampanj ska inte ha ersättningsmaterial, den ska ha ro. Med koden kvar i
+    // listan gav varje avstängning ett "ersätt"-behov morgonen efter.
     // TRAPPA_STEG_* är historik från den gamla femdagarstrappan (avskaffad
     // 2026-09-01) och läses fortfarande — TRAPPA_FORLANGNING är dagens kod.
-    const pausat = senaste7.some((rad) => ['TRAPPA_FORLANGNING', 'TRAPPA_STEG_1', 'TRAPPA_STEG_2', 'TRAPPA_STEG_3', 'STANG_AV'].includes(rad.kod));
+    const pausat = senaste7.some((rad) => ['TRAPPA_FORLANGNING', 'TRAPPA_STEG_1', 'TRAPPA_STEG_2', 'TRAPPA_STEG_3'].includes(rad.kod));
     const skalningar = senaste7.filter((rad) => rad.kod === 'SKALA').length;
 
     if (harBatch) {
@@ -384,7 +420,7 @@ export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE' } = 
     }
 
     if (pausat) {
-      behov.push({ kampanj_id: r.id, namn: r.namn, typ: 'ersatt', orsak: 'material pausat senaste veckan — ersätt det som stängts av' });
+      behov.push({ kampanj_id: r.id, namn: r.namn, typ: 'ersatt', orsak: 'annonser pausades i trappan senaste veckan medan kampanjen kör vidare — ersätt materialet' });
     } else if (skalningar >= 2) {
       behov.push({ kampanj_id: r.id, namn: r.namn, typ: 'mata_vinnare', orsak: `skalats ${skalningar} gånger på en vecka — mata vinnaren med mer material innan tröttheten kommer` });
     }

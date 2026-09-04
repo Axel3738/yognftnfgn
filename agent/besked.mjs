@@ -37,6 +37,13 @@ export const RAKET_FAKTOR = 1.8;
 // Drift på golvet som går back så här många dygn i rad stängs av (Bäverpanelen, regel 3b).
 export const BACK_DAGAR_FOR_AVSTANGNING = 7;
 
+// Livstidsspärrens tak. En kampanj som tjänat pengar över hela sin livstid får
+// ligga kvar på golvet så här många back-dygn i rad — sen gäller trappan igen,
+// hur bra livstiden än ser ut. Axels invändning 2026-09-04: "så ska vi inte
+// tänka för då torskar vi allt till slut". Max exponering: 5 × 500 kr, och i
+// praktiken mindre, eftersom livstiden själv faller under break-even först.
+export const LIVSTIDS_MAX_BACKDAGAR = 5;
+
 // Zongränser i procent vinst av omsättningen (Bäverpanelen, regel 4).
 export const ZON_SANK_UNDER = 16;
 export const ZON_SKALA_OVER = 25;
@@ -209,6 +216,7 @@ function pct(n) {
  * @param {number|null} rad.spend3d       Spend senaste 3 dagarna
  * @param {number|null} rad.kop3d         Antal köp senaste 3 dagarna
  * @param {number|null} rad.spendTotal    Spend sedan start
+ * @param {number|null} rad.roasTotal     ROAS sedan start. Över break-even = stängs aldrig av
  * @param {number|null} rad.budget        Nuvarande dagsbudget
  * @param {number|null} rad.dagarSedanAndring  Från budgetloggen. null = aldrig ändrad av oss
  * @param {number|null} rad.backDagarIRad Antal dygn i rad under break-even
@@ -339,6 +347,34 @@ export function besked(rad) {
         return svar('VANTA_TROSKEL', 'Vänta — har inte fått chansen än',
           `${bas} Den har spenderat ${kr(rad.spendTotal)} av ${kr(TEST_TROSKEL_SEK)} sedan start. Rör ingenting förrän den passerat tröskeln.`,
           { zon: 'stop', vinstProcent: vinst });
+      }
+      // Livstidsspärren (Axels larm 2026-09-04, skärpt samma dag). Kranskydd
+      // Frost 420D hade 7 417 kr spend, 28 köp och livstids-ROAS 1,59 mot
+      // break-even 1,49 — plus 4,4 % — och stängdes ändå av på en tredagarsdipp
+      // till 1,35. En kampanj som tjänat pengar över hela sin livstid ska inte
+      // dö på ett tredagarsfönster; färska siffror revideras uppåt.
+      //
+      // MEN den får inte heller leva vidare på gamla meriter — Axel samma dag:
+      // "så ska vi inte tänka för då torskar vi allt till slut, men den fick ju
+      // inte gå ner på 500 kr spend?". Därför två bromsar, båda på riktig data:
+      //   1. Budgeten kapas direkt till golvet 500 kr. Inte 20 %, inte halvering.
+      //   2. Spärren håller högst LIVSTIDS_MAX_BACKDAGAR back-dygn i rad, och
+      //      bara så länge livstiden FORTFARANDE ligger över break-even. Varje
+      //      förlustdygn äter på livstidsmarginalen, så spärren tar slut av sig
+      //      själv — sen faller kampanjen igenom till trappan och stängs av.
+      const backLivstid = Number.isFinite(rad.backDagarIRad) ? rad.backDagarIRad : 0;
+      if (Number.isFinite(rad.roasTotal) && rad.roasTotal >= breakEven
+          && backLivstid < LIVSTIDS_MAX_BACKDAGAR) {
+        const livstid = `${bas} Men livstids-ROAS ${rad.roasTotal.toFixed(2).replace('.', ',')} ligger över break-even ${breakEven.toFixed(2).replace('.', ',')} — kampanjen har tjänat pengar totalt, så en tredagarsdipp stänger den inte i dag.`;
+        const kvar = LIVSTIDS_MAX_BACKDAGAR - backLivstid;
+        if (rad.budget > GOLV_SEK) {
+          return svar('SANK', 'Kapa till golvet — går plus över livstiden',
+            `${livstid} Kapa från ${kr(rad.budget)} till ${kr(GOLV_SEK)} per dag — hela vägen ner, inte 20 %. ${backLivstid} back-dygn i rad; efter ${LIVSTIDS_MAX_BACKDAGAR} stängs den av ändå, och faller livstids-ROAS under break-even stängs den av direkt.${gransText}`,
+            { zon: 'down', vinstProcent: vinst, nyBudget: GOLV_SEK, kraverGodkannande: true, naraGrans, livstidssparr: true });
+        }
+        return svar('RAKNA_BACKDAGAR', 'Ligg kvar på golvet — går plus över livstiden',
+          `${livstid} Ligger redan på ${kr(GOLV_SEK)}. ${backLivstid} back-dygn i rad — ${kvar} kvar innan den stängs av.`,
+          { zon: 'stop', vinstProcent: vinst, livstidssparr: true });
       }
       return svar('ATGARDSTRAPPAN', 'Stäng av — om den inte har potential',
         `${bas} Passerad ${kr(TEST_TROSKEL_SEK)} utan att gå plus. Läs annonserna: finns minst en annons med köp över break-even OCH en spendtjuv utan köp, pausa spendtjuven och ge kampanjen ETT dygn till. Saknas potentialen — eller är förlängningen redan använd — stängs hela kampanjen av i dag.${gransText}`,

@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { annonsbehov, annonskvot, bedomKampanj, breakEvenForPost, kontrolleraKonto, planera, rapport, rundkvot, TILLATET_KONTO } from '../rond.mjs';
+import { annonsbehov, annonskvot, arAvstangd, bedomKampanj, breakEvenForPost, kontrolleraKonto, planera, rapport, rundkvot, TILLATET_KONTO } from '../rond.mjs';
 
 const bas = () => ({
   hamtad: '2026-08-28T07:00:00Z',
@@ -309,8 +309,56 @@ test('annons-triggern flaggar pausat material och snabbskalade vinnare', () => {
   ];
   const behov = annonsbehov(rader, { logg, idag: '2026-08-29' });
   assert.equal(behov.length, 2);
-  assert.match(behov.find((b) => b.kampanj_id === 'a').orsak, /pausat/);
+  assert.match(behov.find((b) => b.kampanj_id === 'a').orsak, /pausades i trappan/);
   assert.match(behov.find((b) => b.kampanj_id === 'b').orsak, /skalats 2/);
+});
+
+test('en avstängd kampanj får aldrig briefer — inte heller morgonen efter', () => {
+  // Axels larm 2026-09-04: "den har börjat göra Notion-sidor för produkter
+  // som den har pausat". Medicinasken och Kasta & Fånga stängdes av på
+  // morgonen och fick 32 briefer och två nya hubbar samma körning.
+  const rader = [{
+    id: 'medicinasken', namn: 'Medicinasken i Fickformat | BE ROAS 1.60',
+    spendTotal: 2025, budget: 700,
+    // Dagen efter avstängningen landar domen på en helt annan kod än
+    // STANG_AV — budgeten ändrades nyss, så kadensspärren slår till.
+    dom: { kod: 'VANTA_KADENS', vinstProcent: -120 },
+  }];
+  const logg = [
+    { kampanj_id: 'medicinasken', kod: 'STANG_AV', genomford: true, datum: '2026-09-04' },
+  ];
+  assert.equal(annonsbehov(rader, { logg, idag: '2026-09-05' }).length, 0);
+  assert.equal(arAvstangd(logg, 'medicinasken'), true);
+
+  // Startas den om igen lever den, och vanliga regler gäller.
+  const igang = [...logg,
+    { kampanj_id: 'medicinasken', kod: 'ATERAKTIVERA', genomford: true, datum: '2026-09-05' }];
+  assert.equal(arAvstangd(igang, 'medicinasken'), false);
+
+  // Samma datum, återstart skriven sist i loggen: kampanjen kör.
+  const sammaDag = [
+    { kampanj_id: 'x', kod: 'STANG_AV', genomford: true, datum: '2026-09-04' },
+    { kampanj_id: 'x', kod: 'ATERAKTIVERA', genomford: true, datum: '2026-09-04' },
+  ];
+  assert.equal(arAvstangd(sammaDag, 'x'), false);
+
+  // En STANG_AV som aldrig genomfördes räknas inte.
+  const ejGjord = [{ kampanj_id: 'y', kod: 'STANG_AV', genomford: false, datum: '2026-09-04' }];
+  assert.equal(arAvstangd(ejGjord, 'y'), false);
+});
+
+test('avstängning ger inget "ersätt"-behov — bara trappans förlängning gör det', () => {
+  const rader = [
+    { id: 'stangd', namn: 'Död | BE ROAS 1.50', spendTotal: 3000, dom: { kod: 'LAT_VARA' } },
+    { id: 'forlangd', namn: 'Förlängd | BE ROAS 1.50', spendTotal: 3000, dom: { kod: 'LAT_VARA' } },
+  ];
+  const logg = [
+    { kampanj_id: 'stangd', kod: 'STANG_AV', genomford: true, datum: '2026-09-03' },
+    { kampanj_id: 'forlangd', kod: 'TRAPPA_FORLANGNING', genomford: true, datum: '2026-09-03' },
+  ];
+  const behov = annonsbehov(rader, { logg, idag: '2026-09-04' });
+  assert.deepEqual(behov.map((b) => b.kampanj_id), ['forlangd']);
+  assert.equal(behov[0].typ, 'ersatt');
 });
 
 test('annons-triggern glömmer det som är äldre än en vecka', () => {

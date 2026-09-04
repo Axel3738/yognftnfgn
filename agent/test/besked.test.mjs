@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {
   avstandTillGrans, besked, breakEvenRoas, kostnadSek, lasBelopp, lasBreakEven,
   nyBudget, vinstProcent,
-  GOLV_SEK, TAK_SEK,
+  GOLV_SEK, TAK_SEK, LIVSTIDS_MAX_BACKDAGAR,
 } from '../besked.mjs';
 
 // En frisk kampanj att utgå från: passerar alla grindar, ingen färsk ändring.
@@ -401,4 +401,46 @@ test('kadensspärren stoppar aldrig avstängningen av en testprodukt som går ba
   // Men en driftprodukt som ska SÄNKAS väntar fortfarande på kadensen.
   const drift = besked(rad({ lage: 'drift', roas3d: 1.2, spendTotal: 9000, budget: 2000, dagarSedanAndring: 1 }));
   assert.equal(drift.kod, 'VANTA_KADENS');
+});
+
+
+test('livstidsspärren kapar till golvet i stället för att stänga av', () => {
+  // Axels larm 2026-09-04: Kranskydd Frost 420D hade 7 417 kr spend, 28 köp
+  // och livstids-ROAS 1,59 mot break-even 1,49 — och stängdes av på 1,35.
+  const dom = besked(rad({
+    namn: 'Kranskydd Frost 420D | BE ROAS 1.49',
+    lage: 'test', roas3d: 1.35, spend3d: 2892, kop3d: 10,
+    spendTotal: 7416, roasTotal: 1.59, budget: 1000, backDagarIRad: 2,
+  }));
+  assert.equal(dom.kod, 'SANK');
+  // Hela vägen ner till golvet — inte 20 % (800 kr). Axels invändning samma dag.
+  assert.equal(dom.nyBudget, GOLV_SEK);
+  assert.match(dom.motivering, /livstids-ROAS/);
+  assert.equal(dom.livstidssparr, true);
+
+  // Går den back även över livstiden gäller trappan som förut.
+  const back = besked(rad({
+    namn: 'Kranskydd Frost 420D | BE ROAS 1.49',
+    lage: 'test', roas3d: 1.35, spend3d: 2892, kop3d: 10,
+    spendTotal: 7416, roasTotal: 1.10, budget: 1000, backDagarIRad: 2,
+  }));
+  assert.equal(back.kod, 'ATGARDSTRAPPAN');
+});
+
+test('livstidsspärren tar slut — den räddar aldrig samma kampanj i evighet', () => {
+  const bas = {
+    namn: 'Kranskydd Frost 420D | BE ROAS 1.49',
+    lage: 'test', roas3d: 1.35, spend3d: 900, kop3d: 5,
+    spendTotal: 9000, roasTotal: 1.59, budget: GOLV_SEK,
+  };
+  // Redan på golvet, inom taket: ligg kvar och räkna.
+  const kvar = besked(rad({ ...bas, backDagarIRad: LIVSTIDS_MAX_BACKDAGAR - 1 }));
+  assert.equal(kvar.kod, 'RAKNA_BACKDAGAR');
+  assert.equal(kvar.livstidssparr, true);
+  assert.match(kvar.motivering, /1 kvar innan den stängs av/);
+
+  // Taket nått: spärren släpper, trappan tar över trots plus över livstiden.
+  const slut = besked(rad({ ...bas, backDagarIRad: LIVSTIDS_MAX_BACKDAGAR }));
+  assert.equal(slut.kod, 'ATGARDSTRAPPAN');
+  assert.equal(slut.livstidssparr, undefined);
 });

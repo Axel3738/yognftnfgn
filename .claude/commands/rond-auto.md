@@ -158,6 +158,13 @@ För varje åtgärd i `plan.atgarder`:
 2. Verifiera: läs tillbaka, `effective_status` ska vara PAUSED.
 3. Logga med kod `STANG_AV`, `genomford: true`.
 
+**Startas en kampanj om igen** — av Axel, eller för att en avstängning visade
+sig vara fel — ska det loggas med kod `ATERAKTIVERA`, `genomford: true`. Utan
+den raden tror ronden att kampanjen fortfarande är död och ger den aldrig mer
+briefer (`arAvstangd` i `agent/rond.mjs` läser exakt de två koderna). Använd
+`ads_activate_entity` — `ads_update_entity` med `{"status":"ACTIVE"}` svarar
+`status_forced_to_paused: true` och ändrar ingenting.
+
 **`typ: "trappa"`** — produkten har passerat 1 500 kr och går back.
 
 **Axels beslut 2026-09-01 — den gamla femdagarstrappan är avskaffad.** Den lät
@@ -166,6 +173,18 @@ bara två utgångar, och båda avgörs samma morgon:
 
 Under 1 500 kr total spend rörs kampanjen inte alls — den domen heter
 `VANTA_TROSKEL` och den ligger kvar oförändrad. Trappan börjar först efter det.
+
+**Livstidsspärren går FÖRE trappan (Axels larm 2026-09-04).** Ligger kampanjens
+**livstids-ROAS** över break-even har den tjänat pengar totalt, och då stänger
+en tredagarsdipp inte av den. Motorn ger då `SANK` med `nyBudget: 500` i stället
+för `trappa` — kapa budgeten hela vägen till golvet 500 kr och läs om i morgon.
+Spärren är inte ett frikort: den håller högst **fem back-dygn i rad**, och bara
+så länge livstiden fortfarande ligger över break-even. Varje förlustdygn äter på
+livstidsmarginalen, så spärren tar slut av sig själv — sen står det `trappa` i
+planen igen och kampanjen stängs av. Du räknar aldrig det här själv; det står
+färdigt i `plan.atgarder`. *(Kranskydd Frost 420D stängdes av 2026-09-03 med
+7 417 kr spend, 28 köp och livstids-ROAS 1,59 mot break-even 1,49 — plus 4,4 % —
+på en tredagarsdipp till 1,35. Startades om 2026-09-04.)*
 
 Hämta kampanjens annonser (`level: "ad"`, `date_preset: "last_3d"`, filtrering
 på `campaign.id`, fälten `amount_spent`, `omni_purchase`, `purchase_roas`,
@@ -243,16 +262,28 @@ lät dem äta tre av sex briefplatser på tre morgnar.)*
 räknade för sex produkter; kontot hade 17 aktiva kampanjer den 1 september
 och Soptunneklistermärkena stod 12 dagar utan runda.)*
 
-⚠️ **LÄS KAMPANJENS STATUS INNAN DU SKRIVER EN ENDA BRIEF.** Hämta kampanjen
-med `ads_get_ad_entities` (`effective_status`) direkt före batchen. Är den
-något annat än `ACTIVE` — hoppa över produkten, logga INGEN `*_KLAR`-rad, och
-skriv en rad i leveransen om att den hoppades över för att den är pausad.
-`kontodata.json` hämtades i steg 1 och kan vara timmar gammal; Axel eller
-trappan kan ha pausat kampanjen sedan dess. `annonsbehov` filtrerar redan bort
-domarna `STANG_AV` och `ATGARDSTRAPPAN`, men den ser inte en paus som skett
-utanför ronden. *(Axels larm 2026-09-02: Kranskydd Frost 420D var pausad och
-fick ändå 9 briefer — redigerarna byggde material till en kampanj som inte
-kör.)*
+🛑 **STOPP — LÄS KAMPANJENS STATUS INNAN DU SKRIVER EN ENDA BRIEF.** Hämta
+kampanjen med `ads_get_ad_entities` (`effective_status`) direkt före batchen.
+Är den något annat än `ACTIVE`: hoppa över produkten, skapa INGEN Notion-hub,
+skriv INGA briefer, logga INGEN `*_KLAR`-rad, och skriv en rad i leveransen om
+att den hoppades över för att den är pausad.
+
+**Att ronden själv pausade kampanjen samma morgon är inget undantag — det är
+det vanligaste fallet.** En kampanj du stängde av i steg 3 får inte briefer i
+steg 4b. Aldrig. Att bygga material till en kampanj som inte kör är slöseri med
+redigerarnas tid, och det ser i Notion ut som arbete som betyder något.
+
+`annonsbehov` filtrerar numera bort tre saker: domarna `STANG_AV` och
+`ATGARDSTRAPPAN`, och varje kampanj vars senaste genomförda livscykelrad i
+budgetloggen är `STANG_AV` (`arAvstangd` i `agent/rond.mjs`). Dyker en pausad
+produkt ändå upp i behovslistan är loggen fel — fixa loggen, bygg inte batchen.
+
+*(Två larm från Axel. 2026-09-02: Kranskydd Frost 420D var pausad och fick ändå
+9 briefer. 2026-09-04: Medicinasken i Fickformat, Kasta & Fånga-settet och
+Bordtennisnätet stängdes av på morgonen och fick 47 briefer och tre nya
+Notion-hubbar av samma körning — via `ersatt`-behov som avstängningen själv
+utlöste. Den kopplingen är borttagen: `ersatt` kommer numera bara från
+`TRAPPA_FORLANGNING`, alltså när enskilda annonser pausats men kampanjen kör.)*
 
 **Batchens innehåll (Axel 2026-09-02):**
 - **Fler videor.** Redigerarna är många — minst två tredjedelar av varje
@@ -292,9 +323,13 @@ kör.)*
   `git log --all` — händer när batchen är historisk, gjord före systemet) →
   kör `.claude/commands/forsta-batch.md`-flödet i stället, det bygger minnet
   från noll. Logga ändå `CS_BATCH_KLAR` (produkten HAR redan haft en batch).
-- **Rundans storlek = `rundaAntal`** i behovsraden (halva veckokvoten,
-  avrundad uppåt — två rundor per vecka ≈ veckokvoten). För `forsta_batch`
-  gäller i stället hela veckokvoten (`veckokvot` i utfallet).
+  ⚠️ Den här specialregeln är INGEN väg runt statusspärren ovan. Saknade
+  minnesfiler på en pausad kampanj betyder att produkten är död utan minne —
+  inte att den ska få en förstabatch. Kolla status först, alltid.
+- **Rundans storlek = `rundaAntal`** i behovsraden — dubbla veckokvoten,
+  aldrig under fyra (`rundkvot` i `agent/rond.mjs`). Axel 2026-09-02: "jag tar
+  hellre några briefs för mycket, jag har ett överflöd av redigerare." För
+  `forsta_batch` gäller i stället hela veckokvoten (`veckokvot` i utfallet).
 - **Ny produkt utan Notion-hub:** bygg ALDRIG en hub från grunden och klona
   ALDRIG schemat via create-database — då blir statusarna svenska
   (Inte påbörjad/Pågår/Klar) och hubben hamnar utanför teamspacen. Fel båda
