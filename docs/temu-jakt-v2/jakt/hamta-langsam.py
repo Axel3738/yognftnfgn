@@ -7,7 +7,11 @@
 import json, glob, os, sys, time, subprocess, argparse, datetime
 H = os.path.dirname(os.path.abspath(__file__))
 ap = argparse.ArgumentParser(); ap.add_argument("--paus", type=float, default=240); ap.add_argument("--max", type=int, default=60)
-ap.add_argument("--visa", action="store_true", help="visa kön och avsluta utan att hämta"); a = ap.parse_args()
+ap.add_argument("--visa", action="store_true", help="visa kön och avsluta utan att hämta")
+# --burst N: hämta högst N och avsluta; avsluta direkt vid första block. Temu ger ~8 anrop per timme
+# (mätt 2026-09-04: 10 på 5 min → block ~80 min; 8 på 14 min → block > 45 min). Bakgrundsprocesser dör
+# när sessionens container somnar, så kön körs i korta skurar i aktiva turer i stället.
+ap.add_argument("--burst", type=int, default=0); a = ap.parse_args()
 # V2.1: koncept som fällts (concept_status FAIL i dataset.json) får ingen hämtbudget
 try:
     FAIL_IDS = {str(r.get("goods_id")) for r in json.load(open(os.path.join(H, "dataset.json"), encoding="utf-8"))["candidates"] if r.get("concept_status") == "FAIL"}
@@ -88,6 +92,8 @@ while i < len(queue):
         d = {"blocked": True, "error": str(e)[:100]}
     if d.get("blocked"):
         streak += 1
+        if a.burst:
+            print(f"{now()} [{i+1}/{len(queue)}] {gid} BLOCKERAD — skuren avbryts (hämtade {i})", flush=True); break
         vila = 1800 if streak >= 4 else 600
         print(f"{now()} [{i+1}/{len(queue)}] {gid} BLOCKERAD (#{streak}) — vilar {vila}s", flush=True)
         time.sleep(vila); continue
@@ -96,5 +102,7 @@ while i < len(queue):
     if f: json.dump(files[f], open(f, "w", encoding="utf-8"), ensure_ascii=False, indent=1)   # alt-listningar bor bara i raw/us
     print(f"{now()} [{i+1}/{len(queue)}] {gid} {str(d.get('title'))[:50]} · {d.get('price_sek')} {d.get('currency') or ''} · ★{d.get('rating')} ({d.get('review_count')}) · video={'ja' if d.get('video_url') else 'nej'}", flush=True)
     i += 1
+    if a.burst and i >= a.burst:
+        print(f"{now()} skur klar ({i} hämtade), {len(queue) - i} kvar i kön", flush=True); break
     time.sleep(a.paus)
 print(f"{now()} klart", flush=True)
