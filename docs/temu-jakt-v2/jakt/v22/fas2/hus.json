@@ -1,0 +1,3807 @@
+[
+ {
+  "kluster": "hus",
+  "goods_id": "601099696644983",
+  "url": "https://www.temu.com/se/g-601099696644983.html",
+  "title": "Water Fed Pole Kit 20ft Length Water Fed Brush Cleaning System Aluminum Alloy Outdoor Window Cleaner w/ Hose - Window Glass, Solar Panel",
+  "already_known": false,
+  "concept": "fasadtvatt-teleskopstang",
+  "object": "Husets fonster, fasad, uterums-/altantak (och solpaneler)",
+  "owner_owns": "Villan sjalv: fonstren, fasadens norrsida, glastaket over uterummet",
+  "friction": "Hostens fonsterputs och gronalger pa fasadens norrsida syns nu; agaren maste resa stege for att komma at andra vaningen och glastaket",
+  "old_way": "Stege + hink + skaft, eller anlita fonsterputsare",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Langd (3,6 / 4,6 / 6 m)",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Fonsterputsredskap.se teleskopskaft med vattengenomstromning",
+   "anchor_price_sek": 875,
+   "anchor_url": "https://xn--fnsterputsredskap-zzb.se/collections/teleskopskaft/borste",
+   "searches": [
+    "vattenmatad teleskopstang fonsterputs borste 6 meter kopa Sverige pris",
+    "solpanelsborste teleskop rengoring solceller villatak biltema jula clas ohlson"
+   ],
+   "note": "CDON saljer MonsterShop 6,14 m vattenmatad fonsterputs; Amazon.se saljer 3,6/4,6/6 m teleskopstang med vattenanslutning for PV och fonster — samma form och spec. Marketplace raknas som hylla. Ankarundantaget bar inte: Amazon-varianten ar en look-alike i samma prisklass som var tankta produkt (tofflor-9-monstret)."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PENDING_VERIFICATION",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Maste du upp pa stege for fonsterputsen?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS",
+   "note": "Alla smahusagare har fonster och fasad; objektet ar dock generiskt i ett Meta-flode (svag CPM-proxy)."
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder vattenmatad teleskopborste 3,6–6 m for fonster, fasad, uterumstak och solpaneler."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (CDON + Amazon.se samma form)",
+   "landad kostnad over 420 kr — frakttung aluminiumstang",
+   "listningarna saljs som 'kit' (stang + borste + skrapa + slang)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 38,
+  "category_novelty_0_100": 70,
+  "tier": "ELIM",
+  "main_risk": "Dubbelfall: Amazon.se/CDON saljer samma form OCH landad kostnad 929–1 346 kr spranger 420-kr-taket. Felet ar inbyggt i produkten (frakttung 5–6 m stang).",
+  "confidence": "HIGH",
+  "sources": [
+   "vattenmatad teleskopstang fonsterputs borste 6 meter kopa Sverige pris",
+   "solpanelsborste teleskop rengoring solceller villatak biltema jula clas ohlson"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099565796942",
+  "url": "https://www.temu.com/se/g-601099565796942.html",
+  "title": "20ft Extendable Water Fed Window Cleaning Kit Aluminum Alloy Pole with 4 Spray Nozzles, Flexible Brush Head for Glass, Solar Panels",
+  "already_known": false,
+  "concept": "fasadtvatt-teleskopstang",
+  "object": "Husets fonster, fasad, uterums-/altantak (och solpaneler)",
+  "owner_owns": "Villan sjalv: fonstren, fasadens norrsida, glastaket over uterummet",
+  "friction": "Hostens fonsterputs och gronalger pa fasadens norrsida syns nu; agaren maste resa stege for att komma at andra vaningen och glastaket",
+  "old_way": "Stege + hink + skaft, eller anlita fonsterputsare",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Langd (3,6 / 4,6 / 6 m)",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Fonsterputsredskap.se teleskopskaft med vattengenomstromning",
+   "anchor_price_sek": 875,
+   "anchor_url": "https://xn--fnsterputsredskap-zzb.se/collections/teleskopskaft/borste",
+   "searches": [
+    "vattenmatad teleskopstang fonsterputs borste 6 meter kopa Sverige pris",
+    "solpanelsborste teleskop rengoring solceller villatak biltema jula clas ohlson"
+   ],
+   "note": "CDON saljer MonsterShop 6,14 m vattenmatad fonsterputs; Amazon.se saljer 3,6/4,6/6 m teleskopstang med vattenanslutning for PV och fonster — samma form och spec. Marketplace raknas som hylla. Ankarundantaget bar inte: Amazon-varianten ar en look-alike i samma prisklass som var tankta produkt (tofflor-9-monstret)."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PENDING_VERIFICATION",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Maste du upp pa stege for fonsterputsen?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS",
+   "note": "Alla smahusagare har fonster och fasad; objektet ar dock generiskt i ett Meta-flode (svag CPM-proxy)."
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder vattenmatad teleskopborste 3,6–6 m for fonster, fasad, uterumstak och solpaneler."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (CDON + Amazon.se samma form)",
+   "landad kostnad over 420 kr — frakttung aluminiumstang",
+   "listningarna saljs som 'kit' (stang + borste + skrapa + slang)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 38,
+  "category_novelty_0_100": 70,
+  "tier": "ELIM",
+  "main_risk": "Dubbelfall: Amazon.se/CDON saljer samma form OCH landad kostnad 929–1 346 kr spranger 420-kr-taket. Felet ar inbyggt i produkten (frakttung 5–6 m stang).",
+  "confidence": "HIGH",
+  "sources": [
+   "vattenmatad teleskopstang fonsterputs borste 6 meter kopa Sverige pris",
+   "solpanelsborste teleskop rengoring solceller villatak biltema jula clas ohlson"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099941054308",
+  "url": "https://www.temu.com/se/g-601099941054308.html",
+  "title": "Water Fed Pole Kit 20ft Water Fed Brush Cleaning System Aluminum Alloy Outdoor Window Cleaner",
+  "already_known": false,
+  "concept": "fasadtvatt-teleskopstang",
+  "object": "Husets fonster, fasad, uterums-/altantak (och solpaneler)",
+  "owner_owns": "Villan sjalv: fonstren, fasadens norrsida, glastaket over uterummet",
+  "friction": "Hostens fonsterputs och gronalger pa fasadens norrsida syns nu; agaren maste resa stege for att komma at andra vaningen och glastaket",
+  "old_way": "Stege + hink + skaft, eller anlita fonsterputsare",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Langd (3,6 / 4,6 / 6 m)",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Fonsterputsredskap.se teleskopskaft med vattengenomstromning",
+   "anchor_price_sek": 875,
+   "anchor_url": "https://xn--fnsterputsredskap-zzb.se/collections/teleskopskaft/borste",
+   "searches": [
+    "vattenmatad teleskopstang fonsterputs borste 6 meter kopa Sverige pris",
+    "solpanelsborste teleskop rengoring solceller villatak biltema jula clas ohlson"
+   ],
+   "note": "CDON saljer MonsterShop 6,14 m vattenmatad fonsterputs; Amazon.se saljer 3,6/4,6/6 m teleskopstang med vattenanslutning for PV och fonster — samma form och spec. Marketplace raknas som hylla. Ankarundantaget bar inte: Amazon-varianten ar en look-alike i samma prisklass som var tankta produkt (tofflor-9-monstret)."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PENDING_VERIFICATION",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Maste du upp pa stege for fonsterputsen?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS",
+   "note": "Alla smahusagare har fonster och fasad; objektet ar dock generiskt i ett Meta-flode (svag CPM-proxy)."
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder vattenmatad teleskopborste 3,6–6 m for fonster, fasad, uterumstak och solpaneler."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (CDON + Amazon.se samma form)",
+   "landad kostnad over 420 kr — frakttung aluminiumstang",
+   "listningarna saljs som 'kit' (stang + borste + skrapa + slang)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 38,
+  "category_novelty_0_100": 70,
+  "tier": "ELIM",
+  "main_risk": "Dubbelfall: Amazon.se/CDON saljer samma form OCH landad kostnad 929–1 346 kr spranger 420-kr-taket. Felet ar inbyggt i produkten (frakttung 5–6 m stang).",
+  "confidence": "HIGH",
+  "sources": [
+   "vattenmatad teleskopstang fonsterputs borste 6 meter kopa Sverige pris",
+   "solpanelsborste teleskop rengoring solceller villatak biltema jula clas ohlson"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601100040348254",
+  "url": "https://www.temu.com/se/g-601100040348254.html",
+  "title": "Water Fed Window Cleaning Pole Solar Panel Telescopic Extendable Brush Squeegee Equipment Hose Fed Kit",
+  "already_known": false,
+  "concept": "fasadtvatt-teleskopstang",
+  "object": "Husets fonster, fasad, uterums-/altantak (och solpaneler)",
+  "owner_owns": "Villan sjalv: fonstren, fasadens norrsida, glastaket over uterummet",
+  "friction": "Hostens fonsterputs och gronalger pa fasadens norrsida syns nu; agaren maste resa stege for att komma at andra vaningen och glastaket",
+  "old_way": "Stege + hink + skaft, eller anlita fonsterputsare",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Langd (3,6 / 4,6 / 6 m)",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Fonsterputsredskap.se teleskopskaft med vattengenomstromning",
+   "anchor_price_sek": 875,
+   "anchor_url": "https://xn--fnsterputsredskap-zzb.se/collections/teleskopskaft/borste",
+   "searches": [
+    "vattenmatad teleskopstang fonsterputs borste 6 meter kopa Sverige pris",
+    "solpanelsborste teleskop rengoring solceller villatak biltema jula clas ohlson"
+   ],
+   "note": "CDON saljer MonsterShop 6,14 m vattenmatad fonsterputs; Amazon.se saljer 3,6/4,6/6 m teleskopstang med vattenanslutning for PV och fonster — samma form och spec. Marketplace raknas som hylla. Ankarundantaget bar inte: Amazon-varianten ar en look-alike i samma prisklass som var tankta produkt (tofflor-9-monstret)."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PENDING_VERIFICATION",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Maste du upp pa stege for fonsterputsen?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS",
+   "note": "Alla smahusagare har fonster och fasad; objektet ar dock generiskt i ett Meta-flode (svag CPM-proxy)."
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder vattenmatad teleskopborste 3,6–6 m for fonster, fasad, uterumstak och solpaneler."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (CDON + Amazon.se samma form)",
+   "landad kostnad over 420 kr — frakttung aluminiumstang",
+   "listningarna saljs som 'kit' (stang + borste + skrapa + slang)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 38,
+  "category_novelty_0_100": 70,
+  "tier": "ELIM",
+  "main_risk": "Dubbelfall: Amazon.se/CDON saljer samma form OCH landad kostnad 929–1 346 kr spranger 420-kr-taket. Felet ar inbyggt i produkten (frakttung 5–6 m stang).",
+  "confidence": "HIGH",
+  "sources": [
+   "vattenmatad teleskopstang fonsterputs borste 6 meter kopa Sverige pris",
+   "solpanelsborste teleskop rengoring solceller villatak biltema jula clas ohlson"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099588850961",
+  "url": "https://www.temu.com/se/g-601099588850961.html",
+  "title": "Water Fed Pole Kit 20ft Water Fed Brush Cleaning System Aluminum Alloy Outdoor Window Cleaner",
+  "already_known": false,
+  "concept": "fasadtvatt-teleskopstang",
+  "object": "Husets fonster, fasad, uterums-/altantak (och solpaneler)",
+  "owner_owns": "Villan sjalv: fonstren, fasadens norrsida, glastaket over uterummet",
+  "friction": "Hostens fonsterputs och gronalger pa fasadens norrsida syns nu; agaren maste resa stege for att komma at andra vaningen och glastaket",
+  "old_way": "Stege + hink + skaft, eller anlita fonsterputsare",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Langd (3,6 / 4,6 / 6 m)",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Fonsterputsredskap.se teleskopskaft med vattengenomstromning",
+   "anchor_price_sek": 875,
+   "anchor_url": "https://xn--fnsterputsredskap-zzb.se/collections/teleskopskaft/borste",
+   "searches": [
+    "vattenmatad teleskopstang fonsterputs borste 6 meter kopa Sverige pris",
+    "solpanelsborste teleskop rengoring solceller villatak biltema jula clas ohlson"
+   ],
+   "note": "CDON saljer MonsterShop 6,14 m vattenmatad fonsterputs; Amazon.se saljer 3,6/4,6/6 m teleskopstang med vattenanslutning for PV och fonster — samma form och spec. Marketplace raknas som hylla. Ankarundantaget bar inte: Amazon-varianten ar en look-alike i samma prisklass som var tankta produkt (tofflor-9-monstret)."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PENDING_VERIFICATION",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Maste du upp pa stege for fonsterputsen?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS",
+   "note": "Alla smahusagare har fonster och fasad; objektet ar dock generiskt i ett Meta-flode (svag CPM-proxy)."
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder vattenmatad teleskopborste 3,6–6 m for fonster, fasad, uterumstak och solpaneler."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (CDON + Amazon.se samma form)",
+   "landad kostnad over 420 kr — frakttung aluminiumstang",
+   "listningarna saljs som 'kit' (stang + borste + skrapa + slang)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 38,
+  "category_novelty_0_100": 70,
+  "tier": "ELIM",
+  "main_risk": "Dubbelfall: Amazon.se/CDON saljer samma form OCH landad kostnad 929–1 346 kr spranger 420-kr-taket. Felet ar inbyggt i produkten (frakttung 5–6 m stang).",
+  "confidence": "HIGH",
+  "sources": [
+   "vattenmatad teleskopstang fonsterputs borste 6 meter kopa Sverige pris",
+   "solpanelsborste teleskop rengoring solceller villatak biltema jula clas ohlson"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099876015415",
+  "url": "https://www.temu.com/se/g-601099876015415.html",
+  "title": "Telescopic Pole Water Fed Brush Premium Telescopic Rod 20ft Single Head Cleaning Tool Aluminum Alloy",
+  "already_known": false,
+  "concept": "fasadtvatt-teleskopstang",
+  "object": "Husets fonster, fasad, uterums-/altantak (och solpaneler)",
+  "owner_owns": "Villan sjalv: fonstren, fasadens norrsida, glastaket over uterummet",
+  "friction": "Hostens fonsterputs och gronalger pa fasadens norrsida syns nu; agaren maste resa stege for att komma at andra vaningen och glastaket",
+  "old_way": "Stege + hink + skaft, eller anlita fonsterputsare",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Langd (3,6 / 4,6 / 6 m)",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Fonsterputsredskap.se teleskopskaft med vattengenomstromning",
+   "anchor_price_sek": 875,
+   "anchor_url": "https://xn--fnsterputsredskap-zzb.se/collections/teleskopskaft/borste",
+   "searches": [
+    "vattenmatad teleskopstang fonsterputs borste 6 meter kopa Sverige pris",
+    "solpanelsborste teleskop rengoring solceller villatak biltema jula clas ohlson"
+   ],
+   "note": "CDON saljer MonsterShop 6,14 m vattenmatad fonsterputs; Amazon.se saljer 3,6/4,6/6 m teleskopstang med vattenanslutning for PV och fonster — samma form och spec. Marketplace raknas som hylla. Ankarundantaget bar inte: Amazon-varianten ar en look-alike i samma prisklass som var tankta produkt (tofflor-9-monstret)."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PENDING_VERIFICATION",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Maste du upp pa stege for fonsterputsen?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS",
+   "note": "Alla smahusagare har fonster och fasad; objektet ar dock generiskt i ett Meta-flode (svag CPM-proxy)."
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder vattenmatad teleskopborste 3,6–6 m for fonster, fasad, uterumstak och solpaneler."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (CDON + Amazon.se samma form)",
+   "landad kostnad over 420 kr — frakttung aluminiumstang",
+   "listningarna saljs som 'kit' (stang + borste + skrapa + slang)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 38,
+  "category_novelty_0_100": 70,
+  "tier": "ELIM",
+  "main_risk": "Dubbelfall: Amazon.se/CDON saljer samma form OCH landad kostnad 929–1 346 kr spranger 420-kr-taket. Felet ar inbyggt i produkten (frakttung 5–6 m stang).",
+  "confidence": "HIGH",
+  "sources": [
+   "vattenmatad teleskopstang fonsterputs borste 6 meter kopa Sverige pris",
+   "solpanelsborste teleskop rengoring solceller villatak biltema jula clas ohlson"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099745743025",
+  "url": "https://www.temu.com/se/g-601099745743025.html",
+  "title": "Extendable Water Fed Window Cleaning Pole with Adjustable Angle Telescopic Brush Head, Aluminum Alloy/PP, 65 kg Load, High-Reach Windows",
+  "already_known": false,
+  "concept": "fasadtvatt-teleskopstang",
+  "object": "Husets fonster, fasad, uterums-/altantak (och solpaneler)",
+  "owner_owns": "Villan sjalv: fonstren, fasadens norrsida, glastaket over uterummet",
+  "friction": "Hostens fonsterputs och gronalger pa fasadens norrsida syns nu; agaren maste resa stege for att komma at andra vaningen och glastaket",
+  "old_way": "Stege + hink + skaft, eller anlita fonsterputsare",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Langd (3,6 / 4,6 / 6 m)",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Fonsterputsredskap.se teleskopskaft med vattengenomstromning",
+   "anchor_price_sek": 875,
+   "anchor_url": "https://xn--fnsterputsredskap-zzb.se/collections/teleskopskaft/borste",
+   "searches": [
+    "vattenmatad teleskopstang fonsterputs borste 6 meter kopa Sverige pris",
+    "solpanelsborste teleskop rengoring solceller villatak biltema jula clas ohlson"
+   ],
+   "note": "CDON saljer MonsterShop 6,14 m vattenmatad fonsterputs; Amazon.se saljer 3,6/4,6/6 m teleskopstang med vattenanslutning for PV och fonster — samma form och spec. Marketplace raknas som hylla. Ankarundantaget bar inte: Amazon-varianten ar en look-alike i samma prisklass som var tankta produkt (tofflor-9-monstret)."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PENDING_VERIFICATION",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Maste du upp pa stege for fonsterputsen?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS",
+   "note": "Alla smahusagare har fonster och fasad; objektet ar dock generiskt i ett Meta-flode (svag CPM-proxy)."
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder vattenmatad teleskopborste 3,6–6 m for fonster, fasad, uterumstak och solpaneler."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (CDON + Amazon.se samma form)",
+   "landad kostnad over 420 kr — frakttung aluminiumstang",
+   "listningarna saljs som 'kit' (stang + borste + skrapa + slang)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 38,
+  "category_novelty_0_100": 70,
+  "tier": "ELIM",
+  "main_risk": "Dubbelfall: Amazon.se/CDON saljer samma form OCH landad kostnad 929–1 346 kr spranger 420-kr-taket. Felet ar inbyggt i produkten (frakttung 5–6 m stang).",
+  "confidence": "HIGH",
+  "sources": [
+   "vattenmatad teleskopstang fonsterputs borste 6 meter kopa Sverige pris",
+   "solpanelsborste teleskop rengoring solceller villatak biltema jula clas ohlson"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601101315214170",
+  "url": "https://www.temu.com/se/g-601101315214170.html",
+  "title": "15.8ft / 4.8 m Panel Cleaning Kit with Extendable Pole, Detachable Brush, for Window, Balcony, Solar Device Cleaning",
+  "already_known": false,
+  "concept": "fasadtvatt-teleskopstang",
+  "object": "Husets fonster, fasad, uterums-/altantak (och solpaneler)",
+  "owner_owns": "Villan sjalv: fonstren, fasadens norrsida, glastaket over uterummet",
+  "friction": "Hostens fonsterputs och gronalger pa fasadens norrsida syns nu; agaren maste resa stege for att komma at andra vaningen och glastaket",
+  "old_way": "Stege + hink + skaft, eller anlita fonsterputsare",
+  "price_usd": 89,
+  "price_source": "seznam-snippet",
+  "rating": "100%",
+  "review_count": "5",
+  "sold": null,
+  "variants": "Langd (3,6 / 4,6 / 6 m)",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Fonsterputsredskap.se teleskopskaft med vattengenomstromning",
+   "anchor_price_sek": 875,
+   "anchor_url": "https://xn--fnsterputsredskap-zzb.se/collections/teleskopskaft/borste",
+   "searches": [
+    "vattenmatad teleskopstang fonsterputs borste 6 meter kopa Sverige pris",
+    "solpanelsborste teleskop rengoring solceller villatak biltema jula clas ohlson"
+   ],
+   "note": "CDON saljer MonsterShop 6,14 m vattenmatad fonsterputs; Amazon.se saljer 3,6/4,6/6 m teleskopstang med vattenanslutning for PV och fonster — samma form och spec. Marketplace raknas som hylla. Ankarundantaget bar inte: Amazon-varianten ar en look-alike i samma prisklass som var tankta produkt (tofflor-9-monstret)."
+  },
+  "economics": {
+   "landed_low_sek": 929.16,
+   "landed_high_sek": 1089.36,
+   "se_price_sek": 599,
+   "multiple_low": 0.55,
+   "multiple_high": 0.64,
+   "be_cpa": -490.36,
+   "verdict": "FAIL"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PENDING_VERIFICATION",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Maste du upp pa stege for fonsterputsen?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS",
+   "note": "Alla smahusagare har fonster och fasad; objektet ar dock generiskt i ett Meta-flode (svag CPM-proxy)."
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder vattenmatad teleskopborste 3,6–6 m for fonster, fasad, uterumstak och solpaneler."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (CDON + Amazon.se samma form)",
+   "landad kostnad over 420 kr — frakttung aluminiumstang",
+   "listningarna saljs som 'kit' (stang + borste + skrapa + slang)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 38,
+  "category_novelty_0_100": 70,
+  "tier": "ELIM",
+  "main_risk": "Dubbelfall: Amazon.se/CDON saljer samma form OCH landad kostnad 929–1 346 kr spranger 420-kr-taket. Felet ar inbyggt i produkten (frakttung 5–6 m stang).",
+  "confidence": "HIGH",
+  "sources": [
+   "vattenmatad teleskopstang fonsterputs borste 6 meter kopa Sverige pris",
+   "solpanelsborste teleskop rengoring solceller villatak biltema jula clas ohlson"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601101315234339",
+  "url": "https://www.temu.com/se/g-601101315234339.html",
+  "title": "11.8ft / 3.6 m Panel Cleaning Kit with Extendable Pole, Detachable Brush, for Window, Balcony, Solar System Cleaning",
+  "already_known": false,
+  "concept": "fasadtvatt-teleskopstang",
+  "object": "Husets fonster, fasad, uterums-/altantak (och solpaneler)",
+  "owner_owns": "Villan sjalv: fonstren, fasadens norrsida, glastaket over uterummet",
+  "friction": "Hostens fonsterputs och gronalger pa fasadens norrsida syns nu; agaren maste resa stege for att komma at andra vaningen och glastaket",
+  "old_way": "Stege + hink + skaft, eller anlita fonsterputsare",
+  "price_usd": 110,
+  "price_source": "seznam-snippet",
+  "rating": "100%",
+  "review_count": "5",
+  "sold": null,
+  "variants": "Langd (3,6 / 4,6 / 6 m)",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Fonsterputsredskap.se teleskopskaft med vattengenomstromning",
+   "anchor_price_sek": 875,
+   "anchor_url": "https://xn--fnsterputsredskap-zzb.se/collections/teleskopskaft/borste",
+   "searches": [
+    "vattenmatad teleskopstang fonsterputs borste 6 meter kopa Sverige pris",
+    "solpanelsborste teleskop rengoring solceller villatak biltema jula clas ohlson"
+   ],
+   "note": "CDON saljer MonsterShop 6,14 m vattenmatad fonsterputs; Amazon.se saljer 3,6/4,6/6 m teleskopstang med vattenanslutning for PV och fonster — samma form och spec. Marketplace raknas som hylla. Ankarundantaget bar inte: Amazon-varianten ar en look-alike i samma prisklass som var tankta produkt (tofflor-9-monstret)."
+  },
+  "economics": {
+   "landed_low_sek": 1148.4,
+   "landed_high_sek": 1346.4,
+   "se_price_sek": 599,
+   "multiple_low": 0.44,
+   "multiple_high": 0.52,
+   "be_cpa": -747.4,
+   "verdict": "FAIL"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PENDING_VERIFICATION",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Maste du upp pa stege for fonsterputsen?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS",
+   "note": "Alla smahusagare har fonster och fasad; objektet ar dock generiskt i ett Meta-flode (svag CPM-proxy)."
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder vattenmatad teleskopborste 3,6–6 m for fonster, fasad, uterumstak och solpaneler."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (CDON + Amazon.se samma form)",
+   "landad kostnad over 420 kr — frakttung aluminiumstang",
+   "listningarna saljs som 'kit' (stang + borste + skrapa + slang)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 38,
+  "category_novelty_0_100": 70,
+  "tier": "ELIM",
+  "main_risk": "Dubbelfall: Amazon.se/CDON saljer samma form OCH landad kostnad 929–1 346 kr spranger 420-kr-taket. Felet ar inbyggt i produkten (frakttung 5–6 m stang).",
+  "confidence": "HIGH",
+  "sources": [
+   "vattenmatad teleskopstang fonsterputs borste 6 meter kopa Sverige pris",
+   "solpanelsborste teleskop rengoring solceller villatak biltema jula clas ohlson"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601100705541487",
+  "url": "https://www.temu.com/se/g-601100705541487.html",
+  "title": "Metal Ladder Accessories Tray, Expandable Step Ladder Tool Platform Attachment, Multifunctional Folding Ladder Support Tray, Compatible with Most Standard Ladders",
+  "already_known": false,
+  "concept": "stege-verktygsbricka",
+  "object": "Villaagarens anliggande stege",
+  "owner_owns": "Stegen som redan star mot huset i oktober",
+  "friction": "Nar rannan rensas eller fasaden malas i host finns ingen hand kvar till hink, skruvar eller borste",
+  "old_way": "Halla hinken i handen, klamma skruvarna i fickan, ga ner och upp igen",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Universal — passar de flesta stegar",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "BAUHAUS stegtillbehor (stabilisatorer, stegfotter, arbetsplattformar)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.bauhaus.se/bygg/stegar-byggstallningar/stegar/tillbehor",
+   "searches": [
+    "verktygshallare hink till stege stegtillbehor hylla biltema jula bauhaus"
+   ],
+   "note": "BAUHAUS stegtillbehor listar uttryckligen arbetsplattformar; Biltema saljer 'Verktygshallare till hink' (art 2000044321). Samma form finns pa hyllan."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Bar du hinken i handen pa stegen?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder verktygsbricka / arbetsplattform som hakas pa den anliggande stegen."
+  },
+  "negative_space_flags": [
+   "objektet forvaras inomhus nar det inte anvands (stegen i garaget)",
+   "svensk kedja saljer samma form"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 40,
+  "category_novelty_0_100": 55,
+  "tier": "ELIM",
+  "main_risk": "BAUHAUS och Biltema tacker formen; dessutom ar stege-familjen redan avgjord (vaggstod och rannstod) i tidigare korning.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "verktygshallare hink till stege stegtillbehor hylla biltema jula bauhaus"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099542820490",
+  "url": "https://www.temu.com/se/g-601099542820490.html",
+  "title": "1pc Patio Awning Canopy Retractable Patio Door Window Awning Shelter Protective Waterproof Winter Storage Cover, 210D Polyester",
+  "already_known": false,
+  "concept": "markisoverdrag-vinter",
+  "object": "Markisen pa husets soderfasad",
+  "owner_owns": "Markis for 15 000–30 000 kr som rullas in for sista gangen i september",
+  "friction": "Markisvaven blir smutsig, mogelflackig och rotter i kassettens oppning under vinterhalvaret — agaren rullar in den just nu",
+  "old_way": "Ingenting, eller en presenning som blaser av",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Bredd i meter (2 / 2,5 / 3 / 4 / 5 m) — agaren maste mata",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "HORNBACH Skyddsoverdrag till markis (3 m / 4 m / 5 m)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.hornbach.se/p/skyddsoverdrag-till-markis-ljusgra-4-m/6503175/",
+   "searches": [
+    "markisoverdrag skyddsoverdrag markis vinter kopa pris Sverige"
+   ],
+   "note": "HORNBACH saljer exakt formen i 3/4/5 m. Fyndiq saljer den i 2 m, 2,5 m och 4 m med 29 kr frakt. Bade byggkedja och marketplace = hylla."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Har du markis som ska in nu?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder skyddsoverdrag i 210d/600d oxford som tras over den inrullade markisen infor vintern."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (HORNBACH + Fyndiq)",
+   "variant kraver att agaren mater markisens bredd"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 52,
+  "category_novelty_0_100": 75,
+  "tier": "ELIM",
+  "main_risk": "Hyllan ar tackt i bade byggkedja och marketplace, och langden ar ett matt agaren inte kan utantill.",
+  "confidence": "HIGH",
+  "sources": [
+   "markisoverdrag skyddsoverdrag markis vinter kopa pris Sverige"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099533217969",
+  "url": "https://www.temu.com/se/g-601099533217969.html",
+  "title": "1pc Outdoor Awning Protective Cover, Retractable Roller Blind Cover, 600D Oxford Cloth, Dust & Waterproof Rain Canopy Cover",
+  "already_known": false,
+  "concept": "markisoverdrag-vinter",
+  "object": "Markisen pa husets soderfasad",
+  "owner_owns": "Markis for 15 000–30 000 kr som rullas in for sista gangen i september",
+  "friction": "Markisvaven blir smutsig, mogelflackig och rotter i kassettens oppning under vinterhalvaret — agaren rullar in den just nu",
+  "old_way": "Ingenting, eller en presenning som blaser av",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Bredd i meter (2 / 2,5 / 3 / 4 / 5 m) — agaren maste mata",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "HORNBACH Skyddsoverdrag till markis (3 m / 4 m / 5 m)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.hornbach.se/p/skyddsoverdrag-till-markis-ljusgra-4-m/6503175/",
+   "searches": [
+    "markisoverdrag skyddsoverdrag markis vinter kopa pris Sverige"
+   ],
+   "note": "HORNBACH saljer exakt formen i 3/4/5 m. Fyndiq saljer den i 2 m, 2,5 m och 4 m med 29 kr frakt. Bade byggkedja och marketplace = hylla."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Har du markis som ska in nu?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder skyddsoverdrag i 210d/600d oxford som tras over den inrullade markisen infor vintern."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (HORNBACH + Fyndiq)",
+   "variant kraver att agaren mater markisens bredd"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 52,
+  "category_novelty_0_100": 75,
+  "tier": "ELIM",
+  "main_risk": "Hyllan ar tackt i bade byggkedja och marketplace, och langden ar ett matt agaren inte kan utantill.",
+  "confidence": "HIGH",
+  "sources": [
+   "markisoverdrag skyddsoverdrag markis vinter kopa pris Sverige"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099542327657",
+  "url": "https://www.temu.com/se/g-601099542327657.html",
+  "title": "1pc Patio Awning Canopy Protective Waterproof Winter Storage Cover (UK)",
+  "already_known": false,
+  "concept": "markisoverdrag-vinter",
+  "object": "Markisen pa husets soderfasad",
+  "owner_owns": "Markis for 15 000–30 000 kr som rullas in for sista gangen i september",
+  "friction": "Markisvaven blir smutsig, mogelflackig och rotter i kassettens oppning under vinterhalvaret — agaren rullar in den just nu",
+  "old_way": "Ingenting, eller en presenning som blaser av",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Bredd i meter (2 / 2,5 / 3 / 4 / 5 m) — agaren maste mata",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "HORNBACH Skyddsoverdrag till markis (3 m / 4 m / 5 m)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.hornbach.se/p/skyddsoverdrag-till-markis-ljusgra-4-m/6503175/",
+   "searches": [
+    "markisoverdrag skyddsoverdrag markis vinter kopa pris Sverige"
+   ],
+   "note": "HORNBACH saljer exakt formen i 3/4/5 m. Fyndiq saljer den i 2 m, 2,5 m och 4 m med 29 kr frakt. Bade byggkedja och marketplace = hylla."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Har du markis som ska in nu?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder skyddsoverdrag i 210d/600d oxford som tras over den inrullade markisen infor vintern."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (HORNBACH + Fyndiq)",
+   "variant kraver att agaren mater markisens bredd"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 52,
+  "category_novelty_0_100": 75,
+  "tier": "ELIM",
+  "main_risk": "Hyllan ar tackt i bade byggkedja och marketplace, och langden ar ett matt agaren inte kan utantill.",
+  "confidence": "HIGH",
+  "sources": [
+   "markisoverdrag skyddsoverdrag markis vinter kopa pris Sverige"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099542310238",
+  "url": "https://www.temu.com/se/g-601099542310238.html",
+  "title": "1pc Patio Awning Canopy Protective Waterproof Winter Storage Cover, Retractable Patio Door Window Awning Sunshade Shelter",
+  "already_known": false,
+  "concept": "markisoverdrag-vinter",
+  "object": "Markisen pa husets soderfasad",
+  "owner_owns": "Markis for 15 000–30 000 kr som rullas in for sista gangen i september",
+  "friction": "Markisvaven blir smutsig, mogelflackig och rotter i kassettens oppning under vinterhalvaret — agaren rullar in den just nu",
+  "old_way": "Ingenting, eller en presenning som blaser av",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Bredd i meter (2 / 2,5 / 3 / 4 / 5 m) — agaren maste mata",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "HORNBACH Skyddsoverdrag till markis (3 m / 4 m / 5 m)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.hornbach.se/p/skyddsoverdrag-till-markis-ljusgra-4-m/6503175/",
+   "searches": [
+    "markisoverdrag skyddsoverdrag markis vinter kopa pris Sverige"
+   ],
+   "note": "HORNBACH saljer exakt formen i 3/4/5 m. Fyndiq saljer den i 2 m, 2,5 m och 4 m med 29 kr frakt. Bade byggkedja och marketplace = hylla."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Har du markis som ska in nu?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder skyddsoverdrag i 210d/600d oxford som tras over den inrullade markisen infor vintern."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (HORNBACH + Fyndiq)",
+   "variant kraver att agaren mater markisens bredd"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 52,
+  "category_novelty_0_100": 75,
+  "tier": "ELIM",
+  "main_risk": "Hyllan ar tackt i bade byggkedja och marketplace, och langden ar ett matt agaren inte kan utantill.",
+  "confidence": "HIGH",
+  "sources": [
+   "markisoverdrag skyddsoverdrag markis vinter kopa pris Sverige"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099642455917",
+  "url": "https://www.temu.com/se/g-601099642455917.html",
+  "title": "1pc Roof Cover Waterproof RV Awning Cloth Protective Cover, UV & Dust Resistant, Heavy Duty 210D Fabric, Universal Fit",
+  "already_known": false,
+  "concept": "markisoverdrag-vinter",
+  "object": "Markisen pa husets soderfasad",
+  "owner_owns": "Markis for 15 000–30 000 kr som rullas in for sista gangen i september",
+  "friction": "Markisvaven blir smutsig, mogelflackig och rotter i kassettens oppning under vinterhalvaret — agaren rullar in den just nu",
+  "old_way": "Ingenting, eller en presenning som blaser av",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Bredd i meter (2 / 2,5 / 3 / 4 / 5 m) — agaren maste mata",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "HORNBACH Skyddsoverdrag till markis (3 m / 4 m / 5 m)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.hornbach.se/p/skyddsoverdrag-till-markis-ljusgra-4-m/6503175/",
+   "searches": [
+    "markisoverdrag skyddsoverdrag markis vinter kopa pris Sverige"
+   ],
+   "note": "HORNBACH saljer exakt formen i 3/4/5 m. Fyndiq saljer den i 2 m, 2,5 m och 4 m med 29 kr frakt. Bade byggkedja och marketplace = hylla."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Har du markis som ska in nu?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder skyddsoverdrag i 210d/600d oxford som tras over den inrullade markisen infor vintern."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (HORNBACH + Fyndiq)",
+   "variant kraver att agaren mater markisens bredd"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 52,
+  "category_novelty_0_100": 75,
+  "tier": "ELIM",
+  "main_risk": "Hyllan ar tackt i bade byggkedja och marketplace, och langden ar ett matt agaren inte kan utantill.",
+  "confidence": "HIGH",
+  "sources": [
+   "markisoverdrag skyddsoverdrag markis vinter kopa pris Sverige"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601102831921599",
+  "url": "https://www.temu.com/se/g-601102831921599.html",
+  "title": "Large Waterproof Outdoor Electrical Box with Lockable Lid, Heavy Duty, 7 Cable Entry Panel, UV Resistant Plastic Housing, Grounding Wire Connection, Locking Mechanism - protects power strip, timer, outlet, plug, socket",
+  "already_known": false,
+  "concept": "utomhus-elbox-sladdskarv",
+  "object": "Utomhusuttaget, forlangningssladdarna och grendosan vid huset",
+  "owner_owns": "Tradgardsbelysning, pump, motorvarmare och de skarvar som ligger direkt pa marken vid fasaden",
+  "friction": "Host-regnet och lovet ligger over sladdskarven vid husvaggen just nu; jordfelsbrytaren loser ut och kontakterna korroderar",
+  "old_way": "Plastpase och tejp runt skarven, eller en hink over — ren improvisation",
+  "price_usd": 24,
+  "price_source": "seznam-snippet",
+  "rating": "4.4",
+  "review_count": "88% (79)",
+  "sold": null,
+  "variants": "En storlek (stor modell) — inga matt agaren maste ta",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "skarvskydd utomhus kabelskarv skyddskapa eluttag regn biltema clas ohlson (Yahoo)",
+    "kabelbox utomhus vaderskydd forlangningssladd lasbar lada pris clas ohlson biltema jula (Yahoo 503 / Bing gav fel traffar)"
+   ],
+   "note": "EJ VERIFIERAD. Yahoo gav bara en Clas Ohlson-video om kabelskarv (en skarvhylsa, inte en lada) och en Biltema-annons utan produkt; Bing svarade med orelaterade traffar och Yahoo-forsoket gav HTTP 503. Sma skarvskydd finns sannolikt hos Biltema/Clas Ohlson — den STORA lasbara ladan ar det oklara. Maste sokas om pa 'kabelbox utomhus', 'kopplingsbox utomhus IP54' innan tier satts skarpt."
+  },
+  "economics": {
+   "landed_low_sek": 250.56,
+   "landed_high_sek": 293.76,
+   "se_price_sek": 749,
+   "multiple_low": 2.55,
+   "multiple_high": 2.99,
+   "be_cpa": 455.24,
+   "verdict": "PASS"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Ligger dina utesladdar i loven?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PENDING_VERIFICATION",
+   "note": "Agarklassen (smahus med utomhusel) ar stor men objektet — en svart plastlada och en sladd — ar generiskt i ett Meta-flode. Svag CPM-proxy, tofflor-monstret (140–220 kr) snarare an gallerkub-monstret (82–127 kr)."
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder stor lasbar vaderskyddad eldosa som skarven mellan forlangningssladdar, grendosa eller timer laggs i utomhus."
+  },
+  "negative_space_flags": [
+   "latent behov — agaren vet inte att skarven ar ett problem forran jordfelsbrytaren loser ut",
+   "generiskt objekt, svag targeting-signal for Meta",
+   "topparen for utomhusel ar julbelysningen i november–december, inte september"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 54,
+  "category_novelty_0_100": 80,
+  "tier": "B",
+  "main_risk": "Behovet ar latent. Agaren har redan lost det med en plastpase och tycker inte att det ar ett problem forran nagot smaller — och objektet ar for generiskt for att Meta ska hitta agaren pa bilden.",
+  "confidence": "LOW",
+  "sources": [
+   "skarvskydd utomhus kabelskarv skyddskapa eluttag regn biltema clas ohlson (Yahoo)",
+   "kabelbox utomhus vaderskydd forlangningssladd lasbar lada pris clas ohlson biltema jula (Yahoo 503 / Bing gav fel traffar)"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601103857379570",
+  "url": "https://www.temu.com/se/g-601103857379570.html",
+  "title": "Large Outdoor Extension Cord Box with IP54 Waterproof Electrical Cord Connection Safety Protector Cover, Heavy Duty Organizer with Hinged Lid for Power Strips, Holiday Lights",
+  "already_known": false,
+  "concept": "utomhus-elbox-sladdskarv",
+  "object": "Utomhusuttaget, forlangningssladdarna och grendosan vid huset",
+  "owner_owns": "Tradgardsbelysning, pump, motorvarmare och de skarvar som ligger direkt pa marken vid fasaden",
+  "friction": "Host-regnet och lovet ligger over sladdskarven vid husvaggen just nu; jordfelsbrytaren loser ut och kontakterna korroderar",
+  "old_way": "Plastpase och tejp runt skarven, eller en hink over — ren improvisation",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "En storlek (stor modell) — inga matt agaren maste ta",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "skarvskydd utomhus kabelskarv skyddskapa eluttag regn biltema clas ohlson (Yahoo)",
+    "kabelbox utomhus vaderskydd forlangningssladd lasbar lada pris clas ohlson biltema jula (Yahoo 503 / Bing gav fel traffar)"
+   ],
+   "note": "EJ VERIFIERAD. Yahoo gav bara en Clas Ohlson-video om kabelskarv (en skarvhylsa, inte en lada) och en Biltema-annons utan produkt; Bing svarade med orelaterade traffar och Yahoo-forsoket gav HTTP 503. Sma skarvskydd finns sannolikt hos Biltema/Clas Ohlson — den STORA lasbara ladan ar det oklara. Maste sokas om pa 'kabelbox utomhus', 'kopplingsbox utomhus IP54' innan tier satts skarpt."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 749,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Ligger dina utesladdar i loven?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PENDING_VERIFICATION",
+   "note": "Agarklassen (smahus med utomhusel) ar stor men objektet — en svart plastlada och en sladd — ar generiskt i ett Meta-flode. Svag CPM-proxy, tofflor-monstret (140–220 kr) snarare an gallerkub-monstret (82–127 kr)."
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder stor lasbar vaderskyddad eldosa som skarven mellan forlangningssladdar, grendosa eller timer laggs i utomhus."
+  },
+  "negative_space_flags": [
+   "latent behov — agaren vet inte att skarven ar ett problem forran jordfelsbrytaren loser ut",
+   "generiskt objekt, svag targeting-signal for Meta",
+   "topparen for utomhusel ar julbelysningen i november–december, inte september"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 54,
+  "category_novelty_0_100": 80,
+  "tier": "B",
+  "main_risk": "Behovet ar latent. Agaren har redan lost det med en plastpase och tycker inte att det ar ett problem forran nagot smaller — och objektet ar for generiskt for att Meta ska hitta agaren pa bilden.",
+  "confidence": "LOW",
+  "sources": [
+   "skarvskydd utomhus kabelskarv skyddskapa eluttag regn biltema clas ohlson (Yahoo)",
+   "kabelbox utomhus vaderskydd forlangningssladd lasbar lada pris clas ohlson biltema jula (Yahoo 503 / Bing gav fel traffar)"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099775679136",
+  "url": "https://www.temu.com/se/g-601099775679136.html",
+  "title": "1pc Durable Electrician Grade Waterproof Outdoor Extension Cord Protector, Plastic Connector Box with Safety Seals, Clamps and Latches",
+  "already_known": false,
+  "concept": "sladdskarvskydd-litet",
+  "object": "Utomhusuttaget och forlangningssladden vid huset",
+  "owner_owns": "Sladdskarven som ligger pa marken vid fasaden i host",
+  "friction": "Samma som den stora ladan — regn och lov over skarven — men lost med en plastkapsel for en enda skarv",
+  "old_way": "Plastpase och tejp",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "1-, 2- eller 3-pack",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Clas Ohlson kabelskarv / Biltema skarvskydd",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "skarvskydd utomhus kabelskarv skyddskapa eluttag regn biltema clas ohlson"
+   ],
+   "note": "Den lilla kapseln ar precis den form kedjorna redan har i elavdelningen (Clas Ohlson kabelskarv, Biltema skarvskydd). Ej prisverifierad, men formen ar commodity och prisrymden saknas oavsett."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Ligger dina utesladdar i loven?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder litet kapselformat skarvskydd (1-, 2- och 3-pack) som tras runt en enskild sladdskarv utomhus."
+  },
+  "negative_space_flags": [
+   "under 199 kr",
+   "svensk mass-commoditisering",
+   "latent behov",
+   "generiskt objekt"
+  ],
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": 26,
+  "category_novelty_0_100": 35,
+  "tier": "ELIM",
+  "main_risk": "En plastkapsel for 99 kr nar aldrig 300-kr-golvet, och kedjorna har formen.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "skarvskydd utomhus kabelskarv skyddskapa eluttag regn biltema clas ohlson"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099847632844",
+  "url": "https://www.temu.com/se/g-601099847632844.html",
+  "title": "Durable Waterproof Outdoor Extension Cord Protector, Single Outlet Weatherproof Cable Cover, Electrical Grade Plastic",
+  "already_known": false,
+  "concept": "sladdskarvskydd-litet",
+  "object": "Utomhusuttaget och forlangningssladden vid huset",
+  "owner_owns": "Sladdskarven som ligger pa marken vid fasaden i host",
+  "friction": "Samma som den stora ladan — regn och lov over skarven — men lost med en plastkapsel for en enda skarv",
+  "old_way": "Plastpase och tejp",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "1-, 2- eller 3-pack",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Clas Ohlson kabelskarv / Biltema skarvskydd",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "skarvskydd utomhus kabelskarv skyddskapa eluttag regn biltema clas ohlson"
+   ],
+   "note": "Den lilla kapseln ar precis den form kedjorna redan har i elavdelningen (Clas Ohlson kabelskarv, Biltema skarvskydd). Ej prisverifierad, men formen ar commodity och prisrymden saknas oavsett."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Ligger dina utesladdar i loven?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder litet kapselformat skarvskydd (1-, 2- och 3-pack) som tras runt en enskild sladdskarv utomhus."
+  },
+  "negative_space_flags": [
+   "under 199 kr",
+   "svensk mass-commoditisering",
+   "latent behov",
+   "generiskt objekt"
+  ],
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": 26,
+  "category_novelty_0_100": 35,
+  "tier": "ELIM",
+  "main_risk": "En plastkapsel for 99 kr nar aldrig 300-kr-golvet, och kedjorna har formen.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "skarvskydd utomhus kabelskarv skyddskapa eluttag regn biltema clas ohlson"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099518737902",
+  "url": "https://www.temu.com/se/g-601099518737902.html",
+  "title": "1pc Outdoor Extension Cord Cover, Safety Waterproof Protective Cover, Outdoor Power Plug Cord Seal Protector, Connection Box",
+  "already_known": false,
+  "concept": "sladdskarvskydd-litet",
+  "object": "Utomhusuttaget och forlangningssladden vid huset",
+  "owner_owns": "Sladdskarven som ligger pa marken vid fasaden i host",
+  "friction": "Samma som den stora ladan — regn och lov over skarven — men lost med en plastkapsel for en enda skarv",
+  "old_way": "Plastpase och tejp",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "1-, 2- eller 3-pack",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Clas Ohlson kabelskarv / Biltema skarvskydd",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "skarvskydd utomhus kabelskarv skyddskapa eluttag regn biltema clas ohlson"
+   ],
+   "note": "Den lilla kapseln ar precis den form kedjorna redan har i elavdelningen (Clas Ohlson kabelskarv, Biltema skarvskydd). Ej prisverifierad, men formen ar commodity och prisrymden saknas oavsett."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Ligger dina utesladdar i loven?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder litet kapselformat skarvskydd (1-, 2- och 3-pack) som tras runt en enskild sladdskarv utomhus."
+  },
+  "negative_space_flags": [
+   "under 199 kr",
+   "svensk mass-commoditisering",
+   "latent behov",
+   "generiskt objekt"
+  ],
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": 26,
+  "category_novelty_0_100": 35,
+  "tier": "ELIM",
+  "main_risk": "En plastkapsel for 99 kr nar aldrig 300-kr-golvet, och kedjorna har formen.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "skarvskydd utomhus kabelskarv skyddskapa eluttag regn biltema clas ohlson"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099533256529",
+  "url": "https://www.temu.com/se/g-601099533256529.html",
+  "title": "1pc/2pcs Outdoor Extension Cord Safety Cover with Waterproof Protector Seal, Weatherproof Electrical Connection Box",
+  "already_known": false,
+  "concept": "sladdskarvskydd-litet",
+  "object": "Utomhusuttaget och forlangningssladden vid huset",
+  "owner_owns": "Sladdskarven som ligger pa marken vid fasaden i host",
+  "friction": "Samma som den stora ladan — regn och lov over skarven — men lost med en plastkapsel for en enda skarv",
+  "old_way": "Plastpase och tejp",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "1-, 2- eller 3-pack",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Clas Ohlson kabelskarv / Biltema skarvskydd",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "skarvskydd utomhus kabelskarv skyddskapa eluttag regn biltema clas ohlson"
+   ],
+   "note": "Den lilla kapseln ar precis den form kedjorna redan har i elavdelningen (Clas Ohlson kabelskarv, Biltema skarvskydd). Ej prisverifierad, men formen ar commodity och prisrymden saknas oavsett."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Ligger dina utesladdar i loven?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder litet kapselformat skarvskydd (1-, 2- och 3-pack) som tras runt en enskild sladdskarv utomhus."
+  },
+  "negative_space_flags": [
+   "under 199 kr",
+   "svensk mass-commoditisering",
+   "latent behov",
+   "generiskt objekt"
+  ],
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": 26,
+  "category_novelty_0_100": 35,
+  "tier": "ELIM",
+  "main_risk": "En plastkapsel for 99 kr nar aldrig 300-kr-golvet, och kedjorna har formen.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "skarvskydd utomhus kabelskarv skyddskapa eluttag regn biltema clas ohlson"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099526884410",
+  "url": "https://www.temu.com/se/g-601099526884410.html",
+  "title": "1pc Waterproof Outdoor Extension Cord Safety Junction Box, Protect Your Outlet Cable Connections",
+  "already_known": false,
+  "concept": "sladdskarvskydd-litet",
+  "object": "Utomhusuttaget och forlangningssladden vid huset",
+  "owner_owns": "Sladdskarven som ligger pa marken vid fasaden i host",
+  "friction": "Samma som den stora ladan — regn och lov over skarven — men lost med en plastkapsel for en enda skarv",
+  "old_way": "Plastpase och tejp",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "1-, 2- eller 3-pack",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Clas Ohlson kabelskarv / Biltema skarvskydd",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "skarvskydd utomhus kabelskarv skyddskapa eluttag regn biltema clas ohlson"
+   ],
+   "note": "Den lilla kapseln ar precis den form kedjorna redan har i elavdelningen (Clas Ohlson kabelskarv, Biltema skarvskydd). Ej prisverifierad, men formen ar commodity och prisrymden saknas oavsett."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Ligger dina utesladdar i loven?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder litet kapselformat skarvskydd (1-, 2- och 3-pack) som tras runt en enskild sladdskarv utomhus."
+  },
+  "negative_space_flags": [
+   "under 199 kr",
+   "svensk mass-commoditisering",
+   "latent behov",
+   "generiskt objekt"
+  ],
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": 26,
+  "category_novelty_0_100": 35,
+  "tier": "ELIM",
+  "main_risk": "En plastkapsel for 99 kr nar aldrig 300-kr-golvet, och kedjorna har formen.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "skarvskydd utomhus kabelskarv skyddskapa eluttag regn biltema clas ohlson"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099519167577",
+  "url": "https://www.temu.com/se/g-601099519167577.html",
+  "title": "2-Pack Outdoor Extension Cord Cover, Waterproof Plug Connector Safety Covers, IP44 Connection Protector, Green",
+  "already_known": false,
+  "concept": "sladdskarvskydd-litet",
+  "object": "Utomhusuttaget och forlangningssladden vid huset",
+  "owner_owns": "Sladdskarven som ligger pa marken vid fasaden i host",
+  "friction": "Samma som den stora ladan — regn och lov over skarven — men lost med en plastkapsel for en enda skarv",
+  "old_way": "Plastpase och tejp",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "1-, 2- eller 3-pack",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Clas Ohlson kabelskarv / Biltema skarvskydd",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "skarvskydd utomhus kabelskarv skyddskapa eluttag regn biltema clas ohlson"
+   ],
+   "note": "Den lilla kapseln ar precis den form kedjorna redan har i elavdelningen (Clas Ohlson kabelskarv, Biltema skarvskydd). Ej prisverifierad, men formen ar commodity och prisrymden saknas oavsett."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Ligger dina utesladdar i loven?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder litet kapselformat skarvskydd (1-, 2- och 3-pack) som tras runt en enskild sladdskarv utomhus."
+  },
+  "negative_space_flags": [
+   "under 199 kr",
+   "svensk mass-commoditisering",
+   "latent behov",
+   "generiskt objekt"
+  ],
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": 26,
+  "category_novelty_0_100": 35,
+  "tier": "ELIM",
+  "main_risk": "En plastkapsel for 99 kr nar aldrig 300-kr-golvet, och kedjorna har formen.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "skarvskydd utomhus kabelskarv skyddskapa eluttag regn biltema clas ohlson"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099519167465",
+  "url": "https://www.temu.com/se/g-601099519167465.html",
+  "title": "3-Pack Outdoor Extension Cord Safety Cover, IP44 Waterproof Connection Protector, Weatherproof Electrical Box, Green",
+  "already_known": false,
+  "concept": "sladdskarvskydd-litet",
+  "object": "Utomhusuttaget och forlangningssladden vid huset",
+  "owner_owns": "Sladdskarven som ligger pa marken vid fasaden i host",
+  "friction": "Samma som den stora ladan — regn och lov over skarven — men lost med en plastkapsel for en enda skarv",
+  "old_way": "Plastpase och tejp",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "1-, 2- eller 3-pack",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Clas Ohlson kabelskarv / Biltema skarvskydd",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "skarvskydd utomhus kabelskarv skyddskapa eluttag regn biltema clas ohlson"
+   ],
+   "note": "Den lilla kapseln ar precis den form kedjorna redan har i elavdelningen (Clas Ohlson kabelskarv, Biltema skarvskydd). Ej prisverifierad, men formen ar commodity och prisrymden saknas oavsett."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Ligger dina utesladdar i loven?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder litet kapselformat skarvskydd (1-, 2- och 3-pack) som tras runt en enskild sladdskarv utomhus."
+  },
+  "negative_space_flags": [
+   "under 199 kr",
+   "svensk mass-commoditisering",
+   "latent behov",
+   "generiskt objekt"
+  ],
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": 26,
+  "category_novelty_0_100": 35,
+  "tier": "ELIM",
+  "main_risk": "En plastkapsel for 99 kr nar aldrig 300-kr-golvet, och kedjorna har formen.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "skarvskydd utomhus kabelskarv skyddskapa eluttag regn biltema clas ohlson"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099623933341",
+  "url": "https://www.temu.com/se/g-601099623933341.html",
+  "title": "Waterproof Outdoor Extension Cord Protector, Durable Plastic Electrician Grade Weatherproof Connector Box",
+  "already_known": false,
+  "concept": "sladdskarvskydd-litet",
+  "object": "Utomhusuttaget och forlangningssladden vid huset",
+  "owner_owns": "Sladdskarven som ligger pa marken vid fasaden i host",
+  "friction": "Samma som den stora ladan — regn och lov over skarven — men lost med en plastkapsel for en enda skarv",
+  "old_way": "Plastpase och tejp",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "1-, 2- eller 3-pack",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Clas Ohlson kabelskarv / Biltema skarvskydd",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "skarvskydd utomhus kabelskarv skyddskapa eluttag regn biltema clas ohlson"
+   ],
+   "note": "Den lilla kapseln ar precis den form kedjorna redan har i elavdelningen (Clas Ohlson kabelskarv, Biltema skarvskydd). Ej prisverifierad, men formen ar commodity och prisrymden saknas oavsett."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Ligger dina utesladdar i loven?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder litet kapselformat skarvskydd (1-, 2- och 3-pack) som tras runt en enskild sladdskarv utomhus."
+  },
+  "negative_space_flags": [
+   "under 199 kr",
+   "svensk mass-commoditisering",
+   "latent behov",
+   "generiskt objekt"
+  ],
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": 26,
+  "category_novelty_0_100": 35,
+  "tier": "ELIM",
+  "main_risk": "En plastkapsel for 99 kr nar aldrig 300-kr-golvet, och kedjorna har formen.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "skarvskydd utomhus kabelskarv skyddskapa eluttag regn biltema clas ohlson"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099531001476",
+  "url": "https://www.temu.com/se/g-601099531001476.html",
+  "title": "Outdoor Extension Cord Safety Cover, Weatherproof Electrical Connection Box, Black, Waterproof Seal Connection Protectors",
+  "already_known": false,
+  "concept": "sladdskarvskydd-litet",
+  "object": "Utomhusuttaget och forlangningssladden vid huset",
+  "owner_owns": "Sladdskarven som ligger pa marken vid fasaden i host",
+  "friction": "Samma som den stora ladan — regn och lov over skarven — men lost med en plastkapsel for en enda skarv",
+  "old_way": "Plastpase och tejp",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "1-, 2- eller 3-pack",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Clas Ohlson kabelskarv / Biltema skarvskydd",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "skarvskydd utomhus kabelskarv skyddskapa eluttag regn biltema clas ohlson"
+   ],
+   "note": "Den lilla kapseln ar precis den form kedjorna redan har i elavdelningen (Clas Ohlson kabelskarv, Biltema skarvskydd). Ej prisverifierad, men formen ar commodity och prisrymden saknas oavsett."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Ligger dina utesladdar i loven?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder litet kapselformat skarvskydd (1-, 2- och 3-pack) som tras runt en enskild sladdskarv utomhus."
+  },
+  "negative_space_flags": [
+   "under 199 kr",
+   "svensk mass-commoditisering",
+   "latent behov",
+   "generiskt objekt"
+  ],
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": 26,
+  "category_novelty_0_100": 35,
+  "tier": "ELIM",
+  "main_risk": "En plastkapsel for 99 kr nar aldrig 300-kr-golvet, och kedjorna har formen.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "skarvskydd utomhus kabelskarv skyddskapa eluttag regn biltema clas ohlson"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601103363183086",
+  "url": "https://www.temu.com/se/g-601103363183086.html",
+  "title": "Heavy Duty Adjustable Telescopic Roof Gutter Cleaning Tool with Extendable Pole, Removable Brush & Scraper Attachments, Roof Moss Remover",
+  "already_known": false,
+  "concept": "teleskop-rannrensare-takmossa",
+  "object": "Hangrannan och takpannorna",
+  "owner_owns": "Rannan som ar full av lov just nu och mossan pa norrsidans tak",
+  "friction": "Loven ligger i rannan i oktober och agaren vill slippa stegen",
+  "old_way": "Stege och handskar, eller anlita",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Langd / antal skarvror",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Jula Hangrannerensare (Axley)",
+   "anchor_price_sek": 299,
+   "anchor_url": "https://www.jula.se/catalog/tradgard/tradgardsredskap/tradgardsverktyg/hangrannerensare/hangrannerensare-700014/",
+   "searches": [
+    "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna",
+    "site:temu.com roof moss removal brush telescopic scraper long handle"
+   ],
+   "note": "Bekraftad aven i V2-korningen: Jula saljer kategorin i tre former fran 299 kr, Fiskars QuikFit finns. Takavvattning ar bygghandelns hemmaplan."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "PENDING_VERIFICATION",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Ar hangrannan full av lov nu?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder teleskopisk rannrensare / takmossborste som nar rannan och taket fran marken."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "prisutrymmet nar inte 300 kr med marginal"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 45,
+  "category_novelty_0_100": 30,
+  "tier": "ELIM",
+  "main_risk": "Redan fallen i V2 pa samma gate. Jula 299 kr satter taket.",
+  "confidence": "HIGH",
+  "sources": [
+   "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna",
+   "site:temu.com roof moss removal brush telescopic scraper long handle"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099586261313",
+  "url": "https://www.temu.com/se/g-601099586261313.html",
+  "title": "Telescopic Gutter Cleaning Brush, Extendable from 2 ft to 8.2 ft, Gutter Cleaner to Clear Roof Leaves",
+  "already_known": true,
+  "concept": "teleskop-rannrensare-takmossa",
+  "object": "Hangrannan och takpannorna",
+  "owner_owns": "Rannan som ar full av lov just nu och mossan pa norrsidans tak",
+  "friction": "Loven ligger i rannan i oktober och agaren vill slippa stegen",
+  "old_way": "Stege och handskar, eller anlita",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Langd / antal skarvror",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Jula Hangrannerensare (Axley)",
+   "anchor_price_sek": 299,
+   "anchor_url": "https://www.jula.se/catalog/tradgard/tradgardsredskap/tradgardsverktyg/hangrannerensare/hangrannerensare-700014/",
+   "searches": [
+    "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna",
+    "site:temu.com roof moss removal brush telescopic scraper long handle"
+   ],
+   "note": "Bekraftad aven i V2-korningen: Jula saljer kategorin i tre former fran 299 kr, Fiskars QuikFit finns. Takavvattning ar bygghandelns hemmaplan."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "PENDING_VERIFICATION",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Ar hangrannan full av lov nu?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder teleskopisk rannrensare / takmossborste som nar rannan och taket fran marken."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "prisutrymmet nar inte 300 kr med marginal"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 45,
+  "category_novelty_0_100": 30,
+  "tier": "ELIM",
+  "main_risk": "Redan fallen i V2 pa samma gate. Jula 299 kr satter taket.",
+  "confidence": "HIGH",
+  "sources": [
+   "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna",
+   "site:temu.com roof moss removal brush telescopic scraper long handle"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601100144440175",
+  "url": "https://www.temu.com/se/g-601100144440175.html",
+  "title": "Telescopic Roof Gutter Cleaning Brush, No Climb, High Roof Drainage Brush, Sewer Cleaning Brush, 8 Rods + Leaf Shovel",
+  "already_known": false,
+  "concept": "teleskop-rannrensare-takmossa",
+  "object": "Hangrannan och takpannorna",
+  "owner_owns": "Rannan som ar full av lov just nu och mossan pa norrsidans tak",
+  "friction": "Loven ligger i rannan i oktober och agaren vill slippa stegen",
+  "old_way": "Stege och handskar, eller anlita",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Langd / antal skarvror",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Jula Hangrannerensare (Axley)",
+   "anchor_price_sek": 299,
+   "anchor_url": "https://www.jula.se/catalog/tradgard/tradgardsredskap/tradgardsverktyg/hangrannerensare/hangrannerensare-700014/",
+   "searches": [
+    "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna",
+    "site:temu.com roof moss removal brush telescopic scraper long handle"
+   ],
+   "note": "Bekraftad aven i V2-korningen: Jula saljer kategorin i tre former fran 299 kr, Fiskars QuikFit finns. Takavvattning ar bygghandelns hemmaplan."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "PENDING_VERIFICATION",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Ar hangrannan full av lov nu?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder teleskopisk rannrensare / takmossborste som nar rannan och taket fran marken."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "prisutrymmet nar inte 300 kr med marginal"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 45,
+  "category_novelty_0_100": 30,
+  "tier": "ELIM",
+  "main_risk": "Redan fallen i V2 pa samma gate. Jula 299 kr satter taket.",
+  "confidence": "HIGH",
+  "sources": [
+   "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna",
+   "site:temu.com roof moss removal brush telescopic scraper long handle"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099941027573",
+  "url": "https://www.temu.com/se/g-601099941027573.html",
+  "title": "Gutter Cleaning Tools Gutter Cleaning Brush Roofing with Telescopic Extendable Pole 8.2 ft Guard Cleaner",
+  "already_known": false,
+  "concept": "teleskop-rannrensare-takmossa",
+  "object": "Hangrannan och takpannorna",
+  "owner_owns": "Rannan som ar full av lov just nu och mossan pa norrsidans tak",
+  "friction": "Loven ligger i rannan i oktober och agaren vill slippa stegen",
+  "old_way": "Stege och handskar, eller anlita",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Langd / antal skarvror",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Jula Hangrannerensare (Axley)",
+   "anchor_price_sek": 299,
+   "anchor_url": "https://www.jula.se/catalog/tradgard/tradgardsredskap/tradgardsverktyg/hangrannerensare/hangrannerensare-700014/",
+   "searches": [
+    "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna",
+    "site:temu.com roof moss removal brush telescopic scraper long handle"
+   ],
+   "note": "Bekraftad aven i V2-korningen: Jula saljer kategorin i tre former fran 299 kr, Fiskars QuikFit finns. Takavvattning ar bygghandelns hemmaplan."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "PENDING_VERIFICATION",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Ar hangrannan full av lov nu?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder teleskopisk rannrensare / takmossborste som nar rannan och taket fran marken."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "prisutrymmet nar inte 300 kr med marginal"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 45,
+  "category_novelty_0_100": 30,
+  "tier": "ELIM",
+  "main_risk": "Redan fallen i V2 pa samma gate. Jula 299 kr satter taket.",
+  "confidence": "HIGH",
+  "sources": [
+   "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna",
+   "site:temu.com roof moss removal brush telescopic scraper long handle"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099523143416",
+  "url": "https://www.temu.com/se/g-601099523143416.html",
+  "title": "5/10/20pcs Solar Panel Guard Clips, Bird Critter Guard Fastener Clips, Clamp for Mesh to Solar Panels, Animal Guard Kit, Bird Wire Pigeon Fence",
+  "already_known": false,
+  "concept": "fagelskydd-solceller",
+  "object": "Solcellsanlaggningen pa villataket",
+  "owner_owns": "Solpaneler for 100 000–200 000 kr installerade de senaste fem aren",
+  "friction": "Duvor och kajor har hackat under panelerna hela sommaren; spillning, kvistar och fjadrar syns pa taket och marken nu i september",
+  "old_way": "Ingenting, eller ringa en skadedjursfirma",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "En rullangd (15 cm x 30 m) + antal klamror",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Skadedjursbutiken Fagelskyddskit for Solceller 15,5 cm x 30 meter",
+   "anchor_price_sek": null,
+   "anchor_url": "https://skadedjursbutiken.se/p/fagelskyddskit-for-solceller-155-cm-x-30-meter/",
+   "searches": [
+    "fagelskydd solceller duvor nat solpaneler pris Sverige montera sjalv",
+    "fagelskydd solceller nat klamror pris kr per meter kop"
+   ],
+   "note": "Ingen av de fyra kedjorna (Biltema/Jula/Clas Ohlson/Rusta) saljer det — MEN Amazon.se saljer 15 cm x 30 m 'solpanel fagelskydd, vinylbelagt galvaniserat med fastklamror' (B0B9B3JLYM), alltsa exakt samma form och spec, och Skadedjursbutiken saljer samma kit. Marketplace raknas som hylla. Ankarundantaget kan inte aberopas: bade ankare och look-alike saknar utlast pris, och look-alike-risken ar densamma som falde tofflor 9."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Har du duvor under solpanelerna?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PENDING_VERIFICATION",
+   "note": "Solcellsvillor i Sverige ar en stor och snabbt vaxande klass och traffar man 45–70 med smahus exakt — men inget verifierat tal kunde hamtas (WebSearch-budgeten slut). Far inte gissas."
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder pvc-belagt galvaniserat nat 15 cm x 30 m med klamror som stanger ute duvor och ekorrar under solpanelerna."
+  },
+  "negative_space_flags": [
+   "montering pa tak — agaren maste upp och klamma nat runt varje panel",
+   "forebyggande/fordrojd payoff om faglarna inte redan ar dar",
+   "marketplace saljer samma form (Amazon.se)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 61,
+  "category_novelty_0_100": 90,
+  "tier": "C",
+  "main_risk": "Amazon.se har samma form. Om Axel andå vill kora den kravs ett SYNLIGT markesankare >= 1,6x vart pris (skadedjursfirmans installationspris eller Skadedjursbutikens kitpris) — det priset ar inte hamtat an.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "fagelskydd solceller duvor nat solpaneler pris Sverige montera sjalv",
+   "fagelskydd solceller nat klamror pris kr per meter kop"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099973389379",
+  "url": "https://www.temu.com/se/g-601099973389379.html",
+  "title": "100ft Solar Panel Bird Wire Mesh Guard Kit, Proofing Pigeons, Pest Clips, Net 6 inch",
+  "already_known": false,
+  "concept": "fagelskydd-solceller",
+  "object": "Solcellsanlaggningen pa villataket",
+  "owner_owns": "Solpaneler for 100 000–200 000 kr installerade de senaste fem aren",
+  "friction": "Duvor och kajor har hackat under panelerna hela sommaren; spillning, kvistar och fjadrar syns pa taket och marken nu i september",
+  "old_way": "Ingenting, eller ringa en skadedjursfirma",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "En rullangd (15 cm x 30 m) + antal klamror",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Skadedjursbutiken Fagelskyddskit for Solceller 15,5 cm x 30 meter",
+   "anchor_price_sek": null,
+   "anchor_url": "https://skadedjursbutiken.se/p/fagelskyddskit-for-solceller-155-cm-x-30-meter/",
+   "searches": [
+    "fagelskydd solceller duvor nat solpaneler pris Sverige montera sjalv",
+    "fagelskydd solceller nat klamror pris kr per meter kop"
+   ],
+   "note": "Ingen av de fyra kedjorna (Biltema/Jula/Clas Ohlson/Rusta) saljer det — MEN Amazon.se saljer 15 cm x 30 m 'solpanel fagelskydd, vinylbelagt galvaniserat med fastklamror' (B0B9B3JLYM), alltsa exakt samma form och spec, och Skadedjursbutiken saljer samma kit. Marketplace raknas som hylla. Ankarundantaget kan inte aberopas: bade ankare och look-alike saknar utlast pris, och look-alike-risken ar densamma som falde tofflor 9."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 899,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Har du duvor under solpanelerna?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PENDING_VERIFICATION",
+   "note": "Solcellsvillor i Sverige ar en stor och snabbt vaxande klass och traffar man 45–70 med smahus exakt — men inget verifierat tal kunde hamtas (WebSearch-budgeten slut). Far inte gissas."
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder pvc-belagt galvaniserat nat 15 cm x 30 m med klamror som stanger ute duvor och ekorrar under solpanelerna."
+  },
+  "negative_space_flags": [
+   "montering pa tak — agaren maste upp och klamma nat runt varje panel",
+   "forebyggande/fordrojd payoff om faglarna inte redan ar dar",
+   "marketplace saljer samma form (Amazon.se)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 61,
+  "category_novelty_0_100": 90,
+  "tier": "C",
+  "main_risk": "Amazon.se har samma form. Om Axel andå vill kora den kravs ett SYNLIGT markesankare >= 1,6x vart pris (skadedjursfirmans installationspris eller Skadedjursbutikens kitpris) — det priset ar inte hamtat an.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "fagelskydd solceller duvor nat solpaneler pris Sverige montera sjalv",
+   "fagelskydd solceller nat klamror pris kr per meter kop"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099717311899",
+  "url": "https://www.temu.com/se/g-601099717311899.html",
+  "title": "Solar Proofing Bird Mesh 6in x 100ft, Solar Panel Wire Mesh Roll + Clip Kit, 70 Fixing Clips, Bird Proofing for Protection of Solar Panels",
+  "already_known": false,
+  "concept": "fagelskydd-solceller",
+  "object": "Solcellsanlaggningen pa villataket",
+  "owner_owns": "Solpaneler for 100 000–200 000 kr installerade de senaste fem aren",
+  "friction": "Duvor och kajor har hackat under panelerna hela sommaren; spillning, kvistar och fjadrar syns pa taket och marken nu i september",
+  "old_way": "Ingenting, eller ringa en skadedjursfirma",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "En rullangd (15 cm x 30 m) + antal klamror",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Skadedjursbutiken Fagelskyddskit for Solceller 15,5 cm x 30 meter",
+   "anchor_price_sek": null,
+   "anchor_url": "https://skadedjursbutiken.se/p/fagelskyddskit-for-solceller-155-cm-x-30-meter/",
+   "searches": [
+    "fagelskydd solceller duvor nat solpaneler pris Sverige montera sjalv",
+    "fagelskydd solceller nat klamror pris kr per meter kop"
+   ],
+   "note": "Ingen av de fyra kedjorna (Biltema/Jula/Clas Ohlson/Rusta) saljer det — MEN Amazon.se saljer 15 cm x 30 m 'solpanel fagelskydd, vinylbelagt galvaniserat med fastklamror' (B0B9B3JLYM), alltsa exakt samma form och spec, och Skadedjursbutiken saljer samma kit. Marketplace raknas som hylla. Ankarundantaget kan inte aberopas: bade ankare och look-alike saknar utlast pris, och look-alike-risken ar densamma som falde tofflor 9."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 899,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Har du duvor under solpanelerna?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PENDING_VERIFICATION",
+   "note": "Solcellsvillor i Sverige ar en stor och snabbt vaxande klass och traffar man 45–70 med smahus exakt — men inget verifierat tal kunde hamtas (WebSearch-budgeten slut). Far inte gissas."
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder pvc-belagt galvaniserat nat 15 cm x 30 m med klamror som stanger ute duvor och ekorrar under solpanelerna."
+  },
+  "negative_space_flags": [
+   "montering pa tak — agaren maste upp och klamma nat runt varje panel",
+   "forebyggande/fordrojd payoff om faglarna inte redan ar dar",
+   "marketplace saljer samma form (Amazon.se)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 61,
+  "category_novelty_0_100": 90,
+  "tier": "C",
+  "main_risk": "Amazon.se har samma form. Om Axel andå vill kora den kravs ett SYNLIGT markesankare >= 1,6x vart pris (skadedjursfirmans installationspris eller Skadedjursbutikens kitpris) — det priset ar inte hamtat an.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "fagelskydd solceller duvor nat solpaneler pris Sverige montera sjalv",
+   "fagelskydd solceller nat klamror pris kr per meter kop"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601100476979313",
+  "url": "https://www.temu.com/se/g-601100476979313.html",
+  "title": "Solar Panel Bird Mesh Guard, PVC Coated Galvanized Steel Wire, Protects Solar Panels from Birds, + Hook Set",
+  "already_known": false,
+  "concept": "fagelskydd-solceller",
+  "object": "Solcellsanlaggningen pa villataket",
+  "owner_owns": "Solpaneler for 100 000–200 000 kr installerade de senaste fem aren",
+  "friction": "Duvor och kajor har hackat under panelerna hela sommaren; spillning, kvistar och fjadrar syns pa taket och marken nu i september",
+  "old_way": "Ingenting, eller ringa en skadedjursfirma",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "En rullangd (15 cm x 30 m) + antal klamror",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Skadedjursbutiken Fagelskyddskit for Solceller 15,5 cm x 30 meter",
+   "anchor_price_sek": null,
+   "anchor_url": "https://skadedjursbutiken.se/p/fagelskyddskit-for-solceller-155-cm-x-30-meter/",
+   "searches": [
+    "fagelskydd solceller duvor nat solpaneler pris Sverige montera sjalv",
+    "fagelskydd solceller nat klamror pris kr per meter kop"
+   ],
+   "note": "Ingen av de fyra kedjorna (Biltema/Jula/Clas Ohlson/Rusta) saljer det — MEN Amazon.se saljer 15 cm x 30 m 'solpanel fagelskydd, vinylbelagt galvaniserat med fastklamror' (B0B9B3JLYM), alltsa exakt samma form och spec, och Skadedjursbutiken saljer samma kit. Marketplace raknas som hylla. Ankarundantaget kan inte aberopas: bade ankare och look-alike saknar utlast pris, och look-alike-risken ar densamma som falde tofflor 9."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Har du duvor under solpanelerna?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PENDING_VERIFICATION",
+   "note": "Solcellsvillor i Sverige ar en stor och snabbt vaxande klass och traffar man 45–70 med smahus exakt — men inget verifierat tal kunde hamtas (WebSearch-budgeten slut). Far inte gissas."
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder pvc-belagt galvaniserat nat 15 cm x 30 m med klamror som stanger ute duvor och ekorrar under solpanelerna."
+  },
+  "negative_space_flags": [
+   "montering pa tak — agaren maste upp och klamma nat runt varje panel",
+   "forebyggande/fordrojd payoff om faglarna inte redan ar dar",
+   "marketplace saljer samma form (Amazon.se)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 61,
+  "category_novelty_0_100": 90,
+  "tier": "C",
+  "main_risk": "Amazon.se har samma form. Om Axel andå vill kora den kravs ett SYNLIGT markesankare >= 1,6x vart pris (skadedjursfirmans installationspris eller Skadedjursbutikens kitpris) — det priset ar inte hamtat an.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "fagelskydd solceller duvor nat solpaneler pris Sverige montera sjalv",
+   "fagelskydd solceller nat klamror pris kr per meter kop"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601100262707288",
+  "url": "https://www.temu.com/se/g-601100262707288.html",
+  "title": "100ft Solar Panel Bird Wire Mesh Guard Kit, Pigeon Bird Proofing Clips, Net 6in (UK)",
+  "already_known": false,
+  "concept": "fagelskydd-solceller",
+  "object": "Solcellsanlaggningen pa villataket",
+  "owner_owns": "Solpaneler for 100 000–200 000 kr installerade de senaste fem aren",
+  "friction": "Duvor och kajor har hackat under panelerna hela sommaren; spillning, kvistar och fjadrar syns pa taket och marken nu i september",
+  "old_way": "Ingenting, eller ringa en skadedjursfirma",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "En rullangd (15 cm x 30 m) + antal klamror",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Skadedjursbutiken Fagelskyddskit for Solceller 15,5 cm x 30 meter",
+   "anchor_price_sek": null,
+   "anchor_url": "https://skadedjursbutiken.se/p/fagelskyddskit-for-solceller-155-cm-x-30-meter/",
+   "searches": [
+    "fagelskydd solceller duvor nat solpaneler pris Sverige montera sjalv",
+    "fagelskydd solceller nat klamror pris kr per meter kop"
+   ],
+   "note": "Ingen av de fyra kedjorna (Biltema/Jula/Clas Ohlson/Rusta) saljer det — MEN Amazon.se saljer 15 cm x 30 m 'solpanel fagelskydd, vinylbelagt galvaniserat med fastklamror' (B0B9B3JLYM), alltsa exakt samma form och spec, och Skadedjursbutiken saljer samma kit. Marketplace raknas som hylla. Ankarundantaget kan inte aberopas: bade ankare och look-alike saknar utlast pris, och look-alike-risken ar densamma som falde tofflor 9."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Har du duvor under solpanelerna?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PENDING_VERIFICATION",
+   "note": "Solcellsvillor i Sverige ar en stor och snabbt vaxande klass och traffar man 45–70 med smahus exakt — men inget verifierat tal kunde hamtas (WebSearch-budgeten slut). Far inte gissas."
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder pvc-belagt galvaniserat nat 15 cm x 30 m med klamror som stanger ute duvor och ekorrar under solpanelerna."
+  },
+  "negative_space_flags": [
+   "montering pa tak — agaren maste upp och klamma nat runt varje panel",
+   "forebyggande/fordrojd payoff om faglarna inte redan ar dar",
+   "marketplace saljer samma form (Amazon.se)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 61,
+  "category_novelty_0_100": 90,
+  "tier": "C",
+  "main_risk": "Amazon.se har samma form. Om Axel andå vill kora den kravs ett SYNLIGT markesankare >= 1,6x vart pris (skadedjursfirmans installationspris eller Skadedjursbutikens kitpris) — det priset ar inte hamtat an.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "fagelskydd solceller duvor nat solpaneler pris Sverige montera sjalv",
+   "fagelskydd solceller nat klamror pris kr per meter kop"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099644927733",
+  "url": "https://www.temu.com/se/g-601099644927733.html",
+  "title": "Black 30.5m / 100ft Solar Panel PVC Coated Galvanized Steel Mesh, Squirrel Guard, Protects Solar Panels from Birds and Rodents",
+  "already_known": false,
+  "concept": "fagelskydd-solceller",
+  "object": "Solcellsanlaggningen pa villataket",
+  "owner_owns": "Solpaneler for 100 000–200 000 kr installerade de senaste fem aren",
+  "friction": "Duvor och kajor har hackat under panelerna hela sommaren; spillning, kvistar och fjadrar syns pa taket och marken nu i september",
+  "old_way": "Ingenting, eller ringa en skadedjursfirma",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "En rullangd (15 cm x 30 m) + antal klamror",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Skadedjursbutiken Fagelskyddskit for Solceller 15,5 cm x 30 meter",
+   "anchor_price_sek": null,
+   "anchor_url": "https://skadedjursbutiken.se/p/fagelskyddskit-for-solceller-155-cm-x-30-meter/",
+   "searches": [
+    "fagelskydd solceller duvor nat solpaneler pris Sverige montera sjalv",
+    "fagelskydd solceller nat klamror pris kr per meter kop"
+   ],
+   "note": "Ingen av de fyra kedjorna (Biltema/Jula/Clas Ohlson/Rusta) saljer det — MEN Amazon.se saljer 15 cm x 30 m 'solpanel fagelskydd, vinylbelagt galvaniserat med fastklamror' (B0B9B3JLYM), alltsa exakt samma form och spec, och Skadedjursbutiken saljer samma kit. Marketplace raknas som hylla. Ankarundantaget kan inte aberopas: bade ankare och look-alike saknar utlast pris, och look-alike-risken ar densamma som falde tofflor 9."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Har du duvor under solpanelerna?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PENDING_VERIFICATION",
+   "note": "Solcellsvillor i Sverige ar en stor och snabbt vaxande klass och traffar man 45–70 med smahus exakt — men inget verifierat tal kunde hamtas (WebSearch-budgeten slut). Far inte gissas."
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder pvc-belagt galvaniserat nat 15 cm x 30 m med klamror som stanger ute duvor och ekorrar under solpanelerna."
+  },
+  "negative_space_flags": [
+   "montering pa tak — agaren maste upp och klamma nat runt varje panel",
+   "forebyggande/fordrojd payoff om faglarna inte redan ar dar",
+   "marketplace saljer samma form (Amazon.se)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 61,
+  "category_novelty_0_100": 90,
+  "tier": "C",
+  "main_risk": "Amazon.se har samma form. Om Axel andå vill kora den kravs ett SYNLIGT markesankare >= 1,6x vart pris (skadedjursfirmans installationspris eller Skadedjursbutikens kitpris) — det priset ar inte hamtat an.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "fagelskydd solceller duvor nat solpaneler pris Sverige montera sjalv",
+   "fagelskydd solceller nat klamror pris kr per meter kop"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099900923773",
+  "url": "https://www.temu.com/se/g-601099900923773.html",
+  "title": "Solar Panel Bird and Squirrel Protection, 6in x 100ft PVC Coated Mesh Roll with 70 Stainless Steel Fasteners",
+  "already_known": false,
+  "concept": "fagelskydd-solceller",
+  "object": "Solcellsanlaggningen pa villataket",
+  "owner_owns": "Solpaneler for 100 000–200 000 kr installerade de senaste fem aren",
+  "friction": "Duvor och kajor har hackat under panelerna hela sommaren; spillning, kvistar och fjadrar syns pa taket och marken nu i september",
+  "old_way": "Ingenting, eller ringa en skadedjursfirma",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "En rullangd (15 cm x 30 m) + antal klamror",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Skadedjursbutiken Fagelskyddskit for Solceller 15,5 cm x 30 meter",
+   "anchor_price_sek": null,
+   "anchor_url": "https://skadedjursbutiken.se/p/fagelskyddskit-for-solceller-155-cm-x-30-meter/",
+   "searches": [
+    "fagelskydd solceller duvor nat solpaneler pris Sverige montera sjalv",
+    "fagelskydd solceller nat klamror pris kr per meter kop"
+   ],
+   "note": "Ingen av de fyra kedjorna (Biltema/Jula/Clas Ohlson/Rusta) saljer det — MEN Amazon.se saljer 15 cm x 30 m 'solpanel fagelskydd, vinylbelagt galvaniserat med fastklamror' (B0B9B3JLYM), alltsa exakt samma form och spec, och Skadedjursbutiken saljer samma kit. Marketplace raknas som hylla. Ankarundantaget kan inte aberopas: bade ankare och look-alike saknar utlast pris, och look-alike-risken ar densamma som falde tofflor 9."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Har du duvor under solpanelerna?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PENDING_VERIFICATION",
+   "note": "Solcellsvillor i Sverige ar en stor och snabbt vaxande klass och traffar man 45–70 med smahus exakt — men inget verifierat tal kunde hamtas (WebSearch-budgeten slut). Far inte gissas."
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder pvc-belagt galvaniserat nat 15 cm x 30 m med klamror som stanger ute duvor och ekorrar under solpanelerna."
+  },
+  "negative_space_flags": [
+   "montering pa tak — agaren maste upp och klamma nat runt varje panel",
+   "forebyggande/fordrojd payoff om faglarna inte redan ar dar",
+   "marketplace saljer samma form (Amazon.se)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 61,
+  "category_novelty_0_100": 90,
+  "tier": "C",
+  "main_risk": "Amazon.se har samma form. Om Axel andå vill kora den kravs ett SYNLIGT markesankare >= 1,6x vart pris (skadedjursfirmans installationspris eller Skadedjursbutikens kitpris) — det priset ar inte hamtat an.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "fagelskydd solceller duvor nat solpaneler pris Sverige montera sjalv",
+   "fagelskydd solceller nat klamror pris kr per meter kop"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601102437849405",
+  "url": "https://www.temu.com/se/g-601102437849405.html",
+  "title": "3 Pack 6in Aluminum Gutter Guard, Anti-Blocking Drain Cover, Mesh Strainer Leaf Filter for Downspouts, Gutters, Roof Vents",
+  "already_known": false,
+  "concept": "lovsil-stuprorsgaller",
+  "object": "Hangrannan och stuproret",
+  "owner_owns": "Rannan som svammar over vid varje hostregn",
+  "friction": "Stuproret ar igensatt av lov i oktober och vattnet rinner over rannkanten ner langs fasaden",
+  "old_way": "Peta upp lovproppen med handen fran stegen",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Ror-diameter 75/87/100/120 mm — agaren maste mata",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Lovskydd for hangranna (O 100 / O 120)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bygg/tak/takavvattning/takavvattning-vit/lovskydd-for-hangranna-o-120-2000055300/",
+   "searches": [
+    "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna"
+   ],
+   "note": "Biltema saljer bade Lovskydd for hangranna (borstmodell, O100 och O120) och Renstratt 119 kr; Jula saljer Hangrannenat (max 16 cm rannbredd, 15 hallare). Formen ar helt tackt av bada kedjorna."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Rinner stuproret over nar det regnar?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder lovsil / stuprorsgaller i metall eller plast som stoppar lov i rannans utlopp."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "under 199 kr",
+   "kopt fungerande old way"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 30,
+  "category_novelty_0_100": 20,
+  "tier": "ELIM",
+  "main_risk": "Biltema och Jula tacker formen fullstandigt. Redan fallen i V2.",
+  "confidence": "HIGH",
+  "sources": [
+   "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099543370352",
+  "url": "https://www.temu.com/se/g-601099543370352.html",
+  "title": "5pcs Leaf Filter Gutter Strainer Gutter Guard Filter, Downspout Filter Mesh Leaf Filter Screen for Outdoor",
+  "already_known": true,
+  "concept": "lovsil-stuprorsgaller",
+  "object": "Hangrannan och stuproret",
+  "owner_owns": "Rannan som svammar over vid varje hostregn",
+  "friction": "Stuproret ar igensatt av lov i oktober och vattnet rinner over rannkanten ner langs fasaden",
+  "old_way": "Peta upp lovproppen med handen fran stegen",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Ror-diameter 75/87/100/120 mm — agaren maste mata",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Lovskydd for hangranna (O 100 / O 120)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bygg/tak/takavvattning/takavvattning-vit/lovskydd-for-hangranna-o-120-2000055300/",
+   "searches": [
+    "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna"
+   ],
+   "note": "Biltema saljer bade Lovskydd for hangranna (borstmodell, O100 och O120) och Renstratt 119 kr; Jula saljer Hangrannenat (max 16 cm rannbredd, 15 hallare). Formen ar helt tackt av bada kedjorna."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Rinner stuproret over nar det regnar?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder lovsil / stuprorsgaller i metall eller plast som stoppar lov i rannans utlopp."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "under 199 kr",
+   "kopt fungerande old way"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 30,
+  "category_novelty_0_100": 20,
+  "tier": "ELIM",
+  "main_risk": "Biltema och Jula tacker formen fullstandigt. Redan fallen i V2.",
+  "confidence": "HIGH",
+  "sources": [
+   "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099649565409",
+  "url": "https://www.temu.com/se/g-601099649565409.html",
+  "title": "2 Pack Stainless Steel Gutter Guards, Drain Filter Strainer, Anti-Clogging Roof Gutter Downspout Blockage Metal",
+  "already_known": false,
+  "concept": "lovsil-stuprorsgaller",
+  "object": "Hangrannan och stuproret",
+  "owner_owns": "Rannan som svammar over vid varje hostregn",
+  "friction": "Stuproret ar igensatt av lov i oktober och vattnet rinner over rannkanten ner langs fasaden",
+  "old_way": "Peta upp lovproppen med handen fran stegen",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Ror-diameter 75/87/100/120 mm — agaren maste mata",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Lovskydd for hangranna (O 100 / O 120)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bygg/tak/takavvattning/takavvattning-vit/lovskydd-for-hangranna-o-120-2000055300/",
+   "searches": [
+    "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna"
+   ],
+   "note": "Biltema saljer bade Lovskydd for hangranna (borstmodell, O100 och O120) och Renstratt 119 kr; Jula saljer Hangrannenat (max 16 cm rannbredd, 15 hallare). Formen ar helt tackt av bada kedjorna."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Rinner stuproret over nar det regnar?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder lovsil / stuprorsgaller i metall eller plast som stoppar lov i rannans utlopp."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "under 199 kr",
+   "kopt fungerande old way"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 30,
+  "category_novelty_0_100": 20,
+  "tier": "ELIM",
+  "main_risk": "Biltema och Jula tacker formen fullstandigt. Redan fallen i V2.",
+  "confidence": "HIGH",
+  "sources": [
+   "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099582902877",
+  "url": "https://www.temu.com/se/g-601099582902877.html",
+  "title": "Plastic Gutter Guard Downspout Filter, Anti-Blocking Drainage for Roof Gutters, Outdoor Drain Cover with Mesh",
+  "already_known": false,
+  "concept": "lovsil-stuprorsgaller",
+  "object": "Hangrannan och stuproret",
+  "owner_owns": "Rannan som svammar over vid varje hostregn",
+  "friction": "Stuproret ar igensatt av lov i oktober och vattnet rinner over rannkanten ner langs fasaden",
+  "old_way": "Peta upp lovproppen med handen fran stegen",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Ror-diameter 75/87/100/120 mm — agaren maste mata",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Lovskydd for hangranna (O 100 / O 120)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bygg/tak/takavvattning/takavvattning-vit/lovskydd-for-hangranna-o-120-2000055300/",
+   "searches": [
+    "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna"
+   ],
+   "note": "Biltema saljer bade Lovskydd for hangranna (borstmodell, O100 och O120) och Renstratt 119 kr; Jula saljer Hangrannenat (max 16 cm rannbredd, 15 hallare). Formen ar helt tackt av bada kedjorna."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Rinner stuproret over nar det regnar?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder lovsil / stuprorsgaller i metall eller plast som stoppar lov i rannans utlopp."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "under 199 kr",
+   "kopt fungerande old way"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 30,
+  "category_novelty_0_100": 20,
+  "tier": "ELIM",
+  "main_risk": "Biltema och Jula tacker formen fullstandigt. Redan fallen i V2.",
+  "confidence": "HIGH",
+  "sources": [
+   "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099596922285",
+  "url": "https://www.temu.com/se/g-601099596922285.html",
+  "title": "4pcs Leaf Gutter Downspout Filter Guard Mesh, Anti-Blocking Down Spout Strainers",
+  "already_known": true,
+  "concept": "lovsil-stuprorsgaller",
+  "object": "Hangrannan och stuproret",
+  "owner_owns": "Rannan som svammar over vid varje hostregn",
+  "friction": "Stuproret ar igensatt av lov i oktober och vattnet rinner over rannkanten ner langs fasaden",
+  "old_way": "Peta upp lovproppen med handen fran stegen",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Ror-diameter 75/87/100/120 mm — agaren maste mata",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Lovskydd for hangranna (O 100 / O 120)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bygg/tak/takavvattning/takavvattning-vit/lovskydd-for-hangranna-o-120-2000055300/",
+   "searches": [
+    "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna"
+   ],
+   "note": "Biltema saljer bade Lovskydd for hangranna (borstmodell, O100 och O120) och Renstratt 119 kr; Jula saljer Hangrannenat (max 16 cm rannbredd, 15 hallare). Formen ar helt tackt av bada kedjorna."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Rinner stuproret over nar det regnar?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder lovsil / stuprorsgaller i metall eller plast som stoppar lov i rannans utlopp."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "under 199 kr",
+   "kopt fungerande old way"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 30,
+  "category_novelty_0_100": 20,
+  "tier": "ELIM",
+  "main_risk": "Biltema och Jula tacker formen fullstandigt. Redan fallen i V2.",
+  "confidence": "HIGH",
+  "sources": [
+   "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099528313858",
+  "url": "https://www.temu.com/se/g-601099528313858.html",
+  "title": "4pcs Gutter Filter Strainer Guard, Pipe Filter, Leaf Debris Drain Cover, Downspout Protectors",
+  "already_known": true,
+  "concept": "lovsil-stuprorsgaller",
+  "object": "Hangrannan och stuproret",
+  "owner_owns": "Rannan som svammar over vid varje hostregn",
+  "friction": "Stuproret ar igensatt av lov i oktober och vattnet rinner over rannkanten ner langs fasaden",
+  "old_way": "Peta upp lovproppen med handen fran stegen",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Ror-diameter 75/87/100/120 mm — agaren maste mata",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Lovskydd for hangranna (O 100 / O 120)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bygg/tak/takavvattning/takavvattning-vit/lovskydd-for-hangranna-o-120-2000055300/",
+   "searches": [
+    "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna"
+   ],
+   "note": "Biltema saljer bade Lovskydd for hangranna (borstmodell, O100 och O120) och Renstratt 119 kr; Jula saljer Hangrannenat (max 16 cm rannbredd, 15 hallare). Formen ar helt tackt av bada kedjorna."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Rinner stuproret over nar det regnar?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder lovsil / stuprorsgaller i metall eller plast som stoppar lov i rannans utlopp."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "under 199 kr",
+   "kopt fungerande old way"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 30,
+  "category_novelty_0_100": 20,
+  "tier": "ELIM",
+  "main_risk": "Biltema och Jula tacker formen fullstandigt. Redan fallen i V2.",
+  "confidence": "HIGH",
+  "sources": [
+   "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099537432061",
+  "url": "https://www.temu.com/se/g-601099537432061.html",
+  "title": "1-4pcs Gutter Downspout Guards, Gutter Strainer, Drain Net Cover for Preventing Blockage",
+  "already_known": false,
+  "concept": "lovsil-stuprorsgaller",
+  "object": "Hangrannan och stuproret",
+  "owner_owns": "Rannan som svammar over vid varje hostregn",
+  "friction": "Stuproret ar igensatt av lov i oktober och vattnet rinner over rannkanten ner langs fasaden",
+  "old_way": "Peta upp lovproppen med handen fran stegen",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Ror-diameter 75/87/100/120 mm — agaren maste mata",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Lovskydd for hangranna (O 100 / O 120)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bygg/tak/takavvattning/takavvattning-vit/lovskydd-for-hangranna-o-120-2000055300/",
+   "searches": [
+    "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna"
+   ],
+   "note": "Biltema saljer bade Lovskydd for hangranna (borstmodell, O100 och O120) och Renstratt 119 kr; Jula saljer Hangrannenat (max 16 cm rannbredd, 15 hallare). Formen ar helt tackt av bada kedjorna."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Rinner stuproret over nar det regnar?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder lovsil / stuprorsgaller i metall eller plast som stoppar lov i rannans utlopp."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "under 199 kr",
+   "kopt fungerande old way"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 30,
+  "category_novelty_0_100": 20,
+  "tier": "ELIM",
+  "main_risk": "Biltema och Jula tacker formen fullstandigt. Redan fallen i V2.",
+  "confidence": "HIGH",
+  "sources": [
+   "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099652248882",
+  "url": "https://www.temu.com/se/g-601099652248882.html",
+  "title": "5 Pack Metal Gutter Guards, Downspout Filter, Anti-Blocking Leaf Strainer, Roof Drain Protection",
+  "already_known": true,
+  "concept": "lovsil-stuprorsgaller",
+  "object": "Hangrannan och stuproret",
+  "owner_owns": "Rannan som svammar over vid varje hostregn",
+  "friction": "Stuproret ar igensatt av lov i oktober och vattnet rinner over rannkanten ner langs fasaden",
+  "old_way": "Peta upp lovproppen med handen fran stegen",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "Ror-diameter 75/87/100/120 mm — agaren maste mata",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Lovskydd for hangranna (O 100 / O 120)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/bygg/tak/takavvattning/takavvattning-vit/lovskydd-for-hangranna-o-120-2000055300/",
+   "searches": [
+    "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna"
+   ],
+   "note": "Biltema saljer bade Lovskydd for hangranna (borstmodell, O100 och O120) och Renstratt 119 kr; Jula saljer Hangrannenat (max 16 cm rannbredd, 15 hallare). Formen ar helt tackt av bada kedjorna."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Rinner stuproret over nar det regnar?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder lovsil / stuprorsgaller i metall eller plast som stoppar lov i rannans utlopp."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "under 199 kr",
+   "kopt fungerande old way"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 30,
+  "category_novelty_0_100": 20,
+  "tier": "ELIM",
+  "main_risk": "Biltema och Jula tacker formen fullstandigt. Redan fallen i V2.",
+  "confidence": "HIGH",
+  "sources": [
+   "lovskydd hangranna rannskydd rulle nat biltema jula pris takranna"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099525797771",
+  "url": "https://www.temu.com/se/g-601099525797771.html",
+  "title": "1-3pcs Crevice Cleaning Brush, Multifunctional Gap Cleaning Brush Tool, Grout Cleaner Brush, Hard Bristle",
+  "already_known": false,
+  "concept": "trall-fogrensare",
+  "object": "Altantrallen",
+  "owner_owns": "Trall vars springor ar fulla av lov och som blir hal av mossa i host",
+  "friction": "Loven packar sig i trallspringorna i september–oktober och trallen blir gron och hal",
+  "old_way": "Skruvmejsel, kniv eller hogtryckstvatt",
+  "price_usd": null,
+  "price_source": null,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "1–3-pack borsthuvuden",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema/Jula fogborste och fogskrapa",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "site:temu.com deck gap cleaning tool decking groove crevice brush patio"
+   ],
+   "note": "Listningarna som hittades ar badrums-fogborstar, inte ett altanverktyg. Bygghandeln saljer fogborste/fogskrapa; formen finns pa hyllan och priset ligger langt under 199 kr."
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Ar trallens springor fulla av lov?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder smal fogborste/skrapa som drar lov och mossa ur springorna i altantrallen."
+  },
+  "negative_space_flags": [
+   "under 199 kr",
+   "svensk mass-commoditisering",
+   "leverantorens anvandningsfall (badrumsfog) ar inte agarens (altantrall)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 25,
+  "category_novelty_0_100": 45,
+  "tier": "ELIM",
+  "main_risk": "Ingen listning visar ett verktyg for altantrall — bara badrumsfog. Fel fysisk produkt for agarens jobb.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com deck gap cleaning tool decking groove crevice brush patio"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099529160518",
+  "url": "https://www.temu.com/se/g-601099529160518.html",
+  "title": "Draft Stopper for Doors, Weatherproofing Seal & Sweep for Exterior and Interior Doors, Noise and Dust Insulation Blocker for Garage, Windows",
+  "already_known": false,
+  "concept": "dorrbottenlist-drag",
+  "object": "Ytterdorren, altandorren och garageporten",
+  "owner_owns": "Dorrar som drar nu nar det blir kallt",
+  "friction": "Det drar in under ytterdorren i september–oktober och lov blaser in i garaget",
+  "old_way": "Handduk eller en rulle isolering i springan",
+  "price_usd": 4,
+  "price_source": "seznam-snippet",
+  "rating": "4.8",
+  "review_count": "96% (99+)",
+  "sold": null,
+  "variants": "Bredd 90–100 cm, klistras eller skruvas",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Jula Hard Head bottenlist",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "site:temu.com outdoor door draft stopper letterbox mail slot cover brush seal"
+   ],
+   "note": "Faldes redan i V2-korningen pa Jula Hard Head bottenlist. Bekraftad forbrukning: listningarna ligger pa $4–$9."
+  },
+  "economics": {
+   "landed_low_sek": 41.76,
+   "landed_high_sek": 48.96,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Drar det in under ytterdorren?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder dorrbottenlist / tatningsborste mot drag under ytterdorren och garageporten."
+  },
+  "negative_space_flags": [
+   "under 199 kr",
+   "svensk mass-commoditisering",
+   "forbrukningsvara (tejpad list)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 22,
+  "category_novelty_0_100": 10,
+  "tier": "ELIM",
+  "main_risk": "Redan avfardad i V2, och $4–$9 ger ingen prisrymd overhuvudtaget.",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com outdoor door draft stopper letterbox mail slot cover brush seal"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099620739948",
+  "url": "https://www.temu.com/se/g-601099620739948.html",
+  "title": "Door Draft Stopper with Adjustable Weather Stripping for Insulation Against Cold, Exterior and Interior Doors, 39.37 inches, Grey",
+  "already_known": false,
+  "concept": "dorrbottenlist-drag",
+  "object": "Ytterdorren, altandorren och garageporten",
+  "owner_owns": "Dorrar som drar nu nar det blir kallt",
+  "friction": "Det drar in under ytterdorren i september–oktober och lov blaser in i garaget",
+  "old_way": "Handduk eller en rulle isolering i springan",
+  "price_usd": 6,
+  "price_source": "seznam-snippet",
+  "rating": "4.7",
+  "review_count": "94% (99+)",
+  "sold": null,
+  "variants": "Bredd 90–100 cm, klistras eller skruvas",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Jula Hard Head bottenlist",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "site:temu.com outdoor door draft stopper letterbox mail slot cover brush seal"
+   ],
+   "note": "Faldes redan i V2-korningen pa Jula Hard Head bottenlist. Bekraftad forbrukning: listningarna ligger pa $4–$9."
+  },
+  "economics": {
+   "landed_low_sek": 62.64,
+   "landed_high_sek": 73.44,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Drar det in under ytterdorren?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder dorrbottenlist / tatningsborste mot drag under ytterdorren och garageporten."
+  },
+  "negative_space_flags": [
+   "under 199 kr",
+   "svensk mass-commoditisering",
+   "forbrukningsvara (tejpad list)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 22,
+  "category_novelty_0_100": 10,
+  "tier": "ELIM",
+  "main_risk": "Redan avfardad i V2, och $4–$9 ger ingen prisrymd overhuvudtaget.",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com outdoor door draft stopper letterbox mail slot cover brush seal"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601100201647702",
+  "url": "https://www.temu.com/se/g-601100201647702.html",
+  "title": "1pc Fabric Windproof Draft Stopper Door Seal for Under Door up to 3 inches, Draft Excluder",
+  "already_known": false,
+  "concept": "dorrbottenlist-drag",
+  "object": "Ytterdorren, altandorren och garageporten",
+  "owner_owns": "Dorrar som drar nu nar det blir kallt",
+  "friction": "Det drar in under ytterdorren i september–oktober och lov blaser in i garaget",
+  "old_way": "Handduk eller en rulle isolering i springan",
+  "price_usd": 9,
+  "price_source": "seznam-snippet",
+  "rating": "4.8",
+  "review_count": "96% (99+)",
+  "sold": null,
+  "variants": "Bredd 90–100 cm, klistras eller skruvas",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Jula Hard Head bottenlist",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "site:temu.com outdoor door draft stopper letterbox mail slot cover brush seal"
+   ],
+   "note": "Faldes redan i V2-korningen pa Jula Hard Head bottenlist. Bekraftad forbrukning: listningarna ligger pa $4–$9."
+  },
+  "economics": {
+   "landed_low_sek": 93.96,
+   "landed_high_sek": 110.16,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Drar det in under ytterdorren?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder dorrbottenlist / tatningsborste mot drag under ytterdorren och garageporten."
+  },
+  "negative_space_flags": [
+   "under 199 kr",
+   "svensk mass-commoditisering",
+   "forbrukningsvara (tejpad list)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 22,
+  "category_novelty_0_100": 10,
+  "tier": "ELIM",
+  "main_risk": "Redan avfardad i V2, och $4–$9 ger ingen prisrymd overhuvudtaget.",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com outdoor door draft stopper letterbox mail slot cover brush seal"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601099743937582",
+  "url": "https://www.temu.com/se/g-601099743937582.html",
+  "title": "Galvanized Steel Rodent Mesh 16.4ft x 3.9in, Rust Resistant Wire for Pest Control in Homes & Gardens (5 m x 10 cm, blocks rats, mice, squirrel, bird access)",
+  "already_known": false,
+  "concept": "musnat-ventil-krypgrund",
+  "object": "Husgrundens ventiler och genomforingar",
+  "owner_owns": "Krypgrunden som mossen soker sig in i nar det blir kallt",
+  "friction": "Mossen flyttar in i krypgrunden och pa vinden i oktober",
+  "old_way": "Stalull i halet",
+  "price_usd": 8,
+  "price_source": "seznam-snippet",
+  "rating": "4.8",
+  "review_count": "96% (51)",
+  "sold": null,
+  "variants": "En rulle 5 m x 10 cm",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema ventilgaller med rostfritt nat",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "site:temu.com solar panel bird proofing mesh critter guard clips roof (gav aven gnagarnat)"
+   ],
+   "note": "Faldes i V2-korningen pa Biltemas rostfria ventilgaller. Priset $8 gor prisrymden omojlig oavsett."
+  },
+  "economics": {
+   "landed_low_sek": 83.52,
+   "landed_high_sek": 97.92,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Kommer mossen in i krypgrunden?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder galvaniserat gnagarnat 5 m x 10 cm att satta for krypgrundsventiler och genomforingar i sockeln."
+  },
+  "negative_space_flags": [
+   "under 199 kr",
+   "svensk mass-commoditisering",
+   "monteringsarbete i krypgrund"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 28,
+  "category_novelty_0_100": 25,
+  "tier": "ELIM",
+  "main_risk": "Biltema tacker formen och $8 ger ingen prisrymd.",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com solar panel bird proofing mesh critter guard clips roof (gav aven gnagarnat)"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601101467974424",
+  "url": "https://www.temu.com/se/g-601101467974424.html",
+  "title": "100pcs Heavy Duty Black Shade Cloth Clips, Round PP Plastic Fasteners for Securing Sun Shade Net, Bird Net, Garden Shade Cover",
+  "already_known": false,
+  "concept": "natklamror-presenning",
+  "object": "Presenningen over vedhogen, mobelgruppen och tradgardsnatt",
+  "owner_owns": "Presenningar som blaser av i hoststormen",
+  "friction": "Presenningen slits upp i oljetterna och blaser av i septemberblasten",
+  "old_way": "Snore genom oljetterna, som river sonder duken",
+  "price_usd": 5,
+  "price_source": "seznam-snippet",
+  "rating": "4.7",
+  "review_count": "99+",
+  "sold": null,
+  "variants": "100-pack",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "temu 100ft solar panel bird wire mesh guard kit proofing pigeons pest clips net 6 inch (gav aven natklamror)"
+   ],
+   "note": "Ej hyllsokt — konceptet foll pa ekonomi fore hyllan. Biltema saljer presenningsklamma, sa hyllrisken bedoms hog."
+  },
+  "economics": {
+   "landed_low_sek": 52.2,
+   "landed_high_sek": 61.2,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Blaser presenningen av vedhogen?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder klamror i pp-plast som faster natt, skuggvav eller presenning utan att gora hal i duken."
+  },
+  "negative_space_flags": [
+   "under 199 kr ($5)",
+   "forbrukningsvara-kansla",
+   "hyllrisk Biltema"
+  ],
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": 30,
+  "category_novelty_0_100": 40,
+  "tier": "ELIM",
+  "main_risk": "$5 landat 52–61 kr ger ett svenskt pris pa 149–199 kr — under golvet.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "temu 100ft solar panel bird wire mesh guard kit proofing pigeons pest clips net 6 inch (gav aven natklamror)"
+  ]
+ },
+ {
+  "kluster": "hus",
+  "goods_id": "601101311897045",
+  "url": "https://www.temu.com/se/g-601101311897045.html",
+  "title": "Transparent Waterproof Canopy for Patio, Parties, Chicken Coop Protection",
+  "already_known": false,
+  "concept": "altantak-pergolatak",
+  "object": "Altanen / pergolan",
+  "owner_owns": "Altan som blir oanvandbar redan i september nar hostregnet kommer",
+  "friction": "Hostregnet stanger altanen manader innan agaren ar redo att ge upp den",
+  "old_way": "Presenning spand med snoren",
+  "price_usd": 23,
+  "price_source": "seznam-snippet",
+  "rating": "4.5",
+  "review_count": "90% (51)",
+  "sold": null,
+  "variants": "Matt i meter — agaren maste mata",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": null,
+   "anchor_name": "HORNBACH / Bygghemma skarmtak och pergolatak",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "site:temu.com chimney cap rain cover stainless steel roof flue (gav aven altantak)"
+   ],
+   "note": "Ej fullt hyllsokt. Byggkedjorna saljer skarmtak och pergolatak; risken ar hog."
+  },
+  "economics": {
+   "landed_low_sek": 240.12,
+   "landed_high_sek": 281.52,
+   "se_price_sek": 699,
+   "multiple_low": 2.48,
+   "multiple_high": 2.91,
+   "be_cpa": 417.48,
+   "verdict": "PASS"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Regnar det bort din altankvall?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PASS"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och video gar inte att se — temu.com HTML ar blockerad for containern (DATAVAGAR.md avsnitt 4). Titeln antyder genomskinligt vattentatt tak/duk som spanns over altanen eller pergolan."
+  },
+  "negative_space_flags": [
+   "variant kraver matt agaren maste ta",
+   "montering",
+   "hyllrisk byggkedja"
+  ],
+  "eliminated_at": "variant",
+  "winner_dna_match_0_100": 35,
+  "category_novelty_0_100": 60,
+  "tier": "ELIM",
+  "main_risk": "Agaren maste mata altanen; SKU per matt ar exakt den variantfriktion som faller i fingeravtryckets steg 5.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com chimney cap rain cover stainless steel roof flue (gav aven altantak)"
+  ]
+ }
+]
