@@ -4,251 +4,287 @@
   "proofreadId": "4cfad83ed0354eb3974a216e4b5ecdfa-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "7538d53b6f3041fe9b8bd773bdd4cb94-nb"
+  "renderId": "7538d53b6f3041fe9b8bd773bdd4cb94-nb",
+  "downloaded": true
  },
  "magnetplattor_CS_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/4ffe4e109e4c4a15b75974d18cf60321/original.mp4",
   "proofreadId": "d504fba1f36d47c38666cc9a4e48fad1-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "df45fd341d644921a1f2bfc405731d54-nb"
+  "renderId": "df45fd341d644921a1f2bfc405731d54-nb",
+  "downloaded": true
  },
  "magnetplattor_CS_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/791bfb68a3eb466faffe5362bb21dba5/original.mp4",
   "proofreadId": "c2dfb3198e8c4e22b30d874d691617f4-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "af35e9c2df4d46fab76de70a154a4b5f-nb"
+  "renderId": "af35e9c2df4d46fab76de70a154a4b5f-nb",
+  "downloaded": true
  },
  "magnetplattor_GT_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/0a5bc70ad9d246818aef0cd7375fb3a4/original.mp4",
   "proofreadId": "262290bcf6904321957dc7488f676558-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "de80300774f249909d3642d3b15b9d46-nb"
+  "renderId": "de80300774f249909d3642d3b15b9d46-nb",
+  "downloaded": true
  },
  "magnetplattor_GT_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/f049147c19ae48219904b6b73287a8cb/original.mp4",
   "proofreadId": "c51851c9649744768485525fece81338-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "4a8e8cb5e36b484ab510129dfd3b6a73-nb"
+  "renderId": "4a8e8cb5e36b484ab510129dfd3b6a73-nb",
+  "downloaded": true
  },
  "magnetplattor_GT_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/04fb7142e8274e8bb997af5e19aec5e1/original.mp4",
   "proofreadId": "f7f556c8934c432a8e1cf7afa9940d74-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "3690da706d80426987a8f04ed177a1e5-nb"
+  "renderId": "3690da706d80426987a8f04ed177a1e5-nb",
+  "downloaded": true
  },
  "magnetplattor_PD_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/1e9681b800c64df2b394b6269b6ac5a6/original.mp4",
   "proofreadId": "125ebc2875bf482bb77c210f9934df27-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "e558c1a8fca14fb584d7f7907b9582c8-nb"
+  "renderId": "e558c1a8fca14fb584d7f7907b9582c8-nb",
+  "downloaded": true
  },
  "magnetplattor_PD_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/b70cc5d94dd44cd4b912929ec0c026f2/original.mp4",
   "proofreadId": "d9ad16d8ba7d4af8b5ace9ad8b7a5ae4-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "a861e31baa584ed6829a9b7272d0a9ed-nb"
+  "renderId": "a861e31baa584ed6829a9b7272d0a9ed-nb",
+  "downloaded": true
  },
  "magnetplattor_PD_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/d08cf3a79ba74db483fa205e2cb6cb8c/original.mp4",
   "proofreadId": "ad9026ca238b495c9b05ae816c8c0a37-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "10feccffacbc4656bf97927c600a66e4-nb"
+  "renderId": "10feccffacbc4656bf97927c600a66e4-nb",
+  "downloaded": true
  },
  "magnetplattor_SP_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/990f17fab39046b693fd26d95b4fbf8e/original.mp4",
   "proofreadId": "261a1429bc8746d384f3f00bcbdc05b6-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "0a4a1c3f899248cc9fca0f45b41e8332-nb"
+  "renderId": "0a4a1c3f899248cc9fca0f45b41e8332-nb",
+  "downloaded": true
  },
  "magnetplattor_SP_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/77e89b58828044b7a4c0942bdc25551f/original.mp4",
   "proofreadId": "62e25cc5fb7c488f8e47f56f346ebc45-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "5d155f10ea714453b212ad7666e1536f-nb"
+  "renderId": "5d155f10ea714453b212ad7666e1536f-nb",
+  "downloaded": true
  },
  "magnetplattor_SP_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/eedd84f8ea6c425e9c43426ac90dabf8/original.mp4",
   "proofreadId": "df9f43bc4e3c4af9a09e4a78e7a87f9a-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "a2931e65e3104f049a52d88a974d28bb-nb"
+  "renderId": "a2931e65e3104f049a52d88a974d28bb-nb",
+  "downloaded": true
  },
  "motocentric_CS_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/8fa9cc9cba534522a7ba238286a73e90/original.mp4",
   "proofreadId": "c8aad48749e64bbd97254adfe8c4fc09-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "4ba6cb8cdeea43fca301fe47bcda1584-nb"
+  "renderId": "4ba6cb8cdeea43fca301fe47bcda1584-nb",
+  "downloaded": true
  },
  "motocentric_CS_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/636dfbd3f20544ad8fc93f9d0d148a90/original.mp4",
   "proofreadId": "8b5ce6b6da024f71a5addc8830060791-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "08b6502c8a8943d3bd44ff3bf20866bb-nb"
+  "renderId": "08b6502c8a8943d3bd44ff3bf20866bb-nb",
+  "downloaded": true
  },
  "motocentric_CS_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/71c9d4bebfa04f738d30911409a74298/original.mp4",
   "proofreadId": "ce6c9a2242924710aae562f72edae243-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "dc343463dd76472abc1197cc367655da-nb"
+  "renderId": "dc343463dd76472abc1197cc367655da-nb",
+  "downloaded": true
  },
  "motocentric_GT_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/70d9c1e137a148ec9717e8b4a7fa8f60/original.mp4",
   "proofreadId": "3754319d224f4df792d43b5699b4436d-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "6125ef8dba684d97aed3e71ac8815664-nb"
+  "renderId": "6125ef8dba684d97aed3e71ac8815664-nb",
+  "downloaded": true
  },
  "motocentric_GT_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/70dd317c1f5c49aba2a64dd9eeff4fe7/original.mp4",
   "proofreadId": "47a07390f1c34e4e825713d2bb666d8a-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "1e4adc880c9842eda712c840bab302ca-nb"
+  "renderId": "1e4adc880c9842eda712c840bab302ca-nb",
+  "downloaded": true
  },
  "motocentric_GT_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/0d7f95a628134715b3590d7ac7dbbe2d/original.mp4",
   "proofreadId": "46627daaf2ec4ed086dd5d17ea7d27d9-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "ecfeb67b82f44caeada56a71ad00b92f-nb"
+  "renderId": "ecfeb67b82f44caeada56a71ad00b92f-nb",
+  "downloaded": true
  },
  "motocentric_PD_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/b1a33a9d9f41451684147f6ab555d5c7/original.mp4",
   "proofreadId": "9a4081c1a62e48969ca8fde32bc17576-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "dd4a94328f044444b0648fdb6c30a652-nb"
+  "renderId": "dd4a94328f044444b0648fdb6c30a652-nb",
+  "downloaded": true
  },
  "motocentric_PD_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/cfe65a852c2442caaf454dbc1b180a0a/original.mp4",
   "proofreadId": "c2e021d2d6be4cd7a208126b8ed5edc3-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "993bfd2c9b0041ecb99d52b06772da12-nb"
+  "renderId": "993bfd2c9b0041ecb99d52b06772da12-nb",
+  "downloaded": true
  },
  "motocentric_PD_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/6cfc40abbc33490fb5ace939fe68eccf/original.mp4",
   "proofreadId": "0b6e206c8cb5444b9e71cb5837141a20-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "f64a146db6014f0c8ba83a53091224a3-nb"
+  "renderId": "f64a146db6014f0c8ba83a53091224a3-nb",
+  "downloaded": true
  },
  "motocentric_SP_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/79c969574da14af0b3cd6d810c04a1f9/original.mp4",
   "proofreadId": "b2fa91da9ea7440aa121b4a5663e5632-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "f87d52e5e0ba491db3e9cddb818f9adb-nb"
+  "renderId": "f87d52e5e0ba491db3e9cddb818f9adb-nb",
+  "downloaded": true
  },
  "motocentric_SP_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/2e829c6c5e274ae78405716ef7814425/original.mp4",
   "proofreadId": "64fccdc1959e403ea854d0481d2ad0f5-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "3609b4b3d92045248ac519923b889c8f-nb"
+  "renderId": "3609b4b3d92045248ac519923b889c8f-nb",
+  "downloaded": true
  },
  "motocentric_SP_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/7f7521eb1435436f84b57db88a70b49c/original.mp4",
   "proofreadId": "fcde357a64144d15bde144a4bd1812df-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "d6c6c27822aa44a2a1183a23c5d656e4-nb"
+  "renderId": "d6c6c27822aa44a2a1183a23c5d656e4-nb",
+  "downloaded": true
  },
  "palsborste_CS_1": {
   "assetUrl": "https://resource2.heygen.ai/video/6787fb428f834bcab38433a2e7f1b468/original.mp4",
   "proofreadId": "031f26656fdb40c1ae540bc9282659c1-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "98716f2246874bfb9ae13f865e77c405-nb"
+  "renderId": "98716f2246874bfb9ae13f865e77c405-nb",
+  "downloaded": true
  },
  "palsborste_CS_2": {
   "assetUrl": "https://resource2.heygen.ai/video/f0787023e1dc4ca680ae9720043b33ba/original.mp4",
   "proofreadId": "bff0de14da5344aca7f5c5944e79005d-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "f5d6f87f00574da28c5de8a626176e5b-nb"
+  "renderId": "f5d6f87f00574da28c5de8a626176e5b-nb",
+  "downloaded": true
  },
  "palsborste_CS_3": {
   "assetUrl": "https://resource2.heygen.ai/video/2bb72739572b49189c857f541229c7da/original.mp4",
   "proofreadId": "c67a9159a0024446accd05b078f9f1ef-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "1c2684549f6b459ab526aab588c226ae-nb"
+  "renderId": "1c2684549f6b459ab526aab588c226ae-nb",
+  "downloaded": true
  },
  "palsborste_G_1": {
   "assetUrl": "https://resource2.heygen.ai/video/6fe0085de484404a91bb0f657a93de28/original.mp4",
   "proofreadId": "35ea0441573c43009db6293c86e79b0b-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "4d63f336a11e41beaa9f74e63eab9439-nb"
+  "renderId": "4d63f336a11e41beaa9f74e63eab9439-nb",
+  "downloaded": true
  },
  "palsborste_G_2": {
   "assetUrl": "https://resource2.heygen.ai/video/0e50b05149824580905c79e4748b2232/original.mp4",
   "proofreadId": "215a9d2ce93b4071bf006e00d29f9f80-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "37878230cca2438081d32e7a263716ab-nb"
+  "renderId": "37878230cca2438081d32e7a263716ab-nb",
+  "downloaded": true
  },
  "palsborste_G_3": {
   "assetUrl": "https://resource2.heygen.ai/video/e66640b7fed341d1886cfd5e63e75b9b/original.mp4",
   "proofreadId": "7be7eee29fd04977ab01b7eb45b78afe-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "ec372e94cc59455d8bd19912ef0637dd-nb"
+  "renderId": "ec372e94cc59455d8bd19912ef0637dd-nb",
+  "downloaded": true
  },
  "palsborste_PD_1": {
   "assetUrl": "https://resource2.heygen.ai/video/ddd9e40a9ce547cbbc34369c738d90ec/original.mp4",
   "proofreadId": "2239db066ee74c358a73311f78126f59-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "c1e809cf8ebb4257a77dac91eb6b7021-nb"
+  "renderId": "c1e809cf8ebb4257a77dac91eb6b7021-nb",
+  "downloaded": true
  },
  "palsborste_PD_2": {
   "assetUrl": "https://resource2.heygen.ai/video/a02aa76900d14c359fc985ef0f5097f4/original.mp4",
   "proofreadId": "1b793d45b9cb4a84b21b43257c696098-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "b606ae41fa05498b849d9e35773515e5-nb"
+  "renderId": "b606ae41fa05498b849d9e35773515e5-nb",
+  "downloaded": true
  },
  "palsborste_PD_3": {
   "assetUrl": "https://resource2.heygen.ai/video/9070d815a04e4060b489948bb61350e4/original.mp4",
   "proofreadId": "975d175985c944bbacd8790c2a13365d-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "968c205966784f1d84607728fd670fe5-nb"
+  "renderId": "968c205966784f1d84607728fd670fe5-nb",
+  "downloaded": true
  },
  "palsborste_SP_1": {
   "assetUrl": "https://resource2.heygen.ai/video/d26497fa6c224cd28303cf6b3747b0e1/original.mp4",
   "proofreadId": "9466ae58189c4215a77afc6bdf8874fc-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "919567788eb84c938e13908f7b81363f-nb"
+  "renderId": "919567788eb84c938e13908f7b81363f-nb",
+  "downloaded": true
  },
  "palsborste_SP_2": {
   "assetUrl": "https://resource2.heygen.ai/video/8fc46a4837bf4776b817f451c7afa2a3/original.mp4",
   "proofreadId": "1066fc60b3aa4f00baf03d6efb7555f9-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "f9295f888b8b4126804a4f9ad4a674a5-nb"
+  "renderId": "f9295f888b8b4126804a4f9ad4a674a5-nb",
+  "downloaded": true
  },
  "palsborste_SP_3": {
   "assetUrl": "https://resource2.heygen.ai/video/9339adeeef6444fba74e08bd68546087/original.mp4",
   "proofreadId": "120173bc0bf14fd29fe1f53cca4ea3aa-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "9746f7a30dc24c19b4179c07e4a45082-nb"
+  "renderId": "9746f7a30dc24c19b4179c07e4a45082-nb",
+  "downloaded": true
  }
 }
