@@ -238,6 +238,14 @@ som står kvar går en timme TIDIGARE svensk tid. Cron-uttrycken ska då **ökas
 med en timme: `20 11 * * *` (13:20 CEST) blir `20 12 * * *` (13:20 CET).
 Räkna alltid om från önskad svensk tid till UTC i stället för att minnas riktningen.
 
+⚠️ **Skapa rutiner i Routines-vyn på claude.ai, aldrig via MCP-verktyget
+`create_trigger`.** Mätt 2026-09-04: `/oversatt`-rutinen skapades från en session
+via MCP och startade i en TOM container — inget repo (`sources: []`), inga
+connectors, inget CLAUDE.md. De fungerande rutinerna ("Mammas jobb",
+"Skalnings kungen") är skapade i vyn och bär repot `Axel3738/yognftnfgn` +
+connectors. `create_trigger` har inget fält för repo, så det går inte att laga
+i efterhand — radera och skapa om i vyn.
+
 ⚠️ **Rutiner ärver inte sessionens MCP-connectors.** En rutin som behöver Notion,
 Drive eller Shopify måste få connectorn kopplad på själva rutinen i Routines-vyn
 på claude.ai — annars står den helt utan `mcp__*`-verktyg. Bygg därför rutinerna
