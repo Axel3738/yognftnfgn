@@ -55,7 +55,7 @@ def normalisera(s):
 
 
 def granska_block(namn, text, brieftext, pris_verifierat=False,
-                  betyg_verifierat=False):
+                  betyg_verifierat=False, produkt=None):
     """Kontrollerar ett textblock rad för rad — ett block kan innehålla flera
     rader (t.ex. en punktlista), och varje rad ska stå ordagrant i briefen.
 
@@ -78,6 +78,13 @@ def granska_block(namn, text, brieftext, pris_verifierat=False,
             # Ett belagt jämförpris bär både procentsatsen och ordet rabatt.
             # "rea" och påhittad knapphet är andra påståenden och stoppas alltid.
             if pris_verifierat and skal.startswith(("procentsats", "ordet rabatt")):
+                continue
+            # 636 kr är axelbältets gamla pris OCH IBC-tanköverdragets riktiga
+            # jämförpris på produktsidan. Regeln gäller därför bara när körningen
+            # inte sagt vilken produkt det är — då bannlyses talet som förr — eller
+            # när produkten faktiskt är axelbältet.
+            if (skal.startswith("förbjudet gammalt pris")
+                    and produkt is not None and produkt != "axelbaltet"):
                 continue
             if betyg_verifierat and skal.startswith("stjärnbetyg"):
                 continue
@@ -127,8 +134,15 @@ def main():
                        "får stjärnbetyget inte renderas")
             betyg_verifierat = False
         for b in spec.get("block", []):
+            # Ritade stjärnor är ett betygspåstående som allt annat: de kräver
+            # samma skrivna avläsning som ett utskrivet stjärnbetyg.
+            if b.get("stjarnor") and not betyg_verifierat:
+                fel.append(f'blocket ritar {b["stjarnor"]} stjärnor men '
+                           "betyg_verifierat saknas — utan avläsningen i skrift "
+                           "får betyget inte renderas")
             fel += granska_block(namn, b["text"], brieftext,
-                                 pris_verifierat, betyg_verifierat)
+                                 pris_verifierat, betyg_verifierat,
+                                 spec.get("produkt"))
 
         if fel:
             totalt_fel += len(fel)
