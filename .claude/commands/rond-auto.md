@@ -411,14 +411,6 @@ stavning; belopp skrivs "1 200 SEK". Axels besked 2026-09-02.
 node agent/discord-post.mjs --kanal ronden "Daily round <datum>" "<rapporten i Markdown, på engelska>"
 ```
 
-<<<<<<< HEAD
-Skriptet sköter kanalval, delning över 2 000-teckengränsen, rate limits och
-**pingarna** (Axel 2026-09-02: varje post pingar personerna i `pinga` i
-`agent/discord.json` — i dag confident_otter_25993 och ecom_chadking). Skriv
-aldrig egen curl-kod mot Discord, och skriv aldrig "@namn" själv i texten —
-det pingar ingen. Säger skriptet att ett namn inte gick att slå upp: nämn
-det på en rad i svaret. Varje rutin har sin egen kanal
-=======
 ⚠️ **ALLT som postas i Discord skrivs på ENGELSKA** — rubrik och brödtext, i
 alla tre kanalerna (`ronden`, `uppgifter`, `larm`). Redigerarna läser samma
 kanaler som Axel och förstår inte svenska. Produktnamnen behålls som de heter i
@@ -428,9 +420,12 @@ brief-runda → "brief round", förstabatch → "first batch". Svaret till Axel 
 chatten är fortfarande på svenska. *(Axels order 2026-09-02 — samma dag
 postades rapporten på svenska och redigerarna kunde inte läsa den.)*
 
-Skriptet sköter kanalval, delning över 2 000-teckengränsen och rate limits —
-skriv aldrig egen curl-kod mot Discord. Varje rutin har sin egen kanal
->>>>>>> origin/claude/daily-agent-discussion-uos5df
+Skriptet sköter kanalval, delning över 2 000-teckengränsen, rate limits och
+**pingarna** (Axel 2026-09-02: varje post pingar personerna i `pinga` i
+`agent/discord.json` — i dag confident_otter_25993 och ecom_chadking). Skriv
+aldrig egen curl-kod mot Discord, och skriv aldrig "@namn" själv i texten —
+det pingar ingen. Säger skriptet att ett namn inte gick att slå upp: nämn
+det på en rad i svaret. Varje rutin har sin egen kanal
 (`kanalplan` i `agent/discord.json`); finns kanalen inte än postas det i
 standardkanalen i stället för att tystna.
 
