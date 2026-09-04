@@ -55,7 +55,7 @@ riktigt för de koncept som överlevde.
 ---
 
 <!-- V21:START -->
-## V2.1 — koncept skilt från listning (patch 2026-09-04 08:50 UTC)
+## V2.1 — koncept skilt från listning (patch 2026-09-04 08:53 UTC)
 
 Axels patch V2.1 är i drift: hyllan verifieras **före** Temu-jakten, PRODUKTKONCEPT och LISTNING är två entiteter, statusmodellen är `PASS / FAIL / UNKNOWN / BLOCKED_SOURCE / PENDING_VERIFICATION / ALTERNATIVE_LISTING_REQUIRED`, och ett tekniskt fel (blockerad källa) blir aldrig ett kommersiellt. Hela pipelinen: `jakt/PIPELINE-V2.1.md`. Koncepttabellen: `jakt/koncept.json`.
 
@@ -68,22 +68,22 @@ objekt PASS                                                                  291
 presens PASS                                                                 255
 hyllkvalificerade (verifierad PASS)                                           26
 hylla PENDING_VERIFICATION                                                    83
-strukturkvalificerade (variant/hook/publik ej FAIL, ej strukturellt fällda)   26
-slutliga konceptöverlevare (status ≠ FAIL)                                    26
+strukturkvalificerade (variant/hook/publik ej FAIL, ej strukturellt fällda)   25
+slutliga konceptöverlevare (status ≠ FAIL)                                    25
 ```
 
-Statusfördelning bland koncepten: FAIL 360, PENDING_VERIFICATION 14, BLOCKED_SOURCE 6, ALTERNATIVE_LISTING_REQUIRED 5, PASS 1.
+Statusfördelning bland koncepten: FAIL 361, PENDING_VERIFICATION 14, BLOCKED_SOURCE 6, ALTERNATIVE_LISTING_REQUIRED 4, PASS 1.
 
 ### Listnings-tratten
 
 ```
-kandidatkoncept (≠ FAIL)                                  26
-listningar i dem                                          63
-listningar hämtade (Temu-data)                             6
+kandidatkoncept (≠ FAIL)                                  25
+listningar i dem                                          61
+listningar hämtade (Temu-data)                             5
 material PASS                                              3
 ekonomi PASS                                               4
 bästa listning vald (material + ekonomi PASS)              1
-koncept ALTERNATIVE_LISTING_REQUIRED                       5
+koncept ALTERNATIVE_LISTING_REQUIRED                       4
 koncept BLOCKED_SOURCE                                     6
 ```
 
@@ -96,7 +96,6 @@ Målet är ett starkt koncept parat med en användbar listning. Hittills har **1
 | A | Isolerad utekattkoja i Oxford-tyg, vinter (`isolerad-utekattkoja-i-oxford-`) | `PASS` | 6 | 0 | 1 | PASS | — |
 | B (närmast A) | Vedställsöverdrag (bara överdrag, 4–8 ft, spännen) (`vedstallsoverdrag-bara-overdra`) | `ALTERNATIVE_LISTING_REQUIRED` | 3 | 7 | 1 | PASS | annan listning: 7 funna, 0 hämtade — gate 4 PASS på heron (överdraget på ett vedställ, röd text i nederkanten beskärbar), video |
 | B (närmast A) | Lockskydd/skyddsöverdrag (cover cap) för fast spabad, över d (`lockskydd-skyddsoverdrag-cover`) | `ALTERNATIVE_LISTING_REQUIRED` | 4 | 10 | 1 | PASS | annan listning: 10 funna, 0 hämtade — gate 5 PASS på US-pris (19,39 USD → landad 202–237 → 2,5–3,0× vid 599); gate 4 FAIL på det |
-| B (närmast A) | Kikarsele/bröstväska med kikarhållare och regnskydd (`kikarsele-brostvaska-med-kikar`) | `ALTERNATIVE_LISTING_REQUIRED` | 2 | 5 | 1 | PASS | annan listning: 5 funna, 2 hämtade — gate 4 PASS villkorat (riktig jägare tar upp kikaren ur väskan inom 3 s; logotypkort 0–1 s |
 | B (närmast A) | Tändvedsklyv i gjutjärn (Kindling Cracker-typ) (`tandvedsklyv-i-gjutjarn-kindli`) | `ALTERNATIVE_LISTING_REQUIRED` | 2 | 10 | 1 | PASS | annan listning: 10 funna, 0 hämtade — gate 5 PASS på US-pris (16,25 USD → landad 170–200 → 3,0× vid 599; frakt på gjutjärn kan ä |
 | B | Jaktparaply för torn/pass, 58", camo, spänns runt stam (`jaktparaply-for-torn-pass-58-c`) | `BLOCKED_SOURCE` | 1 | 0 | 0 | PASS | Temu-hämtning (material + pris) |
 | B | Hängrännerensar-sats till lövblås (universal, teleskoprör 11 (`hangrannerensar-sats-till-lovb`) | `PENDING_VERIFICATION` | 2 | 0 | 0 | PASS | variant/SKU-lista, Temu-hämtning |
@@ -120,9 +119,17 @@ Målet är ett starkt koncept parat med en användbar listning. Hittills har **1
 | C | handskydd/vindskydd för styre (PVC), MC/scooter (`auto:mc-handskydd-vindskydd-fo`) | `PENDING_VERIFICATION` | 1 | 0 | 0 | PENDING_VERIFICATION | hylla verifierad, variant/SKU-lista, publikstorlek, Temu-hämtning |
 | C | kapell för promenadscooter/elrullstol (420D Oxford, reflex,  (`auto:mc-kapell-for-promenadsco`) | `PENDING_VERIFICATION` | 1 | 0 | 0 | PENDING_VERIFICATION | hylla verifierad, variant/SKU-lista, publikstorlek, Temu-hämtning |
 
-Koncept med `FAIL`: 360 — alla med orsak i `koncept.json` (`status_reason`, `failure_is_structural`). 141 av dem föll på en hylla som bara är läst ur sökutdrag/minne (`shelf_verified = false`) — det är nästa verifieringskö enligt den nya ordningen.
+Koncept med `FAIL`: 361 — alla med orsak i `koncept.json` (`status_reason`, `failure_is_structural`). 141 av dem föll på en hylla som bara är läst ur sökutdrag/minne (`shelf_verified = false`) — det är nästa verifieringskö enligt den nya ordningen.
 
 <!-- V21:END -->
+
+**Första strukturella avslaget via alternativa listningar (08:53 UTC):**
+kikarselen. Fem listningar av samma form (bröstväska med lock + sele +
+regnskydd) kostar 26,59 / 28,49 / 30,85 / 47,32 / 68,59 USD på Temu US — alla
+ger landad ≥ 280 kr och 2,4× ≥ 670 kr, mer än ankaret Blaser 999 bär. Den
+alternativa videon (601099581347239) var dessutom sämre: sommar, compoundbåge,
+talking head. Felet sitter i formen, inte i listningen → `FAIL`,
+`failure_is_structural = true`. Det är exakt det V2.1-regeln A är till för.
 
 ## 1. Objektuniversumet
 

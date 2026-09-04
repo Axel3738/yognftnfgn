@@ -84,7 +84,7 @@ def tier_class(r):
     return "ELIM"
 STRUKTURELLA = ("latent behov", "want, inte need", "< 199", "ankare under vårt pris", "> 1 000", "lågt fackhandelsankare",
                 "generisk old way", "osynligt objekt", "commodity", "publik + mått", "tre flaggor", "fel objekt", "spänning",
-                "personlig passform", "överdrag + marketplace", "omtest")
+                "personlig passform", "överdrag + marketplace", "omtest", "strukturellt")
 
 fetched = lambda r: bool(r.get("temu_us")) or r.get("temu_price_sek") not in (None, "", "UNKNOWN")
 listing_rows = {}
@@ -138,6 +138,11 @@ for key, ids in concepts.items():
     main = sorted(R, key=lambda r: (TIER_RANK[tier_class(r)], -(r.get("structure_match") or 0)))[0]
     reason = main.get("tier_reason") or main.get("biggest_risk") or ""
     tl = (main.get("tier") or "").lower()
+    # ett strukturellt fel som satts på NÅGON av konceptets listningar (slutdomen sätts på huvudlistningen,
+    # dubbletter ligger ofta kvar som "B (dubblett)") fäller konceptet
+    struct_rows = [r for r in R if any(k in (r.get("tier") or "").lower() for k in STRUKTURELLA)]
+    if struct_rows and not tl.startswith(("a",)):
+        main = struct_rows[0]; tl = (main.get("tier") or "").lower(); reason = main.get("tier_reason") or reason
     structural = any(k in tl for k in STRUKTURELLA)
     c_provisorisk = tl.startswith("c") and any(k in tl for k in ("provisorisk", "ej hämtat", "ej verifierad", "tips"))
     c_listning = tl.startswith("c") and "us-pris" in tl          # ekonomi fälld på EN listnings pris = listningsfel

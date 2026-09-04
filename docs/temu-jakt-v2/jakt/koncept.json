@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-04T08:50:31.427769Z",
+ "generated": "2026-09-04T08:53:50.049054Z",
  "n_concepts": 386,
  "concept_funnel": {
   "listningar": 519,
@@ -8,23 +8,23 @@
   "presens PASS": 255,
   "hyllkvalificerade (verifierad PASS)": 26,
   "hylla PENDING_VERIFICATION": 83,
-  "strukturkvalificerade (variant/hook/publik ej FAIL, ej strukturellt fällda)": 26,
-  "slutliga konceptöverlevare (status ≠ FAIL)": 26
+  "strukturkvalificerade (variant/hook/publik ej FAIL, ej strukturellt fällda)": 25,
+  "slutliga konceptöverlevare (status ≠ FAIL)": 25
  },
  "listing_funnel": {
-  "kandidatkoncept (≠ FAIL)": 26,
-  "listningar i dem": 63,
-  "listningar hämtade (Temu-data)": 6,
+  "kandidatkoncept (≠ FAIL)": 25,
+  "listningar i dem": 61,
+  "listningar hämtade (Temu-data)": 5,
   "material PASS": 3,
   "ekonomi PASS": 4,
   "bästa listning vald (material + ekonomi PASS)": 1,
-  "koncept ALTERNATIVE_LISTING_REQUIRED": 5,
+  "koncept ALTERNATIVE_LISTING_REQUIRED": 4,
   "koncept BLOCKED_SOURCE": 6
  },
  "status_count": {
-  "ALTERNATIVE_LISTING_REQUIRED": 5,
+  "FAIL": 361,
   "BLOCKED_SOURCE": 6,
-  "FAIL": 360,
+  "ALTERNATIVE_LISTING_REQUIRED": 4,
   "PENDING_VERIFICATION": 14,
   "PASS": 1
  },
@@ -283,89 +283,6 @@
    "structure_match": 78
   },
   {
-   "concept_id": "kikarsele-brostvaska-med-kikarhallare-och-regnsk",
-   "name": "Kikarsele/bröstväska med kikarhållare och regnskydd",
-   "kluster": "jakt",
-   "object": "Handkikare",
-   "listing_ids": [
-    "601099566089885",
-    "601099523680456"
-   ],
-   "listing_count": 2,
-   "alternate_listing_count": 6,
-   "alt_listings_found": 5,
-   "alt_listings_checked": 8,
-   "alt_listings": [
-    {
-     "goods_id": "601099577399686",
-     "title": "*cular * Pack - * Harness with Rangefinder Pouch and Rain Cover for Hunting Shooting Hiking",
-     "price_usd": "47.32",
-     "rating": 5.0,
-     "review_count": 1,
-     "images": 1,
-     "video": false,
-     "fetched": "2026-09-04T08:46:41.714588Z",
-     "listing_status": "PENDING_VERIFICATION"
-    },
-    {
-     "goods_id": "601103531732863",
-     "title": "* Harness with Rangefinder Pouch Rain Cover * Lightweight Portable *cular Pack for Hunting Hiking",
-     "price_usd": "68.59",
-     "rating": null,
-     "review_count": null,
-     "images": 1,
-     "video": false,
-     "fetched": "2026-09-04T08:49:12.409437Z",
-     "listing_status": "PENDING_VERIFICATION"
-    },
-    {
-     "goods_id": "601099581347239",
-     "title": "Camo Harness Detachable Rangefinder Pouch — Camo Binocular Harness with Detachable Rangefinder Pouch, Adjustable Straps, Rain Cover, for Bird Watching/Hunting/Hiking",
-     "snippet_price": null,
-     "snippet_rating": null,
-     "fetched": null,
-     "listing_status": "BLOCKED_SOURCE"
-    },
-    {
-     "goods_id": "601099567041676",
-     "title": "harness chest pack detachable rangefinder pouch — Binocular Harness Chest Pack with Detachable Rangefinder Pouch, Adjustable Bino Harness, Rain Cover, Ideal for Hunting",
-     "snippet_price": null,
-     "snippet_rating": null,
-     "fetched": null,
-     "listing_status": "BLOCKED_SOURCE"
-    },
-    {
-     "goods_id": "601099585094539",
-     "title": "This item was discontinued - Temu — Binocular Harness Chest Pack with Rangefinder Pouch, Harness with Rain Cover, for Bird Watching/Hunting/Hiking",
-     "snippet_price": null,
-     "snippet_rating": null,
-     "fetched": null,
-     "listing_status": "BLOCKED_SOURCE"
-    }
-   ],
-   "tier": "NA",
-   "concept_status": "ALTERNATIVE_LISTING_REQUIRED",
-   "status_reason": "gate 4 PASS villkorat (riktig jägare tar upp kikaren ur väskan inom 3 s; logotypkort 0–1 s, compoundbåge + kamerarigg efter 5 s); gate 5 FAIL på US-pris (26,59 USD → landad 278–326 → 1,9–2,2× vid 624 kr; 2,4× kräver 667–782 kr där ankaret 999 bara är 1,3–1,5×). Blir A om SE-Temu-priset är ≤ ~150 kr.",
-   "gates": {
-    "object": "PASS",
-    "presence": "PASS",
-    "shelf": "PASS",
-    "variant": "PASS",
-    "hook": "PASS",
-    "audience": "PASS"
-   },
-   "shelf_verified": true,
-   "listings_fetched": 1,
-   "material_pass": 0,
-   "economics_pass": 0,
-   "best_listing_id": null,
-   "failure_is_structural": false,
-   "failure_is_listing_specific": true,
-   "verification_timestamp": "2026-09-04T07:23:35.572070Z",
-   "hook": "Får du ont i nacken av kikaren?",
-   "structure_match": 72
-  },
-  {
    "concept_id": "tandvedsklyv-i-gjutjarn-kindling-cracker-typ",
    "name": "Tändvedsklyv i gjutjärn (Kindling Cracker-typ)",
    "kluster": "ved",
@@ -481,6 +398,95 @@
    "verification_timestamp": "2026-09-04T07:24:40.287928Z",
    "hook": "Klyver du tändved med yxa?",
    "structure_match": 68
+  },
+  {
+   "concept_id": "kikarsele-brostvaska-med-kikarhallare-och-regnsk",
+   "name": "Kikarsele/bröstväska med kikarhållare och regnskydd",
+   "kluster": "jakt",
+   "object": "Handkikare",
+   "listing_ids": [
+    "601099566089885",
+    "601099523680456"
+   ],
+   "listing_count": 2,
+   "alternate_listing_count": 6,
+   "alt_listings_found": 5,
+   "alt_listings_checked": 8,
+   "alt_listings": [
+    {
+     "goods_id": "601099577399686",
+     "title": "*cular * Pack - * Harness with Rangefinder Pouch and Rain Cover for Hunting Shooting Hiking",
+     "price_usd": "47.32",
+     "rating": 5.0,
+     "review_count": 1,
+     "images": 1,
+     "video": false,
+     "fetched": "2026-09-04T08:46:41.714588Z",
+     "listing_status": "PENDING_VERIFICATION"
+    },
+    {
+     "goods_id": "601103531732863",
+     "title": "* Harness with Rangefinder Pouch Rain Cover * Lightweight Portable *cular Pack for Hunting Hiking",
+     "price_usd": "68.59",
+     "rating": null,
+     "review_count": null,
+     "images": 1,
+     "video": false,
+     "fetched": "2026-09-04T08:49:12.409437Z",
+     "listing_status": "PENDING_VERIFICATION"
+    },
+    {
+     "goods_id": "601099581347239",
+     "title": "*cular * Pack with Detachable Rangefinder Pouch, Adjustable * Harness &amp; Cover, Ideal for Bird Watching, Hunting, Hiking - Camo &amp; Qui",
+     "price_usd": "28.49",
+     "rating": 4.8,
+     "review_count": 18,
+     "images": 2,
+     "video": true,
+     "fetched": "2026-09-04T08:50:45.586979Z",
+     "listing_status": "PENDING_VERIFICATION"
+    },
+    {
+     "goods_id": "601099567041676",
+     "title": "*cular * Pack with Detachable Rangefinder Pouch, Adjustable * Harness&amp;Rain Cover-Ideal for Hunting",
+     "price_usd": "30.85",
+     "rating": null,
+     "review_count": null,
+     "images": 1,
+     "video": false,
+     "fetched": "2026-09-04T08:52:46.642154Z",
+     "listing_status": "PENDING_VERIFICATION"
+    },
+    {
+     "goods_id": "601099585094539",
+     "title": "This item was discontinued - Temu — Binocular Harness Chest Pack with Rangefinder Pouch, Harness with Rain Cover, for Bird Watching/Hunting/Hiking",
+     "snippet_price": null,
+     "snippet_rating": null,
+     "fetched": null,
+     "listing_status": "BLOCKED_SOURCE"
+    }
+   ],
+   "tier": "B",
+   "concept_status": "FAIL",
+   "status_reason": "V2.1-regel A: fem listningar av samma form (bröstväska med lock + sele + regnskydd) kostar 26,59 / 28,49 / 30,85 / 47,32 / 68,59 USD på Temu US — alla ger landad ≥ 280 kr och 2,4× ≥ 670 kr, över vad ankaret Blaser 999 bär (≤ 624). Materialet var godkänt villkorat på originalet (riktig jägare tar upp kikaren inom 3 s). Felet sitter i produktformen, inte listningen. Billigare 'resårsele utan väska' är en annan form som hyllan (Max-On 149) fäller.",
+   "gates": {
+    "object": "PASS",
+    "presence": "PASS",
+    "shelf": "PASS",
+    "variant": "PASS",
+    "hook": "PASS",
+    "audience": "PASS"
+   },
+   "shelf_verified": true,
+   "listings_fetched": 1,
+   "material_pass": 0,
+   "economics_pass": 0,
+   "best_listing_id": null,
+   "failure_is_structural": true,
+   "failure_is_listing_specific": false,
+   "verification_timestamp": "2026-09-04T07:23:35.572070Z",
+   "hook": "Får du ont i nacken av kikaren?",
+   "structure_match": 72
   },
   {
    "concept_id": "jaktparaply-for-torn-pass-58-camo-spanns-runt-st",

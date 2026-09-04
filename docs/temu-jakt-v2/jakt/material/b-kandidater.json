@@ -1,8 +1,11 @@
 [
  {
-  "goods_id": "601101118338671", "concept": "Isolerad utekattkoja i Oxford-tyg, hopfällbar", "kluster": "djur",
+  "goods_id": "601101118338671",
+  "concept": "Isolerad utekattkoja i Oxford-tyg, hopfällbar",
+  "kluster": "djur",
   "source": "US-sidan 2026-09-04 08:46 UTC (cache-parsad). 6 bilder + video 61 s. Galleri = SE (kontrollerat på IBC).",
-  "video_len_s": 61.1, "video_format": "720x960 (3:4), 30 fps",
+  "video_len_s": 61.1,
+  "video_format": "720x960 (3:4), 30 fps",
   "sec_0_3": "Händer viker upp den svarta kojan på ett vitt studiobord; ingen katt, inget utomhus. Sedan: kudde läggs i, taket viks på, vatten hälls på taket och pärlar av, torkas med papper.",
   "product_in_use_by_3s": "NEJ — monteringsdemo i studio",
   "same_product_as_hero": "JA — samma svarta hopfällbara koja med spetsigt tak",
@@ -14,7 +17,39 @@
   "hero_alone_viable": "JA — textfri kontexthero med objektet (katten) i bruk utomhus i höstlöv; det är exakt fingeravtryckets hero",
   "material_result": "PASS (heron bär; videon är studio)",
   "material_reason": "Heron är det bästa enskilda materialet i hela jakten: riktig katt, riktig koja, riktig höst, ingen text. Videon visar hopfällning och vattenavvisning i studio — användbar som bevis, inte som öppning.",
-  "temu_us": {"price_usd": 10.93, "rating": 4.9, "review_count": 72, "images": 6, "video": true},
+  "temu_us": {
+   "price_usd": 10.93,
+   "rating": 4.9,
+   "review_count": 72,
+   "images": 6,
+   "video": true
+  },
   "variants_seen": "färger (svart, grå, gråblå, grön) + 'black large' — troligen två storlekar; kontrollera SKU-listan innan launch"
+ },
+ {
+  "goods_id": "601099581347239",
+  "concept": "Kikarsele/bröstväska (alternativ listning, samma märke NEW VIEW HUNTING)",
+  "kluster": "jakt",
+  "source": "US-sidan 2026-09-04 08:50 UTC. 2 bilder + video 45 s (960x720 med svarta kanter = vertikal UGC).",
+  "video_len_s": 45.1,
+  "video_format": "vertikal UGC i 4:3-ram",
+  "sec_0_3": "Ung man i t-shirt och shorts i sommargrönska håller en compoundbåge och pratar in i kameran med väskan på bröstet.",
+  "product_in_use_by_3s": "DELVIS — väskan sitter på, men ingen kikare tas upp; talking head",
+  "same_product_as_hero": "JA (samma camo-väska med orange logga)",
+  "burned_text": "Ingen inbränd text; märket broderat.",
+  "muted_ok": "NEJ — det är en pratad recension",
+  "owner_or_object_visible": "Bågjägare i sommar, ingen kikare i bild, ingen jaktmiljö",
+  "clean_framing": "NEJ — svarta kanter, compoundbåge, t-shirt/shorts",
+  "raw_plus_captions_viable": "NEJ",
+  "hero_alone_viable": "NEJ — packshot med lös ficka och remmar på vitt",
+  "material_result": "FAIL",
+  "material_reason": "Sämre än originalets video: sommar, båge, talking head, ingen kikare. Priset (28,49 USD) är dessutom högre än originalets.",
+  "temu_us": {
+   "price_usd": 28.49,
+   "rating": 4.8,
+   "review_count": 18,
+   "images": 2,
+   "video": true
+  }
  }
 ]

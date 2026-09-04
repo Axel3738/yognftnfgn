@@ -121,7 +121,7 @@
   "eliminated_at": null,
   "structure_match": 72,
   "category_novelty": 85,
-  "tier": "B (närmast A)",
+  "tier": "C (strukturellt: formens pris)",
   "biggest_risk": "Max-On-remmen för 149 kr i fackhandeln: ser vår produkt ut som en rem och inte som en bröstväska faller prisankaret. Pris/material ej hämtade.",
   "confidence": "MEDIUM",
   "sources": [
@@ -131,7 +131,7 @@
    "https://www.temu.com/uk/camo-hunting-chest-pack-with-binocular-harness-rangefinder-pocket-patented-camouflage-pattern-polyester-tassel-embellishment-rain-cover-multiple-storage-compartments-for-outdoor-gear-g-601099566089885.html"
   ],
   "tier_agent": "A",
-  "tier_reason": "gate 4 PASS villkorat (riktig jägare tar upp kikaren ur väskan inom 3 s; logotypkort 0–1 s, compoundbåge + kamerarigg efter 5 s); gate 5 FAIL på US-pris (26,59 USD → landad 278–326 → 1,9–2,2× vid 624 kr; 2,4× kräver 667–782 kr där ankaret 999 bara är 1,3–1,5×). Blir A om SE-Temu-priset är ≤ ~150 kr.",
+  "tier_reason": "V2.1-regel A: fem listningar av samma form (bröstväska med lock + sele + regnskydd) kostar 26,59 / 28,49 / 30,85 / 47,32 / 68,59 USD på Temu US — alla ger landad ≥ 280 kr och 2,4× ≥ 670 kr, över vad ankaret Blaser 999 bär (≤ 624). Materialet var godkänt villkorat på originalet (riktig jägare tar upp kikaren inom 3 s). Felet sitter i produktformen, inte listningen. Billigare 'resårsele utan väska' är en annan form som hyllan (Max-On 149) fäller.",
   "temu_us": {
    "title": "Camouflage Large Chest Bag, Can Hold Binoculars, Patented Camouflage Pattern",
    "price_usd": "26.59",
