@@ -228,7 +228,7 @@
    "presence": "PASS",
    "shelf": "PENDING_VERIFICATION",
    "material": "BLOCKED_SOURCE",
-   "economics": "PASS",
+   "economics": "FAIL",
    "variant": "UNKNOWN",
    "hook": "PASS",
    "audience": "FAIL"
@@ -239,10 +239,10 @@
    "source": "Inget verifierat tal for moped-/scooterpendlare 45-70 med smahus. WebSearch-budget slut.",
    "verdict": "UNKNOWN"
   },
-  "eliminated_at": "audience",
+  "eliminated_at": "economics",
   "winner_dna_match_0_100": 44,
   "category_novelty_0_100": 78,
-  "main_risk": "Publiken. Kontots hela inlarning ligger pa man 45-70 med hus, bat och tradgard — scooterpendlaren ar en annan person.",
+  "main_risk": "Ekonomin faller forst: landad 355-416 kr ger bara 2,16-2,53x vid 899 kr, och 2,4x i bada andarna kraver ett pris over 1 000 kr-taket. Darefter publiken — kontots inlarning ligger pa man 45-70 med hus och tradgard, inte pa scooterpendlaren.",
   "confidence": "LOW"
  },
  {
@@ -257,8 +257,8 @@
    "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
   },
   "negative_space_flags": [
-   "under 199 kr landat: 2,4x hamnar pa 175-206 kr, alltsa under 300 kr-golvet",
-   "kopt fungerande old way (fallor) ∧ jamforelsehandlad ∧ < 300 kr"
+   "svensk mass-commoditisering: samma nat saljs som meterrulle av Granngarden och skadedjursbutikerna",
+   "kopt fungerande old way (fallor, stalull) ∧ jamforelsehandlad"
   ],
   "sources": [
    "site:temu.com rv vent screen rodent mesh camper insect",
@@ -310,7 +310,7 @@
    "presence": "PASS",
    "shelf": "FAIL",
    "material": "BLOCKED_SOURCE",
-   "economics": "FAIL",
+   "economics": "PASS",
    "variant": "UNKNOWN",
    "hook": "PASS",
    "audience": "PASS"
@@ -321,10 +321,10 @@
    "source": "Husvagn & Camping 2026-01-16 (Trafikanalys): 283 840 husvagnar i Sverige, varav 167 496 i trafik; 116 344 avstallda 2024 (96 459 ar 2015). https://www.husvagnochcamping.se/artiklar/artikel/20260116/sista-resan-for-husvagnen/",
    "verdict": "PASS"
   },
-  "eliminated_at": "economics",
+  "eliminated_at": "shelf",
   "winner_dna_match_0_100": 38,
   "category_novelty_0_100": 70,
-  "main_risk": "Ekonomin: produkten ar for billig for att bara en Meta-CPA. Friktionen ar aldrig fel — barartikeln ar det.",
+  "main_risk": "Hyllan. Ekonomin haller (399 kr ger 4,7x pa landad 73-86 kr), men formen finns redan billigt hos Granngarden och skadedjursbutikerna — och just DEN har listningen ar ett badrumsgaller, inte en husvagnsprodukt. Konceptet lever vidare som ALTERNATIVE_LISTING_REQUIRED: det som saknas ar ett fardigt ventilnat i husvagnsmatt.",
   "confidence": "MEDIUM"
  },
  {
@@ -339,8 +339,7 @@
    "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
   },
   "negative_space_flags": [
-   "variant som agaren maste mata och som dessutom ar i tum",
-   "under 300 kr med 2,4x-kravet"
+   "variant som agaren maste mata och som dessutom ar i tum"
   ],
   "sources": [
    "site:temu.com rv skylight cover protector roof vent shield"
@@ -377,21 +376,21 @@
   "economics": {
    "landed_low_sek": 125.3,
    "landed_high_sek": 146.9,
-   "se_price_sek": 349,
-   "multiple_low": 2.38,
-   "multiple_high": 2.79,
+   "se_price_sek": 399,
+   "multiple_low": 2.72,
+   "multiple_high": 3.18,
    "be_cpa": [
-    202,
-    224
+    252,
+    274
    ],
-   "verdict": "FAIL"
+   "verdict": "PASS"
   },
   "gates": {
    "object": "PASS",
    "presence": "PENDING_VERIFICATION",
    "shelf": "PENDING_VERIFICATION",
    "material": "BLOCKED_SOURCE",
-   "economics": "FAIL",
+   "economics": "PASS",
    "variant": "FAIL",
    "hook": "PASS",
    "audience": "PASS"
@@ -405,7 +404,7 @@
   "eliminated_at": "variant",
   "winner_dna_match_0_100": 34,
   "category_novelty_0_100": 66,
-  "main_risk": "US-matten. 14x14 tum ar amerikansk standard och passar inte en svensk Mini Heki.",
+  "main_risk": "US-matten. 14x14 tum ar amerikansk standard och passar inte en svensk Mini Heki (40x40 cm) eller en Beisel-lucka (50x50 cm). Id:t star dessutom redan i kanda-goods-id.txt — konceptet ar genomgatt forut.",
   "confidence": "MEDIUM"
  },
  {
