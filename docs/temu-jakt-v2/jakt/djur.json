@@ -6,14 +6,14 @@
   "title": null,
   "title_slug_en": "all-weather-insulated-outdoor-cat-house-waterproof-foldable-oxford-for-cats-stray-animal-shelter-warm-comfortable-ideal-for-all-weather-cat-shelter-weatherproof-cover-cat-hous",
   "temu_price_sek": null,
-  "rating": null,
-  "review_count": null,
+  "rating": 4.9,
+  "review_count": 72,
   "review_dates": [],
   "category_path": null,
-  "image_count": null,
-  "hero_url": null,
-  "video_url": null,
-  "video_checked": false,
+  "image_count": 6,
+  "hero_url": "https://img.kwcdn.com/product/fancy/71c40ea9-c815-4e06-bd81-677e6add8636.jpg",
+  "video_url": "https://goods-vod.kwcdn.com/goods-video/89589fe82822e2da67076648f2fdd92b78aa2900.f30.mp4",
+  "video_checked": true,
   "object": "utekatten + trappen/altanen/uthuset",
   "owner_owns": true,
   "friction": "katten sitter ute i regn och kyla, vill in/ut hela tiden när nätterna blir kalla (sep–okt)",
@@ -56,10 +56,20 @@
     "concept": "Isolerad utekattkoja i Oxford-tyg, vinter"
    },
    "material": {
-    "result": "UNKNOWN",
-    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04)",
-    "sec_0_3": null,
-    "hero_note": null
+    "result": "PASS (heron bär; videon är studio)",
+    "reason": "Heron är det bästa enskilda materialet i hela jakten: riktig katt, riktig koja, riktig höst, ingen text. Videon visar hopfällning och vattenavvisning i studio — användbar som bevis, inte som öppning.",
+    "source": "US-sidan 2026-09-04 08:46 UTC (cache-parsad). 6 bilder + video 61 s. Galleri = SE (kontrollerat på IBC).",
+    "verified_by": "b-kandidater.json",
+    "video_len_s": 61.1,
+    "sec_0_3": "Händer viker upp den svarta kojan på ett vitt studiobord; ingen katt, inget utomhus. Sedan: kudde läggs i, taket viks på, vatten hälls på taket och pärlar av, torkas med papper.",
+    "product_in_use_by_3s": "NEJ — monteringsdemo i studio",
+    "same_product_as_hero": "JA — samma svarta hopfällbara koja med spetsigt tak",
+    "burned_text": "Ingen text i videon eller i heron.",
+    "muted_ok": "JA (demon är självförklarande) men den saknar ägare/objekt",
+    "owner_or_object_visible": "I VIDEON NEJ. I HERON JA: riktig orange katt som sover inne i kojan, utomhus på plank med höstlöv och en presenning i bakgrunden.",
+    "clean_framing": "Heron: ja (foto, ingen text, ingen studio). Videon: studio.",
+    "raw_plus_captions_viable": "KANSKE — heron som stillbild/öppning + vattenpärlningen (30–45 s) som bevisklipp; ingen video på en katt i bruk",
+    "hero_alone_viable": "JA — textfri kontexthero med objektet (katten) i bruk utomhus i höstlöv; det är exakt fingeravtryckets hero"
    },
    "economics": {
     "landed_est_sek": null,
@@ -81,6 +91,30 @@
    "audience": {
     "result": "PASS",
     "reason": "katt finns i ~20 % av hushållen, utekatt vanligast i småhus/landsbygd; objektet (katt + kattkoja på trappen) är omisskännligt i flödet. Skevhet: köparen ofta kvinna 45–70 — hushållet är rätt, könet delvis fel"
+   },
+   "economics_us": {
+    "result": "PASS",
+    "reason": "US-pris 10.93 USD → SE-Temu ≈ 76–89 kr → landad ≈ 114–134 kr. Vid 599 kr: 4.5–5.3× (krav 2,4×), BE-CPA 465–485 kr (krav ≥ 190). 2,4× kräver 274–322 kr; ankare 1799 kr",
+    "price_usd": 10.93,
+    "se_temu_est_sek": [
+     76,
+     89
+    ],
+    "landed_est_sek": [
+     114,
+     134
+    ],
+    "se_price_needed_sek": [
+     274,
+     322
+    ],
+    "se_price_used_sek": 599.0,
+    "anchor_sek": 1799,
+    "kurs_sek_per_usd": [
+     6.96,
+     8.16
+    ],
+    "note": "USA-pris som proxy — SE-pris okänt (blockerat). Kalibrering på två punkter; frakt på tunga/skrymmande varor kan överstiga 1,5×."
    }
   },
   "negative_space_flags": [
@@ -90,7 +124,7 @@
   "eliminated_at": null,
   "structure_match": 78,
   "category_novelty": 85,
-  "tier": "B",
+  "tier": "A (villkorad: publik)",
   "biggest_risk": "Materialet ej sett: om leverantörsvideon är en studiorendering utan katt faller den till B. Prisläge okänt.",
   "confidence": "MEDIUM",
   "sources": {
@@ -103,7 +137,47 @@
    ]
   },
   "tier_agent": "A",
-  "tier_reason": "utekattkoja: hylla verifierad PASS (Supercat 1 799, Kerbl 1 017; Shein 424 närmast); enda kvarvarande osäkerhet är publiken (köparen skev mot kvinna, fingeravtrycket säger man 45–70) + material osett"
+  "tier_reason": "gate 4 PASS på heron (riktig katt sover i kojan utomhus i höstlöv, textfri) — videon är en studiodemo (hopfällning + vattenpärlning) och duger som bevisklipp, inte öppning; gate 5 PASS på US-pris (10,93 USD → landad 114–134 → 4,5–5,3× vid 599, ankare Supercat 1 799 / Kerbl 1 017); hylla verifierad PASS. Enda kvarvarande osäkerhet: publiken — köparen skev mot kvinna, fingeravtrycket säger man 45–70. Varianter: färger + troligen två storlekar (SKU-lista ej läst).",
+  "temu_us": {
+   "title": "Outdoor Shelter for Cats, Suitable for * Cats, Designed to * And Insulated for All Weather *. This Cat House Can * Serve As a Do",
+   "price_usd": "10.93",
+   "currency": "USD",
+   "rating": 4.9,
+   "review_count": 72,
+   "review_dates": [
+    "2025-11-*",
+    "2025-*-30",
+    "*25-*-*",
+    "2025-*-30"
+   ],
+   "category_path": [
+    "Pet Supplies",
+    "Pet Beds & Bedding"
+   ],
+   "images": [
+    "https://img.kwcdn.com/product/fancy/71c40ea9-c815-4e06-bd81-677e6add8636.jpg",
+    "https://img.kwcdn.com/product/fancy/e5c45164-7894-48cd-9a40-7efd0013b846.jpg",
+    "https://img.kwcdn.com/product/fancy/bd950c29-5ca3-4a38-92c1-5dc0b60f4c7a.jpg",
+    "https://img.kwcdn.com/product/fancy/c0ee78ca-056b-45e4-870f-ef3f7af1bcec.jpg",
+    "https://img.kwcdn.com/product/fancy/181cab20-d88c-4a6e-8556-ad0e70d7fcf5.jpg",
+    "https://img.kwcdn.com/product/fancy/9c6864ff-57ad-4af5-9bb7-059f6e9019fc.jpg"
+   ],
+   "image_descriptions": [
+    "outdoor shelter for cats suitable for * cats designed to * and insulated for all weather * this cat house can * serve as a dog house and is foldable making it ideal for wild animals and * accommodation",
+    "outdoor shelter for cats suitable for * cats designed to * and insulated for all weather * this cat house can * serve as a dog house and is foldable making it ideal for wild animals and * accommodation gray base",
+    "outdoor shelter for cats suitable for * cats designed to * and insulated for all weather * this cat house can * serve as a dog house and is foldable making it ideal for wild animals and * accommodation black large",
+    "outdoor shelter for cats suitable for * cats designed to * and insulated for all weather * this cat house can * serve as a dog house and is foldable making it ideal for wild animals and * accommodation gray blue",
+    "outdoor shelter for cats suitable for * cats designed to * and insulated for all weather * this cat house can * serve as a dog house and is foldable making it ideal for wild animals and * accommodation black",
+    "outdoor shelter for cats suitable for * cats designed to * and insulated for all weather * this cat house can * serve as a dog house and is foldable making it ideal for wild animals and * accommodation green"
+   ],
+   "video_url": "https://goods-vod.kwcdn.com/goods-video/89589fe82822e2da67076648f2fdd92b78aa2900.f30.mp4",
+   "video_file": "video/us/601101118338671.mp4",
+   "fetched": "2026-09-04T08:46:33.018954Z"
+  },
+  "temu_market": "us",
+  "title_temu": "Outdoor Shelter for Cats, Suitable for * Cats, Designed to * And Insulated for All Weather *. This Cat House Can * Serve As a Do",
+  "video_file": "video/us/601101118338671.mp4",
+  "temu_fetched": "2026-09-04T08:46:33.018954Z"
  },
  {
   "kluster": "djur",

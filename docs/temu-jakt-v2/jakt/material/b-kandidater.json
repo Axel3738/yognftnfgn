@@ -1,0 +1,20 @@
+[
+ {
+  "goods_id": "601101118338671", "concept": "Isolerad utekattkoja i Oxford-tyg, hopfällbar", "kluster": "djur",
+  "source": "US-sidan 2026-09-04 08:46 UTC (cache-parsad). 6 bilder + video 61 s. Galleri = SE (kontrollerat på IBC).",
+  "video_len_s": 61.1, "video_format": "720x960 (3:4), 30 fps",
+  "sec_0_3": "Händer viker upp den svarta kojan på ett vitt studiobord; ingen katt, inget utomhus. Sedan: kudde läggs i, taket viks på, vatten hälls på taket och pärlar av, torkas med papper.",
+  "product_in_use_by_3s": "NEJ — monteringsdemo i studio",
+  "same_product_as_hero": "JA — samma svarta hopfällbara koja med spetsigt tak",
+  "burned_text": "Ingen text i videon eller i heron.",
+  "muted_ok": "JA (demon är självförklarande) men den saknar ägare/objekt",
+  "owner_or_object_visible": "I VIDEON NEJ. I HERON JA: riktig orange katt som sover inne i kojan, utomhus på plank med höstlöv och en presenning i bakgrunden.",
+  "clean_framing": "Heron: ja (foto, ingen text, ingen studio). Videon: studio.",
+  "raw_plus_captions_viable": "KANSKE — heron som stillbild/öppning + vattenpärlningen (30–45 s) som bevisklipp; ingen video på en katt i bruk",
+  "hero_alone_viable": "JA — textfri kontexthero med objektet (katten) i bruk utomhus i höstlöv; det är exakt fingeravtryckets hero",
+  "material_result": "PASS (heron bär; videon är studio)",
+  "material_reason": "Heron är det bästa enskilda materialet i hela jakten: riktig katt, riktig koja, riktig höst, ingen text. Videon visar hopfällning och vattenavvisning i studio — användbar som bevis, inte som öppning.",
+  "temu_us": {"price_usd": 10.93, "rating": 4.9, "review_count": 72, "images": 6, "video": true},
+  "variants_seen": "färger (svart, grå, gråblå, grön) + 'black large' — troligen två storlekar; kontrollera SKU-listan innan launch"
+ }
+]

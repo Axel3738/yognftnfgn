@@ -12,6 +12,7 @@ def fetch(url):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("target"); ap.add_argument("--json"); ap.add_argument("--video")
     ap.add_argument("--en-gang", action="store_true", help="ett enda anrop, ingen omförsöksloop (för långsam kö)")
+    ap.add_argument("--fran-fil", help="parsa en redan sparad HTML-fil i stället för att hämta (cache)")
     a = ap.parse_args()
     t = a.target.strip()
     m = re.search(r"g-(\d{10,18})", t) or re.fullmatch(r"(\d{10,18})", t)
@@ -21,7 +22,10 @@ def main():
     # tillfälligt strypt. Försök tre gånger med växande paus innan vi ger upp.
     import time
     html = final = None
-    for attempt, pause in enumerate((0,) if a.en_gang else (0, 25, 60)):
+    if a.fran_fil:
+        html, final = open(a.fran_fil, encoding="utf-8", errors="ignore").read(), url
+    else:
+      for attempt, pause in enumerate((0,) if a.en_gang else (0, 25, 60)):
         if pause: time.sleep(pause)
         html, final = fetch(url)
         if 'application/ld+json' in html and '"@type":"Product"' in html:

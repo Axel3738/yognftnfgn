@@ -32,28 +32,97 @@ var fjärde minut) går i bakgrunden för resten av A/B-listan.
 | 1 OBJEKTET | ✅ körd på alla 519 | — |
 | 2 PRESENS | ✅ körd på alla 519 | — |
 | 3 HYLLAN | ✅ körd; **verifierad** med kedje-/fackhandelssök för 39 koncept (64 listningar) i `jakt/hylla/h1–h5.json`; övriga "ur sökutdrag/minne" | Biltema svarar 403 överallt — deras hylla är läst ur sökutdrag, aldrig ur sajten |
-| **4 MATERIALET** | ⚠️ **körd på 5 av 519** (de villkorade A, via USA-sidan) | 1 video sedd (kikarselen), 4 bara hero. För alla övriga: **UNKNOWN** |
-| **5 EKONOMI** | ⚠️ **körd på 5 av 519** (USA-pris × kalibrering) | Landad kostnad, multipel, BE-CPA för resten: UNKNOWN. Kalibrering SE/US: IBC 108,51 kr / 15,60 USD = 6,96; motorhöljet 71,22 kr / 8,73 USD = 8,16 kr per USD |
+| **4 MATERIALET** | ⚠️ **körd på 6 av 519** (via USA-sidan) | 2 videor sedda (kikarselen, utekattkojan), 4 bara hero. För alla övriga: `BLOCKED_SOURCE` |
+| **5 EKONOMI** | ⚠️ **körd på 6 av 519** (USA-pris × kalibrering, `economics_source = us-proxy`) | Landad kostnad, multipel, BE-CPA för resten: UNKNOWN. Kalibrering SE/US: IBC 108,51 kr / 15,60 USD = 6,96; motorhöljet 71,22 kr / 8,73 USD = 8,16 kr per USD |
 | 6 VARIANT | ✅ körd på slug-titel/sökträff | SKU-listan (bildbeskrivningarna) ej läst |
 | 7 HOOK | ✅ | — |
 | 8 PUBLIK | ✅ | — |
 
-**Resultatet är 0 Tier A.** De fem kandidater som stod som "A (villkorad)"
-efter gate 1–3 + 6–8 fick gate 4 och 5 på USA-datan (avsnitt 3), och ingen
-håller: två faller på ekonomin (spa-räcket hårt, kikarselen på marginalen), två
-på materialet som gick att se (lockskyddets enda bild är ett badkar,
-tändvedsklyvens en packshot), och vedställsöverdraget på båda i osäker grad.
-Fyra av dem står kvar som **"B (närmast A)"** med exakt vad som skulle flippa
-dem — en video på rätt objekt, eller ett SE-pris under en angiven nivå.
-Fingeravtryckets regel gäller: inget kallas testklart förrän materialet är sett
-och priset räknat. Det är precis den disciplinen som gjorde att gräsklippartäcket
-och kranskyddet borde ha stoppats.
+**Läget efter V2.1 (avsnittet nedan):** ett koncept har en listning som klarar
+material + ekonomi — **utekattkojan** (hero: riktig katt i kojan i höstlöv;
+10,93 USD → 4,5–5,3× vid 599 kr; Supercat 1 799 som ankare). Den står som
+**A (villkorad: publik)** eftersom köparen skev mot kvinna medan fingeravtrycket
+säger man 45–70. De fem tidigare villkorade A föll var och en på *sin listning*
+(badkar-hero, packshot, USA-pris) — enligt V2.1 är det `ALTERNATIVE_LISTING_REQUIRED`,
+inte FAIL: 12 alternativa listningar är funna och ligger i hämtkön. Spa-räcket
+är det enda där felet troligen sitter i produkten (stål, 80 USD), men det avgörs
+först när ≥ 2 listningar fallit på samma sak.
 
 Det som **inte** är UNKNOWN är själva jakten: 96 ägda objekt kartlagda, 519
 listningar hittade, 374 avslagna med orsak, och en hylla som är verifierad på
 riktigt för de koncept som överlevde.
 
 ---
+
+<!-- V21:START -->
+## V2.1 — koncept skilt från listning (patch 2026-09-04 08:50 UTC)
+
+Axels patch V2.1 är i drift: hyllan verifieras **före** Temu-jakten, PRODUKTKONCEPT och LISTNING är två entiteter, statusmodellen är `PASS / FAIL / UNKNOWN / BLOCKED_SOURCE / PENDING_VERIFICATION / ALTERNATIVE_LISTING_REQUIRED`, och ett tekniskt fel (blockerad källa) blir aldrig ett kommersiellt. Hela pipelinen: `jakt/PIPELINE-V2.1.md`. Koncepttabellen: `jakt/koncept.json`.
+
+### Koncept-tratten
+
+```
+listningar                                                                   519
+koncept                                                                      386
+objekt PASS                                                                  291
+presens PASS                                                                 255
+hyllkvalificerade (verifierad PASS)                                           26
+hylla PENDING_VERIFICATION                                                    83
+strukturkvalificerade (variant/hook/publik ej FAIL, ej strukturellt fällda)   26
+slutliga konceptöverlevare (status ≠ FAIL)                                    26
+```
+
+Statusfördelning bland koncepten: FAIL 360, PENDING_VERIFICATION 14, BLOCKED_SOURCE 6, ALTERNATIVE_LISTING_REQUIRED 5, PASS 1.
+
+### Listnings-tratten
+
+```
+kandidatkoncept (≠ FAIL)                                  26
+listningar i dem                                          63
+listningar hämtade (Temu-data)                             6
+material PASS                                              3
+ekonomi PASS                                               4
+bästa listning vald (material + ekonomi PASS)              1
+koncept ALTERNATIVE_LISTING_REQUIRED                       5
+koncept BLOCKED_SOURCE                                     6
+```
+
+Målet är ett starkt koncept parat med en användbar listning. Hittills har **1** koncept en sådan listning.
+
+### Konceptöverlevare (status ≠ FAIL)
+
+| Tier | Koncept | Status | Listn. | Alt. | Hämtade | Hylla | Vad som fattas |
+|---|---|---|---|---|---|---|---|
+| A | Isolerad utekattkoja i Oxford-tyg, vinter (`isolerad-utekattkoja-i-oxford-`) | `PASS` | 6 | 0 | 1 | PASS | — |
+| B (närmast A) | Vedställsöverdrag (bara överdrag, 4–8 ft, spännen) (`vedstallsoverdrag-bara-overdra`) | `ALTERNATIVE_LISTING_REQUIRED` | 3 | 7 | 1 | PASS | annan listning: 7 funna, 0 hämtade — gate 4 PASS på heron (överdraget på ett vedställ, röd text i nederkanten beskärbar), video |
+| B (närmast A) | Lockskydd/skyddsöverdrag (cover cap) för fast spabad, över d (`lockskydd-skyddsoverdrag-cover`) | `ALTERNATIVE_LISTING_REQUIRED` | 4 | 10 | 1 | PASS | annan listning: 10 funna, 0 hämtade — gate 5 PASS på US-pris (19,39 USD → landad 202–237 → 2,5–3,0× vid 599); gate 4 FAIL på det |
+| B (närmast A) | Kikarsele/bröstväska med kikarhållare och regnskydd (`kikarsele-brostvaska-med-kikar`) | `ALTERNATIVE_LISTING_REQUIRED` | 2 | 5 | 1 | PASS | annan listning: 5 funna, 2 hämtade — gate 4 PASS villkorat (riktig jägare tar upp kikaren ur väskan inom 3 s; logotypkort 0–1 s |
+| B (närmast A) | Tändvedsklyv i gjutjärn (Kindling Cracker-typ) (`tandvedsklyv-i-gjutjarn-kindli`) | `ALTERNATIVE_LISTING_REQUIRED` | 2 | 10 | 1 | PASS | annan listning: 10 funna, 0 hämtade — gate 5 PASS på US-pris (16,25 USD → landad 170–200 → 3,0× vid 599; frakt på gjutjärn kan ä |
+| B | Jaktparaply för torn/pass, 58", camo, spänns runt stam (`jaktparaply-for-torn-pass-58-c`) | `BLOCKED_SOURCE` | 1 | 0 | 0 | PASS | Temu-hämtning (material + pris) |
+| B | Hängrännerensar-sats till lövblås (universal, teleskoprör 11 (`hangrannerensar-sats-till-lovb`) | `PENDING_VERIFICATION` | 2 | 0 | 0 | PASS | variant/SKU-lista, Temu-hämtning |
+| B | Skydd/vinteröverdrag för poolvärmepump (`skydd-vinteroverdrag-for-poolv`) | `PENDING_VERIFICATION` | 1 | 0 | 0 | PASS | variant/SKU-lista, publikstorlek, Temu-hämtning |
+| B | Väggstöd/avståndsstöd till stege (`vaggstod-avstandsstod-till-ste`) | `BLOCKED_SOURCE` | 9 | 0 | 0 | PASS | Temu-hämtning (material + pris) |
+| B | Sopkärlslocklås med rem (mot vind/djur) (`sopkarlslocklas-med-rem-mot-vi`) | `BLOCKED_SOURCE` | 3 | 0 | 0 | PASS | Temu-hämtning (material + pris) |
+| B | Utvändigt termoskydd/vindruteskydd för husbil (`utvandigt-termoskydd-vindrutes`) | `PENDING_VERIFICATION` | 1 | 0 | 0 | PASS | variant/SKU-lista, publikstorlek, Temu-hämtning |
+| B | Gevärshållare/vapenhållare för ATV (`gevarshallare-vapenhallare-for`) | `PENDING_VERIFICATION` | 1 | 0 | 0 | PASS | publikstorlek, Temu-hämtning |
+| B | Hårdbottnad baksätesförlängare / hundplattform för bil (`hardbottnad-baksatesforlangare`) | `PENDING_VERIFICATION` | 6 | 0 | 0 | PASS | variant/SKU-lista, Temu-hämtning |
+| B | Tornsits/sittdyna med spännremmar för jakttorn, camo, vadder (`tornsits-sittdyna-med-spannrem`) | `BLOCKED_SOURCE` | 4 | 0 | 0 | PASS | Temu-hämtning (material + pris) |
+| B | Hjulpiggar/antislip-piggar till robotgräsklippare (`hjulpiggar-antislip-piggar-til`) | `PENDING_VERIFICATION` | 3 | 0 | 0 | PASS | variant/SKU-lista, Temu-hämtning |
+| B | Kupolnät/lövnät för trädgårdsdamm med dragkedja (`kupolnat-lovnat-for-tradgardsd`) | `PENDING_VERIFICATION` | 1 | 0 | 0 | PENDING_VERIFICATION | hylla verifierad, variant/SKU-lista, publikstorlek, Temu-hämtning |
+| B | Spatrappa universal (plast, 2 steg) (`spatrappa-universal-plast-2-st`) | `BLOCKED_SOURCE` | 2 | 0 | 0 | PASS | Temu-hämtning (material + pris) |
+| B | Hopfällbar isolerad hundkoja (`hopfallbar-isolerad-hundkoja`) | `PENDING_VERIFICATION` | 1 | 0 | 0 | PASS | variant/SKU-lista, Temu-hämtning |
+| B | 2pcs 17 inch Gutter Ladder Safety Rest, non-slip gutter guar (`auto:hus-takrannan-anliggande-`) | `PENDING_VERIFICATION` | 1 | 0 | 0 | PENDING_VERIFICATION | hylla verifierad, Temu-hämtning |
+| B | Styrstolpar/guide posts till båttrailer (`styrstolpar-guide-posts-till-b`) | `BLOCKED_SOURCE` | 2 | 0 | 0 | PASS | Temu-hämtning (material + pris) |
+| B | hunden efter höstpromenaden + hallen/bilen (`auto:djur-hunden-efter-hostpro`) | `PENDING_VERIFICATION` | 3 | 0 | 0 | PENDING_VERIFICATION | hylla verifierad, variant/SKU-lista, Temu-hämtning |
+| C | Spa-räcke/handledare för spabad (`spa-racke-handledare-for-spaba`) | `ALTERNATIVE_LISTING_REQUIRED` | 1 | 4 | 1 | PASS | annan listning: 4 funna, 0 hämtade — spa-räcke: 79,99 USD → SE-Temu 557–653 → landad 836–980 kr → 2,4× kräver 2 006–2 352 kr; i |
+| C | 1pc Solar House Number Light, LED doorplate, IP55, auto on/o (`auto:hus-husets-fasad-grind-un`) | `PENDING_VERIFICATION` | 1 | 0 | 0 | PENDING_VERIFICATION | hylla verifierad, variant/SKU-lista, Temu-hämtning |
+| C | hård förvaringsbox bak för ATV (`auto:mc-hard-forvaringsbox-bak`) | `PENDING_VERIFICATION` | 1 | 0 | 0 | PENDING_VERIFICATION | hylla verifierad, Temu-hämtning |
+| C | handskydd/vindskydd för styre (PVC), MC/scooter (`auto:mc-handskydd-vindskydd-fo`) | `PENDING_VERIFICATION` | 1 | 0 | 0 | PENDING_VERIFICATION | hylla verifierad, variant/SKU-lista, publikstorlek, Temu-hämtning |
+| C | kapell för promenadscooter/elrullstol (420D Oxford, reflex,  (`auto:mc-kapell-for-promenadsco`) | `PENDING_VERIFICATION` | 1 | 0 | 0 | PENDING_VERIFICATION | hylla verifierad, variant/SKU-lista, publikstorlek, Temu-hämtning |
+
+Koncept med `FAIL`: 360 — alla med orsak i `koncept.json` (`status_reason`, `failure_is_structural`). 141 av dem föll på en hylla som bara är läst ur sökutdrag/minne (`shelf_verified = false`) — det är nästa verifieringskö enligt den nya ordningen.
+
+<!-- V21:END -->
 
 ## 1. Objektuniversumet
 
@@ -180,7 +249,7 @@ har flera) + 28 dubbletter med `tier = "B (dubblett)"` i `dataset.json`.
 
 | # | Koncept | Goods-id | Kluster | Hylla | Den kvarvarande osäkerheten |
 |---|---|---|---|---|---|
-| B1 | Utekattkoja, isolerad Oxford | 601101118338671 | djur | ✅ PASS (Supercat 1 799, Kerbl 1 017; Shein 424 närmast) | **Publiken:** köparen skev mot kvinna — fingeravtrycket säger man 45–70. Strukturmatch 78, högst i B |
+| B1→A | Utekattkoja, isolerad Oxford | 601101118338671 | djur | ✅ PASS (Supercat 1 799, Kerbl 1 017; Shein 424 närmast) | **Uppgraderad 08:46 UTC:** hero = riktig katt i kojan utomhus i höstlöv (textfri); video = studiodemo (bevisklipp); 10,93 USD → 4,5–5,3× vid 599. Kvar: **publiken** (köparen skev mot kvinna) och SKU-listan (färger + troligen två storlekar) |
 | B2 | Hängrännesats till lövblås (11 ft) | 601103248788835 / 601103296007046 | grasklippare | ✅ PASS (Stihl 745; Husqvarna 359–399 lågt sekundärankare) | **Passform:** adaptrar mot svenska batteriblåsar (Ryobi/Bosch/Husqvarna) → returer |
 | B3 | Väggstöd till stege | 601099637369908 (+8 dubbletter) | hus | ✅ PASS (Wibe 779–974, Bauhaus 1 195) | **Negativ rymd:** stegen förvaras inomhus; U-bultsmontering; 1 m stålfrakt. Biltemas stegtillbehör (403) kan gömma ett 300-kronorsstöd |
 | B4 | Rännstöd i plast till stegen (17") | 601100858917684 | hus | PASS ej verifierad (ingen svensk kanal hittad) | **Ekonomi:** US 2-pack $37,99 → ~900 kr för två plastbitar |
@@ -266,11 +335,11 @@ Bara de som säger något om filtret. Alla 89 C-rader står i `dataset.csv`.
 
 ## 7. Nästa steg (pågår)
 
-1. **Långsam hämtning går i bakgrunden:** `jakt/hamta-langsam.py --paus 240`
-   tar resten av A/B-listan (51 listningar) via USA-sidan, ett anrop var fjärde
-   minut, väntar tio minuter vid block i stället för att ge upp. Startad 07:29
-   UTC; första anropet blockerat, vilar. Logg: `hamta-langsam.log` i
-   arbetsmappen.
+1. **Långsam hämtning:** `jakt/hamta-langsam.py --paus 120` tar kön i
+   V2.1-ordning — alternativa listningar för de fem "annan listning krävs"
+   (34 st) → Tier B (50) → resten — ett anrop i taget, cachat, aldrig samma
+   id två gånger. USA-sidan öppnade igen 08:46 UTC. Kön dör när sessionen
+   somnar; den körs i aktiva turer och fortsätter vid varje väckning.
 2. När den gått igenom: materialgaten (`jakt/material/instruktion.md`) på de
    B-listningar som fick video, `jakt/ekonomi.py` på alla med pris, sedan
    `slutdom.py` + `konsolidera.py` — och den här filen + artefakten uppdateras.
@@ -294,7 +363,11 @@ Bara de som säger något om filtret. Alla 89 C-rader står i `dataset.csv`.
 | `instruktion.md`, `hylla/instruktion.md`, `material/instruktion.md` | Exakt vad agenterna fick — så nästa körning gör likadant |
 | `temu-ld.py` | Läser en Temu-sida som Googlebot → JSON-LD (pris, betyg, bilder, video). Kräver att IP:n inte är blockerad |
 | `hamta-ko.py`, `hamta-langsam.py`, `konsolidera.py`, `hylla-tillamp.py`, `material-tillamp.py`, `ekonomi.py`, `slutdom.py` | Hämtkön (snabb / långsam USA-väg), sammanslagningen, hyll- och materialverdikten in i datasetet, gate 5 på USA-pris, huvudsessionens slutdom |
-| `material/a-kandidater.json`, `material/us-raw/`, `material/bevis/` | Gate 4-domarna på de fem villkorade A, rådatan från USA-sidan, hero + 0–3-sekundersbilder |
+| `material/a-kandidater.json`, `material/b-kandidater.json`, `material/us-raw/`, `material/bevis/` | Gate 4-domarna (de fem villkorade A + utekattkojan), rådatan från USA-sidan, hero + 0–3-sekundersbilder |
+| **`PIPELINE-V2.1.md`** | Den normativa pipelinen efter patchen: gate-ordning, koncept/listning, statusmodell, hämtdisciplin, fält, trattar, körordning |
+| **`koncept.json`** | Ett objekt per PRODUKTKONCEPT (386): listningar, konceptstatus, gater, alternativa listningar, bästa listning, strukturellt/listningsspecifikt fel |
+| `koncept.py`, `rapport-v21.py` | Bygger konceptlagret + de två trattarna ur `dataset.json`; genererar V2.1-avsnittet i rapport och artefakt |
+| `alt/<koncept>.json` | Alternativa Temu-listningar (upp till 10) för koncept som fällts på en listning — 36 funna för fem koncept |
 
 Fält per kandidat: `goods_id, url_se, title, temu_price_sek, rating, review_count,
 review_dates, category_path, image_count, hero_url, video_url, video_checked,
@@ -302,5 +375,9 @@ object, owner_owns, friction, old_way, variants, swedish_equivalent{},
 brand_anchor{}, gates{object, presence, shelf, material, economics, variant, hook,
 audience}, negative_space_flags[], eliminated_at, structure_match,
 category_novelty, tier, tier_agent, tier_reason, biggest_risk, confidence, sources,
-temu_us{price_usd, rating, review_count, images, video_url}, gates.economics_us{}`.
+temu_us{price_usd, rating, review_count, images, video_url}, gates.economics_us{}` —
+plus V2.1: `concept_id, listing_id, concept_status, listing_status,
+alternate_listing_count, material_verified, economics_verified, economics_source,
+source_blocked, verification_timestamp, failure_is_structural,
+failure_is_listing_specific, gate_status{}`.
 Saknat värde = `null`/`"UNKNOWN"`, aldrig en gissning.

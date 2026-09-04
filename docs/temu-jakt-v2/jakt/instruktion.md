@@ -1,3 +1,13 @@
+> **V2.1 (patch 2026-09-04) — läs först.** Ordningen är ändrad: OBJEKT → PRESENS → **SVENSKA HYLLAN** →
+> Temu-listningsjakt → MATERIAL → EKONOMI → VARIANT → HOOK → PUBLIK. Verifiera hyllan (PriceRunner via curl,
+> `site:jula.se/biltema.se/clasohlson.com/rusta.com`, fackhandel) på ägarens **svenska** ord INNAN du söker
+> en enda Temu-listning; koncept som faller på hyllan får ingen Temu-budget alls. Skilj PRODUKTKONCEPT
+> (form + objekt + friktion) från LISTNING (goods-id): rapportera koncept med sina listningar, och låt
+> aldrig en svag listning fälla ett koncept — skriv `ALTERNATIVE_LISTING_REQUIRED`. Statusar:
+> PASS / FAIL / UNKNOWN / BLOCKED_SOURCE / PENDING_VERIFICATION / ALTERNATIVE_LISTING_REQUIRED.
+> Temu hämtas ALDRIG parallellt och aldrig av dig — lämna goods-id till den centrala kön. Hela
+> beskrivningen: `PIPELINE-V2.1.md`.
+
 # Produktjakt V2 — instruktion per klusteragent (läs allt innan du börjar)
 
 Du jagar NYA Temu-produkter åt Bäverbutiken (Sverige, Meta Ads, köpare man 45–70 med småhus/fritidshus) genom att köra det empiriska vinnarfingeravtrycket som ett eliminationsfilter. Läs först `/home/user/yognftnfgn/docs/temu-vinnar-dna.md` avsnitt 4, 6, 7, 9 och 12 (mönster, negativ rymd, motsägelser, latenta variabler, fingeravtrycket) — det är facit. Du letar INTE efter "wow", nyhet eller mekanism. Du letar efter: **ägt objekt → problem som finns nu (september–oktober 2026) → ingen svensk kedja → leverantörsvideo som redan är annonsen → prisutrymme → enkel variant → ägarfråga ≤ 7 ord → igenkännbar publik.**

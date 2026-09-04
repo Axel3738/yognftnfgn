@@ -22,7 +22,7 @@ s("C (ekonomi på US-pris)", "spa-räcke: 79,99 USD → SE-Temu 557–653 → la
 s("B (dubblett)", "dubblett av spa-lockskyddet 601099619866532 — välj den med bäst video när Temu går att läsa", 601099524126091, 601099527353718)
 s("B (dubblett)", "dubblett av kikarselen 601099566089885", 601099523680456)
 s("B", "vedställsöverdrag med öppningsbar front — passform mot ett specifikt (USA-)ställ", 601099588053506)
-s("B", "utekattkoja: hylla verifierad PASS (Supercat 1 799, Kerbl 1 017; Shein 424 närmast); enda kvarvarande osäkerhet är publiken (köparen skev mot kvinna, fingeravtrycket säger man 45–70) + material osett", 601101118338671)
+s("A (villkorad: publik)", "gate 4 PASS på heron (riktig katt sover i kojan utomhus i höstlöv, textfri) — videon är en studiodemo (hopfällning + vattenpärlning) och duger som bevisklipp, inte öppning; gate 5 PASS på US-pris (10,93 USD → landad 114–134 → 4,5–5,3× vid 599, ankare Supercat 1 799 / Kerbl 1 017); hylla verifierad PASS. Enda kvarvarande osäkerhet: publiken — köparen skev mot kvinna, fingeravtrycket säger man 45–70. Varianter: färger + troligen två storlekar (SKU-lista ej läst).", 601101118338671)
 s("B (dubblett)", "dubblett av utekattkojan 601101118338671", 601099539458313, 601102077704284, 601104350112825, 601104350023541, 601105519310315)
 s("B", "hängrännesats till lövblås: adapterpassform mot svenska blåsar; Husqvarna-sats 359–399 kr är ett lågt sekundärankare", 601103248788835, 601103296007046)
 s("B", "väggstöd till stege: Wibe 779–974 / Bauhaus 1 195 som ankare; stegen förvaras inomhus (negativ rymd), U-bultsmontering, 1 m stålfrakt", 601099637369908)
