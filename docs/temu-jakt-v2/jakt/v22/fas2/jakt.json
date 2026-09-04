@@ -1,0 +1,3789 @@
+[
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": "4.6/5 (92%)",
+  "review_count": "58",
+  "price_usd": 41,
+  "price_source": "seznam-snippet 2026-09-04",
+  "variants": "En modell; dubbla utgangar 12V/1A och 6V/2A tacker de flesta kameramarken",
+  "goods_id": "601099637786914",
+  "title": "Trail cameras solar panel 12V/1A 6V/2A with 5000mAh rechargeable lithium battery, waterproof hunting accessory, compatible with hunting game cameras or deer feeder",
+  "economics": {
+   "landed_low_sek": 428,
+   "landed_high_sek": 502,
+   "se_price_sek": 799,
+   "multiple_low": 1.59,
+   "multiple_high": 1.87,
+   "be_cpa": 297,
+   "verdict": "FAIL_landad_over_420"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PASS_via_ankare",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Titeln lovar 12V/6V-utgang, 5000 mAh och vattentat holje. En panel pa en tallstam bredvid en atelkamera ar en sjalvforklarande stillbild, men varken hero eller video gar att se nu."
+  },
+  "negative_space_flags": [
+   "montering (kabel + rem)",
+   "kraver att agaren vet kamerans kontakt"
+  ],
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": 64,
+  "category_novelty_0_100": 78,
+  "tier": "C",
+  "main_risk": "Landad kostnad 428-502 kr ligger over 420-stoppet; 2,4x hamnar over 1 000 kr-taket. Konceptet haller — den har listningen gor det inte.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com trail camera solar panel charger hunting external",
+   "Seznam site:temu.com trail camera solar panel 12v 6v battery kit hunting game camera (pris/betyg)",
+   "WebFetch https://www.jakt.se/hunter-solcellspanel-atelkamera-1 (ankare 1 299 kr)"
+  ],
+  "concept": "Solpanel / extern stromforsorjning till atelkameran och foderautomaten",
+  "object": "Atelkameran (och foderspridaren) som star ute i markerna hela hosten",
+  "owner_owns": "Jagaren ager 2-5 atelkameror + ofta en foderautomat; kameran kostar 1 000-5 000 kr",
+  "friction": "Batterierna tar slut mitt i alg- och vildsvinssasongen. Kylan halverar AA-batterierna, och varje batteribyte betyder en vandring in i markerna som stor viltet pa ateln.",
+  "old_way": "Ga in med nya AA-batterier var till varannan vecka, eller lata kameran sta dod till nasta vittjning",
+  "hook_sv": "Tar batterierna slut i atelkameran?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "PASS_via_ankare",
+   "chain_same_form": false,
+   "anchor_name": "Hunter Solcellspanel Atelkamera (jakt.se) — big-box saknar formen: Biltema har atelkameror (SIM + SD) men ingen solpanel i kategorilistan (ur sokutdrag, ej verifierat i butik)",
+   "anchor_price_sek": 1299,
+   "anchor_url": "https://www.jakt.se/hunter-solcellspanel-atelkamera-1",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099637786914.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "En modell; 12V-utgang, DC 5,5/2,1 mm",
+  "goods_id": "601099525192346",
+  "title": "1pc 4W trail camera solar panels, 12V output solar panel kit with 6000 mAh battery, solar battery charger for hunting game camera, deer feeder, rechargeable battery security camera, DC 5.5mm/2.1mm plug, LED light",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 599,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PASS_via_ankare",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "4W-panel med inbyggt 6 000 mAh-batteri och DC-kontakt. Titeln pekar pa den billigare panelklassen ($15-25 i samma sokresultat), alltsa den listning konceptet behover — men priset gick inte att lasa i nagot sokutdrag."
+  },
+  "negative_space_flags": [
+   "montering (kabel + rem)"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 71,
+  "category_novelty_0_100": 78,
+  "tier": "B",
+  "main_risk": "Priset ar olast. Blir det over ca $28 faller ekonomin pa samma satt som systerlistningen; blir det $18-25 haller hela kedjan.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com trail camera solar panel charger hunting external",
+   "WebFetch temu.com/se/g-601099525192346.html -> 'Ej tillganglig for kop / Produktinformation ej tillganglig' (blockerat skal)"
+  ],
+  "concept": "Solpanel / extern stromforsorjning till atelkameran och foderautomaten",
+  "object": "Atelkameran (och foderspridaren) som star ute i markerna hela hosten",
+  "owner_owns": "Jagaren ager 2-5 atelkameror + ofta en foderautomat; kameran kostar 1 000-5 000 kr",
+  "friction": "Batterierna tar slut mitt i alg- och vildsvinssasongen. Kylan halverar AA-batterierna, och varje batteribyte betyder en vandring in i markerna som stor viltet pa ateln.",
+  "old_way": "Ga in med nya AA-batterier var till varannan vecka, eller lata kameran sta dod till nasta vittjning",
+  "hook_sv": "Tar batterierna slut i atelkameran?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "PASS_via_ankare",
+   "chain_same_form": false,
+   "anchor_name": "Hunter Solcellspanel Atelkamera (jakt.se) — big-box saknar formen: Biltema har atelkameror (SIM + SD) men ingen solpanel i kategorilistan (ur sokutdrag, ej verifierat i butik)",
+   "anchor_price_sek": 1299,
+   "anchor_url": "https://www.jakt.se/hunter-solcellspanel-atelkamera-1",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099525192346.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "En modell; 360-gradig ledad fastsattning",
+  "goods_id": "601099958398659",
+  "title": "Outdoor wildlife sports camera solar panel, IP65 waterproof, 360-degree rotatable, built-in 4000mAh lithium battery, suitable for hunting camera",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 599,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PASS_via_ankare",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "PENDING_VERIFICATION",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "360-gradig ledad panel med 4 000 mAh. Formen liknar det svenska ankaret (panel + arm + rem), vilket ar exakt vad ankarundantaget kraver."
+  },
+  "negative_space_flags": [
+   "montering"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 66,
+  "category_novelty_0_100": 78,
+  "tier": "B",
+  "main_risk": "Pris och utgangsspanning olasta; kontaktdon per kameramodell kan gora varianten till en SKU-fraga.",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch site:temu.com trail camera solar panel charger hunting external"
+  ],
+  "concept": "Solpanel / extern stromforsorjning till atelkameran och foderautomaten",
+  "object": "Atelkameran (och foderspridaren) som star ute i markerna hela hosten",
+  "owner_owns": "Jagaren ager 2-5 atelkameror + ofta en foderautomat; kameran kostar 1 000-5 000 kr",
+  "friction": "Batterierna tar slut mitt i alg- och vildsvinssasongen. Kylan halverar AA-batterierna, och varje batteribyte betyder en vandring in i markerna som stor viltet pa ateln.",
+  "old_way": "Ga in med nya AA-batterier var till varannan vecka, eller lata kameran sta dod till nasta vittjning",
+  "hook_sv": "Tar batterierna slut i atelkameran?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "PASS_via_ankare",
+   "chain_same_form": false,
+   "anchor_name": "Hunter Solcellspanel Atelkamera (jakt.se) — big-box saknar formen: Biltema har atelkameror (SIM + SD) men ingen solpanel i kategorilistan (ur sokutdrag, ej verifierat i butik)",
+   "anchor_price_sek": 1299,
+   "anchor_url": "https://www.jakt.se/hunter-solcellspanel-atelkamera-1",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099958398659.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": "4.7/5",
+  "review_count": "27",
+  "price_usd": 68,
+  "price_source": "seznam-snippet 2026-09-04",
+  "variants": "Lyftkapacitet i lbs (amerikanskt matt agaren inte kan utantill)",
+  "goods_id": "602578624597839",
+  "title": "Tree mounted deer hoist 353 lbs game hoist winch lift with gambrel & winch",
+  "economics": {
+   "landed_low_sek": 710,
+   "landed_high_sek": 832,
+   "se_price_sek": 899,
+   "multiple_low": 1.08,
+   "multiple_high": 1.27,
+   "be_cpa": 67,
+   "verdict": "FAIL_landad_over_420"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL_landad_over_420",
+   "variant": "OSAKER",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Leverantorsmaterialet visar med storsta sannolikhet en upphangd hjort. Det ar bade otestat och en Meta-policyrisk (chockerande innehall), utover att gaten inte gar att kora nu."
+  },
+  "negative_space_flags": [
+   "kit (hoist + gambrel + rep saljs som 'hanging kit')",
+   "svensk mass-commoditisering (Biltema jaktavdelning)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 38,
+  "category_novelty_0_100": 55,
+  "tier": "ELIM",
+  "main_risk": "Biltema ar jaktbutik: Viltgalge, Reptalja 250 kg, Slaktkrok och tre storlekar Viltsack star i deras egen jaktavdelning. Deras pris blir vart tak, och de lasta listningarna landar redan pa 710-1 383 kr.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com game hoist gambrel pulley lift system deer hunting",
+   "Seznam site:temu.com deer hoist gambrel pulley lift (pris/betyg)",
+   "WebSearch biltema viltgalge viltdragare viltsack slaktverktyg pris kr"
+  ],
+  "concept": "Vilthiss: gambrel + talja for att hanga upp klovvilt vid slakt",
+  "object": "Det fallda viltet + tradet eller slaktbodens bjalke",
+  "owner_owns": "Jaktlaget ager slaktboden/tradet; algen som ska tas om hand ar var pa 15 000-25 000 kr kott",
+  "friction": "Algen/vildsvinet ska upp och hangas samma kvall, ofta av tva man i morker och regn",
+  "old_way": "Rep over en gren, fyra man som drar, eller traktorskopan",
+  "hook_sv": "Lyfter ni algen med rep och muskler?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Viltgalge (max 200 kg) + Biltema Reptalja 250 kg + Biltema Slaktkrok 140x6 mm 2-pack; Hylte 5etta Spel/Talja (sjalvlasande talja for lyft av vilt vid flaning); Skogma/RM Jakt slaktgalge med taljsystem (GreyOak)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/fritid/jakt/knivar-och-slaktverktyg/viltgalge-2000023684",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-602578624597839.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": "4.8/5",
+  "review_count": "24",
+  "price_usd": 113,
+  "price_source": "seznam-snippet 2026-09-04",
+  "variants": "Lyftkapacitet i lbs (amerikanskt matt agaren inte kan utantill)",
+  "goods_id": "602836322605846",
+  "title": "Truck hitch game hoist complete kit with winch and gambrel, 400/500/600 lbs, 2 inch receiver",
+  "economics": {
+   "landed_low_sek": 1180,
+   "landed_high_sek": 1383,
+   "se_price_sek": 899,
+   "multiple_low": 0.65,
+   "multiple_high": 0.76,
+   "be_cpa": -484,
+   "verdict": "FAIL_landad_over_420"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL_landad_over_420",
+   "variant": "OSAKER",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Leverantorsmaterialet visar med storsta sannolikhet en upphangd hjort. Det ar bade otestat och en Meta-policyrisk (chockerande innehall), utover att gaten inte gar att kora nu."
+  },
+  "negative_space_flags": [
+   "kit (hoist + gambrel + rep saljs som 'hanging kit')",
+   "svensk mass-commoditisering (Biltema jaktavdelning)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 38,
+  "category_novelty_0_100": 55,
+  "tier": "ELIM",
+  "main_risk": "Biltema ar jaktbutik: Viltgalge, Reptalja 250 kg, Slaktkrok och tre storlekar Viltsack star i deras egen jaktavdelning. Deras pris blir vart tak, och de lasta listningarna landar redan pa 710-1 383 kr.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com game hoist gambrel pulley lift system deer hunting",
+   "Seznam site:temu.com deer hoist gambrel pulley lift (pris/betyg)",
+   "WebSearch biltema viltgalge viltdragare viltsack slaktverktyg pris kr"
+  ],
+  "concept": "Vilthiss: gambrel + talja for att hanga upp klovvilt vid slakt",
+  "object": "Det fallda viltet + tradet eller slaktbodens bjalke",
+  "owner_owns": "Jaktlaget ager slaktboden/tradet; algen som ska tas om hand ar var pa 15 000-25 000 kr kott",
+  "friction": "Algen/vildsvinet ska upp och hangas samma kvall, ofta av tva man i morker och regn",
+  "old_way": "Rep over en gren, fyra man som drar, eller traktorskopan",
+  "hook_sv": "Lyfter ni algen med rep och muskler?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Viltgalge (max 200 kg) + Biltema Reptalja 250 kg + Biltema Slaktkrok 140x6 mm 2-pack; Hylte 5etta Spel/Talja (sjalvlasande talja for lyft av vilt vid flaning); Skogma/RM Jakt slaktgalge med taljsystem (GreyOak)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/fritid/jakt/knivar-och-slaktverktyg/viltgalge-2000023684",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-602836322605846.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Lyftkapacitet i lbs (amerikanskt matt agaren inte kan utantill)",
+  "goods_id": "601099538329358",
+  "title": "500lb heavy-duty iron gambrel & hoist system for deer, game tree hanging, gutting, pulleys + rope",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 899,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "OSAKER",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Leverantorsmaterialet visar med storsta sannolikhet en upphangd hjort. Det ar bade otestat och en Meta-policyrisk (chockerande innehall), utover att gaten inte gar att kora nu."
+  },
+  "negative_space_flags": [
+   "kit (hoist + gambrel + rep saljs som 'hanging kit')",
+   "svensk mass-commoditisering (Biltema jaktavdelning)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 38,
+  "category_novelty_0_100": 55,
+  "tier": "ELIM",
+  "main_risk": "Biltema ar jaktbutik: Viltgalge, Reptalja 250 kg, Slaktkrok och tre storlekar Viltsack star i deras egen jaktavdelning. Deras pris blir vart tak, och de lasta listningarna landar redan pa 710-1 383 kr.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com game hoist gambrel pulley lift system deer hunting",
+   "Seznam site:temu.com deer hoist gambrel pulley lift (pris/betyg)",
+   "WebSearch biltema viltgalge viltdragare viltsack slaktverktyg pris kr"
+  ],
+  "concept": "Vilthiss: gambrel + talja for att hanga upp klovvilt vid slakt",
+  "object": "Det fallda viltet + tradet eller slaktbodens bjalke",
+  "owner_owns": "Jaktlaget ager slaktboden/tradet; algen som ska tas om hand ar var pa 15 000-25 000 kr kott",
+  "friction": "Algen/vildsvinet ska upp och hangas samma kvall, ofta av tva man i morker och regn",
+  "old_way": "Rep over en gren, fyra man som drar, eller traktorskopan",
+  "hook_sv": "Lyfter ni algen med rep och muskler?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Viltgalge (max 200 kg) + Biltema Reptalja 250 kg + Biltema Slaktkrok 140x6 mm 2-pack; Hylte 5etta Spel/Talja (sjalvlasande talja for lyft av vilt vid flaning); Skogma/RM Jakt slaktgalge med taljsystem (GreyOak)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/fritid/jakt/knivar-och-slaktverktyg/viltgalge-2000023684",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099538329358.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Lyftkapacitet i lbs (amerikanskt matt agaren inte kan utantill)",
+  "goods_id": "601099761355453",
+  "title": "Deer hanger elk hoist pulley lift system with gambrel, hunting game hanging kit, max 600 lbs",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 899,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "OSAKER",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Leverantorsmaterialet visar med storsta sannolikhet en upphangd hjort. Det ar bade otestat och en Meta-policyrisk (chockerande innehall), utover att gaten inte gar att kora nu."
+  },
+  "negative_space_flags": [
+   "kit (hoist + gambrel + rep saljs som 'hanging kit')",
+   "svensk mass-commoditisering (Biltema jaktavdelning)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 38,
+  "category_novelty_0_100": 55,
+  "tier": "ELIM",
+  "main_risk": "Biltema ar jaktbutik: Viltgalge, Reptalja 250 kg, Slaktkrok och tre storlekar Viltsack star i deras egen jaktavdelning. Deras pris blir vart tak, och de lasta listningarna landar redan pa 710-1 383 kr.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com game hoist gambrel pulley lift system deer hunting",
+   "Seznam site:temu.com deer hoist gambrel pulley lift (pris/betyg)",
+   "WebSearch biltema viltgalge viltdragare viltsack slaktverktyg pris kr"
+  ],
+  "concept": "Vilthiss: gambrel + talja for att hanga upp klovvilt vid slakt",
+  "object": "Det fallda viltet + tradet eller slaktbodens bjalke",
+  "owner_owns": "Jaktlaget ager slaktboden/tradet; algen som ska tas om hand ar var pa 15 000-25 000 kr kott",
+  "friction": "Algen/vildsvinet ska upp och hangas samma kvall, ofta av tva man i morker och regn",
+  "old_way": "Rep over en gren, fyra man som drar, eller traktorskopan",
+  "hook_sv": "Lyfter ni algen med rep och muskler?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Viltgalge (max 200 kg) + Biltema Reptalja 250 kg + Biltema Slaktkrok 140x6 mm 2-pack; Hylte 5etta Spel/Talja (sjalvlasande talja for lyft av vilt vid flaning); Skogma/RM Jakt slaktgalge med taljsystem (GreyOak)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/fritid/jakt/knivar-och-slaktverktyg/viltgalge-2000023684",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099761355453.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Lyftkapacitet i lbs (amerikanskt matt agaren inte kan utantill)",
+  "goods_id": "601100095510286",
+  "title": "Max 700 lbs deer hunting game hoist pulley lift system with gambrel, hunting game hanging kit",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 899,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "OSAKER",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Leverantorsmaterialet visar med storsta sannolikhet en upphangd hjort. Det ar bade otestat och en Meta-policyrisk (chockerande innehall), utover att gaten inte gar att kora nu."
+  },
+  "negative_space_flags": [
+   "kit (hoist + gambrel + rep saljs som 'hanging kit')",
+   "svensk mass-commoditisering (Biltema jaktavdelning)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 38,
+  "category_novelty_0_100": 55,
+  "tier": "ELIM",
+  "main_risk": "Biltema ar jaktbutik: Viltgalge, Reptalja 250 kg, Slaktkrok och tre storlekar Viltsack star i deras egen jaktavdelning. Deras pris blir vart tak, och de lasta listningarna landar redan pa 710-1 383 kr.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com game hoist gambrel pulley lift system deer hunting",
+   "Seznam site:temu.com deer hoist gambrel pulley lift (pris/betyg)",
+   "WebSearch biltema viltgalge viltdragare viltsack slaktverktyg pris kr"
+  ],
+  "concept": "Vilthiss: gambrel + talja for att hanga upp klovvilt vid slakt",
+  "object": "Det fallda viltet + tradet eller slaktbodens bjalke",
+  "owner_owns": "Jaktlaget ager slaktboden/tradet; algen som ska tas om hand ar var pa 15 000-25 000 kr kott",
+  "friction": "Algen/vildsvinet ska upp och hangas samma kvall, ofta av tva man i morker och regn",
+  "old_way": "Rep over en gren, fyra man som drar, eller traktorskopan",
+  "hook_sv": "Lyfter ni algen med rep och muskler?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Viltgalge (max 200 kg) + Biltema Reptalja 250 kg + Biltema Slaktkrok 140x6 mm 2-pack; Hylte 5etta Spel/Talja (sjalvlasande talja for lyft av vilt vid flaning); Skogma/RM Jakt slaktgalge med taljsystem (GreyOak)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/fritid/jakt/knivar-och-slaktverktyg/viltgalge-2000023684",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601100095510286.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Lyftkapacitet i lbs (amerikanskt matt agaren inte kan utantill)",
+  "goods_id": "601099736403234",
+  "title": "Single pack hoist gambrel with dual pulley system, 600lb deer hanger for butchering and skinning",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 899,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "OSAKER",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Leverantorsmaterialet visar med storsta sannolikhet en upphangd hjort. Det ar bade otestat och en Meta-policyrisk (chockerande innehall), utover att gaten inte gar att kora nu."
+  },
+  "negative_space_flags": [
+   "kit (hoist + gambrel + rep saljs som 'hanging kit')",
+   "svensk mass-commoditisering (Biltema jaktavdelning)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 38,
+  "category_novelty_0_100": 55,
+  "tier": "ELIM",
+  "main_risk": "Biltema ar jaktbutik: Viltgalge, Reptalja 250 kg, Slaktkrok och tre storlekar Viltsack star i deras egen jaktavdelning. Deras pris blir vart tak, och de lasta listningarna landar redan pa 710-1 383 kr.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com game hoist gambrel pulley lift system deer hunting",
+   "Seznam site:temu.com deer hoist gambrel pulley lift (pris/betyg)",
+   "WebSearch biltema viltgalge viltdragare viltsack slaktverktyg pris kr"
+  ],
+  "concept": "Vilthiss: gambrel + talja for att hanga upp klovvilt vid slakt",
+  "object": "Det fallda viltet + tradet eller slaktbodens bjalke",
+  "owner_owns": "Jaktlaget ager slaktboden/tradet; algen som ska tas om hand ar var pa 15 000-25 000 kr kott",
+  "friction": "Algen/vildsvinet ska upp och hangas samma kvall, ofta av tva man i morker och regn",
+  "old_way": "Rep over en gren, fyra man som drar, eller traktorskopan",
+  "hook_sv": "Lyfter ni algen med rep och muskler?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Viltgalge (max 200 kg) + Biltema Reptalja 250 kg + Biltema Slaktkrok 140x6 mm 2-pack; Hylte 5etta Spel/Talja (sjalvlasande talja for lyft av vilt vid flaning); Skogma/RM Jakt slaktgalge med taljsystem (GreyOak)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/fritid/jakt/knivar-och-slaktverktyg/viltgalge-2000023684",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099736403234.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Lyftkapacitet i lbs (amerikanskt matt agaren inte kan utantill)",
+  "goods_id": "605922592133496",
+  "title": "Heavy duty deer hoist winch lift with gambrel, 500 lbs manual crank game winch",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 899,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "OSAKER",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Leverantorsmaterialet visar med storsta sannolikhet en upphangd hjort. Det ar bade otestat och en Meta-policyrisk (chockerande innehall), utover att gaten inte gar att kora nu."
+  },
+  "negative_space_flags": [
+   "kit (hoist + gambrel + rep saljs som 'hanging kit')",
+   "svensk mass-commoditisering (Biltema jaktavdelning)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 38,
+  "category_novelty_0_100": 55,
+  "tier": "ELIM",
+  "main_risk": "Biltema ar jaktbutik: Viltgalge, Reptalja 250 kg, Slaktkrok och tre storlekar Viltsack star i deras egen jaktavdelning. Deras pris blir vart tak, och de lasta listningarna landar redan pa 710-1 383 kr.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com game hoist gambrel pulley lift system deer hunting",
+   "Seznam site:temu.com deer hoist gambrel pulley lift (pris/betyg)",
+   "WebSearch biltema viltgalge viltdragare viltsack slaktverktyg pris kr"
+  ],
+  "concept": "Vilthiss: gambrel + talja for att hanga upp klovvilt vid slakt",
+  "object": "Det fallda viltet + tradet eller slaktbodens bjalke",
+  "owner_owns": "Jaktlaget ager slaktboden/tradet; algen som ska tas om hand ar var pa 15 000-25 000 kr kott",
+  "friction": "Algen/vildsvinet ska upp och hangas samma kvall, ofta av tva man i morker och regn",
+  "old_way": "Rep over en gren, fyra man som drar, eller traktorskopan",
+  "hook_sv": "Lyfter ni algen med rep och muskler?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Viltgalge (max 200 kg) + Biltema Reptalja 250 kg + Biltema Slaktkrok 140x6 mm 2-pack; Hylte 5etta Spel/Talja (sjalvlasande talja for lyft av vilt vid flaning); Skogma/RM Jakt slaktgalge med taljsystem (GreyOak)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/fritid/jakt/knivar-och-slaktverktyg/viltgalge-2000023684",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-605922592133496.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Antal i pack",
+  "goods_id": "601099530355878",
+  "title": "8pcs heavy duty elk wild meat bags, reusable large rolled game bags for hunting",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 349,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Flerpack av tyg. Titeln antyder katalogbild, inte en handling i bruk."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (Biltema tre storlekar + vattentat)",
+   "flerpack narmar sig forbrukningsvara"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 30,
+  "category_novelty_0_100": 40,
+  "tier": "ELIM",
+  "main_risk": "Biltema saljer exakt formen i tre storlekar; Hylte och Jaktia har egna viltsackskategorier.",
+  "confidence": "HIGH",
+  "sources": [
+   "Seznam site:temu.com game meat hanging bag breathable deer carcass cover mesh",
+   "WebSearch biltema viltgalge viltdragare viltsack slaktverktyg pris kr"
+  ],
+  "concept": "Viltsack / game bags — flugskydd pa hangande kott",
+  "object": "Det upphangda viltet i slaktboden",
+  "owner_owns": "Jaktlagets slaktbod och det fallda viltet",
+  "friction": "Flugor och getingar pa kottet i septembervarmen",
+  "old_way": "Lakan, myggnat, inget alls",
+  "hook_sv": "Flugor pa algen i slaktboden?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Viltsack 75x50 cm / 190x90 cm / 300x160 cm + Viltsack vattentat; Hylte Viltsackar; Jaktia Viltsackar",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/fritid/jakt/knivar-och-slaktverktyg/viltsack-75-x-50-cm-2000041595",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099530355878.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Antal i pack",
+  "goods_id": "601101995689327",
+  "title": "6 pack game bags, breathable meat storage bags for elk/deer/moose, reusable washable with reflective strips and ropes",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 349,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Flerpack av tyg. Titeln antyder katalogbild, inte en handling i bruk."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (Biltema tre storlekar + vattentat)",
+   "flerpack narmar sig forbrukningsvara"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 30,
+  "category_novelty_0_100": 40,
+  "tier": "ELIM",
+  "main_risk": "Biltema saljer exakt formen i tre storlekar; Hylte och Jaktia har egna viltsackskategorier.",
+  "confidence": "HIGH",
+  "sources": [
+   "Seznam site:temu.com game meat hanging bag breathable deer carcass cover mesh",
+   "WebSearch biltema viltgalge viltdragare viltsack slaktverktyg pris kr"
+  ],
+  "concept": "Viltsack / game bags — flugskydd pa hangande kott",
+  "object": "Det upphangda viltet i slaktboden",
+  "owner_owns": "Jaktlagets slaktbod och det fallda viltet",
+  "friction": "Flugor och getingar pa kottet i septembervarmen",
+  "old_way": "Lakan, myggnat, inget alls",
+  "hook_sv": "Flugor pa algen i slaktboden?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Viltsack 75x50 cm / 190x90 cm / 300x160 cm + Viltsack vattentat; Hylte Viltsackar; Jaktia Viltsackar",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/fritid/jakt/knivar-och-slaktverktyg/viltsack-75-x-50-cm-2000041595",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601101995689327.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": "4.7/5 (94%)",
+  "review_count": "99+",
+  "price_usd": 76,
+  "price_source": "seznam-snippet 2026-09-04",
+  "variants": "Antal personer (2-3)",
+  "goods_id": "601101893204729",
+  "title": "270-degree transparent hunting blind tent, pop-up camouflage ground blind for 2-3 people, portable foldable deer hunting shelter with carry bag",
+  "economics": {
+   "landed_low_sek": 793,
+   "landed_high_sek": 930,
+   "se_price_sek": 999,
+   "multiple_low": 1.07,
+   "multiple_high": 1.26,
+   "be_cpa": 69,
+   "verdict": "FAIL_landad_over_420"
+  },
+  "gates": {
+   "object": "OSAKER",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL_landad_over_420",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Ett uppslaget camo-talt i skogen ar en stark stillbild, men listningens material gar inte att se."
+  },
+  "negative_space_flags": [
+   "fristaende produkt — faster inte pa nagot agaren redan har",
+   "svensk mass-commoditisering (Biltema kamouflagevagg, Jula kamouflagenat)"
+  ],
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": 34,
+  "category_novelty_0_100": 62,
+  "tier": "ELIM",
+  "main_risk": "Landad kostnad 689-930 kr. 2,4x hamnar pa 1 650-2 230 kr, langt over 1 000 kr-taket.",
+  "confidence": "HIGH",
+  "sources": [
+   "Seznam site:temu.com hunting ground blind pop up camo tent one person portable",
+   "WebSearch site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat"
+  ],
+  "concept": "Pop-up marktalt / genomsiktligt gomsle for markpass",
+  "object": "Markpasset — platsen jagaren redan sitter pa",
+  "owner_owns": "Jaktlagets markpass; passet ar en plats, inte en sak",
+  "friction": "Regn, vind och att viltet ser jagaren pa markpasset i oktober",
+  "old_way": "Granris, presenning, sitta still",
+  "hook_sv": "Ser algen dig pa markpasset?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Kamouflagevagg + Kamouflagenat nordic; Jula Kamouflagenat 3x1,5 m (Kayoba); fackhandelns marktalt",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/fritid/jakt/jakttillbehor-och-utrustning/kamouflagevagg-2000044166",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601101893204729.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": "100%",
+  "review_count": null,
+  "price_usd": 75,
+  "price_source": "seznam-snippet 2026-09-04",
+  "variants": "Antal personer (2-3)",
+  "goods_id": "606464479492998",
+  "title": "270/360 panoramic view hunting tent, pop-up camouflage hunting blind for 2-3 people",
+  "economics": {
+   "landed_low_sek": 783,
+   "landed_high_sek": 918,
+   "se_price_sek": 999,
+   "multiple_low": 1.09,
+   "multiple_high": 1.28,
+   "be_cpa": 81,
+   "verdict": "FAIL_landad_over_420"
+  },
+  "gates": {
+   "object": "OSAKER",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL_landad_over_420",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Ett uppslaget camo-talt i skogen ar en stark stillbild, men listningens material gar inte att se."
+  },
+  "negative_space_flags": [
+   "fristaende produkt — faster inte pa nagot agaren redan har",
+   "svensk mass-commoditisering (Biltema kamouflagevagg, Jula kamouflagenat)"
+  ],
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": 34,
+  "category_novelty_0_100": 62,
+  "tier": "ELIM",
+  "main_risk": "Landad kostnad 689-930 kr. 2,4x hamnar pa 1 650-2 230 kr, langt over 1 000 kr-taket.",
+  "confidence": "HIGH",
+  "sources": [
+   "Seznam site:temu.com hunting ground blind pop up camo tent one person portable",
+   "WebSearch site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat"
+  ],
+  "concept": "Pop-up marktalt / genomsiktligt gomsle for markpass",
+  "object": "Markpasset — platsen jagaren redan sitter pa",
+  "owner_owns": "Jaktlagets markpass; passet ar en plats, inte en sak",
+  "friction": "Regn, vind och att viltet ser jagaren pa markpasset i oktober",
+  "old_way": "Granris, presenning, sitta still",
+  "hook_sv": "Ser algen dig pa markpasset?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Kamouflagevagg + Kamouflagenat nordic; Jula Kamouflagenat 3x1,5 m (Kayoba); fackhandelns marktalt",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/fritid/jakt/jakttillbehor-och-utrustning/kamouflagevagg-2000044166",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-606464479492998.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": "98%",
+  "review_count": "99+",
+  "price_usd": 66,
+  "price_source": "seznam-snippet 2026-09-04",
+  "variants": "Antal personer (2-3)",
+  "goods_id": "601105121640789",
+  "title": "2-3 person 360 see-through hunting blind, pop-up camouflage tent, soft material",
+  "economics": {
+   "landed_low_sek": 689,
+   "landed_high_sek": 808,
+   "se_price_sek": 999,
+   "multiple_low": 1.24,
+   "multiple_high": 1.45,
+   "be_cpa": 191,
+   "verdict": "FAIL_landad_over_420"
+  },
+  "gates": {
+   "object": "OSAKER",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL_landad_over_420",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Ett uppslaget camo-talt i skogen ar en stark stillbild, men listningens material gar inte att se."
+  },
+  "negative_space_flags": [
+   "fristaende produkt — faster inte pa nagot agaren redan har",
+   "svensk mass-commoditisering (Biltema kamouflagevagg, Jula kamouflagenat)"
+  ],
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": 34,
+  "category_novelty_0_100": 62,
+  "tier": "ELIM",
+  "main_risk": "Landad kostnad 689-930 kr. 2,4x hamnar pa 1 650-2 230 kr, langt over 1 000 kr-taket.",
+  "confidence": "HIGH",
+  "sources": [
+   "Seznam site:temu.com hunting ground blind pop up camo tent one person portable",
+   "WebSearch site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat"
+  ],
+  "concept": "Pop-up marktalt / genomsiktligt gomsle for markpass",
+  "object": "Markpasset — platsen jagaren redan sitter pa",
+  "owner_owns": "Jaktlagets markpass; passet ar en plats, inte en sak",
+  "friction": "Regn, vind och att viltet ser jagaren pa markpasset i oktober",
+  "old_way": "Granris, presenning, sitta still",
+  "hook_sv": "Ser algen dig pa markpasset?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Kamouflagevagg + Kamouflagenat nordic; Jula Kamouflagenat 3x1,5 m (Kayoba); fackhandelns marktalt",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/fritid/jakt/jakttillbehor-och-utrustning/kamouflagevagg-2000044166",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601105121640789.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Burmatt i tum/cm — agaren maste mata",
+  "goods_id": "601100672308923",
+  "title": "Heavy duty dog crate cover for large dogs, insulated windproof rainproof kennel cover with breathable side window, Oxford fabric 61x48x50 cm",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 449,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Titlarna beskriver overdrag till amerikansk gallerbur. Svenska jaktbilburar ar aluminiumboxar — samma fysiska produkt passar inte agarens objekt."
+  },
+  "negative_space_flags": [
+   "objektet forvaras inomhus nar det inte anvands",
+   "matt agaren maste ta",
+   "jamforelsehandlad (Shopit listar 50 st)"
+  ],
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": 26,
+  "category_novelty_0_100": 45,
+  "tier": "ELIM",
+  "main_risk": "Formen ar gjord for gallerbur, inte for svensk aluminiumbilbur, och burmatt ar ett matt agaren maste ta.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com dog crate cover waterproof kennel car travel insulated",
+   "WebSearch \"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris"
+  ],
+  "concept": "Isolerat overdrag / kapell till hundburen",
+  "object": "Hundburen i bilen eller pa flaket",
+  "owner_owns": "Jakthundsagaren; en bilbur kostar 3 000-8 000 kr",
+  "friction": "Hunden star i bur i kyla och drag hela jaktdagen medan jaktlaget ar pa pass",
+  "old_way": "Filt over buren, presenning",
+  "hook_sv": "Fryser hunden i buren pa jakten?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Shopit listar 50 st hundbilbursoverdrag (jamforelsehandlad); Hylte Burar & grindar; Arken Zoo bilburar",
+   "anchor_price_sek": null,
+   "anchor_url": "https://shopit.se/hundbilbursoverdrag-c32558",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601100672308923.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Burmatt i tum/cm — agaren maste mata",
+  "goods_id": "601103419994662",
+  "title": "38 inch heavy duty insulated dog crate cover, 600D polyester kennel cover with adjustable straps and ventilation mesh",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 449,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Titlarna beskriver overdrag till amerikansk gallerbur. Svenska jaktbilburar ar aluminiumboxar — samma fysiska produkt passar inte agarens objekt."
+  },
+  "negative_space_flags": [
+   "objektet forvaras inomhus nar det inte anvands",
+   "matt agaren maste ta",
+   "jamforelsehandlad (Shopit listar 50 st)"
+  ],
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": 26,
+  "category_novelty_0_100": 45,
+  "tier": "ELIM",
+  "main_risk": "Formen ar gjord for gallerbur, inte for svensk aluminiumbilbur, och burmatt ar ett matt agaren maste ta.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com dog crate cover waterproof kennel car travel insulated",
+   "WebSearch \"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris"
+  ],
+  "concept": "Isolerat overdrag / kapell till hundburen",
+  "object": "Hundburen i bilen eller pa flaket",
+  "owner_owns": "Jakthundsagaren; en bilbur kostar 3 000-8 000 kr",
+  "friction": "Hunden star i bur i kyla och drag hela jaktdagen medan jaktlaget ar pa pass",
+  "old_way": "Filt over buren, presenning",
+  "hook_sv": "Fryser hunden i buren pa jakten?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Shopit listar 50 st hundbilbursoverdrag (jamforelsehandlad); Hylte Burar & grindar; Arken Zoo bilburar",
+   "anchor_price_sek": null,
+   "anchor_url": "https://shopit.se/hundbilbursoverdrag-c32558",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601103419994662.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Burmatt i tum/cm — agaren maste mata",
+  "goods_id": "601099537024619",
+  "title": "1pc crate cover for dog crate, waterproof dog kennel cover",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 449,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Titlarna beskriver overdrag till amerikansk gallerbur. Svenska jaktbilburar ar aluminiumboxar — samma fysiska produkt passar inte agarens objekt."
+  },
+  "negative_space_flags": [
+   "objektet forvaras inomhus nar det inte anvands",
+   "matt agaren maste ta",
+   "jamforelsehandlad (Shopit listar 50 st)"
+  ],
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": 26,
+  "category_novelty_0_100": 45,
+  "tier": "ELIM",
+  "main_risk": "Formen ar gjord for gallerbur, inte for svensk aluminiumbilbur, och burmatt ar ett matt agaren maste ta.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com dog crate cover waterproof kennel car travel insulated",
+   "WebSearch \"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris"
+  ],
+  "concept": "Isolerat overdrag / kapell till hundburen",
+  "object": "Hundburen i bilen eller pa flaket",
+  "owner_owns": "Jakthundsagaren; en bilbur kostar 3 000-8 000 kr",
+  "friction": "Hunden star i bur i kyla och drag hela jaktdagen medan jaktlaget ar pa pass",
+  "old_way": "Filt over buren, presenning",
+  "hook_sv": "Fryser hunden i buren pa jakten?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Shopit listar 50 st hundbilbursoverdrag (jamforelsehandlad); Hylte Burar & grindar; Arken Zoo bilburar",
+   "anchor_price_sek": null,
+   "anchor_url": "https://shopit.se/hundbilbursoverdrag-c32558",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099537024619.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Burmatt i tum/cm — agaren maste mata",
+  "goods_id": "601099518108983",
+  "title": "Waterproof dog crate cover, durable polyester pet kennel cover, universal fit for wire dog crate",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 449,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Titlarna beskriver overdrag till amerikansk gallerbur. Svenska jaktbilburar ar aluminiumboxar — samma fysiska produkt passar inte agarens objekt."
+  },
+  "negative_space_flags": [
+   "objektet forvaras inomhus nar det inte anvands",
+   "matt agaren maste ta",
+   "jamforelsehandlad (Shopit listar 50 st)"
+  ],
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": 26,
+  "category_novelty_0_100": 45,
+  "tier": "ELIM",
+  "main_risk": "Formen ar gjord for gallerbur, inte for svensk aluminiumbilbur, och burmatt ar ett matt agaren maste ta.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com dog crate cover waterproof kennel car travel insulated",
+   "WebSearch \"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris"
+  ],
+  "concept": "Isolerat overdrag / kapell till hundburen",
+  "object": "Hundburen i bilen eller pa flaket",
+  "owner_owns": "Jakthundsagaren; en bilbur kostar 3 000-8 000 kr",
+  "friction": "Hunden star i bur i kyla och drag hela jaktdagen medan jaktlaget ar pa pass",
+  "old_way": "Filt over buren, presenning",
+  "hook_sv": "Fryser hunden i buren pa jakten?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Shopit listar 50 st hundbilbursoverdrag (jamforelsehandlad); Hylte Burar & grindar; Arken Zoo bilburar",
+   "anchor_price_sek": null,
+   "anchor_url": "https://shopit.se/hundbilbursoverdrag-c32558",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099518108983.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Burmatt i tum/cm — agaren maste mata",
+  "goods_id": "601099519841722",
+  "title": "Dog crate cover, waterproof dustproof pet dog kennel cover with mesh window for indoor/outdoor",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 449,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Titlarna beskriver overdrag till amerikansk gallerbur. Svenska jaktbilburar ar aluminiumboxar — samma fysiska produkt passar inte agarens objekt."
+  },
+  "negative_space_flags": [
+   "objektet forvaras inomhus nar det inte anvands",
+   "matt agaren maste ta",
+   "jamforelsehandlad (Shopit listar 50 st)"
+  ],
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": 26,
+  "category_novelty_0_100": 45,
+  "tier": "ELIM",
+  "main_risk": "Formen ar gjord for gallerbur, inte for svensk aluminiumbilbur, och burmatt ar ett matt agaren maste ta.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com dog crate cover waterproof kennel car travel insulated",
+   "WebSearch \"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris"
+  ],
+  "concept": "Isolerat overdrag / kapell till hundburen",
+  "object": "Hundburen i bilen eller pa flaket",
+  "owner_owns": "Jakthundsagaren; en bilbur kostar 3 000-8 000 kr",
+  "friction": "Hunden star i bur i kyla och drag hela jaktdagen medan jaktlaget ar pa pass",
+  "old_way": "Filt over buren, presenning",
+  "hook_sv": "Fryser hunden i buren pa jakten?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Shopit listar 50 st hundbilbursoverdrag (jamforelsehandlad); Hylte Burar & grindar; Arken Zoo bilburar",
+   "anchor_price_sek": null,
+   "anchor_url": "https://shopit.se/hundbilbursoverdrag-c32558",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099519841722.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": true,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Universal / SUV",
+  "goods_id": "607351507675233",
+  "title": "1pc waterproof SUV cargo liner for dogs, heavy duty anti-scratch car trunk cover with orange trim, universal fit vehicle back seat protector, washable dog car cargo mat",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 449,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "OSAKER",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Universalt lastutrymmesskydd med hoga sidor. Formen ar slakt med kontots vinnare sateoverdraget, men materialet gar inte att se."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (bagagerumsmattor hos Biltema/Jula)",
+   "kategorin redan testad pa kontot (sateoverdrag, mattdynor)"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 48,
+  "category_novelty_0_100": 25,
+  "tier": "C",
+  "main_risk": "V2 ELIM:erade grannformen mot Trixie 224 kr; bagagerumsmattor ar big-box-commodity och kontot har redan kort sateoverdrag.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Seznam site:temu.com car boot liner cargo mat dog waterproof universal trunk"
+  ],
+  "concept": "Lastutrymmesskydd med hoga sidor for blodigt vilt och blot hund",
+  "object": "Bilens bagageutrymme",
+  "owner_owns": "Jagarens bil — kombi eller SUV med dragkrok",
+  "friction": "Blodigt vilt, lerig hund och blota jaktklader ska in i bilen varje jaktdag",
+  "old_way": "Presenning, gamla filtar, IKEA-pasar",
+  "hook_sv": "Blod och lera i bagaget efter jakten?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": true,
+   "anchor_name": "Biltema/Jula bagagerumsmattor (bilkategorin) + zoohandelns bagageutrymmesskydd; V2 ELIM:erade hundbilskydd mot Trixie 224 kr",
+   "anchor_price_sek": 224,
+   "anchor_url": null,
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-607351507675233.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Universal",
+  "goods_id": "606285768589305",
+  "title": "1pc waterproof trunk mat car cargo liner, universal fit for sedan and SUV, heavy duty polyester fabric",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 349,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "PASS",
+   "hook": "OSAKER",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Leopardmonster i titeln — fel agare. Talar for katalogbild, inte jaktkontext."
+  },
+  "negative_space_flags": [
+   "annan malgrupp an man 45-70",
+   "svensk mass-commoditisering"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 22,
+  "category_novelty_0_100": 20,
+  "tier": "ELIM",
+  "main_risk": "Leopardmonstrad bagagerumsmatta ar en annan produkt an ett jaktlastskydd.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Seznam site:temu.com car boot liner cargo mat dog waterproof universal trunk"
+  ],
+  "concept": "Lastutrymmesskydd med hoga sidor for blodigt vilt och blot hund",
+  "object": "Bilens bagageutrymme",
+  "owner_owns": "Jagarens bil — kombi eller SUV med dragkrok",
+  "friction": "Blodigt vilt, lerig hund och blota jaktklader ska in i bilen varje jaktdag",
+  "old_way": "Presenning, gamla filtar, IKEA-pasar",
+  "hook_sv": "Blod och lera i bagaget efter jakten?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": true,
+   "anchor_name": "Biltema/Jula bagagerumsmattor (bilkategorin) + zoohandelns bagageutrymmesskydd; V2 ELIM:erade hundbilskydd mot Trixie 224 kr",
+   "anchor_price_sek": 224,
+   "anchor_url": null,
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-606285768589305.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Antal par",
+  "goods_id": "601099528731171",
+  "title": "1pc sturdy metal tall boot holder, boot rack, boot drying rack for closet, entryway, outdoor wall mounted",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 349,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Inomhusprodukt i studio. Titeln placerar den i garderob och hall, inte i en jaktkontext."
+  },
+  "negative_space_flags": [
+   "objektet forvaras inomhus nar det inte anvands",
+   "inomhus-commodity",
+   "svensk mass-commoditisering (skotork hos Clas Ohlson/Jula/Biltema)"
+  ],
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": 20,
+  "category_novelty_0_100": 30,
+  "tier": "ELIM",
+  "main_risk": "Inomhusobjekt och en form Clas Ohlson, Jula och Biltema alla har.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com boot dryer hanging rack rubber boots waders drying"
+  ],
+  "concept": "Stovel- och vadartork / torkstall for jaktklader",
+  "object": "Jaktstovlarna och de blota jaktkladerna",
+  "owner_owns": "Jagarens stovlar och vadare",
+  "friction": "Blota stovlar och klader ska torka till morgonpasset dagen efter",
+  "old_way": "Elementet, tidningspapper, stovlarna upp och ner mot vaggen",
+  "hook_sv": "Ar jaktstovlarna blota till morgonpasset?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Skotork/stoveltork ar commodity hos Clas Ohlson, Jula och Biltema",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099528731171.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Antal par",
+  "goods_id": "601099691915195",
+  "title": "Large iron rain boot drying rack, freestanding shoe rack, easy to disassemble",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 349,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Inomhusprodukt i studio. Titeln placerar den i garderob och hall, inte i en jaktkontext."
+  },
+  "negative_space_flags": [
+   "objektet forvaras inomhus nar det inte anvands",
+   "inomhus-commodity",
+   "svensk mass-commoditisering (skotork hos Clas Ohlson/Jula/Biltema)"
+  ],
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": 20,
+  "category_novelty_0_100": 30,
+  "tier": "ELIM",
+  "main_risk": "Inomhusobjekt och en form Clas Ohlson, Jula och Biltema alla har.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com boot dryer hanging rack rubber boots waders drying"
+  ],
+  "concept": "Stovel- och vadartork / torkstall for jaktklader",
+  "object": "Jaktstovlarna och de blota jaktkladerna",
+  "owner_owns": "Jagarens stovlar och vadare",
+  "friction": "Blota stovlar och klader ska torka till morgonpasset dagen efter",
+  "old_way": "Elementet, tidningspapper, stovlarna upp och ner mot vaggen",
+  "hook_sv": "Ar jaktstovlarna blota till morgonpasset?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Skotork/stoveltork ar commodity hos Clas Ohlson, Jula och Biltema",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099691915195.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Antal par",
+  "goods_id": "601099991992734",
+  "title": "Portable shoe dryer with UV disinfection, quick drying for boots, slippers, leather and canvas shoes",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 349,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Inomhusprodukt i studio. Titeln placerar den i garderob och hall, inte i en jaktkontext."
+  },
+  "negative_space_flags": [
+   "objektet forvaras inomhus nar det inte anvands",
+   "inomhus-commodity",
+   "svensk mass-commoditisering (skotork hos Clas Ohlson/Jula/Biltema)"
+  ],
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": 20,
+  "category_novelty_0_100": 30,
+  "tier": "ELIM",
+  "main_risk": "Inomhusobjekt och en form Clas Ohlson, Jula och Biltema alla har.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com boot dryer hanging rack rubber boots waders drying"
+  ],
+  "concept": "Stovel- och vadartork / torkstall for jaktklader",
+  "object": "Jaktstovlarna och de blota jaktkladerna",
+  "owner_owns": "Jagarens stovlar och vadare",
+  "friction": "Blota stovlar och klader ska torka till morgonpasset dagen efter",
+  "old_way": "Elementet, tidningspapper, stovlarna upp och ner mot vaggen",
+  "hook_sv": "Ar jaktstovlarna blota till morgonpasset?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Skotork/stoveltork ar commodity hos Clas Ohlson, Jula och Biltema",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099991992734.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Antal par",
+  "goods_id": "601099661767271",
+  "title": "Electric shoe dryer / boot dryer, boot warmer and glove dryer, prevents odor and mold",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 349,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Inomhusprodukt i studio. Titeln placerar den i garderob och hall, inte i en jaktkontext."
+  },
+  "negative_space_flags": [
+   "objektet forvaras inomhus nar det inte anvands",
+   "inomhus-commodity",
+   "svensk mass-commoditisering (skotork hos Clas Ohlson/Jula/Biltema)"
+  ],
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": 20,
+  "category_novelty_0_100": 30,
+  "tier": "ELIM",
+  "main_risk": "Inomhusobjekt och en form Clas Ohlson, Jula och Biltema alla har.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com boot dryer hanging rack rubber boots waders drying"
+  ],
+  "concept": "Stovel- och vadartork / torkstall for jaktklader",
+  "object": "Jaktstovlarna och de blota jaktkladerna",
+  "owner_owns": "Jagarens stovlar och vadare",
+  "friction": "Blota stovlar och klader ska torka till morgonpasset dagen efter",
+  "old_way": "Elementet, tidningspapper, stovlarna upp och ner mot vaggen",
+  "hook_sv": "Ar jaktstovlarna blota till morgonpasset?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Skotork/stoveltork ar commodity hos Clas Ohlson, Jula och Biltema",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099661767271.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": true,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "En storlek",
+  "goods_id": "601099608947627",
+  "title": "ATV storage bag, rear rack bag with seat cushion upgrade, waterproof zipper, ATV passenger seat cargo bag, rear luggage bag for 4-wheeler",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 599,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bakvaska i Oxford. Formen ar samma som kontots redan testade bakvaska MC."
+  },
+  "negative_space_flags": [
+   "kategorin redan testad pa kontot (bakvaska MC)"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 44,
+  "category_novelty_0_100": 15,
+  "tier": "C",
+  "main_risk": "Kontot har redan kort bakvaska MC; sitsdelen gor det till ett kit.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com atv rear rack bag cargo storage waterproof quad"
+  ],
+  "concept": "ATV-tillbehor for kortransport till passet",
+  "object": "Fyrhjulingen som jagaren tar till passet",
+  "owner_owns": "Jagarens ATV, 60 000-150 000 kr, star ute",
+  "friction": "Utrustning, vilt och blota klader ska med pa fyrhjulingen i regn",
+  "old_way": "Spannband och sopsackar pa flaket",
+  "hook_sv": "Slapar du jaktgrejerna last pa fyrhjulingen?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": true,
+   "anchor_name": "Biltema/Jula ATV- och MC-tillbehor; bakvaska MC ar redan testad kategori pa kontot",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099608947627.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Universal",
+  "goods_id": "601099604297883",
+  "title": "Universal rear drop basket rack, steel cargo carrier for ATV/UTV storage, rear cargo drop basket, no hardware",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 899,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Stalkorg. Tung frakt — landad kostnad ar den troliga fallan."
+  },
+  "negative_space_flags": [
+   "montering",
+   "tung stalprodukt -> hog landad kostnad"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 35,
+  "category_novelty_0_100": 60,
+  "tier": "C",
+  "main_risk": "Stal i den har storleken landar nastan alltid over 420 kr; priset gick inte att lasa.",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch site:temu.com atv rear rack bag cargo storage waterproof quad"
+  ],
+  "concept": "ATV-tillbehor for kortransport till passet",
+  "object": "Fyrhjulingen som jagaren tar till passet",
+  "owner_owns": "Jagarens ATV, 60 000-150 000 kr, star ute",
+  "friction": "Utrustning, vilt och blota klader ska med pa fyrhjulingen i regn",
+  "old_way": "Spannband och sopsackar pa flaket",
+  "hook_sv": "Slapar du jaktgrejerna last pa fyrhjulingen?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": true,
+   "anchor_name": "Biltema/Jula ATV- och MC-tillbehor; bakvaska MC ar redan testad kategori pa kontot",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099604297883.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Universal",
+  "goods_id": "601099522438754",
+  "title": "Motorcycle seat cover, wear resistant leather, universal scooter/ATV seat cover, waterproof scratch proof protector",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 349,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "OSAKER",
+   "hook": "OSAKER",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Titeln saljer den som skoteroverdrag, inte ATV. Seznam svarade uttryckligen 'Neobsahuje atv quad' pa ATV-sokningen — ett ATV-specifikt satesoverdrag finns knappt pa Temu."
+  },
+  "negative_space_flags": [
+   "passform per fordonsmodell",
+   "kategorin ligger nara kontots redan testade satesoverdrag"
+  ],
+  "eliminated_at": "material",
+  "winner_dna_match_0_100": 40,
+  "category_novelty_0_100": 35,
+  "tier": "ELIM",
+  "main_risk": "Produkten ar ett skoteroverdrag, inte ett ATV-satesoverdrag; ATV-formen saknas pa Temu.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Seznam site:temu.com atv seat cover waterproof universal quad (0 ATV-traffar)"
+  ],
+  "concept": "ATV-tillbehor for kortransport till passet",
+  "object": "Fyrhjulingen som jagaren tar till passet",
+  "owner_owns": "Jagarens ATV, 60 000-150 000 kr, star ute",
+  "friction": "Utrustning, vilt och blota klader ska med pa fyrhjulingen i regn",
+  "old_way": "Spannband och sopsackar pa flaket",
+  "hook_sv": "Slapar du jaktgrejerna last pa fyrhjulingen?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": true,
+   "anchor_name": "Biltema/Jula ATV- och MC-tillbehor; bakvaska MC ar redan testad kategori pa kontot",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099522438754.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": "4.6 (92%)",
+  "review_count": "99+",
+  "price_usd": 26,
+  "price_source": "seznam-snippet 2026-09-04",
+  "variants": "Upplosning / 4G eller SD / flerpack",
+  "goods_id": "601099736287195",
+  "title": "Trail camera with solar panel, 24MP/1080P hunting camera, 32GB memory card + reader, motion activated night vision, IP65 waterproof",
+  "economics": {
+   "landed_low_sek": 271,
+   "landed_high_sek": 318,
+   "se_price_sek": 799,
+   "multiple_low": 2.51,
+   "multiple_high": 2.95,
+   "be_cpa": 481,
+   "verdict": "PASS"
+  },
+  "gates": {
+   "object": "OSAKER",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "OSAKER",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Elektronikkatalogbild med inbrand engelsk spec ar normen i den har kategorin."
+  },
+  "negative_space_flags": [
+   "montering/app/inlarning",
+   "kategorin redan testad pa kontot (PTZ-kamera)",
+   "svensk mass-commoditisering (Biltema har egen atelkamerakategori)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 42,
+  "category_novelty_0_100": 18,
+  "tier": "ELIM",
+  "main_risk": "Biltema har en egen atelkamerakategori med tva modeller, och kontot har redan kort en kamera (PTZ). Ekonomin haller pa $26-28, hyllan gor det inte.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com trail camera solar panel charger hunting external",
+   "WebSearch site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat"
+  ],
+  "concept": "Atelkamera med inbyggd solpanel",
+  "object": "Aotelplatsen och traden i jaktmarken",
+  "owner_owns": "Jagaren har redan 2-5 kameror; det har ar en ny kamera, inte ett tillbehor",
+  "friction": "Vill se vad som gar pa aoteln utan att ga dit",
+  "old_way": "Befintlig kamera med AA-batterier",
+  "hook_sv": "Vet du vad som gar pa aoteln i natt?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Atelkamera for simkort + Atelkamera for SD-kort (egen kategori /fritid/jakt/atelkameror)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/fritid/jakt/atelkameror/",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099736287195.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": "4.6/5",
+  "review_count": "99+",
+  "price_usd": 28,
+  "price_source": "seznam-snippet 2026-09-04",
+  "variants": "Upplosning / 4G eller SD / flerpack",
+  "goods_id": "601099721085653",
+  "title": "4G LTE solar cellular trail camera, 4K remote real time viewing, built-in SIM card, IP65 hunting camera, multi-combination 4pcs/1pc",
+  "economics": {
+   "landed_low_sek": 292,
+   "landed_high_sek": 343,
+   "se_price_sek": 799,
+   "multiple_low": 2.33,
+   "multiple_high": 2.74,
+   "be_cpa": 456,
+   "verdict": "FAIL"
+  },
+  "gates": {
+   "object": "OSAKER",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "OSAKER",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Elektronikkatalogbild med inbrand engelsk spec ar normen i den har kategorin."
+  },
+  "negative_space_flags": [
+   "montering/app/inlarning",
+   "kategorin redan testad pa kontot (PTZ-kamera)",
+   "svensk mass-commoditisering (Biltema har egen atelkamerakategori)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 42,
+  "category_novelty_0_100": 18,
+  "tier": "ELIM",
+  "main_risk": "Biltema har en egen atelkamerakategori med tva modeller, och kontot har redan kort en kamera (PTZ). Ekonomin haller pa $26-28, hyllan gor det inte.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com trail camera solar panel charger hunting external",
+   "WebSearch site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat"
+  ],
+  "concept": "Atelkamera med inbyggd solpanel",
+  "object": "Aotelplatsen och traden i jaktmarken",
+  "owner_owns": "Jagaren har redan 2-5 kameror; det har ar en ny kamera, inte ett tillbehor",
+  "friction": "Vill se vad som gar pa aoteln utan att ga dit",
+  "old_way": "Befintlig kamera med AA-batterier",
+  "hook_sv": "Vet du vad som gar pa aoteln i natt?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Atelkamera for simkort + Atelkamera for SD-kort (egen kategori /fritid/jakt/atelkameror)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/fritid/jakt/atelkameror/",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099721085653.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": "4.6 (92%)",
+  "review_count": null,
+  "price_usd": 58,
+  "price_source": "seznam-snippet 2026-09-04",
+  "variants": "Upplosning / 4G eller SD / flerpack",
+  "goods_id": "601100966220309",
+  "title": "1pc trail camera with screen + solar panel, live video photo game camera, 64GB SD card and reader",
+  "economics": {
+   "landed_low_sek": 606,
+   "landed_high_sek": 710,
+   "se_price_sek": 799,
+   "multiple_low": 1.13,
+   "multiple_high": 1.32,
+   "be_cpa": 89,
+   "verdict": "FAIL_landad_over_420"
+  },
+  "gates": {
+   "object": "OSAKER",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL_landad_over_420",
+   "variant": "OSAKER",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Elektronikkatalogbild med inbrand engelsk spec ar normen i den har kategorin."
+  },
+  "negative_space_flags": [
+   "montering/app/inlarning",
+   "kategorin redan testad pa kontot (PTZ-kamera)",
+   "svensk mass-commoditisering (Biltema har egen atelkamerakategori)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 42,
+  "category_novelty_0_100": 18,
+  "tier": "ELIM",
+  "main_risk": "Biltema har en egen atelkamerakategori med tva modeller, och kontot har redan kort en kamera (PTZ). Ekonomin haller pa $26-28, hyllan gor det inte.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com trail camera solar panel charger hunting external",
+   "WebSearch site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat"
+  ],
+  "concept": "Atelkamera med inbyggd solpanel",
+  "object": "Aotelplatsen och traden i jaktmarken",
+  "owner_owns": "Jagaren har redan 2-5 kameror; det har ar en ny kamera, inte ett tillbehor",
+  "friction": "Vill se vad som gar pa aoteln utan att ga dit",
+  "old_way": "Befintlig kamera med AA-batterier",
+  "hook_sv": "Vet du vad som gar pa aoteln i natt?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Atelkamera for simkort + Atelkamera for SD-kort (egen kategori /fritid/jakt/atelkameror)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/fritid/jakt/atelkameror/",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601100966220309.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": "5/5 (100%)",
+  "review_count": null,
+  "price_usd": 55,
+  "price_source": "seznam-snippet 2026-09-04",
+  "variants": "Upplosning / 4G eller SD / flerpack",
+  "goods_id": "601100691047705",
+  "title": "Trail camera 24MP 1080P game camera, motion activated, for wildlife deer hunting or property security",
+  "economics": {
+   "landed_low_sek": 574,
+   "landed_high_sek": 673,
+   "se_price_sek": 799,
+   "multiple_low": 1.19,
+   "multiple_high": 1.39,
+   "be_cpa": 126,
+   "verdict": "FAIL_landad_over_420"
+  },
+  "gates": {
+   "object": "OSAKER",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL_landad_over_420",
+   "variant": "OSAKER",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Elektronikkatalogbild med inbrand engelsk spec ar normen i den har kategorin."
+  },
+  "negative_space_flags": [
+   "montering/app/inlarning",
+   "kategorin redan testad pa kontot (PTZ-kamera)",
+   "svensk mass-commoditisering (Biltema har egen atelkamerakategori)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 42,
+  "category_novelty_0_100": 18,
+  "tier": "ELIM",
+  "main_risk": "Biltema har en egen atelkamerakategori med tva modeller, och kontot har redan kort en kamera (PTZ). Ekonomin haller pa $26-28, hyllan gor det inte.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com trail camera solar panel charger hunting external",
+   "WebSearch site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat"
+  ],
+  "concept": "Atelkamera med inbyggd solpanel",
+  "object": "Aotelplatsen och traden i jaktmarken",
+  "owner_owns": "Jagaren har redan 2-5 kameror; det har ar en ny kamera, inte ett tillbehor",
+  "friction": "Vill se vad som gar pa aoteln utan att ga dit",
+  "old_way": "Befintlig kamera med AA-batterier",
+  "hook_sv": "Vet du vad som gar pa aoteln i natt?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Atelkamera for simkort + Atelkamera for SD-kort (egen kategori /fritid/jakt/atelkameror)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/fritid/jakt/atelkameror/",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601100691047705.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Upplosning / 4G eller SD / flerpack",
+  "goods_id": "601099790022853",
+  "title": "60MP 8K ultra HD wildlife trail camera with solar panel, motion sensor, wireless app control",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 799,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "OSAKER",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "OSAKER",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Elektronikkatalogbild med inbrand engelsk spec ar normen i den har kategorin."
+  },
+  "negative_space_flags": [
+   "montering/app/inlarning",
+   "kategorin redan testad pa kontot (PTZ-kamera)",
+   "svensk mass-commoditisering (Biltema har egen atelkamerakategori)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 42,
+  "category_novelty_0_100": 18,
+  "tier": "ELIM",
+  "main_risk": "Biltema har en egen atelkamerakategori med tva modeller, och kontot har redan kort en kamera (PTZ). Ekonomin haller pa $26-28, hyllan gor det inte.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com trail camera solar panel charger hunting external",
+   "WebSearch site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat"
+  ],
+  "concept": "Atelkamera med inbyggd solpanel",
+  "object": "Aotelplatsen och traden i jaktmarken",
+  "owner_owns": "Jagaren har redan 2-5 kameror; det har ar en ny kamera, inte ett tillbehor",
+  "friction": "Vill se vad som gar pa aoteln utan att ga dit",
+  "old_way": "Befintlig kamera med AA-batterier",
+  "hook_sv": "Vet du vad som gar pa aoteln i natt?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Atelkamera for simkort + Atelkamera for SD-kort (egen kategori /fritid/jakt/atelkameror)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/fritid/jakt/atelkameror/",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099790022853.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Upplosning / 4G eller SD / flerpack",
+  "goods_id": "601099690783326",
+  "title": "Trail camera with solar panel, live video photo game camera for wildlife, 32GB memory card and reader, IP65 waterproof",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 799,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "OSAKER",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "BLOCKED_SOURCE",
+   "variant": "OSAKER",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Elektronikkatalogbild med inbrand engelsk spec ar normen i den har kategorin."
+  },
+  "negative_space_flags": [
+   "montering/app/inlarning",
+   "kategorin redan testad pa kontot (PTZ-kamera)",
+   "svensk mass-commoditisering (Biltema har egen atelkamerakategori)"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 42,
+  "category_novelty_0_100": 18,
+  "tier": "ELIM",
+  "main_risk": "Biltema har en egen atelkamerakategori med tva modeller, och kontot har redan kort en kamera (PTZ). Ekonomin haller pa $26-28, hyllan gor det inte.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com trail camera solar panel charger hunting external",
+   "WebSearch site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat"
+  ],
+  "concept": "Atelkamera med inbyggd solpanel",
+  "object": "Aotelplatsen och traden i jaktmarken",
+  "owner_owns": "Jagaren har redan 2-5 kameror; det har ar en ny kamera, inte ett tillbehor",
+  "friction": "Vill se vad som gar pa aoteln utan att ga dit",
+  "old_way": "Befintlig kamera med AA-batterier",
+  "hook_sv": "Vet du vad som gar pa aoteln i natt?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Biltema Atelkamera for simkort + Atelkamera for SD-kort (egen kategori /fritid/jakt/atelkameror)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/fritid/jakt/atelkameror/",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099690783326.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": "4.8/5 (96%)",
+  "review_count": "99+",
+  "price_usd": 5,
+  "price_source": "seznam-snippet 2026-09-04",
+  "variants": "1/4-20-gangan ar standard",
+  "goods_id": "601099609571507",
+  "title": "Trail camera tree mount, adjustable game camera mount with 1/4 inch screw, compact sturdy",
+  "economics": {
+   "landed_low_sek": 52,
+   "landed_high_sek": 61,
+   "se_price_sek": 299,
+   "multiple_low": 4.9,
+   "multiple_high": 5.75,
+   "be_cpa": 238,
+   "verdict": "FAIL"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Litet svart faste. Titeln antyder studiobild pa vit botten."
+  },
+  "negative_space_flags": [
+   "< 199 kr utan havstang",
+   "fackhandeln har formen till 149 kr"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 33,
+  "category_novelty_0_100": 30,
+  "tier": "ELIM",
+  "main_risk": "Hylte saljer 5etta Universal kamerafaste for 149 kr — deras pris ar vart tak, och 300 kr-golvet nas bara med flerpack.",
+  "confidence": "HIGH",
+  "sources": [
+   "Seznam site:temu.com trail camera mount bracket tree adjustable 1/4 screw hunting",
+   "docs/temu-jakt-v2/jakt/jakt.md (V2: 5etta 149 kr, Flexifaste 239 kr)"
+  ],
+  "concept": "Tradfaste / kulled till atelkameran",
+  "object": "Atelkameran och tradet den sitter pa",
+  "owner_owns": "Jagarens 2-5 kameror",
+  "friction": "Kameran hanger snett pa stammen och fotar mark eller himmel",
+  "old_way": "Remmen som foljde med kameran, en kil av pinnar",
+  "hook_sv": "Hanger atelkameran snett pa tradet?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "5etta Universal kamerafaste 149 kr (Hylte) + Flexifaste 239 kr — fackhandelns pris blir vart tak",
+   "anchor_price_sek": 149,
+   "anchor_url": "https://www.hylte-lantman.com/tillbehor-atelkameror",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099609571507.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": "4.7/5 (94%)",
+  "review_count": "99+",
+  "price_usd": 8,
+  "price_source": "seznam-snippet 2026-09-04",
+  "variants": "1/4-20-gangan ar standard",
+  "goods_id": "601102549436827",
+  "title": "No drill security camera mount with adjustable angle, quick installation strap base for pole/pipe/tree",
+  "economics": {
+   "landed_low_sek": 84,
+   "landed_high_sek": 98,
+   "se_price_sek": 299,
+   "multiple_low": 3.05,
+   "multiple_high": 3.56,
+   "be_cpa": 201,
+   "verdict": "FAIL"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Litet svart faste. Titeln antyder studiobild pa vit botten."
+  },
+  "negative_space_flags": [
+   "< 199 kr utan havstang",
+   "fackhandeln har formen till 149 kr"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 33,
+  "category_novelty_0_100": 30,
+  "tier": "ELIM",
+  "main_risk": "Hylte saljer 5etta Universal kamerafaste for 149 kr — deras pris ar vart tak, och 300 kr-golvet nas bara med flerpack.",
+  "confidence": "HIGH",
+  "sources": [
+   "Seznam site:temu.com trail camera mount bracket tree adjustable 1/4 screw hunting",
+   "docs/temu-jakt-v2/jakt/jakt.md (V2: 5etta 149 kr, Flexifaste 239 kr)"
+  ],
+  "concept": "Tradfaste / kulled till atelkameran",
+  "object": "Atelkameran och tradet den sitter pa",
+  "owner_owns": "Jagarens 2-5 kameror",
+  "friction": "Kameran hanger snett pa stammen och fotar mark eller himmel",
+  "old_way": "Remmen som foljde med kameran, en kil av pinnar",
+  "hook_sv": "Hanger atelkameran snett pa tradet?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "5etta Universal kamerafaste 149 kr (Hylte) + Flexifaste 239 kr — fackhandelns pris blir vart tak",
+   "anchor_price_sek": 149,
+   "anchor_url": "https://www.hylte-lantman.com/tillbehor-atelkameror",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601102549436827.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": "4.8 (96%)",
+  "review_count": "99+",
+  "price_usd": 4,
+  "price_source": "seznam-snippet 2026-09-04",
+  "variants": "Rordiameter i tum — matt agaren maste ta",
+  "goods_id": "601099518748833",
+  "concept": "Neoprenskydd for kikarsiktet",
+  "object": "Kikarsiktet pa gevaret",
+  "owner_owns": "Jagarens optik, 3 000-30 000 kr",
+  "friction": "Regn och repor pa linserna under passet",
+  "old_way": "Linslocken som foljde med, en strumpa",
+  "hook_sv": "Regnar det pa kikarsiktets linser?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Mjoelner neoprenskydd kikarsikte 224 kr (fackhandel) — redan ELIM i V2",
+   "anchor_price_sek": 224,
+   "anchor_url": null,
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "title": "1pc hunting scope cover, neoprene sleeve lens protector, waterproof, rain and dust out",
+  "economics": {
+   "landed_low_sek": 42,
+   "landed_high_sek": 49,
+   "se_price_sek": 249,
+   "multiple_low": 5.08,
+   "multiple_high": 5.93,
+   "be_cpa": 200,
+   "verdict": "FAIL"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Neoprenstrumpa i studio."
+  },
+  "negative_space_flags": [
+   "< 199 kr utan havstang",
+   "matt agaren maste ta",
+   "Meta-policyrisk: vapentillbehor"
+  ],
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": 28,
+  "category_novelty_0_100": 20,
+  "tier": "ELIM",
+  "main_risk": "Redan ELIM i V2 mot Mjoelner 224 kr, och 4 dollar bar inte 300 kr-golvet.",
+  "confidence": "HIGH",
+  "sources": [
+   "Seznam site:temu.com hunting accessories waterproof oxford cover outdoor deer",
+   "docs/temu-jakt-v2/jakt/jakt.md (V2: Mjoelner 224 kr)"
+  ],
+  "url": "https://www.temu.com/se/g-601099518748833.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Halsbandsstorlek",
+  "goods_id": "601099516799672",
+  "title": "Adjustable dog collar with AirTag holder, reflective GPS dog collar, pet collar for small/medium (without AirTag)",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 199,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "OSAKER",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "OSAKER",
+   "hook": "OSAKER",
+   "audience": "FAIL"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Litet plastfodral. Fel agarobjekt for svensk jakt."
+  },
+  "negative_space_flags": [
+   "fel objekt: svensk jakthundspejl ar Garmin/Tracker, inte AirTag",
+   "< 199 kr",
+   "annan malgrupp"
+  ],
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": 15,
+  "category_novelty_0_100": 25,
+  "tier": "ELIM",
+  "main_risk": "Produkten loser ett problem svenska jagare inte har — de har redan pejl.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com hunting dog gps tracking collar protective cover case"
+  ],
+  "concept": "Hallare/skyddsfodral for spandare pa hundens halsband",
+  "object": "Jakthundens halsband",
+  "owner_owns": "Jakthundsagaren — men svensk pejl ar Garmin Alpha eller Tracker, inte AirTag",
+  "friction": "Hunden forsvinner i mork skog under eftersok",
+  "old_way": "Pejlhalsbandet som redan sitter dar",
+  "hook_sv": "Tappar du bort hunden i morkret?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "AirTag-hallare ar commodity (Clas Ohlson/Kjell); svensk jakthundspejl ar Garmin/Tracker, inte AirTag",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099516799672.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": null,
+  "review_count": null,
+  "price_usd": null,
+  "price_source": null,
+  "variants": "Halsbandsstorlek",
+  "goods_id": "601099521919730",
+  "title": "Protective case for AirTag, dog collar holder for AirTag",
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": 199,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "BLOCKED_SOURCE"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "OSAKER",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "OSAKER",
+   "hook": "OSAKER",
+   "audience": "FAIL"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Litet plastfodral. Fel agarobjekt for svensk jakt."
+  },
+  "negative_space_flags": [
+   "fel objekt: svensk jakthundspejl ar Garmin/Tracker, inte AirTag",
+   "< 199 kr",
+   "annan malgrupp"
+  ],
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": 15,
+  "category_novelty_0_100": 25,
+  "tier": "ELIM",
+  "main_risk": "Produkten loser ett problem svenska jagare inte har — de har redan pejl.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com hunting dog gps tracking collar protective cover case"
+  ],
+  "concept": "Hallare/skyddsfodral for spandare pa hundens halsband",
+  "object": "Jakthundens halsband",
+  "owner_owns": "Jakthundsagaren — men svensk pejl ar Garmin Alpha eller Tracker, inte AirTag",
+  "friction": "Hunden forsvinner i mork skog under eftersok",
+  "old_way": "Pejlhalsbandet som redan sitter dar",
+  "hook_sv": "Tappar du bort hunden i morkret?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "AirTag-hallare ar commodity (Clas Ohlson/Kjell); svensk jakthundspejl ar Garmin/Tracker, inte AirTag",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099521919730.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": true,
+  "sold": null,
+  "rating": "4.8 (96%)",
+  "review_count": "62",
+  "price_usd": 8,
+  "price_source": "seznam-snippet 2026-09-04",
+  "variants": "S/M/L/XL efter hundens storlek — en parameter agaren kan utantill (jfr 'kattens storlek' i gate 7)",
+  "goods_id": "601100302415687",
+  "title": "Dog bathrobe, quick drying dog coat, post-bath robe, absorbent dog drying towel, for small to large dogs",
+  "economics": {
+   "landed_low_sek": 84,
+   "landed_high_sek": 98,
+   "se_price_sek": 349,
+   "multiple_low": 3.56,
+   "multiple_high": 4.15,
+   "be_cpa": 251,
+   "verdict": "PASS"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "OSAKER",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Kategorin ar full av sota studiobilder pa smahundar i badrum. For jaktagaren kravs en blot stovare vid en bil i skogen — det materialet finns troligen inte i listningen."
+  },
+  "negative_space_flags": [
+   "kopt old way som fungerar (handduk) ^ jamforelsehandlad ^ under 300 kr",
+   "annan malgrupp: kategorin saljs till hundagare i allmanhet, inte man 45-70",
+   "marken annonserar sjalva i SE (Siccaro, Rukka)"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 52,
+  "category_novelty_0_100": 35,
+  "tier": "C",
+  "main_risk": "Ekonomin och ankaret haller (Siccaro 645-1 849 kr mot ett 349-pris), men hyllan ar jamforelsehandlad och listningarnas material ar zoo-estetik, inte jakt. Alla fyra id:n star redan i kanda-goods-id.txt.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Seznam site:temu.com dog drying coat robe microfiber towel bathrobe large dogs",
+   "docs/temu-jakt-v2/jakt/jakt.md (V2: Siccaro 645-1 849, Rukka 349-539)"
+  ],
+  "concept": "Torkrock till jakthunden",
+  "object": "Jakthunden — bars pa kroppen, anvands varje jaktdag",
+  "owner_owns": "Jakthunden; en dressad stovare eller drivande hund ar vard 20 000-40 000 kr",
+  "friction": "Hunden ar genomblot och lerig efter varje drev och ska in i bilen; den fryser pa vagen hem",
+  "old_way": "Handduk i bagaget, hunden far torka i buren",
+  "hook_sv": "Ar hunden blot och lerig efter drevet?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": false,
+   "anchor_name": "Siccaro torkrock 645-1 849 kr, Rukka 349-539 kr (fackhandel/zoohandel). Ingen big-box-form hittad, men kategorin ar jamforelsehandlad och markena annonserar sjalva",
+   "anchor_price_sek": 645,
+   "anchor_url": null,
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601100302415687.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": true,
+  "sold": null,
+  "rating": "4.9 (98%)",
+  "review_count": "99+",
+  "price_usd": 5,
+  "price_source": "seznam-snippet 2026-09-04",
+  "variants": "S/M/L/XL efter hundens storlek — en parameter agaren kan utantill (jfr 'kattens storlek' i gate 7)",
+  "goods_id": "601102028678747",
+  "title": "Quick dry dog bath robe towel wrap, ultra absorbent, adjustable closure, for small/medium/large dogs",
+  "economics": {
+   "landed_low_sek": 52,
+   "landed_high_sek": 61,
+   "se_price_sek": 349,
+   "multiple_low": 5.72,
+   "multiple_high": 6.71,
+   "be_cpa": 288,
+   "verdict": "PASS"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "OSAKER",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Kategorin ar full av sota studiobilder pa smahundar i badrum. For jaktagaren kravs en blot stovare vid en bil i skogen — det materialet finns troligen inte i listningen."
+  },
+  "negative_space_flags": [
+   "kopt old way som fungerar (handduk) ^ jamforelsehandlad ^ under 300 kr",
+   "annan malgrupp: kategorin saljs till hundagare i allmanhet, inte man 45-70",
+   "marken annonserar sjalva i SE (Siccaro, Rukka)"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 52,
+  "category_novelty_0_100": 35,
+  "tier": "C",
+  "main_risk": "Ekonomin och ankaret haller (Siccaro 645-1 849 kr mot ett 349-pris), men hyllan ar jamforelsehandlad och listningarnas material ar zoo-estetik, inte jakt. Alla fyra id:n star redan i kanda-goods-id.txt.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Seznam site:temu.com dog drying coat robe microfiber towel bathrobe large dogs",
+   "docs/temu-jakt-v2/jakt/jakt.md (V2: Siccaro 645-1 849, Rukka 349-539)"
+  ],
+  "concept": "Torkrock till jakthunden",
+  "object": "Jakthunden — bars pa kroppen, anvands varje jaktdag",
+  "owner_owns": "Jakthunden; en dressad stovare eller drivande hund ar vard 20 000-40 000 kr",
+  "friction": "Hunden ar genomblot och lerig efter varje drev och ska in i bilen; den fryser pa vagen hem",
+  "old_way": "Handduk i bagaget, hunden far torka i buren",
+  "hook_sv": "Ar hunden blot och lerig efter drevet?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": false,
+   "anchor_name": "Siccaro torkrock 645-1 849 kr, Rukka 349-539 kr (fackhandel/zoohandel). Ingen big-box-form hittad, men kategorin ar jamforelsehandlad och markena annonserar sjalva",
+   "anchor_price_sek": 645,
+   "anchor_url": null,
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601102028678747.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": true,
+  "sold": null,
+  "rating": "4.9 (98%)",
+  "review_count": "99+",
+  "price_usd": 4,
+  "price_source": "seznam-snippet 2026-09-04",
+  "variants": "S/M/L/XL efter hundens storlek — en parameter agaren kan utantill (jfr 'kattens storlek' i gate 7)",
+  "goods_id": "601099574621568",
+  "title": "Ultra absorbent striped dog bathrobe, quick dry soft polyester/nylon pet towel with adjustable waistband",
+  "economics": {
+   "landed_low_sek": 42,
+   "landed_high_sek": 49,
+   "se_price_sek": 349,
+   "multiple_low": 7.12,
+   "multiple_high": 8.31,
+   "be_cpa": 300,
+   "verdict": "PASS"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "OSAKER",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Kategorin ar full av sota studiobilder pa smahundar i badrum. For jaktagaren kravs en blot stovare vid en bil i skogen — det materialet finns troligen inte i listningen."
+  },
+  "negative_space_flags": [
+   "kopt old way som fungerar (handduk) ^ jamforelsehandlad ^ under 300 kr",
+   "annan malgrupp: kategorin saljs till hundagare i allmanhet, inte man 45-70",
+   "marken annonserar sjalva i SE (Siccaro, Rukka)"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 52,
+  "category_novelty_0_100": 35,
+  "tier": "C",
+  "main_risk": "Ekonomin och ankaret haller (Siccaro 645-1 849 kr mot ett 349-pris), men hyllan ar jamforelsehandlad och listningarnas material ar zoo-estetik, inte jakt. Alla fyra id:n star redan i kanda-goods-id.txt.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Seznam site:temu.com dog drying coat robe microfiber towel bathrobe large dogs",
+   "docs/temu-jakt-v2/jakt/jakt.md (V2: Siccaro 645-1 849, Rukka 349-539)"
+  ],
+  "concept": "Torkrock till jakthunden",
+  "object": "Jakthunden — bars pa kroppen, anvands varje jaktdag",
+  "owner_owns": "Jakthunden; en dressad stovare eller drivande hund ar vard 20 000-40 000 kr",
+  "friction": "Hunden ar genomblot och lerig efter varje drev och ska in i bilen; den fryser pa vagen hem",
+  "old_way": "Handduk i bagaget, hunden far torka i buren",
+  "hook_sv": "Ar hunden blot och lerig efter drevet?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": false,
+   "anchor_name": "Siccaro torkrock 645-1 849 kr, Rukka 349-539 kr (fackhandel/zoohandel). Ingen big-box-form hittad, men kategorin ar jamforelsehandlad och markena annonserar sjalva",
+   "anchor_price_sek": 645,
+   "anchor_url": null,
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099574621568.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": true,
+  "sold": null,
+  "rating": "4.9 (98%)",
+  "review_count": "99+",
+  "price_usd": 4,
+  "price_source": "seznam-snippet 2026-09-04",
+  "variants": "S/M/L/XL efter hundens storlek — en parameter agaren kan utantill (jfr 'kattens storlek' i gate 7)",
+  "goods_id": "601101956531898",
+  "title": "Ultra bathrobe for small/medium dogs and cats, lightweight design with safety closure, fleece lined",
+  "economics": {
+   "landed_low_sek": 42,
+   "landed_high_sek": 49,
+   "se_price_sek": 349,
+   "multiple_low": 7.12,
+   "multiple_high": 8.31,
+   "be_cpa": 300,
+   "verdict": "PASS"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "OSAKER",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Kategorin ar full av sota studiobilder pa smahundar i badrum. For jaktagaren kravs en blot stovare vid en bil i skogen — det materialet finns troligen inte i listningen."
+  },
+  "negative_space_flags": [
+   "kopt old way som fungerar (handduk) ^ jamforelsehandlad ^ under 300 kr",
+   "annan malgrupp: kategorin saljs till hundagare i allmanhet, inte man 45-70",
+   "marken annonserar sjalva i SE (Siccaro, Rukka)"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 52,
+  "category_novelty_0_100": 35,
+  "tier": "C",
+  "main_risk": "Ekonomin och ankaret haller (Siccaro 645-1 849 kr mot ett 349-pris), men hyllan ar jamforelsehandlad och listningarnas material ar zoo-estetik, inte jakt. Alla fyra id:n star redan i kanda-goods-id.txt.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Seznam site:temu.com dog drying coat robe microfiber towel bathrobe large dogs",
+   "docs/temu-jakt-v2/jakt/jakt.md (V2: Siccaro 645-1 849, Rukka 349-539)"
+  ],
+  "concept": "Torkrock till jakthunden",
+  "object": "Jakthunden — bars pa kroppen, anvands varje jaktdag",
+  "owner_owns": "Jakthunden; en dressad stovare eller drivande hund ar vard 20 000-40 000 kr",
+  "friction": "Hunden ar genomblot och lerig efter varje drev och ska in i bilen; den fryser pa vagen hem",
+  "old_way": "Handduk i bagaget, hunden far torka i buren",
+  "hook_sv": "Ar hunden blot och lerig efter drevet?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": false,
+   "anchor_name": "Siccaro torkrock 645-1 849 kr, Rukka 349-539 kr (fackhandel/zoohandel). Ingen big-box-form hittad, men kategorin ar jamforelsehandlad och markena annonserar sjalva",
+   "anchor_price_sek": 645,
+   "anchor_url": null,
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601101956531898.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": "4.8/5 (96%)",
+  "review_count": "99+",
+  "price_usd": 19,
+  "price_source": "seznam-snippet 2026-09-04",
+  "variants": "Ljusfarg / effekt",
+  "goods_id": "601099831702835",
+  "title": "High power 8-LED 365nm UV flashlight, USB rechargeable, for pet urine detection, resin curing, minerals, blood tracking, hunting, rockhounding",
+  "economics": {
+   "landed_low_sek": 198,
+   "landed_high_sek": 233,
+   "se_price_sek": 399,
+   "multiple_low": 1.71,
+   "multiple_high": 2.02,
+   "be_cpa": 166,
+   "verdict": "FAIL"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "OSAKER",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Generisk ficklampa i studio, saljs till sex olika anvandargrupper i samma titel — motsatsen till agarpresens."
+  },
+  "negative_space_flags": [
+   "inget agt objekt att fasta pa",
+   "inomhus-commodity som saljs till alla",
+   "svensk mass-commoditisering (Biltema/Jula/Clas Ohlson)"
+  ],
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": 24,
+  "category_novelty_0_100": 25,
+  "tier": "ELIM",
+  "main_risk": "Titeln saljer samma lampa till husdjursagare, harts-hobbyister och mineraljagare. Ingen agarfraga gar att stalla.",
+  "confidence": "HIGH",
+  "sources": [
+   "Seznam site:temu.com blood tracking light hunting deer blood trail flashlight green"
+  ],
+  "concept": "Ljus for eftersok och blodspar i morker",
+  "object": "Blodsparet efter skottet, i skogen efter morkrets inbrott",
+  "owner_owns": "Jagaren aoger inte 'sparet' — objektet ar en handelse, inte en sak",
+  "friction": "Skottet gar 18:30 i oktober och eftersoket sker i morker",
+  "old_way": "Pannlampan som redan finns, mobilens ficklampa",
+  "hook_sv": "Gor du eftersok i morkret varje host?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Handstralkastare, pannlampor och UV-lampor ar commodity hos Biltema, Jula och Clas Ohlson; Biltema har dessutom egen jaktavdelning med lampor",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/fritid/jakt/jakttillbehor-och-utrustning/",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099831702835.html"
+ },
+ {
+  "kluster": "jakt",
+  "already_known": false,
+  "sold": null,
+  "rating": "4.7/5 (94%)",
+  "review_count": "99+",
+  "price_usd": 23,
+  "price_source": "seznam-snippet 2026-09-04",
+  "variants": "Ljusfarg / effekt",
+  "goods_id": "601099886253200",
+  "title": "High power 350 yards flashlight with remote control switch, green/white light for fishing, camping and beekeeping, 18650 rechargeable battery included",
+  "economics": {
+   "landed_low_sek": 240,
+   "landed_high_sek": 282,
+   "se_price_sek": 399,
+   "multiple_low": 1.41,
+   "multiple_high": 1.66,
+   "be_cpa": 117,
+   "verdict": "FAIL"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "OSAKER",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Generisk ficklampa i studio, saljs till sex olika anvandargrupper i samma titel — motsatsen till agarpresens."
+  },
+  "negative_space_flags": [
+   "inget agt objekt att fasta pa",
+   "inomhus-commodity som saljs till alla",
+   "svensk mass-commoditisering (Biltema/Jula/Clas Ohlson)"
+  ],
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": 24,
+  "category_novelty_0_100": 25,
+  "tier": "ELIM",
+  "main_risk": "Titeln saljer samma lampa till husdjursagare, harts-hobbyister och mineraljagare. Ingen agarfraga gar att stalla.",
+  "confidence": "HIGH",
+  "sources": [
+   "Seznam site:temu.com blood tracking light hunting deer blood trail flashlight green"
+  ],
+  "concept": "Ljus for eftersok och blodspar i morker",
+  "object": "Blodsparet efter skottet, i skogen efter morkrets inbrott",
+  "owner_owns": "Jagaren aoger inte 'sparet' — objektet ar en handelse, inte en sak",
+  "friction": "Skottet gar 18:30 i oktober och eftersoket sker i morker",
+  "old_way": "Pannlampan som redan finns, mobilens ficklampa",
+  "hook_sv": "Gor du eftersok i morkret varje host?",
+  "audience": {
+   "owner_class_size": 271000,
+   "source": "Antal losta jaktkort i Sverige enligt intern V2-klusterrapport docs/temu-jakt-v2/jakt/jakt.md (2026-09-04). Primarkalla (Naturvardsverket/Jagareforbundet) svarade 404 i den har korningen.",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": true,
+   "anchor_name": "Handstralkastare, pannlampor och UV-lampor ar commodity hos Biltema, Jula och Clas Ohlson; Biltema har dessutom egen jaktavdelning med lampor",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.biltema.se/fritid/jakt/jakttillbehor-och-utrustning/",
+   "searches": [
+    "viltlyft vilthangare lyftblock alg jakt pris jula biltema (WebSearch)",
+    "biltema viltgalge viltdragare viltsack slaktverktyg pris kr (WebSearch)",
+    "site:biltema.se jakt jakttillbehor atelkamera jakttorn sits kamouflagenat (WebSearch)",
+    "\"biltema.se/fritid/jakt\" underkategorier hundutrustning jaktstol vapenvard (WebSearch)",
+    "jula.se jakt sortiment viltkamera jaktstol kamouflagenat viltsack (WebSearch)",
+    "atelkamera solpanel solcellspanel viltkamera pris jaktia hylte (WebSearch)",
+    "\"solcellspanel\" atelkamera pris kr Hunter jakt.se solpanel viltkamera 12V (WebSearch)",
+    "viltlyft taljblock repblock jakt slaktbod hissa upp alg pris kr hylte jaktia (WebSearch)",
+    "\"hundbur\" bilbur overdrag kapell regnskydd hund jakt pris (WebSearch)",
+    "jakt.se/hunter-solcellspanel-atelkamera-1 (WebFetch produktsida)",
+    "pricerunner.se/search?q=solcellspanel atelkamera (WebFetch, tomt svar)",
+    "site:biltema.se atelkamera tillbehor solpanel batteri viltkamera (Seznam, 0 traffar)"
+   ]
+  },
+  "url": "https://www.temu.com/se/g-601099886253200.html"
+ }
+]

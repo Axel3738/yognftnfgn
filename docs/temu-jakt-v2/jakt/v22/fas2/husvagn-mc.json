@@ -1,0 +1,5319 @@
+[
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601101311828193.html",
+  "sold": null,
+  "variants": "Titeln anger langd 5-12 meter (INTE fot). Variantlistan sjalv ar olast — temu.com blockerad.",
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering: overdrag ar kedjornas hemmaplan — raddas bara av att FORMEN (husvagnsoverdrag) bara finns i fackhandel 1 599-2 995 kr"
+  ],
+  "sources": [
+   "site:temu.com rv roof cover travel trailer camper protector",
+   "site:temu.com caravan roof top cover tarp motorhome protection",
+   "https://www.getcamping.se/husvagns-husbilstillbehor/ovriga-tillbehor/overdrag/",
+   "https://www.campingvaruhuset.se/sv/guide-tank-pa-detta-vid-vinterforvaring-av-husvagn-husbil"
+  ],
+  "goods_id": "601101311828193",
+  "tier": "B",
+  "title": "1pc of RV roof cover designed for motorhomes travel trailers and buses offering UV and sun protection suitable for RVs measuring between 5 to 12 meters",
+  "concept": "husvagn-taköverdrag",
+  "object": "Husvagnens/husbilens tak",
+  "owner_owns": "Husvagn eller husbil som stalls upp pa uppstallningsplats eller tomt for vintern",
+  "friction": "Uppstallningen sker just nu (sept-okt). Taket ar den yta agaren inte nar: lov, barr och vatten ligger kvar hela vintern, och det ar darifran de svarta/grona strimmorna pa sidorna kommer. Agarens egna hostchecklistor sager 'ta bort lov och skrap fran tak, ventiler och lister' och 'andningsbart overdrag' (Campingvaruhuset, Husvagn.se).",
+  "old_way": "Presenning med spannband som blaser av, eller ingenting alls.",
+  "price_usd": 25,
+  "rating": "4.5/90%",
+  "review_count": "46",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "OKAND — biltema.se/jula.se/rusta.com svarade 403/404 (Akamai) och WebSearch-budgeten var slut. Clas Ohlson: 0 traffar pa 'husvagn' (WebFetch 2026-09-04). GetCamping (fackhandel) har kategorin /ovriga-tillbehor/overdrag/ med Eurotrail 1 599-2 395 kr, Brunner 2 999 kr, Hindermann frontskydd 1 145-2 195 kr — ingen kedja syns i den kategorin.",
+   "anchor_name": "EuroTrail Husvagnsöverdrag (fackhandel, GetCamping)",
+   "anchor_price_sek": 2395,
+   "anchor_url": "https://www.getcamping.se/husvagns-husbilstillbehor/ovriga-tillbehor/overdrag/eurotrail-husvangsoverdrag/",
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": 261.0,
+   "landed_high_sek": 306.0,
+   "se_price_sek": 799,
+   "multiple_low": 2.61,
+   "multiple_high": 3.06,
+   "be_cpa": [
+    493,
+    538
+   ],
+   "verdict": "PASS"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Star husvagnen ute i vinter?",
+  "audience": {
+   "owner_class_size": 283840,
+   "source": "Husvagn & Camping 2026-01-16 (Trafikanalys): 283 840 husvagnar i Sverige, varav 167 496 i trafik; 116 344 avstallda 2024 (96 459 ar 2015). https://www.husvagnochcamping.se/artiklar/artikel/20260116/sista-resan-for-husvagnen/",
+   "verdict": "PASS"
+  },
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 72,
+  "category_novelty_0_100": 50,
+  "main_risk": "Att Biltema eller Jula har ett husvagnsoverdrag under 700 kr — ej verifierbart denna korning. Darefter att $25 ar for lite for ett riktigt 5-12 m tak: produkten kan vara tunnare och mindre an titeln antyder, och materialet ar osett.",
+  "confidence": "LOW"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601102273698057.html",
+  "sold": null,
+  "variants": "Olast (blockerad kalla). Titeln sager 'foldable, easy to installation' — ingen storleksangivelse.",
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (samma reservation som ovan)",
+   "titeln blandar 'patio' och 'rv' — det kan vara ett solsegel, inte ett vagnsoverdrag"
+  ],
+  "sources": [
+   "site:temu.com trailer cover waterproof oxford utility trailer heavy duty",
+   "site:temu.com rv cover motorhome caravan waterproof travel trailer camper oxford"
+  ],
+  "goods_id": "601102273698057",
+  "tier": "B",
+  "title": "patio outdoor rv cover anti sunshade heavy duty waterproof oxford fabric for motorhome protection foldable easy to installation rv trailer cover",
+  "concept": "husvagn-taköverdrag",
+  "object": "Husvagnen/husbilen som helhet",
+  "owner_owns": "Husvagn eller husbil som star uppstalld ute",
+  "friction": "Samma som ovan; hela vagnen star ute fran september till april.",
+  "old_way": "Presenning + spannband, eller inhyrd inomhusforvaring 400-900 kr/manad.",
+  "price_usd": 28,
+  "rating": "4.6/92%",
+  "review_count": "99+",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "OKAND — biltema.se/jula.se/rusta.com svarade 403/404 (Akamai) och WebSearch-budgeten var slut. Clas Ohlson: 0 traffar pa 'husvagn' (WebFetch 2026-09-04). GetCamping (fackhandel) har kategorin /ovriga-tillbehor/overdrag/ med Eurotrail 1 599-2 395 kr, Brunner 2 999 kr, Hindermann frontskydd 1 145-2 195 kr — ingen kedja syns i den kategorin.",
+   "anchor_name": "EuroTrail Husvagnsöverdrag (fackhandel, GetCamping)",
+   "anchor_price_sek": 2395,
+   "anchor_url": "https://www.getcamping.se/husvagns-husbilstillbehor/ovriga-tillbehor/overdrag/eurotrail-husvangsoverdrag/",
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": 292.3,
+   "landed_high_sek": 342.7,
+   "se_price_sek": 899,
+   "multiple_low": 2.62,
+   "multiple_high": 3.08,
+   "be_cpa": [
+    556,
+    607
+   ],
+   "verdict": "PASS"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "UNKNOWN",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Star husvagnen ute i vinter?",
+  "audience": {
+   "owner_class_size": 283840,
+   "source": "Husvagn & Camping 2026-01-16 (Trafikanalys): 283 840 husvagnar i Sverige, varav 167 496 i trafik; 116 344 avstallda 2024 (96 459 ar 2015). https://www.husvagnochcamping.se/artiklar/artikel/20260116/sista-resan-for-husvagnen/",
+   "verdict": "PASS"
+  },
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 64,
+  "category_novelty_0_100": 50,
+  "main_risk": "Att listningen inte ar ett husvagnsoverdrag alls utan ett solskydd for uppstallningsplatsen. 99+ recensioner ar den starkaste kommersiella signalen i hela klustret, men vad som faktiskt levereras gar inte att se sa lange kallan ar blockerad.",
+  "confidence": "LOW"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601102448955955.html",
+  "sold": null,
+  "variants": "Olast; kategorin saljs oftast universal med ett fastband.",
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "annan malgrupp an man 45-70 med smahus: scooterpendlaren ar urban och yngre",
+   "gransar till personlig passform"
+  ],
+  "sources": [
+   "site:temu.com scooter leg cover apron windproof winter motorcycle"
+  ],
+  "goods_id": "601102448955955",
+  "tier": "C",
+  "title": "scooters moto leg cover motorcycle leg knee warmer covers for scooters for peugeot for honda",
+  "concept": "moped-benskydd",
+  "object": "Mopeden/scootern som pendlar in i kylan",
+  "owner_owns": "Moped klass I / EU-moped / scooter",
+  "friction": "Kylan ar har nu: knan och ben blir genomkalla pa varje tur fran september.",
+  "old_way": "Extra byxor, regnstall, eller att lata mopeden sta.",
+  "price_usd": 34,
+  "rating": "5/100%",
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "Ingen kedjetraff kand; Tucano Urbano Termoscud ar det svenska markesankaret men priset ar EJ verifierat denna korning.",
+   "anchor_name": "Tucano Urbano Termoscud (ej prisverifierad)",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": 355.0,
+   "landed_high_sek": 416.2,
+   "se_price_sek": 899,
+   "multiple_low": 2.16,
+   "multiple_high": 2.53,
+   "be_cpa": [
+    483,
+    544
+   ],
+   "verdict": "FAIL"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "UNKNOWN",
+   "hook": "PASS",
+   "audience": "FAIL"
+  },
+  "hook_sv": "Fryser du om benen pa mopeden?",
+  "audience": {
+   "owner_class_size": null,
+   "source": "Inget verifierat tal for moped-/scooterpendlare 45-70 med smahus. WebSearch-budget slut.",
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "audience",
+  "winner_dna_match_0_100": 44,
+  "category_novelty_0_100": 78,
+  "main_risk": "Publiken. Kontots hela inlarning ligger pa man 45-70 med hus, bat och tradgard — scooterpendlaren ar en annan person.",
+  "confidence": "LOW"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-606232433763454.html",
+  "sold": null,
+  "variants": "Runda ABS-galler i 2- och 4-pack, matt olasta.",
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "under 199 kr landat: 2,4x hamnar pa 175-206 kr, alltsa under 300 kr-golvet",
+   "kopt fungerande old way (fallor) ∧ jamforelsehandlad ∧ < 300 kr"
+  ],
+  "sources": [
+   "site:temu.com rv vent screen rodent mesh camper insect",
+   "https://www.folksam.se/forsakringar/bilforsakring/gnagarskador"
+  ],
+  "goods_id": "606232433763454",
+  "tier": "C",
+  "title": "2 4pcs round abs vent cover with built in mesh screen rodent bird insect proof for bathroom home office use",
+  "concept": "gnagarskydd-ventil-husvagn",
+  "object": "Husvagnens ventiler och golvgenomforingar",
+  "owner_owns": "Husvagn/husbil som stalls upp for vintern",
+  "friction": "Mossen soker sig in nar det blir kallt — nu. Folksam har en egen sida om gnagarskador pa bil, husbil och husvagn; agarguiderna varnar for gnagda kablar och isolering.",
+  "old_way": "Stalull i halen, musfallor, ultraljudsskramma (improvisation).",
+  "price_usd": 7,
+  "rating": "4.8/96%",
+  "review_count": "18",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": "Samma form saljs som meterrullar och fardiga ventilnat av Granngarden, stick.se, Skadedjursbutiken och skadedjursbekampning.nu; kedjorna saljer ultraljudsskrammor och fallor (WebSearch 2026-09-04).",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": 73.1,
+   "landed_high_sek": 85.7,
+   "se_price_sek": 399,
+   "multiple_low": 4.66,
+   "multiple_high": 5.46,
+   "be_cpa": [
+    313,
+    326
+   ],
+   "verdict": "PASS"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "UNKNOWN",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Har du haft moss i husvagnen?",
+  "audience": {
+   "owner_class_size": 283840,
+   "source": "Husvagn & Camping 2026-01-16 (Trafikanalys): 283 840 husvagnar i Sverige, varav 167 496 i trafik; 116 344 avstallda 2024 (96 459 ar 2015). https://www.husvagnochcamping.se/artiklar/artikel/20260116/sista-resan-for-husvagnen/",
+   "verdict": "PASS"
+  },
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": 38,
+  "category_novelty_0_100": 70,
+  "main_risk": "Ekonomin: produkten ar for billig for att bara en Meta-CPA. Friktionen ar aldrig fel — barartikeln ar det.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": true,
+  "url": "https://www.temu.com/se/g-601099609840730.html",
+  "sold": null,
+  "variants": "14 x 14 tum = 35,6 cm. Svenska takluckor ar 40x40 cm (Dometic Mini Heki) eller 50x50 cm (Beisel) — matten motsvarar inte varandra.",
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "variant som agaren maste mata och som dessutom ar i tum",
+   "under 300 kr med 2,4x-kravet"
+  ],
+  "sources": [
+   "site:temu.com rv skylight cover protector roof vent shield"
+  ],
+  "goods_id": "601099609840730",
+  "tier": "C",
+  "title": "rv skylight cover 14 x14 reflective surface triple layer heat reduction enhances ac fits standard vents polyester material",
+  "concept": "takluckeskydd-husvagn",
+  "object": "Husvagnens taklucka",
+  "owner_owns": "Husvagn/husbil med taklucka",
+  "friction": "Lov och barr samlas i takluckans ram nu; UV och hagel bryter ner plasten.",
+  "old_way": "Inget alls, eller en bit presenning.",
+  "price_usd": 12,
+  "rating": "4.9/98%",
+  "review_count": "99+",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "Ingen kedja har kategorin; fackhandeln har den (Beisel overdrag taklucka 50x50 cm, Fiamma Thermovent, GetCamping).",
+   "anchor_name": "Beisel Overdrag taklucka 50x50 cm (GetCamping)",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.getcamping.se/husvagns-husbilstillbehor/chassi-och-kaross/takluckor/beisel-overdrag-taklucka-50-x-50-cm/",
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": 125.3,
+   "landed_high_sek": 146.9,
+   "se_price_sek": 349,
+   "multiple_low": 2.38,
+   "multiple_high": 2.79,
+   "be_cpa": [
+    202,
+    224
+   ],
+   "verdict": "FAIL"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PENDING_VERIFICATION",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "FAIL",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Har du en taklucka pa husvagnen?",
+  "audience": {
+   "owner_class_size": 283840,
+   "source": "Husvagn & Camping 2026-01-16 (Trafikanalys): 283 840 husvagnar i Sverige, varav 167 496 i trafik; 116 344 avstallda 2024 (96 459 ar 2015). https://www.husvagnochcamping.se/artiklar/artikel/20260116/sista-resan-for-husvagnen/",
+   "verdict": "PASS"
+  },
+  "eliminated_at": "variant",
+  "winner_dna_match_0_100": 34,
+  "category_novelty_0_100": 66,
+  "main_risk": "US-matten. 14x14 tum ar amerikansk standard och passar inte en svensk Mini Heki.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-603140090877660.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "montering/installation",
+   "over 1 000 kr"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "603140090877660",
+  "tier": "ELIM",
+  "title": "rv vent roof fan 14 inch reversible with rain cover lid",
+  "concept": "takluckeskydd-husvagn",
+  "object": "Husvagnens taklucka",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 160,
+  "rating": "4.9/98%",
+  "review_count": "11",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "160 USD ger landad 1 670-1 958 kr — langt over 420 kr-stoppet, och kraver montering.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601099666774437.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "montering/installation",
+   "variant som kraver matning"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601099666774437",
+  "tier": "ELIM",
+  "title": "14 rv roof vent white lid roof vent with rv vent fan lid replacement",
+  "concept": "takluckeskydd-husvagn",
+  "object": "Husvagnens taklucka",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 40,
+  "rating": "4.6/92%",
+  "review_count": "47",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "FAIL",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "variant",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Reservdelslucka i US-matt (14 tum) som ska skruvas fast — passform och montering.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601099519247831.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "under 300 kr"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601099519247831",
+  "tier": "ELIM",
+  "title": "for rv vent and skylight cover with reflective surface fits for standard 14 x 14 inch rv vents",
+  "concept": "takluckeskydd-husvagn",
+  "object": "Husvagnens taklucka",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 11,
+  "rating": "4.9/98%",
+  "review_count": "99+",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "FAIL",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "variant",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Samma US-matt som C-raden ovan; 2,4x hamnar pa 253-296 kr.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-605753796575505.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "abstrakt/fordrojd payoff"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "605753796575505",
+  "tier": "ELIM",
+  "title": "rv roof vent skylight insulation cover rv ventilation sunshade fabric 16 x 16 inches",
+  "concept": "takluckeskydd-husvagn",
+  "object": "Husvagnens taklucka (invandigt)",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": null,
+  "rating": null,
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "FAIL",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "presence",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Invandig isolermatta — payoffen syns inte utifran och friktionen ar sommarvarme, inte hostuppstallning.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601105006338740.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "under 199 kr"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601105006338740",
+  "tier": "ELIM",
+  "title": "rv refrigerator for air circulation suitable for rv refrigerators",
+  "concept": "husvagn-kyla",
+  "object": "Husvagnens kylskap",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 2,
+  "rating": "4.7/94%",
+  "review_count": "99+",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "2 USD — omojligt att bara en CPA.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601100423741698.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601100423741698",
+  "tier": "ELIM",
+  "title": "2 4 pack rv stabilizer jack pads anti slip rubber scissor jack pads",
+  "concept": "uppstallningsstod",
+  "object": "Husvagnens stodben",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 27,
+  "rating": "4.8/96%",
+  "review_count": "55",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": "Biltema saljer stodbensfotter och Jula plattor — samma form, verifierat i forra korningens hyllkontroll (jakt/husvagn.md, gate 3).",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Biltema saljer stodbensfotter och Jula plattor — samma form, verifierat i forra korningens hyllkontroll (jakt/husvagn.md, gate 3).",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601103678409139.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "under 199 kr"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601103678409139",
+  "tier": "ELIM",
+  "title": "wheel chocks for trailers 2pcs 4pcs hard plastic rv wheel chocks with handles",
+  "concept": "uppstallningsstod",
+  "object": "Husvagnens/slapets hjul",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 8,
+  "rating": "4.7/94%",
+  "review_count": "99+",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": "Hjulkilar finns hos bade Biltema och Jula under 100 kr (forra korningen).",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Hjulkilar finns hos bade Biltema och Jula under 100 kr (forra korningen).",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601104279180548.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "under 199 kr",
+   "svensk mass-commoditisering"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601104279180548",
+  "tier": "ELIM",
+  "title": "jack socket wrench scissor type automotive socket adapter for hand drill and ratchet",
+  "concept": "uppstallningsstod",
+  "object": "Stodbenens vev",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": null,
+  "rating": null,
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Hylsa till borrmaskin — enkronorsprodukt i kedjornas verktygshylla.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601102191282764.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "over 1 000 kr"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601102191282764",
+  "tier": "ELIM",
+  "title": "car ramps 2pcs 5t 11000lbs portable heavy duty hydraulic car ramps",
+  "concept": "uppstallningsstod",
+  "object": "Bilen, inte ekipaget",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 177,
+  "rating": "5/100%",
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Bilramp — fel objekt for klustret och langt over pristaket.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-602300433152523.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "kraver forklaring"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "602300433152523",
+  "tier": "ELIM",
+  "title": "20w 12v solar battery trickle charger maintainer with built in mppt controller for rv trailer",
+  "concept": "batteriunderhall-uppstalld",
+  "object": "Husvagnens batteri",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 35,
+  "rating": "4.8/96%",
+  "review_count": "99+",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": "Solpaneler for underhallsladdning finns i bade kedjorna och fackhandeln (GetCamping har egen kategori /el/solpaneler/). Produkten kraver dessutom forklaring.",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Solpaneler for underhallsladdning finns i bade kedjorna och fackhandeln (GetCamping har egen kategori /el/solpaneler/). Produkten kraver dessutom forklaring.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-605853923034875.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "605853923034875",
+  "tier": "ELIM",
+  "title": "7 5w 12w solar battery maintainer portable trickle charger for cars motorcycles boats rvs",
+  "concept": "batteriunderhall-uppstalld",
+  "object": "Husvagnens/MC:ns batteri",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 22,
+  "rating": "5/100%",
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": "Samma hylla som ovan.",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Samma hylla som ovan.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-605742656520855.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "605742656520855",
+  "tier": "ELIM",
+  "title": "automatic 12 acid battery maintainer car battery trickle charger with winter mode",
+  "concept": "batteriunderhall-uppstalld",
+  "object": "Batteriet",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 17,
+  "rating": "4.8/96%",
+  "review_count": "80",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": "Batteriladdare ar Biltema/Jula-commodity — fallt redan i forra mc-korningen.",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Batteriladdare ar Biltema/Jula-commodity — fallt redan i forra mc-korningen.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601105637378446.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601105637378446",
+  "tier": "ELIM",
+  "title": "20w 12 solar trickle charger maintainer portable solar panel battery charger kit rv truck boat",
+  "concept": "batteriunderhall-uppstalld",
+  "object": "Batteriet",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 30,
+  "rating": "4/80%",
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": "Samma hylla.",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Samma hylla.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-606268404127104.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "606268404127104",
+  "tier": "ELIM",
+  "title": "12v portable battery charger maintainer suitable for car rv boat motorcycle solar panel",
+  "concept": "batteriunderhall-uppstalld",
+  "object": "Batteriet",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 23,
+  "rating": "4.6/92%",
+  "review_count": "99+",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": "Samma hylla.",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Samma hylla.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-605951365077695.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "605951365077695",
+  "tier": "ELIM",
+  "title": "20w 12v solar panel kit solar battery trickle charger maintainer smart mppt controller",
+  "concept": "batteriunderhall-uppstalld",
+  "object": "Batteriet",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 30,
+  "rating": "4.8/96%",
+  "review_count": "56",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": "Samma hylla.",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Samma hylla.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601100101717390.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601100101717390",
+  "tier": "ELIM",
+  "title": "portable 12v battery charger maintainer 10w solar panel trickle charger",
+  "concept": "batteriunderhall-uppstalld",
+  "object": "Batteriet",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 29,
+  "rating": "4.5/90%",
+  "review_count": "11",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": "Samma hylla.",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Samma hylla.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601100473066372.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601100473066372",
+  "tier": "ELIM",
+  "title": "20w solar panel 12v battery trickle charger and maintainer for rv vehicles",
+  "concept": "batteriunderhall-uppstalld",
+  "object": "Batteriet",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 16,
+  "rating": "4.6/92%",
+  "review_count": "7",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": "Samma hylla.",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Samma hylla.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601099514354769.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "under 199 kr"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601099514354769",
+  "tier": "ELIM",
+  "title": "1pc propane tank cover heavy duty oxford fabric suitable for outdoor gas cylinders",
+  "concept": "gasoltuben",
+  "object": "Gasoltuben pa draget",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 5,
+  "rating": "4.8/96%",
+  "review_count": "99+",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "5 USD ger landad 52-61 kr; 2,4x hamnar pa 125-147 kr.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-605672510972227.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "under 199 kr",
+   "kraver forklaring"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "605672510972227",
+  "tier": "ELIM",
+  "title": "1pc magnetic gas level indicator reusable propane level indicator",
+  "concept": "gasoltuben",
+  "object": "Gasoltuben",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 2,
+  "rating": "4.5/90%",
+  "review_count": "99+",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "2 USD. Dessutom en matare som kraver forklaring.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601099523850717.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "kraver forklaring",
+   "under 199 kr"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601099523850717",
+  "tier": "ELIM",
+  "title": "propane tank gauge level indicator leak detector gas pressure meter universal",
+  "concept": "gasoltuben",
+  "object": "Gasoltuben",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": null,
+  "rating": null,
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Samma prisklass och samma forklaringsproblem.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601101668500724.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "fel sasong"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601101668500724",
+  "tier": "ELIM",
+  "title": "van bug screen for magnetic edge van bug net mesh screen curtain for rv rear and side door",
+  "concept": "myggnat-husbil",
+  "object": "Husbilens dorrar",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 58,
+  "rating": "5/100%",
+  "review_count": "6",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "FAIL",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "presence",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Myggnat ar en sommarprodukt — under sex veckor av sasongen aterstar.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-605652730619642.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "oklart agande"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "605652730619642",
+  "tier": "ELIM",
+  "title": "window screen mesh insect proof screen net durable mosquito net and garden netting",
+  "concept": "gnagarskydd-ventil-husvagn",
+  "object": "Fonster i hus, inte i vagn",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 5,
+  "rating": "4.8/96%",
+  "review_count": "22",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Generellt fonsternat for hus och tradgard — inget agt fordonsobjekt.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601101055193878.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "oklart agande"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601101055193878",
+  "tier": "ELIM",
+  "title": "1 pack diy large size window screen mesh pet proof and mosquito insect resistant",
+  "concept": "gnagarskydd-ventil-husvagn",
+  "object": "Fonster i hus",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 43,
+  "rating": "4.8/96%",
+  "review_count": "99+",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Samma som ovan.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601100410926931.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601100410926931",
+  "tier": "ELIM",
+  "title": "mountain bike basket foldable iron rack basket suitable for rear rack",
+  "concept": "atv-lastkorg",
+  "object": "Cykel, inte ATV",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 27,
+  "rating": "5/100%",
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Cykelkorg — fangades av ATV-sokningen men ar fel objekt.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-606436964831398.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "606436964831398",
+  "tier": "ELIM",
+  "title": "foldable bike basket for front rear rack heavy duty bicycle cargo basket",
+  "concept": "atv-lastkorg",
+  "object": "Cykel",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": null,
+  "rating": null,
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Samma som ovan.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-605725090757869.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "605725090757869",
+  "tier": "ELIM",
+  "title": "motorcycle bicycle handlebar bag utv roll bar storage bag",
+  "concept": "atv-forvaring",
+  "object": "ATV:ns rullbage",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 23,
+  "rating": "5/100%",
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Ligger i samma familj som den redan avgjorda bakvaskan/hardboxen for ATV — foreslas inte igen.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-606459781809198.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "under 199 kr",
+   "svensk mass-commoditisering"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "606459781809198",
+  "tier": "ELIM",
+  "title": "motorcycle bike handlebar mount holder bicycle for cell phone gps",
+  "concept": "atv-forvaring",
+  "object": "Styret",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 4,
+  "rating": "4.6/92%",
+  "review_count": "63",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "4 USD, och mobilhallare ar kedjevara.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601103596884193.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601103596884193",
+  "tier": "ELIM",
+  "title": "210d oxford cloth material black motorcycle cover with reflective design",
+  "concept": "mc-kapell",
+  "object": "MC:n som stalls av",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 21,
+  "rating": "4.8/96%",
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": "MC-kapell ar redan avgjort: fallt mot Biltema helkapell 429 kr.",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "shelf",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "MC-kapell ar redan avgjort: fallt mot Biltema helkapell 429 kr.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601101955324361.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601101955324361",
+  "tier": "ELIM",
+  "title": "xxl 210d heavy duty oxford waterproof cover for mobility scooters",
+  "concept": "promenadscooter-kapell",
+  "object": "Promenadscooter",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 11,
+  "rating": "4.8/96%",
+  "review_count": "99+",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Promenadscooter-kapellet ar redan avgjort och ligger utanfor uppdraget.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601101178788835.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "SKU per maskinmodell",
+   "objektet forvaras inomhus"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601101178788835",
+  "tier": "ELIM",
+  "title": "motorcycle front windshield sun visor racing windshield spoiler for honda cb 750",
+  "concept": "mc-vindruta",
+  "object": "MC:ns framvagn",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 37,
+  "rating": "5/100%",
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "FAIL",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "variant",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "SKU per motorcykelmodell — exakt det fingeravtrycket varnar for. MC:n forvaras dessutom inomhus.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601101521961485.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "SKU per maskinmodell"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601101521961485",
+  "tier": "ELIM",
+  "title": "black motorcycle front windscreen deflector kit for cb1000r models 2018 to 2023",
+  "concept": "mc-vindruta",
+  "object": "MC:ns framvagn",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 23,
+  "rating": "5/100%",
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "FAIL",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "variant",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Samma modellberoende.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601101057157862.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "personligt/passform"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601101057157862",
+  "tier": "ELIM",
+  "title": "motorcycle windproof pu pants",
+  "concept": "moped-benskydd",
+  "object": "Foraren, inte fordonet",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 24,
+  "rating": "4.8/96%",
+  "review_count": "47",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Byxor — personlig passform och mode.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601099554327284.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "SKU per maskinmodell"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601099554327284",
+  "tier": "ELIM",
+  "title": "electric off road vehicle seat cushion fiber pattern seat",
+  "concept": "atv-sadeloverdrag",
+  "object": "Elfordonets sits",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": null,
+  "rating": null,
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "FAIL",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "variant",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Sits till en specifik elmodell, inte ett universellt overdrag.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601103523369213.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601103523369213",
+  "tier": "ELIM",
+  "title": "boat inflatable boat cover thick durable 420d marine grade oxford cloth",
+  "concept": "bat-kapell",
+  "object": "Baten",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 49,
+  "rating": "4.6/92%",
+  "review_count": "99+",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Bat — annat kluster (bat).",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601099629066796.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601099629066796",
+  "tier": "ELIM",
+  "title": "heavy duty 210d waterproof boat cover fishing ski v hull anti uv",
+  "concept": "bat-kapell",
+  "object": "Baten",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 20,
+  "rating": "4.2/84%",
+  "review_count": "99+",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Bat — annat kluster.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601100151952479.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601100151952479",
+  "tier": "ELIM",
+  "title": "adjustable trailer guides trailer guide poles l shaped galvanized for ski boat fishing",
+  "concept": "battrailer",
+  "object": "Battrailern",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 49,
+  "rating": "4.8/96%",
+  "review_count": "99+",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Battrailer — annat kluster (bat).",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-602650028416356.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "over 1 000 kr"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "602650028416356",
+  "tier": "ELIM",
+  "title": "420lbs boat trailer dolly mover adjustable length with pneumatic tires",
+  "concept": "rangerhjalp",
+  "object": "Slapet/husvagnen",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 131,
+  "rating": "4.8/96%",
+  "review_count": "8",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "131 USD ger landad 1 368-1 604 kr.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-606233708878553.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "over 1 000 kr"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "606233708878553",
+  "tier": "ELIM",
+  "title": "super trailer dolly trailer mover with 7500 lbs capacity adjustable dual ball hitch",
+  "concept": "rangerhjalp",
+  "object": "Husvagnen",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 1432,
+  "rating": "5/100%",
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "1 432 USD.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601103385974215.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601103385974215",
+  "tier": "ELIM",
+  "title": "6pcs heavy duty furniture moving system with locking wheel dolly lifter jacks",
+  "concept": "rangerhjalp",
+  "object": "Mobler, inte fordon",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 49,
+  "rating": "5/100%",
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Mobelvagnar — fel objekt.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601100469483451.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "over 1 000 kr",
+   "montering/installation"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601100469483451",
+  "tier": "ELIM",
+  "title": "a waterproof outdoor storage tent made of 210d oxford fabric for storing 2 to 5 bicycles motorcycles",
+  "concept": "forvaringstalt",
+  "object": "MC/moped/kärra utomhus",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 65,
+  "rating": "4.5/90%",
+  "review_count": "99+",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "65 USD ger landad 679-796 kr; 2,4x hamnar over taket. Kraver dessutom montering.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-606076808339876.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "montering/installation"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "606076808339876",
+  "tier": "ELIM",
+  "title": "bike storage shed tent gardening tool shed outdoor portable bicycle storage 210d oxford pu4000",
+  "concept": "forvaringstalt",
+  "object": "Cykel/moped",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 32,
+  "rating": "4.6/92%",
+  "review_count": "22",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Ett talt som ska resas — montering och inlarning, och objektet ar cykeln.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601105395048342.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "over 1 000 kr",
+   "montering/installation"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601105395048342",
+  "tier": "ELIM",
+  "title": "a portable outdoor shed for bicycle storage made from 210d oxford fabric pu4000",
+  "concept": "forvaringstalt",
+  "object": "Cykel",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 75,
+  "rating": "4.4/88%",
+  "review_count": "11",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "75 USD.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601101645657782.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "over 1 000 kr",
+   "montering/installation"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601101645657782",
+  "tier": "ELIM",
+  "title": "10x20 carport heavy duty portable garage shelter metal car",
+  "concept": "forvaringstalt",
+  "object": "Uppstallningsplatsen",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 123,
+  "rating": "4.6/92%",
+  "review_count": "62",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "123 USD, tung frakt, ska byggas.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601100252044914.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "over 1 000 kr",
+   "montering/installation"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601100252044914",
+  "tier": "ELIM",
+  "title": "carport tent car ports party tent heavy duty car tent",
+  "concept": "forvaringstalt",
+  "object": "Uppstallningsplatsen",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 143,
+  "rating": "4.6/92%",
+  "review_count": "99+",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "economics",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "143 USD.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601102571107250.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601102571107250",
+  "tier": "ELIM",
+  "title": "tailgate wing cover sun protection van 180 x 150cm",
+  "concept": "skapbilens-baklucka",
+  "object": "Skapbilens baklucka",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 37,
+  "rating": "4.8/96%",
+  "review_count": "99+",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Solskydd for en skapbils oppna baklucka — inte husvagn, inte slap.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601103793387530.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601103793387530",
+  "tier": "ELIM",
+  "title": "car windshield sun shade foldable windshield sun shade",
+  "concept": "bilens-vindruta",
+  "object": "Bilens vindruta",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 7,
+  "rating": "4.7/94%",
+  "review_count": "99+",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Bilsolskydd — kedjevara och fel objekt.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601100285645021.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601100285645021",
+  "tier": "ELIM",
+  "title": "fit full coverage pu leather car seat covers for cars suvs and pick",
+  "concept": "atv-sadeloverdrag",
+  "object": "Bilens saten",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 49,
+  "rating": "4.4/88%",
+  "review_count": "49",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Bilsatesoverdrag — fangades av ATV-sokningen.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-606536285965386.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "606536285965386",
+  "tier": "ELIM",
+  "title": "pet car rear seat cover 600d thick and durable with side wings hammock",
+  "concept": "atv-sadeloverdrag",
+  "object": "Bilens baksate",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 16,
+  "rating": "5/100%",
+  "review_count": "8",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Husdjursskydd for bil.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601100076850853.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601100076850853",
+  "tier": "ELIM",
+  "title": "car seat cover thick cushion seat cover under car seat 600d waterproof and anti slip",
+  "concept": "atv-sadeloverdrag",
+  "object": "Bilens saten",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 12,
+  "rating": "4.7/94%",
+  "review_count": "54",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Bilsatesoverdrag.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601100772183218.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601100772183218",
+  "tier": "ELIM",
+  "title": "heavy duty car seat covers fit rear seat protector with elastic straps",
+  "concept": "atv-sadeloverdrag",
+  "object": "Bilens baksate",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 17,
+  "rating": "4.1/82%",
+  "review_count": "30",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Bilsatesoverdrag.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601101322253896.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601101322253896",
+  "tier": "ELIM",
+  "title": "53in bench back seat cover for cars trucks suvs waterproof",
+  "concept": "atv-sadeloverdrag",
+  "object": "Bilens baksate",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 15,
+  "rating": "4.7/94%",
+  "review_count": "99+",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Bilsatesoverdrag.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601103040500656.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601103040500656",
+  "tier": "ELIM",
+  "title": "seat covers waterproof seat covers for cars for honda for toyota camry corolla",
+  "concept": "atv-sadeloverdrag",
+  "object": "Bilens saten",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 20,
+  "rating": "4.6/92%",
+  "review_count": "96",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Bilsatesoverdrag.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-605585957325036.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "605585957325036",
+  "tier": "ELIM",
+  "title": "heavy duty thick oxford car pet back seat cover with anti slip base",
+  "concept": "atv-sadeloverdrag",
+  "object": "Bilens baksate",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": null,
+  "rating": null,
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Bilsatesoverdrag.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601099529341585.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601099529341585",
+  "tier": "ELIM",
+  "title": "dog car seat cover for back seat waterproof scratch resistant dog hammock cover",
+  "concept": "atv-sadeloverdrag",
+  "object": "Bilens baksate",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": null,
+  "rating": "4.8/96%",
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Hundhangmatta for bil.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601099575827648.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "over 1 000 kr"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601099575827648",
+  "tier": "ELIM",
+  "title": "fit boat seat waterproof sun resistant foldable cushion for kayaks and rubber boats",
+  "concept": "atv-sadeloverdrag",
+  "object": "Batsitsen",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 104,
+  "rating": "5/100%",
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Batsits — annat kluster.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601101411747476.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "under 199 kr"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601101411747476",
+  "tier": "ELIM",
+  "title": "1pc foldable seat cushion moisture proof portable outdoor travel mat",
+  "concept": "atv-sadeloverdrag",
+  "object": "Ingen agd sak",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 3,
+  "rating": "4.5/90%",
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Sittdyna for picknick.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-606218122799927.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "under 199 kr"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "606218122799927",
+  "tier": "ELIM",
+  "title": "waterproof car back seat protector organizer 2 pack anti kick scratch resistant",
+  "concept": "atv-sadeloverdrag",
+  "object": "Bilens baksate",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 6,
+  "rating": "5/100%",
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Bilinredning.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-605860097056883.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "under 199 kr"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "605860097056883",
+  "tier": "ELIM",
+  "title": "car trash can door side lid storage bucket mini storage bag",
+  "concept": "bilinredning",
+  "object": "Bilens dorrficka",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 3,
+  "rating": "4/80%",
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Bilinredning.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601101297714570.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "under 199 kr"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601101297714570",
+  "tier": "ELIM",
+  "title": "organizer folding storage box cars trucks suvs",
+  "concept": "bilinredning",
+  "object": "Bagageutrymmet",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 6,
+  "rating": "4.6/92%",
+  "review_count": "99+",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Bilinredning.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601099621306309.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "objektet forvaras inomhus",
+   "over 1 000 kr"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601099621306309",
+  "tier": "ELIM",
+  "title": "12v car refrigerator cooler and warmer 23 quart 31 quart for camping rv fishing",
+  "concept": "husvagn-kyla",
+  "object": "Kylbox",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 99,
+  "rating": "4.5/90%",
+  "review_count": "99+",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Kylbox — forvaras inomhus mellan resorna, och over pristaket.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-605971699076972.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "over 1 000 kr"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "605971699076972",
+  "tier": "ELIM",
+  "title": "portable car refrigerator car mini fridge 12v car cooler portable camping fridge",
+  "concept": "husvagn-kyla",
+  "object": "Kylbox",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 146,
+  "rating": "-",
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Samma som ovan.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-606559371370950.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "over 1 000 kr"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "606559371370950",
+  "tier": "ELIM",
+  "title": "portable car fridge 12v mini freezer cooler compact electric travel refrigerator",
+  "concept": "husvagn-kyla",
+  "object": "Kylbox",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": 102,
+  "rating": "4.7/94%",
+  "review_count": "15",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Samma som ovan.",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-605773056866353.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "over 1 000 kr"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "605773056866353",
+  "tier": "ELIM",
+  "title": "2in 1 outdoor propane fire pit table with tank 30 round gas firepit table",
+  "concept": "gasoltuben",
+  "object": "Uteplatsen",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": null,
+  "rating": null,
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Eldkorg — annat kluster (tomt).",
+  "confidence": "MEDIUM"
+ },
+ {
+  "kluster": "husvagn-mc",
+  "already_known": false,
+  "url": "https://www.temu.com/se/g-601103991683486.html",
+  "sold": null,
+  "variants": null,
+  "price_source": "seznam-snippet (site:temu.com, 2026-09-04)",
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "Bilder och leverantorsvideo gar inte att se: temu.com svarar med tomt skal (verifierat 2026-09-04 pa /se/g-601101311828193.html, titeln blev Temus startsida). Se DATAVAGAR.md avsnitt 4."
+  },
+  "negative_space_flags": [
+   "objektet forvaras inomhus"
+  ],
+  "sources": [
+   "site:temu.com caravan awning storm strap tie down kit"
+  ],
+  "goods_id": "601103991683486",
+  "tier": "ELIM",
+  "title": "1 pack zao mei heavy duty wall mounted backpack blower chainsaw rack storage organizer",
+  "concept": "verktygshallare",
+  "object": "Lovblas/motorsag i garaget",
+  "owner_owns": null,
+  "friction": null,
+  "old_way": null,
+  "price_usd": null,
+  "rating": null,
+  "review_count": null,
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": null,
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "sätesöverdrag fyrhjuling ATV sadelöverdrag biltema jula (WebSearch, 2026-09-04)",
+    "teleskopborste husvagn tvättborste vattenslang biltema jula längd meter (WebSearch)",
+    "gnagarskydd musnät husvagn ventilation vinterförvaring möss galler (WebSearch)",
+    "markisstöd stormband husvagn markis storm tie down kit pris (WebSearch)",
+    "clasohlson.com/se/search?query=husvagn (WebFetch, 0 traffar)",
+    "clasohlson.com/se/search?query=överdrag husvagn (WebFetch)",
+    "getcamping.se sitemap + kategorin /ovriga-tillbehor/overdrag/ (WebFetch, ankarpriser)",
+    "getcamping.se .../overdrag/eurotrail-husvangsoverdrag/ (WebFetch, spec + storlekar)",
+    "biltema.se, jula.se, rusta.com: 403/404 (Akamai) — EJ verifierbara denna korning"
+   ]
+  },
+  "economics": {
+   "landed_low_sek": null,
+   "landed_high_sek": null,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN"
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "eliminated_at": "object",
+  "winner_dna_match_0_100": null,
+  "category_novelty_0_100": null,
+  "main_risk": "Vaggfaste for lovblas — annat kluster (garage/handmaskiner), och objektet forvaras inomhus.",
+  "confidence": "MEDIUM"
+ }
+]
