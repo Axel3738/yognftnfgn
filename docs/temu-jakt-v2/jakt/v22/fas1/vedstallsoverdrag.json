@@ -24,6 +24,7 @@
   "economics": {
     "calibration": "SE-Temu ≈ USD × 6,96–8,16 ; landad ≈ SE-Temu × 1,5 ; krav: SE-pris ≥ 2,4 × landad OCH ≥ 300 kr OCH BE-CPA (pris − landad) ≥ 190 kr ; stopp om landad > 420 kr (DATAVAGAR.md §6)",
     "economics_source": "us-proxy",
+    "read_this_first": "multiple_low = pris / landed_high (sämsta änden), multiple_high = pris / landed_low. be_cpa är räknat på landed_low, alltså den BÄSTA tänkbara utgången — och faller ändå.",
     "reference_listing_for_landed": "601099615828436 @ 34,47 USD (verifierad rå-hämtning 2026-09-04T07:24Z)",
     "landed_low": 359.87,
     "landed_high": 421.92,
