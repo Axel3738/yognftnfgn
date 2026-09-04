@@ -105,12 +105,24 @@ export async function action({ request }: ActionFunctionArgs) {
   const applied: string[] = [];
   const skipped: string[] = [];
 
+  /* Leverantörsofferter skriver "6-18 hk" där butiken har "6 - 18 hk" eller
+     "6–18 hk" — samma variant, olika streck. Jämför därför på en städad form.
+     En rad får också träffa via ett enda alternativ ("6 - 18 hk" träffar
+     "Svart / 6 - 18 hk", "Blå / 6 - 18 hk" …) så att en storleksprislista
+     inte behöver upprepas per färg. */
+  const norm = (s: string) =>
+    s.toLowerCase().replace(/[–—−]/g, "-").replace(/\s*([-/])\s*/g, "$1").replace(/\s+/g, " ").trim();
+  const variantMatches = (variantTitle: string, wanted: string) => {
+    if (wanted === "") return true;
+    const w = norm(wanted);
+    const v = norm(variantTitle);
+    return v === w || v.split("/").includes(w);
+  };
+
   for (const row of parsed) {
     // Tom varianttitel = alla varianter i produkten.
     const targets = catalog.all.filter(
-      (v) =>
-        v.productTitle.toLowerCase() === row.product.toLowerCase() &&
-        (row.variant === "" || v.variantTitle.toLowerCase() === row.variant.toLowerCase()),
+      (v) => norm(v.productTitle) === norm(row.product) && variantMatches(v.variantTitle, row.variant),
     );
     if (!targets.length) {
       skipped.push(`${row.product}${row.variant ? ` · ${row.variant}` : ""}`);

@@ -337,3 +337,19 @@ Varje svar till honom följer detta, utan undantag:
 - Exakta betalväxel-avgifter (feeRate är schablon).
 - Grillkliniken: Axel vill klona hela upplägget till en annan butik.
 - App Store-granskningssvaret: åtgärda när mejlet kommer.
+
+### Motorhöljen: kostnad per hk-storlek (2026-09-04)
+Leverantörsofferten `Axel_quote.xlsx` ger motorhöljet per hk-storlek och land
+(USD, 1 st). Tidigare låg 160,75 kr (största storleken) på alla varianter i
+alla butiker — fel för allt utom 250–350 hk i SE. Rätt kostnader ligger i
+scratch-filerna `cogs-motorholjen-{sverige,norge,finland,danmark,uk}.csv`
+(Axel släpper dem i respektive butiks Kostnader-sida). Mappning butiksvariant →
+leverantörsstorlek: 6-18→6~15, 20-30→20~30, 40-60→30~60, 60-90→60~100,
+100-150→100~150, 175-250→175~225. `Båtmotorskydd 420D – Heltäckande` (9 hk-
+varianter) finns bara i SE. Båtskyddets tre storlekar i offerten är inte
+inlagda — SE-produkten har en variant och vi vet inte vilken storlek den är.
+
+CSV-importen matchar sedan v58 varianter på städad form (alla streck = "-",
+mellanslag runt "-" och "/" ignoreras) och en rad kan träffa ett enskilt
+alternativ: variantkolumnen `6 - 18 hk` träffar `Svart / 6 - 18 hk`,
+`Blå / 6 - 18 hk` osv. Storleksprislistor behöver alltså inte upprepas per färg.
