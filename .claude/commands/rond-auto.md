@@ -307,15 +307,19 @@ kör.)*
   2. Dupliceringen är asynkron — vänta och hämta om tills databasen finns,
      döp sedan om via notion-update-data-source till
      "<Produktnamn på engelska> creative hub".
-  3. **Kontrollera åtkomsten innan du skapar items** (Axels krav 2026-09-01):
-     hubben ska ligga i teamspacet **Bäverbutiken** och vara öppen för hela
-     teamspacet — alla medlemmar ska nå den utan att bjudas in personligen.
-     Hämta hubben med notion-fetch och verifiera att föräldern är teamspacet,
-     inte en privat sida eller Axels eget utrymme. Ligger den fel: flytta den
-     till teamspacet med notion-move-pages och läs tillbaka. Går det inte att
-     flytta — skapa INGA items, utan säg till Axel att hubben ligger privat.
-     En hub som bara inbjudna når är osynlig för redigerarna, och då är
-     brieferna skrivna i papperskorgen.
+  3. **Åtkomsten ärvs från MALLEN — den går inte att sätta via API:t.**
+     En dubblett hamnar där originalet ligger. Ligger `Creative hub MALL`
+     privat blir VARJE ny hub privat, och redigerarna ser ingenting.
+     Notion-MCP:n har inget verktyg för att dela en sida eller sätta
+     behörigheter — det finns bara i Notions gränssnitt.
+     Gör så här: hämta hubben med notion-fetch efter dupliceringen och läs
+     `<ancestor-path>`. Är den TOM ligger hubben privat på workspace-nivå.
+     Skapa items ändå (arbetet ska inte gå förlorat), men skriv i leveransen
+     under "Väntar på dig": *"<hubbens namn> ligger privat — flytta den till
+     teamspacet Bäverbutiken."* Nämn samtidigt att mallen behöver flyttas dit
+     en gång, så slipper alla framtida hubbar problemet.
+     *(Axels larm 2026-09-02: alla nya hubbar var privata. Rutinen kan inte
+     rätta det själv — den kan bara upptäcka det och säga till.)*
   4. Skapa items med notion-create-pages: Status "Draft",
      Typ **"Video - Pending Approval"** för video och
      **"Image - Pending Approval"** för bildannonser (Axels nya typ i mallen).
@@ -458,7 +462,7 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 - [ ] Alla `forsta_batch` körda (inget tak) + högst två `brief_runda`, med
       *_KLAR-loggrad och minnesfiler pushade — eller exakt redovisat varför inte
 - [ ] Inga briefer, hubbar eller minnesfiler skapade för NO — Norge är bara budget
-- [ ] Varje ny Notion-hub verifierad att den ligger öppet i teamspacet Bäverbutiken
+- [ ] Varje ny Notion-hubs `ancestor-path` avläst; ligger den privat står det under "Väntar på dig"
 - [ ] Ett skapat Notion-item öppnat och kontrollerat: hela briefen står i sidan, ingen `.md`-länk
 - [ ] Alla loggrader skrivna och pushade efter varje ändring (= minnet sparat)
 - [ ] Ingen artefakt publicerad och `agent/dashboard.mjs` inte körd
