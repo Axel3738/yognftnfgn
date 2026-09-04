@@ -53,3 +53,29 @@ Skalningstak = heuristiken i lagret (band × säsong), inte en mätning.
 - Ingen i listan flyttas till **C**. Hönsgårdshuven (25k–75k) och hundgårdshuven är B enligt
   nischregeln: igenkänningen är stark, problemet finns, creativen självselekterar, ekonomin
   håller och konkurrensen är låg.
+
+---
+
+## Batch 1 (2026-09-04, kväll) — två nya kluster, V2.1-ordning + Sverige-lager
+
+Kluster: **fritidshuset stängs för vintern** (24 koncept prövade) och **höstfiske från båt/brygga/strand**
+(26 koncept). Underlag: `batch1/fritidshus.json`, `batch1/hostfiske.json` + `.md`. Temu blockerat hela
+körningen → material PENDING på allt; pris ur Seznam-utdrag där det fanns.
+
+**Resultat: 50 prövade → 5 levererade (0 TEST, 2 VERIFY, 3 WATCH), 45 REJECT** — 44 av dem på hyllan.
+Höstfiske: 21 av 26 föll på ett belagt golv under 300 kr; svensk sportfiskehandel (Sportfiskeprylar,
+Fiske.se, Biltema/Jula-avdelningar) fungerar som ett eget "Temu för fiske". Fritidshus: bryggstege,
+kanotställ och vägbom är tunga metallprodukter som landar över 420 kr; kranskyddet är kontots redan
+testade förlorare (omtest, inte nytt) och togs bort.
+
+| # | Produkt | Temu | DNA | Sverige | TAM | Säsong | Konkurrens | Status |
+|---|---|---|---|---|---|---|---|---|
+| B1-1 | Löstagbar säkerhetsbom dörr/fönster (tomt fritidshus) | 601099970240430 ($17, 96 %, 99+) / 601101482201265 ($11) | 81 | S | 500k+ · 607 000 fritidshus (SCB) | sep–okt köp, huset tomt sep–maj · 8 | WHITE SPACE (svag: Ad Library oläst; PriceRunner/Big4 tomma på flyttbar bom; ABUS 785 fast montage som ankare) | VERIFY — material + Clas Ohlson/Jula "dörrbom" i butik; objektet är en dörr (inomhus) — kameran är prejudikatet |
+| B1-2 | Filébord med relingsklämma (spöhållarbas) | 601099564703752 / 601100998683849 / 601102430331989 (pris PENDING; US-ankare KNINE $69,97) | 68 | B | 75k–200k · av 800 000 båthushåll (Båtlivsundersökningen 2025) | sep–nov · 3 | WHITE SPACE för relingsformen; lös bräda 47 kr hos Biltema/Jula | VERIFY — pris + material; skillnaden mot 47-kronorsbrädan måste synas sekund ett |
+| B1-3 | Låsbar vägbom till fritidshusinfarten | 601099569121776 (2 stolpar) / 601099580896887 / 601099576382947 (pris PENDING) | 62 | B | 200k–500k uppskattning | sep–okt · 2 (+vår) | UNKNOWN | WATCH — tung metall, troligen > 420 kr landad |
+| B1-4 | Fristående vändbock/ställ för kanot/roddbåt | 601099626485532 (pris PENDING) / 606224716257072 ($55 = FAIL) | 58 | B | 75k–200k uppskattning | sep–okt · 2 | WHITE SPACE (bara väggställ 271 kr i Sverige) | WATCH — skadan är långsam (latent), känd listning för dyr |
+| B1-5 | Håvhållare på relingen | ingen ren listning (bara spöklämmor) | 42 | B | 75k–200k | sep–nov · 3 | WARNING (2 nischbutiker 386–895; formen = spöhållaren) | WATCH — risk att vara samma produkt som kontots spöhållare |
+
+Lärdom: fiske och fritidshus är **hyllans** kluster, inte Temus. Nästa batch bör gå tillbaka till
+"maskiner, fordon och kärl som står stilla utomhus" eller till andra produkter mot redan validerade
+publiker (spabad 160 000, husvagn 283 840, jägare 271 000, vedeldare 1,1 M).
