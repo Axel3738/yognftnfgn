@@ -249,6 +249,10 @@ som utgren (`create_session` med `source_url` + `outcome_branch`, sedan
 `create_trigger` med `persistent_session_id`) — så gör Bildannonser och
 Norska recensioner. Bygg aldrig en ny rutin med "ny session varje gång" om
 den ska spara något i repot.
+*(Mätt igen 2026-09-04 på `/oversatt`: `create_trigger` med "ny session varje
+gång" startade i en TOM container — `sources: []`, inget repo, inget CLAUDE.md.
+Rutinen raderades och byggdes om som fast session enligt ovan.)*
+
 
 ⚠️ **Rutiner ärver inte sessionens MCP-connectors.** En rutin som behöver Notion,
 Drive eller Shopify måste få connectorn kopplad på själva rutinen i Routines-vyn
