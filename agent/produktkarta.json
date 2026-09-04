@@ -31,9 +31,16 @@
       "campaign_id": "120250053730340291",
       "produkt": "Medicinasken i Fickformat",
       "lage": "test",
-      "lage_motivering": "startad 2026-09-02, saknades i kartan — tillagd av /rond-auto",
-      "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "lage_motivering": "2 025,32 kr spend (livstid, avläst 2026-09-04), 2 köp, ROAS 0,49 mot BE 1,60 — långt under break-even. Stängdes AV av /rond-auto:s huvudflöde 2026-09-04 (trappan). Saknade helt minnesfiler trots 4 launchade annonser — fick sin första riktiga batch via forsta-batch.md-flödet (specialregeln i rond-auto.md 4b), loggad CS_BATCH_KLAR inte FORSTA_BATCH_KLAR eftersom produkten redan haft spend/annonser innan minnessystemet fanns. Kampanjen förblir PAUSED — denna körning rörde inte Meta-status. Viktigt fynd: 12 producerade videor ligger oanvända i Drive, aldrig granskade (se products/medicinasken-fickformat/dna.md).",
+      "break_even_roas": 1.6,
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "3d1270ab-908c-8159-a4d4-f522386c4bc6",
+      "notion_hub_datakalla": "810270ab-908c-837b-a5d9-87a2cfa83944",
+      "notion_hub_namn": "Medicine box creative hub",
+      "drive_produktmapp_id": "1Ir9edfyrKqWTzE76Aa28BIVX4kGTY5oE",
+      "drive_produktmapp_not": "Joshs befintliga produktmapp \"Medicinask i Fickformat\" (LAUNCHED-undermappen i BÄVER/Products, ägs av joshnaelga146). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products (lanseringskön). Innehåller även 12 oanvända videofiler och 4 ADCOPY-dokument (två med BLOCKER-fynd — se dna.md).",
+      "drive_senaste_batchmapp_id": "17NQ5UtPcplAKojn5TdzjFh9yHaZnXb-5",
+      "minne": "products/medicinasken-fickformat/"
     },
     {
       "campaign_id": "120250053637760291",
