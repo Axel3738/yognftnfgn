@@ -406,3 +406,10 @@ innan den drar någon slutsats.
 - [ ] Discord-brief i marknadens kanal i Axels läsformat, även vid tom kö; problem i problemkanalen
 - [ ] Kvot/saldo före → efter rapporterat; kön listad
 - [ ] Körlogg + STATUS uppdaterade, committat och pushat utan leveransfiler
+
+## Rutinen i drift (2026-09-04)
+
+- Fast session: `session_01KFNtDdxzve3tvz84AViU28` (källa `Axel3738/yognftnfgn@main`, utgren `main`).
+- Trigger: `trig_014ZMp7iEhxusDgJaYzMRyEu`, cron `0 13 * * *` (15:00 CEST), `persistent_session_id` → sessionen ovan.
+- Första försöket (`create_trigger` med ny session varje gång) startade 2026-09-04 13:15 UTC i en tom container utan repo och raderades. Se varningen i CLAUDE.md under "Nattrutinerna".
+- Varje körning börjar med `git fetch origin main && git checkout main && git reset --hard origin/main` — sessionen lever kvar mellan dagarna, så trädet måste synkas innan kommandot läses.
