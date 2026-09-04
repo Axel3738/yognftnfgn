@@ -5,10 +5,24 @@ Produktjakt V2.2, 2026-09-04. Fas 1 (fyra befintliga överlevare färdigställda
 Metod oförändrad: `docs/temu-vinnar-dna.md` avsnitt 12 + `PIPELINE-V2.1.md`.
 Datavägar när Temu är blockerat: `v22/DATAVAGAR.md`.
 
-⚠️ **Gate 5 MATERIAL är tekniskt stängd i hela körningen.** temu.com svarar med tomt skal på
-både `/se` och USA-vägen (mätt 09:15, 09:36 och 10:0x UTC). Bilder och leverantörsvideo går
-bara att se för de elva id:n som hämtades innan blocket. Enligt V2.1 blir det `BLOCKED_SOURCE`,
-aldrig FAIL. Det är därför bara **en** produkt står som TEST NOW utan förbehåll.
+> ## ⚠️ UPPDATERING 22:1x UTC — materialgaten är körd på riktigt
+>
+> Containern startades om och fick ny IP. **Temu svarar igen** (`blocked: false`). Jag hämtade
+> därför bilder och leverantörsvideo för de tre kandidater vars material var osett. **Tre domar
+> ändras** — se avsnittet "Materialgranskningen" längst ned. Sammanfattning:
+>
+> | Produkt | Före | Efter | Varför |
+> |---|---|---|---|
+> | Utekattkoja | TEST NOW | **TEST NOW** | oförändrad, materialet var redan sett |
+> | Staketstolps-bygel | TEST IF VERIFIED | **TEST NOW** | heron är textfri och visar mekanismen i marken |
+> | Husvagns-taköverdrag | TEST IF VERIFIED | **ALTERNATIVE_LISTING_REQUIRED** | videon visar en röd pickup, inte en husvagn |
+> | Tändvedsklyv | TEST IF VERIFIED | **WATCH** | den strukturellt bästa listningen kostar 34,11 USD, inte 16 |
+>
+> Texten nedan står kvar som den skrevs. Materialavsnittet längst ned går före.
+
+Gate 5 MATERIAL var tekniskt stängd under hela jakten. temu.com svarade med tomt skal på
+både `/se` och USA-vägen (mätt 09:15, 09:36 och 10:0x UTC). Enligt V2.1 blir det `BLOCKED_SOURCE`,
+aldrig FAIL. Det är därför bara **en** produkt stod som TEST NOW när jakten avslutades.
 
 ---
 
@@ -171,3 +185,80 @@ Sex av sju föll på **samma sak: svensk handel säljer redan samma form under v
 `v22/DATAVAGAR.md` (datavägarna) · `v22/FAS2-INSTRUKTION.md` (vad agenterna fick) ·
 `v22/kanda-goods-id.txt` (518 id för dubblettkontroll).
 Varje siffra ovan står i en av de filerna med källa. Saknat värde = UNKNOWN, aldrig gissat.
+
+---
+
+# MATERIALGRANSKNINGEN (2026-09-04 22:1x UTC)
+
+Containern startades om och fick ny IP. `temu-ld.py` svarar igen (`blocked: false`), så gate 5
+kunde köras på riktigt för de tre kandidater vars material var osett. Rådata + bilder + video:
+`v22/material/`. **Det här avsnittet går före allt ovan.**
+
+## Staketstolps-reparationsbygel `601103866118857` — MATERIAL **PASS** → **TEST NOW**
+
+Färska tal: **16,95 USD** · ★4,8 · **109 recensioner** (var 89) · 3 bilder · video finns.
+
+**Heron är textfri** och gör två saker samtidigt: fyra svarta byglar på vit botten, och bredvid
+dem ett genomskärningsdiagram där bygeln är nedslagen i jorden intill en trästolpe med gräs
+ovanpå. Mekanismen och payoffen syns utan ett enda ord. Ingen inbränd utländsk text.
+Det är den enda nya kandidaten vars hero klarar fingeravtryckets krav.
+
+**Videon är en studiopackshot** (svarta byglar på ett bord) — duger som bevisklipp, aldrig som
+öppning. Samma roll som utekattkojans video.
+
+**En invändning syns i heron:** 32 skruvar, en fast nyckel och en insexnyckel ligger utlagda i
+bild. Det signalerar monteringsarbete, och montering finns i negativa rymden hos 30 % av
+förlorarna. Motmedlet är att beskära bort skruvhögen och låta genomskärningen bära annonsen.
+
+**Ekonomin räknas om på 16,95 USD:** landad **177–208 kr**.
+- 499 kr → 2,40–2,82× · BE-CPA 292–322 kr. **Låga änden ligger exakt på gränsen.**
+- 599 kr → 2,89–3,39× · BE-CPA 392–422 kr. **Rekommenderas** — marginal i båda ändarna.
+- 4-set 799 kr som andra SKU (äkta flerköpsskäl: ett staket har flera lutande stolpar).
+
+## Husvagns-taköverdrag `601101311828193` — MATERIAL **FAIL** → `ALTERNATIVE_LISTING_REQUIRED`
+
+Färska tal: **26,52 USD** (var 25) · ★4,6 · 48 recensioner · 17 bilder · video 
+`goods-vod.kwcdn.com/goods-video/490f857156757af15c313f9e5d65cc9f0b40ee3b.f30.mp4`.
+
+**Heron:** en rendering av en **amerikansk Class A-husbil** — en bussliknande koloss — på vit
+botten, i två vyer, med en grön banner och inbränd engelsk text "RV ROOF COVER". Ingen ägare,
+ingen höst, ingen kontext. Svenska ägare har husvagn på krok eller en betydligt mindre husbil.
+
+**Videon är värre:** den visar en **röd pickup** med ett svart skynke över flaket, ett kinesiskt
+klistermärke på flanken och inbränd engelsk varianttext "Black". Det är en annan fysisk produkt
+på ett annat fordon. Det är precis det felet som gav soptunneklistermärkenas leverantörsvideo
+ROAS 0,56 — det enda kreativa felet i hela vinnar-DNA:t som har en egen mätt siffra.
+
+**Konceptet står kvar och är starkt.** Hyllan är verifierad (Campmaster takskydd från 1 495 kr =
+1,87× vårt pris, ingen kedja i tak-only-formen), publiken är verifierad (116 344 avställda
+husvagnar), varianten anges i meter, säsongen pågår. Ekonomin på 26,52 USD: landad **277–325 kr**
+→ 799 kr ger **2,46–2,88×** (var 2,61–3,06) · BE-CPA 474–522 kr. Fortfarande PASS, men tightare.
+
+**Det som behövs: en annan listning av samma form vars bilder visar en husvagn.** Sök på
+"caravan roof cover", "touring caravan top cover", "caravan roof protector" — inte "RV", som
+drar in den amerikanska husbilshyllan.
+
+## Tändvedsklyv — **WATCH**
+
+Den strukturellt bästa listningen `601099561039096` (9 lbs, ett stycke, halv-ring) kostar
+**34,11 USD**, inte de ~16 som ekonomin byggde på. Landad 356–417 kr → 599 kr ger bara
+**1,44–1,68×**. **Ekonomin faller.** Dessutom: 2 bilder, 9 recensioner, **ingen video**.
+
+Den prissatta referensen `601099583674464` står fast på **16,25 USD**, ★4,9, 28 recensioner —
+men har **1 bild och ingen video**. Ekonomin håller där (3,0–3,5× vid 599 kr), materialet gör det
+inte. Konceptet är alltså delat mitt itu: den billiga listningen saknar material, den bra
+listningen saknar prisutrymme.
+
+Kvar att pröva: `601099702553211` (handskar ingår → hand i bild) och `601099595396016` (GoPlus).
+Faller båda på samma sätt sitter felet i formen och konceptet ska FAIL:as strukturellt.
+
+## Vad det här säger om metoden
+
+Fyra av fyra osedda material visade sig vara sämre än titeln antydde, och två av dem hade
+**fel fysiskt objekt i bild**. Titelindicier är alltså ingen proxy för gate 5 — de överskattar
+systematiskt. `BLOCKED_SOURCE` ska aldrig läsas som "troligen ok"; den ska läsas som "okänt,
+och erfarenheten säger att okänt oftare är dåligt".
+
+Priserna rörde sig också: 25 → 26,52 USD, 16 → 16,95 USD, och den strukturellt bästa klyven
+visade sig kosta dubbelt så mycket som antaget. **Sökutdragens pris är en uppskattning, inte
+ett pris.** Räkna aldrig en slutgiltig ekonomi på ett snippet-pris.
