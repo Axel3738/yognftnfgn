@@ -1,0 +1,31 @@
+[
+ {
+  "form": 0,
+  "text": "1 715 kr → 1 029 kr.",
+  "rad": 0,
+  "se": "1 182 kr → 909 kr.",
+  "stryk": "1 715 kr",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Spar 686 kr.",
+  "rad": 1,
+  "se": "Spara 273 kr.",
+  "vanster": false
+ },
+ {
+  "form": 4,
+  "text": "Slipebånd, slipeskiver, polérvoks og sekskantnøkler følger med.",
+  "rad": 0,
+  "se": "Slipband, slipskivor, polervax och insexnycklar följer med.",
+  "vanster": false
+ },
+ {
+  "form": 5,
+  "text": "Bestill for 1 029 kr",
+  "rad": 0,
+  "se": "Beställ till 909 kr.",
+  "vanster": false
+ }
+]

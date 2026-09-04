@@ -1,0 +1,43 @@
+[
+ {
+  "form": 0,
+  "text": "218 × 118,5 cm dekker de fleste MC-er, mopeder og scootere.",
+  "rader": [
+   0,
+   1,
+   2
+  ],
+  "se_rader": [
+   "218×118,5 cm täcker de",
+   "flesta MC, mopeder och",
+   "scooters."
+  ],
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Passer den ikke: du får pengene tilbake innen 30 dager.",
+  "rad": 3,
+  "se": "Passar den inte: pengarna tillbaka inom 30 dagar.",
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "269 kr.",
+  "rad": 0,
+  "se": "349 kr.",
+  "vanster": false
+ },
+ {
+  "form": 2,
+  "klipp_efter_rad": 0,
+  "rad": null
+ },
+ {
+  "form": 2,
+  "text": "Test risikofritt",
+  "rad": 0,
+  "se": "Testa riskfritt",
+  "vanster": false
+ }
+]

@@ -222,6 +222,7 @@ Merga alltid till `main`, annars är rutinen bara schemalagd, inte igång.
 | 05:30 | `30 3 * * *` | Norska recensioner | `/no-recensioner` |
 | 20:00 | `0 18 * * *` | Bildannonser | `/bildannonser` |
 | 13:20 | `20 11 * * *` | Leveransrundan | `/notionkorning` |
+| 15:00 | `0 13 * * *` | Översättning till Norge (bild + video ur Notion-kön `SE-ACTIVE to be translated`) | `/oversatt NO` |
 | 06:00 | `0 4 * * *` | Commission | `/commission` |
 
 `/commission` har daglig cron med flit: **skriptet självt avgör** om dagen är

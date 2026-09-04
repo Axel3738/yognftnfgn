@@ -1,0 +1,68 @@
+[
+ {
+  "form": 0,
+  "klipp_efter_rad": 4,
+  "rad": null
+ },
+ {
+  "form": 0,
+  "text": "1 029 kr.",
+  "rad": 0,
+  "se": "909 kr.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Spar 686 kr (40 %) mot ordinær pris.",
+  "rader": [
+   1,
+   2
+  ],
+  "se_rader": [
+   "Spara 273 kr (23 %) mot",
+   "ordinarie pris."
+  ],
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Beltesliper Mini 3-i-1 — kniv, saks, øks, én maskin.",
+  "rader": [
+   3,
+   4
+  ],
+  "se_rader": [
+   "Bälteslipmaskin Mini 3-i-1 — kniv, sax, yxa, en",
+   "maskin."
+  ],
+  "vanster": false
+ },
+ {
+  "form": 2,
+  "text": "1 029 kr",
+  "rad": 0,
+  "se": "909 kr",
+  "vanster": true
+ },
+ {
+  "form": 2,
+  "text": "Ord. 1 715 kr",
+  "rad": 1,
+  "se": "Ord. 1 182 kr",
+  "vanster": true
+ },
+ {
+  "form": 2,
+  "text": "Spar 686 kr (40 %)",
+  "rad": 2,
+  "se": "Spara 273 kr (23 %)",
+  "vanster": true
+ },
+ {
+  "form": 3,
+  "text": "Bestill for 1 029 kr",
+  "rad": 0,
+  "se": "Beställ till 909 kr",
+  "vanster": false
+ }
+]

@@ -3,6 +3,20 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-04 — 0 nya, allt redan klart
+
+Rutinkörning 05:35 svensk tid. MAKE TO NORWAY: samma 16 mappar som 2026-09-03,
+inga nya produkter. Bygget gav samma 142 rader som igår, `--dry` på alla 17
+produkter svarade "har redan synliga recensioner" — inget importerades.
+
+- **Gravsteinspenn**: arket är oförändrat, fortfarande bara "TEST –"-rader.
+- **Medisinboks i Lommeformat**: mappen har fått arket
+  `Medicinask i Fickformat_REVIEW` (id `1IHyBXyhujgZi4Q3GX5DKVb5pj8jEhGcacFUNVv6BA44`)
+  sedan igår. Alla 7 rader har recensentnamn `Exempel N – EJ KUNDRECENSION`
+  och titel `Exempelrecension – ej kundrecension`. Det är exempeltext som
+  uttryckligen säger att den inte är en kundrecension — **importeras aldrig**.
+  Produkten läggs i `sources.json` först när arket har riktiga rader.
+
 ## Läget 2026-09-03 — 17 produkter i `sources.json`, 15 klara i Judge.me
 
 Körningen 2026-09-03 (första från den fasta sessionen, alltså första som

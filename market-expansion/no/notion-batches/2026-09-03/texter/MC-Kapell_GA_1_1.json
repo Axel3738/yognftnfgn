@@ -1,0 +1,30 @@
+[
+ {
+  "form": 0,
+  "text": "30 dagers åpent kjøp.",
+  "rad": 0,
+  "se": "30 dagars öppet köp.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Liker du ikke trekket? Du får pengene tilbake.",
+  "rad": 1,
+  "se": "Gillar du inte kapellet? Pengarna tillbaka.",
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "Trygg betaling med Klarna.",
+  "rad": 0,
+  "se": "Fri frakt inom Sverige. Trygg betalning med Klarna.",
+  "vanster": false
+ },
+ {
+  "form": 2,
+  "text": "Handle trygt",
+  "rad": 0,
+  "se": "Handla tryggt",
+  "vanster": false
+ }
+]

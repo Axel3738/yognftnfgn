@@ -1,0 +1,70 @@
+[
+ {
+  "box": [
+   33,
+   55,
+   1047,
+   165
+  ],
+  "fet": true,
+  "storlek": 72,
+  "rader": 1,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "Uten beskyttelse."
+ },
+ {
+  "box": [
+   33,
+   172,
+   1047,
+   290
+  ],
+  "fet": true,
+  "storlek": 72,
+  "rader": 1,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "Med beskyttelse."
+ },
+ {
+  "box": [
+   33,
+   318,
+   1047,
+   392
+  ],
+  "fet": false,
+  "storlek": 40,
+  "rader": 1,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "420D Oxford-stoff, deksel til rigg."
+ },
+ {
+  "box": [
+   33,
+   1201,
+   1047,
+   1281
+  ],
+  "fet": false,
+  "storlek": 34,
+  "rader": 1,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "529 kr. 30 dagers åpent kjøp."
+ }
+]

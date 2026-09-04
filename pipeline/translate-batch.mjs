@@ -48,6 +48,8 @@ const stateFile = path.resolve(args.manifest) + '.state.json';
 const state = existsSync(stateFile) ? JSON.parse(readFileSync(stateFile, 'utf8')) : {};
 const save = () => writeFileSync(stateFile, JSON.stringify(state, null, 1));
 const LANG = args.lang || 'Norwegian Bokmål (Norway)';
+// Marknadskod i HeyGen-titeln (NO_/DK_/FI_/UK_) — en batchmapp per marknad, state saknar språkdimension.
+const MARKNAD = (args.marknad || 'NO').toUpperCase();
 
 const jobs = [];
 for (const [slug, p] of Object.entries(manifest)) {
@@ -90,7 +92,7 @@ switch (cmd) {
       if (st.srtDone === 'failed' || st.error) { delete st.proofreadId; delete st.srtDone; delete st.error; } // återskapa failade
       try {
         if (!st.assetUrl) { st.assetUrl = await h.uploadAsset(path.join(mDir, j.slug, 'up', j.name + '.mp4')); save(); console.log('upload ok', j.key); }
-        if (!st.proofreadId) { st.proofreadId = await h.proofreadCreate({ videoUrl: st.assetUrl, outputLanguage: LANG, title: 'NO_' + j.key }); save(); console.log('proofread skapad', j.key); }
+        if (!st.proofreadId) { st.proofreadId = await h.proofreadCreate({ videoUrl: st.assetUrl, outputLanguage: LANG, title: MARKNAD + '_' + j.key }); save(); console.log('proofread skapad', j.key); }
       } catch (e) { st.error = e.message; save(); console.error('FEL', j.key, e.message); }
     }
     // polla + hämta SRT

@@ -1,0 +1,43 @@
+[
+ {
+  "form": 0,
+  "text": "Slipebåndet i bevegelse.",
+  "rad": 0,
+  "se": "Slipbandet i rörelse.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "10 sekunder til skarp kniv.",
+  "rader": [
+   1,
+   2
+  ],
+  "se_rader": [
+   "10 sekunder till vass",
+   "kniv."
+  ],
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Samme slipebånd, tre verktøy: kniv, saks, øks.",
+  "rad": 3,
+  "se": "Samma slipband, tre verktyg: kniv, sax, yxa.",
+  "vanster": false
+ },
+ {
+  "form": 2,
+  "text": "1 029 kr (ord. 1 715 kr) — spar 686 kr",
+  "rad": 0,
+  "se": "909 kr (ord. 1 182 kr) — spara 273 kr",
+  "vanster": false
+ },
+ {
+  "form": 4,
+  "text": "Se aksjonen – bestill",
+  "rad": 0,
+  "se": "Se den i action — beställ nu",
+  "vanster": false
+ }
+]

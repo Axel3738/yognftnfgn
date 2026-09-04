@@ -7,6 +7,10 @@
 //   node tools/notion-aterkoppling.mjs <page-id> --kommentar "..." --status Draft
 //   node tools/notion-aterkoppling.mjs <page-id> --kommentar "..." --status Draft --torr
 //   node tools/notion-aterkoppling.mjs <page-id> --kommentar "Uppe i Meta: ..." --status "SE-ACTIVE to be translated"
+//   node tools/notion-aterkoppling.mjs <page-id> --kommentar "NO ✅ …" --egenskap "Translated url=https://…" --status "Translation in review"
+//
+// --egenskap <namn>=<värde> sätter ett url-/rich_text-/select-/multi_select-fält
+// (typen läses ur sidan). Används av /oversatt för "Translated url".
 //
 // Axels regler 2026-09-02:
 //   • Creative med problem (bild: allt, video: bara priset) → kommentar + "Draft".
@@ -32,6 +36,9 @@ const pageId = args.find((a, i) => !a.startsWith('--') && !(i > 0 && args[i - 1]
 const kommentar = flagga('kommentar');
 const nyStatus = flagga('status');
 const torr = finns('torr');
+const egenskaper = args.flatMap((a, i) => a === '--egenskap' && args[i + 1] ? [args[i + 1]] : [])
+  .map(s => { const i = s.indexOf('='); return i > 0 ? { namn: s.slice(0, i).trim(), värde: s.slice(i + 1) } : null; })
+  .filter(Boolean);
 
 if (!pageId) dö('Ange <page-id>. Exempel: node tools/notion-aterkoppling.mjs 3cc270ab908c817b97c2f74bc93ceaf7 --kommentar "..." --status Draft');
 if (!kommentar) dö('--kommentar är obligatorisk. En rad som flyttas utan förklaring är ett mysterium för redigeraren.');
@@ -69,6 +76,7 @@ const nuStatus = statusProp?.[statusProp.type]?.name ?? '';
 console.log(`Rad: ${titel}`);
 console.log(`Status nu: ${nuStatus || '(tomt)'}`);
 console.log(`Kommentar: ${kommentar}`);
+for (const e of egenskaper) console.log(`Egenskap: ${e.namn} = ${e.värde}`);
 if (nyStatus) console.log(`Statusbyte: ${nuStatus || '(tomt)'} → ${nyStatus}`);
 
 if (torr) { console.log('\n--torr: inget skrivet.'); process.exit(0); }
@@ -79,6 +87,22 @@ await notion('comments', {
   body: { parent: { page_id: sida.id }, rich_text: [{ text: { content: kommentar.slice(0, 2000) } }] },
 });
 console.log('✓ Kommentar skriven.');
+
+// 1b. Egenskaper (t.ex. Translated url). Typen läses ur sidan — fel typ = avbryt.
+for (const e of egenskaper) {
+  const prop = sida.properties?.[e.namn];
+  if (!prop) dö(`Raden har inget fält "${e.namn}".`);
+  let värde;
+  switch (prop.type) {
+    case 'url':          värde = { url: e.värde || null }; break;
+    case 'rich_text':    värde = { rich_text: [{ text: { content: e.värde.slice(0, 2000) } }] }; break;
+    case 'select':       värde = { select: { name: e.värde } }; break;
+    case 'multi_select': värde = { multi_select: e.värde.split(',').map(n => ({ name: n.trim() })).filter(x => x.name) }; break;
+    default: dö(`Fältet "${e.namn}" är av typ ${prop.type} — stöds inte av --egenskap.`);
+  }
+  await notion(`pages/${id}`, { method: 'PATCH', body: { properties: { [e.namn]: värde } } });
+  console.log(`✓ ${e.namn} satt.`);
+}
 
 // 2. Statusbytet, om begärt.
 if (nyStatus) {

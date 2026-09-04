@@ -1,0 +1,51 @@
+[
+ {
+  "form": 0,
+  "text": "5 ting trekket gjør",
+  "rad": 0,
+  "se": "5 saker skyddet gör",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Dekker deksel til rigg",
+  "rad": 1,
+  "se": "Täcker kåpa till rigg",
+  "vanster": true
+ },
+ {
+  "form": 0,
+  "text": "420D Oxford-stoff mot regn, snø, UV",
+  "rad": 2,
+  "se": "420D Oxford-tyg mot regn, snö, UV",
+  "vanster": true
+ },
+ {
+  "form": 0,
+  "text": "9 størrelser, 0–5 hk til 250–350 hk",
+  "rad": 3,
+  "se": "9 storlekar, 0–5 hk till 250–350 hk",
+  "vanster": true
+ },
+ {
+  "form": 0,
+  "text": "Ingen verktøy – dra over, stram remmen",
+  "rad": 4,
+  "se": "Inga verktyg – dra över, spänn remmen",
+  "vanster": true
+ },
+ {
+  "form": 0,
+  "text": "30 dagers åpent kjøp",
+  "rad": 5,
+  "se": "30 dagars öppet köp",
+  "vanster": true
+ },
+ {
+  "form": 1,
+  "text": "529 kr. Handle nå.",
+  "rad": 0,
+  "se": "579 kr. Handla nu.",
+  "vanster": false
+ }
+]

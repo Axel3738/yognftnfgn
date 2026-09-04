@@ -36,18 +36,23 @@ if (process.env.HTTPS_PROXY && process.env.NODE_USE_ENV_PROXY !== '1') {
 }
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
-const KONFIG = JSON.parse(readFileSync(join(HÄR, '..', 'market-expansion', 'no', 'discord.json'), 'utf8'));
 
 // ---- argument ---------------------------------------------------------------
-const flaggor = { problem: false, utanPing: false, torr: false, kanal: null };
+// --konfig=<sökväg> pekar på en annan marknads discord.json (DK/FI/UK); default NO.
+const flaggor = { problem: false, utanPing: false, torr: false, kanal: null, konfig: null };
 const textdelar = [];
 for (const a of process.argv.slice(2)) {
   if (a === '--problem') flaggor.problem = true;
   else if (a === '--utan-ping') flaggor.utanPing = true;
   else if (a === '--torr' || a === '--dry') flaggor.torr = true;
   else if (a.startsWith('--kanal=')) flaggor.kanal = a.slice('--kanal='.length);
+  else if (a.startsWith('--konfig=')) flaggor.konfig = a.slice('--konfig='.length);
   else textdelar.push(a);
 }
+const KONFIG_FIL = flaggor.konfig
+  ? (flaggor.konfig.startsWith('/') ? flaggor.konfig : join(HÄR, '..', flaggor.konfig))
+  : join(HÄR, '..', 'market-expansion', 'no', 'discord.json');
+const KONFIG = JSON.parse(readFileSync(KONFIG_FIL, 'utf8'));
 
 let text = textdelar.join(' ').trim();
 if (!text) {

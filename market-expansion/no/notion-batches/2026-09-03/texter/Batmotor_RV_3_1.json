@@ -1,0 +1,34 @@
+[
+ {
+  "form": 0,
+  "text": "”Bra beskyttelse mot regn og smuss. Jeg er fornøyd.”",
+  "rader": [
+   0,
+   1
+  ],
+  "se_rader": [
+   "”Bra skydd mot regn och smuts.",
+   "Jag är nöjd.”"
+  ],
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "– Johan K., kundeomtale på baverbutiken.se",
+  "rad": 2,
+  "se": "– Johan K., recension på baverbutiken.se",
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "klipp_efter_rad": 0,
+  "rad": null
+ },
+ {
+  "form": 1,
+  "text": "Handle nå.",
+  "rad": 0,
+  "se": "5,0 (8 recensioner). Handla nu.",
+  "vanster": false
+ }
+]

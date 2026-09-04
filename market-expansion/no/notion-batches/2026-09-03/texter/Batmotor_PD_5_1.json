@@ -1,0 +1,37 @@
+[
+ {
+  "form": 0,
+  "text": "Deksel til rigg.",
+  "rad": 0,
+  "se": "Kåpa till rigg.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Ikke bare toppen.",
+  "rad": 1,
+  "se": "Inte bara toppen.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "420D Oxford-stoff mot regn, snø og UV.",
+  "rad": 2,
+  "se": "420D Oxford-tyg mot regn, snö och UV.",
+  "vanster": false
+ },
+ {
+  "form": 3,
+  "text": "9 størrelser, 0–5 hk til 250–350 hk.",
+  "rad": 0,
+  "se": "9 storlekar, 0–5 hk till 250–350 hk.",
+  "vanster": false
+ },
+ {
+  "form": 4,
+  "text": "529 kr. Handle nå.",
+  "rad": 0,
+  "se": "579 kr. Handla nu.",
+  "vanster": false
+ }
+]

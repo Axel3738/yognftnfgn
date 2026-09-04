@@ -1,0 +1,82 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   160
+  ],
+  "fet": true,
+  "storlek": 70,
+  "rader": 1,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "Spar 270 kr i dag"
+ },
+ {
+  "box": [
+   33,
+   195,
+   1047,
+   258
+  ],
+  "fet": false,
+  "storlek": 40,
+  "rader": 1,
+  "farg": [
+   60,
+   58,
+   56
+  ],
+  "stryk": true,
+  "text": "1 169 kr"
+ },
+ {
+  "box": [
+   33,
+   295,
+   1047,
+   405
+  ],
+  "fet": true,
+  "storlek": 72,
+  "rader": 1,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "899 kr"
+ },
+ {
+  "form": 0,
+  "text": "Gratis frakt over 300 kr",
+  "rad": 0,
+  "se": "Fri frakt över 300 kr",
+  "vanster": true
+ },
+ {
+  "form": 0,
+  "text": "Klarna – betal senere",
+  "rad": 1,
+  "se": "Klarna – betala senare",
+  "vanster": true
+ },
+ {
+  "form": 0,
+  "text": "30 dagers fornøyd-kunde-garanti",
+  "rad": 2,
+  "se": "30 dagars nöjd-kund-garanti",
+  "vanster": true
+ },
+ {
+  "form": 1,
+  "text": "Handle nå",
+  "rad": 0,
+  "se": "Handla nu",
+  "vanster": false
+ }
+]

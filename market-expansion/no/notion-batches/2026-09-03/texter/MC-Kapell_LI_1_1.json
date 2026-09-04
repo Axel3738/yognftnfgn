@@ -1,0 +1,58 @@
+[
+ {
+  "form": 0,
+  "text": "5 ting trekket gjør",
+  "rad": 0,
+  "se": "5 saker kapellet gör",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Lakken slipper unna regn og sol",
+  "rad": 1,
+  "se": "Lacken slipper regn och sol",
+  "vanster": true
+ },
+ {
+  "form": 0,
+  "text": "På og av på ett minutt",
+  "rad": 2,
+  "se": "På och av på en minut",
+  "vanster": true
+ },
+ {
+  "form": 0,
+  "text": "Sitter fast i vind",
+  "rad": 3,
+  "se": "Sitter kvar i blåst",
+  "vanster": true
+ },
+ {
+  "form": 0,
+  "text": "Dekker hele sykkelen, 218 × 118,5 cm",
+  "rad": 4,
+  "se": "Täcker hela hojen, 218 × 118,5 cm",
+  "vanster": true
+ },
+ {
+  "form": 0,
+  "text": "Brettes sammen til en liten pakke",
+  "rad": 5,
+  "se": "Viker ihop till en liten packe",
+  "vanster": true
+ },
+ {
+  "form": 1,
+  "text": "269 kr (ord. 449 kr)",
+  "rad": 0,
+  "se": "349 kr (ord. 582 kr)",
+  "vanster": false
+ },
+ {
+  "form": 3,
+  "text": "Handle nå",
+  "rad": 0,
+  "se": "Handla nu",
+  "vanster": false
+ }
+]

@@ -1,0 +1,55 @@
+[
+ {
+  "form": 0,
+  "text": "219 kr.",
+  "rad": 0,
+  "se": "309 kr.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Trygg betaling med Klarna.",
+  "rad": 1,
+  "se": "Fri frakt.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "30 dagers åpent kjøp.",
+  "rad": 2,
+  "se": "30 dagars öppet köp.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Ingen risiko – send det tilbake innen 30 dager og få pengene.",
+  "rader": [
+   3,
+   4
+  ],
+  "se_rader": [
+   "Ingen risk – skicka tillbaka det inom 30 dagar och få",
+   "pengarna."
+  ],
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "420D Oxford-stoff, 22×14 cm. Klarna på faktura.",
+  "rad": 0,
+  "se": "420D Oxford-tyg, 22×14 cm. Klarna på fakturan.",
+  "vanster": false
+ },
+ {
+  "form": 2,
+  "klipp_efter_rad": 0,
+  "rad": null
+ },
+ {
+  "form": 2,
+  "text": "Bestill nå – 219 kr",
+  "rad": 0,
+  "se": "Beställ nu – 309 kr",
+  "vanster": false
+ }
+]

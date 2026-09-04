@@ -157,7 +157,11 @@ async function allaSidor(databaseId) {
  *  teamspacet raknas — Typ-faltet ar inte langre ett krav (det foljer med i
  *  utdatan som information). Kravet pa fil ar avgorande — utan den finns ingen
  *  creative att ladda upp. */
-export async function klaraRader(hub) {
+export async function klaraRader(hub, val = {}) {
+  // val.statusar: lista (gemener) i stället for KLAR_STATUS — /oversatt laser
+  // "se-active to be translated". val.typ: regex som Typ MASTE matcha (inkludering,
+  // aldrig uteslutning) — /oversatt kraver /pending approval/i.
+  const statusar = val.statusar ?? KLAR_STATUS;
   const sidor = await allaSidor(hub.id);
   const ut = [];
   for (const s of sidor) {
@@ -166,7 +170,8 @@ export async function klaraRader(hub) {
     if (!namn || /^Skärmavbild/i.test(namn)) continue;
     const typ = typFält ? värde(s.properties[typFält]) : '';
     const status = statusFält ? värde(s.properties[statusFält]) : '';
-    if (!KLAR_STATUS.includes(status.toLowerCase())) continue;
+    if (!statusar.includes(status.toLowerCase())) continue;
+    if (val.typ && !val.typ.test(typ)) continue;
 
     const filer = Object.values(s.properties)
       .filter(p => p.type === 'files')
@@ -203,7 +208,7 @@ export async function hämtaFil(url, målsökväg) {
 
 /** Alla klara rader i alla hubbar. Fel per hub samlas i stallet for att stoppa allt —
  *  404 betyder "integrationen ar inte inbjuden", inte att databasen saknas. */
-export async function allaKlaraRader() {
+export async function allaKlaraRader(val = {}) {
   const hubbar = await hittaHubbar();
   // Noll hubbar betyder ALDRIG "det finns inget arbete" — det betyder att vi ar
   // blinda. Ett tomt svar som tolkas som tomt resultat ar exakt den tysta miss
@@ -216,7 +221,7 @@ export async function allaKlaraRader() {
   const rader = [];
   const fel = {};
   for (const h of hubbar) {
-    try { rader.push(...await klaraRader(h)); }
+    try { rader.push(...await klaraRader(h, val)); }
     catch (e) {
       fel[h.titel] = e.status === 404
         ? `404 — integrationen är inte inbjuden till "${h.titel}" (••• → Connections)`

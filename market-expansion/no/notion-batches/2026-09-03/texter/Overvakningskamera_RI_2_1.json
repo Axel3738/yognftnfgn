@@ -1,0 +1,51 @@
+[
+ {
+  "form": 0,
+  "text": "899 kr for å vite.",
+  "rad": 0,
+  "se": "799 kr för att veta.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Uvurderlig å ikke vite.",
+  "rad": 1,
+  "se": "Obetalbart att inte veta.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Direkte varsel når noe skjer hjemme",
+  "rad": 2,
+  "se": "Direkt notis om något händer hemma",
+  "vanster": false
+ },
+ {
+  "form": 3,
+  "text": "355° dekning, AI-sporing",
+  "rad": 0,
+  "se": "355° täckning, AI-spårning",
+  "vanster": true
+ },
+ {
+  "form": 3,
+  "text": "Gratis frakt over 300 kr",
+  "rad": 1,
+  "se": "Fri frakt över 300 kr",
+  "vanster": true
+ },
+ {
+  "form": 3,
+  "text": "30 dagers fornøyd-kunde-garanti",
+  "rad": 2,
+  "se": "30 dagars nöjd-kund-garanti",
+  "vanster": true
+ },
+ {
+  "form": 4,
+  "text": "Handle nå",
+  "rad": 0,
+  "se": "Handla nu",
+  "vanster": false
+ }
+]

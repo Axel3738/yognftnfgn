@@ -1,0 +1,30 @@
+[
+ {
+  "form": 0,
+  "text": "269 kr i stedet for 449 kr.",
+  "rad": 0,
+  "se": "349 kr istället för 582 kr.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Spar 40 % — samme trekk, samme garanti.",
+  "rad": 1,
+  "se": "Spara 40 % — samma kapell, samma garanti.",
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "30 dagers åpent kjøp.",
+  "rad": 0,
+  "se": "Fri frakt inom Sverige.",
+  "vanster": false
+ },
+ {
+  "form": 2,
+  "text": "Handle nå",
+  "rad": 0,
+  "se": "Handla nu",
+  "vanster": false
+ }
+]

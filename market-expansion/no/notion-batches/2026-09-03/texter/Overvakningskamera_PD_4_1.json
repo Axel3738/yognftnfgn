@@ -1,0 +1,50 @@
+[
+ {
+  "form": 0,
+  "text": "Dag eller natt — den går aldri glipp av noe",
+  "rader": [
+   0,
+   1
+  ],
+  "se_rader": [
+   "Dag eller natt — den",
+   "missar aldrig något"
+  ],
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "AI-sporing, 355° dekning",
+  "rad": 2,
+  "se": "AI-spårning, 355° täckning",
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "To linser — ingen døde vinkler",
+  "rad": 0,
+  "se": "Två linser — inga döda vinklar",
+  "vanster": true
+ },
+ {
+  "form": 1,
+  "text": "Vet forskjell på menneske og katt",
+  "rad": 1,
+  "se": "Vet skillnad på människa och katt",
+  "vanster": true
+ },
+ {
+  "form": 1,
+  "text": "30 dagers fornøyd-kunde-garanti",
+  "rad": 2,
+  "se": "30 dagars nöjd-kund-garanti",
+  "vanster": true
+ },
+ {
+  "form": 2,
+  "text": "Handle nå",
+  "rad": 0,
+  "se": "Handla nu",
+  "vanster": false
+ }
+]
