@@ -51,5 +51,56 @@
    "images": 2,
    "video": true
   }
+ },
+ {
+  "goods_id": "601099816288753",
+  "concept": "Lockskydd spabad — alternativ listning (10 bilder, video 42 s)",
+  "kluster": "pool",
+  "source": "US-sidan 2026-09-04 08:56 UTC. 24,58 USD, ★4,9 (16).",
+  "video_len_s": 42.2,
+  "video_format": "720x720",
+  "sec_0_3": "Händer öppnar en plastpåse på ett kaklat golv och vecklar ut ett svart överdrag med grön kant; sedan spännband och dragsnodd. Inget spabad, inget utomhus.",
+  "product_in_use_by_3s": "NEJ — unboxing",
+  "same_product_as_hero": "JA (svart med grön kant)",
+  "burned_text": "Videon: ingen. Heron: ingen. Galleriet: storleksskisser med inbränd engelsk text (rubriken 'SIZE OF AIR CONDITIONER SLEEVE' — kopieringsfel från en annan produkt).",
+  "muted_ok": "JA men utan poäng",
+  "owner_or_object_visible": "I videon NEJ. I heron: 3D-rendering av skyddet på ett spabad, ingen miljö, ingen människa.",
+  "clean_framing": "Heron ja (rendering). Videon nej.",
+  "raw_plus_captions_viable": "NEJ — unboxingen bär ingen annons",
+  "hero_alone_viable": "KANSKE — ren, textfri rendering av produkten på rätt objekt (samma nivå som spa-räckets och vedställsöverdragets heros)",
+  "material_result": "PASS (hero, rendering; video FAIL)",
+  "material_reason": "Bättre än originalets badkar: heron visar skyddet på ett spabad. Men ingen brukvideo och ingen miljö — en bildannons kan byggas på heron, en videoannons kräver eget material. Sex storlekar (76–88 tum) = variantfriktion.",
+  "temu_us": {
+   "price_usd": 24.58,
+   "rating": 4.9,
+   "review_count": 16,
+   "images": 10,
+   "video": true
+  }
+ },
+ {
+  "goods_id": "601099525298121",
+  "concept": "Lockskydd spabad 420D — alternativ listning (4 bilder, ingen video)",
+  "kluster": "pool",
+  "source": "US-sidan 2026-09-04 08:58 UTC. 28,96 USD, ★4,3 (39).",
+  "video_len_s": null,
+  "sec_0_3": "ingen video",
+  "product_in_use_by_3s": "—",
+  "same_product_as_hero": "—",
+  "burned_text": "Heron: foto av skyddet på ett spabad med träpanel + liten rund vattendroppsinfällning (beskärbar); bild 2 är ett riktigt spabad på en altan. Galleriet: måttskisser med inbränd text.",
+  "muted_ok": "—",
+  "owner_or_object_visible": "Objekt ja (spabad, foto), ägare nej",
+  "clean_framing": "Heron ja (foto, liten infällning)",
+  "raw_plus_captions_viable": "NEJ (ingen video)",
+  "hero_alone_viable": "KANSKE — foto på rätt objekt, textfri utom infällningen",
+  "material_result": "PASS (hero, foto; ingen video)",
+  "material_reason": "Fotohero på rätt objekt. Ekonomin är på gränsen (28,96 USD → 2,3–2,7× vid 809). Betyget 4,3 är lägst av de tre.",
+  "temu_us": {
+   "price_usd": 28.96,
+   "rating": 4.3,
+   "review_count": 39,
+   "images": 4,
+   "video": false
+  }
  }
 ]

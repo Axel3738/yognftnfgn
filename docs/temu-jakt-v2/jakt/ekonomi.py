@@ -31,9 +31,11 @@ for f in sorted(glob.glob(os.path.join(H, "*.json"))):
         try: pris = float(pris) if pris not in (None, "", "UNKNOWN") else None
         except Exception: pris = None
         anchor = (r.get("brand_anchor") or {}).get("price_sek") if isinstance(r.get("brand_anchor"), dict) else None
-        if pris is None and anchor:
-            try: pris = round(float(anchor) / 1.6)  # högsta pris ankaret tillåter
-            except Exception: pris = None
+        # Frågan gate 5 ställer är: FINNS det ett pris som klarar både 2,4× och ankaret ≥ 1,6×?
+        # Därför testas det högsta pris hyllan tillåter (ankare/1,6, tak 999 kr), inte agentens försiktiga gissning.
+        if anchor:
+            try: pris = min(round(float(anchor) / 1.6), 999)
+            except Exception: pass
         if pris is None:
             result, reason = "UNKNOWN", f"US-pris {usd} USD → SE-Temu ≈ {se_lo}–{se_hi} kr → landad ≈ {landed_lo}–{landed_hi} kr → 2,4× kräver {need_lo}–{need_hi} kr; inget svenskt målpris satt"
         else:

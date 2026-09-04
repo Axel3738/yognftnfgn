@@ -125,6 +125,12 @@ def best(vals, order=("PASS", "PENDING_VERIFICATION", "UNKNOWN", "BLOCKED_SOURCE
         if o in vals: return o
     return "UNKNOWN"
 out_concepts = []
+dom_alt = {}
+for f in glob.glob(os.path.join(H, "material", "*.json")):
+    try:
+        for c in json.load(open(f, encoding="utf-8")):
+            if c.get("goods_id"): dom_alt[str(c["goods_id"])] = c.get("material_result")
+    except Exception: pass
 alt_files = {}
 for f in glob.glob(os.path.join(H, "alt", "*.json")):
     try:
@@ -144,13 +150,6 @@ for key, ids in concepts.items():
     if struct_rows and not tl.startswith(("a",)):
         main = struct_rows[0]; tl = (main.get("tier") or "").lower(); reason = main.get("tier_reason") or reason
     structural = any(k in tl for k in STRUKTURELLA)
-    c_provisorisk = tl.startswith("c") and any(k in tl for k in ("provisorisk", "ej hämtat", "ej verifierad", "tips"))
-    c_listning = tl.startswith("c") and "us-pris" in tl          # ekonomi fälld på EN listnings pris = listningsfel
-    if tl.startswith("c") and not c_provisorisk and not c_listning: structural = True
-    # listningsnivå
-    n_fetched = sum(1 for r in R if fetched(r)); n_mat_pass = sum(1 for l in L if l["s_mat"] == "PASS")
-    n_ec_pass = sum(1 for l in L if l["s_ec"] == "PASS"); n_both = sum(1 for l in L if l["s_mat"] == "PASS" and l["s_ec"] == "PASS")
-    listing_fail = [i for i, l in zip(ids, L) if l["s_mat"] == "FAIL" or l["s_ec"] == "FAIL"]
     alt = alt_files.get(key) or {}
     alt_n = len(alt.get("listings") or [])
     alt_rows = []
@@ -161,20 +160,42 @@ for key, ids in concepts.items():
             try: d = json.load(open(rawf, encoding="utf-8"))
             except Exception: d = None
         if d and not d.get("blocked"):
-            alt_rows.append({"goods_id": aid, "title": d.get("title"), "price_usd": d.get("price_sek") if d.get("currency") == "USD" else None,
+            usd = d.get("price_sek") if d.get("currency") == "USD" else None
+            ek = None
+            try:
+                usd_f = float(usd); se_lo, se_hi = round(usd_f * 6.96), round(usd_f * 8.16)
+                la_lo, la_hi = round(se_lo * 1.5), round(se_hi * 1.5)
+                pris = ((gate(main, "economics_us") or {}).get("se_price_used_sek")) or None
+                if pris:
+                    m_lo, m_hi = pris / la_hi, pris / la_lo
+                    ek = {"landed_est_sek": [la_lo, la_hi], "se_price_used_sek": pris, "multiple": [round(m_lo, 2), round(m_hi, 2)],
+                          "result": "PASS" if m_lo >= 2.4 else "BORDERLINE" if m_hi >= 2.4 else "FAIL"}
+            except Exception: ek = None
+            mat = dom_alt.get(aid)
+            alt_rows.append({"goods_id": aid, "title": d.get("title"), "price_usd": usd,
                              "rating": d.get("rating"), "review_count": d.get("review_count"), "images": len(d.get("images") or []),
-                             "video": bool(d.get("video_url")), "fetched": d.get("fetched"), "listing_status": "PENDING_VERIFICATION"})
+                             "video": bool(d.get("video_url")), "fetched": d.get("fetched"), "economics_us": ek,
+                             "material": mat, "listing_status": ("FAIL" if (ek and ek["result"] == "FAIL") or (mat and str(mat).upper().startswith("FAIL")) else
+                                                                 "PASS" if (ek and ek["result"] == "PASS" and mat and str(mat).upper().startswith("PASS")) else "PENDING_VERIFICATION")})
         else:
             alt_rows.append({"goods_id": aid, "title": l.get("title_from_search"), "snippet_price": l.get("snippet_price"),
                              "snippet_rating": l.get("snippet_rating"), "fetched": None, "listing_status": "BLOCKED_SOURCE"})
+    c_provisorisk = tl.startswith("c") and any(k in tl for k in ("provisorisk", "ej hämtat", "ej verifierad", "tips"))
+    c_listning = tl.startswith("c") and "us-pris" in tl          # ekonomi fälld på EN listnings pris = listningsfel
+    if tl.startswith("c") and not c_provisorisk and not c_listning: structural = True
+    # listningsnivå
+    n_fetched = sum(1 for r in R if fetched(r)); n_mat_pass = sum(1 for l in L if l["s_mat"] == "PASS")
+    n_ec_pass = sum(1 for l in L if l["s_ec"] == "PASS"); n_both = sum(1 for l in L if l["s_mat"] == "PASS" and l["s_ec"] == "PASS")
+    listing_fail = [i for i, l in zip(ids, L) if l["s_mat"] == "FAIL" or l["s_ec"] == "FAIL"]
     # status
     if c_obj == "FAIL" or c_pre == "FAIL" or c_sh == "FAIL" or c_tier == "ELIM":
         status = "FAIL"; fail_structural, fail_listing = True, False
         why = "fälld i gate 1–3 (objekt/presens/hylla)" if c_tier == "ELIM" else reason
     elif structural or c_var == "FAIL" or c_aud == "FAIL":
         status = "FAIL"; fail_structural, fail_listing = True, False; why = reason
-    elif n_both > 0:
-        status = "PASS"; fail_structural = fail_listing = False; why = "minst en listning klarar material + ekonomi"
+    elif n_both > 0 or any(a.get("listing_status") == "PASS" for a in alt_rows):
+        status = "PASS"; fail_structural = fail_listing = False
+        why = "minst en listning klarar material + ekonomi" + ("" if n_both else " (alternativ listning)")
     elif listing_fail and n_fetched > 0:
         # material/ekonomi föll på en listning — fel i listningen, inte konceptet, tills flera listningar fallit på samma sak
         if len(listing_fail) >= 2 and len(set(("mat" if listing_rows[i]["s_mat"] == "FAIL" else "ec") for i in listing_fail)) == 1 and len(listing_fail) == n_fetched:
@@ -187,7 +208,8 @@ for key, ids in concepts.items():
         status = "BLOCKED_SOURCE"; fail_structural = fail_listing = False; why = "Temu blockerat — material och pris ej hämtade"
     else:
         status = "PENDING_VERIFICATION"; fail_structural = fail_listing = False; why = "data hämtad men gate 4/5 ej bedömda"
-    best_listing = next((i for i, l in zip(ids, L) if l["s_mat"] == "PASS" and l["s_ec"] == "PASS"), None)
+    best_listing = next((i for i, l in zip(ids, L) if l["s_mat"] == "PASS" and l["s_ec"] == "PASS"), None) or \
+                   next((a["goods_id"] for a in alt_rows if a.get("listing_status") == "PASS"), None)
     ts = max([l["ts"] for l in L if l["ts"]] or [None], key=lambda x: x or "")
     out_concepts.append({"concept_id": key, "name": group_name.get(key, key), "kluster": main.get("kluster"), "object": main.get("object"),
         "listing_ids": ids, "listing_count": len(ids), "alternate_listing_count": len(ids) - 1 + alt_n,

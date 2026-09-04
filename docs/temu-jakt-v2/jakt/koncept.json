@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-04T08:53:50.049054Z",
+ "generated": "2026-09-04T09:37:29.938427Z",
  "n_concepts": 386,
  "concept_funnel": {
   "listningar": 519,
@@ -17,16 +17,16 @@
   "listningar hämtade (Temu-data)": 5,
   "material PASS": 3,
   "ekonomi PASS": 4,
-  "bästa listning vald (material + ekonomi PASS)": 1,
-  "koncept ALTERNATIVE_LISTING_REQUIRED": 4,
+  "bästa listning vald (material + ekonomi PASS)": 2,
+  "koncept ALTERNATIVE_LISTING_REQUIRED": 3,
   "koncept BLOCKED_SOURCE": 6
  },
  "status_count": {
   "FAIL": 361,
   "BLOCKED_SOURCE": 6,
-  "ALTERNATIVE_LISTING_REQUIRED": 4,
+  "ALTERNATIVE_LISTING_REQUIRED": 3,
   "PENDING_VERIFICATION": 14,
-  "PASS": 1
+  "PASS": 2
  },
  "concepts": [
   {
@@ -181,19 +181,51 @@
    "alt_listings": [
     {
      "goods_id": "601099816288753",
-     "title": "hot tub cover square outdoor spa pool covers windproof prevents leaves and [debris] — Temu Australia",
-     "snippet_price": null,
-     "snippet_rating": null,
-     "fetched": null,
-     "listing_status": "BLOCKED_SOURCE"
+     "title": "* Hot Tub Cover, Square, Outdoor SPA Pool Covers, Windproof, Prevents Leaves and *",
+     "price_usd": "24.58",
+     "rating": 4.9,
+     "review_count": 16,
+     "images": 10,
+     "video": true,
+     "fetched": "2026-09-04T08:56:47.944211Z",
+     "economics_us": {
+      "landed_est_sek": [
+       256,
+       302
+      ],
+      "se_price_used_sek": 809,
+      "multiple": [
+       2.68,
+       3.16
+      ],
+      "result": "PASS"
+     },
+     "material": "PASS (hero, rendering; video FAIL)",
+     "listing_status": "PASS"
     },
     {
      "goods_id": "601099525298121",
-     "title": "1pc 420D Hot Tub Cover Protector Waterproof Outdoor Spa Cover Cap for Hot Tub 76x76in/80x80in/86x86in/96in, black",
-     "snippet_price": null,
-     "snippet_rating": null,
-     "fetched": null,
-     "listing_status": "BLOCKED_SOURCE"
+     "title": "1pc, 420D Hot Tub Cover Protector Waterproof Outdoor SPA Cover Cap For Square Hot Tub, 76x76in/ 80x80in/ 86x86in/ * 96 In/, Black",
+     "price_usd": "28.96",
+     "rating": 4.3,
+     "review_count": 39,
+     "images": 4,
+     "video": false,
+     "fetched": "2026-09-04T08:58:49.182167Z",
+     "economics_us": {
+      "landed_est_sek": [
+       303,
+       354
+      ],
+      "se_price_used_sek": 809,
+      "multiple": [
+       2.29,
+       2.67
+      ],
+      "result": "BORDERLINE"
+     },
+     "material": "PASS (hero, foto; ingen video)",
+     "listing_status": "PENDING_VERIFICATION"
     },
     {
      "goods_id": "601100870942586",
@@ -261,8 +293,8 @@
     }
    ],
    "tier": "NA",
-   "concept_status": "ALTERNATIVE_LISTING_REQUIRED",
-   "status_reason": "gate 5 PASS på US-pris (19,39 USD → landad 202–237 → 2,5–3,0× vid 599); gate 4 FAIL på det som syns: enda bilden är ett hopvikt överdrag framför ett BADKAR, ingen video på US-sidan (SE-video okänd). Blir A om en leverantörsvideo visar skyddet på ett riktigt spalock.",
+   "concept_status": "PASS",
+   "status_reason": "minst en listning klarar material + ekonomi (alternativ listning)",
    "gates": {
     "object": "PASS",
     "presence": "PASS",
@@ -275,9 +307,9 @@
    "listings_fetched": 1,
    "material_pass": 0,
    "economics_pass": 1,
-   "best_listing_id": null,
+   "best_listing_id": "601099816288753",
    "failure_is_structural": false,
-   "failure_is_listing_specific": true,
+   "failure_is_listing_specific": false,
    "verification_timestamp": "2026-09-04T07:23:53.220239Z",
    "hook": "Ligger löven på ditt spalock?",
    "structure_match": 78
@@ -422,7 +454,20 @@
      "images": 1,
      "video": false,
      "fetched": "2026-09-04T08:46:41.714588Z",
-     "listing_status": "PENDING_VERIFICATION"
+     "economics_us": {
+      "landed_est_sek": [
+       494,
+       579
+      ],
+      "se_price_used_sek": 624,
+      "multiple": [
+       1.08,
+       1.26
+      ],
+      "result": "FAIL"
+     },
+     "material": null,
+     "listing_status": "FAIL"
     },
     {
      "goods_id": "601103531732863",
@@ -433,7 +478,20 @@
      "images": 1,
      "video": false,
      "fetched": "2026-09-04T08:49:12.409437Z",
-     "listing_status": "PENDING_VERIFICATION"
+     "economics_us": {
+      "landed_est_sek": [
+       716,
+       840
+      ],
+      "se_price_used_sek": 624,
+      "multiple": [
+       0.74,
+       0.87
+      ],
+      "result": "FAIL"
+     },
+     "material": null,
+     "listing_status": "FAIL"
     },
     {
      "goods_id": "601099581347239",
@@ -444,7 +502,20 @@
      "images": 2,
      "video": true,
      "fetched": "2026-09-04T08:50:45.586979Z",
-     "listing_status": "PENDING_VERIFICATION"
+     "economics_us": {
+      "landed_est_sek": [
+       297,
+       348
+      ],
+      "se_price_used_sek": 624,
+      "multiple": [
+       1.79,
+       2.1
+      ],
+      "result": "FAIL"
+     },
+     "material": "FAIL",
+     "listing_status": "FAIL"
     },
     {
      "goods_id": "601099567041676",
@@ -455,15 +526,44 @@
      "images": 1,
      "video": false,
      "fetched": "2026-09-04T08:52:46.642154Z",
-     "listing_status": "PENDING_VERIFICATION"
+     "economics_us": {
+      "landed_est_sek": [
+       322,
+       378
+      ],
+      "se_price_used_sek": 624,
+      "multiple": [
+       1.65,
+       1.94
+      ],
+      "result": "FAIL"
+     },
+     "material": null,
+     "listing_status": "FAIL"
     },
     {
      "goods_id": "601099585094539",
-     "title": "This item was discontinued - Temu — Binocular Harness Chest Pack with Rangefinder Pouch, Harness with Rain Cover, for Bird Watching/Hunting/Hiking",
-     "snippet_price": null,
-     "snippet_rating": null,
-     "fetched": null,
-     "listing_status": "BLOCKED_SOURCE"
+     "title": "* *cular * Pack with Rangefinder Pouch, * Harness with Rain Cover for Bird Watching, Hunting, Hiking",
+     "price_usd": "20.88",
+     "rating": 5.0,
+     "review_count": 2,
+     "images": 1,
+     "video": false,
+     "fetched": "2026-09-04T08:54:47.232047Z",
+     "economics_us": {
+      "landed_est_sek": [
+       218,
+       255
+      ],
+      "se_price_used_sek": 624,
+      "multiple": [
+       2.45,
+       2.86
+      ],
+      "result": "PASS"
+     },
+     "material": null,
+     "listing_status": "PENDING_VERIFICATION"
     }
    ],
    "tier": "B",

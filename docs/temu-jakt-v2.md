@@ -38,15 +38,16 @@ var fjärde minut) går i bakgrunden för resten av A/B-listan.
 | 7 HOOK | ✅ | — |
 | 8 PUBLIK | ✅ | — |
 
-**Läget efter V2.1 (avsnittet nedan):** ett koncept har en listning som klarar
-material + ekonomi — **utekattkojan** (hero: riktig katt i kojan i höstlöv;
-10,93 USD → 4,5–5,3× vid 599 kr; Supercat 1 799 som ankare). Den står som
-**A (villkorad: publik)** eftersom köparen skev mot kvinna medan fingeravtrycket
-säger man 45–70. De fem tidigare villkorade A föll var och en på *sin listning*
-(badkar-hero, packshot, USA-pris) — enligt V2.1 är det `ALTERNATIVE_LISTING_REQUIRED`,
-inte FAIL: 12 alternativa listningar är funna och ligger i hämtkön. Spa-räcket
-är det enda där felet troligen sitter i produkten (stål, 80 USD), men det avgörs
-först när ≥ 2 listningar fallit på samma sak.
+**Läget efter V2.1 (avsnittet nedan), uppdaterat 09:40 UTC:** två koncept har
+en kommersiellt användbar listning. **Utekattkojan** (hero: riktig katt i kojan i
+höstlöv; 10,93 USD → 4,5–5,3× vid 599; Supercat 1 799 som ankare) — kvar:
+publikfrågan (köparen skev mot kvinna). **Spa-lockskyddet** via alternativ
+listning 601099816288753 (24,58 USD, ★4,9; hero = textfri rendering på ett
+spabad; 2,7–3,1× vid 809) — kvar: bara hero-material (unboxing-video) och sex
+storlekar. **Kikarselen är struken:** fem listningar av formen kostar 26,59–68,59
+USD, alla över vad ankaret bär — felet sitter i formen (V2.1-regel A). Tre
+koncept står på `ALTERNATIVE_LISTING_REQUIRED` med 24 alternativ i hämtkön:
+tändvedsklyv, vedställsöverdrag, spa-räcke.
 
 Det som **inte** är UNKNOWN är själva jakten: 96 ägda objekt kartlagda, 519
 listningar hittade, 374 avslagna med orsak, och en hylla som är verifierad på
@@ -55,7 +56,7 @@ riktigt för de koncept som överlevde.
 ---
 
 <!-- V21:START -->
-## V2.1 — koncept skilt från listning (patch 2026-09-04 08:53 UTC)
+## V2.1 — koncept skilt från listning (patch 2026-09-04 09:37 UTC)
 
 Axels patch V2.1 är i drift: hyllan verifieras **före** Temu-jakten, PRODUKTKONCEPT och LISTNING är två entiteter, statusmodellen är `PASS / FAIL / UNKNOWN / BLOCKED_SOURCE / PENDING_VERIFICATION / ALTERNATIVE_LISTING_REQUIRED`, och ett tekniskt fel (blockerad källa) blir aldrig ett kommersiellt. Hela pipelinen: `jakt/PIPELINE-V2.1.md`. Koncepttabellen: `jakt/koncept.json`.
 
@@ -72,7 +73,7 @@ strukturkvalificerade (variant/hook/publik ej FAIL, ej strukturellt fällda)   2
 slutliga konceptöverlevare (status ≠ FAIL)                                    25
 ```
 
-Statusfördelning bland koncepten: FAIL 361, PENDING_VERIFICATION 14, BLOCKED_SOURCE 6, ALTERNATIVE_LISTING_REQUIRED 4, PASS 1.
+Statusfördelning bland koncepten: FAIL 361, PENDING_VERIFICATION 14, BLOCKED_SOURCE 6, ALTERNATIVE_LISTING_REQUIRED 3, PASS 2.
 
 ### Listnings-tratten
 
@@ -82,12 +83,12 @@ listningar i dem                                          61
 listningar hämtade (Temu-data)                             5
 material PASS                                              3
 ekonomi PASS                                               4
-bästa listning vald (material + ekonomi PASS)              1
-koncept ALTERNATIVE_LISTING_REQUIRED                       4
+bästa listning vald (material + ekonomi PASS)              2
+koncept ALTERNATIVE_LISTING_REQUIRED                       3
 koncept BLOCKED_SOURCE                                     6
 ```
 
-Målet är ett starkt koncept parat med en användbar listning. Hittills har **1** koncept en sådan listning.
+Målet är ett starkt koncept parat med en användbar listning. Hittills har **2** koncept en sådan listning.
 
 ### Konceptöverlevare (status ≠ FAIL)
 
@@ -95,7 +96,7 @@ Målet är ett starkt koncept parat med en användbar listning. Hittills har **1
 |---|---|---|---|---|---|---|---|
 | A | Isolerad utekattkoja i Oxford-tyg, vinter (`isolerad-utekattkoja-i-oxford-`) | `PASS` | 6 | 0 | 1 | PASS | — |
 | B (närmast A) | Vedställsöverdrag (bara överdrag, 4–8 ft, spännen) (`vedstallsoverdrag-bara-overdra`) | `ALTERNATIVE_LISTING_REQUIRED` | 3 | 7 | 1 | PASS | annan listning: 7 funna, 0 hämtade — gate 4 PASS på heron (överdraget på ett vedställ, röd text i nederkanten beskärbar), video |
-| B (närmast A) | Lockskydd/skyddsöverdrag (cover cap) för fast spabad, över d (`lockskydd-skyddsoverdrag-cover`) | `ALTERNATIVE_LISTING_REQUIRED` | 4 | 10 | 1 | PASS | annan listning: 10 funna, 0 hämtade — gate 5 PASS på US-pris (19,39 USD → landad 202–237 → 2,5–3,0× vid 599); gate 4 FAIL på det |
+| B (närmast A) | Lockskydd/skyddsöverdrag (cover cap) för fast spabad, över d (`lockskydd-skyddsoverdrag-cover`) | `PASS` | 4 | 10 | 1 | PASS | — |
 | B (närmast A) | Tändvedsklyv i gjutjärn (Kindling Cracker-typ) (`tandvedsklyv-i-gjutjarn-kindli`) | `ALTERNATIVE_LISTING_REQUIRED` | 2 | 10 | 1 | PASS | annan listning: 10 funna, 0 hämtade — gate 5 PASS på US-pris (16,25 USD → landad 170–200 → 3,0× vid 599; frakt på gjutjärn kan ä |
 | B | Jaktparaply för torn/pass, 58", camo, spänns runt stam (`jaktparaply-for-torn-pass-58-c`) | `BLOCKED_SOURCE` | 1 | 0 | 0 | PASS | Temu-hämtning (material + pris) |
 | B | Hängrännerensar-sats till lövblås (universal, teleskoprör 11 (`hangrannerensar-sats-till-lovb`) | `PENDING_VERIFICATION` | 2 | 0 | 0 | PASS | variant/SKU-lista, Temu-hämtning |

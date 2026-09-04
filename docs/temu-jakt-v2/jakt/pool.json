@@ -93,7 +93,7 @@
    },
    "economics_us": {
     "result": "PASS",
-    "reason": "US-pris 19.39 USD → SE-Temu ≈ 135–158 kr → landad ≈ 202–237 kr. Vid 599 kr: 2.5–3.0× (krav 2,4×), BE-CPA 362–397 kr (krav ≥ 190). 2,4× kräver 485–569 kr; ankare 1295 kr",
+    "reason": "US-pris 19.39 USD → SE-Temu ≈ 135–158 kr → landad ≈ 202–237 kr. Vid 809 kr: 3.4–4.0× (krav 2,4×), BE-CPA 572–607 kr (krav ≥ 190). 2,4× kräver 485–569 kr; ankare 1295 kr",
     "price_usd": 19.39,
     "se_temu_est_sek": [
      135,
@@ -107,7 +107,7 @@
      485,
      569
     ],
-    "se_price_used_sek": 599.0,
+    "se_price_used_sek": 809,
     "anchor_sek": 1295,
     "kurs_sek_per_usd": [
      6.96,
@@ -133,7 +133,7 @@
   "sub_cluster": "SPABAD",
   "temu_data_note": "Temu-fält (pris, betyg, recensioner, bilder, video) = null: IP spärrad 2026-09-04, hämtas centralt av koordinatorn när spärren släppt.",
   "tier_agent": "A (provisorisk — material ej verifierad)",
-  "tier_reason": "gate 5 PASS på US-pris (19,39 USD → landad 202–237 → 2,5–3,0× vid 599); gate 4 FAIL på det som syns: enda bilden är ett hopvikt överdrag framför ett BADKAR, ingen video på US-sidan (SE-video okänd). Blir A om en leverantörsvideo visar skyddet på ett riktigt spalock.",
+  "tier_reason": "Konceptet PASS via alternativ listning 601099816288753 (24,58 USD, ★4,9 (16), 10 bilder): hero = textfri rendering av skyddet på ett spabad → duger som BILDANNONS; videon är en unboxing → ingen videoannons utan eget material. Ekonomi PASS (landad 257–301 → 2,7–3,1× vid 809). Originalets enda bild var ett badkar (listningsfel, inte konceptfel). Kvar: sex storlekar 76–88 tum (variantfriktion) och avsaknad av brukvideo — därför B, inte A.",
   "temu_us": {
    "title": "Hot Tub Cover, Rainproof Dustproof Bathtub Protector * Covers, Outdoor Square * Bath Cover Cap Hot Tub Covers for Winter (Brown)",
    "price_usd": "19.39",
@@ -557,7 +557,7 @@
    },
    "economics_us": {
     "result": "FAIL",
-    "reason": "US-pris 79.99 USD → SE-Temu ≈ 557–653 kr → landad ≈ 836–980 kr. Vid 899 kr: 0.9–1.1× (krav 2,4×), BE-CPA -81–63 kr (krav ≥ 190). 2,4× kräver 2006–2352 kr; ankare 2995 kr",
+    "reason": "US-pris 79.99 USD → SE-Temu ≈ 557–653 kr → landad ≈ 836–980 kr. Vid 999 kr: 1.0–1.2× (krav 2,4×), BE-CPA 19–163 kr (krav ≥ 190). 2,4× kräver 2006–2352 kr; ankare 2995 kr",
     "price_usd": 79.99,
     "se_temu_est_sek": [
      557,
@@ -571,7 +571,7 @@
      2006,
      2352
     ],
-    "se_price_used_sek": 899.0,
+    "se_price_used_sek": 999,
     "anchor_sek": 2995,
     "kurs_sek_per_usd": [
      6.96,
