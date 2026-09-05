@@ -30,3 +30,12 @@ Blocket brukar lyfta efter 60–80 min. `verifiera.py` skriver aldrig om en häm
 ## Väntar på (Temu-block) — hämtas i prioritetsordning när sajten svarar
 1. Agenternas topp-kandidater (present/hobby, evergreen, dolda pärlor) — max ~8 per timme.
 2. Bänk: tornsits 601099667428425 · sopkärlslocklås 601101587576926 · hängrännesats 601103248788835.
+
+## Hyllkontroller utan Temu (07:4x–07:5x UTC)
+- **Flaggstångslampa solcell** (605583893712528, 13,26 USD): Amazon.se **Brubaker 344,99 kr i lager** och generisk 426,63 kr i lager — samma form. Flaggmax 849 kr är slutsåld, alltså inget aktivt ankare. Landad 138–162 → 399 kr = 2,46–2,89× men ligger ÖVER marketplace-golvet 345 kr utan ankare. → **WATCH/REJECT** (lockskyddsmönstret).
+- **Rensbräda båt**: Olssons Fiske säljer formen för 549 kr (ord. 659). Temu-listningen kostar 53 USD. Strukturellt för dyr. → REJECT.
+
+## Hämtkö när Temu öppnar (prioritet)
+1. 601100910111663 spinnarbyggsats · 2. 601099528972078 täljkit · 3. 601099516094068 eldblåsare
+4. evergreen-agentens topp 3 (inväntas) · 5. 601099667428425 tornsits · 6. 601101587576926 sopkärlslocklås
+7. 601103248788835 hängrännesats · 8. 601105758637623 bilspöhållare sugkopp (bara om bättre listning hittas)
