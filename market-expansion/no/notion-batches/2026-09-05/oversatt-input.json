@@ -1,0 +1,120 @@
+[
+  {
+    "namn": "IBC_CO_1_1",
+    "malnamn": "IBC-tanktrekk_NO_CO_1_1",
+    "prefix": "IBC",
+    "vinkel": "CO",
+    "fakta": {
+      "produkt_no": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+      "pris": "439 kr",
+      "jamforpris": "586 kr",
+      "spar": "147 kr",
+      "rabatt_pct": 25,
+      "fri_frakt": true,
+      "anmeldelser": "10 anmeldelser (4,7) på beverbutikken.no",
+      "matt": "120 × 100 × 116 cm, passer standard 1000-liters IBC",
+      "material": "210D oxfordstoff, grønt, glidelås, åpning på toppen",
+      "garanti": "30 dagers åpent kjøp"
+    },
+    "se_copy": {
+      "message": "Utan skydd blir tankvattnet grönt av alger. 210D Oxford-tyget blockerar solljuset helt och stoppar algtillväxten. Samma tank, olika resultat – skillnaden är överdraget.",
+      "headline": "210D Oxford-tyg stoppar UV och alger",
+      "description": "IBC-tanköverdrag, 1000 L",
+      "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+    },
+    "bildtexter": [
+      { "typ": "platta", "rader": ["Samma tank.", "Olika sommar."] },
+      { "typ": "band", "rader": ["Utan skydd — med IBC-tanköverdraget"] }
+    ],
+    "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+  },
+  {
+    "namn": "IBC_PD_3_1",
+    "malnamn": "IBC-tanktrekk_NO_PD_3_1",
+    "prefix": "IBC",
+    "vinkel": "PD",
+    "fakta": {
+      "produkt_no": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+      "pris": "439 kr",
+      "jamforpris": "586 kr",
+      "spar": "147 kr",
+      "rabatt_pct": 25,
+      "fri_frakt": true,
+      "anmeldelser": "10 anmeldelser (4,7) på beverbutikken.no",
+      "matt": "120 × 100 × 116 cm, passer standard 1000-liters IBC",
+      "material": "210D oxfordstoff, grønt, glidelås, åpning på toppen",
+      "garanti": "30 dagers åpent kjøp"
+    },
+    "se_copy": {
+      "message": "210D Oxford-tyget blockerar UV-ljus och håller borta alger. Blixtlåset går att sätta på under två minuter. Öppningen upptill ger åtkomst till locket utan att ta av hela överdraget.",
+      "headline": "Sätt på blixtlåset på 2 minuter",
+      "description": "210D Oxford-tyg, blixtlås, öppning upptill",
+      "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+    },
+    "bildtexter": [
+      { "typ": "platta", "rader": ["210D Oxford-tyg.", "UV och alger stannar", "utanför."], "block": [[1, 2]] },
+      { "typ": "band", "rader": ["Blixtlås på 2 minuter · Öppning upptill"] }
+    ],
+    "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+  },
+  {
+    "namn": "Beltgrinder_REV_1_1",
+    "malnamn": "Beltesliper_NO_REV_1_1",
+    "prefix": "Beltgrinder",
+    "vinkel": "REV",
+    "fakta": {
+      "produkt_no": "Beltesliper Mini 3-i-1 – Knivsliper & Polerer",
+      "pris": "1 029 kr",
+      "jamforpris": "1 715 kr",
+      "spar": "686 kr",
+      "rabatt_pct": 40,
+      "fri_frakt": true,
+      "anmeldelser": "10 anmeldelser på beverbutikken.no",
+      "matt": null,
+      "material": "7 hastigheter, 15° slipevinkel, slipestein + slipebånd + polertrinse",
+      "garanti": "30 dagers åpent kjøp"
+    },
+    "se_copy": {
+      "message": "En kund skrev: \"Liten och smidig. Gör jobbet snabbt.\" Bälteslipmaskin Mini 3-i-1 sliper och polerar knivar hemma. Nu 909 kr (ord. 1182 kr).",
+      "headline": "\"Gör jobbet snabbt\" – kundrecension",
+      "description": "909 kr (ord. 1182 kr)",
+      "link": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+    },
+    "bildtexter": [
+      { "typ": "platta", "rader": ["Verifierad recension", "Mycket smidig", "”Liten och smidig.", "Gör jobbet snabbt.”"], "block": [[2, 3]] },
+      { "typ": "platta", "rader": ["— verifierad recension", "909 kr (ord. 1 182 kr)"] },
+      { "typ": "knapp", "rader": ["Beställ din egen — 909 kr"] }
+    ],
+    "link_no": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+  },
+  {
+    "namn": "Beltgrinder_PD_9_1",
+    "malnamn": "Beltesliper_NO_PD_9_1",
+    "prefix": "Beltgrinder",
+    "vinkel": "PD",
+    "fakta": {
+      "produkt_no": "Beltesliper Mini 3-i-1 – Knivsliper & Polerer",
+      "pris": "1 029 kr",
+      "jamforpris": "1 715 kr",
+      "spar": "686 kr",
+      "rabatt_pct": 40,
+      "fri_frakt": true,
+      "anmeldelser": "10 anmeldelser på beverbutikken.no",
+      "matt": null,
+      "material": "7 hastigheter, 15° slipevinkel, slipestein + slipebånd + polertrinse",
+      "garanti": "30 dagers åpent kjøp"
+    },
+    "se_copy": {
+      "message": "Skadas eller försvinner paketet under transporten ersätter vi varan. Bälteslipmaskin Mini 3-i-1 skickas hem till dig. Kommer den inte fram, skickar vi en ny.",
+      "headline": "Skadas i frakten? Vi ersätter den.",
+      "description": "Bälteslipmaskin Mini 3-i-1 – ersättning vid skada",
+      "link": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+    },
+    "bildtexter": [
+      { "typ": "platta", "rader": ["Skadas den under", "frakten ersätts den.", "Vi garanterar säker frakt hela vägen hem."], "block": [[0, 1]] },
+      { "typ": "platta", "rader": ["Skadad eller borttappad frakt → du får ersättning"] },
+      { "typ": "knapp", "rader": ["Beställ tryggt idag"] }
+    ],
+    "link_no": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+  }
+]

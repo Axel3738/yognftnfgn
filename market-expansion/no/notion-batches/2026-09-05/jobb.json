@@ -1,0 +1,267 @@
+{
+  "marknad": "NO",
+  "datum": "2026-09-05",
+  "skapad": "2026-09-05T05:30:34.804Z",
+  "kvot": {
+    "heygen": null,
+    "kie": 16389.2
+  },
+  "jobb": [
+    {
+      "notion": {
+        "id": "3ce270ab908c81368f0ecf0571b457b2",
+        "namn": "IBC_CO_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "IBC Tank Cover creative hub",
+        "url": "https://app.notion.com/3ce270ab908c81368f0ecf0571b457b2",
+        "kalla": "rader-fil"
+      },
+      "namn": "IBC_CO_1_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250077952830291",
+        "status": "ACTIVE",
+        "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "kampanjId": "120250001079150291",
+        "adset": "CO | Notionrunda 2026-09-03",
+        "copy": {
+          "message": "Utan skydd blir tankvattnet grönt av alger. 210D Oxford-tyget blockerar solljuset helt och stoppar algtillväxten. Samma tank, olika resultat – skillnaden är överdraget.",
+          "headline": "210D Oxford-tyg stoppar UV och alger",
+          "description": "IBC-tanköverdrag, 1000 L",
+          "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "14d9d15043d281b77441336865037341",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/794262680_2052314698815456_5468227563636642444_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=9hA0C55-QPsQ7kNvwFTjl2D&_nc_oc=AdpCR02C70OTb53R3FFYcP_LqOpnpJ_x-LUml7J-UwJp7EImiGW4oJhUik0m3H4W3c4&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=tNVX3oJNPIbK6yIMw6LnhA&_nc_tpa=Q5bMBQLm3pyKYbX3s-QqlFT00jNmhB8VHqXGZfujnuyHTKF7szt-Ojkf5chwCMEa_xUfpfeSESiEUNnAvw&oh=00_AQKeRlMD0JaNeMCS_5jmQE2UJqwNGhMviER_rDp69tSQ4w&oe=6AA17C2A",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "IBC",
+      "K": "CO",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "IBC",
+        "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "no_prefix": "IBC-tanktrekk",
+        "adset_prefix": "IBC-tanktrekk NO",
+        "campaign_id": "120251996323340233",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996323340233",
+        "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "IBC-tanktrekk NO - CO",
+        "annonsNamn": "IBC-tanktrekk_NO_CO_1_1",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
+        "prefix": "IBC-tanktrekk"
+      },
+      "pris": {
+        "pris": "439.00",
+        "jamforpris": "586.00",
+        "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+        "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
+      }
+    },
+    {
+      "notion": {
+        "id": "3ce270ab908c8136b712dac9436c7aff",
+        "namn": "IBC_PD_3_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "IBC Tank Cover creative hub",
+        "url": "https://app.notion.com/3ce270ab908c8136b712dac9436c7aff",
+        "kalla": "rader-fil"
+      },
+      "namn": "IBC_PD_3_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250078091950291",
+        "status": "ACTIVE",
+        "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "kampanjId": "120250001079150291",
+        "adset": "PD",
+        "copy": {
+          "message": "210D Oxford-tyget blockerar UV-ljus och håller borta alger. Blixtlåset går att sätta på under två minuter. Öppningen upptill ger åtkomst till locket utan att ta av hela överdraget.",
+          "headline": "Sätt på blixtlåset på 2 minuter",
+          "description": "210D Oxford-tyg, blixtlås, öppning upptill",
+          "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "97033fd162b17c46ce2072427d12b626",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/793497909_2052322155481377_1956156447371440280_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=Ww-_aiEQDFEQ7kNvwHTaTw1&_nc_oc=Ador6nzhUl1l-TkzDtJ1YJPGEKKay72deoCnBkRn73GVTOdZC5mq58xdy1EsVla5HFg&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=tNVX3oJNPIbK6yIMw6LnhA&_nc_tpa=Q5bMBQKC5fadbvI80AHBMEGarZwsLmIJOUy80LYAkrvZPkfZvGN_CwR2qi7KlToPt55XQ3P_LMeDIoEOqg&oh=00_AQI5lQV2DmZg8im4PyYAxQkYbSH-wTzCMUWZuE_uDpDuSw&oe=6AA18FFC",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "IBC",
+      "K": "PD",
+      "nr": "3",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "IBC",
+        "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "no_prefix": "IBC-tanktrekk",
+        "adset_prefix": "IBC-tanktrekk NO",
+        "campaign_id": "120251996323340233",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996323340233",
+        "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "IBC-tanktrekk NO - PD",
+        "annonsNamn": "IBC-tanktrekk_NO_PD_3_1",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
+        "prefix": "IBC-tanktrekk"
+      },
+      "pris": {
+        "pris": "439.00",
+        "jamforpris": "586.00",
+        "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+        "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c8180afc7ee39b94f2c5f",
+        "namn": "Beltgrinder_REV_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Belt grinder creative hub",
+        "url": "https://app.notion.com/3cf270ab908c8180afc7ee39b94f2c5f",
+        "kalla": "rader-fil"
+      },
+      "namn": "Beltgrinder_REV_1_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250077762110291",
+        "status": "ACTIVE",
+        "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "kampanjId": "120249902177470291",
+        "adset": "REV | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "En kund skrev: \"Liten och smidig. Gör jobbet snabbt.\" Bälteslipmaskin Mini 3-i-1 sliper och polerar knivar hemma. Nu 909 kr (ord. 1182 kr).",
+          "headline": "\"Gör jobbet snabbt\" – kundrecension",
+          "description": "909 kr (ord. 1182 kr)",
+          "link": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "632777ab8ba46f75305018b49222a997",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/793580980_2052304298816496_8665401561175689499_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=S6AZcFMkqGQQ7kNvwG0gqZw&_nc_oc=AdpMu8MEXrlJal_jceQePwOZJ7xc-pqumsqo7BNSg7wzC1GE9Xy2kBf-6TCwoTWSQDk&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=tNVX3oJNPIbK6yIMw6LnhA&_nc_tpa=Q5bMBQI5xRUR5wpAAVWQSaNkoCU5jCQzE5_YIUlhFANa4B-vU4PYVlG03Dwb1-jKfobLvVLCDhV02bbJZA&oh=00_AQKB9D7BEk7Ei4m8CpttAToAc39tRAzsKUhfa8CO4d6hyg&oe=6AA18CA7",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Beltgrinder",
+      "K": "REV",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Beltgrinder",
+        "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "no_prefix": "Beltesliper",
+        "adset_prefix": "Beltesliper NO",
+        "campaign_id": "120251998498540233",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998498540233",
+        "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Beltesliper NO - REV",
+        "annonsNamn": "Beltesliper_NO_REV_1_1",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
+        "prefix": "Beltesliper"
+      },
+      "pris": {
+        "pris": "1029.00",
+        "jamforpris": "1715.00",
+        "titel": "Beltesliper Mini 3-i-1 – Knivsliper & Polerer",
+        "handle": "beltesliper-mini-3-i-1-knivsliper-polerer"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c81a7a0dfea9f55203491",
+        "namn": "Beltgrinder_PD_9_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Belt grinder creative hub",
+        "url": "https://app.notion.com/3cf270ab908c81a7a0dfea9f55203491",
+        "kalla": "rader-fil"
+      },
+      "namn": "Beltgrinder_PD_9_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250077769040291",
+        "status": "ACTIVE",
+        "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "kampanjId": "120249902177470291",
+        "adset": "Balteslipmaskin PD",
+        "copy": {
+          "message": "Skadas eller försvinner paketet under transporten ersätter vi varan. Bälteslipmaskin Mini 3-i-1 skickas hem till dig. Kommer den inte fram, skickar vi en ny.",
+          "headline": "Skadas i frakten? Vi ersätter den.",
+          "description": "Bälteslipmaskin Mini 3-i-1 – ersättning vid skada",
+          "link": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "1cf2ccb066fb26fef6a790f40442352d",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/794141706_2052304552149804_2672379530638236868_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=pUtqZEoPioMQ7kNvwGST0iw&_nc_oc=AdqothEOcPhLE71j2hxMJ_hP1d4WHXnTKKPtzpg9fzRweGjDiG5Qjx7bZMcd2duThPw&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=tNVX3oJNPIbK6yIMw6LnhA&_nc_tpa=Q5bMBQKdYDu6quI_15MWtWIEyJI2WsmHBMzFfip9nd8UJ4Plx-lm3RlkLFruSSiipilm2gazOMCdQz1LUA&oh=00_AQKLqFW_EFddKRpOCxrxrM1JVn-8OBWZDS-CenkvcwDT3A&oe=6AA17D82",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Beltgrinder",
+      "K": "PD",
+      "nr": "9",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Beltgrinder",
+        "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "no_prefix": "Beltesliper",
+        "adset_prefix": "Beltesliper NO",
+        "campaign_id": "120251998498540233",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998498540233",
+        "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Beltesliper NO - PD",
+        "annonsNamn": "Beltesliper_NO_PD_9_1",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
+        "prefix": "Beltesliper"
+      },
+      "pris": {
+        "pris": "1029.00",
+        "jamforpris": "1715.00",
+        "titel": "Beltesliper Mini 3-i-1 – Knivsliper & Polerer",
+        "handle": "beltesliper-mini-3-i-1-knivsliper-polerer"
+      }
+    }
+  ]
+}

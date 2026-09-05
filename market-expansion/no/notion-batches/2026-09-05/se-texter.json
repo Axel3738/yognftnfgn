@@ -1,0 +1,33 @@
+{
+  "_kommentar": "Svensk text per bild, läst ur bilden (facit) av huvudsessionen 2026-09-05. Ordning = formerna uppifrån och ned, rader inom formen uppifrån och ned. 'block' = rader som är EN radbruten text. 'varning' = claims som inte gäller i Norge.",
+  "IBC_CO_1_1": {
+    "former": [
+      { "typ": "platta", "rader": ["Samma tank.", "Olika sommar."] },
+      { "typ": "band", "rader": ["Utan skydd — med IBC-tanköverdraget"] }
+    ],
+    "anm": "Delad bild: grön algtank till vänster, täckt tank till höger. Topplattan är halvgenomskinlig över himlen — detektorn hittar den inte, override krävs. Inget pris i bilden."
+  },
+  "IBC_PD_3_1": {
+    "former": [
+      { "typ": "platta", "rader": ["210D Oxford-tyg.", "UV och alger stannar", "utanför."], "block": [[1, 2]] },
+      { "typ": "band", "rader": ["Blixtlås på 2 minuter · Öppning upptill"] }
+    ],
+    "anm": "Inget pris i bilden."
+  },
+  "Beltgrinder_REV_1_1": {
+    "former": [
+      { "typ": "platta", "rader": ["Verifierad recension", "Mycket smidig", "”Liten och smidig.", "Gör jobbet snabbt.”"], "block": [[2, 3]] },
+      { "typ": "platta", "rader": ["— verifierad recension", "909 kr (ord. 1 182 kr)"] },
+      { "typ": "knapp", "rader": ["Beställ din egen — 909 kr"] }
+    ],
+    "varning": ["Svenskt pris 909 kr (ord. 1 182 kr) — NO-pris 1 029 kr (ord. 1 715 kr).", "Recensionen är svensk (Judge.me, Bäverbutiken) — får översättas, attribueras inte till Norge."]
+  },
+  "Beltgrinder_PD_9_1": {
+    "former": [
+      { "typ": "platta", "rader": ["Skadas den under", "frakten ersätts den.", "Vi garanterar säker frakt hela vägen hem."], "block": [[0, 1]] },
+      { "typ": "platta", "rader": ["Skadad eller borttappad frakt → du får ersättning"] },
+      { "typ": "knapp", "rader": ["Beställ tryggt idag"] }
+    ],
+    "anm": "Fraktgaranti (ersättning vid skada/förlust) — samma butik (Stonebite Ecom AB) och samma villkor i Norge. Inget pris i bilden."
+  }
+}
