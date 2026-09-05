@@ -414,3 +414,9 @@ innan den drar någon slutsats.
 - Trigger: `trig_01LRx3gtjQN7bF15bHad4jFj`, cron `0 13 * * *` (15:00 CEST), `persistent_session_id` → sessionen ovan. Axel valde repo (`Axel3738/yognftnfgn`) och connectors (Notion, ADsmanagaer, Google-Drive, Higgsfield, Shopify, Slack) i Routines-vyn 2026-09-05 05:29 UTC — det går inte att sätta via MCP-verktyget, bara i vyn.
 - Första försöket (`create_trigger` med ny session varje gång) startade 2026-09-04 13:15 UTC i en tom container utan repo och raderades. Se varningen i CLAUDE.md under "Nattrutinerna".
 - Varje körning börjar med `git fetch origin main && git checkout main && git reset --hard origin/main` — sessionen lever kvar mellan dagarna, så trädet måste synkas innan kommandot läses.
+- **Mätt 2026-09-05 06:54 UTC:** i den fasta sessionen kräver Notion-connectorns
+  skrivverktyg (`notion-create-comment`, `notion-update-page`) ett godkännande per
+  anrop — körningen blockerades i Fas 6 efter att första annonsen laddats upp.
+  Två vägar: Axel klickar **Tillåt alltid** i sessionen (gäller sedan alla
+  kommande körningar, sessionen är samma), eller `NOTION_TOKEN` läggs i miljöns
+  env-variabler så `tools/notion-aterkoppling.mjs` (REST, inget godkännande) används.
