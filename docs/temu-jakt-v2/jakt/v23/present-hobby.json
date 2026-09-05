@@ -1,0 +1,1069 @@
+[
+  {
+    "uppdrag": "present-hobby",
+    "rank": 1,
+    "product_name": "Spinnarbyggsats 155–228 delar – gör dina egna spinnare",
+    "concept": "Komplett byggsats för inline-spinnare: spinnarblad, kroppar, pärlor, wire, byglar, trekrokar, ofta liten tång — i sorteringslåda. Vinterhobbyn för fiskaren: bygger drag i november–mars till nästa säsong. Present som säger 'jag vet att du fiskar' och samtidigt en aktivitet.",
+    "goods_id": "601100910111663",
+    "temu_url": "https://www.temu.com/-spinner-making-kit-fishing-lure-making-kit--lures-trout-lures--inline-spinners-spinnerbaits-lure-making-kit-228pcs-155pcs-107pcs-g-601100910111663.html",
+    "alt_goods_ids": [
+      "601100146291462",
+      "601105436848678"
+    ],
+    "price_usd": null,
+    "price_source": "UNKNOWN — Seznam gav bara ett 246-delars kit med tång à 69 USD (ej i lager) och ett 10-spinnare-kit à 7 USD; 155/228-delarslistningen har inget läst pris. Temus söksida strypt vid försöket.",
+    "rating": "UNKNOWN",
+    "review_count": "UNKNOWN",
+    "category": "Fiske / DIY-hobby",
+    "q4_label": "BLACK WEEK / GIFT",
+    "season_start": "november (byggsäsong inomhus + julhandel)",
+    "season_end": "mars (isen går, dragen ska vara klara)",
+    "urgency_now": "Nej i september — rätt fönster är v.44–50 (beställ v.42–44 för att hinna).",
+    "owner_customer": "Fru/vuxet barn köper till man 35–70 som spinnfiskar abborre/gädda/öring; han köper också själv som vinterprojekt. Klassen: ~1,1 M fritidsfiskare (HaV 2025), 752 000 män.",
+    "friction_or_motive": "Motiv, inte friktion: identitet + aktivitet. Färdiga spinnare kostar 40–90 kr/st i fackhandeln; satsen ger 40–50 egna för 449 kr. Presentköparen vet inte vilka drag han vill ha — en byggsats löser det.",
+    "why_baverbutiken": "Fiske är redan en kollektion (spöhållare 2 vinnare, fiskeset, linupprullare). Ny form i katalogen (ingen byggsats). Man 35+, landsbygd, gör-det-själv — exakt kundprofilen.",
+    "why_meta": "Stillbild: öppen låda med blanka spinnarblad + färdig spinnare i handen — en fiskare känner igen det på 0,5 s. Video: bygg en spinnare på 20 s (leverantörsvideo brukar visa exakt det). 0 svenska annonsörer på formen (Ad Library 'egna spinnare' = 2 irrelevanta träffar; 'spinnare' 36 = Norolan/Happy Angler-drag, ingen byggsats).",
+    "hook_sv": "Bygger du egna spinnare i vinter?",
+    "visual_0_3s_expected": "Hand trär pärla + blad på wire, vrider ögla; klipp till färdig spinnare som snurrar i vatten. Textfri leverantörsvideo sannolik (BLOCKED_SOURCE — ej verifierad).",
+    "swedish_shelf": {
+      "floor_name": "Örjans Fiske – Göra egna spinnare, byggsats ca 20 spinnare (utan krokar)",
+      "floor_price_sek": 279,
+      "floor_url": "https://www.orjansfiske.se/butik/startkit-spinnare/gora-egna-spinnare/",
+      "anchor_name": "Örjans Fiske ordinarie pris samma sats 389 kr; Sportfiskeboden DIY-kit 199–329 kr (tafs/stinger, 3–20 st)",
+      "anchor_price_sek": 389,
+      "anchor_url": "https://sportfiskeboden.com/collections/gor-det-sjalv",
+      "verdict": "PASS med villkor — ingen kedja (Biltema/Jula/Clas/Rusta) har formen; fackhandeln säljer mindre satser (10–20 spinnare, 279–389 kr). Vår sats måste synligt ge 2–3× fler spinnare (155+ delar, 40+ drag) för 449 kr, annars är Örjans billigare per drag. Marketplace (Fyndiq/Amazon.se) ej kontrollerad för exakt form — kontrollera före launch."
+    },
+    "economics": {
+      "landed_low": null,
+      "landed_high": null,
+      "se_price": 449,
+      "multiple_low": null,
+      "multiple_high": null,
+      "be_cpa": null,
+      "verdict": "UNKNOWN — Temu-pris oläst (Seznam tom, Temu-sök strypt). PASS kräver ≤ 15.3 USD räknat på hög kurs (≤ 17.9 USD på låg kurs) vid 449 kr. Rimligt intervall för 155-delars kit på Temu är okänt; 246-delars med tång låg på 69 USD, vilket skulle vara FAIL. Konceptet står, listningen måste prisläsas."
+    },
+    "audience": {
+      "size": "1,1 M fritidsfiskare 2025 (752 000 män); ~1,6 M i äldre HaV-mätning",
+      "source": "Havs- och vattenmyndigheten, Fakta om fritidsfiske; Sportfiskarna 'Sportfiske i siffror'",
+      "verdict": "PASS — köparklassen är fiskarens familj, långt över 100 000-golvet"
+    },
+    "variants": "En SKU (228 delar) eller två (155/228). Ingen parameter ägaren måste mäta. Tum/fot förekommer inte.",
+    "winner_dna_match_0_100": 62,
+    "archetype": "Hobbyidentitet + aktivitetspresent (bundle-värde)",
+    "confidence": "MEDIUM på koncept och hylla, LOW på ekonomi (pris oläst)",
+    "main_risk": "Temu-priset kan ligga 20–35 USD för 155+ delar → FAIL på 2,4×. Kvalitet på krokar/wire (recensioner oläst). 'Kit' är negativ rymd i fingeravtrycket — bärs här av presentklockan, inte av behov.",
+    "status_suggestion": "PENDING_VERIFICATION — huvudsessionen läser pris/betyg på 601100910111663; PASS ≤ 15 USD (449 kr) eller ≤ 17 USD (499 kr).",
+    "sources": [
+      "https://www.orjansfiske.se/butik/startkit-spinnare/gora-egna-spinnare/",
+      "https://sportfiskeboden.com/collections/gor-det-sjalv",
+      "https://www.havochvatten.se/fiske-och-handel/statistik-och-fakta/fakta-om-fritidsfiske.html",
+      "Meta Ad Library SE 2026-09-05: 'egna spinnare' 2 träffar (Jaktia Visby, B8Shield), 'spinnare' 36 (inga byggsatser)",
+      "Seznam 2026-09-05: 246 pcs kit w/ pliers $69 (Není skladem)"
+    ]
+  },
+  {
+    "uppdrag": "present-hobby",
+    "rank": 2,
+    "product_name": "Täljkit kåsa & sked – täljkniv, skedkniv, lindämnen i trälåda",
+    "concept": "Nybörjarkit för att tälja kåsa/sked: 3–4 knivar (tälj-, detalj-, skedkniv), lindträämnen, skärhandske, slipstropp i trälåda eller knivrulle. Svensk slöjdidentitet (Mora, kåsa vid elden). Vinterhobby vid köksbordet, present till 'han som sitter vid elden'.",
+    "goods_id": "601099528972078",
+    "temu_url": "https://www.temu.com/whittling-wood-carving-kit-for-beginners-6-in1-chip-carving-knife-kit-wood-carving-tools-for-spoon-bowl-cup-kuksa-diy-craft-woodworking-hobby-kits-for-kids-and-adults-gift-set-for--g-601099528972078.html",
+    "alt_goods_ids": [
+      "601099586409116",
+      "601099600070484",
+      "601099516356267"
+    ],
+    "price_usd": null,
+    "price_source": "UNKNOWN — Seznam tom för alla fyra listningar; Temus söksida strypt.",
+    "rating": "UNKNOWN",
+    "review_count": "UNKNOWN",
+    "category": "Slöjd / eld & uteliv-identitet",
+    "q4_label": "BLACK WEEK / GIFT",
+    "season_start": "november (mörka kvällar, julhandel)",
+    "season_end": "februari",
+    "urgency_now": "Nej — presentklocka. Launch v.44–46.",
+    "owner_customer": "Presentköpare till man 40–70 med fritidshus/eldstad/friluftsintresse; även far–son. Ingen officiell statistik för täljare — proxy: 1,7 M eldstäder (MSB), 271 000 jaktkort, 1,1 M fiskare.",
+    "friction_or_motive": "Motiv: 'göra något med händerna' + kåsa-nostalgi. Fackhandeln säljer kiten för 599–799 kr (BeaverCraft) — presentbudgeten 299–699 träffas mitt i.",
+    "why_baverbutiken": "Ny arketyp (identitet/slöjd) men samma kund som kedjesåg, tändstål och campinglampa i katalogen. Trälåda = presentklar utan inslagning.",
+    "why_meta": "Stillbild: öppen trälåda med knivar + halvtäljd kåsa — läses omedelbart som 'tälja'. Bara Morakniv (2 annonser, dec 2025) och en täljverkstad annonserar. Video: spån som lossnar från lind i 3 s.",
+    "hook_sv": "Har han alltid velat tälja en kåsa?",
+    "visual_0_3s_expected": "Närbild kniv som skär spån ur lindämne; klipp till färdig kåsa vid eld. Leverantörsvideo sannolik men BLOCKED_SOURCE.",
+    "swedish_shelf": {
+      "floor_name": "Amazon.se Eli täljset (10 delar, barn/nybörjare) — pris oläst; Clas Ohlson Täljkit Limited Edition (Morakniv) — pris oläst",
+      "floor_price_sek": null,
+      "floor_url": "https://www.clasohlson.com/se/Taljkit-Limited-Edition/p/41-1422",
+      "anchor_name": "BeaverCraft Täljkit i trälåda (Knivbutik.se) 799 kr; BeaverCraft S43 kåsa/sked-kit (Tacticalstore) 599 kr",
+      "anchor_price_sek": 799,
+      "anchor_url": "https://www.knivbutik.se/product/beavercraft-taljkit/",
+      "verdict": "PASS villkorat — märkesankare 1,2–1,6× vid 499 kr och vår låda ser ut som ankaret (trälåda, samma knivuppsättning). Kedjegolvet (Clas Ohlson Morakniv-kit, Amazon-kit) är oläst: läs priset före launch. Om Clas ligger ≤ 299 kr med Morakniv-namn faller vi."
+    },
+    "economics": {
+      "landed_low": null,
+      "landed_high": null,
+      "se_price": 499,
+      "multiple_low": null,
+      "multiple_high": null,
+      "be_cpa": null,
+      "verdict": "UNKNOWN — Temu-pris oläst (Seznam tom, Temu-sök strypt). PASS kräver ≤ 17.0 USD räknat på hög kurs (≤ 19.9 USD på låg kurs) vid 499 kr. Trälåda + 4 knivar väger 0,6–0,9 kg; räkna med frakttillägg."
+    },
+    "audience": {
+      "size": "UNKNOWN för täljare; köparklass = presentköpare till 1,7 M eldstadshushåll / 271 000 jägare",
+      "source": "MSB (1,7 M eldstäder, via Vi i Villa/PT); Naturvårdsverket jaktkort 2025–26",
+      "verdict": "PASS på köparklass, UNKNOWN på hobbystorlek"
+    },
+    "variants": "En SKU. Inga mått.",
+    "winner_dna_match_0_100": 55,
+    "archetype": "Hobbyidentitet + present (märkesankare-look-alike)",
+    "confidence": "MEDIUM koncept, LOW ekonomi/hylla (två priser olästa)",
+    "main_risk": "Metas annonspolicy för knivar (hobbyknivar tillåtna, men granskning kan stoppa creatives). Objektet används inomhus (negativ rymd) — bärs av presentklockan. Kvalitet på stålet i Temu-kit (recensioner oläst).",
+    "status_suggestion": "PENDING_VERIFICATION — läs Temu-pris + Clas Ohlson-kitets pris. PASS ≤ 17 USD vid 499 kr.",
+    "sources": [
+      "https://www.knivbutik.se/product/beavercraft-taljkit/",
+      "https://www.tacticalstore.se/knivar-verktyg/slojdknivar-tillbehor/beavercraft-s43-taljkit-kasa-sked-med-knivrulle/",
+      "https://www.clasohlson.com/se/Taljkit-Limited-Edition/p/41-1422",
+      "Meta Ad Library SE 2026-09-05: 'täljkit' 2 (Morakniv), 'tälja' 4 (kurser)"
+    ]
+  },
+  {
+    "uppdrag": "present-hobby",
+    "rank": 3,
+    "product_name": "Fiskeadventskalender 24 luckor – rovfisk (gädda/abborre)",
+    "concept": "24 luckor med drag och tillbehör (wobbler, skeddrag, spinnare, jiggar, krokar, fjäderringar). Julens självklara fiskepresent; köps i nov av fru/barn. Temu-varianten ligger 15–23 USD mot fackhandelns 329 kr (Fladen) upp till 1 199–2 599 kr (Westin/Savage Gear/Kanalgratis).",
+    "goods_id": "601100211255328",
+    "temu_url": "https://www.temu.com/24pcs-fishing-advent-calendar-for-adult-men-teen-boys-2025-fishing-lure-christmas-gifts-24-days-topwater-lures-fishing-spoons-minnow-popper-crankbait-for--father-boyfriend-brother-g-601100211255328.html",
+    "alt_goods_ids": [
+      "601102855553443",
+      "601099722809539",
+      "601099758685546",
+      "601099531871075",
+      "601099640772397",
+      "601099695654444"
+    ],
+    "price_usd": "14,98–22,91 (billigaste klustret 14,98 / 15,84 / 16,50 / 18,98 / 19,24); dyrare varianter 34–54 USD",
+    "price_source": "temu-sok-sida (WebFetch search_result.html 'fishing advent calendar', 2026-09-05) — priser ej kopplade till specifikt goods-id, konfidens MEDIUM. Rabattsatser −49…−79 % är Temus egna.",
+    "rating": "UNKNOWN",
+    "review_count": "UNKNOWN",
+    "category": "Fiske / adventskalender",
+    "q4_label": "BLACK WEEK / GIFT",
+    "season_start": "1 november (förbokning pågår redan i sep hos Kanalgratis/FiskeHörnan)",
+    "season_end": "30 november (måste vara framme före 1 dec)",
+    "urgency_now": "Ja för inköp: 2–3 veckors ledtid ⇒ beställ senast v.42, launch v.43–44, sista leverans v.47.",
+    "owner_customer": "Fru/partner/vuxet barn till man som fiskar; 1,1 M fritidsfiskare (752 000 män). Också far till son 10–16.",
+    "friction_or_motive": "Motiv: färdig, tidsstyrd present. Köparen slipper välja drag. Deadline (1 dec) skapar äkta brådska utan falsk knapphet.",
+    "why_baverbutiken": "Fiske är kollektion i butiken; kalendern är säsongens mest efterfrågade fiskepresent. Butikens fördel mot dropshippers: svensk sajt, recensioner, snabb frakt från lager.",
+    "why_meta": "Igenkänning i stillbild 100 % (kalender + drag). Men Ad Library SE visar redan ≥ 9 annonsörer: FiskeHörnan (≥ 10 annonser aktiva sep 2026, '24 drag. En kalender. Redo.'), Kanalgratis (förbokning), Lillavardag (7), Shoppajul.se (9), Mapeelow, Gerbuy, Lyckrea, AuraBella, Bengtssons/Fiska.nu. Flera är Temu-dropshippers med USD-konton.",
+    "hook_sv": "Vet du vad han vill ha i år?",
+    "visual_0_3s_expected": "Lucka öppnas, wobbler faller i handen; svep över 24 luckor. Leverantörsmaterial finns rimligen (kalendern är Temus egen storsäljare) — BLOCKED_SOURCE för verifiering.",
+    "swedish_shelf": {
+      "floor_name": "Fyndiq – Temu-typ fiskekalender 24 luckor: 250–361 kr (flera säljare); sebutik.se 429 kr (från 798); Fladen Fiskarens julkalender 289–449 kr (PriceRunner, 24 delar, riktigt märke)",
+      "floor_price_sek": 250,
+      "floor_url": "https://fyndiq.se/produkt/fiskespo-adventskalender-2026-24-dagars-fiskeutrustning-julkalender-fiskebete-set-fiske-adventskalender-4ff9ae5b80e847b6/",
+      "anchor_name": "Berkley Predator 1 399 / Savage Gear 1 599–1 699 / Westin Predator 1 199–2 599 / Kanalgratis 1 695 (Sportfiskeprylar, Coolstuff, Kanalgratis)",
+      "anchor_price_sek": 1599,
+      "anchor_url": "https://www.sportfiskeprylar.se/sv/ovrigt/presenter-presenttips/adventskalender",
+      "verdict": "FAIL på marketplace-golvet i samma form (Fyndiq 250–361 kr, identiska Temu-kalendrar) och på trängsel (≥ 9 annonsörer). Ankaret (1 199–2 599) är 2,7–5,8× vårt pris men vår låda ser ut som Fyndiqs, inte som Westins. Fladen 329 kr är ett riktigt märke på vår prisnivå. Temu-varianten slår INTE svenska hyllan på pris eller innehåll — bara på vår marginal."
+    },
+    "economics": {
+      "landed_low": 157,
+      "landed_high": 282,
+      "se_price": 449,
+      "multiple_low": 1.59,
+      "multiple_high": 2.86,
+      "be_cpa": [
+        167,
+        292
+      ],
+      "verdict": "SPRÖD vid 449 kr / PASS vid 499 kr på billigaste klustret — landad 157–196 kr vid 15 USD (2,29–2,86× @449; 2,55–3,18× @499, BE-CPA 253–342), men 240–282 kr vid 23 USD (1,59–1,87× @449 = FAIL). Prisläs den exakta listningen före prissättning; välj bara listningar ≤ 16 USD."
+    },
+    "audience": {
+      "size": "1,1 M fritidsfiskare (2025); köparklass = deras familjer",
+      "source": "HaV Fakta om fritidsfiske 2025; Sportfiskarna",
+      "verdict": "PASS — störst köparklass i uppdraget"
+    },
+    "variants": "Två SKU max: Rovfisk (gädda/abborre) och Öring/insjö. Ingen storlek. Innehållet är en okänd parameter för köparen — sälj på 'svensk rovfisk', inte på 'topwater'.",
+    "winner_dna_match_0_100": 48,
+    "archetype": "Present med deadline (juldeadline) — kategorin är bevisad av 9 konkurrenter",
+    "confidence": "HIGH på efterfrågan och pris, HIGH på att hyllan är trång (mätt), MEDIUM på om vi kan vinna",
+    "main_risk": "Trängsel: dropshippers med identisk låda på Fyndiq för 250–361 kr och i Meta-flödet från 2 000+ kr/dag. Innehållet i Temu-kalendrar är ofta amerikanska bass-drag (topwater/popper) som svenska abborrfiskare ser igenom. Returer i januari.",
+    "status_suggestion": "WATCH / TEST ONLY IF DIFFERENTIATED — testa bara med (a) svensk rovfisk-etikett och egen bildsättning, (b) 499 kr med 'fri frakt + framme före 1 dec'-löfte, (c) separat test-ABO 7 dagar. Annars: låt dropshippers slåss om den.",
+    "sources": [
+      "Temu search_result 'fishing advent calendar' 2026-09-05 (14 rader, 14,98–54,43 USD)",
+      "https://julafton.se/fiske-julkalender/",
+      "https://www.sportfiskeprylar.se/sv/ovrigt/presenter-presenttips/adventskalender",
+      "https://www.coolstuff.se/p/savage-gear-fiskekalender",
+      "https://www.pricerunner.se/pl/647-5311458/Fiske/Fladen-Julkalender-priser (289–449 kr ur sökutdrag)",
+      "https://fyndiq.se/produkt/fiskekalender-2025-4d8f9bd83b42477f/ (250–350 kr ur sökutdrag)",
+      "https://sebutik.se/products/fishingcalendar (429 kr)",
+      "https://www.kanalgratis.se/sv/kanalgratis-julkalender (1 695 kr)",
+      "Meta Ad Library SE 2026-09-05: 'adventskalender fiske' ~50 annonser, 'fiskekalender' ~67 annonser"
+    ]
+  },
+  {
+    "uppdrag": "present-hobby",
+    "rank": 4,
+    "product_name": "Eldblåsare teleskopisk i rostfritt – 2-pack med fodral",
+    "concept": "Hopfällbart blåsrör (pocket bellows) i rostfritt stål, 48 cm utdraget, riktar en luftstråle rakt i glöden utan att askan yr. För braskaminen, bålpannan och lägerelden. 2-pack (kamin + bålpanna) för att nå 249 kr. Klistermärkes-typen: universellt objekt, noll friktion, roligt att ge.",
+    "goods_id": "601099516094068",
+    "temu_url": "https://www.temu.com/1pc-blow-fire-tube-collapsible-bellows-pocket-stainless-steel-fire-manual-blowing-tube-tool-for-camping-cooking-campfire-survival-garden-tool-g-601099516094068.html",
+    "alt_goods_ids": [
+      "601099622663664",
+      "601099523190504",
+      "601099548283168",
+      "601105175249704"
+    ],
+    "price_usd": "2 (1 st, 'retractable stainless steel fire blowing tube', 99+ rec)",
+    "price_source": "seznam-snippet 2026-09-05 ('Cena $2', 99+). Exakt goods-id i snippet ej läsbart — priset gäller formen, konfidens MEDIUM. 2-pack-listning 601105175249704 pris oläst.",
+    "rating": "UNKNOWN (snippet visade 99+ recensioner, betyg dolt)",
+    "review_count": "99+",
+    "category": "Eld / braskamin / bålpanna",
+    "q4_label": "Q4 NOW + GIFT",
+    "season_start": "oktober (eldningssäsong)",
+    "season_end": "mars",
+    "urgency_now": "Ja — eldningen har börjat; presentfönstret läggs ovanpå i nov–dec.",
+    "owner_customer": "Man 45–70 med braskamin/öppen spis/bålpanna: 1,7 M eldstäder i Sverige (MSB), ~850 000 braskaminer. Presentköpare: partner/barn.",
+    "friction_or_motive": "Liten, återkommande friktion (blåsa på glöd, aska i ansiktet) + want. Old way = blåsa med munnen eller tidning. Ingen jämförelsehandel — impulsköp.",
+    "why_baverbutiken": "Katalogen har eldstål-kunden (kedjesåg, hopfällbar såg, grillmatta) men ingen eldprodukt för kaminen. Passar Klistermärkes-mönstret (199–249 kr, universellt objekt) som är butikens tunnaste men säkraste vinnarform.",
+    "why_meta": "Video 0–3 s: glöd → blås i röret → flamma. Kroppslig, omedelbar payoff, textfri. Ad Library SE 'blåsrör eld' = 0 annonser. Stillbild fungerar också (rör + eld).",
+    "hook_sv": "Blåser du fortfarande på glöden?",
+    "visual_0_3s_expected": "Hand drar ut teleskoprör, blåser, glöd flammar upp — leverantörsvideor på formen brukar visa exakt det (BLOCKED_SOURCE för den exakta listningen).",
+    "swedish_shelf": {
+      "floor_name": "Mylar.se 'Blåsrör för eldning' 69,90 kr/st (5- och 10-pack finns); Fruugo/Amazon.se liknande",
+      "floor_price_sek": 69.9,
+      "floor_url": "https://mylar.se/products/blasror-for-eldning",
+      "anchor_name": "Röda Stjärnan teleskopiskt blåsrör 419 kr; Stikkan Eldverktyg Flamman (blåsbälg+eldgaffel, Värmland) ~400 kr hos Gardenstore/SmartaSaker",
+      "anchor_price_sek": 419,
+      "anchor_url": "https://rodastjarnan.com/talt-och-mat/teleskopiskt-blasror-for-oppen-eld-45863",
+      "verdict": "PASS villkorat — ingen kedja har formen (Clas Ohlsons Flamman är utgången), marketplace-golv 69,90 kr/st finns men produkten är inte jämförelsehandlad. Vårt 2-pack 249 kr ligger under ankaret 419 kr för EN. Bygg inte 1-pack — det hamnar under 200 kr."
+    },
+    "economics": {
+      "landed_low": 42,
+      "landed_high": 49,
+      "se_price": 249,
+      "multiple_low": 5.08,
+      "multiple_high": 5.93,
+      "be_cpa": [
+        200,
+        207
+      ],
+      "verdict": "PASS med <300-kronorsundantaget — 2-pack landad 42–49 kr, 5,08–5,93× vid 249 kr, BE-CPA 200–207 kr (≥ 190). Tillåtet bara för att kostnaden är ≤ 100 kr och leverantörsmaterialet kan stå som annons. Tunn vinst i kronor (klistermärkes-typen)."
+    },
+    "audience": {
+      "size": "1,7 M eldstäder / ~850 000 braskaminer",
+      "source": "MSB via PT/Vi i Villa; Energimyndigheten",
+      "verdict": "PASS — bredaste ägarklassen i uppdraget"
+    },
+    "variants": "En SKU (2-pack). Ingen storlek.",
+    "winner_dna_match_0_100": 66,
+    "archetype": "Universellt objekt + noll friktion + humorpresent (klistermärkes-typen)",
+    "confidence": "MEDIUM (pris via Seznam på formen, inte exakt id)",
+    "main_risk": "Under 300 kr = tunn vinst (klistermärkena gav kontots minsta vinst i kronor). Enkel att kopiera. Rör med plastfodral kan se billigt ut i bild.",
+    "status_suggestion": "PENDING_VERIFICATION — verifiera pris/betyg på 601099516094068 eller 2-packslistningen 601105175249704, sedan TEST i separat ABO.",
+    "sources": [
+      "Seznam 2026-09-05: '1pc retractable stainless steel fire blowing tube' $2, 99+",
+      "https://mylar.se/products/blasror-for-eldning",
+      "https://rodastjarnan.com/talt-och-mat/teleskopiskt-blasror-for-oppen-eld-45863",
+      "https://www.clasohlson.com/se/Eldverktyg-Flamman/p/41-1126 (utgången)",
+      "https://www.pt.se/nyheter/konsument/artikel/tuffare-miljokrav-for-braskaminer/jv6vm9ol (1,7 M eldstäder, MSB)",
+      "Meta Ad Library SE 2026-09-05: 'blåsrör eld' 0"
+    ]
+  },
+  {
+    "uppdrag": "present-hobby",
+    "rank": 5,
+    "product_name": "Perkolator 9 koppar rostfri – kaffe över öppen eld",
+    "concept": "Klassisk stovetop-perkolator i rostfritt (304) för eld, vedspis och gasol, 9 koppar, trähandtag på vissa listningar. Identitetsprodukt för jägaren/fiskaren/stugägaren — 'kaffe vid elden' är svensk kultur. Present som syns i stillbild.",
+    "goods_id": "601099616169218",
+    "temu_url": "https://www.temu.com/uk/stainless-steel-9-cup-coffee-percolator-durable-no-electricity-needed-perfect-for-camping-home-use-with-comfort-grip-wooden-handle-g-601099616169218.html",
+    "alt_goods_ids": [
+      "601099664431586",
+      "601099674293567",
+      "601099615924643"
+    ],
+    "price_usd": null,
+    "price_source": "UNKNOWN — Seznam tom (bara -s.html-sidor utan pris); Temus söksida strypt.",
+    "rating": "UNKNOWN",
+    "review_count": "UNKNOWN",
+    "category": "Kaffe / eld / uteliv",
+    "q4_label": "BLACK WEEK / GIFT",
+    "season_start": "november (present)",
+    "season_end": "evergreen (stuga, jakt, fiske året runt)",
+    "urgency_now": "Nej — presentklocka.",
+    "owner_customer": "Man 45–70 med fritidshus, jaktlag, båt eller bålpanna. 271 000 jaktkort, 1,1 M fiskare, ~600 000 fritidshus (SCB, ej verifierat i denna körning).",
+    "friction_or_motive": "Motiv (ritual), ingen friktion. Old way = kaffepanna i emalj/aluminium (Jula 99–199 kr) — perkolatorn är uppgraderingen.",
+    "why_baverbutiken": "Camping & Friluft är kollektion; kaffe över eld saknas helt. Ser ut som Petromax/Winnerwell/GSI (649–699 kr) i bild.",
+    "why_meta": "Stillbild: rostfri perkolator på glöd med ånga — omisskännlig. Video: bubblandet i glasknoppen 0–3 s. Ad Library 'perkolator' 22 träffar, alla irrelevanta (0 produktannonsörer på formen).",
+    "hook_sv": "Kokar du kaffet över elden?",
+    "visual_0_3s_expected": "Perkolator på eld, kaffe pumpar upp i glasknoppen. Leverantörsvideo trolig, BLOCKED_SOURCE.",
+    "swedish_shelf": {
+      "floor_name": "Fosco emaljperkolator 299 kr (Röda Stjärnan); Jula Kayoba te-/kaffepanna aluminium (ej perkolator) ~99–199 kr — pris ur sökutdrag, oläst exakt",
+      "floor_price_sek": 299,
+      "floor_url": "https://rodastjarnan.com/talt-och-mat/kokkarl-och-kaffepannor/perkulator",
+      "anchor_name": "Röda Stjärnan perkulator rostfri 569 kr; Winnerwell 9 koppar rostfri 649 kr; GSI 6 koppar 679 kr; Petromax Perkomax 649 kr",
+      "anchor_price_sek": 649,
+      "anchor_url": "https://rodastjarnan.com/talt-och-mat/kokkarl-och-kaffepannor/perkulator",
+      "verdict": "SVAG — ingen kedja (Biltema/Jula/Clas) har rostfri eld-perkolator, men fackhandeln säljer exakt formen för 569–649 kr. Ankaret är bara 1,1–1,3× vid 499 kr. Vi vinner bara om Temu-priset tillåter 449–499 kr och vår ser ut som Winnerwell (rostfri, glasknopp, trähandtag)."
+    },
+    "economics": {
+      "landed_low": null,
+      "landed_high": null,
+      "se_price": 499,
+      "multiple_low": null,
+      "multiple_high": null,
+      "be_cpa": null,
+      "verdict": "UNKNOWN — Temu-pris oläst (Seznam tom, Temu-sök strypt). PASS kräver ≤ 17.0 USD räknat på hög kurs (≤ 19.9 USD på låg kurs) vid 499 kr. Vikt ~0,8–1,2 kg — fraktpåslag sannolikt över 1,5×. Om Temu-priset är 20 USD blir landad 209–245 → 2,04–2,39× = FAIL vid 499."
+    },
+    "audience": {
+      "size": "271 000 jaktkort + 1,1 M fiskare + fritidshusägare",
+      "source": "Naturvårdsverket 2025–26; HaV 2025",
+      "verdict": "PASS"
+    },
+    "variants": "En SKU (9 koppar). Koppar är en parameter ägaren kan.",
+    "winner_dna_match_0_100": 52,
+    "archetype": "Hobbyidentitet / ritualpresent",
+    "confidence": "LOW — pris oläst och ankaret ligger nära vårt pris",
+    "main_risk": "Fackhandeln på 569 kr i samma form; frakt på 1 kg stål; Temu-perkolatorer har rykte om läckande knopp (oläst).",
+    "status_suggestion": "PENDING_VERIFICATION — PASS bara om ≤ 14 USD (hög kurs) vid 449–499 kr. Annars WATCH.",
+    "sources": [
+      "https://rodastjarnan.com/talt-och-mat/kokkarl-och-kaffepannor/perkulator",
+      "https://www.naturkompaniet.se/utrustning/friluftskok-och-redskap/oppen-eld/kastruller-och-stekpannor/",
+      "Meta Ad Library SE 2026-09-05: 'perkolator' 22 (irrelevanta)"
+    ]
+  },
+  {
+    "uppdrag": "present-hobby",
+    "rank": 6,
+    "product_name": "Julgranspynt för fiskaren – fiskedrag-ornament 24-pack",
+    "concept": "Julgranskulor formade som fiskedrag/fiskar (utan krokar) — humorpresent till fiskaren som samtidigt hänger i ett objekt alla har (julgranen). 24-pack för att nå 249–299 kr. Samma logik som 'Klistermärken för soptunnan' (vinnare 2,05): universellt objekt, < 250 kr, humor på objektet — inte på personen.",
+    "goods_id": "601099529794599",
+    "temu_url": "https://www.temu.com/ca/24pcs-fishing-basket-christmas-tree-ornament-funny-hanging-fishing-ornaments-for-christmas-tree-acrylic-holiday-festive-decoration-for-xmas-tree-festive-holiday-decor-navidad-christmas-decorations-clearance-christmas-party-favors-weird-stuff-g-601099529794599.html",
+    "alt_goods_ids": [
+      "601099752835308"
+    ],
+    "price_usd": null,
+    "price_source": "UNKNOWN — Seznam tom; enda funna listningen är akryl-'fishing basket'-ornament, oklart om den ser ut som drag. Bättre listning krävs (sök 'fishing lure ornament', 'lure bauble', 'fisherman christmas ornament set').",
+    "rating": "UNKNOWN",
+    "review_count": "UNKNOWN",
+    "category": "Humor / dekoration / fiske-identitet",
+    "q4_label": "BLACK WEEK / GIFT",
+    "season_start": "15 november",
+    "season_end": "20 december",
+    "urgency_now": "Nej — men kortaste fönstret i uppdraget (5 veckor).",
+    "owner_customer": "Familjer med fiskare i huset: ~3 M julgranar säljs per år i Sverige (Skogen.se/Sveaskog); 1,1 M fiskare.",
+    "friction_or_motive": "Ren want/humor. Noll friktion, noll inlärning.",
+    "why_baverbutiken": "Klistermärkena bevisar att humor på ett universellt objekt fungerar i kontot (ROAS 2,05 vid 199 kr) medan humor på kroppen (badshorts 399) förlorar. Detta är samma mönster med fiskaridentitet.",
+    "why_meta": "Stillbild: gran med drag i stället för kulor — läses på 1 s och delas. Statisk bild räcker (payoffen är produkten själv). Inga svenska annonsörer funna (kategorin saknas i svensk hylla).",
+    "hook_sv": "Granen till honom som fiskar.",
+    "visual_0_3s_expected": "Närbild wobbler-ornament i grangren, drag ut till hel gran. Leverantörsmaterial okänt — BLOCKED_SOURCE.",
+    "swedish_shelf": {
+      "floor_name": "Ingen svensk kedja eller fackhandel funnen med fiskedrag-julgranspynt (NordicNest/IKEA/Trademax/Partykungen: bara vanliga kulor). Marketplace (Fyndiq/Amazon.se) ej kontrollerad",
+      "floor_price_sek": null,
+      "floor_url": "https://www.pricerunner.se/",
+      "anchor_name": "Inget ankare — kategorin finns inte",
+      "anchor_price_sek": null,
+      "anchor_url": null,
+      "verdict": "PASS på kedjan (formen saknas), UNKNOWN på marketplace. Utan ankare måste priset bära sig självt: 249–299 kr för 24 st."
+    },
+    "economics": {
+      "landed_low": null,
+      "landed_high": null,
+      "se_price": 249,
+      "multiple_low": null,
+      "multiple_high": null,
+      "be_cpa": null,
+      "verdict": "UNKNOWN — Temu-pris oläst (Seznam tom, Temu-sök strypt). PASS kräver ≤ 8.5 USD räknat på hög kurs (≤ 9.9 USD på låg kurs) vid 249 kr. Pris under 300 kr — kräver kostnad ≤ 100 kr (⇒ ≤ 8 USD för hela 24-packet) och att listningens bild kan stå som annons."
+    },
+    "audience": {
+      "size": "~3 M julgranar/år × andel hushåll med fiskare (okänd)",
+      "source": "Skogen.se / Sveaskog (3 M granar); HaV (1,1 M fiskare)",
+      "verdict": "PASS på objektet, UNKNOWN på korsningen"
+    },
+    "variants": "En SKU (24-pack, mixade drag).",
+    "winner_dna_match_0_100": 45,
+    "archetype": "Humorpresent på universellt objekt (klistermärkes-typen)",
+    "confidence": "LOW — listningen är svag och priset oläst; konceptet bärs av kontots eget bevis",
+    "main_risk": "Fel listning (akrylplattor i stället för 3D-drag) dödar igenkänningen. 5 veckors fönster. Under 300 kr = tunn vinst.",
+    "status_suggestion": "ALTERNATIVE_LISTING_REQUIRED — konceptet håller, hitta en 3D-drag-ornamentlistning ≤ 8 USD/24 st; först då pris/material.",
+    "sources": [
+      "https://www.skogen.se/nyheter/30-granar-per-svensk/",
+      "https://www.sveaskog.se/skogen-pa-djupet/varierat-skogsbruk/granen---allt-du-behover-veta-om-julens-popularaste-trad/",
+      "KATALOG.md: Klistermärken för soptunnan 199 kr (vinnare 2,05), Badshorts med skämttryck 399 kr (förlorare 1,29)"
+    ]
+  },
+  {
+    "uppdrag": "present-hobby",
+    "rank": 7,
+    "product_name": "Fältknivslip med vinkelguide (Work Sharp-typ) – 11-i-1 med läderfodral",
+    "concept": "Guidad fältslip för jakt-/fiskekniv: diamantplattor grov/fin, keramikstav med krokspår, läderstropp, 20°/25°-guider. Jaktidentitet i fickformat.",
+    "goods_id": "601105480032013",
+    "temu_url": "https://www.temu.com/ca/210n-transforod-11-in-1-portable-knife-sharpener-with-monocrystalline-diamond-ceramic-rods-adjustable-angle--guided-field-sharpener-leather--for-hunting-outdoor-survival-compatible-with-curved-serrated--fishhooks-g-601105480032013.html",
+    "alt_goods_ids": [
+      "601099597943065",
+      "601099567809267",
+      "601099524807980"
+    ],
+    "price_usd": null,
+    "price_source": "UNKNOWN — Seznam tom; Temus söksida strypt vid försöket ('guided field sharpener').",
+    "rating": "UNKNOWN",
+    "review_count": "UNKNOWN",
+    "category": "Jakt / fiske / verktyg",
+    "q4_label": "Q4 NOW (jaktsäsong) + GIFT",
+    "season_start": "oktober (älgjakt, slakt)",
+    "season_end": "februari",
+    "urgency_now": "Ja för jaktvinkeln — men hyllan gör den svag.",
+    "owner_customer": "271 000 jaktkortslösare; 1,1 M fiskare. Presentköpare: partner/barn.",
+    "friction_or_motive": "Friktion: slö kniv i skogen/vid filébrädan; old way = bryne eller Biltemas dragslip 49 kr.",
+    "why_baverbutiken": "Kedjeslipen (förlorare, 249) och bandslipen (vinnare, 909) visar att kunden köper slipning — men bara med tydlig form-/prisskillnad.",
+    "why_meta": "Stillbild: kniv + guidad slip i handen med skog i bakgrunden — jaktigenkänning hög. Men 'knivslip' i Ad Library SE = 1 243 annonser (Sharpify, Krotos, 24.se, LIVKK) — kategorin är mättad av köksknivslipar med samma ord.",
+    "hook_sv": "Slipar du kniven ute i skogen?",
+    "visual_0_3s_expected": "Kniv dras genom 20°-guiden, papper skärs. BLOCKED_SOURCE.",
+    "swedish_shelf": {
+      "floor_name": "Jägarliv fickknivslip (keramik/hårdmetall) 49 kr; Biltema knivslip (pris oläst, 403)",
+      "floor_price_sek": 49,
+      "floor_url": "https://www.jagarliv.se/knivslip/",
+      "anchor_name": "Work Sharp Guided Field Sharpener 2.2.1 — 395 kr rek. pris (Hylte Jakt & Lantman, Duab, Knivslipar.se) — SAMMA FORM",
+      "anchor_price_sek": 395,
+      "anchor_url": "https://www.hylte-lantman.com/work-sharp-knivslip-field-sharpener-221",
+      "verdict": "FAIL/SVAG — originalet Work Sharp kostar 395 kr i svensk fackhandel; ankaret ligger på vår prisnivå, inte 1,6× över. En kopia måste ned till 299 kr, vilket kräver Temu-pris ≤ 9 USD och ger BE-CPA ~200 kr."
+    },
+    "economics": {
+      "landed_low": null,
+      "landed_high": null,
+      "se_price": 299,
+      "multiple_low": null,
+      "multiple_high": null,
+      "be_cpa": null,
+      "verdict": "UNKNOWN — Temu-pris oläst (Seznam tom, Temu-sök strypt). PASS kräver ≤ 10.2 USD räknat på hög kurs (≤ 11.9 USD på låg kurs) vid 299 kr. Vid 349–399 kr konkurrerar vi rakt mot originalet."
+    },
+    "audience": {
+      "size": "271 000 jaktkort (2025–26) + fiskare",
+      "source": "Naturvårdsverket, Jägarregistret",
+      "verdict": "PASS på klass"
+    },
+    "variants": "En SKU.",
+    "winner_dna_match_0_100": 44,
+    "archetype": "Hobbyidentitet / verktygspresent",
+    "confidence": "MEDIUM på hyllan (mätt), LOW på pris",
+    "main_risk": "Originalet 395 kr + 1 243 knivslipannonser i SE.",
+    "status_suggestion": "WATCH — testas bara om Temu-pris ≤ 9 USD och 299 kr håller BE-CPA ≥ 190.",
+    "sources": [
+      "https://www.hylte-lantman.com/work-sharp-knivslip-field-sharpener-221",
+      "https://duab.se/maskiner-verktyg/verktygsslipar-tillbehor/handhallna-verktygsslipar/work-sharp-knivslip-field-sharpener-221",
+      "https://www.jagarliv.se/knivslip/",
+      "Meta Ad Library SE 2026-09-05: 'knivslip' ~1 243 annonser"
+    ]
+  },
+  {
+    "uppdrag": "present-hobby",
+    "rank": 8,
+    "product_name": "Fiskgrepp (lip grip) med inbyggd digital våg",
+    "concept": "Rostfritt fiskgrepp med digital våg (15–36 kg) och måttband — 'väg gäddan utan att skada den'. Presentnivå 349–399 kr.",
+    "goods_id": "601099513997309",
+    "temu_url": "https://www.temu.com/ge-en/walk-fish-1pc-stainless-steel-fish-lip-gripper-with-digital-scale-measure-tape-water-resistant-lip-grip-fish-grabber-clip-fish-control-g-601099513997309.html",
+    "alt_goods_ids": [
+      "601099600318262",
+      "601099539311719",
+      "601099514396105"
+    ],
+    "price_usd": null,
+    "price_source": "UNKNOWN — Seznam tom.",
+    "rating": "UNKNOWN",
+    "review_count": "UNKNOWN",
+    "category": "Fiske / verktyg",
+    "q4_label": "BLACK WEEK / GIFT",
+    "season_start": "november (present)",
+    "season_end": "evergreen",
+    "urgency_now": "Nej.",
+    "owner_customer": "Gädd-/abborrfiskare; 1,1 M fiskare.",
+    "friction_or_motive": "Friktion: hålla gädda + väga + fota med två händer. Old way = fiskevåg + separat grepp.",
+    "why_baverbutiken": "Fiskekollektionen; presentnivå.",
+    "why_meta": "Stillbild: gädda hängande i greppet med display — hög igenkänning. Katalogens fiskeprylar vann på leverantörsmaterial.",
+    "hook_sv": "Väger du gäddan med två händer?",
+    "visual_0_3s_expected": "Grepp låser i gäddkäft, displayen tänds. BLOCKED_SOURCE.",
+    "swedish_shelf": {
+      "floor_name": "Biltema Lip Grip med våg 15 kg (pris oläst, 403 — Biltema ligger normalt 99–199 kr i kategorin); Jula Kayoba digital fiskevåg 149 kr",
+      "floor_price_sek": 149,
+      "floor_url": "https://www.biltema.se/fritid/fiske/fiskeverktyg/lip-grip-med-vag-15-kg-2000038547",
+      "anchor_name": "Rapala Digital Fish Grip 25 kg (Sportfiskeprylar/PriceRunner, 32 Rapala-vågar) — pris oläst",
+      "anchor_price_sek": null,
+      "anchor_url": "https://www.pricerunner.se/cl/647/Fiske?attr_57905725=59871184&man_id=162426",
+      "verdict": "FAIL/SVAG — Biltema har exakt formen (lip grip med våg) i butik; det är kedjeregeln. Ankaret (Rapala) är oläst."
+    },
+    "economics": {
+      "landed_low": null,
+      "landed_high": null,
+      "se_price": 349,
+      "multiple_low": null,
+      "multiple_high": null,
+      "be_cpa": null,
+      "verdict": "UNKNOWN — Temu-pris oläst (Seznam tom, Temu-sök strypt). PASS kräver ≤ 11.9 USD räknat på hög kurs (≤ 13.9 USD på låg kurs) vid 349 kr."
+    },
+    "audience": {
+      "size": "1,1 M fiskare",
+      "source": "HaV 2025",
+      "verdict": "PASS"
+    },
+    "variants": "En SKU.",
+    "winner_dna_match_0_100": 40,
+    "archetype": "Hobbyidentitet / verktyg",
+    "confidence": "MEDIUM på hyllan (Biltema har formen), LOW på pris",
+    "main_risk": "Biltema säljer formen.",
+    "status_suggestion": "WATCH — bara om Biltemas pris visar sig ≥ 249 kr och Rapala-ankaret ≥ 550 kr.",
+    "sources": [
+      "https://www.biltema.se/fritid/fiske/fiskeverktyg/lip-grip-med-vag-15-kg-2000038547",
+      "https://www.jula.se/catalog/fritid/fiske/fisketillbehor/vagar/digital-fiskevag-025328/ (149 kr ur sökutdrag)"
+    ]
+  },
+  {
+    "uppdrag": "present-hobby",
+    "rank": 9,
+    "product_name": "Trefot eldstativ med kedja och grillgaller",
+    "concept": "Trebensstativ i stål/rostfritt med kedja, S-krok och runt galler för bålpanna/lägereld; grytan hängs i kedjan. Eldidentitet, presentnivå 499–599 kr.",
+    "goods_id": "601101390672416",
+    "temu_url": "https://www.temu.com/heavy-duty-stainless-steel-campfire-tripod-grill-with-adjustable-height-telescopic-legs-round-grill-grate-portable-outdoor-bbq-cooking-for-camping-hiking-picnics--carrying-bag-7lbs-camping-cookware-picnic-accessories-portable-cooking-gear--design-hiking-gear-compact-cookware-durable-construction-adventure--g-601101390672416.html",
+    "alt_goods_ids": [
+      "601099645935490",
+      "601099723565956",
+      "601101289705512"
+    ],
+    "price_usd": null,
+    "price_source": "UNKNOWN för målformen. Seznam: 'meffir grill swing hanging campfire cooking stand' 45 USD (annan form, svängarm); litet 'grill pot stand set' 4 USD (4,8, 99+).",
+    "rating": "UNKNOWN",
+    "review_count": "UNKNOWN",
+    "category": "Eld / bålpanna / grill",
+    "q4_label": "BLACK WEEK / GIFT",
+    "season_start": "november",
+    "season_end": "evergreen (bålpanna året runt)",
+    "urgency_now": "Nej.",
+    "owner_customer": "Hushåll med bålpanna/eldstad ute: del av 1,7 M eldstäder (utomhusandel okänd).",
+    "friction_or_motive": "Motiv: laga mat över eld. Friktion: gallret ligger på stenar.",
+    "why_baverbutiken": "Camping & Friluft; grillmatta finns. Ser ut som Espegard i bild.",
+    "why_meta": "Stillbild: gryta i kedja över eld — igenkänning hög. 3 kg stål = frakt.",
+    "hook_sv": "Hänger grytan över elden i år?",
+    "visual_0_3s_expected": "Kedjan hakas, gryta sänks mot glöden. BLOCKED_SOURCE.",
+    "swedish_shelf": {
+      "floor_name": "Jula Burns & Barkles Vildmarksgrill Ø46 cm – trefot med kedja, galler och eldfat, 359,20 kr exkl. moms ≈ 449 kr inkl. (ur sökutdrag)",
+      "floor_price_sek": 449,
+      "floor_url": "https://www.jula.se/catalog/tradgard/grillning/eldstader-utomhus/eldfat-och-eldskalar/vildmarksgrill-014039/",
+      "anchor_name": "Cookking vildmarksgrill 180 cm (Gardenstore/StenaVerktyg) ~1 000+ kr; Espegard trefot 1 000+ kr; gop tripod 210 cm (pris oläst)",
+      "anchor_price_sek": null,
+      "anchor_url": "https://www.gardenstore.se/co-111004-vildmarksgrill-cookking-180-cm-med-grillgaller-i-rostfritt-stal-80-cm",
+      "verdict": "FAIL — Jula säljer samma form (trefot + kedja + galler, t.o.m. med eldfat) för ~449 kr i 75 varuhus. Klyvkonsmönstret."
+    },
+    "economics": {
+      "landed_low": null,
+      "landed_high": null,
+      "se_price": 499,
+      "multiple_low": null,
+      "multiple_high": null,
+      "be_cpa": null,
+      "verdict": "UNKNOWN — Temu-pris oläst (Seznam tom, Temu-sök strypt). PASS kräver ≤ 17.0 USD räknat på hög kurs (≤ 19.9 USD på låg kurs) vid 499 kr. 3 kg stål ger fraktpåslag långt över 1,5×."
+    },
+    "audience": {
+      "size": "andel av 1,7 M eldstäder med utomhuseldstad — UNKNOWN",
+      "source": "MSB",
+      "verdict": "UNKNOWN"
+    },
+    "variants": "En SKU. Höjd i cm — ok.",
+    "winner_dna_match_0_100": 38,
+    "archetype": "Eldidentitet / present",
+    "confidence": "MEDIUM (Jula-priset ur sökutdrag)",
+    "main_risk": "Jula 449 kr med eldfat inkluderat; frakt.",
+    "status_suggestion": "REJECT (lärorikt) — kedjan har formen billigare än vi kan landa den.",
+    "sources": [
+      "https://www.jula.se/catalog/tradgard/grillning/eldstader-utomhus/eldfat-och-eldskalar/vildmarksgrill-014039/",
+      "https://www.gardenstore.se/co-111004-vildmarksgrill-cookking-180-cm-med-grillgaller-i-rostfritt-stal-80-cm",
+      "Seznam 2026-09-05: meffir swing grill $45; grill pot stand set $4 (4,8/99+)"
+    ]
+  },
+  {
+    "uppdrag": "present-hobby",
+    "rank": 10,
+    "product_name": "Trådlös grilltermometer med två sonder (500 ft) – julskinkan",
+    "concept": "Trådlös kötttermometer, dubbla sonder, 150 m räckvidd, larm — 'julskinkan blir rätt' som Q4-vinkel för grillmannen.",
+    "goods_id": "601099761936638",
+    "temu_url": "https://www.temu.com/-tp08-wireless-meat-thermometer-500ft-range-dual-probes-for-grilling-bbq-digital-kitchen-cooking-temperature-gauge-with-alerts--batteries-g-601099761936638.html",
+    "alt_goods_ids": [
+      "601099534489664",
+      "603218205574234"
+    ],
+    "price_usd": null,
+    "price_source": "UNKNOWN — Seznam gav bara en trådbunden dubbelsond à 9 USD.",
+    "rating": "UNKNOWN",
+    "review_count": "UNKNOWN",
+    "category": "Grill / kök",
+    "q4_label": "BLACK WEEK / GIFT",
+    "season_start": "november",
+    "season_end": "december (julskinka) + grillsäsong",
+    "urgency_now": "Nej.",
+    "owner_customer": "84 % av hushållen äger grill (ICA 2014); 80 % grillar (2023). Presentköpare: partner.",
+    "friction_or_motive": "Friktion: torr skinka/stek. Old way = analog termometer.",
+    "why_baverbutiken": "Grillmannen är kunden, men produkten är kök snarare än garage.",
+    "why_meta": "Stillbild: sond i skinka + display — tydlig men generisk; kategorin annonseras hårt av Meater/Weber.",
+    "hook_sv": "Blir julskinkan torr igen?",
+    "visual_0_3s_expected": "Display larmar, skinka skärs saftig. BLOCKED_SOURCE.",
+    "swedish_shelf": {
+      "floor_name": "Clas Ohlson Grilltermometer trådlös digital LCD (44-5812), Jula Menuett trådlös stektermometer, Biltema stektermometer trådlös — alla kedjor har formen (priser olästa; kategorin ligger 199–399 kr)",
+      "floor_price_sek": null,
+      "floor_url": "https://www.clasohlson.com/se/Grilltermometer,-tradlos-och-digital-med-LCD-display/p/44-5812",
+      "anchor_name": "Weber iGrill 2 / Meater Original (Clas Ohlson) ~1 000+ kr",
+      "anchor_price_sek": null,
+      "anchor_url": "https://www.clasohlson.com/se/Meater-Original-tradlos-stektermometer,-RT2-MT-ME01/p/44-5666",
+      "verdict": "FAIL — tre kedjor har formen; jämförelsehandlad commodity."
+    },
+    "economics": {
+      "landed_low": null,
+      "landed_high": null,
+      "se_price": 449,
+      "multiple_low": null,
+      "multiple_high": null,
+      "be_cpa": null,
+      "verdict": "UNKNOWN — Temu-pris oläst (Seznam tom, Temu-sök strypt). PASS kräver ≤ 15.3 USD räknat på hög kurs (≤ 17.9 USD på låg kurs) vid 449 kr."
+    },
+    "audience": {
+      "size": "~84 % av hushållen har grill",
+      "source": "ICA grillrapport 2014; HelloFresh 2023",
+      "verdict": "PASS"
+    },
+    "variants": "En SKU.",
+    "winner_dna_match_0_100": 35,
+    "archetype": "Present / kök",
+    "confidence": "MEDIUM (kedjornas närvaro bekräftad, priser ej)",
+    "main_risk": "Commodity med kedjor + app-jättar.",
+    "status_suggestion": "REJECT — kedjan äger formen.",
+    "sources": [
+      "https://www.clasohlson.com/se/Grilltermometer,-tradlos-och-digital-med-LCD-display/p/44-5812",
+      "https://www.jula.se/catalog/hem-och-hushall/koksartiklar/matlagning/stektermometrar-och-timers/tradlos-stektermometer-943109/",
+      "https://www.icagruppen.se/arkiv/pressmeddelandearkiv/2014/icas-grillrapport-partiledaren-vi-helst-vill-grilla-med/"
+    ]
+  },
+  {
+    "uppdrag": "present-hobby",
+    "rank": 11,
+    "product_name": "Överlevnads-/verktygsadventskalender 24 dagar (herr)",
+    "concept": "24 luckor med små verktyg/överlevnadsprylar (multiverktygskort, tändstål, kompass, karbinhakar). Verktygsvarianten av fiskekalendern.",
+    "goods_id": "601103574007559",
+    "temu_url": "https://www.temu.com/ch-en/mens-survival-tool-kit-advent-calendar-2025-mens-advent-calendar-survival-tools-24-days-christmas-countdown-2025-christmas--surprise-gift-best-for-christmas--thanksgiving-advent-calendar-christmas-advent-kalender-christmas-advent-calendar-christmas-calendar-fillable-advent-calendar-g-601103574007559.html",
+    "alt_goods_ids": [
+      "601099780372054"
+    ],
+    "price_usd": null,
+    "price_source": "UNKNOWN — Seznam tom.",
+    "rating": "UNKNOWN",
+    "review_count": "UNKNOWN",
+    "category": "Verktyg / present",
+    "q4_label": "BLACK WEEK / GIFT",
+    "season_start": "1 november",
+    "season_end": "30 november",
+    "urgency_now": "Ja (kalenderdeadline).",
+    "owner_customer": "Presentköpare till 'han som meckar'.",
+    "friction_or_motive": "Present med deadline.",
+    "why_baverbutiken": "Verktyg & Garage är största kollektionen.",
+    "why_meta": "Igenkänning ok men innehållet ser ut som 24 kinesiska nyckelringsprylar — Wera (615 kr) sätter förväntan på riktiga verktyg.",
+    "hook_sv": "24 prylar till garaget före jul?",
+    "visual_0_3s_expected": "Lucka öppnas, multiverktygskort. BLOCKED_SOURCE.",
+    "swedish_shelf": {
+      "floor_name": "Amazon.se, CDON (Fuleadture) och Fyndiq säljer redan Temu-typens överlevnadskalender; julafton.se listar 'Adventskalender med överlevnadskit' 499 kr",
+      "floor_price_sek": 499,
+      "floor_url": "https://cdon.se/produkt/fuleadture-survival-adventskalender-man-2025-24-dagar-julkalender-med-overlevnadsutrustning-verktyg-f2b1aa88b50b5102/",
+      "anchor_name": "Wera Adventskalender 2026 (riktiga bits/verktyg) 615 kr (Proshop, Coolstuff, Byggahus)",
+      "anchor_price_sek": 615,
+      "anchor_url": "https://www.proshop.se/Julkalender/Wera-Advent-Calendar-2026/3494178",
+      "verdict": "FAIL — marketplace säljer identisk form; ankaret (Wera 615) är ett riktigt verktygsmärke bara 1,2× över vår tänkta nivå."
+    },
+    "economics": {
+      "landed_low": null,
+      "landed_high": null,
+      "se_price": 499,
+      "multiple_low": null,
+      "multiple_high": null,
+      "be_cpa": null,
+      "verdict": "UNKNOWN — Temu-pris oläst (Seznam tom, Temu-sök strypt). PASS kräver ≤ 17.0 USD räknat på hög kurs (≤ 19.9 USD på låg kurs) vid 499 kr."
+    },
+    "audience": {
+      "size": "Bred (verktygsägare)",
+      "source": "—",
+      "verdict": "PASS"
+    },
+    "variants": "En SKU.",
+    "winner_dna_match_0_100": 30,
+    "archetype": "Present med deadline",
+    "confidence": "MEDIUM",
+    "main_risk": "Innehållskvalitet + marketplace-golv.",
+    "status_suggestion": "REJECT.",
+    "sources": [
+      "https://www.proshop.se/Julkalender/Wera-Advent-Calendar-2026/3494178",
+      "https://cdon.se/produkt/fuleadture-survival-adventskalender-man-2025-24-dagar-julkalender-med-overlevnadsutrustning-verktyg-f2b1aa88b50b5102/",
+      "https://julafton.se/fiske-julkalender/ (Adventskalender med överlevnadskit 499 kr)"
+    ]
+  },
+  {
+    "uppdrag": "present-hobby",
+    "rank": 12,
+    "product_name": "Uppladdningsbar handvärmare 2-pack magnetisk (2 × 5 000–10 000 mAh)",
+    "concept": "Två magnetiska handvärmare/powerbanks för jaktpasset och isfisket. Q4-perfekt på pappret.",
+    "goods_id": "601099813456082",
+    "temu_url": "https://www.temu.com/uk/2pcs-rechargeable-hand-warmers-10-000mah-magnetic-usb-pocket-heaters-with-3-heat-levels--fishing-golf-hunting-camping-ideal-gift-for-men-women-g-601099813456082.html",
+    "alt_goods_ids": [
+      "601099834639715",
+      "601099638648365"
+    ],
+    "price_usd": "12 (4,8/96 %, 15 rec) – 20 (99+) för 2-pack magnetisk; 27 (99+) för 2-pack dubbelsidig med powerbank",
+    "price_source": "seznam-snippet 2026-09-05 (formen, ej exakt id) — konfidens MEDIUM",
+    "rating": "4,8 / 96 % (15) på 12-USD-listningen",
+    "review_count": "15 resp. 99+",
+    "category": "Jakt / isfiske / vinter",
+    "q4_label": "Q4 NOW + GIFT",
+    "season_start": "oktober",
+    "season_end": "mars",
+    "urgency_now": "Ja (kyla).",
+    "owner_customer": "271 000 jägare, 143 000 pimpelfiskare, alla som står på fotbollsplan i november.",
+    "friction_or_motive": "Kalla händer — kroppslig, omedelbar.",
+    "why_baverbutiken": "Rätt kund, rätt säsong.",
+    "why_meta": "Stillbild tydlig; Ad Library 'handvärmare' 136 träffar med Beredskapsfabriken, SmartaSaker, Westlyn (värmehandskar), ICA Maxi.",
+    "hook_sv": "Kalla händer på passet igen?",
+    "visual_0_3s_expected": "Två magneter klickar ihop, glöder röda. Leverantörsvideo sannolik.",
+    "swedish_shelf": {
+      "floor_name": "Clas Ohlson Handvärmare återanvändbar USB 2 × 5 000 mAh — 299 kr (nedsatt från 399), SAMMA FORM (två enheter, magnet)",
+      "floor_price_sek": 299,
+      "floor_url": "https://www.clasohlson.com/se/Handvarmare-ateranvandbar,-elektrisk,-USB,-laddbar/p/31-8982",
+      "anchor_name": "Biltema Handvärmare och powerbank 10 000 mAh (pris oläst, 403); Clas Warmly MagTwins",
+      "anchor_price_sek": null,
+      "anchor_url": "https://www.biltema.se/kontor---teknik/mobiltillbehor/powerbanks/handvarmare-och-powerbank-10000-mah-2000045021",
+      "verdict": "FAIL — Clas Ohlson säljer exakt formen (2-pack magnetisk) för 299 kr; vi kan inte landa den under 210 kr på 20 USD."
+    },
+    "economics": {
+      "landed_low": 125,
+      "landed_high": 245,
+      "se_price": 499,
+      "multiple_low": 2.04,
+      "multiple_high": 3.99,
+      "be_cpa": [
+        254,
+        374
+      ],
+      "verdict": "FAIL — landad 125–245 kr (12–20 USD), 2,04–3,99× vid 499 kr, men Clas Ohlson säljer samma 2-pack för 299 kr: vi kan inte prissätta över kedjan."
+    },
+    "audience": {
+      "size": "271 000 jaktkort + 143 000 pimpelfiskare",
+      "source": "Naturvårdsverket; SCB via fiskar.se",
+      "verdict": "PASS"
+    },
+    "variants": "En SKU.",
+    "winner_dna_match_0_100": 40,
+    "archetype": "Säsongsproblem + present",
+    "confidence": "HIGH på hyllan (Clas-pris läst 2026-09-05)",
+    "main_risk": "Kedjan äger formen.",
+    "status_suggestion": "REJECT (lärorikt): perfekt Q4-klocka, fel hylla.",
+    "sources": [
+      "https://www.clasohlson.com/se/Handvarmare-ateranvandbar,-elektrisk,-USB,-laddbar/p/31-8982",
+      "Seznam 2026-09-05: 2-in-1 magnetic rechargeable hand warmer 2 pack $20 (99+) / $12 (4,8/96 %, 15)",
+      "Meta Ad Library SE 2026-09-05: 'handvärmare' 136"
+    ]
+  },
+  {
+    "uppdrag": "present-hobby",
+    "rank": 13,
+    "product_name": "Kallrökgenerator (labyrint/pelletsbricka) i rostfritt",
+    "concept": "Passiv pelletsbricka för kallrökning av lax, ost, korv i vanlig grill/rökskåp. Höstens/vinterns grillhobby.",
+    "goods_id": "601099529585777",
+    "temu_url": "https://www.temu.com/uk/1pc-cold-smoke-generator-bbq--grill-pellet--tray-bbq--cold-smoke-generator-for-food-smoking-long-lasting-cold--maze--for-cold-smoking-outdoor-s-for-any-bbq-or-cabinet-excluding-candles-g-601099529585777.html",
+    "alt_goods_ids": [
+      "601099571182106",
+      "601099616899807",
+      "601099535609473"
+    ],
+    "price_usd": "21",
+    "price_source": "seznam-snippet 2026-09-05 ('Cena $21', UK-listning)",
+    "rating": "UNKNOWN",
+    "review_count": "UNKNOWN",
+    "category": "Grill / mat",
+    "q4_label": "Q4 NOW (kallrökning kräver kyla) + GIFT",
+    "season_start": "oktober",
+    "season_end": "mars",
+    "urgency_now": "Ja.",
+    "owner_customer": "Grillägare (84 %) med rökintresse; jägare/fiskare som röker eget kött/fisk.",
+    "friction_or_motive": "Motiv (hobby). Old way = rökskåp 1 500+ kr.",
+    "why_baverbutiken": "Grillmannen finns; identitet stark ('röker du laxen själv?').",
+    "why_meta": "Stillbild: rök som ringlar ur labyrinten under en lax — hög igenkänning.",
+    "hook_sv": "Röker du laxen själv i år?",
+    "visual_0_3s_expected": "Pellets tänds, tät kallrök. BLOCKED_SOURCE.",
+    "swedish_shelf": {
+      "floor_name": "Malco.se Kallröksgenerator (passiv labyrint) 199 kr — SAMMA FORM; Deluxe 449, Big 529",
+      "floor_price_sek": 199,
+      "floor_url": "https://malco.se/produkt-kategori/rokspan-rokar/rokar/kallroksgenerator/",
+      "anchor_name": "Mustang elektrisk rökgenerator 649 kr (Bagaren och Kocken) / Jula Mustang Kallrök (annan form, elektrisk)",
+      "anchor_price_sek": 649,
+      "anchor_url": "https://www.bagarenochkocken.se/p/mustang-rokgenerator-for-kallrokning_51212/",
+      "verdict": "FAIL — svensk fackhandel säljer identisk labyrint för 199 kr; 21 USD landar på 219–257 kr."
+    },
+    "economics": {
+      "landed_low": 219,
+      "landed_high": 257,
+      "se_price": 549,
+      "multiple_low": 2.14,
+      "multiple_high": 2.51,
+      "be_cpa": [
+        292,
+        330
+      ],
+      "verdict": "FAIL — landad 219–257 kr vid 21 USD; svenskt golv i samma form 199 kr (Malco). Temu är dyrare än svensk fackhandel."
+    },
+    "audience": {
+      "size": "84 % av hushållen har grill",
+      "source": "ICA 2014",
+      "verdict": "PASS"
+    },
+    "variants": "En SKU.",
+    "winner_dna_match_0_100": 36,
+    "archetype": "Hobbyidentitet",
+    "confidence": "HIGH på ekonomi/hylla (båda lästa)",
+    "main_risk": "Golvet 199 kr.",
+    "status_suggestion": "REJECT (lärorikt): Temu dyrare än svensk fackhandel.",
+    "sources": [
+      "Seznam 2026-09-05: cold smoke generator maze $21",
+      "https://malco.se/produkt-kategori/rokspan-rokar/rokar/kallroksgenerator/",
+      "https://www.bagarenochkocken.se/p/mustang-rokgenerator-for-kallrokning_51212/",
+      "https://www.jagarliv.se/kallroksgenerator/ (elektrisk 699 kr)"
+    ]
+  },
+  {
+    "uppdrag": "present-hobby",
+    "rank": 14,
+    "product_name": "Dubbelt smörgåsjärn i gjutjärn för öppen eld (pie iron)",
+    "concept": "Två mackor samtidigt över elden — familjepresent för bålpannan.",
+    "goods_id": "601102412056295",
+    "temu_url": "https://www.temu.com/double-pie-iron-campfire-sandwich-maker-non-stick-coated-insulated-handle-sandwich-grill--conduction-sandwich-frying-pan-for-camping-cookware-equipment-black-camping-cookware-nonstick-sandwich-maker-durable-cookware-sandwich-maker-for-camping-outdoor-cooking--sturdy-construction-portable-grill--camping-essentials-durable-cookware-g-601102412056295.html",
+    "alt_goods_ids": [],
+    "price_usd": null,
+    "price_source": "UNKNOWN — Seznam tom.",
+    "rating": "UNKNOWN",
+    "review_count": "UNKNOWN",
+    "category": "Eld / mat",
+    "q4_label": "BLACK WEEK / GIFT",
+    "season_start": "november",
+    "season_end": "evergreen",
+    "urgency_now": "Nej.",
+    "owner_customer": "Bålpanne-/stugägare med barn.",
+    "friction_or_motive": "Motiv (mys).",
+    "why_baverbutiken": "Eldkunden.",
+    "why_meta": "Stillbild tydlig (järn över glöd, ost som rinner).",
+    "hook_sv": "Varma mackor över bålpannan?",
+    "visual_0_3s_expected": "Järn öppnas, ost rinner. BLOCKED_SOURCE.",
+    "swedish_shelf": {
+      "floor_name": "Jula Kayoba Smörgåsjärn dubbelt, gjutjärn, 54 cm — 199 kr (ur sökutdrag); Bauhaus Briv dubbelt (pris oläst)",
+      "floor_price_sek": 199,
+      "floor_url": "https://www.jula.se/catalog/fritid/friluftsliv-och-camping/friluftsutrustning/friluftskok/smorgasjarn-011056/",
+      "anchor_name": "Rome Double Pie Iron (Smart Fritid, 503 vid hämtning) / Coghlan's dubbelt (Kriskollen) — priser olästa",
+      "anchor_price_sek": null,
+      "anchor_url": "https://www.smartfritid.se/smorgasjarn-i-gjutjarn-dubbelt",
+      "verdict": "FAIL — Jula 199 kr i samma form."
+    },
+    "economics": {
+      "landed_low": null,
+      "landed_high": null,
+      "se_price": 399,
+      "multiple_low": null,
+      "multiple_high": null,
+      "be_cpa": null,
+      "verdict": "UNKNOWN — Temu-pris oläst (Seznam tom, Temu-sök strypt). PASS kräver ≤ 13.6 USD räknat på hög kurs (≤ 15.9 USD på låg kurs) vid 399 kr. 2–3 kg gjutjärn = frakt. Chanslös mot Jula 199."
+    },
+    "audience": {
+      "size": "Bålpanne-/stugägare",
+      "source": "—",
+      "verdict": "UNKNOWN"
+    },
+    "variants": "En SKU.",
+    "winner_dna_match_0_100": 30,
+    "archetype": "Present / eld",
+    "confidence": "MEDIUM (Jula-pris ur sökutdrag)",
+    "main_risk": "Jula + vikt.",
+    "status_suggestion": "REJECT.",
+    "sources": [
+      "https://www.jula.se/catalog/fritid/friluftsliv-och-camping/friluftsutrustning/friluftskok/smorgasjarn-011056/",
+      "https://www.bauhaus.se/smorgasjarn-briv-dubbelt-gjutjarn"
+    ]
+  },
+  {
+    "uppdrag": "present-hobby",
+    "rank": 15,
+    "product_name": "Isborradapter för skruvdragare med säkerhetsplatta (isfiske)",
+    "concept": "Adapter 18/22 mm + röd säkerhetsplatta som gör den vanliga skruvdragaren till elisborr. Garagemannens dröm på isen; 143 000 pimpelfiskare.",
+    "goods_id": "601099610454170",
+    "temu_url": "https://www.temu.com/2-sets-ice-auger-drill-adapter-stainless-steel-ice-fishing--disc-with-11-8-safety-disk-ice-auger-attachment-plate-fits-1-2-inch-and-above-drill-bit-chuck-g-601099610454170.html",
+    "alt_goods_ids": [
+      "601099657989097",
+      "601099595715527"
+    ],
+    "price_usd": null,
+    "price_source": "UNKNOWN — Seznam tom.",
+    "rating": "UNKNOWN",
+    "review_count": "UNKNOWN",
+    "category": "Isfiske",
+    "q4_label": "OCTOBER→december (isen lägger sig dec–jan)",
+    "season_start": "december",
+    "season_end": "mars",
+    "urgency_now": "Nej — kranskyddsfällan: skadan/behovet kommer i januari.",
+    "owner_customer": "143 000 pimpelfiskare (SCB) — under 100 000-hushållsgolvet när man räknar bort dem utan skruvdragare.",
+    "friction_or_motive": "Friktion: veva isborr för hand.",
+    "why_baverbutiken": "Verktyg + fiske i en produkt — perfekt kundprofil.",
+    "why_meta": "Stillbild: skruvdragare + isborr på isen — hög igenkänning hos pimplare. Tum (1/2\") i listningen = variantvarning.",
+    "hook_sv": "Vevar du fortfarande isborren?",
+    "visual_0_3s_expected": "Skruvdragare borrar genom is på 3 s. BLOCKED_SOURCE.",
+    "swedish_shelf": {
+      "floor_name": "PriceRunner 'isborr adapter' 49 produkter från 69 kr; Hurricane adapter 22 mm med platta (Miekofishing); Bojdaspön, Olssons Fiske",
+      "floor_price_sek": 69,
+      "floor_url": "https://www.pricerunner.se/sp/isborr-adapter.html",
+      "anchor_name": "Mora Ice adapter/Nils Master — övre delen av 69–299-intervallet",
+      "anchor_price_sek": 299,
+      "anchor_url": "https://www.miekofishing.se/isborr-tillbehoer/10641-adapter-skruvdragare-isborr-22-mm-med-platta.html",
+      "verdict": "FAIL — hela fackhandeln säljer formen från 69 kr; ankaret toppar på 299."
+    },
+    "economics": {
+      "landed_low": null,
+      "landed_high": null,
+      "se_price": 349,
+      "multiple_low": null,
+      "multiple_high": null,
+      "be_cpa": null,
+      "verdict": "UNKNOWN — Temu-pris oläst (Seznam tom, Temu-sök strypt). PASS kräver ≤ 11.9 USD räknat på hög kurs (≤ 13.9 USD på låg kurs) vid 349 kr."
+    },
+    "audience": {
+      "size": "143 000 pimpelfiskare",
+      "source": "SCB via fiskar.se; Sportfiskarna",
+      "verdict": "SVAG — under golvet efter filtrering"
+    },
+    "variants": "18/22 mm — ägaren vet sin borr. Men listningen anger tum.",
+    "winner_dna_match_0_100": 34,
+    "archetype": "Problemlösare (fel klocka i sep) + identitet",
+    "confidence": "HIGH på hyllan",
+    "main_risk": "Golvet 69 kr + säsong i januari.",
+    "status_suggestion": "REJECT (lärorikt): fackhandeln har 49 varianter.",
+    "sources": [
+      "https://www.pricerunner.se/sp/isborr-adapter.html (69–299 kr ur sökutdrag)",
+      "https://fiskar.se/fiskemetod/pimpelfiske (143 000, SCB)"
+    ]
+  },
+  {
+    "uppdrag": "present-hobby",
+    "rank": 16,
+    "product_name": "Digital fiskevåg 50 kg med måttband",
+    "concept": "Hängvåg med LCD, krok och 1 m måttband — 'väg storgäddan'.",
+    "goods_id": "601099527328059",
+    "temu_url": "https://www.temu.com/110-23lb-portable-waterproof-fishing-scale-digital-rechargeable-hanging-hook-scales-for-courier-hunting-luggage-home-weighing-59-06inch-tape-g-601099527328059.html",
+    "alt_goods_ids": [
+      "601099527589712",
+      "601099553830603",
+      "601099512361899"
+    ],
+    "price_usd": null,
+    "price_source": "UNKNOWN — Seznam tom.",
+    "rating": "UNKNOWN",
+    "review_count": "UNKNOWN",
+    "category": "Fiske / jakt",
+    "q4_label": "GIFT",
+    "season_start": "november",
+    "season_end": "evergreen",
+    "urgency_now": "Nej.",
+    "owner_customer": "Fiskare, jägare (viltvåg).",
+    "friction_or_motive": "Vill veta vikten. Old way = uppskatta.",
+    "why_baverbutiken": "Fiske/jakt.",
+    "why_meta": "Stillbild ok men commodity.",
+    "hook_sv": "Hur stor var gäddan egentligen?",
+    "visual_0_3s_expected": "Fisk i krok, siffror. BLOCKED_SOURCE.",
+    "swedish_shelf": {
+      "floor_name": "Jula Kayoba Digital fiskevåg 50 kg med måttband — 149 kr (ur sökutdrag); Biltema digital våg 50 kg / hängvåg 40 kg",
+      "floor_price_sek": 149,
+      "floor_url": "https://www.jula.se/catalog/fritid/fiske/fisketillbehor/vagar/digital-fiskevag-025328/",
+      "anchor_name": "Berkley digital fiskevåg 23 kg (Jula) 299 kr; Rapala 25/50 kg (Sportfiskeprylar)",
+      "anchor_price_sek": 299,
+      "anchor_url": "https://www.jula.se/catalog/fritid/fiske/fisketillbehor/vagar/fiskevag-771026/",
+      "verdict": "FAIL — Jula 149 kr i identisk form (våg + måttband)."
+    },
+    "economics": {
+      "landed_low": null,
+      "landed_high": null,
+      "se_price": 299,
+      "multiple_low": null,
+      "multiple_high": null,
+      "be_cpa": null,
+      "verdict": "UNKNOWN — Temu-pris oläst (Seznam tom, Temu-sök strypt). PASS kräver ≤ 10.2 USD räknat på hög kurs (≤ 11.9 USD på låg kurs) vid 299 kr."
+    },
+    "audience": {
+      "size": "1,1 M fiskare + 271 000 jägare",
+      "source": "HaV; Naturvårdsverket",
+      "verdict": "PASS"
+    },
+    "variants": "En SKU.",
+    "winner_dna_match_0_100": 28,
+    "archetype": "Verktyg / commodity",
+    "confidence": "HIGH på hyllan",
+    "main_risk": "Jula 149.",
+    "status_suggestion": "REJECT.",
+    "sources": [
+      "https://www.jula.se/catalog/fritid/fiske/fisketillbehor/vagar/digital-fiskevag-025328/",
+      "https://www.biltema.se/fritid/fiske/klader-for-fiske/digital-vag-50-kg-2000044752"
+    ]
+  },
+  {
+    "uppdrag": "present-hobby",
+    "rank": 17,
+    "product_name": "Magnetiskt verktygsarmband för skruvar och bits",
+    "concept": "Armband med neodymmagneter som håller skruvar/bits — klassisk 'present till pappa som skruvar'.",
+    "goods_id": "601099542754983",
+    "temu_url": "https://www.temu.com/----magnets-for-holding----g-601099542754983.html",
+    "alt_goods_ids": [
+      "601099527589980",
+      "601099524107003",
+      "601099512632245",
+      "601104494799466"
+    ],
+    "price_usd": null,
+    "price_source": "UNKNOWN — Seznam tom (formen ligger typiskt 3–6 USD).",
+    "rating": "UNKNOWN",
+    "review_count": "UNKNOWN",
+    "category": "Verktyg / garage",
+    "q4_label": "GIFT",
+    "season_start": "november",
+    "season_end": "evergreen",
+    "urgency_now": "Nej.",
+    "owner_customer": "Alla med skruvdragare.",
+    "friction_or_motive": "Friktion: skruvar i munnen/på golvet.",
+    "why_baverbutiken": "Verktyg & Garage.",
+    "why_meta": "Video 0–3 s: skruvar hoppar upp på armen — stark. Men priset hamnar under 200 kr.",
+    "hook_sv": "Har du skruvarna i munnen?",
+    "visual_0_3s_expected": "Skruvar fastnar på underarmen. Leverantörsvideo sannolik.",
+    "swedish_shelf": {
+      "floor_name": "Jula Meec Tools Magnetiskt armband 390×90 mm (pris oläst, 403 — Meec-armbandet ligger normalt 99–149 kr); Coolpriser WrisTool",
+      "floor_price_sek": null,
+      "floor_url": "https://www.jula.se/catalog/verktyg-och-maskiner/tillbehor-till-elverktyg/bits-och-bitssatser/bitshallare-och-tillbehor/magnetiskt-armband-011216/",
+      "anchor_name": "Inget märkesankare över 200 kr",
+      "anchor_price_sek": null,
+      "anchor_url": null,
+      "verdict": "FAIL — Jula har formen, och produkten kan inte prissättas över 199 kr (under 199 = 0/9 vinnare)."
+    },
+    "economics": {
+      "landed_low": null,
+      "landed_high": null,
+      "se_price": 199,
+      "multiple_low": null,
+      "multiple_high": null,
+      "be_cpa": null,
+      "verdict": "UNKNOWN — Temu-pris oläst (Seznam tom, Temu-sök strypt). PASS kräver ≤ 6.8 USD räknat på hög kurs (≤ 7.9 USD på låg kurs) vid 199 kr. Under 199-kronorsgränsen oavsett Temu-pris."
+    },
+    "audience": {
+      "size": "Bred",
+      "source": "—",
+      "verdict": "PASS"
+    },
+    "variants": "En SKU.",
+    "winner_dna_match_0_100": 25,
+    "archetype": "Verktygspresent < 200 kr",
+    "confidence": "MEDIUM",
+    "main_risk": "Pris under 199 + Jula.",
+    "status_suggestion": "REJECT.",
+    "sources": [
+      "https://www.jula.se/catalog/verktyg-och-maskiner/tillbehor-till-elverktyg/bits-och-bitssatser/bitshallare-och-tillbehor/magnetiskt-armband-011216/"
+    ]
+  }
+]
