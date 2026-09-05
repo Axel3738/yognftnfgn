@@ -71,3 +71,72 @@ räknas utanför kärnbatchen per Axels egen regel.
   2026-08-29/31/09-01.
 - `agent/produktkarta.json` uppdaterad med hub-id + Drive-mapp-id.
 - `agent/budgetlogg.jsonl` fick en rad `FORSTA_BATCH_KLAR` för kampanjen.
+
+## Batch #2 — 2026-09-05 (`/cs`, nattlig rond steg 4b — behov `brief_runda`/`mata_vinnare`)
+
+**Trigger:** Kampanjen skalad 4 gånger på en vecka (senast idag 1 950 → 2 300
+kr/dag, snabbspår ROAS ≥ 3). Fokus enligt rondens instruktion: mata vinnaren
+med mer material innan tröttheten kommer. Kampanjstatus verifierad ACTIVE
+direkt innan batchen skrevs.
+
+**Feedbackloop (kort — full analys i `dna.md`):**
+1. `SP_1_H3` (batch #0/launch), dömd förlorare 2026-09-02 (ROAS 1,14), har
+   återhämtat sig till ROAS 2,72 — en preliminär 2–3-köpsdom (ANALYSMETOD 2c)
+   höll inte. Fortfarande svagast av de tre bedömbara (30 % spend / 9 % vinst).
+2. Batch #1:s 11 statiska är alla live (via översättningsflödet), men **inget
+   av de 9 videokoncepten har producerats än** — noll spend, noll data. Detta
+   är väntat 5 dagar efter en batch, inte ett tecken på svagt material.
+3. `CS_2_1` bär både den vinnande båt/marina-bilden och den förbjudna falska
+   brådskan, och presterar starkt (ROAS 4,44) — spänning flaggad i dna.md,
+   INTE tillstånd att återanvända brådskeraden. Batch #2 isolerar bilden från
+   brådskan.
+4. ⚠️ Livstidsspenden (`date_preset: maximum`) var lägre 2026-09-05
+   (8 935,71 kr) än den 14 692,09 kr som stod loggat 2026-09-02, trots
+   oavbruten drift. Internt konsistent mot kampanjnivå och `last_3d` idag,
+   men den bakomliggande avvikelsen mot förra körningens tal är olöst — se
+   `dna.md` Datakvalitet.
+
+**Levererat: 11 briefer** — 6 i kärnbatchen (4 video, 2 statisk — 67 % video,
+möter regel om minst 2/3) + 3 BOF-statiska + 2 recensionsbilder (utöver
+`rundaAntal`).
+
+| Annons | Format | Koncept | Hypotes / källa |
+|---|---|---|---|
+| Batmotor_SP_1_H5 | Video | Ny hook: mekanism-demo ("dra över, spänn remmen") på vinnarens manus | Isolerar hook-variabeln vidare (dna.md: hook-video avgör). Källa: SP_1_H1/SP_1_H3-jämförelsen. |
+| Batmotor_SP_1_H6 | Video | Ny hook: problem-först ("regn, sol och salt sliter") på vinnarens manus | Andra hook-hypotesen, kombinerar PD_1_H3:s redan godkända problemramning med SP:s bevisade kropp. |
+| Batmotor_UG_2_H1 | Video | UGC talking-head, andra konceptet | UG_1_H1 (batch #1) fortfarande i produktion — ger formatet en andra chans till data. |
+| Batmotor_CS_5_H1 | Video | Ärligt erbjudande + båtvisual, video-format | Isolerar om CS_2_1:s båtbild (inte brådskan) bär resultatet. |
+| Batmotor_CS_6_1 | Statisk | Ärligt erbjudande + exakt CS_2_1-visual | Samma isolering som CS_5_H1, statiskt format. |
+| Batmotor_PD_6_1 | Statisk | Materialfakta + storleksfakta, PD_5_1:s visuella mönster | Ger den lovande båt/brygga-bildstilen (PD_5_1, för tidigt) ett andra exempel. |
+| Batmotor_BF_4_1 | BOF-statisk | Pris/erbjudande, andra exekveringen | Extra BOF-serie (Axel 2026-09-02: bilder är billiga). |
+| Batmotor_BF_5_1 | BOF-statisk | Garanti/Klarna, andra exekveringen | Extra BOF-serie. |
+| Batmotor_BF_6_1 | BOF-statisk | Invändning: svårt att montera (skiljer sig från BF_3_1:s storleksinvändning) | Extra BOF-serie. |
+| Batmotor_RV_4_1 | Recensionsbild | Verbatim citat (Mikael Svensson) | Judge.me, från backloggen. |
+| Batmotor_RV_5_1 | Recensionsbild | Verbatim citat (Lars Johansson) | Judge.me, från backloggen. |
+
+**Naming:** upptagna ID:n avlästa direkt ur Notion-hubben (20 poster från
+batch #1) innan numrering — undvek kollision med `SP_1_H4`, `UG_1_H1`,
+`CS_3_H1`/`CS_4_1`, `PD_3_H1`/`PD_5_1`, `BF_1–3_1`, `RV_1_H1`/`RV_2_1`/`RV_3_1`,
+alla ännu ej uppladdade i Meta.
+
+**Leverans:**
+- Notion: samma hub, **"Boat motor cover creative hub"**
+  (`3cf270ab-908c-8113-a35c-f9c1cd61d727`, data source
+  `1dc270ab-908c-836b-a048-073bfaa48353`). Ingen ny hub skapad. 11 items,
+  Status Draft, Typ Video/Image - Pending Approval, hela briefen inklistrad
+  (verifierat: hämtade `Batmotor_SP_1_H5` med notion-fetch och läste tillbaka
+  Make/Format/Why/Hook/tre-frågorstest/shot list/Rules).
+  ⚠️ **Hubbens `<ancestor-path>` var tomt vid kontroll 2026-09-05** — enligt
+  `/rond-auto` 4b-protokollet betyder det att hubben ligger PRIVAT på
+  workspace-nivå, trots att batch #1-loggen (2026-09-02) noterade den som
+  "verifierad öppen i teamspacet". Items skapades ändå (arbetet ska inte
+  förloras) — **väntar på Axel: flytta "Boat motor cover creative hub" till
+  teamspacet Bäverbutiken**, annars ser redigerarna inget av detta.
+- Drive: ingen batchmapp skapad denna runda — leverans var Notion-only enligt
+  rondens instruktion för den här körningen. Ingen zip-paketering gjord av
+  samma skäl (avvikelse från cs.md:s normala DoD-punkt, dokumenterad här).
+- Modellpolicy-avvikelse: samma som batch #1 (inget Agent/Task-verktyg med
+  `model` tillgängligt) — huvudsessionen skrev all copy och körde
+  tre-frågorstestet per rad.
+- Ingen git-commit/push gjord av den här körningen (rondens instruktion —
+  huvudsessionen committar åt alla produkter samlat i efterhand).
