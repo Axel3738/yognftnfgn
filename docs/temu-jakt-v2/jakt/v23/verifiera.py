@@ -43,6 +43,13 @@ def main():
     os.makedirs(out, exist_ok=True)
     data_p = os.path.join(out, "data.json")
     url = f"https://www.temu.com/{'se/' if se else ''}g-{gid}.html"
+    # En blockerad rå-fil är ingen data — hämta om (annars fastnar id:t som "BLOCKERAD" för evigt).
+    if os.path.exists(data_p):
+        try:
+            if json.load(open(data_p)).get("blocked"):
+                os.remove(data_p)
+        except Exception:
+            os.remove(data_p)
     if not os.path.exists(data_p):
         r = subprocess.run([sys.executable, LD, "--en-gang", url, "--json", data_p],
                            capture_output=True, text=True, timeout=120)
