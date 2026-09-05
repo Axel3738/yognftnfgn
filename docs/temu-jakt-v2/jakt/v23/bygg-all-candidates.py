@@ -133,6 +133,20 @@ ORDER = ["TEST","VERIFY","WATCH","REJECT-INTRESSANT","HARD REJECT"]
 NAME_KEYS = {"Däcklyftrem":"NAME:dacklyftrem","Lyktskydd":"NAME:lyktskydd","Bärsele":"NAME:barsele-utombordare",
              "Hjullyftrem":"NAME:hjullyftrem","ljusgran":"NAME:ljusgran-flaggstang","Släpvagnskapell":"NAME:slapkapell","Isfrihållare":"NAME:isfri-damm"}
 
+# Listningar funna 2026-09-05 (WebSearch site:temu.com) för koncept som agenterna lämnade utan id.
+# Övriga fem finns inte som produkt på Temu — de får en söklänk så att raden är klickbar.
+FOUND_LATER = {
+    "NAME:ljusgran-flaggstang": ("601099525148864", "Solar 280 LED star string, 9 strängar 3 m 'waterfall tree lights' — närmaste form (ej verifierad live)"),
+    "NAME:slapkapell": ("601099831705559", "Heavy duty trailer cover tarpaulin 7×4 ft flat, PVC, reflexkant (UK-listning, ej verifierad live)"),
+}
+SEARCH_URL = {
+    "NAME:dacklyftrem": "https://www.temu.com/search_result.html?search_key=wheel%20lifting%20strap%20tire%20carry%20handle",
+    "NAME:hjullyftrem": "https://www.temu.com/search_result.html?search_key=tire%20carrying%20strap%20wheel%20handle",
+    "NAME:barsele-utombordare": "https://www.temu.com/search_result.html?search_key=outboard%20motor%20carrying%20strap%20lifting%20sling",
+    "NAME:lyktskydd": "https://www.temu.com/search_result.html?search_key=trailer%20tail%20light%20guard%20protector",
+    "NAME:isfri-damm": "https://www.temu.com/search_result.html?search_key=pond%20de-icer%20floating%20ice%20preventer",
+}
+
 
 def live(gid):
     p = os.path.join(MAT, str(gid), "data.json")
@@ -167,11 +181,21 @@ for f, src in [("present-hobby.json", "present/hobby"), ("evergreen.json", "ever
         if sh.get("floor_price_sek"):
             golv = f"{golv} — {sh['floor_price_sek']} kr"
         gid = str(r.get("goods_id")) if r.get("goods_id") else ""
+        link_note = ""
+        if not gid and k in FOUND_LATER:
+            gid, link_note = FOUND_LATER[k]
+            orsak = orsak + f" Listning funnen 2026-09-05: {link_note}."
         lv = live(gid)
         pris = lv if lv else (f"{r.get('price_usd')} USD ({r.get('price_source') or 'utdrag'})" if r.get("price_usd") not in (None, "") else "UNKNOWN")
+        if gid:
+            url = f"https://www.temu.com/se/g-{gid}.html"
+        elif k in SEARCH_URL:
+            url = SEARCH_URL[k] + "  (söklänk — ingen produktlistning finns på Temu)"
+        else:
+            url = "—"
         rows.append({
             "källa": src, "namn": r.get("product_name", ""), "goods_id": gid,
-            "temu_url": (f"https://www.temu.com/se/g-{gid}.html" if gid else "—"),
+            "temu_url": url,
             "status": st, "fel": FEL_TXT[fel], "dna": r.get("winner_dna_match_0_100"), "q4": r.get("q4_label", ""),
             "golv": golv[:220], "pris": pris, "material": mat, "orsak": orsak,
             "agent_status": str(r.get("status_suggestion") or "")[:160],
@@ -219,7 +243,7 @@ for s in ORDER:
     out.append(f"\n## {GRUPP[s]} ({len(grp)})\n")
     for r in sorted(grp, key=lambda r: -(r["dna"] or 0)):
         out.append(f"### {r['namn']}")
-        out.append(f"- **Källa:** {r['källa']}" + (f" · **Temu:** {r['temu_url']}" if r["goods_id"] else " · **Temu:** ingen listning funnen"))
+        out.append(f"- **Källa:** {r['källa']} · **Temu:** {r['temu_url']}")
         out.append(f"- **Status:** {r['status']} · **Felklass:** {r['fel']} · **DNA:** {r['dna'] if r['dna'] is not None else '—'} · **Q4:** {r['q4']}")
         out.append(f"- **Temu-pris:** {r['pris']}" + (" *(live)*" if r["live"].startswith("ja") else ""))
         out.append(f"- **Svenskt golv:** {r['golv']}")

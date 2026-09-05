@@ -102,7 +102,7 @@ Felklasser: CONCEPT (objekt/negativ rymd) · LISTING (ingen eller fel listning) 
 - **Orsak:** Landad 655–741 kr, över 420-taket. Rätt objekt (klyv värd 4 000–20 000 kr som står ute). Sök överdrag till liten el-klyv 5–7 ton.
 
 ### Bärsele/bärhandtag för utombordare (lyftrem med handtag, 2-mans eller axelsele)
-- **Källa:** dolda pärlor · **Temu:** ingen listning funnen
+- **Källa:** dolda pärlor · **Temu:** https://www.temu.com/search_result.html?search_key=outboard%20motor%20carrying%20strap%20lifting%20sling  (söklänk — ingen produktlistning finns på Temu)
 - **Status:** REJECT-INTRESSANT · **Felklass:** LISTING FAILURE · **DNA:** 68 · **Q4:** Q4 NOW
 - **Temu-pris:** UNKNOWN
 - **Svenskt golv:** Ej sökt på svensk hylla eftersom ingen Temu-listning finns; bat-klustret 2026-09-04 fann bara Kayoba motorkärra (Jula) och 'motorlyft utombordare' (kranar, > 1 000 kr) — ingen bärsele sågs
@@ -120,7 +120,7 @@ Felklasser: CONCEPT (objekt/negativ rymd) · LISTING (ingen eller fel listning) 
 - **Agentens status:** ALTERNATIVE_LISTING_REQUIRED (pris) + PENDING_VERIFICATION (Amazon-golv). Verifiera i ordning: (1) Amazon.se-pris på B0C993S4R5, (2) Seznam/Temu-pris på 6010995
 
 ### Däcklyftrem / hjullyfthjälp för däckbytet (koncept — ingen Temu-listning funnen)
-- **Källa:** evergreen · **Temu:** ingen listning funnen
+- **Källa:** evergreen · **Temu:** https://www.temu.com/search_result.html?search_key=wheel%20lifting%20strap%20tire%20carry%20handle  (söklänk — ingen produktlistning finns på Temu)
 - **Status:** REJECT-INTRESSANT · **Felklass:** LISTING FAILURE · **DNA:** 60 · **Q4:** Q4 NOW
 - **Temu-pris:** UNKNOWN
 - **Svenskt golv:** Ingen svensk produkt funnen i formen (v22 garage-fordon: bara hjuldolly hydraulisk hos Biltema, 2000039919)
@@ -129,7 +129,7 @@ Felklasser: CONCEPT (objekt/negativ rymd) · LISTING (ingen eller fel listning) 
 - **Agentens status:** ALTERNATIVE_LISTING_REQUIRED — sök 'wheel lifting strap', 'tire lift assist strap', 'wheel hanger strap' när Temu-sök svarar; hittas inget: parkera som egen-pro
 
 ### Hjullyftrem / bärhandtag för vinterhjul (däckbytet)
-- **Källa:** dolda pärlor · **Temu:** ingen listning funnen
+- **Källa:** dolda pärlor · **Temu:** https://www.temu.com/search_result.html?search_key=tire%20carrying%20strap%20wheel%20handle  (söklänk — ingen produktlistning finns på Temu)
 - **Status:** REJECT-INTRESSANT · **Felklass:** LISTING FAILURE · **DNA:** 58 · **Q4:** Q4 NOW
 - **Temu-pris:** UNKNOWN
 - **Svenskt golv:** Ej kontrollerad (ingen listning att jämföra mot). Biltema/Jula säljer hjulstege och däckkrokar, inte lyftrem.
@@ -333,12 +333,12 @@ Felklasser: CONCEPT (objekt/negativ rymd) · LISTING (ingen eller fel listning) 
 - **Agentens status:** FAIL (hylla + ekonomi på ankarformen)
 
 ### Solcellsdriven ljusgran för flaggstång (julbelysning utan sladd)
-- **Källa:** dolda pärlor · **Temu:** ingen listning funnen
+- **Källa:** dolda pärlor · **Temu:** https://www.temu.com/se/g-601099525148864.html
 - **Status:** HARD REJECT · **Felklass:** MARKETPLACE FAILURE · **DNA:** 40 · **Q4:** BLACK WEEK / GIFT
 - **Temu-pris:** UNKNOWN
 - **Svenskt golv:** Clas Ohlson Northlight flaggstångsbelysning LED 9 m+ (230 V, 10 slingor) 699 kr, ej i lager; Bygghemma Formenta Glimma julbelysning från 625 kr — 625 kr
 - **Material:** —
-- **Orsak:** Clas Northlight flaggstångsbelysning 625 kr, full svensk hylla; solcell i december räcker inte till 300 LED.
+- **Orsak:** Clas Northlight flaggstångsbelysning 625 kr, full svensk hylla; solcell i december räcker inte till 300 LED. Listning funnen 2026-09-05: Solar 280 LED star string, 9 strängar 3 m 'waterfall tree lights' — närmaste form (ej verifierad live).
 - **Agentens status:** FAIL (hyllan) / ALTERNATIVE_LISTING_REQUIRED om en flaggstångsspecifik solcellsgran med stort batteri dyker upp — och då bara som bundle med rank 1.
 
 ### Trefot eldstativ med kedja och grillgaller
@@ -360,12 +360,12 @@ Felklasser: CONCEPT (objekt/negativ rymd) · LISTING (ingen eller fel listning) 
 - **Agentens status:** FAIL (hylla + negativ rymd)
 
 ### Släpvagnskapell / flakkapell till kärran (PVC, 210×125 / 260×149 cm)
-- **Källa:** dolda pärlor · **Temu:** ingen listning funnen
+- **Källa:** dolda pärlor · **Temu:** https://www.temu.com/se/g-601099831705559.html
 - **Status:** HARD REJECT · **Felklass:** MARKETPLACE FAILURE · **DNA:** 38 · **Q4:** OCTOBER
 - **Temu-pris:** UNKNOWN
 - **Svenskt golv:** Biltema Släpkapell 260×149 cm (PE 180 g/m², art. 2000035998) och Jula Hamron Kapell till släpkärra 260×149 / 210×125 cm (PVC med spännband) — priser ej lästa (403), men KEDJAN HAR FORMEN
 - **Material:** —
-- **Orsak:** Biltema 2000035998 och Jula säljer exakt formen i de två svenska standardmåtten.
+- **Orsak:** Biltema 2000035998 och Jula säljer exakt formen i de två svenska standardmåtten. Listning funnen 2026-09-05: Heavy duty trailer cover tarpaulin 7×4 ft flat, PVC, reflexkant (UK-listning, ej verifierad live).
 - **Agentens status:** FAIL (hyllan: Biltema + Jula).
 
 ### Kallrökgenerator (labyrint/pelletsbricka) i rostfritt
@@ -450,7 +450,7 @@ Felklasser: CONCEPT (objekt/negativ rymd) · LISTING (ingen eller fel listning) 
 - **Agentens status:** FAIL (pris/hylla)
 
 ### Isfrihållare / dammvärmare till trädgårdsdamm (hål i isen för fiskarna)
-- **Källa:** dolda pärlor · **Temu:** ingen listning funnen
+- **Källa:** dolda pärlor · **Temu:** https://www.temu.com/search_result.html?search_key=pond%20de-icer%20floating%20ice%20preventer  (söklänk — ingen produktlistning finns på Temu)
 - **Status:** HARD REJECT · **Felklass:** SEASONAL FAILURE · **DNA:** 30 · **Q4:** OCTOBER (köp) — men skadan i januari
 - **Temu-pris:** UNKNOWN
 - **Svenskt golv:** Dammcenter 'Isfri frigolit' (pris ej läst); Oase IceFree 4 Seasons 799 kr (Zoogiganten) — 799 kr
@@ -540,7 +540,7 @@ Felklasser: CONCEPT (objekt/negativ rymd) · LISTING (ingen eller fel listning) 
 - **Agentens status:** FAIL (hyllan + inget ägt objekt + gåvovinkel).
 
 ### Lyktskydd/galler för släpvagnens baklyktor (koncept — ingen Temu-listning)
-- **Källa:** evergreen · **Temu:** ingen listning funnen
+- **Källa:** evergreen · **Temu:** https://www.temu.com/search_result.html?search_key=trailer%20tail%20light%20guard%20protector  (söklänk — ingen produktlistning finns på Temu)
 - **Status:** HARD REJECT · **Felklass:** LISTING FAILURE · **DNA:** 20 · **Q4:** EVERGREEN
 - **Temu-pris:** UNKNOWN
 - **Svenskt golv:** Nettotrailer 'Lampskydd / skydd för baklykta på släpvagn – stor' 173 kr — 173 kr
