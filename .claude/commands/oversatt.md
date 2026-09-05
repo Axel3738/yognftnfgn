@@ -145,9 +145,14 @@ skrivs tillbaka i `jobb.json`. Tillbakaläsning: status/effective_status.
    översatta bilden eller videon direkt") — rubrik `## 🇳🇴 Norsk version — <målnamn>
    (uppe i Magiborsten NO)` + bilden/videon. MCP: `notion-create-file-upload` →
    POST filen → `notion-update-page insert_content` med `position start` och
-   `<image src="file-upload://<id>"/>` (video: `<video src=…/>`). REST: File Upload
+   **`![<målnamn>](file-upload://<id>)`** (video: `<video src="file-upload://<id>">`).
+   ⚠️ `<image src=…/>` finns INTE i Notion-markdown — det blev bokstavlig text på
+   18 rader 2026-09-05 och fick göras om. En uppladdning som inte fästs vid en
+   sida raderas efter en stund: ladda upp och fäst i samma steg. REST: File Upload
    API + `PATCH blocks/<page>/children`. En länk till Meta räcker inte — Axel
-   granskar i Notion, inte i Ads Manager.
+   granskar i Notion, inte i Ads Manager. Varje hubb har fliken
+   **`🇳🇴 Norsk granskning`** (board, Status = Translation in review) — skapa den
+   (`notion-create-view`) i hubbar som saknar den; standardtavlan döljer kolumnen.
    REST: `node tools/notion-aterkoppling.mjs <page-id> --kommentar "…" --egenskap "Translated url=…" --status "Translation in review"`;
    MCP: `notion-create-comment` + `notion-update-page`. Rad som hoppades: kommentar
    med skälet, status oförändrad.
