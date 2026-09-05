@@ -70,3 +70,61 @@ i sidan — verifierat med notion-fetch på PD_6_H1). Drive Batch #3
 länkade till Notion (fullständig brief-text ligger i Notion, inte i Drive).
 FORSTA_BATCH_KLAR-motsvarigheten för brief_runda är `CS_BATCH_KLAR` — loggad
 i `agent/budgetlogg.jsonl`.
+
+**Utfall, avläst 2026-09-05 (maximum):** PD_4_1, PD_5_1, PD_8_1, PD_9_1,
+PD_10_1, SO_4_1, SO_5_1, SP_5_1, REV_1_1 alla under 100 kr spend — **för
+tidigt, ingen dom.** SO_5_1 har 1 köp på 28 kr (ROAS 32×) — brus, inte en
+vinnare. **PD_6_H1 och PD_7_H1 (briefade men) finns INTE i kontot** — inte
+producerade av redigerarna än. **REV_2_1 är DISAPPROVED** i Meta (orsak
+okänd i denna körning, flaggat för Axel). PD_8_1 har CTR 0,25 % (76 kr,
+under signifikans men värt en snabb koll).
+
+## Batch #4 — 2026-09-05 (`/cs`, brief_runda, huvudsession)
+
+**Feedback loop (fullständig i `dna.md`, avsnitt "Uppdatering 2026-09-05"):**
+1. **Top spendern PD_2 har negativ marginal-effektivitet:** 5 inkrementella
+   köp sedan 2026-08-29 kostade 666 kr/st mot break-even 569 kr — sämre än
+   break-even trots att livstids-ROAS (1,87) ser okej ut. Förklarar
+   sannolikt varför kampanjen gick under break-even senaste 3 dagarna.
+2. **PD_3 gick om PD_2_1 som störst vinstbidrag** (2 848 kr mot 1 763 kr) —
+   fler köp har kommit in sedan förra avläsningen, CPA sjönk till 332 kr.
+3. **Videornas öppningsruta saknar den vinnande statiska annonsens
+   rubrik+aktion-kombo:** PD_2/PD_3/PD_1:s första bildruta visar produkten
+   passivt (stillastående eller i händer), ingen text, ingen gnista. PD_1
+   (svagast, 0 inkrementella köp på en vecka) är tydligast passiv.
+4. Pris verifierat live mot baverbutiken.se: 909 kr / jämförpris 1 182 kr /
+   spara 273 kr (23 %) — oförändrat sedan 2026-08-29.
+5. Recensioner uppdaterade via Judge.me API: fortfarande 11 st, men en
+   1-stjärnig recension tillkom 2026-08-31 ("För liten. Svag motor. Kraftig
+   vibration.") — dna.md's "alla 4-5 stjärnor" är inte längre sant. Aldrig
+   använd i copy; 8 femstjärniga citat kvar oanvända efter denna batch.
+
+9 briefer (3 video + 1 statisk i rundan, 3 BOF-bilder, 2 review-bilder):
+
+| Annons | Format | Hypotes | Källa |
+|---|---|---|---|
+| Beltgrinder_PD_11_H1 | video | Vinnarstaticens rubrik+gnist-moment porterat till video sekund 0-2 lyfter hook/CVR | teardown-mönster 1 (hypotes) |
+| Beltgrinder_SP_6_H1 | video | Skeptiker-till-övertygad UGC-reaktion bygger mer förtroende än ren demo | dna.md Losing DNA "UGC-demo — obevisat", ny proof-mekanism |
+| Beltgrinder_PD_12_H1 | video | Explicit före/efter-konflikt (kniv misslyckas → lyckas) isolerar konflikt som variabel | copy-regler.md "Konflikt driver allt" + teardown-mönster 2 |
+| Beltgrinder_PD_13_1 | statisk | Split-bild (före/efter) testar ny visuell stil på den bevisade rubriken | ny visuell-stil-variabel, ej testad som statisk än |
+| Beltgrinder_SO_6_1 | statisk (BOF) | Ärlig prisjämförelse (909/1182/spara 273) återupprepar CS_2_1:s bevisade mekanism utan lögnen | teardown-mönster 3 + dna.md rotorsak |
+| Beltgrinder_PD_14_1 | statisk (BOF) | Proof-stack (2 citat + badge) testar multi-citat-format mot enkelcitat-vinnarna | ny variant av bevisat proof-format |
+| Beltgrinder_PD_15_1 | statisk (BOF) | Bredd-invändning ("bara för knivar?") med verifierade produktfakta (trä/metall/smycken) | dna.md "Testa kontrollerat: 3-i-1-bredden" |
+| Beltgrinder_REV_3_1 | statisk (review) | Verklig recension "Gör det lättare att få knivarna vassa" | Judge.me, verifierad 2026-09-05, ordagrant |
+| Beltgrinder_REV_4_1 | statisk (review) | Verklig recension "Lätt att använda och tar inte mycket plats" | Judge.me, verifierad 2026-09-05, ordagrant |
+
+Launch-regel: **separat test-ABO, lika budget per annons** (CLAUDE.md regel 11).
+
+**Modellpolicy-avvikelse:** inget Agent/Task-verktyg med `model`-parameter
+tillgängligt i denna körning för att spawna en separat copy-subagent (samma
+avvikelse som loggats för Damasker Vandring, Kranskydd Frost 420D m.fl.).
+Huvudsessionen skrev all svensk copy själv och körde tre-frågorstestet
+explicit rad för rad i varje brief (se Notion-items).
+
+**Levererad 2026-09-05:** 9 Notion-items i befintlig hub "Belt grinder
+creative hub" (Status Draft, Typ Video/Image - Pending Approval, hela briefen
+i sidan — verifierat med notion-fetch på PD_11_H1). ⚠️ Hubbens
+`<ancestor-path>` är TOM — den ligger privat på workspace-nivå, inte i
+teamspacet Bäverbutiken. Redigerarna ser den sannolikt inte. Drive Batch #4
+(`1WtOvAfCxpG-xGrwbw5hneQLvSYn9XCjG`): en översiktsdoc med alla 9 briefer
+länkade till Notion. `CS_BATCH_KLAR` loggas i `agent/budgetlogg.jsonl`.
