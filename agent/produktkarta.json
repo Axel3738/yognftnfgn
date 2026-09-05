@@ -9,7 +9,7 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-09-04",
+  "uppdaterad": "2026-09-05",
   "kampanjer": [
     {
       "campaign_id": "120250069623310291",
@@ -62,7 +62,7 @@
       "produkt": "Bordtennisnätet Infällbart",
       "lage": "test",
       "lage_motivering": "3 568,72 kr spend (livstid, avläst 2026-09-04), 3 köp, ROAS 0,32 mot BE 1,80 — långt under break-even. Stängdes AV av /rond-auto:s huvudflöde 2026-09-04 (trappan, potentialkollen föll efter förbrukad förlängning). Saknade helt minnesfiler trots 15 launchade annonser — fick sin första riktiga batch via forsta-batch.md-flödet (specialregeln i rond-auto.md 4b), loggad CS_BATCH_KLAR inte FORSTA_BATCH_KLAR eftersom produkten redan haft spend/annonser innan minnessystemet fanns. Kampanjen förblir PAUSED — denna körning rörde inte Meta-status.",
-      "break_even_roas": 1.80,
+      "break_even_roas": 1.8,
       "break_even_kalla": "kampanjnamnet",
       "notion_hub_id": "3d1270ab-908c-81c8-9970-f0113320202a",
       "notion_hub_datakalla": "87a270ab-908c-82c2-83a5-0747c3646b48",
@@ -555,6 +555,54 @@
       "produkt": "Badeshorts NO",
       "lage": "test",
       "lage_motivering": "startad 2026-09-02, NO-marknad, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250100745300291",
+      "produkt": "Glasspintsen med Lock 2-pack",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-05, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250100694780291",
+      "produkt": "3D-sandbilden",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-05, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252091155690233",
+      "produkt": "Oppvaskstativ NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-05 (NO), saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252077611670233",
+      "produkt": "Pelsbørste NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-04 (NO), saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252077268170233",
+      "produkt": "Motocentric NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-04 (NO), saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252077084550233",
+      "produkt": "Magnetplater NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-04 (NO), saknades i kartan — tillagd av /rond-auto",
       "break_even_roas": null,
       "break_even_kalla": "kampanjnamnet"
     }
