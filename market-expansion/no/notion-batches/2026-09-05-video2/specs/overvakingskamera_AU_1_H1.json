@@ -1,0 +1,64 @@
+{
+ "caption": {
+  "band": [
+   804,
+   891
+  ],
+  "x": [
+   86,
+   634
+  ],
+  "storlek": 30,
+  "max_tecken": 30
+ },
+ "boxar": [
+  {
+   "box": [
+    40,
+    984,
+    690,
+    1140
+   ],
+   "fran": 16.25,
+   "till": 18.35,
+   "fyll": null,
+   "granne": "over",
+   "text": "Kjøp nå.",
+   "stil": {
+    "storlek": 118,
+    "fet": true,
+    "kursiv": true,
+    "farg": [
+     236,
+     98,
+     17
+    ]
+   }
+  },
+  {
+   "box": [
+    150,
+    1096,
+    560,
+    1216
+   ],
+   "fran": 18.3,
+   "till": 20.1,
+   "fyll": [
+    255,
+    255,
+    255
+   ],
+   "text": "Kjøp nå.",
+   "stil": {
+    "storlek": 56,
+    "fet": true,
+    "farg": [
+     20,
+     20,
+     20
+    ]
+   }
+  }
+ ]
+}

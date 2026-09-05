@@ -1,0 +1,90 @@
+{
+ "kranbeskyttelse_SP_3_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/a2d8527651e94313a312430e06f73b45/original.mp4",
+  "proofreadId": "cd99439f284c4ea58163b6d0fdcabe3f-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "8c3660f685bf4cada83cb47d6690b985-nb"
+ },
+ "kranbeskyttelse_UG_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/925cd2aad8f84de18a0b8c2bea046c1b/original.mp4",
+  "proofreadId": "1f0dbef4929b459791ba181a0fb19e55-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "0e78ac521d2149ee82b93f07362beced-nb",
+  "downloaded": true
+ },
+ "kranbeskyttelse_CI_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/bd2e7f8c47b844d2b029bebb91e5a080/original.mp4",
+  "proofreadId": "8f6d6aa3e36c4cd3abbabc7a0cb2acea-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "5c93122ec26c4f2db97f07a229e88fb8-nb"
+ },
+ "overvakingskamera_SP_4_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/a38540a3f30040c1b30a74e2475af438/original.mp4",
+  "proofreadId": "79a890d572d245b3ba7c991dc744aa7e-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "6253749894184b3d8d35c13b5b7d4935-nb",
+  "downloaded": true
+ },
+ "overvakingskamera_RI_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/22daf92bad5c4ff4b772748c9434982b/original.mp4",
+  "proofreadId": "a7ab436928154e78aaf31928066c0a59-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "9698344b30ee4b11a969afb7766a75d1-nb"
+ },
+ "overvakingskamera_SP_5_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/4382a6820783438c9f9f52fcee073e35/original.mp4",
+  "proofreadId": "92ea1cc8e5ad4fc7b836de55c4c8163c-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "a88b28a9a5874869b73ce49655efc45a-nb"
+ },
+ "overvakingskamera_CO_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/0ec2949a3b224fde80fd58ad9faf44af/original.mp4",
+  "proofreadId": "a6d3f29b711543db959a18478102ccf9-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "cd5ceac3d36b4506bd2e7d09ac03ecbe-nb",
+  "downloaded": true
+ },
+ "overvakingskamera_SP_6_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/65f4485b72284cfcbc18e91f05789a6c/original.mp4",
+  "proofreadId": "e67a189b3bbb44d68c16dd3b914f23ca-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "711a471437b54f5192cd3e2fc25a3975-nb"
+ },
+ "overvakingskamera_AU_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/e80d5be64e7743de832fa4b8c84cfab7/original.mp4",
+  "proofreadId": "57f9f7bdf4da49c1bffce963d1c60bf5-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "d9596cf3fc6045239666e2e83b676fef-nb"
+ },
+ "ibc-tanktrekk_PD_3_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/0619ec656e0f4f64899e43bf11b2b917/original.mp4",
+  "proofreadId": "c4dc1410fa0442dba99d1d6e2259e803-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "7f2b09850c74471d883e72b2546f4814-nb"
+ },
+ "ibc-tanktrekk_GT_3_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/551d73d81ff5457eb4a65b8fab80a7ca/original.mp4",
+  "proofreadId": "93eff1c76bc948ae812a663b5ad39e22-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "45cc7b56a98d4fbe9a19fee964a4ca02-nb",
+  "downloaded": true
+ },
+ "batmotortrekk_AU_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/d3b575c6517044dbb4384c5c15d39edb/original.mp4",
+  "proofreadId": "5247c3cf8d2841ac82e27a975bc935bb-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "96206b6c1ed54c3f9f5dfdc24cd1af2f-nb"
+ }
+}

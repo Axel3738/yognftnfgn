@@ -1,0 +1,148 @@
+{
+ "caption": {
+  "band": [
+   961,
+   1022
+  ],
+  "x": [
+   178,
+   543
+  ],
+  "storlek": 30,
+  "max_tecken": 30
+ },
+ "boxar": [
+  {
+   "box": [
+    332,
+    644,
+    576,
+    732
+   ],
+   "fran": 8.85,
+   "till": 10.8,
+   "fyll": [
+    255,
+    255,
+    255
+   ],
+   "text": "SNØ",
+   "stil": {
+    "storlek": 52,
+    "fet": true,
+    "farg": [
+     20,
+     20,
+     20
+    ],
+    "justering": "vanster",
+    "indrag": 19
+   }
+  },
+  {
+   "box": [
+    198,
+    404,
+    562,
+    480
+   ],
+   "fran": 11.25,
+   "till": 15.4,
+   "fyll": [
+    255,
+    255,
+    255
+   ],
+   "rader": [
+    "BÅTMOTORTREKK 420D –",
+    "HELDEKKENDE FOR PÅHENGSMOTOR"
+   ],
+   "stil": {
+    "storlek": 21,
+    "fet": true,
+    "farg": [
+     20,
+     20,
+     20
+    ],
+    "radavstand": 1.2
+   }
+  },
+  {
+   "box": [
+    198,
+    740,
+    522,
+    812
+   ],
+   "fran": 11.25,
+   "till": 15.4,
+   "fyll": [
+    229,
+    30,
+    30
+   ],
+   "text": "30 DAGERS ÅPENT KJØP",
+   "stil": {
+    "storlek": 27,
+    "fet": true,
+    "farg": [
+     255,
+     255,
+     255
+    ]
+   }
+  },
+  {
+   "box": [
+    228,
+    816,
+    502,
+    868
+   ],
+   "fran": 11.25,
+   "till": 15.4,
+   "fyll": [
+    255,
+    255,
+    255
+   ],
+   "text": "529 kr",
+   "stil": {
+    "storlek": 40,
+    "fet": true,
+    "farg": [
+     229,
+     30,
+     30
+    ]
+   }
+  },
+  {
+   "box": [
+    228,
+    868,
+    502,
+    896
+   ],
+   "fran": 11.25,
+   "till": 15.4,
+   "fyll": [
+    255,
+    255,
+    255
+   ],
+   "text": "882 kr",
+   "stil": {
+    "storlek": 21,
+    "fet": false,
+    "farg": [
+     120,
+     120,
+     120
+    ],
+    "stryk": true
+   }
+  }
+ ]
+}

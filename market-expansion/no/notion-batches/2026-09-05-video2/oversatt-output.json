@@ -1,0 +1,145 @@
+{
+ "kranbeskyttelse_SP_3_H1": {
+  "andringar": [
+   "309 kr → 219 kr",
+   "Kranskydd Frost 420D → Kranbeskyttelse Frost 420D"
+  ],
+  "trefragor": [
+   { "rad": "Overlevde stormen – ekte kunde", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "hoppa": null
+ },
+ "kranbeskyttelse_UG_1_H1": {
+  "andringar": [
+   "309 kr → 219 kr",
+   "Fri frakt struket (219 kr ligger under fraktgränsen 300 kr)",
+   "Kranskydd Frost 420D → Kranbeskyttelse Frost 420D"
+  ],
+  "trefragor": [
+   { "rad": "Frossen kran, løst på 10 sekunder", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "hoppa": null
+ },
+ "kranbeskyttelse_CI_1_H1": {
+  "andringar": [
+   "309 kr → 219 kr",
+   "Kranskydd Frost 420D → Kranbeskyttelse Frost 420D"
+  ],
+  "trefragor": [
+   { "rad": "Kulden finner kranen du glemte", "visualisera": true, "falsifiera": false, "ingen_annan": false }
+  ],
+  "hoppa": null
+ },
+ "overvakingskamera_SP_4_H1": {
+  "andringar": [
+   "799 kr → 899 kr",
+   "1 000 kr → 1 169 kr",
+   "30 dagars garanti → 30 dagers åpent kjøp"
+  ],
+  "trefragor": [
+   { "rad": "Alarmen gikk 03:12 i natt", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "hoppa": null
+ },
+ "overvakingskamera_RI_1_H1": {
+  "andringar": [
+   "799 kr → 899 kr",
+   "30 dagars nöjd-kund-garanti → 30 dagers åpent kjøp",
+   "1 000 kr → 1 169 kr (grafik)",
+   "10 recensioner → 10 anmeldelser (grafik)",
+   "Vad är / dyrast → Hva er / dyrest (grafik)",
+   "30 dagars garanti → 30 dagers åpent kjøp (grafik etikett)"
+  ],
+  "trefragor": [
+   { "rad": "Se hva som faktisk skjedde ved døren", "visualisera": true, "falsifiera": false, "ingen_annan": false }
+  ],
+  "hoppa": null
+ },
+ "overvakingskamera_SP_5_H1": {
+  "andringar": [
+   "799 kr → 899 kr",
+   "30 dagars garanti → 30 dagers åpent kjøp"
+  ],
+  "trefragor": [
+   { "rad": "Jeg sover bedre siden jeg satte den opp", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "hoppa": null
+ },
+ "overvakingskamera_CO_1_H1": {
+  "andringar": [
+   "799 kr → 899 kr",
+   "1 000 kr → 1 169 kr",
+   "30 dagars garanti → 30 dagers åpent kjøp",
+   "360 grader rättat till 355 grader (fel i srt_heygen_no)"
+  ],
+  "trefragor": [
+   { "rad": "Det gamle kameraet vs dette", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "hoppa": null
+ },
+ "overvakingskamera_SP_6_H1": {
+  "andringar": [
+   "799 kr → 899 kr",
+   "30 dagars garanti → 30 dagers åpent kjøp",
+   "3 grannar → 3 naboer (grafik)",
+   "Direkt notis → Direkte varsel (grafik)",
+   "AI-spårning → AI-sporing (grafik)",
+   "Handla nu → Kjøp nå (grafik)"
+  ],
+  "trefragor": [
+   { "rad": "Tre naboer i gaten har skaffet den", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "hoppa": null
+ },
+ "overvakingskamera_AU_1_H1": {
+  "andringar": [
+   "799 kr → 899 kr",
+   "1 000 kr → 1 169 kr",
+   "30 dagars garanti → 30 dagers åpent kjøp",
+   "svenskt väder → norsk vær",
+   "Handla nu. → Kjøp nå. (grafik, x2)"
+  ],
+  "trefragor": [
+   { "rad": "Teknikeren viser hva du faktisk får", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "hoppa": null
+ },
+ "ibc-tanktrekk_PD_3_H1": {
+  "andringar": [
+   "489 kr → 439 kr",
+   "636 kr → 586 kr",
+   "200 g Oxford-tyg → 210D oxfordstoff (transkriptionsfel rättat, x2 i SRT)",
+   "10 recensioner → 10 anmeldelser (grafik)",
+   "Oxford-tyg → Oxfordstoff (grafik rubrik)"
+  ],
+  "trefragor": [
+   { "rad": "210D oxfordstoff. Ingen alge.", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "hoppa": null
+ },
+ "ibc-tanktrekk_GT_3_H1": {
+  "andringar": [
+   "489 kr → 439 kr",
+   "636 kr → 586 kr",
+   "4,4 av 5 på produktsidan → 4,7 av 5 på beverbutikken.no",
+   "10 recensioner → 10 anmeldelser (grafik)"
+  ],
+  "trefragor": [
+   { "rad": "Gi trekket i gave. Slipp algeskrubben.", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "hoppa": null
+ },
+ "batmotortrekk_AU_1_H1": {
+  "andringar": [
+   "579 kr → 529 kr",
+   "965 kr → 882 kr",
+   "30 dagars öppet köp → 30 dagers åpent kjøp",
+   "SNÖ → SNØ (grafik)",
+   "30 DAGARS ÖPPET KÖP → 30 DAGERS ÅPENT KJØP (grafik)"
+  ],
+  "trefragor": [
+   { "rad": "Regn, snø og UV møter 420D-stoffet", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "hoppa": null
+ }
+}

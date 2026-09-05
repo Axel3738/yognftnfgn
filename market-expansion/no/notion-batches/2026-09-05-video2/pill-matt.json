@@ -1,0 +1,86 @@
+{
+ "batmotortrekk_AU_1_H1": {
+  "y0": 512,
+  "y1": 1031,
+  "x0": 178,
+  "x1": 543,
+  "andel": 0.66
+ },
+ "ibc-tanktrekk_GT_3_H1": {
+  "y0": 905,
+  "y1": 968,
+  "x0": 191,
+  "x1": 573,
+  "andel": 0.75
+ },
+ "ibc-tanktrekk_PD_3_H1": {
+  "y0": 906,
+  "y1": 968,
+  "x0": 209,
+  "x1": 510,
+  "andel": 0.84
+ },
+ "kranbeskyttelse_CI_1_H1": {
+  "y0": 807,
+  "y1": 881,
+  "x0": 180,
+  "x1": 540,
+  "andel": 0.87
+ },
+ "kranbeskyttelse_SP_3_H1": {
+  "y0": 835,
+  "y1": 911,
+  "x0": 192,
+  "x1": 528,
+  "andel": 0.78
+ },
+ "kranbeskyttelse_UG_1_H1": {
+  "y0": 816,
+  "y1": 889,
+  "x0": 151,
+  "x1": 568,
+  "andel": 0.91
+ },
+ "overvakingskamera_AU_1_H1": {
+  "y0": 804,
+  "y1": 891,
+  "x0": 86,
+  "x1": 634,
+  "andel": 0.72
+ },
+ "overvakingskamera_CO_1_H1": {
+  "y0": 727,
+  "y1": 804,
+  "x0": 171,
+  "x1": 550,
+  "andel": 0.53
+ },
+ "overvakingskamera_RI_1_H1": {
+  "y0": 934,
+  "y1": 996,
+  "x0": 183,
+  "x1": 522,
+  "andel": 0.62
+ },
+ "overvakingskamera_SP_4_H1": {
+  "y0": 934,
+  "y1": 996,
+  "x0": 205,
+  "x1": 516,
+  "andel": 0.85
+ },
+ "overvakingskamera_SP_5_H1": {
+  "y0": 851,
+  "y1": 941,
+  "x0": 164,
+  "x1": 556,
+  "andel": 0.61
+ },
+ "overvakingskamera_SP_6_H1": {
+  "y0": 731,
+  "y1": 806,
+  "x0": 154,
+  "x1": 633,
+  "andel": 0.73
+ }
+}

@@ -1,0 +1,31 @@
+1
+00:00:00,119 --> 00:00:01,679
+Larmet gick klockan ett på natten.
+
+2
+00:00:01,819 --> 00:00:04,940
+Jag behövde inte gissa. Appen visade mig direkt vem det var.
+
+3
+00:00:05,119 --> 00:00:07,919
+Två linser, trehundrafemtiofem grader täckning.
+
+4
+00:00:08,039 --> 00:00:09,699
+Kameran följer rörelsen själv.
+
+5
+00:00:09,800 --> 00:00:16,619
+AI:n skiljer på människor och katter. Den larmar bara när det gäller. Jag sover bättre nu, för jag vet, jag gissar inte.
+
+6
+00:00:16,799 --> 00:00:18,279
+Sjuhundranittionio kronor idag.
+
+7
+00:00:18,298 --> 00:00:19,556
+Se varför de sover bättre.
+
+8
+00:00:19,719 --> 00:00:20,180
+Handla nu.

@@ -1,0 +1,64 @@
+{
+ "kranbeskyttelse_SP_3_H1": {},
+ "kranbeskyttelse_UG_1_H1": {},
+ "kranbeskyttelse_CI_1_H1": {},
+ "overvakingskamera_SP_4_H1": {
+  "badge_gul": "899 KR",
+  "slutkort_titel": "OVERVÅKINGSKAMERA TRÅDLØST - DOBBELTLINSE PTZ MED AI-SPORING",
+  "slutkort_recensioner": "10 anmeldelser",
+  "slutkort_pris": "1 169 kr (struket) 899 kr",
+  "slutkort_knapp": "Kjøp nå"
+ },
+ "overvakingskamera_RI_1_H1": {
+  "rubrik_svart_2_rader": [
+   "Hva er",
+   "dyrest"
+  ],
+  "badge_gul": "899 KR",
+  "etikett_svart": "30 dagers åpent kjøp.",
+  "slutkort_titel": "OVERVÅKINGSKAMERA TRÅDLØST - DOBBELTLINSE PTZ MED AI-SPORING",
+  "slutkort_recensioner": "10 anmeldelser",
+  "slutkort_pris": "1 169 kr (struket) 899 kr",
+  "slutkort_knapp": "Kjøp nå"
+ },
+ "overvakingskamera_SP_5_H1": {},
+ "overvakingskamera_CO_1_H1": {},
+ "overvakingskamera_SP_6_H1": {
+  "etikett_1": "3 naboer",
+  "etikett_2": "Direkte varsel",
+  "etikett_3": "AI-sporing",
+  "etikett_4": "30 dagers åpent kjøp",
+  "etikett_5": "Kjøp nå"
+ },
+ "overvakingskamera_AU_1_H1": {
+  "orange_stor_text": "Kjøp nå.",
+  "vit_pill_botten": "Kjøp nå."
+ },
+ "ibc-tanktrekk_PD_3_H1": {
+  "rubrik_orange_2_rader": [
+   "210D",
+   "Oxfordstoff"
+  ],
+  "slutkort_titel": "IBC-TANKTREKK 1000 L - STOPPER ALGER & UV",
+  "slutkort_recensioner": "10 anmeldelser",
+  "slutkort_pris": "586 kr (struket) 439 kr",
+  "slutkort_knapp": "Kjøp nå"
+ },
+ "ibc-tanktrekk_GT_3_H1": {
+  "slutkort_titel": "IBC-TANKTREKK 1000 L - STOPPER ALGER & UV",
+  "slutkort_recensioner": "10 anmeldelser",
+  "slutkort_pris": "586 kr (struket) 439 kr",
+  "slutkort_knapp": "Kjøp nå"
+ },
+ "batmotortrekk_AU_1_H1": {
+  "checklista": [
+   "REGN",
+   "SNØ",
+   "UV"
+  ],
+  "mobil_titel": "BÅTMOTORTREKK 420D – HELDEKKENDE FOR PÅHENGSMOTOR",
+  "mobil_knapp_rod": "30 DAGERS ÅPENT KJØP",
+  "mobil_pris": "529 kr",
+  "mobil_pris_struket": "882 kr"
+ }
+}
