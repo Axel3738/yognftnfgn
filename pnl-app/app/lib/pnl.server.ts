@@ -46,6 +46,60 @@ export interface ProductRow {
   netSales: number;
   /** Nuvarande unitCost från Shopify. Null = kostnad saknas. */
   unitCost: number | null;
+  /**
+   * Antal orderrader per antal i raden: { "1": 40, "2": 6, "3": 1 }.
+   * Det är vad flerpackskostnaden räknas på — en rad med tre stycken kostar
+   * inte tre gånger styckpriset. Saknas (äldre dagsrader) räknas alla
+   * enheter som styckköp.
+   */
+  lines?: Record<string, number>;
+}
+
+/** Totalkostnad för `units` stycken i samma orderrad. Antal 1 = unitCost. */
+export interface CostTierRow {
+  variantGid: string;
+  units: number;
+  totalCost: number;
+}
+
+/**
+ * Kostnaden för en orderrad med `qty` stycken, givet styckpriset och
+ * leverantörens stegpriser. Exakt steg vinner. Annars närmaste lägre steg
+ * plus resten till det stegets marginalpris (skillnaden mot steget före).
+ */
+export function tierCost(qty: number, unitCost: number, tiers: CostTierRow[]): number {
+  const steps = [{ units: 1, totalCost: unitCost }, ...tiers.filter((t) => t.units > 1)]
+    .sort((a, b) => a.units - b.units);
+  let below = steps[0];
+  let before: typeof below | null = null;
+  for (const s of steps) {
+    if (s.units === qty) return s.totalCost;
+    if (s.units > qty) break;
+    if (s !== below) {
+      before = below;
+      below = s;
+    }
+  }
+  const marginal = before
+    ? (below.totalCost - before.totalCost) / (below.units - before.units)
+    : unitCost;
+  return below.totalCost + (qty - below.units) * marginal;
+}
+
+/** Radens COGS: stegpriser per orderrad när de finns, annars styck × antal. */
+export function rowCost(row: ProductRow, unitCost: number, tiers: CostTierRow[]): number {
+  if (!tiers.length || !row.lines) return unitCost * row.units;
+  let total = 0;
+  let covered = 0;
+  for (const [q, n] of Object.entries(row.lines)) {
+    const qty = Number(q);
+    if (!(qty > 0) || !(n > 0)) continue;
+    total += tierCost(qty, unitCost, tiers) * n;
+    covered += qty * n;
+  }
+  // Enheter utan radinformation (blandade källor) räknas som styckköp.
+  if (row.units > covered) total += (row.units - covered) * unitCost;
+  return total;
 }
 
 export interface CostChangeRow {
@@ -78,6 +132,8 @@ export interface ComputeInput {
   spend: SpendDay[];
   products: ProductRow[];
   costChanges: CostChangeRow[];
+  /** Flerpackspriser per variant. Tom = allt räknas per styck. */
+  costTiers?: CostTierRow[];
   settings: Settings;
 }
 
@@ -222,6 +278,12 @@ export function compute(input: ComputeInput): ComputeResult {
   };
 
   const appliedNotes = new Map<string, number>();
+  const tiersByVariant = new Map<string, CostTierRow[]>();
+  for (const t of input.costTiers ?? []) {
+    const list = tiersByVariant.get(t.variantGid) ?? [];
+    list.push(t);
+    tiersByVariant.set(t.variantGid, list);
+  }
   let cogs = 0;
   let unitsWithoutCost = 0;
 
@@ -242,7 +304,8 @@ export function compute(input: ComputeInput): ComputeResult {
         }
       }
 
-      const rowCogs = cost != null ? cost * row.units : null;
+      const tiers = row.variantGid ? tiersByVariant.get(row.variantGid) ?? [] : [];
+      const rowCogs = cost != null ? rowCost(row, cost, tiers) : null;
       if (rowCogs != null) cogs += rowCogs;
       else unitsWithoutCost += row.units;
 

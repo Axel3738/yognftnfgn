@@ -46,12 +46,16 @@ export async function loader({ request, params }: LoaderFunctionArgs) {
   const variants = catalog.all.filter((v) => v.productGid === productGid);
   if (!variants.length) throw redirect("/app/costs");
 
-  const [history, settings] = await Promise.all([
+  const [history, settings, tierRows] = await Promise.all([
     prisma.costChange.findMany({
       where: { shop: session.shop, productGid },
       orderBy: { effectiveFrom: "desc" },
     }),
     prisma.shopSettings.findUnique({ where: { shop: session.shop } }),
+    prisma.costTier.findMany({
+      where: { shop: session.shop, variantGid: { in: variants.map((v) => v.variantGid) } },
+      orderBy: { units: "asc" },
+    }),
   ]);
 
   return json({
@@ -62,6 +66,12 @@ export async function loader({ request, params }: LoaderFunctionArgs) {
       variantTitle: v.variantTitle === "Default Title" ? "—" : v.variantTitle,
       price: v.price,
       unitCost: v.unitCost,
+    })),
+    tiers: tierRows.map((r) => ({
+      id: r.id,
+      variantGid: r.variantGid,
+      units: r.units,
+      totalCost: Number(r.totalCost),
     })),
     history: history.map((h) => ({
       id: h.id,
@@ -82,6 +92,38 @@ export async function action({ request, params }: ActionFunctionArgs) {
   // Meddelandena visas i UI:t — hämta butikens språk först.
   const settings = await prisma.shopSettings.findUnique({ where: { shop: session.shop } });
   const T = t(asLang(settings?.language));
+
+  if (String(form.get("intent")) === "tierDelete") {
+    await prisma.costTier.deleteMany({
+      where: { id: String(form.get("id")), shop: session.shop },
+    });
+    return json({ ok: true, message: T.costDetail.tierDeleted });
+  }
+
+  if (String(form.get("intent")) === "tier") {
+    /* Flerpack: totalpris för N stycken i samma orderrad. Skrivs inte till
+       Shopify — där finns bara ETT styckpris. Appen äger stegen. */
+    const units = Math.round(num(form.get("units")));
+    const totalCost = num(form.get("totalCost"));
+    const forVariant = String(form.get("variantGid") ?? "");
+    if (!(units >= 2) || !Number.isFinite(totalCost) || totalCost < 0) {
+      return json({ ok: false, message: T.costDetail.tierInvalid }, { status: 400 });
+    }
+    const catalog = await loadCatalog(admin, session.shop, prisma);
+    const targets = catalog.all.filter(
+      (v) => v.productGid === productGid && (forVariant === "" || v.variantGid === forVariant),
+    );
+    await prisma.$transaction(
+      targets.map((v) =>
+        prisma.costTier.upsert({
+          where: { shop_variantGid_units: { shop: session.shop, variantGid: v.variantGid, units } },
+          create: { shop: session.shop, variantGid: v.variantGid, units, totalCost },
+          update: { totalCost },
+        }),
+      ),
+    );
+    return json({ ok: true, message: T.costDetail.tierSaved(targets.length, units, totalCost.toFixed(2)) });
+  }
 
   if (String(form.get("intent")) === "delete") {
     await prisma.costChange.deleteMany({
@@ -138,8 +180,11 @@ export async function action({ request, params }: ActionFunctionArgs) {
 }
 
 export default function ProductCost() {
-  const { lang, title, variants, history } = useLoaderData<typeof loader>();
+  const { lang, title, variants, history, tiers } = useLoaderData<typeof loader>();
   const fetcher = useFetcher<typeof action>();
+  const tierFetcher = useFetcher<typeof action>();
+  const [tier, setTier] = useState({ units: "2", totalCost: "", variantGid: "" });
+  const setTierField = (k: keyof typeof tier) => (val: string) => setTier((s) => ({ ...s, [k]: val }));
   const today = new Date().toISOString().slice(0, 10);
   const [v, setV] = useState({
     productCost: "",
@@ -235,6 +280,74 @@ export default function ProductCost() {
                   : `${dec((x.price / x.unitCost).toFixed(2))}×`,
               ])}
             />
+          </Card>
+        </Layout.Section>
+
+        <Layout.Section>
+          <Card>
+            <BlockStack gap="300">
+              <Text as="h2" variant="headingMd">{T.costDetail.tiersTitle}</Text>
+              <Text as="p" tone="subdued">{T.costDetail.tiersBody}</Text>
+
+              <InlineStack gap="300" wrap blockAlign="end">
+                <div style={{ minWidth: 110 }}>
+                  <TextField label={T.costDetail.tierUnits} type="number" min={2} value={tier.units}
+                    onChange={setTierField("units")} autoComplete="off" />
+                </div>
+                <div style={{ minWidth: 150, flex: 1 }}>
+                  <TextField label={T.costDetail.tierTotal} value={tier.totalCost}
+                    onChange={setTierField("totalCost")} autoComplete="off" placeholder="134.22" />
+                </div>
+                {variants.length > 1 ? (
+                  <div style={{ minWidth: 200, flex: 1 }}>
+                    <Select
+                      label={T.costDetail.appliesTo}
+                      options={[
+                        { label: T.costDetail.allVariants(variants.length), value: "" },
+                        ...variants.map((x) => ({ label: x.variantTitle, value: x.variantGid })),
+                      ]}
+                      value={tier.variantGid}
+                      onChange={setTierField("variantGid")}
+                    />
+                  </div>
+                ) : null}
+                <Button variant="primary" loading={tierFetcher.state !== "idle"}
+                  onClick={() => tierFetcher.submit({ ...tier, intent: "tier" }, { method: "POST" })}>
+                  {T.costDetail.tierAdd}
+                </Button>
+              </InlineStack>
+
+              {tierFetcher.data ? (
+                <Banner tone={tierFetcher.data.ok ? "success" : "critical"}>{tierFetcher.data.message}</Banner>
+              ) : null}
+
+              {tiers.length ? (
+                <DataTable
+                  columnContentTypes={["text", "numeric", "numeric", "numeric", "text"]}
+                  headings={[T.costDetail.thVariant, T.costDetail.thUnits, T.costDetail.thTotal, T.costDetail.thPerUnit, ""]}
+                  rows={variants.flatMap((x) => {
+                    const mine = tiers.filter((r) => r.variantGid === x.variantGid);
+                    if (!mine.length) return [];
+                    return [
+                      [x.variantTitle, T.costDetail.oneUnit, x.unitCost == null ? "—" : nf.format(x.unitCost),
+                        x.unitCost == null ? "—" : nf.format(x.unitCost), ""],
+                      ...mine.map((r) => [
+                        x.variantTitle,
+                        String(r.units),
+                        nf.format(r.totalCost),
+                        nf.format(r.totalCost / r.units),
+                        <Button key={r.id} variant="plain" tone="critical"
+                          onClick={() => tierFetcher.submit({ intent: "tierDelete", id: r.id }, { method: "POST" })}>
+                          {T.costDetail.remove}
+                        </Button>,
+                      ]),
+                    ];
+                  })}
+                />
+              ) : (
+                <Text as="p" tone="subdued">{T.costDetail.tiersEmpty}</Text>
+              )}
+            </BlockStack>
           </Card>
         </Layout.Section>
 

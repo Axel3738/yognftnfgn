@@ -140,8 +140,9 @@ async function summeraButik(
     m.metaAdAccountId && metaToken
       ? { adAccountId: m.metaAdAccountId, accessToken: metaToken }
       : null;
-  const [costChanges, fixedRows, spendData] = await Promise.all([
+  const [costChanges, costTiers, fixedRows, spendData] = await Promise.all([
     prisma.costChange.findMany({ where: { shop: m.shop } }),
+    prisma.costTier.findMany({ where: { shop: m.shop } }),
     prisma.fixedCost.findMany({ where: { shop: m.shop } }),
     /* syncFresh: även annonskostnadens färskhet väntas in — dagens spend är
        halva vinstkalkylen, och en bakgrundshämtning hade lämnat samma lucka
@@ -180,6 +181,7 @@ async function summeraButik(
       effectiveFrom: c.effectiveFrom.toISOString().slice(0, 10),
       note: c.note,
     })),
+    costTiers: costTiers.map((c) => ({ variantGid: c.variantGid, units: c.units, totalCost: Number(c.totalCost) })),
     settings: {
       tariffPerOrder: Number(m.tariffPerOrder),
       feeRate: Number(m.feeRate),

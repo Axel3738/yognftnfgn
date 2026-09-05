@@ -136,8 +136,9 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
   }
   /* Allt nedan är oberoende av varandra — sekventiellt blev det fyra
      väntningar i rad där en räcker. */
-  const [costChanges, fixedRows, catalog, groupSize] = await Promise.all([
+  const [costChanges, costTierRows, fixedRows, catalog, groupSize] = await Promise.all([
     prisma.costChange.findMany({ where: { shop } }),
+    prisma.costTier.findMany({ where: { shop } }),
     prisma.fixedCost.findMany({ where: { shop } }),
     loadCatalog(admin, shop, prisma),
     settings.groupId
@@ -145,6 +146,9 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
       : Promise.resolve(1),
   ]);
   const fixedMonthlyTotal = fixedRows.reduce((a, r) => a + Number(r.monthlyAmount), 0);
+  const costTiers = costTierRows.map((c) => ({
+    variantGid: c.variantGid, units: c.units, totalCost: Number(c.totalCost),
+  }));
 
   /* Kostnaden läses om ur katalogen (5 min minnescache) istället för att tas
      ur det lagrade aggregatet — annars syns ett nyss inskrivet inköpspris
@@ -196,6 +200,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
       effectiveFrom: c.effectiveFrom.toISOString().slice(0, 10),
       note: c.note,
     })),
+    costTiers,
     settings: {
       tariffPerOrder: Number(settings.tariffPerOrder),
       feeRate: Number(settings.feeRate),
@@ -241,6 +246,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
         productGid: c.productGid, variantGid: c.variantGid, unitCost: Number(c.unitCost),
         effectiveFrom: c.effectiveFrom.toISOString().slice(0, 10), note: c.note,
       })),
+      costTiers,
       settings: {
         tariffPerOrder: Number(settings.tariffPerOrder),
         feeRate: Number(settings.feeRate),

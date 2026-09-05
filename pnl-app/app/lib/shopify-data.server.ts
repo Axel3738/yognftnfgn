@@ -149,7 +149,7 @@ function parseOrderLines(
   }
 
   interface Agg { productGid: string; variantGid: string | null; title: string;
-    variantTitle: string | null; units: number; netSales: number; }
+    variantTitle: string | null; units: number; netSales: number; lines: Record<string, number>; }
   /* Ordrar som räknas, med sin dag — radrader vars förälder skippats
      (avbruten/test/utanför fönstret) ska inte in i mixen. */
   const counted = new Map<string, string>();
@@ -188,8 +188,12 @@ function parseOrderLines(
         variantTitle: line.variantTitle === "Default Title" ? null : line.variantTitle,
         units: 0,
         netSales: 0,
+        lines: {} as Record<string, number>,
       };
       agg.units += line.quantity ?? 0;
+      /* Hur många stycken låg i just den här raden? Det avgör flerpacks-
+         kostnaden — tre i en rad delar frakten, tre i tre ordrar gör det inte. */
+      if (line.quantity > 0) agg.lines[String(line.quantity)] = (agg.lines[String(line.quantity)] ?? 0) + 1;
       agg.netSales += num(line.discountedTotalSet?.shopMoney?.amount);
       dayMap.set(key, agg);
       productByDay.set(day, dayMap);
@@ -215,8 +219,12 @@ export function mergeProductRows(rows: ProductRow[]): ProductRow[] {
       agg.units += r.units;
       agg.netSales += r.netSales;
       if (agg.unitCost == null) agg.unitCost = r.unitCost;
+      if (r.lines) {
+        agg.lines = { ...(agg.lines ?? {}) };
+        for (const [q, n] of Object.entries(r.lines)) agg.lines[q] = (agg.lines[q] ?? 0) + n;
+      }
     } else {
-      by.set(key, { ...r });
+      by.set(key, { ...r, lines: r.lines ? { ...r.lines } : undefined });
     }
   }
   return [...by.values()];

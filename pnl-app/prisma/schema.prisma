@@ -188,3 +188,21 @@ model FixedCost {
 
   @@index([shop])
 }
+
+/// Kostnad per ANTAL i samma orderrad — flerpack. Två stycken kostar inte
+/// dubbelt: frakten delas, så leverantören offererar ett totalpris för 2 och
+/// för 3. Antal 1 är Shopifys unitCost; här ligger bara stegen därefter.
+/// Saknas ett antal räknas det från närmaste lägre steg plus marginalpriset.
+model CostTier {
+  id         String   @id @default(cuid())
+  shop       String
+  variantGid String
+  /// Antal i orderraden som totalpriset gäller för (2, 3, …).
+  units      Int
+  /// Totalkostnad för hela antalet, vara + frakt, utan tull.
+  totalCost  Decimal  @db.Decimal(10, 2)
+  createdAt  DateTime @default(now())
+
+  @@unique([shop, variantGid, units])
+  @@index([shop])
+}

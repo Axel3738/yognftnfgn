@@ -42,8 +42,22 @@ export async function loader({ request }: LoaderFunctionArgs) {
     update: {},
   });
   const lang = asLang(settings.language);
-  const costs = await loadCatalog(admin, session.shop, prisma);
-  const rows = [...costs.all].sort((a, b) => {
+  const [costs, tierRows] = await Promise.all([
+    loadCatalog(admin, session.shop, prisma),
+    prisma.costTier.findMany({ where: { shop: session.shop }, orderBy: { units: "asc" } }),
+  ]);
+  /* Mallen ska gå att skicka runt och släppa tillbaka utan att tappa
+     flerpacken — därför följer stegen med i kostnadskolumnen: 88.34|134.22. */
+  const tiersByVariant = new Map<string, string[]>();
+  for (const t of tierRows) {
+    const list = tiersByVariant.get(t.variantGid) ?? [];
+    list.push(Number(t.totalCost).toFixed(2));
+    tiersByVariant.set(t.variantGid, list);
+  }
+  const rows = [...costs.all].map((v) => ({
+    ...v,
+    costCell: v.unitCost == null ? "" : [v.unitCost.toFixed(2), ...(tiersByVariant.get(v.variantGid) ?? [])].join("|"),
+  })).sort((a, b) => {
     // Saknade kostnader först — det är dem man är här för att fixa.
     if ((a.unitCost == null) !== (b.unitCost == null)) return a.unitCost == null ? -1 : 1;
     return a.productTitle.localeCompare(b.productTitle, lang === "sv" ? "sv" : "en");
@@ -80,11 +94,17 @@ export async function action({ request }: ActionFunctionArgs) {
        där titeln inte hjälper — men det är kostnaden som ska skrivas.
        Tre kolumner är det handskrivna formatet: sista kolumnen är kostnaden. */
     const fyra = parts.length >= 4;
-    const cost = parseFloat((fyra ? parts[2] : parts[parts.length - 1] ?? "").replace(",", "."));
+    /* Flerpack: "88.34|134.22|180.19" = totalkostnad för 1, 2 och 3 st i
+       samma orderrad. Första talet är styckpriset som skrivs till Shopify;
+       resten sparas som steg i appen. */
+    const steg = (fyra ? parts[2] : parts[parts.length - 1] ?? "")
+      .split("|")
+      .map((x) => parseFloat(x.trim().replace(",", ".")));
     return {
       product: parts[0] ?? "",
       variant: fyra ? parts[1] : parts.length >= 3 ? parts.slice(1, -1).join(" ").trim() : "",
-      cost,
+      cost: steg[0],
+      tiers: steg.slice(1).map((totalCost, i) => ({ units: i + 2, totalCost })).filter((t) => Number.isFinite(t.totalCost)),
     };
   };
   const rawLines = csv
@@ -137,6 +157,17 @@ export async function action({ request }: ActionFunctionArgs) {
       }
       applied.push(`${target.productTitle} · ${target.variantTitle}`);
 
+      /* Stegen ersätter variantens tidigare steg — filen är sanningen. En rad
+         utan steg rör dem inte, så en vanlig prislista raderar inga flerpack. */
+      if (row.tiers.length) {
+        await prisma.costTier.deleteMany({ where: { shop: session.shop, variantGid: target.variantGid } });
+        await prisma.costTier.createMany({
+          data: row.tiers.map((t) => ({
+            shop: session.shop, variantGid: target.variantGid, units: t.units, totalCost: t.totalCost,
+          })),
+        });
+      }
+
       // Historik, så att äldre perioder räknas på den kostnad som gällde då.
       if (effectiveFrom) {
         await prisma.costChange.create({
@@ -181,9 +212,10 @@ export default function Costs() {
     T.costs.tpl3,
     T.costs.tpl4,
     T.costs.tpl5,
+    T.costs.tpl6,
     ...rows.map(
       (r) =>
-        `${safe(r.productTitle)};${r.variantTitle === "Default Title" ? "" : safe(r.variantTitle)};${r.unitCost ?? ""};${r.price}`,
+        `${safe(r.productTitle)};${r.variantTitle === "Default Title" ? "" : safe(r.variantTitle)};${r.costCell};${r.price}`,
     ),
   ].join("\n");
 
@@ -232,7 +264,8 @@ export default function Costs() {
                   <strong>1.</strong> {T.costs.sop1}<br />
                   <strong>2.</strong> {T.costs.sop2}<br />
                   <strong>3.</strong> {T.costs.sop3}<br />
-                  <strong>4.</strong> {T.costs.sop4}
+                  <strong>4.</strong> {T.costs.sop4}<br />
+                  <strong>5.</strong> {T.costs.bundleHint}
                 </Text>
               </BlockStack>
             </Card>

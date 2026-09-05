@@ -24,6 +24,7 @@ export async function action({ request }: ActionFunctionArgs) {
       await prisma.$transaction([
         prisma.dailySpend.deleteMany({ where: { shop } }),
         prisma.costChange.deleteMany({ where: { shop } }),
+        prisma.costTier.deleteMany({ where: { shop } }),
         prisma.pnlCache.deleteMany({ where: { shop } }),
         prisma.dailyPnl.deleteMany({ where: { shop } }),
         prisma.catalogCache.deleteMany({ where: { shop } }),

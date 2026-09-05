@@ -326,9 +326,8 @@ Varje svar till honom följer detta, utan undantag:
   siffran matchar Meta Ads Manager. Länken klistras i "Proof of resolution".
  (när detta skrevs)
 
-- Bundle-/antalstrappa för COGS: leverantörsofferterna har 1/2/3-set-priser;
-  appen använder bara 1-set. Axel vill ha Juicy-liknande bundle-COGS.
-  Kaching-bundles nämnt som förebild.
+- Flerpacks-COGS (Juicy-stil) finns sedan v59, se avsnittet nedan. Kvar:
+  Axel fyller i 2/3-set-priserna ur offertbatcherna (kolumnerna qty 2/3).
 - Plyschtofflorna finns inte i FI- och DK-butiken — COGS-rader väntar där.
 - Marina motorhöljet: offert bara för största storleken (250–350 hk, svart) —
   alla 30 varianter har värsta-falls-kostnad; verklig marginal något bättre.
@@ -337,6 +336,25 @@ Varje svar till honom följer detta, utan undantag:
 - Exakta betalväxel-avgifter (feeRate är schablon).
 - Grillkliniken: Axel vill klona hela upplägget till en annan butik.
 - App Store-granskningssvaret: åtgärda när mejlet kommer.
+
+### Flerpacks-COGS — kostnad per antal (2026-09-05, build bundle-v59)
+Axel visade Juicys "Enheter / Total kostnad"-tabell (1 st 88,34 · 2 st 134,22
+· 3 st 180,19) och ville ha samma. Så funkar det nu:
+- Tabellen `CostTier` (shop, variantGid, units ≥ 2, totalCost). Antal 1 är
+  fortfarande Shopifys unitCost — Shopify har bara ETT styckpris, appen äger
+  stegen. `shop/redact` raderar tabellen.
+- Dagsraderna (`DailyPnl.products[].lines`) sparar nu antal orderrader per
+  antal i raden: `{"1":40,"2":6,"3":1}`. Äldre dagsrader saknar fältet och
+  räknas som styckköp tills de hämtas om (fyll på genom att ladda om panelen
+  för intervallet, eller vänta på bakgrundsuppdateringen).
+- `pnl.server.ts`: `tierCost(qty, unitCost, tiers)` — exakt steg vinner,
+  annars närmaste lägre steg + resten till marginalpriset (skillnad mot steget
+  före; bara styckpris ⇒ styck × antal). `rowCost` summerar över `lines`.
+- UI: produktsidan (`app.costs.$id.tsx`) har kortet "Kostnad per antal
+  (flerpack)" — antal, totalkostnad, variant/alla. CSV-importen tar
+  `88.34|134.22|180.19` i kostnadskolumnen (1|2|3 st, totalt för antalet);
+  mallen exporterar samma form så filen går att skicka runt utan att tappa
+  stegen. En rad UTAN `|` rör inte befintliga steg.
 
 ### Motorhöljen: kostnad per hk-storlek (2026-09-04)
 Leverantörsofferten `Axel_quote.xlsx` ger motorhöljet per hk-storlek och land

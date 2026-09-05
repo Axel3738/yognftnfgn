@@ -176,6 +176,7 @@ const en = {
     tpl3: "# The cost is goods + shipping, WITHOUT duty. Duty is per order and lives in Settings.",
     tpl4: "# Leave the variant title empty to set the same cost on all variants.",
     tpl5: "# Do not change the titles — they are matched against the store.",
+    tpl6: "# Bundles: write the cost for 1, 2 and 3 units separated by | — e.g. 88.34|134.22|180.19 (total for the whole quantity).",
     pastedText: "Pasted text",
     dropReady: (n: number) => `${n} rows ready to be written`,
     chooseFile: "Choose CSV file",
@@ -200,6 +201,9 @@ const en = {
     updatedMsg: (applied: number, skipped: number, names: string) =>
       `${applied} variants updated.` + (skipped ? ` ${skipped} were skipped: ${names}` : ""),
     costNote: (date: string) => `new cost from ${date}`,
+    bundleHint:
+      "Bundles: two or three units in the same order line usually cost less than two or three times the unit cost, because shipping is shared. " +
+      "Write the costs separated by | in the cost column (1|2|3 units), or click a product below and add them under Cost per quantity.",
   },
 
   costDetail: {
@@ -242,6 +246,20 @@ const en = {
     savedPartial: (list: string) => `The entry was saved, but the cost could not be written to Shopify for: ${list}`,
     saved: (n: number, total: string, date: string) => `Saved. ${n} variant(s) now cost ${total} effective from ${date}.`,
     costNote: (goods: string, shipping: string) => `goods ${goods} + shipping ${shipping}`,
+    tiersTitle: "Cost per quantity (bundles)",
+    tiersBody:
+      "What the supplier charges in total when 2 or 3 units ship in the same order. One unit is the cost in Shopify above. " +
+      "Order lines with a quantity that has no entry are calculated from the nearest lower quantity plus the marginal cost.",
+    tierUnits: "Units",
+    tierTotal: "Total cost",
+    tierAdd: "Add cost",
+    tierSaved: (n: number, units: number, total: string) => `Saved. ${n} variant(s): ${units} units cost ${total} in total.`,
+    tierInvalid: "Enter a quantity of at least 2 and a total cost.",
+    tierDeleted: "The quantity cost was removed.",
+    thUnits: "Units",
+    thPerUnit: "Per unit",
+    tiersEmpty: "No quantity costs yet. Every unit is calculated at the unit cost in Shopify.",
+    oneUnit: "1 (Shopify)",
   },
 
   fixed: {
@@ -498,6 +516,7 @@ const sv: Texts = {
     tpl3: "# Kostnaden är vara + frakt, UTAN tull. Tullen är per order och ligger i Inställningar.",
     tpl4: "# Lämna varianttiteln tom för att sätta samma kostnad på alla varianter.",
     tpl5: "# Ändra inte titlarna — de matchas mot butiken.",
+    tpl6: "# Flerpack: skriv kostnaden för 1, 2 och 3 st med | emellan — t.ex. 88.34|134.22|180.19 (totalt för hela antalet).",
     pastedText: "Inklistrad text",
     dropReady: (n: number) => `${n} rader redo att skrivas`,
     chooseFile: "Välj CSV-fil",
@@ -522,6 +541,9 @@ const sv: Texts = {
     updatedMsg: (applied: number, skipped: number, names: string) =>
       `${applied} varianter uppdaterade.` + (skipped ? ` ${skipped} hoppades över: ${names}` : ""),
     costNote: (date: string) => `ny kostnad från ${date}`,
+    bundleHint:
+      "Flerpack: två eller tre stycken i samma orderrad kostar oftast mindre än två eller tre gånger styckpriset, eftersom frakten delas. " +
+      "Skriv kostnaderna med | emellan i kostnadskolumnen (1|2|3 st), eller klicka på en produkt nedan och lägg in dem under Kostnad per antal.",
   },
 
   costDetail: {
@@ -564,6 +586,20 @@ const sv: Texts = {
     savedPartial: (list: string) => `Posten sparades, men kostnaden kunde inte skrivas till Shopify för: ${list}`,
     saved: (n: number, total: string, date: string) => `Sparat. ${n} variant(er) kostar nu ${total} från och med ${date}.`,
     costNote: (goods: string, shipping: string) => `vara ${goods} + frakt ${shipping}`,
+    tiersTitle: "Kostnad per antal (flerpack)",
+    tiersBody:
+      "Vad leverantören tar totalt när 2 eller 3 stycken skickas i samma order. Ett styck är kostnaden i Shopify ovan. " +
+      "Orderrader med ett antal som saknar post räknas från närmaste lägre antal plus marginalkostnaden.",
+    tierUnits: "Antal",
+    tierTotal: "Total kostnad",
+    tierAdd: "Lägg till kostnad",
+    tierSaved: (n: number, units: number, total: string) => `Sparat. ${n} variant(er): ${units} st kostar ${total} totalt.`,
+    tierInvalid: "Ange ett antal på minst 2 och en total kostnad.",
+    tierDeleted: "Antalskostnaden togs bort.",
+    thUnits: "Antal",
+    thPerUnit: "Per styck",
+    tiersEmpty: "Inga antalskostnader än. Varje enhet räknas på styckpriset i Shopify.",
+    oneUnit: "1 (Shopify)",
   },
 
   fixed: {
