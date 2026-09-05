@@ -64,7 +64,7 @@
         "drafts": 9,
         "drafts_video": 3,
         "drafts_bild": 6,
-        "not": "9 nya drafts idag (0→9): brief-runda #4 (3 video + 1 bild + 3 BOF + 2 review) via /cs. Hubben ligger privat (tomt ancestor-path) — flagga till Axel."
+        "not": "9 nya drafts idag (0→9): brief-runda #4 (3 video + 1 bild + 3 BOF + 2 review) via /cs."
       },
       {
         "namn": "Kranskydd Frost 420D creative hub",
@@ -73,7 +73,7 @@
         "drafts": 9,
         "drafts_video": 3,
         "drafts_bild": 6,
-        "not": "9 nya drafts idag (0→9): brief-runda via /cs (3 video + 1 bild + 3 BOF + 2 review). Hubben ligger privat (tomt ancestor-path)."
+        "not": "9 nya drafts idag (0→9): brief-runda via /cs (3 video + 1 bild + 3 BOF + 2 review)."
       },
       {
         "namn": "Surveillance Camera creative hub",
@@ -106,7 +106,7 @@
         "drafts": 11,
         "drafts_video": 5,
         "drafts_bild": 6,
-        "not": "11 drafts (upp från 6): brief-runda #2 via /cs (3 video + 1 bild + 3 BOF + 2 review). CS_2_1 flyttad till bevisad Winning DNA. Hubben ligger privat."
+        "not": "11 drafts (upp från 6): brief-runda #2 via /cs (3 video + 1 bild + 3 BOF + 2 review). CS_2_1 flyttad till bevisad Winning DNA."
       },
       {
         "namn": "Boat motor cover creative hub",
@@ -115,7 +115,7 @@
         "drafts": 11,
         "drafts_video": 4,
         "drafts_bild": 7,
-        "not": "11 drafts (upp från 9): brief-runda #2 via /cs (4 video + 2 bild + 3 BOF + 2 review). 0 av 9 videokoncept från batch #1 producerade ännu — flaskhals i produktion. Hubben ligger privat."
+        "not": "11 drafts (upp från 9): brief-runda #2 via /cs (4 video + 2 bild + 3 BOF + 2 review). 0 av 9 videokoncept från batch #1 producerade ännu — flaskhals i produktion."
       },
       {
         "namn": "Gravstenspenna creative hub",
@@ -142,7 +142,7 @@
         "drafts": 16,
         "drafts_video": 3,
         "drafts_bild": 13,
-        "not": "NY UPPTÄCKT idag — fanns inte i tidigare filer (hittades via notion-search på produktnamnet, inte på 'creative hub' eftersom titeln saknar den frasen). Batch #3 briefad idag (3 video + 1 bild + 3 BOF, 0 review — inga recensioner finns). ⚠️ Hubben ligger PRIVAT på workspace-nivå (tomt ancestor-path vid direktfetch) — flytta till teamspacet Bäverbutiken."
+        "not": "NY UPPTÄCKT idag — fanns inte i tidigare filer (hittades via notion-search på produktnamnet, inte på 'creative hub' eftersom titeln saknar den frasen). Batch #3 briefad idag (3 video + 1 bild + 3 BOF, 0 review — inga recensioner finns)."
       }
     ],
     "arkiverade": [
@@ -152,7 +152,8 @@
       "Men's Plush Slippers creative hub (Plyschtofflorna Herr) — NYTT idag, var levande igår med 0 drafts"
     ],
     "SAKNAS_HUB": [],
-    "andrat_sedan_igar": "Två hubbar ARKIVERADES sedan igår: 'Fish rod holder' (Fiskespöhållaren SE, hade 9 drafts igår) och 'Men's Plush Slippers creative hub' (Plyschtofflorna Herr). En NY hub upptäcktes: 'Damasker vandring' (fanns redan i Notion sedan tidigare batcher, men missades i tidigare svep eftersom titeln inte innehåller 'creative hub' — samma fallgrop som Fish rod holder). Fem brief-rundor kördes idag via /cs (Bälteslipmaskinen, Kranskydd Frost 420D, MC-Kapellet, Båtmotorskyddet 420D, Damasker Vandring) och la till sammanlagt 40 nya drafts. Genomgående mönster i alla fem: Notion-hubbens <ancestor-path> är tom (ligger privat på workspace-nivå) — det gäller nu ALLA nio kända levande SE-hubbar utom möjligen de allra äldsta, inte bara nya. Genomgående mönster nummer två: inget Agent/Task-verktyg med model-parameter var tillgängligt för någon av de fem parallella CS-agenterna, så all copy skrevs av huvudagenten i varje körning i stället för en sonnet/haiku-subagent (modellpolicyn i CLAUDE.md regel 6 kunde inte följas tekniskt denna körning).",
+    "andrat_sedan_igar": "Två hubbar ARKIVERADES sedan igår: 'Fish rod holder' (Fiskespöhållaren SE, hade 9 drafts igår) och 'Men's Plush Slippers creative hub' (Plyschtofflorna Herr). En NY hub upptäcktes: 'Damasker vandring' (fanns redan i Notion sedan tidigare batcher, men missades i tidigare svep eftersom titeln inte innehåller 'creative hub' — samma fallgrop som Fish rod holder). Fem brief-rundor kördes idag via /cs (Bälteslipmaskinen, Kranskydd Frost 420D, MC-Kapellet, Båtmotorskyddet 420D, Damasker Vandring) och la till sammanlagt 40 nya drafts. Genomgående mönster: inget Agent/Task-verktyg med model-parameter var tillgängligt för någon av de fem parallella CS-agenterna, så all copy skrevs av huvudagenten i varje körning i stället för en sonnet/haiku-subagent (modellpolicyn i CLAUDE.md regel 6 kunde inte följas tekniskt denna körning).",
+    "FALSKT_LARM_2026_09_05": "Dagens körning trodde felaktigt att alla fem berörda hubbar (Belt grinder, Kranskydd Frost 420D, Motorcycle Cover, Boat motor cover, Damasker vandring) låg privata, baserat på ett tomt <ancestor-path> vid notion-fetch. Axel bekräftade att han redan ser dem i Notion. Verifierat i efterhand: 'Smiley face trash can stickers creative hub' — en hubb redigerarna GARANTERAT redan jobbar i (har rader i 'Translation in review') — visar EXAKT samma tomma <ancestor-path>. Slutsats: notion-fetch fyller inte i ancestor-path för databaser i det här workspacet överhuvudtaget via den här integrationen — fältet säger INGET om delning/teamspace-placering. Använd det ALDRIG som bevis för att en hubb är privat. Ett Discord-larm om detta gick ut 2026-09-05 och var felaktigt.",
     "sok_tips": "Sok ALDRIG bara pa 'creative hub'. Hubben for fiskespohallaren heter bara 'Fish rod holder', och Damasker Vandrings hub heter bara 'Damasker vandring' — bada missas av en sokning pa bara frasen 'creative hub'. Andra icke-Bäver-hubbar finns i samma sökning ('Matstrumpor creative hub', 'Creative hub prank apron', 'Creative hub golf grill kit', 'Creative hub MALL', 'Creative Hub master') — de hör inte till Bäverbutiken/produktkartan och ska aldrig räknas in. Sök ALLTID också brett med notion-search per produktnamn — en hub kan finnas trots att en tidigare körning inte hittade den. Kontrollera is_archived med notion-fetch direkt på collection-URL:en, inte bara närvaro i sökresultat — notion-search visar bara live (icke-arkiverade) sidor som default, så en hub som försvinner från sökresultat jämfört med igår är arkiverad, inte borttagen."
   },
 
