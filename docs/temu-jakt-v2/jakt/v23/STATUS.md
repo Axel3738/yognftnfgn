@@ -41,3 +41,17 @@ Blocket brukar lyfta efter 60–80 min. `verifiera.py` skriver aldrig om en häm
 7. 601103248788835 hängrännesats · 8. 601105758637623 bilspöhållare sugkopp (bara om bättre listning hittas)
 - **Kopplingskamera trådlös** (601099523116633-familjen 90–107 USD): Amazon.se MHCABSR **1 049,99 kr**; Prylstaden 895; Camping4u 1 995. Temu-priserna ger landad 937–1 314 = över taket. → WATCH tills en listning ≤ 28 USD finns.
 - **Evergreen-jakten:** 0 av 18 klarar alla gater — Biltema/Jula/Clas + Fyndiq/Amazon äger bil/släp/garage/hund-tillbehören. Publik läst: 1 341 430 släpvagnar i trafik, 4 977 791 personbilar (Trafikanalys 2024/25).
+
+## Fönster 2 (09:49–10:0x UTC) — live-verifierat
+| goods-id | Produkt | Pris | ★ (rec) | Bilder/video | Dom |
+|---|---|---|---|---|---|
+| 601103333430208 | Vinterhuv hönsgård | 21,60 USD | 4,6 (127) | 2 / video | WATCH — hero stark (gård i regn), videon visar klar PE-presenning; 8 storlekar i tum; publik 35–70k |
+| 601101587576926 | Sopkärlslocklås rem | 15,63 USD | — (0) | 1 / nej | REJECT — 0 rec, hero med tvättbjörn, ankare Smartaskydd 459 ≈ vårt pris |
+| 601099667428425 | Tornsits jakttorn | 53,13 USD | 4,7 (6) | 2 / video | REJECT — landad 555–650 |
+| 601100211255328 | Fiskeadventskalender 2025 | 24,78 USD | 4,0 (1) | 1 / nej | REJECT — 1,7–1,9× vid 499; Fladen 329 |
+| 601103248788835 | Hängrännesats lövblås | 134,68 USD | — | 1 / nej | REJECT — pris |
+| 601105758637623 | Bilspöhållare sugkopp 4 spön | 7,56 USD | 4,5 (67) | 1 / nej | REJECT — Fyndiq 251 kr identisk i lager |
+| 605583893712528 | Solcellslampa flaggstångstopp | 13,26 USD | 4,9 (167) | 2 / video | WATCH — video visar riktig montering; Amazon.se Brubaker 345 golv, Flaggmax 849 slutsåld |
+
+Fönster 1 (08:44–08:50): eldblåsare 2,46 USD ★5,0 (2), spinnarbyggsats 17,92 USD ★4,9 (39) video, täljkit 32,55 USD ★4,6 (5) — se PORTFOLJ.md.
+**Slutläge: 8 kvalificerar (1 TEST, 2 VERIFY, 5 WATCH). 23 live-hämtningar totalt. Inga fler jakter.**
