@@ -1,0 +1,53 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   170
+  ],
+  "fet": true,
+  "storlek": 72,
+  "rader": 1,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "Samme tank."
+ },
+ {
+  "box": [
+   33,
+   180,
+   1047,
+   300
+  ],
+  "fet": true,
+  "storlek": 72,
+  "rader": 1,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "Ulik sommer."
+ },
+ {
+  "box": [
+   33,
+   1200,
+   1047,
+   1275
+  ],
+  "fet": false,
+  "storlek": 37,
+  "rader": 1,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "Uten beskyttelse — med IBC-tanktrekket"
+ }
+]

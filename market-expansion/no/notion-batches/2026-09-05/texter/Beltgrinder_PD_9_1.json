@@ -1,0 +1,36 @@
+[
+ {
+  "form": 0,
+  "text": "Skades den i frakten, erstattes den.",
+  "rader": [
+   0,
+   1
+  ],
+  "se_rader": [
+   "Skadas den under",
+   "frakten ersätts den."
+  ],
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Vi garanterer trygg frakt hele veien hjem.",
+  "rad": 2,
+  "se": "Vi garanterar säker frakt hela vägen hem.",
+  "vanster": false
+ },
+ {
+  "form": 2,
+  "text": "Skadet eller tapt frakt → du får erstatning",
+  "rad": 0,
+  "se": "Skadad eller borttappad frakt → du får ersättning",
+  "vanster": false
+ },
+ {
+  "form": 3,
+  "text": "Bestill trygt i dag",
+  "rad": 0,
+  "se": "Beställ tryggt idag",
+  "vanster": false
+ }
+]

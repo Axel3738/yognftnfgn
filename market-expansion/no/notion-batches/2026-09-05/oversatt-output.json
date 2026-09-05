@@ -1,0 +1,175 @@
+{
+  "IBC_CO_1_1": {
+    "former": [
+      {
+        "texter": [
+          { "rader": [0], "text": "Samme tank." },
+          { "rader": [1], "text": "Ulik sommer." }
+        ]
+      },
+      {
+        "texter": [
+          { "rader": [0], "text": "Uten beskyttelse — med IBC-tanktrekket" }
+        ]
+      }
+    ],
+    "copy": {
+      "message": "Uten beskyttelse blir tankvannet grønt av alger. 210D oxfordstoffet blokkerer sollyset helt og stopper algeveksten. Samme tank, ulikt resultat – forskjellen er trekket.",
+      "headline": "210D oxfordstoff stopper UV og alger",
+      "description": "IBC-tanktrekk, 1000 L"
+    },
+    "andringar": [],
+    "hoppa": null,
+    "trefragor": [
+      {
+        "rad": "Samme tank.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": false,
+        "kommentar": "Konkret bildpar, verifierbart att det är samma tank – men 'samma tank, olika resultat' är en generisk before/after-ram vilken konkurrent som helst kan använda."
+      },
+      {
+        "rad": "210D oxfordstoff stopper UV og alger",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "Specifik materialspec (210D oxfordstoff) knuten till produktens verkliga fakta – ingen generisk konkurrent kan sätta sin logga under den utan att äga samma spec."
+      }
+    ]
+  },
+  "IBC_PD_3_1": {
+    "former": [
+      {
+        "texter": [
+          { "rader": [0], "text": "210D oxfordstoff." },
+          { "rader": [1, 2], "text": "UV og alger holdes ute." }
+        ]
+      },
+      {
+        "texter": [
+          { "rader": [0], "text": "Glidelås på 2 minutter · Åpning på toppen" }
+        ]
+      }
+    ],
+    "copy": {
+      "message": "210D oxfordstoffet blokkerer UV-lys og holder algene borte. Glidelåsen kan festes på under to minutter. Åpningen på toppen gir tilgang til lokket uten å ta av hele trekket.",
+      "headline": "Fest glidelåsen på 2 minutter",
+      "description": "210D oxfordstoff, glidelås"
+    },
+    "andringar": [
+      "Beskrivning förkortad från 'öppning upptill' till bara material + glidelås, för att rymmas inom Metas 30-tecken – ingen sifferändring, bara Kaplans lag på plats"
+    ],
+    "hoppa": null,
+    "trefragor": [
+      {
+        "rad": "210D oxfordstoff.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "Exakt materialspec, verifierbar och produktspecifik."
+      },
+      {
+        "rad": "Fest glidelåsen på 2 minutter",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": false,
+        "kommentar": "Tidsclaimet är konkret och testbart, men 'installera på 2 minuter' är ett format vilken konkurrent som helst kan hävda om sin egen produkt."
+      }
+    ]
+  },
+  "Beltgrinder_REV_1_1": {
+    "former": [
+      {
+        "texter": [
+          { "rader": [0], "text": "Verifisert omtale" },
+          { "rader": [1], "text": "Veldig hendig" },
+          { "rader": [2, 3], "text": "”Liten og hendig. Gjør jobben raskt.”" }
+        ]
+      },
+      {
+        "texter": [
+          { "rader": [0], "text": "— verifisert omtale" },
+          { "rader": [1], "text": "1 029 kr (ord. 1 715 kr)" }
+        ]
+      },
+      {
+        "texter": [
+          { "rader": [0], "text": "Bestill din egen — 1 029 kr" }
+        ]
+      }
+    ],
+    "copy": {
+      "message": "En kunde skrev: \"Liten og hendig. Gjør jobben raskt.\" Beltesliper Mini 3-i-1 sliper og polerer kniver hjemme. Nå 1 029 kr (ord. 1 715 kr).",
+      "headline": "\"Gjør jobben raskt\" – kundeomtale",
+      "description": "1 029 kr (ord. 1 715 kr)"
+    },
+    "andringar": [
+      "909 kr → 1 029 kr (NO-pris ur fakta)",
+      "1182 kr / 1 182 kr → 1 715 kr (NO-jämförpris ur fakta)",
+      "recension → omtale (samma term som Beltgrinder_REV_2_1 2026-09-03)",
+      "smidig → hendig (naturlig norsk, undviker svecism)"
+    ],
+    "hoppa": null,
+    "trefragor": [
+      {
+        "rad": "Verifisert omtale",
+        "visualisera": false,
+        "falsifiera": true,
+        "ingen_annan": false,
+        "kommentar": "Etikett, inte en bild – går att kolla om den är sann men vilken butik som helst kan sätta samma badge på sin recension."
+      },
+      {
+        "rad": "\"Gjør jobben raskt\" – kundeomtale",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "Ordagrant citat från en verklig kund – ingen konkurrent kan sätta sin logga under någon annans kunds ord."
+      }
+    ]
+  },
+  "Beltgrinder_PD_9_1": {
+    "former": [
+      {
+        "texter": [
+          { "rader": [0, 1], "text": "Skades den i frakten, erstattes den." },
+          { "rader": [2], "text": "Vi garanterer trygg frakt hele veien hjem." }
+        ]
+      },
+      {
+        "texter": [
+          { "rader": [0], "text": "Skadet eller tapt frakt → du får erstatning" }
+        ]
+      },
+      {
+        "texter": [
+          { "rader": [0], "text": "Bestill trygt i dag" }
+        ]
+      }
+    ],
+    "copy": {
+      "message": "Blir pakken skadet eller borte under transporten, erstatter vi varen. Beltesliper Mini 3-i-1 sendes hjem til deg. Kommer den ikke frem, sender vi en ny.",
+      "headline": "Skades i frakten? Vi erstatter den.",
+      "description": "Erstatning ved skade i frakt"
+    },
+    "andringar": [
+      "Beskrivning förkortad – tappade produktnamnet för att rymmas inom Metas 30-tecken, garantin (kärnclaimet) behölls"
+    ],
+    "hoppa": null,
+    "trefragor": [
+      {
+        "rad": "Skades den i frakten, erstattes den.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": false,
+        "kommentar": "Konkret transportskada-scenario och en verifierbar policy – men skadegaranti är ett generiskt löfte flera butiker ger."
+      },
+      {
+        "rad": "Skades i frakten? Vi erstatter den.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": false,
+        "kommentar": "Samma resonemang som bildtexten – konkret och sant, men inte unikt för just denna butik."
+      }
+    ]
+  }
+}

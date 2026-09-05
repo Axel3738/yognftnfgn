@@ -1,0 +1,22 @@
+{
+ "IBC-tanktrekk_NO_CO_1_1": {
+  "message": "Uten beskyttelse blir tankvannet grønt av alger. 210D oxfordstoffet blokkerer sollyset helt og stopper algeveksten. Samme tank, ulikt resultat – forskjellen er trekket.",
+  "headline": "210D oxfordstoff stopper UV og alger",
+  "description": "IBC-tanktrekk, 1000 L"
+ },
+ "IBC-tanktrekk_NO_PD_3_1": {
+  "message": "210D oxfordstoffet blokkerer UV-lys og holder algene borte. Glidelåsen kan festes på under to minutter. Åpningen på toppen gir tilgang til lokket uten å ta av hele trekket.",
+  "headline": "Fest glidelåsen på 2 minutter",
+  "description": "210D oxfordstoff, glidelås"
+ },
+ "Beltesliper_NO_REV_1_1": {
+  "message": "En kunde skrev: \"Liten og hendig. Gjør jobben raskt.\" Beltesliper Mini 3-i-1 sliper og polerer kniver hjemme. Nå 1 029 kr (ord. 1 715 kr).",
+  "headline": "\"Gjør jobben raskt\" – kundeomtale",
+  "description": "1 029 kr (ord. 1 715 kr)"
+ },
+ "Beltesliper_NO_PD_9_1": {
+  "message": "Blir pakken skadet eller borte under transporten, erstatter vi varen. Beltesliper Mini 3-i-1 sendes hjem til deg. Kommer den ikke frem, sender vi en ny.",
+  "headline": "Skades i frakten? Vi erstatter den.",
+  "description": "Erstatning ved skade i frakt"
+ }
+}

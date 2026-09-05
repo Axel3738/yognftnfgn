@@ -1,0 +1,44 @@
+{
+ "IBC_CO_1_1": {
+  "malnamn": "IBC-tanktrekk_NO_CO_1_1",
+  "karta": [
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-05/no/IBC-tanktrekk_NO_CO_1_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-05/no/IBC-tanktrekk_NO_CO_1_1.jpg.qa.png"
+ },
+ "IBC_PD_3_1": {
+  "malnamn": "IBC-tanktrekk_NO_PD_3_1",
+  "karta": [
+   0,
+   1
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-05/no/IBC-tanktrekk_NO_PD_3_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-05/no/IBC-tanktrekk_NO_PD_3_1.jpg.qa.png"
+ },
+ "Beltgrinder_REV_1_1": {
+  "malnamn": "Beltesliper_NO_REV_1_1",
+  "karta": [
+   0,
+   2,
+   3
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-05/no/Beltesliper_NO_REV_1_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-05/no/Beltesliper_NO_REV_1_1.jpg.qa.png"
+ },
+ "Beltgrinder_PD_9_1": {
+  "malnamn": "Beltesliper_NO_PD_9_1",
+  "karta": [
+   0,
+   2,
+   3
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-05/no/Beltesliper_NO_PD_9_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-05/no/Beltesliper_NO_PD_9_1.jpg.qa.png"
+ }
+}
