@@ -367,8 +367,13 @@ Axel visade Juicys "Enheter / Total kostnad"-tabell (1 st 88,34 · 2 st 134,22
   filnamn (identiska mellan klonerna, 160–170 av ~170 träffar).
   `Magnetplattor 46/60 delar` är två varianter med varsitt styckpris, inte
   ett flerpack. Lövblås och husdjurskudde finns inte i butiken.
-- Äldre dagsrader saknar `lines` och räknas per styck tills de hämtas om;
-  panelens bakgrundsuppdatering (>6 h gamla rader) fyller på efter hand.
+- Äldre dagsrader saknar `lines` och räknas per styck tills de hämtas om.
+  Senaste 30 dagarna hämtades om för alla butiker 2026-09-05 (tillfällig
+  rutt `debug-flerpack.tsx`, borttagen i v63; utfall i `scratch/flp-*.json`):
+  flerpacken sänker redovisad COGS med ~20 000 kr/30 dagar totalt
+  (SE 13 282 kr av 237 060 = 5,6 %; NO 5 667 NOK = 7,7 %; FI/DK/UK små).
+  22 % av orderraderna i SE har 2+ stycken. Största posten: Fiskespöhållare
+  4-pack (7 671 kr i SE, 2 476 NOK i NO).
 
 ### Motorhöljen: kostnad per hk-storlek (2026-09-04)
 Leverantörsofferten `Axel_quote.xlsx` ger motorhöljet per hk-storlek och land
