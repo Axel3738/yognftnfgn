@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "bundle-v61", db });
+  return json({ ok: true, build: "bundle-v62", db });
 }
