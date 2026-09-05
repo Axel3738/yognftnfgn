@@ -1,6 +1,6 @@
 # Q4-portfölj — löpande läge (2026-09-05)
 
-Temu-hämtbudget: ~11 anrop på 20 min gick igenom från ny container-IP, sedan block (~10:5x UTC).
+Temu-hämtbudget: ~11 anrop på 20 min gick igenom från ny container-IP, sedan block (~07:30 UTC).
 Blocket brukar lyfta efter 60–80 min. `verifiera.py` skriver aldrig om en hämtad rå-fil.
 
 ## Live-verifierat i dag (temu-ld.py, JSON-LD, hero + video sedda)
