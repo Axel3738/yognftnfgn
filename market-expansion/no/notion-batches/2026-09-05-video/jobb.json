@@ -1,0 +1,137 @@
+{
+  "marknad": "NO",
+  "datum": "2026-09-05-video",
+  "skapad": "2026-09-05T10:30:57.403Z",
+  "kvot": {
+    "heygen": 621,
+    "kie": 16389.2
+  },
+  "jobb": [
+    {
+      "notion": {
+        "id": "3cc270ab908c81fe9d37e43257c5e679",
+        "namn": "Beltgrinder_PD_4_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Belt grinder creative hub",
+        "url": "https://app.notion.com/3cc270ab908c81fe9d37e43257c5e679",
+        "kalla": "rader-fil"
+      },
+      "namn": "Beltgrinder_PD_4_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250104966480291",
+        "status": "ACTIVE",
+        "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "kampanjId": "120249902177470291",
+        "adset": "Balteslipmaskin PD",
+        "copy": {
+          "message": "Låter det för bra för att vara sant? Se bandet snurra själv.\n10 sekunder från slö till vass — inget mer.\nSamma slipband till kniv, sax och yxa. 909 kr, spara 273 kr.\nBeställ din här.",
+          "headline": "Se slipbandet i rörelse",
+          "description": "",
+          "link": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "2470553763450443",
+          "url": "https://video-ord5-2.xx.fbcdn.net/o1/v/t2/f2/m366/AQOOxpm-z2DajGJK-RBKG8v975Ac_DD-WAlYOkwQYfy7NMhvdpc6ikURpqioqi8n0-GD88fO-adI6gi3f55V6e-d8kL8vM6Tqr8sDZB8OrNXcg.mp4?_nc_cat=107&_nc_sid=5e9851&_nc_ht=video-ord5-2.xx.fbcdn.net&_nc_ohc=N17aGesiLSwQ7kNvwGud6kI&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjQwODQ4NzQ3MzE2NDk3MjAsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTAsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=f242cca1205c941a&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9EQTQxQkVERDMwOUVDRkFCQzlCODU2MDc3NkI3Nzc5Q19tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0NDNERFQTkzMkJBODI5RkEzREVCNERBMzY1QUIzOEFDX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbw6qe1gMvBDhUCKAJDMywXQCUzMzMzMzMYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=ecywSLIA3LctNAKUGlNJ5A&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQKiBIkJ9HMiQuaHEgCmovYCstAKj5janSuV0HqPjGrRqts2nuIsifhvn1mDJ67U7_2UV-aDXcmZtw&oh=00_AQJaNc1MmMDmmynRFJ51bpNWkt6FtgEwPpqISWH8OVs6Aw&oe=6AA1AB99&bitrate=934848&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 10.602
+        }
+      },
+      "prefix": "Beltgrinder",
+      "K": "PD",
+      "nr": "4",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Beltgrinder",
+        "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "no_prefix": "Beltesliper",
+        "adset_prefix": "Beltesliper NO",
+        "campaign_id": "120251998498540233",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998498540233",
+        "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Beltesliper NO - PD",
+        "annonsNamn": "Beltesliper_NO_PD_4_H1",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
+        "prefix": "Beltesliper"
+      },
+      "pris": {
+        "pris": "1029.00",
+        "jamforpris": "1715.00",
+        "titel": "Beltesliper Mini 3-i-1 – Knivsliper & Polerer",
+        "handle": "beltesliper-mini-3-i-1-knivsliper-polerer"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cc270ab908c8101ada9fe22b93a2550",
+        "namn": "Beltgrinder_PD_5_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Belt grinder creative hub",
+        "url": "https://app.notion.com/3cc270ab908c8101ada9fe22b93a2550",
+        "kalla": "rader-fil"
+      },
+      "namn": "Beltgrinder_PD_5_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250104947630291",
+        "status": "ACTIVE",
+        "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "kampanjId": "120249902177470291",
+        "adset": "Balteslipmaskin PD",
+        "copy": {
+          "message": "Tre verktyg. Tre olika slipmetoder. En maskin.\nSlipsten vässar, slipband formar, polertrissa polerar — allt i Bälteslipmaskin Mini.\n909 kr istället för 1 182 kr. Spara 273 kr.\nBeställ din här.",
+          "headline": "3 verktyg, 1 maskin, 1 pris",
+          "description": "",
+          "link": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "28168704449448559",
+          "url": "https://video-ord5-2.xx.fbcdn.net/o1/v/t2/f2/m366/AQMNQDKDsQC4_lyOM0UB3netEvbG8DHniSSFOn3v0UO3pwvRWsHrmqwKc5lPAWBzsOx0iCBLB1-EzrF4czDxXdQeFeR2u8BNv8IGbd9CcnzLQA.mp4?_nc_cat=105&_nc_sid=5e9851&_nc_ht=video-ord5-2.xx.fbcdn.net&_nc_ohc=nsYLWwNkI5kQ7kNvwGOpJGV&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjk5NTIyMjAzMzUzMTU4NSwiYXNzZXRfYWdlX2RheXMiOjAsInZpX3VzZWNhc2VfaWQiOjEwMTM5LCJkdXJhdGlvbl9zIjo5LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=22897dbcc3b8a658&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC81QzQ2RkNCQ0RGNkZFRkZGMTdBRjk3RjZDOThGOTY4Nl9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzIwNDY5RjJFN0IxMzVGNkM2NjMyMjkwNDgzNjlEODg1X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACaCi8D8xcnEAxUCKAJDMywXQCOZmZmZmZoYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=5ko3ZRLEi5KlXsgUjEzR9g&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQLmGScbED2ypzdK_llyz5JOiHczyQXhMkGFmv-l-erSF4nqygn1M2mKJaSQ0psBbHz5px5_o806Jw&oh=00_AQIFRhvrpOT4fGpFxoYMJIU53DBJOvHwqrmn-OT5YF3roA&oe=6AA1D5FB&bitrate=1132363&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 9.813
+        }
+      },
+      "prefix": "Beltgrinder",
+      "K": "PD",
+      "nr": "5",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Beltgrinder",
+        "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "no_prefix": "Beltesliper",
+        "adset_prefix": "Beltesliper NO",
+        "campaign_id": "120251998498540233",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998498540233",
+        "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Beltesliper NO - PD",
+        "annonsNamn": "Beltesliper_NO_PD_5_H1",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
+        "prefix": "Beltesliper"
+      },
+      "pris": {
+        "pris": "1029.00",
+        "jamforpris": "1715.00",
+        "titel": "Beltesliper Mini 3-i-1 – Knivsliper & Polerer",
+        "handle": "beltesliper-mini-3-i-1-knivsliper-polerer"
+      }
+    }
+  ]
+}

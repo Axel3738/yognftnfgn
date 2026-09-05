@@ -1,0 +1,18 @@
+{
+ "beltesliper_PD_4_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/082a853fb3a5498e88b95df45beb7a25/original.mp4",
+  "proofreadId": "71f5038c3f65487ba33ba27165d46b58-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "29b262d935764c3580425b296429b778-nb",
+  "downloaded": true
+ },
+ "beltesliper_PD_5_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/37018f4f1a7e4ddfb69c0233945e50da/original.mp4",
+  "proofreadId": "95ecb8fcbad54b77bba049913d482be3-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "767cbf8348364b36a21882f907f64647-nb",
+  "downloaded": true
+ }
+}
