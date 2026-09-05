@@ -62,7 +62,12 @@
         "adsetNamn": "IBC-tanktrekk NO - CO",
         "annonsNamn": "IBC-tanktrekk_NO_CO_1_1",
         "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-        "prefix": "IBC-tanktrekk"
+        "prefix": "IBC-tanktrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252091575170233",
+        "adsetId": "120252091573680233",
+        "adsetSkapat": true,
+        "effective_status": "ACTIVE"
       },
       "pris": {
         "pris": "439.00",
@@ -126,7 +131,12 @@
         "adsetNamn": "IBC-tanktrekk NO - PD",
         "annonsNamn": "IBC-tanktrekk_NO_PD_3_1",
         "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-        "prefix": "IBC-tanktrekk"
+        "prefix": "IBC-tanktrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252091576680233",
+        "adsetId": "120251996667400233",
+        "adsetSkapat": false,
+        "effective_status": "ACTIVE"
       },
       "pris": {
         "pris": "439.00",
@@ -190,7 +200,12 @@
         "adsetNamn": "Beltesliper NO - REV",
         "annonsNamn": "Beltesliper_NO_REV_1_1",
         "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
-        "prefix": "Beltesliper"
+        "prefix": "Beltesliper",
+        "status": "ACTIVE",
+        "annonsId": "120252091580000233",
+        "adsetId": "120252066395990233",
+        "adsetSkapat": true,
+        "effective_status": "ACTIVE"
       },
       "pris": {
         "pris": "1029.00",
@@ -254,7 +269,12 @@
         "adsetNamn": "Beltesliper NO - PD",
         "annonsNamn": "Beltesliper_NO_PD_9_1",
         "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
-        "prefix": "Beltesliper"
+        "prefix": "Beltesliper",
+        "status": "ACTIVE",
+        "annonsId": "120252091681070233",
+        "adsetId": "120251998517140233",
+        "adsetSkapat": false,
+        "effective_status": "ACTIVE"
       },
       "pris": {
         "pris": "1029.00",
