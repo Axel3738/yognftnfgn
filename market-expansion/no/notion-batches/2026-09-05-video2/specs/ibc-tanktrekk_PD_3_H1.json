@@ -1,0 +1,173 @@
+{
+ "caption": {
+  "band": [
+   906,
+   968
+  ],
+  "x": [
+   209,
+   510
+  ],
+  "storlek": 30,
+  "max_tecken": 30
+ },
+ "boxar": [
+  {
+   "box": [
+    95,
+    308,
+    625,
+    512
+   ],
+   "fran": 0.15,
+   "till": 2.85,
+   "fyll": null,
+   "granne": "under",
+   "rader": [
+    "210D",
+    "Oxfordstoff"
+   ],
+   "stil": {
+    "storlek": 92,
+    "fet": true,
+    "farg": [
+     242,
+     106,
+     27
+    ],
+    "kant": [
+     255,
+     255,
+     255
+    ],
+    "kantpx": 4,
+    "radavstand": 1.0
+   }
+  },
+  {
+   "box": [
+    150,
+    801,
+    570,
+    828
+   ],
+   "fran": 21.75,
+   "till": 24.6,
+   "fyll": [
+    255,
+    255,
+    255
+   ],
+   "text": "IBC-TANKTREKK 1000 L - STOPPER ALGER & UV",
+   "stil": {
+    "storlek": 13,
+    "fet": true,
+    "farg": [
+     20,
+     20,
+     20
+    ]
+   }
+  },
+  {
+   "box": [
+    150,
+    834,
+    570,
+    876
+   ],
+   "fran": 21.75,
+   "till": 24.6,
+   "fyll": [
+    255,
+    255,
+    255
+   ],
+   "text": "★★★★★  10 anmeldelser",
+   "stil": {
+    "storlek": 10,
+    "fet": false,
+    "farg": [
+     60,
+     60,
+     60
+    ],
+    "dy": -9
+   }
+  },
+  {
+   "box": [
+    150,
+    834,
+    570,
+    876
+   ],
+   "fran": 21.75,
+   "till": 24.6,
+   "ingen_sudd": true,
+   "text": "586 kr",
+   "stil": {
+    "storlek": 11,
+    "fet": false,
+    "farg": [
+     120,
+     120,
+     120
+    ],
+    "stryk": true,
+    "justering": "hoger",
+    "indrag": 212,
+    "dy": 8
+   }
+  },
+  {
+   "box": [
+    150,
+    834,
+    570,
+    876
+   ],
+   "fran": 21.75,
+   "till": 24.6,
+   "ingen_sudd": true,
+   "text": "439 kr",
+   "stil": {
+    "storlek": 11,
+    "fet": true,
+    "farg": [
+     20,
+     20,
+     20
+    ],
+    "justering": "vanster",
+    "indrag": 212,
+    "dy": 8
+   }
+  },
+  {
+   "box": [
+    172,
+    914,
+    546,
+    1032
+   ],
+   "fran": 21.75,
+   "till": 24.6,
+   "fyll": [
+    153,
+    27,
+    27
+   ],
+   "text": "Kjøp nå",
+   "stil": {
+    "storlek": 46,
+    "fet": true,
+    "farg": [
+     255,
+     255,
+     255
+    ]
+   }
+  }
+ ]
+}

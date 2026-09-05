@@ -1,0 +1,156 @@
+{
+ "caption": {
+  "band": [
+   731,
+   806
+  ],
+  "x": [
+   154,
+   633
+  ],
+  "storlek": 30,
+  "max_tecken": 30
+ },
+ "boxar": [
+  {
+   "box": [
+    110,
+    548,
+    610,
+    660
+   ],
+   "fran": 0.0,
+   "till": 2.7,
+   "fyll": null,
+   "granne": "over",
+   "text": "3 naboer",
+   "stil": {
+    "storlek": 46,
+    "fet": true,
+    "farg": [
+     255,
+     255,
+     255
+    ],
+    "kant": [
+     30,
+     30,
+     30
+    ],
+    "kantpx": 3
+   }
+  },
+  {
+   "box": [
+    110,
+    548,
+    610,
+    660
+   ],
+   "fran": 5.95,
+   "till": 9.02,
+   "fyll": null,
+   "granne": "over",
+   "text": "Direkte varsel",
+   "stil": {
+    "storlek": 46,
+    "fet": true,
+    "farg": [
+     255,
+     255,
+     255
+    ],
+    "kant": [
+     30,
+     30,
+     30
+    ],
+    "kantpx": 3
+   }
+  },
+  {
+   "box": [
+    110,
+    548,
+    610,
+    660
+   ],
+   "fran": 9.02,
+   "till": 11.8,
+   "fyll": null,
+   "granne": "over",
+   "text": "AI-sporing",
+   "stil": {
+    "storlek": 46,
+    "fet": true,
+    "farg": [
+     255,
+     255,
+     255
+    ],
+    "kant": [
+     30,
+     30,
+     30
+    ],
+    "kantpx": 3
+   }
+  },
+  {
+   "box": [
+    110,
+    548,
+    610,
+    660
+   ],
+   "fran": 11.8,
+   "till": 13.8,
+   "fyll": null,
+   "granne": "over",
+   "text": "30 dagers åpent kjøp",
+   "stil": {
+    "storlek": 46,
+    "fet": true,
+    "farg": [
+     255,
+     255,
+     255
+    ],
+    "kant": [
+     30,
+     30,
+     30
+    ],
+    "kantpx": 3
+   }
+  },
+  {
+   "box": [
+    110,
+    548,
+    610,
+    660
+   ],
+   "fran": 13.8,
+   "till": 16.0,
+   "fyll": null,
+   "granne": "over",
+   "text": "Kjøp nå",
+   "stil": {
+    "storlek": 46,
+    "fet": true,
+    "farg": [
+     255,
+     255,
+     255
+    ],
+    "kant": [
+     30,
+     30,
+     30
+    ],
+    "kantpx": 3
+   }
+  }
+ ]
+}
