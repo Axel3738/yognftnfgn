@@ -121,6 +121,18 @@ python3 pipeline/no-captions.py <render.mp4> <fixed.srt> <out.mp4>   # bara om k
 ```
 Tom `.orig.srt` = inget tal ⇒ ingen render. Läs QA-bilderna, slutkortssvep.
 
+⚠️ **Captions får aldrig täcka bilden (Axel 2026-09-05: "du har täckt hela skärmen").**
+`no-captions.py` suddar ett band över hela bredden HELA videon och höjer det till
+två rader — på en 720×1280-video med både rubrik och ordcaptions blev det två
+breda dimband och produkten syntes knappt. Regeln: sudda **bara rutan där den
+svenska texten faktiskt sitter, bara medan den syns** (ffmpeg `crop` → `boxblur`
+→ `overlay … enable='between(t,a,b)'` per ruta och tid, mätt ur bilden), och lägg
+den norska texten med en ASS-fil (`\pos`, BorderStyle 3 för vit ruta/svart text,
+vit fet med svart kant för rubriker). Facit: `Beltesliper_NO_PD_4_H1` v2 (rutor
+600×135 @ 100,468 under tre rubrikcues; 380×90 @ 170,830 under ordcaptions
+0,2–1,65 s). `no-captions.py` duger bara när källan har EN smal textremsa och
+inget viktigt under den (Beltesliper_NO_PD_5_H1 godkänd av Axel samma dag).
+
 ## Fas 5 — Launch i Magiborsten NO
 
 ```bash
