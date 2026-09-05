@@ -1,0 +1,62 @@
+[
+ {
+  "box": [
+   33,
+   47,
+   1047,
+   217
+  ],
+  "fet": true,
+  "storlek": 88,
+  "rader": 1,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "899 kr"
+ },
+ {
+  "box": [
+   33,
+   219,
+   1047,
+   315
+  ],
+  "fet": false,
+  "storlek": 50,
+  "rader": 1,
+  "farg": [
+   72,
+   67,
+   61
+  ],
+  "stryk": "1 169 kr",
+  "text": "i stedet for 1 169 kr – spar 270 kr"
+ },
+ {
+  "box": [
+   33,
+   1086,
+   1047,
+   1132
+  ],
+  "fet": true,
+  "storlek": 30,
+  "rader": 1,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Klarna – betal senere · Gratis frakt"
+ },
+ {
+  "form": 4,
+  "text": "Handle nå",
+  "rad": 0,
+  "se": "Handla nu",
+  "vanster": false
+ }
+]

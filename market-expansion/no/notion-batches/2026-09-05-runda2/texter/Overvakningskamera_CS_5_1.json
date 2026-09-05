@@ -1,0 +1,37 @@
+[
+ {
+  "form": 0,
+  "text": "899 kr i stedet for 1 169 kr",
+  "rad": 0,
+  "se": "799 kr istället för 1 000 kr",
+  "stryk": "1 169 kr",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Ser forskjell på menneske og kjæledyr — varsler bare når det gjelder.",
+  "rader": [
+   1,
+   2
+  ],
+  "se_rader": [
+   "Ser skillnad på människa och husdjur — larmar bara",
+   "när det gäller."
+  ],
+  "vanster": false
+ },
+ {
+  "form": 4,
+  "text": "Klarna – betal senere · Gratis frakt · 30 dagers fornøyd-kunde-garanti",
+  "rad": 0,
+  "se": "Klarna – betala sen · Fri frakt · 30 dagars nöjd-kund-garanti",
+  "vanster": false
+ },
+ {
+  "form": 5,
+  "text": "Handle nå",
+  "rad": 0,
+  "se": "Handla nu",
+  "vanster": false
+ }
+]

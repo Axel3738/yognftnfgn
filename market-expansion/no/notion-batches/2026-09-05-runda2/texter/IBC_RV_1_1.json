@@ -1,0 +1,49 @@
+[
+ {
+  "box": [
+   33,
+   138,
+   1047,
+   352
+  ],
+  "fet": true,
+  "storlek": 56,
+  "rader": 3,
+  "farg": [
+   20,
+   47,
+   73
+  ],
+  "radavstand": 1.3,
+  "text": "”Jeg er fornøyd. Nå slipper jeg mye sollys på tanken og det ser også penere ut.”"
+ },
+ {
+  "box": [
+   33,
+   376,
+   1047,
+   420
+  ],
+  "fet": false,
+  "storlek": 27,
+  "rader": 1,
+  "farg": [
+   21,
+   48,
+   75
+  ],
+  "text": "— Maria, baverbutiken.se"
+ },
+ {
+  "form": 1,
+  "klipp_efter_rad": 0,
+  "rad": null
+ },
+ {
+  "form": 1,
+  "text": "Beskytt tanken din i dag",
+  "rad": 0,
+  "se": "Skydda din tank idag",
+  "vanster": false
+ }
+]

@@ -1,0 +1,42 @@
+[
+ {
+  "form": 0,
+  "text": "Gammelt kamera vs. AI-kamera",
+  "rader": [
+   0,
+   1
+  ],
+  "se_rader": [
+   "Gammal kamera vs.",
+   "AI-kamera"
+  ],
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Se forskjellen selv",
+  "rad": 2,
+  "se": "Se skillnaden själv",
+  "vanster": false
+ },
+ {
+  "form": 4,
+  "text": "To linser, 355° dekning · Ser forskjell på menneske og kjæledyr · 30 dagers garanti",
+  "rader": [
+   0,
+   1
+  ],
+  "se_rader": [
+   "Två linser, 355° täckning · Ser skillnad på människa och husdjur ·",
+   "30 dagars garanti"
+  ],
+  "vanster": false
+ },
+ {
+  "form": 5,
+  "text": "Handle nå – 899 kr",
+  "rad": 0,
+  "se": "Handla nu – 799 kr",
+  "vanster": false
+ }
+]

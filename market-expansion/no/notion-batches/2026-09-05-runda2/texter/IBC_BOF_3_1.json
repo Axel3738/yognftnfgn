@@ -1,0 +1,62 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   160
+  ],
+  "fet": true,
+  "storlek": 72,
+  "rader": 1,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "text": "Passer den tanken min?"
+ },
+ {
+  "box": [
+   33,
+   180,
+   1047,
+   400
+  ],
+  "fet": true,
+  "storlek": 72,
+  "rader": 2,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.65,
+  "text": "120 × 100 × 116 cm — standard 1000-literstank."
+ },
+ {
+  "box": [
+   33,
+   435,
+   1047,
+   575
+  ],
+  "fet": false,
+  "storlek": 40,
+  "rader": 2,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.65,
+  "text": "Kraftig 210D Oxford-stoff. Tar UV-strålingen i stedet for plasten."
+ },
+ {
+  "form": 1,
+  "text": "Beskytt tanken din i dag",
+  "rad": 0,
+  "se": "Skydda din tank idag",
+  "vanster": false
+ }
+]

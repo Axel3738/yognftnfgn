@@ -1,0 +1,31 @@
+[
+ {
+  "form": 0,
+  "text": "”Kjøpte dette til regnvannstanken min. Fungerer bra og er enkelt å åpne når jeg trenger det.”",
+  "rader": [
+   0,
+   1,
+   2
+  ],
+  "se_rader": [
+   "”Köpte detta för min regnvattentank.",
+   "Fungerar bra och är enkelt att öppna när",
+   "jag behöver.”"
+  ],
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "— Lena, baverbutiken.se",
+  "rad": 3,
+  "se": "— Lena",
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "Beskytt tanken din i dag",
+  "rad": 0,
+  "se": "Skydda din tank idag",
+  "vanster": false
+ }
+]

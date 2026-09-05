@@ -1,0 +1,80 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   168
+  ],
+  "fet": true,
+  "storlek": 72,
+  "rader": 1,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "text": "30 dagers åpent kjøp."
+ },
+ {
+  "box": [
+   33,
+   178,
+   1047,
+   408
+  ],
+  "fet": true,
+  "storlek": 72,
+  "rader": 2,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "radavstand": 1.72,
+  "text": "Liker du det ikke, får du pengene tilbake."
+ },
+ {
+  "box": [
+   33,
+   440,
+   1047,
+   565
+  ],
+  "fet": false,
+  "storlek": 40,
+  "rader": 2,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.65,
+  "text": "Kraftig 210D Oxford-stoff. Tar UV-strålingen i stedet for plasten."
+ },
+ {
+  "box": [
+   33,
+   1086,
+   1047,
+   1132
+  ],
+  "fet": true,
+  "storlek": 30,
+  "rader": 1,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Få først, betal senere — med Klarna"
+ },
+ {
+  "form": 0,
+  "text": "Beskytt tanken din i dag",
+  "rad": 0,
+  "se": "Skydda din tank idag",
+  "vanster": false
+ }
+]

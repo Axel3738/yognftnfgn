@@ -1,0 +1,13 @@
+{
+ "Overvakningskamera_CS_5_1": {
+  "malnamn": "Overvåkingskamera_NO_CS_5_1",
+  "karta": [
+   0,
+   4,
+   5
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-05-runda2/no/Overvåkingskamera_NO_CS_5_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-05-runda2/no/Overvåkingskamera_NO_CS_5_1.jpg.qa.png"
+ }
+}

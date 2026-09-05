@@ -556,10 +556,12 @@ def rita_rad(bild, form, ri, text, stryk=False, vanster=None, se_text=None):
         rita.line([(sx0 - 4, ym), (sx1 + 4, ym)], fill=farg, width=max(2, storlek // 14))
 
 
-def rita_block(bild, form, radinfo, text, vanster=None, se_rader=None):
+def rita_block(bild, form, radinfo, text, vanster=None, se_rader=None, stryk=False):
     """Flera SE-rader som EN text (en rubrik som radbrutits): radbryts om inom
     samma vertikala spann, med första radens stil. Får bli lika många rader som
-    SE, eller en färre; krymper tills det får plats."""
+    SE, eller en färre; krymper tills det får plats. stryk="586 kr" stryker den
+    delsträngen på den rad där den hamnar (jämförpris i en radbruten rubrik,
+    IBC_CS_3_1 2026-09-05)."""
     rita = ImageDraw.Draw(bild)
     x0, x1 = form["x0"], form["x1"]
     w = x1 - x0
@@ -590,8 +592,16 @@ def rita_block(bild, form, radinfo, text, vanster=None, se_rader=None):
         y = ytop + i * lh
         if centrerad:
             rita.text(((x0 + x1) / 2, y), rad, font=font, fill=farg, anchor="ma")
+            xs = (x0 + x1) / 2 - rita.textlength(rad, font=font) / 2
         else:
             rita.text((xv, y), rad, font=font, fill=farg, anchor="la")
+            xs = xv
+        if stryk and isinstance(stryk, str) and stryk in rad:
+            i0 = rad.index(stryk)
+            sx0 = xs + rita.textlength(rad[:i0], font=font)
+            sx1 = sx0 + rita.textlength(stryk, font=font)
+            ym = y + asc * 0.72 / 2
+            rita.line([(sx0 - 4, ym), (sx1 + 4, ym)], fill=farg, width=max(2, storlek // 14))
 
 
 def rita_box(bild, im, b):
@@ -610,7 +620,10 @@ def rita_box(bild, im, b):
     box = arr[y0 + inset:y1 - inset, x0 + inset:x1 - inset]
     if box.size:
         med = np.median(box.reshape(-1, 3), axis=0)
-        ljus_platta = med.mean() > 128
+        # "textljus": true = vit text direkt på ett mellangrått foto (fraktraden under
+        # produkten i BOF-mallen, median ~150, mätt 2026-09-05): då ska de LJUSA
+        # pixlarna suddas fast bakgrunden räknas som ljus platta.
+        ljus_platta = (not b["textljus"]) if "textljus" in b else med.mean() > 128
         # Textmask i 2D: pixlar som avviker ≥ 90 (RGB-summa) från radens plattfärg,
         # utvidgade 2 px åt alla håll — annars blir de antialiasade topp-/bottenkanterna
         # kvar som streckade spöklinjer (Batmotor_BF_3_1, mätt 2026-09-03).
@@ -754,7 +767,7 @@ def main():
         if "klipp_efter_rad" in t:
             klipp[fi] = int(t["klipp_efter_rad"])
         if t.get("rader"):
-            per_block.setdefault(fi, []).append((sorted(int(k) for k in t["rader"]), t.get("text", ""), t.get("vanster"), t.get("se_rader")))
+            per_block.setdefault(fi, []).append((sorted(int(k) for k in t["rader"]), t.get("text", ""), t.get("vanster"), t.get("se_rader"), t.get("stryk") or False))
         elif "rad" in t and t["rad"] is not None:
             per_rad.setdefault(fi, {})[int(t["rad"])] = (t.get("text", ""), t.get("stryk") or False, t.get("vanster"), t.get("se"))
         else:
@@ -776,11 +789,11 @@ def main():
                     sys.exit(f"form {x['form']} har bara {len(x['radinfo'])} rader, rad {k} finns inte")
                 if text.strip():
                     rita_rad(ut_bild, x["_form"], x["radinfo"][k], text.strip(), stryk=stryk, vanster=vanster, se_text=se_text)
-            for ks, text, vanster, se_rader in per_block.get(x["form"], []):
+            for ks, text, vanster, se_rader, stryk in per_block.get(x["form"], []):
                 if ks[-1] >= len(x["radinfo"]):
                     sys.exit(f"form {x['form']} har bara {len(x['radinfo'])} rader, rad {ks[-1]} finns inte")
                 if text.strip():
-                    rita_block(ut_bild, x["_form"], [x["radinfo"][k] for k in ks], text.strip(), vanster=vanster, se_rader=se_rader)
+                    rita_block(ut_bild, x["_form"], [x["radinfo"][k] for k in ks], text.strip(), vanster=vanster, se_rader=se_rader, stryk=stryk)
         elif x["form"] in per_form:
             text = per_form[x["form"]].strip()
             if text:

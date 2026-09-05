@@ -1,0 +1,72 @@
+{
+ "IBC-tanktrekk_NO_BOF_1_1": {
+  "message": "439 kr i stedet for 586 kr. Stoffet er 210D Oxford og tar UV-strålingen i stedet for plasten.",
+  "headline": "25 % rabatt på tanktrekket",
+  "description": "Gratis frakt over 300 kr."
+ },
+ "IBC-tanktrekk_NO_BOF_2_1": {
+  "message": "Liker du ikke tanktrekket? Send det tilbake innen 30 dager. Du får pengene tilbake.",
+  "headline": "30 dagers åpent kjøp",
+  "description": "Pengene tilbake om du angrer."
+ },
+ "IBC-tanktrekk_NO_BOF_3_1": {
+  "message": "Passer den tanken min? Målene er 120 × 100 × 116 cm — standard for en 1000-literstank.",
+  "headline": "120×100×116 cm, standard 1000L",
+  "description": "30 dagers åpent kjøp."
+ },
+ "IBC-tanktrekk_NO_PD_4_1": {
+  "message": "210D Oxford-stoff stenger ute lyset. Algene kommer aldri i gang.",
+  "headline": "210D Oxford-stoff. Ingen alge.",
+  "description": "Tar UV i stedet for plast."
+ },
+ "IBC-tanktrekk_NO_CS_3_1": {
+  "message": "439 kr i stedet for 586 kr. Stoffet er 210D Oxford og stenger ute lyset — algene kommer aldri i gang. 25 % rabatt.",
+  "headline": "25 % rabatt — 210D Oxford-stoff",
+  "description": "Gratis frakt over 300 kr."
+ },
+ "IBC-tanktrekk_NO_RV_1_1": {
+  "message": "«Jeg er fornøyd. Nå slipper jeg mye sollys på tanken, og det ser også penere ut.» — Maria, baverbutiken.se ★★★★★",
+  "headline": "Maria: Jeg er fornøyd",
+  "description": "210D Oxford-stoff. 439 kr."
+ },
+ "IBC-tanktrekk_NO_RV_2_1": {
+  "message": "«Kjøpte dette til regnvannstanken min. Fungerer bra og er enkelt å åpne når jeg trenger det.» — Lena, baverbutiken.se ★★★★★",
+  "headline": "Lena: Enkel å åpne",
+  "description": "Passer 1000L-tank. 439 kr."
+ },
+ "Overvåkingskamera_NO_CS_5_1": {
+  "message": "899 kr i stedet for 1 169 kr. Ser forskjell på menneske og kjæledyr — varsler bare når det gjelder. Klarna – betal senere · Gratis frakt · 30 dagers fornøyd-kunde-garanti. To linser dekker 355° rundt huset.",
+  "headline": "899 kr i stedet for 1 169 kr",
+  "description": "899 kr (ord. 1 169 kr)"
+ },
+ "Overvåkingskamera_NO_BOF_2_1": {
+  "message": "30 dagers fornøyd-kunde-garanti. Ikke fornøyd? Pengene tilbake. Gratis frakt over 300 kr. 899 kr, betal senere med Klarna.",
+  "headline": "30 dagers fornøyd-kunde-garanti",
+  "description": "Ikke fornøyd? Pengene tilbake."
+ },
+ "Overvåkingskamera_NO_BOF_1_1": {
+  "message": "899 kr i stedet for 1 169 kr. Kameraet har to linser og AI som skiller mellom mennesker og kjæledyr.",
+  "headline": "Spar 270 kr på kameraet",
+  "description": "Gratis frakt. Klarna senere."
+ },
+ "Overvåkingskamera_NO_CO_3_1": {
+  "message": "Gammelt kamera vs. AI-kamera. Se forskjellen selv. To linser, 355° dekning · Ser forskjell på menneske og kjæledyr · 30 dagers garanti. Se forskjellen i din egen hage.",
+  "headline": "Handle nå – 899 kr",
+  "description": "To linser, 355° dekning"
+ },
+ "Overvåkingskamera_NO_BOF_3_1": {
+  "message": "Ikke fornøyd med kameraet? Send det tilbake innen 30 dager. Du får hele summen tilbake.",
+  "headline": "30 dagers fornøyd-kunde-garanti",
+  "description": "Send tilbake — få pengene."
+ },
+ "Kranbeskyttelse_NO_CI_1_1": {
+  "message": "KULDEN ER PÅ VEI. Beskytt kranen før den fryser. 219 kr, bestill før første frostnatt.",
+  "headline": "Beskytt kranen før den fryser",
+  "description": "Beskytt kranen — 219 kr"
+ },
+ "Kranbeskyttelse_NO_PD_7_1": {
+  "message": "Ingenting å tape: 30 dagers åpent kjøp. Trygg betaling med Klarna. Beskytter kranen mot frost for 219 kr.",
+  "headline": "30 dagers åpent kjøp, trygg betaling",
+  "description": "30 dagers åpent kjøp"
+ }
+}

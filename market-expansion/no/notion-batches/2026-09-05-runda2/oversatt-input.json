@@ -1,0 +1,816 @@
+[
+ {
+  "namn": "IBC_BOF_1_1",
+  "malnamn": "IBC-tanktrekk_NO_BOF_1_1",
+  "prefix": "IBC",
+  "vinkel": "BOF",
+  "fakta": {
+   "produkt_no": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": "120 × 100 × 116 cm, passer standard 1000-liters IBC",
+   "material": "210D oxfordstoff, glidelås, åpning på toppen; stenger ute lyset så algene aldri kommer i gang, tar UV-strålingen i stedet for plasten (ordagrant ur NO-sidan)",
+   "garanti": "30 dagers åpent kjøp – liker du det ikke, får du pengene tilbake",
+   "betalning": "trygg betaling med Klarna",
+   "pris": "439 kr",
+   "jamforpris": "586 kr",
+   "spar": "147 kr",
+   "rabatt_pct": 25,
+   "fri_frakt": true,
+   "fri_frakt_regel": "Gratis frakt i Norge bara över 300 kr"
+  },
+  "se_copy": {
+   "message": "489 kr istället för 636 kr. Tyget är 210D Oxford och tar UV-strålningen i stället för plasten.",
+   "headline": "23 % rabatt på tanköverdraget",
+   "description": "Fri frakt över 300 kr. Betala sen med Klarna.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "489 kr istället för 636 kr.",
+     "23 % rabatt.",
+     "Kraftigt 210D Oxford-tyg. Tar UV-strålningen i stället",
+     "för plasten."
+    ],
+    "block": [
+     [
+      2,
+      3
+     ]
+    ],
+    "stryk_del": {
+     "0": "636 kr"
+    }
+   },
+   {
+    "typ": "fototext",
+    "rader": [
+     "Fri frakt över 300 kr"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda din tank idag"
+    ]
+   }
+  ],
+  "varning": [
+   "Svenskt pris 489/636 kr, 23 % — NO-pris 439 kr (ord. 586 kr) = 25 %.",
+   "'Fri frakt över 300 kr' gäller även i Norge (fri frakt ≥ 300 kr, produkten kostar 439 kr)."
+  ],
+  "anm": null,
+  "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+ },
+ {
+  "namn": "IBC_BOF_2_1",
+  "malnamn": "IBC-tanktrekk_NO_BOF_2_1",
+  "prefix": "IBC",
+  "vinkel": "BOF",
+  "fakta": {
+   "produkt_no": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": "120 × 100 × 116 cm, passer standard 1000-liters IBC",
+   "material": "210D oxfordstoff, glidelås, åpning på toppen; stenger ute lyset så algene aldri kommer i gang, tar UV-strålingen i stedet for plasten (ordagrant ur NO-sidan)",
+   "garanti": "30 dagers åpent kjøp – liker du det ikke, får du pengene tilbake",
+   "betalning": "trygg betaling med Klarna",
+   "pris": "439 kr",
+   "jamforpris": "586 kr",
+   "spar": "147 kr",
+   "rabatt_pct": 25,
+   "fri_frakt": true,
+   "fri_frakt_regel": "Gratis frakt i Norge bara över 300 kr"
+  },
+  "se_copy": {
+   "message": "Gillar du inte tanköverdraget? Skicka tillbaka det inom 30 dagar. Du får pengarna tillbaka.",
+   "headline": "30 dagars öppet köp",
+   "description": "Pengarna tillbaka om du ångrar dig.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "30 dagars öppet köp.",
+     "Gillar du det inte, får du",
+     "pengarna tillbaka.",
+     "Kraftigt 210D Oxford-tyg. Tar UV-strålningen i stället",
+     "för plasten."
+    ],
+    "block": [
+     [
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ]
+    ]
+   },
+   {
+    "typ": "fototext",
+    "rader": [
+     "Få först, betala sen — med Klarna"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda din tank idag"
+    ]
+   }
+  ],
+  "varning": [],
+  "anm": "Sköld med bock till vänster är grafik utan text. Klarna finns i Norge (produktsidan: trygg betaling med Klarna).",
+  "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+ },
+ {
+  "namn": "IBC_BOF_3_1",
+  "malnamn": "IBC-tanktrekk_NO_BOF_3_1",
+  "prefix": "IBC",
+  "vinkel": "BOF",
+  "fakta": {
+   "produkt_no": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": "120 × 100 × 116 cm, passer standard 1000-liters IBC",
+   "material": "210D oxfordstoff, glidelås, åpning på toppen; stenger ute lyset så algene aldri kommer i gang, tar UV-strålingen i stedet for plasten (ordagrant ur NO-sidan)",
+   "garanti": "30 dagers åpent kjøp – liker du det ikke, får du pengene tilbake",
+   "betalning": "trygg betaling med Klarna",
+   "pris": "439 kr",
+   "jamforpris": "586 kr",
+   "spar": "147 kr",
+   "rabatt_pct": 25,
+   "fri_frakt": true,
+   "fri_frakt_regel": "Gratis frakt i Norge bara över 300 kr"
+  },
+  "se_copy": {
+   "message": "Passar den på min tank? Måtten är 120 × 100 × 116 cm — standard för en 1000-literstank.",
+   "headline": "120×100×116 cm, standard 1000L",
+   "description": "30 dagars öppet köp om den inte passar.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Passar den min tank?",
+     "120 × 100 × 116 cm —",
+     "standard 1000-literstank.",
+     "Kraftigt 210D Oxford-tyg. Tar UV-strålningen i stället",
+     "för plasten."
+    ],
+    "block": [
+     [
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ]
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda din tank idag"
+    ]
+   }
+  ],
+  "varning": [],
+  "anm": "Måtten 120 × 100 × 116 cm står på NO-produktsidan. Inget pris i bilden.",
+  "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+ },
+ {
+  "namn": "IBC_PD_4_1",
+  "malnamn": "IBC-tanktrekk_NO_PD_4_1",
+  "prefix": "IBC",
+  "vinkel": "PD",
+  "fakta": {
+   "produkt_no": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": "120 × 100 × 116 cm, passer standard 1000-liters IBC",
+   "material": "210D oxfordstoff, glidelås, åpning på toppen; stenger ute lyset så algene aldri kommer i gang, tar UV-strålingen i stedet for plasten (ordagrant ur NO-sidan)",
+   "garanti": "30 dagers åpent kjøp – liker du det ikke, får du pengene tilbake",
+   "betalning": "trygg betaling med Klarna",
+   "pris": "439 kr",
+   "jamforpris": "586 kr",
+   "spar": "147 kr",
+   "rabatt_pct": 25,
+   "fri_frakt": true,
+   "fri_frakt_regel": "Gratis frakt i Norge bara över 300 kr"
+  },
+  "se_copy": {
+   "message": "210D Oxford-tyg stänger ute ljuset. Algerna kommer aldrig igång.",
+   "headline": "210D Oxford-tyg. Ingen alg.",
+   "description": "Tar UV-strålningen i stället för plasten.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "210D Oxford-tyg.",
+     "Stänger ute ljuset.",
+     "Ingen alg.",
+     "Kraftigt tyg. Enkelt blixtlås. Öppning upptill."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda din tank idag"
+    ]
+   }
+  ],
+  "varning": [],
+  "anm": "Plattan är halvgenomskinlig över ett trädgårdsfoto (som IBC_CO_1_1) — override kan krävas. Inget pris i bilden.",
+  "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+ },
+ {
+  "namn": "IBC_CS_3_1",
+  "malnamn": "IBC-tanktrekk_NO_CS_3_1",
+  "prefix": "IBC",
+  "vinkel": "CS",
+  "fakta": {
+   "produkt_no": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": "120 × 100 × 116 cm, passer standard 1000-liters IBC",
+   "material": "210D oxfordstoff, glidelås, åpning på toppen; stenger ute lyset så algene aldri kommer i gang, tar UV-strålingen i stedet for plasten (ordagrant ur NO-sidan)",
+   "garanti": "30 dagers åpent kjøp – liker du det ikke, får du pengene tilbake",
+   "betalning": "trygg betaling med Klarna",
+   "pris": "439 kr",
+   "jamforpris": "586 kr",
+   "spar": "147 kr",
+   "rabatt_pct": 25,
+   "fri_frakt": true,
+   "fri_frakt_regel": "Gratis frakt i Norge bara över 300 kr"
+  },
+  "se_copy": {
+   "message": "489 kr istället för 636 kr. Tyget är 210D Oxford och stänger ute ljuset — algerna kommer aldrig igång. 23 % rabatt.",
+   "headline": "23 % rabatt — 210D Oxford-tyg",
+   "description": "Fri frakt över 300 kr.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "489 kr istället för 636 kr",
+     "— 210D Oxford-tyg som",
+     "stoppar algen.",
+     "23 % rabatt just nu."
+    ],
+    "block": [
+     [
+      0,
+      1,
+      2
+     ]
+    ],
+    "stryk_del": {
+     "0": "636 kr"
+    }
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "Fri frakt inom Sverige. Klarna — betala sen."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda din tank idag"
+    ]
+   }
+  ],
+  "varning": [
+   "Svenskt pris 489/636 kr, 23 % — NO-pris 439 kr (ord. 586 kr) = 25 %.",
+   "'inom Sverige' stryks; fri frakt gäller i Norge över 300 kr."
+  ],
+  "anm": null,
+  "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+ },
+ {
+  "namn": "IBC_RV_1_1",
+  "malnamn": "IBC-tanktrekk_NO_RV_1_1",
+  "prefix": "IBC",
+  "vinkel": "RV",
+  "fakta": {
+   "produkt_no": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": "120 × 100 × 116 cm, passer standard 1000-liters IBC",
+   "material": "210D oxfordstoff, glidelås, åpning på toppen; stenger ute lyset så algene aldri kommer i gang, tar UV-strålingen i stedet for plasten (ordagrant ur NO-sidan)",
+   "garanti": "30 dagers åpent kjøp – liker du det ikke, får du pengene tilbake",
+   "betalning": "trygg betaling med Klarna",
+   "pris": "439 kr",
+   "jamforpris": "586 kr",
+   "spar": "147 kr",
+   "rabatt_pct": 25,
+   "fri_frakt": true,
+   "fri_frakt_regel": "Gratis frakt i Norge bara över 300 kr"
+  },
+  "se_copy": {
+   "message": "\"Jag är nöjd. Nu slipper jag mycket solljus på tanken och det ser även snyggare ut.\" — Maria, ★★★★★",
+   "headline": "Maria: Jag är nöjd",
+   "description": "210D Oxford-tyg. 489 kr.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "”Jag är nöjd.",
+     "Nu slipper jag mycket solljus på tanken",
+     "och det ser även snyggare ut.”",
+     "— Maria"
+    ],
+    "block": [
+     [
+      0,
+      1,
+      2
+     ]
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda din tank idag"
+    ]
+   }
+  ],
+  "varning": [
+   "Recensionen är svensk (Judge.me, Bäverbutiken) — får översättas, attribueras till baverbutiken.se.",
+   "Stjärnorna ovanför är grafik. Inget pris i bilden."
+  ],
+  "anm": null,
+  "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+ },
+ {
+  "namn": "IBC_RV_2_1",
+  "malnamn": "IBC-tanktrekk_NO_RV_2_1",
+  "prefix": "IBC",
+  "vinkel": "RV",
+  "fakta": {
+   "produkt_no": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": "120 × 100 × 116 cm, passer standard 1000-liters IBC",
+   "material": "210D oxfordstoff, glidelås, åpning på toppen; stenger ute lyset så algene aldri kommer i gang, tar UV-strålingen i stedet for plasten (ordagrant ur NO-sidan)",
+   "garanti": "30 dagers åpent kjøp – liker du det ikke, får du pengene tilbake",
+   "betalning": "trygg betaling med Klarna",
+   "pris": "439 kr",
+   "jamforpris": "586 kr",
+   "spar": "147 kr",
+   "rabatt_pct": 25,
+   "fri_frakt": true,
+   "fri_frakt_regel": "Gratis frakt i Norge bara över 300 kr"
+  },
+  "se_copy": {
+   "message": "\"Köpte detta för min regnvattentank. Fungerar bra och är enkelt att öppna när jag behöver.\" — Lena, ★★★★★",
+   "headline": "Lena: Enkelt att öppna",
+   "description": "Passar 1000L-tank. 489 kr.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "”Köpte detta för min regnvattentank.",
+     "Fungerar bra och är enkelt att öppna när",
+     "jag behöver.”",
+     "— Lena"
+    ],
+    "block": [
+     [
+      0,
+      1,
+      2
+     ]
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda din tank idag"
+    ]
+   }
+  ],
+  "varning": [
+   "Recensionen är svensk (Judge.me, Bäverbutiken) — får översättas, attribueras till baverbutiken.se.",
+   "Inget pris i bilden."
+  ],
+  "anm": null,
+  "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+ },
+ {
+  "namn": "Overvakningskamera_CS_5_1",
+  "malnamn": "Overvåkingskamera_NO_CS_5_1",
+  "prefix": "Overvakningskamera",
+  "vinkel": "CS",
+  "fakta": {
+   "produkt_no": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": null,
+   "material": "doble linser, PTZ 355°, AI skiller mennesker fra greiner og katter, direktevarsel i mobilen, tåler utendørsbruk året rundt",
+   "garanti": "30 dagers åpent kjøp – liker du den ikke, får du pengene tilbake. Tidigare NO-annonser (2026-09-03) använder \"30 dagers fornøyd-kunde-garanti\" — båda stämmer med sidans löfte om pengarna tillbaka; håll samma term som SE-bilden (nöjd-kund-garanti → fornøyd-kunde-garanti).",
+   "betalning": "trygg betaling med Klarna",
+   "pris": "899 kr",
+   "jamforpris": "1 169 kr",
+   "spar": "270 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": true,
+   "fri_frakt_regel": "Gratis frakt i Norge bara över 300 kr"
+  },
+  "se_copy": {
+   "message": "799 kr istället för 1 000 kr. Ser skillnad på människa och husdjur — larmar bara när det gäller. Klarna – betala sen · Fri frakt · 30 dagars nöjd-kund-garanti. Två linser täcker 355° runt huset.",
+   "headline": "799 kr istället för 1 000 kr",
+   "description": "",
+   "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "799 kr istället för 1 000 kr",
+     "Ser skillnad på människa och husdjur — larmar bara",
+     "när det gäller."
+    ],
+    "block": [
+     [
+      1,
+      2
+     ]
+    ],
+    "stryk_del": {
+     "0": "1 000 kr"
+    }
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "Klarna – betala sen · Fri frakt · 30 dagars nöjd-kund-garanti"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu"
+    ]
+   }
+  ],
+  "varning": [
+   "Svenskt pris 799/1 000 kr — NO-pris 899 kr (ord. 1 169 kr). Fri frakt gäller (≥ 300 kr).",
+   "Ikonraden under knappen är grafik."
+  ],
+  "anm": null,
+  "link_no": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+ },
+ {
+  "namn": "Overvakningskamera_BOF_2_1",
+  "malnamn": "Overvåkingskamera_NO_BOF_2_1",
+  "prefix": "Overvakningskamera",
+  "vinkel": "BOF",
+  "fakta": {
+   "produkt_no": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": null,
+   "material": "doble linser, PTZ 355°, AI skiller mennesker fra greiner og katter, direktevarsel i mobilen, tåler utendørsbruk året rundt",
+   "garanti": "30 dagers åpent kjøp – liker du den ikke, får du pengene tilbake. Tidigare NO-annonser (2026-09-03) använder \"30 dagers fornøyd-kunde-garanti\" — båda stämmer med sidans löfte om pengarna tillbaka; håll samma term som SE-bilden (nöjd-kund-garanti → fornøyd-kunde-garanti).",
+   "betalning": "trygg betaling med Klarna",
+   "pris": "899 kr",
+   "jamforpris": "1 169 kr",
+   "spar": "270 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": true,
+   "fri_frakt_regel": "Gratis frakt i Norge bara över 300 kr"
+  },
+  "se_copy": {
+   "message": "30 dagars nöjd-kund-garanti. Inte nöjd? Pengarna tillbaka. Fri frakt inom Sverige. 799 kr, betala sen med Klarna.",
+   "headline": "30 dagars nöjd-kund-garanti",
+   "description": "",
+   "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "30 dagars",
+     "nöjd-kund-garanti",
+     "Inte nöjd? Pengarna tillbaka."
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "typ": "fototext",
+    "rader": [
+     "Fri frakt inom Sverige"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu"
+    ]
+   }
+  ],
+  "varning": [
+   "'inom Sverige' stryks; fri frakt gäller i Norge över 300 kr (899 kr)."
+  ],
+  "anm": null,
+  "link_no": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+ },
+ {
+  "namn": "Overvakningskamera_BOF_1_1",
+  "malnamn": "Overvåkingskamera_NO_BOF_1_1",
+  "prefix": "Overvakningskamera",
+  "vinkel": "BOF",
+  "fakta": {
+   "produkt_no": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": null,
+   "material": "doble linser, PTZ 355°, AI skiller mennesker fra greiner og katter, direktevarsel i mobilen, tåler utendørsbruk året rundt",
+   "garanti": "30 dagers åpent kjøp – liker du den ikke, får du pengene tilbake. Tidigare NO-annonser (2026-09-03) använder \"30 dagers fornøyd-kunde-garanti\" — båda stämmer med sidans löfte om pengarna tillbaka; håll samma term som SE-bilden (nöjd-kund-garanti → fornøyd-kunde-garanti).",
+   "betalning": "trygg betaling med Klarna",
+   "pris": "899 kr",
+   "jamforpris": "1 169 kr",
+   "spar": "270 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": true,
+   "fri_frakt_regel": "Gratis frakt i Norge bara över 300 kr"
+  },
+  "se_copy": {
+   "message": "799 kr istället för 1 000 kr. Kameran har två linser och AI som skiljer på människa och husdjur.",
+   "headline": "Spara 201 kr på kameran",
+   "description": "Fri frakt. Betala sen med Klarna.",
+   "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "799 kr",
+     "istället för 1 000 kr – spara 201 kr"
+    ],
+    "stryk_del": {
+     "1": "1 000 kr"
+    }
+   },
+   {
+    "typ": "fototext",
+    "rader": [
+     "Klarna – betala sen · Fri frakt"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu"
+    ]
+   }
+  ],
+  "varning": [
+   "Svenskt pris 799/1 000 kr, spara 201 — NO-pris 899 kr (ord. 1 169 kr), spar 270 kr."
+  ],
+  "anm": null,
+  "link_no": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+ },
+ {
+  "namn": "Overvakningskamera_CO_3_1",
+  "malnamn": "Overvåkingskamera_NO_CO_3_1",
+  "prefix": "Overvakningskamera",
+  "vinkel": "CO",
+  "fakta": {
+   "produkt_no": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": null,
+   "material": "doble linser, PTZ 355°, AI skiller mennesker fra greiner og katter, direktevarsel i mobilen, tåler utendørsbruk året rundt",
+   "garanti": "30 dagers åpent kjøp – liker du den ikke, får du pengene tilbake. Tidigare NO-annonser (2026-09-03) använder \"30 dagers fornøyd-kunde-garanti\" — båda stämmer med sidans löfte om pengarna tillbaka; håll samma term som SE-bilden (nöjd-kund-garanti → fornøyd-kunde-garanti).",
+   "betalning": "trygg betaling med Klarna",
+   "pris": "899 kr",
+   "jamforpris": "1 169 kr",
+   "spar": "270 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": true,
+   "fri_frakt_regel": "Gratis frakt i Norge bara över 300 kr"
+  },
+  "se_copy": {
+   "message": "Gammal kamera vs. AI-kamera. Se skillnaden själv. Två linser, 355° täckning · Ser skillnad på människa och husdjur · 30 dagars garanti. Se skillnaden i din egen trädgård.",
+   "headline": "Handla nu – 799 kr",
+   "description": "",
+   "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Gammal kamera vs.",
+     "AI-kamera",
+     "Se skillnaden själv"
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "Två linser, 355° täckning · Ser skillnad på människa och husdjur ·",
+     "30 dagars garanti"
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu – 799 kr"
+    ]
+   }
+  ],
+  "varning": [
+   "Svenskt pris 799 kr — NO-pris 899 kr."
+  ],
+  "anm": null,
+  "link_no": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+ },
+ {
+  "namn": "Overvakningskamera_BOF_3_1",
+  "malnamn": "Overvåkingskamera_NO_BOF_3_1",
+  "prefix": "Overvakningskamera",
+  "vinkel": "BOF",
+  "fakta": {
+   "produkt_no": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": null,
+   "material": "doble linser, PTZ 355°, AI skiller mennesker fra greiner og katter, direktevarsel i mobilen, tåler utendørsbruk året rundt",
+   "garanti": "30 dagers åpent kjøp – liker du den ikke, får du pengene tilbake. Tidigare NO-annonser (2026-09-03) använder \"30 dagers fornøyd-kunde-garanti\" — båda stämmer med sidans löfte om pengarna tillbaka; håll samma term som SE-bilden (nöjd-kund-garanti → fornøyd-kunde-garanti).",
+   "betalning": "trygg betaling med Klarna",
+   "pris": "899 kr",
+   "jamforpris": "1 169 kr",
+   "spar": "270 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": true,
+   "fri_frakt_regel": "Gratis frakt i Norge bara över 300 kr"
+  },
+  "se_copy": {
+   "message": "Inte nöjd med kameran? Skicka tillbaka den inom 30 dagar. Du får hela summan tillbaka.",
+   "headline": "30 dagars nöjd-kund-garanti",
+   "description": "Skicka tillbaka den — få pengarna tillbaka.",
+   "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "”Tänk om jag inte är",
+     "nöjd?”",
+     "Du har 30 dagars nöjd-kund-garanti — skicka tillbaka",
+     "den, få pengarna."
+    ],
+    "block": [
+     [
+      0,
+      1
+     ],
+     [
+      2,
+      3
+     ]
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu – 799 kr"
+    ]
+   }
+  ],
+  "varning": [
+   "Svenskt pris 799 kr — NO-pris 899 kr.",
+   "Pratbubblan bakom plattan är grafik."
+  ],
+  "anm": null,
+  "link_no": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+ },
+ {
+  "namn": "Kranskydd_CI_1_1",
+  "malnamn": "Kranbeskyttelse_NO_CI_1_1",
+  "prefix": "Kranskydd",
+  "vinkel": "CI",
+  "fakta": {
+   "produkt_no": "Kranbeskyttelse Frost 420D – Beskytter Utekranen i Vinter",
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": "22 × 14 cm",
+   "material": "420D Oxford-stoff, isolerende fôr, stropp, montert på ti sekunder uten verktøy",
+   "garanti": "30 dagers åpent kjøp – liker du det ikke, får du pengene tilbake",
+   "betalning": "trygg betaling med Klarna",
+   "pris": "219 kr",
+   "jamforpris": "285 kr",
+   "spar": "66 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": false,
+   "fri_frakt_regel": "Gratis frakt i Norge bara över 300 kr"
+  },
+  "se_copy": {
+   "message": "KYLAN ÄR PÅ VÄG. Skydda kranen innan den fryser. 309 kr, beställ innan första frostnatten.",
+   "headline": "Skydda kranen innan den fryser",
+   "description": "",
+   "link": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "KYLAN ÄR PÅ VÄG."
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "Skydda kranen innan den fryser — 309 kr"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Handla nu →"
+    ]
+   }
+  ],
+  "varning": [
+   "Svenskt pris 309 kr — NO-pris 219 kr."
+  ],
+  "anm": null,
+  "link_no": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+ },
+ {
+  "namn": "Kranskydd_PD_7_1",
+  "malnamn": "Kranbeskyttelse_NO_PD_7_1",
+  "prefix": "Kranskydd",
+  "vinkel": "PD",
+  "fakta": {
+   "produkt_no": "Kranbeskyttelse Frost 420D – Beskytter Utekranen i Vinter",
+   "anmeldelser": "10 anmeldelser på beverbutikken.no",
+   "matt": "22 × 14 cm",
+   "material": "420D Oxford-stoff, isolerende fôr, stropp, montert på ti sekunder uten verktøy",
+   "garanti": "30 dagers åpent kjøp – liker du det ikke, får du pengene tilbake",
+   "betalning": "trygg betaling med Klarna",
+   "pris": "219 kr",
+   "jamforpris": "285 kr",
+   "spar": "66 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": false,
+   "fri_frakt_regel": "Gratis frakt i Norge bara över 300 kr"
+  },
+  "se_copy": {
+   "message": "Inget att förlora: 30 dagars öppet köp.\nFri frakt var du än bor i Sverige.\nSkyddar kranen mot frost för 309 kr.",
+   "headline": "30 dagars öppet köp, fri frakt",
+   "description": "",
+   "link": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "30 dagars öppet köp.",
+     "Ångra dig om du vill.",
+     "Fri frakt, oavsett var i Sverige du bor."
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "Inte nöjd? Skicka tillbaka inom 30 dagar."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ tryggt – 309 kr"
+    ]
+   }
+  ],
+  "varning": [
+   "Svenskt pris 309 kr — NO-pris 219 kr.",
+   "'Fri frakt, oavsett var i Sverige du bor' är FALSK i Norge: fri frakt först över 300 kr och produkten kostar 219 kr. Raden måste ersättas med ett sant löfte (t.ex. Klarna/trygg betaling), inte översättas."
+  ],
+  "anm": null,
+  "link_no": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+ }
+]

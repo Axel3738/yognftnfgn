@@ -173,7 +173,9 @@ def main():
                         e["rader"] = post["rader"]
                         e["se_rader"] = [s["rader"][k] for k in post["rader"]]
                     if post.get("stryk"):
-                        e["stryk"] = post["stryk"]
+                        # stryk_del = bara delsträngen (jämförpriset) stryks, aldrig hela
+                        # raden (IBC_BOF_1_1 fick hela prisraden överstruken 2026-09-05).
+                        e["stryk"] = post.get("stryk_del") or post["stryk"]
                     v = vanster_for(post["rader"][0])
                     if v is not None:
                         e["vanster"] = v

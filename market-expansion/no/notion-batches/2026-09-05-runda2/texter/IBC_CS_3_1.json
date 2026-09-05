@@ -1,0 +1,39 @@
+[
+ {
+  "form": 0,
+  "text": "439 kr i stedet for 586 kr — 210D Oxford-stoff som stopper algen.",
+  "rader": [
+   0,
+   1,
+   2
+  ],
+  "se_rader": [
+   "489 kr istället för 636 kr",
+   "— 210D Oxford-tyg som",
+   "stoppar algen."
+  ],
+  "stryk": "586 kr",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "25 % rabatt akkurat nå.",
+  "rad": 3,
+  "se": "23 % rabatt just nu.",
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "Gratis frakt over 300 kr. Klarna – betal senere.",
+  "rad": 0,
+  "se": "Fri frakt inom Sverige. Klarna — betala sen.",
+  "vanster": false
+ },
+ {
+  "form": 2,
+  "text": "Beskytt tanken din i dag",
+  "rad": 0,
+  "se": "Skydda din tank idag",
+  "vanster": false
+ }
+]

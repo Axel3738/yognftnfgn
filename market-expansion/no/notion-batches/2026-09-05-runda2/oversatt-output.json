@@ -1,0 +1,930 @@
+{
+ "IBC_BOF_1_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "439 kr i stedet for 586 kr.",
+      "stryk": true,
+      "stryk_del": "586 kr"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "25 % rabatt."
+     },
+     {
+      "rader": [
+       2,
+       3
+      ],
+      "text": "Kraftig 210D Oxford-stoff. Tar UV-strålingen i stedet for plasten."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Gratis frakt over 300 kr"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Beskytt tanken din i dag"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "439 kr i stedet for 586 kr. Stoffet er 210D Oxford og tar UV-strålingen i stedet for plasten.",
+   "headline": "25 % rabatt på tanktrekket",
+   "description": "Gratis frakt over 300 kr."
+  },
+  "andringar": [
+   "Rabatt 23 % → 25 % (fakta.rabatt_pct=25, NO-pris 439/586 kr)",
+   "Pris 489/636 kr → 439/586 kr enligt fakta.pris/jamforpris"
+  ],
+  "hoppa": null,
+  "trefragor": [
+   {
+    "rad": "headline: 25 % rabatt på tanktrekket",
+    "visualisera": "nej",
+    "falsifiera": "ja",
+    "ingen_annan": "nej",
+    "kommentar": "Rabattprocent utan konkret bild; sant men vilken butik som helst med samma rabatt kan säga det."
+   },
+   {
+    "rad": "bildrubrik: 439 kr i stedet for 586 kr.",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "ja",
+    "kommentar": "Egna priser på egen produkt, verifierbart."
+   }
+  ]
+ },
+ "IBC_BOF_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "30 dagers åpent kjøp."
+     },
+     {
+      "rader": [
+       1,
+       2
+      ],
+      "text": "Liker du det ikke, får du pengene tilbake."
+     },
+     {
+      "rader": [
+       3,
+       4
+      ],
+      "text": "Kraftig 210D Oxford-stoff. Tar UV-strålingen i stedet for plasten."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Få først, betal senere — med Klarna"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Beskytt tanken din i dag"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Liker du ikke tanktrekket? Send det tilbake innen 30 dager. Du får pengene tilbake.",
+   "headline": "30 dagers åpent kjøp",
+   "description": "Pengene tilbake om du angrer."
+  },
+  "andringar": [],
+  "hoppa": null,
+  "trefragor": [
+   {
+    "rad": "headline: 30 dagers åpent kjøp",
+    "visualisera": "nej",
+    "falsifiera": "ja",
+    "ingen_annan": "nej",
+    "kommentar": "Standardvillkor hos flera butiker, men sant och kort."
+   },
+   {
+    "rad": "bildrubrik: Liker du det ikke, får du pengene tilbake.",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "nej",
+    "kommentar": "Generellt öppet-köp-löfte, inte unikt för produkten."
+   }
+  ]
+ },
+ "IBC_BOF_3_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Passer den tanken min?"
+     },
+     {
+      "rader": [
+       1,
+       2
+      ],
+      "text": "120 × 100 × 116 cm — standard 1000-literstank."
+     },
+     {
+      "rader": [
+       3,
+       4
+      ],
+      "text": "Kraftig 210D Oxford-stoff. Tar UV-strålingen i stedet for plasten."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Beskytt tanken din i dag"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Passer den tanken min? Målene er 120 × 100 × 116 cm — standard for en 1000-literstank.",
+   "headline": "120×100×116 cm, standard 1000L",
+   "description": "30 dagers åpent kjøp."
+  },
+  "andringar": [],
+  "hoppa": null,
+  "trefragor": [
+   {
+    "rad": "headline: 120×100×116 cm, standard 1000L",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "ja",
+    "kommentar": "Konkreta mått, går att mäta mot egen tank."
+   },
+   {
+    "rad": "bildrubrik: Passer den tanken min?",
+    "visualisera": "nej",
+    "falsifiera": "nej",
+    "ingen_annan": "nej",
+    "kommentar": "Fråga fungerar som hook, är inget sant/falskt påstående."
+   }
+  ]
+ },
+ "IBC_PD_4_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "210D Oxford-stoff."
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Stenger ute lyset."
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "Ingen alge."
+     },
+     {
+      "rader": [
+       3
+      ],
+      "text": "Kraftig stoff. Enkel glidelås. Åpning på toppen."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Beskytt tanken din i dag"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "210D Oxford-stoff stenger ute lyset. Algene kommer aldri i gang.",
+   "headline": "210D Oxford-stoff. Ingen alge.",
+   "description": "Tar UV i stedet for plast."
+  },
+  "andringar": [],
+  "hoppa": null,
+  "trefragor": [
+   {
+    "rad": "headline: 210D Oxford-stoff. Ingen alge.",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "ja",
+    "kommentar": "Specifikt materialval kopplat till effekt."
+   },
+   {
+    "rad": "bildrubrik: Stenger ute lyset.",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "nej",
+    "kommentar": "Sant men flera algskydd kan säga samma sak om mekanismen."
+   }
+  ]
+ },
+ "IBC_CS_3_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1,
+       2
+      ],
+      "text": "439 kr i stedet for 586 kr — 210D Oxford-stoff som stopper algen.",
+      "stryk": true,
+      "stryk_del": "586 kr"
+     },
+     {
+      "rader": [
+       3
+      ],
+      "text": "25 % rabatt akkurat nå."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Gratis frakt over 300 kr. Klarna – betal senere."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Beskytt tanken din i dag"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "439 kr i stedet for 586 kr. Stoffet er 210D Oxford og stenger ute lyset — algene kommer aldri i gang. 25 % rabatt.",
+   "headline": "25 % rabatt — 210D Oxford-stoff",
+   "description": "Gratis frakt over 300 kr."
+  },
+  "andringar": [
+   "Rabatt 23 % → 25 % enligt fakta.rabatt_pct",
+   "Pris 489/636 kr → 439/586 kr enligt fakta",
+   "'Fri frakt inom Sverige' ersatt med 'Gratis frakt over 300 kr' — geo-referens borttagen, fakta.fri_frakt=true"
+  ],
+  "hoppa": null,
+  "trefragor": [
+   {
+    "rad": "headline: 25 % rabatt — 210D Oxford-stoff",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "ja",
+    "kommentar": "Specifik rabatt kopplad till specifikt material."
+   },
+   {
+    "rad": "bildrubrik: 439 kr i stedet for 586 kr — 210D Oxford-stoff som stopper algen.",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "ja",
+    "kommentar": "Eget pris + eget material + specifik effekt."
+   }
+  ]
+ },
+ "IBC_RV_1_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1,
+       2
+      ],
+      "text": "”Jeg er fornøyd. Nå slipper jeg mye sollys på tanken og det ser også penere ut.”"
+     },
+     {
+      "rader": [
+       3
+      ],
+      "text": "— Maria, baverbutiken.se"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Beskytt tanken din i dag"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "«Jeg er fornøyd. Nå slipper jeg mye sollys på tanken, og det ser også penere ut.» — Maria, baverbutiken.se ★★★★★",
+   "headline": "Maria: Jeg er fornøyd",
+   "description": "210D Oxford-stoff. 439 kr."
+  },
+  "andringar": [
+   "Källa 'baverbutiken.se' tillagd efter namnet — svensk recension, kräver attribution",
+   "Pris 489 kr → 439 kr enligt fakta"
+  ],
+  "hoppa": null,
+  "trefragor": [
+   {
+    "rad": "headline: Maria: Jeg er fornøyd",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "ja",
+    "kommentar": "Namngivet, äkta citat — ingen konkurrent kan använda Marias recension."
+   },
+   {
+    "rad": "bildrubrik: ”Jeg er fornøyd. Nå slipper jeg mye sollys på tanken og det ser også penere ut.”",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "ja",
+    "kommentar": "Äkta kundcitat, unikt för produkten och butiken."
+   }
+  ]
+ },
+ "IBC_RV_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1,
+       2
+      ],
+      "text": "”Kjøpte dette til regnvannstanken min. Fungerer bra og er enkelt å åpne når jeg trenger det.”"
+     },
+     {
+      "rader": [
+       3
+      ],
+      "text": "— Lena, baverbutiken.se"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Beskytt tanken din i dag"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "«Kjøpte dette til regnvannstanken min. Fungerer bra og er enkelt å åpne når jeg trenger det.» — Lena, baverbutiken.se ★★★★★",
+   "headline": "Lena: Enkel å åpne",
+   "description": "Passer 1000L-tank. 439 kr."
+  },
+  "andringar": [
+   "Källa 'baverbutiken.se' tillagd efter namnet — svensk recension, kräver attribution",
+   "Pris 489 kr → 439 kr enligt fakta"
+  ],
+  "hoppa": null,
+  "trefragor": [
+   {
+    "rad": "headline: Lena: Enkel å åpne",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "ja",
+    "kommentar": "Namngivet, äkta citat."
+   },
+   {
+    "rad": "bildrubrik: ”Kjøpte dette til regnvannstanken min. Fungerer bra og er enkelt å åpne når jeg trenger det.”",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "ja",
+    "kommentar": "Äkta kundcitat, unikt för produkten och butiken."
+   }
+  ]
+ },
+ "Overvakningskamera_CS_5_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "899 kr i stedet for 1 169 kr",
+      "stryk": true,
+      "stryk_del": "1 169 kr"
+     },
+     {
+      "rader": [
+       1,
+       2
+      ],
+      "text": "Ser forskjell på menneske og kjæledyr — varsler bare når det gjelder."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Klarna – betal senere · Gratis frakt · 30 dagers fornøyd-kunde-garanti"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Handle nå"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "899 kr i stedet for 1 169 kr. Ser forskjell på menneske og kjæledyr — varsler bare når det gjelder. Klarna – betal senere · Gratis frakt · 30 dagers fornøyd-kunde-garanti. To linser dekker 355° rundt huset.",
+   "headline": "899 kr i stedet for 1 169 kr",
+   "description": "899 kr (ord. 1 169 kr)"
+  },
+  "andringar": [
+   "Pris 799/1 000 kr → 899/1 169 kr enligt fakta",
+   "'Fri frakt' → 'Gratis frakt' (fakta.fri_frakt=true, over 300 kr)",
+   "'nöjd-kund-garanti' → 'fornøyd-kunde-garanti' (etablerad NO-term i kontot)",
+   "description var tom → \"899 kr (ord. 1 169 kr)\" (rad ur subagentens egna bildtexter)"
+  ],
+  "hoppa": null,
+  "trefragor": [
+   {
+    "rad": "headline: 899 kr i stedet for 1 169 kr",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "ja",
+    "kommentar": "Egna priser, verifierbara mot produktsidan."
+   },
+   {
+    "rad": "bildrubrik: Ser forskjell på menneske og kjæledyr — varsler bare når det gjelder.",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "nej",
+    "kommentar": "AI-funktionen är en kategoriegenskap; konkurrenter med samma AI kan säga likadant."
+   }
+  ]
+ },
+ "Overvakningskamera_BOF_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "30 dagers fornøyd-kunde-garanti"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "Ikke fornøyd? Pengene tilbake."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Gratis frakt over 300 kr"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Handle nå"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "30 dagers fornøyd-kunde-garanti. Ikke fornøyd? Pengene tilbake. Gratis frakt over 300 kr. 899 kr, betal senere med Klarna.",
+   "headline": "30 dagers fornøyd-kunde-garanti",
+   "description": "Ikke fornøyd? Pengene tilbake."
+  },
+  "andringar": [
+   "'Fri frakt inom Sverige' → 'Gratis frakt over 300 kr' — geo-referens borttagen, fakta.fri_frakt=true",
+   "'nöjd-kund-garanti' → 'fornøyd-kunde-garanti' (etablerad NO-term)",
+   "Pris 799 kr → 899 kr i copy-meddelandet enligt fakta",
+   "description var tom → \"Ikke fornøyd? Pengene tilbake.\" (rad ur subagentens egna bildtexter)"
+  ],
+  "hoppa": null,
+  "trefragor": [
+   {
+    "rad": "headline: 30 dagers fornøyd-kunde-garanti",
+    "visualisera": "nej",
+    "falsifiera": "ja",
+    "ingen_annan": "nej",
+    "kommentar": "Standardgaranti-typ, sant men inte unikt för produkten."
+   },
+   {
+    "rad": "bildrubrik: 30 dagers fornøyd-kunde-garanti",
+    "visualisera": "nej",
+    "falsifiera": "ja",
+    "ingen_annan": "nej",
+    "kommentar": "Samma bedömning som headline."
+   }
+  ]
+ },
+ "Overvakningskamera_BOF_1_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "899 kr"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "i stedet for 1 169 kr – spar 270 kr",
+      "stryk": true,
+      "stryk_del": "1 169 kr"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Klarna – betal senere · Gratis frakt"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Handle nå"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "899 kr i stedet for 1 169 kr. Kameraet har to linser og AI som skiller mellom mennesker og kjæledyr.",
+   "headline": "Spar 270 kr på kameraet",
+   "description": "Gratis frakt. Klarna senere."
+  },
+  "andringar": [
+   "Pris/spar 799/1 000 kr, spara 201 → 899/1 169 kr, spar 270 kr enligt fakta",
+   "'Fri frakt' → 'Gratis frakt' (fakta.fri_frakt=true)"
+  ],
+  "hoppa": null,
+  "trefragor": [
+   {
+    "rad": "headline: Spar 270 kr på kameraet",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "ja",
+    "kommentar": "Konkret besparingsbelopp på egen produkt."
+   },
+   {
+    "rad": "bildrubrik: 899 kr",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "ja",
+    "kommentar": "Eget pris, verifierbart."
+   }
+  ]
+ },
+ "Overvakningskamera_CO_3_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Gammelt kamera vs. AI-kamera"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "Se forskjellen selv"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "To linser, 355° dekning · Ser forskjell på menneske og kjæledyr · 30 dagers garanti"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Handle nå – 899 kr"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Gammelt kamera vs. AI-kamera. Se forskjellen selv. To linser, 355° dekning · Ser forskjell på menneske og kjæledyr · 30 dagers garanti. Se forskjellen i din egen hage.",
+   "headline": "Handle nå – 899 kr",
+   "description": "To linser, 355° dekning"
+  },
+  "andringar": [
+   "Pris 799 kr → 899 kr enligt fakta (knapp och headline)",
+   "description var tom → \"To linser, 355° dekning\" (rad ur subagentens egna bildtexter)"
+  ],
+  "hoppa": null,
+  "trefragor": [
+   {
+    "rad": "headline: Handle nå – 899 kr",
+    "visualisera": "nej",
+    "falsifiera": "ja",
+    "ingen_annan": "nej",
+    "kommentar": "Uppmaning + eget pris; priset är verifierbart, uppmaningen är generisk."
+   },
+   {
+    "rad": "bildrubrik: Gammelt kamera vs. AI-kamera",
+    "visualisera": "ja",
+    "falsifiera": "nej",
+    "ingen_annan": "nej",
+    "kommentar": "Fungerar som visuell konflikt-hook, inte som sant/falskt påstående."
+   }
+  ]
+ },
+ "Overvakningskamera_BOF_3_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "”Tenk om jeg ikke er fornøyd?”"
+     },
+     {
+      "rader": [
+       2,
+       3
+      ],
+      "text": "Du har 30 dagers fornøyd-kunde-garanti — send den tilbake, få pengene."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Handle nå – 899 kr"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Ikke fornøyd med kameraet? Send det tilbake innen 30 dager. Du får hele summen tilbake.",
+   "headline": "30 dagers fornøyd-kunde-garanti",
+   "description": "Send tilbake — få pengene."
+  },
+  "andringar": [
+   "'nöjd-kund-garanti' → 'fornøyd-kunde-garanti' (etablerad NO-term)",
+   "Pris 799 kr → 899 kr i knapp enligt fakta"
+  ],
+  "hoppa": null,
+  "trefragor": [
+   {
+    "rad": "headline: 30 dagers fornøyd-kunde-garanti",
+    "visualisera": "nej",
+    "falsifiera": "ja",
+    "ingen_annan": "nej",
+    "kommentar": "Standardgaranti-typ, sant men inte unikt."
+   },
+   {
+    "rad": "bildrubrik: ”Tenk om jeg ikke er fornøyd?”",
+    "visualisera": "nej",
+    "falsifiera": "nej",
+    "ingen_annan": "nej",
+    "kommentar": "Retorisk fråga, ingen sanningshalt att pröva."
+   }
+  ]
+ },
+ "Kranskydd_CI_1_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "KULDEN ER PÅ VEI."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Beskytt kranen før den fryser — 219 kr"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Handle nå →"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "KULDEN ER PÅ VEI. Beskytt kranen før den fryser. 219 kr, bestill før første frostnatt.",
+   "headline": "Beskytt kranen før den fryser",
+   "description": "Beskytt kranen — 219 kr"
+  },
+  "andringar": [
+   "Pris 309 kr → 219 kr enligt fakta (kranbeskyttelsens eget pris)",
+   "description var tom → \"Beskytt kranen — 219 kr\" (rad ur subagentens egna bildtexter)"
+  ],
+  "hoppa": null,
+  "trefragor": [
+   {
+    "rad": "headline: Beskytt kranen før den fryser",
+    "visualisera": "ja",
+    "falsifiera": "nej",
+    "ingen_annan": "nej",
+    "kommentar": "Uppmaning, fungerar som hook — inget sant/falskt att pröva."
+   },
+   {
+    "rad": "bildrubrik: KULDEN ER PÅ VEI.",
+    "visualisera": "nej",
+    "falsifiera": "nej",
+    "ingen_annan": "nej",
+    "kommentar": "Säsongshook, generisk för alla vinterprodukter."
+   }
+  ]
+ },
+ "Kranskydd_PD_7_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "30 dagers åpent kjøp."
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Angre deg om du vil."
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "Trygg betaling med Klarna."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Ikke fornøyd? Send tilbake innen 30 dager."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Bestill trygt – 219 kr"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Ingenting å tape: 30 dagers åpent kjøp. Trygg betaling med Klarna. Beskytter kranen mot frost for 219 kr.",
+   "headline": "30 dagers åpent kjøp, trygg betaling",
+   "description": "30 dagers åpent kjøp"
+  },
+  "andringar": [
+   "Raden 'Fri frakt, oavsett var i Sverige du bor' struken — falsk i Norge (fakta.fri_frakt=false, gratis frakt bara över 300 kr, produkten kostar 219 kr). Ersatt med 'Trygg betaling med Klarna.' (fakta.betalning)",
+   "Headline-frasen 'fri frakt' → 'trygg betaling' av samma skäl",
+   "Message-raden 'Fri frakt var du än bor i Sverige' struken av samma skäl, ersatt med 'Trygg betaling med Klarna.'",
+   "Pris 309 kr → 219 kr enligt fakta",
+   "description var tom → \"30 dagers åpent kjøp\" (rad ur subagentens egna bildtexter)"
+  ],
+  "hoppa": null,
+  "trefragor": [
+   {
+    "rad": "headline: 30 dagers åpent kjøp, trygg betaling",
+    "visualisera": "nej",
+    "falsifiera": "ja",
+    "ingen_annan": "nej",
+    "kommentar": "Villkorsrad, sant men generellt hos flera butiker."
+   },
+   {
+    "rad": "bildrubrik: Trygg betaling med Klarna.",
+    "visualisera": "nej",
+    "falsifiera": "ja",
+    "ingen_annan": "nej",
+    "kommentar": "Ersätter den falska fraktclaimen med ett sant men generiskt betalningslöfte."
+   }
+  ]
+ }
+}

@@ -1,0 +1,47 @@
+[
+ {
+  "form": 0,
+  "text": "30 dagers fornøyd-kunde-garanti",
+  "rader": [
+   0,
+   1
+  ],
+  "se_rader": [
+   "30 dagars",
+   "nöjd-kund-garanti"
+  ],
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Ikke fornøyd? Pengene tilbake.",
+  "rad": 2,
+  "se": "Inte nöjd? Pengarna tillbaka.",
+  "vanster": false
+ },
+ {
+  "box": [
+   33,
+   1086,
+   1047,
+   1134
+  ],
+  "fet": true,
+  "storlek": 30,
+  "rader": 1,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Gratis frakt over 300 kr"
+ },
+ {
+  "form": 2,
+  "text": "Handle nå",
+  "rad": 0,
+  "se": "Handla nu",
+  "vanster": false
+ }
+]

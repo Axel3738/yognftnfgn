@@ -1,0 +1,37 @@
+[
+ {
+  "form": 0,
+  "text": "210D Oxford-stoff.",
+  "rad": 0,
+  "se": "210D Oxford-tyg.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Stenger ute lyset.",
+  "rad": 1,
+  "se": "Stänger ute ljuset.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Ingen alge.",
+  "rad": 2,
+  "se": "Ingen alg.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Kraftig stoff. Enkel glidelås. Åpning på toppen.",
+  "rad": 3,
+  "se": "Kraftigt tyg. Enkelt blixtlås. Öppning upptill.",
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "Beskytt tanken din i dag",
+  "rad": 0,
+  "se": "Skydda din tank idag",
+  "vanster": false
+ }
+]

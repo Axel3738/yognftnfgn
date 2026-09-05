@@ -93,6 +93,12 @@ ritar den norska texten i samma ruta med samma stil (fet/normal, färg, storlek,
 justering). `MISMATCH` = detektorn hittade inte formen (platta över ett rörigt foto,
 badge med text på fotot): skriv en manuell ruta i `overrides.json`
 (`box_for_form`, `box` + `post` + stil) — aldrig en gissad koordinat utan att titta.
+BOF-mallens fraktrad ("Fri frakt inom Sverige"/"Klarna – betala sen") är **vit text
+direkt på fotot** vid y ≈ 1098–1125 utan platta — detektorn hittar den aldrig; ruta
+`[33,1086,1047,1132]`, `storlek 30`, `fet`, `farg [255,255,255]`, `"textljus": true`
+(mätt 2026-09-05 på tre bilder). Halvgenomskinlig topplatta över foto/pratbubbla
+(IBC_CO_1_1, IBC_BOF_2_1, Overvakningskamera_BOF_3_1) hittas inte heller — rutor per
+post, textraderna mäts ur bilden.
 Kie (`google/nano-banana-edit`, `bildannonser/kie.mjs`) är reserv för text direkt på
 fotot, exakt som `/translate-no` Fas 3.2.
 
@@ -134,6 +140,14 @@ skrivs tillbaka i `jobb.json`. Tillbakaläsning: status/effective_status.
 1. Per uppladdad rad: kommentar `NO ✅ <målnamn> i "<kampanj>" (adset <K>), ad <id>`,
    `Translated url` = `https://www.facebook.com/adsmanager/manage/ads?act=1050941584152547&selected_ad_ids=<id>`,
    status → **`Translation in review`** (alla aktiva marknader klara).
+   **Den färdiga norska filen läggs dessutom in ÖVERST i radens sidinnehåll** (Axels
+   beslut 2026-09-05: "lägg dom i itemet så jag bara kan skrolla ner och se den
+   översatta bilden eller videon direkt") — rubrik `## 🇳🇴 Norsk version — <målnamn>
+   (uppe i Magiborsten NO)` + bilden/videon. MCP: `notion-create-file-upload` →
+   POST filen → `notion-update-page insert_content` med `position start` och
+   `<image src="file-upload://<id>"/>` (video: `<video src=…/>`). REST: File Upload
+   API + `PATCH blocks/<page>/children`. En länk till Meta räcker inte — Axel
+   granskar i Notion, inte i Ads Manager.
    REST: `node tools/notion-aterkoppling.mjs <page-id> --kommentar "…" --egenskap "Translated url=…" --status "Translation in review"`;
    MCP: `notion-create-comment` + `notion-update-page`. Rad som hoppades: kommentar
    med skälet, status oförändrad.
@@ -160,6 +174,6 @@ DSA-fält och kanaler ur blocket.
 - [ ] Bild: formmätning, norsk text i samma ruta, QA-bild läst per bild
 - [ ] Video: kvotkalkyl, proofread före render, captions bara över inbränd text, QA + slutkort
 - [ ] Upp i rätt kampanj/adset/konto med rätt namn, OPT_OUT + inline_comment, status enligt marknad, tillbakaläst
-- [ ] Notion: kommentar + `Translated url` + `Translation in review`; hoppade rader kommenterade
+- [ ] Notion: kommentar + `Translated url` + `Translation in review` + **norska filen inlagd överst på sidan**; hoppade rader kommenterade
 - [ ] Discord-brief i Axels läsformat, med ping; problem i problemkanalen
 - [ ] STATUS/körlogg uppdaterade, committat utan medier, pushat

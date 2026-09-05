@@ -1,0 +1,55 @@
+[
+ {
+  "form": 0,
+  "text": "439 kr i stedet for 586 kr.",
+  "rad": 0,
+  "se": "489 kr istället för 636 kr.",
+  "stryk": "586 kr",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "25 % rabatt.",
+  "rad": 1,
+  "se": "23 % rabatt.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Kraftig 210D Oxford-stoff. Tar UV-strålingen i stedet for plasten.",
+  "rader": [
+   2,
+   3
+  ],
+  "se_rader": [
+   "Kraftigt 210D Oxford-tyg. Tar UV-strålningen i stället",
+   "för plasten."
+  ],
+  "vanster": false
+ },
+ {
+  "box": [
+   33,
+   1086,
+   1047,
+   1132
+  ],
+  "fet": true,
+  "storlek": 30,
+  "rader": 1,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Gratis frakt over 300 kr"
+ },
+ {
+  "form": 1,
+  "text": "Beskytt tanken din i dag",
+  "rad": 0,
+  "se": "Skydda din tank idag",
+  "vanster": false
+ }
+]

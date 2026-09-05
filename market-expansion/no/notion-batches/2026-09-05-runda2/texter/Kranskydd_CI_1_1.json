@@ -1,0 +1,28 @@
+[
+ {
+  "form": 0,
+  "text": "KULDEN ER PÅ VEI.",
+  "rad": 0,
+  "se": "KYLAN ÄR PÅ VÄG.",
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "Beskytt kranen før den fryser — 219 kr",
+  "rad": 0,
+  "se": "Skydda kranen innan den fryser — 309 kr",
+  "vanster": false
+ },
+ {
+  "form": 2,
+  "klipp_efter_rad": 0,
+  "rad": null
+ },
+ {
+  "form": 2,
+  "text": "Handle nå →",
+  "rad": 0,
+  "se": "Handla nu →",
+  "vanster": false
+ }
+]

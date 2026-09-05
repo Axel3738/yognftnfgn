@@ -1,0 +1,110 @@
+{
+  "_kommentar": "Svensk text per bild, läst ur bilden (facit) av huvudsessionen 2026-09-05 (runda 2). Ordning = formerna uppifrån och ned, rader inom formen uppifrån och ned. 'block' = rader som är EN radbruten text. 'fototext' = text direkt på fotot (ingen platta) — kräver override eller Kie. 'varning' = claims som inte gäller i Norge.",
+  "IBC_BOF_1_1": {
+    "former": [
+      { "typ": "platta", "rader": ["489 kr istället för 636 kr.", "23 % rabatt.", "Kraftigt 210D Oxford-tyg. Tar UV-strålningen i stället", "för plasten."], "block": [[2, 3]], "stryk_del": { "0": "636 kr" } },
+      { "typ": "fototext", "rader": ["Fri frakt över 300 kr"] },
+      { "typ": "knapp", "rader": ["Skydda din tank idag"] }
+    ],
+    "varning": ["Svenskt pris 489/636 kr, 23 % — NO-pris 439 kr (ord. 586 kr) = 25 %.", "'Fri frakt över 300 kr' gäller även i Norge (fri frakt ≥ 300 kr, produkten kostar 439 kr)."]
+  },
+  "IBC_BOF_2_1": {
+    "former": [
+      { "typ": "platta", "rader": ["30 dagars öppet köp.", "Gillar du det inte, får du", "pengarna tillbaka.", "Kraftigt 210D Oxford-tyg. Tar UV-strålningen i stället", "för plasten."], "block": [[1, 2], [3, 4]] },
+      { "typ": "fototext", "rader": ["Få först, betala sen — med Klarna"] },
+      { "typ": "knapp", "rader": ["Skydda din tank idag"] }
+    ],
+    "anm": "Sköld med bock till vänster är grafik utan text. Klarna finns i Norge (produktsidan: trygg betaling med Klarna)."
+  },
+  "IBC_BOF_3_1": {
+    "former": [
+      { "typ": "platta", "rader": ["Passar den min tank?", "120 × 100 × 116 cm —", "standard 1000-literstank.", "Kraftigt 210D Oxford-tyg. Tar UV-strålningen i stället", "för plasten."], "block": [[1, 2], [3, 4]] },
+      { "typ": "knapp", "rader": ["Skydda din tank idag"] }
+    ],
+    "anm": "Måtten 120 × 100 × 116 cm står på NO-produktsidan. Inget pris i bilden."
+  },
+  "IBC_PD_4_1": {
+    "former": [
+      { "typ": "platta", "rader": ["210D Oxford-tyg.", "Stänger ute ljuset.", "Ingen alg.", "Kraftigt tyg. Enkelt blixtlås. Öppning upptill."] },
+      { "typ": "knapp", "rader": ["Skydda din tank idag"] }
+    ],
+    "anm": "Plattan är halvgenomskinlig över ett trädgårdsfoto (som IBC_CO_1_1) — override kan krävas. Inget pris i bilden."
+  },
+  "IBC_CS_3_1": {
+    "former": [
+      { "typ": "platta", "rader": ["489 kr istället för 636 kr", "— 210D Oxford-tyg som", "stoppar algen.", "23 % rabatt just nu."], "block": [[0, 1, 2]], "stryk_del": { "0": "636 kr" } },
+      { "typ": "band", "rader": ["Fri frakt inom Sverige. Klarna — betala sen."] },
+      { "typ": "knapp", "rader": ["Skydda din tank idag"] }
+    ],
+    "varning": ["Svenskt pris 489/636 kr, 23 % — NO-pris 439 kr (ord. 586 kr) = 25 %.", "'inom Sverige' stryks; fri frakt gäller i Norge över 300 kr."]
+  },
+  "IBC_RV_1_1": {
+    "former": [
+      { "typ": "platta", "rader": ["”Jag är nöjd.", "Nu slipper jag mycket solljus på tanken", "och det ser även snyggare ut.”", "— Maria"], "block": [[0, 1, 2]] },
+      { "typ": "knapp", "rader": ["Skydda din tank idag"] }
+    ],
+    "varning": ["Recensionen är svensk (Judge.me, Bäverbutiken) — får översättas, attribueras till baverbutiken.se.", "Stjärnorna ovanför är grafik. Inget pris i bilden."]
+  },
+  "IBC_RV_2_1": {
+    "former": [
+      { "typ": "platta", "rader": ["”Köpte detta för min regnvattentank.", "Fungerar bra och är enkelt att öppna när", "jag behöver.”", "— Lena"], "block": [[0, 1, 2]] },
+      { "typ": "knapp", "rader": ["Skydda din tank idag"] }
+    ],
+    "varning": ["Recensionen är svensk (Judge.me, Bäverbutiken) — får översättas, attribueras till baverbutiken.se.", "Inget pris i bilden."]
+  },
+  "Overvakningskamera_CS_5_1": {
+    "former": [
+      { "typ": "platta", "rader": ["799 kr istället för 1 000 kr", "Ser skillnad på människa och husdjur — larmar bara", "när det gäller."], "block": [[1, 2]], "stryk_del": { "0": "1 000 kr" } },
+      { "typ": "band", "rader": ["Klarna – betala sen · Fri frakt · 30 dagars nöjd-kund-garanti"] },
+      { "typ": "knapp", "rader": ["Handla nu"] }
+    ],
+    "varning": ["Svenskt pris 799/1 000 kr — NO-pris 899 kr (ord. 1 169 kr). Fri frakt gäller (≥ 300 kr).", "Ikonraden under knappen är grafik."]
+  },
+  "Overvakningskamera_BOF_2_1": {
+    "former": [
+      { "typ": "platta", "rader": ["30 dagars", "nöjd-kund-garanti", "Inte nöjd? Pengarna tillbaka."], "block": [[0, 1]] },
+      { "typ": "fototext", "rader": ["Fri frakt inom Sverige"] },
+      { "typ": "knapp", "rader": ["Handla nu"] }
+    ],
+    "varning": ["'inom Sverige' stryks; fri frakt gäller i Norge över 300 kr (899 kr)."]
+  },
+  "Overvakningskamera_BOF_1_1": {
+    "former": [
+      { "typ": "platta", "rader": ["799 kr", "istället för 1 000 kr – spara 201 kr"], "stryk_del": { "1": "1 000 kr" } },
+      { "typ": "fototext", "rader": ["Klarna – betala sen · Fri frakt"] },
+      { "typ": "knapp", "rader": ["Handla nu"] }
+    ],
+    "varning": ["Svenskt pris 799/1 000 kr, spara 201 — NO-pris 899 kr (ord. 1 169 kr), spar 270 kr."]
+  },
+  "Overvakningskamera_CO_3_1": {
+    "former": [
+      { "typ": "platta", "rader": ["Gammal kamera vs.", "AI-kamera", "Se skillnaden själv"], "block": [[0, 1]] },
+      { "typ": "band", "rader": ["Två linser, 355° täckning · Ser skillnad på människa och husdjur ·", "30 dagars garanti"], "block": [[0, 1]] },
+      { "typ": "knapp", "rader": ["Handla nu – 799 kr"] }
+    ],
+    "varning": ["Svenskt pris 799 kr — NO-pris 899 kr."]
+  },
+  "Overvakningskamera_BOF_3_1": {
+    "former": [
+      { "typ": "platta", "rader": ["”Tänk om jag inte är", "nöjd?”", "Du har 30 dagars nöjd-kund-garanti — skicka tillbaka", "den, få pengarna."], "block": [[0, 1], [2, 3]] },
+      { "typ": "knapp", "rader": ["Handla nu – 799 kr"] }
+    ],
+    "varning": ["Svenskt pris 799 kr — NO-pris 899 kr.", "Pratbubblan bakom plattan är grafik."]
+  },
+  "Kranskydd_CI_1_1": {
+    "former": [
+      { "typ": "platta", "rader": ["KYLAN ÄR PÅ VÄG."] },
+      { "typ": "band", "rader": ["Skydda kranen innan den fryser — 309 kr"] },
+      { "typ": "knapp", "rader": ["Handla nu →"] }
+    ],
+    "varning": ["Svenskt pris 309 kr — NO-pris 219 kr."]
+  },
+  "Kranskydd_PD_7_1": {
+    "former": [
+      { "typ": "platta", "rader": ["30 dagars öppet köp.", "Ångra dig om du vill.", "Fri frakt, oavsett var i Sverige du bor."] },
+      { "typ": "band", "rader": ["Inte nöjd? Skicka tillbaka inom 30 dagar."] },
+      { "typ": "knapp", "rader": ["Beställ tryggt – 309 kr"] }
+    ],
+    "varning": ["Svenskt pris 309 kr — NO-pris 219 kr.", "'Fri frakt, oavsett var i Sverige du bor' är FALSK i Norge: fri frakt först över 300 kr och produkten kostar 219 kr. Raden måste ersättas med ett sant löfte (t.ex. Klarna/trygg betaling), inte översättas."]
+  }
+}
