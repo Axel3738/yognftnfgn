@@ -1,0 +1,14 @@
+{
+  "_kommentar": "Manuella rutor för det detektorn inte hittar. box = [x0,y0,x1,y1] i pixlar, post = index i den norska formens texter. Mätt ur bilderna 2026-09-05. IBC_CO_1_1: delad före/efter-bild med halvgenomskinlig topplatta över himmel/träd (y 46–317, x 32–1047) och bottenband (y 1190–1281) — detektorn hittade ingen av dem (samma läge som Batmotor_CO_1_1 2026-09-03).",
+  "IBC_CO_1_1": {
+    "box_for_form": {
+      "0": [
+        { "box": [33, 60, 1047, 170], "post": 0, "fet": true, "storlek": 72, "rader": 1, "farg": [20, 18, 16] },
+        { "box": [33, 180, 1047, 300], "post": 1, "fet": true, "storlek": 72, "rader": 1, "farg": [20, 18, 16] }
+      ],
+      "1": [
+        { "box": [33, 1200, 1047, 1275], "post": 0, "fet": false, "storlek": 37, "rader": 1, "farg": [20, 18, 16] }
+      ]
+    }
+  }
+}

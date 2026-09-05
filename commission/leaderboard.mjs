@@ -22,7 +22,7 @@
 //   commission/leaderboard-historik.json — en rad per dygn, ger dagens ökning
 
 import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync } from 'node:fs';
-import { dirname, resolve } from 'node:path';
+import { basename, dirname, resolve } from 'node:path';
 import { hamtaKurs, tillUsd } from './valuta.mjs';
 
 const ROT = resolve(new URL('..', import.meta.url).pathname);
@@ -255,15 +255,31 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     const i = args.indexOf(`--${n}`);
     return i !== -1 && args[i + 1] && !args[i + 1].startsWith('--') ? args[i + 1] : null;
   };
-  const fil = flagga('rapport') ?? senasteRapporten();
-  if (!fil) {
-    console.error('✗ Ingen rapport hittad i commission/korningar/. Kör `node commission/run.mjs` först.');
-    process.exit(1);
+  const vald = flagga('rapport');
+  const senaste = senasteRapporten();
+
+  // run.mjs skriver leaderboard.json vid VARJE körning, även dagar utan
+  // rapportfil. Utan --rapport får den datan aldrig räknas om ur en äldre
+  // rapport — då rullar sidan tillbaka till senaste kördagen. (Hände
+  // 2026-09-05: dag 5 är ingen kördag, sidan visade dag 4.)
+  const befintlig = !vald && existsSync(DATAFIL) ? JSON.parse(readFileSync(DATAFIL, 'utf8')) : null;
+  const rapportDatum = senaste ? basename(senaste, '.json') : null;
+  if (befintlig?.period?.till && (!rapportDatum || befintlig.period.till >= rapportDatum)) {
+    skrivTerminal(befintlig);
+    const sida = byggSida();
+    console.log(`Data: commission/leaderboard.json  (skriven av run.mjs, t.o.m. ${befintlig.period.till})`);
+    console.log(`Sida: ${sida.replace(`${ROT}/`, '')}`);
+  } else {
+    const fil = vald ?? senaste;
+    if (!fil) {
+      console.error('✗ Ingen rapport hittad i commission/korningar/. Kör `node commission/run.mjs` först.');
+      process.exit(1);
+    }
+    const rapport = JSON.parse(readFileSync(fil, 'utf8'));
+    const l = await uppdateraLeaderboard(rapport, rapport.kallor ?? null);
+    skrivTerminal(l);
+    const sida = byggSida();
+    console.log(`Data: commission/leaderboard.json  (ur ${fil.replace(`${ROT}/`, '')})`);
+    console.log(`Sida: ${sida.replace(`${ROT}/`, '')}`);
   }
-  const rapport = JSON.parse(readFileSync(fil, 'utf8'));
-  const l = await uppdateraLeaderboard(rapport, rapport.kallor ?? null);
-  skrivTerminal(l);
-  const sida = byggSida();
-  console.log(`Data: commission/leaderboard.json  (ur ${fil.replace(`${ROT}/`, '')})`);
-  console.log(`Sida: ${sida.replace(`${ROT}/`, '')}`);
 }
