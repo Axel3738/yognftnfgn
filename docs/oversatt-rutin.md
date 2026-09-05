@@ -411,6 +411,6 @@ innan den drar någon slutsats.
 
 - Fast session: `session_017mSZA2oYsnFEtSa723vodp` (källa `Axel3738/yognftnfgn@main`, utgren `main`, skapad 2026-09-05 05:27 UTC MED rutinen som första prompt).
 - Första fasta sessionen (`session_01KFNtDdxzve3tvz84AViU28`) skapades UTAN prompt och startade därför aldrig — triggern som pekade på den väckte i stället en tom session utan repo (2026-09-04 20:13 UTC). En fast session måste ha körts minst en gång innan en trigger kan väcka den. Arkiverad.
-- Trigger: skapad 2026-09-05 (ersätter `trig_014ZMp7iEhxusDgJaYzMRyEu`), cron `0 13 * * *` (15:00 CEST), `persistent_session_id` → sessionen ovan. Id:t står i Routines-vyn.
+- Trigger: `trig_01LRx3gtjQN7bF15bHad4jFj`, cron `0 13 * * *` (15:00 CEST), `persistent_session_id` → sessionen ovan. Axel valde repo (`Axel3738/yognftnfgn`) och connectors (Notion, ADsmanagaer, Google-Drive, Higgsfield, Shopify, Slack) i Routines-vyn 2026-09-05 05:29 UTC — det går inte att sätta via MCP-verktyget, bara i vyn.
 - Första försöket (`create_trigger` med ny session varje gång) startade 2026-09-04 13:15 UTC i en tom container utan repo och raderades. Se varningen i CLAUDE.md under "Nattrutinerna".
 - Varje körning börjar med `git fetch origin main && git checkout main && git reset --hard origin/main` — sessionen lever kvar mellan dagarna, så trädet måste synkas innan kommandot läses.
