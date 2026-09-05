@@ -1,5 +1,28 @@
 # Creative DNA — Damasker Vandring
 
+## Uppdatering 2026-09-05 (`/cs`-feedbackloop, körning nr 2)
+Kampanjen omhämtad (`date_preset: maximum`, sorterad på spend). Lifetime nu:
+7 570 kr spend, 40 köp, ROAS 2,71 (kampanjnivå), dagsbudget oförändrad 1 200 kr.
+
+- **PD_1 är inte längre en preliminär dom.** 34 köp (var 14), CPA 161 kr, ROAS
+  3,32, 5 478,87 kr spend (72 % av kampanjen). Bär >100 % av kampanjens
+  vinstbidrag ensam — resten av kontot är fortsatt netto-förlust. **PD
+  (demo/problem)-vinkeln flyttas härmed till bevisad, inte preliminär.**
+- **SP_2 passerade signifikansgrinden för första gången** (847,74 kr, 4 köp,
+  ROAS 1,84 — lönsam, över BE-ROAS 1,60 men under target). Detta **nyanserar**
+  (ersätter inte helt) förra körningens hypotes om att SP:s vaga påstående
+  gjorde vinkeln svag: SP är nu en bekräftad men svagare presterare, inte en
+  förlorare. Se `batch-log.md` 2026-09-05 för isoleringstestet
+  (`Damasker_SP_4_H1`) som testar om specificitet förklarar skillnaden.
+- **PD_2 (samma copy som PD_1) har 369 kr spend men 0 köp** — under
+  köpgränsen för en dom, men värt att bevaka: identisk copy garanterar inte
+  identiskt utfall (kan bero på placering/tajming, inte creativen).
+- **Batch #2:s 18 briefer (2026-09-02) är fortfarande olaunchade i Meta** 3
+  dagar efter leverans — 9 video står i Notion-status `Creative strat review`,
+  9 bilder i `Draft`. Ingen ny creative-teardown möjlig på dem denna körning.
+- Recension-koll omkörd (WebFetch, 2026-09-05): fortsatt "No reviews" —
+  samma slutsats som 2026-09-02, ingen review-static byggd.
+
 Skapad 2026-09-02 av `/forsta-batch` (körning nr 1, flaggad av `agent/rond.mjs`
 som `forsta_batch`-behov samma dag). Datakälla: MagiBorsten `1867947880635861`,
 kampanj `120250009391470291` ("Damasker Vandring | BE ROAS 1.60 | Launch
@@ -83,6 +106,10 @@ nettoförlust som PD_1 täcker upp för. PD_1 bär 14 av 16 köp (87,5 %).
 | Damasker_PD_3, SP_1, CS_2/3/2_1, G_1/2/3/2_1, PD_2_1 | – | – | 0–42 kr vardera | 0 | – | – | CBO-svält, aldrig fått en chans (≈187 kr totalt) |
 
 ## Winning DNA
+0. **(2026-09-05) SP (social proof) är inte längre "obevisad/svag" — den är
+   bekräftat lönsam men svagare än PD** (SP_2: 4 köp, ROAS 1,84, se
+   uppdateringen ovan). Nästa avläsning avgör om `Damasker_SP_4_H1`:s
+   specifika/falsifierbara scenario stänger gapet till PD eller inte.
 1. **PD (demo/problem)-vinkeln är produktens bevisade angle** — inte SP
    (social proof), vilket är motsatsen till mönstret hos Kranskydd Frost
    420D (där SP vann). **Varje produkt har sin egen vinnare — vinklar
