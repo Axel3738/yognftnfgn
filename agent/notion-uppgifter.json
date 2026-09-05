@@ -3,7 +3,7 @@
 
   "VARNING_LAS_DETTA_FORST": "Hittar du inget i en databas betyder det INTE att det inte finns arbete. Det betyder att du letat pa ett stalle. Sag alltid VILKA kallor du kollat, och foresla den du inte kollat. Pasta aldrig att nagot inte finns.",
 
-  "uppdaterad": "2026-09-04",
+  "uppdaterad": "2026-09-05",
   "kalla": "Notion MCP, direktfrågor (SQL) mot creative hub-collectionernas data sources + notion-search + notion-fetch",
   "VARNING_FARSKHET": "Ogonblicksbild. Notion andras hela tiden. Ar uppdaterad mer an nagra dagar gammalt: sag det och hamta om.",
 
@@ -20,37 +20,37 @@
       "Has gotten over 2000 sek spend": "Passerat domgransen.",
       "Products": "Produktbiblioteket, inte aktivt arbete."
     },
-    "re_fragad_2026_09_04": "Ja, fullt svep mot databas 1 idag (SQL WHERE Status IN Ads review/Ready to launch/In progress/Testing).",
     "vantar_pa_axel": [
-      { "namn": "Bordtennisnät Infällbart", "status": "Ads review", "not": "Kampanjen STÄNGDES AV i Meta av rond-auto idag (trappan, ingen potential) — hubben/arbetet ligger ändå kvar här." },
       { "namn": "Kamouflagetejp 3-pack", "status": "Ads review" },
       { "namn": "5.1 Luffarschack i Trä", "status": "Ads review" },
       { "namn": "5.1 Magnethylla Tvättmaskin/Kylskåp", "status": "Ads review" },
-      { "namn": "5.1 Sömnadskit 104 Delar", "status": "Ads review" },
-      { "namn": "5.1 Kasta & Fånga-set", "status": "Ads review", "not": "Kampanjen STÄNGDES AV i Meta av rond-auto idag (trappan, potentialkollen föll)." },
-      { "namn": "5.1 Medicinask i Fickformat", "status": "Ads review", "not": "Kampanjen STÄNGDES AV i Meta av rond-auto idag (trappan, potentialkollen föll)." },
-      { "namn": "5.1 Magnetplattor i Storformat 46/60", "status": "Ads review", "not": "Kampanj kör fortsatt i Meta SE (120250069623310291)." },
-      { "namn": "5.1 Motocentric Bakväska 37 L", "status": "Ads review", "not": "Kampanj kör i Meta SE (120250069711040291)." },
-      { "namn": "5.1 Arbetslampa för Makita-batteri", "status": "Ads review", "not": "Ny kampanj, launch 2026-09-04 (120250083675400291)." },
-      { "namn": "5.1 Pälsborste till Dyson-dammsugare", "status": "Ads review", "not": "NY sedan 2026-09-03 — syns inte i produktkartan eller Meta ännu, obehandlad." },
+      { "namn": "5.1 Medicinask i Fickformat", "status": "Ads review", "not": "Kampanjen stängdes av i Meta av en tidigare rond-auto-körning (trappan, potentialkollen föll)." },
+      { "namn": "5.1 Magnetplattor i Storformat 46/60", "status": "Ads review", "not": "Kampanjen STÄNGDES AV i Meta idag (rond-auto, trappan — ingen potential på annonsnivå). Kampanj-id 120250069623310291." },
+      { "namn": "5.1 Kasta & Fånga-set", "status": "Ads review", "not": "Kampanjen stängdes av i Meta av en tidigare rond-auto-körning (trappan, potentialkollen föll)." },
+      { "namn": "5.1 Motocentric Bakväska 37 L", "status": "Ads review", "not": "Kampanjen STÄNGDES AV i Meta idag (rond-auto, trappan — ingen potential på annonsnivå). Kampanj-id 120250069711040291." },
+      { "namn": "5.1 Arbetslampa för Makita-batteri", "status": "Ads review", "not": "Kampanj kör i Meta SE (120250083675400291), launch 2026-09-04." },
+      { "namn": "5.1 Veckodosett 21 Fack", "status": "Ads review", "not": "NY sedan 2026-09-04 — syns inte i produktkartan eller Meta ännu, obehandlad." },
+      { "namn": "5.1 3D-sandbild 20 cm", "status": "Ads review", "not": "Ny kampanj launchad i Meta SE idag (120250100694780291), tillagd i produktkartan som test." },
+      { "namn": "5.1 Diskställ i Två Våningar", "status": "Ads review", "not": "Flyttad hit från 'In progress' sedan igår. Syns inte i produktkartan eller Meta ännu." },
+      { "namn": "5.1 Glasspints med Lock 2-pack", "status": "Ads review", "not": "Flyttad hit från 'In progress' sedan igår. Ny kampanj launchad i Meta SE idag (120250100745300291), tillagd i produktkartan som test." },
+      { "namn": "5.1 Pälsborste till Dyson-dammsugare", "status": "Ads review", "not": "Ny kampanj i Meta NO (Pelsbørste NO, 120252077611670233), tillagd i produktkartan som test. NO får aldrig briefer." },
       { "namn": "animal pillow Beware this product is for twinpillow", "status": "Ready to launch", "not": "EJ Bäverbutiken — tillhör Twinpillow. Ignorerad." }
     ],
     "i_progress": [
-      { "namn": "5.1 Diskställ i Två Våningar", "status": "In progress", "not": "NY sedan 2026-09-03 — syns inte i produktkartan eller Meta ännu, obehandlad." },
-      { "namn": "5.1 Glasspints med Lock 2-pack", "status": "In progress", "not": "NY sedan 2026-09-03 — syns inte i produktkartan eller Meta ännu, obehandlad." },
+      { "namn": "5.1 Bänkhylla med Utdragbar Korg", "status": "In progress", "not": "HELT NY sedan igår — syns inte i produktkartan eller Meta ännu, obehandlad." },
       { "namn": "Grill cover BEWARE: This product is for grillkliniken.se", "status": "Testing", "not": "EJ Bäverbutiken — tillhör Grillkliniken. Ignorerad." }
     ],
     "i_testing": [
-      "Anti freeze cover for water tap", "Badshorts med Skämttryck", "Boxboll",
+      "Anti freeze cover for water tap", "Badshorts med Skämttryck",
       "Bälteslipmaskin Mini 3-i-1", "Båtmotorskydd 420D", "Cykelshorts Herr",
       "Cykelshorts Herr – Vadderade med Kompression",
-      "Damasker Vandring", "Dörrbottensäkringsremsor", "Första hjälpen kit",
+      "Damasker Vandring", "Första hjälpen kit",
       "Gravstenspenna", "IBC-tanköverdrag", "Jättefotboll",
-      "Linupprullare Aluminium", "motorcycle cover", "Plyschtofflor Herr",
-      "Smiley face trash can stickers", "Vandringskängor Herr – Lätta med Tjock Sula",
+      "motorcycle cover", "Plyschtofflor Herr",
+      "Vandringskängor Herr – Lätta med Tjock Sula",
       "Övervakningskamera Trådlös – Dubbellins PTZ med AI-Spårning"
     ],
-    "andrat_sedan_igar": "3 HELT NYA produkter dök upp i testcentret sedan gårdagens (2026-09-03) fil: '5.1 Diskställ i Två Våningar' och '5.1 Glasspints med Lock 2-pack' (In progress), '5.1 Pälsborste till Dyson-dammsugare' (Ads review) — inga av dem i produktkartan eller Meta ännu, ren Josh/Annabelle-produktion. Gravstenspennan och Soptunneklistermärkena har nu EGNA creative hubs (se databas_2) — SAKNAS_HUB-listan från igår är tom idag."
+    "andrat_sedan_igar": "3 NYA sedan igår: '5.1 Veckodosett 21 Fack' och '5.1 3D-sandbild 20 cm' (Ads review), '5.1 Bänkhylla med Utdragbar Korg' (In progress). '5.1 Diskställ i Två Våningar' och '5.1 Glasspints med Lock 2-pack' flyttade från In progress till Ads review. 'Bordtennisnät Infällbart' och '5.1 Sömnadskit 104 Delar' finns inte längre i Ads review-listan (troligen statusändrade/launchade, ej verifierat var de tog vägen — flagga om Axel undrar). Linupprullare, Dörrbottensäkringsremsor, Boxboll och Cykelshorts Herr–Vadderade försvann ur i_testing-listan sedan igår utan att synas i Ads review — inte verifierat vart, flaggas här hellre än gissas."
   },
 
   "databas_2_creative_hubs": {
@@ -59,109 +59,101 @@
     "levande": [
       {
         "namn": "Belt grinder creative hub",
-        "produkt": "Balteslipmaskinen",
+        "produkt": "Bälteslipmaskinen",
         "collection": "collection://a1d270ab-908c-82e2-b3be-07b523257509",
-        "drafts": 0,
-        "under_granskning_eller_senare": 15,
-        "not": "Oförändrat sedan igår — 0 drafts, redo för ny runda om cadensen tillåter."
+        "drafts": 9,
+        "drafts_video": 3,
+        "drafts_bild": 6,
+        "not": "9 nya drafts idag (0→9): brief-runda #4 (3 video + 1 bild + 3 BOF + 2 review) via /cs. Hubben ligger privat (tomt ancestor-path) — flagga till Axel."
       },
       {
         "namn": "Kranskydd Frost 420D creative hub",
         "produkt": "Kranskydd Frost 420D",
         "collection": "collection://088270ab-908c-8269-bd9d-87564d1dc9b6",
-        "drafts": 0,
-        "under_granskning_eller_senare": 15,
-        "not": "0 drafts. Kampanjen (NO-versionen Kranbeskyttelse Frost) skalades igen idag av rond-auto (1650→1950 kr, ROAS 3,07)."
-      },
-      {
-        "namn": "Fish rod holder",
-        "produkt": "Fiskespöhållaren (SE)",
-        "collection": "collection://3c3270ab-908c-8356-ad6c-87ff779e647d",
         "drafts": 9,
         "drafts_video": 3,
         "drafts_bild": 6,
-        "under_granskning_eller_senare": 48,
-        "not": "9 nya Draft-rader sedan igår (3 video Approved-kön väntar, 6 bild). annonsbehov flaggade 'brief_runda' igen idag men behovet hann inte hanteras denna körning — se svaret till Axel."
-      },
-      {
-        "namn": "Men's Plush Slippers creative hub",
-        "produkt": "Plyschtofflorna Herr",
-        "collection": "collection://f88270ab-908c-83bc-963b-87f43fd99e61",
-        "drafts": 0,
-        "not": "Fortfarande TOM. Kampanjen är avstängd sedan tidigare — ligger inte i SE-annonsbehov."
+        "not": "9 nya drafts idag (0→9): brief-runda via /cs (3 video + 1 bild + 3 BOF + 2 review). Hubben ligger privat (tomt ancestor-path)."
       },
       {
         "namn": "Surveillance Camera creative hub",
         "produkt": "Övervakningskameran",
         "collection": "collection://3b6270ab-908c-8366-a085-8705d1a9f4ef",
-        "drafts": 4,
+        "drafts": 5,
         "drafts_video": 4,
-        "drafts_bild": 0,
-        "under_granskning_eller_senare": 11,
-        "not": "4 nya video-drafts sedan igår. annonsbehov flaggar INTE idag (VANTA_KADENS på budgeten, ingen ny brief_runda-rad i dagens SE-lista)."
+        "drafts_bild": 1,
+        "not": "Oförändrat sedan igår (rördes inte av dagens brief-rundor)."
       },
       {
         "namn": "IBC Tank Cover creative hub",
         "produkt": "IBC-Tanköverdraget",
         "collection": "collection://5ad270ab-908c-837f-b001-87c077b043cb",
-        "drafts": 0,
-        "under_granskning_eller_senare": 4,
-        "not": "0 drafts vid svepets start. annonsbehov flaggade 'brief_runda' (6 annonser, Fokus: mata vinnaren) — hanteras separat av /cs-flödet i denna körning, se svaret till Axel för utfall."
+        "drafts": 4,
+        "drafts_video": 4,
+        "drafts_bild": 0,
+        "not": "Oförändrat sedan igår (rördes inte av dagens brief-rundor — flaggades tidigare men ingick inte i dagens annonsbehov-lista)."
       },
       {
         "namn": "Fish rod holder NO creative hub",
         "produkt": "Fiskespöhållaren NO",
         "collection": "collection://c21270ab-908c-8247-9160-8793a8116601",
-        "drafts": 6,
-        "drafts_video": 6,
-        "drafts_bild": 0,
-        "not": "Oförändrat sedan igår. NO får aldrig egna briefer (Axel 2026-09-01) — rörs inte av rond-auto."
+        "not": "Ej omfetchad idag. NO får aldrig egna briefer (Axel 2026-09-01) — rörs inte av rond-auto."
       },
       {
         "namn": "Motorcycle Cover creative hub",
         "produkt": "MC-Kapellet",
         "collection": "collection://632270ab-908c-8307-a318-873192ba664a",
-        "drafts": 6,
-        "drafts_video": 6,
-        "drafts_bild": 0,
-        "not": "Oförändrat sedan igår."
+        "drafts": 11,
+        "drafts_video": 5,
+        "drafts_bild": 6,
+        "not": "11 drafts (upp från 6): brief-runda #2 via /cs (3 video + 1 bild + 3 BOF + 2 review). CS_2_1 flyttad till bevisad Winning DNA. Hubben ligger privat."
       },
       {
         "namn": "Boat motor cover creative hub",
         "produkt": "Båtmotorskyddet 420D",
         "collection": "collection://1dc270ab-908c-836b-a048-073bfaa48353",
-        "drafts": 9,
-        "drafts_video": 9,
-        "drafts_bild": 0,
-        "not": "9 videodrafts (upp från 5 igår), plus 15 i 'SE-ACTIVE to be translated'/'Translation in review'. Produkten skalades igen idag (1650→1950 kr, ROAS 3,25, snabbspår) men fick ingen ny brief_runda-flagga i dagens SE-annonsbehov."
+        "drafts": 11,
+        "drafts_video": 4,
+        "drafts_bild": 7,
+        "not": "11 drafts (upp från 9): brief-runda #2 via /cs (4 video + 2 bild + 3 BOF + 2 review). 0 av 9 videokoncept från batch #1 producerade ännu — flaskhals i produktion. Hubben ligger privat."
       },
       {
         "namn": "Gravstenspenna creative hub",
         "produkt": "Gravstenspennan",
         "collection": "collection://fea270ab-908c-83f2-b390-874797ca5497",
-        "drafts": 4,
+        "drafts": 3,
         "drafts_video": 3,
-        "drafts_bild": 1,
-        "under_granskning_eller_senare": 3,
-        "not": "Hubben existerade redan (byggd 2026-09-03, missad i förra filens SAKNAS_HUB-lista då den inte omfördragits). Kampanjen STÄNGDES AV av rond-auto idag (trappan, potentialkollen föll) — hubbens 4 drafts väntar ändå kvar."
+        "drafts_bild": 0,
+        "not": "Oförändrat sedan igår. Kampanjen STÄNGDES AV av rond-auto idag (trappan, potentialkollen föll) — hubbens drafts väntar ändå kvar, ingen ny brief byggd (arAvstangd-spärren)."
       },
       {
         "namn": "Smiley face trash can stickers creative hub",
         "produkt": "Soptunneklistermärkena",
         "collection": "collection://b38270ab-908c-821f-ae45-070db1386be4",
-        "drafts": 9,
+        "drafts": 3,
         "drafts_video": 3,
-        "drafts_bild": 6,
-        "not": "Hubben existerade redan (byggd 2026-09-03, missad i förra filens SAKNAS_HUB-lista). Kampanjen kör vidare (LAT_VARA idag, ROAS över break-even)."
+        "drafts_bild": 0,
+        "not": "Oförändrat sedan igår (rördes inte av dagens brief-rundor — kampanjen fick SANK via livstidsspärren idag, ingen brief_runda-flagga)."
+      },
+      {
+        "namn": "Damasker vandring",
+        "produkt": "Damasker Vandring",
+        "collection": "collection://7bf270ab-908c-8298-85aa-07f256f21f07",
+        "drafts": 16,
+        "drafts_video": 3,
+        "drafts_bild": 13,
+        "not": "NY UPPTÄCKT idag — fanns inte i tidigare filer (hittades via notion-search på produktnamnet, inte på 'creative hub' eftersom titeln saknar den frasen). Batch #3 briefad idag (3 video + 1 bild + 3 BOF, 0 review — inga recensioner finns). ⚠️ Hubben ligger PRIVAT på workspace-nivå (tomt ancestor-path vid direktfetch) — flytta till teamspacet Bäverbutiken."
       }
     ],
     "arkiverade": [
       "Beach crocs (strandtofflorna)", "Mower seat (satesoverdragaren)",
-      "Trimmer belt (axelbaltet)", "Boat cover 420D"
+      "Trimmer belt (axelbaltet)", "Boat cover 420D",
+      "Fish rod holder (Fiskespöhållaren SE) — NYTT idag, var levande igår med 9 drafts",
+      "Men's Plush Slippers creative hub (Plyschtofflorna Herr) — NYTT idag, var levande igår med 0 drafts"
     ],
     "SAKNAS_HUB": [],
-    "andrat_sedan_igar": "SAKNAS_HUB tom idag — Gravstenspenna creative hub och Smiley face trash can stickers creative hub, som gårdagens fil (2026-09-03) listade som saknade, visade sig redan finnas (byggda 2026-09-03 men inte omfetchade förrän idag). Fish rod holder fick 9 nya drafts, Surveillance Camera 4, Boat motor cover 4 (5→9). Belt grinder, Kranskydd Frost 420D, IBC Tank Cover, Fish rod holder NO, Motorcycle Cover oförändrade. 3 helt nya produkter i databas 1 (Diskställ, Glasspinnar, Pälsborste) — se databas_1.",
-    "sok_tips": "Sok ALDRIG bara pa 'creative hub'. Hubben for fiskespohallaren heter bara 'Fish rod holder' och missas da helt. Andra icke-Bäver-hubbar finns i samma sökning ('Matstrumpor creative hub', 'Creative hub prank apron', 'Creative hub golf grill kit', 'Creative hub MALL', 'Creative Hub master') — de hör inte till Bäverbutiken/produktkartan och ska aldrig räknas in. Sök ALLTID också brett med notion-search per produktnamn — en hub kan finnas trots att en tidigare körning inte hittade den (se Gravstenspenna/Smiley face idag)."
+    "andrat_sedan_igar": "Två hubbar ARKIVERADES sedan igår: 'Fish rod holder' (Fiskespöhållaren SE, hade 9 drafts igår) och 'Men's Plush Slippers creative hub' (Plyschtofflorna Herr). En NY hub upptäcktes: 'Damasker vandring' (fanns redan i Notion sedan tidigare batcher, men missades i tidigare svep eftersom titeln inte innehåller 'creative hub' — samma fallgrop som Fish rod holder). Fem brief-rundor kördes idag via /cs (Bälteslipmaskinen, Kranskydd Frost 420D, MC-Kapellet, Båtmotorskyddet 420D, Damasker Vandring) och la till sammanlagt 40 nya drafts. Genomgående mönster i alla fem: Notion-hubbens <ancestor-path> är tom (ligger privat på workspace-nivå) — det gäller nu ALLA nio kända levande SE-hubbar utom möjligen de allra äldsta, inte bara nya. Genomgående mönster nummer två: inget Agent/Task-verktyg med model-parameter var tillgängligt för någon av de fem parallella CS-agenterna, så all copy skrevs av huvudagenten i varje körning i stället för en sonnet/haiku-subagent (modellpolicyn i CLAUDE.md regel 6 kunde inte följas tekniskt denna körning).",
+    "sok_tips": "Sok ALDRIG bara pa 'creative hub'. Hubben for fiskespohallaren heter bara 'Fish rod holder', och Damasker Vandrings hub heter bara 'Damasker vandring' — bada missas av en sokning pa bara frasen 'creative hub'. Andra icke-Bäver-hubbar finns i samma sökning ('Matstrumpor creative hub', 'Creative hub prank apron', 'Creative hub golf grill kit', 'Creative hub MALL', 'Creative Hub master') — de hör inte till Bäverbutiken/produktkartan och ska aldrig räknas in. Sök ALLTID också brett med notion-search per produktnamn — en hub kan finnas trots att en tidigare körning inte hittade den. Kontrollera is_archived med notion-fetch direkt på collection-URL:en, inte bara närvaro i sökresultat — notion-search visar bara live (icke-arkiverade) sidor som default, så en hub som försvinner från sökresultat jämfört med igår är arkiverad, inte borttagen."
   },
 
   "dod_data": "dashboard/data/tasks.json ar fran 2026-08-06 och varenda rad tillhor produkter som inte kors langre. Anvand den aldrig for att svara om arbete.",
