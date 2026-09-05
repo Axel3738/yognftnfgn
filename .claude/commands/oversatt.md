@@ -141,7 +141,7 @@ lägger den norska cuen där med vit ruta/svart text — bara under de frames d�
 svenska pillret faktiskt syns (ingen lucklös förlängning). Övriga element: `blur`-rutor
 med tid, och PNG-lager (PIL) med vit/kräm platta + norsk text i samma ruta som den
 svenska. Slutkortets telefon byggs om ur sista framen (ordmärke, titel, badge, pris,
-jämförpris). Facit: `market-expansion/no/notion-batches/2026-09-05-video2/lager.py`
+jämförpris). Facit: `market-expansion/no/notion-batches/2026-09-05-video-batmotor/lager.py`
 (mått och tider per video, mätta ur `frames/`). Piller på vitt kollage (recensionskort)
 går inte att hitta automatiskt — mät för hand och ge `captions.fyll`.
 
