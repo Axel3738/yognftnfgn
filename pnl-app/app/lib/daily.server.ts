@@ -119,7 +119,7 @@ export async function readDaily(shop: string, from: string, to: string): Promise
  * summeringen kan fylla på ANDRA butikers dagar utan att någon öppnar deras
  * panel: alla tjänster delar databas, och nycklarna ligger i Session-tabellen.
  */
-function adminFromToken(shop: string, accessToken: string) {
+export function adminFromToken(shop: string, accessToken: string) {
   return {
     graphql: (query: string, opts?: { variables?: unknown }) =>
       fetch(`https://${shop}/admin/api/${API_VERSION}/graphql.json`, {
