@@ -39,3 +39,5 @@ Blocket brukar lyfta efter 60–80 min. `verifiera.py` skriver aldrig om en häm
 1. 601100910111663 spinnarbyggsats · 2. 601099528972078 täljkit · 3. 601099516094068 eldblåsare
 4. evergreen-agentens topp 3 (inväntas) · 5. 601099667428425 tornsits · 6. 601101587576926 sopkärlslocklås
 7. 601103248788835 hängrännesats · 8. 601105758637623 bilspöhållare sugkopp (bara om bättre listning hittas)
+- **Kopplingskamera trådlös** (601099523116633-familjen 90–107 USD): Amazon.se MHCABSR **1 049,99 kr**; Prylstaden 895; Camping4u 1 995. Temu-priserna ger landad 937–1 314 = över taket. → WATCH tills en listning ≤ 28 USD finns.
+- **Evergreen-jakten:** 0 av 18 klarar alla gater — Biltema/Jula/Clas + Fyndiq/Amazon äger bil/släp/garage/hund-tillbehören. Publik läst: 1 341 430 släpvagnar i trafik, 4 977 791 personbilar (Trafikanalys 2024/25).
