@@ -1,7 +1,10 @@
 #!/usr/bin/env node
-// notion-fil.mjs — hämtar hem bilagorna från en Notion-rad så de går att QA:a och
-// ladda upp. /bildannonser lagger bilden i "Filer och media"; bildannonser/output/
-// ar gitignorerat och dor med containern, sa den har bilagan ar enda kopian.
+// notion-fil.mjs — hämtar hem creativen från en Notion-rad så den går att QA:a och
+// ladda upp. Två vägar, i ordning:
+//   1. Bilaga i "Filer och media" (/bildannonser lagger bilden dar; bildannonser/
+//      output/ ar gitignorerat och dor med containern, sa bilagan ar enda kopian).
+//   2. Drive-mapp lankad sist i sidans kropp ("Link for approval: …") — sa levererar
+//      redigerarna sina videor. Hamtas publikt via Drives export-URL.
 //
 //   node tools/notion-fil.mjs <page-id> [--ut <mapp>]
 //
@@ -16,7 +19,10 @@
 
 import { mkdirSync, existsSync } from 'node:fs';
 import { join, extname } from 'node:path';
-import { hämtaFil } from './notion-kalla.mjs';
+import { execFileSync } from 'node:child_process';
+import { hämtaFil, driveLankarIKropp } from './notion-kalla.mjs';
+
+const ROT = new URL('..', import.meta.url).pathname;
 
 const args = process.argv.slice(2);
 const flagga = (n, s = null) => {
@@ -50,7 +56,57 @@ const filer = Object.values(sida.properties ?? {})
   })))
   .filter(f => f.url);
 
-if (!filer.length) dö(`Raden "${titel}" har ingen fil i "Filer och media" — inget att hämta.`);
+// Ingen bilaga: redigerarnas videor ligger i en Drive-mapp lankad sist i sidan
+// ("Link for approval: …"). Sidan bar aven brief-mappen, sa lankarna provas sista
+// forst och den forsta med media vinner. Hamtas via Drives publika export-URL.
+if (!filer.length) {
+  const lankar = await driveLankarIKropp(pageId);
+  if (!lankar.length) dö(`Raden "${titel}" har varken fil i "Filer och media" eller Drive-länk i sidan — inget att hämta. Fråga redigeraren.`);
+  let hittade = [];
+  for (const k of lankar) {
+    if (k.typ === 'fil') { hittade = [{ id: k.id, titel: `${titel}.mp4` }]; break; }
+    let rader = [];
+    try {
+      rader = execFileSync('python3', [`${ROT}tools/drive-ls.py`, k.id], { encoding: 'utf8', timeout: 60000 })
+        .trim().split('\n').filter(Boolean).map(r => { const [typ, id, ...t] = r.split('\t'); return { typ, id, titel: t.join('\t') }; });
+    } catch { continue; }
+    hittade = rader.filter(r => r.typ === 'fil' && /\.(mp4|mov|m4v|jpg|jpeg|png)$/i.test(r.titel));
+    if (hittade.length) break;
+  }
+  if (!hittade.length) dö(`Raden "${titel}": Drive-länk finns (${lankar.map(k => k.id).join(', ')}) men ingen video i mappen — inte klar.`);
+  let m = 0;
+  for (const f of hittade) {
+    const bas = hittade.length > 1 ? `${titel}_${++m}` : titel;
+    const mål = join(ut, `${bas.replace(/[^\w åäöÅÄÖ.-]/g, '_')}${extname(f.titel) || '.mp4'}`);
+    try {
+      await hämtaDrive(f.id, mål);
+      console.log(mål);
+    } catch (e) {
+      dö(`${titel}: ${e.message}`);
+    }
+  }
+  process.exit(0);
+}
+
+/** Publik Drive-nedladdning. Stora filer far en "virus scan"-sida i stallet for
+ *  bytes — da hamtas om via usercontent-vagen med confirm=t. */
+async function hämtaDrive(id, mål) {
+  const { writeFileSync } = await import('node:fs');
+  const försök = [
+    `https://drive.google.com/uc?export=download&id=${id}`,
+    `https://drive.usercontent.google.com/download?id=${id}&export=download&confirm=t`,
+  ];
+  for (const url of försök) {
+    const res = await fetch(url, { redirect: 'follow' });
+    if (!res.ok) throw new Error(`Drive svarade ${res.status} för ${id}`);
+    const typ = res.headers.get('content-type') || '';
+    const buf = Buffer.from(await res.arrayBuffer());
+    if (/text\/html/i.test(typ)) continue;            // bekraftelsesida, prova nasta vag
+    writeFileSync(mål, buf);
+    return mål;
+  }
+  throw new Error(`Drive gav bara en bekräftelsesida för ${id} — filen är för stor eller inte publik.`);
+}
 
 let n = 0;
 for (const f of filer) {

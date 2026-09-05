@@ -640,8 +640,13 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   görs om. Det betyder INTE "längre kommen". Full tabell i `docs/os/NOTION-FORMAT.md`.
 - **En färdig creative ligger i Notion. Bara där.** (Axels beslut 2026-09-02.)
   Klar = rad i vilken databas som helst under teamspacet Bäverbutiken med status
-  `To be Reviewed` och fil i `Filer och media` — video från redigerarna såväl som
-  bild från `/bildannonser`. Inget krav på Typ eller hubbnamn för `/notionkorning`.
+  `To be Reviewed`. Inget krav på Typ eller hubbnamn för `/notionkorning`.
+  **Filen ligger på två olika ställen beroende på typ:** bild = bilaga i
+  `Filer och media`; **video = Drive-mapp länkad sist i sidans kropp**
+  (`Link for approval: …`) — redigerarna bifogar aldrig i `Filer och media`.
+  *(Incident 2026-09-05: kravet "fil i Filer och media" hoppade tyst över 16
+  färdiga videor medan rutinen rapporterade "allt klart".)* En rad utan
+  någotdera rapporteras som "väntar på fil", aldrig tyst.
   Drive `Edited Folder/Week N/` är inte längre en källa för `/notionkorning`
   (`leveranskon.mjs --drive` finns kvar för gamla mappar). Allt i `To be Reviewed`
   har aldrig legat uppe i Meta, så ingen avstämning mot kontot behövs för att

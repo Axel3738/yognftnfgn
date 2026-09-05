@@ -34,11 +34,24 @@ Beslut 2026-08-30, uppdaterade 2026-09-02:
 
 1. **Källan är Notion. Bara Notion. Hela teamspacet Bäverbutiken.** Klar = en rad
    i **vilken databas som helst under teamspacet Bäverbutiken**
-   (`3a9270ab-908c-81a8-a48c-004222d195e7`) med status **`To be Reviewed`** och en
-   fil i `Filer och media`. Det gäller **både video och bild**, och det kräver
-   ingen särskild Typ och inget särskilt hubbnamn. Redigerarna lägger sina videor
-   där; `/bildannonser` lägger bilderna där 20:00 varje kväll. Nya databaser i
-   teamspacet kommer med av sig själva.
+   (`3a9270ab-908c-81a8-a48c-004222d195e7`) med status **`To be Reviewed`**. Det
+   gäller **både video och bild**, ingen särskild Typ, inget särskilt hubbnamn.
+   Nya databaser i teamspacet kommer med av sig själva.
+
+   **Själva filen ligger på ett av två ställen — läs BÅDA:**
+   - **Bild:** bilaga i radens `Filer och media` (`/bildannonser` lägger den där 20:00).
+   - **Video:** en **Drive-mapp länkad sist i sidans kropp** — redigerarna skriver
+     `Link for approval: <Drive-länk>` eller `Finished Ad — <Drive-länk>`. De
+     bifogar **aldrig** i `Filer och media`. Sidan bär också brief-mappen
+     (`Brief in Drive`, `Drive folder`) — den är inte leveransen. Rätt mapp är
+     den som innehåller en videofil.
+   - **Varken eller** = raden är inte klar. Den ska **synas i rapporten** som
+     "väntar på fil" och gå till `#problem-and-revisions-ads` — aldrig försvinna.
+
+   ⚠️ *Incident 2026-09-05: rutinen krävde fil i `Filer och media` och hoppade
+   över 16 färdiga videor i `To be Reviewed` — tyst, medan den rapporterade
+   "allt klart". Alla bildannonser gick upp, ingen video. `leveranskon.mjs` och
+   `notion-fil.mjs` läser sedan dess Drive-länken i sidan.*
    Drive `Edited Folder/Week N/` är **inte längre en källa** (Axel 2026-09-02).
    Andra teamspaces (Grillkliniken, Matstrumpor, Ploomi) läses aldrig.
 
@@ -178,8 +191,12 @@ misstag den dag någon slår på kampanjen igen.
 finns för att kringgå den — **använd den aldrig i rutinen**, bara när Axel
 uttryckligen ber om det i en chatt.
 
-En rad utan fil i `Filer och media` är **inte klar** — `leveranskon.mjs` hoppar
-över den. Den syns inte i kön och rapporteras inte.
+En rad i `To be Reviewed` **utan bilaga och utan Drive-länk** är inte klar.
+`leveranskon.mjs` listar den ändå, märkt `VÄNTAR PÅ FIL` — ta med den i
+rapporten och i `#problem-and-revisions-ads`, fråga redigeraren. Samma sak när
+Drive-länken finns men mappen är tom. **Räkna alltid:** antal rader i
+`To be Reviewed` per hub ska vara lika med uppladdade + stoppade + väntar på fil.
+Stämmer inte summan har något hoppats över — leta upp det innan rapporten.
 
 Ladda ner varje creative till scratchpad. Radera media mellan produkterna.
 
@@ -411,6 +428,8 @@ löser själv nästa natt.
 
 ## DEFINITION OF DONE
 - [ ] Kön hämtad ur Notion: alla databaser i teamspacet Bäverbutiken, status `To be Reviewed`, video och bild
+- [ ] Videorna hämtade ur Drive-länken i sidan (`Link for approval`), inte bara `Filer och media`
+- [ ] Summan stämmer per hub: rader i `To be Reviewed` = uppladdade + stoppade + väntar på fil
 - [ ] Notion faktiskt läst (annars: larmet högst upp i rapporten, och i `#problem-and-revisions-ads`)
 - [ ] Rader döda i `To be Reviewed` >24h räknade och rapporterade
 - [ ] Hela Bäverbutiken täckt, inte bara de fyra i products.json
