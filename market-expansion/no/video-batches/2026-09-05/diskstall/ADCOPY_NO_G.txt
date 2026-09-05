@@ -1,0 +1,10 @@
+MESSAGE: 🎁 Leter du etter en gave hun faktisk kommer til å bruke?
+Oppvaskstativet i to etasjer gjør det første kjøkkenet hennes ryddig, uten å ta over benken.
+✅ Dobler tørkeflaten – hele oppvasken på ett sted
+✅ Tar minimalt med plass på en liten benk
+✅ 30 dagers åpent kjøp
+Se ansiktet hennes lyse opp når hun åpner den 🎀
+HEADLINE: Gaven hun faktisk bruker
+DESCRIPTION: 789 kr – dobler tørkeflaten på kjøkkenet hennes.
+IMAGE_PROMPT: Use the uploaded product photo of the two-tier dish drying rack, keep the product exactly the same, unaltered. Photorealistic, warm lifestyle photo: the dish rack placed in a small, bright first-apartment kitchen, styled with a soft ribbon or small gift tag resting beside it on the counter (no gift wrap covering the product itself — product must stay clearly visible and unchanged). Gentle golden-hour light, cozy and heartfelt mood, tidy modern kitchen background. Leave clear empty space in the upper portion of the image for an emotional headline and in the lower portion for a short line and button. Soft, warm color grading, scroll-stopping but tender emotional tone, no text baked into the image.
+ON_IMAGE_TEXT: Den perfekte gaven til henne som nettopp har flyttet hjemmefra. / Se ansiktet hennes lyse opp når hun åpner den. / [ Gi bort glede i dag ]

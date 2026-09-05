@@ -1,0 +1,10 @@
+MESSAGE: ⚡ Kun i dag: 23 % rabatt på oppvaskstativet i to etasjer
+Lageret minker raskt – dette er ikke et tilbud som kommer tilbake i morgen.
+✅ Dobler tørkeflaten på benken – alt på 42 cm
+✅ Vannet renner rett i sluket, ikke utover benken
+✅ 30 dagers åpent kjøp
+Bestill nå, før det er utsolgt 👇
+HEADLINE: 23 % rabatt – kun i dag
+DESCRIPTION: 1026 kr → 789 kr. Bestill før det er tomt.
+IMAGE_PROMPT: Use the uploaded product photo of the two-tier dish drying rack, keep the product exactly the same, no redesign. Same bright Scandinavian kitchen setting as the demo shot — clean white countertop, natural light, dishes neatly placed on both tiers. Simple, clean composition with strong empty space across the top and bottom of the image for large bold sale-text overlays. Slight vignette or subtle darkened corners to make bold price text pop. High-contrast, punchy commercial ad photography style, no text baked into the image.
+ON_IMAGE_TEXT: REA – KUN I DAG / 1026 kr 789 kr / 23 % RABATT / Snart utsolgt – bestill før det er for sent.
