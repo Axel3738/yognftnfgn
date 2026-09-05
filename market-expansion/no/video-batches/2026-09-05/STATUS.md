@@ -113,7 +113,7 @@ misslyckades tyst.
 - [x] Drive-leverans: två nya "NO <produkt>"-mappar i MAKE TO NORWAY, 24 mp4
       + 8 adcopy-txt uppladdade
 - [x] Körloggen uppdaterad, allt committat och pushat
-- [ ] Discord-brief — skickas efter denna commit
+- [x] Discord-brief skickad i `#translation-till-norge-av-nya-produkter`, ping på
 
 ## Kvot
 
