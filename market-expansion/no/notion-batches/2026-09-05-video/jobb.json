@@ -61,7 +61,13 @@
         "adsetNamn": "Beltesliper NO - PD",
         "annonsNamn": "Beltesliper_NO_PD_4_H1",
         "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
-        "prefix": "Beltesliper"
+        "prefix": "Beltesliper",
+        "status": "ACTIVE",
+        "annonsId": "120252093872680233",
+        "creativeId": "1581531203755353",
+        "adsetId": "120251998517140233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1029.00",
@@ -124,7 +130,13 @@
         "adsetNamn": "Beltesliper NO - PD",
         "annonsNamn": "Beltesliper_NO_PD_5_H1",
         "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
-        "prefix": "Beltesliper"
+        "prefix": "Beltesliper",
+        "status": "ACTIVE",
+        "annonsId": "120252093877020233",
+        "creativeId": "2490493494809386",
+        "adsetId": "120251998517140233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1029.00",
