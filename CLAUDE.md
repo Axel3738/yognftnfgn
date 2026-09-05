@@ -639,6 +639,13 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 
 ## Saker som är lätta att göra fel
 
+- **Allt som postas i Discord är på engelska** (Axels order 2026-09-05) — teamet
+  i servern är engelsktalande. Rapporten till Axel i chatten är svensk; Discord-
+  versionen av samma rapport är engelsk, med produkt-, kanal- och kampanjnamn i
+  sin vanliga stavning. Postarna (`tools/notify-discord.mjs`,
+  `pipeline/discord-brief.mjs`) stoppar svensk text med exit 3, eller översätter
+  den automatiskt när `ANTHROPIC_API_KEY` finns i environmentet. Stoppas ett
+  skick: skriv om på engelska och skicka igen — hoppa aldrig över rapporten.
 - **PAUSED i annonskontot är ett beslut, aldrig ett fel att "rätta".** En
   kampanj/adset/annons som är pausad och har spenderat > 0 kr har stängts av
   med flit (av Axel, skalningsronden eller åtgärdstrappan) — den får ALDRIG
