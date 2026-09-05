@@ -83,7 +83,9 @@ länge den varit uppe. Gör den inte det: öppna Railway → **Deployments** →
 
 | Du skriver | Vad som händer |
 |---|---|
-| vad som helst | Boten svarar med verksamhetens data i huvudet |
+| `@Bävern` + vad som helst | Boten svarar med verksamhetens data i huvudet |
+| svar på ett av botens inlägg | Samma sak — den ser att du pratar med den |
+| vad som helst, utan tagg | Ingenting. Den lägger sig inte i teamets samtal |
 | `!bygg <vad du vill ha>` | Bygger om servern. Visar planen först, du trycker Kör |
 | `!ping` | "Vaken. Modell: … Uppe i N min." |
 | `!glöm` | Nollställer konversationen i den kanalen |
@@ -137,6 +139,7 @@ Läggs in som Variables i Railway om du vill begränsa boten.
 |---|---|
 | `DISCORD_KANALER` | `skalning,allmänt` — boten svarar bara i de kanalerna. Tom = alla den ser |
 | `DISCORD_AGARE` | ditt Discord user-id — då är det bara du som kan prata med den |
+| `DISCORD_SVARA_ALLA` | `1` — boten svarar på allt i kanalen, som den gjorde förr. Tom = bara när den taggas |
 | `GITHUB_GREN` | vilken gren den läser. Default är arbetsgrenen |
 
 ---

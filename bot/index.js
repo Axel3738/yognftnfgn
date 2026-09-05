@@ -7,6 +7,10 @@
 // Env som är valfri:
 //   DISCORD_KANALER     kommaseparerade kanalnamn boten lyssnar i (default: alla den ser)
 //   DISCORD_AGARE       kommaseparerade user-id som får prata med boten (default: alla)
+//   DISCORD_SVARA_ALLA  sätt till 1 för att svara på ALLT i kanalen, som förr.
+//                       Default: boten svarar bara när den taggas, får ett svar
+//                       på sitt eget inlägg, eller får ett DM. !-kommandon
+//                       fungerar alltid utan tagg.
 //   GITHUB_GREN         gren att läsa från (default: arbetsgrenen)
 
 import {
@@ -14,6 +18,7 @@ import {
   ActionRowBuilder, ButtonBuilder, ButtonStyle, MessageFlags,
 } from 'discord.js';
 import { dela } from './dela.js';
+import { ärTilltalad, utanTilltal } from './tilltal.js';
 import { fraga, nollstallHistorik, MODELL } from './claude.js';
 import {
   planera, validera, beskriv, utfor, lasLaget, skyddadeKanaler,
@@ -70,6 +75,7 @@ const lista = (namn) => (process.env[namn] || '')
 
 const TILLÅTNA_KANALER = lista('DISCORD_KANALER');
 const TILLÅTNA_ANVÄNDARE = lista('DISCORD_AGARE');
+const SVARA_ALLA = process.env.DISCORD_SVARA_ALLA === '1';
 
 const client = new Client({
   intents: [
@@ -201,7 +207,27 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
 client.on(Events.MessageCreate, (message) => {
   if (!skaSvara(message)) return;
-  const text = message.content.trim();
+
+  const jagId = client.user.id;
+  const text = utanTilltal(message.content, jagId);
+  const kommando = /^!(ping|glöm|glom|bygg)\b/i.test(text);
+
+  // Bara den som vänder sig till boten får svar. Ett ! -kommando är alltid
+  // avsiktligt och går igenom utan tagg.
+  if (!SVARA_ALLA && !kommando) {
+    const tilltalad = ärTilltalad({
+      innehåll: message.content,
+      botId: jagId,
+      nämnda: [...message.mentions.users.keys()],
+      svarPåBot: message.mentions.repliedUser?.id === jagId,
+      dm: !message.guild,
+    });
+    if (!tilltalad) return;
+    if (!text) {
+      message.reply('Yes? Tell me what you need.').catch(() => {});
+      return;
+    }
+  }
 
   // Två små kommandon så Axel kan se skillnad på "boten är död" och
   // "Claude tänker" utan att läsa Railway-loggar.
@@ -264,6 +290,7 @@ client.once(Events.ClientReady, (c) => {
   console.log(`Bävern inloggad som ${c.user.tag}. Modell: ${MODELL}.`);
   console.log(`Kanaler: ${TILLÅTNA_KANALER.length ? TILLÅTNA_KANALER.join(', ') : 'alla boten ser'}`);
   console.log(`Användare: ${TILLÅTNA_ANVÄNDARE.length ? TILLÅTNA_ANVÄNDARE.join(', ') : 'alla'}`);
+  console.log(`Svarar: ${SVARA_ALLA ? 'på allt i kanalen' : 'bara när den taggas, får svar eller DM'}`);
 });
 
 // discord.js sköter reconnect, heartbeat och rate limits själv. Vi loggar bara
