@@ -3,6 +3,23 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-05 — 24 nya på tre produkter, 20 i `sources.json`
+
+Rutinkörning 05:35 svensk tid. MAKE TO NORWAY hade tre nya mappar sedan
+igår (videobatchen 2026-09-04): **Magnetplattor i Storformat**,
+**Motocentric Bakväska**, **Pälsborste till Dyson-dammsugare**. Alla tre
+hade riktiga REVIEWS-ark (8 rader var) och handle i butiken:
+
+| Produkt | Synliga | Handle |
+|---|---:|---|
+| Magnetplater i Stort Format | 8 | `magnetplater-i-stort-format-byggesett-i-kasse-med-handtak` |
+| Motocentric Bakveske 37 L | 8 | `motocentric-bakveske-37-l-hjelmen-gar-i-vesken` |
+| Pelsbørste til Dyson-støvsuger | 8 | `pelsborste-til-dyson-stovsuger-borst-og-sug-i-samme-bevegelse` |
+
+Kartorna: +38 översättningar, +10 namn. Gravsteinspenn och Medisinboks är
+oförändrade (testrader resp. "EJ KUNDRECENSION") — fortfarande överhoppade.
+Båtmotortrekk har fortfarande 1 synlig recension, spärrad.
+
 ## Läget 2026-09-04 — 0 nya, allt redan klart
 
 Rutinkörning 05:35 svensk tid. MAKE TO NORWAY: samma 16 mappar som 2026-09-03,
