@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 // notion-kalla.mjs — Notion som leveranskälla. Sedan 2026-09-02 den ENDA källan
-// för /notionkorning (Axels beslut): allt färdigt, video som bild, ligger som
-// bilaga i radens "Filer och media" med status "To be Reviewed".
+// för /notionkorning (Axels beslut): allt färdigt, video som bild, är en rad med
+// status "To be Reviewed". Själva filen ligger på ett av två ställen:
 //
-// Bakgrund: /bildannonser (20:00) genererar bildannonser med kie.ai och lämnar dem
-// där; redigerarna lägger sina videor på samma sätt. bildannonser/output/ är
-// gitignorerat och dör med containern — Notion-bilagan är darfor ENDA kopian i
-// världen. Läses den inte här är arbetet borta.
+//   • BILD  — bilaga i radens "Filer och media" (/bildannonser 20:00 lägger den där;
+//             bildannonser/output/ är gitignorerat, så bilagan är ENDA kopian).
+//   • VIDEO — en Drive-mapp länkad sist i sidans kropp ("Link for approval: …",
+//             "Finished Ad — …"). Redigerarna bifogar ALDRIG i Filer och media.
+//             (Incident 2026-09-05: 16 videor hoppades över tyst tills detta lästes.)
 //
 // Anvands av tools/leveranskon.mjs. Kan även köras fristående:
 //   node tools/notion-kalla.mjs                 lista klara Notion-rader
@@ -152,11 +153,11 @@ async function allaSidor(databaseId) {
   return ut;
 }
 
-/** Rader som ar klara att laddas upp: status i KLAR_STATUS OCH minst en fil i
- *  "Filer och media". Axels beslut 2026-09-02: allt i "To be Reviewed" under
- *  teamspacet raknas — Typ-faltet ar inte langre ett krav (det foljer med i
- *  utdatan som information). Kravet pa fil ar avgorande — utan den finns ingen
- *  creative att ladda upp. */
+/** Rader i status KLAR_STATUS. Axels beslut 2026-09-02: allt i "To be Reviewed"
+ *  under teamspacet raknas — Typ-faltet ar inte ett krav. Varje rad bar
+ *  `leverans`: 'notion-fil' (bilaga i Filer och media — bildannonserna),
+ *  'drive-lank' (Drive-mapp i sidans kropp — redigerarnas videor) eller 'saknas'
+ *  (varken eller: raden rapporteras som "vantar pa fil", laddas inte upp). */
 export async function klaraRader(hub, val = {}) {
   // val.statusar: lista (gemener) i stället for KLAR_STATUS — /oversatt laser
   // "se-active to be translated". val.typ: regex som Typ MASTE matcha (inkludering,
@@ -180,7 +181,18 @@ export async function klaraRader(hub, val = {}) {
         url: f.file?.url ?? f.external?.url ?? null,      // signerad, kort livslangd
       })))
       .filter(f => f.url);
-    if (!filer.length) continue;                          // ingen fil = inget att ladda upp
+
+    // Redigerarna bifogar INTE videon i "Filer och media" — de skriver en rad sist
+    // i sidan ("Link for approval: …" / "Finished Ad — …") med en Drive-mapp.
+    // Incident 2026-09-05: 16 fardiga videor i To be Reviewed hoppades over TYST
+    // for att kravet var "fil i Filer och media". Darfor: saknas fil, las kroppen.
+    // Sidan bar ocksa brief-mappen ("Brief in Drive", "Drive folder") — den ar inte
+    // leveransen. Alla lankar foljer med, sista forst; leveranskon.mjs listar
+    // mapparna och tar den forsta som innehaller media.
+    const drive = filer.length ? [] : await driveLankarIKropp(s.id);
+    // Varken fil eller lank = raden ar inte klar. Den ska anda SYNAS ("vantar pa
+    // fil"), aldrig forsvinna — en tyst miss ar varre an en rapporterad.
+    const leverans = filer.length ? 'notion-fil' : (drive.length ? 'drive-lank' : 'saknas');
 
     // "Landing page" star pa raden och ar produktsidans URL. Utan den skulle
     // annonsen peka pa butikens startsida — det syns aldrig som ett fel, bara
@@ -190,10 +202,50 @@ export async function klaraRader(hub, val = {}) {
       .map(([, v]) => värde(v).match(/https?:\/\/[^\s)\]]+/)?.[0])
       .find(Boolean) ?? null;
 
-    ut.push({ id: s.id, namn, status, typ, filer, url: s.url, landning,
+    ut.push({ id: s.id, namn, status, typ, filer, drive, leverans, url: s.url, landning,
               skapad: s.created_time, redigerad: s.last_edited_time, hub: hub.titel });
   }
   return ut;
+}
+
+/** Alla Google Drive-lankar i sidans kropp, i lasordning, med texten i blocket
+ *  som sammanhang. Laser toppnivan och ett steg ned (redigerarna skriver lanken
+ *  som ett eget stycke sist pa sidan). Fel = tom lista, aldrig krasch. */
+export async function driveLankarIKropp(pageId) {
+  const ut = [];
+  const sedd = new Set();
+  const läs = async (blockId, djup) => {
+    let cursor;
+    do {
+      let r;
+      try {
+        r = await notion(`blocks/${blockId.replace(/-/g, '')}/children?page_size=100${cursor ? `&start_cursor=${cursor}` : ''}`);
+      } catch { return; }
+      for (const b of r.results ?? []) {
+        const rika = b[b.type]?.rich_text ?? b[b.type]?.caption ?? [];
+        const kontext = text(rika).slice(0, 80);
+        const urls = [];
+        for (const t of rika) {
+          if (t.href) urls.push(t.href);
+          if (t.text?.link?.url) urls.push(t.text.link.url);
+          for (const m of (t.plain_text ?? '').matchAll(/https?:\/\/(?:drive|docs)\.google\.com\/[^\s)\]>]+/g)) urls.push(m[0]);
+        }
+        if (b.type === 'bookmark' || b.type === 'embed') urls.push(b[b.type]?.url);
+        if (b.type === 'file' || b.type === 'video') urls.push(b[b.type]?.external?.url, b[b.type]?.file?.url);
+        for (const u of urls) {
+          if (!u || !/drive\.google\.com/.test(u)) continue;
+          const id = u.match(/\/(?:folders|d)\/([-\w]+)/)?.[1] ?? u.match(/[?&]id=([-\w]+)/)?.[1];
+          if (!id || sedd.has(id)) continue;
+          sedd.add(id);
+          ut.push({ id, typ: /\/folders\//.test(u) ? 'mapp' : 'fil', url: u, kontext });
+        }
+        if (b.has_children && djup < 1) await läs(b.id, djup + 1);
+      }
+      cursor = r.has_more ? r.next_cursor : null;
+    } while (cursor);
+  };
+  await läs(pageId, 0);
+  return ut.reverse();          // sista lanken pa sidan ar oftast leveransen
 }
 
 /** Notions fil-URL ar signerad och kortlivad — den maste hamtas NU, aldrig cachas

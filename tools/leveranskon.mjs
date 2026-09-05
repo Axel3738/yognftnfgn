@@ -167,6 +167,7 @@ try {
       produktId: p?.id ?? pfx, kampanj,
       kalla: p ? 'products.json' : (karta[pfx] ? 'kontot' : (al ? 'prefix-alias.json' : null)),
       kalla2: 'notion', notionUrl: r.url, notionFiler: r.filer, skapad: r.skapad,
+      leverans: r.leverans, drive: r.drive ?? [],
     });
   }
 } catch (e) {
@@ -183,15 +184,47 @@ if (filter) {
   }
 }
 
+/** Som driveLs men tyst: en Drive-lank i en Notion-sida kan vara stangd eller
+ *  borttagen, och det ska inte falla hela kon. */
+function driveLsMjuk(id) {
+  try {
+    const ut = execFileSync('python3', [`${ROT}tools/drive-ls.py`, id], { encoding: 'utf8', timeout: 60000 });
+    return ut.trim().split('\n').filter(Boolean).map(rad => {
+      const [typ, fid, ...titel] = rad.split('\t');
+      return { typ, id: fid, titel: titel.join('\t') };
+    });
+  } catch { return []; }
+}
+const ÄR_MEDIA = (t) => /\.(mp4|mov|m4v|jpg|jpeg|png)$/i.test(t);
+
+/** Redigerarnas videor: Drive-mappen som ar lankad sist i Notion-sidan. Sidan bar
+ *  ocksa brief-mappen — darfor provas lankarna i tur och ordning (sista forst) och
+ *  den forsta som INNEHALLER media ar leveransen. Filer lankade direkt tas rakt av. */
+function driveLeverans(l) {
+  for (const k of l.drive) {
+    if (k.typ === 'fil') return { mapp: k.id, filer: [{ typ: 'fil', id: k.id, titel: `${l.namn}.mp4`, direkt: true }] };
+    const filer = driveLsMjuk(k.id).filter(f => f.typ === 'fil' && ÄR_MEDIA(f.titel));
+    if (filer.length) return { mapp: k.id, filer };
+  }
+  return { mapp: null, filer: [] };
+}
+
 // 3. Kon: levererat men inte i kontot.
 const kö = [];
 for (const l of leveranser) {
   const gjort = uppe.has(l.namn.toLowerCase());
   if (gjort && !finns('alla')) continue;
-  const filer = l.kalla2 === 'notion'
-    ? l.notionFiler.map(f => ({ typ: 'notion', id: l.mapp, titel: f.namn || `${l.namn}.jpg` }))
-    : driveLs(l.mapp).filter(f => f.typ === 'fil');
-  kö.push({ ...l, gjort, filer });
+  let filer, driveMapp = null;
+  if (l.kalla2 !== 'notion') {
+    filer = driveLs(l.mapp).filter(f => f.typ === 'fil');
+  } else if (l.leverans === 'notion-fil') {
+    filer = l.notionFiler.map(f => ({ typ: 'notion', id: l.mapp, titel: f.namn || `${l.namn}.jpg` }));
+  } else if (l.leverans === 'drive-lank') {
+    ({ mapp: driveMapp, filer } = driveLeverans(l));
+  } else {
+    filer = [];                                           // 'saknas' — rapporteras, laddas inte upp
+  }
+  kö.push({ ...l, gjort, filer, driveMapp });
 }
 
 /** Lifetime-spend. Fel att lasa = anta att den spenderat (rors inte). */
@@ -263,13 +296,31 @@ for (const [pid, rader] of Object.entries(perProdukt)) {
     console.log(`   (kopplingen kommer från ${rader[0].kalla})`);
   }
   for (const r of rader) {
-    const media = r.filer.filter(f => f.typ === 'notion' || /\.(mp4|mov|m4v|jpg|jpeg|png)$/i.test(f.titel));
+    const media = r.filer.filter(f => f.typ === 'notion' || ÄR_MEDIA(f.titel));
     console.log(`  • ${r.namn}  (${r.kalla2 === 'notion' ? 'Notion: ' + r.vecka : r.vecka})`);
-    if (!media.length) { console.log(`      ⚠ ingen media i mappen — inte klar`); continue; }
+    if (!media.length) {
+      if (r.leverans === 'saknas') console.log(`      ⚠ VÄNTAR PÅ FIL — varken bilaga i "Filer och media" eller Drive-länk i sidan. Fråga redigeraren.`);
+      else if (r.leverans === 'drive-lank') console.log(`      ⚠ Drive-länk i sidan men ingen video i mappen (${r.drive.map(k => k.id).join(', ')}) — inte klar. Fråga redigeraren.`);
+      else console.log(`      ⚠ ingen media i mappen — inte klar`);
+      continue;
+    }
     for (const f of media) {
-      if (r.kalla2 === 'notion') {
+      if (r.kalla2 === 'notion' && f.typ === 'notion') {
         // Signerad URL med kort livslangd — hamtas vid korning, skrivs aldrig ut.
         console.log(`      ${f.titel}`);
+        console.log(`        hämtas med: node tools/notion-fil.mjs ${r.mapp} --ut <mapp>`);
+        continue;
+      }
+      if (r.kalla2 === 'notion') {
+        // Redigerarens Drive-mapp, lankad i Notion-sidan. Publik export-URL.
+        // Redigerarna levererar tva format: "<namn>.mp4" (9:16, annonsen) och
+        // "<namn> 4.5.mp4" (4:5-variant). Den exakta traffen ar den som laddas upp.
+        const fnamn = f.titel.replace(/\.[^.]+$/, '').toLowerCase();
+        const exakt = f.direkt || fnamn === r.namn.toLowerCase();
+        const variant = !exakt && fnamn.startsWith(r.namn.toLowerCase());
+        const märke = exakt ? '  ← LADDAS UPP (9:16)' : variant ? '  (formatvariant, laddas inte upp separat)' : '  ⚠ FILNAMN ≠ ANNONSNAMN — fråga redigeraren';
+        console.log(`      ${f.titel}${märke}   (Drive-mapp ${r.driveMapp} ur Notion-sidan)`);
+        console.log(`        https://drive.google.com/uc?export=download&id=${f.id}`);
         console.log(`        hämtas med: node tools/notion-fil.mjs ${r.mapp} --ut <mapp>`);
         continue;
       }
@@ -282,7 +333,9 @@ for (const [pid, rader] of Object.entries(perProdukt)) {
   console.log('');
 }
 
+const utanFil = nya.filter(k => !k.filer.length);
 console.log(`${nya.length} leverans(er) väntar på uppladdning.`);
+if (utanFil.length) console.log(`⚠️  ${utanFil.length} av dem saknar fil/video och väntar på redigeraren: ${utanFil.map(k => k.namn).join(', ')}`);
 if (utan.length) console.log(`⚠️  ${utan.length} av dem saknar kampanj i kontot och laddas inte upp.`);
 if (hyllade.length) console.log(`⏭  ${hyllade.length} hör till en avvecklad kampanj och laddas inte upp.`);
 const iAktiva = nya.filter(k => k.kampanj?.status === 'ACTIVE').length;

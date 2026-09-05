@@ -65,9 +65,10 @@
         "prefix": "IBC-tanktrekk",
         "status": "ACTIVE",
         "annonsId": "120252091575170233",
+        "creativeId": "1800138214748682",
         "adsetId": "120252091573680233",
         "adsetSkapat": true,
-        "effective_status": "ACTIVE"
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "439.00",
@@ -134,9 +135,10 @@
         "prefix": "IBC-tanktrekk",
         "status": "ACTIVE",
         "annonsId": "120252091576680233",
+        "creativeId": "1479170137294879",
         "adsetId": "120251996667400233",
         "adsetSkapat": false,
-        "effective_status": "ACTIVE"
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "439.00",
@@ -203,9 +205,10 @@
         "prefix": "Beltesliper",
         "status": "ACTIVE",
         "annonsId": "120252091580000233",
+        "creativeId": "4714414932111260",
         "adsetId": "120252066395990233",
-        "adsetSkapat": true,
-        "effective_status": "ACTIVE"
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1029.00",
@@ -272,9 +275,10 @@
         "prefix": "Beltesliper",
         "status": "ACTIVE",
         "annonsId": "120252091681070233",
+        "creativeId": "1068308635589272",
         "adsetId": "120251998517140233",
         "adsetSkapat": false,
-        "effective_status": "ACTIVE"
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1029.00",
