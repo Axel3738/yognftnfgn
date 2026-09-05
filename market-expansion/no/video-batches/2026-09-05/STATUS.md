@@ -67,9 +67,10 @@ Våningar, Veckodosett 21 Fack. Max 3/natt — ingen kö kvar efter denna körni
   domäner/priser i bild.
 - **Levererat:** 12 mp4 i chatten (7 zip ≤30 MiB). Drive: MAKE TO NORWAY →
   "NO Veckodosett 21 Fack" (ny mapp): 12 mp4 + 4 adcopy-txt uppladdade.
-- **Launchad ACTIVE:** kampanj-ID (se nedan, launch pågick vid skrivande —
-  uppdateras när klar), "Ukedosett NO | BE-ROAS 1,63 | 2026-09-05", CBO
-  1000 kr/dag, 4 adsets (CS/G/PD/SP), 12 videoannonser.
+- **Launchad ACTIVE:** kampanj-ID 120252091463320233, "Ukedosett NO |
+  BE-ROAS 1,63 | 2026-09-05", CBO 1000 kr/dag. 4 adsets (CS/G/PD/SP), 3
+  videoannonser vardera (12 totalt), alla ACTIVE. Kontot hårt rate-limitat
+  (Meta-fel 17) på tre av fyra adsets — gick igenom med skriptets backoff.
 - Bildannonser (Fas 3.2) INTE körda denna natt.
 
 ## Bildannonser (Fas 3.2) — inte körda igen, KÄND LUCKA
@@ -78,6 +79,41 @@ Samma avvikelse som 2026-09-04: videobatchen (24 videor, två launchar) tog
 hela tidsbudgeten. Diskställ har 4 st `*_2_1.png`-bildfiler i Drive-mappen,
 Veckodosett har 3 st (CS/G/SP, ingen PD). Ingen av dem rensad/översatt än.
 Bör tas igen i en kommande körning eller manuellt.
+
+## API-verifiering efteråt
+
+Båda kampanjerna verifierade ACTIVE/ACTIVE med rätt daglig budget (100 000 öre
+= 1000 kr) direkt mot Graph API. Adset-/annonsnivå kunde inte läsas tillbaka
+efteråt — kontot var fortsatt rate-limitat (Meta-fel 17) direkt efter de två
+launcharna. Skriptets egna radvisa bekräftelser vid skapandet ("✓ annons
+(ACTIVE): …") visar dock att samtliga 24 annonser (12 per kampanj, 4 adsets
+× 3) skapades och sattes ACTIVE utan fel — ingen annons hoppade över eller
+misslyckades tyst.
+
+## Definition of done
+
+- [x] LAUNCHED listad; WINNERS, LOSERS och MAKE TO NORWAY exkluderade
+      (rekursivt); kandidater = utan NO-mapp OCH utan kampanj i NO-kontot;
+      3 körda (max), ingen kö kvar
+- [x] Alla annonsvideor i produktmapparna inventerade; icke-annonser exkluderade
+- [x] Norsk produktsida + NOK-pris verifierade för båda launchade produkterna
+- [x] Bordtennisnät (kunde inte köras): problemmeddelande i #problems-no med ping
+- [x] Norge-COGS läst ur NORWAY-blocket i batch-sheet #5.1, ingen tull
+- [x] Kvot räckte, rapporterad före/efter
+- [x] Proofread FÖRE rendering på alla 24 videor; SRT-rättelser redovisade
+      (300-lappen-omskrivning + 50%→23%-faktafelet)
+- [x] Copy/SRT-rader skrivna av sonnet-subagent, tre-frågorstestet redovisat
+- [x] Inbränd svensk text skannad; alla 72 QA-bilder manuellt granskade,
+      inget svenskt syns
+- [x] Slutkortssvep gjort (24/24 slutbilder granskade)
+- [x] Levererat i chatten som zip ≤30 MiB (12 zip totalt)
+- [x] Kampanj per produkt: CBO 1000 kr/dag, adset per koncept, status ACTIVE,
+      BE-ROAS + datum i namnet, dubblettspärren körd, API-verifierad på
+      kampanjnivå (adset/annons-nivå rate-limitad efteråt, se ovan)
+- [x] Drive-leverans: två nya "NO <produkt>"-mappar i MAKE TO NORWAY, 24 mp4
+      + 8 adcopy-txt uppladdade
+- [x] Körloggen uppdaterad, allt committat och pushat
+- [ ] Discord-brief — skickas efter denna commit
 
 ## Kvot
 
