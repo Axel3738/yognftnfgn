@@ -1,0 +1,71 @@
+{
+ "in": "out/batmotortrekk_RV_1_H1.mp4",
+ "ut": "final/Batmotortrekk_NO_RV_1_H1.mp4",
+ "srt": "srt-fix/batmotortrekk_RV_1_H1.srt",
+ "captions": {
+  "zon": [
+   850,
+   1040
+  ],
+  "max_chars": 34,
+  "font_px": 30,
+  "standard_cy": 992,
+  "tvinga": [
+   [
+    10.9,
+    99
+   ]
+  ],
+  "fyll": [
+   {
+    "rect": [
+     190,
+     954,
+     530,
+     1026
+    ],
+    "t": [
+     5.8,
+     8.5
+    ]
+   }
+  ]
+ },
+ "blur": [
+  {
+   "rect": [
+    80,
+    540,
+    640,
+    760
+   ],
+   "t": [
+    2.8,
+    3.0
+   ]
+  }
+ ],
+ "lager": [
+  {
+   "png": "lager/RV_b1.png",
+   "t": [
+    0.05,
+    2.8
+   ]
+  },
+  {
+   "png": "lager/RV_b2.png",
+   "t": [
+    3.0,
+    5.3
+   ]
+  },
+  {
+   "png": "lager/slutkort_RV_1_H1.png",
+   "t": [
+    10.9,
+    99
+   ]
+  }
+ ]
+}

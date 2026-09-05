@@ -1,0 +1,10 @@
+batmotortrekk/
+out/
+final/
+qa/
+frames/
+*.mp4
+*.png
+*.jpg
+test/
+lager/

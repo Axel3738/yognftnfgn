@@ -1,0 +1,78 @@
+{
+ "in": "out/batmotortrekk_CS_3_H1.mp4",
+ "ut": "final/Batmotortrekk_NO_CS_3_H1.mp4",
+ "srt": "srt-fix/batmotortrekk_CS_3_H1.srt",
+ "captions": {
+  "zon": [
+   850,
+   1040
+  ],
+  "max_chars": 34,
+  "font_px": 30,
+  "standard_cy": 992,
+  "tvinga": [
+   [
+    12.36,
+    99
+   ]
+  ]
+ },
+ "blur": [
+  {
+   "rect": [
+    150,
+    490,
+    565,
+    775
+   ],
+   "t": [
+    0.05,
+    3.1
+   ]
+  }
+ ],
+ "lager": [
+  {
+   "png": "lager/CS_882a.png",
+   "t": [
+    0.1,
+    0.65
+   ]
+  },
+  {
+   "png": "lager/CS_882b.png",
+   "t": [
+    0.65,
+    1.2
+   ]
+  },
+  {
+   "png": "lager/CS_882c.png",
+   "t": [
+    1.2,
+    3.1
+   ]
+  },
+  {
+   "png": "lager/CS_529a.png",
+   "t": [
+    1.25,
+    1.65
+   ]
+  },
+  {
+   "png": "lager/CS_529b.png",
+   "t": [
+    1.65,
+    3.1
+   ]
+  },
+  {
+   "png": "lager/slutkort_CS_3_H1.png",
+   "t": [
+    12.36,
+    99
+   ]
+  }
+ ]
+}

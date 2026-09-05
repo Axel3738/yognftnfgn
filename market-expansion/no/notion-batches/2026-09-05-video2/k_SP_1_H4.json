@@ -1,0 +1,108 @@
+{
+ "in": "out/batmotortrekk_SP_1_H4.mp4",
+ "ut": "final/Batmotortrekk_NO_SP_1_H4.mp4",
+ "srt": "srt-fix/batmotortrekk_SP_1_H4.srt",
+ "captions": {
+  "zon": [
+   850,
+   1040
+  ],
+  "max_chars": 34,
+  "font_px": 30,
+  "standard_cy": 992,
+  "tvinga": [
+   [
+    9.98,
+    99
+   ]
+  ],
+  "av": [
+   [
+    3.3,
+    8.2
+   ]
+  ],
+  "fyll": [
+   {
+    "rect": [
+     190,
+     898,
+     530,
+     970
+    ],
+    "t": [
+     0.05,
+     2.4
+    ]
+   }
+  ]
+ },
+ "blur": [
+  {
+   "rect": [
+    132,
+    672,
+    588,
+    775
+   ],
+   "t": [
+    3.2,
+    3.35
+   ]
+  },
+  {
+   "rect": [
+    132,
+    795,
+    588,
+    900
+   ],
+   "t": [
+    4.6,
+    4.75
+   ]
+  },
+  {
+   "rect": [
+    132,
+    920,
+    588,
+    1025
+   ],
+   "t": [
+    6.0,
+    6.15
+   ]
+  }
+ ],
+ "lager": [
+  {
+   "png": "lager/SP_ruta_672.png",
+   "t": [
+    3.35,
+    8.2
+   ]
+  },
+  {
+   "png": "lager/SP_ruta_795.png",
+   "t": [
+    4.75,
+    8.2
+   ]
+  },
+  {
+   "png": "lager/SP_ruta_920.png",
+   "t": [
+    6.15,
+    8.2
+   ]
+  },
+  {
+   "png": "lager/slutkort_SP_1_H4.png",
+   "t": [
+    9.98,
+    99
+   ]
+  }
+ ]
+}

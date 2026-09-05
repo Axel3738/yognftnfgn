@@ -1,0 +1,494 @@
+{
+  "marknad": "NO",
+  "datum": "2026-09-05-video2",
+  "skapad": "2026-09-05T14:02:49.771Z",
+  "kvot": {
+    "heygen": 297,
+    "kie": 16389.2
+  },
+  "jobb": [
+    {
+      "notion": {
+        "id": "3cf270ab908c81ab98bffab627ccd12e",
+        "namn": "Batmotor_SP_1_H4",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c81ab98bffab627ccd12e",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_SP_1_H4",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250105327740291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "Båtmotorskydd 420D | SP | 2026-08-29",
+        "copy": {
+          "message": "5,0 av 5 stjärnor. 8 av 8 recensioner.\n\"Skyddet känns hållbart och är lätt att sätta på.\" – Fredrik L.\n579 kr (ord. 965 kr).",
+          "headline": "5,0 av 5 stjärnor (8 av 8 recensioner)",
+          "description": "",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "1266148105597835",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQMk4U9bZ0kcfKncC8Cd8E41Uh6FMCyKJO0bqKe6Q5lNbyZzowAz77H-EVqWAaAoDpTOtA2b2h6YNgdZIOpDDBir8kkQesxN213CBAmIWeqslQ.mp4?_nc_cat=109&_nc_sid=5e9851&_nc_ht=scontent-ord5-1.xx.fbcdn.net&_nc_ohc=OI43NTZ0dgUQ7kNvwEjE3Y0&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjk2NTE0ODE2NjYxMDQyMSwiYXNzZXRfYWdlX2RheXMiOjAsInZpX3VzZWNhc2VfaWQiOjEwMTM5LCJkdXJhdGlvbl9zIjoxMywidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=b0585298fab1fb22&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC83NTQxMzE4QUQ3MTlDRDY2MDk0MkZEMjVDQzE4NDBCOF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0JFNDdCN0NDNDBBNDUzMTY2ODM2MzgzQzRDREY2NUI4X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbq94KagvO2AxUCKAJDMywXQCp3S8an754YGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=Vw1uG5q5nNpkGn1MvImmCw&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQJFFlgKZOrwoeOM7wi0TIVPXhsDwZ_r3mISnZi825d3Kq6ezO0W94ay4e1lhDAUOUwhVzpC_ZoJEw&oh=00_AQKgJpv8orhluTbciHJ1Q1iv8gkEOrFylgcbY0p3rppNBA&oe=6AA1D8AF&bitrate=1306897&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 13.258
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "SP",
+      "nr": "1",
+      "hook": "H4",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - SP",
+        "annonsNamn": "Batmotortrekk_NO_SP_1_H4",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252096636150233",
+        "creativeId": "1545641383497691",
+        "adsetId": "120252047565350233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c8196b241fe218581796b",
+        "namn": "Batmotor_PD_3_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c8196b241fe218581796b",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_PD_3_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250105321700291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "Båtmotorskydd 420D | PD | 2026-08-29",
+        "copy": {
+          "message": "Regn mot en obeskyddad motor.\nSen dras 420D Oxford-tyget på — utan verktyg.\n579 kr (ord. 965 kr), spara 386 kr.",
+          "headline": "Se skyddet dras på — i realtid",
+          "description": "",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "1617575683396460",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQNFqgs07ycVW2qfrPGpglbOHY5Qr09bKEngDcCpWEqr04ob-tdCa3vTJm-A3c23CZFV8yeZVKHpSaAyjUwL3TlagJI2iQRa3A2wn2dHpy12cA.mp4?_nc_cat=108&_nc_sid=5e9851&_nc_ht=scontent-ord5-1.xx.fbcdn.net&_nc_ohc=rC8FfdhT8WIQ7kNvwEpES7W&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE4NDE2ODk3MDcwMjgwMzIsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=fbb8b9989a35479d&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9BNzQ2Rjk4MjFDMDAxQjU4NjM1RkNDNDhENDgzOEY4Ql9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzczNEY4RjEwMjQzMEIyNzFDNThCM0FEOUQ0OTQxOEJBX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACaA-bDMucDFBhUCKAJDMywXQC-qfvnbItEYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=rlLD7y04iOsrY0nxWvPi0Q&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQLz--6r01pnwx5nbAO1ITEVUM4uLfzKcUVmzIK4X22LsxtqqWey_wOgRyECiGwJrizOZPCvYGTXpw&oh=00_AQI_YMs-vGsiTpiLI6qT9C6LeaeSpl7mHijeFOhKeZh4-w&oe=6AA1F1B4&bitrate=1124017&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 15.859
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "PD",
+      "nr": "3",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - PD",
+        "annonsNamn": "Batmotortrekk_NO_PD_3_H1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252096638550233",
+        "creativeId": "1027844320269681",
+        "adsetId": "120252047563920233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c81739112edb2601d836f",
+        "namn": "Batmotor_CS_3_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c81739112edb2601d836f",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_CS_3_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250105232890291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "Båtmotorskydd 420D | CS | 2026-08-29",
+        "copy": {
+          "message": "Sex månader i vattnet — sen står motorn kvar, obeskyddad, resten av året.\n420D Oxford-tyg täcker den mot regn, snö och UV tills du sjösätter igen.\n579 kr (ord. 965 kr).",
+          "headline": "Sex månader i vattnet. Sen obeskyddad i sex till?",
+          "description": "",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "1877111913258829",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/o1/v/t2/f2/m366/AQMmQ6jF6C6PmEGWR8sqcWB_P8mtia0YAkZOmS2Q_JiT94s6xieB0-0LHWgLyF56DsvnnvOzGXc7H6SzEoIHdvabYKfr5eG2ddNtX7TlCHs9gQ.mp4?_nc_cat=104&_nc_sid=5e9851&_nc_ht=scontent-ord5-2.xx.fbcdn.net&_nc_ohc=DQC29H_Mt5wQ7kNvwExc1Pk&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE1NjM5Nzc1NjU1MjQxNzksImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTYsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=3e5d4b15b6d9be2b&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8zMDQyQTc3MEVGOTkwQjU5RUQzRkZFQjUwNEQ3NUM4N19tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzVFNEE4N0UxMUY5RjI3MTVCRDU2OUQ4MjlGQjgwM0I4X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACamw9bzvJvHBRUCKAJDMywXQDAAAAAAAAAYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=pdk1kZFEU8g9tQWnwOZ1sw&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQKWDdXuZnnwcUxYeYbW5csdmax9yDz2wA3HI46alamTE8OIMiXuWiJVQ2566XIa-LDwW-Op74igDQ&oh=00_AQKCWfCm4hJn3rrqLAfrDat1DUcjzVpIJhx2TZffV7d5hA&oe=6AA1D7F8&bitrate=1323320&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 16.02
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "CS",
+      "nr": "3",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - CS",
+        "annonsNamn": "Batmotortrekk_NO_CS_3_H1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252096675510233",
+        "creativeId": "1400830992021309",
+        "adsetId": "120252047986380233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c815c93e8d824052bc332",
+        "namn": "Batmotor_TH_1_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c815c93e8d824052bc332",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_TH_1_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250105225860291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "TH | Notionrunda 2026-09-05",
+        "copy": {
+          "message": "Ingen ser vilken motor som står under.\n420D Oxford-tyg täcker hela motorn — märke och modell osynligt för alla som går förbi.\nBÄVERBUTIKEN. 579 kr (ord. 965 kr).",
+          "headline": "Ingen ser vilken motor som står under",
+          "description": "",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "1089098373600069",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/o1/v/t2/f2/m366/AQMchTo2ygaFcj_f-ELK8Vub2xRnkwWM-NftWMSrLtfNGGJr0ck-eiPrs4tNayXW9V4bfe-ngD2yJeh4JQuTCvcHXX6O6yXw-4jsrwUdIOQf0g.mp4?_nc_cat=100&_nc_sid=5e9851&_nc_ht=scontent-ord5-2.xx.fbcdn.net&_nc_ohc=CBj4x0JPx1wQ7kNvwFVQmve&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE1OTI0OTM4NTkwOTU1NTcsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTMsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=bad4d30ea9a90dbd&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9FRjREQzVCMzhBREE5Q0MzQ0FENDBBRkQ2NTlENThBMF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0VDNENBOTNGNkE3NDNBMTg0NDE5MzkzQTUxQzBDRUI2X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACaKkLrsq5fUBRUCKAJDMywXQCuqfvnbItEYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=aPLXF24e1GKFHCZrZYU6ew&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQIE6W33PAMUIsgkDZRuuZ_oirQKZa9ao9qcJRPaD_i3I7fC08twyek7b1eK4sEMEdK5llyq48N5Wg&oh=00_AQKQmvK95sEBmURigX_EyP9EJW1BBlVWufSBv8Rc3YCY9g&oe=6AA1E7A4&bitrate=1242802&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 13.86
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "TH",
+      "nr": "1",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - TH",
+        "annonsNamn": "Batmotortrekk_NO_TH_1_H1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252096678200233",
+        "creativeId": "892740950374909",
+        "adsetId": "120252096675980233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c81528117f150b7feffc5",
+        "namn": "Batmotor_AU_1_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c81528117f150b7feffc5",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_AU_1_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250105139440291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "AU | Notionrunda 2026-09-05",
+        "copy": {
+          "message": "Regn. Snö. UV.\n420D Oxford-tyg tar smällen i stället för motorn.\nTäcker hela motorn, kåpa till rigg. 579 kr (ord. 965 kr).",
+          "headline": "Regn, snö och UV möter 420D-tyget",
+          "description": "",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "2233203693921095",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/o1/v/t2/f2/m366/AQN5oJZgraIq70PMsiwxDh2AbwLgHB5LrnBEUfotZnQjtiU2KHlfJRmLiJdkLDDOAL1zFDmb4bfUHvusPaicWp2u9x59f70VRxEBwpr72Lz2mg.mp4?_nc_cat=102&_nc_sid=5e9851&_nc_ht=scontent-ord5-2.xx.fbcdn.net&_nc_ohc=lx1X78TaZhUQ7kNvwGPY6Jv&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE3ODAwMDQ4ODk3OTU2MDQsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=28c01c6426d2de5&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC80QzRCRTQ2MzY4NTFDMzdFQTM5NEIxN0Y3QzU4QkU5RV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0E0NDhGQ0U5NTA1Q0FEQzUxMzZFMjUyMTIyMDA1QzkwX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACao8Lzy9bmpBhUCKAJDMywXQC6ZmZmZmZoYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=443D9-IPU8cff8la7cZBJA&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQJyKVOFd-KgK58XPhAax-XpNc1E3Xwadpsh3gyPe71Gi19bGWHh8eHbfalnprF2iZ8thHzZq9PgwQ&oh=00_AQKGvLzCR-zcnDJteAfNnEMTS3smT6S0S4TOFmUwnL_tZA&oe=6AA208E6&bitrate=1442649&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 15.32
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "AU",
+      "nr": "1",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - AU",
+        "annonsNamn": "Batmotortrekk_NO_AU_1_H1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252096719600233",
+        "creativeId": "1379846527057150",
+        "adsetId": "120252096716530233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c816b84fbe46d64778e92",
+        "namn": "Batmotor_FM_1_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c816b84fbe46d64778e92",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_FM_1_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250105131680291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "FM | Notionrunda 2026-09-05",
+        "copy": {
+          "message": "Snart står båten på land igen.\nSex månader i garage eller på trailer utan 420D-skydd — motorn möter regn, snö och UV.\nSkyddet täcker hela motorn tills du sjösätter igen.\n579 kr (ord. 965 kr).",
+          "headline": "420D mellan motorn och sex månaders väder",
+          "description": "",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "923979406974034",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQPToUxxDZ-dvVI46S8wqPwbQy88Bdhr5cI8Eyogmr87GCJY6Rh4-1rtr09jeDIs0_wzeT2mpH5lco__jEdkl3BkZ7RQOp8AJT5V62zNoNYagg.mp4?_nc_cat=101&_nc_sid=5e9851&_nc_ht=scontent-ord5-1.xx.fbcdn.net&_nc_ohc=tRWjTdiWxZgQ7kNvwG6ZcHl&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjQ2MzM4NTgyNTAyNzQ2NjEsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTYsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=aa1cb6ac711e1297&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9GRDRCMTZGNEZFN0FBRjNGNTlDOENFRDFGOEUzQUM5Ql9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzNGNEJFMjcxRkM1QkQzN0RDN0Y2N0Q3QjM5MDhEN0I3X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbK3ZOvhp67EBUCKAJDMywXQDDmZmZmZmYYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=19CxhCcbxXGR1eJXPduZ5w&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQIJNkm5nUOLXEieLaB_RMdM07Roa7B5s5UBWvTYPtjl86d_bXd2ICsFySaBRHtB6YLcxjVa2LtyfA&oh=00_AQIp6zIGl9tdn-x2ulw1p9nCKN_ffZ6hmR_WEiZlB6jKIw&oe=6AA1DA13&bitrate=1396150&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 16.92
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "FM",
+      "nr": "1",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - FM",
+        "annonsNamn": "Batmotortrekk_NO_FM_1_H1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252096725350233",
+        "creativeId": "1320908746786994",
+        "adsetId": "120252096720470233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c812f8833e57a7074235f",
+        "namn": "Batmotor_RV_1_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c812f8833e57a7074235f",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_RV_1_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250104984000291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "RV | Notionrunda 2026-09-02",
+        "copy": {
+          "message": "8 av 8 recensioner. 5,0 av 5 stjärnor.\n\"Bra köp: Skyddet känns hållbart och är lätt att sätta på.\" – Fredrik Larsson\n\"Rekommenderas: Bra skydd när båten står ute. Väldigt nöjd.\" – Thomas Eriksson\n579 kr (ord. 965 kr).",
+          "headline": "8 av 8 recensioner gav 5 stjärnor",
+          "description": "",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "3023858884612696",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/o1/v/t2/f2/m366/AQOXTadX3TktozMw1c0yUGxCiNAwpkMWbbSwt7a8OUZhfvndcgp1OFJR3pByzJeiTG9gDHhc7Ver9HnI5D7BinlwA-R__rW_e_qlRvXUQXp7Jg.mp4?_nc_cat=100&_nc_sid=5e9851&_nc_ht=scontent-ord5-2.xx.fbcdn.net&_nc_ohc=0-v9l1MZM-IQ7kNvwEL7yko&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEwNzg2NzMxMzQ2MDU0OTYsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTIsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=cea214ad7f4d9909&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8xMTQ3QUFBRjM5MDdFMURFNkI0RjY3RkI2QjA3Qzc5QV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzdGNEIwQTVGNkRBQzBBRUZDMDE5QzcyNDgyMDk5Q0JGX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbw0qKQhcPqAxUCKAJDMywXQCnul41P3zsYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=qWB1jAZZQqV-qbeedQhKVA&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQJ1rJavQqRFU-Pj4CwRnIz85eDWaCowOxSKFjArxsarCD2G8JMdNmo-pxxGA6akLMXeWOlZJu3Q5Q&oh=00_AQI1osOxCQBDx0NsrgoBhcqMNNiktUlb-G8QBrIzrKi5dA&oe=6AA1E090&bitrate=1494709&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 12.98
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "RV",
+      "nr": "1",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - RV",
+        "annonsNamn": "Batmotortrekk_NO_RV_1_H1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252096829680233",
+        "creativeId": "1112583868101738",
+        "adsetId": "120252066687580233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
+    }
+  ]
+}

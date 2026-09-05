@@ -133,6 +133,18 @@ vit fet med svart kant för rubriker). Facit: `Beltesliper_NO_PD_4_H1` v2 (rutor
 0,2–1,65 s). `no-captions.py` duger bara när källan har EN smal textremsa och
 inget viktigt under den (Beltesliper_NO_PD_5_H1 godkänd av Axel samma dag).
 
+**Verktyget för det är `pipeline/no-precis.py <konfig.json>`** (byggt 2026-09-05 på
+Båtmotortrekk, 7 videor med ordcaptions + checklistor + pris i bild + pratbubblor +
+telefonslutkort). Det hittar ordcaption-pillret PER FRAME i renderingen (vitt piller,
+svart karaoke-text, centrerat nederst — Carl Vicentes mall), vitmålar bara det och
+lägger den norska cuen där med vit ruta/svart text — bara under de frames där det
+svenska pillret faktiskt syns (ingen lucklös förlängning). Övriga element: `blur`-rutor
+med tid, och PNG-lager (PIL) med vit/kräm platta + norsk text i samma ruta som den
+svenska. Slutkortets telefon byggs om ur sista framen (ordmärke, titel, badge, pris,
+jämförpris). Facit: `market-expansion/no/notion-batches/2026-09-05-video2/lager.py`
+(mått och tider per video, mätta ur `frames/`). Piller på vitt kollage (recensionskort)
+går inte att hitta automatiskt — mät för hand och ge `captions.fyll`.
+
 ## Fas 5 — Launch i Magiborsten NO
 
 ```bash
@@ -151,7 +163,10 @@ skrivs tillbaka i `jobb.json`. Tillbakaläsning: status/effective_status.
 
 1. Per uppladdad rad: kommentar `NO ✅ <målnamn> i "<kampanj>" (adset <K>), ad <id>`,
    `Translated url` = `https://www.facebook.com/adsmanager/manage/ads?act=1050941584152547&selected_ad_ids=<id>`,
-   status → **`Translation in review`** (alla aktiva marknader klara).
+   status → **`Approved`** (Axels beslut 2026-09-05: annonserna går live direkt i
+   Norge, alltså ska raden stå som Approved — inte `Translation in review`. Beslutet
+   ersätter "ingen kod flyttar till Approved" för de här raderna; alla 64 rader som
+   stod i `Translation in review` flyttades samma dag).
    **Den färdiga norska filen läggs dessutom in ÖVERST i radens sidinnehåll** (Axels
    beslut 2026-09-05: "lägg dom i itemet så jag bara kan skrolla ner och se den
    översatta bilden eller videon direkt") — rubrik `## 🇳🇴 Norsk version — <målnamn>
@@ -191,6 +206,6 @@ DSA-fält och kanaler ur blocket.
 - [ ] Bild: formmätning, norsk text i samma ruta, QA-bild läst per bild
 - [ ] Video: kvotkalkyl, proofread före render, captions bara över inbränd text, QA + slutkort
 - [ ] Upp i rätt kampanj/adset/konto med rätt namn, OPT_OUT + inline_comment, status enligt marknad, tillbakaläst
-- [ ] Notion: kommentar + `Translated url` + `Translation in review` + **norska filen inlagd överst på sidan**; hoppade rader kommenterade
+- [ ] Notion: kommentar + `Translated url` + **`Approved`** + **norska filen inlagd överst på sidan**; hoppade rader kommenterade
 - [ ] Discord-brief i Axels läsformat, med ping; problem i problemkanalen
 - [ ] STATUS/körlogg uppdaterade, committat utan medier, pushat

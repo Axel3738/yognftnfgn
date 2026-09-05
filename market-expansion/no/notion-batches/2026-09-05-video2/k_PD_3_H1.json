@@ -1,0 +1,30 @@
+{
+ "in": "out/batmotortrekk_PD_3_H1.mp4",
+ "ut": "final/Batmotortrekk_NO_PD_3_H1.mp4",
+ "srt": "srt-fix/batmotortrekk_PD_3_H1.srt",
+ "captions": {
+  "zon": [
+   850,
+   1040
+  ],
+  "max_chars": 34,
+  "font_px": 30,
+  "standard_cy": 992,
+  "tvinga": [
+   [
+    12.62,
+    99
+   ]
+  ]
+ },
+ "blur": [],
+ "lager": [
+  {
+   "png": "lager/slutkort_PD_3_H1.png",
+   "t": [
+    12.62,
+    99
+   ]
+  }
+ ]
+}

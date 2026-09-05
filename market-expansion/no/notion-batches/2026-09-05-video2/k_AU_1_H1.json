@@ -1,0 +1,50 @@
+{
+ "in": "out/batmotortrekk_AU_1_H1.mp4",
+ "ut": "final/Batmotortrekk_NO_AU_1_H1.mp4",
+ "srt": "srt-fix/batmotortrekk_AU_1_H1.srt",
+ "captions": {
+  "zon": [
+   850,
+   1040
+  ],
+  "max_chars": 34,
+  "font_px": 30,
+  "standard_cy": 992,
+  "tvinga": [
+   [
+    10.78,
+    99
+   ]
+  ]
+ },
+ "blur": [
+  {
+   "rect": [
+    178,
+    640,
+    545,
+    735
+   ],
+   "t": [
+    8.8,
+    8.95
+   ]
+  }
+ ],
+ "lager": [
+  {
+   "png": "lager/AU_sno.png",
+   "t": [
+    8.95,
+    10.78
+   ]
+  },
+  {
+   "png": "lager/slutkort_AU_1_H1.png",
+   "t": [
+    10.78,
+    99
+   ]
+  }
+ ]
+}

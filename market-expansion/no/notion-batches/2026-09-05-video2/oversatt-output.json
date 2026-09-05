@@ -1,0 +1,79 @@
+{
+  "srt": {
+    "SP_1_H4": "1\n00:00:00,079 --> 00:00:02,139\nÅtte av åtte anmeldelser, fem stjerner.\n\n2\n00:00:03,399 --> 00:00:07,659\nKraftig Oxford-stoff, heldekkende passform, enkelt å ta av og på.\n\n3\n00:00:08,399 --> 00:00:11,719\nFem hundre og tjueni kroner. Tretti dagers åpent kjøp.\n\n4\n00:00:11,840 --> 00:00:12,579\nKjøp nå",
+    "PD_3_H1": "1\n00:00:00,119 --> 00:00:02,059\nSeks måneder i regn, snø og sand.\n\n2\n00:00:07,699 --> 00:00:11,139\n420 D Oxford-stoff, fra deksel til rigg. Ingen verktøy.\n\n3\n00:00:11,199 --> 00:00:14,859\nTrekk over strammeremmen. Fem hundre og tjueni kroner. Kjøp nå",
+    "CS_3_H1": "1\n00:00:00,299 --> 00:00:10,199\nÅtte hundre og åttito kroner ble fem hundre og tjueni kroner. Motoren den beskytter er verdt desto mer. Seks måneder i regn, snø og salt sliter på en ubeskyttet motor. 420.\n\n2\n00:00:10,239 --> 00:00:11,179\nD Oxford-stoff.\n\n3\n00:00:11,399 --> 00:00:14,239\nDeksel til rigg. Tretti dagers åpent kjøp. Kjøp nå.",
+    "TH_1_H1": "1\n00:00:00,159 --> 00:00:06,219\nTrekket skjuler hele motoren. Deksel til rigg. Ikke bare et merke på toppen. Ingen ser hvilken motor som står under.\n\n2\n00:00:06,460 --> 00:00:08,300\nFire hundre og tjue D Oxford-stoff.\n\n3\n00:00:08,639 --> 00:00:09,880\nFem hundre og tjueni kroner.\n\n4\n00:00:10,199 --> 00:00:12,359\nTretti dagers åpent kjøp. Kjøp nå.",
+    "AU_1_H1": "1\n00:00:00,140 --> 00:00:05,500\n420 D Oxford-stoff. Dekker hele motoren fra deksel til rigg. Ikke bare toppen.\n\n2\n00:00:05,759 --> 00:00:06,599\nEnkelt å sette på.\n\n3\n00:00:06,819 --> 00:00:13,599\nBare trekk over og stram til. Beskytter mot regn, snø og UV i seks måneder. Tretti dagers åpent kjøp. Fem hundre og tjueni kroner.",
+    "FM_1_H1": "1\n00:00:00,280 --> 00:00:02,200\nSnart står båten på land igjen.\n\n2\n00:00:02,259 --> 00:00:07,659\nSett trekket på før frosten kommer. Seks måneder med regn, snø og frost jobber på en ubeskyttet motor.\n\n3\n00:00:08,000 --> 00:00:09,779\n420 D Oxford-stoff.\n\n4\n00:00:10,039 --> 00:00:10,759\nDeksel til rigg.\n\n5\n00:00:11,179 --> 00:00:13,500\nFem hundre og tjueni kroner. Kjøp nå.",
+    "RV_1_H1": "1\n00:00:00,137 --> 00:00:02,952\nTrekket føles slitesterkt og er lett å sette på.\n\n2\n00:00:02,989 --> 00:00:05,295\nGod beskyttelse mot regn og smuss. Jeg er fornøyd.\n\n3\n00:00:05,839 --> 00:00:07,219\n5,0 av fem stjerner.\n\n4\n00:00:07,619 --> 00:00:08,559\nÅtte anmeldelser.\n\n5\n00:00:08,859 --> 00:00:11,079\nFem hundre og tjueni kroner. Kjøp nå."
+  },
+  "overlay": {
+    "KRAFTIGT OXFORD-TYG": "KRAFTIG OXFORD-STOFF",
+    "HELTÄCKANDE PASSFORM": "HELDEKKENDE PASSFORM",
+    "ENKELT ATT SÄTTA PÅ OCH TA AV": ["ENKELT Å SETTE PÅ", "OG TA AV"],
+    "SNÖ": "SNØ",
+    "420D Oxford-tyg": "420D Oxford-stoff",
+    "30 DAGARS ÖPPET KÖP": "TRETTI DAGERS ÅPENT KJØP",
+    "PRODUKTTITEL": ["BÅTMOTORTREKK 420D –", "HELDEKKENDE FOR PÅHENGSMOTOR"],
+    "BUBBLA_1": ["Trekket føles slitesterkt", "og er lett å sette på."],
+    "BUBBLA_2": ["God beskyttelse mot regn og smuss.", "Jeg er fornøyd."]
+  },
+  "adcopy": {
+    "Batmotortrekk_NO_SP_1_H4": {
+      "message": "5,0 av 5 stjerner. 8 av 8 anmeldelser.\n\"Trekket føles slitesterkt og er lett å sette på.\" – Fredrik L.\n529 kr (ord. 882 kr).",
+      "headline": "5,0 av 5 stjerner (8 av 8 anmeldelser)",
+      "description": "529 kr (ord. 882 kr)"
+    },
+    "Batmotortrekk_NO_PD_3_H1": {
+      "message": "Regn mot en ubeskyttet motor.\nSå trekkes 420D Oxford-stoffet på — uten verktøy.\n529 kr (ord. 882 kr), spar 353 kr.",
+      "headline": "Se trekket dras på — i sanntid",
+      "description": "529 kr (ord. 882 kr)"
+    },
+    "Batmotortrekk_NO_CS_3_H1": {
+      "message": "Seks måneder i vannet — så står motoren igjen, ubeskyttet, resten av året.\n420D Oxford-stoff dekker den mot regn, snø og UV til du sjøsetter igjen.\n529 kr (ord. 882 kr).",
+      "headline": "Seks måneder i vannet. Så ubeskyttet i seks til?",
+      "description": "529 kr (ord. 882 kr)"
+    },
+    "Batmotortrekk_NO_TH_1_H1": {
+      "message": "Ingen ser hvilken motor som står under.\n420D Oxford-stoff dekker hele motoren — merke og modell usynlig for alle som går forbi.\nBEVERBUTIKKEN. 529 kr (ord. 882 kr).",
+      "headline": "Ingen ser hvilken motor som står under",
+      "description": "529 kr (ord. 882 kr)"
+    },
+    "Batmotortrekk_NO_AU_1_H1": {
+      "message": "Regn. Snø. UV.\n420D Oxford-stoff tar smellen i stedet for motoren.\nDekker hele motoren, fra deksel til rigg. 529 kr (ord. 882 kr).",
+      "headline": "Regn, snø og UV møter 420D-stoffet",
+      "description": "529 kr (ord. 882 kr)"
+    },
+    "Batmotortrekk_NO_FM_1_H1": {
+      "message": "Snart står båten på land igjen.\nSeks måneder i garasje eller på tilhenger uten 420D-trekk — motoren møter regn, snø og UV.\nTrekket dekker hele motoren til du sjøsetter igjen.\n529 kr (ord. 882 kr).",
+      "headline": "420D mellom motoren og seks måneders vær",
+      "description": "529 kr (ord. 882 kr)"
+    },
+    "Batmotortrekk_NO_RV_1_H1": {
+      "message": "8 av 8 anmeldelser. 5,0 av 5 stjerner.\n\"Bra kjøp: Trekket føles slitesterkt og er lett å sette på.\" – Fredrik Larsson\n\"Anbefales: Bra beskyttelse når båten står ute. Veldig fornøyd.\" – Thomas Eriksson\n529 kr (ord. 882 kr).",
+      "headline": "8 av 8 anmeldelser ga 5 stjerner",
+      "description": "529 kr (ord. 882 kr)"
+    }
+  },
+  "test": {
+    "Batmotortrekk_NO_SP_1_H4": "visualisera: konkret antall stjerner/anmeldelser ✅ / falsifiera: sjekkbart tall ✅ / ingen annan: kundsitat + eksakt antall er unikt for produktet ✅",
+    "Batmotortrekk_NO_PD_3_H1": "visualisera: regn + motor + trekkes på i sanntid ✅ / falsifiera: «uten verktøy» kan sjekkes mot produktet ✅ / ingen annan: eksakt materiale + prosess ingen konkurrent kan hevde likt ✅",
+    "Batmotortrekk_NO_CS_3_H1": "visualisera: «seks måneder i vannet» er en konkret tidsramme ✅ / falsifiera: sant/usant om motoren står ubeskyttet resten av året ✅ / ingen annan: kontrasten vann↔ubeskyttet er spesifikk for denne bruken ✅",
+    "Batmotortrekk_NO_TH_1_H1": "visualisera: «usynlig for alle som går forbi» er en konkret scene ✅ / falsifiera: sjekkbart om merke er synlig eller ei ✅ / ingen annan: helt tildekket motor er en spesifikk produktegenskap ✅",
+    "Batmotortrekk_NO_AU_1_H1": "visualisera: «tar smellen» + regn/snø/UV er konkrete elementer ✅ / falsifiera: sjekkbart at stoffet dekker fra deksel til rigg ✅ / ingen annan: den eksakte materialbetegnelsen 420D er produktspesifikk ✅",
+    "Batmotortrekk_NO_FM_1_H1": "visualisera: garasje/tilhenger + regn/snø/UV er konkret scene ✅ / falsifiera: sjekkbart om trekket dekker hele motoren ✅ / ingen annan: seks måneders lagring er spesifikk for denne brukssituasjonen ✅",
+    "Batmotortrekk_NO_RV_1_H1": "visualisera: eksakt antall anmeldelser + stjerner er konkret ✅ / falsifiera: sjekkbart tall som kan være sant eller usant ✅ / ingen annan: to navngitte kunders faktiske sitater er unike for produktet ✅"
+  },
+  "andringar": [
+    "Alle priser rettet till NO-priset 529/882/353 kr — HeyGens utkast hadde svenske belopp (579/965/386/967/577/570) kvar eller feiltranskribert.",
+    "CS_3_H1: fulgte instruksjonen om at talet egentlig sier 965→579 (ikke det viste 967) og oversatte til 882→529.",
+    "TH_1_H1 og CS_3_H1: priser og 420D skrevet med bokstaver i tal-SRT (f.eks. 'fem hundre og tjueni kroner') i stedet for sifre, for korrekt TTS-uttale — HeyGen hadde produsert tull som 'syttiogjennom'.",
+    "'Kåpa till rigg' oversatt konsekvent til 'deksel til rigg' (evt. 'fra deksel til rigg' der SE-originalen har en fullstendig setning), ikke droppet slik HeyGen gjorde i TH_1_H1.",
+    "'420D' skrevet '420 D' i tal-SRT, men '420D' sammenhengende i skjermtekst, per regel.",
+    "'BÄVERBUTIKEN' → 'BEVERBUTIKKEN' i annonsetekst.",
+    "Alle beløp i annonsetekst satt til '529 kr (ord. 882 kr)' / 'spar 353 kr' — ingen svenske kr-beløp igjen.",
+    "Tom svensk description fylt med prislinjen '529 kr (ord. 882 kr)' på alle 7 annonser.",
+    "Kontrollert: ingen forekomster av 579/965/386/967/577/570/kronor/Bäverbutiken/ä/svensk ö i noen NO-tekst; norsk ø/å beholdt der det hører hjemme."
+  ]
+}

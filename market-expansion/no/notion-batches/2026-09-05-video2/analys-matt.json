@@ -1,0 +1,65 @@
+{
+ "SP_1_H4": {
+  "N": 132,
+  "capband": [
+   860,
+   1019
+  ],
+  "endcard_from": 100,
+  "endcard_frames": 7
+ },
+ "PD_3_H1": {
+  "N": 158,
+  "capband": [
+   875,
+   964
+  ],
+  "endcard_from": 126,
+  "endcard_frames": 7
+ },
+ "CS_3_H1": {
+  "N": 160,
+  "capband": [
+   920,
+   1019
+  ],
+  "endcard_from": 123,
+  "endcard_frames": 7
+ },
+ "TH_1_H1": {
+  "N": 138,
+  "capband": [
+   875,
+   946
+  ],
+  "endcard_from": 101,
+  "endcard_frames": 7
+ },
+ "AU_1_H1": {
+  "N": 153,
+  "capband": [
+   875,
+   1019
+  ],
+  "endcard_from": 93,
+  "endcard_frames": 11
+ },
+ "FM_1_H1": {
+  "N": 169,
+  "capband": [
+   960,
+   1019
+  ],
+  "endcard_from": 135,
+  "endcard_frames": 7
+ },
+ "RV_1_H1": {
+  "N": 130,
+  "capband": [
+   860,
+   1019
+  ],
+  "endcard_from": 108,
+  "endcard_frames": 7
+ }
+}
