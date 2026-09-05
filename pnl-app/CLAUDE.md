@@ -326,8 +326,10 @@ Varje svar till honom följer detta, utan undantag:
   siffran matchar Meta Ads Manager. Länken klistras i "Proof of resolution".
  (när detta skrevs)
 
-- Flerpacks-COGS (Juicy-stil) finns sedan v59, se avsnittet nedan. Kvar:
-  Axel fyller i 2/3-set-priserna ur offertbatcherna (kolumnerna qty 2/3).
+- Flerpacks-COGS (Juicy-stil) finns sedan v59 och är INLAGT i alla fem
+  butiker 2026-09-05 ur alla offerter (se avsnittet nedan). 26 produkter har
+  bara svensk offert — NO/FI/DK/UK saknar stegpris för dem
+  (`scratch/saknas-offert.json`); be leverantören om landskolumnerna.
 - Plyschtofflorna finns inte i FI- och DK-butiken — COGS-rader väntar där.
 - Marina motorhöljet: offert bara för största storleken (250–350 hk, svart) —
   alla 30 varianter har värsta-falls-kostnad; verklig marginal något bättre.
@@ -355,6 +357,18 @@ Axel visade Juicys "Enheter / Total kostnad"-tabell (1 st 88,34 · 2 st 134,22
   `88.34|134.22|180.19` i kostnadskolumnen (1|2|3 st, totalt för antalet);
   mallen exporterar samma form så filen går att skicka runt utan att tappa
   stegen. En rad UTAN `|` rör inte befintliga steg.
+- Importlogiken ligger i `app/lib/cost-import.server.ts` (delad). 2026-09-05
+  kördes den för alla fem butiker via en TILLFÄLLIG nyckelskyddad POST-rutt
+  (`debug-import.tsx`, borttagen i v61) med butikernas sparade offline-
+  nycklar — 213/121/127/127/134 varianter (SE/NO/FI/UK/DK), noll överhoppade.
+  Underlaget: `scratch/quotes.json` (alla offertfiler tolkade: full1–5,
+  prislistan 0820, Axel_quote) + handmappning offertnamn → svensk titel i
+  `scratch/bygg-flerpack.py`; övriga butiker matchas via produktbildernas
+  filnamn (identiska mellan klonerna, 160–170 av ~170 träffar).
+  `Magnetplattor 46/60 delar` är två varianter med varsitt styckpris, inte
+  ett flerpack. Lövblås och husdjurskudde finns inte i butiken.
+- Äldre dagsrader saknar `lines` och räknas per styck tills de hämtas om;
+  panelens bakgrundsuppdatering (>6 h gamla rader) fyller på efter hand.
 
 ### Motorhöljen: kostnad per hk-storlek (2026-09-04)
 Leverantörsofferten `Axel_quote.xlsx` ger motorhöljet per hk-storlek och land
