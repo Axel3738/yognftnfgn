@@ -1,0 +1,27 @@
+1
+00:00:00,099 --> 00:00:01,339
+Snart tomt på lager.
+
+2
+00:00:01,500 --> 00:00:02,240
+Slå til nå.
+
+3
+00:00:02,359 --> 00:00:04,559
+I dag, stor rabatt på ukedoseetten.
+
+4
+00:00:04,719 --> 00:00:08,819
+Ordinær pris femhundre og seks kroner. I dag kun trehundre og åttini kroner.
+
+5
+00:00:08,960 --> 00:00:11,340
+Tjueen rom. Morgen, middag, kveld.
+
+6
+00:00:11,420 --> 00:00:16,539
+En hel uke forberedt på forhånd. Salgstilbudet gjelder kun i dag. Lageret minker raskt.
+
+7
+00:00:16,579 --> 00:00:18,419
+Bestill nå før det er tomt.
