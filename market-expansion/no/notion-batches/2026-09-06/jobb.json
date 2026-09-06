@@ -61,7 +61,13 @@
         "adsetNamn": "Kranbeskyttelse NO - SP",
         "annonsNamn": "Kranbeskyttelse_NO_SP_4_H1",
         "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
-        "prefix": "Kranbeskyttelse"
+        "prefix": "Kranbeskyttelse",
+        "status": "ACTIVE",
+        "annonsId": "120252104836640233",
+        "creativeId": "3285454658323797",
+        "adsetId": "120251996274400233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "219.00",
@@ -124,7 +130,13 @@
         "adsetNamn": "Kranbeskyttelse NO - SP",
         "annonsNamn": "Kranbeskyttelse_NO_SP_5_H1",
         "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
-        "prefix": "Kranbeskyttelse"
+        "prefix": "Kranbeskyttelse",
+        "status": "ACTIVE",
+        "annonsId": "120252104838040233",
+        "creativeId": "1737351994239672",
+        "adsetId": "120251996274400233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "219.00",

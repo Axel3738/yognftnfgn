@@ -1,0 +1,4 @@
+{
+ "kranbeskyttelse_SP_4_H1": { "malnamn": "Kranbeskyttelse_NO_SP_4_H1", "status": "OK", "fil": "market-expansion/no/notion-batches/2026-09-06/no/Kranbeskyttelse_NO_SP_4_H1.mp4", "skal": null, "qa": "3 QA-rutor lästa 2026-09-06: pill 872–949 täckt, norsk text läsbar, ingen grafik" },
+ "kranbeskyttelse_SP_5_H1": { "malnamn": "Kranbeskyttelse_NO_SP_5_H1", "status": "OK", "fil": "market-expansion/no/notion-batches/2026-09-06/no/Kranbeskyttelse_NO_SP_5_H1.mp4", "skal": null, "qa": "3 QA-rutor lästa 2026-09-06: pill 825–900 täckt, norsk text läsbar, ingen grafik" }
+}
