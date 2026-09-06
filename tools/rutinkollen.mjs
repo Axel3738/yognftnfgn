@@ -113,10 +113,10 @@ function förstaRaden(m) {
   // Rubrikrader ("**Läget.**"), pingar och tomrader är inte innehåll.
   const rader = (m.content || '').split('\n').map(r => r.trim())
     .filter(r => r && !/^<@/.test(r) && !/^\*\*[^*]{0,20}\*\*$/.test(r));
-  const vald = (rader.find(r => STATUSTECKEN.test(r)) || rader[0] || '')
+  // Ingen trunkering här — enkel() klipper sist, efter att parenteser m.m.
+  // rensats, så en halv parentes aldrig överlever.
+  return (rader.find(r => STATUSTECKEN.test(r)) || rader[0] || '')
     .replace(/^\*\*|\*\*$/g, '');
-  const tecken = Array.from(vald); // klipp på tecken, inte kodenheter
-  return tecken.length > 90 ? tecken.slice(0, 89).join('') + '…' : vald;
 }
 function status(msgs) {
   // Sämsta signalen i fönstret vinner: ett fel göms inte av en senare grön rad.
@@ -182,6 +182,28 @@ const rader = [];
 const problemRader = [];
 const lästeInte = [];
 
+// Rapporten läses av Axel, som har grov dyslexi och adhd. Varje rad ska vara
+// kort, enkel och utan teknik. Annonskoder byts mot produktnamnet, parenteser
+// och långa svansar klipps bort.
+function enkel(text) {
+  let t = text
+    .replace(/^(?:✅|⚠️|❌|🚨|☀️|\p{Emoji_Presentation})+\s*/gu, '')
+    .replace(/\b[\wÅÄÖåäö]+_[A-Z]{1,3}_\d+(?:_H?\d+)?\b\s*\(([^)]+)\)/gu, '$1') // "Kod_PD_4_H1 (Produkt)" → "Produkt"
+    .replace(/\b[\wÅÄÖåäö]+_[A-Z]{1,3}_\d+(?:_H?\d+)?\b/gu, 'en annons')
+    .replace(/\([^)]*\)/g, '')
+    .replace(/\([^)]*$/, '') // öppen parentes utan slut (klippt källrad)
+    .replace(/\s*—\s*/g, ': ')
+    .replace(/\s+/g, ' ')
+    .replace(/\s+([.,:])/g, '$1')
+    .trim();
+  const tecken = Array.from(t);
+  if (tecken.length > 80) {
+    t = tecken.slice(0, 80).join('').replace(/\s+\S*$/, '').replace(/[\s.,:]+$/, '') + '…';
+  }
+  return t;
+}
+
+let gröna = 0;
 for (const rutin of RUTINER) {
   let id;
   try { id = await kanalId(rutin); } catch (e) { id = null; }
@@ -189,17 +211,16 @@ for (const rutin of RUTINER) {
   let msgs;
   try { msgs = await botMeddelanden(id); } catch { lästeInte.push(rutin.namn); continue; }
   if (msgs.length === 0) {
-    if (rutin.dagligen) rader.push({ nivå: 'fel', text: `❌ ${rutin.namn} hörde inte av sig.` });
+    if (rutin.dagligen) rader.push(`${rutin.namn} körde inte i natt.`);
     continue;
   }
   const s = status(msgs);
-  const emoji = s === 'fel' ? '❌' : s === 'varning' ? '⚠️' : '✅';
-  let text = `${emoji} ${rutin.namn}: ${förstaRaden(msgs[msgs.length - 1]).replace(/^(?:✅|⚠️|❌|🚨|☀️|\p{Emoji_Presentation})+\s*/gu, '')}`;
   if (rutin.minst > 1 && msgs.length < rutin.minst) {
-    text += ` (${msgs.length} av ${rutin.minst} rapporter)`;
-    rader.push({ nivå: 'varning', text: text.replace(/^✅/, '⚠️') });
+    rader.push(`${rutin.namn} rapporterade bara ${msgs.length} gång av ${rutin.minst}.`);
+  } else if (s === 'ok') {
+    gröna++;
   } else {
-    rader.push({ nivå: s === 'ok' ? 'ok' : s, text });
+    rader.push(`${rutin.namn}: ${enkel(förstaRaden(msgs[msgs.length - 1]))}`);
   }
 }
 
@@ -209,7 +230,10 @@ for (const pk of PROBLEMKANALER) {
   if (!id) continue;
   let msgs = [];
   try { msgs = await botMeddelanden(id); } catch { continue; }
-  for (const m of msgs) problemRader.push(`• ${förstaRaden(m)}`);
+  for (const m of msgs) {
+    const rad = enkel(förstaRaden(m));
+    if (rad && !problemRader.includes(rad)) problemRader.push(rad);
+  }
 }
 
 const målkanal = flaggor.kanal || process.env.RUTINKOLLEN_KANAL || DAGENS_CHECKIN;
@@ -222,19 +246,31 @@ try {
 
 const [hg, kie] = await Promise.all([heygenSaldo(), kieSaldo()]);
 
-// ---- rapporten (Axels läsformat: en mening per rad, max ~10 ord) ------------
+// ---- rapporten --------------------------------------------------------------
+// Kort nog för en mobilskärm: en dom överst, max 3 numrerade saker, saldona,
+// en slutrad. Gröna rutiner listas aldrig var för sig — de är bara ett antal.
 const datum = new Date().toLocaleDateString('sv-SE', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'Europe/Stockholm' });
-const antalIlla = rader.filter(r => r.nivå !== 'ok').length + problemRader.length + lästeInte.length;
 
-const ut = [`☀️ Rutinkollen ${datum}`];
-ut.push(antalIlla === 0 ? '✅ Allt rullar. Du behöver inte läsa mer.' : `⚠️ ${antalIlla} sak${antalIlla > 1 ? 'er' : ''} att titta på.`);
-ut.push('');
-for (const r of rader) ut.push(r.text);
-for (const namn of lästeInte) ut.push(`⚠️ ${namn}: kunde inte läsa kanalen.`);
-if (problemRader.length) {
+const saker = [
+  ...rader,
+  ...lästeInte.map(n => `${n} gick inte att läsa av.`),
+  ...problemRader,
+];
+const MAX_SAKER = 3;
+
+const ut = [`☀️ Rutinkollen ${datum}`, ''];
+if (saker.length === 0) {
+  ut.push('✅ Allt är ok.');
+  ut.push(`Alla ${gröna} rutiner körde i natt.`);
+} else {
+  ut.push(`⚠️ ${saker.length === 1 ? 'En sak' : saker.length + ' saker'} strulade i natt.`);
   ut.push('');
-  ut.push('Problem rapporterade i natt:');
-  ut.push(...problemRader);
+  saker.slice(0, MAX_SAKER).forEach((s, i) => ut.push(`${i + 1}. ${s}`));
+  if (saker.length > MAX_SAKER) ut.push(`…och ${saker.length - MAX_SAKER} till.`);
+  if (gröna > 0) {
+    ut.push('');
+    ut.push(`${gröna} rutiner körde som de skulle.`);
+  }
 }
 const saldon = [saldoRad('HeyGen', hg, förr.heygen), saldoRad('Kie', kie, förr.kie)].filter(Boolean);
 if (saldon.length) {
@@ -242,7 +278,7 @@ if (saldon.length) {
   ut.push(`💳 ${saldon.join('. ')}.`);
 }
 ut.push('');
-ut.push(antalIlla === 0 ? 'Du behöver inte göra något.' : 'Titta bara på raderna med ⚠️ och ❌.');
+ut.push(saker.length === 0 ? 'Du behöver inte göra något.' : 'Teamet fixar det mesta själva. Jag har koll.');
 
 const rapport = ut.join('\n');
 console.log(rapport);
