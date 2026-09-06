@@ -112,5 +112,59 @@ Drive: batchmapp `Batch #3` skapad i produktens befintliga mapp
 (`14-_uqZQnj4j_R-PqdUwZzZc2DPAenkhy`) med en Drive-länk i varje Notion-item
 som komplement — se länk i respektive brief.
 
+**Utfall (avläst 2026-09-06, körning nr 2):** fortfarande INTE launchade.
+Alla 9 items står `Status: Draft` i Notion (kontrollerat med
+`notion-query-data-sources`), och ingen av de 9 ad-namnen finns i Meta-kontot
+(kontrollerat med `campaign_id`-filtrering, `date_preset: maximum`).
+Redigerarna har inte börjat producera batchen ännu. Ingen hypotes kan stämmas
+av — flaggas till nästa `/cs`-körning i stället för att gissa ett utfall.
+
+---
+
+## Batch #4 — 2026-09-06 (denna körning, `/rond-auto` → `/cs`, 3-dagarsrundan,
+`rundaAntal: 4` + 3 BOF + 2 recensioner = 9 briefer totalt)
+
+Byggd på samma Winning/Losing DNA som batch #3 (ingen ny data att bygga på,
+se "Feedbackloop 2026-09-06" i `dna.md` — batch #3 hann inte launchas).
+Isolerade variabler valdes för att INTE krocka med batch #3:s ännu olästa
+hypoteser (se tabellen: variabel skiljer sig från motsvarande batch #3-brief
+där ett sådant finns).
+
+| Annons | Format | Koncept | Hypotes | Isolerad variabel |
+|---|---|---|---|---|
+| `Rodholder_SP_5_H1` | Video | SP (social proof) | SP har aldrig fått video eller riktig budget (0 bedömbara på 3 veckor) — första video-testet ger konceptet en verklig chans | Talare/format: UGC-bekännelse i stället för anonym voiceover+broll |
+| `Rodholder_PD_34_H1` | Video | PD (demo) | Bevisat budskap, aldrig testat med simultan split-screen-struktur i video (bara sekventiellt före/efter hittills) | Bevis-STRUKTUR: samtidig split-screen, inte hook-ordalydelse (skiljer sig från `PD_31_H1` i batch #3) |
+| `Rodholder_CS_5_H1` | Video | CS (brådska) | Bevisat i video (`CS_1_H1`, +9 690 kr) men bara 3 bedömbara annonser totalt, alla voiceover+broll — testar om mönstret håller oberoende av format | Talare/format: UGC-bekännelse (skiljer sig från `CS_4_H1` i batch #3, som bara ändrade hook) |
+| `Rodholder_PD_35_1` | Static | PD (demo, format-transfer) | Tredje, oberoende statiska datapunkten för PD-budskapet (`PD_6_1` bevisad vinnare, `PD_32_1` väntar) | Visuell stil: use-case-kollage (båt/bil/garage/tacklelåda), skiljer sig från `PD_32_1`:s split-jämförelse |
+| `Rodholder_SO_6_1` | Static, BOF | Kvantitet/mångsidighet | BOF (Axel: bilder är billiga) — prisoberoende till skillnad från blockerade `SO_5_1` | — |
+| `Rodholder_JF_2_1` | Static, BOF | Invändning: DIY-lösningar | BOF, adresserar "varför inte tejp/gummiband" — andra användningen av JF-koden (första var kompatibilitet, `JF_1_1`) | — |
+| `Rodholder_TR_1_1` | Static, BOF | Trust/socialt bevis | Ny kod TR. "300+ sålda" sourcat ur Metas egna 324 verifierade köp i kampanjen (avläst 2026-09-06), avrundat NER för säkerhets skull | — |
+| `Rodholder_SP_6_1` | Static, review | Recension (Johan) | Riktig recension, ordagrant citat — annan recensent än batch #3:s Anders/Peter | — |
+| `Rodholder_SP_7_1` | Static, review | Recension (Mikael) | Riktig recension, ordagrant citat | — |
+
+**Prisstatus:** oförändrad — fortfarande obekräftad (149/269/289 kr,
+se `dna.md`). Ingen av batch #4:s 9 annonser skriver ut ett exakt pris.
+`Rodholder_SO_5_1` (batch #3) kvarstår som den enda BLOCKER-briefen.
+
+Notion: alla 9 laddade som `Draft` i hubben "Fish rod holder"
+(`collection://3c3270ab-908c-8356-ad6c-87ff779e647d`), Typ "Video - Pending
+Approval" resp. "Image - Pending Approval". Verifierat genom att läsa tillbaka
+`Rodholder_SP_5_H1` med `notion-fetch` — hela briefen (inklusive tre-
+frågorstabellen) står i sidans innehåll, inte bara som länk.
+
+Drive: batchmapp `Batch #4` skapad i produktens befintliga mapp
+(`10WK2ZKvDzCTMNf7RC6N2KkRs2UqqAhMv`), id `1PLBnIWhC_TwoTdRBij2hZQt-BYGoyfKg`,
+länkad i varje brief.
+
+⚠️ **Modellpolicy-avvikelse:** inget Agent/Task-verktyg för att spawna en
+sonnet/haiku-subagent fanns tillgängligt i den här sessionens verktygslåda
+(sökt via ToolSearch, inget träffat). All svensk copy i denna batch skrevs
+därför av huvudsessionen själv, med tre-frågorstestet kört rad för rad som
+substitut för den vanliga subagent-granskningen. Nästa körning: kontrollera
+om Agent-verktyget finns tillgängligt då, och använd det om så — annars är
+detta en känd begränsning i den schemalagda `/rond-auto`-miljön, inte ett
+medvetet vals bort av regeln.
+
 **Utfall:** ej avläst ännu (annonserna är briefer, inte launchade — nästa
-`/cs`-körning läser av dessa när redigerarna levererat och de gått live).
+`/cs`-körning läser av dessa OCH batch #3 när redigerarna levererat och de
+gått live).

@@ -6,11 +6,16 @@ Detta är en **retroaktiv rekonstruktion** kombinerad med brief-rundan för
 2026-09-03 (`/rond-auto` steg 4b, behov `brief_runda`, loggas `CS_BATCH_KLAR`
 — inte `FORSTA_BATCH_KLAR`, se motivering i `.claude/commands/rond-auto.md`).
 
+Uppdaterad 2026-09-06, körning nr 2 (`/cs`-runda via `/rond-auto`, batch #4,
+3-dagarsrundan). Se batch-log för feedbackloopen och den nya batchen.
+
 Kampanj: `Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18`
 (`120249850522830291`), MagiBorsten `1867947880635861`, break-even-ROAS
-**1,50**. Dagsbudget 1 250 kr. Senaste 3 dagar (avläst 2026-09-03):
-3 565,59 kr spend, ROAS 2,15, 17 köp — lönsamt, ~20 % vinst, budgeten rörs
-INTE denna körning (redan hanterat av huvudsessionen).
+**1,50**. Dagsbudget **1 500 kr** (avläst 2026-09-06, upp från 1 250 kr
+2026-09-03 — läget är `drift` per `agent/produktkarta.json`, budgeten rörs
+inte av denna körning). Livstid (avläst 2026-09-06): 61 942,37 kr spend,
+324 köp, ROAS 2,26 — accelererande sedan förra avläsningen (58 111,52 kr /
+300 köp / ROAS 2,23 den 2026-09-03).
 
 ## Produkten
 Fiskespöhållaren = **4-pack plastklämmor** som håller ihopfällda fiskespön
@@ -194,10 +199,66 @@ framtida test-ABO-beslut.
 
 ## Namnkonvention för den här produkten
 Kontot har växlat prefix mitt i historiken: `Fiskespöhållare_` (batch #1,
-2026-08-12) → `Rodholder_` (batch #2, ~2026-08-20). Nya annonser i denna
-batch (#3) fortsätter med **`Rodholder_`** för att matcha den senaste,
-aktiva konventionen i hubben. Upptagna nummer per kod (avlästa ur kontot
-2026-09-03): PD upp till 30 (+ `PROD_V01–10`), CS upp till 3, SO upp till 4,
-GT upp till 3, SP upp till 2. Nya koder införda i denna batch (första
-användning, loggat här så nästa körning inte kolliderar): **GA** (garanti/
-fri frakt-BOF) och **JF** (jämförelse/invändnings-BOF).
+2026-08-12) → `Rodholder_` (batch #2, ~2026-08-20). Nya annonser fortsätter
+med **`Rodholder_`** för att matcha den senaste, aktiva konventionen i
+hubben. Upptagna nummer per kod (avlästa ur Notion-hubben 2026-09-06, efter
+batch #4): PD upp till 35 (+ `PROD_V01–10`), CS upp till 5, SO upp till 6,
+GT upp till 4, SP upp till 7, GA upp till 1, JF upp till 2, **TR upp till 1**
+(ny kod, se nedan). Koder införda i batch #3 (2026-09-03): **GA** (garanti/
+fri frakt-BOF) och **JF** (jämförelse/invändnings-BOF). Koder införda i
+batch #4 (2026-09-06): **TR** (trust/social proof, numeriskt sålda-antal-BOF).
+
+## Feedbackloop 2026-09-06 (körning nr 2, batch #4)
+
+**Batch #3 (2026-09-03, 9 briefer) har INTE launchats än** — alla 9 items
+(`Rodholder_PD_31_H1`, `PD_32_1`, `CS_4_H1`, `GT_4_H1`, `SO_5_1`, `GA_1_1`,
+`JF_1_1`, `SP_3_1`, `SP_4_1`) står fortfarande `Status: Draft` i Notion-hubben
+och syns inte alls i Meta-kontot (kontrollerat via `campaign_id`-filtrering,
+ad-nivå, `date_preset: maximum`). Ingen av batch #3:s hypoteser går alltså
+att stämma av än — redigerarna har inte producerat dem. Detta loggas här så
+nästa `/cs`-körning vet att avläsa DEM innan den dömer batch #4.
+
+**Marginal-CPA-grinden (ANALYSMETOD 2b) passerad:** snapshots 3 dygn isär
+(2026-09-03 → 2026-09-06), 24 inkrementella köp (≥5-kravet uppfyllt),
+inkrementell spend 3 830,85 kr → marginal-CPA ≈ **160 kr**, långt under
+break-even (≈289 kr real AOV-baserad). Kampanjen accelererar, inte tvärtom.
+
+**Vinstbidragstabellen (livstid, samma 12 bedömbara annonser som 2026-09-03,
+metod: `spend × (ROAS − 1,50)` — prisoberoende, används i första hand
+eftersom exakt pris fortfarande är obekräftat):**
+
+| Annons | Format | Status | Spend | Köp | ROAS | Vinstbidrag | Δ spend/köp sedan 09-03 |
+|---|---|---|---|---|---|---|---|
+| Fiskespöhållare_PD_EXTRA (ad …564380291) | video | ACTIVE | 10 773,75 kr | 54 | 2,02 | **+5 663 kr** | +1 644 kr / +13 köp — störst rörelse i batchen |
+| Fiskespöhållare_PD_1_H1 — TOP SPENDER/benchmark | video | ACTIVE | 11 071,04 kr | 50 | 2,12 | **+6 812 kr** | +1 037 kr / +4 köp |
+| Fiskespöhållare_PD_EXTRA (ad …856844270291) | video | PAUSED (rör ej) | 9 158,59 kr | 51 | 2,40 | +8 259 kr | ±0 (pausad) |
+| Fiskespöhållare_CS_1_H1 | video | ACTIVE | 5 807,29 kr | 43 | 3,17 | **+9 690 kr** | +317 kr / +3 köp |
+| Fiskespöhållare_PD_EXTRA (ad …857099190291) | video | ACTIVE | 4 230,51 kr | 31 | 3,02 | +6 434 kr | +12 kr / +0 köp |
+| Rodholder_PD_15_H1 | video | PAUSED (rör ej) | 9 267,93 kr | 39 | 1,94 | +4 084 kr | ±0 (pausad) |
+| Rodholder_PD_6_1 | static | ACTIVE | 2 138,36 kr | 15 | 2,95 | **+3 100 kr** | +365 kr / +1 köp |
+| Rodholder_PD_16_H1 | video | ACTIVE | 2 256,54 kr | 9 | 1,64 | +321 kr | +252 kr / +1 köp |
+| Fiskespöhållare_CS_1_H3 (ad …856845560291) | video | ACTIVE | 431,28 kr | 8 | 8,05 | +2 823 kr | +8 kr / **+0 köp — stagnerar** |
+| Rodholder_PD_11_H2 | video | PAUSED (rör ej) | 1 921,70 kr | 6 | 1,49 | −19 kr | ±0 (pausad) |
+| Rodholder_SO_4_1 | static | PAUSED (rör ej) | 807,99 kr | 3 | 1,44 | −48 kr | ±0 (pausad) |
+| Fiskespöhållare_CS_2_1 | static | PAUSED (rör ej) | 907,39 kr | 3 | 1,08 | **−382 kr** | ±0 (pausad) |
+
+**Kampanjtotal (livstid):** 61 942,37 kr spend, 324 köp, ROAS 2,26.
+
+**Avläst mönster (bekräftar dna:ts mönster, inga nya kill-beslut):**
+1. **Fortsatt BEVISAD (video bär vinsten):** samtliga aktiva bedömbara annonser
+   som växte gjorde det som video (PD_EXTRA +13 köp på 3 dygn). `PD_6_1`
+   (static) växte också men svagt (+1 köp).
+2. **`Fiskespöhållare_CS_1_H3` stagnerar** — 0 nya köp på 3 dygn trots att den
+   passerat signifikansgrinden (8 köp). Enligt ANALYSMETOD 2c kvarstår den som
+   **preliminär, inte bevisad** — flat utveckling är ett svagare tecken än
+   fortsatt tillväxt. Skriv INTE in ROAS 8,05 i Winning DNA än.
+2. **`Fiskespöhållare_PD_EXTRA` (video B, 54 köp)** är nu den enskilt mest
+   köpstarka annonsen i kampanjen och har gått om `PD_1_H1` i antal köp (54 vs
+   50) — men `PD_1_H1` behåller sin roll som benchmark eftersom den är äldst
+   och mest stabil, inte för att den presterar bäst just nu.
+
+**Konsekvens för batch #4:** inga kill/skala-beslut denna körning (produktens
+budget hanteras av huvudsessionen/ronden). Batch #4 byggs enligt samma
+Winning/Losing DNA som redan står nedan, med NYA isolerade variabler som inte
+krockar med batch #3:s ännu olästa hypoteser (se batch-log för fullständig
+lista + tre-frågorstest per rad).
