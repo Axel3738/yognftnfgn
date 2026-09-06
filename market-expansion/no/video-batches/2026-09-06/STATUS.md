@@ -68,8 +68,10 @@ Ingen kö till i morgon utöver Bordtennisnät (samma COGS-blockering).
   tre-frågorstestet fullt ut.
 - **Levererat:** 12 mp4 i chatten (10 zip ≤30 MiB). Drive: MAKE TO NORWAY →
   "NO Arbetslampa för Makita-batteri" (12 mp4 + 4 adcopy-txt).
-- **Launchad ACTIVE:** kampanj-ID [FYLLS I], "Arbeidslampe NO | BE-ROAS 1,63 |
-  2026-09-06", CBO 1000 kr/dag, 4 adsets × 3 videoannonser.
+- **Launchad ACTIVE:** kampanj-ID 120252102071560233, "Arbeidslampe NO |
+  BE-ROAS 1,63 | 2026-09-06", CBO 1000 kr/dag, 4 adsets (CS/GT/PD/SP), 3
+  videoannonser vardera (12 totalt). Kontot hårt rate-limitat (Meta-fel 17)
+  på alla fyra adsets — gick igenom med skriptets inbyggda backoff.
 - Bildannonser (Fas 3.2) INTE körda denna natt.
 
 ## Glasspints med Lock 2-pack → Iskrembokser NO
@@ -90,8 +92,11 @@ Ingen kö till i morgon utöver Bordtennisnät (samma COGS-blockering).
   lämnad orörd — ingen svensk domän eller svenskt pris.
 - **Levererat:** 12 mp4 i chatten (6 zip ≤30 MiB). Drive: MAKE TO NORWAY →
   "NO Glasspints med Lock 2-pack" (12 mp4 + 4 adcopy-txt).
-- **Launchad ACTIVE:** kampanj-ID [FYLLS I], "Iskrembokser NO | BE-ROAS 1,64 |
-  2026-09-06", CBO 1000 kr/dag, 4 adsets × 3 videoannonser.
+- **Launchad ACTIVE:** kampanj-ID 120252102162200233, "Iskrembokser NO |
+  BE-ROAS 1,64 | 2026-09-06", CBO 1000 kr/dag, 4 adsets (CS/GT/PD/SP), 3
+  videoannonser vardera (12 totalt). Kontot hårt rate-limitat (Meta-fel 17)
+  genomgående — första körningen kraschade efter 8 försök på första adsetet,
+  omkörningen (idempotent, inga dubbletter) gick igenom på alla fyra.
 - Bildannonser (Fas 3.2) INTE körda denna natt.
 
 ## Bildannonser (Fas 3.2) — inte körda, känd lucka
@@ -123,6 +128,13 @@ kommande körning eller manuellt.
       + 12 adcopy-txt uppladdade
 - [x] Körloggen uppdaterad, allt committat och pushat
 - [x] Discord-brief skickad i `#translation-till-norge-av-nya-produkter`, ping på
+
+## API-verifiering efteråt
+
+Alla tre kampanjer verifierade ACTIVE/ACTIVE med rätt daglig budget (100 000
+öre = 1000 kr) direkt mot Graph API. Skriptets egna radvisa bekräftelser vid
+skapandet ("✓ annons (ACTIVE): …") visar att samtliga 36 annonser (12 per
+kampanj, 4 adsets × 3) skapades och sattes ACTIVE utan fel.
 
 ## Kvot
 
