@@ -234,6 +234,14 @@ Cron kan inte uttrycka "var tredje dag plus sista dagen" över månadsskiften.
 Kalenderspärren sitter på flaggan `--rutin` — kör Axel `/commission` för hand
 räknas månaden hittills oavsett datum.
 
+⚠️ **Modellpolicy för rutinerna (Axels beslut 2026-09-06): Opus eller Fable,
+aldrig Sonnet.** Gäller både rutinens `model` och den fasta sessionens modell
+(en rutin bunden till en fast session ärver sessionens modell — rutinens eget
+modellfält biter inte där). Ny fast session för en rutin skapas alltid med
+`model: "claude-opus-5"` eller `"claude-fable-5"`. Subagent-policyn i regel 6
+(Sonnet/Haiku för ren copytext) gäller fortfarande — den handlar om
+subagenter, inte om rutinsessionen själv.
+
 ⚠️ **Cron står i UTC och följer inte sommartid.** Tiderna ovan gäller CEST
 (UTC+2, mars–oktober). Vid vinteromställningen blir Sverige UTC+1, och en cron
 som står kvar går en timme TIDIGARE svensk tid. Cron-uttrycken ska då **ökas**
