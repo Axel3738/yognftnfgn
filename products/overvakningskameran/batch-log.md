@@ -192,3 +192,160 @@ innan numrering: `SP` upptaget 1–7 (+ `_1`/`_H1`-varianter), `CS` 1–4, `PD` 
 **Öppna luckor (se `dna.md`):** Shopify fortfarande fel butik kopplad,
 Ad Library-konkurrentsök inte gjort, `target_cpa_sek` saknas, batch #1:s 6
 videobriefer olevererade hos redigerarna.
+
+---
+
+## Batch #3 — 2026-09-06 (`/cs` via `/rond-auto`, rond-flagga "mata vinnaren")
+
+**Trigger:** `/rond-auto` flaggade `brief_runda`, 3 dagar sedan batch #2,
+`rundaAntal: 6`, orsak "Fokus: mata vinnaren — skalats 4 gånger på en vecka".
+Kampanjen ACTIVE, dagsbudget 2 300 kr (oförändrad av den här körningen).
+
+### Datahämtning
+
+Hela kampanjen på annonsnivå, sorterad på spend, `date_preset: maximum` och
+`last_3d`, fält `amount_spent`, `actions:omni_purchase`, `cost_per_omni_purchase`,
+`purchase_roas`, `omni_purchase_values`, `impressions`, `ctr`, `cpm`, `frequency`,
+`video_play_actions`, `video_p50_watched_actions`. 32 annonser, **15 259 kr
+kampanjspend livstid, 40 köp, ROAS 3,10, CPA 381 kr.** Senaste 3 dygn ≈ 6 700 kr,
+13 köp.
+
+**Datakvalitet:** `spend × ROAS` mot `omni_purchase_values` stämmer på båda
+bedömbara raderna (`SP_2`: 11 229 × 2,986 = 33 524 ≈ 33 526 kr; `CS_3`:
+2 014 × 4,825 = 9 716 ≈ 9 716 kr). `spend / köp` = `cost_per_omni_purchase` på
+båda. Inga trasiga rader. AOV ≈ 1 156 kr på `SP_2` — högre än priset 799 kr,
+alltså köps ibland flera enheter per order (inte flaggat som absurt).
+
+### Feedbackloop — utfall av batch #2:s hypoteser (och batch #1:s, som nu har launchats)
+
+| Annons | Hypotes | Utfall 2026-09-06 |
+|---|---|---|
+| `SP_8_H1` (hook-visual = AI-detektering) | — | **Ej testad.** Notion `Draft`, finns inte i kontot. Ingen redigerare har tagit den på 3 dagar. |
+| `SP_9_H1` (CTA pris+garanti) | — | **Ej testad.** Samma. |
+| `SP_10_H1` (on-camera-talare) | — | **Ej testad.** Samma. |
+| `AU_2_H1` (installatörens checklista) | — | **Ej testad.** Samma. |
+| `CS_5_1` (offer utan urgency, static) | — | **För tidigt.** Launchad 09-04, 4,42 kr, 17 visningar. |
+| `CO_3_1` (jämförelse, static) | — | **För tidigt.** Launchad 09-05, 3,63 kr, 12 visningar. |
+| `BOF_1_1` / `BOF_2_1` / `BOF_3_1` | — | **För tidigt.** 8,82 / 13,07 / 5,65 kr. |
+| Batch #1: `SP_4_H1`, `SP_5_H1`, `SP_6_H1`, `RI_1_H1`, `CO_1_H1`, `AU_1_H1` | natt / UGC / kollektiv / risk / jämförelse / auktoritet | **Launchade 2026-09-05** (rättelse av batch #2-loggen som skrev "ej levererade"). 2–11 kr spend var efter ett dygn → **för tidigt.** |
+| Batch #1: `LI_1_1`, `CS_4_1`, `CO_2_1`, `RI_2_1`, `SP_7_1`, `PD_4_1` | statics | **För tidigt.** 226 / 224 / 149 / 22 / 2 / 3 kr. `LI_1_1` och `CS_4_1` är närmast gränsen med 0 köp på ~1 350 visningar var. `PD_4_1` har 1 köp på 3,33 kr — brus. |
+
+**Slutsats:** ingen av batch #1:s eller #2:s 21 idéer går att döma. Den tunga
+förklaringen är CBO-svälten (mönster 5 i `dna.md`), den andra är att batch #2:s
+fyra videor inte producerats alls.
+
+### Signifikansgrind + vinstbidragstabell (break-even-CPA 509 kr)
+
+| Annons | Spend | Andel spend | Köp | CPA | ROAS | Vinstbidrag | Andel vinst |
+|---|---|---|---|---|---|---|---|
+| `Overvakningskamera_SP_2` | 11 229 kr | 73,6 % | 29 | 387 kr | 2,99 | **3 532 kr** | 63,2 % |
+| `Overvakningskamera_CS_3` | 2 014 kr | 13,2 % | 8 | 252 kr | 4,82 | **2 058 kr** | 36,8 % |
+
+"För tidigt" (30 st): `CS_2` 303 kr / 0 köp (över spendgränsen men under köpgränsen
+— ingen dom, kill kräver 500 kr), övriga 0–226 kr. `SP_2_1` (1 köp, 93 kr),
+`G_3` (1 köp, 39 kr) och `PD_4_1` (1 köp, 3 kr) är brus, inte vinnare.
+
+**Marginal-CPA (steg 2b, grinden uppfylld: 3 dygn isär, ≥5 inkrementella köp):**
+`SP_2` 09-03→09-06: +3 905 kr, +8 köp → **488 kr** (mot 349 kr livstid 09-03).
+`CS_3`: +1 674 kr, +5 köp → **335 kr**. Kill-linjen 509 kr är inte passerad,
+men `SP_2`:s trend är entydig: 349 → 387 livstid, 488 marginal, 528 last_3d.
+
+**Domar (steg 7):**
+> **`SP_2`** — bevisad vinnare, mjuknande · Vinstbidrag 3 532 kr (63 %) · CPA 387 kr
+> mot break-even 509 (target ej satt) · Diagnos: hook 95 %, hold 16 %, CTR 3,8 %,
+> **CVR 0,9 %** — läckan är konverteringen · **Beslut:** iterera (mata med nya
+> versioner), skala inte budgeten mer på samma enhet · Bygger på 29 köp.
+>
+> **`CS_3`** — bevisad (överlevde 2c) · Vinstbidrag 2 058 kr (37 %) · CPA 252 kr ·
+> Diagnos: hook 91 %, **hold 11 %**, CTR 2,5 %, CVR 2,9 % — tappar tittare men
+> klicken köper · **Beslut:** iterera på hold (captions) och lyft beviset in i
+> `SP_2`:s struktur · Bygger på 8 köp.
+
+### Creative-teardown (steg 6b)
+
+`SP_2` granskad via ad preview (öppningsbild: extrem närbild på enheten på
+stolpen, UOMI-märke synligt, trädgård i bokeh) + ADCOPY_SP-dokumentet i Drive
+(citat → "Det är vad våra kunder säger" → 4 bullets → "Över [X] nöjda hushåll"
+→ CTA; rubrik "Kunderna älskar den – se varför"). `CS_3` granskad via ad preview
+(app-UI "Garage", dubbelvy, svartvit nattbild, röda rutor på tre personer,
+hund utan ruta, timestamp-rad synlig) + ADCOPY_CS ("Bara idag: 799 kr istället
+för 1000 kr", 20 %, "Begränsat lager", Klarna, fri frakt). `LI_1_1` och `CS_4_1`
+granskade visuellt (vit produktrender på grå bakgrund; listicle med 5 frågor
+resp. "Spara 201 kr i dag" med tre gröna bockar) — båda för tidiga men de enda
+statics med >1 000 visningar.
+
+**Variabeltabell (bedömbara annonser):**
+
+| Variabel | `SP_2` (3 532 kr) | `CS_3` (2 058 kr) |
+|---|---|---|
+| Vinkel | social proof | offer + demo |
+| Hook-typ | citat (känsla) | pris (siffra) i copy, "vad du ser" i bild |
+| Format | voiceover/captions + b-roll | rå skärminspelning |
+| Proof | påstått citat + funktionsbullets | demo (AI-rutor på riktig film) |
+| Offer i creativen | ingen (pris bara i endcard) | pris + rabatt synligt |
+| Visuell stil | produktnärbild | app-UI, natt, dubbelvy |
+| Textmängd | captions rad för rad | inga captions |
+| Talare | ingen | ingen |
+
+Mönster 1–5 med status och briefinstruktion står i `dna.md` (avsnittet
+"Variabelmönster"). Kort: struktur bevisad men mättas (1), visat bevis + pris ger
+3× CVR (2), render-statics får klick utan köp — hypotes (3), hooken är inte
+spaken (4), CBO-svält (5).
+
+### Batch #3 — levererat: 9 briefer (4 video + 2 statisk i kärnrundan + 3 BOF, 0 review)
+
+Kärnrundan (6, "mata vinnaren": EN isolerad variabel per iteration; batch #2:s
+tre SP-variabler — hook-visual, CTA-rad, talare — är inte upprepade eftersom de
+fortfarande väntar på produktion):
+
+| Ad-namn | Koncept | Format | Variabel som isoleras | Hypotes | Taggar |
+|---|---|---|---|---|---|
+| `Overvakningskamera_SP_11_H1` | SP-iteration | Video 20 s | Hook-rad (fakta i st.f. känslo-citat) | "Katten går förbi. Tyst. En främling går förbi. Larm." drar köpare bättre än "Jag sover bättre nu." som öppning | angle=social · hook=fakta · format=vo+broll · proof=citat+bullets · offer=pris-endcard · visual=produktnärbild · text=captions · talare=ingen |
+| `Overvakningskamera_SP_12_H1` | SP-iteration | Video 20 s | Proof (visat från riktig app i st.f. b-roll/textkort) | Samma manus med `CS_3`:s riktiga app-bilder under bulletsen lyfter CVR mot `CS_3`:s nivå | angle=social · hook=citat · format=vo+app · proof=demo · offer=pris-endcard · visual=skärminspelning · text=captions · talare=ingen |
+| `Overvakningskamera_SP_13_H1` | SP-iteration | Video 12 s | Längd (12 s i st.f. 20 s) | Hold 16 % → hela budskapet före avhoppet ger fler köp per visning | angle=social · hook=citat · format=vo+broll · proof=citat+bullets · offer=pris-endcard · visual=produktnärbild · text=captions · talare=ingen · längd=12s |
+| `Overvakningskamera_CS_6_H1` | CS-iteration | Video 15 s | Captions på råfilmen (+ endcard utan urgency) | Att namnge beviset ("Rutorna sitter på personerna. Inte på hunden.") lyfter hold från 11 % utan att röra filmen | angle=offer+demo · hook=vad-du-ser · format=skärminspelning · proof=demo · offer=pris vs jämförpris · visual=app-natt · text=captions · talare=ingen |
+| `Overvakningskamera_SP_14_1` | SP-static | Static | Hero-bild (riktig app-frame i st.f. produktrender) | Render-statics har 0 köp på 4 500 visningar; app-frame som hero ger köp | angle=social · hook=citat · format=static · proof=citat+app-frame · offer=pris+garanti-band · visual=app-frame · text=rubrik+3 bullets · talare=ingen |
+| `Overvakningskamera_CS_7_1` | CS-static | Static | Hero-bild + rubrik = funktionsfakta (vs `CS_4_1`/`CS_5_1`:s pris-rubrik på render) | `CS_3`:s frame + synligt pris fungerar även som stillbild | angle=demo+offer · hook=fakta · format=static · proof=app-frame · offer=pris vs jämförpris · visual=app-natt · text=rubrik+sub · talare=ingen |
+
+BOF-serie (utanför kärnrundan):
+
+| Ad-namn | Vinkel | Hero |
+|---|---|---|
+| `Overvakningskamera_BOF_4_1` | Pris/erbjudande (799 vs 1 000 kr, Klarna, fri frakt) | render över mörkad app-frame |
+| `Overvakningskamera_BOF_5_1` | Garanti/fri frakt — sidans egen mening "Gillar du den inte får du pengarna tillbaka." ordagrant | render |
+| `Overvakningskamera_BOF_6_1` | Invändning "ser den i mörker?" — besvarad med den riktiga nattbilden | app-natt-frame |
+
+**Review-bilder: 0 av 2, medvetet uteslutna — nu verifierat, inte antaget.**
+Judge.me REST-API (`JUDGEME_API_TOKEN`, shop `4snrw0-mg.myshopify.com`,
+`product_handle`-filter + 600 recensioner över hela butiken): produktens 10
+recensioner har alla `source: wizard`, `verified: not-yet`, identisk tidsstämpel
+`2026-08-24T22:00:00Z` — importerade vid uppsättningen. Noll organiska. Att bygga
+review-bilder på dem hade brutit mot regel 3 (hitta aldrig på data).
+
+**Modellpolicy-avvikelse:** Agent-verktyget fanns inte i sessionens verktygslåda
+(ToolSearch "Agent subagent spawn task" gav bara TaskStop/Notion-verktyg). All
+copy i batch #3 är skriven av huvudsessionen med tre-frågorstestet rad för rad i
+varje brief (Notion + Drive). Pris/garanti/CTA-rader är markerade "functional —
+exempt" i konkurrent-kolumnen, samma praxis som batch #2. Öppet redovisat.
+
+**Namngivning:** upptagna AD-ID:n lästa av i kontot (32 annonser, livstid) + Notion
+(batch #2:s 4 Draft-videor): SP 1–10, CS 1–5, PD 1–4, G 1–3, RI 1–2, CO 1–3,
+AU 1–2, LI 1, BOF 1–3. Nya: SP_11–SP_14, CS_6–CS_7, BOF_4–BOF_6.
+
+**Leverans:**
+- Drive: `Batch #3` (`1xlH9j8_wwRXsy9DGMde8CLN1m2oBngke`) i produktens befintliga
+  mapp, en undermapp per annons med brief-fil (.md) i varje —
+  https://drive.google.com/drive/folders/1xlH9j8_wwRXsy9DGMde8CLN1m2oBngke
+- Notion: 9 items i den BEFINTLIGA huben "Surveillance Camera creative hub"
+  (`collection://3b6270ab-908c-8366-a085-8705d1a9f4ef`), Status `Draft`, Typ
+  `Video - Pending Approval` × 4 / `Image - Pending Approval` × 5, hela briefen
+  i varje sida (verifierat genom att öppna `CS_6_H1`).
+- Loggrad `CS_BATCH_KLAR` i `agent/budgetlogg.jsonl`.
+- Inget zip (automatiserad bakgrundskörning utan chatt-filleverans, som batch #2).
+
+**Konkurrentsök (backlog-posten stängd):** Meta Ad Library "övervakningskamera",
+SE, aktiva: 32 annonser — sammanfattning i `dna.md` ("Konkurrentsignaler").
+
+**Öppna luckor (se `dna.md`):** Shopify MCP oautentiserad, `target_cpa_sek`
+saknas, batch #2:s 4 videor oproducerade, produkten uppfyller driftregeln
+(40 köp, ROAS 3,10 > 1,57) men kartan säger `test` — `/rond-auto`:s sak.
