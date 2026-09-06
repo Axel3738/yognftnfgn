@@ -3,6 +3,22 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-06 — 18 nya på två produkter, 22 i `sources.json`
+
+Rutinkörning 05:35 svensk tid. MAKE TO NORWAY hade två nya mappar sedan
+igår: **Diskställ i Två Våningar** och **Veckodosett 21 Fack**. Båda hade
+riktiga REVIEWS-ark och handle i butiken:
+
+| Produkt | Synliga | Handle |
+|---|---:|---|
+| Oppvaskstativ i To Etasjer | 8 | `oppvaskstativ-i-to-etasjer-hele-oppvaskens-torkeflate-pa-42-cm` |
+| Ukedosett 21 Rom | 10 | `ukedosett-21-rom-morgen-middag-og-kveld-i-syv-dager` |
+
+Diskställ-arket heter `Copy of Diskställ i Två Våningar_REVIEW` — "rev"-
+matchningen tar det ändå. Kartorna: +28 översättningar, +5 namn.
+Gravsteinspenn och Medisinboks oförändrade (testrader resp. "EJ
+KUNDRECENSION") — fortsatt överhoppade. Båtmotortrekk fortsatt spärrad.
+
 ## Läget 2026-09-05 — 24 nya på tre produkter, 20 i `sources.json`
 
 Rutinkörning 05:35 svensk tid. MAKE TO NORWAY hade tre nya mappar sedan

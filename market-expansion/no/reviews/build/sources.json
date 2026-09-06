@@ -120,6 +120,18 @@
       "namn": "Pälsborste till Dyson-dammsugare",
       "drive_sheet": "1n3pLx4UVhNK7ZrVXMmt3-ub4wtcDBjHFZTgAjyz91-c",
       "no_handle": "pelsborste-til-dyson-stovsuger-borst-og-sug-i-samme-bevegelse"
+    },
+    {
+      "id": "oppvaskstativ",
+      "namn": "Diskställ i Två Våningar",
+      "drive_sheet": "1Ld0UrYjsHynU6pKvugmGKCeOL0RNQXw2iyAb0vTfRUs",
+      "no_handle": "oppvaskstativ-i-to-etasjer-hele-oppvaskens-torkeflate-pa-42-cm"
+    },
+    {
+      "id": "ukedosett",
+      "namn": "Veckodosett 21 Fack",
+      "drive_sheet": "1LT_va1L8iMgOwzmjcotBbq-Ch3R-sWFfKMXI33iAtkM",
+      "no_handle": "ukedosett-21-rom-morgen-middag-og-kveld-i-syv-dager"
     }
   ]
 }
