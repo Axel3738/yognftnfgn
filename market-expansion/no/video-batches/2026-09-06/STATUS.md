@@ -120,7 +120,10 @@ kommande körning eller manuellt.
 - [x] Inbränd svensk text skannad; alla 108 QA-bilder + 36 slutkort granskade
       (dedikerade QA-subagenter), inget svenskt syns
 - [x] Slutkortssvep gjort (36/36 slutbilder granskade)
-- [x] Levererat i chatten som zip ≤30 MiB (22 zip totalt)
+- [❌] Levererat i chatten som zip ≤30 MiB — 22 zip byggda lokalt
+      (`final/zips/`), men INTE skickade: rutinen kördes utan mottagare i
+      chatten (schemalagd nattkörning). Huvudleveransen (Drive + Meta) är
+      gjord och är den permanenta kopian.
 - [x] Kampanj per produkt i act_1050941584152547: CBO 1000 kr/dag, adset per
       koncept, enhancements OPT_OUT, status ACTIVE, BE-ROAS + datum i namnet,
       dubblettspärren körd
