@@ -1,0 +1,74 @@
+{
+ "kranbeskyttelse_SP_3_H1": {
+  "malnamn": "Kranbeskyttelse_NO_SP_3_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-05-video2/no/Kranbeskyttelse_NO_SP_3_H1.mp4",
+  "skal": null
+ },
+ "kranbeskyttelse_UG_1_H1": {
+  "malnamn": "Kranbeskyttelse_NO_UG_1_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-05-video2/no/Kranbeskyttelse_NO_UG_1_H1.mp4",
+  "skal": null
+ },
+ "kranbeskyttelse_CI_1_H1": {
+  "malnamn": "Kranbeskyttelse_NO_CI_1_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-05-video2/no/Kranbeskyttelse_NO_CI_1_H1.mp4",
+  "skal": null
+ },
+ "overvakingskamera_SP_4_H1": {
+  "malnamn": "Overvåkingskamera_NO_SP_4_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-05-video2/no/Overvåkingskamera_NO_SP_4_H1.mp4",
+  "skal": null
+ },
+ "overvakingskamera_RI_1_H1": {
+  "malnamn": "Overvåkingskamera_NO_RI_1_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-05-video2/no/Overvåkingskamera_NO_RI_1_H1.mp4",
+  "skal": null
+ },
+ "overvakingskamera_SP_5_H1": {
+  "malnamn": "Overvåkingskamera_NO_SP_5_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-05-video2/no/Overvåkingskamera_NO_SP_5_H1.mp4",
+  "skal": null
+ },
+ "overvakingskamera_CO_1_H1": {
+  "malnamn": "Overvåkingskamera_NO_CO_1_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-05-video2/no/Overvåkingskamera_NO_CO_1_H1.mp4",
+  "skal": null
+ },
+ "overvakingskamera_SP_6_H1": {
+  "malnamn": "Overvåkingskamera_NO_SP_6_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-05-video2/no/Overvåkingskamera_NO_SP_6_H1.mp4",
+  "skal": null
+ },
+ "overvakingskamera_AU_1_H1": {
+  "malnamn": "Overvåkingskamera_NO_AU_1_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-05-video2/no/Overvåkingskamera_NO_AU_1_H1.mp4",
+  "skal": null
+ },
+ "ibc-tanktrekk_PD_3_H1": {
+  "malnamn": "IBC-tanktrekk_NO_PD_3_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-05-video2/no/IBC-tanktrekk_NO_PD_3_H1.mp4",
+  "skal": null
+ },
+ "ibc-tanktrekk_GT_3_H1": {
+  "malnamn": "IBC-tanktrekk_NO_GT_3_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-05-video2/no/IBC-tanktrekk_NO_GT_3_H1.mp4",
+  "skal": null
+ },
+ "batmotortrekk_AU_1_H1": {
+  "malnamn": "Batmotortrekk_NO_AU_1_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-05-video2/no/Batmotortrekk_NO_AU_1_H1.mp4",
+  "skal": null
+ }
+}

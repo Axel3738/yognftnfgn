@@ -61,7 +61,13 @@
         "adsetNamn": "Kranbeskyttelse NO - SP",
         "annonsNamn": "Kranbeskyttelse_NO_SP_3_H1",
         "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
-        "prefix": "Kranbeskyttelse"
+        "prefix": "Kranbeskyttelse",
+        "status": "ACTIVE",
+        "annonsId": "120252096487720233",
+        "creativeId": "1092631859970322",
+        "adsetId": "120251996274400233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "219.00",
@@ -124,7 +130,13 @@
         "adsetNamn": "Kranbeskyttelse NO - UG",
         "annonsNamn": "Kranbeskyttelse_NO_UG_1_H1",
         "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
-        "prefix": "Kranbeskyttelse"
+        "prefix": "Kranbeskyttelse",
+        "status": "ACTIVE",
+        "annonsId": "120252096489960233",
+        "creativeId": "1366469025649542",
+        "adsetId": "120252096488030233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "219.00",
@@ -187,7 +199,13 @@
         "adsetNamn": "Kranbeskyttelse NO - CI",
         "annonsNamn": "Kranbeskyttelse_NO_CI_1_H1",
         "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
-        "prefix": "Kranbeskyttelse"
+        "prefix": "Kranbeskyttelse",
+        "status": "ACTIVE",
+        "annonsId": "120252096492590233",
+        "creativeId": "3547143932102738",
+        "adsetId": "120252092719670233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "219.00",
@@ -250,7 +268,13 @@
         "adsetNamn": "Overvåkingskamera NO - SP",
         "annonsNamn": "Overvåkingskamera_NO_SP_4_H1",
         "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
-        "prefix": "Overvåkingskamera"
+        "prefix": "Overvåkingskamera",
+        "status": "ACTIVE",
+        "annonsId": "120252096497730233",
+        "creativeId": "1828306851874433",
+        "adsetId": "120251998602380233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "899.00",
@@ -313,7 +337,13 @@
         "adsetNamn": "Overvåkingskamera NO - RI",
         "annonsNamn": "Overvåkingskamera_NO_RI_1_H1",
         "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
-        "prefix": "Overvåkingskamera"
+        "prefix": "Overvåkingskamera",
+        "status": "ACTIVE",
+        "annonsId": "120252096510210233",
+        "creativeId": "1660145615747014",
+        "adsetId": "120252066007770233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "899.00",
@@ -376,7 +406,13 @@
         "adsetNamn": "Overvåkingskamera NO - SP",
         "annonsNamn": "Overvåkingskamera_NO_SP_5_H1",
         "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
-        "prefix": "Overvåkingskamera"
+        "prefix": "Overvåkingskamera",
+        "status": "ACTIVE",
+        "annonsId": "120252096565240233",
+        "creativeId": "4636871846536203",
+        "adsetId": "120251998602380233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "899.00",
@@ -439,7 +475,13 @@
         "adsetNamn": "Overvåkingskamera NO - CO",
         "annonsNamn": "Overvåkingskamera_NO_CO_1_H1",
         "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
-        "prefix": "Overvåkingskamera"
+        "prefix": "Overvåkingskamera",
+        "status": "ACTIVE",
+        "annonsId": "120252096568090233",
+        "creativeId": "1892577498399009",
+        "adsetId": "120252066104840233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "899.00",
@@ -502,7 +544,13 @@
         "adsetNamn": "Overvåkingskamera NO - SP",
         "annonsNamn": "Overvåkingskamera_NO_SP_6_H1",
         "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
-        "prefix": "Overvåkingskamera"
+        "prefix": "Overvåkingskamera",
+        "status": "ACTIVE",
+        "annonsId": "120252096570400233",
+        "creativeId": "1756974592620624",
+        "adsetId": "120251998602380233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "899.00",
@@ -565,7 +613,13 @@
         "adsetNamn": "Overvåkingskamera NO - AU",
         "annonsNamn": "Overvåkingskamera_NO_AU_1_H1",
         "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
-        "prefix": "Overvåkingskamera"
+        "prefix": "Overvåkingskamera",
+        "status": "ACTIVE",
+        "annonsId": "120252096638070233",
+        "creativeId": "1840930033743305",
+        "adsetId": "120252096635780233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "899.00",
@@ -628,7 +682,13 @@
         "adsetNamn": "IBC-tanktrekk NO - PD",
         "annonsNamn": "IBC-tanktrekk_NO_PD_3_H1",
         "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-        "prefix": "IBC-tanktrekk"
+        "prefix": "IBC-tanktrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252096675620233",
+        "creativeId": "1751204522792771",
+        "adsetId": "120251996667400233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "439.00",
@@ -691,7 +751,13 @@
         "adsetNamn": "IBC-tanktrekk NO - GT",
         "annonsNamn": "IBC-tanktrekk_NO_GT_3_H1",
         "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-        "prefix": "IBC-tanktrekk"
+        "prefix": "IBC-tanktrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252096679380233",
+        "creativeId": "1547184489969384",
+        "adsetId": "120251996677500233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "439.00",
@@ -754,7 +820,15 @@
         "adsetNamn": "Båtmotortrekk NO - AU",
         "annonsNamn": "Batmotortrekk_NO_AU_1_H1",
         "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
-        "prefix": "Batmotortrekk"
+        "prefix": "Batmotortrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252096719600233",
+        "creativeId": "2272700833522343",
+        "adsetId": "120252096716530233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS",
+        "dubblett_pausad": "120252096719750233",
+        "anm": "Meta skapade två annonser med samma namn 2 s isär (retry efter rate limit). 120252096719750233 pausad 2026-09-05, 120252096719600233 behållen (Notion-raden pekar på den)."
       },
       "pris": {
         "pris": "529.00",
