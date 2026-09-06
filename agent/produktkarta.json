@@ -605,6 +605,30 @@
       "lage_motivering": "startad 2026-09-04 (NO), saknades i kartan — tillagd av /rond-auto",
       "break_even_roas": null,
       "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252091463320233",
+      "produkt": "Ukedosett NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-05 (NO), saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252102020040233",
+      "produkt": "Sandbilde NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-06 (NO), saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252102071560233",
+      "produkt": "Arbeidslampe NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-06 (NO), saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
     }
   ],
   "valutakurser": {
