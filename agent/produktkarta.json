@@ -167,7 +167,7 @@
       "notion_hub_id": "3c3270ab-908c-80f8-824d-eed3c4aa94e1",
       "notion_hub_datakalla": "3c3270ab-908c-8356-ad6c-87ff779e647d",
       "notion_hub_namn": "Fish rod holder",
-      "notion_hub_not": "Hubben heter bara \"Fish rod holder\" (utan \"creative hub\"). notion-fetch på collection 2026-09-06 svarade is_archived: true och notion-search hittar den inte — batch #4 (9 briefer) ligger där som Draft. Kontrollera med Axel att redigerarna ser hubben.",
+      "notion_hub_not": "Hubben heter bara \"Fish rod holder\" (utan \"creative hub\"). Var arkiverad 2026-08-31 → 2026-09-06 (batch #4:s 9 briefer skrevs in medan den var arkiverad). Axel återställde den 2026-09-06, verifierat med notion-fetch. Levande, 18 drafts.",
       "drive_senaste_batchmapp_id": "1PLBnIWhC_TwoTdRBij2hZQt-BYGoyfKg",
       "minne": "products/fiskespohallaren/"
     },
