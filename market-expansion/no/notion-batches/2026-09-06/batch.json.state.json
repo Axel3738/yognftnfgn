@@ -1,10 +1,16 @@
 {
  "kranbeskyttelse_SP_4_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/31897df5bb194eef81d4611d496a40ab/original.mp4",
-  "proofreadId": "ac334274d8d54ba492483eaa8db9d604-nb-nb-NO"
+  "proofreadId": "ac334274d8d54ba492483eaa8db9d604-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "a71b1cf8b99949cc802dafbf5eff95fb-nb"
  },
  "kranbeskyttelse_SP_5_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/4a81a4e214774e3286c8c75d375f9cb9/original.mp4",
-  "proofreadId": "4a258620dadb48d6b6600b6a1238150c-nb-nb-NO"
+  "proofreadId": "4a258620dadb48d6b6600b6a1238150c-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "9617ac8eb2a840e080157f43fb116b41-nb"
  }
 }

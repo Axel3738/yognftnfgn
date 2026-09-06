@@ -1,0 +1,35 @@
+{
+  "kranbeskyttelse_SP_4_H1": {
+    "andringar": [
+      "309 kr → 219 kr",
+      "SRT block 3: '420 Oxford-stoffet' rättad till 'fire hundre og tjue D oxfordstoff' (materialnamn, talat för TTS)",
+      "SRT block 4: dragsko → snor bekräftad korrekt i HeyGen-utkastet",
+      "SRT block 5: fastigheten → eiendommen bekräftad korrekt i HeyGen-utkastet"
+    ],
+    "trefragor": [
+      {
+        "rad": "14 kraner, 10 sekunder hver",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true
+      }
+    ],
+    "hoppa": null
+  },
+  "kranbeskyttelse_SP_5_H1": {
+    "andringar": [
+      "309 kr → 219 kr",
+      "SRT block 1: 'Fyrahundratjugo Deox for stoff' rättad till 'fire hundre og tjue D oxfordstoff' (transkriptionsfel för 420D Oxford-tyg)",
+      "Stugan → Hytta bekräftad korrekt i HeyGen-utkastet"
+    ],
+    "trefragor": [
+      {
+        "rad": "Tom hytte, ubeskyttet kran",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": false
+      }
+    ],
+    "hoppa": null
+  }
+}

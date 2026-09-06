@@ -33,5 +33,5 @@ for f in sorted(glob.glob(D + '/*.srt')):
         for a, b in zip(ob, nb):
             la = len(' '.join(a.split('\n')[2:])); lb = len(' '.join(b.split('\n')[2:]))
             if lb > la * 1.25 + 10: print(f'⚠️  {base}: block {a.split(chr(10))[0]} är {lb} tecken mot svenskans {la} (läppsynk)')
-if n != 12: print(f'❌ {n} filer, förväntade 12'); fel += 1
+if n != 2: print(f"❌ {n} filer, förväntade 2"); fel += 1
 sys.exit(1 if fel else (print(f'✅ {n} filer, inga blockerande fel.') or 0))

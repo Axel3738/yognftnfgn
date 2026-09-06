@@ -1,0 +1,60 @@
+[
+ {
+  "namn": "Kranskydd_SP_4_H1",
+  "nyckel": "kranbeskyttelse_SP_4_H1",
+  "malnamn": "Kranbeskyttelse_NO_SP_4_H1",
+  "produkt": "Kranskydd",
+  "fakta": {
+   "produkt_no": "Kranbeskyttelse Frost 420D – Beskytter Utekranen i Vinter",
+   "pris": "219 kr",
+   "pris_ord": "to hundre og nitten kroner",
+   "jamforpris": "285 kr",
+   "spar": "66 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": false,
+   "fri_frakt_kommentar": "219 kr är under fraktgränsen 300 kr — nämn ALDRIG fri frakt",
+   "anmeldelser": "10 anmeldelser (4,9) på beverbutikken.no",
+   "garanti": "30 dagers åpent kjøp",
+   "material": "420D oxfordstoff, isolert fôr, snor/strammesnor"
+  },
+  "se_copy": {
+   "message": "Jag har 14 kranar att skydda inför vintern.\n10 sekunder per kran – klart innan lunch.\n420D Oxford-tyg, 309 kr per kran.",
+   "headline": "14 kranar, 10 sekunder var",
+   "description": "",
+   "link": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+  },
+  "link_no": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
+  "srt_se": "1\n00:00:00,000 --> 00:00:04,579\nJag har fjorton kranar att hålla koll på inför vintern. Förut satte jag trasor och plastpåsar.\n\n2\n00:00:04,579 --> 00:00:06,259\nDe blåste av efter första stormen.\n\n3\n00:00:06,299 --> 00:00:08,819\nFyrahundratjugo D Oxford-tyget sitter kvar.\n\n4\n00:00:08,859 --> 00:00:10,399\nEn dragsko håller det på plats.\n\n5\n00:00:10,460 --> 00:00:13,739\nTio sekunder per kran och jag är klar med hela fastigheten innan lunch\n",
+  "srt_heygen_no": "1\n00:00:00,000 --> 00:00:04,579\nJeg har fjorten kraner å passe på før vinteren. Før brukte jeg filler og plastposer.\n\n2\n00:00:04,579 --> 00:00:06,259\nDe blåste av etter den første stormen.\n\n3\n00:00:06,299 --> 00:00:08,819\n420 Oxford-stoffet sitter fast.\n\n4\n00:00:08,859 --> 00:00:10,399\nEn snor holder det på plass.\n\n5\n00:00:10,460 --> 00:00:13,739\nTi sekunder per kran, og jeg er ferdig med hele eiendommen før lunsj.\n",
+  "grafik_se": {}
+ },
+ {
+  "namn": "Kranskydd_SP_5_H1",
+  "nyckel": "kranbeskyttelse_SP_5_H1",
+  "malnamn": "Kranbeskyttelse_NO_SP_5_H1",
+  "produkt": "Kranskydd",
+  "fakta": {
+   "produkt_no": "Kranbeskyttelse Frost 420D – Beskytter Utekranen i Vinter",
+   "pris": "219 kr",
+   "pris_ord": "to hundre og nitten kroner",
+   "jamforpris": "285 kr",
+   "spar": "66 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": false,
+   "fri_frakt_kommentar": "219 kr är under fraktgränsen 300 kr — nämn ALDRIG fri frakt",
+   "anmeldelser": "10 anmeldelser (4,9) på beverbutikken.no",
+   "garanti": "30 dagers åpent kjøp",
+   "material": "420D oxfordstoff, isolert fôr, snor/strammesnor"
+  },
+  "se_copy": {
+   "message": "Stugan står tom hela vintern. Ingen ser det hända.\nEn oskyddad kran fryser tyst – du märker det först till våren.\nIsolerande foder håller frosten ute till dess. 309 kr.",
+   "headline": "Tom stuga, oskyddad kran",
+   "description": "",
+   "link": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+  },
+  "link_no": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
+  "srt_se": "1\n00:00:00,140 --> 00:00:10,559\nStugan står tom hela vintern. Kranen gör den med. Förra vintern for jag dit i mars och märkte sprickan då. Fyrahundratjugo Deox för tyg och isolerande foder sitter på kranen från oktober till april.\n\n2\n00:00:10,679 --> 00:00:13,039\nTio sekunder att montera, sen kan jag glömma den till våren.\n",
+  "srt_heygen_no": "1\n00:00:00,140 --> 00:00:10,559\nHytta står tom hele vinteren. Det gjør kranen også. Forrige vinter dro jeg dit i mars og oppdaget sprekken da. Fyrahundratjugo Deox for stoff og isolerende fôr sitter på kranen fra oktober til april.\n\n2\n00:00:10,679 --> 00:00:13,039\nTi sekunder å montere, så kan jeg glemme den til våren.\n",
+  "grafik_se": {}
+ }
+]
