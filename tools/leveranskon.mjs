@@ -144,14 +144,28 @@ for (const l of leveranser) l.kalla2 = 'drive';
 // status "To be Reviewed". bildannonser/output/ ar gitignorerat, sa Notion-bilagan
 // ar enda kopian i varlden. (Rotorsaken till att fem fardiga bildannonser lag
 // osynliga 2026-08-31.)
+// En hub ur products.json vars produkt inte har en enda ACTIVE kampanj i kontot ar
+// avvecklad. Ett 404 dar ar inget larm — det finns inget att leverera, och Axel ska
+// inte bes bjuda in integrationen till nedslackta produkter. (Axels besked 2026-09-06:
+// rutinen bad honom oppna Beach crocs/Trimmer belt/Mower seat, alla avstangda.)
+const aktivaPrefix = new Set(
+  annonser.filter(a => a.campaign?.status === 'ACTIVE').map(a => prefixAv(a.name)).filter(Boolean));
+const avvecklade = new Set(products
+  .filter(p => p.creative_prefix && p.notion?.name && !aktivaPrefix.has(p.creative_prefix.replace(/_$/, '').toLowerCase()))
+  .map(p => p.notion.name));
+
 let notionFel = null;
+let notionInfo = null;
 let notionHubbar = 0;
 let hubbNamn = [];
 try {
   const { hubbar, rader, fel } = await allaKlaraRader();
   notionHubbar = hubbar.length;
   hubbNamn = hubbar.map(h => h.titel).sort();
-  if (Object.keys(fel).length) notionFel = Object.entries(fel).map(([h, f]) => `${h}: ${f}`).join(' · ');
+  const larm = Object.entries(fel).filter(([h]) => !avvecklade.has(h));
+  const tysta = Object.entries(fel).filter(([h]) => avvecklade.has(h));
+  if (larm.length) notionFel = larm.map(([h, f]) => `${h}: ${f}`).join(' · ');
+  if (tysta.length) notionInfo = tysta.map(([h]) => h).join(', ');
   for (const r of rader) {
     const namn = annonsdel(r.namn);
     const pfx = prefixAv(namn);
@@ -267,6 +281,9 @@ const hyllade = nya.filter(k => k.avvecklad);
 if (notionFel) {
   console.log(`⚠️  NOTION-KÄLLAN: ${notionFel}`);
   console.log(`    Notion är enda källan — kön nedan är därför TOM eller OFULLSTÄNDIG.\n`);
+}
+if (notionInfo) {
+  console.log(`ℹ️  Avvecklade produkter (ingen ACTIVE kampanj i kontot) — hubbarna gick inte att läsa men ignoreras: ${notionInfo}\n`);
 }
 const frånDrive = leveranser.filter(l => l.kalla2 === 'drive').length;
 const frånNotion = leveranser.filter(l => l.kalla2 === 'notion').length;

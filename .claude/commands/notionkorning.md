@@ -165,6 +165,12 @@ override för de fyra skalningsprodukterna.
 En hårdkodad produktlista missar nya leveranser **tyst**, och en tyst missad
 leverans är värre än en rapporterad. Bygg därför aldrig tillbaka den.
 
+⚠️ **En hub vars produkt är avvecklad är inget larm.** Har produkten ingen
+ACTIVE kampanj i MagiBorsten finns inget att leverera, och ett 404 på hubben
+ska bara stå som `ℹ️ Avvecklade produkter` i `leveranskon.mjs`. Be ALDRIG Axel
+bjuda in integrationen till en nedsläckt produkts hub. *(2026-09-06: rutinen bad
+honom öppna Boat cover/Beach crocs/Trimmer belt/Mower seat — alla fyra pausade.)*
+
 **När prefixet inte går att härleda** — Notion-hubben och kontot använder ibland
 olika språk för samma produkt (hubben `Belt grinder creative hub` → annonser
 `Beltgrinder_`, men kampanjen heter `Bälteslipmaskinen` och dess annonser
