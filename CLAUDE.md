@@ -187,7 +187,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 
 ## Kommandona (Axels gränssnitt)
 
-17 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
+18 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
 
 | Kommando | Vad |
 |----------|-----|
@@ -209,6 +209,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/nattkorning` | Rutinen "Ad upload and structure": Drive-kön → QA → Meta |
 | `/notionkorning` | **Rutin 13:20 varje dag:** Notion `To be Reviewed` (video + bild) → brief-QA → upp i produktens kampanj → Discord `#ads-launching` / `#problem-and-revisions-ads` |
 | `/commission` | **Var tredje dag + månadens sista dag:** godkända Notion-rader → spend i alla annonskonton → 0,4 % till redigeraren |
+| `/rutinkollen` | **Rutin 07:00 varje dag:** läser nattens alla rutinbriefer i Discord → EN sammanfattning + credit-saldon till `#dagens-checkin`. Läs-bara — Axel ska inte behöva läsa rutinkanalerna alls |
 
 ### Nattrutinerna
 
@@ -224,6 +225,7 @@ Merga alltid till `main`, annars är rutinen bara schemalagd, inte igång.
 | 13:20 | `20 11 * * *` | Leveransrundan | `/notionkorning` |
 | 15:00 | `0 13 * * *` | Översättning till Norge (bild + video ur Notion-kön `SE-ACTIVE to be translated`) | `/oversatt NO` |
 | 06:00 | `0 4 * * *` | Commission | `/commission` |
+| 07:00 | `0 5 * * *` | Rutinkollen — morgonsammanfattning av gårdagens alla rutiner + credit-saldon, till `#dagens-checkin` | `/rutinkollen` |
 
 `/commission` har daglig cron med flit: **skriptet självt avgör** om dagen är
 kördag (den 1, 4, 7 … 28, plus alltid månadens sista dag). Siffrorna räknas ändå
