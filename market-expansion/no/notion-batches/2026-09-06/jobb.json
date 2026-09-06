@@ -1,0 +1,137 @@
+{
+  "marknad": "NO",
+  "datum": "2026-09-06",
+  "skapad": "2026-09-06T13:07:24.344Z",
+  "kvot": {
+    "heygen": 115,
+    "kie": 16177.2
+  },
+  "jobb": [
+    {
+      "notion": {
+        "id": "3cf270ab908c813bb99dee87807f6fd8",
+        "namn": "Kranskydd_SP_4_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Kranskydd Frost 420D creative hub",
+        "url": "https://app.notion.com/3cf270ab908c813bb99dee87807f6fd8",
+        "kalla": "rader-fil"
+      },
+      "namn": "Kranskydd_SP_4_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250105355150291",
+        "status": "CAMPAIGN_PAUSED",
+        "kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
+        "kampanjId": "120249975043720291",
+        "adset": "Kranskydd SP",
+        "copy": {
+          "message": "Jag har 14 kranar att skydda inför vintern.\n10 sekunder per kran – klart innan lunch.\n420D Oxford-tyg, 309 kr per kran.",
+          "headline": "14 kranar, 10 sekunder var",
+          "description": "",
+          "link": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "2525222897981446",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQP3IVRB2V_GyVW3NlgHm-2ALFTcnLqOibDUbMnXWkLjNEDZmTY1bX1Af9zHKbZ8WPkpj-t1EisqwiGi6aL5eE81TBhgwPgNLE-tTPBK4FXlDg.mp4?_nc_cat=109&_nc_sid=5e9851&_nc_ht=scontent-ord5-1.xx.fbcdn.net&_nc_ohc=LJ0sXj6dvlkQ7kNvwGKGdIT&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjI1NDQ2MTAwNjI3MjE3MzgsImFzc2V0X2FnZV9kYXlzIjoxLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTMsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=f35a7dbaf0f4f35d&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8xMjQ4M0Y0QzA5QkYxOUY2N0QwQTVDRERDQkUyRDdBMV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0QwNDk5NEI4OUYxRThBMjVCRDZBMzMyMUU2NjY0RDlFX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACaUi4uu5pOFCRUCKAJDMywXQCuIMSbpeNUYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=6nyhIa5InBXFw39Aa6KEag&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQLnFGhR1pqd9RjaXCK-Rcq6QJZfI9ECnwZEQp62zrky4maHCSYnwTe4YRQ-c0n9ND5BOn0Kv4VKSg&oh=00_AQJzTrSPLsj2J7g-OmNIKC6uOue8kVEnDSFgFBGX0xgsqw&oe=6AA33073&bitrate=2108097&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 13.781
+        }
+      },
+      "prefix": "Kranskydd",
+      "K": "SP",
+      "nr": "4",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Kranskydd",
+        "se_kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
+        "no_prefix": "Kranbeskyttelse",
+        "adset_prefix": "Kranbeskyttelse NO",
+        "campaign_id": "120251996272390233",
+        "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996272390233",
+        "kampanjNamn": "Kranbeskyttelse Frost NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Kranbeskyttelse NO - SP",
+        "annonsNamn": "Kranbeskyttelse_NO_SP_4_H1",
+        "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
+        "prefix": "Kranbeskyttelse"
+      },
+      "pris": {
+        "pris": "219.00",
+        "jamforpris": "285.00",
+        "titel": "Kranbeskyttelse Frost 420D – Beskytter Utekranen i Vinter",
+        "handle": "kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cf270ab908c8164bff2c61447f243d2",
+        "namn": "Kranskydd_SP_5_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Kranskydd Frost 420D creative hub",
+        "url": "https://app.notion.com/3cf270ab908c8164bff2c61447f243d2",
+        "kalla": "rader-fil"
+      },
+      "namn": "Kranskydd_SP_5_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250105398400291",
+        "status": "CAMPAIGN_PAUSED",
+        "kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
+        "kampanjId": "120249975043720291",
+        "adset": "Kranskydd SP",
+        "copy": {
+          "message": "Stugan står tom hela vintern. Ingen ser det hända.\nEn oskyddad kran fryser tyst – du märker det först till våren.\nIsolerande foder håller frosten ute till dess. 309 kr.",
+          "headline": "Tom stuga, oskyddad kran",
+          "description": "",
+          "link": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "1098172836106485",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQPZJEjRscoeOdvg9dKqiEJZnkihdCpa03opsS2eF2oFR7hRwKNUBR58a9h_ADzAuMqfKFQPnI0im5Zv3jvouGeztHabO1OBEzUSulZacICZXw.mp4?_nc_cat=109&_nc_sid=5e9851&_nc_ht=scontent-ord5-1.xx.fbcdn.net&_nc_ohc=vy4NdyVNOAYQ7kNvwELOV2Q&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzIuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEzODcyMjQ0MjAyMTAxNDUsImFzc2V0X2FnZV9kYXlzIjoxLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTMsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=ffab1577e1a68ad2&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8xMzQyRTdBMUZFMUMxOUZFRUYxQ0VBQjg4NDdBQzhBRV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0UzNDIyNjEwMDc1QjdGN0E5OTc4RjM1M0VENDNBNjhBX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbC19Ksi-v2BBUCKAJDMiwXQCpEGJN0vGoYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=F0udCn-GhQgA0RhxksH9sg&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQJ5rDdttK9OfTRhrlbCFxSdH-_6fw3CawQVuRsXxwVzNZ1kBTG57NFI-eHEM0R11sl3vR8uJ2MxKw&oh=00_AQIDsFemuVTwmN8JvQyCSZ3YIQI7HeC0FZLHwBRL8zO3lw&oe=6AA32043&bitrate=1903392&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 13.141
+        }
+      },
+      "prefix": "Kranskydd",
+      "K": "SP",
+      "nr": "5",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Kranskydd",
+        "se_kampanj": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
+        "no_prefix": "Kranbeskyttelse",
+        "adset_prefix": "Kranbeskyttelse NO",
+        "campaign_id": "120251996272390233",
+        "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996272390233",
+        "kampanjNamn": "Kranbeskyttelse Frost NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Kranbeskyttelse NO - SP",
+        "annonsNamn": "Kranbeskyttelse_NO_SP_5_H1",
+        "link": "https://beverbutikken.no/products/kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter",
+        "prefix": "Kranbeskyttelse"
+      },
+      "pris": {
+        "pris": "219.00",
+        "jamforpris": "285.00",
+        "titel": "Kranbeskyttelse Frost 420D – Beskytter Utekranen i Vinter",
+        "handle": "kranbeskyttelse-frost-420d-beskytter-utekranen-i-vinter"
+      }
+    }
+  ]
+}
