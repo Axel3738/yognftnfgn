@@ -12,6 +12,32 @@ Kör alla steg klart utan att invänta godkännande mellan dem. **Oavsett hur m�
 leveranser som ligger klara kollas alla** — noll är ett giltigt utfall, inte ett fel.
 Det finns ingen övre gräns: ju fler creatives som kommer ut, desto bättre.
 
+## Behörigheter — rutinen får aldrig fråga om lov (Axels beslut 2026-09-07)
+
+Rutinen körs utan någon som kan klicka. **Varje godkännanderuta = körningen
+står still tills Axel råkar se den.** Därför:
+
+- **Allt mot Notion, Meta, Shopify och Discord går via Bash-verktygen i
+  `tools/`** (`NOTION_TOKEN`, `META_ACCESS_TOKEN`, publik produktsida,
+  `DISCORD_WEBHOOK_URL`). Bash-anropen står i allow-listan i
+  `.claude/settings.json` och frågar aldrig.
+- **`mcp__*`-verktyg används inte i rutinen.** Mätt 2026-09-07: i auto-läge
+  frågar klassificeraren om ett `mcp__`-anrop *trots* att verktyget står i
+  allow-listan (`mcp__Claude_Code_Remote__get_session` stoppades i en session
+  med `mcp__Claude_Code_Remote__*` i listan). Bash-anropen frågade aldrig.
+  En session skapad med `permission_mode: acceptEdits` + allow-listan frågade
+  inte heller om `mcp__Notion`/`mcp__Shopify`-läsningar (7 av 7 gröna).
+- **Enda undantaget:** ser `NOTION_TOKEN`-vägen inte en databas alls (404 =
+  integrationen är inte inbjuden) får den **läsas** med `mcp__Notion__notion-fetch`
+  / `notion-search`. Skrivningar (kommentar, status) går **alltid** via
+  `node tools/notion-aterkoppling.mjs`.
+- Dyker en godkännanderuta ändå upp: avbryt det anropet och gör samma sak via
+  Bash-verktyget. Vänta aldrig på ett klick.
+- Rutinen är bunden till en **fast session** (`create_session` med repot som
+  källa, `main` som utgren, `permission_mode: acceptEdits`, sedan
+  `create_trigger` med `persistent_session_id`). En "ny session varje gång"
+  startar i auto-läge och kan varken pusha eller slippa frågorna.
+
 ## Torrläge — `/notionkorning --torr`
 
 Skrivs `--torr` (eller "torrkör", "provkör", "utan att ladda upp") körs **steg 0
@@ -141,11 +167,14 @@ node tools/leveranskon.mjs --alla     # även rader vars namn redan finns i kont
 
 Verktyget läser **alla databaser integrationen ser** via `notion-kalla.mjs`
 (kräver `NOTION_TOKEN` på rutinen — rutiner ärver inte sessionens connectors)
-och slår upp kampanjen per prefix i MagiBorsten. Är Notion-MCP:n kopplad är den
-förstahandsvägen: **alla databaser under teamspacet Bäverbutiken**
-(`3a9270ab-908c-81a8-a48c-004222d195e7`), varje rad med status `To be Reviewed`
-och fil i `Filer och media`. Inget krav på Typ, inget krav på hubbnamn. Skriv i
+och slår upp kampanjen per prefix i MagiBorsten. **Det är förstahandsvägen —
+den frågar aldrig om lov** (se "Behörigheter" ovan). Notion-MCP:n används bara
+för att **läsa** en databas som `NOTION_TOKEN` inte ser: **alla databaser under
+teamspacet Bäverbutiken** (`3a9270ab-908c-81a8-a48c-004222d195e7`), varje rad
+med status `To be Reviewed`. Inget krav på Typ, inget krav på hubbnamn. Skriv i
 rapporten vilken väg du gick och vilka databaser som lästes.
+*(Mätt 2026-09-07 12:50 UTC: `NOTION_TOKEN`-vägen såg hubbarna och listade 18
+leveranser — 404-läget från 2026-09-02 gäller inte längre.)*
 
 **Hämta hem bilagan** innan QA och uppladdning:
 ```bash
@@ -221,10 +250,12 @@ node tools/notion-klara.mjs --produkt <id>          # hitta raden + dess page-id
 node tools/notion-klara.mjs --brief <page-id>       # dumpa briefen som text
 ```
 
-Är Notion-MCP:n ansluten går det lika bra därigenom (`notion-fetch` på raden).
+Ser `NOTION_TOKEN` inte raden får den läsas med `notion-fetch` (bara läsning).
 
 **Priset hämtas från produktsidan i Shopify vid varje körning** — URL:en står i
 radens `Landing page`. Aldrig ur briefen, aldrig ur en äldre creative.
+Läs den publikt med `curl -s <landing-page-url>.json` (Shopifys produkt-JSON,
+`variants[0].price`) — inte via Shopify-MCP:n.
 
 ### 2b. Gör creativen granskningsbar
 
@@ -291,9 +322,10 @@ node tools/notion-aterkoppling.mjs <page-id> --kommentar "Priset i bild (frame 1
 node tools/notion-aterkoppling.mjs <page-id> --kommentar "Bäverbutiken stavat 'Väverbutiken' i nedre högra hörnet." --status Draft
 ```
 
-Kommentaren är konkret: **vad**, **var**, **vad det ska bli i stället**. Med
-Notion-MCP:n: `notion-create-comment` på raden och `notion-update-page` för
-statusen — samma ordning, kommentaren först.
+Kommentaren är konkret: **vad**, **var**, **vad det ska bli i stället**.
+Skrivningen går **alltid** via `notion-aterkoppling.mjs` — aldrig via
+`notion-create-comment`/`notion-update-page` i MCP:n (de kan utlösa en
+godkännanderuta som ingen kan klicka på).
 
 Radera framesen och nedladdad media ur scratchpad när produkten är klar.
 
@@ -376,8 +408,7 @@ node tools/notion-aterkoppling.mjs <page-id> \
   --status "SE-ACTIVE to be translated"
 ```
 
-Med Notion-MCP:n: `notion-create-comment` + `notion-update-page`, samma ordning.
-Verktyget läser tillbaka statusen och avbryter om den inte blev rätt — saknas
+Aldrig via MCP:n (se "Behörigheter"). Verktyget läser tillbaka statusen och avbryter om den inte blev rätt — saknas
 alternativet i den databasen står det i rapporten och raden lämnas i
 `To be Reviewed`.
 
@@ -454,3 +485,4 @@ löser själv nästa natt.
 - [ ] Ett meddelande per problem i `#problem-and-revisions-ads`
 - [ ] Körningens brief skickad till `#ads-launching`
 - [ ] Slutrapport i mobilformat i chatten
+- [ ] Inget `mcp__*`-anrop för skrivning, ingen godkännanderuta lämnad öppen
