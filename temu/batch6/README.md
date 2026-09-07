@@ -16,8 +16,11 @@ honom i Chrome) och skickade en zip. Skörden ligger i `temu/bildskord/<produkt>
   03 (van med överdrag, storlekstexten bortbeskuren 20 %), 04 (hopvikt + spännen),
   06 (spännband, textbandet bortbeskuret 21 %). GIF = bildspel bild4→03→04. AI-bilden
   och faktakortet borttagna. 01/07–12 har engelsk eller maskinsvensk text → inte använda.
-Kvar med AI-bilder (märkta): vedklyv, solpanel, fiskekalender. Vill Axel ha riktiga
-bilder där också: samma skörd (vedklyv + solpanel har Temu-länk, fisken har ingen).
+**Vedklyv och solpanel: DROPPADE av Axel 2026-09-07 kväll ("skiter i de produkterna").**
+Notion-korten är omdöpta `UTGÅR – …`, Landing page tömd, stoppruta överst (REST-tokenen
+"Bäverbutiken RUTINER" är inte inbjuden till Product test center, så arkivering gick inte
+via API — Axel raderar korten själv). Produkterna ligger kvar i SE/NO med AI-bilder;
+inga creatives ska göras. Fiskekalendern är klar (ingen Temu-länk finns).
 
 ⚠️ **Cowork-lärdom:** Cowork i molnet når inte datorn; Cowork på datorn kunde inte
 köra kommandon ("Workspace unavailable") men Axel körde skörden själv och zippade.
