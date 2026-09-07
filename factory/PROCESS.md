@@ -50,8 +50,13 @@ som genereras per bygge).
 9. ⚙️ Bilder: inbränd engelska bort. kie.ai klarar INTE svensk text — metoden
    är kie REMOVE text → sharp lägger svensk vektortext (grid-overlay för
    koordinater). Gif kan inte fixas — redigerarjobb.
-10. 🖐 Publicera tema, språk svenska, butiksnamn, domän, Shopify Payments +
-    Klarna, avsändarmejl, kassalogga. Klicken är VA:ns
+10. 🖐 **Butiken skapas av VA:n själv** från jobb-Gmailen (ny trial per
+    butik, Basic-plan). Shopify-åtkomst är per butik — hon ser aldrig
+    ägarens övriga butiker, och de gamla butikerna ligger på ägarens egen
+    inloggning. Ägaren bjuds in som staff direkt vid skapandet och tar
+    över ägarskapet i överlämningen (checklistans steg 2 + 9, beslut
+    2026-09-07). Sen: publicera tema, språk svenska, butiksnamn, domän,
+    Shopify Payments + Klarna, avsändarmejl, kassalogga. Klicken är VA:ns
     (`factory/VA-CHECKLIST.md`, ifylld per butik i `output/<id>/CHECKLISTA.md`)
     — även Shopify Payments (Axels besked 2026-09-07: aktiveringen har
     aldrig krävt BankID, VA:n fyller i bolags- och bankuppgifterna).

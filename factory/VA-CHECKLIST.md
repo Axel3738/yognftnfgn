@@ -33,7 +33,14 @@ VIDEO:
 * Domain → Email → Forwarding → create STORE EMAIL → forward to FORWARD TO
 * Send a test email to STORE EMAIL – confirm it arrives
 
-## 2. Shopify – basics
+## 2. Shopify – create the store
+VIDEO:
+
+* Go to shopify.com → Start free trial → sign up with the work Gmail
+* Choose the Basic plan when asked
+* Settings → Users and permissions → Invite staff → FORWARD TO (the owner) → all permissions
+
+## 3. Shopify – basics
 VIDEO:
 
 * Settings → General → Store name → STORE NAME → Save
@@ -41,7 +48,7 @@ VIDEO:
 * Settings → Languages → make Swedish default (add others if needed)
 * Settings → Notifications → Sender email → STORE EMAIL → Save → click the verification link in the inbox
 
-## 3. Shopify – connect Claude Code
+## 4. Shopify – connect Claude Code
 VIDEO:
 
 * Settings → Apps and sales channels → Develop apps → Allow custom app development
@@ -49,14 +56,14 @@ VIDEO:
 * Install app → reveal the **Admin API access token** → paste it into Claude Code when asked (never in chat or email)
 * Claude cannot build anything in the store until this is done
 
-## 4. Shopify – payments
+## 5. Shopify – payments
 VIDEO:
 
 * Settings → Payments → Activate Shopify Payments → fill in the company + bank details Claude gives you
 * Same page → Klarna → tick → Save
 * Settings → Checkout → Customize → Logo → upload the logo Claude gives you → Save
 
-## 5. Judge.me
+## 6. Judge.me
 VIDEO:
 
 * Apps → search "Judge.me" → Install (free plan)
@@ -64,20 +71,20 @@ VIDEO:
 * Judge.me → Settings → Review Widget → star color: 00B77F
 * Judge.me → Settings → Integrations → copy API Token → paste it into Claude Code when asked (never in chat or email)
 
-## 6. Meta
+## 7. Meta
 VIDEO:
 
 * business.facebook.com → Settings → Pages → Add → Create a new Page: STORE NAME
 * Copy the Page ID → give to Claude Code
 * The ad account is always the same for every OPS store: MagiBorsten DK (915422744950975) – never pick another one, never add any card
 
-## 7. Discord
+## 8. Discord
 VIDEO:
 
 * Discord → + → Create server: STORE NAME
 * Open the invite link Claude Code gives you → Authorize the bot
 
-## 8. Hand over
+## 9. Hand over
 VIDEO:
 
 * Tell Claude Code: "Store ready: STORE NAME" – it creates the pixel,
@@ -86,6 +93,7 @@ VIDEO:
   Claude names → Publish
 * Install the WeTracked app → paste the pixel ID Claude gives you →
   connect the Conversions API token (follow WeTracked's guide)
+* Settings → Users and permissions → ⋯ → Transfer ownership → the owner
 * Owner changes the Loopia password afterwards
 
 ---

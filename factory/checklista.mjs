@@ -37,41 +37,47 @@ Everything not on this list is done by Claude Code.
 - [ ] Domain → Email → Forwarding → create **${mail}** → forward to **${agare}**
 - [ ] Send a test email to **${mail}** – confirm it arrives
 
-## 2. Shopify – basics
+## 2. Shopify – create the store
+- [ ] Go to shopify.com → **Start free trial** → sign up with the work Gmail
+- [ ] Choose the **Basic** plan when asked
+- [ ] Settings → Users and permissions → **Invite staff** → **${agare}** → all permissions
+
+## 3. Shopify – basics
 - [ ] Settings → General → Store name → **${brand}** → Save
 - [ ] Settings → Domains → Connect existing domain → **${doman}** → follow the DNS steps → Set as primary
 - [ ] Settings → Languages → make **Swedish** default
 - [ ] Settings → Notifications → Sender email → **${mail}** → Save → click the verification link in the inbox
 
-## 3. Shopify – connect Claude Code
+## 4. Shopify – connect Claude Code
 - [ ] Settings → Apps and sales channels → Develop apps → **Allow custom app development**
 - [ ] Create app → name it **Fabriken** → Configure Admin API scopes → tick **ALL** scopes → Save
 - [ ] Install app → reveal the **Admin API access token** → paste it into Claude Code when asked (never in chat or email)
 
-## 4. Shopify – payments
+## 5. Shopify – payments
 - [ ] Settings → Payments → Activate **Shopify Payments** → fill in the company + bank details Claude gives you
 - [ ] Same page → **Klarna** → tick → Save
 - [ ] Settings → Checkout → Customize → Logo → upload the logo Claude gives you → Save
 
-## 5. Judge.me
+## 6. Judge.me
 - [ ] Apps → search "Judge.me" → Install (free plan)
 - [ ] Judge.me → Settings → Language → **Swedish**
 - [ ] Judge.me → Settings → Review Widget → star color: **${stjarna}**
 - [ ] Judge.me → Settings → Integrations → copy **API Token** → paste it into Claude Code when asked (never in chat or email)
 
-## 6. Meta
+## 7. Meta
 - [ ] business.facebook.com → Settings → Pages → Add → Create a new Page: **${brand}**
 - [ ] Copy the **Page ID** → give to Claude Code
 - [ ] The ad account is always **MagiBorsten DK** (915422744950975) – same for every OPS store, never pick another one, never add any card
 
-## 7. Discord
+## 8. Discord
 - [ ] Discord → + → Create server: **${brand}**
 - [ ] Open the invite link Claude Code gives you → **Authorize** the bot
 
-## 8. Hand over
+## 9. Hand over
 - [ ] Tell Claude Code: **"Store ready: ${brand}"** – it creates the pixel, renames the ad account, builds Discord channels and imports reviews
 - [ ] When Claude says the theme is ready: Online Store → Themes → the theme Claude names → **Publish**
 - [ ] Install the **WeTracked** app → paste the pixel ID Claude gives you → connect the Conversions API token (WeTracked's guide)
+- [ ] Settings → Users and permissions → ⋯ → **Transfer ownership** → **${agare}**
 - [ ] Owner changes the Loopia password afterwards
 `;
 }
