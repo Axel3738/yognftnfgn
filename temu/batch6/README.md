@@ -33,10 +33,13 @@ Rättat per produkt mot arket:
 - **Taköverdrag:** enda bekräftade bilden är CWD:s bild4. De två Temu-hämtade
   (kåpa med påse, "CARAVAN COVER") borttagna. AI-bild med bild4 som referens + faktakort.
 - **Vedklyv, racing, fiske:** var redan byggda på CWD:s bilder — oförändrade.
-- **Solpanel: OLÖST.** CWD:s bild8 visar solpanel + kamouflagefärgad 4G-åtelkamera,
-  Axels bild7 detsamma, och CWD skriver "no style like the picture, but there is a
-  green version". Sidan säljer en vit solpanel för 1 749 kr — troligen fel produkt
-  (offerten på 58 USD ser ut som ett kamera+panel-kit). Kräver Axels besked.
+- **Solpanel: LÖST enligt Axels besked "kolla Temu-länkarna".** Länken heter
+  "solar panel for trail camera" — produkten är en solpanel, ingen kamera. CWD:s
+  variantbesked "there is a green version" = den gröna levereras. Formen kommer ur
+  den vita referensbilden (samma modelltyp), färgen ur offerten → hero, livsstilsbild
+  och faktakort i grönt, alla AI-märkta (`AI-illustration: … färgen som levereras`).
+  Faktakortet har raden "Grön – färgen som levereras". Riktigt foto av den gröna
+  panelen saknas fortfarande — be CWD om ett vid nästa kontakt.
 
 **Så gjordes det — utan Axels dator (slutversion):**
 - Källor som får användas: huvudbilden i `bilder/` (Temu-listningens hero, godkänd

@@ -78,12 +78,15 @@ const PLAN = {
     galleri: ['rv', 'ai', 'fakta'], bild1: 'ai', bild2: 'fakta',
   },
   solpanel: {
-    gif: { sv: 'Solpanelen med sitt ledade fäste', no: 'Solpanelet med sitt leddede feste' },
+    // Temu-länken säger "solar panel for trail camera" = en solpanel, ingen kamera. CWD levererar den
+    // GRÖNA versionen. Formen kommer ur den vita referensbilden, färgen ur offerten — därför AI-märkt.
+    gif: { sv: 'Solpanelen i grönt med sitt ledade fäste', no: 'Solpanelet i grønt med sitt leddede feste' },
     bilder: {
-      ai: { fil: G('solpanel-ai.jpg'), ai: true, sv: 'AI-illustration: panelen monterad på en tallstam i skogsbrynet', no: 'AI-illustrasjon: panelet montert på en furustamme i skogkanten' },
-      fakta: { fil: G(`solpanel-fakta-${sp}.jpg`), sv: 'Panelens egenskaper: laddar där kameran hänger, ledat fäste, väggfäste ingår, byggd för att lämnas ute', no: 'Panelets egenskaper: lader der kameraet henger, leddet feste, veggfeste følger med, bygd for å bli stående ute' },
+      hero: { fil: G('solpanel-hero.jpg'), ai: true, sv: 'AI-illustration: solpanelen i grönt med ledat fäste – färgen som levereras', no: 'AI-illustrasjon: solpanelet i grønt med leddet feste – fargen som leveres' },
+      ai: { fil: G('solpanel-ai.jpg'), ai: true, sv: 'AI-illustration: den gröna panelen monterad på en tallstam i skogsbrynet', no: 'AI-illustrasjon: det grønne panelet montert på en furustamme i skogkanten' },
+      fakta: { fil: G(`solpanel-fakta-${sp}.jpg`), sv: 'Panelens egenskaper: grön, laddar där kameran hänger, ledat fäste, väggfäste ingår, byggd för att lämnas ute', no: 'Panelets egenskaper: grønn, lader der kameraet henger, leddet feste, veggfeste følger med, bygd for å bli stående ute' },
     },
-    galleri: ['ai', 'fakta'], bild1: 'ai', bild2: 'fakta',
+    galleri: ['hero', 'ai', 'fakta'], bild1: 'ai', bild2: 'fakta',
   },
   racingkalender: {
     gif: { sv: 'Adventskalendern och de 24 bilarna', no: 'Adventskalenderen og de 24 bilene' },
