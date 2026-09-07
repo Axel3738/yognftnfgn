@@ -119,7 +119,7 @@ try {
   bilder > 0
     ? ok(`Temu-provet gick igenom (${bilder} bild-URL:er i provsidan) — kör skördaren på riktigt för att vara säker`)
     : fel('Temu-provet gav ett TOMT skal (0 bild-URL:er)',
-          'Provet är en förenkling (en enkel hämtning, inte riktig Chrome). Kör det riktiga testet: cd temu/kaching-cli && node temu-bilder.mjs "' + TEMU_PROV + '" prov . Ger även det inga bilder är datorn blockerad — kör då MOLNLÄGET (Cowork-prompt + zip) som förut.');
+          'Provet är en förenkling (en enkel hämtning, inte riktig Chrome). Kör det riktiga testet: ' + (WIN ? 'Set-Location temu\\kaching-cli; node temu-bilder.mjs "' + TEMU_PROV + '" prov' : 'cd temu/kaching-cli && node temu-bilder.mjs "' + TEMU_PROV + '" prov') + ' . Ger även det inga bilder är datorn blockerad — kör då MOLNLÄGET (Cowork-prompt + zip) som förut.');
 } catch (e) {
   fel(`Temu går inte att nå (${e.message})`, 'Testa att öppna temu.com i webbläsaren. Går inte det heller: kör MOLNLÄGET (Cowork-prompt + zip) som förut.');
 }
