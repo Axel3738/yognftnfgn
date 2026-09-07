@@ -38,7 +38,7 @@ VIDEO:
 
 * Go to shopify.com → Start free trial → sign up with the work Gmail
 * Stay on the free trial – never pick a plan, never enter any card
-* Settings → Users and permissions → Invite staff → FORWARD TO (the owner) → all permissions
+* (Staff invites need a paid plan – the owner is added at hand over instead)
 
 ## 3. Shopify – basics
 VIDEO:
@@ -93,8 +93,8 @@ VIDEO:
   Claude names → Publish
 * Install the WeTracked app → paste the pixel ID Claude gives you →
   connect the Conversions API token (follow WeTracked's guide)
-* Settings → Users and permissions → ⋯ → Transfer ownership → the owner
-* The owner then picks the plan, adds his card and opens the store
+* The owner logs in with the work Gmail, picks the plan and adds his card
+* Then: Settings → Users and permissions → ⋯ → Transfer ownership → the owner
 * Owner changes the Loopia password afterwards
 
 ---
