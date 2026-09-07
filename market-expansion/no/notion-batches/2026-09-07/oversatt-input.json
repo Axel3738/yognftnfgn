@@ -1,0 +1,86 @@
+[
+ {
+  "key": "overvakingskamera_AU_2_H1",
+  "namn": "Overvakningskamera_AU_2_H1",
+  "malnamn": "Overvåkingskamera_NO_AU_2_H1",
+  "vinkel": "AU",
+  "fakta": {
+   "produkt_no": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+   "pris": "899 kr",
+   "pris_ord": "åtte hundre og nittini kroner",
+   "jamforpris": "1 169 kr",
+   "jamforpris_ord": "elleve hundre og sekstini kroner",
+   "spar": "270 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": true,
+   "anmeldelser": "10 anmeldelser (5,0) på beverbutikken.no",
+   "garanti": "30 dagers åpent kjøp (butiken har INGEN \"garanti\" — skriv alltid \"åpent kjøp\", aldrig \"garanti\")",
+   "material": "to linser, 355 graders dekning, AI skiller mennesker fra dyr, trådløst wifi, varsel rett i telefonen",
+   "link_no": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+  },
+  "se_copy": {
+   "message": "3 saker jag kollar innan jag sätter upp en övervakningskamera. 355° täckning från dubbellinsen — inga döda vinklar i trädgården. AI:n skiljer människa från husdjur, inte bara rörelse. Notis direkt i telefonen, inte nästa dag. 799 kr (jämförpris 1000 kr), 30 dagars garanti.",
+   "headline": "355° täckning. AI ser skillnaden.",
+   "description": "",
+   "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+  },
+  "srt_orig": "srt-orig/overvakingskamera_AU_2_H1.orig.srt",
+  "srt_ut": "srt-fixed/overvakingskamera_AU_2_H1.srt"
+ },
+ {
+  "key": "overvakingskamera_SP_11_H1",
+  "namn": "Overvakningskamera_SP_11_H1",
+  "malnamn": "Overvåkingskamera_NO_SP_11_H1",
+  "vinkel": "SP",
+  "fakta": {
+   "produkt_no": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+   "pris": "899 kr",
+   "pris_ord": "åtte hundre og nittini kroner",
+   "jamforpris": "1 169 kr",
+   "jamforpris_ord": "elleve hundre og sekstini kroner",
+   "spar": "270 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": true,
+   "anmeldelser": "10 anmeldelser (5,0) på beverbutikken.no",
+   "garanti": "30 dagers åpent kjøp (butiken har INGEN \"garanti\" — skriv alltid \"åpent kjøp\", aldrig \"garanti\")",
+   "material": "to linser, 355 graders dekning, AI skiller mennesker fra dyr, trådløst wifi, varsel rett i telefonen",
+   "link_no": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+  },
+  "se_copy": {
+   "message": "Katten går förbi. Tyst. En främling går förbi. Larm.\n\"Jag sover bättre nu.\" – riktig kundkommentar.\nTvå linser täcker hela tomten. AI larmar bara på människor.\n799 kr i dag (jämförpris 1 000 kr) – 30 dagars nöjd-kund-garanti.",
+   "headline": "Skiljer katten från främlingen",
+   "description": "",
+   "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+  },
+  "srt_orig": "srt-orig/overvakingskamera_SP_11_H1.orig.srt",
+  "srt_ut": "srt-fixed/overvakingskamera_SP_11_H1.srt"
+ },
+ {
+  "key": "overvakingskamera_CS_6_H1",
+  "namn": "Overvakningskamera_CS_6_H1",
+  "malnamn": "Overvåkingskamera_NO_CS_6_H1",
+  "vinkel": "CS",
+  "fakta": {
+   "produkt_no": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+   "pris": "899 kr",
+   "pris_ord": "åtte hundre og nittini kroner",
+   "jamforpris": "1 169 kr",
+   "jamforpris_ord": "elleve hundre og sekstini kroner",
+   "spar": "270 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": true,
+   "anmeldelser": "10 anmeldelser (5,0) på beverbutikken.no",
+   "garanti": "30 dagers åpent kjøp (butiken har INGEN \"garanti\" — skriv alltid \"åpent kjøp\", aldrig \"garanti\")",
+   "material": "to linser, 355 graders dekning, AI skiller mennesker fra dyr, trådløst wifi, varsel rett i telefonen",
+   "link_no": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+  },
+  "se_copy": {
+   "message": "Tre personer i bild. En hund bredvid dem.\nKameran larmar för personerna – inte för hunden.\nTvå linser. 355 grader. Hela tomten.\n799 kr i stället för 1 000 kr.",
+   "headline": "Larmar för personer. Inte för hunden.",
+   "description": "",
+   "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+  },
+  "srt_orig": "srt-orig/overvakingskamera_CS_6_H1.orig.srt",
+  "srt_ut": "srt-fixed/overvakingskamera_CS_6_H1.srt"
+ }
+]
