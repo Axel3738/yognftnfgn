@@ -10,6 +10,7 @@
 // Tokenen lever 24h och hamtas om vid varje korning — inget att halla reda pa.
 // Se TOKENS.md.
 
+import './miljo.mjs'; // läser .env lokalt; molnmiljön vinner alltid
 export const API_VERSION = process.env.SHOPIFY_API_VERSION || '2025-10';
 
 /** Avrundar till närmsta heltal som slutar på 9 (349, 789, 1029). */

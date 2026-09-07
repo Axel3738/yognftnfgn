@@ -10,12 +10,28 @@ Kör klart utan att invänta godkännande mellan faser. Svara Axel kort, på sve
 2. Läs `temu/UTLANDS-LANSERING.md` (prisregler, butiksregister) och `CLAUDE.md`:s
    produktbatch- och beskrivningsstruktur-sektioner.
 
-## Fas 1 — offert + skördeprompt FÖRST (Axels regel 2026-08-29)
-1. Läs offertarket (Drive-connectorn). Extrahera per rad: Temu-URL, kostnader per land,
-   varianter, notes. Fånga räkneord (antal delar, mått) — de är LÅSTA mot offerten.
-2. **Leverera Cowork-skördeprompten INNAN uppladdningen börjar**: komplett klistra-in-bar
-   med git-instruktioner + `node temu-bilder.mjs '<ren-URL>' <mappnamn>` för VARJE produkt
-   (strippa query-parametrarna ur URL:erna). Committa som
+## Fas 0.5 — var kör jag? (avgör Fas 1)
+Kör `node temu/kolla-lokalt.mjs` och läs sista raden:
+- **Temu släpper igenom** (bild-URL:er hittade) → **LOKALT LÄGE**: skörda bilderna själv
+  i Fas 1. Ingen Cowork-prompt behövs.
+- **Tomt skal / 0 bild-URL:er** → **MOLNLÄGE**: följ Fas 1 som den står.
+Är något annat ❌ i kollen: fixa det först, eller säg exakt vad som blockerar.
+Uppsättningen på Axels dator: `SETUP-LOKALT.md`.
+
+## Fas 1 — offert + bilder
+1. Läs offerten med `node temu/offert.mjs <länk eller fil.csv>` — den hämtar arket
+   via Google Sheets CSV-export (**ingen Drive-connector behövs**) och skriver ut
+   produkterna uppdelade i *med quote* och *utan quote*. Fånga räkneord (antal delar,
+   mått) — de är LÅSTA mot offerten.
+   **Produkter utan ifylld quote hoppas över** och listas separat i rapporten.
+   ⚠️ Arket har tre rader per produkt: **Qty 1 är styckkostnaden**, qty 2/3 är totaler.
+2a. **LOKALT LÄGE:** skörda direkt, en produkt i taget:
+   `cd temu/kaching-cli && node temu-bilder.mjs '<ren-URL>' <mappnamn>` (strippa
+   query-parametrarna). Chrome öppnas synligt — captcha löses i fönstret. Granska varje
+   mapp och rensa bort andra produkters miniatyrer innan bilderna används.
+2b. **MOLNLÄGE — Axels regel 2026-08-29:** leverera Cowork-skördeprompten INNAN
+   uppladdningen börjar: komplett klistra-in-bar med git-instruktioner +
+   `node temu-bilder.mjs '<ren-URL>' <mappnamn>` för VARJE produkt. Committa som
    `temu/kaching-cli/BILDSKORD-BATCH<N>.md` och skicka filen till Axel.
    Zip-fallback om git strular. Produkter som inte skapas (väntar på CWD) utelämnas — säg det.
 
@@ -67,7 +83,8 @@ Ett item per produkt (även VÄNTA-produkter, märkta i namnet) i
    rapport med samtliga produktlänkar.
 
 ## Definition of done
-- [ ] Skördeprompten levererad FÖRST, committad i repot
+- [ ] Fas 0.5 körd — läget (lokalt/moln) fastställt och redovisat
+- [ ] Bilderna skördade (lokalt) ELLER skördeprompten levererad FÖRST och committad (moln)
 - [ ] Alla 5 butiker inventerade per SKU före skapande — och EFTER (inga luckor/dubbletter)
 - [ ] Priser enligt prisreglerna, dokumenterade i UTLANDS-LANSERING.md
 - [ ] Copy: mastercopy + 4 språk, räkneord mot offert, korrläst

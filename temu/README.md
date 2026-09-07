@@ -162,3 +162,22 @@ node temu/api-test.mjs <goods_id>                     # testar 5 API-endpoints m
 ```
 Kör `api-test.mjs` igen den dag Temu-inloggning finns – då är det den snabbaste
 vägen till varianter och bilder.
+
+## Köra lokalt på Axels Mac (2026-09-07)
+
+Temu blockerar molnet — men inte Axels dator. Kör flödet lokalt och hela
+mellanledet (Cowork-prompt, zip-filer, väntan) försvinner.
+
+- `SETUP-LOKALT.md` i repots rot — steg-för-steg-guide, skriven för icke-utvecklare.
+- `node temu/kolla-lokalt.mjs` — kollar datorn och säger exakt vad som fattas
+  (nycklar, butikssvar, sharp, ffmpeg, playwright, Chrome, Temu-åtkomst).
+  Sista raden är den viktiga: hittar den bild-URL:er i en Temu-provsida släpper
+  Temu igenom datorn. Ett tomt skal med 0 bild-URL:er = blockerad.
+- `temu/miljo.mjs` — läser `.env` in i `process.env`. Redan satta variabler
+  skrivs aldrig över, så samma kod fungerar både lokalt och i molnet.
+  Importeras av `butiker.mjs`, alltså av allt som pratar med Shopify.
+- `temu/env.exempel` — mall att kopiera till `.env` (som är gitignorerad).
+- `node temu/offert.mjs <länk|fil.csv>` — läser CWD-offerten via Google Sheets
+  CSV-export, **utan Drive-connector**, och delar upp produkterna i *med quote*
+  och *utan quote*. Qty 1 är styckkostnaden; qty 2/3 är totaler och får inte
+  användas som styckpris.

@@ -5,7 +5,7 @@ inget "visas bara en gång".
 
 | Uppgift | Ser ut som | Var den står |
 |---|---|---|
-| Butikens adress | `4snrw0-mg.myshopify.com` | i adressfältet: `admin.shopify.com/store/**4snrw0-mg**` |
+| Butikens adress | `abcd12-xy.myshopify.com` | i adressfältet: `admin.shopify.com/store/**abcd12-xy**` |
 | Klient-ID | `c08d97a8...` (32 tecken) | appens inställningar → Inloggningsuppgifter |
 | Hemlighet | `shpss_868d...` | samma ställe, tryck på ögat för att visa |
 
@@ -34,8 +34,8 @@ dör efter 24 timmar. Skriptet hämtar en färsk själv varje gång.
 I miljöinställningarna, tre rader per butik, `NYCKEL=värde`:
 
 ```
-SHOPIFY_SHOP_SE=4snrw0-mg.myshopify.com
-SHOPIFY_CLIENT_ID_SE=c08d97a83583b2f86f2e9c68821768b4
+SHOPIFY_SHOP_SE=abcd12-xy.myshopify.com
+SHOPIFY_CLIENT_ID_SE=c08d97a8xxxxxxxxxxxxxxxxxxxxxxxx
 SHOPIFY_CLIENT_SECRET_SE=shpss_...
 ```
 

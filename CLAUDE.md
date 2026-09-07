@@ -12,6 +12,10 @@ med en instruktion om vad han "bara behöver göra själv". Svara på svenska.
 Vidare läsning i ordning: `HANDOFF.md` (vad som är byggt, vad som återstår,
 vilka connectors som måste kopplas) → `docs/os/ACTIONPLAN.md`.
 
+**Kör Axel på sin egen dator?** `SETUP-LOKALT.md` är hans steg-för-steg-guide och
+`node temu/kolla-lokalt.mjs` säger vad som fattas. Lokalt är Temu INTE blockerat —
+då skördar sessionen bilderna själv i stället för att skicka en Cowork-prompt.
+
 ---
 
 ## Två verksamheter. Blanda dem aldrig.
@@ -537,6 +541,13 @@ Grillklinikken-butiker får ALDRIG bäver-emojin eller "Bäverbutiken" som vendo
   kvarglömda `<!-- GIF … -->`-platshållare på 6 produkter i SE/NO/FI. Svepen körs
   med `temu/klistermarken/fartsvep.mjs` och `kommentarsvep.mjs`.
   Tas en platshållare bort ur butiken ska TODO:n den bar skrivas in i repot först.
+- **Repot är PUBLIKT** (github.com/Axel3738/yognftnfgn, verifierat 2026-09-07).
+  Allt som committas kan läsas av vem som helst. Skriv aldrig en riktig nyckel,
+  token, hemlighet eller kunduppgift i en fil — inte ens som "exempel".
+  *(2026-09-07: butikens riktiga Klient-ID låg som exempelvärde i `temu/TOKENS.md`.
+  Maskerat nu, men det ligger kvar i git-historiken — nya exempel ska vara påhittade.)*
+  Nycklar bor i miljövariabler, eller lokalt i `.env` (redan i `.gitignore`, läses av
+  `temu/miljo.mjs` — molnmiljön vinner alltid över filen).
 - **Priset hämtas från produktsidan vid varje körning**, aldrig ur en äldre brief
   eller creative. Axelbältet höjdes 2026-08-05 från 509 → 599 kr (jämförpris 678 kr
   = spara 79 kr, 11,65 %). **509 kr, 636 kr och "20 %" är förbjudna** i all ny copy.
