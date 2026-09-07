@@ -20,3 +20,12 @@ Inga väntande idéer just nu — båda posterna nedan användes i batch #2
 *(Tre poster som låg här 2026-09-01 — fel produktsida, fel pris, 0 recensioner
 — är strukna. Alla tre byggde på att körningen läst fel IBC-produkt i butiken.
 Se rättelserutan i dna.md.)*
+
+## Kontroll 2026-09-07 (batch #3)
+
+Backloggen var fortfarande tom vid `/cs`-körning batch #3 — dubbelkollad, inga
+väntande idéer att plocka. Batch #3 byggdes i stället på: near-iteration av
+PD_1_H1 (isolerad variabel), vidareutveckling av CS_1_H3 (nu bevisat lönsam på
+liten skala), ett nytt koncept ur Losing/Obevisat-DNA (GT, gåva), samt tre nya
+BOF-vinklar och två nya recensioner. Se `batch-log.md` och `dna.md`
+"Uppdatering 2026-09-07" för fullständig motivering.

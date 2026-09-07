@@ -124,3 +124,106 @@ Camera/Fish rod holder NO 2026-08-29/31.
   design-tabellerna står i sidan.
 - `agent/produktkarta.json`: `drive_senaste_batchmapp_id` uppdaterad till
   Batch #2:s mapp-id.
+
+---
+
+## Batch #3 — 2026-09-07 (`/cs`, automatisk rond-auto, behov `brief_runda`)
+
+**Trigger:** `rundaAntal: 6`, fokus "mata vinnaren — skalats 4 gånger på en
+vecka" (rondens egen orsakstext).
+
+**Feedbackloop på batch #1 (2026-09-01) och batch #2 (2026-09-04) — tredje
+gången samma observandum:** `IBC_PD_4_H1`, `IBC_PD_4_H2`, `IBC_PD_4_H3` och
+`IBC_SP_3_H1` (batch #2:s fyra videobriefer) **finns inte alls i kontot** tre
+dagar senare — redigerarna har inte producerat dem. `IBC_PD_3_H1` och
+`IBC_GT_3_H1` (batch #1:s video) finns som creatives i kontot men med bara
+6,01 respektive 4,10 kr spend — i praktiken aldrig lanserade på riktig budget.
+De statiska brieferna (PD_3_1, CO_1_1, PD_4_1, CS_3_1) har alla fått lite spend
+men ingen av dem passerar 300 kr. **Ingen av batch #1:s eller batch #2:s
+hypoteser (fact-first hook, creator-on-camera, pacing-cut, belagd SP,
+format-transfer, gåva-omtest, before/after) kan bekräftas eller motbevisas
+ännu — tre batcher i rad.** Detta är ett produktionsflaskhalse-fynd: kontot
+skalar i praktiken fortfarande bara de två annonserna från själva launchen
+(PD_1_H1, CS_1_H3). Noteras som observandum, ändrar INTE briefprocessen —
+per uppdragets instruktion körs nästa batch som vanligt.
+
+**Analys (full ANALYSMETOD.md-körning, se dna.md "Uppdatering 2026-09-07"
+för fullständig teardown och variabeltabell):**
+
+- Signifikansgrind: 2 av 26 annonser bedömbara (≥300 kr + ≥3 köp) — PD_1_H1 och,
+  nytt denna körning, CS_1_H3.
+- Datakvalitet: `amount_spent × purchase_roas` verifierad mot
+  `omni_purchase_values` för alla rader med köp — matchar exakt (t.ex. PD_1_H1:
+  13 753,23 × 3,110968 = 42 785,86 kr = fältets värde). Ingen trasig rad.
+- **PD_1_H1** (benchmark): 13 753,23 kr (88,4 % av spend), 66 köp (95,7 % av de
+  bedömbara köpen), CPA 208,38 kr mot break-even 323,84 kr, ROAS 3,11,
+  **vinstbidrag +7 620,43 kr**. Nästan fördubblad spend tredje körningen i rad
+  (3 455 → 7 980 → 13 753 kr) med stabil CPA under break-even — regression
+  enligt ANALYSMETOD.md steg 5, väntat, inget larm.
+- **CS_1_H3**: passerade nu 300 kr-gränsen (522,99 kr) och 3-köpsgränsen (3 köp).
+  CPA 174,33 kr, ROAS 4,11, **vinstbidrag +448,53 kr**. Batch #1/#2:s hypotes
+  "CS lutar mot svagare än PD" höll INTE.
+- **Creative-teardown (steg 6b):** hämtade full copy för PD_1_H1 och CS_1_H3 via
+  `ads_get_creatives`. PD_1_H1:s manus är oförändrat sedan batch #2:s extraktion.
+  **Nytt fynd:** CS_1_H3:s live-copy innehåller påhittad brådska — "IDAG ENDAST",
+  "Lagret krymper snabbt — många har redan beställt inför sommaren", "beställ
+  innan det är slut". Ingen av dessa påståenden går att verifiera mot någon
+  källa (Shopify visar inget lagersaldo-larm, inget faktiskt tidsbegränsat
+  erbjudande finns). Detta bryter mot CLAUDE.md regel 3 och `docs/copy-regler.md`.
+  Ingen ändring gjordes i den live-annonsen (utanför denna körnings Meta-mandat:
+  läsning tillåten, skrivning inte) — flaggat till Axel, och ny copy i denna
+  batch bygger inte vidare på de påhittade raderna.
+- 4 mönster identifierade och märkta bevisad/hypotes, var och en kopplad till en
+  konkret briefinstruktion — se dna.md "Uppdatering 2026-09-07".
+
+**Kvot:** `pipeline/quota.mjs` spårar inte IBC-Tanköverdraget (produkten står
+inte i `products/products.json`) — batchstorleken styrs av rondens
+`rundaAntal: 6`, precis som `/rond-auto` steg 4b föreskriver.
+
+**Briefer i denna batch (6 i rundan, minst 4 video/max 2 statiska — 4 video,
+2 statiska ✅ — + 3 BOF + 2 review, alla utanför rundaAntal):**
+
+| Annons | Format | Koncept | Variabeltaggar | Hypotes (isolerad variabel) | Källa |
+|---|---|---|---|---|---|
+| IBC_PD_5_H1 | Video | PD, near-iteration | Angle: pain \| Hook: visuellt/spec-först \| Format: VO+broll \| Proof: 210D Oxford, 2 min, öppning upptill \| Offer: inget pris \| Talare: röst | Isolerar hook-modalitet: spec-anchored visuell öppning i st f textfråga, resten av manuset identiskt med PD_1_H1 | PD_1_H1 (benchmark) |
+| IBC_PD_5_H2 | Video | PD, proof-count | Angle: pain \| Hook: pain-fråga (återanvänd) \| Format: VO+broll \| Proof: 210D Oxford + NY: 30 dagar/Klarna \| Offer: inget pris \| Talare: röst | Isolerar proof-antal: lägger till en 4:e ✅-punkt (garanti) på PD_1_H1:s exakta manus/hook | PD_1_H1 (benchmark) |
+| IBC_CS_4_H1 | Video | CS, struktur-transfer | Angle: rea (verifierad) \| Hook: siffra/pris \| Format: VO+broll, PD:s struktur \| Proof: prismatematik + 210D Oxford \| Offer: pris syns \| Talare: röst | Behåller CS_1_H3:s riktiga rabatt, tar bort all påhittad brådska, bygger på PD:s bevisade struktur i stället | CS_1_H3 (nu bedömbar), PD_1_H1:s struktur |
+| IBC_GT_4_H1 | Video | GT, nytt koncept | Angle: identity/gåva (specifik mottagare) \| Hook: identity+spec \| Format: VO+broll, gåva-inramning \| Proof: 210D Oxford, 2 min \| Offer: inget pris \| Talare: röst | GT obevisad, inte motbevisad, efter 3 batcher — ny konkret inramning (gåva till nyinflyttad tankägare) i st f generisk "gåva" | Losing/Obevisat-DNA: GT_1–3 |
+| IBC_CS_4_1 | Statisk | CS, format-transfer | Angle: rea \| Format: offer-grafik+produkt \| Proof: 210D Oxford \| Offer: pris syns | Ger CS-vinkeln en andra, billig tillgång på samma riktiga rabatt/struktur | IBC_CS_4_H1 |
+| IBC_PD_5_1 | Statisk | PD, format-transfer | Angle: pain \| Format: split/före-efter \| Proof: 210D Oxford \| Offer: inget pris | Samma hook-modalitetstest som PD_5_H1, som statisk — ger PD_2_1 (aldrig fått spend) en riktig A/B-syster | IBC_PD_5_H1 |
+| IBC_BOF_4_1 | Statisk (BOF) | Installationsinvändning | Format: offer-grafik \| Proof: 2 min, blixtlås | Ny BOF-vinkel (batch #2 täckte pris/garanti/storlek) — "är det krångligt att sätta på?" | Produktsidans egen text: dragkedja i st f presenning/gummiband |
+| IBC_BOF_5_1 | Statisk (BOF) | Cost-of-inaction | Format: comparison \| Proof: citat från egen produktsida | Vad händer om man INTE köper — presenning som blåser av, citerat ordagrant ur produktsidan | Produktsidans egen text |
+| IBC_BOF_6_1 | Statisk (BOF) | Frakt/leverans | Format: offer-grafik \| Proof: sidans egen fraktrad | "När kommer den / är frakten gratis?" — matchar produktsidans exakta fraktformulering | Produktsidans sales-point-rad |
+| IBC_RV_3_1 | Statisk (review) | Recension, Sofia | Proof: verbatim recension | Verbatim citat, 5 stjärnor, sol/UV-koppling | Produktsidan (Judge.me JSON-LD), verifierad 2026-09-07 |
+| IBC_RV_4_1 | Statisk (review) | Recension, Johan | Proof: verbatim recension | Verbatim citat, 5 stjärnor, storleks-koppling (1000L) | Produktsidan (Judge.me JSON-LD), verifierad 2026-09-07 |
+
+**Naming:** upptagna ID:n avlästa direkt i kontot (`ads_get_ad_entities`) före
+numrering — PD_1/PD_2/PD_3/PD_4/PD_Extra, CS_1/CS_2/CS_3, SP_1/SP_2, GT_1/GT_2/
+GT_3, CO_1, BOF_1/2/3, RV_1/2 var tagna (SP_3 briefad i batch #2 men aldrig
+producerad — lämnad orörd, inte återanvänd). Nya: PD_5, CS_4, GT_4, BOF_4–6,
+RV_3–4.
+
+**Backlog:** `products/ibc-tankoverdraget/backlog.md` var tom (dubbelkollad) —
+inga väntande idéer att markera som använda denna körning.
+
+**Modellpolicy-avvikelse:** inget Agent/Task-verktyg med `model`-parameter var
+tillgängligt i denna körning. Huvudsessionen skrev all copy själv och körde
+tre-frågorstestet (docs/copy-regler.md) explicit per rad i varje brief — samma
+dokumenterade avvikelse som batch #1, batch #2 och tidigare Bäverbutiken-batcher
+2026-08-29/31.
+
+**Leverans:**
+- Drive: produktmappen `1EL7qjxDtCeKTUJPuCY7Asp2FshiD0nDO` → `Batch #3`
+  (`1sFUIzFF0yWQlTJE3Vv26ubBDNanf5e6S`) → 11 undermappar (en per annons, tomma,
+  för redigerarnas leverans) + ett samlat brief-dokument
+  (`IBC Batch #3 — All briefs (2026-09-07)`,
+  https://docs.google.com/document/d/1pECK_n0g9Po3QIs-LBf3919y1Arwb-t7fH69U0kXA8k/edit)
+  med alla 11 fullständiga briefer.
+- Notion: 11 items skapade i befintliga hubben "IBC Tank Cover creative hub"
+  (`3ce270ab-908c-8161-bed2-e22f132a6aba`), Status Draft, Typ Video/Image -
+  Pending Approval, hela briefen inklistrad i varje item + länk till
+  Drive-dokumentet + länk till annonsens egen Drive-undermapp. Verifierat genom
+  att hämta tillbaka `IBC_CS_4_H1` (`3d4270ab-908c-8122-a27c-f1e55753e47b`) —
+  shot list och tre-frågorstabellen står i sidan.
+- `agent/produktkarta.json`: `drive_senaste_batchmapp_id` uppdaterad till
+  Batch #3:s mapp-id (`1sFUIzFF0yWQlTJE3Vv26ubBDNanf5e6S`).
