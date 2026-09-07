@@ -14,14 +14,23 @@ ifylld till `factory/output/<id>/CHECKLISTA.md`.
 Gör i ordning, utan att invänta godkännande mellan stegen:
 
 1. **Rätt butik.** Kopplingen till den nya butiken är dess egen custom
-   app-token (VA-checklistans steg 3 — appen "Fabriken", ALLA scopes):
+   app-token (VA-checklistans steg — appen "Fabriken", ALLA scopes):
    be VA:n klistra in tokenen, skriv `SHOPIFY_STORE_DOMAIN` +
    `SHOPIFY_ADMIN_TOKEN` i `factory/.env`. Verifiera med fabrikens
-   anslutningskontroll (eller `get-shop-info` om MCP:n finns) att domänen
-   är DEN NYA butiken — fel butik = stoppa direkt.
+   anslutningskontroll att domänen är DEN NYA butiken — fel butik =
+   stoppa direkt.
+   ⚠️ **Shopify-MCP:n är FÖRBJUDEN i hela den här rutinen** (incident
+   2026-09-07: MCP:n i molnsessionen stod på HeimGuard och rutinen
+   försökte växla butik med `switch-shop`). MCP:n pekar på fel butik,
+   och `switch-shop` kan rikta den mot Bäverbutiken — använd ALDRIG
+   `get-shop-info`, `switch-shop` eller något annat `mcp__*`-Shopify-verktyg
+   här. ALL Shopify-åtkomst går genom token i `factory/.env`.
    Rör ALDRIG pzjagy-mz (HeimGuard) eller Bäverbutiken från den här rutinen.
 2. **Hämta produktdata** från källänken (`/products/<handle>.json` +
    Judge.me-recensioner). Aldrig påhittade specs. Pris från produktsidan.
+   Källans Kaching-paketnivåer läses ur den PUBLIKA produktsidans HTML
+   (bundle-widgeten renderas där) — aldrig via MCP mot källbutiken.
+   Går de inte att läsa: fråga Axel efter nivåerna, växla aldrig butik.
 3. **Brand-steget** (`factory/PROCESS.md` fas 1): analysera köpare, emotion
    och förväntat brand → positionering, tonalitet, färger, typografi i
    `branding:`-blocket. **Brandingen byggs från noll utifrån produkten och
