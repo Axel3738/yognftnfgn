@@ -1,0 +1,111 @@
+# DUMMYPRODUKT — exempel på en komplett ifylld produktfil.
+# Används som facit i testerna. Ingen riktig produkt.
+#
+# Företagsuppgifter, valuta, frakt och returvillkor står INTE här.
+# De bor i butikskonfigen (factory/butiker/<id>.yaml) och ärvs av varje produkt.
+
+produkt:
+  namn: "Nackmagneten"
+  id: nackmagneten
+
+brand:
+  namn: "Nackmagneten"        # tomt = butikens brand används
+  domanideer:
+    - nackmagneten.se
+    - nackmagnet.se
+    - stelnacke.se
+
+ekonomi:
+  inkopskostnad: 87           # 4,9 EUR produkt + 2,3 EUR frakt + tull, per styck
+  pris: 399
+  jamforpris: 599             # valutan kommer ur butikskonfigen
+
+varianter:
+  - namn: "Grå"
+    sku: "NM-GRA"
+  - namn: "Svart"
+    sku: "NM-SVART"
+
+media:
+  bilder:
+    - "https://exempel.se/bilder/nackmagneten-1.jpg"
+    - "https://exempel.se/bilder/nackmagneten-2.jpg"
+  videor:
+    - "https://exempel.se/video/nackmagneten-demo.mp4"
+  gif_problem: "https://exempel.se/bilder/nackmagneten-problem.gif"
+  media_losning: "https://exempel.se/bilder/nackmagneten-losning.gif"
+  bild_lifestyle: "https://exempel.se/bilder/nackmagneten-soffa.jpg"
+
+# Beskrivningens sju block: 1 problem → 2 gif → 3 lösningen → 4 gif/bild →
+# 5 funktioner → 6 bild → 7 garanti. Texterna för block 1 och 3 står här.
+beskrivning:
+  problem_rubrik: "Klockan är 15 och nacken är redan stel."
+  problem_text: "Du sträcker på dig, rullar axlarna, inget hjälper. Kvällen går åt till att må dåligt i soffan."
+  losning_rubrik: "Tio minuter på Nackmagneten löser upp spänningarna"
+  losning_text: "Nackbågen bär upp huvudet så musklerna vågar släppa, och tryckpunkterna jobbar på nackfästet där värken sitter."
+
+vinkel:
+  # huvudvinkel är internt och ska bära sin källa. Går aldrig ut till kund.
+  huvudvinkel: "Problem-demo: stel nacke efter 8 timmar vid skärmen — lindring på 10 minuter (källa: playbook, PD-vinkeln)"
+  # underrubrik är det kunden läser under rubriken på produktsidan.
+  underrubrik: "Stel nacke efter en dag vid skärmen? Lindring på 10 minuter i soffan."
+
+malgrupp:
+  beskrivning: "Kontorsarbetare 35–60 med återkommande nack- och spänningsvärk, har testat kudde och stretching utan resultat"
+
+problem:
+  - "Stel nacke och spänningshuvudvärk efter en hel dag vid skärmen"
+  - "Massage och naprapat kostar 700 kr per besök"
+
+benefits:
+  - "Löser upp spänningarna på 10 minuter hemma i soffan"
+  - "Engångskostnad i stället för återkommande massagebesök"
+
+features:
+  - "Ergonomisk nackbåge i minnesskum"
+  - "Två magnetiska tryckpunkter mot nackfästet"
+  - "Väger 340 gram, tål att packas i väskan"
+
+offer:
+  beskrivning: "399 kr i stället för 599 kr — spara 200 kr"
+  bundle: "2-pack 649 kr (en till jobbet, en hemma)"
+
+reviews:
+  - namn: "Eva L."
+    betyg: 5
+    text: "Första natten på månader jag sovit utan värk."
+  - namn: "Mats H."
+    betyg: 5
+    text: "Skeptisk först. Nu ligger jag på den varje kväll."
+  - namn: "Karin S."
+    betyg: 4
+    text: "Tar några dagar att vänja sig, sen gör den jobbet."
+
+faq:
+  - fraga: "Hur lång tid innan det känns?"
+    svar: "De flesta känner skillnad efter 10 minuter per dag i en vecka."
+  - fraga: "Funkar den om jag har diskbråck?"
+    svar: "Fråga alltid läkare först vid diagnostiserad skada."
+
+# Fraktpriser och zoner kommer ur butikskonfigen. Här står bara leveranstiden,
+# eftersom den beror på den här produktens leverantör.
+leveranstid: "5–8 arbetsdagar"
+
+# Butikens basgarantier ärvs. Här står bara det som gäller just den här produkten.
+garantier:
+  - "Full återbetalning om du inte känner skillnad"
+
+leverantor:
+  url: "https://exempel-supplier.com/produkt/neck-stretcher-123"
+  anteckning: "Ledtid 8–10 arbetsdagar, ingen MOQ"
+
+meta:
+  ad_account_id: ""
+  page_id: ""
+  pixel_id: ""
+  creative_prefix: "Nackmagnet"
+  testbudget_per_dag: 1000
+  vinklar:
+    - "PD — problem-demo vid skärmen"
+    - "SP — social proof, recensionerna"
+    - "CS — clearance sale mot jämförpriset"

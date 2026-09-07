@@ -1,0 +1,126 @@
+# =============================================================
+# OPS FACTORY — PRODUKTFIL (source of truth för en vinnande produkt)
+# =============================================================
+# Kopiera den här filen till factory/produkter/<id>.yaml och fyll i.
+# Företagsuppgifter, valuta, frakt och returvillkor står i butikskonfigen
+# (factory/butiker/<id>.yaml) och ärvs av varje produkt — aldrig här.
+# Validera med:  node factory/validera.mjs factory/produkter/<id>.yaml
+# All text på EN rad. Citera text som innehåller : eller #.
+# Fält märkta KRITISKT stoppar systemet om de saknas.
+
+produkt:
+  namn: ""                    # KRITISKT — produktnamnet som kunden ser
+  id: ""                      # KRITISKT — kort-id: små bokstäver, siffror, bindestreck (ex: nackmagneten)
+
+brand:
+  namn: ""                    # tomt = butikens brand används
+  domanideer:                 # domänidéer i prioritetsordning
+    - ""
+
+ekonomi:
+  inkopskostnad: 0            # KRITISKT — produkt + frakt in + ev. tull, per styck
+  pris: 0                     # KRITISKT — försäljningspris (måste vara högre än inköp)
+  jamforpris: 0               # jämförpris/överstruket pris (måste vara högre än pris)
+  # Valutan kommer ur butikskonfigen. Marginalen räknas rakt på priset.
+
+varianter:                    # tom lista = one-product utan varianter
+  # - namn: "Svart"
+  #   sku: ""
+
+media:
+  bilder:                     # KRITISKT — minst en bild eller video totalt (produktgalleriet)
+    - ""                      # URL eller sökväg
+  videor:
+    - ""
+  # Beskrivningsblockens media (URL:er). Aldrig placeholderbilder eller stock.
+  gif_problem: ""             # block 2 — gif direkt efter problemet. KRITISK: launch-QA stoppar utan.
+  media_losning: ""           # block 4 — gif eller bild som demonstrerar lösningen. KRITISK.
+  bild_lifestyle: ""          # block 6 — stark produkt/lifestylebild. Valfri: sektionen döljs utan.
+
+# Produktsidans beskrivning följer ALLTID samma sju block i samma ordning:
+# 1 problem/emotion → 2 gif → 3 lösningen → 4 gif/bild → 5 funktioner →
+# 6 bild → 7 garanti. Texterna för block 1 och 3 skrivs här.
+beskrivning:
+  problem_rubrik: ""          # block 1 — kort stark rubrik som träffar känslan
+  problem_text: ""            # block 1 — en till tre meningar, kundens egen situation
+  losning_rubrik: ""          # block 3 — produkten som lösningen
+  losning_text: ""            # block 3 — varför den löser problemet, enkelt
+
+vinkel:
+  huvudvinkel: ""             # KRITISKT — INTERNT. Vinkeln + dess källa (playbook/winning line/swipe). Syns aldrig för kund.
+  underrubrik: ""             # Det kunden läser under rubriken. Lämnas tom → källparentesen strippas ur huvudvinkeln.
+
+malgrupp:
+  beskrivning: ""             # KRITISKT — vem köper, med vilket språk i huvudet
+
+problem:                      # KRITISKT — minst ett problem produkten löser
+  - ""
+
+benefits:                     # KRITISKT — minst en benefit (kundens vinst, inte funktion)
+  - ""
+
+features:                     # funktioner/specifikationer
+  - ""
+
+offer:
+  beskrivning: ""             # erbjudandet som det står på sidan
+  bundle: ""                  # ev. bundle (2-pack, tillbehör) — tomt om inget
+  # Q4-RAMVERKET (Axels beslut 2026-09-07, standard för VARJE ny OPS):
+  # varje butik ska ha en billig komplementprodukt som används två sätt —
+  #  (a) GRATIS bonus i paketnivåerna: "köp mer, få mer" i stället för
+  #      djupare rabatt. Rabattkoderna höjs med bonusens värde så
+  #      kassapriset stämmer på öret (ärlighetsspärren).
+  #  (b) betald upsell i varukorgslådan (tema.mjs → byggKorgUpsell).
+  # Bevisat på HeimGuard: varningsskyltar 149 kr till övervakningskameran.
+  bonus_produkt:
+    titel: ""                 # t.ex. "Varningsskyltar Kameraövervakning – 5-pack"
+    handle: ""                # produktens handle i butiken
+    pris: 0                   # priset som betald upsell i korgen
+    i_paket: ""               # vilka paketnivåer som får den gratis, i ord
+
+reviews:                      # riktiga recensioner (namn, betyg 1–5, text).
+  # Visas ALDRIG av en egen tema-sektion — de importeras till Judge.me
+  # (fabriken skriver output/<id>/judgeme-import.csv, importera med
+  # tools/judgeme-import.mjs). Widgeten renderar dem på sidan.
+  # - namn: ""
+  #   betyg: 5
+  #   text: ""
+  #   titel: ""               # valfri
+  #   datum: ""               # valfri, YYYY-MM-DD — hitta aldrig på ett
+
+faq:
+  # - fraga: ""
+  #   svar: ""
+
+# Fraktpriser och zoner står i butikskonfigen. Här bara leveranstiden,
+# som beror på den här produktens leverantör.
+leveranstid: ""               # ex: "5–8 arbetsdagar"
+
+# Butikens basgarantier ärvs automatiskt. Här bara produktens egna.
+garantier:
+  - ""
+
+leverantor:
+  url: ""                     # KRITISKT — länk till supplier/produkt (Temu, CJ, AliExpress …)
+  anteckning: ""              # ledtid, MOQ, kontakt
+
+kallor:
+  # Produktens Drive-mapp (samma som bär annonserna). Ligger en recensions-CSV
+  # där importerar recensioner-steget den till Judge.me i stället för
+  # produktfilens reviews. Länkdelad mapp räcker — ingen inloggning behövs.
+  drive_mapp: ""
+
+meta:
+  # ⚠️ Kopiera ALDRIG page/pixel från en annan verksamhet — fel pixel
+  # bokför köpen på fel butik. Fyll i från den butik produkten hör till.
+  # ALLA OPS-butiker (SE och NO) kör på det gemensamma annonskontot
+  # "MagiBorsten DK" 915422744950975 (Axels beslut 2026-09-07) — kampanj-
+  # namnen prefixas med brandet så datan går att skära per butik.
+  # Förväxla ALDRIG med MagiBorsten 1867947880635861 (Bäverbutiken SE).
+  ad_account_id: "915422744950975"
+  page_id: ""                 # fylls i före launch
+  pixel_id: ""                # fylls i före launch
+  creative_prefix: ""         # annonsprefix enligt docs/naming-convention.md
+  testbudget_per_dag: 1000
+  vinklar:                    # vinklar för första testbatchen
+    - ""

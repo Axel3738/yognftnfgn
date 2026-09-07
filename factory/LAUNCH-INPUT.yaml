@@ -1,0 +1,22 @@
+# =============================================================
+# LAUNCH-INPUT — det enda du fyller i före launch.
+# =============================================================
+# Fyll i raderna. Spara. Kör sen kommandot i README.
+# Tomma rader ignoreras — systemet säger STOP tills allt kritiskt är ifyllt.
+# INGA lösenord eller tokens här. De bor i factory/.env.
+
+bolagsnamn: ""              # juridiskt namn, ex "Mittbolag AB"
+orgnr: ""                   # ex "556123-4567"
+adress: ""                  # ex "Gatan 1, 111 22 Stockholm"
+supportmail: ""             # ex "hej@dinbutik.se"
+
+doman: ""                   # domänen butiken ska ligga på, ex "dinbutik.se"
+
+produktbilder:              # länkar till riktiga produktbilder (Drive eller URL)
+  - ""
+
+# Tracking — från Meta Business Manager för DEN HÄR butiken.
+# Kopiera aldrig från en annan verksamhet.
+pixel_id: ""
+ad_account_id: ""
+page_id: ""

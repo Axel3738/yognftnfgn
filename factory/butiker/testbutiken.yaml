@@ -1,0 +1,38 @@
+# Butikskonfig för testbutiken (pzjagy-mz.myshopify.com).
+# Bolagsuppgifterna är exempeldata — LAUNCH stoppar tills de är riktiga.
+
+butik:
+  id: testbutiken
+  brand: "Nackmagneten"
+  bolagsnamn: "Exempelbolaget AB"
+  orgnr: "556000-0000"
+  adress: "Exempelgatan 1, 111 22 Stockholm"
+  supportmail: "hej@nackmagneten.se"
+  land: SE
+  huvudmarknad: Sverige
+  valuta: SEK
+  moms_i_pris: true
+
+frakt:
+  fri_globalt: true
+  leveranstid: "5–8 arbetsdagar"
+  express:
+    aktiv: true
+    namn: "Express inom Sverige"
+    pris: 99
+    tid: "1–2 arbetsdagar"
+
+retur:
+  oppet_kop_dagar: 30
+  angerratt_dagar: 14
+  reklamation_ar: 3
+  returfrakt_betalas_av: kund
+  aterbetalning_dagar: 14
+
+garantier:
+  - "30 dagars öppet köp"
+
+policy:
+  tvistlosning: "Allmänna reklamationsnämndens"
+  visa_odr_lank: true
+  svarstid: "en arbetsdag"

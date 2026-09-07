@@ -1,0 +1,89 @@
+# =============================================================
+# OPS FACTORY — BUTIKSKONFIG (gäller HELA butiken, alla produkter)
+# =============================================================
+# Kopiera till factory/butiker/<id>.yaml. En fil per butik.
+# Produktfilen beskriver produkten. Den här beskriver företaget bakom.
+# Fält märkta KRITISKT stoppar systemet om de saknas.
+
+butik:
+  id: ""                      # KRITISKT — kort-id, ex: nackmagneten
+  # NAMNREGELN (Axel 2026-09-07): namnet ska funka på VARJE marknad —
+  # läsbart och uttalbart på både svenska och engelska, aldrig å/ä/ö.
+  # Tänk namn som bär i .se, .no, .dk och .com utan att ändras.
+  brand: ""                   # KRITISKT — namnet kunden ser
+  bolagsnamn: ""              # KRITISKT — juridiskt namn i köpvillkoren
+  orgnr: ""                   # KRITISKT
+  adress: ""                  # KRITISKT — postadress i köpvillkoren
+  supportmail: ""             # KRITISKT — kundtjänstadress
+  land: SE                    # KRITISKT — tvåbokstavskod där bolaget sitter
+  huvudmarknad: Sverige       # KRITISKT — zonen som är hemmamarknad
+  valuta: SEK                 # KRITISKT — SEK, NOK, DKK, EUR, USD eller GBP
+  moms_i_pris: true           # true = priserna inkluderar skatt
+
+frakt:
+  fri_globalt: true           # fri frakt till alla länder (default)
+  leveranstid: "5–8 arbetsdagar"   # standard, produktfilen kan skriva över
+  express:                    # snabbfrakt på huvudmarknaden, valfri
+    aktiv: false
+    namn: "Express"
+    pris: 99
+    tid: "1–2 arbetsdagar"
+  # Sätts bara om fri_globalt är false:
+  standardpris: 0
+  fri_over: 0                 # 0 = ingen gräns
+
+retur:
+  oppet_kop_dagar: 30         # butikens eget löfte, utöver lagen
+  angerratt_dagar: 14         # lagstadgat i Sverige, ändra inte utan skäl
+  reklamation_ar: 3           # konsumentköplagen
+  returfrakt_betalas_av: kund # kund eller butik
+  aterbetalning_dagar: 14
+
+garantier:                    # butikens basgarantier, visas på varje produkt
+  - "30 dagars öppet köp"
+
+policy:
+  tvistlosning: "Allmänna reklamationsnämnden"
+  visa_odr_lank: true         # EU:s tvistlösningsplattform
+  svarstid: "en arbetsdag"
+
+# BRAND-CONFIG — butikens egen visuella identitet. Skrivs FÖRE theme-bygget,
+# från noll för varje butik, utifrån: vem som köper, vilket problem de löser,
+# vilken emotion som driver köpet och vilken sorts brand de förväntar sig att
+# lita på (premium/trygg/teknisk/familjär/feminin/minimalistisk …).
+# Temats STRUKTUR återanvänds mellan butiker — brandingen ALDRIG.
+# Saknas blocket används neutrala, avsiktligt trista tokens.
+branding:
+  positionering: ""           # en mening: vad brandet är för vem
+  tonalitet: ""               # hur texten låter
+  kansla: ""                  # 3–4 ord: trygg, premium, teknisk …
+  farger:                     # hex — hela sajtens palett genereras härifrån
+    bakgrund: "#FFFFFF"
+    yta: ""                   # ljus sektionsyta
+    yta_djup: ""
+    mork: ""                  # mörka sektioner, annonsrad, sidfot
+    text: ""
+    text_pa_mork: ""
+    linje: ""
+    linje_stark: ""
+    accent: ""                # CTA-färgen — den enda som får ropa
+    accent_text: "#FFFFFF"
+    god: ""                   # bockar/bekräftelse
+    varning: ""
+  typografi:
+    rubriker: ""              # Shopify-fonthandle, ex archivo_n6
+    brodtext: ""              # ex dm_sans_n4
+  form:
+    knapp_radius: 10
+    kort_radius: 12
+    input_radius: 10
+    badge_radius: 8
+  stil:                       # riktning i ord — för den som gör logga/bilder/copy
+    ikoner: ""
+    bilder: ""
+    rubrikstil: ""
+    cta: ""
+    trust: ""
+    spacing: ""
+    logo: ""                  # logo direction
+    favicon: ""               # favicon direction

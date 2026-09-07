@@ -1,0 +1,109 @@
+{
+  "butik": "hemvakten",
+  "produkt": "overvakningskameran",
+  "steg": {
+    "produkt": {
+      "klar": true,
+      "id": "gid://shopify/Product/15801916096860",
+      "handle": "overvakningskameran",
+      "status": "DRAFT",
+      "via": "MCP-kopplingen 2026-09-05"
+    },
+    "metafalt": {
+      "klar": true,
+      "antal": 12,
+      "notis": "nya beskrivningsstrukturen; gamla fält (hero_underrubrik, problem, erbjudande, bundle, reviews) raderade"
+    },
+    "tema": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/204000756060",
+      "temaNamn": "Hemvakten – CRO (utkast)",
+      "sektioner": 6,
+      "notis": "CRO-temat (matstrumpor-cro-v5) uppladdat via themeCreate 2026-09-05; opf-sektionerna 1–7 + FAQ inlagda, ms_faq_section (Matstrumpor-FAQ) borttagen, footer/header/settings avbrandade; gamla Dawn-utkastet omdöpt till GAMMAL"
+    },
+    "sidor": {
+      "klar": true,
+      "antal": 4,
+      "notis": "omskrivna med STONEBITE ECOM AB"
+    },
+    "meny": {
+      "klar": true,
+      "handle": "footer",
+      "orord": true
+    },
+    "frakt": {
+      "klar": true,
+      "andrade": 1,
+      "notis": "Express döpt om till Express inom Sverige, 99 SEK"
+    },
+    "huvudmarknad": {
+      "klar": true,
+      "valuta": "SEK"
+    },
+    "brand": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/204000756060",
+      "notis": "SLUTGILTIG seriös identitet 2026-09-05: monokrom marinblå (#16324F CTA, #0F1D2E mörk), IBM Plex Sans, radius 6/10. Rund logga + favicon uppladdade (hemvakten-logga.png, hemvakten-favicon.png) och satta i temat. Startsida (index.json) byggd enligt matstrumpor-strukturen med kamerans innehåll. Huvudmenyn: Hem / Övervakningskameran / Kontakt. hemvakten.se verifierad LEDIG i .se-registret (whois 2026-09-05)."
+    },
+    "paket-ab": {
+      "klar": true,
+      "notis": "Uppdaterad 2026-09-05: 4-pack tillagt i B-varianten på Axels initiativ (kamera-b-4, 1 999 kr, kod PAKET4B 1 197 kr, min 4 st). A förblir originalets 1/2/3. Marginal 4-pack ~1 050 kr räknat på 3-packets styckinköp — 4-packs inköpspris är INTE offererat än, verifiera mot Temu före skalning. Övrigt oförändrat från förra notisen: v2-temat måste publiceras, Judge.me installeras, språk till svenska."
+    },
+    "rensa-popups": {
+      "klar": true,
+      "notis": "Axels beslut 2026-09-06: cookie-rutan (ms_cookies) och e-postgrejerna (ms_skrapkort + footerns nyhetsbrev) borttagna ur v2-temats footer-group. Gäller v2 (204026315100) — v1 som är live har dem kvar tills v2 publiceras."
+    },
+    "judgeme": {
+      "klar": true,
+      "notis": "2026-09-06: 10 recensioner importerade via API (tools/judgeme-import.mjs, token i factory/.env som JUDGEME_HEMVAKTEN_TOKEN). Verktyget patchat: (1) dubblettspärren klarar Judge.me:s för-stora produkt-id (422 too big → butiksvid koll), (2) ny flagga --mejlsuffix <domän> för OMISSKÄNNLIGT syntetiska mejl (recension-N@hemvakten.invalid) sedan API:t började kräva mejl — regeln hitta-aldrig-på-riktiga-adresser står kvar. Tema v3 (204045844828, OPUBLICERAD) = v2 + Judge.me-widget och stjärnbadge inkopplade i product.json (appblock-uuid 61ccd3b1… är globalt per app, verifierat renderande). Axel publicerar v3."
+    },
+    "svenska-norge-kassa": {
+      "klar": true,
+      "notis": "2026-09-06 kväll: (1) Marknaden Norge skapad och aktiverad (gid://shopify/Market/113402773852, betalar i SEK). (2) Tema v4 (204047221084, OPUBLICERAD) = v3 + locales/sv.json med svenska köpsträngar — kräver att Axel gör Svenska till standardspråk i admin, annars fortsätter Dawn läsa en.default. marketWebPresenceUpdate gick inte (presence ej kopplad till marknad). (3) Kassalogga via checkoutBrandingUpsert BLOCKERAD — kräver Shopify Plus; loggan läggs manuellt i kassaredigeraren. (4) Klarna kräver att Shopify Payments aktiveras manuellt (bolagsuppgifter). (5) Typsnitten verifierade: IBM Plex Sans laddar på live-sidan. (6) kie.ai-översättning av produktbilderna pågår — runda 1 underkänd på stavning (Trådslös/dubnla/sckråm), runda 2 med enklare prompts körs; kie ger också transienta Internal Error."
+    },
+    "svenska-bilder": {
+      "klar": true,
+      "notis": "2026-09-06: Produktbilderna försvenskade. Metod (kie.ai klarade INTE svensk text direkt — 2 rundor felstavningar): nano-banana-edit RENSAR engelsk text, sharp lägger svensk vektortext (scratch: komponera.mjs, koordinater via grid-overlay). hemvakten-sv-1/2/3.png uppe i Files, produktgalleriet utbytt (temu2-kamera-1/2/3 raderade, whatsapp+gif kvar), metafält media_losning/bild_lifestyle pekar på sv-bilderna (LIVE direkt), v4:s startsida använder sv-2 (hero) och sv-3 (trygghet). KVAR: temu2-kamera.gif har engelsk text (gif kan inte fixas med kie) — redigerarjobb. KIE_API_KEY finns i chatt 2026-09-06, ej sparad i env."
+    },
+    "polering-v5": {
+      "klar": true,
+      "notis": "2026-09-07: (1) Dubbla beskrivningen fixad — descriptionHtml är nu BARA säljraden (benefits visas redan av opf-funktioner); byggKortBeskrivning ändrad i fabriken. (2) Judge.me-widgeten stylad i brandet via byggBrandCss (jdgm-block, genereras för alla butiker) — ligger i tema v5 (204073828700, OPUBLICERAD). Judge.me-SPRÅKET byts i appen (Axels checklista). (3) CHECKLISTA.md genereras nu i output/<id>/ efter varje bygge (factory/checklista.mjs). (4) factory/meta-setup.mjs byggd — skapar annonskonto + pixel via Graph API när META_ACCESS_TOKEN med business_management finns i factory/.env; SIDOR kan inte skapas via API alls. (5) v5 = v4 + ny opf-brand.css."
+    },
+    "heimguard": {
+      "klar": true,
+      "notis": "NAMNBYTE 2026-09-07, Axels beslut (namnregeln, skalbarhet): Hemvakten → HeimGuard. Gjort: yaml-filer, ny rund logga (heimguard-logga.png i Files), vendor+SEO på produkten, alla tre policysidor + kontakt (hej@heimguard.se), tema v6 (204077498716, OPUBLICERAD) med HeimGuard i footer/brand_description/garanti-mail/logga, Discord-servern omdöpt till HeimGuard. Favicon (H) behålls. TRACKING: Axel kör WeTracked — checklistan uppdaterad: pixel skapas av meta-setup.mjs, pixel-id klistras i WeTracked manuellt (ingen API hos dem). KVAR för Axel: publicera v6, köp heimguard.se + koppla + mejlvidarebefordran, byt butiksnamn till HeimGuard, Meta-sida HeimGuard, META_ACCESS_TOKEN. OBS: hemvakten.se är köpt och kopplad — behåll som redirect."
+    },
+    "norge": {
+      "klar": true,
+      "notis": "2026-09-07: Norge-versionen LIVE på hemvakten.se/nb (följer med till heimguard.se när den blir primär). Gjort: locale nb aktiverad+publicerad; webPresenceUpdate (INTE marketWebPresenceUpdate — den kräver marknadskopplad presence, unified markets har domänpresences) satte nb som alternateLocale på huvuddomänen; norska översättningar registrerade via translationsRegister för produkt (title/body/meta_title) + metafälten problem/losning/benefits/features/garantier/frakt/faq (json funkar!); locales/nb.json med norska köpsträngar i v6; språk+landsväljare påslagna i v6:s header+footer. EJ gjort: NOK-valuta (marketCurrencySettingsUpdate spärrad i unified markets — norrmän betalar SEK tills Payments-valutor slås på i admin), norska BILDER (samma flöde som svenska när det behövs), norska policysidor."
+    },
+    "norge-fullt": {
+      "klar": true,
+      "notis": "2026-09-07 em, efter Axels bakläxa (>50% svenska på /nb): FULL norsk översättning. translationsRegister för: tema-JSON-mallar index+product (rubriker, USP, FAQ, recensionstexter, garanti, sticky, Dela), sektionsgrupper header (annonsrad) + footer (rubriker, företagstext), menylänkar (Hjem/Overvåkingskameraet/Kjøpsvilkår), alla 4 sidor (kontakt+retur+frakt+villkor på norska, med Sverige angivet i org-uppgifterna), paketnivå-METAOBJEKT (krävde metaobjectDefinitionUpdate capabilities.translatable=true — utan den finns ingen translatableContent!). Tema-nycklar/digests är STABILA mellan temakloner (verifierat v6→v7). tema.mjs: opf-sektionernas rubrik-defaults nu locale-medvetna (nb/sv) i stället för schema-defaults; ms_trust/ms_delivery custom_liquid locale-branchar (custom_liquid är INTE översättningsbart). TRIPPELKOLLAT enligt nya regeln: (1) markörskanning 24 svenska strängar på /nb hem+produkt → 0 synliga läckor (endast untranslatedTitle-metadata, alt på 2 gamla bilder, Judge.me data-attribut), (2) svensk sida regressionstestad ren, (3) visuell mobilkontroll — norsk titel/moms/paket/cookiebanner. KVAR ärligt: Judge.me-widgetens UI-strängar följer appens enda språkval (svenska) även på /nb; recensionerna är svenska på riktigt; tema v7 (204078973276) OPUBLICERAD — Axel publicerar."
+    },
+    "q4-bonus-upsell": {
+      "klar": true,
+      "notis": "2026-09-07 kväll: Q4-ramverket infört (standard för varje OPS framåt). (1) Skyltprodukten skapad: Varningsskyltar Kameraövervakning – 5-pack, 149 kr, gid 15807383470428 (variant 59044449124700), egen bild (kie tog bort grön bakgrund + 5pcs-text), publicerad. (2) GRATIS bonus i paketen: ms_paketniva-metaobjekten a2/a3/b2/b3 gratis_antal 1, b4 gratis_antal 2; rabattkoderna höjda med bonusvärdet — PAKET2 405, PAKET3 629, PAKET2B 548, PAKET3B 868, PAKET4B 1495 kr; verifierat live: strippen renderar och data-rabatt matchar koderna på öret. (3) Norska: skyltens title/body + gratis_text på alla 5 metaobjekt registrerade som nb. (4) Betald korg-upsell i TEMA v8 (204086116700, OPUBLICERAD, klonad från zip + v7-filerna diffsynkade via checksummor): opf-korg-upsell-snippet (inline-onclick), cart-drawer-wrappersektion (replace_first på Start blocks-markören) + ms-head-omhämtning (layout renderar snippeten direkt förbi wrappern). Temaöversättningarna nb OMregistrerade på v8 (index/product + header-group/footer-group — tema-bundna!). TRIPPELKOLLAT: (1) checksum/innehåll v8 mot v7, (2) rendering sv+nb produkt/hem/sektions-API — upsell syns med varor i korgen, döljs när skylten redan ligger i, döljs vid tom korg, (3) läckskanning /nb 13 markörer = 0 läckor + svensk regression + RIKTIGT klicktest i browser: Lägg till → skylt i korgen → upsell försvinner. Fabriken: byggKorgUpsell i tema.mjs, offer.bonus_produkt i produkt-mall + produktfil. KVAR för Axel: publicera v8."
+    },
+    "norska-bilder-forval": {
+      "klar": true,
+      "notis": "2026-09-07 kväll, efter Axels andra bakläxa (bilderna var svenska på /nb — han hade rätt, bildpixlar räknas i trippelkollen): (1) NORSKA BILDER: heimguard-no-1/2/3.png byggda med husets metod (samma sharp-koordinater som svenska, bokmålstext), uppladdade i Files. Tre lager lokaliserade: metafälten media_losning→no-1 + bild_lifestyle→no-3 (translationsRegister på METAFÄLTETS gid, key value), temats hero→no-2 + trygghet→no-3 (registrerat på BÅDE v7 live och v8), produktgalleriet via språkmärkta alt ([SV]/[NO], neutrala 'HeimGuard PTZ-kamera' på whatsapp+gif) + CSS :has()-filter i v8:s ms-head — Dawns slider hoppar dolda bilder själv. Trippelkollat: curl sv+nb (t/10) + visuell browserkontroll båda vyer (3 synliga [NO] + 3 dolda [SV] på nb, tvärtom på sv). ⚠️ LIVE v7 saknar filtret (API-låst) — tills v8 publiceras ser svenska kunder även de 3 norska galleribilderna. Gif:en har kvar engelsk text (redigerarjobb, känd). ⚠️ curl-läxa: preview_theme_id kräver kakburk (-c/-b) — utan den redirectas man tyst till live-temat och verifierar fel tema. (2) FÖRVALSREGELN: mitten alltid förvald (Axels beslut) — kamera-a-1 forvald false, kamera-a-2 true; B hade redan b2 (mitten enligt ⌈n/2⌉). Verifierat live: A=2 kameror checked, B=2-pack checked. (3) beverbutikken.no kartlagd: norsk generalbutik, 168 produkter, kameran ligger där för 899 NOK — ankaret för HeimGuards NOK-paketnivåer när valutan slås på."
+    },
+    "judgeme-ren-och-gron": {
+      "klar": true,
+      "notis": "2026-09-07 sen kväll, tre Axel-beslut i följd: (1) Judge.me-widgeten ska vara APPENS EGEN — all jdgm-styling borttagen ur byggBrandCss; widgeten ligger i temats egen Appyta-sektion (ms-app-slot, Axels ursprungsmönster) i stället för rå apps-sektion. (2) Stjärnorna ALLTID gröna #00B77F i varje butik — STJARNFARG i branding.mjs, enda jdgm-regeln som får finnas. (3) ROTORSAKEN till 'Judge.me avaktiveras hela tiden': app-embedden (judgeme_core) bor i settings_data.json current.blocks och följer INTE med i nya temakloner — Axel fick aktivera om vid v8 och v9. Regeln (PROCESS.md): kopiera current.blocks från live-temat in i varje ny klon. TEMALÄGE: v9 (204088377692) LIVE = ren widget i Appyta, allt funkar, men saknar grön stjärnfärg + embed-raden (Axel aktiverade i editorn). v10 (204086116700, fd v8 omdöpt/uppdaterad — hade redan alla nb-översättningar + embed-raden) = v9 + gröna stjärnor, KLAR ATT PUBLICERA när Axel vill; ingen brådska, nästa riktiga ändring kan åka med. CSS-filen verifierad via API; CDN-cachen på förhandsvisningen släpper av sig själv."
+    }
+  },
+  "qa": {
+    "gron": false,
+    "kritiska": [
+      "doman",
+      "adress",
+      "tracking",
+      "villkor(policyfält)"
+    ],
+    "tid": "2026-09-05T14:48:43.504Z",
+    "notis": "Mobil-QA på riktig rendering OK: ordning main→problem→losning→funktioner→lifestyle→garanti→judgeme→faq→sticky. Judge.me ej installerad (kräver admin), butiksnamnet My Store kan inte ändras via API, startsidan bär kvar Matstrumpor-innehåll."
+  },
+  "uppdaterad": "2026-09-07T09:48:23.305Z"
+}

@@ -165,6 +165,41 @@ inte röras utan att Axel ber om det.
 
 ---
 
+## OPS Factory: en-produktsbutiker på löpande band (AKTIV, under uppbyggnad)
+
+Axels tredje verksamhet: `factory/` bygger kompletta one-product-stores
+(OPS) från Bäverbutikens vinnarprodukter, med eget brand per butik. Första
+riktiga bygget är **HeimGuard** (övervakningskamera, hemvakten.se →
+heimguard.se, Shopify pzjagy-mz). Detta ska bli en rutin — den byggs
+brick by brick och **varje lyckat steg dokumenteras direkt**:
+
+- **Rutinen startas med `/ny-ops <källänk>`** (`.claude/commands/ny-ops.md`).
+  Den som kör är oftast VA:n (engelsktalande) — hennes egna klick står i
+  `factory/VA-CHECKLIST.md` (Axels mall), ifylld per butik i
+  `output/<id>/CHECKLISTA.md`. Frasen **"Store ready: \<namn\>"** från
+  VA:n utlöser slutsteget (recensioner, pixel, Discord-kanaler).
+- **`factory/PROCESS.md`** är rutinen: hela steg-för-steg-flödet, med ⚙️
+  (fabriken gör) och 🖐 (Axels klick). Lyckas ett nytt steg: uppdatera den
+  filen i samma session. Det är inte valfritt — det är hela poängen.
+- **`factory/PLAN.md`** är planen framåt (namnregeln, annonsöversättaren,
+  rekryteringsmotorn, Discord per butik, **Q4-ramverket punkt 6**).
+- Konfig: `factory/butiker/<id>.yaml` + `factory/produkter/<id>.yaml`,
+  mallar i `butik-mall.yaml`/`produkt-mall.yaml`. Motor: `factory/ops.mjs`.
+- **Q4-ramverket är standard för varje ny OPS:** gratis bonusprodukt i
+  paketnivåerna + betald upsell i varukorgen (`offer.bonus_produkt` i
+  produktfilen, `byggKorgUpsell` i `factory/tema.mjs`).
+- **Annonskontot för ALLA OPS-butiker (SE och NO) är "MagiBorsten DK"
+  `915422744950975`** (Axels beslut 2026-09-07). Ett gemensamt konto —
+  kampanjnamn prefixas alltid med brandet så datan går att skära per
+  butik. ⚠️ Förväxla ALDRIG med MagiBorsten `1867947880635861`
+  (Bäverbutiken) — namnen är nästan identiska, kontona är olika
+  verksamheter.
+- Två järnregler härifrån: namnregeln (funkar på svenska OCH engelska,
+  aldrig å/ä/ö) och trippelkollen (säg aldrig "klart" utan tre kontroller
+  mot kundens riktiga vy — regeln föddes här 2026-09-07).
+- Efter varje bygge skrivs `output/<id>/CHECKLISTA.md` — Axels enda
+  manuella klick, i ordning. Allt annat gör fabriken via API.
+
 ## Videolokalisering: `/translate` (AKTIV — inte legacy)
 
 Undantag från legacy-regeln ovan: **videolokaliserings-pipelinen är i aktiv drift.**

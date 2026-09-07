@@ -1,0 +1,37 @@
+# Medvetet MINIMAL produktfil — bara de kritiska fälten.
+# Testfixtur: bevisar att sektioner utan data döljer sig i stället för att
+# renderas tomma. Ingen riktig produkt.
+
+produkt:
+  namn: "Testprylen"
+  id: testprylen
+
+brand:
+  namn: ""                    # butikens brand används
+
+ekonomi:
+  inkopskostnad: 50
+  pris: 249
+
+media:
+  bilder:
+    - "https://exempel.se/bilder/testprylen.jpg"
+
+vinkel:
+  huvudvinkel: "Demo-vinkel för fixturen (källa: testfixtur)"
+  # ingen underrubrik — kundtexten härleds ur huvudvinkeln
+
+malgrupp:
+  beskrivning: "Testmålgrupp för fixturen"
+
+problem:
+  - "Ett enda problem"
+
+benefits:
+  - "En enda benefit"
+
+# Medvetet utelämnat: features, offer, reviews, faq, varianter, garantier.
+# Butikskonfigen bidrar ändå med basgaranti och frakt.
+
+leverantor:
+  url: "https://exempel-supplier.com/testprylen"

@@ -1,0 +1,210 @@
+# ÖVERVAKNINGSKAMERAN — första riktiga OPS-produkten från fabriken.
+# Källa: bäverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning
+# All text nedan kommer ur källsidan (beskrivning, funktioner, erbjudande,
+# Judge.me-recensioner) — inget påhittat. Specs som INTE står på källsidan
+# (IP-klass, batteritid, upplösning, lagring, mörkerseende) är medvetet utelämnade.
+# Hämtat 2026-09-05.
+
+produkt:
+  namn: "Övervakningskamera Trådlös – Dubbellins PTZ med AI-Spårning"
+  id: overvakningskameran
+
+brand:
+  namn: "HeimGuard"
+  domanideer:
+    - heimguard.se
+    - heimguard.no
+    - hemvakten.se
+
+ekonomi:
+  # Ur Axels quote 2026-09-05: 16,5 USD produkt + 10,8 USD frakt = 27,3 USD
+  # exkl. skatt per styck. Omräknat med ECB-kursen 9,5513 (2026-09-04) = 261 kr.
+  # Vid 2-pack: 49,2 USD totalt (≈235 kr/st), 3-pack: 72,3 USD (≈230 kr/st).
+  inkopskostnad: 261
+  pris: 799
+  jamforpris: 1000
+
+varianter:
+  - namn: "Svart"
+    sku: "TEMU-601100938731214"
+
+media:
+  # Bilderna ligger i dag på Bäverbutikens CDN — Shopify kopierar in dem i nya
+  # butiken vid skarp körning, så URL:erna funkar som källa.
+  # Försvenskade 2026-09-06: engelsk inbränd text borttagen med kie.ai
+  # (nano-banana-edit) och svensk vektortext pålagd med sharp — se
+  # scratch-skriptet komponera.mjs i sessionsloggen. Original: temu2-kamera-*.
+  bilder:
+    - "https://cdn.shopify.com/s/files/1/1052/6028/6300/files/hemvakten-sv-1.png"
+    - "https://cdn.shopify.com/s/files/1/1052/6028/6300/files/hemvakten-sv-2.png"
+    - "https://cdn.shopify.com/s/files/1/1052/6028/6300/files/hemvakten-sv-3.png"
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/WhatsApp_Image_2026-09-03_at_1.50.57_PM.jpg?v=1788414850"
+  videor:
+    - ""
+  # Samma media och ordning som källsidans beskrivning använde.
+  # ⚠️ Gif:en har kvar engelsk inbränd text — kie.ai kan inte redigera gif.
+  # Byts när redigeraren gjort en svensk version.
+  gif_problem: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-kamera.gif?v=1786982542"
+  media_losning: "https://cdn.shopify.com/s/files/1/1052/6028/6300/files/hemvakten-sv-1.png"
+  bild_lifestyle: "https://cdn.shopify.com/s/files/1/1052/6028/6300/files/hemvakten-sv-3.png"
+
+# Beskrivningens sju block, texterna ordagrant från källsidan på Bäverbutiken.
+beskrivning:
+  problem_rubrik: "Ett ljud på tomten. Klockan tre på natten."
+  problem_text: "Du ligger vaken och gissar: katten, vinden – eller något annat? Att gå ut och kolla är det sista du vill. Att inte veta är värre."
+  losning_rubrik: "Två linser som ser allt – och följer det som rör sig"
+  losning_text: "Kameran täcker 355° med panorering och zoom, och AI:n skiljer människor från grenar och katter. Rör sig någon på tomten följer kameran automatiskt – och mobilen säger till direkt."
+
+vinkel:
+  huvudvinkel: "Nattljudet på tomten — du ligger vaken och gissar i stället för att veta (källa: bevisad produktsida på Bäverbutiken, samma copy)"
+  underrubrik: "Ett ljud på tomten klockan tre på natten? Se direkt i mobilen vad det är – utan att gå ut."
+
+malgrupp:
+  beskrivning: "Villa- och radhusägare som hör ljud på tomten om natten och hellre kollar mobilen än går ut, trötta på kameror som larmar på katter och grenar"
+
+problem:
+  - "Ett ljud på tomten mitt i natten – att gå ut och kolla är det sista du vill, att inte veta är värre"
+  - "Vanliga kameror har döda vinklar och larmar på katter, grenar och vind"
+
+benefits:
+  - "Ser hela tomten – 355° panorering och zoom, inga döda vinklar"
+  - "Larmar på personer, inte på katter – AI:n skiljer människor från grenar och djur"
+  - "Följer rörelsen automatiskt när någon rör sig på tomten"
+  - "Mobilen säger till direkt när något händer"
+  - "Sitter ute året om, i alla väder"
+
+features:
+  - "Dubbla linser med PTZ – panorering, lutning och zoom över 355°"
+  - "AI-persondetektering som filtrerar bort djur och grenar"
+  - "Automatisk rörelsespårning"
+  - "Trådlös uppkoppling via 2,4 & 5 GHz wifi med app"
+  - "Direktnotiser till mobilen"
+  - "Byggd för utomhusbruk året om"
+
+offer:
+  beskrivning: "799 kr i stället för 1 000 kr"
+  # Original-Kaching-bundlen från Bäverbutiken (A) + Axels A/B-test (B),
+  # byggda 2026-09-05 som ms_paketniva-metaobjekt i butiken med riktiga
+  # rabattkoder. Testet heter "paket" (temats ms-ab, 50/50, mäts som
+  # orderattribut "AB paket"). B-hypotesen: täckningsvinkeln ("en fram, en
+  # bak") + rundare pris + förvald 2-pack höjer AOV mer än rabatten kostar.
+  bundle: "A (original): 2-pack 1 342 kr FÖRVALD (−16 %, PAKET2), 3-pack 1 917 kr (−20 %, PAKET3). B (test): 2-pack 1 199 kr FÖRVALD, en fram en bak (−25 %, PAKET2B), 3-pack 1 678 kr (−30 %, PAKET3B), 4-pack 1 999 kr, en för varje hörn (−37 %, PAKET4B — Axels större-paket-idé 2026-09-05). Förvalsregeln (Axel 2026-09-07): mitten alltid förvald, aldrig första."
+  # Q4-ramverket infört 2026-09-07 (Axels beslut, standard för varje OPS):
+  # skyltarna är GRATIS bonus i alla flerpack (1×5-pack i 2/3-pack, 2×5-pack
+  # i 4-pack) — rabattkoderna höjdes med bonusvärdet så kassapriset stämmer:
+  # PAKET2 405, PAKET3 629, PAKET2B 548, PAKET3B 868, PAKET4B 1495 kr.
+  # Dessutom betald upsell i varukorgslådan (tema v8, byggKorgUpsell).
+  bonus_produkt:
+    titel: "Varningsskyltar Kameraövervakning – 5-pack"
+    handle: "varningsskyltar-kameraovervakning"
+    produkt_id: "15807383470428"
+    variant_id: "59044449124700"
+    pris: 149
+    i_paket: "1 st gratis i alla 2- och 3-pack, 2 st i 4-packet"
+
+reviews:
+  - namn: "Anders"
+    betyg: 5
+    text: "Smidig kamera och bra bild. Rekommenderas."
+    titel: "Bra kamera"
+    datum: "2026-08-24"
+  - namn: "Maria"
+    betyg: 5
+    text: "Jag är väldigt nöjd. Enkel att använda."
+    titel: "Bra kamera"
+    datum: "2026-08-24"
+  - namn: "Anna"
+    betyg: 5
+    text: "Fungerar riktigt bra och var enkel att installera."
+    titel: "Bra kamera"
+    datum: "2026-08-24"
+  - namn: "Emma"
+    betyg: 5
+    text: "Lätt att sätta upp och fungerar som den ska."
+    titel: "Bra kamera"
+    datum: "2026-08-24"
+  - namn: "Johan"
+    betyg: 5
+    text: "Bra kamera för priset. Bilden är tydlig."
+    titel: "Bra kamera"
+    datum: "2026-08-24"
+  - namn: "Linda"
+    betyg: 5
+    text: "Kameran fungerar bra och bilden är tydlig."
+    titel: "Bra kamera"
+    datum: "2026-08-24"
+  - namn: "Peter"
+    betyg: 5
+    text: "En bra och prisvärd kamera. Jag är nöjd."
+    titel: "Bra kamera"
+    datum: "2026-08-24"
+  - namn: "Sara"
+    betyg: 5
+    text: "Mycket nöjd med köpet. Enkel och praktisk."
+    titel: "Bra kamera"
+    datum: "2026-08-24"
+  - namn: "Lars"
+    betyg: 5
+    text: "Bra kamera och smidigt att kunna följa det som händer."
+    titel: "Bra kamera"
+    datum: "2026-08-24"
+  - namn: "Daniel"
+    betyg: 5
+    text: "Bra kvalitet och enkel app. Fungerar fint."
+    titel: "Bra kamera"
+    datum: "2026-08-24"
+
+faq:
+  - fraga: "Behöver kameran wifi?"
+    svar: "Ja, den kopplas trådlöst till ditt hemmanätverk på 2,4 eller 5 GHz och styrs via appen."
+  - fraga: "Klarar den att sitta ute på vintern?"
+    svar: "Ja, kameran är byggd för utomhusbruk året om."
+  - fraga: "Larmar den varje gång en katt går förbi?"
+    svar: "Nej, AI-detekteringen larmar på personer och filtrerar bort djur och grenar."
+  - fraga: "Hur får jag veta att något händer?"
+    svar: "Du får en direktnotis i mobilen så fort kameran ser rörelse."
+  - fraga: "Hur lång är leveranstiden?"
+    svar: "5–10 arbetsdagar med fri frakt inom Sverige."
+  - fraga: "Vad händer om jag inte blir nöjd?"
+    svar: "30 dagars nöjd-kund-garanti – gillar du den inte får du pengarna tillbaka."
+
+leveranstid: "5–10 arbetsdagar"
+
+garantier:
+  - "30 dagars nöjd-kund-garanti – pengarna tillbaka om du inte gillar den"
+
+leverantor:
+  url: "https://www.temu.com/goods.html?goods_id=601100938731214"
+  anteckning: "Härledd ur SKU TEMU-601100938731214. Inköp per Axels quote 2026-09-05: 27,3 USD/st inkl frakt (2-pack 49,2 USD, 3-pack 72,3 USD). Kontrollera ledtid och lager före launch."
+
+kallor:
+  # Produktens Drive-mapp (annonser + recensions-CSV). Axel klistrar in länken —
+  # tills dess importeras recensionerna ur produktfilen ovan.
+  drive_mapp: ""
+
+meta:
+  # NY verksamhet — inget får kopieras från Bäverbutiken eller Grillkliniken.
+  # ALLA OPS-butiker (svenska och norska) kör på ETT gemensamt annonskonto:
+  # "MagiBorsten DK" 915422744950975 — Axels beslut 2026-09-07. Kontot
+  # heter DK men bär hela OPS Factory; kampanjnamnen MÅSTE prefixas med
+  # brandet (HEIMGUARD_...) så datan går att skära per butik.
+  # ⚠️ Förväxla ALDRIG med MagiBorsten 1867947880635861 (Bäverbutiken SE).
+  # Kontots valuta är inte verifierad — läs den ur kontot före första launch.
+  # (429285600005902 var första planen — ersatt av det gemensamma kontot.)
+  ad_account_id: "915422744950975"
+  # Sida + pixel kan inte skapas via API — Axel skapar i Business Manager.
+  page_id: ""
+  pixel_id: ""
+  creative_prefix: "HeimGuard"
+  testbudget_per_dag: 1000
+  # Axels prioritering 2026-09-07: trygghetskänslan och äldre-målgruppen är
+  # huvudvinklarna. Testas i annonser, vinnaren behåller sin copy.
+  # ⚠️ Vinklar som pekar ut folkgrupper som hotet körs ALDRIG — Meta fäller
+  # annonserna (diskriminering) och det bryter mot brandets tonalitet.
+  # Otrygghet/inbrott som känsla är ok — hotet är ljudet på tomten, aldrig vem.
+  vinklar:
+    - "TR — trygghet: otryggt läge, sov lugnt igen, veta i stället för att oroa sig (Axels huvudvinkel)"
+    - "SR — senior: så enkel att installera att mamma fixar det själv — eller köp och installera åt dina föräldrar (Axels vinkel för äldre + deras vuxna barn)"
+    - "PD — nattljudet på tomten, veta i stället för att gissa"
+    - "FD — AI:n som skiljer människor från katter, demo av spårningen"
+    - "SP — social proof, tio 5-stjärniga recensioner"

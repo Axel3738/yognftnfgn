@@ -1,0 +1,101 @@
+# Butikskonfig för HeimGuard (fd Hemvakten, namnbyte 2026-09-07 enligt
+# namnregeln — funkar i Sverige, Norge och engelskt). Butiks-id:t "hemvakten"
+# är tekniskt och byts inte.
+# Egen OPS-butik, helt separat från Bäverbutiken.
+# Bolaget är samma AB som driver Matstrumpor.se. Adressen från allabolag.se,
+# Axels länk 2026-09-07: Sjöhed 160, 442 74 Harestad.
+
+butik:
+  id: hemvakten
+  brand: "HeimGuard"
+  bolagsnamn: "STONEBITE ECOM AB"
+  orgnr: "559576-2401"
+  adress: "Sjöhed 160, 442 74 Harestad"
+  supportmail: "hej@heimguard.se"
+  land: SE
+  huvudmarknad: Sverige
+  valuta: SEK
+  moms_i_pris: true
+
+frakt:
+  fri_globalt: true
+  leveranstid: "5–10 arbetsdagar"
+  express:
+    aktiv: true
+    namn: "Express inom Sverige"
+    pris: 99
+    tid: "1–2 arbetsdagar"
+
+retur:
+  oppet_kop_dagar: 30
+  angerratt_dagar: 14
+  reklamation_ar: 3
+  returfrakt_betalas_av: kund
+  aterbetalning_dagar: 14
+
+judgeme:
+  # Fylls i när Judge.me-appen är installerad i butiken. Tokenen är PER BUTIK
+  # (Bäverbutikens token fungerar inte här) och läggs i env, aldrig i filen.
+  shop_domain: "pzjagy-mz.myshopify.com"
+  token_env: "JUDGEME_HEMVAKTEN_TOKEN"
+
+garantier:
+  - "30 dagars öppet köp"
+
+policy:
+  tvistlosning: "Allmänna reklamationsnämnden"
+  visa_odr_lank: true
+  svarstid: "en arbetsdag"
+
+# ---------------------------------------------------------------------------
+# BRAND-CONFIG — Hemvaktens egen identitet, byggd från noll för den här
+# butiken (Axels beslut 2026-09-05: brandingen återanvänds aldrig).
+#
+# Analys bakom valen:
+#   Vem köper:      villa- och radhusägare 35–65 som hör ljud på tomten om
+#                   natten och vill VETA i stället för att gissa.
+#   Problemet:      ovisshet och otrygghet i det egna hemmet.
+#   Emotionen:      lugn — köpet är ett sätt att sova gott igen.
+#   Förväntat brand: ett svenskt säkerhetsbolag (tänk larmbranschen), inte en
+#                   pryl-shop. Sakligt, stabilt, tekniskt kompetent men varmt.
+#   Känsla:         tryggt + trovärdigt + modernt. Inte aggressivt, inte lekfullt.
+#
+# Paletten är MONOKROM med flit (Axels beslut 2026-09-05: två lekfulla färger
+# tillsammans dödar seriositeten — en säkerhetsprodukt säljs av allvar).
+# En enda djup marinblå bär allt: CTA, bockar, mörka ytor. Resten är vitt och
+# neutral gråblå. Ingen accentfärg som ropar, inget grönt, inget rea-rött.
+# ---------------------------------------------------------------------------
+branding:
+  positionering: "Svensk specialist på hemsäkerhet — kameran som vet skillnad på inbrottstjuv och igelkott"
+  tonalitet: "Saklig, lugn och rak. Korta meningar. Inga utropstecken, ingen hype — trygghet skriker inte."
+  kansla: "seriös, trygg, teknisk, återhållsam"
+  farger:
+    bakgrund: "#FFFFFF"
+    yta: "#F5F7F9"            # neutral gråblå — nästan grå, aldrig somrig
+    yta_djup: "#EAEEF2"
+    mork: "#0F1D2E"           # nattmörk marinblå — mörka sektioner, annonsrad, sidfot
+    text: "#111B26"
+    text_pa_mork: "#F3F6F9"
+    linje: "#DEE4EA"
+    linje_stark: "#C0CAD3"
+    accent: "#16324F"         # djup stålblå — CTA och bockar, samma familj som mörka ytan
+    accent_text: "#FFFFFF"
+    god: "#16324F"
+    varning: "#B54708"
+  typografi:
+    rubriker: "ibm_plex_sans_n6"   # IBM Plex Sans SemiBold — tekniskt, sakligt, noll lekfullhet
+    brodtext: "ibm_plex_sans_n4"   # samma familj rakt igenom = stramt och enhetligt
+  form:
+    knapp_radius: 6           # nästan rak — mjuk nog för mobil, aldrig pill
+    kort_radius: 10
+    input_radius: 6
+    badge_radius: 6
+  stil:
+    ikoner: "Linjeikoner, 1.9 i stroke — samma språk som temats ms-icon. Aldrig emojis i gränssnittet."
+    bilder: "Riktiga foton av hem, tomt och natt. Blåtonad skymning, varmt ljus i fönstren. Aldrig stockmänniskor som ler mot kameran."
+    rubrikstil: "Korta raka påståenden med eyebrow i versaler. Rubriken säger vad kunden slipper känna."
+    cta: "Solid marinblå knapp med vit text. Verb + lugn: Köp nu, Se hela tomten. Aldrig SISTA CHANSEN."
+    trust: "Diskreta rader med bock i samma marinblå på gråblå yta — garanti, frakt, Klarna. Fakta, inte skrik."
+    spacing: "Luftigt och lugnt — generösa sektionsavstånd, max 62 tecken per rad. Trängsel känns som stress."
+    logo: "Rund emblem: nattmörk cirkel med ordmärket HEIMGUARD i versaler, vitt, spärrad text. Bara namnet — ingen symbol. Fungerar i en färg."
+    favicon: "Samma mörka cirkel med ett vitt H."

@@ -1,0 +1,132 @@
+{
+  "input": {
+    "title": "Övervakningskamera Trådlös – Dubbellins PTZ med AI-Spårning",
+    "handle": "overvakningskameran",
+    "status": "DRAFT",
+    "descriptionHtml": "<p>Ett ljud på tomten klockan tre på natten? Se direkt i mobilen vad det är – utan att gå ut.</p>",
+    "vendor": "HeimGuard",
+    "seo": {
+      "title": "Övervakningskamera Trådlös – Dubbellins PTZ med AI-Spårning – HeimGua…",
+      "description": "Ser hela tomten – 355° panorering och zoom, inga döda vinklar. 30 dagars öppet köp"
+    },
+    "productOptions": [
+      {
+        "name": "Variant",
+        "values": [
+          {
+            "name": "Svart"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Svart"
+          }
+        ],
+        "price": "799.00",
+        "compareAtPrice": "1000.00",
+        "sku": "TEMU-601100938731214"
+      }
+    ],
+    "files": [
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1052/6028/6300/files/hemvakten-sv-1.png",
+        "contentType": "IMAGE",
+        "alt": "Övervakningskamera Trådlös – Dubbellins PTZ med AI-Spårning"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1052/6028/6300/files/hemvakten-sv-2.png",
+        "contentType": "IMAGE",
+        "alt": "Övervakningskamera Trådlös – Dubbellins PTZ med AI-Spårning"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1052/6028/6300/files/hemvakten-sv-3.png",
+        "contentType": "IMAGE",
+        "alt": "Övervakningskamera Trådlös – Dubbellins PTZ med AI-Spårning"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/WhatsApp_Image_2026-09-03_at_1.50.57_PM.jpg?v=1788414850",
+        "contentType": "IMAGE",
+        "alt": "Övervakningskamera Trådlös – Dubbellins PTZ med AI-Spårning"
+      }
+    ]
+  },
+  "metafalt": [
+    {
+      "namespace": "opf",
+      "key": "problem_rubrik",
+      "type": "single_line_text_field",
+      "value": "Ett ljud på tomten. Klockan tre på natten."
+    },
+    {
+      "namespace": "opf",
+      "key": "problem_text",
+      "type": "multi_line_text_field",
+      "value": "Du ligger vaken och gissar: katten, vinden – eller något annat? Att gå ut och kolla är det sista du vill. Att inte veta är värre."
+    },
+    {
+      "namespace": "opf",
+      "key": "gif_problem",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-kamera.gif?v=1786982542"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_rubrik",
+      "type": "single_line_text_field",
+      "value": "Två linser som ser allt – och följer det som rör sig"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_text",
+      "type": "multi_line_text_field",
+      "value": "Kameran täcker 355° med panorering och zoom, och AI:n skiljer människor från grenar och katter. Rör sig någon på tomten följer kameran automatiskt – och mobilen säger till direkt."
+    },
+    {
+      "namespace": "opf",
+      "key": "media_losning",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1052/6028/6300/files/hemvakten-sv-1.png"
+    },
+    {
+      "namespace": "opf",
+      "key": "benefits",
+      "type": "list.single_line_text_field",
+      "value": "[\"Ser hela tomten – 355° panorering och zoom, inga döda vinklar\",\"Larmar på personer, inte på katter – AI:n skiljer människor från grenar och djur\",\"Följer rörelsen automatiskt när någon rör sig på tomten\",\"Mobilen säger till direkt när något händer\",\"Sitter ute året om, i alla väder\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "features",
+      "type": "list.single_line_text_field",
+      "value": "[\"Dubbla linser med PTZ – panorering, lutning och zoom över 355°\",\"AI-persondetektering som filtrerar bort djur och grenar\",\"Automatisk rörelsespårning\",\"Trådlös uppkoppling via 2,4 & 5 GHz wifi med app\",\"Direktnotiser till mobilen\",\"Byggd för utomhusbruk året om\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "bild_lifestyle",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1052/6028/6300/files/hemvakten-sv-3.png"
+    },
+    {
+      "namespace": "opf",
+      "key": "garantier",
+      "type": "list.single_line_text_field",
+      "value": "[\"30 dagars öppet köp\",\"30 dagars nöjd-kund-garanti – pengarna tillbaka om du inte gillar den\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "frakt",
+      "type": "list.single_line_text_field",
+      "value": "[\"Leveranstid: 5–10 arbetsdagar\",\"Fri frakt till alla länder\",\"Express inom Sverige: 99 kr, 1–2 arbetsdagar\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "faq",
+      "type": "json",
+      "value": "[{\"fraga\":\"Behöver kameran wifi?\",\"svar\":\"Ja, den kopplas trådlöst till ditt hemmanätverk på 2,4 eller 5 GHz och styrs via appen.\"},{\"fraga\":\"Klarar den att sitta ute på vintern?\",\"svar\":\"Ja, kameran är byggd för utomhusbruk året om.\"},{\"fraga\":\"Larmar den varje gång en katt går förbi?\",\"svar\":\"Nej, AI-detekteringen larmar på personer och filtrerar bort djur och grenar.\"},{\"fraga\":\"Hur får jag veta att något händer?\",\"svar\":\"Du får en direktnotis i mobilen så fort kameran ser rörelse.\"},{\"fraga\":\"Hur lång är leveranstiden?\",\"svar\":\"5–10 arbetsdagar med fri frakt inom Sverige.\"},{\"fraga\":\"Vad händer om jag inte blir nöjd?\",\"svar\":\"30 dagars nöjd-kund-garanti – gillar du den inte får du pengarna tillbaka.\"}]"
+    }
+  ]
+}
