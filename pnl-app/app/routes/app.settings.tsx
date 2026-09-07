@@ -219,6 +219,14 @@ export default function Settings() {
   const [loginBesked, setLoginBesked] = useState<string | null>(null);
   const snapshot = useRef<string | null>(d.metaTokenSavedAt);
   const statusFetcher = useFetcher<{ savedAt: string | null; source: string | null }>();
+  /* Fetcher-objektet byts vid varje tillståndsändring; effekten nedan skulle
+     annars se ett fruset "idle" och avbryta en långsam fråga var 2,5 s. */
+  const statusRef = useRef(statusFetcher);
+  statusRef.current = statusFetcher;
+  /* Vilket action-svar som redan skickat fönstret vidare — så att vi agerar
+     så fort svaret finns, inte först när hela sidans loaders laddat om
+     (kontolistan mot Meta kan ta åtta sekunder). */
+  const hanterat = useRef<unknown>(null);
   const [manuellOppen, setManuellOppen] = useState(!d.metaLogin);
 
   const startaLogin = () => {
@@ -242,7 +250,8 @@ export default function Settings() {
   };
 
   useEffect(() => {
-    if (loginFetcher.state !== "idle" || !loginFetcher.data) return;
+    if (!loginFetcher.data || loginFetcher.data === hanterat.current) return;
+    hanterat.current = loginFetcher.data;
     const data = loginFetcher.data as { ok: boolean; url?: string };
     const w = popup.current;
     if (!data.ok || !data.url) {
@@ -263,9 +272,10 @@ export default function Settings() {
 
   /* Pollningen: en setTimeout-kedja grindad på att förra frågan är klar —
      aldrig setInterval, som skulle stapla frågor om servern är långsam.
-     Stängs fönstret utan att något sparats (Facebook visade sin egen felsida
-     och skickade aldrig tillbaka) sägs det efter nästa svar i stället för
-     att sidan bara står tyst. */
+     "Fönstret stängt" är bara en LEDTRÅD: en Cross-Origin-Opener-Policy hos
+     Facebook får fönstret att se stängt ut i samma sekund det når dem. Efter
+     sex sekunder visas därför "inget svar kom" som hjälp, men pollningen
+     fortsätter till taket — en sen lyckad inloggning tar bort texten. */
   useEffect(() => {
     if (!vantar) return;
     const start = Date.now();
@@ -274,15 +284,14 @@ export default function Settings() {
     const fraga = () => {
       if (Date.now() - start > 5 * 60 * 1000) {
         setVantar(false);
+        setLoginBesked(T.settings.loginNothingBack);
         return;
       }
       if (popup.current?.closed && !stangdesVid) stangdesVid = Date.now();
       if (stangdesVid && Date.now() - stangdesVid > 6000) {
-        setVantar(false);
         setLoginBesked(T.settings.loginNothingBack);
-        return;
       }
-      if (statusFetcher.state === "idle") statusFetcher.load("/app/meta-status");
+      if (statusRef.current.state === "idle") statusRef.current.load("/app/meta-status");
       timer = setTimeout(fraga, 2500);
     };
     timer = setTimeout(fraga, 2500);
@@ -331,10 +340,16 @@ export default function Settings() {
   }, []);
 
   /* Loader-datan byts efter inloggning/bortkoppling — formulärets lokala
-     kopia måste följa med, annars sparar nästa Spara ett gammalt konto-ID. */
+     kopia måste följa med, annars sparar nästa Spara ett gammalt konto-ID.
+     Token-fältet töms bara när servern faktiskt sparat eller tagit bort en
+     token — inte när kontovalet sparas, annars försvinner en inklistrad men
+     osparad token under fingrarna på handlaren. */
   useEffect(() => {
-    setV((s) => ({ ...s, metaAdAccountId: d.metaAdAccountId, metaAccessToken: "" }));
-  }, [d.metaAdAccountId, d.hasMetaToken, d.metaTokenSource, d.metaTokenSavedAt]);
+    setV((s) => ({ ...s, metaAdAccountId: d.metaAdAccountId }));
+  }, [d.metaAdAccountId]);
+  useEffect(() => {
+    setV((s) => ({ ...s, metaAccessToken: "" }));
+  }, [d.metaTokenSavedAt, d.hasMetaToken]);
 
   const valjKonto = (id: string) => {
     set("metaAdAccountId")(id);
@@ -466,9 +481,12 @@ export default function Settings() {
                         <Text as="p">{T.settings.loginPopupBlocked}</Text>
                         {loginUrl ? (
                           <div>
-                            <Button url={loginUrl} target="_blank" variant="primary">
+                            {/* Vanlig länk, inte Polaris Button: den sätter
+                                rel="noreferrer" på _blank, och /meta/start
+                                behöver Referer i webbläsare utan Sec-Fetch-Site. */}
+                            <a href={loginUrl} target="_blank" rel="noopener">
                               {T.settings.loginOpenLink}
-                            </Button>
+                            </a>
                           </div>
                         ) : null}
                       </BlockStack>

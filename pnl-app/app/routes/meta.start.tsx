@@ -32,13 +32,16 @@ export async function loader({ request }: LoaderFunctionArgs) {
   /* Fönstret öppnades från adressen Shopify laddade iframen från. Är den en
      annan än SHOPIFY_APP_URL (custom-domän, www, fel variabel) hamnar Metas
      svar på en host utan cookie — ett konfigurationsfel, inte handlarens.
-     Säg det med båda adresserna i stället för "fel webbläsare". */
-  const appOrigin = new URL(process.env.SHOPIFY_APP_URL!).origin;
-  if (url.origin !== appOrigin) {
-    console.error(`/meta/start: appen serveras från ${url.origin} men SHOPIFY_APP_URL är ${appOrigin}.`);
+     Säg det med båda adresserna i stället för "fel webbläsare".
+     Jämför HOST, inte origin: bakom Railways TLS-terminering ser remix-serve
+     (Express utan "trust proxy") anropet som http://, medan variabeln alltid
+     är https:// — en origin-jämförelse hade fällt varje inloggning. */
+  const appHost = new URL(process.env.SHOPIFY_APP_URL!).host;
+  if (url.host !== appHost) {
+    console.error(`/meta/start: appen serveras från ${url.host} men SHOPIFY_APP_URL är ${appHost}.`);
     return metaLoginSida(lang, {
       title: T.metaLogin.errorTitle,
-      body: T.metaLogin.hostMismatch(url.origin, appOrigin),
+      body: T.metaLogin.hostMismatch(url.host, appHost),
       status: 500,
     });
   }
