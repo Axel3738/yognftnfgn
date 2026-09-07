@@ -65,6 +65,11 @@ Ett item per produkt (även VÄNTA-produkter, märkta i namnet) i
 - Namn: `<batchnummer> <Produktnamn>` · Status: `Products` · **Typ: `Video - Pending Approval`**
   (annars filtreras kortet bort ur Pending Approval-vyn!)
 - Landing page: bäverbutiken-länken · Sidinnehåll: länken till offert-spreadsheetet.
+- **Produkter som INTE skapades får `– VÄNTA: <orsaken>` i namnet OCH en ruta överst
+  på sidan, på engelska, som säger att kortet ligger på is och varför.** Redigerarna
+  läser namnet, inte batchrapporten. *(2026-09-07: "5.1 Lövblåsare" saknade märkningen,
+  en redigerare tog kortet och rapporterade "This product is not yet on the store".)*
+- Slutkontroll: varje kort utan `Landing page` MÅSTE ha VÄNTA i namnet. Inga undantag.
 
 ## Fas 6 — bildpaketet (när Axel levererat skörden)
 1. Packa upp, bygg kontaktark (bilder + videorutor), granska VARJE produkt.

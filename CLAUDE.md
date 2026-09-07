@@ -557,6 +557,13 @@ Grillklinikken-butiker får ALDRIG bäver-emojin eller "Bäverbutiken" som vendo
   `cost_per_omni_purchase`, `purchase_roas`. INTE `spend`/`purchases`.
   ⚠️ `omni_purchase_values` är buggig — den returnerade intäkt **100× för lågt på
   5 av 8 rader**. Korskolla alltid mot `amount_spent × purchase_roas`.
+- **Ett Notion-kort utan `Landing page` måste ha `– VÄNTA: <orsak>` i namnet.**
+  Redigerarna arbetar från kortets namn och Typ — ligger produkten inte uppe och
+  kortet inte är märkt, börjar någon göra video på en produktsida som inte finns.
+  Lägg dessutom en ruta överst på sidan, **på engelska**, som säger att det ligger på
+  is, varför, och vad som händer sen. *(2026-09-07: "5.1 Lövblåsare" var omärkt —
+  en redigerare svarade "This product is not yet on the store". Fotokudden bredvid
+  var korrekt märkt, så mönstret fanns redan; jag missade att följa det.)*
 - **Notion-status `In progress 2` betyder REVISION** — annonsen underkändes och
   görs om. Det betyder INTE "längre kommen". Full tabell i `docs/os/NOTION-FORMAT.md`.
 - **Notion-hubbarna rymmer mer än annonser.** Bara rader med Typ `… Pending Approval`
