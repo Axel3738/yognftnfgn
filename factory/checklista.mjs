@@ -39,7 +39,7 @@ Everything not on this list is done by Claude Code.
 
 ## 2. Shopify – create the store
 - [ ] Go to shopify.com → **Start free trial** → sign up with the work Gmail
-- [ ] Choose the **Basic** plan when asked
+- [ ] Stay on the free trial – never pick a plan, never enter any card
 - [ ] Settings → Users and permissions → **Invite staff** → **${agare}** → all permissions
 
 ## 3. Shopify – basics
@@ -78,6 +78,7 @@ Everything not on this list is done by Claude Code.
 - [ ] When Claude says the theme is ready: Online Store → Themes → the theme Claude names → **Publish**
 - [ ] Install the **WeTracked** app → paste the pixel ID Claude gives you → connect the Conversions API token (WeTracked's guide)
 - [ ] Settings → Users and permissions → ⋯ → **Transfer ownership** → **${agare}**
+- [ ] The owner then picks the plan, adds his card and opens the store
 - [ ] Owner changes the Loopia password afterwards
 `;
 }
