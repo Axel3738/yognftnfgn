@@ -3,6 +3,23 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-07 — 24 nya på tre produkter, 25 i `sources.json`
+
+Rutinkörning 05:35 svensk tid. MAKE TO NORWAY hade tre nya mappar sedan
+igår: **3D-sandbild**, **Arbetslampa för Makita-batteri**, **Glasspints med
+Lock 2-pack**. Alla tre hade riktiga REVIEWS-ark (8 rader var) och handle i
+butiken:
+
+| Produkt | Synliga | Handle |
+|---|---:|---|
+| 3D-sandbilde 20 cm | 8 | `3d-sandbilde-20-cm-nytt-landskap-hver-gang-du-snur-den` |
+| Arbeidslampe for Makita-batteri | 8 | `arbeidslampe-for-makita-batteri-15-led-med-usb-uttak` |
+| Iskrembokser med Lokk 2-pk | 8 | `iskrembokser-med-lokk-2-pk-lag-isen-rett-i-boksen` |
+
+Kartorna: +41 översättningar, +3 namn. Gravsteinspenn och Medisinboks
+oförändrade (testrader resp. "EJ KUNDRECENSION") — fortsatt överhoppade.
+Båtmotortrekk fortsatt spärrad på 1 synlig recension.
+
 ## Läget 2026-09-06 — 18 nya på två produkter, 22 i `sources.json`
 
 Rutinkörning 05:35 svensk tid. MAKE TO NORWAY hade två nya mappar sedan
