@@ -20,6 +20,7 @@ import { readDaily, refreshShopDaily, shiftIso } from "./daily.server";
 import { getSpend } from "./meta.server";
 import { dayInTz } from "./shopify-data.server";
 import { decrypt } from "./crypto.server";
+import { dagarKvar, VARNA_DAGAR } from "./meta-login";
 import { t, type Lang } from "./texts";
 
 export interface GroupTotals {
@@ -40,6 +41,10 @@ export interface GroupResult {
   rows: { shop: string; currency: string; totalSales: number; netProfit: number; spend: number }[];
   /** Butiker vars siffror inte gick att räkna in, med skäl. */
   missing: { shop: string; reason: string }[];
+  /** Saker ägaren behöver göra i en ANNAN butik — t.ex. logga in igen på
+   *  Facebook där, innan dess annonskostnad försvinner ur summan. Bara den
+   *  butik man står i visar annars sin egen varning. */
+  notes: { shop: string; text: string }[];
 }
 
 const noll = (): GroupTotals => ({
@@ -55,7 +60,7 @@ async function summeraButik(
   visaValuta: string,
   T: ReturnType<typeof t>,
 ): Promise<
-  | { ok: true; shop: string; currency: string; totals: ReturnType<typeof compute>["totals"]; kurs: number }
+  | { ok: true; shop: string; currency: string; totals: ReturnType<typeof compute>["totals"]; kurs: number; note?: string }
   | { ok: false; shop: string; reason: string }
 > {
   /* "Idag" i BUTIKENS tidszon. UTC-dagen släpar efter mellan midnatt och
@@ -163,8 +168,24 @@ async function summeraButik(
     };
   }
   if (metaCfg && spendData.error) {
-    return { ok: false, shop: m.shop, reason: T.group.spendUnavailable };
+    /* Utgången Facebook-inloggning får ett eget skäl: åtgärden är ett klick
+       i DEN butikens Settings, inte "öppna panelen en gång". */
+    return {
+      ok: false,
+      shop: m.shop,
+      reason: spendData.errorCode === "expired" ? T.group.loginExpired : T.group.spendUnavailable,
+    };
   }
+
+  /* Snart utgången inloggning i en annan butik syns bara här — ägaren står
+     i en butik och tittar på fem. Sägs i god tid, med butikens namn. */
+  const dagar = m.metaTokenSource === "login" ? dagarKvar(m.metaTokenExpiresAt) : null;
+  const note =
+    dagar != null && dagar <= VARNA_DAGAR
+      ? dagar < 0
+        ? T.group.loginExpired
+        : T.group.loginExpiresSoon(dagar)
+      : undefined;
 
   const r = compute({
     from, to,
@@ -189,7 +210,7 @@ async function summeraButik(
     },
   });
 
-  return { ok: true, shop: m.shop, currency: m.currency, totals: r.totals, kurs };
+  return { ok: true, shop: m.shop, currency: m.currency, totals: r.totals, kurs, note };
 }
 
 export async function summeraGrupp(
@@ -219,12 +240,14 @@ export async function summeraGrupp(
   const totals = noll();
   const rows: GroupResult["rows"] = [];
   const missing: GroupResult["missing"] = [];
+  const notes: GroupResult["notes"] = [];
 
   for (const u of utfall) {
     if (!u.ok) {
       missing.push({ shop: u.shop, reason: u.reason });
       continue;
     }
+    if (u.note) notes.push({ shop: u.shop, text: u.note });
     const tt = u.totals;
     totals.totalSales += tt.totalSales * u.kurs;
     totals.orders += tt.orders; // antal, ingen omräkning
@@ -244,5 +267,5 @@ export async function summeraGrupp(
     });
   }
 
-  return { currency: visaValuta, totals, rows, missing };
+  return { currency: visaValuta, totals, rows, missing, notes };
 }

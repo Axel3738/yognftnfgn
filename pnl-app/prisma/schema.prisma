@@ -48,6 +48,27 @@ model ShopSettings {
   spendCurrency   String?
   /// Long-lived Meta-token. Kryptera i produktion — se lib/crypto.server.ts.
   metaAccessToken String?
+  /// När Meta-token går ut. Känd bara för nycklar från Facebook-inloggningen
+  /// (~60 dagar); null = okänd (manuellt inklistrad systemanvändar-token).
+  metaTokenExpiresAt DateTime?
+  /// "login" = via Logga in med Facebook, "manual" = inklistrad för hand.
+  metaTokenSource String?
+  /// När token senast sparades. Settings-sidan pollar det här värdet medan
+  /// inloggningsfönstret är öppet — ändras det är inloggningen klar.
+  metaTokenSavedAt DateTime?
+  /// Senaste förnyelseförsöket i tokenvakten. Sex tjänster delar databasen;
+  /// den som hinner sätta stämpeln gör anropet, de andra hoppar över.
+  metaTokenRefreshAttemptAt DateTime?
+  /// Namnet på Facebook-kontot som loggade in — så handlaren ser VEM som
+  /// är kopplad, inte bara att något är det.
+  metaUserName    String?
+  /// Facebook-användarens app-scoped id. Återkallelse hos Meta gäller hela
+  /// användaren, inte en butik — samma person på fem butiker får bara
+  /// återkallas när den SISTA butiken kopplas bort.
+  metaUserId      String?
+  /// Meta-appen som utfärdade token. Tokenvakten förnyar bara med samma
+  /// app — sex tjänster med handskrivna variabler kan glida isär.
+  metaAppId       String?
   currency        String   @default("SEK")
   /// Butikens tidszon. Cachad för att slippa ett GraphQL-anrop per sidladdning
   /// — den ändras i praktiken aldrig, men avgör vad "idag" betyder.
@@ -85,6 +106,24 @@ model StoreLinkCode {
   createdAt DateTime @default(now())
 
   @@index([groupId])
+}
+
+/// Engångstillstånd för Logga in med Facebook. Inloggningen sker i ett eget
+/// fönster utan Shopify-session, så raden är det enda som binder Metas
+/// svar till rätt butik — och till webbläsaren som startade (nonceHash
+/// matchas mot en cookie). Kortlivad och engångs med flit.
+model MetaLoginState {
+  state     String   @id
+  shop      String
+  /// sha256 av nonce-cookien som sätts när fönstret öppnas. Null = fönstret
+  /// har inte öppnats än; sätts exakt en gång.
+  nonceHash String?
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime @default(now())
+
+  @@index([shop])
+  @@index([expiresAt])
 }
 
 /// Datumsatt kostnadsändring. Shopifys unitCost har bara ETT värde och ingen

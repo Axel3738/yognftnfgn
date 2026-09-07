@@ -38,6 +38,7 @@ import {
   shiftIso,
 } from "../lib/daily.server";
 import { getSpend } from "../lib/meta.server";
+import { dagarKvar, VARNA_DAGAR } from "../lib/meta-login";
 import { summeraGrupp } from "../lib/group.server";
 import { decrypt } from "../lib/crypto.server";
 import { asLang, localeOf, t, type Lang, type Texts } from "../lib/texts";
@@ -172,6 +173,20 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
   );
 
   const metaConfigured = Boolean(settings.metaAdAccountId && settings.metaAccessToken);
+  /* Inloggad via Facebook men inget annonskonto valt än — halva steget. */
+  const metaPending = Boolean(settings.metaAccessToken && !settings.metaAdAccountId);
+
+  /* Annonskostnadens fel som EN översatt text per läge. Koden kommer från
+     meta.server; "inloggad men inget konto valt" är panelens eget läge —
+     utan det stod det "Meta är inte kopplat" bredvid "Inloggad som Axel". */
+  const spendTexter = t(lang).dashboard.spendErrors;
+  const spendError: string | null = metaPending
+    ? spendTexter["no-account"]
+    : spend.errorCode === "fetch-failed"
+      ? spendTexter["fetch-failed"](spend.error?.replace(/^Could not fetch ad spend: /, "") ?? "")
+      : spend.errorCode
+        ? spendTexter[spend.errorCode]
+        : spend.error ?? null;
 
   /* Kom igång-läget. En ny butik installerar appen och ser siffror som ser
      riktiga ut men ljuger — noll inköpspriser ger full marginal, saknad
@@ -180,6 +195,9 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
   const setup = {
     dismissed: Boolean(settings.setupDismissedAt),
     meta: metaConfigured && !spend.error,
+    metaPending,
+    /* Kopplad (token + konto) men hämtningen misslyckas — inte "koppla". */
+    metaBroken: metaConfigured && Boolean(spend.error),
     fixed: fixedRows.length > 0,
     settings: Boolean(settings.settingsSavedAt),
   };
@@ -278,7 +296,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     groupSize,
     group,
     setup: setup as {
-      dismissed: boolean; meta: boolean; fixed: boolean; settings: boolean;
+      dismissed: boolean; meta: boolean; metaPending: boolean; metaBroken: boolean; fixed: boolean; settings: boolean;
     } | null,
     fixedCount: fixedRows.length,
     dataAgeMin,
@@ -286,7 +304,11 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     result,
     rangeKey,
     currency: settings.currency,
-    spendError: spend.error ?? null,
+    /* Dagar kvar på Facebook-inloggningen (null = okänd/manuell token). Visas
+       som varning i god tid — en token som dör tyst ger saknad annonskostnad
+       och en vinst som ser för bra ut. */
+    metaTokenDagar: dagarKvar(settings.metaTokenExpiresAt),
+    spendError,
     spendCurrencyMismatch: spend.currencyMismatch ?? null,
     spendConverted: spend.converted ?? null,
     targetMargin: Number(settings.targetMargin),
@@ -316,13 +338,14 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
       comparison: null as { totalSales: number; orders: number; spend: number; netProfit: number } | null,
       groupSize: 1,
       group: null as Awaited<ReturnType<typeof summeraGrupp>> | null,
-      setup: null as { dismissed: boolean; meta: boolean; fixed: boolean; settings: boolean } | null,
+      setup: null as { dismissed: boolean; meta: boolean; metaPending: boolean; metaBroken: boolean; fixed: boolean; settings: boolean } | null,
       fixedCount: 0,
       dataAgeMin: 0,
       refreshing: false,
       result: null as ReturnType<typeof compute> | null,
       rangeKey,
       currency: "SEK",
+      metaTokenDagar: null as number | null,
       spendError: null as string | null,
       spendCurrencyMismatch: null as { spend: string; shop: string } | null,
       spendConverted: null as { from: string; to: string } | null,
@@ -717,9 +740,15 @@ function SetupChecklist({
       key: "meta",
       done: setup.meta,
       title: T.dashboard.setup.stepMeta,
-      hint: setup.meta ? T.dashboard.setup.metaHintDone : T.dashboard.setup.metaHintTodo,
+      hint: setup.meta
+        ? T.dashboard.setup.metaHintDone
+        : setup.metaPending
+          ? T.dashboard.setup.metaHintPending
+          : setup.metaBroken
+            ? T.dashboard.setup.metaHintBroken
+            : T.dashboard.setup.metaHintTodo,
       to: "/app/settings",
-      cta: T.dashboard.setup.ctaSettings,
+      cta: setup.metaPending ? T.dashboard.setup.ctaPickAccount : T.dashboard.setup.ctaSettings,
     },
     {
       key: "fixed",
@@ -811,7 +840,7 @@ function SetupChecklist({
 }
 
 function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
-  const { fatal, result, rangeKey, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing, groupSize, group } = d;
+  const { fatal, result, rangeKey, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing, groupSize, group, metaTokenDagar } = d;
   const [params, setParams] = useSearchParams();
   const revalidator = useRevalidator();
   const T = t(lang);
@@ -926,16 +955,17 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
         <Layout.Section>
           <BlockStack gap="400">
             <InlineStack gap="200">
+              {/* Knappen omsluter badgen (inte tvärtom): Badge tar bara text
+                  som barn, och samma utseende fås med knappen utanpå. */}
               {ranges.map(([k, label]) => (
-                <Badge key={k} tone={k === rangeKey ? "info" : undefined}>
-                  <button
-                    type="button"
-                    style={{ all: "unset", cursor: "pointer" }}
-                    onClick={() => setParams({ range: k })}
-                  >
-                    {label}
-                  </button>
-                </Badge>
+                <button
+                  key={k}
+                  type="button"
+                  style={{ all: "unset", cursor: "pointer" }}
+                  onClick={() => setParams({ range: k })}
+                >
+                  <Badge tone={k === rangeKey ? "info" : undefined}>{label}</Badge>
+                </button>
               ))}
             </InlineStack>
 
@@ -990,6 +1020,16 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                         />
                       </Card>
 
+                      {group.notes?.length ? (
+                        <Banner tone="warning" title={T.group.notesTitle}>
+                          {group.notes.map((n) => (
+                            <p key={n.shop}>
+                              {n.shop.replace(/\.myshopify\.com$/, "")}: {n.text}
+                            </p>
+                          ))}
+                        </Banner>
+                      ) : null}
+
                       {group.missing.length ? (
                         <Banner tone="warning" title={T.dashboard.missingStores(group.missing.length)}>
                           {group.missing.map((m) => (
@@ -1023,7 +1063,33 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
               />
             ) : null}
 
-            {spendError ? <Banner tone="warning">{spendError}</Banner> : null}
+            {/* Facebook-inloggningen har ett utgångsdatum. Säg till i god tid —
+                och rakt ut när det passerat, så att saknad annonskostnad inte
+                läses som en bra dag. Utgången ersätter spend-felet (samma sak,
+                en banner). */}
+            {metaTokenDagar != null && metaTokenDagar < 0 ? (
+              <Banner
+                tone="critical"
+                title={T.settings.expiredTitle}
+                action={{ content: T.settings.reconnectButton, url: "/app/settings" }}
+              >
+                {T.settings.expiredBody}
+              </Banner>
+            ) : spendError ? (
+              <Banner
+                tone="warning"
+                action={{ content: T.dashboard.setup.ctaSettings, url: "/app/settings" }}
+              >
+                {spendError}
+              </Banner>
+            ) : metaTokenDagar != null && metaTokenDagar <= VARNA_DAGAR ? (
+              <Banner
+                tone="warning"
+                action={{ content: T.settings.reconnectButton, url: "/app/settings" }}
+              >
+                {T.settings.expiresSoon(metaTokenDagar)}
+              </Banner>
+            ) : null}
 
             {spendCurrencyMismatch ? (
               <Banner tone="critical" title={T.dashboard.fxTitle}>

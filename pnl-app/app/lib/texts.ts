@@ -64,6 +64,9 @@ const en = {
       stepMeta: "Connect your ad account",
       metaHintDone: "Ad spend is fetched automatically every day.",
       metaHintTodo: "Without a connection ad spend counts as zero and profit reads too high.",
+      metaHintPending: "Logged in with Facebook — pick the ad account under Settings to finish.",
+      metaHintBroken: "Connected, but ad spend can't be fetched right now — see the message below and log in again if it says so.",
+      ctaPickAccount: "Pick ad account",
       ctaSettings: "Go to Settings",
       stepFixed: "Enter fixed monthly costs",
       fixedHintDone: "Deducted from net profit, spread per day.",
@@ -108,6 +111,14 @@ const en = {
       vsPrev: "vs prev",
     },
 
+    /* Annonskostnadens fel, per kod från meta.server — EN banner per läge. */
+    spendErrors: {
+      "no-connection": "Meta is not connected — ad spend is missing, so profit reads too high.",
+      "no-account": "Logged in with Facebook, but no ad account chosen yet. Ad spend is not fetched until you pick one.",
+      expired: "The Facebook login has expired — ad spend is no longer fetched. Log in again under Settings.",
+      retrying: "Ad spend could not be fetched just now — retrying in a few minutes.",
+      "fetch-failed": (reason: string) => `Could not fetch ad spend: ${reason}`,
+    },
     fxTitle: "Ad spend could not be converted",
     fxBody: (spendCur: string, shopCur: string) =>
       `The ad account reports in ${spendCur}, the store in ${shopCur}, and the exchange rate could not be fetched right now. ` +
@@ -339,6 +350,85 @@ const en = {
       "Set it before anyone but you uses the app — it's someone else's ad account sitting in the database.",
     save: "Save",
     saved: "Saved.",
+
+    /* Logga in med Facebook */
+    loginButton: "Log in with Facebook",
+    reconnectButton: "Log in again",
+    loginHelp: "Opens Facebook in a new window. Approve read access to your ads, then pick the ad account below.",
+    loginOpening: "Opening Facebook…",
+    loginPopupBlocked: "The browser blocked the window. Use the link below instead.",
+    loginOpenLink: "Open the Facebook login in a new tab",
+    loginWaiting: "Waiting for the Facebook window… Finish the login there; this page updates by itself.",
+    loginFailed: "The login could not be started. Reload the page and try again.",
+    connectedAs: (name: string) => `Logged in as ${name}.`,
+    connectedManual: "Connected with a pasted token.",
+    expiresSoon: (days: number) =>
+      days <= 0
+        ? "The Facebook login expires today — log in again so ad spend keeps coming in."
+        : `The Facebook login expires in ${days} ${days === 1 ? "day" : "days"} — log in again so ad spend keeps coming in.`,
+    expiredTitle: "The Facebook login has expired",
+    expiredBody: "Ad spend is no longer fetched. Log in again to continue.",
+    loginCancelled: "Login cancelled — nothing was changed.",
+    loginDeclined: "You didn't allow access to your ads — nothing was changed. Log in again and keep “Ads” allowed.",
+    loginNoAccounts: "That Facebook account has no ad accounts — nothing was changed. Log in with the account that manages your ads.",
+    loginAccountNotVisible: "That Facebook account can't see the saved ad account — nothing was changed.",
+    loginMetaFailed: "Facebook did not accept the login — nothing was changed. Try again.",
+    loginNothingBack:
+      "Nothing came back from Facebook. Try again — if Facebook showed “app not available”, this app is not yet approved for your Facebook account; paste a token by hand instead.",
+    accountSelectLabel: "Ad account",
+    accountSelectPlaceholder: "Choose an ad account…",
+    accountSelectHelp: "The accounts your Facebook login can see. Ad spend is read from the one you pick — saved as soon as you choose.",
+    accountSaved: (name: string) => `Saved — ad spend is now read from ${name}.`,
+    accountNotInList: (id: string) => `${id} (saved, but not visible to this login)`,
+    accountsExpired: "Your Facebook login has expired. Log in again to continue.",
+    accountsUnavailableRetry: "Couldn't load your ad accounts right now.",
+    tryAgain: "Try again",
+    accountStatus: (status: number) => {
+      const s: Record<number, string> = {
+        2: "disabled", 3: "unsettled", 7: "risk review", 8: "pending settlement",
+        9: "grace period", 100: "closing", 101: "closed",
+      };
+      return s[status] ?? "inactive";
+    },
+    noAccounts: "This Facebook login has no ad accounts. Log in with the account that manages your ads, or paste a token below.",
+    accountsUnavailable: (reason: string) => `The ad account list could not be fetched (${reason}). Enter the ID by hand below.`,
+    pickAccountReminder: "Almost done — pick the ad account and save. Until then ad spend is not fetched.",
+    disconnectButton: "Disconnect Meta",
+    disconnectHelp: "Removes the token and the ad account. Cached ad spend is deleted.",
+    disconnected: "Meta was disconnected.",
+    unknownError: "Something went wrong. Reload the page and try again.",
+    manualTitle: "Paste a token by hand instead",
+    manualBody: "For system users or if the login above does not work for you.",
+  },
+
+  /* Popup-fönstret för Logga in med Facebook — renderas utanför Shopify. */
+  metaLogin: {
+    startTitle: "Log in with Facebook",
+    redirecting: "Sending you to Facebook…",
+    doneTitle: "Connected",
+    doneBody: (name: string | null, shop: string) =>
+      (name ? `Logged in as ${name}` : "Logged in") +
+      ` — the store ${shop} can now read your ad spend. ` +
+      "Go back to Settings and pick your ad account. This window closes by itself.",
+    doneBodyAccount: (name: string | null, shop: string, account: string) =>
+      (name ? `Logged in as ${name}` : "Logged in") +
+      ` — the store ${shop} now reads ad spend from ${account}. You're done. This window closes by itself.`,
+    closeWindow: "Close this window",
+    errorTitle: "The login did not go through",
+    expired: "The link has expired or was already used. Close this window and click the button again.",
+    wrongBrowser: "This window was not opened from the app. Close it and click the button in Settings again.",
+    cancelled: "You cancelled on Facebook. Nothing was changed. Close this window and try again when you want to connect.",
+    declined: "You didn't allow access to your ads. Nothing was changed. Log in again and keep “Ads” allowed.",
+    noAccounts:
+      "This Facebook account has no ad accounts, so nothing was saved. Log in with the Facebook account that manages your ads.",
+    accountNotVisible: (id: string) =>
+      `This Facebook account can't see the ad account ${id} that the store already uses. Nothing was changed. ` +
+      "Log in with the account that manages that ad account, or pick another account under Settings first.",
+    metaFailed: (reason: string) => `Facebook did not accept the login: ${reason}. Close this window and try again.`,
+    noCode: "Facebook returned no authorization code. The login configuration in the Meta app must use response type “code”.",
+    notConfigured: "Facebook login is not set up on this server.",
+    hostMismatch: (served: string, configured: string) =>
+      `The app is served from ${served} but the server's SHOPIFY_APP_URL is ${configured}. The Facebook login only works when they match — fix the variable on the server.`,
   },
 
   group: {
@@ -347,6 +437,13 @@ const en = {
       "couldn't fetch this store's data — open its dashboard once; its access may need to be renewed",
     spendUnavailable:
       "ad spend could not be fetched — excluded so the total isn't overstated",
+    loginExpired:
+      "the Facebook login has expired — open that store's Settings and log in again; excluded until then",
+    loginExpiresSoon: (days: number) =>
+      days <= 0
+        ? "the Facebook login expires today — open that store's Settings and log in again"
+        : `the Facebook login expires in ${days} ${days === 1 ? "day" : "days"} — open that store's Settings and log in again`,
+    notesTitle: "Needs attention in another store",
     fxUnavailable: (from: string, to: string) => `exchange rate ${from}→${to} could not be fetched`,
   },
 };
@@ -404,6 +501,9 @@ const sv: Texts = {
       stepMeta: "Koppla annonskontot",
       metaHintDone: "Annonskostnaden hämtas automatiskt varje dag.",
       metaHintTodo: "Utan koppling räknas annonskostnaden som noll och vinsten blir för hög.",
+      metaHintPending: "Inloggad med Facebook — välj annonskonto under Inställningar för att bli klar.",
+      metaHintBroken: "Kopplad, men annonskostnaden går inte att hämta just nu — se meddelandet nedan och logga in igen om det står så.",
+      ctaPickAccount: "Välj annonskonto",
       ctaSettings: "Till Inställningar",
       stepFixed: "Fyll i fasta månadskostnader",
       fixedHintDone: "Dras från nettovinsten, utslagna per dag.",
@@ -448,6 +548,14 @@ const sv: Texts = {
       vsPrev: "vs förra",
     },
 
+    /* Annonskostnadens fel, per kod från meta.server — EN banner per läge. */
+    spendErrors: {
+      "no-connection": "Meta är inte kopplat — annonskostnaden saknas, så vinsten blir för hög.",
+      "no-account": "Inloggad med Facebook, men inget annonskonto valt än. Annonskostnaden hämtas inte förrän du valt ett.",
+      expired: "Facebook-inloggningen har gått ut — annonskostnaden hämtas inte längre. Logga in igen under Inställningar.",
+      retrying: "Annonskostnaden gick inte att hämta just nu — nytt försök om några minuter.",
+      "fetch-failed": (reason: string) => `Kunde inte hämta annonskostnaden: ${reason}`,
+    },
     fxTitle: "Annonskostnaden kunde inte räknas om",
     fxBody: (spendCur: string, shopCur: string) =>
       `Annonskontot redovisar i ${spendCur}, butiken i ${shopCur}, och växelkursen gick inte att hämta just nu. ` +
@@ -679,6 +787,85 @@ const sv: Texts = {
       "Sätt den innan appen används av andra än dig — det är någon annans annonskonto som ligger i databasen.",
     save: "Spara",
     saved: "Sparat.",
+
+    /* Logga in med Facebook */
+    loginButton: "Logga in med Facebook",
+    reconnectButton: "Logga in igen",
+    loginHelp: "Öppnar Facebook i ett nytt fönster. Godkänn läsåtkomst till dina annonser och välj sedan annonskonto nedan.",
+    loginOpening: "Öppnar Facebook…",
+    loginPopupBlocked: "Webbläsaren stoppade fönstret. Använd länken nedan i stället.",
+    loginOpenLink: "Öppna Facebook-inloggningen i en ny flik",
+    loginWaiting: "Väntar på Facebook-fönstret… Gör klart inloggningen där; den här sidan uppdateras av sig själv.",
+    loginFailed: "Inloggningen kunde inte startas. Ladda om sidan och försök igen.",
+    connectedAs: (name: string) => `Inloggad som ${name}.`,
+    connectedManual: "Kopplad med en inklistrad token.",
+    expiresSoon: (days: number) =>
+      days <= 0
+        ? "Facebook-inloggningen går ut idag — logga in igen så att annonskostnaden fortsätter komma in."
+        : `Facebook-inloggningen går ut om ${days} ${days === 1 ? "dag" : "dagar"} — logga in igen så att annonskostnaden fortsätter komma in.`,
+    expiredTitle: "Facebook-inloggningen har gått ut",
+    expiredBody: "Annonskostnaden hämtas inte längre. Logga in igen för att fortsätta.",
+    loginCancelled: "Inloggningen avbröts — inget ändrades.",
+    loginDeclined: "Du gav inte tillgång till dina annonser — inget ändrades. Logga in igen och låt ”Annonser” vara ibockat.",
+    loginNoAccounts: "Det Facebook-kontot har inga annonskonton — inget ändrades. Logga in med kontot som sköter dina annonser.",
+    loginAccountNotVisible: "Det Facebook-kontot ser inte det sparade annonskontot — inget ändrades.",
+    loginMetaFailed: "Facebook godkände inte inloggningen — inget ändrades. Försök igen.",
+    loginNothingBack:
+      "Inget svar kom från Facebook. Försök igen — visade Facebook ”appen är inte tillgänglig” är appen inte godkänd för ditt Facebook-konto än; klistra in en token för hand i stället.",
+    accountSelectLabel: "Annonskonto",
+    accountSelectPlaceholder: "Välj annonskonto…",
+    accountSelectHelp: "Kontona din Facebook-inloggning kan se. Annonskostnaden läses från det du väljer — sparas så fort du valt.",
+    accountSaved: (name: string) => `Sparat — annonskostnaden läses nu från ${name}.`,
+    accountNotInList: (id: string) => `${id} (sparat, men syns inte för den här inloggningen)`,
+    accountsExpired: "Facebook-inloggningen har gått ut. Logga in igen för att fortsätta.",
+    accountsUnavailableRetry: "Kunde inte hämta dina annonskonton just nu.",
+    tryAgain: "Försök igen",
+    accountStatus: (status: number) => {
+      const s: Record<number, string> = {
+        2: "avstängt", 3: "obetalt", 7: "riskgranskning", 8: "väntar på betalning",
+        9: "respit", 100: "stängs", 101: "stängt",
+      };
+      return s[status] ?? "inaktivt";
+    },
+    noAccounts: "Den här Facebook-inloggningen har inga annonskonton. Logga in med kontot som sköter dina annonser, eller klistra in en token nedan.",
+    accountsUnavailable: (reason: string) => `Listan över annonskonton gick inte att hämta (${reason}). Skriv in ID:t för hand nedan.`,
+    pickAccountReminder: "Nästan klart — välj annonskonto och spara. Tills dess hämtas ingen annonskostnad.",
+    disconnectButton: "Koppla bort Meta",
+    disconnectHelp: "Tar bort token och annonskonto. Cachad annonskostnad raderas.",
+    disconnected: "Meta kopplades bort.",
+    unknownError: "Något gick fel. Ladda om sidan och försök igen.",
+    manualTitle: "Klistra in en token för hand i stället",
+    manualBody: "För systemanvändare, eller om inloggningen ovan inte fungerar för dig.",
+  },
+
+  /* Popup-fönstret för Logga in med Facebook — renderas utanför Shopify. */
+  metaLogin: {
+    startTitle: "Logga in med Facebook",
+    redirecting: "Skickar dig till Facebook…",
+    doneTitle: "Kopplat",
+    doneBody: (name: string | null, shop: string) =>
+      (name ? `Inloggad som ${name}` : "Inloggad") +
+      ` — butiken ${shop} kan nu läsa din annonskostnad. ` +
+      "Gå tillbaka till Inställningar och välj annonskonto. Fönstret stängs av sig självt.",
+    doneBodyAccount: (name: string | null, shop: string, account: string) =>
+      (name ? `Inloggad som ${name}` : "Inloggad") +
+      ` — butiken ${shop} läser nu annonskostnaden från ${account}. Klart. Fönstret stängs av sig självt.`,
+    closeWindow: "Stäng fönstret",
+    errorTitle: "Inloggningen gick inte igenom",
+    expired: "Länken har gått ut eller är redan använd. Stäng fönstret och klicka på knappen igen.",
+    wrongBrowser: "Fönstret öppnades inte från appen. Stäng det och klicka på knappen i Inställningar igen.",
+    cancelled: "Du avbröt hos Facebook. Inget ändrades. Stäng fönstret och försök igen när du vill koppla.",
+    declined: "Du gav inte tillgång till dina annonser. Inget ändrades. Logga in igen och låt ”Annonser” vara ibockat.",
+    noAccounts:
+      "Det här Facebook-kontot har inga annonskonton, så inget sparades. Logga in med Facebook-kontot som sköter dina annonser.",
+    accountNotVisible: (id: string) =>
+      `Det här Facebook-kontot ser inte annonskontot ${id} som butiken redan använder. Inget ändrades. ` +
+      "Logga in med kontot som sköter det annonskontot, eller välj ett annat konto under Inställningar först.",
+    metaFailed: (reason: string) => `Facebook godkände inte inloggningen: ${reason}. Stäng fönstret och försök igen.`,
+    noCode: "Facebook skickade ingen auktoriseringskod. Inloggningskonfigurationen i Meta-appen måste använda svarstypen ”code”.",
+    notConfigured: "Facebook-inloggning är inte uppsatt på den här servern.",
+    hostMismatch: (served: string, configured: string) =>
+      `Appen visas från ${served} men serverns SHOPIFY_APP_URL är ${configured}. Facebook-inloggningen fungerar bara när de är samma — rätta variabeln på servern.`,
   },
 
   group: {
@@ -687,6 +874,13 @@ const sv: Texts = {
       "butikens siffror gick inte att hämta — öppna dess panel en gång; åtkomsten kan behöva förnyas",
     spendUnavailable:
       "annonskostnaden gick inte att hämta — utesluten så att summan inte blir för hög",
+    loginExpired:
+      "Facebook-inloggningen har gått ut — öppna den butikens Inställningar och logga in igen; utesluten tills dess",
+    loginExpiresSoon: (days: number) =>
+      days <= 0
+        ? "Facebook-inloggningen går ut idag — öppna den butikens Inställningar och logga in igen"
+        : `Facebook-inloggningen går ut om ${days} ${days === 1 ? "dag" : "dagar"} — öppna den butikens Inställningar och logga in igen`,
+    notesTitle: "Behöver göras i en annan butik",
     fxUnavailable: (from: string, to: string) => `växelkurs ${from}→${to} kunde inte hämtas`,
   },
 };

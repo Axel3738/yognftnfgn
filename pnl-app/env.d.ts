@@ -8,5 +8,10 @@ declare namespace NodeJS {
     SHOPIFY_APP_URL: string;
     SCOPES: string;
     DATABASE_URL: string;
+    /** Valfria: Logga in med Facebook för Meta-kopplingen. Båda eller ingen. */
+    META_APP_ID?: string;
+    META_APP_SECRET?: string;
+    /** Valfri: config_id för "Facebook Login for Business" (Business-appar). */
+    META_LOGIN_CONFIG_ID?: string;
   }
 }

@@ -6,9 +6,18 @@
  * på nytt. Det håller oss långt under rate limits.
  */
 
+import { createHash } from "node:crypto";
 import prisma from "../db.server";
+import { GRAPH_VERSION } from "./meta-login";
 
-const GRAPH = "https://graph.facebook.com/v21.0";
+const GRAPH = `https://graph.facebook.com/${GRAPH_VERSION}`;
+
+/**
+ * Felkoder i stället för engelsk prosa: panelen översätter dem till butikens
+ * språk och kan visa EN banner per läge. `error` (texten) finns kvar för
+ * loggar och för anropare som bara frågar "gick det?".
+ */
+export type SpendErrorCode = "no-connection" | "expired" | "retrying" | "fetch-failed";
 
 export interface MetaConfig {
   adAccountId: string;
@@ -142,6 +151,7 @@ export async function getSpend(
 ): Promise<{
   days: { day: string; spend: number; impressions: number; clicks: number }[];
   error?: string;
+  errorCode?: SpendErrorCode;
   /* Sätts när annonskontot redovisar i en annan valuta än butiken OCH
      omräkningen misslyckades. Beloppen räknas då ihop som om de vore samma
      valuta — fel, och det måste synas. */
@@ -165,7 +175,9 @@ export async function getSpend(
         impressions: r.impressions,
         clicks: r.clicks,
       })),
-      error: cached.length ? undefined : "Meta is not connected — ad spend is missing.",
+      ...(cached.length
+        ? {}
+        : { error: "Meta is not connected — ad spend is missing.", errorCode: "no-connection" as const }),
     };
   }
 
@@ -226,7 +238,8 @@ export async function getSpend(
   /* Backoff: en butik vars Meta-anrop nyss misslyckades (död token, rate
      limit) ska inte betala ett nytt dömt anrop på varje sidladdning. Cachen
      serveras och `error` sätts så anroparen vet att spend är ofullständig. */
-  const nyligenFel = Date.now() - (senasteMetaFel.get(shop) ?? 0) < 5 * 60 * 1000;
+  const felKey = felNyckel(shop, cfg);
+  const nyligenFel = Date.now() - (senasteMetaFel.get(felKey) ?? 0) < 5 * 60 * 1000;
 
   if (stale.length && !radSaknas && !opts?.syncFresh) {
     /* Alla dagar finns, bara färskheten släpar: servera databasen direkt och
@@ -236,7 +249,7 @@ export async function getSpend(
        får INTE trilla ner i den synkrona grenen och blockera panelen. */
     if (!nyligenFel && farUppdateraMeta(shop)) {
       void refreshSpend(shop, cfg, stale, needsFx, spendCurrency, shopCurrency).catch((e) => {
-        senasteMetaFel.set(shop, Date.now());
+        senasteMetaFel.set(felKey, Date.now());
         console.error(`Meta-bakgrundshämtning för ${shop} misslyckades:`, e);
       });
     }
@@ -250,9 +263,12 @@ export async function getSpend(
         impressions: r.impressions,
         clicks: r.clicks,
       })),
-      error: radSaknas
-        ? "Ad spend could not be fetched just now — retrying in a few minutes."
-        : undefined,
+      ...(radSaknas
+        ? {
+            error: "Ad spend could not be fetched just now — retrying in a few minutes.",
+            errorCode: "retrying" as const,
+          }
+        : {}),
       ...fxStatus(
         needsFx,
         !cached.some((r) => r.fxRate == null && Number(r.spend) !== 0),
@@ -263,13 +279,13 @@ export async function getSpend(
   } else if (stale.length) {
     try {
       fxOk = await refreshSpend(shop, cfg, stale, needsFx, spendCurrency, shopCurrency);
-      senasteMetaFel.delete(shop);
+      senasteMetaFel.delete(felKey);
     } catch (e) {
-      senasteMetaFel.set(shop, Date.now());
-      const msg =
-        e instanceof MetaError && e.needsReauth
-          ? "The Meta token has expired — reconnect under Settings."
-          : `Could not fetch ad spend: ${(e as Error).message}`;
+      senasteMetaFel.set(felKey, Date.now());
+      const utgangen = e instanceof MetaError && e.needsReauth;
+      const msg = utgangen
+        ? "The Meta token has expired — reconnect under Settings."
+        : `Could not fetch ad spend: ${(e as Error).message}`;
       const cachadOomräknad =
         needsFx &&
         [...byDay.values()].some((r) => r.fxRate == null && Number(r.spend) !== 0);
@@ -281,6 +297,7 @@ export async function getSpend(
           clicks: r.clicks,
         })),
         error: msg,
+        errorCode: utgangen ? ("expired" as const) : ("fetch-failed" as const),
         ...fxStatus(needsFx, !cachadOomräknad, spendCurrency, shopCurrency),
       };
     }
@@ -306,8 +323,18 @@ export async function getSpend(
   };
 }
 
-/* Senaste misslyckade Meta-hämtningen per butik — styr backoffen ovan. */
+/* Senaste misslyckade Meta-hämtningen per butik — styr backoffen ovan.
+   Nyckeln bär även ett kort avtryck av token: en ny token efter "logga in
+   igen" ska inte ärva den gamla tokens fem minuters paus — inte ens i de
+   fem andra processerna, som inte får veta att någon loggat in. */
 const senasteMetaFel = new Map<string, number>();
+const felNyckel = (shop: string, cfg: MetaConfig) =>
+  `${shop}:${createHash("sha256").update(cfg.accessToken).digest("hex").slice(0, 8)}`;
+
+/** Glöm backoffen för butiken (ny token sparad, koppling borttagen). */
+export function glomMetaFel(shop: string): void {
+  for (const k of [...senasteMetaFel.keys()]) if (k.startsWith(`${shop}:`)) senasteMetaFel.delete(k);
+}
 
 /* Bakgrundshämtningar mot Meta: högst en per butik och minut. */
 const senasteMeta = new Map<string, number>();

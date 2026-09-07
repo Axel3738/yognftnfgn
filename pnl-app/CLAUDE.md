@@ -42,8 +42,14 @@ myshopify-domänen). Butikerna är ihopkopplade i en grupp i appen
   markören svarar. Kolla igen vid ~150 s. Railway missar ibland webhooken —
   en tom commit (`git commit --allow-empty`) triggar om.
 - Miljövariabler per tjänst: DATABASE_URL, PORT, SCOPES, SHOPIFY_API_KEY,
-  SHOPIFY_API_SECRET, SHOPIFY_APP_URL, TOKEN_ENCRYPTION_KEY. Hemligheter får
-  ALDRIG in i repot eller chatten — bara env.
+  SHOPIFY_API_SECRET, SHOPIFY_APP_URL, TOKEN_ENCRYPTION_KEY. Valfria för
+  Logga in med Facebook: META_APP_ID + META_APP_SECRET (båda eller ingen —
+  env-valideringen vägrar starta med bara den ena), META_LOGIN_CONFIG_ID.
+  Hemligheter får ALDRIG in i repot eller chatten — bara env.
+- **Sessionsmiljön når inte alltid Railway eller Meta.** Mätt 2026-09-07: proxyn
+  svarade 403 på både `*.up.railway.app` och `graph.facebook.com` — deploy-
+  verifieringen ovan gick inte att göra härifrån, och inget Meta-anrop gick att
+  prova skarpt. Säg det då rakt ut i stället för att skriva "verifierat".
 - Migrationer skrivs för hand som SQL-filer i `prisma/migrations/` (ingen
   `prisma migrate dev` — ingen skugg-databas här). De körs vid deploy.
 - Sessionscontainern kan återskapas när som helst: allt arbete som inte är
@@ -72,6 +78,11 @@ myshopify-domänen). Butikerna är ihopkopplade i en grupp i appen
 - `app/lib/meta.server.ts` — annonskostnad per dag från Meta, cache i
   DailySpend. Serverar DB direkt; hämtar i bakgrunden (10 min-färskhet).
   Dagar utan leverans får NOLLRADER (annars jagas de för evigt).
+- `app/lib/meta-login.server.ts` + `app/routes/meta.start.tsx` +
+  `meta.callback.tsx` — **Logga in med Facebook** (OAuth i eget fönster,
+  engångsrad `MetaLoginState` + cookie, long-lived token, kontolista via
+  `/me/adaccounts`). Hela flödet står i `docs/meta-token.md`.
+  `meta-login-sida.server.ts` är fönstrets HTML (resursrutter, ingen Polaris).
 - `app/lib/group.server.ts` — gruppsumman: alla medlemmar parallellt, FX per
   butik till betraktarens valuta, korta dataluckor fylls synkront,
   långa i bakgrunden.
@@ -316,12 +327,34 @@ Varje svar till honom följer detta, utan undantag:
 
 ## Kvarvarande backlog
 
-- **Facebook-inloggning för Meta-kopplingen (beslutad, görs EFTER App Store-godkännande).**
-  Idag måste handlaren klistra in annonskonto-ID och en systemanvändar-token
-  för hand. Riktiga användare ska i stället få en knapp "Logga in med Facebook":
-  OAuth mot Meta, `ads_read`, och sedan en lista att välja annonskonto ur.
-  Token-metoden behålls som fallback. Axels beslut 2026-08-31: bygg efter
-  godkännandet, inte före.
+**Axels riktning 2026-09-07 (ordagrant i andemening): "det enda jag vill greja
+på i det här kontot är appen StonePNL" — inte Bäverbutikens OS.** Hans lista,
+i hans ordning:
+
+1. **Facebook-inloggning** — BYGGD 2026-09-07 (build meta-login-v64), inte
+   verifierad skarpt. Se avsnittet "Logga in med Facebook" nedan för vad som
+   återstår hos Axel (Meta-appen + Railway-variabler) och vad som är oprövat.
+2. **Växelkursen:** "dubbelkolla automatisk live växelkurs och gör så att den
+   uppdateras dagligen så man ser sina faktiska marginaler i alla marknader."
+   Läge idag: annonskostnaden räknas om per DAG med dagens ECB-kurs
+   (`meta.server.ts`, `fetchRates`), men **gruppsumman använder EN kurs —
+   dagens — för hela perioden** (`group.server.ts` → `rate()` i
+   `fx.server.ts`, 6 h cache). En 30-dagarsvy i gemensam valuta mäter alltså
+   valutamarknaden i dag, inte den dag försäljningen skedde. Att göra: per-dag-
+   kurs även i gruppsumman (dagsraderna finns redan per dag), och visa kursens
+   datum i UI:t.
+3. **Juicy → StonePNL COGS-flytt:** "alla som använder Juicy sedan tidigare
+   ska på max 3 knapptryck få in sina nuvarande COGS i vår app utan manuella
+   grejer." Importen finns (`cost-import.server.ts`, CSV `titel;variant;
+   kostnad`, flerpack `88|134|180`) — det som saknas är Juicys eget
+   exportformat som indata. **Be Axel om en riktig Juicy-export** innan
+   något byggs; gissa inte kolumnerna.
+4. **Betalt tillägg, +5 USD/mån: LTV-prognos** ("locked på data, riktigt
+   nice"). Kräver en till prisnivå i managed pricing (App Store) och en
+   funktionsgrind i koden; själva prognosen behöver kundens återköpsdata
+   (ordrar per kund över tid — inga kundfält hämtas i dag, PCD-deklarationen
+   säger "inga kundfält"; en anonymiserad kund-hash per order räcker och måste
+   in i deklarationen). Designa innan något byggs.
 - **App Store-granskning 4.5.5:** granskaren kunde inte testa Meta-kopplingen
   utan konto. Lösning: skärminspelning som visar koppling → import → att
   siffran matchar Meta Ads Manager. Länken klistras i "Proof of resolution".
@@ -339,6 +372,129 @@ Varje svar till honom följer detta, utan undantag:
 - Exakta betalväxel-avgifter (feeRate är schablon).
 - Grillkliniken: Axel vill klona hela upplägget till en annan butik.
 - App Store-granskningssvaret: åtgärda när mejlet kommer.
+
+### Logga in med Facebook för Meta-kopplingen (2026-09-07, build meta-login-v64)
+Axels beslut 2026-08-31 (bygg efter App Store-godkännandet) — byggt två dagar
+efter godkännandet. Handlaren klickar **Logga in med Facebook** i Inställningar,
+godkänner `ads_read` i ett eget fönster, och väljer sedan annonskonto i en
+rullista. Den inklistrade token-vägen finns kvar under en hopfällbar rubrik.
+- **Varför eget fönster + engångsrad:** appen kör i Shopifys iframe och Meta
+  vägrar rendera dialogen där. Fönstret är top-level utan Shopify-session, så
+  butiken bevisas i en autentiserad action (`intent=meta-login-url`) som
+  skapar en `MetaLoginState`-rad (10 min). `/meta/start` sätter en nonce-
+  cookie (Path=/meta, SameSite=Lax — cookien skickas med när Meta skickar
+  tillbaka fönstret top-level) och `/meta/callback` kräver att rad OCH cookie
+  stämmer, förbrukar raden och byter koden mot en long-lived token
+  (kod → kortlivad → `fb_exchange_token`). Bägge rutterna är resursrutter
+  (ingen default-export) — annars hade Remix packat in svaret i root-layouten.
+- **Fönstret öppnas SYNKRONT i klickhanteraren** (`window.open("", …)`) och får
+  adressen först när actionen svarat — annars stoppar webbläsaren popupen.
+  Adressen sätts absolut (`about:blank` saknar bas-URL).
+- **Settings laddar om sig** via `postMessage` från klar-sidan och via
+  pollning på `popup.closed`. Kontolistan hämtas i loadern (`/me/adaccounts`,
+  8 s timeout) — misslyckas den visas textfältet med skälet.
+- **Annonskontot rörs inte av inloggningen.** En ny butik har inget val
+  (checklistan säger "välj annonskonto"), en befintlig behåller sitt.
+  `metaAdAccountId` sparas utan `act_`-prefix (`kontoId()`).
+- **Cachad spend rensas bara vid KONTOBYTE** — tidigare rensade Spara alltid,
+  även vid språkbyte (90 dagar Meta-rader kastades i onödan).
+- **Utgång:** `metaTokenExpiresAt` = det TIDIGASTE av `expires_in` (~60 dagar)
+  och Metas `debug_token` (`expires_at` + `data_access_expires_at`, ~90 dagar
+  från senaste inloggning — flyttas BARA av en ny tur genom dialogen, inte av
+  förnyelsen). Panelen varnar från 14 dagar (`VARNA_DAGAR`) och visar rött
+  efteråt. Tokenvakten förnyar via `fb_exchange_token` när < 30 dagar
+  återstår (atomisk stämpel `metaTokenRefreshAttemptAt`, en gång per dygn),
+  men eftersom dataåtkomsten inte flyttas **måste handlaren ändå logga in
+  igen senast var ~90:e dag** — varningen säger "logga in igen", inte
+  "förnyas automatiskt". Inklistrade tokens får också en utgång via
+  `debug_token` när de kommer från samma Meta-app; annars okänd (null).
+  **Oprövat här:** att `fb_exchange_token` ger ny 60-dagarstoken för en
+  long-lived token, och exakt vad `debug_token` svarar — läs loggraden
+  "Meta-token för … förnyades" och Settings' utgångsdatum efter första
+  skarpa inloggningen.
+- **Kontroller i callbacken innan något sparas:** `ads_read` måste vara
+  `granted` i `/me/permissions` (dialogen låter användaren bocka ur
+  "Annonser"; `auth_type=rerequest` gör att frågan ställs igen); har butiken
+  redan ett konto måste den nya inloggningen se det (annars rörs inget); har
+  den inget och listan är tom sparas inget. Exakt ETT konto ⇒ väljs direkt,
+  fönstret säger "Klart". Flera ⇒ rullistan i Settings, som sparar vid val
+  (`intent=meta-account`) — Spara-knappen längst ner behövs inte för det.
+- **Meta-appen för externa handlare (StonePNL):** utvecklingsläge räcker för
+  alla med roll i appen. Live-läge kräver Privacy Policy-URL (finns:
+  `/privacy`), Data Deletion-URL/callback, Business Verification och App
+  Review med Advanced Access på `ads_read`. Utan det visar dialogen "appen är
+  inte tillgänglig" för utomstående och skickar aldrig tillbaka — Settings
+  säger då "Inget svar kom från Facebook" och pekar på token-vägen.
+  Håll "Require App Secret" AV på Meta-appen (anropen skickar ingen
+  `appsecret_proof`, och de inklistrade tokensen kommer från en annan app).
+  `META_LOGIN_CONFIG_ID` bara för Facebook Login for Business — välj då
+  konfigurationstypen "User access token" med `ads_read`.
+- **Graph-versionen** är EN konstant, `GRAPH_VERSION` i `meta-login.ts`
+  (används av både `meta.server.ts` och inloggningen). v21.0 dras in kring
+  2027-01 — bumpa i tid, annars stannar spend och inloggning i alla tjänster.
+- **Env:** `META_APP_ID` + `META_APP_SECRET` (samma Meta-app på alla sex
+  tjänster), valfri `META_LOGIN_CONFIG_ID` för Facebook Login for Business
+  (`config_id` + `override_default_response_type=true` i stället för `scope`).
+  Redirect-URI per tjänst = `<SHOPIFY_APP_URL>/meta/callback`; alla måste
+  ligga i Meta-appens "Giltiga OAuth-omdirigerings-URI:er" (listan står i
+  `docs/meta-token.md`). Utan env-variablerna finns knappen inte alls.
+- **Oprövat i skarpt läge** (proxyn nådde varken Meta eller Railway
+  2026-09-07): hela OAuth-rundan, kontolistan, förnyelsen. Verifierat:
+  `tsc` rent (även den gamla Badge-felet i panelen fixat), `remix vite:build`
+  grönt, 30 assert-tester på de rena delarna (dialog-URL, cookie, kontoId,
+  dagarKvar, HTML-escape). Första skarpa körningen: kolla att fönstret öppnas
+  från iframen, att `/meta/callback` får cookien, och att rullistan visar
+  MagiBorsten. Externa handlare (StonePNL) kräver Advanced Access på
+  `ads_read` (Meta App Review) — tills dess är väg 2 deras väg.
+- **Skydd mot vidarebefordrad länk:** `/meta/start` kräver att navigeringen
+  kommer från appen själv (`Sec-Fetch-Site: same-origin`, annars Referer från
+  vår origin) och att länken öppnas inom 120 s — annars kunde vem som helst
+  med en StonePNL-butik skapa en länk, skicka den till en annan annonsör och
+  få DENNES annonskonton kopplade till sin butik. Klar-sidan namnger dessutom
+  butiken. Popup-sidorna har strikt CSP med nonce (de visar text från Meta).
+- **Bortkoppling och avinstallation återkallar** inloggnings-token hos Meta
+  (`DELETE /me/permissions`, best effort) och nollar fälten (`META_TOMT`);
+  vakten förnyar bara butiker som fortfarande har en Session-rad.
+- **Settings pollar `/app/meta-status`** (bara DB) var 2,5 s medan fönstret
+  är öppet, i högst 5 min — inte hela loadern (den ringer Meta för
+  kontolistan). Klart = `metaTokenSavedAt` ändrat sedan klicket.
+- **Meta-appens inställningar:** "Use Strict Mode for Redirect URIs" på; slå
+  av "Client OAuth Login"/implicit flow om FLB tillåter (appen använder bara
+  kod-flödet). **Avvecklas en Railway-tjänst: ta bort dess redirect-URI ur
+  Meta-appen samma dag** — `*.up.railway.app`-namn kan tas över av andra.
+  Sätt META_APP_ID/SECRET på en tjänst först när dess callback-URI är
+  registrerad (Danmark väntar på sin domän).
+- **Återkallelse gäller hela Facebook-användaren, inte butiken**
+  (`DELETE /me/permissions`). Axel är samma person på fem butiker — därför
+  sparas `metaUserId`, och token återkallas bara när ingen ANNAN butik har
+  samma användare (`farAterkallas`). Annars nollas bara raden.
+- **`app/uninstalled` är bara prenumererad för StonePNL** (via toml). De fem
+  custom-tjänsterna får ingen webhook vid avinstallation — där ligger
+  Session-raden och Meta-token kvar tills `shop/redact` (om det finns) eller
+  tills Axel klickar **Koppla bort Meta** innan han avinstallerar. Vaktens
+  "bara installerade butiker"-filter är därför bara skarpt på StonePNL.
+- **Gruppsumman** namnger butiker vars inloggning går ut inom 14 dagar
+  (`notes`) och skiljer "inloggningen har gått ut" från andra spend-fel —
+  åtgärden är alltid DEN butikens Inställningar.
+- **Backoffen** i `meta.server.ts` är nycklad på butik + tokenavtryck och
+  glöms (`glomMetaFel`) när en ny token sparas — annars sa panelen "kunde inte
+  hämtas" i fem minuter efter en lyckad inloggning.
+- **Deploy-branch:** pnl-app bygger från `claude/bäverbutiken-settkopplingen-
+  nba21z`, INTE från `main` (root-CLAUDE.md:s "bara main gäller" handlar om
+  Bäverbutikens rutiner). En push till fel gren gör att healthz-markören
+  aldrig dyker upp. Sex containrar kör `prisma migrate deploy` samtidigt;
+  Prismas advisory-lock har 10 s timeout — en enstaka "Timed out trying to
+  acquire a postgres advisory lock" vid deploy är en omstart, inte en
+  rollback (`PRISMA_SCHEMA_ENGINE_ADVISORY_LOCK_TIMEOUT=60000` som variabel
+  tar bort problemet). Håll Meta-migrationer till nullbara tillägg.
+- **Första skarpa kontrollen** (trippelkollen): Chrome + Safari, popup OCH
+  länk-fallbacken, desktop-admin OCH Shopify-appen i mobilen. Ett falskt 403
+  från `/meta/start` syns i loggen som `sec-fetch-site=(saknas)` — skriv in
+  utfallet här med datum och webbläsarversion.
+- `shop/redact` raderar `MetaLoginState`. Diagnosrutten `debug-costs.tsx`
+  (oautentiserad, nyckel i git-historiken) togs bort i samma build — den
+  publika ytan är nu `/healthz`, `/auth/*`, `/webhooks`, `/privacy` och
+  `/meta/*`.
 
 ### Flerpacks-COGS — kostnad per antal (2026-09-05, build bundle-v59)
 Axel visade Juicys "Enheter / Total kostnad"-tabell (1 st 88,34 · 2 st 134,22

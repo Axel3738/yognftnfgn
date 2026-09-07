@@ -37,4 +37,18 @@ if (!/^https:\/\//.test(process.env.SHOPIFY_APP_URL!)) {
   );
 }
 
+/* Logga in med Facebook är valfritt (utan variablerna döljs knappen och
+   token klistras in för hand som förut) — men en halv konfiguration är ett
+   fel som annars syns först när en handlare klickar och får ett kryptiskt
+   svar från Meta. Båda eller ingen. */
+const metaId = process.env.META_APP_ID?.trim();
+const metaSecret = process.env.META_APP_SECRET?.trim();
+if (Boolean(metaId) !== Boolean(metaSecret)) {
+  throw new Error(
+    `\n\nMETA_APP_ID och META_APP_SECRET måste sättas tillsammans — nu är bara ` +
+      `${metaId ? "META_APP_ID" : "META_APP_SECRET"} satt. Sätt båda (Meta for Developers → ` +
+      `appen → Appinställningar → Grundläggande) eller ta bort båda.\n`,
+  );
+}
+
 export {};
