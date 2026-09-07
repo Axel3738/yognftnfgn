@@ -6,6 +6,7 @@ import { laddaEnv } from './miljo.mjs';
 import { BUTIKER } from './butiker.mjs';
 import { execSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
+const sov = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // En produktsida som funnits länge — används bara för att se om Temu
 // släpper igenom den här datorn.
@@ -41,21 +42,26 @@ saknade.length
 
 process.env.KIE_API_KEY
   ? ok('KIE_API_KEY finns (rensar utländsk text på skördebilder)')
-  : varning('KIE_API_KEY saknas', 'Lägg till KIE_API_KEY=... i .env. Utan den kan bilder med kinesisk text inte rensas automatiskt.');
+  : varning('KIE_API_KEY är tom', 'Fyll i raden KIE_API_KEY= i .env. Utan den kan bilder med utländsk text inte rensas automatiskt.');
 
 // 3. Svarar butikerna?
 if (!saknade.length) {
   const { Butik } = await import('./api.mjs');
   for (const [nyckel, b] of Object.entries(BUTIKER)) {
-    try {
-      const shop = await new Butik(nyckel).verifiera();
-      shop.currencyCode === b.valuta
-        ? ok(`${b.namn} svarar (${shop.name}, ${shop.currencyCode})`)
-        : fel(`${b.namn} har FEL VALUTA (${shop.currencyCode}, väntade ${b.valuta})`,
-              `Fel butik bakom SHOPIFY_SHOP_${b.env} — rätta den raden innan du kör något`);
-    } catch (e) {
-      fel(`${b.namn} svarar inte: ${e.message.split('\n')[0]}`,
-          'Kontrollera Klient-ID/Hemlighet och att appen är INSTALLERAD i butiken (temu/TOKENS.md steg 1)');
+    let sista;
+    for (let försök = 0; försök < 2; försök++) {
+      try {
+        const shop = await new Butik(nyckel).verifiera();   // kastar själv vid fel valuta
+        ok(`${b.namn} svarar (${shop.name}, ${shop.currencyCode})`); sista = null; break;
+      } catch (e) { sista = e; if (!/fetch failed|ECONN|ENOTFOUND|ETIMEDOUT/i.test(e.message + (e.cause?.message || ''))) break; await sov(1500); }
+    }
+    if (sista) {
+      const orsak = sista.cause?.message ? `${sista.message.split('\n')[0]} (${sista.cause.message})` : sista.message.split('\n')[0];
+      const nät = /fetch failed|ECONN|ENOTFOUND|ETIMEDOUT/i.test(orsak);
+      fel(`${b.namn} svarar inte: ${orsak}`,
+          nät ? 'Ser ut som ett nätverksfel — kolla wifi/VPN och kör kollen igen'
+              : /valuta|currency/i.test(orsak) ? `Fel butik bakom SHOPIFY_SHOP_${b.env} — rätta den raden innan du kör något`
+              : 'Kontrollera Klient-ID/Hemlighet och att appen är INSTALLERAD i butiken (temu/TOKENS.md steg 1)');
     }
   }
 }
@@ -75,6 +81,16 @@ for (const v of ['ffmpeg', 'ffprobe']) {
     : fel(`${v} saknas (behövs för GIF:ar ur skördevideor)`,
           WIN ? 'Kör: winget install Gyan.FFmpeg   (starta om terminalen efteråt)' : 'Kör: brew install ffmpeg');
 }
+
+// 4b. Claude Code, git-identitet och GitHub-inloggning
+finnsIPath('claude') ? ok('Claude Code finns (claude)') : fel('Claude Code saknas', 'Kör: npm install -g @anthropic-ai/claude-code');
+try {
+  const namn = execSync('git config --global user.name', { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim();
+  const mejl = execSync('git config --global user.email', { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim();
+  namn && mejl ? ok(`git vet vem du är (${namn})`) : fel('git saknar namn/mejl', 'Kör raderna i steg 4b i SETUP-LOKALT.md');
+} catch { fel('git saknar namn/mejl', 'Kör raderna i steg 4b i SETUP-LOKALT.md'); }
+try { execSync('gh auth status', { stdio: 'ignore' }); ok('Inloggad på GitHub (gh) — skördebilderna kan pushas'); }
+catch { fel('Inte inloggad på GitHub', finnsIPath('gh') ? 'Kör: gh auth login' : (WIN ? 'Kör: winget install --id GitHub.cli -e   och sedan   gh auth login' : 'Kör: brew install gh && gh auth login')); }
 
 // 5. Bildskörden — hela poängen med att köra lokalt
 const skordare = new URL('./kaching-cli/temu-bilder.mjs', import.meta.url);
@@ -98,14 +114,17 @@ CHROME.some((f) => f && existsSync(f)) || finnsIPath(WIN ? 'chrome' : 'google-ch
 try {
   const r = await fetch(TEMU_PROV, { headers: { 'user-agent': WEBBLASARE }, signal: AbortSignal.timeout(20000) });
   const html = await r.text();
-  const bilder = new Set(html.match(/https:\/\/img\.kwcdn\.com\/[^"'\\ ]+/g) || []).size;
+  const bilder = new Set(html.match(/https:\/\/[a-z0-9.-]*kwcdn\.com\/[^"'\\ ]+/g) || []).size;
   bilder > 0
-    ? ok(`Temu släpper igenom den här datorn (${bilder} bild-URL:er i provsidan) — skörden går att köra här`)
-    : fel('Temu svarar men skickar ett TOMT skal (0 bild-URL:er)',
-          'Den här datorn är blockerad av Temus botskydd. Skörden måste köras på en dator som inte är det — det är exakt därför flödet är uppdelat idag.');
+    ? ok(`Temu-provet gick igenom (${bilder} bild-URL:er i provsidan) — kör skördaren på riktigt för att vara säker`)
+    : fel('Temu-provet gav ett TOMT skal (0 bild-URL:er)',
+          'Provet är en förenkling (en enkel hämtning, inte riktig Chrome). Kör det riktiga testet: cd temu/kaching-cli && node temu-bilder.mjs "' + TEMU_PROV + '" prov . Ger även det inga bilder är datorn blockerad — kör då MOLNLÄGET (Cowork-prompt + zip) som förut.');
 } catch (e) {
-  fel(`Temu går inte att nå (${e.message})`, 'Testa att öppna temu.com i webbläsaren på den här datorn.');
+  fel(`Temu går inte att nå (${e.message})`, 'Testa att öppna temu.com i webbläsaren. Går inte det heller: kör MOLNLÄGET (Cowork-prompt + zip) som förut.');
 }
+
+// 6. Notion finns bara i molnet
+varning('Notion-korten görs inte lokalt', 'Notion-kopplingen finns bara i molnsessionen. Be den skapa korten när batchen är klar (produktbatch.md Fas 5).');
 
 // Utskrift
 console.log('\n  KOLL AV DIN DATOR — produktbatchflödet\n');

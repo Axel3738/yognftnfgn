@@ -1,3 +1,4 @@
+import './miljo.mjs'; // läser .env lokalt
 #!/usr/bin/env node
 // Genererar en miljöbild ("produkten i användning") ur produktens RIKTIGA bild
 // via kie.ai nano-banana-edit. Aldrig text-till-bild — alltid edit av referensen,

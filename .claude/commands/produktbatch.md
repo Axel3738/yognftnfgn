@@ -64,6 +64,10 @@ REMOVE_STANDALONE_VARIANT med `taxable: false`, `inventoryPolicy: CONTINUE`,
 Slutgranska skarpt per butik: varianter, priser, optionsspråk, bilder-200, inga rester.
 
 ## Fas 5 — Notion
+**LOKALT LÄGE: Notion-connectorn finns bara i molnsessionen.** Hoppa över fasen,
+skriv i slutrapporten exakt vilka kort som ska skapas (namn, Landing page, låsta
+räkneord), och be Axel klistra in det i molnsessionen. Skapa ALDRIG kort utan Typ.
+
 Ett item per produkt (även VÄNTA-produkter, märkta i namnet) i
 **Product test center SE BÄVER** (data source `collection://d80270ab-908c-839b-9dcc-8721c5f29570`):
 - Namn: `<batchnummer> <Produktnamn>` · Status: `Products` · **Typ: `Video - Pending Approval`**

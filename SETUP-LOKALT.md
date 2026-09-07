@@ -40,6 +40,10 @@ winget install --id Gyan.FFmpeg -e --accept-package-agreements --accept-source-a
 winget install --id Google.Chrome -e --accept-package-agreements --accept-source-agreements
 ```
 
+```powershell
+winget install --id GitHub.cli -e --accept-package-agreements --accept-source-agreements
+```
+
 Står det *"already installed"* på någon — bra, då har du den redan.
 
 > ⚠️ **STÄNG PowerShell-fönstret och öppna ett nytt** när alla fyra är klara.
@@ -62,25 +66,49 @@ Write-Host "KLART - repot ligger i $(Get-Location)"
 
 Sista raden ska säga **KLART - repot ligger i C:\Users\...\yognftnfgn**.
 
-## Steg 4 — installera repots egna delar
+> **Bra att veta:** terminalen står alltid "i" en mapp — den syns före `>` på
+> prompten. Alla rader nedan förutsätter att du står i repo-mappen. Ser du inte
+> `yognftnfgn` i prompten: klistra in `Set-Location $HOME\yognftnfgn` först.
+
+## Steg 4 — installera repots egna delar + Claude Code
 
 ```powershell
-Set-Location temu; npm install; Set-Location kaching-cli; npm install; Set-Location ../..
+Push-Location temu; npm install; Pop-Location
+Push-Location temu\kaching-cli; npm install; Pop-Location
+npm install -g @anthropic-ai/claude-code
+claude --version
 ```
+
+Sista raden ska skriva ut ett versionsnummer.
+
+## Steg 4b — tala om för git vem du är, och logga in på GitHub
+
+Behövs för att skördebilderna ska kunna sparas till repot i slutet av en batch.
+
+```powershell
+git config --global user.name "Axel Odhner"
+git config --global user.email "axel.odhner@stonebite.org"
+gh auth login
+```
+
+`gh auth login` ställer några frågor — svara **GitHub.com → HTTPS → Yes → Login
+with a web browser**. Den visar en kod, öppnar webbläsaren, du klistrar in koden.
+Klart när `gh auth status` säger *"Logged in to github.com"*.
 
 ## Steg 5 — lägg in nycklarna till butikerna
 
 ```powershell
-Copy-Item temu\env.exempel .env; notepad .env
+if (-not (Test-Path .env)) { Copy-Item temu\env.exempel .env }; notepad .env
 ```
 
-Anteckningar öppnas med 16 tomma rader. Fyll i värdet efter varje `=`
+Anteckningar öppnas med 16 rader att fylla i. Skriv värdet efter varje `=`
 (inga citattecken, inga mellanslag runt `=`). Spara med **Ctrl + S**, stäng.
+(Finns filen redan ifylld öppnas den som den är — inget skrivs över.)
 
-**Var hittar du värdena?**
-- **Snabbast:** samma ställe där du la in dem när vi kopplade butikerna —
-  miljöns inställningar på claude.ai/code. Kopiera rakt av.
-- **Annars:** ur Shopify-admin, klickvägen står i `temu/TOKENS.md`.
+**Var hittar du värdena?** Ur Shopify-admin — klickvägen står i `temu/TOKENS.md`,
+tre uppgifter per butik (SE och NO räcker; DK/FI/UK får inga nya produkter).
+Nycklarna du en gång la in på claude.ai/code visas maskerade där och går inte
+att kopiera tillbaka, så den vägen fungerar inte.
 
 > Filen `.env` stannar på din dator. Den hamnar aldrig på GitHub
 > (den står i `.gitignore`) och ska aldrig klistras in i en chatt.
@@ -94,13 +122,15 @@ node temu\kolla-lokalt.mjs
 Du får en lista. **✅ = klart. ❌ = pilen under raden säger exakt vad du ska göra.**
 Fixa varje ❌ och kör raden igen tills allt är grönt.
 
-Viktigast är sista raden:
+Viktigast är Temu-raden:
 
 ```
-✅  Temu släpper igenom den här datorn (47 bild-URL:er i provsidan)
+✅  Temu-provet gick igenom (bild-URL:er i provsidan) — kör skördaren på riktigt för att vara säker
 ```
 
-Står det så kan din dator skörda bilder — och då är hela poängen uppnådd.
+Provet är en förenkling: det riktiga testet är att skörda en produkt (steg 7
+gör det). Ett ❌ här betyder oftast att datorn är blockerad — då kör vi
+molnläget i stället, precis som förut (Cowork-prompt + zip).
 
 ## Steg 7 — kör batchen
 
@@ -108,10 +138,8 @@ Står det så kan din dator skörda bilder — och då är hela poängen uppnåd
 claude
 ```
 
-Hittas inte `claude`, installera den först:
-```powershell
-npm install -g @anthropic-ai/claude-code
-```
+**Första gången** ställer Claude Code två-tre frågor (färgtema, inloggning).
+Välj vad som helst på temat, logga in med ditt Anthropic-konto i webbläsaren.
 
 Sen skriver du:
 
@@ -130,6 +158,18 @@ Google-inloggning behövs.
 
 **Ett Chrome-fönster öppnas under bildskörden.** Låt det vara. Dyker en captcha
 upp löser du den i fönstret, sen fortsätter det av sig självt.
+
+**Notion-korten** görs inte lokalt (Notion-kopplingen finns bara i molnet).
+Claude säger till när batchen är klar — då ber du molnsessionen göra korten.
+
+## Nästa gång
+
+Allt ovan är gjort en gång för alla. Nästa batch:
+
+1. Windows-tangenten → `powershell` → Enter
+2. `Set-Location $HOME\yognftnfgn; git pull`
+3. `claude`
+4. `/produktbatch <länk> <nummer>`
 
 ## Om något strular på Windows
 
@@ -154,8 +194,9 @@ Samma sak, andra kommandon.
 ```bash
 command -v brew >/dev/null || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 [ -x /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)" && echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-brew install node ffmpeg
+brew install git node ffmpeg gh
 brew install --cask google-chrome
+npm install -g @anthropic-ai/claude-code
 ```
 
 **Steg 3.** Repot:
@@ -166,13 +207,17 @@ REPO=$(find ~ -maxdepth 5 -type d -name yognftnfgn -not -path "*/node_modules/*"
 cd "$REPO" && git fetch origin -q && git checkout -q claude/tem-shopify-product-import-cn7mjt && git pull -q && echo "KLART — repot ligger i $PWD"
 ```
 
-**Steg 4.** `cd temu && npm install && cd kaching-cli && npm install && cd ../..`
+**Steg 4.** `(cd temu && npm install) && (cd temu/kaching-cli && npm install)`
 
-**Steg 5.** `cp temu/env.exempel .env && open -e .env` — fyll i, spara med ⌘S.
+**Steg 4b.** `git config --global user.name "Axel Odhner" && git config --global user.email "axel.odhner@stonebite.org" && gh auth login`
+
+**Steg 5.** `[ -f .env ] || cp temu/env.exempel .env; open -e .env` — fyll i, spara med ⌘S.
 
 **Steg 6.** `node temu/kolla-lokalt.mjs`
 
 **Steg 7.** `claude`, sen `/produktbatch <länk> <nummer>`
 
 Strular det: `command not found: brew` → kör raden i steg 2 igen.
-`Permission denied` → skriv `sudo ` före raden.
+`command not found: claude` → `npm install -g @anthropic-ai/claude-code`.
+Använd **aldrig** `sudo` framför de här raderna — Homebrew vägrar, och npm
+blir trasigt.
