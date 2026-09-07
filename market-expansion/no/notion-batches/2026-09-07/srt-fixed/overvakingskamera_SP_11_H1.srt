@@ -1,0 +1,27 @@
+1
+00:00:00,179 --> 00:00:01,000
+Katten går forbi.
+
+2
+00:00:01,379 --> 00:00:03,319
+Stille. En fremmed går forbi.
+
+3
+00:00:03,839 --> 00:00:05,359
+Alarm. Jeg sover bedre nå.
+
+4
+00:00:05,719 --> 00:00:07,019
+Det sier en kunde hos baverbutiken.se.
+
+5
+00:00:07,179 --> 00:00:16,319
+To linser som dekker hele tomten. AI som bare varsler når det gjelder. Direkte varsel i mobilen, uansett hvor du er. Tretti dagers åpent kjøp. Åtte hundre og nittini kroner i dag.
+
+6
+00:00:16,420 --> 00:00:17,479
+Tretti dagers åpent kjøp.
+
+7
+00:00:17,510 --> 00:00:18,068
+Kjøp nå.

@@ -1,0 +1,44 @@
+[
+ {
+  "malnamn": "Overvåkingskamera_NO_AU_2_H1",
+  "andringar": [
+   "Pris 799 kr → 899 kr, jämförpris 1 000 kr → 1 169 kr (verifierade NO-priser).",
+   "Talat pris skrivet med bokstäver: 'sjuhundranittionio kronor' → 'åtte hundre og nittini kroner'.",
+   "'trettio dagars garanti' → 'tretti dagers åpent kjøp' (butiken har ingen garanti, bara öppet köp)."
+  ],
+  "trefragor": {
+   "headline": "ok",
+   "message": "ok"
+  },
+  "hoppa": false
+ },
+ {
+  "malnamn": "Overvåkingskamera_NO_SP_11_H1",
+  "andringar": [
+   "Pris 799 kr → 899 kr, jämförpris 1 000 kr → 1 169 kr (verifierade NO-priser).",
+   "Talat pris skrivet med bokstäver: 'sjuhundranittionio kronor' → 'åtte hundre og nittini kroner'.",
+   "'trettio dagars nöjd kundgaranti' / 'Trettio dagars garanti' → 'tretti dagers åpent kjøp' (ingen garanti finns).",
+   "'Det är vad våra kunder säger' → 'Det sier en kunde hos baverbutiken.se' — citatet är från en svensk recension, får inte påstås vara en norsk kund ('våre kunder').",
+   "'Handla nu' → 'Kjøp nå'."
+  ],
+  "trefragor": {
+   "headline": "ok",
+   "message": "ok"
+  },
+  "hoppa": false
+ },
+ {
+  "malnamn": "Overvåkingskamera_NO_CS_6_H1",
+  "andringar": [
+   "Pris 799 kr → 899 kr, jämförpris 'ettusen kronor' (1000 kr, felaktigt i svenska SRT) → 899 kr / 1 169 kr (verifierade NO-priser och belopp).",
+   "Talat pris skrivet med bokstäver: 'sjuhundranittionio kronor' → 'åtte hundre og nittini kroner', 'ettusen kronor' → 'elleve hundre og sekstini kroner'.",
+   "'trehundrafemtiofem grader' → 'tre hundre og femtifem grader' (355°, aldrig 360°).",
+   "'Trettio dagars garanti' → 'Tretti dagers åpent kjøp' (ingen garanti finns)."
+  ],
+  "trefragor": {
+   "headline": "ok",
+   "message": "ok"
+  },
+  "hoppa": false
+ }
+]
