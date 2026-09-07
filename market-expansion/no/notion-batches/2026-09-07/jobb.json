@@ -109,7 +109,12 @@
         "annonsNamn": "Overvåkingskamera_NO_AU_2_H1",
         "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
         "prefix": "Overvåkingskamera",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252115735090233",
+        "creativeId": "1431788468856566",
+        "adsetId": "120252096635780233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "899.00",
@@ -173,7 +178,12 @@
         "annonsNamn": "Overvåkingskamera_NO_SP_11_H1",
         "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
         "prefix": "Overvåkingskamera",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252115739210233",
+        "creativeId": "1670521817344888",
+        "adsetId": "120251998602380233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "899.00",

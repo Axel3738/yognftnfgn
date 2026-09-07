@@ -1,0 +1,5 @@
+{
+ "overvakingskamera_AU_2_H1": { "malnamn": "Overvåkingskamera_NO_AU_2_H1", "status": "OK", "fil": "market-expansion/no/notion-batches/2026-09-07/no/Overvåkingskamera_NO_AU_2_H1.mp4", "skal": null, "qa": "3 QA-rutor + 2 kontrollrutor vid bredaste svenska raderna lästa 2026-09-07; första passet läckte svensk text vid kanterna (median-x), omgjord med min/max-x" },
+ "overvakingskamera_SP_11_H1": { "malnamn": "Overvåkingskamera_NO_SP_11_H1", "status": "OK", "fil": "market-expansion/no/notion-batches/2026-09-07/no/Overvåkingskamera_NO_SP_11_H1.mp4", "skal": null, "qa": "3 QA-rutor + 2 kontrollrutor lästa 2026-09-07" },
+ "overvakingskamera_CS_6_H1": { "malnamn": "Overvåkingskamera_NO_CS_6_H1", "status": "KÖ", "fil": null, "skal": "HeyGen render nekad: Insufficient credit — proofread + norsk SRT + spec klara, render/captions/upload återstår" }
+}
