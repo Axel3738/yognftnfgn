@@ -1,0 +1,17 @@
+{
+ "overvakingskamera_AU_2_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/9e45fa4f46d448b69b2c92b18c1310c2/original.mp4",
+  "proofreadId": "3d5dfa1db13149e49a7d26ea6e3c8570-nb-nb-NO",
+  "srtDone": true
+ },
+ "overvakingskamera_SP_11_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/d400bdce270e49928f676b9b5803cfe3/original.mp4",
+  "proofreadId": "3ab008afb1ed4852babeec9ab35480c2-nb-nb-NO",
+  "srtDone": true
+ },
+ "overvakingskamera_CS_6_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/5d8caffccdda4397b5a772c893015ddd/original.mp4",
+  "proofreadId": "7a32a4040f0543dbbdf1277c379295bb-nb-nb-NO",
+  "srtDone": true
+ }
+}

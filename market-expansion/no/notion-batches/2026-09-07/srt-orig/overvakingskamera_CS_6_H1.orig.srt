@@ -1,0 +1,19 @@
+1
+00:00:00,059 --> 00:00:01,199
+Tre personer, en hund.
+
+2
+00:00:01,439 --> 00:00:03,579
+Rutorna sitter på personerna, inte på hunden.
+
+3
+00:00:03,740 --> 00:00:05,739
+Du larmas för personerna, inte för hunden.
+
+4
+00:00:05,920 --> 00:00:12,079
+Två linser, trehundrafemtiofem grader, hela tomten, sjuhundranittionio kronor istället för ettusen kronor.
+
+5
+00:00:12,319 --> 00:00:13,500
+Trettio dagars garanti
