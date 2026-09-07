@@ -1,23 +1,30 @@
-# Butikskonfig för Tankvakt — OPS-butik för IBC-tankskydd.
+# Butikskonfig för TankGuard — OPS-butik för IBC-tankskydd.
 # Egen OPS-butik, helt separat från Bäverbutiken och HeimGuard.
 # Bolaget är samma AB som driver HeimGuard och Matstrumpor.se
 # (STONEBITE ECOM AB). Adress + orgnr från allabolag.se (Axels länk 2026-09-07).
 #
-# Namnet "Tankvakt" (2026-09-07, namnregeln): tank + vakt = det som vaktar
-# tanken. Funkar i Sverige, Norge och engelskt (uttalbart, ingen å/ä/ö),
-# samma bevisade [ord]+[skydd]-mönster som Hemvakten→HeimGuard.
-# Domäner lediga i DNS 2026-09-07: tankvakt.se (primär), tankvakt.no,
-# tankvakt.com — VA:n verifierar och köper i Loopia (checklistan).
+# Namnet "TankGuard" (2026-09-08, den skärpta namnregeln: helt engelskt namn
+# som svenskar och norrmän ändå läser och uttalar, ingen å/ä/ö). Ersatte
+# "Tankvakt" som Axel avvisade 2026-09-08 för att det var svenskt.
+# Domäner lediga i DNS 2026-09-08: tankguard.se (primär), tankguard.no.
+# tankguard.com är upptagen — marknaderna är SE + NO, så .com behövs inte.
+# VA:n verifierar och köper i Loopia (checklistan).
 
 butik:
-  id: tankvakt
-  brand: "Tankvakt"
+  id: tankguard
+  brand: "TankGuard"
   bolagsnamn: "STONEBITE ECOM AB"
   orgnr: "559576-2401"
   adress: "Sjöhed 160, 442 74 Harestad"
-  supportmail: "hej@tankvakt.se"
+  supportmail: "hello@tankguard.se"   # alltid hello@ (Axel 2026-09-08)
   land: SE
   huvudmarknad: Sverige
+  # STANDARD i varje OPS (Axel 2026-09-08): marknad Norge (locale nb) från
+  # start. NOK slås på i admin av VA:n (checklistans steg 9, API-spärrat).
+  marknader:
+    - land: NO
+      locale: nb
+      valuta: NOK
   valuta: SEK
   moms_i_pris: true
 
@@ -41,7 +48,7 @@ judgeme:
   # Fylls i när Judge.me-appen är installerad i den nya butiken. Tokenen är
   # PER BUTIK och läggs i env, aldrig i filen.
   shop_domain: ""
-  token_env: "JUDGEME_TANKVAKT_TOKEN"
+  token_env: "JUDGEME_TANKGUARD_TOKEN"
 
 garantier:
   - "30 dagars öppet köp"
@@ -52,7 +59,7 @@ policy:
   svarstid: "en arbetsdag"
 
 # ---------------------------------------------------------------------------
-# BRAND-CONFIG — Tankvakts egen identitet, byggd från noll för den här
+# BRAND-CONFIG — TankGuards egen identitet, byggd från noll för den här
 # butiken (Axels regel: brandingen återanvänds ALDRIG mellan butiker).
 #
 # Analys bakom valen:
@@ -73,7 +80,7 @@ policy:
 # brandets grön är den mörka, robusta skogsgröna, inte algens gröna.
 # ---------------------------------------------------------------------------
 branding:
-  positionering: "Svensk specialist på tankskydd — överdraget som håller regnvattnet klart och IBC-tanken hel år efter år"
+  positionering: "Specialist på tankskydd — överdraget som håller regnvattnet klart och IBC-tanken hel år efter år"
   tonalitet: "Saklig, praktisk och rak. Korta meningar, som en kunnig granne. Inga utropstecken, ingen hype — prylen talar för sig själv."
   kansla: "praktisk, robust, jordnära, pålitlig"
   farger:
@@ -104,5 +111,5 @@ branding:
     cta: "Solid djupgrön knapp med vit text. Verb + lugn: Köp nu, Skydda tanken. Aldrig SISTA CHANSEN."
     trust: "Diskreta rader med bock i samma djupgröna på varm sandyta — garanti, fri frakt, Klarna. Fakta, inte skrik."
     spacing: "Luftigt och lugnt — generösa sektionsavstånd, max 62 tecken per rad."
-    logo: "Rund emblem: djupgrön cirkel med ordmärket TANKVAKT i versaler, vitt, spärrad text. Bara namnet — ingen symbol. Fungerar i en färg."
+    logo: "Rund emblem: djupgrön cirkel med ordmärket TANKGUARD i versaler, vitt, spärrad text. Bara namnet — ingen symbol. Fungerar i en färg."
     favicon: "Samma djupgröna cirkel med ett vitt T."

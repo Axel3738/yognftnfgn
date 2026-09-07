@@ -1,4 +1,4 @@
-# IBC-TANKÖVERDRAGET — OPS-produkt från fabriken (butik: Tankvakt).
+# IBC-TANKÖVERDRAGET — OPS-produkt från fabriken (butik: TankGuard).
 # Källa: baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv
 # All text nedan kommer ur källsidan (beskrivning, funktioner, erbjudande,
 # Judge.me-recensioner) — inget påhittat. Specs som INTE står på källsidan
@@ -9,11 +9,12 @@ produkt:
   id: ibc-tankoverdraget
 
 brand:
-  namn: "Tankvakt"
+  # Helt engelskt namn (skärpta namnregeln 2026-09-08). Marknader SE + NO —
+  # .se och .no lediga i DNS 2026-09-08; .com är upptagen och behövs inte.
+  namn: "TankGuard"
   domanideer:
-    - tankvakt.se
-    - tankvakt.no
-    - tankvakt.com
+    - tankguard.se
+    - tankguard.no
 
 ekonomi:
   # Inköp per styck inkl frakt in: Axels besked 2026-09-07 (≈170 kr).
@@ -187,12 +188,12 @@ kallor:
 meta:
   # ALLA OPS-butiker (SE och NO) kör på det gemensamma annonskontot
   # "MagiBorsten DK" 915422744950975 (Axels beslut 2026-09-07). Kampanjnamnen
-  # MÅSTE prefixas med brandet (Tankvakt_...) så datan går att skära per butik.
+  # MÅSTE prefixas med brandet (TANKGUARD_...) så datan går att skära per butik.
   # ⚠️ Förväxla ALDRIG med MagiBorsten 1867947880635861 (Bäverbutiken SE).
   ad_account_id: "915422744950975"
   page_id: ""                 # Skapas av VA:n i Business Manager före launch
   pixel_id: ""                # Skapas via factory/meta-setup.mjs i slutsteget
-  creative_prefix: "Tankvakt"
+  creative_prefix: "TankGuard"
   testbudget_per_dag: 1000
   # Vinklar för första testbatchen (fas 6, ej byggd än) — alla grundade i
   # källsidan/problemet, inga gissningar.

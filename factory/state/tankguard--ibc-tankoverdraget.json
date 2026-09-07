@@ -1,0 +1,49 @@
+{
+  "butik": "tankguard",
+  "produkt": "ibc-tankoverdraget",
+  "skapad": "2026-09-07",
+  "uppdaterad": "2026-09-08",
+  "lage": "FÖRBEREDD — butiken finns inte i Shopify än (ingen token)",
+  "brand": {
+    "namn": "TankGuard",
+    "namnregel": "helt engelskt namn (skärpt regel 2026-09-08), läsbart för svenskar/norrmän, ingen å/ä/ö. Ersatte 'Tankvakt' som Axel avvisade 2026-09-08 för att det var svenskt.",
+    "domaner_lediga_i_dns": ["tankguard.se", "tankguard.no"],
+    "domankoll": "DoH SOA-uppslag 2026-09-08: .se och .no NXDOMAIN, .com upptagen (behövs inte — marknader SE + NO). Whois ej tillgängligt i miljön; VA:n verifierar vid Loopia-köpet.",
+    "supportmail": "hello@tankguard.se (regel 2026-09-08: alltid hello@, aldrig hej@)",
+    "palett": "monokrom djupgrön (#2F5D3A CTA/bock, #1C2A1E mörk) + varma sandneutraler. Medvetet ingen klargrön (grönt vatten = alger)."
+  },
+  "marknader": {
+    "standard": "SE (huvudspråk svenska) + NO (locale nb, NOK) från start — Axels beslut 2026-09-08",
+    "klar": false,
+    "notis": "Deklarerat i butiker/tankguard.yaml (butik.marknader). Själva uppsättningen (marknad Norge, locale nb, webPresence, translationsRegister på allt, norska recensioner, NOK-paketnivåer) görs i Shopify-steget enligt PROCESS.md fas 4 när token finns."
+  },
+  "ekonomi": {
+    "pris": 489,
+    "jamforpris": 636,
+    "inkopskostnad": 170,
+    "kalla_inkop": "Axels besked 2026-09-07 (≈170 kr) — verifiera exakt Temu-quote före annonsstart",
+    "marginal": 319,
+    "break_even_roas": 1.53
+  },
+  "steg": {
+    "produktdata": {
+      "klar": true,
+      "kalla": "baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv.json + Judge.me publika widget",
+      "notis": "Namn, pris, 5 bilder, beskrivningens 7 block, 10 riktiga recensioner (snitt 4,70). Kaching-nivåer lästa ur den publika sidans inbäddade JSON (script.kaching-bundles-deal-block-settings), inte via MCP."
+    },
+    "brand": { "klar": true, "notis": "branding:-blocket byggt från noll i butiker/tankguard.yaml; omdöpt Tankvakt → TankGuard 2026-09-08" },
+    "konfig": {
+      "klar": true,
+      "notis": "butiker/tankguard.yaml + produkter/ibc-tankoverdraget.yaml. Dry-run grön efter omdöpningen: se commit."
+    },
+    "logga": {
+      "klar": false,
+      "notis": "SVG-källor gjorda (tankguard-logga.svg + tankguard-favicon.svg). Rasterisering till PNG + uppladdning till butikens Files väntar på Shopify-steget (ingen rasteriserare i miljön; qlmanage är macOS)."
+    },
+    "checklista": { "klar": true, "notis": "output/ibc-tankoverdraget/CHECKLISTA.md + CHECKLISTA.docx — VA:ns manuella klick. Mastern: factory/VA-CHECKLIST.docx (genereras ur VA-CHECKLIST.md)." },
+    "shopify_bygge": { "klar": false, "notis": "Steg 5–8: BLOCKERAT tills VA:n skapat butiken och klistrat in Fabriken-tokenen (SHOPIFY_STORE_DOMAIN + SHOPIFY_ADMIN_TOKEN i factory/.env)." },
+    "recensioner": { "klar": false, "notis": "judgeme-import.csv genererad (10 svenska rader). Import + norsk delmängd med norska namn väntar på Judge.me-token efter 'Store ready: TankGuard'." },
+    "pixel_discord": { "klar": false, "notis": "Pixel i MagiBorsten DK 915422744950975 + Discord-kanaler görs i slutsteget efter 'Store ready: TankGuard'." }
+  },
+  "nasta": "VA:n kör CHECKLISTA (köp tankguard.se, skapa butik, klistra in token). Sen fortsätter fabriken med Shopify-bygget inkl. marknad Norge, och slutsteget."
+}
