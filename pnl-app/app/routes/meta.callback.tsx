@@ -78,8 +78,14 @@ export async function loader({ request }: LoaderFunctionArgs) {
       return fel(T.metaLogin.declined, 200, { ok: false, reason: "declined" });
     }
 
-    const konton = await listaAnnonskonton(token, inst?.currency).catch(() => null);
     const sparat = kontoId(inst?.metaAdAccountId);
+    /* Med ett sparat konto är listan en SPÄRR, inte en bekvämlighet: går den
+       inte att hämta kan vi inte veta att kopplingen förblir hel — då sparas
+       inget (yttre catch → "försök igen"). Utan sparat konto är null ofarligt:
+       token sparas och Settings visar textfältet. */
+    const konton = sparat
+      ? await listaAnnonskonton(token, inst?.currency)
+      : await listaAnnonskonton(token, inst?.currency).catch(() => null);
 
     /* Butiken har redan ett konto (kanske via en systemanvändar-token som
        ser mer än den här personen). Ser inte den nya inloggningen kontot ska

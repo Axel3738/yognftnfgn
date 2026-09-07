@@ -65,6 +65,7 @@ const en = {
       metaHintDone: "Ad spend is fetched automatically every day.",
       metaHintTodo: "Without a connection ad spend counts as zero and profit reads too high.",
       metaHintPending: "Logged in with Facebook — pick the ad account under Settings to finish.",
+      metaHintPendingManual: "A token is saved — enter the ad account ID under Settings to finish.",
       metaHintBroken: "Connected, but ad spend can't be fetched right now — see the message below and log in again if it says so.",
       ctaPickAccount: "Pick ad account",
       ctaSettings: "Go to Settings",
@@ -115,7 +116,8 @@ const en = {
     spendErrors: {
       "no-connection": "Meta is not connected — ad spend is missing, so profit reads too high.",
       "no-account": "Logged in with Facebook, but no ad account chosen yet. Ad spend is not fetched until you pick one.",
-      expired: "The Facebook login has expired — ad spend is no longer fetched. Log in again under Settings.",
+      "no-account-manual": "A Meta token is saved, but no ad account chosen yet. Ad spend is not fetched until you enter one under Settings.",
+      expired: "The Meta connection has expired — ad spend is no longer fetched. Renew it under Settings.",
       retrying: "Ad spend could not be fetched just now — retrying in a few minutes.",
       "fetch-failed": (reason: string) => `Could not fetch ad spend: ${reason}`,
     },
@@ -368,6 +370,8 @@ const en = {
         : `The Facebook login expires in ${days} ${days === 1 ? "day" : "days"} — log in again so ad spend keeps coming in.`,
     expiredTitle: "The Facebook login has expired",
     expiredBody: "Ad spend is no longer fetched. Log in again to continue.",
+    expiredTitleManual: "The Meta token has expired",
+    expiredBodyManual: "Ad spend is no longer fetched. Paste a new token below to continue.",
     loginCancelled: "Login cancelled — nothing was changed.",
     loginDeclined: "You didn't allow access to your ads — nothing was changed. Log in again and keep “Ads” allowed.",
     loginNoAccounts: "That Facebook account has no ad accounts — nothing was changed. Log in with the account that manages your ads.",
@@ -439,12 +443,16 @@ const en = {
       "ad spend could not be fetched — excluded so the total isn't overstated",
     loginExpired:
       "the Facebook login has expired — open that store's Settings and log in again; excluded until then",
+    accountNotChosen:
+      "Meta is connected but no ad account is chosen — open that store's Settings and pick one; excluded until then",
     loginExpiresSoon: (days: number) =>
       days <= 0
         ? "the Facebook login expires today — open that store's Settings and log in again"
         : `the Facebook login expires in ${days} ${days === 1 ? "day" : "days"} — open that store's Settings and log in again`,
     notesTitle: "Needs attention in another store",
     fxUnavailable: (from: string, to: string) => `exchange rate ${from}→${to} could not be fetched`,
+    fxNote: (day: string) =>
+      `Each day is converted at that day's ECB exchange rate. Latest rate: ${day}.`,
   },
 };
 
@@ -502,6 +510,7 @@ const sv: Texts = {
       metaHintDone: "Annonskostnaden hämtas automatiskt varje dag.",
       metaHintTodo: "Utan koppling räknas annonskostnaden som noll och vinsten blir för hög.",
       metaHintPending: "Inloggad med Facebook — välj annonskonto under Inställningar för att bli klar.",
+      metaHintPendingManual: "En token är sparad — fyll i annonskonto-ID under Inställningar för att bli klar.",
       metaHintBroken: "Kopplad, men annonskostnaden går inte att hämta just nu — se meddelandet nedan och logga in igen om det står så.",
       ctaPickAccount: "Välj annonskonto",
       ctaSettings: "Till Inställningar",
@@ -552,7 +561,8 @@ const sv: Texts = {
     spendErrors: {
       "no-connection": "Meta är inte kopplat — annonskostnaden saknas, så vinsten blir för hög.",
       "no-account": "Inloggad med Facebook, men inget annonskonto valt än. Annonskostnaden hämtas inte förrän du valt ett.",
-      expired: "Facebook-inloggningen har gått ut — annonskostnaden hämtas inte längre. Logga in igen under Inställningar.",
+      "no-account-manual": "En Meta-token är sparad, men inget annonskonto valt än. Annonskostnaden hämtas inte förrän du fyllt i ett under Inställningar.",
+      expired: "Meta-kopplingen har gått ut — annonskostnaden hämtas inte längre. Förnya den under Inställningar.",
       retrying: "Annonskostnaden gick inte att hämta just nu — nytt försök om några minuter.",
       "fetch-failed": (reason: string) => `Kunde inte hämta annonskostnaden: ${reason}`,
     },
@@ -805,6 +815,8 @@ const sv: Texts = {
         : `Facebook-inloggningen går ut om ${days} ${days === 1 ? "dag" : "dagar"} — logga in igen så att annonskostnaden fortsätter komma in.`,
     expiredTitle: "Facebook-inloggningen har gått ut",
     expiredBody: "Annonskostnaden hämtas inte längre. Logga in igen för att fortsätta.",
+    expiredTitleManual: "Meta-token har gått ut",
+    expiredBodyManual: "Annonskostnaden hämtas inte längre. Klistra in en ny token nedan för att fortsätta.",
     loginCancelled: "Inloggningen avbröts — inget ändrades.",
     loginDeclined: "Du gav inte tillgång till dina annonser — inget ändrades. Logga in igen och låt ”Annonser” vara ibockat.",
     loginNoAccounts: "Det Facebook-kontot har inga annonskonton — inget ändrades. Logga in med kontot som sköter dina annonser.",
@@ -876,12 +888,16 @@ const sv: Texts = {
       "annonskostnaden gick inte att hämta — utesluten så att summan inte blir för hög",
     loginExpired:
       "Facebook-inloggningen har gått ut — öppna den butikens Inställningar och logga in igen; utesluten tills dess",
+    accountNotChosen:
+      "Meta är kopplat men inget annonskonto är valt — öppna den butikens Inställningar och välj ett; utesluten tills dess",
     loginExpiresSoon: (days: number) =>
       days <= 0
         ? "Facebook-inloggningen går ut idag — öppna den butikens Inställningar och logga in igen"
         : `Facebook-inloggningen går ut om ${days} ${days === 1 ? "dag" : "dagar"} — öppna den butikens Inställningar och logga in igen`,
     notesTitle: "Behöver göras i en annan butik",
     fxUnavailable: (from: string, to: string) => `växelkurs ${from}→${to} kunde inte hämtas`,
+    fxNote: (day: string) =>
+      `Varje dag räknas om med den dagens ECB-kurs. Senaste kurs: ${day}.`,
   },
 };
 

@@ -134,6 +134,8 @@ export async function action({ request }: ActionFunctionArgs) {
       data: { metaAdAccountId: nyttKonto, ...(kontoBytt ? { spendCurrency: null } : {}) },
     });
     if (kontoBytt) await prisma.dailySpend.deleteMany({ where: { shop: session.shop } });
+    /* Kontobyte: det gamla kontots backoff får inte ärvas — samma regel som Spara. */
+    if (kontoBytt) glomMetaFel(session.shop);
     return json({ ok: true, message: T.settings.accountSaved(String(f.get("name") ?? nyttKonto)) });
   }
 
@@ -284,6 +286,8 @@ export default function Settings() {
     const fraga = () => {
       if (Date.now() - start > 5 * 60 * 1000) {
         setVantar(false);
+        setLoginUrl(null);
+        setPopupBlocked(false);
         setLoginBesked(T.settings.loginNothingBack);
         return;
       }
@@ -302,6 +306,7 @@ export default function Settings() {
   const klar = () => {
     setVantar(false);
     setLoginUrl(null);
+    setPopupBlocked(false);
     setLoginBesked(null);
     revalidator.revalidate();
   };
@@ -326,6 +331,7 @@ export default function Settings() {
       }
       setVantar(false);
       setLoginUrl(null);
+      setPopupBlocked(false);
       const besked: Record<string, string> = {
         cancelled: T.settings.loginCancelled,
         declined: T.settings.loginDeclined,
@@ -483,8 +489,23 @@ export default function Settings() {
                           <div>
                             {/* Vanlig länk, inte Polaris Button: den sätter
                                 rel="noreferrer" på _blank, och /meta/start
-                                behöver Referer i webbläsare utan Sec-Fetch-Site. */}
-                            <a href={loginUrl} target="_blank" rel="noopener">
+                                behöver Referer i webbläsare utan Sec-Fetch-Site.
+                                rel="opener" (moderna webbläsare ger _blank
+                                noopener som standard) så att klar-sidans
+                                postMessage har någon att prata med. Sidan är
+                                vår egen — inget främmande får referensen. */}
+                            <a
+                              href={loginUrl}
+                              target="_blank"
+                              rel="opener"
+                              onClick={(e) => {
+                                const w = window.open(loginUrl, "meta-login");
+                                if (w) {
+                                  e.preventDefault();
+                                  popup.current = w;
+                                }
+                              }}
+                            >
                               {T.settings.loginOpenLink}
                             </a>
                           </div>
@@ -503,8 +524,13 @@ export default function Settings() {
               ) : null}
 
               {utgangen ? (
-                <Banner tone="critical" title={T.settings.expiredTitle}>
-                  {T.settings.expiredBody}
+                /* Utan inloggningsknapp på den här tjänsten är "logga in igen"
+                   fel råd — då är åtgärden en ny inklistrad token. */
+                <Banner
+                  tone="critical"
+                  title={d.metaLogin ? T.settings.expiredTitle : T.settings.expiredTitleManual}
+                >
+                  {d.metaLogin ? T.settings.expiredBody : T.settings.expiredBodyManual}
                 </Banner>
               ) : snartSlut ? (
                 <Banner tone="warning">{T.settings.expiresSoon(d.metaTokenDagar!)}</Banner>

@@ -334,15 +334,24 @@ i hans ordning:
 1. **Facebook-inloggning** — BYGGD 2026-09-07 (build meta-login-v64), inte
    verifierad skarpt. Se avsnittet "Logga in med Facebook" nedan för vad som
    återstår hos Axel (Meta-appen + Railway-variabler) och vad som är oprövat.
-2. **Växelkursen:** "dubbelkolla automatisk live växelkurs och gör så att den
+2. **Växelkursen — KLART 2026-09-07 (build fx-per-dag-v66), oprövat skarpt.**
+   Axels ord: "dubbelkolla automatisk live växelkurs och gör så att den
    uppdateras dagligen så man ser sina faktiska marginaler i alla marknader."
-   Läge idag: annonskostnaden räknas om per DAG med dagens ECB-kurs
-   (`meta.server.ts`, `fetchRates`), men **gruppsumman använder EN kurs —
-   dagens — för hela perioden** (`group.server.ts` → `rate()` i
-   `fx.server.ts`, 6 h cache). En 30-dagarsvy i gemensam valuta mäter alltså
-   valutamarknaden i dag, inte den dag försäljningen skedde. Att göra: per-dag-
-   kurs även i gruppsumman (dagsraderna finns redan per dag), och visa kursens
-   datum i UI:t.
+   Granskningen bekräftade felet: annonskostnaden räknades redan per DAG
+   (`meta.server.ts`, `fetchRates`), men **gruppsumman använde EN kurs —
+   dagens — för hela perioden**, så en 30-dagarsvy flyttade sig varje gång
+   kronan rörde sig. Nu: `dailyRates()` i `fx.server.ts` (intervall från
+   Frankfurter, cache per valutapar, 1 h omkoll när dagens kurs saknas,
+   nödfall 7 dagar) + `convertTotalsPerDay()` i `group.server.ts` —
+   försäljning, ordrar/tull och annonskostnad exakt per dag, avgifter följer
+   försäljningen, fasta med medelkurs, **COGS med försäljningsvägd kurs**
+   (motorn får produktmixen aggregerad; felet är promille). Stängda dagar
+   ändras aldrig; i dag/helg får senast publicerade kurs. Kursdatumet visas
+   under grupptabellen (`fxNote`). 20 tester med mockad fetch. Kvar: byt
+   `meta.server.ts` `fetchRates` mot `dailyRates` (samma format, egen cache).
+   Oprövat: Frankfurter nåddes inte från sessionen (proxy 403) — om
+   intervall-svaret glesas ut över 90 dagar tar `rateOn` ändå närmaste
+   tidigare kurs.
 3. **Juicy → StonePNL COGS-flytt:** "alla som använder Juicy sedan tidigare
    ska på max 3 knapptryck få in sina nuvarande COGS i vår app utan manuella
    grejer." Importen finns (`cost-import.server.ts`, CSV `titel;variant;
@@ -476,9 +485,23 @@ rullista. Den inklistrade token-vägen finns kvar under en hopfällbar rubrik.
 - **Gruppsumman** namnger butiker vars inloggning går ut inom 14 dagar
   (`notes`) och skiljer "inloggningen har gått ut" från andra spend-fel —
   åtgärden är alltid DEN butikens Inställningar.
-- **Backoffen** i `meta.server.ts` är nycklad på butik + tokenavtryck och
-  glöms (`glomMetaFel`) när en ny token sparas — annars sa panelen "kunde inte
-  hämtas" i fem minuter efter en lyckad inloggning.
+- **Backoffen** i `meta.server.ts` är nycklad på butik + tokenavtryck + konto
+  och glöms (`glomMetaFel`) när en ny token eller ett nytt konto sparas —
+  annars sa panelen "kunde inte hämtas" i fem minuter efter en lyckad
+  inloggning. Den minns också OM felet var 190 (`utgangen`).
+- **Död token är inte en hicka** (andra granskningsrundan, 22 agenter):
+  panelen visade röd "inloggningen har gått ut" ovanför gröna KPI:er, för
+  `getSpend` serverade den frusna dagsraden utan fel. Nu tar `getSpend`
+  `tokenExpired` från anroparen (utgången passerad) och minns 190: inget nytt
+  anrop, dagen som fortfarande rör sig hålls utanför svaret (→ "för hög —
+  annonsdata saknas") och `errorCode: "expired"` sätts. Backoff-grenen
+  (nås av gruppsumman) flaggar ALLTID — förut summerades en butik med
+  stillastående annonskostnad tyst. Gruppsumman utesluter också "token utan
+  valt konto" (`accountNotChosen`). Avinstallation raderar `DailySpend`
+  (annars serverades förra kontots dagar under nästa konto). Callbacken
+  kräver kontolistan när ett konto redan är sparat — kan den inte hämtas
+  sparas inget. Fönster-fallbacklänken har `rel="opener"` (annars når
+  klar-sidans postMessage aldrig Settings).
 - **Deploy-branch:** pnl-app bygger från `claude/bäverbutiken-settkopplingen-
   nba21z`, INTE från `main` (root-CLAUDE.md:s "bara main gäller" handlar om
   Bäverbutikens rutiner). En push till fel gren gör att healthz-markören

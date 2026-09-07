@@ -160,6 +160,12 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
      intern hos Shopify. Tom serie => "—" i panelen. */
   const sessions: never[] = [];
 
+  /* Dagar kvar på Meta-token (null = okänd). Passerad utgång går in i
+     getSpend: inget dömt anrop, och dagen som fortfarande rör sig serveras
+     inte som färdig — annars stod KPI:erna gröna under en röd banner. */
+  const metaTokenDagar = dagarKvar(settings.metaTokenExpiresAt);
+  const tokenExpired = metaTokenDagar != null && metaTokenDagar < 0;
+
   const spend = await getSpend(
     shop,
     settings.metaAdAccountId && settings.metaAccessToken
@@ -170,18 +176,20 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     today,
     settings.currency,
     settings.spendCurrency,
+    { tokenExpired },
   );
 
   const metaConfigured = Boolean(settings.metaAdAccountId && settings.metaAccessToken);
   /* Inloggad via Facebook men inget annonskonto valt än — halva steget. */
   const metaPending = Boolean(settings.metaAccessToken && !settings.metaAdAccountId);
+  const metaLoginSource = settings.metaTokenSource === "login";
 
   /* Annonskostnadens fel som EN översatt text per läge. Koden kommer från
      meta.server; "inloggad men inget konto valt" är panelens eget läge —
      utan det stod det "Meta är inte kopplat" bredvid "Inloggad som Axel". */
   const spendTexter = t(lang).dashboard.spendErrors;
   const spendError: string | null = metaPending
-    ? spendTexter["no-account"]
+    ? spendTexter[metaLoginSource ? "no-account" : "no-account-manual"]
     : spend.errorCode === "fetch-failed"
       ? spendTexter["fetch-failed"](spend.error?.replace(/^Could not fetch ad spend: /, "") ?? "")
       : spend.errorCode
@@ -196,6 +204,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     dismissed: Boolean(settings.setupDismissedAt),
     meta: metaConfigured && !spend.error,
     metaPending,
+    metaLoginSource,
     /* Kopplad (token + konto) men hämtningen misslyckas — inte "koppla". */
     metaBroken: metaConfigured && Boolean(spend.error),
     fixed: fixedRows.length > 0,
@@ -253,6 +262,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
         ? { adAccountId: settings.metaAdAccountId!, accessToken: decrypt(settings.metaAccessToken)! }
         : null,
       prevFrom, prevTo, today, settings.currency, settings.spendCurrency,
+      { tokenExpired },
     );
     const prev = compute({
       from: prevFrom, to: prevTo,
@@ -296,7 +306,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     groupSize,
     group,
     setup: setup as {
-      dismissed: boolean; meta: boolean; metaPending: boolean; metaBroken: boolean; fixed: boolean; settings: boolean;
+      dismissed: boolean; meta: boolean; metaPending: boolean; metaLoginSource: boolean; metaBroken: boolean; fixed: boolean; settings: boolean;
     } | null,
     fixedCount: fixedRows.length,
     dataAgeMin,
@@ -304,10 +314,10 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     result,
     rangeKey,
     currency: settings.currency,
-    /* Dagar kvar på Facebook-inloggningen (null = okänd/manuell token). Visas
-       som varning i god tid — en token som dör tyst ger saknad annonskostnad
-       och en vinst som ser för bra ut. */
-    metaTokenDagar: dagarKvar(settings.metaTokenExpiresAt),
+    /* Dagar kvar på Meta-token (null = okänd). Visas som varning i god tid —
+       en token som dör tyst ger saknad annonskostnad och en vinst som ser
+       för bra ut. */
+    metaTokenDagar,
     spendError,
     spendCurrencyMismatch: spend.currencyMismatch ?? null,
     spendConverted: spend.converted ?? null,
@@ -338,7 +348,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
       comparison: null as { totalSales: number; orders: number; spend: number; netProfit: number } | null,
       groupSize: 1,
       group: null as Awaited<ReturnType<typeof summeraGrupp>> | null,
-      setup: null as { dismissed: boolean; meta: boolean; metaPending: boolean; metaBroken: boolean; fixed: boolean; settings: boolean } | null,
+      setup: null as { dismissed: boolean; meta: boolean; metaPending: boolean; metaLoginSource: boolean; metaBroken: boolean; fixed: boolean; settings: boolean } | null,
       fixedCount: 0,
       dataAgeMin: 0,
       refreshing: false,
@@ -743,7 +753,9 @@ function SetupChecklist({
       hint: setup.meta
         ? T.dashboard.setup.metaHintDone
         : setup.metaPending
-          ? T.dashboard.setup.metaHintPending
+          ? setup.metaLoginSource
+            ? T.dashboard.setup.metaHintPending
+            : T.dashboard.setup.metaHintPendingManual
           : setup.metaBroken
             ? T.dashboard.setup.metaHintBroken
             : T.dashboard.setup.metaHintTodo,
@@ -1020,6 +1032,12 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                         />
                       </Card>
 
+                      {group.fxDate ? (
+                        <Text as="span" variant="bodySm" tone="subdued">
+                          {T.group.fxNote(group.fxDate)}
+                        </Text>
+                      ) : null}
+
                       {group.notes?.length ? (
                         <Banner tone="warning" title={T.group.notesTitle}>
                           {group.notes.map((n) => (
@@ -1068,12 +1086,13 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                 läses som en bra dag. Utgången ersätter spend-felet (samma sak,
                 en banner). */}
             {metaTokenDagar != null && metaTokenDagar < 0 ? (
+              /* Neutral text: panelen vet inte om tjänsten har inloggnings-
+                 knappen — Settings visar rätt råd (logga in / klistra in). */
               <Banner
                 tone="critical"
-                title={T.settings.expiredTitle}
-                action={{ content: T.settings.reconnectButton, url: "/app/settings" }}
+                action={{ content: T.dashboard.setup.ctaSettings, url: "/app/settings" }}
               >
-                {T.settings.expiredBody}
+                {T.dashboard.spendErrors.expired}
               </Banner>
             ) : spendError ? (
               <Banner

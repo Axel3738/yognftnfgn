@@ -9,13 +9,16 @@
  * vilka butiker som saknas istället för att summan tyst blir för låg.
  *
  * Valuta: varje butik räknas om till den betraktande butikens valuta med
- * dagskurs. Går kursen inte att hämta utesluts butiken och namnges — en summa
- * där NOK och GBP lagts ihop rakt av är värre än en ofullständig summa.
+ * kursen för RESPEKTIVE DAG (ECB via Frankfurter). Fram till 2026-09-07 gick
+ * hela perioden på en enda kurs — dagens — så en 30-dagarsvy ändrade sig
+ * varje gång kronan rörde sig, även för dagar som var stängda sedan veckor.
+ * Går kurserna inte att hämta utesluts butiken och namnges — en summa där
+ * NOK och GBP lagts ihop rakt av är värre än en ofullständig summa.
  */
 
 import prisma from "../db.server";
-import { compute } from "./pnl.server";
-import { rate } from "./fx.server";
+import { compute, type SalesDay, type SpendDay } from "./pnl.server";
+import { dailyRates, latestRateDay, rateOn, type DailyRates } from "./fx.server";
 import { readDaily, refreshShopDaily, shiftIso } from "./daily.server";
 import { getSpend } from "./meta.server";
 import { dayInTz } from "./shopify-data.server";
@@ -45,6 +48,12 @@ export interface GroupResult {
    *  Facebook där, innan dess annonskostnad försvinner ur summan. Bara den
    *  butik man står i visar annars sin egen varning. */
   notes: { shop: string; text: string }[];
+  /**
+   * Senaste ECB-dag vars kurs användes (den äldsta bland butikerna, så att
+   * datumet aldrig lovar mer än vad summan håller). Null när ingen butik
+   * behövde räknas om.
+   */
+  fxDate: string | null;
 }
 
 const noll = (): GroupTotals => ({
@@ -53,6 +62,82 @@ const noll = (): GroupTotals => ({
 
 type Medlem = Awaited<ReturnType<typeof prisma.shopSettings.findMany>>[number];
 
+/**
+ * Räknar om en butiks periodsumma till betraktarens valuta, dag för dag.
+ *
+ * Varför inte inne i `compute()`: motorn får produktmixen aggregerad för hela
+ * perioden (dagsradernas `products` slås ihop i `readDaily`), så COGS finns
+ * inte per dag utan att motorn byggs om. Det som FINNS per dag — försäljning,
+ * ordrar och annonskostnad — räknas om exakt med den dagens kurs. Resten
+ * följer den post den är proportionell mot:
+ *   - avgifter = feeRate × försäljning → försäljningens dagsvägda kurs (exakt)
+ *   - tull     = ordrar × tull/order   → ordrarnas dagsvägda kurs (exakt)
+ *   - fasta    = samma belopp varje dag → medelkurs över dagarna (exakt)
+ *   - COGS     → försäljningens dagsvägda kurs (approximation: antar att
+ *                marginalen är ungefär lika från dag till dag; felet är
+ *                kursens spridning inom perioden gånger marginalens spridning,
+ *                i praktiken promille av COGS — mot de procent som en enda
+ *                dagsaktuell kurs på en 30-dagarsperiod gav)
+ * Butikens egen panel i butikens valuta påverkas inte alls.
+ *
+ * undefined = någon dag saknade kurs även efter bakåtsökning; butiken ska då
+ * uteslutas och namnges, aldrig räknas med en gissad kurs.
+ */
+export function convertTotalsPerDay(
+  tt: GroupTotals,
+  sales: SalesDay[],
+  spend: SpendDay[],
+  rates: DailyRates,
+  from: string,
+  to: string,
+): GroupTotals | undefined {
+  const dagar = sales.filter((s) => s.day >= from && s.day <= to);
+
+  let omsKr = 0, oms = 0, orderKr = 0, ordrar = 0, kursSumma = 0;
+  for (const s of dagar) {
+    const k = rateOn(rates, s.day);
+    if (k == null) return undefined;
+    omsKr += s.totalSales * k;
+    oms += s.totalSales;
+    orderKr += s.orders * k;
+    ordrar += s.orders;
+    kursSumma += k;
+  }
+  /* Utan säljdagar är alla säljposter (och de fasta, som räknas per säljdag)
+     noll i compute() — bara annonskostnaden nedan kan ha ett belopp. */
+  const medel = dagar.length ? kursSumma / dagar.length : 0;
+  /* Vägd kurs; utan underlag (noll försäljning / noll ordrar) är posten noll
+     och vilken kurs som helst ger noll — medelkursen håller det ärligt. */
+  const kursOms = oms > 0 ? omsKr / oms : medel;
+  const kursOrder = ordrar > 0 ? orderKr / ordrar : medel;
+
+  let spendKr = 0;
+  for (const d of spend) {
+    if (d.day < from || d.day > to) continue;
+    const k = rateOn(rates, d.day);
+    if (k == null) return undefined;
+    spendKr += d.spend * k;
+  }
+
+  const totalSales = tt.totalSales * kursOms;
+  const cogs = tt.cogs * kursOms;
+  const tariff = tt.tariff * kursOrder;
+  const fees = tt.fees * kursOms;
+  const fixedCosts = tt.fixedCosts * medel;
+  return {
+    totalSales,
+    orders: tt.orders, // antal, ingen omräkning
+    cogs,
+    tariff,
+    fees,
+    spend: spendKr,
+    fixedCosts,
+    /* Samma ekvation som i compute(): bruttovinst − annonser − fasta. Räknas
+       ur de omräknade delarna så summan alltid går ihop med sina delposter. */
+    netProfit: totalSales - cogs - tariff - fees - spendKr - fixedCosts,
+  };
+}
+
 async function summeraButik(
   m: Medlem,
   from: string,
@@ -60,7 +145,7 @@ async function summeraButik(
   visaValuta: string,
   T: ReturnType<typeof t>,
 ): Promise<
-  | { ok: true; shop: string; currency: string; totals: ReturnType<typeof compute>["totals"]; kurs: number; note?: string }
+  | { ok: true; shop: string; currency: string; totals: GroupTotals; fxDate: string | null; note?: string }
   | { ok: false; shop: string; reason: string }
 > {
   /* "Idag" i BUTIKENS tidszon. UTC-dagen släpar efter mellan midnatt och
@@ -130,8 +215,11 @@ async function summeraButik(
     }
   }
 
-  const kurs = await rate(m.currency, visaValuta);
-  if (kurs == null) {
+  /* Kurs per dag för hela intervallet — en hämtning per butik, cachad. Dagens
+     egen kurs finns först ~16 CET och helger saknas: de dagarna får senast
+     publicerade kurs, medan stängda dagar behåller sin egen för alltid. */
+  const kurser = await dailyRates(m.currency, visaValuta, from, to);
+  if (!kurser) {
     return { ok: false, shop: m.shop, reason: T.group.fxUnavailable(m.currency, visaValuta) };
   }
 
@@ -145,6 +233,18 @@ async function summeraButik(
     m.metaAdAccountId && metaToken
       ? { adAccountId: m.metaAdAccountId, accessToken: metaToken }
       : null;
+
+  /* Token sparad men inget annonskonto valt (flera konton i listan, eller
+     inklistrad token utan konto): ingen annonskostnad går att hämta, och
+     butikens egen panel säger "för hög". Summan får inte räkna in samma
+     butik som noll annonskostnad — uteslut och namnge, som en utgången
+     inloggning. */
+  if (m.metaAccessToken && !m.metaAdAccountId) {
+    return { ok: false, shop: m.shop, reason: T.group.accountNotChosen };
+  }
+  /* Känd utgång (inloggning eller inklistrad token med känt datum): getSpend
+     gör då inget dömt anrop och serverar inte den rörliga dagen som färdig. */
+  const utgangsDagar = dagarKvar(m.metaTokenExpiresAt);
   const [costChanges, costTiers, fixedRows, spendData] = await Promise.all([
     prisma.costChange.findMany({ where: { shop: m.shop } }),
     prisma.costTier.findMany({ where: { shop: m.shop } }),
@@ -152,7 +252,10 @@ async function summeraButik(
     /* syncFresh: även annonskostnadens färskhet väntas in — dagens spend är
        halva vinstkalkylen, och en bakgrundshämtning hade lämnat samma lucka
        som dagssiffrorna nyss hade. */
-    getSpend(m.shop, metaCfg, from, to, idag, m.currency, m.spendCurrency, { syncFresh: true }),
+    getSpend(m.shop, metaCfg, from, to, idag, m.currency, m.spendCurrency, {
+      syncFresh: true,
+      tokenExpired: utgangsDagar != null && utgangsDagar < 0,
+    }),
   ]);
 
   /* Annonskostnaden måste vara komplett för att summan ska betyda något.
@@ -210,7 +313,14 @@ async function summeraButik(
     },
   });
 
-  return { ok: true, shop: m.shop, currency: m.currency, totals: r.totals, kurs, note };
+  const totals = convertTotalsPerDay(r.totals, daily.sales, spendData.days, kurser, from, to);
+  if (!totals) {
+    /* En dag utan kurs inom tio dagar bakåt: kartan täcker inte intervallet
+       (ett trunkerat svar, eller nödfallscachen räckte inte). Gissa inte. */
+    return { ok: false, shop: m.shop, reason: T.group.fxUnavailable(m.currency, visaValuta) };
+  }
+  const fxDate = m.currency === visaValuta ? null : (latestRateDay(kurser, to) ?? null);
+  return { ok: true, shop: m.shop, currency: m.currency, totals, fxDate, note };
 }
 
 export async function summeraGrupp(
@@ -241,6 +351,7 @@ export async function summeraGrupp(
   const rows: GroupResult["rows"] = [];
   const missing: GroupResult["missing"] = [];
   const notes: GroupResult["notes"] = [];
+  let fxDate: string | null = null;
 
   for (const u of utfall) {
     if (!u.ok) {
@@ -248,24 +359,26 @@ export async function summeraGrupp(
       continue;
     }
     if (u.note) notes.push({ shop: u.shop, text: u.note });
+    /* Redan omräknat per dag till betraktarens valuta i summeraButik. */
     const tt = u.totals;
-    totals.totalSales += tt.totalSales * u.kurs;
-    totals.orders += tt.orders; // antal, ingen omräkning
-    totals.cogs += tt.cogs * u.kurs;
-    totals.tariff += tt.tariff * u.kurs;
-    totals.fees += tt.fees * u.kurs;
-    totals.spend += tt.spend * u.kurs;
-    totals.fixedCosts += tt.fixedCosts * u.kurs;
-    totals.netProfit += tt.netProfit * u.kurs;
+    totals.totalSales += tt.totalSales;
+    totals.orders += tt.orders;
+    totals.cogs += tt.cogs;
+    totals.tariff += tt.tariff;
+    totals.fees += tt.fees;
+    totals.spend += tt.spend;
+    totals.fixedCosts += tt.fixedCosts;
+    totals.netProfit += tt.netProfit;
+    if (u.fxDate && (!fxDate || u.fxDate < fxDate)) fxDate = u.fxDate;
 
     rows.push({
       shop: u.shop,
       currency: u.currency,
-      totalSales: tt.totalSales * u.kurs,
-      netProfit: tt.netProfit * u.kurs,
-      spend: tt.spend * u.kurs,
+      totalSales: tt.totalSales,
+      netProfit: tt.netProfit,
+      spend: tt.spend,
     });
   }
 
-  return { currency: visaValuta, totals, rows, missing, notes };
+  return { currency: visaValuta, totals, rows, missing, notes, fxDate };
 }

@@ -146,8 +146,11 @@ export async function getSpend(
   shopCurrency?: string,
   storedSpendCurrency?: string | null,
   /** syncFresh: vänta in även rena färskhetsuppdateringar (gruppsumman) i
-      stället för att servera gamla rader och hämta i bakgrunden (panelen). */
-  opts?: { syncFresh?: boolean },
+      stället för att servera gamla rader och hämta i bakgrunden (panelen).
+      tokenExpired: anroparen VET att token gått ut (metaTokenExpiresAt har
+      passerat) — då görs inget dömt anrop, och den dag som fortfarande rör
+      sig serveras inte som om den vore färdig. */
+  opts?: { syncFresh?: boolean; tokenExpired?: boolean },
 ): Promise<{
   days: { day: string; spend: number; impressions: number; clicks: number }[];
   error?: string;
@@ -239,7 +242,17 @@ export async function getSpend(
      limit) ska inte betala ett nytt dömt anrop på varje sidladdning. Cachen
      serveras och `error` sätts så anroparen vet att spend är ofullständig. */
   const felKey = felNyckel(shop, cfg);
-  const nyligenFel = Date.now() - (senasteMetaFel.get(felKey) ?? 0) < 5 * 60 * 1000;
+  const fel = senasteMetaFel.get(felKey);
+  const nyligenFel = Date.now() - (fel?.at ?? 0) < 5 * 60 * 1000;
+  /* Död token: anroparen vet att utgången passerat, eller senaste försöket
+     gav 190. En död token är inte en hicka — inget nytt anrop, och dagen
+     som fortfarande rör sig får inte serveras som om den vore färdig. Utan
+     den i svaret listar compute() dagen som saknad, och panelen säger "för
+     hög — annonsdata saknas" i stället för grönt. */
+  const dod = Boolean(opts?.tokenExpired) || (nyligenFel && fel?.utgangen === true);
+  const UTGANGEN_MSG = "The Meta token has expired — reconnect under Settings.";
+  const rorlig = (day: string) => day >= today && stale.includes(day);
+  const minnesFel = (e: unknown) => ({ at: Date.now(), utgangen: e instanceof MetaError && e.needsReauth });
 
   if (stale.length && !radSaknas && !opts?.syncFresh) {
     /* Alla dagar finns, bara färskheten släpar: servera databasen direkt och
@@ -247,28 +260,29 @@ export async function getSpend(
        en panel som svarar omedelbart. Säger minutspärren nej pågår (eller
        gjordes nyss) redan en hämtning — då serveras cachen som den är, den
        får INTE trilla ner i den synkrona grenen och blockera panelen. */
-    if (!nyligenFel && farUppdateraMeta(shop)) {
+    if (!dod && !nyligenFel && farUppdateraMeta(shop)) {
       void refreshSpend(shop, cfg, stale, needsFx, spendCurrency, shopCurrency).catch((e) => {
-        senasteMetaFel.set(felKey, Date.now());
+        senasteMetaFel.set(felKey, minnesFel(e));
         console.error(`Meta-bakgrundshämtning för ${shop} misslyckades:`, e);
       });
     }
   } else if (stale.length && nyligenFel) {
-    /* Rader saknas men senaste försöket small: servera det som finns och
-       flagga — utan flaggan ser saknade dagar ut som noll annonskostnad. */
+    /* Senaste försöket small nyss: servera det som finns och FLAGGA — alltid.
+       Hit kommer bara den som saknar rader eller väntar in färskhet
+       (gruppsumman); utan flaggan räknade den in en butik vars annonskostnad
+       stod stilla, och summan blev tyst för hög. */
+    const utg = fel?.utgangen ?? false;
     return {
-      days: cached.map((r) => ({
-        day: iso(r.day),
-        spend: Number(r.spend),
-        impressions: r.impressions,
-        clicks: r.clicks,
-      })),
-      ...(radSaknas
-        ? {
-            error: "Ad spend could not be fetched just now — retrying in a few minutes.",
-            errorCode: "retrying" as const,
-          }
-        : {}),
+      days: cached
+        .filter((r) => !(utg && rorlig(iso(r.day))))
+        .map((r) => ({
+          day: iso(r.day),
+          spend: Number(r.spend),
+          impressions: r.impressions,
+          clicks: r.clicks,
+        })),
+      error: utg ? UTGANGEN_MSG : "Ad spend could not be fetched just now — retrying in a few minutes.",
+      errorCode: utg ? ("expired" as const) : ("retrying" as const),
       ...fxStatus(
         needsFx,
         !cached.some((r) => r.fxRate == null && Number(r.spend) !== 0),
@@ -276,16 +290,14 @@ export async function getSpend(
         shopCurrency,
       ),
     };
-  } else if (stale.length) {
+  } else if (stale.length && !dod) {
     try {
       fxOk = await refreshSpend(shop, cfg, stale, needsFx, spendCurrency, shopCurrency);
       senasteMetaFel.delete(felKey);
     } catch (e) {
-      senasteMetaFel.set(felKey, Date.now());
+      senasteMetaFel.set(felKey, minnesFel(e));
       const utgangen = e instanceof MetaError && e.needsReauth;
-      const msg = utgangen
-        ? "The Meta token has expired — reconnect under Settings."
-        : `Could not fetch ad spend: ${(e as Error).message}`;
+      const msg = utgangen ? UTGANGEN_MSG : `Could not fetch ad spend: ${(e as Error).message}`;
       const cachadOomräknad =
         needsFx &&
         [...byDay.values()].some((r) => r.fxRate == null && Number(r.spend) !== 0);
@@ -312,13 +324,19 @@ export async function getSpend(
   if (needsFx && fresh.some((r) => r.fxRate == null && Number(r.spend) !== 0)) {
     fxOk = false;
   }
+  /* Känd död token med dagar som skulle behövt hämtas om: den rörliga dagen
+     hålls utanför svaret och felet sägs rakt ut. */
+  const dodMedLuckor = dod && stale.length > 0;
   return {
-    days: fresh.map((r) => ({
-      day: iso(r.day),
-      spend: Number(r.spend),
-      impressions: r.impressions,
-      clicks: r.clicks,
-    })),
+    days: fresh
+      .filter((r) => !(dodMedLuckor && rorlig(iso(r.day))))
+      .map((r) => ({
+        day: iso(r.day),
+        spend: Number(r.spend),
+        impressions: r.impressions,
+        clicks: r.clicks,
+      })),
+    ...(dodMedLuckor ? { error: UTGANGEN_MSG, errorCode: "expired" as const } : {}),
     ...fxStatus(needsFx, fxOk, spendCurrency, shopCurrency),
   };
 }
@@ -327,9 +345,9 @@ export async function getSpend(
    Nyckeln bär även ett kort avtryck av token: en ny token efter "logga in
    igen" ska inte ärva den gamla tokens fem minuters paus — inte ens i de
    fem andra processerna, som inte får veta att någon loggat in. */
-const senasteMetaFel = new Map<string, number>();
+const senasteMetaFel = new Map<string, { at: number; utgangen: boolean }>();
 const felNyckel = (shop: string, cfg: MetaConfig) =>
-  `${shop}:${createHash("sha256").update(cfg.accessToken).digest("hex").slice(0, 8)}`;
+  `${shop}:${createHash("sha256").update(cfg.accessToken).digest("hex").slice(0, 8)}:${cfg.adAccountId.replace(/^act_/i, "")}`;
 
 /** Glöm backoffen för butiken (ny token sparad, koppling borttagen). */
 export function glomMetaFel(shop: string): void {

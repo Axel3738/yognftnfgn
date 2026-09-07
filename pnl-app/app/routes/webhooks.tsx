@@ -19,13 +19,18 @@ export async function action({ request }: ActionFunctionArgs) {
          gäller hela användaren. shop/redact kommer först ~48 h senare, och
          bara där compliance-topics finns. */
       const s = await prisma.shopSettings.findUnique({ where: { shop } });
-      if (s?.metaAccessToken) {
-        const token = s.metaTokenSource === "login" ? decrypt(s.metaAccessToken) : null;
-        const aterkalla = token ? await farAterkallas(shop, s.metaUserId) : false;
-        await prisma.shopSettings.update({ where: { shop }, data: META_TOMT });
-        if (token && aterkalla) void aterkallaToken(token, 3_000);
-      }
-      await prisma.metaLoginState.deleteMany({ where: { shop } });
+      const token = s?.metaAccessToken && s.metaTokenSource === "login" ? decrypt(s.metaAccessToken) : null;
+      const aterkalla = token ? await farAterkallas(shop, s!.metaUserId) : false;
+      /* Cachad annonskostnad hör till annonskontot: nollas kontot ska cachen
+         bort — annars serveras det gamla kontots dagar under nästa konto
+         efter en ominstallation. Allt i en transaktion, inom webhookens
+         fem sekunder. */
+      await prisma.$transaction([
+        ...(s?.metaAccessToken ? [prisma.shopSettings.update({ where: { shop }, data: META_TOMT })] : []),
+        prisma.dailySpend.deleteMany({ where: { shop } }),
+        prisma.metaLoginState.deleteMany({ where: { shop } }),
+      ]);
+      if (token && aterkalla) void aterkallaToken(token, 3_000);
       break;
     }
 
