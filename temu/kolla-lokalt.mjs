@@ -114,7 +114,8 @@ CHROME.some((f) => f && existsSync(f)) || finnsIPath(WIN ? 'chrome' : 'google-ch
 try {
   const r = await fetch(TEMU_PROV, { headers: { 'user-agent': WEBBLASARE }, signal: AbortSignal.timeout(20000) });
   const html = await r.text();
-  const bilder = new Set(html.match(/https:\/\/[a-z0-9.-]*kwcdn\.com\/[^"'\\ ]+/g) || []).size;
+  // Bara PRODUKT-bilder räknas: Temus tomma skal innehåller ändå ~40 UI-ikoner på kwcdn
+  const bilder = new Set(html.match(/https:\/\/[a-z0-9.-]*kwcdn\.com\/product\/[^"'\\ ]+/g) || []).size;
   bilder > 0
     ? ok(`Temu-provet gick igenom (${bilder} bild-URL:er i provsidan) — kör skördaren på riktigt för att vara säker`)
     : fel('Temu-provet gav ett TOMT skal (0 bild-URL:er)',
