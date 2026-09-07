@@ -268,6 +268,11 @@ enda fråga. `create_session` från en auto-session vägrar `dontAsk` och
 `bypassPermissions` ("exceeds parent"); `acceptEdits` går. Bygg nya rutiner
 likadant. Kvar i auto-läge (kan fråga): Commission, Norska recensioner,
 Bildannonser (fasta sessioner) och NO-videobatch (ny session varje gång).
+**Provkör aldrig en fast-session-rutin med `fire_trigger`:** mätt 2026-09-07
+startade den en NY session i auto-läge utan repo (`origin:
+force_run_trigger`) i stället för att väcka den bundna sessionen — bara
+cron-firingen går till den fasta sessionen. Vill du testa: skapa sessionen
+med ett självtest i `prompt` (så gjordes 2026-09-07, 7/7 gröna).
 
 ⚠️ **Rutiner ärver inte sessionens MCP-connectors.** En rutin som behöver Notion,
 Drive eller Shopify måste få connectorn kopplad på själva rutinen i Routines-vyn
