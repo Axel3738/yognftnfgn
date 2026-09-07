@@ -7,6 +7,15 @@ app-token — steg 3). `factory/checklista.mjs` generates a filled-in copy
 per store as `output/<id>/CHECKLISTA.md`. Everything not on this list is
 done by Claude Code (routine: `/ny-ops`, process: `factory/PROCESS.md`).
 
+## How this job works
+
+* The owner sends product batches about 2 times per week
+* A batch can be 0 products or several
+* Each product = one new store = run this checklist once
+* You have 3 days to launch every store in a batch
+* Start each store by writing /ny-ops + the product link in Claude Code
+* Claude tells you exactly when each click below is needed
+
 Fill in first:
 
 * STORE NAME: ____________

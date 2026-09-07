@@ -1,5 +1,10 @@
 # OPS-PROCESSEN — så byggs en butik, brick by brick
 
+**Kadensen** (Axels upplägg 2026-09-07): Axel väljer vinnarprodukter och
+skickar produktgrupper ~2 gånger i veckan — ibland noll, ibland flera.
+VA:n har **3 dagar per grupp** att launcha alla gruppens butiker; varje
+produkt = en egen butik = en `/ny-ops`-körning + en checklista.
+
 **Detta är rutinen under uppbyggnad** (Axels beslut 2026-09-07: uppdatera för
 varje steg vi lyckas med — dokumentet ska så småningom bli en körbar rutin).
 Varje steg är BEVISAT på Hemvakten→HeimGuard-bygget. Ordningen är den ordning
