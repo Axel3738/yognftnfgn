@@ -30,6 +30,7 @@ import { laddaEnv } from './env.mjs';
 import { byggFraktplan, byggFraktatgarder } from './frakt.mjs';
 import { lasState, skrivState, arKlart, markeraKlart } from './state.mjs';
 import {
+  valjButik,
   kontrolleraAnslutning,
   hamtaProduktViaHandle,
   skapaProdukt,
@@ -446,9 +447,15 @@ async function huvudflode({ butiksfil, produktfil, dryRun, resume, launch }) {
     return;
   }
 
-  // Skarpt läge: anslutningen är obligatorisk.
+  // Skarpt läge: anslutningen är obligatorisk. Nycklarna slås upp per butik
+  // (SHOPIFY_SHOP_<ID> m.fl. i miljön, annars factory/.env).
+  valjButik(butik.butik.id);
   try {
     ctx.shop = await kontrolleraAnslutning();
+    const forbjudna = ['pzjagy-mz', '4snrw0-mg'];
+    if (forbjudna.some((d) => ctx.shop.myshopifyDomain.startsWith(d))) {
+      throw new Error(`${ctx.shop.myshopifyDomain} är HeimGuard/Bäverbutiken — fel butik, rutinen rör den aldrig.`);
+    }
     console.log(`✅ Shopify: ${ctx.shop.name} (${ctx.shop.myshopifyDomain}, ${ctx.shop.currencyCode})`);
   } catch (e) {
     stopp('Shopify-kopplingen', [e.message]);

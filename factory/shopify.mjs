@@ -1,31 +1,111 @@
 // Shopify-kopplingen: officiella Admin GraphQL API:t via inbyggd fetch.
-// Noll beroenden. Tokens läses ENBART ur miljön (factory/.env) — aldrig hårdkodade.
+// Noll beroenden. Nycklar läses ENBART ur miljön — aldrig hårdkodade.
 //
-// Kräver:  SHOPIFY_STORE_DOMAIN  (ex: min-butik.myshopify.com)
-//          SHOPIFY_ADMIN_TOKEN   (Admin API access token från en custom app)
+// Två sätt att peka ut butiken (per-butik-tripletten vinner):
+//
+//  1. PER BUTIK i molnmiljön (Axels mall 2026-09-08), <ID> = butik.id i VERSALER:
+//       SHOPIFY_SHOP_<ID>            ex: y1sj1i-3d.myshopify.com
+//       SHOPIFY_CLIENT_ID_<ID>       appen "Fabriken" → Settings → Client ID
+//       SHOPIFY_CLIENT_SECRET_<ID>   appen "Fabriken" → Settings → Client secret
+//     Samma mönster som Bäverbutikens marknader (SHOPIFY_CLIENT_ID_SE …).
+//     ops.mjs anropar valjButik(<id>) efter att butiksfilen lästs.
+//
+//  2. factory/.env (gitignorerad): SHOPIFY_STORE_DOMAIN + antingen
+//     SHOPIFY_CLIENT_ID/SHOPIFY_CLIENT_SECRET eller en färdig
+//     SHOPIFY_ADMIN_TOKEN (shpat_…).
+//
+// Client ID + secret byts mot en färsk Admin-token via client credentials
+// grant (POST /admin/oauth/access_token) — samma väg som
+// tools/shopify-fix-compareat.mjs, verifierad mot Bäverbutiken 2026-08-29.
+// ⚠️ En token som börjar på atkn_ är Shopify CLI:s token och ger ALLTID 401
+// mot Admin API (docs/temu-launch-flow.md). Den avvisas här med tydligt fel
+// i stället för att felsökas.
 
 const API_VERSION = () => process.env.SHOPIFY_API_VERSION || '2025-07';
 
+let aktivButik = null; // butik.id (gemener) satt av ops.mjs
+let mintad = null; // { token, utgar } — cache för client-credentials-tokenen
+
+export function valjButik(id) {
+  aktivButik = typeof id === 'string' && id.trim() ? id.trim().toLowerCase() : null;
+  mintad = null;
+}
+
+// Läser en per-butik-variabel i versaler först, sen som Axel råkar skriva den (gemener).
+function perButik(namn, env = process.env) {
+  if (!aktivButik) return undefined;
+  return env[`${namn}_${aktivButik.toUpperCase()}`] ?? env[`${namn}_${aktivButik}`];
+}
+
+// Vilka nycklar som gäller just nu — ren funktion så den går att testa.
+export function losNycklar(env = process.env) {
+  const doman = perButik('SHOPIFY_SHOP', env) || env.SHOPIFY_STORE_DOMAIN || '';
+  const clientId = perButik('SHOPIFY_CLIENT_ID', env) || env.SHOPIFY_CLIENT_ID || '';
+  const clientSecret = perButik('SHOPIFY_CLIENT_SECRET', env) || env.SHOPIFY_CLIENT_SECRET || '';
+  const statiskToken = perButik('SHOPIFY_TOKEN', env) || env.SHOPIFY_ADMIN_TOKEN || '';
+  return {
+    doman: doman.replace(/^https?:\/\//, '').replace(/\/.*$/, ''),
+    clientId,
+    clientSecret,
+    statiskToken,
+    kalla: perButik('SHOPIFY_SHOP', env) ? `miljön (…_${aktivButik.toUpperCase()})` : 'factory/.env',
+  };
+}
+
 export function kravEnv() {
-  const saknas = ['SHOPIFY_STORE_DOMAIN', 'SHOPIFY_ADMIN_TOKEN'].filter(
-    (n) => !process.env[n]
-  );
-  if (saknas.length > 0) {
-    throw new Error(
-      `Saknade miljövariabler: ${saknas.join(', ')}. ` +
-        'Kopiera factory/.env.example till factory/.env och fyll i.'
+  const n = losNycklar();
+  const saknas = [];
+  if (!n.doman) saknas.push(aktivButik ? `SHOPIFY_SHOP_${aktivButik.toUpperCase()} (eller SHOPIFY_STORE_DOMAIN i factory/.env)` : 'SHOPIFY_STORE_DOMAIN');
+  const harClient = n.clientId && n.clientSecret;
+  const harToken = n.statiskToken && !/^atkn_/i.test(n.statiskToken);
+  if (!harClient && !harToken) {
+    if (/^atkn_/i.test(n.statiskToken)) {
+      throw new Error(
+        'Tokenen börjar på atkn_ — det är Shopify CLI:s token och fungerar inte mot Admin API. ' +
+          `Ge i stället appens Client ID + Client secret (SHOPIFY_CLIENT_ID_${(aktivButik ?? 'X').toUpperCase()} + SHOPIFY_CLIENT_SECRET_…).`
+      );
+    }
+    saknas.push(
+      aktivButik
+        ? `SHOPIFY_CLIENT_ID_${aktivButik.toUpperCase()} + SHOPIFY_CLIENT_SECRET_${aktivButik.toUpperCase()}`
+        : 'SHOPIFY_CLIENT_ID + SHOPIFY_CLIENT_SECRET (eller SHOPIFY_ADMIN_TOKEN)'
     );
   }
+  if (saknas.length > 0) {
+    throw new Error(`Saknade miljövariabler: ${saknas.join(', ')}. Se factory/.env.example.`);
+  }
+  return n;
+}
+
+// Färsk Admin-token: statisk shpat_ om den finns, annars mintad ur client credentials.
+export async function hamtaToken() {
+  const n = kravEnv();
+  if (n.statiskToken && !/^atkn_/i.test(n.statiskToken)) return n.statiskToken;
+  if (mintad && Date.now() < mintad.utgar) return mintad.token;
+  const svar = await fetch(`https://${n.doman}/admin/oauth/access_token`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ client_id: n.clientId, client_secret: n.clientSecret, grant_type: 'client_credentials' }),
+  });
+  if (!svar.ok) {
+    throw new Error(`Token-mint mot ${n.doman} misslyckades: ${svar.status} ${(await svar.text()).slice(0, 300)}`);
+  }
+  const d = await svar.json();
+  if (!d.access_token) throw new Error('Token-mint gav ingen access_token.');
+  // Shopify sätter expires_in (sekunder); ta en minuts marginal.
+  mintad = { token: d.access_token, utgar: Date.now() + (Number(d.expires_in) || 86400) * 1000 - 60_000 };
+  return mintad.token;
 }
 
 export async function graphql(query, variables = {}) {
-  kravEnv();
-  const url = `https://${process.env.SHOPIFY_STORE_DOMAIN}/admin/api/${API_VERSION()}/graphql.json`;
+  const n = kravEnv();
+  const token = await hamtaToken();
+  const url = `https://${n.doman}/admin/api/${API_VERSION()}/graphql.json`;
   const svar = await fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'X-Shopify-Access-Token': process.env.SHOPIFY_ADMIN_TOKEN,
+      'X-Shopify-Access-Token': token,
     },
     body: JSON.stringify({ query, variables }),
   });
