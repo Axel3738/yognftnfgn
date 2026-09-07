@@ -1,0 +1,136 @@
+{
+  "input": {
+    "title": "IBC-tanköverdrag 1000 L – Stoppar Alger & UV",
+    "handle": "ibc-tankoverdraget",
+    "status": "DRAFT",
+    "descriptionHtml": "<p>Stäng ute solljuset som får algerna att växa – och skydda tanken från att bli spröd i UV:t.</p>",
+    "vendor": "Tankvakt",
+    "seo": {
+      "title": "IBC-tanköverdrag 1000 L – Stoppar Alger & UV – Tankvakt",
+      "description": "Vattnet håller sig klart – tyget stänger ute ljuset som får alger att växa. 30 dagars öppet köp"
+    },
+    "productOptions": [
+      {
+        "name": "Title",
+        "values": [
+          {
+            "name": "Default Title"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Title",
+            "name": "Default Title"
+          }
+        ],
+        "price": "489.00",
+        "compareAtPrice": "636.00"
+      }
+    ],
+    "files": [
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-01.jpg",
+        "contentType": "IMAGE",
+        "alt": "IBC-tanköverdrag 1000 L – Stoppar Alger & UV"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-04.jpg",
+        "contentType": "IMAGE",
+        "alt": "IBC-tanköverdrag 1000 L – Stoppar Alger & UV"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-matt-tankoverdrag.jpg",
+        "contentType": "IMAGE",
+        "alt": "IBC-tanköverdrag 1000 L – Stoppar Alger & UV"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-forefter-tankoverdrag-sv.jpg",
+        "contentType": "IMAGE",
+        "alt": "IBC-tanköverdrag 1000 L – Stoppar Alger & UV"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-05.jpg",
+        "contentType": "IMAGE",
+        "alt": "IBC-tanköverdrag 1000 L – Stoppar Alger & UV"
+      }
+    ]
+  },
+  "metafalt": [
+    {
+      "namespace": "opf",
+      "key": "problem_rubrik",
+      "type": "single_line_text_field",
+      "value": "Regnvattnet grönskar innan sommaren ens börjat"
+    },
+    {
+      "namespace": "opf",
+      "key": "problem_text",
+      "type": "multi_line_text_field",
+      "value": "Solljus rakt in i tanken får alger att växa i vattnet, och UV-strålningen gör plasten spröd år för år. Presenningen som skulle skydda blåser av vid första höststormen."
+    },
+    {
+      "namespace": "opf",
+      "key": "gif_problem",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-forefter-tankoverdrag-sv.jpg"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_rubrik",
+      "type": "single_line_text_field",
+      "value": "Ett överdrag som håller ljuset ute och tanken hel"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_text",
+      "type": "multi_line_text_field",
+      "value": "Trä överdraget över tanken och stäng dragkedjan – det gröna 210D-oxfordtyget stänger ute ljuset så algerna aldrig kommer igång, och tar solen i stället för plasten. Öppningen upptill gör att du kommer åt locket utan att ta av något, och måtten 120 × 100 × 116 cm passar en standardtank på 1000 liter."
+    },
+    {
+      "namespace": "opf",
+      "key": "media_losning",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-04.jpg"
+    },
+    {
+      "namespace": "opf",
+      "key": "benefits",
+      "type": "list.single_line_text_field",
+      "value": "[\"Vattnet håller sig klart – tyget stänger ute ljuset som får alger att växa\",\"Tanken åldras inte i solen – 210D-tyget tar UV-strålningen i stället för plasten\",\"Locket alltid åtkomligt – öppning upptill, fyll på utan att ta av överdraget\",\"På och av med dragkedja – ingen kamp med presenning och gummiband\",\"Passar standardtanken – 120 × 100 × 116 cm för 1000-liters IBC\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "features",
+      "type": "list.single_line_text_field",
+      "value": "[\"Grönt 210D oxfordtyg som stänger ute ljus och tål UV\",\"Måtten 120 × 100 × 116 cm passar en standard 1000-liters IBC-tank\",\"Öppning upptill – kom åt locket utan att ta av överdraget\",\"Dragkedja för enkel på- och avtagning\",\"För utomhusbruk – skyddar mot sol, regn och väder\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "bild_lifestyle",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-05.jpg"
+    },
+    {
+      "namespace": "opf",
+      "key": "garantier",
+      "type": "list.single_line_text_field",
+      "value": "[\"30 dagars öppet köp\",\"30 dagars öppet köp – pengarna tillbaka om du inte gillar det\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "frakt",
+      "type": "list.single_line_text_field",
+      "value": "[\"Leveranstid: 5–8 arbetsdagar\",\"Fri frakt till alla länder\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "faq",
+      "type": "json",
+      "value": "[{\"fraga\":\"Vilken tank passar överdraget?\",\"svar\":\"Måtten är 120 × 100 × 116 cm och passar en standard 1000-liters IBC-tank.\"},{\"fraga\":\"Hur kommer jag åt locket för att fylla på?\",\"svar\":\"Det finns en öppning upptill – du kommer åt locket utan att ta av överdraget.\"},{\"fraga\":\"Stoppar det verkligen algerna?\",\"svar\":\"Ja, tyget stänger ute ljuset som algerna behöver för att växa, så vattnet håller sig klart.\"},{\"fraga\":\"Tål det att sitta ute året om?\",\"svar\":\"Ja, det gröna 210D-oxfordtyget är gjort för utomhusbruk och tål sol, regn och väder.\"},{\"fraga\":\"Hur sätter jag på och av det?\",\"svar\":\"Du trär det över tanken och stänger dragkedjan – ingen kamp med presenning och gummiband.\"},{\"fraga\":\"Hur lång är leveranstiden?\",\"svar\":\"5–8 arbetsdagar med fri frakt.\"},{\"fraga\":\"Vad händer om jag inte blir nöjd?\",\"svar\":\"30 dagars öppet köp – gillar du det inte får du pengarna tillbaka.\"}]"
+    }
+  ]
+}

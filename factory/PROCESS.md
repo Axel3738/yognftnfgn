@@ -15,6 +15,14 @@ som genereras per bygge).
 1. ⚙️ Hämta produktdata från källan (Bäverbutik-sidan): namn, pris, varianter,
    bilder, beskrivningstexter, Judge.me-recensioner (`/products/<handle>.json`
    + `judge.me/reviews/reviews_for_widget`). Aldrig påhittade specs.
+   **Kaching-paketnivåerna** (bevisat Tankvakt 2026-09-07): ligger inbäddade
+   i den PUBLIKA produktsidans HTML som
+   `<script class="kaching-bundles-deal-block-settings" type="application/json">`
+   — `dealBars[]` med `quantity`, `discountValue`/`discountType`, `label`,
+   `badgeText`, och `preselectedDealBarId` för förvald nivå. Flera block kan
+   finnas (`blockVisibility: selected-products` = produktens egna, `all-products`
+   = butiksglobalt). Läs med curl + JSON.parse — rendera ALDRIG sidan i en
+   browser (Chromium går inte genom molnproxyn) och rör ALDRIG Shopify-MCP:n.
 2. ⚙️ Brand-steget FÖRE bygget: analysera köpare/emotion → `branding:`-block i
    butiksfilen. Namnregeln (skärpt 2026-09-08): helst ett HELT engelskt namn
    som svenskar och norrmän ändå kan läsa och uttala, aldrig å/ä/ö.

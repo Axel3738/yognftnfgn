@@ -1,0 +1,108 @@
+# Butikskonfig för Tankvakt — OPS-butik för IBC-tankskydd.
+# Egen OPS-butik, helt separat från Bäverbutiken och HeimGuard.
+# Bolaget är samma AB som driver HeimGuard och Matstrumpor.se
+# (STONEBITE ECOM AB). Adress + orgnr från allabolag.se (Axels länk 2026-09-07).
+#
+# Namnet "Tankvakt" (2026-09-07, namnregeln): tank + vakt = det som vaktar
+# tanken. Funkar i Sverige, Norge och engelskt (uttalbart, ingen å/ä/ö),
+# samma bevisade [ord]+[skydd]-mönster som Hemvakten→HeimGuard.
+# Domäner lediga i DNS 2026-09-07: tankvakt.se (primär), tankvakt.no,
+# tankvakt.com — VA:n verifierar och köper i Loopia (checklistan).
+
+butik:
+  id: tankvakt
+  brand: "Tankvakt"
+  bolagsnamn: "STONEBITE ECOM AB"
+  orgnr: "559576-2401"
+  adress: "Sjöhed 160, 442 74 Harestad"
+  supportmail: "hej@tankvakt.se"
+  land: SE
+  huvudmarknad: Sverige
+  valuta: SEK
+  moms_i_pris: true
+
+frakt:
+  fri_globalt: true
+  leveranstid: "5–8 arbetsdagar"
+  express:
+    aktiv: false
+    namn: "Express"
+    pris: 99
+    tid: "1–2 arbetsdagar"
+
+retur:
+  oppet_kop_dagar: 30
+  angerratt_dagar: 14
+  reklamation_ar: 3
+  returfrakt_betalas_av: kund
+  aterbetalning_dagar: 14
+
+judgeme:
+  # Fylls i när Judge.me-appen är installerad i den nya butiken. Tokenen är
+  # PER BUTIK och läggs i env, aldrig i filen.
+  shop_domain: ""
+  token_env: "JUDGEME_TANKVAKT_TOKEN"
+
+garantier:
+  - "30 dagars öppet köp"
+
+policy:
+  tvistlosning: "Allmänna reklamationsnämnden"
+  visa_odr_lank: true
+  svarstid: "en arbetsdag"
+
+# ---------------------------------------------------------------------------
+# BRAND-CONFIG — Tankvakts egen identitet, byggd från noll för den här
+# butiken (Axels regel: brandingen återanvänds ALDRIG mellan butiker).
+#
+# Analys bakom valen:
+#   Vem köper:      villa-, koloni- och trädgårdsägare 45–70 som samlar
+#                   regnvatten i en 1000-liters IBC-tank för bevattning.
+#                   Praktiska, gör-det-själv, mån om att skydda sin utrustning.
+#   Problemet:      regnvattnet grönskar av alger, tanken blir spröd i UV:t,
+#                   presenningen blåser av.
+#   Emotionen:      omsorg och förnuft — skydda investeringen, slippa köpa ny
+#                   tank, ha ordning på tomten. Inte rädsla, inte lyx.
+#   Förväntat brand: robust trädgårds- och uteprylsbrand. Jordnära, sakligt,
+#                   pålitligt hantverk. Som en fackhandel för tanktillbehör.
+#   Känsla:         praktisk, robust, jordnära, pålitlig.
+#
+# Paletten är MONOKROM djupgrön med varma neutraler. En enda djup grangrön
+# bär allt: CTA, bockar, mörka ytor. Neutralerna är varmt sand/sten, aldrig
+# kalla grå. Medvetet INGEN ljus/klargrön — grönt vatten = alger = fienden;
+# brandets grön är den mörka, robusta skogsgröna, inte algens gröna.
+# ---------------------------------------------------------------------------
+branding:
+  positionering: "Svensk specialist på tankskydd — överdraget som håller regnvattnet klart och IBC-tanken hel år efter år"
+  tonalitet: "Saklig, praktisk och rak. Korta meningar, som en kunnig granne. Inga utropstecken, ingen hype — prylen talar för sig själv."
+  kansla: "praktisk, robust, jordnära, pålitlig"
+  farger:
+    bakgrund: "#FFFFFF"
+    yta: "#F4F2EC"            # varmt sand/sten — ljus sektionsyta, aldrig kall grå
+    yta_djup: "#E8E4D8"
+    mork: "#1C2A1E"           # djup grangrön-svart — mörka sektioner, annonsrad, sidfot
+    text: "#1A211B"
+    text_pa_mork: "#F3F1E9"
+    linje: "#E2DDD0"
+    linje_stark: "#C9C2B0"
+    accent: "#2F5D3A"         # djup grangrön — CTA och bockar, samma familj som mörka ytan
+    accent_text: "#FFFFFF"
+    god: "#2F5D3A"
+    varning: "#B5480B"        # jordig rost — varningar, aldrig rea-rött
+  typografi:
+    rubriker: "archivo_n6"     # Archivo SemiBold — robust och saklig, noll teknik-kyla
+    brodtext: "dm_sans_n4"     # DM Sans — lugn och läsbar brödtext
+  form:
+    knapp_radius: 8            # sober rundning — praktiskt, aldrig pill
+    kort_radius: 12
+    input_radius: 8
+    badge_radius: 6
+  stil:
+    ikoner: "Linjeikoner, 2 i stroke — samma språk som temats ms-icon. Aldrig emojis i gränssnittet."
+    bilder: "Riktiga foton av IBC-tankar på tomt och i trädgård, sommarljus och grönska. Överdraget på och av, före/efter, dragkedjan. Aldrig stockmänniskor som ler mot kameran."
+    rubrikstil: "Korta raka påståenden med eyebrow i versaler. Rubriken säger vad kunden slipper — grönt vatten och en spröd tank."
+    cta: "Solid djupgrön knapp med vit text. Verb + lugn: Köp nu, Skydda tanken. Aldrig SISTA CHANSEN."
+    trust: "Diskreta rader med bock i samma djupgröna på varm sandyta — garanti, fri frakt, Klarna. Fakta, inte skrik."
+    spacing: "Luftigt och lugnt — generösa sektionsavstånd, max 62 tecken per rad."
+    logo: "Rund emblem: djupgrön cirkel med ordmärket TANKVAKT i versaler, vitt, spärrad text. Bara namnet — ingen symbol. Fungerar i en färg."
+    favicon: "Samma djupgröna cirkel med ett vitt T."
