@@ -13,6 +13,31 @@ taköverdraget en silvrig helkåpa, solpanelen andra paneler. Allt ur Temu-video
 aldrig svep). **Regel framåt: Temu-videon används aldrig som produktbild.** Temu ger
 produktidé; bara CWD:s/leverantörens bilder visar det som skickas.
 
+**⚠️ Rotorsaken (hittad 2026-09-07 kväll): arkets Temu-länkar är SÖKSIDOR, inte
+produktsidor.** `…-5030003647894-s.html` (`-s` = SEO-söksida, og:title "outdoor cat
+house - Ireland") visar ett skiftande sökresultat — därför blev "huvudbilden" ur
+`hamta-bilder.mjs` fel produkt (kattkojan: grå koja på ben; taköverdraget: annan
+kåpa; solpanelen bytte bild mellan två hämtningar). **Facit för hur produkten ser ut
+är arkets inbäddade bilder** — CWD:s i kolumn D/E, Axels skärmdump i kolumn A —
+aldrig något som hämtats från en `-s.html`-länk. SKU:erna `TEMU-<nummer>` bär
+alltså ett sök-id, inte ett goods-id.
+
+Rättat per produkt mot arket:
+- **Kattkoja:** rätt produkt är en boxig Oxford-koja med sadeltak PÅ MARKEN (arkets
+  bild3: camo/svart/grå/grön, CWD: ingen camo). Riktig listningsbild hittad via
+  `bildjakt.mjs` (Pinterest-kopia av Temu-bilden, textband bortbeskuret). Copyn
+  omskriven av sonnet-subagent utan "ben", "dyna", "botten" — `texter6.mjs` +
+  `texter6-no.mjs`. Faktakortet likaså.
+- **Staketbygel:** CWD:s spec (bild5) = samma typ som hjältebilden, men hjältebilden
+  visade fyra spikar för ett 2-pack → beskuren till två. Infografiken bygger på den.
+- **Taköverdrag:** enda bekräftade bilden är CWD:s bild4. De två Temu-hämtade
+  (kåpa med påse, "CARAVAN COVER") borttagna. AI-bild med bild4 som referens + faktakort.
+- **Vedklyv, racing, fiske:** var redan byggda på CWD:s bilder — oförändrade.
+- **Solpanel: OLÖST.** CWD:s bild8 visar solpanel + kamouflagefärgad 4G-åtelkamera,
+  Axels bild7 detsamma, och CWD skriver "no style like the picture, but there is a
+  green version". Sidan säljer en vit solpanel för 1 749 kr — troligen fel produkt
+  (offerten på 58 USD ser ut som ett kamera+panel-kit). Kräver Axels besked.
+
 **Så gjordes det — utan Axels dator (slutversion):**
 - Källor som får användas: huvudbilden i `bilder/` (Temu-listningens hero, godkänd
   sedan tidigare), offertens inbäddade leverantörsbilder (`xlsx → xl/media`, kopplade

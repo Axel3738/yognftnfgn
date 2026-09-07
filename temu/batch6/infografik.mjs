@@ -24,6 +24,6 @@ const T = {
         klyv: { rubrik:'Tennvedkløyver i støpejern', rader:[{v:'27 cm',l:'høyde'},{v:'12,5 cm',l:'innvendig diameter i ringen'},{v:'13,7 cm',l:'utvendig diameter'},{v:'14,5 cm',l:'støpt fot'},{v:'0,72 kg',l:'støpejern gjennom hele kløyveren'},{v:'Ingen øks i hånden',l:'slå ovenfra med klubbe'}] } },
 };
 for (const sprak of ['sv','no']) {
-  await bygg({ bild:'/home/user/yognftnfgn/temu/batch6/bilder/staketstolps-reparationsbygel-med-marksp.jpg', ut:`${S}/galleri/staketbygel-info-${sprak}.jpg`, ...T[sprak].staket, bildBox:{x:40,y:130,w:480,h:820} });
+  await bygg({ bild: `${S}/galleri/staketbygel-hero.jpg` /* 2-pack-beskärning, inte 4 spikar */, ut:`${S}/galleri/staketbygel-info-${sprak}.jpg`, ...T[sprak].staket, bildBox:{x:40,y:130,w:480,h:820} });
   await bygg({ bild:'/home/user/yognftnfgn/temu/batch6/bilder/tandvedsklyv-i-gjutjarn-ring-kil.jpg', ut:`${S}/galleri/vedklyv-info-${sprak}.jpg`, ...T[sprak].klyv, bildBox:{x:40,y:130,w:480,h:820} });
 }

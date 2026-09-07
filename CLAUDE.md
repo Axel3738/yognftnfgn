@@ -936,6 +936,11 @@ Grillklinikken-butiker får ALDRIG bäver-emojin eller "Bäverbutiken" som vendo
   taköverdraget en silverkåpa. Produktbilder kommer bara ur leverantörens/offertens
   bilder, faktakort ur låst copy och AI-bilder med riktig hero som referens (märkta).
   GIF:en görs som bildspel av dessa (`temu/gif.mjs`). Facit: `temu/batch6/README.md`.
+- **Temu-länkar som slutar på `-s.html` är SÖKSIDOR, inte produkter.** Batch 6:s ark
+  hade fem sådana; "huvudbilden" ur dem var ett skiftande sökresultat och blev fel
+  produkt på tre sidor. Produktsidor slutar på `-g-<goods_id>.html`. Är länken en
+  söksida: produktens utseende kommer ENBART ur offertarkets inbäddade bilder
+  (`xlsx → xl/media`, radkopplade via `xl/drawings/drawing1.xml`). *(2026-09-07.)*
 - **Notion-anropen stryps till ~3/s.** Ett par hundra sidor tar några minuter.
   Det är normalt, inte en hängning.
 - **Språk:** allt i repot skrivs på svenska — kod, kommentarer, commit-meddelanden.

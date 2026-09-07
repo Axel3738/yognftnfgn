@@ -21,15 +21,18 @@ async function bygg({ bild, ut, rubrik, rader, W = 1200, H = 1000 }) {
 const B = (f) => path.join(HÄR, 'bilder', f);
 const T = {
   sv: {
-    kattkoja: { rubrik: 'Isolerad utekattkoja', rader: [{ v: 'Står på ben', l: 'marken drar inte upp kyla' }, { v: 'Isolerade väggar', l: 'behåller kattens egen värme' }, { v: 'Tak i Oxford-tyg', l: 'skjuter ut över ingången' }, { v: 'Löstagbar dyna', l: 'går att ta ur och skaka' }, { v: 'Hopfällbar', l: 'tar ingen plats över sommaren' }, { v: 'Grå · Gräsgrön · Svart', l: 'tre färger' }] },
+    kattkoja: { rubrik: 'Isolerad utekattkoja', rader: [{ v: 'Oxford-tyg', l: 'står emot väta' }, { v: 'Isolerade väggar', l: 'behåller kattens egen värme' }, { v: 'Sadeltak', l: 'skjuter ut över ingången' }, { v: 'En öppning', l: 'på kortsidan' }, { v: 'Hopfällbar', l: 'tar ingen plats över sommaren' }, { v: 'Grå · Gräsgrön · Svart', l: 'tre färger' }] },
+    takoverdrag: { rubrik: 'Taköverdrag husvagn / husbil', rader: [{ v: '6,5 × 3 m', l: 'täcker hela takytan' }, { v: '210D-väv', l: 'tål en hel vintersäsong ute' }, { v: 'Svart / silver', l: 'svart ovansida, silver undersida' }, { v: 'Rem och dragsko', l: 'spänns fast i kanten' }, { v: 'Förvaringspåse ingår', l: 'ryms i förtältslådan' }] },
     solpanel: { rubrik: 'Solpanel till åtelkamera', rader: [{ v: 'Laddar där kameran hänger', l: 'inget batteribyte i området' }, { v: 'Ledat fäste', l: 'vinklas mot solen oavsett träd' }, { v: 'Väggfäste ingår', l: 'stam, stolpe eller vägg' }, { v: 'Byggd för att lämnas ute', l: 'sitter uppe hela säsongen' }] },
   },
   no: {
-    kattkoja: { rubrik: 'Isolert utekattehus', rader: [{ v: 'Står på ben', l: 'bakken leder ikke kulde opp' }, { v: 'Isolerte vegger', l: 'holder på kattens egen varme' }, { v: 'Tak i Oxford-stoff', l: 'stikker ut over inngangen' }, { v: 'Avtakbar pute', l: 'kan tas ut og ristes' }, { v: 'Sammenleggbar', l: 'tar ingen plass om sommeren' }, { v: 'Grå · Gressgrønn · Svart', l: 'tre farger' }] },
+    kattkoja: { rubrik: 'Isolert utekattehus', rader: [{ v: 'Oxford-stoff', l: 'står imot fukt' }, { v: 'Isolerte vegger', l: 'holder på kattens egen varme' }, { v: 'Saltak', l: 'stikker ut over inngangen' }, { v: 'Én åpning', l: 'på kortsiden' }, { v: 'Sammenleggbar', l: 'tar ingen plass om sommeren' }, { v: 'Grå · Gressgrønn · Svart', l: 'tre farger' }] },
+    takoverdrag: { rubrik: 'Takovertrekk campingvogn / bobil', rader: [{ v: '6,5 × 3 m', l: 'dekker hele takflaten' }, { v: '210D-vev', l: 'tåler en hel vintersesong ute' }, { v: 'Svart / sølv', l: 'svart overside, sølv underside' }, { v: 'Stropp og snor', l: 'strammes fast i kanten' }, { v: 'Oppbevaringspose følger med', l: 'får plass i forteltkassen' }] },
     solpanel: { rubrik: 'Solpanel til viltkamera', rader: [{ v: 'Lader der kameraet henger', l: 'ingen batteribytte i området' }, { v: 'Leddet feste', l: 'vinkles mot solen uansett tre' }, { v: 'Veggfeste følger med', l: 'stamme, stolpe eller vegg' }, { v: 'Bygd for å bli stående ute', l: 'sitter oppe hele sesongen' }] },
   },
 };
 for (const sp of ['sv', 'no']) {
-  await bygg({ bild: B('isolerad-utekattkoja-i-oxford-tyg-hopfal.jpg'), ut: `${S}/galleri/kattkoja-fakta-${sp}.jpg`, ...T[sp].kattkoja });
+  await bygg({ bild: `${S}/galleri/kattkoja-hero.jpg` /* rätt koja: boxig, sadeltak, på marken */, ut: `${S}/galleri/kattkoja-fakta-${sp}.jpg`, ...T[sp].kattkoja });
+  await bygg({ bild: `${S}/xlsx/xl/media/image4.png` /* CWD:s leverantörsbild */, ut: `${S}/galleri/takoverdrag-fakta-${sp}.jpg`, ...T[sp].takoverdrag });
   await bygg({ bild: B('solpanel-till-atelkamera-viltkamera.jpg'), ut: `${S}/galleri/solpanel-fakta-${sp}.jpg`, ...T[sp].solpanel });
 }

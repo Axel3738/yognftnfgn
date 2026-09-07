@@ -39,20 +39,25 @@ const PLAN = {
   // ⚠️ Inga bilder ur Temu-videorna (Axel 2026-09-07: videon visade fel variant/produkt).
   // Bara leverantörsbilder, faktakort ur låst copy och AI-bilder med riktig hero som referens.
   kattkoja: {
-    gif: { sv: 'Utekattkojan – grå, på ben', no: 'Utekattehuset – grått, på ben' },
+    // Rätt produkt (arkets bild + CWD:s färgbesked): boxig Oxford-koja med sadeltak, PÅ MARKEN.
+    // Hero = Temu-listningens bild hittad via bildjakt (Pinterest-kopia), textband bortbeskuret.
+    gif: { sv: 'Utekattkojan – isolerad, med sadeltak', no: 'Utekattehuset – isolert, med saltak' },
     bilder: {
+      hero: { fil: G('kattkoja-hero.jpg'), sv: 'Isolerad utekattkoja i Oxford-tyg med sadeltak och öppning på kortsidan', no: 'Isolert utekattehus i Oxford-stoff med saltak og åpning på kortsiden' },
       ai: { fil: G('kattkoja-ai.jpg'), ai: true, sv: 'AI-illustration: den grå kojan på en stenlagd uteplats i regn, katt i öppningen', no: 'AI-illustrasjon: det grå huset på en steinlagt uteplass i regn, katt i åpningen' },
-      fakta: { fil: G(`kattkoja-fakta-${sp}.jpg`), sv: 'Kojans egenskaper: står på ben, isolerade väggar, Oxford-tak, löstagbar dyna, hopfällbar, tre färger', no: 'Husets egenskaper: står på ben, isolerte vegger, Oxford-tak, avtakbar pute, sammenleggbar, tre farger' },
+      fakta: { fil: G(`kattkoja-fakta-${sp}.jpg`), sv: 'Kojans egenskaper: Oxford-tyg, isolerade väggar, sadeltak, en öppning, hopfällbar, tre färger', no: 'Husets egenskaper: Oxford-stoff, isolerte vegger, saltak, én åpning, sammenleggbar, tre farger' },
     },
-    galleri: ['ai', 'fakta'], bild1: 'ai', bild2: 'fakta',
+    galleri: ['hero', 'ai', 'fakta'], bild1: 'ai', bild2: 'fakta',
   },
   staketbygel: {
+    // Hero beskuren till två spikar (2-pack) — ursprungsbilden visade fyra.
     gif: { sv: 'Staketstolpslagare – 2-pack', no: 'Gjerdestolpebøyle – 2-pk' },
     bilder: {
+      hero: { fil: G('staketbygel-hero.jpg'), sv: 'Staketstolpslagare 2-pack i svart stål med markspett', no: 'Gjerdestolpebøyle 2-pk i svart stål med spyd til bakken' },
       ai: { fil: G('staketbygel-ai.jpg'), ai: true, sv: 'AI-illustration: bygeln fastskruvad mot en gammal staketstolpe i gräsmattan', no: 'AI-illustrasjon: bøylen skrudd fast mot en gammel gjerdestolpe i plenen' },
-      info: { fil: G(`staketbygel-info-${sp}.jpg`), sv: 'Måtten: 80 cm per bygel, 40 cm spett och 40 cm bygel, skruvar och nycklar ingår', no: 'Målene: 80 cm per bøyle, 40 cm spyd og 40 cm bøyle, skruer og nøkler følger med' },
+      info: { fil: G(`staketbygel-info-${sp}.jpg`), sv: 'Måtten: 80 cm per bygel, 40 cm spett och 40 cm bygel, skruvar och nycklar ingår (2-pack)', no: 'Målene: 80 cm per bøyle, 40 cm spyd og 40 cm bøyle, skruer og nøkler følger med (2-pk)' },
     },
-    galleri: ['ai', 'info'], bild1: 'ai', bild2: 'info',
+    galleri: ['hero', 'ai', 'info'], bild1: 'ai', bild2: 'info',
   },
   vedklyv: {
     gif: { sv: 'Tändvedsklyven i gjutjärn', no: 'Tennvedkløyveren i støpejern' },
@@ -63,12 +68,14 @@ const PLAN = {
     galleri: ['ai', 'info'], bild1: 'ai', bild2: 'info',
   },
   takoverdrag: {
+    // Enda bekräftade bilden är CWD:s leverantörsbild (arkets image4). AI-bilden har den som referens.
     gif: { sv: 'Taköverdraget på husbilens tak', no: 'Takovertrekket på bobilens tak' },
     bilder: {
-      hero: { fil: G('takoverdrag-hero.jpg'), sv: 'Taköverdraget spänt över husbilens tak', no: 'Takovertrekket strammet over bobilens tak' },
       rv: { fil: X('image4.png'), sv: 'Svart taköverdrag på husbil, fäst med remmar runt karossen', no: 'Sort takovertrekk på bobil, festet med stropper rundt karosseriet' },
+      ai: { fil: G('takoverdrag-ai.jpg'), ai: true, sv: 'AI-illustration: husbilen med taköverdraget på en grusplan vid ett rött hus', no: 'AI-illustrasjon: bobilen med takovertrekket på en grusplass ved et rødt hus' },
+      fakta: { fil: G(`takoverdrag-fakta-${sp}.jpg`), sv: 'Överdragets fakta: 6,5 × 3 m, 210D-väv, svart/silver, rem och dragsko, förvaringspåse ingår', no: 'Overtrekkets fakta: 6,5 × 3 m, 210D-vev, svart/sølv, stropp og snor, oppbevaringspose følger med' },
     },
-    galleri: ['hero', 'rv'], bild1: 'hero', bild2: 'rv',
+    galleri: ['rv', 'ai', 'fakta'], bild1: 'ai', bild2: 'fakta',
   },
   solpanel: {
     gif: { sv: 'Solpanelen med sitt ledade fäste', no: 'Solpanelet med sitt leddede feste' },
@@ -163,7 +170,7 @@ for (const [nyckel, plan] of Object.entries(PLAN)) {
   for (const k of attLaddaUpp) nyaId[k] = await laddaUppBild(plan.bilder[k].fil, plan.bilder[k][sp], p.id);
   const urler = Object.keys(nyaId).length ? await vantaKlar(Object.values(nyaId)) : {};
   const urlAv = (k) => {
-    if (k === 'BEFINTLIG') return befintliga[0].image.url;
+    if (k === 'BEFINTLIG') { if (!befintliga[0]) throw new Error(`${nyckel}: inget befintligt galleri`); return befintliga[0].image.url; }
     if (nyaId[k]) return urler[nyaId[k]];
     return befintliga.find((m) => m.alt === plan.bilder[k][sp]).image.url;
   };

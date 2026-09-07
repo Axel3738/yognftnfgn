@@ -5,30 +5,19 @@ export const T6_NO = {
   "kattkoja": {
     "titel": "Isolert Utekattehus – Tørr og Vindtett Plass Utendørs",
     "problemH": "Katten sover under bilen igjen",
-    "problemP": "Du ser den smette inn under terrassen når det regner, eller ligge sammenkrøpet på en kald betongtrapp. Det finnes ingen tørr plass på tomten som er kattens egen, og hver gang temperaturen kryper nedover står du i vinduet og lurer på hvor den ble av.",
-    "losningH": "En egen plass som holder regnet og vinden ute",
-    "losningP": "Huset står på ben, så bakken aldri leder kulde opp i det, taket stikker ut over inngangen og veggene er isolerte. Katten går inn, legger seg på puten og blir værende der i stedet for under bilen.",
+    "problemP": "Du ser den snike seg inn under terrassen når det regner, eller ligge sammenkrøpet på en kald betongtrapp. Det finnes ingen tørr plass i hagen som er kattens egen, og hver gang temperaturen kryper nedover står du i vinduet og lurer på hvor den ble av.",
+    "losningH": "Et eget sted som holder regnet og vinden ute",
+    "losningP": "Taket stikker ut over inngangen så regnet ikke renner rett inn, stoffet i Oxford-kvalitet står imot fukt, og veggene er isolerte så varmen katten selv avgir blir værende. Et eget sted som er kattens – i stedet for under bilen.",
     "bullets": [
-      "<strong>Bakken kjøler ikke ned katten</strong> – huset står hevet på ben i stedet for rett på hellene",
       "<strong>Regnet renner av i stedet for inn</strong> – tak i Oxford-stoff som stikker ut over inngangen",
-      "<strong>Holder på varmen katten selv avgir</strong> – isolerte vegger, ikke tynt stoff",
-      "<strong>Kan brettes sammen når sesongen er slutt</strong> – tar ingen plass i boden om sommeren",
-      "<strong>Puten kan tas ut og ristes</strong> – avtakbar bunn i stedet for fastsydd"
+      "<strong>Beholder varmen katten selv avgir</strong> – isolerte vegger, ikke enkelt stoff",
+      "<strong>Kan brettes sammen når sesongen er over</strong> – tar ingen plass i boden om sommeren",
+      "<strong>Vinden finner bare én vei inn</strong> – én åpning, på kortsiden"
     ],
-    "taggar": [
-      "Katt",
-      "Utekatt",
-      "Kattehus",
-      "Kjæledyr",
-      "Vinter"
-    ],
-    "altMain": "Isolert utekattehus på ben med katt inni",
+    "taggar": ["Katt", "Utekatt", "Kattehus", "Kjæledyr", "Vinter"],
+    "altMain": "Isolert utekattehus i Oxford-stoff med saltak og åpning på kortsiden",
     "option": "Farge",
-    "varden": [
-      "Grå",
-      "Gressgrønn",
-      "Svart"
-    ],
+    "varden": ["Grå", "Gressgrønn", "Svart"],
     "varning": ""
   },
   "vedklyv": {
