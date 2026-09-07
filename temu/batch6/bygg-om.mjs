@@ -69,14 +69,16 @@ const PLAN = {
     galleri: ['ai', 'info'], bild1: 'ai', bild2: 'info',
   },
   takoverdrag: {
-    // Enda bekräftade bilden är CWD:s leverantörsbild (arkets image4). AI-bilden har den som referens.
-    gif: { sv: 'Taköverdraget på husbilens tak', no: 'Takovertrekket på bobilens tak' },
+    // Riktiga listningsbilder ur Axels skörd (temu/bildskord/takoverdrag, g-601099548544832):
+    // 03 (van med överdrag, storlekstext bortbeskuren), 04 (hopvikt + spännen), 06 (spännband, textband bortbeskuret).
+    gif: { sv: 'Taköverdraget på husbilen, hopvikt och med spännen', no: 'Takovertrekket på bobilen, sammenbrettet og med spenner' },
     bilder: {
       rv: { fil: X('image4.png'), sv: 'Svart taköverdrag på husbil, fäst med remmar runt karossen', no: 'Sort takovertrekk på bobil, festet med stropper rundt karosseriet' },
-      ai: { fil: G('takoverdrag-ai.jpg'), ai: true, sv: 'AI-illustration: husbilen med taköverdraget på en grusplan vid ett rött hus', no: 'AI-illustrasjon: bobilen med takovertrekket på en grusplass ved et rødt hus' },
-      fakta: { fil: G(`takoverdrag-fakta-${sp}.jpg`), sv: 'Överdragets fakta: 6,5 × 3 m, 210D-väv, svart/silver, rem och dragsko, förvaringspåse ingår', no: 'Overtrekkets fakta: 6,5 × 3 m, 210D-vev, svart/sølv, stropp og snor, oppbevaringspose følger med' },
+      van: { fil: G('tak-van.jpg'), sv: 'Taköverdraget spänt över husbilens tak, framifrån', no: 'Takovertrekket strammet over bobilens tak, forfra' },
+      hopvikt: { fil: G('tak-hopvikt.jpg'), sv: 'Överdraget hopvikt, med spännen och tygdetalj', no: 'Overtrekket sammenbrettet, med spenner og stoffdetalj' },
+      spanne: { fil: G('tak-spanne.jpg'), sv: 'Elastiska spännband med krokar som håller överdraget på plats', no: 'Elastiske stropper med kroker som holder overtrekket på plass' },
     },
-    galleri: ['rv', 'ai', 'fakta'], bild1: 'ai', bild2: 'fakta',
+    galleri: ['rv', 'van', 'hopvikt', 'spanne'], bild1: 'van', bild2: 'hopvikt',
   },
   solpanel: {
     // Temu-länken säger "solar panel for trail camera" = en solpanel, ingen kamera. CWD levererar den

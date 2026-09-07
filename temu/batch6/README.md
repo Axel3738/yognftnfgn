@@ -12,8 +12,12 @@ honom i Chrome) och skickade en zip. Skörden ligger i `temu/bildskord/<produkt>
 - **racingkalender** — 03 (öppnad kalender med bilar i luckorna), 01 (julbild),
   arkets image10 kvar som hero. GIF ur videon 12–18 s, beskuren nedtill (katt-emoji-
   vattenstämpel). 08/09/12 har engelsk text → inte använda.
-Kvar med AI-bilder (märkta): vedklyv, solpanel, fiskekalender, taköverdrag. Vill Axel
-ha riktiga bilder där också: samma skörd med `BILDSKORD-BATCH6.md`.
+- **taköverdrag** `g-601099548544832` (skörd nr 2, 18:42) — CWD:s bild4 som hero,
+  03 (van med överdrag, storlekstexten bortbeskuren 20 %), 04 (hopvikt + spännen),
+  06 (spännband, textbandet bortbeskuret 21 %). GIF = bildspel bild4→03→04. AI-bilden
+  och faktakortet borttagna. 01/07–12 har engelsk eller maskinsvensk text → inte använda.
+Kvar med AI-bilder (märkta): vedklyv, solpanel, fiskekalender. Vill Axel ha riktiga
+bilder där också: samma skörd (vedklyv + solpanel har Temu-länk, fisken har ingen).
 
 ⚠️ **Cowork-lärdom:** Cowork i molnet når inte datorn; Cowork på datorn kunde inte
 köra kommandon ("Workspace unavailable") men Axel körde skörden själv och zippade.
