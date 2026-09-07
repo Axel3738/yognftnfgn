@@ -924,6 +924,15 @@ Grillklinikken-butiker får ALDRIG bäver-emojin eller "Bäverbutiken" som vendo
   beslut 2026-08-29 — den låg i fallback-stegen och syntes på varje produkt).
   Rensas med `temu/kaching-cli/fixa-standardpris.mjs <butik>` på Axels dator
   (kräver inloggad Kaching-session). Sätt aldrig texten i nya stegar.
+- **Butikstokenen (`SHOPIFY_TOKEN_*`) saknar `write_files`** — `stagedUploadsCreate`
+  med `resource: FILE` (GIF:ar, generiska filer) svarar "Access denied". Galleribilder
+  går fint (`resource: IMAGE` + `productCreateMedia`). GIF:ar till beskrivningen laddas
+  upp via Shopify-connectorn i SE (den har scopet) och utlandsbutikerna hotlänkar
+  samma `cdn.shopify.com`-URL — så gör referenssidan och batch 6
+  (`temu/batch6/gif-urler.json`). *(Mätt 2026-09-07, båda tokentyperna, SE och NO.)*
+- **Temu ger ut produktvideon med mobil-UA** (`goods-vod.kwcdn.com/goods-video/*.mp4`
+  i sidans HTML) — GIF:en görs ur den, ingen skörd på Axels dator behövs. Produkter
+  utan video (`g-<id>`-sidan ger tomt skal) får bildspels-GIF via `temu/gif.mjs`.
 - **Notion-anropen stryps till ~3/s.** Ett par hundra sidor tar några minuter.
   Det är normalt, inte en hängning.
 - **Språk:** allt i repot skrivs på svenska — kod, kommentarer, commit-meddelanden.

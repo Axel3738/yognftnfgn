@@ -1,38 +1,39 @@
-# ⛔ NÄSTA SESSION BÖRJAR HÄR (2026-09-07 kväll)
+# ✅ Sidorna ombyggda till referensstandard (2026-09-07 kväll)
 
-**Uppdrag:** bygg om batch 6:s sju produktsidor i SE och NO till samma standard som
-referensen — **Övervakningskamera Trådlös** (`baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning`):
-- Galleri: 4 bilder
-- Beskrivning: problem → **GIF** → lösning → **bild** → funktioner → **bild** → garanti
-  (GIF:en är gjord av Temus produktvideo; bilderna är leverantörsbilder)
+Alla sju produktsidor i **SE och NO** har nu samma struktur som referensen
+(övervakningskameran): galleri 3–4 bilder, beskrivning problem → GIF → lösning →
+bild → funktioner → bild → garanti, alt-text på allt. Slutgranskat skarpt: 14 sidor
+200, alla media 200, GIF:arna serveras som `image/gif`, ordningen verifierad ur
+`/products/<handle>.js`. Notion-korten har fått en rad om ombyggnaden.
 
-**Var bilderna kommer ifrån — utan Cowork, utan Axels dator:**
-Temu lämnar ut huvudbilden OCH produktvideon till molnet när sidan hämtas med
-mobil-User-Agent (`hamta-bilder.mjs` gör det för bilden; videon ligger i samma HTML
-under `goods-vod.kwcdn.com/goods-video/*.mp4`). Skördaren på Axels Windows kräver
-Temu-inloggning i ett nytt Chrome-fönster — det gör vi INTE mer. Axel har sagt
-det tre gånger.
+**Så gjordes det — utan Axels dator:**
+- `hamta-bilder.mjs`-vägen (mobil-UA) gav **produktvideon** (`goods-vod.kwcdn.com`)
+  för kattkoja, staketbygel, taköverdrag och solpanel. GIF med ffmpeg-static
+  (palettegen/paletteuse, 360–400 px, 7–10 fps, alla < 4 MB). Stödhjulet hade också
+  video men skapas inte. Tändvedsklyv, racingkalender och fiskekalender har
+  ingen video på Temu (sidan ger tomt skal även med mobil-UA och `g-<id>`-länkar) —
+  deras GIF:ar är korsfadeade bildspel via `temu/gif.mjs`.
+- Videoramar beskurna med `cropdetect` (svarta kanter) och så att LVJ-vattenstämpel
+  (taköverdrag) och inbränd text (solpanel 0–3 s, 15–17 s) hamnar utanför.
+- Offertens inbäddade bilder (`xlsx → xl/media`, kopplade via `drawing1.xml`):
+  `image4` = taköverdrag på husbil, `image10`/`image11` = racingkalender. `image9`
+  (fiskekalender på brygga) är fiskehornans Colitt-bild → **inte använd**.
+- `infografik.mjs` bygger måttbilder (sharp + SVG, DejaVu Sans) på svenska och norska
+  ur de låsta räkneorden — staketbygel och vedklyv.
+- AI-livsstilsbilder via KIE `nano-banana-edit` med Shopify-bilden som referens för
+  de tre produkter som annars stannat på två bilder (vedklyv, racing, fiske); alt-text
+  börjar med "AI-illustration" och beskrivningen har raden "Livsstilsbilden är en
+  AI-genererad illustration". KIE kräver `output_format: png` (jpg avvisas).
+- ⚠️ **Butikstokenen saknar `write_files`** — `stagedUploadsCreate` med
+  `resource: FILE` nekas. GIF:arna laddades därför upp EN gång i SE via
+  Shopify-connectorn (staged FILE → POST → `fileCreate`) och **Norge hotlänkar samma
+  cdn.shopify.com-URL**, exakt som referenssidan gör. URL:erna står i `gif-urler.json`.
+  Galleribilder går fint med tokenen (`resource: IMAGE` + `productCreateMedia`).
+- `bygg-om.mjs <se|no> <mediamapp> [--skarp] [nyckel]` gör hela ombyggnaden
+  (idempotent: bilder med samma alt laddas inte upp igen). Mediamappen är sessionens
+  scratchpad — GIF:ar och videoramar ligger inte i repot, bara på Shopify-CDN.
 
-Per produkt finns redan: huvudbild i `bilder/`, offertens inbäddade bilder i
-`/tmp/fix/b6/bilder/` (image1–12, se mappningen nedan; hämta om från arkets xlsx via
-`export?format=xlsx` om /tmp är borta), samt låsta räkneord i `texter6.mjs`.
-
-**Steg:**
-1. `node temu/batch6/hamta-bilder.mjs` igen med video-fångst: spara `.mp4`-URL:en
-   per produkt, ladda ner, gör GIF (ffmpeg-static + @ffprobe-installer/ffprobe via npm i
-   scratchpad, recept i CLAUDE.md: 400 px, 8–12 fps, palettegen/paletteuse, < 4 MB,
-   välj textfritt fönster via sekundark).
-2. Beskrivningsbilder: huvudbild + offertens bild (t.ex. staketbygelns spec-bild,
-   solpanelens image5, taköverdragets image4) + en sharp-infografik med de låsta måtten
-   där det passar (klyv, staketbygel). Utländsk text: beskär bort (aldrig KIE på
-   vattenstämplar — vägras).
-3. Galleri: 3–4 bilder per produkt. AI-livsstilsbild via KIE bara med riktig hero som
-   referens och märkt "AI-illustration" — om galleriet annars stannar på två.
-4. Skriv om `descriptionHtml` i SE och NO enligt strukturen. Alt-texter på allt.
-5. Slutgranska skarpt: varje URL 200, media READY, kontaktark av live-galleriet.
-6. Uppdatera Notion-korten (sju "6 …"-kort) — inget att ändra om Landing page står.
-
-**Gör INTE:** be Axel köra något på sin dator. Fråga inte. Kör klart, skicka länkar.
+Kvar: inget för batch 6. Vill Axel ha stödhjulet: ny offertförfrågan på rätt produkt.
 
 ---
 
