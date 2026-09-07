@@ -10,6 +10,9 @@
 const lista = (v) => (Array.isArray(v) ? v.filter((x) => x !== null && x !== '') : []);
 const text = (v) => typeof v === 'string' && v.trim() !== '';
 
+// Gemensamma OPS-annonskontot MagiBorsten DK — alla butiker, ändras aldrig.
+const OPS_ANNONSKONTO = '915422744950975';
+
 const OBLIGATORISKA_POLICYER = {
   REFUND_POLICY: 'returpolicy',
   SHIPPING_POLICY: 'fraktpolicy',
@@ -127,6 +130,8 @@ export function kontrolleraLaunch(p, { shop = null, produkt = null, policyer = n
   const saknadTracking = ['pixel_id', 'ad_account_id', 'page_id'].filter((f) => !text(meta[f]));
   if (saknadTracking.length > 0) {
     kritisk('tracking', `meta.${saknadTracking.join(', meta.')} saknas.`);
+  } else if (String(meta.ad_account_id) !== OPS_ANNONSKONTO) {
+    kritisk('tracking', `meta.ad_account_id är ${meta.ad_account_id} — alla OPS-butiker kör MagiBorsten DK ${OPS_ANNONSKONTO}.`);
   } else {
     ok('tracking', `pixel ${meta.pixel_id}, konto ${meta.ad_account_id}`);
     manuell('tracking-koppling', 'Verifiera att pixeln tar emot events i Meta Events Manager.');

@@ -242,5 +242,6 @@ test('hårdkodad icon-with-text plockas bort ur produktmallen', () => {
   });
   const ut = JSON.parse(byggProduktTemplate(original));
   assert.ok(!('icon-row' in ut.sections.main.blocks));
-  assert.deepEqual(ut.sections.main.block_order, ['price']);
+  // Svensk varumärkes-strip (opf_svensk) läggs alltid till i main-blocken.
+  assert.deepEqual(ut.sections.main.block_order, ['price', 'opf_svensk']);
 });

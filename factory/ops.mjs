@@ -393,7 +393,7 @@ function skrivUtdatafiler(ctx, varningar, qa) {
   // Judge.me-underlaget: importeras med tools/judgeme-import.mjs efter launch.
   const judgeMeCsv = byggJudgeMeCsv(ctx.p);
   if (judgeMeCsv) writeFileSync(join(mapp, 'judgeme-import.csv'), judgeMeCsv);
-  // Axels manuella klick, i rätt ordning — hela hans att-göra efter bygget.
+  // VA:ns manuella klick, i rätt ordning — hela hennes att-göra efter bygget.
   writeFileSync(join(mapp, 'CHECKLISTA.md'), byggChecklista(ctx.p, ctx.butik));
   const qaRader = [
     `# QA — ${ctx.p.produkt.namn}`,

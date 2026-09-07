@@ -11,9 +11,15 @@ butik:
   bolagsnamn: "STONEBITE ECOM AB"
   orgnr: "559576-2401"
   adress: "Sjöhed 160, 442 74 Harestad"
-  supportmail: "hej@heimguard.se"
+  supportmail: "hello@heimguard.se"
   land: SE
   huvudmarknad: Sverige
+  # NO-marknaden uppsatt 2026-09-07 (locale nb live). Betalar i SEK tills
+  # NOK slås på i admin — NOK-paketnivåer krävs före norska annonser.
+  marknader:
+    - land: NO
+      locale: nb
+      valuta: SEK
   valuta: SEK
   moms_i_pris: true
 

@@ -15,18 +15,18 @@ const IFYLLD = {
   bolagsnamn: 'Mittbolag AB',
   orgnr: '556123-4567',
   adress: 'Gatan 1, 111 22 Stockholm',
-  supportmail: 'hej@dinbutik.se',
+  supportmail: 'hello@dinbutik.se',
   doman: 'dinbutik.se',
   produktbilder: ['https://cdn.exempel.se/riktig-bild.jpg'],
   pixel_id: '111',
-  ad_account_id: '222',
+  ad_account_id: '915422744950975',
   page_id: '333',
 };
 
-test('mallen läses och rapporterar alla nio fält som tomma', () => {
+test('mallen läses — bara det gemensamma annonskontot är förifyllt', () => {
   const { ifyllt, saknas } = lasLaunchInput(MALLEN);
-  assert.deepEqual(ifyllt, []);
-  assert.equal(saknas.length, 9);
+  assert.deepEqual(ifyllt, ['ad_account_id']);
+  assert.equal(saknas.length, 8);
 });
 
 test('ifyllda värden hamnar på rätt ställen', () => {
@@ -34,7 +34,7 @@ test('ifyllda värden hamnar på rätt ställen', () => {
   const produkt = raprodukt();
   const applicerat = tillampaLaunchInput(butik, produkt, IFYLLD);
   assert.equal(butik.butik.bolagsnamn, 'Mittbolag AB');
-  assert.equal(butik.butik.supportmail, 'hej@dinbutik.se');
+  assert.equal(butik.butik.supportmail, 'hello@dinbutik.se');
   assert.deepEqual(produkt.media.bilder, ['https://cdn.exempel.se/riktig-bild.jpg']);
   assert.equal(produkt.meta.pixel_id, '111');
   assert.equal(produkt.launch.doman, 'dinbutik.se');
@@ -61,7 +61,7 @@ test('sammanfogningen bär vidare bolagsuppgifterna till villkoren', () => {
   tillampaLaunchInput(butik, produkt, IFYLLD);
   const p = sammanfoga(butik, produkt);
   assert.equal(p.brand.org_namn, 'Mittbolag AB');
-  assert.equal(p.brand.kontakt_epost, 'hej@dinbutik.se');
+  assert.equal(p.brand.kontakt_epost, 'hello@dinbutik.se');
   assert.equal(p.meta.page_id, '333');
 });
 

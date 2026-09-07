@@ -1,7 +1,7 @@
 # Axels checklista — innan VA:n får sin lista
 
 Engångsgrejer. Gjorda en gång = aldrig igen.
-Sen är ditt enda jobb per butik: skapa den och välj produkt.
+Sen är ditt enda jobb per butik: välj produkt — och ta ägarskapet i överlämningen.
 
 ## 1. Bjud in henne
 - [ ] Ge henne inloggen till Claude-kontot (Axels beslut 2026-09-07 — hon
@@ -22,13 +22,12 @@ Sen är ditt enda jobb per butik: skapa den och välj produkt.
       business_management → klistrar in i Claude. Claude guidar henne.
 
 ## 3. Per ny butik (ditt enda återkommande jobb)
-- [ ] Skapa Shopify-butiken (betalningen)
-- [ ] **Användare och behörigheter** → **Lägg till personal** → hon, med:
-      **Onlinebutik**, **Appar och försäljningskanaler**,
-      **Hantera inställningar**, **Domäner**, **Betalningsinställningar**
-      (Axels beslut: personal-inbjudan görs per butik)
-- [ ] Ge henne bolags- och bankuppgifterna för Shopify Payments
 - [ ] Säg vilken produkt: klistra produktlänken i Claude med **/ny-ops**
+      (VA:n skapar butiken själv på free trial från jobb-Gmailen —
+      personal-inbjudan går inte på trial och behövs inte)
+- [ ] Ge henne bolags- och bankuppgifterna för Shopify Payments
+- [ ] Vid överlämningen: logga in med jobb-Gmailen, välj plan, lägg in
+      kortet och ta över ägarskapet (VA-checklistans steg 9)
 
 Sen tar hon och fabriken allt annat.
 Hennes lista: `factory/VA-CHECKLIST.md`.

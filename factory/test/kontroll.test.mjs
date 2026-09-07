@@ -14,9 +14,9 @@ import { dummy, medButiksfrakt, raprodukt } from './hjalp.mjs';
 // En produktfil där allt som krävs för launch är ifyllt.
 function launchklarProdukt() {
   const p = dummy();
-  p.meta.pixel_id = '1554276343018184';
-  p.meta.ad_account_id = '1867947880635861';
-  p.meta.page_id = '678639638662543';
+  p.meta.pixel_id = '111111111111111';
+  p.meta.ad_account_id = '915422744950975';
+  p.meta.page_id = '222222222222222';
   return p;
 }
 
@@ -54,6 +54,14 @@ test('allt ifyllt ger grön launch', () => {
   const r = kontrolleraLaunch(launchklarProdukt(), { shop: SHOP, produkt: PRODUKT, policyer: POLICYER });
   assert.equal(r.gron, true, `kritiska: ${JSON.stringify(namn(r))}`);
   assert.ok(r.manuella.length >= 3);
+});
+
+test('fel annonskonto stoppar launchen', () => {
+  const p = launchklarProdukt();
+  p.meta.ad_account_id = '1867947880635861'; // Bäverbutiken — fel verksamhet
+  const r = kontrolleraLaunch(p, { shop: SHOP, produkt: PRODUKT, policyer: POLICYER });
+  assert.equal(r.gron, false);
+  assert.ok(namn(r).includes('tracking'));
 });
 
 test('produkt saknas i Shopify stoppar launchen', () => {

@@ -16,7 +16,8 @@ som genereras per bygge).
    bilder, beskrivningstexter, Judge.me-recensioner (`/products/<handle>.json`
    + `judge.me/reviews/reviews_for_widget`). Aldrig påhittade specs.
 2. ⚙️ Brand-steget FÖRE bygget: analysera köpare/emotion → `branding:`-block i
-   butiksfilen. Namnregeln: funkar på svenska OCH engelska, aldrig å/ä/ö.
+   butiksfilen. Namnregeln (skärpt 2026-09-08): helst ett HELT engelskt namn
+   som svenskar och norrmän ändå kan läsa och uttala, aldrig å/ä/ö.
    Kolla domänen med whois INNAN namnet spikas.
 3. ⚙️ Skriv `butiker/<id>.yaml` + `produkter/<id>.yaml`, validera, dry-run.
 4. ⚙️ Rund logga (mörk cirkel + ordmärke, qlmanage SVG→PNG) + favicon (initial).
@@ -50,12 +51,13 @@ som genereras per bygge).
 9. ⚙️ Bilder: inbränd engelska bort. kie.ai klarar INTE svensk text — metoden
    är kie REMOVE text → sharp lägger svensk vektortext (grid-overlay för
    koordinater). Gif kan inte fixas — redigerarjobb.
-10. 🖐 **Butiken skapas av VA:n själv** från jobb-Gmailen (ny trial per
-    butik, Basic-plan). Shopify-åtkomst är per butik — hon ser aldrig
+10. 🖐 **Butiken skapas av VA:n själv** från jobb-Gmailen (ny FREE TRIAL
+    per butik — ingen plan, inget kort; staff-inbjudningar kräver betald
+    plan, mätt 2026-09-08). Shopify-åtkomst är per butik — hon ser aldrig
     ägarens övriga butiker, och de gamla butikerna ligger på ägarens egen
-    inloggning. Ägaren bjuds in som staff direkt vid skapandet och tar
-    över ägarskapet i överlämningen (checklistans steg 2 + 9, beslut
-    2026-09-07). Sen: publicera tema, språk svenska, butiksnamn, domän,
+    inloggning. I överlämningen loggar ägaren in med jobb-Gmailen, väljer
+    plan med sitt kort och tar över ägarskapet (checklistans steg 2 + 9,
+    beslut 2026-09-08). Sen: publicera tema, språk svenska, butiksnamn, domän,
     Shopify Payments + Klarna, avsändarmejl, kassalogga. Klicken är VA:ns
     (`factory/VA-CHECKLIST.md`, ifylld per butik i `output/<id>/CHECKLISTA.md`)
     — även Shopify Payments (Axels besked 2026-09-07: aktiveringen har
@@ -84,7 +86,7 @@ som genereras per bygge).
     Judge.mes settings-API är läs-bara (skrivförsök ger 404), så de två
     fälten är klick i checklistan.
 
-## Fas 4 — Marknader (SE + NO på samma butik)
+## Fas 4 — Marknader (STANDARD i varje ny OPS, Axel 2026-09-08: SE huvudspråk + marknad Norge locale nb; fler marknader läggs till på samma sätt)
 13. ⚙️ Marknad Norge + locale nb (publicerad) + nb som alternateLocale på
     huvuddomänens webPresence (`webPresenceUpdate` — INTE market-varianten).
     NOK slås på i admin (API-spärrat i unified markets).
@@ -112,7 +114,8 @@ som genereras per bygge).
 16. ⚙️ NOK-paketnivåer innan norska annonser (SEK-belopp räknar fel i NOK).
 
 ## Fas 5 — Kanaler
-16. 🖐+⚙️ Discord: Axel skapar server + släpper in boten (invite-länk) →
+16. 🖐+⚙️ Discord: VA:n skapar servern och godkänner boten (checklistans
+    steg 8) →
     `factory/discord.mjs --guild <id> --ikon <logga>` bygger de sex kanalerna
     och plockar redigerare ur standby-listan.
 17. 🖐 Meta: VA:n har **Fullständig åtkomst** i Business Manager (Axels
@@ -143,5 +146,6 @@ som genereras per bygge).
   "Judge.me avaktiverad" igen (hände v7→v8→v9, Axel fick aktivera om två
   gånger). Regel: läs `current.blocks` ur LIVE-temats settings_data och
   kopiera in i varje ny klons settings_data INNAN den lämnas för publicering.
-- MCP:n kan inte: skapa/publicera teman mot live, shop-mejl, checkout-branding
+- API:t kan inte (custom app-token; Shopify-MCP:n är FÖRBJUDEN i /ny-ops):
+  skapa/publicera teman mot live, shop-mejl, checkout-branding
   (Plus), shopPolicyUpdate (scope), Meta-sidor, byta primärspråk.

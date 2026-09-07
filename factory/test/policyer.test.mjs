@@ -30,7 +30,7 @@ test('returpolicyn tar öppet köp ur garantierna och nämner lagens 14 dagar', 
   const html = returpolicy(dummy());
   assert.ok(html.includes('14 dagars ångerrätt'));
   assert.ok(html.includes('30 dagars öppet köp'));
-  assert.ok(html.includes('hej@nackmagneten.se'));
+  assert.ok(html.includes('hello@nackmagneten.se'));
 });
 
 test('öppet köp kortare än ångerrätten presenteras inte som ett extra löfte', () => {
@@ -86,7 +86,7 @@ test('köpvillkoren bär företagsnamn, orgnr och valuta', () => {
 });
 
 test('kontaktsidan hänvisar till kundtjänstadressen', () => {
-  assert.ok(kontaktsida(dummy()).includes('hej@nackmagneten.se'));
+  assert.ok(kontaktsida(dummy()).includes('hello@nackmagneten.se'));
 });
 
 test('saknade företagsuppgifter blir [FYLL I] i stället för gissningar', () => {
@@ -125,7 +125,7 @@ const ALLA_POLICYER = [
 function medMeta() {
   const p = dummy();
   p.meta.pixel_id = '1';
-  p.meta.ad_account_id = '2';
+  p.meta.ad_account_id = '915422744950975';
   p.meta.page_id = '3';
   return p;
 }

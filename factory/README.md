@@ -27,8 +27,11 @@ En produktfil per vinnande produkt är source of truth för allt som byggs sen
 2. Validera:
 
 ```bash
-node factory/validera.mjs factory/produkter/<id>.yaml
+node factory/ops.mjs factory/butiker/<butik>.yaml factory/produkter/<id>.yaml --dry-run
 ```
+
+(ops.mjs sammanfogar butik + produkt — kör aldrig validera.mjs fristående
+på bara produktfilen: den saknar butiksfälten och stoppar falskt.)
 
 Kritiska fält som saknas → ❌ och exit 1, systemet stoppar direkt.
 Varningar (⚠️) stoppar inte, men ska vara ifyllda före launch.
@@ -40,9 +43,12 @@ Exempel med allt ifyllt: `produkter/dummyprodukten.yaml`.
 ## Steg 2 — bygg butiken ur filen
 
 ```bash
-node factory/build-store.mjs factory/produkter/<id>.yaml --dry-run   # visa allt, rör inget
-node factory/build-store.mjs factory/produkter/<id>.yaml             # skapa i Shopify
+node factory/ops.mjs factory/butiker/<butik>.yaml factory/produkter/<id>.yaml --dry-run   # visa allt, rör inget
+node factory/ops.mjs factory/butiker/<butik>.yaml factory/produkter/<id>.yaml             # skapa i Shopify
 ```
+
+(`build-store.mjs` är den äldre enprodukts-vägen — den validerar produktfilen
+ensam och stoppar falskt på mall-baserade filer utan butiksfält.)
 
 - Validerar först — kritiska fel stoppar bygget.
 - Bygger one-product-sidan ur den återanvändbara mallen i `sida.mjs`:
@@ -151,5 +157,3 @@ ACTIVE och publiceras i Online Store-kanalen. LAUNCH rör aldrig annonskontot.
 - YAML-läsaren stödjer en delmängd: all text på **en rad**, citera text med
   `:` eller `#`. Inga flerradiga block.
 - `meta.page_id`/`pixel_id` kopieras aldrig från en annan verksamhet.
-- Nästa steg (byggs senare): kommando som bygger Shopify-produktsidan
-  från en grönvaliderad produktfil.

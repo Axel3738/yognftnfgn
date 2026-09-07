@@ -14,9 +14,15 @@ butik:
   bolagsnamn: ""              # KRITISKT — juridiskt namn i köpvillkoren
   orgnr: ""                   # KRITISKT
   adress: ""                  # KRITISKT — postadress i köpvillkoren
-  supportmail: ""             # KRITISKT — kundtjänstadress
+  supportmail: ""             # KRITISKT — alltid hello@<domän> (Axel 2026-09-08), aldrig hej@
   land: SE                    # KRITISKT — tvåbokstavskod där bolaget sitter
   huvudmarknad: Sverige       # KRITISKT — zonen som är hemmamarknad
+  # STANDARD i varje OPS (Axel 2026-09-08): marknad Norge (locale nb) från
+  # start — fler marknader = fler rader. NOK slås på i admin (API-spärrat).
+  marknader:
+    - land: NO
+      locale: nb
+      valuta: NOK
   valuta: SEK                 # KRITISKT — SEK, NOK, DKK, EUR, USD eller GBP
   moms_i_pris: true           # true = priserna inkluderar skatt
 

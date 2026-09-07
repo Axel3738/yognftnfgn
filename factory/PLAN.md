@@ -4,14 +4,14 @@
 **Gäller:** alla OPS-butiker som byggs ur fabriken. Hemvakten är butik nr 1.
 Bäverbutiken och Grillkliniken berörs inte.
 
-## 0. Namnregeln (Axels beslut 2026-09-07)
+## 0. Namnregeln (Axels beslut 2026-09-07, skärpt 2026-09-08)
 
-Varje ny OPS-butik får ett brandnamn som **funkar på alla marknader**:
-läsbart och uttalbart på både svenska och engelska, aldrig å/ä/ö, och samma
-namn ska kunna användas i .se, .no, .dk och .com utan att brandas om.
-Valideringen varnar på å/ä/ö. Hemvakten byggdes före regeln och behålls —
-Axels beslut 2026-09-07: Hemvakten är ett RENT SVENSKT brand och positioneras
-aldrig som norskt. Norge-marknaden finns tekniskt men marknadsförs inte.
+Varje ny OPS-butik får **helst ett HELT engelskt brandnamn** — läsbart och
+uttalbart för svenskar och norrmän, aldrig å/ä/ö, och samma namn ska kunna
+användas i .se, .no, .dk och .com utan att brandas om. Valideringen varnar
+på å/ä/ö. (Historik: Hemvakten byggdes före regeln och döptes om till
+HeimGuard 2026-09-07 — Norge-versionen är byggd och live sedan samma dag;
+norska annonser startar först när NOK-paketnivåer är satta.)
 
 ## 1. Annonsöversättaren: Bäverbutikens annonser → OPS-brandet
 
@@ -87,7 +87,8 @@ plockar samtidigt nästa lediga redigerare ur standby-listan.
 - Redigerarplockningen: första raden med status `redo` i
   `factory/redigerare/standby.md` märks `tilldelad <butik> <datum>`.
 - ⚠️ En bot kan bara SKAPA servrar så länge den sitter i < 10 (Discords
-  gräns). Därefter: Axel skapar servern, boten bygger kanalerna med `--guild`.
+  gräns). Därefter: VA:n skapar servern (VA-checklistans steg 8), boten
+  bygger kanalerna med `--guild`.
 
 ```bash
 node factory/discord.mjs factory/butiker/<butik>.yaml --torr   # visa planen
@@ -125,15 +126,24 @@ Från Q4-genomgången Axel skickade. Tre delar, i prioritetsordning:
    förväg så en vinnare kan skalas utan att sälja slut. För dropshipping:
    bekräfta leverantörens kapacitet och leveranstid INNAN skalning.
 
+## 6b. Marknadssteget i fabriken (nästa bygge, beslut 2026-09-08)
+
+SE + NO är standard i varje butik, men `ops.mjs` saknar ännu ett automatiskt
+marknadssteg — fas 4 görs i dag av rutinen via API enligt PROCESS.md.
+Bygg: steg `marknader` i ops.mjs (marknad Norge + locale nb + webPresence +
+translationsRegister-uppspelning) och en launchpunkt i kontroll.mjs som blir
+kritisk när marknaden eller localen saknas.
+
 ## 7. Delegeringen: Axel ska inte jobba (Axels mål 2026-09-07)
 
-Slutläget: **Axels enda jobb per ny butik är att skapa den och betala.**
+Slutläget: **Axels enda jobb per ny butik är att välja produkt — och ta
+ägarskapet i överlämningen.**
 Allt annat gör en VA med fabriken. Uppdelningen:
 
 **Engångs-setup (Axel, en gång totalt):**
-1. Shopify-personal till VA:n med fem behörigheter: Onlinebutik, Appar
-   och försäljningskanaler, Hantera inställningar, Domäner,
-   Betalningsinställningar.
+1. VA:n skapar varje butik själv på free trial med jobb-Gmailen —
+   ingen personal-inbjudan behövs (staff-inbjudningar kräver betald plan,
+   mätt 2026-09-08). Ägaren tar ägarskapet i överlämningen.
 2. VA:n kör på AXELS Claude-konto (Axels beslut 2026-09-07: "jag bryr
    mig inte" — en egen plats kostade ~300 kr/mån; invändningen att kontot
    når Meta-kontona och minnet framfördes och överkördes). Nycklarna
@@ -141,12 +151,14 @@ Allt annat gör en VA med fabriken. Uppdelningen:
    KIE_API_KEY + butikens egen SHOPIFY_ADMIN_TOKEN) bor i `factory/.env`.
 3. Loopia-inlogg till VA:n med företagskortet sparat → domänköp +
    mejlvidarebefordran delegerat.
-4. Företagskortet in i Meta Business Manager EN gång + VA:n som anställd
-   → nya annonskonton drar från samma kort utan att VA:n ser kortet.
+4. Företagskortet in i Meta Business Manager EN gång + VA:n med
+   Fullständig åtkomst → det gemensamma OPS-kontot MagiBorsten DK
+   915422744950975 drar från samma kort. Inga nya annonskonton skapas.
 5. VA:n använder sitt eget Discord-konto — boten bygger kanalerna.
 
 **Per ny butik:**
-- 🖐 Axel: skapar Shopify-butiken (betalningen). Klart — inget mer.
+- 🖐 Axel: väljer produkt. VA:n skapar butiken på free trial; Axel väljer
+  plan, lägger in kortet och tar ägarskapet i överlämningen.
 - ⚙️ VA:n: kör fabriksrutinen i Claude (PROCESS.md), bockar CHECKLISTA.md,
   inklusive Shopify Payments-aktiveringen (bolagsuppgifterna står i
   butik-mallen: STONEBITE ECOM AB, 559576-2401).

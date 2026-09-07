@@ -18,7 +18,7 @@ import { STJARNFARG } from './branding.mjs';
 export function byggChecklista(p, butik) {
   const brand = p?.brand?.namn ?? butik?.butik?.brand ?? 'STORE NAME';
   const doman = p?.brand?.domanideer?.[0] ?? 'DOMAIN';
-  const mail = butik?.butik?.supportmail ?? `hej@${doman}`;
+  const mail = butik?.butik?.supportmail ?? `hello@${doman}`;
   const agare = 'subscriptions@stonebite.org';
   const stjarna = STJARNFARG.replace('#', '');
   return `# Store Launch Checklist — ${brand} (manual steps)
@@ -40,7 +40,7 @@ Everything not on this list is done by Claude Code.
 ## 2. Shopify – create the store
 - [ ] Go to shopify.com → **Start free trial** → sign up with the work Gmail
 - [ ] Stay on the free trial – never pick a plan, never enter any card
-- [ ] (Staff invites need a paid plan – the owner is added at hand over instead)
+  Note: staff invites need a paid plan – the owner is added at hand over.
 
 ## 3. Shopify – basics
 - [ ] Settings → General → Store name → **${brand}** → Save
@@ -74,9 +74,12 @@ Everything not on this list is done by Claude Code.
 - [ ] Open the invite link Claude Code gives you → **Authorize** the bot
 
 ## 9. Hand over
-- [ ] Tell Claude Code: **"Store ready: ${brand}"** – it creates the pixel, renames the ad account, builds Discord channels and imports reviews
+- [ ] Tell Claude Code: **"Store ready: ${brand}"** – it creates the pixel, builds Discord channels and imports reviews
 - [ ] When Claude says the theme is ready: Online Store → Themes → the theme Claude names → **Publish**
-- [ ] Install the **WeTracked** app → paste the pixel ID Claude gives you → connect the Conversions API token (WeTracked's guide)
+- [ ] When Claude says the Norway market is ready: Settings → Markets → **Norway** → activate **NOK** → Save
+- [ ] Install the **WeTracked** app from the Shopify App Store
+- [ ] WeTracked → paste the **pixel ID** Claude gives you
+- [ ] WeTracked → connect the **Conversions API token** (WeTracked shows the steps)
 - [ ] The owner logs in with the work Gmail, picks the plan and adds his card
 - [ ] Then: Settings → Users and permissions → ⋯ → **Transfer ownership** → **${agare}**
 - [ ] Owner changes the Loopia password afterwards

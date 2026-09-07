@@ -32,17 +32,19 @@ export function valideraButik(b) {
   }
   if (text(b?.butik?.supportmail) && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(b.butik.supportmail)) {
     fel.push('butik.supportmail ser inte ut som en mejladress');
+  } else if (text(b?.butik?.supportmail) && !/^hello@/i.test(b.butik.supportmail)) {
+    fel.push('butik.supportmail ska alltid vara hello@<domän> (Axels beslut 2026-09-08)');
   }
   if (text(b?.butik?.id) && !/^[a-z0-9-]+$/.test(b.butik.id)) {
     fel.push(`butik.id "${b.butik.id}" får bara ha små bokstäver, siffror och bindestreck`);
   }
-  // Axels namnregel 2026-09-07: brandnamnet ska bära på VARJE marknad —
-  // svenskt OCH engelskt gångbart. å/ä/ö gör namnet omöjligt som domän och
-  // oläsligt utomlands. Varning, inte stopp: Hemvakten byggdes före regeln
-  // och befintliga butiker döps inte om.
+  // Axels namnregel 2026-09-07, skärpt 2026-09-08: helst ett HELT engelskt
+  // brandnamn som svenskar/norrmän ändå kan läsa och uttala. å/ä/ö gör
+  // namnet omöjligt som domän och oläsligt utomlands. Varning, inte stopp:
+  // Hemvakten byggdes före regeln och befintliga butiker döps inte om.
   if (text(b?.butik?.brand) && /[åäöÅÄÖ]/.test(b.butik.brand)) {
     varningar.push(
-      `butik.brand "${b.butik.brand}" innehåller å/ä/ö — namnregeln kräver ett namn som funkar på alla marknader`
+      `butik.brand "${b.butik.brand}" innehåller å/ä/ö — namnregeln kräver helst ett helt engelskt namn utan å/ä/ö`
     );
   }
 

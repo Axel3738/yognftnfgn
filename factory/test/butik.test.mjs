@@ -37,6 +37,12 @@ test('exempeluppgifter varnar men stoppar inte bygget', () => {
   assert.ok(varningar.some((v) => v.includes('exempeluppgift')));
 });
 
+test('supportmail som inte är hello@ stoppar konfigen', () => {
+  const b = rabutik();
+  b.butik.supportmail = 'hej@nackmagneten.se';
+  assert.ok(valideraButik(b).fel.some((f) => f.includes('hello@')));
+});
+
 test('betald frakt utan pris stoppar konfigen', () => {
   const b = rabutik();
   b.frakt = { fri_globalt: false };
@@ -48,7 +54,7 @@ test('betald frakt utan pris stoppar konfigen', () => {
 test('produkten ärver bolagsuppgifter, valuta och frakt från butiken', () => {
   const p = dummy();
   assert.equal(p.brand.org_namn, 'Exempelbolaget AB');
-  assert.equal(p.brand.kontakt_epost, 'hej@nackmagneten.se');
+  assert.equal(p.brand.kontakt_epost, 'hello@nackmagneten.se');
   assert.equal(p.ekonomi.valuta, 'SEK');
   assert.equal(p.shipping.kostnad, 0);
   assert.equal(p.shipping.alternativ[0].namn, 'Express inom Sverige');

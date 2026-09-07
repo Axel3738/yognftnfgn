@@ -1,24 +1,27 @@
-// Meta-steget: skapar det som FAKTISKT går via Marketing API för en ny
-// OPS-butik — annonskonto och pixel. Sidor kan inte skapas via API
-// (Meta tog bort det) — sidan är kvar på Axels checklista.
+// Meta-steget: skapar pixeln för en ny OPS-butik i det GEMENSAMMA
+// annonskontot. Sidor kan inte skapas via API (Meta tog bort det) —
+// sidan skapar VA:n själv i Business Manager (VA-checklistans steg 7).
 //
-//   node factory/meta-setup.mjs factory/produkter/<id>.yaml --business <business-id> [--torr]
+//   node factory/meta-setup.mjs factory/produkter/<id>.yaml [--torr]
 //
 // Kräver env META_ACCESS_TOKEN — en systemanvändartoken från Business
-// Manager med scopen ads_management + business_management. Samma token som
-// rutinerna använder fungerar OM den har business_management.
+// Manager med scopet ads_management. Samma token som rutinerna använder.
 //
-// ⚠️ Annonskonto-skapande kräver att businessen får skapa konton
-// (Meta begränsar antalet per business, och nya businesses kan behöva
-// verifiering). Nekas anropet skrivs exakt vad Meta svarade — då återstår
-// knappen i Business Manager, och det här skriptet har ändå kostat noll.
+// ⚠️ Annonskontot är ALLTID MagiBorsten DK 915422744950975 (Axels beslut
+// 2026-09-07/08): ETT gemensamt konto för alla OPS-butiker, svenska som
+// norska. Det skapas inga nya konton och kontot döps aldrig om —
+// kampanjnamn prefixas med brandet så datan går att skära per butik.
+// Förväxla ALDRIG med MagiBorsten 1867947880635861 (Bäverbutiken).
 
 import { readFileSync, writeFileSync } from 'node:fs';
-import { fileURLToPath, pathToFileURL } from 'node:url';
+import { pathToFileURL } from 'node:url';
 import { lasYaml } from './yaml.mjs';
 import { laddaEnv } from './env.mjs';
 
 const GRAPH = 'https://graph.facebook.com/v21.0';
+
+// Gemensamma OPS-annonskontot — ändras aldrig (samma konstant i kontroll.mjs).
+export const OPS_ANNONSKONTO = '915422744950975';
 
 async function graph(sokvag, { metod = 'GET', form = null } = {}) {
   const token = process.env.META_ACCESS_TOKEN;
@@ -36,63 +39,45 @@ async function graph(sokvag, { metod = 'GET', form = null } = {}) {
   return data;
 }
 
-export async function skapaAnnonskonto(businessId, namn) {
-  return graph(`/${businessId}/adaccount`, {
-    metod: 'POST',
-    form: { name: namn, currency: 'SEK', timezone_id: '129', end_advertiser: businessId, media_agency: 'NONE', partner: 'NONE' },
-  });
-}
-
 export async function skapaPixel(adAccountId, namn) {
   return graph(`/act_${adAccountId}/adspixels`, { metod: 'POST', form: { name: namn } });
-}
-
-// Döper om ett befintligt annonskonto till brandet — VA-checklistans
-// "Claude renames the ad account". Kontonamnet är aldrig samma som
-// brandnamnet i övriga repo:t, men OPS-butikernas konton får brandets namn
-// (Axels flöde: ta ett tomt konto, döp om, lägg kortet via Business Manager).
-export async function dopOmAnnonskonto(adAccountId, nyttNamn) {
-  return graph(`/act_${adAccountId}`, { metod: 'POST', form: { name: nyttNamn } });
 }
 
 async function huvud() {
   laddaEnv();
   const arg = process.argv.slice(2);
   const produktfil = arg.find((a) => !a.startsWith('--'));
-  const businessId = arg.includes('--business') ? arg[arg.indexOf('--business') + 1] : null;
   const torr = arg.includes('--torr') || arg.includes('--dry');
-  if (!produktfil || !businessId) {
-    console.error('Användning: node factory/meta-setup.mjs factory/produkter/<id>.yaml --business <id> [--torr]');
+  if (!produktfil) {
+    console.error('Användning: node factory/meta-setup.mjs factory/produkter/<id>.yaml [--torr]');
     process.exit(1);
   }
   const p = lasYaml(readFileSync(produktfil, 'utf8'));
   const brand = p?.brand?.namn ?? p?.produkt?.namn;
 
-  console.log(`\nMeta-setup för ${brand} (business ${businessId}):`);
-  console.log(`  1. Annonskonto "${brand}" i SEK`);
-  console.log(`  2. Pixel "${brand}"`);
-  console.log('  (Sidan går inte via API — den står kvar på checklistan.)');
-  if (torr) { console.log('\n(torrkörning — inget skapades)'); return; }
-
-  let kontoId = p?.meta?.ad_account_id || null;
-  if (kontoId) {
-    console.log(`\nAnnonskonto finns redan i produktfilen (${kontoId}) — hoppar över skapandet.`);
-  } else {
-    const konto = await skapaAnnonskonto(businessId, brand);
-    kontoId = String(konto.id).replace('act_', '');
-    console.log(`✅ Annonskonto skapat: ${kontoId}`);
+  // Spärr: produktfilen får aldrig peka på ett annat konto än det gemensamma.
+  const kontoIFil = p?.meta?.ad_account_id || null;
+  if (kontoIFil && String(kontoIFil) !== OPS_ANNONSKONTO) {
+    throw new Error(
+      `Produktfilens ad_account_id (${kontoIFil}) är inte OPS-kontot ${OPS_ANNONSKONTO} — stoppar. Fel konto kostar riktiga pengar.`
+    );
   }
 
-  const pixel = await skapaPixel(kontoId, brand);
+  console.log(`\nMeta-setup för ${brand}:`);
+  console.log(`  Pixel "${brand}" i det gemensamma OPS-kontot MagiBorsten DK (${OPS_ANNONSKONTO})`);
+  console.log('  (Sidan skapar VA:n i Business Manager — API:t kan inte.)');
+  if (torr) { console.log('\n(torrkörning — inget skapades)'); return; }
+
+  const pixel = await skapaPixel(OPS_ANNONSKONTO, brand);
   console.log(`✅ Pixel skapad: ${pixel.id}`);
 
   // Skriv tillbaka till produktfilen så inget hamnar bara i chatten.
   let text = readFileSync(produktfil, 'utf8');
-  text = text.replace(/ad_account_id: ".*"/, `ad_account_id: "${kontoId}"`);
+  text = text.replace(/ad_account_id: ".*"/, `ad_account_id: "${OPS_ANNONSKONTO}"`);
   text = text.replace(/pixel_id: ".*"/, `pixel_id: "${pixel.id}"`);
   writeFileSync(produktfil, text);
   console.log('✅ Produktfilen uppdaterad med id:na.');
-  console.log('\n🖐 Kvar för hand: skapa sidan i Business Manager + betalkort på kontot.');
+  console.log('\n🖐 Kvar för hand: VA:n skapar sidan i Business Manager + klistrar pixel-id:t i WeTracked.');
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

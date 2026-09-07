@@ -20,7 +20,7 @@ Fill in first:
 
 * STORE NAME: ____________
 * DOMAIN: ____________ (e.g. brand.se)
-* STORE EMAIL: hej@DOMAIN
+* STORE EMAIL: hello@DOMAIN
 * FORWARD TO: ____________ (owner's inbox)
 
 Do the steps in order, top to bottom. Tick each one.
@@ -38,14 +38,14 @@ VIDEO:
 
 * Go to shopify.com → Start free trial → sign up with the work Gmail
 * Stay on the free trial – never pick a plan, never enter any card
-* (Staff invites need a paid plan – the owner is added at hand over instead)
+  Note: staff invites need a paid plan – the owner is added at hand over.
 
 ## 3. Shopify – basics
 VIDEO:
 
 * Settings → General → Store name → STORE NAME → Save
 * Settings → Domains → Connect existing domain → DOMAIN → follow the DNS steps → Set as primary
-* Settings → Languages → make Swedish default (add others if needed)
+* Settings → Languages → make Swedish default
 * Settings → Notifications → Sender email → STORE EMAIL → Save → click the verification link in the inbox
 
 ## 4. Shopify – connect Claude Code
@@ -88,11 +88,13 @@ VIDEO:
 VIDEO:
 
 * Tell Claude Code: "Store ready: STORE NAME" – it creates the pixel,
-  renames the ad account, builds Discord channels and imports reviews
+  builds Discord channels and imports reviews
 * When Claude says the theme is ready: Online Store → Themes → the theme
   Claude names → Publish
-* Install the WeTracked app → paste the pixel ID Claude gives you →
-  connect the Conversions API token (follow WeTracked's guide)
+* When Claude says the Norway market is ready: Settings → Markets → Norway → activate NOK → Save
+* Install the WeTracked app from the Shopify App Store
+* WeTracked → paste the pixel ID Claude gives you
+* WeTracked → connect the Conversions API token (WeTracked shows the steps)
 * The owner logs in with the work Gmail, picks the plan and adds his card
 * Then: Settings → Users and permissions → ⋯ → Transfer ownership → the owner
 * Owner changes the Loopia password afterwards
@@ -101,5 +103,5 @@ VIDEO:
 
 Claude Code does: brand design from product + audience, theme build,
 product page, bundles + free-gift bonus, cart upsell, images, reviews
-import, Meta pixel, ad account rename, Discord channels,
+import, Meta pixel, Discord channels,
 markets/translations, and tells you exactly when your clicks are needed.

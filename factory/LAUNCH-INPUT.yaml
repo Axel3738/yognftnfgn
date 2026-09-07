@@ -8,15 +8,16 @@
 bolagsnamn: ""              # juridiskt namn, ex "Mittbolag AB"
 orgnr: ""                   # ex "556123-4567"
 adress: ""                  # ex "Gatan 1, 111 22 Stockholm"
-supportmail: ""             # ex "hej@dinbutik.se"
+supportmail: ""             # alltid "hello@<domän>" (Axel 2026-09-08), ex "hello@dinbutik.se"
 
 doman: ""                   # domänen butiken ska ligga på, ex "dinbutik.se"
 
 produktbilder:              # länkar till riktiga produktbilder (Drive eller URL)
   - ""
 
-# Tracking — från Meta Business Manager för DEN HÄR butiken.
-# Kopiera aldrig från en annan verksamhet.
+# Tracking — pixel_id och page_id är från Meta Business Manager för DEN HÄR
+# butiken. Kopiera aldrig från en annan verksamhet.
 pixel_id: ""
-ad_account_id: ""
+# Annonskontot är gemensamt för ALLA OPS-butiker (MagiBorsten DK) — ändras aldrig.
+ad_account_id: "915422744950975"
 page_id: ""

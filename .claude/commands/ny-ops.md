@@ -1,8 +1,10 @@
 # /ny-ops – Bygg en komplett one-product-store (OPS Factory)
 
 Argument: `$ARGUMENTS` — källänk till produkten (Bäverbutik-produktsida eller
-annan källa) + ev. önskat brandnamn och marknader.
-Exempel: `/ny-ops https://bäverbutiken.se/products/lastnat marknader: SE NO`
+annan källa) + ev. önskat brandnamn. SE (huvudspråk svenska) + NO
+(locale nb) är ALLTID standard i varje butik — marknads-argument används
+bara för YTTERLIGARE marknader utöver dessa.
+Exempel: `/ny-ops https://bäverbutiken.se/products/lastnat`
 
 Detta är fabrikens huvudrutin. Processen i sin helhet står i
 `factory/PROCESS.md` — det dokumentet är facit, det här kommandot är
@@ -35,7 +37,8 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    och förväntat brand → positionering, tonalitet, färger, typografi i
    `branding:`-blocket. **Brandingen byggs från noll utifrån produkten och
    målgruppen — strukturen återanvänds, brandingen ALDRIG** (Axels regel).
-   Namnregeln: funkar på svenska OCH engelska, aldrig å/ä/ö. Kolla domänen
+   Namnregeln (skärpt 2026-09-08): helst ett HELT engelskt namn som svenskar
+   och norrmän ändå kan läsa och uttala, aldrig å/ä/ö. Kolla domänen
    med whois INNAN namnet spikas. Rund logga, brandnamnet, seriöst.
 4. **Konfig:** skriv `factory/butiker/<id>.yaml` + `factory/produkter/<id>.yaml`
    från mallarna, validera via `node factory/ops.mjs ... --dry-run` (den
@@ -52,16 +55,18 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    (`tema.mjs → byggKorgUpsell`, `offer.bonus_produkt`).
 7. **Bilder:** inbränd engelska bort — kie.ai RENSAR text, sharp lägger
    svensk vektortext (kie klarar INTE svenska direkt). Gif = redigerarjobb.
-8. **Marknader** (om fler än SE): fas 4 i PROCESS.md — locale, webPresence,
+8. **Marknader** (ALLTID — SE + NO är standard i varje butik, Axels beslut
+   2026-09-08): fas 4 i PROCESS.md — marknad Norge + locale nb, webPresence,
    translationsRegister på ALLT, språkversionerade bilder med
-   [SV]/[NO]-alt-märkning. Trippelkolla mot kundens riktiga vy.
+   [SV]/[NO]-alt-märkning. Fler marknader läggs till på samma sätt.
+   Trippelkolla mot kundens riktiga vy.
 9. **Checklistan:** generera `output/<id>/CHECKLISTA.md` och ge VA:n den.
    Vänta på hennes klick — fortsätt bygga det som inte kräver dem under tiden.
 10. **"Store ready: <namn>"** från VA:n = slutsteget: importera recensionerna
     (`tools/judgeme-import.mjs --mejlsuffix <domän>.invalid` med hennes token —
-    säljer butiken i fler länder översätts en delmängd till marknadens språk
-    och importeras med lokala namn; Judge.mes auto-översättning är paid och
-    köps ALDRIG, se PROCESS.md fas 3),
+    en delmängd av recensionerna översätts ALLTID till norska och importeras
+    med norska namn — Norge är standardmarknad i varje butik; Judge.mes
+    auto-översättning är paid och köps ALDRIG, se PROCESS.md fas 3),
     skapa pixeln (`skapaPixel` i `factory/meta-setup.mjs`, kräver
     META_ACCESS_TOKEN i `factory/.env`) i det gemensamma OPS-annonskontot
     **MagiBorsten DK 915422744950975** — samma konto för varje OPS-butik,
@@ -78,10 +83,11 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 ## DEFINITION OF DONE
 - [ ] Rätt Shopify-butik verifierad innan första skrivningen
 - [ ] Brand-config byggd från produkt + målgrupp, inte återanvänd
-- [ ] Namnregeln: funkar på svenska och engelska, ingen å/ä/ö, domän kollad
+- [ ] Namnregeln: helst helt engelskt namn (läsbart för svenskar/norrmän), ingen å/ä/ö, domän kollad
 - [ ] Produktsida med alla opf-sektioner + Judge.me i Appyta, ostylad
 - [ ] Paket A/B med riktiga koder, mitten förvald, bonus + korg-upsell inne
 - [ ] Bilder utan engelsk text, svensk vektortext pålagd
+- [ ] Marknad Norge + locale nb publicerad, allt översatt via translationsRegister, trippelkollat mot /nb
 - [ ] CHECKLISTA.md genererad och överlämnad till VA:n
 - [ ] Recensioner importerade när token kommit
 - [ ] Trippelkollat mot kundens vy — annars står det "delvis klart"
