@@ -7,6 +7,11 @@ app-token — steg 3). `factory/checklista.mjs` generates a filled-in copy
 per store as `output/<id>/CHECKLISTA.md`. Everything not on this list is
 done by Claude Code (routine: `/ny-ops`, process: `factory/PROCESS.md`).
 
+⚠️ **VA:ns master är Google-dokumentet** (Axels regel 2026-09-08):
+https://docs.google.com/document/d/1gOfJGdyip0u6MqMuQxMLkXq39H-M4EvY/edit
+Varje ändring i den här filen eller `checklista.mjs` ska föras in i
+dokumentet I SAMMA SESSION — annars jobbar VA:n efter gamla instruktioner.
+
 ## How this job works
 
 * The owner sends product batches about 2 times per week
@@ -51,10 +56,12 @@ VIDEO:
 ## 4. Shopify – connect Claude Code
 VIDEO:
 
-* Settings → Apps and sales channels → Develop apps → Allow custom app development
-* Create app → name it "Fabriken" → Configure Admin API scopes → tick ALL scopes → Save
-* Install app → reveal the **Admin API access token** → paste it into Claude Code when asked (never in chat or email)
+* Go to dev.shopify.com → log in with the work Gmail → Apps → Fabriken (first time only: Create app → name it "Fabriken")
+* Fabriken → Settings → copy the Client ID and the Client secret
+* Give Claude Code 3 values: the store's .myshopify.com address + the Client ID + the Client secret (paste in Claude Code, never in email)
+* When Claude gives you an install link: open it → Install app → approve
 * Claude cannot build anything in the store until this is done
+  Note: an "Admin API access token" from the CLI is the WRONG thing – Claude only needs the 3 values above. (Mätt 2026-09-08: fel tokentyp stoppade TankGuard-bygget.)
 
 ## 5. Shopify – payments
 VIDEO:

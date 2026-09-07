@@ -62,9 +62,11 @@ som genereras per bygge).
     (`factory/VA-CHECKLIST.md`, ifylld per butik i `output/<id>/CHECKLISTA.md`)
     — även Shopify Payments (Axels besked 2026-09-07: aktiveringen har
     aldrig krävt BankID, VA:n fyller i bolags- och bankuppgifterna).
-    Claude kopplas till butiken via custom app-token
-    (checklistans steg 3) → `SHOPIFY_STORE_DOMAIN` + `SHOPIFY_ADMIN_TOKEN`
-    i `factory/.env`. Rutinen startas med `/ny-ops`; frasen
+    Claude kopplas till butiken via appen Fabriken på dev.shopify.com —
+    tre värden från VA:n: myshopify-adress + Client ID + Client secret
+    (checklistans steg 4; aldrig en klistrad token) → Admin-token hämtas
+    och `SHOPIFY_STORE_DOMAIN` + `SHOPIFY_ADMIN_TOKEN` skrivs i
+    `factory/.env`. Rutinen startas med `/ny-ops`; frasen
     "Store ready: <namn>" utlöser slutsteget (se kommandot).
 
 ## Fas 3 — Recensioner
@@ -136,6 +138,10 @@ som genereras per bygge).
     större PO innan säsong (PLAN.md punkt 6).
 
 ## Regler som bevisats den hårda vägen
+- **VA:ns master är Google-dokumentet** (https://docs.google.com/document/d/1gOfJGdyip0u6MqMuQxMLkXq39H-M4EvY/edit) —
+  varje ändring i VA-CHECKLIST.md/checklista.mjs förs in där i samma
+  session (Axels regel 2026-09-08). Repot är fabrikens sanning,
+  dokumentet är VA:ns.
 - Säg ALDRIG "klart" utan tre kontroller mot kundens riktiga vy
   (markörskanning + regressionstest + visuell mobilkontroll).
 - Publicerat tema är API-låst — bygg alltid nästa version som ny klon,

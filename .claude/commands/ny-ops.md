@@ -15,9 +15,13 @@ ifylld till `factory/output/<id>/CHECKLISTA.md`.
 
 Gör i ordning, utan att invänta godkännande mellan stegen:
 
-1. **Rätt butik.** Kopplingen till den nya butiken är dess egen custom
-   app-token (VA-checklistans steg — appen "Fabriken", ALLA scopes):
-   be VA:n klistra in tokenen, skriv `SHOPIFY_STORE_DOMAIN` +
+1. **Rätt butik.** Kopplingen till den nya butiken är appen **Fabriken**
+   på dev.shopify.com (VA-checklistans steg 4). Be VA:n om TRE värden:
+   butikens `.myshopify.com`-adress, appens **Client ID** och **Client
+   secret**. ⚠️ Be ALDRIG om en klistrad token (mätt 2026-09-08:
+   VA:n klistrade en Shopify CLI-token — fel typ, stoppade bygget).
+   Hämta Admin-token med klientuppgifterna, installera appen i butiken
+   (ge VA:n installänken), skriv `SHOPIFY_STORE_DOMAIN` +
    `SHOPIFY_ADMIN_TOKEN` i `factory/.env`. Verifiera med fabrikens
    anslutningskontroll att domänen är DEN NYA butiken — fel butik =
    stoppa direkt.
@@ -61,6 +65,8 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    [SV]/[NO]-alt-märkning. Fler marknader läggs till på samma sätt.
    Trippelkolla mot kundens riktiga vy.
 9. **Checklistan:** generera `output/<id>/CHECKLISTA.md` och ge VA:n den.
+   Ändrades mallen (VA-CHECKLIST.md/checklista.mjs) i sessionen: för in
+   ändringen i VA:ns Google-dokument också (länken står i VA-CHECKLIST.md).
    Vänta på hennes klick — fortsätt bygga det som inte kräver dem under tiden.
 10. **"Store ready: <namn>"** från VA:n = slutsteget: importera recensionerna
     (`tools/judgeme-import.mjs --mejlsuffix <domän>.invalid` med hennes token —
