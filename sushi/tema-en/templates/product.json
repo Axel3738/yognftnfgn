@@ -1,0 +1,65 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": { "type": "text", "settings": { "text": "{{ product.vendor }}", "text_style": "uppercase" } },
+        "title": { "type": "title", "settings": {} },
+        "price": { "type": "price", "settings": {} },
+        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": false, "show_gift_card_recipient": true } },
+        "ms_trust": {
+          "type": "custom_liquid",
+          "settings": { "custom_liquid": "{% render 'ms-trust-row', items: 'truck:Free shipping|refresh:30-day returns|lock:Secure checkout' %}" }
+        },
+        "ms_delivery": {
+          "type": "custom_liquid",
+          "settings": { "custom_liquid": "{% render 'ms-delivery-estimate', min_days: 6, max_days: 12, cutoff_hour: 0, text: 'Estimated delivery' %}" }
+        },
+        "description": { "type": "description", "settings": {} },
+        "share": { "type": "share", "settings": { "share_label": "Share" } },
+        "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
+        "ms_paket": {
+          "type": "custom_liquid",
+          "settings": { "custom_liquid": "{% render 'ms-paket', product: product, section_id: section.id %}" }
+        }
+      },
+      "block_order": [
+        "vendor", "title", "price", "variant_picker", "ms_paket",
+        "buy_buttons", "ms_trust", "ms_delivery", "description", "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "ms_faq_section": {
+      "type": "ms-faq-section",
+      "blocks": {
+        "q1": { "type": "qa", "settings": { "q": "Will they fit?", "a": "<p>One size fits most — roughly UK 4–10 / US 5–12.</p>" } },
+        "q2": { "type": "qa", "settings": { "q": "How does Buy 1 – Get 1 work?", "a": "<p>Pick the bundle in the buy box and hit Add to cart. The free items come along automatically, and you will see them in your cart as their own lines at 0.</p>" } },
+        "q3": { "type": "qa", "settings": { "q": "Can I send them straight as a gift?", "a": "<p>Yes. Every pair arrives in a box that looks like real sushi — ready to hand over without wrapping.</p>" } },
+        "q4": { "type": "qa", "settings": { "q": "Where do you ship?", "a": "<p>The United States, United Kingdom, Australia, New Zealand and Canada, with free shipping on every order.</p>" } },
+        "q5": { "type": "qa", "settings": { "q": "Which payment methods can I use?", "a": "<p>Card (Visa, Mastercard, American Express and more), Apple Pay, Google Pay, PayPal and Shop Pay.</p>" } },
+        "q6": { "type": "qa", "settings": { "q": "What if I change my mind?", "a": "<p>30-day returns. Email us and we will help you out — no hoops.</p>" } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6"],
+      "settings": { "heading": "Common questions" }
+    },
+    "ms_sticky": {
+      "type": "ms-sticky-atc",
+      "settings": { "label": "Buy now", "position": "bottom", "show_image": true }
+    }
+  },
+  "order": ["main", "ms_faq_section", "ms_sticky"]
+}

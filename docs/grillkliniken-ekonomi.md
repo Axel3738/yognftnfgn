@@ -68,3 +68,22 @@ konkreta ID:n. **Ingen av de siffrorna finns någonstans i repots historik** —
 
 De är därför inte inskrivna här. Behöver du dem: läs av dem i Meta respektive Notion
 och skriv in dem med datum. Skriv aldrig in ett ID du inte själv har sett i källan.
+
+---
+
+## Grillöverdraget (2026-08-29, på Axels begäran)
+
+**Grillöverdrag 420D – 5 Storlekar med Snörning** skapades som **UTKAST** i
+grillkliniken.se via Shopify-connectorn (`gid://shopify/Product/15651270558020`,
+handle `grilloverdrag-420d-5-storlekar-med-snorning`). Temu-källa: goods
+601103374896256. 5 storleksvarianter (80×66×100, 100×60×150 hög, 145×61×117,
+170×61×117, 190×70×117), SKU `TEMU-601103374896256-<80|100H|145|170|190>`,
+taxable false, CONTINUE, svensk storleksguide-infografik genererad och inlagd
+i beskrivningen, publicerad mot alla 5 kanaler (syns när status blir ACTIVE).
+
+**CWD-offert kom 2026-08-29** (CANWANGDA 089, 26/08/26): 80-storleken landad
+$11,2 och 190-storleken $14,5 (420D Oxford + silver coating, 6–10 dagar, YUN).
+Offerten rättade också 190-måttet till **190×71×117** (Temu-bilden sa 70).
+Priserna höjdes på Axels begäran till **399/449/499/549/599 kr** = 73–77 %
+marginal på de offererade storlekarna (mellanstorlekarna interpolerade).
+AKTIVERAD 2026-08-29 på Axels begäran — live på grillkliniken.se/products/grilloverdrag-420d-5-storlekar-med-snorning. Silverbeläggningen beskrivs som glatt insida (skonsam mot lock/lack), enligt Axels produktkännedom.

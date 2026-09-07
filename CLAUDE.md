@@ -12,6 +12,10 @@ med en instruktion om vad han "bara behöver göra själv". Svara på svenska.
 Vidare läsning i ordning: `HANDOFF.md` (vad som är byggt, vad som återstår,
 vilka connectors som måste kopplas) → `docs/os/ACTIONPLAN.md`.
 
+**Kör Axel på sin egen dator?** `SETUP-LOKALT.md` är hans steg-för-steg-guide och
+`node temu/kolla-lokalt.mjs` säger vad som fattas. Lokalt är Temu INTE blockerat —
+då skördar sessionen bilderna själv i stället för att skicka en Cowork-prompt.
+
 ---
 
 ## Så här ska du svara Axel (gäller VARJE svar, inga undantag)
@@ -162,6 +166,18 @@ inte röras utan att Axel ber om det.
 14. **Korta svar.** Inga bibelsvar. Axel har sagt det två gånger.
     Svarsprompten högst upp i den här filen gäller alltid — även när ett kommando
     ber om ett längre leveransformat i chatten.
+15. **Fråga aldrig Axel om något du kan ta reda på själv.** Innan en fråga skickas:
+    försök hämta uppgiften, och fråga bara om försöket misslyckas — då med beskedet
+    vad du provat. Axel ska aldrig behöva leta upp något som ligger i ett API, en
+    HTML-sida eller en fil du redan har åtkomst till.
+    *(2026-08-19: jag bad honom leta upp butikens `myshopify.com`-adress. Den låg i
+    butikens egen HTML och tog en sekund att hämta — `curl -sL <butiksdomän> |
+    grep -oE '[a-z0-9-]+\.myshopify\.com'`. Samma uppgift finns också i
+    `shop { myshopifyDomain }` via Shopify-connectorn. Han fick leta i onödan.)*
+    Ordningen är alltid: **försök själv → misslyckas → fråga med exakt en fråga.**
+16. **Ett fel = en ny regel.** Missar du något, eller säger Axel "så här vill jag ha
+    det", skriv in det här i samma svar. Reglerna är produkten — nästa session vet
+    ingenting utom det som står skrivet.
 
 ---
 
@@ -187,7 +203,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 
 ## Kommandona (Axels gränssnitt)
 
-17 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
+19 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
 
 | Kommando | Vad |
 |----------|-----|
@@ -209,6 +225,8 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/nattkorning` | Rutinen "Ad upload and structure": Drive-kön → QA → Meta |
 | `/notionkorning` | **Rutin 13:20 varje dag:** Notion `To be Reviewed` (video + bild) → brief-QA → upp i produktens kampanj → Discord `#ads-launching` / `#problem-and-revisions-ads` |
 | `/commission` | **Var tredje dag + månadens sista dag:** godkända Notion-rader → spend i alla annonskonton → 0,4 % till redigeraren |
+| `/produktbatch <offertlänk> <nr>` | **Bäverbutiken:** hela batchflödet offert → 5 butiker → Notion → bildpaket |
+| `/temu <länk>` | **Bäverbutiken:** lägg upp EN Temu-produkt (äldre enkelflöde) |
 
 ### Nattrutinerna
 
@@ -605,6 +623,149 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 
 ---
 
+## Produktcopy på Bäverbutiken (butikens playbook)
+
+Källa: Jespers Slopevault-playbook, anpassad till Bäverbutiken 2026-08-18. Gäller varje
+produktsida som skapas eller ändras. `/temu`-kommandot bär mekaniken — det här är reglerna.
+
+**Rösten:** underdriv produkten, överdriv igenkänningen av problemet. Sälj lättnaden, inte
+miraklet — "varför har jag inte redan detta?" slår "wow, vilken innovation". Problemblocket
+skrivs mot rädslan/irritationen *innan* förlusten, inte efter ("pirret när mobilen glider",
+inte "du tappade den").
+
+**Förbjudna ord:** revolutionerande, ultimat, game-changer, måste-ha, oumbärlig, magisk,
+"aldrig mer …", "total trygghet". Inga absoluta löften — "stoppar/håller/dämpar", aldrig
+"aldrig"/"alltid" om utfall. Varje påstående ska vara bokstavligt sant för produkten.
+
+**Leverans — hård regel:** lova ALDRIG hastighet. Inget "snabb leverans", inga "24h", inga
+dagsintervall. Skriv **"smidig leverans"**. *(Bytt på alla 25 egna produkter 2026-08-18.
+Butikens ~75 äldre produkter är INTE kontrollerade — de kan ha hastighetslöften kvar.)*
+
+**Bullets (Funktioner-listan):** 4–5 punkter, **utfallet i fetstil först**, specen efteråt
+bara när den bevisar utfallet: `<li><strong>Utfall</strong> – bevis/spec</li>`.
+**"Och?"-testet:** går det att svara "och?" på punkten är den en spec och skrivs om
+("Silikonlina med clip" → **"Tappar du den stoppas fallet direkt"**). Kort nog för en rad på
+mobil. Tillsammans ska punkterna täcka: smärtan/utfallet, differentieringen, "passar det
+mig?" och varför den är värd pengarna.
+
+**Räkna om alla räkneord:** varje siffra i copyn (delar, lägen, timmar, mått, färger) ska
+stämma mot CWD-offerten och referensbilderna — leverantörers marknadsföring räknar upp sig.
+*(Exempel: "260 delar" får aldrig illustreras med en bild märkt "173 pcs".)*
+
+**Korrläsning:** läs all svensk copy som svensktalande före leverans — en/ett-genus,
+ordföljd, direktöversättningar. Okorrläst svenska launchas inte.
+
+**Slutgranskning (obligatorisk, utan att Axel ber om den):** granska det som ligger skarpt i
+butiken, inte det du minns att du skrev — hämta `descriptionHtml` och läs. Kontrollera:
+inga ärvda rester/platshållare (tomma HTML-kommentarer!), varje bild-URL svarar 200,
+och?-testet på alla bullets, alla räkneord mot spec, korrläsningen. Rapportera i två högar:
+**Fixat** (defekter — åtgärda direkt, redovisa) och **Förslag** (strategiska luckor — Axel väljer).
+
+**Moms på produktnivå — AV (Axels beslut 2026-08-18):** "Charge tax" ska vara AVSTÄNGT på
+varje produkt (`taxable: false` på varje variant, sätts efter `create-product`). Hela
+butiken (~156 produkter, alla varianter) stängdes av 2026-08-18. Priserna är alltså satta
+som slutpriser utan separat momsrad — ändra aldrig tillbaka utan Axels besked.
+
+**Medvetet INTE kopierat från Slopevault:**
+- *Recensionssektioner med valt snittbetyg* — inga påhittade omdömen, någonsin.
+- *Temabygge via repo* (sektioner, Liquid, tema-push) — görs inte här ännu. Men produktmallen
+  **`claudeprodukter`** ska sättas på varje ny produkt (`templateSuffix`, sätts efter
+  `create-product`) — annars renderas sidan med fel mall.
+
+---
+
+## Produktbatch-flödet (Axels regel 2026-08-29)
+
+**Vid varje ny produktbatch: leverera Cowork-prompten FÖRST, innan den egna
+uppladdningen startar.** Axel kör bildskörden på sin dator parallellt medan
+molnsessionen gör copy, priser och uppladdning. Prompten ska vara komplett
+klistra-in-bar: git-instruktioner + `temu-bilder.mjs`-kommandon med ALLA
+batchens Temu-URL:er och mappnamn (se `temu/kaching-cli/KÖR-BILDSKÖRD.md`).
+Bakgrund: Temu blockerar molnmiljön (Chromium resettas, curl får tomt skal) men
+`img.kwcdn.com` är öppet — skörden kräver Axels dator, allt annat gör molnet.
+Skörden pushas till branchen → molnsessionen fyller gallerierna med bilder,
+GIF:ar och video i efterhand.
+
+**AI-bilder (utan Cowork):** Higgsfield är kopplat i molnsessionen och används
+när riktiga bilder saknas eller behöver kompletteras — MEN med ärlighetsramen
+som redan gäller: AI används för miljö-/livsstilsbilder med en riktig
+produktbild som referens, och märks alltid ("Livsstilsbilderna är AI-genererade
+illustrationer" — samma mönster som matstrumpor-soffbilden och Bäver-UGC:n).
+Produktens faktiska utseende (färg, detaljer, innehåll) ska alltid komma från
+en riktig källbild — AI får aldrig vara enda källan till hur produkten ser ut.
+AI-video → GIF görs också i molnet (Higgsfield + ffmpeg).
+
+**Beskrivningens struktur (Axels regel 2026-08-29)** — gäller varje produktsida
+som får skördebilder, i den här exakta ordningen:
+
+1. Problemet / den emotionella delen (copy)
+2. GIF
+3. Lösningen (copy)
+4. GIF eller bild — det som passar bäst
+5. Funktioner (bullets enligt copy-reglerna)
+6. Bild
+7. Garanti
+
+GIF:arna görs av skördens video med ffmpeg (palettegen/paletteuse, ~400 px,
+8 fps, mål < 4 MB styck). Skördebilder med utländsk text görs om till svenska
+med **KIE AI** (`KIE_API_KEY`) innan de används — och varje översatt bild
+granskas visuellt: räkneord och mått på bilden ska stämma mot offerten, annars
+används den inte. En–två produktbilder i galleriet räcker inte — galleriet ska
+ha variation: rena foton, miljöbilder, detaljbilder, storleksguide och video.
+
+---
+
+## Utlandsbutikerna — NO (och den vilande DK/FI/UK-katalogen)
+
+> **⚠️ AXELS BESLUT 2026-09-07: nya produkter går bara till SVERIGE och NORGE.**
+> DK, FI och UK får inga nya produkter. Butikerna och deras befintliga katalog
+> ligger kvar och rörs inte — men allt nedan som säger "fem butiker" beskriver
+> läget före det här beslutet. Läs det som SE + NO när du skapar något nytt.
+> (Underhåll av det som redan ligger i DK/FI/UK gäller fortfarande — luckor,
+> hastighetslöften och cogs rättas där precis som förut.)
+
+## Historik: lansering till NO/DK/FI/UK
+
+Hela receptet med priser, SKU:er, bild-URL:er och färdiga steg ligger i
+**`temu/UTLANDS-LANSERING.md`** — den är självbärande och kan klistras in i ett annat
+Claude-konto. Det här är kortversionen:
+
+**Butiksregistret (verifierat 2026-08-18):**
+
+| Land | Butik | Valuta | Vendor | 🦫 i garantin |
+|---|---|---|---|---|
+| 🇸🇪 | bäverbutiken.se | SEK | Bäverbutiken | Ja |
+| 🇳🇴 | beverbutikken.no | NOK | Beverbutikken | Ja |
+| 🇩🇰 | bæverbutiken.dk | DKK | Bæverbutiken | Ja |
+| 🇫🇮 | majavakauppa.fi | EUR | Majavakauppa | Ja (*majava* = bäver) |
+| 🇬🇧 | beavershop.co.uk | GBP | BeaverShop | Ja |
+
+⚠️ **Inventera butiken innan du skapar något.** Butikerna kan redan ha produkterna från ett
+annat Claude-konto. Lista hela katalogen och sök på SKU-mönstret **först**, skapa bara det
+som saknas. Danmark fick 25 dubbletter 2026-08-18 för att det steget hoppades över.
+Och granska det som redan ligger där: finska butikens 12 första produkter hade tomma
+svenska platshållarkommentarer, hastighetslöftet "Nopea toimitus" och 1 variant på
+produkter som ska ha 7 respektive 18. Det är inte "någon annans jobb" — det ligger skarpt.
+
+**Processen:** `switch-shop` släpper token → Axel kopplar nästa butik i connectorn →
+**`get-shop-info` FÖRST, alltid** (fel butik = stopp) → skapa produkterna på landets språk →
+varianter `CONTINUE` + `taxable: false` → publicera på ALLA kanaler → kategori (taxonomi-ID:na
+är globala, samma GID i alla butiker) → verifiera bilder → nästa land. **Sist: koppla alltid
+tillbaka bäverbutiken.se** — annars skriver nästa session mot fel butik.
+
+**Priserna är kostnadsbaserade per land, inte valutakonverterade.** CWD-frakten skiljer
+per land ($6,29 UK – $9,97 FI på tofflorna). Ankare: tofflorna 349 NOK / 229 DKK /
+29,90 € / £22,99 (Axels beslut 2026-08-18) → faktor mot svenska priset: NO ×1,13,
+DK ×0,74, FI ×0,097, UK ×0,074, avrundat till lokala prispunkter (NOK/DKK 9-slut,
+EUR X,90, GBP X.99). Hela prismatrisen för alla 25 står i filen.
+
+**Copy:** samma 7-blocksformat och bullet-regler som Sverige, skrivet på landets språk
+(aldrig maskinöversatt rakt av — korrläs som infödd). Bilderna återanvänds från svenska
+CDN:en (URL:erna i filen) — Shopify kopierar dem till landets egen CDN automatiskt.
+Grillklinikken-butiker får ALDRIG bäver-emojin eller "Bäverbutiken" som vendor.
+
+---
+
 ## Saker som är lätta att göra fel
 
 - **PAUSED i annonskontot är ett beslut, aldrig ett fel att "rätta".** En
@@ -627,6 +788,47 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   `adsetStatus`: `se-axelbalte-batch4`, `se-batch-20260809`, `uk-axelbalte`,
   `uk-beachslippers`, `uk-motorholje`. **Sätt båda fälten explicit i konfigen innan
   du kör** — annars börjar annonserna spendera i samma sekund som något släpps loss.
+- **Varje bild som kopplas till en variant granskas visuellt för utländsk text —
+  även bilder som går rakt igenom från skörden och bilder som redan låg i butiken.**
+  Granska **live-bilderna** efter rullningen (kontaktark av `variants { image { url } }`),
+  aldrig källmappen — det är det som ligger skarpt som räknas. *(2026-08-31: 18
+  damaskfärger rullades ut i fem butiker; de två färger som redan fanns fick
+  leverantörsbilden okontrollerad och neongröna hade kvar 户外徒步雪套 + badgen
+  成人款. Axel hittade det, inte jag.)*
+  Sitter texten i en egen kolumn: **beskär bort den** (kolumnprofil → bbox →
+  centrera på vit kvadrat, `temu/damasker/neongron-bygg.mjs`) i stället för att
+  köra KIE — deterministiskt och kan inte hallucinera.
+  `productVariantAppendMedia` vägrar med *"variant already has attached media"* —
+  radera den gamla bilden FÖRST, koppla sedan.
+- **Granska källprodukten innan den klonas till fler butiker.** Hittas en
+  butikslucka: läs den befintliga produktens skarpa `descriptionHtml`, pris,
+  jämförpris, alt-texter och infografikernas språk FÖRST — annars multipliceras
+  varje fel med antalet nya butiker. *(2026-09-03: klistermärkena fanns bara i
+  SE och hade "snabb leverans" i garantin, bullets utan utfall i fetstil, inget
+  jämförpris och en engelsk storleksguide. Utan granskningen hade allt hamnat i
+  fyra butiker till.)*
+  **Och sätt aldrig punkt vid den enskilda produkten** — samma defekt sitter oftast
+  i katalogen: samma svep hittade "Hurtig levering" på 12 danska produkter och
+  kvarglömda `<!-- GIF … -->`-platshållare på 6 produkter i SE/NO/FI. Svepen körs
+  med `temu/klistermarken/fartsvep.mjs` och `kommentarsvep.mjs`.
+  Tas en platshållare bort ur butiken ska TODO:n den bar skrivas in i repot först.
+- **Repot är PUBLIKT** (github.com/Axel3738/yognftnfgn, verifierat 2026-09-07).
+  Allt som committas kan läsas av vem som helst. Skriv aldrig en riktig nyckel,
+  token, hemlighet eller kunduppgift i en fil — inte ens som "exempel".
+  *(2026-09-07: butikens riktiga Klient-ID låg som exempelvärde i `temu/TOKENS.md`.
+  Maskerat nu, men det ligger kvar i git-historiken — nya exempel ska vara påhittade.)*
+  Nycklar bor i miljövariabler, eller lokalt i `.env` (redan i `.gitignore`, läses av
+  `temu/miljo.mjs` — molnmiljön vinner alltid över filen).
+- **Säg "klistra ALDRIG in nycklarna här" i SAMMA meddelande som ber Axel öppna
+  `.env`.** Axel klistrar in det han blir ombedd att klistra in — ber du om "vad
+  filen/kollen säger" kan svaret bli hela nyckelfilen. *(2026-09-07: hela `.env`
+  med Shopify-hemligheter, Meta-token och Discord-token hamnade i chatten. Guidens
+  varning stod tre stycken bort och lästes inte.)* Regeln: varje instruktion som
+  rör `.env` slutar med raden **"Skicka inte innehållet till mig."** Hamnar nycklar
+  ändå i chatten: skriv aldrig in dem någonstans, och säg vilka som bör bytas.
+- **Nya produkter skapas bara i SE och NO** (Axels beslut 2026-09-07).
+  Skapa aldrig en ny produkt i DK, FI eller UK utan att Axel sagt till.
+  Det som redan ligger där underhålls som vanligt.
 - **Priset hämtas från produktsidan vid varje körning**, aldrig ur en äldre brief
   eller creative. Axelbältet höjdes 2026-08-05 från 509 → 599 kr (jämförpris 678 kr
   = spara 79 kr, 11,65 %). **509 kr, 636 kr och "20 %" är förbjudna** i all ny copy.
@@ -636,6 +838,13 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   `cost_per_omni_purchase`, `purchase_roas`. INTE `spend`/`purchases`.
   ⚠️ `omni_purchase_values` är buggig — den returnerade intäkt **100× för lågt på
   5 av 8 rader**. Korskolla alltid mot `amount_spent × purchase_roas`.
+- **Ett Notion-kort utan `Landing page` måste ha `– VÄNTA: <orsak>` i namnet.**
+  Redigerarna arbetar från kortets namn och Typ — ligger produkten inte uppe och
+  kortet inte är märkt, börjar någon göra video på en produktsida som inte finns.
+  Lägg dessutom en ruta överst på sidan, **på engelska**, som säger att det ligger på
+  is, varför, och vad som händer sen. *(2026-09-07: "5.1 Lövblåsare" var omärkt —
+  en redigerare svarade "This product is not yet on the store". Fotokudden bredvid
+  var korrekt märkt, så mönstret fanns redan; jag missade att följa det.)*
 - **Notion-status `In progress 2` betyder REVISION** — annonsen underkändes och
   görs om. Det betyder INTE "längre kommen". Full tabell i `docs/os/NOTION-FORMAT.md`.
 - **En färdig creative ligger i Notion. Bara där.** (Axels beslut 2026-09-02.)
@@ -704,6 +913,17 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   slås upp mot kampanjen som redan har annonser med samma prefix
   (`Rodholder_` → Fiskespöhållaren). `creative_prefix` i `products.json` är bara
   en override för de fyra skalningsprodukterna. Bygg aldrig tillbaka en fast lista.
+- **COGS (inköpspris) sätts från offertens landade kostnad × valutakurs** — aldrig
+  ur priset och aldrig genom att konvertera en systerbutiks cogs. Metod, låsta
+  kurser, landfaktorer och skript: `temu/cogs/README.md`. 2,9 €-avgiften är per
+  ORDER och ingår inte. Butikerna har OLIKA SKU-scheman för samma produkt
+  (SE `TEMU-*`, NO `BEVER-*`) — matcha via namn eller SE-katalogen som brygga.
+  *(2026-08-30: 669 varianter i alla fem butiker saknade inköpspris, vilket gjorde
+  varje vinstrapport fel. 368 fyllda.)*
+- **Kaching-stegens första nivå får ALDRIG ha undertexten "Standard pris"** (Axels
+  beslut 2026-08-29 — den låg i fallback-stegen och syntes på varje produkt).
+  Rensas med `temu/kaching-cli/fixa-standardpris.mjs <butik>` på Axels dator
+  (kräver inloggad Kaching-session). Sätt aldrig texten i nya stegar.
 - **Notion-anropen stryps till ~3/s.** Ett par hundra sidor tar några minuter.
   Det är normalt, inte en hängning.
 - **Språk:** allt i repot skrivs på svenska — kod, kommentarer, commit-meddelanden.

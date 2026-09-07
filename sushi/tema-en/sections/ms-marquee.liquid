@@ -1,0 +1,47 @@
+{%- if section.settings.visible -%}
+{%- liquid
+  assign rows = section.settings.items | default: '' | split: '|'
+  assign speed = section.settings.speed | default: 26
+-%}
+{%- if rows.size > 0 -%}
+  <div class="ms-scope">
+    <div class="ms-marquee" style="--ms-marquee-dur: {{ speed }}s;
+      {% if section.settings.background != blank %}--ms-marquee-bg: {{ section.settings.background }};{% endif %}
+      {% if section.settings.text_color != blank %}--ms-marquee-fg: {{ section.settings.text_color }};{% endif %}">
+      {%- comment -%}
+        Två identiska grupper. CSS:en flyttar spåret exakt -50 %, så skarven
+        blir osynlig. Läggs en tredje grupp till hoppar bandet.
+      {%- endcomment -%}
+      <div class="ms-marquee__track">
+        {%- for pass in (1..2) -%}
+          <div class="ms-marquee__group" {% if forloop.index > 1 %}aria-hidden="true"{% endif %}>
+            {%- for row in rows -%}
+              {%- assign text = row | strip -%}
+              {%- if text != blank -%}<span class="ms-marquee__item">{{ text }}</span>{%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Scrolling banner",
+  "tag": "section",
+  "settings": [
+    { "type": "checkbox", "id": "visible", "label": "Show section", "default": true,
+      "info": "Untick to switch it off without deleting it." },
+    { "type": "textarea", "id": "items", "label": "Texts",
+      "default": "Loved by thousands|Free shipping|30-day returns|Arrives gift-ready",
+      "info": "Separate with |." },
+    { "type": "range", "id": "speed", "label": "Loop time in seconds", "min": 10, "max": 60, "step": 2, "default": 26,
+      "info": "Higher value = slower." },
+    { "type": "color", "id": "background", "label": "Background", "default": "#dd821d" },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#fdfbf7" }
+  ],
+  "presets": [{ "name": "Scrolling banner" }]
+}
+{% endschema %}

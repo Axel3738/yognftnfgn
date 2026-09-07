@@ -1,0 +1,43 @@
+{%- if section.settings.visible -%}
+<div class="ms-scope ms-section">
+  <div class="ms-wrap" style="max-width: 820px;">
+    <div class="ms-center" style="margin-bottom: 24px;">
+      <h2 class="ms-h2">{{ section.settings.heading }}</h2>
+    </div>
+    <div class="ms-faq">
+      {%- for block in section.blocks -%}
+        <details class="ms-faq__item" {{ block.shopify_attributes }}>
+          <summary class="ms-faq__q">
+            <span>{{ block.settings.q }}</span>
+            {% render 'ms-icon', name: 'chevron', class: 'ms-faq__chev' %}
+          </summary>
+          <div class="ms-faq__a">{{ block.settings.a }}</div>
+        </details>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Common questions",
+  "tag": "section",
+  "max_blocks": 20,
+  "settings": [
+    { "type": "checkbox", "id": "visible", "label": "Show section", "default": true,
+      "info": "Untick to switch it off without deleting it." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Common questions" }
+  ],
+  "blocks": [
+    { "type": "qa", "name": "Question", "settings": [
+      { "type": "text", "id": "q", "label": "Question" },
+      { "type": "richtext", "id": "a", "label": "Answer" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Common questions",
+      "blocks": [{ "type": "qa" }, { "type": "qa" }, { "type": "qa" }, { "type": "qa" }] }
+  ]
+}
+{% endschema %}

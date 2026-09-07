@@ -1,0 +1,145 @@
+{%- comment -%}
+  ms-cookies — liten cookie-banner nere i hörnet. (EN-version för Sushi Sock.)
+
+  Inte bara pynt: valet kopplas till Shopifys eget samtyckes-API
+  (customerPrivacy). Trycker kunden "No thanks" stängs spårningen av på
+  riktigt, och Shopify kommer ihåg valet i sin egen cookie så bannern
+  inte tjatar. Om API:et inte går att ladda minns vi valet själva i
+  localStorage och visar inte bannern igen.
+
+  Ligger i footer-gruppen så den följer med på alla sidor.
+{%- endcomment -%}
+{%- if section.settings.visible -%}
+<div class="ms-cookies" id="ms-cookies" hidden>
+  <p class="ms-cookies__text">{{ section.settings.text }}</p>
+  <div class="ms-cookies__knappar">
+    <button type="button" class="ms-cookies__nej" data-ms-cookies-nej>{{ section.settings.nej_label }}</button>
+    <button type="button" class="ms-cookies__ok" data-ms-cookies-ok>{{ section.settings.ok_label }}</button>
+  </div>
+</div>
+<style>
+  .ms-cookies {
+    position: fixed;
+    left: 14px;
+    bottom: 14px;
+    z-index: 60;
+    max-width: 340px;
+    padding: 14px 16px;
+    border: 1px solid var(--ms-line, #eee4d6);
+    border-radius: var(--ms-radius, 14px);
+    background: var(--ms-surface, #ffffff);
+    box-shadow: 0 10px 30px rgba(18, 18, 18, .14);
+    font-size: .82em;
+    line-height: 1.45;
+  }
+  .ms-cookies[hidden] { display: none; }
+  .ms-cookies__text { margin: 0 0 10px; color: var(--ms-ink, #121212); }
+  .ms-cookies__knappar { display: flex; gap: 8px; }
+  .ms-cookies__ok,
+  .ms-cookies__nej {
+    flex: 1 1 auto;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font: inherit;
+    cursor: pointer;
+    transition: filter .15s ease, background-color .15s ease;
+  }
+  .ms-cookies__ok {
+    border: 1px solid var(--ms-accent, #DD821D);
+    background: var(--ms-accent, #DD821D);
+    color: var(--ms-accent-ink, #FDFBF7);
+    font-weight: 700;
+  }
+  .ms-cookies__ok:hover { filter: brightness(1.06); }
+  .ms-cookies__nej {
+    border: 1px solid var(--ms-line-strong, #d8cbb8);
+    background: transparent;
+    color: var(--ms-ink-soft, #5f5a52);
+  }
+  .ms-cookies__nej:hover { background: var(--ms-surface-2, #faf7f2); }
+  @media (max-width: 480px) {
+    .ms-cookies { left: 10px; right: 10px; bottom: 10px; max-width: none; }
+  }
+</style>
+<script>
+  (function () {
+    'use strict';
+    var ruta = document.getElementById('ms-cookies');
+    if (!ruta) return;
+
+    var NYCKEL = 'ms-cookies-val';
+    function minns() {
+      try { return localStorage.getItem(NYCKEL); } catch (e) { return null; }
+    }
+    function spara(v) {
+      try { localStorage.setItem(NYCKEL, v); } catch (e) { /* privat läge */ }
+    }
+    function api() {
+      return (window.Shopify && window.Shopify.customerPrivacy) || null;
+    }
+    function stang() { ruta.hidden = true; }
+
+    function valj(ja) {
+      spara(ja ? 'ok' : 'nej');
+      var cp = api();
+      if (cp && cp.setTrackingConsent) cp.setTrackingConsent(ja, stang); else stang();
+    }
+
+    var kopplad = false;
+    function koppla() {
+      if (kopplad) return;
+      kopplad = true;
+      var cp = api();
+      if (cp && cp.getTrackingConsent && cp.getTrackingConsent() !== 'no_interaction') return;
+      if (!cp && minns()) return;
+      ruta.hidden = false;
+      ruta.querySelector('[data-ms-cookies-ok]').addEventListener('click', function () { valj(true); });
+      ruta.querySelector('[data-ms-cookies-nej]').addEventListener('click', function () { valj(false); });
+    }
+
+    if (window.Shopify && window.Shopify.loadFeatures) {
+      window.Shopify.loadFeatures(
+        [{ name: 'consent-tracking-api', version: '0.1' }],
+        function () { koppla(); }
+      );
+      setTimeout(koppla, 1500);
+    } else {
+      koppla();
+    }
+  })();
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Cookie banner",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "visible",
+      "label": "Show section",
+      "default": true,
+      "info": "Untick to switch it off without deleting it."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "We use cookies to make the site work and to understand what our visitors like."
+    },
+    {
+      "type": "text",
+      "id": "ok_label",
+      "label": "OK button",
+      "default": "OK"
+    },
+    {
+      "type": "text",
+      "id": "nej_label",
+      "label": "No button",
+      "default": "No thanks"
+    }
+  ],
+  "presets": [{ "name": "Cookie banner" }]
+}
+{% endschema %}

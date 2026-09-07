@@ -1,0 +1,8 @@
+När du har kört "node kaching.mjs login" skapas mappen profile/.
+Den innehåller din inloggade Shopify-session.
+
+Dela ALDRIG den mappen vidare, och lägg inte upp den på GitHub.
+Samma sak gäller recon/ och exports/ om de dyker upp — de kan innehålla
+åtkomsttoken och din butiksdata.
+
+.gitignore i mappen utesluter dem redan.

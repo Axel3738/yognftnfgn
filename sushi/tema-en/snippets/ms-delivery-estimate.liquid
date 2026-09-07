@@ -1,0 +1,28 @@
+{%- comment -%}
+  ms-delivery-estimate — a concrete delivery window instead of "6–12 days".
+
+  The date is worked out in the browser, in business days, by <ms-delivery>
+  in ms-cro.js. The server HTML carries a readable fallback so the page says
+  something sensible even without JavaScript.
+
+  Parameters: min_days, max_days, cutoff_hour (0 = no cutoff), text
+{%- endcomment -%}
+{%- liquid
+  assign mn = min_days | default: 6 | plus: 0
+  assign mx = max_days | default: 12 | plus: 0
+  assign cut = cutoff_hour | default: 0 | plus: 0
+  assign lead = text | default: 'Estimated delivery'
+-%}
+<ms-delivery class="ms-scope"
+  data-min-days="{{ mn }}"
+  data-max-days="{{ mx }}"
+  {% if cut > 0 %}data-cutoff-hour="{{ cut }}"{% endif %}>
+  <div class="ms-delivery">
+    {% render 'ms-icon', name: 'truck' %}
+    <div>
+      {{ lead }}
+      <span class="ms-delivery__date" data-ms-delivery-range>{{ mn }}–{{ mx }} business days</span>
+      <span class="ms-delivery__cut" data-ms-delivery-cut hidden></span>
+    </div>
+  </div>
+</ms-delivery>

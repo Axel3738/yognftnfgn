@@ -1,0 +1,29 @@
+{%- if section.settings.visible -%}
+{% render 'ms-trust-row', items: section.settings.items %}
+<style>
+  #shopify-section-{{ section.id }} .ms-trust {
+    margin: 0; border-radius: 0; border-inline: 0;
+    {% if section.settings.background != blank %}background: {{ section.settings.background }};{% endif %}
+  }
+  /* Mobilkrympningen i ms-cro.css finns för att TRE punkter ska rymmas på
+     en rad i köprutan. Här på startsidan är punkterna färre och har hela
+     sidbredden — texten ska inte krympa till oläslighet. */
+  #shopify-section-{{ section.id }} .ms-trust__item { font-size: var(--ms-fs-xs); }
+</style>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "USP bar",
+  "tag": "section",
+  "settings": [
+    { "type": "checkbox", "id": "visible", "label": "Show section", "default": true,
+      "info": "Untick to switch it off without deleting it." },
+    { "type": "textarea", "id": "items", "label": "Items",
+      "default": "truck:Free shipping on every order|refresh:30-day returns|gift:Arrives gift-ready|star:Loved by thousands",
+      "info": "Format icon:text, separated by |." },
+    { "type": "color", "id": "background", "label": "Background" }
+  ],
+  "presets": [{ "name": "USP bar" }]
+}
+{% endschema %}

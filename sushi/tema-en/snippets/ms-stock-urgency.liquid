@@ -1,0 +1,39 @@
+{%- comment -%}
+  ms-stock-urgency — stock indicator.
+
+  Two modes:
+    real    Product tracks inventory → shows the actual quantity left.
+    manual  No inventory tracking → shows only a line of text from the setting.
+            We NEVER invent a number that looks like it came from inventory.
+
+  Parameters: variant, threshold (show below this count), manual_text
+{%- endcomment -%}
+{%- liquid
+  assign v = variant
+  assign limit = threshold | default: 25 | plus: 0
+  assign qty = 0
+  assign tracked = false
+  if v and v.inventory_management != blank
+    assign tracked = true
+    assign qty = v.inventory_quantity | plus: 0
+  endif
+-%}
+{%- if tracked and qty > 0 and qty <= limit -%}
+  {%- assign pct = qty | times: 100 | divided_by: limit -%}
+  <div class="ms-stock ms-scope" style="--ms-stock-pct: {{ pct }}%">
+    <div class="ms-stock__row">
+      <span class="ms-stock__dot" aria-hidden="true"></span>
+      <span>Only <strong>{{ qty }}</strong> left in stock</span>
+    </div>
+    <div class="ms-stock__bar" role="img" aria-label="{{ qty }} of {{ limit }} left in stock">
+      <div class="ms-stock__fill"></div>
+    </div>
+  </div>
+{%- elsif tracked == false and manual_text != blank -%}
+  <div class="ms-stock ms-scope">
+    <div class="ms-stock__row">
+      <span class="ms-stock__dot" aria-hidden="true"></span>
+      <span>{{ manual_text }}</span>
+    </div>
+  </div>
+{%- endif -%}

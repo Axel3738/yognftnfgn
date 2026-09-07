@@ -1,0 +1,3962 @@
+{
+ "se": {
+  "TEMU-605988157507785": {
+   "belopp": 114.4,
+   "usd": 12.08,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601100495932584": {
+   "belopp": 213.35,
+   "usd": 22.53,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-606593194260136": {
+   "belopp": 251.14,
+   "usd": 26.52,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601101920237436": {
+   "belopp": 53.5,
+   "usd": 5.65,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-606152708439387": {
+   "belopp": 135.8,
+   "usd": 14.34,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601105338361446": {
+   "belopp": 107.29,
+   "usd": 11.33,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099555317731": {
+   "belopp": 125.85,
+   "usd": 13.29,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099525417124": {
+   "belopp": 298.11,
+   "usd": 31.48,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601100056763025": {
+   "belopp": 77.08,
+   "usd": 8.14,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099583478869": {
+   "belopp": 64.3,
+   "usd": 6.79,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-606321420111309": {
+   "belopp": 98.49,
+   "usd": 10.4,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601104306534696": {
+   "belopp": 260.61,
+   "usd": 27.52,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099652857203": {
+   "belopp": 121.5,
+   "usd": 12.83,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099915330362": {
+   "belopp": 146.31,
+   "usd": 15.45,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601102600651869": {
+   "belopp": 204.93,
+   "usd": 21.64,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099921451643": {
+   "belopp": 115.25,
+   "usd": 12.17,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-605790790325172": {
+   "belopp": 58.71,
+   "usd": 6.2,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-601099590911868": {
+   "belopp": 132.01,
+   "usd": 13.94,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-601101802223563": {
+   "belopp": 94.98,
+   "usd": 10.03,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-601101617191068": {
+   "belopp": 96.31,
+   "usd": 10.17,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-601105076226732": {
+   "belopp": 65.53,
+   "usd": 6.92,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-605748427852371": {
+   "belopp": 160.04,
+   "usd": 16.9,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601102992953649": {
+   "belopp": 82.39,
+   "usd": 8.7,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601099515911841": {
+   "belopp": 73.86,
+   "usd": 7.8,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601101411598143": {
+   "belopp": 70.08,
+   "usd": 7.4,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601102047663138": {
+   "belopp": 107.96,
+   "usd": 11.4,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601100379316292": {
+   "belopp": 103.22,
+   "usd": 10.9,
+   "kalla": "Next up products (1) (landsuppdelad)"
+  },
+  "TEMU-601104547945861": {
+   "belopp": 193.18,
+   "usd": 20.4,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099516487044": {
+   "belopp": 104.17,
+   "usd": 11,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601104677569375": {
+   "belopp": 76.71,
+   "usd": 8.1,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601100286187971": {
+   "belopp": 106.06,
+   "usd": 11.2,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601102200064735": {
+   "belopp": 107.01,
+   "usd": 11.3,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601103799817572": {
+   "belopp": 64.39,
+   "usd": 6.8,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601102197280712": {
+   "belopp": 91.86,
+   "usd": 9.7,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601101921250503": {
+   "belopp": 122.16,
+   "usd": 12.9,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1"
+  },
+  "TEMU-605510862498229": {
+   "belopp": 115.53,
+   "usd": 12.2,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099792244573": {
+   "belopp": 86.18,
+   "usd": 9.1,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601102932588682": {
+   "belopp": 92.8,
+   "usd": 9.8,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099608029956": {
+   "belopp": 79.55,
+   "usd": 8.4,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601101193179555": {
+   "belopp": 144.89,
+   "usd": 15.3,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601104334723296": {
+   "belopp": 88.07,
+   "usd": 9.3,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099646099256": {
+   "belopp": 70.08,
+   "usd": 7.4,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601101171339794": {
+   "belopp": 174.24,
+   "usd": 18.4,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099529125532": {
+   "belopp": 73.86,
+   "usd": 7.8,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099593503725": {
+   "belopp": 98.49,
+   "usd": 10.4,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099758388525": {
+   "belopp": 244.32,
+   "usd": 25.8,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-605778442314132": {
+   "belopp": 81.44,
+   "usd": 8.6,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601103822707739": {
+   "belopp": 345.65,
+   "usd": 36.5,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099613222521": {
+   "belopp": 84.28,
+   "usd": 8.9,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-606275953885837": {
+   "belopp": 124.05,
+   "usd": 13.1,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099516535076": {
+   "belopp": 72.92,
+   "usd": 7.7,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601105447223463": {
+   "belopp": 54.92,
+   "usd": 5.8,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099513989416": {
+   "belopp": 81.44,
+   "usd": 8.6,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601104615671651": {
+   "belopp": 62.5,
+   "usd": 6.6,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099568739293": {
+   "belopp": 91.86,
+   "usd": 9.7,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099707294735": {
+   "belopp": 124.05,
+   "usd": 13.1,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601100138503590": {
+   "belopp": 109.85,
+   "usd": 11.6,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601101152010798": {
+   "belopp": 94.7,
+   "usd": 10,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601101900182709": {
+   "belopp": 71.02,
+   "usd": 7.5,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601102577824993": {
+   "belopp": 67.24,
+   "usd": 7.1,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601100643890172": {
+   "belopp": 99.43,
+   "usd": 10.5,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601103318997348": {
+   "belopp": 88.07,
+   "usd": 9.3,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099827944835": {
+   "belopp": 130.68,
+   "usd": 13.8,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601100609870273": {
+   "belopp": 198.87,
+   "usd": 21,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601101736547499": {
+   "belopp": 79.55,
+   "usd": 8.4,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601100307770473": {
+   "belopp": 71.02,
+   "usd": 7.5,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-605638235151513": {
+   "belopp": 71.02,
+   "usd": 7.5,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601100461940399": {
+   "belopp": 96.59,
+   "usd": 10.2,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099913184351": {
+   "belopp": 88.07,
+   "usd": 9.3,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601100612207657": {
+   "belopp": 256.63,
+   "usd": 27.1,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099683320103": {
+   "belopp": 101.33,
+   "usd": 10.7,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601105519382458": {
+   "belopp": 459.29,
+   "usd": 48.5,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099514761689": {
+   "belopp": 90.91,
+   "usd": 9.6,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-606445101752663": {
+   "belopp": 112.69,
+   "usd": 11.9,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601104670246605": {
+   "belopp": 159.09,
+   "usd": 16.8,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-606260820843380": {
+   "belopp": 105.11,
+   "usd": 11.1,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099780109774": {
+   "belopp": 109.85,
+   "usd": 11.6,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601100170176513": {
+   "belopp": 97.54,
+   "usd": 10.3,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099532506945": {
+   "belopp": 141.1,
+   "usd": 14.9,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601102616734555": {
+   "belopp": 105.11,
+   "usd": 11.1,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601100041833326": {
+   "belopp": 107.01,
+   "usd": 11.3,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099570786952": {
+   "belopp": 143.94,
+   "usd": 15.2,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601104842909981": {
+   "belopp": 86.18,
+   "usd": 9.1,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601100619336850": {
+   "belopp": 116.48,
+   "usd": 12.3,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-605670363466651": {
+   "belopp": 71.97,
+   "usd": 7.6,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601105049353588": {
+   "belopp": 152.46,
+   "usd": 16.1,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601100702048110": {
+   "belopp": 182.77,
+   "usd": 19.3,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099522938851": {
+   "belopp": 85.23,
+   "usd": 9,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601100275498263": {
+   "belopp": 81.44,
+   "usd": 8.6,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601102298530038": {
+   "belopp": 118.37,
+   "usd": 12.5,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099602972592": {
+   "belopp": 152.46,
+   "usd": 16.1,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099563938432": {
+   "belopp": 113.64,
+   "usd": 12,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-605674692040432": {
+   "belopp": 227.28,
+   "usd": 24,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099573157236": {
+   "belopp": 103.03,
+   "usd": 10.88,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099799032157": {
+   "belopp": 87.12,
+   "usd": 9.2,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099661720113": {
+   "belopp": 175.19,
+   "usd": 18.5,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601104557280727": {
+   "belopp": 91.86,
+   "usd": 9.7,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601101443995469": {
+   "belopp": 122.16,
+   "usd": 12.9,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601100494543623": {
+   "belopp": 67.24,
+   "usd": 7.1,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601102835962131": {
+   "belopp": 77.65,
+   "usd": 8.2,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099574427946": {
+   "belopp": 108.9,
+   "usd": 11.5,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601101813510350": {
+   "belopp": 131.63,
+   "usd": 13.9,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601101587277592": {
+   "belopp": 129.74,
+   "usd": 13.7,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099627996771": {
+   "belopp": 211.18,
+   "usd": 22.3,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601101336047386": {
+   "belopp": 606.07,
+   "usd": 64,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-605832599175928": {
+   "belopp": 147.73,
+   "usd": 15.6,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-605720258930293": {
+   "belopp": 115.91,
+   "usd": 12.24,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099613072998": {
+   "belopp": 163.64,
+   "usd": 17.28,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601100218100590": {
+   "belopp": 79.55,
+   "usd": 8.4,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601103791378059": {
+   "belopp": 78.03,
+   "usd": 8.24,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099746858349": {
+   "belopp": 239.59,
+   "usd": 25.3,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601105338816115": {
+   "belopp": 161.08,
+   "usd": 17.01,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-606038489195587": {
+   "belopp": 381.63,
+   "usd": 40.3,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601101124885676": {
+   "belopp": 288.83,
+   "usd": 30.5,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601100276131141": {
+   "belopp": 107.01,
+   "usd": 11.3,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099524922604": {
+   "belopp": 130.68,
+   "usd": 13.8,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099520362678": {
+   "belopp": 97.54,
+   "usd": 10.3,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-605828169987760": {
+   "belopp": 80.49,
+   "usd": 8.5,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601100938731214": {
+   "belopp": 258.53,
+   "usd": 27.3,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099866212432": {
+   "belopp": 103.22,
+   "usd": 10.9,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601100182464991": {
+   "belopp": 71.97,
+   "usd": 7.6,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601100409294093": {
+   "belopp": 58.71,
+   "usd": 6.2,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099969009037": {
+   "belopp": 105.11,
+   "usd": 11.1,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601102199755631": {
+   "belopp": 228.22,
+   "usd": 24.1,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099521158260": {
+   "belopp": 80.49,
+   "usd": 8.5,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601102632838913": {
+   "belopp": 140.15,
+   "usd": 14.8,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099705910254": {
+   "belopp": 229.17,
+   "usd": 24.2,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099520639890": {
+   "belopp": 90.91,
+   "usd": 9.6,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601099538175267": {
+   "belopp": 84.28,
+   "usd": 8.9,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601105032097489": {
+   "belopp": 219.7,
+   "usd": 23.2,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1"
+  },
+  "TEMU-601102681234291": {
+   "belopp": 301.14,
+   "usd": 31.8,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1"
+  },
+  "ENDOSKOP-1080P": {
+   "belopp": 268.94,
+   "usd": 28.4,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "JUMPSTART-5000A": {
+   "belopp": 438.45,
+   "usd": 46.3,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TRGSACK-60L": {
+   "belopp": 83.33,
+   "usd": 8.8,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TRGSACK-120L": {
+   "belopp": 94.7,
+   "usd": 10,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TRGSACK-300L": {
+   "belopp": 107.96,
+   "usd": 11.4,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "BRANSLEPUMP": {
+   "belopp": 183.71,
+   "usd": 19.4,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "AXELREM-DUBBEL": {
+   "belopp": 180.87,
+   "usd": 19.1,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "GETHALSBAND-KLOCKA": {
+   "belopp": 70.08,
+   "usd": 7.4,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "SLIPARE-BORR": {
+   "belopp": 80.49,
+   "usd": 8.5,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "IBC-4VAGS": {
+   "belopp": 81.44,
+   "usd": 8.6,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "PLASTSVETS-SET": {
+   "belopp": 210.23,
+   "usd": 22.2,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "BORSTHUVUD-10TUM": {
+   "belopp": 160.04,
+   "usd": 16.9,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "MOWER-SEAT-GRA": {
+   "belopp": 168.56,
+   "usd": 17.8,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "MOWER-SEAT-SVART": {
+   "belopp": 168.56,
+   "usd": 17.8,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "MOWER-SEAT-LJUSGRA": {
+   "belopp": 168.56,
+   "usd": 17.8,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "LASTREM-AUTO": {
+   "belopp": 158.15,
+   "usd": 16.7,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TRADKOPPLING-50": {
+   "belopp": 100.38,
+   "usd": 10.6,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "STALTRAD-HUVUD": {
+   "belopp": 117.43,
+   "usd": 12.4,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TRADSTRACKARE": {
+   "belopp": 360.8,
+   "usd": 38.1,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TRADSPANNARE-30SET": {
+   "belopp": 252.84,
+   "usd": 26.7,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "DACKPUMP-150PSI": {
+   "belopp": 204.55,
+   "usd": 21.6,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "SOLSEGEL-3X3": {
+   "belopp": 103.22,
+   "usd": 10.9,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "SOLSEGEL-4X4": {
+   "belopp": 127.84,
+   "usd": 13.5,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TRIMMERLINA-100M": {
+   "belopp": 249.06,
+   "usd": 26.3,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "TRIMMERSELE": {
+   "belopp": 70.08,
+   "usd": 7.4,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "SOVDYNA-TPU": {
+   "belopp": 160.99,
+   "usd": 17,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  },
+  "SLADDHALLARE-5PACK": {
+   "belopp": 126.9,
+   "usd": 13.4,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1"
+  }
+ },
+ "no": {
+  "TEMU-605988157507785": {
+   "belopp": 112.33,
+   "usd": 12.08,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601100495932584": {
+   "belopp": 264.37,
+   "usd": 28.43,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-606593194260136": {
+   "belopp": 314.58,
+   "usd": 33.83,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601101920237436": {
+   "belopp": 63.14,
+   "usd": 6.79,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-606152708439387": {
+   "belopp": 150.27,
+   "usd": 16.16,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601105338361446": {
+   "belopp": 119.4,
+   "usd": 12.84,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099555317731": {
+   "belopp": 135.3,
+   "usd": 14.55,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099525417124": {
+   "belopp": 351.22,
+   "usd": 37.77,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601100056763025": {
+   "belopp": 90.2,
+   "usd": 9.7,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099583478869": {
+   "belopp": 73.65,
+   "usd": 7.92,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-606321420111309": {
+   "belopp": 105.73,
+   "usd": 11.37,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601104306534696": {
+   "belopp": 286.03,
+   "usd": 30.76,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099652857203": {
+   "belopp": 132.04,
+   "usd": 14.2,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099915330362": {
+   "belopp": 160.87,
+   "usd": 17.3,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601102600651869": {
+   "belopp": 226.52,
+   "usd": 24.36,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099921451643": {
+   "belopp": 125.35,
+   "usd": 13.48,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-605790790325172": {
+   "belopp": 69.74,
+   "usd": 7.5,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-601099590911868": {
+   "belopp": 145.34,
+   "usd": 15.63,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-601101802223563": {
+   "belopp": 100.99,
+   "usd": 10.86,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-601101617191068": {
+   "belopp": 103.12,
+   "usd": 11.09,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-601105076226732": {
+   "belopp": 77.65,
+   "usd": 8.35,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-605748427852371": {
+   "belopp": 175.75,
+   "usd": 18.9,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601102992953649": {
+   "belopp": 91.13,
+   "usd": 9.8,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601099515911841": {
+   "belopp": 80.9,
+   "usd": 8.7,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601101411598143": {
+   "belopp": 72.53,
+   "usd": 7.8,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601102047663138": {
+   "belopp": 123.68,
+   "usd": 13.3,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601100379316292": {
+   "belopp": 94.94,
+   "usd": 10.21,
+   "kalla": "Next up products (1) (landsuppdelad)"
+  },
+  "TEMU-601104547945861": {
+   "belopp": 214.93,
+   "usd": 23.11,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099516487044": {
+   "belopp": 115.89,
+   "usd": 12.46,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601104677569375": {
+   "belopp": 85.34,
+   "usd": 9.18,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601100286187971": {
+   "belopp": 118,
+   "usd": 12.69,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601102200064735": {
+   "belopp": 119.05,
+   "usd": 12.8,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601103799817572": {
+   "belopp": 71.64,
+   "usd": 7.7,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601102197280712": {
+   "belopp": 102.2,
+   "usd": 10.99,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601101921250503": {
+   "belopp": 135.91,
+   "usd": 14.62,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-605510862498229": {
+   "belopp": 128.53,
+   "usd": 13.82,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099792244573": {
+   "belopp": 95.87,
+   "usd": 10.31,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601102932588682": {
+   "belopp": 103.25,
+   "usd": 11.1,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099608029956": {
+   "belopp": 88.5,
+   "usd": 9.52,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601101193179555": {
+   "belopp": 161.2,
+   "usd": 17.33,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601104334723296": {
+   "belopp": 97.98,
+   "usd": 10.54,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099646099256": {
+   "belopp": 77.96,
+   "usd": 8.38,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601101171339794": {
+   "belopp": 193.86,
+   "usd": 20.85,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099529125532": {
+   "belopp": 82.18,
+   "usd": 8.84,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099593503725": {
+   "belopp": 109.57,
+   "usd": 11.78,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099758388525": {
+   "belopp": 271.82,
+   "usd": 29.23,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-605778442314132": {
+   "belopp": 90.61,
+   "usd": 9.74,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601103822707739": {
+   "belopp": 384.55,
+   "usd": 41.35,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099613222521": {
+   "belopp": 93.77,
+   "usd": 10.08,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-606275953885837": {
+   "belopp": 138.02,
+   "usd": 14.84,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099516535076": {
+   "belopp": 81.12,
+   "usd": 8.72,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601105447223463": {
+   "belopp": 61.11,
+   "usd": 6.57,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099513989416": {
+   "belopp": 90.61,
+   "usd": 9.74,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601104615671651": {
+   "belopp": 69.54,
+   "usd": 7.48,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099568739293": {
+   "belopp": 102.2,
+   "usd": 10.99,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099707294735": {
+   "belopp": 138.02,
+   "usd": 14.84,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601100138503590": {
+   "belopp": 122.21,
+   "usd": 13.14,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601101152010798": {
+   "belopp": 105.36,
+   "usd": 11.33,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601101900182709": {
+   "belopp": 79.02,
+   "usd": 8.5,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601102577824993": {
+   "belopp": 74.8,
+   "usd": 8.04,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601100643890172": {
+   "belopp": 110.62,
+   "usd": 11.9,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601103318997348": {
+   "belopp": 97.98,
+   "usd": 10.54,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099827944835": {
+   "belopp": 145.39,
+   "usd": 15.64,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601100609870273": {
+   "belopp": 221.25,
+   "usd": 23.79,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601101736547499": {
+   "belopp": 88.5,
+   "usd": 9.52,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601100307770473": {
+   "belopp": 79.02,
+   "usd": 8.5,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-605638235151513": {
+   "belopp": 79.02,
+   "usd": 8.5,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601100461940399": {
+   "belopp": 107.46,
+   "usd": 11.56,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099913184351": {
+   "belopp": 97.98,
+   "usd": 10.54,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601100612207657": {
+   "belopp": 285.52,
+   "usd": 30.7,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099683320103": {
+   "belopp": 112.73,
+   "usd": 12.12,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601105519382458": {
+   "belopp": 510.98,
+   "usd": 54.95,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099514761689": {
+   "belopp": 101.14,
+   "usd": 10.88,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-606445101752663": {
+   "belopp": 125.37,
+   "usd": 13.48,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601104670246605": {
+   "belopp": 177,
+   "usd": 19.03,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-606260820843380": {
+   "belopp": 116.95,
+   "usd": 12.58,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099780109774": {
+   "belopp": 122.21,
+   "usd": 13.14,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601100170176513": {
+   "belopp": 108.52,
+   "usd": 11.67,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099532506945": {
+   "belopp": 156.98,
+   "usd": 16.88,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601102616734555": {
+   "belopp": 116.95,
+   "usd": 12.58,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601100041833326": {
+   "belopp": 119.05,
+   "usd": 12.8,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099570786952": {
+   "belopp": 160.14,
+   "usd": 17.22,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601104842909981": {
+   "belopp": 95.87,
+   "usd": 10.31,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601100619336850": {
+   "belopp": 129.59,
+   "usd": 13.94,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-605670363466651": {
+   "belopp": 80.07,
+   "usd": 8.61,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601105049353588": {
+   "belopp": 169.62,
+   "usd": 18.24,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601100702048110": {
+   "belopp": 203.34,
+   "usd": 21.87,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099522938851": {
+   "belopp": 94.82,
+   "usd": 10.2,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601100275498263": {
+   "belopp": 90.61,
+   "usd": 9.74,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601102298530038": {
+   "belopp": 131.7,
+   "usd": 14.16,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099602972592": {
+   "belopp": 169.62,
+   "usd": 18.24,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099563938432": {
+   "belopp": 126.43,
+   "usd": 13.6,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-605674692040432": {
+   "belopp": 252.86,
+   "usd": 27.19,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099573157236": {
+   "belopp": 114.63,
+   "usd": 12.33,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099799032157": {
+   "belopp": 96.93,
+   "usd": 10.42,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099661720113": {
+   "belopp": 194.91,
+   "usd": 20.96,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601104557280727": {
+   "belopp": 102.2,
+   "usd": 10.99,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601101443995469": {
+   "belopp": 135.91,
+   "usd": 14.62,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601100494543623": {
+   "belopp": 74.8,
+   "usd": 8.04,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601102835962131": {
+   "belopp": 86.39,
+   "usd": 9.29,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099574427946": {
+   "belopp": 121.16,
+   "usd": 13.03,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601101813510350": {
+   "belopp": 146.45,
+   "usd": 15.75,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601101587277592": {
+   "belopp": 144.34,
+   "usd": 15.52,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099627996771": {
+   "belopp": 234.95,
+   "usd": 25.27,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601101336047386": {
+   "belopp": 674.28,
+   "usd": 72.51,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-605832599175928": {
+   "belopp": 164.36,
+   "usd": 17.67,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-605720258930293": {
+   "belopp": 128.96,
+   "usd": 13.87,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099613072998": {
+   "belopp": 182.06,
+   "usd": 19.58,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601100218100590": {
+   "belopp": 88.5,
+   "usd": 9.52,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601103791378059": {
+   "belopp": 86.81,
+   "usd": 9.34,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099746858349": {
+   "belopp": 266.55,
+   "usd": 28.66,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601105338816115": {
+   "belopp": 179.21,
+   "usd": 19.27,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-606038489195587": {
+   "belopp": 424.59,
+   "usd": 45.66,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601101124885676": {
+   "belopp": 321.34,
+   "usd": 34.56,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601100276131141": {
+   "belopp": 119.05,
+   "usd": 12.8,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099524922604": {
+   "belopp": 145.39,
+   "usd": 15.64,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099520362678": {
+   "belopp": 108.52,
+   "usd": 11.67,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-605828169987760": {
+   "belopp": 89.55,
+   "usd": 9.63,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601100938731214": {
+   "belopp": 287.62,
+   "usd": 30.93,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099866212432": {
+   "belopp": 114.84,
+   "usd": 12.35,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601100182464991": {
+   "belopp": 80.07,
+   "usd": 8.61,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601100409294093": {
+   "belopp": 65.32,
+   "usd": 7.02,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099969009037": {
+   "belopp": 116.95,
+   "usd": 12.58,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601102199755631": {
+   "belopp": 253.91,
+   "usd": 27.31,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099521158260": {
+   "belopp": 89.55,
+   "usd": 9.63,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601102632838913": {
+   "belopp": 155.93,
+   "usd": 16.77,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099705910254": {
+   "belopp": 254.96,
+   "usd": 27.42,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099520639890": {
+   "belopp": 101.14,
+   "usd": 10.88,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601099538175267": {
+   "belopp": 93.77,
+   "usd": 10.08,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601105032097489": {
+   "belopp": 244.43,
+   "usd": 26.29,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.133"
+  },
+  "TEMU-601102681234291": {
+   "belopp": 335.03,
+   "usd": 36.03,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.133"
+  },
+  "ENDOSKOP-1080P": {
+   "belopp": 299.21,
+   "usd": 32.18,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "JUMPSTART-5000A": {
+   "belopp": 487.8,
+   "usd": 52.46,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TRGSACK-60L": {
+   "belopp": 92.71,
+   "usd": 9.97,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TRGSACK-120L": {
+   "belopp": 105.36,
+   "usd": 11.33,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TRGSACK-300L": {
+   "belopp": 120.11,
+   "usd": 12.92,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "BRANSLEPUMP": {
+   "belopp": 204.39,
+   "usd": 21.98,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "AXELREM-DUBBEL": {
+   "belopp": 201.23,
+   "usd": 21.64,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "GETHALSBAND-KLOCKA": {
+   "belopp": 77.96,
+   "usd": 8.38,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "SLIPARE-BORR": {
+   "belopp": 89.55,
+   "usd": 9.63,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "IBC-4VAGS": {
+   "belopp": 90.61,
+   "usd": 9.74,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "PLASTSVETS-SET": {
+   "belopp": 233.89,
+   "usd": 25.15,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "BORSTHUVUD-10TUM": {
+   "belopp": 178.05,
+   "usd": 19.15,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "MOWER-SEAT-GRA": {
+   "belopp": 187.53,
+   "usd": 20.17,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "MOWER-SEAT-SVART": {
+   "belopp": 187.53,
+   "usd": 20.17,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "MOWER-SEAT-LJUSGRA": {
+   "belopp": 187.53,
+   "usd": 20.17,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "LASTREM-AUTO": {
+   "belopp": 175.95,
+   "usd": 18.92,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TRADKOPPLING-50": {
+   "belopp": 111.68,
+   "usd": 12.01,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "STALTRAD-HUVUD": {
+   "belopp": 130.64,
+   "usd": 14.05,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TRADSTRACKARE": {
+   "belopp": 401.41,
+   "usd": 43.17,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TRADSPANNARE-30SET": {
+   "belopp": 281.3,
+   "usd": 30.25,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "DACKPUMP-150PSI": {
+   "belopp": 227.57,
+   "usd": 24.47,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "SOLSEGEL-3X3": {
+   "belopp": 114.84,
+   "usd": 12.35,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "SOLSEGEL-4X4": {
+   "belopp": 142.23,
+   "usd": 15.3,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TRIMMERLINA-100M": {
+   "belopp": 277.09,
+   "usd": 29.8,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "TRIMMERSELE": {
+   "belopp": 77.96,
+   "usd": 8.38,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "SOVDYNA-TPU": {
+   "belopp": 179.11,
+   "usd": 19.26,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  },
+  "SLADDHALLARE-5PACK": {
+   "belopp": 141.18,
+   "usd": 15.18,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.133"
+  }
+ },
+ "dk": {
+  "TEMU-605988157507785": {
+   "belopp": 78.1,
+   "usd": 12.21,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601100495932584": {
+   "belopp": 162.97,
+   "usd": 25.48,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-606593194260136": {
+   "belopp": 192.2,
+   "usd": 30.05,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601101920237436": {
+   "belopp": 46.31,
+   "usd": 7.24,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-606152708439387": {
+   "belopp": 103.42,
+   "usd": 16.17,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601105338361446": {
+   "belopp": 82.83,
+   "usd": 12.95,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099555317731": {
+   "belopp": 96.26,
+   "usd": 15.05,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099525417124": {
+   "belopp": 221.24,
+   "usd": 34.59,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601100056763025": {
+   "belopp": 67.03,
+   "usd": 10.48,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099583478869": {
+   "belopp": 53.6,
+   "usd": 8.38,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-606321420111309": {
+   "belopp": 74.45,
+   "usd": 11.64,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601104306534696": {
+   "belopp": 202.18,
+   "usd": 31.61,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099652857203": {
+   "belopp": 96.64,
+   "usd": 15.11,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099915330362": {
+   "belopp": 110.65,
+   "usd": 17.3,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601102600651869": {
+   "belopp": 160.67,
+   "usd": 25.12,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099921451643": {
+   "belopp": 89.42,
+   "usd": 13.98,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-605790790325172": {
+   "belopp": 51.17,
+   "usd": 8,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-601099590911868": {
+   "belopp": 100.35,
+   "usd": 15.69,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-601101802223563": {
+   "belopp": 71.51,
+   "usd": 11.18,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-601101617191068": {
+   "belopp": 72.79,
+   "usd": 11.38,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-601105076226732": {
+   "belopp": 58.33,
+   "usd": 9.12,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-605748427852371": {
+   "belopp": 124.08,
+   "usd": 19.4,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601102992953649": {
+   "belopp": 65.88,
+   "usd": 10.3,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601099515911841": {
+   "belopp": 58.84,
+   "usd": 9.2,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601101411598143": {
+   "belopp": 53.09,
+   "usd": 8.3,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601102047663138": {
+   "belopp": 70.36,
+   "usd": 11,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601100379316292": {
+   "belopp": 66.84,
+   "usd": 10.45,
+   "kalla": "Next up products (1) (landsuppdelad)"
+  },
+  "TEMU-601104547945861": {
+   "belopp": 149.79,
+   "usd": 23.42,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099516487044": {
+   "belopp": 80.77,
+   "usd": 12.63,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601104677569375": {
+   "belopp": 59.48,
+   "usd": 9.3,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601100286187971": {
+   "belopp": 82.24,
+   "usd": 12.86,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601102200064735": {
+   "belopp": 82.97,
+   "usd": 12.97,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601103799817572": {
+   "belopp": 49.93,
+   "usd": 7.81,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601102197280712": {
+   "belopp": 71.22,
+   "usd": 11.14,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601101921250503": {
+   "belopp": 94.72,
+   "usd": 14.81,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-605510862498229": {
+   "belopp": 89.58,
+   "usd": 14.01,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099792244573": {
+   "belopp": 66.82,
+   "usd": 10.45,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601102932588682": {
+   "belopp": 71.96,
+   "usd": 11.25,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099608029956": {
+   "belopp": 61.68,
+   "usd": 9.64,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601101193179555": {
+   "belopp": 112.34,
+   "usd": 17.56,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601104334723296": {
+   "belopp": 68.29,
+   "usd": 10.68,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099646099256": {
+   "belopp": 54.34,
+   "usd": 8.5,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601101171339794": {
+   "belopp": 135.1,
+   "usd": 21.12,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099529125532": {
+   "belopp": 57.27,
+   "usd": 8.95,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099593503725": {
+   "belopp": 76.36,
+   "usd": 11.94,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099758388525": {
+   "belopp": 189.44,
+   "usd": 29.62,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-605778442314132": {
+   "belopp": 63.15,
+   "usd": 9.87,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601103822707739": {
+   "belopp": 268.01,
+   "usd": 41.9,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099613222521": {
+   "belopp": 65.35,
+   "usd": 10.22,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-606275953885837": {
+   "belopp": 96.19,
+   "usd": 15.04,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099516535076": {
+   "belopp": 56.54,
+   "usd": 8.84,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601105447223463": {
+   "belopp": 42.59,
+   "usd": 6.66,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099513989416": {
+   "belopp": 63.15,
+   "usd": 9.87,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601104615671651": {
+   "belopp": 48.46,
+   "usd": 7.58,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099568739293": {
+   "belopp": 71.22,
+   "usd": 11.14,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099707294735": {
+   "belopp": 96.19,
+   "usd": 15.04,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601100138503590": {
+   "belopp": 85.17,
+   "usd": 13.32,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601101152010798": {
+   "belopp": 73.43,
+   "usd": 11.48,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601101900182709": {
+   "belopp": 55.07,
+   "usd": 8.61,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601102577824993": {
+   "belopp": 52.13,
+   "usd": 8.15,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601100643890172": {
+   "belopp": 77.1,
+   "usd": 12.05,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601103318997348": {
+   "belopp": 68.29,
+   "usd": 10.68,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099827944835": {
+   "belopp": 101.33,
+   "usd": 15.84,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601100609870273": {
+   "belopp": 154.19,
+   "usd": 24.11,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601101736547499": {
+   "belopp": 61.68,
+   "usd": 9.64,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601100307770473": {
+   "belopp": 55.07,
+   "usd": 8.61,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-605638235151513": {
+   "belopp": 55.07,
+   "usd": 8.61,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601100461940399": {
+   "belopp": 74.89,
+   "usd": 11.71,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099913184351": {
+   "belopp": 68.29,
+   "usd": 10.68,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601100612207657": {
+   "belopp": 198.98,
+   "usd": 31.11,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099683320103": {
+   "belopp": 78.57,
+   "usd": 12.28,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601105519382458": {
+   "belopp": 356.12,
+   "usd": 55.68,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099514761689": {
+   "belopp": 70.49,
+   "usd": 11.02,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-606445101752663": {
+   "belopp": 87.38,
+   "usd": 13.66,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601104670246605": {
+   "belopp": 123.36,
+   "usd": 19.29,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-606260820843380": {
+   "belopp": 81.5,
+   "usd": 12.74,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099780109774": {
+   "belopp": 85.17,
+   "usd": 13.32,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601100170176513": {
+   "belopp": 75.63,
+   "usd": 11.82,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099532506945": {
+   "belopp": 109.4,
+   "usd": 17.11,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601102616734555": {
+   "belopp": 81.5,
+   "usd": 12.74,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601100041833326": {
+   "belopp": 82.97,
+   "usd": 12.97,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099570786952": {
+   "belopp": 111.61,
+   "usd": 17.45,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601104842909981": {
+   "belopp": 66.82,
+   "usd": 10.45,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601100619336850": {
+   "belopp": 90.31,
+   "usd": 14.12,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-605670363466651": {
+   "belopp": 55.8,
+   "usd": 8.72,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601105049353588": {
+   "belopp": 118.22,
+   "usd": 18.48,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601100702048110": {
+   "belopp": 141.71,
+   "usd": 22.16,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099522938851": {
+   "belopp": 66.08,
+   "usd": 10.33,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601100275498263": {
+   "belopp": 63.15,
+   "usd": 9.87,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601102298530038": {
+   "belopp": 91.78,
+   "usd": 14.35,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099602972592": {
+   "belopp": 118.22,
+   "usd": 18.48,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099563938432": {
+   "belopp": 88.11,
+   "usd": 13.78,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-605674692040432": {
+   "belopp": 176.22,
+   "usd": 27.55,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099573157236": {
+   "belopp": 79.89,
+   "usd": 12.49,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099799032157": {
+   "belopp": 67.55,
+   "usd": 10.56,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099661720113": {
+   "belopp": 135.84,
+   "usd": 21.24,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601104557280727": {
+   "belopp": 71.22,
+   "usd": 11.14,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601101443995469": {
+   "belopp": 94.72,
+   "usd": 14.81,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601100494543623": {
+   "belopp": 52.13,
+   "usd": 8.15,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601102835962131": {
+   "belopp": 60.21,
+   "usd": 9.41,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099574427946": {
+   "belopp": 84.44,
+   "usd": 13.2,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601101813510350": {
+   "belopp": 102.06,
+   "usd": 15.96,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601101587277592": {
+   "belopp": 100.59,
+   "usd": 15.73,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099627996771": {
+   "belopp": 163.74,
+   "usd": 25.6,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601101336047386": {
+   "belopp": 469.93,
+   "usd": 73.47,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-605832599175928": {
+   "belopp": 114.54,
+   "usd": 17.91,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-605720258930293": {
+   "belopp": 89.87,
+   "usd": 14.05,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099613072998": {
+   "belopp": 126.88,
+   "usd": 19.84,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601100218100590": {
+   "belopp": 61.68,
+   "usd": 9.64,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601103791378059": {
+   "belopp": 60.5,
+   "usd": 9.46,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099746858349": {
+   "belopp": 185.77,
+   "usd": 29.04,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601105338816115": {
+   "belopp": 124.9,
+   "usd": 19.53,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-606038489195587": {
+   "belopp": 295.91,
+   "usd": 46.26,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601101124885676": {
+   "belopp": 223.95,
+   "usd": 35.01,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601100276131141": {
+   "belopp": 82.97,
+   "usd": 12.97,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099524922604": {
+   "belopp": 101.33,
+   "usd": 15.84,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099520362678": {
+   "belopp": 75.63,
+   "usd": 11.82,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-605828169987760": {
+   "belopp": 62.41,
+   "usd": 9.76,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601100938731214": {
+   "belopp": 200.45,
+   "usd": 31.34,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099866212432": {
+   "belopp": 80.03,
+   "usd": 12.51,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601100182464991": {
+   "belopp": 55.8,
+   "usd": 8.72,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601100409294093": {
+   "belopp": 45.52,
+   "usd": 7.12,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099969009037": {
+   "belopp": 81.5,
+   "usd": 12.74,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601102199755631": {
+   "belopp": 176.96,
+   "usd": 27.67,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099521158260": {
+   "belopp": 62.41,
+   "usd": 9.76,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601102632838913": {
+   "belopp": 108.67,
+   "usd": 16.99,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099705910254": {
+   "belopp": 177.69,
+   "usd": 27.78,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099520639890": {
+   "belopp": 70.49,
+   "usd": 11.02,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601099538175267": {
+   "belopp": 65.35,
+   "usd": 10.22,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601105032097489": {
+   "belopp": 170.35,
+   "usd": 26.63,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.148"
+  },
+  "TEMU-601102681234291": {
+   "belopp": 233.49,
+   "usd": 36.51,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.148"
+  },
+  "ENDOSKOP-1080P": {
+   "belopp": 208.53,
+   "usd": 32.6,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "JUMPSTART-5000A": {
+   "belopp": 339.96,
+   "usd": 53.15,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TRGSACK-60L": {
+   "belopp": 64.61,
+   "usd": 10.1,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TRGSACK-120L": {
+   "belopp": 73.43,
+   "usd": 11.48,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TRGSACK-300L": {
+   "belopp": 83.71,
+   "usd": 13.09,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "BRANSLEPUMP": {
+   "belopp": 142.45,
+   "usd": 22.27,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "AXELREM-DUBBEL": {
+   "belopp": 140.24,
+   "usd": 21.93,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "GETHALSBAND-KLOCKA": {
+   "belopp": 54.34,
+   "usd": 8.5,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "SLIPARE-BORR": {
+   "belopp": 62.41,
+   "usd": 9.76,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "IBC-4VAGS": {
+   "belopp": 63.15,
+   "usd": 9.87,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "PLASTSVETS-SET": {
+   "belopp": 163.01,
+   "usd": 25.49,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "BORSTHUVUD-10TUM": {
+   "belopp": 124.09,
+   "usd": 19.4,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "MOWER-SEAT-GRA": {
+   "belopp": 130.7,
+   "usd": 20.43,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "MOWER-SEAT-SVART": {
+   "belopp": 130.7,
+   "usd": 20.43,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "MOWER-SEAT-LJUSGRA": {
+   "belopp": 130.7,
+   "usd": 20.43,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "LASTREM-AUTO": {
+   "belopp": 122.62,
+   "usd": 19.17,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TRADKOPPLING-50": {
+   "belopp": 77.83,
+   "usd": 12.17,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "STALTRAD-HUVUD": {
+   "belopp": 91.05,
+   "usd": 14.24,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TRADSTRACKARE": {
+   "belopp": 279.75,
+   "usd": 43.74,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TRADSPANNARE-30SET": {
+   "belopp": 196.05,
+   "usd": 30.65,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "DACKPUMP-150PSI": {
+   "belopp": 158.6,
+   "usd": 24.8,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "SOLSEGEL-3X3": {
+   "belopp": 80.03,
+   "usd": 12.51,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "SOLSEGEL-4X4": {
+   "belopp": 99.13,
+   "usd": 15.5,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TRIMMERLINA-100M": {
+   "belopp": 193.11,
+   "usd": 30.19,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "TRIMMERSELE": {
+   "belopp": 54.34,
+   "usd": 8.5,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "SOVDYNA-TPU": {
+   "belopp": 124.82,
+   "usd": 19.52,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  },
+  "SLADDHALLARE-5PACK": {
+   "belopp": 98.39,
+   "usd": 15.38,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.148"
+  }
+ },
+ "fi": {
+  "TEMU-605988157507785": {
+   "belopp": 11.21,
+   "usd": 13.1,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601100495932584": {
+   "belopp": 30.85,
+   "usd": 36.04,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-606593194260136": {
+   "belopp": 36.61,
+   "usd": 42.77,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601101920237436": {
+   "belopp": 6.54,
+   "usd": 7.64,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-606152708439387": {
+   "belopp": 15.96,
+   "usd": 18.64,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601105338361446": {
+   "belopp": 12.91,
+   "usd": 15.08,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099555317731": {
+   "belopp": 13.76,
+   "usd": 16.07,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099525417124": {
+   "belopp": 38.3,
+   "usd": 44.74,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601100056763025": {
+   "belopp": 9.47,
+   "usd": 11.06,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099583478869": {
+   "belopp": 7.51,
+   "usd": 8.77,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-606321420111309": {
+   "belopp": 11.28,
+   "usd": 13.18,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601104306534696": {
+   "belopp": 29.03,
+   "usd": 33.91,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099652857203": {
+   "belopp": 13.58,
+   "usd": 15.86,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099915330362": {
+   "belopp": 16.96,
+   "usd": 19.81,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601102600651869": {
+   "belopp": 23.19,
+   "usd": 27.09,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099921451643": {
+   "belopp": 12.87,
+   "usd": 15.04,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-605790790325172": {
+   "belopp": 6.85,
+   "usd": 8,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-601099590911868": {
+   "belopp": 15.43,
+   "usd": 18.03,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-601101802223563": {
+   "belopp": 10.76,
+   "usd": 12.57,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-601101617191068": {
+   "belopp": 11.03,
+   "usd": 12.88,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-601105076226732": {
+   "belopp": 8.26,
+   "usd": 9.65,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-605748427852371": {
+   "belopp": 17.29,
+   "usd": 20.2,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601102992953649": {
+   "belopp": 9.25,
+   "usd": 10.8,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601099515911841": {
+   "belopp": 8.3,
+   "usd": 9.7,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601101411598143": {
+   "belopp": 7.45,
+   "usd": 8.7,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601102047663138": {
+   "belopp": 12.41,
+   "usd": 14.5,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601100379316292": {
+   "belopp": 10.34,
+   "usd": 12.08,
+   "kalla": "Next up products (1) (landsuppdelad)"
+  },
+  "TEMU-601104547945861": {
+   "belopp": 22.21,
+   "usd": 25.95,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099516487044": {
+   "belopp": 11.98,
+   "usd": 13.99,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601104677569375": {
+   "belopp": 8.82,
+   "usd": 10.3,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601100286187971": {
+   "belopp": 12.2,
+   "usd": 14.25,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601102200064735": {
+   "belopp": 12.3,
+   "usd": 14.37,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601103799817572": {
+   "belopp": 7.4,
+   "usd": 8.65,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601102197280712": {
+   "belopp": 10.56,
+   "usd": 12.34,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601101921250503": {
+   "belopp": 14.05,
+   "usd": 16.41,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-605510862498229": {
+   "belopp": 13.28,
+   "usd": 15.52,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099792244573": {
+   "belopp": 9.91,
+   "usd": 11.58,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601102932588682": {
+   "belopp": 10.67,
+   "usd": 12.47,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099608029956": {
+   "belopp": 9.15,
+   "usd": 10.68,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601101193179555": {
+   "belopp": 16.66,
+   "usd": 19.46,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601104334723296": {
+   "belopp": 10.13,
+   "usd": 11.83,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099646099256": {
+   "belopp": 8.06,
+   "usd": 9.41,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601101171339794": {
+   "belopp": 20.04,
+   "usd": 23.4,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099529125532": {
+   "belopp": 8.49,
+   "usd": 9.92,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099593503725": {
+   "belopp": 11.32,
+   "usd": 13.23,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099758388525": {
+   "belopp": 28.09,
+   "usd": 32.82,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-605778442314132": {
+   "belopp": 9.36,
+   "usd": 10.94,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601103822707739": {
+   "belopp": 39.74,
+   "usd": 46.43,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099613222521": {
+   "belopp": 9.69,
+   "usd": 11.32,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-606275953885837": {
+   "belopp": 14.26,
+   "usd": 16.66,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099516535076": {
+   "belopp": 8.38,
+   "usd": 9.79,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601105447223463": {
+   "belopp": 6.32,
+   "usd": 7.38,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099513989416": {
+   "belopp": 9.36,
+   "usd": 10.94,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601104615671651": {
+   "belopp": 7.19,
+   "usd": 8.4,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099568739293": {
+   "belopp": 10.56,
+   "usd": 12.34,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099707294735": {
+   "belopp": 14.26,
+   "usd": 16.66,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601100138503590": {
+   "belopp": 12.63,
+   "usd": 14.76,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601101152010798": {
+   "belopp": 10.89,
+   "usd": 12.72,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601101900182709": {
+   "belopp": 8.17,
+   "usd": 9.54,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601102577824993": {
+   "belopp": 7.73,
+   "usd": 9.03,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601100643890172": {
+   "belopp": 11.43,
+   "usd": 13.36,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601103318997348": {
+   "belopp": 10.13,
+   "usd": 11.83,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099827944835": {
+   "belopp": 15.03,
+   "usd": 17.55,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601100609870273": {
+   "belopp": 22.87,
+   "usd": 26.71,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601101736547499": {
+   "belopp": 9.15,
+   "usd": 10.68,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601100307770473": {
+   "belopp": 8.17,
+   "usd": 9.54,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-605638235151513": {
+   "belopp": 8.17,
+   "usd": 9.54,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601100461940399": {
+   "belopp": 11.11,
+   "usd": 12.97,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099913184351": {
+   "belopp": 10.13,
+   "usd": 11.83,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601100612207657": {
+   "belopp": 29.51,
+   "usd": 34.47,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099683320103": {
+   "belopp": 11.65,
+   "usd": 13.61,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601105519382458": {
+   "belopp": 52.81,
+   "usd": 61.69,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099514761689": {
+   "belopp": 10.45,
+   "usd": 12.21,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-606445101752663": {
+   "belopp": 12.96,
+   "usd": 15.14,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601104670246605": {
+   "belopp": 18.29,
+   "usd": 21.37,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-606260820843380": {
+   "belopp": 12.09,
+   "usd": 14.12,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099780109774": {
+   "belopp": 12.63,
+   "usd": 14.76,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601100170176513": {
+   "belopp": 11.22,
+   "usd": 13.1,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099532506945": {
+   "belopp": 16.22,
+   "usd": 18.95,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601102616734555": {
+   "belopp": 12.09,
+   "usd": 14.12,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601100041833326": {
+   "belopp": 12.3,
+   "usd": 14.37,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099570786952": {
+   "belopp": 16.55,
+   "usd": 19.33,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601104842909981": {
+   "belopp": 9.91,
+   "usd": 11.58,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601100619336850": {
+   "belopp": 13.39,
+   "usd": 15.65,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-605670363466651": {
+   "belopp": 8.28,
+   "usd": 9.67,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601105049353588": {
+   "belopp": 17.53,
+   "usd": 20.48,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601100702048110": {
+   "belopp": 21.02,
+   "usd": 24.55,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099522938851": {
+   "belopp": 9.8,
+   "usd": 11.45,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601100275498263": {
+   "belopp": 9.36,
+   "usd": 10.94,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601102298530038": {
+   "belopp": 13.61,
+   "usd": 15.9,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099602972592": {
+   "belopp": 17.53,
+   "usd": 20.48,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099563938432": {
+   "belopp": 13.07,
+   "usd": 15.26,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-605674692040432": {
+   "belopp": 26.13,
+   "usd": 30.53,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099573157236": {
+   "belopp": 11.85,
+   "usd": 13.84,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099799032157": {
+   "belopp": 10.02,
+   "usd": 11.7,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099661720113": {
+   "belopp": 20.14,
+   "usd": 23.53,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601104557280727": {
+   "belopp": 10.56,
+   "usd": 12.34,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601101443995469": {
+   "belopp": 14.05,
+   "usd": 16.41,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601100494543623": {
+   "belopp": 7.73,
+   "usd": 9.03,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601102835962131": {
+   "belopp": 8.93,
+   "usd": 10.43,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099574427946": {
+   "belopp": 12.52,
+   "usd": 14.63,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601101813510350": {
+   "belopp": 15.14,
+   "usd": 17.68,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601101587277592": {
+   "belopp": 14.92,
+   "usd": 17.43,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099627996771": {
+   "belopp": 24.28,
+   "usd": 28.37,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601101336047386": {
+   "belopp": 69.69,
+   "usd": 81.41,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-605832599175928": {
+   "belopp": 16.99,
+   "usd": 19.84,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-605720258930293": {
+   "belopp": 13.33,
+   "usd": 15.57,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099613072998": {
+   "belopp": 18.82,
+   "usd": 21.98,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601100218100590": {
+   "belopp": 9.15,
+   "usd": 10.68,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601103791378059": {
+   "belopp": 8.97,
+   "usd": 10.48,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099746858349": {
+   "belopp": 27.55,
+   "usd": 32.18,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601105338816115": {
+   "belopp": 18.52,
+   "usd": 21.64,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-606038489195587": {
+   "belopp": 43.88,
+   "usd": 51.26,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601101124885676": {
+   "belopp": 33.21,
+   "usd": 38.8,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601100276131141": {
+   "belopp": 12.3,
+   "usd": 14.37,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099524922604": {
+   "belopp": 15.03,
+   "usd": 17.55,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099520362678": {
+   "belopp": 11.22,
+   "usd": 13.1,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-605828169987760": {
+   "belopp": 9.26,
+   "usd": 10.81,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601100938731214": {
+   "belopp": 29.73,
+   "usd": 34.73,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099866212432": {
+   "belopp": 11.87,
+   "usd": 13.86,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601100182464991": {
+   "belopp": 8.28,
+   "usd": 9.67,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601100409294093": {
+   "belopp": 6.75,
+   "usd": 7.89,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099969009037": {
+   "belopp": 12.09,
+   "usd": 14.12,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601102199755631": {
+   "belopp": 26.24,
+   "usd": 30.66,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099521158260": {
+   "belopp": 9.26,
+   "usd": 10.81,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601102632838913": {
+   "belopp": 16.12,
+   "usd": 18.83,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099705910254": {
+   "belopp": 26.35,
+   "usd": 30.78,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099520639890": {
+   "belopp": 10.45,
+   "usd": 12.21,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601099538175267": {
+   "belopp": 9.69,
+   "usd": 11.32,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601105032097489": {
+   "belopp": 25.26,
+   "usd": 29.51,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.272"
+  },
+  "TEMU-601102681234291": {
+   "belopp": 34.63,
+   "usd": 40.45,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 1.272"
+  },
+  "ENDOSKOP-1080P": {
+   "belopp": 30.92,
+   "usd": 36.12,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "JUMPSTART-5000A": {
+   "belopp": 50.41,
+   "usd": 58.89,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TRGSACK-60L": {
+   "belopp": 9.58,
+   "usd": 11.19,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TRGSACK-120L": {
+   "belopp": 10.89,
+   "usd": 12.72,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TRGSACK-300L": {
+   "belopp": 12.41,
+   "usd": 14.5,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "BRANSLEPUMP": {
+   "belopp": 21.12,
+   "usd": 24.68,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "AXELREM-DUBBEL": {
+   "belopp": 20.8,
+   "usd": 24.3,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "GETHALSBAND-KLOCKA": {
+   "belopp": 8.06,
+   "usd": 9.41,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "SLIPARE-BORR": {
+   "belopp": 9.26,
+   "usd": 10.81,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "IBC-4VAGS": {
+   "belopp": 9.36,
+   "usd": 10.94,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "PLASTSVETS-SET": {
+   "belopp": 24.17,
+   "usd": 28.24,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "BORSTHUVUD-10TUM": {
+   "belopp": 18.4,
+   "usd": 21.5,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "MOWER-SEAT-GRA": {
+   "belopp": 19.38,
+   "usd": 22.64,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "MOWER-SEAT-SVART": {
+   "belopp": 19.38,
+   "usd": 22.64,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "MOWER-SEAT-LJUSGRA": {
+   "belopp": 19.38,
+   "usd": 22.64,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "LASTREM-AUTO": {
+   "belopp": 18.18,
+   "usd": 21.24,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TRADKOPPLING-50": {
+   "belopp": 11.54,
+   "usd": 13.48,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "STALTRAD-HUVUD": {
+   "belopp": 13.5,
+   "usd": 15.77,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TRADSTRACKARE": {
+   "belopp": 41.49,
+   "usd": 48.46,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TRADSPANNARE-30SET": {
+   "belopp": 29.07,
+   "usd": 33.96,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "DACKPUMP-150PSI": {
+   "belopp": 23.52,
+   "usd": 27.48,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "SOLSEGEL-3X3": {
+   "belopp": 11.87,
+   "usd": 13.86,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "SOLSEGEL-4X4": {
+   "belopp": 14.7,
+   "usd": 17.17,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TRIMMERLINA-100M": {
+   "belopp": 28.64,
+   "usd": 33.45,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "TRIMMERSELE": {
+   "belopp": 8.06,
+   "usd": 9.41,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "SOVDYNA-TPU": {
+   "belopp": 18.51,
+   "usd": 21.62,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  },
+  "SLADDHALLARE-5PACK": {
+   "belopp": 14.59,
+   "usd": 17.04,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 1.272"
+  }
+ },
+ "uk": {
+  "TEMU-605988157507785": {
+   "belopp": 6.31,
+   "usd": 8.61,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601100495932584": {
+   "belopp": 17.53,
+   "usd": 23.91,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-606593194260136": {
+   "belopp": 18.51,
+   "usd": 25.24,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601101920237436": {
+   "belopp": 4.08,
+   "usd": 5.56,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-606152708439387": {
+   "belopp": 9.96,
+   "usd": 13.58,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601105338361446": {
+   "belopp": 7.75,
+   "usd": 10.57,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099555317731": {
+   "belopp": 7.99,
+   "usd": 10.9,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099525417124": {
+   "belopp": 22.2,
+   "usd": 30.27,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601100056763025": {
+   "belopp": 5.76,
+   "usd": 7.86,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099583478869": {
+   "belopp": 4.91,
+   "usd": 6.7,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-606321420111309": {
+   "belopp": 7.08,
+   "usd": 9.65,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601104306534696": {
+   "belopp": 16.56,
+   "usd": 22.58,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099652857203": {
+   "belopp": 7.96,
+   "usd": 10.86,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099915330362": {
+   "belopp": 10.77,
+   "usd": 14.69,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601102600651869": {
+   "belopp": 12.53,
+   "usd": 17.09,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-601099921451643": {
+   "belopp": 7.11,
+   "usd": 9.7,
+   "kalla": "offert 5.1 (landsuppdelad)"
+  },
+  "TEMU-605790790325172": {
+   "belopp": 5.28,
+   "usd": 7.2,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-601099590911868": {
+   "belopp": 9.66,
+   "usd": 13.17,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-601101802223563": {
+   "belopp": 6.79,
+   "usd": 9.26,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-601101617191068": {
+   "belopp": 6.89,
+   "usd": 9.4,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-601105076226732": {
+   "belopp": 4.91,
+   "usd": 6.69,
+   "kalla": "Next up products 4 (landsuppdelad)"
+  },
+  "TEMU-605748427852371": {
+   "belopp": 12.03,
+   "usd": 16.4,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601102992953649": {
+   "belopp": 5.94,
+   "usd": 8.1,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601099515911841": {
+   "belopp": 5.28,
+   "usd": 7.2,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601101411598143": {
+   "belopp": 4.91,
+   "usd": 6.7,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601102047663138": {
+   "belopp": 10.12,
+   "usd": 13.8,
+   "kalla": "Next up products 3 (landsuppdelad)"
+  },
+  "TEMU-601100379316292": {
+   "belopp": 6.16,
+   "usd": 8.4,
+   "kalla": "Next up products (1) (landsuppdelad)"
+  },
+  "TEMU-601104547945861": {
+   "belopp": 14.24,
+   "usd": 19.42,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099516487044": {
+   "belopp": 7.68,
+   "usd": 10.47,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601104677569375": {
+   "belopp": 5.65,
+   "usd": 7.71,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601100286187971": {
+   "belopp": 7.82,
+   "usd": 10.66,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601102200064735": {
+   "belopp": 7.89,
+   "usd": 10.76,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601103799817572": {
+   "belopp": 4.75,
+   "usd": 6.47,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601102197280712": {
+   "belopp": 6.77,
+   "usd": 9.23,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601101921250503": {
+   "belopp": 9.01,
+   "usd": 12.28,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-605510862498229": {
+   "belopp": 8.52,
+   "usd": 11.61,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099792244573": {
+   "belopp": 6.35,
+   "usd": 8.66,
+   "kalla": "Next up products (1) (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601102932588682": {
+   "belopp": 6.84,
+   "usd": 9.33,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099608029956": {
+   "belopp": 5.86,
+   "usd": 8,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601101193179555": {
+   "belopp": 10.68,
+   "usd": 14.57,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601104334723296": {
+   "belopp": 6.49,
+   "usd": 8.85,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099646099256": {
+   "belopp": 5.17,
+   "usd": 7.04,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601101171339794": {
+   "belopp": 12.85,
+   "usd": 17.52,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099529125532": {
+   "belopp": 5.45,
+   "usd": 7.43,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099593503725": {
+   "belopp": 7.26,
+   "usd": 9.9,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099758388525": {
+   "belopp": 18.01,
+   "usd": 24.56,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-605778442314132": {
+   "belopp": 6,
+   "usd": 8.19,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601103822707739": {
+   "belopp": 25.48,
+   "usd": 34.75,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099613222521": {
+   "belopp": 6.21,
+   "usd": 8.47,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-606275953885837": {
+   "belopp": 9.15,
+   "usd": 12.47,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099516535076": {
+   "belopp": 5.38,
+   "usd": 7.33,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601105447223463": {
+   "belopp": 4.05,
+   "usd": 5.52,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099513989416": {
+   "belopp": 6,
+   "usd": 8.19,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601104615671651": {
+   "belopp": 4.61,
+   "usd": 6.28,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099568739293": {
+   "belopp": 6.77,
+   "usd": 9.23,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099707294735": {
+   "belopp": 9.15,
+   "usd": 12.47,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601100138503590": {
+   "belopp": 8.1,
+   "usd": 11.04,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601101152010798": {
+   "belopp": 6.98,
+   "usd": 9.52,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601101900182709": {
+   "belopp": 5.24,
+   "usd": 7.14,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601102577824993": {
+   "belopp": 4.96,
+   "usd": 6.76,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601100643890172": {
+   "belopp": 7.33,
+   "usd": 10,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601103318997348": {
+   "belopp": 6.49,
+   "usd": 8.85,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099827944835": {
+   "belopp": 9.63,
+   "usd": 13.14,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601100609870273": {
+   "belopp": 14.66,
+   "usd": 19.99,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601101736547499": {
+   "belopp": 5.86,
+   "usd": 8,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601100307770473": {
+   "belopp": 5.24,
+   "usd": 7.14,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-605638235151513": {
+   "belopp": 5.24,
+   "usd": 7.14,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601100461940399": {
+   "belopp": 7.12,
+   "usd": 9.71,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099913184351": {
+   "belopp": 6.49,
+   "usd": 8.85,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601100612207657": {
+   "belopp": 18.92,
+   "usd": 25.8,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099683320103": {
+   "belopp": 7.47,
+   "usd": 10.19,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601105519382458": {
+   "belopp": 33.86,
+   "usd": 46.17,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099514761689": {
+   "belopp": 6.7,
+   "usd": 9.14,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-606445101752663": {
+   "belopp": 8.31,
+   "usd": 11.33,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601104670246605": {
+   "belopp": 11.73,
+   "usd": 15.99,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-606260820843380": {
+   "belopp": 7.75,
+   "usd": 10.57,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099780109774": {
+   "belopp": 8.1,
+   "usd": 11.04,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601100170176513": {
+   "belopp": 7.19,
+   "usd": 9.81,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099532506945": {
+   "belopp": 10.4,
+   "usd": 14.18,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601102616734555": {
+   "belopp": 7.75,
+   "usd": 10.57,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601100041833326": {
+   "belopp": 7.89,
+   "usd": 10.76,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099570786952": {
+   "belopp": 10.61,
+   "usd": 14.47,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601104842909981": {
+   "belopp": 6.35,
+   "usd": 8.66,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601100619336850": {
+   "belopp": 8.59,
+   "usd": 11.71,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-605670363466651": {
+   "belopp": 5.31,
+   "usd": 7.24,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601105049353588": {
+   "belopp": 11.24,
+   "usd": 15.33,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601100702048110": {
+   "belopp": 13.47,
+   "usd": 18.37,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099522938851": {
+   "belopp": 6.28,
+   "usd": 8.57,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601100275498263": {
+   "belopp": 6,
+   "usd": 8.19,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601102298530038": {
+   "belopp": 8.73,
+   "usd": 11.9,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099602972592": {
+   "belopp": 11.24,
+   "usd": 15.33,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099563938432": {
+   "belopp": 8.38,
+   "usd": 11.42,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-605674692040432": {
+   "belopp": 16.75,
+   "usd": 22.85,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099573157236": {
+   "belopp": 7.6,
+   "usd": 10.36,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099799032157": {
+   "belopp": 6.42,
+   "usd": 8.76,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099661720113": {
+   "belopp": 12.92,
+   "usd": 17.61,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601104557280727": {
+   "belopp": 6.77,
+   "usd": 9.23,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601101443995469": {
+   "belopp": 9.01,
+   "usd": 12.28,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601100494543623": {
+   "belopp": 4.96,
+   "usd": 6.76,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601102835962131": {
+   "belopp": 5.72,
+   "usd": 7.81,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099574427946": {
+   "belopp": 8.03,
+   "usd": 10.95,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601101813510350": {
+   "belopp": 9.7,
+   "usd": 13.23,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601101587277592": {
+   "belopp": 9.56,
+   "usd": 13.04,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099627996771": {
+   "belopp": 15.57,
+   "usd": 21.23,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601101336047386": {
+   "belopp": 44.68,
+   "usd": 60.93,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-605832599175928": {
+   "belopp": 10.89,
+   "usd": 14.85,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-605720258930293": {
+   "belopp": 8.54,
+   "usd": 11.65,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099613072998": {
+   "belopp": 12.06,
+   "usd": 16.45,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601100218100590": {
+   "belopp": 5.86,
+   "usd": 8,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601103791378059": {
+   "belopp": 5.75,
+   "usd": 7.84,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099746858349": {
+   "belopp": 17.66,
+   "usd": 24.09,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601105338816115": {
+   "belopp": 11.87,
+   "usd": 16.19,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-606038489195587": {
+   "belopp": 28.13,
+   "usd": 38.37,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601101124885676": {
+   "belopp": 21.29,
+   "usd": 29.04,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601100276131141": {
+   "belopp": 7.89,
+   "usd": 10.76,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099524922604": {
+   "belopp": 9.63,
+   "usd": 13.14,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099520362678": {
+   "belopp": 7.19,
+   "usd": 9.81,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-605828169987760": {
+   "belopp": 5.93,
+   "usd": 8.09,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601100938731214": {
+   "belopp": 19.06,
+   "usd": 25.99,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099866212432": {
+   "belopp": 7.61,
+   "usd": 10.38,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601100182464991": {
+   "belopp": 5.31,
+   "usd": 7.24,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601100409294093": {
+   "belopp": 4.33,
+   "usd": 5.9,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099969009037": {
+   "belopp": 7.75,
+   "usd": 10.57,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601102199755631": {
+   "belopp": 16.82,
+   "usd": 22.94,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099521158260": {
+   "belopp": 5.93,
+   "usd": 8.09,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601102632838913": {
+   "belopp": 10.33,
+   "usd": 14.09,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099705910254": {
+   "belopp": 16.89,
+   "usd": 23.04,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099520639890": {
+   "belopp": 6.7,
+   "usd": 9.14,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601099538175267": {
+   "belopp": 6.21,
+   "usd": 8.47,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601105032097489": {
+   "belopp": 16.2,
+   "usd": 22.09,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 0.952"
+  },
+  "TEMU-601102681234291": {
+   "belopp": 22.2,
+   "usd": 30.27,
+   "kalla": "Next up products 2 (äldre kopia) (SE-bas) × landfaktor 0.952"
+  },
+  "ENDOSKOP-1080P": {
+   "belopp": 19.83,
+   "usd": 27.04,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "JUMPSTART-5000A": {
+   "belopp": 32.32,
+   "usd": 44.08,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TRGSACK-60L": {
+   "belopp": 6.14,
+   "usd": 8.38,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TRGSACK-120L": {
+   "belopp": 6.98,
+   "usd": 9.52,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TRGSACK-300L": {
+   "belopp": 7.96,
+   "usd": 10.85,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "BRANSLEPUMP": {
+   "belopp": 13.54,
+   "usd": 18.47,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "AXELREM-DUBBEL": {
+   "belopp": 13.33,
+   "usd": 18.18,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "GETHALSBAND-KLOCKA": {
+   "belopp": 5.17,
+   "usd": 7.04,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "SLIPARE-BORR": {
+   "belopp": 5.93,
+   "usd": 8.09,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "IBC-4VAGS": {
+   "belopp": 6,
+   "usd": 8.19,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "PLASTSVETS-SET": {
+   "belopp": 15.5,
+   "usd": 21.13,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "BORSTHUVUD-10TUM": {
+   "belopp": 11.8,
+   "usd": 16.09,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "MOWER-SEAT-GRA": {
+   "belopp": 12.43,
+   "usd": 16.95,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "MOWER-SEAT-SVART": {
+   "belopp": 12.43,
+   "usd": 16.95,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "MOWER-SEAT-LJUSGRA": {
+   "belopp": 12.43,
+   "usd": 16.95,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "LASTREM-AUTO": {
+   "belopp": 11.66,
+   "usd": 15.9,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TRADKOPPLING-50": {
+   "belopp": 7.4,
+   "usd": 10.09,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "STALTRAD-HUVUD": {
+   "belopp": 8.66,
+   "usd": 11.8,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TRADSTRACKARE": {
+   "belopp": 26.6,
+   "usd": 36.27,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TRADSPANNARE-30SET": {
+   "belopp": 18.64,
+   "usd": 25.42,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "DACKPUMP-150PSI": {
+   "belopp": 15.08,
+   "usd": 20.56,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "SOLSEGEL-3X3": {
+   "belopp": 7.61,
+   "usd": 10.38,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "SOLSEGEL-4X4": {
+   "belopp": 9.42,
+   "usd": 12.85,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TRIMMERLINA-100M": {
+   "belopp": 18.36,
+   "usd": 25.04,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "TRIMMERSELE": {
+   "belopp": 5.17,
+   "usd": 7.04,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "SOVDYNA-TPU": {
+   "belopp": 11.87,
+   "usd": 16.18,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  },
+  "SLADDHALLARE-5PACK": {
+   "belopp": 9.35,
+   "usd": 12.76,
+   "kalla": "baver produkter uppdaterad (SE-bas) × landfaktor 0.952"
+  }
+ }
+}

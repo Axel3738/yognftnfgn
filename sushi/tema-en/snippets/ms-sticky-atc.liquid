@@ -1,0 +1,34 @@
+{%- comment -%}
+  ms-sticky-atc — fast köpknapp som dyker upp när temats riktiga knapp
+  scrollats ur bild. Knappen skickar klicket vidare till temats egen knapp,
+  så varianthantering, felmeddelanden och kundvagnslådan fungerar precis som
+  vanligt. Vi bygger alltså inget eget köpflöde.
+
+  Parametrar: product, label, position ('bottom' | 'top'), show_image
+{%- endcomment -%}
+{%- liquid
+  assign p = product
+  assign v = p.selected_or_first_available_variant
+  assign pos = position | default: 'bottom'
+-%}
+{%- if p and p.available -%}
+  <ms-sticky-atc class="ms-scope" data-money-format="{{ shop.money_format | strip_html | escape }}">
+    <div class="ms-sticky" data-position="{{ pos }}" data-shown="false">
+      <div class="ms-sticky__inner">
+        {%- if show_image != false and p.featured_image -%}
+          <img class="ms-sticky__media"
+               src="{{ p.featured_image | image_url: width: 120 }}"
+               alt="" width="44" height="44" loading="lazy">
+        {%- endif -%}
+        <span class="ms-sticky__text">
+          <span class="ms-sticky__name">{{ p.title }}</span>
+          <span class="ms-sticky__price" data-ms-sticky-price>{{ v.price | money }}</span>
+          <span class="ms-sticky__was" data-ms-sticky-was {% unless v.compare_at_price > v.price %}hidden{% endunless %}>
+            {{ v.compare_at_price | money }}
+          </span>
+        </span>
+        <button type="button" class="ms-sticky__btn">{{ label | default: 'Buy now' }}</button>
+      </div>
+    </div>
+  </ms-sticky-atc>
+{%- endif -%}
