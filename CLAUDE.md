@@ -557,6 +557,13 @@ Grillklinikken-butiker får ALDRIG bäver-emojin eller "Bäverbutiken" som vendo
   Maskerat nu, men det ligger kvar i git-historiken — nya exempel ska vara påhittade.)*
   Nycklar bor i miljövariabler, eller lokalt i `.env` (redan i `.gitignore`, läses av
   `temu/miljo.mjs` — molnmiljön vinner alltid över filen).
+- **Säg "klistra ALDRIG in nycklarna här" i SAMMA meddelande som ber Axel öppna
+  `.env`.** Axel klistrar in det han blir ombedd att klistra in — ber du om "vad
+  filen/kollen säger" kan svaret bli hela nyckelfilen. *(2026-09-07: hela `.env`
+  med Shopify-hemligheter, Meta-token och Discord-token hamnade i chatten. Guidens
+  varning stod tre stycken bort och lästes inte.)* Regeln: varje instruktion som
+  rör `.env` slutar med raden **"Skicka inte innehållet till mig."** Hamnar nycklar
+  ändå i chatten: skriv aldrig in dem någonstans, och säg vilka som bör bytas.
 - **Nya produkter skapas bara i SE och NO** (Axels beslut 2026-09-07).
   Skapa aldrig en ny produkt i DK, FI eller UK utan att Axel sagt till.
   Det som redan ligger där underhålls som vanligt.

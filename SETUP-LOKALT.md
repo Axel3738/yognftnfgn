@@ -105,6 +105,10 @@ Anteckningar öppnas med 16 rader att fylla i. Skriv värdet efter varje `=`
 (inga citattecken, inga mellanslag runt `=`). Spara med **Ctrl + S**, stäng.
 (Finns filen redan ifylld öppnas den som den är — inget skrivs över.)
 
+> ⛔ **Skicka inte innehållet i `.env` till Claude, till någon chatt, eller till
+> någon annan.** Nycklarna ska bara finnas i filen på din dator. Claude behöver
+> aldrig se dem — skripten läser filen själva.
+
 **Var hittar du värdena?** Ur Shopify-admin — klickvägen står i `temu/TOKENS.md`,
 tre uppgifter per butik (SE och NO räcker; DK/FI/UK får inga nya produkter).
 Nycklarna du en gång la in på claude.ai/code visas maskerade där och går inte
