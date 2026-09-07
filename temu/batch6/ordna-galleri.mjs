@@ -1,7 +1,7 @@
 // Lägger hjältebilden först i galleriet (productReorderMedia). Kör: node temu/batch6/ordna-galleri.mjs <se|no>
 import { Butik } from '../api.mjs';
 import { T6_SV } from '../utrullning/texter6.mjs';
-const HERO = { staketbygel: /^(Staketstolpslagare 2-pack|Gjerdestolpebøyle 2-pk)/, kattkoja: /^(Isolerad utekattkoja i Oxford|Isolert utekattehus i Oxford)/, takoverdrag: /^(Svart taköverdrag på husbil|Sort takovertrekk på bobil)/ };
+const HERO = { staketbygel: /^(Staketstolpslagare 2-pack|Gjerdestolpebøyle 2-pk)/, kattkoja: /^(Isolerad utekattkoja i Oxford|Isolert utekattehus i Oxford)/, racingkalender: /^(Kartongen med de 24|Esken med de 24)/, takoverdrag: /^(Svart taköverdrag på husbil|Sort takovertrekk på bobil)/ };
 const b = new Butik(process.argv[2]);
 console.log((await b.verifiera()).name);
 for (const [k, re] of Object.entries(HERO)) {

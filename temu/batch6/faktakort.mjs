@@ -32,7 +32,7 @@ const T = {
   },
 };
 for (const sp of ['sv', 'no']) {
-  await bygg({ bild: `${S}/galleri/kattkoja-hero.jpg` /* rätt koja: boxig, sadeltak, på marken */, ut: `${S}/galleri/kattkoja-fakta-${sp}.jpg`, ...T[sp].kattkoja });
+  await bygg({ bild: `${S}/galleri/kattkoja-produkt.jpg` /* Temu-listningens produktbild (skörd 2026-09-07) */, ut: `${S}/galleri/kattkoja-fakta-${sp}.jpg`, ...T[sp].kattkoja });
   await bygg({ bild: `${S}/xlsx/xl/media/image4.png` /* CWD:s leverantörsbild */, ut: `${S}/galleri/takoverdrag-fakta-${sp}.jpg`, ...T[sp].takoverdrag });
   await bygg({ bild: `${S}/galleri/solpanel-hero.jpg` /* grön version = det CWD levererar */, ut: `${S}/galleri/solpanel-fakta-${sp}.jpg`, ...T[sp].solpanel });
 }

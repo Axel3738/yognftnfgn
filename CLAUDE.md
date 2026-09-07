@@ -941,6 +941,9 @@ Grillklinikken-butiker får ALDRIG bäver-emojin eller "Bäverbutiken" som vendo
   produkt på tre sidor. Produktsidor slutar på `-g-<goods_id>.html`. Är länken en
   söksida: produktens utseende kommer ENBART ur offertarkets inbäddade bilder
   (`xlsx → xl/media`, radkopplade via `xl/drawings/drawing1.xml`). *(2026-09-07.)*
+  Axel hittar rätt produktsida själv i Chrome och skördar med `temu-bilder.mjs` —
+  den skörden (`temu/bildskord/<produkt>/manifest.json` bär `-g-`-källan) slår allt
+  annat. Bilder med engelsk/kinesisk text i skörden används aldrig, bara de textfria.
 - **Notion-anropen stryps till ~3/s.** Ett par hundra sidor tar några minuter.
   Det är normalt, inte en hängning.
 - **Språk:** allt i repot skrivs på svenska — kod, kommentarer, commit-meddelanden.

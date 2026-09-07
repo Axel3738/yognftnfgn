@@ -38,26 +38,27 @@ const AI_RAD = { sv: 'Livsstilsbilden är en AI-genererad illustration.', no: 'L
 const PLAN = {
   // ⚠️ Inga bilder ur Temu-videorna (Axel 2026-09-07: videon visade fel variant/produkt).
   // Bara leverantörsbilder, faktakort ur låst copy och AI-bilder med riktig hero som referens.
+  // Kattkoja, staketbygel, racingkalender: RIKTIGA listningsbilder ur Axels skörd 2026-09-07
+  // (temu/bildskord/<produkt>/, produktsidor valda av Axel i Chrome). Inga AI-bilder kvar där.
   kattkoja: {
-    // Rätt produkt (arkets bild + CWD:s färgbesked): boxig Oxford-koja med sadeltak, PÅ MARKEN.
-    // Hero = Temu-listningens bild hittad via bildjakt (Pinterest-kopia), textband bortbeskuret.
-    gif: { sv: 'Utekattkojan – isolerad, med sadeltak', no: 'Utekattehuset – isolert, med saltak' },
+    gif: { sv: 'Katten går in och ut ur kojan', no: 'Katten går inn og ut av huset' },
     bilder: {
-      hero: { fil: G('kattkoja-hero.jpg'), sv: 'Isolerad utekattkoja i Oxford-tyg med sadeltak och öppning på kortsidan', no: 'Isolert utekattehus i Oxford-stoff med saltak og åpning på kortsiden' },
-      ai: { fil: G('kattkoja-ai.jpg'), ai: true, sv: 'AI-illustration: den grå kojan på en stenlagd uteplats i regn, katt i öppningen', no: 'AI-illustrasjon: det grå huset på en steinlagt uteplass i regn, katt i åpningen' },
+      hero: { fil: G('kattkoja-hero.jpg'), sv: 'Isolerad utekattkoja i Oxford-tyg – katt i öppningen i regnet', no: 'Isolert utekattehus i Oxford-stoff – katt i åpningen i regnet' },
+      sover: { fil: G('kattkoja-sover.jpg'), sv: 'Katt som sover inne i kojan på gräsmattan', no: 'Katt som sover inne i huset på plenen' },
+      produkt: { fil: G('kattkoja-produkt.jpg'), sv: 'Kojan i grått med sadeltak, katt tittar ut', no: 'Huset i grått med saltak, katt titter ut' },
       fakta: { fil: G(`kattkoja-fakta-${sp}.jpg`), sv: 'Kojans egenskaper: Oxford-tyg, isolerade väggar, sadeltak, en öppning, hopfällbar, tre färger', no: 'Husets egenskaper: Oxford-stoff, isolerte vegger, saltak, én åpning, sammenleggbar, tre farger' },
     },
-    galleri: ['hero', 'ai', 'fakta'], bild1: 'ai', bild2: 'fakta',
+    galleri: ['hero', 'sover', 'produkt', 'fakta'], bild1: 'sover', bild2: 'fakta',
   },
   staketbygel: {
-    // Hero beskuren till två spikar (2-pack) — ursprungsbilden visade fyra.
-    gif: { sv: 'Staketstolpslagare – 2-pack', no: 'Gjerdestolpebøyle – 2-pk' },
+    gif: { sv: 'Staketstolpslagare 2-pack – i kartongen och monterad', no: 'Gjerdestolpebøyle 2-pk – i esken og montert' },
     bilder: {
-      hero: { fil: G('staketbygel-hero.jpg'), sv: 'Staketstolpslagare 2-pack i svart stål med markspett', no: 'Gjerdestolpebøyle 2-pk i svart stål med spyd til bakken' },
-      ai: { fil: G('staketbygel-ai.jpg'), ai: true, sv: 'AI-illustration: bygeln fastskruvad mot en gammal staketstolpe i gräsmattan', no: 'AI-illustrasjon: bøylen skrudd fast mot en gammel gjerdestolpe i plenen' },
+      hero: { fil: G('staketbygel-hero.jpg'), sv: 'Staketstolpslagare 2-pack i svart stål med skruvar, bultar och nycklar', no: 'Gjerdestolpebøyle 2-pk i svart stål med skruer, bolter og nøkler' },
+      monterad: { fil: G('staketbygel-monterad.jpg'), sv: 'Bygeln fastskruvad mot en trästolpe vid staketet', no: 'Bøylen skrudd fast mot en trestolpe ved gjerdet' },
+      monterad2: { fil: G('staketbygel-monterad2.jpg'), sv: 'Bygeln nedslagen i marken intill stolpen', no: 'Bøylen slått ned i bakken inntil stolpen' },
       info: { fil: G(`staketbygel-info-${sp}.jpg`), sv: 'Måtten: 80 cm per bygel, 40 cm spett och 40 cm bygel, skruvar och nycklar ingår (2-pack)', no: 'Målene: 80 cm per bøyle, 40 cm spyd og 40 cm bøyle, skruer og nøkler følger med (2-pk)' },
     },
-    galleri: ['hero', 'ai', 'info'], bild1: 'ai', bild2: 'info',
+    galleri: ['hero', 'monterad', 'monterad2', 'info'], bild1: 'monterad', bild2: 'info',
   },
   vedklyv: {
     gif: { sv: 'Tändvedsklyven i gjutjärn', no: 'Tennvedkløyveren i støpejern' },
@@ -89,12 +90,13 @@ const PLAN = {
     galleri: ['hero', 'ai', 'fakta'], bild1: 'ai', bild2: 'fakta',
   },
   racingkalender: {
-    gif: { sv: 'Adventskalendern och de 24 bilarna', no: 'Adventskalenderen og de 24 bilene' },
+    gif: { sv: 'Luckorna öppnas och bilarna tas ut', no: 'Lukene åpnes og bilene tas ut' },
     bilder: {
       bilar: { fil: X('image10.png'), sv: 'Kartongen med de 24 racingbilarna uppradade framför', no: 'Esken med de 24 racerbilene på rekke foran' },
-      ai: { fil: G('racingkalender-ai.jpg'), ai: true, sv: 'AI-illustration: kalendern på köksbordet med tre bilar framför', no: 'AI-illustrasjon: kalenderen på kjøkkenbordet med tre biler foran' },
+      oppen: { fil: G('racing-oppen.jpg'), sv: 'Kalendern öppnad med bilar i luckorna', no: 'Kalenderen åpnet med biler i lukene' },
+      jul: { fil: G('racing-jul.jpg'), sv: 'Kalendern och bilarna framför julgranen', no: 'Kalenderen og bilene foran juletreet' },
     },
-    galleri: ['bilar', 'ai'], bild1: 'bilar', bild2: 'ai',
+    galleri: ['bilar', 'oppen', 'jul'], bild1: 'oppen', bild2: 'bilar',
   },
   fiskekalender: {
     gif: { sv: 'Adventskalendern och dragen', no: 'Adventskalenderen og slukene' },

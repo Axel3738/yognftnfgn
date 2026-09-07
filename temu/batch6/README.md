@@ -1,3 +1,26 @@
+# ✅ Slutläge 2026-09-07 sent: riktiga Temu-bilder på kattkoja, staketbygel, racingkalender
+
+Axel körde skörden på sin dator (Cowork + `temu-bilder.mjs`, produktsidorna valda av
+honom i Chrome) och skickade en zip. Skörden ligger i `temu/bildskord/<produkt>/` med
+`manifest.json` (källa = riktig `-g-<goods_id>`-produktsida):
+- **kattkoja** `g-606032248014988` — 12 bilder + video. Galleri: 03 (katt i öppningen i
+  regn), 04 (katt sover), 09 (produktbild), faktakort på 09. GIF ur videon 3,5–9,5 s,
+  beskuren upptill (en liten etikett i bakgrunden). Inga AI-bilder kvar.
+- **staketbygel** `g-601101579265035` — 01 (två spikar + skruvar = 2-pack, textfri),
+  08/09 (monterad vid staket). Infografiken bygger på 01. GIF = bildspel 01→09→08.
+  Bilderna 02–07, 10, 11 har engelsk text → inte använda.
+- **racingkalender** — 03 (öppnad kalender med bilar i luckorna), 01 (julbild),
+  arkets image10 kvar som hero. GIF ur videon 12–18 s, beskuren nedtill (katt-emoji-
+  vattenstämpel). 08/09/12 har engelsk text → inte använda.
+Kvar med AI-bilder (märkta): vedklyv, solpanel, fiskekalender, taköverdrag. Vill Axel
+ha riktiga bilder där också: samma skörd med `BILDSKORD-BATCH6.md`.
+
+⚠️ **Cowork-lärdom:** Cowork i molnet når inte datorn; Cowork på datorn kunde inte
+köra kommandon ("Workspace unavailable") men Axel körde skörden själv och zippade.
+Zip → packas upp i scratchpad → `temu/bildskord/` → `bygg-om.mjs` som vanligt.
+
+---
+
 # ✅ Sidorna ombyggda till referensstandard (2026-09-07 kväll)
 
 Alla sju produktsidor i **SE och NO** har nu samma struktur som referensen
