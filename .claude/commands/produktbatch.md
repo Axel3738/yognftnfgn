@@ -1,11 +1,13 @@
 # /produktbatch <offertlänk> <batchnummer> — hela produktbatchflödet, dialed in 2026-08-29
 
-Kör HELA flödet från CWD-offert till färdiga produktsidor i alla 5 Bäver-butiker.
+Kör HELA flödet från CWD-offert till färdiga produktsidor i **Sverige och Norge**.
+**Axels beslut 2026-09-07: nya produkter går INTE till DK/FI/UK.** Nämner texten
+nedan fem butiker är det historik — läs det som SE + NO.
 Argument: länk till offert-spreadsheetet (Google Sheets) + batchnummer (t.ex. `6.1`).
 Kör klart utan att invänta godkännande mellan faser. Svara Axel kort, på svenska.
 
 ## Fas 0 — förutsättningar
-1. Verifiera butiksåtkomst: `temu/api.mjs` med miljönycklarna (`SHOPIFY_*_<SE|NO|DK|FI|UK>`).
+1. Verifiera butiksåtkomst: `temu/api.mjs` med miljönycklarna (`SHOPIFY_*_<SE|NO>`).
    `verifiera()` per butik — fel valuta = STOPP.
 2. Läs `temu/UTLANDS-LANSERING.md` (prisregler, butiksregister) och `CLAUDE.md`:s
    produktbatch- och beskrivningsstruktur-sektioner.
@@ -36,9 +38,10 @@ Uppsättningen på Axels dator: `SETUP-LOKALT.md`.
    Zip-fallback om git strular. Produkter som inte skapas (väntar på CWD) utelämnas — säg det.
 
 ## Fas 2 — inventering + priser
-1. Inventera ALLA 5 butiker per SKU-mönster (`sku:TEMU-<goodsid>*`) INNAN något skapas —
+1. Inventera SE och NO per SKU-mönster (`sku:TEMU-<goodsid>*`) INNAN något skapas —
    dubbletter (DK 2026-08-18) och luckor (NO 2026-08-29) har båda hänt.
-2. Prismatris: SE/DK/FI = 3 × (landad kostnad + 2,9 €), NO/UK = 3 × landad kostnad.
+   Sök även i DK/FI/UK för att upptäcka om produkten redan finns där sedan tidigare.
+2. Prismatris: SE = 3 × (landad kostnad + 2,9 €), NO = 3 × landad kostnad.
    Jämförpris = pris × 1,3. Lokala prispunkter: heltal 9-slut (SEK/NOK/DKK), X,90 (EUR),
    X.99 (GBP). Landad kostnad ur offertens landskolumner — konvertera med den låsta FX-tabellen
    i utrullningsskripten. Priset dokumenteras i UTLANDS-LANSERING.md:s produkttabell.
@@ -48,10 +51,11 @@ Uppsättningen på Axels dator: `SETUP-LOKALT.md`.
    (T-objekt: titel, problemH/P, losningH/P, bullets, option/varden, alt). Copy-reglerna
    gäller: utfall i fetstil först, och?-testet, inga förbjudna ord, "smidig leverans",
    räkneord exakt mot offerten.
-2. NO/DA/FI/EN via sonnet-subagenter med `docs/copy-regler.md` + föregående batchs
-   texter-filer som stilfacit. Garantiblocket = exakt GARANTI4-strängen per språk.
+2. Norsk copy via sonnet-subagent med `docs/copy-regler.md` + föregående batchs
+   texter-filer som stilfacit. Garantiblocket = exakt GARANTI4.no.
+   (DA/FI/EN behövs inte längre — inga nya produkter i de butikerna.)
 
-## Fas 4 — skapa i 5 butiker
+## Fas 4 — skapa i SE + NO
 Följ kor5-mönstret (`temu/utrullning/kor5.mjs` är facit): productCreate med
 `templateSuffix: 'claudeprodukter'`, vendor per butik, status ACTIVE, kategori-GID
 (taxonomin är global), productOptions vid varianter; productVariantsBulkCreate
@@ -90,10 +94,10 @@ Ett item per produkt (även VÄNTA-produkter, märkta i namnet) i
 ## Definition of done
 - [ ] Fas 0.5 körd — läget (lokalt/moln) fastställt och redovisat
 - [ ] Bilderna skördade (lokalt) ELLER skördeprompten levererad FÖRST och committad (moln)
-- [ ] Alla 5 butiker inventerade per SKU före skapande — och EFTER (inga luckor/dubbletter)
+- [ ] SE och NO inventerade per SKU före skapande — och EFTER (inga luckor/dubbletter)
 - [ ] Priser enligt prisreglerna, dokumenterade i UTLANDS-LANSERING.md
-- [ ] Copy: mastercopy + 4 språk, räkneord mot offert, korrläst
-- [ ] Produkter i alla 5 butiker: mall, moms av, kategori, alla kanaler, slutgranskade
+- [ ] Copy: svensk mastercopy + norsk, räkneord mot offert, korrläst
+- [ ] Produkter i SE + NO: mall, moms av, kategori, alla kanaler, slutgranskade
 - [ ] Notion: item per produkt med batchnummer, Typ, Landing page + quotes-länk
 - [ ] Bildpaketet (efter skörd): KIE/sharp-metoden, GIF:ar, gallerier, beskrivningsstruktur
 - [ ] Allt committat + pushat (texter, skript, dokumentation, färdiga bilder)

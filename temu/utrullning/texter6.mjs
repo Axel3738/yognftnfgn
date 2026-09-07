@@ -6,7 +6,7 @@ export const T6_SV = {
   kattkoja: {
     sku: 'TEMU-5030003647894',
     titel: 'Isolerad Utekattkoja – Torr och Vindtät Plats Utomhus',
-    kategori: 'gid://shopify/TaxonomyCategory/ae-2-1',
+    kategori: 'gid://shopify/TaxonomyCategory/ap-2-9',
     taggar: ['Katt', 'Utekatt', 'Kattkoja', 'Husdjur', 'Vinter'],
     option: 'Färg', varden: ['Grå', 'Gräsgrön', 'Svart'], suffix: ['-GR', '-GG', '-SV'],
     problemH: 'Katten sover under bilen igen',
@@ -26,7 +26,7 @@ export const T6_SV = {
   staketbygel: {
     sku: 'TEMU-5040027499285',
     titel: 'Staketstolpslagare 2-pack – Räddar Stolpen Utan Att Gräva',
-    kategori: 'gid://shopify/TaxonomyCategory/hg-6-6',
+    kategori: 'gid://shopify/TaxonomyCategory/ha-3-4',
     taggar: ['Staket', 'Trädgård', 'Reparation', 'Stolpe'],
     problemH: 'Stolpen har ruttnat av vid marken – och hela sektionen lutar',
     problemP: 'Det är alltid nere vid jorden det brister. Stolpen ovanför är hel, men de nedersta tio centimetrarna är mjuka, och nu drar hela staketsektionen snett. Alternativet du fått höra är att gräva upp stolpen och gjuta en ny — en hel helg, och du behöver låna en jordborr.',
@@ -45,7 +45,7 @@ export const T6_SV = {
   vedklyv: {
     sku: 'TEMU-601099561039096',
     titel: 'Tändvedsklyv i Gjutjärn – Klyv Utan Yxa i Handen',
-    kategori: 'gid://shopify/TaxonomyCategory/hg-6-4',
+    kategori: 'gid://shopify/TaxonomyCategory/ha-15-31-1',
     taggar: ['Ved', 'Tändved', 'Kamin', 'Gjutjärn', 'Trädgård'],
     problemH: 'Yxan glider och handen är alltid för nära',
     problemP: 'Tändved är det pilligaste man kan klyva. Träbiten är för liten för att hålla stadigt, yxan studsar på kvistarna, och varje hugg tas med handen närmare eggen än den borde vara. Det slutar med att du köper tändved i påse i stället.',
@@ -64,7 +64,7 @@ export const T6_SV = {
   takoverdrag: {
     sku: 'TEMU-5050206311352',
     titel: 'Taköverdrag Husvagn 6,5 × 3 m – Skyddar Den Dyraste Ytan',
-    kategori: 'gid://shopify/TaxonomyCategory/vp-4-2',
+    kategori: 'gid://shopify/TaxonomyCategory/vp-1-5-3',
     taggar: ['Husvagn', 'Husbil', 'Överdrag', 'Camping', 'Vinterförvaring'],
     problemH: 'Taket är det du aldrig ser – och det som kostar mest att laga',
     problemP: 'Regnet, löven och fågelskiten hamnar på taket, och det är precis den ytan du inte går upp och kollar. Vattnet står kvar kring takluckor och skarvar hela vintern, tätmassan mjuknar, och när fukten väl tagit sig in genom taket är det inte en tvätt som krävs utan en reparation.',
@@ -83,7 +83,7 @@ export const T6_SV = {
   solpanel: {
     sku: 'TEMU-5050234381764',
     titel: 'Solpanel till Åtelkamera – Slipp Batteribytet Mitt i Säsongen',
-    kategori: 'gid://shopify/TaxonomyCategory/el-7',
+    kategori: 'gid://shopify/TaxonomyCategory/ha-11-23',
     taggar: ['Jakt', 'Åtelkamera', 'Viltkamera', 'Solpanel', 'Ström'],
     problemH: 'Varje batteribyte är en tur in i området',
     problemP: 'Kameran dör alltid när det är som mest intressant — och för att byta batterier måste du gå in, lämna doft och ljud precis där du helst vill vara osynlig. Sen står den där i tre veckor till innan du hinner tillbaka, och du vet inte om den faktiskt går.',
@@ -101,7 +101,7 @@ export const T6_SV = {
   racingkalender: {
     sku: 'TEMU-601099694788256',
     titel: 'Adventskalender Racingbilar – 24 Bilar Bakom 24 Luckor',
-    kategori: 'gid://shopify/TaxonomyCategory/tg-2-9',
+    kategori: 'gid://shopify/TaxonomyCategory/hg-3-58-1',
     taggar: ['Adventskalender', 'Jul', 'Leksaksbilar', 'Barn', 'Racing'],
     problemH: 'Chokladkalendern är slut den andra december',
     problemP: 'Kalendern öppnas på trettio sekunder, chokladen är uppäten före frukost, och resten av dagen finns inget kvar av den. Nästa morgon är det samma sak igen. Tjugofyra dagar, tjugofyra saker som försvinner direkt.',

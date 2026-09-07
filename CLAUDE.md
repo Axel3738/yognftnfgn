@@ -465,7 +465,16 @@ ha variation: rena foton, miljöbilder, detaljbilder, storleksguide och video.
 
 ---
 
-## Utlandsbutikerna — lansering till NO/DK/FI/UK
+## Utlandsbutikerna — NO (och den vilande DK/FI/UK-katalogen)
+
+> **⚠️ AXELS BESLUT 2026-09-07: nya produkter går bara till SVERIGE och NORGE.**
+> DK, FI och UK får inga nya produkter. Butikerna och deras befintliga katalog
+> ligger kvar och rörs inte — men allt nedan som säger "fem butiker" beskriver
+> läget före det här beslutet. Läs det som SE + NO när du skapar något nytt.
+> (Underhåll av det som redan ligger i DK/FI/UK gäller fortfarande — luckor,
+> hastighetslöften och cogs rättas där precis som förut.)
+
+## Historik: lansering till NO/DK/FI/UK
 
 Hela receptet med priser, SKU:er, bild-URL:er och färdiga steg ligger i
 **`temu/UTLANDS-LANSERING.md`** — den är självbärande och kan klistras in i ett annat
@@ -548,6 +557,9 @@ Grillklinikken-butiker får ALDRIG bäver-emojin eller "Bäverbutiken" som vendo
   Maskerat nu, men det ligger kvar i git-historiken — nya exempel ska vara påhittade.)*
   Nycklar bor i miljövariabler, eller lokalt i `.env` (redan i `.gitignore`, läses av
   `temu/miljo.mjs` — molnmiljön vinner alltid över filen).
+- **Nya produkter skapas bara i SE och NO** (Axels beslut 2026-09-07).
+  Skapa aldrig en ny produkt i DK, FI eller UK utan att Axel sagt till.
+  Det som redan ligger där underhålls som vanligt.
 - **Priset hämtas från produktsidan vid varje körning**, aldrig ur en äldre brief
   eller creative. Axelbältet höjdes 2026-08-05 från 509 → 599 kr (jämförpris 678 kr
   = spara 79 kr, 11,65 %). **509 kr, 636 kr och "20 %" är förbjudna** i all ny copy.
