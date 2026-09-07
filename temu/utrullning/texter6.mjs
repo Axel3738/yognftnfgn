@@ -116,6 +116,24 @@ export const T6_SV = {
     varning: 'Innehåller små delar. Inte lämplig för barn under 3 år.',
     alt: { main: 'Adventskalender med 24 racingbilar framför kartongen' },
   },
+  fiskekalender: {
+    sku: 'TEMU-B6-FISKEKALENDER',
+    titel: 'Adventskalender Fiskedrag – 24 Drag Bakom 24 Luckor',
+    kategori: 'gid://shopify/TaxonomyCategory/hg-3-58-1',
+    taggar: ['Adventskalender', 'Jul', 'Fiske', 'Fiskedrag', 'Present'],
+    problemH: 'Vad ger man den som redan har allt i fiskelådan?',
+    problemP: 'Han har wobblers i tre storlekar, skeddrag han aldrig använder och en låda som inte går att stänga. En ny rulle är för dyrt att chansa på, och ett presentkort säger "jag visste inte". Så det blir strumpor. Igen.',
+    losningH: 'Ett drag om dagen fram till jul',
+    losningP: 'Bakom varje lucka sitter ett drag – en wobbler ena dagen, ett skeddrag nästa, en mjukbeteräka den tredje. Tjugofyra morgnar med något att vända på i handen och fundera över var det ska provas. Vid julafton är det en ny låda, byggd en lucka i taget.',
+    bullets: [
+      '<strong>Något att öppna varje dag, inte bara den 24:e</strong> – 24 luckor med ett drag bakom varje',
+      '<strong>Blandat, inte 24 av samma</strong> – wobblers, skeddrag och mjukbeten om vartannat',
+      '<strong>Lådan är fylld till våren</strong> – drag som ska ut och provas, inte ligga i en skål',
+      '<strong>Löser presenten för den som "redan har allt"</strong> – ingen behöver gissa storlek eller märke',
+    ],
+    alt: { main: 'Adventskalender med 24 fiskedrag – wobblers, skeddrag och mjukbeten' },
+  },
+
 };
 
 export const RUBRIK6 = { funktioner: 'Funktioner', garanti: 'Vår garanti' };

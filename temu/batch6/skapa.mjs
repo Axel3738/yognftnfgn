@@ -11,9 +11,9 @@ const HÄR = path.dirname(fileURLToPath(import.meta.url));
 const PRIS = JSON.parse(readFileSync(path.join(HÄR, 'prismatris.json'), 'utf8'));
 const BILD = { kattkoja: 'isolerad-utekattkoja-i-oxford-tyg-hopfal', staketbygel: 'staketstolps-reparationsbygel-med-marksp',
   vedklyv: 'tandvedsklyv-i-gjutjarn-ring-kil', takoverdrag: 'takoverdrag-till-husvagn-husbil',
-  solpanel: 'solpanel-till-atelkamera-viltkamera', racingkalender: 'car-racing-calendar' };
+  solpanel: 'solpanel-till-atelkamera-viltkamera', racingkalender: 'car-racing-calendar', fiskekalender: 'fiskekalender' };
 const OFFERTNAMN = { kattkoja: 'Isolerad utekattkoja', staketbygel: 'Staketstolps-reparationsbygel', vedklyv: 'Tändvedsklyv',
-  takoverdrag: 'Taköverdrag', solpanel: 'Solpanel', racingkalender: 'car racing calendar' };
+  takoverdrag: 'Taköverdrag', solpanel: 'Solpanel', racingkalender: 'car racing calendar', fiskekalender: 'Fishing calendar' };
 const VENDOR = { se: 'Bäverbutiken', no: 'Beverbutikken' };
 const SPRÅK = { se: 'sv', no: 'no' };
 const sov = (ms) => new Promise((r) => setTimeout(r, ms));

@@ -153,5 +153,29 @@ export const T6_NO = {
     "option": "",
     "varden": [],
     "varning": ""
+  },
+  "fiskekalender": {
+    "titel": "Adventskalender Fiskesluk – 24 Sluk Bak 24 Luker",
+    "problemH": "Hva gir du den som allerede har alt i fiskekassen?",
+    "problemP": "Han har wobblere i tre størrelser, skjeer han aldri bruker, og en kasse som ikke lar seg lukke. En ny snelle er for dyrt å satse på, og et gavekort sier «jeg visste ikke». Så blir det sokker. Igjen.",
+    "losningH": "Et sluk om dagen frem til jul",
+    "losningP": "Bak hver luke sitter et sluk – en wobbler den ene dagen, en skje neste, et mykt agn den tredje. Tjuefire morgener med noe å snu i hånden og fundere over hvor det skal prøves. Ved juleaften er det en ny kasse, bygget en luke om gangen.",
+    "bullets": [
+      "<strong>Noe å åpne hver dag, ikke bare den 24.</strong> – 24 luker med ett sluk bak hver",
+      "<strong>Blandet, ikke 24 av det samme</strong> – wobblere, skjeer og myke agn om hverandre",
+      "<strong>Kassen er fylt til våren</strong> – sluk som skal ut og prøves, ikke ligge i en skål",
+      "<strong>Løser gaven for den som «allerede har alt»</strong> – ingen trenger å gjette størrelse eller merke"
+    ],
+    "taggar": [
+      "Adventskalender",
+      "Jul",
+      "Fiske",
+      "Fiskesluk",
+      "Gave"
+    ],
+    "altMain": "Adventskalender med 24 fiskesluk – wobblere, skjeer og myke agn",
+    "option": "",
+    "varden": [],
+    "varning": ""
   }
 };
