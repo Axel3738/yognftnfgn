@@ -62,7 +62,17 @@ page.on('response', async (r) => {
 
 console.log('Öppnar sidan… (löser du en captcha i fönstret fortsätter skörden själv)');
 await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
-await page.waitForTimeout(8000);
+
+// Vänta tills produktbilder faktiskt börjar komma — upp till 2 minuter, så att en
+// captcha hinner lösas i fönstret. Utan detta stängdes Chrome efter ~40 s oavsett.
+for (let sek = 0; sek < 120 && fångst.size === 0; sek += 5) {
+  await page.waitForTimeout(5000);
+  if (sek % 20 === 15) console.log(`  … väntar på produktbilder (${sek + 5} s). Syns en captcha eller "verifiera" i fönstret: lös den.`);
+}
+console.log(`  sidan heter: "${await page.title().catch(() => '?')}"`);
+console.log(`  adress nu:   ${page.url()}`);
+if (fångst.size === 0) console.log('  ⚠️ inga produktbilder på 2 minuter — sparar en skärmdump så vi ser vad Chrome fick.');
+await page.waitForTimeout(3000);
 
 // Klicka igenom galleriets miniatyrer så alla fullstora varianter laddas
 const minis = await page.$$('[class*="thumb"] img, [class*="gallery"] img');
@@ -83,6 +93,9 @@ for (const [bas, { buf, typ, ordning: o }] of [...fångst.entries()].sort((a, b)
   console.log(`  ✔ ${fil}  ${(buf.length / 1024).toFixed(0)} kB  ${typ}`);
 }
 writeFileSync(path.join(UT, 'manifest.json'), JSON.stringify({ kalla: url, skordad: new Date().toISOString(), filer: manifest }, null, 1));
+// Skärmdump av vad Chrome faktiskt visade — det enda sättet att felsöka på distans
+await page.screenshot({ path: path.join(UT, '_sida.png'), fullPage: false }).catch(() => {});
+if (n === 0) console.log(`\n  Skärmdumpen ligger här: ${path.join(UT, '_sida.png')} — skicka den till Claude.`);
 console.log(`\n${n} filer → ${UT}`);
 console.log('Granska mappen (släng skräp från "liknande produkter"), committa och pusha.');
 await ctx.close();
