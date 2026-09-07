@@ -1,3 +1,41 @@
+# ⛔ NÄSTA SESSION BÖRJAR HÄR (2026-09-07 kväll)
+
+**Uppdrag:** bygg om batch 6:s sju produktsidor i SE och NO till samma standard som
+referensen — **Övervakningskamera Trådlös** (`baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning`):
+- Galleri: 4 bilder
+- Beskrivning: problem → **GIF** → lösning → **bild** → funktioner → **bild** → garanti
+  (GIF:en är gjord av Temus produktvideo; bilderna är leverantörsbilder)
+
+**Var bilderna kommer ifrån — utan Cowork, utan Axels dator:**
+Temu lämnar ut huvudbilden OCH produktvideon till molnet när sidan hämtas med
+mobil-User-Agent (`hamta-bilder.mjs` gör det för bilden; videon ligger i samma HTML
+under `goods-vod.kwcdn.com/goods-video/*.mp4`). Skördaren på Axels Windows kräver
+Temu-inloggning i ett nytt Chrome-fönster — det gör vi INTE mer. Axel har sagt
+det tre gånger.
+
+Per produkt finns redan: huvudbild i `bilder/`, offertens inbäddade bilder i
+`/tmp/fix/b6/bilder/` (image1–12, se mappningen nedan; hämta om från arkets xlsx via
+`export?format=xlsx` om /tmp är borta), samt låsta räkneord i `texter6.mjs`.
+
+**Steg:**
+1. `node temu/batch6/hamta-bilder.mjs` igen med video-fångst: spara `.mp4`-URL:en
+   per produkt, ladda ner, gör GIF (ffmpeg-static + @ffprobe-installer/ffprobe via npm i
+   scratchpad, recept i CLAUDE.md: 400 px, 8–12 fps, palettegen/paletteuse, < 4 MB,
+   välj textfritt fönster via sekundark).
+2. Beskrivningsbilder: huvudbild + offertens bild (t.ex. staketbygelns spec-bild,
+   solpanelens image5, taköverdragets image4) + en sharp-infografik med de låsta måtten
+   där det passar (klyv, staketbygel). Utländsk text: beskär bort (aldrig KIE på
+   vattenstämplar — vägras).
+3. Galleri: 3–4 bilder per produkt. AI-livsstilsbild via KIE bara med riktig hero som
+   referens och märkt "AI-illustration" — om galleriet annars stannar på två.
+4. Skriv om `descriptionHtml` i SE och NO enligt strukturen. Alt-texter på allt.
+5. Slutgranska skarpt: varje URL 200, media READY, kontaktark av live-galleriet.
+6. Uppdatera Notion-korten (sju "6 …"-kort) — inget att ändra om Landing page står.
+
+**Gör INTE:** be Axel köra något på sin dator. Fråga inte. Kör klart, skicka länkar.
+
+---
+
 # Batch 6 — offert "Claude_products_filled 1" (2026-09-07)
 
 Offert: https://docs.google.com/spreadsheets/d/1zGcVdwHVdvTD3t894FdFw--9fL8B5v5oMH5kK2XWM-I
