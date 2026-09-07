@@ -267,8 +267,9 @@ en ny nyckel via OAuth, och vakten håller den vid liv därefter.
   Managed pricing ⇒ inga Billing API-anrop i den tjänsten.
 - PCD-deklaration: reason "Analysverktyg", INGA kundfält. Utkast är ok tills
   listningen granskas.
-- Inskickad för granskning 2026-08-17. Svar kommer via mejl — Axel klistrar
-  in det, fixa anmärkningarna.
+- Inskickad 2026-08-17, anmärkning 4.5.5 (Meta-koppling) löst med
+  skärminspelning, **GODKÄND OCH LIVE 2026-09-05.** Nästa steg enligt Axels
+  beslut: Facebook-inloggningen för Meta-kopplingen (se backlog).
 - "API-hälsa"-varningen i dashboard var eftersläp från de gamla eviga
   tokensen; självläker dagar efter fixen.
 
