@@ -19,8 +19,9 @@ const fel = (t, g) => rader.push(['❌', t, g]);
 
 // 1. Node
 const major = Number(process.versions.node.split('.')[0]);
-major >= 20 ? ok(`Node ${process.versions.node}`)
-            : fel(`Node ${process.versions.node} är för gammal (behöver 20+)`, 'Kör: brew install node');
+major >= 20 ? ok(`Node ${process.versions.node} (${process.platform === 'win32' ? 'Windows' : process.platform === 'darwin' ? 'Mac' : process.platform})`)
+            : fel(`Node ${process.versions.node} är för gammal (behöver 20+)`,
+                  process.platform === 'win32' ? 'Kör: winget install OpenJS.NodeJS.LTS' : 'Kör: brew install node');
 
 // 2. Nycklarna — .env behövs bara om de inte redan finns i miljön
 const env = laddaEnv();
@@ -61,12 +62,18 @@ if (!saknade.length) {
 
 // 4. Bildverktygen
 try { await import('./node_modules/sharp/dist/index.mjs'); ok('sharp fungerar (bildbearbetning)'); }
-catch { fel('sharp saknas', 'Kör: cd temu && npm install'); }
+catch { fel('sharp saknas', 'Gå till temu-mappen och kör: npm install'); }
 
-let ffmpegOk = true;
+const WIN = process.platform === 'win32';
+const finnsIPath = (v) => {
+  try { execSync(WIN ? `where ${v}` : `command -v ${v}`, { stdio: 'ignore' }); return true; }
+  catch { return false; }
+};
 for (const v of ['ffmpeg', 'ffprobe']) {
-  try { execSync(`command -v ${v}`, { stdio: 'ignore' }); ok(`${v} finns`); }
-  catch { ffmpegOk = false; fel(`${v} saknas (behövs för GIF:ar ur skördevideor)`, 'Kör: brew install ffmpeg'); }
+  finnsIPath(v)
+    ? ok(`${v} finns`)
+    : fel(`${v} saknas (behövs för GIF:ar ur skördevideor)`,
+          WIN ? 'Kör: winget install Gyan.FFmpeg   (starta om terminalen efteråt)' : 'Kör: brew install ffmpeg');
 }
 
 // 5. Bildskörden — hela poängen med att köra lokalt
@@ -74,14 +81,17 @@ const skordare = new URL('./kaching-cli/temu-bilder.mjs', import.meta.url);
 existsSync(skordare) ? ok('Bildskördaren finns') : fel('Bildskördaren saknas', 'Kör: git pull');
 
 try { await import('./kaching-cli/node_modules/playwright/index.js'); ok('playwright finns (styr webbläsaren åt skördaren)'); }
-catch { fel('playwright saknas', 'Kör: cd temu/kaching-cli && npm install'); }
+catch { fel('playwright saknas', `Kör: cd temu${WIN ? '\\' : '/'}kaching-cli  och sedan  npm install`); }
 
-try {
-  execSync('ls "/Applications/Google Chrome.app" >/dev/null 2>&1 || command -v google-chrome', { stdio: 'ignore' });
-  ok('Google Chrome finns (skördaren öppnar ett riktigt fönster)');
-} catch {
-  fel('Google Chrome hittas inte', 'Installera Chrome — skördaren kräver riktig Chrome, inte Chromium, för att slippa Temus botskydd');
-}
+const CHROME = WIN
+  ? ['C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+     'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
+     `${process.env.LOCALAPPDATA || ''}\\Google\\Chrome\\Application\\chrome.exe`]
+  : ['/Applications/Google Chrome.app', '/usr/bin/google-chrome', '/usr/bin/google-chrome-stable'];
+CHROME.some((f) => f && existsSync(f)) || finnsIPath(WIN ? 'chrome' : 'google-chrome')
+  ? ok('Google Chrome finns (skördaren öppnar ett riktigt fönster)')
+  : fel('Google Chrome hittas inte',
+        WIN ? 'Kör: winget install Google.Chrome' : 'Kör: brew install --cask google-chrome');
 
 // Släpper Temu igenom den här datorn? En 200:a räcker inte — molnet får
 // också 200, men ett tomt skal utan en enda bild-URL.
