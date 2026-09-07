@@ -36,22 +36,23 @@ const AI_RAD = { sv: 'Livsstilsbilden är en AI-genererad illustration.', no: 'L
 // och vilka bilder som går in i beskrivningen (bild1 efter lösningen, bild2 efter funktionerna).
 // Bilder anges med nyckel; `sv`/`no` är alt-texter.
 const PLAN = {
+  // ⚠️ Inga bilder ur Temu-videorna (Axel 2026-09-07: videon visade fel variant/produkt).
+  // Bara leverantörsbilder, faktakort ur låst copy och AI-bilder med riktig hero som referens.
   kattkoja: {
-    gif: { sv: 'Katten går in och ut ur kojan', no: 'Katten går inn og ut av huset' },
+    gif: { sv: 'Utekattkojan – grå, på ben', no: 'Utekattehuset – grått, på ben' },
     bilder: {
-      katt: { fil: G('kattkoja-katt.jpg'), sv: 'Katt på väg in i kojan genom öppningen', no: 'Katt på vei inn i huset gjennom åpningen' },
-      isolering: { fil: G('kattkoja-isolering.jpg'), sv: 'Isolerande folie på insidan av kojans tak', no: 'Isolerende folie på innsiden av taket' },
+      ai: { fil: G('kattkoja-ai.jpg'), ai: true, sv: 'AI-illustration: den grå kojan på en stenlagd uteplats i regn, katt i öppningen', no: 'AI-illustrasjon: det grå huset på en steinlagt uteplass i regn, katt i åpningen' },
+      fakta: { fil: G(`kattkoja-fakta-${sp}.jpg`), sv: 'Kojans egenskaper: står på ben, isolerade väggar, Oxford-tak, löstagbar dyna, hopfällbar, tre färger', no: 'Husets egenskaper: står på ben, isolerte vegger, Oxford-tak, avtakbar pute, sammenleggbar, tre farger' },
     },
-    galleri: ['katt', 'isolering'], bild1: 'katt', bild2: 'BEFINTLIG',
+    galleri: ['ai', 'fakta'], bild1: 'ai', bild2: 'fakta',
   },
   staketbygel: {
-    gif: { sv: 'Bygeln slås ner i marken bredvid staketet', no: 'Bøylen slås ned i bakken ved siden av gjerdet' },
+    gif: { sv: 'Staketstolpslagare – 2-pack', no: 'Gjerdestolpebøyle – 2-pk' },
     bilder: {
-      monterad: { fil: G('staketbygel-monterad.jpg'), sv: 'Två byglar monterade mot staketstolpar', no: 'To bøyler montert mot gjerdestolper' },
+      ai: { fil: G('staketbygel-ai.jpg'), ai: true, sv: 'AI-illustration: bygeln fastskruvad mot en gammal staketstolpe i gräsmattan', no: 'AI-illustrasjon: bøylen skrudd fast mot en gammel gjerdestolpe i plenen' },
       info: { fil: G(`staketbygel-info-${sp}.jpg`), sv: 'Måtten: 80 cm per bygel, 40 cm spett och 40 cm bygel, skruvar och nycklar ingår', no: 'Målene: 80 cm per bøyle, 40 cm spyd og 40 cm bøyle, skruer og nøkler følger med' },
-      hand: { fil: G('staketbygel-hand.jpg'), sv: 'Spettet drivs ner i marken intill stolpen', no: 'Spydet drives ned i bakken inntil stolpen' },
     },
-    galleri: ['monterad', 'info', 'hand'], bild1: 'monterad', bild2: 'info',
+    galleri: ['ai', 'info'], bild1: 'ai', bild2: 'info',
   },
   vedklyv: {
     gif: { sv: 'Tändvedsklyven i gjutjärn', no: 'Tennvedkløyveren i støpejern' },
@@ -62,21 +63,20 @@ const PLAN = {
     galleri: ['ai', 'info'], bild1: 'ai', bild2: 'info',
   },
   takoverdrag: {
-    gif: { sv: 'Överdraget dras över husbilens tak', no: 'Overtrekket trekkes over bobilens tak' },
+    gif: { sv: 'Taköverdraget på husbilens tak', no: 'Takovertrekket på bobilens tak' },
     bilder: {
       hero: { fil: G('takoverdrag-hero.jpg'), sv: 'Taköverdraget spänt över husbilens tak', no: 'Takovertrekket strammet over bobilens tak' },
       rv: { fil: X('image4.png'), sv: 'Svart taköverdrag på husbil, fäst med remmar runt karossen', no: 'Sort takovertrekk på bobil, festet med stropper rundt karosseriet' },
-      garage: { fil: G('takoverdrag-garage.jpg'), sv: 'Överdraget dras på plats över taket', no: 'Overtrekket trekkes på plass over taket' },
     },
-    galleri: ['hero', 'rv', 'garage'], bild1: 'hero', bild2: 'rv',
+    galleri: ['hero', 'rv'], bild1: 'hero', bild2: 'rv',
   },
   solpanel: {
-    gif: { sv: 'Solpanelen vrids på fästet', no: 'Solpanelet dreies på festet' },
+    gif: { sv: 'Solpanelen med sitt ledade fäste', no: 'Solpanelet med sitt leddede feste' },
     bilder: {
-      faste: { fil: G('solpanel-faste.jpg'), sv: 'Baksidan med ledat fäste och kabel', no: 'Baksiden med leddet feste og kabel' },
-      fram: { fil: G('solpanel-fram.jpg'), sv: 'Solpanelen framifrån, vinklad mot ljuset', no: 'Solpanelet forfra, vinklet mot lyset' },
+      ai: { fil: G('solpanel-ai.jpg'), ai: true, sv: 'AI-illustration: panelen monterad på en tallstam i skogsbrynet', no: 'AI-illustrasjon: panelet montert på en furustamme i skogkanten' },
+      fakta: { fil: G(`solpanel-fakta-${sp}.jpg`), sv: 'Panelens egenskaper: laddar där kameran hänger, ledat fäste, väggfäste ingår, byggd för att lämnas ute', no: 'Panelets egenskaper: lader der kameraet henger, leddet feste, veggfeste følger med, bygd for å bli stående ute' },
     },
-    galleri: ['faste', 'fram'], bild1: 'faste', bild2: 'fram',
+    galleri: ['ai', 'fakta'], bild1: 'ai', bild2: 'fakta',
   },
   racingkalender: {
     gif: { sv: 'Adventskalendern och de 24 bilarna', no: 'Adventskalenderen og de 24 bilene' },
@@ -92,7 +92,6 @@ const PLAN = {
       ai: { fil: G('fiskekalender-ai.jpg'), ai: true, sv: 'AI-illustration: kalendern på en brygga vid sjön med drag bredvid', no: 'AI-illustrasjon: kalenderen på en brygge ved vannet med sluk ved siden av' },
       drag: { fil: path.join(REPO_BILDER, 'fiskekalender-2.jpg'), sv: 'Skeddrag och jiggar ur kalendern', no: 'Skjeer og jigger fra kalenderen' },
     },
-    // SE har redan skeddragsbilden i galleriet (läses av på plats), NO saknar den.
     galleri: ['ai', 'drag'], bild1: 'ai', bild2: 'drag',
   },
 };

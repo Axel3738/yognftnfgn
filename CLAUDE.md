@@ -930,9 +930,12 @@ Grillklinikken-butiker får ALDRIG bäver-emojin eller "Bäverbutiken" som vendo
   upp via Shopify-connectorn i SE (den har scopet) och utlandsbutikerna hotlänkar
   samma `cdn.shopify.com`-URL — så gör referenssidan och batch 6
   (`temu/batch6/gif-urler.json`). *(Mätt 2026-09-07, båda tokentyperna, SE och NO.)*
-- **Temu ger ut produktvideon med mobil-UA** (`goods-vod.kwcdn.com/goods-video/*.mp4`
-  i sidans HTML) — GIF:en görs ur den, ingen skörd på Axels dator behövs. Produkter
-  utan video (`g-<id>`-sidan ger tomt skal) får bildspels-GIF via `temu/gif.mjs`.
+- **Temu-videon är ALDRIG produktbild** (Axels beslut 2026-09-07: "fel produktbilder
+  på alla produkter"). Temu ger ut videon med mobil-UA (`goods-vod.kwcdn.com`), men
+  den visar Temu-säljarens vara, inte CWD:s — utekattkojan blev en ljusblå innekoja,
+  taköverdraget en silverkåpa. Produktbilder kommer bara ur leverantörens/offertens
+  bilder, faktakort ur låst copy och AI-bilder med riktig hero som referens (märkta).
+  GIF:en görs som bildspel av dessa (`temu/gif.mjs`). Facit: `temu/batch6/README.md`.
 - **Notion-anropen stryps till ~3/s.** Ett par hundra sidor tar några minuter.
   Det är normalt, inte en hängning.
 - **Språk:** allt i repot skrivs på svenska — kod, kommentarer, commit-meddelanden.

@@ -1,37 +1,47 @@
 # ✅ Sidorna ombyggda till referensstandard (2026-09-07 kväll)
 
 Alla sju produktsidor i **SE och NO** har nu samma struktur som referensen
-(övervakningskameran): galleri 3–4 bilder, beskrivning problem → GIF → lösning →
+(övervakningskameran): galleri 3 bilder, beskrivning problem → GIF → lösning →
 bild → funktioner → bild → garanti, alt-text på allt. Slutgranskat skarpt: 14 sidor
 200, alla media 200, GIF:arna serveras som `image/gif`, ordningen verifierad ur
-`/products/<handle>.js`. Notion-korten har fått en rad om ombyggnaden.
+`/products/<handle>.js`. Notion-korten har fått en rad om ombyggnaden plus SE- och NO-länk (`Translated url` = NO).
 
-**Så gjordes det — utan Axels dator:**
-- `hamta-bilder.mjs`-vägen (mobil-UA) gav **produktvideon** (`goods-vod.kwcdn.com`)
-  för kattkoja, staketbygel, taköverdrag och solpanel. GIF med ffmpeg-static
-  (palettegen/paletteuse, 360–400 px, 7–10 fps, alla < 4 MB). Stödhjulet hade också
-  video men skapas inte. Tändvedsklyv, racingkalender och fiskekalender har
-  ingen video på Temu (sidan ger tomt skal även med mobil-UA och `g-<id>`-länkar) —
-  deras GIF:ar är korsfadeade bildspel via `temu/gif.mjs`.
-- Videoramar beskurna med `cropdetect` (svarta kanter) och så att LVJ-vattenstämpel
-  (taköverdrag) och inbränd text (solpanel 0–3 s, 15–17 s) hamnar utanför.
-- Offertens inbäddade bilder (`xlsx → xl/media`, kopplade via `drawing1.xml`):
-  `image4` = taköverdrag på husbil, `image10`/`image11` = racingkalender. `image9`
-  (fiskekalender på brygga) är fiskehornans Colitt-bild → **inte använd**.
-- `infografik.mjs` bygger måttbilder (sharp + SVG, DejaVu Sans) på svenska och norska
-  ur de låsta räkneorden — staketbygel och vedklyv.
-- AI-livsstilsbilder via KIE `nano-banana-edit` med Shopify-bilden som referens för
-  de tre produkter som annars stannat på två bilder (vedklyv, racing, fiske); alt-text
-  börjar med "AI-illustration" och beskrivningen har raden "Livsstilsbilden är en
-  AI-genererad illustration". KIE kräver `output_format: png` (jpg avvisas).
+**⚠️ Axels besked 2026-09-07 kväll: "fel produktbilder på alla produkter" — videon
+på Temu visar inte den produkt CWD levererar.** Utekattkojan var en ljusblå innekoja,
+taköverdraget en silvrig helkåpa, solpanelen andra paneler. Allt ur Temu-videorna
+(GIF:ar + galleriramar) togs bort i SE och NO med `ta-bort-videobilder.mjs` (alt-text,
+aldrig svep). **Regel framåt: Temu-videon används aldrig som produktbild.** Temu ger
+produktidé; bara CWD:s/leverantörens bilder visar det som skickas.
+
+**Så gjordes det — utan Axels dator (slutversion):**
+- Källor som får användas: huvudbilden i `bilder/` (Temu-listningens hero, godkänd
+  sedan tidigare), offertens inbäddade leverantörsbilder (`xlsx → xl/media`, kopplade
+  via `drawing1.xml`: `image4` = taköverdrag på husbil, `image10`/`image11` =
+  racingkalender; `image9` är fiskehornans Colitt-bild → **inte använd**), samt
+  fiskekalenderns rensade klipp.
+- `infografik.mjs` (måttkort: staketbygel, vedklyv) och `faktakort.mjs` (kattkoja,
+  solpanel) bygger sharp+SVG-bilder på svenska och norska ur de låsta räkneorden och
+  den låsta copyn — inga siffror som inte redan står i texten.
+- AI-livsstilsbilder via KIE `nano-banana-edit` med Shopify-hjältebilden som enda
+  referens och prompten "keep the product EXACTLY as in the reference" — kattkoja,
+  staketbygel, vedklyv, solpanel, racing, fiske. Alt-texten börjar med
+  "AI-illustration", beskrivningen får raden "Livsstilsbilden är en AI-genererad
+  illustration". KIE kräver `output_format: png` (jpg avvisas). Taköverdraget har tre
+  riktiga bilder och ingen AI.
+- GIF:arna är korsfadeade bildspel (`temu/gif.mjs`, 500 px, 0,8–1,2 MB) av
+  hjältebild + AI-bild (+ leverantörsbild) — språkfria, så samma fil i SE och NO.
 - ⚠️ **Butikstokenen saknar `write_files`** — `stagedUploadsCreate` med
-  `resource: FILE` nekas. GIF:arna laddades därför upp EN gång i SE via
-  Shopify-connectorn (staged FILE → POST → `fileCreate`) och **Norge hotlänkar samma
-  cdn.shopify.com-URL**, exakt som referenssidan gör. URL:erna står i `gif-urler.json`.
-  Galleribilder går fint med tokenen (`resource: IMAGE` + `productCreateMedia`).
-- `bygg-om.mjs <se|no> <mediamapp> [--skarp] [nyckel]` gör hela ombyggnaden
-  (idempotent: bilder med samma alt laddas inte upp igen). Mediamappen är sessionens
-  scratchpad — GIF:ar och videoramar ligger inte i repot, bara på Shopify-CDN.
+  `resource: FILE` nekas. GIF:arna laddades upp i SE via Shopify-connectorn
+  (staged FILE → POST → `fileCreate`) och **Norge hotlänkar samma cdn.shopify.com-URL**,
+  som referenssidan. URL:erna står i `gif-urler.json`. Galleribilder går med tokenen
+  (`resource: IMAGE` + `productCreateMedia`).
+- `bygg-om.mjs <se|no> <mediamapp> [--skarp] [nyckel]` gör ombyggnaden (idempotent:
+  bilder med samma alt laddas inte upp igen — byt alt eller ta bort först om en bild
+  ska ersättas). Mediamappen är sessionens scratchpad; AI-bilderna ligger bara på
+  Shopify-CDN.
+- Temu-vägen som fungerar i molnet finns kvar dokumenterad i `hamta-bilder.mjs`
+  (mobil-UA ger huvudbild + `goods-vod.kwcdn.com`-video) — men videon är inte
+  produktbild, se ovan.
 
 Kvar: inget för batch 6. Vill Axel ha stödhjulet: ny offertförfrågan på rätt produkt.
 
