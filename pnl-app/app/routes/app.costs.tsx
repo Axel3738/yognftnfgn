@@ -71,12 +71,19 @@ export async function loader({ request }: LoaderFunctionArgs) {
     tariffPerOrder: Number(settings.tariffPerOrder),
     feeRate: Number(settings.feeRate),
     currency: settings.currency,
+    /* Kortet "Kommer du från Juicy?" — läge A (allt finns redan) eller B
+       (släpp filen). Dolt när handlaren tryckt "Ser rätt ut". */
+    juicyDismissed: Boolean(settings.juicyCardDismissedAt),
   });
 }
 
 export async function action({ request }: ActionFunctionArgs) {
   const { admin, session } = await authenticate.admin(request);
   const form = await request.formData();
+  if (String(form.get("intent")) === "juicy-dismiss") {
+    await prisma.shopSettings.update({ where: { shop: session.shop }, data: { juicyCardDismissedAt: new Date() } });
+    return json({ ok: true, message: "" });
+  }
   // Meddelandena visas i UI:t — hämta butikens språk först.
   const settings = await prisma.shopSettings.findUnique({ where: { shop: session.shop } });
   const T = t(asLang(settings?.language));
@@ -90,8 +97,13 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 export default function Costs() {
-  const { lang, rows, missing, total, tariffPerOrder, feeRate, currency } = useLoaderData<typeof loader>();
+  const { lang, rows, missing, total, tariffPerOrder, feeRate, currency, juicyDismissed } = useLoaderData<typeof loader>();
   const fetcher = useFetcher<typeof action>();
+  const juicyFetcher = useFetcher<typeof action>();
+  /* Täckning ≥ 90 % ⇒ läge A: kostnaderna finns redan (Juicy eller handlaren
+     skrev till Shopifys fält) — noll klick. Annars läge B: släpp exporten. */
+  const tackning = total ? (total - missing) / total : 0;
+  const visaJuicy = !juicyDismissed && juicyFetcher.state === "idle" && !juicyFetcher.data;
   const [csv, setCsv] = useState("");
   const [fileName, setFileName] = useState<string | null>(null);
   const [effectiveFrom, setEffectiveFrom] = useState("");
@@ -146,6 +158,31 @@ export default function Costs() {
       <Layout>
         <Layout.Section>
           <BlockStack gap="400">
+            {visaJuicy ? (
+              <Card background="bg-surface-secondary">
+                <BlockStack gap="200">
+                  <Text as="h2" variant="headingMd">{tackning >= 0.9 ? T.juicy.titleA : T.juicy.titleB}</Text>
+                  <Text as="p">{tackning >= 0.9 ? T.juicy.bodyA(total - missing, total) : T.juicy.bodyB}</Text>
+                  {tackning >= 0.9 ? <Text as="p" tone="subdued" variant="bodySm">{T.juicy.noteA}</Text> : null}
+                  <InlineStack gap="300">
+                    {tackning >= 0.9 ? (
+                      <>
+                        <Button
+                          variant="primary"
+                          loading={juicyFetcher.state !== "idle"}
+                          onClick={() => juicyFetcher.submit({ intent: "juicy-dismiss" }, { method: "POST" })}
+                        >
+                          {T.juicy.ctaA}
+                        </Button>
+                        <Button url="#import">{T.juicy.ctaA2}</Button>
+                      </>
+                    ) : (
+                      <Button variant="primary" url="#import">{T.juicy.ctaB}</Button>
+                    )}
+                  </InlineStack>
+                </BlockStack>
+              </Card>
+            ) : null}
             {missing > 0 ? (
               <Banner tone="warning" title={T.costs.missingBannerTitle(missing)}>
                 {T.costs.missingBannerBody}
@@ -170,7 +207,7 @@ export default function Costs() {
             <Card>
               <BlockStack gap="400">
                 <BlockStack gap="200">
-                  <Text as="h2" variant="headingMd">
+                  <Text as="h2" variant="headingMd" id="import">
                     {T.costs.importTitle}
                   </Text>
                   <Text as="p" tone="subdued">

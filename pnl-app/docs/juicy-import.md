@@ -1,5 +1,11 @@
 # Juicy → StonePNL: flytta COGS på max 3 klick
 
+> **Status 2026-09-08 (build ltv-v67): scenario A byggt** — kortet "Kommer du
+> från Juicy?" överst på Kostnader-sidan (läge A vid ≥ 90 % täckning med
+> "Ser rätt ut" → `ShopSettings.juicyCardDismissedAt`; läge B pekar på den
+> befintliga dropzonen). Scenario B (Juicy-adapter) väntar fortfarande på en
+> riktig exportfil från Axel — avsnitt 6.
+
 Research + design, 2026-09-07. Ingen kod är ändrad. Axels mål, i andemening:
 *"alla som använder Juicy sedan tidigare ska på max 3 knapptryck få in sina
 nuvarande COGS i vår app utan manuella grejer."*

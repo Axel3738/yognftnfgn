@@ -1,11 +1,11 @@
 import type { ActionFunctionArgs } from "@remix-run/node";
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
-import { decrypt } from "../lib/crypto.server";
+import { decrypt, kundHash } from "../lib/crypto.server";
 import { aterkallaToken, farAterkallas, META_TOMT } from "../lib/meta-login.server";
 
 export async function action({ request }: ActionFunctionArgs) {
-  const { topic, shop, session } = await authenticate.webhook(request);
+  const { topic, shop, session, payload } = await authenticate.webhook(request);
 
   switch (topic) {
     case "APP_UNINSTALLED": {
@@ -34,11 +34,29 @@ export async function action({ request }: ActionFunctionArgs) {
       break;
     }
 
-    // GDPR-krav för App Store. Appen lagrar ingen kunddata — bara aggregerad
-    // försäljning per dag — så det finns inget att lämna ut eller radera.
-    case "CUSTOMERS_DATA_REQUEST":
-    case "CUSTOMERS_REDACT":
+    /* GDPR-krav för App Store. Det enda kundrelaterade appen håller är
+       KundOrder: en HMAC-pseudonym per order med dag och belopp. Vid en
+       begäran om utlämning loggas den (hashat, aldrig klartext-id) — svaret
+       går via supportadressen inom Shopifys 30 dagar. */
+    case "CUSTOMERS_DATA_REQUEST": {
+      const p = payload as any;
+      const hash = kundHash(shop, p?.customer?.id != null ? `gid://shopify/Customer/${p.customer.id}` : null);
+      console.log(`customers/data_request från ${shop} ${new Date().toISOString()} kund=${hash ?? "(okänd)"}`);
       break;
+    }
+    /* Radering: kundens rader via pseudonymen (det är därför hashen är en
+       HMAC och inte ren SHA — vi kan hitta raderna när Shopify ber oss, men
+       inte själva peka ut personen), plus de order-ID Shopify räknar upp. */
+    case "CUSTOMERS_REDACT": {
+      const p = payload as any;
+      const hash = kundHash(shop, p?.customer?.id != null ? `gid://shopify/Customer/${p.customer.id}` : null);
+      const orderIds: string[] = (p?.orders_to_redact ?? []).map((id: unknown) => `gid://shopify/Order/${id}`);
+      await prisma.$transaction([
+        ...(hash ? [prisma.kundOrder.deleteMany({ where: { shop, kundHash: hash } })] : []),
+        ...(orderIds.length ? [prisma.kundOrder.deleteMany({ where: { shop, orderId: { in: orderIds } } })] : []),
+      ]);
+      break;
+    }
 
     case "SHOP_REDACT":
       /* ALLT som hör till butiken ska bort — en radering som lämnar cacher
@@ -50,6 +68,7 @@ export async function action({ request }: ActionFunctionArgs) {
         prisma.costTier.deleteMany({ where: { shop } }),
         prisma.pnlCache.deleteMany({ where: { shop } }),
         prisma.dailyPnl.deleteMany({ where: { shop } }),
+        prisma.kundOrder.deleteMany({ where: { shop } }),
         prisma.catalogCache.deleteMany({ where: { shop } }),
         prisma.fixedCost.deleteMany({ where: { shop } }),
         prisma.storeLinkCode.deleteMany({ where: { createdBy: shop } }),

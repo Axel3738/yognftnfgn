@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "fx-per-dag-v66", db });
+  return json({ ok: true, build: "ltv-v67", db });
 }

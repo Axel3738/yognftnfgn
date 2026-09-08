@@ -17,6 +17,7 @@ import prisma from "../db.server";
 import { fetchOrderData, mergeProductRows } from "./shopify-data.server";
 import type { ProductRow, SalesDay } from "./pnl.server";
 import { decrypt } from "./crypto.server";
+import { butikensScope, harKundScope, skrivKundOrdrar, tillKundOrderRader } from "./kundorder.server";
 
 const API_VERSION = "2026-07";
 
@@ -45,7 +46,10 @@ export async function refreshDaily(
   from: string,
   to: string,
 ): Promise<void> {
-  const data = await fetchOrderData(admin, from, to, timezone, shop);
+  /* Kundfältet följer bara med när butiken faktiskt gett read_customers —
+     annars nekar Shopify hela frågan och dagsraderna slutar uppdateras. */
+  const kund = harKundScope(await butikensScope(shop));
+  const data = await fetchOrderData(admin, from, to, timezone, shop, { kund });
   const now = new Date();
   /* En transaktion per dag vore 90 rundresor; en enda med alla upserts är en. */
   await prisma.$transaction(
@@ -69,6 +73,22 @@ export async function refreshDaily(
       });
     }),
   );
+
+  /* KundOrder-raderna EFTER dagsraderna, ur samma hämtning: misslyckas
+     hämtningen har vi redan kastat, och ingenting skrivs någonstans. */
+  if (kund && data.kundOrdrar.length) {
+    const [settings, tierRows] = await Promise.all([
+      prisma.shopSettings.findUnique({ where: { shop } }),
+      prisma.costTier.findMany({ where: { shop } }),
+    ]);
+    const rader = tillKundOrderRader(
+      shop,
+      data.kundOrdrar,
+      tierRows.map((c) => ({ variantGid: c.variantGid, units: c.units, totalCost: Number(c.totalCost) })),
+      { tariffPerOrder: Number(settings?.tariffPerOrder ?? 0), feeRate: Number(settings?.feeRate ?? 0) },
+    );
+    await skrivKundOrdrar(shop, rader);
+  }
 }
 
 export interface DailyReadResult {

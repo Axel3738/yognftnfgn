@@ -19,6 +19,7 @@ const en = {
     costs: "Costs",
     fixedCosts: "Fixed costs",
     stores: "Stores",
+    ltv: "Customer value (LTV)",
     settings: "Settings",
   },
 
@@ -454,6 +455,108 @@ const en = {
     fxNote: (day: string) =>
       `Each day is converted at that day's ECB exchange rate. Latest rate: ${day}.`,
   },
+
+  tips: {
+    title: "Tips for what's lagging",
+    intro: "Rules based on published benchmarks — the source is shown under each tip. Only shown when your own numbers support them.",
+    source: "Source",
+    severity: { critical: "Critical", warning: "Watch", info: "Idea", good: "Strength" },
+  },
+
+  juicy: {
+    titleA: "Your costs are already here",
+    bodyA: (have: number, total: number) =>
+      `${have} of ${total} variants have a cost in Shopify — StonePNL is already using them. Nothing to import.`,
+    noteA: "Check that the cost is goods + shipping without duty. Duty is per order in Settings.",
+    ctaA: "Looks right",
+    ctaA2: "Add bundle costs from Juicy",
+    titleB: "Coming from Juicy?",
+    bodyB:
+      "Export your costs from Juicy and drop the file in the import box below. Titles, bundle costs and cost history come along. " +
+      "No export in Juicy? Open Juicy's cost page, select the table, copy it and paste it into the text field below.",
+    ctaB: "Go to import",
+  },
+
+  ltv: {
+    title: "Customer value (LTV)",
+    subtitle: (customers: number, orders: number) => `${customers} customers · ${orders} orders · all time`,
+    loading: "Reading the order history — the first time can take a minute.",
+    fatalTitle: "Customer value could not be calculated",
+    // Lås
+    lockedTitle: "What is a customer worth — not just the first order?",
+    lockedBody:
+      "Customer value follows each acquisition cohort month by month: how much the people who bought first in January have spent since, " +
+      "and how much August's buyers will likely spend — based on your own customers, not industry averages.",
+    lockedBullets: [
+      "LTV at 30/60/90/180 days per cohort, observed and forecast clearly separated",
+      "Repeat rate, orders per customer and value per customer, with confidence ranges",
+      "Max CPA based on customer value instead of the first order",
+      "Locked to real data — small cohorts show \"too little data\", never a number",
+    ],
+    upgrade: "Upgrade to Pro",
+    upgradeHint: "Opens Shopify's plan page. Pro is Standard + customer value.",
+    refreshPlan: "I upgraded — refresh",
+    planUnknownTitle: "Your plan could not be read",
+    planUnknownBody: (err: string) => `Shopify did not answer the plan check (${err}). Showing the locked view until it does — press refresh to try again.`,
+    standardPreview: "On Standard you can see the data maturity meter and repeat rate below. Curve, cohort table and LTV-based max CPA are part of Pro.",
+    // Datakvalitet
+    dataTitle: "Data quality",
+    dataRange: (from: string, to: string) => `Orders with customer from ${from} to ${to}.`,
+    dataNone: "No orders with customer yet.",
+    guestShare: (pct: string) => `${pct} of orders have no customer (guest checkout) — counted as one-time buyers.`,
+    refundNote: "Refunds are booked on the order's day, as in the dashboard.",
+    backfillRunning: "Fetching order history in the background — reload in a minute.",
+    backfillDone: (when: string) => `History last fetched ${when}.`,
+    backfillError: (err: string) => `History fetch failed: ${err}`,
+    scopeMissing:
+      "The app does not yet have permission to read customer IDs (read_customers). Open the app again after the new permissions are approved in Shopify — you will be asked to accept them.",
+    tbMissing: (pct: string) => `${pct} of first orders lack a product cost, so contribution-margin LTV is based on the rest.`,
+    // Tal
+    kpiLtv: (h: number) => `${h}-day customer value`,
+    kpiMaxCpa: (h: number) => `Max CPA (${h}-day LTV)`,
+    kpiCpaNew: "CPA per new customer (30 d)",
+    kpiRepeat: "Repeat rate",
+    kpiRepeatSub: "customers with two or more orders",
+    firstOrderMaxCpa: (v: string) => `first-order max CPA ${v}`,
+    range: (low: string, high: string) => `${low}–${high}`,
+    confidence: { good: "● Good confidence", low: "◐ Low confidence", hidden: "○ Too uncertain to show" },
+    notEnough: "Not enough data yet",
+    verdictUnder: (cpa: string, max: string, h: number) => `Your CPA (${cpa}) is under the ${h}-day max CPA (${max}): profitable within ${h} days.`,
+    verdictOver: (cpa: string, max: string, h: number) => `Your CPA (${cpa}) is over the ${h}-day max CPA (${max}): customers do not pay back within ${h} days.`,
+    verdictNoCpa: "Connect Meta and fetch 30 days of ad spend to compare CPA against customer value.",
+    horizonLabel: "Horizon that drives max CPA",
+    horizonHelp: "Days after the first order. 90 is the default for dropshipping.",
+    daysUnit: (d: number) => `${d} days`,
+    // Kurva
+    curveTitle: "Customer value per customer",
+    curveBody: "Cumulative net revenue (and contribution margin) per customer at 30/60/90/180 days after the first order, from the pool of mature cohorts.",
+    curveRevenue: "Revenue",
+    curveTb: "Contribution margin",
+    curveEst: "est.",
+    borrowedNote: (n: number, customers: number, h: number) =>
+      `Repeat behaviour for cohorts younger than ${h} days is borrowed from your ${n} mature cohorts (${customers} customers).`,
+    // Mognad
+    maturityTitle: "Data maturity",
+    maturityBody: "What is needed before the next horizon can be shown. Thresholds are absolute, not relative to your store.",
+    needCohorts: (have: number, need: number) => `mature cohorts ${have}/${need}`,
+    needCustomers: (have: number, need: number) => `customers observed ${have}/${need}`,
+    needRepeats: (have: number, need: number) => `repeat orders ${have}/${need}`,
+    needHistory: (h: number) => `needs order history beyond ${h} days — read_all_orders pending or still collecting`,
+    ready: "ready",
+    // Tabell
+    tableTitle: "Cohorts",
+    thCohort: "Cohort",
+    thCustomers: "Customers",
+    thAov1: "First order",
+    thRepeat: (h: number) => `Repeat ${h}d`,
+    thLtv: (h: number) => `LTV ${h}d`,
+    thLtvTb: (h: number) => `CM-LTV ${h}d`,
+    tooSmall: (n: number) => `N too small (${n})`,
+    observedFor: (days: number, h: number) => `observed for ${days} of ${h} days`,
+    tableNote: "Italic with est. = forecast (borrowed repeat behaviour, own first-order value). — = not observed yet. Rows under 50 customers show no figures.",
+    saveHorizon: "Save",
+    saved: "Saved.",
+  },
 };
 
 export type Texts = typeof en;
@@ -464,6 +567,7 @@ const sv: Texts = {
     costs: "Kostnader",
     fixedCosts: "Fasta kostnader",
     stores: "Butiker",
+    ltv: "Kundvärde (LTV)",
     settings: "Inställningar",
   },
 
@@ -898,6 +1002,102 @@ const sv: Texts = {
     fxUnavailable: (from: string, to: string) => `växelkurs ${from}→${to} kunde inte hämtas`,
     fxNote: (day: string) =>
       `Varje dag räknas om med den dagens ECB-kurs. Senaste kurs: ${day}.`,
+  },
+
+  tips: {
+    title: "Tips för det som lackar",
+    intro: "Regler byggda på publicerade riktvärden — källan står under varje tips. Visas bara när dina egna siffror bär dem.",
+    source: "Källa",
+    severity: { critical: "Kritiskt", warning: "Bevaka", info: "Idé", good: "Styrka" },
+  },
+
+  juicy: {
+    titleA: "Dina inköpspriser är redan här",
+    bodyA: (have: number, total: number) =>
+      `${have} av ${total} varianter har inköpspris i Shopify — StonePNL räknar redan på dem. Inget att importera.`,
+    noteA: "Kontrollera att kostnaden är vara + frakt utan tull. Tullen är per order i Inställningar.",
+    ctaA: "Ser rätt ut",
+    ctaA2: "Lägg till flerpack från Juicy",
+    titleB: "Kommer du från Juicy?",
+    bodyB:
+      "Exportera dina kostnader från Juicy och släpp filen i importrutan nedan. Titlar, flerpack och historik följer med. " +
+      "Saknar Juicy export? Öppna Juicys kostnadssida, markera tabellen, kopiera och klistra in i textfältet nedan.",
+    ctaB: "Till importen",
+  },
+
+  ltv: {
+    title: "Kundvärde (LTV)",
+    subtitle: (customers: number, orders: number) => `${customers} kunder · ${orders} ordrar · alla tider`,
+    loading: "Läser orderhistoriken — första gången kan ta en minut.",
+    fatalTitle: "Kundvärdet kunde inte räknas",
+    lockedTitle: "Vad är en kund värd — inte bara första köpet?",
+    lockedBody:
+      "Kundvärde följer varje förvärvskohort månad för månad: hur mycket de som köpte första gången i januari har handlat för sedan dess, " +
+      "och hur mycket augustis köpare sannolikt kommer att handla för — räknat på dina egna kunder, inte branschsnitt.",
+    lockedBullets: [
+      "LTV vid 30/60/90/180 dagar per kohort, observerat och prognos tydligt åtskilda",
+      "Återköpsgrad, ordrar per kund och värde per kund, med konfidensspann",
+      "Max-CPA räknad på kundvärde i stället för första ordern",
+      "Låst på riktig data — små kohorter visas som \"för lite data\", aldrig som en siffra",
+    ],
+    upgrade: "Uppgradera till Pro",
+    upgradeHint: "Öppnar Shopifys plansida. Pro är Standard + kundvärde.",
+    refreshPlan: "Jag har uppgraderat — läs om",
+    planUnknownTitle: "Planen kunde inte läsas",
+    planUnknownBody: (err: string) => `Shopify svarade inte på plankontrollen (${err}). Låst vy visas tills dess — tryck läs om för att försöka igen.`,
+    standardPreview: "På Standard ser du mognadsmätaren och återköpsgraden nedan. Kurva, kohorttabell och LTV-baserad max-CPA ingår i Pro.",
+    dataTitle: "Datakvalitet",
+    dataRange: (from: string, to: string) => `Ordrar med kund från ${from} till ${to}.`,
+    dataNone: "Inga ordrar med kund ännu.",
+    guestShare: (pct: string) => `${pct} av ordrarna saknar kund (gästkassa) — räknas som engångskunder.`,
+    refundNote: "Återbetalningar bokförs på orderns dag, som i panelen.",
+    backfillRunning: "Orderhistoriken hämtas i bakgrunden — ladda om om en minut.",
+    backfillDone: (when: string) => `Historiken hämtades senast ${when}.`,
+    backfillError: (err: string) => `Hämtningen av historiken misslyckades: ${err}`,
+    scopeMissing:
+      "Appen har ännu inte behörighet att läsa kund-ID (read_customers). Öppna appen igen när de nya behörigheterna är godkända i Shopify — du får då en fråga om att godkänna dem.",
+    tbMissing: (pct: string) => `${pct} av första ordrarna saknar inköpspris, så LTV i täckningsbidrag bygger på resten.`,
+    kpiLtv: (h: number) => `Kundvärde ${h} dagar`,
+    kpiMaxCpa: (h: number) => `Max-CPA (${h}-dagars LTV)`,
+    kpiCpaNew: "CPA per ny kund (30 d)",
+    kpiRepeat: "Återköpsgrad",
+    kpiRepeatSub: "kunder med två eller fler ordrar",
+    firstOrderMaxCpa: (v: string) => `max-CPA första ordern ${v}`,
+    range: (low: string, high: string) => `${low}–${high}`,
+    confidence: { good: "● God säkerhet", low: "◐ Låg säkerhet", hidden: "○ För osäkert att visa" },
+    notEnough: "För lite data än",
+    verdictUnder: (cpa: string, max: string, h: number) => `Din CPA (${cpa}) är under ${h}-dagars max-CPA (${max}): lönsamt inom ${h} dagar.`,
+    verdictOver: (cpa: string, max: string, h: number) => `Din CPA (${cpa}) är över ${h}-dagars max-CPA (${max}): kunderna betalar inte tillbaka inom ${h} dagar.`,
+    verdictNoCpa: "Koppla Meta och hämta 30 dagars annonskostnad för att jämföra CPA mot kundvärdet.",
+    horizonLabel: "Horisont som styr max-CPA",
+    horizonHelp: "Dagar efter första ordern. 90 är standard för dropshipping.",
+    daysUnit: (d: number) => `${d} dagar`,
+    curveTitle: "Kundvärde per kund",
+    curveBody: "Ackumulerad nettointäkt (och täckningsbidrag) per kund vid 30/60/90/180 dagar efter första ordern, ur poolen av mogna kohorter.",
+    curveRevenue: "Omsättning",
+    curveTb: "Täckningsbidrag",
+    curveEst: "prognos",
+    borrowedNote: (n: number, customers: number, h: number) =>
+      `Återköpsbeteendet för kohorter yngre än ${h} dagar är lånat från dina ${n} mogna kohorter (${customers} kunder).`,
+    maturityTitle: "Datamognad",
+    maturityBody: "Vad som krävs innan nästa horisont kan visas. Trösklarna är absoluta, inte relativa till butiken.",
+    needCohorts: (have: number, need: number) => `mogna kohorter ${have}/${need}`,
+    needCustomers: (have: number, need: number) => `observerade kunder ${have}/${need}`,
+    needRepeats: (have: number, need: number) => `återköpsordrar ${have}/${need}`,
+    needHistory: (h: number) => `kräver orderhistorik bortom ${h} dagar — read_all_orders väntar eller insamling pågår`,
+    ready: "klart",
+    tableTitle: "Kohorter",
+    thCohort: "Kohort",
+    thCustomers: "Kunder",
+    thAov1: "Första ordern",
+    thRepeat: (h: number) => `Återköp ${h}d`,
+    thLtv: (h: number) => `LTV ${h}d`,
+    thLtvTb: (h: number) => `TB-LTV ${h}d`,
+    tooSmall: (n: number) => `N för litet (${n})`,
+    observedFor: (days: number, h: number) => `observerat ${days} av ${h} dagar`,
+    tableNote: "Kursivt med prognos = lånat återköpsbeteende, eget första-ordervärde. — = inte observerat än. Rader under 50 kunder visar inga tal.",
+    saveHorizon: "Spara",
+    saved: "Sparat.",
   },
 };
 

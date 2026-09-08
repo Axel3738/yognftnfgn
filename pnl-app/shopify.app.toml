@@ -6,7 +6,10 @@ application_url = "https://pnl-app-store-production.up.railway.app"
 embedded = true
 
 [access_scopes]
-scopes = "read_products,read_orders,read_inventory,read_reports,write_inventory"
+# read_customers + read_all_orders: kundvärdet (LTV) behöver kund-ID per order
+# (lagras bara som HMAC) och ordrar äldre än 60 dagar. Kräver även Protected
+# Customer Data nivå 1 i Partner Dashboard.
+scopes = "read_products,read_orders,read_inventory,read_reports,write_inventory,read_customers,read_all_orders"
 
 [auth]
 redirect_urls = [

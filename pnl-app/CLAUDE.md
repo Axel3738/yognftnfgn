@@ -37,7 +37,7 @@ myshopify-domänen). Butikerna är ihopkopplade i en grupp i appen
   från branchen `claude/bäverbutiken-settkopplingen-nba21z` och delar EN
   Postgres. Push till branchen ⇒ alla sex bygger om.
 - **Deployverifiering är obligatorisk**: bumpa build-markören i
-  `app/routes/healthz.tsx` (`"meta-v39"` när detta skrevs — räkna uppåt) vid
+  `app/routes/healthz.tsx` (`"ltv-v67"` när detta skrevs — räkna uppåt) vid
   varje push, vänta ~90 s, curla `/healthz` på tjänsterna och bekräfta att nya
   markören svarar. Kolla igen vid ~150 s. Railway missar ibland webhooken —
   en tom commit (`git commit --allow-empty`) triggar om.
@@ -45,6 +45,8 @@ myshopify-domänen). Butikerna är ihopkopplade i en grupp i appen
   SHOPIFY_API_SECRET, SHOPIFY_APP_URL, TOKEN_ENCRYPTION_KEY. Valfria för
   Logga in med Facebook: META_APP_ID + META_APP_SECRET (båda eller ingen —
   env-valideringen vägrar starta med bara den ena), META_LOGIN_CONFIG_ID.
+  Bara App Store-tjänsten: PLAN_GATE=1 (Pro-grinden för LTV), APP_HANDLE,
+  valfri PRO_PLAN_NAMES.
   Hemligheter får ALDRIG in i repot eller chatten — bara env.
 - **Sessionsmiljön når inte alltid Railway eller Meta.** Mätt 2026-09-07: proxyn
   svarade 403 på både `*.up.railway.app` och `graph.facebook.com` — deploy-
@@ -354,16 +356,16 @@ i hans ordning:
    tidigare kurs.
 3. **Juicy → StonePNL COGS-flytt:** "alla som använder Juicy sedan tidigare
    ska på max 3 knapptryck få in sina nuvarande COGS i vår app utan manuella
-   grejer." Importen finns (`cost-import.server.ts`, CSV `titel;variant;
-   kostnad`, flerpack `88|134|180`) — det som saknas är Juicys eget
-   exportformat som indata. **Be Axel om en riktig Juicy-export** innan
-   något byggs; gissa inte kolumnerna.
-4. **Betalt tillägg, +5 USD/mån: LTV-prognos** ("locked på data, riktigt
-   nice"). Kräver en till prisnivå i managed pricing (App Store) och en
-   funktionsgrind i koden; själva prognosen behöver kundens återköpsdata
-   (ordrar per kund över tid — inga kundfält hämtas i dag, PCD-deklarationen
-   säger "inga kundfält"; en anonymiserad kund-hash per order räcker och måste
-   in i deklarationen). Designa innan något byggs.
+   grejer." **Scenario A BYGGT 2026-09-08 (ltv-v67):** kortet "Kommer du från
+   Juicy?" överst på Kostnader (≥ 90 % täckning ⇒ "Dina inköpspriser är redan
+   här" + **Ser rätt ut**; annars pekar det på dropzonen). Scenario B (Juicys
+   egen exportfil som indata) väntar fortfarande: **be Axel om en riktig
+   Juicy-export** innan något byggs; gissa inte kolumnerna
+   (`docs/juicy-import.md`).
+4. **Betalt tillägg, +5 USD/mån: LTV-prognos** — **BYGGT 2026-09-08 (build
+   ltv-v67), oprövat skarpt.** Se avsnittet "LTV-tillägget" nedan. Axels
+   svar på designfrågorna: Pro-plan $14.99 (managed pricing kan inte sälja
+   "+5"), insamling för alla butiker, täckningsbidrag vid 90 dagar.
 - **App Store-granskning 4.5.5:** granskaren kunde inte testa Meta-kopplingen
   utan konto. Lösning: skärminspelning som visar koppling → import → att
   siffran matchar Meta Ads Manager. Länken klistras i "Proof of resolution".
@@ -381,6 +383,102 @@ i hans ordning:
 - Exakta betalväxel-avgifter (feeRate är schablon).
 - Grillkliniken: Axel vill klona hela upplägget till en annan butik.
 - App Store-granskningssvaret: åtgärda när mejlet kommer.
+
+### LTV-tillägget (2026-09-08, build ltv-v67) — kundvärde, Pro-plan, tips
+
+Byggt efter `docs/ltv-tillagg.md` (designen) på Axels uppdrag samma dag
+("glöm inte forecasta LTV, recurring customer rate, tips man kan testa för
+att öka sin LTV, tips på metrics som lackar"). Allt nedan är **oprövat
+skarpt** — proxyn nådde varken Shopify, Meta eller Railway från sessionen.
+
+**Datalagret**
+- `KundOrder` (shop, orderId, kundHash, dag, netto, tb): en rad per order.
+  `kundHash` = HMAC-SHA256(sha256(TOKEN_ENCRYPTION_KEY + ":kundhash:v1"),
+  shop + ":" + kund-GID) i `crypto.server.ts` — aldrig vändbar, butiken i
+  meddelandet, **nyckeln får aldrig roteras**. Null = gästorder eller nyckel
+  saknas. Klartext-ID lagras eller loggas aldrig.
+- `customer { id }` läggs i orderfrågorna (paginerad + bulk) **bara när
+  butikens offline-session har `read_customers`** (`harKundScope` läser
+  `Session.scope`). Utan scopen är frågan identisk med förut — en
+  ACCESS_DENIED på kundfältet hade annars dödat panelen för alla butiker.
+- `refreshDaily` skriver KundOrder-raderna EFTER dagsraderna ur samma
+  hämtning (`kundorder.server.ts`: `tillKundOrderRader`/`skrivKundOrdrar`,
+  idempotent upsert i batcher om 200). tb per order = netto − COGS (flerpack
+  via `tierCost`) − tull per order − avgift × totalpris; **null om någon rad
+  saknar inköpspris**.
+- Bakfyllnad (`kundorder-backfill.server.ts`): startas av LTV-sidan när
+  historiken är tunn, i bakgrunden, fönster om 30 dagar bakåt (400 dagar),
+  via `giltigToken` + `adminFromToken` + `refreshDaily`. Stannar efter två
+  tomma fönster i rad (utan `read_all_orders` svarar Shopify tomt bortom 60
+  dagar). Status på `ShopSettings.kundOrderBackfillAt/-Error`; felet
+  `scope:read_customers` betyder att behörigheten saknas.
+- Webhooks: `customers/redact` raderar per hash + `orders_to_redact`
+  (numeriska id ⇒ `gid://shopify/Order/<id>`), `customers/data_request`
+  loggas hashat, `shop/redact` tar `kundOrder`. `/privacy` omskriven (kund-ID
+  som pseudonym; datum 2026-09-08). Scopes i `shopify.app.toml` och
+  env-hinten: `read_customers,read_all_orders`.
+
+**Räknemotorn** `ltv.server.ts` (ren, 11 tester i `test/ltv.test.mjs`,
+`npm test`, Node ≥ 22.6): kohort = första köpmånad; horisonter 30/60/90/180;
+per kohort N, AOV1, TB1, R(h) med **Wilson 95 %**, n(h), AOVr(h), LTV(h) och
+LTVtb(h). Mogen kohort = kohortmånadens sista dag + h ≤ i dag. Pool per h ur
+mogna kohorter med N ≥ 50, viktad med N; **ok först vid ≥ 2 kohorter, ≥ 300
+kunder, ≥ 30 återköpsordrar** (`ltv-konstanter.ts`). Prognos för omogna
+kohorter = eget AOV1 + poolens återköpsdel, märkt `est`. maxCPA(h) =
+LTVtb(h) − målmarginal × LTV(h), med spann; konfidens good/low/hidden
+(≤ 40 % / ≤ 80 % / mer). Gästordrar räknas i `guestShare`, aldrig i kohorter.
+
+**Grinden** `plan.server.ts`: **inga Billing API-anrop.** Rå
+`currentAppInstallation { activeSubscriptions { name status } }`, "pro" om en
+ACTIVE-prenumeration heter något med "pro" (eller står i `PRO_PLAN_NAMES`).
+Cache `ShopSettings.plan/planCheckedAt`, omkoll högst var 10:e minut,
+tvingad bara via **Jag har uppgraderat — läs om** (`?refresh=1`). Grinden är
+**AV tills `PLAN_GATE=1`** sätts på en tjänst — sätt den BARA på App
+Store-tjänsten. Utan den är alla butiker "pro" (egna butiker ska aldrig se en
+betalvägg). Uppgraderingsknappen öppnar
+`admin.shopify.com/store/<butik>/charges/<APP_HANDLE|stonepnl>/pricing_plans`
+i toppfönstret. ⚠ Oprövat: vad StonePNL:s registrering faktiskt svarar i
+`activeSubscriptions` under App Pricing — råsvaret loggas
+("Planavläsning för …"). Svarar den tomt trots aktiv plan är Partner API
+nästa väg (designdokumentet avsnitt 1).
+
+**Sidan** `app.ltv.tsx` (nav "Kundvärde (LTV)"): datakvalitetsrad, tre tal
+med spann (LTV(h), max-CPA(h) mot första-orderns max-CPA, CPA per ny kund
+senaste 30 dagarna = Σ DailySpend.spend / kunder med första order i
+fönstret), verdikt-banner, tipskort, kurva 30/60/90/180 (omsättning + TB,
+inline-HTML, ikon+text — aldrig färg ensam), mognadsmätare per horisont,
+kohorttabell (kursivt + "prognos"/"est." för lånade värden, "N för litet"
+under 50), horisontval sparas i `ShopSettings.ltvHorizon`. Standard-planen
+ser mognadsmätaren + återköpsgraden + upgradeknapp; plan "okand" (API-fel)
+visar låst vy med orsaken. Alla texter i BÅDA ordböckerna (`ltv.*`, `tips.*`,
+`juicy.*`, `nav.ltv`).
+
+**Tips när en metrik lackar** `tips.server.ts`: 20 regler ur
+`docs/ltv-tips-research.md` (benchmarks med källa per regel; hitta aldrig på
+trösklar). Regel utan underlag hoppas över; max ett tips per metrik, max tre
+totalt, critical > warning > info > good. Visas på LTV-sidan (återköp, LTV,
+CPA, AOV) och i panelen (bruttomarginal, MER, fasta kostnaders andel,
+återbetalningsandel). Källan står under varje tips.
+
+**Axel måste göra (i ordning):**
+1. Partner Dashboard → StonePNL → **Distribution → Prissättning**: plan
+   **Pro**, 14,99 USD/30 dagar, 1 dags prov, namnet MÅSTE innehålla "Pro".
+2. Railway → alla sex tjänster → `SCOPES` =
+   `read_products,read_orders,read_inventory,read_reports,write_inventory,read_customers,read_all_orders`.
+   Partner Dashboard → appens **Konfiguration** → samma scopes → spara →
+   **Släpp version** (toml kräver `npx @shopify/cli app deploy` med en
+   tillfällig automation-token som raderas efteråt, samma mönster som
+   compliance-webhookarna). Befintliga handlare får en godkännandeskärm
+   nästa gång de öppnar appen — normalt, ska stå i release-noten.
+3. Partner Dashboard → **API-åtkomst** → *Protected customer data*: nivå 1,
+   reason "analytics", dataminimeringstexten ur `docs/ltv-tillagg.md`
+   avsnitt 2. Ansök om **Read all orders** i samma vy.
+4. Railway → **bara App Store-tjänsten** (pnl-app-store-production):
+   `PLAN_GATE=1` och `APP_HANDLE=<handle ur listningen>`.
+5. Öppna appen i varje egen butik en gång (godkänn scopes) och gå till
+   **Kundvärde (LTV)** — bakfyllnaden startar då. Kolla loggraden
+   "Planavläsning för …" på App Store-tjänsten första gången en betalande
+   butik öppnar sidan, och skriv in utfallet här.
 
 ### Logga in med Facebook för Meta-kopplingen (2026-09-07, build meta-login-v64)
 Axels beslut 2026-08-31 (bygg efter App Store-godkännandet) — byggt två dagar

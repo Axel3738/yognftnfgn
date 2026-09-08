@@ -10,7 +10,7 @@
  * dekryptering istället för att tolkas som en giltig token.
  */
 
-import { createCipheriv, createDecipheriv, randomBytes, createHash } from "node:crypto";
+import { createCipheriv, createDecipheriv, createHmac, randomBytes, createHash } from "node:crypto";
 
 const PREFIX = "enc:v1:";
 
@@ -42,6 +42,23 @@ export function encrypt(plain: string): string {
   const data = Buffer.concat([c.update(plain, "utf8"), c.final()]);
   const tag = c.getAuthTag();
   return PREFIX + Buffer.concat([iv, tag, data]).toString("base64");
+}
+
+/**
+ * Pseudonym för en kund: HMAC-SHA256 över "butik:kund-GID" med en nyckel
+ * härledd ur TOKEN_ENCRYPTION_KEY och en egen domänsträng. HMAC, inte
+ * kryptering — den ska aldrig kunna vändas. Butiken ingår i meddelandet så
+ * samma person inte kan matchas mellan två butiker. Nyckeln får aldrig
+ * roteras: då blir hela kundhistoriken föräldralös.
+ *
+ * Null utan nyckel: då lagras ordern som gästorder i stället för under en
+ * hash som en annan miljö inte kan räkna fram.
+ */
+export function kundHash(shop: string, customerGid: string | null | undefined): string | null {
+  const raw = process.env.TOKEN_ENCRYPTION_KEY;
+  if (!raw || raw.length < 16 || !customerGid) return null;
+  const k = createHash("sha256").update(`${raw}:kundhash:v1`).digest();
+  return createHmac("sha256", k).update(`${shop}:${customerGid}`).digest("hex");
 }
 
 /**

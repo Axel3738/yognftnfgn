@@ -85,12 +85,47 @@ model ShopSettings {
   /// Sätts bara genom att lösa in en kod från en butik man redan är inne i —
   /// aldrig automatiskt, hur gärna databasen än skulle kunna gissa rätt.
   groupId         String?
+  /// Butikens plan under Shopify App Pricing: "standard" | "pro". Null =
+  /// aldrig avläst. Läses ur currentAppInstallation.activeSubscriptions,
+  /// cachas här och kontrolleras högst var 10:e minut (planCheckedAt).
+  plan            String?
+  planCheckedAt   DateTime?
+  /// Kortet "Kommer du från Juicy?" på Kostnader-sidan har stängts.
+  juicyCardDismissedAt DateTime?
+  /// Horisont (dagar) som styr max-CPA på LTV-sidan. Null = 90.
+  ltvHorizon      Int?
+  /// Senaste lyckade bakfyllnad av KundOrder, och senaste felet i klartext.
+  kundOrderBackfillAt    DateTime?
+  kundOrderBackfillError String?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 
   costChanges CostChange[]
 
   @@index([groupId])
+}
+
+/// En rad per order med pseudonymiserad kund — underlaget för kundvärdet
+/// (LTV) och ny/återkommande. Kund-ID lagras BARA som HMAC (kundHash); det
+/// går inte att vända utan serverns nyckel. Null = gästorder utan kund.
+/// Raderas vid customers/redact (per hash + orders_to_redact) och shop/redact.
+model KundOrder {
+  shop      String
+  /// Shopify order-GID — idempotent upsert och nyckel för orders_to_redact.
+  orderId   String
+  kundHash  String?
+  /// YYYY-MM-DD i butikens tidszon.
+  dag       String
+  /// Subtotal − återbetalning, som DailyPnl.netSales.
+  netto     Float
+  /// Netto − COGS (med flerpack) − tull − avgift, räknat med kostnaden vid
+  /// hämtningen. Null när någon rad saknar inköpspris — aldrig gissning.
+  tb        Float?
+  createdAt DateTime @default(now())
+
+  @@id([shop, orderId])
+  @@index([shop, kundHash, dag])
+  @@index([shop, dag])
 }
 
 /// Engångskod för att koppla ihop två butiker. Kortlivad med flit: koden är

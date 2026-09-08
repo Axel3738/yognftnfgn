@@ -82,6 +82,7 @@ export default function App() {
         <Link to="/app/costs">{T.nav.costs}</Link>
         <Link to="/app/fixed">{T.nav.fixedCosts}</Link>
         <Link to="/app/butiker">{T.nav.stores}</Link>
+        <Link to="/app/ltv">{T.nav.ltv}</Link>
         <Link to="/app/settings">{T.nav.settings}</Link>
       </NavMenu>
       <Outlet />

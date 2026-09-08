@@ -1,5 +1,11 @@
 # LTV-tillägget — designbeslut innan något byggs
 
+> **Status 2026-09-08 (build ltv-v67): BYGGT enligt det här dokumentet**, se
+> avsnittet "LTV-tillägget" i `CLAUDE.md` för vad som finns, vad Axel måste
+> göra (Pro-plan, scopes, PCD, `PLAN_GATE`) och vad som är oprövat skarpt.
+> Axels svar på de tre frågorna längst ner: (1) Pro-plan $14.99 ("+5 USD"),
+> (2) ja — insamling för alla butiker, (3) täckningsbidrag vid 90 dagar.
+
 Skrivet 2026-09-07 som svar på Axels punkt 4 i backloggen: *"betalt tillägg,
 +5 USD/mån: LTV-prognos, locked på data, riktigt nice."* Det här är ett
 beslutsunderlag, ingen kod. Tre frågor längst ner måste besvaras först.

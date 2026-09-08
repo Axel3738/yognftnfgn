@@ -66,11 +66,29 @@ interface OrderNode {
   };
 }
 
+/**
+ * En order med sin kund (som GID, hashas i kundorder.server innan lagring)
+ * och sina rader med nuvarande inköpspris — underlaget för kundvärdet.
+ * Fylls BARA när frågan ställdes med kund (scopen read_customers), annars tom.
+ */
+export interface KundOrderRa {
+  orderId: string;
+  customerGid: string | null;
+  dag: string;
+  /** Subtotal − återbetalning, som SalesDay.netSales. */
+  netto: number;
+  /** Totalpris efter återbetalning — det avgiften räknas på. */
+  totalPrice: number;
+  lines: { variantGid: string | null; quantity: number; unitCost: number | null }[];
+}
+
 export interface OrderData {
   sales: SalesDay[];
   products: ProductRow[];
   /** Mixen per dag — grunden för dagsraderna i DailyPnl. */
   productsByDay: Record<string, ProductRow[]>;
+  /** Per order med kund — tom när frågan ställdes utan kundfältet. */
+  kundOrdrar: KundOrderRa[];
 }
 
 /**
@@ -92,15 +110,21 @@ export function fetchOrderData(
   to: string,
   timezone: string,
   shopKey = "",
+  /**
+   * `kund: true` lägger till `customer { id }` i orderfrågan. Får BARA sättas
+   * när butikens scope innehåller read_customers — annars nekar Shopify hela
+   * frågan (ACCESS_DENIED) och panelen dör för den butiken.
+   */
+  opts: { kund?: boolean } = {},
 ): Promise<OrderData> {
   /* Shopify tillåter EN bulk-operation per butik. Utan samordning krockar två
      samtidiga sidladdningar (t.ex. 30d-vyn som fortfarande exporterar när
      användaren klickar 90d) med "already in progress". Samma intervall delar
      promise; olika intervall köar via retry-logiken i runOrdersBulk. */
-  const key = `${shopKey}:${from}:${to}`;
+  const key = `${shopKey}:${from}:${to}:${opts.kund ? "k" : ""}`;
   const existing = inflight.get(key);
   if (existing) return existing;
-  const p = doFetchOrderData(admin, from, to, timezone, shopKey).finally(() => inflight.delete(key));
+  const p = doFetchOrderData(admin, from, to, timezone, shopKey, Boolean(opts.kund)).finally(() => inflight.delete(key));
   inflight.set(key, p);
   return p;
 }
@@ -111,6 +135,7 @@ async function doFetchOrderData(
   to: string,
   timezone: string,
   shopKey = "",
+  kund = false,
 ): Promise<OrderData> {
   /* Korta fönster (dagens siffror, morgonens nya dagar) går via vanlig
      paginering: 1–2 sekunder istället för bulk-exportens halvminut, och de
@@ -119,17 +144,29 @@ async function doFetchOrderData(
   const dayCount = (Date.parse(to) - Date.parse(from)) / 86_400_000 + 1;
   const jsonl =
     dayCount <= 7
-      ? await runOrdersPaginated(admin, shiftIso(from, -1), shiftIso(to, 1))
-      : await runOrdersBulk(admin, shiftIso(from, -1), shiftIso(to, 1));
+      ? await runOrdersPaginated(admin, shiftIso(from, -1), shiftIso(to, 1), kund)
+      : await runOrdersBulk(admin, shiftIso(from, -1), shiftIso(to, 1), kund);
   const data = parseOrderLines(jsonl, from, to, timezone);
 
   const costs = await fetchVariantCosts(admin, shopKey);
+  /* Kostnaden per orderrad sätts här, med samma katalog som produktmixen —
+     tb per order i kundorder.server räknar sedan på exakt det panelen ser. */
+  const kundOrdrar: KundOrderRa[] = kund
+    ? data.kundOrdrar.map((o) => ({
+        ...o,
+        lines: o.lines.map((l) => ({
+          ...l,
+          unitCost: (l.variantGid ? costs.byGid.get(l.variantGid)?.unitCost : undefined) ?? null,
+        })),
+      }))
+    : [];
   return {
     sales: data.sales,
     products: applyCurrentCosts(data.products, costs),
     productsByDay: Object.fromEntries(
       Object.entries(data.productsByDay).map(([d, rows]) => [d, applyCurrentCosts(rows, costs)]),
     ),
+    kundOrdrar,
   };
 }
 
@@ -154,6 +191,9 @@ function parseOrderLines(
      (avbruten/test/utanför fönstret) ska inte in i mixen. */
   const counted = new Map<string, string>();
   const productByDay = new Map<string, Map<string, Agg>>();
+  /* Per order, för kundvärdet. Fylls för alla räknade ordrar; anroparen
+     avgör om kundfältet fanns med i frågan (customer saknas ⇒ gästorder). */
+  const kundOrdrar = new Map<string, KundOrderRa>();
 
   for (const line of jsonl) {
     if (!line.__parentId) {
@@ -167,6 +207,15 @@ function parseOrderLines(
       const subtotal = num(line.subtotalPriceSet?.shopMoney?.amount);
       const discounts = num(line.totalDiscountsSet?.shopMoney?.amount);
       const refunded = num(line.totalRefundedSet?.shopMoney?.amount);
+
+      kundOrdrar.set(line.id, {
+        orderId: String(line.id),
+        customerGid: line.customer?.id ? String(line.customer.id) : null,
+        dag: day,
+        netto: subtotal - refunded,
+        totalPrice: num(line.totalPriceSet?.shopMoney?.amount) - refunded,
+        lines: [],
+      });
 
       bucket.orders += 1;
       bucket.grossSales += subtotal + discounts;
@@ -197,6 +246,11 @@ function parseOrderLines(
       agg.netSales += num(line.discountedTotalSet?.shopMoney?.amount);
       dayMap.set(key, agg);
       productByDay.set(day, dayMap);
+      kundOrdrar.get(line.__parentId)?.lines.push({
+        variantGid: line.variant?.id ?? null,
+        quantity: line.quantity ?? 0,
+        unitCost: null,
+      });
     }
   }
 
@@ -206,6 +260,7 @@ function parseOrderLines(
     sales: [...salesBy.values()],
     products: mergeProductRows(Object.values(productsByDay).flat()),
     productsByDay,
+    kundOrdrar: [...kundOrdrar.values()],
   };
 }
 
@@ -235,10 +290,15 @@ export function mergeProductRows(rows: ProductRow[]): ProductRow[] {
  * som bulk-exporten, så båda vägarna delar parser. Sidstorleken är vald så att
  * begärd frågekostnad ryms i API:ts budget (50 ordrar × 25 rader).
  */
+/* Kundfältet är det ENDA fältet i orderfrågorna som kräver en extra scope
+   (read_customers). Det får bara med när anroparen vet att scopen finns. */
+const kundFalt = (kund: boolean) => (kund ? "customer { id }" : "");
+
 async function runOrdersPaginated(
   admin: AdminApiContext,
   fromExclusive: string,
   toInclusive: string,
+  kund = false,
 ): Promise<any[]> {
   const lines: any[] = [];
   let after: string | null = null;
@@ -250,6 +310,7 @@ async function runOrdersPaginated(
            pageInfo { hasNextPage endCursor }
            nodes {
              id createdAt cancelledAt test
+             ${kundFalt(kund)}
              totalPriceSet { shopMoney { amount } }
              subtotalPriceSet { shopMoney { amount } }
              totalDiscountsSet { shopMoney { amount } }
@@ -324,11 +385,13 @@ async function runOrdersBulk(
   admin: AdminApiContext,
   fromExclusive: string,
   toInclusive: string,
+  kund = false,
 ): Promise<any[]> {
   const inner = `{
     orders(query: "created_at:>='${fromExclusive}' AND created_at:<='${toInclusive}'") {
       edges { node {
         id createdAt cancelledAt test
+        ${kundFalt(kund)}
         totalPriceSet { shopMoney { amount } }
         subtotalPriceSet { shopMoney { amount } }
         totalDiscountsSet { shopMoney { amount } }

@@ -41,6 +41,7 @@ import { getSpend } from "../lib/meta.server";
 import { dagarKvar, VARNA_DAGAR } from "../lib/meta-login";
 import { summeraGrupp } from "../lib/group.server";
 import { decrypt } from "../lib/crypto.server";
+import { evaluateTips, type Tip } from "../lib/tips.server";
 import { asLang, localeOf, t, type Lang, type Texts } from "../lib/texts";
 
 type SettingsRow = Awaited<ReturnType<typeof prisma.shopSettings.upsert>>;
@@ -300,8 +301,26 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     ? await summeraGrupp(settings.groupId!, from, to, settings.currency, lang)
     : null;
 
+  /* Tips för det som lackar — ur periodens egna tal. Regler vars underlag
+     saknas hoppas över, så en butik utan Meta får inga annonsråd. */
+  const tt = result.totals;
+  const grossSalesSum = sales.reduce((a, s) => a + s.grossSales, 0);
+  const returnsSum = sales.reduce((a, s) => a + Math.abs(s.returns), 0);
+  const tips = evaluateTips(
+    {
+      gross_margin: tt.grossMargin ?? undefined,
+      mer: tt.spendComplete && tt.totalSales > 0 ? tt.spend / tt.totalSales : undefined,
+      fixed_share: tt.totalSales > 0 && fixedMonthlyTotal > 0 ? tt.fixedCosts / tt.totalSales : undefined,
+      refund_rate: grossSalesSum > 0 ? returnsSum / grossSalesSum : undefined,
+      orders: tt.orders,
+      days: result.days.length,
+    },
+    lang,
+  );
+
   return {
     fatal: null as string | null,
+    tips,
     comparison,
     groupSize,
     group,
@@ -345,6 +364,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     }
     return {
       fatal,
+      tips: [] as Tip[],
       comparison: null as { totalSales: number; orders: number; spend: number; netProfit: number } | null,
       groupSize: 1,
       group: null as Awaited<ReturnType<typeof summeraGrupp>> | null,
@@ -852,7 +872,7 @@ function SetupChecklist({
 }
 
 function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
-  const { fatal, result, rangeKey, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing, groupSize, group, metaTokenDagar } = d;
+  const { fatal, result, rangeKey, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing, groupSize, group, metaTokenDagar, tips } = d;
   const [params, setParams] = useSearchParams();
   const revalidator = useRevalidator();
   const T = t(lang);
@@ -1108,6 +1128,26 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
               >
                 {T.settings.expiresSoon(metaTokenDagar)}
               </Banner>
+            ) : null}
+
+            {tips.length ? (
+              <Card>
+                <BlockStack gap="200">
+                  <Text as="h2" variant="headingMd">{T.tips.title}</Text>
+                  <Text as="p" tone="subdued" variant="bodySm">{T.tips.intro}</Text>
+                  {tips.map((tip) => (
+                    <InlineStack key={tip.id} gap="200" blockAlign="start" wrap={false}>
+                      <Badge tone={tip.severity === "critical" ? "critical" : tip.severity === "warning" ? "attention" : tip.severity === "good" ? "success" : "info"}>
+                        {T.tips.severity[tip.severity]}
+                      </Badge>
+                      <BlockStack gap="050">
+                        <Text as="span">{tip.text}</Text>
+                        <Text as="span" variant="bodySm" tone="subdued">{`${T.tips.source}: ${tip.source}`}</Text>
+                      </BlockStack>
+                    </InlineStack>
+                  ))}
+                </BlockStack>
+              </Card>
             ) : null}
 
             {spendCurrencyMismatch ? (

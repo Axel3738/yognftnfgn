@@ -11,7 +11,7 @@ const REQUIRED = {
   SHOPIFY_API_SECRET: "Client secret från samma sida",
   SHOPIFY_APP_URL: "Hostingens publika URL, t.ex. https://xxx.up.railway.app",
   DATABASE_URL: "Sätts automatiskt när en PostgreSQL-databas kopplas till tjänsten",
-  SCOPES: "read_products,read_orders,read_inventory,read_reports,write_inventory",
+  SCOPES: "read_products,read_orders,read_inventory,read_reports,write_inventory,read_customers,read_all_orders",
 } as const;
 
 const missing = Object.entries(REQUIRED).filter(([key]) => !process.env[key]?.trim());
