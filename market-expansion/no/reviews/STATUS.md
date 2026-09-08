@@ -3,6 +3,15 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-08 — 10 nya på en produkt, 26 i `sources.json`
+
+Rutinkörning 05:35 svensk tid. MAKE TO NORWAY hade en ny mapp sedan igår:
+**Bänkhylla med Utdragbar Korg**. Riktigt REVIEWS-ark (10 rader) och handle
+`benkehylle-med-uttrekkbar-kurv-dobbel-plass-pa-samme-benk` i butiken.
+Butiksfeeden växte från 168 till 175 produkter. Kartorna: +13 översättningar,
+inga nya namn. Gravsteinspenn och Medisinboks oförändrade — fortsatt
+överhoppade. Båtmotortrekk fortsatt spärrad på 1 synlig recension.
+
 ## Läget 2026-09-07 — 24 nya på tre produkter, 25 i `sources.json`
 
 Rutinkörning 05:35 svensk tid. MAKE TO NORWAY hade tre nya mappar sedan
