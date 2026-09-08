@@ -695,6 +695,22 @@ Produktens faktiska utseende (färg, detaljer, innehåll) ska alltid komma från
 en riktig källbild — AI får aldrig vara enda källan till hur produkten ser ut.
 AI-video → GIF görs också i molnet (Higgsfield + ffmpeg).
 
+**Produktsidans bilder — Axels standard 2026-09-07 (gäller varje produktsida):**
+1. **Bara riktiga bilder från produktens egen Temu-produktsida** (`-g-<goods_id>.html`),
+   skördade på Axels dator med `temu-bilder.mjs` → `temu/bildskord/<produkt>/`. Aldrig
+   en söksida (`-s.html`), aldrig en annan säljares video, aldrig AI som ersättning för
+   produkten. Saknas skörden: be om den FÖRST, bygg inte sidan på gissningar.
+2. **Galleri 3–4 riktiga bilder:** hero, produkten i bruk, detalj, ev. faktakort/måttkort
+   (sharp+SVG på svenska/norska ur de låsta räkneorden). Textfria bilder ur skörden
+   först; bilder med engelsk/kinesisk/maskinsvensk text används bara om texten går att
+   beskära bort. Hjältebilden ligger först (`ordna-galleri.mjs`).
+3. **GIF ur listningens egen produktvideo** (ffmpeg, <4 MB, vattenstämplar och etiketter
+   bortbeskurna). Finns ingen video: bildspel av skördens bilder (`temu/gif.mjs`).
+4. Beskrivningen enligt strukturen nedan, SE och NO likadana, alt-text på allt.
+5. **Varianter bara enligt CWD-offerten** (färger, storlekar) — inte enligt Temu-listningen.
+Facit: `temu/batch6/bygg-om.mjs` + `temu/batch6/README.md` (kattkoja, staketbygel,
+racingkalender, taköverdrag är gjorda exakt så).
+
 **Beskrivningens struktur (Axels regel 2026-08-29)** — gäller varje produktsida
 som får skördebilder, i den här exakta ordningen:
 
