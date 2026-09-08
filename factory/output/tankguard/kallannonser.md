@@ -162,3 +162,28 @@ utan den saknas fyra saker som aldrig får gissas:
 Break-even går inte heller att räkna: produktfilen bär källbutikens pris (489 kr)
 och inköpet (155 kr), men inte TankGuards eget pris — och momsfrågan är oavgjord
 eftersom butiksfilen är det som svarar på den.
+
+---
+
+## Definition of done — `/ny-annonser tankguard`
+
+| | Punkt | Läge |
+|---|---|---|
+| ✅ | Rätt konto verifierat före första skrivningen (mål ≠ källa) | Mål `915422744950975` Magiborsten DK, källor `1867947880635861` + `1050941584152547`. Kontrollerat på id. Ingenting skrivet i något konto. |
+| ✅ | `kalla:`-blocket finns i produktfilen — bekräftat mot kontot, inte gissat | SE fanns; NO-blocket tillagt och läst ur Magiborsten NO. |
+| ✅ | Båda källkampanjerna lästa (SE + NO), bara ACTIVE-annonser med | 34 + 33, alla ACTIVE i ACTIVE-adsets. |
+| ⚠️ | Brand-detektorns tabell visad: varje källannons klassad över fem ytor | SE: alla fem. NO: ytor 1, 2 och 5. **Ytor 3 och 4 olästa på NO** — `ffmpeg` och `rapidocr-onnxruntime` saknas i containern. Redovisat som `❔ oläst`, aldrig som `ren`. |
+| ❌ | Priset bytt överallt det förekommer — SEK i den svenska, NOK i den norska | Blockerat: TankGuards egna priser finns inte i repot. Källans tal är mätta och listade. |
+| ❌ | Bilderna brand-swappade med QA före/efter | Blockerat: bilderna bär pris, rabatt och fraktgräns som inte går att byta utan butikens villkor. |
+| ❌ | Videorna omdubbade — eller listade som väntande med orsak | Listade: 11 `kräver-omdubb` + 2 `kräver-slutkortsbygge` per marknad. HeyGen har 16 951 krediter — orsaken är butiksfilen, inte plånboken. |
+| ❌ | All copy pekar på butikens EGEN produktsida, ingen gissad länk | Blockerat: ingen produktlänk finns. Avbrutit hellre än gissat. |
+| ❌ | Media uppladdat i målkontot | Inte påbörjat — media laddas upp först när brand-swappen är gjord. |
+| ❌ | TVÅ kampanjer byggda: `TANKGUARD_SE_…` och `TANKGUARD_NO_…` | SE-skalet finns sedan tidigare (0 annonser). NO finns inte. |
+| ❌ | Svensk copy på svenska mot `/`, norsk copy på bokmål mot `/nb` | Blockerat på länken. |
+| ✅ | Allt skapat PAUSED, status explicit på alla tre nivåer | Inget skapat. Det befintliga skalet är PAUSED på alla tre nivåer och rördes inte. |
+| ✅ | Tillbakaläst ur Meta: sida, pixel, budget, länk och status stämmer | Skalet tillbakaläst: pixel `2196132151319625` ✓, budget `100000` ✓, geo SE ✓, PAUSED på kampanj + fyra adsets ✓. Länk saknas eftersom annonser saknas. |
+| ❌ | VA:n har sin granskningslista och vet att hon sätter ACTIVE | Ingen granskningslista — det finns inget att granska förrän kampanjen har annonser. |
+| ✅ | state + FAS2.md uppdaterade, pushat | `factory/state/tankguard--tankguard.json`, `factory/FAS2.md`, `products/tankguard/batch-log.md`, produktfilen. |
+
+**Sammanfattning:** stegen som bara läser är klara och dokumenterade. Stegen som
+skriver står på en enda saknad fil — `factory/butiker/tankguard.yaml`.
