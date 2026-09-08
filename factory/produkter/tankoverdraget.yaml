@@ -288,7 +288,7 @@ meta:
   ad_account_id: "915422744950975"
   # Sidan skapar VA:n i Business Manager; pixeln skapas av meta-setup.mjs vid
   # "Store ready".
-  page_id: "61594435402676"   # från VA:n 2026-09-08 — EJ verifierbar via API: syns inte bland MagiBorsten-företagets sidor (owned_pages/client_pages). Verifiera i BM innan första annonsen.
+  page_id: "1399193996606775"   # "TankGuard", verifierad 2026-09-08 i MagiBorsten-företagets client_pages (första id:t VA:n gav, 61594435402676, var fel)
   pixel_id: "2196132151319625"
   creative_prefix: "TankGuard"
   testbudget_per_dag: 1000

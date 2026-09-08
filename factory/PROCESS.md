@@ -89,12 +89,15 @@ Lärdomar från bygget 2026-09-08 (API 2025-07, alla mätta):
   `review_date`). Recensioner importeras därför ENBART via appens CSV-import
   (fas 3) — `tools/judgeme-import.mjs` stoppar numera utan `--utan-datum`.
 - Metasidan VA:n skapar ska ligga I företaget (Business settings → Pages →
-  Add → Create a new Page, som HeimGuard 1262406533629248). Verifiera
-  Page ID:t med `GET /<business_id>/owned_pages` — ett id som inte syns där
-  går inte att läsa via API (`GET /<page_id>` → kod 100/33) och får inte
-  användas för annonser förrän sidan är tillagd i BM (TankGuard 2026-09-08:
-  id 61594435402676 syntes inte i MagiBorsten). Pixelns `last_fired_time`
-  saknas tills WeTracked skickat första eventet — så syns om kopplingen lever.
+  Add, som HeimGuard 1262406533629248). Verifiera Page ID:t mot BÅDA
+  listorna `GET /<business_id>/owned_pages` och `client_pages` — en sida
+  som VA:n skapat på sitt eget konto och delat in hamnar i `client_pages`
+  (TankGuard 1399193996606775, 2026-09-08). `GET /<page_id>` direkt går
+  inte med rutinernas token (kräver `pages_read_engagement`, kod 100) —
+  det säger inget om sidan. Ett id som saknas i båda listorna är fel
+  (VA:ns första id 61594435402676 samma dag) och får inte användas i
+  annonser. Pixelns `last_fired_time` saknas tills WeTracked skickat
+  första eventet — så syns om kopplingen lever.
 - Discord: boten kan inte skapa servrar (`POST /guilds` → 20001, mätt
   2026-09-08). VA:n skapar servern och auktoriserar boten via länken
   `discord.mjs` skriver ut utan `--guild`. Skickar hon en invite-länk
