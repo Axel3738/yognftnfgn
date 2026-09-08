@@ -10,3 +10,8 @@
 601102148404312  # husbils-termoskydd — pris oläst; ankare Hindermann 1 565, golv CDON 1 529 ÖVER oss
 601101297217685  # fjällskrapa sladdlös (18 USD, 43 rec) — MEDIUM; material avgör
 601103333430208  # hönsgårdshuv (21,60 USD, 127 rec) — G7 under golvet; ankare Kellfri 1 488
+601100060543863  # motorlås utombordare rostfritt (våg 3, 0 DTC) — ankare Seatec 1 129 / Bema 1 754; Biltema 299 golv; pris oläst
+602472961667889  # teleskopisk stångsåg manuell (våg 3, $26, 35 rec) — ankare Fiskars UPX86 1 395 i lager; 1 DTC
+601104861575272  # takrännerensningssats till lövblås (våg 3, 0 säljare) — OCTOBER; pris oläst
+601099536149911  # stormband husvagnsmarkis Fiamma-kompatibelt (våg 3, 0 säljare) — pris oläst
+601101190088186  # överdrag utomhuspizzaugn Ooni-form (våg 3, 0 säljare) — pris oläst
