@@ -11,13 +11,32 @@ Du levererar: färdiga dubbade videor per marknad, zippade i chatten.
 Fråga med AskUserQuestion om något av detta saknas: **marknader** och **priser**
 (eller beskedet att priser ska strykas/ersättas med t.ex. "23 % rabatt").
 
-## Två järnregler (brutna = pengar eller förtroende förlorat)
+## Tre järnregler (brutna = pengar eller förtroende förlorat)
 
 1. **Rendera ALDRIG före proofread.** Rendering drar HeyGen-credits, proofread är gratis.
    Transkriptet ska vara lokaliserat, verifierat och godkänt INNAN generate anropas.
 2. **Skanna ALLTID källvideon efter inbränd text före leverans.** HeyGen översätter bara
    ljudet — svensk text i bild följer med oöversatt. Hittas text: täck och ersätt med
    lokaliserade captions. Annars levereras inga captions (captions är opt-in).
+3. **Kör ALLTID röstkollen på varje renderad video före leverans** (Axels regel
+   2026-09-08: ingen video går ut med keff röst). Proofread läser TEXTEN och säger
+   ingenting om hur rösten låter.
+
+   ```bash
+   python3 pipeline/rostkoll.py --mapp final/ --kallmapp original/ --srtmapp srt-fixed/
+   ```
+
+   Gratis, bara ffmpeg lokalt. Fångar tyst spår, längddrift mot källan, avhugget
+   slut och tappat tal. **En video med ❌ levereras inte** — rendera om den i
+   HeyGens UI eller stryk den ur batchen. Ladda aldrig upp den ändå.
+
+   ⚠️ **Grönt betyder "inga mätbara fel", inte "godkänd".** ffmpeg hör inte
+   skillnad på tal och musik, så bara det som går att mäta mäts. Lyssna själv på
+   minst den video som ska bära mest spend, och redovisa i leveransen att du gjort det.
+
+   ⚠️ **Är källan nästan bara musik ska videon inte översättas alls** — HeyGen har
+   ingen röst att klona och hittar på en. Det var därför `PD_EXTRA` hoppades över
+   i motorhöljesbatchen. Röstkollen flaggar det när källvideon anges.
 
 ## Miljö
 
