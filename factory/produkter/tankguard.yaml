@@ -1,0 +1,67 @@
+# TANKGUARD — OPS-butik nr 2 (IBC-tanköverdrag).
+#
+# ⚠️ DEN HÄR FILEN ÄR INTE KOMPLETT ÄNNU. Den skapades 2026-09-08 för Uppdrag A
+# i factory/FAS2.md (brand-detektorn), som behöver källkopplingen nedan för att
+# veta vilka av Bäverbutikens annonser som hör till butiken. Butiksbygget gjordes
+# utanför repot och lämnade aldrig efter sig någon produktfil.
+#
+# Ifyllt och verifierat 2026-09-08: produkt, ekonomi (ur källsidans
+# products/<handle>.json), kalla-blocket (ur MagiBorsten 1867947880635861), meta.
+# SAKNAS och fylls av /ny-ops-körningen som dokumenterar butiken:
+# varianter, media, beskrivning, vinkel, malgrupp, problem, benefits, features,
+# offer (paketnivåer + Q4-bonus), reviews, faq, leveranstid, garantier,
+# leverantor, ekonomi.inkopskostnad, ekonomi.valuta, brand.domanideer.
+# Hitta inte på dem — hämta dem ur källan och ur Axels COGS-underlag.
+
+produkt:
+  namn: "IBC-tanköverdrag 1000 L – Stoppar Alger & UV"
+  id: tankguard
+
+brand:
+  namn: "TankGuard"
+
+ekonomi:
+  # Källbutikens priser 2026-09-08 (baverbutiken.se). OPS-butikens egna priser
+  # sätts i butiksbygget — kopiera dem inte härifrån utan att räkna om.
+  pris: 489
+  jamforpris: 636
+  # ⚠️ inkopskostnad är INTE ifylld. SE-kampanjen heter "BE ROAS 1.51", vilket
+  # baklänges ger ~165 kr — det är en HÄRLEDNING ur ett kampanjnamn, inte en
+  # mätning, och break-even får aldrig vila på en gissning. Hämta talet ur
+  # Axels COGS-underlag innan någon dom fattas om annonserna.
+
+# KÄLLKOPPLINGEN — vilken Bäverbutiks-produkt och vilka Bäverbutiks-annonser
+# TankGuard är byggd av. Maskinläsbart (factory/FAS2.md, Uppdrag A).
+# Läses av factory/brand-detektor.mjs.
+# ⚠️ Blandas lätt ihop med `kallor:` nedan — den är produktens Drive-mapp.
+kalla:
+  butik: "baverbutiken.se"
+  produkt_id: "16454828654941"
+  produkt_handle: "ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  produkt_url: "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  # KÄLLAN = MagiBorsten (Bäverbutiken SE). MÅLET står i meta.ad_account_id
+  # längst ned = MagiBorsten DK (OPS Factory). Namnen är nästan lika, kontona är
+  # olika verksamheter — kontrollera alltid på id, aldrig på kontonamnet.
+  annonskonto: "1867947880635861"
+  annonsprefix: "IBC"
+  kampanj_id: "120250001079150291"
+  kampanj: "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28"
+  # Transkripten ligger under svenskt slug i video-batches och under norskt slug
+  # i notion-batches — samma produkt, två filnamnsformer.
+  srt_slug:
+    - "ibc"
+    - "ibc-tanktrekk"
+
+kallor:
+  drive_mapp: ""
+
+meta:
+  # ALLA OPS-butiker (SE och NO) kör på det gemensamma annonskontot
+  # "MagiBorsten DK" 915422744950975 (Axels beslut 2026-09-07). Kampanjnamnen
+  # prefixas med brandet (TANKGUARD_…) så datan går att skära per butik.
+  # ⚠️ Förväxla ALDRIG med MagiBorsten 1867947880635861 (Bäverbutiken SE) ovan.
+  ad_account_id: "915422744950975"
+  page_id: ""                 # kan inte skapas via API — väntar på Meta-sidan
+  pixel_id: ""                # skapas när sidan finns
+  creative_prefix: "TankGuard"
+  testbudget_per_dag: 1000

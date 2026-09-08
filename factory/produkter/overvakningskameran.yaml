@@ -177,6 +177,26 @@ leverantor:
   url: "https://www.temu.com/goods.html?goods_id=601100938731214"
   anteckning: "Härledd ur SKU TEMU-601100938731214. Inköp per Axels quote 2026-09-05: 27,3 USD/st inkl frakt (2-pack 49,2 USD, 3-pack 72,3 USD). Kontrollera ledtid och lager före launch."
 
+# KÄLLKOPPLINGEN — maskinläsbart, så brand-detektorn vet vilka av Bäverbutikens
+# annonser som hör till den här butiken (factory/FAS2.md, Uppdrag A).
+# Verifierat 2026-09-08: produkt-id och pris ur baverbutiken.se/products/<handle>.json,
+# kampanj-id och annonsprefix ur MagiBorsten 1867947880635861.
+# ⚠️ Blandas lätt ihop med `kallor:` nedan — den är produktens Drive-mapp.
+kalla:
+  butik: "baverbutiken.se"
+  produkt_id: "16427870060893"
+  produkt_handle: "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+  produkt_url: "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+  # KÄLLAN. Målet står i meta.ad_account_id längst ned — namnen är nästan lika,
+  # kontona är olika verksamheter. Kontrollera alltid på id.
+  annonskonto: "1867947880635861"
+  annonsprefix: "Overvakningskamera"
+  kampanj_id: "120249989799680291"
+  kampanj: "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21"
+  srt_slug:
+    - "overvakningskamera"
+    - "overvakingskamera"
+
 kallor:
   # Produktens Drive-mapp (annonser + recensions-CSV). Axel klistrar in länken —
   # tills dess importeras recensionerna ur produktfilen ovan.

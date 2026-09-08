@@ -70,6 +70,93 @@ Klassa varje annons: `ren` / `bara-copy` / `kräver-omdubb` / `kräver-slutkorts
 **Klart när:** en rapport per OPS-produkt listar varje källannons med sin dom på alla
 fyra ytor, och `factory/produkter/<id>.yaml` bär källkopplingen maskinläsbart.
 
+### ✅ BYGGT 2026-09-08 — TankGuard är kört
+
+**34 källannonser i `IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28`, alla ACTIVE.
+Alla fyra ytor lästa på alla 34, plus ögongranskade.** Rapport:
+`factory/output/tankguard/brand-detektor.md`.
+
+| Dom | Antal | Vilka |
+|---|---|---|
+| `ren` | 20 | alla bildannonserna (BOF ×6, RV ×4, CS ×3, PD ×4, GT_2, CO, SP_2) |
+| `kräver-omdubb` | 11 | CS_1_H2/H3, GT_1_H1–H3, PD_1_H1–H3, SP_1_H1–H3 |
+| `kräver-slutkortsbygge` | 2 | GT_3_H1, PD_3_H1 |
+| `okänd` | 1 | PD_Extra — inget transkript finns, talet är oläst |
+
+- **Yta 1 (copy): 0 träffar.** Ingen av de 34 nämner Bäverbutiken i text.
+  Länken gör det däremot i alla 34 (se nedan).
+- **Yta 2 (talet): 11 av 13 transkript** säger "Bäverbutiken" högt. GT_3_H1 och PD_3_H1
+  är rena i talet. PD_Extra saknar transkript helt.
+- **Yta 3 (inbränd text): 13 av 14 videor.** 11 har det som vanlig undertext, 2 har ett
+  byggt slutkort med ordmärke, symbol och en mockup av produktsidan.
+- **Yta 4 (bildattribution): 0 av 20.** Inga recensionskort tillskriver butiken.
+- **Enda kvarvarande okända ytan:** talet i `IBC_PD_Extra` (10 s). Billigaste stängningen
+  är att lyssna på den eller fråga redigeraren — inte att dubba om den i onödan.
+
+### Så här kör du den
+
+```bash
+node factory/brand-detektor.mjs --produkt tankguard --hamta   # hämtar media + OCR:ar
+node factory/brand-detektor.mjs --produkt tankguard           # kör om på sparad OCR
+```
+
+`--hamta` hämtar media, drar frames och OCR:ar. Utan flaggan läses den sparade OCR:en i
+`factory/output/<id>/brand-ocr.json` — samma domar, ingen nedladdning. 0 kr, 0 krediter,
+läser bara. Rapporten hamnar i `factory/output/<id>/brand-detektor.md` (+ `.json`).
+
+Delarna: `factory/brandord.mjs` (EN matchare för alla fyra ytor),
+`factory/brand-text.py` (lokal OCR, kräver `pip install rapidocr-onnxruntime`),
+`factory/test/brand-detektor.test.mjs` (27 tester, ligger nu i `npm test`).
+
+**Källkopplingen ligger nu i `kalla:`-blocket** i produktfilen — `annonsprefix`,
+`produkt_id`, `annonskonto`, `kampanj_id` och `srt_slug`. Mallen står i
+`factory/produkt-mall.yaml`. ⚠️ Förväxla inte `kalla:` (källbutiken) med `kallor:`
+(produktens Drive-mapp) — de ligger bredvid varandra i filen.
+
+**Ögongranskningen är ett eget lager: `factory/output/<id>/brand-syn.json`.**
+OCR ser varken en logotyp utan text eller en textrad som ligger mellan två frames.
+Detektorn väger ihop lagren med en regel: **en träff från endera står, men `ren` kräver
+att den som läste inte hittade något.** Ögat får aldrig radera en maskinträff, och
+tvärtom — ser de olika blir svaret "granska igen", aldrig "ren".
+
+**Sex saker som kostade tid, så nästa körning slipper dem:**
+1. `/{video_id}?fields=source` svarar **(#10) permission** — men `act_<id>/advideos`
+   lämnar ut samma `source`. Samma lärdom stod redan i `pipeline/no-drive-fran-meta.py`.
+   Lägg till `title=<annonsprefix>` så blir det EN sida i stället för hela biblioteket.
+2. Creativens `video_id` på toppnivå är **fel objekt**. Det är
+   `object_story_spec.video_data.video_id` som finns i `advideos` (14 av 14 på IBC).
+3. Transkripten ligger under **både svenskt och norskt slug** — `ibc_PD_1_H1` i
+   `video-batches/`, `ibc-tanktrekk_GT_3_H1` i `notion-batches/`. Därför är `srt_slug`
+   en lista. Sök i hela `market-expansion/`, inte bara i `no/video-batches/`.
+4. OCR läser fel på slutkortens ordmärke ("bavobutiken", "baberbutiken", "Bavlbutiken").
+   Fast ordlista missar dem tyst. Fuzzy-passet i `brandord.mjs` fångade **alla** — och
+   hittade dessutom en 35:e felhörning i SRT-korpuset som FAS2:s ordlista missade
+   ("Babe-butiken", `motocentric_GT_1_H1`). Ta aldrig bort fuzzy-passet.
+5. ⚠️ **`qa-frames.py --tathet 1.5` är ett stickprov, inte en mätning.** Mätt på
+   `IBC_SP_1_H2`: brandraden stod på skärmen 10,75–11,75 s och låg helt i glappet mellan
+   frame 10,50 s och 12,00 s. OCR:en friade annonsen, ögat hittade raden direkt. Det var
+   ett SAMPLINGSFEL, inte ett OCR-fel. Detektorn kör därför 0,3 s — och `qa-frames.py`
+   har fått `--max-frames`, för taket på 60 glesade tyst ut 0,3 s till 0,6 s.
+6. ⚠️ **`creative.thumbnail_url` är 64×64 px** (mätt i MagiBorsten 2026-09-08). Den får
+   aldrig bli OCR-underlag — en bildannons läst på en 64-pixelsbild kommer tillbaka
+   "ren". Saknas `image_url` hämtas bilden ur `act_<id>/adimages` på hashen i stället.
+
+⚠️ **Länken räknas inte in i klassningen.** Varje källannons pekar på källbutiken, så
+gör den det till dom blir varenda annons `bara-copy` och tabellen slutar säga något.
+Länkbytet ingår i kampanjbygget (Uppdrag B) och står som en egen rad i rapporten.
+
+⚠️ **`ren` betyder brandfri — inte "går att köra som den är".** De bildannonser som är
+fria från Bäverbutikens namn bär ändå källbutikens **villkor**: 489 kr / 636 kr,
+23 % rabatt, fri frakt över 300 kr, Klarna, 30 dagars öppet köp, "10 recensioner" och
+namngivna Judge.me-kunder. Rapporten listar dem i en egen tabell (utanför FAS2:s fyra
+ytor). De måste bytas mot OPS-butikens egna villkor innan något körs — annars lovar
+TankGuard Bäverbutikens fraktgräns och visar Bäverbutikens recensenter.
+
+⚠️ **Domen är den DYRASTE ytan, inte den enda.** Rapporten har därför en egen kolumn
+"Måste åtgärdas" som räknar upp alla ytor. `IBC_SP_1_H2` är `kräver-omdubb` **och** bär
+en inbränd brandrad; läser någon bara domen kommer den tillbaka från HeyGen med
+Bäverbutiken kvar i bild.
+
 ---
 
 ## Uppdrag A2 — Brand-swap av video (väntar på HeyGen-krediter)
@@ -91,6 +178,21 @@ fyra ytor, och `factory/produkter/<id>.yaml` bär källkopplingen maskinläsbart
 **Fallgropar:** järnreglerna i `.claude/skills/translate/SKILL.md` gäller oförändrat —
 rendera aldrig före proofread (rendering drar krediter, proofread är gratis), skanna
 alltid källvideon efter inbränd text före leverans, spara session-ID till disk direkt.
+
+**Mätt på TankGuards 14 videor 2026-09-08 (brand-detektorns ögongranskning) — två helt
+olika jobb som lätt förväxlas:**
+- **11 videor har brandet som vanlig inbränd undertext** mitt i bild, i samma vita
+  captionplatta som resten av talet ("från bävöbutiken.", "från bäberbutiken."). Där
+  finns INGET slutkort alls — de sista framesen är produktbild med vanlig undertext.
+  Jobbet är `pipeline/no-precis.py` på en enda textrad, inte ett slutkortsbygge.
+- **2 videor har ett riktigt byggt slutkort** (`IBC_PD_3_H1` 22,5–24,4 s,
+  `IBC_GT_3_H1` 16,5–17,8 s): ordmärket i vita versaler med guldstreck på svart
+  banderoll, **butikens symbol** (rött bäverhuvud som gnager på en gul gren) och under
+  det en **mockup av produktsidan** med bildkarusell, stjärnbetyg och priset
+  "636 kr 489 kr". Där är det `lager.py`-jobbet — ordmärke, symbol, titel, badge OCH
+  pris — och symbolen är osynlig för all textbaserad detektion.
+- ⚠️ En träff sent i filmen betyder alltså INTE slutkort. Positionen kan inte skilja
+  dem åt; bara ett öga kan.
 
 ---
 

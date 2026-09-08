@@ -1,0 +1,425 @@
+{
+ "produkt": "tankguard",
+ "datum": "2026-09-08",
+ "metod": "Ögongranskning av exakt samma frames och bildannonser som OCR:en läste — 11 parallella granskare, blinda för maskinens dom, plus ett motprov på varje oenighet (workflow brand-detektor-synkontroll, 13 agenter). 34 av 34 annonser täckta.",
+ "varfor": "OCR ser varken en logotyp utan text eller en textrad som ligger mellan två frames. Ögonpasset är det enda som fångar dem — därför sparas det i repot i stället för att göras om varje gång.",
+ "annonser": {
+  "IBC_CS_1_H2": {
+   "yta3": {
+    "syns": true,
+    "var": "inbränd text",
+    "ordagrant": "Bäver butiken.",
+    "fil": "frame_025.jpg",
+    "sekund": "30.00s",
+    "logotyp_utan_text": false,
+    "notis": "Butiksnamnet står som inbränd bildtext näst sist; ingen bäverlogotyp eller sajtskärmdump finns i videon."
+   }
+  },
+  "IBC_CS_1_H3": {
+   "yta3": {
+    "syns": true,
+    "var": "inbränd text",
+    "ordagrant": "Bävlbutiken.",
+    "fil": "frame_024.jpg",
+    "sekund": "28.50s",
+    "logotyp_utan_text": false,
+    "notis": "Butiksnamnet i felstavad form som inbränd bildtext; ingen bäverlogotyp eller sajtskärmdump finns i videon."
+   }
+  },
+  "IBC_GT_1_H1": {
+   "yta3": {
+    "syns": true,
+    "var": "inbränd text",
+    "ordagrant": "från bävöbutiken. / från bävöbutiken.",
+    "fil": "IBC_GT_1_H1_frames/frame_020.jpg",
+    "sekund": "22.50s",
+    "logotyp_utan_text": false,
+    "notis": "Inbränd undertext, felstavad variant av Bäverbutiken, avslutar meningen \"IBC-tanköverdrag\" från frame_019. Samma inbrända mening upprepas i slutet, efter \"IBC-tanköverdrag\" i frame_034."
+   }
+  },
+  "IBC_GT_1_H2": {
+   "yta3": {
+    "syns": true,
+    "var": "inbränd text",
+    "ordagrant": "från bävöbutiken. / från bäbebutiken.",
+    "fil": "IBC_GT_1_H2_frames/frame_019.jpg",
+    "sekund": "21.00s",
+    "logotyp_utan_text": false,
+    "notis": "Inbränd undertext, felstavad variant av Bäverbutiken, följer på \"IBC-tanköverdrag\" i frame_018. Andra förekomsten i samma video, här stavad bäbebutiken, verifierad i uppförstorad beskärning."
+   }
+  },
+  "IBC_GT_1_H3": {
+   "yta3": {
+    "syns": true,
+    "var": "inbränd text",
+    "ordagrant": "från bävöbutiken. / från vävebutiken.",
+    "fil": "frame_020.jpg",
+    "sekund": "24.00s",
+    "logotyp_utan_text": false,
+    "notis": "Inbränd undertext mitt i bilden, stavad bävöbutiken men klart läsbar som butikens namn. Samma mening upprepas senare i videon, här stavad vävebutiken."
+   }
+  },
+  "IBC_GT_3_H1": {
+   "yta3": {
+    "syns": true,
+    "var": "logotyp + skärmdump",
+    "ordagrant": "BÄVERBUTIKEN / IBC-TANKÖVERDRAG 1000 L - STOPPAR ALGER & UV / 10 recensioner / 636 kr 489 kr / Handla nu",
+    "fil": "frame_016.jpg",
+    "sekund": "16.50s",
+    "logotyp_utan_text": false,
+    "notis": "Slutkortets logotyp: röd bäver med slang plus ordbild och svensk flagga, syns även i frame_017 (17.82s). Mockup av butikens produktsida under logotypen, med bildkarusell, betyg, jämförpris och köpknapp."
+   }
+  },
+  "IBC_PD_1_H1": {
+   "yta3": {
+    "syns": true,
+    "var": "inbränd text",
+    "ordagrant": "från bäberbutiken.",
+    "fil": ".scratch/brand-detektor/IBC/media/IBC_PD_1_H1_frames/frame_033.jpg",
+    "sekund": "42.00s",
+    "logotyp_utan_text": false,
+    "notis": "Inbränd undertext i den avslutande meningen \"Ett IBC-tanköverdrag / från bäberbutiken.\" — butiksnamnet stavat med b i stället för v.",
+    "olasligt": [
+     {
+      "fil": ".scratch/brand-detektor/IBC/media/IBC_PD_1_H1_frames/frame_034.jpg",
+      "sekund": "43.50s",
+      "notis": "Vit textbalk i nedre bildkanten från 43,50s till slutet — bara toppen av bokstäverna syns, texten är oläslig även i källvideon."
+     },
+     {
+      "fil": ".scratch/brand-detektor/IBC/media/IBC_PD_1_H1_frames/frame_004.jpg",
+      "sekund": "1.50s",
+      "notis": "Liten etikett/dataskylt på IBC-tankens högra sida i hooken — för suddig för att läsas."
+     }
+    ]
+   }
+  },
+  "IBC_PD_1_H2": {
+   "yta3": {
+    "syns": true,
+    "var": "inbränd text",
+    "ordagrant": "från bäberbutiken.",
+    "fil": ".scratch/brand-detektor/IBC/media/IBC_PD_1_H2_frames/frame_032.jpg",
+    "sekund": "40.50s",
+    "logotyp_utan_text": false,
+    "notis": "Inbränd undertext i den avslutande meningen \"Ett IBC-tanköverdrag / från bäberbutiken.\" — butiksnamnet stavat med b i stället för v.",
+    "olasligt": [
+     {
+      "fil": ".scratch/brand-detektor/IBC/media/IBC_PD_1_H2_frames/frame_034.jpg",
+      "sekund": "43.50s",
+      "notis": "Samma vita textbalk i nedre bildkanten som i H1, från 43,50s till slutet — oläslig."
+     },
+     {
+      "fil": ".scratch/brand-detektor/IBC/media/IBC_PD_1_H2_frames/frame_001.jpg",
+      "sekund": "0.00s",
+      "notis": "Liten etikett/dataskylt på IBC-tankens högra sida i hooken — för suddig för att läsas."
+     }
+    ]
+   }
+  },
+  "IBC_PD_1_H3": {
+   "yta3": {
+    "syns": true,
+    "var": "inbränd text",
+    "ordagrant": "från Bäberbutiken.",
+    "fil": "frame_033.jpg",
+    "sekund": "42.00s",
+    "logotyp_utan_text": false,
+    "notis": "Inbränd undertext mitt i bild, stavad \"Bäberbutiken\" (b istället för v) — föregås av \"Ett IBC-tanköverdrag\" i frame_032 vid 40.50s.",
+    "olasligt": [
+     {
+      "fil": "frame_034.jpg",
+      "sekund": "43.50s",
+      "notis": "Vit textruta i nedersta bildkanten (även frame_035) — bara bokstavstopparna ryms i bild, går inte att läsa."
+     }
+    ]
+   }
+  },
+  "IBC_PD_3_H1": {
+   "yta3": {
+    "syns": true,
+    "var": "slutkort + logotyp + skärmdump",
+    "ordagrant": "BÄVERBUTIKEN / IBC-TANKÖVERDRAG 1000 L - STOPPAR ALGER & UV | 10 recensioner | 636 kr  489 kr | Handla nu",
+    "fil": "frame_020.jpg",
+    "sekund": "22.50s",
+    "logotyp_utan_text": true,
+    "notis": "Slutkortet ligger på frame_020, frame_021 och frame_022 (22.50s–24.43s) och bär ordmärket i vita versaler med guldstreck under, på svart banderoll med svensk flagga. Butikens symbol i slutkortet: rött bäverhuvud som gnager på en gul gren, till vänster om ordmärket. Finns i frame_020–022. Mockup av butikens produktsida under logotypen: bildkarusell med punkter, miniatyrbild, förstoringsglas, stjärnbetyg och överstruket pris. Finns i frame_020–022."
+   }
+  },
+  "IBC_PD_Extra": {
+   "yta3": {
+    "syns": false,
+    "var": "ingenstans",
+    "ordagrant": "",
+    "fil": "IBC_PD_Extra_frames/frame_001.jpg-frame_012.jpg",
+    "sekund": "",
+    "logotyp_utan_text": false,
+    "notis": ""
+   }
+  },
+  "IBC_SP_1_H1": {
+   "yta3": {
+    "syns": true,
+    "var": "inbränd text",
+    "ordagrant": "från Bäbebutiken.",
+    "fil": "IBC_SP_1_H1_frames/frame_013.jpg",
+    "sekund": "12.00s",
+    "logotyp_utan_text": false,
+    "notis": "Inbränd undertext, syns cirka 12,0-13,4 s; meningen är \"Sen skaffar jag ett IBC-tanköverdrag från Bäbebutiken.\"",
+    "olasligt": [
+     {
+      "fil": "IBC_SP_1_H1_frames/frame_022.jpg",
+      "sekund": "25.50s",
+      "notis": "Vit överlagringsremsa med grön rundad form längs nedersta bildkanten cirka 24,8-27,3 s (även frame_023.jpg, 27,00s), bara elva pixlar hög och oläslig."
+     }
+    ]
+   }
+  },
+  "IBC_SP_1_H3": {
+   "yta3": {
+    "syns": true,
+    "var": "inbränd text",
+    "ordagrant": "från Bäbebutiken.",
+    "fil": "IBC_SP_1_H3_frames/frame_012.jpg",
+    "sekund": "10.50s",
+    "logotyp_utan_text": false,
+    "notis": "Texten står kvar till ca 11,7 s; slutkortet (frame_027-030) och övriga frames är rena."
+   }
+  },
+  "IBC_SP_1_H2": {
+   "yta3": {
+    "syns": true,
+    "var": "inbränd text",
+    "ordagrant": "från Bäbebutiken.",
+    "fil": "IBC_SP_1_H2.mp4 (syns inte i något av de 30 framesen)",
+    "sekund": "ca 10,6-11,9 s (finns ej i index.txt)",
+    "logotyp_utan_text": false,
+    "notis": "Ligger i luckan mellan frame_012 (10,50 s = IBC-tanköverdrag) och frame_013 (12,00 s = Tyget är tjockt) och hittades genom tät avsökning av mp4:n; slutkortet och alla 30 frames är i övrigt rena.",
+    "motprov": {
+     "haller": true,
+     "vad": "Påståendet HÅLLER. Källbutiken syns i annonsen.",
+     "fil": "IBC_SP_1_H2.mp4 (egna frames ur mp4:n; syns INTE i något av de 30 framesen i IBC_SP_1_H2_frames/)"
+    }
+   }
+  },
+  "IBC_BOF_1_1": {
+   "yta4": {
+    "syns": false,
+    "var": "ingenstans",
+    "ordagrant": "",
+    "fil": "IBC_BOF_1_1.jpg",
+    "sekund": "",
+    "logotyp_utan_text": false,
+    "notis": ""
+   }
+  },
+  "IBC_BOF_2_1": {
+   "yta4": {
+    "syns": false,
+    "var": "ingenstans",
+    "ordagrant": "",
+    "fil": "IBC_BOF_2_1.jpg",
+    "sekund": "",
+    "logotyp_utan_text": false,
+    "notis": ""
+   }
+  },
+  "IBC_BOF_3_1": {
+   "yta4": {
+    "syns": false,
+    "var": "ingenstans",
+    "ordagrant": "",
+    "fil": "IBC_BOF_3_1.jpg",
+    "sekund": "",
+    "logotyp_utan_text": false,
+    "notis": ""
+   }
+  },
+  "IBC_BOF_4_1": {
+   "yta4": {
+    "syns": false,
+    "var": "ingenstans",
+    "ordagrant": "",
+    "fil": "IBC_BOF_4_1.jpg",
+    "sekund": "",
+    "logotyp_utan_text": false,
+    "notis": ""
+   }
+  },
+  "IBC_BOF_5_1": {
+   "yta4": {
+    "syns": false,
+    "var": "ingenstans",
+    "ordagrant": "",
+    "fil": "IBC_BOF_5_1.jpg",
+    "sekund": "",
+    "logotyp_utan_text": false,
+    "notis": ""
+   }
+  },
+  "IBC_BOF_6_1": {
+   "yta4": {
+    "syns": false,
+    "var": "ingenstans",
+    "ordagrant": "",
+    "fil": ".scratch/brand-detektor/IBC/media/IBC_BOF_6_1.jpg",
+    "sekund": "",
+    "logotyp_utan_text": false,
+    "notis": ""
+   }
+  },
+  "IBC_CO_1_1": {
+   "yta4": {
+    "syns": false,
+    "var": "ingenstans",
+    "ordagrant": "",
+    "fil": ".scratch/brand-detektor/IBC/media/IBC_CO_1_1.jpg",
+    "sekund": "",
+    "logotyp_utan_text": false,
+    "notis": ""
+   }
+  },
+  "IBC_CS_2_1": {
+   "yta4": {
+    "syns": false,
+    "var": "ingenstans",
+    "ordagrant": "",
+    "fil": ".scratch/brand-detektor/IBC/media/IBC_CS_2_1.jpg",
+    "sekund": "",
+    "logotyp_utan_text": false,
+    "notis": ""
+   }
+  },
+  "IBC_CS_3_1": {
+   "yta4": {
+    "syns": false,
+    "var": "ingenstans",
+    "ordagrant": "",
+    "fil": ".scratch/brand-detektor/IBC/media/IBC_CS_3_1.jpg",
+    "sekund": "",
+    "logotyp_utan_text": false,
+    "notis": ""
+   }
+  },
+  "IBC_CS_4_1": {
+   "yta4": {
+    "syns": false,
+    "var": "ingenstans",
+    "ordagrant": "",
+    "fil": ".scratch/brand-detektor/IBC/media/IBC_CS_4_1.jpg",
+    "sekund": "",
+    "logotyp_utan_text": false,
+    "notis": ""
+   }
+  },
+  "IBC_GT_2_1": {
+   "yta4": {
+    "syns": false,
+    "var": "ingenstans",
+    "ordagrant": "",
+    "fil": ".scratch/brand-detektor/IBC/media/IBC_GT_2_1.jpg",
+    "sekund": "",
+    "logotyp_utan_text": false,
+    "notis": ""
+   }
+  },
+  "IBC_PD_2_1": {
+   "yta4": {
+    "syns": false,
+    "var": "ingenstans",
+    "ordagrant": "",
+    "fil": ".scratch/brand-detektor/IBC/media/IBC_PD_2_1.jpg",
+    "sekund": "",
+    "logotyp_utan_text": false,
+    "notis": ""
+   }
+  },
+  "IBC_PD_3_1": {
+   "yta4": {
+    "syns": false,
+    "var": "ingenstans",
+    "ordagrant": "",
+    "fil": ".scratch/brand-detektor/IBC/media/IBC_PD_3_1.jpg",
+    "sekund": "",
+    "logotyp_utan_text": false,
+    "notis": ""
+   }
+  },
+  "IBC_PD_4_1": {
+   "yta4": {
+    "syns": false,
+    "var": "ingenstans",
+    "ordagrant": "",
+    "fil": ".scratch/brand-detektor/IBC/media/IBC_PD_4_1.jpg",
+    "sekund": "",
+    "logotyp_utan_text": false,
+    "notis": ""
+   }
+  },
+  "IBC_PD_5_1": {
+   "yta4": {
+    "syns": false,
+    "var": "ingenstans",
+    "ordagrant": "",
+    "fil": ".scratch/brand-detektor/IBC/media/IBC_PD_5_1.jpg",
+    "sekund": "",
+    "logotyp_utan_text": false,
+    "notis": ""
+   }
+  },
+  "IBC_RV_1_1": {
+   "yta4": {
+    "syns": false,
+    "var": "ingenstans",
+    "ordagrant": "",
+    "fil": ".scratch/brand-detektor/IBC/media/IBC_RV_1_1.jpg",
+    "sekund": "",
+    "logotyp_utan_text": false,
+    "notis": ""
+   }
+  },
+  "IBC_RV_2_1": {
+   "yta4": {
+    "syns": false,
+    "var": "ingenstans",
+    "ordagrant": "",
+    "fil": ".scratch/brand-detektor/IBC/media/IBC_RV_2_1.jpg",
+    "sekund": "",
+    "logotyp_utan_text": false,
+    "notis": ""
+   }
+  },
+  "IBC_RV_3_1": {
+   "yta4": {
+    "syns": false,
+    "var": "ingenstans",
+    "ordagrant": "",
+    "fil": ".scratch/brand-detektor/IBC/media/IBC_RV_3_1.jpg",
+    "sekund": "",
+    "logotyp_utan_text": false,
+    "notis": ""
+   }
+  },
+  "IBC_RV_4_1": {
+   "yta4": {
+    "syns": false,
+    "var": "ingenstans",
+    "ordagrant": "",
+    "fil": ".scratch/brand-detektor/IBC/media/IBC_RV_4_1.jpg",
+    "sekund": "",
+    "logotyp_utan_text": false,
+    "notis": ""
+   }
+  },
+  "IBC_SP_2_1": {
+   "yta4": {
+    "syns": false,
+    "var": "ingenstans",
+    "ordagrant": "",
+    "fil": ".scratch/brand-detektor/IBC/media/IBC_SP_2_1.jpg",
+    "sekund": "",
+    "logotyp_utan_text": false,
+    "notis": ""
+   }
+  }
+ }
+}

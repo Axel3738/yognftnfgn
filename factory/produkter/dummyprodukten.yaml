@@ -99,6 +99,20 @@ leverantor:
   url: "https://exempel-supplier.com/produkt/neck-stretcher-123"
   anteckning: "Ledtid 8–10 arbetsdagar, ingen MOQ"
 
+# Källkopplingen. Exempelvärden — ingen riktig produkt, inga riktiga annonser.
+# Formatet är det brand-detektorn läser (factory/FAS2.md, Uppdrag A).
+kalla:
+  butik: "baverbutiken.se"
+  produkt_id: "0000000000000"
+  produkt_handle: "nackmagneten-exempel"
+  produkt_url: "https://exempel.se/products/nackmagneten-exempel"
+  annonskonto: "1867947880635861"
+  annonsprefix: "Nackmagnet"
+  kampanj_id: ""
+  kampanj: ""
+  srt_slug:
+    - "nackmagnet"
+
 meta:
   ad_account_id: ""
   page_id: ""

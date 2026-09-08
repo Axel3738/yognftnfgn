@@ -3,6 +3,7 @@
 # mot sin brief. Utan det här steget blir brief-kontrollen en gissning.
 #
 #   python3 tools/qa-frames.py <fil.mp4|bild.jpg> [--ut <mapp>] [--tathet 1.5]
+#                              [--max-frames 60]
 #
 # Video: tata frames genom hookens forsta 3 sekunder (0,0 / 0,5 / 1,0 …) och
 # sedan var {tathet} sekund. Hooken avgor om annonsen fungerar, sa den granskas
@@ -62,7 +63,7 @@ def upplosning(ffmpeg, fil):
     return 'okand'
 
 
-def tidpunkter(langd, tathet):
+def tidpunkter(langd, tathet, max_frames=MAX_FRAMES):
     ut, t = [], 0.0
     while t < min(HOOK_SEK, langd):
         ut.append(round(t, 2)); t += HOOK_STEG
@@ -72,10 +73,10 @@ def tidpunkter(langd, tathet):
     if langd > 0.5:
         ut.append(round(langd - 0.2, 2))     # sista bilden: CTA och pris bor synas
     ut = sorted(set(ut))
-    if len(ut) > MAX_FRAMES:                  # gles ut mitten, behall hooken
+    if len(ut) > max_frames:                  # gles ut mitten, behall hooken
         hook = [t for t in ut if t <= HOOK_SEK]
         resten = [t for t in ut if t > HOOK_SEK]
-        steg = max(1, len(resten) // (MAX_FRAMES - len(hook)))
+        steg = max(1, len(resten) // max(1, max_frames - len(hook)))
         ut = hook + resten[::steg]
     return ut
 
@@ -85,6 +86,12 @@ def main():
     ap.add_argument('fil')
     ap.add_argument('--ut', default=None)
     ap.add_argument('--tathet', type=float, default=1.5)
+    # Taket glesar ut mitten NAR det slar till. For en manniska som granskar en
+    # brief ar det ratt (60 bilder racker). For en maskinell avsokning ar det en
+    # tyst utglesning: --tathet 0.3 pa en 48 s video ger 166 punkter, taket
+    # halverar till 86 och intervallet blir 0,6 s utan att nagon sager till.
+    # Hoj taket nar du skannar, sank aldrig tatheten for att komma under det.
+    ap.add_argument('--max-frames', type=int, default=MAX_FRAMES)
     a = ap.parse_args()
 
     fil = Path(a.fil)
@@ -112,7 +119,7 @@ def main():
         ffmpeg, ffprobe = ffmpeg_bin()
         langd = videolangd(ffmpeg, ffprobe, fil)
         upp = upplosning(ffmpeg, fil)
-        punkter = tidpunkter(langd, a.tathet)
+        punkter = tidpunkter(langd, a.tathet, a.max_frames)
         for i, t in enumerate(punkter, 1):
             mal = ut / f'frame_{i:03d}.jpg'
             r = subprocess.run([ffmpeg, '-y', '-ss', str(t), '-i', str(fil),
