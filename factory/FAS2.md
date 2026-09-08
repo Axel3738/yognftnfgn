@@ -203,6 +203,19 @@ olika jobb som lätt förväxlas:**
 - ⚠️ En träff sent i filmen betyder alltså INTE slutkort. Positionen kan inte skilja
   dem åt; bara ett öga kan.
 
+**Vad de två jobben konkret ska producera för TankGuard** (spikat 2026-09-08 när
+butikens eget erbjudande blev känt — se `offer:` i produktfilen):
+
+| Jobb | Antal | Verktyg | Vad som byts |
+|---|---|---|---|
+| Undertextraden | 11 videor | `pipeline/no-precis.py` + HeyGen-omdubb | ETT ord i ETT band: "från bäverbutiken" → "från TankGuard". Ingen prisändring — de elva har inget pris i bild. |
+| Slutkortet | 2 videor (`IBC_GT_3_H1` 16,5–17,8 s, `IBC_PD_3_H1` 22,5–24,4 s) | `market-expansion/no/notion-batches/2026-09-05-video-batmotor/lager.py` | ordmärket · **bäversymbolen** (rött huvud som gnager på en gul gren — måste bort, den är osynlig för OCR) · "10 recensioner" (TankGuard har noll) · prisparet **"636 kr 489 kr" → "489 kr"** utan överstrykning, eftersom TankGuard inte har något jämförpris |
+
+⚠️ **Prisparet på slutkortet är lika falskt som brandnamnet.** `636 kr` finns inte
+i TankGuards butik — den överstrukna siffran på produktsidan är en paketsumma
+(1 376 / 2 064 kr), inte ett enstyckspris. Byggs slutkortet om med bara ordmärket
+bytt lovar TankGuard en rabatt butiken inte ger.
+
 ---
 
 ## Uppdrag B — Kampanjbygget i OPS-kontot

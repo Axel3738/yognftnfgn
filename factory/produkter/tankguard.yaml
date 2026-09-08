@@ -50,6 +50,20 @@ ekonomi:
   # repot och `factory/butiker/tankguard.yaml` finns inte, så momsfrågan är
   # oavgjord. Räkna om från grunden när priset är spikat — kopiera aldrig
   # break-even-tal mellan verksamheterna (FAS2, Uppdrag E).
+  #
+  # TANKGUARDS EGET PRIS är 489 kr (Axels skärmbild 2026-09-08, se offer: nedan)
+  # — alltså samma tal som källbutiken, men UTAN jämförpris och UTAN rabatt.
+  # Break-even hänger helt på momsfrågan, och den kan bara butiksfilen svara på:
+  #   utan moms i priset:  TB 489 − 155 = 334 kr → BE-ROAS 1,46 · BE-CPA 334 kr
+  #   med moms i priset:   netto 391 − 155 = 236 kr → BE-ROAS 2,07 · BE-CPA 236 kr
+  # Bäverbutiken säljer UTAN moms (CLAUDE.md), men `factory/butiker/hemvakten.yaml`
+  # sätter `moms_i_pris: true` på OPS-butikerna. De två svaren skiljer 42 % — döm
+  # ingen annons förrän frågan är avgjord.
+  # ⚠️ Kampanjen i målkontot heter "BE-ROAS 1,62". Det talet stämmer med INGENDERA
+  # uträkningen och ska inte litas på. Döp om kampanjen när svaret finns.
+  # ⚠️ AOV blir dessutom högre än 489 kr så fort någon tar 2- eller 3-paketet,
+  # och gratisbonusen (Kranskydd Frost, 199 kr/st inköp okänt) drar åt andra
+  # hållet. Räkna på verklig AOV ur Shopify när ordrar finns — inte på 489.
 
 # KÄLLKOPPLINGEN — vilken Bäverbutiks-produkt och vilka Bäverbutiks-annonser
 # TankGuard är byggd av. Maskinläsbart (factory/FAS2.md, Uppdrag A).
@@ -97,6 +111,36 @@ kalla:
   srt_slug:
     - "ibc"
     - "ibc-tanktrekk"
+
+# TANKGUARDS EGET ERBJUDANDE — Axels skärmbild från produktsidan 2026-09-08.
+# Detta är butikens egna tal och står över källbutikens i all copy.
+# ⚠️ Enstycket har INGET jämförpris och ingen rabatt. Källbutikens
+# "636 kr / 23 % / spara 147 kr" gäller alltså INTE TankGuard.
+offer:
+  valuta: SEK
+  nivaer:
+    - antal: 1
+      pris: 489
+      jamforpris: null          # ingen överstruken siffra på nivå 1
+      spara_procent: null
+      bonus: null
+    - antal: 2
+      pris: 799
+      jamforpris: 1376          # 2×489 + 398 kr bonusvärde
+      spara_procent: 18         # 1 − 799/978 = 18,3 %
+      bonus: "2 × Kranskydd Frost 420D"
+      bonus_varde: 398
+    - antal: 3
+      pris: 1099
+      jamforpris: 2064          # 3×489 + 597 kr bonusvärde
+      spara_procent: 25         # 1 − 1099/1467 = 25,1 %
+      bonus: "3 × Kranskydd Frost 420D"
+      bonus_varde: 597
+  bonus_produkt: "Kranskydd Frost 420D"
+  bonus_styckvarde: 199
+  # Härledningen, så nästa körning slipper göra om den:
+  # spara-procenten räknas mot 489 kr/st (978 resp. 1 467 kr), och den
+  # överstrukna siffran är den summan PLUS bonusvärdet. Båda stämmer på kronan.
 
 kallor:
   drive_mapp: ""
