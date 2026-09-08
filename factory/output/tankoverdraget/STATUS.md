@@ -29,7 +29,7 @@ Rättat 2026-09-08 efter Axels tre bakläxor: produkterna är ACTIVE + publicera
 2. NOK: klart 2026-09-08 (`enabledPresentmentCurrencies` = NOK + SEK, verifierat).
 3. Metasidan + WeTracked + pixel: klart (sidan 1399193996606775 i BM, pixeln avfyrar).
 4. Discord: servern är klar — redigeraren bjuds in när Axel valt en (ingen standby-lista ännu).
-5. Ägarbyte: behövs inte — Settings → Users visar **Axel Odhner** som Store owner redan (VA:ns skärmbild 2026-09-08). Kvar: Axel väljer plan (**Select a plan**) innan trialen går ut om 2 dagar.
+5. Ägarbyte: Store owner är i dag jobbinkorgen (subscriptions@stonebite.org, visas som "Axel Odhner"). VA:n för över till **axelodhner.business@gmail.com** (Settings → Users → ägarens namn → Transfer store ownership). Checklistan hade fel adress — rättad i `checklista.mjs` (inkorg ≠ ägare). Sen: Axel väljer plan innan trialen går ut om 2 dagar.
 
 ## Siffror (ur konfigen, inte ur huvudet)
 

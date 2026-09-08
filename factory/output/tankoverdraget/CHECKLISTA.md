@@ -71,5 +71,5 @@ Everything not on this list is done by Claude Code.
 - [ ] Events Manager → Data sources → **TankGuard** → Settings → Conversions API → **Generate access token** → copy it
 - [ ] WeTracked → paste the **Conversions API token** (never send it in chat or email)
 - [ ] The owner logs in with the work Gmail, picks the plan and adds his card
-- [ ] Then: Settings → Users and permissions → ⋯ → **Transfer ownership** → **subscriptions@stonebite.org**
+- [ ] Then: Settings → Users → click the store owner's name → **Transfer store ownership** → **axelodhner.business@gmail.com** → enter your password → confirm
 - [ ] Owner changes the Loopia password afterwards

@@ -19,7 +19,11 @@ export function byggChecklista(p, butik) {
   const brand = p?.brand?.namn ?? butik?.butik?.brand ?? 'STORE NAME';
   const doman = p?.brand?.domanideer?.[0] ?? 'DOMAIN';
   const mail = butik?.butik?.supportmail ?? `hello@${doman}`;
-  const agare = 'subscriptions@stonebite.org';
+  // Två olika adresser (VA:ns rättelse 2026-09-08, TankGuard): butiken
+  // skapas och mejlen vidarebefordras till jobbinkorgen, men ÄGANDET förs
+  // över till Axels egen adress — inte samma sak.
+  const inkorg = 'subscriptions@stonebite.org';
+  const agare = 'axelodhner.business@gmail.com';
   const stjarna = STJARNFARG.replace('#', '');
   return `# Store Launch Checklist — ${brand} (manual steps)
 
@@ -29,7 +33,7 @@ Everything not on this list is done by Claude Code.
 * STORE NAME: **${brand}**
 * DOMAIN: **${doman}**
 * STORE EMAIL: **${mail}**
-* FORWARD TO: **${agare}**
+* FORWARD TO: **${inkorg}**
 
 ## 1. Shopify – create the store
 - [ ] Go to shopify.com → **Start free trial** → sign up with the work Gmail
@@ -55,7 +59,7 @@ Everything not on this list is done by Claude Code.
 ## 4. Domain (Loopia)
 - [ ] Log in to Loopia
 - [ ] Buy **${doman}** – registrant must be the company, not you
-- [ ] Domain → Email → Forwarding → create **${mail}** → forward to **${agare}**
+- [ ] Domain → Email → Forwarding → create **${mail}** → forward to **${inkorg}**
 - [ ] Send a test email to **${mail}** – confirm it arrives
 
 ## 5. Shopify – basics
@@ -94,7 +98,7 @@ Everything not on this list is done by Claude Code.
 - [ ] Events Manager → Data sources → **${brand}** → Settings → Conversions API → **Generate access token** → copy it
 - [ ] WeTracked → paste the **Conversions API token** (never send it in chat or email)
 - [ ] The owner logs in with the work Gmail, picks the plan and adds his card
-- [ ] Then: Settings → Users and permissions → ⋯ → **Transfer ownership** → **${agare}**
+- [ ] Then: Settings → Users → click the store owner's name → **Transfer store ownership** → **${agare}** → enter your password → confirm
 - [ ] Owner changes the Loopia password afterwards
 `;
 }
