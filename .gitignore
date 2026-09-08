@@ -12,3 +12,7 @@ market-expansion/no/video-batches/fran-meta/
 
 # Sessionens tillfälliga arbetsyta (nedladdad media, QA-frames) — inte källkod
 .scratch/
+
+# Färdiga OPS-videor — artefakter (10–20 MB/st), inte källkod. Ligger i Meta
+# efter uppladdning; manus och konfig är det som versionshanteras.
+factory/output/*/video/

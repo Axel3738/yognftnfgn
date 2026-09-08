@@ -178,8 +178,15 @@ if (VERIFIERA) {
 }
 
 // ══════════════════════════════════════════════════════ VIDEOR
+// Videorna laddas upp även med --bara-struktur när filerna finns: uppladdning
+// kräver ingen sida, och då ligger materialet tryggt i kontot i stället för i en
+// container som försvinner. Bara annonsbygget väntar på sidan.
 const vids = new Map();
-if (!BARA_STRUKTUR) {
+const filerFinns = cfg.adsets.every((a) => a.ads.every((ad) => existsSync(path.join(videoDir, ad.file))));
+if (BARA_STRUKTUR && !filerFinns) {
+  logg(`· hoppar över videouppladdning — filerna finns inte i ${cfg.videoDir}`);
+}
+if (!BARA_STRUKTUR || filerFinns) {
   for (const v of await alla(`act_${ACT}/advideos`, { fields: 'title,id,status' }, 100)) {
     vids.set((v.title || '').replace(/\.\w+$/, '').trim(), v.id);
   }
