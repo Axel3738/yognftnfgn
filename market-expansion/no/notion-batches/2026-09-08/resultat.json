@@ -1,0 +1,79 @@
+{
+ "IBC_CS_4_1": {
+  "malnamn": "IBC-tanktrekk_NO_CS_4_1",
+  "karta": [
+   0,
+   1,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-08/no/IBC-tanktrekk_NO_CS_4_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-08/no/IBC-tanktrekk_NO_CS_4_1.jpg.qa.png"
+ },
+ "IBC_BOF_6_1": {
+  "malnamn": "IBC-tanktrekk_NO_BOF_6_1",
+  "karta": [
+   0,
+   2,
+   4
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-08/no/IBC-tanktrekk_NO_BOF_6_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-08/no/IBC-tanktrekk_NO_BOF_6_1.jpg.qa.png"
+ },
+ "IBC_RV_4_1": {
+  "malnamn": "IBC-tanktrekk_NO_RV_4_1",
+  "karta": [
+   null,
+   null,
+   1
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-08/no/IBC-tanktrekk_NO_RV_4_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-08/no/IBC-tanktrekk_NO_RV_4_1.jpg.qa.png"
+ },
+ "IBC_BOF_5_1": {
+  "malnamn": "IBC-tanktrekk_NO_BOF_5_1",
+  "karta": [
+   null,
+   0,
+   1
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-08/no/IBC-tanktrekk_NO_BOF_5_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-08/no/IBC-tanktrekk_NO_BOF_5_1.jpg.qa.png"
+ },
+ "IBC_BOF_4_1": {
+  "malnamn": "IBC-tanktrekk_NO_BOF_4_1",
+  "karta": [
+   null,
+   1,
+   2
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-08/no/IBC-tanktrekk_NO_BOF_4_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-08/no/IBC-tanktrekk_NO_BOF_4_1.jpg.qa.png"
+ },
+ "IBC_PD_5_1": {
+  "malnamn": "IBC-tanktrekk_NO_PD_5_1",
+  "karta": [
+   null,
+   4,
+   5
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-08/no/IBC-tanktrekk_NO_PD_5_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-08/no/IBC-tanktrekk_NO_PD_5_1.jpg.qa.png"
+ },
+ "IBC_RV_3_1": {
+  "malnamn": "IBC-tanktrekk_NO_RV_3_1",
+  "karta": [
+   0,
+   null,
+   2
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-08/no/IBC-tanktrekk_NO_RV_3_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-08/no/IBC-tanktrekk_NO_RV_3_1.jpg.qa.png"
+ }
+}

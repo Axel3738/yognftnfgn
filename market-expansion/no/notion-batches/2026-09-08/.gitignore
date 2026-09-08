@@ -1,0 +1,12 @@
+kranbeskyttelse/
+overvakingskamera/
+ibc-tanktrekk/
+batmotortrekk/
+out/
+no/
+test/
+frames/
+*.mp4
+*.png
+*.jpg
+*.ass

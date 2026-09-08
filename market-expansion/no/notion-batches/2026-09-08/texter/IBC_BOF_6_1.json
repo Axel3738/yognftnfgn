@@ -1,0 +1,42 @@
+[
+ {
+  "form": 0,
+  "text": "Fri frakt i Norge, 5–10 virkedager.",
+  "rader": [
+   0,
+   1
+  ],
+  "se_rader": [
+   "Fri frakt inom Sverige,",
+   "5–10 arbetsdagar."
+  ],
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Bestill nå, så er den på plass før tanken gror igjen.",
+  "rader": [
+   2,
+   3
+  ],
+  "se_rader": [
+   "Beställ nu så är den på plats innan tanken hinner",
+   "grönska."
+  ],
+  "vanster": false
+ },
+ {
+  "form": 2,
+  "text": "Fri frakt · Klarna – betal senere · 30 dagers åpent kjøp",
+  "rad": 0,
+  "se": "Fri frakt · Klarna – betala sen · 30 dagars öppet köp",
+  "vanster": false
+ },
+ {
+  "form": 4,
+  "text": "Bestill nå",
+  "rad": 0,
+  "se": "Beställ nu",
+  "vanster": false
+ }
+]

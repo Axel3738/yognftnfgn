@@ -1,0 +1,49 @@
+[
+ {
+  "form": 0,
+  "text": "Sofia, baverbutiken.se",
+  "rad": 0,
+  "se": "Sofia",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "”Passer bra på tanken og beskytter mot solen. Akkurat det jeg trengte.”",
+  "rader": [
+   1,
+   2,
+   3
+  ],
+  "se_rader": [
+   "”Passar bra på tanken och skyddar mot",
+   "solen.",
+   "Precis vad jag behövde.”"
+  ],
+  "vanster": false
+ },
+ {
+  "box": [
+   33,
+   1086,
+   1047,
+   1132
+  ],
+  "fet": true,
+  "storlek": 30,
+  "rader": 1,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "439 kr, 25 % rabatt"
+ },
+ {
+  "form": 2,
+  "text": "Bestill i dag",
+  "rad": 0,
+  "se": "Beställ idag",
+  "vanster": false
+ }
+]

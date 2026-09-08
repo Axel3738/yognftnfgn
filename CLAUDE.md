@@ -509,7 +509,7 @@ rapporten till `commission/korningar/<YYYY-MM>/<datum>.md`.
 
 **Leaderboarden** (`leaderboard.mjs` + `valuta.mjs`, 18 tester) är samma siffror
 som topplista för redigerarna:
-https://claude.ai/code/artifact/77145ba8-a1cc-4791-9757-0715a8d97ff8
+https://claude.ai/code/artifact/8f3afdbc-f285-46bf-b55d-a75b9e7feebb
 Den räknar aldrig om något — den läser rapportens tal, så sidan och utbetalningen
 kan inte säga olika saker. `run.mjs` skriver `commission/leaderboard.json` vid
 **varje** körning (även icke-kördagar); `leaderboard.mjs` bakar in datan i
@@ -613,7 +613,17 @@ Default: rösten `Svensk Martin` + modellen `eleven_v3` (förstår taggar som
 Rena arbetsdokument, ingen kod. Börja i `market-expansion/README.md` och
 `BESLUT.md`. Batcherna ligger i `<land>/batches/`.
 
-### `pnl-app/` — P&L som Shopify-app
+### `pnl-app/` — StonePNL, P&L som Shopify-app
+
+⚠️ **Den riktiga appen ligger INTE på `main`.** StonePNL (publicerad i App
+Store 2026-09-05, sex Railway-tjänster) byggs från grenen
+**`claude/bäverbutiken-settkopplingen-nba21z`** — push dit deployar till alla
+sex tjänster. Kopian av `pnl-app/` på `main` är en gammal snapshot och ska
+inte utvecklas vidare. Börja alltid i den grenens `pnl-app/CLAUDE.md`
+(572 rader: arkitektur, misstagslogg, backlog). *(Mätt 2026-09-08: en session
+byggde Meta-knapp och växelkurs på main-kopian — båda fanns redan på den
+riktiga grenen sedan 2026-09-07.)*
+
 Riktig applikation, inte ett skript: Remix + Prisma + Docker, kopplad till både
 Shopify och Meta. Visar täckningsbidrag per produkt. TypeScript, inte `.mjs`.
 ```bash

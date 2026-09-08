@@ -62,7 +62,9 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    målgruppen — strukturen återanvänds, brandingen ALDRIG** (Axels regel).
    Namnregeln (skärpt 2026-09-08): helst ett HELT engelskt namn som svenskar
    och norrmän ändå kan läsa och uttala, aldrig å/ä/ö. Kolla domänen
-   med whois INNAN namnet spikas. Rund logga, brandnamnet, seriöst.
+   med whois INNAN namnet spikas. Rund logga, brandnamnet, seriöst —
+   gör 3 loggvarianter, välj bäst och VISA bilden i chatten innan den
+   sätts i butiken (Axels krav 2026-09-08).
    När namnet är spikat: meddela VA:n STORE NAME + DOMAIN direkt —
    hon köper domänen och sätter butiksnamnet (checklistans steg 4–5)
    medan bygget fortsätter.
@@ -70,7 +72,9 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    från mallarna, validera via `node factory/ops.mjs ... --dry-run` (den
    sammanfogar butik + produkt — kör ALDRIG validera.mjs fristående på
    bara produktfilen, den saknar butiksfälten och stoppar falskt).
-5. **Bygg i Shopify** (fas 2): CRO-temat från `factory/tema/ops-tema.zip`
+5. **Bygg i Shopify** (fas 2, produkten som ACTIVE — DRAFT ger 404 och
+   exempelprodukt i kundvyn; trial-lösenordet skyddar butiken):
+   CRO-temat från `factory/tema/ops-tema.zip`
    (ligger i repot — hämta ALDRIG tema från HeimGuard, Dawn eller
    publika assets) → produkt → metafält →
    opf-sektioner → startsida → meny → policysidor → frakt. Judge.me-widgeten
@@ -88,10 +92,14 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    translationsRegister på ALLT, språkversionerade bilder med
    [SV]/[NO]-alt-märkning. Fler marknader läggs till på samma sätt.
    Trippelkolla mot kundens riktiga vy.
-9. **Checklistan:** generera `output/<id>/CHECKLISTA.md` och ge VA:n den.
+9. **Värdena till VA:n.** Hon sitter redan i den här chatten och följer
+   sitt Google-dokument — skicka ALDRIG en checklistfil till Axel och be
+   ingen vidarebefordra något. Skriv värdena rakt i chatten till henne:
+   STORE NAME, DOMAIN och STORE EMAIL (hello@domänen) + "continue at
+   step 4". `output/<id>/CHECKLISTA.md` skrivs bara som arkivkopia.
    Ändrades mallen (VA-CHECKLIST.md/checklista.mjs) i sessionen: för in
    ändringen i VA:ns Google-dokument också (länken står i VA-CHECKLIST.md).
-   Vänta på hennes klick — fortsätt bygga det som inte kräver dem under tiden.
+   Fortsätt bygga det som inte kräver hennes klick under tiden.
 10. **"Store ready: <namn>"** från VA:n = slutsteget: importera recensionerna
     (`tools/judgeme-import.mjs --mejlsuffix <domän>.invalid` med hennes token —
     en delmängd av recensionerna översätts ALLTID till norska och importeras

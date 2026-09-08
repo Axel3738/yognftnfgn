@@ -25,11 +25,11 @@ test('tre policyer byggs med rätt Shopify-typer', () => {
   assert.deepEqual(typer, ['REFUND_POLICY', 'SHIPPING_POLICY', 'TERMS_OF_SERVICE']);
 });
 
-test('returpolicyn tar öppet köp ur garantierna och nämner lagens 14 dagar', () => {
-  assert.equal(oppetKop(dummy()), 30);
+test('returpolicyn följer lagen: 14 dagars ångerrätt, inga egna löften', () => {
+  assert.equal(oppetKop(dummy()), 14);
   const html = returpolicy(dummy());
   assert.ok(html.includes('14 dagars ångerrätt'));
-  assert.ok(html.includes('30 dagars öppet köp'));
+  assert.ok(!html.includes('utöver'));
   assert.ok(html.includes('hello@nackmagneten.se'));
 });
 

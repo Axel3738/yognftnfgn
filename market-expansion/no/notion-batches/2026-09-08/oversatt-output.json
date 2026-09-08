@@ -1,0 +1,497 @@
+{
+ "IBC_CS_4_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "439 kr i stedet for 586 kr",
+      "stryk": true,
+      "stryk_del": "586 kr"
+     },
+     {
+      "rader": [
+       1,
+       2
+      ],
+      "text": "147 kr mindre for samme 210D Oxford-stoff som stenger ute lyset."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "210D Oxford-stoff · Glidelås · Åpning på toppen"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Bestill i dag – 439 kr"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "439 kr i stedet for 586 kr. 147 kr mindre for samme 210D Oxford-stoff som stenger ute lyset. Algene kommer aldri i gang.",
+   "headline": "439 kr i stedet for 586 kr",
+   "description": "25 % rabatt. Fri frakt i Norge over 300 kr."
+  },
+  "andringar": [
+   "Pris 489/636 kr → 439/586 kr enligt fakta.pris/jamforpris",
+   "Rabatt 23 % → 25 % enligt fakta.rabatt_pct",
+   "'Fri frakt inom Sverige' → 'Fri frakt i Norge over 300 kr' enligt fakta.fri_frakt_regel",
+   "Produktord: 'Oxford-tyg' → 'Oxford-stoff', 'Blixtlås' → 'Glidelås', 'Öppning upptill' → 'Åpning på toppen'",
+   "'Beställ idag' → 'Bestill i dag'"
+  ],
+  "hoppa": null,
+  "trefragor": [
+   {
+    "rad": "headline: 439 kr i stedet for 586 kr",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "ja",
+    "kommentar": "Egna priser på egen produkt, verifierbart."
+   },
+   {
+    "rad": "bildrubrik: 147 kr mindre for samme 210D Oxford-stoff som stenger ute lyset.",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "nej",
+    "kommentar": "Materialet och effekten kan andra tanktrekk med samma tyg också säga."
+   }
+  ]
+ },
+ "IBC_BOF_6_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Fri frakt i Norge, 5–10 virkedager."
+     },
+     {
+      "rader": [
+       2,
+       3
+      ],
+      "text": "Bestill nå, så er den på plass før tanken gror igjen."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Fri frakt · Klarna – betal senere · 30 dagers åpent kjøp"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Bestill nå"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Fri frakt i Norge, 5–10 virkedager. Bestill nå, så er den på plass før tanken gror igjen. Klarna – betal senere. 30 dagers åpent kjøp.",
+   "headline": "Fri frakt, 5–10 virkedager",
+   "description": "Klarna – betal senere. 30 dagers åpent kjøp."
+  },
+  "andringar": [
+   "'Fri frakt inom Sverige' → 'Fri frakt i Norge' enligt fakta.fri_frakt_regel (gäller över 300 kr)",
+   "'5–10 arbetsdagar' → '5–10 virkedager' — samma leveranstid, verifierat på beverbutikken.no/pages/fraktinformasjon",
+   "'grönska' → 'gro igjen' enligt produktordlistan",
+   "'betala sen' → 'betal senere', '30 dagars öppet köp' → '30 dagers åpent kjøp' (aldrig 'garanti')",
+   "'Beställ nu' → 'Bestill nå'"
+  ],
+  "hoppa": null,
+  "trefragor": [
+   {
+    "rad": "headline: Fri frakt, 5–10 virkedager",
+    "visualisera": "nej",
+    "falsifiera": "ja",
+    "ingen_annan": "nej",
+    "kommentar": "Sant men generellt fraktvillkor, vilken butik som helst kan säga det."
+   },
+   {
+    "rad": "bildrubrik: Bestill nå, så er den på plass før tanken gror igjen.",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "nej",
+    "kommentar": "Tidspress kopplad till algtillväxt, men andra algskydd kan säga samma sak."
+   }
+  ]
+ },
+ "IBC_RV_4_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Johan, baverbutiken.se"
+     },
+     {
+      "rader": [
+       1,
+       2,
+       3
+      ],
+      "text": "”Bra kvalitet og lett å bruke. Passet min 1000-liters tank uten problem.”"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Passer standard 1000L IBC-tank"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Bestill i dag"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "”Bra kvalitet og lett å bruke. Passet min 1000-liters tank uten problem.” — Johan, baverbutiken.se ★★★★★",
+   "headline": "Johan: Passet tanken uten problem",
+   "description": "Passer standard 1000L IBC-tank."
+  },
+  "andringar": [
+   "Recensionen översatt till bokmål, källa 'baverbutiken.se' tillagd efter namnet (svensk recension)",
+   "'Passade' → 'Passet', 'använda' → 'bruke' (bokmål)",
+   "'Passar' → 'Passer' i fototext/description enligt produktordlistan",
+   "'Beställ idag' → 'Bestill i dag'",
+   "Namnraden i bilden: källa baverbutiken.se tillagd (svensk recension)"
+  ],
+  "hoppa": null,
+  "trefragor": [
+   {
+    "rad": "headline: Johan: Passet tanken uten problem",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "ja",
+    "kommentar": "Namngivet, äkta kundcitat — ingen konkurrent kan använda Johans recension."
+   },
+   {
+    "rad": "bildrubrik: ”Bra kvalitet og lett å bruke. Passet min 1000-liters tank uten problem.”",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "ja",
+    "kommentar": "Äkta kundcitat, unikt för produkten och butiken."
+   }
+  ]
+ },
+ "IBC_BOF_5_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1,
+       2
+      ],
+      "text": "Presenningen som skulle beskytte, blåser av i den første høststormen."
+     },
+     {
+      "rader": [
+       3
+      ],
+      "text": "Et 210D Oxford-trekk med glidelås blir sittende."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Ingen presenning · Ingen strikk · 210D Oxford-stoff"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Beskytt tanken før høsten"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Presenningen som skulle beskytte, blåser av i den første høststormen. Et 210D Oxford-trekk med glidelås blir sittende. Beskytt tanken før høsten.",
+   "headline": "Presenningen blåser av i høststormen",
+   "description": "210D Oxford-trekk med glidelås."
+  },
+  "andringar": [
+   "'överdrag' → 'trekk' (naturligt bokmål-ord)",
+   "'blixtlås' → 'glidelås', 'gummiband' → 'strikk' enligt produktordlistan",
+   "'Skydda tanken innan hösten' → 'Beskytt tanken før høsten'",
+   "Ingen prisändring — annonsen saknar pris (bekräftat i anm/varning: override, ingen prisdetektor)"
+  ],
+  "hoppa": null,
+  "trefragor": [
+   {
+    "rad": "headline: Presenningen blåser av i høststormen",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "nej",
+    "kommentar": "Sant och konkret, men vilken presenningskonkurrent som helst kan påstå samma sak om presenningar generellt."
+   },
+   {
+    "rad": "bildrubrik: Et 210D Oxford-trekk med glidelås blir sittende.",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "nej",
+    "kommentar": "Materialnamnet delas av andra tanktrekk med samma tyg."
+   }
+  ]
+ },
+ "IBC_BOF_4_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1,
+       2
+      ],
+      "text": "Glidelås. Ikke presenning og strikk."
+     },
+     {
+      "rader": [
+       3,
+       4
+      ],
+      "text": "Av og på med glidelås — ingen kamp med vær eller vind."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Glidelås · Åpning på toppen · Passer 1000-liters IBC"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Se hvor enkelt det er"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Glidelås. Ikke presenning og strikk. Av og på med glidelås — ingen kamp med vær eller vind. Åpning på toppen. Passer 1000-liters IBC-tank.",
+   "headline": "Glidelås. Ikke presenning.",
+   "description": "Åpning på toppen. Passer 1000-liters IBC."
+  },
+  "andringar": [
+   "'blixtlås'/'dragkedja' → 'glidelås', 'gummiband' → 'strikk' enligt produktordlistan",
+   "'Öppning upptill' → 'Åpning på toppen', 'Passar' → 'Passer'",
+   "'Se hur enkelt det är' → 'Se hvor enkelt det er'",
+   "Ingen prisändring — annonsen saknar pris"
+  ],
+  "hoppa": null,
+  "trefragor": [
+   {
+    "rad": "headline: Glidelås. Ikke presenning.",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "nej",
+    "kommentar": "Konkret mekanismjämförelse, men andra tanktrekk med glidelås kan säga samma sak."
+   },
+   {
+    "rad": "bildrubrik: Av og på med glidelås — ingen kamp med vær eller vind.",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "nej",
+    "kommentar": "Samma mekanism-claim, inte unik för just denna butik."
+   }
+  ]
+ },
+ "IBC_PD_5_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "210D Oxford-stoff mellom solen og regnvannet ditt."
+     },
+     {
+      "rader": [
+       2,
+       3
+      ],
+      "text": "Ingen presenning, ingen strikk — bare en glidelås."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Stenger ute UV · Åpning på toppen · Passer 1000L IBC"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Beskytt tanken din i dag"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "210D Oxford-stoff mellom solen og regnvannet ditt. Ingen presenning, ingen strikk — bare en glidelås. Algene kommer aldri i gang.",
+   "headline": "210D Oxford-stoff mot solen",
+   "description": "Ingen presenning, ingen strikk."
+  },
+  "andringar": [
+   "'regnvatten' → 'regnvann', 'gummiband' → 'strikk', 'blixtlås' → 'glidelås' enligt produktordlistan",
+   "'Öppning upptill' → 'Åpning på toppen', 'Passar' → 'Passer'",
+   "'Skydda din tank idag' → 'Beskytt tanken din i dag'",
+   "Ingen prisändring — annonsen saknar pris"
+  ],
+  "hoppa": null,
+  "trefragor": [
+   {
+    "rad": "headline: 210D Oxford-stoff mot solen",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "nej",
+    "kommentar": "Materialnamn, andra butiker med samma tyg kan säga likadant."
+   },
+   {
+    "rad": "bildrubrik: Ingen presenning, ingen strikk — bare en glidelås.",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "nej",
+    "kommentar": "Konstruktionsclaim, delas av andra tanktrekk med samma lösning."
+   }
+  ]
+ },
+ "IBC_RV_3_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Sofia, baverbutiken.se"
+     },
+     {
+      "rader": [
+       1,
+       2,
+       3
+      ],
+      "text": "”Passer bra på tanken og beskytter mot solen. Akkurat det jeg trengte.”"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "439 kr, 25 % rabatt"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Bestill i dag"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "”Passer bra på tanken og beskytter mot solen. Akkurat det jeg trengte.” — Sofia, baverbutiken.se ★★★★★. 439 kr, 25 % rabatt.",
+   "headline": "Sofia: Beskytter mot solen",
+   "description": "439 kr, 25 % rabatt."
+  },
+  "andringar": [
+   "Recensionen översatt till bokmål, källa 'baverbutiken.se' tillagd efter namnet (svensk recension)",
+   "Pris 489 kr → 439 kr, rabatt 23 % → 25 % enligt fakta.pris/rabatt_pct",
+   "'Beställ idag' → 'Bestill i dag'",
+   "Namnraden i bilden: källa baverbutiken.se tillagd (svensk recension)"
+  ],
+  "hoppa": null,
+  "trefragor": [
+   {
+    "rad": "headline: Sofia: Beskytter mot solen",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "ja",
+    "kommentar": "Namngivet, äkta kundcitat — ingen konkurrent kan använda Sofias recension."
+   },
+   {
+    "rad": "bildrubrik: ”Passer bra på tanken og beskytter mot solen. Akkurat det jeg trengte.”",
+    "visualisera": "ja",
+    "falsifiera": "ja",
+    "ingen_annan": "ja",
+    "kommentar": "Äkta kundcitat, unikt för produkten och butiken."
+   }
+  ]
+ }
+}

@@ -1,0 +1,238 @@
+{
+ "_kommentar": "Manuella rutor för det detektorn inte hittar (mätt ur bilderna 2026-09-08). box=[x0,y0,x1,y1], post=index i den norska formens texter (ett block = en post).",
+ "IBC_BOF_4_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      33,
+      60,
+      1047,
+      400
+     ],
+     "post": 0,
+     "fet": true,
+     "storlek": 72,
+     "rader": 3,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.72
+    },
+    {
+     "box": [
+      33,
+      440,
+      1047,
+      560
+     ],
+     "post": 1,
+     "fet": false,
+     "storlek": 40,
+     "rader": 2,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.65
+    }
+   ]
+  }
+ },
+ "IBC_BOF_5_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      33,
+      60,
+      1047,
+      400
+     ],
+     "post": 0,
+     "fet": true,
+     "storlek": 72,
+     "rader": 3,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.72
+    },
+    {
+     "box": [
+      33,
+      440,
+      1047,
+      500
+     ],
+     "post": 1,
+     "fet": false,
+     "storlek": 40,
+     "rader": 1,
+     "farg": [
+      19,
+      18,
+      16
+     ]
+    }
+   ]
+  }
+ },
+ "IBC_PD_5_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      33,
+      60,
+      1047,
+      290
+     ],
+     "post": 0,
+     "fet": true,
+     "storlek": 72,
+     "rader": 2,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.72
+    },
+    {
+     "box": [
+      33,
+      322,
+      1047,
+      440
+     ],
+     "post": 1,
+     "fet": false,
+     "storlek": 40,
+     "rader": 2,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.45
+    }
+   ]
+  }
+ },
+ "IBC_RV_3_1": {
+  "box_for_form": {
+   "1": [
+    {
+     "box": [
+      33,
+      1086,
+      1047,
+      1132
+     ],
+     "post": 0,
+     "fet": true,
+     "storlek": 30,
+     "rader": 1,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true
+    }
+   ]
+  }
+ },
+ "IBC_RV_4_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      33,
+      118,
+      1047,
+      152
+     ],
+     "post": 0,
+     "fet": false,
+     "storlek": 27,
+     "rader": 1,
+     "farg": [
+      20,
+      47,
+      74
+     ]
+    },
+    {
+     "box": [
+      33,
+      180,
+      1047,
+      395
+     ],
+     "post": 1,
+     "fet": true,
+     "storlek": 56,
+     "rader": 3,
+     "farg": [
+      20,
+      47,
+      74
+     ],
+     "radavstand": 1.3
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      290,
+      1086,
+      790,
+      1132
+     ],
+     "post": 0,
+     "fet": true,
+     "storlek": 30,
+     "rader": 1,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true
+    }
+   ]
+  },
+  "_anm": "Fototextrutan smalnad till textens bredd — full bredd gav grå kanter på det ljusa golvet (mätt 2026-09-08)."
+ },
+ "IBC_CS_4_1": {
+  "box_for_form": {
+   "2": [
+    {
+     "box": [
+      318,
+      1212,
+      762,
+      1298
+     ],
+     "post": 0,
+     "fet": true,
+     "storlek": 39,
+     "rader": 1,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  },
+  "_anm": "Detektorn hittade en skräpform (1 rad, 10 px) ovanför knappen och matchade knappen dit — texten hamnade som miniatyr ovanpå den svenska. Rutan ligger innanför pillens rundade hörn."
+ }
+}

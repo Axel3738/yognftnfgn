@@ -234,7 +234,7 @@ på samma rad, och skriver
 ## Steg 3 — Uppdatera leaderboarden
 
 Topplistan är sidan redigerarna själva öppnar:
-**https://claude.ai/code/artifact/77145ba8-a1cc-4791-9757-0715a8d97ff8**
+**https://claude.ai/code/artifact/8f3afdbc-f285-46bf-b55d-a75b9e7feebb**
 
 Två regler styr vad sidan visar (Axels beslut 2026-09-02):
 
@@ -263,7 +263,7 @@ Publicera sedan om den filen mot **samma adress**:
 
 ```
 Artifact  file_path: /home/user/yognftnfgn/commission/leaderboard-publicerad.html
-          url:       https://claude.ai/code/artifact/77145ba8-a1cc-4791-9757-0715a8d97ff8
+          url:       https://claude.ai/code/artifact/8f3afdbc-f285-46bf-b55d-a75b9e7feebb
 ```
 
 ⚠️ **`url` måste vara med.** Utan den skapas en ny sida med en ny länk, och
