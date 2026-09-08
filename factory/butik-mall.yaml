@@ -39,14 +39,17 @@ frakt:
   fri_over: 0                 # 0 = ingen gräns
 
 retur:
-  oppet_kop_dagar: 30         # butikens eget löfte, utöver lagen
+  # Axels beslut 2026-09-08: alltid svensk lag, ALDRIG egna köplöften —
+  # "30 dagars öppet köp" överallt har ruinerat folks trust. 14 = lagens
+  # ångerrätt, sätt aldrig högre.
+  oppet_kop_dagar: 14
   angerratt_dagar: 14         # lagstadgat i Sverige, ändra inte utan skäl
   reklamation_ar: 3           # konsumentköplagen
   returfrakt_betalas_av: kund # kund eller butik
   aterbetalning_dagar: 14
 
 garantier:                    # butikens basgarantier, visas på varje produkt
-  - "30 dagars öppet köp"
+  - "14 dagars ångerrätt"
 
 policy:
   tvistlosning: "Allmänna reklamationsnämnden"

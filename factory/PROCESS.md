@@ -32,7 +32,10 @@ som genereras per bygge).
    byggdes från; incheckad 2026-09-08 så molnet alltid har den)
    → staged upload → themeCreate. Temat är
    strukturen — brandingen genereras alltid om (opf-brand.css + settings).
-6. ⚙️ Produkt som DRAFT → metafält → opf-sektioner → produktmall → startsida →
+6. ⚙️ Produkt som **ACTIVE** (Axels bakläxa 2026-09-08 på TankGuard:
+   DRAFT ger 404 i menyn och "Exempel på produktnamn" i kundvyn —
+   butiken är ändå lösenordsskyddad under trialen) → metafält →
+   opf-sektioner → produktmall → startsida →
    meny → policysidor (adress från allabolag.se) → fraktzoner.
 7. ⚙️ Paketen: metaobjekt `ms_paketniva` (translatable-capability PÅ från
    start!) + riktiga rabattkoder som ger exakt paketpriserna. A = originalets
@@ -148,6 +151,13 @@ som genereras per bygge).
     större PO innan säsong (PLAN.md punkt 6).
 
 ## Regler som bevisats den hårda vägen
+- **Alltid svensk lag, aldrig egna köplöften** (Axels beslut 2026-09-08:
+  "30 dagars öppet köp" överallt har ruinerat folks trust). Standard är
+  14 dagars ångerrätt — i policyn, i USP-strippen, i garantierna.
+- **Loggan visas i chatten innan den sätts:** gör 3 varianter i
+  brand-steget, välj bäst, visa bilden. Axel kan säga "ny logga" när som
+  helst — bytet är ett API-anrop. (TankGuards första logga 2026-09-08
+  underkändes.)
 - **VA:ns master är Google-dokumentet** (https://docs.google.com/document/d/1gOfJGdyip0u6MqMuQxMLkXq39H-M4EvY/edit) —
   varje ändring i VA-CHECKLIST.md/checklista.mjs förs in där i samma
   session (Axels regel 2026-09-08). Repot är fabrikens sanning,

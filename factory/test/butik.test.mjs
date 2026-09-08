@@ -69,7 +69,7 @@ test('produktfilen bär ingen butiksdata längre', () => {
 
 test('butikens garantier läggs före produktens, utan dubbletter', () => {
   assert.deepEqual(dummy().garantier, [
-    '30 dagars öppet köp',
+    '14 dagars ångerrätt',
     'Full återbetalning om du inte känner skillnad',
   ]);
 });
