@@ -51,7 +51,8 @@
  },
  "bankhylla_SP_2": {
   "assetUrl": "https://resource2.heygen.ai/video/686cdc2842744a9fab86ff37aa2cd1f7/original.mp4",
-  "proofreadId": "e32a1aaa83504d748b08bdc463165e57-nb-nb-NO"
+  "proofreadId": "e32a1aaa83504d748b08bdc463165e57-nb-nb-NO",
+  "srtDone": true
  },
  "bankhylla_SP_3": {
   "assetUrl": "https://resource2.heygen.ai/video/a11ffcf14a2748bca4ce19d90f6c156e/original.mp4",
