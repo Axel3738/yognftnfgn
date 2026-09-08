@@ -410,19 +410,36 @@ const STEG = [
         writeFileSync(csv, inneh);
       }
 
-      const arg = [
-        join(FACTORY_ROT, '..', 'tools', 'judgeme-import.mjs'),
-        csv,
-        '--product-handle', ctx.p.produkt.id,
-        '--store-url', `https://${shopDomain}`,
-        '--shop-domain', shopDomain,
-        '--token-env', tokenEnv,
-      ];
-      const kor = spawnSync(process.execPath, arg, { encoding: 'utf8' });
-      if (kor.status !== 0) {
-        throw new Error(`judgeme-import.mjs felade: ${(kor.stderr || kor.stdout).slice(0, 400)}`);
+      // Produkten kopplas via sitt numeriska id (butiken ligger bakom lösenord
+      // under trialen, så products.json går inte att läsa). Mejl krävs av
+      // API:t: syntetiska recension-N@<domän>.invalid, aldrig riktiga.
+      const produkt = ctx.produkt ?? (await hamtaProduktViaHandle(ctx.p.produkt.id));
+      if (!produkt?.legacyResourceId) throw new Error('Produkten finns inte i butiken — kör produktsteget först.');
+      const doman = ctx.p.brand?.domanideer?.[0] ?? ctx.butik.butik.id;
+      const importera = (fil, extra = []) => {
+        const arg = [
+          join(FACTORY_ROT, '..', 'tools', 'judgeme-import.mjs'),
+          fil,
+          '--product-id', String(produkt.legacyResourceId),
+          '--shop-domain', shopDomain,
+          '--token-env', tokenEnv,
+          '--mejlsuffix', `${doman}.invalid`,
+          ...extra,
+        ];
+        const kor = spawnSync(process.execPath, arg, { encoding: 'utf8' });
+        // Felet står i stdout; stderr bär bara Nodes proxy-varning.
+        const utan = (s) => String(s ?? '').split('\n').filter((r) => r.trim() && !/UNDICI|trace-warnings/.test(r)).join(' · ');
+        if (kor.status !== 0) throw new Error(`judgeme-import.mjs felade (${basename(fil)}): ${(utan(kor.stdout) || utan(kor.stderr)).slice(0, 400)}`);
+        return kor.stdout.trim().split('\n').slice(-2).join(' · ');
+      };
+      const rapport = { [basename(csv)]: importera(csv) };
+      // Marknadernas översatta recensioner (oversattning-<locale>.json → CSV med
+      // lokala namn) läggs ovanpå — dubblettspärren har redan slagit till, så --anda.
+      for (const m of ctx.butik?.butik?.marknader ?? []) {
+        const nbCsv = join(mapp, `judgeme-import-${m.locale}.csv`);
+        if (existsSync(nbCsv)) rapport[basename(nbCsv)] = importera(nbCsv, ['--anda']);
       }
-      return { csv: basename(csv), rapport: kor.stdout.trim().split('\n').slice(-3).join(' · ') };
+      return { rapport };
     },
   },
 ];

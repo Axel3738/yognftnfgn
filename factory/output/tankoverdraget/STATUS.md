@@ -16,7 +16,7 @@ Rättat 2026-09-08 efter Axels tre bakläxor: produkterna är ACTIVE + publicera
 - [x] Marknad Norge + locale nb publicerad, allt översatt via translationsRegister (produkt, metafält, sidor, menyer, paket, temamallar, sektionsgrupper)
 - [ ] Trippelkollat mot /nb och svensk vy — **DELVIS**: strukturen verifierad via API; kundens riktiga vy kräver butikslösenordet (`SHOPIFY_STOREFRONT_PASSWORD`, trial-butik) → `node factory/kolla.mjs …`
 - [x] CHECKLISTA.md genererad (`factory/output/tankoverdraget/CHECKLISTA.md`) — VA:n har STORE NAME + DOMAIN
-- [ ] Recensioner importerade — väntar på Judge.me-token (VA:ns steg 7); underlagen finns: `judgeme-import.csv` (10 sv) + `judgeme-import-nb.csv` (6 no, norska namn)
+- [x] Recensioner importerade 2026-09-08: 10 svenska + 6 norska (Kari, Ola, Bjørn, Ingrid, Lars, Silje) på produkten; 6 felimporterade (svenska namn) dolda som spam
 - [ ] Pixel + Discord — vid "Store ready: TankGuard" (META_ACCESS_TOKEN finns i miljön; Discord-servern är VA:ns steg 9)
 - [x] state (`factory/state/tankguard--tankoverdraget.json`) + PROCESS.md uppdaterade, pushat
 

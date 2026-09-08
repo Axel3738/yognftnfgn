@@ -64,14 +64,21 @@
     "huvudmarknad": {
       "klar": true,
       "valuta": "SEK"
+    },
+    "recensioner": {
+      "klar": true,
+      "rapport": {
+        "judgeme-import.csv": "klart: 10 ok, 0 fel · Verifiera i Judge.me-adminen att recensionerna ligger på rätt produkt innan nästa steg.",
+        "judgeme-import-nb.csv": "klart: 6 ok, 0 fel · Verifiera i Judge.me-adminen att recensionerna ligger på rätt produkt innan nästa steg."
+      }
     }
   },
-  "uppdaterad": "2026-09-08T07:47:35.565Z",
+  "uppdaterad": "2026-09-08T08:06:16.600Z",
   "qa": {
     "gron": false,
     "kritiska": [
       "tracking"
     ],
-    "tid": "2026-09-08T07:47:35.565Z"
+    "tid": "2026-09-08T08:06:16.600Z"
   }
 }

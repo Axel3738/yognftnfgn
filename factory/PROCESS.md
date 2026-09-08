@@ -60,6 +60,14 @@ Lärdomar från bygget 2026-09-08 (API 2025-07, alla mätta):
   storefronten, som under trial ligger bakom lösenord (kan inte tas bort
   utan plan): `kolla.mjs` postar `SHOPIFY_STOREFRONT_PASSWORD` till `/password`.
 - Judge.me-tokenen kan inte läsas via API — den är VA:ns klick (steg 7).
+- Judge.me knyter reviewer-NAMNET till mejladressen: samma syntetiska
+  `recension-N@…` i sv- och no-CSV:n gav de norska raderna svenska namn
+  (TankGuard 2026-09-08). `tools/judgeme-import.mjs --mejlsuffix` bygger nu
+  adressen av CSV-filens stam + radnummer, unikt per fil. Fel rader kan inte
+  raderas via v1-API:t — `PUT /reviews/<id>` med `hidden: true, curated: spam`
+  döljer dem. Nya butiker får Judge.me-produkt-id:n som ger 422 i
+  `/reviews?product_id=` — dubblettspärren faller tillbaka på butiksvid
+  läsning filtrerad på `product_external_id`.
 
 ## Fas 1 — Grunden
 1. ⚙️ Hämta produktdata från källan (Bäverbutik-sidan): namn, pris, varianter,

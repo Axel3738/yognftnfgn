@@ -64,6 +64,10 @@ const dry = args.includes('--dry');
 
 const handle = flagga('--product-handle');
 const storeUrl = (flagga('--store-url') || '').replace(/\/$/, '');
+// Judge.me:s API kräver en mejladress per recension numera. Riktiga adresser
+// hittas ALDRIG på — med --mejlsuffix <domän>.invalid får raden en omisskännligt
+// syntetisk adress (recension-N@<suffix>) när CSV:n saknar en.
+const mejlsuffix = flagga('--mejlsuffix');
 const TOKEN = process.env[flagga('--token-env') || 'JUDGEME_API_TOKEN'];
 const SHOP = flagga('--shop-domain') || process.env.JUDGEME_SHOP_DOMAIN;
 
@@ -120,16 +124,25 @@ if (!produktSvar.ok && produktSvar.kropp?.error !== 'Product not found') {
 const judgemeId = produktSvar.kropp?.product?.id ?? null;
 
 if (judgemeId) {
-  const revSvar = await judgemeGet('/reviews', { product_id: String(judgemeId), per_page: '100' });
-  if (!revSvar.ok) {
+  let revSvar = await judgemeGet('/reviews', { product_id: String(judgemeId), per_page: '100' });
+  // Nya butiker får Judge.me-produkt-id:n som är för stora för filtret
+  // (422 "too big", mätt på HeimGuard 2026-09-06 och TankGuard 2026-09-08) —
+  // då läses butikens recensioner butiksvitt och filtreras på Shopify-id:t.
+  let lista = revSvar.ok ? (revSvar.kropp.reviews ?? []) : null;
+  if (!revSvar.ok && revSvar.status === 422) {
+    revSvar = await judgemeGet('/reviews', { per_page: '100' });
+    lista = revSvar.ok
+      ? (revSvar.kropp.reviews ?? []).filter((r) => String(r.product_external_id ?? '') === String(productId))
+      : null;
+  }
+  if (lista === null) {
     console.error(`Kunde inte läsa befintliga recensioner (${revSvar.status}).`);
     process.exit(1);
   }
   // Bara det kunden faktiskt ser räknas. En avpublicerad eller dold recension
   // är bortstädad i praktiken (Judge.me:s v1-API kan inte radera, bara dölja),
   // och ska inte spärra en omkörning som ersätter den.
-  const antal = (revSvar.kropp.reviews ?? [])
-    .filter((r) => r.published && !r.hidden).length;
+  const antal = lista.filter((r) => r.published && !r.hidden).length;
   if (antal > 0 && !args.includes('--anda')) {
     console.log(`Produkt ${productId} har redan ${antal} synliga recensioner i ${SHOP} — hoppar över.`);
     console.log('Ska de läggas till ändå (t.ex. en påbyggnadsbatch): kör om med --anda.');
@@ -141,11 +154,16 @@ const rader = parseCsv(fs.readFileSync(csvFil, 'utf8'));
 console.log(`${rader.length} recensioner i ${csvFil} → produkt ${productId} i ${SHOP}${dry ? ' (DRY — inget skickas)' : ''}`);
 
 let ok = 0, fel = 0;
-for (const r of rader) {
+for (const [i, r] of rader.entries()) {
+  // Adressen måste vara unik per FIL: Judge.me knyter namnet till mejlen, så
+  // samma recension-N@… i två CSV:er (sv + no) gav de norska raderna svenska
+  // namn (mätt på TankGuard 2026-09-08). Filnamnets stam ingår därför.
+  const stam = csvFil.replace(/\\/g, '/').split('/').pop().replace(/\.csv$/i, '').replace(/[^a-z0-9-]/gi, '');
+  const email = r.reviewer_email || (mejlsuffix ? `${stam}-${i + 1}@${mejlsuffix.replace(/^@/, '')}` : '');
   const payload = {
     api_token: TOKEN, shop_domain: SHOP, platform: 'shopify',
     id: Number(productId),
-    name: r.reviewer_name, email: r.reviewer_email,
+    name: r.reviewer_name, email,
     rating: Number(r.rating), title: r.title, body: r.body,
     ...(r.review_date ? { created_at: r.review_date } : {}),
   };
