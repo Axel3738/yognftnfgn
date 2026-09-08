@@ -10,9 +10,8 @@ Sen är ditt enda jobb per butik: välj produkt — och ta ägarskapet i överl�
 - [ ] Loopia → spara företagskortet → ge henne inloggningen
 
 ## 1b. Molnsessionens nycklar (en gång)
-- [ ] Lägg in **KIE_API_KEY** och **DISCORD_BOT_TOKEN** i
-      molnsessionens miljövariabler
-- [ ] **META_ACCESS_TOKEN** läggs in när pixelskapandet ska börja
+- [x] **KIE_API_KEY**, **DISCORD_BOT_TOKEN** och **META_ACCESS_TOKEN**
+      ligger i molnsessionens miljövariabler (Axels besked 2026-09-08)
       (Shopify-nycklarna är VA:ns — hon lägger in dem per butik,
       hennes checklistas steg 2)
 
