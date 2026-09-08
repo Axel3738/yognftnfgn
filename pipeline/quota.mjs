@@ -8,13 +8,36 @@
 //   node pipeline/quota.mjs log mastern 4 2026-08-06   → logga med explicit datum
 
 import { readFileSync, writeFileSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const FILE = join(dirname(fileURLToPath(import.meta.url)), '..', 'products', 'products.json');
-const CYCLE_DAYS = 3;
+export const CYCLE_DAYS = 3;
 const HIGH_SPEND_THRESHOLD_SEK = 5000; // över denna dagsbudget räcker 10 % i stället för 20 %
-const testShare = budget => (budget >= HIGH_SPEND_THRESHOLD_SEK ? 0.10 : 0.20);
+export const testShare = budget => (budget >= HIGH_SPEND_THRESHOLD_SEK ? 0.10 : 0.20);
+
+/** Kvotmatematiken, utbruten så OPS-fabriken kan räkna på samma formel i
+ *  stället för att kopiera den (factory/register.mjs). Ren funktion — den
+ *  vet inget om products.json och kan därför användas på vilket register
+ *  som helst med budget, target-CPA, cykelstart och launches[]. */
+export function kvotlage(produkt, idag = new Date(new Date().toISOString().slice(0, 10))) {
+  const share = testShare(produkt.daily_budget_sek);
+  const perCycle = Math.ceil((produkt.daily_budget_sek * share / produkt.target_cpa_sek) * CYCLE_DAYS);
+  const start = new Date(produkt.cycle_start);
+  const daysElapsed = Math.max(0, Math.floor((idag - start) / 86400000));
+  const cyclesDue = Math.floor(daysElapsed / CYCLE_DAYS) + 1; // innevarande cykel räknas
+  const due = cyclesDue * perCycle;
+  const launched = (produkt.launches ?? []).reduce((s, l) => s + l.count, 0);
+  return {
+    share, perCycle, due, launched,
+    balance: launched - due,
+    cyclesDue,
+    inCycleDay: (daysElapsed % CYCLE_DAYS) + 1,
+  };
+}
+
+// Allt nedanför är CLI:t. Importeras filen (för kvotlage/testShare) körs det inte.
+function huvud() {
 
 const db = JSON.parse(readFileSync(FILE, 'utf8'));
 
@@ -36,15 +59,7 @@ const today = new Date(new Date().toISOString().slice(0, 10));
 const lines = [];
 
 for (const p of db.products.filter(x => x.status === 'aktiv')) {
-  const share = testShare(p.daily_budget_sek);
-  const perCycle = Math.ceil((p.daily_budget_sek * share / p.target_cpa_sek) * CYCLE_DAYS);
-  const start = new Date(p.cycle_start);
-  const daysElapsed = Math.max(0, Math.floor((today - start) / 86400000));
-  const cyclesDue = Math.floor(daysElapsed / CYCLE_DAYS) + 1; // innevarande cykel räknas
-  const due = cyclesDue * perCycle;
-  const launched = p.launches.reduce((s, l) => s + l.count, 0);
-  const balance = launched - due;
-  const inCycleDay = (daysElapsed % CYCLE_DAYS) + 1;
+  const { share, perCycle, due, launched, balance, cyclesDue, inCycleDay } = kvotlage(p, today);
   const icon = balance >= 0 ? '🟢' : '🔴';
 
   lines.push([
@@ -59,3 +74,7 @@ for (const p of db.products.filter(x => x.status === 'aktiv')) {
 
 console.log('\n=== BRIEF-KVOTEN (' + today.toISOString().slice(0, 10) + ') ===\n');
 console.log(lines.join('\n') || 'Inga aktiva produkter i products/products.json');
+
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) huvud();

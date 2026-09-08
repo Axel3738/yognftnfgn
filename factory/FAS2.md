@@ -31,7 +31,8 @@ Uppdrag A, C, D och E går att köra UTAN dessa. Uppdrag B väntar bara på Meta
 3. **B — Kampanjbygget** (väntar på sida + token). Det som gör att pengar rör sig.
 4. **A2 — Videodubbningen** (väntar på HeyGen-krediter).
 5. **D — Notion + commission** (kod, ingen väntan). Måste vara klart INNAN redigeraren börjar.
-6. **E — Skalningsrutinen** (kod). Kan byggas parallellt, används först när data finns.
+6. ~~**E — Skalningsrutinen**~~ ✅ **byggd 2026-09-08** — `/skalningskungen <butik>`.
+   Används först när butiken har egna annonser i kontot.
 
 ---
 
@@ -205,15 +206,38 @@ säljer samma produkt som Bäverbutiken.**
 
 ---
 
-## Uppdrag E — Skalningsrutinen per OPS-butik
+## Uppdrag E — Skalningsrutinen per OPS-butik ✅ BYGGD 2026-09-08
 
 **Vad:** en `/skalningskungen <butik>` som analyserar, skalar och briefar — en instans
 per OPS-butik.
 
-⚠️ **Den finns inte.** Verifierat med `git log --all --diff-filter=A -- .claude/commands/*`:
-22 kommandofiler har någonsin skapats, ingen heter skalning/scaling. Ordet
-"skalningsronden" förekommer 8 gånger men bara som **ägare av PAUSED-beslut** — en
-mänsklig praxis, aldrig ett skript. Bygg från `/cs` som mall.
+**Levererat:**
+
+| Fil | Vad |
+|---|---|
+| `.claude/commands/skalningskungen.md` | kommandot, byggt från `/cs` |
+| `factory/ekonomi.mjs` | momsmedveten break-even/target + CLI som skriver ekonomiblocket |
+| `factory/register.mjs` + `factory/produkter/register.json` | OPS-produktregistret (beslutet nedan) |
+| `factory/skalning.mjs` | ANALYSMETOD steg 0–6 ur det delade kontot, **prefixfiltrerat** |
+| `factory/minne/<butik>/` | produktminnet per OPS-butik (dna, batch-log, backlog) |
+| `factory/test/ekonomi.test.mjs`, `skalning.test.mjs` | 26 tester på ekonomin och filtret |
+
+**Mätt vid bygget 2026-09-08** (läs-bara Graph-anrop mot `act_915422744950975`):
+- Kontots valuta är **SEK** och tidszonen **Europe/Copenhagen** — FAS2:s påstående
+  bekräftat, `market-expansion/marknader.json` (DKK) är alltså fel.
+- Kontot innehöll **6 kampanjer och 69 annonser, samtliga Bäverbutikens danska**
+  (Motorhöljet DK, Axelbältet DK, Sätesöverdraget DK, Strandtofflorna DK,
+  Tofflorna DK, Fiskespöhållaren DK). **Noll OPS-kampanjer.** Prefixfiltret
+  slängde alla 69 och rapporterade det — utan filter hade rundan rangordnat
+  Bäverbutikens danska annonser mot HeimGuards break-even.
+- HeimGuard har alltså ingen egen annonsdata än; rutinen svarar "ingen dom kan
+  avges" i stället för att hitta på en.
+
+⚠️ Historik: kommandot fanns inte. Verifierat med
+`git log --all --diff-filter=A -- .claude/commands/*`: 22 kommandofiler hade
+någonsin skapats, ingen hette skalning/scaling. Ordet "skalningsronden"
+förekommer 8 gånger men bara som **ägare av PAUSED-beslut** — en mänsklig
+praxis, aldrig ett skript.
 
 **Återanvänd detta:**
 - `.claude/commands/cs.md` — kärnloopens fem steg. Byt fyra saker: annonskontot
@@ -228,20 +252,44 @@ mänsklig praxis, aldrig ett skript. Bygg från `/cs` som mall.
   DNA med — skriv in den ärvda historiken i `batch-log.md`, annars ser rutinens första
   körning 12 annonser utan hypoteser.
 
-**Bygg:**
+**Byggt:**
+
 - **Ekonomiblocket** i `factory/produkter/<id>.yaml`: `aov_sek`, `break_even_roas`,
-  `target_roas`, `break_even_cpa_sek`, `target_cpa_sek`. I dag finns bara `inkopskostnad`
-  och `pris`. Utan dem kan rutinen varken rangordna eller döma.
-  ⚠️ Räkna om från grunden — Bäverbutiken säljer UTAN moms, men
-  `factory/butiker/*.yaml` säger `moms_i_pris: true`. Kopiera aldrig break-even-tal
-  mellan verksamheterna.
-- **Butiksfilter på det gemensamma kontot.** ANALYSMETOD steg 0 säger "hämta hela
-  kampanjen sorterad på amount_spent" — men MagiBorsten DK bär ALLA OPS-butiker.
-  Utan prefixfilter (`TANKGUARD_`) läser rutinen andra butikers annonser som om de
-  vore samma produkt.
-- **Beslut:** registreras OPS-produkter i `products/products.json` eller i ett eget
-  register? `products.json` läses av elva skript — läggs OPS-produkter in där dras de
-  tyst in i Bäverbutikens commission, kvot och dashboard.
+  `break_even_cpa_sek`, `target_roas`, `target_cpa_sek` — räknade från grunden av
+  `factory/ekonomi.mjs`, aldrig kopierade.
+  Momsen läses ur butikskonfigen (`moms_i_pris` + `moms_procent`) och vävs in av
+  `butik.mjs`. **Skillnaden är stor:** övervakningskameran (799 kr, inköp 261 kr)
+  får break-even-ROAS **2,11 med moms** mot **1,49 utan**. Hade Bäverbutikens
+  räkning kopierats hade kill-linjen legat 42 % för generöst och förlustannonser
+  överlevt. Talen redovisar också vad de INTE innehåller (betalväxel, returer,
+  tull, bonusproduktens COGS) — varje sådan post gör break-even strängare.
+  ⚠️ HeimGuards `aov_sek` är styckpriset, för butiken har ingen försäljningsdata.
+  2-packet är förvalt, så verklig AOV blir högre och break-even strängare
+  (2,22 på A-paketet, 2,45 på B). `skalning.mjs` läser verklig AOV ur kontot och
+  larmar vid >10 % avvikelse; kommandots steg 1a kräver omräkning före varje dom.
+- **Butiksfilter på det gemensamma kontot:** `factory/skalning.mjs` filtrerar varje
+  läsning på butikens brandprefix (kampanjnamn ELLER annonsnamn, skiftlägesokänsligt,
+  bara i början av namnet) och **skriver alltid ut vad den slängde**, så ett felstavat
+  prefix ger en tom lista i stället för ett tyst felaktigt svar. Filtret stoppar både
+  Bäverbutikens DK-kampanjer och grannbutikernas OPS-annonser. Testat i
+  `factory/test/skalning.test.mjs` mot kontots sex riktiga kampanjnamn.
+- **Beslutet om registret:** OPS-produkter registreras i
+  **`factory/produkter/register.json`**, aldrig i `products/products.json`.
+  Motivering: products.json bär i sin egen kommentar "Endast Baverbutiken.se —
+  MagiBorsten 1867947880635861" och läses av ett tjugotal ställen
+  (`commission/notion.mjs`, `commission/run.mjs`, `dashboard/lib/store.mjs`,
+  `tools/leveranskon.mjs`, `tools/notion-kalla.mjs`, `tools/notion-klara.mjs`,
+  `tools/notion-till-meta.mjs`, `tools/oversattningskon.mjs`,
+  `tools/judgeme-import.mjs`, `pipeline/quota.mjs` m.fl.) som alla antar ETT konto
+  och EN verksamhet. En OPS-rad där hade tyst dragit butiken in i Bäverbutikens
+  commission, kvot och redigerardashboard.
+  Arbetsdelningen: registret bär **kopplingen och driftläget** (butik, brand,
+  prefix, konto, kampanj, hub, budget, cykel, launches), produktfilens YAML bär
+  **ekonomin**. Ett tal har exakt ett hem — ett testfall vaktar att inga
+  ekonomifält smyger in i registret.
+  Kvotmatematiken delas i stället för att kopieras: `pipeline/quota.mjs` exporterar
+  `kvotlage()` (CLI:t oförändrat, verifierat med identisk utskrift före/efter) och
+  `factory/register.mjs` räknar OPS-kvoten på samma formel.
 
 **Fallgropar:** hela `ANALYSMETOD.md` gäller — enmetriks-domar förbjudna, rangordna på
 vinstbidrag `(break-even-CPA − CPA) × köp`, signifikansgrind 300 kr/3 köp, regel 11

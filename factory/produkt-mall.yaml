@@ -21,7 +21,21 @@ ekonomi:
   inkopskostnad: 0            # KRITISKT — produkt + frakt in + ev. tull, per styck
   pris: 0                     # KRITISKT — försäljningspris (måste vara högre än inköp)
   jamforpris: 0               # jämförpris/överstruket pris (måste vara högre än pris)
-  # Valutan kommer ur butikskonfigen. Marginalen räknas rakt på priset.
+  # Valuta OCH moms kommer ur butikskonfigen (valuta, moms_i_pris, moms_procent).
+
+  # --- SKALNINGSEKONOMI — krävs innan /skalningskungen kan döma en annons ---
+  # Räkna ALDRIG för hand och kopiera ALDRIG från en annan verksamhet.
+  # Kör:  node factory/ekonomi.mjs factory/produkter/<id>.yaml
+  # och klistra in talen den skriver ut. (Bäverbutiken säljer UTAN moms,
+  # OPS-butikerna MED — samma pris ger ~40 % olika break-even.)
+  aov_sek: 0                  # verklig AOV ur Shopify. Ingen data än ⇒ sätt styckpriset
+  aov_kalla: ""               # var talet kommer ifrån + datum. "ingen data" är ett giltigt svar
+  break_even_roas: 0          # KILL-linjen. Under denna gör annonsen förlust
+  break_even_cpa_sek: 0       # = täckningsbidraget per order
+  target_roas: 0              # 25 % nettomarginal — skalningsnivå, aldrig killnivå
+  target_cpa_sek: 0
+  # varukostnad_per_order: 0        # sätt när AOV är ett flerpack (annars skalas den ur priset)
+  # ovriga_kostnader_per_order: 0   # betalväxel/returer — bara VERIFIERADE siffror
 
 varianter:                    # tom lista = one-product utan varianter
   # - namn: "Svart"

@@ -20,6 +20,17 @@ ekonomi:
   pris: 399
   jamforpris: 599             # valutan kommer ur butikskonfigen
 
+  # Skalningsekonomin, räknad av factory/ekonomi.mjs ur butikens moms (25 %):
+  #   netto 399 / 1,25 = 319,20  −  varukostnad 87  =  TB 232,20
+  #   break-even 232 kr / 1,72×   ·   target (25 % av 319,20) 152 kr / 2,62×
+  # Testernas facit — ändras talen här ska validera-testet ändras med dem.
+  aov_sek: 399
+  aov_kalla: "Styckpriset (fixtur — ingen riktig försäljningsdata)"
+  break_even_roas: 1.72
+  break_even_cpa_sek: 232
+  target_roas: 2.62
+  target_cpa_sek: 152
+
 varianter:
   - namn: "Grå"
     sku: "NM-GRA"

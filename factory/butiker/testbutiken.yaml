@@ -12,6 +12,7 @@ butik:
   huvudmarknad: Sverige
   valuta: SEK
   moms_i_pris: true
+  moms_procent: 25
 
 frakt:
   fri_globalt: true

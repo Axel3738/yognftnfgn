@@ -21,7 +21,12 @@ butik:
       locale: nb
       valuta: SEK
   valuta: SEK
+  # Momsen styr break-even (factory/ekonomi.mjs). true = priserna i
+  # produktfilen är inklusive moms, så annonsekonomin räknas på ex-moms-
+  # intäkten. ⚠️ Bäverbutiken säljer UTAN moms — dess break-even-tal gäller
+  # aldrig här, hur lika produkterna än är.
   moms_i_pris: true
+  moms_procent: 25
 
 frakt:
   fri_globalt: true

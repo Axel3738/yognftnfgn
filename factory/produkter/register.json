@@ -1,0 +1,34 @@
+{
+  "kommentar": "OPS-FABRIKENS PRODUKTREGISTER. Beslut 2026-09-08: OPS-produkter registreras HÄR, aldrig i products/products.json. products.json är Bäverbutikens (dess egen kommentar säger 'Endast Baverbutiken.se - MagiBorsten 1867947880635861') och läses av ett tjugotal skript — commission/notion.mjs, commission/run.mjs, dashboard/lib/store.mjs, tools/leveranskon.mjs, tools/notion-kalla.mjs, tools/notion-klara.mjs, tools/notion-till-meta.mjs, tools/oversattningskon.mjs, tools/judgeme-import.mjs, pipeline/quota.mjs m.fl. En OPS-rad där hade tyst dragit in butiken i Bäverbutikens commission, kvot och redigerardashboard, och lagt ett främmande annonskonto i en fil vars läsare antar ett enda konto. Två register kostar en uppslagning; ett gemensamt kostar fel utbetalningar.",
+  "arbetsdelning": "Den här filen bär KOPPLINGEN och DRIFTLÄGET: butik, brand, prefix, konto, kampanj, Notion-hub, budget, cykel, launches. Produktens EKONOMI (pris, inköp, AOV, break-even, target) står ALDRIG här — den bor i factory/produkter/<id>.yaml och läses därifrån av factory/register.mjs. Ett tal ska ha exakt ett hem.",
+  "ops_annonskonto": "915422744950975",
+  "ops_annonskonto_namn": "Magiborsten DK",
+  "ops_annonskonto_valuta": "SEK",
+  "ops_annonskonto_tidszon": "Europe/Copenhagen",
+  "varning_kontot_ar_delat": "Kontot bär ALLA OPS-butiker OCH Bäverbutikens danska kampanjer. Avläst 2026-09-08: sex kampanjer, samtliga Bäverbutikens (Fiskespöhållaren DK, Tofflorna DK, Strandtofflorna DK, Sätesöverdraget DK, Axelbältet DK, Motorhöljet DK) — noll OPS-kampanjer. Varje läsning av kontot MÅSTE därför filtreras på butikens brandprefix, annars läses en annan verksamhets annonser som om de vore produktens egna.",
+  "produkter": [
+    {
+      "id": "overvakningskameran",
+      "butik": "hemvakten",
+      "brand": "HeimGuard",
+      "namn": "Övervakningskameran (HeimGuard)",
+      "produktfil": "factory/produkter/overvakningskameran.yaml",
+      "butiksfil": "factory/butiker/hemvakten.yaml",
+      "ad_account_id": "915422744950975",
+      "kampanjprefix": "HEIMGUARD_",
+      "annonsprefix": "HeimGuard_",
+      "campaign_ids": [],
+      "landningssida": "",
+      "notion": {
+        "name": "",
+        "database_id": ""
+      },
+      "minne": "factory/minne/hemvakten",
+      "daily_budget_sek": 1000,
+      "cycle_start": "",
+      "status": "forberedd",
+      "launches": [],
+      "anteckning": "status 'forberedd' = butiken har inga annonser ännu. Sätts till 'aktiv' med cycle_start = första launchdagen när kampanjen finns i kontot; först då räknar kvoten. Meta-sidan och pixeln saknas fortfarande (produktfilens page_id/pixel_id är tomma)."
+    }
+  ]
+}

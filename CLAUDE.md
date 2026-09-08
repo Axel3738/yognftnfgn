@@ -197,6 +197,22 @@ brick by brick och **varje lyckat steg dokumenteras direkt**:
 - Två järnregler härifrån: namnregeln (funkar på svenska OCH engelska,
   aldrig å/ä/ö) och trippelkollen (säg aldrig "klart" utan tre kontroller
   mot kundens riktiga vy — regeln föddes här 2026-09-07).
+- **OPS-produkter registreras i `factory/produkter/register.json`, ALDRIG i
+  `products/products.json`** (beslut 2026-09-08). products.json är
+  Bäverbutikens och läses av ett tjugotal skript som antar ett enda
+  annonskonto — en OPS-rad där drar tyst in butiken i Bäverbutikens
+  commission, kvot och redigerardashboard. Registret bär kopplingen och
+  driftläget; **ekonomin bor i `factory/produkter/<id>.yaml`** och räknas av
+  `factory/ekonomi.mjs`. Ett tal har exakt ett hem.
+- **Break-even räknas alltid om från grunden per butik.** OPS-butikerna säljer
+  MED moms (`moms_i_pris` i butikskonfigen), Bäverbutiken utan. Samma produkt
+  och samma inköp ger break-even-ROAS 2,11 respektive 1,49 — kopieras
+  Bäverbutikens tal blir kill-linjen 42 % för generös.
+- **Varje läsning av OPS-kontot filtreras på butikens brandprefix.** Kontot är
+  delat och bär dessutom Bäverbutikens danska kampanjer: avläst 2026-09-08 låg
+  där 6 kampanjer och 69 annonser, samtliga Bäverbutikens, noll OPS. Kör
+  `node factory/skalning.mjs <butik>` — den filtrerar och redovisar vad den
+  slängde. Skalningsrundan är `/skalningskungen <butik>`.
 - Efter varje bygge skrivs `output/<id>/CHECKLISTA.md` — Axels enda
   manuella klick, i ordning. Allt annat gör fabriken via API.
 
@@ -222,7 +238,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 
 ## Kommandona (Axels gränssnitt)
 
-17 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
+23 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
 
 | Kommando | Vad |
 |----------|-----|
@@ -244,6 +260,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/nattkorning` | Rutinen "Ad upload and structure": Drive-kön → QA → Meta |
 | `/notionkorning` | **Rutin 13:20 varje dag:** Notion `To be Reviewed` (video + bild) → brief-QA → upp i produktens kampanj → Discord `#ads-launching` / `#problem-and-revisions-ads` |
 | `/commission` | **Var tredje dag + månadens sista dag:** godkända Notion-rader → spend i alla annonskonton → 0,4 % till redigeraren |
+| `/skalningskungen <butik>` | **`/cs` för OPS-fabriken:** en instans per OPS-butik. Delat annonskonto, egen ekonomi, eget produktminne |
 
 ### Nattrutinerna
 

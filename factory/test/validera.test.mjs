@@ -60,8 +60,14 @@ lista:   # bara en kommentar efter kolon
 test('dummyprodukten passerar utan kritiska fel när butikskonfigen vävts in', () => {
   const { fel, nyckeltal } = validera(dummy());
   assert.deepEqual(fel, []);
-  assert.equal(nyckeltal.breakEvenRoas, 1.28); // 399 / (399 − 87)
-  assert.equal(nyckeltal.breakEvenCpa, 312);
+  // Nyckeltalen räknas MED butikens moms sedan 2026-09-08 (factory/ekonomi.mjs).
+  // Tidigare stod här 1,28 / 312 — marginalen rakt på priset, utan moms. Det
+  // talet gäller bara en butik som säljer utan moms (Bäverbutiken); testbutiken
+  // har moms_i_pris true, och då är den gamla räkningen 25 % för generös.
+  assert.equal(nyckeltal.breakEvenRoas, 1.72); // 399 / (399/1,25 − 87)
+  assert.equal(nyckeltal.breakEvenCpa, 232);
+  assert.equal(nyckeltal.targetRoas, 2.62);
+  assert.equal(nyckeltal.targetCpa, 152);
 });
 
 test('dummyprodukten varnar om tomma meta-fält', () => {

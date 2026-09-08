@@ -159,6 +159,41 @@ som genereras per bygge).
 19. ⚙️ Q4-ramverket i annonsplanen: banka creatives i förväg (dubbla antalet),
     större PO innan säsong (PLAN.md punkt 6).
 
+## Fas 7 — Skalningen: `/skalningskungen <butik>` (byggd 2026-09-08)
+20. ⚙️ **Registrera butiken** i `factory/produkter/register.json` — kopplingen
+    butik ↔ produkt ↔ konto ↔ brandprefix ↔ kampanj ↔ Notion-hub ↔ budget.
+    **OPS-produkter läggs ALDRIG i `products/products.json`** (den är
+    Bäverbutikens och läses av ett tjugotal skript som antar ett enda konto —
+    en OPS-rad där drar tyst in butiken i Bäverbutikens commission, kvot och
+    redigerardashboard). Ekonomin står i produktfilens YAML, aldrig i registret:
+    ett tal ska ha exakt ett hem.
+21. ⚙️ **Räkna ekonomiblocket från grunden** innan första annonsen döms:
+    `node factory/ekonomi.mjs factory/produkter/<id>.yaml` → klistra in talen.
+    Momsen kommer ur butikskonfigen (`moms_i_pris`, `moms_procent`).
+    ⚠️ **Kopiera ALDRIG Bäverbutikens break-even.** Bäverbutiken säljer utan
+    moms, OPS-butikerna med. Övervakningskameran: 2,11 med moms mot 1,49 utan —
+    42 % skillnad, och den generösa varianten låter förlustannonser överleva.
+    Har butiken sålt: läs verklig AOV ur kontot och räkna om. Förvalt flerpack
+    gör AOV högre och break-even strängare (HeimGuard: 2,22 / 2,45 på paketen).
+22. ⚙️ **Läs kontot filtrerat:** `node factory/skalning.mjs <butik>` gör
+    ANALYSMETOD steg 0–6 (datakvalitet → signifikansgrind → vinstbidrag →
+    spendfördelning → metrik-diagnos). Steg 6b, creative-teardownet, går inte
+    att skripta och görs i kommandot.
+    ⚠️ **Prefixfiltret är spärren, inte en bekvämlighet.** Kontot MagiBorsten DK
+    `915422744950975` är delat av alla OPS-butiker OCH bär Bäverbutikens danska
+    kampanjer. Avläst 2026-09-08: 6 kampanjer, 69 annonser, **samtliga
+    Bäverbutikens** — noll OPS. Varje körning skriver ut hur många rader den
+    slängde, så ett felstavat prefix syns som en tom lista i stället för som
+    ett tyst felaktigt svar.
+23. ⚙️ Produktminnet bor i `factory/minne/<butik>/` (`dna.md`, `batch-log.md`,
+    `backlog.md`) — motsvarigheten till `products/<id>/` i Bäverbutiken.
+    Brand-swappade annonser bär med sig sin bevisade historik: skriv in den
+    märkt `ÄRVD`, men behandla den som **hypotes** tills mönstret bevisats i
+    detta konto (annat brand, annat pris, annan sida).
+24. ⚙️ Nya tester i separat test-ABO, allt föds PAUSED, annonsnamnet börjar
+    ALLTID med butikens prefix. Ett namn utan prefix blir osynligt för nästa
+    avläsning — och det syns aldrig som ett fel.
+
 ## Regler som bevisats den hårda vägen
 - **Alltid svensk lag, aldrig egna köplöften** (Axels beslut 2026-09-08:
   "30 dagars öppet köp" överallt har ruinerat folks trust). Standard är

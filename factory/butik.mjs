@@ -116,7 +116,15 @@ export function sammanfoga(butik, produkt) {
       adress: text(b.adress),
       kontakt_epost: text(b.supportmail),
     },
-    ekonomi: { ...p.ekonomi, valuta: text(p.ekonomi?.valuta) ?? text(b.valuta) },
+    // Momsen bor i butikskonfigen och vävs in här, för att skalningsekonomin
+    // (factory/ekonomi.mjs) annars skulle behöva gissa den — och en gissning
+    // åt fel håll flyttar break-even med tiotals procent.
+    ekonomi: {
+      ...p.ekonomi,
+      valuta: text(p.ekonomi?.valuta) ?? text(b.valuta),
+      moms_i_pris: b.moms_i_pris !== false,
+      moms_procent: tal(p.ekonomi?.moms_procent) ?? tal(b.moms_procent) ?? 25,
+    },
     shipping: fraktFranButik(butik, leveranstid),
     // Kundtexten om frakt härleds ur samma konfig som zonerna i kassan, så
     // sidan omöjligt kan säga något annat än vad kunden faktiskt betalar.

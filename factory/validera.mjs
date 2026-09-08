@@ -8,6 +8,7 @@
 import { readFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 import { lasYaml } from './yaml.mjs';
+import { ekonomiForProdukt, granskaEkonomiblock } from './ekonomi.mjs';
 
 const KANDA_VALUTOR = ['SEK', 'NOK', 'DKK', 'EUR', 'USD', 'GBP'];
 
@@ -93,15 +94,41 @@ export function validera(p) {
   }
 
   // --- Nyckeltal (bara om ekonomin är hel) ---
+  // Räknas alltid av factory/ekonomi.mjs, som tar hänsyn till momsen i
+  // butikskonfigen. Marginalen rakt på priset (den gamla räkningen) gäller
+  // bara butiker utan moms i priset och får aldrig visas för en momsbutik —
+  // den gör break-even ~25 % för generös.
   let nyckeltal = null;
   if (fel.length === 0) {
-    const marginal = eko.pris - eko.inkopskostnad;
-    nyckeltal = {
-      marginal,
-      marginalProcent: Math.round((marginal / eko.pris) * 100),
-      breakEvenRoas: Math.round((eko.pris / marginal) * 100) / 100,
-      breakEvenCpa: Math.round(marginal),
-    };
+    const e = ekonomiForProdukt(p);
+    if (e) {
+      nyckeltal = {
+        marginal: e.tackningsbidrag,
+        marginalProcent: e.marginalProcent,
+        breakEvenRoas: e.breakEvenRoas,
+        breakEvenCpa: e.breakEvenCpa,
+        targetRoas: e.targetRoas,
+        targetCpa: e.targetCpa,
+        momsProcent: e.momsProcent,
+        netto: e.netto,
+        olonsam: e.olonsam,
+      };
+      if (e.olonsam) {
+        fel.push(
+          `ekonomi: täckningsbidraget är ${e.tackningsbidrag} — priset ${eko.pris} bär inte varukostnaden efter moms`
+        );
+      }
+    }
+  }
+
+  // Ekonomiblocket i YAML:en är för människor; siffrorna blir inaktuella så
+  // fort pris, inköp eller AOV rörs. Varna hellre än att låta en skalningsrunda
+  // döma mot ett gammalt break-even-tal.
+  for (const avvikelse of granskaEkonomiblock(p)) {
+    varningar.push(`${avvikelse} — räkna om ekonomiblocket`);
+  }
+  if (tal(eko.pris) && !tal(eko.aov_sek)) {
+    varningar.push('ekonomi.aov_sek är inte satt (styckpriset används tills butiken har ordrar)');
   }
 
   return { fel, varningar, nyckeltal };
@@ -142,10 +169,15 @@ function huvud() {
   }
 
   if (nyckeltal) {
-    console.log('\nNyckeltal (utan moms — marginal rakt på priset):');
-    console.log(`   Marginal:        ${nyckeltal.marginal} (${nyckeltal.marginalProcent} %)`);
-    console.log(`   Break-even-ROAS: ${nyckeltal.breakEvenRoas}`);
+    const momsrad = nyckeltal.momsProcent > 0
+      ? `moms ${nyckeltal.momsProcent} % i priset — räknat på ex-moms-intäkten ${nyckeltal.netto}`
+      : 'ingen moms i priset';
+    console.log(`\nNyckeltal (${momsrad}):`);
+    console.log(`   Täckningsbidrag: ${nyckeltal.marginal} (${nyckeltal.marginalProcent} % av netto)`);
+    console.log(`   Break-even-ROAS: ${nyckeltal.breakEvenRoas}   ← enda linjen som får döda en annons`);
     console.log(`   Break-even-CPA:  ${nyckeltal.breakEvenCpa}`);
+    console.log(`   Target-ROAS:     ${nyckeltal.targetRoas ?? '—'}   (25 % nettomarginal)`);
+    console.log(`   Target-CPA:      ${nyckeltal.targetCpa ?? '—'}`);
   }
 
   console.log('');

@@ -35,8 +35,11 @@ på bara produktfilen: den saknar butiksfälten och stoppar falskt.)
 
 Kritiska fält som saknas → ❌ och exit 1, systemet stoppar direkt.
 Varningar (⚠️) stoppar inte, men ska vara ifyllda före launch.
-Grön validering visar även marginal, break-even-ROAS och break-even-CPA
-(utan moms — Bäverbutiken räknar marginal rakt på priset).
+Grön validering visar även täckningsbidrag, break-even-ROAS/CPA och
+target-ROAS/CPA. **Talen räknas MED butikens moms** (`moms_i_pris` +
+`moms_procent` i butikskonfigen) sedan 2026-09-08 — se `ekonomi.mjs`.
+⚠️ Bäverbutikens break-even-tal gäller aldrig här: den säljer utan moms, och
+samma pris och inköp ger då ~40 % generösare kill-linje.
 
 Exempel med allt ifyllt: `produkter/dummyprodukten.yaml`.
 
@@ -136,6 +139,11 @@ ACTIVE och publiceras i Online Store-kanalen. LAUNCH rör aldrig annonskontot.
 | `produkt-mall.yaml` | Tom mall med alla fält och förklaringar |
 | `produkter/dummyprodukten.yaml` | Ifyllt exempel (dummy, ingen riktig produkt) |
 | `validera.mjs` | Valideringen — CLI + exporterad `validera()` |
+| `ekonomi.mjs` | Skalningsekonomin: break-even/target räknat med butikens moms. CLI skriver ekonomiblocket |
+| `produkter/register.json` | **OPS-produktregistret** — butik ↔ produkt ↔ konto ↔ prefix ↔ kampanj ↔ budget. Aldrig `products/products.json` |
+| `register.mjs` | Uppslagningen i registret + kontospärren + kvotläget |
+| `skalning.mjs` | ANALYSMETOD steg 0–6 ur det DELADE annonskontot, filtrerat på brandprefix |
+| `minne/<butik>/` | Produktminnet per OPS-butik: `dna.md`, `batch-log.md`, `backlog.md` |
 | `yaml.mjs` | Minimal YAML-läsare (noll beroenden) |
 | `ops.mjs` | Stegmotorn — hela kedjan konfig → butik |
 | `butik.mjs` | Butikskonfigen + sammanvävningen med produktfilen |

@@ -25,6 +25,7 @@ butik:
       valuta: NOK
   valuta: SEK                 # KRITISKT — SEK, NOK, DKK, EUR, USD eller GBP
   moms_i_pris: true           # true = priserna inkluderar skatt
+  moms_procent: 25            # momssatsen. Styr break-even i factory/ekonomi.mjs
 
 frakt:
   fri_globalt: true           # fri frakt till alla länder (default)

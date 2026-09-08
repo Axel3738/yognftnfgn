@@ -24,6 +24,36 @@ ekonomi:
   pris: 799
   jamforpris: 1000
 
+  # --- SKALNINGSEKONOMI (räknad från grunden 2026-09-08, factory/ekonomi.mjs) ---
+  # Läses av /skalningskungen: break-even styr KILL-beslut, target styr skalning.
+  #
+  # ⚠️ Ingen siffra här kommer från Bäverbutiken. HeimGuard säljer MED moms
+  # (butiker/hemvakten.yaml: moms_i_pris true, 25 %), Bäverbutiken utan. Samma
+  # pris och samma inköp ger break-even-ROAS 2,11 här mot 1,49 där — 42 %
+  # skillnad. Kopieras Bäverbutikens tal hit överlever förlustannonser.
+  #
+  # Räkningen, per order:
+  #   brutto 799  →  netto 799 / 1,25 = 639,20  →  − varukostnad 261
+  #   = täckningsbidrag 378,20 kr som ska betala annonsen
+  #   break-even-CPA  = 378 kr        break-even-ROAS = 799 / 378,20 = 2,11
+  #   target (25 % nettomarginal på 639,20 = 159,80 kr vinst per order):
+  #   target-CPA      = 218 kr        target-ROAS     = 799 / 218,40 = 3,66
+  #
+  # ⚠️ INTE inräknat (ingen verifierad siffra finns): betalväxelavgift
+  # (Shopify Payments/Klarna), returer, tull, appkostnader, och COGS för
+  # gratisbonusen (varningsskyltarna) i paketen. Varje sådan post gör
+  # break-even STRÄNGARE än talen ovan — de är ett tak, inte ett golv.
+  aov_sek: 799
+  aov_kalla: "Styckpriset. Butiken har ingen försäljningsdata 2026-09-08 — INGEN uppmätt AOV finns."
+  # ⚠️ AOV:n kommer att bli högre än 799: 2-packet är förvalt. Räknat på
+  # paketpriserna blir break-even-ROAS 2,22 (A 1 342 kr) och 2,45 (B 1 199 kr),
+  # alltså STRÄNGARE än talet nedan. Första skalningsronden ska därför läsa
+  # verklig AOV (intäkt / köp) och räkna om blocket innan något döms.
+  break_even_roas: 2.11
+  break_even_cpa_sek: 378
+  target_roas: 3.66
+  target_cpa_sek: 218
+
 varianter:
   - namn: "Svart"
     sku: "TEMU-601100938731214"
