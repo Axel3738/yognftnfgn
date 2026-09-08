@@ -83,6 +83,77 @@ export async function lasKostnaderMedAi(input: {
   return res.parsed_output;
 }
 
+/* ------------------------------------------------------------------------ */
+/* Leverantörsoffert                                                         */
+/* ------------------------------------------------------------------------ */
+
+/**
+ * En offert från leverantören ser inte ut som butiken: "Item 3 – car engine
+ * cover 200D, 20 pcs, 8.40 USD". Därför skriver vi INTE direkt till Shopify.
+ * AI:n plockar ut raderna (namn, styckpris, ev. flerpack, valuta) och får
+ * föreslå en produkt ur butiken när det är uppenbart — men det är handlaren
+ * som väljer produkt i UI:t och trycker "Lägg in". Priset räknas om till
+ * butikens valuta med dagskursen i actionen (fx.server.ts), aldrig här.
+ */
+const OffertRad = z.object({
+  label: z.string().describe("Radens namn i offerten, som det står"),
+  unit_cost: z.number().describe("Pris för 1 st i offertens valuta (vara, plus frakt om den är per styck)"),
+  tiers: z.array(z.number()).describe("Totalpris för 2, 3, … st om offerten prissätter flerpack, annars tom lista"),
+  currency: z.string().describe("Valutakod (USD, CNY, EUR, SEK …) som offerten anger, eller tom sträng om ingen syns"),
+  moq: z.number().describe("Minsta beställning (MOQ) om det står, annars 0"),
+  suggested_product: z.string().describe("Exakt produkttitel ur butikens lista om raden uppenbart är den produkten, annars tom sträng"),
+  suggested_variant: z.string().describe("Exakt varianttitel ur listan om raden gäller en viss variant, annars tom sträng"),
+});
+const OffertSvar = z.object({
+  items: z.array(OffertRad),
+  notes: z.string().describe("Kort anmärkning om osäkerheter (t.ex. pris per kartong, frakt separat), max två meningar"),
+});
+export type AiOffertSvar = z.infer<typeof OffertSvar>;
+
+export async function lasOffertMedAi(input: {
+  bilder: Bild[];
+  text: string;
+  produkter: { productTitle: string; variantTitle: string }[];
+}): Promise<AiOffertSvar> {
+  const client = new Anthropic();
+  const katalog = input.produkter
+    .map((p) => `${p.productTitle} | ${p.variantTitle === "Default Title" ? "" : p.variantTitle}`)
+    .join("\n");
+
+  const content: Anthropic.ContentBlockParam[] = [
+    ...input.bilder.map((b): Anthropic.ImageBlockParam => ({
+      type: "image",
+      source: { type: "base64", media_type: b.mediaType, data: b.base64 },
+    })),
+    {
+      type: "text",
+      text:
+        `Butikens produkter (produkttitel | varianttitel), en per rad:\n${katalog}\n\n` +
+        (input.text.trim() ? `Inklistrad text från offerten:\n${input.text.trim()}\n\n` : "") +
+        "Läs av leverantörsofferten i bilden/texten. En rad per artikel som prissätts. " +
+        "unit_cost är priset för 1 st i offertens valuta; står bara ett totalpris för en kvantitet, dela med antalet och skriv det i notes. " +
+        "Prissätter offerten flerpack (2-pack, 3-pack …) som säljs som EN orderrad: lägg totalpriset per pack i tiers i ordning. " +
+        "Är frakten angiven per styck: räkna in den i unit_cost och nämn det i notes; är den en klumpsumma: räkna INTE in den, nämn den i notes. " +
+        "Räkna aldrig om valutor. Föreslå produkt/variant ur listan bara när det är uppenbart — stavningen måste vara identisk med listan; annars tom sträng.",
+    },
+  ];
+
+  const res = await client.messages.parse({
+    model: "claude-opus-5",
+    max_tokens: 16000,
+    system:
+      "Du extraherar priser ur leverantörsofferter för en Shopify-vinstapp. Du hittar aldrig på tal: " +
+      "ett belopp som inte står i källan skrivs inte. Svara bara med det begärda formatet.",
+    messages: [{ role: "user", content }],
+    output_config: { format: zodOutputFormat(OffertSvar) },
+  });
+
+  if (!res.parsed_output) {
+    throw new Error(res.stop_reason === "refusal" ? "Modellen avböjde att läsa bilden." : "Kunde inte tolka svaret från modellen.");
+  }
+  return res.parsed_output;
+}
+
 /** Rader → CSV i vårt importformat: titel;variant;kostnad[|tier2|tier3]. */
 export function tillCsv(svar: AiKostnadSvar): string {
   return svar.rows

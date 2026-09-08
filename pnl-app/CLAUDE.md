@@ -511,6 +511,25 @@ valuta räknas inte om utan rapporteras i `notes`.
   typecheck/build/test gröna. Första riktiga körningen: kontrollera att
   produkttitlarna matchar (stavning identisk) och att "hoppades över"-listan
   är tom eller begriplig.
+- 2026-09-08 kväll: Axel lade `ANTHROPIC_API_KEY` på **App Store-tjänsten**
+  (bara den). Kortet finns alltså för externa handlare + stonepnl-test, inte
+  på de fem egna butikernas tjänster (de har redan COGS sedan 2026-09-05).
+  Flerpack följer med: AI:n skriver `tiers` → CSV `a|b|c` → `CostTier`.
+
+**Offert från leverantören (build quote-v71)** — Axels ord: "droppa en bild
+på en quote man fått från sin leverantör, klicka vilken produkt den hör
+till, så läggs COGS:en in." Kortet **Släpp en offert från leverantören**
+(samma `aiEnabled`-villkor). Två steg, med flit: (1) `intent=quote-read` →
+`lasOffertMedAi` plockar ut raderna (namn, styckpris, flerpack, valuta, MOQ,
+ev. förslag på produkt/variant ur butikens lista) — **inget skrivs**; actionen
+räknar om till butikens valuta med `fx.rate()` (ECB i dag) och skickar kursen
+med. (2) Handlaren väljer produkt (förvalt om AI:n var säker) och ev. variant
+i `OffertRad`, kan ändra beloppet, och klickar **Lägg in** →
+`intent=quote-apply`: `setUnitCost` per inventoryItem + `CostTier` ersätts
+för varianterna om offerten hade packpriser. Utan kurs (Frankfurter nere,
+okänd valuta) visas en röd rad och fältet fylls för hand. Offerter mappas
+aldrig automatiskt — leverantörens namn ("Item 3 – engine cover 200D")
+liknar inte butikens titlar, och ett fel här är ett fel i varje vinstsiffra.
 
 **Hero-kortet i panelen (build hero-v68)** — Axels ord: "dashboarden borde se
 lite mer levande ut, man vill ha en dopaminkick." Överst i panelen: den stora

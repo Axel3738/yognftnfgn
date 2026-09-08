@@ -25,6 +25,7 @@ import {
   InlineStack,
   Layout,
   Page,
+  Select,
   Text,
   TextField,
 } from "@shopify/polaris";
@@ -33,7 +34,8 @@ import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { invalidateCatalog, invalidateVariantCosts, loadCatalog, setUnitCost } from "../lib/shopify-data.server";
 import { importCostCsv } from "../lib/cost-import.server";
-import { aiKostnadEnabled, lasKostnaderMedAi, tillCsv, type Bild } from "../lib/ai-kostnad.server";
+import { aiKostnadEnabled, lasKostnaderMedAi, lasOffertMedAi, tillCsv, type Bild } from "../lib/ai-kostnad.server";
+import { rate as fxRate } from "../lib/fx.server";
 import { asLang, localeOf, t } from "../lib/texts";
 
 export async function loader({ request }: LoaderFunctionArgs) {
@@ -114,9 +116,84 @@ export async function action({ request }: ActionFunctionArgs) {
     await invalidateCatalog(session.shop, prisma);
     return json({ ok: fel.length === 0, message: fel.join("; ") });
   }
+  /* Offertraden handlaren valt produkt för: styckpris till Shopify, ev.
+     flerpacksteg till CostTier (ersätter variantens tidigare steg). */
+  if (intent === "quote-apply") {
+    const cost = parseFloat(String(form.get("cost") ?? "").replace(/\s/g, "").replace(",", "."));
+    const inv = String(form.get("inv") ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+    const variants = String(form.get("variants") ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+    const tiers = String(form.get("tiers") ?? "")
+      .split(",")
+      .map((s) => parseFloat(s.trim()))
+      .filter((n) => Number.isFinite(n) && n > 0);
+    if (!Number.isFinite(cost) || cost < 0 || !inv.length) {
+      return json({ ok: false, message: "invalid" }, { status: 400 });
+    }
+    const fel: string[] = [];
+    for (const gid of inv) {
+      const r = await setUnitCost(admin, gid, cost);
+      if (!r.ok) fel.push(r.error ?? gid);
+    }
+    if (tiers.length && variants.length) {
+      for (const variantGid of variants) {
+        await prisma.costTier.deleteMany({ where: { shop: session.shop, variantGid } });
+        await prisma.costTier.createMany({
+          data: tiers.map((totalCost, i) => ({ shop: session.shop, variantGid, units: i + 2, totalCost })),
+        });
+      }
+    }
+    invalidateVariantCosts(session.shop);
+    await invalidateCatalog(session.shop, prisma);
+    return json({ ok: fel.length === 0, message: fel.join("; ") });
+  }
   // Meddelandena visas i UI:t — hämta butikens språk först.
   const settings = await prisma.shopSettings.findUnique({ where: { shop: session.shop } });
   const T = t(asLang(settings?.language));
+
+  /* Leverantörsoffert: AI plockar ut raderna, kursen räknas här, handlaren
+     väljer produkt i UI:t. Inget skrivs till Shopify i det här steget. */
+  if (intent === "quote-read") {
+    if (!aiKostnadEnabled) return json({ ok: false, message: "AI is not enabled on this server." }, { status: 400 });
+    let bilder: Bild[] = [];
+    try {
+      bilder = JSON.parse(String(form.get("bilder") ?? "[]"));
+    } catch {
+      bilder = [];
+    }
+    const text = String(form.get("text") ?? "");
+    if (!bilder.length && !text.trim()) return json({ ok: false, message: T.costs.quote.failed("empty") }, { status: 400 });
+    try {
+      const katalog = await loadCatalog(admin, session.shop, prisma);
+      const svar = await lasOffertMedAi({
+        bilder: bilder.slice(0, 6),
+        text,
+        produkter: katalog.all.map((v) => ({ productTitle: v.productTitle, variantTitle: v.variantTitle })),
+      });
+      const butikensValuta = (settings?.currency ?? "SEK").toUpperCase();
+      const items = [];
+      for (const it of svar.items) {
+        const cur = (it.currency || butikensValuta).toUpperCase().replace(/[^A-Z]/g, "").slice(0, 3) || butikensValuta;
+        const kurs = cur === butikensValuta ? 1 : await fxRate(cur, butikensValuta);
+        const om = (n: number) => (kurs == null ? null : Math.round(n * kurs * 100) / 100);
+        items.push({
+          label: it.label,
+          unitCost: it.unit_cost,
+          tiers: it.tiers,
+          currency: cur,
+          moq: it.moq,
+          rate: kurs ?? null,
+          costShop: om(it.unit_cost),
+          tiersShop: it.tiers.map(om).filter((n): n is number => n != null),
+          suggestedProduct: it.suggested_product,
+          suggestedVariant: it.suggested_variant,
+        });
+      }
+      return json({ ok: true, message: items.length ? T.costs.quote.found(items.length) : T.costs.quote.empty, quote: { items, notes: svar.notes } });
+    } catch (e) {
+      console.error("AI-offertläsning misslyckades:", e);
+      return json({ ok: false, message: T.costs.quote.failed((e as Error).message) }, { status: 500 });
+    }
+  }
 
   /* AI läser av skärmbild/text → vårt CSV-format → samma import som filen. */
   if (intent === "ai-import") {
@@ -172,7 +249,23 @@ export default function Costs() {
   const [aiBilder, setAiBilder] = useState<{ name: string; mediaType: string; base64: string }[]>([]);
   const [aiText, setAiText] = useState("");
   const aiData = aiFetcher.data as { ok: boolean; message: string; ai?: { unmatched: string[]; notes: string } } | undefined;
+  const quoteFetcher = useFetcher<typeof action>();
+  const [quoteBilder, setQuoteBilder] = useState<{ name: string; mediaType: string; base64: string }[]>([]);
+  const [quoteText, setQuoteText] = useState("");
+  const quoteData = quoteFetcher.data as { ok: boolean; message: string; quote?: { items: OffertItem[]; notes: string } } | undefined;
   const [visaImport, setVisaImport] = useState(false);
+  /* Bilder → base64 i webbläsaren. Delas av AI-kortet och offertkortet. */
+  const lasBilder = (setter: typeof setAiBilder) => (_all: File[], accepted: File[]) => {
+    for (const file of accepted.slice(0, 6)) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const url = String(reader.result ?? "");
+        const base64 = url.split(",")[1] ?? "";
+        setter((b) => [...b, { name: file.name, mediaType: file.type || "image/png", base64 }]);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
   /* Produktgrupper för snabbfältet: en rad per produkt, varianterna under. */
   const produkter = (() => {
     const m = new Map<string, typeof rows>();
@@ -284,17 +377,7 @@ export default function Costs() {
                     accept="image/png,image/jpeg,image/webp,image/gif"
                     type="image"
                     allowMultiple
-                    onDrop={(_all, accepted) => {
-                      for (const file of accepted.slice(0, 6)) {
-                        const reader = new FileReader();
-                        reader.onload = () => {
-                          const url = String(reader.result ?? "");
-                          const base64 = url.split(",")[1] ?? "";
-                          setAiBilder((b) => [...b, { name: file.name, mediaType: file.type || "image/png", base64 }]);
-                        };
-                        reader.readAsDataURL(file);
-                      }
-                    }}
+                    onDrop={lasBilder(setAiBilder)}
                   >
                     {aiBilder.length ? (
                       <div style={{ padding: 16 }}>
@@ -334,6 +417,60 @@ export default function Costs() {
                         </>
                       ) : null}
                     </Banner>
+                  ) : null}
+                </BlockStack>
+              </Card>
+            ) : null}
+
+            {/* Leverantörsoffert: AI läser priserna, handlaren väljer produkt. */}
+            {aiEnabled ? (
+              <Card>
+                <BlockStack gap="300">
+                  <Text as="h2" variant="headingMd">{T.costs.quote.title}</Text>
+                  <Text as="p" tone="subdued">{T.costs.quote.body}</Text>
+                  <DropZone
+                    accept="image/png,image/jpeg,image/webp,image/gif"
+                    type="image"
+                    allowMultiple
+                    onDrop={lasBilder(setQuoteBilder)}
+                  >
+                    {quoteBilder.length ? (
+                      <div style={{ padding: 16 }}>
+                        <Text as="p" fontWeight="semibold">{quoteBilder.map((b) => b.name).join(", ")}</Text>
+                      </div>
+                    ) : (
+                      <DropZone.FileUpload actionTitle={T.costs.quote.drop} actionHint={T.costs.quote.dropHint} />
+                    )}
+                  </DropZone>
+                  <TextField label={T.costs.quote.pasteLabel} value={quoteText} onChange={setQuoteText} multiline={3} autoComplete="off" />
+                  <InlineStack gap="300" blockAlign="center">
+                    <Button
+                      variant="primary"
+                      disabled={!quoteBilder.length && !quoteText.trim()}
+                      loading={quoteFetcher.state !== "idle"}
+                      onClick={() =>
+                        quoteFetcher.submit(
+                          { intent: "quote-read", bilder: JSON.stringify(quoteBilder.map(({ mediaType, base64 }) => ({ mediaType, base64 }))), text: quoteText },
+                          { method: "POST" },
+                        )
+                      }
+                    >
+                      {quoteFetcher.state !== "idle" ? T.costs.quote.reading : T.costs.quote.run}
+                    </Button>
+                    {quoteBilder.length ? <Button variant="plain" onClick={() => setQuoteBilder([])}>×</Button> : null}
+                  </InlineStack>
+                  {quoteData ? (
+                    <Banner tone={quoteData.ok ? (quoteData.quote?.items.length ? "info" : "warning") : "critical"}>
+                      <p>{quoteData.message}</p>
+                      {quoteData.quote?.notes ? <p>{quoteData.quote.notes}</p> : null}
+                    </Banner>
+                  ) : null}
+                  {quoteData?.quote?.items.length ? (
+                    <BlockStack gap="200">
+                      {quoteData.quote.items.map((it, i) => (
+                        <OffertRad key={`${i}-${it.label}`} it={it} rows={rows} T={T} nf={nf} currency={currency} />
+                      ))}
+                    </BlockStack>
                   ) : null}
                 </BlockStack>
               </Card>
@@ -534,6 +671,101 @@ export default function Costs() {
 }
 
 type Rad = { productGid: string; variantGid: string; inventoryItemGid: string; productTitle: string; variantTitle: string; price: number; unitCost: number | null };
+
+type OffertItem = {
+  label: string;
+  unitCost: number;
+  tiers: number[];
+  currency: string;
+  moq: number;
+  rate: number | null;
+  costShop: number | null;
+  tiersShop: number[];
+  suggestedProduct: string;
+  suggestedVariant: string;
+};
+
+/**
+ * En rad ur offerten: pris (omräknat), produktval, variantval, "Lägg in".
+ * AI:ns förslag är bara förvalt — handlaren bestämmer. Utan kurs är fältet
+ * redigerbart så att kostnaden går att skriva för hand i butikens valuta.
+ */
+function OffertRad({ it, rows, T, nf, currency }: { it: OffertItem; rows: Rad[]; T: ReturnType<typeof t>; nf: Intl.NumberFormat; currency: string }) {
+  const fetcher = useFetcher<typeof action>();
+  const produkter = (() => {
+    const m = new Map<string, Rad[]>();
+    for (const r of rows) (m.get(r.productGid) ?? m.set(r.productGid, []).get(r.productGid)!).push(r);
+    return [...m.values()].sort((a, b) => a[0].productTitle.localeCompare(b[0].productTitle));
+  })();
+  const forslag = produkter.find((g) => g[0].productTitle.trim().toLowerCase() === it.suggestedProduct.trim().toLowerCase());
+  const [productGid, setProductGid] = useState(forslag?.[0].productGid ?? "");
+  const grupp = produkter.find((g) => g[0].productGid === productGid) ?? [];
+  const forslagVariant = grupp.find((r) => r.variantTitle.trim().toLowerCase() === it.suggestedVariant.trim().toLowerCase());
+  const [variantGid, setVariantGid] = useState(forslagVariant?.variantGid ?? "");
+  const [kostnad, setKostnad] = useState(it.costShop != null ? String(it.costShop) : "");
+  const sparad = fetcher.data?.ok === true;
+
+  const mal = variantGid ? grupp.filter((r) => r.variantGid === variantGid) : grupp;
+  const laggIn = () => {
+    if (!mal.length || !kostnad.trim()) return;
+    fetcher.submit(
+      {
+        intent: "quote-apply",
+        cost: kostnad,
+        inv: mal.map((r) => r.inventoryItemGid).join(","),
+        variants: mal.map((r) => r.variantGid).join(","),
+        tiers: it.tiersShop.join(","),
+      },
+      { method: "POST" },
+    );
+  };
+
+  return (
+    <div style={{ borderTop: "1px solid #e3e3e3", paddingTop: 8 }}>
+      <BlockStack gap="150">
+        <InlineStack gap="200" blockAlign="center" wrap>
+          <Text as="span" fontWeight="semibold">{it.label}</Text>
+          <Text as="span" tone="subdued" variant="bodySm">
+            {`${nf.format(it.unitCost)} ${it.currency}`}
+            {it.rate != null && it.rate !== 1 ? ` · ${T.costs.quote.converted(it.currency, currency, it.rate)}` : ""}
+          </Text>
+          {it.moq ? <Badge>{T.costs.quote.moq(it.moq)}</Badge> : null}
+          {it.tiers.length ? <Badge tone="info">{T.costs.quote.tiers(it.tiers.length)}</Badge> : null}
+        </InlineStack>
+        {it.rate == null && it.currency !== currency ? (
+          <Text as="p" tone="critical" variant="bodySm">{T.costs.quote.noRate(it.currency)}</Text>
+        ) : null}
+        <InlineStack gap="200" blockAlign="end" wrap>
+          <div style={{ flex: 2, minWidth: 220 }}>
+            <Select
+              label={T.costs.quote.product}
+              options={[{ label: T.costs.quote.pick, value: "" }, ...produkter.map((g) => ({ label: g[0].productTitle, value: g[0].productGid }))]}
+              value={productGid}
+              onChange={(v) => { setProductGid(v); setVariantGid(""); }}
+            />
+          </div>
+          {grupp.length > 1 ? (
+            <div style={{ flex: 1, minWidth: 160 }}>
+              <Select
+                label={T.costs.quote.variant}
+                options={[{ label: T.costs.quote.allVariants, value: "" }, ...grupp.map((r) => ({ label: r.variantTitle, value: r.variantGid }))]}
+                value={variantGid}
+                onChange={setVariantGid}
+              />
+            </div>
+          ) : null}
+          <div style={{ width: 140 }}>
+            <TextField label={T.costs.thCost} value={kostnad} onChange={setKostnad} autoComplete="off" suffix={currency} />
+          </div>
+          <Button variant="primary" disabled={!mal.length || !kostnad.trim() || sparad} loading={fetcher.state !== "idle"} onClick={laggIn}>
+            {sparad ? T.costs.quote.applied : T.costs.quote.apply}
+          </Button>
+          {fetcher.data && !fetcher.data.ok ? <Badge tone="critical">{fetcher.data.message}</Badge> : null}
+        </InlineStack>
+      </BlockStack>
+    </div>
+  );
+}
 
 /**
  * En produkt i snabbfältet. Ett fält på produktnivå som skriver samma kostnad
