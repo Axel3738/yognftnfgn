@@ -8,6 +8,12 @@ varje molnsession i fas 2 läser sitt avsnitt här i stället för att gissa.
 Varje uppdrag nedan är ett eget avsnitt: **vad**, **återanvänd detta**,
 **fallgropar**, **klart när**. Bygg aldrig ett nytt system där ett finns.
 
+⚙️ **Kommandot som kör uppdrag A + A2 + C + B i ett svep är `/ny-annonser
+<butik>`** (`.claude/commands/ny-annonser.md`, Axels beslut 2026-09-08 — VA:n
+gör hela annonsfasen själv, precis som hon gör hela butiksbygget med
+`/ny-ops`). Uppdragen nedan är fortfarande facit för HUR varje del görs;
+kommandot är körordningen. Uppdrag D och E är systemarbete utanför det.
+
 ---
 
 ## Blockerare just nu (2026-09-08)
