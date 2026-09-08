@@ -1,37 +1,52 @@
 {
- "IBC-tanktrekk_NO_CS_4_1": {
-  "message": "439 kr i stedet for 586 kr. 147 kr mindre for samme 210D Oxford-stoff som stenger ute lyset. Algene kommer aldri i gang.",
-  "headline": "439 kr i stedet for 586 kr",
-  "description": "25 % rabatt. Fri frakt i Norge over 300 kr."
+ "Overvåkingskamera_NO_SP_9_H1": {
+  "message": "Direkte varsel i mobilen, uansett hvor du er.\nTo linser, AI-sporing som bare varsler når det gjelder.\n899 kr i dag med tretti dagers åpent kjøp.",
+  "headline": "To linser, AI-sporing, 899 kr",
+  "description": "Tretti dagers åpent kjøp."
  },
- "IBC-tanktrekk_NO_BOF_6_1": {
-  "message": "Fri frakt i Norge, 5–10 virkedager. Bestill nå, så er den på plass før tanken gror igjen. Klarna – betal senere. 30 dagers åpent kjøp.",
-  "headline": "Fri frakt, 5–10 virkedager",
-  "description": "Klarna – betal senere. 30 dagers åpent kjøp."
+ "Overvåkingskamera_NO_SP_8_H1": {
+  "message": "Den ser forskjell på menneske og kjæledyr.\nDu får bare varsel når det gjelder – ikke hver gang katten går forbi.\nTo linser dekker hele tomten. Varsel rett i mobilen.\n899 kr i dag, jamførpris 1 169 kr. Tretti dagers åpent kjøp.",
+  "headline": "Ser forskjell på menneske og kjæledyr",
+  "description": ""
  },
- "IBC-tanktrekk_NO_RV_4_1": {
-  "message": "”Bra kvalitet og lett å bruke. Passet min 1000-liters tank uten problem.” — Johan, baverbutiken.se ★★★★★",
-  "headline": "Johan: Passet tanken uten problem",
-  "description": "Passer standard 1000L IBC-tank."
+ "Overvåkingskamera_NO_CS_6_H1": {
+  "message": "Tre personer i bildet. En hund ved siden av.\nKameraet varsler for personene – ikke for hunden.\nTo linser. Tre hundre og femtifem grader. Hele tomten.\n899 kr i stedet for 1 169 kr.",
+  "headline": "Varsler for folk. Ikke for hunden.",
+  "description": ""
  },
- "IBC-tanktrekk_NO_BOF_5_1": {
-  "message": "Presenningen som skulle beskytte, blåser av i den første høststormen. Et 210D Oxford-trekk med glidelås blir sittende. Beskytt tanken før høsten.",
-  "headline": "Presenningen blåser av i høststormen",
-  "description": "210D Oxford-trekk med glidelås."
+ "Overvåkingskamera_NO_SP_13_H1": {
+  "message": "\"Jeg sover bedre nå.\" Det sier en kunde hos baverbutiken.se om overvåkingskameraet med dobbel linse og AI-sporing.\nTo linser ser hele tomten samtidig, ingen blind vinkel.\n899 kr i dag (ord. 1 169 kr) – tretti dagers åpent kjøp.",
+  "headline": "Jeg sover bedre nå.",
+  "description": ""
  },
- "IBC-tanktrekk_NO_BOF_4_1": {
-  "message": "Glidelås. Ikke presenning og strikk. Av og på med glidelås — ingen kamp med vær eller vind. Åpning på toppen. Passer 1000-liters IBC-tank.",
-  "headline": "Glidelås. Ikke presenning.",
-  "description": "Åpning på toppen. Passer 1000-liters IBC."
+ "Overvåkingskamera_NO_SP_12_H1": {
+  "message": "\"Jeg sover bedre nå.\" Det sier en kunde hos baverbutiken.se.\nTo linser dekker hele tomten. AI varsler bare på mennesker – aldri på hunden.\nDirekte varsel i mobilen, uansett hvor du er.\n899 kr i dag – tretti dagers åpent kjøp. Kjøp nå.",
+  "headline": "899 kr i dag – spar 270 kr",
+  "description": ""
  },
- "IBC-tanktrekk_NO_PD_5_1": {
-  "message": "210D Oxford-stoff mellom solen og regnvannet ditt. Ingen presenning, ingen strikk — bare en glidelås. Algene kommer aldri i gang.",
-  "headline": "210D Oxford-stoff mot solen",
-  "description": "Ingen presenning, ingen strikk."
+ "Batmotortrekk_NO_UG_1_H1": {
+  "message": "Båten tas opp om noen uker. I år får motoren et ordentlig trekk.\nFire hundre og tjue D Oxford-stoff, fra deksel til rigg – ikke bare toppen.\nIngen verktøy. Trekk over, stram stroppen.\n529 kr (ord. 882 kr). Tretti dagers åpent kjøp.",
+  "headline": "420D-trekk, fra deksel til rigg",
+  "description": ""
  },
- "IBC-tanktrekk_NO_RV_3_1": {
-  "message": "”Passer bra på tanken og beskytter mot solen. Akkurat det jeg trengte.” — Sofia, baverbutiken.se ★★★★★. 439 kr, 25 % rabatt.",
-  "headline": "Sofia: Beskytter mot solen",
-  "description": "439 kr, 25 % rabatt."
+ "Batmotortrekk_NO_SP_1_H5": {
+  "message": "Trekk over. Stram stroppen. Klart.\n\nKraftig 420D Oxford-stoff som dekker hele motoren – ingen verktøy, ingen kronglete feste.\n\nFor deg som fisker, bor i skjærgården eller bare vil slippe styr ved brygga.",
+  "headline": "Trekk over. Stram. Klart.",
+  "description": "Heldekkende trekk, 529 kr"
+ },
+ "Batmotortrekk_NO_SP_1_H6": {
+  "message": "Regn, sol og salt sliter på motoren hver dag. Båtmotortrekk 420D i kraftig Oxford-stoff dekker hele motoren og strammes fast ved kaia. 529 kr i stedet for 882 kr – beverbutikken.no",
+  "headline": "529 kr: trekk mot regn, sol, salt",
+  "description": ""
+ },
+ "Batmotortrekk_NO_CS_5_H1": {
+  "message": "Regn, sol og saltvann – hele motoren beskyttet under tett 420D-stoff. 529 kr. Ordinær pris 882 kr, 353 kr allerede trukket fra i prisen. Ingen rabattkode, intet nedtellingsur. Dette er prisen – i dag og i morgen.",
+  "headline": "Regn, sol, salt – 529 kr, ikke 882 kr.",
+  "description": ""
+ },
+ "Batmotortrekk_NO_UG_2_H1": {
+  "message": "8 anmeldelser hos baverbutiken.se. Alle 5 stjerner.\n\nJeg trakk trekket over motoren og strammet stroppen. Klart – ingen verktøy.\n\n420D Oxford-stoff som har tålt en hel sesong, i regn og sol.",
+  "headline": "8 anmeldelser hos baverbutiken.se",
+  "description": "529 kr, ingen kode nødvendig"
  }
 }

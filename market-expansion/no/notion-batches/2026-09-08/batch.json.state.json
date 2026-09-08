@@ -2,51 +2,71 @@
  "overvakingskamera_SP_9_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/04f8d503c6a64053b0f70bcaf49d0e63/original.mp4",
   "proofreadId": "d3374c6e26d44d2ab7989199ef6aa4bc-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "ea9b7b37b5304033a637fda57f3cf261-nb"
  },
  "overvakingskamera_SP_8_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/166c4958acb846e9b2e67652905065e3/original.mp4",
   "proofreadId": "866da5144d404b9bb936baa95ec86fe1-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "7a0ea6aaf6514de095f73c18d93d3aed-nb"
  },
  "overvakingskamera_CS_6_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/e099a5fa8f20483e903c153baf368e32/original.mp4",
   "proofreadId": "94e1bed3806b4229825cec8e248aea93-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "3773a76e51324af8b1ace66ca4d356fd-nb"
  },
  "overvakingskamera_SP_13_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/3442838fc9204c65b33765dbaa938a7c/original.mp4",
   "proofreadId": "1897dcc143fe494999aa22d76c690829-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "f2964227c3f14d28aa97d0a6bbcdce16-nb"
  },
  "overvakingskamera_SP_12_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/d746c9f0de0d4a7b8f5d1a4a9d531c7b/original.mp4",
   "proofreadId": "f041bb33ea1745d58bd5ffeb17fe8b66-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "429d119c0b7c46a081b52ea411cccc0d-nb"
  },
  "batmotortrekk_UG_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/29833d550c06428babaf9bf8ce8a921e/original.mp4",
   "proofreadId": "d7c4c6102ad34532a8463b3e6177a208-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "7c3bbc56cf2841fd872d7744b0c755a8-nb"
  },
  "batmotortrekk_SP_1_H5": {
   "assetUrl": "https://resource2.heygen.ai/video/c545d65a7e0b416697e75dd42cee0122/original.mp4",
   "proofreadId": "65626c3ebf3c4e16aa2e1d553c8444a9-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "7a90cf4f600b4f6da4eda6741268b0e2-nb"
  },
  "batmotortrekk_SP_1_H6": {
   "assetUrl": "https://resource2.heygen.ai/video/a4a9faeb9808416faf9b6fd119cee2b8/original.mp4",
   "proofreadId": "47cff8821c7c4c1bbb698bfcf1e1be2b-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "c97b71b7cb2f48a89c758dc04757c796-nb"
  },
  "batmotortrekk_CS_5_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/8a5ad852d4544f7b86cbabc895f8fd29/original.mp4",
   "proofreadId": "cd70892a9ac64e228bf52c5cf28077c0-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "e4cde1e6ff1641d397ac35e2fb56460f-nb"
  },
  "batmotortrekk_UG_2_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/e27f19fd200f4edb8e5802b7e617d815/original.mp4",
   "proofreadId": "c55bcab0c6be490c9a9be66dc19193c3-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "ec333681cc964b67a165c93091861902-nb"
  }
 }
