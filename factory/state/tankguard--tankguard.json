@@ -1,0 +1,78 @@
+{
+  "butik": "tankguard",
+  "produkt": "tankguard",
+  "kommando": "/ny-annonser tankguard",
+  "steg": {
+    "konto_verifierat": {
+      "klar": true,
+      "mal_ad_account_id": "915422744950975",
+      "mal_konto_namn": "Magiborsten DK",
+      "valuta": "SEK",
+      "business_id": "1164852855167090",
+      "page_id": "1399193996606775",
+      "page_bevis": "ligger i MagiBorstens client_pages som \"TankGuard\"; direktuppslag på sid-id svarar (#100) permission",
+      "pixel_id": "2196132151319625",
+      "pixel_bevis": "agd av malkontot, senast avfyrad 2026-09-08T23:19:43+0200",
+      "notis": "Malkontot bar aven Baverbutikens DK-pixel 1554276343018184 och sex danska Baverbutiks-kampanjer — filtrera alltid pa TANKGUARD_"
+    },
+    "kalla_kopplad": {
+      "klar": true,
+      "se": {
+        "annonskonto": "1867947880635861",
+        "kampanj_id": "120250001079150291",
+        "annonser": 34,
+        "alla_active": true,
+        "dagsbudget_ore": 230000
+      },
+      "no": {
+        "annonskonto": "1050941584152547",
+        "kampanj_id": "120251996323340233",
+        "annonser": 33,
+        "alla_active": true,
+        "dagsbudget_ore": 100000
+      }
+    },
+    "brand_detektor": {
+      "klar": "delvis",
+      "se": "alla fem ytor lasta (factory/output/tankguard/brand-detektor.md + kallannonser.md)",
+      "no": "ytor 1, 2 och 5 lasta; ytor 3 och 4 OLASTA — ffmpeg och rapidocr-onnxruntime saknas i containern",
+      "brand_i_copy_se": 0,
+      "brand_i_copy_no": 5,
+      "brand_i_copy_no_vilka": ["RV_1_1", "RV_2_1", "RV_3_1", "RV_4_1", "GT_3_H1"],
+      "priser_se": ["489 kr", "636 kr", "23 %", "300 kr", "147 kr"],
+      "priser_no": ["439 kr", "586 kr", "25 %", "300 kr", "147 kr"]
+    },
+    "kampanj_se": {
+      "klar": "skal_finns",
+      "id": "120248995235740172",
+      "namn": "TANKGUARD_Tanköverdraget SE | BE-ROAS 1,62 | 2026-09-08",
+      "status": "PAUSED",
+      "daily_budget_ore": 100000,
+      "adsets": {
+        "GT": "120248995239680172",
+        "CS": "120248995238110172",
+        "SP": "120248995237610172",
+        "PD": "120248995237140172"
+      },
+      "annonser": 0,
+      "spend": 0,
+      "notis": "Byggt 2026-09-08T11:18 av en korning som aldrig pushade. FYLL skalet — bygg aldrig ett nytt bredvid."
+    },
+    "kampanj_no": {
+      "klar": false,
+      "notis": "Finns inte annu. Byggs i SAMMA konto 915422744950975 med geo NO och lank mot /nb."
+    },
+    "bilder": { "klar": false, "orsak": "blockerad — butiksfilen saknas, priset och villkoren gar inte att byta" },
+    "videor": { "klar": false, "orsak": "blockerad — butiksfilen saknas", "heygen_krediter": 16951 },
+    "copy": { "klar": false, "orsak": "blockerad — ingen produktlank och inget eget pris" },
+    "media_uppladdat": { "klar": false },
+    "tillbakalast": { "klar": false }
+  },
+  "blockerare": {
+    "fil": "factory/butiker/tankguard.yaml",
+    "finns_pa_nagon_gren": false,
+    "saknas": ["produktlank/handle", "pris SEK", "pris NOK", "villkor (frakt, oppet kop, betalsatt, garanti)"],
+    "notis": "Utan filen gar varken lank, pris eller break-even att satta — och inget av de tre far gissas."
+  },
+  "uppdaterad": "2026-09-08"
+}

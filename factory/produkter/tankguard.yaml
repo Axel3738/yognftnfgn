@@ -8,6 +8,14 @@
 # Ifyllt och verifierat 2026-09-08: produkt, ekonomi (priser ur källsidans
 # products/<handle>.json, inköp ur Axels COGS-doc batch #4), kalla-blocket
 # (ur MagiBorsten 1867947880635861), meta.
+# Påfyllt 2026-09-08 kväll av /ny-annonser: den NORSKA källkopplingen,
+# priserna i materialet per marknad, och meta.page_id + meta.pixel_id
+# verifierade mot Meta (inte kopierade ur en text). Även kampanjskalet som
+# redan står i målkontot, så nästa körning fyller det i stället för att bygga
+# ett nytt bredvid.
+# ⛔ ANNONSFASEN ÄR BLOCKERAD: `factory/butiker/tankguard.yaml` finns inte på
+# någon gren. Utan den saknas produktlänk, SEK-pris, NOK-pris och villkor —
+# och inget av dem får gissas. Läget: factory/output/tankguard/kallannonser.md
 # SAKNAS och fylls av /ny-ops-körningen som dokumenterar butiken:
 # varianter, media, beskrivning, vinkel, malgrupp, problem, benefits, features,
 # offer (paketnivåer + Q4-bonus), reviews, faq, leveranstid, garantier,
@@ -59,6 +67,31 @@ kalla:
   annonsprefix: "IBC"
   kampanj_id: "120250001079150291"
   kampanj: "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28"
+  # Källbutikens priser i annonsmaterialet, marknad för marknad. Läst ur copyn
+  # i båda kampanjerna 2026-09-08 (factory/output/tankguard/kallannonser.md).
+  # Varje tal här måste bytas mot TankGuards egna innan något laddas upp.
+  priser_i_materialet:
+    se:
+      - "489 kr"
+      - "636 kr"
+      - "23 %"
+      - "300 kr"
+      - "147 kr"
+    no:
+      - "439 kr"
+      - "586 kr"
+      - "25 %"
+      - "300 kr"
+      - "147 kr"
+  # NORSKA KÄLLAN. Egen kampanj i ett EGET konto — blanda aldrig ihop de två
+  # uppsättningarna: SE-annonser blir den svenska kampanjen, NO-annonser den
+  # norska. Läst och verifierad 2026-09-08.
+  no:
+    annonskonto: "1050941584152547"      # Magiborsten NO
+    annonsprefix: "IBC-tanktrekk_NO"
+    kampanj_id: "120251996323340233"
+    kampanj: "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29"
+    produkt_url: "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
   # Transkripten ligger under svenskt slug i video-batches och under norskt slug
   # i notion-batches — samma produkt, två filnamnsformer.
   srt_slug:
@@ -74,7 +107,26 @@ meta:
   # prefixas med brandet (TANKGUARD_…) så datan går att skära per butik.
   # ⚠️ Förväxla ALDRIG med MagiBorsten 1867947880635861 (Bäverbutiken SE) ovan.
   ad_account_id: "915422744950975"
-  page_id: ""                 # kan inte skapas via API — väntar på Meta-sidan
-  pixel_id: ""                # skapas när sidan finns
+  # Verifierade mot Meta 2026-09-08 av /ny-annonser, inte kopierade ur en text:
+  # sidan ligger i MagiBorstens client_pages och heter "TankGuard"; pixeln ägs
+  # av målkontot och avfyrade senast 2026-09-08 23:19.
+  # ⚠️ Ett direktuppslag på sid-id:t svarar "(#100) permission" — det beviset
+  # går inte att hämta den vägen, använd client_pages.
+  page_id: "1399193996606775"
+  pixel_id: "2196132151319625"
   creative_prefix: "TankGuard"
   testbudget_per_dag: 1000
+  # Kampanjskalet finns REDAN i målkontot — byggt 2026-09-08 11:18 av en
+  # körning som aldrig pushade. CBO 1 000 kr/dag, fyra adsets (GT/CS/SP/PD),
+  # rätt pixel, geo SE, allt PAUSED, 0 annonser, 0 kr spend.
+  # Fyll det skalet, bygg aldrig ett nytt bredvid.
+  kampanj_se_id: "120248995235740172"
+  kampanj_se: "TANKGUARD_Tanköverdraget SE | BE-ROAS 1,62 | 2026-09-08"
+  adsets_se:
+    GT: "120248995239680172"
+    CS: "120248995238110172"
+    SP: "120248995237610172"
+    PD: "120248995237140172"
+  # Den norska kampanjen finns inte ännu — den byggs som TANKGUARD_..._NO_...
+  # i SAMMA konto (915422744950975), med geo NO och länk mot /nb.
+  kampanj_no_id: ""

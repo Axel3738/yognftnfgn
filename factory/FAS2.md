@@ -22,12 +22,13 @@ kommandot är körordningen. Uppdrag D och E är systemarbete utanför det.
 |---|---|---|
 | ~~FB-kontot~~ — LÖST 2026-09-08: TankGuards Meta-sida är `1399193996606775` (verifierad i MagiBorstens `client_pages`), pixeln `2196132151319625` avfyrar och WeTracked är kopplat | inget | — |
 | ~~`META_ACCESS_TOKEN`~~ — finns i MOLNETS miljö (Axels besked 2026-09-08). `env.mjs` sätter aldrig över en variabel som redan finns i miljön, så all Meta-kod funkar i molnet. Saknas bara LOKALT. | inget i molnet | — |
-| HeyGen-plånboken tom (13 krediter, mätt 2026-09-08) | omdubbning av video | Axel fyller på |
+| ~~HeyGen-plånboken tom~~ — LÖST: **16 951 krediter** kvar, mätt 2026-09-08 kväll med `node pipeline/localize.mjs check` (ny nyckel i miljön). De "13 krediter" som stod här var den gamla nyckeln. | inget | — |
+| **`factory/butiker/tankguard.yaml` SAKNAS** — finns inte på någon gren. Utan den: ingen produktlänk, inget SEK-pris, inget NOK-pris, inga villkor. | hela kampanjbygget för TankGuard (uppdrag B), och prisytan i A och C | Axel eller VA:n kör butiksbygget klart så filen skrivs |
 | `standby.md` har ännu ingen ifylld rad | tilldelning av redigerare | Axel ger namnet på personen som redan står på standby |
 
-**Läget 2026-09-08 kväll: A, B, C, D och E kan alla köra NU.** TankGuards sida,
-pixel och WeTracked är klara, och Meta-nyckeln finns i molnets miljö. Bara A2
-(videodubbningen) väntar — på HeyGen-krediter.
+**Läget 2026-09-08 kväll:** A är kört på båda marknaderna och A2 är avblockerat
+(HeyGen har krediter). **B och C står still på en enda sak — butiksfilen.**
+Priset, länken och villkoren bor där, och de tre får aldrig gissas.
 
 ---
 
@@ -254,6 +255,43 @@ hämta ner filen → brand-swappa → ladda upp på nytt till `act_9154227449509
 
 **Klart när:** kampanjen är tillbakaläst ur kontot och `page_id`, `pixel_id`,
 `daily_budget`, länk och status på alla tre nivåer matchar butikens konfig exakt.
+
+### Läget 2026-09-08 kväll — skalet står, annonserna saknas
+
+`/ny-annonser tankguard` läste båda källkontona och hela målkontot. Rapporten:
+`factory/output/tankguard/kallannonser.md` (+ `.json`). Allt verifierat står nu
+maskinläsbart i `factory/produkter/tankguard.yaml`.
+
+**Kampanjskalet finns redan i målkontot** — `TANKGUARD_Tanköverdraget SE |
+BE-ROAS 1,62 | 2026-09-08` (`120248995235740172`), byggt 11:18 samma dag av en
+körning som aldrig pushade. CBO 1 000 kr/dag, fyra adsets (GT/CS/SP/PD med
+id:n i produktfilen), rätt pixel, geo SE, allt PAUSED, **0 annonser, 0 kr
+spend**. Nästa körning ska FYLLA det skalet — bygg aldrig ett nytt bredvid, då
+står två TANKGUARD-kampanjer i kontot och datan går inte att skära.
+Någon norsk TankGuard-kampanj finns inte ännu.
+
+**Källorna, båda ACTIVE:** SE 34 annonser (`120250001079150291`, MagiBorsten,
+2 300 kr/dag), NO 33 annonser (`120251996323340233`, Magiborsten NO,
+1 000 kr/dag). Alla 67 är ACTIVE i ACTIVE-adsets — inget PAUSED-beslut att
+respektera, hela materialet är kandidatmaterial.
+
+**Tre saker NO-halvan visade som SE-halvan inte kunde visa:**
+1. NO speglar SE annons för annons — samma 13 videokoncept, samma 20
+   bildkoncept, och yta 2 faller ut identiskt (11 av 13 säger brandet,
+   `GT_3_H1` och `PD_3_H1` är rena i talet och bär slutkortet i stället).
+2. **Fem norska annonser har brandet i COPYN — noll svenska har det.** Fyra
+   RV-annonser tillskriver recensionen `baverbutiken.se`, alltså den SVENSKA
+   domänen i en norsk annons; felet finns redan i källan. `GT_3_H1` skriver
+   `4,7 av 5 på beverbutikken.no`. Brand-detektorn läser bara SE-kampanjen —
+   kör copy-ytan mot NO-kontot separat, annars går de fem obemärkta.
+3. **Priserna skiljer per marknad:** SE `489/636 kr, 23 %`, NO `439/586 kr,
+   25 %`, båda dessutom `300 kr` (fraktgräns) och `147 kr` (rabattbelopp).
+
+⚠️ **Två ytor är OLÄSTA på de norska annonserna:** inbränd text (13 videor) och
+bildattribution (20 bilder). `ffmpeg` och `rapidocr-onnxruntime` finns inte i
+molncontainern, så de gick inte att OCR:a här. `❔ oläst` är aldrig `ren` — läs
+dem innan något norskt laddas upp. Att den norska SRT:en säger `Beverbutikken`
+gör det sannolikt att den inbrända undertexten gör det också; sannolikt är inte mätt.
 
 ---
 
