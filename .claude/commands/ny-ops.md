@@ -29,7 +29,10 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    klistra nycklar i chatten (mätt 2026-09-08: en klistrad CLI-token
    var fel typ och stoppade bygget). Hämta Admin-token med
    klientuppgifterna och skriv `SHOPIFY_STORE_DOMAIN` +
-   `SHOPIFY_ADMIN_TOKEN` i `factory/.env`.
+   `SHOPIFY_ADMIN_TOKEN` i `factory/.env` — och spara även en rad
+   `SHOPIFY_ADMIN_TOKEN_<butiks-id>` där (det blir MÅNGA butiker:
+   miljöns tre variabler skrivs över per bygge, men varje butiks egen
+   token ska finnas kvar så gamla butiker förblir nåbara).
    ⚠️ SPÄRR MOT GAMMAL MILJÖ: har `SHOPIFY_SHOP`-butiken redan en
    state-fil under `factory/state/` är miljön inte uppdaterad för den
    nya butiken — stoppa och be VA:n skriva över de tre variablerna.
