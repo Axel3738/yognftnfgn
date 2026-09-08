@@ -2,20 +2,44 @@
  "goods_id": "601101433025443",
  "url": "https://www.temu.com/g-601101433025443.html",
  "final_url": "https://www.temu.com/g-601101433025443.html",
- "fetched": "2026-09-08T06:23:10.859734Z",
- "blocked": true,
- "title": "Temu",
- "category_path": null,
- "price_sek": null,
- "currency": null,
- "rating": null,
- "review_count": null,
- "review_dates": [],
- "images": [],
- "image_descriptions": [],
+ "fetched": "2026-09-08T07:41:43.377014Z",
+ "blocked": false,
+ "title": "Oxford Fabric Lawn Mower Seat CoversTractor Seat Covers/outdoor Tractor Seat CushionsLawn Mower Seat Cushions",
+ "category_path": [
+  "Patio, Lawn & Garden",
+  "Mowers & Outdoor Power Tools"
+ ],
+ "price_sek": "23.46",
+ "currency": "USD",
+ "rating": 4.8,
+ "review_count": 25,
+ "review_dates": [
+  "2026-01-14",
+  "2026-08-07",
+  "2026-05-18",
+  "2026-05-25"
+ ],
+ "images": [
+  "https://img.kwcdn.com/product/fancy/59a23449-1a74-4646-af74-d3588864b165.jpg",
+  "https://img.kwcdn.com/product/fancy/cf25236d-cf30-4a3a-8da6-ab39bd5b8aa2.jpg",
+  "https://img.kwcdn.com/product/fancy/1d2d8030-bbd8-4747-b4c4-4da268a60c15.jpg",
+  "https://img.kwcdn.com/product/fancy/f95ea506-859f-43d4-ac5b-a789e2936c04.jpg",
+  "https://img.kwcdn.com/product/fancy/c52dea98-fae2-4a31-b932-31f0182e7f39.jpg",
+  "https://img.kwcdn.com/product/fancy/920afcbd-b809-412b-b719-4f6952d8cce2.jpg",
+  "https://img.kwcdn.com/product/fancy/b8e0b3a9-71ad-4aec-9073-728036b5c807.jpg"
+ ],
+ "image_descriptions": [
+  "oxford fabric lawn mower seat coverstractor seat covers outdoor tractor seat cushionslawn mower seat cushions",
+  "oxford fabric lawn mower seat coverstractor seat covers outdoor tractor seat cushionslawn mower seat cushions camouflage yellow back without side pockets",
+  "oxford fabric lawn mower seat coverstractor seat covers outdoor tractor seat cushionslawn mower seat cushions camouflage with side pockets",
+  "oxford fabric lawn mower seat coverstractor seat covers outdoor tractor seat cushionslawn mower seat cushions camouflage yellow with side pockets",
+  "oxford fabric lawn mower seat coverstractor seat covers outdoor tractor seat cushionslawn mower seat cushions gray with yellow back and side pockets",
+  "oxford fabric lawn mower seat coverstractor seat covers outdoor tractor seat cushionslawn mower seat cushions gray yellow back without side pockets",
+  "oxford fabric lawn mower seat coverstractor seat covers outdoor tractor seat cushionslawn mower seat cushions grey with yellow back and mesh fabric side pockets"
+ ],
  "video_url": null,
  "video_uploaded": null,
- "og_description": null,
- "keywords": null,
+ "og_description": "oxford fabric lawn mower seat coverstractor seat covers outdoor tractor seat cushionslawn mower seat cushions at the   at Temu.",
+ "keywords": "patio, lawn &amp; garden,mowers &amp; outdoor power tools,mowers &amp; outdoor power tools",
  "captcha": false
 }

@@ -1,90 +1,94 @@
-# Fynd 2026-09-08: Temus recensionsantal är INVERTERAT mot utfallet
+# Fynd 2026-09-08: Temus recensionsantal förutsäger MARGINALEN — inte vinst/förlust
 
-**Mätt i dag mot kontots egna, kända utfall.** Vinnar-DNA:t avsnitt 11 skrev att Temus
+**Mätt mot kontots egna, kända utfall.** Vinnar-DNA:t avsnitt 11 skrev att Temus
 popularitetssignaler "diskriminerar troligen svagt" och satte dem till UNKNOWN på alla tio.
-Det var fel. De diskriminerar **starkt — men åt motsatt håll mot vad man tror.**
+Det stämmer inte. De diskriminerar — men på ett annat sätt än man tror, och svagare än
+den första mätningen (5 produkter) antydde.
 
-## Datan
+> ⚠️ **Rättelse.** Första versionen av den här filen byggde på 5 mätpunkter och påstod att
+> högt recensionsantal ≈ förlorare. Med 9 mätpunkter håller det inte: **strandtofflorna har
+> flest recensioner av alla (3 628) och är en vinnare.** Rätt slutsats står nedan.
 
-| Produkt | Meta-utfall (verkligt) | Temu ★ | **Temu recensioner** |
-|---|---|---|---|
-| IBC-tanköverdrag | **ROAS 2,94** | 4,5 | **13** |
-| PTZ-kamera dubbellins | **ROAS 3,38** (bäst i kontot) | 4,3 | **30** |
-| Marin motorhölje 420D | ROAS 1,93 · ~523 köp (störst) | 4,7 | 244 |
-| Fiskespöhållare | ROAS 2,24 · 307 köp · +43 700 kr | 4,8 | 339 |
-| *Tofflor Ergonomiska* | **ROAS 1,59 mot BE 1,80 — FÖRLORARE** | 4,8 | **1 781** |
-| — | — | — | — |
-| Utekattkoja (kandidat) | ej testad | 4,9 | 72 |
+## Datan — 9 av 10 mätta 2026-09-08
 
-Källa: `temu-ld.py` mot JSON-LD 2026-09-08 06:2x UTC (`v23/material/<id>/data.json`).
-Utfallen ur `docs/temu-vinnar-dna/data/ground-truth.md`.
+| Produkt | Temu rec | ★ | ROAS | BE-ROAS | Marginal | Utfall |
+|---|---:|---:|---:|---:|---:|---|
+| IBC-tanköverdrag | **13** | 4,5 | 2,94 | 1,51 | **+1,43** | vinnare |
+| Sätesöverdrag åkgräsklippare | **25** | 4,8 | 2,15 | 1,47 | **+0,68** | vinnare |
+| PTZ-kamera dubbellins | **30** | 4,3 | 3,38 | 1,57 | **+1,81** | vinnare |
+| Axelbälte trimmer | 106 | 4,9 | 1,91 | 1,72 | +0,19 | vinnare |
+| Marin motorhölje 420D | 244 | 4,7 | 1,93 | 1,63 | +0,30 | vinnare |
+| Soptunneklistermärken | 297 | 4,7 | 2,05 | 1,67 | +0,38 | vinnare |
+| Fiskespöhållare | 339 | 4,8 | 2,24 | 1,50 | +0,74 | vinnare |
+| *Tofflor Ergonomiska* | 1 781 | 4,8 | 1,59 | 1,80 | **−0,21** | **FÖRLORARE** |
+| Strandtofflorna | **3 628** | 4,8 | 2,10 | 1,70 | +0,40 | vinnare |
 
-## Vad det betyder
+Bandslipen (601102681234291) återstår — Temu strypte. Källa: `temu-ld.py` mot JSON-LD,
+rådata i `v23/material/<id>/data.json`. Utfall ur `docs/temu-vinnar-dna/data/ground-truth.md`.
+Marginal = ROAS − break-even-ROAS, alltså hur långt över nollstrecket produkten gick.
 
-**Under 50 recensioner → ROAS 2,9–3,4. Runt 250–350 → ROAS 1,9–2,2. Över 1 700 → förlorare.**
+## Slutsatsen
 
-Kontots enda bekräftade förlorare i gruppen har **5× fler recensioner än den största vinnaren**
-och ett av de högsta betygen. De två bästa ROAS-produkterna har de två LÄGSTA
-recensionsantalen och de LÄGSTA betygen (4,3 och 4,5).
+| Recensionsband | n | Medelmarginal | Förlorare |
+|---|---:|---:|---:|
+| **< 50** | 3 | **+1,31** | 0 |
+| 100–350 | 4 | +0,40 | 0 |
+| > 1 500 | 2 | +0,10 | 1 |
 
-Mekanismen är enkel och förklarar något vi redan visste:
+**Få recensioner ger tre gånger så tjock marginal.** Gradienten är monoton över alla tre band.
+De tre listningar som hade under 50 recensioner blev kontots tre mest lönsamma produkter
+per spenderad krona.
 
-```
-Många Temu-recensioner
-  → produkten är redan hittad av hundratals dropshippers globalt
-    → någon säljer den redan i Sverige (Fyndiq/Amazon/CDON-golvet)
-      → någon annonserar den redan på Meta i Sverige
-        → vi konkurrerar i stället för att sätta ankaret → förlorare
-```
+**Men det är inget kill-kriterium.** Kontot har tjänat pengar på 244, 297, 339 och till och med
+3 628 recensioner. Ett högt tal betyder att marginalen pressas mot break-even — inte att
+produkten är död.
 
-Det är exakt kedjan bakom tofflor 9: 1 781 Temu-recensioner → BilligaBoden 229 kr →
-**648 aktiva Meta-annonsörer** → ROAS 1,59. Och baksidan: IBC med 13 recensioner hade
-noll svenska konkurrenter och gjorde ROAS 2,94.
+**Betyget är brus.** Spannet är 4,3–4,9 och förloraren ligger på 4,8, medan den bästa
+ROAS-produkten ligger på 4,3. Sluta använda betyg som kvalitetssignal.
 
-**Betyget är brus eller svagt inverterat.** 4,8 på förloraren, 4,3 på den bästa vinnaren.
-Sluta använda det som kvalitetssignal.
+## Vad som faktiskt skilde förloraren från vinnaren
 
-## Varför det är viktigare än allt annat vi mätt
+Tofflor Ergonomiska (1 781 rec, förlorare) och Strandtofflorna (3 628 rec, vinnare) är
+samma produktklass, samma betyg, samma prisläge. Recensionsantalet separerar dem inte —
+det pekar till och med åt fel håll. Det som skilde dem (ur `analys/w9.md`):
 
-Recensionsantalet är **gratis, står på sidan, tar två sekunder** — och verkar förutsäga
-samma sak som den svenska hyllkontrollen, som kostade agenterna timmar per produkt och
-dessutom **missar 4 av 9 vinnare** (se nedan).
+- **Ad Library:** tofflor 9 hade **648 aktiva svenska annonsörer**. Strandtofflorna hade få.
+- **Ankarläget:** strandtofflorna hade Crocs 289–600 kr **över** sitt pris 349.
+  Tofflor 9 hade BilligaBoden 229 kr **under** sitt pris 309.
 
-Det är en **ledande** indikator: den mäter mättnaden innan den syns i svensk handel.
-Hyllkontrollen är en **släpande** indikator — när Fyndiq har produkten är det redan för sent.
-
-## Samtidigt: hyllgaten som vi körde den hade dödat kontots egna vinnare
-
-`docs/temu-vinnar-dna.md` rad 90, variabel E — de nio vinnarnas egna värden:
-
-- Motorhöljet: **½** — Jula säljer båtkapell 199 kr, vi sålde för 299
-- Strandtofflorna: **0** — Rusta säljer EVA-clogs 35 kr, vi sålde för 349
-- Axelbältet: **0** — Jula 349 / Clas 499, vi sålde för 599
-- PTZ-kameran: **0** — Tapo 679, vi sålde för 799
-
-**Fyra av nio vinnare hade ett billigare svenskt alternativ i samma form och vann ändå.**
-DNA:t skriver ut villkoret på rad 180: det fungerar när ett **märkesankare 1,6–3× högre**
-finns synligt *och vår produkt ser ut som ankaret*.
-
-I Q4-jakten tillämpades E som **hård kill i 37 av 64 avslag**. Undantaget tillämpades inte.
-Det är det enskilt största metodfelet i körningen.
+Det är den kombinationen som dödar: *någon annonserar redan* **och** *look-alike ligger under
+vårt pris*. Inte recensionsantalet i sig.
 
 ## Vad som ska ändras i filtret
 
 | Gate | Var | Ska bli |
 |---|---|---|
-| Temu-recensioner | UNKNOWN, oanvänd | **FÖRSTA gaten. > ~800 = kill. 300–800 = varning. < 150 = grönt.** Gratis. |
-| Meta Ad Library SE | HÖGT PREDIKTIV men kördes sist eller inte alls | **Andra gaten. ≥ 3 aktiva annonsörer = kill.** (7 av 8 vinnare hade 0–1; förloraren 648.) |
-| Svenska hyllan | HÅRD KILL (37 av 64) | **Varning, inte kill.** Kill bara när golvet ligger under vårt pris OCH inget ankare ≥ 1,6× finns OCH Ad Library ≥ 3. |
-| Temu-betyg | användes som kvalitetstecken | **Ignorera.** 4,8 på förloraren, 4,3 på bästa vinnaren. |
-| Material | HÖGT PREDIKTIV | oförändrad — men den var blockerad i hela jakten, se nedan |
+| **Meta Ad Library SE** | HÖGT PREDIKTIV men kördes sist eller inte alls | **Första och enda hårda gaten.** ≥ 3 aktiva annonsörer i formen = kill. (7 av 8 vinnare hade 0–1; förloraren 648.) |
+| **Temu-recensioner** | UNKNOWN, oanvänd | **Rankningssignal, inte kill.** < 50 = prioritera högt. > 1 500 = räkna med marginal nära break-even och kräv starkt ankare. Gratis att läsa. |
+| **Svenska hyllan** | HÅRD KILL i 37 av 64 avslag | **Varning.** Kill bara när golvet ligger **under** vårt pris OCH inget ankare ≥ 1,6× finns OCH Ad Library ≥ 3. |
+| **Temu-betyg** | användes som kvalitetstecken | **Ignorera.** |
+| Material | HÖGT PREDIKTIV | oförändrad — men var blockerad i hela Q4-jakten |
 
-## Kvarstående osäkerhet — läs detta innan någon agerar
+## Hyllgaten som vi körde den hade dödat kontots egna vinnare
 
-- **n = 5 vinnare + 1 förlorare.** Fem vinnare återstår att mäta (sätesöverdraget
-  601101433025443, strandtofflorna 601099677938468, axelbältet 601101171339794,
-  bandslipen 601102681234291, klistermärkena 601102867393554). Temu strypte efter sex anrop.
-- **Recensionsantal blandar ålder och popularitet.** En ny listning av en gammal produkt har
-  få recensioner utan att vara outnyttjad. Kontrollera alltid mot Ad Library.
-- Fönstret som motsäger: fiskeadventskalendern har 1 recension men 9 svenska annonsörer —
-  där är *kategorin* mättad även om *listningen* är ny. Ad Library fångar det, recensionerna inte.
+`docs/temu-vinnar-dna.md` rad 90, variabel E — vinnarnas egna värden:
+
+- Motorhöljet **½** — Jula båtkapell 199 kr, vi sålde för 299
+- Strandtofflorna **0** — Rusta EVA-clogs 35 kr, vi sålde för 349
+- Axelbältet **0** — Jula 349 / Clas 499, vi sålde för 599
+- PTZ-kameran **0** — Tapo 679, vi sålde för 799
+
+**Fyra av nio vinnare hade ett billigare svenskt alternativ i samma form och vann ändå.**
+DNA:t rad 180 skriver ut villkoret: det fungerar när ett märkesankare 1,6–3× högre finns
+synligt *och vår produkt ser ut som ankaret*. I Q4-jakten tillämpades E som hård kill i
+37 av 64 avslag och undantaget tillämpades inte. Det är körningens största metodfel.
+
+## Kvarstående osäkerhet
+
+- **n = 9.** Bandet "> 1 500" har två produkter. Bandet "< 50" har tre. Behandla
+  gradienten som en riktning, inte som en formel.
+- Recensionsantal blandar **ålder** och **popularitet**. En ny listning av en gammal produkt
+  har få recensioner utan att vara outnyttjad — därför är Ad Library alltid överordnad.
+- Motexemplet i vår egen lista: fiskeadventskalendern har 1 recension men 9 svenska
+  annonsörer. Kategorin är mättad även när listningen är ny.
+- Bandslipen är omätt (ROAS 2,30, BE 1,73, marginal +0,57).
