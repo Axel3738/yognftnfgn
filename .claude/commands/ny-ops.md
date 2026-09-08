@@ -115,6 +115,16 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 11. **Trippelkolla innan "klart"** — tre kontroller mot kundens riktiga vy
     (markörskanning, regression, visuell mobilkontroll). Delvis klart heter
     delvis klart.
+    ⚠️ **Slutrapporten i chatten ska ha TVÅ listor, aldrig en** (Axels
+    bakläxa 2026-09-08 på TankGuard): "Gjort av mig" och "Väntar på en
+    människa". Ett steg där en person ska klicka står ALDRIG i den första
+    listan — pixeln var skapad men WeTracked-kopplingen var inte gjord,
+    och rapporten sa bara "Pixeln är klar".
+    ⚠️ **Nämn aldrig en person som inte finns.** `factory/discord.mjs`
+    bygger servern även när `factory/redigerare/standby.md` saknar en rad
+    med status `redo` — då rapporteras plockningen som manuell. Skriv i så
+    fall "ingen redigerare i standby-listan än", aldrig "bjud in
+    redigeraren". (Mätt 2026-09-08: listan har noll rader.)
 12. **Dokumentera:** state-fil under `factory/state/`, och varje NYTT bevisat
     steg in i `factory/PROCESS.md` i samma session. Committa och pusha.
 
