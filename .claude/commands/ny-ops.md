@@ -21,7 +21,13 @@ ifylld till `factory/output/<id>/CHECKLISTA.md`.
 
 Gör i ordning, utan att invänta godkännande mellan stegen:
 
-1. **Rätt butik.** Kopplingen är butikens EGEN app (VA:n skapar en per
+1. **Rätt butik — kommandots FÖRSTA handling, före allt annat.**
+   Gör BARA anslutningskontrollen först: hämta token, läs butikens namn
+   + myshopify-domän, och rapportera direkt i chatten:
+   "Connected: <domän> ✓". Blanda aldrig ihop kontrollen med andra
+   läsningar (baseline, produktdata, mallar) — kontrollen ska ta
+   sekunder och synas som eget steg, sen börjar resten.
+   Kopplingen är butikens EGEN app (VA:n skapar en per
    butik — custom distribution låses till EN butik utanför Plus, mätt
    2026-09-08). Läs `SHOPIFY_SHOP` + `SHOPIFY_CLIENT_ID` +
    `SHOPIFY_CLIENT_SECRET` ur miljön — VA:n har lagt in dem
