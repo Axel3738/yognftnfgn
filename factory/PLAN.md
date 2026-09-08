@@ -170,6 +170,12 @@ Allt annat gör en VA med fabriken. Uppdelningen:
 - Claude bygger allt via API som i dag; VA:n är händerna för de klick
   API:t inte når.
 
+## Fas 2 — annonser, team och skalning
+
+Planen för nästa fas (annons-brand-swap, kampanjbygge, Notion-flytt, redigerare,
+skalningsrutin per butik) står i **`factory/FAS2.md`** — skriven 2026-09-08 efter
+en kartläggning av repot. Punkt 1 ovan (annonsöversättaren) är uppdrag A/A2 där.
+
 ## Ordningen
 
 1. Färdigställ Hemvakten (Judge.me + domän + språk + v2-temat publicerat).
