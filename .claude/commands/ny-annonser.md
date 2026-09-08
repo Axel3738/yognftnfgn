@@ -40,6 +40,14 @@ fasen: kör kommandot, granskar, och sätter kampanjen ACTIVE när den är grön
 i `factory/produkter/<id>.yaml`, och en `kalla:`-koppling till källprodukten
 på Bäverbutiken.
 
+⚠️ **RÖR INTE SHOPIFY. Alls.** Den här fasen läser bara Meta och repot.
+Shopify-MCP:n (`get-shop-info`, `switch-shop`, alla `mcp__*`-Shopify-verktyg)
+är FÖRBJUDEN här — den pekar på en godtycklig butik och kan riktas mot
+Bäverbutiken. Leta ALDRIG efter butiken: i grenar, i miljön eller via API.
+Butiken ÄR argumentet, och allt kommandot behöver står i
+`factory/produkter/<id>.yaml` och `factory/butiker/<id>.yaml`.
+Saknas filen: stoppa och säg vilket butiks-id som saknas — sök inte.
+
 ---
 
 ## Kontokartan (lär dig den innan något körs)
