@@ -1,9 +1,12 @@
-# Verifieringskö — ett goods-id per rad, i prioritetsordning. dripp.py läser om filen vid varje tick (var 25:e min).
+# Verifieringskö — ett goods-id per rad, i prioritetsordning. dripp.py läser om filen vid varje tick.
 605583893712528  # flaggstångslampa (13,26 USD, 167 rec) — Flaggmax 849 i lager = 1,89×; Ad Library 0
+601099713273181  # universal dragkrok åkgräsklippare (våg 2, 0 säljare) — samma ägare som sätesöverdraget (182 köp); pris oläst
 601103474354187  # vedhake/pickaroon (pris oläst) — golv Husqvarna 489 ÖVER oss, ankare Fiskars 730; ≤ 18 USD krävs
+607509616138795  # snöslungeöverdrag 600D (våg 2, 0 säljare) — launch november; pris oläst
+603039259832839  # hjullås 2-pack husvagn/släp (våg 2, 0 säljare) — uppställning NU; pris oläst
 601099592756087  # stocklyft/timberjack — pris oläst, avgör G6; formen saknas i Sverige
+602710795456995  # motorbock utombordare (våg 2) — upptagning NU; Hjertmans säljer formen; pris oläst
 603392084657188  # brytjärn 130 cm med vändhake — pris oläst (≤ 27–32 USD krävs)
 601102148404312  # husbils-termoskydd — pris oläst; ankare Hindermann 1 565, golv CDON 1 529 ÖVER oss
 601101297217685  # fjällskrapa sladdlös (18 USD, 43 rec) — MEDIUM; material avgör
 601103333430208  # hönsgårdshuv (21,60 USD, 127 rec) — G7 under golvet; ankare Kellfri 1 488
-601099637369908  # stegstöd alt (U-bult, pris oläst) — sist
