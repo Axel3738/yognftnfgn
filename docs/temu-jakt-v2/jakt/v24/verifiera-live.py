@@ -138,8 +138,22 @@ def verify(gid, us=False):
         d["verified"] = bool(d["hero_file"])
         if not d["verified"]:
             d["verdict"] = "NO_IMAGE"
-    with open(os.path.join(outdir, "data.json"), "w", encoding="utf-8") as f:
-        json.dump(d, f, ensure_ascii=False, indent=1)
+    if d["verdict"] == "BLOCKED":
+        # En blockerad hämtning är ingen data — skriv inget i repot (bara i scratch), så att kvittot bara bär riktiga svar.
+        bp = os.path.join(outdir, "data.json")
+        if os.path.exists(bp):
+            try:
+                if json.load(open(bp)).get("verdict") == "BLOCKED":
+                    os.remove(bp)
+            except Exception:
+                os.remove(bp)
+        if not os.listdir(outdir):
+            os.rmdir(outdir)
+        with open(os.path.join(SCRATCH, f"{gid}.blocked.json"), "w", encoding="utf-8") as f:
+            json.dump(d, f, ensure_ascii=False, indent=1)
+    else:
+        with open(os.path.join(outdir, "data.json"), "w", encoding="utf-8") as f:
+            json.dump(d, f, ensure_ascii=False, indent=1)
     print(f"{t} {gid} {d['verdict']:12} {d.get('price')} {d.get('currency')} ★{d.get('rating')} "
           f"({d.get('review_count')}) bilder={len(d.get('images') or [])} video={'ja' if d.get('video_url') else 'nej'} "
           f"lager={d.get('availability')} | {(d.get('title') or '')[:70]}", flush=True)
