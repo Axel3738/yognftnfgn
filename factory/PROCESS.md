@@ -27,7 +27,10 @@ som genereras per bygge).
 4. ⚙️ Rund logga (mörk cirkel + ordmärke, qlmanage SVG→PNG) + favicon (initial).
 
 ## Fas 2 — Shopify
-5. ⚙️ Ladda upp CRO-temat (zip → staged upload → themeCreate). Temat är
+5. ⚙️ Ladda upp CRO-temat: zip:en ligger i repot som
+   `factory/tema/ops-tema.zip` (matstrumpor-cro-v5 — samma zip HeimGuard
+   byggdes från; incheckad 2026-09-08 så molnet alltid har den)
+   → staged upload → themeCreate. Temat är
    strukturen — brandingen genereras alltid om (opf-brand.css + settings).
 6. ⚙️ Produkt som DRAFT → metafält → opf-sektioner → produktmall → startsida →
    meny → policysidor (adress från allabolag.se) → fraktzoner.

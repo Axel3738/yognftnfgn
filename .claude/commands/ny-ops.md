@@ -70,7 +70,9 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    från mallarna, validera via `node factory/ops.mjs ... --dry-run` (den
    sammanfogar butik + produkt — kör ALDRIG validera.mjs fristående på
    bara produktfilen, den saknar butiksfälten och stoppar falskt).
-5. **Bygg i Shopify** (fas 2): CRO-temat från zip → produkt → metafält →
+5. **Bygg i Shopify** (fas 2): CRO-temat från `factory/tema/ops-tema.zip`
+   (ligger i repot — hämta ALDRIG tema från HeimGuard, Dawn eller
+   publika assets) → produkt → metafält →
    opf-sektioner → startsida → meny → policysidor → frakt. Judge.me-widgeten
    i temats **Appyta** (ms-app-slot), aldrig egen styling (minnesregeln).
    Kopiera `current.blocks` (app-embeds) från live-temat in i klonen.
