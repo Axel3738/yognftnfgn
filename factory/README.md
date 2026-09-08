@@ -149,6 +149,14 @@ ACTIVE och publiceras i Online Store-kanalen. LAUNCH rör aldrig annonskontot.
 | `sida.mjs` | Återanvändbar sidmall (sektionerna) |
 | `shopify.mjs` | Admin GraphQL-klienten (officiella API:t) |
 | `env.mjs` | Läser `factory/.env` |
+| `token.mjs` | Steg 0 "Connected": mintar 24h-token ur butikens app, skriver `.env`, spärr mot gammal state |
+| `tema-upp.mjs` | OPS-temat ur `tema/ops-tema.zip` → staged upload → themeCreate (UNPUBLISHED) |
+| `tema-mall.mjs` | Startsida, header/footer, inställningar, A/B-paketblock, Appyta, gallerifilter (ops-steget `startsida`) |
+| `filer.mjs` | Bilder till Files + staged uploads |
+| `logga.mjs` / `bildtext.mjs` | Rund logga + favicon · vektortext på bilder (sharp ur `pipeline/node_modules`) |
+| `bonus.mjs` / `paket.mjs` | Q4-bonusprodukten · ms_paketniva-metaobjekt + rabattkoder som ger exakt paketpris |
+| `oversattning.mjs` / `marknader.mjs` | Översättningsunderlag (→ subagent) · marknad + locale + translationsRegister på allt |
+| `kolla.mjs` | Trippelkollen mot kundens vy (markörer på /nb, svensk regression, struktur) |
 | `.env.example` | Variablerna som ska fyllas i |
 | `test/` | Tester: `node --test factory/test/*.test.mjs` |
 

@@ -23,7 +23,10 @@ import { graphql, hamtaProduktViaHandle, hamtaUtkastTema, kontrolleraAnslutning 
 import { METAOBJEKT_TYP } from './paket.mjs';
 
 const FACTORY_ROT = dirname(fileURLToPath(import.meta.url));
-const norm = (s) => String(s ?? '').replace(/\r\n/g, '\n').trim();
+// Matchningsnyckel: Shopify normaliserar HTML (radbrytningar mellan taggar,
+// blanksteg) — jämför utan sådant mellanrum så en identisk text inte ser
+// olik ut.
+const norm = (s) => String(s ?? '').replace(/\r\n/g, '\n').replace(/>\s+</g, '><').replace(/\s+/g, ' ').trim();
 
 export function lasOversattning(produktId, locale) {
   const sv = join(FACTORY_ROT, 'output', produktId, 'oversattning-sv.json');
@@ -217,8 +220,10 @@ export async function samlaResurser(p, temaId) {
     // med konstruerade id:n: JsonTemplate/<mall>?theme_id=… och
     // SectionGroup/<grupp>?theme_id=…, härledda ur temats fillista.
     const temaNr = String(temaId).split('/').pop();
+    // Temat har ~400 filer — filtrera på mönster i frågan i stället för att
+    // lista alla (first: 250 tappade templates/ och sections/, mätt 2026-09-08).
     const f = await graphql(
-      `query opsFactoryTemaFiler($id: ID!) { theme(id: $id) { files(first: 250) { nodes { filename } } } }`,
+      `query opsFactoryTemaFiler($id: ID!) { theme(id: $id) { files(first: 250, filenames: ["templates/*.json", "sections/*-group.json"]) { nodes { filename } } } }`,
       { id: temaId }
     );
     const filnamn = (f.theme?.files?.nodes ?? []).map((x) => x.filename);

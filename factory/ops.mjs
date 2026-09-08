@@ -48,7 +48,7 @@ import {
 import { kontrolleraLaunch } from './kontroll.mjs';
 import { byggPolicyer, kontaktsida, saknadeUppgifter } from './policyer.mjs';
 import { byggMetafalt } from './metafalt.mjs';
-import { byggJudgeMeCsv } from './judgeme.mjs';
+import { byggJudgeMeCsv, byggJudgeMeCsvOversatt } from './judgeme.mjs';
 import { byggChecklista } from './checklista.mjs';
 import {
   byggBrandCss,
@@ -507,6 +507,13 @@ function skrivUtdatafiler(ctx, varningar, qa) {
   // Judge.me-underlaget: importeras med tools/judgeme-import.mjs efter launch.
   const judgeMeCsv = byggJudgeMeCsv(ctx.p);
   if (judgeMeCsv) writeFileSync(join(mapp, 'judgeme-import.csv'), judgeMeCsv);
+  // Den översatta delmängden per marknad, när översättningen finns.
+  for (const m of ctx.butik?.butik?.marknader ?? []) {
+    const fil = join(mapp, `oversattning-${m.locale}.json`);
+    if (!m.locale || !existsSync(fil)) continue;
+    const csv = byggJudgeMeCsvOversatt(ctx.p, JSON.parse(readFileSync(fil, 'utf8')));
+    if (csv) writeFileSync(join(mapp, `judgeme-import-${m.locale}.csv`), csv);
+  }
   // VA:ns manuella klick, i rätt ordning — hela hennes att-göra efter bygget.
   writeFileSync(join(mapp, 'CHECKLISTA.md'), byggChecklista(ctx.p, ctx.butik));
   const qaRader = [

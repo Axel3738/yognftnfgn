@@ -31,6 +31,28 @@ export const JUDGEME_KOLUMNER = [
   'picture_urls',
 ];
 
+// Den översatta delmängden (PROCESS.md fas 3): recensionerna ur
+// oversattning-<locale>.json (recension.N.titel/text/namn) importeras som
+// EGNA recensioner med lokala namn — Judge.mes auto-översättning köps aldrig.
+// Datumen är källrecensionernas egna, aldrig påhittade.
+export function byggJudgeMeCsvOversatt(p, oversattning) {
+  const recensioner = lista(p.reviews);
+  const rader = [JUDGEME_KOLUMNER.join(',')];
+  let n = 0;
+  for (let i = 0; i < recensioner.length; i++) {
+    const text = oversattning?.[`recension.${i}.text`];
+    const namn = oversattning?.[`recension.${i}.namn`];
+    if (!text || !namn) continue;
+    const r = recensioner[i];
+    const betyg = Math.max(1, Math.min(5, Number(r.betyg) || 5));
+    rader.push(
+      [cell(oversattning[`recension.${i}.titel`] ?? ''), cell(text), cell(betyg), cell(r.datum ?? ''), cell(namn), cell(''), cell(''), cell(p.produkt?.id ?? ''), cell(''), cell('')].join(',')
+    );
+    n++;
+  }
+  return n > 0 ? `${rader.join('\n')}\n` : null;
+}
+
 export function byggJudgeMeCsv(p) {
   const recensioner = lista(p.reviews);
   if (recensioner.length === 0) return null;
