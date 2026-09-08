@@ -25,6 +25,7 @@
 
 import fs from 'node:fs';
 import { spawnSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 
 // Nodes inbyggda fetch läser inte HTTPS_PROXY utan den här flaggan, och i
 // molnmiljön går ALL trafik via proxyn — utan den hänger anropen bara.
@@ -121,6 +122,15 @@ const judgemeId = produktSvar.kropp?.product?.id ?? null;
 
 if (judgemeId) {
   const revSvar = await judgemeGet('/reviews', { product_id: String(judgemeId), per_page: '100' });
+  // Judge.me:s /reviews-filter klarar inte produkt-id:n över 2^31 ("The number
+  // used for product_id is too big") — nya produkter får sådana id:n sedan
+  // 2026-09. Mätt 2026-09-08 på Adventskalender Racingbilar (id 2150142178).
+  // Dubblettspärren kan då inte läsas; en så ny produkt har inga recensioner,
+  // så importen fortsätter med en varning i stället för att avbryta.
+  if (!revSvar.ok && revSvar.status === 422 && /too big/i.test(revSvar.kropp?.error || '')) {
+    console.warn(`⚠ Judge.me kan inte filtrera på produkt-id ${judgemeId} (för stort för deras API) — dubblettspärren hoppas över.`);
+    revSvar.ok = true; revSvar.kropp = { reviews: [] };
+  }
   if (!revSvar.ok) {
     console.error(`Kunde inte läsa befintliga recensioner (${revSvar.status}).`);
     process.exit(1);
@@ -140,12 +150,26 @@ if (judgemeId) {
 const rader = parseCsv(fs.readFileSync(csvFil, 'utf8'));
 console.log(`${rader.length} recensioner i ${csvFil} → produkt ${productId} i ${SHOP}${dry ? ' (DRY — inget skickas)' : ''}`);
 
+// Judge.me kräver e-post ("Email must be present", 422) och kopplar
+// recensionen till en recensentprofil via adressen — en generisk adress
+// (johan@example.com) matchar någon annans profil och skriver över namnet.
+// Samma lösning som market-expansion/no/reviews/build/make-no-reviews.py:
+// en unik example.com-platshållare per recensent OCH produkt. Ingen riktig
+// adress hittas på. Mätt 2026-09-08: alla 46 rader i fem sheets saknade e-post.
+function platshallarEpost(namn, produktId) {
+  const s = String(namn || 'kund').toLowerCase()
+    .replace(/ö/g, 'o').replace(/ä/g, 'a').replace(/å/g, 'a').replace(/ø/g, 'o').replace(/æ/g, 'ae')
+    .replace(/[^a-z0-9]+/g, '.').replace(/^\.|\.$/g, '');
+  const unikt = createHash('sha1').update(`${s}|${produktId}`).digest('hex').slice(0, 6);
+  return `${s}+bevse${unikt}@example.com`;
+}
+
 let ok = 0, fel = 0;
 for (const r of rader) {
   const payload = {
     api_token: TOKEN, shop_domain: SHOP, platform: 'shopify',
     id: Number(productId),
-    name: r.reviewer_name, email: r.reviewer_email,
+    name: r.reviewer_name, email: r.reviewer_email || platshallarEpost(r.reviewer_name, productId),
     rating: Number(r.rating), title: r.title, body: r.body,
     ...(r.review_date ? { created_at: r.review_date } : {}),
   };

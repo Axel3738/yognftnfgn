@@ -48,6 +48,19 @@ senare "kompletteringssteg" (borttaget på Axels besked 2026-09-02: med de
 nya QA-reglerna lämnas inga halvbyggda kampanjer). Radera nedladdad media
 ur scratchpad mellan produkterna.
 
+**Kontrollen åt andra hållet (Axels beslut 2026-09-08): lista även mappar
+som ligger direkt i LAUNCHED och SAKNAR kampanj i MagiBorsten.** En sådan
+mapp har hamnat fel — någon lade den i LAUNCHED innan den launchats — och
+den syns aldrig i to-do-listan, så den launchas aldrig. *(Mätt 2026-09-08:
+fem kompletta produkter — Adventskalender Racingbilar, Bänkhylla med
+Utdragbar Korg, Veckodosett 21 Fack, Diskställ i Två Våningar, Pälsborste
+till Dyson-dammsugare — låg i LAUNCHED utan svensk kampanj i 1–5 dagar
+medan rutinen rapporterade "inget nytt i kön". Norge-rutinen, som läser
+LAUNCHED, hann launcha tre av dem i Norge före Sverige.)* Launcha dem INTE
+härifrån (LAUNCHED är inte to-do), men skriv dem i rapporten som en egen
+rad: "⚠️ N mappar ligger i LAUNCHED utan kampanj: <namn>" — och i
+Discord-briefen. WINNERS/LOSERS/MAKE TO NORWAY hoppas över som vanligt.
+
 Aktivering (steg 2) är INTE to-do-listan — den styrs av kampanjkontot.
 Rutinen bygger nytt och gör klart sitt eget; den redigerar aldrig kampanjer
 som Axel eller skalningsronden äger.

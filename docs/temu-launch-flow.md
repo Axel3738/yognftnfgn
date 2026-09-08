@@ -81,6 +81,10 @@ medierna och syns då inte direkt för alla konton):
   `not-a-real-product-handle-so-this-review-wont-import` — **importsteget
   byter den mot produktens riktiga Shopify-handle**, annars importeras inget
   (medvetet felsäkert). `reviewer_email` lämnas tom — hitta aldrig på adresser.
+  Judge.me kräver ändå en adress (`Email must be present`, 422), så
+  `tools/judgeme-import.mjs` sätter en unik `example.com`-platshållare per
+  recensent och produkt (samma knep som Norge-importen) — aldrig en riktig
+  adress. *(Mätt 2026-09-08: fem sheets, 46 rader, alla utan e-post.)*
   Importen görs via Judge.me:s REST-API (`api.judge.me`), ingen CSV-uppladdning
   behövs. Kräver butikens Judge.me API-token.
 - **`<Produkt>_ADCOPY_<vinkel>`** (Doc, en per vinkel; äldre namnvariant
