@@ -476,6 +476,21 @@ Cowork-prompter för Axels klick (planer, scopes, Railway, SNI, granskning +
 stresstest): `docs/cowork-prompts.md`. Juicy-övergången utan att bli
 avstängd: `docs/tillvaxt-juicy.md`.
 
+**Kostnader utan fil (build cogs-quick-v69)** — Axel testade sidan som
+handlare: "Bruh det här är ju piss jobbigt. Det ska ske automatiskt." Nu:
+(1) **Uppskattad COGS** — ett klick väljer 25/35/50 % av priset
+(`ShopSettings.cogsEstimatePct`); varianter utan inköpspris får det värdet i
+panelen, alltid märkt "uppskattad" (banner + KPI-undertext), aldrig i
+gruppsumman (`group.server.ts` rör inte uppskattningen — en lucka att täppa
+om den behövs). (2) **Snabbfältet**: en rad per produkt, skriv kostnaden,
+Enter/blur skriver till Shopify (`intent=set-cost`, alla varianter i
+produkten; "Sätt per variant" fäller ut ett fält per variant). Ingen
+CostChange-historik från snabbfältet — den finns på produktsidan. (3) Mallen
+och filimporten ligger hopfällda under "Importera från fil (avancerat)".
+Det som fortfarande saknas för "automatiskt": en leverantörsoffert-tolk
+(klistra in vad som helst → AI matchar produkter) — kräver en LLM-nyckel i
+miljön och är nästa steg om Axel vill.
+
 **Hero-kortet i panelen (build hero-v68)** — Axels ord: "dashboarden borde se
 lite mer levande ut, man vill ha en dopaminkick." Överst i panelen: den stora
 nettovinsten räknas upp (`AnimatedNumber`, respekterar

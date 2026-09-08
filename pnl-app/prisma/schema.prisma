@@ -100,6 +100,10 @@ model ShopSettings {
   /// Vinstmål per 30 dagar i butikens valuta — ringen i panelens hero-kort.
   /// Null = inget mål satt (ringen visar då bara vinsten).
   monthlyGoal     Decimal? @db.Decimal(12, 2)
+  /// Uppskattad COGS i procent av priset för varianter UTAN inköpspris.
+  /// Null = av (saknade kostnader räknas som gratis och flaggas). Alltid
+  /// märkt "uppskattad" i panelen — aldrig tyst.
+  cogsEstimatePct Int?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 

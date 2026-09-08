@@ -146,6 +146,9 @@ const en = {
     spendMissingTitle: "Contribution margin is too high",
     spendMissingBody: (days: string) =>
       `Ad spend is missing for ${days}. Those days count as zero ad spend, which makes profit misleading.`,
+    costEstimatedTitle: "Estimated cost",
+    costEstimatedBody: (units: number, pct: number) =>
+      `${units} sold units have no product cost in Shopify and are estimated at ${pct} % of price. Type the real costs under Costs for an exact profit.`,
     costMissingTitle: "Cost missing",
     costMissingBody: (n: number) =>
       `${n} sold units have no cost in Shopify. They count as free, so COGS is too low and profit reads too high. Fill them in under Costs.`,
@@ -233,6 +236,29 @@ const en = {
     bundleHint:
       "Bundles: two or three units in the same order line usually cost less than two or three times the unit cost, because shipping is shared. " +
       "Write the costs separated by | in the cost column (1|2|3 units), or click a product below and add them under Cost per quantity.",
+    quick: {
+      title: "Type your costs here",
+      body: "One field per product. Type the cost (goods + shipping, without duty) and press Enter — it is saved to Shopify straight away. Variants with different costs: open the product.",
+      progress: (have: number, total: number) => `${have} of ${total} variants have a cost`,
+      placeholder: "cost",
+      saved: "Saved",
+      saving: "Saving…",
+      variants: (n: number) => `${n} variants`,
+      showVariants: "Set per variant",
+      hideVariants: "Hide variants",
+      mixed: "differs per variant",
+      estimated: "estimated",
+      advanced: "Import from file (advanced)",
+      hideAdvanced: "Hide import",
+    },
+    estimate: {
+      title: "Let the app estimate until you have filled them in",
+      body: "Variants without a cost are counted as free, so profit reads too high. Pick a typical cost share of the price and the dashboard uses it as an estimate — clearly marked — until you type the real cost.",
+      option: (pct: number) => `${pct} % of price`,
+      active: (pct: number) => `Estimating missing costs at ${pct} % of price. Marked as estimated everywhere.`,
+      off: "Turn estimate off",
+      set: "Use",
+    },
   },
 
   costDetail: {
@@ -728,6 +754,9 @@ const sv: Texts = {
     spendMissingTitle: "Täckningsbidraget är för högt",
     spendMissingBody: (days: string) =>
       `Annonskostnad saknas för ${days}. De dagarna räknas som noll i annonskostnad, vilket gör vinsten missvisande.`,
+    costEstimatedTitle: "Uppskattad kostnad",
+    costEstimatedBody: (units: number, pct: number) =>
+      `${units} sålda enheter saknar inköpspris i Shopify och uppskattas till ${pct} % av priset. Skriv in riktiga kostnader under Kostnader för exakt vinst.`,
     costMissingTitle: "Kostnad saknas",
     costMissingBody: (n: number) =>
       `${n} sålda enheter har ingen inköpskostnad i Shopify. De räknas som gratis, så COGS är för låg och vinsten för hög. Fyll i under Kostnader.`,
@@ -815,6 +844,29 @@ const sv: Texts = {
     bundleHint:
       "Flerpack: två eller tre stycken i samma orderrad kostar oftast mindre än två eller tre gånger styckpriset, eftersom frakten delas. " +
       "Skriv kostnaderna med | emellan i kostnadskolumnen (1|2|3 st), eller klicka på en produkt nedan och lägg in dem under Kostnad per antal.",
+    quick: {
+      title: "Skriv in dina kostnader här",
+      body: "Ett fält per produkt. Skriv kostnaden (vara + frakt, utan tull) och tryck Enter — den sparas direkt i Shopify. Olika kostnad per variant: öppna produkten.",
+      progress: (have: number, total: number) => `${have} av ${total} varianter har inköpspris`,
+      placeholder: "kostnad",
+      saved: "Sparat",
+      saving: "Sparar…",
+      variants: (n: number) => `${n} varianter`,
+      showVariants: "Sätt per variant",
+      hideVariants: "Dölj varianter",
+      mixed: "olika per variant",
+      estimated: "uppskattad",
+      advanced: "Importera från fil (avancerat)",
+      hideAdvanced: "Dölj importen",
+    },
+    estimate: {
+      title: "Låt appen uppskatta tills du fyllt i",
+      body: "Varianter utan kostnad räknas som gratis, så vinsten blir för hög. Välj en typisk kostnadsandel av priset så använder panelen den som uppskattning — tydligt märkt — tills du skrivit in den riktiga kostnaden.",
+      option: (pct: number) => `${pct} % av priset`,
+      active: (pct: number) => `Saknade kostnader uppskattas till ${pct} % av priset. Märkt som uppskattad överallt.`,
+      off: "Stäng av uppskattningen",
+      set: "Använd",
+    },
   },
 
   costDetail: {

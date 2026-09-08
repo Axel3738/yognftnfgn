@@ -31,7 +31,7 @@ import {
 
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
-import { loadCatalog } from "../lib/shopify-data.server";
+import { invalidateCatalog, invalidateVariantCosts, loadCatalog, setUnitCost } from "../lib/shopify-data.server";
 import { importCostCsv } from "../lib/cost-import.server";
 import { asLang, localeOf, t } from "../lib/texts";
 
@@ -74,15 +74,43 @@ export async function loader({ request }: LoaderFunctionArgs) {
     /* Kortet "Kommer du från Juicy?" — läge A (allt finns redan) eller B
        (släpp filen). Dolt när handlaren tryckt "Ser rätt ut". */
     juicyDismissed: Boolean(settings.juicyCardDismissedAt),
+    cogsEstimatePct: settings.cogsEstimatePct ?? null,
   });
 }
 
 export async function action({ request }: ActionFunctionArgs) {
   const { admin, session } = await authenticate.admin(request);
   const form = await request.formData();
-  if (String(form.get("intent")) === "juicy-dismiss") {
+  const intent = String(form.get("intent") ?? "");
+  if (intent === "juicy-dismiss") {
     await prisma.shopSettings.update({ where: { shop: session.shop }, data: { juicyCardDismissedAt: new Date() } });
     return json({ ok: true, message: "" });
+  }
+  /* Uppskattad COGS i % av pris för varianter utan kostnad. 0 = av. */
+  if (intent === "estimate") {
+    const pct = Math.round(Number(form.get("pct")));
+    await prisma.shopSettings.update({
+      where: { shop: session.shop },
+      data: { cogsEstimatePct: Number.isFinite(pct) && pct > 0 && pct < 100 ? pct : null },
+    });
+    return json({ ok: true, message: "" });
+  }
+  /* Snabbfältet: en kostnad rakt in i Shopify för en eller flera varianter
+     (produktnivå = alla varianter). Inga mallar, ingen fil. */
+  if (intent === "set-cost") {
+    const cost = parseFloat(String(form.get("cost") ?? "").replace(/\s/g, "").replace(",", "."));
+    const targets = String(form.get("targets") ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+    if (!Number.isFinite(cost) || cost < 0 || !targets.length) {
+      return json({ ok: false, message: "invalid" }, { status: 400 });
+    }
+    const fel: string[] = [];
+    for (const gid of targets) {
+      const r = await setUnitCost(admin, gid, cost);
+      if (!r.ok) fel.push(r.error ?? gid);
+    }
+    invalidateVariantCosts(session.shop);
+    await invalidateCatalog(session.shop, prisma);
+    return json({ ok: fel.length === 0, message: fel.join("; ") });
   }
   // Meddelandena visas i UI:t — hämta butikens språk först.
   const settings = await prisma.shopSettings.findUnique({ where: { shop: session.shop } });
@@ -97,9 +125,21 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 export default function Costs() {
-  const { lang, rows, missing, total, tariffPerOrder, feeRate, currency, juicyDismissed } = useLoaderData<typeof loader>();
+  const { lang, rows, missing, total, tariffPerOrder, feeRate, currency, juicyDismissed, cogsEstimatePct } = useLoaderData<typeof loader>();
   const fetcher = useFetcher<typeof action>();
   const juicyFetcher = useFetcher<typeof action>();
+  const estimateFetcher = useFetcher<typeof action>();
+  const [visaImport, setVisaImport] = useState(false);
+  /* Produktgrupper för snabbfältet: en rad per produkt, varianterna under. */
+  const produkter = (() => {
+    const m = new Map<string, typeof rows>();
+    for (const r of rows) (m.get(r.productGid) ?? m.set(r.productGid, []).get(r.productGid)!).push(r);
+    return [...m.values()].sort((a, b) => {
+      const am = a.some((r) => r.unitCost == null), bm = b.some((r) => r.unitCost == null);
+      if (am !== bm) return am ? -1 : 1;
+      return a[0].productTitle.localeCompare(b[0].productTitle, lang === "sv" ? "sv" : "en");
+    });
+  })();
   /* Täckning ≥ 90 % ⇒ läge A: kostnaderna finns redan (Juicy eller handlaren
      skrev till Shopifys fält) — noll klick. Annars läge B: släpp exporten. */
   const tackning = total ? (total - missing) / total : 0;
@@ -191,19 +231,52 @@ export default function Costs() {
               <Banner tone="success">{T.costs.allHaveCost}</Banner>
             )}
 
-            <Card background="bg-surface-secondary">
-              <BlockStack gap="200">
-                <Text as="h2" variant="headingMd">{T.costs.sopTitle}</Text>
-                <Text as="p" tone="subdued">
-                  <strong>1.</strong> {T.costs.sop1}<br />
-                  <strong>2.</strong> {T.costs.sop2}<br />
-                  <strong>3.</strong> {T.costs.sop3}<br />
-                  <strong>4.</strong> {T.costs.sop4}<br />
-                  <strong>5.</strong> {T.costs.bundleHint}
-                </Text>
+            {/* Uppskattning tills riktiga kostnader finns — ett klick. */}
+            {missing > 0 || cogsEstimatePct ? (
+              <Card background="bg-surface-secondary">
+                <BlockStack gap="200">
+                  <Text as="h2" variant="headingMd">{T.costs.estimate.title}</Text>
+                  <Text as="p" tone="subdued">{T.costs.estimate.body}</Text>
+                  {cogsEstimatePct ? (
+                    <InlineStack gap="300" blockAlign="center" wrap>
+                      <Badge tone="info">{`≈ ${T.costs.estimate.active(cogsEstimatePct)}`}</Badge>
+                      <Button variant="plain" tone="critical" loading={estimateFetcher.state !== "idle"}
+                        onClick={() => estimateFetcher.submit({ intent: "estimate", pct: "0" }, { method: "POST" })}>
+                        {T.costs.estimate.off}
+                      </Button>
+                    </InlineStack>
+                  ) : (
+                    <InlineStack gap="200" wrap>
+                      {[25, 35, 50].map((p) => (
+                        <Button key={p} loading={estimateFetcher.state !== "idle"}
+                          onClick={() => estimateFetcher.submit({ intent: "estimate", pct: String(p) }, { method: "POST" })}>
+                          {`${T.costs.estimate.set} ${T.costs.estimate.option(p)}`}
+                        </Button>
+                      ))}
+                    </InlineStack>
+                  )}
+                </BlockStack>
+              </Card>
+            ) : null}
+
+            {/* Snabbfältet: skriv kostnaden per produkt, Enter sparar. */}
+            <Card>
+              <BlockStack gap="300">
+                <Text as="h2" variant="headingMd">{T.costs.quick.title}</Text>
+                <Text as="p" tone="subdued">{T.costs.quick.body}</Text>
+                <BlockStack gap="200">
+                  {produkter.map((grupp) => (
+                    <Produktrad key={grupp[0].productGid} grupp={grupp} T={T} nf={nf} currency={currency} />
+                  ))}
+                </BlockStack>
               </BlockStack>
             </Card>
 
+            <Button variant="plain" disclosure={visaImport ? "up" : "down"} onClick={() => setVisaImport((v) => !v)}>
+              {visaImport ? T.costs.quick.hideAdvanced : T.costs.quick.advanced}
+            </Button>
+
+            {visaImport ? (
             <Card>
               <BlockStack gap="400">
                 <BlockStack gap="200">
@@ -299,6 +372,7 @@ export default function Costs() {
                 ) : null}
               </BlockStack>
             </Card>
+            ) : null}
           </BlockStack>
         </Layout.Section>
 
@@ -348,5 +422,96 @@ export default function Costs() {
         </Layout.Section>
       </Layout>
     </Page>
+  );
+}
+
+type Rad = { productGid: string; variantGid: string; inventoryItemGid: string; productTitle: string; variantTitle: string; price: number; unitCost: number | null };
+
+/**
+ * En produkt i snabbfältet. Ett fält på produktnivå som skriver samma kostnad
+ * till alla varianter (så ser en leverantörsprislista oftast ut); "Sätt per
+ * variant" fäller ut ett fält per variant. Enter eller lämna fältet sparar.
+ */
+function Produktrad({ grupp, T, nf, currency }: { grupp: Rad[]; T: ReturnType<typeof t>; nf: Intl.NumberFormat; currency: string }) {
+  const fetcher = useFetcher<typeof action>();
+  const [open, setOpen] = useState(false);
+  const kostnader = grupp.map((r) => r.unitCost);
+  const alla = kostnader.every((k) => k != null);
+  const lika = alla && kostnader.every((k) => k === kostnader[0]);
+  const saknas = kostnader.filter((k) => k == null).length;
+  const [v, setV] = useState(lika && kostnader[0] != null ? String(kostnader[0]) : "");
+  const [sparat, setSparat] = useState(false);
+
+  const spara = (targets: string[], value: string) => {
+    if (!value.trim()) return;
+    fetcher.submit({ intent: "set-cost", cost: value, targets: targets.join(",") }, { method: "POST" });
+    setSparat(true);
+    setTimeout(() => setSparat(false), 2500);
+  };
+  const onKey = (targets: string[], value: string) => (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") spara(targets, value);
+  };
+  const p = grupp[0];
+  const pris = grupp.length > 1 && grupp.some((r) => r.price !== p.price)
+    ? `${nf.format(Math.min(...grupp.map((r) => r.price)))}–${nf.format(Math.max(...grupp.map((r) => r.price)))}`
+    : nf.format(p.price);
+
+  return (
+    <div style={{ borderBottom: "1px solid #e3e3e3", paddingBottom: 8 }}>
+      <InlineStack gap="300" blockAlign="center" wrap>
+        <div style={{ flex: 1, minWidth: 200 }}>
+          <Text as="span" fontWeight="semibold">{p.productTitle}</Text>
+          <Text as="span" tone="subdued" variant="bodySm">{`  · ${pris} ${currency}${grupp.length > 1 ? ` · ${T.costs.quick.variants(grupp.length)}` : ""}`}</Text>
+        </div>
+        <div style={{ width: 150 }} onKeyDown={onKey(grupp.map((r) => r.inventoryItemGid), v)}>
+          <TextField
+            label={T.costs.thCost}
+            labelHidden
+            value={v}
+            onChange={setV}
+            onBlur={() => { if (v && String(kostnader[0] ?? "") !== v) spara(grupp.map((r) => r.inventoryItemGid), v); }}
+            autoComplete="off"
+            placeholder={!alla ? T.costs.quick.placeholder : !lika ? T.costs.quick.mixed : ""}
+            suffix={currency}
+            disabled={!lika && alla && !open}
+          />
+        </div>
+        {saknas ? <Badge tone="critical">{T.costs.missingBadge}</Badge> : sparat || fetcher.state !== "idle" ? <Badge tone="success">{fetcher.state !== "idle" ? T.costs.quick.saving : T.costs.quick.saved}</Badge> : null}
+        {grupp.length > 1 ? (
+          <Button variant="plain" size="slim" onClick={() => setOpen((o) => !o)}>
+            {open ? T.costs.quick.hideVariants : T.costs.quick.showVariants}
+          </Button>
+        ) : null}
+        <Link to={`/app/costs/${p.productGid.split("/").pop()}`}><Text as="span" variant="bodySm">→</Text></Link>
+      </InlineStack>
+      {open ? (
+        <div style={{ paddingLeft: 16, paddingTop: 6 }}>
+          <BlockStack gap="100">
+            {grupp.map((r) => <Variantrad key={r.variantGid} r={r} T={T} currency={currency} nf={nf} />)}
+          </BlockStack>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function Variantrad({ r, T, currency, nf }: { r: Rad; T: ReturnType<typeof t>; currency: string; nf: Intl.NumberFormat }) {
+  const fetcher = useFetcher<typeof action>();
+  const [v, setV] = useState(r.unitCost != null ? String(r.unitCost) : "");
+  const spara = () => {
+    if (!v.trim() || String(r.unitCost ?? "") === v) return;
+    fetcher.submit({ intent: "set-cost", cost: v, targets: r.inventoryItemGid }, { method: "POST" });
+  };
+  return (
+    <InlineStack gap="300" blockAlign="center" wrap>
+      <div style={{ flex: 1, minWidth: 160 }}>
+        <Text as="span" variant="bodySm">{r.variantTitle === "Default Title" ? "—" : r.variantTitle}</Text>
+        <Text as="span" variant="bodySm" tone="subdued">{`  · ${nf.format(r.price)} ${currency}`}</Text>
+      </div>
+      <div style={{ width: 150 }} onKeyDown={(e) => { if (e.key === "Enter") spara(); }}>
+        <TextField label={T.costs.thCost} labelHidden value={v} onChange={setV} onBlur={spara} autoComplete="off" placeholder={T.costs.quick.placeholder} suffix={currency} />
+      </div>
+      {r.unitCost == null && !v ? <Badge tone="critical">{T.costs.missingBadge}</Badge> : fetcher.state !== "idle" ? <Badge tone="success">{T.costs.quick.saving}</Badge> : null}
+    </InlineStack>
   );
 }

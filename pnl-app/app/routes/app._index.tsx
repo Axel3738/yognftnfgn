@@ -156,7 +156,17 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
      ur det lagrade aggregatet — annars syns ett nyss inskrivet inköpspris
      först när hela orderexporten körts om, och importen ser trasig ut. */
   const sales = daily.sales;
-  const products = applyCurrentCosts(daily.products, catalog);
+  /* Uppskattad COGS: varianter utan inköpspris får X % av priset när butiken
+     valt det (Kostnader-sidan). Alltid märkt "uppskattad" — aldrig tyst. */
+  const estimatePct = settings.cogsEstimatePct ?? null;
+  let estimatedUnits = 0;
+  const products = applyCurrentCosts(daily.products, catalog).map((p) => {
+    if (p.unitCost != null || !estimatePct) return p;
+    const price = p.variantGid ? catalog.byGid.get(p.variantGid)?.price : undefined;
+    if (!(price != null && price > 0)) return p;
+    estimatedUnits += p.units;
+    return { ...p, unitCost: Math.round(price * (estimatePct / 100) * 100) / 100 };
+  });
   /* Sessioner/CVR finns inte i det publika Admin-API:t — analytics-ytan är
      intern hos Shopify. Tom serie => "—" i panelen. */
   const sessions: never[] = [];
@@ -322,6 +332,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     fatal: null as string | null,
     tips,
     monthlyGoal: settings.monthlyGoal != null ? Number(settings.monthlyGoal) : null,
+    estimate: estimatePct ? { pct: estimatePct, units: estimatedUnits } : null,
     comparison,
     groupSize,
     group,
@@ -367,6 +378,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
       fatal,
       tips: [] as Tip[],
       monthlyGoal: null as number | null,
+      estimate: null as { pct: number; units: number } | null,
       comparison: null as { totalSales: number; orders: number; spend: number; netProfit: number } | null,
       groupSize: 1,
       group: null as Awaited<ReturnType<typeof summeraGrupp>> | null,
@@ -1051,7 +1063,7 @@ function SetupChecklist({
 }
 
 function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
-  const { fatal, result, rangeKey, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing, groupSize, group, metaTokenDagar, tips, monthlyGoal } = d;
+  const { fatal, result, rangeKey, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing, groupSize, group, metaTokenDagar, tips, monthlyGoal, estimate } = d;
   const [params, setParams] = useSearchParams();
   const revalidator = useRevalidator();
   const T = t(lang);
@@ -1137,7 +1149,11 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
     {
       label: T.dashboard.kpi.cogs,
       value: money(t2.cogs),
-      sub: t2.unitsWithoutCost ? T.dashboard.kpi.unitsNoCost(t2.unitsWithoutCost) : T.dashboard.kpi.allUnitsCovered,
+      sub: t2.unitsWithoutCost
+        ? T.dashboard.kpi.unitsNoCost(t2.unitsWithoutCost)
+        : estimate && estimate.units > 0
+          ? `≈ ${T.costs.quick.estimated} (${estimate.units})`
+          : T.dashboard.kpi.allUnitsCovered,
       tone: t2.unitsWithoutCost ? "critical" : undefined,
     },
     { label: T.dashboard.kpi.duty, value: money(t2.tariff), sub: T.dashboard.kpi.ordersCount(nf.format(t2.orders)) },
@@ -1350,6 +1366,12 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
             {t2.unitsWithoutCost > 0 ? (
               <Banner tone="warning" title={T.dashboard.costMissingTitle}>
                 {T.dashboard.costMissingBody(t2.unitsWithoutCost)}
+              </Banner>
+            ) : null}
+
+            {estimate && estimate.units > 0 ? (
+              <Banner tone="info" title={T.dashboard.costEstimatedTitle} action={{ content: T.dashboard.setup.ctaCosts, url: "/app/costs" }}>
+                {T.dashboard.costEstimatedBody(estimate.units, estimate.pct)}
               </Banner>
             ) : null}
 
