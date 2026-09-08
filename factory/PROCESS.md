@@ -36,7 +36,7 @@ Kör från repo-roten, i den här ordningen:
 | 10 | Marknad NO + locale nb + webbnärvaro + translationsRegister på allt | `node factory/marknader.mjs <butik> <produkt>` |
 | 11 | Locale-branchade custom_liquid-texter in i produktmallen | `node factory/ops.mjs … --resume --igen startsida` |
 | 12 | Trippelkollen mot kundens vy (kräver `SHOPIFY_STOREFRONT_PASSWORD` under trial) | `node factory/kolla.mjs <butik> <produkt>` |
-| 13 | "Store ready": recensioner (sv + no), pixel, Discord | `tools/judgeme-import.mjs`, `factory/meta-setup.mjs`, `factory/discord.mjs` |
+| 13 | "Store ready": recensionsfilen (sv + no, originaldatum) till VA:ns app-import, pixel, Discord-kanaler (VA:n skapar servern — boten får inte) | `node factory/ops.mjs … --resume --igen recensioner`, `factory/meta-setup.mjs`, `factory/discord.mjs --guild <id>` |
 
 Lärdomar från bygget 2026-09-08 (API 2025-07, alla mätta):
 - `pageByHandle` finns inte — sidor slås upp via `pages(query: "handle:…")`.
@@ -60,6 +60,22 @@ Lärdomar från bygget 2026-09-08 (API 2025-07, alla mätta):
   storefronten, som under trial ligger bakom lösenord (kan inte tas bort
   utan plan): `kolla.mjs` postar `SHOPIFY_STOREFRONT_PASSWORD` till `/password`.
 - Judge.me-tokenen kan inte läsas via API — den är VA:ns klick (steg 7).
+- **Temat väljs på ID ur state-filen, aldrig "första UNPUBLISHED"** (TankGuard
+  2026-09-08: VA:n publicerade utkastet mitt i bygget, varpå Horizon blev det
+  opublicerade temat och ett steg försökte patcha fel tema —
+  `hamtaArbetstema(temaId)` i shopify.mjs). Admin-API:t skriver fint mot
+  MAIN-temat med butikens egen app (themeFilesUpsert verifierat samma dag) —
+  regeln "publicerat tema är API-låst" gällde MCP-kopplingen, inte appen.
+  Under trialen skyddar lösenordssidan kunden, så små patchar går direkt
+  mot live; större omtag byggs fortfarande som ny klon.
+- Storefronten stryper täta anrop (429 efter ~10 sidor/minut) — `kolla.mjs`
+  pausar mellan sidor och väntar 15–60 s vid 429 i stället för att rapportera
+  rött. Judge.me-widgeten (Appytan renderas som `<section>`) klipps bort
+  före markörskanningen: den visar sv+no-recensioner blandat med flit.
+- Temats egna svenska ord i `ms-paket.liquid` ("Gratis på köpet", "värde",
+  "Välj paket") och `ms-delivery-estimate` ("arbetsdagar" + svenska
+  månadsnamn via Intl sv-SE) syntes på /nb i kundvyn — `tema-mall.patchaMsPaket`
+  locale-branchar snippeten och nb får en statisk leveransrad.
 - Judge.me knyter reviewer-NAMNET till mejladressen: samma syntetiska
   `recension-N@…` i sv- och no-CSV:n gav de norska raderna svenska namn
   (TankGuard 2026-09-08). `tools/judgeme-import.mjs --mejlsuffix` bygger nu
@@ -68,6 +84,16 @@ Lärdomar från bygget 2026-09-08 (API 2025-07, alla mätta):
   döljer dem. Nya butiker får Judge.me-produkt-id:n som ger 422 i
   `/reviews?product_id=` — dubblettspärren faller tillbaka på butiksvid
   läsning filtrerad på `product_external_id`.
+- **Judge.mes API kan inte sätta recensionsdatum** (mätt 2026-09-08 på
+  TankGuard: `created_at` ignoreras på POST /reviews och på PUT, även som
+  `review_date`). Recensioner importeras därför ENBART via appens CSV-import
+  (fas 3) — `tools/judgeme-import.mjs` stoppar numera utan `--utan-datum`.
+- Storefrontens "429" på `/cart/add.js` från molnsessionen är Cloudflares
+  bot-utmaning (`cf-mitigated: challenge`, "Verifying your connection…"),
+  inte strypning — den går inte att vänta bort och ska inte kringgås.
+  Köptestet i `kolla.mjs` rapporterar det som "kan inte köras härifrån";
+  kassapriserna verifieras då via rabattkodernas definitioner i admin
+  (`paket.mjs` räknar dem öre-exakt) och ett ögonköp i kundvyn.
 
 ## Fas 1 — Grunden
 1. ⚙️ Hämta produktdata från källan (Bäverbutik-sidan): namn, pris, varianter,
@@ -153,16 +179,29 @@ Lärdomar från bygget 2026-09-08 (API 2025-07, alla mätta):
     "Store ready: <namn>" utlöser slutsteget (se kommandot).
 
 ## Fas 3 — Recensioner
-11. 🖐 Installera Judge.me + språk + skicka API-token.
-12. ⚙️ Import via `tools/judgeme-import.mjs` (--mejlsuffix <brand>.invalid —
-    API:t kräver mejl numera). **Flerspråkiga recensioner utan betald plan**
+11. 🖐 Installera Judge.me + språk.
+12. ⚙️ Fabriken skriver `output/<id>/judgeme-app-import.csv` i **Judge.mes
+    eget mallformat** (dd/mm/yyyy, product_id + handle) — original +
+    marknadernas översatta delmängder i EN fil — och 🖐 VA:n laddar upp den
+    i appen: Settings → Import reviews → Import from apps → Judge.me
+    format → Import. **Aldrig via API:t** (Axels regel 2026-09-08): Judge.mes
+    v1-API sätter alltid importögonblicket som datum — `created_at`
+    ignoreras på POST och PUT (mätt på TankGuard samma dag, 16 recensioner
+    med "för 12 minuter sedan" på allihop = fejkstämpel). Originaldatumen
+    hämtas ur källans `reviews_for_widget` (`reviews[].created_at`) och står
+    i produktfilen (`reviews[].datum`); saknas ett datum stoppar
+    `byggJudgeMeAppCsv`. Fel rader kan inte raderas via API:t — `PUT
+    /reviews/<id>` med `hidden: true, curated: spam` döljer dem.
+    **Flerspråkiga recensioner utan betald plan**
     (Axels beslut 2026-09-07: Judge.mes auto-översättning är paid — köps
     aldrig): fabriken översätter själv en delmängd av recensionerna till
-    marknadens språk och importerar dem som EGNA recensioner med lokala
-    namn (Ola/Kari/Bjørn …). Blandningen sv+no i samma lista ser naturlig
-    ut för en butik som säljer i båda länderna. Vid stort produkt-id krävs
-    `--anda` (dubblettkollen kan inte göras per produkt — verifiera själv).
-    Bevisat på HeimGuard: 6 norska importerade 2026-09-07. Widgeten läggs i temats egen **Appyta**
+    marknadens språk och lägger dem i samma fil som EGNA recensioner med
+    lokala namn (Ola/Kari/Bjørn …) och källans datum. Blandningen sv+no i
+    samma lista ser naturlig ut för en butik som säljer i båda länderna.
+    Efter importen: verifiera datumen i kundvyn (widgetdatan =
+    `judge.me/reviews/reviews_for_widget?shop_domain=<butik>&product_id=<id>`
+    — samma källa som kunden ser, går att läsa utan lösenord).
+    Widgeten läggs i temats egen **Appyta**
     (ms-app-slot) i produktmallen, stjärnbadgen som block under titeln
     (appblock-uuid är global). **Widgeten stylas ALDRIG med CSS från
     temat** (Axels beslut 2026-09-07) — utseendet ställs i Judge.me-appens

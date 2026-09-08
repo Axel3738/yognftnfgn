@@ -19,7 +19,8 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { join, dirname } from 'node:path';
 import { lasYaml } from './yaml.mjs';
 import { laddaEnv } from './env.mjs';
-import { graphql, hamtaProduktViaHandle, hamtaUtkastTema, kontrolleraAnslutning } from './shopify.mjs';
+import { graphql, hamtaProduktViaHandle, hamtaArbetstema, kontrolleraAnslutning } from './shopify.mjs';
+import { lasState } from './state.mjs';
 import { METAOBJEKT_TYP } from './paket.mjs';
 
 const FACTORY_ROT = dirname(fileURLToPath(import.meta.url));
@@ -236,6 +237,12 @@ export async function samlaResurser(p, temaId) {
       if ((r.translatableContent ?? []).length === 0) continue;
       ut.push({ typ: r.resourceId.includes('SectionGroup') ? 'sektionsgrupp' : r.resourceId.includes('SettingsData') ? 'temainställning' : 'temamall', ...r });
     }
+    // Temainställningarnas texter (sidfotens brand_description m.fl.) ligger
+    // under SETTINGS_CATEGORY — den typen listar även utkasttemat (mätt 2026-09-08).
+    for (const r of await translatableTyp('ONLINE_STORE_THEME_SETTINGS_CATEGORY')) {
+      if (!r.resourceId.includes(`theme_id=${temaNr}`)) continue;
+      ut.push({ typ: 'temainställning', ...r });
+    }
   }
   return ut;
 }
@@ -256,7 +263,9 @@ async function huvud() {
 
   const shop = await kontrolleraAnslutning();
   console.log(`Connected: ${shop.myshopifyDomain} ✓${torr ? '  (torrkörning)' : ''}`);
-  const tema = await hamtaUtkastTema();
+  const state = lasState(butik.butik.id, p.produkt.id);
+  const tema = await hamtaArbetstema(state.steg?.tema?.temaId ?? state.steg?.brand?.temaId ?? null);
+  console.log(`Tema: ${tema?.name ?? '—'} (${tema?.role ?? '?'})`);
 
   const NAMN = { NO: ['Norge', 'no'], DK: ['Danmark', 'dk'], FI: ['Finland', 'fi'], DE: ['Tyskland', 'de'] };
   for (const m of marknader) {

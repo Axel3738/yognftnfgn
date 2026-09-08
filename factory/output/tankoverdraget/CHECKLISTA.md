@@ -50,7 +50,8 @@ Everything not on this list is done by Claude Code.
 - [ ] Apps → search "Judge.me" → Install (free plan)
 - [ ] Judge.me → Settings → Language → **Swedish**
 - [ ] Judge.me → Settings → Review Widget → star color: **00B77F**
-- [ ] Judge.me → Settings → Integrations → copy **API Token** → paste it into Claude Code when asked (never in chat or email)
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you → Import
+- [ ] Open the product page → check the reviews show their original dates (never "just now")
 
 ## 8. Meta
 - [ ] business.facebook.com → Settings → Pages → Add → Create a new Page: **TankGuard**

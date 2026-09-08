@@ -53,7 +53,8 @@
         "snippets/opf-korg-upsell.liquid",
         "sections/cart-drawer.liquid",
         "snippets/opf-tillagg.liquid",
-        "snippets/ms-head.liquid"
+        "snippets/ms-head.liquid",
+        "snippets/ms-paket.liquid"
       ],
       "abTest": "paket"
     },
@@ -74,12 +75,12 @@
       }
     }
   },
-  "uppdaterad": "2026-09-08T08:12:14.204Z",
+  "uppdaterad": "2026-09-08T08:23:06.166Z",
   "qa": {
     "gron": false,
     "kritiska": [
       "tracking"
     ],
-    "tid": "2026-09-08T08:12:14.204Z"
+    "tid": "2026-09-08T08:23:06.166Z"
   }
 }

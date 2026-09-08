@@ -289,7 +289,7 @@ meta:
   # Sidan skapar VA:n i Business Manager; pixeln skapas av meta-setup.mjs vid
   # "Store ready".
   page_id: ""
-  pixel_id: ""
+  pixel_id: "2196132151319625"
   creative_prefix: "TankGuard"
   testbudget_per_dag: 1000
   # Bevisade vinklar från Bäverbutikens svenska och norska körningar

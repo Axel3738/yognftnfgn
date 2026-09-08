@@ -80,6 +80,9 @@ export function byggUnderlag(butik, rap) {
   Object.assign(ut, malltexter('footer', byggFooterGroup(JSON.stringify(tomFooter), butik)));
   // Temats fasta strängar som inte kommer ur konfigen (sidfotens rubriker,
   // Dela-knappen) — kunden ser dem, så de ska med i underlaget.
+  // Sidfotens brandtext (settings brand_description) — samma text som
+  // tema-mall.settingsTillagg skriver.
+  ut['tema.settings.brand_description'] = `<p>${String(butik.branding?.positionering ?? butik.butik.brand).replaceAll('&', '&amp;').replaceAll('<', '&lt;')}</p>`;
   ut['tema.footer.snabblankar'] = 'Snabblänkar';
   ut['tema.footer.information'] = 'Information';
   ut['tema.footer.nyhetsbrev'] = 'Missa inga nyheter';
@@ -88,6 +91,7 @@ export function byggUnderlag(butik, rap) {
   // temat. De står här ändå så subagenten ger oss orden till Liquid-grenen.
   trustPunkter(butik).forEach((x, i) => { ut[`liquid.trust.${i}`] = x.split(':').slice(1).join(':'); });
   ut['liquid.delivery.text'] = 'Beräknad leverans';
+  ut['liquid.delivery.dagar'] = `${p.shipping?.tid ?? butik?.frakt?.leveranstid ?? '5–10 arbetsdagar'}`;
   if (harTillagg(p)) {
     const t = tillaggTexter(p);
     ut['liquid.tillagg.label'] = t.label;

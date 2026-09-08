@@ -158,5 +158,7 @@
   "tema.footer.nyhetsbrev": "Gå ikke glipp av nyheter",
   "tema.share": "Del",
   "liquid.tillagg.label": "Legg til Kranbeskytter Frost",
-  "liquid.tillagg.info": "Full pris – gratis bare i pakkene"
+  "liquid.tillagg.info": "Fullpris – gratis bare i pakkene",
+  "tema.settings.brand_description": "<p>Svensk spesialist på beskyttelse av regnvannstanker — trekket som holder vannet klart og tanken hel, år etter år</p>",
+  "liquid.delivery.dagar": "6–10 virkedager"
 }

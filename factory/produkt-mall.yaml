@@ -117,13 +117,16 @@ offer:
 
 reviews:                      # riktiga recensioner (namn, betyg 1–5, text).
   # Visas ALDRIG av en egen tema-sektion — de importeras till Judge.me
-  # (fabriken skriver output/<id>/judgeme-import.csv, importera med
-  # tools/judgeme-import.mjs). Widgeten renderar dem på sidan.
+  # (fabriken skriver output/<id>/judgeme-app-import.csv, VA:n laddar upp
+  # den i appen: Settings → Import reviews → Import from apps → Judge.me
+  # format). Aldrig via API:t — det tappar datumen (mätt 2026-09-08).
   # - namn: ""
   #   betyg: 5
   #   text: ""
   #   titel: ""               # valfri
-  #   datum: ""               # valfri, YYYY-MM-DD — hitta aldrig på ett
+  #   datum: ""               # OBLIGATORISKT, YYYY-MM-DD — källans originaldatum
+  #                           # (reviews_for_widget → reviews[].created_at).
+  #                           # Hitta aldrig på ett; saknas det stoppar bygget.
 
 faq:
   # - fraga: ""

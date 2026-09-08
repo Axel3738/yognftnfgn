@@ -130,9 +130,15 @@ export function patchaProduktTemplate(json, butik, p, nb = {}) {
   if (blocks.ms_delivery) {
     const d = leveransdagar(p.shipping?.tid ?? butik?.frakt?.leveranstid);
     const rad = (t) => `{% render 'ms-delivery-estimate', min_days: ${d.min}, max_days: ${d.max}, cutoff_hour: 0, text: '${t}' %}`;
+    // Norska vyn får en STATISK rad: temats ms-delivery skriver datum med
+    // svenska månadsnamn (Intl sv-SE i ms-cro.js) och reservtexten säger
+    // "arbetsdagar" — sågs på /nb i kundvyn 2026-09-08. Samma klasser, ingen JS.
+    const nbText = nb['liquid.delivery.text'] ?? 'Beräknad leverans';
+    const nbDagar = nb['liquid.delivery.dagar'] ?? `${d.min}–${d.max} virkedager`;
+    const statisk = `<div class="ms-delivery ms-scope"><span aria-hidden="true">🚚</span><div>${nbText} <span class="ms-delivery__date">${nbDagar}</span></div></div>`;
     blocks.ms_delivery = {
       type: 'custom_liquid',
-      settings: { custom_liquid: localeBranch(rad('Beräknad leverans'), rad(nb['liquid.delivery.text'] ?? 'Beräknad leverans')) },
+      settings: { custom_liquid: localeBranch(rad('Beräknad leverans'), statisk) },
     };
   }
   mall.sections.main = { ...main, blocks, block_order: order };
@@ -374,6 +380,29 @@ export function settingsSchemaMedAb(schemaText) {
     ],
   });
   return `${JSON.stringify(schema, null, 2)}\n`;
+}
+
+// Temats ms-paket-snippet har svenska ord inbakade ("Gratis på köpet", "värde",
+// "Välj paket") som ingen translationsRegister når — locale-brancha dem en
+// gång (idempotent: hoppar över om grenen redan finns). Sågs på /nb 2026-09-08.
+export const MS_PAKET_ORD = [
+  ['Gratis på köpet', 'Gratis med på kjøpet'],
+  ['värde {{ gvarde | money }}', 'verdi {{ gvarde | money }}'],
+  ['aria-label="Välj paket"', 'aria-label="Velg pakke"'],
+];
+export function patchaMsPaket(snippet) {
+  let s = String(snippet);
+  if (s.includes("request.locale.iso_code == 'nb'")) return null;
+  for (const [sv, nbOrd] of MS_PAKET_ORD) {
+    if (!s.includes(sv)) continue;
+    // aria-label sitter i ett attribut — grenen måste ligga inuti citattecknen.
+    if (sv.startsWith('aria-label=')) {
+      s = s.replaceAll(sv, `aria-label="{% if request.locale.iso_code == 'nb' %}Velg pakke{% else %}Välj paket{% endif %}"`);
+    } else {
+      s = s.replaceAll(sv, `{% if request.locale.iso_code == 'nb' %}${nbOrd}{% else %}${sv}{% endif %}`);
+    }
+  }
+  return s;
 }
 
 // Språkmärkta galleribilder: alt som börjar med [SV]/[NO] visas bara för

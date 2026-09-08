@@ -210,6 +210,23 @@ export async function hamtaUtkastTema() {
   return teman.find((t) => t.role === 'UNPUBLISHED') ?? null;
 }
 
+// Arbetstemat = det tema fabriken själv byggde (id i state-filen), oavsett
+// roll. Mätt 2026-09-08 på TankGuard: VA:n publicerade utkastet, varpå "första
+// UNPUBLISHED" plötsligt var Horizon och ett steg försökte patcha fel tema.
+// API:t skriver fint mot MAIN (verifierat samma dag) — under trialen skyddar
+// lösenordssidan kunden. Saknas id, eller finns temat inte längre, används
+// utkastet som förr.
+export async function hamtaArbetstema(temaId = null) {
+  const data = await graphql(`
+    query opsFactoryArbetstema { themes(first: 20) { nodes { id name role } } }`);
+  const teman = data.themes?.nodes ?? [];
+  if (temaId) {
+    const eget = teman.find((t) => t.id === temaId || String(t.id).endsWith(`/${String(temaId).split('/').pop()}`));
+    if (eget) return eget;
+  }
+  return teman.find((t) => t.role === 'UNPUBLISHED') ?? null;
+}
+
 export async function skrivTemafiler(temaId, filer) {
   const data = await graphql(
     `mutation opsFactoryTemafiler($themeId: ID!, $files: [OnlineStoreThemeFilesUpsertFileInput!]!) {

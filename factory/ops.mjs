@@ -38,6 +38,7 @@ import {
   skrivSida,
   skrivMetafalt,
   hamtaUtkastTema,
+  hamtaArbetstema,
   skrivTemafiler,
   hamtaTemafil,
   verifieraTemafiler,
@@ -70,6 +71,7 @@ import {
   temabilder,
   harTillagg,
   tillaggTexter,
+  patchaMsPaket,
 } from './tema-mall.mjs';
 import { qaSektionsfiler, qaRenderadSida } from './tema-qa.mjs';
 
@@ -126,7 +128,7 @@ const STEG = [
     namn: 'Brandingen (butikens egna tokens)',
     torrt: (ctx) => brandRader(ctx.butik?.branding),
     async kor(ctx) {
-      const tema = await hamtaUtkastTema();
+      const tema = await hamtaArbetstema(arbetstemaId(ctx));
       if (!tema) {
         return { manuell: 'Inget utkasttema finns i butiken — installera ett tema först.' };
       }
@@ -168,8 +170,8 @@ const STEG = [
         ...(doljs.length > 0 ? [`döljer sig själva (data saknas): ${doljs.join(', ')}`] : []),
       ];
     },
-    async kor() {
-      const tema = await hamtaUtkastTema();
+    async kor(ctx) {
+      const tema = await hamtaArbetstema(arbetstemaId(ctx));
       if (!tema) {
         return { manuell: 'Inget utkasttema finns i butiken — installera ett tema först.' };
       }
@@ -201,7 +203,7 @@ const STEG = [
       ];
     },
     async kor(ctx) {
-      const tema = await hamtaUtkastTema();
+      const tema = await hamtaArbetstema(arbetstemaId(ctx));
       if (!tema) return { manuell: 'Inget utkasttema finns i butiken — kör factory/tema-upp.mjs först.' };
       const las = (f) => hamtaTemafil(tema.id, f);
       const filer = {};
@@ -244,6 +246,10 @@ const STEG = [
       }
       if (msHead && !msHead.includes(GALLERIFILTER_MARKE)) msHead = `${msHead}\n${msHeadGallerifilter()}`;
       if (msHead) filer['snippets/ms-head.liquid'] = msHead;
+      // Temats egna svenska ord i paketväljaren → locale-grenar (en gång).
+      const msPaket = await las('snippets/ms-paket.liquid');
+      const patchad = msPaket ? patchaMsPaket(msPaket) : null;
+      if (patchad) filer['snippets/ms-paket.liquid'] = patchad;
 
       // Schemat först i eget anrop — settings_data-värden utan schema-fält
       // (ms_ab_tests) städas annars bort av Shopify. JSON-filerna
@@ -363,36 +369,32 @@ const STEG = [
   },
   {
     // Recensionerna in i Judge.me (Axels beslut 2026-09-06: steget är en del
-    // av fabriken, inte ett handgrepp). Källan är produktens Drive-mapp om
-    // produktfilen pekar ut en (kallor.drive_mapp — där ligger recensions-CSV:n
-    // bredvid annonserna), annars judgeme-import.csv som fabriken själv byggt
-    // ur produktfilens reviews. Själva importen görs av det befintliga
-    // tools/judgeme-import.mjs — inget nytt importsystem.
+    // av fabriken, inte ett handgrepp). Fabriken bygger EN fil i Judge.mes
+    // eget mallformat — originalen + marknadernas översatta delmängder, med
+    // källans originaldatum — och VA:n laddar upp den i appen. API-vägen
+    // (tools/judgeme-import.mjs) används inte längre för recensioner:
+    // Judge.mes v1-API sätter alltid importögonblicket som datum (created_at
+    // ignoreras på POST och PUT, mätt på TankGuard 2026-09-08 — "för 12
+    // minuter sedan" på 16 recensioner, Axels bakläxa). Källan är produktens
+    // Drive-mapp om produktfilen pekar ut en (kallor.drive_mapp), annars
+    // produktfilens reviews.
     id: 'recensioner',
-    namn: 'Recensionerna → Judge.me',
+    namn: 'Recensionerna → Judge.me (appens CSV-import)',
     torrt(ctx) {
       const antal = (ctx.p.reviews ?? []).filter(Boolean).length;
       const kalla = ctx.p.kallor?.drive_mapp
         ? `recensions-CSV ur Drive-mappen ${ctx.p.kallor.drive_mapp}`
-        : `${antal} recensioner ur produktfilen (output/${ctx.p.produkt.id}/judgeme-import.csv)`;
-      return [kalla, `importeras med tools/judgeme-import.mjs mot butikens Judge.me`];
+        : `${antal} recensioner ur produktfilen + marknadernas översatta delmängder`;
+      return [kalla, `skrivs som output/${ctx.p.produkt.id}/judgeme-app-import.csv (Judge.mes mallformat, dd/mm/yyyy) — VA:n importerar i appen`];
     },
     async kor(ctx) {
-      const tokenEnv = ctx.butik.judgeme?.token_env ?? 'JUDGEME_API_TOKEN';
-      const shopDomain = ctx.butik.judgeme?.shop_domain ?? process.env.JUDGEME_SHOP_DOMAIN;
-      if (!process.env[tokenEnv] || !shopDomain) {
-        return {
-          manuell:
-            `Judge.me-token saknas (env ${tokenEnv} + judgeme.shop_domain i butiksfilen). ` +
-            'Installera Judge.me-appen i butiken, hämta privata API-tokenen och fyll i — kör sen om steget.',
-        };
-      }
-
       const mapp = join(FACTORY_ROT, 'output', ctx.p.produkt.id);
       mkdirSync(mapp, { recursive: true });
-      let csv = join(mapp, 'judgeme-import.csv');
+      const utfil = join(mapp, 'judgeme-app-import.csv');
+      const klick = 'Judge.me → Settings → Import reviews → Import from apps → Judge.me format → ladda upp filen → Import. Verifiera sen datumen i kundvyn (originaldatum, aldrig "nyss").';
 
-      // Drive-mappen vinner när den finns: samma CSV som resten av flödet använder.
+      // Drive-mappen vinner när den finns: sheetens CSV laddas upp som den
+      // är (Judge.me har "Update date format" i importguiden).
       const driveMapp = ctx.p.kallor?.drive_mapp;
       if (driveMapp) {
         const id = String(driveMapp).match(/folders\/([-\w]+)/)?.[1] ?? String(driveMapp).trim();
@@ -409,49 +411,35 @@ const STEG = [
         }
         const svar = await fetch(`https://drive.google.com/uc?export=download&id=${rad[1]}`);
         if (!svar.ok) throw new Error(`Kunde inte hämta CSV:n ur Drive (${svar.status})`);
-        csv = join(mapp, 'judgeme-import-drive.csv');
-        writeFileSync(csv, await svar.text());
-      } else if (!existsSync(csv)) {
-        const inneh = byggJudgeMeCsv(ctx.p);
-        if (!inneh) return { manuell: 'Produkten har inga recensioner — inget att importera.' };
-        writeFileSync(csv, inneh);
+        const drivefil = join(mapp, 'judgeme-import-drive.csv');
+        writeFileSync(drivefil, await svar.text());
+        return { manuell: `Importera ${drivefil} i appen: ${klick}` };
       }
 
-      // Produkten kopplas via sitt numeriska id (butiken ligger bakom lösenord
-      // under trialen, så products.json går inte att läsa). Mejl krävs av
-      // API:t: syntetiska recension-N@<domän>.invalid, aldrig riktiga.
+      // Produkten kopplas på butikens numeriska id + handle (båda med i filen).
       const produkt = ctx.produkt ?? (await hamtaProduktViaHandle(ctx.p.produkt.id));
       if (!produkt?.legacyResourceId) throw new Error('Produkten finns inte i butiken — kör produktsteget först.');
-      const doman = ctx.p.brand?.domanideer?.[0] ?? ctx.butik.butik.id;
-      const importera = (fil, extra = []) => {
-        const arg = [
-          join(FACTORY_ROT, '..', 'tools', 'judgeme-import.mjs'),
-          fil,
-          '--product-id', String(produkt.legacyResourceId),
-          '--shop-domain', shopDomain,
-          '--token-env', tokenEnv,
-          '--mejlsuffix', `${doman}.invalid`,
-          ...extra,
-        ];
-        const kor = spawnSync(process.execPath, arg, { encoding: 'utf8' });
-        // Felet står i stdout; stderr bär bara Nodes proxy-varning.
-        const utan = (s) => String(s ?? '').split('\n').filter((r) => r.trim() && !/UNDICI|trace-warnings/.test(r)).join(' · ');
-        if (kor.status !== 0) throw new Error(`judgeme-import.mjs felade (${basename(fil)}): ${(utan(kor.stdout) || utan(kor.stderr)).slice(0, 400)}`);
-        return kor.stdout.trim().split('\n').slice(-2).join(' · ');
-      };
-      const rapport = { [basename(csv)]: importera(csv) };
-      // Marknadernas översatta recensioner (oversattning-<locale>.json → CSV med
-      // lokala namn) läggs ovanpå — dubblettspärren har redan slagit till, så --anda.
+      const oversattningar = {};
       for (const m of ctx.butik?.butik?.marknader ?? []) {
-        const nbCsv = join(mapp, `judgeme-import-${m.locale}.csv`);
-        if (existsSync(nbCsv)) rapport[basename(nbCsv)] = importera(nbCsv, ['--anda']);
+        const fil = join(mapp, `oversattning-${m.locale}.json`);
+        if (m.locale && existsSync(fil)) oversattningar[m.locale] = JSON.parse(readFileSync(fil, 'utf8'));
       }
-      return { rapport };
+      const csv = byggJudgeMeAppCsv(ctx.p, { produktId: String(produkt.legacyResourceId), oversattningar });
+      if (!csv) return { manuell: 'Produkten har inga recensioner — inget att importera.' };
+      writeFileSync(utfil, csv);
+      const antal = csv.trim().split('\n').length - 1;
+      return { manuell: `${antal} recensioner (original + översatta) i ${utfil} — ${klick}` };
     },
   },
 ];
 
 // ---------------------------------------------------------------------------
+
+// Temat fabriken byggde (id ur state) — även när VA:n hunnit publicera det.
+function arbetstemaId(ctx) {
+  const s = ctx.state?.steg ?? {};
+  return s.tema?.temaId ?? s.startsida?.temaId ?? s.brand?.temaId ?? null;
+}
 
 // Huvudmenyn för en enproduktsbutik: Hem, produkten (kortnamnet före
 // tankstrecket), Kontakt.
@@ -600,6 +588,7 @@ async function huvudflode({ butiksfil, produktfil, dryRun, resume, launch, igen 
   }
 
   const state = lasState(butik.butik.id, p.produkt.id);
+  ctx.state = state;
   const manuella = [];
 
   for (const steg of STEG) {

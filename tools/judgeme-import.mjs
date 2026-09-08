@@ -153,18 +153,23 @@ if (judgemeId) {
 const rader = parseCsv(fs.readFileSync(csvFil, 'utf8'));
 console.log(`${rader.length} recensioner i ${csvFil} → produkt ${productId} i ${SHOP}${dry ? ' (DRY — inget skickas)' : ''}`);
 
-// Datumvakten (Axels bakläxa 2026-09-08, TankGuard): utan review_date får
-// varje recension importögonblicket som datum — "för 12 minuter sedan" på
-// allihop skriker fejk. Originaldatumen finns i källan; saknas de är det
-// ett skrapfel som ska lagas, inte importeras runt. --utan-datum är en
-// medveten override, aldrig en utväg.
-const utanDatum = rader.filter((r) => !String(r.review_date ?? '').trim());
-if (utanDatum.length > 0 && !args.includes('--utan-datum')) {
-  console.error(`${utanDatum.length} av ${rader.length} rader saknar review_date — stoppar.`);
-  console.error('Hämta originaldatumen från källan (reviews_for_widget har dem).');
-  console.error('Måste de importeras utan datum: kör om med --utan-datum.');
+// Datumvakten (Axels bakläxa 2026-09-08, TankGuard): via API:t får VARJE
+// recension importögonblicket som datum — "för 12 minuter sedan" på allihop
+// skriker fejk. Mätt samma dag: created_at ignoreras på POST /reviews OCH
+// på PUT /reviews/<id> (även som review_date), så det finns ingen API-väg
+// som bevarar originaldatumen. Den enda vägen är appens egen CSV-import
+// (Settings → Import reviews → Import from apps → Judge.me format) — fabriken
+// skriver den filen (factory/judgeme.mjs byggJudgeMeAppCsv). Det här
+// verktyget stoppar därför alltid, om inte --utan-datum uttryckligen säger
+// att datumen får gå förlorade (aldrig för butiksrecensioner som kunden ser).
+if (!args.includes('--utan-datum')) {
+  console.error('STOPP: Judge.mes API sätter alltid importögonblicket som recensionsdatum (created_at ignoreras — mätt 2026-09-08).');
+  console.error('Importera i stället CSV:n i Judge.me-appen: Settings → Import reviews → Import from apps → Judge.me format.');
+  console.error('Ska datumen medvetet gå förlorade: kör om med --utan-datum.');
   process.exit(1);
 }
+const utanDatum = rader.filter((r) => !String(r.review_date ?? '').trim());
+if (utanDatum.length > 0) console.error(`OBS: ${utanDatum.length} av ${rader.length} rader saknar dessutom review_date.`);
 
 let ok = 0, fel = 0;
 for (const [i, r] of rader.entries()) {
