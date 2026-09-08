@@ -140,6 +140,19 @@ if (judgemeId) {
 const rader = parseCsv(fs.readFileSync(csvFil, 'utf8'));
 console.log(`${rader.length} recensioner i ${csvFil} → produkt ${productId} i ${SHOP}${dry ? ' (DRY — inget skickas)' : ''}`);
 
+// Datumvakten (Axels bakläxa 2026-09-08, TankGuard): utan review_date får
+// varje recension importögonblicket som datum — "för 12 minuter sedan" på
+// allihop skriker fejk. Originaldatumen finns i källan; saknas de är det
+// ett skrapfel som ska lagas, inte importeras runt. --utan-datum är en
+// medveten override, aldrig en utväg.
+const utanDatum = rader.filter((r) => !String(r.review_date ?? '').trim());
+if (utanDatum.length > 0 && !args.includes('--utan-datum')) {
+  console.error(`${utanDatum.length} av ${rader.length} rader saknar review_date — stoppar.`);
+  console.error('Hämta originaldatumen från källan (reviews_for_widget har dem).');
+  console.error('Måste de importeras utan datum: kör om med --utan-datum.');
+  process.exit(1);
+}
+
 let ok = 0, fel = 0;
 for (const r of rader) {
   const payload = {
@@ -161,5 +174,8 @@ for (const r of rader) {
   await new Promise((res) => setTimeout(res, 1200));   // spamma inte deras API
 }
 console.log(`klart: ${ok} ok, ${fel} fel`);
-if (!dry && !fel) console.log('Verifiera i Judge.me-adminen att recensionerna ligger på rätt produkt innan nästa steg.');
+if (!dry && !fel) {
+  console.log('Verifiera i Judge.me-adminen att recensionerna ligger på rätt produkt innan nästa steg.');
+  console.log('Verifiera också DATUMEN i kundvyn: står det "nyss" på allt har API:t ignorerat created_at — dölj och ta CSV-importen i Judge.me-appen i stället.');
+}
 process.exit(fel ? 1 : 0);
