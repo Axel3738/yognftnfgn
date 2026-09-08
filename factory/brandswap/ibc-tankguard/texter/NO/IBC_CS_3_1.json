@@ -1,0 +1,30 @@
+[
+ {
+  "form": 0,
+  "rader": [
+   0,
+   1,
+   2
+  ],
+  "text": "439 kr i stedet for 586 kr — 210D Oxford-stoff som stopper algen.",
+  "stryk": "586 kr"
+ },
+ {
+  "form": 0,
+  "rad": 3,
+  "text": "25 % rabatt akkurat nå.",
+  "se": "23 % rabatt just nu."
+ },
+ {
+  "form": 1,
+  "rad": 0,
+  "text": "Gratis frakt. 5–8 virkedager.",
+  "se": "Fri frakt inom Sverige. Klarna — betala sen."
+ },
+ {
+  "form": 2,
+  "rad": 0,
+  "text": "Beskytt tanken i dag",
+  "se": "Skydda din tank idag"
+ }
+]

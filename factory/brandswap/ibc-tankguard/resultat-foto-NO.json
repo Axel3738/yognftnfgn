@@ -1,0 +1,30 @@
+{
+ "IBC_CS_2_1": {
+  "status": "OK",
+  "malnamn": "TankGuard_NO_CS_2_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_CS_2_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/NO/TankGuard_NO_CS_2_1.qa.jpg",
+  "utdata": "✓ /home/user/yognftnfgn/factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_CS_2_1.jpg (5 element)"
+ },
+ "IBC_GT_2_1": {
+  "status": "OK",
+  "malnamn": "TankGuard_NO_GT_2_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_GT_2_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/NO/TankGuard_NO_GT_2_1.qa.jpg",
+  "utdata": "✓ /home/user/yognftnfgn/factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_GT_2_1.jpg (3 element)"
+ },
+ "IBC_PD_2_1": {
+  "status": "OK",
+  "malnamn": "TankGuard_NO_PD_2_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_PD_2_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/NO/TankGuard_NO_PD_2_1.qa.jpg",
+  "utdata": "✓ /home/user/yognftnfgn/factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_PD_2_1.jpg (1 element)"
+ },
+ "IBC_SP_2_1": {
+  "status": "OK",
+  "malnamn": "TankGuard_NO_SP_2_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_SP_2_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/NO/TankGuard_NO_SP_2_1.qa.jpg",
+  "utdata": "✓ /home/user/yognftnfgn/factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_SP_2_1.jpg (5 element)"
+ }
+}

@@ -1,0 +1,30 @@
+[
+ {
+  "form": 0,
+  "rader": [
+   0,
+   1
+  ],
+  "text": "Gratis frakt, 5–8 virkedager."
+ },
+ {
+  "form": 0,
+  "rader": [
+   2,
+   3
+  ],
+  "text": "Bestill nå, så er den på plass før tanken gror igjen."
+ },
+ {
+  "form": 2,
+  "rad": 0,
+  "text": "Gratis frakt · 5–8 virkedager · 14 dagers angrerett",
+  "se": "Fri frakt · Klarna – betala sen · 30 dagars öppet köp"
+ },
+ {
+  "form": 4,
+  "rad": 0,
+  "text": "Bestill nå",
+  "se": "Beställ nu"
+ }
+]

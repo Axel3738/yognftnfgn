@@ -408,6 +408,27 @@ def fyll(box, mask, reserv):
     fyll_2d(box, mask, reserv)
 
 
+def fyll_rad(box, mask):
+    """Fyller varje maskad pixel med medianen av radens OMASKADE pixlar.
+
+    För text som ligger direkt på ett foto vars bakgrund är en lodrät toning
+    (fraktraden under produkten i BOF-mallen) är det här exakt rätt: varje rad
+    är nästan konstant i x, så radmedianen ÄR bakgrunden. fyll_2d:s
+    grannutjämning ger i samma läge en fläckig spökskrift, och en bredare
+    utvidgning gör den bara större (mätt på IBC_BOF_1_1 och IBC_BOF_2_1
+    2026-09-08). Rader utan tillräckligt med känd bakgrund lämnas åt fyll_2d.
+    """
+    kvar = np.zeros_like(mask)
+    for y in range(box.shape[0]):
+        kant = box[y][~mask[y]]
+        if len(kant) >= 8:
+            box[y][mask[y]] = np.median(kant, axis=0).astype(box.dtype)
+        else:
+            kvar[y] = mask[y]
+    if kvar.any():
+        fyll_2d(box, kvar, np.median(box.reshape(-1, 3), axis=0))
+
+
 def fyll_2d(box, mask, reserv):
     """Fyller maskade pixlar (text) inifrån kanten: varje omgång får de maskade
     pixlarna som har en känd granne medelvärdet av sina kända grannar (8-grannskap),
@@ -636,11 +657,16 @@ def rita_box(bild, im, b):
         summa = box.sum(axis=2)
         diff = summa - rm.sum(axis=1)[:, None]
         t = ((diff < -60) & (summa < 500)) if ljus_platta else ((diff > 60) & (summa > 450))
-        for _ in range(3):
+        for _ in range(int(b.get("utvidga", 3))):
             t2 = t.copy()
             t2[1:] |= t[:-1]; t2[:-1] |= t[1:]; t2[:, 1:] |= t[:, :-1]; t2[:, :-1] |= t[:, 1:]
             t = t2
-        fyll(box, t, np.median(box.reshape(-1, 3), axis=0))
+        # "fyllning": "rad" — bakgrunden är en lodrät toning, fyll radvis.
+        # Utan fältet gäller den gamla vägen exakt som förut.
+        if b.get("fyllning") == "rad":
+            fyll_rad(box, t)
+        else:
+            fyll(box, t, np.median(box.reshape(-1, 3), axis=0))
         arr[y0 + inset:y1 - inset, x0 + inset:x1 - inset] = box
     bild = Image.fromarray(arr.astype(np.uint8))
     lager = bild.convert("RGBA")

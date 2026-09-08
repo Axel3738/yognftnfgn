@@ -1,0 +1,121 @@
+{
+ "element": [
+  {
+   "typ": "stjarnor",
+   "box": [
+    762,
+    38,
+    985,
+    76
+   ],
+   "farg": [
+    240,
+    185,
+    60
+   ],
+   "antal": 5
+  },
+  {
+   "typ": "text",
+   "box": [
+    500,
+    84,
+    985,
+    156
+   ],
+   "rader": 2,
+   "fet": false,
+   "storlek": 31,
+   "farg": [
+    250,
+    252,
+    242
+   ],
+   "just": "hoger",
+   "radavstand": 1.25,
+   "kontur": [
+    18,
+    26,
+    14
+   ],
+   "konturbredd": 3,
+   "text": "”Äntligen klart vatten i tanken — inga alger på hela sommaren!”"
+  },
+  {
+   "typ": "text",
+   "box": [
+    700,
+    159,
+    985,
+    185
+   ],
+   "rader": 1,
+   "fet": false,
+   "storlek": 23,
+   "farg": [
+    228,
+    234,
+    216
+   ],
+   "just": "hoger",
+   "kontur": [
+    18,
+    26,
+    14
+   ],
+   "konturbredd": 3,
+   "text": "– Verifierad kund, 52 år"
+  },
+  {
+   "typ": "bock",
+   "box": [
+    640,
+    257,
+    985,
+    287
+   ],
+   "storlek": 27,
+   "farg": [
+    246,
+    249,
+    236
+   ],
+   "just": "hoger",
+   "kontur": [
+    18,
+    26,
+    14
+   ],
+   "konturbredd": 3,
+   "bockfarg": [
+    246,
+    249,
+    236
+   ],
+   "text": "14 dagars ångerrätt"
+  },
+  {
+   "typ": "knapp",
+   "box": [
+    755,
+    299,
+    982,
+    357
+   ],
+   "fet": true,
+   "storlek": 34,
+   "farg": [
+    30,
+    150,
+    72
+   ],
+   "textfarg": [
+    255,
+    255,
+    255
+   ],
+   "radie": 14,
+   "text": "BESTÄLL NU"
+  }
+ ]
+}

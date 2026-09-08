@@ -1,0 +1,30 @@
+{
+ "IBC_CS_2_1": {
+  "status": "OFÖRÄNDRAD",
+  "malnamn": "TankGuard_SE_CS_2_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/SE/TankGuard_SE_CS_2_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/SE/TankGuard_SE_CS_2_1.qa.jpg",
+  "utdata": "inget butiksbundet i bilden — källan används som den är"
+ },
+ "IBC_GT_2_1": {
+  "status": "OFÖRÄNDRAD",
+  "malnamn": "TankGuard_SE_GT_2_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/SE/TankGuard_SE_GT_2_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/SE/TankGuard_SE_GT_2_1.qa.jpg",
+  "utdata": "inget butiksbundet i bilden — källan används som den är"
+ },
+ "IBC_PD_2_1": {
+  "status": "OFÖRÄNDRAD",
+  "malnamn": "TankGuard_SE_PD_2_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/SE/TankGuard_SE_PD_2_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/SE/TankGuard_SE_PD_2_1.qa.jpg",
+  "utdata": "inget butiksbundet i bilden — källan används som den är"
+ },
+ "IBC_SP_2_1": {
+  "status": "OK",
+  "malnamn": "TankGuard_SE_SP_2_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/SE/TankGuard_SE_SP_2_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/SE/TankGuard_SE_SP_2_1.qa.jpg",
+  "utdata": "✓ /home/user/yognftnfgn/factory/brandswap/ibc-tankguard/ut/SE/TankGuard_SE_SP_2_1.jpg (5 element)"
+ }
+}

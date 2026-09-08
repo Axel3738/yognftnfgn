@@ -1,0 +1,269 @@
+{
+ "_kommentar": "Annonstexten utanför bilden (message/headline/description) för TankGuard, svenska och norska. Detta är yta 1 i FAS2:s tabell — flera av Bäverbutikens texter bär Klarna, '30 dagars öppet köp' och 'Fri frakt över 300 kr', som är förbjudna för en OPS-butik.",
+ "_kalla": "factory/brandswap/ibc-tankguard/fakta.md",
+ "_lank_se": "https://tankguard.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+ "_lank_no": "https://tankguard.se/nb/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+ "_lank_anm": "⚠️ Produktens handle på TankGuard är INTE avläst (butiken är lösenordsskyddad och admin-token ger 401). Länkarna ovan är mönstret, inte verifierade URL:er — kontrollera dem innan launch.",
+ "annonser": {
+  "IBC_BOF_1_1": {
+   "se": {
+    "message": "489 kr istället för 636 kr. Tyget är 210D Oxford och tar UV-strålningen i stället för plasten.",
+    "headline": "23 % rabatt på tanköverdraget",
+    "description": "Fri frakt. 14 dagars ångerrätt."
+   },
+   "no": {
+    "message": "439 kr i stedet for 586 kr. Stoffet er 210D Oxford og tar UV-strålene i stedet for plasten.",
+    "headline": "25 % rabatt på tanktrekket",
+    "description": "Gratis frakt. 14 dagers angrerett."
+   },
+   "andring": "description: 'Fri frakt över 300 kr. Betala sen med Klarna.' — TankGuard har fri frakt utan gräns och inga avlästa betalsätt"
+  },
+  "IBC_BOF_2_1": {
+   "se": {
+    "message": "Gillar du inte tanköverdraget? Ångra köpet inom 14 dagar. Du får pengarna tillbaka.",
+    "headline": "14 dagars ångerrätt",
+    "description": "Pengarna tillbaka om du ångrar dig."
+   },
+   "no": {
+    "message": "Liker du ikke tanktrekket? Angre kjøpet innen 14 dager. Du får pengene tilbake.",
+    "headline": "14 dagers angrerett",
+    "description": "Pengene tilbake hvis du angrer."
+   },
+   "andring": "30 dagars öppet köp → 14 dagars ångerrätt (butik-mall.yaml retur)"
+  },
+  "IBC_BOF_3_1": {
+   "se": {
+    "message": "Passar den på min tank? Måtten är 120 × 100 × 116 cm — standard för en 1000-literstank.",
+    "headline": "120×100×116 cm, standard 1000L",
+    "description": "14 dagars ångerrätt om den inte passar."
+   },
+   "no": {
+    "message": "Passer den på tanken min? Målene er 120 × 100 × 116 cm — standard for en 1000-litertank.",
+    "headline": "120×100×116 cm, standard 1000L",
+    "description": "14 dagers angrerett hvis den ikke passer."
+   },
+   "andring": "description: 30 dagars öppet köp → 14 dagars ångerrätt"
+  },
+  "IBC_BOF_4_1": {
+   "se": {
+    "message": "Blixtlås. Inte presenning och gummiband.\nPå och av med dragkedja — ingen kamp med väder eller vind.\nÖppning upptill. Passar 1000-liters IBC-tank.",
+    "headline": "Blixtlås. Inte presenning.",
+    "description": "Öppning upptill. Passar 1000-liters IBC."
+   },
+   "no": {
+    "message": "Glidelås. Ikke presenning og strikk.\nAv og på med glidelås — ingen kamp med vær eller vind.\nÅpning på toppen. Passer 1000-liters IBC-tank.",
+    "headline": "Glidelås. Ikke presenning.",
+    "description": "Åpning på toppen. Passer 1000-liters IBC."
+   },
+   "andring": "oförändrad på svenska — inget butiksbundet"
+  },
+  "IBC_BOF_5_1": {
+   "se": {
+    "message": "Presenningen som skulle skydda blåser av vid första höststormen.\nEtt 210D Oxford-överdrag med blixtlås sitter kvar.\nSkydda tanken innan hösten.",
+    "headline": "Presenningen blåser av i höststormen",
+    "description": "210D Oxford-överdrag med blixtlås."
+   },
+   "no": {
+    "message": "Presenningen som skulle beskytte, blåser av i den første høststormen.\nEt 210D Oxford-trekk med glidelås blir sittende.\nBeskytt tanken før høsten.",
+    "headline": "Presenningen blåser av i høststormen",
+    "description": "210D Oxford-trekk med glidelås."
+   },
+   "andring": "oförändrad på svenska — inget butiksbundet"
+  },
+  "IBC_BOF_6_1": {
+   "se": {
+    "message": "Fri frakt, 5–8 arbetsdagar.\nBeställ nu så är den på plats innan tanken hinner grönska.\n14 dagars ångerrätt.",
+    "headline": "Fri frakt, 5–8 arbetsdagar",
+    "description": "14 dagars ångerrätt."
+   },
+   "no": {
+    "message": "Gratis frakt, 5–8 virkedager.\nBestill nå, så er den på plass før tanken gror igjen.\n14 dagers angrerett.",
+    "headline": "Gratis frakt, 5–8 virkedager",
+    "description": "14 dagers angrerett."
+   },
+   "andring": "'Fri frakt inom Sverige, 5–10 arbetsdagar' → fri frakt utan landbegränsning, 5–8 arbetsdagar. Klarna och 30 dagars öppet köp borttagna"
+  },
+  "IBC_CO_1_1": {
+   "se": {
+    "message": "Utan skydd blir tankvattnet grönt av alger. 210D Oxford-tyget blockerar solljuset helt och stoppar algtillväxten. Samma tank, olika resultat – skillnaden är överdraget.",
+    "headline": "210D Oxford-tyg stoppar UV och alger",
+    "description": "IBC-tanköverdrag, 1000 L"
+   },
+   "no": {
+    "message": "Uten beskyttelse blir tankvannet grønt av alger. 210D Oxford-stoffet blokkerer sollyset helt og stopper algeveksten. Samme tank, ulikt resultat – forskjellen er trekket.",
+    "headline": "210D Oxford-stoff stopper UV og alger",
+    "description": "IBC-tanktrekk, 1000 L"
+   },
+   "andring": "oförändrad på svenska — inget butiksbundet"
+  },
+  "IBC_CS_2_1": {
+   "se": {
+    "message": "⏰ IDAG ENDAST — 23% RABATT\n\n489 kr istället för 636 kr. Priset går tillbaka imorgon.\n\nLagret krymper snabbt — många har redan beställt inför sommaren.\n\nInga alger. Ingen spröd plast. Bara ett tjockt, skyddande överdrag till din IBC-tank.\n\nMissa inte det — beställ innan det är slut 👇",
+    "headline": "Skydda tanken innan sommaren",
+    "description": "489 kr idag — ordinarie 636 kr."
+   },
+   "no": {
+    "message": "⏰ KUN I DAG — 25% RABATT\n\n439 kr i stedet for 586 kr. Prisen går tilbake i morgen.\n\nLageret krymper raskt — mange har allerede bestilt før sommeren.\n\nIngen alger. Ingen sprø plast. Bare et tykt, beskyttende trekk til IBC-tanken din.\n\nIkke gå glipp av det — bestill før det er tomt 👇",
+    "headline": "Beskytt tanken før sommeren",
+    "description": "439 kr i dag — ordinært 586 kr."
+   },
+   "andring": "svenska oförändrad utom stavfelet 'Inget spröd plast' → 'Ingen spröd plast'"
+  },
+  "IBC_CS_3_1": {
+   "se": {
+    "message": "489 kr istället för 636 kr. Tyget är 210D Oxford och stänger ute ljuset — algerna kommer aldrig igång. 23 % rabatt.",
+    "headline": "23 % rabatt — 210D Oxford-tyg",
+    "description": "Fri frakt. 5–8 arbetsdagar."
+   },
+   "no": {
+    "message": "439 kr i stedet for 586 kr. Stoffet er 210D Oxford og stenger ute lyset — algene kommer aldri i gang. 25 % rabatt.",
+    "headline": "25 % rabatt — 210D Oxford-stoff",
+    "description": "Gratis frakt. 5–8 virkedager."
+   },
+   "andring": "description: 'Fri frakt över 300 kr.' → fri frakt utan gräns + leveranstid"
+  },
+  "IBC_CS_4_1": {
+   "se": {
+    "message": "489 kr istället för 636 kr.\n147 kr mindre för samma 210D Oxford-tyg som stänger ute ljuset.\nAlgerna kommer aldrig igång.",
+    "headline": "489 kr istället för 636 kr",
+    "description": "23 % rabatt. Fri frakt."
+   },
+   "no": {
+    "message": "439 kr i stedet for 586 kr.\n147 kr mindre for samme 210D Oxford-stoff som stenger ute lyset.\nAlgene kommer aldri i gang.",
+    "headline": "439 kr i stedet for 586 kr",
+    "description": "25 % rabatt. Gratis frakt."
+   },
+   "andring": "description: 'Fri frakt inom Sverige' → 'Fri frakt' (ingen landbegränsning)"
+  },
+  "IBC_GT_2_1": {
+   "se": {
+    "message": "Vet du någon som klagat på alger i sin IBC-tank i flera somrar? 🎁\n\nJag gav min man det här överdraget — utan att säga något. Han trodde jag hade glömt bort problemet.\n\nNu visar han upp tanken för alla grannar.\n\nIbland är den bästa presenten den som löser något de redan brytt sig om länge.\n\nHitta den perfekta presenten 👇",
+    "headline": "Presenten han faktiskt använder",
+    "description": "Enkel gåva. Stor uppskattning."
+   },
+   "no": {
+    "message": "Kjenner du noen som har klaget på alger i IBC-tanken sin i flere somre? 🎁\n\nJeg ga mannen min dette trekket — uten å si noe. Han trodde jeg hadde glemt problemet.\n\nNå viser han fram tanken til alle naboene.\n\nNoen ganger er den beste gaven den som løser noe de har brydd seg om lenge.\n\nFinn den perfekte gaven 👇",
+    "headline": "Gaven han faktisk bruker",
+    "description": "Enkel gave. Stor takknemlighet."
+   },
+   "andring": "oförändrad på svenska — inget butiksbundet"
+  },
+  "IBC_PD_2_1": {
+   "se": {
+    "message": "Trött på grönt, algfyllt regnvatten? 💧\n\nDet här överdraget blockerar solljus och UV helt — så vattnet i din IBC-tank hålls klart, och tanken slits inte ut i förtid.\n\n✓ Kraftigt 210D Oxford-tyg\n✓ Enkelt blixtlås — klart på 2 minuter\n✓ Öppning upptill, du kommer åt locket ändå\n\nSkydda din tank idag 👇",
+    "headline": "Klart vatten. Ingen alg. Enkelt.",
+    "description": "Passar standard 1000L IBC-tank."
+   },
+   "no": {
+    "message": "Lei av grønt, algefylt regnvann? 💧\n\nDette trekket blokkerer sollys og UV helt — så vannet i IBC-tanken din holder seg klart, og tanken slites ikke ut for tidlig.\n\n✓ Kraftig 210D Oxford-stoff\n✓ Enkel glidelås — ferdig på 2 minutter\n✓ Åpning på toppen, du kommer til lokket likevel\n\nBeskytt tanken din i dag 👇",
+    "headline": "Klart vann. Ingen alger. Enkelt.",
+    "description": "Passer standard 1000L IBC-tank."
+   },
+   "andring": "oförändrad på svenska — inget butiksbundet"
+  },
+  "IBC_PD_3_1": {
+   "se": {
+    "message": "210D Oxford-tyget blockerar UV-ljus och håller borta alger. Blixtlåset går att sätta på under två minuter. Öppningen upptill ger åtkomst till locket utan att ta av hela överdraget.",
+    "headline": "Sätt på blixtlåset på 2 minuter",
+    "description": "210D Oxford-tyg, blixtlås, öppning upptill"
+   },
+   "no": {
+    "message": "210D Oxford-stoffet blokkerer UV-lys og holder algene borte. Glidelåsen tar under to minutter å sette på. Åpningen på toppen gir tilgang til lokket uten å ta av hele trekket.",
+    "headline": "Sett på glidelåsen på 2 minutter",
+    "description": "210D Oxford-stoff, glidelås, åpning på toppen"
+   },
+   "andring": "oförändrad på svenska — inget butiksbundet"
+  },
+  "IBC_PD_4_1": {
+   "se": {
+    "message": "210D Oxford-tyg stänger ute ljuset. Algerna kommer aldrig igång.",
+    "headline": "210D Oxford-tyg. Ingen alg.",
+    "description": "Tar UV-strålningen i stället för plasten."
+   },
+   "no": {
+    "message": "210D Oxford-stoff stenger ute lyset. Algene kommer aldri i gang.",
+    "headline": "210D Oxford-stoff. Ingen alger.",
+    "description": "Tar UV-strålene i stedet for plasten."
+   },
+   "andring": "oförändrad på svenska — inget butiksbundet"
+  },
+  "IBC_PD_5_1": {
+   "se": {
+    "message": "210D Oxford-tyg mellan solen och ditt regnvatten.\nIngen presenning, inga gummiband — bara ett blixtlås.\nAlgerna kommer aldrig igång.",
+    "headline": "210D Oxford-tyg mot solen",
+    "description": "Ingen presenning, inga gummiband."
+   },
+   "no": {
+    "message": "210D Oxford-stoff mellom solen og regnvannet ditt.\nIngen presenning, ingen strikk — bare en glidelås.\nAlgene kommer aldri i gang.",
+    "headline": "210D Oxford-stoff mot solen",
+    "description": "Ingen presenning, ingen strikk."
+   },
+   "andring": "oförändrad på svenska — inget butiksbundet"
+  },
+  "IBC_RV_1_1": {
+   "se": {
+    "message": "\"Jag är nöjd. Nu slipper jag mycket solljus på tanken och det ser även snyggare ut.\" — Maria, ★★★★★",
+    "headline": "Maria: Jag är nöjd",
+    "description": "210D Oxford-tyg. 489 kr."
+   },
+   "no": {
+    "message": "\"Jeg er fornøyd. Nå slipper jeg mye sollys på tanken, og det ser penere ut også.\" — Maria, tankguard.se ★★★★★",
+    "headline": "Maria: Jeg er fornøyd",
+    "description": "210D Oxford-stoff. 439 kr."
+   },
+   "andring": "svenska oförändrad; norska får källan tankguard.se efter namnet (svensk recension)"
+  },
+  "IBC_RV_2_1": {
+   "se": {
+    "message": "\"Köpte detta för min regnvattentank. Fungerar bra och är enkelt att öppna när jag behöver.\" — Lena, ★★★★★",
+    "headline": "Lena: Enkelt att öppna",
+    "description": "Passar 1000L-tank. 489 kr."
+   },
+   "no": {
+    "message": "\"Kjøpte dette til regnvannstanken min. Fungerer bra og er enkelt å åpne når jeg trenger det.\" — Lena, tankguard.se ★★★★★",
+    "headline": "Lena: Enkelt å åpne",
+    "description": "Passer 1000L-tank. 439 kr."
+   },
+   "andring": "svenska oförändrad; norska får källan tankguard.se efter namnet"
+  },
+  "IBC_RV_3_1": {
+   "se": {
+    "message": "\"Passar bra på tanken och skyddar mot solen. Precis vad jag behövde.\"\n— Sofia, ★★★★★\n489 kr, 23 % rabatt.",
+    "headline": "Sofia: Skyddar mot solen",
+    "description": "489 kr, 23 % rabatt."
+   },
+   "no": {
+    "message": "\"Passer bra på tanken og beskytter mot solen. Akkurat det jeg trengte.\"\n— Sofia, tankguard.se ★★★★★\n439 kr, 25 % rabatt.",
+    "headline": "Sofia: Beskytter mot solen",
+    "description": "439 kr, 25 % rabatt."
+   },
+   "andring": "svenska oförändrad; norska får källan tankguard.se efter namnet"
+  },
+  "IBC_RV_4_1": {
+   "se": {
+    "message": "\"Bra kvalitet och lätt att använda. Passade min 1000 liters tank utan problem.\" — Johan, ★★★★★",
+    "headline": "Johan: Passade tanken utan problem",
+    "description": "Passar standard 1000L IBC-tank."
+   },
+   "no": {
+    "message": "\"Bra kvalitet og lett å bruke. Passet min 1000-liters tank uten problem.\" — Johan, tankguard.se ★★★★★",
+    "headline": "Johan: Passet tanken uten problem",
+    "description": "Passer standard 1000L IBC-tank."
+   },
+   "andring": "svenska oförändrad; norska får källan tankguard.se efter namnet"
+  },
+  "IBC_SP_2_1": {
+   "se": {
+    "message": "\"Äntligen klart vatten i tanken — inga alger på hela sommaren!\" ⭐⭐⭐⭐⭐\n\n210D Oxford-tyget stänger ute solen helt — så vattnet håller sig klart hela säsongen.\n\n✓ Blockerar UV och sol helt\n✓ Sitter perfekt med blixtlås\n✓ Du kommer fortfarande åt locket\n\nSe varför kunderna älskar det 👇",
+    "headline": "Klart vatten hela sommaren",
+    "description": "Betygsatt av riktiga trädgårdsägare."
+   },
+   "no": {
+    "message": "\"Endelig klart vann i tanken — ingen alger hele sommeren!\" ⭐⭐⭐⭐⭐\n\n210D Oxford-stoffet stenger ute solen helt — så vannet holder seg klart hele sesongen.\n\n✓ Blokkerer UV og sol helt\n✓ Sitter perfekt med glidelås\n✓ Du kommer fortsatt til lokket\n\nSe hvorfor kundene elsker det 👇",
+    "headline": "Klart vann hele sommeren",
+    "description": "Vurdert av ekte hageeiere."
+   },
+   "andring": "'Hundratals trädgårdsägare har redan bytt ut sin gamla, algiga tank' var Bäverbutikens sociala bevis — TankGuard är nyöppnad och kan inte belägga det. Ersatt med ett produktpåstående."
+  }
+ }
+}

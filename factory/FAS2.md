@@ -159,6 +159,33 @@ hämta ner filen → brand-swappa → ladda upp på nytt till `act_9154227449509
 **Fallgropar:** kie.ai klarar INTE svensk text — metoden är alltid "kie rensar text →
 `text.py` lägger vektortext". Aldrig tvärtom.
 
+### ✅ Kört 2026-09-08 — IBC-tanköverdraget → TankGuard
+
+20 bildannonser ur MagiBorsten (kampanj `120250001079150291`), levererade som
+40 bilder + 40 QA-bilder i `factory/brandswap/ibc-tankguard/`. Läs `README.md`
+där; hela faktaunderlaget med källa per siffra står i `fakta.md`.
+
+Tre saker som gäller varje kommande brand-swap:
+
+1. **Brandet står sällan i bilden — löftena gör det.** Ingen av de 20
+   annonserna innehöll ordet "Bäverbutiken", en logga eller en domän. Det som
+   måste bytas är pris, frakt, retur, betalsätt och recensionens avsändare.
+   16 av 20 bar inget sådant och gick rakt över, bitidentiska med originalet.
+2. **Priset följer med, villkoren gör det inte.** OPS-butiken tar källans pris
+   (`PROCESS.md` steg 1), men aldrig källans köplöften: "30 dagars öppet köp"
+   är förbjudet, Klarna får inte påstås utan källa, och fraktvillkoret kommer
+   ur `butik-mall.yaml` — inte ur annonsen.
+3. **Annonstexten utanför bilden är samma jobb.** Sex av de 20 bar Klarna,
+   "30 dagars öppet köp" eller "Fri frakt över 300 kr" i message eller
+   description. Swappa `annonstext.json` i samma svep, annars följer
+   påståendena med rakt in i kontot.
+
+Verktyg som tillkom: `factory/brandswap/lagg-text.py` (vektortext på uppmätta
+koordinater — `bildannonser/text.py` placerar i zoner och bygger om annonsen
+till standardmallen, vilket förstör en testad layout),
+`factory/brandswap/rendera.py` och `rendera-foto.py` (drivarna), samt fältet
+`"fyllning": "rad"` i `pipeline/oversatt-bild.py` för vit text på lodrät toning.
+
 ---
 
 ## Uppdrag D — Notion, konton och commission

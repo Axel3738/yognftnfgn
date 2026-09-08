@@ -1,0 +1,79 @@
+{
+ "element": [
+  {
+   "typ": "text",
+   "box": [
+    55,
+    66,
+    700,
+    240
+   ],
+   "rader": 3,
+   "fet": true,
+   "storlek": 46,
+   "farg": [
+    255,
+    255,
+    255
+   ],
+   "just": "vanster",
+   "radavstand": 1.32,
+   "kontur": [
+    30,
+    34,
+    24
+   ],
+   "konturbredd": 3,
+   "text": "DEN PERFEKTE GAVEN TIL HAGEENTUSIASTEN"
+  },
+  {
+   "typ": "text",
+   "box": [
+    55,
+    260,
+    620,
+    344
+   ],
+   "rader": 2,
+   "fet": false,
+   "storlek": 33,
+   "farg": [
+    246,
+    248,
+    240
+   ],
+   "just": "vanster",
+   "radavstand": 1.32,
+   "kontur": [
+    30,
+    34,
+    24
+   ],
+   "konturbredd": 3,
+   "text": "Se gleden når tanken endelig er beskyttet"
+  },
+  {
+   "typ": "knapp",
+   "box": [
+    53,
+    373,
+    486,
+    439
+   ],
+   "fet": true,
+   "storlek": 26,
+   "farg": [
+    57,
+    127,
+    66
+   ],
+   "textfarg": [
+    255,
+    255,
+    255
+   ],
+   "radie": 10,
+   "text": "GI BORT DENNE GAVEN"
+  }
+ ]
+}

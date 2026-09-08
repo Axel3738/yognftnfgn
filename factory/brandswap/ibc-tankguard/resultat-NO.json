@@ -1,0 +1,114 @@
+{
+ "IBC_BOF_1_1": {
+  "status": "OK",
+  "malnamn": "TankGuard_NO_BOF_1_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_BOF_1_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/NO/TankGuard_NO_BOF_1_1.qa.jpg",
+  "utdata": "✓ /home/user/yognftnfgn/factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_BOF_1_1.jpg (2 former översatta)"
+ },
+ "IBC_BOF_2_1": {
+  "status": "OK",
+  "malnamn": "TankGuard_NO_BOF_2_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_BOF_2_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/NO/TankGuard_NO_BOF_2_1.qa.jpg",
+  "utdata": "✓ /home/user/yognftnfgn/factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_BOF_2_1.jpg (1 former översatta)"
+ },
+ "IBC_BOF_3_1": {
+  "status": "OK",
+  "malnamn": "TankGuard_NO_BOF_3_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_BOF_3_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/NO/TankGuard_NO_BOF_3_1.qa.jpg",
+  "utdata": "✓ /home/user/yognftnfgn/factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_BOF_3_1.jpg (2 former översatta)"
+ },
+ "IBC_BOF_4_1": {
+  "status": "OK",
+  "malnamn": "TankGuard_NO_BOF_4_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_BOF_4_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/NO/TankGuard_NO_BOF_4_1.qa.jpg",
+  "utdata": "✓ /home/user/yognftnfgn/factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_BOF_4_1.jpg (2 former översatta, 1 former med text lämnade orörda: [0])"
+ },
+ "IBC_BOF_5_1": {
+  "status": "OK",
+  "malnamn": "TankGuard_NO_BOF_5_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_BOF_5_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/NO/TankGuard_NO_BOF_5_1.qa.jpg",
+  "utdata": "✓ /home/user/yognftnfgn/factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_BOF_5_1.jpg (2 former översatta)"
+ },
+ "IBC_BOF_6_1": {
+  "status": "OK",
+  "malnamn": "TankGuard_NO_BOF_6_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_BOF_6_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/NO/TankGuard_NO_BOF_6_1.qa.jpg",
+  "utdata": "✓ /home/user/yognftnfgn/factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_BOF_6_1.jpg (3 former översatta, 2 former med text lämnade orörda: [1, 3])"
+ },
+ "IBC_CO_1_1": {
+  "status": "OK",
+  "malnamn": "TankGuard_NO_CO_1_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_CO_1_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/NO/TankGuard_NO_CO_1_1.qa.jpg",
+  "utdata": "✓ /home/user/yognftnfgn/factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_CO_1_1.jpg (0 former översatta, 6 former med text lämnade orörda: [0, 1, 2, 3, 4, 5])"
+ },
+ "IBC_CS_3_1": {
+  "status": "OK",
+  "malnamn": "TankGuard_NO_CS_3_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_CS_3_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/NO/TankGuard_NO_CS_3_1.qa.jpg",
+  "utdata": "✓ /home/user/yognftnfgn/factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_CS_3_1.jpg (3 former översatta)"
+ },
+ "IBC_CS_4_1": {
+  "status": "OK",
+  "malnamn": "TankGuard_NO_CS_4_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_CS_4_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/NO/TankGuard_NO_CS_4_1.qa.jpg",
+  "utdata": "✓ /home/user/yognftnfgn/factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_CS_4_1.jpg (2 former översatta, 3 former med text lämnade orörda: [2, 3, 4])"
+ },
+ "IBC_PD_3_1": {
+  "status": "OK",
+  "malnamn": "TankGuard_NO_PD_3_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_PD_3_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/NO/TankGuard_NO_PD_3_1.qa.jpg",
+  "utdata": "✓ /home/user/yognftnfgn/factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_PD_3_1.jpg (2 former översatta)"
+ },
+ "IBC_PD_4_1": {
+  "status": "OK",
+  "malnamn": "TankGuard_NO_PD_4_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_PD_4_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/NO/TankGuard_NO_PD_4_1.qa.jpg",
+  "utdata": "✓ /home/user/yognftnfgn/factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_PD_4_1.jpg (2 former översatta)"
+ },
+ "IBC_PD_5_1": {
+  "status": "OK",
+  "malnamn": "TankGuard_NO_PD_5_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_PD_5_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/NO/TankGuard_NO_PD_5_1.qa.jpg",
+  "utdata": "✓ /home/user/yognftnfgn/factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_PD_5_1.jpg (2 former översatta, 4 former med text lämnade orörda: [0, 1, 2, 3])"
+ },
+ "IBC_RV_1_1": {
+  "status": "OK",
+  "malnamn": "TankGuard_NO_RV_1_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_RV_1_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/NO/TankGuard_NO_RV_1_1.qa.jpg",
+  "utdata": "✓ /home/user/yognftnfgn/factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_RV_1_1.jpg (2 former översatta)"
+ },
+ "IBC_RV_2_1": {
+  "status": "OK",
+  "malnamn": "TankGuard_NO_RV_2_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_RV_2_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/NO/TankGuard_NO_RV_2_1.qa.jpg",
+  "utdata": "✓ /home/user/yognftnfgn/factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_RV_2_1.jpg (2 former översatta)"
+ },
+ "IBC_RV_3_1": {
+  "status": "OK",
+  "malnamn": "TankGuard_NO_RV_3_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_RV_3_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/NO/TankGuard_NO_RV_3_1.qa.jpg",
+  "utdata": "✓ /home/user/yognftnfgn/factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_RV_3_1.jpg (2 former översatta, 1 former med text lämnade orörda: [1])"
+ },
+ "IBC_RV_4_1": {
+  "status": "OK",
+  "malnamn": "TankGuard_NO_RV_4_1",
+  "fil": "factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_RV_4_1.jpg",
+  "qa": "factory/brandswap/ibc-tankguard/qa/NO/TankGuard_NO_RV_4_1.qa.jpg",
+  "utdata": "✓ /home/user/yognftnfgn/factory/brandswap/ibc-tankguard/ut/NO/TankGuard_NO_RV_4_1.jpg (1 former översatta, 1 former med text lämnade orörda: [0])"
+ }
+}

@@ -1,0 +1,50 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   290
+  ],
+  "text": "210D Oxford-stoff mellom solen og regnvannet ditt.",
+  "fet": true,
+  "storlek": 72,
+  "rader": 2,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.72
+ },
+ {
+  "box": [
+   33,
+   322,
+   1047,
+   440
+  ],
+  "text": "Ingen presenning, ingen strikk — bare en glidelås.",
+  "fet": false,
+  "storlek": 40,
+  "rader": 2,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.45
+ },
+ {
+  "form": 4,
+  "rad": 0,
+  "text": "Stenger ute UV · Åpning på toppen · Passer 1000L IBC",
+  "se": "Stänger ute UV · Öppning upptill · Passar 1000L IBC"
+ },
+ {
+  "form": 5,
+  "rad": 0,
+  "text": "Beskytt tanken i dag",
+  "se": "Skydda din tank idag"
+ }
+]

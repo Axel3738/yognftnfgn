@@ -1,0 +1,64 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   400
+  ],
+  "text": "14 dagers angrerett. Angrer du, får du pengene tilbake.",
+  "fet": true,
+  "storlek": 72,
+  "rader": 3,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.72
+ },
+ {
+  "box": [
+   33,
+   440,
+   1047,
+   560
+  ],
+  "text": "Kraftig 210D Oxford-stoff. Tar UV-strålene i stedet for plasten.",
+  "fet": false,
+  "storlek": 40,
+  "rader": 2,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.65
+ },
+ {
+  "box": [
+   290,
+   1086,
+   790,
+   1132
+  ],
+  "text": "Gratis frakt · 5–8 virkedager",
+  "fet": true,
+  "storlek": 30,
+  "rader": 1,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "fyllning": "rad",
+  "utvidga": 4
+ },
+ {
+  "form": 0,
+  "rad": 0,
+  "text": "Beskytt tanken i dag",
+  "se": "Skydda din tank idag"
+ }
+]

@@ -1,0 +1,40 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   400
+  ],
+  "text": "14 dagars ångerrätt. Ångrar du dig, får du pengarna tillbaka.",
+  "fet": true,
+  "storlek": 72,
+  "rader": 3,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.72
+ },
+ {
+  "box": [
+   290,
+   1086,
+   790,
+   1132
+  ],
+  "text": "Fri frakt · 5–8 arbetsdagar",
+  "fet": true,
+  "storlek": 30,
+  "rader": 1,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "fyllning": "rad",
+  "utvidga": 4
+ }
+]

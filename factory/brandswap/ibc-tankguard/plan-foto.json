@@ -1,0 +1,449 @@
+{
+ "_kommentar": "De fyra annonserna där texten är bränd DIREKT på fotot (1024×1024). pipeline/oversatt-bild.py kan inte sudda dem — kie.ai rensar fotot, factory/brandswap/lagg-text.py lägger tillbaka skarp vektortext på uppmätta koordinater.",
+ "_matning": "Koordinaterna är mätta ur källbilderna 2026-09-08: displaytextens svarta kontur, den gröna knappens färg och de vita raderna, rad för rad.",
+ "_emoji": "Emojier (✨ 🎁 ⏰) ritas aldrig — Liberation Sans har inga emojiglyfer och de blir tomma rutor. De stryks ur bildtexten.",
+ "IBC_CS_2_1": {
+  "ren": ".scratch/kie/IBC_CS_2_1_ren.png",
+  "se_orord": true,
+  "_anm": "Vit displaytext med tjock svart kontur i högerspalten, röd lagerrad och grön knapp. Priset är detsamma för TankGuard, så den svenska annonsen går rakt igenom.",
+  "element": [
+   {
+    "id": "display",
+    "typ": "text",
+    "box": [
+     690,
+     205,
+     990,
+     465
+    ],
+    "rader": 3,
+    "fet": true,
+    "storlek": 78,
+    "farg": [
+     255,
+     255,
+     255
+    ],
+    "just": "hoger",
+    "radavstand": 1.18,
+    "kontur": [
+     12,
+     12,
+     12
+    ],
+    "konturbredd": 7,
+    "se": "23% RABATT — IDAG",
+    "brandbunden": false,
+    "andring": "oförändrad — rabattsatsen är densamma (1 − 489/636 = 23 %)",
+    "no": "25% RABATT — I DAG",
+    "stryk_no": ""
+   },
+   {
+    "id": "pris",
+    "typ": "text",
+    "box": [
+     690,
+     538,
+     992,
+     618
+    ],
+    "rader": 1,
+    "fet": true,
+    "storlek": 70,
+    "farg": [
+     255,
+     255,
+     255
+    ],
+    "just": "hoger",
+    "kontur": [
+     12,
+     12,
+     12
+    ],
+    "konturbredd": 7,
+    "se": "489 kr",
+    "brandbunden": true,
+    "andring": "oförändrad — TankGuard tar källans pris",
+    "no": "439 kr",
+    "stryk_no": ""
+   },
+   {
+    "id": "jamforpris",
+    "typ": "text",
+    "box": [
+     690,
+     620,
+     992,
+     692
+    ],
+    "rader": 1,
+    "fet": true,
+    "storlek": 62,
+    "farg": [
+     255,
+     255,
+     255
+    ],
+    "just": "hoger",
+    "kontur": [
+     12,
+     12,
+     12
+    ],
+    "konturbredd": 7,
+    "stryk_se": "636 kr",
+    "se": "636 kr",
+    "brandbunden": true,
+    "andring": "oförändrad — samma jämförpris",
+    "no": "586 kr",
+    "stryk_no": "586 kr"
+   },
+   {
+    "id": "lager",
+    "typ": "text",
+    "box": [
+     750,
+     718,
+     990,
+     802
+    ],
+    "rader": 2,
+    "fet": true,
+    "storlek": 32,
+    "farg": [
+     206,
+     36,
+     30
+    ],
+    "just": "hoger",
+    "radavstand": 1.28,
+    "kontur": [
+     255,
+     255,
+     255
+    ],
+    "konturbredd": 3,
+    "se": "ENDAST FÅ KVAR I LAGER",
+    "brandbunden": false,
+    "andring": "oförändrad — lagerpåstående, inte butiksbundet villkor",
+    "no": "KUN FÅ IGJEN PÅ LAGER",
+    "stryk_no": ""
+   },
+   {
+    "id": "knapp",
+    "typ": "knapp",
+    "box": [
+     698,
+     818,
+     987,
+     916
+    ],
+    "farg": [
+     30,
+     150,
+     72
+    ],
+    "textfarg": [
+     255,
+     255,
+     255
+    ],
+    "fet": true,
+    "storlek": 38,
+    "radie": 12,
+    "se": "HANDLA NU",
+    "brandbunden": false,
+    "andring": "oförändrad",
+    "no": "HANDLE NÅ",
+    "stryk_no": ""
+   }
+  ]
+ },
+ "IBC_GT_2_1": {
+  "ren": ".scratch/kie/IBC_GT_2_1_ren.png",
+  "se_orord": true,
+  "_anm": "Vit rubrik och underrubrik uppe till vänster, grön knapp under. Inget butiksbundet — svenska annonsen går rakt igenom. Emojin ✨ i underrubriken ritas inte.",
+  "element": [
+   {
+    "id": "rubrik",
+    "typ": "text",
+    "box": [
+     55,
+     66,
+     700,
+     240
+    ],
+    "rader": 3,
+    "fet": true,
+    "storlek": 46,
+    "farg": [
+     255,
+     255,
+     255
+    ],
+    "just": "vanster",
+    "radavstand": 1.32,
+    "kontur": [
+     30,
+     34,
+     24
+    ],
+    "konturbredd": 3,
+    "se": "DEN PERFEKTA PRESENTEN TILL TRÄDGÅRDSMÄSTAREN",
+    "brandbunden": false,
+    "andring": "oförändrad",
+    "no": "DEN PERFEKTE GAVEN TIL HAGEENTUSIASTEN",
+    "stryk_no": ""
+   },
+   {
+    "id": "underrubrik",
+    "typ": "text",
+    "box": [
+     55,
+     260,
+     620,
+     344
+    ],
+    "rader": 2,
+    "fet": false,
+    "storlek": 33,
+    "farg": [
+     246,
+     248,
+     240
+    ],
+    "just": "vanster",
+    "radavstand": 1.32,
+    "kontur": [
+     30,
+     34,
+     24
+    ],
+    "konturbredd": 3,
+    "se": "Se glädjen när tanken äntligen är skyddad",
+    "brandbunden": false,
+    "andring": "oförändrad — emojin ✨ stryks, den går inte att rita",
+    "no": "Se gleden når tanken endelig er beskyttet",
+    "stryk_no": ""
+   },
+   {
+    "id": "knapp",
+    "typ": "knapp",
+    "box": [
+     53,
+     373,
+     486,
+     439
+    ],
+    "farg": [
+     57,
+     127,
+     66
+    ],
+    "textfarg": [
+     255,
+     255,
+     255
+    ],
+    "fet": true,
+    "storlek": 26,
+    "radie": 10,
+    "se": "GE BORT DEN HÄR PRESENTEN",
+    "brandbunden": false,
+    "andring": "oförändrad",
+    "no": "GI BORT DENNE GAVEN",
+    "stryk_no": ""
+   }
+  ]
+ },
+ "IBC_PD_2_1": {
+  "ren": ".scratch/kie/IBC_PD_2_1_ren.png",
+  "se_orord": true,
+  "_anm": "Två rader vit versalrubrik uppe till vänster mot himlen. Inget butiksbundet.",
+  "element": [
+   {
+    "id": "rubrik",
+    "typ": "text",
+    "box": [
+     70,
+     66,
+     900,
+     292
+    ],
+    "rader": 2,
+    "fet": true,
+    "storlek": 90,
+    "farg": [
+     255,
+     255,
+     255
+    ],
+    "just": "vanster",
+    "radavstand": 1.33,
+    "kontur": [
+     24,
+     40,
+     56
+    ],
+    "konturbredd": 3,
+    "se": "ALGER I TANKEN? INTE LÄNGRE.",
+    "brandbunden": false,
+    "andring": "oförändrad",
+    "no": "ALGER I TANKEN? IKKE LENGER.",
+    "stryk_no": ""
+   }
+  ]
+ },
+ "IBC_SP_2_1": {
+  "ren": ".scratch/kie/IBC_SP_2_1_ren.png",
+  "se_orord": false,
+  "_anm": "Stjärnor, kundcitat, bockrad och grön knapp i högerspalten. Bockraden är butiksbunden: '30 dagars öppet köp' är förbjudet för OPS-butiker.",
+  "element": [
+   {
+    "id": "stjarnor",
+    "typ": "stjarnor",
+    "box": [
+     762,
+     38,
+     985,
+     76
+    ],
+    "antal": 5,
+    "farg": [
+     240,
+     185,
+     60
+    ],
+    "se": "",
+    "brandbunden": false,
+    "andring": "grafik, oförändrad",
+    "no": "",
+    "stryk_no": ""
+   },
+   {
+    "id": "citat",
+    "typ": "text",
+    "box": [
+     500,
+     84,
+     985,
+     156
+    ],
+    "rader": 2,
+    "fet": false,
+    "storlek": 31,
+    "farg": [
+     250,
+     252,
+     242
+    ],
+    "just": "hoger",
+    "radavstand": 1.25,
+    "kontur": [
+     18,
+     26,
+     14
+    ],
+    "konturbredd": 3,
+    "se": "”Äntligen klart vatten i tanken — inga alger på hela sommaren!”",
+    "brandbunden": false,
+    "andring": "oförändrad — äkta kundrecension",
+    "no": "”Endelig klart vann i tanken — ingen alger hele sommeren!”",
+    "stryk_no": ""
+   },
+   {
+    "id": "attribution",
+    "typ": "text",
+    "box": [
+     700,
+     159,
+     985,
+     185
+    ],
+    "rader": 1,
+    "fet": false,
+    "storlek": 23,
+    "farg": [
+     228,
+     234,
+     216
+    ],
+    "just": "hoger",
+    "kontur": [
+     18,
+     26,
+     14
+    ],
+    "konturbredd": 3,
+    "se": "– Verifierad kund, 52 år",
+    "brandbunden": true,
+    "andring": "oförändrad på svenska — samma butik som recensionen visas i",
+    "no": "– Verifisert kunde, 52 år",
+    "stryk_no": ""
+   },
+   {
+    "id": "villkor",
+    "typ": "bock",
+    "box": [
+     640,
+     257,
+     985,
+     287
+    ],
+    "storlek": 27,
+    "farg": [
+     246,
+     249,
+     236
+    ],
+    "bockfarg": [
+     246,
+     249,
+     236
+    ],
+    "just": "hoger",
+    "kontur": [
+     18,
+     26,
+     14
+    ],
+    "konturbredd": 3,
+    "se": "14 dagars ångerrätt",
+    "se_kalla": "30 dagars öppet köp",
+    "brandbunden": true,
+    "andring": "'30 dagars öppet köp' är förbjudet för OPS (butik-mall.yaml retur, Axels beslut 2026-09-08)",
+    "no": "14 dagers angrerett",
+    "stryk_no": ""
+   },
+   {
+    "id": "knapp",
+    "typ": "knapp",
+    "box": [
+     755,
+     299,
+     982,
+     357
+    ],
+    "farg": [
+     30,
+     150,
+     72
+    ],
+    "textfarg": [
+     255,
+     255,
+     255
+    ],
+    "fet": true,
+    "storlek": 34,
+    "radie": 14,
+    "se": "BESTÄLL NU",
+    "brandbunden": false,
+    "andring": "oförändrad",
+    "no": "BESTILL NÅ",
+    "stryk_no": ""
+   }
+  ]
+ }
+}

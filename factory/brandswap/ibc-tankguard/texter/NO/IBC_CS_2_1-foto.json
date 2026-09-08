@@ -1,0 +1,130 @@
+{
+ "element": [
+  {
+   "typ": "text",
+   "box": [
+    690,
+    205,
+    990,
+    465
+   ],
+   "rader": 3,
+   "fet": true,
+   "storlek": 78,
+   "farg": [
+    255,
+    255,
+    255
+   ],
+   "just": "hoger",
+   "radavstand": 1.18,
+   "kontur": [
+    12,
+    12,
+    12
+   ],
+   "konturbredd": 7,
+   "text": "25% RABATT — I DAG"
+  },
+  {
+   "typ": "text",
+   "box": [
+    690,
+    538,
+    992,
+    618
+   ],
+   "rader": 1,
+   "fet": true,
+   "storlek": 70,
+   "farg": [
+    255,
+    255,
+    255
+   ],
+   "just": "hoger",
+   "kontur": [
+    12,
+    12,
+    12
+   ],
+   "konturbredd": 7,
+   "text": "439 kr"
+  },
+  {
+   "typ": "text",
+   "box": [
+    690,
+    620,
+    992,
+    692
+   ],
+   "rader": 1,
+   "fet": true,
+   "storlek": 62,
+   "farg": [
+    255,
+    255,
+    255
+   ],
+   "just": "hoger",
+   "kontur": [
+    12,
+    12,
+    12
+   ],
+   "konturbredd": 7,
+   "text": "586 kr",
+   "stryk": "586 kr"
+  },
+  {
+   "typ": "text",
+   "box": [
+    750,
+    718,
+    990,
+    802
+   ],
+   "rader": 2,
+   "fet": true,
+   "storlek": 32,
+   "farg": [
+    206,
+    36,
+    30
+   ],
+   "just": "hoger",
+   "radavstand": 1.28,
+   "kontur": [
+    255,
+    255,
+    255
+   ],
+   "konturbredd": 3,
+   "text": "KUN FÅ IGJEN PÅ LAGER"
+  },
+  {
+   "typ": "knapp",
+   "box": [
+    698,
+    818,
+    987,
+    916
+   ],
+   "fet": true,
+   "storlek": 38,
+   "farg": [
+    30,
+    150,
+    72
+   ],
+   "textfarg": [
+    255,
+    255,
+    255
+   ],
+   "radie": 12,
+   "text": "HANDLE NÅ"
+  }
+ ]
+}

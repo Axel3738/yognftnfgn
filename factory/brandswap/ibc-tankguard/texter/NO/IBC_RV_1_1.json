@@ -1,0 +1,23 @@
+[
+ {
+  "form": 0,
+  "rader": [
+   0,
+   1,
+   2
+  ],
+  "text": "”Jeg er fornøyd. Nå slipper jeg mye sollys på tanken, og det ser penere ut også.”"
+ },
+ {
+  "form": 0,
+  "rad": 3,
+  "text": "— Maria, tankguard.se",
+  "se": "— Maria"
+ },
+ {
+  "form": 1,
+  "rad": 0,
+  "text": "Beskytt tanken i dag",
+  "se": "Skydda din tank idag"
+ }
+]

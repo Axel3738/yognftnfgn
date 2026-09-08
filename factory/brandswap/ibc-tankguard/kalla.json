@@ -1,0 +1,402 @@
+[
+ {
+  "namn": "IBC_BOF_1_1",
+  "annonsId": "120250102768570291",
+  "image_hash": "4e065a3abd53de6edb82d9cac90b0287",
+  "bredd": 1080,
+  "hojd": 1350,
+  "mall": "plattor",
+  "metod": "oversatt-bild.py",
+  "kant_utanfor": 0.0005,
+  "kalla_bild": ".scratch/ibc-se/IBC_BOF_1_1.jpg",
+  "analys": ".scratch/analys/IBC_BOF_1_1.json",
+  "malnamn_se": "TankGuard_SE_BOF_1_1",
+  "malnamn_no": "TankGuard_NO_BOF_1_1",
+  "se_copy": {
+   "message": "489 kr istället för 636 kr. Tyget är 210D Oxford och tar UV-strålningen i stället för plasten.",
+   "headline": "23 % rabatt på tanköverdraget",
+   "description": "Fri frakt över 300 kr. Betala sen med Klarna.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  }
+ },
+ {
+  "namn": "IBC_BOF_2_1",
+  "annonsId": "120250103001370291",
+  "image_hash": "1b189bf05cb2614c532cb07e7544af73",
+  "bredd": 1080,
+  "hojd": 1350,
+  "mall": "plattor",
+  "metod": "oversatt-bild.py",
+  "kant_utanfor": 0.0082,
+  "kalla_bild": ".scratch/ibc-se/IBC_BOF_2_1.jpg",
+  "analys": ".scratch/analys/IBC_BOF_2_1.json",
+  "malnamn_se": "TankGuard_SE_BOF_2_1",
+  "malnamn_no": "TankGuard_NO_BOF_2_1",
+  "se_copy": {
+   "message": "Gillar du inte tanköverdraget? Skicka tillbaka det inom 30 dagar. Du får pengarna tillbaka.",
+   "headline": "30 dagars öppet köp",
+   "description": "Pengarna tillbaka om du ångrar dig.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  }
+ },
+ {
+  "namn": "IBC_BOF_3_1",
+  "annonsId": "120250102827960291",
+  "image_hash": "7404403ed8b96e00eafeb5741c1848bf",
+  "bredd": 1080,
+  "hojd": 1350,
+  "mall": "plattor",
+  "metod": "oversatt-bild.py",
+  "kant_utanfor": 0.0,
+  "kalla_bild": ".scratch/ibc-se/IBC_BOF_3_1.jpg",
+  "analys": ".scratch/analys/IBC_BOF_3_1.json",
+  "malnamn_se": "TankGuard_SE_BOF_3_1",
+  "malnamn_no": "TankGuard_NO_BOF_3_1",
+  "se_copy": {
+   "message": "Passar den på min tank? Måtten är 120 × 100 × 116 cm — standard för en 1000-literstank.",
+   "headline": "120×100×116 cm, standard 1000L",
+   "description": "30 dagars öppet köp om den inte passar.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  }
+ },
+ {
+  "namn": "IBC_BOF_4_1",
+  "annonsId": "120250135368810291",
+  "image_hash": "f3abdbe02e0ca08cd79f78aeb7dc190f",
+  "bredd": 1080,
+  "hojd": 1350,
+  "mall": "plattor",
+  "metod": "oversatt-bild.py",
+  "kant_utanfor": 0.0006,
+  "kalla_bild": ".scratch/ibc-se/IBC_BOF_4_1.jpg",
+  "analys": ".scratch/analys/IBC_BOF_4_1.json",
+  "malnamn_se": "TankGuard_SE_BOF_4_1",
+  "malnamn_no": "TankGuard_NO_BOF_4_1",
+  "se_copy": {
+   "message": "Blixtlås. Inte presenning och gummiband.\nPå och av med dragkedja — ingen kamp med väder eller vind.\nÖppning upptill. Passar 1000-liters IBC-tank.",
+   "headline": "Blixtlås. Inte presenning.",
+   "description": "Öppning upptill. Passar 1000-liters IBC.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  }
+ },
+ {
+  "namn": "IBC_BOF_5_1",
+  "annonsId": "120250135240320291",
+  "image_hash": "f9898c7c28c9b7aa20ea8c9271aa0646",
+  "bredd": 1080,
+  "hojd": 1350,
+  "mall": "plattor",
+  "metod": "oversatt-bild.py",
+  "kant_utanfor": 0.0083,
+  "kalla_bild": ".scratch/ibc-se/IBC_BOF_5_1.jpg",
+  "analys": ".scratch/analys/IBC_BOF_5_1.json",
+  "malnamn_se": "TankGuard_SE_BOF_5_1",
+  "malnamn_no": "TankGuard_NO_BOF_5_1",
+  "se_copy": {
+   "message": "Presenningen som skulle skydda blåser av vid första höststormen.\nEtt 210D Oxford-överdrag med blixtlås sitter kvar.\nSkydda tanken innan hösten.",
+   "headline": "Presenningen blåser av i höststormen",
+   "description": "210D Oxford-överdrag med blixtlås.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  }
+ },
+ {
+  "namn": "IBC_BOF_6_1",
+  "annonsId": "120250134665590291",
+  "image_hash": "5b238743a16a2b4868879f47668c26cc",
+  "bredd": 1080,
+  "hojd": 1350,
+  "mall": "plattor",
+  "metod": "oversatt-bild.py",
+  "kant_utanfor": 0.0001,
+  "kalla_bild": ".scratch/ibc-se/IBC_BOF_6_1.jpg",
+  "analys": ".scratch/analys/IBC_BOF_6_1.json",
+  "malnamn_se": "TankGuard_SE_BOF_6_1",
+  "malnamn_no": "TankGuard_NO_BOF_6_1",
+  "se_copy": {
+   "message": "Fri frakt inom Sverige, 5–10 arbetsdagar.\nBeställ nu så är den på plats innan tanken hinner grönska.\nKlarna – betala sen. 30 dagars öppet köp.",
+   "headline": "Fri frakt, 5–10 arbetsdagar",
+   "description": "Klarna – betala sen. 30 dagars öppet köp.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  }
+ },
+ {
+  "namn": "IBC_CO_1_1",
+  "annonsId": "120250077952830291",
+  "image_hash": "14d9d15043d281b77441336865037341",
+  "bredd": 1080,
+  "hojd": 1350,
+  "mall": "plattor",
+  "metod": "oversatt-bild.py",
+  "kant_utanfor": 0.007,
+  "kalla_bild": ".scratch/ibc-se/IBC_CO_1_1.jpg",
+  "analys": ".scratch/analys/IBC_CO_1_1.json",
+  "malnamn_se": "TankGuard_SE_CO_1_1",
+  "malnamn_no": "TankGuard_NO_CO_1_1",
+  "se_copy": {
+   "message": "Utan skydd blir tankvattnet grönt av alger. 210D Oxford-tyget blockerar solljuset helt och stoppar algtillväxten. Samma tank, olika resultat – skillnaden är överdraget.",
+   "headline": "210D Oxford-tyg stoppar UV och alger",
+   "description": "IBC-tanköverdrag, 1000 L",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  }
+ },
+ {
+  "namn": "IBC_CS_2_1",
+  "annonsId": "120250005833290291",
+  "image_hash": "42a324c753c096d807a582ef0ce1e21d",
+  "bredd": 1024,
+  "hojd": 1024,
+  "mall": "fototext",
+  "metod": "kie.ai + text.py",
+  "kant_utanfor": 0.0137,
+  "kalla_bild": ".scratch/ibc-se/IBC_CS_2_1.jpg",
+  "analys": ".scratch/analys/IBC_CS_2_1.json",
+  "malnamn_se": "TankGuard_SE_CS_2_1",
+  "malnamn_no": "TankGuard_NO_CS_2_1",
+  "se_copy": {
+   "message": "⏰ IDAG ENDAST — 23% RABATT\n\n489 kr istället för 636 kr. Priset går tillbaka imorgon.\n\nLagret krymper snabbt — många har redan beställt inför sommaren.\n\nInga alger. Inget spröd plast. Bara ett tjockt, skyddande överdrag till din IBC-tank.\n\nMissa inte det — beställ innan det är slut 👇",
+   "headline": "Skydda tanken innan sommaren",
+   "description": "489 kr idag — ordinarie 636 kr.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  }
+ },
+ {
+  "namn": "IBC_CS_3_1",
+  "annonsId": "120250102960530291",
+  "image_hash": "b004caef631f43071ed1367cacaee192",
+  "bredd": 1080,
+  "hojd": 1350,
+  "mall": "plattor",
+  "metod": "oversatt-bild.py",
+  "kant_utanfor": 0.0001,
+  "kalla_bild": ".scratch/ibc-se/IBC_CS_3_1.jpg",
+  "analys": ".scratch/analys/IBC_CS_3_1.json",
+  "malnamn_se": "TankGuard_SE_CS_3_1",
+  "malnamn_no": "TankGuard_NO_CS_3_1",
+  "se_copy": {
+   "message": "489 kr istället för 636 kr. Tyget är 210D Oxford och stänger ute ljuset — algerna kommer aldrig igång. 23 % rabatt.",
+   "headline": "23 % rabatt — 210D Oxford-tyg",
+   "description": "Fri frakt över 300 kr.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  }
+ },
+ {
+  "namn": "IBC_CS_4_1",
+  "annonsId": "120250134494990291",
+  "image_hash": "c4b9bd7170b5e239a8a22d016bf6f7bb",
+  "bredd": 1080,
+  "hojd": 1350,
+  "mall": "plattor",
+  "metod": "oversatt-bild.py",
+  "kant_utanfor": 0.0005,
+  "kalla_bild": ".scratch/ibc-se/IBC_CS_4_1.jpg",
+  "analys": ".scratch/analys/IBC_CS_4_1.json",
+  "malnamn_se": "TankGuard_SE_CS_4_1",
+  "malnamn_no": "TankGuard_NO_CS_4_1",
+  "se_copy": {
+   "message": "489 kr istället för 636 kr.\n147 kr mindre för samma 210D Oxford-tyg som stänger ute ljuset.\nAlgerna kommer aldrig igång.",
+   "headline": "489 kr istället för 636 kr",
+   "description": "23 % rabatt. Fri frakt inom Sverige.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  }
+ },
+ {
+  "namn": "IBC_GT_2_1",
+  "annonsId": "120250005858870291",
+  "image_hash": "3fbc68b18c82fee1222849755d9aa5c1",
+  "bredd": 1024,
+  "hojd": 1024,
+  "mall": "fototext",
+  "metod": "kie.ai + text.py",
+  "kant_utanfor": 0.0094,
+  "kalla_bild": ".scratch/ibc-se/IBC_GT_2_1.jpg",
+  "analys": ".scratch/analys/IBC_GT_2_1.json",
+  "malnamn_se": "TankGuard_SE_GT_2_1",
+  "malnamn_no": "TankGuard_NO_GT_2_1",
+  "se_copy": {
+   "message": "Vet du någon som klagat på alger i sin IBC-tank i flera somrar? 🎁\n\nJag gav min man det här överdraget — utan att säga något. Han trodde jag hade glömt bort problemet.\n\nNu visar han upp tanken för alla grannar.\n\nIbland är den bästa presenten den som löser något de redan brytt sig om länge.\n\nHitta den perfekta presenten 👇",
+   "headline": "Presenten han faktiskt använder",
+   "description": "Enkel gåva. Stor uppskattning.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  }
+ },
+ {
+  "namn": "IBC_PD_2_1",
+  "annonsId": "120250005822500291",
+  "image_hash": "9988fe36a6389e58e4b769869daa9f33",
+  "bredd": 1024,
+  "hojd": 1024,
+  "mall": "fototext",
+  "metod": "kie.ai + text.py",
+  "kant_utanfor": 0.0222,
+  "kalla_bild": ".scratch/ibc-se/IBC_PD_2_1.jpg",
+  "analys": ".scratch/analys/IBC_PD_2_1.json",
+  "malnamn_se": "TankGuard_SE_PD_2_1",
+  "malnamn_no": "TankGuard_NO_PD_2_1",
+  "se_copy": {
+   "message": "Trött på grönt, algfyllt regnvatten? 💧\n\nDet här överdraget blockerar solljus och UV helt — så vattnet i din IBC-tank hålls klart, och tanken slits inte ut i förtid.\n\n✓ Kraftigt 210D Oxford-tyg\n✓ Enkelt blixtlås — klart på 2 minuter\n✓ Öppning upptill, du kommer åt locket ändå\n\nSkydda din tank idag 👇",
+   "headline": "Klart vatten. Ingen alg. Enkelt.",
+   "description": "Passar standard 1000L IBC-tank.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  }
+ },
+ {
+  "namn": "IBC_PD_3_1",
+  "annonsId": "120250078091950291",
+  "image_hash": "97033fd162b17c46ce2072427d12b626",
+  "bredd": 1080,
+  "hojd": 1350,
+  "mall": "plattor",
+  "metod": "oversatt-bild.py",
+  "kant_utanfor": 0.0008,
+  "kalla_bild": ".scratch/ibc-se/IBC_PD_3_1.jpg",
+  "analys": ".scratch/analys/IBC_PD_3_1.json",
+  "malnamn_se": "TankGuard_SE_PD_3_1",
+  "malnamn_no": "TankGuard_NO_PD_3_1",
+  "se_copy": {
+   "message": "210D Oxford-tyget blockerar UV-ljus och håller borta alger. Blixtlåset går att sätta på under två minuter. Öppningen upptill ger åtkomst till locket utan att ta av hela överdraget.",
+   "headline": "Sätt på blixtlåset på 2 minuter",
+   "description": "210D Oxford-tyg, blixtlås, öppning upptill",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  }
+ },
+ {
+  "namn": "IBC_PD_4_1",
+  "annonsId": "120250102938120291",
+  "image_hash": "e18f7e4d9e63267d37ddd957af8e0853",
+  "bredd": 1080,
+  "hojd": 1350,
+  "mall": "plattor",
+  "metod": "oversatt-bild.py",
+  "kant_utanfor": 0.0012,
+  "kalla_bild": ".scratch/ibc-se/IBC_PD_4_1.jpg",
+  "analys": ".scratch/analys/IBC_PD_4_1.json",
+  "malnamn_se": "TankGuard_SE_PD_4_1",
+  "malnamn_no": "TankGuard_NO_PD_4_1",
+  "se_copy": {
+   "message": "210D Oxford-tyg stänger ute ljuset. Algerna kommer aldrig igång.",
+   "headline": "210D Oxford-tyg. Ingen alg.",
+   "description": "Tar UV-strålningen i stället för plasten.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  }
+ },
+ {
+  "namn": "IBC_PD_5_1",
+  "annonsId": "120250134496480291",
+  "image_hash": "e44a6e3f0fccf690fdbf036e460db227",
+  "bredd": 1080,
+  "hojd": 1350,
+  "mall": "plattor",
+  "metod": "oversatt-bild.py",
+  "kant_utanfor": 0.0002,
+  "kalla_bild": ".scratch/ibc-se/IBC_PD_5_1.jpg",
+  "analys": ".scratch/analys/IBC_PD_5_1.json",
+  "malnamn_se": "TankGuard_SE_PD_5_1",
+  "malnamn_no": "TankGuard_NO_PD_5_1",
+  "se_copy": {
+   "message": "210D Oxford-tyg mellan solen och ditt regnvatten.\nIngen presenning, inga gummiband — bara ett blixtlås.\nAlgerna kommer aldrig igång.",
+   "headline": "210D Oxford-tyg mot solen",
+   "description": "Ingen presenning, inga gummiband.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  }
+ },
+ {
+  "namn": "IBC_RV_1_1",
+  "annonsId": "120250102989510291",
+  "image_hash": "31e6e42ab6adc81ecaf45a6893e17f97",
+  "bredd": 1080,
+  "hojd": 1350,
+  "mall": "plattor",
+  "metod": "oversatt-bild.py",
+  "kant_utanfor": 0.0004,
+  "kalla_bild": ".scratch/ibc-se/IBC_RV_1_1.jpg",
+  "analys": ".scratch/analys/IBC_RV_1_1.json",
+  "malnamn_se": "TankGuard_SE_RV_1_1",
+  "malnamn_no": "TankGuard_NO_RV_1_1",
+  "se_copy": {
+   "message": "\"Jag är nöjd. Nu slipper jag mycket solljus på tanken och det ser även snyggare ut.\" — Maria, ★★★★★",
+   "headline": "Maria: Jag är nöjd",
+   "description": "210D Oxford-tyg. 489 kr.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  }
+ },
+ {
+  "namn": "IBC_RV_2_1",
+  "annonsId": "120250103102350291",
+  "image_hash": "ec4ec8061469261312c302e79aebec74",
+  "bredd": 1080,
+  "hojd": 1350,
+  "mall": "plattor",
+  "metod": "oversatt-bild.py",
+  "kant_utanfor": 0.0005,
+  "kalla_bild": ".scratch/ibc-se/IBC_RV_2_1.jpg",
+  "analys": ".scratch/analys/IBC_RV_2_1.json",
+  "malnamn_se": "TankGuard_SE_RV_2_1",
+  "malnamn_no": "TankGuard_NO_RV_2_1",
+  "se_copy": {
+   "message": "\"Köpte detta för min regnvattentank. Fungerar bra och är enkelt att öppna när jag behöver.\" — Lena, ★★★★★",
+   "headline": "Lena: Enkelt att öppna",
+   "description": "Passar 1000L-tank. 489 kr.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  }
+ },
+ {
+  "namn": "IBC_RV_3_1",
+  "annonsId": "120250135358520291",
+  "image_hash": "07d69a2f60eed8640eda62f2c6464503",
+  "bredd": 1080,
+  "hojd": 1350,
+  "mall": "plattor",
+  "metod": "oversatt-bild.py",
+  "kant_utanfor": 0.0006,
+  "kalla_bild": ".scratch/ibc-se/IBC_RV_3_1.jpg",
+  "analys": ".scratch/analys/IBC_RV_3_1.json",
+  "malnamn_se": "TankGuard_SE_RV_3_1",
+  "malnamn_no": "TankGuard_NO_RV_3_1",
+  "se_copy": {
+   "message": "\"Passar bra på tanken och skyddar mot solen. Precis vad jag behövde.\"\n— Sofia, ★★★★★\n489 kr, 23 % rabatt.",
+   "headline": "Sofia: Skyddar mot solen",
+   "description": "489 kr, 23 % rabatt.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  }
+ },
+ {
+  "namn": "IBC_RV_4_1",
+  "annonsId": "120250135235730291",
+  "image_hash": "029ed25aff2d3b397dfe6d35735cc361",
+  "bredd": 1080,
+  "hojd": 1350,
+  "mall": "plattor",
+  "metod": "oversatt-bild.py",
+  "kant_utanfor": 0.0068,
+  "kalla_bild": ".scratch/ibc-se/IBC_RV_4_1.jpg",
+  "analys": ".scratch/analys/IBC_RV_4_1.json",
+  "malnamn_se": "TankGuard_SE_RV_4_1",
+  "malnamn_no": "TankGuard_NO_RV_4_1",
+  "se_copy": {
+   "message": "\"Bra kvalitet och lätt att använda. Passade min 1000 liters tank utan problem.\"\n— Johan, ★★★★★",
+   "headline": "Johan: Passade tanken utan problem",
+   "description": "Passar standard 1000L IBC-tank.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  }
+ },
+ {
+  "namn": "IBC_SP_2_1",
+  "annonsId": "120250005827300291",
+  "image_hash": "80c742477dca333655c54bd90b07b833",
+  "bredd": 1024,
+  "hojd": 1024,
+  "mall": "fototext",
+  "metod": "kie.ai + text.py",
+  "kant_utanfor": 0.0078,
+  "kalla_bild": ".scratch/ibc-se/IBC_SP_2_1.jpg",
+  "analys": ".scratch/analys/IBC_SP_2_1.json",
+  "malnamn_se": "TankGuard_SE_SP_2_1",
+  "malnamn_no": "TankGuard_NO_SP_2_1",
+  "se_copy": {
+   "message": "\"Äntligen klart vatten i tanken — inga alger på hela sommaren!\" ⭐⭐⭐⭐⭐\n\nHundratals trädgårdsägare har redan bytt ut sin gamla, algiga tank mot en skyddad en.\n\n✓ Blockerar UV och sol helt\n✓ Sitter perfekt med blixtlås\n✓ Du kommer fortfarande åt locket\n\nSe varför kunderna älskar det 👇",
+   "headline": "Klart vatten hela sommaren",
+   "description": "Betygsatt av riktiga trädgårdsägare.",
+   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  }
+ }
+]

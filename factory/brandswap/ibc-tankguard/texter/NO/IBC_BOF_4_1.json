@@ -1,0 +1,50 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   400
+  ],
+  "text": "Glidelås. Ikke presenning og strikk.",
+  "fet": true,
+  "storlek": 72,
+  "rader": 3,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.72
+ },
+ {
+  "box": [
+   33,
+   440,
+   1047,
+   560
+  ],
+  "text": "Av og på med glidelås — ingen kamp med vær eller vind.",
+  "fet": false,
+  "storlek": 40,
+  "rader": 2,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.65
+ },
+ {
+  "form": 1,
+  "rad": 0,
+  "text": "Glidelås · Åpning på toppen · Passer 1000-liters IBC",
+  "se": "Dragkedja · Öppning upptill · Passar 1000-liters IBC"
+ },
+ {
+  "form": 2,
+  "rad": 0,
+  "text": "Se hvor enkelt det er",
+  "se": "Se hur enkelt det är"
+ }
+]

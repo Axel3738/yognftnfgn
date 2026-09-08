@@ -1,0 +1,1163 @@
+{
+ "_kommentar": "Textplanen för brand-swappen. En post per annons, en 'enhet' per sammanhängande text i bilden, uppifrån och ned. Transkriberat ur bilderna 2026-09-08.",
+ "_mal": "mal.form + mal.rader = formen/raderna som pipeline/oversatt-bild.py --analys hittade. mal.box = ruta vi mätt själva, för text detektorn missar (halvgenomskinlig platta, vit text direkt på fotot).",
+ "_faltet_se_tg": "TankGuards svenska text. Identisk med se_kalla när inget är brandbundet — en bevisad vinkel skrivs aldrig om i onödan.",
+ "_villkorskalla": "factory/brandswap/ibc-tankguard/fakta.md",
+ "IBC_BOF_1_1": {
+  "enheter": [
+   {
+    "id": "pris",
+    "roll": "rubrik",
+    "mal": {
+     "form": 0,
+     "rader": [
+      0,
+      1
+     ]
+    },
+    "stryk": "636 kr",
+    "se_kalla": "489 kr istället för 636 kr. 23 % rabatt.",
+    "se_tg": "489 kr istället för 636 kr. 23 % rabatt.",
+    "brandbunden": true,
+    "andring": "oförändrad — TankGuard tar källans pris enligt PROCESS steg 1 (489/636 kr, verifierat live)",
+    "no_tg": "439 kr i stedet for 586 kr. 25 % rabatt.",
+    "stryk_no": "586 kr"
+   },
+   {
+    "id": "underrubrik",
+    "roll": "underrubrik",
+    "mal": {
+     "form": 0,
+     "rader": [
+      2,
+      3
+     ]
+    },
+    "se_kalla": "Kraftigt 210D Oxford-tyg. Tar UV-strålningen i stället för plasten.",
+    "se_tg": "Kraftigt 210D Oxford-tyg. Tar UV-strålningen i stället för plasten.",
+    "brandbunden": false,
+    "andring": "oförändrad — produktfakta",
+    "no_tg": "Kraftig 210D Oxford-stoff. Tar UV-strålene i stedet for plasten.",
+    "stryk_no": ""
+   },
+   {
+    "id": "frakt",
+    "roll": "band",
+    "mal": {
+     "box": [
+      290,
+      1086,
+      790,
+      1132
+     ],
+     "fet": true,
+     "storlek": 30,
+     "rader": 1,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true,
+     "fyllning": "rad",
+     "utvidga": 4
+    },
+    "se_kalla": "Fri frakt över 300 kr",
+    "se_tg": "Fri frakt",
+    "brandbunden": true,
+    "andring": "TankGuard har fri frakt utan gräns (butik-mall.yaml frakt.fri_globalt: true) — 'över 300 kr' är Bäverbutikens tröskel",
+    "no_tg": "Gratis frakt",
+    "stryk_no": ""
+   },
+   {
+    "id": "knapp",
+    "roll": "knapp",
+    "mal": {
+     "form": 1,
+     "rad": 0
+    },
+    "se_kalla": "Skydda din tank idag",
+    "se_tg": "Skydda din tank idag",
+    "brandbunden": false,
+    "andring": "oförändrad",
+    "no_tg": "Beskytt tanken i dag",
+    "stryk_no": ""
+   }
+  ]
+ },
+ "IBC_BOF_2_1": {
+  "_anm": "Rubrikplattan är halvgenomskinlig över fotot — detektorn hittar den inte. Egna rutor.",
+  "enheter": [
+   {
+    "id": "rubrik",
+    "roll": "rubrik",
+    "mal": {
+     "box": [
+      33,
+      60,
+      1047,
+      400
+     ],
+     "fet": true,
+     "storlek": 72,
+     "rader": 3,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.72
+    },
+    "se_kalla": "30 dagars öppet köp. Gillar du det inte, får du pengarna tillbaka.",
+    "se_tg": "14 dagars ångerrätt. Ångrar du dig, får du pengarna tillbaka.",
+    "brandbunden": true,
+    "andring": "'30 dagars öppet köp' är förbjudet för OPS (butik-mall.yaml retur, Axels beslut 2026-09-08) — 14 dagars ångerrätt gäller",
+    "no_tg": "14 dagers angrerett. Angrer du, får du pengene tilbake.",
+    "stryk_no": ""
+   },
+   {
+    "id": "underrubrik",
+    "roll": "underrubrik",
+    "mal": {
+     "box": [
+      33,
+      440,
+      1047,
+      560
+     ],
+     "fet": false,
+     "storlek": 40,
+     "rader": 2,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.65
+    },
+    "se_kalla": "Kraftigt 210D Oxford-tyg. Tar UV-strålningen i stället för plasten.",
+    "se_tg": "Kraftigt 210D Oxford-tyg. Tar UV-strålningen i stället för plasten.",
+    "brandbunden": false,
+    "andring": "oförändrad — produktfakta",
+    "no_tg": "Kraftig 210D Oxford-stoff. Tar UV-strålene i stedet for plasten.",
+    "stryk_no": ""
+   },
+   {
+    "id": "betalning",
+    "roll": "band",
+    "mal": {
+     "box": [
+      290,
+      1086,
+      790,
+      1132
+     ],
+     "fet": true,
+     "storlek": 30,
+     "rader": 1,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true,
+     "fyllning": "rad",
+     "utvidga": 4
+    },
+    "se_kalla": "Få först, betala sen — med Klarna",
+    "se_tg": "Fri frakt · 5–8 arbetsdagar",
+    "brandbunden": true,
+    "andring": "TankGuards betalsätt är inte avlästa — ett Klarna-löfte utan källa får inte stå. Ersatt med frakt och leveranstid ur butik-mall.yaml",
+    "no_tg": "Gratis frakt · 5–8 virkedager",
+    "stryk_no": ""
+   },
+   {
+    "id": "knapp",
+    "roll": "knapp",
+    "mal": {
+     "form": 0,
+     "rad": 0
+    },
+    "se_kalla": "Skydda din tank idag",
+    "se_tg": "Skydda din tank idag",
+    "brandbunden": false,
+    "andring": "oförändrad",
+    "no_tg": "Beskytt tanken i dag",
+    "stryk_no": ""
+   }
+  ]
+ },
+ "IBC_BOF_3_1": {
+  "enheter": [
+   {
+    "id": "rubrik",
+    "roll": "rubrik",
+    "mal": {
+     "form": 0,
+     "rader": [
+      0,
+      1,
+      2
+     ]
+    },
+    "se_kalla": "Passar den min tank? 120 × 100 × 116 cm — standard 1000-literstank.",
+    "se_tg": "Passar den min tank? 120 × 100 × 116 cm — standard 1000-literstank.",
+    "brandbunden": false,
+    "andring": "oförändrad — produktfakta",
+    "no_tg": "Passer den på tanken min? 120 × 100 × 116 cm — standard 1000-litertank.",
+    "stryk_no": ""
+   },
+   {
+    "id": "underrubrik",
+    "roll": "underrubrik",
+    "mal": {
+     "form": 0,
+     "rader": [
+      3,
+      4
+     ]
+    },
+    "se_kalla": "Kraftigt 210D Oxford-tyg. Tar UV-strålningen i stället för plasten.",
+    "se_tg": "Kraftigt 210D Oxford-tyg. Tar UV-strålningen i stället för plasten.",
+    "brandbunden": false,
+    "andring": "oförändrad — produktfakta",
+    "no_tg": "Kraftig 210D Oxford-stoff. Tar UV-strålene i stedet for plasten.",
+    "stryk_no": ""
+   },
+   {
+    "id": "knapp",
+    "roll": "knapp",
+    "mal": {
+     "form": 1,
+     "rad": 0
+    },
+    "se_kalla": "Skydda din tank idag",
+    "se_tg": "Skydda din tank idag",
+    "brandbunden": false,
+    "andring": "oförändrad",
+    "no_tg": "Beskytt tanken i dag",
+    "stryk_no": ""
+   }
+  ]
+ },
+ "IBC_BOF_4_1": {
+  "_anm": "Dragkedjan i fotot räknas som en textrad i form 0 — rubriken sätts med egna rutor (samma som NO-körningen 2026-09-08).",
+  "enheter": [
+   {
+    "id": "rubrik",
+    "roll": "rubrik",
+    "mal": {
+     "box": [
+      33,
+      60,
+      1047,
+      400
+     ],
+     "fet": true,
+     "storlek": 72,
+     "rader": 3,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.72
+    },
+    "se_kalla": "Blixtlås. Inte presenning och gummiband.",
+    "se_tg": "Blixtlås. Inte presenning och gummiband.",
+    "brandbunden": false,
+    "andring": "oförändrad — produktfakta",
+    "no_tg": "Glidelås. Ikke presenning og strikk.",
+    "stryk_no": ""
+   },
+   {
+    "id": "underrubrik",
+    "roll": "underrubrik",
+    "mal": {
+     "box": [
+      33,
+      440,
+      1047,
+      560
+     ],
+     "fet": false,
+     "storlek": 40,
+     "rader": 2,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.65
+    },
+    "se_kalla": "På och av med dragkedja — ingen kamp med väder eller vind.",
+    "se_tg": "På och av med dragkedja — ingen kamp med väder eller vind.",
+    "brandbunden": false,
+    "andring": "oförändrad",
+    "no_tg": "Av og på med glidelås — ingen kamp med vær eller vind.",
+    "stryk_no": ""
+   },
+   {
+    "id": "band",
+    "roll": "band",
+    "mal": {
+     "form": 1,
+     "rad": 0
+    },
+    "se_kalla": "Dragkedja · Öppning upptill · Passar 1000-liters IBC",
+    "se_tg": "Dragkedja · Öppning upptill · Passar 1000-liters IBC",
+    "brandbunden": false,
+    "andring": "oförändrad — produktfakta",
+    "no_tg": "Glidelås · Åpning på toppen · Passer 1000-liters IBC",
+    "stryk_no": ""
+   },
+   {
+    "id": "knapp",
+    "roll": "knapp",
+    "mal": {
+     "form": 2,
+     "rad": 0
+    },
+    "se_kalla": "Se hur enkelt det är",
+    "se_tg": "Se hur enkelt det är",
+    "brandbunden": false,
+    "andring": "oförändrad",
+    "no_tg": "Se hvor enkelt det er",
+    "stryk_no": ""
+   }
+  ]
+ },
+ "IBC_BOF_5_1": {
+  "_anm": "Vit rubrikplatta mot himlen — detektorn hittar den inte. Egna rutor.",
+  "enheter": [
+   {
+    "id": "rubrik",
+    "roll": "rubrik",
+    "mal": {
+     "box": [
+      33,
+      60,
+      1047,
+      400
+     ],
+     "fet": true,
+     "storlek": 72,
+     "rader": 3,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.72
+    },
+    "se_kalla": "Presenningen som skulle skydda blåser av vid första höststormen.",
+    "se_tg": "Presenningen som skulle skydda blåser av vid första höststormen.",
+    "brandbunden": false,
+    "andring": "oförändrad",
+    "no_tg": "Presenningen som skulle beskytte, blåser av i den første høststormen.",
+    "stryk_no": ""
+   },
+   {
+    "id": "underrubrik",
+    "roll": "underrubrik",
+    "mal": {
+     "box": [
+      33,
+      440,
+      1047,
+      500
+     ],
+     "fet": false,
+     "storlek": 40,
+     "rader": 1,
+     "farg": [
+      19,
+      18,
+      16
+     ]
+    },
+    "se_kalla": "Ett 210D Oxford-överdrag med blixtlås sitter kvar.",
+    "se_tg": "Ett 210D Oxford-överdrag med blixtlås sitter kvar.",
+    "brandbunden": false,
+    "andring": "oförändrad — produktfakta",
+    "no_tg": "Et 210D Oxford-trekk med glidelås blir sittende.",
+    "stryk_no": ""
+   },
+   {
+    "id": "band",
+    "roll": "band",
+    "mal": {
+     "form": 0,
+     "rad": 0
+    },
+    "se_kalla": "Ingen presenning · Inga gummiband · 210D Oxford-tyg",
+    "se_tg": "Ingen presenning · Inga gummiband · 210D Oxford-tyg",
+    "brandbunden": false,
+    "andring": "oförändrad — produktfakta",
+    "no_tg": "Ingen presenning · Ingen strikk · 210D Oxford-stoff",
+    "stryk_no": ""
+   },
+   {
+    "id": "knapp",
+    "roll": "knapp",
+    "mal": {
+     "form": 1,
+     "rad": 0
+    },
+    "se_kalla": "Skydda tanken innan hösten",
+    "se_tg": "Skydda tanken innan hösten",
+    "brandbunden": false,
+    "andring": "oförändrad",
+    "no_tg": "Beskytt tanken før høsten",
+    "stryk_no": ""
+   }
+  ]
+ },
+ "IBC_BOF_6_1": {
+  "_anm": "Form 1 och 3 är skräp (skåpbilsgrafiken och tanken) — rör dem inte.",
+  "enheter": [
+   {
+    "id": "rubrik",
+    "roll": "rubrik",
+    "mal": {
+     "form": 0,
+     "rader": [
+      0,
+      1
+     ]
+    },
+    "se_kalla": "Fri frakt inom Sverige, 5–10 arbetsdagar.",
+    "se_tg": "Fri frakt, 5–8 arbetsdagar.",
+    "brandbunden": true,
+    "andring": "TankGuard har fri frakt globalt utan landbegränsning och leveranstid 5–8 arbetsdagar (butik-mall.yaml frakt)",
+    "no_tg": "Gratis frakt, 5–8 virkedager.",
+    "stryk_no": ""
+   },
+   {
+    "id": "underrubrik",
+    "roll": "underrubrik",
+    "mal": {
+     "form": 0,
+     "rader": [
+      2,
+      3
+     ]
+    },
+    "se_kalla": "Beställ nu så är den på plats innan tanken hinner grönska.",
+    "se_tg": "Beställ nu så är den på plats innan tanken hinner grönska.",
+    "brandbunden": false,
+    "andring": "oförändrad",
+    "no_tg": "Bestill nå, så er den på plass før tanken gror igjen.",
+    "stryk_no": ""
+   },
+   {
+    "id": "band",
+    "roll": "band",
+    "mal": {
+     "form": 2,
+     "rad": 0
+    },
+    "se_kalla": "Fri frakt · Klarna – betala sen · 30 dagars öppet köp",
+    "se_tg": "Fri frakt · 5–8 arbetsdagar · 14 dagars ångerrätt",
+    "brandbunden": true,
+    "andring": "Klarna saknar källa för TankGuard och '30 dagars öppet köp' är förbjudet — ersatt med butik-mall.yaml frakt + retur",
+    "no_tg": "Gratis frakt · 5–8 virkedager · 14 dagers angrerett",
+    "stryk_no": ""
+   },
+   {
+    "id": "knapp",
+    "roll": "knapp",
+    "mal": {
+     "form": 4,
+     "rad": 0
+    },
+    "se_kalla": "Beställ nu",
+    "se_tg": "Beställ nu",
+    "brandbunden": false,
+    "andring": "oförändrad",
+    "no_tg": "Bestill nå",
+    "stryk_no": ""
+   }
+  ]
+ },
+ "IBC_CO_1_1": {
+  "_anm": "Före/efter-bild. Alla former i analysen är skräp ur fotot — allt sätts med egna rutor. Rubrikens två rader har varsin ruta så radbrytningen i hooken inte flyttar sig.",
+  "enheter": [
+   {
+    "id": "rubrik1",
+    "roll": "rubrik",
+    "mal": {
+     "box": [
+      33,
+      58,
+      1047,
+      172
+     ],
+     "fet": true,
+     "storlek": 72,
+     "rader": 1,
+     "farg": [
+      19,
+      18,
+      16
+     ]
+    },
+    "se_kalla": "Samma tank.",
+    "se_tg": "Samma tank.",
+    "no_tg": "Samme tank.",
+    "stryk_no": "",
+    "brandbunden": false,
+    "andring": "oförändrad — egen ruta per rad så radbrytningen i hooken behålls"
+   },
+   {
+    "id": "rubrik2",
+    "roll": "rubrik",
+    "mal": {
+     "box": [
+      33,
+      180,
+      1047,
+      294
+     ],
+     "fet": true,
+     "storlek": 72,
+     "rader": 1,
+     "farg": [
+      19,
+      18,
+      16
+     ]
+    },
+    "se_kalla": "Olika sommar.",
+    "se_tg": "Olika sommar.",
+    "no_tg": "Ulik sommer.",
+    "stryk_no": "",
+    "brandbunden": false,
+    "andring": "oförändrad"
+   },
+   {
+    "id": "band",
+    "roll": "band",
+    "mal": {
+     "box": [
+      33,
+      1197,
+      1047,
+      1275
+     ],
+     "fet": false,
+     "storlek": 37,
+     "rader": 1,
+     "farg": [
+      19,
+      17,
+      15
+     ]
+    },
+    "se_kalla": "Utan skydd — med IBC-tanköverdraget",
+    "se_tg": "Utan skydd — med IBC-tanköverdraget",
+    "brandbunden": false,
+    "andring": "oförändrad — produktnamn, samma produkt",
+    "no_tg": "Uten beskyttelse — med IBC-tanktrekket",
+    "stryk_no": ""
+   }
+  ]
+ },
+ "IBC_CS_3_1": {
+  "enheter": [
+   {
+    "id": "pris",
+    "roll": "rubrik",
+    "mal": {
+     "form": 0,
+     "rader": [
+      0,
+      1,
+      2
+     ]
+    },
+    "stryk": "636 kr",
+    "se_kalla": "489 kr istället för 636 kr — 210D Oxford-tyg som stoppar algen.",
+    "se_tg": "489 kr istället för 636 kr — 210D Oxford-tyg som stoppar algen.",
+    "brandbunden": true,
+    "andring": "oförändrad — samma pris som källan (489/636 kr, verifierat live)",
+    "no_tg": "439 kr i stedet for 586 kr — 210D Oxford-stoff som stopper algen.",
+    "stryk_no": "586 kr"
+   },
+   {
+    "id": "rabatt",
+    "roll": "underrubrik",
+    "mal": {
+     "form": 0,
+     "rad": 3
+    },
+    "se_kalla": "23 % rabatt just nu.",
+    "se_tg": "23 % rabatt just nu.",
+    "brandbunden": true,
+    "andring": "oförändrad — 1 − 489/636 = 23 %",
+    "no_tg": "25 % rabatt akkurat nå.",
+    "stryk_no": ""
+   },
+   {
+    "id": "villkor",
+    "roll": "band",
+    "mal": {
+     "form": 1,
+     "rad": 0
+    },
+    "se_kalla": "Fri frakt inom Sverige. Klarna — betala sen.",
+    "se_tg": "Fri frakt. 5–8 arbetsdagar.",
+    "brandbunden": true,
+    "andring": "fri frakt utan landbegränsning (fri_globalt), Klarna saknar källa för TankGuard",
+    "no_tg": "Gratis frakt. 5–8 virkedager.",
+    "stryk_no": ""
+   },
+   {
+    "id": "knapp",
+    "roll": "knapp",
+    "mal": {
+     "form": 2,
+     "rad": 0
+    },
+    "se_kalla": "Skydda din tank idag",
+    "se_tg": "Skydda din tank idag",
+    "brandbunden": false,
+    "andring": "oförändrad",
+    "no_tg": "Beskytt tanken i dag",
+    "stryk_no": ""
+   }
+  ]
+ },
+ "IBC_CS_4_1": {
+  "_anm": "Form 2 är en skräpform ovanför knappen — knappen är form 3. Form 4 är den mörka remsan längst ned, rör den inte.",
+  "enheter": [
+   {
+    "id": "pris",
+    "roll": "rubrik",
+    "mal": {
+     "form": 0,
+     "rad": 0
+    },
+    "stryk": "636 kr",
+    "se_kalla": "489 kr istället för 636 kr",
+    "se_tg": "489 kr istället för 636 kr",
+    "brandbunden": true,
+    "andring": "oförändrad — samma pris som källan",
+    "no_tg": "439 kr i stedet for 586 kr",
+    "stryk_no": "586 kr"
+   },
+   {
+    "id": "underrubrik",
+    "roll": "underrubrik",
+    "mal": {
+     "form": 0,
+     "rader": [
+      1,
+      2
+     ]
+    },
+    "se_kalla": "147 kr mindre för samma 210D Oxford-tyg som stänger ute ljuset.",
+    "se_tg": "147 kr mindre för samma 210D Oxford-tyg som stänger ute ljuset.",
+    "brandbunden": true,
+    "andring": "oförändrad — 636 − 489 = 147 kr",
+    "no_tg": "147 kr mindre for samme 210D Oxford-stoff som stenger ute lyset.",
+    "stryk_no": ""
+   },
+   {
+    "id": "band",
+    "roll": "band",
+    "mal": {
+     "form": 1,
+     "rad": 0
+    },
+    "se_kalla": "210D Oxford-tyg · Blixtlås · Öppning upptill",
+    "se_tg": "210D Oxford-tyg · Blixtlås · Öppning upptill",
+    "brandbunden": false,
+    "andring": "oförändrad — produktfakta",
+    "no_tg": "210D Oxford-stoff · Glidelås · Åpning på toppen",
+    "stryk_no": ""
+   },
+   {
+    "id": "knapp",
+    "roll": "knapp",
+    "mal": {
+     "box": [
+      318,
+      1212,
+      762,
+      1298
+     ],
+     "fet": true,
+     "storlek": 39,
+     "rader": 1,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    },
+    "se_kalla": "Beställ idag – 489 kr",
+    "se_tg": "Beställ idag – 489 kr",
+    "brandbunden": true,
+    "andring": "oförändrad — samma pris som källan",
+    "no_tg": "Bestill i dag – 439 kr",
+    "stryk_no": ""
+   }
+  ]
+ },
+ "IBC_PD_3_1": {
+  "enheter": [
+   {
+    "id": "rubrik",
+    "roll": "rubrik",
+    "mal": {
+     "form": 0,
+     "rader": [
+      0,
+      1,
+      2
+     ]
+    },
+    "se_kalla": "210D Oxford-tyg. UV och alger stannar utanför.",
+    "se_tg": "210D Oxford-tyg. UV och alger stannar utanför.",
+    "brandbunden": false,
+    "andring": "oförändrad — produktfakta",
+    "no_tg": "210D Oxford-stoff. UV og alger blir utenfor.",
+    "stryk_no": ""
+   },
+   {
+    "id": "band",
+    "roll": "band",
+    "mal": {
+     "form": 1,
+     "rad": 0
+    },
+    "se_kalla": "Blixtlås på 2 minuter · Öppning upptill",
+    "se_tg": "Blixtlås på 2 minuter · Öppning upptill",
+    "brandbunden": false,
+    "andring": "oförändrad — produktfakta",
+    "no_tg": "Glidelås på 2 minutter · Åpning på toppen",
+    "stryk_no": ""
+   }
+  ]
+ },
+ "IBC_PD_4_1": {
+  "enheter": [
+   {
+    "id": "rubrik",
+    "roll": "rubrik",
+    "mal": {
+     "form": 0,
+     "rader": [
+      0,
+      1,
+      2
+     ]
+    },
+    "se_kalla": "210D Oxford-tyg. Stänger ute ljuset. Ingen alg.",
+    "se_tg": "210D Oxford-tyg. Stänger ute ljuset. Ingen alg.",
+    "brandbunden": false,
+    "andring": "oförändrad — produktfakta",
+    "no_tg": "210D Oxford-stoff. Stenger ute lyset. Ingen alger.",
+    "stryk_no": ""
+   },
+   {
+    "id": "underrubrik",
+    "roll": "underrubrik",
+    "mal": {
+     "form": 0,
+     "rad": 3
+    },
+    "se_kalla": "Kraftigt tyg. Enkelt blixtlås. Öppning upptill.",
+    "se_tg": "Kraftigt tyg. Enkelt blixtlås. Öppning upptill.",
+    "brandbunden": false,
+    "andring": "oförändrad — produktfakta",
+    "no_tg": "Kraftig stoff. Enkel glidelås. Åpning på toppen.",
+    "stryk_no": ""
+   },
+   {
+    "id": "knapp",
+    "roll": "knapp",
+    "mal": {
+     "form": 1,
+     "rad": 0
+    },
+    "se_kalla": "Skydda din tank idag",
+    "se_tg": "Skydda din tank idag",
+    "brandbunden": false,
+    "andring": "oförändrad",
+    "no_tg": "Beskytt tanken i dag",
+    "stryk_no": ""
+   }
+  ]
+ },
+ "IBC_PD_5_1": {
+  "_anm": "Rubrikplattan går kant i kant med fotot — egna rutor (samma som NO-körningen 2026-09-08). Form 1, 2 och 3 är skräp ur fotot.",
+  "enheter": [
+   {
+    "id": "rubrik",
+    "roll": "rubrik",
+    "mal": {
+     "box": [
+      33,
+      60,
+      1047,
+      290
+     ],
+     "fet": true,
+     "storlek": 72,
+     "rader": 2,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.72
+    },
+    "se_kalla": "210D Oxford-tyg mellan solen och ditt regnvatten.",
+    "se_tg": "210D Oxford-tyg mellan solen och ditt regnvatten.",
+    "brandbunden": false,
+    "andring": "oförändrad — produktfakta",
+    "no_tg": "210D Oxford-stoff mellom solen og regnvannet ditt.",
+    "stryk_no": ""
+   },
+   {
+    "id": "underrubrik",
+    "roll": "underrubrik",
+    "mal": {
+     "box": [
+      33,
+      322,
+      1047,
+      440
+     ],
+     "fet": false,
+     "storlek": 40,
+     "rader": 2,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.45
+    },
+    "se_kalla": "Ingen presenning, inga gummiband — bara ett blixtlås.",
+    "se_tg": "Ingen presenning, inga gummiband — bara ett blixtlås.",
+    "brandbunden": false,
+    "andring": "oförändrad",
+    "no_tg": "Ingen presenning, ingen strikk — bare en glidelås.",
+    "stryk_no": ""
+   },
+   {
+    "id": "band",
+    "roll": "band",
+    "mal": {
+     "form": 4,
+     "rad": 0
+    },
+    "se_kalla": "Stänger ute UV · Öppning upptill · Passar 1000L IBC",
+    "se_tg": "Stänger ute UV · Öppning upptill · Passar 1000L IBC",
+    "brandbunden": false,
+    "andring": "oförändrad — produktfakta",
+    "no_tg": "Stenger ute UV · Åpning på toppen · Passer 1000L IBC",
+    "stryk_no": ""
+   },
+   {
+    "id": "knapp",
+    "roll": "knapp",
+    "mal": {
+     "form": 5,
+     "rad": 0
+    },
+    "se_kalla": "Skydda din tank idag",
+    "se_tg": "Skydda din tank idag",
+    "brandbunden": false,
+    "andring": "oförändrad",
+    "no_tg": "Beskytt tanken i dag",
+    "stryk_no": ""
+   }
+  ]
+ },
+ "IBC_RV_1_1": {
+  "_anm": "Stjärnorna ovanför citatet är grafik, inte text. Form 1 rad 1 är skräp.",
+  "enheter": [
+   {
+    "id": "citat",
+    "roll": "citat",
+    "mal": {
+     "form": 0,
+     "rader": [
+      0,
+      1,
+      2
+     ]
+    },
+    "se_kalla": "”Jag är nöjd. Nu slipper jag mycket solljus på tanken och det ser även snyggare ut.”",
+    "se_tg": "”Jag är nöjd. Nu slipper jag mycket solljus på tanken och det ser även snyggare ut.”",
+    "brandbunden": false,
+    "andring": "oförändrad — äkta kundrecension på samma produkt",
+    "no_tg": "”Jeg er fornøyd. Nå slipper jeg mye sollys på tanken, og det ser penere ut også.”",
+    "stryk_no": ""
+   },
+   {
+    "id": "namn",
+    "roll": "namn",
+    "mal": {
+     "form": 0,
+     "rad": 3
+    },
+    "se_kalla": "— Maria",
+    "se_tg": "— Maria",
+    "brandbunden": true,
+    "andring": "oförändrad på svenska — samma butik som recensionen visas i",
+    "no_tg": "— Maria, tankguard.se",
+    "stryk_no": ""
+   },
+   {
+    "id": "knapp",
+    "roll": "knapp",
+    "mal": {
+     "form": 1,
+     "rad": 0
+    },
+    "se_kalla": "Skydda din tank idag",
+    "se_tg": "Skydda din tank idag",
+    "brandbunden": false,
+    "andring": "oförändrad",
+    "no_tg": "Beskytt tanken i dag",
+    "stryk_no": ""
+   }
+  ]
+ },
+ "IBC_RV_2_1": {
+  "enheter": [
+   {
+    "id": "citat",
+    "roll": "citat",
+    "mal": {
+     "form": 0,
+     "rader": [
+      0,
+      1,
+      2
+     ]
+    },
+    "se_kalla": "”Köpte detta för min regnvattentank. Fungerar bra och är enkelt att öppna när jag behöver.”",
+    "se_tg": "”Köpte detta för min regnvattentank. Fungerar bra och är enkelt att öppna när jag behöver.”",
+    "brandbunden": false,
+    "andring": "oförändrad — äkta kundrecension på samma produkt",
+    "no_tg": "”Kjøpte dette til regnvannstanken min. Fungerer bra og er enkelt å åpne når jeg trenger det.”",
+    "stryk_no": ""
+   },
+   {
+    "id": "namn",
+    "roll": "namn",
+    "mal": {
+     "form": 0,
+     "rad": 3
+    },
+    "se_kalla": "— Lena",
+    "se_tg": "— Lena",
+    "brandbunden": true,
+    "andring": "oförändrad på svenska",
+    "no_tg": "— Lena, tankguard.se",
+    "stryk_no": ""
+   },
+   {
+    "id": "knapp",
+    "roll": "knapp",
+    "mal": {
+     "form": 1,
+     "rad": 0
+    },
+    "se_kalla": "Skydda din tank idag",
+    "se_tg": "Skydda din tank idag",
+    "brandbunden": false,
+    "andring": "oförändrad",
+    "no_tg": "Beskytt tanken i dag",
+    "stryk_no": ""
+   }
+  ]
+ },
+ "IBC_RV_3_1": {
+  "_anm": "Form 1 är skräp ur fotot. Prisraden är vit text direkt på fotot — egen ruta.",
+  "enheter": [
+   {
+    "id": "namn",
+    "roll": "namn",
+    "mal": {
+     "form": 0,
+     "rad": 0
+    },
+    "se_kalla": "Sofia",
+    "se_tg": "Sofia",
+    "brandbunden": true,
+    "andring": "oförändrad på svenska",
+    "no_tg": "Sofia, tankguard.se",
+    "stryk_no": ""
+   },
+   {
+    "id": "citat",
+    "roll": "citat",
+    "mal": {
+     "form": 0,
+     "rader": [
+      1,
+      2,
+      3
+     ]
+    },
+    "se_kalla": "”Passar bra på tanken och skyddar mot solen. Precis vad jag behövde.”",
+    "se_tg": "”Passar bra på tanken och skyddar mot solen. Precis vad jag behövde.”",
+    "brandbunden": false,
+    "andring": "oförändrad — äkta kundrecension",
+    "no_tg": "”Passer bra på tanken og beskytter mot solen. Akkurat det jeg trengte.”",
+    "stryk_no": ""
+   },
+   {
+    "id": "pris",
+    "roll": "band",
+    "mal": {
+     "box": [
+      33,
+      1086,
+      1047,
+      1132
+     ],
+     "fet": true,
+     "storlek": 30,
+     "rader": 1,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true,
+     "fyllning": "rad",
+     "utvidga": 4
+    },
+    "se_kalla": "489 kr, 23% rabatt",
+    "se_tg": "489 kr, 23% rabatt",
+    "brandbunden": true,
+    "andring": "oförändrad — samma pris som källan",
+    "no_tg": "439 kr, 25% rabatt",
+    "stryk_no": ""
+   },
+   {
+    "id": "knapp",
+    "roll": "knapp",
+    "mal": {
+     "form": 2,
+     "rad": 0
+    },
+    "se_kalla": "Beställ idag",
+    "se_tg": "Beställ idag",
+    "brandbunden": false,
+    "andring": "oförändrad",
+    "no_tg": "Bestill i dag",
+    "stryk_no": ""
+   }
+  ]
+ },
+ "IBC_RV_4_1": {
+  "_anm": "Citatplattan hittas inte av detektorn (form 0 är skräp ur fotot). Egna rutor, samma som NO-körningen 2026-09-08. Fototextrutan är smalnad till textens bredd — full bredd gav grå kanter på det ljusa golvet.",
+  "enheter": [
+   {
+    "id": "namn",
+    "roll": "namn",
+    "mal": {
+     "box": [
+      33,
+      118,
+      1047,
+      152
+     ],
+     "fet": false,
+     "storlek": 27,
+     "rader": 1,
+     "farg": [
+      20,
+      47,
+      74
+     ]
+    },
+    "se_kalla": "Johan",
+    "se_tg": "Johan",
+    "brandbunden": true,
+    "andring": "oförändrad på svenska",
+    "no_tg": "Johan, tankguard.se",
+    "stryk_no": ""
+   },
+   {
+    "id": "citat",
+    "roll": "citat",
+    "mal": {
+     "box": [
+      33,
+      180,
+      1047,
+      395
+     ],
+     "fet": true,
+     "storlek": 56,
+     "rader": 3,
+     "farg": [
+      20,
+      47,
+      74
+     ],
+     "radavstand": 1.3
+    },
+    "se_kalla": "”Bra kvalitet och lätt att använda. Passade min 1000 liters tank utan problem.”",
+    "se_tg": "”Bra kvalitet och lätt att använda. Passade min 1000 liters tank utan problem.”",
+    "brandbunden": false,
+    "andring": "oförändrad — äkta kundrecension",
+    "no_tg": "”Bra kvalitet og lett å bruke. Passet min 1000-liters tank uten problem.”",
+    "stryk_no": ""
+   },
+   {
+    "id": "band",
+    "roll": "band",
+    "mal": {
+     "box": [
+      290,
+      1086,
+      790,
+      1132
+     ],
+     "fet": true,
+     "storlek": 30,
+     "rader": 1,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true,
+     "fyllning": "rad",
+     "utvidga": 4
+    },
+    "se_kalla": "Passar standard 1000L IBC-tank",
+    "se_tg": "Passar standard 1000L IBC-tank",
+    "brandbunden": false,
+    "andring": "oförändrad — produktfakta",
+    "no_tg": "Passer standard 1000L IBC-tank",
+    "stryk_no": ""
+   },
+   {
+    "id": "knapp",
+    "roll": "knapp",
+    "mal": {
+     "form": 1,
+     "rad": 0
+    },
+    "se_kalla": "Beställ idag",
+    "se_tg": "Beställ idag",
+    "brandbunden": false,
+    "andring": "oförändrad",
+    "no_tg": "Bestill i dag",
+    "stryk_no": ""
+   }
+  ]
+ }
+}

@@ -1,0 +1,49 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   400
+  ],
+  "text": "Presenningen som skulle beskytte, blåser av i den første høststormen.",
+  "fet": true,
+  "storlek": 72,
+  "rader": 3,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.72
+ },
+ {
+  "box": [
+   33,
+   440,
+   1047,
+   500
+  ],
+  "text": "Et 210D Oxford-trekk med glidelås blir sittende.",
+  "fet": false,
+  "storlek": 40,
+  "rader": 1,
+  "farg": [
+   19,
+   18,
+   16
+  ]
+ },
+ {
+  "form": 0,
+  "rad": 0,
+  "text": "Ingen presenning · Ingen strikk · 210D Oxford-stoff",
+  "se": "Ingen presenning · Inga gummiband · 210D Oxford-tyg"
+ },
+ {
+  "form": 1,
+  "rad": 0,
+  "text": "Beskytt tanken før høsten",
+  "se": "Skydda tanken innan hösten"
+ }
+]

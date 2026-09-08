@@ -1,0 +1,43 @@
+[
+ {
+  "form": 0,
+  "rad": 0,
+  "text": "Sofia, tankguard.se",
+  "se": "Sofia"
+ },
+ {
+  "form": 0,
+  "rader": [
+   1,
+   2,
+   3
+  ],
+  "text": "”Passer bra på tanken og beskytter mot solen. Akkurat det jeg trengte.”"
+ },
+ {
+  "box": [
+   33,
+   1086,
+   1047,
+   1132
+  ],
+  "text": "439 kr, 25% rabatt",
+  "fet": true,
+  "storlek": 30,
+  "rader": 1,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "fyllning": "rad",
+  "utvidga": 4
+ },
+ {
+  "form": 2,
+  "rad": 0,
+  "text": "Bestill i dag",
+  "se": "Beställ idag"
+ }
+]

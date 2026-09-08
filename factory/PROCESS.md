@@ -154,10 +154,28 @@ som genereras per bygge).
     när META_ACCESS_TOKEN finns. 🖐 WeTracked: nytt konto per butik,
     klistra in pixel-id.
 
-## Fas 6 — Annonser (nästa fas, ej bevisad än)
-18. ⚙️ Brand-swap av Bäverbutikens vinnare (PLAN.md punkt 1).
+## Fas 6 — Annonser
+18. ⚙️ **Brand-swap av Bäverbutikens vinnare** (PLAN.md punkt 1).
+    **Bildannonserna är bevisade 2026-09-08** på TankGuard: 20 källannonser →
+    40 bilder, `factory/brandswap/ibc-tankguard/`. Så gör du om det:
+    - Hämta produktens bildannonser ur MagiBorsten (kampanjen som bär
+      annonsprefixet) — annons-id, `image_hash` och `object_story_spec`.
+    - Skriv ett faktablad (`fakta.md`) FÖRE första bilden: pris och jämförpris
+      ur källbutikens produktsida (steg 1-regeln), villkoren ur butikens egen
+      yaml eller `butik-mall.yaml`. En källa per siffra. Står den inte där får
+      den inte stå i annonsen.
+    - Transkribera varje bild till en textplan och märk varje textenhet
+      **brandbunden eller inte**. Brandbundet = pris, rabatt, frakt, retur,
+      betalsätt, leveranstid, recensionens avsändare. Allt annat står kvar
+      ordagrant — ett bevisat creative skrivs inte om i onödan.
+    - Rendera med `factory/brandswap/rendera.py` (mallannonser, noll krediter)
+      och `rendera-foto.py` (text direkt på fotot: kie rensar → vektortext).
+    - Swappa annonstexten utanför bilden i samma svep — den bär oftare
+      förbjudna löften än bilden gör.
 19. ⚙️ Q4-ramverket i annonsplanen: banka creatives i förväg (dubbla antalet),
     större PO innan säsong (PLAN.md punkt 6).
+20. ⚙️ Videoannonserna är INTE brand-swappade än — talet i videon och
+    slutkortet är egna ytor (FAS2 Uppdrag A, ytorna 2 och 3).
 
 ## Regler som bevisats den hårda vägen
 - **Alltid svensk lag, aldrig egna köplöften** (Axels beslut 2026-09-08:
