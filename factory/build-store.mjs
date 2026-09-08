@@ -39,7 +39,9 @@ export function byggPlan(p) {
   const input = {
     title: p.produkt.namn,
     handle: p.produkt.id,
-    status: 'DRAFT',
+    // ACTIVE från start (Axels bakläxa 2026-09-08: DRAFT ger 404 i menyn och
+    // "Exempel på produktnamn" i kundvyn — trial-lösenordet skyddar butiken).
+    status: 'ACTIVE',
     descriptionHtml: byggKortBeskrivning(p),
     vendor: p.brand.namn,
     seo: {

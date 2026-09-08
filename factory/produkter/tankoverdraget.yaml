@@ -257,13 +257,15 @@ faq:
     svar: "Trä överdraget över tanken och stäng dragkedjan – inga verktyg, ingen presenning och inga gummiband."
   - fraga: "Hur lång är leveranstiden?"
     svar: "6–10 arbetsdagar med fri frakt inom Sverige."
-  - fraga: "Vad händer om jag inte blir nöjd?"
-    svar: "30 dagars öppet köp – gillar du det inte får du pengarna tillbaka."
+  - fraga: "Kan jag ångra köpet?"
+    svar: "Ja, du har 14 dagars ångerrätt enligt distansavtalslagen. Mejla hello@tankguard.se så får du en returinstruktion."
 
 leveranstid: "6–10 arbetsdagar"
 
+# Butikens garanti (14 dagars ångerrätt, svensk lag) ärvs från butiksfilen —
+# inga egna köplöften här (Axels beslut 2026-09-08).
 garantier:
-  - "30 dagars öppet köp – gillar du det inte får du pengarna tillbaka"
+  - ""
 
 leverantor:
   url: "https://www.temu.com/se/g-601099590911868.html"

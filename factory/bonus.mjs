@@ -30,7 +30,8 @@ export function byggBonusBeskrivning(b, garanti) {
   if (text(b.losning_text)) delar.push(`<p>${eskapa(b.losning_text)}</p>`);
   const funk = lista(b.features);
   if (funk.length > 0) delar.push(`<h3>Funktioner</h3><ul>${funk.map((f) => `<li>${eskapa(f)}</li>`).join('')}</ul>`);
-  if (text(garanti)) delar.push(`<h3>Vår garanti</h3><p>${eskapa(garanti)}</p>`);
+  // Svensk lag, inga egna köplöften: blocket heter Ångerrätt och säger lagens 14 dagar.
+  if (text(garanti)) delar.push(`<h3>Ångerrätt</h3><p>${eskapa(garanti)} enligt distansavtalslagen.</p>`);
   return delar.join('\n');
 }
 

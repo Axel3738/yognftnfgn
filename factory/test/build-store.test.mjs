@@ -12,11 +12,11 @@ import { byggSidaHtml, byggForhandsvisning, byggSektioner, formatPris, kundUnder
 import { dummy, medButiksfrakt, raprodukt } from './hjalp.mjs';
 
 
-test('planen: titel, handle, DRAFT och vendor', () => {
+test('planen: titel, handle, ACTIVE och vendor', () => {
   const { input } = byggPlan(dummy());
   assert.equal(input.title, 'Nackmagneten');
   assert.equal(input.handle, 'nackmagneten');
-  assert.equal(input.status, 'DRAFT');
+  assert.equal(input.status, 'ACTIVE');
   assert.equal(input.vendor, 'Nackmagneten');
 });
 

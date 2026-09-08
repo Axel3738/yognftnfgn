@@ -1,15 +1,20 @@
-// Loggan och faviconen ur brand-configen: rund emblem (mörk cirkel +
-// ordmärket i versaler, spärrat, vitt) och en cirkel med initialen.
-// Samma konstruktion som HeimGuard (Axels regel: rund logga, brandnamnet,
-// seriöst) — färgerna kommer ur butikens EGEN branding, aldrig förra butikens.
+// Loggan och faviconen ur brand-configen — TRE varianter, alla runda med
+// brandnamnet (regeln: rund logga, brandnamnet, seriöst). Axels krav
+// 2026-09-08: varianterna VISAS i chatten och Axel väljer innan något sätts
+// i butiken (första TankGuard-loggan underkändes).
 //
-//   node factory/logga.mjs factory/butiker/<butik>.yaml [--ut <mapp>]
+//   node factory/logga.mjs factory/butiker/<butik>.yaml [--ut <mapp>] [--variant a|b|c]
 //
-// Skriver <mapp>/<id>-logga.png (1024²) + <id>-favicon.png (256²) och
-// SVG-källorna bredvid. Rastreringen görs av sharp (librsvg) som ligger i
-// pipeline/node_modules — kör `cd pipeline && npm install` en gång; molnet
-// saknar qlmanage. Typsnittet är systemets DejaVu Sans Bold (finns i
-// containern) — loggan är ett ordmärke, inte temats typsnitt.
+// Utan --variant skrivs alla tre: <id>-logga-a.png, -b.png, -c.png (1024²)
+// + <id>-favicon.png (256²) + SVG-källorna. Färgerna kommer ur butikens EGEN
+// branding, typsnittet ur branding.typografi.rubriker (Shopify-handle, t.ex.
+// archivo_n7 → "Archivo" bold) — typsnittet måste finnas i systemet
+// (ladda ner TTF från jsDelivrs spegel av google/fonts till ~/.fonts och kör
+// fc-cache). Rastreringen görs av sharp (librsvg) ur pipeline/node_modules.
+//
+//   a — emblem: mörk disk, tunn ring, ordmärket spärrat, droppe ovanför
+//   b — sigill: ljus disk med mörk ring, ordmärket i två rader (TANK / GUARD)
+//   c — monogram: mörk disk, stor initialkombination, ordmärket litet under
 
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { createRequire } from 'node:module';
@@ -30,45 +35,117 @@ function sharpModul() {
 
 const eskapa = (s) => String(s).replaceAll('&', '&amp;').replaceAll('<', '&lt;');
 
-// Ordmärket ska rymmas i cirkeln: bredden skalas efter antalet tecken.
-export function loggaSvg(brand, { mork, text }) {
+// "archivo_n7" → { familj: "Archivo", vikt: 700 }
+export function typsnittUrHandle(handle) {
+  const m = String(handle ?? '').match(/^([a-z0-9_]+?)_n(\d)$/i);
+  if (!m) return { familj: 'DejaVu Sans', vikt: 700 };
+  const familj = m[1].split('_').map((d) => d.charAt(0).toUpperCase() + d.slice(1)).join(' ');
+  return { familj, vikt: Number(m[2]) * 100 };
+}
+
+const DROPPE = (cx, cy, r, fill) =>
+  `<path d="M${cx} ${cy - r * 1.35} C${cx + r * 0.9} ${cy - r * 0.25} ${cx + r} ${cy + r * 0.15} ${cx + r} ${cy + r * 0.35} A${r} ${r} 0 1 1 ${cx - r} ${cy + r * 0.35} C${cx - r} ${cy + r * 0.15} ${cx - r * 0.9} ${cy - r * 0.25} ${cx} ${cy - r * 1.35} Z" fill="${fill}"/>`;
+
+function font(t) {
+  const f = typsnittUrHandle(t.typografi?.rubriker);
+  return `font-family="${f.familj}, DejaVu Sans, sans-serif" font-weight="${f.vikt}"`;
+}
+
+// Bredd på ordmärket styr storleken: rymms inom ~74 % av diametern.
+function ordStorlek(ord, maxBredd, faktor = 0.68) {
+  return Math.floor(maxBredd / (ord.length * faktor));
+}
+
+export function loggaSvgA(brand, t) {
+  const f = t.farger;
   const ord = String(brand).toUpperCase();
-  const storlek = Math.min(150, Math.floor(760 / (ord.length * 0.72)));
+  const size = Math.min(140, ordStorlek(ord, 740));
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
-  <circle cx="512" cy="512" r="512" fill="${mork}"/>
-  <text x="512" y="512" text-anchor="middle" dominant-baseline="central"
-        font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-weight="bold"
-        font-size="${storlek}" letter-spacing="${Math.round(storlek * 0.08)}" fill="${text}">${eskapa(ord)}</text>
+  <circle cx="512" cy="512" r="512" fill="${f.mork}"/>
+  <circle cx="512" cy="512" r="452" fill="none" stroke="${f.text_pa_mork}" stroke-opacity="0.35" stroke-width="6"/>
+  ${DROPPE(512, 372, 46, f.text_pa_mork)}
+  <text x="512" y="548" text-anchor="middle" dominant-baseline="central" ${font(t)}
+        font-size="${size}" letter-spacing="${Math.round(size * 0.1)}" fill="${f.text_pa_mork}">${eskapa(ord)}</text>
+  <text x="512" y="660" text-anchor="middle" dominant-baseline="central" ${font(t)}
+        font-size="30" letter-spacing="9" fill="${f.text_pa_mork}" fill-opacity="0.7">${eskapa(t.tagline ?? '')}</text>
 </svg>
 `;
 }
 
-export function faviconSvg(brand, { mork, text }) {
+// "TankGuard" → ["Tank", "Guard"] (kamelnotation), "Hemvakten" → ["Hemvakten"].
+export function orddelar(brand) {
+  const delar = String(brand).match(/[A-ZÅÄÖ][a-zåäö]+|[A-ZÅÄÖ]+(?![a-zåäö])|[a-zåäö]+/g) ?? [String(brand)];
+  return delar.map((d) => d.toUpperCase());
+}
+
+export function loggaSvgB(brand, t) {
+  const f = t.farger;
+  const delar = orddelar(brand);
+  const langsta = delar.reduce((a, b) => (b.length > a.length ? b : a), '');
+  const size = Math.min(190, ordStorlek(langsta, 600, 0.7));
+  const startY = delar.length === 1 ? 540 : 512 - ((delar.length - 1) * (size + 20)) / 2 + 20;
+  const rader = delar
+    .map((d, i) => `<text x="512" y="${startY + i * (size + 20)}" text-anchor="middle" dominant-baseline="central" ${font(t)} font-size="${size}" letter-spacing="${Math.round(size * 0.06)}" fill="${f.mork}">${eskapa(d)}</text>`)
+    .join('\n  ');
+  const sistaY = startY + (delar.length - 1) * (size + 20) + size * 0.62;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <circle cx="512" cy="512" r="512" fill="${f.yta}"/>
+  <circle cx="512" cy="512" r="470" fill="none" stroke="${f.mork}" stroke-width="34"/>
+  ${DROPPE(512, startY - size * 0.62 - 60, 30, f.accent)}
+  ${rader}
+  <line x1="392" y1="${sistaY + 34}" x2="632" y2="${sistaY + 34}" stroke="${f.accent}" stroke-width="8" stroke-linecap="round"/>
+</svg>
+`;
+}
+
+export function loggaSvgC(brand, t) {
+  const f = t.farger;
+  const ord = String(brand).toUpperCase();
+  const delar = orddelar(brand);
+  const monogram = delar.length >= 2 ? delar[0][0] + delar[1][0] : ord.slice(0, 2);
+  const size = Math.min(110, ordStorlek(ord, 600));
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <circle cx="512" cy="512" r="512" fill="${f.mork}"/>
+  <circle cx="512" cy="512" r="464" fill="none" stroke="${f.text_pa_mork}" stroke-opacity="0.3" stroke-width="4"/>
+  <text x="512" y="452" text-anchor="middle" dominant-baseline="central" ${font(t)}
+        font-size="400" letter-spacing="-12" fill="${f.text_pa_mork}">${eskapa(monogram)}</text>
+  <line x1="332" y1="640" x2="692" y2="640" stroke="${f.text_pa_mork}" stroke-opacity="0.45" stroke-width="5" stroke-linecap="round"/>
+  <text x="512" y="712" text-anchor="middle" dominant-baseline="central" ${font(t)}
+        font-size="${size}" letter-spacing="${Math.round(size * 0.14)}" fill="${f.text_pa_mork}">${eskapa(ord)}</text>
+</svg>
+`;
+}
+
+export function faviconSvg(brand, t) {
+  const f = t.farger;
   const initial = String(brand).trim().charAt(0).toUpperCase();
   return `<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
-  <circle cx="128" cy="128" r="128" fill="${mork}"/>
-  <text x="128" y="132" text-anchor="middle" dominant-baseline="central"
-        font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-weight="bold"
-        font-size="160" fill="${text}">${eskapa(initial)}</text>
+  <circle cx="128" cy="128" r="128" fill="${f.mork}"/>
+  <text x="128" y="134" text-anchor="middle" dominant-baseline="central" ${font(t)}
+        font-size="170" fill="${f.text_pa_mork}">${eskapa(initial)}</text>
 </svg>
 `;
 }
 
-export async function byggLogga(butiksfil, utMapp) {
+export const VARIANTER = { a: loggaSvgA, b: loggaSvgB, c: loggaSvgC };
+
+export async function byggLogga(butiksfil, utMapp, { variant = null, tagline = '' } = {}) {
   const butik = lasYaml(readFileSync(butiksfil, 'utf8'));
   const id = butik?.butik?.id;
   const brand = butik?.butik?.brand;
   if (!id || !brand) throw new Error('Butiksfilen saknar butik.id/butik.brand.');
-  const t = hamtaTokens(butik.branding);
-  const farger = { mork: t.farger.mork, text: t.farger.text_pa_mork };
+  const t = { ...hamtaTokens(butik.branding), tagline };
   mkdirSync(utMapp, { recursive: true });
 
   const sharp = sharpModul();
   const filer = {};
-  for (const [namn, svg, px] of [
-    ['logga', loggaSvg(brand, farger), 1024],
-    ['favicon', faviconSvg(brand, farger), 256],
-  ]) {
+  const jobb = [
+    ...Object.entries(VARIANTER)
+      .filter(([v]) => !variant || v === variant)
+      .map(([v, fn]) => [`logga-${v}`, fn(brand, t), 1024]),
+    ['favicon', faviconSvg(brand, t), 256],
+  ];
+  for (const [namn, svg, px] of jobb) {
     const svgFil = join(utMapp, `${id}-${namn}.svg`);
     const pngFil = join(utMapp, `${id}-${namn}.png`);
     writeFileSync(svgFil, svg);
@@ -80,13 +157,15 @@ export async function byggLogga(butiksfil, utMapp) {
 
 async function huvud() {
   const arg = process.argv.slice(2);
-  const butiksfil = arg.find((a) => !a.startsWith('--'));
+  const butiksfil = arg.find((a) => !a.startsWith('--') && a.endsWith('.yaml'));
   const ut = arg.includes('--ut') ? arg[arg.indexOf('--ut') + 1] : join(FACTORY_ROT, 'output', 'loggor');
+  const variant = arg.includes('--variant') ? arg[arg.indexOf('--variant') + 1] : null;
+  const tagline = arg.includes('--tagline') ? arg[arg.indexOf('--tagline') + 1] : '';
   if (!butiksfil) {
-    console.error('Användning: node factory/logga.mjs factory/butiker/<butik>.yaml [--ut <mapp>]');
+    console.error('Användning: node factory/logga.mjs factory/butiker/<butik>.yaml [--ut <mapp>] [--variant a|b|c] [--tagline "…"]');
     process.exit(1);
   }
-  const filer = await byggLogga(butiksfil, ut);
+  const filer = await byggLogga(butiksfil, ut, { variant, tagline });
   for (const [namn, fil] of Object.entries(filer)) console.log(`✅ ${namn}: ${fil}`);
 }
 

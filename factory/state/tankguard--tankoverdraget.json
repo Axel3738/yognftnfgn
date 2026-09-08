@@ -6,7 +6,7 @@
       "klar": true,
       "id": "gid://shopify/Product/15989715108184",
       "handle": "tankoverdraget",
-      "status": "DRAFT"
+      "status": "ACTIVE"
     },
     "metafalt": {
       "klar": true,
@@ -66,12 +66,12 @@
       "valuta": "SEK"
     }
   },
-  "uppdaterad": "2026-09-08T06:14:23.479Z",
+  "uppdaterad": "2026-09-08T07:12:35.093Z",
   "qa": {
     "gron": false,
     "kritiska": [
       "tracking"
     ],
-    "tid": "2026-09-08T06:14:23.479Z"
+    "tid": "2026-09-08T07:12:35.093Z"
   }
 }

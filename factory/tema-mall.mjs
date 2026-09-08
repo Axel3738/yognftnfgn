@@ -33,13 +33,19 @@ export function leveransdagar(leveranstid) {
 
 // Trygghetsraden under köpknappen och USP-raden på startsidan — samma källa
 // som fraktzonerna och returvillkoren, så de kan inte säga olika saker.
+// Alltid svensk lag, aldrig egna köplöften (Axels beslut 2026-09-08):
+// raden säger "14 dagars ångerrätt", oavsett vad konfigen råkar ha.
+export function angerrattRad(butik) {
+  const dagar = Number(butik?.retur?.angerratt_dagar) || 14;
+  return `${dagar} dagars ångerrätt`;
+}
+
 export function trustPunkter(butik) {
   const land = text(butik?.butik?.huvudmarknad) ?? 'Sverige';
   const fri = butik?.frakt?.fri_globalt !== false;
-  const dagar = butik?.retur?.oppet_kop_dagar;
   return [
     fri ? `truck:Fri frakt i ${land}` : 'truck:Snabb leverans',
-    dagar ? `refresh:${dagar} dagars öppet köp` : 'refresh:Ångerrätt 14 dagar',
+    `refresh:${angerrattRad(butik)}`,
     'lock:Trygg betalning',
   ];
 }
@@ -127,12 +133,12 @@ export function byggIndex(butik, p) {
   const test = text(p.offer?.paket?.test) ?? '';
   const statement = String(lista(p.benefits)[0] ?? p.produkt.namn).split(/\s[–-]\s/)[0];
   const omdomen = lista(p.reviews).slice(0, 6);
-  const garanti = lista(p.garantier)[0] ?? '30 dagars öppet köp';
-  const garantiKort = garanti.split(/\s[–-]\s/)[0];
-  const garantiRest = garanti.includes(' – ') ? garanti.split(' – ').slice(1).join(' – ') : 'Inte nöjd? Hör av dig så löser vi det – inget krångel.';
+  // Garantiblocket säger bara vad lagen ger: ångerrätten. Inga egna löften.
+  const angerratt = angerrattRad(butik);
+  const garantiKort = angerratt;
+  const garantiRest = `Ångra köpet inom ${Number(butik?.retur?.angerratt_dagar) || 14} dagar från att du tog emot varan – enligt distansavtalslagen.`;
   const mail = butik.butik.supportmail;
   const fri = butik?.frakt?.fri_globalt !== false;
-  const dagar = butik?.retur?.oppet_kop_dagar ?? 14;
 
   const sections = {
     hero: {
@@ -220,7 +226,7 @@ export function byggIndex(butik, p) {
         t: {
           type: 'text',
           settings: {
-            text: `<p>${fri ? 'Fri frakt på alla ordrar' : 'Snabb leverans'} och ${dagar} dagars öppet köp, så att du kan handla utan stress.</p><p>Betala som du vill – Klarna, kort, Apple Pay eller Google Pay.</p>`,
+            text: `<p>${fri ? 'Fri frakt på alla ordrar' : 'Snabb leverans'} och ${angerratt} enligt distansavtalslagen.</p><p>Betala som du vill – Klarna, kort, Apple Pay eller Google Pay.</p>`,
             text_style: 'body',
           },
         },
@@ -250,7 +256,7 @@ export function byggIndex(butik, p) {
     },
     ms_guarantee: {
       type: 'ms-guarantee-section',
-      settings: { visible: true, title: garantiKort, body: `<p>${eskapa(garantiRest)} Mejla ${eskapa(mail)} så löser vi det.</p>`, icon: 'seal' },
+      settings: { visible: true, title: garantiKort, body: `<p>${eskapa(garantiRest)} Mejla ${eskapa(mail)} så får du en returinstruktion.</p>`, icon: 'seal' },
     },
   };
   return `${JSON.stringify({ sections, order: ['hero', 'ms_usp', 'produkt', 'berattelse', 'statement', 'omdomen', 'trygghet', 'ms_faq', 'ms_guarantee'] }, null, 2)}\n`;

@@ -36,7 +36,9 @@ frakt:
     tid: "1–2 arbetsdagar"
 
 retur:
-  oppet_kop_dagar: 30
+  # Alltid svensk lag, aldrig egna köplöften (Axels beslut 2026-09-08):
+  # 14 = lagens ångerrätt, sätt aldrig högre.
+  oppet_kop_dagar: 14
   angerratt_dagar: 14
   reklamation_ar: 3
   returfrakt_betalas_av: kund
@@ -49,7 +51,7 @@ judgeme:
   token_env: "JUDGEME_TANKGUARD_TOKEN"
 
 garantier:
-  - "30 dagars öppet köp"
+  - "14 dagars ångerrätt"
 
 policy:
   tvistlosning: "Allmänna reklamationsnämnden"

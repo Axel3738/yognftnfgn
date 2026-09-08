@@ -89,7 +89,7 @@ function stopp(rubrik, rader) {
 const STEG = [
   {
     id: 'produkt',
-    namn: 'Produkten i Shopify (DRAFT)',
+    namn: 'Produkten i Shopify (ACTIVE)',
     torrt: (ctx) => {
       const i = ctx.plan.input;
       return [

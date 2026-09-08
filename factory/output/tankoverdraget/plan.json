@@ -2,12 +2,12 @@
   "input": {
     "title": "IBC-tanköverdrag 1000 L – Stoppar Alger & UV",
     "handle": "tankoverdraget",
-    "status": "DRAFT",
+    "status": "ACTIVE",
     "descriptionHtml": "<p>Stänger ute ljuset så algerna aldrig kommer igång – och tar solen i stället för plasten. Passar 1000-liters IBC.</p>",
     "vendor": "TankGuard",
     "seo": {
       "title": "IBC-tanköverdrag 1000 L – Stoppar Alger & UV – TankGuard",
-      "description": "Vattnet håller sig klart – tyget stänger ute ljuset som får alger att växa. 30 dagars öppet köp"
+      "description": "Vattnet håller sig klart – tyget stänger ute ljuset som får alger att växa. 14 dagars ångerrätt"
     },
     "productOptions": [
       {
@@ -124,7 +124,7 @@
       "namespace": "opf",
       "key": "garantier",
       "type": "list.single_line_text_field",
-      "value": "[\"30 dagars öppet köp\",\"30 dagars öppet köp – gillar du det inte får du pengarna tillbaka\"]"
+      "value": "[\"14 dagars ångerrätt\"]"
     },
     {
       "namespace": "opf",
@@ -136,7 +136,7 @@
       "namespace": "opf",
       "key": "faq",
       "type": "json",
-      "value": "[{\"fraga\":\"Passar överdraget min tank?\",\"svar\":\"Måtten är 120 × 100 × 116 cm och passar en standardtank på 1000 liter.\"},{\"fraga\":\"Kommer jag åt locket när överdraget sitter på?\",\"svar\":\"Ja, öppningen upptill gör att du fyller på och kommer åt locket utan att ta av något.\"},{\"fraga\":\"Varför blir vattnet i tanken grönt?\",\"svar\":\"Solljus rakt in i tanken får alger att växa. Tyget stänger ute ljuset så algerna aldrig kommer igång.\"},{\"fraga\":\"Hur sätter jag på det?\",\"svar\":\"Trä överdraget över tanken och stäng dragkedjan – inga verktyg, ingen presenning och inga gummiband.\"},{\"fraga\":\"Hur lång är leveranstiden?\",\"svar\":\"6–10 arbetsdagar med fri frakt inom Sverige.\"},{\"fraga\":\"Vad händer om jag inte blir nöjd?\",\"svar\":\"30 dagars öppet köp – gillar du det inte får du pengarna tillbaka.\"}]"
+      "value": "[{\"fraga\":\"Passar överdraget min tank?\",\"svar\":\"Måtten är 120 × 100 × 116 cm och passar en standardtank på 1000 liter.\"},{\"fraga\":\"Kommer jag åt locket när överdraget sitter på?\",\"svar\":\"Ja, öppningen upptill gör att du fyller på och kommer åt locket utan att ta av något.\"},{\"fraga\":\"Varför blir vattnet i tanken grönt?\",\"svar\":\"Solljus rakt in i tanken får alger att växa. Tyget stänger ute ljuset så algerna aldrig kommer igång.\"},{\"fraga\":\"Hur sätter jag på det?\",\"svar\":\"Trä överdraget över tanken och stäng dragkedjan – inga verktyg, ingen presenning och inga gummiband.\"},{\"fraga\":\"Hur lång är leveranstiden?\",\"svar\":\"6–10 arbetsdagar med fri frakt inom Sverige.\"},{\"fraga\":\"Kan jag ångra köpet?\",\"svar\":\"Ja, du har 14 dagars ångerrätt enligt distansavtalslagen. Mejla hello@tankguard.se så får du en returinstruktion.\"}]"
     }
   ]
 }
