@@ -9,8 +9,16 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-09-06",
+  "uppdaterad": "2026-09-08",
   "kampanjer": [
+    {
+      "campaign_id": "120252123868510233",
+      "produkt": "Benkehylle NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-08, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
     {
       "campaign_id": "120250069623310291",
       "produkt": "Magnetplattorna i Storformat",
