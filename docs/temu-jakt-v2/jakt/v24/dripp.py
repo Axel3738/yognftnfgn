@@ -6,7 +6,8 @@
 Mätt 2026-09-08: skur om 8 gav block efter 2 (07:38–07:39) — budgeten är ett glidande fönster som delas
 med andra sessioner på samma IP, inte "8 per timme sedan fritt". Droppet håller sig under det.
 ko.txt: ett goods-id per rad (kommentarer med #). Redan LIVE-verifierade id hoppas över. Vid BLOCKED
-väntas 15 min och samma id försöks igen; tre BLOCKED i rad → 30 min. Loggar en rad per hämtning.
+väntas 25 min och samma id försöks igen; tre BLOCKED i rad → 40 min. (Mätt 08:02–08:26: 9 och 15 min efter en
+lyckad hämtning var det fortfarande blockerat — varje försök verkar förlänga spärren.) Loggar en rad per hämtning.
 """
 import datetime
 import json
@@ -60,7 +61,7 @@ def main():
         print(line, flush=True)
         if "BLOCKED" in line:
             streak += 1
-            vila = 1800 if streak >= 3 else 900
+            vila = 2400 if streak >= 3 else 1500
             print(f"{now()} BLOCKED #{streak} — vilar {vila // 60} min", flush=True)
             time.sleep(vila)
             continue

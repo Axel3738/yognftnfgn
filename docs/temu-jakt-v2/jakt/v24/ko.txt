@@ -1,7 +1,7 @@
-# Verifieringskö — ett goods-id per rad, i prioritetsordning. dripp.py läser om filen vid varje tick.
-# Fällda av skeptikerna (staketbygel, lockskydd, bilspöhållare, taköverdrag) hämtas INTE — budgeten går till levande hypoteser.
-606033590229831  # stegstöd (27 USD, 99+ rec) — hylla PASS, 0 DTC, 2,1 M småhus; material + pris avgör
+# Verifieringskö — ett goods-id per rad, i prioritetsordning. dripp.py läser om filen vid varje tick (var 25:e min).
 605583893712528  # flaggstångslampa (13,26 USD, 167 rec) — Flaggmax 849 i lager = 1,89×; Ad Library 0
+601103474354187  # vedhake/pickaroon (pris oläst) — golv Husqvarna 489, ankare Fiskars 730; ≤ 18 USD krävs
 601099592756087  # stocklyft/timberjack — pris oläst, avgör G6
-601099637369908  # stegstöd alt (U-bult 485 lbs, pris oläst)
-601103333430208  # hönsgårdshuv (21,60 USD, 127 rec) — G7 under golvet, hämtas sist som kvitto
+603392084657188  # brytjärn 130 cm med vändhake — pris oläst (≤ 27–32 USD krävs)
+601099637369908  # stegstöd alt (U-bult 485 lbs, pris oläst) — primären föll på 428,64 kr SE + fel form
+601103333430208  # hönsgårdshuv (21,60 USD, 127 rec) — G7 under golvet, kvitto
