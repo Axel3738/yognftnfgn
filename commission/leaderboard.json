@@ -1,17 +1,17 @@
 {
-  "uppdaterad": "2026-09-07T04:03:41.155Z",
-  "kord": "2026-09-07T04:03:29.062Z",
+  "uppdaterad": "2026-09-08T04:03:42.757Z",
+  "kord": "2026-09-08T04:03:29.832Z",
   "manad": "2026-09",
   "period": {
     "fran": "2026-09-01",
-    "till": "2026-09-07"
+    "till": "2026-09-08"
   },
   "slutavrakning": false,
   "sats": 0.004,
   "valuta": {
     "kod": "USD",
-    "kurs": 0.1047,
-    "datum": "2026-09-04",
+    "kurs": 0.10412,
+    "datum": "2026-09-07",
     "gammal": false
   },
   "rader": [
@@ -19,27 +19,27 @@
       "plats": 1,
       "id": "josh",
       "namn": "Josh Naelga",
-      "usd": 22.41,
-      "annonser": 225,
+      "usd": 25.9,
+      "annonser": 233,
       "kampanjer": [
         {
           "namn": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
-          "usd": 5.02
+          "usd": 6.2
         },
         {
           "namn": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
-          "usd": 4.69
+          "usd": 5.61
         },
         {
           "namn": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-          "usd": 4.19
+          "usd": 4.93
         }
       ],
       "basta": {
         "namn": "IBC_PD_1_H1",
-        "usd": 4.36
+        "usd": 5.14
       },
-      "okning": 3.46,
+      "okning": 3.49,
       "forraPlats": 1,
       "flytt": 0
     },
@@ -47,27 +47,27 @@
       "plats": 2,
       "id": "annabelle",
       "namn": "Annabelle Gonzales",
-      "usd": 13.43,
-      "annonser": 109,
+      "usd": 14.81,
+      "annonser": 110,
       "kampanjer": [
         {
           "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
-          "usd": 3.04
+          "usd": 3.57
         },
         {
           "namn": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
-          "usd": 2.9
+          "usd": 3.42
         },
         {
           "namn": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-          "usd": 2.81
+          "usd": 3.05
         }
       ],
       "basta": {
         "namn": "Damasker_PD_1",
-        "usd": 2.48
+        "usd": 2.97
       },
-      "okning": 1.47,
+      "okning": 1.38,
       "forraPlats": 2,
       "flytt": 0
     },
@@ -75,19 +75,19 @@
       "plats": 3,
       "id": "gilz",
       "namn": "Gilz Bruce Biazon",
-      "usd": 0.99,
-      "annonser": 31,
+      "usd": 1.17,
+      "annonser": 32,
       "kampanjer": [
         {
           "namn": "Mastern",
-          "usd": 0.99
+          "usd": 1.17
         }
       ],
       "basta": {
         "namn": "277 H1 08-11",
-        "usd": 0.84
+        "usd": 0.98
       },
-      "okning": 0.17,
+      "okning": 0.18,
       "forraPlats": 3,
       "flytt": 0
     },
@@ -95,25 +95,25 @@
       "plats": 4,
       "id": "jasper",
       "namn": "Jasper Tomboc",
-      "usd": 0.79,
-      "annonser": 35,
+      "usd": 0.93,
+      "annonser": 36,
       "kampanjer": [
         {
           "namn": "Mastern",
-          "usd": 0.69
+          "usd": 0.81
         },
         {
           "namn": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-          "usd": 0.04
+          "usd": 0.05
         },
         {
-          "namn": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
-          "usd": 0.03
+          "namn": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+          "usd": 0.04
         }
       ],
       "basta": {
-        "namn": "001 REMAKE H4 08-15",
-        "usd": 0.25
+        "namn": "110 H1",
+        "usd": 0.27
       },
       "okning": 0.14,
       "forraPlats": 4,
@@ -123,12 +123,12 @@
       "plats": 5,
       "id": "carl",
       "namn": "Carl Vicente",
-      "usd": 0.47,
-      "annonser": 32,
+      "usd": 0.77,
+      "annonser": 42,
       "kampanjer": [
         {
           "namn": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-          "usd": 0.4
+          "usd": 0.7
         },
         {
           "namn": "Mastern",
@@ -141,16 +141,16 @@
       ],
       "basta": {
         "namn": "Batmotor_FM_1_H1",
-        "usd": 0.25
+        "usd": 0.3
       },
-      "okning": 0.21,
+      "okning": 0.3,
       "forraPlats": 5,
       "flytt": 0
     }
   ],
   "totalt": {
-    "usd": 38.09,
-    "annonser": 432,
+    "usd": 43.58,
+    "annonser": 453,
     "redigerare": 5
   },
   "obetald": {
@@ -160,7 +160,7 @@
       {
         "namn": "Axel Odhner",
         "roll": "admin",
-        "usd": 0.31
+        "usd": 0.35
       }
     ],
     "konflikter": 0
@@ -209,6 +209,16 @@
         "gilz": 0.82,
         "jasper": 0.65,
         "carl": 0.26
+      }
+    },
+    {
+      "datum": "2026-09-07",
+      "per": {
+        "josh": 22.41,
+        "annabelle": 13.43,
+        "gilz": 0.99,
+        "jasper": 0.79,
+        "carl": 0.47
       }
     }
   ]
