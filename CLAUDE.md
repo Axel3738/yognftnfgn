@@ -771,7 +771,11 @@ Stonebite), **Meta Ads** (MagiBorsten `1867947880635861`), **Shopify**
 
 Notion-hubbarna hittas **dynamiskt via teamspacet Bäverbutiken**
 (`3a9270ab-908c-81a8-a48c-004222d195e7`) — databaser vars titel slutar på
-`creative hub`, minus mallen `Creative hub MALL`. Håll aldrig en handskriven
+`creative hub`, minus mallen `Creative hub MALL`. ⚠️ Titelregeln är inte
+vattentät: **"Damasker vandring"** och **"Fish rod holder"** är hubbar med samma
+schema men utan ordet "creative hub" (mätt 2026-09-08, två videor missades).
+Sök därför även på innehållet (statusen "SE-ACTIVE to be translated" /
+"To be Reviewed") och läs träffarnas `path`. Håll aldrig en handskriven
 lista: nya produkter ska komma med av sig själva, och teamspacet är det som
 hindrar att Grillkliniken, Matstrumpor eller Ploomi.se blandas in (de har egna
 teamspaces). `products.json` känner bara fyra av hubbarna — den är inte facit här.

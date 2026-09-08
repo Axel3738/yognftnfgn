@@ -62,6 +62,14 @@ kampanj-id, länk), kampanjens fyra utfall live, dubblett mot målkontot (läst 
 gång), NO-pris + jämförpris ur `beverbutikken.no/products.json`, målnamn
 `<NOprefix>_NO_<K>_<nr>[_<rest>]`. K (vinkeln) tas ALLTID ur SE-namnets fält 2.
 Max 40 bilder + 12 videor per körning; resten listas som kö.
+⚠️ **Hubbtitlarna slutar INTE alltid på "creative hub"** (mätt 2026-09-08: "Damasker
+vandring" `collection://7bf270ab-908c-8298-85aa-07f256f21f07` och "Fish rod holder"
+`collection://3c3270ab-908c-8356-ad6c-87ff779e647d` låg utanför titelsökningen och
+två Damasker-videor missades tills Axel visade dem). Utan `NOTION_TOKEN` (MCP-vägen):
+gör ALLTID två sökningar — `notion-search` på titeln "creative hub" **och** en
+fritextsökning på "SE-ACTIVE to be translated" i teamspacet — och läs alla distinkta
+`path`-värden som hubbar. Slå sedan SQL mot varje hubbs data source. En hubb som
+bara syns i fritextsökningen hämtas med `notion-fetch` för sitt `collection://`-id.
 **Saknar ett prefix koppling:** problemmeddelande "⚠️ <prefix> saknar norsk
 kampanj/koppling. Lägg till raden i produktlistan." — hoppa, kör resten.
 
