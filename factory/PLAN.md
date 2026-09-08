@@ -70,8 +70,11 @@ Målet: aldrig vänta på en redigerare när en ny OPS-butik launchar.
    sig att vara redo att börja direkt när en butik behöver dem.
 4. Ny OPS-butik → plocka nästa namn ur listan → anställ på riktigt.
 
-⚠️ Beredskapsersättningen är Axels beslut 2026-09-05. Nivån (100 eller 200)
-och vad "redo" betyder i avtalet är inte spikat — spika före första utskicket.
+⚠️ **ÄNDRAT 2026-09-08: standby-poolen är SKIPPAD.** Axels beslut — ingen
+beredskapsersättning, ingen pool som hålls varm. Punkt 3 ovan gäller inte.
+Rekrytering startar när en butik faktiskt behöver en redigerare; annonserna
+i `factory/rekrytering/utskick/` ligger färdiga att publiceras då.
+Konsekvens: räkna med 1–2 veckors ledtid från behov till första leverans.
 
 ## 4b. Discord-server per OPS-butik (Axels beslut 2026-09-07)
 

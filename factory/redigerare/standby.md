@@ -5,8 +5,13 @@ Byggs av rekryteringsmotorn (factory/PLAN.md punkt 4) och läses av
 butik får sin Discord-server, och märker den `tilldelad <butik> <datum>`.
 
 Status: `redo` · `tilldelad <butik> <datum>` · `slutat`.
-Beredskapsersättningen (100–200 kr/mån) och villkoren spikas i PLAN.md innan
-första namnet läggs in — inga rader förrän avtalet finns.
+
+⚠️ **Listan är medvetet tom (Axels beslut 2026-09-08): standby-poolen är
+SKIPPAD.** Ingen beredskapsersättning betalas och ingen pool hålls varm —
+rekrytering sker först när en butik faktiskt behöver en redigerare.
+`factory/discord.mjs` bygger servern ändå och rapporterar plockningen som
+manuell. En rutin som hittar noll rader här ska skriva "ingen redigerare
+tilldelad än", aldrig "bjud in redigeraren".
 
 | Namn | Kontakt | Status |
 |---|---|---|

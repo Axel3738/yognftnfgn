@@ -17,7 +17,7 @@ Varje uppdrag nedan är ett eget avsnitt: **vad**, **återanvänd detta**,
 | FB-kontot väntar på verifiering | brandets Meta-SIDA → hela kampanjbygget | Meta (väntan) |
 | ~~`META_ACCESS_TOKEN`~~ — finns i MOLNETS miljö (Axels besked 2026-09-08). `env.mjs` sätter aldrig över en variabel som redan finns i miljön, så all Meta-kod funkar i molnet. Saknas bara LOKALT. | inget i molnet | — |
 | HeyGen-plånboken tom (13 krediter, mätt 2026-09-08) | omdubbning av video | Axel fyller på |
-| `standby.md` har noll rader | ny redigerare per butik | ansökningar ur de två utskicken |
+| ~~`standby.md` tom~~ — poolen är SKIPPAD (Axel 2026-09-08) | inget: uppdrag F är pausat | — |
 
 Uppdrag A, C, D och E går att köra UTAN dessa. Uppdrag B väntar bara på Meta-SIDAN
 (pixeln kan skapas så snart sidan finns — `META_ACCESS_TOKEN` finns redan i molnet).
@@ -255,12 +255,16 @@ vinstbidrag `(break-even-CPA − CPA) × köp`, signifikansgrind 300 kr/3 köp, 
 standby), `factory/rekrytering/jobbannons-video-editor.md` (hela ramverket, byt bara
 codeword), `factory/redigerare/anstallningsavtal.md` (mallen, signerad 2026-09-04).
 
-**Blockerare:** `factory/redigerare/standby.md` har noll rader. De två utskicken
-(`annons-1-kanelbulle.txt`, `annons-2-surdeg.txt`) är publicerade — ansökningarna
-därifrån är råmaterialet.
+**Axels beslut 2026-09-08 — uppdrag F är PAUSAT:**
+1. **Standby-poolen är skippad.** Ingen beredskapsersättning, ingen varm pool.
+   Rekrytering startar när en butik faktiskt behöver en redigerare. De två
+   utskicken i `factory/rekrytering/utskick/` ligger färdiga att publiceras då.
+2. **Ingen redigerare på TankGuard än.** Butiken kör först på de brand-swappade
+   Bäverbutiks-annonserna (uppdrag A/A2/C). Redigerare tillsätts när det finns
+   data att jobba mot.
 
-**Beslut som saknas från Axel:**
-1. Får en OPS-redigerare commission på sin butiks **norska** annonser?
-   `FRAMMANDE_MARKNAD`-regexen filtrerar bort varje annonsnamn med segmentet `NO`,
-   men SE+NO är standard i varje OPS-butik och det är samma redigerare.
-2. Beredskapsersättningen: 100 eller 200 kr/mån, och vad "redo" betyder i avtalet.
+**Kvarstående beslut:** får en OPS-redigerare commission på sin butiks **norska**
+annonser? `FRAMMANDE_MARKNAD`-regexen filtrerar bort varje annonsnamn med
+segmentet `NO`, men SE+NO är standard i varje OPS-butik och det är samma
+redigerare. Frågan blir skarp först när någon anställs — men uppdrag D:s
+commission-fix ska byggas så att svaret bara är en konfigrad.
