@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "loom-meta-v74", db });
+  return json({ ok: true, build: "scope-diag-v75", db });
 }
