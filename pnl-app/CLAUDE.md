@@ -487,6 +487,15 @@ eller periodens sista dag är bäst. Sanningen först: saknas annonskostnad är
 kortet gult med "Annonskostnad saknas" och ingen konfetti. KPI-talen får en
 kort pop-animation (`.pnl-pop`).
 
+**Läst i Partner Dashboard 2026-09-08 (via Cowork, skarpt):** den publika
+planen heter **basic** ($10/månad, 1 dags trial — inte "Standard $9.99"),
+privata planer: **shopify-test** ($0) och **friends-50** ("Friends 50%",
+$4.99/månad, 0 dagars trial, 1 butik: stonepnl-test.myshopify.com, "Free for
+partners and developers" på). Privata planer KRÄVER minst en butik under
+*Stores with plan access*; fakturanamn och handle kan inte ändras efteråt.
+Vägen: Distribution → Redigera (English) → Pricing details → Manage. Ingen
+Pro-plan fanns ännu — grinden i plan.server.ts letar efter "pro" i namnet.
+
 **Axel måste göra (i ordning):**
 1. Partner Dashboard → StonePNL → **Distribution → Prissättning**: plan
    **Pro**, 14,99 USD/30 dagar, 1 dags prov, namnet MÅSTE innehålla "Pro".
