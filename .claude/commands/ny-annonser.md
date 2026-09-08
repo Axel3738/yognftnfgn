@@ -9,10 +9,18 @@ att skapa något i Meta.
 /ny-annonser tankguard          # när kopplingen redan är sparad
 ```
 
-Källänken behövs bara en gång: kommandot skriver ett `kalla:`-block i
+Källänken behövs **en gång per butik** — varje ny OPS-butik har sin egen
+källprodukt på Bäverbutiken. Kommandot skriver ett `kalla:`-block i
 `factory/produkter/<id>.yaml` (annonsprefix + produkt-handle) och läser det
-därefter själv. Saknas både länk och block: stoppa och be om länken — leta
-aldrig upp en källprodukt på gissning.
+därefter själv vid varje ny körning på SAMMA butik. Saknas både länk och
+block: stoppa och be om länken — leta aldrig upp en källprodukt på gissning.
+
+**Kör i en EGEN session, inte i butiksbyggets.** Annonsfasen rör inte Shopify
+och behöver varken `SHOPIFY_SHOP` eller butikens nycklar — bara
+`META_ACCESS_TOKEN`, som redan ligger i miljön. En ren session slipper släpa
+på hela butiksbygget, och butiksbyggets session kan stängas eller användas
+till nästa butik. Kommandot är självbärande: allt det behöver står i
+produktfilen och i `factory/FAS2.md`.
 
 Fas 2 i OPS Factory. `/ny-ops` bygger butiken; det här kommandot ger den
 annonser. Processen och alla fallgropar står i **`factory/FAS2.md`** — det

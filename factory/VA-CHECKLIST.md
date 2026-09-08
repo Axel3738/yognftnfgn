@@ -116,6 +116,17 @@ VIDEO:
 * Then: Settings → Users and permissions → ⋯ → Transfer ownership → the owner
 * Owner changes the Loopia password afterwards
 
+## 11. Ads (a NEW session)
+
+* Open a NEW Claude session — not the one you built the store in
+* Write: /ny-annonser STORE-ID + the Bäverbutiken product link
+  (example: /ny-annonser tankguard https://bäverbutiken.se/products/...)
+* The link is needed once per store — after that just /ny-annonser STORE-ID
+* Claude rebuilds the proven ads for this brand and builds two campaigns
+  (Swedish + Norwegian) in MagiBorsten DK — everything PAUSED
+* Check what Claude asks you to check in Ads Manager
+* When it all looks right: set the campaigns ACTIVE
+
 ---
 
 Claude Code does: brand design from product + audience, theme build,
