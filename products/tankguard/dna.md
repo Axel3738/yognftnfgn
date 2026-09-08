@@ -1,0 +1,130 @@
+# TankGuard — Creative DNA
+
+**Skapad 2026-09-08** av `/ny-annonser tankguard` (första körningen).
+OPS-butik nr 2. Ingen egen annons har kört ännu — allt nedan är **ärvt** från
+Bäverbutikens IBC-tanköverdrag, som är exakt samma produkt.
+
+Underlag: Meta Graph 2026-09-08 (`date_preset: maximum`) på två konton,
+34 svenska + 33 norska annonser. Rådata `factory/output/tankguard/kallannonser.json`,
+utfall `products/tankguard/batch-log.md`.
+
+---
+
+## Produkten och kunden
+
+**Produkten:** IBC-tanköverdrag för 1000-literstank. 210D Oxford-tyg, blixtlås,
+öppning upptill så locket går att nå utan att ta av hela överdraget.
+Mått 120 × 100 × 116 cm. Sitter på under två minuter.
+
+**Kunden:** villa- och trädgårdsägare med regnvattentank på tomten. Inte en
+prylköpare — någon som redan har ett problem och har levt med det en säsong
+eller flera.
+
+**Problemet, i den ordning kunden känner det:**
+1. Vattnet blir grönt av alger. Syns direkt, luktar, går inte att vattna med.
+2. Skrubbningen. Den är det verkliga arbetet, och den återkommer varje sommar.
+3. Plasten blir spröd av UV. Långsam, osynlig, men det är den som kostar tanken.
+
+**Mekaniken som säljer:** tyget tar UV-strålningen i stället för plasten, och
+utan ljus kommer algerna aldrig igång. Det är en fysisk orsakskedja kunden kan
+se framför sig — inte en produktegenskap.
+
+---
+
+## Vad som är bevisat
+
+Signifikansgrinden är 300 kr spend eller 3 köp (`docs/os/ANALYSMETOD.md`).
+Under den finns ingen dom, bara frånvaro av data.
+
+### 1. Video slår bild — och det är inte nära
+
+| Marknad | Annonser med köp | Varav video | Varav bild |
+|---|--:|--:|--:|
+| SE | 4 | 4 | 0 |
+| NO | 4 | 3 | 1 |
+
+Tjugo svenska bildannonser har tillsammans 0 köp, och den dyraste av dem
+(`PD_2_1`, 362 kr) är den enda bildannonsen över grinden — den fick sin chans och
+tog inga köp. Norges enda bildköp (`PD_5_1`) ligger på 12 kr spend, långt under
+grinden, och betyder ingenting.
+
+**Vad det styr:** TankGuards första riktiga batch ska vara video. Bildannonserna
+är billiga att brand-swappa och kan följa med, men de ska inte bära budgeten.
+
+### 2. PD-vinkeln (produktdemo) är arbetshästen
+
+`PD_1_H1` ensam: **16 997 kr, 77 köp, ROAS 2,92** i Sverige — 87 % av
+kampanjens spend och 90 % av köpen. `PD_1_H2` och `PD_1_H3` är samma manus med
+annan hook.
+
+Hooken som bär den: **"Trött på grönt, algfyllt regnvatten? 💧"** — problemet
+ordagrant, i kundens egna ord, i första meningen. Sedan mekaniken, sedan tre
+bockar, sedan CTA. Ingen rabatt, ingen brådska, ingen social proof.
+
+⚠️ **PD_1_H1 är benchmark, inte en kandidat att döma småannonser mot**
+(ANALYSMETOD). Att den tar 87 % av spenden är ett skalningsfaktum, inte ett bevis
+för att de andra är dåliga.
+
+### 3. Samma annons vinner inte på båda marknaderna
+
+| Annons | SE | NO |
+|---|---|---|
+| `PD_1_H1` | 16 997 kr, 77 köp, **ROAS 2,92** | 807 kr, 1 köp, **ROAS 0,95** |
+| `PD_1_H2` | 310 kr, 0 köp | 3 945 kr, 18 köp, **ROAS 2,44** |
+| `CS_1_H3` | 589 kr, 3 köp, ROAS 3,65 | 4 614 kr, 20 köp, **ROAS 2,37** |
+
+Sveriges vinnare är Norges förlorare, och tvärtom. Samma produkt, samma manus,
+samma vinkel — motsatt utfall på topplaceringen.
+
+**Vad det styr:** ta aldrig med den svenska rangordningen in i den norska
+kampanjen. Låt varje marknad hitta sin egen vinnare. Det är också skälet till att
+Norge fördelar sig friskare (två annonser delar volymen) än Sverige (en tar allt).
+
+### 4. Rabattvinkeln håller högst ROAS på båda marknaderna
+
+`CS_1_H3` är den ROAS-starkaste annonsen med volym i båda kontona (3,65 i SE,
+2,37 i NO på 20 köp). Vinkeln är ren rabatt.
+
+⚠️ **Och den går inte att ärva rakt av.** Källbutikens rabatt (23 % mot 636 kr)
+finns inte hos TankGuard — se nedan.
+
+---
+
+## Vad som ÄNDRAS när annonserna blir TankGuards
+
+Det här är skillnaden mellan att kopiera en annons och att ärva en.
+
+**Erbjudandet är ett annat.** Bäverbutiken säljer 489 kr mot jämförpriset 636 kr,
+alltså 23 % på ett enstyck. TankGuard säljer 489 kr **utan jämförpris** och lägger
+rabatten i paketnivåerna i stället: 2 för 799 kr (18 %) och 3 för 1 099 kr (25 %),
+båda med Kranskydd Frost 420D gratis på köpet.
+
+Det gör tre saker med DNA:t:
+1. **Rabattvinkeln byter mekanik.** Från "spara på ett" till "spara på flera". Den
+   är fortfarande sann och fortfarande stark — men den är inte samma annons.
+2. **En ny vinkel öppnar sig som källbutiken aldrig testat:** flerpacket. Kunder
+   med två tankar finns (norska `CS_3_1` nämner redan 300 kr-gränsen), och
+   gratisbonusen är säsongsrätt — kranskydd inför vintern, tanköverdrag inför
+   samma vinter. Det är samma köpögonblick.
+3. **Social proof kan inte ärvas.** Fyra RV-annonser citerar namngivna
+   Bäverbutiks-kunder, och SP-blocket säger "hundratals trädgårdsägare".
+   TankGuard har noll recensioner. De annonserna hålls tills butiken har egna.
+
+---
+
+## Kvarstående okänt
+
+| Fråga | Varför den inte går att svara på |
+|---|---|
+| Break-even | Hänger på om TankGuards pris innehåller moms. Utan moms 1,46, med moms 2,07 — 42 % isär. Butiksfilen svarar, och den saknas. |
+| Fraktvillkor, öppet köp, betalsätt | Står bara i butiksfilen. Elva svenska annonser lovar källbutikens villkor. |
+| Verklig AOV | Paketnivåerna gör att 489 kr inte är AOV. Räkna ur Shopify när ordrar finns. |
+| Norska priser | TankGuard har inga NOK-nivåer i repot. Den norska halvan står stilla tills de finns. |
+
+---
+
+## Historik
+
+| Datum | Körning | Vad som ändrades |
+|---|---|---|
+| 2026-09-08 | `/ny-annonser tankguard`, körning 1 | Filen skapad. Ärvt DNA från 67 källannonser i två konton. Erbjudandet inskrivet ur Axels skärmbild. Inga egna annonser launchade. |
