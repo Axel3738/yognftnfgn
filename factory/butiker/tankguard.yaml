@@ -1,0 +1,117 @@
+# Butikskonfig för TankGuard — OPS-butik nr 2 ur fabriken (IBC-tanköverdraget).
+# Byggd 2026-09-08 av /ny-ops. Butiks-id:t "tankguard" är tekniskt och byts inte.
+# Namnet följer namnregeln (helt engelskt, läsbart för svenskar och norrmän,
+# inga å/ä/ö). tankguard.se är köpt och kopplad som primär domän i butiken
+# (y1sj1i-3d.myshopify.com, verifierat via API 2026-09-08); tankguard.no
+# svarade "not registered" i Norids RDAP samma dag (ledig).
+# Bolaget är samma AB som HeimGuard: STONEBITE ECOM AB (adress från allabolag.se).
+
+butik:
+  id: tankguard
+  brand: "TankGuard"
+  bolagsnamn: "STONEBITE ECOM AB"
+  orgnr: "559576-2401"
+  adress: "Sjöhed 160, 442 74 Harestad"
+  supportmail: "hello@tankguard.se"
+  land: SE
+  huvudmarknad: Sverige
+  # SE + NO är standard i varje OPS (Axel 2026-09-08). NOK slås på i admin
+  # (API-spärrat i unified markets) — checklistans steg 10.
+  marknader:
+    - land: NO
+      locale: nb
+      valuta: NOK
+  valuta: SEK
+  moms_i_pris: true
+
+frakt:
+  fri_globalt: true
+  # Temu-quoten (batch #4): 6–10 arbetsdagar från leverantören (YUN) — samma
+  # spann som Bäverbutiken lovar på källsidan.
+  leveranstid: "6–10 arbetsdagar"
+  express:
+    aktiv: false
+    namn: "Express"
+    pris: 99
+    tid: "1–2 arbetsdagar"
+
+retur:
+  oppet_kop_dagar: 30
+  angerratt_dagar: 14
+  reklamation_ar: 3
+  returfrakt_betalas_av: kund
+  aterbetalning_dagar: 14
+
+judgeme:
+  # Fylls i när VA:n installerat Judge.me (checklistans steg 7). Tokenen är
+  # PER BUTIK och läggs i env/factory/.env — aldrig i filen.
+  shop_domain: "y1sj1i-3d.myshopify.com"
+  token_env: "JUDGEME_TANKGUARD_TOKEN"
+
+garantier:
+  - "30 dagars öppet köp"
+
+policy:
+  tvistlosning: "Allmänna reklamationsnämnden"
+  visa_odr_lank: true
+  svarstid: "en arbetsdag"
+
+# ---------------------------------------------------------------------------
+# BRAND-CONFIG — TankGuards egen identitet, byggd från noll för den här
+# butiken (Axels regel: strukturen återanvänds, brandingen aldrig).
+#
+# Analys bakom valen:
+#   Vem köper:      villa-, fritidshus- och småbruksägare 40–70 som samlar
+#                   regnvatten i en 1000-liters IBC-tank på tomten. Praktiska,
+#                   sparsamma, stolta över en ordnad tomt. Många har hästar,
+#                   växthus eller odlingar som vattnas ur tanken.
+#   Problemet:      vattnet blir grönt av alger, plasten blir spröd i solen och
+#                   presenningen blåser av — tanken ser skräpig ut och håller
+#                   sämre för varje sommar.
+#   Emotionen:      ordning och omsorg om det man äger. "Gjort en gång, håller
+#                   i åratal." Inte rädsla — tillfredsställelsen i en tomt som
+#                   ser skött ut och vatten som är klart.
+#   Förväntat brand: svensk utomhus-/trädgårdsutrustning. Robust, rak,
+#                   hantverksmässig — tänk redskapsbod, inte pryl-shop.
+#                   Sakligt, jordnära, aldrig gulligt.
+#   Känsla:         robust + jordnära + pålitlig + praktisk.
+#
+# Paletten är en MONOKROM skogsgrön (produkten är grön — brandet tar samma
+# färg och gör den seriös) på varmt sandfärgade ytor. En enda djup grön bär
+# CTA, bockar och mörka ytor. Ingen andra "rolig" färg (Axels beslut
+# 2026-09-05: två lekfulla färger dödar seriositeten). Inget rea-rött.
+# ---------------------------------------------------------------------------
+branding:
+  positionering: "Svensk specialist på skydd för regnvattentankar — överdraget som håller vattnet klart och tanken hel, år efter år"
+  tonalitet: "Rak, jordnära och konkret. Korta meningar om vad som händer med tanken. Inga utropstecken, ingen hype — en redskapsbod skriker inte."
+  kansla: "robust, jordnära, pålitlig, praktisk"
+  farger:
+    bakgrund: "#FFFFFF"
+    yta: "#F4F1EA"            # varm sand — jord och gräs, aldrig kall grå
+    yta_djup: "#E8E3D8"
+    mork: "#1B3325"           # djup skogsgrön — mörka sektioner, annonsrad, sidfot
+    text: "#1A231D"
+    text_pa_mork: "#F3F1EA"
+    linje: "#DDD7CA"
+    linje_stark: "#BFB7A6"
+    accent: "#2A5A3C"         # mossgrön — CTA och bockar, samma familj som mörka ytan
+    accent_text: "#FFFFFF"
+    god: "#2A5A3C"
+    varning: "#B45309"
+  typografi:
+    rubriker: "archivo_n7"        # Archivo Bold — bred, stadig grotesk, redskapskänsla
+    brodtext: "work_sans_n4"      # Work Sans — tydlig och neutral brödtext
+  form:
+    knapp_radius: 8           # stadig, inte pill
+    kort_radius: 12
+    input_radius: 8
+    badge_radius: 6
+  stil:
+    ikoner: "Linjeikoner, 1.9 i stroke — samma språk som temats ms-icon. Aldrig emojis i gränssnittet."
+    bilder: "Riktiga foton av tomt, gräsmatta och tank i dagsljus. Grönt och sand, aldrig studiovitt utan sammanhang, aldrig stockmänniskor."
+    rubrikstil: "Konkret vad kunden slipper: grönt vatten, spröd plast, presenning som blåser av. Eyebrow i versaler, rubrik som ett påstående."
+    cta: "Solid mossgrön knapp med vit text. Verb + lugn: Köp nu, Skydda tanken. Aldrig SISTA CHANSEN."
+    trust: "Diskreta rader med bock i mossgrönt på sandfärgad yta — öppet köp, fri frakt, Klarna. Fakta, inte skrik."
+    spacing: "Luftigt och stadigt — generösa sektionsavstånd, max 62 tecken per rad."
+    logo: "Rund emblem: skogsgrön cirkel med ordmärket TANKGUARD i versaler, vitt, spärrad text. Bara namnet — ingen symbol. Fungerar i en färg."
+    favicon: "Samma gröna cirkel med ett vitt T."

@@ -43,10 +43,11 @@ VIDEO:
 
 * Go to dev.shopify.com → log in with the work Gmail → Apps → Create app → name it: Fabriken + the store's address start (example: Fabriken y1sj1i)
 * The app → Settings → copy the Client ID and the Client secret
-* Open the Claude session's Environment → set these 3 (overwrite the old values):
+* Open the Claude session's Environment → set these 4 (overwrite the old values):
   SHOPIFY_SHOP = the store's .myshopify.com address
   SHOPIFY_CLIENT_ID = the Client ID
   SHOPIFY_CLIENT_SECRET = the Client secret
+  SHOPIFY_STOREFRONT_PASSWORD = Online Store → Preferences → Password (the store password – Claude needs it to check the pages like a customer sees them; added 2026-09-08)
 * Back in the app → Distribution → Custom distribution → enter the store's .myshopify.com address → Generate link → open it → Install app
   Note: keys go ONLY in the Environment – never in chat or email.
 

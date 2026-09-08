@@ -70,7 +70,14 @@ export function byggFraktatgarder(befintliga, plan) {
       if (!traff) {
         attSkapa.push({ zon: zon.zon, metod: onskad });
       } else if (traff.namn !== onskad.namn || Number(traff.pris) !== onskad.pris) {
-        attUppdatera.push({ zon: zon.zon, id: traff.id, rateId: traff.rateId, metod: onskad });
+        // Villkorade metoder (t.ex. "fri frakt över X") kan inte uppdateras
+        // via deliveryProfileUpdate (mätt 2026-09-08) — byt ut i stället.
+        if (traff.villkorad) {
+          attTaBort.push({ zon: zon.zon, id: traff.id, namn: traff.namn });
+          attSkapa.push({ zon: zon.zon, metod: onskad });
+        } else {
+          attUppdatera.push({ zon: zon.zon, id: traff.id, rateId: traff.rateId, metod: onskad });
+        }
       }
     }
     for (const overbliven of kvar) {

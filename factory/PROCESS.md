@@ -15,6 +15,52 @@ Varje steg är BEVISAT på Hemvakten→HeimGuard-bygget. Ordningen är den ordni
 som funkade. ⚙️ = fabriken/Claude gör det · 🖐 = Axels klick (se CHECKLISTA.md
 som genereras per bygge).
 
+## Körordningen som kod (bevisad på TankGuard, 2026-09-08 — butik nr 2)
+
+Varje steg nedan är ett skript i `factory/`, idempotent, noll beroenden
+(utom bildrastreringen som lånar sharp ur `pipeline/node_modules`).
+Kör från repo-roten, i den här ordningen:
+
+| # | Steg | Kommando |
+|---|---|---|
+| 0 | **Connected** — minta token ur butikens egen app, spärr mot gammal state | `node factory/token.mjs --butik <id>` |
+| 1 | Konfig: `butiker/<id>.yaml` + `produkter/<id>.yaml`, dry-run | `node factory/ops.mjs <butik> <produkt> --dry-run` |
+| 2 | Logga + favicon (rund emblem ur brandingen) | `node factory/logga.mjs <butik> --ut <mapp>` |
+| 3 | Språkversionerade bilder (text på platta → sharp; foto → kie rensar först) | `node factory/bildtext.mjs <in> <ut> --spec <json>` |
+| 4 | Upp i Files (logga, favicon, hero, trygghet, [SV]/[NO]-bilder) | `laddaUppBild()` i `factory/filer.mjs` |
+| 5 | OPS-temat ur `factory/tema/ops-tema.zip` som UNPUBLISHED | `node factory/tema-upp.mjs <butik>` |
+| 6 | Produkt (DRAFT) → metafält → brand → opf-sektioner → **temats innehåll** (startsida, header/footer, inställningar, upsell, gallerifilter) → sidor → policyer → menyer → frakt → huvudmarknad → QA | `node factory/ops.mjs <butik> <produkt>` (+ `--resume`, `--igen steg`) |
+| 7 | Bonusprodukten (Q4-ramverket), ACTIVE + publicerad, id:n tillbaka i filen | `node factory/bonus.mjs <produkt>` |
+| 8 | Paketnivåer A/B (metaobjekt, translatable) + rabattkoder som ger exakt paketpris | `node factory/paket.mjs <produkt>` |
+| 9 | Översättningsunderlag → subagent (sonnet) → `oversattning-nb.json` | `node factory/oversattning.mjs <butik> <produkt>` |
+| 10 | Marknad NO + locale nb + webbnärvaro + translationsRegister på allt | `node factory/marknader.mjs <butik> <produkt>` |
+| 11 | Locale-branchade custom_liquid-texter in i produktmallen | `node factory/ops.mjs … --resume --igen startsida` |
+| 12 | Trippelkollen mot kundens vy (kräver `SHOPIFY_STOREFRONT_PASSWORD` under trial) | `node factory/kolla.mjs <butik> <produkt>` |
+| 13 | "Store ready": recensioner (sv + no), pixel, Discord | `tools/judgeme-import.mjs`, `factory/meta-setup.mjs`, `factory/discord.mjs` |
+
+Lärdomar från bygget 2026-09-08 (API 2025-07, alla mätta):
+- `pageByHandle` finns inte — sidor slås upp via `pages(query: "handle:…")`.
+- En deklarerad men oanvänd GraphQL-variabel avvisas ("Variable … not used").
+- Fraktmetoder med villkor (t.ex. Shopifys default "fri frakt över X") listas
+  som en extra nod `<id>?source=RateRangeCondition…` och kan varken
+  uppdateras eller raderas via `deliveryProfileUpdate` — de tas bort och
+  ersätts (`frakt.mjs` märker dem `villkorad`).
+- `MetaobjectDefinitionCreateInput` saknar `displayNameField`; storefront-
+  åtkomst `PUBLIC_READ` krävs för att `shop.metaobjects` ska se posterna.
+- `settings_data.json` normaliseras av Shopify (bytestorleken ändras) — verifiera
+  Liquid byte för byte, JSON genom att läsa tillbaka och tolka. Schemat
+  (`settings_schema.json`) laddas upp FÖRE settings_data, annars städas
+  okända fält (`ms_ab_tests`) bort.
+- Zip:ens `settings_schema.json` saknar A/B-fälten som `ms-head` läser —
+  `tema-mall.mjs` lägger till gruppen "OPS A/B-test".
+- `productSet` med `files` synkar galleriet (id eller originalSource + alt) —
+  alt-texten bär [SV]/[NO]-märkningen som gallerifiltret i ms-head läser.
+- Produktförhandsvisningen (`onlineStorePreviewUrl`) renderar alltid LIVE-
+  temat — `preview_theme_id` ignoreras där. Utkasttemat kollas mot riktiga
+  storefronten, som under trial ligger bakom lösenord (kan inte tas bort
+  utan plan): `kolla.mjs` postar `SHOPIFY_STOREFRONT_PASSWORD` till `/password`.
+- Judge.me-tokenen kan inte läsas via API — den är VA:ns klick (steg 7).
+
 ## Fas 1 — Grunden
 1. ⚙️ Hämta produktdata från källan (Bäverbutik-sidan): namn, pris, varianter,
    bilder, beskrivningstexter, Judge.me-recensioner (`/products/<handle>.json`

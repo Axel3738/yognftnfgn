@@ -59,7 +59,8 @@ function hero(p) {
     p.ekonomi.jamforpris > 0
       ? `<s class="opf-jamfor">${eskapa(formatPris(p.ekonomi.jamforpris, p.ekonomi.valuta))}</s> `
       : '';
-  const bild = lista(p.media?.bilder)[0];
+  const forsta = lista(p.media?.bilder)[0];
+  const bild = typeof forsta === 'string' ? forsta : forsta?.url;
   const trust = [lista(p.garantier)[0], ...lista(p.fraktrader).slice(0, 2)].filter(Boolean);
   const bundle = text(p.offer?.bundle);
   return `<section class="opf-hero" id="opf-hero">

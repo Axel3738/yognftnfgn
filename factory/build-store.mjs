@@ -55,10 +55,13 @@ export function byggPlan(p) {
       ...(p.ekonomi.jamforpris > 0 ? { compareAtPrice: p.ekonomi.jamforpris.toFixed(2) } : {}),
       ...(v.sku ? { sku: v.sku } : {}),
     })),
-    files: bilder.map((url) => ({
-      originalSource: url,
+    // En bild är antingen en URL-sträng (alt = produktnamnet) eller
+    // { url, alt } — alt-texten bär språkmärkningen [SV]/[NO] som temats
+    // gallerifilter läser (omärkt = visas för alla språk).
+    files: bilder.map((b) => ({
+      originalSource: typeof b === 'string' ? b : b.url,
       contentType: 'IMAGE',
-      alt: p.produkt.namn,
+      alt: typeof b === 'string' ? p.produkt.namn : (b.alt ?? p.produkt.namn),
     })),
   };
 

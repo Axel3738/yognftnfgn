@@ -69,8 +69,29 @@ export async function hamtaProduktViaHandle(handle) {
   return data.productByIdentifier ?? null;
 }
 
-// Skapar/uppdaterar hela produkten i ett anrop (productSet är idempotent på
-// handle vid nykörning av samma fil). Produkten skapas som DRAFT — publiceras
+// Produkten med galleriets media-id:n och filstammar — för idempotent productSet.
+async function hamtaProduktMedMedia(handle) {
+  const data = await graphql(
+    `query opsFactoryProduktMedia($handle: String!) {
+      productByIdentifier(identifier: { handle: $handle }) {
+        id
+        media(first: 50) { nodes { id ... on MediaImage { image { url } } } }
+      }
+    }`,
+    { handle }
+  );
+  const p = data.productByIdentifier;
+  if (!p) return null;
+  return {
+    id: p.id,
+    media: (p.media?.nodes ?? [])
+      .filter((m) => m.image?.url)
+      .map((m) => ({ id: m.id, filstam: String(m.image.url).split('?')[0].split('/').pop().replace(/\.[a-z0-9]+$/i, '').toLowerCase() })),
+  };
+}
+
+// Skapar/uppdaterar hela produkten i ett anrop (idempotent på handle: finns
+// produkten skickas dess id med). Produkten skapas som DRAFT — publiceras
 // aldrig live av det här skriptet.
 export async function skapaProdukt(input) {
   const mutation = `
@@ -80,6 +101,22 @@ export async function skapaProdukt(input) {
         userErrors { field message }
       }
     }`;
+  // productSet utan id försöker SKAPA — och handle:t är upptaget vid omkörning
+  // ("Handle already in use", mätt 2026-09-08). Finns produkten sätts id, och
+  // befintliga galleribilder refereras med sina media-id (så alt-texter kan
+  // uppdateras och inget laddas upp två gånger); nya bilder via originalSource.
+  const befintlig = input.handle ? await hamtaProduktMedMedia(input.handle) : null;
+  if (befintlig) {
+    input = { ...input, id: befintlig.id };
+    if (Array.isArray(input.files)) {
+      const stam = (u) => String(u).split('?')[0].split('/').pop().replace(/\.[a-z0-9]+$/i, '').toLowerCase();
+      input.files = input.files.map((f) => {
+        const s = stam(f.originalSource ?? '');
+        const traff = befintlig.media.find((m) => m.filstam === s || m.filstam.startsWith(`${s}_`));
+        return traff ? { id: traff.id, alt: f.alt } : f;
+      });
+    }
+  }
   const data = await graphql(mutation, { input });
   const fel = data.productSet?.userErrors ?? [];
   if (fel.length > 0) {
@@ -112,19 +149,22 @@ export async function skrivPolicy(type, body) {
 // Skapar eller uppdaterar en vanlig sida (returpolicy, frakt, villkor, kontakt).
 // Sidor är inte publicering av butiken — de får finnas innan LAUNCH.
 export async function skrivSida(handle, title, body) {
+  // pageByHandle finns inte i Admin API 2025-07 (mätt 2026-09-08 på TankGuard) —
+  // sidan slås upp via pages(query: "handle:…") och matchas exakt på handle.
   const befintlig = await graphql(
-    `query opsFactorySida($handle: String!) {
-      pageByHandle(handle: $handle) { id }
+    `query opsFactorySida($q: String!) {
+      pages(first: 5, query: $q) { nodes { id handle } }
     }`,
-    { handle }
+    { q: `handle:${handle}` }
   );
+  const traff = (befintlig.pages?.nodes ?? []).find((s) => s.handle === handle) ?? null;
 
-  if (befintlig.pageByHandle?.id) {
+  if (traff?.id) {
     const data = await graphql(
       `mutation opsFactorySidaUppdatera($id: ID!, $page: PageUpdateInput!) {
         pageUpdate(id: $id, page: $page) { page { id handle } userErrors { field message } }
       }`,
-      { id: befintlig.pageByHandle.id, page: { title, body } }
+      { id: traff.id, page: { title, body } }
     );
     const fel = data.pageUpdate?.userErrors ?? [];
     if (fel.length > 0) throw new Error(`Kunde inte uppdatera sidan ${handle}: ${fel.map((f) => f.message).join('; ')}`);
@@ -233,12 +273,10 @@ export async function hamtaTemafil(temaId, filnamn) {
 
 // Läser sidfotsmenyn. null om den inte finns.
 export async function hamtaMeny(handle) {
-  const data = await graphql(
-    `query opsFactoryMeny($handle: String!) {
-      menus(first: 20) { nodes { id handle title items { title url } } }
-    }`,
-    { handle }
-  );
+  // Ingen variabel i frågan — API:t avvisar deklarerade men oanvända
+  // variabler ("Variable $handle is declared but not used", mätt 2026-09-08).
+  const data = await graphql(`
+    query opsFactoryMeny { menus(first: 20) { nodes { id handle title items { title url } } } }`);
   return (data.menus?.nodes ?? []).find((m) => m.handle === handle) ?? null;
 }
 
@@ -313,12 +351,22 @@ export async function hamtaFraktzoner() {
     zoner: (grupp?.locationGroupZones?.nodes ?? []).map((z) => ({
       zonId: z.zone.id,
       zon: z.zone.name,
-      metoder: (z.methodDefinitions?.nodes ?? []).map((m) => ({
-        id: m.id,
-        namn: m.name,
-        pris: Number(m.rateProvider?.price?.amount ?? 0),
-        rateId: m.rateProvider?.id ?? null,
-      })),
+      // Villkorade priser (t.ex. "fri frakt över X") listas som en extra nod
+      // med samma id + "?source=RateRangeCondition…". Den är ingen egen
+      // metod och kan varken uppdateras eller raderas (mätt 2026-09-08:
+      // "could not be found") — basdefinitionen bär villkoret.
+      // En metod med villkor kan inte heller UPPDATERAS via deliveryProfileUpdate
+      // ("uses new configurations… updated APIs") — den märks villkorad så
+      // frakt.mjs tar bort den och skapar en ny i stället.
+      metoder: (z.methodDefinitions?.nodes ?? [])
+        .filter((m) => !String(m.id).includes('?'))
+        .map((m) => ({
+          id: m.id,
+          namn: m.name,
+          pris: Number(m.rateProvider?.price?.amount ?? 0),
+          rateId: m.rateProvider?.id ?? null,
+          villkorad: (z.methodDefinitions?.nodes ?? []).some((x) => String(x.id).startsWith(`${m.id}?`)),
+        })),
     })),
   };
 }

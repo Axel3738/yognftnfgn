@@ -57,7 +57,18 @@ import {
   brandRader,
   valideraBranding,
 } from './branding.mjs';
-import { SEKTIONER, byggProduktTemplate, sektionerSomVisas } from './tema.mjs';
+import { SEKTIONER, byggProduktTemplate, sektionerSomVisas, byggKorgUpsell } from './tema.mjs';
+import {
+  byggIndex,
+  byggHeaderGroup,
+  byggFooterGroup,
+  settingsTillagg,
+  settingsSchemaMedAb,
+  patchaProduktTemplate,
+  msHeadGallerifilter,
+  GALLERIFILTER_MARKE,
+  temabilder,
+} from './tema-mall.mjs';
 import { qaSektionsfiler, qaRenderadSida } from './tema-qa.mjs';
 
 const FACTORY_ROT = dirname(fileURLToPath(import.meta.url));
@@ -171,6 +182,92 @@ const STEG = [
     },
   },
   {
+    // Temats innehåll: startsidan, annonsraden, sidfoten, inställningarna
+    // (logga/favicon/A/B/app-inbäddningar), produktmallens A/B-paketblock +
+    // Appyta, korg-upsellen (Q4-ramverket) och gallerifiltret för språkmärkta
+    // bilder. Allt ur konfigen — bevisat på HeimGuard, kodat 2026-09-08.
+    id: 'startsida',
+    namn: 'Temats innehåll (startsida, header/footer, inställningar, upsell)',
+    torrt: (ctx) => {
+      const bilder = temabilder(ctx.butik.butik.id);
+      return [
+        `templates/index.json: hero → USP → produkt → berättelse → statement → omdömen → trygghet → FAQ → garanti`,
+        `logga/favicon/hero/trygghet ur Files: ${Object.values(bilder).join(', ')}`,
+        `A/B-test "${ctx.p.offer?.paket?.test ?? '—'}" i settings + paketblock A/B i produktmallen, Judge.me i Appyta`,
+        ctx.p.offer?.bonus_produkt?.handle ? `korg-upsell för ${ctx.p.offer.bonus_produkt.handle}` : 'ingen bonusprodukt — ingen korg-upsell',
+        'ms-head: gallerifilter [SV]/[NO] + omhämtning av lådan för upsellen',
+      ];
+    },
+    async kor(ctx) {
+      const tema = await hamtaUtkastTema();
+      if (!tema) return { manuell: 'Inget utkasttema finns i butiken — kör factory/tema-upp.mjs först.' };
+      const las = (f) => hamtaTemafil(tema.id, f);
+      const filer = {};
+
+      filer['templates/index.json'] = byggIndex(ctx.butik, ctx.p);
+      const header = await las('sections/header-group.json');
+      if (header) filer['sections/header-group.json'] = byggHeaderGroup(header, ctx.butik, ctx.p);
+      const footer = await las('sections/footer-group.json');
+      if (footer) filer['sections/footer-group.json'] = byggFooterGroup(footer, ctx.butik);
+      // Finns den norska översättningen (oversattning-nb.json) locale-branchas
+      // custom_liquid-texterna direkt; annars svenska tills marknader.mjs körts.
+      const nbFil = join(FACTORY_ROT, 'output', ctx.p.produkt.id, 'oversattning-nb.json');
+      const nb = existsSync(nbFil) ? JSON.parse(readFileSync(nbFil, 'utf8')) : {};
+      const produktMall = await las('templates/product.json');
+      if (produktMall) filer['templates/product.json'] = patchaProduktTemplate(produktMall, ctx.butik, ctx.p, nb);
+
+      const schema = await las('config/settings_schema.json');
+      const nyttSchema = schema ? settingsSchemaMedAb(schema) : null;
+      if (nyttSchema) filer['config/settings_schema.json'] = nyttSchema;
+      const rasettings = await las('config/settings_data.json');
+      if (rasettings) {
+        const settings = JSON.parse(String(rasettings).replace(/\/\*[\s\S]*?\*\//, '').trim());
+        settings.current = { ...settings.current, ...settingsTillagg(ctx.butik, ctx.p) };
+        filer['config/settings_data.json'] = `${JSON.stringify(settings, null, 2)}\n`;
+      }
+
+      // Korg-upsell + ms-head-tilläggen (idempotent på markörer).
+      let msHead = await las('snippets/ms-head.liquid');
+      const bonusHandle = ctx.p.offer?.bonus_produkt?.handle;
+      if (bonusHandle) {
+        const upsell = byggKorgUpsell(bonusHandle);
+        filer['snippets/opf-korg-upsell.liquid'] = upsell['snippets/opf-korg-upsell.liquid'];
+        filer['sections/cart-drawer.liquid'] = upsell['sections/cart-drawer.liquid'];
+        if (msHead && !msHead.includes('sections=cart-drawer')) msHead = `${msHead}\n${upsell.msHeadTillagg}`;
+      }
+      if (msHead && !msHead.includes(GALLERIFILTER_MARKE)) msHead = `${msHead}\n${msHeadGallerifilter()}`;
+      if (msHead) filer['snippets/ms-head.liquid'] = msHead;
+
+      // Schemat först i eget anrop — settings_data-värden utan schema-fält
+      // (ms_ab_tests) städas annars bort av Shopify. JSON-filerna
+      // normaliseras av Shopify (bytestorleken ändras), så bytekollen görs
+      // bara på Liquid-filerna; JSON:en läses tillbaka och tolkas i stället.
+      if (filer['config/settings_schema.json']) {
+        await skrivTemafiler(tema.id, { 'config/settings_schema.json': filer['config/settings_schema.json'] });
+        delete filer['config/settings_schema.json'];
+      }
+      await skrivTemafiler(tema.id, filer);
+      const liquid = Object.fromEntries(Object.entries(filer).filter(([f]) => f.endsWith('.liquid')));
+      const avvikande = await verifieraTemafiler(tema.id, liquid);
+      if (avvikande.length > 0) throw new Error(`Temafiler förvanskade: ${avvikande.join('; ')}`);
+      const fel = [];
+      for (const f of Object.keys(filer).filter((x) => x.endsWith('.json'))) {
+        const tillbaka = await hamtaTemafil(tema.id, f);
+        try {
+          const j = JSON.parse(String(tillbaka).replace(/\/\*[\s\S]*?\*\//, '').trim());
+          if (f === 'config/settings_data.json' && ctx.p.offer?.paket?.test && j.current?.ms_ab_tests !== ctx.p.offer.paket.test) {
+            fel.push(`${f}: ms_ab_tests blev "${j.current?.ms_ab_tests ?? ''}" — A/B-testet är inte aktivt`);
+          }
+          if (f === 'templates/index.json' && !Array.isArray(j.order)) fel.push(`${f}: ingen order`);
+        } catch (e) {
+          fel.push(`${f}: gick inte att tolka efter uppladdning (${e.message})`);
+        }
+      }
+      if (fel.length > 0) throw new Error(fel.join('; '));
+      return { temaId: tema.id, filer: Object.keys(filer), abTest: ctx.p.offer?.paket?.test ?? null };
+    },
+  },
+  {
     id: 'sidor',
     namn: 'Sidorna (villkor + kontakt)',
     torrt: (ctx) => [...ctx.policyer.map((x) => `${x.namn} (/pages/${x.handle})`), 'Kontakt (/pages/contact)'],
@@ -205,11 +302,17 @@ const STEG = [
   },
   {
     id: 'meny',
-    namn: 'Sidfotsmenyn',
-    torrt: (ctx) => ctx.menylankar.map((l) => `${l.titel} → ${l.url}`),
+    namn: 'Menyerna (huvudmeny + sidfot)',
+    torrt: (ctx) => [
+      ...huvudmeny(ctx).map((l) => `huvudmeny: ${l.titel} → ${l.url}`),
+      ...ctx.menylankar.map((l) => `sidfot: ${l.titel} → ${l.url}`),
+    ],
     async kor(ctx) {
+      // Huvudmenyn: Hem / produkten / Kontakt — Shopifys "Catalog"-länk
+      // pekar på en samlingssida en enproduktsbutik inte har.
+      const huvud = await skrivMeny('main-menu', 'Main menu', huvudmeny(ctx));
       const meny = await skrivMeny('footer', 'Footer menu', ctx.menylankar);
-      return { handle: meny.handle, orord: meny.orord === true };
+      return { huvudmeny: huvud.handle, handle: meny.handle, orord: meny.orord === true && huvud.orord === true };
     },
   },
   {
@@ -326,6 +429,17 @@ const STEG = [
 
 // ---------------------------------------------------------------------------
 
+// Huvudmenyn för en enproduktsbutik: Hem, produkten (kortnamnet före
+// tankstrecket), Kontakt.
+function huvudmeny(ctx) {
+  const kort = String(ctx.p.produkt.namn).split(/\s[–-]\s/)[0];
+  return [
+    { titel: 'Hem', url: '/' },
+    { titel: kort, url: `/products/${ctx.p.produkt.id}` },
+    { titel: 'Kontakt', url: '/pages/contact' },
+  ];
+}
+
 function lasKonfig(butiksfil, produktfil) {
   // LAUNCH-INPUT läses först och läggs ovanpå råfilerna — sen valideras allt
   // som vanligt, så det Axel fyllt i mäts av exakt samma spärrar.
@@ -417,7 +531,7 @@ async function korQa(ctx) {
   });
 }
 
-async function huvudflode({ butiksfil, produktfil, dryRun, resume, launch }) {
+async function huvudflode({ butiksfil, produktfil, dryRun, resume, launch, igen = new Set() }) {
   const { butik, p, varningar, nyckeltal, launchInput } = lasKonfig(butiksfil, produktfil);
   const ctx = byggKontext(butik, p);
   const lage = dryRun ? 'DRY-RUN' : launch ? 'LAUNCH' : resume ? 'RESUME' : 'BUILD';
@@ -458,7 +572,7 @@ async function huvudflode({ butiksfil, produktfil, dryRun, resume, launch }) {
   const manuella = [];
 
   for (const steg of STEG) {
-    if (resume && arKlart(state, steg.id)) {
+    if (resume && arKlart(state, steg.id) && !igen.has(steg.id)) {
       console.log(`⏭  ${steg.namn} — redan grönt, hoppar över.`);
       continue;
     }
@@ -544,7 +658,10 @@ async function huvud() {
   const dryRun = flaggor.has('--dry-run') || flaggor.has('--dry');
   const resume = flaggor.has('--resume');
   const launch = flaggor.has('--launch');
-  const positioner = argv.filter((a, i) => !a.startsWith('--') && argv[i - 1] !== '--butik');
+  // --igen <stegid[,stegid]> kör om gröna steg vid --resume (t.ex. startsida
+  // när översättningen kommit, tema efter en ny temaklon).
+  const igen = new Set(argv.includes('--igen') ? String(argv[argv.indexOf('--igen') + 1] ?? '').split(',').filter(Boolean) : []);
+  const positioner = argv.filter((a, i) => !a.startsWith('--') && argv[i - 1] !== '--butik' && argv[i - 1] !== '--igen');
 
   laddaEnv();
 
@@ -556,18 +673,18 @@ async function huvud() {
     produktfil = positioner[1];
     butiksfil = valjButik(argv);
     if (!produktfil) stopp('produktfil saknas', ['Användning: node factory/ops.mjs BUILD <produktfil.yaml>']);
-    return huvudflode({ butiksfil, produktfil, dryRun, resume, launch: launch || forsta === 'LAUNCH' });
+    return huvudflode({ butiksfil, produktfil, dryRun, resume, launch: launch || forsta === 'LAUNCH', igen });
   }
 
   [butiksfil, produktfil] = positioner;
   if (!butiksfil || !produktfil) {
-    console.error('Användning: node factory/ops.mjs <butik.yaml> <produkt.yaml> [--dry-run] [--resume] [--launch]');
+    console.error('Användning: node factory/ops.mjs <butik.yaml> <produkt.yaml> [--dry-run] [--resume] [--igen steg,steg] [--launch]');
     process.exit(1);
   }
   if (basename(dirname(butiksfil)) !== 'butiker' && basename(dirname(produktfil)) === 'butiker') {
     [butiksfil, produktfil] = [produktfil, butiksfil];
   }
-  return huvudflode({ butiksfil, produktfil, dryRun, resume, launch });
+  return huvudflode({ butiksfil, produktfil, dryRun, resume, launch, igen });
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

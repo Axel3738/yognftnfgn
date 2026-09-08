@@ -1,0 +1,295 @@
+# IBC-TANKÖVERDRAGET — OPS-produkt nr 2 ur fabriken (butik TankGuard).
+# Källa: baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv
+# All text nedan kommer ur källsidan (beskrivning, funktioner, garanti,
+# Judge.me-recensioner) — inget påhittat. Specs som INTE står på källsidan
+# är medvetet utelämnade. Hämtat 2026-09-08 via /products/<handle>.json +
+# judge.me/reviews/reviews_for_widget (10 recensioner, snitt 4,7).
+
+produkt:
+  namn: "IBC-tanköverdrag 1000 L – Stoppar Alger & UV"
+  id: tankoverdraget
+
+brand:
+  namn: "TankGuard"
+  domanideer:
+    - tankguard.se
+    - tankguard.no
+
+ekonomi:
+  # Ur Temu-batch #4-sheeten (rad "Water tank cover", 210 Waterproof Oxford
+  # Cloth Green), läst 2026-09-08: Sverige 1 st = 5,73 USD produkt + 8,21 frakt
+  # = 13,94 (sheetens "Total tax exclusive", EUR enligt husets regel) + 2,9 EUR
+  # tull = 16,84 EUR. ECB 2026-09-07: 11,162 SEK/EUR → 188 kr.
+  # 2-pack 23,65 + 2,9 = 26,55 EUR (≈148 kr/st), 3-pack 33,35 + 2,9 = 36,25 EUR
+  # (≈135 kr/st). Norge 1 st 15,63 EUR utan tull (samma tal som NO-batchen
+  # 2026-08-29 räknade BE-ROAS 1,63 på).
+  inkopskostnad: 188
+  pris: 489
+  jamforpris: 636
+
+varianter:
+  - namn: "Grön"
+    sku: "TEMU-601099590911868"
+
+media:
+  # Källsidans fem bilder på Bäverbutikens CDN — Shopify kopierar in dem i nya
+  # butiken vid skarp körning. Granskade 2026-09-08: bild 1, 2 och 5 saknar
+  # text helt; bild 3 (måttbild) har bara siffror + "1000 L IBC" och funkar
+  # på båda språken; bild 4 (före/efter) har svenska etiketterna Före/Efter
+  # på vita plattor → norsk version (Før/Etter) byggs med sharp och
+  # alt-märks [NO], den svenska [SV].
+  # En rad = URL (alt = produktnamnet) eller url + alt. Alt som börjar med
+  # [SV]/[NO] visas bara för det språket (temats gallerifilter i ms-head).
+  # De språkversionerade bilderna ligger i butikens egna Files (uppladdade
+  # 2026-09-08 av /ny-ops: sharp-versionen av före/efter med Før/Etter).
+  bilder:
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-01.jpg?v=1787626428"
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-04.jpg?v=1787626428"
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-matt-tankoverdrag.jpg?v=1787626427"
+    - url: "https://cdn.shopify.com/s/files/1/1012/7648/3928/files/tankguard-forefter-sv.jpg?v=1788847014"
+      alt: "[SV] Före och efter – IBC-tank utan och med överdrag"
+    - url: "https://cdn.shopify.com/s/files/1/1012/7648/3928/files/tankguard-forefter-no.jpg?v=1788847017"
+      alt: "[NO] Før og etter – IBC-tank uten og med trekk"
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-05.jpg?v=1787626428"
+  videor:
+    - ""
+  # Samma media och ordning som källsidans beskrivning använder: före/efter-
+  # bilden direkt efter problemet, tanken vid husväggen efter lösningen,
+  # måttbilden efter funktionerna. Källan har ingen gif — blocket tar en
+  # stillbild (fältet är en url).
+  gif_problem: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-forefter-tankoverdrag-sv.jpg?v=1787626428"
+  media_losning: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-04.jpg?v=1787626428"
+  bild_lifestyle: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-matt-tankoverdrag.jpg?v=1787626427"
+
+# Beskrivningens sju block, texterna ordagrant från källsidan på Bäverbutiken.
+beskrivning:
+  problem_rubrik: "Regnvattnet grönskar innan sommaren ens börjat"
+  problem_text: "Solljus rakt in i tanken får alger att växa i vattnet, och UV-strålningen gör plasten spröd år för år. Presenningen som skulle skydda blåser av vid första höststormen."
+  losning_rubrik: "Ett överdrag som håller ljuset ute och tanken hel"
+  losning_text: "Trä överdraget över tanken och stäng dragkedjan – det gröna 210D-oxfordtyget stänger ute ljuset så algerna aldrig kommer igång, och tar solen i stället för plasten. Öppningen upptill gör att du kommer åt locket utan att ta av något, och måtten 120 × 100 × 116 cm passar en standardtank på 1000 liter."
+
+vinkel:
+  huvudvinkel: "Regnvattnet grönskar — solljus in i tanken ger alger, UV gör plasten spröd, presenningen blåser av (källa: bevisad produktsida på Bäverbutiken, samma copy; PD/SP/CS-vinklarna i NO-batchen 2026-08-29, BE-ROAS 1,63)"
+  underrubrik: "Stänger ute ljuset så algerna aldrig kommer igång – och tar solen i stället för plasten. Passar 1000-liters IBC."
+  # Kort produkt-USP (max ~25 tecken) — fjärde punkten i startsidans USP-rad
+  # och annonsradens tredje text. Ur källsidans titel.
+  usp: "Stoppar alger och UV"
+
+malgrupp:
+  beskrivning: "Villa-, fritidshus- och småbruksägare med en 1000-liters IBC-tank för regnvatten på tomten — vattnar odlingar, växthus eller djur ur den och är trötta på grönt vatten, spröd plast och presenningar som blåser av"
+
+problem:
+  - "Solljus rakt in i tanken får alger att växa i vattnet"
+  - "UV-strålningen gör plasten spröd år för år"
+  - "Presenningen som skulle skydda blåser av vid första höststormen"
+
+benefits:
+  - "Vattnet håller sig klart – tyget stänger ute ljuset som får alger att växa"
+  - "Tanken åldras inte i solen – 210D oxfordtyg tar UV-strålningen i stället för plasten"
+  - "Locket alltid åtkomligt – öppning upptill, fyll på utan att ta av överdraget"
+  - "På och av med dragkedja – ingen kamp med presenning och gummiband"
+  - "Passar standardtanken – 120 × 100 × 116 cm för 1000-liters IBC"
+
+features:
+  - "Grönt 210D oxfordtyg som stänger ute ljus och UV"
+  - "Dragkedja längs sidan – på och av utan verktyg"
+  - "Öppning upptill så locket alltid går att nå"
+  - "Mått 120 × 100 × 116 cm, för 1000-liters IBC-tank"
+  - "Dragsnören nertill som håller överdraget på plats"
+
+offer:
+  beskrivning: "489 kr i stället för 636 kr"
+  # A = källans Kaching-nivåer, lästa ur den publika produktsidans
+  # deal-block 2026-09-08: 1x (ordinarie), 2x −15 % "+ Fri Frakt" (FÖRVALD i
+  # källan), 3x −21 %. Priserna avrundade till hela kronor: 831 / 1 159.
+  # B = testoffer: rundare priser under 800/1 100-gränsen + större bonus i
+  # 3-packet. Hypotes: rundare pris + "köp mer, få mer" höjer AOV mer än
+  # rabatten kostar. Förvalsregeln (Axel 2026-09-07): mitten alltid förvald.
+  # Rabattkoderna är fasta belopp som täcker rabatt + bonusens värde så
+  # kassapriset stämmer på kronan (ärlighetsspärren):
+  #   PAKET2  = 2×489 + 199 − 831  = 346 kr (min 3 varor)
+  #   PAKET3  = 3×489 + 199 − 1159 = 507 kr (min 4 varor)
+  #   PAKET2B = 2×489 + 199 − 799  = 378 kr (min 3 varor)
+  #   PAKET3B = 3×489 + 398 − 1099 = 766 kr (min 5 varor)
+  bundle: "A (original): 1 st 489 kr, 2-pack 831 kr FÖRVALD (−15 %, PAKET2, 1 kranskydd gratis), 3-pack 1 159 kr (−21 %, PAKET3, 1 kranskydd gratis). B (test): 1 st 489 kr, 2-pack 799 kr FÖRVALD (PAKET2B, 1 kranskydd gratis), 3-pack 1 099 kr (PAKET3B, 2 kranskydd gratis)."
+  # Maskinläsbar form av raden ovan — factory/paket.mjs bygger ms_paketniva-
+  # metaobjekten + rabattkoderna härifrån. En rad per nivå; "pris" är
+  # paketets kassapris i kronor, "kod" rabattkoden som ger exakt det priset.
+  # Nivå utan pris/kod = ordinarie (1 st). Förvald = mitten (⌈n/2⌉).
+  paket:
+    test: "paket"
+    nivaer:
+      - variant: a
+        antal: 1
+        rubrik: "1 överdrag"
+      - variant: a
+        antal: 2
+        rubrik: "2 överdrag"
+        underrubrik: "För två tankar"
+        pris: 831
+        kod: "PAKET2"
+        bricka: "Spara 15 %"
+        gratis_antal: 1
+        gratis_text: "Kranskydd Frost 420D – skyddar utekranen i vinter"
+        forvald: true
+      - variant: a
+        antal: 3
+        rubrik: "3 överdrag"
+        underrubrik: "För tre tankar"
+        pris: 1159
+        kod: "PAKET3"
+        bricka: "Spara 21 %"
+        gratis_antal: 1
+        gratis_text: "Kranskydd Frost 420D – skyddar utekranen i vinter"
+      - variant: b
+        antal: 1
+        rubrik: "1 överdrag"
+      - variant: b
+        antal: 2
+        rubrik: "2 överdrag"
+        underrubrik: "För två tankar"
+        pris: 799
+        kod: "PAKET2B"
+        bricka: "Spara 18 %"
+        gratis_antal: 1
+        gratis_text: "Kranskydd Frost 420D – skyddar utekranen i vinter"
+        forvald: true
+      - variant: b
+        antal: 3
+        rubrik: "3 överdrag"
+        underrubrik: "För tre tankar"
+        pris: 1099
+        kod: "PAKET3B"
+        bricka: "Spara 25 %"
+        gratis_antal: 2
+        gratis_text: "2 × Kranskydd Frost 420D – skyddar utekranarna i vinter"
+  # Q4-ramverket (standard för varje OPS): bonusprodukten är Bäverbutikens
+  # Kranskydd Frost 420D (Temu 601101411598143) — samma köpare (utekran och
+  # regnvattentank på samma tomt), Q4-säsong (frost), och billig: batch #3-
+  # sheeten säger 1,2 + 6,2 = 7,4 EUR + 2,9 tull ≈ 115 kr. Säljs i korgen
+  # för 199 kr (Bäverbutiken tar 309 kr). Bilderna 1, 2 och 4 saknar text;
+  # bild 3 (svensk måttbild) används inte.
+  bonus_produkt:
+    titel: "Kranskydd Frost 420D – Skyddar Utekranen i Vinter"
+    handle: "kranskydd-frost"
+    produkt_id: "15989725593944"
+    variant_id: "58420897481048"
+    pris: 199
+    i_paket: "1 st gratis i 2- och 3-pack (A), 1 st i 2-pack och 2 st i 3-pack (B)"
+    sku: "TEMU-601101411598143"
+    # Bilder och text ordagrant från källsidan på Bäverbutiken (block 1/3/5).
+    bilder:
+      - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu3-kranskydd-1.jpg?v=1787226593"
+      - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kranskydd-pa-kran.jpg?v=1787331844"
+      - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kranskydd-studio.jpg?v=1787331845"
+    problem_rubrik: "En sprucken vattenledning upptäcks alltid för sent"
+    problem_text: "Första riktiga köldknäppen fryser vattnet i utekranen. Isen spränger kran eller ledning – och skadan syns först när allt tinar och läcker."
+    losning_rubrik: "En vinterjacka för kranen"
+    losning_text: "Trä skyddet över kranen och dra åt – det isolerande fodret håller frosten borta hela vintern. 420D Oxford-tyg på utsidan tål snö, regn och is."
+    features:
+      - "Kranen klarar köldknäpparna – tjockt isolerande foder håller frosten ute"
+      - "Sitter på hela vintern – dragsko sluter tätt runt röret"
+      - "Tål väder i månader – slitstarkt 420D Oxford-tyg"
+      - "Monteras på tio sekunder – träs över kranen, inga verktyg"
+      - "Rymligare än de flesta kranskydd – 22 × 14 cm, når ända in till väggen"
+
+reviews:
+  # De tio recensionerna från källproduktens Judge.me-widget, ordagrant.
+  - namn: "Anders"
+    betyg: 5
+    text: "Väldigt bra överdrag. Passar min IBC-tank perfekt och är enkelt att sätta på."
+    titel: "Bra produkt"
+    datum: "2026-08-10"
+  - namn: "Maria"
+    betyg: 5
+    text: "Jag är nöjd. Nu slipper jag mycket solljus på tanken och det ser även snyggare ut."
+    titel: "Bra produkt"
+    datum: "2026-08-11"
+  - namn: "Johan"
+    betyg: 5
+    text: "Bra kvalitet och lätt att använda. Passade min 1000 liters tank utan problem."
+    titel: "Bra produkt"
+    datum: "2026-08-12"
+  - namn: "Lena"
+    betyg: 5
+    text: "Köpte detta för min regnvattentank. Fungerar bra och är enkelt att öppna när jag behöver."
+    titel: "Bra produkt"
+    datum: "2026-08-13"
+  - namn: "Peter"
+    betyg: 5
+    text: "Ett enkelt och praktiskt överdrag. Jag är väldigt nöjd med köpet."
+    titel: "Bra produkt"
+    datum: "2026-08-14"
+  - namn: "Sofia"
+    betyg: 5
+    text: "Passar bra på tanken och skyddar mot solen. Precis vad jag behövde."
+    titel: "Bra produkt"
+    datum: "2026-08-15"
+  - namn: "Magnus"
+    betyg: 5
+    text: "Bra material och känns stabilt. Lätt att montera på tanken."
+    titel: "Bra produkt"
+    datum: "2026-08-16"
+  - namn: "Emma"
+    betyg: 4
+    text: "Mycket nöjd. Tanken ser mycket bättre ut och överdraget sitter bra."
+    titel: "Bra produkt"
+    datum: "2026-08-17"
+  - namn: "Daniel"
+    betyg: 4
+    text: "Bra produkt för pengarna. Passar min IBC-tank och är enkel att använda."
+    titel: "Bra produkt"
+    datum: "2026-08-18"
+  - namn: "Karin"
+    betyg: 4
+    text: "Fungerar precis som jag hade hoppats. Bra skydd för min tank utomhus."
+    titel: "Bra produkt"
+    datum: "2026-08-19"
+
+faq:
+  - fraga: "Passar överdraget min tank?"
+    svar: "Måtten är 120 × 100 × 116 cm och passar en standardtank på 1000 liter."
+  - fraga: "Kommer jag åt locket när överdraget sitter på?"
+    svar: "Ja, öppningen upptill gör att du fyller på och kommer åt locket utan att ta av något."
+  - fraga: "Varför blir vattnet i tanken grönt?"
+    svar: "Solljus rakt in i tanken får alger att växa. Tyget stänger ute ljuset så algerna aldrig kommer igång."
+  - fraga: "Hur sätter jag på det?"
+    svar: "Trä överdraget över tanken och stäng dragkedjan – inga verktyg, ingen presenning och inga gummiband."
+  - fraga: "Hur lång är leveranstiden?"
+    svar: "6–10 arbetsdagar med fri frakt inom Sverige."
+  - fraga: "Vad händer om jag inte blir nöjd?"
+    svar: "30 dagars öppet köp – gillar du det inte får du pengarna tillbaka."
+
+leveranstid: "6–10 arbetsdagar"
+
+garantier:
+  - "30 dagars öppet köp – gillar du det inte får du pengarna tillbaka"
+
+leverantor:
+  url: "https://www.temu.com/se/g-601099590911868.html"
+  anteckning: "Temu-artikel 601099590911868 (SKU TEMU-601099590911868), variant 210 Waterproof Oxford Cloth Green. Quote batch #4: SE 13,94 EUR/st exkl. tull (2-pack 23,65, 3-pack 33,35), leveranstid 6–10 arbetsdagar. Kontrollera ledtid och lager före launch."
+
+kallor:
+  drive_mapp: ""
+
+meta:
+  # NY verksamhet — inget får kopieras från Bäverbutiken eller Grillkliniken.
+  # ALLA OPS-butiker kör på ETT gemensamt annonskonto: "MagiBorsten DK"
+  # 915422744950975 (Axels beslut 2026-09-07). Kampanjnamnen prefixas med
+  # brandet (TANKGUARD_...). ⚠️ Förväxla ALDRIG med MagiBorsten 1867947880635861.
+  ad_account_id: "915422744950975"
+  # Sidan skapar VA:n i Business Manager; pixeln skapas av meta-setup.mjs vid
+  # "Store ready".
+  page_id: ""
+  pixel_id: ""
+  creative_prefix: "TankGuard"
+  testbudget_per_dag: 1000
+  # Bevisade vinklar från Bäverbutikens svenska och norska körningar
+  # (NO-batch 2026-08-29: PD, SP, CS). Brand-swap enligt PLAN.md punkt 1.
+  vinklar:
+    - "PD — grönt vatten: solljuset in i tanken ger alger, överdraget stänger ute ljuset (huvudvinkel, samma som källsidan)"
+    - "FE — före/efter: tanken utan och med överdrag, tomten ser skött ut"
+    - "UV — plasten blir spröd år för år, tyget tar solen i stället"
+    - "PR — presenningen blåser av vid första höststormen, dragkedjan sitter kvar"
+    - "SP — social proof, tio recensioner (snitt 4,7)"
+    - "CS — 489 kr i stället för 636 kr (verifiera priset mot butiken före körning)"
