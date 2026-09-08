@@ -120,7 +120,13 @@ async function briefText(pageId, djup = 0) {
     const r = await notion(`blocks/${pageId}/children?page_size=100${cursor ? `&start_cursor=${cursor}` : ''}`);
     for (const b of r.results ?? []) {
       const inne = b[b.type] ?? {};
-      const t = text(inne.rich_text ?? []);
+      // Tabellrader har `cells` (en lista av rich_text-listor), inte `rich_text`.
+      // Briefernas Hook- och Script-tabeller ("Swedish (use this) | English meaning")
+      // ligger just dar — utan den har raden forsvann de tyst ur brief-dumpen och
+      // QA:n matte videon mot en brief utan manus. (Incident 2026-09-05.)
+      const t = b.type === 'table_row'
+        ? (inne.cells ?? []).map(c => text(c)).join(' | ')
+        : text(inne.rich_text ?? []);
       const url = inne.url ?? inne.external?.url ?? inne.file?.url ?? '';
       if (t) rader.push('  '.repeat(djup) + t);
       if (url) rader.push('  '.repeat(djup) + `[${b.type}] ${url}`);

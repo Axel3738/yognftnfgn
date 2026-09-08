@@ -287,6 +287,9 @@ den ska spara något i repot.
 *(Mätt igen 2026-09-04 på `/oversatt`: `create_trigger` med "ny session varje
 gång" startade i en TOM container — `sources: []`, inget repo, inget CLAUDE.md.
 Rutinen raderades och byggdes om som fast session enligt ovan.)*
+*(Och igen 2026-09-05/08 på Leveransrundan: sju nekade pushar över två
+körningar, en bugfix fast i containern. Ombyggd 2026-09-08 till fast session
+`session_011y7iCtjiWWbhePJRsM9h9C`, tagg `rutin:notionkorning`.)*
 
 
 ⚠️ **Rutiner ärver inte sessionens MCP-connectors.** En rutin som behöver Notion,
