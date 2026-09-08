@@ -88,6 +88,14 @@ Lärdomar från bygget 2026-09-08 (API 2025-07, alla mätta):
   TankGuard: `created_at` ignoreras på POST /reviews och på PUT, även som
   `review_date`). Recensioner importeras därför ENBART via appens CSV-import
   (fas 3) — `tools/judgeme-import.mjs` stoppar numera utan `--utan-datum`.
+- Discord: boten kan inte skapa servrar (`POST /guilds` → 20001, mätt
+  2026-09-08). VA:n skapar servern och auktoriserar boten via länken
+  `discord.mjs` skriver ut utan `--guild`. Skickar hon en invite-länk
+  (`discord.gg/<kod>`) i stället för ett server-id: `GET /invites/<kod>`
+  ger `guild.id` utan token — kolla sen i `GET /users/@me/guilds` att boten
+  är inne innan `--guild` körs. Serverikonen hämtas ur Shopify Files
+  (`files(query: "filename:<brand>-logga")`) — `output/loggor/` dör med
+  containern.
 - Storefrontens "429" på `/cart/add.js` från molnsessionen är Cloudflares
   bot-utmaning (`cf-mitigated: challenge`, "Verifying your connection…"),
   inte strypning — den går inte att vänta bort och ska inte kringgås.

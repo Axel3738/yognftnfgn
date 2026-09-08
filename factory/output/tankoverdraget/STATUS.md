@@ -18,7 +18,7 @@ Rättat 2026-09-08 efter Axels tre bakläxor: produkterna är ACTIVE + publicera
 - [x] CHECKLISTA.md genererad (`factory/output/tankoverdraget/CHECKLISTA.md`) — VA:n har STORE NAME + DOMAIN
 - [ ] Recensioner — **GÖRS OM 2026-09-08 (Axels bakläxa "för 12 minuter sedan")**: alla 32 API-importerade rader dolda (`hidden + spam`, kundvyn visar 0). Judge.mes API kan inte sätta datum (created_at ignoreras på POST och PUT — mätt). `output/tankoverdraget/judgeme-app-import.csv` (16 rader, originaldatum 10–19 aug 2026 ur källans widget, dd/mm/yyyy) är skickad till VA:n → Judge.me → Settings → Import reviews → Import from apps → Judge.me format. Verifieras sen mot `reviews_for_widget` (kundens datakälla).
 - [x] Pixel skapad 2026-09-08 vid "Store ready: TankGuard": **2196132151319625** i MagiBorsten DK `915422744950975` (står i produktfilen) — VA:n klistrar in det i WeTracked
-- [ ] Discord — boten kan inte skapa servrar längre (`POST /guilds` → 20001 "Bots cannot use this endpoint", mätt 2026-09-08). VA:n skapar servern **TankGuard** + auktoriserar boten, sen `node factory/discord.mjs factory/butiker/tankguard.yaml --guild <id> --ikon <logga.png>`
+- [x] Discord klart 2026-09-08: VA:n skapade servern **TankGuard** (guild `1546808022506938479`) och auktoriserade boten; fabriken byggde 6 kanaler (creative-strategy, ads-to-do, annons-uppladdning, ads, konton (privat), customer-support) + serverikon (loggan ur Shopify Files). Invite: https://discord.gg/HsNX88N5Km. Boten kan inte skapa servrar själv (`POST /guilds` → 20001).
 - [x] state (`factory/state/tankguard--tankoverdraget.json`) + PROCESS.md uppdaterade, pushat
 
 ## Kvar för hand (i checklistans ordning)
@@ -26,7 +26,7 @@ Rättat 2026-09-08 efter Axels tre bakläxor: produkterna är ACTIVE + publicera
 1. Judge.me → Settings → Import reviews → Import from apps → Judge.me format → filen `judgeme-app-import.csv` → Import. Sen kollar Claude datumen i kundvyn.
 2. Settings → Markets → Norway → activate NOK → Save.
 3. Meta: skapa sidan **TankGuard** i Business Manager → Page ID till Claude. WeTracked: pixel-id **2196132151319625** + CAPI-token från Events Manager → Data sources → TankGuard → Settings → Conversions API → **Generate access token** (systemanvändaren har redan pixeln; tokenen kan inte skapas via API — kräver appens hemlighet).
-4. Discord: skapa servern **TankGuard** → auktorisera boten (länken Claude ger) → server-id till Claude.
+4. Discord: klart — bjud in redigeraren till servern och ge åtkomst till #konton.
 
 ## Siffror (ur konfigen, inte ur huvudet)
 
