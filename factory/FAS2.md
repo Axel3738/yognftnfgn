@@ -14,13 +14,14 @@ Varje uppdrag nedan är ett eget avsnitt: **vad**, **återanvänd detta**,
 
 | Blockerare | Blockerar | Löses av |
 |---|---|---|
-| FB-kontot väntar på verifiering | brandets Meta-SIDA → hela kampanjbygget | Meta (väntan) |
+| ~~FB-kontot~~ — LÖST 2026-09-08: TankGuards Meta-sida är `1399193996606775` (verifierad i MagiBorstens `client_pages`), pixeln `2196132151319625` avfyrar och WeTracked är kopplat | inget | — |
 | ~~`META_ACCESS_TOKEN`~~ — finns i MOLNETS miljö (Axels besked 2026-09-08). `env.mjs` sätter aldrig över en variabel som redan finns i miljön, så all Meta-kod funkar i molnet. Saknas bara LOKALT. | inget i molnet | — |
 | HeyGen-plånboken tom (13 krediter, mätt 2026-09-08) | omdubbning av video | Axel fyller på |
 | `standby.md` har ännu ingen ifylld rad | tilldelning av redigerare | Axel ger namnet på personen som redan står på standby |
 
-Uppdrag A, C, D och E går att köra UTAN dessa. Uppdrag B väntar bara på Meta-SIDAN
-(pixeln kan skapas så snart sidan finns — `META_ACCESS_TOKEN` finns redan i molnet).
+**Läget 2026-09-08 kväll: A, B, C, D och E kan alla köra NU.** TankGuards sida,
+pixel och WeTracked är klara, och Meta-nyckeln finns i molnets miljö. Bara A2
+(videodubbningen) väntar — på HeyGen-krediter.
 
 ---
 
@@ -28,7 +29,8 @@ Uppdrag A, C, D och E går att köra UTAN dessa. Uppdrag B väntar bara på Meta
 
 1. **A — Brand-detektorn** (gratis, läser bara). Ger listan över vad som måste göras om.
 2. **C — Bildannonserna** (gratis, ingen väntan). Snabbaste vägen till färdiga creatives.
-3. **B — Kampanjbygget** (väntar på sida + token). Det som gör att pengar rör sig.
+3. **B — Kampanjbygget** (sida + pixel KLARA 2026-09-08 — kan köra nu).
+   Det som gör att pengar rör sig.
 4. **A2 — Videodubbningen** (väntar på HeyGen-krediter).
 5. **D — Notion + commission** (kod, ingen väntan). Måste vara klart INNAN redigeraren börjar.
 6. **E — Skalningsrutinen** (kod). Kan byggas parallellt, används först när data finns.
@@ -200,6 +202,10 @@ olika jobb som lätt förväxlas:**
 
 **Vad:** bygg OPS-butikens kampanj i MagiBorsten DK `915422744950975` med butikens
 egen sida, egen pixel, egen produktlänk, ~1000 kr/dag.
+
+**TankGuards värden (verifierade 2026-09-08, står i produktfilen):**
+sida `1399193996606775` · pixel `2196132151319625` · länk = produktsidan på
+tankguard.se · konto `915422744950975` (SEK) · 1000 kr/dag = `daily_budget: 100000`.
 
 ⚠️ **"Bara exportera kampanjerna" finns inte som knapp.** Ingen kod i repot läser en
 hel kampanjstruktur ur ett konto. Och `image_hash`/`video_id` är **per annonskonto** —
