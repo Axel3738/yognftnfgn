@@ -32,7 +32,7 @@ Railway → samma projekt som `beautiful-curiosity` → **+ New** → **GitHub R
 `yognftnfgn`.
 
 **Settings → Source**
-- Branch: `claude/bäverbutiken-settkopplingen-nba21z`
+- Branch: `main` (all pnl-app-kod ligger på main sedan 2026-09-08)
 - Root Directory: `pnl-app`
 
 **Settings → Networking** → **Generate Domain**, port `3000`. Notera domänen.
