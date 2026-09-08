@@ -40,6 +40,17 @@ model ShopSettings {
   metaAdAccountId String?
   /// Long-lived Meta-token. Kryptera i produktion — se lib/crypto.server.ts.
   metaAccessToken String?
+  /// Annonskontots valuta (t.ex. NOK). Skiljer sig den från butikens räknas
+  /// annonskostnaden om per dag med ECB-kursen. Null = okänd ännu.
+  metaAdAccountCurrency String?
+  /// När Meta-token slutar gälla (long-lived user token ≈ 60 dagar). Null för
+  /// inklistrade tokens där utgången är okänd.
+  metaTokenExpiresAt DateTime?
+  /// "oauth" = kopplad med knappen, "token" = inklistrad för hand.
+  metaConnectedVia String?
+  /// Annonskonton som Meta-inloggningen gav åtkomst till:
+  /// [{ id, name, currency }]. Handlaren väljer ett av dem.
+  metaAdAccounts  Json?
   currency        String   @default("SEK")
   /// Sätts när handlaren sparat inställningarna minst en gång. Skiljer
   /// "har granskat tull och avgifter" från "kör fortfarande på defaults".
@@ -80,13 +91,34 @@ model DailySpend {
   id          String   @id @default(cuid())
   shop        String
   day         DateTime @db.Date
+  /// Spend i ANNONSKONTOTS valuta, som Meta rapporterar den. Omräkning till
+  /// butikens valuta görs vid läsning, aldrig vid skrivning — då kan kursen
+  /// rättas i efterhand utan att hämta om från Meta.
   spend       Decimal  @db.Decimal(12, 2)
+  /// Valutan spend står i. Null = skriven innan valutan lästes; tolkas som
+  /// butikens valuta.
+  currency    String?
   impressions Int      @default(0)
   clicks      Int      @default(0)
   fetchedAt   DateTime @default(now())
 
   @@unique([shop, day])
   @@index([shop, day])
+}
+
+/// Dagskurs från Europeiska centralbanken (via Frankfurter). En rad per
+/// (bas, mot, dag). Helger och helgdagar har ingen egen kurs — då gäller
+/// senaste bankdag, och `rateDay` säger vilken dag kursen egentligen är från.
+model FxRate {
+  id        String   @id @default(cuid())
+  base      String
+  quote     String
+  day       DateTime @db.Date
+  rate      Decimal  @db.Decimal(18, 8)
+  rateDay   DateTime @db.Date
+  fetchedAt DateTime @default(now())
+
+  @@unique([base, quote, day])
 }
 
 /// Färdigräknade aggregat per (butik, intervall). Bulk-exporten tar 20–60 s;

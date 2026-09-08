@@ -11,8 +11,13 @@
  * blir exakt istället för titelbaserad.
  */
 
-import type { AdminApiContext } from "@shopify/shopify-app-remix/server";
+import type { AdminApiContext as FullAdminApiContext } from "@shopify/shopify-app-remix/server";
 import type { ProductRow, SalesDay } from "./pnl.server";
+
+/** Allt vi behöver av admin-klienten är `graphql`. Med `removeRest` i
+ *  konfigen saknar kontexten `rest`, så den fulla typen matchar inte —
+ *  därför bara den delen vi använder. */
+export type AdminApiContext = Pick<FullAdminApiContext, "graphql">;
 
 const num = (v: unknown): number => {
   if (v == null || v === "") return 0;
@@ -278,6 +283,8 @@ export interface VariantCost {
   inventoryItemGid: string;
   productTitle: string;
   variantTitle: string;
+  /** Artikelnummer, tomt om inget satt. Nyckeln andra vinstappar exporterar på. */
+  sku: string;
   price: number;
   unitCost: number | null;
 }
@@ -285,6 +292,8 @@ export interface VariantCost {
 export interface VariantCatalog {
   byGid: Map<string, VariantCost>;
   byTitle: Map<string, VariantCost>;
+  /** Nycklad på SKU i gemener. Bara varianter som har ett SKU. */
+  bySku: Map<string, VariantCost>;
   all: VariantCost[];
 }
 
@@ -306,6 +315,7 @@ export async function fetchVariantCosts(
   }
   const byGid = new Map<string, VariantCost>();
   const byTitle = new Map<string, VariantCost>();
+  const bySku = new Map<string, VariantCost>();
   let after: string | null = null;
 
   for (let page = 0; page < 40; page++) {
@@ -315,7 +325,7 @@ export async function fetchVariantCosts(
          productVariants(first: 250, after: $after) {
            pageInfo { hasNextPage endCursor }
            nodes {
-             id title price
+             id title price sku
              product { id title }
              inventoryItem { id unitCost { amount } }
            }
@@ -334,16 +344,18 @@ export async function fetchVariantCosts(
         inventoryItemGid: v.inventoryItem.id,
         productTitle: v.product.title,
         variantTitle: v.title,
+        sku: String(v.sku ?? "").trim(),
         price: num(v.price),
         unitCost: v.inventoryItem.unitCost ? num(v.inventoryItem.unitCost.amount) : null,
       };
       byGid.set(rec.variantGid, rec);
       byTitle.set(titleKey(rec.productTitle, rec.variantTitle), rec);
+      if (rec.sku) bySku.set(rec.sku.toLowerCase(), rec);
     }
     if (!conn.pageInfo?.hasNextPage) break;
     after = conn.pageInfo.endCursor;
   }
-  const cat: VariantCatalog = { byGid, byTitle, all: [...byGid.values()] };
+  const cat: VariantCatalog = { byGid, byTitle, bySku, all: [...byGid.values()] };
   if (cacheKey) catalogCache.set(cacheKey, { cat, at: Date.now() });
   return cat;
 }
