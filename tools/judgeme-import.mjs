@@ -185,5 +185,27 @@ for (const r of rader) {
   await new Promise((res) => setTimeout(res, 1200));   // spamma inte deras API
 }
 console.log(`klart: ${ok} ok, ${fel} fel`);
+
+// Judge.me lägger importerade rader som `published:false, curated:"spam"`
+// (mätt 2026-09-08: alla 46 rader i fem produkter) — de syns då inte i
+// butiken. Publicera dem: PUT med published:true + curated:"ok" ("curated"
+// avvisas av API:et). Listan tas ur butikens senaste recensioner och filtreras
+// på produktens Shopify-id, eftersom /reviews?product_id inte fungerar för
+// produkt-id:n över 2^31.
+if (!dry && ok > 0) {
+  const senaste = await judgemeGet('/reviews', { per_page: '100' });
+  const mina = (senaste.kropp.reviews ?? []).filter((r) =>
+    String(r.product_external_id) === String(productId) && !r.published && !r.hidden);
+  let pub = 0;
+  for (const r of mina) {
+    const resp = await fetch(`https://api.judge.me/api/v1/reviews/${r.id}`, {
+      method: 'PUT', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ api_token: TOKEN, shop_domain: SHOP, published: true, curated: 'ok' }),
+    });
+    if (resp.ok) pub++;
+    await new Promise((res) => setTimeout(res, 600));
+  }
+  console.log(`publicerade: ${pub} av ${mina.length} opublicerade rader på produkten`);
+}
 if (!dry && !fel) console.log('Verifiera i Judge.me-adminen att recensionerna ligger på rätt produkt innan nästa steg.');
 process.exit(fel ? 1 : 0);
