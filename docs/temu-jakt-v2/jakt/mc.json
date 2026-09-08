@@ -1,0 +1,2528 @@
+[
+ {
+  "kluster": "mc",
+  "goods_id": "601099511919796",
+  "url_se": "https://www.temu.com/se/g-601099511919796.html",
+  "title": "6 Amp 12V Battery Charger Maintainer: Keep *, Boat, Motorcycle, Lawn Mower &amp; More Batteries *!",
+  "temu_price_sek": null,
+  "temu_price_native": {
+   "amount": 22.99,
+   "currency": "USD"
+  },
+  "temu_price_sek_est": 218.0,
+  "temu_price_note": "antagen kurs (USD 9,5 / AUD 6,3 / CAD 7,0 / MXN 0,5 / MYR 2,2), ej hämtad — bara storleksordning",
+  "rating": 4.8,
+  "review_count": 194,
+  "review_dates": [
+   "2023-04-14",
+   "2023-06-18",
+   "2023-12-11",
+   "2023-12-24"
+  ],
+  "category_path": [
+   "Automotive",
+   "Tools & Equipment"
+  ],
+  "image_count": 1,
+  "hero_url": "https://img.kwcdn.com/product/1dab9a690e/d0b110d1-edf0-49ae-bd0c-b0b635d4fad8_1466x1466.jpeg.a.jpeg",
+  "video_url": null,
+  "temu_data_status": "hämtad via https://www.temu.com/goods.html?goods_id=601099511919796 (US/landssajt, inte /se — svenska priset okänt)",
+  "video_checked": false,
+  "object": "batteriladdare/underhållsladdare 12 V (MC, ATV, skoter, klippare)",
+  "owner_owns": "ja — alla fordon med blybatteri",
+  "friction": "batteriet dör under avställningen sept–april",
+  "old_way": "ta ut batteriet, ladda ibland, eller köpa nytt batteri i april",
+  "variants": "1 modell (6 A)",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Clas Ohlson",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "CTEK MXS 5.0",
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fästs på ägt fordon; används varje vinter"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "avställningen sker nu (sept–okt)",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "underhållsladdare i exakt samma form finns hos alla fyra kedjor; CTEK-ankaret gäller bara om vår ser ut som CTEK, vilket den inte gör [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej hämtad — Temu blockerade",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "SKIPPED",
+    "reason": "föll i hyllan",
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en modell"
+   },
+   "hook": {
+    "text": "Står MC:n avställd i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "alla fordonsägare, men objektet syns inte i bild (laddare är generisk)"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "jämförelsehandlad",
+   "elektronik (laddning = förtroendekrav)"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 25,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "jämförelsehandlad commodity",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com motorcycle battery tender charger maintainer",
+   "https://www.temu.com/goods.html?goods_id=601099511919796"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601099532236044",
+  "url_se": "https://www.temu.com/se/g-601099532236044.html",
+  "title": "Motorcycle Exhaust Pipe PVC Plug Muffler Wash Plug Pipe Protector Motocross Tailpipe Removable Plug",
+  "temu_price_sek": null,
+  "temu_price_native": {
+   "amount": 7.01,
+   "currency": "USD"
+  },
+  "temu_price_sek_est": 67.0,
+  "temu_price_note": "antagen kurs (USD 9,5 / AUD 6,3 / CAD 7,0 / MXN 0,5 / MYR 2,2), ej hämtad — bara storleksordning",
+  "rating": 4.7,
+  "review_count": 33,
+  "review_dates": [
+   "2025-11-02",
+   "2025-04-22",
+   "2026-03-09",
+   "2024-07-02"
+  ],
+  "category_path": [
+   "Automotive",
+   "Motorcycles & * Accessories"
+  ],
+  "image_count": 16,
+  "hero_url": "https://img.kwcdn.com/product/open/2023-11-03/1698999280477-057a207ce61a45b88ba7440d1eb0f5d2-goods.jpeg",
+  "video_url": null,
+  "temu_data_status": "hämtad via https://www.temu.com/goods.html?goods_id=601099532236044 (US/landssajt, inte /se — svenska priset okänt)",
+  "video_checked": false,
+  "object": "avgasplugg (PVC) mot fukt/möss under avställning",
+  "owner_owns": "ja — MC/moped",
+  "friction": "fukt och möss i avgasröret under vintern",
+  "old_way": "trasa/plastpåse i röret",
+  "variants": "flera färger + diameterstorlekar (ägaren vet inte mm)",
+  "swedish_equivalent": {
+   "retailer": "MC-fackhandel (ej kedja)",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fästs i MC:ns avgasrör"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "avställning nu; fukt i röret är höstens problem",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "kedjorna säljer troligen inte; MC-butiker säljer 'avgasplugg' 100–200 kr [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "16 bilder, ingen video enligt JSON-LD; bilderna ej granskade",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "FAIL",
+    "reason": "Temu ≈ 67 kr → landad ≈ 100 kr → max ~249 kr; under 300 kr",
+    "landed_est_sek": 100,
+    "se_price_est_sek": 249,
+    "multiple": 2.5,
+    "be_cpa_est": 149,
+    "multibuy_reason": "två rör på vissa MC"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "diameter i mm som ägaren måste mäta"
+   },
+   "hook": {
+    "text": "Står MC:n avställd i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "MC-ägare, objektet (MC) igenkännbart"
+   }
+  },
+  "negative_space_flags": [
+   "< 199 kr",
+   "passform måste mätas",
+   "motocross-produkt i listningen (annan ägare)"
+  ],
+  "eliminated_at": "economics",
+  "structure_match": 35,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "biggest_risk": "priset — kan inte nå 300 kr",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com motorcycle exhaust plug muffler cover storage",
+   "https://www.temu.com/goods.html?goods_id=601099532236044"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601099592800786",
+  "url_se": "https://www.temu.com/se/g-601099592800786.html",
+  "title": "A Set of Motorcycle Disc Brake Anti-Theft Locks with a 110Db Alarm, Suitable for Outdoor Cycling And Mountain Bikes. It Features a USB Type-C Fast Cha",
+  "temu_price_sek": null,
+  "temu_price_native": {
+   "amount": 40.79,
+   "currency": "USD"
+  },
+  "temu_price_sek_est": 388.0,
+  "temu_price_note": "antagen kurs (USD 9,5 / AUD 6,3 / CAD 7,0 / MXN 0,5 / MYR 2,2), ej hämtad — bara storleksordning",
+  "rating": 4.9,
+  "review_count": 150,
+  "review_dates": [
+   "2025-01-13",
+   "2024-11-11",
+   "*24-12-*",
+   "2024-09-19"
+  ],
+  "category_path": [
+   "Automotive",
+   "Motorcycles & * Accessories"
+  ],
+  "image_count": 7,
+  "hero_url": "https://img.kwcdn.com/product/fancy/e5cc7e83-a17e-4da6-9b53-0764cf6095b8.jpg",
+  "video_url": "https://goods-vod.kwcdn.com/goods-video/4b13f655ddba79c894507393f74375da21f3b92bgs2CV.f30.mp4",
+  "temu_data_status": "hämtad via https://www.temu.com/goods.html?goods_id=601099592800786 (US/landssajt, inte /se — svenska priset okänt)",
+  "video_checked": true,
+  "object": "bromsskivelås med 110 dB larm (USB-C)",
+  "owner_owns": "ja — MC/moped med skivbroms",
+  "friction": "stöldrisk när MC:n står ute (rädsla, inte inträffad skada)",
+  "old_way": "kedja/kätting, styrlås",
+  "variants": "1 modell, 3 färger",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula (bromsskivelås med larm)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Kryptonite/ABUS skivlås med larm",
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fästs på MC:ns bromsskiva"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "stöld är latent — annonsen måste skapa rädslan; MC står dock ute i sept",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "bromsskivelås med larm i samma form hos Biltema/Jula ~250–300 kr [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "FAIL",
+    "reason": "0–3 s: vit studiobakgrund med titelkort 'LOCK KING I Alarm disc lock — Instructions for Use'; produkten dyker upp ~2,5 s liggande i studio bredvid manual, nycklar och USB-kabel; sedan 'Set Contents', 'Alarm mode setting' med insexnyckel. Aldrig på en MC. Inbränd engelsk text hela vägen. Instruktionsfilm, inte annons.",
+    "sec_0_3": "titelkort + packshot, ingen handling",
+    "hero_note": "ren studio-packshot, 'ALARM DISC LOCK' tryckt på produkten, ingen kontext"
+   },
+   "economics": {
+    "result": "FAIL",
+    "reason": "40,79 USD ≈ 390 kr → landad ≈ 580 kr → 2,4× = 1 390 kr > 1 000 kr",
+    "landed_est_sek": 580,
+    "se_price_est_sek": 1390,
+    "multiple": 2.4,
+    "be_cpa_est": 810,
+    "multibuy_reason": null
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en modell"
+   },
+   "hook": {
+    "text": "Står MC:n olåst på gården?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "MC-ägare"
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas",
+   "> 1 000 kr",
+   "kräver förklaring (lägen, laddning)",
+   "svensk mass-commoditisering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 20,
+  "category_novelty": 75,
+  "tier": "ELIM",
+  "biggest_risk": "pris + hylla + material samtidigt",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com motorcycle disc brake lock alarm",
+   "https://www.temu.com/goods.html?goods_id=601099592800786",
+   "video: goods-vod.kwcdn.com/…4b13f655…mp4 (frames granskade)"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601099512116561",
+  "url_se": "https://www.temu.com/se/g-601099512116561.html",
+  "title": "Motorcycle Bike Anti-Theft Disc Brake Lock with 47.24inch Spring Reminder Rope",
+  "temu_price_sek": null,
+  "temu_price_native": {
+   "amount": 6.23,
+   "currency": "USD"
+  },
+  "temu_price_sek_est": 59.0,
+  "temu_price_note": "antagen kurs (USD 9,5 / AUD 6,3 / CAD 7,0 / MXN 0,5 / MYR 2,2), ej hämtad — bara storleksordning",
+  "rating": 4.8,
+  "review_count": 338,
+  "review_dates": [
+   "2023-07-14",
+   "2024-03-29",
+   "2022-12-18",
+   "2023-03-14"
+  ],
+  "category_path": [
+   "Automotive",
+   "Motorcycles & * Accessories"
+  ],
+  "image_count": 1,
+  "hero_url": "https://img.kwcdn.com/product/1d658695a0/098bd403-58da-461b-92a4-05c99dea919f_800x800.jpeg.a.jpg",
+  "video_url": null,
+  "temu_data_status": "hämtad via https://www.temu.com/goods.html?goods_id=601099512116561 (US/landssajt, inte /se — svenska priset okänt)",
+  "video_checked": false,
+  "object": "enkelt bromsskivelås med påminnelselina",
+  "owner_owns": "ja — MC/moped",
+  "friction": "stöldrisk (latent)",
+  "old_way": "kätting/styrlås",
+  "variants": "1",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Clas Ohlson",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fästs på bromsskivan"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "latent stöldrädsla",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "samma form i alla kedjor, 99–199 kr [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej hämtad — Temu blockerade",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "FAIL",
+    "reason": "6,23 USD ≈ 59 kr → kan inte nå 300 kr utan att se dyr ut",
+    "landed_est_sek": 90,
+    "se_price_est_sek": 199,
+    "multiple": 2.2,
+    "be_cpa_est": 109,
+    "multibuy_reason": null
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en"
+   },
+   "hook": {
+    "text": "Står MC:n olåst på gården?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "MC-ägare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "< 199 kr",
+   "behovet måste skapas"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 15,
+  "category_novelty": 75,
+  "tier": "ELIM",
+  "biggest_risk": "commodity",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com motorcycle disc brake lock alarm",
+   "https://www.temu.com/goods.html?goods_id=601099512116561"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601099554948535",
+  "url_se": "https://www.temu.com/se/g-601099554948535.html",
+  "title": "Motorcycle Chain Cleaning Kit with Brush and Gear Cleaner - Lubricating Tool for Motorbike Chains",
+  "temu_price_sek": null,
+  "temu_price_native": {
+   "amount": 31.4,
+   "currency": "USD"
+  },
+  "temu_price_sek_est": 298.0,
+  "temu_price_note": "antagen kurs (USD 9,5 / AUD 6,3 / CAD 7,0 / MXN 0,5 / MYR 2,2), ej hämtad — bara storleksordning",
+  "rating": 4.8,
+  "review_count": 2335,
+  "review_dates": [
+   "2024-*-28",
+   "2024-05-01",
+   "2025-04-05",
+   "2024-09-14"
+  ],
+  "category_path": [
+   "Automotive",
+   "Tools & Equipment"
+  ],
+  "image_count": 1,
+  "hero_url": "https://img.kwcdn.com/product/fancy/32228d57-0636-4e39-b362-914b028e836b.jpg",
+  "video_url": null,
+  "temu_data_status": "hämtad via https://www.temu.com/goods.html?goods_id=601099554948535 (US/landssajt, inte /se — svenska priset okänt)",
+  "video_checked": false,
+  "object": "kedjerengöringskit (borste + rengörare + smörjverktyg)",
+  "owner_owns": "ja — MC med kedja",
+  "friction": "smutsig kedja före avställning (underhållsönskan, inte skada)",
+  "old_way": "tandborste + kedjespray",
+  "variants": "1 kit",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula (kedjeborste)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "kit/N-i-1 och underhållsförbrukning — utesluts av fingeravtrycket steg 0"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "kedjan smörjs före avställning, men det är en rutin, ingen synlig skada",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "kedjeborstar finns i kedjorna [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej hämtad — Temu blockerade",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "SKIPPED",
+    "reason": "föll i objekt",
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "ett kit"
+   },
+   "hook": {
+    "text": "När smorde du kedjan senast?",
+    "result": "FAIL — ingen ägarfråga, en förmaning"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "MC-ägare"
+   }
+  },
+  "negative_space_flags": [
+   "kit",
+   "förbrukning/underhåll",
+   "behovet måste skapas"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 15,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "kit utan payoff i bild",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com motorcycle chain cleaning brush kit maintenance",
+   "https://www.temu.com/goods.html?goods_id=601099554948535 (2 335 recensioner, 4,8 — klustrets mest sålda listning)"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601099538928629",
+  "url_se": "https://www.temu.com/se/g-601099538928629.html",
+  "title": "Motorcycle Handlebar Lock Grip, Motorcycle Locks Anti Theft, Heavy Duty Anti-Theft Adjustable Bike Handlebar Lock, CNC Heavy Duty Handlebar Throttle G",
+  "temu_price_sek": null,
+  "temu_price_native": {
+   "amount": 171.64,
+   "currency": "MXN"
+  },
+  "temu_price_sek_est": 86.0,
+  "temu_price_note": "antagen kurs (USD 9,5 / AUD 6,3 / CAD 7,0 / MXN 0,5 / MYR 2,2), ej hämtad — bara storleksordning",
+  "rating": 4.8,
+  "review_count": 382,
+  "review_dates": [
+   "2025-06-06",
+   "2024-09-11",
+   "2024-07-30",
+   "2025-03-27"
+  ],
+  "category_path": [
+   "Automotive",
+   "Motorcycles & * Accessories"
+  ],
+  "image_count": 5,
+  "hero_url": "https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/bbea359873800267216f4099498e8bc1.jpg",
+  "video_url": null,
+  "temu_data_status": "hämtad via https://www.temu.com/mx-en/g-601099538928629.html (US/landssajt, inte /se — svenska priset okänt)",
+  "video_checked": false,
+  "object": "handtagslås/gaslås MC (CNC-aluminium, låser gasreglage + bromshandtag)",
+  "owner_owns": "ja — MC/moped/EU-moped",
+  "friction": "fordonet står olåst på gården/gatan i väntan på avställning; stöld är rädsla, inte inträffad",
+  "old_way": "styrlås i tändningslåset, kätting",
+  "variants": "1 justerbar storlek, 3 färger",
+  "swedish_equivalent": {
+   "retailer": "Biltema (handtagslås MC)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Grip-Lock (MC-fackhandel)",
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fästs på styret, används varje gång MC:n parkeras"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "MC/moped står ute i sept–okt, men stölden ligger i framtiden — behovet måste delvis skapas",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Biltema har troligen ett handtagslås ~150–200 kr i liknande form; Grip-Lock-märket ~400 kr i MC-butik kan vara ankare om vår ser ut som det [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "OSÄKER",
+    "reason": "5 bilder granskade: bild 0 lås på styre (rött, studio/mörk bakgrund), bild 1–3 lås på styre i blå/svart/röd (textfri, tydlig funktion), bild 4 packshot med nycklar. Ingen video. Materialöverförbarhet 1.",
+    "sec_0_3": null,
+    "hero_note": "produkten på styret, textfri — funktionen förstås i stillbild"
+   },
+   "economics": {
+    "result": "PASS",
+    "reason": "171,64 MXN ≈ 85 kr → landad ≈ 130 kr → 349 kr = 2,7×; BE-CPA ≈ 220 kr; under 500 kr = bara med leverantörsmaterial",
+    "landed_est_sek": 130,
+    "se_price_est_sek": 349,
+    "multiple": 2.7,
+    "be_cpa_est": 219,
+    "multibuy_reason": "två fordon (MC + moped) — svagt"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "justerbar, färgval"
+   },
+   "hook": {
+    "text": "Står MC:n olåst på gården?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "MC-ägare ~300 000+ (ur minne, ej verifierat) + mopedföräldrar; MC i bild = CPM-proxy bra"
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas (stöld latent)",
+   "jämförelsehandlad lås-kategori",
+   "< 500 kr"
+  ],
+  "eliminated_at": null,
+  "structure_match": 48,
+  "category_novelty": 75,
+  "tier": "C",
+  "biggest_risk": "latent behov + Biltema-form ~150 kr utan synligt ankare",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com motorcycle grip lock throttle brake lever lock",
+   "https://www.temu.com/mx-en/g-601099538928629.html (382 recensioner, 4,8)"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601099564685759",
+  "url_se": "https://www.temu.com/se/g-601099564685759.html",
+  "title": "J-00 Universal Lifting Frame with Handle (*)",
+  "temu_price_sek": null,
+  "temu_price_native": {
+   "amount": 48.49,
+   "currency": "AUD"
+  },
+  "temu_price_sek_est": 305.0,
+  "temu_price_note": "antagen kurs (USD 9,5 / AUD 6,3 / CAD 7,0 / MXN 0,5 / MYR 2,2), ej hämtad — bara storleksordning",
+  "rating": 4.8,
+  "review_count": 113,
+  "review_dates": [
+   "2024-06-26",
+   "2024-08-09",
+   "2024-12-29",
+   "2024-12-02"
+  ],
+  "category_path": [
+   "Automotive",
+   "Motorcycles & * Accessories"
+  ],
+  "image_count": 3,
+  "hero_url": "https://img.kwcdn.com/product/fancy/e8580a9f-a4cd-4795-9a13-200af2ff6087.jpg",
+  "video_url": "https://goods-vod.kwcdn.com/goods-video/fee124fc4d3a954d28bd3fc59100ed6877c7fa9dgs2CV.f30.mp4",
+  "temu_data_status": "hämtad via https://www.temu.com/au/g-601099564685759.html (US/landssajt, inte /se — svenska priset okänt)",
+  "video_checked": true,
+  "object": "paddockställ / lyftställ bakhjul (J-00)",
+  "owner_owns": "ja — MC med svingarm",
+  "friction": "kedjesmörjning/vinterförvaring med hjulet fritt",
+  "old_way": "sidostöd + rulla",
+  "variants": "1, 2 färger",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula (MC-ställ bak)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "används med MC — men i garaget (inomhus)"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "avställning nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "MC-ställ bak i samma form hos Biltema/Jula 400–600 kr [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "FAIL",
+    "reason": "0–3 s: mörk flat-lay av delarna på stenbänk med kapitelmeny 'Product Presentation / Installation / testing' inbränd; produkten monteras först vid ~6 s; på MC syns den inte i de första 12 s.",
+    "sec_0_3": "flat-lay, ingen handling",
+    "hero_note": "packshot, ingen MC"
+   },
+   "economics": {
+    "result": "FAIL",
+    "reason": "48,49 AUD ≈ 305 kr → landad ≈ 460 kr → 1 100 kr > 1 000",
+    "landed_est_sek": 460,
+    "se_price_est_sek": 1100,
+    "multiple": 2.4,
+    "be_cpa_est": 640,
+    "multibuy_reason": null
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en"
+   },
+   "hook": {
+    "text": "Står MC:n på sidostödet hela vintern?",
+    "result": "PASS (6 ord)"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "MC-ägare"
+   }
+  },
+  "negative_space_flags": [
+   "inomhus/garage",
+   "svensk mass-commoditisering",
+   "montering",
+   "> 1 000 kr"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 15,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "hylla + pris",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com motorcycle rear wheel stand paddock",
+   "https://www.temu.com/au/g-601099564685759.html",
+   "video: goods-vod.kwcdn.com/…fee124fc…mp4 (frames granskade)"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601100973328677",
+  "url_se": "https://www.temu.com/se/g-601100973328677.html",
+  "title": "1800 lbs Motorcycle Wheel Chock Stand - Heavy Duty Motorcycle Lift Stand with Adjustable Height &amp; Sturdy Base, 15-21 Inch Wheel *, Motorcy",
+  "temu_price_sek": null,
+  "temu_price_native": {
+   "amount": 119.55,
+   "currency": "CAD"
+  },
+  "temu_price_sek_est": 837.0,
+  "temu_price_note": "antagen kurs (USD 9,5 / AUD 6,3 / CAD 7,0 / MXN 0,5 / MYR 2,2), ej hämtad — bara storleksordning",
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": [
+   "Automotive",
+   "Motorcycles & * Accessories"
+  ],
+  "image_count": 1,
+  "hero_url": "https://img.kwcdn.com/product/open/42ade79891504b359c3df075a94c372e-goods.jpeg",
+  "video_url": null,
+  "temu_data_status": "hämtad via https://www.temu.com/ca/g-601100973328677.html (US/landssajt, inte /se — svenska priset okänt)",
+  "video_checked": false,
+  "object": "hjulklämma/hjulstopp MC för släp och garage (1800 lbs)",
+  "owner_owns": "ja — MC + släp",
+  "friction": "transport till vinterförvaring, MC:n välter på släpet",
+  "old_way": "spännband + någon som håller",
+  "variants": "justerbar 15–21 tum",
+  "swedish_equivalent": {
+   "retailer": "Biltema (hjulstopp MC)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "används med MC + släp"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "bara vid transport; en gång per säsong",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "hjulstopp MC i samma form hos Biltema ~400 kr [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej hämtad — Temu blockerade",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "FAIL",
+    "reason": "119,55 CAD ≈ 840 kr → > 1 000 kr",
+    "landed_est_sek": 1250,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "justerbar"
+   },
+   "hook": {
+    "text": "Kör du MC:n på släp i höst?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "MC-ägare med släp = smal"
+   }
+  },
+  "negative_space_flags": [
+   "> 1 000 kr",
+   "tung frakt",
+   "montering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 15,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "pris",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com motorcycle wheel chock stand garage",
+   "https://www.temu.com/ca/g-601100973328677.html"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601099527796293",
+  "url_se": "https://www.temu.com/se/g-601099527796293.html",
+  "title": "12V Motorcycle Electric Heating Handlebar Warmer Grip Warmer Heated Grips For Off-road Cycling Scooters Electric Vehicles Warmer Heated Grips",
+  "temu_price_sek": null,
+  "temu_price_native": {
+   "amount": 9.33,
+   "currency": "USD"
+  },
+  "temu_price_sek_est": 89.0,
+  "temu_price_note": "antagen kurs (USD 9,5 / AUD 6,3 / CAD 7,0 / MXN 0,5 / MYR 2,2), ej hämtad — bara storleksordning",
+  "rating": 4.8,
+  "review_count": 5,
+  "review_dates": [
+   "2023-11-03",
+   "2024-04-26",
+   "2024-05-*",
+   "2024-08-16"
+  ],
+  "category_path": [
+   "Automotive",
+   "Motorcycles & * Accessories"
+  ],
+  "image_count": 1,
+  "hero_url": "https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/f3c613817db98913a7f2d7e169de59ae.jpg",
+  "video_url": null,
+  "temu_data_status": "hämtad via https://www.temu.com/goods.html?goods_id=601099527796293 (US/landssajt, inte /se — svenska priset okänt)",
+  "video_checked": false,
+  "object": "handtagsvärmare 12 V (eftermontering)",
+  "owner_owns": "ja — MC/ATV/skoter",
+  "friction": "kalla händer i oktober",
+  "old_way": "tjocka handskar, styrmuffar",
+  "variants": "1",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula (handtagsvärmare)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "monteras på styret"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "kyla nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "handtagsvärmare i samma form hos Biltema/Jula ~250–400 kr [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej hämtad — Temu blockerade",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "SKIPPED",
+    "reason": "föll i hyllan",
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en"
+   },
+   "hook": {
+    "text": "Fryser du om händerna på ATV:n?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "ATV/MC-ägare"
+   }
+  },
+  "negative_space_flags": [
+   "montering/kabeldragning",
+   "svensk mass-commoditisering",
+   "elektrisk installation"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 20,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "kräver kabeldragning",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com ATV heated grips handlebar warmers",
+   "https://www.temu.com/goods.html?goods_id=601099527796293"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601099686053271",
+  "url_se": "https://www.temu.com/se/g-601099686053271.html",
+  "title": null,
+  "temu_price_sek": null,
+  "temu_price_native": null,
+  "temu_price_sek_est": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "temu_data_status": "UNKNOWN — ej hämtad (Temu blockerade IP:n)",
+  "video_checked": false,
+  "object": "styrmuffar (MC/moped/skoter), vinter",
+  "owner_owns": "ja",
+  "friction": "kalla händer på moped/MC i oktober",
+  "old_way": "handskar",
+  "variants": "universal",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula (styrmuffar)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fästs på styret"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "kyla nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "styrmuffar i samma form hos Biltema/Jula ~150–250 kr [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej hämtad — Temu blockerade",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "SKIPPED",
+    "reason": "föll i hyllan",
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "universal"
+   },
+   "hook": {
+    "text": "Fryser du om händerna på mopeden?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "mopedpendlare är yngre/äldre än 45–70"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "< 300 kr"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 20,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "commodity",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com motorcycle handlebar muffs winter gloves cover",
+   "goods-id ej hämtad (blockerad); alt 601099530225365, 601099686310545, 601099612161251"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601099558078428",
+  "url_se": "https://www.temu.com/se/g-601099558078428.html",
+  "title": null,
+  "temu_price_sek": null,
+  "temu_price_native": null,
+  "temu_price_sek_est": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "temu_data_status": "UNKNOWN — ej hämtad (Temu blockerade IP:n)",
+  "video_checked": false,
+  "object": "hjälmhållare vägg (180° rotation)",
+  "owner_owns": "ja — hjälm",
+  "friction": "hjälmen ligger på golvet i hallen",
+  "old_way": "hylla/krok",
+  "variants": "1",
+  "swedish_equivalent": {
+   "retailer": "Clas Ohlson/Jula (krokar)",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "hjälmen förvaras inomhus — steg 0 eliminerar inomhusförvarade objekt"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "ingen skada",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "krokar finns överallt [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej hämtad — Temu blockerade",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "SKIPPED",
+    "reason": "föll i objekt",
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en"
+   },
+   "hook": {
+    "text": "Var ligger din MC-hjälm just nu?",
+    "result": "OSÄKER"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "MC-ägare"
+   }
+  },
+  "negative_space_flags": [
+   "inomhus-commodity",
+   "montering"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 10,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "inomhus",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com motorcycle helmet holder lock wall mount",
+   "goods-id ej hämtad (blockerad)"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601099527332849",
+  "url_se": "https://www.temu.com/se/g-601099527332849.html",
+  "title": null,
+  "temu_price_sek": null,
+  "temu_price_native": null,
+  "temu_price_sek_est": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "temu_data_status": "UNKNOWN — ej hämtad (Temu blockerade IP:n)",
+  "video_checked": false,
+  "object": "universellt MC-sätesöverdrag (PU-läder, vattentätt)",
+  "owner_owns": "ja",
+  "friction": "sprucken/blekt sits",
+  "old_way": "tejp/ny sits",
+  "variants": "storlekar",
+  "swedish_equivalent": null,
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "kategorin finns redan i butiken (MC-sätesöverdrag camo) — inte ny"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "sitsen syns nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": " [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej hämtad — Temu blockerade",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "SKIPPED",
+    "reason": "redan testad kategori",
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "storlekar"
+   },
+   "hook": {
+    "text": "Har MC-sitsen spruckit?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "MC-ägare"
+   }
+  },
+  "negative_space_flags": [
+   "redan i sortimentet"
+  ],
+  "eliminated_at": "object",
+  "structure_match": null,
+  "category_novelty": 5,
+  "tier": "ELIM",
+  "biggest_risk": "dubblett",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com ATV seat cover cushion waterproof",
+   "goods-id ej hämtad (blockerad)"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601099522267692",
+  "url_se": "https://www.temu.com/se/g-601099522267692.html",
+  "title": "1pc * UTV GUN RACK With Rubber Coating, Safety Home Accessories",
+  "temu_price_sek": null,
+  "temu_price_native": {
+   "amount": 34.52,
+   "currency": "AUD"
+  },
+  "temu_price_sek_est": 217.0,
+  "temu_price_note": "antagen kurs (USD 9,5 / AUD 6,3 / CAD 7,0 / MXN 0,5 / MYR 2,2), ej hämtad — bara storleksordning",
+  "rating": 4.7,
+  "review_count": 149,
+  "review_dates": [
+   "2024-08-*",
+   "2024-08-30",
+   "2024-05-03",
+   "2024-06-19"
+  ],
+  "category_path": [
+   "Tools & Home Improvement",
+   "Safety & Security"
+  ],
+  "image_count": 3,
+  "hero_url": "https://img.kwcdn.com/product/1f29b0a1b0/babebb8d-f4cc-4c8c-a5a7-fc4296f7b64d_800x800.jpeg.a.jpg",
+  "video_url": null,
+  "temu_data_status": "hämtad via https://www.temu.com/au/g-601099522267692.html (US/landssajt, inte /se — svenska priset okänt)",
+  "video_checked": false,
+  "object": "gevärshållare för ATV/UTV (2 st gummerade V-hållare, U-bult på pakethållaren)",
+  "owner_owns": "ja — fyrhjuling med pakethållare; jägare med gevär",
+  "friction": "älgjakten börjar (Norrland sept, södra Sverige okt): geväret ligger löst på pakethållaren eller hänger i rem över ryggen på ATV:n till passet",
+  "old_way": "gevärsfodral spänt med gummistropp; rem över axeln; Kolpin Rhino Grip ~700–1 000 kr i jaktbutik",
+  "variants": "1 modell, färg svart/grå",
+  "swedish_equivalent": {
+   "retailer": "ingen av de fyra kedjorna (ur minne); jaktbutiker (Jaktia, Widforss, Hylte Jakt) säljer Kolpin/ATV-hållare",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Kolpin Rhino Redskapshållare Universal, par (ATVhuset), ord 1 195 kr",
+   "price_sek": 1075,
+   "url": "https://www.atvhuset.se/vaskor-forvaring/redskapsfasten/redskapshallare-universal-kolpin-rhino-par"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fästs på ATV:ns pakethållare, står ute, används varje jakt; sekundärt: yxa, såg, fiskespö"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "jaktsäsongen är i gång sept–okt och ATV:n är jägarens transport till passet; kan fotograferas i skogen nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Ingen kedja (Biltema/Jula/Clas/Rusta) och ingen av jaktkedjorna Hylte/Jaktia/Widforss säljer ATV-vapenhållare; formen finns bara i ATV-fackhandel. Kolpin Rhino-grepp ankrar på 1 075–1 195 kr/par och Moose V-Grip 760 kr, ≥1,6× ett rimligt pris på 399–449 kr; billigaste svenska varianten är Moose Big Horn 470 kr.",
+    "verified": true,
+    "verified_by": "h3.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Kolpin Rhino Redskapshållare Universal, par (ATVhuset), ord 1 195 kr",
+     "price_sek": 1075,
+     "url": "https://www.atvhuset.se/vaskor-forvaring/redskapsfasten/redskapshallare-universal-kolpin-rhino-par"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "6b. Gevärshållare/vapenhållare för ATV"
+   },
+   "material": {
+    "result": "OSÄKER",
+    "reason": "3 bilder granskade: alla är studio-packshots av hållarna + monteringsdetaljer (U-bultar, plattor), textfria men utan ATV eller gevär i bild. Ingen video. Materialöverförbarhet 1 — annonsen behöver en egen bild av hållaren monterad på pakethållaren med gevär i.",
+    "sec_0_3": null,
+    "hero_note": "packshot utan kontext; funktionen förstås inte utan ATV:n"
+   },
+   "economics": {
+    "result": "PASS",
+    "reason": "34,52 AUD ≈ 218 kr → landad ≈ 330 kr → 799–899 kr = 2,4–2,7×; BE-CPA ≈ 470–570 kr; > 500 kr-zonen",
+    "landed_est_sek": 330,
+    "se_price_est_sek": 849,
+    "multiple": 2.6,
+    "be_cpa_est": 519,
+    "multibuy_reason": "två par: gevär + såg/yxa, eller två ATV:er i jaktlaget"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en modell, passar rör 19–38 mm (U-bult) — ägaren behöver inte mäta"
+   },
+   "hook": {
+    "text": "Kör du fyrhjuling till passet?",
+    "result": "PASS (5 ord)"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "jägare med ATV: ~270 000 jägare i Sverige, ATV-ägande i gruppen okänt — kan ligga under 100 000 hushåll; objektet (ATV + gevär) är omisskännligt i flödet och självselekterar hårt; man 45–70 med skog/fritidshus = kärnan"
+   }
+  },
+  "negative_space_flags": [
+   "montering (U-bult, 10 min)",
+   "publikstorlek osäker",
+   "material kräver egen kontextbild"
+  ],
+  "eliminated_at": null,
+  "structure_match": 62,
+  "category_novelty": 90,
+  "tier": "B",
+  "biggest_risk": "publiken kan vara < 100 000 hushåll och Temu-materialet visar inte produkten i bruk — kräver egen bild på ATV innan launch",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com ATV gun rack tool holder rack mount",
+   "https://www.temu.com/au/g-601099522267692.html (149 recensioner, 4,7, senaste 2024-08)"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "gevärshållare ATV: ekonomi PASS (34,52 AUD ≈ 218 kr → 849 kr); publik kan vara < 100 000; Temu-bilder visar ingen ATV"
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601099514234509",
+  "url_se": "https://www.temu.com/se/g-601099514234509.html",
+  "title": "* Cover, Heavy Duty Marine Grade Fabric, * Cover For Kawasaki, Honda, *, Yamaha, And More. Protection Against Water, Wind",
+  "temu_price_sek": null,
+  "temu_price_native": {
+   "amount": 21.68,
+   "currency": "CAD"
+  },
+  "temu_price_sek_est": 152.0,
+  "temu_price_note": "antagen kurs (USD 9,5 / AUD 6,3 / CAD 7,0 / MXN 0,5 / MYR 2,2), ej hämtad — bara storleksordning",
+  "rating": 5.0,
+  "review_count": 2,
+  "review_dates": [
+   "2023-05-28"
+  ],
+  "category_path": [
+   "Automotive",
+   "Motorcycles & * Accessories"
+  ],
+  "image_count": 1,
+  "hero_url": "https://img.kwcdn.com/product/temu-avi/image-crop/e3a28ae8-91fa-43ff-824a-b0f6a414ea00.jpg",
+  "video_url": null,
+  "temu_data_status": "hämtad via https://www.temu.com/ca/g-601099514234509.html (US/landssajt, inte /se — svenska priset okänt)",
+  "video_checked": false,
+  "object": "ATV-kapell (marine grade-tyg, universal)",
+  "owner_owns": "ja — fyrhjuling som står ute vid fritidshus/gård",
+  "friction": "höstregn, löv, frost på sits och instrument; fyrhjulingen står ute till snön kommer och ofta hela vintern",
+  "old_way": "presenning med spännband, eller ingenting",
+  "variants": "okänt (bara 1 bild hämtad; troligen storlekar)",
+  "swedish_equivalent": {
+   "retailer": "Biltema (ATV-kapell finns troligen ~300–400 kr)",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": "Biltema Helkapell 406 x 165 x 120 cm",
+   "price_sek": 429,
+   "url": "https://www.biltema.se/bil---mc/biltillbehor/bilkapell/helkapell-406-x-165-x-120-cm-2000042779"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "skyddar ägt fordon som står ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "regn/löv/frost nu; vinterförvaring ute börjar okt",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula säljer exakt samma form (allväders-ATV-överdrag med resår och väska) för 399 kr och Biltema 4-lagers helkapell för 429 kr, dvs på eller under vad vi kan ta betalt med annonskostnad. Inget synligt fackhandelsankare ≥1,6× hittades.",
+    "verified": true,
+    "verified_by": "h3.json",
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 399,
+    "anchor": {
+     "name": "Biltema Helkapell 406 x 165 x 120 cm",
+     "price_sek": 429,
+     "url": "https://www.biltema.se/bil---mc/biltillbehor/bilkapell/helkapell-406-x-165-x-120-cm-2000042779"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "6a. ATV-/fyrhjulingskapell (överdrag)"
+   },
+   "material": {
+    "result": "OSÄKER",
+    "reason": "hero granskad: kapellet på en fyrhjuling (render/foto), textfri, i kontext, ihopvikt påse i bild — kan stå som statisk annons. Ingen video, bara 1 bild i JSON-LD. Materialöverförbarhet 1.",
+    "sec_0_3": null,
+    "hero_note": "produkt i kontext, textfri — bra statik"
+   },
+   "economics": {
+    "result": "PASS",
+    "reason": "21,68 CAD ≈ 152 kr → landad ≈ 230 kr → 549–599 kr = 2,4–2,6×; BE-CPA ≈ 320–370 kr",
+    "landed_est_sek": 230,
+    "se_price_est_sek": 579,
+    "multiple": 2.5,
+    "be_cpa_est": 349,
+    "multibuy_reason": "två fordon på gården (ATV + skoter/klippare) — svagt"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "storlekar ej lästa; fyrhjulingar varierar 1,8–2,3 m — ägaren vet ungefär"
+   },
+   "hook": {
+    "text": "Står fyrhjulingen ute i höst?",
+    "result": "PASS (5 ord)"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "ATV/terränghjulingsägare — registrerade i Sverige uppskattas > 100 000 (ur minne, ej verifierat); objektet omisskännligt; man 45–70 landsbygd/fritidshus"
+   }
+  },
+  "negative_space_flags": [
+   "möjlig Biltema-form",
+   "bara 2 recensioner (2023) — svag Temu-signal"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 66,
+  "category_novelty": 45,
+  "tier": "ELIM",
+  "biggest_risk": "Biltema/Jula kan ha samma form ~300 kr utan att ett märkesankare finns",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com ATV cover waterproof quad 4 wheeler",
+   "https://www.temu.com/ca/g-601099514234509.html (2 recensioner, 5,0)"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601099548739091",
+  "url_se": "https://www.temu.com/se/g-601099548739091.html",
+  "title": null,
+  "temu_price_sek": null,
+  "temu_price_native": null,
+  "temu_price_sek_est": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "temu_data_status": "UNKNOWN — ej hämtad (Temu blockerade IP:n)",
+  "video_checked": false,
+  "object": "ATV-kapell 190T Oxford (alternativ listning)",
+  "owner_owns": "ja",
+  "friction": "som 601099514234509",
+  "old_way": "presenning",
+  "variants": "UNKNOWN",
+  "swedish_equivalent": {
+   "retailer": "Biltema (troligen)",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "skyddar ägt fordon ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "höst/vinterförvaring",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "som ovan [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej hämtad — Temu blockerade",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "UNKNOWN",
+    "reason": "pris ej hämtat",
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej läst"
+   },
+   "hook": {
+    "text": "Står fyrhjulingen ute i höst?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "ATV-ägare"
+   }
+  },
+  "negative_space_flags": [],
+  "eliminated_at": "shelf",
+  "structure_match": null,
+  "category_novelty": 45,
+  "tier": "ELIM",
+  "biggest_risk": "samma som huvudlistningen",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com ATV cover waterproof quad 4 wheeler",
+   "https://www.temu.com/ge-en/…-g-601099548739091.html (ej hämtad)"
+  ],
+  "tier_agent": "B (provisorisk — material ej verifierad)",
+  "tier_reason": "ATV-kapell: Biltema Helkapell 429 kr i samma form (h3 FAIL)"
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601099742091812",
+  "url_se": "https://www.temu.com/se/g-601099742091812.html",
+  "title": "UNIVERSAL * SNOW PLOW KIT * Plow System Steel Blade Complete Universal Mount Package 47in",
+  "temu_price_sek": null,
+  "temu_price_native": {
+   "amount": 371.83,
+   "currency": "USD"
+  },
+  "temu_price_sek_est": 3532.0,
+  "temu_price_note": "antagen kurs (USD 9,5 / AUD 6,3 / CAD 7,0 / MXN 0,5 / MYR 2,2), ej hämtad — bara storleksordning",
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": [
+   "Patio, Lawn & Garden",
+   "*"
+  ],
+  "image_count": 1,
+  "hero_url": "https://img.kwcdn.com/product/open/31e408e8e2b549b2b394952919f1e49d-goods.jpeg",
+  "video_url": null,
+  "temu_data_status": "hämtad via https://www.temu.com/goods.html?goods_id=601099742091812 (US/landssajt, inte /se — svenska priset okänt)",
+  "video_checked": false,
+  "object": "ATV-plog 47\" universal (stålblad + universalfäste)",
+  "owner_owns": "ja — fyrhjuling",
+  "friction": "snön kommer om 6–10 veckor; uppfarten/gårdsplanen ska plogas",
+  "old_way": "skotta, traktor, köpa plog för 3 000–6 000 kr",
+  "variants": "47\" / 59\"",
+  "swedish_equivalent": {
+   "retailer": "Jula/Kellfri/ATV-butiker säljer plogblad ~3 000–5 000 kr",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "monteras på ATV:n"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "inför snö = stark höstpresens",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "plogblad finns i fackhandel och troligen Jula; Biltema osäkert [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej hämtad — Temu blockerade",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "FAIL",
+    "reason": "371,83 USD ≈ 3 530 kr Temu → > 1 000 kr; tung frakt",
+    "landed_est_sek": 5300,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "bredd + fäste per ATV-modell"
+   },
+   "hook": {
+    "text": "Plogar du med fyrhjulingen i vinter?",
+    "result": "PASS (5 ord)"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "ATV-ägare med egen uppfart"
+   }
+  },
+  "negative_space_flags": [
+   "> 1 000 kr",
+   "montering",
+   "tung frakt"
+  ],
+  "eliminated_at": "economics",
+  "structure_match": 30,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "biggest_risk": "pris",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com ATV snow plow blade kit",
+   "https://www.temu.com/goods.html?goods_id=601099742091812 (inga recensioner)"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601099608947627",
+  "url_se": "https://www.temu.com/se/g-601099608947627.html",
+  "title": "* * Storage Bags Rear Rack Bag With Seat Cushion Upgrade Waterproof Zipper * Passenger Seat Cargo Bag Compatible With * Kawasaki Yamaha, ",
+  "temu_price_sek": null,
+  "temu_price_native": {
+   "amount": 62.97,
+   "currency": "USD"
+  },
+  "temu_price_sek_est": 598.0,
+  "temu_price_note": "antagen kurs (USD 9,5 / AUD 6,3 / CAD 7,0 / MXN 0,5 / MYR 2,2), ej hämtad — bara storleksordning",
+  "rating": 5.0,
+  "review_count": 2,
+  "review_dates": [
+   "*24-07-*"
+  ],
+  "category_path": [
+   "Automotive",
+   "Motorcycles & * Accessories"
+  ],
+  "image_count": 1,
+  "hero_url": "https://img.kwcdn.com/product/fancy/22e55171-47ed-4db3-bd04-90de4bde58b6.jpg",
+  "video_url": null,
+  "temu_data_status": "hämtad via https://www.temu.com/goods.html?goods_id=601099608947627 (US/landssajt, inte /se — svenska priset okänt)",
+  "video_checked": false,
+  "object": "ATV-bakväska med passagerardyna (pakethållarväska)",
+  "owner_owns": "ja",
+  "friction": "verktyg/lunch/ammunition skramlar löst på pakethållaren under jakten",
+  "old_way": "låda spänd med gummistropp",
+  "variants": "1",
+  "swedish_equivalent": {
+   "retailer": "Biltema (ATV-väska bak ~600–900 kr)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fästs på pakethållaren"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "jakt/skogssäsong",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Biltema/Jula har ATV-väskor i liknande form [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej hämtad — Temu blockerade",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "FAIL",
+    "reason": "62,97 USD ≈ 600 kr → landad ≈ 900 kr → > 1 000 kr",
+    "landed_est_sek": 900,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en"
+   },
+   "hook": {
+    "text": "Skramlar lådan på pakethållaren?",
+    "result": "OSÄKER"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "ATV-ägare"
+   }
+  },
+  "negative_space_flags": [
+   "> 1 000 kr",
+   "bakväska MC nyss testad (osäker)"
+  ],
+  "eliminated_at": "economics",
+  "structure_match": 30,
+  "category_novelty": 40,
+  "tier": "ELIM",
+  "biggest_risk": "pris",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com ATV rear storage box cargo bag",
+   "https://www.temu.com/goods.html?goods_id=601099608947627 (2 recensioner)"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601099547453502",
+  "url_se": "https://www.temu.com/se/g-601099547453502.html",
+  "title": null,
+  "temu_price_sek": null,
+  "temu_price_native": null,
+  "temu_price_sek_est": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "temu_data_status": "UNKNOWN — ej hämtad (Temu blockerade IP:n)",
+  "video_checked": false,
+  "object": "hård förvaringsbox bak för ATV",
+  "owner_owns": "ja",
+  "friction": "som väskan",
+  "old_way": "spännband + låda",
+  "variants": "UNKNOWN",
+  "swedish_equivalent": {
+   "retailer": "Biltema (ATV-box hård)",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fästs på pakethållaren"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "jaktsäsong",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": " [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej hämtad — Temu blockerade",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "UNKNOWN",
+    "reason": "hårda boxar ligger troligen > 1 000 kr",
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": ""
+   },
+   "hook": {
+    "text": "Skramlar lådan på pakethållaren?",
+    "result": "OSÄKER"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "ATV-ägare"
+   }
+  },
+  "negative_space_flags": [
+   "troligen > 1 000 kr",
+   "montering",
+   "tung frakt"
+  ],
+  "eliminated_at": null,
+  "structure_match": null,
+  "category_novelty": 60,
+  "tier": "C (provisorisk)",
+  "biggest_risk": "pris + frakt",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com ATV rear storage box cargo bag",
+   "goods-id ej hämtad (blockerad)"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "606138749789410",
+  "url_se": "https://www.temu.com/se/g-606138749789410.html",
+  "title": null,
+  "temu_price_sek": null,
+  "temu_price_native": null,
+  "temu_price_sek_est": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "temu_data_status": "UNKNOWN — ej hämtad (Temu blockerade IP:n)",
+  "video_checked": false,
+  "object": "syntetisk vinschlina med hylsa och krok (ATV-vinsch)",
+  "owner_owns": "ja — ATV med vinsch",
+  "friction": "stålvajern har fransat/gått av",
+  "old_way": "ny stålvajer från ATV-butik",
+  "variants": "dimension × längd × brottlast",
+  "swedish_equivalent": {
+   "retailer": "Biltema (vinschtillbehör)",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "ersättningsdel till ägd vinsch"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "bara när linan gått av",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": " [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej hämtad — Temu blockerade",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "UNKNOWN",
+    "reason": "",
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "dimension/längd/brottlast — ägaren måste slå upp"
+   },
+   "hook": {
+    "text": "Har vajern på vinschen fransat?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "ATV med vinsch = delmängd"
+   }
+  },
+  "negative_space_flags": [
+   "kräver spec/förklaring",
+   "säkerhetskritisk vid drag",
+   "ersättningsdel"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 25,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "biggest_risk": "spec",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com ATV winch synthetic rope accessories",
+   "goods-id ej hämtad (blockerad)"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601103500733069",
+  "url_se": "https://www.temu.com/se/g-601103500733069.html",
+  "title": null,
+  "temu_price_sek": null,
+  "temu_price_native": null,
+  "temu_price_sek_est": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "temu_data_status": "UNKNOWN — ej hämtad (Temu blockerade IP:n)",
+  "video_checked": false,
+  "object": "handskydd/vindskydd för styre (PVC), MC/scooter",
+  "owner_owns": "ja",
+  "friction": "kalla händer/regn i oktober",
+  "old_way": "styrmuffar",
+  "variants": "universal",
+  "swedish_equivalent": {
+   "retailer": "Biltema (handskydd MC)",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fästs på styret"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "kyla nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": " [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej hämtad — Temu blockerade",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "UNKNOWN",
+    "reason": "",
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "universal utan mått"
+   },
+   "hook": {
+    "text": "Fryser du om händerna på mopeden?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "scooter/elmoped = annan publik"
+   }
+  },
+  "negative_space_flags": [
+   "passform 'universal'",
+   "publik utanför 45–70"
+  ],
+  "eliminated_at": null,
+  "structure_match": null,
+  "category_novelty": 80,
+  "tier": "C (provisorisk)",
+  "biggest_risk": "publik",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com ATV handlebar mitts hand guards cold weather",
+   "goods-id ej hämtad (blockerad)"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601099525580894",
+  "url_se": "https://www.temu.com/se/g-601099525580894.html",
+  "title": null,
+  "temu_price_sek": null,
+  "temu_price_native": null,
+  "temu_price_sek_est": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "temu_data_status": "UNKNOWN — ej hämtad (Temu blockerade IP:n)",
+  "video_checked": false,
+  "object": "snöskoterkapell (3 längder 292/330/368 cm)",
+  "owner_owns": "ja — snöskoter som tas fram i okt–nov och står på släpet/gården till snön",
+  "friction": "skotern står ute på släpet i höstregn och löv i väntan på snö; sits och instrument blir gröna/frostiga",
+  "old_way": "presenning, eller inget",
+  "variants": "3 längder — ägaren vet ungefär (modell/bandlängd)",
+  "swedish_equivalent": {
+   "retailer": "Biltema (skoterkapell finns troligen ~500–700 kr); skoterbutiker 800–1 500 kr",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "skyddar ägt fordon som står ute/på släp"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "skotern tas fram okt–nov; i september står den ofta kvar i förrådet — presens från oktober, ej september",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Biltema har troligen skoterkapell; skoterbutiker (Skoterdelen, Sledstore) säljer märkeskapell 1 000–1 500 = möjligt ankare [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "OSÄKER",
+    "reason": "hero granskad: kapellet på en skoter (render), textfri, tydlig — kan stå som statik. Bild 1–3 är mätinstruktion med inbränd engelska ('HOW TO MEASURE YOUR SNOWMOBILE COVER'). Ingen video. Materialöverförbarhet 1.",
+    "sec_0_3": null,
+    "hero_note": "produkt i kontext, textfri"
+   },
+   "economics": {
+    "result": "FAIL",
+    "reason": "64,94 AUD ≈ 410 kr → landad ≈ 615 kr → 2,4× = 1 476 kr > 1 000 kr; vid 999 kr bara 1,6×",
+    "landed_est_sek": 615,
+    "se_price_est_sek": 1476,
+    "multiple": 2.4,
+    "be_cpa_est": 861,
+    "multibuy_reason": null
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "3 längder, ägaren vet ungefär"
+   },
+   "hook": {
+    "text": "Står skotern på släpet i höst?",
+    "result": "PASS (6 ord)"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "snöskoterägare — uppskattningsvis 100 000–300 000 (ur minne, ej verifierat), Norrland/fritidshus, man 45–70"
+   }
+  },
+  "negative_space_flags": [
+   "> 1 000 kr",
+   "möjlig Biltema-form",
+   "presens först från oktober"
+  ],
+  "eliminated_at": "economics",
+  "structure_match": 40,
+  "category_novelty": 45,
+  "tier": "C",
+  "biggest_risk": "priset — kapell för skoter kostar mer än för MC och hamnar över 1 000 kr",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com snowmobile cover waterproof",
+   "https://www.temu.com/au/g-601099525580894.html (7 recensioner, 5,0)"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601099537882731",
+  "url_se": "https://www.temu.com/se/g-601099537882731.html",
+  "title": "Snowmobile Cover Outdoor Universal Windproof Dustproof Anti-Uv Multifunction Trailer Sled Cover Lawn Mower Cover",
+  "temu_price_sek": null,
+  "temu_price_native": {
+   "amount": 52.44,
+   "currency": "AUD"
+  },
+  "temu_price_sek_est": 330.0,
+  "temu_price_note": "antagen kurs (USD 9,5 / AUD 6,3 / CAD 7,0 / MXN 0,5 / MYR 2,2), ej hämtad — bara storleksordning",
+  "rating": 4.3,
+  "review_count": 21,
+  "review_dates": [
+   "2024-06-19",
+   "2024-*-14",
+   "2025-12-09",
+   "2024-*-24"
+  ],
+  "category_path": [
+   "Sports & Outdoors",
+   "*"
+  ],
+  "image_count": 4,
+  "hero_url": "https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/623ba4d9bd72f5299e37f5834a860adb.jpg",
+  "video_url": null,
+  "temu_data_status": "hämtad via https://www.temu.com/au/g-601099537882731.html (US/landssajt, inte /se — svenska priset okänt)",
+  "video_checked": false,
+  "object": "snöskoterkapell S/M/L (multifunktion: släp/klippare)",
+  "owner_owns": "ja",
+  "friction": "som ovan",
+  "old_way": "presenning",
+  "variants": "S 145 cm / M 292 cm / L 368 cm",
+  "swedish_equivalent": {
+   "retailer": "Biltema (troligen)",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "skyddar ägt fordon"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "från oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": " [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "FAIL",
+    "reason": "4 bilder granskade: före/efter-bilden visar en LEKSAKSSKOTER med hjul (barnsläde), inte en riktig skoter; storleksbilderna likaså. Leverantörsmaterialet visar en annan produkt/objekt — kontrollpunktens fall (klistermärkena).",
+    "sec_0_3": null,
+    "hero_note": "kapell på leksaksskoter"
+   },
+   "economics": {
+    "result": "FAIL",
+    "reason": "52,44 AUD ≈ 330 kr → landad ≈ 500 kr → 1 200 kr",
+    "landed_est_sek": 500,
+    "se_price_est_sek": 1200,
+    "multiple": 2.4,
+    "be_cpa_est": 700,
+    "multibuy_reason": null
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "S är barnsläde, M/L skoter"
+   },
+   "hook": {
+    "text": "Står skotern på släpet i höst?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "skoterägare"
+   }
+  },
+  "negative_space_flags": [
+   "leverantörsvideo/bild visar annan produkt",
+   "> 1 000 kr"
+  ],
+  "eliminated_at": "material",
+  "structure_match": 20,
+  "category_novelty": 45,
+  "tier": "ELIM",
+  "biggest_risk": "materialet visar en leksak",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com snowmobile cover waterproof",
+   "https://www.temu.com/au/g-601099537882731.html (21 recensioner, 4,3)"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601099587878841",
+  "url_se": "https://www.temu.com/se/g-601099587878841.html",
+  "title": "Snowmobile Tow Strap, Snow Vehicle Trailer Strap, Sled Towing Rope",
+  "temu_price_sek": null,
+  "temu_price_native": {
+   "amount": 39.29,
+   "currency": "MYR"
+  },
+  "temu_price_sek_est": 86.0,
+  "temu_price_note": "antagen kurs (USD 9,5 / AUD 6,3 / CAD 7,0 / MXN 0,5 / MYR 2,2), ej hämtad — bara storleksordning",
+  "rating": 5.0,
+  "review_count": 1,
+  "review_dates": [],
+  "category_path": [
+   "Sports & Outdoors",
+   "*"
+  ],
+  "image_count": 1,
+  "hero_url": "https://img.kwcdn.com/product/fancy/3c461b5f-9f1b-4a50-b3f0-7e6fc8282f59.jpg",
+  "video_url": null,
+  "temu_data_status": "hämtad via https://www.temu.com/my-en/g-601099587878841.html (US/landssajt, inte /se — svenska priset okänt)",
+  "video_checked": false,
+  "object": "bogserlina snöskoter (3 m, karbinhake, reflexband)",
+  "owner_owns": "ja",
+  "friction": "fastkörd/trasig skoter på fjället — sker i dec–april",
+  "old_way": "spännband, rep",
+  "variants": "1",
+  "swedish_equivalent": {
+   "retailer": "skoterbutiker; Biltema bogserlina generisk",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "används med skotern"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "säsongen börjar i december; > 6 veckor bort och problemet ligger i framtiden",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": " [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej hämtad — Temu blockerade",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "SKIPPED",
+    "reason": "föll i presens",
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "en per skoter i sällskapet"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en"
+   },
+   "hook": {
+    "text": "Har du bogserlina i skotern?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "skoterägare"
+   }
+  },
+  "negative_space_flags": [
+   "fel säsong",
+   "framtida skada",
+   "< 199 kr troligt (39 MYR ≈ 85 kr)"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 25,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "biggest_risk": "säsong",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com snowmobile tow strap sled hitch",
+   "https://www.temu.com/my-en/g-601099587878841.html (1 recension)"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601099865221882",
+  "url_se": "https://www.temu.com/se/g-601099865221882.html",
+  "title": null,
+  "temu_price_sek": null,
+  "temu_price_native": null,
+  "temu_price_sek_est": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "temu_data_status": "UNKNOWN — ej hämtad (Temu blockerade IP:n)",
+  "video_checked": false,
+  "object": "bogserlina 2-pack 17,5 ft med krokar (skoter)",
+  "owner_owns": "ja",
+  "friction": "som ovan",
+  "old_way": "rep",
+  "variants": "1",
+  "swedish_equivalent": null,
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "används med skotern"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "säsong december",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": " [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej hämtad — Temu blockerade",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "SKIPPED",
+    "reason": "föll i presens",
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en"
+   },
+   "hook": {
+    "text": "Har du bogserlina i skotern?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "skoterägare"
+   }
+  },
+  "negative_space_flags": [
+   "fel säsong"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 25,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "biggest_risk": "säsong",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com snowmobile tow strap sled hitch",
+   "goods-id ej hämtad (blockerad)"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601099602629615",
+  "url_se": "https://www.temu.com/se/g-601099602629615.html",
+  "title": null,
+  "temu_price_sek": null,
+  "temu_price_native": null,
+  "temu_price_sek_est": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "temu_data_status": "UNKNOWN — ej hämtad (Temu blockerade IP:n)",
+  "video_checked": false,
+  "object": "UTV/SxS-kapell (Yamaha m.fl.)",
+  "owner_owns": "ja — UTV",
+  "friction": "står ute i höst",
+  "old_way": "presenning",
+  "variants": "UNKNOWN",
+  "swedish_equivalent": {
+   "retailer": "ingen kedja (ur minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "skyddar ägt fordon ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "höst",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "UTV-kapell finns knappast i kedjorna [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej hämtad — Temu blockerade",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "UNKNOWN",
+    "reason": "UTV-kapell är stora; troligen > 1 000 kr",
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": ""
+   },
+   "hook": {
+    "text": "Står UTV:n ute i höst?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "FAIL",
+    "reason": "UTV-ägare i Sverige är klart färre än 100 000 hushåll (ur minne)"
+   }
+  },
+  "negative_space_flags": [
+   "för smal publik",
+   "troligen > 1 000 kr"
+  ],
+  "eliminated_at": "audience",
+  "structure_match": null,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "publik",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com ATV cover waterproof quad 4 wheeler",
+   "goods-id ej hämtad (blockerad)"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "601099692853186",
+  "url_se": "https://www.temu.com/se/g-601099692853186.html",
+  "title": null,
+  "temu_price_sek": null,
+  "temu_price_native": null,
+  "temu_price_sek_est": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "temu_data_status": "UNKNOWN — ej hämtad (Temu blockerade IP:n)",
+  "video_checked": false,
+  "object": "kapell för promenadscooter/elrullstol (420D Oxford, reflex, 3 spännen)",
+  "owner_owns": "ja — promenadscooter (äldre, ofta 70+)",
+  "friction": "scootern står under carport/på altanen i höstregn; sitsen blir blöt",
+  "old_way": "presenning/plastpåse",
+  "variants": "troligen 2–3 storlekar",
+  "swedish_equivalent": {
+   "retailer": "hjälpmedelsbutiker; ingen av kedjorna (ur minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "skyddar ägt fordon som står ute — men UTANFÖR klustret (hittad i elsparkcykel-sökningen; elsparkcykel-kapell saknas på Temu)"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "höstregn nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "kategori saknas i kedjorna [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej hämtad — Temu blockerade",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "UNKNOWN",
+    "reason": "",
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "storlekar"
+   },
+   "hook": {
+    "text": "Står promenadscootern ute i regnet?",
+    "result": "PASS (5 ord)"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "ägarna är 70+ (äldre än kärnan) men äger småhus; barnen 45–70 köper åt föräldern"
+   }
+  },
+  "negative_space_flags": [
+   "publik utanför 45–70",
+   "utanför klustret"
+  ],
+  "eliminated_at": null,
+  "structure_match": null,
+  "category_novelty": 85,
+  "tier": "C (tips till annat kluster)",
+  "biggest_risk": "publik",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com electric scooter cover waterproof storage",
+   "goods-id ej hämtad (blockerad)"
+  ]
+ },
+ {
+  "kluster": "mc",
+  "goods_id": "elsparkcykel-inga-traffar",
+  "url_se": "https://www.temu.com/se/g-elsparkcykel-inga-traffar.html",
+  "title": null,
+  "temu_price_sek": null,
+  "temu_price_native": null,
+  "temu_price_sek_est": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "temu_data_status": "UNKNOWN — ej hämtad (Temu blockerade IP:n)",
+  "video_checked": false,
+  "object": "elsparkcykel: regnskydd/lås",
+  "owner_owns": "ja",
+  "friction": "regn, stöld",
+  "old_way": "—",
+  "variants": "—",
+  "swedish_equivalent": null,
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "elsparkcykeln förvaras inomhus när den inte används"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "regn nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "lås/regnskydd är jämförelsehandlat (Clas Ohlson/Kjell) [ur minne — WebSearch-budgeten var slut och biltema/jula/clasohlson/rusta svarade 403/404 2026-09-04; EJ verifierat]"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej hämtad — Temu blockerade",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "SKIPPED",
+    "reason": "",
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": ""
+   },
+   "hook": {
+    "text": "—",
+    "result": "FAIL"
+   },
+   "audience": {
+    "result": "FAIL",
+    "reason": "publiken är 20–40, inte 45–70"
+   }
+  },
+  "negative_space_flags": [
+   "inomhusförvarat objekt",
+   "fel publik",
+   "jämförelsehandlad"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 5,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "biggest_risk": "fel publik",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com electric scooter cover waterproof storage → bara promenadscooter-kapell i träfflistan"
+  ]
+ }
+]

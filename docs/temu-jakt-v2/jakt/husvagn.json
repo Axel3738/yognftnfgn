@@ -1,0 +1,2844 @@
+[
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099535772619",
+  "url_se": "https://www.temu.com/se/g-601099535772619.html",
+  "title": "Universal caravan hitch cover waterproof dustproof trailer tow ball coupling lock cover for RV motorhome",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Kulkopplingen på husvagn/släpvagn",
+  "owner_owns": true,
+  "friction": "Uppställd husvagn: kulkopplingen och elkontakten står i regn hela hösten → rost, is i handtaget, smuts i 13-polskontakten.",
+  "old_way": "Plastpåse + snöre, gammal presenning, eller inget.",
+  "variants": "1 (universal Oxford-påse) — ej verifierat, Temu blockerad",
+  "swedish_equivalent": {
+   "retailer": "Biltema",
+   "price_sek": 99.9,
+   "url": "https://www.biltema.se/fritid/husvagn-och-husbil/chassietillbehor/dragskydd-for-husvagnskoppling-2000030700",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Camp+Nature (Thansen)",
+   "price_sek": 79.96,
+   "url": "https://www.thansen.se/camping/karosseriartiklar/husvagnsoverdrag-kjolar/skydd-till-kulkoppling/n-1040801816/pn-846353690"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på kulkopplingen på en husvagn/släp som står ute."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Uppställning sept–okt; regn/frost på kopplingen syns och fotograferas i varje uppfart.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema 'Dragskydd för husvagnskoppling' 99,90 kr, Clas Ohlson 'Dragskydd till husvagn och släpvagn 88×63 cm' (PVC), Thansen Camp+Nature 600D 79,96 kr, Husvagn Svensson 139 kr (ur Yahoo-sökutdrag + produktsidor 2026-09-04). Samma funktion och form (överdrag över kulkopplingen) i två kedjor, inget märkesankare ≥1,6×."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": "Står husvagnen uppställd över vintern?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (Biltema 99,90 / Clas Ohlson)",
+   "< 199 kr i hyllan"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 35,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "Kunden googlar 'dragskydd' och hittar Biltema för 99,90 kr.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com caravan hitch coupling cover lock",
+   "WebSearch site:temu.com trailer coupler cover oxford hitch bag waterproof",
+   "Yahoo: biltema \"dragskydd\" husvagn",
+   "https://butik.husvagn-svensson.se/products/dragskydd (139 kr)",
+   "https://www.clasohlson.com/se/Dragskydd-till-husvagn-och-slapvagn,-88-x-63-cm/p/41-3536"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099577187627",
+  "url_se": "https://www.temu.com/se/g-601099577187627.html",
+  "title": "Heavy duty waterproof trailer hitch cover with strap, UV/snow/dust resistant PVC coupler protector",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Kulkopplingen (amerikansk A-ramskoppling)",
+  "owner_owns": true,
+  "friction": "Samma som ovan.",
+  "old_way": "Samma som ovan.",
+  "variants": "1 — ej verifierat",
+  "swedish_equivalent": {
+   "retailer": "Biltema",
+   "price_sek": 99.9,
+   "url": "https://www.biltema.se/fritid/husvagn-och-husbil/chassietillbehor/dragskydd-for-husvagnskoppling-2000030700",
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Formad för US-koppling (2\"-coupler på A-ram); svensk AL-KO-koppling med stabilisator är bredare — passform oklar."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som ovan.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema 'Dragskydd för husvagnskoppling' 99,90 kr, Clas Ohlson 'Dragskydd till husvagn och släpvagn 88×63 cm' (PVC), Thansen Camp+Nature 600D 79,96 kr, Husvagn Svensson 139 kr (ur Yahoo-sökutdrag + produktsidor 2026-09-04). Samma funktion och form (överdrag över kulkopplingen) i två kedjor, inget märkesankare ≥1,6×."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": null,
+    "result": "UNKNOWN"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "passform mot svensk koppling oklar"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 25,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "Passar inte AL-KO-kopplingen.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com trailer coupler cover oxford hitch bag waterproof"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601100546478154",
+  "url_se": "https://www.temu.com/se/g-601100546478154.html",
+  "title": "UV-resistent däcköverdrag för hjulskydd till husvagnar och campingbilar (Temu SE)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Däcken på uppställd husvagn/husbil",
+  "owner_owns": true,
+  "friction": "Husvagnen står stilla okt–april: UV och ozon torkar däcksidorna, sprickor → nya däck (1 500–3 000 kr/par) och besiktningsanmärkning.",
+  "old_way": "Ingenting, eller en bit plywood/kartong mot solen.",
+  "variants": "Europeisk enkelhjulsmodell (slits för hjulhuset) — variantnamn ej läsbara, Temu blockerad",
+  "swedish_equivalent": {
+   "retailer": "Jula",
+   "price_sek": null,
+   "url": "https://www.jula.se/catalog/bil-och-garage/biltillbehor/vintertillbehor/bilkapell-och-overdrag/dackskydd-002869/",
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på husvagnens hjul som står ute hela vintern."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Uppställningen sker just sept–okt; däcket står synligt i uppfarten. Skadan (sprickor) är dock långsam och osynlig i oktober — presens 1 av 2.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula Hamron 'Däckskydd S' och 'Däckskydd 1-pk M' (jula.se, bildträffar i Yahoo 2026-09-04; pris ej läsbart, sidan 403). Biltema 'Hjulhuskappa enkelaxel' 129 kr är en annan form (kjol). Jula = samma form (däcköverdrag för husvagn/husbil)."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": "Står husvagnen ute i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "osynlig långsam skada (sprickor kommer efter flera vintrar)",
+   "Jula säljer samma form"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 45,
+  "category_novelty": 55,
+  "tier": "ELIM",
+  "biggest_risk": "Jula har samma sak i hyllan; skadan syns inte förrän om år.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com caravan wheel cover tyre protection",
+   "WebSearch site:temu.com/se husvagn hjulskydd däckskydd",
+   "WebSearch site:temu.com caravan wheel cover single with hitch cover set motorhome tyre",
+   "Yahoo: husvagn hjulskydd biltema",
+   "Yahoo: hamron däckskydd 002869 jula kr"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099526934261",
+  "url_se": "https://www.temu.com/se/g-601099526934261.html",
+  "title": "Wheel covers set of 4 tire cover protectors 420D Oxford for RV truck motorhome camper trailer",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Däcken på uppställd husvagn/husbil",
+  "owner_owns": true,
+  "friction": "Husvagnen står stilla okt–april: UV och ozon torkar däcksidorna, sprickor → nya däck (1 500–3 000 kr/par) och besiktningsanmärkning.",
+  "old_way": "Ingenting, eller en bit plywood/kartong mot solen.",
+  "variants": "4-pack i diameterstorlekar (tum) — svensk enkelaxlad husvagn har 2 hjul: fel packstorlek",
+  "swedish_equivalent": {
+   "retailer": "Jula",
+   "price_sek": null,
+   "url": "https://www.jula.se/catalog/bil-och-garage/biltillbehor/vintertillbehor/bilkapell-och-overdrag/dackskydd-002869/",
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på husvagnens hjul som står ute hela vintern."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Uppställningen sker just sept–okt; däcket står synligt i uppfarten. Skadan (sprickor) är dock långsam och osynlig i oktober — presens 1 av 2.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula Hamron 'Däckskydd S' och 'Däckskydd 1-pk M' (jula.se, bildträffar i Yahoo 2026-09-04; pris ej läsbart, sidan 403). Biltema 'Hjulhuskappa enkelaxel' 129 kr är en annan form (kjol). Jula = samma form (däcköverdrag för husvagn/husbil)."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": "Står husvagnen ute i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "osynlig långsam skada (sprickor kommer efter flera vintrar)",
+   "Jula säljer samma form",
+   "4-pack passar inte 2-hjulig husvagn"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 55,
+  "tier": "ELIM",
+  "biggest_risk": "Jula har samma sak i hyllan; skadan syns inte förrän om år.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com caravan wheel cover tyre protection",
+   "WebSearch site:temu.com/se husvagn hjulskydd däckskydd",
+   "WebSearch site:temu.com caravan wheel cover single with hitch cover set motorhome tyre",
+   "Yahoo: husvagn hjulskydd biltema",
+   "Yahoo: hamron däckskydd 002869 jula kr"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099530862665",
+  "url_se": "https://www.temu.com/se/g-601099530862665.html",
+  "title": "3pcs dual axle RV tire covers spare wheel cover, waterproof double wheel covers",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Däcken på uppställd husvagn/husbil",
+  "owner_owns": true,
+  "friction": "Husvagnen står stilla okt–april: UV och ozon torkar däcksidorna, sprickor → nya däck (1 500–3 000 kr/par) och besiktningsanmärkning.",
+  "old_way": "Ingenting, eller en bit plywood/kartong mot solen.",
+  "variants": "3-pack (dubbelaxel + reserv, US-format)",
+  "swedish_equivalent": {
+   "retailer": "Jula",
+   "price_sek": null,
+   "url": "https://www.jula.se/catalog/bil-och-garage/biltillbehor/vintertillbehor/bilkapell-och-overdrag/dackskydd-002869/",
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på husvagnens hjul som står ute hela vintern."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Uppställningen sker just sept–okt; däcket står synligt i uppfarten. Skadan (sprickor) är dock långsam och osynlig i oktober — presens 1 av 2.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula Hamron 'Däckskydd S' och 'Däckskydd 1-pk M' (jula.se, bildträffar i Yahoo 2026-09-04; pris ej läsbart, sidan 403). Biltema 'Hjulhuskappa enkelaxel' 129 kr är en annan form (kjol). Jula = samma form (däcköverdrag för husvagn/husbil)."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": "Står husvagnen ute i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "osynlig långsam skada (sprickor kommer efter flera vintrar)",
+   "Jula säljer samma form",
+   "US-dubbelaxelformat"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 55,
+  "tier": "ELIM",
+  "biggest_risk": "Jula har samma sak i hyllan; skadan syns inte förrän om år.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com caravan wheel cover tyre protection",
+   "WebSearch site:temu.com/se husvagn hjulskydd däckskydd",
+   "WebSearch site:temu.com caravan wheel cover single with hitch cover set motorhome tyre",
+   "Yahoo: husvagn hjulskydd biltema",
+   "Yahoo: hamron däckskydd 002869 jula kr"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099520729864",
+  "url_se": "https://www.temu.com/se/g-601099520729864.html",
+  "title": "4st/set däckskydd robust däckhjulsskydd för lastbilar, SUV:er, släpvagnar, husvagnar, universal passform",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Däcken på uppställd husvagn/husbil",
+  "owner_owns": true,
+  "friction": "Husvagnen står stilla okt–april: UV och ozon torkar däcksidorna, sprickor → nya däck (1 500–3 000 kr/par) och besiktningsanmärkning.",
+  "old_way": "Ingenting, eller en bit plywood/kartong mot solen.",
+  "variants": "4-pack 'universal passform' utan mått",
+  "swedish_equivalent": {
+   "retailer": "Jula",
+   "price_sek": null,
+   "url": "https://www.jula.se/catalog/bil-och-garage/biltillbehor/vintertillbehor/bilkapell-och-overdrag/dackskydd-002869/",
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på husvagnens hjul som står ute hela vintern."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Uppställningen sker just sept–okt; däcket står synligt i uppfarten. Skadan (sprickor) är dock långsam och osynlig i oktober — presens 1 av 2.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula Hamron 'Däckskydd S' och 'Däckskydd 1-pk M' (jula.se, bildträffar i Yahoo 2026-09-04; pris ej läsbart, sidan 403). Biltema 'Hjulhuskappa enkelaxel' 129 kr är en annan form (kjol). Jula = samma form (däcköverdrag för husvagn/husbil)."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": "Står husvagnen ute i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "osynlig långsam skada (sprickor kommer efter flera vintrar)",
+   "Jula säljer samma form",
+   "'passar de flesta' utan mått"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 55,
+  "tier": "ELIM",
+  "biggest_risk": "Jula har samma sak i hyllan; skadan syns inte förrän om år.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com caravan wheel cover tyre protection",
+   "WebSearch site:temu.com/se husvagn hjulskydd däckskydd",
+   "WebSearch site:temu.com caravan wheel cover single with hitch cover set motorhome tyre",
+   "Yahoo: husvagn hjulskydd biltema",
+   "Yahoo: hamron däckskydd 002869 jula kr"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099516079940",
+  "url_se": "https://www.temu.com/se/g-601099516079940.html",
+  "title": "4pcs black tire cover waterproof wheel cover tire protector for truck SUV trailer camper",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Däcken på uppställd husvagn/husbil",
+  "owner_owns": true,
+  "friction": "Husvagnen står stilla okt–april: UV och ozon torkar däcksidorna, sprickor → nya däck (1 500–3 000 kr/par) och besiktningsanmärkning.",
+  "old_way": "Ingenting, eller en bit plywood/kartong mot solen.",
+  "variants": "4-pack",
+  "swedish_equivalent": {
+   "retailer": "Jula",
+   "price_sek": null,
+   "url": "https://www.jula.se/catalog/bil-och-garage/biltillbehor/vintertillbehor/bilkapell-och-overdrag/dackskydd-002869/",
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på husvagnens hjul som står ute hela vintern."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Uppställningen sker just sept–okt; däcket står synligt i uppfarten. Skadan (sprickor) är dock långsam och osynlig i oktober — presens 1 av 2.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula Hamron 'Däckskydd S' och 'Däckskydd 1-pk M' (jula.se, bildträffar i Yahoo 2026-09-04; pris ej läsbart, sidan 403). Biltema 'Hjulhuskappa enkelaxel' 129 kr är en annan form (kjol). Jula = samma form (däcköverdrag för husvagn/husbil)."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": "Står husvagnen ute i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "osynlig långsam skada (sprickor kommer efter flera vintrar)",
+   "Jula säljer samma form"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 55,
+  "tier": "ELIM",
+  "biggest_risk": "Jula har samma sak i hyllan; skadan syns inte förrän om år.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com caravan wheel cover tyre protection",
+   "WebSearch site:temu.com/se husvagn hjulskydd däckskydd",
+   "WebSearch site:temu.com caravan wheel cover single with hitch cover set motorhome tyre",
+   "Yahoo: husvagn hjulskydd biltema",
+   "Yahoo: hamron däckskydd 002869 jula kr"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099574487393",
+  "url_se": "https://www.temu.com/se/g-601099574487393.html",
+  "title": "4-piece tire cover set Oxford cloth gray, universal tire diameter, sun protection",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Däcken på uppställd husvagn/husbil",
+  "owner_owns": true,
+  "friction": "Husvagnen står stilla okt–april: UV och ozon torkar däcksidorna, sprickor → nya däck (1 500–3 000 kr/par) och besiktningsanmärkning.",
+  "old_way": "Ingenting, eller en bit plywood/kartong mot solen.",
+  "variants": "4-pack universal",
+  "swedish_equivalent": {
+   "retailer": "Jula",
+   "price_sek": null,
+   "url": "https://www.jula.se/catalog/bil-och-garage/biltillbehor/vintertillbehor/bilkapell-och-overdrag/dackskydd-002869/",
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på husvagnens hjul som står ute hela vintern."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Uppställningen sker just sept–okt; däcket står synligt i uppfarten. Skadan (sprickor) är dock långsam och osynlig i oktober — presens 1 av 2.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula Hamron 'Däckskydd S' och 'Däckskydd 1-pk M' (jula.se, bildträffar i Yahoo 2026-09-04; pris ej läsbart, sidan 403). Biltema 'Hjulhuskappa enkelaxel' 129 kr är en annan form (kjol). Jula = samma form (däcköverdrag för husvagn/husbil)."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": "Står husvagnen ute i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "osynlig långsam skada (sprickor kommer efter flera vintrar)",
+   "Jula säljer samma form"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 55,
+  "tier": "ELIM",
+  "biggest_risk": "Jula har samma sak i hyllan; skadan syns inte förrän om år.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com caravan wheel cover tyre protection",
+   "WebSearch site:temu.com/se husvagn hjulskydd däckskydd",
+   "WebSearch site:temu.com caravan wheel cover single with hitch cover set motorhome tyre",
+   "Yahoo: husvagn hjulskydd biltema",
+   "Yahoo: hamron däckskydd 002869 jula kr"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099734931938",
+  "url_se": "https://www.temu.com/se/g-601099734931938.html",
+  "title": "Set of 4 waterproof tire covers heavy duty polyester UV dust protection, fits 21 inch diameter tires",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Däcken på uppställd husvagn/husbil",
+  "owner_owns": true,
+  "friction": "Husvagnen står stilla okt–april: UV och ozon torkar däcksidorna, sprickor → nya däck (1 500–3 000 kr/par) och besiktningsanmärkning.",
+  "old_way": "Ingenting, eller en bit plywood/kartong mot solen.",
+  "variants": "4-pack per diameter i tum",
+  "swedish_equivalent": {
+   "retailer": "Jula",
+   "price_sek": null,
+   "url": "https://www.jula.se/catalog/bil-och-garage/biltillbehor/vintertillbehor/bilkapell-och-overdrag/dackskydd-002869/",
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på husvagnens hjul som står ute hela vintern."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Uppställningen sker just sept–okt; däcket står synligt i uppfarten. Skadan (sprickor) är dock långsam och osynlig i oktober — presens 1 av 2.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula Hamron 'Däckskydd S' och 'Däckskydd 1-pk M' (jula.se, bildträffar i Yahoo 2026-09-04; pris ej läsbart, sidan 403). Biltema 'Hjulhuskappa enkelaxel' 129 kr är en annan form (kjol). Jula = samma form (däcköverdrag för husvagn/husbil)."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": "Står husvagnen ute i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "osynlig långsam skada (sprickor kommer efter flera vintrar)",
+   "Jula säljer samma form"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 55,
+  "tier": "ELIM",
+  "biggest_risk": "Jula har samma sak i hyllan; skadan syns inte förrän om år.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com caravan wheel cover tyre protection",
+   "WebSearch site:temu.com/se husvagn hjulskydd däckskydd",
+   "WebSearch site:temu.com caravan wheel cover single with hitch cover set motorhome tyre",
+   "Yahoo: husvagn hjulskydd biltema",
+   "Yahoo: hamron däckskydd 002869 jula kr"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601101957332162",
+  "url_se": "https://www.temu.com/se/g-601101957332162.html",
+  "title": "Trailer hitch ball lock universal anti-theft coupling device for trailers/RVs, metal construction",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Kulkopplingen på uppställd husvagn/släpvagn",
+  "owner_owns": true,
+  "friction": "Släp och husvagnar stjäls från uppfarter och uppställningsplatser under vintern; ägaren tänker på det när vagnen ställs upp.",
+  "old_way": "Kätting + hänglås, eller inget.",
+  "variants": "US-kopplingsstorlekar",
+  "swedish_equivalent": {
+   "retailer": "Jula",
+   "price_sek": 99.0,
+   "url": "https://www.jula.se/catalog/bil-och-garage/transport/slapfordon/kulkopplingar/kulkopplingslas-339321/",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Clas Ohlson Trailerlås",
+   "price_sek": 269.0,
+   "url": "https://www.clasohlson.com/se/Trailerlas,-kulkopplingslas/p/40-8907"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Sätts på kopplingen på en vagn som står ute."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Stöldrisken är verklig och aktuell vid uppställning; oron finns utan annons.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula Hamron kulkopplingslås 99,00 / 99,90 / 199 kr, Clas Ohlson Trailerlås kulkopplingslås 269 kr, Biltema Trailerlås (ur Brave-sökutdrag 2026-09-04). Samma form: lås på kulkopplingen. Temu-varianten är ett kul-lås för US-couplers."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": "Står släpet olåst i uppfarten?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (Jula 99 kr)",
+   "köpt fungerande old way ∧ jämförelsehandlad ∧ < 300 kr",
+   "US-kopplingsmått (2\", 2 5/16\") passar inte 50 mm-kulkoppling utan verifiering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 20,
+  "tier": "ELIM",
+  "biggest_risk": "Jula säljer samma lås för 99 kr; Temu-låsen är måttade för US-kopplingar.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com trailer coupling lock anti theft hitch lock",
+   "WebSearch site:temu.com caravan hitch coupling cover lock",
+   "Brave: hjullås husvagn släpvagn biltema jula pris"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099520489567",
+  "url_se": "https://www.temu.com/se/g-601099520489567.html",
+  "title": "Trailer part coupling lock hitch ball lock tow anti-theft device universal hitch lock",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Kulkopplingen på uppställd husvagn/släpvagn",
+  "owner_owns": true,
+  "friction": "Släp och husvagnar stjäls från uppfarter och uppställningsplatser under vintern; ägaren tänker på det när vagnen ställs upp.",
+  "old_way": "Kätting + hänglås, eller inget.",
+  "variants": "universal",
+  "swedish_equivalent": {
+   "retailer": "Jula",
+   "price_sek": 99.0,
+   "url": "https://www.jula.se/catalog/bil-och-garage/transport/slapfordon/kulkopplingar/kulkopplingslas-339321/",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Clas Ohlson Trailerlås",
+   "price_sek": 269.0,
+   "url": "https://www.clasohlson.com/se/Trailerlas,-kulkopplingslas/p/40-8907"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Sätts på kopplingen på en vagn som står ute."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Stöldrisken är verklig och aktuell vid uppställning; oron finns utan annons.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula Hamron kulkopplingslås 99,00 / 99,90 / 199 kr, Clas Ohlson Trailerlås kulkopplingslås 269 kr, Biltema Trailerlås (ur Brave-sökutdrag 2026-09-04). Samma form: lås på kulkopplingen. Samma kategori och form som Jula/Clas Ohlson."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": "Står släpet olåst i uppfarten?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (Jula 99 kr)",
+   "köpt fungerande old way ∧ jämförelsehandlad ∧ < 300 kr",
+   "US-kopplingsmått (2\", 2 5/16\") passar inte 50 mm-kulkoppling utan verifiering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 20,
+  "tier": "ELIM",
+  "biggest_risk": "Jula säljer samma lås för 99 kr; Temu-låsen är måttade för US-kopplingar.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com trailer coupling lock anti theft hitch lock",
+   "WebSearch site:temu.com caravan hitch coupling cover lock",
+   "Brave: hjullås husvagn släpvagn biltema jula pris"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099513876237",
+  "url_se": "https://www.temu.com/se/g-601099513876237.html",
+  "title": "Car trailer hitch lock anti-theft latch lock for RV off-road hook lock, stainless steel",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Kulkopplingen på uppställd husvagn/släpvagn",
+  "owner_owns": true,
+  "friction": "Släp och husvagnar stjäls från uppfarter och uppställningsplatser under vintern; ägaren tänker på det när vagnen ställs upp.",
+  "old_way": "Kätting + hänglås, eller inget.",
+  "variants": "1",
+  "swedish_equivalent": {
+   "retailer": "Jula",
+   "price_sek": 99.0,
+   "url": "https://www.jula.se/catalog/bil-och-garage/transport/slapfordon/kulkopplingar/kulkopplingslas-339321/",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Clas Ohlson Trailerlås",
+   "price_sek": 269.0,
+   "url": "https://www.clasohlson.com/se/Trailerlas,-kulkopplingslas/p/40-8907"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Sätts på kopplingen på en vagn som står ute."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Stöldrisken är verklig och aktuell vid uppställning; oron finns utan annons.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula Hamron kulkopplingslås 99,00 / 99,90 / 199 kr, Clas Ohlson Trailerlås kulkopplingslås 269 kr, Biltema Trailerlås (ur Brave-sökutdrag 2026-09-04). Samma form: lås på kulkopplingen. Latch-lås för US-coupler."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": "Står släpet olåst i uppfarten?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (Jula 99 kr)",
+   "köpt fungerande old way ∧ jämförelsehandlad ∧ < 300 kr",
+   "US-kopplingsmått (2\", 2 5/16\") passar inte 50 mm-kulkoppling utan verifiering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 20,
+  "tier": "ELIM",
+  "biggest_risk": "Jula säljer samma lås för 99 kr; Temu-låsen är måttade för US-kopplingar.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com trailer coupling lock anti theft hitch lock",
+   "WebSearch site:temu.com caravan hitch coupling cover lock",
+   "Brave: hjullås husvagn släpvagn biltema jula pris"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601104013410107",
+  "url_se": "https://www.temu.com/se/g-601104013410107.html",
+  "title": "Grip trailer wheel lock wheel clamp, security for car/truck/RV, reinforced clamp",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Hjulet på uppställd husvagn/släpvagn",
+  "owner_owns": true,
+  "friction": "Stöld av släp/husvagn under vintern.",
+  "old_way": "Kätting genom fälgen, eller inget.",
+  "variants": "1",
+  "swedish_equivalent": {
+   "retailer": "Biltema",
+   "price_sek": null,
+   "url": "https://www.biltema.se/bil---mc/bilverktyg/dacktillbehor/dackverktyg/hjullas-2000035006",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Thansen Hjullås 13–17\"",
+   "price_sek": 419.0,
+   "url": "https://www.thansen.se/bil/dack-och-falgar/tillbehor-och-verktyg/forvaring/hjullaas-13-17-bil-slap-husvagn/"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Sätts på hjulet på en vagn som står ute."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Aktuellt vid uppställning.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema 'Hjullås' (bil, husvagn, släp), Thansen Hjullås 13–17\" 419 kr (ur Brave-sökutdrag 2026-09-04). Samma form."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": "Står husvagnen olåst hela vintern?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "köpt fungerande old way"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 25,
+  "tier": "ELIM",
+  "biggest_risk": "Biltema har hjullås i hyllan.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com trailer wheel clamp lock caravan security",
+   "Brave: hjullås husvagn släpvagn biltema jula pris"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099783141987",
+  "url_se": "https://www.temu.com/se/g-601099783141987.html",
+  "title": "Wheel lock clamp 2-pack trailer wheel lock heavy duty anti-theft tire lock",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Hjulet på uppställd husvagn/släpvagn",
+  "owner_owns": true,
+  "friction": "Stöld av släp/husvagn under vintern.",
+  "old_way": "Kätting genom fälgen, eller inget.",
+  "variants": "2-pack",
+  "swedish_equivalent": {
+   "retailer": "Biltema",
+   "price_sek": null,
+   "url": "https://www.biltema.se/bil---mc/bilverktyg/dacktillbehor/dackverktyg/hjullas-2000035006",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Thansen Hjullås 13–17\"",
+   "price_sek": 419.0,
+   "url": "https://www.thansen.se/bil/dack-och-falgar/tillbehor-och-verktyg/forvaring/hjullaas-13-17-bil-slap-husvagn/"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Sätts på hjulet på en vagn som står ute."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Aktuellt vid uppställning.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema 'Hjullås' (bil, husvagn, släp), Thansen Hjullås 13–17\" 419 kr (ur Brave-sökutdrag 2026-09-04). Samma form."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": "Står husvagnen olåst hela vintern?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "köpt fungerande old way"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 25,
+  "tier": "ELIM",
+  "biggest_risk": "Biltema har hjullås i hyllan.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com trailer wheel clamp lock caravan security",
+   "Brave: hjullås husvagn släpvagn biltema jula pris"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099588807629",
+  "url_se": "https://www.temu.com/se/g-601099588807629.html",
+  "title": "Adjustable wheel clamp with combination lock, universal anti-theft tire clamp steel parking boot",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Hjulet på uppställd husvagn/släpvagn",
+  "owner_owns": true,
+  "friction": "Stöld av släp/husvagn under vintern.",
+  "old_way": "Kätting genom fälgen, eller inget.",
+  "variants": "1, kodlås",
+  "swedish_equivalent": {
+   "retailer": "Biltema",
+   "price_sek": null,
+   "url": "https://www.biltema.se/bil---mc/bilverktyg/dacktillbehor/dackverktyg/hjullas-2000035006",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Thansen Hjullås 13–17\"",
+   "price_sek": 419.0,
+   "url": "https://www.thansen.se/bil/dack-och-falgar/tillbehor-och-verktyg/forvaring/hjullaas-13-17-bil-slap-husvagn/"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Sätts på hjulet på en vagn som står ute."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Aktuellt vid uppställning.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema 'Hjullås' (bil, husvagn, släp), Thansen Hjullås 13–17\" 419 kr (ur Brave-sökutdrag 2026-09-04). Samma form."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": "Står husvagnen olåst hela vintern?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "köpt fungerande old way"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 25,
+  "tier": "ELIM",
+  "biggest_risk": "Biltema har hjullås i hyllan.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com trailer wheel clamp lock caravan security",
+   "Brave: hjullås husvagn släpvagn biltema jula pris"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099821458069",
+  "url_se": "https://www.temu.com/se/g-601099821458069.html",
+  "title": "Trailer ball cover durable TPR rubber hitch protector, textured surface, protects tow bar ball from rust and scratches",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Dragkulan på bilen",
+  "owner_owns": true,
+  "friction": "Kulan rostar/smutsar ner byxorna när släpet är av.",
+  "old_way": "Tennisboll eller Biltema-kulskydd.",
+  "variants": "1",
+  "swedish_equivalent": {
+   "retailer": "Biltema",
+   "price_sek": 19.9,
+   "url": "https://www.biltema.se/bil---mc/lasta-och-dra/transporttillbehor/dragkulor/kulskydd-2000016509",
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Dragkroken sitter på bilen som står ute."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Året runt; inte säsongsbundet.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema Kulskydd 19,90 kr, Biltema Kulskydd kraftig, Jula Hamron kulskydd, Clas Ohlson Kulskydd 41-3737 (ur Yahoo-sökutdrag 2026-09-04)."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": "Har du dragkrok på bilen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "< 199 kr",
+   "svensk mass-commoditisering (19,90 kr)"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 20,
+  "category_novelty": 10,
+  "tier": "ELIM",
+  "biggest_risk": "Biltema 19,90 kr.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com tow ball cover towbar protection",
+   "Yahoo: kulskydd dragkrok biltema jula pris"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099516832791",
+  "url_se": "https://www.temu.com/se/g-601099516832791.html",
+  "title": "Heavy-duty RV stabilizer jack pads, leveling blocks, trailer tire pad, help prevent jacks from sinking",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Stödbenen på husvagnen",
+  "owner_owns": true,
+  "friction": "Stödbenen sjunker ner i blöt gräsmatta/grus under höstregnet, vagnen står snett.",
+  "old_way": "Plywoodbitar, gamla brädor.",
+  "variants": "4-pack",
+  "swedish_equivalent": {
+   "retailer": "Jula",
+   "price_sek": null,
+   "url": "https://www.jula.se/catalog/bil-och-garage/transport/slapfordon/stodhjul-fotter/stodbensfotter-002262/",
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Under stödbenen på en uppställd husvagn."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Höstregn + uppställning på gräs: syns direkt.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula Hamron 'Stödbensfötter 4-pk' (PP-plast), Biltema stödben-sortiment (ur Yahoo-sökutdrag 2026-09-04). Samma form."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": "Sjunker husvagnens stödben i gräset?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (Jula Hamron 4-pk)",
+   "old way (plywood) fungerar gratis"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 35,
+  "category_novelty": 45,
+  "tier": "ELIM",
+  "biggest_risk": "Jula 4-pack + plywood som gratis substitut.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com trailer tongue jack wheel dock caster pad",
+   "Yahoo: stödbensplattor husvagn stödben platta biltema jula pris"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601101119646963",
+  "url_se": "https://www.temu.com/se/g-601101119646963.html",
+  "title": "Trailer jack block for travel trailer, fits tongue stand wheels round and square, supports up to 15 000 lbs",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "US tongue jack",
+  "owner_owns": false,
+  "friction": "—",
+  "old_way": "—",
+  "variants": "1",
+  "swedish_equivalent": null,
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Amerikanskt objekt: svenska husvagnar har stödhjul/jockey wheel, inte 'tongue jack' med fot."
+   },
+   "presence": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": null,
+    "result": "UNKNOWN"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "oklart ägande i Sverige"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 10,
+  "category_novelty": 50,
+  "tier": "ELIM",
+  "biggest_risk": "Objektet finns inte på svenska vagnar.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com trailer tongue jack wheel dock caster pad"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099540290835",
+  "url_se": "https://www.temu.com/se/g-601099540290835.html",
+  "title": "Reinforced trailer wheel replacement, boat trailer jack wheel, dual swivel jack caster wheel with pin, fits any jack",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "US tongue jack-hjul",
+  "owner_owns": false,
+  "friction": "—",
+  "old_way": "—",
+  "variants": "1",
+  "swedish_equivalent": null,
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Reservhjul till US-typ tongue jack (pinnfäste); svenskt stödhjul 48 mm klämfäste (Jula) är en annan konstruktion."
+   },
+   "presence": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": null,
+    "result": "UNKNOWN"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "oklart ägande",
+   "reservdel"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 10,
+  "category_novelty": 50,
+  "tier": "ELIM",
+  "biggest_risk": "Passar inte svenska stödhjul.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com trailer tongue jack wheel dock caster pad"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099534029301",
+  "url_se": "https://www.temu.com/se/g-601099534029301.html",
+  "title": "1pc electric tongue jack cover 600D universal trailer RV electric tongue jack protective cover 14\"×5\"×10\"",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Elektrisk tongue jack (US)",
+  "owner_owns": false,
+  "friction": "—",
+  "old_way": "—",
+  "variants": "1",
+  "swedish_equivalent": null,
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Svenska husvagnar har manuellt stödhjul, ingen elektrisk tongue jack att skydda."
+   },
+   "presence": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": null,
+    "result": "UNKNOWN"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "oklart ägande"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 5,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "Objektet saknas i Sverige.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com trailer tongue jack wheel dock caster pad"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099589176805",
+  "url_se": "https://www.temu.com/se/g-601099589176805.html",
+  "title": "Trailer wheel chock rubber, boat and RV trailer wheel dock",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Hjulen på uppställd släpvagn/husvagn",
+  "owner_owns": true,
+  "friction": "Vagnen ska stå still på lutande uppfart under vintern.",
+  "old_way": "Vedträ, sten, eller Biltema-hjulkil.",
+  "variants": "1–2",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Under hjulet på vagn som står ute."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Uppställning.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Hjulkil är standardsortiment hos Biltema/Jula (kategori 'släptillbehör' i sökutdragen); exakt URL/pris ej hämtat denna session — märkt OSÄKER på pris men FAIL på form: en gummikil är en gummikil."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": null,
+    "result": "UNKNOWN"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "< 199 kr",
+   "svensk mass-commoditisering",
+   "old way gratis (vedträ)"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 15,
+  "category_novelty": 15,
+  "tier": "ELIM",
+  "biggest_risk": "Commodity under 100 kr.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com trailer wheel chock rubber"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099559295788",
+  "url_se": "https://www.temu.com/se/g-601099559295788.html",
+  "title": "Rubber triangular car stopper, solid large truck wheel chock, anti-skid portable wheel stopper",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Hjulen på uppställd släpvagn/husvagn",
+  "owner_owns": true,
+  "friction": "Vagnen ska stå still på lutande uppfart under vintern.",
+  "old_way": "Vedträ, sten, eller Biltema-hjulkil.",
+  "variants": "1–2",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Under hjulet på vagn som står ute."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Uppställning.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Hjulkil är standardsortiment hos Biltema/Jula (kategori 'släptillbehör' i sökutdragen); exakt URL/pris ej hämtat denna session — märkt OSÄKER på pris men FAIL på form: en gummikil är en gummikil."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": null,
+    "result": "UNKNOWN"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "< 199 kr",
+   "svensk mass-commoditisering",
+   "old way gratis (vedträ)"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 15,
+  "category_novelty": 15,
+  "tier": "ELIM",
+  "biggest_risk": "Commodity under 100 kr.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com trailer wheel chock rubber"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099609840730",
+  "url_se": "https://www.temu.com/se/g-601099609840730.html",
+  "title": "RV skylight cover 14×14 reflective vent cover for camper travel trailers, triple layer heat blocker",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Takluckan i husvagn/husbil (insida)",
+  "owner_owns": true,
+  "friction": "Solvärme genom takluckan på sommaren; kallras på vintern.",
+  "old_way": "Handduk/kartong i luckan.",
+  "variants": "1 storlek (35×56 cm US-standard; svenska Heki-luckor 40×40/70×50)",
+  "swedish_equivalent": null,
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Sitter i takluckan på en ägd vagn — men invändigt."
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Produkten säljs på värmeblockering (sommar). I sept–okt finns inget synligt problem; vinterisolering märks först vid vintercamping. US-luckmått passar dessutom inte Dometic/Heki.",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": null,
+    "result": "UNKNOWN"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas i oktober",
+   "inomhus/invändigt",
+   "passform (US-mått)"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 15,
+  "category_novelty": 50,
+  "tier": "ELIM",
+  "biggest_risk": "Sommarprodukt med US-mått.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com caravan skylight rooflight cover heki"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099682085784",
+  "url_se": "https://www.temu.com/se/g-601099682085784.html",
+  "title": "RV skylight insulation cover with reflective surface, universal motorhome vent, camper skylight shade",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Takluckan i husvagn/husbil (insida)",
+  "owner_owns": true,
+  "friction": "Solvärme genom takluckan på sommaren; kallras på vintern.",
+  "old_way": "Handduk/kartong i luckan.",
+  "variants": "1 storlek (35×56 cm US-standard; svenska Heki-luckor 40×40/70×50)",
+  "swedish_equivalent": null,
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Sitter i takluckan på en ägd vagn — men invändigt."
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Produkten säljs på värmeblockering (sommar). I sept–okt finns inget synligt problem; vinterisolering märks först vid vintercamping. US-luckmått passar dessutom inte Dometic/Heki.",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": null,
+    "result": "UNKNOWN"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas i oktober",
+   "inomhus/invändigt",
+   "passform (US-mått)"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 15,
+  "category_novelty": 50,
+  "tier": "ELIM",
+  "biggest_risk": "Sommarprodukt med US-mått.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com caravan skylight rooflight cover heki"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099604074547",
+  "url_se": "https://www.temu.com/se/g-601099604074547.html",
+  "title": "Merxeng travel trailer RV cover windproof 6 layers anti-UV top panel, fits 37–40 ft motorhome, 4 tire covers",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Hela husvagnen/husbilen",
+  "owner_owns": true,
+  "friction": "Vinteruppställning: löv, alger, UV och snö på taket.",
+  "old_way": "Presenning + spännband (blåser sönder), eller inget.",
+  "variants": "37–40 ft (11–12 m)",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "11–12 m passar inga svenska husvagnar (5–8 m)."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Vinteruppställning sept–okt.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Ej kontrollerat denna session (sökbudget slut). Husvagnsöverdrag finns i svensk fackhandel (Thansen kategori 'husvagnsöverdrag-kjolar' i sökutdrag)."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "OSÄKER — helöverdrag ligger sannolikt > 1 000 kr i SE-pris (Temu-pris UNKNOWN)"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Längdvarianter i fot (US-klasser); svensk ägare vet längden i meter, och 6-lagers helöverdrag kräver fukt-/andningsargument som annonsen måste förklara."
+   },
+   "hook": {
+    "text": "Står husvagnen ute i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "> 1 000 kr sannolikt",
+   "många SKU:er",
+   "kräver förklaring (andas/fukt)"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 30,
+  "category_novelty": 45,
+  "tier": "ELIM",
+  "biggest_risk": "Storlek i fot + pris över taket.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com caravan cover waterproof breathable 4 layer winter",
+   "WebSearch site:temu.com trailer coupler cover oxford hitch bag waterproof"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099646583006",
+  "url_se": "https://www.temu.com/se/g-601099646583006.html",
+  "title": "24–26 ft travel trailer RV cover, Oxford, waterproof, rip-resistant, anti-UV, with tongue jack cover + 6 gutter covers",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Hela husvagnen/husbilen",
+  "owner_owns": true,
+  "friction": "Vinteruppställning: löv, alger, UV och snö på taket.",
+  "old_way": "Presenning + spännband (blåser sönder), eller inget.",
+  "variants": "24–26 ft (7,3–7,9 m)",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "7–8 m finns bland större svenska husvagnar."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Vinteruppställning sept–okt.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Ej kontrollerat denna session (sökbudget slut). Husvagnsöverdrag finns i svensk fackhandel (Thansen kategori 'husvagnsöverdrag-kjolar' i sökutdrag)."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "OSÄKER — helöverdrag ligger sannolikt > 1 000 kr i SE-pris (Temu-pris UNKNOWN)"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Längdvarianter i fot (US-klasser); svensk ägare vet längden i meter, och 6-lagers helöverdrag kräver fukt-/andningsargument som annonsen måste förklara."
+   },
+   "hook": {
+    "text": "Står husvagnen ute i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "> 1 000 kr sannolikt",
+   "många SKU:er",
+   "kräver förklaring (andas/fukt)"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 30,
+  "category_novelty": 45,
+  "tier": "C",
+  "biggest_risk": "Storlek i fot + pris över taket.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com caravan cover waterproof breathable 4 layer winter",
+   "WebSearch site:temu.com trailer coupler cover oxford hitch bag waterproof"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099564774462",
+  "url_se": "https://www.temu.com/se/g-601099564774462.html",
+  "title": "Waterproof Oxford fabric RV & trailer covers, weatherproof (Temu UK)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Hela husvagnen/husbilen",
+  "owner_owns": true,
+  "friction": "Vinteruppställning: löv, alger, UV och snö på taket.",
+  "old_way": "Presenning + spännband (blåser sönder), eller inget.",
+  "variants": "storlekar ej läsbara",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Storleksklass ej läsbar (Temu blockerad)."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Vinteruppställning sept–okt.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Ej kontrollerat denna session (sökbudget slut). Husvagnsöverdrag finns i svensk fackhandel (Thansen kategori 'husvagnsöverdrag-kjolar' i sökutdrag)."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "OSÄKER — helöverdrag ligger sannolikt > 1 000 kr i SE-pris (Temu-pris UNKNOWN)"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Längdvarianter i fot (US-klasser); svensk ägare vet längden i meter, och 6-lagers helöverdrag kräver fukt-/andningsargument som annonsen måste förklara."
+   },
+   "hook": {
+    "text": "Står husvagnen ute i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "> 1 000 kr sannolikt",
+   "många SKU:er",
+   "kräver förklaring (andas/fukt)"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 30,
+  "category_novelty": 45,
+  "tier": "C",
+  "biggest_risk": "Storlek i fot + pris över taket.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com caravan cover waterproof breathable 4 layer winter",
+   "WebSearch site:temu.com trailer coupler cover oxford hitch bag waterproof"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099542199444",
+  "url_se": "https://www.temu.com/se/g-601099542199444.html",
+  "title": "1pc folding trailer car cover, Oxford cloth, windproof, sun-resistant, waterproof for van/outdoor",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Hopfällbar campingvagn (tältvagn)",
+  "owner_owns": false,
+  "friction": "—",
+  "old_way": "—",
+  "variants": "?",
+  "swedish_equivalent": null,
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "'Folding trailer' = tältvagn/pop-up camper: liten ägarklass i Sverige, form ej läsbar (Temu blockerad)."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Vinteruppställning.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Ej kontrollerat."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": null,
+    "result": "UNKNOWN"
+   },
+   "audience": {
+    "result": "FAIL",
+    "reason": "Tältvagnar är en liten ägarklass (< 100 000 hushåll, uppskattning ej verifierad)."
+   }
+  },
+  "negative_space_flags": [
+   "oklart ägande",
+   "liten ägarklass"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 15,
+  "category_novelty": 50,
+  "tier": "ELIM",
+  "biggest_risk": "För få ägare.",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch site:temu.com trailer coupler cover oxford hitch bag waterproof"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601100592423514",
+  "url_se": "https://www.temu.com/se/g-601100592423514.html",
+  "title": "Durable Oxford fabric trailer cover, sun-resistant waterproof cargo cover for pickup truck bed, reflective strips, elastic ropes",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Flak på pickup",
+  "owner_owns": false,
+  "friction": "—",
+  "old_way": "—",
+  "variants": "?",
+  "swedish_equivalent": null,
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Flaköverdrag för pickup — inte släpvagn."
+   },
+   "presence": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": null,
+    "result": "UNKNOWN"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "fel objekt"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 5,
+  "category_novelty": 40,
+  "tier": "ELIM",
+  "biggest_risk": "Fel objekt.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com trailer coupler cover oxford hitch bag waterproof"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601102230699570",
+  "url_se": "https://www.temu.com/se/g-601102230699570.html",
+  "title": "Heavy-duty 600D Oxford bike cover for hitch rack, waterproof UV windproof, lock holes, reflective strips, fits e-bikes",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Cykelhållare på dragkroken (med cyklar)",
+  "owner_owns": true,
+  "friction": "Cyklarna blir smutsiga/blöta under transport.",
+  "old_way": "Ingenting.",
+  "variants": "storlek per antal cyklar",
+  "swedish_equivalent": null,
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "På cykelhållaren på dragkroken."
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Sept–okt tas cyklarna av hållaren; skydd under körning är en annonsskapad önskan, inte en pågående friktion.",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": null,
+    "result": "UNKNOWN"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas",
+   "fel säsong"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 20,
+  "category_novelty": 55,
+  "tier": "ELIM",
+  "biggest_risk": "Fel säsong.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com trailer coupler cover oxford hitch bag waterproof"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "602262508241851",
+  "url_se": "https://www.temu.com/se/g-602262508241851.html",
+  "title": "Pulley system kayak hoist garage ceiling storage canoe lift, 150 lbs capacity, up to 14 ft ceiling",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Takboxen i garaget",
+  "owner_owns": true,
+  "friction": "Takboxen tar golvyta i garaget okt–maj.",
+  "old_way": "Står på golvet / lutad mot väggen.",
+  "variants": "1",
+  "swedish_equivalent": null,
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Objektet (takboxen) förvaras inomhus när den inte används — negativ rymd. Jula säljer dessutom 'takboxlyft' (Hamron, bildträff i Yahoo-sökutdrag 2026-09-04)."
+   },
+   "presence": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula Hamron takboxlyft (ur bildträff, pris ej läst)."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": null,
+    "result": "UNKNOWN"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "inomhusförvarat objekt",
+   "montering i tak"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 15,
+  "category_novelty": 50,
+  "tier": "ELIM",
+  "biggest_risk": "Inomhus + montering + Jula.",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch site:temu.com roof box storage hoist garage lift"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "605688298345002",
+  "url_se": "https://www.temu.com/se/g-605688298345002.html",
+  "title": "Wireless LED trailer light kit, magnetic towing tail light, portable universal stop/turn/running, 12–24 V",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Släpvagnens belysning",
+  "owner_owns": true,
+  "friction": "Trasig/trög belysning vid besiktning.",
+  "old_way": "Laga kabeln.",
+  "variants": "1 kit",
+  "swedish_equivalent": null,
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "På släpvagnen."
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Belysningen är ett problem den dag den går sönder — inte ett höstproblem som syns vid uppställning. Magnetbelysning finns dessutom som standard hos Biltema (ej verifierat denna session)."
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   },
+   "hook": {
+    "text": null,
+    "result": "UNKNOWN"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej körd — kandidaten föll i tidigare gate"
+   }
+  },
+  "negative_space_flags": [
+   "latent behov",
+   "jämförelsehandlad"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 20,
+  "category_novelty": 40,
+  "tier": "ELIM",
+  "biggest_risk": "Inget presensproblem.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch site:temu.com trailer light cover rear lamp protector towing"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601099514611565",
+  "url_se": "https://www.temu.com/se/g-601099514611565.html",
+  "title": "3pcs set internal thermal blinds 7 layers cover windscreen for Fiat Ducato 2006–2022",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Husbilens förarhytt (Ducato) — invändigt",
+  "owner_owns": true,
+  "friction": "Kallt/kondens i hytten vid höstcamping; insyn vid uppställning.",
+  "old_way": "Handdukar/kartong i rutorna, eller fackhandelsmatta 1 000–1 500 kr.",
+  "variants": "1 (Ducato 2006–2022, 3 delar)",
+  "swedish_equivalent": {
+   "retailer": "Ingen kedja; fackhandel Campingvaruhuset/GoCamp",
+   "price_sek": null,
+   "url": "https://www.campingvaruhuset.se/sv/husvagn-husbil/textilmattor-overdrag/isolermattor-till-husbil-van",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "GoCamp thermomatta Fiat Ducato (Camping4u)",
+   "price_sek": null,
+   "url": "https://www.camping4u.se/sv/artiklar/gocamp-thermomatta-fiat-ducato.html"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Husbilen står ute; men produkten sitter invändigt."
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Kondens/kyla i hytten känns vid höstcamping (okt) — men syns inte utifrån och husbilen är ofta uppställd. Presens 1 av 2.",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Ingen träff på Biltema/Jula/Clas Ohlson/Rusta; fackhandel säljer samma (GoCamp, Campingvaruhuset)."
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu-hämtning stoppad centralt; video/hero ej sedd.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "Ducato 2006–2022 — ägaren kan sin chassimodell utantill."
+   },
+   "hook": {
+    "text": "Har du en husbil på Ducato?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "94 000 husbilar i trafik (Midland.se 2024, Yahoo-utdrag); Ducato-andelen okänd."
+   }
+  },
+  "negative_space_flags": [
+   "invändig produkt — payoff syns inte i bild",
+   "presens 1 av 2"
+  ],
+  "eliminated_at": null,
+  "structure_match": 45,
+  "category_novelty": 65,
+  "tier": "C",
+  "biggest_risk": "Osynlig payoff invändigt; Temu-data saknas.",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch site:temu.com motorhome windscreen cover thermal exterior",
+   "Yahoo: termoskydd utvändigt husbil vindruta fiat ducato pris kr"
+  ]
+ },
+ {
+  "kluster": "husvagn",
+  "goods_id": "601102148404312",
+  "url_se": "https://www.temu.com/uk/motorhome-thermal-windscreen-screen-cover-wrap-blackout-blinds-for--windshield-protection-modern-rv-accessory-reinforced-edges-windshield-shade-outdoor--g-601102148404312.html",
+  "title": "Motorhome thermal windscreen screen cover wrap, blackout blinds, windshield protection, reinforced edges, windshield shade outdoor (Temu UK)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch": "ej hämtad — Temu-block 2026-09-04, hämtas centralt",
+  "object": "Husbilens vindruta och sidorutor (utvändigt)",
+  "owner_owns": true,
+  "friction": "Husbilen ställs upp i uppfarten sept–okt: frost på rutan varje morgon från oktober, sol/UV bleker instrumentbrädan, insyn i hytten hela vintern. Ägaren ser problemet varje morgon.",
+  "old_way": "Skrapa varje gång, kartong innanför rutan, eller fackhandelsskydd 1 500–2 500 kr.",
+  "variants": "UNKNOWN — Temu blockerad; kategorin säljs per chassi (Ducato X250/X290 m.fl.), en parameter ägaren kan utantill",
+  "swedish_equivalent": {
+   "retailer": "Ingen kedja (Biltema/Jula/Clas Ohlson/Rusta: 0 träffar)",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Hindermann Four Seasons utvändig isolermatta (Campingtillbehör4u)",
+   "price_sek": 1565,
+   "url": "https://www.camping4u.se/sv/artiklar/vinter-isolering/thermomattor/halvintegrerade-husbilar/index.html"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster utvändigt på en husbil som står ute hela vintern."
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Frost på vindrutan från oktober + uppställning: fotograferas i vilken svensk uppfart som helst. Sol/UV och insyn är bonus. Säsongen har > 6 veckor kvar (okt–mars).",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Biltema och Jula säljer bara invändig isolermatta (359 kr) och personbilsfolie (39 kr) – inte den utvändiga husbilsformen. Fackhandeln ankrar formen på 979–2 200 kr (Hindermann 1 565–1 675, CDON 1 599), ≥1,6× ett rimligt pris på 699–899 kr; billigaste svenska utvändiga är WeCamp 770 kr.",
+    "verified": true,
+    "verified_by": "h3.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Hindermann Four Seasons utvändig isolermatta (Campingtillbehör4u)",
+     "price_sek": 1565,
+     "url": "https://www.camping4u.se/sv/artiklar/vinter-isolering/thermomattor/halvintegrerade-husbilar/index.html"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "5. Utvändigt termoskydd/vindruteskydd för husbil"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "MATERIAL EJ VERIFIERAD: Temu-hämtning stoppad centralt — video, hero och variantlista måste öppnas innan tier bekräftas.",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Nej — en husbil, ett skydd. (Sidorutorna ingår normalt i samma set.)",
+    "result": "UNKNOWN — Temu-pris ej läsbart. Räkneexempel (uppskattning, EJ data): om Temu-pris ≈ 300 kr → landad ≈ 450 kr → SE-pris 899 kr (2,0×, under 2,4×-kravet) — kalkylen är känslig; över ~330 kr på Temu faller den. Ankaret 1 529 kr ger takhöjd upp till ~950 kr."
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Utvändiga termoskydd är chassispecifika (Ducato X250/X290, Transit, Sprinter). Ägaren vet sin chassimodell utantill (= ofarlig parameter), men Temu-listningens faktiska variantlista är ej läst."
+   },
+   "hook": {
+    "text": "Står husbilen ute i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "94 000 husbilar i trafik i Sverige (Midland.se 2024, ur Yahoo-sökutdrag) — strax under tröskeln ~100 000 hushåll. Husbilsägare = 55+ med villa i hög grad; husbilen är omisskännlig i flödet (CPM-proxy stark)."
+   }
+  },
+  "negative_space_flags": [
+   "ägarklass strax under 100 000",
+   "pris kan hamna nära 1 000 kr-taket",
+   "material ej verifierad"
+  ],
+  "eliminated_at": null,
+  "structure_match": 62,
+  "category_novelty": 85,
+  "tier": "B",
+  "biggest_risk": "Materialet är osett; ekonomin faller om Temu-priset ligger över ~330 kr; passform per chassi måste stämma exakt.",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch site:temu.com motorhome windscreen cover thermal exterior",
+   "Yahoo: termoskydd utvändigt husbil vindruta fiat ducato pris kr",
+   "Yahoo: husbil termoskydd vindruta biltema jula clas ohlson rusta (0 kedjeträffar)",
+   "Yahoo: \"husbilar i trafik\" sverige antal 2024 (Midland.se: 94 000)"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "husbil termoskydd utvändigt: Hindermann 1 565 som ankare; chassispecifik variant; 94 000 husbilar (strax under publiktröskeln); känslig kalkyl"
+ }
+]

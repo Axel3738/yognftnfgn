@@ -1,0 +1,500 @@
+{
+  "concept_id": "tandvedsklyv-i-gjutjarn-kindling-cracker-typ",
+  "concept": "Tändvedsklyv i gjutjärn/stål av Kindling Cracker-typ — fast ring/ram + kil som veden ställs i och slås ned i med klubba. Objekt: vedstacken + braskaminen/eldstaden. Friktion sep–okt: eldningssäsongen börjar, tändved klyvs med yxa på huggkubb, händerna nära eggen.",
+  "run": {
+    "fas": "FAS 1 V2.1",
+    "datum": "2026-09-04",
+    "agent": "fas1-tandvedsklyv"
+  },
+
+  "verdict_concept": "PASS",
+  "verdict_concept_reason": "Ingen gate faller strukturellt. Objekt, presens, variant, hook och publik = PASS. Hyllan = PASS via märkesankare (Kindling Cracker 1 249 kr i 9+ butiker = 2,08× vid 599 kr) och 0 svenska annonsörer på formen i Ad Library. Ekonomin = PASS vid 599/699 kr även med fraktpåslag. Materialgaten kunde inte bedömas för att temu.com är blockerad — tekniskt fel, aldrig kommersiellt. Konceptet får därför inte FAIL. Namngiven risk: en svensk dropshipper (setrimmer.se) säljer samma form i lager för 288–365 kr.",
+
+  "verdict_listing": "ALTERNATIVE_LISTING_REQUIRED",
+  "verdict_listing_reason": "Den granskade listningen 601099583674464 faller på MATERIAL (sett underlag: 1 bild, textfri packshot på vitt, ingen ved, ingen klubba, ingen hand, ingen video). 23 alternativa listningar är identifierade men INGEN av dem kunde hämtas: temu.com svarar med tomt skal både på /se (title=Temu) och på USA-vägen (title='This item was discontinued' för samtliga testade id — verifierat bot-skal, inte äkta avregistrering). Alla nya listningar = BLOCKED_SOURCE, aldrig FAIL.",
+
+  "best_listing_id": "601099561039096",
+  "best_listing_url": "https://www.temu.com/10-x-14-5--splitter-xl-9lbs-heavy-duty-firewood-splitter-cast-steel-manual-log-splitter-w-unique-half-ring-design-no--easy-portability-wood-splitter-tool-g-601099561039096.html",
+  "best_listing_note": "Bästa STRUKTURELLA kandidat, inte bästa verifierade. Titeln bär allt konceptet kräver: 10×14,5 tum (störst öppning i fältet), 9 lbs = 4,1 kg (nära Kindling Cracker Originals 4,8 kg, alltså ser ut som ankaret), 'unique half-ring design' = samma ring+kil-mekanik, gjutstål. Material och pris är BLOCKED_SOURCE. Enda listningen med VERIFIERAD ekonomi är fortfarande 601099583674464 ($16,25 / 4,9 / 28 recensioner, hämtad 2026-09-04 07:24 UTC) — men den faller på material och dess hero visar dessutom en bultad ram, alltså montering.",
+
+  "winner_dna_match_0_100": 72,
+  "winner_dna_match_breakdown": {
+    "steg_0_objekt": "PASS — veden/vedboden/braskaminen ägs redan, står ute, används kroppsligt varje eldningsdag.",
+    "steg_1_presens": "PASS — huggkubb + yxa går att fotografera i en svensk vedbod i september.",
+    "steg_2_hyllan": "PASS villkorad — samma form finns i kedja (Jula 999, Clas Ohlson 999) men ankaret Kindling Cracker ligger 1 249–1 395 kr i 9+ butiker = 2,08× vid 599 kr, och vår produkt ser ut som ankaret. 0 svenska annonsörer på formen.",
+    "steg_3_materialet": "BLOCKED_SOURCE — hålet i konceptet. Enda sedda materialet (601099583674464) är en textfri packshot utan handling.",
+    "steg_4_priset": "PASS — 3,01–3,53× vid 599 kr, BE-CPA 400–429 kr.",
+    "steg_5_varianten": "PASS — en variant, inget mått ägaren måste ta.",
+    "steg_6_hooken": "PASS — 'Klyver du tändved med yxa?' = 5 ord, ägarfråga.",
+    "steg_7_publiken": "PASS — man 45–70, småhus/fritidshus; huggkubb och vedhög omisskännliga i flödet.",
+    "bonus": "Flerköpsskäl (villa + fritidshus = 2 st). Old way = yxa, alltså improvisation med kroppslig risk. Säsong ≥ 12 veckor kvar.",
+    "avdrag": "Materialgaten olöst (−). Svensk dropshipper på samma form för 288–365 kr (−). Den granskade listningen kräver montering (−)."
+  },
+
+  "economics": {
+    "source": "us-proxy",
+    "price_usd_verified": 16.25,
+    "price_source": "material/us-raw/601099583674464.json — JSON-LD hämtad 2026-09-04T07:24:40Z, blocked=false",
+    "kurs_sek_per_usd": [6.96, 8.16],
+    "se_temu_est_sek": [113, 133],
+    "landed_low": 170,
+    "landed_high": 199,
+    "landed_formula": "SE-Temu = USD × 6,96–8,16 (DATAVAGAR §6) ; landad = SE-Temu × 1,5",
+    "price_options": [
+      {
+        "se_price": 499,
+        "multiple_low": 2.51,
+        "multiple_high": 2.94,
+        "be_cpa": [300, 329],
+        "verdict": "PASS men SPRÖD — tål bara +9 kr extra frakt innan 2,4× spricker (räknat från hög landad kostnad)."
+      },
+      {
+        "se_price": 599,
+        "multiple_low": 3.01,
+        "multiple_high": 3.53,
+        "be_cpa": [400, 429],
+        "verdict": "PASS — rekommenderat pris. Tål +51 kr extra frakt (hög landad) / +80 kr (låg landad)."
+      },
+      {
+        "se_price": 699,
+        "multiple_low": 3.51,
+        "multiple_high": 4.12,
+        "be_cpa": [500, 529],
+        "verdict": "PASS med störst marginal — tål +92 till +122 kr extra frakt. Men 699 kr ligger 56 % av ankaret 1 249 kr, alltså närmare 'lika dyrt som märket'."
+      }
+    ],
+    "freight_sensitivity": {
+      "fraga": "Dödar frakten på gjutjärn ekonomin?",
+      "svar": "NEJ vid 599 och 699 kr. JA vid 499 kr så snart frakten lägger på mer än ~10 kr.",
+      "plus_50_sek": {
+        "landed": [220, 249],
+        "499": {"multiple": [2.00, 2.27], "verdict": "UNDER 2,4×"},
+        "599": {"multiple": [2.41, 2.73], "verdict": "PASS, precis över"},
+        "699": {"multiple": [2.81, 3.18], "verdict": "PASS"}
+      },
+      "plus_100_sek": {
+        "landed": [270, 299],
+        "499": {"multiple": [1.67, 1.85], "verdict": "UNDER 2,4×"},
+        "599": {"multiple": [2.00, 2.22], "verdict": "UNDER 2,4× — spricker här"},
+        "699": {"multiple": [2.34, 2.59], "verdict": "MARGINAL — spricker i låga änden"}
+      },
+      "brytpunkter_2_4x": {
+        "499": "landad får vara max 208 kr (marginal +9 kr från hög landad, +38 kr från låg)",
+        "599": "landad får vara max 250 kr (marginal +51 kr från hög landad, +80 kr från låg)",
+        "699": "landad får vara max 291 kr (marginal +92 kr från hög landad, +122 kr från låg)"
+      },
+      "stopp_regel_420_kr": "Nås inte. Även +100 kr ger 270–299 kr landat, långt under stoppgränsen.",
+      "vikter_i_faltet": {
+        "601099583674464": "UNKNOWN (vikt ej i titeln)",
+        "601099600046272": "8,7 lbs = 3,9 kg",
+        "601099555665183": "9 lbs = 4,1 kg",
+        "601099561039096": "9 lbs = 4,1 kg",
+        "601099572734123": "13 lbs = 5,9 kg",
+        "601099811562065": "18 lbs = 8,2 kg",
+        "referens_kindling_cracker_original": "4,8 kg, 22,5×22,5×31 cm, ringöppning 16,5 cm"
+      },
+      "verklighetskontroll": "setrimmer.se lagerhåller och säljer samma form i Sverige: standard 2,62 kg-klassen för 288 kr och 'Stor' (2,62 kg, 29×21 cm) för 365 kr, leverans 1–3 dagar. En svensk aktör kan alltså landa, lagerhålla OCH sälja med marginal på 288 kr — vilket i praktiken sätter ett tak på fraktkostnaden i den viktklassen. På AliExpress ligger de riktiga ENSTYCKESGJUTNA gjutjärnsringarna (4–8 kg) däremot på 65–90 USD levererat, medan 10–25 USD-artiklarna är lättare svetsad/kolstålskonstruktion. Slutsats: köp 3–5 kg-versionen, inte 8 kg-versionen.",
+      "confidence": "MEDIUM — kalibreringen 6,96–8,16 och ×1,5 är mätt på två LÄTTA produkter (IBC-överdrag, motorhölje). Att den håller för 4 kg gjutjärn är inte mätt. Därför är känslighetsberäkningen, inte grundtalet, det som bär beslutet."
+    },
+    "verdict": "PASS vid 599 kr och 699 kr. FAIL/spröd vid 499 kr. Frakten dödar INTE konceptet så länge produkten väger 3–5 kg och priset sätts till 599 kr."
+  },
+
+  "material": {
+    "status": "BLOCKED_SOURCE",
+    "evidence": [
+      "601099583674464: SETT och bedömt. 1 bild, ingen video. Heron är en textfri packshot på vit bakgrund: svart hexagonal ram med bultade stag, dubbelkil i mitten. Ingen ved, ingen klubba, ingen hand, ingen miljö. Duger inte som annons. Hero: https://img.kwcdn.com/product/open/2024-05-27/1716805781567-4a70bab04675401089a4082cd52b9bc8-goods.jpeg (lokal kopia: docs/temu-jakt-v2/jakt/material/bevis/601099583674464_hero.jpg). Bilden visar dessutom en BULTAD ram = montering, vilket ligger i negativ rymd (30 % av förlorarna).",
+      "Alla 23 övriga listningar: EJ SEDDA. temu.com/se ger tomt skal (<title>Temu</title>) och temu.com/g-<id>.html ger bot-skal med titeln 'This item was discontinued' för SAMTLIGA testade id (601099583674464, 601099572734123, 601099595396016, 601099519706360) — alltså ett blockeringssvar, inte en äkta avregistrering. Googlebot-UA gav samma tomma skal. Ingen JSON-LD, inga bild-URL:er, ingen video.",
+      "Seznam-vägen (DATAVAGAR §2) gav goods-id och titlar men INGA priser, betyg eller recensionsantal för det här klustret — Temu maskerar dessutom siffror och märkesord med '*' i sin egen metadata.",
+      "Positiv signal utifrån: IToolMax kör aktiv och tung annonsering på 'Wall Mounted Firewood Kindling Splitter' (USD, 40–48 % OFF, hundratals annonser sedan januari 2026) — formen ÄR bevisad som annonsprodukt på andra marknader, men det är väggmodellen, inte ringen."
+    ],
+    "vad_som_kravs_for_att_losa_A": "Hämta hero + video för de 13 nya id:na via hamta-langsam.py när blocket släpper. Prioritera 601099561039096, 601099555665183, 601099572734123, 601099595396016 (GoPlus, märkesnamn = större chans på riktigt produktionsmaterial) och 601099702553211 (handskar ingår → större chans på hand-i-bild)."
+  },
+
+  "audience": {
+    "verdict": "PASS",
+    "owner_class_size": "≈1,1 miljoner vedeldade eldstäder i bruk i Sverige",
+    "underlag": "MSB:s nationella register: fler än 1,7 miljoner vedeldade eldstäder i Sverige, varav ca 600 000 registrerade som oanvända. 1,7 M − 0,6 M ≈ 1,1 M i bruk. Kravet i fingeravtrycket är ≥ ~100 000, alltså klarat med tiofaldig marginal även om siffran skulle vara halverad.",
+    "sources": [
+      {"name": "MSB (via Göteborgs-Posten, 'Halv miljon oanvända eldstäder oroar sotare')", "url": "https://www.gp.se/nyheter/sverige/halv-miljon-oanvanda-eldstader-oroar-sotare.5bafc747-2590-5348-b5fd-1d8a8ae93fd0", "figure": ">1,7 miljoner vedeldade eldstäder; ~600 000 oanvända"},
+      {"name": "MSB, Sotning och brandskyddskontroll", "url": "https://www.msb.se/sv/amnesomraden/skydd-mot-olyckor-och-farliga-amnen/stod-till-kommunal-raddningstjanst/brandskydd/sotning-och-brandskyddskontroll/", "figure": "ca 30 % av alla bränder i småhus, par-/radhus och fritidshus är eldstadsrelaterade (sidan flyttad till mcf.se, siffran ej läsbar direkt 2026-09-04)"},
+      {"name": "Energimyndigheten, Energistatistik för småhus", "url": "https://www.energimyndigheten.se/statistik/officiell-energistatistik/tillforsel-och-anvandning/energistatistik-for-smahus/", "figure": "exakt antal småhus med biobränsleuppvärmning ligger i nedladdningsbara Excel-filer — EJ LÄST, ingen siffra härifrån används"}
+    ],
+    "profil": "Man 45–70, småhus eller fritidshus, kamin/vedspis/braskamin. Objektet (vedhög, huggkubb, yxa) är omisskännligt i flödet — låg CPM-risk. Kroppslig riskkomponent (fingrarna nära eggen) ger rädslavinkeln som axelbältet och kameran vann på.",
+    "confidence": "MEDIUM för det exakta talet (sekundärkälla, MSB-registret ej läst direkt). HIGH för att publiken är ≥ 100 000 hushåll."
+  },
+
+  "variants": {
+    "verdict": "PASS",
+    "reasoning": "En variant. Ägaren behöver inte mäta något och behöver ingen parameter utantill — man ställer en vedklyv på marken eller skruvar den på en huggkubb. Ingen storleksrisk av tofflor-typen. Enda valet i fältet är öppningsdiameter (6,5\" mot 9\"/XL), och det är ett 'större = bättre'-val, inte ett passformsval. Motsvarar STEG 5 i fingeravtrycket (7/9 vinnare)."
+  },
+
+  "shelf": {
+    "verdict": "PASS_MED_NAMNGIVEN_RISK",
+    "reasoning": "Kedjorna säljer samma form men aldrig under 999 kr, och märkesankaret ligger på 1 249–1 395 kr i 9+ butiker = 2,08× vid 599 kr (kravet är ≥ 1,6×). Undantagsregeln i vinnar-DNA:t §7 rad E (Crocs/Husqvarna/Kjell-mönstret) är alltså uppfylld: ankaret är synligt, vår produkt ser ut som ankaret. VIKTIGT NYTT 2026-09-04: de två sub-500-kopiorna som hyllkörningen h1.json noterade (Aduro 295 kr, Northix 419 kr) står båda som **Ej i lager** på PriceRunner, alltså 0 butiker — de är inte ett levande alternativ i handen. Kvar som verkligt sub-500-hot är i stället setrimmer.se, en svensk webbshop som lagerhåller samma form för 288/365 kr med 1–3 dagars leverans.",
+    "same_form_in_chain": "JA (Jula 999, Clas Ohlson 999) men aldrig under 999 kr",
+    "chain_min_price_sek": 999,
+    "sub_500_same_form_in_stock": "NEJ i kedja/PriceRunner. JA hos en svensk fristående e-handlare (setrimmer.se, 288–365 kr).",
+    "adlib_se_active_on_this_form": 0,
+    "adlib_se_note": "Ad Library SE, aktiva annonser: 'vedklyv' = 68 träffar, alla från bolist.se (katalogannonser med hydraulklyv AL-KO) och VaruZone.se ('Gör borrmaskinen till en vedklyv – endast 299 kr' = klyvkonen till borrmaskin, en ANNAN form). 'vedklyv tändved' = 0 aktiva. 'tändved klyva' = 17, varav Viking FireTools (SEK) körde '40 % rabatt idag!' 15 okt–19 nov 2025 — alltså en svensk aktör som fann det värt att annonsera mitt i säsongen, men ingen kör nu. Slutsats: 0 aktiva annonsörer på ring+kil-formen i Sverige i dag.",
+    "anchors": [
+      {"name": "Kindling Cracker Standard (märkesankare, 9+ butiker)", "price_sek": 1249, "url": "https://www.pricerunner.se/pl/348-4580406/Traedgaardsredskap/Kindling-Cracker-Standard-priser", "same_form": true, "in_stock": true},
+      {"name": "Kindling Cracker Vedklyv Manuell Tändvedsklyvskil", "price_sek": 1395, "url": "https://www.pricerunner.se/results?q=kindling%20cracker", "same_form": true, "in_stock": true},
+      {"name": "Kindling Cracker King", "price_sek": 1799, "url": "https://www.pricerunner.se/results?q=kindling%20cracker", "same_form": true, "in_stock": true},
+      {"name": "VEDKLYV HOYLA KINDLING SPLITTER (K-Bygg)", "price_sek": 1279, "url": "https://k-bygg.se/produkt/vedklyv-hoyla-kindling-splitter/6430073050246", "same_form": true, "in_stock": true},
+      {"name": "Manuell vedklyv Ø16 cm Kindling Cracker Original (Jula)", "price_sek": 999, "url": "https://www.jula.se/catalog/tradgard/motorsagar-och-vedklyvning/vedbearbetning/yxor/manuell-vedklyv-029893/", "same_form": true, "in_stock": "UNKNOWN (sidan 403; pris ur h1.json 2026-09-04)"},
+      {"name": "Manuell vedklyv med slägga (Clas Ohlson 31-2836)", "price_sek": 999, "url": "https://www.clasohlson.com/se/Manuell-vedklyv-med-slagga/p/31-2836", "same_form": true, "in_stock": "UNKNOWN (JS-challenge; pris ur h1.json 2026-09-04)"},
+      {"name": "Kindling Cracker Original Vedklyv (Hylte Jakt & Lantman)", "price_sek": 1249, "url": "https://www.hylte-lantman.com/kindling-cracker-original-vedklyv", "same_form": true, "in_stock": "UNKNOWN"},
+      {"name": "Vastbo Vedklyv Stickan", "price_sek": 623, "url": "https://www.pricerunner.se/results?q=vedsp%C3%A4ntare", "same_form": false, "note": "Stikkan-typ: fast blad, annan mekanik"},
+      {"name": "Topway Bärbar Väggmonterad Vedklyvare 40 cm", "price_sek": 626, "url": "https://www.pricerunner.se/results?q=vedsp%C3%A4ntare", "same_form": false, "note": "väggmonterad, annan form"},
+      {"name": "Core Vedklyv Vägghängd Till Tändved", "price_sek": 450, "url": "https://www.pricerunner.se/results?q=vedsp%C3%A4ntare", "same_form": false, "note": "väggmonterad, annan form"},
+      {"name": "Aduro Vedklyv Kindling Splitter Gummi", "price_sek": 295, "url": "https://www.pricerunner.se/results?q=vedsp%C3%A4ntare", "same_form": true, "in_stock": false, "note": "EJ I LAGER 2026-09-04 — 0 butiker. Var det främsta sub-500-hotet i h1.json; är det inte längre."},
+      {"name": "Northix Stålvedsklyv Säker Enkel Vedklyvning", "price_sek": 419, "url": "https://www.pricerunner.se/results?q=vedsp%C3%A4ntare", "same_form": true, "in_stock": false, "note": "EJ I LAGER 2026-09-04 — 0 butiker."},
+      {"name": "Espegard Vedklyv Kindling Cracker", "price_sek": 1995, "url": "https://www.pricerunner.se/results?q=vedsp%C3%A4ntare", "same_form": true, "in_stock": false},
+      {"name": "SETrimmer.se — Vedklyv för tändved, Standard", "price_sek": 288, "url": "https://setrimmer.se/collections/vedklyv-braskamin", "same_form": true, "in_stock": true, "note": "HUVUDHOTET. Ord.pris 339 kr, betyg 4,8. Svensk butik, Klarna, 1–3 dagars leverans."},
+      {"name": "SETrimmer.se — Vedklyv för tändved, Stor", "price_sek": 365, "url": "https://setrimmer.se/products/vedklyv-for-tandved-kindling-splitter-stor", "same_form": true, "in_stock": true, "note": "Ord. 429 kr, betyg 4,33. 29×21 cm, 2,62 kg, ytterdiameter 21 cm / innerdiameter 16 cm."},
+      {"name": "SETrimmer.se — Standard vedklyv + Klubba", "price_sek": 449, "url": "https://setrimmer.se/collections/vedklyv-braskamin", "same_form": true, "in_stock": true},
+      {"name": "SETrimmer.se — Stor vedklyv + Klubba", "price_sek": 539, "url": "https://setrimmer.se/collections/vedklyv-braskamin", "same_form": true, "in_stock": true},
+      {"name": "SETrimmer.se — Stor vedklyv + Kaminfläkt + Klubba", "price_sek": 729, "url": "https://setrimmer.se/collections/vedklyv-braskamin", "same_form": true, "in_stock": true, "note": "Bevisar att bundling upp till 729 kr fungerar i svensk e-handel på den här produkten."}
+    ],
+    "searches": [
+      "PriceRunner /results?q=kindling cracker (kategori Vedspäntare, 14 produkter, med lagerstatus)",
+      "PriceRunner /results?q=vedspäntare",
+      "PriceRunner /results?q=vedklyv tändved",
+      "PriceRunner /results?q=tändvedsklyv (0 relevanta — ordet finns inte som produktnamn i svensk handel)",
+      "PriceRunner /results?q=kindling splitter",
+      "PriceRunner /results?q=vedkubb klyv",
+      "WebSearch: amazon.se vedklyv tändved gjutjärn kindling splitter pris",
+      "WebSearch: \"tändvedsklyv\" OR \"vedklyv tändved\" gjutjärn Rusta Granngården Bauhaus pris",
+      "WebSearch: \"vedklyv för tändved\" OR \"tändvedsklyv\" 399 kr OR 299 kr svensk webbshop kindling splitter gjutjärn köp",
+      "WebFetch setrimmer.se/products/vedklyv-for-tandved-kindling-splitter-stor",
+      "curl setrimmer.se/collections/vedklyv-braskamin (17 produkter med priser och lagerstatus)",
+      "curl k-bygg.se HOYLA Kindling Splitter",
+      "curl clasohlson.com 31-2836 (JS-challenge, ej läsbar)",
+      "curl fyndiq.se sök vedklyv / tändved klyv (404 på sök-URL)",
+      "Meta Ad Library SE: 'vedklyv' (68 aktiva), 'vedklyv tändved' (0 aktiva), 'tändved klyva' (17), 'kindling splitter' (126, internationella)"
+    ],
+    "negativ_rymd": {
+      "montering": "DELVIS RISK. Kindling Cracker skruvas normalt fast på en huggkubb (två skruvar) — låg tröskel. Men den granskade Temu-listningens hero visar en BULTAD ram, alltså hopsättning i kartongen. Välj en 'one-piece' / 'weld-free'-listning (601099561039096 säger 'One-Piece', 601099811562065 säger 'Weld-free') så försvinner flaggan.",
+      "jamforelsehandlad": "JA. 'vedklyv tändved' är ett shoppingord med 45 träffar på PriceRunner och en färdig kategori (Vedspäntare). Kunden KAN jämföra. Det farliga mönstret i negativ rymd är dock 'old way funkar ∧ jämförelsehandlad ∧ < 300 kr' — vårt pris är 599 kr, så trippeln slår inte till.",
+      "amazon_fyndiq_billigare": "Amazon.se listar ZYCARE Ved-tändklyv i kolstål (pris ej läsbart 2026-09-04, sidan gav HTTP 500) och Kindling Cracker King XL. Fyndiq: sök-URL:en gav 404, ingen träff verifierad. Största billiga alternativet är inte Amazon utan setrimmer.se 288 kr.",
+      "kandt_varumarke_som_gor_oss_till_billig_kopia": "JA, 'Kindling Cracker' ÄR ett känt märke i Sverige — 100+ bevakare på PriceRunner, 9+ butiker, sålt av Jula, Bauhaus, Granngården, Swedol, K-Bygg, SmartaSaker, Byggahus. Men enligt vinnar-DNA:t §7 rad E är det en TILLGÅNG, inte ett hinder: precis som Crocs för strandtofflorna och Husqvarna för axelbältet ger ett synligt ankare 1,6–3× över vårt pris en gratis referenspunkt — förutsatt att vår produkt ser ut som ankaret. Den gör den (svart gjutjärn, ring, kil). Villkoret är att vi INTE positionerar oss som lågpris: 599 kr mot 1 249 kr, aldrig 399 kr mot 288 kr.",
+      "forbrukning_kit_lek_mode": "Inget av det. Engångsköp, verktyg, vuxen ägare."
+    }
+  },
+
+  "season": {
+    "verdict": "PASS",
+    "weeks_left": 12,
+    "reasoning": "I dag är 2026-09-04. Svensk eldningssäsong startar med de första kalla kvällarna i september och toppar oktober–november; tändved klyvs varje eldningsdag hela vintern. Extern bekräftelse: Viking FireTools (SEK-konto) körde svenska annonser på 'tändved klyva' 15 oktober–19 november 2025, alltså mitt i det fönstret. Räknat till slutet av november är det ≥ 12 veckor kvar; räknat till säsongens slut i mars är det ~26 veckor. Kravet i fingeravtrycket är ≥ 6 veckor. Detta är dessutom rätt SIDA av säsongen — inte fel/sen säsong, som fällde 25 % av förlorarna."
+  },
+
+  "listings": [
+    {
+      "goods_id": "601099583674464",
+      "url": "https://www.temu.com/kindling-splitter-with-dual-blades-upgraded-hand-log-splitter-manual-wood-splitting-wedge-cast-iron-firewood-cracker-cutter-tool-for-outdoor-camping-picnic-g-601099583674464.html",
+      "title": "Kindling Splitter with Dual Blades, Upgraded Hand Log Splitter, Manual Wood Splitting Wedge, Cast Iron Firewood Cracker Cutter Tool for Outdoor Camping Picnic",
+      "price_usd": 16.25,
+      "price_source": "temu JSON-LD, cachad i material/us-raw/601099583674464.json, hämtad 2026-09-04T07:24:40Z",
+      "rating": 4.9,
+      "review_count": 28,
+      "sold": "UNKNOWN",
+      "material": "gjutjärn (enligt titel)",
+      "weight": "UNKNOWN",
+      "dimensions": "UNKNOWN",
+      "mallet_included": "NEJ (nämns inte)",
+      "note": "GRANSKAD LISTNING. Enda med verifierat pris/betyg. MATERIAL = FAIL: 1 bild, textfri packshot på vitt, ingen ved/hand/klubba, ingen video. Heron visar en bultad hexagonal ram med dubbelkil = montering krävs. Ekonomin PASS.",
+      "listing_status": "MATERIAL_FAIL"
+    },
+    {
+      "goods_id": "601099610405543",
+      "url": "https://www.temu.com/wood-kindling-cracker-firewood-kindling-splitter-steel-firewood-splitting-wedge-firewood-splitting-wedge-g-601099610405543.html",
+      "title": "Wood Kindling Cracker, Firewood Kindling Splitter, Steel Firewood Splitting Wedge",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "stål", "weight": "UNKNOWN", "dimensions": "UNKNOWN", "mallet_included": "UNKNOWN",
+      "note": "Andra kända listningen sedan tidigare. Ej hämtbar.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099561039096",
+      "url": "https://www.temu.com/10-x-14-5--splitter-xl-9lbs-heavy-duty-firewood-splitter-cast-steel-manual-log-splitter-w-unique-half-ring-design-no--easy-portability-wood-splitter-tool-g-601099561039096.html",
+      "title": "10 x 14.5in Splitter XL 9lbs Heavy Duty Firewood Splitter, Cast Steel Manual Log Splitter w/ Unique Half-Ring Design, Easy Portability, Wood Splitter Tool",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "gjutstål", "weight": "9 lbs = 4,1 kg", "dimensions": "10 × 14,5 tum", "mallet_included": "UNKNOWN",
+      "note": "NY 2026-09-04. Bästa strukturella matchning: halv-ring, XL-öppning, vikt nära Kindling Cracker Original (4,8 kg). Trolig dubblett av 601099555665183 från annan säljare.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099555665183",
+      "url": "https://www.temu.com/10-x14-5in-kindling-splitter-solid-cast-log-splitter-for-wood-9lbs-heavy-duty-with-half-ring-manual-firewood-cracker-splitting-tool-for-outdoor-camping-g-601099555665183.html",
+      "title": "10x14.5in Kindling Splitter Solid Cast Log Splitter for Wood, 9lbs Heavy Duty with Half-Ring, Manual Firewood Cracker Splitting Tool for Outdoor Camping",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "massiv gjutning", "weight": "9 lbs = 4,1 kg", "dimensions": "10 × 14,5 tum", "mallet_included": "UNKNOWN",
+      "note": "Ur alt/tandvedsklyv.json. 'Solid Cast' = engångsgjuten, ingen montering.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099572734123",
+      "url": "https://www.temu.com/log-splitter-axe-wood-splitter-with-cast-steel-wedge-kindling-cracker-log-splitters-for-firewood-heavy-duty-maul-splitting-wedge-stand-for-wood-cutter-13lbs-g-601099572734123.html",
+      "title": "Log Splitter Axe Wood Splitter with Cast Steel Wedge, Kindling Cracker, Log Splitters for Firewood, Heavy Duty Maul Splitting Wedge Stand for Wood Cutter, 13lbs",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "gjutstål", "weight": "13 lbs = 5,9 kg", "dimensions": "L & XL-modeller", "mallet_included": "UNKNOWN (titeln nämner 'maul' och 'high quality storage bag')",
+      "note": "Ur alt-filen. Enda som ordagrant heter 'Kindling Cracker' + 'stand'. Vikten 5,9 kg drar upp fraktrisken ett steg.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099600046272",
+      "url": "https://www.temu.com/wood-splitter-6-5-inch-firewood-splitter-log-splitter-sharpened-alloy-steel-opening-iron-made-solid-base-8-7-pound-weight-heavy-duty-cast-iron-black-g-601099600046272.html",
+      "title": "Wood Splitter 6.5 inch Firewood Splitter Log Splitter, Sharpened Alloy Steel Opening, Iron Made Solid Base, 8.7 pound weight, Heavy Duty Cast Iron, Black",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "gjutjärn, slipad legerad ståleg", "weight": "8,7 lbs = 3,9 kg", "dimensions": "6,5 tums öppning", "mallet_included": "UNKNOWN",
+      "note": "Ur alt-filen. 6,5 tum = exakt samma öppning som Kindling Cracker Original. Lättaste av de 'riktiga' — bäst fraktprofil i fältet.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099811562065",
+      "url": "https://www.temu.com/1pc-heavy-duty-cast-iron--log-splitter--diameter-18lbs--firewood-splitter-with-axe-style-blade-weld-free-painted--firewood-rack-stand-for-outdoor-use-g-601099811562065.html",
+      "title": "1pc Heavy Duty Cast Iron Log Splitter, Dia. 10.2in, 18 Lbs, Firewood Splitter with Axe-style Blade, Weld-free Painted, Firewood Rack Stand for Outdoor Use",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "gjutjärn, svetsfri", "weight": "18 lbs = 8,2 kg", "dimensions": "diameter 10,2 tum", "mallet_included": "UNKNOWN",
+      "note": "Ur alt-filen. 'Weld-free' = ingen montering, bra. MEN 8,2 kg är den tyngsta i fältet — det är precis den här vikten som kan lägga +100 kr på frakten och spräcka 2,4× vid 599 kr. Köp inte den här utan att ha ett riktigt fraktpris.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099792195367",
+      "url": "https://www.temu.com/-cast-steel-manual-log-splitter-heavy-duty-double-blade-wood---firewood-splitter-metal-fire-pit-ring-stand-with-no-electricity-or-batteries-needed-for-home-use-g-601099792195367.html",
+      "title": "Cast Steel Manual Log Splitter, Heavy Duty Double-blade Wood Firewood Splitter, Metal Fire Pit Ring Stand, no electricity or batteries needed, for home use",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "gjutstål", "weight": "UNKNOWN", "dimensions": "UNKNOWN", "mallet_included": "UNKNOWN",
+      "note": "Ur alt-filen. 'Ring stand' explicit i titeln.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099733399693",
+      "url": "https://www.temu.com/uk/heavy-duty-iron-manual-log-splitter-single-pack-cast-iron--wood-splitting-stand-for-camping-fireplace-fire-pits-indoor-outdoor-use-g-601099733399693.html",
+      "title": "Heavy Duty Iron Manual Log Splitter Single Pack, Cast Iron Wood Splitting Stand for Camping, Fireplace, Fire Pits, Indoor Outdoor Use",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "gjutjärn", "weight": "UNKNOWN", "dimensions": "UNKNOWN", "mallet_included": "NEJ ('single pack')",
+      "note": "Ur alt-filen. UK-URL.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099513384307",
+      "url": "https://www.temu.com/firewood-kindling-splitter-cast-iron-heavy-duty-manual-log-splitter-portable-wood-splitting-wedge-firewood-log-kindling-cracker-tool-for-home-camping-picnic-outdoor-g-601099513384307.html",
+      "title": "Firewood Kindling Splitter Cast Iron Heavy Duty Manual Log Splitter, Portable Wood Splitting Wedge, Firewood Log Kindling Cracker Tool for Home Camping Picnic Outdoor",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "gjutjärn", "weight": "UNKNOWN", "dimensions": "UNKNOWN", "mallet_included": "UNKNOWN",
+      "note": "Ur alt-filen.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099520275736",
+      "url": "https://www.temu.com/1pc-firewood-kindling-splitter-for-wood-cast-iron-wood-splitter-hand-cutter-kindling-racker-manual-log-splitter-wedge-firewood-cutter-splits-firewood-safely-for-campsite-home-g-601099520275736.html",
+      "title": "1pc Firewood Kindling Splitter For Wood Cast Iron Wood Splitter Hand Cutter Kindling Racker Manual Log Splitter Wedge Firewood Cutter, Splits Firewood Safely for Campsite Home",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "gjutjärn", "weight": "UNKNOWN", "dimensions": "UNKNOWN", "mallet_included": "UNKNOWN",
+      "note": "Ur alt-filen. 'Safely' i titeln = säkerhetsvinkeln finns redan i leverantörens eget språk.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099629002416",
+      "url": "https://www.temu.com/uk/-firewood-kindling-splitter-9x17-xl-wood-splitter-unique-v-shaped-finger-safety-blade-manual-log-splitter-for-wood-splitting-heavy-duty-strong-steel-structure-stability-log-splitter-g-601099629002416.html",
+      "title": "Firewood Kindling Splitter 9x17 XL Wood Splitter, Unique V-shaped Finger Safety Blade, Manual Log Splitter for Wood Splitting, Heavy Duty Strong Steel Structure Stability",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "stål", "weight": "UNKNOWN", "dimensions": "9 × 17 tum (XL)", "mallet_included": "UNKNOWN",
+      "note": "Ur alt-filen. 'Finger safety blade' = fingerskyddet uttalat, matchar hookens rädslavinkel.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099519706360",
+      "url": "https://www.temu.com/de-en/1pc-firewood-kindling-splitter-power-log-splitter-heavy-duty-manual-wood-splitter-kindling-cracker-manganese-steel-splitting-wedge-for-home-camping-g-601099519706360.html",
+      "title": "1pc Firewood Kindling Splitter, Power Log Splitter, Heavy Duty Manual Wood Splitter, Kindling Cracker, Manganese Steel Splitting Wedge for Home Camping",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "manganstål", "weight": "UNKNOWN", "dimensions": "UNKNOWN", "mallet_included": "UNKNOWN",
+      "note": "Ur alt-filen. Hämtförsök 2026-09-04: bot-skal.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099595396016",
+      "url": "https://www.temu.com/goplus-firewood-kindling-cracker-splitter-manual-steel-log-cutter-wedge-tool-for-home-g-601099595396016.html",
+      "title": "GoPlus Firewood Kindling Cracker Splitter, Manual Steel Log Cutter Wedge Tool for Home",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "stål", "weight": "UNKNOWN", "dimensions": "UNKNOWN", "mallet_included": "UNKNOWN",
+      "note": "NY 2026-09-04. Enda MÄRKESlistningen (GoPlus) — märkesleverantörer har oftare riktigt produktionsmaterial (livsstilsfoton, video). Hög prioritet i hämtkön just av den anledningen.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099702553211",
+      "url": "https://www.temu.com/1pc--portable-manual-log-splitter-with-stand-high-carbon-steel-wood-splitting-tool--protective-gloves-compact-firewood-cutter-for-outdoor-camping-and-fireplace-g-601099702553211.html",
+      "title": "1pc Portable Manual Log Splitter With Stand, High Carbon Steel Wood Splitting Tool, Protective Gloves, Compact Firewood Cutter for Outdoor Camping and Fireplace",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "höghållfast kolstål", "weight": "UNKNOWN", "dimensions": "UNKNOWN", "mallet_included": "NEJ — men SKYDDSHANDSKAR ingår",
+      "note": "NY 2026-09-04. Handskar i paketet betyder att leverantörsbilderna nästan säkert visar en HAND — precis det gate 4 saknar. Hög prioritet i hämtkön.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099685200476",
+      "url": "https://www.temu.com/ca/heavy-duty-cast-iron-log-splitter-manual--wood-chopper-fast-safe-firewood-cutter-for-home-use-effortless-operation-without-manual-assistance-g-601099685200476.html",
+      "title": "Heavy Duty Cast Iron Log Splitter, Manual Wood Chopper, Fast Safe Firewood Cutter for Home Use, Effortless Operation",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "gjutjärn", "weight": "UNKNOWN", "dimensions": "UNKNOWN", "mallet_included": "UNKNOWN",
+      "note": "NY 2026-09-04. CA-URL.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099537914847",
+      "url": "https://www.temu.com/ph/1pc-manual-firewood-splitter-portable-log-splitter-sturdy-wood-splittert-for-fireplace-bonfire-barbecue-campsite-for-cutting-logs-g-601099537914847.html",
+      "title": "1pc Manual Firewood Splitter, Portable Log Splitter, Sturdy Wood Splitter for Fireplace, Bonfire, Barbecue, Campsite",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "UNKNOWN", "weight": "UNKNOWN", "dimensions": "UNKNOWN", "mallet_included": "UNKNOWN",
+      "note": "NY 2026-09-04. PH-URL.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099578678897",
+      "url": "https://www.temu.com/kindling-splitter-wedges-for-cutting-woods-portable-log-splitter-heavy-duty-firewood-splitter-fire-poker-set-manual-log-splitter-wedge-wood-chopper-for-commercial-outdoor-home-g-601099578678897.html",
+      "title": "Kindling Splitter Wedges for Cutting Woods, Portable Log Splitter, Heavy Duty Firewood Splitter, Fire Poker Set, Manual Log Splitter Wedge Wood Chopper for Commercial Outdoor Home",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "UNKNOWN", "weight": "UNKNOWN", "dimensions": "UNKNOWN", "mallet_included": "eldgaffel-set ingår",
+      "note": "NY 2026-09-04. 'Fire poker set' gör den till ett kit — kit ligger i negativ rymd (0/9 vinnare). Låg prioritet.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099517651642",
+      "url": "https://www.temu.com/ca/firewood-kindling-splitter-camping-wood-chopping-rack-manual-chopping-produce-firewood-chopping-wood-rack-manual-log-splitter-wedge-g-601099517651642.html",
+      "title": "Firewood Kindling Splitter, Camping Wood Chopping Rack, Manual Log Splitter Wedge",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "UNKNOWN", "weight": "UNKNOWN", "dimensions": "UNKNOWN", "mallet_included": "UNKNOWN",
+      "note": "NY 2026-09-04. CA-URL.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099759008466",
+      "url": "https://www.temu.com/steel-manual-safe--log-splitter-wedge-for-indoor-outdoor-g-601099759008466.html",
+      "title": "Steel Manual Safe Log Splitter Wedge for Indoor Outdoor",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "stål", "weight": "UNKNOWN", "dimensions": "UNKNOWN", "mallet_included": "UNKNOWN",
+      "note": "NY 2026-09-04.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099584196142",
+      "url": "https://www.temu.com/1-set-wood-splitter-wall-mounted-firewood-splitter-high-carbon-steel-kindling-cracker-wood-log-cutter-portable-manual-wood-kindling-splitter-g-601099584196142.html",
+      "title": "1 Set Wood Splitter Wall Mounted Firewood Splitter, High Carbon Steel Kindling Cracker Wood Log Cutter, Portable Manual Wood Kindling Splitter",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "höghållfast kolstål", "weight": "UNKNOWN", "dimensions": "UNKNOWN", "mallet_included": "UNKNOWN",
+      "note": "NY 2026-09-04. VÄGGMONTERAD = annan form. Egen underform. Relevant för att det är EXAKT den form IToolMax kör tung annonsering på internationellt (40–48 % OFF, hundratals annonser). Kräver montering (borra i vägg) = negativ rymd. Svensk motsvarighet finns: Core Vedklyv Vägghängd 450 kr, Topway 626 kr.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099613244211",
+      "url": "https://www.temu.com/carbon-steel-wall-mounted-firewood-kindling-splitter-log-splitters-wood-cutter-indoor-manual-kindling-maker-g-601099613244211.html",
+      "title": "Carbon Steel Wall Mounted Firewood Kindling Splitter, Log Splitters Wood Cutter, Indoor Manual Kindling Maker",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "kolstål", "weight": "UNKNOWN", "dimensions": "UNKNOWN", "mallet_included": "UNKNOWN",
+      "note": "NY 2026-09-04. Väggmonterad = annan form.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099522529633",
+      "url": "https://www.temu.com/1pc-wall-mounted-kindling-splitter-firewood-kindling-splitter-portable-manual-fire-wood-kindling-splitter-firewood-cutter-heavy-duty-log-splitter-wood-splitter-g-601099522529633.html",
+      "title": "1pc Wall Mounted Kindling Splitter, Firewood Kindling Splitter, Portable Manual Firewood Cutter, Heavy Duty Log Splitter",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "UNKNOWN", "weight": "UNKNOWN", "dimensions": "UNKNOWN", "mallet_included": "UNKNOWN",
+      "note": "NY 2026-09-04. Väggmonterad = annan form.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099532127738",
+      "url": "https://www.temu.com/ca/1pc-wall-mounted-firewood-splitter-kindling-splitter-for-wood-portable-firewood-cutter-manual-firewood-kindling-splitter-g-601099532127738.html",
+      "title": "1pc Wall Mounted Firewood Splitter, Kindling Splitter for Wood, Portable Firewood Cutter, Manual Firewood Kindling Splitter",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "UNKNOWN", "weight": "UNKNOWN", "dimensions": "UNKNOWN", "mallet_included": "UNKNOWN",
+      "note": "NY 2026-09-04. Väggmonterad = annan form. CA-URL.",
+      "listing_status": "BLOCKED_SOURCE"
+    },
+    {
+      "goods_id": "601099736670584",
+      "url": "https://www.temu.com/1pc-cast-iron-fire-starter-log-splitter-manual-wood-chopper-with-wedge-handheld-firewood-splitter-for-camping-outdoor-firewood-splitter-tool-g-601099736670584.html",
+      "title": "1pc Cast Iron Fire Starter Log Splitter, Manual Wood Chopper with Wedge, Handheld Firewood Splitter for Camping Outdoor",
+      "price_usd": "UNKNOWN", "price_source": "BLOCKED_SOURCE", "rating": "UNKNOWN", "review_count": "UNKNOWN", "sold": "UNKNOWN",
+      "material": "gjutjärn", "weight": "UNKNOWN", "dimensions": "UNKNOWN", "mallet_included": "UNKNOWN",
+      "note": "NY 2026-09-04. HANDHÅLLEN = annan form (handen är kvar nära eggen, alltså tappar hela säkerhetsvinkeln). Räknas inte som kandidat för konceptet.",
+      "listing_status": "BLOCKED_SOURCE"
+    }
+  ],
+
+  "listings_summary": {
+    "totalt": 25,
+    "granskade_tidigare": 2,
+    "ur_alt_filen": 10,
+    "nya_i_denna_korning": 13,
+    "med_verifierat_pris": 1,
+    "med_verifierat_material": 1,
+    "material_pass": 0,
+    "ekonomi_pass": 1,
+    "basta_listning_med_bade_material_och_ekonomi_pass": null
+  },
+
+  "main_risk": "MATERIALET, inte frakten. Frakten var den hypotes uppdraget bad mig testa och den håller inte som dödsdom: vid 599 kr tål ekonomin +51 till +80 kr extra fraktkostnad innan 2,4× spricker, och en svensk butik (setrimmer.se) lagerhåller och säljer samma form för 288 kr, vilket i praktiken bevisar att en 2,6–4 kg klyv går att landa billigt. Det som faktiskt saknas är en listning vars eget material duger som annons: 25 listningar identifierade, 1 sedd, och den enda sedda är en textfri packshot av en bultad ram. Näst största risken är prispositionen: setrimmer.se 288–365 kr i lager med 1–3 dagars leverans gör att en kund som googlar 'vedklyv tändved' hittar samma sak för halva priset — samma mönster som fällde klyvkonen till borrmaskin på CDON 279 kr. Motmedlet är att spela mot ankaret 1 249 kr, inte mot 288 kr, och att sälja 3–5 kg-versionen som ser ut som Kindling Cracker.",
+
+  "status_recommendation": "TEST IF VERIFIED",
+  "status_reasoning": "Strukturen är stark: 7 av 8 steg i vinnarfingeravtrycket PASS, publik ~1,1 M eldstäder, 0 aktiva svenska annonsörer på formen, säsong ≥ 12 veckor kvar, ekonomi 3,0–3,5× vid 599 kr med fraktmarginal. Det enda som fattas är steg 3 MATERIAL, och det saknas av tekniska skäl (temu.com blockerad), inte kommersiella. Verifieringen som krävs innan test: (1) hämta hero + video för 601099561039096, 601099595396016, 601099702553211, 601099600046272 och 601099555665183 när blocket släpper; (2) bekräfta vikt ≤ 5 kg och ett riktigt fraktpris hos leverantören; (3) sätt priset till 599 kr, aldrig 499 kr.",
+
+  "confidence": {
+    "overall": "MEDIUM",
+    "per_pastaende": [
+      {"pastaende": "Temu-pris 16,25 USD för 601099583674464", "confidence": "HIGH", "kalla": "JSON-LD cachad 2026-09-04T07:24:40Z, blocked=false"},
+      {"pastaende": "601099583674464 har 1 bild och ingen video; heron är en textfri packshot", "confidence": "HIGH", "kalla": "cachad JSON + bevis/601099583674464_hero.jpg, sedd"},
+      {"pastaende": "Övriga 24 listningars pris/betyg/material är okända", "confidence": "HIGH att de är okända", "kalla": "temu.com blockerad, verifierat 2026-09-04 med tre olika user-agents"},
+      {"pastaende": "'This item was discontinued' är ett blockeringssvar, inte äkta avregistrering", "confidence": "HIGH", "kalla": "identisk titel på fyra olika id, inklusive listningar Google indexerar med normal titel"},
+      {"pastaende": "Ekonomin PASS vid 599 kr (3,01–3,53×)", "confidence": "MEDIUM", "kalla": "us-proxy + kalibrering mätt på två lättare produkter"},
+      {"pastaende": "Frakten spräcker inte 2,4× vid 599 kr", "confidence": "MEDIUM", "kalla": "känslighetsberäkning + setrimmer.se:s svenska lagerpris 288 kr som verklighetskontroll; inget offertpris från leverantör finns"},
+      {"pastaende": "Ankaret Kindling Cracker 1 249 kr i 9+ butiker, i lager", "confidence": "HIGH", "kalla": "PriceRunner kategori Vedspäntare, läst direkt 2026-09-04"},
+      {"pastaende": "Aduro 295 kr och Northix 419 kr är EJ I LAGER", "confidence": "HIGH", "kalla": "PriceRunner, läst direkt 2026-09-04"},
+      {"pastaende": "setrimmer.se säljer samma form för 288/365 kr i lager", "confidence": "HIGH", "kalla": "setrimmer.se/collections/vedklyv-braskamin, läst direkt 2026-09-04"},
+      {"pastaende": "0 aktiva svenska annonsörer på ring+kil-formen", "confidence": "HIGH", "kalla": "Meta Ad Library via MCP, fyra sökningar 2026-09-04"},
+      {"pastaende": "~1,1 M vedeldade eldstäder i bruk i Sverige", "confidence": "MEDIUM", "kalla": "MSB-registret refererat i press; primärkällan ej läst"},
+      {"pastaende": "Kindling Cracker Original väger 4,8 kg", "confidence": "MEDIUM", "kalla": "återförsäljarspec via sökutdrag"},
+      {"pastaende": "Säsongen har ≥ 12 veckor kvar", "confidence": "HIGH", "kalla": "kalender + svensk konkurrents annonsperiod 15 okt–19 nov 2025 i Ad Library"}
+    ]
+  },
+
+  "queries": [
+    "WebSearch: site:temu.com kindling splitter cast iron",
+    "WebSearch: site:temu.com firewood kindling cracker",
+    "WebSearch: site:temu.com manual log splitter cast iron heavy duty base",
+    "WebSearch: site:temu.com kindling splitting wedge stand safety",
+    "WebSearch: site:temu.com kindling cracker splitter \"one-piece\" OR \"safety ring\" cast iron lbs",
+    "WebSearch: site:temu.com firewood splitter kindling cracker with mallet hammer included",
+    "Seznam: site:temu.com kindling splitter cast iron / firewood kindling cracker / manual log splitter cast iron / kindling splitting wedge / firewood splitter for axe / kindling splitter heavy duty / log splitter with base cast iron / kindling cracker safety / firewood kindling splitter / cast iron wood splitting wedge stand / manual firewood splitter ring / wood splitter kindling tool",
+    "Seznam: temu Log Splitter Axe Wood Splitter Cast Steel Wedge Kindling Cracker 13lbs",
+    "Seznam: temu firewood kindling splitter cast iron 9lbs half ring price",
+    "curl temu.com/g-601099583674464.html (Chrome-UA) — bot-skal",
+    "curl temu.com/se/g-601099583674464.html (Chrome-UA) — tomt skal",
+    "curl temu.com/g-601099572734123.html (Googlebot-UA) — tomt skal, ingen JSON-LD",
+    "curl temu.com/g-601099595396016.html och /g-601099519706360.html — samma bot-skal",
+    "curl temu.com/firewood-splitter-5020183143990-s.html (Googlebot-UA) — blockerad",
+    "curl pricerunner.se/results?q=kindling cracker",
+    "curl pricerunner.se/results?q=vedspäntare",
+    "curl pricerunner.se/results?q=vedklyv tändved",
+    "curl pricerunner.se/results?q=tändvedsklyv",
+    "curl pricerunner.se/results?q=kindling splitter",
+    "curl pricerunner.se/results?q=vedkubb klyv",
+    "curl setrimmer.se/collections/vedklyv-braskamin",
+    "WebFetch setrimmer.se/products/vedklyv-for-tandved-kindling-splitter-stor",
+    "curl k-bygg.se HOYLA Kindling Splitter",
+    "curl clasohlson.com/se/Manuell-vedklyv-med-slagga/p/31-2836 (JS-challenge)",
+    "curl aliexpress.com/w/wholesale-kindling-splitter-cast-iron.html (prisspann 10–90 USD)",
+    "curl fyndiq.se sök (404)",
+    "WebSearch: amazon.se vedklyv tändved gjutjärn kindling splitter pris",
+    "WebSearch: \"tändvedsklyv\" OR \"vedklyv tändved\" gjutjärn Rusta Granngården Bauhaus pris",
+    "WebSearch: Kindling Cracker Original vikt kg gjutjärn specifikation",
+    "WebSearch: SCB Energimyndigheten antal småhus som eldar med ved biobränsle 2024 statistik",
+    "WebSearch: antal eldstäder braskaminer Sverige miljoner statistik sotning MSB",
+    "WebFetch energimyndigheten.se energistatistik för småhus (siffra ligger i Excel, ej läst)",
+    "Meta Ad Library SE: 'vedklyv tändved' (0 aktiva)",
+    "Meta Ad Library SE: 'vedklyv' (68 aktiva — bolist.se + VaruZone.se klyvkon 299 kr)",
+    "Meta Ad Library SE: 'tändved klyva' (17 — Viking FireTools okt–nov 2025)",
+    "Meta Ad Library: 'kindling splitter' (126 — IToolMax väggmodell, USD)"
+  ]
+}

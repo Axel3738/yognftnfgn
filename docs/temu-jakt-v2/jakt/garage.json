@@ -1,0 +1,2600 @@
+[
+ {
+  "kluster": "garage",
+  "goods_id": "601099579267397",
+  "url_se": "https://www.temu.com/se/g-601099579267397.html",
+  "title": "1pc Car Charging Magnetic Cover — Electric Outdoor EV Charger Plug (regnskydd laddport + laddhandtag, magnet)",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": 9.17,
+  "rating": null,
+  "review_count": 7,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Elbilens laddport med isatt laddhandtag (bilen står ute på uppfarten/carporten och laddar över natten)",
+  "owner_owns": true,
+  "friction": "Regn, snö och löv på laddhandtaget/porten varje natt i september–oktober; is i porten på morgonen från oktober",
+  "old_way": "Ingenting, eller en plastpåse/handduk över handtaget",
+  "variants": "En universalvariant (magnet mot plåt) — RISK: fäster inte på aluminiumkaross",
+  "swedish_equivalent": {
+   "retailer": "Fyndiq (marketplace, flera säljare)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Kjell & Company Väggfäste för laddkabel Typ 2",
+   "price_sek": 299.9,
+   "url": "https://www.kjell.com/se/produkter/el-verktyg/biltillbehor/laddkablar-for-elbil/vaggfaste-for-laddkabel-typ-2-p49116"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på en ägd sak (elbil) som står ute och laddar; objektet syns i bild"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Kan fotograferas på en svensk uppfart en regnig oktoberkväll: blött laddhandtag i porten. Höst = i säsong; blir starkare vid frost",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Laddportsskyddet i exakt samma magnetform säljs av Clas Ohlson för 169 kr och Elgiganten för 129 kr (ord. 209). Laddkabelhållaren finns hos Clas Ohlson 199 kr, Kjell 299,90 kr och Deltaco från 65 kr på Pricerunner — ingen synlig ankare ≥1,6× över kedjepriset.",
+    "verified": true,
+    "verified_by": "h4.json",
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 129,
+    "anchor": {
+     "name": "Kjell & Company Väggfäste för laddkabel Typ 2",
+     "price_sek": 299.9,
+     "url": "https://www.kjell.com/se/produkter/el-verktyg/biltillbehor/laddkablar-for-elbil/vaggfaste-for-laddkabel-typ-2-p49116"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Magnetiskt regnskydd för elbilens laddport/laddhandtag + laddkabelhållare/vinda"
+   },
+   "economics": {
+    "landed_est_sek": 131,
+    "se_price_est_sek": 349,
+    "multiple": 2.66,
+    "be_cpa_est": 218,
+    "note": "UPPSKATTNING ur US-SEO-pris $9.17 × 9.5 (kurs ej hämtad) × 1,5 landad; SE-pris = 2,4× landad, minst 300",
+    "multibuy_reason": "Nej — en port per bil; två-bilshushåll = svagt skäl",
+    "result": "PASS (uppskattning)"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "En variant, men magnetfästet kräver stålkaross; ägaren vet inte alltid (Tesla 3/Y ok, vissa Audi/Jaguar alu). Måste stå på sidan"
+   },
+   "hook": {
+    "text": "Laddar du elbilen ute i regnet?",
+    "result": "PASS (6 ord)"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ">600 000 laddbara bilar i Sverige, majoriteten villahushåll med egen laddbox; laddhandtag i port är omisskännligt i flödet. 45–70 småhus = kärnan i Tesla/Volvo-ägandet"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   }
+  },
+  "negative_space_flags": [
+   "variant: magnet mot alu-kaross",
+   "payoff delvis fördröjd (frost) — men regn syns nu"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 72,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "biggest_risk": "Materialet: om leverantörsvideon bara visar en hand som smäller dit en flärp i studio finns ingen annons — och Fyndiq-kopior kan ligga i flödet till 100 kr. Verifiera video + Ad Library före köp.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Temu US-SEO-sida ev-charger-rain-cover-5040250364386-s.html + ev-charger-port-cover-5040280139279-s.html (WebFetch 2026-09-04)",
+   "Yahoo 'regnskydd laddhandtag elbil … biltema jula clas ohlson' + 'laddport regnskydd elbil …' — enbart Fyndiq-träffar, inga kedjor (ur sökutdrag)"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601099874504144",
+  "url_se": "https://www.temu.com/se/g-601099874504144.html",
+  "title": "Universal Car Charging Magnetic Cover — Electric Outdoor EV Charger Plug, dustproof/rainproof",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": 14.55,
+  "rating": null,
+  "review_count": 6,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Elbilens laddport med isatt laddhandtag",
+  "owner_owns": true,
+  "friction": "Samma som 601099579267397",
+  "old_way": "Ingenting / plastpåse",
+  "variants": "Universal magnet — samma alu-risk",
+  "swedish_equivalent": {
+   "retailer": "Fyndiq (marketplace)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Kjell & Company Väggfäste för laddkabel Typ 2",
+   "price_sek": 299.9,
+   "url": "https://www.kjell.com/se/produkter/el-verktyg/biltillbehor/laddkablar-for-elbil/vaggfaste-for-laddkabel-typ-2-p49116"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som ovan"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som ovan",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Laddportsskyddet i exakt samma magnetform säljs av Clas Ohlson för 169 kr och Elgiganten för 129 kr (ord. 209). Laddkabelhållaren finns hos Clas Ohlson 199 kr, Kjell 299,90 kr och Deltaco från 65 kr på Pricerunner — ingen synlig ankare ≥1,6× över kedjepriset.",
+    "verified": true,
+    "verified_by": "h4.json",
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 129,
+    "anchor": {
+     "name": "Kjell & Company Väggfäste för laddkabel Typ 2",
+     "price_sek": 299.9,
+     "url": "https://www.kjell.com/se/produkter/el-verktyg/biltillbehor/laddkablar-for-elbil/vaggfaste-for-laddkabel-typ-2-p49116"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Magnetiskt regnskydd för elbilens laddport/laddhandtag + laddkabelhållare/vinda"
+   },
+   "economics": {
+    "landed_est_sek": 207,
+    "se_price_est_sek": 499,
+    "multiple": 2.41,
+    "be_cpa_est": 292,
+    "note": "UPPSKATTNING ur US-SEO-pris $14.55 × 9.5 (kurs ej hämtad) × 1,5 landad; SE-pris = 2,4× landad, minst 300",
+    "multibuy_reason": "Nej",
+    "result": "PASS (uppskattning)"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Magnet/alu"
+   },
+   "hook": {
+    "text": "Laddar du elbilen ute i regnet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Som ovan"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   }
+  },
+  "negative_space_flags": [
+   "variant: magnet mot alu-kaross"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 70,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "biggest_risk": "Syskonlistning till 601099579267397 — välj den vars video är bäst; dyrare inköp ger SE-pris ~499 som kan vara för högt för en flärp",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Temu US-SEO-sida ev-charger-rain-cover-5040250364386-s.html + ev-charger-port-cover-5040280139279-s.html (WebFetch 2026-09-04)",
+   "Yahoo 'regnskydd laddhandtag elbil … biltema jula clas ohlson' + 'laddport regnskydd elbil …' — enbart Fyndiq-träffar, inga kedjor (ur sökutdrag)"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601105717142938",
+  "url_se": "https://www.temu.com/se/g-601105717142938.html",
+  "title": "EV Charger Port Cover — Outdoor Waterproof Winter Snow Rain UV, Magnetic Attachment (steel-bodied EVs)",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": 22.91,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Elbilens laddport",
+  "owner_owns": true,
+  "friction": "Som ovan",
+  "old_way": "Ingenting",
+  "variants": "Universal magnet",
+  "swedish_equivalent": {
+   "retailer": "Fyndiq",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som ovan"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som ovan",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Som ovan"
+   },
+   "economics": {
+    "landed_est_sek": 326,
+    "se_price_est_sek": 779,
+    "multiple": 2.39,
+    "be_cpa_est": 453,
+    "note": "UPPSKATTNING ur US-SEO-pris $22.91 × 9.5 (kurs ej hämtad) × 1,5 landad; SE-pris = 2,4× landad, minst 300 · Landad ~330 kr ger SE-pris ~790 för en magnetflärp — orimligt mot Fyndiq-kopior",
+    "multibuy_reason": "Nej",
+    "result": "OSÄKER"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Magnet/alu"
+   },
+   "hook": {
+    "text": "Laddar du elbilen ute i regnet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Som ovan"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   }
+  },
+  "negative_space_flags": [
+   "prisläge: dyr inköpsvariant av samma sak"
+  ],
+  "eliminated_at": "economics",
+  "structure_match": 55,
+  "category_novelty": 90,
+  "tier": "C",
+  "biggest_risk": "Samma produktklass som Tier B-syskonen till 2,5× inköpspriset",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Temu US-SEO-sida ev-charger-rain-cover-5040250364386-s.html + ev-charger-port-cover-5040280139279-s.html (WebFetch 2026-09-04)"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601102247242522",
+  "url_se": "https://www.temu.com/se/g-601102247242522.html",
+  "title": "EV Charger Plug Port Cover Magnetic, waterproof/dustproof, yellow",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": 17.79,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Elbilens laddport",
+  "owner_owns": true,
+  "friction": "Som ovan",
+  "old_way": "Ingenting",
+  "variants": "Gul färg",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som ovan"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som ovan",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Som ovan"
+   },
+   "economics": {
+    "landed_est_sek": 254,
+    "se_price_est_sek": 609,
+    "multiple": 2.4,
+    "be_cpa_est": 355,
+    "note": "UPPSKATTNING ur US-SEO-pris $17.79 × 9.5 (kurs ej hämtad) × 1,5 landad; SE-pris = 2,4× landad, minst 300",
+    "multibuy_reason": "Nej",
+    "result": "OSÄKER"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Gul — sticker ut på en svensk uppfart; magnet/alu"
+   },
+   "hook": {
+    "text": "Laddar du elbilen ute i regnet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Som ovan"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   }
+  },
+  "negative_space_flags": [
+   "estetik: gul"
+  ],
+  "eliminated_at": null,
+  "structure_match": 50,
+  "category_novelty": 90,
+  "tier": "C",
+  "biggest_risk": "Färgen — 45–70-ägaren vill inte ha en gul flärp på bilen",
+  "confidence": "LOW",
+  "sources": [
+   "Temu US-SEO-sida ev-charger-rain-cover-5040250364386-s.html + ev-charger-port-cover-5040280139279-s.html (WebFetch 2026-09-04)"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "605881504744584",
+  "url_se": "https://www.temu.com/se/g-605881504744584.html",
+  "title": "4pcs Set: charging port rain cover PVC, foldable, hook-and-loop + storage bag",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": 5.45,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Elbilens laddport",
+  "owner_owns": true,
+  "friction": "Som ovan",
+  "old_way": "Plastpåse — och det här ÄR en plastpåse",
+  "variants": "Kit om 4 delar",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som ovan"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som ovan",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Som ovan"
+   },
+   "economics": {
+    "landed_est_sek": 78,
+    "se_price_est_sek": 349,
+    "multiple": 4.47,
+    "be_cpa_est": 271,
+    "note": "UPPSKATTNING ur US-SEO-pris $5.45 × 9.5 (kurs ej hämtad) × 1,5 landad; SE-pris = 2,4× landad, minst 300 · Går inte att ta 300 kr för PVC-påse med kardborre",
+    "multibuy_reason": "Nej",
+    "result": "OSÄKER"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant"
+   },
+   "hook": {
+    "text": "Laddar du elbilen ute i regnet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Som ovan"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   }
+  },
+  "negative_space_flags": [
+   "kit",
+   "ser ut som plastpåse (<199-kronorsform)"
+  ],
+  "eliminated_at": "negative_space",
+  "structure_match": 35,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "biggest_risk": "Formen ser billigare ut än den improviserade lösningen",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Temu US-SEO-sida ev-charger-rain-cover-5040250364386-s.html + ev-charger-port-cover-5040280139279-s.html (WebFetch 2026-09-04)"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601099833079073",
+  "url_se": "https://www.temu.com/se/g-601099833079073.html",
+  "title": "Universal Weatherproof Charging Station Cover, wall-mounted EV charger protection, snow-resistant",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": 28.49,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Laddboxen (wallbox) på husväggen",
+  "owner_owns": true,
+  "friction": "Ingen synlig — laddboxar är IP54+ och byggda för att sitta ute",
+  "old_way": "Ingenting, och det fungerar",
+  "variants": "Universal med dragsko",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Ägd sak på husväggen, ute"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Annonsen måste skapa behovet: en laddbox tar ingen synlig skada av regn. Latent behov = 55 % av förlorarna",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "Ej sökt — föll i gate 2"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": 406,
+    "se_price_est_sek": 969,
+    "multiple": 2.39,
+    "be_cpa_est": 563,
+    "note": "UPPSKATTNING ur US-SEO-pris $28.49 × 9.5 (kurs ej hämtad) × 1,5 landad; SE-pris = 2,4× landad, minst 300",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas",
+   "osynlig/långsam skada"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 25,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "biggest_risk": "Kranskyddsmönstret: skydd mot skada ingen ser",
+  "confidence": "HIGH",
+  "sources": [
+   "Temu US-SEO-sida ev-charger-rain-cover-5040250364386-s.html + ev-charger-port-cover-5040280139279-s.html (WebFetch 2026-09-04)"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601104594451437",
+  "url_se": "https://www.temu.com/se/g-601104594451437.html",
+  "title": "Electric Vehicle Charger Port Cover Type 2 Protective Cover (dammskydd i bilens port när den inte laddar)",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": 5.25,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Elbilens laddport (tom)",
+  "owner_owns": true,
+  "friction": "Ingen — bilen har redan en portlucka",
+  "old_way": "Portluckan",
+  "variants": "Typ 2",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Ägd sak"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Bilens egen lucka löser det; behovet måste skapas",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "Föll i gate 2"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": 75,
+    "se_price_est_sek": 349,
+    "multiple": 4.65,
+    "be_cpa_est": 274,
+    "note": "UPPSKATTNING ur US-SEO-pris $5.25 × 9.5 (kurs ej hämtad) × 1,5 landad; SE-pris = 2,4× landad, minst 300",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "köpt old way som fungerar (luckan)",
+   "< 199 kr"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 15,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "Temu US-SEO-sida ev-charger-rain-cover-5040250364386-s.html + ev-charger-port-cover-5040280139279-s.html (WebFetch 2026-09-04)"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601103644234234",
+  "url_se": "https://www.temu.com/se/g-601103644234234.html",
+  "title": "EV Charger Cable Retractor, wall-mounted retractable cable reel, heavy duty, cables up to 0.63 in / 1622 mm",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Laddkabeln (5–7 m Typ 2) mellan laddbox och bil",
+  "owner_owns": true,
+  "friction": "Kabeln ligger på garagegolvet/uppfarten i vatten, grus och snöslask; körs över; blöt att hantera i oktober",
+  "old_way": "Kabeln hängs på laddboxens krok eller ligger på marken; Biltema/Jula-hållare (krok) löser inte slingan",
+  "variants": "Kabeldiameter/-längd — ägaren vet ungefär (5 m/7 m)",
+  "swedish_equivalent": {
+   "retailer": "Briklas.se (Mavel EV-Reel, fackhandel, med egen kabel)",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Kjell & Company Väggfäste för laddkabel Typ 2",
+   "price_sek": 299.9,
+   "url": "https://www.kjell.com/se/produkter/el-verktyg/biltillbehor/laddkablar-for-elbil/vaggfaste-for-laddkabel-typ-2-p49116"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Ägd sak (laddkabel + laddbox) ute vid garaget"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Kabeln i slasket på uppfarten går att fotografera i oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Laddportsskyddet i exakt samma magnetform säljs av Clas Ohlson för 169 kr och Elgiganten för 129 kr (ord. 209). Laddkabelhållaren finns hos Clas Ohlson 199 kr, Kjell 299,90 kr och Deltaco från 65 kr på Pricerunner — ingen synlig ankare ≥1,6× över kedjepriset.",
+    "verified": true,
+    "verified_by": "h4.json",
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 129,
+    "anchor": {
+     "name": "Kjell & Company Väggfäste för laddkabel Typ 2",
+     "price_sek": 299.9,
+     "url": "https://www.kjell.com/se/produkter/el-verktyg/biltillbehor/laddkablar-for-elbil/vaggfaste-for-laddkabel-typ-2-p49116"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Magnetiskt regnskydd för elbilens laddport/laddhandtag + laddkabelhållare/vinda"
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "note": "Temu-pris ej hämtat (block) — ingen ekonomi räknad · Temu-pris ej hämtat; vindor av den här typen brukar vara dyra — risk > 1 000 kr",
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Passar 'de flesta' kablar upp till 16 mm — ägaren måste kolla diametern"
+   },
+   "hook": {
+    "text": "Ligger laddkabeln på garagegolvet?",
+    "result": "PASS (5 ord)"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Laddbox-hushåll med garage/carport; kabeln i bild är igenkännbar"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   }
+  },
+  "negative_space_flags": [
+   "montering (skruvas i vägg, kabel träs)",
+   "passar de flesta utan mått",
+   "pris okänt — risk > 1 000 kr"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 55,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "biggest_risk": "Priset: en vinda som klarar 7 m grov kabel kostar sannolikt > 1 000 kr i butik; montering + kabelträdning kräver förklaring",
+  "confidence": "LOW",
+  "sources": [
+   "Brave 'site:temu.com EV charging cable holder wall mount' (WebFetch 01:05 UTC)",
+   "Yahoo 'laddkabelvinda vägg elbil … biltema jula' — Mavel EV-Reel (briklas.se, fackhandel), Amazon.se GRAFT väggfäste; Biltema bara laddkablar i utdraget"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601099595139431",
+  "url_se": "https://www.temu.com/se/g-601099595139431.html",
+  "title": "1pc Wall Mount Connector Holder for Type 2 EV Charging Cable, universal, with installation kit",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Laddhandtaget/laddkabeln",
+  "owner_owns": true,
+  "friction": "Handtaget ligger på marken",
+  "old_way": "Kroken på laddboxen; Biltema/Jula/Clas-hållare",
+  "variants": "Typ 2 (alla svenska bilar) — ägaren vet",
+  "swedish_equivalent": {
+   "retailer": "Amazon.se GRAFT väggfäste typ 2 (ur sökutdrag); Biltema/Jula/Clas Ohlson säljer laddkabelhållare typ 2 (allmänt känt, ej verifierat i utdrag)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Ägd sak ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Handtag på marken syns nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form (holster typ 2) säljs i kedjorna och på Amazon.se för under 150 kr — jämförelsehandlad commodity"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "note": "Temu-pris ej hämtat (block) — ingen ekonomi räknad",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "< 199 kr"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Brave 'site:temu.com EV charging cable holder wall mount' (WebFetch 01:05 UTC)",
+   "Yahoo 'laddkabelvinda vägg elbil … biltema jula' — Mavel EV-Reel (briklas.se, fackhandel), Amazon.se GRAFT väggfäste; Biltema bara laddkablar i utdraget"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601099620819177",
+  "url_se": "https://www.temu.com/se/g-601099620819177.html",
+  "title": "2set EV Charger Holder Wall Mount, Type 2 charging cable holder with hook, EU, outdoor/indoor",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Laddhandtaget",
+  "owner_owns": true,
+  "friction": "Som ovan",
+  "old_way": "Som ovan",
+  "variants": "Typ 2",
+  "swedish_equivalent": {
+   "retailer": "Som 601099595139431",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som ovan"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som ovan",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form som kedjornas hållare"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "note": "Temu-pris ej hämtat (block) — ingen ekonomi räknad",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "commodity"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Brave 'site:temu.com EV charging cable holder wall mount' (WebFetch 01:05 UTC)"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601099899872053",
+  "url_se": "https://www.temu.com/se/g-601099899872053.html",
+  "title": "EV charger holder, waterproof charging plug cable hanger with protector, no drill (ie)",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Laddhandtaget",
+  "owner_owns": true,
+  "friction": "Som ovan + regn på handtaget i hållaren",
+  "old_way": "Som ovan",
+  "variants": "UNKNOWN (typ 1/typ 2 ej i titel)",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som ovan"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som ovan",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Hållare + regnhuv är en variant av kedjornas hållare; skillnaden (huven) är liten"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "note": "Temu-pris ej hämtat (block) — ingen ekonomi räknad",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "variant okänd (typ 1/2)",
+   "commodity-nära"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 35,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "biggest_risk": "Ser ut som Biltemas hållare i flödet",
+  "confidence": "LOW",
+  "sources": [
+   "Brave 'site:temu.com EV charging cable holder wall mount' (WebFetch 01:05 UTC)"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "605918834055749",
+  "url_se": "https://www.temu.com/se/g-605918834055749.html",
+  "title": "Wall-Mounted Holder for EV, SAE (J1772) connector, cable hanger + rain cover",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": 31.49,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Laddhandtag J1772 (USA-standard)",
+  "owner_owns": false,
+  "friction": "—",
+  "old_way": "—",
+  "variants": "J1772",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "J1772/SAE finns inte på svenska bilar (Typ 2/CCS2). Fel objekt"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": 449,
+    "se_price_est_sek": 1079,
+    "multiple": 2.4,
+    "be_cpa_est": 630,
+    "note": "UPPSKATTNING ur US-SEO-pris $31.49 × 9.5 (kurs ej hämtad) × 1,5 landad; SE-pris = 2,4× landad, minst 300",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "oklart ägande — fel kontaktstandard"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 0,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "Temu US-SEO-sida ev-charger-rain-cover-5040250364386-s.html + ev-charger-port-cover-5040280139279-s.html (WebFetch 2026-09-04)"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601099574536303",
+  "url_se": "https://www.temu.com/se/g-601099574536303.html",
+  "title": "Ev Charger Holder Set, SAE J1772 nozzle holster dock with J-hook",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "J1772-handtag",
+  "owner_owns": false,
+  "friction": null,
+  "old_way": null,
+  "variants": null,
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "USA-standard J1772 — svenska bilar har Typ 2"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "note": "Temu-pris ej hämtat (block) — ingen ekonomi räknad",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "fel kontaktstandard"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 0,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "Brave 'site:temu.com EV charging cable holder wall mount' (WebFetch 01:05 UTC)"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "606521656214848",
+  "url_se": "https://www.temu.com/se/g-606521656214848.html",
+  "title": "Magnetic Car Charging Port Cover",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": 42.91,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Elbilens laddport",
+  "owner_owns": true,
+  "friction": "Som Tier B-syskonen",
+  "old_way": "Ingenting",
+  "variants": "Magnet",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som ovan"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som ovan",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Som ovan"
+   },
+   "economics": {
+    "landed_est_sek": 611,
+    "se_price_est_sek": 1469,
+    "multiple": 2.4,
+    "be_cpa_est": 858,
+    "note": "UPPSKATTNING ur US-SEO-pris $42.91 × 9.5 (kurs ej hämtad) × 1,5 landad; SE-pris = 2,4× landad, minst 300 · Landad ~610 kr → SE-pris ~1 460 kr för en magnetflärp: > 1 000-gränsen",
+    "multibuy_reason": "Nej",
+    "result": "FAIL"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   }
+  },
+  "negative_space_flags": [
+   "> 1 000 kr"
+  ],
+  "eliminated_at": "economics",
+  "structure_match": 30,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "Temu US-SEO-sida ev-charger-rain-cover-5040250364386-s.html + ev-charger-port-cover-5040280139279-s.html (WebFetch 2026-09-04)"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601099714039172",
+  "url_se": "https://www.temu.com/se/g-601099714039172.html",
+  "title": "Heavy duty stainless lift, overhead ceiling-mounted hoist with pulley system, 100 lb capacity (garage storage)",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Takboxen (tas av bilen i oktober) — sekundärt cykel/kajak",
+  "owner_owns": true,
+  "friction": "Takboxen (15–25 kg, 2 m lång) står på golvet/lutad mot väggen i garaget hela vintern och är i vägen; två personer krävs för att lyfta upp den",
+  "old_way": "Golvet, två bockar, eller Thule Multilift (fackhandel)",
+  "variants": "Lastkapacitet 45 lb / 100 lb — ägaren vet ungefär vad boxen väger",
+  "swedish_equivalent": {
+   "retailer": "takbox.se / thansen.se (Thule Multilift, fackhandel)",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Thule MultiLift 572 (Pricerunner lägsta)",
+   "price_sek": 1249,
+   "url": "https://www.pricerunner.se/sp/thule-572.html"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Ägd sak med högt värde (takbox 3–8 tkr) som just nu byter plats från biltak till garage; garagetaket är ägt"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Takboxen ska av i oktober–november (vinterdäck + bränsle). 'Var ska den stå?' är ett konkret oktoberproblem. Fotograferbart: box på garagegolvet",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula säljer samma form (remhiss för takbox, Hamron) för 299 kr i 75 varuhus, och Fasty Boxlift ligger på 170 kr på Pricerunner. Thule-ankaret 1 249 kr är ett märkesvarupris som inte lyfter ett Temu-alternativ över Julas 299 kr.",
+    "verified": true,
+    "verified_by": "h4.json",
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 299,
+    "anchor": {
+     "name": "Thule MultiLift 572 (Pricerunner lägsta)",
+     "price_sek": 1249,
+     "url": "https://www.pricerunner.se/sp/thule-572.html"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Takboxhiss/takhiss för garaget"
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "note": "Temu-pris ej hämtat (block) — ingen ekonomi räknad",
+    "multibuy_reason": "Nej (en takbox) — men cykel + kajak ger ett andra köp för samma hushåll",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant per kapacitet; ägaren vet ungefär boxens vikt"
+   },
+   "hook": {
+    "text": "Står takboxen i vägen i garaget?",
+    "result": "PASS (6 ord)"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Takbox = 45–70 villa/fritidshus-familjen; boxen är omisskännlig i flödet; ägarklass ≥ 100 000 hushåll (Thule är svenskt)"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   }
+  },
+  "negative_space_flags": [
+   "montering i tak (block + skruv) — DNA: montering = 30 % av förlorarna",
+   "video måste visa lyftet inom 3 s, inte monteringen"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 62,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "Monteringen: annonsen måste visa 'dra i linan, boxen åker upp' — visar leverantörsvideon skruvande i taket är det förklaring, och förklaring förlorar. Pris okänt.",
+  "confidence": "LOW",
+  "sources": [
+   "Yahoo 'site:temu.com roof box hoist ceiling lift storage garage'",
+   "Yahoo 'takboxhiss biltema' → 'We did not find results'; 'takboxlyft … jula thule multilift' → Thule Multilift via takbox.se/thansen.se, pris ej synligt (ur sökutdrag)"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "606866444784512",
+  "url_se": "https://www.temu.com/se/g-606866444784512.html",
+  "title": "Garage Ceiling Lift Storage Hanger, load 45 lbs — bicycles, kayaks, storage boxes, snowboards (se-en-listning)",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Takboxen / cykeln / kajaken",
+  "owner_owns": true,
+  "friction": "Som 601099714039172",
+  "old_way": "Som ovan",
+  "variants": "45 lb (≈20 kg) — räcker för de flesta takboxar, ägaren vet",
+  "swedish_equivalent": {
+   "retailer": "Som ovan",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Thule MultiLift 572 (Pricerunner lägsta)",
+   "price_sek": 1249,
+   "url": "https://www.pricerunner.se/sp/thule-572.html"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som ovan; listningen finns redan på temu.com/se-en"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som ovan",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula säljer samma form (remhiss för takbox, Hamron) för 299 kr i 75 varuhus, och Fasty Boxlift ligger på 170 kr på Pricerunner. Thule-ankaret 1 249 kr är ett märkesvarupris som inte lyfter ett Temu-alternativ över Julas 299 kr.",
+    "verified": true,
+    "verified_by": "h4.json",
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 299,
+    "anchor": {
+     "name": "Thule MultiLift 572 (Pricerunner lägsta)",
+     "price_sek": 1249,
+     "url": "https://www.pricerunner.se/sp/thule-572.html"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Takboxhiss/takhiss för garaget"
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "note": "Temu-pris ej hämtat (block) — ingen ekonomi räknad",
+    "multibuy_reason": "Cykel + takbox",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant"
+   },
+   "hook": {
+    "text": "Står takboxen i vägen i garaget?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Som ovan"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   }
+  },
+  "negative_space_flags": [
+   "montering i tak"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 60,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "Som ovan; 20 kg-gränsen är nära takboxens vikt — måste anges tydligt",
+  "confidence": "LOW",
+  "sources": [
+   "Yahoo 'site:temu.com roof box hoist ceiling lift storage garage' (träff på /se-en/)"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601099689183551",
+  "url_se": "https://www.temu.com/se/g-601099689183551.html",
+  "title": "Seasonal Tire Cover, 4-Tire Storage Bag",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": 19.02,
+  "rating": null,
+  "review_count": 7,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "De fyra avtagna däcken (sommardäcken i oktober)",
+  "owner_owns": true,
+  "friction": "Fyra smutsiga, blöta däck ska bäras in i garaget/källaren och står bara på golvet",
+  "old_way": "Sopsäckar, eller Biltema/Jula-däckväskor för ~100 kr",
+  "variants": "Storlek per däckdiameter — ägaren vet tum",
+  "swedish_equivalent": {
+   "retailer": "Biltema Däcksäckar 4 st (2000043977), Däckskydd 4 st (2000035014); Jula Däckpåsar 4-pk (329008)",
+   "price_sek": null,
+   "url": "biltema.se/bil---mc/bilverktyg/dacktillbehor/dackvard/dacksackar-4-st-2000043977",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Ägd sak, men däcken förvaras inomhus (garage/källare) — DNA: inomhusförvarat objekt = 0/9 vinnare"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Däckbytet i oktober–november, 4 M bilar",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema och Jula säljer exakt samma form (4-pack däckväskor) — ur sökutdrag"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": 271,
+    "se_price_est_sek": 649,
+    "multiple": 2.39,
+    "be_cpa_est": 378,
+    "note": "UPPSKATTNING ur US-SEO-pris $19.02 × 9.5 (kurs ej hämtad) × 1,5 landad; SE-pris = 2,4× landad, minst 300",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "inomhusförvarat objekt"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 75,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "Temu US-SEO-sida tire-storage-bags-5030230050054-s.html (WebFetch 2026-09-04)",
+   "Yahoo 'däcköverdrag 4 däck däckväska biltema jula' — Biltema Däcksäckar 4 st (2000043977), Däckskydd 4 st (2000035014); Jula Däckpåsar 4-pk (329008) (ur sökutdrag, pris ej synligt)"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "606429985482636",
+  "url_se": "https://www.temu.com/se/g-606429985482636.html",
+  "title": "Cylindrical Tire Cover, car four-tire storage bag (ett fodral över hela stapeln)",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": 10.94,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Däckstapeln i garaget",
+  "owner_owns": true,
+  "friction": "Som ovan",
+  "old_way": "Sopsäck / 4-pack väskor",
+  "variants": "Diameter/höjd — ägaren vet tum men inte stapelhöjd",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula 4-pack (annan form: per däck); stapelfodral ej verifierat i kedjorna",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Inomhusförvarat objekt"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Samma kategori, annan form — men kunden jämför direkt mot 4-packen för ~100 kr"
+   },
+   "economics": {
+    "landed_est_sek": 156,
+    "se_price_est_sek": 369,
+    "multiple": 2.37,
+    "be_cpa_est": 213,
+    "note": "UPPSKATTNING ur US-SEO-pris $10.94 × 9.5 (kurs ej hämtad) × 1,5 landad; SE-pris = 2,4× landad, minst 300 · SE-pris ~375 mot kedjornas ~100 kr för 4-pack: 3,7× med synlig substitut",
+    "multibuy_reason": "Två bilar = två fodral",
+    "result": "OSÄKER"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Stapelhöjd beror på däckbredd"
+   },
+   "hook": {
+    "text": "Står sommardäcken bara på golvet?",
+    "result": "PASS (5 ord)"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "4 M bilar; däckstapel igenkännbar"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   }
+  },
+  "negative_space_flags": [
+   "jämförelsehandlad med köpt fungerande old way < 300 kr",
+   "inomhusförvarat objekt"
+  ],
+  "eliminated_at": null,
+  "structure_match": 38,
+  "category_novelty": 75,
+  "tier": "C",
+  "biggest_risk": "Kunden vet att Biltema har 4-pack för 99 kr",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Temu US-SEO-sida tire-storage-bags-5030230050054-s.html (WebFetch 2026-09-04)",
+   "Yahoo 'däcköverdrag 4 däck däckväska biltema jula' — Biltema Däcksäckar 4 st (2000043977), Däckskydd 4 st (2000035014); Jula Däckpåsar 4-pk (329008) (ur sökutdrag, pris ej synligt)"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601101808893760",
+  "url_se": "https://www.temu.com/se/g-601101808893760.html",
+  "title": "25 Inch Tire Cover, silvery-coated 4-tire storage bag",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": 8.77,
+  "rating": null,
+  "review_count": 3,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Däckstapeln",
+  "owner_owns": true,
+  "friction": "Som ovan",
+  "old_way": "Som ovan",
+  "variants": "25 tum",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Inomhus"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema/Jula 4-pack — samma kategori, kunden jämför direkt; formen (silverfodral) ser ut som grillöverdrag"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": 125,
+    "se_price_est_sek": 349,
+    "multiple": 2.79,
+    "be_cpa_est": 224,
+    "note": "UPPSKATTNING ur US-SEO-pris $8.77 × 9.5 (kurs ej hämtad) × 1,5 landad; SE-pris = 2,4× landad, minst 300",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "commodity"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 28,
+  "category_novelty": 75,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Temu US-SEO-sida tire-storage-bags-5030230050054-s.html (WebFetch 2026-09-04)",
+   "Yahoo 'däcköverdrag 4 däck däckväska biltema jula' — Biltema Däcksäckar 4 st (2000043977), Däckskydd 4 st (2000035014); Jula Däckpåsar 4-pk (329008) (ur sökutdrag, pris ej synligt)"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601099572406039",
+  "url_se": "https://www.temu.com/se/g-601099572406039.html",
+  "title": "Tire Rack Garage Storage, heavy duty adjustable wall-mounted, 300 lbs",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Fyra däck + garagevägg",
+  "owner_owns": true,
+  "friction": "Däcken tar golvyta",
+  "old_way": "Golvet / Biltema-Jula-däckställ",
+  "variants": "En",
+  "swedish_equivalent": {
+   "retailer": "Jula kategori 'Däckförvaring' (jula.se/catalog/bil-och-garage/biltillbehor/dackverktyg/dackforvaring/) — däckställ ingår; Biltema säljer däckställ (allmänt känt, ej i utdrag)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Inomhusförvarat"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Kedjorna säljer väggmonterade däckställ i samma form; tungt (frakt)"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "note": "Temu-pris ej hämtat (block) — ingen ekonomi räknad",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "commodity",
+   "montering",
+   "tung frakt"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 25,
+  "category_novelty": 75,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Brave 'site:temu.com tire rack wall mount wheel hanger garage storage' (curl 01:01 UTC, enda Brave-svaret före 429)",
+   "Yahoo 'däcköverdrag 4 däck däckväska biltema jula' — Biltema Däcksäckar 4 st (2000043977), Däckskydd 4 st (2000035014); Jula Däckpåsar 4-pk (329008) (ur sökutdrag, pris ej synligt)"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601099731779728",
+  "url_se": "https://www.temu.com/se/g-601099731779728.html",
+  "title": "2-6pcs wall-mounted garage hooks, tire storage system / ladder hooks",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Däck/stege + garagevägg",
+  "owner_owns": true,
+  "friction": "Som ovan",
+  "old_way": "Golvet",
+  "variants": "2/4/6-pack",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Inomhus"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Garagekrokar är commodity i alla fyra kedjorna (ej verifierat i utdrag, allmänt känt); < 199 kr"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "note": "Temu-pris ej hämtat (block) — ingen ekonomi räknad",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "commodity",
+   "< 199 kr"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 20,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Brave 'site:temu.com tire rack wall mount wheel hanger garage storage' (curl 01:01 UTC, enda Brave-svaret före 429)"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601099624394912",
+  "url_se": "https://www.temu.com/se/g-601099624394912.html",
+  "title": "4pcs 14-inch extra large heavy duty garage hooks (tire, chair, ladder, garden tools)",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Garagevägg",
+  "owner_owns": true,
+  "friction": "Oordning",
+  "old_way": "Golvet",
+  "variants": "4-pack",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Inomhus, generiskt"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Oordning finns alltid — ingen säsongstrigger",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Commodity"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "note": "Temu-pris ej hämtat (block) — ingen ekonomi räknad",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "commodity",
+   "inomhus"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 15,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Brave 'site:temu.com tire rack wall mount wheel hanger garage storage' (curl 01:01 UTC, enda Brave-svaret före 429)"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "605744871088517",
+  "url_se": "https://www.temu.com/se/g-605744871088517.html",
+  "title": "16pcs tire marking labels FL/FR/RL/RR for tire change",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Däcken vid bytet",
+  "owner_owns": true,
+  "friction": "Vilket däck satt var?",
+  "old_way": "Krita / Biltema-däckmärkning",
+  "variants": "16-pack",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Förbrukning (etiketter)"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "note": "Temu-pris ej hämtat (block) — ingen ekonomi räknad",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "förbrukning",
+   "< 199 kr"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 10,
+  "category_novelty": 75,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "Yahoo 'site:temu.com wheel position tags tire marking labels seasonal'"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601102179669220",
+  "url_se": "https://www.temu.com/se/g-601102179669220.html",
+  "title": "Car trailer ball head cover, 50 mm, plastic, green/bronze",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": 4.14,
+  "rating": null,
+  "review_count": 5,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Dragkrokskulan (50 mm)",
+  "owner_owns": true,
+  "friction": "Fett på byxbenet, rost på kulan",
+  "old_way": "Biltema/Jula-kulskydd ~20–40 kr (allmänt känt, ej i utdrag)",
+  "variants": "50 mm — alla svenska",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Ägd sak, ute, synlig"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Kulan sitter där året runt",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form för en tia i kedjorna; < 199 kr"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": 59,
+    "se_price_est_sek": 349,
+    "multiple": 5.92,
+    "be_cpa_est": 290,
+    "note": "UPPSKATTNING ur US-SEO-pris $4.14 × 9.5 (kurs ej hämtad) × 1,5 landad; SE-pris = 2,4× landad, minst 300",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "commodity",
+   "< 199 kr"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 20,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "Temu US-SEO-sidor tow-hitch-cover-5030244245711-s.html + trailer-hitch-accessories-5030240335103-s.html"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "606422737766625",
+  "url_se": "https://www.temu.com/se/g-606422737766625.html",
+  "title": "Gothic Skull Tow Hook Cover — 50 mm universal trailer hook cap",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": 9.24,
+  "rating": null,
+  "review_count": 2,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Dragkrokskulan",
+  "owner_owns": true,
+  "friction": "Ingen — want (personlighet på kulan, som soptunneklistermärkena)",
+  "old_way": "Slätt plastskydd",
+  "variants": "En",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Universellt ägt objekt, ute, synligt bakom bilen"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Inget problem — want. Klistermärke-undantaget kräver noll friktion + 199 kr + humor som passar 55+",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Kedjorna säljer bara släta skydd"
+   },
+   "economics": {
+    "landed_est_sek": 132,
+    "se_price_est_sek": 349,
+    "multiple": 2.64,
+    "be_cpa_est": 217,
+    "note": "UPPSKATTNING ur US-SEO-pris $9.24 × 9.5 (kurs ej hämtad) × 1,5 landad; SE-pris = 2,4× landad, minst 300 · Landad ~130 kr → 199-kronorsform ger BE-CPA ~70 kr; klistermärkena hade kostnad 80 → 199",
+    "multibuy_reason": "Nej",
+    "result": "FAIL"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "50 mm"
+   },
+   "hook": {
+    "text": "Har din dragkrok personlighet?",
+    "result": "OSÄKER (4 ord, want)"
+   },
+   "audience": {
+    "result": "FAIL",
+    "reason": "Dödskalle-estetik träffar inte 45–70-villaägaren; klistermärkena vann på 55+ kvinnor"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas (want)",
+   "< 199 kr med kostnad > 100"
+  ],
+  "eliminated_at": "economics",
+  "structure_match": 22,
+  "category_novelty": 80,
+  "tier": "C",
+  "biggest_risk": "Lärorik: 'klistermärke-strukturen' finns här men ekonomin (kostnad 130 vs 80) och estetiken (skull) gör den till en förlorare",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Temu US-SEO-sidor tow-hitch-cover-5030244245711-s.html + trailer-hitch-accessories-5030240335103-s.html"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601099977876775",
+  "url_se": "https://www.temu.com/se/g-601099977876775.html",
+  "title": "Hitch LED Light, 4-inch, for 2-inch receiver",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": 20.43,
+  "rating": null,
+  "review_count": 1268,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "2-tums hitch receiver (USA)",
+  "owner_owns": false,
+  "friction": null,
+  "old_way": null,
+  "variants": null,
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Svenska bilar har 50 mm kula, inte fyrkantsreceiver. 1 268 recensioner är USA"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": 291,
+    "se_price_est_sek": 699,
+    "multiple": 2.4,
+    "be_cpa_est": 408,
+    "note": "UPPSKATTNING ur US-SEO-pris $20.43 × 9.5 (kurs ej hämtad) × 1,5 landad; SE-pris = 2,4× landad, minst 300",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "oklart ägande (fel standard)"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 0,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "Temu US-SEO-sidor tow-hitch-cover-5030244245711-s.html + trailer-hitch-accessories-5030240335103-s.html"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "603289617821190",
+  "url_se": "https://www.temu.com/se/g-603289617821190.html",
+  "title": "Universal 36\"W trailer towing hitch step bar (2-inch receiver)",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": 46.71,
+  "rating": null,
+  "review_count": 215,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "2-tums receiver",
+  "owner_owns": false,
+  "friction": null,
+  "old_way": null,
+  "variants": null,
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Receiver-standard finns inte på svenska bilar"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": 666,
+    "se_price_est_sek": 1599,
+    "multiple": 2.4,
+    "be_cpa_est": 933,
+    "note": "UPPSKATTNING ur US-SEO-pris $46.71 × 9.5 (kurs ej hämtad) × 1,5 landad; SE-pris = 2,4× landad, minst 300",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "fel standard"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 0,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "Temu US-SEO-sidor tow-hitch-cover-5030244245711-s.html + trailer-hitch-accessories-5030240335103-s.html"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601102027949537",
+  "url_se": "https://www.temu.com/se/g-601102027949537.html",
+  "title": "2 Inch Trailer Hitch Mount Anti Rattle Stabilizer",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": 8.73,
+  "rating": null,
+  "review_count": 246,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "2-tums receiver",
+  "owner_owns": false,
+  "friction": null,
+  "old_way": null,
+  "variants": null,
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Receiver-standard"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": 124,
+    "se_price_est_sek": 349,
+    "multiple": 2.81,
+    "be_cpa_est": 225,
+    "note": "UPPSKATTNING ur US-SEO-pris $8.73 × 9.5 (kurs ej hämtad) × 1,5 landad; SE-pris = 2,4× landad, minst 300",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "fel standard"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 0,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "Temu US-SEO-sidor tow-hitch-cover-5030244245711-s.html + trailer-hitch-accessories-5030240335103-s.html"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601099531606611",
+  "url_se": "https://www.temu.com/se/g-601099531606611.html",
+  "title": "Garage Floor Mat 36×36 / 36×48 / 36×72 / 78.7×102.3 (oljematta under bilen)",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": 29.27,
+  "rating": null,
+  "review_count": 525,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Garagegolvet under en bil som droppar olja",
+  "owner_owns": true,
+  "friction": "Oljefläck på betonggolvet, sprids med skorna in i huset",
+  "old_way": "Kartong (improvisation!) eller kattsand",
+  "variants": "Fyra storlekar — ägaren vet inte vilken",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Ägt garagegolv, men bilen inomhus; problemet gäller bara bilar som läcker"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Fläcken syns året runt; ingen säsong",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "Ej sökt (budget) — Biltema säljer absorptionsmattor (allmänt känt, ej verifierat)"
+   },
+   "economics": {
+    "landed_est_sek": 417,
+    "se_price_est_sek": 999,
+    "multiple": 2.4,
+    "be_cpa_est": 582,
+    "note": "UPPSKATTNING ur US-SEO-pris $29.27 × 9.5 (kurs ej hämtad) × 1,5 landad; SE-pris = 2,4× landad, minst 300 · Landad ~420 kr → SE-pris ~1 000 kr; tung/skrymmande frakt ovanpå",
+    "multibuy_reason": "Nej",
+    "result": "FAIL"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Fyra storlekar utan ägarkänd parameter"
+   },
+   "hook": {
+    "text": "Droppar bilen olja på garagegolvet?",
+    "result": "PASS (6 ord)"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "Bara ägare av läckande bilar — smal"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   }
+  },
+  "negative_space_flags": [
+   "> 1 000 kr",
+   "storleksval",
+   "inomhus"
+  ],
+  "eliminated_at": "economics",
+  "structure_match": 30,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "Lärorik: hooken och kartong-old-way är perfekta, men ekonomin (frakt + pris) dödar",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Temu US-SEO-sida oil-mat-for-garage-5040016889123-s.html"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601101639123846",
+  "url_se": "https://www.temu.com/se/g-601101639123846.html",
+  "title": "1pc 36×60 Inch Oil Spill Mat for Driveway",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": 40.15,
+  "rating": null,
+  "review_count": 112,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Uppfarten/garagegolvet",
+  "owner_owns": true,
+  "friction": "Oljefläck",
+  "old_way": "Kartong",
+  "variants": "En",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Som ovan"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som ovan",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "Ej sökt"
+   },
+   "economics": {
+    "landed_est_sek": 572,
+    "se_price_est_sek": 1369,
+    "multiple": 2.39,
+    "be_cpa_est": 797,
+    "note": "UPPSKATTNING ur US-SEO-pris $40.15 × 9.5 (kurs ej hämtad) × 1,5 landad; SE-pris = 2,4× landad, minst 300 · Landad ~570 → SE ~1 370 kr",
+    "multibuy_reason": "Nej",
+    "result": "FAIL"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   }
+  },
+  "negative_space_flags": [
+   "> 1 000 kr"
+  ],
+  "eliminated_at": "economics",
+  "structure_match": 28,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Temu US-SEO-sida oil-mat-for-garage-5040016889123-s.html"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601105263583062",
+  "url_se": "https://www.temu.com/se/g-601105263583062.html",
+  "title": "Oil-Absorbing Garage Floor Mat Set with Brush",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": 18.59,
+  "rating": null,
+  "review_count": 222,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Garagegolvet",
+  "owner_owns": true,
+  "friction": "Oljefläck",
+  "old_way": "Kartong",
+  "variants": "Set",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Absorberande pad = förbrukning; set/kit"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": 265,
+    "se_price_est_sek": 639,
+    "multiple": 2.41,
+    "be_cpa_est": 374,
+    "note": "UPPSKATTNING ur US-SEO-pris $18.59 × 9.5 (kurs ej hämtad) × 1,5 landad; SE-pris = 2,4× landad, minst 300",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   }
+  },
+  "negative_space_flags": [
+   "förbrukning",
+   "kit"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 15,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "Temu US-SEO-sida oil-mat-for-garage-5040016889123-s.html"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601099633703738",
+  "url_se": "https://www.temu.com/se/g-601099633703738.html",
+  "title": "Self-adhesive car door garage wall protector, thickened foam bumper",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": 16.17,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Garagevägg + bildörr",
+  "owner_owns": true,
+  "friction": "Dörren slår i väggen",
+  "old_way": "En bit frigolit/kartong på väggen",
+  "variants": "En",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Inomhus (garage)"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Trångt garage året runt",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Ej sökt — skyddslister för garage är standard i Biltema/Jula (allmänt känt, ej verifierat)"
+   },
+   "economics": {
+    "landed_est_sek": 230,
+    "se_price_est_sek": 549,
+    "multiple": 2.39,
+    "be_cpa_est": 319,
+    "note": "UPPSKATTNING ur US-SEO-pris $16.17 × 9.5 (kurs ej hämtad) × 1,5 landad; SE-pris = 2,4× landad, minst 300 · Skumlist — kan inte bära 300 kr",
+    "multibuy_reason": "Ja (två väggar)",
+    "result": "FAIL"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   }
+  },
+  "negative_space_flags": [
+   "inomhus-commodity",
+   "< 199-kronorsform"
+  ],
+  "eliminated_at": "economics",
+  "structure_match": 20,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Temu US-SEO-sida garage-wall-protectors-5030007292160-s.html"
+  ]
+ },
+ {
+  "kluster": "garage",
+  "goods_id": "601099875439940",
+  "url_se": "https://www.temu.com/se/g-601099875439940.html",
+  "title": "Set of 4 Garage Wall Protectors, door and bumper pads",
+  "temu_price_sek": null,
+  "temu_price_usd_seo": 20.27,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "Garagevägg",
+  "owner_owns": true,
+  "friction": "Som ovan",
+  "old_way": "Som ovan",
+  "variants": "4-set",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Inomhus"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som ovan",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Som ovan"
+   },
+   "economics": {
+    "landed_est_sek": 289,
+    "se_price_est_sek": 689,
+    "multiple": 2.38,
+    "be_cpa_est": 400,
+    "note": "UPPSKATTNING ur US-SEO-pris $20.27 × 9.5 (kurs ej hämtad) × 1,5 landad; SE-pris = 2,4× landad, minst 300 · Som ovan",
+    "multibuy_reason": "—",
+    "result": "FAIL"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu-block 2026-09-04, hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   }
+  },
+  "negative_space_flags": [
+   "inomhus-commodity",
+   "kit"
+  ],
+  "eliminated_at": "economics",
+  "structure_match": 18,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "Temu US-SEO-sida garage-wall-protectors-5030007292160-s.html"
+  ]
+ }
+]

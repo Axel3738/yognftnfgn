@@ -1,0 +1,236 @@
+[
+  {
+    "concept": "Hängrännerensar-sats till lövblås (universal, teleskoprör 11 ft)",
+    "goods_ids": ["601103248788835", "601103296007046"],
+    "queries": [
+      "lövblås takränna rensning tillsats rör Jula Biltema",
+      "hängrännerensare lövblås tillbehör Stihl Husqvarna pris",
+      "\"hängrännesats\" OR \"hängrännekit\" OR \"takrännesats\" lövblås universal pris kr",
+      "site:jula.se lövblås tillbehör hängränna rör sats",
+      "\"Clas Ohlson\" OR Rusta OR Biltema lövblås tillsats hängränna rensa takränna från marken sats",
+      "pricerunner: hängrännesats lövblås",
+      "pricerunner: hängrännerensare",
+      "WebFetch duab.se tillbehör lövblåsar"
+    ],
+    "findings": [
+      {"source": "Biltema (ur sökutdrag)", "item": "Hängrännerensare – skrapa på skaft, ingen lövblåstillsats", "price_sek": null, "url": "https://www.biltema.se/bygg/tak/takavvattning/takavvattning-vit/hangrannerensare-2000032603", "same_form": false},
+      {"source": "Biltema (ur sökutdrag)", "item": "Lövskydd för hängränna", "price_sek": null, "url": "https://www.biltema.se/bygg/tak/takavvattning/takavvattning-vit/lovskydd-for-hangranna-2000037487", "same_form": false},
+      {"source": "Jula (ur sökutdrag)", "item": "Kärcher PC 20 rör-/hängrännerensare för högtryckstvätt – annan form", "price_sek": null, "url": "https://www.jula.se/catalog/bil-och-garage/bilvard/hogtryckstvattar/munstycken-och-adaptrar/ror-hangrannerensare-220164/", "same_form": false},
+      {"source": "Clas Ohlson (ur sökutdrag)", "item": "Kärcher PC 20 rengöring hängrännor – högtryckstvätt, annan form", "price_sek": null, "url": "https://www.clasohlson.com/se/Ror--och-hangrannerensare-Karcher/p/31-4943", "same_form": false},
+      {"source": "Duab (fackhandel, sidan läst)", "item": "Husqvarna Hängrännestillsats (passar 125B/125BVx, 3 m) – rea 329 kr (ord. 369), slut i lager", "price_sek": 329, "url": "https://duab.se/skog-tradgard/skog-tradgardsmaskiner/lovblasar-tillbehor/tillbehor-lovblasar/husqvarna-hangrannestillsats", "same_form": true},
+      {"source": "Söderströms (ur sökutdrag)", "item": "Husqvarna Hängrännesats 3 m, 125BVX", "price_sek": 359, "url": "https://soderstroms.nu/produkt/hangrannesats/", "same_form": true},
+      {"source": "GPLshop (ur sökutdrag)", "item": "Hängrännesats 9527119-18 Husqvarna", "price_sek": 399, "url": "https://www.gplshop.se/sv/hangrannesats?Land=SE&Valuta_ID=SEK", "same_form": true},
+      {"source": "Duab (sidan läst)", "item": "Stihl Takrengöringsset BG/SH 56, BG/SH 86 C-E, SHE 71", "price_sek": 745, "url": "https://duab.se/skog-tradgard/skog-tradgardsmaskiner/lovblasar-tillbehor/tillbehor-lovblasar", "same_form": true}
+    ],
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {"name": "Stihl Takrengöringsset (Duab); Husqvarna Hängrännesats 359–399 kr (Söderströms/GPLshop) som sekundärt ankare", "price_sek": 745, "url": "https://duab.se/skog-tradgard/skog-tradgardsmaskiner/lovblasar-tillbehor/tillbehor-lovblasar"},
+    "adlib_active": "ej läsbar",
+    "verdict": "PASS",
+    "reason": "Biltema/Jula/Clas säljer bara skrapor på skaft eller Kärcher-högtryckssatser, ingen rörsats till lövblås (ur sökutdrag). Märkesankarna är modellspecifika: Husqvarna 329–399 kr, Stihl 745 kr – en universalsats kan tas betalt runt 399–449 kr."
+  },
+  {
+    "concept": "Axelrem/bärsele till lövblås eller trimmer, universal, vadderad",
+    "goods_ids": ["601099519754003", "601099555571658"],
+    "queries": [
+      "röjsele bärsele trimmer universal Jula Clas Ohlson Biltema pris",
+      "site:biltema.se bärsele röjsåg trimmer sele",
+      "Clas Ohlson bärsele Wolfcraft pris kr röjsåg trimmer",
+      "bärsele lövblås axelrem universal vadderad pris kr Jula Biltema Clas Ohlson \"bärrem\"",
+      "Rusta OR Jula OR \"Clas Ohlson\" \"lövblås\" sele OR bärrem OR axelrem tillbehör lövblås rem",
+      "pricerunner: röjsele",
+      "pricerunner: meec röjsele",
+      "pricerunner: bärsele röjsåg",
+      "WebFetch clasohlson.com Bärsele Wolfcraft 41-1555",
+      "WebFetch clasohlson.com Bärsele Partner 50-3076"
+    ],
+    "findings": [
+      {"source": "Jula via Pricerunner", "item": "Meec Tools Röjsele – vadderade dubbla axelremmar, höftstöd, snabbfäste, universal", "price_sek": 349, "url": "https://www.jula.se/catalog/tradgard/tradgardsmaskiner/trimmers-och-rojsagar/trimmertillbehor/rojsele-011527/", "same_form": true},
+      {"source": "Jula (ur sökutdrag)", "item": "Oregon Q539173 röjsele – dubbla axelremmar, lårdyna, snabbfäste", "price_sek": null, "url": "https://www.jula.se/catalog/tradgard/tradgardsmaskiner/trimmers-och-rojsagar/trimmertillbehor/rojsele-721126/", "same_form": true},
+      {"source": "Clas Ohlson (sidan läst)", "item": "Bärsele Partner till röjsåg – dubbelsele, finns ej i lager", "price_sek": 499, "url": "https://www.clasohlson.com/se/Barsele-Partner-till-Rojsag/p/50-3076", "same_form": true},
+      {"source": "Clas Ohlson (sidan läst)", "item": "Bärsele Wolfcraft – produkten har utgått", "price_sek": null, "url": "https://www.clasohlson.com/se/Barsele-Wolfcraft/p/41-1555", "same_form": false},
+      {"source": "Biltema (ur sökutdrag)", "item": "Ingen bärsele/axelrem hittad, bara röjsågar och trimmertråd", "price_sek": null, "url": "https://www.biltema.se/fritid/tradgard/tradgardsmaskiner/grastrimmers/", "same_form": false},
+      {"source": "Pricerunner", "item": "Stihl Röjsele", "price_sek": 488, "url": "https://www.pricerunner.se/results?q=r%C3%B6jsele", "same_form": true},
+      {"source": "Pricerunner", "item": "Iso Trade Malatec Bälte Röjsågar – enkel rem, samma enkla form som Temu-varan", "price_sek": 149, "url": "https://www.pricerunner.se/results?q=r%C3%B6jsele", "same_form": true},
+      {"source": "Pricerunner", "item": "Greenstar Bärsele Röjsåg", "price_sek": 799, "url": "https://www.pricerunner.se/results?q=b%C3%A4rsele%20r%C3%B6js%C3%A5g", "same_form": true},
+      {"source": "Hemfint (ur sökutdrag)", "item": "Bärsele till röjsåg & trimmer", "price_sek": 489, "url": "https://www.hemfint.se/barsele-till-rojsag-amp-trimmer", "same_form": true}
+    ],
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 349,
+    "anchor": {"name": "Stihl Röjsele (Pricerunner)", "price_sek": 488, "url": "https://www.pricerunner.se/results?q=r%C3%B6jsele"},
+    "adlib_active": "ej läsbar",
+    "verdict": "FAIL",
+    "reason": "Jula säljer en vadderad universalsele (Meec) för 349 kr och Clas Ohlson en dubbelsele för 499 kr, och den enkla remformen ligger redan på 149 kr på Pricerunner. Vi kan inte rimligen ta mer än ~249 kr för en enkel vadderad rem, och då finns kedjans bättre produkt ett steg upp."
+  },
+  {
+    "concept": "Hjulpiggar/antislip-piggar till robotgräsklippare",
+    "goods_ids": ["601100183382557", "601099514177508", "601101022004142"],
+    "queries": [
+      "robotgräsklippare hjulpiggar antislip dubbar Husqvarna Automower pris",
+      "hjulpiggar OR hjuldubbar OR \"hjulspikar\" robotgräsklippare universal pris kr",
+      "Husqvarna Automower terrängkit hjulborstar pris kr Gardena Sileno hjulspikar",
+      "Jula OR Biltema OR \"Clas Ohlson\" robotgräsklippare tillbehör hjul spikar grepp dubb",
+      "\"robotgräsklippare\" antislip spikar hjul 289 kr universal \"spikar\" tillbehör grepp sluttning",
+      "pricerunner: hjulpiggar robotgräsklippare",
+      "pricerunner: spikhjul robotgräsklippare",
+      "WebFetch bauhaus.se robotgräsklippare-tillbehör",
+      "WebFetch hylte-lantman.com hjul-robotgrasklippare",
+      "WebFetch skoterdelen.com dubbar-for-robotgrasklippare",
+      "WebFetch robotgarden.se spikhjul"
+    ],
+    "findings": [
+      {"source": "Bauhaus (sidan läst, 134 produkter)", "item": "Robotgräsklippartillbehör – knivar, kabel, märlor m.m.; inga piggar/dubbar/terrängkit", "price_sek": null, "url": "https://www.bauhaus.se/maskiner/maskin-tillbehor/grasklipparknivar/robotgrasklippare-tillbehor", "same_form": false},
+      {"source": "Clas Ohlson (ur sökutdrag)", "item": "Robotgräsklippartillbehör: knivar, hjul, batterier, laddstationer, regnskydd – inga piggar nämnda", "price_sek": null, "url": "https://www.clasohlson.com/se/Fritid/Tr%C3%A4dg%C3%A5rdsmaskiner/Robotgr%C3%A4sklippartillbeh%C3%B6r/c/2576", "same_form": false},
+      {"source": "Jula/Biltema (ur sökutdrag)", "item": "Tillbehörskategorier finns, inga piggar/dubbar i utdragen", "price_sek": null, "url": "https://www.jula.se/catalog/tradgard/tradgardsmaskiner/grasklippare/tillbehor-till-robotgrasklippare/", "same_form": false},
+      {"source": "Skoterdelen (sidan läst)", "item": "Dubbar för robotgräsklippare – 40 universella rostfria spikar + verktyg, passar alla modeller (slut i lager)", "price_sek": 539, "url": "https://www.skoterdelen.com/skog-tradgard/robotgrasklippare/tillbehor/dubbar-for-robotgrasklippare", "same_form": true},
+      {"source": "Robotgarden (sidan läst)", "item": "Spikhjul för hård terräng, par (Husqvarna/Gforce/Clipper/Meec/Stiga) – rea 499 (ord. 599)", "price_sek": 499, "url": "https://robotgarden.se/produkt/spikhjul-for-hard-terrang-par-husqvarna-gforce-clipper-meec/", "same_form": true},
+      {"source": "CDON/Hylte (ur sökutdrag)", "item": "Antislip-spikar för robotgräsklippare, Dreame Mova 600/1000, 2-pack", "price_sek": 289, "url": "https://cdon.se/hem-tradgard/tradgardsskotsel/tradgardsmaskiner/grasklippare/tillbehor-till-grasklippare/grasklipparhjul/", "same_form": true},
+      {"source": "Reservdelaronline (sidan läst)", "item": "Terränghjul Stiga/Autoclip", "price_sek": 669, "url": "https://www.reservdelaronline.se/1613-hjul-till-robotgraesklippare", "same_form": false},
+      {"source": "Hylte/Maskinklippet (ur sökutdrag)", "item": "Husqvarna Terrängkit Automower 310/315 (rek. 1 250)", "price_sek": 999, "url": "https://www.hylte-lantman.com/husqvarna-terrangkit-automower", "same_form": false},
+      {"source": "Amazon.se (pris ej läsbart)", "item": "Spikhjul rostfritt 21 spikar Automower 420/320/430X…", "price_sek": null, "url": "https://www.amazon.se/rostfritt-robotgr%C3%A4sklippare-omsorgsfullt-hjulstorlek-Off-Wheel-hjul/dp/B09ZQT4LHN", "same_form": true}
+    ],
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {"name": "Skoterdelen – Dubbar för robotgräsklippare, 40 universella spikar", "price_sek": 539, "url": "https://www.skoterdelen.com/skog-tradgard/robotgrasklippare/tillbehor/dubbar-for-robotgrasklippare"},
+    "adlib_active": "ej läsbar",
+    "verdict": "PASS",
+    "reason": "Ingen kedja (Bauhaus läst, Clas/Jula/Biltema ur utdrag) säljer piggar eller dubbar – bara knivar, kabel och originalhjul. Svenska fackhandelsankare för samma form ligger på 289–539 kr och Husqvarnas terrängkit på 999 kr."
+  },
+  {
+    "concept": "Väggstöd/avståndsstöd till stege",
+    "goods_ids": ["601099637369908"],
+    "queries": [
+      "stege väggstöd avståndsstöd stegtillbehör Biltema Jula Bauhaus",
+      "Bauhaus avståndshållare Stabilomat stege pris kr",
+      "väggstöd stege \"avståndsstöd\" OR \"väggavståndare\" OR \"stegstöd\" pris kr Hultafors Wibe Telesteps",
+      "site:jula.se stege väggstöd OR avståndshållare OR stegstöd",
+      "pricerunner: väggstöd stege",
+      "pricerunner: avståndshållare stege",
+      "WebFetch stegproffsen.se wibe-vaggstod",
+      "WebFetch bauhaus.se avstandshallare-stabilomat (404)",
+      "curl biltema.se stegtillbehör (403)"
+    ],
+    "findings": [
+      {"source": "Bauhaus (ur sökutdrag; produktsidan gav 404 vid hämtning)", "item": "Avståndshållare Stabilomat till stege, teleskopisk 530–600 mm", "price_sek": 1195, "url": "https://www.bauhaus.se/avstandshallare-stabilomat-till-stege", "same_form": true},
+      {"source": "Bauhaus (ur sökutdrag)", "item": "Avståndshållare Krause Monto Combisystem till stege", "price_sek": null, "url": "https://www.bauhaus.se/avstandshallare-krause-monto-combisystem-till-stege", "same_form": true},
+      {"source": "Biltema (ur sökutdrag; sidan 403)", "item": "Stegtillbehör – steghakar för väggförvaring, inget väggstöd i utdraget", "price_sek": null, "url": "https://www.biltema.se/bygg/stegar/stegtillbehor/", "same_form": false},
+      {"source": "Jula (ur sökutdrag)", "item": "Inget väggstöd/avståndshållare hittat i katalogen", "price_sek": null, "url": "https://www.jula.se/catalog/bygg-och-farg/stegar-och-stallningar/", "same_form": false},
+      {"source": "Stegproffsen (sidan läst)", "item": "Wibe Väggstöd WL-717529, 1050×340 mm, rea 779 (ord. 974)", "price_sek": 779, "url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod", "same_form": true},
+      {"source": "Pricerunner", "item": "Wibe 717529 Toppstödssats", "price_sek": 819, "url": "https://www.pricerunner.se/results?q=v%C3%A4ggst%C3%B6d%20stege", "same_form": true},
+      {"source": "Pricerunner", "item": "Günzburger Steigtechnik Väggfäste", "price_sek": 4790, "url": "https://www.pricerunner.se/results?q=v%C3%A4ggst%C3%B6d%20stege", "same_form": true}
+    ],
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 1195,
+    "anchor": {"name": "Wibe Väggstöd (Stegproffsen), ord. 974 kr", "price_sek": 779, "url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod"},
+    "adlib_active": "ej läsbar",
+    "verdict": "PASS",
+    "reason": "Bauhaus har formen men för 1 195 kr (Stabilomat); Biltema och Jula saknar den. Med Wibe 779–974 kr och Bauhaus 1 195 kr som synliga ankare klarar ett pris runt 449–499 kr 1,6×-regeln med marginal."
+  },
+  {
+    "concept": "Rännstöd i plast för takränna",
+    "goods_ids": ["601100198525980", "601100859729434"],
+    "queries": [
+      "rännkrok plast rännstöd takränna Bauhaus Beijer Biltema",
+      "rännkrok plast Plastmo pris kr Bauhaus Byggmax Jula rännkrok 100 mm plast",
+      "site:biltema.se rännkrok plast hängränna plast",
+      "Byggmax rännkrok plast 100 mm pris kr Plastmo rännkrok Bygghemma pris",
+      "pricerunner: rännkrok plast",
+      "WebFetch bauhaus.se rannkrok-svart-100-mm"
+    ],
+    "findings": [
+      {"source": "Bauhaus (sidan läst)", "item": "Rännkrok svart 100 mm, PVC-plast", "price_sek": 59.95, "url": "https://www.bauhaus.se/rannkrok-svart-100-mm", "same_form": true},
+      {"source": "E-byggstore (ur sökutdrag)", "item": "Plastmo rännkrok 100 mm, 190 mm skaft", "price_sek": 63, "url": "https://www.e-byggstore.se/vvs/hangrannor/plastmo-plast-hangrannor/plastmo-plast-hangrannor-vit/rannkrokar.html", "same_form": true},
+      {"source": "Pricerunner", "item": "Plastmo Rännkrok 190/125 mm grå", "price_sek": 117, "url": "https://www.pricerunner.se/results?q=r%C3%A4nnkrok%20plast", "same_form": true},
+      {"source": "Biltema (ur sökutdrag)", "item": "Rännkrok kompakt / lång / ställbar – lackerad varmförzinkad stålplåt", "price_sek": null, "url": "https://www.biltema.se/bygg/takavvattning/takavvattning-svart/rannkrok-kompakt-2000046220", "same_form": false},
+      {"source": "Byggmax (ur sökutdrag)", "item": "Rännkrok ställbar svart", "price_sek": null, "url": "https://www.byggmax.se/r%C3%A4nnkrok-st%C3%A4llbar-svart-p26332", "same_form": false},
+      {"source": "Beijer (ur sökutdrag)", "item": "Rännkrokar (medel/lång, ställbar)", "price_sek": null, "url": "https://www.beijerbygg.se/privat/sv/produkter/tak-utemiljo/tak/takavvattning/takrannor-ror", "same_form": false}
+    ],
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 59.95,
+    "anchor": {"name": "Bauhaus Rännkrok svart 100 mm PVC", "price_sek": 59.95, "url": "https://www.bauhaus.se/rannkrok-svart-100-mm"},
+    "adlib_active": "ej läsbar",
+    "verdict": "FAIL",
+    "reason": "Bauhaus säljer exakt formen (rännkrok i PVC-plast) för 59,95 kr styck och Plastmo-krokar ligger på 63–117 kr i fackhandeln. En byggvara som köps i multipel och måste passa rännprofilen går inte att sälja dyrare från Temu."
+  },
+  {
+    "concept": "Sopkärlslocklås med rem (mot vind/djur)",
+    "goods_ids": ["601101587576926", "601099601018284", "605655280787928"],
+    "queries": [
+      "soptunna lock lås rem sopkärl djur vind Biltema Jula Clas Ohlson",
+      "soptunna lås rem lock \"sopkärl\" lås mot djur vind strap pris kr Sverige",
+      "Granngården OR Rusta OR \"Clas Ohlson\" soptunnelås rem lock soptunna spärr",
+      "Jula OR Biltema OR Rusta \"lås till soptunna\" OR \"soptunnelås\" OR \"sopkärlslås\" rem spännband",
+      "pricerunner: soptunna lock lås",
+      "pricerunner: lås soptunna djur",
+      "WebFetch fyndiq.se sopsäcklås",
+      "WebFetch smartaskydd.se lås till avfallskärl"
+    ],
+    "findings": [
+      {"source": "Clas Ohlson (ur sökutdrag)", "item": "Soptunnor med lock, Durabin-lock – inga locklås med rem", "price_sek": null, "url": "https://www.clasohlson.com/se/Hem/St%C3%A4d-&-reng%C3%B6ring/K%C3%A4llsortering-och-sopk%C3%A4rl/c/1460", "same_form": false},
+      {"source": "Jula (ur sökutdrag)", "item": "Soptunnor Hard Head 41/110 l – inget locklås", "price_sek": null, "url": "https://www.jula.se/catalog/bygg-och-farg/forvaring/avfall-och-kallsortering/soptunnor/", "same_form": false},
+      {"source": "Biltema (ur sökutdrag)", "item": "Soptunna 110 l, spännband som lastsäkring – inget locklås", "price_sek": null, "url": "https://www.biltema.se/hem/forvaring/avfallshantering/", "same_form": false},
+      {"source": "Granngården (ur sökutdrag)", "item": "Förvaringstunna 55 l med lås – annan form", "price_sek": null, "url": "https://www.granngarden.se/forvaringstunna-granngarden-55l", "same_form": false},
+      {"source": "Pricerunner", "item": "Ryom Fodertønde låg lås (danskt fodertunnelås)", "price_sek": 169, "url": "https://www.pricerunner.se/results?q=l%C3%A5s%20soptunna%20djur", "same_form": false},
+      {"source": "Fyndiq (marknadsplats, sidan läst)", "item": "Sopsäcklås/soptunnelås för djur, justerbar rem nylon+metall 120 cm – samma form som Temu-varan (+39 kr frakt)", "price_sek": 179, "url": "https://fyndiq.se/produkt/sopsacklas-soptunna-las-for-djur-passar-30-50-gallons-behallare-justerbart-sopsackslock-las-rem-black-bd234644faa3465e/", "same_form": true},
+      {"source": "Smartaskydd (fackhandel, sidan läst)", "item": "Lås till avfallskärl, gravitationslås som öppnar vid tömning", "price_sek": 459, "url": "https://smartaskydd.se/products/53-las/las-till-soptunna-avfallskarl/las-till-soptunna-oppnas-automatiskt-vid-tomning", "same_form": false}
+    ],
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {"name": "Smartaskydd – Lås till avfallskärl (gravitationslås)", "price_sek": 459, "url": "https://smartaskydd.se/products/53-las/las-till-soptunna-avfallskarl/las-till-soptunna-oppnas-automatiskt-vid-tomning"},
+    "adlib_active": "ej läsbar",
+    "verdict": "PASS",
+    "reason": "Ingen av kedjorna säljer ett locklås med rem – de säljer bara tunnor med lock. Enda svenska konkurrenten med samma form är en Fyndiq-listning på 179 kr (+frakt), och det premiumlås kunden googlar fram kostar 459 kr, så 249–279 kr är rimligt."
+  },
+  {
+    "concept": "Kupolnät/lövnät för trädgårdsdamm med dragkedja",
+    "goods_ids": ["601099601980879"],
+    "queries": [
+      "dammnät kupolnät lövnät trädgårdsdamm Jula Biltema Bauhaus pris",
+      "kupolnät damm dragkedja \"dammnät\" kupol Oase Velda pris kr",
+      "site:jula.se dammnät OR dammtäcke trädgårdsdamm",
+      "damm kupol nät dragkedja \"kupolnät\" OR \"dammkupol\" OR \"dammskydd kupol\" trädgårdsdamm",
+      "damm skyddsnät kupol tält \"dome\" OR \"kupol\" OR \"tält\" dammnät fiskdamm häger skydd pris kr",
+      "pricerunner: dammnät",
+      "WebFetch bauhaus.se dammnat-oase-aquanet-3x4m"
+    ],
+    "findings": [
+      {"source": "Bauhaus (sidan läst)", "item": "Dammnät Oase Aquanet 3×4 m, platt nät med 8 markspik, mask 20 mm", "price_sek": 103.57, "url": "https://www.bauhaus.se/dammnat-oase-aquanet-3x4m", "same_form": false},
+      {"source": "Bauhaus (ur sökutdrag)", "item": "Dammnät Oase Aquanet 6×10 m", "price_sek": 379, "url": "https://www.bauhaus.se/dammnat-oase-aquanet-6x10m", "same_form": false},
+      {"source": "Jula (ur sökutdrag)", "item": "Bara dammduk (Axley/Hard Head), inget dammnät", "price_sek": null, "url": "https://www.jula.se/catalog/tradgard/utemiljo/tradgardsdekoration/dammar/", "same_form": false},
+      {"source": "Biltema (ur sökutdrag)", "item": "Inget dammnät hittat", "price_sek": null, "url": "https://www.biltema.se/fritid/tradgard/", "same_form": false},
+      {"source": "Dammcenter (ur sökutdrag)", "item": "Dammnät Oase 3×4 m 53751 / 4×8 m 53752 / större", "price_sek": 159, "url": "https://www.dammcenter.se/dammprodukter/reng%C3%B6ring-och-sk%C3%B6tsel/dammn%C3%A4t-oase-3x4m-53751-37847347", "same_form": false},
+      {"source": "Pricerunner", "item": "Benson Trädgårdsnät Dammnät 1,8×4,6 m", "price_sek": 129, "url": "https://www.pricerunner.se/results?q=dammn%C3%A4t", "same_form": false},
+      {"source": "Pricerunner", "item": "Siena Garden Dammnät", "price_sek": 169, "url": "https://www.pricerunner.se/results?q=dammn%C3%A4t", "same_form": false},
+      {"source": "Amazon.se (ur sökutdrag)", "item": "AquaOne / Feizeisun platta dammnät med spett – ingen kupol/dragkedja hittad i Sverige", "price_sek": null, "url": "https://www.amazon.se/l%C3%B6vn%C3%A4t-f%C3%B6r-damm/s?k=l%C3%B6vn%C3%A4t+f%C3%B6r+damm", "same_form": false}
+    ],
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {"name": null, "price_sek": null, "url": null},
+    "adlib_active": "ej läsbar",
+    "verdict": "UNCERTAIN",
+    "reason": "Kupolform med dragkedja hittades inte hos någon kedja eller svensk fackhandel – bara platta nät med markspik (Bauhaus 104 kr, Oase 159–379 kr). Det finns alltså inget ankare att prissätta mot, och kategoripriset 'dammnät' ligger lågt."
+  },
+  {
+    "concept": "Pumpsäck/skyddsnät för dammpump",
+    "goods_ids": ["601099537193860"],
+    "queries": [
+      "dammpump skyddsnät pumpsäck filtersäck damm pris",
+      "pumpskydd damm nät \"pumpsäck\" OR \"pumpskyddsnät\" OR \"pumpkorg\" dammpump pris kr",
+      "Bauhaus OR Hornbach pumpskydd damm nät pump Oase pumpskydd pris kr",
+      "pricerunner: pumpskydd damm",
+      "WebFetch vattenliv.se pumpskydd"
+    ],
+    "findings": [
+      {"source": "Vattenliv (fackhandel, sidan läst)", "item": "Oase Pumpskydd – nätpåse 50×52 cm med dragsnöre över pumpen (slut i lager, 5–10 dagar)", "price_sek": 329, "url": "https://www.vattenliv.se/produkt/pumpskydd/", "same_form": true},
+      {"source": "Bauhaus/Hornbach (ur sökutdrag)", "item": "Oase-pumpar, filter och Aquanet-nät – inget pumpskydd/pumpsäck i utdragen", "price_sek": null, "url": "https://www.bauhaus.se/utemiljo/tradgardsmiljo/tradgardsdammar/dammpumpar", "same_form": false},
+      {"source": "Jula/Biltema (ur sökutdrag)", "item": "Fontänpumpar och dammduk, inget pumpskydd", "price_sek": null, "url": "https://www.jula.se/catalog/bygg-och-farg/badrum-och-vvs/vattenpumpar/tradgardspumpar/fontanpump-015271/", "same_form": false},
+      {"source": "Pricerunner", "item": "Sökningen 'pumpskydd damm' ger bara värmepumpsskydd och bröstpumpstillbehör – ingen pumpsäck listad", "price_sek": null, "url": "https://www.pricerunner.se/results?q=pumpskydd%20damm", "same_form": false}
+    ],
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {"name": "Oase Pumpskydd (Vattenliv)", "price_sek": 329, "url": "https://www.vattenliv.se/produkt/pumpskydd/"},
+    "adlib_active": "ej läsbar",
+    "verdict": "PASS",
+    "reason": "Ingen kedja säljer pumpsäck och Pricerunner listar ingen alls; det enda svenska ankaret är Oases pumpskydd för 329 kr hos fackhandeln. Ett pris på 149–199 kr ligger gott under 1,6×-gränsen."
+  }
+]

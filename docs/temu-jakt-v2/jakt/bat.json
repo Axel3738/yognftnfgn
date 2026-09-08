@@ -1,0 +1,2832 @@
+[
+ {
+  "kluster": "bat",
+  "goods_id": "601099584417825",
+  "url_se": "https://www.temu.com/se/g-601099584417825.html",
+  "title": null,
+  "title_from_search": "Boat cover support poles 2 pcs, adjustable 22.8–60.1 in, webbing strap",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Presenning över båt på trailer/bockar (vinterförvaring)",
+  "owner_owns": "Trailerbåt/vinterförvarad båt med presenning — ägs redan",
+  "friction": "Regnvatten och löv samlas i presenningen i sept–okt så fort båten är täckt; svackan fylls, tyngden sliter, vatten rinner in",
+  "old_way": "Kvast/bräda/pallar under presenningen, snöre i masten, plastdunkar",
+  "variants": "2-pack, teleskop 58–153 cm — en variant",
+  "swedish_equivalent": {
+   "retailer": "Osculati Teleskopiskt presenningsstöd 90–160 cm 289 kr, 1 butik (PR); Biltema/Jula ej verifierbara (403) — obekräftat minne: Biltema har troligen ett teleskopiskt presenningsstöd",
+   "price_sek": 289,
+   "url": "https://www.pricerunner.se/results?q=presenningsst%C3%B6d",
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Hjertmans Teleskopstötta för båtkapell 85–150 cm",
+   "price_sek": 439,
+   "url": "https://www.hjertmans.se/sv/produkt/varme-kyla/presenningar/batkapell/teleskopstotta-for-batkapell-85-150-cm"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster under presenningen på en båt som redan står täckt ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "vattensäckar i presenningen syns i varje båtuppläggning i oktober; fotograferbart i hamn/tomt",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema säljer exakt samma form (teleskopisk alu-stötta med gummiändar, 91–164 cm) för 145 kr styck, dvs 290 kr för två – under vad ett 2-pack rimligen kan ta betalt med annonskostnad. Jula har samma form (Kayoba teleskopstag) och fackhandelns ankare på 439 kr är per stötta, inte per par.",
+    "verified": true,
+    "verified_by": "h3.json",
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 145,
+    "anchor": {
+     "name": "Hjertmans Teleskopstötta för båtkapell 85–150 cm",
+     "price_sek": 439,
+     "url": "https://www.hjertmans.se/sv/produkt/varme-kyla/presenningar/batkapell/teleskopstotta-for-batkapell-85-150-cm"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "1. Presenningsstöd/kapellstöd för båt vid vinterförvaring (teleskopstolpe, 2-pack)"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "2-pack; större båt behöver 2–3 stöd — flerköp naturligt",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en variant, teleskop"
+   },
+   "hook": {
+    "text": "Samlas det vatten på båtpresenningen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "~750 000 fritidsbåtar i Sverige, majoriteten läggs upp under presenning; presenning + båt är omisskännligt i flödet"
+   }
+  },
+  "negative_space_flags": [
+   "svensk fackhandel har formen (Osculati 289 kr)",
+   "montering: spänns fast under presenningen (enkelt)"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 70,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "tier_provisional": true,
+  "biggest_risk": "Biltema/Jula kan ha samma teleskopstöd för ~200 kr — kunde inte verifieras i dag",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com boat cover support pole tarp",
+   "PR: presenningsstöd",
+   "PR: kapellstöd båt (0 träffar)",
+   "PR: presenningsstöd teleskop båt"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "603262161892743",
+  "url_se": "https://www.temu.com/se/g-603262161892743.html",
+  "title": null,
+  "title_from_search": "Boat cover support pole system, adjustable, aluminium",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Presenning över båt på trailer/bockar",
+  "owner_owns": "Vinterförvarad båt med presenning",
+  "friction": "Samma som 601099584417825",
+  "old_way": "Bräda/pall under presenningen",
+  "variants": "UNKNOWN (ej läst)",
+  "swedish_equivalent": {
+   "retailer": "Osculati 289 kr fackhandel (PR); Biltema obekräftat",
+   "price_sek": 289,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Hjertmans Teleskopstötta för båtkapell 85–150 cm",
+   "price_sek": 439,
+   "url": "https://www.hjertmans.se/sv/produkt/varme-kyla/presenningar/batkapell/teleskopstotta-for-batkapell-85-150-cm"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "under presenning på uppläggd båt"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "vattensäck i presenning, oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema säljer exakt samma form (teleskopisk alu-stötta med gummiändar, 91–164 cm) för 145 kr styck, dvs 290 kr för två – under vad ett 2-pack rimligen kan ta betalt med annonskostnad. Jula har samma form (Kayoba teleskopstag) och fackhandelns ankare på 439 kr är per stötta, inte per par.",
+    "verified": true,
+    "verified_by": "h3.json",
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 145,
+    "anchor": {
+     "name": "Hjertmans Teleskopstötta för båtkapell 85–150 cm",
+     "price_sek": 439,
+     "url": "https://www.hjertmans.se/sv/produkt/varme-kyla/presenningar/batkapell/teleskopstotta-for-batkapell-85-150-cm"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "1. Presenningsstöd/kapellstöd för båt vid vinterförvaring (teleskopstolpe, 2-pack)"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "flera stöd per båt",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "listningen ej läst — variantnamn okända"
+   },
+   "hook": {
+    "text": "Samlas det vatten på båtpresenningen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "båtägare med presenning"
+   }
+  },
+  "negative_space_flags": [
+   "fackhandel har formen"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 60,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "tier_provisional": true,
+  "biggest_risk": "dubblett av 601099584417825 med okänd variantstruktur",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com boat cover support pole tarp"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099668451164",
+  "url_se": "https://www.temu.com/se/g-601099668451164.html",
+  "title": null,
+  "title_from_search": "2 pcs boat cover support poles with webbing strap 22.8–60.1 in",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Presenning över båt",
+  "owner_owns": "Vinterförvarad båt",
+  "friction": "Som ovan",
+  "old_way": "Bräda/pall",
+  "variants": "2-pack",
+  "swedish_equivalent": {
+   "retailer": "Osculati 289 kr (PR); Biltema obekräftat",
+   "price_sek": 289,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Hjertmans Teleskopstötta för båtkapell 85–150 cm",
+   "price_sek": 439,
+   "url": "https://www.hjertmans.se/sv/produkt/varme-kyla/presenningar/batkapell/teleskopstotta-for-batkapell-85-150-cm"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "under presenning"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema säljer exakt samma form (teleskopisk alu-stötta med gummiändar, 91–164 cm) för 145 kr styck, dvs 290 kr för två – under vad ett 2-pack rimligen kan ta betalt med annonskostnad. Jula har samma form (Kayoba teleskopstag) och fackhandelns ankare på 439 kr är per stötta, inte per par.",
+    "verified": true,
+    "verified_by": "h3.json",
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 145,
+    "anchor": {
+     "name": "Hjertmans Teleskopstötta för båtkapell 85–150 cm",
+     "price_sek": 439,
+     "url": "https://www.hjertmans.se/sv/produkt/varme-kyla/presenningar/batkapell/teleskopstotta-for-batkapell-85-150-cm"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "1. Presenningsstöd/kapellstöd för båt vid vinterförvaring (teleskopstolpe, 2-pack)"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "flera per båt",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "2-pack"
+   },
+   "hook": {
+    "text": "Samlas det vatten på båtpresenningen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "båtägare"
+   }
+  },
+  "negative_space_flags": [
+   "fackhandel har formen"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 60,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "tier_provisional": true,
+  "biggest_risk": "dubblett — ej läst",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com boat cover support pole tarp"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601100312972322",
+  "url_se": "https://www.temu.com/se/g-601100312972322.html",
+  "title": null,
+  "title_from_search": "Outboard motor support / transom saver wedge, fits 3 trim-tilt systems",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Utombordare med power-trim på trailerbåt",
+  "owner_owns": "Trailerbåt med 40–300 hk utombordare — ägs redan",
+  "friction": "Vid hemkörning i september studsar motorn på trimcylindrarna; kilen låser trimmen så motorn inte hänger på hydrauliken",
+  "old_way": "Motorn i nedfällt läge (slår i marken) eller bräda mellan skrov och rigg",
+  "variants": "passar 3 trimsystem — variantnamn ej lästa",
+  "swedish_equivalent": {
+   "retailer": "Osculati Transportstöd för utombordare 50–80 cm 539 kr, 1 butik (PR) — annan form (stång trailer→rigg); Biltema obekräftat minne: säljer troligen ett stång-transportstöd",
+   "price_sek": 539,
+   "url": "https://www.pricerunner.se/results?q=transportst%C3%B6d+utombordare",
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Attwood Transom Saver (UMS Boat, 58–89 cm)",
+   "price_sek": 749,
+   "url": "https://umsboat.se/webshop/transom-saver-hb3bp-8bx5j"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "kläms på trimcylindern på en utombordare som redan sitter på båten"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "båtupptagning sept–okt = trailertransport; motorn hänger synligt på trimmen på varje trailer i hamnen",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Ingen kedja (Biltema/Jula/Clas/Rusta) säljer vare sig kil eller stång-transom saver; kilformen finns i Sverige bara via Amazon.se-marknadsplats. Svensk fackhandel ankrar hela kategorin på 619–1 295 kr (Attwood), vilket är ≥1,6× ett rimligt kilpris på 299–399 kr.",
+    "verified": true,
+    "verified_by": "h3.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Attwood Transom Saver (UMS Boat, 58–89 cm)",
+     "price_sek": 749,
+     "url": "https://umsboat.se/webshop/transom-saver-hb3bp-8bx5j"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "2. Motorstöd/transom saver-kil för utombordare på trailer"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "en per motor; dubbelmontage sällsynt",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "3 trimsystem — ägaren vet oftast inte vilket; måste läsa av cylindern"
+   },
+   "hook": {
+    "text": "Står din utombordare på trailern i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "trailerbåtar med power-trim: stor klass, utombordare är omisskännlig i bild (CPM-proxy bevisad av motorhöljet)"
+   }
+  },
+  "negative_space_flags": [
+   "kräver att ägaren vet vilket trimsystem han har",
+   "payoff osynlig (skadad hydraulik om år) — behovet delvis annonsskapat"
+  ],
+  "eliminated_at": null,
+  "structure_match": 55,
+  "category_novelty": 70,
+  "tier": "C (latent behov)",
+  "tier_provisional": true,
+  "biggest_risk": "behovet är latent: få svenska ägare vet att trimmen tar stryk under transport → agitation krävs",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com transom saver outboard motor support trailering",
+   "PR: transportstöd utombordare",
+   "PR: motorstöd utombordare trailer"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "transom saver-kil: skadan (hydrauliken) syns om år — 55 % av förlorarna hade latent behov; dessutom trimsystem-variant"
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601100200308437",
+  "url_se": "https://www.temu.com/se/g-601100200308437.html",
+  "title": null,
+  "title_from_search": "Outboard saver trailering support, fits 2 trim systems, wedge + stop clips 2 pcs",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Utombordare med power-trim på trailerbåt",
+  "owner_owns": "Trailerbåt",
+  "friction": "Som 601100312972322",
+  "old_way": "Bräda/nedfälld motor",
+  "variants": "2 trimsystem",
+  "swedish_equivalent": {
+   "retailer": "Osculati 539 kr stångtyp (PR)",
+   "price_sek": 539,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Attwood Transom Saver (UMS Boat, 58–89 cm)",
+   "price_sek": 749,
+   "url": "https://umsboat.se/webshop/transom-saver-hb3bp-8bx5j"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "på trimcylindern"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "upptagning/transport i sept–okt",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Ingen kedja (Biltema/Jula/Clas/Rusta) säljer vare sig kil eller stång-transom saver; kilformen finns i Sverige bara via Amazon.se-marknadsplats. Svensk fackhandel ankrar hela kategorin på 619–1 295 kr (Attwood), vilket är ≥1,6× ett rimligt kilpris på 299–399 kr.",
+    "verified": true,
+    "verified_by": "h3.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Attwood Transom Saver (UMS Boat, 58–89 cm)",
+     "price_sek": 749,
+     "url": "https://umsboat.se/webshop/transom-saver-hb3bp-8bx5j"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "2. Motorstöd/transom saver-kil för utombordare på trailer"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "en per motor",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "trimsystem"
+   },
+   "hook": {
+    "text": "Står din utombordare på trailern i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "trailerbåtar med trim"
+   }
+  },
+  "negative_space_flags": [
+   "latent behov"
+  ],
+  "eliminated_at": null,
+  "structure_match": 50,
+  "category_novelty": 70,
+  "tier": "C (latent behov)",
+  "tier_provisional": true,
+  "biggest_risk": "samma som 601100312972322",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com transom saver outboard motor support trailering"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "transom saver-kil: skadan (hydrauliken) syns om år — 55 % av förlorarna hade latent behov; dessutom trimsystem-variant"
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099889254596",
+  "url_se": "https://www.temu.com/se/g-601099889254596.html",
+  "title": "En bågskydd för utombordsmotorer, universella marinmotorfästen och bogserbåtsmotorlås, gummifästen för båtmotorer, utombordsmotorfästen för bogserbåtar och marintillbehör",
+  "title_from_search": "Rubber outboard motor support / motor lock (transom saver, rubber)",
+  "temu_price_sek": "299.35",
+  "rating": 4.7,
+  "review_count": 52,
+  "review_dates": [
+   "2026-01-31",
+   "2026-01-31",
+   "2025-04-06",
+   "2025-02-07"
+  ],
+  "category_path": [
+   "Sport & friluftsliv",
+   "Båttillbehör"
+  ],
+  "image_count": 2,
+  "hero_url": "https://img.kwcdn.com/product/fancy/e0e57493-e885-442c-b19d-c75f7eddcf9a.jpg",
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "ok",
+  "object": "Utombordare på trailerbåt",
+  "owner_owns": "Trailerbåt",
+  "friction": "Motorn studsar på trimmen under transport",
+  "old_way": "Bräda",
+  "variants": "1 variant (svart)",
+  "swedish_equivalent": {
+   "retailer": "Osculati 539 kr stångtyp (PR)",
+   "price_sek": 539,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Osculati transportstöd",
+   "price_sek": 539,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "på trimcylindern"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "transport vid upptagning",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "ej i kedja"
+   },
+   "material": {
+    "result": "FAIL",
+    "reason": "ingen leverantörsvideo; 2 bild(er)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": 449,
+    "se_price_est_sek": 1079,
+    "multiple": 2.4,
+    "be_cpa_est": 630,
+    "multibuy_reason": "en per motor",
+    "result": "FAIL",
+    "note": "landad = Temu-pris × 1,5 (uppskattning, kalibrerad på IBC/motorhölje)"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en variant"
+   },
+   "hook": {
+    "text": "Står din utombordare på trailern i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "trailerbåtar"
+   }
+  },
+  "negative_space_flags": [
+   "ingen video, en enda bild (samma bild två gånger) — materialöverförbarhet 0–1",
+   "Temu-pris 299 kr → landad ~450 → svenskt pris > 1 000 kr"
+  ],
+  "eliminated_at": "material",
+  "structure_match": 35,
+  "category_novelty": 70,
+  "tier": "C",
+  "tier_provisional": true,
+  "biggest_risk": "pris: 299 kr på Temu ger inget prisutrymme under 1 000 kr",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com boat propeller bag protector outboard prop guard"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099611345347",
+  "url_se": "https://www.temu.com/se/g-601099611345347.html",
+  "title": null,
+  "title_from_search": "Marine outboard propeller cover, heavy duty UV polyester, reflective",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Propellern på en utombordare som står på trailer/bockar",
+  "owner_owns": "Trailerbåt/uppläggd båt med utombordare",
+  "friction": "Efter upptagningen står propellern blottad i höjd med smalbenen på tomten/i garaget hela vintern; bladen rostar och är vassa",
+  "old_way": "Trasa och snöre, eller ingenting",
+  "variants": "storlek efter propellerdiameter — variantnamn ej lästa",
+  "swedish_equivalent": {
+   "retailer": "PR: bara metallskydd (Seatec 3 009 kr, Nuova Rade 1 663 kr) — annan form; tygöverdrag ej sett i svensk kanal; Biltema obekräftat",
+   "price_sek": 3009,
+   "url": "https://www.pricerunner.se/results?q=propellerskydd+utombordare",
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Seatec propellerskydd (metall, annan form)",
+   "price_sek": 3009,
+   "url": "https://www.pricerunner.se/results?q=propellerskydd+utombordare"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "träs på propellern på en motor ägaren redan har"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "propellern syns på varje uppläggd båt i oktober, men skadan/faran är låg — behovet är delvis annonsskapat",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "ingen svensk kedja har tygformen (PR + minne)"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "en per motor",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "propellerdiameter — ägaren vet oftast inte utantill"
+   },
+   "hook": {
+    "text": "Står båten på trailern i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "utombordare omisskännlig i flödet; ägarklass ≥ 300 000"
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas (ingen inträffad skada)",
+   "passform mot propellerdiameter"
+  ],
+  "eliminated_at": null,
+  "structure_match": 45,
+  "category_novelty": 55,
+  "tier": "C (want, inte need)",
+  "tier_provisional": true,
+  "biggest_risk": "want, inte need: ingen synlig skada vid annonstillfället — samma svaghet som kranskyddet",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com outboard motor propeller cover",
+   "PR: propellerskydd utombordare",
+   "PR: utombordare skydd propeller tyg"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "propellerskydd i tyg: ingen inträffad skada vid annonstillfället (kranskyddets svaghet) + propellerdiameter"
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601100875031411",
+  "url_se": "https://www.temu.com/se/g-601100875031411.html",
+  "title": null,
+  "title_from_search": "Boat trailer bunk slide pads 3×10 in, glide pads",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Bunkar (mattklädda balkar) på båttrailern",
+  "owner_owns": "Trailer med bunkar",
+  "friction": "Vid upptagningen fastnar skrovet på de blöta mattbunkarna; vinschen sliter, båten går upp i ryck",
+  "old_way": "Såpa/silikonspray på mattan, dra med bilen",
+  "variants": "pack om N pads, längd 10 in — variantnamn ej lästa",
+  "swedish_equivalent": {
+   "retailer": "PR: inget (glidlist båttrailer 0 relevanta); Biltema obekräftat minne: inga glidpads",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "skruvas på trailerns bunkar"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "upptagning i sept–okt är exakt när båten ska dras upp — friktionen inträffar då",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "UNCERTAIN",
+    "reason": "Ingen kedja och ingen svensk fackhandel säljer bunk-glidpads alls i det som gick att läsa, så det finns inget svenskt prisankare att mäta mot. Ingen hyllkonkurrens, men kategorin verkar okänd i Sverige – prisförväntan går inte att verifiera.",
+    "verified": true,
+    "verified_by": "h3.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": null,
+     "price_sek": null,
+     "url": null
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "3b. Glidpads/bunkskydd till båttrailer"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "flera pads per bunk, två bunkar — flerköp inbyggt",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "antal pads beror på bunklängd — ägaren måste mäta"
+   },
+   "hook": {
+    "text": "Svårt att dra upp båten på trailern?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "svenska båttrailers är oftast rulltrailers — bunktrailers är en minoritet; publikklassen kan vara < 100 000"
+   }
+  },
+  "negative_space_flags": [
+   "montering med skruv",
+   "rulltrailer-dominans i Sverige"
+  ],
+  "eliminated_at": null,
+  "structure_match": 50,
+  "category_novelty": 75,
+  "tier": "C (publik + mått)",
+  "tier_provisional": true,
+  "biggest_risk": "svensk publik: rulltrailers dominerar, bunkar är ovanliga → för liten ägarklass",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com boat trailer bunk slides guide pads",
+   "PR: glidlist båttrailer",
+   "PR: båttrailer bunk"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "bunk-glidpads: svenska trailers är rulltrailers; antal pads kräver mätning"
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601102184182476",
+  "url_se": "https://www.temu.com/se/g-601102184182476.html",
+  "title": null,
+  "title_from_search": "Adjustable 1.1 m boat trailer guide poles, galvanized, PVC sleeves, pair",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Båttrailer vid rampen",
+  "owner_owns": "Trailerbåt",
+  "friction": "Vid upptagningen syns inte trailern under vattnet — båten hamnar snett, skrovet skrapar mot rullarna/skärmen",
+  "old_way": "Någon står i vattnet och dirigerar; sticka en pinne i rullhållaren",
+  "variants": "par, justerbar",
+  "swedish_equivalent": {
+   "retailer": "PR: VEVOR båttrailerstyrningar 651–1 048 kr (marketplace, 1 butik); Biltema/Jula obekräftat",
+   "price_sek": 750,
+   "url": "https://www.pricerunner.se/results?q=trailerguide+b%C3%A5t",
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "VEVOR Båttrailerstyrningar 700–1050 mm 2 st (Pricerunner)",
+   "price_sek": 850,
+   "url": "https://www.pricerunner.se/search?q=trailerguide"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "bultas på trailerns ram"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "upptagning sept–okt: exakt när ägaren backar ner trailern och missar",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Varken Biltema eller Jula säljer stolpformen (bara sidorullar 145 kr och båtstöd 549 kr, som löser samma problem på annat sätt); enda svenska styrstolparna är VEVOR via marknadsplats på 684–1 048 kr/par. Risk: Biltemas sidorulle 2-pack på 145 kr är ett billigt substitut i samma hylla.",
+    "verified": true,
+    "verified_by": "h3.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "VEVOR Båttrailerstyrningar 700–1050 mm 2 st (Pricerunner)",
+     "price_sek": 850,
+     "url": "https://www.pricerunner.se/search?q=trailerguide"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "3a. Styrstolpar/guide posts till båttrailer"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "ett par per trailer",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "ett par, justerbart"
+   },
+   "hook": {
+    "text": "Svårt att träffa trailern vid upptagning?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "alla trailerbåtar; trailer vid ramp omisskännlig"
+   }
+  },
+  "negative_space_flags": [
+   "montering (bultar på ramen) — 30 % av förlorarna",
+   "VEVOR finns redan som prisankare 650–1 050 kr, vilket är bra för prisutrymmet"
+  ],
+  "eliminated_at": null,
+  "structure_match": 55,
+  "category_novelty": 70,
+  "tier": "B",
+  "tier_provisional": true,
+  "biggest_risk": "montering med bultar + skrymmande frakt (1,1 m) — landad kostnad kan spräcka 1,5×-antagandet",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com boat trailer guide post pole",
+   "PR: trailerguide båt",
+   "PR: styrstolpar båttrailer"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "styrstolpar båttrailer: VEVOR 850 som ankare; bultmontering + 1,1 m frakt"
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601100131470883",
+  "url_se": "https://www.temu.com/se/g-601100131470883.html",
+  "title": null,
+  "title_from_search": "2 pcs boat trailer guides, 20 in carpeted bunk boards kit with frames",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Båttrailer",
+  "owner_owns": "Trailerbåt",
+  "friction": "Som 601102184182476",
+  "old_way": "Dirigera för hand",
+  "variants": "2 pcs",
+  "swedish_equivalent": {
+   "retailer": "PR: VEVOR 'Båttrailerguide 2 st justerbara korta britsguider' 750 kr — samma form, marketplace",
+   "price_sek": 750,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "VEVOR Båttrailerstyrningar 700–1050 mm 2 st (Pricerunner)",
+   "price_sek": 850,
+   "url": "https://www.pricerunner.se/search?q=trailerguide"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "bultas på trailern"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "upptagning",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Varken Biltema eller Jula säljer stolpformen (bara sidorullar 145 kr och båtstöd 549 kr, som löser samma problem på annat sätt); enda svenska styrstolparna är VEVOR via marknadsplats på 684–1 048 kr/par. Risk: Biltemas sidorulle 2-pack på 145 kr är ett billigt substitut i samma hylla.",
+    "verified": true,
+    "verified_by": "h3.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "VEVOR Båttrailerstyrningar 700–1050 mm 2 st (Pricerunner)",
+     "price_sek": 850,
+     "url": "https://www.pricerunner.se/search?q=trailerguide"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "3a. Styrstolpar/guide posts till båttrailer"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "ett kit per trailer",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "ett kit"
+   },
+   "hook": {
+    "text": "Svårt att träffa trailern vid upptagning?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "trailerbåtar"
+   }
+  },
+  "negative_space_flags": [
+   "montering",
+   "skrymmande"
+  ],
+  "eliminated_at": null,
+  "structure_match": 50,
+  "category_novelty": 70,
+  "tier": "B (dubblett)",
+  "tier_provisional": true,
+  "biggest_risk": "samma som guide poles + tyngre frakt",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com boat trailer bunk slides guide pads"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "dubblett av styrstolparna 601102184182476"
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "605544031069820",
+  "url_se": "https://www.temu.com/se/g-605544031069820.html",
+  "title": null,
+  "title_from_search": "2 pcs boat trailer guide pole sleeves, reflective, oxford padding",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Befintliga styrstolpar på båttrailern",
+  "owner_owns": "Trailer med styrstolpar (minoritet)",
+  "friction": "PVC-rören på stolparna spricker/skrapar skrovet",
+  "old_way": "Isoleringsrör från Biltema",
+  "variants": "2 pcs",
+  "swedish_equivalent": {
+   "retailer": "PR: inget; rörisolering är kedjevara",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "träs på stolparna"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "sliten stolpe syns, men bara hos den minoritet som har stolpar",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "ej sett"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "ett par",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "2-pack"
+   },
+   "hook": {
+    "text": "Har du styrstolpar på båttrailern?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "FAIL",
+    "reason": "kräver trailer MED styrstolpar — dubbel filtrering, klassen < 100 000"
+   }
+  },
+  "negative_space_flags": [
+   "oklart ägande",
+   "tillbehör till ett tillbehör"
+  ],
+  "eliminated_at": "audience",
+  "structure_match": 30,
+  "category_novelty": 70,
+  "tier": "C",
+  "tier_provisional": true,
+  "biggest_risk": "för smal publik",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com boat trailer guide post pole"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099608041027",
+  "url_se": "https://www.temu.com/se/g-601099608041027.html",
+  "title": null,
+  "title_from_search": "Outboard boat motor stand carrier cart / trolley 50 kg",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Utombordare som tas av båten vid upptagningen",
+  "owner_owns": "Båt med löstagbar utombordare (≤ 30 hk)",
+  "friction": "Motorn ska bäras från bryggan till garaget och stå upprätt över vintern",
+  "old_way": "Bärs av två, ställs mot väggen/ligger på golvet",
+  "variants": "UNKNOWN",
+  "swedish_equivalent": {
+   "retailer": "PR: Kayoba Båtmotorkärra 499–999 kr (Jula:s eget märke) — SAMMA FORM i kedja",
+   "price_sek": 999,
+   "url": "https://www.pricerunner.se/results?q=b%C3%A5tmotork%C3%A4rra",
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Kayoba (Jula) båtmotorkärra",
+   "price_sek": 999,
+   "url": "https://www.pricerunner.se/results?q=b%C3%A5tmotork%C3%A4rra"
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "används med utombordaren, men i garaget — objektet förvaras inomhus när vagnen används"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "motorn tas av i sept–okt",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula säljer Kayoba båtmotorkärra 499–999 kr — samma form"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "en per motor",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "UNKNOWN"
+   },
+   "hook": {
+    "text": "Var ska utombordaren stå i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "småbåtsägare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk kedja har formen",
+   "inomhusbruk"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 65,
+  "tier": "ELIM",
+  "tier_provisional": true,
+  "biggest_risk": "Jula-vara",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com outboard motor stand trolley bracket wall",
+   "PR: motorstativ utombordare",
+   "PR: båtmotorkärra"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099651895693",
+  "url_se": "https://www.temu.com/se/g-601099651895693.html",
+  "title": null,
+  "title_from_search": "Heavy duty steel outboard motor stand, foldable, U-bolt, 154 lbs",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Löstagbar utombordare",
+  "owner_owns": "Småbåt",
+  "friction": "Motorn ska stå upprätt i garaget",
+  "old_way": "Mot väggen",
+  "variants": "UNKNOWN",
+  "swedish_equivalent": {
+   "retailer": "Kayoba båtmotorkärra 499–999 kr (PR)",
+   "price_sek": 999,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Kayoba",
+   "price_sek": 999,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "inomhus"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "sept–okt",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula/Kayoba samma form"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "en",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "UNKNOWN"
+   },
+   "hook": {
+    "text": "Var ska utombordaren stå i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "småbåtsägare"
+   }
+  },
+  "negative_space_flags": [
+   "kedja"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 65,
+  "tier": "ELIM",
+  "tier_provisional": true,
+  "biggest_risk": "Jula-vara",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com outboard motor stand trolley bracket wall"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099579132889",
+  "url_se": "https://www.temu.com/se/g-601099579132889.html",
+  "title": null,
+  "title_from_search": "Outboard motor stand engine carrier cart with wheels, 315 lbs",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Löstagbar utombordare",
+  "owner_owns": "Småbåt",
+  "friction": "Som ovan",
+  "old_way": "Mot väggen",
+  "variants": "UNKNOWN",
+  "swedish_equivalent": {
+   "retailer": "Kayoba båtmotorkärra (PR)",
+   "price_sek": 999,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Kayoba",
+   "price_sek": 999,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "inomhus"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "sept–okt",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula/Kayoba"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "en",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "UNKNOWN"
+   },
+   "hook": {
+    "text": "Var ska utombordaren stå i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "småbåtsägare"
+   }
+  },
+  "negative_space_flags": [
+   "kedja"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 65,
+  "tier": "ELIM",
+  "tier_provisional": true,
+  "biggest_risk": "Jula-vara",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com outboard motor stand trolley bracket wall"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099547922853",
+  "url_se": "https://www.temu.com/se/g-601099547922853.html",
+  "title": null,
+  "title_from_search": "Trailer bearing caps 4 pcs 2.72 in stainless, bearing-buddy style hub protectors",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Hjulnaven på båttrailern",
+  "owner_owns": "Båttrailer",
+  "friction": "Trailern doppas i sjön vid varje sjösättning/upptagning — vatten går in i lagret, rostar över vintern",
+  "old_way": "Ompackning av lager varje vår, fettspruta",
+  "variants": "4 pcs, en diameter (2,72 in) — ägaren måste mäta navet",
+  "swedish_equivalent": {
+   "retailer": "PR: inget (navskydd trailer, bearing buddy, navkapsel — 0 relevanta); Biltema obekräftat",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "knackas på trailernavet"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "upptagningen i sept–okt är sista doppet — lagret står blött hela vintern",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "ej sett i svensk kanal"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "4-pack = två axlar/reserv",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "navdiameter i tum — svenska trailers har metriska nav (Knott/AL-KO) som sällan matchar 2,72 in; ägaren måste mäta"
+   },
+   "hook": {
+    "text": "Doppar du båttrailern i sjön?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "alla båttrailers; trailern i vattnet är en tydlig bild"
+   }
+  },
+  "negative_space_flags": [
+   "kräver mätning + passform",
+   "osynlig, fördröjd payoff (rost om månader)",
+   "montering med hammare"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 35,
+  "category_novelty": 75,
+  "tier": "C",
+  "tier_provisional": true,
+  "biggest_risk": "passform mot svenska metriska nav",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com trailer wheel bearing protector bearing buddy",
+   "PR: navskydd trailer",
+   "PR: bearing buddy",
+   "PR: navkapsel smörjnippel trailer"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099616420647",
+  "url_se": "https://www.temu.com/se/g-601099616420647.html",
+  "title": null,
+  "title_from_search": "UPF50 kayak cover, 420D waterproof, outdoor storage, grey",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Kajak/kanot som ligger ute",
+  "owner_owns": "Kajak (vanligt i fritidshusklassen)",
+  "friction": "Kajaken ligger upp-och-ner på tomten/bryggan från oktober; löv, UV, regn och möss i sittbrunnen",
+  "old_way": "Presenning + tegelstenar, eller ingenting",
+  "variants": "längdklasser (2–11,5 ft / 11,8–13,1 ft …) — ägaren vet kajakens längd",
+  "swedish_equivalent": {
+   "retailer": "PR: Lixada universellt kajakskydd 380–436 kr, 1 butik (marketplace) — samma form; kedjor obekräftade",
+   "price_sek": 436,
+   "url": "https://www.pricerunner.se/results?q=kajakskydd",
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Eckla vägghållare för kajak och paddel (Kajaktiv), ord 705 kr",
+   "price_sek": 634.5,
+   "url": "https://kajaktiv.se/produkt/eckla-vagghallare-for-kajak-och-paddel/"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "träs över en kajak som ligger ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "kajaker läggs upp ute i sept–okt; löv i sittbrunnen är fotograferbart",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Kedjorna säljer bara takhållare (Biltema 529 kr, Jula J-profil) och generiska krokar – ingen dedikerad vadderad kajak-vägghållare. Fackhandeln ankrar formen på 599–705 kr (Seahawk/Eckla/SeaBird), ≥1,6× ett rimligt pris på 349–399 kr; billigaste konkurrent är Homcom 271 kr via marknadsplats.",
+    "verified": true,
+    "verified_by": "h3.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Eckla vägghållare för kajak och paddel (Kajaktiv), ord 705 kr",
+     "price_sek": 634.5,
+     "url": "https://kajaktiv.se/produkt/eckla-vagghallare-for-kajak-och-paddel/"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "4. Kajak-/kanotförvaring vägg (vägghållare)"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "två kajaker per hushåll är vanligt",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "längd — ägaren kan den utantill"
+   },
+   "hook": {
+    "text": "Ligger kajaken ute i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "kajak är omisskännlig i bild; ägarklass ≥ 100 000 hushåll"
+   }
+  },
+  "negative_space_flags": [
+   "kapell-kategori: överdrag redan testat 5 gånger (motorhölje vann, gräsklippartäcke/kranskydd/IBC/MC föll)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 60,
+  "category_novelty": 35,
+  "tier": "C (överdrag + marketplace)",
+  "tier_provisional": true,
+  "biggest_risk": "ännu ett överdrag — Axel har uttryckligen bett om att inte hitta fler kapell",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com kayak cover storage outdoor",
+   "PR: kajakskydd",
+   "PR: kajak överdrag",
+   "PR: kajakkapell"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "kajaköverdrag: Lixada 380–436 kr i samma form på PriceRunner; sjätte överdraget i raden — kategorinovelty 35"
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099891730383",
+  "url_se": "https://www.temu.com/se/g-601099891730383.html",
+  "title": null,
+  "title_from_search": "600D Oxford trailerable jet ski (PWC) cover",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Vattenskoter på trailer",
+  "owner_owns": "Vattenskoter",
+  "friction": "Skotern står på trailern på tomten från oktober",
+  "old_way": "Presenning",
+  "variants": "storlek efter modell",
+  "swedish_equivalent": {
+   "retailer": "PR: 0 träffar på vattenskoterkapell; kedjor obekräftade",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "träs över skotern på trailern"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "uppläggning okt",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "ej sett"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "en",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "modellstorlek"
+   },
+   "hook": {
+    "text": "Står vattenskotern ute i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "FAIL",
+    "reason": "vattenskotrar i Sverige uppskattningsvis 40–60 000 — under 100 000 hushåll; ägaren är yngre än 45–70"
+   }
+  },
+  "negative_space_flags": [
+   "kapell",
+   "liten ägarklass",
+   "fel ålder"
+  ],
+  "eliminated_at": "audience",
+  "structure_match": 35,
+  "category_novelty": 40,
+  "tier": "C",
+  "tier_provisional": true,
+  "biggest_risk": "för liten och för ung publik",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com jet ski cover trailerable",
+   "PR: vattenskoterkapell"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601100400104656",
+  "url_se": "https://www.temu.com/se/g-601100400104656.html",
+  "title": null,
+  "title_from_search": "Kayak cart with 10 in airless wheels, collapsible",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Kajak",
+  "owner_owns": "Kajak",
+  "friction": "Bära kajaken från vattnet till förrådet vid upptagning",
+  "old_way": "Bära på axeln",
+  "variants": "en",
+  "swedish_equivalent": {
+   "retailer": "PR: 27 produkter 449–1 225 kr (vidaXL, VEVOR, Paddlespot) — commoditiserad; Jula/Biltema obekräftat men troligt",
+   "price_sek": 449,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Paddlespot kajakvagn liten",
+   "price_sek": 449,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "under kajaken"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "upptagning",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "svensk mass-commoditisering (27 produkter på PR från 449 kr)"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "en",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en"
+   },
+   "hook": {
+    "text": "Tung att bära, kajaken?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "kajakägare"
+   }
+  },
+  "negative_space_flags": [
+   "commodity",
+   "jämförelsehandlad"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "tier_provisional": true,
+  "biggest_risk": "commodity",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com kayak cart trolley wheels",
+   "PR: kajakvagn"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099582105476",
+  "url_se": "https://www.temu.com/se/g-601099582105476.html",
+  "title": null,
+  "title_from_search": "2 pcs waterproof boat seat covers, fits most seats up to 25 in",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Båtstolar (pedestal/captain) i öppen båt",
+  "owner_owns": "Styrpulpetbåt med stolar",
+  "friction": "Stolarna står ute under vintern, spricker och möglar",
+  "old_way": "Presenning över hela båten",
+  "variants": "'fits most' — mått saknas",
+  "swedish_equivalent": {
+   "retailer": "PR: INF vattentätt Oxford stolsskydd yacht 169 kr, 3 butiker — samma form, billigare",
+   "price_sek": 169,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "INF stolsskydd",
+   "price_sek": 169,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "över en stol i båten"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "uppläggning",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "look-alike 169 kr i 3 butiker — inget ankare över oss"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "2-pack",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "'passar de flesta' utan mått"
+   },
+   "hook": {
+    "text": "Möglar båtstolarna i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "svenska öppna båtar har oftast bänkar, inte pedestal-stolar"
+   }
+  },
+  "negative_space_flags": [
+   "passform",
+   "billig look-alike",
+   "kapell"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 45,
+  "tier": "ELIM",
+  "tier_provisional": true,
+  "biggest_risk": "169 kr-look-alike",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com boat seat cushion cover waterproof pedestal",
+   "PR: båtdyna överdrag"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099659168136",
+  "url_se": "https://www.temu.com/se/g-601099659168136.html",
+  "title": null,
+  "title_from_search": "Trailer coupler lock, fits 2 / 2 5/16 in couplers",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Båttrailerns kulkoppling",
+  "owner_owns": "Trailer som står på tomten över vintern",
+  "friction": "Trailer + båt stjäls från uppfarten",
+  "old_way": "Kätting + hänglås",
+  "variants": "tumkopplingar (US) — svenska kopplingar är 50 mm",
+  "swedish_equivalent": {
+   "retailer": "PR: 1000+ (ABUS 599 kr 7 butiker, Carpoint 195 kr, Combilock …); Biltema/Jula säljer kopplingslås (minne, obekräftat)",
+   "price_sek": 599,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "ABUS 70IB",
+   "price_sek": 599,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "på kopplingen"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "trailern står stilla hela vintern",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "mass-commoditiserad kategori, kedjor har den"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "en",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "US-tummått passar inte 50 mm-koppling"
+   },
+   "hook": {
+    "text": "Står båttrailern olåst i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "trailerägare"
+   }
+  },
+  "negative_space_flags": [
+   "commodity",
+   "passform US/EU"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 25,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "tier_provisional": true,
+  "biggest_risk": "passform + commodity",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com boat trailer hitch lock coupler",
+   "PR: dragkrokslås kulkoppling",
+   "PR: navskydd trailer"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601100094895279",
+  "url_se": "https://www.temu.com/se/g-601100094895279.html",
+  "title": null,
+  "title_from_search": "2 pack bungee dock lines 4 ft",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Förtöjning vid brygga",
+  "owner_owns": "Båt vid brygga",
+  "friction": "Ryck i förtöjningen",
+  "old_way": "Vanlig lina",
+  "variants": "2-pack",
+  "swedish_equivalent": {
+   "retailer": "ej kollad — föll tidigare",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "mellan båt och brygga"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "förtöjningssäsongen är slut i sept–okt; båten tas upp",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "ej kollad"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "2–4 per båt",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "2-pack"
+   },
+   "hook": {
+    "text": "Rycker det i förtöjningen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "bryggbåtar"
+   }
+  },
+  "negative_space_flags": [
+   "förtöjningslina redan testad och förlorad",
+   "fel säsong"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 30,
+  "category_novelty": 15,
+  "tier": "ELIM",
+  "tier_provisional": true,
+  "biggest_risk": "redan förlorad kategori + fel säsong",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com mooring line snubber dock line shock absorber"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601100138956507",
+  "url_se": "https://www.temu.com/se/g-601100138956507.html",
+  "title": null,
+  "title_from_search": "Edge dock bumper, straight, 152 cm, white",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Bryggkant",
+  "owner_owns": "Egen brygga",
+  "friction": "Skrovet skrapar mot bryggan",
+  "old_way": "Gamla fendrar, bildäck",
+  "variants": "längd/färg",
+  "swedish_equivalent": {
+   "retailer": "PR: bryggfender 1000+ (Polyform 369 kr, Dan-Fender 463 kr 4 butiker, OEM 979 kr 8 butiker)",
+   "price_sek": 369,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Polyform bryggfender",
+   "price_sek": 369,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "skruvas på bryggan"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "bryggsäsongen är slut — båten tas upp, bryggan tas upp eller står tom",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "bryggfender är kedjevara/fackhandel med många butiker"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "flera per brygga",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "längd"
+   },
+   "hook": {
+    "text": "Skrapar båten mot bryggan?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "bryggägare"
+   }
+  },
+  "negative_space_flags": [
+   "fel säsong",
+   "commodity",
+   "montering"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 25,
+  "category_novelty": 55,
+  "tier": "ELIM",
+  "tier_provisional": true,
+  "biggest_risk": "säsong",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com dock edge bumper fender profile",
+   "PR: bryggfender"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099596740532",
+  "url_se": "https://www.temu.com/se/g-601099596740532.html",
+  "title": null,
+  "title_from_search": "Dock stairs, adjustable aluminium dock ladder with handrails",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Brygga",
+  "owner_owns": "Egen brygga",
+  "friction": "Svårt att ta sig upp ur vattnet",
+  "old_way": "Gammal stege",
+  "variants": "höjd",
+  "swedish_equivalent": {
+   "retailer": "PR: bryggstege 43 produkter (Laggo 1 199 kr 6 butiker, Seatec 1 689 kr)",
+   "price_sek": 1199,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Laggo bryggstege",
+   "price_sek": 1199,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "på bryggan"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "badsäsongen är slut",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "fackhandel/kedja, många butiker"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "en",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "höjd"
+   },
+   "hook": {
+    "text": "Svårt att ta sig upp på bryggan?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "bryggägare"
+   }
+  },
+  "negative_space_flags": [
+   "fel säsong",
+   "> 1 000 kr troligt",
+   "montering"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 20,
+  "category_novelty": 50,
+  "tier": "ELIM",
+  "tier_provisional": true,
+  "biggest_risk": "säsong + pris",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com dock ladder boarding",
+   "PR: bryggstege"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099876638963",
+  "url_se": "https://www.temu.com/se/g-601099876638963.html",
+  "title": null,
+  "title_from_search": "Outboard tiller handle extension, aluminium, 62–82 cm",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Rorkultsmotor",
+  "owner_owns": "Småbåt med rorkult",
+  "friction": "Sitter fel i båten, når inte rorkulten",
+  "old_way": "Sträcka sig",
+  "variants": "en",
+  "swedish_equivalent": {
+   "retailer": "ej kollad",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "på rorkulten"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "används på sjön — säsongen är slut i sept–okt",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "ej kollad"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "en",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en"
+   },
+   "hook": {
+    "text": "Når du inte rorkulten?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "småbåtar"
+   }
+  },
+  "negative_space_flags": [
+   "fel säsong"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 35,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "tier_provisional": true,
+  "biggest_risk": "säsong",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com outboard tiller handle extension"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099575470280",
+  "url_se": "https://www.temu.com/se/g-601099575470280.html",
+  "title": null,
+  "title_from_search": "LED submersible boat trailer light kit",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Båttrailer",
+  "owner_owns": "Trailer",
+  "friction": "Belysningen dör efter doppning",
+  "old_way": "Byta glödlampor",
+  "variants": "kit",
+  "swedish_equivalent": {
+   "retailer": "PR: 53 produkter (vidaXL 683 kr, Hella …); Biltema/Jula säljer trailerbelysning (minne, obekräftat)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "på trailern"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "upptagningstransport",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "kedjevara/commodity"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "en",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "kontakt 7/13-polig, E-märkning"
+   },
+   "hook": {
+    "text": "Slocknar trailerbelysningen efter sjösättningen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "trailerägare"
+   }
+  },
+  "negative_space_flags": [
+   "commodity",
+   "montering/el",
+   "E-godkännande krävs i Sverige"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 25,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "tier_provisional": true,
+  "biggest_risk": "ej E-märkt + commodity",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com boat trailer light LED submersible",
+   "PR: trailerbelysning led båttrailer"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099904233226",
+  "url_se": "https://www.temu.com/se/g-601099904233226.html",
+  "title": null,
+  "title_from_search": "Boat trailer bunk carpet 12 in × 50 ft, marine grade",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Trailerbunkar",
+  "owner_owns": "Bunktrailer",
+  "friction": "Sliten bunkmatta repar skrovet",
+  "old_way": "Byta matta",
+  "variants": "metervara",
+  "swedish_equivalent": {
+   "retailer": "ej kollad",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "på bunkarna"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "syns vid upptagning",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "ej kollad"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "en rulle",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "metervara — måste mätas, häftas"
+   },
+   "hook": {
+    "text": "Sliten matta på trailerbunkarna?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "bunktrailers är minoritet i Sverige"
+   }
+  },
+  "negative_space_flags": [
+   "montering (häftpistol)",
+   "mätning",
+   "bunktrailer-minoritet"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 25,
+  "category_novelty": 70,
+  "tier": "C",
+  "tier_provisional": true,
+  "biggest_risk": "montering + publik",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com boat trailer bunk slides guide pads"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099614786727",
+  "url_se": "https://www.temu.com/se/g-601099614786727.html",
+  "title": null,
+  "title_from_search": "Wall mount kayak storage rack, 70 kg, paddle holder",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Kajak i garage/under altan",
+  "owner_owns": "Kajak",
+  "friction": "Kajaken tar golvplats i garaget",
+  "old_way": "På golvet/på bockar",
+  "variants": "en",
+  "swedish_equivalent": {
+   "retailer": "PR: VEVOR kajakställ 961 kr, vidaXL förvaringsställ 1 874 kr (3 butiker)",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "objektet förvaras inomhus när stället används — 0/9 vinnare"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "upptagning",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "marketplace-varor 961+ kr"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "två kajaker = två fästen",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en"
+   },
+   "hook": {
+    "text": "Var ska kajaken hänga i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "kajakägare"
+   }
+  },
+  "negative_space_flags": [
+   "inomhus",
+   "montering i vägg"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 30,
+  "category_novelty": 55,
+  "tier": "ELIM",
+  "tier_provisional": true,
+  "biggest_risk": "inomhus + montering",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com kayak storage rack wall hoist",
+   "PR: kajakskydd"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "602380619876633",
+  "url_se": "https://www.temu.com/se/g-602380619876633.html",
+  "title": null,
+  "title_from_search": "4 pack hanging moisture absorber bags, charcoal, boat/closet",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Kajuta/båt under presenning",
+  "owner_owns": "Båt med kajuta",
+  "friction": "Mögel och lukt i kajutan över vintern",
+  "old_way": "Avfuktare på el, öppna luckor",
+  "variants": "4-pack",
+  "swedish_equivalent": {
+   "retailer": "PR: 1852 Marine luftavfuktare 85 kr 3 butiker; Biltema/Jula/Rusta säljer fuktabsorberare (minne, obekräftat)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "förbrukningsvara"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "mögel/lukt i kajutan syns i oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "kedjevara"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "flera per båt",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "4-pack"
+   },
+   "hook": {
+    "text": "Luktar det mögel i kajutan?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "kajutbåtar"
+   }
+  },
+  "negative_space_flags": [
+   "förbrukning",
+   "commodity",
+   "< 199 kr"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 15,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "tier_provisional": true,
+  "biggest_risk": "förbrukning",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com boat dehumidifier moisture absorber cabin",
+   "PR: avfuktare båt"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099512967760",
+  "url_se": "https://www.temu.com/se/g-601099512967760.html",
+  "title": null,
+  "title_from_search": "2 pcs battery terminal protective covers, anti-corrosion",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Båtbatteri",
+  "owner_owns": "Båt med startbatteri",
+  "friction": "Ärgade poler",
+  "old_way": "Vaselin",
+  "variants": "2 pcs",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula säljer polskydd (minne, obekräftat)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "commodity-smådel < 199 kr"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "batteriet tas ur i okt",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "kedjevara"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "ett par per batteri",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "2 pcs"
+   },
+   "hook": {
+    "text": "Ärgar polerna på båtbatteriet?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "båtägare"
+   }
+  },
+  "negative_space_flags": [
+   "< 199 kr",
+   "commodity"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 15,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "tier_provisional": true,
+  "biggest_risk": "pris",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com marine battery box strap terminal cover"
+  ]
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099529754667",
+  "url_se": "https://www.temu.com/se/g-601099529754667.html",
+  "title": null,
+  "title_from_search": "20 pcs boat cover snap extenders 1 in",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Kapell med tryckknappar",
+  "owner_owns": "Båt med kapell",
+  "friction": "Kapellet har krympt, knapparna når inte",
+  "old_way": "Dra och slita",
+  "variants": "20-pack",
+  "swedish_equivalent": {
+   "retailer": "ej kollad",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "på kapellets knappar"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "kapellet sätts på i sept–okt; krympt kapell märks då",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "ej kollad"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "ett paket",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "20-pack"
+   },
+   "hook": {
+    "text": "Når kapellknapparna inte längre?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "kapellbåtar"
+   }
+  },
+  "negative_space_flags": [
+   "< 199 kr troligt",
+   "smådel"
+  ],
+  "eliminated_at": null,
+  "structure_match": 35,
+  "category_novelty": 65,
+  "tier": "C (< 199 kr)",
+  "tier_provisional": true,
+  "biggest_risk": "pris under 199 kr",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com boat cover tie down strap clips snap"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "snap-förlängare 20-pack: smådel under 199 kr"
+ },
+ {
+  "kluster": "bat",
+  "goods_id": "601099517756820",
+  "url_se": "https://www.temu.com/se/g-601099517756820.html",
+  "title": null,
+  "title_from_search": "Portable fuel tank 5/10/20 L with hose (discontinued on Temu)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_status": "blocked",
+  "object": "Bränsle till utombordaren",
+  "owner_owns": "Båtägare",
+  "friction": "Bensin ska tas hem/förvaras i vinter",
+  "old_way": "Dunk",
+  "variants": "5/10/20 L",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula säljer bränsledunkar (minne, obekräftat)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "ersätter en dunk ägaren redan har — commodity"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "tanken töms i okt",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "kedjevara"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "UNKNOWN — ej hämtad (Temu blockerade listningsanropen 2026-09-04 ~01:00 UTC; hämtas centralt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "en",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "liter"
+   },
+   "hook": {
+    "text": "Var förvarar du båtbensinen i vinter?",
+    "result": "OSÄKER"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "båtägare"
+   }
+  },
+  "negative_space_flags": [
+   "commodity",
+   "listningen nedlagd ('This item was discontinued')"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 15,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "tier_provisional": true,
+  "biggest_risk": "nedlagd + commodity",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com boat fuel tank cover portable"
+  ]
+ }
+]
