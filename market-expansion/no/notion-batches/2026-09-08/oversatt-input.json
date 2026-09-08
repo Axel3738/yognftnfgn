@@ -1,453 +1,282 @@
 [
  {
-  "namn": "IBC_CS_4_1",
-  "malnamn": "IBC-tanktrekk_NO_CS_4_1",
-  "prefix": "IBC",
+  "key": "overvakingskamera_SP_9_H1",
+  "namn": "Overvakningskamera_SP_9_H1",
+  "malnamn": "Overvåkingskamera_NO_SP_9_H1",
+  "vinkel": "SP",
+  "fakta": {
+   "produkt_no": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+   "pris": "899 kr",
+   "pris_ord": "åtte hundre og nittini kroner",
+   "jamforpris": "1 169 kr",
+   "jamforpris_ord": "elleve hundre og sekstini kroner",
+   "spar": "270 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": true,
+   "anmeldelser": "10 anmeldelser (5,0) på beverbutikken.no — kundcitat i SE-videon ('Jag sover bättre nu') är svenska: skriv 'Det sier en kunde hos baverbutiken.se', aldrig 'våre kunder'",
+   "garanti": "30 dagers åpent kjøp — butiken har INGEN 'garanti'/'nöjd kundgaranti': skriv alltid 'tretti dagers åpent kjøp'",
+   "material": "to linser, 355 graders dekning (aldrig 360), AI skiller mennesker fra dyr, trådløst wifi, varsel rett i telefonen",
+   "link_no": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+  },
+  "se_copy": {
+   "message": "Direkt notis i mobilen, var du än är.\nTvå linser, AI-spårning som bara larmar när det gäller.\n799 kronor idag med 30 dagars garanti.",
+   "headline": "Två linser, AI-spårning, 799 kr",
+   "description": "30 dagars nöjd-kundgaranti.",
+   "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+  },
+  "srt_orig": "srt-orig/overvakingskamera_SP_9_H1.orig.srt",
+  "srt_ut": "srt-fixed/overvakingskamera_SP_9_H1.srt"
+ },
+ {
+  "key": "overvakingskamera_SP_8_H1",
+  "namn": "Overvakningskamera_SP_8_H1",
+  "malnamn": "Overvåkingskamera_NO_SP_8_H1",
+  "vinkel": "SP",
+  "fakta": {
+   "produkt_no": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+   "pris": "899 kr",
+   "pris_ord": "åtte hundre og nittini kroner",
+   "jamforpris": "1 169 kr",
+   "jamforpris_ord": "elleve hundre og sekstini kroner",
+   "spar": "270 kr",
+   "rabatt_pct": 23,
+   "fri_frakt": true,
+   "anmeldelser": "10 anmeldelser (5,0) på beverbutikken.no — kundcitat i SE-videon ('Jag sover bättre nu') är svenska: skriv 'Det sier en kunde hos baverbutiken.se', aldrig 'våre kunder'",
+   "garanti": "30 dagers åpent kjøp — butiken har INGEN 'garanti'/'nöjd kundgaranti': skriv alltid 'tretti dagers åpent kjøp'",
+   "material": "to linser, 355 graders dekning (aldrig 360), AI skiller mennesker fra dyr, trådløst wifi, varsel rett i telefonen",
+   "link_no": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+  },
+  "se_copy": {
+   "message": "Den ser skillnad på människa och husdjur.\nDu larmas bara när det gäller – inte varje gång katten går förbi.\nTvå linser täcker hela tomten. Notis direkt i mobilen.\n799 kr idag, jämförpris 1000 kr. 30 dagars öppet köp.",
+   "headline": "Ser skillnad på människa och husdjur",
+   "description": "",
+   "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+  },
+  "srt_orig": "srt-orig/overvakingskamera_SP_8_H1.orig.srt",
+  "srt_ut": "srt-fixed/overvakingskamera_SP_8_H1.srt"
+ },
+ {
+  "key": "overvakingskamera_CS_6_H1",
+  "namn": "Overvakningskamera_CS_6_H1",
+  "malnamn": "Overvåkingskamera_NO_CS_6_H1",
   "vinkel": "CS",
   "fakta": {
-   "produkt_no": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
-   "pris": "439 kr",
-   "jamforpris": "586 kr",
-   "spar": "147 kr",
-   "rabatt_pct": 25,
+   "produkt_no": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+   "pris": "899 kr",
+   "pris_ord": "åtte hundre og nittini kroner",
+   "jamforpris": "1 169 kr",
+   "jamforpris_ord": "elleve hundre og sekstini kroner",
+   "spar": "270 kr",
+   "rabatt_pct": 23,
    "fri_frakt": true,
-   "fri_frakt_regel": "Fri frakt i Norge på ordre over 300 kr (produkten kostar 439 kr → fri frakt gäller). 'inom Sverige' → 'i Norge'.",
-   "leveranstid": "beverbutikken.no/pages/fraktinformasjon: 'Normal leveringstid er 5–10 virkedager med sporbar frakt', behandling 0–2 virkedager. '5–10 arbetsdagar' → '5–10 virkedager' är alltså SANT i Norge.",
-   "anmeldelser": "10 anmeldelser (4,7) på beverbutikken.no",
-   "matt": "120 × 100 × 116 cm, passer standard 1000-liters IBC",
-   "material": "210D oxfordstoff, grønt, glidelås, åpning på toppen",
-   "garanti": "30 dagers åpent kjøp (skriv aldrig 'garanti')",
-   "betalning": "Klarna – få først, betal senere (gäller i Norge)",
-   "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+   "anmeldelser": "10 anmeldelser (5,0) på beverbutikken.no — kundcitat i SE-videon ('Jag sover bättre nu') är svenska: skriv 'Det sier en kunde hos baverbutiken.se', aldrig 'våre kunder'",
+   "garanti": "30 dagers åpent kjøp — butiken har INGEN 'garanti'/'nöjd kundgaranti': skriv alltid 'tretti dagers åpent kjøp'",
+   "material": "to linser, 355 graders dekning (aldrig 360), AI skiller mennesker fra dyr, trådløst wifi, varsel rett i telefonen",
+   "link_no": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
   },
   "se_copy": {
-   "message": "489 kr istället för 636 kr.\n147 kr mindre för samma 210D Oxford-tyg som stänger ute ljuset.\nAlgerna kommer aldrig igång.",
-   "headline": "489 kr istället för 636 kr",
-   "description": "23 % rabatt. Fri frakt inom Sverige.",
-   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+   "message": "Tre personer i bild. En hund bredvid dem.\nKameran larmar för personerna – inte för hunden.\nTvå linser. 355 grader. Hela tomten.\n799 kr i stället för 1 000 kr.",
+   "headline": "Larmar för personer. Inte för hunden.",
+   "description": "",
+   "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
   },
-  "bildtexter": [
-   {
-    "typ": "platta",
-    "rader": [
-     "489 kr istället för 636 kr",
-     "147 kr mindre för samma 210D Oxford-tyg som",
-     "stänger ute ljuset."
-    ],
-    "block": [
-     [
-      1,
-      2
-     ]
-    ],
-    "stryk_del": {
-     "0": "636 kr"
-    }
-   },
-   {
-    "typ": "band",
-    "rader": [
-     "210D Oxford-tyg · Blixtlås · Öppning upptill"
-    ]
-   },
-   {
-    "typ": "knapp",
-    "rader": [
-     "Beställ idag – 489 kr"
-    ]
-   }
-  ],
-  "varning": [
-   "Svenskt pris 489/636 kr, skillnad 147 kr — NO-pris 439/586 kr, skillnad 147 kr (samma tal, stämmer)."
-  ],
-  "anm": null,
-  "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+  "srt_orig": "srt-orig/overvakingskamera_CS_6_H1.orig.srt",
+  "srt_ut": "srt-fixed/overvakingskamera_CS_6_H1.srt"
  },
  {
-  "namn": "IBC_BOF_6_1",
-  "malnamn": "IBC-tanktrekk_NO_BOF_6_1",
-  "prefix": "IBC",
-  "vinkel": "BOF",
+  "key": "overvakingskamera_SP_13_H1",
+  "namn": "Overvakningskamera_SP_13_H1",
+  "malnamn": "Overvåkingskamera_NO_SP_13_H1",
+  "vinkel": "SP",
   "fakta": {
-   "produkt_no": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
-   "pris": "439 kr",
-   "jamforpris": "586 kr",
-   "spar": "147 kr",
-   "rabatt_pct": 25,
+   "produkt_no": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+   "pris": "899 kr",
+   "pris_ord": "åtte hundre og nittini kroner",
+   "jamforpris": "1 169 kr",
+   "jamforpris_ord": "elleve hundre og sekstini kroner",
+   "spar": "270 kr",
+   "rabatt_pct": 23,
    "fri_frakt": true,
-   "fri_frakt_regel": "Fri frakt i Norge på ordre over 300 kr (produkten kostar 439 kr → fri frakt gäller). 'inom Sverige' → 'i Norge'.",
-   "leveranstid": "beverbutikken.no/pages/fraktinformasjon: 'Normal leveringstid er 5–10 virkedager med sporbar frakt', behandling 0–2 virkedager. '5–10 arbetsdagar' → '5–10 virkedager' är alltså SANT i Norge.",
-   "anmeldelser": "10 anmeldelser (4,7) på beverbutikken.no",
-   "matt": "120 × 100 × 116 cm, passer standard 1000-liters IBC",
-   "material": "210D oxfordstoff, grønt, glidelås, åpning på toppen",
-   "garanti": "30 dagers åpent kjøp (skriv aldrig 'garanti')",
-   "betalning": "Klarna – få først, betal senere (gäller i Norge)",
-   "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+   "anmeldelser": "10 anmeldelser (5,0) på beverbutikken.no — kundcitat i SE-videon ('Jag sover bättre nu') är svenska: skriv 'Det sier en kunde hos baverbutiken.se', aldrig 'våre kunder'",
+   "garanti": "30 dagers åpent kjøp — butiken har INGEN 'garanti'/'nöjd kundgaranti': skriv alltid 'tretti dagers åpent kjøp'",
+   "material": "to linser, 355 graders dekning (aldrig 360), AI skiller mennesker fra dyr, trådløst wifi, varsel rett i telefonen",
+   "link_no": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
   },
   "se_copy": {
-   "message": "Fri frakt inom Sverige, 5–10 arbetsdagar.\nBeställ nu så är den på plats innan tanken hinner grönska.\nKlarna – betala sen. 30 dagars öppet köp.",
-   "headline": "Fri frakt, 5–10 arbetsdagar",
-   "description": "Klarna – betala sen. 30 dagars öppet köp.",
-   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+   "message": "\"Jag sover bättre nu.\" – det säger våra kunder om övervakningskameran med dubbel lins och AI-spårning.\nTvå linser ser hela tomten samtidigt, ingen blind vinkel.\n799 kr idag (ord. 1000 kr) – 30 dagars nöjd-kund-garanti.",
+   "headline": "Jag sover bättre nu.",
+   "description": "",
+   "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
   },
-  "bildtexter": [
-   {
-    "typ": "platta",
-    "rader": [
-     "Fri frakt inom Sverige,",
-     "5–10 arbetsdagar.",
-     "Beställ nu så är den på plats innan tanken hinner",
-     "grönska."
-    ],
-    "block": [
-     [
-      0,
-      1
-     ],
-     [
-      2,
-      3
-     ]
-    ]
-   },
-   {
-    "typ": "band",
-    "rader": [
-     "Fri frakt · Klarna – betala sen · 30 dagars öppet köp"
-    ]
-   },
-   {
-    "typ": "knapp",
-    "rader": [
-     "Beställ nu"
-    ]
-   }
-  ],
-  "varning": [
-   "'inom Sverige' stryks. Fri frakt gäller i Norge över 300 kr (439 kr). Leveranstiden '5–10 arbetsdagar' får bara stå kvar om NO-butiken säger samma — annars generalisera.",
-   "Skåpbil till vänster om knappen är grafik."
-  ],
-  "anm": null,
-  "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+  "srt_orig": "srt-orig/overvakingskamera_SP_13_H1.orig.srt",
+  "srt_ut": "srt-fixed/overvakingskamera_SP_13_H1.srt"
  },
  {
-  "namn": "IBC_RV_4_1",
-  "malnamn": "IBC-tanktrekk_NO_RV_4_1",
-  "prefix": "IBC",
-  "vinkel": "RV",
+  "key": "overvakingskamera_SP_12_H1",
+  "namn": "Overvakningskamera_SP_12_H1",
+  "malnamn": "Overvåkingskamera_NO_SP_12_H1",
+  "vinkel": "SP",
   "fakta": {
-   "produkt_no": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
-   "pris": "439 kr",
-   "jamforpris": "586 kr",
-   "spar": "147 kr",
-   "rabatt_pct": 25,
+   "produkt_no": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+   "pris": "899 kr",
+   "pris_ord": "åtte hundre og nittini kroner",
+   "jamforpris": "1 169 kr",
+   "jamforpris_ord": "elleve hundre og sekstini kroner",
+   "spar": "270 kr",
+   "rabatt_pct": 23,
    "fri_frakt": true,
-   "fri_frakt_regel": "Fri frakt i Norge på ordre over 300 kr (produkten kostar 439 kr → fri frakt gäller). 'inom Sverige' → 'i Norge'.",
-   "leveranstid": "beverbutikken.no/pages/fraktinformasjon: 'Normal leveringstid er 5–10 virkedager med sporbar frakt', behandling 0–2 virkedager. '5–10 arbetsdagar' → '5–10 virkedager' är alltså SANT i Norge.",
-   "anmeldelser": "10 anmeldelser (4,7) på beverbutikken.no",
-   "matt": "120 × 100 × 116 cm, passer standard 1000-liters IBC",
-   "material": "210D oxfordstoff, grønt, glidelås, åpning på toppen",
-   "garanti": "30 dagers åpent kjøp (skriv aldrig 'garanti')",
-   "betalning": "Klarna – få først, betal senere (gäller i Norge)",
-   "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+   "anmeldelser": "10 anmeldelser (5,0) på beverbutikken.no — kundcitat i SE-videon ('Jag sover bättre nu') är svenska: skriv 'Det sier en kunde hos baverbutiken.se', aldrig 'våre kunder'",
+   "garanti": "30 dagers åpent kjøp — butiken har INGEN 'garanti'/'nöjd kundgaranti': skriv alltid 'tretti dagers åpent kjøp'",
+   "material": "to linser, 355 graders dekning (aldrig 360), AI skiller mennesker fra dyr, trådløst wifi, varsel rett i telefonen",
+   "link_no": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
   },
   "se_copy": {
-   "message": "\"Bra kvalitet och lätt att använda. Passade min 1000 liters tank utan problem.\"\n— Johan, ★★★★★",
-   "headline": "Johan: Passade tanken utan problem",
-   "description": "Passar standard 1000L IBC-tank.",
-   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+   "message": "\"Jag sover bättre nu.\" Det är vad våra kunder säger.\nTvå linser täcker hela tomten. AI larmar bara på människor – aldrig på hunden.\nDirekt notis i mobilen, var du än är.\n799 kr idag – 30 dagars garanti. Handla nu.",
+   "headline": "799 kr idag – spara 201 kr",
+   "description": "",
+   "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
   },
-  "bildtexter": [
-   {
-    "typ": "platta",
-    "rader": [
-     "Johan",
-     "”Bra kvalitet och lätt att använda.",
-     "Passade min 1000 liters tank utan",
-     "problem.”"
-    ],
-    "block": [
-     [
-      1,
-      2,
-      3
-     ]
-    ]
-   },
-   {
-    "typ": "fototext",
-    "rader": [
-     "Passar standard 1000L IBC-tank"
-    ]
-   },
-   {
-    "typ": "knapp",
-    "rader": [
-     "Beställ idag"
-    ]
-   }
-  ],
-  "varning": [
-   "Recensionen är svensk — översätts, attribueras till baverbutiken.se efter namnet.",
-   "Plattan hittas inte av detektorn (vit över himmel) — override. Inget pris."
-  ],
-  "anm": null,
-  "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+  "srt_orig": "srt-orig/overvakingskamera_SP_12_H1.orig.srt",
+  "srt_ut": "srt-fixed/overvakingskamera_SP_12_H1.srt"
  },
  {
-  "namn": "IBC_BOF_5_1",
-  "malnamn": "IBC-tanktrekk_NO_BOF_5_1",
-  "prefix": "IBC",
-  "vinkel": "BOF",
+  "key": "batmotortrekk_UG_1_H1",
+  "namn": "Batmotor_UG_1_H1",
+  "malnamn": "Batmotortrekk_NO_UG_1_H1",
+  "vinkel": "UG",
   "fakta": {
-   "produkt_no": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
-   "pris": "439 kr",
-   "jamforpris": "586 kr",
-   "spar": "147 kr",
-   "rabatt_pct": 25,
+   "produkt_no": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+   "pris": "529 kr",
+   "pris_ord": "fem hundre og tjueni kroner",
+   "jamforpris": "882 kr",
+   "jamforpris_ord": "åtte hundre og åttito kroner",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
    "fri_frakt": true,
-   "fri_frakt_regel": "Fri frakt i Norge på ordre over 300 kr (produkten kostar 439 kr → fri frakt gäller). 'inom Sverige' → 'i Norge'.",
-   "leveranstid": "beverbutikken.no/pages/fraktinformasjon: 'Normal leveringstid er 5–10 virkedager med sporbar frakt', behandling 0–2 virkedager. '5–10 arbetsdagar' → '5–10 virkedager' är alltså SANT i Norge.",
-   "anmeldelser": "10 anmeldelser (4,7) på beverbutikken.no",
-   "matt": "120 × 100 × 116 cm, passer standard 1000-liters IBC",
-   "material": "210D oxfordstoff, grønt, glidelås, åpning på toppen",
-   "garanti": "30 dagers åpent kjøp (skriv aldrig 'garanti')",
-   "betalning": "Klarna – få først, betal senere (gäller i Norge)",
-   "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+   "anmeldelser": "1 anmeldelse (1,0) på beverbutikken.no — använd ALDRIG norska betyg. SE-videon UG_2 säger 'Åtta riktiga recensioner, alla fem stjärnor' — det är svenska recensioner: skriv 'Åtte anmeldelser hos baverbutiken.se, alle fem stjerner' (attribuera, hitta inte på)",
+   "garanti": "30 dagers åpent kjøp",
+   "material": "420D oxfordstoff (talet säger 'Fyrahundratjugo D' — skriv 'fire hundre og tjue D oxfordstoff'), dekker fra deksel til rigg, stropp med spenne, ingen verktøy",
+   "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
   },
   "se_copy": {
-   "message": "Presenningen som skulle skydda blåser av vid första höststormen.\nEtt 210D Oxford-överdrag med blixtlås sitter kvar.\nSkydda tanken innan hösten.",
-   "headline": "Presenningen blåser av i höststormen",
-   "description": "210D Oxford-överdrag med blixtlås.",
-   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+   "message": "Båten åker upp om några veckor. I år får motorn ett riktigt skydd.\n420D Oxford-tyg, kåpa till rigg – inte bara toppen.\nIngen verktyg. Dra över, spänn remmen.\n579 kr (ord. 965 kr). 30 dagars öppet köp.",
+   "headline": "420D-skydd, kåpa till riggen",
+   "description": "",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
   },
-  "bildtexter": [
-   {
-    "typ": "platta",
-    "rader": [
-     "Presenningen som skulle",
-     "skydda blåser av vid",
-     "första höststormen.",
-     "Ett 210D Oxford-överdrag med blixtlås sitter kvar."
-    ],
-    "block": [
-     [
-      0,
-      1,
-      2
-     ]
-    ]
-   },
-   {
-    "typ": "band",
-    "rader": [
-     "Ingen presenning · Inga gummiband · 210D Oxford-tyg"
-    ]
-   },
-   {
-    "typ": "knapp",
-    "rader": [
-     "Skydda tanken innan hösten"
-    ]
-   }
-  ],
-  "varning": null,
-  "anm": "Vit platta över himmel — detektorn hittar den inte, override. Inget pris.",
-  "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+  "srt_orig": "srt-orig/batmotortrekk_UG_1_H1.orig.srt",
+  "srt_ut": "srt-fixed/batmotortrekk_UG_1_H1.srt"
  },
  {
-  "namn": "IBC_BOF_4_1",
-  "malnamn": "IBC-tanktrekk_NO_BOF_4_1",
-  "prefix": "IBC",
-  "vinkel": "BOF",
+  "key": "batmotortrekk_SP_1_H5",
+  "namn": "Batmotor_SP_1_H5",
+  "malnamn": "Batmotortrekk_NO_SP_1_H5",
+  "vinkel": "SP",
   "fakta": {
-   "produkt_no": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
-   "pris": "439 kr",
-   "jamforpris": "586 kr",
-   "spar": "147 kr",
-   "rabatt_pct": 25,
+   "produkt_no": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+   "pris": "529 kr",
+   "pris_ord": "fem hundre og tjueni kroner",
+   "jamforpris": "882 kr",
+   "jamforpris_ord": "åtte hundre og åttito kroner",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
    "fri_frakt": true,
-   "fri_frakt_regel": "Fri frakt i Norge på ordre over 300 kr (produkten kostar 439 kr → fri frakt gäller). 'inom Sverige' → 'i Norge'.",
-   "leveranstid": "beverbutikken.no/pages/fraktinformasjon: 'Normal leveringstid er 5–10 virkedager med sporbar frakt', behandling 0–2 virkedager. '5–10 arbetsdagar' → '5–10 virkedager' är alltså SANT i Norge.",
-   "anmeldelser": "10 anmeldelser (4,7) på beverbutikken.no",
-   "matt": "120 × 100 × 116 cm, passer standard 1000-liters IBC",
-   "material": "210D oxfordstoff, grønt, glidelås, åpning på toppen",
-   "garanti": "30 dagers åpent kjøp (skriv aldrig 'garanti')",
-   "betalning": "Klarna – få først, betal senere (gäller i Norge)",
-   "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+   "anmeldelser": "1 anmeldelse (1,0) på beverbutikken.no — använd ALDRIG norska betyg. SE-videon UG_2 säger 'Åtta riktiga recensioner, alla fem stjärnor' — det är svenska recensioner: skriv 'Åtte anmeldelser hos baverbutiken.se, alle fem stjerner' (attribuera, hitta inte på)",
+   "garanti": "30 dagers åpent kjøp",
+   "material": "420D oxfordstoff (talet säger 'Fyrahundratjugo D' — skriv 'fire hundre og tjue D oxfordstoff'), dekker fra deksel til rigg, stropp med spenne, ingen verktøy",
+   "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
   },
   "se_copy": {
-   "message": "Blixtlås. Inte presenning och gummiband.\nPå och av med dragkedja — ingen kamp med väder eller vind.\nÖppning upptill. Passar 1000-liters IBC-tank.",
-   "headline": "Blixtlås. Inte presenning.",
-   "description": "Öppning upptill. Passar 1000-liters IBC.",
-   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+   "message": "Dra över. Spänn remmen. Klart.\n\nKraftigt 420D Oxford-tyg som täcker hela motorn – inga verktyg, inga krångliga fästen.\n\nFör dig som fiskar, bor i skärgården eller bara vill slippa krångel vid bryggan.",
+   "headline": "Dra över. Spänn. Klart.",
+   "description": "Heltäckande skydd, 579 kr",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
   },
-  "bildtexter": [
-   {
-    "typ": "platta",
-    "rader": [
-     "Blixtlås.",
-     "Inte presenning och",
-     "gummiband.",
-     "På och av med dragkedja — ingen kamp med väder",
-     "eller vind."
-    ],
-    "block": [
-     [
-      0,
-      1,
-      2
-     ],
-     [
-      3,
-      4
-     ]
-    ]
-   },
-   {
-    "typ": "band",
-    "rader": [
-     "Dragkedja · Öppning upptill · Passar 1000-liters IBC"
-    ]
-   },
-   {
-    "typ": "knapp",
-    "rader": [
-     "Se hur enkelt det är"
-    ]
-   }
-  ],
-  "varning": null,
-  "anm": "Halvgenomskinlig platta över grönt tyg — detektorn hittar 6 rader (dragkedjan överst räknas som rad), override på plattan. Inget pris.",
-  "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+  "srt_orig": "srt-orig/batmotortrekk_SP_1_H5.orig.srt",
+  "srt_ut": "srt-fixed/batmotortrekk_SP_1_H5.srt"
  },
  {
-  "namn": "IBC_PD_5_1",
-  "malnamn": "IBC-tanktrekk_NO_PD_5_1",
-  "prefix": "IBC",
-  "vinkel": "PD",
+  "key": "batmotortrekk_SP_1_H6",
+  "namn": "Batmotor_SP_1_H6",
+  "malnamn": "Batmotortrekk_NO_SP_1_H6",
+  "vinkel": "SP",
   "fakta": {
-   "produkt_no": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
-   "pris": "439 kr",
-   "jamforpris": "586 kr",
-   "spar": "147 kr",
-   "rabatt_pct": 25,
+   "produkt_no": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+   "pris": "529 kr",
+   "pris_ord": "fem hundre og tjueni kroner",
+   "jamforpris": "882 kr",
+   "jamforpris_ord": "åtte hundre og åttito kroner",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
    "fri_frakt": true,
-   "fri_frakt_regel": "Fri frakt i Norge på ordre over 300 kr (produkten kostar 439 kr → fri frakt gäller). 'inom Sverige' → 'i Norge'.",
-   "leveranstid": "beverbutikken.no/pages/fraktinformasjon: 'Normal leveringstid er 5–10 virkedager med sporbar frakt', behandling 0–2 virkedager. '5–10 arbetsdagar' → '5–10 virkedager' är alltså SANT i Norge.",
-   "anmeldelser": "10 anmeldelser (4,7) på beverbutikken.no",
-   "matt": "120 × 100 × 116 cm, passer standard 1000-liters IBC",
-   "material": "210D oxfordstoff, grønt, glidelås, åpning på toppen",
-   "garanti": "30 dagers åpent kjøp (skriv aldrig 'garanti')",
-   "betalning": "Klarna – få først, betal senere (gäller i Norge)",
-   "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+   "anmeldelser": "1 anmeldelse (1,0) på beverbutikken.no — använd ALDRIG norska betyg. SE-videon UG_2 säger 'Åtta riktiga recensioner, alla fem stjärnor' — det är svenska recensioner: skriv 'Åtte anmeldelser hos baverbutiken.se, alle fem stjerner' (attribuera, hitta inte på)",
+   "garanti": "30 dagers åpent kjøp",
+   "material": "420D oxfordstoff (talet säger 'Fyrahundratjugo D' — skriv 'fire hundre og tjue D oxfordstoff'), dekker fra deksel til rigg, stropp med spenne, ingen verktøy",
+   "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
   },
   "se_copy": {
-   "message": "210D Oxford-tyg mellan solen och ditt regnvatten.\nIngen presenning, inga gummiband — bara ett blixtlås.\nAlgerna kommer aldrig igång.",
-   "headline": "210D Oxford-tyg mot solen",
-   "description": "Ingen presenning, inga gummiband.",
-   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+   "message": "Regn, sol och salt sliter på motorn varje dag. Båtmotorskydd 420D i kraftigt Oxford-tyg täcker hela motorn och spänns fast vid kaj. 579 kr istället för 965 kr – Bäverbutiken.se",
+   "headline": "579 kr: skydd mot regn, sol, salt",
+   "description": "",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
   },
-  "bildtexter": [
-   {
-    "typ": "platta",
-    "rader": [
-     "210D Oxford-tyg mellan",
-     "solen och ditt regnvatten.",
-     "Ingen presenning, inga gummiband — bara ett",
-     "blixtlås."
-    ],
-    "block": [
-     [
-      0,
-      1
-     ],
-     [
-      2,
-      3
-     ]
-    ]
-   },
-   {
-    "typ": "band",
-    "rader": [
-     "Stänger ute UV · Öppning upptill · Passar 1000L IBC"
-    ]
-   },
-   {
-    "typ": "knapp",
-    "rader": [
-     "Skydda din tank idag"
-    ]
-   }
-  ],
-  "varning": null,
-  "anm": "Halvgenomskinlig platta över trädgårdsfoto — override. Inget pris.",
-  "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+  "srt_orig": "srt-orig/batmotortrekk_SP_1_H6.orig.srt",
+  "srt_ut": "srt-fixed/batmotortrekk_SP_1_H6.srt"
  },
  {
-  "namn": "IBC_RV_3_1",
-  "malnamn": "IBC-tanktrekk_NO_RV_3_1",
-  "prefix": "IBC",
-  "vinkel": "RV",
+  "key": "batmotortrekk_CS_5_H1",
+  "namn": "Batmotor_CS_5_H1",
+  "malnamn": "Batmotortrekk_NO_CS_5_H1",
+  "vinkel": "CS",
   "fakta": {
-   "produkt_no": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
-   "pris": "439 kr",
-   "jamforpris": "586 kr",
-   "spar": "147 kr",
-   "rabatt_pct": 25,
+   "produkt_no": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+   "pris": "529 kr",
+   "pris_ord": "fem hundre og tjueni kroner",
+   "jamforpris": "882 kr",
+   "jamforpris_ord": "åtte hundre og åttito kroner",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
    "fri_frakt": true,
-   "fri_frakt_regel": "Fri frakt i Norge på ordre over 300 kr (produkten kostar 439 kr → fri frakt gäller). 'inom Sverige' → 'i Norge'.",
-   "leveranstid": "beverbutikken.no/pages/fraktinformasjon: 'Normal leveringstid er 5–10 virkedager med sporbar frakt', behandling 0–2 virkedager. '5–10 arbetsdagar' → '5–10 virkedager' är alltså SANT i Norge.",
-   "anmeldelser": "10 anmeldelser (4,7) på beverbutikken.no",
-   "matt": "120 × 100 × 116 cm, passer standard 1000-liters IBC",
-   "material": "210D oxfordstoff, grønt, glidelås, åpning på toppen",
-   "garanti": "30 dagers åpent kjøp (skriv aldrig 'garanti')",
-   "betalning": "Klarna – få først, betal senere (gäller i Norge)",
-   "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+   "anmeldelser": "1 anmeldelse (1,0) på beverbutikken.no — använd ALDRIG norska betyg. SE-videon UG_2 säger 'Åtta riktiga recensioner, alla fem stjärnor' — det är svenska recensioner: skriv 'Åtte anmeldelser hos baverbutiken.se, alle fem stjerner' (attribuera, hitta inte på)",
+   "garanti": "30 dagers åpent kjøp",
+   "material": "420D oxfordstoff (talet säger 'Fyrahundratjugo D' — skriv 'fire hundre og tjue D oxfordstoff'), dekker fra deksel til rigg, stropp med spenne, ingen verktøy",
+   "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
   },
   "se_copy": {
-   "message": "\"Passar bra på tanken och skyddar mot solen. Precis vad jag behövde.\"\n— Sofia, ★★★★★\n489 kr, 23 % rabatt.",
-   "headline": "Sofia: Skyddar mot solen",
-   "description": "489 kr, 23 % rabatt.",
-   "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+   "message": "Regn, sol och saltvatten – hela motorn skyddad under tätt 420D-tyg. 579 kr. Ordinarie pris 965 kr, 386 kr redan avdraget i priset. Ingen rabattkod, inget nedräkningsur. Det här är priset – i dag och imorgon.",
+   "headline": "Regn, sol, salt – 579 kr, inte 965 kr.",
+   "description": "",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
   },
-  "bildtexter": [
-   {
-    "typ": "platta",
-    "rader": [
-     "Sofia",
-     "”Passar bra på tanken och skyddar mot",
-     "solen.",
-     "Precis vad jag behövde.”"
-    ],
-    "block": [
-     [
-      1,
-      2,
-      3
-     ]
-    ]
-   },
-   {
-    "typ": "fototext",
-    "rader": [
-     "489 kr, 23% rabatt"
-    ]
-   },
-   {
-    "typ": "knapp",
-    "rader": [
-     "Beställ idag"
-    ]
-   }
-  ],
-  "varning": [
-   "Recensionen är svensk (Judge.me, Bäverbutiken) — översätts, attribueras till baverbutiken.se efter namnet.",
-   "Stjärnorna ovanför namnet är grafik.",
-   "Svenskt pris 489 kr, 23 % — NO 439 kr, 25 %."
-  ],
-  "anm": null,
-  "link_no": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+  "srt_orig": "srt-orig/batmotortrekk_CS_5_H1.orig.srt",
+  "srt_ut": "srt-fixed/batmotortrekk_CS_5_H1.srt"
+ },
+ {
+  "key": "batmotortrekk_UG_2_H1",
+  "namn": "Batmotor_UG_2_H1",
+  "malnamn": "Batmotortrekk_NO_UG_2_H1",
+  "vinkel": "UG",
+  "fakta": {
+   "produkt_no": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+   "pris": "529 kr",
+   "pris_ord": "fem hundre og tjueni kroner",
+   "jamforpris": "882 kr",
+   "jamforpris_ord": "åtte hundre og åttito kroner",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "anmeldelser": "1 anmeldelse (1,0) på beverbutikken.no — använd ALDRIG norska betyg. SE-videon UG_2 säger 'Åtta riktiga recensioner, alla fem stjärnor' — det är svenska recensioner: skriv 'Åtte anmeldelser hos baverbutiken.se, alle fem stjerner' (attribuera, hitta inte på)",
+   "garanti": "30 dagers åpent kjøp",
+   "material": "420D oxfordstoff (talet säger 'Fyrahundratjugo D' — skriv 'fire hundre og tjue D oxfordstoff'), dekker fra deksel til rigg, stropp med spenne, ingen verktøy",
+   "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+  },
+  "se_copy": {
+   "message": "8 recensioner. Alla 5 stjärnor.\n\nJag drog skyddet över motorn och spände remmen. Klart – inga verktyg.\n\n420D Oxford-tyg som suttit en hel säsong, i regn och sol.",
+   "headline": "8 av 8 recensioner – 5 stjärnor",
+   "description": "579 kr, ingen kod behövs",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+  },
+  "srt_orig": "srt-orig/batmotortrekk_UG_2_H1.orig.srt",
+  "srt_ut": "srt-fixed/batmotortrekk_UG_2_H1.srt"
  }
 ]

@@ -1,0 +1,28 @@
+{
+ "overvakingskamera": {
+  "produkt": "Overvåkingskamera",
+  "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
+  "pris_nok": 899,
+  "jamforpris_nok": 1169,
+  "videos": {
+   "SP_9_H1": "meta:1339987791540054",
+   "SP_8_H1": "meta:4055932077875915",
+   "CS_6_H1": "meta:2711249119290173",
+   "SP_13_H1": "meta:4116837891783442",
+   "SP_12_H1": "meta:1015708278155418"
+  }
+ },
+ "batmotortrekk": {
+  "produkt": "Batmotortrekk",
+  "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+  "pris_nok": 529,
+  "jamforpris_nok": 882,
+  "videos": {
+   "UG_1_H1": "meta:4446021522319102",
+   "SP_1_H5": "meta:1933072994546708",
+   "SP_1_H6": "meta:2004189113613630",
+   "CS_5_H1": "meta:1056183513996276",
+   "UG_2_H1": "meta:1597942948690717"
+  }
+ }
+}

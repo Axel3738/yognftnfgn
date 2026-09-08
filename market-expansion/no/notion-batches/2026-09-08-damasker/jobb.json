@@ -1,0 +1,101 @@
+{
+  "marknad": "NO",
+  "datum": "2026-09-08-damasker",
+  "skapad": "2026-09-08T12:27:05.508Z",
+  "kvot": {
+    "heygen": null,
+    "kie": 16005.2
+  },
+  "jobb": [
+    {
+      "notion": {
+        "id": "3d2270ab908c813c9512e4eb4c9f67aa",
+        "namn": "Damasker_SP_4_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Damasker vandring",
+        "url": "https://app.notion.com/3d2270ab908c813c9512e4eb4c9f67aa",
+        "kalla": "rader-fil"
+      },
+      "namn": "Damasker_SP_4_H1",
+      "status": "HOPPA",
+      "skal": "\"Gamasjer NO | BE-ROAS 1,64 | 2026-08-30\" är PAUSED med 2465.82 kr spend — avvecklad, väntar",
+      "se": {
+        "annonsId": "120250116444830291",
+        "status": "ACTIVE",
+        "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+        "kampanjId": "120250009391470291",
+        "adset": "Damasker Vandring | SP | 2026-08-29"
+      },
+      "prefix": "Damasker",
+      "K": "SP",
+      "nr": "4",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Damasker",
+        "se_kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+        "no_prefix": "Gamasjer",
+        "adset_prefix": "Gamasjer NO",
+        "campaign_id": "120251999873390233",
+        "link": "https://beverbutikken.no/products/gamasjer-tur-holder-sno-vaete-grus-ute"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251999873390233",
+        "kampanjNamn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+        "utfall": "AVVECKLAD",
+        "spend": 2465.82,
+        "adsetNamn": "Gamasjer NO - SP",
+        "annonsNamn": "Gamasjer_NO_SP_4_H1",
+        "link": "https://beverbutikken.no/products/gamasjer-tur-holder-sno-vaete-grus-ute",
+        "prefix": "Gamasjer"
+      }
+    },
+    {
+      "notion": {
+        "id": "3d2270ab908c8151b363c9855bb6da10",
+        "namn": "Damasker_FO_1_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Damasker vandring",
+        "url": "https://app.notion.com/3d2270ab908c8151b363c9855bb6da10",
+        "kalla": "rader-fil"
+      },
+      "namn": "Damasker_FO_1_H1",
+      "status": "HOPPA",
+      "skal": "\"Gamasjer NO | BE-ROAS 1,64 | 2026-08-30\" är PAUSED med 2465.82 kr spend — avvecklad, väntar",
+      "se": {
+        "annonsId": "120250135666540291",
+        "status": "ACTIVE",
+        "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+        "kampanjId": "120250009391470291",
+        "adset": "FO | Notionrunda 2026-09-08"
+      },
+      "prefix": "Damasker",
+      "K": "FO",
+      "nr": "1",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Damasker",
+        "se_kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+        "no_prefix": "Gamasjer",
+        "adset_prefix": "Gamasjer NO",
+        "campaign_id": "120251999873390233",
+        "link": "https://beverbutikken.no/products/gamasjer-tur-holder-sno-vaete-grus-ute"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251999873390233",
+        "kampanjNamn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+        "utfall": "AVVECKLAD",
+        "spend": 2465.82,
+        "adsetNamn": "Gamasjer NO - FO",
+        "annonsNamn": "Gamasjer_NO_FO_1_H1",
+        "link": "https://beverbutikken.no/products/gamasjer-tur-holder-sno-vaete-grus-ute",
+        "prefix": "Gamasjer"
+      }
+    }
+  ]
+}
