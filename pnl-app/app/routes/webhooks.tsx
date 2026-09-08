@@ -11,15 +11,20 @@ export async function action({ request }: ActionFunctionArgs) {
       if (session) await prisma.session.deleteMany({ where: { shop } });
       break;
 
-    // GDPR-krav för App Store. Appen lagrar ingen kunddata — bara aggregerad
-    // försäljning per dag — så det finns inget att lämna ut eller radera.
+    // GDPR-krav för App Store. Appen lagrar inga kundfält — LTV-underlaget
+    // är kund-ID + orderdag + belopp, cachat högst sex timmar. Vid en
+    // raderingsbegäran slängs cachen så kunden inte finns kvar ens där.
     case "CUSTOMERS_DATA_REQUEST":
+      break;
     case "CUSTOMERS_REDACT":
+      await prisma.pnlCache.deleteMany({ where: { shop, key: "ltv:all" } });
       break;
 
     case "SHOP_REDACT":
       await prisma.$transaction([
         prisma.dailySpend.deleteMany({ where: { shop } }),
+        prisma.pnlCache.deleteMany({ where: { shop } }),
+        prisma.fixedCost.deleteMany({ where: { shop } }),
         prisma.costChange.deleteMany({ where: { shop } }),
         prisma.shopSettings.deleteMany({ where: { shop } }),
       ]);

@@ -6,6 +6,7 @@ import { NavMenu } from "@shopify/app-bridge-react";
 import polarisStyles from "@shopify/polaris/build/esm/styles.css?url";
 import { boundary } from "@shopify/shopify-app-remix/server";
 import {
+  ALL_PLANS,
   authenticate,
   billingEnabled,
   billingExemptShops,
@@ -23,7 +24,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
      sköter debitering, kvitton och avslut. */
   if (billingEnabled && !billingExemptShops.has(session.shop.toLowerCase())) {
     await billing.require({
-      plans: [STANDARD_PLAN],
+      plans: [...ALL_PLANS],
       onFailure: () => billing.request({ plan: STANDARD_PLAN }),
     });
   }
@@ -38,7 +39,9 @@ export default function App() {
       <NavMenu>
         <Link to="/app" rel="home">Vinst</Link>
         <Link to="/app/costs">Kostnader</Link>
+        <Link to="/app/import">Flytta hit</Link>
         <Link to="/app/fixed">Fasta kostnader</Link>
+        <Link to="/app/ltv">Kundvärde (LTV)</Link>
         <Link to="/app/settings">Inställningar</Link>
       </NavMenu>
       <Outlet />

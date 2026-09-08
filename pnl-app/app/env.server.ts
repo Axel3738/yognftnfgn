@@ -11,8 +11,21 @@ const REQUIRED = {
   SHOPIFY_API_SECRET: "Client secret från samma sida",
   SHOPIFY_APP_URL: "Hostingens publika URL, t.ex. https://xxx.up.railway.app",
   DATABASE_URL: "Sätts automatiskt när en PostgreSQL-databas kopplas till tjänsten",
-  SCOPES: "read_products,read_orders,read_inventory,read_reports,write_inventory",
+  SCOPES: "read_products,read_orders,read_inventory,read_reports,write_inventory,read_customers,read_all_orders",
 } as const;
+
+/* Valfria. Utan META_APP_ID/META_APP_SECRET saknas "Koppla Meta"-knappen och
+   handlaren klistrar in en token för hand — appen fungerar ändå. Är bara den
+   ena satt är det ett skrivfel, och det ska synas i loggen direkt. */
+const metaId = process.env.META_APP_ID?.trim();
+const metaSecret = process.env.META_APP_SECRET?.trim();
+if (Boolean(metaId) !== Boolean(metaSecret)) {
+  console.warn(
+    "META_APP_ID och META_APP_SECRET måste sättas tillsammans — bara den ena är satt. Meta-knappen är avstängd.",
+  );
+  delete process.env.META_APP_ID;
+  delete process.env.META_APP_SECRET;
+}
 
 const missing = Object.entries(REQUIRED).filter(([key]) => !process.env[key]?.trim());
 

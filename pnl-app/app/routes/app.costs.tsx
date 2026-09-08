@@ -141,8 +141,14 @@ export default function Costs() {
         <Layout.Section>
           <BlockStack gap="400">
             {missing > 0 ? (
-              <Banner tone="warning" title={`${missing} varianter saknar inköpspris`}>
-                Utan inköpspris räknas produkten som gratis och vinsten blir för hög.
+              <Banner
+                tone="warning"
+                title={`${missing} varianter saknar inköpspris`}
+                action={{ content: "Flytta hit från en annan app", url: "/app/import" }}
+              >
+                Utan inköpspris räknas produkten som gratis och vinsten blir för hög. Har du
+                kostnaderna i Juicy eller en annan vinstapp? Exportera dem där och släpp filen
+                under Flytta hit — kolumnerna känns igen automatiskt.
               </Banner>
             ) : (
               <Banner tone="success">Alla varianter har inköpspris.</Banner>

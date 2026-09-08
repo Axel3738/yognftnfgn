@@ -11,8 +11,13 @@
  * blir exakt istället för titelbaserad.
  */
 
-import type { AdminApiContext } from "@shopify/shopify-app-remix/server";
+import type { AdminApiContext as FullAdminApiContext } from "@shopify/shopify-app-remix/server";
 import type { ProductRow, SalesDay } from "./pnl.server";
+
+/** Allt vi behöver av admin-klienten är `graphql`. Med `removeRest` i
+ *  konfigen saknar kontexten `rest`, så den fulla typen matchar inte —
+ *  därför bara den delen vi använder. */
+export type AdminApiContext = Pick<FullAdminApiContext, "graphql">;
 
 const num = (v: unknown): number => {
   if (v == null || v === "") return 0;
@@ -178,13 +183,50 @@ async function doFetchOrderData(
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
+/** Ordrar med kund-ID för LTV-kohorterna. Hela historiken, inga rader. */
+export interface LtvOrderRaw {
+  customerId: string;
+  day: string;
+  net: number;
+}
+
+/**
+ * Alla ordrar med kund-ID — underlaget för kundvärdet. Kräver scopes
+ * `read_customers` (kundfältet) och `read_all_orders` (äldre än 60 dagar),
+ * samt godkänd Protected Customer Data-nivå 1 i Partner-dashboarden. Vi
+ * hämtar BARA kund-ID:t, inga namn eller adresser.
+ */
+export async function fetchLtvOrders(admin: AdminApiContext, timezone: string): Promise<LtvOrderRaw[]> {
+  const inner = `{
+    orders(query: "status:any") {
+      edges { node {
+        id createdAt cancelledAt test
+        customer { id }
+        subtotalPriceSet { shopMoney { amount } }
+        totalRefundedSet { shopMoney { amount } }
+      } }
+    }
+  }`;
+  const rows = await runBulk(admin, inner);
+  const out: LtvOrderRaw[] = [];
+  for (const o of rows) {
+    if (o.cancelledAt || o.test || !o.customer?.id) continue;
+    out.push({
+      customerId: String(o.customer.id),
+      day: dayInTz(new Date(o.createdAt), timezone),
+      net: num(o.subtotalPriceSet?.shopMoney?.amount) - num(o.totalRefundedSet?.shopMoney?.amount),
+    });
+  }
+  return out;
+}
+
 /** Startar bulk-exporten, väntar in den och returnerar parsade JSONL-rader. */
 async function runOrdersBulk(
   admin: AdminApiContext,
   fromExclusive: string,
   toInclusive: string,
 ): Promise<any[]> {
-  const inner = `{
+  return runBulk(admin, `{
     orders(query: "created_at:>='${fromExclusive}' AND created_at:<='${toInclusive}'") {
       edges { node {
         id createdAt cancelledAt test
@@ -203,8 +245,11 @@ async function runOrdersBulk(
         }
       } }
     }
-  }`;
+  }`);
+}
 
+/** Kör en godtycklig bulk-fråga och returnerar JSONL-raderna. */
+async function runBulk(admin: AdminApiContext, inner: string): Promise<any[]> {
   // En bulk-operation i taget per butik — vänta ut en pågående innan start.
   let lastErr = "";
   for (let attempt = 0; attempt < 6; attempt++) {
@@ -218,7 +263,14 @@ async function runOrdersBulk(
        }`,
       { variables: { q: inner } },
     );
-    const body = await res.json();
+    const body: any = await res.json();
+    /* Saknad behörighet (scope eller Protected Customer Data) kommer som
+       toppnivåfel, inte userErrors — säg det i klartext. */
+    const top = (body?.errors ?? []) as { message?: string; extensions?: { code?: string } }[];
+    if (top.length) {
+      const denied = top.find((e) => e.extensions?.code === "ACCESS_DENIED") ?? top[0];
+      throw new Error(`Shopify nekade frågan: ${denied.message ?? "okänt fel"}`);
+    }
     const errs = body?.data?.bulkOperationRunQuery?.userErrors ?? [];
     if (!errs.length) { lastErr = ""; break; }
     lastErr = errs.map((e: any) => e.message).join("; ");
@@ -235,7 +287,7 @@ async function runOrdersBulk(
     );
   }
 
-  const url = await waitForBulk(admin, 90_000);
+  const url = await waitForBulk(admin, 240_000);
   if (!url) return []; // export klar men noll objekt
 
   const dl = await fetch(url);
@@ -278,6 +330,8 @@ export interface VariantCost {
   inventoryItemGid: string;
   productTitle: string;
   variantTitle: string;
+  /** Artikelnummer, tomt om inget satt. Nyckeln andra vinstappar exporterar på. */
+  sku: string;
   price: number;
   unitCost: number | null;
 }
@@ -285,6 +339,8 @@ export interface VariantCost {
 export interface VariantCatalog {
   byGid: Map<string, VariantCost>;
   byTitle: Map<string, VariantCost>;
+  /** Nycklad på SKU i gemener. Bara varianter som har ett SKU. */
+  bySku: Map<string, VariantCost>;
   all: VariantCost[];
 }
 
@@ -306,6 +362,7 @@ export async function fetchVariantCosts(
   }
   const byGid = new Map<string, VariantCost>();
   const byTitle = new Map<string, VariantCost>();
+  const bySku = new Map<string, VariantCost>();
   let after: string | null = null;
 
   for (let page = 0; page < 40; page++) {
@@ -315,7 +372,7 @@ export async function fetchVariantCosts(
          productVariants(first: 250, after: $after) {
            pageInfo { hasNextPage endCursor }
            nodes {
-             id title price
+             id title price sku
              product { id title }
              inventoryItem { id unitCost { amount } }
            }
@@ -334,16 +391,18 @@ export async function fetchVariantCosts(
         inventoryItemGid: v.inventoryItem.id,
         productTitle: v.product.title,
         variantTitle: v.title,
+        sku: String(v.sku ?? "").trim(),
         price: num(v.price),
         unitCost: v.inventoryItem.unitCost ? num(v.inventoryItem.unitCost.amount) : null,
       };
       byGid.set(rec.variantGid, rec);
       byTitle.set(titleKey(rec.productTitle, rec.variantTitle), rec);
+      if (rec.sku) bySku.set(rec.sku.toLowerCase(), rec);
     }
     if (!conn.pageInfo?.hasNextPage) break;
     after = conn.pageInfo.endCursor;
   }
-  const cat: VariantCatalog = { byGid, byTitle, all: [...byGid.values()] };
+  const cat: VariantCatalog = { byGid, byTitle, bySku, all: [...byGid.values()] };
   if (cacheKey) catalogCache.set(cacheKey, { cat, at: Date.now() });
   return cat;
 }

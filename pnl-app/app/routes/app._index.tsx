@@ -53,10 +53,12 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
     to: url.searchParams.get("to") ?? today,
   });
 
+  /* Butikens valuta läses från Shopify varje gång — det är den alla belopp
+     står i, och den avgör om annonskostnaden behöver räknas om. */
   const settings = await prisma.shopSettings.upsert({
     where: { shop },
-    create: { shop },
-    update: {},
+    create: { shop, currency: shopInfo.currency },
+    update: { currency: shopInfo.currency },
   });
 
   /* Stale-while-revalidate: finns det EN sparad version serveras den direkt
@@ -115,6 +117,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
     from,
     to,
     today,
+    shopInfo.currency,
   );
 
   const metaConfigured = Boolean(settings.metaAdAccountId && settings.metaAccessToken);
@@ -185,7 +188,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
       metaConfigured
         ? { adAccountId: settings.metaAdAccountId!, accessToken: settings.metaAccessToken! }
         : null,
-      prevFrom, prevTo, today,
+      prevFrom, prevTo, today, shopInfo.currency,
     );
     const prev = compute({
       from: prevFrom, to: prevTo,
@@ -223,8 +226,9 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
     refreshing,
     result,
     rangeKey,
-    currency: settings.currency,
+    currency: shopInfo.currency,
     spendError: spend.error ?? null,
+    fx: spend.fx ?? null,
     targetMargin: Number(settings.targetMargin),
   };
   } catch (e) {
@@ -243,6 +247,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL) {
       rangeKey,
       currency: "SEK",
       spendError: null as string | null,
+      fx: null as { from: string; to: string; min: number; max: number; senasteDag: string } | null,
       targetMargin: 0.25,
     };
   }
@@ -594,9 +599,11 @@ function SetupChecklist({
       key: "costs",
       done: costsDone,
       title: "Lägg in inköpspriser",
-      hint: costsHint,
-      to: "/app/costs",
-      cta: "Till Kostnader",
+      hint: costsDone
+        ? costsHint
+        : `${costsHint} Kommer du från Juicy eller en annan vinstapp? Släpp exporten under Flytta hit.`,
+      to: costsDone ? "/app/costs" : "/app/import",
+      cta: costsDone ? "Till Kostnader" : "Flytta hit",
     },
     {
       key: "meta",
@@ -700,7 +707,7 @@ function SetupChecklist({
 }
 
 function DashboardView({ d }: { d: PageData }) {
-  const { fatal, result, rangeKey, currency, spendError, targetMargin, comparison, setup, dataAgeMin, refreshing } = d;
+  const { fatal, result, rangeKey, currency, spendError, fx, targetMargin, comparison, setup, dataAgeMin, refreshing } = d;
   const [, setParams] = useSearchParams();
   if (fatal || !result) {
     return (
@@ -744,7 +751,7 @@ function DashboardView({ d }: { d: PageData }) {
     { label: "Ordrar", value: nf.format(t.orders), sub: `snittorder ${money(t.aov)}${delta(t.orders, comparison?.orders)}` },
     { label: "Fasta kostnader", value: money(t.fixedCosts), sub: "utslagna per dag" },
     {
-      label: "Annonskostnad",
+      label: fx ? `Annonskostnad (från ${fx.from})` : "Annonskostnad",
       value: money(t.spend),
       sub: t.spendComplete ? `CPA ${money(t.cpa)}${delta(t.spend, comparison?.spend)}` : `⚠ saknas ${t.missingSpendDays.length} dagar`,
       tone: t.spendComplete ? undefined : "critical",
@@ -778,15 +785,14 @@ function DashboardView({ d }: { d: PageData }) {
           <BlockStack gap="400">
             <InlineStack gap="200">
               {Object.entries(RANGES).map(([k, label]) => (
-                <Badge key={k} tone={k === rangeKey ? "info" : undefined}>
-                  <button
-                    type="button"
-                    style={{ all: "unset", cursor: "pointer" }}
-                    onClick={() => setParams({ range: k })}
-                  >
-                    {label}
-                  </button>
-                </Badge>
+                <Button
+                  key={k}
+                  size="slim"
+                  pressed={k === rangeKey}
+                  onClick={() => setParams({ range: k })}
+                >
+                  {label}
+                </Button>
               ))}
             </InlineStack>
 
@@ -801,6 +807,16 @@ function DashboardView({ d }: { d: PageData }) {
             ) : null}
 
             {spendError ? <Banner tone="warning">{spendError}</Banner> : null}
+
+            {fx ? (
+              <Text as="span" variant="bodySm" tone="subdued">
+                {`Annonskontot står i ${fx.from}. Kostnaden är omräknad till ${fx.to} dag för dag med ECB:s dagskurs ` +
+                  (Math.abs(fx.max - fx.min) < 1e-9
+                    ? `(${fx.min.toFixed(4).replace(".", ",")})`
+                    : `(${fx.min.toFixed(4).replace(".", ",")}–${fx.max.toFixed(4).replace(".", ",")})`) +
+                  `, senaste kurs från ${fx.senasteDag}.`}
+              </Text>
+            ) : null}
 
             {!t.spendComplete ? (
               <Banner tone="critical" title="Täckningsbidraget är för högt">
