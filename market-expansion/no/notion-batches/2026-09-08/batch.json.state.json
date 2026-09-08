@@ -11,7 +11,8 @@
   "proofreadId": "866da5144d404b9bb936baa95ec86fe1-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "7a0ea6aaf6514de095f73c18d93d3aed-nb"
+  "renderId": "7a0ea6aaf6514de095f73c18d93d3aed-nb",
+  "downloaded": true
  },
  "overvakingskamera_CS_6_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/e099a5fa8f20483e903c153baf368e32/original.mp4",
@@ -32,28 +33,32 @@
   "proofreadId": "f041bb33ea1745d58bd5ffeb17fe8b66-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "429d119c0b7c46a081b52ea411cccc0d-nb"
+  "renderId": "429d119c0b7c46a081b52ea411cccc0d-nb",
+  "downloaded": true
  },
  "batmotortrekk_UG_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/29833d550c06428babaf9bf8ce8a921e/original.mp4",
   "proofreadId": "d7c4c6102ad34532a8463b3e6177a208-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "7c3bbc56cf2841fd872d7744b0c755a8-nb"
+  "renderId": "7c3bbc56cf2841fd872d7744b0c755a8-nb",
+  "downloaded": true
  },
  "batmotortrekk_SP_1_H5": {
   "assetUrl": "https://resource2.heygen.ai/video/c545d65a7e0b416697e75dd42cee0122/original.mp4",
   "proofreadId": "65626c3ebf3c4e16aa2e1d553c8444a9-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "7a90cf4f600b4f6da4eda6741268b0e2-nb"
+  "renderId": "7a90cf4f600b4f6da4eda6741268b0e2-nb",
+  "downloaded": true
  },
  "batmotortrekk_SP_1_H6": {
   "assetUrl": "https://resource2.heygen.ai/video/a4a9faeb9808416faf9b6fd119cee2b8/original.mp4",
   "proofreadId": "47cff8821c7c4c1bbb698bfcf1e1be2b-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "c97b71b7cb2f48a89c758dc04757c796-nb"
+  "renderId": "c97b71b7cb2f48a89c758dc04757c796-nb",
+  "downloaded": true
  },
  "batmotortrekk_CS_5_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/8a5ad852d4544f7b86cbabc895f8fd29/original.mp4",
@@ -67,6 +72,7 @@
   "proofreadId": "c55bcab0c6be490c9a9be66dc19193c3-nb-nb-NO",
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "ec333681cc964b67a165c93091861902-nb"
+  "renderId": "ec333681cc964b67a165c93091861902-nb",
+  "downloaded": true
  }
 }

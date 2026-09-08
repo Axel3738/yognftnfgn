@@ -1,0 +1,94 @@
+{
+ "in": "out/batmotortrekk_SP_1_H5.mp4",
+ "ut": "no/Batmotortrekk_NO_SP_1_H5.mp4",
+ "srt": "srt-fixed/batmotortrekk_SP_1_H5.srt",
+ "captions": {
+  "zon": [
+   850,
+   1040
+  ],
+  "max_chars": 34,
+  "font_px": 30,
+  "standard_cy": 992,
+  "tvinga": [
+   [
+    22.900000000000002,
+    99
+   ]
+  ],
+  "av": [
+   [
+    12.45,
+    19.1
+   ]
+  ]
+ },
+ "blur": [
+  {
+   "rect": [
+    132,
+    672,
+    588,
+    775
+   ],
+   "t": [
+    12.35,
+    12.5
+   ]
+  },
+  {
+   "rect": [
+    132,
+    795,
+    588,
+    900
+   ],
+   "t": [
+    13.75,
+    13.9
+   ]
+  },
+  {
+   "rect": [
+    132,
+    920,
+    588,
+    1025
+   ],
+   "t": [
+    15.15,
+    15.3
+   ]
+  }
+ ],
+ "lager": [
+  {
+   "png": "lager/SP_1_H5_ruta_672.png",
+   "t": [
+    12.5,
+    19.1
+   ]
+  },
+  {
+   "png": "lager/SP_1_H5_ruta_795.png",
+   "t": [
+    13.9,
+    19.1
+   ]
+  },
+  {
+   "png": "lager/SP_1_H5_ruta_920.png",
+   "t": [
+    15.3,
+    19.1
+   ]
+  },
+  {
+   "png": "lager/slutkort_SP_1_H5.png",
+   "t": [
+    22.900000000000002,
+    99
+   ]
+  }
+ ]
+}
