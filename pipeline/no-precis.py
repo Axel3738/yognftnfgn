@@ -268,9 +268,11 @@ def main():
         rader = []
         for k, (a, e, text) in enumerate(cues):
             i0, i1 = int(a * fps), max(int(a * fps) + 1, int(e * fps))
-            # pillret tänds strax före och släcks strax efter talet: följ det (max till grann-cuen)
-            lo = int(cues[k - 1][1] * fps) if k else 0
-            hi = int(cues[k + 1][0] * fps) if k + 1 < len(cues) else N
+            # pillret tänds strax före och släcks strax efter talet: följ det — men bara till MITTEN av
+            # luckan mot grann-cuen. Förlängs båda till varandras kant ritas två cues i samma piller
+            # (SP_1_H5 2026-09-08: "Trekk  Fiskere, øyboere og  klart." låg ovanpå varandra 2,4–2,9 s).
+            lo = int((cues[k - 1][1] + a) / 2 * fps) if k else 0
+            hi = int((e + cues[k + 1][0]) / 2 * fps) if k + 1 < len(cues) else N
             while i0 > lo and boxar[i0 - 1]: i0 -= 1
             while i1 < hi and boxar[i1]: i1 += 1
             iv = []
@@ -296,7 +298,9 @@ def main():
            '-f', 'rawvideo', '-pix_fmt', 'gray', '-video_size', f'{W}x{H}', '-framerate', f'{fps:g}', '-i', pillfil,
            '-f', 'lavfi', '-i', f'color=white:s={W}x{H}:r={fps:g}']
     lager = K.get('lager', [])
-    for L in lager: cmd += ['-i', P(L['png'])]
+    # -loop 1: en PNG utan loop är EN frame vid t=0 — ett lager vars fönster börjar långt in i videon
+    # (slutkortet i UG_1_H1 vid 16,26 s, 2026-09-08) hann aldrig ritas; med loop är bilden en oändlig ström
+    for L in lager: cmd += ['-loop', '1', '-i', P(L['png'])]
     fc = ('[0:v]format=gbrp,split[a][b];[b]boxblur=14:3[bl];[1:v]format=gbrp[m];[2:v]format=gbrp[q];'
           '[3:v]format=gbrp[vit];[a][bl][m]maskedmerge[v00];[v00][vit][q]maskedmerge[v0]')
     cur = 'v0'

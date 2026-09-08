@@ -194,13 +194,16 @@ def konfig(n):
             for rad in rader[1:]:
                 lägg(im, text_img(rad, F_BOLD, cap1, vit, stroke=3, stroke_fill=sv, max_w=300), cx, y + cap1 * 0.8, 'm'); y += cap1 * 1.5
             return spara(im, namn)
-        K['blur'].append({'rect': [430, 470, 712, 810], 't': [0.05, 3.55]})
+        # SE-texten "riktiga recensioner" börjar vid x≈290 (över telefonens högerkant) och "5 stjärnor" vid x≈380 —
+        # suddrutan måste börja vid 280, annars står "rik…/stjä…" kvar (mätt i första passet 2026-09-08)
+        K['blur'].append({'rect': [290, 480, 645, 812], 't': [0.05, 3.55]})   # mätt: '8 riktiga recensioner' x 300–623 y 492–799, '5 stjärnor' x 300–630 y 495–783
         r8 = O['8 RIKTIGA RECENSIONER']; r5 = O['5 STJÄRNOR']
-        K['lager'].append({'png': stor([r8[0]] + r8[1].split(' · '), 575, 545, 84, 30, 'UG2_8.png'), 't': [0.1, 1.95]})
-        K['lager'].append({'png': stor(r5, 575, 545, 84, 34, 'UG2_5.png'), 't': [2.0, 3.5]})
-        K['blur'].append({'rect': [30, 620, 380, 800], 't': [7.95, 10.85]})
+        K['lager'].append({'png': stor([r8[0], 'anmeldelser hos', 'baverbutiken.se'], 520, 525, 84, 28, 'UG2_8.png'), 't': [0.1, 1.95]})
+        K['lager'].append({'png': stor(r5, 520, 525, 84, 36, 'UG2_5.png'), 't': [2.0, 3.5]})
+        # "420D / Oxford-tyg" står x 100–440, y 700–870 (mätt i källframe t=9,5)
+        K['blur'].append({'rect': [0, 675, 545, 960], 't': [7.95, 10.85]})   # mätt: x 11–527, y 687–949
         ox = O['420D OXFORD-TYG']
-        im = ny(); lägg(im, text_img(ox[0], F_BOLD, 60, vit), 60, 680); lägg(im, text_img(ox[1], F_BOLD, 40, vit, max_w=310), 60, 750)
+        im = ny(); lägg(im, text_img(ox[0], F_BOLD, 60, vit), 40, 745); lägg(im, text_img(ox[1], F_BOLD, 42, vit, max_w=440), 40, 860)
         K['lager'].append({'png': spara(im, 'UG2_oxford.png'), 't': [8.0, 10.8]})
     K['lager'].append({'png': slutkort(n), 't': [T, 99]})
     p = os.path.join(HÄR, f'k_{n}.json'); json.dump(K, open(p, 'w'), indent=1, ensure_ascii=False); return p
