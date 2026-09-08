@@ -1,0 +1,258 @@
+{
+ "_kommentar": "Svensk text per bild, läst ur bilden av huvudsessionen 2026-09-08. Ordning = formerna uppifrån och ned. block = rader som är EN radbruten text. varning = claims som inte gäller i Norge.",
+ "IBC_BOF_4_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Blixtlås.",
+     "Inte presenning och",
+     "gummiband.",
+     "På och av med dragkedja — ingen kamp med väder",
+     "eller vind."
+    ],
+    "block": [
+     [
+      0,
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ]
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "Dragkedja · Öppning upptill · Passar 1000-liters IBC"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Se hur enkelt det är"
+    ]
+   }
+  ],
+  "anm": "Halvgenomskinlig platta över grönt tyg — detektorn hittar 6 rader (dragkedjan överst räknas som rad), override på plattan. Inget pris."
+ },
+ "IBC_BOF_5_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Presenningen som skulle",
+     "skydda blåser av vid",
+     "första höststormen.",
+     "Ett 210D Oxford-överdrag med blixtlås sitter kvar."
+    ],
+    "block": [
+     [
+      0,
+      1,
+      2
+     ]
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "Ingen presenning · Inga gummiband · 210D Oxford-tyg"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda tanken innan hösten"
+    ]
+   }
+  ],
+  "anm": "Vit platta över himmel — detektorn hittar den inte, override. Inget pris."
+ },
+ "IBC_BOF_6_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Fri frakt inom Sverige,",
+     "5–10 arbetsdagar.",
+     "Beställ nu så är den på plats innan tanken hinner",
+     "grönska."
+    ],
+    "block": [
+     [
+      0,
+      1
+     ],
+     [
+      2,
+      3
+     ]
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "Fri frakt · Klarna – betala sen · 30 dagars öppet köp"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ nu"
+    ]
+   }
+  ],
+  "varning": [
+   "'inom Sverige' stryks. Fri frakt gäller i Norge över 300 kr (439 kr). Leveranstiden '5–10 arbetsdagar' får bara stå kvar om NO-butiken säger samma — annars generalisera.",
+   "Skåpbil till vänster om knappen är grafik."
+  ]
+ },
+ "IBC_CS_4_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "489 kr istället för 636 kr",
+     "147 kr mindre för samma 210D Oxford-tyg som",
+     "stänger ute ljuset."
+    ],
+    "block": [
+     [
+      1,
+      2
+     ]
+    ],
+    "stryk_del": {
+     "0": "636 kr"
+    }
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "210D Oxford-tyg · Blixtlås · Öppning upptill"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ idag – 489 kr"
+    ]
+   }
+  ],
+  "varning": [
+   "Svenskt pris 489/636 kr, skillnad 147 kr — NO-pris 439/586 kr, skillnad 147 kr (samma tal, stämmer)."
+  ]
+ },
+ "IBC_PD_5_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "210D Oxford-tyg mellan",
+     "solen och ditt regnvatten.",
+     "Ingen presenning, inga gummiband — bara ett",
+     "blixtlås."
+    ],
+    "block": [
+     [
+      0,
+      1
+     ],
+     [
+      2,
+      3
+     ]
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "Stänger ute UV · Öppning upptill · Passar 1000L IBC"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Skydda din tank idag"
+    ]
+   }
+  ],
+  "anm": "Halvgenomskinlig platta över trädgårdsfoto — override. Inget pris."
+ },
+ "IBC_RV_3_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Sofia",
+     "”Passar bra på tanken och skyddar mot",
+     "solen.",
+     "Precis vad jag behövde.”"
+    ],
+    "block": [
+     [
+      1,
+      2,
+      3
+     ]
+    ]
+   },
+   {
+    "typ": "fototext",
+    "rader": [
+     "489 kr, 23% rabatt"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ idag"
+    ]
+   }
+  ],
+  "varning": [
+   "Recensionen är svensk (Judge.me, Bäverbutiken) — översätts, attribueras till baverbutiken.se efter namnet.",
+   "Stjärnorna ovanför namnet är grafik.",
+   "Svenskt pris 489 kr, 23 % — NO 439 kr, 25 %."
+  ]
+ },
+ "IBC_RV_4_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Johan",
+     "”Bra kvalitet och lätt att använda.",
+     "Passade min 1000 liters tank utan",
+     "problem.”"
+    ],
+    "block": [
+     [
+      1,
+      2,
+      3
+     ]
+    ]
+   },
+   {
+    "typ": "fototext",
+    "rader": [
+     "Passar standard 1000L IBC-tank"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ idag"
+    ]
+   }
+  ],
+  "varning": [
+   "Recensionen är svensk — översätts, attribueras till baverbutiken.se efter namnet.",
+   "Plattan hittas inte av detektorn (vit över himmel) — override. Inget pris."
+  ]
+ }
+}
