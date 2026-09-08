@@ -113,7 +113,8 @@ VIDEO:
 * When Claude says the Norway market is ready: Settings → Markets → Norway → activate NOK → Save
 * Install the WeTracked app from the Shopify App Store
 * WeTracked → paste the pixel ID Claude gives you
-* WeTracked → connect the Conversions API token (WeTracked shows the steps)
+* Events Manager → Data sources → STORE NAME → Settings → Conversions API → Generate access token → copy it
+* WeTracked → paste the Conversions API token (never send it in chat or email)
 * The owner logs in with the work Gmail, picks the plan and adds his card
 * Then: Settings → Users and permissions → ⋯ → Transfer ownership → the owner
 * Owner changes the Loopia password afterwards

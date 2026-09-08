@@ -254,8 +254,15 @@ Lärdomar från bygget 2026-09-08 (API 2025-07, alla mätta):
     datan går att skära per butik, och kontot döps aldrig om. Förväxla
     aldrig med MagiBorsten 1867947880635861 (Bäverbutiken SE). Kortet
     ligger redan i BM. ⚙️ Pixel per butik via `factory/meta-setup.mjs`
-    när META_ACCESS_TOKEN finns. 🖐 WeTracked: nytt konto per butik,
-    klistra in pixel-id.
+    när META_ACCESS_TOKEN finns — skriptet ger också företagets
+    "Conversions API System User" tillgång till pixeln (`assigned_users`,
+    bevisat TankGuard 2026-09-08). 🖐 WeTracked: nytt konto per butik,
+    klistra in pixel-id + CAPI-token. **CAPI-tokenen kan inte skapas via
+    API:t**: `POST /<systemanvändare>/access_tokens` kräver `appsecret_proof`
+    (appens hemlighet finns inte i miljön — mätt 2026-09-08, kod 100). VA:n
+    trycker Metas egen knapp: Events Manager → Data sources → pixeln →
+    Settings → Conversions API → **Generate access token** → klistra in i
+    WeTracked. Tokenen passerar aldrig chatten.
 
 ## Fas 6 — Annonser (nästa fas, ej bevisad än)
 18. ⚙️ Brand-swap av Bäverbutikens vinnare (PLAN.md punkt 1).

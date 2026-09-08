@@ -43,6 +43,24 @@ export async function skapaPixel(adAccountId, namn) {
   return graph(`/act_${adAccountId}/adspixels`, { metod: 'POST', form: { name: namn } });
 }
 
+// Conversions API-tokenen (WeTracked) kan INTE skapas via API:t utan appens
+// hemlighet: POST /<systemanvändare>/access_tokens kräver appsecret_proof
+// (mätt på TankGuard 2026-09-08, kod 100). Den knappen sitter i Events
+// Manager (Data sources → pixeln → Settings → Conversions API → Generate
+// access token) och trycks av VA:n — tokenen ska aldrig passera chatten.
+// Det fabriken KAN göra är att ge företagets befintliga "Conversions API
+// System User" tillgång till den nya pixeln, så knappen fungerar direkt.
+export async function tilldelaCapiAnvandare(pixelId) {
+  const pixel = await graph(`/${pixelId}`, { form: { fields: 'owner_business' } });
+  const business = pixel.owner_business?.id;
+  if (!business) return { tilldelad: false, varfor: 'pixeln saknar owner_business' };
+  const su = await graph(`/${business}/system_users`, { form: { fields: 'id,name,role' } });
+  const capi = (su.data ?? []).find((u) => /conversions api/i.test(u.name ?? ''));
+  if (!capi) return { tilldelad: false, varfor: `ingen "Conversions API System User" i företag ${business} — VA:n skapar tokenen i Events Manager (Meta skapar användaren då)` };
+  await graph(`/${pixelId}/assigned_users`, { metod: 'POST', form: { user: capi.id, tasks: '["ADVERTISE","ANALYZE"]', business } });
+  return { tilldelad: true, anvandare: capi.name, business };
+}
+
 async function huvud() {
   laddaEnv();
   const arg = process.argv.slice(2);
@@ -70,6 +88,10 @@ async function huvud() {
 
   const pixel = await skapaPixel(OPS_ANNONSKONTO, brand);
   console.log(`✅ Pixel skapad: ${pixel.id}`);
+  const capi = await tilldelaCapiAnvandare(pixel.id).catch((e) => ({ tilldelad: false, varfor: e.message }));
+  console.log(capi.tilldelad
+    ? `✅ "${capi.anvandare}" har pixeln — Generate access token i Events Manager fungerar direkt.`
+    : `⚠️  CAPI-användaren fick inte pixeln: ${capi.varfor}`);
 
   // Skriv tillbaka till produktfilen så inget hamnar bara i chatten.
   let text = readFileSync(produktfil, 'utf8');
@@ -77,7 +99,8 @@ async function huvud() {
   text = text.replace(/pixel_id: ".*"/, `pixel_id: "${pixel.id}"`);
   writeFileSync(produktfil, text);
   console.log('✅ Produktfilen uppdaterad med id:na.');
-  console.log('\n🖐 Kvar för hand: VA:n skapar sidan i Business Manager + klistrar pixel-id:t i WeTracked.');
+  console.log('\n🖐 Kvar för hand: VA:n skapar sidan i Business Manager, klistrar pixel-id:t i WeTracked och');
+  console.log('   hämtar CAPI-tokenen själv: Events Manager → Data sources → pixeln → Settings → Conversions API → Generate access token → WeTracked.');
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

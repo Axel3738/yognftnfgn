@@ -25,7 +25,7 @@ Rättat 2026-09-08 efter Axels tre bakläxor: produkterna är ACTIVE + publicera
 
 1. Judge.me → Settings → Import reviews → Import from apps → Judge.me format → filen `judgeme-app-import.csv` → Import. Sen kollar Claude datumen i kundvyn.
 2. Settings → Markets → Norway → activate NOK → Save.
-3. Meta: skapa sidan **TankGuard** i Business Manager → Page ID till Claude. WeTracked: pixel-id **2196132151319625**.
+3. Meta: skapa sidan **TankGuard** i Business Manager → Page ID till Claude. WeTracked: pixel-id **2196132151319625** + CAPI-token från Events Manager → Data sources → TankGuard → Settings → Conversions API → **Generate access token** (systemanvändaren har redan pixeln; tokenen kan inte skapas via API — kräver appens hemlighet).
 4. Discord: skapa servern **TankGuard** → auktorisera boten (länken Claude ger) → server-id till Claude.
 
 ## Siffror (ur konfigen, inte ur huvudet)
