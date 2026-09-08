@@ -128,3 +128,60 @@ i sidan — verifierat med notion-fetch på PD_11_H1). ⚠️ Hubbens
 teamspacet Bäverbutiken. Redigerarna ser den sannolikt inte. Drive Batch #4
 (`1WtOvAfCxpG-xGrwbw5hneQLvSYn9XCjG`): en översiktsdoc med alla 9 briefer
 länkade till Notion. `CS_BATCH_KLAR` loggas i `agent/budgetlogg.jsonl`.
+
+**Utfall, avläst 2026-09-08 (maximum):** Ingen av batch #4:s 9 annonser syns
+i Meta ännu (0 kr spend på samtliga) — se batch #5 nedan för status per
+annons i Notion. Ingen dom möjlig. Hub-flaggan ovan ("privat, ser den
+sannolikt inte") är **motbevisad** i dna.md 2026-09-08 — se rättelsen där.
+
+## Batch #5 — 2026-09-08 (`/rond-auto` → CS-agent, brief_runda, 3 dagar sedan batch #4)
+
+**Feedback loop (fullständig i `dna.md`, avsnitt "Uppdatering 2026-09-08"):**
+1. **Rättelse:** PD_2 (top spendern)s marginal-CPA som såg försämrad ut
+   2026-09-05 (666 kr) är nu 295 kr — klart under break-even. Enstaka
+   avläsningar av marginal-CPA svänger; skriv inte in dem som permanent DNA
+   efter bara en mätpunkt.
+2. **Ny signal:** PD_3 och PD_2_1 (kampanjens två just nu bäst rankade
+   annonser) fick **0 nya köp vardera** på 3 dygn trots fortsatt spend —
+   möjlig utmattning på den bevisade mekaniken. Adresseras med en
+   kontrollerad iteration (ny bladtyp, samma mekanik), inte en ny vinkel.
+3. Batch #3:s PD_6_H1/PD_7_H1 (nu 6 dagar gamla) och HELA batch #4 (9
+   annonser, 3 dagar gamla) saknas fortfarande i Meta. I Notion: 6 av batch
+   #4:s statiska annonser står redan "Approved" men har 0 kr spend — väntar
+   på att laddas upp. De 3 videorna står "In progress". Flaggat för Axel,
+   ingen åtgärd tagen här (utanför CS-uppdraget).
+4. Notion-hubbens tidigare varning ("privat, redigerarna ser den nog inte")
+   är motbevisad denna körning — se dna.md.
+5. Recensioner ombekräftade live via Judge.me API 2026-09-08: fortfarande
+   11 st (1×1-stjärna, 10×5-stjärnor), oförändrat sedan 2026-08-31. 2 nya
+   femstjärniga citat använda i denna batch, 4 kvar oanvända.
+6. Shopify-connectorn var frånkopplad denna session — priset (909/1182/23 %)
+   är inte ombekräftat idag, senast verifierat 2026-09-05.
+
+9 briefer (3 video + 1 statisk i rundan, 3 BOF-bilder, 2 review-bilder):
+
+| Annons | Format | Hypotes | Källa |
+|---|---|---|---|
+| Beltgrinder_PD_16_H1 | video | Auktoritets-/expertvinkel (bevisad tvärkategori i Grillklinikens playbook, ANGLE #1) lyfter hook rate — GISSNING för denna produkt, aldrig testad här | `docs/playbook.md` angle #1 "Auktoritet/story" |
+| Beltgrinder_PD_17_H1 | video | Samma bevisade demo-mekanik (PD_2/PD_3) på en ny bladtyp (sax) ger ett färskt kreativt underlag mot utmattningssignalen | dagens observation (0 inkrementella köp på PD_3/PD_2_1) + vinnarmekanik |
+| Beltgrinder_SP_7_H1 | video | Skeptiker-till-övertygad UGC i garage-miljö (ny miljö, undviker dubblett mot SP_4_H1/SP_6_H1:s kökslådetest) | dna.md Losing DNA "UGC-demo — obevisat", differentierad variant |
+| Beltgrinder_PD_18_1 | statisk | Auktoritetsvinkeln porterad till den bevisade statiska layouten (PD_2_1) isolerar "angle" som enda variabel | vinnarformat PD_2_1 + PD_16_H1:s hypotes |
+| Beltgrinder_PD_19_1 | statisk (BOF) | Livstidskostnad ("betala en gång") som nytt pris/erbjudande-koncept, skiljt från SO_6_1:s rabattversion | Axel 2026-09-02: obligatorisk BOF-serie, ny vinkel för att undvika dubblett |
+| Beltgrinder_PD_20_1 | statisk (BOF) | Risk-reversal/garanti — kräver verifierad text från produktsidan innan produktion (Shopify otillgänglig denna session) | Axel 2026-09-02: obligatorisk BOF-serie |
+| Beltgrinder_PD_21_1 | statisk (BOF) | Tid/bekvämlighet mot att skicka bort kniven — ny invändning, ingen påhittad konkurrentprissättning | Axel 2026-09-02: obligatorisk BOF-serie, ny vinkel mot PD_10_1 |
+| Beltgrinder_REV_5_1 | statisk (review) | Verklig recension "Jag är väldigt nöjd med slipmaskinen." | Judge.me, verifierad 2026-09-08, ordagrant |
+| Beltgrinder_REV_6_1 | statisk (review) | Verklig recension "En enkel maskin som fungerar som den ska." | Judge.me, verifierad 2026-09-08, ordagrant |
+
+Launch-regel: **separat test-ABO, lika budget per annons** (CLAUDE.md regel 11).
+
+**Modellpolicy-avvikelse:** inget Agent/Task-verktyg med `model`-parameter
+tillgängligt i denna körning (samma avvikelse som batch #4). Huvudsessionen
+skrev all svensk copy själv och körde tre-frågorstestet explicit rad för rad
+i varje brief (se Notion-items).
+
+**Levererad 2026-09-08:** 9 Notion-items i befintlig hub "Belt grinder
+creative hub" (Status Draft, Typ Video/Image - Pending Approval, hela briefen
+i sidan — verifierat med notion-fetch på PD_16_H1). Ingen Drive-mapp skapad
+denna runda (utanför uppdragets scope denna gång — briefer levererade i
+Notion only). `CS_BATCH_KLAR` loggas i `agent/budgetlogg.jsonl` av
+huvudsessionen.

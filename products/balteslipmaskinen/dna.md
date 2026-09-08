@@ -179,6 +179,90 @@ vibration) värd att känna till för framtida produktbeslut — inte en
 copy-uppgift. 8 femstjärniga citat kvar oanvända efter denna batch (se
 batch-log.md #4 för vilka som använts).
 
+## Uppdatering 2026-09-08 (`/cs`-körning, brief_runda #5, `/rond-auto` → CS-agent)
+
+**Kampanj ACTIVE** (verifierat med `ads_get_ad_entities` innan något gjordes).
+Denna runda ändrar inte budget/status — bara briefer. Shopify-connectorn var
+frånkopplad i denna session — priset (909 kr / 1 182 kr / 23 %) är därför
+**inte** ombekräftat här, senast verifierat 2026-09-05.
+
+### Datakvalitet (maximum, 2026-09-08)
+`spend × ROAS` vs `omni_purchase_values` stämmer inom 1 % på alla fem
+bedömbara raderna (PD_2, CS_2_1, PD_3, PD_2_1, PD_1) — inga trasiga rader.
+Köpantal är avlästa via `cost_per_omni_purchase` (spend ÷ CPA), inte via
+`actions` (fältet stöds inte på ad-nivå i detta konto — bekräftat i detta
+API-svar).
+
+### Vinstbidragstabell (AOV omräknad på dagens data: 51 875,05 kr / 53 köp
+bland bedömbara → BE-CPA 565,75 kr, break-even-ROAS 1,73 oförändrad)
+
+| Annons | Status | Spend | Köp | CPA | ROAS | Vinstbidrag | Andel av vinst |
+|---|---|---|---|---|---|---|---|
+| PD_3 | ACTIVE | 4 296 kr | 12 | 358 kr | 2,79 | **2 493 kr** | 33 % |
+| PD_2_1 | ACTIVE | 2 379 kr | 7 | 340 kr | 3,06 | 1 582 kr | 21 % |
+| PD_2 (top spender = benchmark) | ACTIVE | 9 312 kr | 19 | 490 kr | 1,99 | 1 438 kr | 19 % |
+| CS_2_1 | PAUSED | 4 571 kr | 10 | 457 kr | 2,11 | 1 087 kr | 14 % |
+| PD_1 | ACTIVE | 1 875 kr | 5 | 375 kr | 2,38 | 954 kr | 13 % |
+
+Totalt vinstbidrag bedömbara (inkl. paused CS_2_1): ~7 553 kr. Övriga
+(G_1 1 köp, CS_1 1 köp, SP_2 1 köp, CS_2 2 köp, CS_3 0 köp, alla
+Beltgrinder_-ads från batch #2/#3): under 300 kr eller <3 köp — **för
+tidigt, ingen dom.**
+
+### Marginal-CPA sedan förra avläsningen (2026-09-05 → 2026-09-08, 3 dygn)
+- **PD_2 (top spender): RÄTTELSE av 2026-09-05.** Då: 5 inkrementella köp,
+  marginal-CPA 666 kr (sämre än break-even). Nu: +884,79 kr spend, +3 köp →
+  marginal-CPA **295 kr — klart under break-even (566 kr).** Mönstret från
+  förra körningen höll alltså INTE — det var en mätning i taget, inte en
+  varaktig försämring. Skriv inte in "top spendern försämras" som fast DNA;
+  den svänger. Fortsätt läsa av var 3:e dag innan någon slutsats permanentas.
+- **PD_3 och PD_2_1: 0 inkrementella köp vardera** trots +313 kr respektive
+  +158 kr spend på 3 dygn — båda stod still på exakt samma köpantal som
+  2026-09-05. Litet n (3 dygn), men om mönstret upprepas är det en
+  utmattningssignal på den bevisade mekaniken. → Adresseras i denna batch
+  med PD_17_H1 (samma mekanik, ny bladtyp) för att ge annonsuppsättningen
+  en färsk visuell tillgång utan att ändra det som fungerar.
+- **PD_1: +76 kr spend, +1 köp** → marginal-CPA 76 kr. Bygger på n=1 och kan
+  vara attributionseffekt av ett tidigare klick — redovisas som brus, inte
+  som ett mönster.
+
+### Creative-teardown
+Inga nya bildtillgångar att granska visuellt denna körning: batch #4:s
+statiska annonser (PD_13_1, PD_14_1, PD_15_1, SO_6_1, REV_3_1, REV_4_1) är
+**Approved i Notion men har fortfarande 0 kr spend i Meta** — inte
+uppladdade än. Batch #4:s tre videor (PD_11_H1, PD_12_H1, SP_6_H1) står
+"In progress" i Notion — redigerarna jobbar fortfarande på dem. Batch #3:s
+PD_6_H1/PD_7_H1 (briefade 2026-09-02, nu 6 dagar gamla) står "Creative strat
+review" i Notion och syns fortsatt INTE i Meta. Ingen av dessa kan bedömas
+ännu. De tre mönster som redan är dokumenterade i uppdateringen 2026-09-05
+(rubrik+aktion i öppningsrutan, PD_1:s passiva ruta, pris-proof-mekaniken)
+kvarstår oförändrade och testas redan av batch #4 (PD_11_H1, PD_12_H1,
+SO_6_1) — inga dubbletter byggda i denna batch.
+
+**Notion-hub — rättelse av 2026-09-05:** dna.md flaggade då hubbens tomma
+`<ancestor-path>` som "trolig privat sida, redigerarna ser den nog inte".
+Testat idag: en sökning avgränsad till teamspacet Bäverbutiken
+(`3a9270ab-908c-81a8-a48c-004222d195e7`) HITTAR "Belt grinder creative hub"
+direkt, och en jämförelsehubb i samma teamspace (Surveillance Camera
+creative hub, som har aktiv produktion) har samma tomma ancestor-path. Tom
+ancestor-path är alltså sannolikt normalt för en databas direkt i
+teamspace-roten — INTE ett tecken på att hubben är privat. Den tidigare
+slutsatsen var en felaktig mätning och stryks. Den faktiska förklaringen
+till att batch #3/#4 dröjer är sannolikt bara produktionskö hos
+redigerarna, inte ett Notion-åtkomstfel.
+
+### Recensioner — verifierade live via Judge.me API 2026-09-08
+Fortfarande 11 recensioner totalt för produkten (1×1-stjärna, 10×5-stjärnor)
+— oförändrat antal sedan 2026-08-31. 8 av 10 femstjärniga citat nu använda
+över batch #3–#5. **2 kvar oanvända efter denna batch:**
+- "Mycket enkel att använda. Jag är nöjd."
+- "Fungerar bra och är enkel att använda."
+- "Fungerar bra och är väldigt smidig."
+- "Fungerar bra och känns praktisk."
+(fyra kvar, inte två — rättat: REV_5_1/REV_6_1 användes "Jag är väldigt nöjd
+med slipmaskinen." och "En enkel maskin som fungerar som den ska." i denna
+batch, så 4 femstjärniga citat återstår oanvända för nästa `/cs`.)
+
 ### Övrigt observerat (inte åtgärdat här, utanför uppdraget)
 - **Beltgrinder_REV_2_1 är DISAPPROVED** i Meta (batch #3). Orsak okänd i
   denna körning — flagga för Axel/redigerare, undersök inte här.
