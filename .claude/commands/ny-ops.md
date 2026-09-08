@@ -6,6 +6,12 @@ annan källa) + ev. önskat brandnamn. SE (huvudspråk svenska) + NO
 bara för YTTERLIGARE marknader utöver dessa.
 Exempel: `/ny-ops https://bäverbutiken.se/products/lastnat`
 
+Kommandot körs EFTER att VA:n gjort checklistans steg 1–2: butiken är
+skapad på free trial och appen är kopplad via miljövariablerna
+`SHOPIFY_SHOP` + `SHOPIFY_CLIENT_ID` + `SHOPIFY_CLIENT_SECRET`
+(Axels ordning 2026-09-08). Kommandot bygger sen FÄRDIGT hela butiken
+utan att vänta — bara klicken i checklistan återstår för VA:n.
+
 Detta är fabrikens huvudrutin. Processen i sin helhet står i
 `factory/PROCESS.md` — det dokumentet är facit, det här kommandot är
 körordningen. Den som kör är oftast **VA:n (engelsktalande)** — svara henne
@@ -15,17 +21,20 @@ ifylld till `factory/output/<id>/CHECKLISTA.md`.
 
 Gör i ordning, utan att invänta godkännande mellan stegen:
 
-1. **Rätt butik.** Kopplingen till den nya butiken är appen **Fabriken**
-   — skapad EN gång av Axel på dev.shopify.com; klientuppgifterna ligger
-   som `SHOPIFY_CLIENT_ID` + `SHOPIFY_CLIENT_SECRET` i miljön (saknas de:
-   fråga AXEL, aldrig VA:n). Per butik: be VA:n om butikens
-   `.myshopify.com`-adress, ge henne appens installänk att godkänna,
-   hämta Admin-token med klientuppgifterna och skriv
-   `SHOPIFY_STORE_DOMAIN` + `SHOPIFY_ADMIN_TOKEN` i `factory/.env`.
-   ⚠️ Be ALDRIG VA:n om en token eller nyckel (mätt 2026-09-08: en
-   klistrad CLI-token var fel typ och stoppade bygget). Verifiera med
-   fabrikens anslutningskontroll att domänen är DEN NYA butiken —
-   fel butik = stoppa direkt.
+1. **Rätt butik.** Kopplingen är butikens EGEN app (VA:n skapar en per
+   butik — custom distribution låses till EN butik utanför Plus, mätt
+   2026-09-08). Läs `SHOPIFY_SHOP` + `SHOPIFY_CLIENT_ID` +
+   `SHOPIFY_CLIENT_SECRET` ur miljön — VA:n har lagt in dem
+   (checklistans steg 2). Saknas de: be henne göra steg 2, aldrig
+   klistra nycklar i chatten (mätt 2026-09-08: en klistrad CLI-token
+   var fel typ och stoppade bygget). Hämta Admin-token med
+   klientuppgifterna och skriv `SHOPIFY_STORE_DOMAIN` +
+   `SHOPIFY_ADMIN_TOKEN` i `factory/.env`.
+   ⚠️ SPÄRR MOT GAMMAL MILJÖ: har `SHOPIFY_SHOP`-butiken redan en
+   state-fil under `factory/state/` är miljön inte uppdaterad för den
+   nya butiken — stoppa och be VA:n skriva över de tre variablerna.
+   Verifiera med fabrikens anslutningskontroll att domänen är DEN NYA
+   butiken — fel butik = stoppa direkt.
    ⚠️ **Shopify-MCP:n är FÖRBJUDEN i hela den här rutinen** (incident
    2026-09-07: MCP:n i molnsessionen stod på HeimGuard och rutinen
    försökte växla butik med `switch-shop`). MCP:n pekar på fel butik,
@@ -45,6 +54,9 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    Namnregeln (skärpt 2026-09-08): helst ett HELT engelskt namn som svenskar
    och norrmän ändå kan läsa och uttala, aldrig å/ä/ö. Kolla domänen
    med whois INNAN namnet spikas. Rund logga, brandnamnet, seriöst.
+   När namnet är spikat: meddela VA:n STORE NAME + DOMAIN direkt —
+   hon köper domänen och sätter butiksnamnet (checklistans steg 4–5)
+   medan bygget fortsätter.
 4. **Konfig:** skriv `factory/butiker/<id>.yaml` + `factory/produkter/<id>.yaml`
    från mallarna, validera via `node factory/ops.mjs ... --dry-run` (den
    sammanfogar butik + produkt — kör ALDRIG validera.mjs fristående på

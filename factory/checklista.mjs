@@ -1,14 +1,14 @@
 // VA:ns checklista — de manuella klicken som varje ny OPS-butik kräver.
 //
-// Mallen är Axels egen (2026-09-07, justerad efter VA-granskningen samma
-// kväll), på ENGELSKA — den som klickar är VA:n i Manila, inte Axel.
-// Master-mallen med tomma fält ligger i factory/VA-CHECKLIST.md; den här
-// modulen fyller i butikens värden och skriver output/<id>/CHECKLISTA.md
-// efter varje bygge. Ordningen följer mallen exakt: domänen först
-// (Shopify-stegen kräver den), Claude-kopplingen före allt Claude bygger,
-// temapubliceringen som VA-klick i överlämningen (API:t kan inte
-// publicera), och INGET kort i Meta-steget (kortet ligger redan i
-// Business Manager — PLAN.md punkt 7.4).
+// Mallen är Axels egen (2026-09-07, omgjord 2026-09-08 i tre beslut:
+// butiken + appen + kopplingen FÖRST, sen bygger /ny-ops allt; en app per
+// butik eftersom custom distribution låses till EN butik utanför Plus;
+// nycklarna läggs i miljön av VA:n, aldrig i chatten). På ENGELSKA — den
+// som klickar är VA:n i Manila, inte Axel. Master-mallen med tomma fält
+// ligger i factory/VA-CHECKLIST.md; den här modulen fyller i butikens
+// värden och skriver output/<id>/CHECKLISTA.md efter varje bygge.
+// ⚠️ VA:ns master är Google-dokumentet (länk i VA-CHECKLIST.md) — varje
+// ändring här ska föras in i dokumentet i samma session.
 //
 // Håll varje rad till ETT handgrepp. Uppdatera listan när ett steg
 // automatiseras bort — den ska krympa, aldrig växa av slentrian.
@@ -31,50 +31,59 @@ Everything not on this list is done by Claude Code.
 * STORE EMAIL: **${mail}**
 * FORWARD TO: **${agare}**
 
-## 1. Domain (Loopia)
+## 1. Shopify – create the store
+- [ ] Go to shopify.com → **Start free trial** → sign up with the work Gmail
+- [ ] Stay on the free trial – never pick a plan, never enter any card
+  Note: staff invites need a paid plan – the owner is added at hand over.
+
+## 2. Shopify – connect Claude Code
+- [ ] Go to **dev.shopify.com** → log in with the work Gmail → Apps → **Create app** → name it: **Fabriken** + the store's address start (example: Fabriken y1sj1i)
+- [ ] The app → **Settings** → copy the **Client ID** and the **Client secret**
+- [ ] Open the Claude session's **Environment** → set these 3 (overwrite the old values):
+  \`SHOPIFY_SHOP\` = the store's .myshopify.com address
+  \`SHOPIFY_CLIENT_ID\` = the Client ID
+  \`SHOPIFY_CLIENT_SECRET\` = the Client secret
+- [ ] Back in the app → **Distribution** → Custom distribution → enter the store's .myshopify.com address → **Generate link** → open it → **Install app**
+  Note: keys go ONLY in the Environment – never in chat or email.
+
+## 3. Start the build
+- [ ] Write **/ny-ops** + the product link in Claude Code
+- [ ] Claude checks the connection, names the store and builds everything
+- [ ] Claude tells you the STORE NAME and DOMAIN for the next steps
+
+## 4. Domain (Loopia)
 - [ ] Log in to Loopia
 - [ ] Buy **${doman}** – registrant must be the company, not you
 - [ ] Domain → Email → Forwarding → create **${mail}** → forward to **${agare}**
 - [ ] Send a test email to **${mail}** – confirm it arrives
 
-## 2. Shopify – create the store
-- [ ] Go to shopify.com → **Start free trial** → sign up with the work Gmail
-- [ ] Stay on the free trial – never pick a plan, never enter any card
-  Note: staff invites need a paid plan – the owner is added at hand over.
-
-## 3. Shopify – basics
+## 5. Shopify – basics
 - [ ] Settings → General → Store name → **${brand}** → Save
 - [ ] Settings → Domains → Connect existing domain → **${doman}** → follow the DNS steps → Set as primary
 - [ ] Settings → Languages → make **Swedish** default
 - [ ] Settings → Notifications → Sender email → **${mail}** → Save → click the verification link in the inbox
 
-## 4. Shopify – connect Claude Code
-- [ ] Give Claude Code the store's **.myshopify.com** address (paste in Claude Code)
-- [ ] When Claude gives you an install link: open it → **Install app** → approve
-- [ ] Claude cannot build anything in the store until this is done
-  Note: the app **Fabriken** is already set up by the owner – you never create apps, copy keys or paste tokens.
-
-## 5. Shopify – payments
+## 6. Shopify – payments
 - [ ] Settings → Payments → Activate **Shopify Payments** → fill in the company + bank details Claude gives you
 - [ ] Same page → **Klarna** → tick → Save
 - [ ] Settings → Checkout → Customize → Logo → upload the logo Claude gives you → Save
 
-## 6. Judge.me
+## 7. Judge.me
 - [ ] Apps → search "Judge.me" → Install (free plan)
 - [ ] Judge.me → Settings → Language → **Swedish**
 - [ ] Judge.me → Settings → Review Widget → star color: **${stjarna}**
 - [ ] Judge.me → Settings → Integrations → copy **API Token** → paste it into Claude Code when asked (never in chat or email)
 
-## 7. Meta
+## 8. Meta
 - [ ] business.facebook.com → Settings → Pages → Add → Create a new Page: **${brand}**
 - [ ] Copy the **Page ID** → give to Claude Code
 - [ ] The ad account is always **MagiBorsten DK** (915422744950975) – same for every OPS store, never pick another one, never add any card
 
-## 8. Discord
+## 9. Discord
 - [ ] Discord → + → Create server: **${brand}**
 - [ ] Open the invite link Claude Code gives you → **Authorize** the bot
 
-## 9. Hand over
+## 10. Hand over
 - [ ] Tell Claude Code: **"Store ready: ${brand}"** – it creates the pixel, builds Discord channels and imports reviews
 - [ ] When Claude says the theme is ready: Online Store → Themes → the theme Claude names → **Publish**
 - [ ] When Claude says the Norway market is ready: Settings → Markets → **Norway** → activate **NOK** → Save

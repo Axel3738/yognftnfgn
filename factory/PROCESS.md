@@ -5,6 +5,10 @@ skickar produktgrupper ~2 gånger i veckan — ibland noll, ibland flera.
 VA:n har **3 dagar per grupp** att launcha alla gruppens butiker; varje
 produkt = en egen butik = en `/ny-ops`-körning + en checklista.
 
+**Ordningen från 2026-09-08 (Axels beslut):** VA:n gör butik + app +
+koppling FÖRST (checklistans steg 1–2), sen startar `/ny-ops` och bygger
+FÄRDIGT hela butiken. Domänen köps när Claude levererat namnet.
+
 **Detta är rutinen under uppbyggnad** (Axels beslut 2026-09-07: uppdatera för
 varje steg vi lyckas med — dokumentet ska så småningom bli en körbar rutin).
 Varje steg är BEVISAT på Hemvakten→HeimGuard-bygget. Ordningen är den ordning
@@ -62,11 +66,12 @@ som genereras per bygge).
     (`factory/VA-CHECKLIST.md`, ifylld per butik i `output/<id>/CHECKLISTA.md`)
     — även Shopify Payments (Axels besked 2026-09-07: aktiveringen har
     aldrig krävt BankID, VA:n fyller i bolags- och bankuppgifterna).
-    Claude kopplas till butiken via appen Fabriken (Axels engångs-setup
-    på dev.shopify.com — klientuppgifterna i miljön som SHOPIFY_CLIENT_ID
-    + SHOPIFY_CLIENT_SECRET). Per butik ger VA:n bara butikens
-    myshopify-adress och godkänner installänken (checklistans steg 4;
-    VA:n hanterar aldrig nycklar) → Admin-token hämtas och
+    Claude kopplas till butiken via butikens EGEN app (en per butik —
+    custom distribution låses till EN butik utanför Plus, mätt
+    2026-09-08): VA:n skapar appen på dev.shopify.com, lägger
+    SHOPIFY_SHOP + SHOPIFY_CLIENT_ID + SHOPIFY_CLIENT_SECRET i
+    molnsessionens miljö och installerar via distributionslänken
+    (checklistans steg 2) → Admin-token hämtas och
     `SHOPIFY_STORE_DOMAIN` + `SHOPIFY_ADMIN_TOKEN` skrivs i
     `factory/.env`. Rutinen startas med `/ny-ops`; frasen
     "Store ready: <namn>" utlöser slutsteget (se kommandot).
