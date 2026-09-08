@@ -25,8 +25,25 @@ byggdes direkt till briefer i Batch #1, se `batch-log.md`.)*
 
 ## Uppföljning (inte en idé — en kontrollpunkt för nästa `/cs`)
 
-- **Batch #1:s sex videobriefer** (`PD_4_H1`, `PD_5_H1`, `CO_1_H1`, `RI_1_H1`,
-  `DE_1_H1`, `ID_1_H1`) syns inte i kontot per 2026-09-05. Kolla Notion-
-  hubbens statuskolumn först — om de fortfarande är `Draft`/`In progress`,
-  bygg inte om samma koncept i nästa batch; om de är godkända men aldrig
-  laddades upp, flagga det för Axel.
+- **Nio videobriefer står stilla i `Creative strat review` sedan de
+  skapades** (kontrollerat 2026-09-08 via `notion-query-data-sources`):
+  Batch #1: `PD_4_H1`, `PD_5_H1`, `CO_1_H1`, `RI_1_H1`, `DE_1_H1`, `ID_1_H1`.
+  Batch #2: `PD_7_H1`, `CS_5_H1`, `ID_2_H1`. Ingen av dem syns i Meta-kontot.
+  Nästa `/cs` ska läsa statuskolumnen igen INNAN fler videokoncept läggs
+  till — fortsätter kön att växa utan att röra sig är det ett flöde-problem
+  att flagga för Axel, inte ett skäl att bygga fler briefer på samma idéer.
+- **17 statiska/BOF/review-items (Batch #1 + #2) står `Approved` i Notion
+  men bara Batch #1:s 11 syns i Meta-kontot** (kontrollerat 2026-09-08).
+  Batch #2:s 7 statiska (`OF_2_1`, `GA_2_1`, `OB_2_1`, `CS_4_1`, `RE_3_1`,
+  `RE_4_1`) väntar fortfarande på att laddas upp av `/notionkorning`.
+- **PD_3 vände till negativt vinstbidrag 2026-09-08** (se `dna.md`) — läs av
+  igen om minst 3 dygn innan den skrivs in som bevisad Losing DNA
+  (ANALYSMETOD 2b). `PD_8_H1` (Batch #3) testar om en ny inspelning av
+  samma mekanism återhämtar sig.
+- **Oanvända riktiga Judge.me-citat kvar:** Peter Svensson, Daniel
+  Lindström, Maria Eriksson (produktsidan har 10 recensioner totalt, alla
+  5 stjärnor — kontrollerat 2026-09-08). Använda hittills: Johan Nilsson,
+  Andreas Holm, Linda Berg (Batch #1), Anna Larsson, Mikael Andersson
+  (Batch #2), Emma Karlsson, Sara Johansson (Batch #3).
+- **Bredare konkurrentsökning i Meta Ad Library** — fortfarande inte gjord
+  (se nedan, oförändrat sedan 2026-09-02).

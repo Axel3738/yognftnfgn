@@ -3,24 +3,30 @@
 **Produkt:** MC-Kapell 218×118 cm – Regn, Damm & UV · 349 kr (ordinarie 582 kr, spara 40 %)
 **LP:** https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv
 **Konto:** MagiBorsten `1867947880635861` (SEK) · Kampanj `MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27` (`120249990507280291`) · Sida `678639638662543`
-**Break-even-ROAS (kill):** 1,49 → **break-even-CPA ≈ 292 kr** (omräknad 2026-09-05 ur de tre bedömbara annonsernas egen viktade AOV 434,83 kr / 1,49 — höjd från 282 kr i Batch #1, se "Läs detta först" punkt 2)
-**Senast uppdaterad:** 2026-09-05, `/cs`-körning (Batch #2 briefad, steg 4b i nattronden)
+**Break-even-ROAS (kill):** 1,49 — break-even-CPA räknas numera **per annons på
+dess egen AOV** (se punkt 2 nedan), inte längre som en gemensam blandad
+siffra.
+**Senast uppdaterad:** 2026-09-08, `/cs`-körning (Batch #3 briefad, `/rond-auto`)
 
 ---
 
 ## ⚠️ Läs detta först
 
 1. **Fortfarande bara tre annonser har passerat signifikansgränsen** (300 kr
-   spend OCH 3 köp), men de har vuxit kraftigt sedan Batch #1 (mätt
-   2026-09-05, `maximum`-livstid): `MC-Kapell_PD_1` (4 074,64 kr, 19 köp, CPA
-   214,45 kr), `MC-Kapell_PD_3` (1 691,90 kr, 7 köp, CPA 241,70 kr),
-   `MC-Kapell_CS_2_1` (1 060,06 kr, 11 köp, CPA 96,37 kr). Kampanjens
-   livstidsspend är nu 8 609,32 kr. Övriga ~25 annonser ligger under grinden.
-2. **Break-even-CPA (292 kr) är omräknad 2026-09-05** ur de tre bedömbara
-   annonsernas egna, viktade AOV (16 088,90 kr / 37 köp = 434,83 kr;
-   434,83/1,49 ≈ 291,8 kr) — inte längre 282 kr. Ordervärdet varierar
-   fortfarande per annons (349–477 kr), troligen pga tillval/fraktvärde i
-   pixeln. Räkna om igen vid nästa `/cs` om spridningen håller i sig.
+   spend OCH 3 köp), men de har vuxit kraftigt sedan Batch #2 (mätt
+   2026-09-08, `maximum`-livstid): `MC-Kapell_PD_1` (5 782,15 kr, 28 köp, CPA
+   206,51 kr), `MC-Kapell_PD_3` (2 267,10 kr, 8 köp, CPA 283,39 kr),
+   `MC-Kapell_CS_2_1` (1 938,91 kr, 17 köp, CPA 114,05 kr). Övriga ~25
+   annonser ligger under grinden.
+2. **VIKTIGT — break-even-CPA räknas nu per annons på dess egen AOV, inte på
+   en blandad AOV** (rättat 2026-09-08). Föregående körning räknade en
+   gemensam break-even-CPA (292 kr) ur de tre bedömbara annonsernas
+   sammanslagna AOV — det dolde att `PD_3` (egen AOV 379,54 kr, klart lägre
+   än `PD_1`:s 462,42 kr) faktiskt vänt till **negativt vinstbidrag**
+   (ROAS 1,34, under break-even 1,49) mellan förra och denna avläsning.
+   Formel: break-even-CPA (per annons) = (intäkt/köp) / 1,49. Räkna alltid
+   så här när AOV skiljer sig mellan annonser i samma kampanj — annars
+   maskeras en förlorare av vinnarnas högre AOV.
 3. **VIKTIGT — falsk premiss upptäckt och rättad 2026-09-05:** en tidigare
    instruktion antog att en/flera annonser i den här kampanjen hade PAUSATS
    som "spendtjuv" i åtgärdstrappan senaste veckan. Det stämmer inte.
@@ -96,6 +102,26 @@
   40 %-erbjudande utan overifierbar brådska) har 167,46 kr spend, 1 köp,
   ROAS 2,08 — för tidigt för en dom, men stödjer riktningen att ett sant
   erbjudande kan prestera minst lika bra som CS_2_1:s overifierbara variant.
+
+## PD_3 vände till förlust 2026-09-08 — läs innan du bygger fler videobriefer på samma klipp
+
+`MC-Kapell_PD_3` (samma bevisade mekanism som `PD_1`: motorcykel + kapell
+synliga, verklig miljö) har gått från ROAS 1,59 (Batch #2-avläsningen,
+7 köp) till **ROAS 1,34** (8 köp, 2026-09-08) — under break-even 1,49 för
+första gången. Vinstbidrag på annonsens egen AOV: **≈ −229 kr**. Samtidigt
+håller `PD_1` (samma mekanism, annan inspelning) ROAS 2,24. Två möjliga
+förklaringar, ingen bevisad än:
+- **Kreativ utmattning på just den här filmen** (CPM steg till 129 kr mot
+  `PD_1`:s 106 kr) — mekanismen fungerar fortfarande, klippet är slitet.
+- **Lägre egen-AOV** (379,54 kr mot `PD_1`:s 462,42 kr) — annonsen kan dra en
+  publik som handlar billigare, vilket sänker break-even-marginalen även vid
+  oförändrad ROAS-nivå.
+
+Batch #3:s `PD_8_H1` testar en helt ny inspelning av samma mekanism för att
+isolera vilken förklaring som stämmer. **Döm inte PD_3 som Losing DNA än** —
+detta är en enda avläsning efter en vändning, och ANALYSMETOD 2b kräver
+≥3 dygns mellanrum och ≥5 inkrementella köp innan en marginal-trend får
+skrivas in som bevisad.
 
 ## Viktig nyans: hooken/hold är förmodligen inte det som avgör (stärkt 2026-09-05)
 

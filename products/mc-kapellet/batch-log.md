@@ -171,3 +171,96 @@ varje brief, direkt i Notion-itemet.
   teamspacet Bäverbutiken. Flaggat för Axel i dna.md, inte åtgärdat.
 
 **Öppna luckor:** se `dna.md` "Öppna luckor att täcka i nästa körning".
+
+## Feedbackloop 2026-09-08 (`/cs`, `/rond-auto`) — utfall av Batch #1 och #2, Batch #3 briefad
+
+**Kampanjstatus:** ACTIVE, verifierat direkt mot kontot innan något gjordes.
+
+**Notion-statuskontroll (obligatorisk innan ny batch byggdes):** samtliga 9
+videobriefer från Batch #1 (`PD_4_H1`, `PD_5_H1`, `CO_1_H1`, `RI_1_H1`,
+`DE_1_H1`, `ID_1_H1`) OCH Batch #2 (`PD_7_H1`, `CS_5_H1`, `ID_2_H1`) står
+fortfarande i status `Creative strat review` — ingen har rört sig sedan de
+skapades. Samtliga 17 statiska/BOF/review-items från Batch #1 och #2 står
+`Approved` men syns ännu inte i Meta-kontot (Batch #2:s bilder är godkända
+men inte uppladdade av `/notionkorning` ännu). Batch #3:s nya koncept är
+därför medvetet valda för att INTE upprepa något av de 9 väntande
+videokoncepten.
+
+**Utfall per bedömbar annons (signifikansgrind 300 kr + 3 köp), livstid
+`maximum` 2026-09-08:**
+
+| Annons | Spend | Köp | CPA | ROAS | Vinstbidrag (annonsens egen AOV/1,49) | Föregående dom | Utfall |
+|---|---|---|---|---|---|---|---|
+| `MC-Kapell_PD_1` | 5 782,15 kr | 28 | 206,51 kr | 2,24 | ≈2 908 kr | Vinnare, benchmark | Höll — fortsatt starkast i kronor, växte 19→28 köp |
+| `MC-Kapell_CS_2_1` | 1 938,91 kr | 17 | 114,05 kr | 3,69 | ≈2 863 kr | Bekräftad vinnare | Höll, växte 11→17 köp, bästa CPA i kampanjen |
+| `MC-Kapell_PD_3` | 2 267,10 kr | 8 | 283,39 kr | **1,34** | **≈ −229 kr** | Vinnare (svagare marginal, ROAS 1,59) | **Vände till förlust.** ROAS föll under break-even 1,49 mellan förra och denna avläsning trots +1 köp — spenden växte snabbare än intäkten (CPM 129 kr mot PD_1:s 106 kr, lägre egen-AOV 379,54 kr mot PD_1:s 462,42 kr). Se teardown nedan. |
+
+Break-even-CPA räknas här **per annons på dess egen AOV** (värde/köp ÷ 1,49),
+inte på en gemensam blandad AOV — annonsernas AOV skiljer sig äkta (349–462
+kr), och en gemensam siffra dolde PD_3:s vändning till förlust i förra
+avläsningen. PD_2 (708,46 kr, 1 köp) och SP_1 (316,62 kr, 1 köp) ligger
+fortfarande i "för tidigt"-högen, oförändrat. Datakvalitet OK: `amount_spent
+× purchase_roas` matchar `omni_purchase_values` på alla sex kontrollerade
+rader inom öret.
+
+**Creative-teardown, nytt fynd utöver de tre tidigare bevisade mönstren:**
+4. **Ny hypotes (n=1, allvarlig men inte bevisad):** samma bevisade mekanism
+   (motorcykel + kapell synliga, verklig miljö) kan ändå tappa marginal när
+   spenden skalas på EN specifik klippning — PD_3:s CPM steg och egen-AOV
+   sjönk samtidigt som spenden växte, vilket kan vara kreativ utmattning på
+   just den filmen snarare än att mekanismen slutat fungera (PD_1, samma
+   mekanism men annan klippning, håller fortfarande ROAS 2,24). →
+   Instruktion: `PD_8_H1` testar en helt ny inspelning av exakt samma
+   bevisade mekanism i ny miljö/modell, isolerat för att skilja
+   "utmattad film" från "mekanism funkar inte längre."
+
+**Batch #3 — 2026-09-08 (`/cs`, automatisk körning via `/rond-auto`):**
+9 creatives — 3 video + 1 statisk (rundan, rundaAntal=4) + 3 BOF-statiska +
+2 review-statiska (nya, oanvända Judge.me-citat).
+
+| Ad-namn | Koncept | Format | Hypotes (kort) | Variabeltaggar |
+|---|---|---|---|---|
+| `MC-Kapell_PD_8_H1` | Fatigue-test | Video | Ny inspelning av PD_1/PD_3:s bevisade mekanism i ny miljö — isolerar om PD_3:s vändning till förlust beror på filmutmattning | angle=proof, hook=demo, format=ugc, proof=visual-realism |
+| `MC-Kapell_FT_1_H1` | Fit/compatibility | Video | Visar kapellet på två olika fordon (motorcykel + elcykel/moped) på kamera — bevisar produktsidans eget påstående "passar de flesta motorcyklar och elcyklar" | angle=objection-fit, hook=demo, format=ugc |
+| `MC-Kapell_DE_3_H1` | Installationstid | Video | Tidtagen installationsdemo (stoppur i bild) på produktsidans "cirka en minut"-påstående | angle=convenience, hook=timed-proof, format=ugc |
+| `MC-Kapell_UV_1_1` | Material/UV | Static | Enfunktionsbild (vattenavvisande material + UV) i stället för DE_2_1:s trefunktionskollage | angle=feature-deepdive, format=macro |
+| `MC-Kapell_OF_3_1` | BOF pris/erbjudande | Static | Rabatt + fri frakt staplade som ett kombinerat värde, ny layout mot OF_1_1/OF_2_1 | angle=offer, format=value-stack |
+| `MC-Kapell_GA_3_1` | BOF garanti/frakt | Static | Klarna-delbetalning + öppet köp, oanvänd riktig produktsidefakta | angle=trust, format=payment |
+| `MC-Kapell_OB_3_1` | BOF invändning | Static | "Passar den min moped/elcykel?" löst med produktsidans egna ord + mått | angle=objection, format=size-chart |
+| `MC-Kapell_RE_5_1` | Review | Static | Riktigt citat (Emma Karlsson), oanvänt i tidigare batcher | angle=social proof, proof=recension |
+| `MC-Kapell_RE_6_1` | Review | Static | Riktigt citat (Sara Johansson), oanvänt i tidigare batcher | angle=social proof, proof=recension |
+
+**Riktiga recensioner hämtade direkt från produktsidan** (baverbutiken.se,
+10 recensioner, samtliga 5 stjärnor, kontrollerat 2026-09-08). Tidigare
+använda: Johan Nilsson, Andreas Holm, Linda Berg (Batch #1), Anna Larsson,
+Mikael Andersson (Batch #2). Oanvända och tillgängliga för nästa batch:
+Peter Svensson, Daniel Lindström, Maria Eriksson.
+
+**Modellpolicy-avvikelse:** inget Agent/Task-verktyg med `model`-parameter
+tillgängligt i denna körning (verifierat via verktygssökning), i linje med
+samma dokumenterade avvikelse för samtliga tidigare batcher i det här
+repot. All copy skriven av huvudsessionen. Tre-frågorstestet
+(`docs/copy-regler.md`) kört rad för rad i varje brief, direkt i
+Notion-itemet. Två rader (`GA_3_1`:s Klarna/öppet köp-rader) klarar inte
+"kan ingen annan säga det"-testet fullt ut — Klarna och 30 dagars öppet köp
+är standard hos i princip alla svenska e-handlare. De skickades ändå
+eftersom de är sanna och garanti-vinkeln är obeprövad för produkten, men
+flaggas explicit i briefen som informationsrader, inte som
+differentieringspåståenden.
+
+**Leverans:**
+- Drive: ny mapp `Batch #3` i den befintliga produktmappen "Motorcycle
+  cover" (`1hwYK5Qa-Dh4iltlfr4FLyndvlCEHmqI7`), id
+  `1srhKWBtM3XdQI8P-QPExF65xj9C42pxC` — 9 brief-filer uppladdade.
+- Notion: 9 items skapade i den befintliga hubben "Motorcycle Cover creative
+  hub" (`3cf270ab-908c-81c1-bfd2-d78f9a45b3d8`), Status `Draft`, Typ
+  `Video - Pending Approval` / `Image - Pending Approval`. Hela briefen
+  ligger i varje item — verifierat med `notion-fetch` på `MC-Kapell_PD_8_H1`.
+  Hubben ligger fortfarande privat (tomt `<ancestor-path>` mot teamspacet).
+
+**Öppna luckor:** samtliga 9 väntande videobriefer (Batch #1 + #2) behöver
+antingen produceras eller flyttas framåt i Notion — nästa körning ska läsa
+statuskolumnen igen innan fler videokoncept läggs till, annars växer kön av
+obearbetade briefer utan att någon ny data kommer in. PD_3:s vändning till
+förlust bör läsas av igen om 3+ dygn (signifikansgrind för marginal-CPA,
+ANALYSMETOD 2b) innan den skrivs in som bevisad Losing DNA.
