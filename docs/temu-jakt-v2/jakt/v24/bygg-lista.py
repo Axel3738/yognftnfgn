@@ -45,15 +45,20 @@ def main():
     lista = json.load(open(os.path.join(HERE, "LISTA.json"), encoding="utf-8"))
     os.makedirs(os.path.join(HERE, "sma"), exist_ok=True)
     for p in lista:
-        h = hero_for(p.get("bild_id"))
+        # AliExpress-bilden är den varan länken går till — den vinner alltid över ett gammalt Temu-foto.
+        h = None
+        b = p.get("ali_bast")
+        if b:
+            cand = os.path.join(HERE, "ali-bild", b["product_id"] + ".jpg")
+            if os.path.exists(cand) and os.path.getsize(cand) > 0:
+                h = cand
+        h = h or hero_for(p.get("bild_id"))
         p["hero"] = None
         if h:
-            small = krymp(h, os.path.join(HERE, "sma", f"{p['bild_id']}-560.jpg"))
+            small = krymp(h, os.path.join(HERE, "sma", os.path.basename(h).replace(".jpg", "") + "-560.jpg"))
             if small:
                 p["hero"] = "data:image/jpeg;base64," + base64.b64encode(open(small, "rb").read()).decode("ascii")
-        q = urllib.parse.quote(p["sok"])
-        p["sok_temu"] = f"https://www.temu.com/se/search_result.html?search_key={q}"
-        p["sok_bild"] = f"https://www.google.com/search?tbm=isch&q={q}"
+        p.setdefault("ali_sok_url", "")
     mall = open(os.path.join(HERE, "lista-mall.html"), encoding="utf-8").read()
     html = mall.replace("/*__DATA__*/[]", json.dumps(lista, ensure_ascii=False))
     out = os.path.join(HERE, "LISTA.html")

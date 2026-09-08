@@ -3,7 +3,7 @@
  "url": "https://www.temu.com/se/g-601101118338671.html",
  "final_url": "https://www.temu.com/se/g-601101118338671.html",
  "http_status": 200,
- "fetched": "2026-09-08T06:28:50Z",
+ "fetched": "2026-09-08T22:52:23Z",
  "market": "se",
  "verified": true,
  "verdict": "LIVE",
@@ -14,7 +14,7 @@
  ],
  "price": "129.09",
  "currency": "SEK",
- "availability": null,
+ "availability": "InStock",
  "rating": 4.7,
  "review_count": 410,
  "review_dates": [
@@ -34,6 +34,5 @@
  "video_url": "https://goods-vod.kwcdn.com/goods-video/89589fe82822e2da67076648f2fdd92b78aa2900.f30.mp4",
  "video_uploaded": "2025-05-21T07:11:09.00Z",
  "sku": null,
- "hero_file": "hero.jpg",
- "kalla": "temu-ld.py 06:28:50Z (första hämtningen i körningen), omskriven till v24-format"
+ "hero_file": "hero.jpg"
 }
