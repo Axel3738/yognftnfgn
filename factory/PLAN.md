@@ -70,11 +70,10 @@ Målet: aldrig vänta på en redigerare när en ny OPS-butik launchar.
    sig att vara redo att börja direkt när en butik behöver dem.
 4. Ny OPS-butik → plocka nästa namn ur listan → anställ på riktigt.
 
-⚠️ **ÄNDRAT 2026-09-08: standby-poolen är SKIPPAD.** Axels beslut — ingen
-beredskapsersättning, ingen pool som hålls varm. Punkt 3 ovan gäller inte.
-Rekrytering startar när en butik faktiskt behöver en redigerare; annonserna
-i `factory/rekrytering/utskick/` ligger färdiga att publiceras då.
-Konsekvens: räkna med 1–2 veckors ledtid från behov till första leverans.
+⚠️ **ÄNDRAT 2026-09-08 (Axels besked):** punkt 3 ovan gäller inte — **ingen
+löpande beredskapsersättning betalas.** Poolen byggs ur ansökningsflödet i
+stället: jobbannonsen är ute, ansökningar kommer in, och en person står redan
+på standby. Rekryteringen är alltså IGÅNG, bara utan betald väntetid.
 
 ## 4b. Discord-server per OPS-butik (Axels beslut 2026-09-07)
 
