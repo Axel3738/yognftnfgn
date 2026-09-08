@@ -120,3 +120,17 @@ används för pris i SEK, lager och länken Axel öppnar — aldrig för G1.**
 | Live-verifieraren | `jakt/v24/verifiera-live.py` → `live/<id>/data.json` + `hero.jpg` |
 | Slutlistan och kvittot | `jakt/v24/SLUTLISTA-<datum>.md`, `jakt/v24/STATUS-<datum>.md` |
 | Vinnar-DNA:t (fingeravtrycket, negativa rymden) | `docs/temu-vinnar-dna.md` avsnitt 6 och 12 |
+
+## 7. Mätt 2026-09-08: vad regeln gör med ett riktigt kandidatfält
+
+81 koncept prövades mot gaterna ovan (rapport: `jakt/v24/RAPPORT-2026-09-08.md`). Utfall: **0 STRONG,
+1 MEDIUM, 8 REFUTED, 72 WEAK.** Nio passerade alla mekaniska gater; skeptikerna fällde sex av dem.
+
+**Det som faktiskt fäller är inte hyllan utan golvet utan ankare.** Svensk marketplace (Fyndiq, CDON,
+Amazon.se, vidaXL) säljer formen för 130–390 kr på nästan varje kandidat, och fackhandelns
+märkesprodukt ligger ofta bara 1,2–1,5× över vårt pris — under 1,6×-kravet. Konsekvens för nästa jakt:
+
+**Sök från ankaret, inte från objektet.** Börja i svensk fackhandels 700–2 500 kr-produkter som en man
+45–70 använder utomhus i säsong, och leta Temu-kopian som *ser ut som märket*. Den ordningen gav de
+enda nya kandidaterna med både ankare och noll svenska säljare. Att börja i Temu och hoppas på ett
+ankare på slutet ger 0 av 78.
