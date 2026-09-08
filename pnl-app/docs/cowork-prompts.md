@@ -111,3 +111,40 @@ Uppgift: lägg till SNI-koden för programvaruutgivning på mitt aktiebolag Ston
 6. Skärmbild av bekräftelsen → visa mig.
 Gissa aldrig — fråga mig om ett steg ser annorlunda ut.
 ```
+
+## 6. Granska och stresstesta appen (Claude Code / Cowork, ny session)
+
+```
+Du är en erfaren Shopify-apputvecklare och en krävande handlare på samma gång.
+Repo: axel3738/yognftnfgn, gren claude/bäverbutiken-settkopplingen-nba21z, mapp pnl-app/.
+Läs pnl-app/CLAUDE.md först (hela). Appen är StonePNL, live i App Store.
+
+Del 1 — Granska (skriv rapporten till pnl-app/docs/granskning-<datum>.md):
+1. Gå igenom varje sida som en NY handlare med tom butik: vad är förvirrande, vad saknar
+   förklaring, var ser siffror ut att vara sanna fast de är ofullständiga? Lista per sida.
+2. Jämför funktionslistan mot Juicy, TrueProfit, BeProfit och Lifetimely (sök på webben).
+   Vad har alla fyra som vi saknar? Vad har vi som ingen av dem har? Rangordna efter
+   hur ofta handlare nämner det i recensioner.
+3. Prestanda: hitta varje ställe där en sida väntar synkront på Shopify/Meta/Frankfurter.
+   Regeln i CLAUDE.md: servera databasen, uppdatera i bakgrunden.
+4. Datasanning: hitta varje ställe där ett fel kan bli en nolla eller ett saknat värde
+   kan se ut som "inget hände". Regeln: en misslyckad hämtning får aldrig skriva ett värde.
+5. Onboarding: räkna klick från installation till första sanna vinstsiffra. Föreslå hur
+   det halveras.
+Varje fynd: fil, rad, vad som händer, vad handlaren ser, förslag. Inga stilsynpunkter.
+
+Del 2 — Stresstesta (på testbutiken stonepnl-test, aldrig på riktiga butiker):
+6. Skapa 300 testordrar över 90 dagar med Shopify Admin API (blandat: 1–4 rader,
+   återbetalningar, avbrutna, gästkassa och återkommande kunder). Använd butikens
+   testläge (Bogus gateway).
+7. Öppna panelen på 7/30/90 dagar och mät laddtid med ett vanligt stoppur i
+   webbläsarens nätverksflik. Något över 3 s på cachad vy är ett fynd.
+8. Ta bort Meta-token → panelen måste flagga saknad annonskostnad, aldrig visa grönt.
+9. Sätt SCOPES utan read_customers på testtjänsten → panelen ska fungera exakt som förut
+   och LTV-sidan ska förklara varför den är tom.
+10. Kör 3 samtidiga sidladdningar av 90-dagarsvyn → ingen "already in progress"-krasch.
+11. Kör npm run typecheck, bygget och npm test. Allt ska vara grönt.
+Rapportera alla fynd i samma fil, sorterade: det som ger fel siffra först, sedan det som
+kostar tid, sedan det som är förvirrande. Ändra ingen kod i den här sessionen — bara
+rapporten. Svara Axel enligt svarsformatet i CLAUDE.md.
+```

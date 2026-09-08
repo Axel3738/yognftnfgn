@@ -97,6 +97,9 @@ model ShopSettings {
   /// Senaste lyckade bakfyllnad av KundOrder, och senaste felet i klartext.
   kundOrderBackfillAt    DateTime?
   kundOrderBackfillError String?
+  /// Vinstmål per 30 dagar i butikens valuta — ringen i panelens hero-kort.
+  /// Null = inget mål satt (ringen visar då bara vinsten).
+  monthlyGoal     Decimal? @db.Decimal(12, 2)
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 

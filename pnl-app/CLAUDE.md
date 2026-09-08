@@ -472,7 +472,20 @@ vanliga månadskostnader man har såsom Claude-planer, ChatGPT, Shopify-
 prenumeration, anställda snitt varje månad."
 
 Företagsadmin (vänrabatt, SNI, byrån): `docs/foretag-admin.md`. Färdiga
-Cowork-prompter för Axels klick: `docs/cowork-prompts.md`.
+Cowork-prompter för Axels klick (planer, scopes, Railway, SNI, granskning +
+stresstest): `docs/cowork-prompts.md`. Juicy-övergången utan att bli
+avstängd: `docs/tillvaxt-juicy.md`.
+
+**Hero-kortet i panelen (build hero-v68)** — Axels ord: "dashboarden borde se
+lite mer levande ut, man vill ha en dopaminkick." Överst i panelen: den stora
+nettovinsten räknas upp (`AnimatedNumber`, respekterar
+prefers-reduced-motion), ring mot vinstmålet (`ShopSettings.monthlyGoal`, per
+30 dagar, skalas till periodens längd, sätts i kortet med intent `set-goal`),
+svit av dagar på plus (`vinstPerDag`, samma fördelning som staplarna), bästa
+dag, och konfetti EN gång per dag och butik (sessionStorage) när målet nås
+eller periodens sista dag är bäst. Sanningen först: saknas annonskostnad är
+kortet gult med "Annonskostnad saknas" och ingen konfetti. KPI-talen får en
+kort pop-animation (`.pnl-pop`).
 
 **Axel måste göra (i ordning):**
 1. Partner Dashboard → StonePNL → **Distribution → Prissättning**: plan

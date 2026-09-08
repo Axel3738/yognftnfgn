@@ -25,6 +25,21 @@ const en = {
 
   dashboard: {
     title: "Profit",
+    hero: {
+      title: "Net profit this period",
+      perDay: (v: string) => `${v} per day`,
+      goalLabel: (days: number) => `Goal for ${days} days`,
+      goalProgress: (pct: number) => `${pct} % of goal`,
+      goalReached: "Goal reached 🎯",
+      goalSet: "Set a 30-day profit goal to track progress",
+      goalInput: "30-day profit goal",
+      goalSave: "Save goal",
+      streak: (n: number) => (n === 1 ? "1 day in the black in a row" : `${n} days in the black in a row`),
+      noStreak: "No streak yet — the next day in the black starts one",
+      bestDay: (day: string, v: string) => `Best day: ${day} · ${v}`,
+      newRecord: "🔥 New best day in this period",
+      incomplete: "Ad spend missing — profit reads too high",
+    },
     loadingOrders: "Fetching orders",
     loadingText:
       "Fetching orders from Shopify — the 30-day view reads the entire order history and can take up to half a minute.",
@@ -592,6 +607,21 @@ const sv: Texts = {
 
   dashboard: {
     title: "Vinst",
+    hero: {
+      title: "Nettovinst i perioden",
+      perDay: (v: string) => `${v} per dag`,
+      goalLabel: (days: number) => `Mål för ${days} dagar`,
+      goalProgress: (pct: number) => `${pct} % av målet`,
+      goalReached: "Målet nått 🎯",
+      goalSet: "Sätt ett vinstmål per 30 dagar för att följa läget",
+      goalInput: "Vinstmål per 30 dagar",
+      goalSave: "Spara mål",
+      streak: (n: number) => (n === 1 ? "1 dag på plus i rad" : `${n} dagar på plus i rad`),
+      noStreak: "Ingen svit än — nästa dag på plus startar en",
+      bestDay: (day: string, v: string) => `Bästa dagen: ${day} · ${v}`,
+      newRecord: "🔥 Ny bästa dag i perioden",
+      incomplete: "Annonskostnad saknas — vinsten är för hög",
+    },
     loadingOrders: "Hämtar ordrar",
     loadingText:
       "Hämtar ordrar från Shopify — 30-dagarsvyn läser hela orderhistoriken och kan ta upp till en halv minut.",

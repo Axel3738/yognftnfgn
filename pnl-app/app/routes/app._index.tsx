@@ -321,6 +321,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
   return {
     fatal: null as string | null,
     tips,
+    monthlyGoal: settings.monthlyGoal != null ? Number(settings.monthlyGoal) : null,
     comparison,
     groupSize,
     group,
@@ -365,6 +366,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     return {
       fatal,
       tips: [] as Tip[],
+      monthlyGoal: null as number | null,
       comparison: null as { totalSales: number; orders: number; spend: number; netProfit: number } | null,
       groupSize: 1,
       group: null as Awaited<ReturnType<typeof summeraGrupp>> | null,
@@ -413,6 +415,13 @@ export async function action({ request }: ActionFunctionArgs) {
     await prisma.shopSettings.update({
       where: { shop: session.shop },
       data: { setupDismissedAt: new Date() },
+    });
+  }
+  if (String(form.get("intent")) === "set-goal") {
+    const v = parseFloat(String(form.get("goal") ?? "").replace(/\s/g, "").replace(",", "."));
+    await prisma.shopSettings.update({
+      where: { shop: session.shop },
+      data: { monthlyGoal: Number.isFinite(v) && v > 0 ? v : null },
     });
   }
   return json({ ok: true });
@@ -581,6 +590,184 @@ function Donut({
  * dagens omsättning/ordrar — produktmixen finns bara aggregerad för perioden,
  * så per-dag-vinsten är en välgrundad uppskattning, inte bokföring.
  */
+/**
+ * Uppskattad vinst per dag — samma fördelning som staplarna: COGS, avgifter
+ * och tull fördelas efter dagens andel av periodens omsättning, fasta
+ * kostnader jämnt, annonskostnad per dag som den är.
+ */
+function vinstPerDag(result: NonNullable<PageData["result"]>) {
+  const t = result.totals;
+  const days = result.sales;
+  const fixedDaily = days.length ? t.fixedCosts / days.length : 0;
+  return days.map((d) => {
+    const spend = result.spendByDay[d.day]?.spend ?? 0;
+    const cogs = t.netSales > 0 ? t.cogs * (d.netSales / t.netSales) : 0;
+    const fees = t.totalSales > 0 ? t.fees * (d.totalSales / t.totalSales) : 0;
+    const tariff = t.orders > 0 ? t.tariff * (d.orders / t.orders) : 0;
+    return { day: d.day, revenue: d.totalSales, spend, profit: d.totalSales - cogs - fees - tariff - spend - fixedDaily };
+  });
+}
+
+/** Räknar upp ett tal från 0 vid montering — respekterar prefers-reduced-motion. */
+function AnimatedNumber({ value, format }: { value: number; format: (v: number) => string }) {
+  const [shown, setShown] = useState(value);
+  const startRef = useRef<number | null>(null);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) { setShown(value); return; }
+    const dur = 900;
+    let raf = 0;
+    startRef.current = null;
+    const step = (ts: number) => {
+      if (startRef.current == null) startRef.current = ts;
+      const p = Math.min(1, (ts - startRef.current) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      setShown(value * eased);
+      if (p < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [value]);
+  return <span>{format(shown)}</span>;
+}
+
+/**
+ * Hero-kortet: den stora vinstsiffran, ring mot vinstmålet, svit och bästa
+ * dag. Det här är dopaminet — men aldrig på bekostnad av sanningen: saknas
+ * annonskostnad står det i kortet, och siffran är röd, inte grön.
+ */
+function Hero({
+  result, money, T, lang, currency, monthlyGoal,
+}: {
+  result: NonNullable<PageData["result"]>;
+  money: (v: number | null) => string;
+  T: Texts;
+  lang: Lang;
+  currency: string;
+  monthlyGoal: number | null;
+}) {
+  const fetcher = useFetcher();
+  const [goalInput, setGoalInput] = useState(monthlyGoal != null ? String(Math.round(monthlyGoal)) : "");
+  const [editGoal, setEditGoal] = useState(false);
+  const t = result.totals;
+  const rows = vinstPerDag(result);
+  const days = rows.length;
+  const complete = t.spendComplete;
+  const positive = t.netProfit >= 0 && complete;
+
+  /* Svit: dagar på plus i rad, räknat bakåt från periodens sista dag. */
+  let streak = 0;
+  for (let i = rows.length - 1; i >= 0; i--) {
+    if (rows[i].profit > 0) streak++;
+    else break;
+  }
+  const best = rows.reduce<{ day: string; profit: number } | null>((b, r) => (r.revenue > 0 && (!b || r.profit > b.profit) ? { day: r.day, profit: r.profit } : b), null);
+  const bestIsLast = best && rows.length > 1 && best.day === rows[rows.length - 1].day && best.profit > 0;
+
+  /* Ringen: målet är per 30 dagar och skalas till periodens längd. */
+  const goalForPeriod = monthlyGoal != null && days > 0 ? (monthlyGoal * days) / 30.4 : null;
+  const pct = goalForPeriod && goalForPeriod > 0 ? Math.max(0, Math.min(1, t.netProfit / goalForPeriod)) : null;
+  const reached = pct != null && pct >= 1 && complete;
+
+  /* Konfetti en gång per dag och butik, bara vid nått mål eller ny bästa dag. */
+  const [confetti, setConfetti] = useState(false);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (!(reached || bestIsLast) || !complete) return;
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+    try {
+      const key = `pnl-confetti-${result.to}-${reached ? "goal" : "record"}`;
+      if (sessionStorage.getItem(key)) return;
+      sessionStorage.setItem(key, "1");
+    } catch { /* privat läge — visa ändå */ }
+    setConfetti(true);
+    const id = setTimeout(() => setConfetti(false), 2600);
+    return () => clearTimeout(id);
+  }, [reached, bestIsLast, complete, result.to]);
+
+  const R = 46, C = 2 * Math.PI * R;
+  const lbl = (iso: string) => `${+iso.slice(8, 10)}/${+iso.slice(5, 7)}`;
+  const bg = !complete ? "linear-gradient(135deg,#fff4e5,#fde7c9)" : positive ? "linear-gradient(135deg,#e6f6ea,#cdeed8)" : "linear-gradient(135deg,#fdecea,#f8d3cf)";
+  const fg = !complete ? "#8a5a00" : positive ? "#0a5c2b" : "#8e1b12";
+
+  return (
+    <div className="pnl-hero" style={{ background: bg, borderRadius: 16, padding: 20, position: "relative", overflow: "hidden" }}>
+      <style>{`
+        .pnl-hero { animation: pnl-fade .5s ease-out; }
+        .pnl-pop { display:inline-block; animation: pnl-pop .6s cubic-bezier(.2,.9,.3,1.2); }
+        @keyframes pnl-fade { from { opacity: 0; transform: translateY(6px);} to { opacity: 1; transform: none;} }
+        @keyframes pnl-pop { from { transform: scale(.92); opacity: .4;} to { transform: none; opacity: 1;} }
+        @keyframes pnl-ring { from { stroke-dashoffset: ${C}; } }
+        .pnl-ring { animation: pnl-ring 1.1s ease-out; }
+        .pnl-confetti span { position:absolute; top:-10px; width:8px; height:14px; border-radius:2px; animation: pnl-fall 2.4s ease-in forwards; }
+        @keyframes pnl-fall { to { transform: translateY(420px) rotate(540deg); opacity: 0; } }
+        @media (prefers-reduced-motion: reduce) { .pnl-hero, .pnl-pop, .pnl-ring, .pnl-confetti span { animation: none !important; } }
+      `}</style>
+      {confetti ? (
+        <div className="pnl-confetti" aria-hidden style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
+          {Array.from({ length: 28 }).map((_, i) => (
+            <span key={i} style={{ left: `${(i * 37) % 100}%`, background: ["#008300", "#005bd3", "#e0a800", "#b3261e", "#7c3aed"][i % 5], animationDelay: `${(i % 7) * 0.12}s` }} />
+          ))}
+        </div>
+      ) : null}
+      <div style={{ display: "flex", gap: 20, alignItems: "center", flexWrap: "wrap" }}>
+        <div style={{ flex: 1, minWidth: 220 }}>
+          <Text as="span" variant="bodySm" tone="subdued">{T.dashboard.hero.title}</Text>
+          <div style={{ fontSize: 40, fontWeight: 700, lineHeight: 1.1, color: fg, letterSpacing: -1 }}>
+            <AnimatedNumber value={t.netProfit} format={(v) => money(v)} />
+          </div>
+          <Text as="p" tone="subdued">{days ? T.dashboard.hero.perDay(money(t.netProfit / days)) : ""}</Text>
+          <div style={{ marginTop: 10, display: "flex", gap: 8, flexWrap: "wrap" }}>
+            {!complete ? <Badge tone="critical">{T.dashboard.hero.incomplete}</Badge> : null}
+            {reached ? <Badge tone="success">{T.dashboard.hero.goalReached}</Badge> : null}
+            {bestIsLast ? <Badge tone="success">{T.dashboard.hero.newRecord}</Badge> : null}
+            <Badge tone={streak > 0 ? "success" : undefined}>{streak > 0 ? `🔥 ${T.dashboard.hero.streak(streak)}` : T.dashboard.hero.noStreak}</Badge>
+            {best ? <Badge>{T.dashboard.hero.bestDay(lbl(best.day), money(best.profit))}</Badge> : null}
+          </div>
+        </div>
+        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+          <svg width="112" height="112" viewBox="0 0 112 112" role="img" aria-label={pct != null ? T.dashboard.hero.goalProgress(Math.round(pct * 100)) : T.dashboard.hero.goalSet}>
+            <circle cx="56" cy="56" r={R} fill="none" stroke="rgba(0,0,0,.08)" strokeWidth="10" />
+            {pct != null ? (
+              <circle className="pnl-ring" cx="56" cy="56" r={R} fill="none" stroke={fg} strokeWidth="10" strokeLinecap="round"
+                strokeDasharray={C} strokeDashoffset={C * (1 - pct)} transform="rotate(-90 56 56)" />
+            ) : null}
+            <text x="56" y="61" textAnchor="middle" fontSize="18" fontWeight="700" fill={fg}>{pct != null ? `${Math.round(pct * 100)} %` : "—"}</text>
+          </svg>
+          <div style={{ minWidth: 160 }}>
+            {editGoal || monthlyGoal == null ? (
+              <BlockStack gap="150">
+                <TextField
+                  label={`${T.dashboard.hero.goalInput} (${currency})`}
+                  value={goalInput}
+                  onChange={setGoalInput}
+                  autoComplete="off"
+                  type="text"
+                />
+                <Button
+                  size="slim"
+                  variant="primary"
+                  loading={fetcher.state !== "idle"}
+                  onClick={() => { fetcher.submit({ intent: "set-goal", goal: goalInput }, { method: "POST" }); setEditGoal(false); }}
+                >
+                  {T.dashboard.hero.goalSave}
+                </Button>
+              </BlockStack>
+            ) : (
+              <BlockStack gap="100">
+                <Text as="span" variant="bodySm" tone="subdued">{T.dashboard.hero.goalLabel(days)}</Text>
+                <Text as="p" fontWeight="semibold">{money(goalForPeriod)}</Text>
+                <Text as="span" variant="bodySm" tone="subdued">{pct != null ? T.dashboard.hero.goalProgress(Math.round(pct * 100)) : ""}</Text>
+                <Button size="slim" variant="plain" onClick={() => setEditGoal(true)}>{T.dashboard.hero.goalSave}</Button>
+              </BlockStack>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ProfitBars({
   result,
   money,
@@ -591,18 +778,10 @@ function ProfitBars({
   T: Texts;
 }) {
   const [tip, setTip] = useState<{ x: number; y: number; i: number } | null>(null);
-  const t = result.totals;
   const days = result.sales;
   if (days.length < 2) return null;
 
-  const fixedDaily = t.fixedCosts / days.length;
-  const rows = days.map((d) => {
-    const spend = result.spendByDay[d.day]?.spend ?? 0;
-    const cogs = t.netSales > 0 ? t.cogs * (d.netSales / t.netSales) : 0;
-    const fees = t.totalSales > 0 ? t.fees * (d.totalSales / t.totalSales) : 0;
-    const tariff = t.orders > 0 ? t.tariff * (d.orders / t.orders) : 0;
-    return { day: d.day, revenue: d.totalSales, spend, profit: d.totalSales - cogs - fees - tariff - spend - fixedDaily };
-  });
+  const rows = vinstPerDag(result);
 
   const W = 860, H = 150, padL = 8, padB = 18;
   const maxV = Math.max(...rows.map((r) => r.profit), 1);
@@ -872,7 +1051,7 @@ function SetupChecklist({
 }
 
 function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
-  const { fatal, result, rangeKey, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing, groupSize, group, metaTokenDagar, tips } = d;
+  const { fatal, result, rangeKey, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing, groupSize, group, metaTokenDagar, tips, monthlyGoal } = d;
   const [params, setParams] = useSearchParams();
   const revalidator = useRevalidator();
   const T = t(lang);
@@ -1182,6 +1361,8 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
               </Banner>
             ))}
 
+            <Hero result={result} money={money} T={T} lang={lang} currency={currency} monthlyGoal={monthlyGoal} />
+
             <InlineGrid columns={{ xs: 2, md: 4 }} gap="300">
               {kpis.map((k) => (
                 <Card key={k.label}>
@@ -1190,7 +1371,7 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                       {k.label}
                     </Text>
                     <Text as="p" variant="headingLg" tone={k.tone}>
-                      {k.value}
+                      <span className="pnl-pop">{k.value}</span>
                     </Text>
                     <Text as="span" variant="bodySm" tone="subdued">
                       {k.sub}
