@@ -53,7 +53,9 @@ den producerar tillräckligt mycket creative för att motivera en egen person.
 
 ## Vad det betyder för systemet
 
-- **Skalningsrutinen** (`FAS2.md` uppdrag E) är inte längre en sidogrej — den
+- **Skalningsrutinen** — kravspec i **`factory/SKALNINGSKUNGEN.md`**. Två
+  lägen i samma rutin: TEST (bevaka tröskeln på Bäverbutiken, inga briefs) och
+  SKALA (full creative-loop på OPS-butiken). Den är inte längre en sidogrej — den
   blir HUVUDloopen, en instans per OPS-butik. `/cs` mot Bäverbutikens produkter
   fasas ut i takt med att produkterna får egna butiker.
 - **Kvoten** (mål nr 1) flyttar med: den räknas per OPS-butik, inte per
