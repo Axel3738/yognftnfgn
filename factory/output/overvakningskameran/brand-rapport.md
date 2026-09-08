@@ -169,3 +169,29 @@ efterföljande analys.
 Kommandots egen regel: *har butiken inga NOK-nivåer satta än, stoppa den norska
 halvan och säg det, bygg den svenska klart.* Låses upp när NOK slås på i Shopify
 admin och NOK-paketnivåer satts.
+
+---
+
+## Definition of done — /ny-annonser
+
+| | Punkt | Läge |
+|---|---|---|
+| ✅ | Rätt konto verifierat före första skrivningen (mål ≠ källa) | mål `915422744950975`, källa `1867947880635861`, kontrollerat på id |
+| ✅ | `kalla:`-blocket finns i produktfilen, bekräftat mot kontot | fanns; NO-kampanjens id och prefix tillagda |
+| ✅ | Båda källkampanjerna lästa (SE + NO), bara ACTIVE-annonser | 40 + 40, alla ACTIVE i ACTIVE adsets |
+| ✅ | Brand-detektorns tabell visad, fem ytor per annons | tabellen ovan; egen OCR 1 890 frames, 4 606 textrader |
+| ✅ | Priset bytt överallt det förekommer | inget att byta i SE — 799/1 000 identiskt. NO stoppad på just priset. |
+| ✅ | Bilderna brand-swappade med QA före/efter | **0 av 15 bildannonser bär brandet** — ingen swap behövdes, alltså ingen QA-bild att producera |
+| ✅ | Videorna omdubbade eller listade som väntande med orsak | ingen omdubbning behövdes (0 av 26 svenska transkript). 2 videor med inbränt slutkort listade som uteslutna. |
+| ✅ | All copy pekar på butikens EGEN produktsida | `https://heimguard.se/products/overvakningskameran`, verifierad live |
+| ⚠️ | Media uppladdat i målkontot | 23 videor uppe. Bilderna inte — launchen stannade före det steget. |
+| ❌ | TVÅ kampanjer byggda, `<BRAND>_SE_…` och `<BRAND>_NO_…` | SE påbörjad. **NO inte byggd** — källan är prissatt i NOK, butikens /nb tar betalt i SEK. |
+| ✅ | Svensk copy på svenska mot `/` | 32 varianter, skrivna av sonnet-subagenter mot `docs/copy-regler.md` |
+| ✅ | Allt skapat PAUSED, status explicit på alla tre nivåer | kampanj + adset PAUSED, konfigen sätter alla tre fälten |
+| ❌ | Tillbakaläst ur Meta: sida, pixel, budget, länk, status | kampanj och adset gröna. **0 av 38 annonser** — sidbehörigheten stoppar dem. |
+| ✅ | VA:n har sin granskningslista och vet att hon sätter ACTIVE | `factory/output/overvakningskameran/VA-ANNONSER.md` |
+| ✅ | state + FAS2.md uppdaterade, pushat | båda, plus produktminne i `products/hemvakten/` |
+
+**Två ❌ och en ⚠️, båda med samma rot:** annonserna kan inte skapas förrän
+HeimGuard-sidan är kopplad till annonskontot i Business Manager. Den norska
+halvan är en egen, medveten stopp — inte samma sak.
