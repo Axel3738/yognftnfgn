@@ -19,7 +19,7 @@ Varje uppdrag nedan är ett eget avsnitt: **vad**, **återanvänd detta**,
 | Pixeln `2196132151319625` finns men skickar inga events (WeTracked ej kopplad) | optimering och mätning | VA:n |
 | ~~`META_ACCESS_TOKEN`~~ — finns i MOLNETS miljö (Axels besked 2026-09-08). `env.mjs` sätter aldrig över en variabel som redan finns i miljön, så all Meta-kod funkar i molnet. Saknas bara LOKALT. | inget i molnet | — |
 | ~~HeyGen-plånboken tom~~ — **18 008 api-krediter**, mätt 2026-09-08 kväll. Den siffran (13) var fel. | inget | — |
-| HeyGens modereringskö höll 8 av 8 renderingar 2026-09-08 kväll | de sista videofilerna | HeyGen (släpper enligt logg inom ~1 h) |
+| ~~HeyGens modereringskö~~ — höll 8 av 8 renderingar, släppte inom ~45 min | inget | — |
 | `standby.md` har noll rader | ny redigerare per butik | ansökningar ur de två utskicken |
 
 Uppdrag A, C, D och E går att köra UTAN dessa.
@@ -196,9 +196,23 @@ modereringskö.
   brandordet. `no-precis.py` gör själva bränningen. Verifierat i bild på
   IBC_PD_1_H1: "Ett IBC-tanköverdrag" orört, "från bäberbutiken." → "från TankGuard."
 - ⚠️ **HeyGen: 8 av 8 renderingar fastnade i `video pending moderation by our team`.**
-  Systematiskt, inte per video (tidigare batcher fick 1–2). Kvoten är inte problemet
-  — 18 008 api-krediter. Det släpper enligt körloggen inom ~30–60 min; rendera
-  ALDRIG om, det kostar krediter en gång till. Polla i stället.
+  Systematiskt, inte per video (tidigare batcher fick 1–2). Kvoten var inte problemet
+  — 18 008 api-krediter. **Allt släpptes inom ~45 min.** Rendera ALDRIG om en
+  moderationsträff; det kostar krediter en gång till. Polla i stället.
+- **Ljudet kontrollerades genom att transkribera den FÄRDIGA renderingen** (gratis
+  proofread på utfilen) — inte genom att lita på att manuset gick in rätt. Det
+  fångade att TTS:en läste "210D" fel i PD-videorna (transkriberades "två hundra OD"
+  där källans mänskliga röst blev "210D"). Siffran skrevs ut som "två hundra tio D"
+  i manuset och de tre videorna renderades om; ny transkribering ger nu "210D
+  oxfordtyg", precis som originalet. **Skriv alltid ut mått och siffror i manuset —
+  TTS:en läser dem, en människa gjorde det inte.**
+- Brandnamnet transkriberas tillbaka som "Tank Guard" (två ord) — samma
+  hörfelsklass som "Bäver butiken". Ljudet är rätt; det är transkriberingen som delar.
+
+**Resultat 2026-09-08:** alla 11 videor klara, QA:ade i bild (14 captionbyten, två
+kontaktark granskade) och **uppladdade i OPS-kontot** som `TANKGUARD_SE_*`.
+Uppladdning kräver ingen Meta-sida, så materialet ligger tryggt i kontot i stället
+för i en container. Kvar är enbart att skapa annonserna, vilket kräver sidan.
 
 **Annonsnivån är inte byggd — dessa saker saknas, alla utanför kod:**
 
@@ -217,14 +231,17 @@ modereringskö.
 3. **Pixeln skickar inga events.** `2196132151319625` finns i kontot men är inte
    kopplad i WeTracked (VA:ns besked, STATUS-filens punkt 3–4). Utan events
    optimerar kampanjen på ingenting.
-4. **Videofilerna är under produktion.** Källan för SE är Bäverbutikens **svenska**
-   IBC-annonser (kampanj `120250001079150291`: `IBC_PD_1_H1…H3`, `IBC_SP_1_H1…H3`,
-   `IBC_CS_1_H2…H3`, `IBC_GT_1_H1…H3`) — inte den norska batchen, som är dubbad till
-   norska. Allt utom HeyGens modereringskö är gjort, se avsnittet ovan.
+4. ~~**Videofilerna**~~ — KLART 2026-09-08. Alla 11 ligger i kontot som
+   `TANKGUARD_SE_*`. Källan för SE var Bäverbutikens **svenska** IBC-annonser
+   (kampanj `120250001079150291`), inte den norska batchen som är dubbad till norska.
 
-När allt fyra är löst: sätt `page` i konfigen, lägg de elva mp4:orna i
-`factory/output/tankoverdraget/video/` och kör skriptet utan `--bara-struktur`.
-Kampanj och adsets återanvänds på namn — inget byggs om.
+**När sidan är åtkomlig i kontot räcker ETT kommando:** sätt `page` i
+`pipeline/waves/tankguard-video.config.mjs` och kör
+`node pipeline/ops-video-launch.mjs pipeline/waves/tankguard-video.config.mjs`.
+Videorna finns redan i kontot och återanvänds på titel, kampanj och adsets
+återanvänds på namn — bara de elva annonserna byggs. Ligger mp4-filerna inte kvar
+på disk gör det inget; uppladdningssteget hoppar över det som redan finns.
+Statusen är PAUSED på alla tre nivåer tills butikslåset och pixeln är lösta.
 
 ⚠️ TankGuards butikskonfig ligger **inte på `main`**: `factory/butiker/tankguard.yaml`,
 `factory/produkter/tankoverdraget.yaml`, `factory/state/tankguard--tankoverdraget.json`
