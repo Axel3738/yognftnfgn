@@ -15,11 +15,12 @@ Varje uppdrag nedan är ett eget avsnitt: **vad**, **återanvänd detta**,
 | Blockerare | Blockerar | Löses av |
 |---|---|---|
 | FB-kontot väntar på verifiering | brandets Meta-SIDA → hela kampanjbygget | Meta (väntan) |
-| `META_ACCESS_TOKEN` saknas i `factory/.env` | pixel + all kampanjkod | Axel lägger in nyckeln |
+| ~~`META_ACCESS_TOKEN`~~ — finns i MOLNETS miljö (Axels besked 2026-09-08). `env.mjs` sätter aldrig över en variabel som redan finns i miljön, så all Meta-kod funkar i molnet. Saknas bara LOKALT. | inget i molnet | — |
 | HeyGen-plånboken tom (13 krediter, mätt 2026-09-08) | omdubbning av video | Axel fyller på |
 | `standby.md` har noll rader | ny redigerare per butik | ansökningar ur de två utskicken |
 
-Uppdrag A, C, D och E går att köra UTAN dessa. Uppdrag B väntar på sida + token.
+Uppdrag A, C, D och E går att köra UTAN dessa. Uppdrag B väntar bara på Meta-SIDAN
+(pixeln kan skapas så snart sidan finns — `META_ACCESS_TOKEN` finns redan i molnet).
 
 ---
 
