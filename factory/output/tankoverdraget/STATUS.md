@@ -16,14 +16,14 @@ Rättat 2026-09-08 efter Axels tre bakläxor: produkterna är ACTIVE + publicera
 - [x] Marknad Norge + locale nb publicerad, allt översatt via translationsRegister (produkt, metafält, sidor, menyer, paket, temamallar, sektionsgrupper)
 - [x] Trippelkollat mot kundens riktiga vy 2026-09-08 (`factory/kolla.mjs` med butikslösenordet, LIVE-temat t/2): sv + nb index/produkt gröna, 0 svenska markörer, alla strukturkontroller inkl. fullpris-kryssrutan. Köptestet i riktiga korgen går inte att köra från molnsessionen — Cloudflares bot-utmaning på `/cart/add.js` — kassapriserna verifieras mot rabattkodernas definitioner i admin i stället (öre-exakt) + ett ögonköp av Axel/VA:n.
 - [x] CHECKLISTA.md genererad (`factory/output/tankoverdraget/CHECKLISTA.md`) — VA:n har STORE NAME + DOMAIN
-- [ ] Recensioner — **GÖRS OM 2026-09-08 (Axels bakläxa "för 12 minuter sedan")**: alla 32 API-importerade rader dolda (`hidden + spam`, kundvyn visar 0). Judge.mes API kan inte sätta datum (created_at ignoreras på POST och PUT — mätt). `output/tankoverdraget/judgeme-app-import.csv` (16 rader, originaldatum 10–19 aug 2026 ur källans widget, dd/mm/yyyy) är skickad till VA:n → Judge.me → Settings → Import reviews → Import from apps → Judge.me format. Verifieras sen mot `reviews_for_widget` (kundens datakälla).
+- [x] Recensioner KLARA 2026-09-08 via appens CSV-import (Axels bakläxa "för 12 minuter sedan" rättad): de 32 API-importerade raderna dolda (`hidden + spam`), VA:n importerade `judgeme-app-import.csv` i Judge.me-appen. Verifierat i kundens datakälla (`reviews_for_widget`): 16 synliga (10 sv + 6 no), snitt 4,81, datum 10–19 aug 2026 = källans originaldatum. Judge.mes API kan inte sätta datum (created_at ignoreras på POST och PUT — mätt).
 - [x] Pixel skapad 2026-09-08 vid "Store ready: TankGuard": **2196132151319625** i MagiBorsten DK `915422744950975` (står i produktfilen) — VA:n klistrar in det i WeTracked
 - [x] Discord klart 2026-09-08: VA:n skapade servern **TankGuard** (guild `1546808022506938479`) och auktoriserade boten; fabriken byggde 6 kanaler (creative-strategy, ads-to-do, annons-uppladdning, ads, konton (privat), customer-support) + serverikon (loggan ur Shopify Files). Invite: https://discord.gg/HsNX88N5Km. Boten kan inte skapa servrar själv (`POST /guilds` → 20001).
 - [x] state (`factory/state/tankguard--tankoverdraget.json`) + PROCESS.md uppdaterade, pushat
 
 ## Kvar för hand (i checklistans ordning)
 
-1. Judge.me → Settings → Import reviews → Import from apps → Judge.me format → filen `judgeme-app-import.csv` → Import. Sen kollar Claude datumen i kundvyn.
+1. Recensioner: klart (importerade + datum verifierade).
 2. Settings → Markets → Norway → activate NOK → Save.
 3. Meta: skapa sidan **TankGuard** i Business Manager → Page ID till Claude. WeTracked: pixel-id **2196132151319625** + CAPI-token från Events Manager → Data sources → TankGuard → Settings → Conversions API → **Generate access token** (systemanvändaren har redan pixeln; tokenen kan inte skapas via API — kräver appens hemlighet).
 4. Discord: klart — bjud in redigeraren till servern och ge åtkomst till #konton.
