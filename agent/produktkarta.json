@@ -12,6 +12,46 @@
   "uppdaterad": "2026-09-08",
   "kampanjer": [
     {
+      "campaign_id": "120250134859280291",
+      "produkt": "Pälsborsten till Dyson-dammsugare",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-08, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250134812930291",
+      "produkt": "Diskstället i Två Våningar",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-08, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250134748040291",
+      "produkt": "Veckodosetten 21 Fack",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-08, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250134706080291",
+      "produkt": "Bänkhyllan med Utdragbar Korg",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-08, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250134672020291",
+      "produkt": "Adventskalendern Racingbilar",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-08, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
       "campaign_id": "120252123868510233",
       "produkt": "Benkehylle NO",
       "lage": "test",
