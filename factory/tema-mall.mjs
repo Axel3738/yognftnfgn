@@ -40,18 +40,25 @@ export function angerrattRad(butik) {
   return `${dagar} dagars ångerrätt`;
 }
 
-export function trustPunkter(butik) {
-  const land = text(butik?.butik?.huvudmarknad) ?? 'Sverige';
+// Fraktraden nämner VARJE marknad butiken skickar till (Axels beslut
+// 2026-09-08: "Fri frakt – Sverige & Norge" — att vi skickar till Norge ska
+// synas). Norska vyn säger sitt eget ("Gratis frakt i hele Norge") via
+// översättningen/Liquid-grenen.
+const LANDNAMN = { NO: 'Norge', DK: 'Danmark', FI: 'Finland', DE: 'Tyskland', SE: 'Sverige' };
+export function fraktRad(butik) {
   const fri = butik?.frakt?.fri_globalt !== false;
-  return [
-    fri ? `truck:Fri frakt i ${land}` : 'truck:Snabb leverans',
-    `refresh:${angerrattRad(butik)}`,
-    'lock:Trygg betalning',
-  ];
+  if (!fri) return 'Snabb leverans';
+  const hem = text(butik?.butik?.huvudmarknad) ?? 'Sverige';
+  const ovriga = (butik?.butik?.marknader ?? []).map((m) => LANDNAMN[String(m.land).toUpperCase()] ?? m.land).filter(Boolean);
+  return ovriga.length > 0 ? `Fri frakt – ${[hem, ...ovriga].join(' & ')}` : `Fri frakt i ${hem}`;
+}
+
+export function trustPunkter(butik) {
+  return [`truck:${fraktRad(butik)}`, `refresh:${angerrattRad(butik)}`, 'lock:Trygg betalning'];
 }
 
 export function uspPunkter(butik, p) {
-  const bas = trustPunkter(butik).map((x) => x.replace('Fri frakt i ', 'Fri frakt i hela ').replace('lock:Trygg betalning', 'lock:Trygg betalning med Klarna'));
+  const bas = trustPunkter(butik).map((x) => x.replace('lock:Trygg betalning', 'lock:Trygg betalning med Klarna'));
   const usp = text(p?.vinkel?.usp);
   return usp ? [...bas, `shield:${usp}`] : bas;
 }
@@ -59,18 +66,33 @@ export function uspPunkter(butik, p) {
 // Två paketblock (A synligt, B hidden tills ms-ab.js lottar) — samma
 // custom_liquid som temats egna ms_paket-block, plus test-attributet.
 // section_id får en suffix så A och B inte delar radioknappsnamn.
-export function paketBlock(test, produktUttryck = 'product') {
+export function paketBlock(test, produktUttryck = 'product', { tillagg = false } = {}) {
   const rad = (variant) =>
     `{% assign sid = section.id | append: '-${variant}' %}` +
     `<div {% render 'ms-ab-attrs', test: '${test}', variant: '${variant}' %}>` +
     `{% render 'ms-paket', product: ${produktUttryck}, variant: '${variant}', section_id: sid %}</div>`;
+  // Fullpris-kryssrutan (snippets/opf-tillagg, tema.mjs → byggTillagg) ligger
+  // som eget block direkt efter paketblocken och hakar i alla ms-paket i sektionen.
+  const tillaggBlock = tillagg ? { opf_tillagg: { type: 'custom_liquid', settings: { custom_liquid: "{% render 'opf-tillagg' %}" } } } : {};
   if (!text(test)) {
-    return { ms_paket: { type: 'custom_liquid', settings: { custom_liquid: `{% render 'ms-paket', product: ${produktUttryck}, section_id: section.id %}` } } };
+    return { ms_paket: { type: 'custom_liquid', settings: { custom_liquid: `{% render 'ms-paket', product: ${produktUttryck}, section_id: section.id %}` } }, ...tillaggBlock };
   }
   return {
     ms_paket_a: { type: 'custom_liquid', settings: { custom_liquid: rad('a') } },
     ms_paket_b: { type: 'custom_liquid', settings: { custom_liquid: rad('b') } },
+    ...tillaggBlock,
   };
+}
+
+export function harTillagg(p) {
+  return p?.offer?.bonus_produkt?.tillagg_kryssruta === true && !!text(p?.offer?.bonus_produkt?.handle);
+}
+
+// Kryssrutans svenska texter — samma källa för temat och översättningsunderlaget.
+export function tillaggTexter(p) {
+  const b = p?.offer?.bonus_produkt ?? {};
+  const namn = text(b.kortnamn) ?? String(b.titel ?? '').split(/\s[–-]\s/)[0];
+  return { label: `Lägg till ${namn}`, info: 'Fullpris – gratis bara i paketen' };
 }
 
 // Produktmallen: paketblocken (A/B), trygghetsraden, leveransdagarna och
@@ -91,11 +113,11 @@ export function patchaProduktTemplate(json, butik, p, nb = {}) {
   let order = [...(main.block_order ?? [])];
 
   // Paketblocken ersätter temats enkla ms_paket på samma plats.
-  for (const id of ['ms_paket', 'ms_paket_a', 'ms_paket_b']) delete blocks[id];
-  const nya = paketBlock(test);
+  for (const id of ['ms_paket', 'ms_paket_a', 'ms_paket_b', 'opf_tillagg']) delete blocks[id];
+  const nya = paketBlock(test, 'product', { tillagg: harTillagg(p) });
   Object.assign(blocks, nya);
   const plats = Math.max(order.indexOf('ms_paket'), order.indexOf('ms_paket_a'));
-  order = order.filter((id) => !['ms_paket', 'ms_paket_a', 'ms_paket_b'].includes(id));
+  order = order.filter((id) => !['ms_paket', 'ms_paket_a', 'ms_paket_b', 'opf_tillagg'].includes(id));
   const efterPris = plats !== -1 ? plats : order.indexOf('variant_picker') + 1;
   order.splice(efterPris, 0, ...Object.keys(nya));
 
@@ -171,10 +193,10 @@ export function byggIndex(butik, p) {
         titel: { type: 'title', settings: { heading_size: 'h1' } },
         pris: { type: 'price', settings: {} },
         varianter: { type: 'variant_picker', settings: { picker_type: 'button', swatch_shape: 'circle' } },
-        ...paketBlock(test, 'section.settings.product'),
+        ...paketBlock(test, 'section.settings.product', { tillagg: harTillagg(p) }),
         kop: { type: 'buy_buttons', settings: { show_dynamic_checkout: false, show_gift_card_recipient: false } },
       },
-      block_order: ['etikett', 'titel', 'pris', 'varianter', ...Object.keys(paketBlock(test)), 'kop'],
+      block_order: ['etikett', 'titel', 'pris', 'varianter', ...Object.keys(paketBlock(test, 'product', { tillagg: harTillagg(p) })), 'kop'],
       settings: {
         product: handle,
         color_scheme: 'scheme-1',

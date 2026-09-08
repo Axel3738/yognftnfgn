@@ -36,6 +36,8 @@ Rättat 2026-09-08 efter Axels tre bakläxor: produkterna är ACTIVE + publicera
 | Pris / jämförpris | 489 / 636 kr |
 | Inköp SE (Temu batch #4 + 2,9 EUR tull, ECB 11,162) | 188 kr |
 | Marginal / break-even-ROAS | 301 kr / 1,62 |
-| Paket A | 1 st 489 · 2 st 831 (förvald) · 3 st 1 159 |
-| Paket B | 1 st 489 · 2 st 799 (förvald) · 3 st 1 099 |
-| Bonus | Kranskydd Frost 420D, 199 kr (inköp ≈115 kr) |
+| Paket A | 1 st 489 (+ kranskydd 199 kr som tillval) · 2 st 831 + 2 kranskydd gratis (förvald) · 3 st 1 159 + 3 gratis |
+| Paket B | 1 st 489 · 2 st 799 + 2 gratis (förvald) · 3 st 1 099 + 3 gratis |
+| Rabattkoder (öre-exakta) | PAKET2 545 · PAKET3 905 · PAKET2B 577 · PAKET3B 965 kr |
+| Bonus | Kranskydd Frost 420D, 199 kr (inköp ≈115 kr) — antalsregeln 2026-09-08 |
+| USP-strippen | SV "Fri frakt – Sverige & Norge" · NB "Gratis frakt i hele Norge" |

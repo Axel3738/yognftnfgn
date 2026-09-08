@@ -57,7 +57,7 @@ import {
   brandRader,
   valideraBranding,
 } from './branding.mjs';
-import { SEKTIONER, byggProduktTemplate, sektionerSomVisas, byggKorgUpsell } from './tema.mjs';
+import { SEKTIONER, byggProduktTemplate, sektionerSomVisas, byggKorgUpsell, byggTillagg } from './tema.mjs';
 import {
   byggIndex,
   byggHeaderGroup,
@@ -68,6 +68,8 @@ import {
   msHeadGallerifilter,
   GALLERIFILTER_MARKE,
   temabilder,
+  harTillagg,
+  tillaggTexter,
 } from './tema-mall.mjs';
 import { qaSektionsfiler, qaRenderadSida } from './tema-qa.mjs';
 
@@ -234,6 +236,11 @@ const STEG = [
         filer['snippets/opf-korg-upsell.liquid'] = upsell['snippets/opf-korg-upsell.liquid'];
         filer['sections/cart-drawer.liquid'] = upsell['sections/cart-drawer.liquid'];
         if (msHead && !msHead.includes('sections=cart-drawer')) msHead = `${msHead}\n${upsell.msHeadTillagg}`;
+        // Fullpris-kryssrutan på nivå 1 (antalsregeln + fullpris, Axel 2026-09-08).
+        if (harTillagg(ctx.p)) {
+          const sv = tillaggTexter(ctx.p);
+          Object.assign(filer, byggTillagg(bonusHandle, { sv, nb: { label: nb['liquid.tillagg.label'], info: nb['liquid.tillagg.info'] } }));
+        }
       }
       if (msHead && !msHead.includes(GALLERIFILTER_MARKE)) msHead = `${msHead}\n${msHeadGallerifilter()}`;
       if (msHead) filer['snippets/ms-head.liquid'] = msHead;

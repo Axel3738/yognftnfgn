@@ -100,6 +100,11 @@ offer:
     variant_id: ""            # skrivs av factory/bonus.mjs
     pris: 0                   # priset som betald upsell i korgen
     i_paket: ""               # vilka paketnivåer som får den gratis, i ord
+    # Antalsregeln (Axel 2026-09-08): gratis_antal = paketantalet (2-pack ⇒ 2).
+    # Nivå 1 får en betald kryssruta för bonusen till FULLPRIS — aldrig
+    # rabatterad, den håller "värde X kr" ärligt (tema.mjs → byggTillagg).
+    tillagg_kryssruta: true
+    kortnamn: ""              # namnet i kryssrutan: "Lägg till <kortnamn>"
     sku: ""
     bilder:                   # riktiga bilder (URL:er), aldrig stock
       - ""

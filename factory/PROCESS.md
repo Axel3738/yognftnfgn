@@ -114,6 +114,16 @@ Lärdomar från bygget 2026-09-08 (API 2025-07, alla mätta):
    tilläggs-kryssruta** för bonusen till FULLPRIS (aldrig rabatterad —
    den håller "värde X kr"-berättelsen på paketen ärlig). Rabattkoderna
    räknas alltid om så kassapriset stämmer på öret.
+   Kodat 2026-09-08 (TankGuard): `paket.mjs` räknar koderna ur
+   `offer.paket.nivaer` (gratis_antal per nivå); kryssrutan är
+   `tema.mjs → byggTillagg` (snippets/opf-tillagg, block `opf_tillagg` direkt
+   efter paketblocken i produkt- OCH startsidemallen, `tillagg_kryssruta` +
+   `kortnamn` i produktfilen). Den forkar inte ms-paket.js: kryssrutan
+   sätter nivå 1:s data-gratis-* till bonusens FULLA pris utan kod, så
+   kortet, sticky-knappen och kassan visar samma summa (489 + 199).
+   Texterna locale-branchas (`liquid.tillagg.label/info` i underlaget).
+   ⚠️ Ännu bara verifierad via API-tillbakaläsning — klicktestet mot
+   kundens vy kräver butikslösenordet.
    ⚠️ Ny temaklon tappar temats translationsRegister-rader — registrera om
    nb för index/product-mallarna OCH sektionsgrupperna
    (`gid://…SectionGroup/header-group?theme_id=<ny>`); nycklar och digests

@@ -431,6 +431,104 @@ export function byggProduktTemplate(befintlig) {
 //     saknar upsellen. Skriptet hämtar om lådan EN gång per sidladdning när
 //     korgen har varor, via samma sektions-API och samma #CartDrawer-byte
 //     som temats egna cart-drawer.js.
+// Fullpris-kryssrutan på nivå 1 (Axels beslut 2026-09-08): den som köper ETT
+// exemplar kan lägga till bonusprodukten till FULLPRIS — aldrig rabatterad,
+// det håller paketens "värde X kr"-berättelse ärlig. Byggd ovanpå temats
+// ms-paket utan att forka ms-paket.js: kryssrutan sätter samma
+// data-gratis-*-attribut som en gratisrad använder, fast med bonusens
+// FULLA pris som värde och utan rabattkod. ms-paket.js räknar då
+// ordinarie = styckpris + bonuspris, drar 0 i rabatt, visar summan i
+// kortet och sticky-knappen, och lägger bonusen i korgen vid köp.
+// Kassan visar exakt samma tal — inget pris utlovas som kassan inte ger.
+// `texter` = { sv: { label, info }, nb: { label, info } }.
+export function byggTillagg(bonusHandle, texter) {
+  const t = (locale, falt) => String(texter?.[locale]?.[falt] ?? texter?.sv?.[falt] ?? '').replaceAll("'", '’');
+  const branch = (falt) =>
+    texter?.nb?.[falt] && texter.nb[falt] !== texter.sv?.[falt]
+      ? `{% if request.locale.iso_code == 'nb' %}${t('nb', falt)}{% else %}${t('sv', falt)}{% endif %}`
+      : t('sv', falt);
+  const snippet = `{%- comment -%}
+  opf-tillagg — betald tilläggs-kryssruta på paketnivå 1 (OPS Factory).
+  Renderas som custom_liquid-block direkt efter paketblocken (A/B). JS:en
+  hittar varje ms-paket i sektionen, lägger kryssrutan under nivån utan
+  rabattkod och gratisrad, och sätter/rensar data-gratis-* på den nivåns
+  radioknapp. Priset kommer alltid ur produkten — fullpris, aldrig rabatt.
+  Texterna är locale-branchade (custom_liquid går inte att översätta).
+{%- endcomment -%}
+{%- assign opf_tillagg = all_products['${bonusHandle}'] -%}
+{%- if opf_tillagg != blank and opf_tillagg.available -%}
+{%- assign opf_tv = opf_tillagg.selected_or_first_available_variant -%}
+<template class="opf-tillagg-mall">
+  <label class="opf-tillagg ms-scope" hidden>
+    <input type="checkbox" class="opf-tillagg__kryss" data-variant="{{ opf_tv.id }}" data-pris="{{ opf_tv.price }}">
+    {%- if opf_tillagg.featured_image -%}
+      <img class="opf-tillagg__bild" src="{{ opf_tillagg.featured_image | image_url: width: 80 }}" alt="" width="40" height="40" loading="lazy">
+    {%- endif -%}
+    <span class="opf-tillagg__text">
+      <span class="opf-tillagg__rubrik">${branch('label')}</span>
+      <span class="opf-tillagg__info">${branch('info')}</span>
+    </span>
+    <span class="opf-tillagg__pris">+ {{ opf_tv.price | money }}</span>
+  </label>
+</template>
+<script>
+(function () {
+  function koppla(paket) {
+    if (paket.dataset.opfTillagg) return;
+    var mall = paket.closest('[id^="shopify-section"]') ? paket.closest('[id^="shopify-section"]').querySelector('.opf-tillagg-mall') : null;
+    mall = mall || document.querySelector('.opf-tillagg-mall');
+    if (!mall) return;
+    var inputs = Array.prototype.slice.call(paket.querySelectorAll('.ms-paket__input'));
+    var bas = null;
+    inputs.forEach(function (i) { if (!bas && !i.dataset.kod && Number(i.dataset.gratisAntal || 0) === 0) bas = i; });
+    if (!bas) return;
+    paket.dataset.opfTillagg = '1';
+    var rad = mall.content.firstElementChild.cloneNode(true);
+    var kryss = rad.querySelector('.opf-tillagg__kryss');
+    bas.closest('.ms-paket__opt').insertAdjacentElement('afterend', rad);
+    function uppdatera() {
+      var vald = paket.querySelector('.ms-paket__input:checked');
+      rad.hidden = vald !== bas;
+      if (kryss.checked) {
+        bas.dataset.gratisVariant = kryss.dataset.variant;
+        bas.dataset.gratisAntal = '1';
+        bas.dataset.gratisVarde = kryss.dataset.pris;
+      } else {
+        bas.dataset.gratisVariant = '';
+        bas.dataset.gratisAntal = '0';
+        bas.dataset.gratisVarde = '0';
+      }
+    }
+    kryss.addEventListener('change', function () {
+      uppdatera();
+      if (bas.checked) bas.dispatchEvent(new Event('change', { bubbles: true }));
+    });
+    inputs.forEach(function (i) { i.addEventListener('change', uppdatera); });
+    uppdatera();
+  }
+  function alla() { Array.prototype.forEach.call(document.querySelectorAll('ms-paket'), koppla); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', alla); else alla();
+  document.addEventListener('shopify:section:load', alla);
+})();
+</script>
+<style>
+  .opf-tillagg { display: flex; align-items: center; gap: 10px; margin: -2px 6px 6px 22px; padding: 10px 12px;
+    border: 2px dashed var(--ms-line-strong, #bbb); border-top-width: 0;
+    border-radius: 0 0 var(--ms-radius, 10px) var(--ms-radius, 10px);
+    background: var(--ms-surface-2, #f7f7f7); cursor: pointer; font-size: .82em; line-height: 1.3; }
+  .opf-tillagg[hidden] { display: none; }
+  .opf-tillagg__kryss { width: 20px; height: 20px; margin: 0; accent-color: var(--ms-accent, #111); flex: none; }
+  .opf-tillagg__bild { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; flex: none; background: #fff; }
+  .opf-tillagg__text { display: grid; gap: 2px; min-width: 0; }
+  .opf-tillagg__rubrik { font-weight: 700; }
+  .opf-tillagg__info { color: var(--ms-ink-soft, #555); font-size: .9em; }
+  .opf-tillagg__pris { margin-left: auto; white-space: nowrap; font-weight: 700; }
+</style>
+{%- endif -%}
+`;
+  return { 'snippets/opf-tillagg.liquid': snippet };
+}
+
 export function byggKorgUpsell(upsellHandle) {
   const snippet = `{%- comment -%}
   opf-korg-upsell — betald upsell i varukorgslådan (OPS Factory).

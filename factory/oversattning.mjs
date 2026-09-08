@@ -21,7 +21,7 @@ import { sammanfoga } from './butik.mjs';
 import { byggMetafalt } from './metafalt.mjs';
 import { byggPolicyer, kontaktsida } from './policyer.mjs';
 import { byggKortBeskrivning, kundUnderrubrik } from './sida.mjs';
-import { byggIndex, byggHeaderGroup, byggFooterGroup, trustPunkter, uspPunkter } from './tema-mall.mjs';
+import { byggIndex, byggHeaderGroup, byggFooterGroup, trustPunkter, uspPunkter, harTillagg, tillaggTexter } from './tema-mall.mjs';
 import { byggPaketplan } from './paket.mjs';
 import { byggBonusBeskrivning } from './bonus.mjs';
 
@@ -88,6 +88,11 @@ export function byggUnderlag(butik, rap) {
   // temat. De står här ändå så subagenten ger oss orden till Liquid-grenen.
   trustPunkter(butik).forEach((x, i) => { ut[`liquid.trust.${i}`] = x.split(':').slice(1).join(':'); });
   ut['liquid.delivery.text'] = 'Beräknad leverans';
+  if (harTillagg(p)) {
+    const t = tillaggTexter(p);
+    ut['liquid.tillagg.label'] = t.label;
+    ut['liquid.tillagg.info'] = t.info;
+  }
 
   if (p.offer?.paket?.nivaer) {
     for (const post of byggPaketplan(p).poster) {

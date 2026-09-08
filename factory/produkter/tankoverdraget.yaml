@@ -105,13 +105,16 @@ offer:
   # B = testoffer: rundare priser under 800/1 100-gränsen + större bonus i
   # 3-packet. Hypotes: rundare pris + "köp mer, få mer" höjer AOV mer än
   # rabatten kostar. Förvalsregeln (Axel 2026-09-07): mitten alltid förvald.
-  # Rabattkoderna är fasta belopp som täcker rabatt + bonusens värde så
-  # kassapriset stämmer på kronan (ärlighetsspärren):
-  #   PAKET2  = 2×489 + 199 − 831  = 346 kr (min 3 varor)
-  #   PAKET3  = 3×489 + 199 − 1159 = 507 kr (min 4 varor)
-  #   PAKET2B = 2×489 + 199 − 799  = 378 kr (min 3 varor)
-  #   PAKET3B = 3×489 + 398 − 1099 = 766 kr (min 5 varor)
-  bundle: "A (original): 1 st 489 kr, 2-pack 831 kr FÖRVALD (−15 %, PAKET2, 1 kranskydd gratis), 3-pack 1 159 kr (−21 %, PAKET3, 1 kranskydd gratis). B (test): 1 st 489 kr, 2-pack 799 kr FÖRVALD (PAKET2B, 1 kranskydd gratis), 3-pack 1 099 kr (PAKET3B, 2 kranskydd gratis)."
+  # Antalsregeln (Axels beslut 2026-09-08): gratis-antalet följer paketantalet
+  # — 2-pack ⇒ 2 kranskydd, 3-pack ⇒ 3. Nivå 1 får en betald kryssruta för
+  # kranskyddet till FULLPRIS 199 kr (aldrig rabatterad — håller "värde 199
+  # kr" ärligt). Rabattkoderna är fasta belopp som täcker rabatt + bonusens
+  # värde så kassapriset stämmer på kronan (paket.mjs räknar):
+  #   PAKET2  = 2×489 + 2×199 − 831  = 545 kr (min 4 varor)
+  #   PAKET3  = 3×489 + 3×199 − 1159 = 905 kr (min 6 varor)
+  #   PAKET2B = 2×489 + 2×199 − 799  = 577 kr (min 4 varor)
+  #   PAKET3B = 3×489 + 3×199 − 1099 = 965 kr (min 6 varor)
+  bundle: "A (original): 1 st 489 kr (+ kranskydd 199 kr som tillval), 2-pack 831 kr FÖRVALD (−15 %, PAKET2, 2 kranskydd gratis), 3-pack 1 159 kr (−21 %, PAKET3, 3 kranskydd gratis). B (test): 1 st 489 kr, 2-pack 799 kr FÖRVALD (PAKET2B, 2 kranskydd gratis), 3-pack 1 099 kr (PAKET3B, 3 kranskydd gratis)."
   # Maskinläsbar form av raden ovan — factory/paket.mjs bygger ms_paketniva-
   # metaobjekten + rabattkoderna härifrån. En rad per nivå; "pris" är
   # paketets kassapris i kronor, "kod" rabattkoden som ger exakt det priset.
@@ -129,8 +132,8 @@ offer:
         pris: 831
         kod: "PAKET2"
         bricka: "Spara 15 %"
-        gratis_antal: 1
-        gratis_text: "Kranskydd Frost 420D – skyddar utekranen i vinter"
+        gratis_antal: 2
+        gratis_text: "2 × Kranskydd Frost 420D – skyddar utekranarna i vinter"
         forvald: true
       - variant: a
         antal: 3
@@ -139,8 +142,8 @@ offer:
         pris: 1159
         kod: "PAKET3"
         bricka: "Spara 21 %"
-        gratis_antal: 1
-        gratis_text: "Kranskydd Frost 420D – skyddar utekranen i vinter"
+        gratis_antal: 3
+        gratis_text: "3 × Kranskydd Frost 420D – skyddar utekranarna i vinter"
       - variant: b
         antal: 1
         rubrik: "1 överdrag"
@@ -151,8 +154,8 @@ offer:
         pris: 799
         kod: "PAKET2B"
         bricka: "Spara 18 %"
-        gratis_antal: 1
-        gratis_text: "Kranskydd Frost 420D – skyddar utekranen i vinter"
+        gratis_antal: 2
+        gratis_text: "2 × Kranskydd Frost 420D – skyddar utekranarna i vinter"
         forvald: true
       - variant: b
         antal: 3
@@ -161,8 +164,8 @@ offer:
         pris: 1099
         kod: "PAKET3B"
         bricka: "Spara 25 %"
-        gratis_antal: 2
-        gratis_text: "2 × Kranskydd Frost 420D – skyddar utekranarna i vinter"
+        gratis_antal: 3
+        gratis_text: "3 × Kranskydd Frost 420D – skyddar utekranarna i vinter"
   # Q4-ramverket (standard för varje OPS): bonusprodukten är Bäverbutikens
   # Kranskydd Frost 420D (Temu 601101411598143) — samma köpare (utekran och
   # regnvattentank på samma tomt), Q4-säsong (frost), och billig: batch #3-
@@ -175,7 +178,10 @@ offer:
     produkt_id: "15989725593944"
     variant_id: "58420897481048"
     pris: 199
-    i_paket: "1 st gratis i 2- och 3-pack (A), 1 st i 2-pack och 2 st i 3-pack (B)"
+    i_paket: "Antalsregeln: 2 st gratis i 2-pack, 3 st i 3-pack (A och B). Nivå 1: betald kryssruta till fullpris 199 kr."
+    # Fullpris-kryssrutan på nivå 1 (tema.mjs → byggTillagg): aldrig rabatterad.
+    tillagg_kryssruta: true
+    kortnamn: "Kranskydd Frost"
     sku: "TEMU-601101411598143"
     # Bilder och text ordagrant från källsidan på Bäverbutiken (block 1/3/5).
     bilder:
