@@ -127,21 +127,26 @@ for (const a of cfg.adsets) {
   }
 
   const priorAds = new Set(((await api(`${adsetId}/ads`, { params: { fields: 'name', limit: '100' } })).data || []).map(x => x.name));
-  if (priorAds.has(a.adName)) { console.log(`  · annons finns redan: ${a.adName}`); continue; }
-  const hash = await uploadImage(path.join(opt.imgdir, a.img));
-  const creative = await api(`${cfg.act}/adcreatives`, { method: 'POST', form: {
-    name: a.adName,
-    object_story_spec: JSON.stringify({ page_id: cfg.page, link_data: {
-      image_hash: hash, link: cfg.link, message: a.copy.message,
-      name: a.copy.headline, description: a.copy.description,
-      call_to_action: { type: 'SHOP_NOW', value: { link: cfg.link } },
-    } }),
-    degrees_of_freedom_spec: NO_ENHANCEMENTS,
-  } });
-  await api(`${cfg.act}/ads`, { method: 'POST', form: {
-    name: a.adName, adset_id: adsetId,
-    creative: JSON.stringify({ creative_id: creative.id }), status: cfg.adStatus,
-  } });
-  console.log(`  ✓ annons (${cfg.adStatus}): ${a.adName}`);
+  // Ett adset kan bära FLERA bildannonser med var sin copy (a.ads[]). Den gamla
+  // formen — ett adset = en annons via a.adName/a.img/a.copy — funkar oförändrat.
+  const annonser = a.ads ?? [{ adName: a.adName, img: a.img, copy: a.copy }];
+  for (const ann of annonser) {
+    if (priorAds.has(ann.adName)) { console.log(`  · annons finns redan: ${ann.adName}`); continue; }
+    const hash = await uploadImage(path.join(opt.imgdir, ann.img));
+    const creative = await api(`${cfg.act}/adcreatives`, { method: 'POST', form: {
+      name: ann.adName,
+      object_story_spec: JSON.stringify({ page_id: cfg.page, link_data: {
+        image_hash: hash, link: cfg.link, message: ann.copy.message,
+        name: ann.copy.headline, description: ann.copy.description,
+        call_to_action: { type: 'SHOP_NOW', value: { link: cfg.link } },
+      } }),
+      degrees_of_freedom_spec: NO_ENHANCEMENTS,
+    } });
+    await api(`${cfg.act}/ads`, { method: 'POST', form: {
+      name: ann.adName, adset_id: adsetId,
+      creative: JSON.stringify({ creative_id: creative.id }), status: cfg.adStatus,
+    } });
+    console.log(`  ✓ annons (${cfg.adStatus}): ${ann.adName}`);
+  }
 }
 console.log('\nKLART. Verifiera i Ads Manager att kampanj/adsets/annonser har avsedd status.');

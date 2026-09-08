@@ -22,7 +22,8 @@ kommandot är körordningen. Uppdrag D och E är systemarbete utanför det.
 |---|---|---|
 | ~~FB-kontot~~ — LÖST 2026-09-08: TankGuards Meta-sida är `1399193996606775` (verifierad i MagiBorstens `client_pages`), pixeln `2196132151319625` avfyrar och WeTracked är kopplat | inget | — |
 | ~~`META_ACCESS_TOKEN`~~ — finns i MOLNETS miljö (Axels besked 2026-09-08). `env.mjs` sätter aldrig över en variabel som redan finns i miljön, så all Meta-kod funkar i molnet. Saknas bara LOKALT. | inget i molnet | — |
-| HeyGen-plånboken tom (13 krediter, mätt 2026-09-08) | omdubbning av video | Axel fyller på |
+| HeyGen-plånboken tom (13 krediter, mätt 2026-09-08) | omdubbning av video — ⚠️ blockerar INTE HeimGuard: 0 av 26 svenska transkript nämner brandet, ingen omdubbning behövs där | Axel fyller på |
+| HeimGuards NO-marknad betalar i SEK medan Bäverbutikens norska annonser är prissatta 899/1 169 NOK | den norska HeimGuard-kampanjen | Axel slår på NOK i Shopify admin och sätter NOK-paketnivåer |
 | `standby.md` har ännu ingen ifylld rad | tilldelning av redigerare | Axel ger namnet på personen som redan står på standby |
 
 **Läget 2026-09-08 kväll: A, B, C, D och E kan alla köra NU.** TankGuards sida,
@@ -165,6 +166,49 @@ TankGuard Bäverbutikens fraktgräns och visar Bäverbutikens recensenter.
 en inbränd brandrad; läser någon bara domen kommer den tillbaka från HeyGen med
 Bäverbutiken kvar i bild.
 
+### ✅ KÖRD 2026-09-08 — HeimGuard (butik nr 1)
+
+**40 källannonser i `Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21`,
+alla ACTIVE i ACTIVE adsets. 25 video, 15 bild.** Rapport:
+`factory/output/overvakningskameran/brand-rapport.md`.
+
+Fem saker den körningen lärde, som inte stod här förut:
+
+1. ⚠️ **`advideos?title=<prefix>` hittar inte alla videor — och tiger om det.**
+   Mätt: 13 av 25 videor bar prefixet i sin titel. Den första launchbatchens
+   filer (SP_1/2/3, CS_1/2/3, PD_1/2/3, G_1/2/3) laddades upp under andra
+   filnamn och saknades helt — och bland dem låg kampanjens **toppspender**
+   (`SP_2`, 13 338 kr, ROAS 2,89). Yta 3 blev alltså oläst på precis den annons
+   som betydde mest, medan rapporten bara sa "okänd". Detektorn faller nu
+   tillbaka på hela videobiblioteket (1 076 rader i MagiBorsten) när ett id
+   saknas efter titelfiltret. **Nolltröskeln i koden räckte inte** — larmet gick
+   bara vid noll träffar, inte vid 13 av 25.
+2. ⚠️ **Blanda aldrig `srt-orig/*.orig.srt` med `srt-fixed/*.srt`.** En
+   fritextsökning över alla SRT:er för produkten gav fem träffar på
+   "baverbutiken.se" och såg ut att kräva omdubbning av fem videor. Alla fem
+   satt i de **norska** `srt-fixed`-filerna — översättningarna, inte det
+   svenska källjudet. De svenska originalen: **0 av 26 träffar.** Skilj alltid
+   på original och översättning innan du dömer yta 2, annars köper du HeyGen-
+   krediter för ett problem som inte finns.
+   *(Sidofynd värt att ta vidare: att de norska captionsen bär "baverbutiken.se"
+   är en defekt i NO-batchen — den hör hemma i Bäverbutikens NO-konto, inte här.)*
+3. ⚠️ **Priset kan vara identiskt — kolla innan du bygger en prisswapp.**
+   HeimGuard säljer samma kamera till exakt samma 799 / 1 000 kr som
+   Bäverbutiken. Noll pristal behövde ändras. TankGuards fall (489/636 mot eget
+   pris) är inte regeln.
+4. ⚠️ **Det som faktiskt måste bytas är villkoren och den sociala proofen.**
+   Källan lovade "fri frakt över 300 kr" (HeimGuard har fri frakt utan gräns)
+   och påstod "Tusentals nöjda hushåll i Sverige har redan bytt ut sina gamla
+   system" plus ett kundcitat ingen kund sagt. En ny OPS-butik med tio
+   recensioner kan inte skriva något av det. **Copy-subagenten behöll citatet
+   i första försöket** — den måste få butikens riktiga recensioner ordagrant i
+   prompten, annars saneras bara volymclaimet.
+5. ⚠️ **Break-even skiljer sig mer mellan butikerna än man tror.** Bäverbutiken
+   hade BE-ROAS 1,57 på produkten. HeimGuard landar på **2,11** — samma pris,
+   men moms i priset. Utan moms hade det blivit 1,49. Skillnaden avgör varje
+   kill-beslut, så talet ska bekräftas av Axel före första skalningsronden och
+   aldrig kopieras mellan verksamheterna.
+
 ---
 
 ## Uppdrag A2 — Brand-swap av video (väntar på HeyGen-krediter)
@@ -254,6 +298,23 @@ hämta ner filen → brand-swappa → ladda upp på nytt till `act_9154227449509
 
 **Klart när:** kampanjen är tillbakaläst ur kontot och `page_id`, `pixel_id`,
 `daily_budget`, länk och status på alla tre nivåer matchar butikens konfig exakt.
+
+### Utökat 2026-09-08 — copy per ANNONS, inte per adset
+
+Källkontots annonser bär **egen copy per annons**, inte en gemensam per koncept:
+40 HeimGuard-annonser hade 32 unika copyvarianter. Både `no-video-launch.mjs`
+och `no-image-launch.mjs` antog en copy per adset, och `no-image-launch.mjs`
+byggde dessutom bara EN annons per adset. Läggs allt under adsetets copy tappas
+det som faktiskt spenderade pengarna.
+
+Båda är därför utökade, bakåtkompatibelt (befintliga vågkonfigar är orörda):
+- `no-video-launch.mjs`: `ad.copy` vinner över `adset.copy`. Saknas båda avbryts körningen.
+- `no-image-launch.mjs`: `adset.ads[]` med `{ adName, img, copy }` per annons.
+  Gamla formen (`adset.adName`/`img`/`copy`) fungerar oförändrat.
+
+Kör video- och bildkonfigen mot **samma** `campaignName` och samma adsetnamn —
+båda skripten återanvänder kampanj och adsets på namn, så bild- och
+videoannonserna hamnar i samma adset i stället för i två parallella strukturer.
 
 ---
 

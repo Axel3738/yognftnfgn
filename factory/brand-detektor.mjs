@@ -252,7 +252,7 @@ async function bildUrlViaHash(kontoId, hash) {
  *  videobibliotek. Titeln är filnamnet redigeraren laddade upp och stämmer inte
  *  alltid med annonsnamnet ("IBC-tanköverdrag_PD_1_H1.mp4" ↔ IBC_PD_1_H1), så
  *  id:t är förstahandsnyckeln och titeln bara en reserv. */
-async function videokällor(kontoId, prefix) {
+async function videokällor(kontoId, prefix, saknadeIdn = []) {
   const index = new Map();
   const lägg = (v) => {
     if (!v.source) return;
@@ -260,6 +260,21 @@ async function videokällor(kontoId, prefix) {
     if (v.title) index.set(`titel:${normaliseraTitel(v.title)}`, v.source);
   };
   for (const v of await alla(`act_${kontoId}/advideos`, { fields: 'id,title,source', title: prefix }, 25)) lägg(v);
+
+  // ⚠️ Titelfiltret räcker inte. Mätt 2026-09-08 på Overvakningskamera: 13 av 25
+  // videor bar prefixet i sin titel — den första launchbatchens filer (SP_1/2/3,
+  // CS_1/2/3, PD_1/2/3, G_1/2/3) laddades upp under andra filnamn och saknades
+  // därför helt. Bland dem låg kampanjens TOPPSPENDER (SP_2, 13 338 kr), så yta 3
+  // blev oläst på precis den annons som betydde mest. Titeln är redigerarens
+  // filnamn och kan aldrig antas följa annonsnamnet.
+  // Faller därför tillbaka på HELA videobiblioteket när något id fortfarande
+  // saknas — dyrare (1 076 rader i MagiBorsten), men det är ett läsanrop och
+  // alternativet är tyst blindhet.
+  const kvar = saknadeIdn.filter((id) => id && !index.has(String(id)));
+  if (kvar.length) {
+    console.log(`  ${kvar.length} video-id saknades efter titelfiltret — läser hela videobiblioteket`);
+    for (const v of await alla(`act_${kontoId}/advideos`, { fields: 'id,title,source' }, 40)) lägg(v);
+  }
   return index;
 }
 

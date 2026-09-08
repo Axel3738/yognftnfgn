@@ -1,0 +1,2362 @@
+{
+ "produkt": "overvakningskameran",
+ "datum": "2026-09-08",
+ "kalla": {
+  "butik": "baverbutiken.se",
+  "produkt_id": "16427870060893",
+  "produkt_handle": "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+  "produkt_url": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+  "annonskonto": "1867947880635861",
+  "annonsprefix": "Overvakningskamera",
+  "kampanj_id": "120249989799680291",
+  "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+  "srt_slug": [
+   "overvakningskamera",
+   "overvakingskamera"
+  ]
+ },
+ "annonser": [
+  {
+   "annons": "Overvakningskamera_AU_1_H1",
+   "id": "120250105752160291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "AU | Notionrunda 2026-09-05",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-05-video2/srt-orig/overvakingskamera_AU_1_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 64
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr",
+      "000 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars garanti"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_AU_2_H1",
+   "id": "120250126175660291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "AU | Notionrunda 2026-09-05",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-07/srt-orig/overvakingskamera_AU_2_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 42
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr",
+      "1000 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars garanti"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_BOF_1_1",
+   "id": "120250102766910291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "BOF | Notionrunda 2026-09-04",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr",
+      "000 kr",
+      "201 kr",
+      "799kr"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_BOF_2_1",
+   "id": "120250099072350291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "BOF | Notionrunda 2026-09-04",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt inom Sverige"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti",
+      "30 dagars"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_BOF_3_1",
+   "id": "120250102765200291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "BOF | Notionrunda 2026-09-04",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagar",
+      "30 dagars nöjd-kund-garanti",
+      "30 dagars nojd-kund-garanti — skic"
+     ]
+    },
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_CO_1_H1",
+   "id": "120250105715820291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "CO | Notionrunda 2026-09-02",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-05-video2/srt-orig/overvakingskamera_CO_1_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 42
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr",
+      "000 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars garanti"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_CO_2_1",
+   "id": "120250064378490291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "CO | Notionrunda 2026-09-02",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr",
+      "1000 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars garanti"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_CO_3_1",
+   "id": "120250103211120291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "CO | Notionrunda 2026-09-02",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars garanti"
+     ]
+    },
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_CS_1",
+   "id": "120249989852160291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera CS",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/overvakningskamera_CS_1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "dom": "okänd (ingen source i kontots advideos för video 2267591950474615)",
+     "fynd": []
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "inbränd text (oläst)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr",
+      "1000 kr",
+      "300 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "20%"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt över 300 kr"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    }
+   ],
+   "belägg": [
+    "yta 3 · okänd (ingen source i kontots advideos för video 2267591950474615)"
+   ]
+  },
+  {
+   "annons": "Overvakningskamera_CS_2",
+   "id": "120249989866240291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera CS",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/overvakningskamera_CS_2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "dom": "okänd (ingen source i kontots advideos för video 1824570421842561)",
+     "fynd": []
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "inbränd text (oläst)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr",
+      "1000 kr",
+      "300 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "20%"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt över 300 kr"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    }
+   ],
+   "belägg": [
+    "yta 3 · okänd (ingen source i kontots advideos för video 1824570421842561)"
+   ]
+  },
+  {
+   "annons": "Overvakningskamera_CS_2_1",
+   "id": "120249989877210291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera CS",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr",
+      "1000 kr",
+      "300 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "20%"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt över 300 kr"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_CS_3",
+   "id": "120249989876850291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera CS",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/overvakningskamera_CS_3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "dom": "okänd (ingen source i kontots advideos för video 1003991642690395)",
+     "fynd": []
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "inbränd text (oläst)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr",
+      "1000 kr",
+      "300 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "20%"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt över 300 kr"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    }
+   ],
+   "belägg": [
+    "yta 3 · okänd (ingen source i kontots advideos för video 1003991642690395)"
+   ]
+  },
+  {
+   "annons": "Overvakningskamera_CS_4_1",
+   "id": "120250064617710291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera CS",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "1000 kr",
+      "799 kr",
+      "300 kr",
+      "201 kr",
+      "000 kr"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt över 300 kr, och Klarna om du",
+      "Fri frakt over 300 kr"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars garanti om den inte känn",
+      "30 dagars nojd-kund-garanti"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_CS_5_1",
+   "id": "120250098995730291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera CS",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr",
+      "000 kr"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt · 30 dagars nöjd-kund-garanti",
+      "Fri frakt · 30 dagars nojd-kund-garanti"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti",
+      "30 dagars nojd-kund-garanti"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_CS_6_H1",
+   "id": "120250126185970291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera CS",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-08/srt-orig/overvakingskamera_CS_6_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 43
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr",
+      "000 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars garanti"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_G_1",
+   "id": "120249989879330291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera G",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/overvakningskamera_G_1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "dom": "okänd (ingen source i kontots advideos för video 1392769592827807)",
+     "fynd": []
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "inbränd text (oläst)"
+   ],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti"
+     ]
+    }
+   ],
+   "belägg": [
+    "yta 3 · okänd (ingen source i kontots advideos för video 1392769592827807)"
+   ]
+  },
+  {
+   "annons": "Overvakningskamera_G_2",
+   "id": "120249989880520291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera G",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/overvakningskamera_G_2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "dom": "okänd (ingen source i kontots advideos för video 1054895097283660)",
+     "fynd": []
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "inbränd text (oläst)"
+   ],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti"
+     ]
+    }
+   ],
+   "belägg": [
+    "yta 3 · okänd (ingen source i kontots advideos för video 1054895097283660)"
+   ]
+  },
+  {
+   "annons": "Overvakningskamera_G_2_1",
+   "id": "120249989883920291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera G",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_G_3",
+   "id": "120249989883530291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera G",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/overvakningskamera_G_3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "dom": "okänd (ingen source i kontots advideos för video 1505121754989060)",
+     "fynd": []
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "inbränd text (oläst)"
+   ],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti"
+     ]
+    }
+   ],
+   "belägg": [
+    "yta 3 · okänd (ingen source i kontots advideos för video 1505121754989060)"
+   ]
+  },
+  {
+   "annons": "Overvakningskamera_LI_1_1",
+   "id": "120250064477240291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "LI | Notionrunda 2026-09-02",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr",
+      "1000 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars garanti"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_PD_1",
+   "id": "120249989813350291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera PD",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/overvakningskamera_PD_1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "dom": "okänd (ingen source i kontots advideos för video 1616077380303203)",
+     "fynd": []
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "inbränd text (oläst)"
+   ],
+   "villkor": [],
+   "belägg": [
+    "yta 3 · okänd (ingen source i kontots advideos för video 1616077380303203)"
+   ]
+  },
+  {
+   "annons": "Overvakningskamera_PD_2",
+   "id": "120249989813850291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera PD",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/overvakningskamera_PD_2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "dom": "okänd (ingen source i kontots advideos för video 4477513255911698)",
+     "fynd": []
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "inbränd text (oläst)"
+   ],
+   "villkor": [],
+   "belägg": [
+    "yta 3 · okänd (ingen source i kontots advideos för video 4477513255911698)"
+   ]
+  },
+  {
+   "annons": "Overvakningskamera_PD_2_1",
+   "id": "120249989816070291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera PD",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_PD_3",
+   "id": "120249989815660291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera PD",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/overvakningskamera_PD_3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "dom": "okänd (ingen source i kontots advideos för video 2179823166279740)",
+     "fynd": []
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "inbränd text (oläst)"
+   ],
+   "villkor": [],
+   "belägg": [
+    "yta 3 · okänd (ingen source i kontots advideos för video 2179823166279740)"
+   ]
+  },
+  {
+   "annons": "Overvakningskamera_PD_4_1",
+   "id": "120250064373060291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera PD",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars garanti",
+      "30 dagars nojd-kund-garanti"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_RI_1_H1",
+   "id": "120250105676410291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "RI | Notionrunda 2026-09-02",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-05-video2/srt-orig/overvakingskamera_RI_1_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 21,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 21.3,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 21.6,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 21.9,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 22.2,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 22.5,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 22.8,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 23.04,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 74
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr",
+      "799KR"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti",
+      "30 dagars ga",
+      "30 dagars garanti",
+      "30 dagars"
+     ]
+    },
+    {
+     "namn": "recensioner",
+     "värden": [
+      "10recensioner"
+     ]
+    }
+   ],
+   "belägg": [
+    "yta 3 · sent i filmen, 21–23.04s (8 frames): \"baverbutiken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Overvakningskamera_RI_2_1",
+   "id": "120250064251260291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "RI | Notionrunda 2026-09-02",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr",
+      "1000 kr",
+      "300 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars garanti",
+      "30 dagars nojd-kund-garanti"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt over 300 kr"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_SP_1",
+   "id": "120249989820240291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera SP",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/overvakningskamera_SP_1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "dom": "okänd (ingen source i kontots advideos för video 2908533632857658)",
+     "fynd": []
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "inbränd text (oläst)"
+   ],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti",
+      "30 dagars öppet köp"
+     ]
+    }
+   ],
+   "belägg": [
+    "yta 3 · okänd (ingen source i kontots advideos för video 2908533632857658)"
+   ]
+  },
+  {
+   "annons": "Overvakningskamera_SP_11_H1",
+   "id": "120250126259570291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera SP",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-07/srt-orig/overvakingskamera_SP_11_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 58
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr",
+      "000 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti",
+      "30 dagars nojd",
+      "30 dagars n"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_SP_12_H1",
+   "id": "120250126401840291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera SP",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-08/srt-orig/overvakingskamera_SP_12_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 49
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr",
+      "201 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars garanti",
+      "30 dagars nojd"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_SP_13_H1",
+   "id": "120250126674350291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera SP",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-08/srt-orig/overvakingskamera_SP_13_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 42
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr",
+      "1000 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti",
+      "30 dagars nojd",
+      "30 dagars garanti"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_SP_2",
+   "id": "120249989821600291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera SP",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/overvakningskamera_SP_2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "dom": "okänd (ingen source i kontots advideos för video 895629906674982)",
+     "fynd": []
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "inbränd text (oläst)"
+   ],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti",
+      "30 dagars öppet köp"
+     ]
+    }
+   ],
+   "belägg": [
+    "yta 3 · okänd (ingen source i kontots advideos för video 895629906674982)"
+   ]
+  },
+  {
+   "annons": "Overvakningskamera_SP_2_1",
+   "id": "120249989826030291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera SP",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti",
+      "30 dagars öppet köp",
+      "30 dagars nojd-kund-garanti"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_SP_3",
+   "id": "120249989825580291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera SP",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/overvakningskamera_SP_3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "dom": "okänd (ingen source i kontots advideos för video 2136330963906932)",
+     "fynd": []
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "inbränd text (oläst)"
+   ],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti",
+      "30 dagars öppet köp"
+     ]
+    }
+   ],
+   "belägg": [
+    "yta 3 · okänd (ingen source i kontots advideos för video 2136330963906932)"
+   ]
+  },
+  {
+   "annons": "Overvakningskamera_SP_4_H1",
+   "id": "120250105660740291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera SP",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-05-video2/srt-orig/overvakingskamera_SP_4_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 19.8,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 20.1,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 20.4,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 20.7,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 21,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 21.3,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 21.6,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 21.86,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 70
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr",
+      "000 kr",
+      "799KR",
+      "799kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars garanti"
+     ]
+    },
+    {
+     "namn": "recensioner",
+     "värden": [
+      "10recensioner"
+     ]
+    }
+   ],
+   "belägg": [
+    "yta 3 · sent i filmen, 19.8–21.86s (8 frames): \"baverbutiken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Overvakningskamera_SP_5_H1",
+   "id": "120250105704380291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera SP",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-05-video2/srt-orig/overvakingskamera_SP_5_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 46
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars garanti om jag ångrar mi",
+      "30 dagars"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_SP_6_H1",
+   "id": "120250105733930291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera SP",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-05-video2/srt-orig/overvakingskamera_SP_6_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "dom": "okänd (fetch failed)",
+     "fynd": []
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "inbränd text (oläst)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars garanti"
+     ]
+    }
+   ],
+   "belägg": [
+    "yta 3 · okänd (fetch failed)"
+   ]
+  },
+  {
+   "annons": "Overvakningskamera_SP_7_1",
+   "id": "120250064256480291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera SP",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars garanti",
+      "30 dagars nojd-kund-garanti"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_SP_8_H1",
+   "id": "120250126898730291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera SP",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-08/srt-orig/overvakingskamera_SP_8_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 51
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr",
+      "1000 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp",
+      "30 dagars nojd",
+      "30 dagars garanti"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Overvakningskamera_SP_9_H1",
+   "id": "120250135376990291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Overvakningskamera SP",
+   "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-08/srt-orig/overvakingskamera_SP_9_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "dom": "okänd (fetch failed)",
+     "fynd": []
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "inbränd text (oläst)"
+   ],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars garanti",
+      "30 dagars nöjd-kundgaranti"
+     ]
+    },
+    {
+     "namn": "pris",
+     "värden": [
+      "799 kr"
+     ]
+    }
+   ],
+   "belägg": [
+    "yta 3 · okänd (fetch failed)"
+   ]
+  }
+ ]
+}
