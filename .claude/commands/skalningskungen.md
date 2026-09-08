@@ -17,7 +17,7 @@ kvot-tänk — men en annan verksamhet.** En instans per OPS-butik.
 |---|---|---|
 | Annonskonto | MagiBorsten `1867947880635861` — ett konto = en verksamhet | **MagiBorsten DK `915422744950975` — DELAT** av alla OPS-butiker OCH Bäverbutikens danska kampanjer |
 | Produktregister | `products/products.json` | **`factory/produkter/register.json`** — OPS-produkter står ALDRIG i products.json |
-| Ekonomi | Axels COGS-beräkning 2026-08-05, utan moms | **`factory/produkter/<id>.yaml`, räknad MED moms** |
+| Ekonomi | Axels COGS-beräkning 2026-08-05 | **`factory/produkter/<id>.yaml`, räknad per butik av `factory/ekonomi.mjs`** |
 | Produktminne | `products/<id>/` | **`factory/minne/<butik>/`** |
 | Kanal | Slack `#bäver-scaling-products` | Butikens egen **Discord**: `#creative-strategy` och `#ads-to-do` |
 
@@ -80,13 +80,14 @@ vid >10 % avvikelse. Larmar den, sätt **båda** talen i produktfilen:
 
 #### 1a-2. Pixelkontrollen — en gång, vid första ordern
 
-Hela ekonomin antar att Metas purchase value är **bruttot kunden betalade
-(inkl. moms)**. Ingen har mätt det. Vid första ordern: jämför en Meta-rads
-purchase value mot samma orders totalbelopp i Shopify.
+Ekonomin antar att Metas purchase value är beloppet kunden betalade. Ingen har
+mätt det. Vid första ordern: jämför en Meta-rads purchase value mot samma
+orders totalbelopp i Shopify. Skiljer de sig: säg det rakt ut och stanna, för
+då är både AOV och ROAS-linjen fel. Skriv in datum och utfall i `dna.md`.
 
-- Samma belopp → antagandet håller, skriv in datumet i `dna.md`.
-- Meta ~20 % lägre → pixeln skickar ex moms. Säg det rakt ut och stanna:
-  break-even-ROAS ska då räknas på nettot, och talen i produktfilen är fel.
+**Momsfrågan är däremot besvarad:** OPS-butikerna säljer UTAN moms (Axels
+besked 2026-09-08). Marginalen räknas rakt på priset. Drar du reflexmässigt av
+25 % ser lönsamma annonser ut att gå med förlust.
 
 Hitta aldrig på en AOV. Finns ingen försäljningsdata: säg det rakt ut, använd
 styckpriset och skriv i rapporten att linjerna är preliminära.

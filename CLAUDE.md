@@ -204,14 +204,13 @@ brick by brick och **varje lyckat steg dokumenteras direkt**:
   skilda pengavägar. En OPS-rad där drar tyst in butiken i alla tre.
   Registret bär kopplingen och driftläget; **ekonomin bor i
   `factory/produkter/<id>.yaml`** och räknas av `factory/ekonomi.mjs`.
-- **Break-even räknas alltid om från grunden per butik**, aldrig kopierad.
-  Räkningen antar att OPS-butikerna redovisar moms — det enda stödet är
-  `moms_i_pris: true` i butikskonfigen, ett fält som styr prisvisning.
-  ⚠️ **Axel har inte bekräftat OPS-butikernas momsstatus** (Bäverbutikens
-  är bekräftad UTAN moms, 2026-08-29). Håller antagandet inte är
-  övervakningskamerans break-even-ROAS 1,49 i stället för 2,11 — och den
-  strängare siffran får lönsamma annonser att se olönsamma ut. Fråga innan
-  någon skalningsrunda dömer på talen.
+- **OPS-butikerna säljer UTAN moms** (Axels besked 2026-09-08) — precis som
+  Bäverbutiken och Grillkliniken. Marginalen räknas rakt på priset, och
+  `moms_i_pris: false` står i butikskonfigen. Övervakningskameran:
+  break-even-ROAS **1,49**, CPA 538 kr; target 2,36 / 338 kr.
+  ⚠️ Drar du reflexmässigt av 25 % ser lönsamma annonser ut att gå med förlust.
+- **Break-even räknas ändå alltid om från grunden per butik**, aldrig kopierad
+  — nästa OPS-produkt har annan COGS. Kör `node factory/ekonomi.mjs`.
 - **Varje läsning av OPS-kontot filtreras på butikens brandprefix.** Kontot är
   delat och bär dessutom Bäverbutikens danska kampanjer: avläst 2026-09-08 låg
   där 6 kampanjer och 69 annonser, samtliga Bäverbutikens, noll OPS. Kör

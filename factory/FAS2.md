@@ -260,14 +260,17 @@ praxis, aldrig ett skript.
   `break_even_cpa_sek`, `target_roas`, `target_cpa_sek` — räknade från grunden av
   `factory/ekonomi.mjs`, aldrig kopierade.
   Momsen läses ur butikskonfigen (`moms_i_pris` + `moms_procent`) och vävs in av
-  `butik.mjs`. **Skillnaden är stor:** övervakningskameran (799 kr, inköp 261 kr)
-  får break-even-ROAS **2,11 med moms** mot **1,49 utan**. Hade Bäverbutikens
-  räkning kopierats hade kill-linjen legat 42 % för generöst och förlustannonser
-  överlevt. Talen redovisar också vad de INTE innehåller (betalväxel, returer,
+  `butik.mjs`. **Axels besked 2026-09-08: OPS-butikerna säljer UTAN moms**,
+  precis som Bäverbutiken — så övervakningskameran (799 kr, inköp 261 kr) ligger
+  på break-even-ROAS **1,49** / CPA 538 kr, target 2,36 / 338 kr.
+  Räkningen är ändå gjord från grunden och inte kopierad: hade butiken redovisat
+  moms vore talet 2,11, och den skillnaden (42 %) är stor nog att vända ett
+  kill-beslut. Nästa OPS-produkt har annan COGS — kör alltid skriptet.
+  Talen redovisar också vad de INTE innehåller (betalväxel, returer,
   tull, bonusproduktens COGS) — varje sådan post gör break-even strängare.
   ⚠️ HeimGuards `aov_sek` är styckpriset, för butiken har ingen försäljningsdata.
   2-packet är förvalt, så verklig AOV blir högre och break-even strängare
-  (2,22 på A-paketet, 2,45 på B). `skalning.mjs` läser verklig AOV ur kontot
+  (1,54 på A-paketet, 1,64 på B). `skalning.mjs` läser verklig AOV ur kontot
   (minst 10 köp) och larmar vid >10 % avvikelse; kommandots steg 1a kräver
   omräkning före varje dom.
   ⚠️ Omräkningen kräver **två** tal: `aov_sek` OCH `varukostnad_per_order`.
@@ -275,11 +278,11 @@ praxis, aldrig ett skript.
   (−16 till −37 %) och bär en gratis bonus, så en proportionell gissning
   underskattar COGS och gör kill-linjen för generös. `ekonomi.mjs` vägrar
   därför räkna när `aov_sek` avviker från priset utan att kostnaden är satt.
-  ⚠️ **Två antaganden är obekräftade och bär hela kill-linjen:** att butiken
-  redovisar moms (enda stödet är `moms_i_pris: true`, ett prisvisningsfält —
-  Axel har inte sagt det) och att Metas purchase value är bruttot. Båda stängs
-  med en mätning vid första ordern (kommandots steg 1a-2). Håller det första
-  inte är break-even 1,49 i stället för 2,11.
+  ✅ Momsfrågan är besvarad: Axel bekräftade 2026-09-08 att OPS-butikerna säljer
+  UTAN moms, och `moms_i_pris: false` står i butikskonfigen.
+  ⚠️ Kvar omätt: att Metas purchase value är det kunden betalade. Utan moms i
+  priset spelar det mindre roll (brutto = netto) och blir avgörande först om en
+  butik börjar redovisa moms. Kommandots steg 1a-2 stänger den vid första ordern.
 - **Butiksfilter på det gemensamma kontot:** `factory/skalning.mjs` filtrerar varje
   läsning på butikens brandprefix (kampanjnamn ELLER annonsnamn, skiftlägesokänsligt,
   bara i början av namnet) och **skriver alltid ut vad den slängde**, så ett felstavat

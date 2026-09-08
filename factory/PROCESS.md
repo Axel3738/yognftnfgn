@@ -170,16 +170,16 @@ som genereras per bygge).
 21. ⚙️ **Räkna ekonomiblocket från grunden** innan första annonsen döms:
     `node factory/ekonomi.mjs factory/produkter/<id>.yaml` → klistra in talen.
     Momsen kommer ur butikskonfigen (`moms_i_pris`, `moms_procent`).
-    ⚠️ **Kopiera ALDRIG Bäverbutikens break-even.** Bäverbutiken säljer utan
-    moms, OPS-butikerna med. Övervakningskameran: 2,11 med moms mot 1,49 utan —
-    42 % skillnad, och den generösa varianten låter förlustannonser överleva.
+    **OPS-butikerna säljer UTAN moms** (Axels besked 2026-09-08) — marginalen
+    räknas rakt på priset. Övervakningskameran: break-even 1,49 / 538 kr.
+    ⚠️ **Kopiera ändå ALDRIG ett break-even-tal mellan produkter eller
+    verksamheter** — nästa produkt har annan COGS. Låt skriptet räkna.
     Har butiken sålt: läs verklig AOV ur kontot och räkna om — med BÅDA talen,
     `aov_sek` och `varukostnad_per_order`. Antalet varor går inte att härleda
     ur ordervärdet när paketen är rabatterade och bär en gratis bonus, så
     verktyget vägrar räkna utan kostnaden i stället för att gissa för generöst.
-    Förvalt flerpack gör break-even strängare (HeimGuard: 2,22 / 2,45).
-    ⚠️ Momsstatusen är ett ANTAGANDE tills Axel bekräftat den — `moms_i_pris`
-    styr prisvisning, inte bolagets momsredovisning.
+    Förvalt flerpack gör break-even strängare (HeimGuard: 1,54 på A-paketet,
+    1,64 på B).
 22. ⚙️ **Läs kontot filtrerat:** `node factory/skalning.mjs <butik>` gör
     ANALYSMETOD steg 0–6 (datakvalitet → signifikansgrind → vinstbidrag →
     spendfördelning → metrik-diagnos). Steg 6b, creative-teardownet, går inte

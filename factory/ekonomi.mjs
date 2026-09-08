@@ -1,26 +1,24 @@
 // Skalningsekonomin för en OPS-produkt: break-even och target, räknade från
 // grunden ur butikens egna förutsättningar. Ren matematik, noll beroenden.
 //
-// ⚠️ HELA POÄNGEN MED FILEN: Bäverbutikens break-even-tal får ALDRIG kopieras
-// hit. Bäverbutiken säljer UTAN moms (Axels besked 2026-08-29) — OPS-butikerna
-// säger `moms_i_pris: true` i sin butikskonfig. Samma pris och samma inköp ger
-// därför olika break-even i de två verksamheterna, och skillnaden är stor nog
-// att vända ett kill-beslut.
+// ⚠️ HELA POÄNGEN MED FILEN: ett break-even-tal får ALDRIG kopieras mellan
+// produkter eller verksamheter — det ska räknas ur den här butikens egna
+// pris, inköp och momsläge. Momsen kommer alltid ur butikskonfigen
+// (`moms_i_pris`), aldrig ur ett minne: samma pris och inköp ger 1,49 utan
+// moms och 2,11 med, och den skillnaden är stor nog att vända ett kill-beslut.
+// Läget just nu: både Bäverbutiken (Axel 2026-08-29) och OPS-butikerna
+// (Axel 2026-09-08) säljer UTAN moms. Momsvägen finns kvar och är testad,
+// för nästa marknad eller nästa bolag kan ha ett annat läge.
 //
-// ⚠️ TVÅ ANTAGANDEN SOM BÄR HELA KILL-LINJEN OCH SOM INGEN HAR MÄTT:
-//  1. Att butiken faktiskt redovisar moms. Det enda stödet i repot är
-//     `moms_i_pris: true` i butikskonfigen — ett fält som styr prisvisning,
-//     inte ett besked om bolagets momsstatus. (Jämför docs/grillkliniken-
-//     ekonomi.md, som lämnar Bäverbutikens momsläge öppet med "Fråga Axel".)
-//  2. Att Metas purchase value är bruttot kunden betalade (inkl. moms).
-//     Standardpixeln skickar ordertotalen, men butiken kan vara konfigurerad
-//     att skicka ex moms.
-// Håller antagande 1 inte är break-even 2,11 i stället för 1,49 — för strängt,
-// och lönsamma annonser ser ut att gå med förlust. Håller antagande 2 inte ska
-// `brutto` bytas mot `netto` i breakEvenRoas/targetRoas.
-// BÅDA går att stänga med en mätning: jämför en Meta-rads purchase value mot
-// samma orders totalbelopp i Shopify vid första ordern. /skalningskungen steg
-// 1a kräver den kontrollen. Tills dess är talen preliminära — säg det.
+// ⚠️ MOMSLÄGET ÄR BESVARAT, PIXELN ÄR DET INTE:
+//  1. Momsen: Axel svarade 2026-09-08 att OPS-butikerna säljer UTAN moms.
+//     `moms_i_pris: false` står i butikskonfigen. Frågan är stängd — men
+//     fältet styr fortfarande räkningen, så ändra det aldrig av slentrian.
+//  2. Att Metas purchase value är det kunden betalade är fortfarande OMÄTT.
+//     Utan moms i priset spelar det mindre roll (brutto = netto), och det
+//     blir avgörande först om en butik börjar redovisa moms.
+//     /skalningskungen steg 1a-2 stänger frågan med en jämförelse mot
+//     Shopify-ordern vid första köpet.
 //
 // Formlerna (allt per order):
 //   brutto   = det kunden betalar = det Meta räknar som purchase value

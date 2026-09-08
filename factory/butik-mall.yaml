@@ -24,8 +24,12 @@ butik:
       locale: nb
       valuta: NOK
   valuta: SEK                 # KRITISKT — SEK, NOK, DKK, EUR, USD eller GBP
-  moms_i_pris: true           # true = priserna inkluderar skatt
-  moms_procent: 25            # momssatsen. Styr break-even i factory/ekonomi.mjs
+  # ⚠️ Styr break-even (factory/ekonomi.mjs), inte bara prisvisning.
+  # false = Axels besked 2026-09-08: OPS-butikerna säljer UTAN moms, precis
+  # som Bäverbutiken. Marginalen räknas rakt på priset. Sätt true bara för en
+  # butik som faktiskt redovisar moms — det gör break-even ~40 % strängare.
+  moms_i_pris: false
+  moms_procent: 25            # momssatsen. Används bara när moms_i_pris är true
 
 frakt:
   fri_globalt: true           # fri frakt till alla länder (default)

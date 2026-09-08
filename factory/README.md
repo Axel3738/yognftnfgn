@@ -36,10 +36,11 @@ på bara produktfilen: den saknar butiksfälten och stoppar falskt.)
 Kritiska fält som saknas → ❌ och exit 1, systemet stoppar direkt.
 Varningar (⚠️) stoppar inte, men ska vara ifyllda före launch.
 Grön validering visar även täckningsbidrag, break-even-ROAS/CPA och
-target-ROAS/CPA. **Talen räknas MED butikens moms** (`moms_i_pris` +
-`moms_procent` i butikskonfigen) sedan 2026-09-08 — se `ekonomi.mjs`.
-⚠️ Bäverbutikens break-even-tal gäller aldrig här: den säljer utan moms, och
-samma pris och inköp ger då ~40 % generösare kill-linje.
+target-ROAS/CPA, räknade av `ekonomi.mjs` ur butikens `moms_i_pris`.
+**OPS-butikerna säljer UTAN moms** (Axels besked 2026-09-08) — marginalen
+räknas rakt på priset. ⚠️ Sätts `moms_i_pris: true` blir kill-linjen ~40 %
+strängare, så rör aldrig fältet av slentrian. Kopiera aldrig ett
+break-even-tal mellan produkter: nästa har annan COGS.
 
 Exempel med allt ifyllt: `produkter/dummyprodukten.yaml`.
 

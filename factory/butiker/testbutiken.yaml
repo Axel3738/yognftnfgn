@@ -11,6 +11,8 @@ butik:
   land: SE
   huvudmarknad: Sverige
   valuta: SEK
+  # Fixturen kör MED moms med flit — de riktiga butikerna säljer utan (Axel
+  # 2026-09-08), och utan den här raden vore momsvägen i ekonomi.mjs otestad.
   moms_i_pris: true
   moms_procent: 25
 

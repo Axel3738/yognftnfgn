@@ -156,13 +156,18 @@ test('registrets prefix och budget stämmer med produktfilens', () => {
   }
 });
 
-test('laddaButik ger butikens egna linjer, räknade med butikens moms', () => {
+test('laddaButik ger butikens egna linjer, räknade ur butikens momsläge', () => {
+  // HeimGuard säljer UTAN moms (Axels besked 2026-09-08) — marginalen rakt
+  // på priset: 799 − 261 = 538 kr täckningsbidrag.
   const b = laddaButik('hemvakten');
-  assert.equal(b.ekonomi.momsProcent, 25);
-  assert.equal(b.ekonomi.breakEvenRoas, 2.11);
-  assert.equal(b.ekonomi.targetCpa, 218);
-  // Bäverbutikens motsvarande produkt ligger på 1,63 — talen får aldrig sammanfalla.
-  assert.notEqual(b.ekonomi.breakEvenRoas, 1.63);
+  assert.equal(b.ekonomi.momsProcent, 0);
+  assert.equal(b.ekonomi.breakEvenRoas, 1.49);
+  assert.equal(b.ekonomi.breakEvenCpa, 538);
+  assert.equal(b.ekonomi.targetRoas, 2.36);
+  assert.equal(b.ekonomi.targetCpa, 338);
+  // Talen ligger nära Bäverbutikens men är räknade härifrån. Skulle någon
+  // sätta moms_i_pris av misstag hoppar break-even till 2,11 — det ska synas.
+  assert.notEqual(b.ekonomi.breakEvenRoas, 2.11);
 });
 
 // ------------------------------------------------------- ANALYSMETOD-räkningar

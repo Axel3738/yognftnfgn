@@ -8,25 +8,27 @@ import assert from 'node:assert/strict';
 import { raknaEkonomi, ekonomiForProdukt, granskaEkonomiblock } from '../ekonomi.mjs';
 import { dummy } from './hjalp.mjs';
 
-test('moms i priset ger ett strängare break-even än utan moms', () => {
-  const med = raknaEkonomi({ pris: 799, inkopskostnad: 261, momsIPris: true, momsProcent: 25 });
+test('momsläget avgör break-even — samma pris och inköp ger två olika linjer', () => {
+  // HeimGuards verkliga läge: UTAN moms (Axels besked 2026-09-08).
   const utan = raknaEkonomi({ pris: 799, inkopskostnad: 261, momsIPris: false });
+  assert.equal(utan.tackningsbidrag, 538);  // 799 − 261
+  assert.equal(utan.breakEvenRoas, 1.49);
+  assert.equal(utan.breakEvenCpa, 538);
 
-  assert.equal(med.netto, 639.2);          // 799 / 1,25
+  // Samma produkt i en momsbutik. Vägen finns kvar och måste vara testad.
+  const med = raknaEkonomi({ pris: 799, inkopskostnad: 261, momsIPris: true, momsProcent: 25 });
+  assert.equal(med.netto, 639.2);           // 799 / 1,25
   assert.equal(med.tackningsbidrag, 378.2); // 639,20 − 261
   assert.equal(med.breakEvenRoas, 2.11);
-  assert.equal(med.breakEvenCpa, 378);
 
-  assert.equal(utan.breakEvenRoas, 1.49);
-  // Skillnaden är hela poängen: kopieras Bäverbutikens räkning (utan moms) till
-  // en OPS-butik blir kill-linjen 42 % för generös och förlustannonser överlever.
+  // Skillnaden är hela poängen: fel momsläge flyttar kill-linjen 42 %.
   assert.ok(med.breakEvenRoas > utan.breakEvenRoas * 1.4);
 });
 
 test('target är 25 % nettomarginal, alltid strängare än break-even', () => {
-  const e = raknaEkonomi({ pris: 799, inkopskostnad: 261 });
-  assert.equal(e.targetCpa, 218);   // 378,20 − 25 % av 639,20
-  assert.equal(e.targetRoas, 3.66);
+  const e = raknaEkonomi({ pris: 799, inkopskostnad: 261, momsIPris: false });
+  assert.equal(e.targetCpa, 338);   // 538 − 25 % av 799
+  assert.equal(e.targetRoas, 2.36);
   assert.ok(e.targetRoas > e.breakEvenRoas);
   assert.ok(e.targetCpa < e.breakEvenCpa);
 });
@@ -48,26 +50,29 @@ test('flerpack utan varukostnad_per_order: verktyget VÄGRAR räkna', () => {
   // är rabatterade −16 till −37 % plus gratis bonus, så antalet varor växer
   // snabbare än intäkten och COGS underskattas — för generöst, åt det håll
   // som låter förlustannonser leva.
-  const utan = raknaEkonomi({ pris: 799, inkopskostnad: 261, aov: 1342 });
+  const utan = raknaEkonomi({ pris: 799, inkopskostnad: 261, momsIPris: false, aov: 1342 });
   assert.equal(utan.osaker, true);
   assert.equal(utan.breakEvenRoas, null);
   assert.equal(utan.breakEvenCpa, null);
   assert.match(utan.varning, /varukostnad_per_order/);
 
   // Med talet satt räknar den — och ger ett STRÄNGARE break-even än styckpriset.
-  const explicit = raknaEkonomi({ pris: 799, inkopskostnad: 261, aov: 1342, varukostnadPerOrder: 470 });
-  assert.equal(explicit.osaker, false);
-  assert.equal(explicit.breakEvenRoas, 2.22);
-  assert.ok(explicit.breakEvenRoas > raknaEkonomi({ pris: 799, inkopskostnad: 261 }).breakEvenRoas);
+  // HeimGuards riktiga A-paket: 1 342 kr, 2 st à 235 kr (Axels quote 2026-09-05).
+  const styck = raknaEkonomi({ pris: 799, inkopskostnad: 261, momsIPris: false });
+  const a = raknaEkonomi({ pris: 799, inkopskostnad: 261, momsIPris: false, aov: 1342, varukostnadPerOrder: 470 });
+  assert.equal(a.osaker, false);
+  assert.equal(a.breakEvenRoas, 1.54);
+  assert.ok(a.breakEvenRoas > styck.breakEvenRoas);
 
   // B-paketet: samma varukostnad, lägre pris ⇒ ännu strängare.
-  const b = raknaEkonomi({ pris: 799, inkopskostnad: 261, aov: 1199, varukostnadPerOrder: 470 });
-  assert.equal(b.breakEvenRoas, 2.45);
+  const b = raknaEkonomi({ pris: 799, inkopskostnad: 261, momsIPris: false, aov: 1199, varukostnadPerOrder: 470 });
+  assert.equal(b.breakEvenRoas, 1.64);
+  assert.ok(b.breakEvenRoas > a.breakEvenRoas);
 });
 
 test('aov lika med priset räknas som en vara per order', () => {
-  const a = raknaEkonomi({ pris: 799, inkopskostnad: 261, aov: 799 });
-  const b = raknaEkonomi({ pris: 799, inkopskostnad: 261 });
+  const a = raknaEkonomi({ pris: 799, inkopskostnad: 261, momsIPris: false, aov: 799 });
+  const b = raknaEkonomi({ pris: 799, inkopskostnad: 261, momsIPris: false });
   assert.equal(a.osaker, false);
   assert.equal(a.breakEvenRoas, b.breakEvenRoas);
 });

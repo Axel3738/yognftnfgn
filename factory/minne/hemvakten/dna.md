@@ -16,25 +16,23 @@ ordningen det var vid varje uppdatering.
 
 | | Värde | Används till |
 |---|---|---|
-| Break-even-ROAS | 2,11 | **KILL-beslut — enda linjen som får döda en annons** |
-| Break-even-CPA | 378 kr | samma linje, i CPA-form |
-| Target-ROAS | 3,66 | budgetallokering och skalning |
-| Target-CPA | 218 kr | samma |
+| Break-even-ROAS | 1,49 | **KILL-beslut — enda linjen som får döda en annons** |
+| Break-even-CPA | 538 kr | samma linje, i CPA-form |
+| Target-ROAS | 2,36 | budgetallokering och skalning |
+| Target-CPA | 338 kr | samma |
 
-⚠️ **Två obekräftade antaganden bär de här talen.** (1) Att butiken redovisar
-moms — det enda stödet är `moms_i_pris: true` i butikskonfigen, ett fält som
-styr prisvisning; Axel har inte sagt det. Håller det inte är break-even 1,49.
-(2) Att Metas purchase value är bruttot kunden betalade. Båda stängs med en
-mätning vid första ordern (kommandots steg 1a-2). Tills dess: preliminära.
+**Butiken säljer UTAN moms** (Axels besked 2026-09-08). Marginalen räknas rakt
+på priset: 799 − 261 = 538 kr täckningsbidrag per order.
 
-⚠️ Räknade på styckpriset 799 kr, moms 25 %, varukostnad 261 kr. **Butiken har
-ingen uppmätt AOV.** 2-packet är förvalt, så verklig AOV blir högre och
-break-even STRÄNGARE (2,22 på A-paketet 1 342 kr, 2,45 på B-paketet 1 199 kr).
-Första körningen med köp i kontot ska läsa verklig AOV och räkna om blocket
-innan någon annons döms.
+⚠️ Räknade på styckpriset 799 kr. **Butiken har ingen uppmätt AOV.**
+2-packet är förvalt, så verklig AOV blir högre och break-even STRÄNGARE
+(1,54 på A-paketet 1 342 kr, 1,64 på B-paketet 1 199 kr). Första körningen med
+köp i kontot ska läsa verklig AOV **och** sätta `varukostnad_per_order` —
+verktyget vägrar räkna på enbart AOV, eftersom antalet varor inte går att
+härleda ur ett rabatterat paketpris.
 
-⚠️ Bäverbutikens tal gäller inte här. Samma produkt och samma inköp ger
-break-even-ROAS 1,49 utan moms mot 2,11 med — 42 % skillnad.
+⚠️ Talen ligger nära Bäverbutikens men är räknade härifrån. Kopiera aldrig ett
+break-even-tal mellan produkter — nästa har annan COGS.
 
 ## Winning DNA (bevisat i DETTA konto)
 
