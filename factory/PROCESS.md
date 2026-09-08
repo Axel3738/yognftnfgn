@@ -54,6 +54,12 @@ som genereras per bygge).
    (omhämtar lådan en gång per sidladdning — layout/theme.liquid renderar
    snippeten direkt förbi wrappern, och den filen forkas inte).
    Fältet i produktfilen: `offer.bonus_produkt`.
+   **Antalsregeln (Axel 2026-09-08):** gratis-antalet följer paketantalet
+   — 2-pack ⇒ 2 gratis, 3-pack ⇒ 3 gratis — när bonusen har låg COGS och
+   samfraktas med huvudprodukten. **Nivå 1 får en betald
+   tilläggs-kryssruta** för bonusen till FULLPRIS (aldrig rabatterad —
+   den håller "värde X kr"-berättelsen på paketen ärlig). Rabattkoderna
+   räknas alltid om så kassapriset stämmer på öret.
    ⚠️ Ny temaklon tappar temats translationsRegister-rader — registrera om
    nb för index/product-mallarna OCH sektionsgrupperna
    (`gid://…SectionGroup/header-group?theme_id=<ny>`); nycklar och digests

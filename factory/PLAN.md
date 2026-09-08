@@ -116,7 +116,10 @@ Från Q4-genomgången Axel skickade. Tre delar, i prioritetsordning:
    komplementprodukt som (a) läggs som GRATIS bonus i paketnivåerna —
    "köp mer, få mer" trappat på ordervärdet — och (b) säljs som betald
    upsell i varukorgslådan. Rabattkoderna höjs med bonusens värde så
-   kassapriset stämmer på öret. ✅ Byggt och bevisat på HeimGuard
+   kassapriset stämmer på öret. Antalsregeln 2026-09-08: gratis-antalet
+   följer paketantalet (2-pack ⇒ 2, 3-pack ⇒ 3) när bonusen är billig
+   och samfraktas; nivå 1 får betald tilläggs-kryssruta till fullpris.
+   ✅ Byggt och bevisat på HeimGuard
    (varningsskyltar 149 kr): mall i `produkt-mall.yaml` →
    `offer.bonus_produkt`, temakoden i `tema.mjs` → `byggKorgUpsell`.
 2. **Banka creatives i förväg.** Inför säsong (Q4, sommar) produceras
