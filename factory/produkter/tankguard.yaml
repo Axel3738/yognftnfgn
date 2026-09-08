@@ -5,13 +5,14 @@
 # veta vilka av Bäverbutikens annonser som hör till butiken. Butiksbygget gjordes
 # utanför repot och lämnade aldrig efter sig någon produktfil.
 #
-# Ifyllt och verifierat 2026-09-08: produkt, ekonomi (ur källsidans
-# products/<handle>.json), kalla-blocket (ur MagiBorsten 1867947880635861), meta.
+# Ifyllt och verifierat 2026-09-08: produkt, ekonomi (priser ur källsidans
+# products/<handle>.json, inköp ur Axels COGS-doc batch #4), kalla-blocket
+# (ur MagiBorsten 1867947880635861), meta.
 # SAKNAS och fylls av /ny-ops-körningen som dokumenterar butiken:
 # varianter, media, beskrivning, vinkel, malgrupp, problem, benefits, features,
 # offer (paketnivåer + Q4-bonus), reviews, faq, leveranstid, garantier,
-# leverantor, ekonomi.inkopskostnad, ekonomi.valuta, brand.domanideer.
-# Hitta inte på dem — hämta dem ur källan och ur Axels COGS-underlag.
+# leverantor, ekonomi.valuta, brand.domanideer — och butikens EGET pris, som
+# break-even måste räknas om på. Hitta inte på dem; hämta dem ur källan.
 
 produkt:
   namn: "IBC-tanköverdrag 1000 L – Stoppar Alger & UV"
@@ -25,10 +26,22 @@ ekonomi:
   # sätts i butiksbygget — kopiera dem inte härifrån utan att räkna om.
   pris: 489
   jamforpris: 636
-  # ⚠️ inkopskostnad är INTE ifylld. SE-kampanjen heter "BE ROAS 1.51", vilket
-  # baklänges ger ~165 kr — det är en HÄRLEDNING ur ett kampanjnamn, inte en
-  # mätning, och break-even får aldrig vila på en gissning. Hämta talet ur
-  # Axels COGS-underlag innan någon dom fattas om annonserna.
+  # Inköp per styck, 1 st till Sverige, exkl. skatt.
+  # Källa: Axels COGS-doc 1BtFJj1A3J2ciZZS…, batch-sheet #4, raden
+  # "Water tank cover", SWEDEN: 5,73 produkt + 8,21 frakt = 13,94 EUR.
+  # (Enheten är EUR — samma rads NORWAY-kolumn, 15,63, är exakt talet
+  # no-ibc-video.config.mjs räknade BE-ROAS 1,63 på "à 10,86".)
+  # Omräknat med ECB-kursen 11,152 EUR/SEK (2026-09-08) = 155,46 kr.
+  inkopskostnad: 155
+  # Rabattrappan i samma rad, omräknad per styck: 2-pack 23,65 EUR = 132 kr/st,
+  # 3-pack 33,35 EUR = 124 kr/st. Flerpack sänker alltså inköpet 15–20 %.
+  # Referens vid KÄLLBUTIKENS pris 489 kr utan moms: täckningsbidrag 334 kr,
+  # break-even-ROAS 1,46, break-even-CPA 334 kr. SE-kampanjen heter "BE ROAS
+  # 1.51" — den räknades på en äldre kurs.
+  # ⚠️ Detta är INTE TankGuards break-even. Butiken har inget eget pris satt i
+  # repot och `factory/butiker/tankguard.yaml` finns inte, så momsfrågan är
+  # oavgjord. Räkna om från grunden när priset är spikat — kopiera aldrig
+  # break-even-tal mellan verksamheterna (FAS2, Uppdrag E).
 
 # KÄLLKOPPLINGEN — vilken Bäverbutiks-produkt och vilka Bäverbutiks-annonser
 # TankGuard är byggd av. Maskinläsbart (factory/FAS2.md, Uppdrag A).
