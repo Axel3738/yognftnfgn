@@ -74,14 +74,6 @@ export default {
       ],
     },
     {
-      name: 'HEIMGUARD_SE_Övervakningskameran - RI', // RI — notisen
-      ads: [
-        { adName: "HeimGuard_RI_2_1", img: "HeimGuard_RI_2_1.jpg",
-          copy: { message: "Notisen kommer innan du hinner undra.\nDubbellinsen och AI-spårningen ser det ögat missar.\n799 kr (jämförpris 1 000 kr). 30 dagars öppet köp.",
-                  headline: "", description: "" } },
-      ],
-    },
-    {
       name: 'HEIMGUARD_SE_Övervakningskameran - CO', // CO — jämförelse
       ads: [
         { adName: "HeimGuard_CO_2_1", img: "HeimGuard_CO_2_1.jpg",
@@ -108,6 +100,14 @@ export default {
                   headline: "", description: "" } },
         { adName: "HeimGuard_PD_4_1", img: "HeimGuard_PD_4_1.jpg",
           copy: { message: "En lins för dagsljus, en för mörker – samma skärpa dag och natt.\n355° täckning betyder att den vrider sig dit rörelsen är, inte tvärtom.\n799 kr, jämförpris 1 000 kr. 30 dagars öppet köp.",
+                  headline: "", description: "" } },
+      ],
+    },
+    {
+      name: 'HEIMGUARD_SE_Övervakningskameran - RI', // RI — notisen
+      ads: [
+        { adName: "HeimGuard_RI_2_1", img: "HeimGuard_RI_2_1.jpg",
+          copy: { message: "Notisen kommer innan du hinner undra.\nDubbellinsen och AI-spårningen ser det ögat missar.\n799 kr (jämförpris 1 000 kr). 30 dagars öppet köp.",
                   headline: "", description: "" } },
       ],
     },

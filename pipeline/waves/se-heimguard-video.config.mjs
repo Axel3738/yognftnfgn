@@ -50,9 +50,6 @@ export default {
         { name: "HeimGuard_SP_1", file: "HeimGuard_SP_1.mp4",
           copy: { message: "\"Bra kamera och smidigt att kunna följa det som händer.\"\nDet är vad en av våra kunder skriver om kameran.\n✅ Två linser som täcker hela tomten\n✅ AI som bara larmar när det gäller\n✅ Direkt notis i mobilen var du än är\n✅ 30 dagars nöjd-kund-garanti\n10 recensioner. Alla fem stjärnor.\nLäs vad de skriver – köp när du är redo.",
                   headline: "10 recensioner. Alla fem stjärnor.", description: "10 recensioner, alla fem stjärnor. 30 dagars öppet köp." } },
-        { name: "HeimGuard_SP_4_H1", file: "HeimGuard_SP_4_H1.mp4",
-          copy: { message: "Larmet gick 03:12 i natt. Skärmen visade en katt — inte en inbrottstjuv.\nAI:n skiljer människa från djur, så larmet betyder faktiskt något.\n799 kr istället för 1 000 kr. 30 dagars öppet köp. Handla nu.",
-                  headline: "Larmet gick 03:12 i natt", description: "" } },
         { name: "HeimGuard_SP_9_H1", file: "HeimGuard_SP_9_H1.mp4",
           copy: { message: "Direkt notis i mobilen, var du än är.\nTvå linser. AI-spårning som bara larmar när det gäller.\n799 kr i dag. 30 dagars öppet köp.",
                   headline: "Två linser. AI-spårning. 799 kr.", description: "30 dagars öppet köp om det inte känns rätt." } },
@@ -99,14 +96,6 @@ export default {
         { name: "HeimGuard_AU_2_H1", file: "HeimGuard_AU_2_H1.mp4",
           copy: { message: "3 saker jag kollar innan jag sätter upp en övervakningskamera:\n1. 355° täckning från dubbellinsen – inga döda vinklar i trädgården.\n2. AI:n skiljer människa från husdjur, inte bara rörelse.\n3. Notis direkt i telefonen, inte nästa dag.\n799 kr, jämförpris 1 000 kr. 30 dagars garanti.",
                   headline: "355° täckning. AI ser skillnaden.", description: "" } },
-      ],
-    },
-    {
-      name: 'HEIMGUARD_SE_Övervakningskameran - RI', // RI — notisen
-      ads: [
-        { name: "HeimGuard_RI_1_H1", file: "HeimGuard_RI_1_H1.mp4",
-          copy: { message: "En kamera som bara larmar visar aldrig vad som hände.\nTvå linser täcker 355° runt huset — du ser hela bilden, inte en gissning.\n799 kr. 30 dagars nöjd-kund-garanti.",
-                  headline: "Se vad som faktiskt hände vid dörren", description: "" } },
       ],
     },
     {

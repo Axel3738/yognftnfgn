@@ -20,15 +20,25 @@ kommandot är körordningen. Uppdrag D och E är systemarbete utanför det.
 
 | Blockerare | Blockerar | Löses av |
 |---|---|---|
-| ~~FB-kontot~~ — LÖST 2026-09-08: TankGuards Meta-sida är `1399193996606775` (verifierad i MagiBorstens `client_pages`), pixeln `2196132151319625` avfyrar och WeTracked är kopplat | inget | — |
+| ⛔ **Sidan går inte att annonsera med.** Mätt 2026-09-08 när HeimGuards annonser skulle skapas: `act_915422744950975/adcreatives` svarar *"Sidan du har valt för din annons är inte tillgänglig, eller har du kanske inte behörighet att se den här sidan"* för sida `1262406533629248`. Kampanj, adset och 23 uppladdade videor gick igenom — bara annonserna faller. ⚠️ **Detta gäller troligen varje OPS-butik, inte bara HeimGuard:** kontots `promote_pages` är TOMT, och TankGuard-kampanjen i samma konto har **0 annonser** — dess sida är alltså aldrig heller bevisad i skarpt läge, bara sedd i `client_pages`. Token:en (Axels användartoken) kan inte rätta det själv: `assigned_users`, `promote_pages` och `BM/pages` svarar alla "missing permissions". | annonsskapandet i ALLA OPS-butiker | Axel i Business Manager: ge sidan **HeimGuard** till annonskontot **Magiborsten DK** och sig själv rollen annonsör/admin på sidan |
+| ~~FB-kontot~~ — LÖST 2026-09-08: TankGuards Meta-sida är `1399193996606775` (verifierad i MagiBorstens `client_pages`), pixeln `2196132151319625` avfyrar och WeTracked är kopplat. ⚠️ "Verifierad i `client_pages`" visade sig INTE betyda att sidan går att annonsera med — se raden ovan. | inget | — |
 | ~~`META_ACCESS_TOKEN`~~ — finns i MOLNETS miljö (Axels besked 2026-09-08). `env.mjs` sätter aldrig över en variabel som redan finns i miljön, så all Meta-kod funkar i molnet. Saknas bara LOKALT. | inget i molnet | — |
 | HeyGen-plånboken tom (13 krediter, mätt 2026-09-08) | omdubbning av video — ⚠️ blockerar INTE HeimGuard: 0 av 26 svenska transkript nämner brandet, ingen omdubbning behövs där | Axel fyller på |
 | HeimGuards NO-marknad betalar i SEK medan Bäverbutikens norska annonser är prissatta 899/1 169 NOK | den norska HeimGuard-kampanjen | Axel slår på NOK i Shopify admin och sätter NOK-paketnivåer |
 | `standby.md` har ännu ingen ifylld rad | tilldelning av redigerare | Axel ger namnet på personen som redan står på standby |
 
-**Läget 2026-09-08 kväll: A, B, C, D och E kan alla köra NU.** TankGuards sida,
-pixel och WeTracked är klara, och Meta-nyckeln finns i molnets miljö. Bara A2
-(videodubbningen) väntar — på HeyGen-krediter.
+**Läget 2026-09-08 kväll (uppdaterat efter HeimGuard-körningen):** A, C, D och E
+kan köra. **B kommer till sista steget och stannar där** — kampanj, adsets och
+media går upp, men annonserna kan inte skapas förrän sidan är kopplad till
+annonskontot i Business Manager (se blockeraren överst). A2 väntar på
+HeyGen-krediter, men blockerar inte HeimGuard: 0 av 26 svenska transkript
+nämner brandet.
+
+⚠️ **Lärdomen är dyrköpt: bygg annonsen FÖRST i en ny butik.** Sidan och pixeln
+såg klara ut i varje läsning som gjordes — sidan fanns i `owned_pages`, pixeln
+avfyrade. Ingen av de kontrollerna säger något om huruvida kontot får annonsera
+med sidan. Det enda som svarar på den frågan är ett skarpt `adcreatives`-anrop.
+Gör det tidigt, med EN annons, innan 23 videor laddas upp i onödan.
 
 ---
 
