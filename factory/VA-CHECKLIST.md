@@ -56,12 +56,10 @@ VIDEO:
 ## 4. Shopify – connect Claude Code
 VIDEO:
 
-* Go to dev.shopify.com → log in with the work Gmail → Apps → Fabriken (first time only: Create app → name it "Fabriken")
-* Fabriken → Settings → copy the Client ID and the Client secret
-* Give Claude Code 3 values: the store's .myshopify.com address + the Client ID + the Client secret (paste in Claude Code, never in email)
+* Give Claude Code the store's .myshopify.com address (paste in Claude Code)
 * When Claude gives you an install link: open it → Install app → approve
 * Claude cannot build anything in the store until this is done
-  Note: an "Admin API access token" from the CLI is the WRONG thing – Claude only needs the 3 values above. (Mätt 2026-09-08: fel tokentyp stoppade TankGuard-bygget.)
+  Note: the app Fabriken is already set up by the owner – you never create apps, copy keys or paste tokens. (Mätt 2026-09-08: en klistrad CLI-token stoppade TankGuard-bygget — därför hanterar VA:n aldrig nycklar.)
 
 ## 5. Shopify – payments
 VIDEO:

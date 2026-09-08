@@ -62,10 +62,12 @@ som genereras per bygge).
     (`factory/VA-CHECKLIST.md`, ifylld per butik i `output/<id>/CHECKLISTA.md`)
     — även Shopify Payments (Axels besked 2026-09-07: aktiveringen har
     aldrig krävt BankID, VA:n fyller i bolags- och bankuppgifterna).
-    Claude kopplas till butiken via appen Fabriken på dev.shopify.com —
-    tre värden från VA:n: myshopify-adress + Client ID + Client secret
-    (checklistans steg 4; aldrig en klistrad token) → Admin-token hämtas
-    och `SHOPIFY_STORE_DOMAIN` + `SHOPIFY_ADMIN_TOKEN` skrivs i
+    Claude kopplas till butiken via appen Fabriken (Axels engångs-setup
+    på dev.shopify.com — klientuppgifterna i miljön som SHOPIFY_CLIENT_ID
+    + SHOPIFY_CLIENT_SECRET). Per butik ger VA:n bara butikens
+    myshopify-adress och godkänner installänken (checklistans steg 4;
+    VA:n hanterar aldrig nycklar) → Admin-token hämtas och
+    `SHOPIFY_STORE_DOMAIN` + `SHOPIFY_ADMIN_TOKEN` skrivs i
     `factory/.env`. Rutinen startas med `/ny-ops`; frasen
     "Store ready: <namn>" utlöser slutsteget (se kommandot).
 

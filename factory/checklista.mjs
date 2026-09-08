@@ -49,11 +49,10 @@ Everything not on this list is done by Claude Code.
 - [ ] Settings → Notifications → Sender email → **${mail}** → Save → click the verification link in the inbox
 
 ## 4. Shopify – connect Claude Code
-- [ ] Go to **dev.shopify.com** → log in with the work Gmail → Apps → **Fabriken** (first time only: Create app → name it **Fabriken**)
-- [ ] Fabriken → **Settings** → copy the **Client ID** and the **Client secret**
-- [ ] Give Claude Code 3 values: the store's **.myshopify.com** address + the Client ID + the Client secret (paste in Claude Code, never in email)
+- [ ] Give Claude Code the store's **.myshopify.com** address (paste in Claude Code)
 - [ ] When Claude gives you an install link: open it → **Install app** → approve
-  Note: an "Admin API access token" from the CLI is the WRONG thing – Claude only needs the 3 values above.
+- [ ] Claude cannot build anything in the store until this is done
+  Note: the app **Fabriken** is already set up by the owner – you never create apps, copy keys or paste tokens.
 
 ## 5. Shopify – payments
 - [ ] Settings → Payments → Activate **Shopify Payments** → fill in the company + bank details Claude gives you

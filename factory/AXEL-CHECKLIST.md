@@ -9,6 +9,15 @@ Sen är ditt enda jobb per butik: välj produkt — och ta ägarskapet i överl�
       Meta och allt annat är framförd och överkörd)
 - [ ] Loopia → spara företagskortet → ge henne inloggningen
 
+## 1b. Appen Fabriken (en gång — fabrikens nyckel till varje ny butik)
+- [ ] Gå till **dev.shopify.com** → logga in med jobb-Gmailen
+- [ ] **Apps** → **Create app** → döp den till **Fabriken**
+- [ ] Fabriken → **Settings** → kopiera **Client ID** och **Client secret**
+- [ ] Lägg in dem i molnsessionens miljövariabler som
+      **SHOPIFY_CLIENT_ID** och **SHOPIFY_CLIENT_SECRET**
+      (VA:n hanterar aldrig nycklarna — hon ger bara butikens adress
+      och klickar installänken per butik)
+
 ## 2. Meta klart
 - [ ] Business Manager → **Betalningar** → lägg in företagskortet
 - [ ] Bjud in henne med **Fullständig åtkomst** (Allt PÅ) — Axels beslut

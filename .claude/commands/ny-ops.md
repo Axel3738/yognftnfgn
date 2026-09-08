@@ -16,15 +16,16 @@ ifylld till `factory/output/<id>/CHECKLISTA.md`.
 Gör i ordning, utan att invänta godkännande mellan stegen:
 
 1. **Rätt butik.** Kopplingen till den nya butiken är appen **Fabriken**
-   på dev.shopify.com (VA-checklistans steg 4). Be VA:n om TRE värden:
-   butikens `.myshopify.com`-adress, appens **Client ID** och **Client
-   secret**. ⚠️ Be ALDRIG om en klistrad token (mätt 2026-09-08:
-   VA:n klistrade en Shopify CLI-token — fel typ, stoppade bygget).
-   Hämta Admin-token med klientuppgifterna, installera appen i butiken
-   (ge VA:n installänken), skriv `SHOPIFY_STORE_DOMAIN` +
-   `SHOPIFY_ADMIN_TOKEN` i `factory/.env`. Verifiera med fabrikens
-   anslutningskontroll att domänen är DEN NYA butiken — fel butik =
-   stoppa direkt.
+   — skapad EN gång av Axel på dev.shopify.com; klientuppgifterna ligger
+   som `SHOPIFY_CLIENT_ID` + `SHOPIFY_CLIENT_SECRET` i miljön (saknas de:
+   fråga AXEL, aldrig VA:n). Per butik: be VA:n om butikens
+   `.myshopify.com`-adress, ge henne appens installänk att godkänna,
+   hämta Admin-token med klientuppgifterna och skriv
+   `SHOPIFY_STORE_DOMAIN` + `SHOPIFY_ADMIN_TOKEN` i `factory/.env`.
+   ⚠️ Be ALDRIG VA:n om en token eller nyckel (mätt 2026-09-08: en
+   klistrad CLI-token var fel typ och stoppade bygget). Verifiera med
+   fabrikens anslutningskontroll att domänen är DEN NYA butiken —
+   fel butik = stoppa direkt.
    ⚠️ **Shopify-MCP:n är FÖRBJUDEN i hela den här rutinen** (incident
    2026-09-07: MCP:n i molnsessionen stod på HeimGuard och rutinen
    försökte växla butik med `switch-shop`). MCP:n pekar på fel butik,
