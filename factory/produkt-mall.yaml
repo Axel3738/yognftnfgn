@@ -104,6 +104,31 @@ leverantor:
   url: ""                     # KRITISKT — länk till supplier/produkt (Temu, CJ, AliExpress …)
   anteckning: ""              # ledtid, MOQ, kontakt
 
+# KÄLLKOPPLINGEN — vilken Bäverbutiks-produkt och vilka Bäverbutiks-annonser
+# den här OPS-produkten är byggd av. Maskinläsbart, inte en kommentar högst upp
+# i filen: utan de här fälten kan ingen körning veta vilka annonser som hör till
+# butiken (factory/FAS2.md, Uppdrag A). Läses av factory/brand-detektor.mjs.
+# ⚠️ Blandas lätt ihop med `kallor:` nedan — den är produktens Drive-mapp.
+kalla:
+  butik: "baverbutiken.se"
+  produkt_id: ""              # Shopify-produkt-id på KÄLLbutiken (siffror)
+  produkt_handle: ""          # ex: "ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+  produkt_url: ""             # hela länken annonserna pekar på i dag
+  # ⚠️ Kontrolleras alltid på id, aldrig på namn: MagiBorsten 1867947880635861
+  # (Bäverbutiken, KÄLLAN) och MagiBorsten DK 915422744950975 (OPS, MÅLET)
+  # heter nästan lika och är olika verksamheter.
+  annonskonto: "1867947880635861"
+  annonsprefix: ""            # allt före första "_" i annonsnamnet, ex: "IBC"
+  kampanj_id: ""
+  kampanj: ""                 # kampanjnamnet i källkontot, ordagrant
+  # Filprefix på de svenska transkripten i market-expansion/**/srt-orig/.
+  # Lista, för samma video ligger under svenskt OCH norskt slug beroende på
+  # vilken batch som gjorde den.
+  srt_slug:
+    - ""
+  # Frivilligt: extra_brandord är en lista med fler former som ska räknas som
+  # källbrandet. Behövs sällan — brand-detektorn hittar felstavningar själv.
+
 kallor:
   # Produktens Drive-mapp (samma som bär annonserna). Ligger en recensions-CSV
   # där importerar recensioner-steget den till Judge.me i stället för

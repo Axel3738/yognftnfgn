@@ -1,0 +1,2839 @@
+{
+ "produkt": "tankguard",
+ "datum": "2026-09-08",
+ "kalla": {
+  "butik": "baverbutiken.se",
+  "produkt_id": "16454828654941",
+  "produkt_handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+  "produkt_url": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+  "annonskonto": "1867947880635861",
+  "annonsprefix": "IBC",
+  "kampanj_id": "120250001079150291",
+  "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+  "srt_slug": [
+   "ibc",
+   "ibc-tanktrekk"
+  ]
+ },
+ "annonser": [
+  {
+   "annons": "IBC_BOF_1_1",
+   "id": "120250102768570291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "BOF | Notionrunda 2026-09-05",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "fil": "IBC_BOF_1_1.jpg",
+      "sekund": "",
+      "logotyp_utan_text": false,
+      "notis": ""
+     },
+     "bekräftad_av_syn": true
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "489 kr",
+      "636 kr",
+      "300 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "23 %"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt över 300 kr"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "IBC_BOF_2_1",
+   "id": "120250103001370291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "BOF | Notionrunda 2026-09-05",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "fil": "IBC_BOF_2_1.jpg",
+      "sekund": "",
+      "logotyp_utan_text": false,
+      "notis": ""
+     },
+     "bekräftad_av_syn": true
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagar",
+      "30 dagars öppet köp",
+      "30 dagars oppet kop"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "IBC_BOF_3_1",
+   "id": "120250102827960291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "BOF | Notionrunda 2026-09-05",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "fil": "IBC_BOF_3_1.jpg",
+      "sekund": "",
+      "logotyp_utan_text": false,
+      "notis": ""
+     },
+     "bekräftad_av_syn": true
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp om den inte pa"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "IBC_BOF_4_1",
+   "id": "120250135368810291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "BOF | Notionrunda 2026-09-05",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "fil": "IBC_BOF_4_1.jpg",
+      "sekund": "",
+      "logotyp_utan_text": false,
+      "notis": ""
+     },
+     "bekräftad_av_syn": true
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "belägg": []
+  },
+  {
+   "annons": "IBC_BOF_5_1",
+   "id": "120250135240320291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "BOF | Notionrunda 2026-09-05",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "fil": "IBC_BOF_5_1.jpg",
+      "sekund": "",
+      "logotyp_utan_text": false,
+      "notis": ""
+     },
+     "bekräftad_av_syn": true
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "belägg": []
+  },
+  {
+   "annons": "IBC_BOF_6_1",
+   "id": "120250134665590291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "BOF | Notionrunda 2026-09-05",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "fil": ".scratch/brand-detektor/IBC/media/IBC_BOF_6_1.jpg",
+      "sekund": "",
+      "logotyp_utan_text": false,
+      "notis": ""
+     },
+     "bekräftad_av_syn": true
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt inom Sverige, 5–10 arbetsdaga",
+      "Fri frakt, 5–10 arbetsdagar",
+      "Fri frakt inom Sverige,",
+      "Fri frakt · Klarna - betala sen · 30 da"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp",
+      "30 dagars oppet kop"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "IBC_CO_1_1",
+   "id": "120250077952830291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "CO | Notionrunda 2026-09-03",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "fil": ".scratch/brand-detektor/IBC/media/IBC_CO_1_1.jpg",
+      "sekund": "",
+      "logotyp_utan_text": false,
+      "notis": ""
+     },
+     "bekräftad_av_syn": true
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "belägg": []
+  },
+  {
+   "annons": "IBC_CS_1_H2",
+   "id": "120250005829330291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "CS",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/ibc_CS_1_H2.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:29,719 --> 00:00:30,679",
+       "text": "Bäverbutiken."
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 30,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 30.3,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 30.6,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 104,
+     "syn": {
+      "syns": true,
+      "var": "inbränd text",
+      "ordagrant": "Bäver butiken.",
+      "fil": "frame_025.jpg",
+      "sekund": "30.00s",
+      "logotyp_utan_text": false,
+      "notis": "Butiksnamnet står som inbränd bildtext näst sist; ingen bäverlogotyp eller sajtskärmdump finns i videon."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    }
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "489 kr",
+      "636 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "23%"
+     ]
+    }
+   ],
+   "belägg": [
+    "yta 2 · 00:00:29,719 --> 00:00:30,679: \"Bäverbutiken.\"",
+    "yta 3 · sent i filmen, 30–30.6s (3 frames): \"baverbutiken\" (exakt)",
+    "yta 3 · ögongranskat (inbränd text, 30.00s): \"Bäver butiken.\""
+   ]
+  },
+  {
+   "annons": "IBC_CS_1_H3",
+   "id": "120250005831370291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "CS",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/ibc_CS_1_H3.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:28,459 --> 00:00:29,399",
+       "text": "Bäverbutiken."
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 28.5,
+       "plats": "sent i filmen",
+       "ord": "Bavlbutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 28.8,
+       "plats": "sent i filmen",
+       "ord": "Bavlbutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 29.1,
+       "plats": "sent i filmen",
+       "ord": "Bavlbutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 29.4,
+       "plats": "sent i filmen",
+       "ord": "Bavlbutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 99,
+     "syn": {
+      "syns": true,
+      "var": "inbränd text",
+      "ordagrant": "Bävlbutiken.",
+      "fil": "frame_024.jpg",
+      "sekund": "28.50s",
+      "logotyp_utan_text": false,
+      "notis": "Butiksnamnet i felstavad form som inbränd bildtext; ingen bäverlogotyp eller sajtskärmdump finns i videon."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    }
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "489 kr",
+      "636 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "23%"
+     ]
+    }
+   ],
+   "belägg": [
+    "yta 2 · 00:00:28,459 --> 00:00:29,399: \"Bäverbutiken.\"",
+    "yta 3 · sent i filmen, 28.5–29.4s (4 frames): \"Bavlbutiken.\" (fuzzy(2))",
+    "yta 3 · ögongranskat (inbränd text, 28.50s): \"Bävlbutiken.\""
+   ]
+  },
+  {
+   "annons": "IBC_CS_2_1",
+   "id": "120250005833290291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "CS",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "fil": ".scratch/brand-detektor/IBC/media/IBC_CS_2_1.jpg",
+      "sekund": "",
+      "logotyp_utan_text": false,
+      "notis": ""
+     },
+     "bekräftad_av_syn": true
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "489 kr",
+      "636 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "23%"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "IBC_CS_3_1",
+   "id": "120250102960530291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "CS",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "fil": ".scratch/brand-detektor/IBC/media/IBC_CS_3_1.jpg",
+      "sekund": "",
+      "logotyp_utan_text": false,
+      "notis": ""
+     },
+     "bekräftad_av_syn": true
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "489 kr",
+      "636 kr",
+      "300 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "23 %"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt över 300 kr",
+      "Fri frakt inom Sverige"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "IBC_CS_4_1",
+   "id": "120250134494990291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "CS",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "fil": ".scratch/brand-detektor/IBC/media/IBC_CS_4_1.jpg",
+      "sekund": "",
+      "logotyp_utan_text": false,
+      "notis": ""
+     },
+     "bekräftad_av_syn": true
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "489 kr",
+      "636 kr",
+      "147 kr",
+      "489kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "23 %"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt inom Sverige"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "IBC_GT_1_H1",
+   "id": "120250005835180291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "GT",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/ibc_GT_1_H1.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:18,779 --> 00:00:23,019",
+       "text": "Så jag beställde ett IBC-tanköverdrag från Bäverbutiken."
+      },
+      {
+       "tid": "00:00:41,700 --> 00:00:48,520",
+       "text": "Ge bort ett IBC-tanköverdrag från Bäverbutiken. Enkel present, stor uppskattning."
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 21.9,
+       "plats": "tidigare i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 22.2,
+       "plats": "tidigare i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 22.5,
+       "plats": "tidigare i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 22.8,
+       "plats": "tidigare i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 23.1,
+       "plats": "tidigare i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 44.1,
+       "plats": "sent i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 44.4,
+       "plats": "sent i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 44.7,
+       "plats": "sent i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 45,
+       "plats": "sent i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 45.3,
+       "plats": "sent i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 159,
+     "syn": {
+      "syns": true,
+      "var": "inbränd text",
+      "ordagrant": "från bävöbutiken. / från bävöbutiken.",
+      "fil": "IBC_GT_1_H1_frames/frame_020.jpg",
+      "sekund": "22.50s",
+      "logotyp_utan_text": false,
+      "notis": "Inbränd undertext, felstavad variant av Bäverbutiken, avslutar meningen \"IBC-tanköverdrag\" från frame_019. Samma inbrända mening upprepas i slutet, efter \"IBC-tanköverdrag\" i frame_034."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    }
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text"
+   ],
+   "villkor": [],
+   "belägg": [
+    "yta 2 · 00:00:18,779 --> 00:00:23,019: \"Så jag beställde ett IBC-tanköverdrag från Bäverbutiken.\"",
+    "yta 2 · 00:00:41,700 --> 00:00:48,520: \"Ge bort ett IBC-tanköverdrag från Bäverbutiken. Enkel present, stor uppskattning.\"",
+    "yta 3 · tidigare i filmen, 21.9–23.1s (5 frames): \"bavobutiken.\" (fuzzy(2))",
+    "yta 3 · sent i filmen, 44.1–45.3s (5 frames): \"bavobutiken.\" (fuzzy(2))",
+    "yta 3 · ögongranskat (inbränd text, 22.50s): \"från bävöbutiken. / från bävöbutiken.\""
+   ]
+  },
+  {
+   "annons": "IBC_GT_1_H2",
+   "id": "120250005852720291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "GT",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/ibc_GT_1_H2.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:17,639 --> 00:00:24,119",
+       "text": "Så jag beställde ett IBC-tanköverdrag från Bäverbutiken. Han blev helt överraskad."
+      },
+      {
+       "tid": "00:00:40,559 --> 00:00:44,040",
+       "text": "Ge bort ett IBC-tanköverdrag från Bäverbutiken."
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 20.7,
+       "plats": "tidigare i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 21,
+       "plats": "tidigare i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 21.3,
+       "plats": "tidigare i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 21.6,
+       "plats": "tidigare i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 21.9,
+       "plats": "tidigare i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 42.9,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 43.2,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 43.5,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 43.8,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 44.1,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 156,
+     "syn": {
+      "syns": true,
+      "var": "inbränd text",
+      "ordagrant": "från bävöbutiken. / från bäbebutiken.",
+      "fil": "IBC_GT_1_H2_frames/frame_019.jpg",
+      "sekund": "21.00s",
+      "logotyp_utan_text": false,
+      "notis": "Inbränd undertext, felstavad variant av Bäverbutiken, följer på \"IBC-tanköverdrag\" i frame_018. Andra förekomsten i samma video, här stavad bäbebutiken, verifierad i uppförstorad beskärning."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    }
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text"
+   ],
+   "villkor": [],
+   "belägg": [
+    "yta 2 · 00:00:17,639 --> 00:00:24,119: \"Så jag beställde ett IBC-tanköverdrag från Bäverbutiken. Han blev helt överraskad.\"",
+    "yta 2 · 00:00:40,559 --> 00:00:44,040: \"Ge bort ett IBC-tanköverdrag från Bäverbutiken.\"",
+    "yta 3 · tidigare i filmen, 20.7–21.9s (5 frames): \"bavobutiken.\" (fuzzy(2))",
+    "yta 3 · sent i filmen, 42.9–44.1s (5 frames): \"babebutiken.\" (fuzzy(2))",
+    "yta 3 · ögongranskat (inbränd text, 21.00s): \"från bävöbutiken. / från bäbebutiken.\""
+   ]
+  },
+  {
+   "annons": "IBC_GT_1_H3",
+   "id": "120250005857680291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "GT",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/ibc_GT_1_H3.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:18,899 --> 00:00:23,099",
+       "text": "Så jag beställde ett IBC-tanköverdrag från Bäverbutiken."
+      },
+      {
+       "tid": "00:00:41,840 --> 00:00:45,299",
+       "text": "Ge bort ett IBC-tanköverdrag från Bäverbutiken."
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 21.9,
+       "plats": "tidigare i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 22.2,
+       "plats": "tidigare i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 22.5,
+       "plats": "tidigare i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 22.8,
+       "plats": "tidigare i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 23.1,
+       "plats": "tidigare i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 44.1,
+       "plats": "sent i filmen",
+       "ord": "vavebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 44.4,
+       "plats": "sent i filmen",
+       "ord": "vavebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 44.7,
+       "plats": "sent i filmen",
+       "ord": "vavebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 45,
+       "plats": "sent i filmen",
+       "ord": "vavebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 45.3,
+       "plats": "sent i filmen",
+       "ord": "vavebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 160,
+     "syn": {
+      "syns": true,
+      "var": "inbränd text",
+      "ordagrant": "från bävöbutiken. / från vävebutiken.",
+      "fil": "frame_020.jpg",
+      "sekund": "24.00s",
+      "logotyp_utan_text": false,
+      "notis": "Inbränd undertext mitt i bilden, stavad bävöbutiken men klart läsbar som butikens namn. Samma mening upprepas senare i videon, här stavad vävebutiken."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    }
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text"
+   ],
+   "villkor": [],
+   "belägg": [
+    "yta 2 · 00:00:18,899 --> 00:00:23,099: \"Så jag beställde ett IBC-tanköverdrag från Bäverbutiken.\"",
+    "yta 2 · 00:00:41,840 --> 00:00:45,299: \"Ge bort ett IBC-tanköverdrag från Bäverbutiken.\"",
+    "yta 3 · tidigare i filmen, 21.9–23.1s (5 frames): \"bavobutiken.\" (fuzzy(2))",
+    "yta 3 · sent i filmen, 44.1–45.3s (5 frames): \"vavebutiken.\" (fuzzy(2))",
+    "yta 3 · ögongranskat (inbränd text, 24.00s): \"från bävöbutiken. / från vävebutiken.\""
+   ]
+  },
+  {
+   "annons": "IBC_GT_2_1",
+   "id": "120250005858870291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "GT",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "fil": ".scratch/brand-detektor/IBC/media/IBC_GT_2_1.jpg",
+      "sekund": "",
+      "logotyp_utan_text": false,
+      "notis": ""
+     },
+     "bekräftad_av_syn": true
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "belägg": []
+  },
+  {
+   "annons": "IBC_GT_3_H1",
+   "id": "120250105818500291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "GT",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-05-video2/srt-orig/ibc-tanktrekk_GT_3_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 15.3,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.2,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.5,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.8,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 17.1,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 17.4,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 17.7,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 17.82,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 57,
+     "syn": {
+      "syns": true,
+      "var": "logotyp + skärmdump",
+      "ordagrant": "BÄVERBUTIKEN / IBC-TANKÖVERDRAG 1000 L - STOPPAR ALGER & UV / 10 recensioner / 636 kr 489 kr / Handla nu",
+      "fil": "frame_016.jpg",
+      "sekund": "16.50s",
+      "logotyp_utan_text": false,
+      "notis": "Slutkortets logotyp: röd bäver med slang plus ordbild och svensk flagga, syns även i frame_017 (17.82s). Mockup av butikens produktsida under logotypen, med bildkarusell, betyg, jämförpris och köpknapp."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    }
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "489 kr",
+      "636 kr"
+     ]
+    },
+    {
+     "namn": "recensioner",
+     "värden": [
+      "1recensioner",
+      "10recensioner"
+     ]
+    }
+   ],
+   "belägg": [
+    "yta 3 · sent i filmen, 15.3–17.82s (10 frames): \"baverbutiken\" (exakt)",
+    "yta 3 · ögongranskat (logotyp + skärmdump, 16.50s): \"BÄVERBUTIKEN / IBC-TANKÖVERDRAG 1000 L - STOPPAR ALGER & UV / 10 recensioner / 636 kr 489 kr / Handla nu\""
+   ]
+  },
+  {
+   "annons": "IBC_PD_1_H1",
+   "id": "120250005818370291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "PD",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/ibc_PD_1_H1.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:39,119 --> 00:00:42,259",
+       "text": "Ett IBC-tanköverdrag från Bäverbutiken."
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 40.8,
+       "plats": "sent i filmen",
+       "ord": "baberbutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(1)"
+      },
+      {
+       "sekund": 41.1,
+       "plats": "sent i filmen",
+       "ord": "baberbutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(1)"
+      },
+      {
+       "sekund": 41.4,
+       "plats": "sent i filmen",
+       "ord": "baberbutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(1)"
+      },
+      {
+       "sekund": 41.7,
+       "plats": "sent i filmen",
+       "ord": "baberbutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(1)"
+      },
+      {
+       "sekund": 42,
+       "plats": "sent i filmen",
+       "ord": "baberbutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(1)"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 146,
+     "syn": {
+      "syns": true,
+      "var": "inbränd text",
+      "ordagrant": "från bäberbutiken.",
+      "fil": ".scratch/brand-detektor/IBC/media/IBC_PD_1_H1_frames/frame_033.jpg",
+      "sekund": "42.00s",
+      "logotyp_utan_text": false,
+      "notis": "Inbränd undertext i den avslutande meningen \"Ett IBC-tanköverdrag / från bäberbutiken.\" — butiksnamnet stavat med b i stället för v.",
+      "olasligt": [
+       {
+        "fil": ".scratch/brand-detektor/IBC/media/IBC_PD_1_H1_frames/frame_034.jpg",
+        "sekund": "43.50s",
+        "notis": "Vit textbalk i nedre bildkanten från 43,50s till slutet — bara toppen av bokstäverna syns, texten är oläslig även i källvideon."
+       },
+       {
+        "fil": ".scratch/brand-detektor/IBC/media/IBC_PD_1_H1_frames/frame_004.jpg",
+        "sekund": "1.50s",
+        "notis": "Liten etikett/dataskylt på IBC-tankens högra sida i hooken — för suddig för att läsas."
+       }
+      ]
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    }
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text"
+   ],
+   "villkor": [],
+   "belägg": [
+    "yta 2 · 00:00:39,119 --> 00:00:42,259: \"Ett IBC-tanköverdrag från Bäverbutiken.\"",
+    "yta 3 · sent i filmen, 40.8–42s (5 frames): \"baberbutiken.\" (fuzzy(1))",
+    "yta 3 · ögongranskat (inbränd text, 42.00s): \"från bäberbutiken.\"",
+    "yta 3 · oläsligt 43.50s: Vit textbalk i nedre bildkanten från 43,50s till slutet — bara toppen av bokstäverna syns, texten är oläslig även i källvideon.",
+    "yta 3 · oläsligt 1.50s: Liten etikett/dataskylt på IBC-tankens högra sida i hooken — för suddig för att läsas."
+   ]
+  },
+  {
+   "annons": "IBC_PD_1_H2",
+   "id": "120250005819880291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "PD",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/ibc_PD_1_H2.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:38,419 --> 00:00:41,559",
+       "text": "Ett IBC-tanköverdrag från Bäverbutiken."
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 40.2,
+       "plats": "sent i filmen",
+       "ord": "baberbutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(1)"
+      },
+      {
+       "sekund": 40.5,
+       "plats": "sent i filmen",
+       "ord": "baberbutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(1)"
+      },
+      {
+       "sekund": 40.8,
+       "plats": "sent i filmen",
+       "ord": "baberbutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(1)"
+      },
+      {
+       "sekund": 41.1,
+       "plats": "sent i filmen",
+       "ord": "baberbutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(1)"
+      },
+      {
+       "sekund": 41.4,
+       "plats": "sent i filmen",
+       "ord": "baberbutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(1)"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 144,
+     "syn": {
+      "syns": true,
+      "var": "inbränd text",
+      "ordagrant": "från bäberbutiken.",
+      "fil": ".scratch/brand-detektor/IBC/media/IBC_PD_1_H2_frames/frame_032.jpg",
+      "sekund": "40.50s",
+      "logotyp_utan_text": false,
+      "notis": "Inbränd undertext i den avslutande meningen \"Ett IBC-tanköverdrag / från bäberbutiken.\" — butiksnamnet stavat med b i stället för v.",
+      "olasligt": [
+       {
+        "fil": ".scratch/brand-detektor/IBC/media/IBC_PD_1_H2_frames/frame_034.jpg",
+        "sekund": "43.50s",
+        "notis": "Samma vita textbalk i nedre bildkanten som i H1, från 43,50s till slutet — oläslig."
+       },
+       {
+        "fil": ".scratch/brand-detektor/IBC/media/IBC_PD_1_H2_frames/frame_001.jpg",
+        "sekund": "0.00s",
+        "notis": "Liten etikett/dataskylt på IBC-tankens högra sida i hooken — för suddig för att läsas."
+       }
+      ]
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    }
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text"
+   ],
+   "villkor": [],
+   "belägg": [
+    "yta 2 · 00:00:38,419 --> 00:00:41,559: \"Ett IBC-tanköverdrag från Bäverbutiken.\"",
+    "yta 3 · sent i filmen, 40.2–41.4s (5 frames): \"baberbutiken.\" (fuzzy(1))",
+    "yta 3 · ögongranskat (inbränd text, 40.50s): \"från bäberbutiken.\"",
+    "yta 3 · oläsligt 43.50s: Samma vita textbalk i nedre bildkanten som i H1, från 43,50s till slutet — oläslig.",
+    "yta 3 · oläsligt 0.00s: Liten etikett/dataskylt på IBC-tankens högra sida i hooken — för suddig för att läsas."
+   ]
+  },
+  {
+   "annons": "IBC_PD_1_H3",
+   "id": "120250005820750291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "PD",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/ibc_PD_1_H3.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:39,180 --> 00:00:42,099",
+       "text": "Ett IBC-tanköverdrag från Bäverbutiken."
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 41.1,
+       "plats": "sent i filmen",
+       "ord": "Baberbutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(1)"
+      },
+      {
+       "sekund": 41.4,
+       "plats": "sent i filmen",
+       "ord": "Baberbutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(1)"
+      },
+      {
+       "sekund": 41.7,
+       "plats": "sent i filmen",
+       "ord": "Baberbutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(1)"
+      },
+      {
+       "sekund": 42,
+       "plats": "sent i filmen",
+       "ord": "Baberbutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(1)"
+      },
+      {
+       "sekund": 42.3,
+       "plats": "sent i filmen",
+       "ord": "Baberbutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(1)"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 146,
+     "syn": {
+      "syns": true,
+      "var": "inbränd text",
+      "ordagrant": "från Bäberbutiken.",
+      "fil": "frame_033.jpg",
+      "sekund": "42.00s",
+      "logotyp_utan_text": false,
+      "notis": "Inbränd undertext mitt i bild, stavad \"Bäberbutiken\" (b istället för v) — föregås av \"Ett IBC-tanköverdrag\" i frame_032 vid 40.50s.",
+      "olasligt": [
+       {
+        "fil": "frame_034.jpg",
+        "sekund": "43.50s",
+        "notis": "Vit textruta i nedersta bildkanten (även frame_035) — bara bokstavstopparna ryms i bild, går inte att läsa."
+       }
+      ]
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    }
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text"
+   ],
+   "villkor": [],
+   "belägg": [
+    "yta 2 · 00:00:39,180 --> 00:00:42,099: \"Ett IBC-tanköverdrag från Bäverbutiken.\"",
+    "yta 3 · sent i filmen, 41.1–42.3s (5 frames): \"Baberbutiken.\" (fuzzy(1))",
+    "yta 3 · ögongranskat (inbränd text, 42.00s): \"från Bäberbutiken.\"",
+    "yta 3 · oläsligt 43.50s: Vit textruta i nedersta bildkanten (även frame_035) — bara bokstavstopparna ryms i bild, går inte att läsa."
+   ]
+  },
+  {
+   "annons": "IBC_PD_2_1",
+   "id": "120250005822500291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "PD",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "fil": ".scratch/brand-detektor/IBC/media/IBC_PD_2_1.jpg",
+      "sekund": "",
+      "logotyp_utan_text": false,
+      "notis": ""
+     },
+     "bekräftad_av_syn": true
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "belägg": []
+  },
+  {
+   "annons": "IBC_PD_3_1",
+   "id": "120250078091950291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "PD",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "fil": ".scratch/brand-detektor/IBC/media/IBC_PD_3_1.jpg",
+      "sekund": "",
+      "logotyp_utan_text": false,
+      "notis": ""
+     },
+     "bekräftad_av_syn": true
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "belägg": []
+  },
+  {
+   "annons": "IBC_PD_3_H1",
+   "id": "120250105772210291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "PD",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-05-video2/srt-orig/ibc-tanktrekk_PD_3_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 21.9,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 22.2,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 22.5,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 22.8,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 23.1,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 23.4,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 23.7,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 24,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 24.3,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 24.43,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 79,
+     "syn": {
+      "syns": true,
+      "var": "slutkort + logotyp + skärmdump",
+      "ordagrant": "BÄVERBUTIKEN / IBC-TANKÖVERDRAG 1000 L - STOPPAR ALGER & UV | 10 recensioner | 636 kr  489 kr | Handla nu",
+      "fil": "frame_020.jpg",
+      "sekund": "22.50s",
+      "logotyp_utan_text": true,
+      "notis": "Slutkortet ligger på frame_020, frame_021 och frame_022 (22.50s–24.43s) och bär ordmärket i vita versaler med guldstreck under, på svart banderoll med svensk flagga. Butikens symbol i slutkortet: rött bäverhuvud som gnager på en gul gren, till vänster om ordmärket. Finns i frame_020–022. Mockup av butikens produktsida under logotypen: bildkarusell med punkter, miniatyrbild, förstoringsglas, stjärnbetyg och överstruket pris. Finns i frame_020–022."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    }
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "489 kr",
+      "636 kr"
+     ]
+    },
+    {
+     "namn": "recensioner",
+     "värden": [
+      "10recensioner"
+     ]
+    }
+   ],
+   "belägg": [
+    "yta 3 · sent i filmen, 21.9–24.43s (10 frames): \"baverbutiken\" (exakt)",
+    "yta 3 · ögongranskat (slutkort + logotyp + skärmdump, 22.50s): \"BÄVERBUTIKEN / IBC-TANKÖVERDRAG 1000 L - STOPPAR ALGER & UV | 10 recensioner | 636 kr  489 kr | Handla nu\"",
+    "yta 3 · ⚠️ logotyp/symbol UTAN text — osynlig för OCR, bara ögat ser den"
+   ]
+  },
+  {
+   "annons": "IBC_PD_4_1",
+   "id": "120250102938120291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "PD",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "fil": ".scratch/brand-detektor/IBC/media/IBC_PD_4_1.jpg",
+      "sekund": "",
+      "logotyp_utan_text": false,
+      "notis": ""
+     },
+     "bekräftad_av_syn": true
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "belägg": []
+  },
+  {
+   "annons": "IBC_PD_5_1",
+   "id": "120250134496480291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "PD",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "fil": ".scratch/brand-detektor/IBC/media/IBC_PD_5_1.jpg",
+      "sekund": "",
+      "logotyp_utan_text": false,
+      "notis": ""
+     },
+     "bekräftad_av_syn": true
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "belägg": []
+  },
+  {
+   "annons": "IBC_PD_Extra",
+   "id": "120250005822150291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "PD",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "frames": 31,
+     "källa": "syn",
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "fil": "IBC_PD_Extra_frames/frame_001.jpg-frame_012.jpg",
+      "sekund": "",
+      "logotyp_utan_text": false,
+      "notis": ""
+     }
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    }
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "tal (oläst)"
+   ],
+   "villkor": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)"
+   ]
+  },
+  {
+   "annons": "IBC_RV_1_1",
+   "id": "120250102989510291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "RV | Notionrunda 2026-09-05",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "fil": ".scratch/brand-detektor/IBC/media/IBC_RV_1_1.jpg",
+      "sekund": "",
+      "logotyp_utan_text": false,
+      "notis": ""
+     },
+     "bekräftad_av_syn": true
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "489 kr"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "IBC_RV_2_1",
+   "id": "120250103102350291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "RV | Notionrunda 2026-09-05",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "fil": ".scratch/brand-detektor/IBC/media/IBC_RV_2_1.jpg",
+      "sekund": "",
+      "logotyp_utan_text": false,
+      "notis": ""
+     },
+     "bekräftad_av_syn": true
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "489 kr"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "IBC_RV_3_1",
+   "id": "120250135358520291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "RV | Notionrunda 2026-09-05",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "fil": ".scratch/brand-detektor/IBC/media/IBC_RV_3_1.jpg",
+      "sekund": "",
+      "logotyp_utan_text": false,
+      "notis": ""
+     },
+     "bekräftad_av_syn": true
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "489 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "23 %",
+      "23%"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "IBC_RV_4_1",
+   "id": "120250135235730291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "RV | Notionrunda 2026-09-05",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "fil": ".scratch/brand-detektor/IBC/media/IBC_RV_4_1.jpg",
+      "sekund": "",
+      "logotyp_utan_text": false,
+      "notis": ""
+     },
+     "bekräftad_av_syn": true
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "belägg": []
+  },
+  {
+   "annons": "IBC_SP_1_H1",
+   "id": "120250005823320291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "SP",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/ibc_SP_1_H1.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:09,139 --> 00:00:13,039",
+       "text": "Inte kul. Sen skaffade jag ett IBC-tanköverdrag från Bäverbutiken."
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 12,
+       "plats": "tidigare i filmen",
+       "ord": "Babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 12.3,
+       "plats": "tidigare i filmen",
+       "ord": "Babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 12.6,
+       "plats": "tidigare i filmen",
+       "ord": "Babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 12.9,
+       "plats": "tidigare i filmen",
+       "ord": "Babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "sent_i_filmen": false,
+     "frames": 126,
+     "syn": {
+      "syns": true,
+      "var": "inbränd text",
+      "ordagrant": "från Bäbebutiken.",
+      "fil": "IBC_SP_1_H1_frames/frame_013.jpg",
+      "sekund": "12.00s",
+      "logotyp_utan_text": false,
+      "notis": "Inbränd undertext, syns cirka 12,0-13,4 s; meningen är \"Sen skaffar jag ett IBC-tanköverdrag från Bäbebutiken.\"",
+      "olasligt": [
+       {
+        "fil": "IBC_SP_1_H1_frames/frame_022.jpg",
+        "sekund": "25.50s",
+        "notis": "Vit överlagringsremsa med grön rundad form längs nedersta bildkanten cirka 24,8-27,3 s (även frame_023.jpg, 27,00s), bara elva pixlar hög och oläslig."
+       }
+      ]
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    }
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text"
+   ],
+   "villkor": [],
+   "belägg": [
+    "yta 2 · 00:00:09,139 --> 00:00:13,039: \"Inte kul. Sen skaffade jag ett IBC-tanköverdrag från Bäverbutiken.\"",
+    "yta 3 · tidigare i filmen, 12–12.9s (4 frames): \"Babebutiken.\" (fuzzy(2))",
+    "yta 3 · ögongranskat (inbränd text, 12.00s): \"från Bäbebutiken.\"",
+    "yta 3 · oläsligt 25.50s: Vit överlagringsremsa med grön rundad form längs nedersta bildkanten cirka 24,8-27,3 s (även frame_023.jpg, 27,00s), bara elva pixlar hög och oläslig."
+   ]
+  },
+  {
+   "annons": "IBC_SP_1_H2",
+   "id": "120250005824980291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "SP",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/ibc_SP_1_H2.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:06,279 --> 00:00:11,739",
+       "text": "Grönt grumligt vatten. Inte kul. Sen skaffade jag ett IBC-tanköverdrag från Bäverbutiken."
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 10.8,
+       "plats": "tidigare i filmen",
+       "ord": "Babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 11.1,
+       "plats": "tidigare i filmen",
+       "ord": "Babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 11.4,
+       "plats": "tidigare i filmen",
+       "ord": "Babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 11.7,
+       "plats": "tidigare i filmen",
+       "ord": "Babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "sent_i_filmen": false,
+     "frames": 122,
+     "syn": {
+      "syns": true,
+      "var": "inbränd text",
+      "ordagrant": "från Bäbebutiken.",
+      "fil": "IBC_SP_1_H2.mp4 (syns inte i något av de 30 framesen)",
+      "sekund": "ca 10,6-11,9 s (finns ej i index.txt)",
+      "logotyp_utan_text": false,
+      "notis": "Ligger i luckan mellan frame_012 (10,50 s = IBC-tanköverdrag) och frame_013 (12,00 s = Tyget är tjockt) och hittades genom tät avsökning av mp4:n; slutkortet och alla 30 frames är i övrigt rena.",
+      "motprov": {
+       "haller": true,
+       "vad": "Påståendet HÅLLER. Källbutiken syns i annonsen.",
+       "fil": "IBC_SP_1_H2.mp4 (egna frames ur mp4:n; syns INTE i något av de 30 framesen i IBC_SP_1_H2_frames/)"
+      }
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    }
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text"
+   ],
+   "villkor": [],
+   "belägg": [
+    "yta 2 · 00:00:06,279 --> 00:00:11,739: \"Grönt grumligt vatten. Inte kul. Sen skaffade jag ett IBC-tanköverdrag från Bäverbutiken.\"",
+    "yta 3 · tidigare i filmen, 10.8–11.7s (4 frames): \"Babebutiken.\" (fuzzy(2))",
+    "yta 3 · ögongranskat (inbränd text, ca 10,6-11,9 s (finns ej i index.txt)): \"från Bäbebutiken.\""
+   ]
+  },
+  {
+   "annons": "IBC_SP_1_H3",
+   "id": "120250005825820291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "SP",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/ibc_SP_1_H3.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:08,619 --> 00:00:11,639",
+       "text": "Sen skaffade jag ett IBC-tanköverdrag från Bäverbutiken."
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 10.5,
+       "plats": "tidigare i filmen",
+       "ord": "Babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 10.8,
+       "plats": "tidigare i filmen",
+       "ord": "Babebutiken",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 11.1,
+       "plats": "tidigare i filmen",
+       "ord": "Babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 11.4,
+       "plats": "tidigare i filmen",
+       "ord": "Babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 11.7,
+       "plats": "tidigare i filmen",
+       "ord": "Babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "sent_i_filmen": false,
+     "frames": 122,
+     "syn": {
+      "syns": true,
+      "var": "inbränd text",
+      "ordagrant": "från Bäbebutiken.",
+      "fil": "IBC_SP_1_H3_frames/frame_012.jpg",
+      "sekund": "10.50s",
+      "logotyp_utan_text": false,
+      "notis": "Texten står kvar till ca 11,7 s; slutkortet (frame_027-030) och övriga frames är rena."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    }
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text"
+   ],
+   "villkor": [],
+   "belägg": [
+    "yta 2 · 00:00:08,619 --> 00:00:11,639: \"Sen skaffade jag ett IBC-tanköverdrag från Bäverbutiken.\"",
+    "yta 3 · tidigare i filmen, 10.5s: \"Babebutiken.\" (fuzzy(2))",
+    "yta 3 · tidigare i filmen, 10.8s: \"Babebutiken\" (fuzzy(2))",
+    "yta 3 · tidigare i filmen, 11.1–11.7s (3 frames): \"Babebutiken.\" (fuzzy(2))",
+    "yta 3 · ögongranskat (inbränd text, 10.50s): \"från Bäbebutiken.\""
+   ]
+  },
+  {
+   "annons": "IBC_SP_2_1",
+   "id": "120250005827300291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "SP",
+   "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "fil": ".scratch/brand-detektor/IBC/media/IBC_SP_2_1.jpg",
+      "sekund": "",
+      "logotyp_utan_text": false,
+      "notis": ""
+     },
+     "bekräftad_av_syn": true
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars oppet kop"
+     ]
+    }
+   ],
+   "belägg": []
+  }
+ ]
+}
