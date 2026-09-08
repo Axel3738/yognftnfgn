@@ -17,7 +17,8 @@ Rättat 2026-09-08 efter Axels tre bakläxor: produkterna är ACTIVE + publicera
 - [x] Trippelkollat mot kundens riktiga vy 2026-09-08 (`factory/kolla.mjs` med butikslösenordet, LIVE-temat t/2): sv + nb index/produkt gröna, 0 svenska markörer, alla strukturkontroller inkl. fullpris-kryssrutan. Köptestet i riktiga korgen går inte att köra från molnsessionen — Cloudflares bot-utmaning på `/cart/add.js` — kassapriserna verifieras mot rabattkodernas definitioner i admin i stället (öre-exakt) + ett ögonköp av Axel/VA:n.
 - [x] CHECKLISTA.md genererad (`factory/output/tankoverdraget/CHECKLISTA.md`) — VA:n har STORE NAME + DOMAIN
 - [x] Recensioner KLARA 2026-09-08 via appens CSV-import (Axels bakläxa "för 12 minuter sedan" rättad): de 32 API-importerade raderna dolda (`hidden + spam`), VA:n importerade `judgeme-app-import.csv` i Judge.me-appen. Verifierat i kundens datakälla (`reviews_for_widget`): 16 synliga (10 sv + 6 no), snitt 4,81, datum 10–19 aug 2026 = källans originaldatum. Judge.mes API kan inte sätta datum (created_at ignoreras på POST och PUT — mätt).
-- [ ] Pixel: skapad i Meta 2026-09-08 (**2196132151319625** i MagiBorsten DK `915422744950975`, står i produktfilen) — **INTE kopplad ännu**: WeTracked-kopplingen (pixel-id + CAPI-token från Events Manager) är VA:ns steg och var inte gjord 2026-09-08 (hennes besked). Pixeln räknas som klar först när WeTracked skickar events.
+- [ ] Pixel: skapad i Meta 2026-09-08 (**2196132151319625** i MagiBorsten DK `915422744950975`, står i produktfilen). VA:n säger WeTracked är kopplat (andra "Store ready", 2026-09-08) — pixeln har **inte avfyrat något event ännu** (`last_fired_time` saknas). Räknas som klar när första eventet syns i Events Manager.
+- [ ] Metasidan: VA:n gav Page ID **61594435402676** — står i produktfilen men **syns inte i MagiBorsten-företaget** (`owned_pages`/`client_pages`/`me/accounts` 2026-09-08) och går inte att läsa via API. Sidan måste läggas till i Business Manager (Business settings → Pages → Add) innan den används i annonser.
 - [ ] Redigerare: ingen tilldelad — standby-listan (`factory/redigerare/standby.md`) finns inte, rekryteringsmotorn är PLAN.md punkt 4. Axel pekar ut vem som får servern.
 - [x] Discord klart 2026-09-08: VA:n skapade servern **TankGuard** (guild `1546808022506938479`) och auktoriserade boten; fabriken byggde 6 kanaler (creative-strategy, ads-to-do, annons-uppladdning, ads, konton (privat), customer-support) + serverikon (loggan ur Shopify Files). Invite: https://discord.gg/HsNX88N5Km. Boten kan inte skapa servrar själv (`POST /guilds` → 20001).
 - [x] state (`factory/state/tankguard--tankoverdraget.json`) + PROCESS.md uppdaterade, pushat
@@ -25,7 +26,7 @@ Rättat 2026-09-08 efter Axels tre bakläxor: produkterna är ACTIVE + publicera
 ## Kvar för hand (i checklistans ordning)
 
 1. Recensioner: klart (importerade + datum verifierade).
-2. Settings → Markets → Norway → activate NOK → Save.
+2. Settings → Markets → Norway → activate NOK → Save. **Inte gjort 2026-09-08 kl. "Store ready" nr 2:** `shop.enabledPresentmentCurrencies` = ["SEK"] — norska kunder ser SEK.
 3. Meta: skapa sidan **TankGuard** i Business Manager → Page ID till Claude. WeTracked: pixel-id **2196132151319625** + CAPI-token från Events Manager → Data sources → TankGuard → Settings → Conversions API → **Generate access token** (systemanvändaren har redan pixeln; tokenen kan inte skapas via API — kräver appens hemlighet).
 4. WeTracked: installera appen → pixel-id **2196132151319625** → CAPI-token (punkt 3) → koppla. Först då är pixeln klar.
 5. Discord: servern är klar — redigeraren bjuds in när Axel valt en (ingen standby-lista ännu).
