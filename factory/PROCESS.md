@@ -187,6 +187,9 @@ Lärdomar från bygget 2026-09-08 (API 2025-07, alla mätta):
     ⚠️ Filtret bor i temat — tills nya klonen är publicerad ser LIVE-temat
     båda språkens galleribilder. Lägg median sist i bygget, publicera snabbt.
 16. ⚙️ NOK-paketnivåer innan norska annonser (SEK-belopp räknar fel i NOK).
+17. ⚙️ Norge ska SYNAS i kundvyn (Axel 2026-09-08): svenska USP-strippen
+    säger "Fri frakt – Sverige & Norge", nb-versionen "Gratis frakt i
+    hele Norge". Kunden ska aldrig behöva gissa att vi postar till Norge.
 
 ## Fas 5 — Kanaler
 16. 🖐+⚙️ Discord: VA:n skapar servern och godkänner boten (checklistans
