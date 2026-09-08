@@ -38,6 +38,9 @@ import { aiKostnadEnabled, lasKostnaderMedAi, lasOffertMedAi, tillCsv, type Bild
 import { rate as fxRate } from "../lib/fx.server";
 import { asLang, localeOf, t } from "../lib/texts";
 
+/** Axels Loom: "Example: how to import from Juicy". Embed-adressen, inte delningslänken. */
+const LOOM_JUICY = "https://www.loom.com/embed/7d1e94bea6fa491ba4f1f50d9cc799f6?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true";
+
 export async function loader({ request }: LoaderFunctionArgs) {
   const { admin, session } = await authenticate.admin(request);
   const settings = await prisma.shopSettings.upsert({
@@ -254,6 +257,7 @@ export default function Costs() {
   const [quoteText, setQuoteText] = useState("");
   const quoteData = quoteFetcher.data as { ok: boolean; message: string; quote?: { items: OffertItem[]; notes: string } } | undefined;
   const [visaImport, setVisaImport] = useState(false);
+  const [visaVideo, setVisaVideo] = useState(false);
   /* Bilder → base64 i webbläsaren. Delas av AI-kortet och offertkortet. */
   const lasBilder = (setter: typeof setAiBilder) => (_all: File[], accepted: File[]) => {
     for (const file of accepted.slice(0, 6)) {
@@ -373,6 +377,20 @@ export default function Costs() {
                 <BlockStack gap="300">
                   <Text as="h2" variant="headingMd">{T.costs.ai.title}</Text>
                   <Text as="p" tone="subdued">{T.costs.ai.body}</Text>
+                  {/* Axels Loom-inspelning (2026-09-08): skärmbild i Juicy → släpp → läs av. */}
+                  <Button variant="plain" disclosure={visaVideo ? "up" : "down"} onClick={() => setVisaVideo((v) => !v)}>
+                    {visaVideo ? T.costs.ai.hideVideo : T.costs.ai.video}
+                  </Button>
+                  {visaVideo ? (
+                    <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, borderRadius: 8, overflow: "hidden" }}>
+                      <iframe
+                        src={LOOM_JUICY}
+                        title={T.costs.ai.video}
+                        allowFullScreen
+                        style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: 0 }}
+                      />
+                    </div>
+                  ) : null}
                   <DropZone
                     accept="image/png,image/jpeg,image/webp,image/gif"
                     type="image"

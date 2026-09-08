@@ -263,6 +263,8 @@ const en = {
       unmatchedTitle: "Not matched (type these by hand)",
       currencyNote: (seen: string, shop: string) => `The source shows ${seen}; the store uses ${shop}. Costs were written as-is — check them.`,
       failed: (err: string) => `Could not read: ${err}`,
+      video: "Example: how to import from Juicy (video)",
+      hideVideo: "Hide video",
     },
     quote: {
       title: "Drop a supplier quote",
@@ -906,6 +908,8 @@ const sv: Texts = {
       unmatchedTitle: "Inte matchade (skriv in dem för hand)",
       currencyNote: (seen: string, shop: string) => `Källan visar ${seen}; butiken använder ${shop}. Kostnaderna skrevs som de stod — kontrollera dem.`,
       failed: (err: string) => `Kunde inte läsa av: ${err}`,
+      video: "Exempel: så importerar du från Juicy (video)",
+      hideVideo: "Dölj videon",
     },
     quote: {
       title: "Släpp en offert från leverantören",
