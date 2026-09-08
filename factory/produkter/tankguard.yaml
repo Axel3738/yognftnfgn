@@ -138,6 +138,21 @@ offer:
       bonus_varde: 597
   bonus_produkt: "Kranskydd Frost 420D"
   bonus_styckvarde: 199
+  # ÄGARBESLUT 2026-09-08: annonserna ska LEDA med 489 kr. En tidigare copy-runda
+  # flyttade ankaret till 2-packet (799 kr) för att bli av med källbutikens falska
+  # jämförpris — det höjde ingångspriset 63 % och var inte Axels beslut. Nu är det
+  # fattat. Paketnivån får nämnas EFTER priset, aldrig som det första läsaren möter
+  # och aldrig som ensam prisuppgift i en rubrik.
+  annons_ingangspris: 489
+
+# BUTIKENS EGEN PRODUKTSIDA — Axels länk 2026-09-08, tagen ordagrant.
+# Den här fasen rör aldrig Shopify; länken kommer från ägaren, inte från ett uppslag.
+# ⚠️ Gissa aldrig en länk. Saknas den: avbryt hellre (se .claude/commands/ny-annonser.md).
+landningssida:
+  se: "https://tankguard.se/products/tankoverdraget"
+  # Norska sidan är inte lämnad ännu. Utan den, och utan NOK-nivåer, byggs
+  # ingen norsk kampanj — den halvan står stilla med flit.
+  no: ""
   # Härledningen, så nästa körning slipper göra om den:
   # spara-procenten räknas mot 489 kr/st (978 resp. 1 467 kr), och den
   # överstrukna siffran är den summan PLUS bonusvärdet. Båda stämmer på kronan.

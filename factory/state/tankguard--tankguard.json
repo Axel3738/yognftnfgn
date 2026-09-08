@@ -63,18 +63,26 @@
     "kampanj_se": {
       "klar": "skal_finns",
       "id": "120248995235740172",
-      "namn": "TANKGUARD_Tanköverdraget SE | BE-ROAS 1,62 | 2026-09-08",
+      "namn": "TANKGUARD_SE_Tanköverdraget | 2026-09-08",
       "status": "PAUSED",
       "daily_budget_ore": 100000,
       "adsets": {
         "GT": "120248995239680172",
         "CS": "120248995238110172",
         "SP": "120248995237610172",
-        "PD": "120248995237140172"
+        "PD": "120248995237140172",
+        "CO": "120249005848350172",
+        "BOF": "120249005849710172"
       },
       "annonser": 0,
       "spend": 0,
-      "notis": "Byggt 2026-09-08T11:18 av en korning som aldrig pushade. FYLL skalet — bygg aldrig ett nytt bredvid."
+      "notis": "Byggt 2026-09-08T11:18 av en korning som aldrig pushade. FYLL skalet — bygg aldrig ett nytt bredvid.",
+      "namn_tidigare": "TANKGUARD_Tanköverdraget SE | BE-ROAS 1,62 | 2026-09-08",
+      "omdopt_varfor": "Det gamla namnet bar BE-ROAS 1,62 — ett tal som stammer med varken 1,46 (utan moms) eller 2,07 (med moms). Ett falskt tal i kampanjnamnet styr varje framtida skalningsrunda fel.",
+      "adsets_nyskapade": [
+        "CO",
+        "BOF"
+      ]
     },
     "kampanj_no": {
       "klar": false,
@@ -114,7 +122,22 @@
       "fil": "factory/output/tankguard/se-copy.md"
     },
     "media_uppladdat": {
-      "klar": false
+      "klar": true,
+      "konto": "915422744950975",
+      "antal": 10,
+      "notis": "image_hash och video_id ar PER KONTO — kallkontots gar inte att referera. Filerna ar nedladdade, uppladdade pa nytt och kvitterade.",
+      "assets": {
+        "BOF_4_1": "f3abdbe02e0ca08cd79f78aeb7dc190f",
+        "BOF_5_1": "f9898c7c28c9b7aa20ea8c9271aa0646",
+        "PD_5_1": "e44a6e3f0fccf690fdbf036e460db227",
+        "PD_4_1": "e18f7e4d9e63267d37ddd957af8e0853",
+        "BOF_3_1": "7404403ed8b96e00eafeb5741c1848bf",
+        "PD_3_1": "97033fd162b17c46ce2072427d12b626",
+        "CO_1_1": "14d9d15043d281b77441336865037341",
+        "GT_2_1": "900670c5eee2052a2599d9f3da260f1c",
+        "PD_2_1": "c960f752b13a5ff68c7e9740903b6823",
+        "PD_Extra": "1094252123041841"
+      }
     },
     "tillbakalast": {
       "klar": false
@@ -148,23 +171,27 @@
       ],
       "GT_block": "REN -> OMSKRIVNING. Kundvittnesmal i forsta person om en genomford order; TankGuard har salt noll enheter. Gavo-emojin lovar dessutom bonus som bara finns fran 2 st.",
       "SP_block": "HALL -> OMSKRIVNING. Premissen ar mekanik, inte socialt bevis; bara fyra fragment ar kallbutikens. Huvudsessionen dommde fyra annonser pa en annons copy (brott mot regel 3). Tillagg: citattecknen kring hooken ska bort med stjarnorna."
+    },
+    "agarbeslut": {
+      "datum": "2026-09-08",
+      "ingangspris": "489 kr — annonserna ska leda med enstyckspriset. Paketnivan far namnas efter priset, aldrig forst.",
+      "landningssida_se": "https://tankguard.se/products/tankoverdraget"
     }
   },
   "blockerare": {
-    "fil": "factory/butiker/tankguard.yaml",
-    "finns_pa_nagon_gren": false,
-    "saknas": [
-      "produktlank/handle",
-      "pris SEK",
-      "pris NOK",
-      "villkor (frakt, oppet kop, betalsatt, garanti)"
-    ],
-    "notis": "Utan filen gar varken lank, pris eller break-even att satta — och inget av de tre far gissas."
+    "vad": "Meta-nyckeln saknar roll pa TankGuards sida 1399193996606775",
+    "felmeddelande": "(#200) Application does not have permission for this action — for att skapa inlagg for sidan kravs rollen Annonsor eller hogre",
+    "bevis": "me/accounts listar 37 sidor som token-anvandaren har roll pa. HeimGuard 1262406533629248 finns dar. TankGuard 1399193996606775 gor det INTE.",
+    "atgard": "Ge annonskontots anvandare rollen Annonsor (eller hogre) pa TankGuard-sidan i Meta Business.",
+    "konsekvens": "Allt annat ar pa plats — kampanj, sex adsets, tio uppladdade creatives och godkand copy. Noll annonser kan skapas forran rollen finns."
   },
   "uppdaterad": "2026-09-08",
   "oppna_beslut": [
     "Ingangspriset: 489 kr eller 799 kr? Att ta bort 636 kr flyttade ankaret till 2-packet i fyra av sju block och hojde ingangspriset 63 %. Agarens beslut.",
     "Annonsens jamfortal (978/1467 kr) matchar inte produktsidans overstrukna (1376/2064 kr). Ska annonsen folja sidan eller sidan folja annonsen?",
     "Utloser offer.bonus_produkt faktiskt Kranskydd Frost i korgen? Fyra annonser lovar den."
-  ]
+  ],
+  "tidigare_blockerare_lost": {
+    "butiksfil": "Delvis lost 2026-09-08: Axel lamnade pris (489 kr) och produktlank direkt i chatten. factory/butiker/tankguard.yaml saknas fortfarande — frakt, returer, betalsatt och NOK-nivaer ar darfor okanda och pastas aldrig i copyn."
+  }
 }

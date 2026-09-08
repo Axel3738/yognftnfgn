@@ -278,6 +278,35 @@ hämta ner filen → brand-swappa → ladda upp på nytt till `act_9154227449509
 **Klart när:** kampanjen är tillbakaläst ur kontot och `page_id`, `pixel_id`,
 `daily_budget`, länk och status på alla tre nivåer matchar butikens konfig exakt.
 
+### ⛔ Sidrollen — det som faktiskt stoppar TankGuard (mätt 2026-09-08)
+
+Kampanjen, sex adsets, tio uppladdade creatives och godkänd copy är på plats.
+**Noll annonser kan ändå skapas.** Varje `adcreatives`-anrop svarar:
+
+```
+(#200) Application does not have permission for this action —
+Om du vill skapa inlägg för sidan 1399193996606775 kontaktar du en
+administratör för att få behörighet för rollen Annonsör eller högre.
+```
+
+**Bevis, inte gissning:** `me/accounts` listar **37 sidor** som token-användaren
+har roll på. HeimGuards sida `1262406533629248` finns där med
+`ADVERTISE,CREATE_CONTENT,MANAGE`. **TankGuards sida `1399193996606775` finns inte
+i listan alls.**
+
+⚠️ **Att sidan syns i `client_pages` betyder INTE att man får annonsera med den.**
+Det är två olika saker: businessen äger sidan, men token-användaren saknar roll på
+den. Uppslaget som verifierade sidan (FAS2 rad 23) bevisade ägarskapet — inte
+rättigheten. Kontrollera båda vid nästa OPS-butik, och gör det **innan** media
+laddas upp, inte efter.
+
+**Åtgärd:** ge annonskontots användare rollen **Annonsör** (eller högre) på
+TankGuard-sidan i Meta Business. Det är ett klick för en sidadministratör.
+Samma grepp gjordes redan för HeimGuard — det är därför den sidan fungerar.
+
+**Lägg in det som ett eget steg i `/ny-ops`:** en ny OPS-sida är inte klar när den
+existerar, den är klar när `me/accounts` listar den.
+
 ### Läget 2026-09-08 kväll — skalet står, annonserna saknas
 
 `/ny-annonser tankguard` läste båda källkontona och hela målkontot. Rapporten:
