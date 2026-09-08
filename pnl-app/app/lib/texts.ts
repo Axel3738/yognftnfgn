@@ -295,6 +295,25 @@ const en = {
     totalRows: (n: number) => `${n} items`,
     empty: "No fixed costs added yet. Net profit is calculated without them until you add some.",
     errInvalid: "Enter a name and a cost per month.",
+    suggestTitle: "Common monthly costs",
+    suggestBody:
+      "The small subscriptions are the ones that never make it into the calculation. Click one to prefill the form — adjust the amount to what you actually pay, then Add.",
+    yourPlan: "your plan",
+    unverified: "list price from memory — check it",
+    converted: (cur: string, rate: string, date: string) => `USD amounts converted to ${cur} at ${rate} (ECB, ${date}).`,
+    notConverted: "Exchange rate unavailable right now — USD amounts are shown in USD; enter the amount in your currency.",
+    forgotTitle: "Have you forgotten…?",
+    forgotBody: "No costs entered in these categories yet. Most stores have at least one in each:",
+    categories: {
+      shopify: "Shopify & plan",
+      ai: "AI tools",
+      verktyg: "Tools & software",
+      marknadsforing: "Marketing",
+      appar: "Shopify apps",
+      hosting: "Hosting & domains",
+      ekonomi: "Accounting, bank, insurance",
+      personal: "Staff & freelancers",
+    },
   },
 
   stores: {
@@ -843,6 +862,25 @@ const sv: Texts = {
     totalRows: (n: number) => `${n} poster`,
     empty: "Inga fasta kostnader inlagda än. Nettovinsten räknas utan dem tills du lägger till några.",
     errInvalid: "Ange ett namn och en kostnad i kronor per månad.",
+    suggestTitle: "Vanliga månadskostnader",
+    suggestBody:
+      "De små abonnemangen är de som aldrig hamnar i kalkylen. Klicka på ett för att fylla i formuläret — justera beloppet till vad du faktiskt betalar och tryck Lägg till.",
+    yourPlan: "din plan",
+    unverified: "listpris ur minnet — kontrollera",
+    converted: (cur: string, rate: string, date: string) => `USD-belopp omräknade till ${cur} med kurs ${rate} (ECB, ${date}).`,
+    notConverted: "Växelkursen gick inte att hämta just nu — USD-belopp visas i USD; skriv beloppet i din valuta.",
+    forgotTitle: "Har du glömt …?",
+    forgotBody: "Inga kostnader inlagda i de här kategorierna än. De flesta butiker har minst en i varje:",
+    categories: {
+      shopify: "Shopify & plan",
+      ai: "AI-verktyg",
+      verktyg: "Verktyg & program",
+      marknadsforing: "Marknadsföring",
+      appar: "Shopify-appar",
+      hosting: "Hosting & domäner",
+      ekonomi: "Bokföring, bank, försäkring",
+      personal: "Personal & frilansare",
+    },
   },
 
   stores: {

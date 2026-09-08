@@ -460,6 +460,20 @@ totalt, critical > warning > info > good. Visas på LTV-sidan (återköp, LTV,
 CPA, AOV) och i panelen (bruttomarginal, MER, fasta kostnaders andel,
 återbetalningsandel). Källan står under varje tips.
 
+**Vanliga månadskostnader** (`kostnadsforslag.ts`, sidan Fasta kostnader):
+förslagslista per kategori (Shopify-plan, AI, verktyg, marknadsföring, appar,
+hosting, ekonomi, personal) som förifyller formuläret; USD/EUR räknas om med
+dagskursen (`fx.rate`), butikens Shopify-plan markeras "din plan"
+(`shop { plan { displayName } }`), rader som redan finns får ✓, och bannern
+"Har du glömt …?" listar tomma kategorier. Belopp märkta `*` är listpriser ur
+minnet per 2026-09-08 — proxyn nådde inte prissidorna; källbelagda poster
+står i `docs/kostnadsforslag.json`. Axels ord: "en grej som ger förslag på
+vanliga månadskostnader man har såsom Claude-planer, ChatGPT, Shopify-
+prenumeration, anställda snitt varje månad."
+
+Företagsadmin (vänrabatt, SNI, byrån): `docs/foretag-admin.md`. Färdiga
+Cowork-prompter för Axels klick: `docs/cowork-prompts.md`.
+
 **Axel måste göra (i ordning):**
 1. Partner Dashboard → StonePNL → **Distribution → Prissättning**: plan
    **Pro**, 14,99 USD/30 dagar, 1 dags prov, namnet MÅSTE innehålla "Pro".
