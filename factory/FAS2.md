@@ -188,6 +188,15 @@ Bäverbutiken kvar i bild.
 rendera aldrig före proofread (rendering drar krediter, proofread är gratis), skanna
 alltid källvideon efter inbränd text före leverans, spara session-ID till disk direkt.
 
+⚠️ **Röstkontrollen är obligatorisk också här** (Axels besked 2026-09-08): lyssna på
+hook, mitt och slut i varje renderad fil, och leverera aldrig en keff röst. Rösten går
+inte att välja — HeyGen klonar källans röst och har ingen röstparameter — så den kan
+bara fångas genom att någon lyssnar. Det väger extra tungt för TankGuard: en butik
+utan en enda order har bara annonsen att bygga förtroende med.
+⚠️ Och omdubbningen här är svenska→svenska, vilket **ingen av de 217 körningarna har
+gjort**. Kör `node pipeline/localize.mjs langs` först och lyssna extra noga på de
+första filerna innan resten renderas.
+
 **Mätt på TankGuards 14 videor 2026-09-08 (brand-detektorns ögongranskning) — två helt
 olika jobb som lätt förväxlas:**
 - **11 videor har brandet som vanlig inbränd undertext** mitt i bild, i samma vita
@@ -282,6 +291,39 @@ id:n i produktfilen), rätt pixel, geo SE, allt PAUSED, **0 annonser, 0 kr
 spend**. Nästa körning ska FYLLA det skalet — bygg aldrig ett nytt bredvid, då
 står två TANKGUARD-kampanjer i kontot och datan går inte att skära.
 Någon norsk TankGuard-kampanj finns inte ännu.
+
+### ⚠️ Mediagrinden — den dyraste lärdomen i hela fas 2
+
+**En ren annonstext är inte en ren annons.** Mätt 2026-09-08 på alla 34 svenska
+källannonser (`factory/output/tankguard/se-copy.md`): **24 av 34 creatives bär
+källbutikens påståenden inbränt i bilden eller uppläst i ljudet** — 636 kr,
+23 %-rabatten, fri frakt, Klarna, öppet köp, stjärnbetyg, "lagret krymper" eller
+namnet Bäverbutiken. Meta-texten kan vara oklanderlig och annonsen ändå ljuga i
+pixlarna.
+
+En hel copy-runda (51 agenter) skrev om sju block innan någon kontrollerade
+mediat. Sex av de sju kunde ändå inte gå upp. **Kör grinden FÖRST** — den är
+gratis, den är en join av `brand-ocr.json` mot annonslistan, och den avgör vad
+det ens är lönt att skriva copy till:
+
+```
+✅ ren creative      → copyn kan skrivas, annonsen kan byggas
+⛔ smutsig creative  → mediat måste göras om; copyn blir en brief, inte en annons
+```
+
+Tre saker grinden avslöjade som ingen textgranskning kunde:
+1. **Arbetet lades på fel sju.** De omskrivna blocken var exakt de vars media är
+   smutsig. De sex bevisat rena creativesen behövde ingen copy alls.
+2. **Vinnaren är smutsig.** `PD_1_H1` (16 997 kr, 77 köp, ROAS 2,92) säger
+   brandnamnet högt och visar det i bild — den kan inte köras förrän den dubbats om.
+3. **Det som är rent är obeprövat.** Nio av tio rena creatives är bildannonser
+   med noll köp. En OPS-butik kan alltså inte starta på "det som råkar vara rent";
+   den måste städa vinnaren först.
+
+En fjärde sak dök upp på köpet: att byta bort `636 kr` flyttade ankaret till
+2-packet i fyra av sju block, vilket höjde ingångspriset i majoriteten av kontot
+från 489 till 799 kr (+63 %). **Det är ett erbjudandebeslut, inte ett copybeslut** —
+lägg det hos ägaren innan texterna skrivs, inte efter.
 
 **Källorna, båda ACTIVE:** SE 34 annonser (`120250001079150291`, MagiBorsten,
 2 300 kr/dag), NO 33 annonser (`120251996323340233`, Magiborsten NO,

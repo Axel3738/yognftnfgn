@@ -1,0 +1,410 @@
+[
+  {
+    "namn": "IBC_PD_1_H1",
+    "kort": "PD_1_H1",
+    "typ": "video",
+    "spend": 16996.6,
+    "köp": 77,
+    "roas": 2.918824,
+    "fynd": [
+      "brandnamn"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_CS_1_H3",
+    "kort": "CS_1_H3",
+    "typ": "video",
+    "spend": 588.8,
+    "köp": 3,
+    "roas": 3.654212,
+    "fynd": [
+      "jämförpris",
+      "påhittad brådska",
+      "brandnamn"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_PD_Extra",
+    "kort": "PD_Extra",
+    "typ": "video",
+    "spend": 423.18,
+    "köp": 4,
+    "roas": 4.622147,
+    "fynd": [],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_PD_2_1",
+    "kort": "PD_2_1",
+    "typ": "bild",
+    "spend": 362.31,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_PD_1_H2",
+    "kort": "PD_1_H2",
+    "typ": "video",
+    "spend": 310.1,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [
+      "brandnamn"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_CO_1_1",
+    "kort": "CO_1_1",
+    "typ": "bild",
+    "spend": 193.22,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_PD_4_1",
+    "kort": "PD_4_1",
+    "typ": "bild",
+    "spend": 109.38,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_CS_2_1",
+    "kort": "CS_2_1",
+    "typ": "bild",
+    "spend": 99.1,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [
+      "jämförpris",
+      "rabatt på enstyck"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_SP_1_H1",
+    "kort": "SP_1_H1",
+    "typ": "video",
+    "spend": 93.88,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [
+      "brandnamn"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_SP_1_H3",
+    "kort": "SP_1_H3",
+    "typ": "video",
+    "spend": 88.7,
+    "köp": 1,
+    "roas": 9.372041,
+    "fynd": [
+      "brandnamn"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_BOF_1_1",
+    "kort": "BOF_1_1",
+    "typ": "bild",
+    "spend": 61.05,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [
+      "jämförpris",
+      "rabatt på enstyck",
+      "frakt"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_CS_1_H2",
+    "kort": "CS_1_H2",
+    "typ": "video",
+    "spend": 55.55,
+    "köp": 1,
+    "roas": 8.80288,
+    "fynd": [
+      "jämförpris",
+      "påhittad brådska",
+      "brandnamn"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_PD_1_H3",
+    "kort": "PD_1_H3",
+    "typ": "video",
+    "spend": 31.9,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [
+      "brandnamn"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_PD_5_1",
+    "kort": "PD_5_1",
+    "typ": "bild",
+    "spend": 31.17,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_GT_1_H3",
+    "kort": "GT_1_H3",
+    "typ": "video",
+    "spend": 15.11,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [
+      "brandnamn"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_BOF_3_1",
+    "kort": "BOF_3_1",
+    "typ": "bild",
+    "spend": 14.58,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_CS_3_1",
+    "kort": "CS_3_1",
+    "typ": "bild",
+    "spend": 14.19,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [
+      "jämförpris",
+      "rabatt på enstyck",
+      "frakt",
+      "betalsätt"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_GT_1_H1",
+    "kort": "GT_1_H1",
+    "typ": "video",
+    "spend": 12.45,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [
+      "brandnamn"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_SP_2_1",
+    "kort": "SP_2_1",
+    "typ": "bild",
+    "spend": 12.11,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [
+      "öppet köp"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_PD_3_1",
+    "kort": "PD_3_1",
+    "typ": "bild",
+    "spend": 9.78,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_GT_1_H2",
+    "kort": "GT_1_H2",
+    "typ": "video",
+    "spend": 7.37,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [
+      "brandnamn"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_BOF_5_1",
+    "kort": "BOF_5_1",
+    "typ": "bild",
+    "spend": 6.55,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_PD_3_H1",
+    "kort": "PD_3_H1",
+    "typ": "video",
+    "spend": 6.42,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [
+      "jämförpris",
+      "socialt bevis",
+      "brandnamn",
+      "fel tygspec"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_SP_1_H2",
+    "kort": "SP_1_H2",
+    "typ": "video",
+    "spend": 5.17,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [
+      "brandnamn"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_RV_2_1",
+    "kort": "RV_2_1",
+    "typ": "bild",
+    "spend": 5.1,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [
+      "socialt bevis"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_GT_3_H1",
+    "kort": "GT_3_H1",
+    "typ": "video",
+    "spend": 4.1,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [
+      "jämförpris",
+      "socialt bevis",
+      "brandnamn"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_RV_1_1",
+    "kort": "RV_1_1",
+    "typ": "bild",
+    "spend": 2.99,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [
+      "socialt bevis"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_BOF_6_1",
+    "kort": "BOF_6_1",
+    "typ": "bild",
+    "spend": 2.45,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [
+      "frakt",
+      "betalsätt",
+      "öppet köp"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_BOF_2_1",
+    "kort": "BOF_2_1",
+    "typ": "bild",
+    "spend": 2.06,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [
+      "betalsätt",
+      "öppet köp"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_CS_4_1",
+    "kort": "CS_4_1",
+    "typ": "bild",
+    "spend": 1.48,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [
+      "jämförpris",
+      "rabatt på enstyck"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_RV_3_1",
+    "kort": "RV_3_1",
+    "typ": "bild",
+    "spend": 0.79,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [
+      "rabatt på enstyck",
+      "socialt bevis"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_RV_4_1",
+    "kort": "RV_4_1",
+    "typ": "bild",
+    "spend": 0.66,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [
+      "socialt bevis"
+    ],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_GT_2_1",
+    "kort": "GT_2_1",
+    "typ": "bild",
+    "spend": 0.29,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [],
+    "ocrFanns": true
+  },
+  {
+    "namn": "IBC_BOF_4_1",
+    "kort": "BOF_4_1",
+    "typ": "bild",
+    "spend": 0,
+    "köp": 0,
+    "roas": 0,
+    "fynd": [],
+    "ocrFanns": true
+  }
+]

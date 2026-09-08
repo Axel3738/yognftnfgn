@@ -1,0 +1,971 @@
+{
+  "genererad": "2026-09-08",
+  "kalla": "workflow tankguard-se-copy, 51 agenter, 0 fel",
+  "mediagrind": [
+    {
+      "namn": "IBC_PD_1_H1",
+      "kort": "PD_1_H1",
+      "typ": "video",
+      "spend": 16996.6,
+      "köp": 77,
+      "roas": 2.918824,
+      "fynd": [
+        "brandnamn"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_CS_1_H3",
+      "kort": "CS_1_H3",
+      "typ": "video",
+      "spend": 588.8,
+      "köp": 3,
+      "roas": 3.654212,
+      "fynd": [
+        "jämförpris",
+        "påhittad brådska",
+        "brandnamn"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_PD_Extra",
+      "kort": "PD_Extra",
+      "typ": "video",
+      "spend": 423.18,
+      "köp": 4,
+      "roas": 4.622147,
+      "fynd": [],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_PD_2_1",
+      "kort": "PD_2_1",
+      "typ": "bild",
+      "spend": 362.31,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_PD_1_H2",
+      "kort": "PD_1_H2",
+      "typ": "video",
+      "spend": 310.1,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [
+        "brandnamn"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_CO_1_1",
+      "kort": "CO_1_1",
+      "typ": "bild",
+      "spend": 193.22,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_PD_4_1",
+      "kort": "PD_4_1",
+      "typ": "bild",
+      "spend": 109.38,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_CS_2_1",
+      "kort": "CS_2_1",
+      "typ": "bild",
+      "spend": 99.1,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [
+        "jämförpris",
+        "rabatt på enstyck"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_SP_1_H1",
+      "kort": "SP_1_H1",
+      "typ": "video",
+      "spend": 93.88,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [
+        "brandnamn"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_SP_1_H3",
+      "kort": "SP_1_H3",
+      "typ": "video",
+      "spend": 88.7,
+      "köp": 1,
+      "roas": 9.372041,
+      "fynd": [
+        "brandnamn"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_BOF_1_1",
+      "kort": "BOF_1_1",
+      "typ": "bild",
+      "spend": 61.05,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [
+        "jämförpris",
+        "rabatt på enstyck",
+        "frakt"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_CS_1_H2",
+      "kort": "CS_1_H2",
+      "typ": "video",
+      "spend": 55.55,
+      "köp": 1,
+      "roas": 8.80288,
+      "fynd": [
+        "jämförpris",
+        "påhittad brådska",
+        "brandnamn"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_PD_1_H3",
+      "kort": "PD_1_H3",
+      "typ": "video",
+      "spend": 31.9,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [
+        "brandnamn"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_PD_5_1",
+      "kort": "PD_5_1",
+      "typ": "bild",
+      "spend": 31.17,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_GT_1_H3",
+      "kort": "GT_1_H3",
+      "typ": "video",
+      "spend": 15.11,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [
+        "brandnamn"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_BOF_3_1",
+      "kort": "BOF_3_1",
+      "typ": "bild",
+      "spend": 14.58,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_CS_3_1",
+      "kort": "CS_3_1",
+      "typ": "bild",
+      "spend": 14.19,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [
+        "jämförpris",
+        "rabatt på enstyck",
+        "frakt",
+        "betalsätt"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_GT_1_H1",
+      "kort": "GT_1_H1",
+      "typ": "video",
+      "spend": 12.45,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [
+        "brandnamn"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_SP_2_1",
+      "kort": "SP_2_1",
+      "typ": "bild",
+      "spend": 12.11,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [
+        "öppet köp"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_PD_3_1",
+      "kort": "PD_3_1",
+      "typ": "bild",
+      "spend": 9.78,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_GT_1_H2",
+      "kort": "GT_1_H2",
+      "typ": "video",
+      "spend": 7.37,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [
+        "brandnamn"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_BOF_5_1",
+      "kort": "BOF_5_1",
+      "typ": "bild",
+      "spend": 6.55,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_PD_3_H1",
+      "kort": "PD_3_H1",
+      "typ": "video",
+      "spend": 6.42,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [
+        "jämförpris",
+        "socialt bevis",
+        "brandnamn",
+        "fel tygspec"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_SP_1_H2",
+      "kort": "SP_1_H2",
+      "typ": "video",
+      "spend": 5.17,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [
+        "brandnamn"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_RV_2_1",
+      "kort": "RV_2_1",
+      "typ": "bild",
+      "spend": 5.1,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [
+        "socialt bevis"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_GT_3_H1",
+      "kort": "GT_3_H1",
+      "typ": "video",
+      "spend": 4.1,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [
+        "jämförpris",
+        "socialt bevis",
+        "brandnamn"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_RV_1_1",
+      "kort": "RV_1_1",
+      "typ": "bild",
+      "spend": 2.99,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [
+        "socialt bevis"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_BOF_6_1",
+      "kort": "BOF_6_1",
+      "typ": "bild",
+      "spend": 2.45,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [
+        "frakt",
+        "betalsätt",
+        "öppet köp"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_BOF_2_1",
+      "kort": "BOF_2_1",
+      "typ": "bild",
+      "spend": 2.06,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [
+        "betalsätt",
+        "öppet köp"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_CS_4_1",
+      "kort": "CS_4_1",
+      "typ": "bild",
+      "spend": 1.48,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [
+        "jämförpris",
+        "rabatt på enstyck"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_RV_3_1",
+      "kort": "RV_3_1",
+      "typ": "bild",
+      "spend": 0.79,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [
+        "rabatt på enstyck",
+        "socialt bevis"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_RV_4_1",
+      "kort": "RV_4_1",
+      "typ": "bild",
+      "spend": 0.66,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [
+        "socialt bevis"
+      ],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_GT_2_1",
+      "kort": "GT_2_1",
+      "typ": "bild",
+      "spend": 0.29,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [],
+      "ocrFanns": true
+    },
+    {
+      "namn": "IBC_BOF_4_1",
+      "kort": "BOF_4_1",
+      "typ": "bild",
+      "spend": 0,
+      "köp": 0,
+      "roas": 0,
+      "fynd": [],
+      "ocrFanns": true
+    }
+  ],
+  "copy": {
+    "CS_block": {
+      "annonser": [
+        "IBC_CS_1_H2",
+        "IBC_CS_1_H3",
+        "IBC_CS_2_1"
+      ],
+      "message": "🎁 PAKETPRIS — SPARA 18%\n\n799 kr för 2 st i stället för 978 kr. Plus 2 kranskydd Frost 420D på köpet — värde 398 kr.\n\nFrosten kommer — kranskydden skyddar utekranarna i vinter.\n\nInga alger. Ingen spröd plast. 210D Oxford-tyg med blixtlås — på under två minuter.\n\nBeställ innan frosten tar kranarna 👇",
+      "title": "2 överdrag — spara 18%",
+      "description": "799 kr för 2 — inkl. 2 kranskydd Frost 420D, värde 398 kr.",
+      "andringar": [
+        "Hook: '🎁 KÖP 2 — SPARA 18%' → '🎁 PAKETPRIS — SPARA 18%'. Tog bort köp-kommandot som första intryck (En-Mississippi-problemet), behöll emoji, tempo och siffran 18%.",
+        "Prisraden fick fullständigt produktnamn: 'kranskydd' → 'kranskydd Frost 420D'. Pekar på ett namngivet objekt i stället för ett vagt tillbehör.",
+        "Bytte hela säsongsraden: 'Vintern är på väg — skydda tanken och kranarna i samma köp' → 'Frosten kommer — kranskydden skyddar utekranarna i vinter'. Gamla raden lade ett vinterpåstående på tanken (falskt — sprödhet/alger orsakas av sol/UV enligt produktfaktan). Nya raden lägger vinterpåståendet bara där det faktiskt stämmer: kranskydden.",
+        "Rättade grammatikfelet 'Inget spröd plast' → 'Ingen spröd plast'.",
+        "Bytte 'Bara ett tjockt, skyddande överdrag till din IBC-tank' mot konkreta specar: '210D Oxford-tyg med blixtlås — på under två minuter'. Adjektiv bort, tre pekbara fakta in.",
+        "CTA: 'Missa inte det — beställ innan kylan kommer 👇' → 'Beställ innan frosten tar kranarna 👇'. Tog bort tomt utfyllnadsord, knöt raden till samma frost-faktum som säsongsraden i stället för vag 'kylan'.",
+        "Titel: 'Skydda tanken inför vintern' (samma falska vinterpåstående som gamla säsongsraden) → '2 överdrag — spara 18%'. Konkret och sant, ägt av TankGuards egen prissättning.",
+        "Description: '2 för 799 kr — spara 18% + gratis kranskydd' → '799 kr för 2 — inkl. 2 kranskydd Frost 420D, värde 398 kr'. Tar bort en tredje upprepning av 'spara 18%', ger ny konkret info (värde 398 kr, fullt produktnamn) i stället.",
+        "Tillämpade en enda regel konsekvent på 'ingen annan kan säga det' rakt igenom: rader med TankGuards egna specifika siffror eller produktnamn (18%, 799 kr, 978 kr, 398 kr, Kranskydd Frost 420D, 210D Oxford, två minuter) räknas som ägda fakta. Rader utan siffra eller namn räknas som generiska. Samma regel på hook och description den här gången, inte olika bedömning av samma sorts påstående.",
+        "Skrev 3–5 varianter internt av hook, säsongsraden och CTA:n innan urval. Hook-alternativ '🎁 2-PACK — SPARA 18%' förkastades (behöll köp-kommandot i annan form); '🎁 PAKETERBJUDANDE' förkastades (tappade den ägande siffran 18%). Säsongsrads-alternativ 'Frosten kommer — kranskydden skyddar kranarna mot den' förkastades (otydlig syftning på 'den')."
+      ],
+      "tre_fragor": [
+        {
+          "rad": "Titel: '2 överdrag — spara 18%'",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "18% är en siffra som bara stämmer för TankGuards egen prissättning (799 kr mot 978 kr) — ingen annan butik kan sätta sin logga under den utan att ljuga om sitt eget pris."
+        },
+        {
+          "rad": "Hook: '🎁 PAKETPRIS — SPARA 18%'",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Samma ägda siffra som titeln. Inget köp-kommando kvar i det första intrycket, till skillnad från 'KÖP 2'."
+        },
+        {
+          "rad": "Prisrad: '799 kr för 2 st i stället för 978 kr. Plus 2 kranskydd Frost 420D på köpet — värde 398 kr.'",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Fyra verifierbara siffror plus ett namngivet bonusobjekt. Ingen annan säljer just det här paketet till just det här priset."
+        },
+        {
+          "rad": "Säsongsrad: 'Frosten kommer — kranskydden skyddar utekranarna i vinter.'",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Faktumet läggs bara på kranskydden (namngivna i raden ovan), inte på tanken — det falska vinterpåståendet om tanken är borta."
+        },
+        {
+          "rad": "Faktarad: 'Inga alger. Ingen spröd plast. 210D Oxford-tyg med blixtlås — på under två minuter.'",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Adjektivet 'skyddande' ersatt med tre pekbara specar ur produktfaktan. Grammatikfelet rättat."
+        },
+        {
+          "rad": "CTA: 'Beställ innan frosten tar kranarna 👇'",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Bygger vidare på samma frost-faktum som säsongsraden i stället för det tomma 'Missa inte det'."
+        },
+        {
+          "rad": "Description: '799 kr för 2 — inkl. 2 kranskydd Frost 420D, värde 398 kr.'",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ny konkret info (värdet 398 kr) i stället för en tredje upprepning av 'spara 18%' — löser inkonsekvensen mot hooken."
+        }
+      ]
+    },
+    "CS_3_1": {
+      "annonser": [
+        "IBC_CS_3_1"
+      ],
+      "message": "489 kr per överdrag, eller 3 för 1 099 kr. Tyget är 210D Oxford och stänger ute ljuset — algerna kommer aldrig igång. Köp 3, få 3 kranskydd på köpet — värde 597 kr.",
+      "title": "Köp 3, få 3 kranskydd gratis — 210D Oxford-tyg",
+      "description": "Sitter på under två minuter.",
+      "andringar": [
+        "Rad 1: bytte 'istället för 636 kr' (falskt jämförpris, finns inte för TankGuard) mot 'eller 3 för 1 099 kr' (sant paketpris) — behöll '489 kr' orört som ledtal i stället för att byta hela erbjudandenivån (löser problem 5, 7, 8).",
+        "Sista meningen: bytte '23 % rabatt.' mot 'Köp 3, få 3 kranskydd på köpet — värde 597 kr.' — en procentsats går inte att peka på och kan signeras av vem som helst; kranskydden är TankGuards eget, verifierbara faktum (löser problem 2, 4, 6).",
+        "Titel: bytte '23 % rabatt — 210D Oxford-tyg' mot 'Köp 3, få 3 kranskydd gratis — 210D Oxford-tyg' — villkoret 'Köp 3' står nu i själva rubriken i stället för en ovillkorad rabattsats som ingen konkurrent hindras säga (löser problem 1, 3).",
+        "Description: bytte tom sträng mot 'Sitter på under två minuter.' — ett sant produktfaktum fyller platsen efter att fraktlöftet plockades bort, i stället för att lämna fältet tomt (löser problem 9)."
+      ],
+      "tre_fragor": [
+        {
+          "rad": "489 kr per överdrag, eller 3 för 1 099 kr.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Två sanna, kontrollerbara priser sida vid sida, ingen påhittad jämförelse eller huvudräkning krävs."
+        },
+        {
+          "rad": "Tyget är 210D Oxford och stänger ute ljuset — algerna kommer aldrig igång.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Orört. Bevisad rad, rörs inte."
+        },
+        {
+          "rad": "Köp 3, få 3 kranskydd på köpet — värde 597 kr.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Pekar på en konkret bonus och ett exakt värde i stället för en procentsats — TankGuards egen paketering, inte en generisk rabatt."
+        },
+        {
+          "rad": "Köp 3, få 3 kranskydd gratis — 210D Oxford-tyg",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Villkoret 'Köp 3' står i rubriken, så den påstår aldrig en generell rabatt när den visas ensam."
+        },
+        {
+          "rad": "Sitter på under två minuter.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Fyller platsen efter borttaget fraktlöfte med ett sant, mätbart produktfaktum."
+        }
+      ]
+    },
+    "CS_4_1": {
+      "annonser": [
+        "IBC_CS_4_1"
+      ],
+      "message": "2 för 799 kr istället för 978 kr.\n179 kr mindre för samma 210D Oxford-tyg som stänger ute ljuset.\nAlgerna kommer aldrig igång.",
+      "title": "2 för 799 kr istället för 978 kr",
+      "description": "Spara 18 %. 2 Kranskydd Frost 420D på köpet – värde 398 kr.",
+      "andringar": [
+        "Rad 2: återställde 'för samma 210D Oxford-tyg som stänger ute ljuset' som den underkända versionen strök — TankGuards egen produktfakta, och kausallänken rad 3:s algpåstående behöver.",
+        "Rad 2: bytte kronbeloppet 147 → 179 kr (skillnaden mellan paketpriset 799 kr och 2×489=978 kr) så meningen stämmer för paketet, inte styckpriset.",
+        "Splittade den underkända radens 'och'-mening ('179 kr mindre och 2 kranskydd på köpet') i två ytor: besparingen ligger kvar i rad 2 utan 'och', kranskyddet fick en egen rad i description med namn och värde.",
+        "Skrev om description helt: från 'Spara 179 kr på 2 överdrag' (ren upprepning av rad 2) till 'Spara 18 %. 2 Kranskydd Frost 420D på köpet – värde 398 kr' — ny information i procentform plus det namngivna bonusobjektet, i stället för att räkna om samma tal.",
+        "Vände ordningen i rad 1/title från '799 kr för 2 istället för 978 kr' till '2 för 799 kr istället för 978 kr' så paketpriset läses som en enhet i ett svep (en-Mississippi).",
+        "Rättade tre-frågorstabellen: prisraderna får ❌ på 'ingen annan kan säga det' i stället för att motiveras bort — en unik siffra är inte ett osignerbart påstående.",
+        "Erbjudandebytet enstyck (489 kr) → paket (2 för 799 kr) är ett medvetet val enligt uppdraget, inte en bieffekt av att ta bort det falska ankaret 636 kr."
+      ],
+      "tre_fragor": [
+        {
+          "rad": "Rad 1 / Title: '2 för 799 kr istället för 978 kr.'",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": false,
+          "kommentar": "Sann och konkret prisjämförelse, men ren prismall — vilken IBC-säljare som helst kan sätta egna tal i samma form."
+        },
+        {
+          "rad": "Rad 2: '179 kr mindre för samma 210D Oxford-tyg som stänger ute ljuset.'",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": false,
+          "kommentar": "Konkret och kollbart, men materialspecen 210D Oxford delas av andra tillverkare — bär dock den kausala kedjan till rad 3."
+        },
+        {
+          "rad": "Rad 3: 'Algerna kommer aldrig igång.'",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": false,
+          "kommentar": "Nu härledbar ur rad 2 igen (mörkt tyg → inga alger). Mekanismen är återställd, men vilket ljustätt tyg som helst kan göra samma anspråk."
+        },
+        {
+          "rad": "Description: 'Spara 18 %. 2 Kranskydd Frost 420D på köpet – värde 398 kr.'",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Kranskydd Frost 420D är TankGuards eget namngivna, värderade bonusobjekt — en konkurrent kan inte sätta sin logga under just detta paket."
+        }
+      ]
+    },
+    "GT_3_H1": {
+      "annonser": [
+        "IBC_GT_3_H1"
+      ],
+      "message": "Vet du någon som klagat på alger i sin IBC-tank i flera somrar?\n210D Oxford-tyg stänger ute solljuset – ingen alg får fäste.\nGe bort skyddet i år. Ingen skrubbning nästa sommar.\n799 kr för 2 – ett åt dig, ett att ge bort.",
+      "title": "Ge skyddet i present. Slipp algskrubben.",
+      "description": "",
+      "andringar": [
+        "Bytte enbart sista raden: '489 kr (ord. 636 kr) · 4,4 av 5 på produktsidan.' → '799 kr för 2 – ett åt dig, ett att ge bort.' Jämförpriset 636 kr och betyget 4,4/5 är Bäverbutikens data, inte TankGuards (ny butik, noll recensioner) — måste bort helt.",
+        "Återanvände inte 'sitter på under två minuter' från den underkända versionen: den raden svarar varken på algpåståendet eller på presentargumentet (Kaplans lag) och gav ❌ på tre-frågorstestets tredje fråga.",
+        "Ersatte bevisledet med TankGuards egen verifierbara rabatt (2 st för 799 kr, 'Spara 18 %' mot 978 kr) — den enda äkta prisnedsättning som finns, och den operationaliserar exakt det som rad 3 redan lovar: ett paket, ett att behålla, ett att ge bort."
+      ],
+      "tre_fragor": [
+        {
+          "rad": "Vet du någon som klagat på alger i sin IBC-tank i flera somrar?",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Bevisad, orörd rad — ändras inte i den här fixen."
+        },
+        {
+          "rad": "210D Oxford-tyg stänger ute solljuset – ingen alg får fäste.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Bevisad, orörd rad — ändras inte i den här fixen."
+        },
+        {
+          "rad": "Ge bort skyddet i år. Ingen skrubbning nästa sommar.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Bevisad, orörd rad — ändras inte i den här fixen."
+        },
+        {
+          "rad": "799 kr för 2 – ett åt dig, ett att ge bort.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Konkret paket och pris (verifierat mot pristrappan). Sant/falskt går att kontrollera mot produktsidan. Specifikt TankGuards egen pakettrappa och gåva-mekanik — en konkurrent kan inte sätta sin logga under exakt detta erbjudande, och raden svarar direkt på presentvinkelns egen invändning (behöver jag två?)."
+        }
+      ]
+    },
+    "PD_3_H1": {
+      "annonser": [
+        "IBC_PD_3_H1"
+      ],
+      "message": "210D Oxford-tyg. Ingen sol når vattnet.\n210D Oxford-tyg stänger ute ljuset – algerna kommer aldrig igång.\n489 kr. Ett skydd, ingen grön tank i sommar.",
+      "title": "210D Oxford-tyg. Ingen alg.",
+      "description": "",
+      "andringar": [
+        "Tog bort '(ord. 636 kr)' i sista raden — jämförpris/rabatt är Bäverbutikens villkor, inte TankGuards. TankGuards enda pristrappa är 489/799/1099 kr, inget jämförpris på ett enskilt överdrag.",
+        "Återställde mittraden till originalets lydelse ('stänger ute ljuset – algerna kommer aldrig igång') i stället för den underkända omskrivningen ('blockerar UV-ljuset – plasten blir aldrig spröd'). Originalraden var redan sann för TankGuard (källfakta: 'blockerar solljus och UV' + 'stoppar algtillväxten i vattnet') och bär alg-löftet som titel och sista rad bygger på. Omskrivningen bytte vinkel till spröd plast och innehöll en overclaim ('aldrig' spröd) som källfaktumet inte stödjer ('skyddar plasten från att bli spröd')."
+      ],
+      "tre_fragor": [
+        {
+          "rad": "Titel: 210D Oxford-tyg. Ingen alg.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Bevisad, oförändrad rad. Rörs inte."
+        },
+        {
+          "rad": "Rad 1: 210D Oxford-tyg. Ingen sol når vattnet.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Bevisad, oförändrad rad. Rörs inte."
+        },
+        {
+          "rad": "Rad 2: 210D Oxford-tyg stänger ute ljuset – algerna kommer aldrig igång.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Återställd till originalet. Sann för TankGuard, sourcad ur två produktfakta, bevisad. Rörs inte."
+        },
+        {
+          "rad": "Rad 3: 489 kr. Ett skydd, ingen grön tank i sommar.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": false,
+          "kommentar": "Priset är nu sant för TankGuard (489 kr, inget jämförpris). Struktur pris+generiskt löfte är inte unikt ägd — men det ligger i den bevisade originalstrukturen och ändras inte enligt minimal-ändring-kravet."
+        }
+      ]
+    },
+    "BOF_1_1": {
+      "annonser": [
+        "IBC_BOF_1_1"
+      ],
+      "message": "Två tanköverdrag: 799 kr i stället för 978 kr. 210D Oxford tar UV-strålningen i stället för plasten.",
+      "title": "18 % rabatt på tanköverdraget",
+      "description": "Sitter på under 2 minuter. Köp 2, få 2 Kranskydd Frost 420D på köpet (värde 398 kr).",
+      "andringar": [
+        "Message: bytte det falska '489 kr istället för 636 kr' mot 'Två tanköverdrag: 799 kr i stället för 978 kr' — TankGuards egen, sanna 2-pack-rabatt (18 %, kollbar: 2×489=978).",
+        "Message: kortade 'Tyget är 210D Oxford och tar UV-strålningen i stället för plasten' till '210D Oxford tar UV-strålningen i stället för plasten' — tog bort de fyra döda orden 'Tyget är … och' (Kaplans lag). UV-mekaniken orörd i sak.",
+        "Title: bytte tillbaka till erbjudande-vinkeln (samma form som originalet), bara talet ändrat: '23 %' -> '18 %'. Leder nu med produkten och slutar dubblera message.",
+        "Beskrivning: fyllde det tomma fältet (efter att Frakt/Klarna togs bort) med två sanna, pekbara TankGuard-fakta: installationstid och 2-pack-bonusen (2 × Kranskydd Frost 420D, värde 398 kr) — samma trygghets-/erbjudandeposition som originalets Frakt/Klarna."
+      ],
+      "tre_fragor": [
+        {
+          "rad": "18 % rabatt på tanköverdraget",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Samma struktur som originalets '23 % rabatt', bara talet bytt till det sanna 18 % (2-pack 799 kr mot 978 kr)."
+        },
+        {
+          "rad": "Två tanköverdrag: 799 kr i stället för 978 kr.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ersätter det falska jämförpriset med en riktig, kollbar paketrabatt kopplad till TankGuards eget pris."
+        },
+        {
+          "rad": "210D Oxford tar UV-strålningen i stället för plasten.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": false,
+          "kommentar": "210D Oxford är branschstandard — en konkurrent med samma tyg kan säga exakt detta. Behålls ändå som stödjande mekanik-fakta enligt uppdraget; annonsens unika påstående ligger i pris + bonus, inte här."
+        },
+        {
+          "rad": "Sitter på under 2 minuter.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": false,
+          "kommentar": "Sann och konkret installationstid, men inte unik för TankGuard specifikt. Fyller tomrummet efter Frakt/Klarna med fakta i stället för luft."
+        },
+        {
+          "rad": "Köp 2, få 2 Kranskydd Frost 420D på köpet (värde 398 kr).",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Den enda raden i hela annonsen ingen konkurrent kan signera — specifik bonusprodukt kopplad till TankGuards egen pristrappa."
+        }
+      ]
+    },
+    "BOF_3_1": {
+      "annonser": [
+        "IBC_BOF_3_1"
+      ],
+      "message": "Passar den på min tank? Måtten är 120 × 100 × 116 cm — standard för en 1000-literstank.",
+      "title": "120×100×116 cm, standard 1000L",
+      "description": "Blockerar solljuset – stoppar algtillväxten i tanken.",
+      "andringar": [
+        "Bytte description-raden 'Passar standard 1000-liters IBC-tank.' (tredje upprepningen av samma måttfaktum — Kaplans lag) mot 'Blockerar solljuset – stoppar algtillväxten i tanken.'",
+        "Nya raden hämtar ett sant, oanvänt produktfaktum (UV-block/algskydd) i stället för att lova ett returvillkor TankGuard inte har eller upprepa måtten en fjärde gång."
+      ],
+      "tre_fragor": [
+        {
+          "rad": "message: Passar den på min tank? Måtten är 120 × 100 × 116 cm — standard för en 1000-literstank.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Orörd. Exakt mått + fråga är redan bevisad copy, rörs inte."
+        },
+        {
+          "rad": "title: 120×100×116 cm, standard 1000L",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Orörd. Samma sanna spec-siffra som message, gör sitt eget jobb (rubrik-skanning)."
+        },
+        {
+          "rad": "beskrivning: Blockerar solljuset – stoppar algtillväxten i tanken.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Mekanism (UV blockeras → inga alger), inte adjektiv. Nytt jobb i tredje slotten i stället för en fjärde upprepning av måtten."
+        }
+      ]
+    }
+  },
+  "motprov": {
+    "PD_block": {
+      "haller": true,
+      "motivering": "Jag hittar ingen formulering som TankGuard inte kan stå för. Varje siffra i copyn (210D, 2 minuter, 1000L) finns i den godkända produktfaktalistan; inga priser, procent, fraktvillkor, betalsätt, returvillkor, betyg, recensioner eller butiksnamn förekommer; ingen påhittad brådska. De enda invändningar som ens biter ('helt', 'idag', entalsformuleringen) är antingen produktpåståenden som följer med produkten eller strategiska svagheter — inte falska påståenden om TankGuard. Klassningen REN håller: copyn kan köras med enbart bytt destinationslänk. Enda anmärkningen som är värd att ta vidare separat är att copyn inte utnyttjar paketnivåerna (799 kr / 1 099 kr + gratis Kranskydd), vilket är ett optimeringsärende och inte ett renhetsfel.",
+      "invandningar": [
+        "ANGREPP 1 — 'blockerar solljus och UV helt': ordet 'helt' är en absolut formulering som inte står ordagrant i produktfakta ('blockerar solljus och UV'). FÄLLER INTE: det är ett påstående om den fysiska produkten, inte om butiken, och produkten är identisk. Ingen TankGuard-specifik osanning.",
+        "ANGREPP 2 — 'Skydda din tank idag 👇': 'idag' kan läsas som påhittad brådska. FÄLLER INTE: det är ett CTA-ord om handlingen, inte ett påstående om pris, lager eller deadline. Ingen förbjuden fras ('IDAG ENDAST', 'priset går tillbaka imorgon') förekommer.",
+        "ANGREPP 3 — 'klart på 2 minuter': tidsangivelse. FÄLLER INTE: produktfakta säger uttryckligen 'sitter på under två minuter'.",
+        "ANGREPP 4 — 'Ingen alg' i titeln är absolut. FÄLLER INTE: produktfakta säger 'stoppar algtillväxten i vattnet'. Samma påstående, kortare form.",
+        "ANGREPP 5 — 'tanken slits inte ut i förtid' antyder livslängd/garanti. FÄLLER INTE: härlett ur 'skyddar plasten från att bli spröd'. Ingen garanti, ingen returrätt, inget returvillkor nämns.",
+        "ANGREPP 6 — sociala bevis / etablerad butik: genomsökt rad för rad. Copyn innehåller inga betyg, inga recensioner, inga kundnamn, inget 'hundratals', ingen historik, inget butiksnamn, ingen frakt, inga betalsätt, inga returvillkor, inga priser, inga rabattprocent. Noll träffar på förbudslistan.",
+        "ANGREPP 7 (starkast) — copyn är genomgående ENTALS-formulerad: 'Det här överdraget', 'din IBC-tank', 'Skydda din tank'. TankGuards enda rabatt finns på 2- och 3-pack; 1 överdrag har inget jämförpris och ingen besparing. FÄLLER INTE klassningen: entalsformulering är inte ett falskt påstående och krockar inte med erbjudandet — den nämner varken pris, antal eller besparing. Det är en missad säljmöjlighet, inte en osanning. Bör åtgärdas i en optimeringsrunda, inte i en renhetsklassning.",
+        "ANGREPP 8 — 'Kraftigt 210D Oxford-tyg': 'Kraftigt' är subjektivt men 210D Oxford är verifierad produktfakta. Inte falskt."
+      ]
+    },
+    "GT_block": {
+      "haller": false,
+      "motivering": "Klassningen REN stämmer bara på den smala kontrollen \"innehåller inga förbjudna priser, procent, frakt-, betal- eller returvillkor\" — den kontrollen passerar copyn. Men REN påstods betyda \"kan köras oförändrad, bara länken byts\", och det håller inte. Copyn är byggd som ett kundvittnesmål: en kvinna som redan köpt produkten, gett bort den, och en man som nu visar upp tanken för grannarna. Det är socialt bevis och en tidslinje av användning för en butik som inte har sålt en enda enhet och vars leveranstid är okänd — samma kategori som de uttryckligen förbjudna recensionerna, bara utan stjärnor. Titeln \"Presenten han faktiskt använder\" lägger till ett utfallspåstående utan faktum bakom sig, vilket bryter mot regel 3 i CLAUDE.md och \"Fakta först\" i copy-reglerna. Ovanpå det pekar annonsen mot 1-styck-köpet, som är den enda nivån utan rabatt och utan bonus, medan hookens 🎁 antyder en gratisprodukt som bara finns från 2 st. Fällande formuleringar: \"Jag gav min man det här överdraget\", \"Nu visar han upp tanken för alla grannar\" och \"Presenten han faktiskt använder\". Blocket ska klassas om till OMSKRIVNING, inte REN.",
+      "invandningar": [
+        "\"Jag gav min man det här överdraget — utan att säga något.\" — det här är en kundberättelse i första person om en genomförd order av just den här produkten. TankGuard har sålt noll enheter och har ingen enda kund. Raden är samma sorts påstående som de uttryckligen förbjudna recensionerna och namngivna kunderna, bara förpackad som UGC i stället för som stjärnbetyg.",
+        "\"Han trodde jag hade glömt bort problemet.\" + \"Nu visar han upp tanken för alla grannar.\" — sekvensen förutsätter förfluten tid: beställning, leverans, montering och sedan tillräckligt många dagar för att grannarna ska ha sett tanken. TankGuards leveranstid är enligt uppdraget INTE känd, och butiken har ingen historik. Det här är precis \"tidsangivelser och allt som antyder en etablerad butik med historik\".",
+        "\"Nu visar han upp tanken för alla grannar.\" är dessutom socialt bevis i andra ledet — mun-mot-mun-validering från utomstående. För en butik utan en enda order finns inga grannar som sett något.",
+        "TITEL \"Presenten han faktiskt använder\" — \"faktiskt använder\" är ett påstående om utfall över kunder (till skillnad från presenter som blir liggande). Det bygger på ett track record TankGuard inte har. Faller fråga 2 i tre-frågorstestet (går inte att falsifiera med något faktum) och bryter mot \"Fakta först — hitta aldrig på ett\" i docs/copy-regler.md.",
+        "DESC \"Enkel gåva. Stor uppskattning.\" — \"stor uppskattning\" är ett påstått mottagarutfall utan underlag, samma implicerade kundhistorik som ovan (och rent adjektivprat enligt Kaplans lag).",
+        "KROCK MED ERBJUDANDET: hela annonsen säljer EN present till EN man. TankGuards enda riktiga rabatt och hela bonusen (Kranskydd Frost 420D) börjar först vid 2 st. En presentköpare landar på 489 kr utan jämförpris, utan rabatt och utan gratisprodukt — alltså det sämsta erbjudandet på sidan. Annonsen leder bort från butikens faktiska offer i stället för in i det.",
+        "🎁 i hooken plus \"Hitta den perfekta presenten 👇\" läses som ett gåvo-/gratislöfte. Sidans enda \"GRATIS PÅ KÖPET\" kräver 2 eller 3 överdrag. Klickaren möter inte det som emojin och CTA:n antyder.",
+        "\"Hitta den perfekta presenten\" antyder ett sortiment att välja bland. TankGuard är en enproduktsbutik med en produkt i tre paketstorlekar — det finns ingenting att \"hitta\".",
+        "Säsongskrock (svagare, fäller inte ensam): hooken hänger på alger \"i flera somrar\" medan TankGuards äkta brådska är hösten/vintern, och bonusen är ett FROSTskydd för utekranar. Annonsen pekar åt fel årstid än den enda verifierbara brådskan butiken har."
+      ]
+    },
+    "CO_1_1": {
+      "haller": true,
+      "motivering": "Jag hittar ingen formulering som fäller klassningen. Copyn består av tre påståenden och en titel som alla mappar rakt mot TankGuards egen godkända faktalista: 210D Oxford-tyg, blockerar solljus och UV, stoppar algtillväxten i vattnet, IBC-tanköverdrag 1000 L. Den innehåller inget pris, ingen rabattsiffra, ingen frakt-, betal- eller returuppgift, inget betyg, ingen recension, inget kundnamn, ingen kvantitetspåstående, ingen tidsangivelse, ingen garanti, ingen påhittad brådska och ingen referens till butiken eller dess historik. Ingenting i den antyder en etablerad butik. Den krockar inte heller med paketerbjudandet — den nämner ingen prisnivå alls, så 489/799/1099 kr och Kranskydd-bonusen står oemotsagda. Det starkaste jag kan resa är ordet 'helt' i 'blockerar solljuset helt', men det tas ut av att faktalistan själv slår fast 'stoppar algtillväxten i vattnet', vilket förutsätter samma sak — och det är ett produktpåstående, som enligt uppdraget får återanvändas fritt. Även bildytan är kontrollerad och ren. Klassningen REN håller: byt destinationslänken från baverbutiken.se till TankGuards produktsida, kör copyn oförändrad.",
+      "invandningar": [
+        "TESTAD OCH FALLEN: 'blockerar solljuset helt' — ordet 'helt' är en absolut formulering som inte står ordagrant i faktalistan ('blockerar solljus och UV'). Den fäller ändå inte klassningen: faktalistan innehåller själv det lika absoluta 'stoppar algtillväxten i vattnet', och det påståendet förutsätter att ljuset stängs ute. Påståendet gäller dessutom produkten, inte butiken — samma produkt, samma tyg, sant för TankGuard.",
+        "TESTAD OCH FALLEN: 'Utan skydd blir tankvattnet grönt av alger' — absolut motpåstående, men det är produktens mekanism och står som godkänt faktum ('stoppar algtillväxten i vattnet'). Ingen butiksspecifik komponent.",
+        "TESTAD OCH FALLEN: 'Samma tank, olika resultat' — kan läsas som ett demonstrerat utfall och därmed som dolt socialt bevis. Faller: ingen kund, inget betyg, ingen recension, ingen kvantitet ('hundratals') och inget 'vi har hjälpt' nämns. Det är en före/efter-mekanism, inte en historikreferens.",
+        "TESTAD OCH FALLEN: krock med TankGuards paketerbjudande. Copyn talar om ett överdrag i singular ('skillnaden är överdraget', DESC 'IBC-tanköverdrag, 1000 L'). Den utelämnar 2- och 3-paketet med Kranskydd Frost, men motsäger dem inte och nämner varken pris, jämförpris eller sparprocent. Utelämnande är inte missvisande här.",
+        "TESTAD OCH FALLEN: förbjuden källbutiksdata. Genomsökt på 636 kr, 489 kr, 23 %, 147 kr, frakt, Klarna, öppet köp, betyg, kundnamn, Bäverbutiken, baverbutiken.se, påhittad brådska — noll träffar i message, titel och description.",
+        "TESTAD OCH FALLEN: kreativen. Annonsen är en bildannons och inbränd text i bilden är 'Samma tank. / Olika sommar. / Utan skydd — med IBC-tanköverdraget' — inget pris, ingen rabatt, inget butiksnamn, ingen logotyp (bekräftat med både OCR och ögongranskning). Även bildytan är alltså ren.",
+        "KVARSTÅENDE FLAGGA, fäller inte: bilden säger 'Olika sommar' och hela vinkeln är en sommarvinkel (alger i sol). TankGuards äkta säsongsbrådska är höst/vinter och bonusprodukten är ett frostskydd. Det är ett relevansproblem, inte ett sanningsproblem — inget i copyn blir falskt, men förvänta dig svagare respons i september–februari.",
+        "KVARSTÅENDE FLAGGA, fäller inte: 193 kr spend och 0 köp ligger under CLAUDE.md regel 3:s gränser (300 kr / 3 köp). Ingen prestandadom får läggas på annonsen — 'REN' säger bara att copyn är körbar, inte att den är värd att köra."
+      ]
+    },
+    "PD_4_1": {
+      "haller": true,
+      "motivering": "Jag hittar ingen formulering som fäller den. Blocket består av tre påståenden — ljusblockering, ingen algtillväxt, UV tas av tyget i stället för plasten — och alla tre står ordagrant i de produktfakta som får återanvändas fritt. Det finns noll pris, noll rabatt, noll villkor, noll socialt bevis, noll butiksnamn och noll påhittad brådska, varken i texten eller inbränt i bilden (verifierat mot både OCR och ögonpasset i factory/output/tankguard/brand-ocr.json och brand-syn.json). Det enda jag kan sätta fingret på är absolutordet 'aldrig' i 'Algerna kommer aldrig igång', men det är samma påstående som 'stoppar algtillväxten i vattnet' med andra ord — och det gäller produkten, som TankGuard säljer exakt likadan. Att copyn ignorerar paketnivåerna gör den svagare, inte osann. Klassningen håller: den kan köras med bara länk, namn och konto ändrade.",
+      "invandningar": [
+        "TESTAT OCH FALLER: \"Algerna kommer aldrig igång\" är en absolut formulering (aldrig) och det närmaste copyn kommer en garanti. Den fälls ändå inte: den är en ren omskrivning av produktfaktumet \"stoppar algtillväxten i vattnet\" plus \"blockerar solljus och UV\", och båda får återanvändas fritt eftersom de gäller produkten, inte butiken. Ingen tidsangivelse, ingen hållbarhetsgaranti, ingen utfästelse om åtgärd om det ändå växer alger.",
+        "TESTAT OCH FALLER: \"Tar UV-strålningen i stället för plasten\" — täcks ordagrant av \"blockerar solljus och UV\" + \"skyddar plasten från att bli spröd\". Ingen livslängd i år, ingen garanti.",
+        "TESTAT OCH FALLER: \"210D Oxford-tyg\" är enda siffran i hela blocket och är en tygspecifikation, inte pris, rabatt, betyg eller antal kunder. Ingen av de förbjudna siffrorna (636 kr, 23 %, 147 kr, 300 kr, 489 kr) finns någonstans i primärtext, titel eller beskrivning.",
+        "TESTAT OCH FALLER: inget socialt bevis. Inga recensioner, inga betyg, inga namngivna kunder, inget \"hundratals trädgårdsägare\", inga stjärnor. Ingen formulering som antyder historik, etablerad butik eller tidigare kunder.",
+        "TESTAT OCH FALLER: inga villkor. Ingen frakt, ingen returrätt, inget betalsätt, ingen leveranstid. Butiksnamnet Bäverbutiken förekommer inte i någon form.",
+        "TESTAT OCH FALLER: ingen påhittad brådska. Inga ord om lager, datum eller att priset går tillbaka. Bildens inbrända CTA \"Skydda din tank idag\" är en uppmaning att agera, inte ett påstående om ett erbjudande som löper ut — den är verifierbart sann i betydelsen \"gör det nu\".",
+        "TESTAT OCH FALLER: krock med paketnivåerna. Copyn nämner varken pris, antal eller rabatt, så den kan inte motsäga 489 / 799 / 1 099 kr eller gratisbonusen Kranskydd Frost. Att den inte UTNYTTJAR paketerbjudandet är en missad möjlighet, inte ett falskt påstående — och REN-klassningen påstår inte att blocket är optimalt, bara att inget måste bort.",
+        "TESTAT OCH FALLER: kreativen. PD_4_1 är en bildannons, så bilden är annonsen. OCR:en läser exakt fem textrader i filen — \"210D Oxford-tyg.\", \"Stänger ute ljuset.\", \"Ingen alg.\", \"Kraftigt tyg. Enkelt blixtlås. Öppning upptill.\", \"Skydda din tank idag\" — alla inom de tillåtna produktfakta. Ett separat ögonpass (11 blinda granskare + motprov, 2026-09-08) hittar varken logotyp eller brandtext. Ingen förbjuden siffra och inget butiksnamn är inbränt.",
+        "KVARSTÅR SOM VILLKOR, INTE SOM FÄLLNING: 'oförändrad' gäller texten och bilden — inte allt runt omkring. Länken pekar i dag på baverbutiken.se och måste bytas (det medger klassningen), annonsnamnet måste bytas från IBC_-prefixet till TANKGUARD_, och uppladdningen ska ske i konto 915422744950975 med TankGuards sida och pixel. Inget av detta är ett påstående i copyn, så det river inte klassningen."
+      ]
+    },
+    "PD_3_1": {
+      "haller": true,
+      "motivering": "Jag kunde inte riva klassningen. Jag hämtade den skarpa copyn direkt ur Meta i stället för att lita på citatet, och alla tre fälten består uteslutande av produktfakta som gäller produkten oavsett butik: 210D Oxford, UV-blockering, algstopp, blixtlås, öppning upptill, monteringstid under två minuter. Ingen prisuppgift, ingen rabatt, ingen frakt, inga betalsätt, inga returvillkor, inga betyg eller kundnamn, inget butiksnamn, ingen påhittad brådska. Den enda formulering som ens är angripbar är titeln 'Sätt på blixtlåset på 2 minuter', som flyttar tidsangivelsen från överdraget till blixtlåset — språkligt klumpigt, men inte ett påstående TankGuard inte kan stå för. Klassningen håller på sitt sakinnehåll. Däremot är dess bisats 'bara destinationslänken byts' felaktig: sida och pixel tillhör källkontot och måste bytas till TankGuards egna i målkontot 915422744950975.",
+      "invandningar": [
+        "Angrepp 1 — dold text i den skarpa creativen: jag hämtade annonsen live ur Meta (ad 120250078091950291) i stället för att lita på den citerade copyn. body, name och description är ordagrant identiska med det som klassats. Ingen extra rad med frakt, betalsätt, retur eller recension finns gömd i creativen. Angreppet faller.",
+        "Angrepp 2 — förbjudna källbutiksvillkor: sökte efter 489/636/23 %/147 kr, 300 kr, Klarna, öppet köp, betyg, 'Bäverbutiken'. Noll träffar i alla tre fälten. Angreppet faller.",
+        "Angrepp 3 — påhittad brådska eller social proof: copyn saknar helt 'idag', 'lagret', 'många har redan', kundnamn och stjärnor. Angreppet faller.",
+        "Angrepp 4 — 'Blixtlåset går att sätta på under två minuter' / TITEL 'Sätt på blixtlåset på 2 minuter'. Detta är den svagaste formuleringen: produktfaktumet är att ÖVERDRAGET sitter på under två minuter, inte att man monterar ett blixtlås. Men om hela överdraget är på under två minuter är blixtlåset det per definition också, så påståendet är inte falskt för TankGuard — det är bara klumpigt skrivet. Det fäller inte klassningen, men titeln är svag och bör skrivas om till monteringstid på överdraget vid nästa varv.",
+        "Angrepp 5 — 'utan att ta av hela överdraget' står inte ordagrant i faktalistan, bara 'öppning upptill så man kommer åt locket'. Det är en direkt följd av öppningens funktion, inte ett nytt löfte. Fäller inte.",
+        "Angrepp 6 — krock med paketerbjudandet: copyn talar om ett överdrag i singular medan TankGuards erbjudande är 1/2/3-paket med gratis Kranskydd Frost. Det är en utelämning, inte ett falskt påstående — enstycksnivån 489 kr finns på riktigt. Fäller inte, men annonsen utnyttjar varken bonusen eller säsongsbrådskan.",
+        "KVARSTÅENDE ANMÄRKNING som klassningens formulering är fel om (inte copyn): 'bara destinationslänken byts' stämmer inte. Creativen ligger på Bäverbutikens sida page_id 678639638662543 i källkontot 1867947880635861. Den måste byggas om i målkontot 915422744950975 med page 1399193996606775 och pixel 2196132151319625 — sida och pixel får aldrig kopieras mellan verksamheterna.",
+        "KVARSTÅENDE ANMÄRKNING 2: PD_3_1 är en BILDannons, så 'köras oförändrad' omfattar även bildytan. Bildytan är läst (OCR + ögongranskning, factory/output/tankguard/brand-detektor.json) och visar varken brand eller pris — den delen håller.",
+        "KVARSTÅENDE ANMÄRKNING 3: 10 kr spend och 0 köp. REN är en innehållsdom, inte ett prestandabesked — annonsen får inte beskrivas som beprövad."
+      ]
+    },
+    "PD_5_1": {
+      "haller": true,
+      "motivering": "Jag hittar ingen formulering som fäller klassningen. Hela copyn består av tre påståenden och de vilar alla på den godkända produktfaktan: 210D Oxford-tyg, blockerar solljus/UV, blixtlås, stoppar algtillväxten. Det finns inte en siffra i kronor, inte en procent, inte ett betyg, inte ett kundnamn, inte ett fraktlöfte, inte ett butiksnamn och ingen brådska. Det enda talet i texten, 210D, är en materialbeteckning som gäller produkten och inte butiken. Copyn lovar heller ingen rabatt, vilket gör att den inte kan krocka med TankGuards pristrappa: enkelöverdraget säljs på riktigt för 489 kr helt utan jämförpris, och en annons utan pris matchar den sidan. De två svagheterna jag hittar är att 'aldrig' är hårdare än 'stoppar' och att 'inga gummiband' inte finns i faktalistan — båda är produktpåståenden som gäller lika mycket i källbutiken, inte påståenden som förutsätter en etablerad butik med historik. REN håller.",
+      "invandningar": [
+        "Testat: pris/rabatt. Copyn nämner ingen siffra i kronor, ingen procent, inget jämförpris. Varken 636 kr, 23 % eller 147 kr förekommer. Faller inte.",
+        "Testat: frakt, betalsätt, returer. Inget om leveranstid, Klarna, öppet köp eller pengarna tillbaka. Faller inte.",
+        "Testat: sociala bevis. Ingen stjärnrating, inget antal recensioner, inga kundnamn, inget 'hundratals trädgårdsägare'. Detta är särskilt värt att notera eftersom systerblocken SP och CS i samma IBC-familj är fulla av exakt sådant ('Hundrevis av hageeiere', '⭐⭐⭐⭐⭐', 'kundene elsker det', 'Lageret krymper raskt', '439 kr i stedet for 586 kr'). PD_5_1 innehåller inget av det. Faller inte.",
+        "Testat: påhittad brådska. Ingen tidsgräns, inget 'idag endast', inget lagerhot. Faller inte.",
+        "Testat: butiksidentitet. Butiksnamn saknas helt, ingen historik, inget 'vi har hjälpt', inget som antyder en etablerad butik med kundbas. Faller inte.",
+        "Testat: garantier. Ingen garanti, ingen livstid, ingen 'annars pengarna tillbaka'. Faller inte.",
+        "Testat: krock med paketerbjudandet. Copyn är skriven i singular ('ditt regnvatten', 'bara ett blixtlås') och nämner ingen rabatt alls. Enkelöverdraget finns på riktigt för 489 kr utan rabatt, så en singular annons utan pris är sann mot pristrappan. Den lovar heller ingen rabatt som landningssidan sedan inte infriar. Faller inte.",
+        "Testat: säsong. Ingen tidsangivelse, ingen vinter/höst-referens som skulle behöva verifieras. Faller inte.",
+        "Kvarstående anmärkning 1 (fäller inte): 'Algerna kommer aldrig igång' är ett absolut löfte, medan den tillåtna produktfaktan säger 'stoppar algtillväxten i vattnet'. 'Aldrig' är en skärpning. Den ligger dock inom mekanismen (blockerar solljus och UV → ingen fotosyntes) och är ett produktpåstående, inte ett butikspåstående. TankGuard kan stå för det lika väl som källbutiken.",
+        "Kvarstående anmärkning 2 (fäller inte): 'inga gummiband' är ett påstående om konstruktionen som inte står i faktalistan (där står blixtlås, öppning upptill, mått, tyg). Raden läses dock som en kontrast mot alternativmetoden presenning + gummiband, inte som en specifikation. Är den fel är den fel även för källbutiken — det är inte en TankGuard-specifik osanning."
+      ]
+    },
+    "BOF_4_1": {
+      "haller": true,
+      "motivering": "Jag hittar ingen formulering i IBC_BOF_4_1 som är falsk för TankGuard. Varje rad vilar på ren produktmekanik som gäller produkten oavsett butik: blixtlås, öppning upptill, 1000-liters IBC, samt kontrasten mot presenning och gummiband. Copyn saknar pris, rabatt, frakt, betalsätt, retur, betyg, kundnamn, butiksnamn, säsongspåstående och påhittad brådska — och den inbrända texten i IBC_BOF_4_1.jpg innehåller samma rader plus en neutral CTA, inga extra påståenden. De två starkaste angreppen ('standard' som tappats bort och 'ingen kamp med väder eller vind') är formuleringsjusteringar, inte falska påståenden, och båda skulle vara lika (o)precisa i källbutiken. Klassningen REN håller: annonsen kan köras med enbart länkbyte, förutsatt att TankGuards produkt-URL först är fastställd i butiksfilen. Enda ändring jag skulle göra frivilligt är att lägga tillbaka ordet 'standard' framför '1000-liters IBC-tank'.",
+      "invandningar": [
+        "Angrepp 1 — 'Passar 1000-liters IBC-tank' (och DESC 'Passar 1000-liters IBC'): källfaktumet är 'passar STANDARD 1000-liters IBC-tank'. Copyn tappar kvalifikationen och läses som att den passar varje 1000-liters tank. Faller inte klassningen: måtten 120 × 100 × 116 cm är exakt standardburens format, copyn säger aldrig 'alla', och överdriften är identisk i källbutiken — den är alltså inte ett påstående som blir FALSKT av bytet av butik. Rekommendation ändå: skriv 'Passar standard 1000-liters IBC-tank'.",
+        "Angrepp 2 — 'ingen kamp med väder eller vind': kan läsas som ett hållfasthets-/vindlöfte (att överdraget sitter kvar i storm). Inget i produktfakta nämner remmar, fästen eller vindtålighet. Faller: satsen sitter ihop med 'På och av med dragkedja', alltså handgreppet, och är förankrad i 'sitter på under två minuter'. Det är en påmontering-utsaga, inte en garanti.",
+        "Angrepp 3 — 'Inte presenning och gummiband': jämförelse mot vad kunden använder idag, inte ett påstående om butiken. Ingen konkurrent utpekas, inget mätvärde påstås. Faller.",
+        "Angrepp 4 — sociala bevis / etablerad butik: copyn innehåller inget 'vi', ingen historik, inga betyg, inga kundnamn, inget 'hundratals'. Inget att fälla på.",
+        "Angrepp 5 — förbjudna källvillkor: ingen träff på 636 kr, 23 %, 147 kr, frakt, Klarna, öppet köp, recensioner, Bäverbutiken eller påhittad brådska — varken i brödtext, titel, description eller i den inbrända bildtexten (bilden bär samma rader plus CTA 'Se hur enkelt det är').",
+        "Angrepp 6 — krock med TankGuards erbjudande: copyn är erbjudandefri och skriven i singular ('ett överdrag'). Nivå 1 finns på riktigt (489 kr utan jämförpris), så singularframingen är sann. Ingen rabattsiffra påstås, alltså ingen konflikt med 18 %/25 %-trappan. Faller — men noteras: som BOF-annons säljer den inte paketnivåerna eller Kranskydd-bonusen, vilket är ett SVAGHETS-fynd, inte ett sanningsfynd.",
+        "Kvarstående operativ anmärkning (fäller inte copyn): 'bara destinationslänken byts' förutsätter en känd TankGuard-URL. factory/butiker/tankguard.yaml finns inte på någon gren, så måladressen är inte fastställd i repot och får inte gissas."
+      ]
+    },
+    "BOF_5_1": {
+      "haller": true,
+      "motivering": "Jag hittar ingen formulering som TankGuard inte kan stå för. Copyn består av exakt tre byggstenar: ett påstående om presenningar (konkurrerande produktkategori, ingen siffra, ingen källa), två godkända produktfakta (210D Oxford, blixtlås) och en säsongsuppmaning som reglerna uttryckligen pekar ut som den äkta brådskan. Den innehåller inget pris, ingen rabattsiffra, inget jämförpris, ingen frakt-, retur- eller betalinfo, inget betyg, ingen recension, inget kundantal och inget butiksnamn. Det enda som ens liknar ett obackat löfte är \"sitter kvar\", och det följer av måtten plus blixtlåset — ett överdrag som träs över hela tanken och zippas kan inte blåsa av som en lös presenning. Klassningen REN håller: bara destinationslänken behöver bytas.",
+      "invandningar": [
+        "ANGREPP 1 — \"sitter kvar\" som outtalat vindlöfte: faktalistan nämner varken remmar, resårkant, spännband eller vindtålighet, så påståendet att överdraget stannar kvar i en höststorm ser först ut som ett prestandalöfte utan täckning. FALLER: överdraget är 120 × 100 × 116 cm och träs över hela tanken och stängs med blixtlås — det omsluter tanken i stället för att ligga löst ovanpå som en presenning. Att det sitter kvar följer direkt av de godkända produktfakta (måtten + blixtlåset), inte av någon butiksegenskap.",
+        "ANGREPP 2 — nedsättande påstående om presenningar: \"Presenningen som skulle skydda blåser av vid första höststormen\" är ett obevisat påstående. FALLER: det är ett påstående om en konkurrerande produktkategori, inte om TankGuard, och det innehåller ingen siffra, inget datum och ingen mätning som skulle kräva källa. Det säger heller ingenting om butiken.",
+        "ANGREPP 3 — säsongsbrådska: \"Skydda tanken innan hösten\" driver tempo. FALLER: säsongen är uttryckligen den ÄKTA brådskan enligt reglerna. Ingen \"idag endast\", inget krympande lager, ingen prisvarning.",
+        "ANGREPP 4 — krock med paketerbjudandet: copyn talar om \"ett\" överdrag i singular medan TankGuards trappa har rabatt på 2 och 3 samt gratis Kranskydd. FALLER: 489 kr för ett överdrag är en verklig nivå i trappan. Copyn utlovar varken rabatt, jämförpris eller bonus, och förnekar dem inte heller — den kan alltså inte bli missvisande mot landningssidan.",
+        "ANGREPP 5 — spår av källbutiken: sökt efter 636 kr, 23 %, 147 kr, frakt, Klarna, öppet köp, betyg, recensioner, namngivna kunder, \"hundratals\", Bäverbutiken/baverbutiken.se. FALLER: noll träffar i brödtext, titel och description.",
+        "ANGREPP 6 — underförstådd etablerad butik: sökt efter historik, \"marknadsledande\", \"sedan 20XX\", kundantal, \"mest sålda\", garantier. FALLER: copyn innehåller inget socialt bevis och ingen garanti alls.",
+        "RESTRISK (fäller inte, men värd att veta): \"innan hösten\" är marginellt sent formulerat den 8 september. Det är en uppmaning, inte ett faktapåstående, och gäller lika mycket för vilken avsändare som helst — det är alltså inte ett TankGuard-specifikt fel."
+      ]
+    },
+    "BOF_2_1": {
+      "haller": true,
+      "motivering": "Jag hittar ingen formulering i blocket som går att behålla. Testet för HÅLL är om en rad kan bytas eller om hela premissen är överträdelsen — här är brödtext, titel och beskrivning tre olika formuleringar av samma sak: källbutikens returvillkor. Den enda ersättare som skulle bära samma premiss (riskvändning) kräver ett påstående om TankGuards returer eller ångerrätt, och de villkoren är okända och uttryckligen förbjudna. De sanna alternativ jag kan skriva — passformsgarantin och paketrabatten — byter annonsens premiss och är därför nya annonser, inte en räddning. Klassningen håller. Enda justeringen: den gäller copyn; ligger det ett assetet utan inbränd villkorstext bakom kan filen återanvändas, och BOF-platsen bör fyllas med en ny annons byggd på paketnivåerna och säsongen.",
+      "invandningar": [
+        "Angrepp 1 — 'bara en rad behövde bytas': faller. Alla tre elementen ÄR överträdelsen. Brödtexten är returvillkoret ('Skicka tillbaka det inom 30 dagar. Du får pengarna tillbaka'), TITELN är returvillkoret ('30 dagars öppet köp'), DESC är returvillkoret ('Pengarna tillbaka om du ångrar dig'). Noll ord överlever ett byte. Det som blir kvar efter en 'räddning' är annons-ID:t, inte annonsen.",
+        "Angrepp 2 — lagstadgad ångerrätt som sann ersättning: 'Du har 14 dagars ångerrätt enligt lag' är formellt sant för svensk distansförsäljning till konsument, men det är fortfarande ett returvillkor, och brieferna förbjuder uttryckligen 'alla returvillkor' för TankGuard. Dessutom kräver påståendet att TankGuard faktiskt är registrerad konsumentsäljare i Sverige och hanterar returer — det är inte känt. CLAUDE.md regel 3 (hitta aldrig på data) stänger den vägen.",
+        "Angrepp 3 — annan sann riskvändare i samma spår: jag testade att skriva raden. Den bästa sanna BOF-invändningshanteraren är passformen, inte risken: 'Måtten är 120 × 100 × 116 cm. Passar en standard 1000-liters IBC-tank. Mät din tank innan du beställer.' (TITEL: 'Passar standard 1000-liters IBC' · DESC: '210D Oxford. Sitter på under två minuter.'). Den är sann och körbar — men den byter premiss från 'du riskerar inget' till 'den passar din tank'. Det är en ny annons i samma tratt-position, inte en räddad BOF_2_1.",
+        "Angrepp 4 — 'kan INTE köras' är för brett formulerat: det block som visas är ren copy (text + titel + desc). Ligger det en generisk produktvideo eller produktbild bakom, utan inbränd villkorstext, kan SJÄLVA ASSETET återanvändas under helt ny copy. Klassningen bör alltså läsas som 'copyn är död', inte 'filen är död' — kontrollera assetet för inbränd text innan det slängs.",
+        "Angrepp 5 — vad HÅLL inte får betyda: 2 kr spend är noll bevis (CLAUDE.md regel 3: ingen dom under 300 kr / 3 köp). Det finns alltså inget prestandavärde att bevara i just den här annonsen — men det betyder också att BOF-platsen står tom. HÅLL ska inte tolkas som 'ingen BOF-annons'. Skriv en ny BOF på sanna TankGuard-fakta: paketrabatten (2 för 799 kr, spara 18 %, med 2 gratis Kranskydd Frost 420D värda 398 kr) och säsongen som äkta brådska."
+      ]
+    },
+    "BOF_6_1": {
+      "haller": true,
+      "motivering": "Jag försökte riva klassningen på fyra sätt och den höll alla gånger. Exakt vilka formuleringar som fäller den: (1) 'Fri frakt inom Sverige, 5–10 arbetsdagar' — förekommer både i brödtexten och som HELA TITEL-fältet; (2) 'Klarna – betala sen' — brödtext + DESC; (3) '30 dagars öppet köp' — brödtext + DESC. Det är tre av fyra brödmeningar, 100 % av titeln och 100 % av descriptionen. Efter strykning återstår en enda mening: 'Beställ nu så är den på plats innan tanken hinner grönska.' Det avgörande är inte mängden, utan att de tre påståendena alla är samma mekanism — riskavlastning genom butikens villkor — och att TankGuards frakt, betalsätt och retur är uttryckligen okända. Det finns alltså ingen sann ersättare för premissen, bara en annan premiss. Klassningen HÅLL är inte överdrivet försiktig: den är den enda dom som inte kräver påhittade villkor. Konstruktivt: fyll BOF-platsen med paketerbjudandet i stället (2 för 799 kr / spara 18 % / 2 Kranskydd Frost 420D värde 398 kr) och ta med algmeningen dit — men logga det som en ny brief, inte som en räddad IBC_BOF_6_1.",
+      "invandningar": [
+        "RÄDDNINGSFÖRSÖK 1 — 'byt bara fraktraden': faller. Fraktpåståendet står på TVÅ ställen, och TITEL är i sin helhet 'Fri frakt, 5–10 arbetsdagar'. DESC är i sin helhet 'Klarna – betala sen. 30 dagars öppet köp.' Stryker man det förbjudna blir titel och description TOMMA, inte ändrade. Det är inte 'en rad bytt'.",
+        "RÄDDNINGSFÖRSÖK 2 — 'sätt in TankGuards egna villkor i stället': faller. TankGuards frakt, betalsätt och returvillkor är uttryckligen okända. Det finns bokstavligen ingen sann sträng att sätta in på de tre platserna utan att hitta på (CLAUDE.md regel 3).",
+        "RÄDDNINGSFÖRSÖK 3 — 'behåll BOF-funktionen, byt trygghet mot värde': det här är den starkaste attacken, och den lyckas som BRIEF men inte som räddning. Paketnivåerna är sanna och bär exakt samma annonsplats: TITEL 'Två överdrag 799 kr – spara 18 %', DESC 'Två Kranskydd Frost 420D på köpet, värde 398 kr.', brödtext 'Ta två överdrag för 799 kr i stället för 978 kr. Kranskydden sitter på utekranarna genom vintern.' Men det kräver ny titel, ny description och tre nya brödmeningar — mekanismen byts från riskavlastning till prisvärde. Det är en ny annons i samma slot, inte den här annonsen räddad.",
+        "RÄDDNINGSFÖRSÖK 4 — 'bygg om annonsen kring den enda rena meningen': samma utfall. 'Beställ nu så är den på plats innan tanken hinner grönska' är sann (blockerar solljus, stoppar algtillväxten) och klarar tre-frågorstestet, men den är en stödmening — inte premissen. En annons byggd på den är en ny brief.",
+        "BEVISLÄGET BÄR INGEN RÄDDNING: 2 kr spend. Under 300 kr / 3 köp får ingen dom fällas om vad som fungerade — det finns alltså inget bevisat vinnarelement som är värt att böja reglerna för att bevara.",
+        "INVÄNDNING SOM FAKTISKT BITER MOT ORDALYDELSEN: formuleringen 'hela dess premiss är ett villkor ELLER ett socialt bevis' är slarvig här — det finns inget socialt bevis i den här copyn alls, och en av fyra brödmeningar är helt ren och ska återanvändas. 'HÅLL' får därför inte tolkas som 'släng raden' utan som 'annonsen kan inte köras som den står'. Meningen om algerna ska följa med in i ersättaren.",
+        "RISK ÅT ANDRA HÅLLET: klassas det här som räddningsbart öppnar det för att någon behåller TITEL-fältet och bara mjukar upp brödtexten. Då går 'Fri frakt' ut som TankGuard-löfte utan täckning — ett löfte butiken kan tvingas hålla."
+      ]
+    },
+    "RV_1_1": {
+      "haller": true,
+      "motivering": "Jag försökte riva domen och kom en bit: RV_1_1 bär inga av källbutikens villkor, priset 489 kr är sant för TankGuard, tygfakta är fri, bilden är mätt fri från Bäverbutikens brand, och copyfälten hade gått att skriva om på två rader. Så motiveringen 'villkor eller socialt bevis' är slarvig för just det här blocket — det är enbart socialt bevis. Men domen står, och jag kan namnge exakt varför: OCR:en av kreativen läser '★★★★★' och 'Maria' inbrända i själva bilden, tillsammans med hela citatet. Ett femstjärnigt betyg och en namngiven kund är påhittad data för en butik med noll recensioner (CLAUDE.md regel 3), och det går inte att texta bort ur en bild. Varje sann ersättning kräver ny bild, och då är det inte längre den här annonsen. HÅLL är rätt — men som 'blockerad tills TankGuard har egna recensioner' (verktyget finns: tools/judgeme-import.mjs), inte som permanent kassering, och layouten plus CTA:n 'Skydda din tank idag' ska sparas som mall.",
+      "invandningar": [
+        "Motiveringen är fel formulerad, även om domen står: RV_1_1 innehåller INGET av källbutikens villkor. Ingen frakt, inget Klarna, inget öppet köp, inget 636 kr, ingen 23 %. Prisregexen i factory/output/tankguard/kallannonser.json hittar bara '489 kr' — och 489 kr är TankGuards eget sanna enstyckspris. '210D Oxford-tyg' är fri produktfakta. Bilden är dessutom mätt fri från källbutikens brand (brand-syn.json: syns=false, ordagrant tomt). Blockeringen vilar alltså på EN yta (socialt bevis), inte på 'villkor eller socialt bevis' brett — så domen ska vara tidsbegränsad ('tills butiken har egna recensioner'), inte permanent.",
+        "Copyfälten går faktiskt att rädda med ett par rader — det är inte där annonsen fastnar. TITEL 'Maria: Jag är nöjd' och attributionen '— Maria, ★★★★★' är de enda smutsiga strängarna i texten; DESC är ren. En sann ersättare finns och den går att skriva: 'Tanken står i solen hela sommaren. 210D Oxford blockerar ljuset — plasten håller sig mjuk, vattnet klart. På under två minuter. 489 kr.' Om invändningen bara gällde copyn vore HÅLL överdrivet.",
+        "Men det är bilden som fäller den, och det är mätt, inte antaget. OCR:en av själva kreativen (factory/output/tankguard/brand-ocr.json, IBC_RV_1_1.jpg) läser fyra textblock inbrända i bilden: '★★★★★' (konfidens 0,987), '\"Jag ar nojd.' (0,974), 'Nu slipper jag mycket solljus pa tanken' (0,979), 'och det ser även snyggare ut.\"' (0,977) och 'Maria' (0,997). Det exakta som är förbjudet — femstjärnigt betyg och namngiven kund — ligger i pixlarna. Ett copybyte lämnar kvar en bild som visar ett betyg TankGuard inte har.",
+        "Räddningen kräver alltså att bilden genereras om, och då är det per definition en ny annons: nytt media, ny hash, nytt AD-ID, och 'RV' i namnet skulle ljuga om vinkeln (namnkonventionen kodar angle så datan går att skära — docs/naming-convention.md regel 3: döp aldrig om, skapa nytt). Det är inte 'en rad bytt', det är ett nytt block.",
+        "Beviset räcker ändå inte till någon dom åt andra hållet: 3 kr spend, 0 köp. Under grinden 300 kr / 3 köp finns ingen dom (ANALYSMETOD). Annonsen hålls för att den inte får köras, inte för att den är dålig.",
+        "Två saker ur blocket ska ändå räddas, annars kastas något värdefullt: layouten (foto + citatkort + CTA) är en mall värd att bygga om när recensioner finns, och CTA-raden 'Skydda din tank idag' är inbränd, sann och återanvändbar. Lägg dem i backloggens punkt 3 i stället för att bara märka blocket dött.",
+        "När blocket väl byggs om ska INTE den här raden återanvändas. 'Jag är nöjd' faller på alla tre frågorna i docs/copy-regler.md: går inte att visualisera, går inte att falsifiera, och vilken konkurrent som helst kan sätta sin logga under den. Välj en riktig recension som nämner det gröna vattnet."
+      ]
+    },
+    "RV_2_1": {
+      "haller": true,
+      "motivering": "Jag försökte riva klassningen och kom längst på att copyn i sak är TankGuard-sann: DESC behöver noll ändringar, och vinkeln (öppningen upptill på en regnvattentank) står ordagrant i TankGuards egen faktalista. Men OCR:en på mediafilen visar att '★★★★★', citatet och '— Lena' är inbrända i själva bilden. Ingen textrad går att byta för att komma åt dem, och TankGuard har noll recensioner — annonsen skulle alltså visa ett påhittat socialt bevis. HÅLL står, med skärpt skäl: det är inte vinkeln som saknas, det är att det falska beviset sitter i pixlarna. Räddningen är en NY bild på samma bas och samma vinkel, utan person och utan stjärnor, t.ex. överlägg 'Locket sitter under kapellet. Blixtlåset upptill löser det.' + 'Kraftigt 210D Oxford. 120 × 100 × 116 cm. Sitter på under två minuter.' och den befintliga rena CTA:n 'Skydda din tank idag'. Den raden klarar tre-frågorstestet (visualiserbar, falsifierbar, ingen konkurrent utan toppöppning kan skriva den). Lägg vinkeln i backloggen som eget koncept — kör inte annonsblocket.",
+      "invandningar": [
+        "Attacken som borde ha fungerat: allt SAKINNEHÅLL i copyn är sant för TankGuard. 'regnvattentank' täcks av produktfaktumet 'stoppar algtillväxten i vattnet', 'enkelt att öppna' av 'blixtlås' + 'öppning upptill så man kommer åt locket', och DESC 'Passar 1000L-tank. 489 kr.' är ordagrant TankGuards egna tal. Rent textmässigt var detta en enradsfix, inte ett håll.",
+        "Klassningens SKÄL är för brett formulerat. 'Hela dess premiss ... går inte att ersätta med något sant om TankGuard' är falskt: vinkeln (du måste åt locket trots att tanken är täckt) går att bära sant, med källa i TankGuards egen faktalista. Det som fäller annonsen är inte att vinkeln saknar sanning, utan att det falska sociala beviset sitter i pixlarna.",
+        "Beviset som river min egen attack: OCR:en på själva bildfilen (factory/output/tankguard/brand-ocr.json, IBC_RV_2_1.jpg, 2026-09-08) visar att '★★★★★', hela citatet och '— Lena' är INBRÄNDA i bilden, inte bara i ad-texten. Ett byte av primary text och titel når alltså inte det förbjudna — annonsen skulle fortfarande visa en femstjärnig recension från en kund TankGuard inte har.",
+        "Exakt formulering som fäller den: den inbrända raden '★★★★★ / \"Köpte detta för min regnvattentank...\" / — Lena' i mediafilen ec4ec8061469261312c302e79aebec74, speglad i TITEL 'Lena: Enkelt att öppna'. Namnet och stjärnorna, inget annat.",
+        "Prisflaggan '⚠️ 489 kr' på RV_2_1 i kallannonser.md är ett FALSKLARM för just den här annonsen — 489 kr är TankGuards eget pris utan jämförpris. Håll-beslutet får inte loggas som ett prisproblem; då städas fel sak.",
+        "Bilden är i övrigt återanvändbar: ögongranskningen 2026-09-08 (brand-syn.json) ger 'syns: false, var: ingenstans' på brandnamn, och den inbrända CTA:n 'Skydda din tank idag' nämner varken butik, pris eller recension. Basen duger som referensbild i nano-banana-edit — men det blir en NY annons, inte den här.",
+        "5 kr spend betyder att ingen prestandadom får uttalas (CLAUDE.md regel 3). HÅLL får därför bara vila på regelbrottet. Skrivs det som 'svag annons' är domen ogiltig av annan anledning.",
+        "Recensionen går inte att 'ta med sig' ens med källhänvisning: RV_1–RV_4 bär Maria, Lena, Sofia och Johan — fyra generiska namn i samma serie. Det ser tillverkat ut redan hos källbutiken och kan inte beläggas för någon av butikerna."
+      ]
+    },
+    "RV_3_1": {
+      "haller": true,
+      "motivering": "Jag hittar inget skäl att riva klassningen. Räddningsförsöket går att skriva ända fram för prisytan (489 kr, 2-pack 799 kr, spara 18 % — allt sant och verifierbart ur produktsidan), men det fäller inte annonsen: annonsens premiss är en namngiven kundrecension med femstjärnigt betyg, och båda delarna är förbjudna och osanna för TankGuard i dag. Den avgörande, icke-utbytbara formuleringen är stjärngrafiken ovanför 'Sofia' — se-texter.json slår fast att stjärnorna är grafik, inte text, så de överlever textswappen som byter allt annat. Att byta 'Sofia' mot ingenting lämnar en tom citatplatta under fem stjärnor; att byta hela plattan mot produktfakta gör det till en annan vinkel och en annan annons. HÅLL är alltså rätt dom, men motiveringen ska preciseras: det är stjärnorna plus namnet som fäller den, inte '23 % rabatt' — och domen ska villkoras mot om TankGuards egen Judge.me-import gett butiken riktiga, synliga recensioner, för då bär formatet igen.",
+      "invandningar": [
+        "Klassningen är för grovt motiverad. Två av tre textytor går faktiskt att rädda med en rad var: fototexten och DESC bär bara '489 kr, 23 % rabatt', och den raden har en sann ersättare — '489 kr · 2-pack 799 kr, spara 18 %'. Hade priset varit annonsens enda fel vore detta ett byte, inte ett håll. Motiveringen får alltså inte luta sig mot prisraden.",
+        "Jag försökte rädda hela blocket och kan skriva raderna: TITEL 'Skyddar tanken mot solen', DESC '489 kr. 2-pack 799 kr – spara 18 %.', brödtext 'Blockerar solljus och UV, så algerna aldrig kommer igång. 210D Oxford, blixtlås, sitter på under två minuter. Passar standard 1000-liters IBC-tank.' Allt är sant för TankGuard. Räddningen faller ändå — se nästa punkt.",
+        "Det som fäller annonsen är EN sak, och den går att peka ut exakt: stjärnorna. market-expansion/no/notion-batches/2026-09-08/se-texter.json skriver om IBC_RV_3_1: 'Stjärnorna ovanför namnet är grafik.' Textswappen (former/overrides, pipeline/no-precis.py) byter bara innehållet i textrutorna — grafik står kvar. ★★★★★ i bilden överlever alltså varje radbyte, och ett femstjärnigt betyg på en butik med noll recensioner är påhittad data (CLAUDE.md regel 3) och står uttryckligen på förbudslistan.",
+        "Andra fällande formuleringen: 'Sofia'. Namnet står på tre ställen samtidigt — i bildens platta (form 0 i se-texter.json), i brödtexten och i TITELN ('Sofia: Skyddar mot solen'). Recensionen är inte en rad i annonsen, den ÄR annonsen. RV-blocket är källbutikens Judge.me-recension renderad som creative; tar man bort avsändaren finns ingen annons kvar att byta en rad i.",
+        "Byter man bara priset blir resultatet sämre än att hålla: copyn slutar nämna rabatt medan bilden fortfarande visar 'Sofia ★★★★★' och '23% rabatt' inbränt. Halvräddningen lämnar kvar exakt det som inte får stå kvar.",
+        "Bevisläget ger ingen anledning att kämpa: 1 kr spend, 0 köp, långt under grinden 300 kr / 3 köp. Det finns ingen prestanda att förlora på att hålla, och ingen bevisad vinkel att rädda. Bildannonserna som helhet har 0 köp på 34 svenska annonser (products/tankguard/dna.md), så kostnaden för att hålla den här är noll.",
+        "VIKTIG RESERVATION mot ordet 'kan INTE köras': fabriken importerar recensioner till varje ny OPS-butik (factory/PROCESS.md, Fas 3), och tools/judgeme-import.mjs bär en datumvakt som skrevs som 'Axels bakläxa 2026-09-08, TankGuard' — alltså kördes en recensionsimport mot TankGuard samma dag. Är recensioner publicerade och synliga på TankGuards produktsida är RV-formatet återupplivat: plattan får den riktiga recensentens namn och egna ord, stjärnorna blir sanna, fototexten blir '489 kr'. Klassningen ska därför skrivas som HÅLL TILLS RECENSIONERNA ÄR VERIFIERADE LIVE, inte som permanent död.",
+        "Bilden bakom plattan (produktfoto på tanken) är ren enligt brand-detektorn (yta 4 ✅) och kan återanvändas till en PD- eller BOF-annons. Det är dock en ny annons med ny vinkel och nytt namn — namnkonventionens regel 3 tillåter inte att man kallar det RV_3_1. En 'RV'-annons utan recension är en självmotsägelse i sitt eget namn."
+      ]
+    },
+    "RV_4_1": {
+      "haller": true,
+      "motivering": "Jag kunde namnge exakt vad som fäller annonsen — '★★★★★', 'Johan' och förstapersonscitatet — men de tre sitter inbrända i IBC_RV_4_1.jpg, inte i Meta-copyn, och de är hela creativens övre halva. Att ta bort dem tömmer annonsen på sin persuasionsmekanik, och att ersätta dem kräver ett betyg och en kund som TankGuard inte har. Ingen sann TankGuard-formulering kan bära ett femstjärnigt omdöme i dag. Klassningen HÅLL står därför — men dess motivering ska skrivas om: det är attributionen (stjärnorna, namnet, kundrösten) som fäller annonsen, inte påståendena, och blocket är reviderbart så snart butiken har egna recensioner.",
+      "invandningar": [
+        "Klassningens formulering 'hela dess premiss' är för bred och bör skrivas om. Tre av påståendena i annonsen är sanna för TankGuard och behöver inte ersättas: 'bra kvalitet' bärs av 210D Oxford-tyg, 'lätt att använda' av 'sitter på under två minuter', och 'passade min 1000 liters tank' av 'passar standard 1000-liters IBC-tank'. Även raden 'Passar standard 1000L IBC-tank' och CTA:n 'Beställ idag' är rena. Det som fäller annonsen är attributionen, inte sakpåståendena.",
+        "Jag försökte skriva räddningen och den går att skriva som text: primär 'Passar standard 1000-liters IBC-tank. 210D Oxford, blixtlås upptill, sitter på under två minuter.' / titel 'Passar tanken utan problem' (utan 'Johan:') / desc oförändrad. Alla raderna är sanna. Räddningen faller ändå, se motiveringen.",
+        "Räddningen faller på att texten inte sitter i copyn utan är INBRÄND I BILDEN. OCR:en på IBC_RV_4_1.jpg (factory/output/tankguard/brand-ocr.json) läser exakt: '★★★★★' · 'Johan' · '\"Bra kvalitet och lätt att använda. Passade min 1000 liters tank utan problem.\"' · 'Passar standard 1000L IBC-tank' · 'Beställ idag'. Meta-copyn för SE-varianten är däremot ren och prisfri (kallannonser.json: copy.träff=false, priser=[]). En copy-fix ändrar alltså ingenting — kunden ser stjärnorna och namnet i bilden.",
+        "Att bara stryka '★★★★★' och 'Johan' ur bilden räddar inte heller: kvar blir en förstapersonscitat ('min 1000 liters tank') utan avsändare, vilket fortfarande utger sig för att vara en kundröst från en butik som har noll kunder. Byter man även ut citatet mot andra person är det inte längre en RV-annons utan ett produktfaktakort — och fyra sådana finns redan rena i samma källa (PD_2_1, PD_3_1, PD_4_1, PD_5_1).",
+        "Klassningen bör märkas som HÅLL–REVIDERBAR, inte HÅLL–DÖD. Två saker kan flippa den utan att något hittas på: (1) TankGuards egen recensionsimport i OPS-slutsteget — då finns riktiga namn och riktiga betyg att sätta i kortet; (2) bildlayouten i sig (produktfoto + citatkort + CTA) är återanvändbar via nano-banana-edit med källbilden som referens. Kortet får bara inte bära ett betyg eller ett namn förrän TankGuard har ett eget.",
+        "Beslutsunderlaget är inte prestandadata: 0,66 kr spend, 0 köp. Domen vilar helt på sanningskravet och ska inte motiveras med resultat — CLAUDE.md förbjuder dom under 300 kr spend / 3 köp.",
+        "Håll ihop RV-familjen i beslutet. NO-varianten av samma block har dessutom 'baverbutiken.se' rakt i Meta-copyn (fyra RV-annonser tillskriver recensionen den svenska källdomänen). RV_1_1, RV_2_1 och RV_3_1 bär samma inbrända recensionsgrepp plus pris — de ska hållas på samma grund, annars ser beslutet godtyckligt ut."
+      ]
+    },
+    "SP_block": {
+      "haller": false,
+      "motivering": "Klassningen bygger på att annonsens premiss ÄR det sociala beviset. Det stämmer inte. Premissen är 'överdraget stänger ute ljuset, därför inga alger och klart vatten' — ett mekanikpåstående som TankGuards egna produktfakta täcker rakt av (blockerar solljus och UV, stoppar algtillväxten). Recensionsmaterialet sitter i exakt fyra fragment: stjärnraden, 'Hundratals trädgårdsägare…', 'Se varför kunderna älskar det 👇' och DESC 'Betygsatt av riktiga trädgårdsägare.' Hooken, alla tre ✓-punkterna och titeln är noll procent källbutik. Varje fällande fragment har en sann ersättare som går att skriva i dag utan att hitta på något, och jag har skrivit dem. Dessutom döms fyra annonser på en enda citerad copy, bilden SP_2_1 är redan ren i creativen, och videornas verkliga blockerare (talat brandnamn + inbränd text) delas med 11 av 13 videor inklusive top spendern — den kan inte motivera ett håll som bara drabbar SP. Bevisläget 89 kr / 1 köp ligger under grinden, så ingenting i datan räddar eller fäller den heller. Slutsats: HÅLL är en överdrivet försiktig dom. Annonsen är fyra utbytta rader från körbar, och det som egentligen behöver ändras är vinkeletiketten — inte annonsens existens.",
+      "invandningar": [
+        "Premissen är inte socialt bevis. Hooken 'Äntligen klart vatten i tanken — inga alger på hela sommaren!' är ett rent produktpåstående och täcks ordagrant av TankGuards egna produktfakta ('blockerar solljus och UV', 'stoppar algtillväxten i vattnet'). Annonsens drivkraft är en mekanism, inte en recension. Recensionerna är garnering ovanpå.",
+        "Det är fyra formuleringar som bär källbutikens material, inte 'hela premissen': (1) '⭐⭐⭐⭐⭐', (2) 'Hundratals trädgårdsägare har redan bytt ut sin gamla, algiga tank mot en skyddad en.', (3) 'Se varför kunderna älskar det 👇', (4) DESC 'Betygsatt av riktiga trädgårdsägare.' Allt annat — hook, hela ✓-blocket och TITEL — innehåller noll källbutiksmaterial.",
+        "✓-blocket är ordagrant produktspec och kan köras oförändrat: 'Blockerar UV och sol helt' (blockerar solljus och UV), 'Sitter perfekt med blixtlås' (blixtlås), 'Du kommer fortfarande åt locket' (öppning upptill så man kommer åt locket). Tre av sex element i annonsen är alltså redan sanna för TankGuard utan en enda ändring.",
+        "Varje förbjuden rad har en sann ersättare ur produktfakta. Färdig räddning: HOOK (behålls) 'Äntligen klart vatten i tanken — inga alger på hela sommaren!' | BRÖDTEXT (ersätter 'Hundratals trädgårdsägare…') 'Alger behöver ljus. 210D Oxford-tyget släpper inte igenom en enda stråle.' | ✓-blocket oförändrat | CTA (ersätter 'Se varför kunderna älskar det 👇') 'Se hur den träs på — under två minuter 👇' | TITEL (behålls) 'Klart vatten hela sommaren' | DESC (ersätter 'Betygsatt av riktiga trädgårdsägare.') 'Passar standard 1000-liters IBC-tank. 120 × 100 × 116 cm.' Stjärnraden stryks utan ersättning. Noll påhitt, noll pris, noll villkor, noll butiksnamn.",
+        "Räddningsraderna klarar tre-frågorstestet. '210D Oxford-tyget släpper inte igenom en enda stråle' — visualiserbar (tyg mot sol), falsifierbar (materialet blockerar UV eller inte), och konkurrenten kan inte signera den utan samma tyg. 'Under två minuter' är ett mätt tal ur produktfakta, inte ett adjektiv.",
+        "Domen är en blanketdom på oläst text. Bara SP_1_H3:s copy är citerad; IBC_SP_1_H1, IBC_SP_1_H2 och IBC_SP_2_1 döms på en annan annons ord. Det bryter mot CLAUDE.md regel 3 — inga slutsatser på data man inte läst.",
+        "SP_2_1 är den billigaste räddningen i hela blocket och begravs av domen. I factory/output/tankguard/kallannonser.md står den som bild med '✅ ren' på bildattribution och '✅ inget' på pris — själva creativen är alltså redan fri från källbutiken. Bara copyn behöver de fyra bytena ovan.",
+        "Videoblockeraren är inte SP-specifik och kan inte bära ett SP-håll. SP_1_H1/H2/H3 har '⚠️ träff' på talat brandnamn och inbränd text — precis som 11 av 13 videokoncept i samma kampanj, inklusive top spendern PD_1_H1 (16 997 kr, 77 köp). Den bristen löses med omdubb, den klassar inte bort en vinkel.",
+        "Bevisläget får inte användas åt något håll: 89 kr och 1 köp ligger under grinden 300 kr / 3 köp, så ROAS 9,37 är ingen merit och ingen dom. Klassningen måste därför stå på copyn ensam — och copyn är fyra rader från ren.",
+        "Rätt åtgärd är omdöpning av vinkeln, inte håll. Utan recensionerna är annonsen ett mekanism-/produktbevis och ska namnges som det, så datan går att skära per variabel enligt docs/naming-convention.md. Att SP-etiketten inte överlever är inte samma sak som att annonsen inte överlever — målkampanjen har fyra adsets och annonsen hör hemma i ett av de andra.",
+        "Säsongen stärker räddningen i stället för att fälla den. Den 8 september är höstversionen den ärliga: 'Täck tanken innan frosten — mörk tank i vinter, klart vatten till våren.' Den använder den ÄKTA brådskan (säsongen) och den ÄKTA rabatten (2-pack 799 kr, spara 18 %, 2 × Kranskydd Frost på köpet) i stället för påhittad lagerbrist.",
+        "Skulle 'håll' gälla här måste det gälla varje annons som nämner en kund — då återstår i praktiken bara PD-blocket, och hela TankGuards SP-adset står tomt av ett skäl som en enda utbytt mening löser."
+      ]
+    }
+  }
+}

@@ -214,7 +214,14 @@ Järnreglerna (kostar pengar eller förtroende att bryta):
 1. **Rendera ALDRIG före proofread** — rendering drar HeyGen-credits, proofread är gratis.
 2. **Skanna ALLTID källvideon efter inbränd svensk text före leverans** — HeyGen
    översätter bara ljudet.
-3. Captions är opt-in; max 2 rader. Komprimera aldrig hårdare än 30 MiB-gränsen kräver.
+3. **Lyssna på varje renderad video innan den levereras — en keff röst går aldrig ut.**
+   (Axels besked 2026-09-08.) Rösten går INTE att välja: `/v2/video_translate` klonar
+   källans röst och har ingen röstparameter, så en dålig röst kan bara fångas genom
+   att någon lyssnar. Hook, mitt och slut på varje fil. Låter det fel: skapa en NY
+   proofread-session och rendera om — sessionen går inte att köra om. Håller rösten
+   inte andra gången: lämna videon som väntande med orsak, leverera den aldrig ändå.
+   Checklistan står i `.claude/skills/translate/SKILL.md`.
+4. Captions är opt-in; max 2 rader. Komprimera aldrig hårdare än 30 MiB-gränsen kräver.
 
 Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 

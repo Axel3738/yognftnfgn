@@ -38,9 +38,27 @@
       "no": "ytor 1, 2 och 5 lasta; ytor 3 och 4 OLASTA — ffmpeg och rapidocr-onnxruntime saknas i containern",
       "brand_i_copy_se": 0,
       "brand_i_copy_no": 5,
-      "brand_i_copy_no_vilka": ["RV_1_1", "RV_2_1", "RV_3_1", "RV_4_1", "GT_3_H1"],
-      "priser_se": ["489 kr", "636 kr", "23 %", "300 kr", "147 kr"],
-      "priser_no": ["439 kr", "586 kr", "25 %", "300 kr", "147 kr"]
+      "brand_i_copy_no_vilka": [
+        "RV_1_1",
+        "RV_2_1",
+        "RV_3_1",
+        "RV_4_1",
+        "GT_3_H1"
+      ],
+      "priser_se": [
+        "489 kr",
+        "636 kr",
+        "23 %",
+        "300 kr",
+        "147 kr"
+      ],
+      "priser_no": [
+        "439 kr",
+        "586 kr",
+        "25 %",
+        "300 kr",
+        "147 kr"
+      ]
     },
     "kampanj_se": {
       "klar": "skal_finns",
@@ -62,17 +80,91 @@
       "klar": false,
       "notis": "Finns inte annu. Byggs i SAMMA konto 915422744950975 med geo NO och lank mot /nb."
     },
-    "bilder": { "klar": false, "orsak": "blockerad — butiksfilen saknas, priset och villkoren gar inte att byta" },
-    "videor": { "klar": false, "orsak": "blockerad — butiksfilen saknas", "heygen_krediter": 16951 },
-    "copy": { "klar": false, "orsak": "blockerad — ingen produktlank och inget eget pris" },
-    "media_uppladdat": { "klar": false },
-    "tillbakalast": { "klar": false }
+    "bilder": {
+      "klar": false,
+      "orsak": "vantar pa butiksfilen (pris och villkor)",
+      "antal_att_stada": 11,
+      "verktyg": "pipeline/oversatt-bild.py, gratis"
+    },
+    "videor": {
+      "klar": false,
+      "orsak": "vantar pa butiksfilen; HeyGen ar INTE blockeraren",
+      "heygen_krediter": 16951,
+      "jobb": {
+        "omdubb_plus_undertext": 11,
+        "slutkortsbygge": 2
+      },
+      "rostkontroll": "Obligatorisk fran 2026-09-08 (Axels besked): lyssna hook, mitt och slut i varje renderad fil. En keff rost gar aldrig ut."
+    },
+    "copy": {
+      "klar": "delvis",
+      "orsak": "7 SE-block omskrivna mot TankGuards eget erbjudande; 6 av dem kan anda inte ga upp for att mediat ar smutsigt",
+      "kan_ga_upp_nu": [
+        "BOF_3_1"
+      ],
+      "brief_till_nytt_media": [
+        "CS_block",
+        "CS_3_1",
+        "CS_4_1",
+        "GT_3_H1",
+        "PD_3_H1",
+        "BOF_1_1"
+      ],
+      "lank_saknas_fortfarande": true,
+      "fil": "factory/output/tankguard/se-copy.md"
+    },
+    "media_uppladdat": {
+      "klar": false
+    },
+    "tillbakalast": {
+      "klar": false
+    },
+    "mediagrind": {
+      "klar": true,
+      "kalla": "brand-ocr.json + brand-syn.json join mot 34 SE-annonser",
+      "rena_creatives": 10,
+      "smutsiga_creatives": 24,
+      "rena": [
+        "PD_Extra",
+        "PD_2_1",
+        "CO_1_1",
+        "PD_4_1",
+        "PD_5_1",
+        "BOF_3_1",
+        "PD_3_1",
+        "BOF_5_1",
+        "GT_2_1",
+        "BOF_4_1"
+      ],
+      "notis": "En ren annonstext ar inte en ren annons. Vinnaren PD_1_H1 ar smutsig (brandnamn i tal och bild). Nio av tio rena ar bildannonser med noll kop."
+    },
+    "klassning_motprovad": {
+      "klar": true,
+      "block_provade": 15,
+      "holl": 13,
+      "revs": [
+        "GT_block",
+        "SP_block"
+      ],
+      "GT_block": "REN -> OMSKRIVNING. Kundvittnesmal i forsta person om en genomford order; TankGuard har salt noll enheter. Gavo-emojin lovar dessutom bonus som bara finns fran 2 st.",
+      "SP_block": "HALL -> OMSKRIVNING. Premissen ar mekanik, inte socialt bevis; bara fyra fragment ar kallbutikens. Huvudsessionen dommde fyra annonser pa en annons copy (brott mot regel 3). Tillagg: citattecknen kring hooken ska bort med stjarnorna."
+    }
   },
   "blockerare": {
     "fil": "factory/butiker/tankguard.yaml",
     "finns_pa_nagon_gren": false,
-    "saknas": ["produktlank/handle", "pris SEK", "pris NOK", "villkor (frakt, oppet kop, betalsatt, garanti)"],
+    "saknas": [
+      "produktlank/handle",
+      "pris SEK",
+      "pris NOK",
+      "villkor (frakt, oppet kop, betalsatt, garanti)"
+    ],
     "notis": "Utan filen gar varken lank, pris eller break-even att satta — och inget av de tre far gissas."
   },
-  "uppdaterad": "2026-09-08"
+  "uppdaterad": "2026-09-08",
+  "oppna_beslut": [
+    "Ingangspriset: 489 kr eller 799 kr? Att ta bort 636 kr flyttade ankaret till 2-packet i fyra av sju block och hojde ingangspriset 63 %. Agarens beslut.",
+    "Annonsens jamfortal (978/1467 kr) matchar inte produktsidans overstrukna (1376/2064 kr). Ska annonsen folja sidan eller sidan folja annonsen?",
+    "Utloser offer.bonus_produkt faktiskt Kranskydd Frost i korgen? Fyra annonser lovar den."
+  ]
 }
